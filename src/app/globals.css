@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --radius: 1rem;
+
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --card: #ffffff;
+  --card-foreground: #171717;
+
+  /* Indigo-violet primary — the recurring accent across the T-Course and
+     Quyl references (active nav state, primary buttons, progress fill). */
+  --primary: #6c5ce7;
+  --primary-foreground: #ffffff;
+
+  /* Soft lavender surface used for sidebars/cards, e.g. the light panels
+     behind "Your Study Progress" and the Quyl status tiles. */
+  --secondary: #f6f5fa;
+  --secondary-foreground: #171717;
+
+  --muted: #f6f5fa;
+  --muted-foreground: #6b7280;
+
+  --accent: #ededfb;
+  --accent-foreground: #6c5ce7;
+
+  --destructive: #e5484d;
+  --destructive-foreground: #ffffff;
+
+  --border: #e7e5f0;
+  --input: #e7e5f0;
+  --ring: #6c5ce7;
+
+  /* Semantic status tones lifted from the pastel course/status cards
+     (Infinity's popular-course blocks, Quyl's status tiles, the
+     UI/UX-designer / QA-engineer track cards). Used for chips, badges,
+     and status tiles — not raw Tailwind colors — so meaning stays
+     consistent wherever they show up. */
+  --status-success-bg: #e3f5ea;
+  --status-success-fg: #1f9254;
+  --status-pending-bg: #fdf3d9;
+  --status-pending-fg: #b8860b;
+  --status-info-bg: #e6f2fb;
+  --status-info-fg: #2b7bb0;
+  --status-alert-bg: #fdece3;
+  --status-alert-fg: #c2653f;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-status-success-bg: var(--status-success-bg);
+  --color-status-success-fg: var(--status-success-fg);
+  --color-status-pending-bg: var(--status-pending-bg);
+  --color-status-pending-fg: var(--status-pending-fg);
+  --color-status-info-bg: var(--status-info-bg);
+  --color-status-info-fg: var(--status-info-fg);
+  --color-status-alert-bg: var(--status-alert-bg);
+  --color-status-alert-fg: var(--status-alert-fg);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-serif);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card: #141414;
+    --card-foreground: #ededed;
+    --primary: #8b7ff5;
+    --secondary: #1c1b22;
+    --secondary-foreground: #ededed;
+    --muted: #1c1b22;
+    --muted-foreground: #9ca3af;
+    --accent: #241f3d;
+    --accent-foreground: #ab9ff8;
+    --border: #262530;
+    --input: #262530;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
