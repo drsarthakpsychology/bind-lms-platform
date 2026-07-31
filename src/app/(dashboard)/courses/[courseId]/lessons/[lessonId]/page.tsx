@@ -42,7 +42,7 @@ export default async function LessonPage({
     ? (
         await supabase
           .from("submissions")
-          .select("status, text_content")
+          .select("status, text_content, audio_storage_path")
           .eq("assignment_id", assignment.id)
           .eq("user_id", profile.id)
           .maybeSingle()
@@ -74,6 +74,7 @@ export default async function LessonPage({
   const continueButton = (
     <ContinueButton
       lessonId={lessonId}
+      courseId={courseId}
       continueTarget={continueTarget}
       hasNext={Boolean(nextLesson)}
       disabled={mustSubmitFirst}
@@ -136,6 +137,7 @@ export default async function LessonPage({
               ? {
                   status: existingSubmission.status === "approved" ? "approved" : "pending_review",
                   text_content: existingSubmission.text_content,
+                  audio_storage_path: existingSubmission.audio_storage_path,
                 }
               : null
           }
@@ -155,11 +157,13 @@ export default async function LessonPage({
 
 function ContinueButton({
   lessonId,
+  courseId,
   continueTarget,
   hasNext,
   disabled,
 }: {
   lessonId: string;
+  courseId: string;
   continueTarget: string;
   hasNext: boolean;
   disabled: boolean;
@@ -178,7 +182,7 @@ function ContinueButton({
   }
 
   return (
-    <form action={completeAndAdvance.bind(null, lessonId, continueTarget)}>
+    <form action={completeAndAdvance.bind(null, lessonId, courseId, continueTarget)}>
       <button
         type="submit"
         className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"

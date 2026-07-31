@@ -97,20 +97,55 @@ export async function pingProgress(
  */
 export async function completeAndAdvance(
   lessonId: string,
+  courseId: string,
   redirectTo: string,
 ): Promise<void> {
   const profile = await requireSession();
-  if (profile) {
-    const supabase = await createClient();
-    await supabase.from("progress").upsert(
-      { user_id: profile.id, lesson_id: lessonId, is_completed: true },
-      { onConflict: "user_id,lesson_id" },
-    );
+  if (!profile) redirect("/login");
+
+  const supabase = await createClient();
+  const ownLessonUrl = `/courses/${courseId}/lessons/${lessonId}`;
+
+  // Server-side enforcement, not just a hidden button. Matches the
+  // student-facing copy: a submission must exist to proceed — grading
+  // (approval) is a separate, asynchronous admin workflow that shouldn't
+  // stall the whole cohort's progress on review turnaround.
+  const { data: lesson } = await supabase
+    .from("lessons")
+    .select("requires_assignment")
+    .eq("id", lessonId)
+    .single();
+
+  if (lesson?.requires_assignment) {
+    const { data: assignment } = await supabase
+      .from("assignments")
+      .select("id")
+      .eq("lesson_id", lessonId)
+      .maybeSingle();
+
+    if (assignment) {
+      const { data: submission } = await supabase
+        .from("submissions")
+        .select("id")
+        .eq("assignment_id", assignment.id)
+        .eq("user_id", profile.id)
+        .maybeSingle();
+
+      if (!submission) {
+        redirect(ownLessonUrl);
+      }
+    }
   }
+
+  await supabase.from("progress").upsert(
+    { user_id: profile.id, lesson_id: lessonId, is_completed: true },
+    { onConflict: "user_id,lesson_id" },
+  );
   redirect(redirectTo);
 }
 
 export type SubmissionResult = { error: string | null };
+
 
 /**
  * Verifies the caller can legitimately submit to this assignment before
@@ -250,4 +285,46 @@ export async function submitAudioAssignment(
 
   if (error) return { error: "Upload succeeded, but saving the submission failed." };
   return { error: null };
+}
+
+/**
+ * For playing back a submitted recording — either the student listening to
+ * their own submission, or an admin grading it. Uses the admin client
+ * rather than relying on storage-path RLS, matching prepareSubmissionUpload
+ * above: simpler to reason about than keeping a path convention and an RLS
+ * policy in sync with each other.
+ */
+export async function getSubmissionAudioUrl(
+  assignmentId: string,
+  path: string,
+): Promise<PlaybackResult> {
+  const profile = await requireSession();
+  if (!profile) return { ok: false, error: "Not signed in." };
+
+  const supabase = await createClient();
+  const { data: submission } = await supabase
+    .from("submissions")
+    .select("user_id")
+    .eq("assignment_id", assignmentId)
+    .eq("audio_storage_path", path)
+    .single();
+
+  if (!submission || (submission.user_id !== profile.id && profile.role !== "admin")) {
+    return { ok: false, error: "Not authorized." };
+  }
+
+  let admin;
+  try {
+    admin = createAdminClient();
+  } catch {
+    return {
+      ok: false,
+      error: "SUPABASE_SERVICE_ROLE_KEY isn't set in this deployment yet.",
+    };
+  }
+
+  const { data, error } = await admin.storage.from("submissions").createSignedUrl(path, 60 * 15);
+  if (error || !data) return { ok: false, error: "Could not load the recording." };
+
+  return { ok: true, url: data.signedUrl, resumeSeconds: 0 };
 }
