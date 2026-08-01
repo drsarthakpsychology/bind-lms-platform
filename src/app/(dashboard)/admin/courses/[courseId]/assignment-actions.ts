@@ -49,7 +49,7 @@ export async function createAssignment(
     .select("id")
     .single();
 
-  if (error || !data) return { error: "Could not create the assignment." };
+  if (error || !data) return { error: "Couldn't create the assignment. Check the title and try again." };
 
   revalidatePath(`/admin/courses/${courseId}`);
   revalidatePath(`/courses/${courseId}/lessons/${lessonId}`);
@@ -98,7 +98,7 @@ export async function saveAssignment(
     })
     .eq("id", assignmentId);
 
-  if (error) return { error: "Could not save the assignment." };
+  if (error) return { error: "Couldn't save the assignment. Try again." };
 
   revalidatePath(`/admin/courses/${courseId}`);
   revalidatePath(`/courses/${courseId}/lessons/${lessonId}`);
