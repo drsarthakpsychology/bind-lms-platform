@@ -218,6 +218,7 @@ export default async function LessonPage({
                 format: m.format,
                 sizeBytes: m.size_bytes,
               }))}
+              courseId={courseId}
               isAdmin={profile.role === "admin"}
             />
           ) : (

@@ -225,17 +225,23 @@ export default async function CourseOverviewPage({
         {courseMaterials && courseMaterials.length > 0 ? (
           <ul className="space-y-2">
             {courseMaterials.map((m) => (
-              <li
-                key={m.id}
-                className="flex items-center gap-3 rounded-md border-2 border-border bg-card p-3"
-              >
-                <BookOpen className="size-4 shrink-0 text-primary" aria-hidden />
-                <span className="min-w-0 flex-1 truncate text-small font-medium">
-                  {m.title}
-                </span>
-                <span className="text-caption text-muted-foreground">
-                  {m.format?.toUpperCase() ?? m.kind}
-                </span>
+              <li key={m.id}>
+                <Link
+                  href={`/courses/${courseId}/materials/${m.id}`}
+                  className={cn(
+                    cardVariants({ variant: "interactive" }),
+                    "flex items-center gap-3 p-3"
+                  )}
+                >
+                  <BookOpen className="size-4 shrink-0 text-primary" aria-hidden />
+                  <span className="min-w-0 flex-1 truncate text-small font-medium">
+                    {m.title}
+                  </span>
+                  <span className="text-caption text-muted-foreground">
+                    {m.format?.toUpperCase() ?? m.kind}
+                  </span>
+                  <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />
+                </Link>
               </li>
             ))}
           </ul>
