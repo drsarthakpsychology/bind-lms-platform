@@ -1,7 +1,13 @@
 import Link from "next/link";
+import { BookOpen, Plus } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { CreateCourseForm } from "./create-course-form";
 import { CourseActions } from "./course-actions";
+
+import { PageHeader } from "@/components/design-system/page-header";
+import { EmptyState } from "@/components/design-system/empty-state";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default async function CoursesPage() {
   const supabase = await createClient();
@@ -16,46 +22,67 @@ export default async function CoursesPage() {
     lessonCounts.set(lesson.course_id, (lessonCounts.get(lesson.course_id) ?? 0) + 1);
   }
 
+  const published = (courses ?? []).filter((c) => c.is_published).length;
+
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
-          Courses
-        </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Unpublished courses are invisible to students. Preview a
-          draft&apos;s videos from its detail page before publishing.
-        </p>
-      </div>
+    <div className="space-y-8">
+      <PageHeader
+        title="Courses"
+        description="Unpublished courses are invisible to students. Preview a draft's videos from its detail page before publishing."
+        badge={
+          <Badge variant="secondary">
+            {published} published / {(courses ?? []).length} total
+          </Badge>
+        }
+      />
 
-      <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
-        <h2 className="text-sm font-medium text-foreground">Create a course</h2>
-        <div className="mt-3">
+      <Card variant="raised">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Plus className="size-4 text-primary" aria-hidden />
+            Create a course
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
           <CreateCourseForm />
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
-      <div className="grid gap-3 sm:grid-cols-2">
-        {(courses ?? []).length === 0 && (
-          <p className="text-sm text-muted-foreground">No courses yet.</p>
-        )}
-        {(courses ?? []).map((course) => (
-          <div key={course.id} className="rounded-xl border border-border bg-card p-4">
-            <div className="flex items-start justify-between gap-2">
-              <Link
-                href={`/admin/courses/${course.id}`}
-                className="font-medium text-foreground hover:underline"
-              >
-                {course.title}
-              </Link>
-              <CourseActions courseId={course.id} isPublished={course.is_published} />
-            </div>
-            <p className="mt-1 font-mono text-xs text-muted-foreground">
-              {lessonCounts.get(course.id) ?? 0} lessons
-            </p>
-          </div>
-        ))}
-      </div>
+      {(courses ?? []).length === 0 ? (
+        <EmptyState
+          icon={<BookOpen className="size-6" aria-hidden />}
+          title="No courses yet"
+          description="Create your first course above to get started."
+        />
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {(courses ?? []).map((course) => (
+            <Card key={course.id} variant="flat" className="h-full">
+              <CardHeader>
+                <div className="flex items-start justify-between gap-2">
+                  <Link
+                    href={`/admin/courses/${course.id}`}
+                    className="text-h3 leading-snug hover:text-primary"
+                  >
+                    {course.title}
+                  </Link>
+                  <CourseActions courseId={course.id} isPublished={course.is_published} />
+                </div>
+              </CardHeader>
+              <CardContent className="flex items-center justify-between pt-0">
+                <span className="text-caption text-muted-foreground">
+                  {lessonCounts.get(course.id) ?? 0} lessons
+                </span>
+                {course.is_published ? (
+                  <Badge variant="success">Published</Badge>
+                ) : (
+                  <Badge variant="pending">Draft</Badge>
+                )}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

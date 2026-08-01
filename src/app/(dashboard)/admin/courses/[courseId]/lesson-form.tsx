@@ -1,8 +1,16 @@
 "use client";
 
 import { useActionState, useEffect, useRef, useState } from "react";
+import { CheckCircle2, CircleAlert, Loader2, Upload, Video as VideoIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { prepareVideoUpload, createLessonWithVideo, type CreateLessonState } from "./actions";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Switch } from "@/components/ui/switch";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const initialState: CreateLessonState = { error: null };
 
@@ -65,13 +73,18 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
   const canSubmit = uploadStatus === "done" && !pending;
 
   return (
-    <form ref={formRef} action={formAction} className="space-y-4">
+    <form ref={formRef} action={formAction} className="space-y-5">
       <input type="hidden" name="videoPath" value={videoPath ?? ""} />
 
-      <div>
-        <label className="block text-xs font-medium text-muted-foreground">Video</label>
-        <div className="mt-1 flex items-center gap-3">
-          <label className="cursor-pointer rounded-lg border border-border px-3 py-2 text-sm text-foreground hover:bg-secondary">
+      <div className="space-y-1.5">
+        <Label>Video</Label>
+        <div className="flex flex-wrap items-center gap-3">
+          <label className="inline-flex cursor-pointer items-center gap-2 rounded-md border-2 border-border bg-card px-3 py-2 text-small font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px">
+            {uploadStatus === "uploading" ? (
+              <Loader2 className="size-4 animate-spin" aria-hidden />
+            ) : (
+              <Upload className="size-4" aria-hidden />
+            )}
             {fileName ? "Choose a different file" : "Choose video file"}
             <input
               type="file"
@@ -81,116 +94,109 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
             />
           </label>
           {fileName && (
-            <span className="truncate text-sm text-muted-foreground">{fileName}</span>
+            <span className="truncate text-small text-muted-foreground">{fileName}</span>
           )}
         </div>
         {uploadStatus === "uploading" && (
-          <p className="mt-2 text-xs text-status-pending-fg">Uploading in the background…</p>
+          <p className="text-caption text-status-pending-fg">Uploading in the background…</p>
         )}
         {uploadStatus === "done" && (
-          <p className="mt-2 text-xs text-status-success-fg">Upload complete.</p>
+          <p className="flex items-center gap-1.5 text-caption text-status-success-fg">
+            <CheckCircle2 className="size-3.5" aria-hidden />
+            Upload complete.
+          </p>
         )}
         {uploadStatus === "error" && (
-          <p className="mt-2 text-xs text-status-alert-fg">{uploadError}</p>
+          <p role="alert" className="flex items-center gap-1.5 text-caption text-status-alert-fg">
+            <CircleAlert className="size-3.5" aria-hidden />
+            {uploadError}
+          </p>
         )}
       </div>
 
-      <div className="flex flex-wrap items-end gap-3">
-        <div className="min-w-[180px] flex-1">
-          <label htmlFor="title" className="block text-xs font-medium text-muted-foreground">
-            Lesson title
-          </label>
-          <input
+      <div className="flex flex-wrap items-end gap-4">
+        <div className="min-w-[180px] flex-1 space-y-1.5">
+          <Label htmlFor="title">Lesson title</Label>
+          <Input
             id="title"
             name="title"
             type="text"
             required
-            className="mt-1 block w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
             placeholder="Psychiatric Interviewing Basics"
           />
         </div>
-        <div className="w-24">
-          <label htmlFor="orderIndex" className="block text-xs font-medium text-muted-foreground">
-            Order
-          </label>
-          <input
+        <div className="w-24 space-y-1.5">
+          <Label htmlFor="orderIndex">Order</Label>
+          <Input
             id="orderIndex"
             name="orderIndex"
             type="number"
             defaultValue={nextOrderIndex}
-            className="mt-1 block w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
           />
         </div>
       </div>
 
-      <div>
-        <label htmlFor="description" className="block text-xs font-medium text-muted-foreground">
-          Lesson notes (optional)
-        </label>
-        <textarea
+      <div className="space-y-1.5">
+        <Label htmlFor="description">Lesson notes (optional)</Label>
+        <Textarea
           id="description"
           name="description"
           rows={3}
-          className="mt-1 block w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
           placeholder="Shown to students under the video."
         />
       </div>
 
-      <label className="flex items-center gap-2 text-sm text-foreground">
-        <input
-          type="checkbox"
-          name="requiresAssignment"
+      <label className="flex h-6 items-center gap-2.5 text-small font-medium text-foreground">
+        {/* The Switch renders a button and doesn't submit a value, so keep a
+            hidden input synced to it — the server action reads
+            `requiresAssignment === "on"`. */}
+        <input type="hidden" name="requiresAssignment" value={requiresAssignment ? "on" : ""} />
+        <Switch
           checked={requiresAssignment}
-          onChange={(e) => setRequiresAssignment(e.target.checked)}
-          className="h-4 w-4 rounded border-input"
+          onCheckedChange={setRequiresAssignment}
+          aria-label="Requires assignment"
         />
         Requires assignment
       </label>
 
       {requiresAssignment && (
-        <div className="space-y-3 rounded-lg border border-border bg-secondary p-3">
-          <div>
-            <label htmlFor="assignmentPrompt" className="block text-xs font-medium text-muted-foreground">
-              Assignment instructions
-            </label>
-            <textarea
+        <div className="space-y-4 rounded-md border-2 border-border bg-secondary/60 p-4">
+          <div className="space-y-1.5">
+            <Label htmlFor="assignmentPrompt">Assignment instructions</Label>
+            <Textarea
               id="assignmentPrompt"
               name="assignmentPrompt"
               rows={3}
-              className="mt-1 block w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
               placeholder="Summarize the key differences between CBT and DBT in 200 words."
             />
           </div>
-          <div>
-            <span className="block text-xs font-medium text-muted-foreground">Submission type</span>
-            <div className="mt-1 flex gap-4 text-sm text-foreground">
-              <label className="flex items-center gap-1.5">
-                <input type="radio" name="assignmentType" value="text" defaultChecked />
+          <fieldset>
+            <legend className="text-small font-medium text-foreground">Submission type</legend>
+            <div className="mt-2 flex gap-4 text-small text-foreground">
+              <label className="flex cursor-pointer items-center gap-1.5">
+                <input type="radio" name="assignmentType" value="text" defaultChecked className="size-4 accent-primary" />
                 Text
               </label>
-              <label className="flex items-center gap-1.5">
-                <input type="radio" name="assignmentType" value="audio" />
+              <label className="flex cursor-pointer items-center gap-1.5">
+                <input type="radio" name="assignmentType" value="audio" className="size-4 accent-primary" />
                 Audio
               </label>
             </div>
-          </div>
+          </fieldset>
         </div>
       )}
 
       {state.error && (
-        <p role="alert" className="text-sm text-status-alert-fg">
-          {state.error}
-        </p>
+        <Alert variant="destructive" role="alert">
+          <AlertTitle>Could not add lesson</AlertTitle>
+          <AlertDescription>{state.error}</AlertDescription>
+        </Alert>
       )}
 
-      <button
-        type="submit"
-        disabled={!canSubmit}
-        title={uploadStatus !== "done" ? "Upload a video first" : undefined}
-        className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
-      >
+      <Button type="submit" disabled={!canSubmit} title={uploadStatus !== "done" ? "Upload a video first" : undefined}>
+        <VideoIcon className="size-4" aria-hidden />
         {pending ? "Creating…" : "Add lesson"}
-      </button>
+      </Button>
     </form>
   );
 }

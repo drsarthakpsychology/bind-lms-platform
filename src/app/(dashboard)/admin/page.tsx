@@ -1,5 +1,8 @@
-import Link from "next/link";
+import { BookOpen, GraduationCap, Inbox, Users } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
+
+import { PageHeader } from "@/components/design-system/page-header";
+import { StatCard } from "@/components/design-system/stat-card";
 
 export default async function AdminOverviewPage() {
   const supabase = await createClient();
@@ -19,29 +22,29 @@ export default async function AdminOverviewPage() {
     ]);
 
   const stats = [
-    { label: "Students", value: studentsResult.count ?? 0, href: "/admin/students" },
-    { label: "Courses", value: coursesResult.count ?? 0, href: "/admin/courses" },
-    { label: "Lessons", value: lessonsResult.count ?? 0, href: "/admin/courses" },
-    { label: "Pending reviews", value: pendingResult.count ?? 0, href: "/admin/submissions" },
+    { label: "Students", value: studentsResult.count ?? 0, href: "/admin/students", icon: <Users className="size-4" />, accent: true },
+    { label: "Courses", value: coursesResult.count ?? 0, href: "/admin/courses", icon: <BookOpen className="size-4" /> },
+    { label: "Lessons", value: lessonsResult.count ?? 0, href: "/admin/courses", icon: <GraduationCap className="size-4" /> },
+    { label: "Pending reviews", value: pendingResult.count ?? 0, href: "/admin/submissions", icon: <Inbox className="size-4" /> },
   ];
 
   return (
-    <div>
-      <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
-        Overview
-      </h1>
-      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+    <div className="space-y-8">
+      <PageHeader
+        title="Overview"
+        description="A snapshot of your platform at a glance."
+      />
+
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (
-          <Link
+          <StatCard
             key={stat.label}
+            label={stat.label}
+            value={stat.value}
             href={stat.href}
-            className="rounded-xl border border-border bg-card p-4 transition-colors hover:bg-secondary"
-          >
-            <p className="font-mono text-2xl font-semibold text-foreground">
-              {stat.value}
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
-          </Link>
+            icon={stat.icon}
+            accent={stat.accent}
+          />
         ))}
       </div>
     </div>

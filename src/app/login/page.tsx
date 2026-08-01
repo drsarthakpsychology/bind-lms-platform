@@ -1,5 +1,8 @@
 import { redirect } from "next/navigation";
+import { Sparkles } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
+import { BRAND } from "@/lib/brand";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { LoginForm } from "./login-form";
 
 export default async function LoginPage() {
@@ -10,17 +13,35 @@ export default async function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-secondary px-5 py-10">
-      <div className="w-full max-w-sm rounded-xl border border-border bg-card p-6 shadow-sm sm:p-8">
-        <p className="text-sm font-medium text-muted-foreground">PLMS</p>
-        <h1 className="mt-1 font-serif text-2xl font-semibold tracking-tight text-foreground">
-          Sign in
-        </h1>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          Invite-only. Use the credentials your administrator sent you.
-        </p>
+    <div className="flex min-h-screen flex-col bg-background px-5 py-8">
+      <div className="flex items-center justify-between">
+        <span className="flex items-center gap-2 font-bold tracking-tight text-foreground">
+          <span className="flex size-7 items-center justify-center rounded-sm bg-primary text-sm font-black text-primary-foreground">
+            {BRAND.shortName.charAt(0)}
+          </span>
+          <span className="text-lg">{BRAND.shortName}</span>
+        </span>
+        <ThemeToggle />
+      </div>
 
-        <LoginForm />
+      <div className="flex flex-1 items-center justify-center">
+        <div className="w-full max-w-sm space-y-6">
+          <div className="space-y-2">
+            <h1 className="text-h1">Sign in</h1>
+            <p className="text-small text-muted-foreground">
+              {BRAND.tagline}. Invite-only — use the credentials your administrator sent you.
+            </p>
+          </div>
+
+          <div className="rounded-lg border-2 border-foreground bg-card p-6 hard-shadow-md sm:p-7">
+            <LoginForm />
+          </div>
+
+          <p className="flex items-center justify-center gap-1.5 text-caption text-muted-foreground">
+            <Sparkles className="size-3.5" aria-hidden />
+            {BRAND.name} is a private learning platform
+          </p>
+        </div>
       </div>
     </div>
   );

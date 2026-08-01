@@ -1,7 +1,13 @@
 "use client";
 
 import { useActionState } from "react";
+import { Loader2 } from "lucide-react";
 import { login, type LoginState } from "@/lib/auth/actions";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const initialState: LoginState = { error: null };
 
@@ -9,59 +15,42 @@ export function LoginForm() {
   const [state, formAction, pending] = useActionState(login, initialState);
 
   return (
-    <form action={formAction} className="mt-6 space-y-4">
-      <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-foreground"
-        >
-          Email
-        </label>
-        <input
+    <form action={formAction} className="space-y-4">
+      <div className="space-y-1.5">
+        <Label htmlFor="email">Email</Label>
+        <Input
           id="email"
           name="email"
           type="email"
           autoComplete="email"
           required
-          className="mt-1.5 block w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm text-foreground outline-none ring-offset-background placeholder:text-muted-foreground focus:ring-2 focus:ring-ring"
           placeholder="you@example.com"
         />
       </div>
 
-      <div>
-        <label
-          htmlFor="password"
-          className="block text-sm font-medium text-foreground"
-        >
-          Password
-        </label>
-        <input
+      <div className="space-y-1.5">
+        <Label htmlFor="password">Password</Label>
+        <Input
           id="password"
           name="password"
           type="password"
           autoComplete="current-password"
           required
-          className="mt-1.5 block w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm text-foreground outline-none ring-offset-background focus:ring-2 focus:ring-ring"
           placeholder="••••••••"
         />
       </div>
 
       {state.error && (
-        <p
-          role="alert"
-          className="rounded-lg bg-status-alert-bg px-3 py-2 text-sm text-status-alert-fg"
-        >
-          {state.error}
-        </p>
+        <Alert variant="destructive" role="alert">
+          <AlertTitle>Could not sign in</AlertTitle>
+          <AlertDescription>{state.error}</AlertDescription>
+        </Alert>
       )}
 
-      <button
-        type="submit"
-        disabled={pending}
-        className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
-      >
+      <Button type="submit" disabled={pending} className="w-full">
+        {pending && <Loader2 className="size-4 animate-spin" aria-hidden />}
         {pending ? "Signing in…" : "Sign in"}
-      </button>
+      </Button>
     </form>
   );
 }

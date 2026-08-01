@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { Inbox } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { SubmissionRow } from "./submission-row";
+
+import { PageHeader } from "@/components/design-system/page-header";
+import { EmptyState } from "@/components/design-system/empty-state";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default async function SubmissionsPage({
   searchParams,
@@ -48,60 +53,55 @@ export default async function SubmissionsPage({
     })
     .filter((s) => (showApproved ? s.status === "approved" : s.status !== "approved"));
 
+  const pendingCount = (submissions ?? []).filter((s) => s.status !== "approved").length;
+
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
-          Submissions
-        </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Assignments students have submitted, across every course.
-        </p>
-      </div>
+    <div className="space-y-8">
+      <PageHeader
+        title="Submissions"
+        description="Assignments students have submitted, across every course."
+      />
 
-      <div className="flex gap-1 border-b border-border">
-        <Link
-          href="/admin/submissions"
-          className={
-            !showApproved
-              ? "border-b-2 border-primary px-3 py-2 text-sm font-medium text-foreground"
-              : "px-3 py-2 text-sm text-muted-foreground hover:text-foreground"
-          }
-        >
-          Pending
-        </Link>
-        <Link
-          href="/admin/submissions?filter=approved"
-          className={
+      <Tabs value={showApproved ? "approved" : "pending"} defaultValue="pending">
+        <TabsList>
+          <TabsTrigger value="pending" asChild>
+            <Link href="/admin/submissions">Pending</Link>
+          </TabsTrigger>
+          <TabsTrigger value="approved" asChild>
+            <Link href="/admin/submissions?filter=approved">Approved</Link>
+          </TabsTrigger>
+        </TabsList>
+      </Tabs>
+
+      {enriched.length === 0 ? (
+        <EmptyState
+          icon={<Inbox className="size-6" aria-hidden />}
+          title={showApproved ? "Nothing approved yet" : "No pending submissions"}
+          description={
             showApproved
-              ? "border-b-2 border-primary px-3 py-2 text-sm font-medium text-foreground"
-              : "px-3 py-2 text-sm text-muted-foreground hover:text-foreground"
+              ? "Approved assignments will appear here."
+              : pendingCount === 0
+                ? "You're all caught up."
+                : "Check back when students submit work."
           }
-        >
-          Approved
-        </Link>
-      </div>
-
-      <div className="space-y-3">
-        {enriched.length === 0 && (
-          <p className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
-            {showApproved ? "Nothing approved yet." : "No pending submissions."}
-          </p>
-        )}
-        {enriched.map((submission) => (
-          <SubmissionRow
-            key={submission.id}
-            submissionId={submission.id}
-            studentEmail={submission.studentEmail}
-            courseTitle={submission.courseTitle}
-            lessonTitle={submission.lessonTitle}
-            promptText={submission.promptText}
-            textContent={submission.text_content}
-            audioStoragePath={submission.audio_storage_path}
-            status={submission.status === "approved" ? "approved" : "pending_review"}
-          />
-        ))}
-      </div>
+        />
+      ) : (
+        <div className="space-y-3">
+          {enriched.map((submission) => (
+            <SubmissionRow
+              key={submission.id}
+              submissionId={submission.id}
+              studentEmail={submission.studentEmail}
+              courseTitle={submission.courseTitle}
+              lessonTitle={submission.lessonTitle}
+              promptText={submission.promptText}
+              textContent={submission.text_content}
+              audioStoragePath={submission.audio_storage_path}
+              status={submission.status === "approved" ? "approved" : "pending_review"}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

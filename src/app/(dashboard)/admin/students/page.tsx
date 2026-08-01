@@ -1,5 +1,19 @@
+import { UserPlus, Users } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { CreateStudentForm } from "./create-student-form";
+
+import { PageHeader } from "@/components/design-system/page-header";
+import { EmptyState } from "@/components/design-system/empty-state";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 function formatDate(iso: string | null): string {
   if (!iso) return "No expiry set";
@@ -22,54 +36,76 @@ export default async function StudentsPage() {
   const students = profiles ?? [];
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
-          Students
-        </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          There&apos;s no sign-up page — this is the only way accounts get created.
-        </p>
-      </div>
+    <div className="space-y-8">
+      <PageHeader
+        title="Students"
+        description="There's no sign-up page — this is the only way accounts get created."
+      />
 
-      <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
-        <h2 className="text-sm font-medium text-foreground">Add a student</h2>
-        <div className="mt-3">
+      <Card variant="raised">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <UserPlus className="size-4 text-primary" aria-hidden />
+            Add a student
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
           <CreateStudentForm />
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
-      <div className="overflow-hidden rounded-xl border border-border bg-card">
-        <table className="w-full text-left text-sm">
-          <thead className="border-b border-border bg-secondary text-xs text-muted-foreground">
-            <tr>
-              <th className="px-4 py-2 font-medium">Email</th>
-              <th className="px-4 py-2 font-medium">Expires</th>
-              <th className="px-4 py-2 font-medium">Signed in</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-border">
-            {students.length === 0 && (
-              <tr>
-                <td colSpan={3} className="px-4 py-6 text-center text-muted-foreground">
-                  No students yet.
-                </td>
-              </tr>
-            )}
-            {students.map((student) => (
-              <tr key={student.id}>
-                <td className="px-4 py-3 text-foreground">{student.email ?? student.id}</td>
-                <td className="px-4 py-3 text-muted-foreground">
-                  {formatDate(student.expires_at)}
-                </td>
-                <td className="px-4 py-3 text-muted-foreground">
-                  {student.active_session_token ? "Active session" : "Not signed in"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <Card variant="flat">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-h3">
+            <Users className="size-4 text-muted-foreground" aria-hidden />
+            All students
+            <Badge variant="secondary" className="ml-1">
+              {students.length}
+            </Badge>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="pt-0">
+          {students.length === 0 ? (
+            <EmptyState
+              compact
+              icon={<Users className="size-6" aria-hidden />}
+              title="No students yet"
+              description="Create your first student above to get started."
+            />
+          ) : (
+            <div className="overflow-hidden rounded-md border-2 border-border">
+              <Table>
+                <TableHeader className="bg-muted">
+                  <TableRow>
+                    <TableHead>Email</TableHead>
+                    <TableHead>Expires</TableHead>
+                    <TableHead>Signed in</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {students.map((student) => (
+                    <TableRow key={student.id}>
+                      <TableCell className="font-medium text-foreground">
+                        {student.email ?? student.id}
+                      </TableCell>
+                      <TableCell className="text-muted-foreground">
+                        {formatDate(student.expires_at)}
+                      </TableCell>
+                      <TableCell>
+                        {student.active_session_token ? (
+                          <Badge variant="success">Active session</Badge>
+                        ) : (
+                          <Badge variant="outline">Not signed in</Badge>
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

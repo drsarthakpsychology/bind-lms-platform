@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { CourseSidebar } from "./course-sidebar";
@@ -52,7 +51,7 @@ export default async function CourseLayout({
     : 0;
 
   return (
-    <div className="flex min-h-[calc(100vh-57px)] flex-col lg:flex-row">
+    <div className="flex min-h-[calc(100vh-56px)] flex-col lg:flex-row">
       <CourseSidebar
         courseId={courseId}
         courseTitle={course.title}
@@ -60,11 +59,6 @@ export default async function CourseLayout({
         progressPercent={progressPercent}
       />
       <div className="flex-1 overflow-x-hidden">
-        <div className="border-b border-border px-4 py-2 lg:hidden">
-          <Link href="/dashboard" className="text-xs text-muted-foreground hover:text-foreground">
-            ← My Courses
-          </Link>
-        </div>
         <div className="p-4 sm:p-6 lg:p-8">{children}</div>
       </div>
     </div>

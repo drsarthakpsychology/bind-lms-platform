@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { AudioLines, CheckCircle2, Clock, Loader2, Upload } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import {
   submitTextAssignment,
@@ -10,6 +11,12 @@ import {
   getSubmissionAudioUrl,
   type SubmissionResult,
 } from "./actions";
+
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 type ExistingSubmission = {
   status: "pending_review" | "approved";
@@ -94,70 +101,80 @@ export function AssignmentPanel({
   }
 
   return (
-    <div className="mt-6 rounded-xl border border-border bg-card p-5">
+    <div className="space-y-4">
       <div className="flex items-center justify-between gap-2">
-        <h2 className="text-sm font-medium text-foreground">Assignment</h2>
+        <span className="text-small text-muted-foreground">
+          {submissionType === "text" ? "Written response" : "Voice recording"}
+        </span>
         {submission && (
-          <span
-            className={
-              isApproved
-                ? "rounded-full bg-status-success-bg px-2 py-0.5 text-xs text-status-success-fg"
-                : "rounded-full bg-status-pending-bg px-2 py-0.5 text-xs text-status-pending-fg"
-            }
-          >
+          <Badge variant={isApproved ? "success" : "pending"}>
+            {isApproved ? (
+              <CheckCircle2 className="size-3" aria-hidden />
+            ) : (
+              <Clock className="size-3" aria-hidden />
+            )}
             {isApproved ? "Approved" : "Pending review"}
-          </span>
+          </Badge>
         )}
       </div>
 
       {promptText && (
-        <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-muted-foreground">
+        <div className="whitespace-pre-wrap rounded-md border-2 border-border bg-muted/50 p-4 text-small leading-relaxed text-foreground">
           {promptText}
-        </p>
+        </div>
       )}
 
       {!submission && (
-        <p className="mt-3 rounded-lg bg-status-info-bg px-3 py-2 text-xs text-status-info-fg">
-          Submit this assignment to unlock the next lesson. It doesn&apos;t need to be reviewed first.
-        </p>
+        <Alert variant="info">
+          <AudioLines className="size-4" aria-hidden />
+          <AlertDescription>
+            Submit this assignment to unlock the next lesson. It doesn&apos;t need to be reviewed
+            first.
+          </AlertDescription>
+        </Alert>
       )}
 
       {isApproved ? (
-        <div className="mt-4 rounded-lg bg-secondary p-3 text-sm text-foreground">
+        <div className="rounded-md border-2 border-border bg-secondary/60 p-4 text-small text-foreground">
           {submission?.text_content && (
             <p className="whitespace-pre-wrap">{submission.text_content}</p>
           )}
-          {playbackUrl && <audio controls src={playbackUrl} className="mt-1 w-full" />}
+          {playbackUrl && <audio controls src={playbackUrl} className="mt-2 w-full" />}
         </div>
       ) : submissionType === "text" ? (
-        <form action={formAction} className="mt-4 space-y-3">
-          <textarea
-            name="textContent"
-            rows={5}
-            defaultValue={submission?.text_content ?? ""}
-            required
-            className="block w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
-            placeholder="Write your response…"
-          />
+        <form action={formAction} className="space-y-3">
+          <div className="space-y-1.5">
+            <Label htmlFor="textContent">Your response</Label>
+            <Textarea
+              id="textContent"
+              name="textContent"
+              rows={5}
+              defaultValue={submission?.text_content ?? ""}
+              required
+              placeholder="Write your response…"
+            />
+          </div>
           {state.error && (
-            <p role="alert" className="text-xs text-status-alert-fg">
+            <p role="alert" className="text-caption text-status-alert-fg">
               {state.error}
             </p>
           )}
-          <button
-            type="submit"
-            disabled={pending}
-            className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
-          >
+          <Button type="submit" disabled={pending}>
+            {pending && <Loader2 className="size-4 animate-spin" aria-hidden />}
             {pending ? "Submitting…" : submission ? "Resubmit" : "Submit"}
-          </button>
+          </Button>
         </form>
       ) : (
-        <div className="mt-4 space-y-2">
+        <div className="space-y-3">
           {submission?.audio_storage_path && playbackUrl && (
             <audio controls src={playbackUrl} className="w-full" />
           )}
-          <label className="inline-block cursor-pointer rounded-lg border border-border px-3 py-2 text-sm text-foreground hover:bg-secondary">
+          <label className="inline-flex cursor-pointer items-center gap-2 rounded-md border-2 border-border bg-card px-3 py-2 text-small font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px">
+            {audioStatus === "uploading" ? (
+              <Loader2 className="size-4 animate-spin" aria-hidden />
+            ) : (
+              <Upload className="size-4" aria-hidden />
+            )}
             {audioStatus === "uploading"
               ? "Uploading…"
               : submission
@@ -171,7 +188,11 @@ export function AssignmentPanel({
               disabled={audioStatus === "uploading"}
             />
           </label>
-          {audioError && <p className="text-xs text-status-alert-fg">{audioError}</p>}
+          {audioError && (
+            <p role="alert" className="text-caption text-status-alert-fg">
+              {audioError}
+            </p>
+          )}
         </div>
       )}
     </div>

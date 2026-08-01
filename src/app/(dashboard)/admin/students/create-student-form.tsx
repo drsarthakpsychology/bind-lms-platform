@@ -1,7 +1,13 @@
 "use client";
 
 import { useActionState, useEffect, useRef } from "react";
+import { CheckCircle2, Loader2 } from "lucide-react";
 import { createStudent, type CreateStudentState } from "./actions";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const initialState: CreateStudentState = { error: null, success: false };
 
@@ -16,66 +22,55 @@ export function CreateStudentForm() {
   }, [state.success]);
 
   return (
-    <form ref={formRef} action={formAction} className="space-y-3">
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-        <div className="sm:col-span-1">
-          <label htmlFor="email" className="block text-xs font-medium text-muted-foreground">
-            Email
-          </label>
-          <input
+    <form ref={formRef} action={formAction} className="space-y-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="space-y-1.5">
+          <Label htmlFor="email">Email</Label>
+          <Input
             id="email"
             name="email"
             type="email"
             required
-            className="mt-1 block w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
             placeholder="student@example.com"
           />
         </div>
-        <div>
-          <label htmlFor="password" className="block text-xs font-medium text-muted-foreground">
-            Temporary password
-          </label>
-          <input
+        <div className="space-y-1.5">
+          <Label htmlFor="password">Temporary password</Label>
+          <Input
             id="password"
             name="password"
             type="text"
             required
             minLength={8}
-            className="mt-1 block w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
             placeholder="At least 8 characters"
           />
         </div>
-        <div>
-          <label htmlFor="expiresAt" className="block text-xs font-medium text-muted-foreground">
-            Access expires (optional)
-          </label>
-          <input
-            id="expiresAt"
-            name="expiresAt"
-            type="date"
-            className="mt-1 block w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
-          />
+        <div className="space-y-1.5">
+          <Label htmlFor="expiresAt">Access expires (optional)</Label>
+          <Input id="expiresAt" name="expiresAt" type="date" />
         </div>
       </div>
 
       {state.error && (
-        <p role="alert" className="rounded-lg bg-status-alert-bg px-3 py-2 text-sm text-status-alert-fg">
-          {state.error}
-        </p>
+        <Alert variant="destructive" role="alert">
+          <AlertTitle>Could not create student</AlertTitle>
+          <AlertDescription>{state.error}</AlertDescription>
+        </Alert>
       )}
       {state.success && (
-        <p className="rounded-lg bg-status-success-bg px-3 py-2 text-sm text-status-success-fg">
-          Student created. Send them the email and password directly.
-        </p>
+        <Alert variant="info">
+          <CheckCircle2 className="size-4" aria-hidden />
+          <AlertTitle>Student created</AlertTitle>
+          <AlertDescription>
+            Send them the email and password directly.
+          </AlertDescription>
+        </Alert>
       )}
 
-      <button
-        type="submit"
-        disabled={pending}
-        className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
-      >
+      <Button type="submit" disabled={pending}>
+        {pending && <Loader2 className="size-4 animate-spin" aria-hidden />}
         {pending ? "Creating…" : "Add student"}
-      </button>
+      </Button>
     </form>
   );
 }

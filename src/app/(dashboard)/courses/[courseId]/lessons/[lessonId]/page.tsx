@@ -1,10 +1,16 @@
 import { headers } from "next/headers";
 import Link from "next/link";
+import { ArrowLeft, ArrowRight, ChevronLeft, FileText, Lock } from "lucide-react";
+
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { getPlaybackUrl, completeAndAdvance } from "./actions";
 import { VideoPlayer } from "./video-player";
 import { AssignmentPanel } from "./assignment-panel";
+
+import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default async function LessonPage({
   params,
@@ -71,39 +77,35 @@ export default async function LessonPage({
   const user = userData?.user;
   const watermarkLabel = `${user?.email ?? "unknown"} · ${user?.id.slice(0, 8) ?? "unknown"} · ${ip}`;
 
-  const continueButton = (
-    <ContinueButton
-      lessonId={lessonId}
-      courseId={courseId}
-      continueTarget={continueTarget}
-      hasNext={Boolean(nextLesson)}
-      disabled={mustSubmitFirst}
-    />
-  );
+  const position = currentIndex >= 0 ? `${currentIndex + 1} / ${playable.length}` : null;
+  const continueLabel = nextLesson ? "Complete and Continue" : "Complete Course";
 
   return (
-    <div className="mx-auto max-w-3xl">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="min-w-0">
-          {prevLesson ? (
-            <Link
-              href={`/courses/${courseId}/lessons/${prevLesson.id}`}
-              className="text-sm text-muted-foreground hover:text-foreground"
-            >
-              ← Previous Lesson
-            </Link>
-          ) : (
-            <span className="text-sm text-muted-foreground/50">← Previous Lesson</span>
-          )}
-        </div>
-        {continueButton}
+    <div className="mx-auto max-w-3xl space-y-8">
+      {/* Breadcrumb */}
+      <div className="flex items-center justify-between gap-3">
+        <Link
+          href="/dashboard"
+          className="inline-flex items-center gap-1.5 text-small font-medium text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ChevronLeft className="size-4" aria-hidden />
+          My Courses
+        </Link>
+        {position ? (
+          <span className="text-numeric text-caption text-muted-foreground">{position}</span>
+        ) : null}
       </div>
 
-      <h1 className="mt-4 font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-        {lesson?.title ?? "Lesson"}
-      </h1>
+      {/* Lesson header */}
+      <div className="space-y-2">
+        <h1 className="text-h1">{lesson?.title ?? "Lesson"}</h1>
+        {lesson?.description ? (
+          <p className="text-small text-muted-foreground">{lesson.description}</p>
+        ) : null}
+      </div>
 
-      <div className="mt-4">
+      {/* Video frame */}
+      <div className="rounded-lg border-2 border-foreground bg-card p-2 hard-shadow-sm sm:p-3">
         {playback.ok ? (
           <VideoPlayer
             lessonId={lessonId}
@@ -112,83 +114,124 @@ export default async function LessonPage({
             watermarkLabel={watermarkLabel}
           />
         ) : (
-          <p className="rounded-lg bg-status-alert-bg px-3 py-2 text-sm text-status-alert-fg">
-            {playback.error}
-          </p>
+          <div className="flex aspect-video items-center justify-center rounded-md bg-muted p-6 text-center">
+            <Alert variant="warning" className="max-w-md">
+              <FileText className="size-4" aria-hidden />
+              <AlertTitle>Video unavailable</AlertTitle>
+              <AlertDescription>{playback.error}</AlertDescription>
+            </Alert>
+          </div>
         )}
       </div>
 
-      {lesson?.description && (
-        <div className="mt-6 rounded-xl border border-border bg-card p-5">
-          <h2 className="text-sm font-medium text-foreground">About this lesson</h2>
-          <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-muted-foreground">
-            {lesson.description}
-          </p>
-        </div>
-      )}
+      {/* Bottom actions: prev + continue */}
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        {prevLesson ? (
+          <Button asChild variant="outline" size="sm">
+            <Link href={`/courses/${courseId}/lessons/${prevLesson.id}`}>
+              <ArrowLeft className="size-4" aria-hidden />
+              Previous lesson
+            </Link>
+          </Button>
+        ) : (
+          <span className="inline-flex h-8 items-center gap-2 rounded-md border-2 border-border px-3 text-small text-muted-foreground opacity-60">
+            <ArrowLeft className="size-4" aria-hidden />
+            Previous lesson
+          </span>
+        )}
 
-      {assignment && (
-        <AssignmentPanel
-          assignmentId={assignment.id}
-          promptText={assignment.prompt_text}
-          submissionType={assignment.submission_type === "audio" ? "audio" : "text"}
-          existingSubmission={
-            existingSubmission
-              ? {
-                  status: existingSubmission.status === "approved" ? "approved" : "pending_review",
-                  text_content: existingSubmission.text_content,
-                  audio_storage_path: existingSubmission.audio_storage_path,
-                }
-              : null
-          }
+        <ContinueControl
+          lessonId={lessonId}
+          courseId={courseId}
+          continueTarget={continueTarget}
+          label={continueLabel}
+          disabled={mustSubmitFirst}
         />
+      </div>
+
+      {/* Assignment */}
+      {assignment && (
+        <Card variant="raised">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <FileText className="size-4 text-primary" aria-hidden />
+              Assignment
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <AssignmentPanel
+              assignmentId={assignment.id}
+              promptText={assignment.prompt_text}
+              submissionType={assignment.submission_type === "audio" ? "audio" : "text"}
+              existingSubmission={
+                existingSubmission
+                  ? {
+                      status: existingSubmission.status === "approved" ? "approved" : "pending_review",
+                      text_content: existingSubmission.text_content,
+                      audio_storage_path: existingSubmission.audio_storage_path,
+                    }
+                  : null
+              }
+            />
+          </CardContent>
+        </Card>
       )}
 
       {mustSubmitFirst && (
-        <p className="mt-4 text-center text-xs text-muted-foreground">
-          Submit the assignment above to continue to the next lesson.
-        </p>
+        <Alert variant="warning">
+          <Lock className="size-4" aria-hidden />
+          <AlertTitle>Submit to continue</AlertTitle>
+          <AlertDescription>
+            Submit the assignment above to unlock the next lesson.
+          </AlertDescription>
+        </Alert>
       )}
 
-      <div className="mt-6 flex justify-end">{continueButton}</div>
+      {/* Bottom continue */}
+      <div className="flex justify-end">
+        <ContinueControl
+          lessonId={lessonId}
+          courseId={courseId}
+          continueTarget={continueTarget}
+          label={continueLabel}
+          disabled={mustSubmitFirst}
+          size="lg"
+        />
+      </div>
     </div>
   );
 }
 
-function ContinueButton({
+function ContinueControl({
   lessonId,
   courseId,
   continueTarget,
-  hasNext,
+  label,
   disabled,
+  size = "default",
 }: {
   lessonId: string;
   courseId: string;
   continueTarget: string;
-  hasNext: boolean;
+  label: string;
   disabled: boolean;
+  size?: "default" | "lg";
 }) {
   if (disabled) {
     return (
-      <button
-        type="button"
-        disabled
-        title="Submit the assignment below to continue"
-        className="cursor-not-allowed rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground opacity-50"
-      >
-        {hasNext ? "Complete and Continue →" : "Complete Course →"}
-      </button>
+      <Button type="button" disabled size={size} title="Submit the assignment below to continue">
+        {label}
+        <ArrowRight className="size-4" aria-hidden />
+      </Button>
     );
   }
 
   return (
     <form action={completeAndAdvance.bind(null, lessonId, courseId, continueTarget)}>
-      <button
-        type="submit"
-        className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-      >
-        {hasNext ? "Complete and Continue →" : "Complete Course →"}
-      </button>
+      <Button type="submit" size={size}>
+        {label}
+        <ArrowRight className="size-4" aria-hidden />
+      </Button>
     </form>
   );
 }

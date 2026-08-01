@@ -61,7 +61,7 @@ export function VideoPlayer({
   }
 
   return (
-    <div className="relative overflow-hidden rounded-xl bg-black">
+    <div className="relative overflow-hidden rounded-md bg-black">
       <video
         ref={videoRef}
         src={src}
@@ -75,8 +75,8 @@ export function VideoPlayer({
 
       {tampered && (
         <div className="absolute inset-0 flex items-center justify-center bg-black p-6 text-center">
-          <div>
-            <p className="font-medium text-white">Playback paused</p>
+          <div className="max-w-md rounded-md border-2 border-white/20 bg-black/70 p-6">
+            <p className="font-semibold text-white">Playback paused</p>
             <p className="mt-2 text-sm text-gray-300">
               This video&apos;s watermark was tampered with. Reload the page to continue watching.
             </p>

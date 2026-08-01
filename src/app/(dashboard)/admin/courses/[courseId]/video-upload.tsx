@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { CheckCircle2, Loader2, Upload } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { prepareVideoUpload, attachVideoToLesson } from "./actions";
+
+import { Badge } from "@/components/ui/badge";
 
 export function VideoUpload({
   lessonId,
@@ -62,17 +65,23 @@ export function VideoUpload({
   return (
     <div className="flex flex-wrap items-center gap-2">
       {hasVideo && status === "idle" && !errorMsg && (
-        <span className="rounded-full bg-status-success-bg px-2 py-0.5 text-xs text-status-success-fg">
+        <Badge variant="success">
+          <CheckCircle2 className="size-3" aria-hidden />
           Video attached
-        </span>
+        </Badge>
       )}
       <label
         className={
           status === "uploading"
-            ? "cursor-not-allowed rounded-lg border border-border px-2.5 py-1 text-xs text-muted-foreground"
-            : "cursor-pointer rounded-lg border border-border px-2.5 py-1 text-xs text-foreground hover:bg-secondary"
+            ? "inline-flex cursor-not-allowed items-center gap-1.5 rounded-md border-2 border-border px-2.5 py-1.5 text-xs text-muted-foreground"
+            : "inline-flex cursor-pointer items-center gap-1.5 rounded-md border-2 border-border bg-card px-2.5 py-1.5 text-xs font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
         }
       >
+        {status === "uploading" ? (
+          <Loader2 className="size-3.5 animate-spin" aria-hidden />
+        ) : (
+          <Upload className="size-3.5" aria-hidden />
+        )}
         {status === "uploading" ? "Uploading…" : hasVideo ? "Replace video" : "Upload video"}
         <input
           type="file"
@@ -82,7 +91,7 @@ export function VideoUpload({
           disabled={status === "uploading"}
         />
       </label>
-      {errorMsg && <span className="text-xs text-status-alert-fg">{errorMsg}</span>}
+      {errorMsg && <span role="alert" className="text-xs text-status-alert-fg">{errorMsg}</span>}
     </div>
   );
 }

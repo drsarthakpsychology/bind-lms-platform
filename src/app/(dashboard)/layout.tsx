@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth/session";
-import { logout } from "@/lib/auth/actions";
+import { AppShell } from "@/components/app-shell";
 import { ViewModeToggle } from "./view-mode-toggle";
 import { VIEW_MODE_COOKIE } from "./view-mode-constants";
 
@@ -23,25 +23,22 @@ export default async function DashboardLayout({
   const cookieStore = await cookies();
   const viewingAsStudent = cookieStore.get(VIEW_MODE_COOKIE)?.value === "student";
 
+  const role = session.profile.role;
+  // Admin viewing the student side is in "student" mode; everyone else is in
+  // their natural mode. `mode` only controls navigation layout, not access.
+  const mode = role === "admin" && !viewingAsStudent ? "admin" : "student";
+
   return (
-    <div className="min-h-screen bg-secondary">
-      <header className="flex items-center justify-between border-b border-border bg-card px-4 py-3 sm:px-6">
-        <span className="text-sm font-medium text-muted-foreground">PLMS</span>
-        <div className="flex items-center gap-3">
-          {session.profile.role === "admin" && (
-            <ViewModeToggle currentMode={viewingAsStudent ? "student" : "admin"} />
-          )}
-          <form action={logout}>
-            <button
-              type="submit"
-              className="rounded-lg border border-border px-3 py-1.5 text-sm text-foreground transition-colors hover:bg-secondary"
-            >
-              Log out
-            </button>
-          </form>
-        </div>
-      </header>
-      <main className="px-4 py-6 sm:px-6">{children}</main>
-    </div>
+    <AppShell
+      role={role}
+      mode={mode}
+      viewModeSwitch={
+        role === "admin" ? (
+          <ViewModeToggle currentMode={viewingAsStudent ? "student" : "admin"} />
+        ) : undefined
+      }
+    >
+      {children}
+    </AppShell>
   );
 }

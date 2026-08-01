@@ -1,62 +1,134 @@
 @import "tailwindcss";
 
+/* Class-based dark mode (controlled by next-themes). */
+@custom-variant dark (&:is(.dark *));
+
+/* =============================================================================
+   DESIGN TOKENS — Soft Brutalism
+   =============================================================================
+   Palette: Signal orange on warm paper. 2px ink borders, hard offset shadows
+   (zero blur), radii: 10px cards / 6px inputs / 999px pills.
+
+   Runtime variables live in `:root` / `.dark` so they can change per theme.
+   `@theme inline` maps them into Tailwind namespaces (bg-card, text-ink, ...).
+   ============================================================================= */
+
 :root {
-  --radius: 1rem;
+  /* --- Color: surfaces --- */
+  --background: #faf7f2; /* warm paper */
+  --foreground: #16130f; /* near-black ink */
 
-  --background: #ffffff;
-  --foreground: #171717;
+  --card: #fffdf9; /* elevated paper */
+  --card-foreground: #16130f;
 
-  --card: #ffffff;
-  --card-foreground: #171717;
+  --popover: #fffdf9;
+  --popover-foreground: #16130f;
 
-  /* Indigo-violet primary — the recurring accent across the T-Course and
-     Quyl references (active nav state, primary buttons, progress fill). */
-  --primary: #6c5ce7;
-  --primary-foreground: #ffffff;
+  /* --- Color: brand --- */
+  --primary: #ff4d00; /* signal orange */
+  --primary-foreground: #16130f; /* ink on orange, not white */
 
-  /* Soft lavender surface used for sidebars/cards, e.g. the light panels
-     behind "Your Study Progress" and the Quyl status tiles. */
-  --secondary: #f6f5fa;
-  --secondary-foreground: #171717;
+  --secondary: #f3ede3; /* warm sand surface */
+  --secondary-foreground: #16130f;
 
-  --muted: #f6f5fa;
-  --muted-foreground: #6b7280;
+  --muted: #f3ede3;
+  --muted-foreground: #6b6257;
 
-  --accent: #ededfb;
-  --accent-foreground: #6c5ce7;
+  --accent: #ffe3d6; /* pale orange wash */
+  --accent-foreground: #16130f;
 
-  --destructive: #e5484d;
+  --destructive: #d92d20;
   --destructive-foreground: #ffffff;
 
-  --border: #e7e5f0;
-  --input: #e7e5f0;
-  --ring: #6c5ce7;
+  /* --- Color: lines & focus --- */
+  --border: #16130f; /* ink rules */
+  --input: #16130f;
+  --ring: #ff4d00;
 
-  /* Semantic status tones lifted from the pastel course/status cards
-     (Infinity's popular-course blocks, Quyl's status tiles, the
-     UI/UX-designer / QA-engineer track cards). Used for chips, badges,
-     and status tiles — not raw Tailwind colors — so meaning stays
-     consistent wherever they show up. */
-  --status-success-bg: #e3f5ea;
-  --status-success-fg: #1f9254;
-  --status-pending-bg: #fdf3d9;
-  --status-pending-fg: #b8860b;
-  --status-info-bg: #e6f2fb;
-  --status-info-fg: #2b7bb0;
-  --status-alert-bg: #fdece3;
-  --status-alert-fg: #c2653f;
+  /* --- Color: hard shadows --- */
+  --hard-shadow-color: #16130f; /* solid ink offset */
+
+  /* --- Semantic status tones (label + icon, never color alone) --- */
+  --status-success-bg: #d9f3df;
+  --status-success-fg: #0f7a3d;
+  --status-pending-bg: #fdeec9;
+  --status-pending-fg: #8a5a00;
+  --status-info-bg: #dce9f8;
+  --status-info-fg: #1c5fa8;
+  --status-alert-bg: #fde3d6;
+  --status-alert-fg: #b83a00;
+
+  /* --- Radius --- */
+  --radius: 0.625rem; /* 10px — cards/dialogs */
+  --radius-input: 0.375rem; /* 6px — controls */
+  --radius-pill: 999px;
+
+  /* --- Hard shadow scale (zero blur) --- */
+  --shadow-hard-xs: 2px 2px 0 0 var(--hard-shadow-color);
+  --shadow-hard-sm: 3px 3px 0 0 var(--hard-shadow-color);
+  --shadow-hard-md: 4px 4px 0 0 var(--hard-shadow-color);
+  --shadow-hard-lg: 6px 6px 0 0 var(--hard-shadow-color);
+
+  /* --- Charts (unused by Milestone 1, reserved for later analytics) --- */
+  --chart-1: #ff4d00;
+  --chart-2: #16130f;
+  --chart-3: #f4b860;
+  --chart-4: #4f7cac;
+  --chart-5: #7c9885;
 }
 
-@theme inline {
-  --radius-sm: calc(var(--radius) - 8px);
-  --radius-md: calc(var(--radius) - 4px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+.dark {
+  --background: #17140f; /* warm near-black paper */
+  --foreground: #f5f0e8;
 
+  --card: #201c15;
+  --card-foreground: #f5f0e8;
+
+  --popover: #201c15;
+  --popover-foreground: #f5f0e8;
+
+  --primary: #ff5a1f; /* brightened signal orange */
+  --primary-foreground: #17140f;
+
+  --secondary: #2a251c;
+  --secondary-foreground: #f5f0e8;
+
+  --muted: #2a251c;
+  --muted-foreground: #a89f92;
+
+  --accent: #3a2415;
+  --accent-foreground: #ffd9c4;
+
+  --destructive: #ff6b5e;
+  --destructive-foreground: #17140f;
+
+  --border: #4a4234;
+  --input: #4a4234;
+  --ring: #ff5a1f;
+
+  --hard-shadow-color: #000000;
+
+  --status-success-bg: #10301c;
+  --status-success-fg: #6ee7a0;
+  --status-pending-bg: #3a2c0d;
+  --status-pending-fg: #f6c453;
+  --status-info-bg: #12283f;
+  --status-info-fg: #8fc3ff;
+  --status-alert-bg: #3a1a0d;
+  --status-alert-fg: #ffb08a;
+}
+
+/* =============================================================================
+   TAILWIND NAMESPACE MAPPINGS
+   ============================================================================= */
+
+@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -71,6 +143,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  --color-shadow: var(--hard-shadow-color);
+
   --color-status-success-bg: var(--status-success-bg);
   --color-status-success-fg: var(--status-success-fg);
   --color-status-pending-bg: var(--status-pending-bg);
@@ -80,31 +154,154 @@
   --color-status-alert-bg: var(--status-alert-bg);
   --color-status-alert-fg: var(--status-alert-fg);
 
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-serif);
+
+  --radius-sm: 0.25rem;
+  --radius-md: var(--radius-input); /* 6px */
+  --radius-lg: var(--radius); /* 10px */
+  --radius-xl: 0.875rem; /* 14px */
+
+  --shadow-hard-xs: var(--shadow-hard-xs);
+  --shadow-hard-sm: var(--shadow-hard-sm);
+  --shadow-hard-md: var(--shadow-hard-md);
+  --shadow-hard-lg: var(--shadow-hard-lg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --card: #141414;
-    --card-foreground: #ededed;
-    --primary: #8b7ff5;
-    --secondary: #1c1b22;
-    --secondary-foreground: #ededed;
-    --muted: #1c1b22;
-    --muted-foreground: #9ca3af;
-    --accent: #241f3d;
-    --accent-foreground: #ab9ff8;
-    --border: #262530;
-    --input: #262530;
+/* =============================================================================
+   CUSTOM UTILITIES
+   ============================================================================= */
+
+@utility hard-shadow-xs {
+  box-shadow: var(--shadow-hard-xs);
+}
+
+@utility hard-shadow-sm {
+  box-shadow: var(--shadow-hard-sm);
+}
+
+@utility hard-shadow-md {
+  box-shadow: var(--shadow-hard-md);
+}
+
+@utility hard-shadow-lg {
+  box-shadow: var(--shadow-hard-lg);
+}
+
+/* Surfaces that sit slightly above the paper (inputs, quiet cards). */
+@utility hard-shadow-flat {
+  box-shadow: 1px 1px 0 0 var(--hard-shadow-color);
+}
+
+/* =============================================================================
+   BASE
+   ============================================================================= */
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Default focus ring: visible signal-orange in both themes. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+/* =============================================================================
+   TYPE SCALE
+   =============================================================================
+   Utility classes for a consistent, tight type system.
+   ============================================================================= */
+
+@utility text-display {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+@utility text-h1 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+@utility text-h2 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+@utility text-h3 {
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+@utility text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+@utility text-body-strong {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+@utility text-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@utility text-caption {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+@utility text-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@utility text-numeric {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
 }

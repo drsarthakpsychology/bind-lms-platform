@@ -1,10 +1,17 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { ChevronLeft, FileVideo2, ListPlus } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { LessonForm } from "./lesson-form";
 import { VideoUpload } from "./video-upload";
 import { DeleteLessonButton } from "./delete-lesson-button";
 import { CourseActions } from "../course-actions";
+
+import { PageHeader } from "@/components/design-system/page-header";
+import { EmptyState } from "@/components/design-system/empty-state";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export default async function CourseDetailPage({
   params,
@@ -32,70 +39,93 @@ export default async function CourseDetailPage({
     : 1;
 
   return (
-    <div className="space-y-6">
-      <div>
-        <Link href="/admin/courses" className="text-sm text-muted-foreground hover:text-foreground">
-          ← Courses
-        </Link>
-        <div className="mt-1 flex items-center justify-between gap-2">
-          <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
-            {course.title}
-          </h1>
-          <CourseActions courseId={course.id} isPublished={course.is_published} />
-        </div>
-        {!course.is_published && (
-          <p className="mt-1 text-xs text-muted-foreground">
-            Draft — you can watch any uploaded videos below before publishing.
-          </p>
-        )}
-      </div>
+    <div className="space-y-8">
+      <Link
+        href="/admin/courses"
+        className="inline-flex items-center gap-1.5 text-small font-medium text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <ChevronLeft className="size-4" aria-hidden />
+        Courses
+      </Link>
 
-      <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
-        <h2 className="text-sm font-medium text-foreground">Add a lesson</h2>
-        <div className="mt-3">
+      <PageHeader
+        eyebrow={course.is_published ? "Published course" : "Draft course"}
+        title={course.title}
+        badge={
+          course.is_published ? (
+            <Badge variant="success">Published</Badge>
+          ) : (
+            <Badge variant="pending">Draft</Badge>
+          )
+        }
+        description={
+          course.is_published
+            ? "This course is live to students."
+            : "Draft — you can watch any uploaded videos below before publishing."
+        }
+        actions={<CourseActions courseId={course.id} isPublished={course.is_published} />}
+      />
+
+      <Card variant="raised">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <ListPlus className="size-4 text-primary" aria-hidden />
+            Add a lesson
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
           <LessonForm courseId={courseId} nextOrderIndex={nextOrderIndex} />
-        </div>
-      </div>
+        </CardContent>
+      </Card>
 
-      <div className="space-y-2">
-        {(lessons ?? []).length === 0 && (
-          <p className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
-            No lessons yet.
-          </p>
+      <section aria-label="Lessons" className="space-y-3">
+        {(lessons ?? []).length === 0 ? (
+          <EmptyState
+            icon={<FileVideo2 className="size-6" aria-hidden />}
+            title="No lessons yet"
+            description="Add your first lesson above — it starts with a video upload."
+          />
+        ) : (
+          (lessons ?? []).map((lesson) => (
+            <div
+              key={lesson.id}
+              className="flex flex-col gap-3 rounded-lg border-2 border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div className="min-w-0">
+                <p className="font-medium text-foreground">
+                  <span className="text-numeric mr-2 text-muted-foreground">
+                    {lesson.order_index}.
+                  </span>
+                  {lesson.title}
+                </p>
+                <div className="mt-1 flex flex-wrap items-center gap-2">
+                  {lesson.requires_assignment && (
+                    <Badge variant="info">Requires assignment</Badge>
+                  )}
+                  {lesson.video_storage_path ? (
+                    <Badge variant="success">Video attached</Badge>
+                  ) : (
+                    <Badge variant="outline">No video</Badge>
+                  )}
+                </div>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                {lesson.video_storage_path && (
+                  <Button asChild variant="secondary" size="sm">
+                    <Link href={`/courses/${courseId}/lessons/${lesson.id}`}>Watch</Link>
+                  </Button>
+                )}
+                <VideoUpload
+                  lessonId={lesson.id}
+                  courseId={courseId}
+                  hasVideo={Boolean(lesson.video_storage_path)}
+                />
+                <DeleteLessonButton lessonId={lesson.id} courseId={courseId} />
+              </div>
+            </div>
+          ))
         )}
-        {(lessons ?? []).map((lesson) => (
-          <div
-            key={lesson.id}
-            className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div>
-              <p className="font-medium text-foreground">
-                <span className="font-mono text-muted-foreground">{lesson.order_index}.</span>{" "}
-                {lesson.title}
-              </p>
-              {lesson.requires_assignment && (
-                <p className="mt-0.5 text-xs text-muted-foreground">Requires assignment</p>
-              )}
-            </div>
-            <div className="flex flex-wrap items-center gap-2">
-              {lesson.video_storage_path && (
-                <Link
-                  href={`/courses/${courseId}/lessons/${lesson.id}`}
-                  className="rounded-lg bg-primary px-2.5 py-1 text-xs font-medium text-primary-foreground hover:opacity-90"
-                >
-                  Watch
-                </Link>
-              )}
-              <VideoUpload
-                lessonId={lesson.id}
-                courseId={courseId}
-                hasVideo={Boolean(lesson.video_storage_path)}
-              />
-              <DeleteLessonButton lessonId={lesson.id} courseId={courseId} />
-            </div>
-          </div>
-        ))}
-      </div>
+      </section>
     </div>
   );
 }

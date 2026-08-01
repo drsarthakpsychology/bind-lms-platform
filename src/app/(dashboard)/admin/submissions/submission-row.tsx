@@ -2,7 +2,12 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { CheckCircle2, Clock, Loader2, Play, UserRound } from "lucide-react";
 import { approveSubmission, getSubmissionAudioUrl } from "./actions";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export function SubmissionRow({
   submissionId,
@@ -52,71 +57,77 @@ export function SubmissionRow({
   }
 
   return (
-    <div className="rounded-xl border border-border bg-card p-4 sm:p-5">
-      <div className="flex flex-wrap items-start justify-between gap-2">
-        <div>
-          <p className="text-sm font-medium text-foreground">{studentEmail}</p>
-          <p className="text-xs text-muted-foreground">
-            {courseTitle} · {lessonTitle}
-          </p>
-        </div>
-        <span
-          className={
-            status === "approved"
-              ? "rounded-full bg-status-success-bg px-2 py-0.5 text-xs text-status-success-fg"
-              : "rounded-full bg-status-pending-bg px-2 py-0.5 text-xs text-status-pending-fg"
-          }
-        >
-          {status === "approved" ? "Approved" : "Pending review"}
-        </span>
-      </div>
-
-      {promptText && (
-        <p className="mt-3 text-xs text-muted-foreground">
-          <span className="font-medium text-foreground">Prompt: </span>
-          {promptText}
-        </p>
-      )}
-
-      {textContent && (
-        <p className="mt-2 whitespace-pre-wrap rounded-lg bg-secondary p-3 text-sm text-foreground">
-          {textContent}
-        </p>
-      )}
-
-      {audioStoragePath && (
-        <div className="mt-2">
-          {audioUrl ? (
-            <audio controls src={audioUrl} className="mt-1 w-full" />
-          ) : (
-            <button
-              type="button"
-              onClick={handleListen}
-              disabled={loadingAudio}
-              className="rounded-lg border border-border px-3 py-1.5 text-xs text-foreground hover:bg-secondary disabled:opacity-60"
+    <Card variant="flat">
+      <CardHeader>
+        <div className="flex flex-wrap items-start justify-between gap-2">
+          <div className="flex items-start gap-3">
+            <span
+              aria-hidden
+              className="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-border bg-accent text-foreground"
             >
-              {loadingAudio ? "Preparing…" : "Listen to recording"}
-            </button>
-          )}
+              <UserRound className="size-5" />
+            </span>
+            <div>
+              <p className="text-small font-semibold text-foreground">{studentEmail}</p>
+              <p className="text-caption text-muted-foreground">
+                {courseTitle} · {lessonTitle}
+              </p>
+            </div>
+          </div>
+          <Badge variant={status === "approved" ? "success" : "pending"}>
+            {status === "approved" ? (
+              <CheckCircle2 className="size-3" aria-hidden />
+            ) : (
+              <Clock className="size-3" aria-hidden />
+            )}
+            {status === "approved" ? "Approved" : "Pending review"}
+          </Badge>
         </div>
-      )}
+      </CardHeader>
+      <CardContent className="space-y-3">
+        {promptText && (
+          <p className="text-caption text-muted-foreground">
+            <span className="font-semibold text-foreground">Prompt: </span>
+            {promptText}
+          </p>
+        )}
 
-      {error && (
-        <p role="alert" className="mt-2 text-xs text-status-alert-fg">
-          {error}
-        </p>
-      )}
+        {textContent && (
+          <div className="whitespace-pre-wrap rounded-md border-2 border-border bg-secondary/60 p-3 text-small text-foreground">
+            {textContent}
+          </div>
+        )}
 
-      {status !== "approved" && (
-        <button
-          type="button"
-          onClick={handleApprove}
-          disabled={isPending}
-          className="mt-3 rounded-lg bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
-        >
-          {isPending ? "Approving…" : "Approve"}
-        </button>
-      )}
-    </div>
+        {audioStoragePath && (
+          <div>
+            {audioUrl ? (
+              <audio controls src={audioUrl} className="w-full" />
+            ) : (
+              <Button type="button" variant="outline" size="sm" onClick={handleListen} disabled={loadingAudio}>
+                {loadingAudio ? (
+                  <Loader2 className="size-3.5 animate-spin" aria-hidden />
+                ) : (
+                  <Play className="size-3.5" aria-hidden />
+                )}
+                {loadingAudio ? "Preparing…" : "Listen to recording"}
+              </Button>
+            )}
+          </div>
+        )}
+
+        {error && (
+          <p role="alert" className="text-caption text-status-alert-fg">
+            {error}
+          </p>
+        )}
+
+        {status !== "approved" && (
+          <Button type="button" size="sm" onClick={handleApprove} disabled={isPending}>
+            {isPending && <Loader2 className="size-3.5 animate-spin" aria-hidden />}
+            {isPending ? "Approving…" : "Approve"}
+          </Button>
+        )}
+      </CardContent>
+    </Card>
   );
 }

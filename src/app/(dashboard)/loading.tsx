@@ -1,10 +1,17 @@
+import { Skeleton } from "@/components/ui/skeleton";
+
 export default function Loading() {
   return (
-    <div className="mx-auto max-w-2xl animate-pulse space-y-3">
-      <div className="h-7 w-40 rounded-lg bg-secondary" />
-      <div className="h-20 rounded-xl bg-secondary" />
-      <div className="h-16 rounded-xl bg-secondary" />
-      <div className="h-16 rounded-xl bg-secondary" />
+    <div className="mx-auto w-full max-w-6xl space-y-6">
+      <div className="space-y-3">
+        <Skeleton className="h-4 w-24" />
+        <Skeleton className="h-8 w-56" />
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <Skeleton className="h-40 rounded-lg border-2 border-border" />
+        <Skeleton className="h-40 rounded-lg border-2 border-border" />
+        <Skeleton className="h-40 rounded-lg border-2 border-border" />
+      </div>
     </div>
   );
 }

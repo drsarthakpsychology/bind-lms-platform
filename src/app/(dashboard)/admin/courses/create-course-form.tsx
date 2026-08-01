@@ -1,7 +1,14 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
+import { Loader2 } from "lucide-react";
 import { createCourse, type CreateCourseState } from "./actions";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const initialState: CreateCourseState = { error: null };
 
@@ -9,44 +16,51 @@ export function CreateCourseForm() {
   const [state, formAction, pending] = useActionState(createCourse, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const wasPending = useRef(false);
+  const [isPublished, setIsPublished] = useState(false);
 
   useEffect(() => {
     if (wasPending.current && !pending && !state.error) {
       formRef.current?.reset();
+      setIsPublished(false);
     }
     wasPending.current = pending;
   }, [pending, state.error]);
 
   return (
-    <form ref={formRef} action={formAction} className="flex flex-wrap items-end gap-3">
-      <div className="min-w-[200px] flex-1">
-        <label htmlFor="title" className="block text-xs font-medium text-muted-foreground">
-          Course title
-        </label>
-        <input
+    <form ref={formRef} action={formAction} className="flex flex-wrap items-end gap-4">
+      <div className="min-w-[220px] flex-1 space-y-1.5">
+        <Label htmlFor="title">Course title</Label>
+        <Input
           id="title"
           name="title"
           type="text"
           required
-          className="mt-1 block w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
           placeholder="Clinical Psychiatry Foundations"
         />
       </div>
-      <label className="flex items-center gap-2 pb-2.5 text-sm text-foreground">
-        <input type="checkbox" name="isPublished" className="h-4 w-4 rounded border-input" />
+
+      <label className="flex h-9 items-center gap-2 pb-0.5 text-sm text-foreground">
+        {/* Hidden input synced to the Switch — Radix Switch submits no value,
+            and the server action reads `isPublished === "on"`. */}
+        <Switch
+          checked={isPublished}
+          onCheckedChange={setIsPublished}
+          aria-label="Published"
+        />
+        <input type="hidden" name="isPublished" value={isPublished ? "on" : ""} />
         Published
       </label>
-      <button
-        type="submit"
-        disabled={pending}
-        className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
-      >
+
+      <Button type="submit" disabled={pending}>
+        {pending && <Loader2 className="size-4 animate-spin" aria-hidden />}
         {pending ? "Creating…" : "Create course"}
-      </button>
+      </Button>
+
       {state.error && (
-        <p role="alert" className="w-full text-sm text-status-alert-fg">
-          {state.error}
-        </p>
+        <Alert variant="destructive" role="alert" className="w-full">
+          <AlertTitle>Could not create course</AlertTitle>
+          <AlertDescription>{state.error}</AlertDescription>
+        </Alert>
       )}
     </form>
   );
