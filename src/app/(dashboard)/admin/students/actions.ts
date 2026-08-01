@@ -76,3 +76,32 @@ export async function createStudent(
   revalidatePath("/admin/students");
   return { error: null, success: true };
 }
+
+/**
+ * Delete a student account (auth user + profile + their rows). One-click
+ * cleanup for test accounts. Admin only.
+ */
+export async function deleteStudent(userId: string): Promise<{ error: string | null }> {
+  if (!(await requireAdmin())) return { error: "Not authorized." };
+
+  const admin = createAdminClient();
+  const { error } = await admin.auth.admin.deleteUser(userId);
+  if (error) return { error: "Could not delete the account." };
+
+  // Deleting the auth user cascades to profiles and their data (FK cascade).
+  revalidatePath("/admin/students");
+  return { error: null };
+}
+
+/**
+ * Reset a test account's password to the default. Admin only.
+ */
+export async function resetStudentPassword(userId: string): Promise<{ error: string | null }> {
+  if (!(await requireAdmin())) return { error: "Not authorized." };
+
+  const admin = createAdminClient();
+  const { error } = await admin.auth.admin.updateUserById(userId, { password: "K#test" });
+  if (error) return { error: "Could not reset the password." };
+
+  return { error: null };
+}

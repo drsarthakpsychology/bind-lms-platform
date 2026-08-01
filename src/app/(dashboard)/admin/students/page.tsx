@@ -1,6 +1,7 @@
 import { UserPlus, Users } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { CreateStudentForm } from "./create-student-form";
+import { StudentActions } from "./student-actions";
 
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -29,7 +30,7 @@ export default async function StudentsPage() {
 
   const { data: profiles } = await supabase
     .from("profiles")
-    .select("id, email, role, expires_at, active_session_token")
+    .select("id, email, role, expires_at, active_session_token, is_test")
     .eq("role", "student")
     .order("expires_at", { ascending: true, nullsFirst: false });
 
@@ -86,7 +87,10 @@ export default async function StudentsPage() {
                   {students.map((student) => (
                     <TableRow key={student.id}>
                       <TableCell className="font-medium text-foreground">
-                        {student.email ?? student.id}
+                        <span className="flex items-center gap-2">
+                          {student.email ?? student.id}
+                          {student.is_test && <Badge variant="pending">Test</Badge>}
+                        </span>
                       </TableCell>
                       <TableCell className="text-muted-foreground">
                         {formatDate(student.expires_at)}
@@ -97,6 +101,9 @@ export default async function StudentsPage() {
                         ) : (
                           <Badge variant="outline">Not signed in</Badge>
                         )}
+                      </TableCell>
+                      <TableCell>
+                        <StudentActions userId={student.id} isTest={Boolean(student.is_test)} />
                       </TableCell>
                     </TableRow>
                   ))}
