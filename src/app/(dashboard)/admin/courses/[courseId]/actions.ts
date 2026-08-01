@@ -47,7 +47,12 @@ export async function createLessonWithVideo(
   const requiresAssignment = formData.get("requiresAssignment") === "on";
   const videoPath = String(formData.get("videoPath") ?? "").trim();
   const assignmentPrompt = String(formData.get("assignmentPrompt") ?? "").trim();
-  const assignmentType = String(formData.get("assignmentType") ?? "text");
+
+  // Multi-select submission types. The checkbox inputs all use the same
+  // name, so getAll() returns each checked value. Stored comma-separated,
+  // deduplicated, in canonical order (see SUBMISSION_TYPES in lesson-form).
+  const allowedTypes = formData.getAll("assignmentType").map((v) => String(v).trim()).filter(Boolean);
+  const assignmentTypes = Array.from(new Set(allowedTypes)).join(",") || "text";
 
   if (!title) return { error: "Title is required." };
   if (!videoPath) return { error: "Upload a video before creating the lesson." };
@@ -76,7 +81,7 @@ export async function createLessonWithVideo(
     const { error: assignmentError } = await supabase.from("assignments").insert({
       lesson_id: lesson.id,
       prompt_text: assignmentPrompt,
-      submission_type: assignmentType === "audio" ? "audio" : "text",
+      submission_type: assignmentTypes,
     });
 
     if (assignmentError) {

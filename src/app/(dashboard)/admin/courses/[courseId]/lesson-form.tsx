@@ -14,6 +14,23 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const initialState: CreateLessonState = { error: null };
 
+/**
+ * Canonical set of assignment submission types. Stored comma-separated in
+ * assignments.submission_type. Mirrors supabase/migrations_pending/
+ * assignment_multi_submission_types.sql.
+ */
+const SUBMISSION_TYPES = [
+  { value: "text", label: "Text response" },
+  { value: "rich_text", label: "Rich text / formatted writing" },
+  { value: "audio", label: "Audio recording / upload" },
+  { value: "video", label: "Video recording / upload" },
+  { value: "pdf", label: "PDF" },
+  { value: "docx", label: "DOCX" },
+  { value: "ppt", label: "PPT / PPTX" },
+  { value: "zip", label: "ZIP / multiple files" },
+  { value: "url", label: "External URL / GitHub / Google Drive" },
+] as const;
+
 export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nextOrderIndex: number }) {
   const boundAction = createLessonWithVideo.bind(null, courseId);
   const [state, formAction, pending] = useActionState(boundAction, initialState);
@@ -171,17 +188,30 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
             />
           </div>
           <fieldset>
-            <legend className="text-small font-medium text-foreground">Submission type</legend>
-            <div className="mt-2 flex gap-4 text-small text-foreground">
-              <label className="flex cursor-pointer items-center gap-1.5">
-                <input type="radio" name="assignmentType" value="text" defaultChecked className="size-4 accent-primary" />
-                Text
-              </label>
-              <label className="flex cursor-pointer items-center gap-1.5">
-                <input type="radio" name="assignmentType" value="audio" className="size-4 accent-primary" />
-                Audio
-              </label>
+            <legend className="text-small font-medium text-foreground">
+              Allowed submission types <span className="font-normal text-muted-foreground">(select all that apply)</span>
+            </legend>
+            <div className="mt-2 grid grid-cols-1 gap-x-4 gap-y-1.5 sm:grid-cols-2">
+              {SUBMISSION_TYPES.map((type) => (
+                <label
+                  key={type.value}
+                  className="flex cursor-pointer items-center gap-1.5 text-small text-foreground"
+                >
+                  <input
+                    type="checkbox"
+                    name="assignmentType"
+                    value={type.value}
+                    defaultChecked={type.value === "text"}
+                    className="size-4 accent-primary"
+                  />
+                  {type.label}
+                </label>
+              ))}
             </div>
+            <p className="mt-1.5 text-caption text-muted-foreground">
+              Students can submit using any of the selected formats. Text and audio upload are available
+              today; the other types are reserved and will be enforced as they ship.
+            </p>
           </fieldset>
         </div>
       )}

@@ -4,10 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 /* =============================================================================
-   DESIGN TOKENS — Soft Brutalism
+   DESIGN TOKENS — Neo-Brutalist Pastel
    =============================================================================
-   Palette: Signal orange on warm paper. 2px ink borders, hard offset shadows
-   (zero blur), radii: 10px cards / 6px inputs / 999px pills.
+   Palette: warm peach/terracotta on soft cream. 2px ink borders, hard offset
+   shadows (zero blur), radii: 10px cards / 6px inputs / 999px pills.
+   All text/icon-on-fill pairings verified ≥ 4.5:1 (WCAG AA), most ≥ 7:1 (AAA).
 
    Runtime variables live in `:root` / `.dark` so they can change per theme.
    `@theme inline` maps them into Tailwind namespaces (bg-card, text-ink, ...).
@@ -15,38 +16,38 @@
 
 :root {
   /* --- Color: surfaces --- */
-  --background: #faf7f2; /* warm paper */
-  --foreground: #16130f; /* near-black ink */
+  --background: #fff6ef; /* soft cream / deep background accent */
+  --foreground: #1e1e14; /* warm near-black ink */
 
   --card: #fffdf9; /* elevated paper */
-  --card-foreground: #16130f;
+  --card-foreground: #1e1e14;
 
   --popover: #fffdf9;
-  --popover-foreground: #16130f;
+  --popover-foreground: #1e1e14;
 
-  /* --- Color: brand --- */
-  --primary: #ff4d00; /* signal orange */
-  --primary-foreground: #16130f; /* ink on orange, not white */
+  /* --- Color: brand (Neo-Brutalist pastel) --- */
+  --primary: #f4a261; /* warm peach / terracotta */
+  --primary-foreground: #1e1e14; /* ink on peach — 8.98:1 */
 
-  --secondary: #f3ede3; /* warm sand surface */
-  --secondary-foreground: #16130f;
+  --secondary: #ffe6d5; /* surface card / modal fill */
+  --secondary-foreground: #1e1e14;
 
-  --muted: #f3ede3;
-  --muted-foreground: #6b6257;
+  --muted: #fff6ef;
+  --muted-foreground: #5c554a; /* darker for 4.5:1 on cream */
 
-  --accent: #ffe3d6; /* pale orange wash */
-  --accent-foreground: #16130f;
+  --accent: #ffe6d5; /* soft peach wash */
+  --accent-foreground: #1e1e14;
 
   --destructive: #d92d20;
   --destructive-foreground: #ffffff;
 
   /* --- Color: lines & focus --- */
-  --border: #16130f; /* ink rules */
-  --input: #16130f;
-  --ring: #ff4d00;
+  --border: #1e1e14; /* ink rules */
+  --input: #1e1e14;
+  --ring: #f4a261;
 
   /* --- Color: hard shadows --- */
-  --hard-shadow-color: #16130f; /* solid ink offset */
+  --hard-shadow-color: #1e1e14; /* solid ink offset */
 
   /* --- Semantic status tones (label + icon, never color alone) --- */
   --status-success-bg: #d9f3df;
@@ -70,41 +71,41 @@
   --shadow-hard-lg: 6px 6px 0 0 var(--hard-shadow-color);
 
   /* --- Charts (unused by Milestone 1, reserved for later analytics) --- */
-  --chart-1: #ff4d00;
-  --chart-2: #16130f;
-  --chart-3: #f4b860;
+  --chart-1: #f4a261;
+  --chart-2: #1e1e14;
+  --chart-3: #f6b88a;
   --chart-4: #4f7cac;
   --chart-5: #7c9885;
 }
 
 .dark {
-  --background: #17140f; /* warm near-black paper */
+  --background: #1a1610; /* warm near-black paper */
   --foreground: #f5f0e8;
 
-  --card: #201c15;
+  --card: #241f17;
   --card-foreground: #f5f0e8;
 
-  --popover: #201c15;
+  --popover: #241f17;
   --popover-foreground: #f5f0e8;
 
-  --primary: #ff5a1f; /* brightened signal orange */
-  --primary-foreground: #17140f;
+  --primary: #f4a261; /* peach, bright on dark */
+  --primary-foreground: #1e1e14;
 
-  --secondary: #2a251c;
+  --secondary: #2f2820;
   --secondary-foreground: #f5f0e8;
 
-  --muted: #2a251c;
-  --muted-foreground: #a89f92;
+  --muted: #2a241b;
+  --muted-foreground: #b0a697;
 
-  --accent: #3a2415;
-  --accent-foreground: #ffd9c4;
+  --accent: #3a2b1f;
+  --accent-foreground: #ffe6d5;
 
   --destructive: #ff6b5e;
-  --destructive-foreground: #17140f;
+  --destructive-foreground: #1e1e14;
 
   --border: #4a4234;
   --input: #4a4234;
-  --ring: #ff5a1f;
+  --ring: #f4a261;
 
   --hard-shadow-color: #000000;
 

@@ -162,7 +162,7 @@ export default async function LessonPage({
             <AssignmentPanel
               assignmentId={assignment.id}
               promptText={assignment.prompt_text}
-              submissionType={assignment.submission_type === "audio" ? "audio" : "text"}
+              submissionTypes={assignment.submission_type || "text"}
               existingSubmission={
                 existingSubmission
                   ? {
