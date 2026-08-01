@@ -52,19 +52,20 @@ export function AppSidebar({
         <NavItems items={items} />
         {role === "admin" && mode === "student" ? (
           <p className="mt-4 rounded-md border-2 border-dashed border-border px-3 py-2 text-caption text-muted-foreground">
-            Previewing as student — drafts are visible to you only.
+            You&apos;re previewing the student experience.
           </p>
         ) : null}
       </div>
 
-      <div className="space-y-2 border-t-2 border-border p-3">
-        {viewModeSwitch}
-        <div className="flex items-center justify-between">
-          <ThemeToggle />
+      <div className="border-t-2 border-border p-3">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5">
+            {viewModeSwitch}
+            <ThemeToggle />
+          </div>
           <form action={logout}>
-            <Button type="submit" variant="secondary" size="sm">
+            <Button type="submit" variant="secondary" size="icon-sm" aria-label="Log out">
               <LogOut className="size-4" aria-hidden />
-              Log out
             </Button>
           </form>
         </div>

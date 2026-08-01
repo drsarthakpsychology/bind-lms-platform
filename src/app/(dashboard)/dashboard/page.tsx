@@ -41,13 +41,14 @@ export default async function DashboardPage() {
 
   const supabase = await createClient();
 
+  // Truthful student view: when previewing as a student, show only published
+  // courses — the same visibility a real student has. Drafts stay visible in
+  // the admin area (course page lets you watch draft videos).
   let coursesQuery = supabase
     .from("courses")
     .select("id, title, is_published")
     .order("title", { ascending: true });
-  if (profile.role !== "admin") {
-    coursesQuery = coursesQuery.eq("is_published", true);
-  }
+  coursesQuery = coursesQuery.eq("is_published", true);
 
   const [{ data: courses }, { data: lessons }, { data: progress }] = await Promise.all([
     coursesQuery,
@@ -113,7 +114,7 @@ export default async function DashboardPage() {
             <Sparkles className="size-4" aria-hidden />
             <AlertTitle>Previewing as a student</AlertTitle>
             <AlertDescription>
-              Drafts are shown here only for you — a real student would not see them.
+              This is the student experience — only published courses are shown.
             </AlertDescription>
           </Alert>
         )}
