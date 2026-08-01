@@ -1,12 +1,13 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ChevronLeft, FileVideo2, ListPlus, UserRoundPlus } from "lucide-react";
+import { ChevronLeft, FileVideo2, ListPlus, Paperclip, UserRoundPlus } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { LessonForm } from "./lesson-form";
 import { VideoUpload } from "./video-upload";
 import { DeleteLessonButton } from "./delete-lesson-button";
 import { CourseActions } from "../course-actions";
 import { EnrollStudents } from "./enroll-students";
+import { MaterialUploader } from "./material-uploader";
 
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -22,7 +23,7 @@ export default async function CourseDetailPage({
   const { courseId } = await params;
   const supabase = await createClient();
 
-  const [{ data: course }, { data: lessons }, { data: students }, { data: enrollments }] =
+  const [{ data: course }, { data: lessons }, { data: students }, { data: enrollments }, { data: courseMaterials }] =
     await Promise.all([
       supabase.from("courses").select("id, title, is_published").eq("id", courseId).single(),
       supabase
@@ -39,6 +40,12 @@ export default async function CourseDetailPage({
         .from("course_enrollments")
         .select("user_id")
         .eq("course_id", courseId),
+      supabase
+        .from("materials")
+        .select("id, title, kind, format, size_bytes, url")
+        .eq("course_id", courseId)
+        .is("lesson_id", null)
+        .order("sort_order", { ascending: true }),
     ]);
 
   if (!course) {
@@ -106,6 +113,32 @@ export default async function CourseDetailPage({
             courseId={courseId}
             students={(students ?? []).map((s) => ({ id: s.id, email: s.email }))}
             enrolledIds={enrolledIds}
+          />
+        </CardContent>
+      </Card>
+
+      <Card variant="raised">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Paperclip className="size-4 text-primary" aria-hidden />
+            Course materials
+            <Badge variant="secondary" className="ml-1">
+              {(courseMaterials ?? []).length}
+            </Badge>
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <MaterialUploader
+            courseId={courseId}
+            lessonId={null}
+            materials={(courseMaterials ?? []).map((m) => ({
+              id: m.id,
+              title: m.title,
+              kind: m.kind,
+              format: m.format,
+              sizeBytes: m.size_bytes,
+              url: m.url,
+            }))}
           />
         </CardContent>
       </Card>

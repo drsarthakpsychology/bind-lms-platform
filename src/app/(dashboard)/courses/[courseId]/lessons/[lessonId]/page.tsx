@@ -11,6 +11,7 @@ import { AssignmentPanel } from "./assignment-panel";
 import { CompleteButton } from "./complete-button";
 import { LessonTabs } from "./lesson-tabs";
 import { MaterialsList } from "./materials-list";
+import { MaterialUploader } from "@/app/(dashboard)/admin/courses/[courseId]/material-uploader";
 
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -52,7 +53,7 @@ export default async function LessonPage({
         .maybeSingle(),
       supabase
         .from("materials")
-        .select("id, title, kind, format, size_bytes, sort_order")
+        .select("id, title, kind, format, size_bytes, url, sort_order")
         .eq("lesson_id", lessonId)
         .order("sort_order", { ascending: true }),
     ]);
@@ -189,6 +190,22 @@ export default async function LessonPage({
             <Paperclip className="size-4 text-primary" aria-hidden />
             Materials
           </h2>
+
+          {profile.role === "admin" && (
+            <MaterialUploader
+              courseId={courseId}
+              lessonId={lessonId}
+              materials={(materials ?? []).map((m) => ({
+                id: m.id,
+                title: m.title,
+                kind: m.kind,
+                format: m.format,
+                sizeBytes: m.size_bytes,
+                url: m.url,
+              }))}
+            />
+          )}
+
           {hasMaterials ? (
             <MaterialsList
               materials={(materials ?? []).map((m) => ({
@@ -198,14 +215,17 @@ export default async function LessonPage({
                 format: m.format,
                 sizeBytes: m.size_bytes,
               }))}
+              isAdmin={profile.role === "admin"}
             />
           ) : (
-            <EmptyState
-              compact
-              icon={<Paperclip className="size-6" aria-hidden />}
-              title="No materials yet"
-              description="Materials attached to this lesson will appear here."
-            />
+            profile.role !== "admin" && (
+              <EmptyState
+                compact
+                icon={<Paperclip className="size-6" aria-hidden />}
+                title="No materials yet"
+                description="Your instructor hasn't added materials for this lesson."
+              />
+            )
           )}
         </section>
       )}

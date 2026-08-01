@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { AudioPlayer } from "./audio-player";
 import { cn } from "@/lib/utils";
 
 export type MaterialItem = {
@@ -45,7 +46,7 @@ function formatSize(bytes: number | null | undefined): string {
  * Reads a material file through the signed-URL route and renders the right
  * inline viewer (PDF, audio, image) or a download/link card.
  */
-function MaterialCard({ material }: { material: MaterialItem }) {
+function MaterialCard({ material, isAdmin }: { material: MaterialItem; isAdmin?: boolean }) {
   const Icon = KIND_ICONS[material.kind];
   // File kinds start in the loading state (their fetch kicks off on mount);
   // links never load a URL.
@@ -88,6 +89,7 @@ function MaterialCard({ material }: { material: MaterialItem }) {
     material.kind === "document" ||
     material.kind === "audio" ||
     material.kind === "image";
+  const isSlides = material.kind === "slides";
 
   if (material.kind === "link") {
     return (
@@ -144,6 +146,15 @@ function MaterialCard({ material }: { material: MaterialItem }) {
         </div>
       )}
 
+      {/* Slides can't be previewed inline — an honest card + download. */}
+      {isSlides && (
+        <p className="text-caption text-muted-foreground">
+          {isAdmin
+            ? "PPTX files can't be previewed in the browser — exporting the deck to PDF lets students view it inline."
+            : "PPTX files can't be previewed in the browser. Students can download this file."}
+        </p>
+      )}
+
       {/* Inline viewers */}
       {!loading && signedUrl && material.kind === "document" && (
         <div className={cn("overflow-hidden rounded-md border-2 border-border bg-background")}>
@@ -155,7 +166,7 @@ function MaterialCard({ material }: { material: MaterialItem }) {
         </div>
       )}
       {!loading && signedUrl && material.kind === "audio" && (
-        <audio controls src={signedUrl} className="w-full" />
+        <AudioPlayer src={signedUrl} title={material.title} />
       )}
       {!loading && signedUrl && material.kind === "image" && (
         <img
@@ -170,13 +181,15 @@ function MaterialCard({ material }: { material: MaterialItem }) {
 
 export function MaterialsList({
   materials,
+  isAdmin,
 }: {
   materials: MaterialItem[];
+  isAdmin?: boolean;
 }) {
   return (
     <div className="space-y-3">
       {materials.map((m) => (
-        <MaterialCard key={m.id} material={m} />
+        <MaterialCard key={m.id} material={m} isAdmin={isAdmin} />
       ))}
     </div>
   );
