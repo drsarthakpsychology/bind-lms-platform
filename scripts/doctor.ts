@@ -76,11 +76,18 @@ async function main() {
     bad("R2", "credentials missing (only matters after C1 migration)");
   }
 
-  console.log("\n5) Pending migrations");
-  if (existsSync("supabase/migrations_pending")) {
-    const { readdirSync } = await import("node:fs");
-    const files = readdirSync("supabase/migrations_pending").filter((f) => f.endsWith(".sql"));
-    if (files.length === 0) ok("none"); else bad(`${files.length} pending`, files.join(", "));
+  console.log("\n5) Schema (tables present in DB)");
+  // Check the key tables actually exist in the database (not just files).
+  const tables = ["profiles", "courses", "lessons", "assignments", "submissions", "media_assets", "certificates"];
+  if (local["NEXT_PUBLIC_SUPABASE_URL"] && local["SUPABASE_SERVICE_ROLE_KEY"]) {
+    const admin = createClient(local["NEXT_PUBLIC_SUPABASE_URL"], local["SUPABASE_SERVICE_ROLE_KEY"]);
+    for (const t of tables) {
+      const { error } = await admin.from(t).select("id").limit(1);
+      if (!error) ok(`table ${t}`);
+      else bad(`table ${t}`, error.message.slice(0, 60));
+    }
+  } else {
+    bad("schema check", "missing Supabase env");
   }
 
   console.log("\n6) Production health endpoint");

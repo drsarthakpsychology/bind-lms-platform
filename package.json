@@ -15,7 +15,9 @@
     "doctor": "tsx scripts/doctor.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "set-r2-cors": "tsx scripts/set-r2-cors.ts",
+    "apply-migrations": "tsx scripts/apply-migrations.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1101.0",
@@ -34,6 +36,7 @@
     "next": "16.2.12",
     "next-themes": "^0.4.6",
     "pdf-lib": "^1.17.1",
+    "pg": "^8.22.0",
     "qrcode": "^1.5.4",
     "radix-ui": "^1.6.7",
     "react": "19.2.4",
