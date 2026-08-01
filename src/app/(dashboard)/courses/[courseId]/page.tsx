@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BookOpen, CheckCircle2, Clock, FileText, Inbox } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, Clock, FileText, Inbox, Paperclip } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
@@ -25,7 +25,7 @@ export default async function CourseOverviewPage({
 
   const supabase = await createClient();
 
-  const [{ data: course }, { data: lessons }, { data: progress }, { data: courseMaterials }, { data: assignments }, { data: submissions }] =
+  const [{ data: course }, { data: lessons }, { data: progress }, { data: courseMaterials }, { data: assignments }, { data: submissions }, { data: lessonMaterials }] =
     await Promise.all([
       supabase.from("courses").select("id, title, is_published").eq("id", courseId).single(),
       supabase
@@ -52,6 +52,11 @@ export default async function CourseOverviewPage({
         .from("submissions")
         .select("assignment_id, status, submitted_at, score")
         .eq("user_id", profile.id),
+      supabase
+        .from("materials")
+        .select("lesson_id")
+        .eq("course_id", courseId)
+        .not("lesson_id", "is", null),
     ]);
 
   if (!course || (!course.is_published && profile.role !== "admin")) {
@@ -94,6 +99,18 @@ export default async function CourseOverviewPage({
     };
   });
 
+  // Per-lesson counts: how many materials and assignments each lesson carries.
+  const materialsByLesson = new Map<string, number>();
+  for (const m of lessonMaterials ?? []) {
+    materialsByLesson.set(m.lesson_id, (materialsByLesson.get(m.lesson_id) ?? 0) + 1);
+  }
+  const assignmentsByLesson = new Map<string, typeof assignments>();
+  for (const a of assignments ?? []) {
+    const list = assignmentsByLesson.get(a.lesson_id) ?? [];
+    list.push(a);
+    assignmentsByLesson.set(a.lesson_id, list);
+  }
+
   return (
     <div className="space-y-8">
       <PageHeader
@@ -128,6 +145,15 @@ export default async function CourseOverviewPage({
           <ul className="space-y-2">
             {playable.map((lesson, i) => {
               const done = completedIds.has(lesson.id);
+              const materialCount = materialsByLesson.get(lesson.id) ?? 0;
+              const lessonAssignments = assignmentsByLesson.get(lesson.id) ?? [];
+              const assignmentCount = lessonAssignments.length;
+              const hasOutstandingAssignment = lessonAssignments.some((a) => {
+                if (!a.is_published) return false;
+                const sub = submissionByAssignment.get(a.id);
+                return !sub || sub.status === "pending_review";
+              });
+              const assignmentDue = lessonAssignments.find((a) => a.is_published && a.due_at);
               return (
                 <li key={lesson.id}>
                   <Link
@@ -152,9 +178,38 @@ export default async function CourseOverviewPage({
                         <span className="text-xs font-bold">{i + 1}</span>
                       )}
                     </span>
-                    <span className="min-w-0 flex-1 truncate text-small font-medium">
-                      {lesson.title}
+
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-small font-medium text-foreground">
+                        {lesson.title}
+                      </span>
+                      {/* Per-lesson outstanding summary */}
+                      <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-caption text-muted-foreground">
+                        {materialCount > 0 && (
+                          <span className="inline-flex items-center gap-1">
+                            <Paperclip className="size-3" aria-hidden />
+                            {materialCount} material{materialCount === 1 ? "" : "s"}
+                          </span>
+                        )}
+                        {assignmentCount > 0 && (
+                          <span className="inline-flex items-center gap-1">
+                            <FileText className="size-3" aria-hidden />
+                            {assignmentCount} assignment{assignmentCount === 1 ? "" : "s"}
+                            {hasOutstandingAssignment ? " · to submit" : ""}
+                          </span>
+                        )}
+                        {assignmentDue?.due_at && !done && (
+                          <span className="inline-flex items-center gap-1">
+                            <Clock className="size-3" aria-hidden />
+                            due {new Date(assignmentDue.due_at).toLocaleDateString()}
+                          </span>
+                        )}
+                        {!done && materialCount === 0 && assignmentCount === 0 && (
+                          <span>Not watched yet</span>
+                        )}
+                      </span>
                     </span>
+
                     <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />
                   </Link>
                 </li>
