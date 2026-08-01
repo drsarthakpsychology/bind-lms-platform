@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    name: Lint / Typecheck / Test / Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npx vitest run
+
+      - name: Build
+        run: npm run build
+
+  e2e:
+    name: Playwright (critical paths)
+    runs-on: ubuntu-latest
+    # E2E needs credentials; only run on scheduled/on-demand or when secrets exist.
+    if: ${{ secrets.E2E_BASE_URL != '' }}
+    needs: quality
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci && npx playwright install --with-deps chromium
+
+      - name: Run critical-path E2E
+        env:
+          E2E_BASE_URL: ${{ secrets.E2E_BASE_URL }}
+          E2E_STUDENT_EMAIL: ${{ secrets.E2E_STUDENT_EMAIL }}
+          E2E_STUDENT_PASSWORD: ${{ secrets.E2E_STUDENT_PASSWORD }}
+          E2E_ADMIN_EMAIL: ${{ secrets.E2E_ADMIN_EMAIL }}
+          E2E_ADMIN_PASSWORD: ${{ secrets.E2E_ADMIN_PASSWORD }}
+          E2E_LESSON_URL: ${{ secrets.E2E_LESSON_URL }}
+          E2E_ASSIGNMENT_URL: ${{ secrets.E2E_ASSIGNMENT_URL }}
+        run: npx playwright test

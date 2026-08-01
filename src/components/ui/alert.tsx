@@ -12,6 +12,8 @@ const alertVariants = cva(
         info: "border-status-info-fg/40 bg-status-info-bg text-status-info-fg",
         warning:
           "border-status-pending-fg/40 bg-status-pending-bg text-status-pending-fg",
+        success:
+          "border-status-success-fg/40 bg-status-success-bg text-status-success-fg",
         destructive:
           "border-destructive/40 bg-status-alert-bg text-destructive *:data-[slot=alert-description]:text-destructive/90 [&>svg]:text-current",
       },

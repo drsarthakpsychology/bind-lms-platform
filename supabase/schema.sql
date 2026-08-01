@@ -89,6 +89,12 @@ create table if not exists submissions (
 --
 -- and swap the "published = visible to all" policies below for
 -- "published AND enrolled = visible."
+--
+-- ⚠ TENANCY FLAG — Cohort One runs a SINGLE organization. Do NOT build
+-- multi-tenant RLS machinery yet. But when adding new tables, include a
+-- nullable `organization_id uuid` column so tenancy is POSSIBLE later
+-- without a migration. No policies until a second org actually exists.
+-- See docs/INFRA_SETUP.md and the PRD "Deferred for Cohort One" list.
 
 -- =============================================================================
 -- PART B — Row Level Security (recommended, matches "Maximum Security" goal)

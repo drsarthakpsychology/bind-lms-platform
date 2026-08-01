@@ -1,0 +1,60 @@
+name: Uptime Check
+
+on:
+  schedule:
+    # Every 6 hours, off the :00/:30 marks.
+    - cron: "23 3,9,15,21 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check /api/health
+        id: health
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: |
+          CODE=$(curl -s -o /tmp/health.json -w "%{http_code}" --max-time 20 "https://${SITE_URL}/api/health" || echo 000)
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+
+      # Persist a failure counter in R2 so "two consecutive failures" spans
+      # separate runs (each GH Actions run is a fresh VM; RUNNER_TEMP resets).
+      - name: Update failure counter (R2 state object)
+        id: track
+        env:
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BACKUP_BUCKET: ${{ secrets.R2_BACKUP_BUCKET }}
+          CODE: ${{ steps.health.outputs.code }}
+        run: |
+          STATE_KEY="ops/uptime-failcount"
+          # Read current count via the S3 API (aws cli in docker).
+          CURRENT=$(docker run --rm -e AWS_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" -e AWS_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY" \
+            -e AWS_ENDPOINT_URL="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com" -e AWS_REGION=auto \
+            amazon/aws-cli:latest s3 cp "s3://${R2_BACKUP_BUCKET}/${STATE_KEY}" - 2>/dev/null || echo 0)
+          CURRENT=$(echo "$CURRENT" | tr -dc '0-9' || echo 0)
+          if [ "${CODE}" = "200" ]; then
+            NEXT=0
+          else
+            NEXT=$((CURRENT + 1))
+          fi
+          echo "$NEXT" > /tmp/failcount
+          docker run --rm -v /tmp/failcount:/data/count -e AWS_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" -e AWS_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY" \
+            -e AWS_ENDPOINT_URL="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com" -e AWS_REGION=auto \
+            amazon/aws-cli:latest s3 cp /data/count "s3://${R2_BACKUP_BUCKET}/${STATE_KEY}"
+          echo "consecutive=$NEXT" >> "$GITHUB_OUTPUT"
+
+      - name: Alert on 2+ consecutive failures
+        if: steps.track.outputs.consecutive >= 2
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_EMAIL: ${{ secrets.ALERT_EMAIL }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+          CONSECUTIVE: ${{ steps.track.outputs.consecutive }}
+        run: |
+          curl -s -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer $RESEND_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{\"from\":\"Uptime <uptime@plms.local>\",\"to\":[\"$ALERT_EMAIL\"],\"subject\":\"⚠️ PLMS down ($CONSECUTIVE consecutive checks)\",\"text\":\"$SITE_URL/api/health has failed $CONSECUTIVE consecutive checks. Check: https://github.com/drsarthakpsychology/bind-lms-platform/actions\"}"

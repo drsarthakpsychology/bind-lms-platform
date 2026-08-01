@@ -1,4 +1,5 @@
-import { BookOpen, GraduationCap, Inbox, Users } from "lucide-react";
+import { BookOpen, CircleAlert, GraduationCap, Inbox, Users } from "lucide-react";
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 
 import { PageHeader } from "@/components/design-system/page-header";
@@ -20,6 +21,27 @@ export default async function AdminOverviewPage() {
         .select("id", { count: "exact", head: true })
         .eq("status", "pending_review"),
     ]);
+
+  // Action items: who's inactive, who's behind, ungraded submissions.
+  // "Inactive" is proxied by "has no progress rows at all" (never started),
+  // since progress has no updated_at column. Good enough as a first-pass
+  // to-do signal; refine when analytics land.
+  const [{ data: startedIds }, { data: ungraded }] = await Promise.all([
+    supabase
+      .from("progress")
+      .select("user_id")
+      .not("watched_seconds", "is", null),
+    supabase
+      .from("submissions")
+      .select("id, status, profiles(email)")
+      .eq("status", "pending_review"),
+  ]);
+  const startedSet = new Set((startedIds ?? []).map((p) => p.user_id));
+  const { data: allStudents } = await supabase
+    .from("profiles")
+    .select("id, email")
+    .eq("role", "student");
+  const inactiveStudents = (allStudents ?? []).filter((s) => !startedSet.has(s.id));
 
   const stats = [
     { label: "Students", value: studentsResult.count ?? 0, href: "/admin/students", icon: <Users className="size-4" />, accent: true },
@@ -47,6 +69,58 @@ export default async function AdminOverviewPage() {
           />
         ))}
       </div>
+
+      {/* Action items — a to-do list, not analytics. */}
+      <section aria-label="Needs attention" className="space-y-3">
+        <h2 className="text-h2">Needs attention</h2>
+        <div className="grid gap-4 lg:grid-cols-3">
+          <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
+            <h3 className="flex items-center gap-2 text-small font-semibold">
+              <Users className="size-4 text-primary" aria-hidden />
+              Inactive this week
+            </h3>
+            <ul className="mt-2 space-y-1 text-small text-muted-foreground">
+              {(inactiveStudents ?? []).slice(0, 8).map((s) => (
+                <li key={s.id} className="truncate">{s.email ?? "no email"}</li>
+              ))}
+              {(inactiveStudents ?? []).length === 0 && <li>Everyone checked in 🎉</li>}
+            </ul>
+          </div>
+
+          <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
+            <h3 className="flex items-center gap-2 text-small font-semibold">
+              <Inbox className="size-4 text-primary" aria-hidden />
+              Ungraded submissions
+            </h3>
+            <ul className="mt-2 space-y-1 text-small text-muted-foreground">
+              {(ungraded ?? []).slice(0, 8).map((s) => {
+                const p = Array.isArray(s.profiles) ? s.profiles[0] : s.profiles;
+                return (
+                  <li key={s.id} className="truncate">
+                    {(p as { email?: string } | null)?.email ?? "student"}
+                  </li>
+                );
+              })}
+              {(ungraded ?? []).length === 0 && <li>Nothing pending 🎉</li>}
+            </ul>
+            <Link href="/admin/submissions" className="mt-2 inline-block text-caption font-medium text-primary">
+              Review all →
+            </Link>
+          </div>
+
+          <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
+            <h3 className="flex items-center gap-2 text-small font-semibold">
+              <CircleAlert className="size-4 text-primary" aria-hidden />
+              Quick actions
+            </h3>
+            <ul className="mt-2 space-y-1 text-small">
+              <li><Link href="/admin/students" className="text-primary hover:underline">Add students</Link></li>
+              <li><Link href="/admin/courses" className="text-primary hover:underline">Create a course</Link></li>
+              <li><Link href="/admin/submissions" className="text-primary hover:underline">Grade submissions</Link></li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

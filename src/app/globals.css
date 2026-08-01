@@ -202,6 +202,83 @@
 }
 
 /* =============================================================================
+   VIDEO PLAYER (see video-player.tsx)
+   ============================================================================= */
+
+/* Container that goes fullscreen — must contain BOTH the <video> and the
+   watermark so the watermark survives fullscreen. */
+.plms-player {
+  position: relative;
+  background: #000;
+}
+
+/* Watermark: always on top, never intercepts clicks. */
+.plms-watermark {
+  position: absolute;
+  inset: 0;
+  z-index: 2147483000;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* NOTE: these selectors must stay as SEPARATE rules. A browser that doesn't
+   understand `:-webkit-full-screen` discards the ENTIRE comma-joined list,
+   including the standard `:fullscreen` part. */
+.plms-player:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plms-player:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plms-player:fullscreen video,
+.plms-player:-webkit-full-screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.plms-player::backdrop {
+  background: #000;
+}
+
+/* iPhone Safari pseudo-fullscreen: fixed overlay instead of webkitEnterFullscreen
+   (which promotes the raw <video> into the native iOS player we can't overlay). */
+.plms-player.is-pseudo-fullscreen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 2147483000;
+  background: #000;
+}
+
+/* Secondary guard ONLY (Chromium/WebKit-specific; silently ignored elsewhere).
+   The real mechanism is our single wrapper-targeting fullscreen button — CSS
+   pseudo-element hiding must not be relied on as the primary fix. */
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+/* =============================================================================
    BASE
    ============================================================================= */
 

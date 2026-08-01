@@ -1,8 +1,32 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Hls from "hls.js";
 import { Watermark } from "./watermark";
 import { pingProgress } from "./actions";
+
+/** Element plus the vendor-prefixed fullscreen methods (Safari/iOS/old Edge). */
+type FsElement = HTMLElement & {
+  webkitRequestFullscreen?: () => Promise<void> | void;
+  msRequestFullscreen?: () => Promise<void> | void;
+};
+
+interface FullscreenDocument extends Document {
+  webkitFullscreenElement?: Element | null;
+  msFullscreenElement?: Element | null;
+  webkitExitFullscreen?: () => Promise<void> | void;
+  msExitFullscreen?: () => Promise<void> | void;
+}
+
+function getFullscreenElement(): Element | null {
+  const d = document as FullscreenDocument;
+  return (
+    document.fullscreenElement ??
+    d.webkitFullscreenElement ??
+    d.msFullscreenElement ??
+    null
+  );
+}
 
 /**
  * Video player with a persistent, dynamic watermark.
@@ -33,9 +57,36 @@ export function VideoPlayer({
   watermarkLabel: string;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [tampered, setTampered] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isPseudoFullscreen, setIsPseudoFullscreen] = useState(false);
+
+  // HLS playback (R2 migration): when the signed URL is an .m3u8 master
+  // playlist, drive the <video> through hls.js. Falls back to native playback
+  // for direct files. hls.js attaches to the same <video> element, so every
+  // other behaviour (watermark, fullscreen, PiP-exit) is untouched.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    let hls: Hls | null = null;
+
+    if (src.endsWith(".m3u8")) {
+      if (Hls.isSupported()) {
+        hls = new Hls({ enableWorker: true });
+        hls.loadSource(src);
+        hls.attachMedia(video);
+      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        // Safari native HLS — just point src at the playlist.
+        video.src = src;
+      }
+    }
+
+    return () => {
+      if (hls) hls.destroy();
+    };
+  }, [src]);
 
   // Resume playback at the last saved position.
   useEffect(() => {
@@ -74,52 +125,116 @@ export function VideoPlayer({
     return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
   }, []);
 
-  // Track fullscreen state on the wrapper so the UI (and the watermark's
-  // relative sizing) can react.
+  // Track fullscreen state from the EVENT, never from optimistic state — the
+  // user can leave fullscreen via Escape or the browser chrome, and only the
+  // event reflects that.
   useEffect(() => {
-    const wrapper = wrapperRef.current;
-    if (!wrapper) return;
-
-    function handleFsChange() {
-      setIsFullscreen(document.fullscreenElement === wrapper);
-    }
-    document.addEventListener("fullscreenchange", handleFsChange);
-    return () => document.removeEventListener("fullscreenchange", handleFsChange);
+    const onChange = () => setIsFullscreen(Boolean(getFullscreenElement()));
+    document.addEventListener("fullscreenchange", onChange);
+    document.addEventListener("webkitfullscreenchange", onChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", onChange);
+      document.removeEventListener("webkitfullscreenchange", onChange);
+    };
   }, []);
+
+  // If Picture-in-Picture somehow starts, exit it immediately — PiP promotes
+  // the raw <video> into a separate window with no watermark.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const onEnter = () => document.exitPictureInPicture?.().catch(() => {});
+    video.addEventListener("enterpictureinpicture", onEnter);
+    return () => video.removeEventListener("enterpictureinpicture", onEnter);
+  }, []);
+
+  // Pseudo-fullscreen (iPhone Safari): lock body scroll while active so the
+  // fixed overlay is the only thing on screen.
+  useEffect(() => {
+    if (isPseudoFullscreen) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [isPseudoFullscreen]);
+
+  // Allow Escape / hardware Back to clear pseudo-fullscreen (no native
+  // fullscreenchange fires for it).
+  useEffect(() => {
+    if (!isPseudoFullscreen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setPseudoFullscreen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isPseudoFullscreen]);
+
+  function setPseudoFullscreen(on: boolean) {
+    setIsPseudoFullscreen(on);
+  }
 
   function handleTamperDetected() {
     videoRef.current?.pause();
     setTampered(true);
   }
 
-  // "Play" with fullscreen: the video is interactive, but the native
-  // fullscreen button on the <video> would fullscreen just the video and
-  // drop the watermark. We keep native controls but wrap fullscreen via a
-  // separate button that promotes the wrapper. (The video element itself
-  // can't have its fullscreen behavior overridden cleanly across browsers,
-  // so the explicit button is the reliable path.)
-  function toggleFullscreen() {
-    const wrapper = wrapperRef.current;
-    if (!wrapper) return;
-    if (document.fullscreenElement === wrapper) {
-      void document.exitFullscreen();
-    } else {
-      void wrapper.requestFullscreen();
+  // Enter/exit fullscreen on the WRAPPER (video + watermark), not the raw
+  // <video>. Feature-detected for Safari/iOS prefixes; iPhone gets a
+  // pseudo-fullscreen fallback (see 2.5). requestFullscreen() rejects
+  // outside a user-gesture handler, so wrap in try/catch to avoid unhandled
+  // rejection noise.
+  async function toggleFullscreen() {
+    const el = containerRef.current as FsElement | null;
+    if (!el) return;
+
+    try {
+      if (getFullscreenElement()) {
+        const d = document as FullscreenDocument;
+        if (document.exitFullscreen) await document.exitFullscreen();
+        else if (d.webkitExitFullscreen) d.webkitExitFullscreen();
+        else if (d.msExitFullscreen) d.msExitFullscreen();
+        return;
+      }
+
+      if (el.requestFullscreen) {
+        await el.requestFullscreen();
+      } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
+      } else if (el.msRequestFullscreen) {
+        el.msRequestFullscreen();
+      } else {
+        // iPhone Safari: no Element.requestFullscreen(). Use pseudo-fullscreen
+        // (CSS class) instead of webkitEnterFullscreen, which promotes the raw
+        // <video> into the native iOS player we can't overlay.
+        setPseudoFullscreen(true);
+      }
+    } catch {
+      // Not in a user gesture or already fullscreen — ignore.
     }
   }
 
   return (
     <div
-      ref={wrapperRef}
-      className="relative overflow-hidden rounded-md bg-black"
+      ref={containerRef}
+      data-testid="plms-player"
+      className={
+        "plms-player relative overflow-hidden rounded-md bg-black" +
+        (isPseudoFullscreen ? " is-pseudo-fullscreen" : "")
+      }
       onContextMenu={(e) => e.preventDefault()}
     >
       <video
         ref={videoRef}
-        src={src}
+        // hls.js drives the element via MediaSource when the URL is an .m3u8
+        // master; for direct files (or Safari native HLS) we set src below.
+        src={src.endsWith(".m3u8") ? undefined : src}
         controls
-        controlsList="nodownload"
+        playsInline
         disablePictureInPicture
+        controlsList="nodownload noplaybackrate noremoteplayback"
+        x-webkit-airplay="deny"
         className="aspect-video w-full"
       />
 

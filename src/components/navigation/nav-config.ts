@@ -15,4 +15,5 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/students", label: "Students", icon: "users" },
   { href: "/admin/courses", label: "Courses", icon: "bookOpen" },
   { href: "/admin/submissions", label: "Submissions", icon: "inbox" },
+  { href: "/admin/tools", label: "Tools", icon: "wrench" },
 ];

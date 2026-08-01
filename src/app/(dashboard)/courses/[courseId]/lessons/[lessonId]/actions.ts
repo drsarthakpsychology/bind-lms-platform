@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { requireSession } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
+import { getMediaProvider } from "@/lib/media/provider";
 
 export type PlaybackResult =
   | { ok: true; url: string; resumeSeconds: number }
@@ -15,11 +16,11 @@ export async function getPlaybackUrl(lessonId: string): Promise<PlaybackResult> 
   const supabase = await createClient();
   const { data: lesson } = await supabase
     .from("lessons")
-    .select("id, video_storage_path, courses(is_published)")
+    .select("id, video_storage_path, media_assets(master_playlist, key_prefix), courses(is_published)")
     .eq("id", lessonId)
     .single();
 
-  if (!lesson || !lesson.video_storage_path) {
+  if (!lesson) {
     return { ok: false, error: "This lesson has no video yet." };
   }
 
@@ -28,23 +29,22 @@ export async function getPlaybackUrl(lessonId: string): Promise<PlaybackResult> 
     return { ok: false, error: "This course isn't published." };
   }
 
-  let admin;
-  try {
-    admin = createAdminClient();
-  } catch {
-    return {
-      ok: false,
-      error:
-        "SUPABASE_SERVICE_ROLE_KEY isn't set in this deployment yet, so video playback can't be authorized.",
-    };
+  // Prefer the HLS master playlist (R2 migration done); fall back to the
+  // legacy raw video path (still on Supabase Storage).
+  const media = Array.isArray(lesson.media_assets)
+    ? lesson.media_assets[0]
+    : lesson.media_assets;
+  const key = media?.master_playlist ?? media?.key_prefix ?? lesson.video_storage_path;
+
+  if (!key) {
+    return { ok: false, error: "This lesson has no video yet." };
   }
 
-  const { data, error } = await admin.storage
-    .from("videos")
-    .createSignedUrl(lesson.video_storage_path, 60 * 30); // 30 minutes
+  const provider = getMediaProvider();
+  const result = await provider.getPlaybackUrl(key, 60 * 60); // 60 minutes
 
-  if (error || !data) {
-    return { ok: false, error: "Could not prepare video playback." };
+  if (!result.ok) {
+    return { ok: false, error: result.error };
   }
 
   const { data: progress } = await supabase
@@ -54,7 +54,7 @@ export async function getPlaybackUrl(lessonId: string): Promise<PlaybackResult> 
     .eq("lesson_id", lessonId)
     .maybeSingle();
 
-  return { ok: true, url: data.signedUrl, resumeSeconds: progress?.watched_seconds ?? 0 };
+  return { ok: true, url: result.url, resumeSeconds: progress?.watched_seconds ?? 0 };
 }
 
 /**

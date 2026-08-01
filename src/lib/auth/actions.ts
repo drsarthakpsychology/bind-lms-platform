@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { SESSION_COOKIE } from "@/lib/auth/session";
+import { rateLimit } from "@/lib/rate-limit";
 
 export type LoginState = { error: string | null };
 
@@ -16,6 +17,36 @@ export async function login(
 
   if (!email || !password) {
     return { error: "Enter your email and password." };
+  }
+
+  // Rate limit login attempts per email (brute-force protection).
+  if (!rateLimit(`login:${email}`, 10)) {
+    return { error: "Too many attempts. Try again in a minute." };
+  }
+
+  // Cloudflare Turnstile verification (only when a secret key is configured).
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (turnstileSecret) {
+    const token = String(formData.get("cf-turnstile-response") ?? "");
+    if (!token) return { error: "Please complete the human check." };
+    try {
+      const res = await fetch(
+        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            secret: turnstileSecret,
+            response: token,
+          }),
+        },
+      );
+      const json = (await res.json()) as { success?: boolean };
+      if (!json.success) return { error: "Human check failed. Try again." };
+    } catch {
+      // Fail closed if verification can't be reached.
+      return { error: "Could not verify the human check. Try again." };
+    }
   }
 
   const supabase = await createClient();

@@ -97,7 +97,8 @@ export function Watermark({
     <div
       ref={nodeRef}
       aria-hidden="true"
-      className="pointer-events-none absolute z-10 select-none whitespace-nowrap rounded bg-black/40 px-2 py-1 text-xs font-medium text-white transition-[top,left] duration-1000"
+      data-testid="plms-watermark"
+      className="plms-watermark whitespace-nowrap rounded bg-black/40 px-2 py-1 text-xs font-medium text-white transition-[top,left] duration-1000"
       style={{ top: `${position.top}%`, left: `${position.left}%`, opacity }}
     >
       {label}
