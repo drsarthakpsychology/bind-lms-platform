@@ -58,3 +58,21 @@ export async function deleteCourse(courseId: string): Promise<{ error: string | 
   revalidatePath("/admin/courses");
   return { error: null };
 }
+
+/** Rename a course. Admin only. */
+export async function renameCourse(
+  courseId: string,
+  title: string,
+): Promise<{ error: string | null }> {
+  if (!(await requireAdmin())) return { error: "Not authorized." };
+  const clean = title.trim();
+  if (!clean) return { error: "Course title can't be empty." };
+
+  const supabase = await createClient();
+  const { error } = await supabase.from("courses").update({ title: clean }).eq("id", courseId);
+  if (error) return { error: "Could not rename the course." };
+
+  revalidatePath(`/admin/courses/${courseId}`);
+  revalidatePath("/admin/courses");
+  return { error: null };
+}

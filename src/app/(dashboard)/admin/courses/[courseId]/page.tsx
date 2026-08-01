@@ -8,6 +8,7 @@ import { DeleteLessonButton } from "./delete-lesson-button";
 import { CourseActions } from "../course-actions";
 import { EnrollStudents } from "./enroll-students";
 import { MaterialUploader } from "./material-uploader";
+import { RenameCourse } from "./rename-course";
 
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -70,7 +71,7 @@ export default async function CourseDetailPage({
 
       <PageHeader
         eyebrow={course.is_published ? "Published course" : "Draft course"}
-        title={course.title}
+        title={<RenameCourse courseId={course.id} title={course.title} />}
         badge={
           course.is_published ? (
             <Badge variant="published">Published</Badge>

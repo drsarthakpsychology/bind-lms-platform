@@ -35,6 +35,7 @@ export function CourseActions({
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [publishConfirmOpen, setPublishConfirmOpen] = useState(false);
 
   function handleTogglePublish() {
     setError(null);
@@ -48,6 +49,15 @@ export function CourseActions({
         router.refresh();
       }
     });
+  }
+
+  function handleTogglePublishConfirmed() {
+    // Unpublishing (published → draft) hides the course from students — confirm.
+    if (isPublished) {
+      setPublishConfirmOpen(true);
+    } else {
+      handleTogglePublish();
+    }
   }
 
   function handleDelete() {
@@ -71,12 +81,40 @@ export function CourseActions({
         type="button"
         variant={isPublished ? "secondary" : "outline"}
         size="sm"
-        onClick={handleTogglePublish}
+        onClick={handleTogglePublishConfirmed}
         disabled={isPending}
       >
         {isPending && <Loader2 className="size-3 animate-spin" aria-hidden />}
         {isPublished ? "Set to draft" : "Publish"}
       </Button>
+
+      {/* Confirm before unpublishing — it hides the course from students. */}
+      <Dialog open={publishConfirmOpen} onOpenChange={setPublishConfirmOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Unpublish this course?</DialogTitle>
+            <DialogDescription>
+              Students will no longer see this course until you publish it again.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button type="button" variant="outline" onClick={() => setPublishConfirmOpen(false)}>
+              Cancel
+            </Button>
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={() => {
+                setPublishConfirmOpen(false);
+                handleTogglePublish();
+              }}
+              disabled={isPending}
+            >
+              Set to draft
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
         <DropdownMenu>
