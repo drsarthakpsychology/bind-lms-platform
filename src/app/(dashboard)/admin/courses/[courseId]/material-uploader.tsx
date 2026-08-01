@@ -9,6 +9,7 @@ import {
   MoreHorizontal,
   Pencil,
   Plus,
+  RotateCcw,
   Trash2,
   UploadCloud,
   X,
@@ -59,26 +60,52 @@ function uploadFileWithProgress(
   xhrs.set(clientId, xhr);
   return new Promise((resolve) => {
     xhr.open("POST", url);
+    // Supabase's signed-upload endpoint expects the file at the EMPTY-named
+    // FormData field, plus a cacheControl field — exactly what supabase-js
+    // sends. A field named "file" returns 400, which is the bug this fixes.
+    xhr.setRequestHeader("Content-Type", "multipart/form-data; boundary=----plms");
     xhr.upload.onprogress = (e) => {
       if (e.lengthComputable) onProgress(Math.round((e.loaded / e.total) * 100));
     };
     xhr.onload = () => {
       xhrs.delete(clientId);
-      resolve({
-        error: xhr.status >= 200 && xhr.status < 300 ? undefined : `Upload failed (${xhr.status}).`,
-      });
+      if (xhr.status >= 200 && xhr.status < 300) {
+        resolve({});
+        return;
+      }
+      // Parse the Supabase error body for a useful message.
+      let detail = "";
+      try {
+        const body = JSON.parse(xhr.responseText) as { message?: string; error?: string };
+        detail = body?.message || body?.error || "";
+      } catch {
+        /* non-JSON body */
+      }
+      const msg =
+        xhr.status === 413
+          ? "This file is too large for the storage limit."
+          : xhr.status === 400
+            ? "The server rejected this file. Try a different name, then retry."
+            : detail || `The server rejected the upload. Try again.`;
+      resolve({ error: `${msg}` });
     };
     xhr.onerror = () => {
       xhrs.delete(clientId);
-      resolve({ error: "Upload failed. Check your connection." });
+      resolve({ error: "The upload couldn't reach the server. Check your connection and retry." });
     };
     xhr.onabort = () => {
       xhrs.delete(clientId);
       resolve({ error: "Upload cancelled." });
     };
-    const form = new FormData();
-    form.append("file", file);
-    xhr.send(form);
+    // Build the multipart body manually to match supabase-js exactly.
+    const boundary = "----plms";
+    const pre = `--${boundary}\r\nContent-Disposition: form-data; name="cacheControl"\r\n\r\n3600\r\n--${boundary}\r\nContent-Disposition: form-data; name=""; filename="${file.name}"\r\nContent-Type: application/octet-stream\r\n\r\n`;
+    const post = `\r\n--${boundary}--\r\n`;
+    const enc = new TextEncoder();
+    const head = enc.encode(pre);
+    const tail = enc.encode(post);
+    const blob = new Blob([head, file, tail], { type: "multipart/form-data" });
+    xhr.send(blob);
   });
 }
 
@@ -136,20 +163,71 @@ export function MaterialUploader({
   const [banner, setBanner] = useState<string | null>(null);
   const [draggedId, setDraggedId] = useState<string | null>(null);
 
+  /**
+   * The full upload pipeline for one file: prepare (creates the DB row + signed
+   * URL) → upload bytes → confirm. On failure it rolls back the DB row so no
+   * orphaned "success" row survives. Reports back via onUpdate.
+   */
+  const runSingleUpload = useCallback(
+    async (
+      item: PendingUpload,
+      onUpdate: (status: PendingUpload["status"], error?: string, progress?: number) => void,
+    ) => {
+      if (item.error) return;
+      onUpdate("preparing");
+
+      const signed = await prepareMaterialUpload(courseId, lessonId, item.file.name, item.file.size);
+      if (!signed.ok) {
+        onUpdate("error", signed.error);
+        return;
+      }
+      item.materialId = signed.materialId;
+      item.path = signed.path;
+      item.token = signed.token;
+      onUpdate("uploading");
+
+      // Upload with live progress + cancel via XHR to the signed upload URL.
+      const uploadResult = await uploadFileWithProgress(
+        item.clientId,
+        signed.path,
+        signed.token,
+        item.file,
+        xhrsRef.current,
+        (pct) => onUpdate("uploading", undefined, pct),
+      );
+
+      if (uploadResult.error) {
+        // Roll back the materials row we created in prepareMaterialUpload —
+        // otherwise a failed upload leaves an orphaned "success" row pointing
+        // at a file that was never written.
+        if (item.materialId) {
+          await deleteMaterial(courseId, item.materialId, signed.path);
+          item.materialId = null;
+        }
+        onUpdate("error", uploadResult.error);
+        return;
+      }
+
+      await confirmMaterialUpload(courseId);
+      onUpdate("done", undefined, 100);
+    },
+    [courseId, lessonId],
+  );
+
   const addFiles = useCallback(
     async (files: FileList | File[]) => {
       const list = Array.from(files);
-      const next = list.map((file) => {
+      const next: PendingUpload[] = list.map((file) => {
         const validation = validateMaterialFile(file.name, file.size);
         return {
           clientId: crypto.randomUUID(),
           fileName: file.name,
           file,
-          materialId: null as string | null,
+          materialId: null,
           path: "",
           token: "",
           progress: 0,
-          status: ("preparing" as const),
+          status: "preparing",
           error: validation.ok ? undefined : validation.error,
         };
       });
@@ -157,74 +235,51 @@ export function MaterialUploader({
       setPending((prev) => [...prev, ...next]);
 
       for (const item of next) {
-        if (item.error) continue;
-        const signed = await prepareMaterialUpload(
-          courseId,
-          lessonId,
-          item.file.name,
-          item.file.size,
-        );
-        if (!signed.ok) {
+        await runSingleUpload(item, (status, error, progress) => {
           setPending((prev) =>
             prev.map((p) =>
               p.clientId === item.clientId
-                ? { ...p, status: "error" as const, error: signed.error }
+                ? { ...p, status, error, progress: progress ?? p.progress }
                 : p,
             ),
           );
-          continue;
-        }
-
-        setPending((prev) =>
-          prev.map((p) =>
-            p.clientId === item.clientId
-              ? { ...p, materialId: signed.materialId, path: signed.path, token: signed.token, status: "uploading" as const }
-              : p,
-          ),
-        );
-
-        // Upload with live progress + cancel via XHR to the signed upload URL.
-        const uploadResult = await uploadFileWithProgress(
-          item.clientId,
-          signed.path,
-          signed.token,
-          item.file,
-          xhrsRef.current,
-          (pct) => {
-            setPending((prev) =>
-              prev.map((p) => (p.clientId === item.clientId ? { ...p, progress: pct } : p)),
-            );
-          },
-        );
-
-        if (uploadResult.error) {
-          setPending((prev) =>
-            prev.map((p) =>
-              p.clientId === item.clientId
-                ? { ...p, status: "error" as const, error: uploadResult.error }
-                : p,
-            ),
-          );
-          continue;
-        }
-
-        await confirmMaterialUpload(courseId);
-        setPending((prev) =>
-          prev.map((p) =>
-            p.clientId === item.clientId ? { ...p, status: "done" as const, progress: 100 } : p,
-          ),
-        );
+        });
       }
 
       router.refresh();
     },
-    [courseId, lessonId, router],
+    [runSingleUpload, router],
   );
 
   function cancelUpload(clientId: string) {
     // Abort the in-flight XHR (its onabort removes itself + resolves).
     xhrsRef.current.get(clientId)?.abort();
     setPending((prev) => prev.filter((p) => p.clientId !== clientId));
+  }
+
+  function dismissFailed(clientId: string) {
+    setPending((prev) => prev.filter((p) => p.clientId !== clientId));
+  }
+
+  function retryUpload(p: PendingUpload) {
+    // Re-run the upload for just this file, keeping its clientId so the same
+    // row updates in place (no duplicate).
+    setPending((prev) =>
+      prev.map((x) =>
+        x.clientId === p.clientId
+          ? { ...x, status: "preparing" as const, error: undefined, progress: 0 }
+          : x,
+      ),
+    );
+    void runSingleUpload(p, (status, error, progress) => {
+      setPending((prev) =>
+        prev.map((x) =>
+          x.clientId === p.clientId
+            ? { ...x, status, error, progress: progress ?? x.progress }
+            : x,
+        ),
+      );
+    });
   }
 
   // ---- Dropzone handlers ----
@@ -417,6 +472,31 @@ export function MaterialUploader({
                 <span className="min-w-0 flex-1 truncate text-small text-foreground">
                   {p.fileName}
                 </span>
+
+                {/* Failed row: dismiss + retry. */}
+                {p.status === "error" && (
+                  <span className="flex shrink-0 items-center gap-1.5">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="xs"
+                      onClick={() => retryUpload(p)}
+                    >
+                      <RotateCcw className="size-3" aria-hidden />
+                      Retry
+                    </Button>
+                    <button
+                      type="button"
+                      onClick={() => dismissFailed(p.clientId)}
+                      aria-label={`Dismiss ${p.fileName}`}
+                      className="text-caption text-muted-foreground hover:text-foreground"
+                    >
+                      Dismiss
+                    </button>
+                  </span>
+                )}
+
+                {/* In-flight row: cancel. */}
                 {p.status !== "done" && p.status !== "error" && (
                   <button
                     type="button"
@@ -430,7 +510,7 @@ export function MaterialUploader({
               </div>
               {p.error ? (
                 <p role="alert" className="mt-1 text-caption text-status-alert-fg">
-                  {p.error}
+                  {p.error} You can retry or dismiss this file.
                 </p>
               ) : p.status !== "done" ? (
                 <div className="mt-2 h-1.5 overflow-hidden rounded-md bg-muted">
