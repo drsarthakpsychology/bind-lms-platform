@@ -65,7 +65,8 @@ export async function proxy(request: NextRequest) {
 
   const isProtectedPath =
     request.nextUrl.pathname.startsWith("/dashboard") ||
-    request.nextUrl.pathname.startsWith("/admin");
+    request.nextUrl.pathname.startsWith("/admin") ||
+    request.nextUrl.pathname.startsWith("/courses");
 
   if (!user && isProtectedPath) {
     const loginUrl = new URL("/login", request.url);

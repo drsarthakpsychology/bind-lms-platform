@@ -38,7 +38,7 @@ export default async function CourseDetailPage({
           ← Courses
         </Link>
         <div className="mt-1 flex items-center justify-between gap-2">
-          <h1 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+          <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
             {course.title}
           </h1>
           <CourseActions courseId={course.id} isPublished={course.is_published} />
@@ -70,7 +70,8 @@ export default async function CourseDetailPage({
           >
             <div>
               <p className="font-medium text-foreground">
-                {lesson.order_index}. {lesson.title}
+                <span className="font-mono text-muted-foreground">{lesson.order_index}.</span>{" "}
+                {lesson.title}
               </p>
               {lesson.requires_assignment && (
                 <p className="mt-0.5 text-xs text-muted-foreground">Requires assignment</p>

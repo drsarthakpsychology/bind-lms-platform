@@ -81,6 +81,7 @@ export function CourseSidebar({
         <button
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
+          aria-expanded={mobileOpen}
           className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-foreground"
         >
           {mobileOpen ? "Close" : "Lessons"}

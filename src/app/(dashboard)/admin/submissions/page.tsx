@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { SubmissionRow } from "./submission-row";
 
@@ -50,7 +51,7 @@ export default async function SubmissionsPage({
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+        <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
           Submissions
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -59,7 +60,7 @@ export default async function SubmissionsPage({
       </div>
 
       <div className="flex gap-1 border-b border-border">
-        <a
+        <Link
           href="/admin/submissions"
           className={
             !showApproved
@@ -68,8 +69,8 @@ export default async function SubmissionsPage({
           }
         >
           Pending
-        </a>
-        <a
+        </Link>
+        <Link
           href="/admin/submissions?filter=approved"
           className={
             showApproved
@@ -78,7 +79,7 @@ export default async function SubmissionsPage({
           }
         >
           Approved
-        </a>
+        </Link>
       </div>
 
       <div className="space-y-3">

@@ -19,11 +19,11 @@ export default async function CoursesPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+        <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
           Courses
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Unpublished courses are invisible to students regardless of enrollment. Preview a
+          Unpublished courses are invisible to students. Preview a
           draft&apos;s videos from its detail page before publishing.
         </p>
       </div>
@@ -50,7 +50,7 @@ export default async function CoursesPage() {
               </Link>
               <CourseActions courseId={course.id} isPublished={course.is_published} />
             </div>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mt-1 font-mono text-xs text-muted-foreground">
               {lessonCounts.get(course.id) ?? 0} lessons
             </p>
           </div>

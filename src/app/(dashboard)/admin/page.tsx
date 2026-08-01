@@ -27,7 +27,7 @@ export default async function AdminOverviewPage() {
 
   return (
     <div>
-      <h1 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+      <h1 className="font-serif text-2xl font-semibold tracking-tight text-foreground">
         Overview
       </h1>
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -37,7 +37,7 @@ export default async function AdminOverviewPage() {
             href={stat.href}
             className="rounded-xl border border-border bg-card p-4 transition-colors hover:bg-secondary"
           >
-            <p className="text-2xl font-semibold text-foreground">
+            <p className="font-mono text-2xl font-semibold text-foreground">
               {stat.value}
             </p>
             <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>

@@ -42,6 +42,7 @@ export async function createLessonWithVideo(
   if (!(await requireAdmin())) return { error: "Not authorized." };
 
   const title = String(formData.get("title") ?? "").trim();
+  const description = String(formData.get("description") ?? "").trim();
   const orderIndexRaw = Number(formData.get("orderIndex") ?? 0);
   const requiresAssignment = formData.get("requiresAssignment") === "on";
   const videoPath = String(formData.get("videoPath") ?? "").trim();
@@ -61,6 +62,7 @@ export async function createLessonWithVideo(
     .insert({
       course_id: courseId,
       title,
+      description: description || null,
       order_index: Number.isFinite(orderIndexRaw) ? orderIndexRaw : 0,
       requires_assignment: requiresAssignment,
       video_storage_path: videoPath,

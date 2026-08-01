@@ -123,6 +123,19 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
         </div>
       </div>
 
+      <div>
+        <label htmlFor="description" className="block text-xs font-medium text-muted-foreground">
+          Lesson notes (optional)
+        </label>
+        <textarea
+          id="description"
+          name="description"
+          rows={3}
+          className="mt-1 block w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring"
+          placeholder="Shown to students under the video."
+        />
+      </div>
+
       <label className="flex items-center gap-2 text-sm text-foreground">
         <input
           type="checkbox"
