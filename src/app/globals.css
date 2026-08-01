@@ -223,7 +223,16 @@
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
-  will-change: top, left;
+  will-change: top, left, opacity, transform;
+  transition: top 3s linear, left 3s linear, opacity 2s ease, font-size 2s ease,
+    transform 3s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plms-watermark {
+    /* Slower drift — still moves, so it can't be cropped, but not distractingly. */
+    transition: top 8s linear, left 8s linear, opacity 6s ease, transform 8s linear;
+  }
 }
 
 /* The <video> must always contain its frame — never crop. Applies both in

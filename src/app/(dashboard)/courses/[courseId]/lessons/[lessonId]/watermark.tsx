@@ -1,23 +1,29 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 
 /**
- * Dynamic, persistent watermark for video playback.
+ * Dynamic, multi-instance, persistent watermark for video playback.
  *
- * The watermark is TEXT ONLY — no background fill, no panel, no border. Legibility
- * comes from a subtle text shadow that works over both light and dark frames.
- * It is small, low-opacity, sized to its own content, and drifts slowly between
- * positions so it can't be cropped or covered by a single overlay. It never
- * intercepts pointer events. Reduced-motion parks it in one corner instead of
- * drifting.
+ * Anti-piracy design (per content-protection brief):
+ *  - TWO or more instances on screen simultaneously, at different positions
+ *    and scales — cropping or blurring one region can't clean the frame.
+ *  - Each instance moves on an unpredictable schedule (not a fixed loop) to a
+ *    new position ANYWHERE in the frame, including over the content, so a
+ *    scripted overlay can't track all of them.
+ *  - Opacity and size vary within a legible range as they move.
+ *  - Text only: no background fill, no panel, no fixed-size block. Legibility
+ *    from a text shadow that survives both light and dark frames.
+ *  - Never intercepts pointer events. Never sits over the bottom controls bar.
+ *  - Tamper-proofing: removing ANY instance from the DOM, hiding it, or zeroing
+ *    its opacity stops playback (onTamperDetected). A student can't just delete
+ *    one node.
+ *  - Reduced-motion reduces movement frequency, not the count — so it still
+ *    covers the frame but doesn't flash around.
  *
- * Anti-tamper: observes the watermark node and flags tampering if it is removed
- * from the DOM or hidden (display:none / visibility:hidden / opacity:0).
- *
- * Honest boundary: nothing rendered in a browser can be made impossible to
- * capture. The watermark + short-lived signed URLs + no-download controls are
- * practical deterrents, documented as such in video-player.tsx.
+ * Honest boundary: anything that renders in a browser can be screen-recorded.
+ * This is a deterrent, not DRM. It makes casual capture awkward and any leak
+ * traceable to the account the label names.
  */
 export function Watermark({
   label,
@@ -26,106 +32,133 @@ export function Watermark({
   label: string;
   onTamperDetected: () => void;
 }) {
-  const nodeRef = useRef<HTMLDivElement>(null);
-  // Start in a corner. If the user prefers reduced motion, it stays here.
-  const [position, setPosition] = useState<{ top: string; left: string }>({
-    top: "6%",
-    left: "6%",
-  });
-  const [opacity, setOpacity] = useState(0.4);
   const detectedRef = useRef(false);
+  const reduce = useMemo(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    [],
+  );
 
-  // Guard against double-firing from overlapping observers.
-  function detect() {
+  // Two watermark instances — two named refs (an array-of-refs trips the
+  // react-hooks/refs rule).
+  const nodeA = useRef<HTMLDivElement>(null);
+  const nodeB = useRef<HTMLDivElement>(null);
+
+  const detect = useCallback(() => {
     if (detectedRef.current) return;
     detectedRef.current = true;
     onTamperDetected();
-  }
+  }, [onTamperDetected]);
 
-  // Slow drift, every 30–60s, confined to the top band so the watermark never
-  // settles over the bottom controls bar. Respects prefers-reduced-motion by
-  // parking in the start corner.
+  // Independent, unpredictable drift per instance.
   useEffect(() => {
-    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return; // stay parked in the corner
+    // Control bar occupies roughly the bottom 15%; keep watermarks above it.
+    const BOTTOM_LIMIT = 82;
+
+    function randomPos() {
+      return {
+        top: 2 + Math.random() * (BOTTOM_LIMIT - 2),
+        left: 1 + Math.random() * 90,
+      };
     }
 
-    let timeoutId: ReturnType<typeof setTimeout>;
+    const timers: ReturnType<typeof setTimeout>[] = [];
 
-    function scheduleMove() {
-      const delay = 30000 + Math.random() * 30000; // 30–60s
-      timeoutId = setTimeout(() => {
-        setPosition({
-          // top band: between 4% and ~60% of the frame height
-          top: `${4 + Math.random() * 56}%`,
-          // keep a healthy margin from the left/right edges
-          left: `${3 + Math.random() * 62}%`,
-        });
-        setOpacity(0.35 + Math.random() * 0.1); // 35–45%
-        scheduleMove();
-      }, delay);
+    for (const ref of [nodeA, nodeB]) {
+      const el = ref.current;
+      if (!el) continue;
+
+      const schedule = () => {
+        // Normal: every 18–45s. Reduced motion: every 2–4 minutes (still moves,
+        // just slowly) — reduced frequency, not parked.
+        const delay = reduce
+          ? 120000 + Math.random() * 120000
+          : 18000 + Math.random() * 27000;
+        timers.push(
+          setTimeout(() => {
+            const pos = randomPos();
+            el.style.top = `${pos.top}%`;
+            el.style.left = `${pos.left}%`;
+            el.style.opacity = String(0.3 + Math.random() * 0.2); // 30–50%
+            el.style.fontSize = `${11 + Math.random() * 3}px`; // 11–14px
+            el.style.transform = `scale(${0.95 + Math.random() * 0.2})`;
+            schedule();
+          }, delay),
+        );
+      };
+      schedule();
     }
 
-    scheduleMove();
-    return () => clearTimeout(timeoutId);
-  }, []);
+    return () => timers.forEach(clearTimeout);
+  }, [reduce]);
 
-  // Anti-tamper: removal from DOM, or hidden/scaled-out via style/class.
+  // Tamper-proofing per instance: removal, hidden, or zeroed opacity → stop.
   useEffect(() => {
-    const node = nodeRef.current;
-    const parent = node?.parentElement;
-    if (!node || !parent) return;
-    const el: Element = node; // non-null capture for the observers below
+    const observers: MutationObserver[] = [];
 
-    function checkHidden() {
-      if (detectedRef.current) return;
-      const style = window.getComputedStyle(el);
-      if (
-        style.display === "none" ||
-        style.visibility === "hidden" ||
-        parseFloat(style.opacity) === 0
-      ) {
-        detect();
-      }
-    }
+    for (const ref of [nodeA, nodeB]) {
+      const node = ref.current;
+      const parent = node?.parentElement;
+      if (!node || !parent) continue;
+      const el: Element = node;
 
-    const removalObserver = new MutationObserver((mutations) => {
-      for (const mutation of mutations) {
-        if (Array.from(mutation.removedNodes).includes(el)) {
+      function checkHidden() {
+        if (detectedRef.current) return;
+        const style = window.getComputedStyle(el);
+        if (
+          style.display === "none" ||
+          style.visibility === "hidden" ||
+          parseFloat(style.opacity) === 0
+        ) {
           detect();
-          return;
         }
       }
-    });
-    removalObserver.observe(parent, { childList: true });
 
-    const attributeObserver = new MutationObserver(checkHidden);
-    attributeObserver.observe(node, { attributes: true, attributeFilter: ["style", "class"] });
+      const removalObserver = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+          if (Array.from(mutation.removedNodes).includes(el)) {
+            detect();
+            return;
+          }
+        }
+      });
+      removalObserver.observe(parent, { childList: true });
+      observers.push(removalObserver);
 
-    return () => {
-      removalObserver.disconnect();
-      attributeObserver.disconnect();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      const attributeObserver = new MutationObserver(checkHidden);
+      attributeObserver.observe(el, { attributes: true, attributeFilter: ["style", "class"] });
+      observers.push(attributeObserver);
+    }
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, [detect]);
+
+  const baseStyle = {
+    textShadow:
+      "0 1px 2px rgba(0,0,0,0.65), 0 0 1px rgba(0,0,0,0.65), 1px 0 0 rgba(0,0,0,0.4)",
+  };
 
   return (
-    <div
-      ref={nodeRef}
-      aria-hidden="true"
-      data-testid="plms-watermark"
-      className="plms-watermark text-[13px] leading-none font-medium text-white"
-      style={{
-        top: position.top,
-        left: position.left,
-        opacity,
-        // Subtle text shadow for legibility over light AND dark frames — no
-        // background fill, no panel. Sits above the controls bar (top band).
-        textShadow:
-          "0 1px 2px rgba(0,0,0,0.6), 0 0 1px rgba(0,0,0,0.6), 1px 0 0 rgba(0,0,0,0.35)",
-      }}
-    >
-      {label}
-    </div>
+    <>
+      <div
+        ref={nodeA}
+        aria-hidden="true"
+        data-testid="plms-watermark"
+        className="plms-watermark font-medium text-white"
+        style={{ ...baseStyle, top: "6%", left: "4%", opacity: 0.4, fontSize: "13px" }}
+      >
+        {label}
+      </div>
+      <div
+        ref={nodeB}
+        aria-hidden="true"
+        data-testid="plms-watermark-secondary"
+        className="plms-watermark font-medium text-white"
+        style={{ ...baseStyle, top: "38%", left: "62%", opacity: 0.35, fontSize: "12px" }}
+      >
+        {label}
+      </div>
+    </>
   );
 }
