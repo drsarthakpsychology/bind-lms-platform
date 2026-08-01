@@ -1,14 +1,16 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BookOpen, CheckCircle2, FileText } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, Clock, FileText, Inbox } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 
 import { PageHeader } from "@/components/design-system/page-header";
+import { Badge } from "@/components/ui/badge";
 import { cardVariants } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { EmptyState } from "@/components/design-system/empty-state";
 import { cn } from "@/lib/utils";
 
 export default async function CourseOverviewPage({
@@ -23,18 +25,34 @@ export default async function CourseOverviewPage({
 
   const supabase = await createClient();
 
-  const [{ data: course }, { data: lessons }, { data: progress }] = await Promise.all([
-    supabase.from("courses").select("id, title, is_published").eq("id", courseId).single(),
-    supabase
-      .from("lessons")
-      .select("id, title, order_index, video_storage_path")
-      .eq("course_id", courseId)
-      .order("order_index", { ascending: true }),
-    supabase
-      .from("progress")
-      .select("lesson_id, is_completed")
-      .eq("user_id", profile.id),
-  ]);
+  const [{ data: course }, { data: lessons }, { data: progress }, { data: courseMaterials }, { data: assignments }, { data: submissions }] =
+    await Promise.all([
+      supabase.from("courses").select("id, title, is_published").eq("id", courseId).single(),
+      supabase
+        .from("lessons")
+        .select("id, title, order_index, video_storage_path")
+        .eq("course_id", courseId)
+        .order("order_index", { ascending: true }),
+      supabase
+        .from("progress")
+        .select("lesson_id, is_completed")
+        .eq("user_id", profile.id),
+      supabase
+        .from("materials")
+        .select("id, title, kind, format, size_bytes")
+        .eq("course_id", courseId)
+        .is("lesson_id", null)
+        .order("sort_order", { ascending: true }),
+      supabase
+        .from("assignments")
+        .select("id, lesson_id, title, instructions, due_at, is_published, lessons!inner(course_id)")
+        .eq("lessons.course_id", courseId)
+        .order("due_at", { ascending: true }),
+      supabase
+        .from("submissions")
+        .select("assignment_id, status, submitted_at, score")
+        .eq("user_id", profile.id),
+    ]);
 
   if (!course || (!course.is_published && profile.role !== "admin")) {
     notFound();
@@ -51,6 +69,30 @@ export default async function CourseOverviewPage({
 
   // Resume target: first not-yet-completed lesson (or first if nothing started).
   const resumeTarget = playable.find((l) => !completedIds.has(l.id)) ?? playable[0];
+
+  // Assignments for THIS course's lessons + the student's submission per one.
+  const lessonsById = new Map((lessons ?? []).map((l) => [l.id, l]));
+  const submissionByAssignment = new Map(
+    (submissions ?? []).map((s) => [s.assignment_id, s]),
+  );
+  const courseAssignments = (assignments ?? []).map((a) => {
+    const lesson = lessonsById.get(a.lesson_id);
+    const sub = submissionByAssignment.get(a.id);
+    return {
+      ...a,
+      lessonTitle: lesson?.title ?? "Lesson",
+      lessonId: a.lesson_id,
+      status: !a.is_published
+        ? ("draft" as const)
+        : sub?.status === "returned"
+          ? ("graded" as const)
+          : sub
+            ? ("submitted" as const)
+            : ("not_started" as const),
+      submittedAt: sub?.submitted_at ?? null,
+      score: sub?.score ?? null,
+    };
+  });
 
   return (
     <div className="space-y-8">
@@ -125,23 +167,83 @@ export default async function CourseOverviewPage({
       {/* Course materials */}
       <section aria-label="Course materials" className="space-y-3">
         <h2 className="text-h2">Course materials</h2>
-        <div className="rounded-lg border-2 border-dashed border-border bg-card/50 p-6 text-center">
-          <BookOpen className="mx-auto size-6 text-muted-foreground" aria-hidden />
-          <p className="mt-2 text-small text-muted-foreground">
-            Files your instructor attaches to this course will appear here.
-          </p>
-        </div>
+        {courseMaterials && courseMaterials.length > 0 ? (
+          <ul className="space-y-2">
+            {courseMaterials.map((m) => (
+              <li
+                key={m.id}
+                className="flex items-center gap-3 rounded-md border-2 border-border bg-card p-3"
+              >
+                <BookOpen className="size-4 shrink-0 text-primary" aria-hidden />
+                <span className="min-w-0 flex-1 truncate text-small font-medium">
+                  {m.title}
+                </span>
+                <span className="text-caption text-muted-foreground">
+                  {m.format?.toUpperCase() ?? m.kind}
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <EmptyState
+            compact
+            icon={<BookOpen className="size-6" aria-hidden />}
+            title="No course materials yet"
+            description="Files attached to the course as a whole will appear here."
+          />
+        )}
       </section>
 
       {/* Assignments */}
       <section aria-label="Assignments" className="space-y-3">
         <h2 className="text-h2">Assignments</h2>
-        <div className="rounded-lg border-2 border-dashed border-border bg-card/50 p-6 text-center">
-          <FileText className="mx-auto size-6 text-muted-foreground" aria-hidden />
-          <p className="mt-2 text-small text-muted-foreground">
-            Assignments attached to lessons will appear here with their status.
-          </p>
-        </div>
+        {courseAssignments.length === 0 ? (
+          <EmptyState
+            compact
+            icon={<Inbox className="size-6" aria-hidden />}
+            title="No assignments yet"
+            description="Assignments attached to lessons will appear here."
+          />
+        ) : (
+          <ul className="space-y-2">
+            {courseAssignments.map((a) => (
+              <li key={a.id}>
+                <Link
+                  href={`/courses/${courseId}/lessons/${a.lessonId}?tab=assignment`}
+                  className={cn(
+                    cardVariants({ variant: "interactive" }),
+                    "flex items-center gap-3 p-4"
+                  )}
+                >
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground">
+                    <FileText className="size-4" aria-hidden />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-small font-medium">{a.title ?? "Assignment"}</p>
+                    <p className="truncate text-caption text-muted-foreground">
+                      {a.lessonTitle}
+                      {a.due_at ? ` · due ${new Date(a.due_at).toLocaleDateString()}` : ""}
+                    </p>
+                  </div>
+                  {a.status === "draft" && <Badge variant="draft">Draft</Badge>}
+                  {a.status === "not_started" && <Badge variant="outline">Not started</Badge>}
+                  {a.status === "submitted" && (
+                    <Badge variant="pending">
+                      <Clock className="size-3" aria-hidden />
+                      Submitted
+                    </Badge>
+                  )}
+                  {a.status === "graded" && (
+                    <Badge variant="graded">
+                      <CheckCircle2 className="size-3" aria-hidden />
+                      Graded
+                    </Badge>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
     </div>
   );

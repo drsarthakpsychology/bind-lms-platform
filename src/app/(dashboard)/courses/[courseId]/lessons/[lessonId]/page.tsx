@@ -1,6 +1,7 @@
+import { Suspense } from "react";
 import { headers } from "next/headers";
 import Link from "next/link";
-import { ArrowLeft, ChevronLeft, FileText, Lock } from "lucide-react";
+import { ArrowLeft, ChevronLeft, FileText, Lock, Paperclip } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
@@ -8,24 +9,30 @@ import { getPlaybackUrl } from "./actions";
 import { VideoPlayer } from "./video-player";
 import { AssignmentPanel } from "./assignment-panel";
 import { CompleteButton } from "./complete-button";
+import { LessonTabs } from "./lesson-tabs";
+import { MaterialsList } from "./materials-list";
 
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 export default async function LessonPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ courseId: string; lessonId: string }>;
+  searchParams: Promise<{ tab?: string }>;
 }) {
   const { courseId, lessonId } = await params;
+  const { tab: tabParam } = await searchParams;
   const session = await getSession();
   if (session.status !== "ok") return null;
   const { profile } = session;
 
   const supabase = await createClient();
 
-  const [{ data: lesson }, { data: courseLessons }, { data: userData }, { data: assignment }] =
+  const [{ data: lesson }, { data: courseLessons }, { data: userData }, { data: assignment }, { data: materials }] =
     await Promise.all([
       supabase
         .from("lessons")
@@ -40,10 +47,26 @@ export default async function LessonPage({
       supabase.auth.getUser(),
       supabase
         .from("assignments")
-        .select("id, prompt_text, submission_type")
+        .select("id, prompt_text, submission_type, title, instructions, due_at, is_published")
         .eq("lesson_id", lessonId)
         .maybeSingle(),
+      supabase
+        .from("materials")
+        .select("id, title, kind, format, size_bytes, sort_order")
+        .eq("lesson_id", lessonId)
+        .order("sort_order", { ascending: true }),
     ]);
+
+  // Which tab to show. Invalid/absent tab falls back to watch. If a non-watch
+  // tab is requested but there's no content for it, fall back to watch too.
+  const hasMaterials = Boolean((materials ?? []).length);
+  const hasAssignment = Boolean(assignment);
+  const requestedTab = tabParam === "materials" ? "materials" : tabParam === "assignment" ? "assignment" : "watch";
+  const tab =
+    (requestedTab === "materials" && !hasMaterials) ||
+    (requestedTab === "assignment" && !hasAssignment)
+      ? "watch"
+      : requestedTab;
 
   const existingSubmission = assignment
     ? (
@@ -125,25 +148,67 @@ export default async function LessonPage({
         ) : null}
       </div>
 
-      {/* Video frame */}
-      <div className="rounded-lg border-2 border-foreground bg-card p-2 hard-shadow-sm sm:p-3">
-        {playback.ok ? (
-          <VideoPlayer
-            lessonId={lessonId}
-            src={playback.url}
-            resumeSeconds={playback.resumeSeconds}
-            watermarkLabel={watermarkLabel}
-          />
-        ) : (
-          <div className="flex aspect-video items-center justify-center rounded-md bg-muted p-6 text-center">
-            <Alert variant="warning" className="max-w-md">
-              <FileText className="size-4" aria-hidden />
-              <AlertTitle>Video unavailable</AlertTitle>
-              <AlertDescription>{playback.error}</AlertDescription>
-            </Alert>
-          </div>
-        )}
-      </div>
+      {/* Tab bar — Watch / Materials / Assignment. Hidden entirely on a plain
+          video lesson (no materials, no assignment). */}
+      <Suspense fallback={null}>
+        <LessonTabs
+          courseId={courseId}
+          lessonId={lessonId}
+          tab={tab}
+          hasMaterials={hasMaterials}
+          hasAssignment={hasAssignment}
+        />
+      </Suspense>
+
+      {/* Watch tab — the video. */}
+      {tab === "watch" && (
+        <div className="rounded-lg border-2 border-foreground bg-card p-2 hard-shadow-sm sm:p-3">
+          {playback.ok ? (
+            <VideoPlayer
+              lessonId={lessonId}
+              src={playback.url}
+              resumeSeconds={playback.resumeSeconds}
+              watermarkLabel={watermarkLabel}
+            />
+          ) : (
+            <div className="flex aspect-video items-center justify-center rounded-md bg-muted p-6 text-center">
+              <Alert variant="warning" className="max-w-md">
+                <FileText className="size-4" aria-hidden />
+                <AlertTitle>Video unavailable</AlertTitle>
+                <AlertDescription>{playback.error}</AlertDescription>
+              </Alert>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Materials tab */}
+      {tab === "materials" && (
+        <section aria-label="Materials" className="space-y-3">
+          <h2 className="text-h2 flex items-center gap-2">
+            <Paperclip className="size-4 text-primary" aria-hidden />
+            Materials
+          </h2>
+          {hasMaterials ? (
+            <MaterialsList
+              materials={(materials ?? []).map((m) => ({
+                id: m.id,
+                title: m.title,
+                kind: m.kind,
+                format: m.format,
+                sizeBytes: m.size_bytes,
+              }))}
+            />
+          ) : (
+            <EmptyState
+              compact
+              icon={<Paperclip className="size-6" aria-hidden />}
+              title="No materials yet"
+              description="Materials attached to this lesson will appear here."
+            />
+          )}
+        </section>
+      )}
 
       {/* Footer: prev + a single forward action. Exactly one forward button. */}
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -179,32 +244,42 @@ export default async function LessonPage({
         />
       </div>
 
-      {/* Assignment */}
-      {assignment && (
-        <Card variant="raised">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <FileText className="size-4 text-primary" aria-hidden />
-              Assignment
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <AssignmentPanel
-              assignmentId={assignment.id}
-              promptText={assignment.prompt_text}
-              submissionTypes={assignment.submission_type || "text"}
-              existingSubmission={
-                existingSubmission
-                  ? {
-                      status: existingSubmission.status === "approved" ? "approved" : "pending_review",
-                      text_content: existingSubmission.text_content,
-                      audio_storage_path: existingSubmission.audio_storage_path,
-                    }
-                  : null
-              }
-            />
-          </CardContent>
-        </Card>
+      {/* Assignment tab */}
+      {tab === "assignment" && assignment && (
+        <section aria-label="Assignment" className="space-y-3">
+          <h2 className="text-h2 flex items-center gap-2">
+            <FileText className="size-4 text-primary" aria-hidden />
+            {assignment.title ?? "Assignment"}
+          </h2>
+          <Card variant="raised">
+            <CardContent className="pt-6">
+              <AssignmentPanel
+                assignmentId={assignment.id}
+                promptText={assignment.prompt_text}
+                submissionTypes={assignment.submission_type || "text"}
+                existingSubmission={
+                  existingSubmission
+                    ? {
+                        status: existingSubmission.status === "approved" ? "approved" : "pending_review",
+                        text_content: existingSubmission.text_content,
+                        audio_storage_path: existingSubmission.audio_storage_path,
+                      }
+                    : null
+                }
+              />
+            </CardContent>
+          </Card>
+        </section>
+      )}
+
+      {/* Assignment tab, but no assignment exists */}
+      {tab === "assignment" && !assignment && (
+        <EmptyState
+          compact
+          icon={<FileText className="size-6" aria-hidden />}
+          title="No assignment"
+          description="This lesson doesn't have an assignment."
+        />
       )}
 
       {mustSubmitFirst && (
