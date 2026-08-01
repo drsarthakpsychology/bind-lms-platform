@@ -247,8 +247,8 @@ export default async function CourseOverviewPage({
           </ul>
         ) : (
           <EmptyState
-            compact
-            icon={<BookOpen className="size-6" aria-hidden />}
+            row
+            icon={<BookOpen className="size-4" aria-hidden />}
             title="No course materials yet"
             description="Files attached to the course as a whole will appear here."
           />
@@ -260,8 +260,8 @@ export default async function CourseOverviewPage({
         <h2 className="text-h2">Assignments</h2>
         {courseAssignments.length === 0 ? (
           <EmptyState
-            compact
-            icon={<Inbox className="size-6" aria-hidden />}
+            row
+            icon={<Inbox className="size-4" aria-hidden />}
             title="No assignments yet"
             description="Assignments attached to lessons will appear here."
           />

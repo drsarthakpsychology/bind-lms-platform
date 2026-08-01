@@ -224,8 +224,8 @@ export default async function LessonPage({
           ) : (
             profile.role !== "admin" && (
               <EmptyState
-                compact
-                icon={<Paperclip className="size-6" aria-hidden />}
+                row
+                icon={<Paperclip className="size-4" aria-hidden />}
                 title="No materials yet"
                 description="Your instructor hasn't added materials for this lesson."
               />
