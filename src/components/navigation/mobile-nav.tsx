@@ -1,25 +1,30 @@
 "use client";
 
 import * as React from "react";
-import { Menu } from "lucide-react";
+import { Menu, LogOut } from "lucide-react";
 
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { NavItems, type NavItem } from "@/components/navigation/nav-items";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { logout } from "@/lib/auth/actions";
 import { BRAND } from "@/lib/brand";
 
 /**
  * Mobile navigation drawer. Radix handles focus management, Escape, and
  * scroll-locking. Closes on navigation.
+ *
+ * The logout <form action={logout}> is rendered here (a Client Component)
+ * rather than passed in as a Server Component prop — a server action
+ * reference isn't serializable across the server→client boundary, and
+ * passing it as a ReactNode would throw "Functions cannot be passed directly
+ * to Client Components".
  */
 export function MobileNav({
   items,
   viewModeSwitch,
-  logoutButton,
 }: {
   items: NavItem[];
   viewModeSwitch?: React.ReactNode;
-  logoutButton?: React.ReactNode;
 }) {
   const [open, setOpen] = React.useState(false);
 
@@ -52,7 +57,15 @@ export function MobileNav({
         </div>
         <div className="flex items-center justify-between border-t-2 border-border p-3">
           <ThemeToggle />
-          {logoutButton}
+          <form action={logout}>
+            <button
+              type="submit"
+              aria-label="Log out"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            >
+              <LogOut className="size-4" aria-hidden />
+            </button>
+          </form>
         </div>
       </SheetContent>
     </Sheet>

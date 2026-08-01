@@ -1,11 +1,9 @@
 import * as React from "react";
 import Link from "next/link";
-import { LogOut } from "lucide-react";
 
 import { AppSidebar, type SidebarMode } from "@/components/navigation/app-sidebar";
 import { MobileNav } from "@/components/navigation/mobile-nav";
 import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
-import { logout } from "@/lib/auth/actions";
 import { BRAND } from "@/lib/brand";
 
 /**
@@ -45,21 +43,7 @@ export function AppShell({
           </span>
           <span className="text-base">{BRAND.shortName}</span>
         </Link>
-        <MobileNav
-          items={items}
-          viewModeSwitch={viewModeSwitch}
-          logoutButton={
-            <form action={logout}>
-              <button
-                type="submit"
-                aria-label="Log out"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
-              >
-                <LogOut className="size-4" aria-hidden />
-              </button>
-            </form>
-          }
-        />
+        <MobileNav items={items} viewModeSwitch={viewModeSwitch} />
       </div>
 
       <main className="min-w-0 flex-1">

@@ -3,13 +3,27 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { LucideIcon } from "lucide-react";
+import { LayoutDashboard, Users, BookOpen, Inbox, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+/**
+ * Icon name → component map. Icon components are functions, so they can't be
+ * serialized across the Server→Client boundary as props. Instead the config
+ * carries a plain string name, and the component is looked up here — inside
+ * the client module graph — where functions are allowed.
+ */
+export const NAV_ICONS: Record<string, LucideIcon> = {
+  layoutDashboard: LayoutDashboard,
+  users: Users,
+  bookOpen: BookOpen,
+  inbox: Inbox,
+};
 
 export type NavItem = {
   href: string;
   label: string;
-  icon: LucideIcon;
+  /** Key into NAV_ICONS (serializable string, not a function). */
+  icon: keyof typeof NAV_ICONS | string;
   exact?: boolean;
 };
 
@@ -34,7 +48,7 @@ export function NavItems({
         const active = item.exact
           ? pathname === item.href
           : pathname === item.href || pathname.startsWith(`${item.href}/`);
-        const Icon = item.icon;
+        const Icon = NAV_ICONS[item.icon] ?? LayoutDashboard;
         return (
           <Link
             key={item.href}

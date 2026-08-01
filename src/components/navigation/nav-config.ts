@@ -1,13 +1,18 @@
-import { LayoutDashboard, Users, BookOpen, Inbox } from "lucide-react";
 import type { NavItem } from "@/components/navigation/nav-items";
 
+/**
+ * Icons are referenced by string name (keys into NAV_ICONS in nav-items.tsx),
+ * not by component reference — the config is imported into Server Components
+ * and passed to a Client Component, and function values can't be serialized
+ * across that boundary.
+ */
 export const STUDENT_ITEMS: NavItem[] = [
-  { href: "/dashboard", label: "My Courses", icon: LayoutDashboard, exact: true },
+  { href: "/dashboard", label: "My Courses", icon: "layoutDashboard", exact: true },
 ];
 
 export const ADMIN_ITEMS: NavItem[] = [
-  { href: "/admin", label: "Overview", icon: LayoutDashboard, exact: true },
-  { href: "/admin/students", label: "Students", icon: Users },
-  { href: "/admin/courses", label: "Courses", icon: BookOpen },
-  { href: "/admin/submissions", label: "Submissions", icon: Inbox },
+  { href: "/admin", label: "Overview", icon: "layoutDashboard", exact: true },
+  { href: "/admin/students", label: "Students", icon: "users" },
+  { href: "/admin/courses", label: "Courses", icon: "bookOpen" },
+  { href: "/admin/submissions", label: "Submissions", icon: "inbox" },
 ];
