@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { motion, useReducedMotion } from "@/lib/motion";
 
 import { cn } from "@/lib/utils";
 
@@ -11,6 +12,7 @@ import { cn } from "@/lib/utils";
  * This is the app's only rectangular segment primitive (replaces the old
  * pill-shaped view switcher, and reused for the lesson tabs).
  *
+ * The active fill slides between segments via a layout-animated indicator.
  * Accessible as a group of toggle buttons (role="group" + aria-pressed per
  * segment) rather than tabs.
  */
@@ -27,6 +29,8 @@ export function SegmentedControl<T extends string>({
   label: string;
   className?: string;
 }) {
+  const reduce = useReducedMotion();
+
   return (
     <div
       role="group"
@@ -45,16 +49,23 @@ export function SegmentedControl<T extends string>({
             onClick={() => onValueChange(option.value)}
             aria-pressed={isActive}
             className={cn(
-              "inline-flex h-9 items-center justify-center gap-1.5 px-3 text-sm font-semibold transition-[background-color,color,box-shadow] focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
-              // Active segment reads as a filled button pressed against its own
-              // inset border; inactive segments stay transparent so the shared
-              // ink border reads as one welded control.
-              isActive
-                ? "bg-primary text-primary-foreground"
-                : "bg-background text-muted-foreground hover:bg-accent hover:text-foreground"
+              "relative inline-flex h-9 items-center justify-center gap-1.5 px-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
+              isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
             )}
           >
-            {option.label}
+            {/* Sliding active fill — same layoutId across the group, so it
+                animates to whichever segment is active. */}
+            {isActive && (
+              <motion.span
+                layoutId={`segmented-${label}`}
+                aria-hidden
+                className="absolute inset-0 bg-primary"
+                transition={
+                  reduce ? { duration: 0 } : { type: "spring", stiffness: 420, damping: 34 }
+                }
+              />
+            )}
+            <span className="relative z-10 inline-flex items-center gap-1.5">{option.label}</span>
           </button>
         );
       })}

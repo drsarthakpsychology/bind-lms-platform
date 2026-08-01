@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { FileText, Paperclip } from "lucide-react";
+import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**
@@ -30,6 +31,7 @@ export function LessonTabs({
 }) {
   const searchParams = useSearchParams();
   const base = `/courses/${courseId}/lessons/${lessonId}`;
+  const reduce = useReducedMotion();
 
   const tabs: { id: "watch" | "materials" | "assignment"; label: React.ReactNode }[] = [
     { id: "watch", label: "Watch" },
@@ -67,13 +69,21 @@ export function LessonTabs({
             href={hrefFor(t.id)}
             aria-current={isActive ? "page" : undefined}
             className={cn(
-              "inline-flex h-9 items-center justify-center gap-1.5 px-3 text-sm font-semibold transition-[background-color,color] focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
-              isActive
-                ? "bg-primary text-primary-foreground"
-                : "bg-background text-muted-foreground hover:bg-accent hover:text-foreground"
+              "relative inline-flex h-9 items-center justify-center gap-1.5 px-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
+              isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
             )}
           >
-            {t.label}
+            {isActive && (
+              <motion.span
+                layoutId="lesson-tabs-active"
+                aria-hidden
+                className="absolute inset-0 bg-primary"
+                transition={
+                  reduce ? { duration: 0 } : { type: "spring", stiffness: 420, damping: 34 }
+                }
+              />
+            )}
+            <span className="relative z-10 inline-flex items-center gap-1.5">{t.label}</span>
           </Link>
         );
       })}

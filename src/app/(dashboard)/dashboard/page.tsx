@@ -7,6 +7,7 @@ import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { VIEW_MODE_COOKIE } from "../view-mode-constants";
 
+import { Reveal } from "@/components/motion/reveal";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { cardVariants } from "@/components/ui/card";
@@ -106,16 +107,19 @@ export default async function DashboardPage() {
         }
       />
 
-      {viewingAsStudent && (
-        <Alert variant="warning" className="border-foreground hard-shadow-sm">
-          <Sparkles className="size-4" aria-hidden />
-          <AlertTitle>Previewing as a student</AlertTitle>
-          <AlertDescription>
-            Drafts are shown here only for you — a real student would not see them.
-          </AlertDescription>
-        </Alert>
-      )}
+      <Reveal delay={0.05}>
+        {viewingAsStudent && (
+          <Alert variant="warning" className="border-foreground hard-shadow-sm">
+            <Sparkles className="size-4" aria-hidden />
+            <AlertTitle>Previewing as a student</AlertTitle>
+            <AlertDescription>
+              Drafts are shown here only for you — a real student would not see them.
+            </AlertDescription>
+          </Alert>
+        )}
+      </Reveal>
 
+      <Reveal delay={0.1}>
       {continueCourse && (
         <Link
           href={`/courses/${continueCourse.course.id}`}
@@ -162,14 +166,17 @@ export default async function DashboardPage() {
           </div>
         </Link>
       )}
+      </Reveal>
 
       <section aria-label="Your courses" className="space-y-3">
         {courseSummaries.length === 0 && (
-          <EmptyState
-            icon={<GraduationCap className="size-6" aria-hidden />}
-            title="No courses yet"
-            description="Courses published to your account will appear here. Check back soon."
-          />
+          <Reveal>
+            <EmptyState
+              icon={<GraduationCap className="size-6" aria-hidden />}
+              title="No courses yet"
+              description="Courses published to your account will appear here. Check back soon."
+            />
+          </Reveal>
         )}
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
