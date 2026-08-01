@@ -1,12 +1,13 @@
 import { headers } from "next/headers";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ChevronLeft, FileText, Lock } from "lucide-react";
+import { ArrowLeft, ChevronLeft, FileText, Lock } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
-import { getPlaybackUrl, completeAndAdvance } from "./actions";
+import { getPlaybackUrl } from "./actions";
 import { VideoPlayer } from "./video-player";
 import { AssignmentPanel } from "./assignment-panel";
+import { CompleteButton } from "./complete-button";
 
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -146,6 +147,7 @@ export default async function LessonPage({
           continueTarget={continueTarget}
           label={continueLabel}
           disabled={mustSubmitFirst}
+          isFinalLesson={!nextLesson}
         />
       </div>
 
@@ -195,6 +197,7 @@ export default async function LessonPage({
           continueTarget={continueTarget}
           label={continueLabel}
           disabled={mustSubmitFirst}
+          isFinalLesson={!nextLesson}
           size="lg"
         />
       </div>
@@ -208,6 +211,7 @@ function ContinueControl({
   continueTarget,
   label,
   disabled,
+  isFinalLesson,
   size = "default",
 }: {
   lessonId: string;
@@ -215,23 +219,18 @@ function ContinueControl({
   continueTarget: string;
   label: string;
   disabled: boolean;
+  isFinalLesson: boolean;
   size?: "default" | "lg";
 }) {
-  if (disabled) {
-    return (
-      <Button type="button" disabled size={size} title="Submit the assignment below to continue">
-        {label}
-        <ArrowRight className="size-4" aria-hidden />
-      </Button>
-    );
-  }
-
   return (
-    <form action={completeAndAdvance.bind(null, lessonId, courseId, continueTarget)}>
-      <Button type="submit" size={size}>
-        {label}
-        <ArrowRight className="size-4" aria-hidden />
-      </Button>
-    </form>
+    <CompleteButton
+      lessonId={lessonId}
+      courseId={courseId}
+      continueTarget={continueTarget}
+      label={label}
+      disabled={disabled}
+      isFinalLesson={isFinalLesson}
+      size={size}
+    />
   );
 }

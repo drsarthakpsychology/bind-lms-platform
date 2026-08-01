@@ -83,6 +83,11 @@ export function LoginForm() {
         {pending ? "Signing in…" : "Sign in"}
       </Button>
 
+      {/* Help copy — reduce dead-ends for invite-only accounts. */}
+      <p className="text-center text-caption text-muted-foreground">
+        Forgotten your password? Ask your administrator to reset it.
+      </p>
+
       {/* Turnstile script (loaded only when a site key is configured). */}
       {TURNSTILE_SITE_KEY ? (
         <Script
