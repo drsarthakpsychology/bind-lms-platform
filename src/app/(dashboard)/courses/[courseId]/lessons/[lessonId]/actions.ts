@@ -160,7 +160,7 @@ async function assertCanSubmit(assignmentId: string) {
   const supabase = await createClient();
   const { data: assignment } = await supabase
     .from("assignments")
-    .select("id, submission_type, lessons(id, courses(is_published))")
+    .select("id, submission_type, due_at, lessons(id, courses(is_published))")
     .eq("id", assignmentId)
     .single();
 
@@ -249,6 +249,123 @@ export async function prepareSubmissionUpload(
   }
 
   return { ok: true, path: data.path, token: data.token };
+}
+
+export type SubmissionWithFilesResult = { error: string | null };
+
+/**
+ * Submit an assignment with an optional note and a set of uploaded files.
+ * One submission per student per assignment; editing is allowed while status
+ * is pending_review (unsubmit + resubmit). Returns the created/updated
+ * submission id so the caller can attach files to it.
+ */
+export async function submitWithFiles(
+  assignmentId: string,
+  note: string,
+  filePaths: { path: string; name: string }[],
+): Promise<SubmissionWithFilesResult & { submissionId?: string }> {
+  const { profile, assignment } = await assertCanSubmit(assignmentId);
+  if (!profile || !assignment) return { error: "Not authorized." };
+
+  const supabase = await createClient();
+
+  const { data: existing } = await supabase
+    .from("submissions")
+    .select("id, status")
+    .eq("assignment_id", assignmentId)
+    .eq("user_id", profile.id)
+    .maybeSingle();
+
+  if (existing?.status !== "pending_review" && existing?.status !== undefined) {
+    // returned / approved — locked.
+    return { error: "This assignment has already been graded and can't be edited." };
+  }
+
+  const submittedAt = new Date().toISOString();
+  const isLate = Boolean(
+    assignment.due_at && new Date(assignment.due_at).getTime() < new Date(submittedAt).getTime(),
+  );
+
+  const { data: submission, error } = existing
+    ? await supabase
+        .from("submissions")
+        .update({
+          note: note || null,
+          status: "pending_review",
+          submitted_at: submittedAt,
+          is_late: isLate,
+        })
+        .eq("id", existing.id)
+        .select("id")
+        .single()
+    : await supabase
+        .from("submissions")
+        .insert({
+          assignment_id: assignmentId,
+          user_id: profile.id,
+          note: note || null,
+          status: "pending_review",
+          submitted_at: submittedAt,
+          is_late: isLate,
+        })
+        .select("id")
+        .single();
+
+  if (error || !submission) return { error: "Could not save your submission." };
+
+  // Record the uploaded files against this submission (admin client — the
+  // caller owns the submission and the files were uploaded to the bucket).
+  const admin = createAdminClient();
+  for (const f of filePaths) {
+    await admin.from("submission_files").insert({
+      submission_id: submission.id,
+      storage_path: f.path,
+      original_name: f.name,
+      format: f.name.split(".").pop()?.toLowerCase() ?? null,
+    });
+  }
+
+  return { error: null, submissionId: submission.id };
+}
+
+/**
+ * Unsubmit — clears the student's own pending submission back to a blank state
+ * so they can resubmit. Only allowed while status = pending_review.
+ */
+export async function unsubmitAssignment(
+  assignmentId: string,
+): Promise<{ error: string | null }> {
+  const { profile, assignment } = await assertCanSubmit(assignmentId);
+  if (!profile || !assignment) return { error: "Not authorized." };
+
+  const supabase = await createClient();
+  const { data: existing } = await supabase
+    .from("submissions")
+    .select("id, status")
+    .eq("assignment_id", assignmentId)
+    .eq("user_id", profile.id)
+    .maybeSingle();
+
+  if (!existing) return { error: "No submission to unsubmit." };
+  if (existing.status !== "pending_review") {
+    return { error: "This submission has been graded and can't be unsubmitted." };
+  }
+
+  const admin = createAdminClient();
+  // Delete attached files + the submission row.
+  const { data: files } = await admin
+    .from("submission_files")
+    .select("storage_path")
+    .eq("submission_id", existing.id);
+  if (files?.length) {
+    await admin.storage
+      .from("submissions")
+      .remove(files.map((f) => f.storage_path));
+  }
+  await admin.from("submission_files").delete().eq("submission_id", existing.id);
+  await admin.from("submissions").delete().eq("id", existing.id);
+
+  return { error: null };
 }
 
 export async function submitAudioAssignment(

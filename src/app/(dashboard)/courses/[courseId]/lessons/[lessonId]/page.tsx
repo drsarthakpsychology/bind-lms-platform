@@ -7,8 +7,9 @@ import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { getPlaybackUrl } from "./actions";
 import { VideoPlayer } from "./video-player";
-import { AssignmentPanel } from "./assignment-panel";
 import { CompleteButton } from "./complete-button";
+import { AssignmentEditor } from "@/app/(dashboard)/admin/courses/[courseId]/assignment-editor";
+import { SubmissionForm } from "./submission-form";
 import { LessonTabs } from "./lesson-tabs";
 import { MaterialsList } from "./materials-list";
 import { MaterialUploader } from "@/app/(dashboard)/admin/courses/[courseId]/material-uploader";
@@ -48,7 +49,9 @@ export default async function LessonPage({
       supabase.auth.getUser(),
       supabase
         .from("assignments")
-        .select("id, prompt_text, submission_type, title, instructions, due_at, is_published")
+        .select(
+          "id, prompt_text, submission_type, title, instructions, due_at, allow_late, is_published, max_files, max_file_mb, accepted_formats, submissions(id)",
+        )
         .eq("lesson_id", lessonId)
         .maybeSingle(),
       supabase
@@ -73,7 +76,7 @@ export default async function LessonPage({
     ? (
         await supabase
           .from("submissions")
-          .select("status, text_content, audio_storage_path")
+          .select("id, status, text_content, audio_storage_path, note, submitted_at, is_late, submission_files(id, original_name, storage_path)")
           .eq("assignment_id", assignment.id)
           .eq("user_id", profile.id)
           .maybeSingle()
@@ -265,41 +268,107 @@ export default async function LessonPage({
       </div>
 
       {/* Assignment tab */}
-      {tab === "assignment" && assignment && (
+      {tab === "assignment" && assignment && profile.role === "admin" && (
+        <section aria-label="Assignment" className="space-y-3">
+          <h2 className="text-h2 flex items-center gap-2">
+            <FileText className="size-4 text-primary" aria-hidden />
+            Assignment
+          </h2>
+          <AssignmentEditor
+            courseId={courseId}
+            lessonId={lessonId}
+            assignment={{
+              id: assignment.id,
+              title: assignment.title ?? "Assignment",
+              instructions: assignment.instructions ?? assignment.prompt_text,
+              due_at: assignment.due_at,
+              allow_late: assignment.allow_late,
+              is_published: assignment.is_published,
+              max_files: assignment.max_files,
+              max_file_mb: assignment.max_file_mb,
+              accepted_formats: assignment.accepted_formats ?? ["pdf", "docx", "image"],
+              submissionCount: Array.isArray(assignment.submissions)
+                ? assignment.submissions.length
+                : 0,
+            }}
+          />
+        </section>
+      )}
+
+      {/* Assignment tab — student view */}
+      {tab === "assignment" && assignment && profile.role !== "admin" && (
         <section aria-label="Assignment" className="space-y-3">
           <h2 className="text-h2 flex items-center gap-2">
             <FileText className="size-4 text-primary" aria-hidden />
             {assignment.title ?? "Assignment"}
           </h2>
-          <Card variant="raised">
-            <CardContent className="pt-6">
-              <AssignmentPanel
-                assignmentId={assignment.id}
-                promptText={assignment.prompt_text}
-                submissionTypes={assignment.submission_type || "text"}
-                existingSubmission={
-                  existingSubmission
-                    ? {
-                        status: existingSubmission.status === "approved" ? "approved" : "pending_review",
-                        text_content: existingSubmission.text_content,
-                        audio_storage_path: existingSubmission.audio_storage_path,
-                      }
-                    : null
-                }
-              />
-            </CardContent>
-          </Card>
+          {assignment.is_published ? (
+            <Card variant="raised">
+              <CardContent className="pt-6">
+                {assignment.instructions ?? assignment.prompt_text ? (
+                  <div className="mb-4 whitespace-pre-wrap rounded-md border-2 border-border bg-muted/50 p-4 text-small leading-relaxed text-foreground">
+                    {assignment.instructions ?? assignment.prompt_text}
+                  </div>
+                ) : null}
+                <SubmissionForm
+                  assignmentId={assignment.id}
+                  dueAt={assignment.due_at}
+                  allowLate={assignment.allow_late}
+                  maxFiles={assignment.max_files ?? 3}
+                  maxFileMb={assignment.max_file_mb ?? 25}
+                  existing={
+                    existingSubmission
+                      ? {
+                          status: existingSubmission.status === "returned"
+                            ? "returned"
+                            : existingSubmission.status === "approved"
+                              ? "approved"
+                              : "submitted",
+                          submittedAt: existingSubmission.submitted_at,
+                          isLate: existingSubmission.is_late,
+                          note: existingSubmission.note,
+                          files: Array.isArray(existingSubmission.submission_files)
+                            ? existingSubmission.submission_files.map((f) => ({
+                                id: f.id,
+                                originalName: f.original_name,
+                                storagePath: f.storage_path,
+                              }))
+                            : [],
+                        }
+                      : null
+                  }
+                />
+              </CardContent>
+            </Card>
+          ) : (
+            <EmptyState
+              compact
+              icon={<FileText className="size-6" aria-hidden />}
+              title="Not published yet"
+              description="Your instructor hasn't published this assignment."
+            />
+          )}
         </section>
       )}
 
-      {/* Assignment tab, but no assignment exists */}
+      {/* Assignment tab, no assignment exists — admins get the editor to add one */}
       {tab === "assignment" && !assignment && (
-        <EmptyState
-          compact
-          icon={<FileText className="size-6" aria-hidden />}
-          title="No assignment"
-          description="This lesson doesn't have an assignment."
-        />
+        profile.role === "admin" ? (
+          <section aria-label="Assignment" className="space-y-3">
+            <h2 className="text-h2 flex items-center gap-2">
+              <FileText className="size-4 text-primary" aria-hidden />
+              Assignment
+            </h2>
+            <AssignmentEditor courseId={courseId} lessonId={lessonId} assignment={null} />
+          </section>
+        ) : (
+          <EmptyState
+            compact
+            icon={<FileText className="size-6" aria-hidden />}
+            title="No assignment"
+            description="This lesson doesn't have an assignment."
+          />
+        )
       )}
 
       {mustSubmitFirst && (
