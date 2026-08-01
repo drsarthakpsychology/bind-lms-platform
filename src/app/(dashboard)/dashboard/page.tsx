@@ -107,7 +107,7 @@ export default async function DashboardPage() {
       />
 
       {viewingAsStudent && (
-        <Alert variant="info">
+        <Alert variant="warning" className="border-foreground hard-shadow-sm">
           <Sparkles className="size-4" aria-hidden />
           <AlertTitle>Previewing as a student</AlertTitle>
           <AlertDescription>
@@ -133,25 +133,31 @@ export default async function DashboardPage() {
                 <p className="text-eyebrow text-muted-foreground">Continue learning</p>
                 <h2 className="text-h2">{continueCourse.course.title}</h2>
                 <p className="text-caption text-muted-foreground">
-                  {continueCourse.completedCount}/{continueCourse.totalLessons} lessons complete
+                  {continueCourse.completedCount} of {continueCourse.totalLessons} lessons complete
                 </p>
               </div>
             </div>
-            <div className="w-full sm:w-56">
-              <Progress
-                value={
-                  continueCourse.totalLessons
+            <div className="flex items-center gap-4">
+              <div className="w-full sm:w-56">
+                <Progress
+                  value={
+                    continueCourse.totalLessons
+                      ? Math.round((continueCourse.completedCount / continueCourse.totalLessons) * 100)
+                      : 0
+                  }
+                  aria-label="Course progress"
+                />
+                <p className="text-numeric mt-1.5 text-right text-xs text-muted-foreground">
+                  {continueCourse.totalLessons
                     ? Math.round((continueCourse.completedCount / continueCourse.totalLessons) * 100)
-                    : 0
-                }
-                aria-label="Course progress"
-              />
-              <p className="text-numeric mt-1.5 text-right text-xs text-muted-foreground">
-                {continueCourse.totalLessons
-                  ? Math.round((continueCourse.completedCount / continueCourse.totalLessons) * 100)
-                  : 0}
-                %
-              </p>
+                    : 0}
+                  %
+                </p>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-1 text-small font-medium text-primary">
+                Resume
+                <ArrowRight className="size-3.5" aria-hidden />
+              </span>
             </div>
           </div>
         </Link>
@@ -182,13 +188,18 @@ export default async function DashboardPage() {
                     className={cn(
                       "flex size-10 shrink-0 items-center justify-center rounded-md border-2",
                       isComplete
-                        ? "border-foreground bg-status-success-bg text-status-success-fg"
+                        ? "border-foreground bg-primary text-primary-foreground"
                         : "border-border bg-accent text-foreground"
                     )}
                   >
                     {isComplete ? <CircleCheck className="size-5" /> : <BookOpen className="size-5" />}
                   </span>
-                  {!course.is_published && <Badge variant="pending">Draft</Badge>}
+                  {/* One status badge, top-right: the course's publish state. */}
+                  {course.is_published ? (
+                    <Badge variant="published">Published</Badge>
+                  ) : (
+                    <Badge variant="draft">Draft</Badge>
+                  )}
                 </div>
 
                 <div className="min-w-0 flex-1 py-3">
@@ -199,16 +210,13 @@ export default async function DashboardPage() {
                   <Progress value={percent} aria-label={`${course.title} progress`} />
                   <div className="flex items-center justify-between">
                     <span className="text-caption text-muted-foreground">
-                      {completedCount}/{totalLessons} lessons
-                    </span>
-                    <span className="text-numeric text-xs font-semibold text-foreground">
-                      {percent}%
+                      {completedCount} of {totalLessons} lessons · {percent}%
                     </span>
                   </div>
                 </div>
 
                 <span className="inline-flex items-center gap-1 pt-3 text-small font-medium text-primary">
-                  {isComplete ? "Review course" : "Continue"}
+                  {isComplete ? "Review course" : "Open course"}
                   <ArrowRight className="size-3.5" aria-hidden />
                 </span>
               </Link>

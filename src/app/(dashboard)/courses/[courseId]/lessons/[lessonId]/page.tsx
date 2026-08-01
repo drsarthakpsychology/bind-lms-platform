@@ -79,7 +79,27 @@ export default async function LessonPage({
   const watermarkLabel = `${user?.email ?? "unknown"} · ${user?.id.slice(0, 8) ?? "unknown"} · ${ip}`;
 
   const position = currentIndex >= 0 ? `${currentIndex + 1} / ${playable.length}` : null;
-  const continueLabel = nextLesson ? "Complete and Continue" : "Complete Course";
+
+  // Whether THIS lesson is already marked complete — distinguishes
+  // "Finish course" from "Back to my courses" on the final lesson.
+  const { data: ownProgress } = await supabase
+    .from("progress")
+    .select("is_completed")
+    .eq("user_id", profile.id)
+    .eq("lesson_id", lessonId)
+    .maybeSingle();
+  const lessonComplete = Boolean(ownProgress?.is_completed);
+
+  // One forward action, labelled by where the student is:
+  //   mid-course            → Next lesson →
+  //   last, not complete    → Finish course →
+  //   last, already complete → Back to my courses → (secondary variant)
+  const lastLessonCompleted = !nextLesson && lessonComplete;
+  const forwardLabel = lastLessonCompleted
+    ? "Back to my courses"
+    : nextLesson
+      ? "Next lesson"
+      : "Finish course";
 
   return (
     <div className="mx-auto max-w-3xl space-y-8">
@@ -125,7 +145,7 @@ export default async function LessonPage({
         )}
       </div>
 
-      {/* Bottom actions: prev + continue */}
+      {/* Footer: prev + a single forward action. Exactly one forward button. */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         {prevLesson ? (
           <Button asChild variant="outline" size="sm">
@@ -135,19 +155,27 @@ export default async function LessonPage({
             </Link>
           </Button>
         ) : (
-          <span className="inline-flex h-8 items-center gap-2 rounded-md border-2 border-border px-3 text-small text-muted-foreground opacity-60">
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            disabled
+            aria-disabled="true"
+            title="You're on the first lesson"
+          >
             <ArrowLeft className="size-4" aria-hidden />
             Previous lesson
-          </span>
+          </Button>
         )}
 
         <ContinueControl
           lessonId={lessonId}
           courseId={courseId}
           continueTarget={continueTarget}
-          label={continueLabel}
+          label={forwardLabel}
           disabled={mustSubmitFirst}
           isFinalLesson={!nextLesson}
+          alreadyComplete={lastLessonCompleted}
         />
       </div>
 
@@ -188,19 +216,6 @@ export default async function LessonPage({
           </AlertDescription>
         </Alert>
       )}
-
-      {/* Bottom continue */}
-      <div className="flex justify-end">
-        <ContinueControl
-          lessonId={lessonId}
-          courseId={courseId}
-          continueTarget={continueTarget}
-          label={continueLabel}
-          disabled={mustSubmitFirst}
-          isFinalLesson={!nextLesson}
-          size="lg"
-        />
-      </div>
     </div>
   );
 }
@@ -212,7 +227,7 @@ function ContinueControl({
   label,
   disabled,
   isFinalLesson,
-  size = "default",
+  alreadyComplete,
 }: {
   lessonId: string;
   courseId: string;
@@ -220,7 +235,7 @@ function ContinueControl({
   label: string;
   disabled: boolean;
   isFinalLesson: boolean;
-  size?: "default" | "lg";
+  alreadyComplete?: boolean;
 }) {
   return (
     <CompleteButton
@@ -230,7 +245,7 @@ function ContinueControl({
       label={label}
       disabled={disabled}
       isFinalLesson={isFinalLesson}
-      size={size}
+      alreadyComplete={alreadyComplete}
     />
   );
 }

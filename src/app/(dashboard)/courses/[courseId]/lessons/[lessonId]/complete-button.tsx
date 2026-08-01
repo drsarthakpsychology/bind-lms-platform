@@ -7,12 +7,17 @@ import { completeAndAdvance } from "./actions";
 import { Button } from "@/components/ui/button";
 
 /**
- * Client wrapper for "Complete and Continue" / "Complete Course".
+ * Client wrapper for the single forward action on a lesson.
  *
- * Fires a success toast when the student completes the FINAL lesson (course
- * done) before the redirect lands them on the dashboard — a clear success
- * moment instead of a silent jump. Non-final lessons just advance with no
- * toast (the next lesson loading is feedback enough).
+ * Three states, one button:
+ *   - Mid-course          → "Next lesson" — advance, no toast.
+ *   - Final, not complete → "Finish course" — fires a success toast before the
+ *     redirect lands on the dashboard (a clear success moment).
+ *   - Final, already done → "Back to my courses" — secondary variant; nothing
+ *     to mark complete, just a link back.
+ *
+ * Completing the final lesson always calls completeAndAdvance, which marks the
+ * lesson complete server-side before redirecting to the dashboard.
  */
 export function CompleteButton({
   lessonId,
@@ -21,7 +26,7 @@ export function CompleteButton({
   label,
   disabled,
   isFinalLesson,
-  size = "default",
+  alreadyComplete,
 }: {
   lessonId: string;
   courseId: string;
@@ -29,13 +34,13 @@ export function CompleteButton({
   label: string;
   disabled: boolean;
   isFinalLesson: boolean;
-  size?: "default" | "lg";
+  alreadyComplete?: boolean;
 }) {
   const [isPending, startTransition] = useTransition();
 
   function onClick() {
     if (disabled || isPending) return;
-    if (isFinalLesson) {
+    if (isFinalLesson && !alreadyComplete) {
       toast.success("Course complete! 🎉", {
         description: "Great work — you finished the course.",
       });
@@ -48,7 +53,7 @@ export function CompleteButton({
   return (
     <Button
       type="button"
-      size={size}
+      variant={alreadyComplete ? "secondary" : "default"}
       disabled={disabled || isPending}
       onClick={onClick}
       title={disabled ? "Submit the assignment below to continue" : undefined}

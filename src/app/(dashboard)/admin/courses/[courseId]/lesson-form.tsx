@@ -120,7 +120,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
           <p className="text-caption text-status-pending-fg">Uploading in the background…</p>
         )}
         {uploadStatus === "done" && (
-          <p className="flex items-center gap-1.5 text-caption text-status-success-fg">
+          <p className="flex items-center gap-1.5 text-caption text-status-alert-fg">
             <CheckCircle2 className="size-3.5" aria-hidden />
             Upload complete.
           </p>

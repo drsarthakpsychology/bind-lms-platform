@@ -58,7 +58,7 @@ function LessonNav({
           >
             <span className="relative flex size-5 shrink-0 items-center justify-center">
               {lesson.is_completed ? (
-                <CheckCircle2 className="size-5 text-status-success-fg dark:text-status-success-fg" aria-hidden />
+                <CheckCircle2 className="size-5 text-primary dark:text-primary" aria-hidden />
               ) : (
                 <>
                   <Circle className="size-5 text-muted-foreground" aria-hidden />
