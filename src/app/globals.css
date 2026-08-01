@@ -212,14 +212,24 @@
   background: #000;
 }
 
-/* Watermark: always on top, never intercepts clicks. */
+/* Watermark: always on top, never intercepts clicks, sized to its own text
+   (width: max-content — never a full-frame block). Position is driven by the
+   inline top/left set by watermark.tsx. */
 .plms-watermark {
   position: absolute;
-  inset: 0;
   z-index: 2147483000;
+  width: max-content;
+  max-width: calc(100% - 1.5rem);
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
+  will-change: top, left;
+}
+
+/* The <video> must always contain its frame — never crop. Applies both in
+   and out of fullscreen (the fullscreen rules below repeat it for safety). */
+.plms-player video {
+  object-fit: contain;
 }
 
 /* NOTE: these selectors must stay as SEPARATE rules. A browser that doesn't
@@ -268,6 +278,38 @@
   background: #000;
 }
 
+/* Custom player controls: a bar over the bottom of the frame. Fades out
+   while playing, returns on hover/focus/tap, stays visible when paused. */
+.plms-player-controls {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem 0.6rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.plms-player:hover .plms-player-controls,
+.plms-player:focus-within .plms-player-controls,
+.plms-player.is-paused .plms-player-controls,
+.plms-player.is-touching .plms-player-controls,
+.plms-player.is-error .plms-player-controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plms-player-controls {
+    transition: none;
+  }
+}
+
 /* Secondary guard ONLY (Chromium/WebKit-specific; silently ignored elsewhere).
    The real mechanism is our single wrapper-targeting fullscreen button — CSS
    pseudo-element hiding must not be relied on as the primary fix. */
@@ -275,6 +317,10 @@ video::-webkit-media-controls-fullscreen-button {
   display: none !important;
 }
 video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+/* No native controls — we render our own. */
+video::-webkit-media-controls {
   display: none !important;
 }
 

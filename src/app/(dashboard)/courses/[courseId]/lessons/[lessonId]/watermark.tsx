@@ -5,11 +5,15 @@ import { useEffect, useRef, useState } from "react";
 /**
  * Dynamic, persistent watermark for video playback.
  *
- * Anti-tamper: observes the watermark node and flags tampering if it is
- * removed from the DOM or hidden (display:none / visibility:hidden / opacity:0).
- * The random movement + opacity make it harder to predictably cover, and the
- * wrapper-level fullscreen in video-player.tsx keeps it visible even in
- * full-screen mode.
+ * The watermark is TEXT ONLY — no background fill, no panel, no border. Legibility
+ * comes from a subtle text shadow that works over both light and dark frames.
+ * It is small, low-opacity, sized to its own content, and drifts slowly between
+ * positions so it can't be cropped or covered by a single overlay. It never
+ * intercepts pointer events. Reduced-motion parks it in one corner instead of
+ * drifting.
+ *
+ * Anti-tamper: observes the watermark node and flags tampering if it is removed
+ * from the DOM or hidden (display:none / visibility:hidden / opacity:0).
  *
  * Honest boundary: nothing rendered in a browser can be made impossible to
  * capture. The watermark + short-lived signed URLs + no-download controls are
@@ -23,8 +27,12 @@ export function Watermark({
   onTamperDetected: () => void;
 }) {
   const nodeRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ top: 10, left: 10 });
-  const [opacity, setOpacity] = useState(0.3);
+  // Start in a corner. If the user prefers reduced motion, it stays here.
+  const [position, setPosition] = useState<{ top: string; left: string }>({
+    top: "6%",
+    left: "6%",
+  });
+  const [opacity, setOpacity] = useState(0.4);
   const detectedRef = useRef(false);
 
   // Guard against double-firing from overlapping observers.
@@ -34,18 +42,26 @@ export function Watermark({
     onTamperDetected();
   }
 
-  // Random movement + opacity, every 15-30 seconds.
+  // Slow drift, every 30–60s, confined to the top band so the watermark never
+  // settles over the bottom controls bar. Respects prefers-reduced-motion by
+  // parking in the start corner.
   useEffect(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return; // stay parked in the corner
+    }
+
     let timeoutId: ReturnType<typeof setTimeout>;
 
     function scheduleMove() {
-      const delay = 15000 + Math.random() * 15000; // 15-30s
+      const delay = 30000 + Math.random() * 30000; // 30–60s
       timeoutId = setTimeout(() => {
         setPosition({
-          top: 5 + Math.random() * 80, // percent
-          left: 5 + Math.random() * 70,
+          // top band: between 4% and ~60% of the frame height
+          top: `${4 + Math.random() * 56}%`,
+          // keep a healthy margin from the left/right edges
+          left: `${3 + Math.random() * 62}%`,
         });
-        setOpacity(0.25 + Math.random() * 0.15); // 25-40%
+        setOpacity(0.35 + Math.random() * 0.1); // 35–45%
         scheduleMove();
       }, delay);
     }
@@ -98,8 +114,16 @@ export function Watermark({
       ref={nodeRef}
       aria-hidden="true"
       data-testid="plms-watermark"
-      className="plms-watermark whitespace-nowrap rounded bg-black/40 px-2 py-1 text-xs font-medium text-white transition-[top,left] duration-1000"
-      style={{ top: `${position.top}%`, left: `${position.left}%`, opacity }}
+      className="plms-watermark text-[13px] leading-none font-medium text-white"
+      style={{
+        top: position.top,
+        left: position.left,
+        opacity,
+        // Subtle text shadow for legibility over light AND dark frames — no
+        // background fill, no panel. Sits above the controls bar (top band).
+        textShadow:
+          "0 1px 2px rgba(0,0,0,0.6), 0 0 1px rgba(0,0,0,0.6), 1px 0 0 rgba(0,0,0,0.35)",
+      }}
     >
       {label}
     </div>
