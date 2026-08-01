@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { CheckCircle2, Loader2, Upload } from "lucide-react";
+import { Loader2, Upload } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { prepareVideoUpload, attachVideoToLesson } from "./actions";
-
-import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 
 export function VideoUpload({
   lessonId,
@@ -64,18 +64,12 @@ export function VideoUpload({
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      {hasVideo && status === "idle" && !errorMsg && (
-        <Badge variant="success">
-          <CheckCircle2 className="size-3" aria-hidden />
-          Video attached
-        </Badge>
-      )}
       <label
-        className={
-          status === "uploading"
-            ? "inline-flex cursor-not-allowed items-center gap-1.5 rounded-md border-2 border-border px-2.5 py-1.5 text-xs text-muted-foreground"
-            : "inline-flex cursor-pointer items-center gap-1.5 rounded-md border-2 border-border bg-card px-2.5 py-1.5 text-xs font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
-        }
+        className={cn(
+          buttonVariants({ variant: "secondary", size: "xs" }),
+          status === "uploading" && "pointer-events-none opacity-50",
+          "cursor-pointer"
+        )}
       >
         {status === "uploading" ? (
           <Loader2 className="size-3.5 animate-spin" aria-hidden />

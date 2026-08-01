@@ -13,6 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export type SidebarLesson = {
@@ -112,14 +113,10 @@ export function CourseSidebar({
         </div>
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild>
-            <button
-              type="button"
-              aria-label="Open course lessons"
-              className="inline-flex h-9 shrink-0 items-center gap-2 rounded-md border-2 border-border bg-card px-3 text-small font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-0.5"
-            >
+            <Button type="button" variant="secondary" size="sm" aria-label="Open course lessons">
               <Menu className="size-4" aria-hidden />
               Lessons
-            </button>
+            </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-80 p-0">
             <SheetHeader className="border-b-2 border-border px-4 py-3">

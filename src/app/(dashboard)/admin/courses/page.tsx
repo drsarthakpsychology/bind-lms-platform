@@ -74,9 +74,9 @@ export default async function CoursesPage() {
                   {lessonCounts.get(course.id) ?? 0} lessons
                 </span>
                 {course.is_published ? (
-                  <Badge variant="success">Published</Badge>
+                  <Badge variant="published">Published</Badge>
                 ) : (
-                  <Badge variant="pending">Draft</Badge>
+                  <Badge variant="draft">Draft</Badge>
                 )}
               </CardContent>
             </Card>

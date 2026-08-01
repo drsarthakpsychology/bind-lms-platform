@@ -30,7 +30,7 @@ export function EmptyState({
     >
       <div
         aria-hidden
-        className="flex size-12 items-center justify-center rounded-full border-2 border-border bg-accent text-foreground"
+        className="flex size-12 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground"
       >
         {icon}
       </div>

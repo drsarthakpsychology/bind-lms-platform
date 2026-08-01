@@ -5,7 +5,7 @@ import { CheckCircle2, CircleAlert, Loader2, Upload, Video as VideoIcon } from "
 import { createClient } from "@/lib/supabase/client";
 import { prepareVideoUpload, createLessonWithVideo, type CreateLessonState } from "./actions";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -96,7 +96,9 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
       <div className="space-y-1.5">
         <Label>Video</Label>
         <div className="flex flex-wrap items-center gap-3">
-          <label className="inline-flex cursor-pointer items-center gap-2 rounded-md border-2 border-border bg-card px-3 py-2 text-small font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px">
+          <label
+            className={buttonVariants({ variant: "secondary", size: "sm" }) + " cursor-pointer"}
+          >
             {uploadStatus === "uploading" ? (
               <Loader2 className="size-4 animate-spin" aria-hidden />
             ) : (

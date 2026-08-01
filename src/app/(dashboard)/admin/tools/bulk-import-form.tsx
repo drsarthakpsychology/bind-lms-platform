@@ -49,7 +49,7 @@ export function BulkImportForm() {
         </Alert>
       )}
       {state.success && (
-        <Alert variant="success">
+        <Alert variant="warning">
           <AlertDescription>
             Created {state.created}, skipped {state.skipped} (existing),
             welcome emails sent: {state.emailsSent}.

@@ -14,7 +14,9 @@ const buttonVariants = cva(
         default:
           "border-foreground bg-primary text-primary-foreground hover:bg-primary/90 hard-shadow-sm active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat",
         destructive:
-          "border-foreground bg-destructive text-white hover:bg-destructive/90 hard-shadow-sm active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat dark:bg-destructive dark:text-destructive-foreground",
+          "border-foreground bg-destructive text-destructive-foreground hover:bg-destructive/90 hard-shadow-sm active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat",
+        danger:
+          "border-foreground bg-destructive/15 text-destructive hover:bg-destructive/25 hard-shadow-sm active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat",
         outline:
           "bg-background text-foreground hover:bg-accent hover:text-accent-foreground hard-shadow-flat active:translate-x-px active:translate-y-px active:hard-shadow-none",
         secondary:

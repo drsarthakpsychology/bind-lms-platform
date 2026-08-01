@@ -17,7 +17,7 @@ export default function ExpiredPage() {
 
       <div className="flex flex-1 items-center justify-center">
         <div className="w-full max-w-sm space-y-6 text-center">
-          <div className="mx-auto flex size-14 items-center justify-center rounded-full border-2 border-border bg-status-pending-bg text-status-pending-fg">
+          <div className="mx-auto flex size-14 items-center justify-center rounded-md border-2 border-border bg-status-pending-bg text-status-pending-fg">
             <Hourglass className="size-6" aria-hidden />
           </div>
           <div className="space-y-2">

@@ -93,7 +93,7 @@ export default async function StudentsPage() {
                       </TableCell>
                       <TableCell>
                         {student.active_session_token ? (
-                          <Badge variant="success">Active session</Badge>
+                          <Badge variant="published">Active session</Badge>
                         ) : (
                           <Badge variant="outline">Not signed in</Badge>
                         )}

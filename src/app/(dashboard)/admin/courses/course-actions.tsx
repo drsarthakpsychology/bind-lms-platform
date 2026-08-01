@@ -6,7 +6,6 @@ import { Loader2, MoreHorizontal, Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { setCoursePublished, deleteCourse } from "./actions";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -68,15 +67,16 @@ export function CourseActions({
 
   return (
     <div className="flex items-center gap-2">
-      <button
+      <Button
         type="button"
+        variant={isPublished ? "secondary" : "outline"}
+        size="sm"
         onClick={handleTogglePublish}
         disabled={isPending}
-        className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border-2 border-border bg-card px-2.5 py-1 text-xs font-medium transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-60"
       >
         {isPending && <Loader2 className="size-3 animate-spin" aria-hidden />}
-        {isPublished ? <Badge variant="success">Published</Badge> : <Badge variant="pending">Draft</Badge>}
-      </button>
+        {isPublished ? "Set to draft" : "Publish"}
+      </Button>
 
       <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
         <DropdownMenu>

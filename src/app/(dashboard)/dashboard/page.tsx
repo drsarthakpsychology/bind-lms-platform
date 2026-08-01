@@ -98,7 +98,7 @@ export default async function DashboardPage() {
         description="Pick up where you left off, or start something new."
         badge={
           completedCourses.length > 0 ? (
-            <Badge variant="success">
+            <Badge variant="graded">
               <CircleCheck className="size-3" aria-hidden />
               {completedCourses.length} completed
             </Badge>

@@ -6,6 +6,7 @@ import { Menu, LogOut } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { NavItems, type NavItem } from "@/components/navigation/nav-items";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
 import { logout } from "@/lib/auth/actions";
 import { BRAND } from "@/lib/brand";
 
@@ -58,13 +59,9 @@ export function MobileNav({
         <div className="flex items-center justify-between border-t-2 border-border p-3">
           <ThemeToggle />
           <form action={logout}>
-            <button
-              type="submit"
-              aria-label="Log out"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
-            >
+            <Button type="submit" variant="secondary" size="icon-sm" aria-label="Log out">
               <LogOut className="size-4" aria-hidden />
-            </button>
+            </Button>
           </form>
         </div>
       </SheetContent>

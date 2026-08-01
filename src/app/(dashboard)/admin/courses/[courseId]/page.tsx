@@ -53,9 +53,9 @@ export default async function CourseDetailPage({
         title={course.title}
         badge={
           course.is_published ? (
-            <Badge variant="success">Published</Badge>
+            <Badge variant="published">Published</Badge>
           ) : (
-            <Badge variant="pending">Draft</Badge>
+            <Badge variant="draft">Draft</Badge>
           )
         }
         description={
@@ -100,10 +100,10 @@ export default async function CourseDetailPage({
                 </p>
                 <div className="mt-1 flex flex-wrap items-center gap-2">
                   {lesson.requires_assignment && (
-                    <Badge variant="info">Requires assignment</Badge>
+                    <Badge variant="draft">Requires assignment</Badge>
                   )}
                   {lesson.video_storage_path ? (
-                    <Badge variant="success">Video attached</Badge>
+                    <Badge variant="published">Video attached</Badge>
                   ) : (
                     <Badge variant="outline">No video</Badge>
                   )}

@@ -42,7 +42,7 @@ export default async function VerifyCertificatePage({
         <CardHeader>
           <CardTitle className="text-center">Certificate of Completion</CardTitle>
           <div className="flex justify-center">
-            <Badge variant="success">Verified ✓</Badge>
+            <Badge variant="published">Verified ✓</Badge>
           </div>
         </CardHeader>
         <CardContent className="space-y-2 text-center">

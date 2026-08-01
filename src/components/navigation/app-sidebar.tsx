@@ -5,6 +5,7 @@ import { LogOut } from "lucide-react";
 import { NavItems } from "@/components/navigation/nav-items";
 import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
 import { logout } from "@/lib/auth/actions";
 import { BRAND } from "@/lib/brand";
 
@@ -61,13 +62,10 @@ export function AppSidebar({
         <div className="flex items-center justify-between">
           <ThemeToggle />
           <form action={logout}>
-            <button
-              type="submit"
-              className="inline-flex h-9 items-center gap-2 rounded-md border-2 border-border bg-background px-3 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
-            >
+            <Button type="submit" variant="secondary" size="sm">
               <LogOut className="size-4" aria-hidden />
               Log out
-            </button>
+            </Button>
           </form>
         </div>
       </div>

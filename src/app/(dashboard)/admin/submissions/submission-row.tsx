@@ -63,7 +63,7 @@ export function SubmissionRow({
           <div className="flex items-start gap-3">
             <span
               aria-hidden
-              className="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-border bg-accent text-foreground"
+              className="flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground"
             >
               <UserRound className="size-5" />
             </span>
@@ -74,7 +74,7 @@ export function SubmissionRow({
               </p>
             </div>
           </div>
-          <Badge variant={status === "approved" ? "success" : "pending"}>
+          <Badge variant={status === "approved" ? "graded" : "pending"}>
             {status === "approved" ? (
               <CheckCircle2 className="size-3" aria-hidden />
             ) : (

@@ -12,7 +12,7 @@ import {
   type SubmissionResult,
 } from "./actions";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -132,7 +132,7 @@ export function AssignmentPanel({
             .join(" · ") || "Assignment"}
         </span>
         {submission && (
-          <Badge variant={isApproved ? "success" : "pending"}>
+          <Badge variant={isApproved ? "graded" : "pending"}>
             {isApproved ? (
               <CheckCircle2 className="size-3" aria-hidden />
             ) : (
@@ -150,7 +150,7 @@ export function AssignmentPanel({
       )}
 
       {!submission && (
-        <Alert variant="info">
+        <Alert variant="warning">
           <AudioLines className="size-4" aria-hidden />
           <AlertDescription>
             Submit this assignment to unlock the next lesson. It doesn&apos;t need to be reviewed
@@ -199,7 +199,7 @@ export function AssignmentPanel({
               {submission?.audio_storage_path && playbackUrl && (
                 <audio controls src={playbackUrl} className="w-full" />
               )}
-              <label className="inline-flex cursor-pointer items-center gap-2 rounded-md border-2 border-border bg-card px-3 py-2 text-small font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px">
+              <label className={buttonVariants({ variant: "secondary", size: "sm" }) + " cursor-pointer"}>
                 {audioStatus === "uploading" ? (
                   <Loader2 className="size-4 animate-spin" aria-hidden />
                 ) : (

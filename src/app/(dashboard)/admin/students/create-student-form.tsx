@@ -58,7 +58,7 @@ export function CreateStudentForm() {
         </Alert>
       )}
       {state.success && (
-        <Alert variant="info">
+        <Alert variant="warning">
           <CheckCircle2 className="size-4" aria-hidden />
           <AlertTitle>Student created</AlertTitle>
           <AlertDescription>
