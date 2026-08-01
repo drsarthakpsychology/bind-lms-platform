@@ -89,14 +89,17 @@ async function main() {
   console.log("Connected.\n");
 
   const dir = "supabase/migrations_pending";
-  // ONLY the three additive migrations the user approved:
+  // ONLY the additive migrations the user approved:
   //  - media_assets.sql         (video storage table)
   //  - certificates.sql        (certificate records)
   //  - submissions_bucket.sql  (audio submission bucket)
+  //  - materials_assignments_submissions.sql (Phase 6: enrollment + materials
+  //    + assignment/submission extensions + submission_files + materials bucket)
   const APPROVED = [
     "media_assets.sql",
     "certificates.sql",
     "submissions_bucket.sql",
+    "materials_assignments_submissions.sql",
   ];
   const files = APPROVED.filter((f) => existsSync(join(dir, f)));
   console.log(`Applying ${files.length} approved migrations: ${files.join(", ")}`);

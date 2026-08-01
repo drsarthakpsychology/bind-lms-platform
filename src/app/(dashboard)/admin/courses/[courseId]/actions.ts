@@ -8,6 +8,42 @@ export type SignedUploadResult =
   | { ok: true; path: string; token: string }
   | { ok: false; error: string };
 
+/** Enroll one student (by user id) in a course. Idempotent. */
+export async function enrollStudent(
+  courseId: string,
+  userId: string,
+): Promise<{ error: string | null }> {
+  if (!(await requireAdmin())) return { error: "Not authorized." };
+
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("course_enrollments")
+    .upsert({ course_id: courseId, user_id: userId }, { onConflict: "user_id,course_id" });
+
+  if (error) return { error: "Could not enroll the student." };
+  revalidatePath(`/admin/courses/${courseId}`);
+  return { error: null };
+}
+
+/** Remove one student from a course. */
+export async function unenrollStudent(
+  courseId: string,
+  userId: string,
+): Promise<{ error: string | null }> {
+  if (!(await requireAdmin())) return { error: "Not authorized." };
+
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("course_enrollments")
+    .delete()
+    .eq("course_id", courseId)
+    .eq("user_id", userId);
+
+  if (error) return { error: "Could not unenroll the student." };
+  revalidatePath(`/admin/courses/${courseId}`);
+  return { error: null };
+}
+
 /**
  * Called the moment a file is picked, before any lesson row exists — the
  * YouTube-style flow uploads first and fills in details while that

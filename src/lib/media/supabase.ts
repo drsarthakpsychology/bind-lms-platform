@@ -9,10 +9,18 @@ import type { MediaProvider, SignedPlaybackResult, UploadResult } from "./provid
  */
 export class SupabaseMediaProvider implements MediaProvider {
   async getPlaybackUrl(key: string, expiresSeconds = 3600): Promise<SignedPlaybackResult> {
+    return this.getPlaybackUrlFromBucket("videos", key, expiresSeconds);
+  }
+
+  async getPlaybackUrlFromBucket(
+    bucket: string,
+    key: string,
+    expiresSeconds = 3600,
+  ): Promise<SignedPlaybackResult> {
     try {
       const admin = createAdminClient();
       const { data, error } = await admin.storage
-        .from("videos")
+        .from(bucket)
         .createSignedUrl(key, expiresSeconds);
       if (error || !data) return { ok: false, error: error?.message ?? "Could not sign URL." };
       return { ok: true, url: data.signedUrl };

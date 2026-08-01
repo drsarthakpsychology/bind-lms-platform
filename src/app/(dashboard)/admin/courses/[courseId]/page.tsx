@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ChevronLeft, FileVideo2, ListPlus } from "lucide-react";
+import { ChevronLeft, FileVideo2, ListPlus, UserRoundPlus } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { LessonForm } from "./lesson-form";
 import { VideoUpload } from "./video-upload";
 import { DeleteLessonButton } from "./delete-lesson-button";
 import { CourseActions } from "../course-actions";
+import { EnrollStudents } from "./enroll-students";
 
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -21,14 +22,24 @@ export default async function CourseDetailPage({
   const { courseId } = await params;
   const supabase = await createClient();
 
-  const [{ data: course }, { data: lessons }] = await Promise.all([
-    supabase.from("courses").select("id, title, is_published").eq("id", courseId).single(),
-    supabase
-      .from("lessons")
-      .select("id, title, order_index, requires_assignment, video_storage_path")
-      .eq("course_id", courseId)
-      .order("order_index", { ascending: true }),
-  ]);
+  const [{ data: course }, { data: lessons }, { data: students }, { data: enrollments }] =
+    await Promise.all([
+      supabase.from("courses").select("id, title, is_published").eq("id", courseId).single(),
+      supabase
+        .from("lessons")
+        .select("id, title, order_index, requires_assignment, video_storage_path")
+        .eq("course_id", courseId)
+        .order("order_index", { ascending: true }),
+      supabase
+        .from("profiles")
+        .select("id, email")
+        .eq("role", "student")
+        .order("email", { ascending: true }),
+      supabase
+        .from("course_enrollments")
+        .select("user_id")
+        .eq("course_id", courseId),
+    ]);
 
   if (!course) {
     notFound();
@@ -37,6 +48,8 @@ export default async function CourseDetailPage({
   const nextOrderIndex = (lessons ?? []).length
     ? Math.max(...(lessons ?? []).map((l) => l.order_index)) + 1
     : 1;
+
+  const enrolledIds = (enrollments ?? []).map((e) => e.user_id);
 
   return (
     <div className="space-y-8">
@@ -75,6 +88,25 @@ export default async function CourseDetailPage({
         </CardHeader>
         <CardContent>
           <LessonForm courseId={courseId} nextOrderIndex={nextOrderIndex} />
+        </CardContent>
+      </Card>
+
+      <Card variant="raised">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <UserRoundPlus className="size-4 text-primary" aria-hidden />
+            Enrolled students
+            <Badge variant="secondary" className="ml-1">
+              {enrolledIds.length}
+            </Badge>
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <EnrollStudents
+            courseId={courseId}
+            students={(students ?? []).map((s) => ({ id: s.id, email: s.email }))}
+            enrolledIds={enrolledIds}
+          />
         </CardContent>
       </Card>
 

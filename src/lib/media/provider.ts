@@ -22,6 +22,16 @@ export type UploadResult =
 export interface MediaProvider {
   /** Mint a short-lived signed URL for a stored object (or HLS master). */
   getPlaybackUrl(key: string, expiresSeconds?: number): Promise<SignedPlaybackResult>;
+  /**
+   * Mint a short-lived signed URL for an object in an explicit bucket.
+   * Used for the private `materials` bucket, where the path alone isn't enough
+   * (the provider defaults to the videos bucket).
+   */
+  getPlaybackUrlFromBucket(
+    bucket: string,
+    key: string,
+    expiresSeconds?: number,
+  ): Promise<SignedPlaybackResult>;
   /** Begin an upload for a given key (returns a signed upload URL/token). */
   prepareUpload(key: string): Promise<UploadResult>;
   /** Check the provider is reachable (health). */

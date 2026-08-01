@@ -33,8 +33,16 @@ export class R2MediaProvider implements MediaProvider {
   }
 
   async getPlaybackUrl(key: string, expiresSeconds = 3600): Promise<SignedPlaybackResult> {
+    return this.getPlaybackUrlFromBucket(this.bucket, key, expiresSeconds);
+  }
+
+  async getPlaybackUrlFromBucket(
+    bucket: string,
+    key: string,
+    expiresSeconds = 3600,
+  ): Promise<SignedPlaybackResult> {
     try {
-      const cmd = new GetObjectCommand({ Bucket: this.bucket, Key: key });
+      const cmd = new GetObjectCommand({ Bucket: bucket, Key: key });
       const url = await getSignedUrl(this.client, cmd, { expiresIn: expiresSeconds });
       return { ok: true, url };
     } catch (e) {
