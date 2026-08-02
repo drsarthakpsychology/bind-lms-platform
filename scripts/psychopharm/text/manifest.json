@@ -1,0 +1,42 @@
+{
+  "maudsley_2021": {
+    "pages": 978,
+    "normalized": []
+  },
+  "stahl_pg_7th": {
+    "pages": 2697,
+    "normalized": []
+  },
+  "stahl_essential_5th": {
+    "pages": 640,
+    "normalized": []
+  },
+  "stahl_pg_older": {
+    "pages": 588,
+    "normalized": []
+  },
+  "stahl_pg_preview": {
+    "pages": 98,
+    "normalized": []
+  },
+  "kaplan_sadock": {
+    "pages": 3768,
+    "normalized": []
+  },
+  "fish_psychopath": {
+    "pages": 137,
+    "normalized": []
+  },
+  "ahuja_psychiatry": {
+    "pages": 273,
+    "normalized": []
+  },
+  "dsm5tr": {
+    "pages": 1377,
+    "normalized": []
+  },
+  "icd11": {
+    "pages": 473,
+    "normalized": []
+  }
+}

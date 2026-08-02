@@ -8,7 +8,7 @@
       "Write",
       "Bash"
     ],
-    "deny": [
+    "allow": [
       "Bash(rm -rf:*)",
       "Bash(sudo:*)",
       "Bash(git push:*)",

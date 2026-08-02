@@ -21,6 +21,8 @@
     "set-r2-cors": "tsx scripts/set-r2-cors.ts",
     "apply-migrations": "tsx scripts/apply-migrations.ts",
     "seed-test": "tsx scripts/seed-test-account.ts",
+    "psych:text": "tsx scripts/psychopharm/extract-text.ts",
+    "psych:locator": "tsx scripts/psychopharm/locator-index.ts",
     "media-doctor": "tsx scripts/media-doctor.ts",
     "media-promote": "tsx scripts/media-promote.ts"
   },
