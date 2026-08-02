@@ -128,7 +128,7 @@ export default async function CourseOverviewPage({
   }
 
   return (
-    <div className="space-y-8">
+    <div className="mx-auto w-full max-w-3xl space-y-8">
       {/* Back control — labelled with where it goes. */}
       <Link
         href="/dashboard"
@@ -185,7 +185,7 @@ export default async function CourseOverviewPage({
                     href={`/courses/${courseId}/lessons/${lesson.id}`}
                     className={cn(
                       cardVariants({ variant: "interactive" }),
-                      "flex items-center gap-3 p-4"
+                      "flex flex-row items-center gap-3 p-4"
                     )}
                   >
                     <span
@@ -255,7 +255,7 @@ export default async function CourseOverviewPage({
                   href={`/courses/${courseId}/materials/${m.id}`}
                   className={cn(
                     cardVariants({ variant: "interactive" }),
-                    "flex items-center gap-3 p-3"
+                    "flex flex-row items-center gap-3 p-3"
                   )}
                 >
                   <BookOpen className="size-4 shrink-0 text-primary" aria-hidden />
@@ -298,7 +298,7 @@ export default async function CourseOverviewPage({
                   href={`/courses/${courseId}/lessons/${a.lessonId}?tab=assignment`}
                   className={cn(
                     cardVariants({ variant: "interactive" }),
-                    "flex items-center gap-3 p-4"
+                    "flex flex-row items-center gap-3 p-4"
                   )}
                 >
                   <span className="flex size-8 shrink-0 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground">

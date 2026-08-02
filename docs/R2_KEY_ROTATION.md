@@ -4,9 +4,25 @@ Rotating the R2 API credentials (the "signing key") invalidates any token or
 URL signed with the old key. This is the remediation for the compromised path
 flagged in round 8 (an old signed video URL in the wild).
 
-Rotation is a **Cloudflare dashboard action** — there is no in-repo secret store.
-This doc gives the exact steps plus a verify script so the swap is safe and
-regression-free.
+## What's automated vs the one manual step
+
+**Cloudflare does not allow an R2 S3 token to create another R2 token** — S3
+credentials cannot mint credentials. So the ONE manual step (create the new
+token in the dashboard) is unavoidable. Everything after that is automated:
+
+```bash
+npm run rotate-r2
+```
+
+The script:
+1. Verifies the current key works (baseline) — stops if not.
+2. Tells you exactly what to create and paste back.
+3. Accepts the new key (interactive, or `R2_NEW_ACCESS_KEY_ID` /
+   `R2_NEW_SECRET_ACCESS_KEY` in the shell).
+4. Verifies the new key reads the bucket.
+5. Swaps `.env.local`, backing up the old key to `.env.local.r2-rotate-backup`
+   (gitignored).
+6. Prints the Vercel env vars to set in the dashboard.
 
 ---
 
@@ -19,16 +35,8 @@ regression-free.
 
 ---
 
-## Procedure (repeatable)
+## Manual step (once)
 
-### 0. Baseline — prove the CURRENT keys work
-```bash
-npm run verify-r2
-```
-Expected: `✅ R2 read OK` + a `HEAD OK` line. If this fails, stop — the bucket
-env vars are misconfigured before we touch anything.
-
-### 1. Create the new token (Cloudflare dashboard)
 1. Go to **https://dash.cloudflare.com** → your account → **R2** → **Manage R2
    API Tokens** → **Create API Token**.
 2. For **the video bucket** (`plms-videos`): allow **Object Read** (GET) and
@@ -36,29 +44,17 @@ env vars are misconfigured before we touch anything.
    read-only delivery token, Object Read is enough.
 3. Note: the token is **bucket-scoped**. Do not give it `*` bucket access.
 4. Copy the **Access Key ID** and **Secret Access Key** (the secret is shown
-   once).
+   once), then run `npm run rotate-r2` and paste them.
 
-### 2. Update local + production env
-- **`.env.local`** (local): replace `R2_ACCESS_KEY_ID` and
-  `R2_SECRET_ACCESS_KEY` with the new token.
-- **Vercel → Project → Settings → Environment Variables** (production): replace
-  the same two vars. (Leave `CLOUDFLARE_ACCOUNT_ID` and `R2_BUCKET_NAME`
-  unchanged.)
+---
 
-### 3. Delete the old token
-In Cloudflare → R2 → Manage R2 API Tokens → find the old token → **Delete**.
-Now only the new key can read.
+## After rotate-r2 completes
 
-### 4. Verify the new key
-```bash
-npm run verify-r2
-```
-Expected: `✅ R2 read OK` + `HEAD OK`. Then restart the app/Vercel so the new
-key is live end-to-end.
-
-### 5. Confirm playback
-Log in as a student, play a lesson. The stream proxy must fetch segments from
-R2 and render video.
+1. **Set the same two vars in Vercel** → Project → Settings → Environment
+   Variables (replace `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY`).
+2. **Delete the old token** in Cloudflare → R2 → Manage R2 API Tokens.
+3. `npm run verify-r2` → expect `✅ R2 read OK`.
+4. Redeploy / restart so Vercel uses the new key.
 
 ---
 
@@ -67,7 +63,7 @@ R2 and render video.
   Confirm the token has Object Read on the exact bucket.
 - App 500s on video → the Vercel env wasn't restarted, or a cached instance
   still held the old key. Redeploy / hard-refresh.
-- Rollback: re-add the old token if you haven't deleted it and swap env back.
+- Rollback: restore `.env.local.r2-rotate-backup`, or re-add the old token.
 
 ---
 
