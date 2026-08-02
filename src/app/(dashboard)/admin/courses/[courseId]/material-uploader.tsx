@@ -173,7 +173,11 @@ export function MaterialUploader({
         return;
       }
 
-      await confirmMaterialUpload(courseId);
+      const confirm = await confirmMaterialUpload(courseId, item.materialId!, item.path);
+      if (confirm.error) {
+        onUpdate("error", confirm.error);
+        return;
+      }
       haptic("success");
       onUpdate("done", undefined, 100);
     },

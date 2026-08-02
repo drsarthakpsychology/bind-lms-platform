@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { validateMaterialFile } from "@/lib/materials";
+import { verifyObjectExists } from "@/lib/storage-verify";
 
 export type MaterialUploadState = { error: string | null };
 
@@ -42,7 +43,9 @@ export async function prepareMaterialUpload(
   const safeName = fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
   const path = `${courseId}/${crypto.randomUUID()}-${safeName}`;
 
-  // Insert the materials row (admin client — RLS lets admins write).
+  // Insert the materials row (admin client — RLS lets admins write). Status
+  // starts `pending` — the bytes haven't landed yet. It's promoted to `ready`
+  // only after confirmMaterialUpload verifies the object exists.
   const { data: material, error: insertError } = await admin
     .from("materials")
     .insert({
@@ -53,6 +56,9 @@ export async function prepareMaterialUpload(
       format: validation.format,
       size_bytes: sizeBytes,
       storage_path: path,
+      provider: "supabase",
+      bucket: "materials",
+      status: "pending",
     })
     .select("id")
     .single();
@@ -72,14 +78,26 @@ export async function prepareMaterialUpload(
 }
 
 /**
- * Called after the bytes are uploaded. The row already exists (created in
- * prepareMaterialUpload), so this is mainly a safety confirmation + revalidate.
+ * Called after the bytes are uploaded. VERIFIES the object actually landed in
+ * storage (size > 0) before promoting the row to `ready`. A failed upload is
+ * marked `failed`, never `ready` — the client's success callback is not trusted.
  */
 export async function confirmMaterialUpload(
   courseId: string,
+  materialId: string,
+  path: string,
 ): Promise<{ error: string | null }> {
   if (!(await requireAdmin())) return { error: "Not authorized." };
 
+  const size = await verifyObjectExists("materials", path);
+  const admin = createAdminClient();
+  if (size === null) {
+    await admin.from("materials").update({ status: "failed" }).eq("id", materialId);
+    revalidatePath(`/admin/courses/${courseId}`);
+    return { error: "The file didn't reach storage. Delete this row and re-upload." };
+  }
+
+  await admin.from("materials").update({ status: "ready", size_bytes: size }).eq("id", materialId);
   revalidatePath(`/admin/courses/${courseId}`);
   return { error: null };
 }
@@ -192,7 +210,8 @@ export async function replaceMaterialFile(
   }
 
   // Update the row to point at the new file (keep the old object around until
-  // the new bytes are confirmed).
+  // the new bytes are confirmed). Back to `pending` — the new object must be
+  // verified before the row is usable again.
   await admin
     .from("materials")
     .update({
@@ -200,6 +219,7 @@ export async function replaceMaterialFile(
       title: fileName.replace(/\.[^.]+$/, ""),
       format: validation.format,
       size_bytes: sizeBytes,
+      status: "pending",
     })
     .eq("id", materialId);
 
@@ -228,7 +248,8 @@ export async function restoreMaterialPath(
 }
 
 /**
- * Called after the replacement upload SUCCEEDS. Deletes the old object that
+ * Called after the replacement upload SUCCEEDS. Verifies the NEW object landed
+ * (size > 0), promotes the row to `ready`, then deletes the old object that
  * replaceMaterialFile left in place. Safe to call multiple times (no-op if the
  * object is already gone).
  */
@@ -237,18 +258,26 @@ export async function confirmMaterialReplace(
   oldPath: string | null,
 ): Promise<{ error: string | null }> {
   if (!(await requireAdmin())) return { error: "Not authorized." };
-  if (!oldPath) return { error: null };
 
   const admin = createAdminClient();
-  const { error } = await admin.storage.from("materials").remove([oldPath]);
-  if (error) return { error: "The old file couldn't be removed." };
+
+  // Verify the NEW object exists before touching the old one.
+  const { data: mat } = await admin.from("materials").select("course_id, storage_path").eq("id", materialId).single();
+  const size = mat?.storage_path ? await verifyObjectExists("materials", mat.storage_path) : null;
+  if (size === null) {
+    await admin.from("materials").update({ status: "failed" }).eq("id", materialId);
+    if (mat?.course_id) revalidatePath(`/admin/courses/${mat.course_id}`);
+    return { error: "The new file didn't reach storage." };
+  }
+  await admin.from("materials").update({ status: "ready", size_bytes: size }).eq("id", materialId);
+
+  if (oldPath) {
+    const { error } = await admin.storage.from("materials").remove([oldPath]);
+    if (error) return { error: "The old file couldn't be removed." };
+  }
 
   // Revalidate the material's course listing.
-  const { data: mat } = await admin.from("materials").select("course_id").eq("id", materialId).single();
-  if (mat?.course_id) {
-    const { revalidatePath } = await import("next/cache");
-    revalidatePath(`/admin/courses/${mat.course_id}`);
-  }
+  if (mat?.course_id) revalidatePath(`/admin/courses/${mat.course_id}`);
   return { error: null };
 }
 

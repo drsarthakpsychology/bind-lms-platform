@@ -32,30 +32,41 @@ export type ResolvedStream =
 /**
  * Resolve a lesson's media object(s) server-side from an already-fetched
  * lesson row. Null if the lesson has none.
+ *
+ * Location comes from RECORDED columns only — never inferred from
+ * NEXT_PUBLIC_MEDIA_PROVIDER. That variable may decide where a NEW upload
+ * goes; it has no business telling us where an existing object lives. Legacy
+ * rows with no video_provider/video_bucket were all uploaded to Supabase's
+ * `videos` bucket by video-upload.tsx, so they resolve there unconditionally.
  */
 export function resolveLessonStreamFromRow(lesson: {
   video_storage_path: string | null;
-  media_assets?: Array<{ master_playlist: string | null; key_prefix: string | null; provider: string | null }> | null;
+  video_provider?: string | null;
+  video_bucket?: string | null;
+  media_assets?: Array<{ master_playlist: string | null; key_prefix: string | null; provider: string | null; bucket?: string | null }> | null;
 }): ResolvedStream | null {
   const media = Array.isArray(lesson.media_assets)
     ? lesson.media_assets[0]
     : lesson.media_assets;
 
-  // HLS asset (R2 or Supabase) recorded in media_assets.
+  // HLS asset (R2 or Supabase) recorded in media_assets. Bucket recorded on
+  // the row where the asset lives; R2 legacy rows default to the R2 env bucket.
   if (media?.master_playlist) {
     const provider = media.provider === "r2" ? "r2" : "supabase";
-    const bucket = provider === "r2" ? (process.env.R2_BUCKET_NAME ?? "") : "videos";
+    const bucket =
+      media.bucket ??
+      (provider === "r2" ? (process.env.R2_BUCKET_NAME ?? "") : "videos");
     const keyPrefix = media.key_prefix ?? media.master_playlist.replace(/\/master\.m3u8$/, "");
     return { isHls: true, provider, bucket, key: media.master_playlist, keyPrefix };
   }
 
-  // Legacy single-file video.
+  // Legacy single-file video. The DB row records where it lives; fall back to
+  // the Supabase `videos` bucket only when the row predates the columns.
   if (lesson.video_storage_path) {
-    const configured = process.env.NEXT_PUBLIC_MEDIA_PROVIDER ?? "supabase";
     return {
       isHls: false,
-      provider: configured === "r2" ? "r2" : "supabase",
-      bucket: configured === "r2" ? (process.env.R2_BUCKET_NAME ?? "") : "videos",
+      provider: lesson.video_provider === "r2" ? "r2" : "supabase",
+      bucket: lesson.video_bucket ?? "videos",
       key: lesson.video_storage_path,
     };
   }
@@ -72,7 +83,9 @@ export async function resolveLessonStream(lessonId: string): Promise<ResolvedStr
   const supabase = await createClient();
   const { data: lesson } = await supabase
     .from("lessons")
-    .select("video_storage_path, media_assets(master_playlist, key_prefix, provider)")
+    .select(
+      "video_storage_path, video_provider, video_bucket, media_assets(master_playlist, key_prefix, provider, bucket)",
+    )
     .eq("id", lessonId)
     .single();
 
@@ -98,7 +111,7 @@ export async function authorizeAndResolveLesson(opts: {
   const { data: lesson } = await supabase
     .from("lessons")
     .select(
-      "course_id, video_storage_path, media_assets(master_playlist, key_prefix, provider), courses(is_published)",
+      "course_id, video_storage_path, video_provider, video_bucket, media_assets(master_playlist, key_prefix, provider, bucket), courses(is_published)",
     )
     .eq("id", opts.lessonId)
     .single();
@@ -150,7 +163,9 @@ export async function getObjectStream(
     }
     return await supabaseStream(bucket, key, range);
   } catch (e) {
-    console.error("getObjectStream failed:", e);
+    // Log enough to identify the file when something breaks — provider, bucket,
+    // key — not just "Video unavailable".
+    console.error("getObjectStream failed:", { provider, bucket, key, error: e instanceof Error ? e.message : e });
     return null;
   }
 }

@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
+import { verifyObjectExists } from "@/lib/storage-verify";
 
 export type SignedUploadResult =
   | { ok: true; path: string; token: string }
@@ -107,6 +108,9 @@ export async function createLessonWithVideo(
       order_index: Number.isFinite(orderIndexRaw) ? orderIndexRaw : 0,
       requires_assignment: requiresAssignment,
       video_storage_path: videoPath,
+      video_provider: "supabase",
+      video_bucket: "videos",
+      video_status: "pending", // promoted to ready only after the object verifies
     })
     .select("id")
     .single();
@@ -139,10 +143,21 @@ export async function attachVideoToLesson(
 ): Promise<{ error: string | null }> {
   if (!(await requireAdmin())) return { error: "Not authorized." };
 
+  // Verify the bytes actually landed before marking the lesson playable.
+  const size = await verifyObjectExists("videos", path);
   const supabase = await createClient();
+  if (size === null) {
+    await supabase
+      .from("lessons")
+      .update({ video_status: "failed" })
+      .eq("id", lessonId);
+    revalidatePath(`/admin/courses/${courseId}`);
+    return { error: "Upload didn't reach storage. Re-upload the video." };
+  }
+
   const { error } = await supabase
     .from("lessons")
-    .update({ video_storage_path: path })
+    .update({ video_storage_path: path, video_status: "ready" })
     .eq("id", lessonId);
 
   if (error) return { error: "Upload succeeded, but saving the video path failed." };

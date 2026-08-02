@@ -62,7 +62,7 @@ export async function POST(request: Request) {
   const supabase = await createClient();
   const { data: lesson } = await supabase
     .from("lessons")
-    .select("id, video_storage_path, media_assets(master_playlist, key_prefix)")
+    .select("id, video_storage_path, video_provider, video_bucket, media_assets(master_playlist, key_prefix, provider, bucket)")
     .eq("id", lessonId)
     .single();
 

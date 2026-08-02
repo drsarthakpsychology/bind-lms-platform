@@ -1,7 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Hls from "hls.js";
+import Hls, {
+  FetchLoader,
+  type FragmentLoaderContext,
+  type LoaderConfiguration,
+  type LoaderCallbacks,
+  type LoaderContext,
+  type PlaylistLoaderContext,
+} from "hls.js";
 import {
   Captions,
   Gauge,
@@ -42,6 +49,48 @@ function getFullscreenElement(): Element | null {
 }
 
 const PLAYBACK_RATES = [1, 1.25, 1.5, 2, 0.75] as const;
+
+/**
+ * A hls.js loader that swaps the CURRENT stream token into every request URL.
+ *
+ * Stream tokens live 5 minutes; lectures run longer. Instead of restarting
+ * playback (or reloading the source) when a token expires, this loader reads
+ * `tokenRef` at fetch time and rewrites the `?st=` query param. The background
+ * refresh timer in VideoPlayer swaps tokenRef ~30s before expiry, so the next
+ * segment/playlist request already carries a fresh token. currentTime and the
+ * media element are untouched.
+ */
+function makeTokenRotatingLoader<C extends LoaderContext>(
+  tokenRef: { current: { token: string; expiresAt: number } | null },
+) {
+  return class TokenRotatingFetchLoader extends FetchLoader {
+    // Narrow the inherited `context` field to C — FetchLoader declares it as
+    // LoaderContext, which would otherwise keep this class at Loader<LoaderContext>
+    // and fail the pLoader/fLoader constructor types (PlaylistLoaderContext /
+    // FragmentLoaderContext). C extends LoaderContext, so this is assignable.
+    context: C | null = null;
+
+    load(context: C, config: LoaderConfiguration, callbacks: LoaderCallbacks<C>) {
+      const current = tokenRef.current;
+      if (current && context.url) {
+        try {
+          const u = new URL(context.url);
+          u.searchParams.set("st", current.token);
+          context.url = u.toString();
+        } catch {
+          // Malformed URL — leave as-is and let the base loader fail honestly.
+        }
+      }
+      // The base loader's signature is the wider LoaderContext; the subclass
+      // narrows to C (which hls.js expects for pLoader/fLoader constructors).
+      super.load(
+        context,
+        config,
+        callbacks as unknown as LoaderCallbacks<LoaderContext>,
+      );
+    }
+  };
+}
 
 function formatTime(seconds: number): string {
   if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
@@ -92,6 +141,10 @@ export function VideoPlayer({
   const controlsTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastTap = useRef<{ time: number; x: number } | null>(null);
   const hlsRef = useRef<Hls | null>(null);
+  // The CURRENT stream token + its expiry (epoch ms). The background refresh
+  // timer swaps this before the 5-min token dies; the custom hls.js loaders
+  // read it at every fetch, so rotation happens without restarting playback.
+  const tokenRef = useRef<{ token: string; expiresAt: number } | null>(null);
 
   const [tampered, setTampered] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -155,12 +208,19 @@ export function VideoPlayer({
           streamUrl: string;
           mediaType?: "hls" | "mp4";
           resumeSeconds?: number;
+          expiresIn?: number;
         };
         // The server tells us the media shape (HLS master vs single MP4); the
         // player branches on that rather than guessing from the URL.
         url = `${data.streamUrl}?st=${encodeURIComponent(data.token)}`;
         resume = data.resumeSeconds ?? 0;
         mediaType = data.mediaType ?? "hls";
+        // Record the current token + its expiry so the custom loaders and the
+        // refresh timer can rotate it before it dies.
+        tokenRef.current = {
+          token: data.token,
+          expiresAt: Date.now() + (data.expiresIn ?? 300) * 1000,
+        };
       } catch (e) {
         console.error("playback token fetch failed:", e);
         if (!cancelled) {
@@ -180,7 +240,20 @@ export function VideoPlayer({
       try {
         if (mediaType === "hls") {
           if (Hls.isSupported()) {
-            hls = new Hls({ enableWorker: true });
+            hls = new Hls({
+              enableWorker: true,
+              // Transparent token rotation: a stream token lives 5 minutes,
+              // but a lecture can be much longer. The custom loaders read the
+              // CURRENT token from tokenRef at fetch time, so when the background
+              // refresh swaps tokenRef, the next segment/playlist request already
+              // carries the fresh token — playback never restarts and currentTime
+              // is preserved. No page reload, no source reload.
+              pLoader: makeTokenRotatingLoader<PlaylistLoaderContext>(tokenRef),
+              fLoader: makeTokenRotatingLoader<FragmentLoaderContext>(tokenRef),
+              fragLoadingMaxRetry: 3,
+              fragLoadingMaxRetryTimeout: 3000,
+              manifestLoadingMaxRetry: 2,
+            });
             hls.loadSource(url);
             hls.attachMedia(video);
             // Bounded HLS error recovery. A stream token lives 5 minutes; when
@@ -247,6 +320,54 @@ export function VideoPlayer({
       video.pause();
       video.removeAttribute("src");
       video.load();
+    };
+  }, [lessonId, loadKey]);
+
+  // ---- Transparent token rotation ----
+  // Stream tokens live 5 minutes. A lecture runs longer. This timer re-mints a
+  // fresh token ~30s before the current one expires and swaps tokenRef. The
+  // hls.js custom loaders pick it up on the next segment/playlist request, so
+  // playback never restarts and currentTime is never touched. Only the token
+  // query param changes; the HLS media stream itself is untouched.
+  useEffect(() => {
+    let cancelled = false;
+    let timer: ReturnType<typeof setInterval> | null = null;
+
+    async function refreshToken() {
+      if (cancelled) return;
+      const current = tokenRef.current;
+      // Only refresh when a token exists and is about to expire. Also avoid
+      // stampeding if a previous fetch is still in flight.
+      if (!current || Date.now() < current.expiresAt - 30000) return;
+      try {
+        const res = await fetch("/api/media/playback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ lessonId }),
+        });
+        if (!res.ok || cancelled) return;
+        const data = (await res.json()) as {
+          token: string;
+          streamUrl: string;
+          mediaType?: "hls" | "mp4";
+          expiresIn?: number;
+        };
+        if (!data.token || cancelled) return;
+        tokenRef.current = {
+          token: data.token,
+          expiresAt: Date.now() + (data.expiresIn ?? 300) * 1000,
+        };
+      } catch {
+        // Transient failure — the next tick retries. Playback continues on the
+        // old token until it genuinely expires.
+      }
+    }
+
+    // Check every 15s; cheap (no-op until 30s before expiry).
+    timer = setInterval(refreshToken, 15000);
+    return () => {
+      cancelled = true;
+      if (timer) clearInterval(timer);
     };
   }, [lessonId, loadKey]);
 

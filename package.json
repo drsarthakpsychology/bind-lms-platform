@@ -20,7 +20,9 @@
     "test:e2e": "playwright test",
     "set-r2-cors": "tsx scripts/set-r2-cors.ts",
     "apply-migrations": "tsx scripts/apply-migrations.ts",
-    "seed-test": "tsx scripts/seed-test-account.ts"
+    "seed-test": "tsx scripts/seed-test-account.ts",
+    "media-doctor": "tsx scripts/media-doctor.ts",
+    "media-promote": "tsx scripts/media-promote.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1101.0",
