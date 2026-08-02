@@ -233,7 +233,7 @@ async function supabaseStream(
     .download(key, range ? { transform: { width: 0 } } : undefined);
   // Supabase's .download() doesn't support Range; fetch the whole object.
   if (error || !data) throw new Error(error?.message ?? "Supabase download failed");
-  const bytes = data.arrayBuffer ? await data.arrayBuffer() : await readBlob(data);
+  const bytes = await data.arrayBuffer();
   const stream = new ReadableStream<Uint8Array>({
     start(controller) {
       controller.enqueue(new Uint8Array(bytes));
@@ -241,8 +241,4 @@ async function supabaseStream(
     },
   });
   return { stream };
-}
-
-async function readBlob(b: Blob): Promise<ArrayBuffer> {
-  return b.arrayBuffer();
 }
