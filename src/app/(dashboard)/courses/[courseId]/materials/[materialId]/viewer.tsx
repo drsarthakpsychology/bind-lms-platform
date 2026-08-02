@@ -59,25 +59,22 @@ export function MaterialViewer({
   const [error, setError] = useState<string | null>(null);
   const [loadKey, setLoadKey] = useState(0);
 
-  // Fetch a signed URL on mount (enrolment re-checked at request time).
+  // Materials proxy-stream through the authenticated route (same transport as
+  // video). The viewer points directly at the proxy URL — enrolment is
+  // re-checked on every request, and no storage URL ever reaches the client.
   useEffect(() => {
     let cancelled = false;
+    // HEAD to verify access + get the stream URL. pdf.js/audio/img fetch the
+    // same URL, which streams Range-capable bytes.
     (async () => {
       try {
-        const res = await fetch("/api/media/materials", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ materialId }),
-        });
+        const proxyUrl = `/api/media/materials/${materialId}`;
+        const res = await fetch(proxyUrl, { method: "HEAD" });
         if (!res.ok) {
-          const body = await res.json().catch(() => null);
-          // Raw storage error goes to logs, not the student.
-          console.error("material load failed:", body?.error ?? `HTTP ${res.status}`);
-          if (!cancelled) setError(body?.error ?? "Couldn't open this material.");
+          if (!cancelled) setError("Couldn't open this material.");
           return;
         }
-        const data = await res.json();
-        if (!cancelled) setSignedUrl(data.url);
+        if (!cancelled) setSignedUrl(proxyUrl);
       } catch (e) {
         console.error("material load failed:", e);
         if (!cancelled) setError("Couldn't open this material.");

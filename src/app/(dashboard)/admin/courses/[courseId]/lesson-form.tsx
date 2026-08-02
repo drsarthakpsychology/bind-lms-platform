@@ -4,6 +4,7 @@ import { useActionState, useEffect, useRef, useState } from "react";
 import { CheckCircle2, CircleAlert, Loader2, Upload, Video as VideoIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { prepareVideoUpload, createLessonWithVideo, type CreateLessonState } from "./actions";
+import { SUBMISSION_TYPE_OPTIONS } from "@/lib/media/registry";
 
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,21 +16,14 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 const initialState: CreateLessonState = { error: null };
 
 /**
- * Canonical set of assignment submission types. Stored comma-separated in
- * assignments.submission_type. Mirrors supabase/migrations_pending/
- * assignment_multi_submission_types.sql.
+ * Selectable submission types — only types with a working student path are
+ * offered (the media registry's test enforces that). Stored comma-separated in
+ * assignments.submission_type.
  */
-const SUBMISSION_TYPES = [
-  { value: "text", label: "Text response" },
-  { value: "rich_text", label: "Rich text / formatted writing" },
-  { value: "audio", label: "Audio recording / upload" },
-  { value: "video", label: "Video recording / upload" },
-  { value: "pdf", label: "PDF" },
-  { value: "docx", label: "DOCX" },
-  { value: "ppt", label: "PPT / PPTX" },
-  { value: "zip", label: "ZIP / multiple files" },
-  { value: "url", label: "External URL / GitHub / Google Drive" },
-] as const;
+const SUBMISSION_TYPES = SUBMISSION_TYPE_OPTIONS as unknown as ReadonlyArray<{
+  value: string;
+  label: string;
+}>;
 
 export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nextOrderIndex: number }) {
   const boundAction = createLessonWithVideo.bind(null, courseId);

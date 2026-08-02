@@ -29,14 +29,14 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-const ACCEPTED_FORMAT_OPTIONS = [
-  { value: "pdf", label: "PDF" },
-  { value: "docx", label: "DOCX" },
-  { value: "image", label: "Images (PNG/JPG)" },
-  { value: "audio", label: "Audio" },
-  { value: "video", label: "Video" },
-  { value: "zip", label: "ZIP" },
-] as const;
+// Accepted types come from the media registry — only types with a working
+// student path are offered. Adding a type without its path would show
+// students a dead end; the registry's test enforces that.
+import { SUBMISSION_TYPE_OPTIONS } from "@/lib/media/registry";
+const ACCEPTED_FORMAT_OPTIONS = SUBMISSION_TYPE_OPTIONS as unknown as ReadonlyArray<{
+  value: string;
+  label: string;
+}>;
 
 export type EditableAssignment = {
   id: string;

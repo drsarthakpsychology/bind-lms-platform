@@ -1,60 +1,33 @@
 /**
- * Materials validation rules — shared by client (for instant feedback) and
- * server (the authoritative gate). Keeping them in one module means the two
- * can't drift apart.
- */
-
-/** Hard cap per file. The brief starts at 100 MB and makes it configurable. */
-export const MAX_MATERIAL_SIZE_BYTES = 100 * 1024 * 1024;
-export const MAX_MATERIAL_SIZE_MB = 100;
-
-/**
- * Extension → kind mapping for the format allowlist.
+ * Materials validation — thin wrapper over the media registry.
  *
- * PowerPoint (ppt/pptx) is deliberately absent: there is no trustworthy
- * browser-side renderer, and LibreOffice (the only reliable converter) can't
- * run on Vercel's serverless runtime. The student viewer has no way to show a
- * deck, so we reject it at upload and ask for a PDF export instead. Existing
- * `slides` rows are legacy — see the viewer's fallback copy.
+ * The registry (src/lib/media/registry.ts) is the single source of truth for
+ * which formats are accepted and what they map to. This file keeps the
+ * `validateMaterialFile` API the uploaders call, now backed by the registry so
+ * the allowlist and the renderer set can't drift.
  */
-export const MATERIAL_EXTENSIONS: Record<string, "document" | "audio" | "image"> = {
-  pdf: "document",
-  mp3: "audio",
-  m4a: "audio",
-  wav: "audio",
-  png: "image",
-  jpg: "image",
-  jpeg: "image",
-  webp: "image",
-};
 
-/** Recognised MIME types per extension (used by the server allowlist). */
-export const MATERIAL_MIME_TYPES: Record<string, string[]> = {
-  pdf: ["application/pdf"],
-  mp3: ["audio/mpeg"],
-  m4a: ["audio/mp4", "audio/x-m4a", "audio/mp4a-latm"],
-  wav: ["audio/wav", "audio/wave", "audio/x-wav"],
-  png: ["image/png"],
-  jpg: ["image/jpeg"],
-  jpeg: ["image/jpeg"],
-  webp: ["image/webp"],
-};
+import {
+  MATERIAL_FORMATS,
+  MAX_MATERIAL_SIZE_BYTES,
+  MAX_MATERIAL_SIZE_MB,
+  getExtension,
+  type MediaKind,
+} from "@/lib/media/registry";
 
-export function getExtension(fileName: string): string {
-  const dot = fileName.lastIndexOf(".");
-  return dot >= 0 ? fileName.slice(dot + 1).toLowerCase() : "";
-}
+export { MATERIAL_FORMATS, MAX_MATERIAL_SIZE_BYTES, MAX_MATERIAL_SIZE_MB };
 
 export type MaterialValidation = {
   ok: boolean;
   error?: string;
-  kind?: "document" | "slides" | "audio" | "image";
+  kind?: MediaKind;
   format?: string;
 };
 
 /**
- * Validate a file's name + size against the allowlist and cap. Used by both
- * the client (before upload, for instant feedback) and the server (authoritative).
+ * Validate a file's name + size against the registry allowlist and cap. Used by
+ * both the client (before upload, for instant feedback) and the server
+ * (authoritative).
  */
 export function validateMaterialFile(
   fileName: string,
@@ -62,15 +35,14 @@ export function validateMaterialFile(
   maxBytes = MAX_MATERIAL_SIZE_BYTES,
 ): MaterialValidation {
   const ext = getExtension(fileName);
-  const kind = MATERIAL_EXTENSIONS[ext];
+  const spec = MATERIAL_FORMATS[ext];
 
-  if (!kind) {
-    const isDeck = ["ppt", "pptx"].includes(ext);
+  if (!spec || !spec.accepted) {
     return {
       ok: false,
-      error: isDeck
-        ? `PowerPoint files can't be shown to students in the browser. Export the deck to PDF and upload that instead.`
-        : `"${fileName}" isn't a supported file type. Upload a PDF, audio recording, or image.`,
+      error:
+        spec?.rejectionReason ??
+        `"${fileName}" isn't a supported file type. Upload a PDF, audio recording, or image.`,
     };
   }
 
@@ -82,5 +54,5 @@ export function validateMaterialFile(
     };
   }
 
-  return { ok: true, kind, format: ext };
+  return { ok: true, kind: spec.kind, format: ext };
 }

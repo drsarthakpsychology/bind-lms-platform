@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { prepareSubmissionUpload, submitWithFiles, unsubmitAssignment } from "./actions";
 import { haptic } from "@/lib/haptics";
+import { Download } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -23,6 +24,51 @@ type SubmissionState = {
   note: string | null;
   files: { id: string; originalName: string; storagePath: string }[];
 };
+
+/**
+ * A link to re-open the student's OWN submitted file. Ownership is enforced
+ * server-side by /api/media/submissions/:fileId; the signed URL lets them
+ * download their own work (round-13 decision: own submissions aren't locked).
+ */
+function OwnFileLink({ fileId, name }: { fileId: string; name: string }) {
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+
+  async function open() {
+    if (loading) return;
+    setLoading(true);
+    setErr(null);
+    try {
+      const res = await fetch(`/api/media/submissions/${fileId}`);
+      if (!res.ok) {
+        setErr("Couldn't open this file.");
+        return;
+      }
+      const data = (await res.json()) as { url: string };
+      // Open the signed URL in a new tab so the student can view/download.
+      window.open(data.url, "_blank", "noopener");
+    } catch {
+      setErr("Couldn't open this file.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <button
+        type="button"
+        onClick={open}
+        disabled={loading}
+        className="inline-flex items-center gap-1 text-primary underline-offset-2 hover:underline disabled:opacity-50"
+      >
+        <Download className="size-3.5" aria-hidden />
+        {name}
+      </button>
+      {err && <span className="text-status-alert-fg">{err}</span>}
+    </span>
+  );
+}
 
 /**
  * Student assignment submission. Large drop zone (click anywhere to browse),
@@ -70,13 +116,28 @@ export function SubmissionForm({
     (!pastDue || allowLate) &&
     (picked.length > 0 || (submission && !submission.files.length && !submission.note));
 
+  const ALLOWED_EXTS = new Set(["pdf", "docx"]);
+
   function addFiles(list: FileList | File[]) {
     const files = Array.from(list);
+    // Reject any file whose extension isn't an accepted submission type.
+    const bad = files.filter((f) => {
+      const ext = f.name.split(".").pop()?.toLowerCase() ?? "";
+      return !ALLOWED_EXTS.has(ext);
+    });
+    const good = files.filter((f) => {
+      const ext = f.name.split(".").pop()?.toLowerCase() ?? "";
+      return ALLOWED_EXTS.has(ext);
+    });
+    if (bad.length) {
+      setError("Only PDF and DOCX files can be attached to this submission.");
+      return;
+    }
     const remaining = maxFiles - picked.length;
-    const accepted = files.slice(0, Math.max(0, remaining));
+    const accepted = good.slice(0, Math.max(0, remaining));
     const next = [...picked, ...accepted];
     setPicked(next);
-    if (files.length > remaining) {
+    if (good.length > remaining) {
       setError(`You can attach up to ${maxFiles} files.`);
     } else {
       setError(null);
@@ -207,7 +268,7 @@ export function SubmissionForm({
           <ul className="space-y-1.5">
             {submission.files.map((f) => (
               <li key={f.id} className="text-small text-foreground">
-                {f.originalName}
+                <OwnFileLink fileId={f.id} name={f.originalName} />
               </li>
             ))}
           </ul>
@@ -271,6 +332,7 @@ export function SubmissionForm({
             ref={inputRef}
             type="file"
             multiple
+            accept=".pdf,.docx"
             className="hidden"
             onChange={(e) => {
               if (e.target.files?.length) addFiles(e.target.files);

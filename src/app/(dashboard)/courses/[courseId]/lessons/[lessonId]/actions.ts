@@ -3,6 +3,8 @@
 import { redirect } from "next/navigation";
 import { requireSession } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
+import { getExtension, SUBMISSION_ATTACH_EXTENSIONS } from "@/lib/media/registry";
+import { verifyObjectExists } from "@/lib/storage-verify";
 
 export type PlaybackResult =
   | { ok: true; url: string; resumeSeconds: number }
@@ -181,6 +183,15 @@ export async function prepareSubmissionUpload(
   const { profile, assignment } = await assertCanSubmit(assignmentId);
   if (!profile || !assignment) return { ok: false, error: "Not authorized." };
 
+  // Only formats with a working student path are accepted (registry).
+  const ext = getExtension(fileName);
+  if (!SUBMISSION_ATTACH_EXTENSIONS[ext]) {
+    return {
+      ok: false,
+      error: `"${fileName}" isn't an accepted file type for this submission.`,
+    };
+  }
+
   let admin;
   try {
     admin = createAdminClient();
@@ -264,15 +275,22 @@ export async function submitWithFiles(
 
   if (error || !submission) return { error: "Could not save your submission." };
 
-  // Record the uploaded files against this submission (admin client — the
-  // caller owns the submission and the files were uploaded to the bucket).
+  // Record the uploaded files against this submission, but only after the
+  // server verifies each object actually landed (size > 0). A file whose bytes
+  // never reached storage is marked failed, never shown as a real attachment.
   const admin = createAdminClient();
   for (const f of filePaths) {
+    const size = await verifyObjectExists("submissions", f.path);
+    const status = size === null ? "failed" : "ready";
     await admin.from("submission_files").insert({
       submission_id: submission.id,
       storage_path: f.path,
       original_name: f.name,
       format: f.name.split(".").pop()?.toLowerCase() ?? null,
+      provider: "supabase",
+      bucket: "submissions",
+      status,
+      ...(size !== null ? { size_bytes: size } : {}),
     });
   }
 
