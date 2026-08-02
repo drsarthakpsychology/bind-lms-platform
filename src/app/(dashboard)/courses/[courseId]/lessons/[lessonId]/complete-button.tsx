@@ -25,7 +25,6 @@ export function CompleteButton({
   courseId,
   continueTarget,
   label,
-  disabled,
   isFinalLesson,
   alreadyComplete,
 }: {
@@ -33,14 +32,13 @@ export function CompleteButton({
   courseId: string;
   continueTarget: string;
   label: string;
-  disabled: boolean;
   isFinalLesson: boolean;
   alreadyComplete?: boolean;
 }) {
   const [isPending, startTransition] = useTransition();
 
   function onClick() {
-    if (disabled || isPending) return;
+    if (isPending) return;
     haptic("success");
     if (isFinalLesson && !alreadyComplete) {
       toast.success("Course complete! 🎉", {
@@ -56,9 +54,8 @@ export function CompleteButton({
     <Button
       type="button"
       variant={alreadyComplete ? "secondary" : "default"}
-      disabled={disabled || isPending}
+      disabled={isPending}
       onClick={onClick}
-      title={disabled ? "Submit the assignment below to continue" : undefined}
     >
       {label}
       <ArrowRight className="size-4" aria-hidden />

@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { cookies, headers } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ChevronLeft, FileText, Lock, Paperclip } from "lucide-react";
+import { ArrowLeft, ChevronLeft, FileText, Paperclip } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
@@ -18,7 +18,6 @@ import { MaterialsList } from "./materials-list";
 import { MaterialUploader } from "@/app/(dashboard)/admin/courses/[courseId]/material-uploader";
 
 import { Button } from "@/components/ui/button";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/design-system/empty-state";
 
@@ -111,10 +110,9 @@ export default async function LessonPage({
       ).data
     : null;
 
-  // The blueprint's rule: a pending assignment blocks moving on. "Blocks"
-  // means a submission must exist — grading (approval) is a separate,
-  // asynchronous admin workflow that shouldn't stall the student mid-course.
-  const mustSubmitFirst = Boolean(assignment) && !existingSubmission;
+  // A pending assignment does NOT block advancing. Grading (approval) is a
+  // separate, asynchronous admin workflow that shouldn't stall a student
+  // mid-course — they can always move on to the next lesson.
 
   const playable = (courseLessons ?? []).filter((l) => l.video_storage_path);
   const currentIndex = playable.findIndex((l) => l.id === lessonId);
@@ -225,7 +223,6 @@ export default async function LessonPage({
                 sizeBytes: m.size_bytes,
                 url: m.url,
               }))}
-              legacySlidesCount={(materials ?? []).filter((m) => m.kind === "slides").length}
             />
           )}
 
@@ -239,7 +236,6 @@ export default async function LessonPage({
                 sizeBytes: m.size_bytes,
               }))}
               courseId={courseId}
-              isAdmin={showAdminAssignment}
             />
           ) : (
             !showAdminAssignment && (
@@ -282,7 +278,6 @@ export default async function LessonPage({
           courseId={courseId}
           continueTarget={continueTarget}
           label={forwardLabel}
-          disabled={mustSubmitFirst}
           isFinalLesson={!nextLesson}
           alreadyComplete={lastLessonCompleted}
         />
@@ -391,16 +386,6 @@ export default async function LessonPage({
           />
         )
       )}
-
-      {mustSubmitFirst && (
-        <Alert variant="warning">
-          <Lock className="size-4" aria-hidden />
-          <AlertTitle>Submit to continue</AlertTitle>
-          <AlertDescription>
-            Submit the assignment above to unlock the next lesson.
-          </AlertDescription>
-        </Alert>
-      )}
     </div>
   );
 }
@@ -410,7 +395,6 @@ function ContinueControl({
   courseId,
   continueTarget,
   label,
-  disabled,
   isFinalLesson,
   alreadyComplete,
 }: {
@@ -418,7 +402,6 @@ function ContinueControl({
   courseId: string;
   continueTarget: string;
   label: string;
-  disabled: boolean;
   isFinalLesson: boolean;
   alreadyComplete?: boolean;
 }) {
@@ -428,7 +411,6 @@ function ContinueControl({
       courseId={courseId}
       continueTarget={continueTarget}
       label={label}
-      disabled={disabled}
       isFinalLesson={isFinalLesson}
       alreadyComplete={alreadyComplete}
     />

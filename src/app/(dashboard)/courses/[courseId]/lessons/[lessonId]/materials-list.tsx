@@ -43,15 +43,12 @@ function formatSize(bytes: number | null | undefined): string {
 function MaterialCard({
   material,
   courseId,
-  isAdmin,
 }: {
   material: MaterialItem;
   courseId: string;
-  isAdmin?: boolean;
 }) {
   const Icon = KIND_ICONS[material.kind];
   const viewHref = `/courses/${courseId}/materials/${material.id}`;
-  const isSlides = material.kind === "slides";
 
   if (material.kind === "link") {
     return (
@@ -96,14 +93,6 @@ function MaterialCard({
         </Button>
       </div>
 
-      {/* Slides can't be previewed — honest note. */}
-      {isSlides && (
-        <p className="text-caption text-muted-foreground">
-          {isAdmin
-            ? "PPTX files can't be previewed in the browser — exporting the deck to PDF lets students view it inline."
-            : "PPTX files can't be previewed in the browser."}
-        </p>
-      )}
     </div>
   );
 }
@@ -111,16 +100,14 @@ function MaterialCard({
 export function MaterialsList({
   materials,
   courseId,
-  isAdmin,
 }: {
   materials: MaterialItem[];
   courseId: string;
-  isAdmin?: boolean;
 }) {
   return (
     <div className="space-y-3">
       {materials.map((m) => (
-        <MaterialCard key={m.id} material={m} courseId={courseId} isAdmin={isAdmin} />
+        <MaterialCard key={m.id} material={m} courseId={courseId} />
       ))}
     </div>
   );

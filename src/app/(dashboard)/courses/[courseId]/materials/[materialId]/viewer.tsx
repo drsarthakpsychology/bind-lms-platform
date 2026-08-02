@@ -15,6 +15,7 @@ import {
   ZoomOut,
 } from "lucide-react";
 import { getDocument, GlobalWorkerOptions, type PDFDocumentProxy } from "pdfjs-dist";
+import { init as initPptxPreview } from "pptx-preview";
 
 // pdf.js worker — pinned to the installed version. Loaded from the same bundle,
 // never from a CDN.
@@ -136,16 +137,7 @@ export function MaterialViewer({
     case "image":
       return <ImageViewer signedUrl={signedUrl!} title={title} watermarkLabel={watermarkLabel} />;
     case "slides":
-      return (
-        <div className="flex h-full items-center justify-center p-8">
-          <div className="max-w-md rounded-md border-2 border-border bg-card p-6 text-center">
-            <p className="text-small font-semibold text-foreground">{title}</p>
-            <p className="mt-1 text-caption text-muted-foreground">
-              Slide decks can&apos;t be previewed in the browser. Ask your instructor for a PDF version of this deck.
-            </p>
-          </div>
-        </div>
-      );
+      return <SlidesViewer signedUrl={signedUrl!} title={title} watermarkLabel={watermarkLabel} />;
     case "link":
       return (
         <div className="flex h-full items-center justify-center p-8">
@@ -314,6 +306,114 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
           <canvas className="rounded-md border-2 border-border bg-white shadow-sm" />
           {rendering && <Loader2 className="size-5 animate-spin text-muted-foreground" aria-hidden />}
         </div>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Slides — in-browser PPTX render (pptx-preview), no download         */
+/* ------------------------------------------------------------------ */
+function SlidesViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; title: string; watermarkLabel: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const previewerRef = useRef<ReturnType<typeof initPptxPreview> | null>(null);
+  const [state, setState] = useState<"loading" | "ready" | "error">("loading");
+  const [error, setError] = useState<string | null>(null);
+  const [slideCount, setSlideCount] = useState(0);
+  const [current, setCurrent] = useState(1);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    let cancelled = false;
+
+    (async () => {
+      try {
+        // Fetch the deck through the authenticated proxy — the same
+        // download-blocked transport as video/PDF. The ArrayBuffer is what the
+        // renderer needs to draw slides; it never reaches a download path.
+        const res = await fetch(signedUrl);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const buf = await res.arrayBuffer();
+
+        if (cancelled) return;
+        const previewer = initPptxPreview(el, { mode: "slide", width: 960, height: 540 });
+        previewerRef.current = previewer;
+        await previewer.preview(buf);
+        if (cancelled) return;
+        setSlideCount(previewer.slideCount || 1);
+        setCurrent(1);
+        setState("ready");
+      } catch (e) {
+        console.error("slides render failed:", e);
+        if (!cancelled) {
+          setError("This slide deck couldn't be rendered.");
+          setState("error");
+        }
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      previewerRef.current?.destroy();
+      previewerRef.current = null;
+    };
+  }, [signedUrl]);
+
+  const go = (dir: 1 | -1) => {
+    const next = current + dir;
+    if (next < 1 || next > slideCount) return;
+    if (dir === 1) previewerRef.current?.renderNextSlide();
+    else previewerRef.current?.renderPreSlide();
+    setCurrent(next);
+  };
+
+  if (state === "error") {
+    return (
+      <div className="flex h-full items-center justify-center p-8">
+        <div className="max-w-md rounded-md border-2 border-border bg-card p-6 text-center">
+          <p className="text-small font-semibold text-foreground">{title}</p>
+          <p className="mt-1 text-caption text-muted-foreground">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative flex h-full flex-col">
+      <MaterialWatermark label={watermarkLabel} />
+      <div className="flex items-center justify-between gap-2 border-b-2 border-border bg-card px-3 py-2">
+        <div className="flex items-center gap-1">
+          <button
+            type="button"
+            onClick={() => go(-1)}
+            disabled={current <= 1}
+            aria-label="Previous slide"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
+          >
+            <ChevronLeft className="size-4" aria-hidden />
+          </button>
+          <span className="px-2 text-caption text-muted-foreground">
+            {state === "ready" ? `${current} / ${slideCount}` : "Loading…"}
+          </span>
+          <button
+            type="button"
+            onClick={() => go(1)}
+            disabled={current >= slideCount || state !== "ready"}
+            aria-label="Next slide"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
+          >
+            <ChevronRight className="size-4" aria-hidden />
+          </button>
+        </div>
+      </div>
+      <div className="min-h-0 flex-1 overflow-y-auto bg-muted/30">
+        <div ref={containerRef} className="mx-auto w-fit p-4" />
+        {state === "loading" && (
+          <div className="flex justify-center py-8">
+            <Loader2 className="size-5 animate-spin text-muted-foreground" aria-hidden />
+          </div>
+        )}
       </div>
     </div>
   );

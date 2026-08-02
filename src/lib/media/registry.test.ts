@@ -45,10 +45,11 @@ describe("media registry — the invariant that stops list-with-holes", () => {
     }
   });
 
-  it("pptx/ppt are rejected (no browser renderer)", () => {
-    expect(MATERIAL_FORMATS.pptx.accepted).toBe(false);
+  it("pptx is accepted (in-browser renderer); legacy .ppt is rejected", () => {
+    expect(MATERIAL_FORMATS.pptx.accepted).toBe(true);
+    expect(hasFormatRenderer("pptx")).toBe(true);
     expect(MATERIAL_FORMATS.ppt.accepted).toBe(false);
-    expect(MATERIAL_FORMATS.pptx.rejectionReason).toMatch(/PDF/i);
+    expect(MATERIAL_FORMATS.ppt.rejectionReason).toBeTruthy();
   });
 
   it("every accepted submission type is a working student path", () => {

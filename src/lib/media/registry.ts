@@ -83,8 +83,9 @@ export const MATERIAL_FORMATS: Record<string, MaterialFormatSpec> = {
     maxBytes: 100 * 1024 * 1024,
     accepted: true,
   },
-  // No browser-side PowerPoint renderer, and LibreOffice can't run on Vercel
-  // serverless. Rejected until a conversion path exists.
+  // In-browser PPTX renderer (pptx-preview) added in round 14 — decks now
+  // preview through the same download-blocked proxy as everything else.
+  // Note: the old `.ppt` binary format has no browser renderer; only .pptx.
   ppt: {
     ext: "ppt",
     mimeTypes: ["application/vnd.ms-powerpoint"],
@@ -92,7 +93,7 @@ export const MATERIAL_FORMATS: Record<string, MaterialFormatSpec> = {
     maxBytes: 100 * 1024 * 1024,
     accepted: false,
     rejectionReason:
-      "PowerPoint files can't be shown to students in the browser. Export the deck to PDF and upload that instead.",
+      "Legacy .ppt files can't be previewed in the browser. Save the deck as .pptx (or PDF) and upload that instead.",
   },
   pptx: {
     ext: "pptx",
@@ -102,9 +103,7 @@ export const MATERIAL_FORMATS: Record<string, MaterialFormatSpec> = {
     ],
     kind: "document",
     maxBytes: 100 * 1024 * 1024,
-    accepted: false,
-    rejectionReason:
-      "PowerPoint files can't be shown to students in the browser. Export the deck to PDF and upload that instead.",
+    accepted: true,
   },
 };
 
