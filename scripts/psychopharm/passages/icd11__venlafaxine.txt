@@ -1,0 +1,81 @@
+<<<PAGE 171>>>
+
+Example 7
+1 (a) Unintentional poisoning by alcohol, heroin, and diazepam
+(b)
+(c)
+(d)
+2
+None of the substances is identified as the substance most likely to have caused the death. Poisoning by
+combinations of alcohol and drugs are coded to the drugs. Because none of the drugs is identified as most
+important, and the external cause code is different, code to PB29 Unintentional exposure to or harmful
+effects of multiple drugs, medicaments or biological substances as the underlying cause of death. And go to
+Section 2.19.6.3 to identify the substance most likely to have caused the death.
+
+2.19.6.3 Identification of the drug most likely to have caused death
+Use the priority order below to identify the substance most likely to have caused the death
+(1 = highest priority):
+1.
+
+Opioid agonists and partial agonists and other and unspecified narcotics. Deaths that include
+multiple opioids classifiable should be prioritised as:
+
+–
+–
+–
+–
+–
+–
+
+1a. Heroin
+1b. Methadone
+1c. Opium
+1d. Other opioids
+1e. Other synthetic narcotics
+1f. Other and unspecified narcotics
+
+2.
+
+Inhaled and intravenous anaesthetic agents, Includes: Propofol
+
+3.
+
+Tricyclic and tetracyclic antidepressants
+
+4.
+
+Barbiturates
+
+5.
+
+4-Aminophenolderivatives Includes: APAP, acetaminophen, paracetamol
+
+6.
+
+Antipsychotics and neuroleptics Includes: Phenothiazine antipsychotics and neuroleptics,
+Butyrophenone and thioxanthene neuroleptics, Other and unspecified antipsychotics and
+neuroleptics
+
+7.
+
+Antiepileptic drugs, antiparkinsonism drugs and unspecified sedatives
+
+8.
+
+Cocaine
+
+9.
+
+Psychostimulants with abuse potential Includes: Amphetamines and derivatives
+
+10. Monoamine oxidase inhibitor (MAO) antidepressants and other and unspecified
+antidepressants. Includes: Selective serotonin reuptake inhibitors (SSRIs), venlafaxine
+11. Benzodiazepines
+12. Drugs and substances not listed above
+
+If there is more than one drug in the same priority group, code to the first mentioned.
+ICD-11 Reference Guide
+
+169
+
+

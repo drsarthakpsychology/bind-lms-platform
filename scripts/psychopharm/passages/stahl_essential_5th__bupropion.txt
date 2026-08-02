@@ -1,0 +1,1094 @@
+<<<PAGE 310>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+metabolite after discontinuing fluoxetine, and prior
+to starting other agents such as a monoamine oxidase
+(MAO) inhibitor. Fluoxetine is not only available as a
+once-daily formulation, but also as a once-weekly oral
+dosage formulation.
+Sertraline: An SSRI with Dopamine Transporter (DAT)
+Inhibition and σ1 Binding
+
+This SSRI has two candidate mechanisms that
+distinguish it: dopamine transporter (DAT) inhibition
+and σ1 receptor binding (Figure 7-17). The DAT
+inhibitory actions are controversial since they are
+weaker than the SERT inhibitory actions, thus leading
+some experts to suggest that there is not sufficient
+DAT occupancy by sertraline to be clinically relevant.
+However, as will be discussed later in the section on
+norepinephrine–dopamine reuptake inhibitors (NDRIs),
+it is not clear that high degrees of DAT occupancy
+are necessary or even desirable in order to contribute
+to antidepressant actions. That is, perhaps only a
+small amount of DAT inhibition is sufficient to cause
+improvement in energy, motivation, and concentration,
+especially when added to another action such as SERT
+inhibition. In fact, high-impact DAT inhibition is the
+property of reinforcing stimulants, including cocaine
+and methamphetamine, and would not generally be
+desired in a drug for depression (see discussion of DAT
+inhibitors in Chapter 11 on ADHD and Chapter 13 on
+impulsivity, compulsivity, and addiction).
+
+sertraline
+
+Anecdotally, clinicians have observed the mild and
+desirable activating actions of sertraline in some patients
+with “atypical depression,” improving symptoms of
+hypersomnia, low energy, and mood reactivity. A favorite
+combination of some clinicians for depressed patients is
+to add bupropion to sertraline (i.e., Wellbutrin to Zoloft,
+sometimes called “Well-oft”), adding together the weak
+DAT inhibitory properties of each agent. Clinicians have
+also observed the overactivation of some patients with
+panic disorder by sertraline, thus requiring slower dose
+titration in some patients with anxiety symptoms. All of
+these actions of sertraline are consistent with weak DAT
+inhibitory actions contributing to its clinical portfolio of
+actions.
+The σ1 actions of sertraline are not well understood,
+but might contribute to its anxiolytic effects and
+especially to its effects in psychotic and delusional
+depression, where sertraline may have advantageous
+therapeutic effects compared to some other SSRIs.
+Paroxetine: An SSRI with Muscarinic Anticholinergic and
+Norepinephrine Transporter (NET) Inhibitory Actions
+
+This SSRI tends to be more calming, even sedating, early
+in treatment compared to the more activating actions of
+both fluoxetine and sertraline discussed above. Perhaps
+the mild anticholinergic actions of paroxetine contribute
+to this clinical profile (Figure 7-18). Paroxetine also
+has weak norepinephrine transporter (NET) inhibitory
+properties, which could contribute to its efficacy in
+depression, especially at high doses. The advantages of
+
+paroxetine
+DAT
+
+M1
+
+NET
+
+SERT
+SERT
+
+SERT
+SERT
+
+NOS
+
+Figure 7-17 Sertraline. Sertraline has dopamine transporter
+(DAT) inhibition and σ1 receptor binding in addition to serotonin
+reuptake inhibition (SRI). The clinical relevance of sertraline’s
+DAT inhibition is unknown, although it may improve energy,
+motivation, and concentration. Its sigma properties may
+contribute to anxiolytic actions and may also be helpful in
+patients with psychotic depression.
+
+294
+
+Figure 7-18 Paroxetine. In addition to serotonin reuptake
+inhibition, paroxetine has mild anticholinergic actions
+(M1), which can be calming or possibly sedating; weak
+norepinephrine transporter (NET) inhibition, which may
+contribute to further antidepressant actions; and inhibition of
+the enzyme nitric oxide synthase (NOS), which may contribute to
+sexual dysfunction.
+
+
+
+
+<<<PAGE 319>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+symptoms of unipolar depression. Painful physical
+symptoms are frequently ignored or missed by patients
+and clinicians alike in the setting of unipolar major
+depression, and until recently, the link of these symptoms
+to major depression was not well appreciated, in part
+because painful physical symptoms are not included
+in the list of symptoms for the formal diagnostic
+criteria for depression (see Chapter 6 and Figure 6-1).
+Nevertheless, it is now widely appreciated that painful
+physical symptoms are frequently associated with a
+major depressive episode, and are also one of the leading
+residual symptoms after initial treatment with drugs for
+depression (Figure 7-5). It appears that the dual SNRI
+actions of duloxetine and other SNRIs are superior to
+the selective serotonergic actions of SSRIs for treatment
+of conditions such as neuropathic pain of diabetes and
+chronic painful physical symptoms associated with
+depression. The role of NET inhibition seems to be
+critical for the treatment not only of painful conditions
+without depression, but also for painful physical
+symptoms associated with depression. Duloxetine
+has also shown efficacy in the treatment of cognitive
+symptoms of depression that are prominent in geriatric
+depression, possibly exploiting the pro-noradrenergic and
+pro-dopaminergic consequences of NET inhibition in the
+prefrontal cortex (see Figure 7-33).
+Duloxetine can be given once a day, but this is usually
+only a good idea after the patient has had a chance to
+become tolerant to it after initiating it at twice-daily
+dosing, especially during titration to higher doses.
+Duloxetine may have a lower incidence of hypertension
+and milder withdrawal reactions than venlafaxine.
+Milnacipran
+
+Milnacipran is the first SNRI marketed in Japan and many
+European countries such as France, where it is currently
+marketed as a drug for unipolar depression. In the US,
+milnacipran is not approved for unipolar depression,
+but is approved for fibromyalgia. Interestingly, it is the
+other way around in Europe: milnacipran is approved for
+unipolar depression but not approved for the treatment
+of fibromyalgia. Milnacipran is a bit different from other
+SNRIs in that it is a relatively more potent NET than
+SERT inhibitor (Figure 7-30), whereas the others are
+more potent SERT than NET inhibitors (Figures 7-28
+and 7-29). This unique pharmacological profile may
+explain milnacipran’s somewhat different clinical profile
+compared to other SNRIs. Since noradrenergic actions
+may be equally or more important for treatment of painrelated conditions compared to serotonergic actions, the
+
+robust NET inhibition of milnacipran suggests that it may
+be particularly useful in chronic pain related conditions,
+not just fibromyalgia where it is approved, but possibly
+as well for the painful physical symptoms associated with
+unipolar depression and chronic neuropathic pain.
+Milnacipran’s potent NET inhibition also suggests
+a potentially favorable pharmacological profile for the
+treatment of cognitive symptoms, including cognitive
+symptoms of unipolar depression as well as cognitive
+symptoms frequently associated with fibromyalgia,
+sometimes called “fibro-fog.” Other clinical observations
+possibly linked to milnacipran’s robust NET inhibition
+are that it can be more energizing and activating than
+other SNRIs. Common residual symptoms after treatment
+with an SSRI include not only cognitive symptoms, but
+also fatigue, lack of energy, and lack of interest, among
+other symptoms (Figure 7-5). NET inhibition may be
+related to observations that milnacipran may cause
+more sweating and urinary hesitancy than some other
+SNRIs. For patients with urinary hesitancy, generally
+due theoretically to robust pro-noradrenergic actions at
+bladder α1 receptors, an α1 antagonist can reduce these
+symptoms. Milnacipran must generally be given twice
+daily due to its shorter half-life.
+Levomilnacipran
+
+Milnacipran is actually a racemic mixture of two
+enantiomers (Figure 7-30). The S or levo enantiomer
+is the active enantiomer (Figure 7-31) and has been
+independently developed for unipolar major depressive
+disorder in the US, where it is mostly available. Like
+racemic milnacipran, levomilnacipran has greater NET
+inhibition than SERT inhibition and may target fatigue
+and lack of energy as potential clinical advantages. Also,
+it is dosed in a controlled-release formulation, so, unlike
+racemic milnacipran, can be given only once a day.
+Norepinephrine–Dopamine Reuptake Inhibitors
+(NDRIs): Bupropion
+
+For many years, the mechanism of action of bupropion
+has been unclear and still remains somewhat
+controversial. Bupropion itself only has weak reuptake
+blocking properties for dopamine (DAT inhibition),
+and for norepinephrine (NET inhibition) (Figures 7-34
+and 7-35). No other specific or potent pharmacological
+actions have been consistently identified for this
+agent. Bupropion’s actions both as a drug for unipolar
+depression and upon norepinephrine and dopamine
+neurotransmission, however, have always appeared to be
+more powerful than these weak properties could explain,
+303
+
+7
+
+
+
+
+<<<PAGE 320>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+NDRI
+DAT
+
+NET
+
+Figure 7-34 Norepinephrine–dopamine reuptake inhibitor
+(NDRI). The prototypical norepinephrine–dopamine reuptake
+inhibitor (NDRI) is bupropion. Bupropion has weak blocking
+properties for the dopamine transporter (DAT) and for the
+norepinephrine transporter (NET). Its antidepressant actions may
+be explained in part by the more potent inhibitory properties of
+its metabolites.
+
+leading to proposals that bupropion acts rather vaguely as
+an adrenergic modulator of some type.
+Bupropion is metabolized to a number of active
+metabolites, some of which are not only more potent
+NET inhibitors than bupropion itself and equally potent
+DAT inhibitors, but are also concentrated in the brain. In
+some ways, therefore, bupropion is both an active drug
+and a precursor for other active drugs (i.e., a prodrug
+for multiple active metabolites). The most potent of
+these is the + enantiomer of the 6-hydroxy metabolite of
+bupropion, also known as radafaxine.
+Can the net effects of bupropion on NETs (Figure 7-36A
+and 7-36B) and DATs (Figure 7-36C) account for its clinical
+actions in depressed patients at therapeutic doses? If one
+believes that 90% transporter occupancy of DATs and
+NETs are required for drugs for antidepressant actions,
+the answer would be “no.” Human positron emission
+tomography (PET) scans suggest that as little as 10–15%
+and perhaps no more than 20–30% of striatal DATs may
+be occupied at therapeutic doses of bupropion. NET
+occupancy would be expected to be in this same range. Is
+this enough to explain bupropion’s antidepressant actions?
+
+NDRI Action
+
+Figure 7-35 NDRI actions. The norepinephrine reuptake inhibitor portion of the NDRI molecule (left panel) and the dopamine reuptake
+inhibitor portion of the NDRI molecule (right panel) are inserted into their respective reuptake pumps. Consequently, both pumps are
+blocked, and synaptic norepinephrine and dopamine are increased.
+
+304
+
+
+
+
+<<<PAGE 322>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Agomelatine
+
+Agomelatine (Figure 7-37) is approved to treat unipolar
+depression in many countries outside of the US. It has
+agonist actions at melatonin 1 (MT1) and melatonin
+2 (MT2) receptors and antagonist actions at 5HT2C
+receptors (Figure 7-37). As discussed above in the section
+
+agomelatine
+
+B
+
+T2
+
+306
+
+symptoms of reduced positive affect following treatment
+with an SSRI or an SNRI, or who develop these symptoms
+as a side effect of an SSRI or SNRI, frequently benefit from
+switching to bupropion or from augmenting their SSRI
+or SNRI treatment with bupropion. The combination
+of bupropion with an SSRI or an SNRI has a theoretical
+rationale as a strategy for covering the entire symptom
+portfolio from symptoms of reduced positive affect to
+symptoms of increased negative affect (Figure 6-41).
+Bupropion combined with the μ-opioid antagonist
+naltrexone is approved for the treatment of obesity and
+mentioned in Chapter 13 on impulsivity/compulsivity
+syndromes. Bupropion combined with the NMDA (Nmethyl-D-aspartate) antagonist dextromethorphan is in
+late-stage clinical trials both for depression (mentioned
+below) and for agitation in Alzheimer disease (discussed
+in Chapter 12 on dementia).
+
+5H
+
+controlled-release formulations, DAT inhibitors are less
+abusable and more useful for ADHD (see Chapter 11).
+The issue to be considered here is whether a low level
+of slow-onset and long-lasting DAT occupancy is the
+desirable solution for the DAT mechanism to be useful
+as a drug for unipolar depression: thus, not too much or
+too fast DAT inhibition and therefore abusable; not too
+little DAT inhibition and therefore ineffective; but just
+enough DAT inhibition with slow enough onset and long
+enough duration of action to make it an effective drug for
+unipolar depression.
+The fact that bupropion is not known to be
+particularly abusable, is not a scheduled substance, yet
+is proven effective for treating nicotine addiction, is
+consistent with the possibility that it is occupying DATs
+in the striatum and nucleus accumbens in a manner
+sufficient to mitigate craving but not sufficient to
+cause abuse (Figure 7-36C). This use of bupropion for
+smoking cessation is discussed further in Chapter 13 on
+drug abuse and reward. Perhaps this low level of DAT
+occupancy (Figure 7-36C) is also how bupropion works in
+unipolar depression, combined with an equally low action
+on NETs (Figure 7-36A and 7-36B).
+Bupropion was originally marketed only in the
+US as an immediate-release dosage formulation for
+three-times-daily administration as a drug for unipolar
+depression. Development of a twice-daily formulation
+(bupropion SR) and then a once-daily formulation
+(bupropion XL) have not only reduced the frequency
+of seizures at peak plasma drug levels, but have also
+increased convenience and enhanced compliance as well.
+Thus, the use of immediate-release bupropion is all but
+abandoned in favor of once-daily administration.
+Bupropion is generally activating or even stimulating.
+Bupropion does not appear to cause the bothersome sexual
+dysfunction that frequently occurs with many drugs for
+unipolar depression that act by SERT inhibition, probably
+because bupropion lacks a significant serotonergic
+component to its mechanism of action. Thus, bupropion
+has proven to be a useful drug for unipolar depression not
+only for patients who cannot tolerate the serotonergic side
+effects of SSRIs, but also for patients whose depression
+does not respond to serotonergic boosting by SSRIs.
+Consistent with its pharmacological profile, bupropion
+is especially targeted at the symptoms of the “dopamine
+deficiency syndrome” and “reduced positive affect” (see
+Figure 6-41), including improvement in the symptoms
+of loss of happiness, joy, interest, pleasure, energy,
+enthusiasm, alertness, and self-confidence. Almost every
+active clinician knows that patients who have residual
+
+5H
+
+T2
+
+C
+
+MT1
+
+MT2
+
+Figure 7-37 Agomelatine. Endogenous melatonin is secreted
+by the pineal gland and mainly acts in the suprachiasmatic
+nucleus to regulate circadian rhythms. There are three types
+of receptors for melatonin: 1 and 2 (MT1 and MT2), which are
+both involved in sleep, and 3, which is actually the enzyme
+NRH–quinine oxidoreductase 2 and not thought to be involved
+in sleep physiology. Agomelatine is not only a melatonin 1
+and 2 receptor agonist, but is also a 5HT2C and 5HT2B receptor
+antagonist, and is available to treat depression in countries
+outside of the US.
+
+
+
+
+<<<PAGE 370>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+combines dextromethorphan with the CYP450 2D6
+inhibitor quinidine (Figure 7-84). The latter combination
+has already been approved to treat pathological laughing
+and crying in pseudobulbar affect. A newer version of the
+latter combination has deuterated the dextromethorphan
+molecule and altered the dose of quinidine (Figure 7-85).
+Deuteration extends the half-life of a compound and allows
+re-patenting for commercial development (deuteration of
+tetrabenazine was previously discussed in Chapter 5 in the
+section on treatment of tardive dyskinesia and illustrated in
+Figure 5-11B). Although it is clear that dextromethorphan
+has clinically relevant affinity for the NMDA receptor,
+other binding properties are less well characterized,
+including σ1 receptor binding, SERT inhibition, and weak
+μ-opioid binding (Figure 7-84). As for all NMDA receptor
+antagonists studied for treatment-resistant depression, it is
+unclear which subtypes of NMDA receptor are engaged by
+dextromethorphan, which are most important, and what
+the role of σ1 or μ-opioid binding is in rapid antidepressant
+action.
+Dextromethorphan is rapidly metabolized by
+CYP450 2D6 making it difficult to achieve therapeutic
+blood levels following oral administration without
+
+concomitant administration of a CYP450 2D6 inhibitor.
+Each combination product adds a 2D6 inhibitor
+(Figure 7-84). Quinidine is a 2D6 inhibitor at doses
+below its cardiovascular actions, and bupropion is
+not only an NDRI (Figures 7-34 and 7-35) but also
+a 2D6 inhibitor. For bupropion, as discussed above
+and illustrated in Figures 7-34 and 7-35, in addition
+to 2D6 inhibition there is the monoamine-associated
+antidepressant mechanism of NRDIs (Figure 7-84)
+with the potential for synergy with the NMDA
+antagonist mechanism of dextromethorphan. Both
+combination products are in trials for treatmentresistant depression with some promising initial results,
+especially for dextromethorphan–bupropion, which
+has been awarded breakthrough therapy status by the
+US FDA for major depressive disorder and fast-track
+designation for treatment-resistant depression. Both
+combination products are also in trials for agitation
+in Alzheimer disease and show some promising initial
+results, especially for dextromethorphan–bupropion,
+wh ich was given fast-track designation by the FDA.
+Dextromethorphan–bupropion treatment of agitation in
+dementia is discussed further in Chapter 12 on dementia.
+
+dextromethorphan
+(DXM)
+
+Figure 7-84 Dextromethorphan–
+bupropion and dextromethorphan–
+quinidine. Dextromethorphan is a
+weak N-methyl-D-aspartate (NMDA)
+receptor antagonist, with stronger
+binding affinity for the serotonin
+transporter (SERT) and σ1 receptors. It
+is rapidly metabolized by CYP450 2D6,
+making it difficult to achieve therapeutic
+blood levels without concomitant
+administration of a CYP450 2D6
+inhibitor. Dextromethorphan is being
+studied in combination with the
+norepinephrine–dopamine reuptake
+inhibitor (NDRI) bupropion, which
+also inhibits CYP450 2D6, and in
+combination with the CYP450 2D6
+inhibitor quinidine.
+
+NMDA
+α1D
+σ1
+
+SERT
+
+SERT
+
+++
+
++
+
+σ1 NMDA α1D
+
++
+
++
+
++
+
++
+
+quinidine
+
+bupropion
+
+DAT
+2D6
+
+2D6
+NET
+
+NDRI
+
+354
+
+quinidine
+
+
+
+
+<<<PAGE 496>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Noradrenergic Treatment of ADHD
+Atomoxetine
+
+Atomoxetine (Figure 11-37) is a selective norepinephrine
+reuptake inhibitor (NRI). Sometimes called NET
+inhibitors, the selective NRIs have known antidepressant
+properties (discussed in Chapter 7). In terms of their
+mechanism of therapeutic action in ADHD, it is the same
+as just discussed for stimulants acting at the NETs here
+in Chapter 11, and as previously discussed for drugs used
+to treat depression in Chapter 7 and illustrated in Figure
+7-33. Blocking NETs in the prefrontal cortex increases
+
+Comparing the Molecular Actions of
+Atomoxetine and Bupropion
+DAT
+
+NDRIs
+NET
+
+NE
+neuron
+
+DA
+neuron
+
+NRIs
+NET
+
+Figure 11-37 Comparing the molecular actions of atomoxetine
+and bupropion. Atomoxetine is a selective norepinephrine
+reuptake inhibitor (NRI), while bupropion is a norepinephrine–
+dopamine reuptake inhibitor (NDRI). Both agents block the
+norepinephrine transporters (NETs) in the prefrontal cortex,
+which leads to an increase in both norepinephrine (NE) and
+dopamine (DA) there (because NETs also transport dopamine).
+NDRIs also block the dopamine transporters (DATs), which
+are not present in the prefrontal cortex but are present in the
+nucleus accumbens.
+
+480
+
+both DA and NE in the prefrontal cortex (Figure 11-38)
+and is why NET inhibitors are thought to work in ADHD.
+However, since there are few NE neurons and NETs in
+nucleus accumbens, inhibiting NET does not lead to an
+increase in either NE or DA there (Figure 11-38) and is
+why NET inhibitors are thought not to have reinforcing,
+abuse, or addiction potential.
+Bupropion is a weak NRI and also a weak DAT
+inhibitor known as a norepinephrine–dopamine reuptake
+inhibitor (NDRI), and was previously discussed as a
+treatment for depression in Chapter 7 and illustrated
+in Figures 7-34 through 7-36; see also Figure 11-37).
+Several tricyclic antidepressants (TCAs) have notable
+NRI actions, such as desipramine and nortriptyline. All of
+these agents with NRI properties have been utilized in the
+treatment of ADHD, with varying amounts of success, but
+only atomoxetine is well-investigated and approved for
+this use in children and adults.
+Atomoxetine’s hypothetical actions in ADHD patients
+with stress and comorbidity states, presumably linked
+to excessive and phasic DA and NE release, are shown
+conceptually by comparing the untreated states in Figures
+11-11 and 11-12 with the changes that theoretically follow
+chronic treatment with atomoxetine in Figure 11-39. That
+is, ADHD linked to conditions that are associated with
+chronic stress and comorbidities is theoretically caused
+by overly active NE and DA circuits in the prefrontal
+cortex, resulting in an excess of phasic NE and DA
+activity (Figure 11-13). When slow onset, long duration,
+and essentially perpetual NET inhibition occurs in the
+prefrontal cortex due to atomoxetine, this theoretically
+restores tonic postsynaptic D1 and α2A-adrenergic
+signaling, downregulates phasic NE and DA actions, and
+desensitizes postsynaptic NE and DA receptors (Figure
+11-39). The possible consequence of this is to reduce
+stress as ADHD symptoms are improved. If so, decreases
+in ADHD symptoms could potentially be accompanied
+by decreases in anxiety, depression, and heavy drinking.
+Unlike stimulant use, where the therapeutic actions are
+at the mercy of plasma drug levels and momentary NET/
+DAT occupancies, actions from long-term NRI actions
+give 24-hour symptom relief, in much the same manner
+as do SSRIs (selective serotonin reuptake inhibitors) and
+SNRIs (serotonin–norepinephrine reuptake inhibitors)
+for the treatment of depression and anxiety. Selective
+NRIs generally have smaller effect sizes for reducing
+ADHD symptoms than stimulants in short-term trials,
+especially in patients without comorbidity. However,
+NRIs are not necessarily inferior in ADHD patients who
+
+
+
+
+<<<PAGE 520>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Circuits of Treatable Symptoms in Dementia
+memory network
+
+psychosis network
+
+agitation network
+
+dextromethorphan+
+bupropion
+pimavanserin
+
+AChE
+
+cortex
+
+cortex
+
+cortex
+
+brexpiprazole
+
+memantine
+
+memory output
+A
+
+agitation output
+
+psychosis output
+B
+
+C
+
+Acetylcholinesterase inhibitors
+and NMDA antagonist
+memantine for
+memory
+
+5HT2A antagonist
+pimavanserin for
+psychosis
+
+plaque
+
+tangle
+
+NMDA antagonist DXM
+and multifunctional
+1, 2, D2, 5HT1A, 5HT2A
+brexpiprazole for
+agitation
+
+stroke
+
+Figure 12-23 Circuits of treatable symptoms in dementia. Treatment of dementia is currently symptomatic rather than disease-modifying.
+There are three main treatable symptoms in dementia: memory problems, psychosis, and agitation. Treatment strategies for each of these
+symptoms arise from the notion that each symptom is hypothetically regulated by a unique network or circuit of neurons. Each network
+connects specific glutamate, GABA (γ-aminobutyric acid), serotonin, and dopamine neurons at nodes (synapses) between these different
+neurons that can influence not only the neuron being directly innervated but the entire network, via downstream effects set in motion at the
+node. (A) Acetylcholine and glutamate can be targeted by acetylcholinesterase (AChE) inhibitors and the NMDA (N-methyl-D-aspartate)
+antagonist memantine, respectively, to improve cognition in the memory network. (B) Psychosis can be targeted at the serotonin node
+as well as the dopamine node of the psychosis network. In particular, the 5HT2A antagonist pimavanserin is approved to treat psychosis
+in Parkinson’s disease. (C) Multimodal neurotransmitters (norepinephrine, serotonin, dopamine, and glutamate) can be targeted in the
+agitation network to improve the symptom of agitation in dementia. The NMDA antagonist dextromethorphan (DXM) in combination with
+bupropion and the multimodal agent brexpiprazole are both being studied for their use in agitation associated with dementia.
+
+different neurons that can influence not only the neuron
+being directly innervated but the entire network, via
+downstream effects set in motion at the node. Nodes are
+the sites of potential therapeutic action by targeting them
+with drugs acting on the neurotransmitters normally
+working at that node. Thus, acetylcholine and glutamate
+504
+
+can be targeted at different nodes to improve cognition
+in the memory network (Figure 12-23A). Similarly,
+we now know that psychosis can be therapeutically
+targeted at the serotonin node as well as the dopamine
+node of the psychosis network, since both are mutually
+
+
+
+
+<<<PAGE 549>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+activation by norepinephrine from locus coeruleus
+output at α2c and α1 postsynaptic receptors on dendrites
+of pyramidal neurons should reduce arousal and
+emotional responses (Figure 12-47); blocking normal
+serotonin excitation by antagonist actions at 5HT2A
+receptors and enhancing normal serotonin inhibition
+by partial agonist actions at 5HT1A receptors should also
+combine to reduce limbic drives to motor and emotional
+outputs of agitation (Figure 12-47). Brexpiprazole is
+approved for use in schizophrenia and depression, and is
+in late-stage clinical testing for agitation in AD.
+Targeting Glutamate for the Symptomatic Treatment
+of Agitation in Alzheimer Disease
+
+Excessive glutamate output in memory circuits has
+already been discussed (Figures 12-37A, 12-37B, and 1237C; see also Figure 4-52D and discussion in Chapter 4).
+Although the NMDA glutamate antagonist memantine
+has proven effective in symptomatic treatment of
+cognition/memory in AD, it has not been systematically
+tested in agitation of AD. Furthermore, the widespread
+use of memantine does not suggest any anecdotal
+evidence for efficacy in agitation, perhaps because it is
+a relatively weak blocker of NMDA receptors, with low
+potency.
+
+More robust blockade of NMDA receptors is
+attained by dextromethorphan, discussed in Chapter
+7 on drugs for depression and illustrated in Figure
+7-84. As mentioned in Chapter 7 there are multiple
+forms of dextromethorphan in testing, including
+a deuterated derivative as well as combinations of
+dextromethorphan with one or another of two different
+CYP450 2D6 inhibitors, either bupropion or quinidine.
+The formulation of dextromethorphan with the CYP450
+2D6 inhibitor and norepinephrine–dopamine reuptake
+inhibitor (NDRI) bupropion (also known as AXS-05;
+Figure 7-84) has promising results in major depressive
+disorder and treatment-resistant depression (discussed
+in Chapter 7 on treatment of mood disorders) and in
+agitation of AD (mentioned here and illustrated in
+Figure 12-48). Although there are several potential
+therapeutic mechanisms of dextromethorphan
+combinations, it is likely that NMDA antagonist
+action is how this drug works to quell agitation in AD.
+Hypothetically dextromethorphan–bupropion blocks
+the excessive excitatory glutamate output from the
+agitation network that leads to motor (Figure 12-45B)
+and emotional agitation (Figure 12-46B) by blocking
+NMDA receptors in cortex, thalamus, amygdala, ventral
+tegmental area, and locus coeruleus (Figure 12-48).
+
+NMDA Antagonism Reduces Agitation in Alzheimer Disease
+
+top-down inhibition
+
+agitation
+
+Figure 12-48 NMDA antagonist
+treatment for agitation. The NMDA
+antagonist dextromethorphan (DXM), in
+combination with the norepinephrine–
+dopamine reuptake inhibitor
+(NDRI) bupropion, is in testing as a
+treatment for agitation. Hypothetically,
+dextromethorphan–bupropion blocks
+the excessive excitatory glutamate
+output from the agitation network
+that leads to motor and emotional
+agitation by blocking NMDA receptors
+in the cortex, thalamus, amygdala,
+ventral tegmental area (VTA), and locus
+coeruleus (LC).
+
+cortex
+
+12
+
+LC
+
+VTA
+striatum
+
+amygdala
+
+DXM
+
+=
+
+NMDA antagonism
+NDRI
+
+thalamus
+
+sensory and
+emotional
+input
+
+533
+
+
+
+
+<<<PAGE 553>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+These various descriptions all integrate the notion
+of lack of spontaneous behaviors and emotions with
+diminished reactivity to the environment, often the
+opposite to what is observed in agitation (see Table 12-8).
+The clinical presentation of apathy often differs
+among various types of dementias; for instance, affective
+apathy is more common in the behavioral variant of FTD
+compared to AD. Both dopaminergic and cholinergic
+neurotransmitter systems seem to be involved in the
+various types of apathy; potential treatments, therefore,
+include dopamine agonists such as bupropion, levodopa,
+and stimulants, as well as cholinesterase inhibitors, but
+none is approved for this use and none is particularly
+robust in efficacy.
+A primary reason why drugs used for depression
+do not work well in apathy of dementia is that apathy
+is not depression. That is, guilt, worthlessness, and
+hopelessness, the symptom hallmarks of depression
+(see Chapter 6 and Figure 6-1), are typically not
+present in patients with apathy in dementia. When
+use of medications for apathy in dementia is needed,
+cholinesterase inhibitors may be effective in some
+patients and are a first-line consideration in AD, but
+might work better for prevention of these symptoms than
+for their treatment once they have emerged. Also, FTD
+patients may be more likely to benefit from SSRIs (e.g.,
+citalopram or escitalopram) or SNRIs.
+Other Treatments for the Behavioral Symptoms of
+Dementia
+
+As mentioned earlier and shown in Table 12-9,
+there are several non-pharmacological options for
+treating neuropsychiatric symptoms in patients with
+dementia, and given the risks associated with many
+pharmacological treatments, the lack of approval of
+many agents, and their relative lack of efficacy, nonpharmacological interventions should always be
+considered first-line. This will also be the case even
+if pimavanserin is approved for psychosis in all-cause
+dementia and if brexpiprazole and dextromethorphan–
+bupropion are approved for agitation in AD.
+It is particularly important to keep in mind that
+physical pain, infection, or local irritation can be
+
+the underlying cause for many secondary behavioral
+symptoms in patients with dementia. Just as with
+household pets or small children, a patient with dementia
+may not be able to express or describe the physical pain
+they are experiencing; thus it is up to astute clinicians and
+caregivers to identify and treat causes of pain that may be
+leading to neuropsychiatric symptoms, such as agitation
+and depression, in patients with dementia. If pain is
+contributing to behavioral symptoms, psychotropic
+medications may have little effect whereas alleviating the
+source of the pain may be quite effective. For instance,
+treatment with simple acetaminophen (paracetamol)
+can sometimes ameliorate agitation. Similarly, other
+modifiable sources of behavioral symptoms (e.g.,
+boredom, excess stimulation, etc.) should be recognized
+and addressed.
+
+SUMMARY
+The most common dementia is Alzheimer disease (AD),
+and the leading theory for its etiology is the amyloid
+cascade hypothesis. Other dementias including vascular
+dementia, dementia with Lewy bodies, Parkinson’s
+disease dementia, and frontotemporal dementia are
+also discussed as well, as are their differing pathologies,
+clinical presentations, and neuroimaging findings.
+New diagnostic criteria define three stages of AD:
+asymptomatic, mild cognitive impairment, and
+dementia. Major research efforts have recently pivoted
+away from attempting to find disease-modifying
+treatments that could halt or even reverse the course
+of this illness by interfering with Aβ accumulation in
+the brain because many such treatments have failed
+over the past 30 years. Leading treatments for AD
+today include symptomatic treatment of memory and
+cognition with the cholinesterase inhibitors, based upon
+the cholinergic hypothesis of amnesia, and memantine,
+an NMDA antagonist, based upon the glutamate
+hypothesis of cognitive decline. Novel treatments
+on the threshold of approval include the 5HT2A
+antagonist pimavanserin for symptomatic treatment
+of dementia-related psychosis, and both brexpiprazole
+and dextromethorphan–bupropion for symptomatic
+treatment of agitation in AD.
+
+537
+
+12
+
+
+
+
+<<<PAGE 569>>>
+
+Chapter 13: Impulsivity, Compulsivity, and Addiction
+
+receptors on the VTA dopamine neuron (shown in
+Figure 13-13A). During smoking cessation, resensitized
+nicotinic receptors no longer receiving nicotine are
+craving due to an absence of dopamine release in the
+nucleus accumbens (where is my dopamine?) (Figure
+13-13B). When the NDRI bupropion is administered,
+theoretically a bit of dopamine is now released in the
+nucleus accumbens, making the craving less but usually
+not eliminating it (Figure 13-13C). How effective is
+bupropion in smoking cessation? Quit rates for bupropion
+are about half that of the NPA varenicline. Quit rates for
+nicotine in alternative routes of administration such as
+transdermal patches are similar to those of bupropion.
+Novel approaches to treating nicotine addiction include
+the investigation of nicotine vaccines and other directacting nicotinic cholinergic agents.
+
+Alcohol
+
+The famous artist Vincent van Gogh reportedly drank
+ruinously, some speculating that he self-medicated his
+bipolar disorder this way, a notion reinforced by his
+explanation, “If the storm within gets too loud, I take
+a glass too much to stun myself.” Alcohol may stun
+but it does not treat psychiatric disorders adaptively
+long term. Unfortunately, many alcoholics who have
+comorbid psychiatric disorders continue to selfmedicate with alcohol rather than seeking treatment
+with a more appropriate psychopharmacological agent.
+In addition to frequent comorbidity with psychiatric
+disorders, it is estimated that 85% of alcoholics also
+smoke. Many alcoholics abuse additional drugs as well,
+including benzodiazepines, marijuana, opioids, and
+others.
+
+Mechanism of Action of Bupropion in Smoking Cessation
+ACh
+neuron
+
+ACh
+DA
+neuron
+
+DA
+
+nicotine
+
+A
+
+ACh
+neuron
+
+Figure 13-13 Mechanism of action of
+bupropion in smoking cessation. (A)
+A regular smoker delivers reliable
+nicotine (circle), releasing dopamine
+(DA) in the limbic area at frequent
+intervals, which is rewarding to the
+limbic dopamine D2 receptors on the
+right. (B) However, during attempts
+at smoking cessation, dopamine will
+be cut off when nicotine no longer
+releases it from the mesolimbic
+neurons. This upsets the postsynaptic
+D2 limbic receptors and leads to
+craving and what some call a “nicotine
+fit.” (C) A therapeutic approach to
+diminishing craving during the early
+stages of smoking cessation is to
+deliver a bit of dopamine itself by
+blocking dopamine reuptake directly
+at the nerve terminal with bupropion.
+Although not as powerful as nicotine,
+it does take the edge off and can make
+abstinence more tolerable.
+
+where's my
+dopamine??
+
+DA
+neuron
+
+B
+
+ACh
+neuron
+
+DA
+neuron
+
+NDRI
+
+13
+C
+
+553
+
+
+
+
+<<<PAGE 626>>>
+
+Suggested Reading and Selected References
+
+Roozen HG, de Waart R, van der Windt DAW, et al. (2005) A
+systematic review of the effectiveness of naltrexone in the
+maintenance treatment of opioid and alcohol dependence.
+Eur Neuropsychopharmacol 16: 311–23.
+Smith-Bernardin S, Rowe C, Behar E, et al. (2018) Low
+threshold extended release naltrexone for high utilizers
+of public services with severe alcohol use disorder: a pilot
+study. J Subst Abuse Treat 85: 109–15.
+Soyka M (2014) Nalmefene for the treatment of alcohol
+dependence: a current update. Int J Neuropsychopharmacol
+17: 675–84.
+Van Amsterdam J, van den Brink W (2013) Reduced risk
+drinking as a viable treatment goal in problematic alcohol
+use and alcohol dependence. J Psychopharmacol 27:
+987–97.
+Wiers CE, Stelzel C, Gladwin TE, et al. (2015) Effects of
+cognitive bias modification training on neural alcohol cue
+reactivity in alcohol dependence. Am J Psychiatry 172:
+334–43.
+
+Substance Abuse: Cannabis
+Black N, Stockings E, Campbell G, et al. (2019) Cannabinoids
+for the treatment of mental disorders and symptoms of
+mental disorders: a systematic review and meta analysis.
+Lancet Psychiatry 6: 995–1010.
+Haney M, Hill MN (2018) Cannabis and cannabinoids:
+from synapse to society. Neuropsychopharm Rev 43:
+1–212.
+Hindley G, Beck K, Borgan B (2020) Psychiatric symptoms
+caused by cannabis constituents: a systematic review and
+meta-analysis. Lancet Psychiatry 7: 344–53.
+Hines LA, Freeman TP, Gage SH, et al. (2020) Association of
+high potency cannabis use with mental and substance use
+in adolescence. JAMA Psychiatry 77: 1044–51.
+Hurd YL, Spriggs S, Alishayev J, et al. (2019) Cannabidiol for
+the reduction of cue-induced craving and anxiety in drug
+abstinent individuals with heroin use disorder: a double
+blind randomized placebo controlled trial. Am J Psychiatry
+176: 911–22.
+James S (2020) A Clinician’s Guide to Cannabinoid Science.
+Cambridge: Cambridge University Press.
+Kovacs FE, Knop T, Urbanski MJ, et al. (2012) Exogenous
+and endogenous cannabinoids suppress inhibitory
+neurotransmission in the human neocortex.
+Neuropsychopharmacology 37: 1104–14.
+Mason BJ, Crean R, Goodell V, et al. (2012) A proof-of-concept
+randomized controlled study of gabapentin: effects on
+cannabis use, withdrawal and executive function deficits
+in cannabis-dependent adults. Neuropsychopharmacology
+37: 1689–98.
+
+610
+
+Nugent SM, Morasco BJ, O’Neil ME, et al. (2017) The effects of
+cannabis among adults with chronic pain and an overview
+of general harms: a systematic review. Ann Intern Med 167:
+319–31.
+
+Substance Abuse: Nicotine
+Akkus F, Ametamey SM, Treyer V, et al. (2013) Market global
+reduction in mGlutR5 receptor binding in smokers and
+ex smokers determined by 11C-ABP688 positron emission
+tomography. Proc Natl Acad Sci USA 10: 737–42.
+Akkus F, Treyer V, Johayem A, et al. (2016) Association of
+long-term nicotine abstinence with normal metabotropic
+glutamate receptor 5 binding. Biol Psychiatry 79: 474–80.
+Crunelle CL, Miller ML, Booij J, van den Rink W (2010) The
+nicotinic acetylcholine receptor partial agonist varenicline
+and the treatment of drug dependence: a review. Eur
+Neuropsychopharmacol 20: 69–79.
+Culbertson CS, Bramen J, Cohen MS (2011) Effect of bupropion
+treatment on brain activation induced by cigarette-related
+cues in smokers. Arch Gen Psychiatry 68: 505–15.
+Evins AE, Culhane MA, Alpert JE, et al. (2008) A controlled
+trial of bupropion added to nicotine patch and behavioral
+therapy for smoking cessation in adults with unipolar
+depressive disorders. J Clin Psychopharmacol 28: 660–6.
+Franklin T, Wang Z, Suh JJ, et al. (2011) Effects of varenicline
+on smoking cue-triggered neural and craving responses.
+Arch Gen Psychiatry 68: 516–26.
+King DP, Paciga S, Pickering E, et al. (2012) Smoking
+cessation pharmacogenetics: analysis of varenicline
+and bupropion in placebo-controlled clinical trials.
+Neuropsychopharmacology 37: 641–50.
+Lotipour S, Mandelkern M, Alvarez-Estrada M, Brody AL
+(2012) A single administration of low-dose varenicline
+saturates α4β2* nicotinic acetylcholine receptors in the
+human brain. Neuropsychopharmacology 37: 1738–48.
+Steinberg MB, Greenhaus S, Schmelzer AC, et al. (2009)
+Triple-combination pharmacotherapy for medically ill
+smokers. A randomized trial. Ann Intern Med 150: 447–54.
+
+Substance Abuse: Opioids
+Bell J, Strang J (2020) Medication treatment of opioid use
+disorder. Biol Psychiatry 87: 82–8.
+Chutuape MA, Jasinski DR, Finerhood MI, Stitzer ML (2001)
+One-, three-, and six-month outcomes after brief inpatient
+opioid detoxification. Am J Drug Alcohol Abuse 27: 19–44.
+Davids E, Gastpar M (2004) Buprenorphine in the treatment of
+opioid dependence. Eur Neuropsychopharmacol 14: 209–16.
+Elkader A, Sproule B (2005) Buprenorphine: clinical
+pharmacokinetics in the treatment of opioid dependence.
+Clin Pharmacokinet 44: 661–80.
+
+

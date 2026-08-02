@@ -1,0 +1,483 @@
+<<<PAGE 526>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Cholinergic Projections from Brainstem
+
+PFC
+
+S
+NA
+
+T
+
+BF
+
+Hy
+C
+NT
+
+A
+H
+
+SC
+
+Figure 12-31 Cholinergic projections from the brainstem. The
+cell bodies of some cholinergic neurons are found in the
+brainstem and project to many different brain regions, including
+the basal forebrain (BF), prefrontal cortex (PFC), thalamus (T),
+hypothalamus (Hy), amygdala (A), and hippocampus (H).
+
+Cholinergic Projections from Basal Forebrain
+
+functioning by stopping the destruction of ACh. This
+can be readily accomplished by inhibiting the enzyme
+acetylcholinesterase (Figure 12-23A and Figure 12-25).
+Inhibition of acetylcholinesterase causes the build-up of
+ACh because ACh’s action can no longer be as efficiently
+terminated. Enhanced availability of ACh is proven to
+impact cognitive and memory symptoms in AD patients,
+sometimes enhancing memory, but more often helping
+to retain current levels of memory function and thus
+slowing the decline in memory.
+Donepezil
+
+Donepezil is a reversible, long-acting, selective inhibitor
+of AChE without inhibition of BuChE (Figure 12-34).
+Donepezil inhibits AChE in pre- and postsynaptic
+cholinergic neurons, and in other areas of the central
+nervous system outside of cholinergic neurons where
+this enzyme is widespread (Figure 12-34A). Its central
+nervous system actions boost the availability of ACh at
+the remaining sites normally innervated by cholinergic
+neurons, but which are now suffering from a deficiency of
+ACh as presynaptic cholinergic neurons die off (Figures
+12-33B and 12-33C). Donepezil also inhibits AChE in
+the periphery, where its actions in the gastrointestinal
+(GI) tract can produce GI side effects (Figure 12-34B).
+Donepezil is easy to dose, has mostly GI side effects, and
+these are mostly transient.
+Rivastigmine
+
+PFC
+
+S
+NA
+
+T
+
+BF
+Hy
+C
+NT
+
+A
+H
+
+SC
+
+Figure 12-32 Cholinergic projections from the basal
+forebrain. The cell bodies of some cholinergic neurons are
+found in the basal forebrain (BF) and project to the prefrontal
+cortex (PFC), amygdala (A), and hippocampus (H). These
+projections may be particularly important for memory.
+
+process, receptor targets of cholinergic therapies are
+also lost and symptomatic pro-cholinergic treatment
+with acetylcholinesterase inhibitors begins to lose its
+effectiveness (Figure 12-33D; progression of AD and loss
+of cholinergic treatment effectiveness).
+Nevertheless, the most successful approach to
+the intermediate-term treatment of cognitive and
+memory symptoms in AD is to boost cholinergic
+510
+
+Rivastigmine is “pseudoirreversible” (which means it
+reverses itself over hours), intermediate-acting, not only
+selective for AChE over BuChE, but perhaps for AChE in
+the cortex and hippocampus over AChE in other areas
+of brain (Figure 12-35A). Rivastigmine also inhibits
+BuChE within glia, which may contribute somewhat
+to the enhancement of ACh levels within the central
+nervous system (Figure 12-35A). Inhibition of BuChE
+within glia may be even more important in patients
+with AD as they develop gliosis when cortical neurons
+die, because these glia contain BuChE, and inhibition
+of this increased enzyme activity may have a favorable
+action on increasing the availability of ACh to remaining
+cholinergic receptors via this second mechanism (Figure
+12-35B). Rivastigmine appears to have comparable safety
+and efficacy to donepezil, although it may have more
+GI side effects when given orally, perhaps due to its
+pharmacokinetic profile, and perhaps due to inhibition of
+both AChE and BuChE in the periphery (Figure 12-35C).
+However, there is now a transdermal formulation of
+rivastigmine available that greatly reduces the peripheral
+
+
+
+
+<<<PAGE 529>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+Donepezil Actions: CNS
+central
+acetylcholine
+neuron
+glial cell
+
+donepezil
+
+Figure 12-34 Donepezil actions. Donepezil is a
+reversible inhibitor of the enzyme acetylcholinesterase
+(AChE), which is present both in the central nervous
+system (CNS) and peripherally. (A) Central cholinergic
+neurons are important for regulation of memory; thus,
+in the CNS, the boost of acetylcholine (ACh) caused
+by AChE blockade contributes to improved cognitive
+functioning. (B) Peripheral cholinergic neurons in the gut
+are involved in gastrointestinal effects; thus the boost in
+peripheral acetylcholine caused by AChE blockade may
+contribute to gastrointestinal side effects.
+
+D
+AChE
+
+BuChE
+
+ACh
+
+donepezil
+
+D
+AChE
+
+!
+A
+
+Donepezil Actions: Peripheral
+peripheral
+acetylcholine
+neuron
+
+donepezil
+
+D
+AChE
+
+donepezil
+
+12
+
+ACh
+
+D
+AChE
+
+BuChE
+
+gut
+B
+
+D
+
+513
+
+
+
+
+<<<PAGE 615>>>
+
+Suggested Reading and Selected References
+
+Yang L, Cao Q, Shuai L (2012) Comparative study of
+OROS-MPH and atomoxetine on executive function
+improvement in ADHD: a randomized controlled trial. Int J
+Neuropsychopharmacol 15: 15–16.
+Zang YF, Jin Z, Weng XC, et al. (2005) Functional MRI in
+attention deficit hyperactivity disorder: evidence for
+hypofrontality. Brain Dev 27: 544–50.
+
+Aridi YS, Walker JL, Wright ORL (2017) The association
+between the Mediterranean dietary pattern and cognitive
+health: a systematic review. Nutrients 9: E674.
+Ballard C, Khan Z, Clack H, et al. (2011) Nonpharmacological
+treatment of Alzheimer disease. Can J Psychiatry 56:
+589–95.
+
+Zuvekas SH, Vitiello B (2012) Stimulant medication use in
+children: a 12-year perspective. Am J Psychiatry 169: 160–6.
+
+Buchman AS, Boyle PA, Yu L, et al. (2012) Total daily physical
+activity and the risk of AD and cognitive decline in older
+adults. Neurology 78: 1323–9.
+
+Chapter 12 (Dementia) and
+Acetylcholine
+
+Burmester B, Leathem J, Merrick P (2016) Subjective cognitive
+complaints and objective cognitive function in aging:
+a systematic review and meta-analysis of recent crosssectional findings. Neuropsychol Rev 26: 376–93.
+
+Neuronal Networks: Acetylcholine
+Bacher I, Rabin R, Woznica A, Sacvco KA, George TP (2010)
+Nicotinic receptor mechanisms in neuropsychiatric disorders:
+therapeutic implications. Prim Psychiatry 17: 35–41.
+Fryer AD, Christopoulos A, Nathanson NM (eds.) (2012)
+Muscarinic Receptors. Berlin: Springer-Verlag.
+Geldmacher DS, Provenano G, McRae T, et al. (2003)
+Donepezil is associated with delayed nursing home
+placement in patients with Alzheimer’s disease. J Am
+Geriatr Soc 51: 937–44.
+Grothe M, Heinsen H, Teipel SF (2012) Atrophy of the
+cholinergic basal forebrain over the adult age range and in
+early states of Alzheimer’s disease. Biol Psychiatry 71: 805–13.
+Hasselmo ME, Sarter M (2011) Nodes and models of
+forebrain cholinergic neuromodulation of cognition.
+Neuropsychopharmacology 36: 52–73.
+Lane RM, Potkin SG, Enz A (2006) Targeting
+acetylcholinesterase and butyrylcholinesterase in
+dementia. Int J Neuropsychopharmacol 9: 101–24.
+Ohta Y, Darwish M, Hishikawa N, et al. (2017) Therapeutic
+effects of drug switching between acetylcholinesterase
+inhibitors in patients with Alzheimer’s disease. Geriatr
+Gerontol Int 17: 1843–8.
+Pepeu G, Giovannini M (2017) The fate of the brain
+cholinergic neurons in neurodegenerative diseases. Brain
+Res 1670: 173–84.
+Tariot PN, Farlow MR, Grossberg GT, et al. (2004) Memantine
+treatment in patients with moderate to severe Alzheimer’s
+disease already receiving donepezil. JAMA 291: 317–24.
+
+Diet/Exercise/Genetics/Aging
+Anastasiou CA, Yannakoulia M, Kosmidis MH, et al. (2017)
+Mediterranean diet and cognitive health: initial results
+from the Hellenic Longitudinal Investigation of ageing and
+diet. PLOS ONE 12: e0182048.
+
+Cederholm T (2017) Fish consumption and omega-3 fatty acid
+supplementation for prevention or treatment of cognitive
+decline, dementia or Alzheimer’s disease in older adults:
+any news? Curr Opin Clin Nutr Metab Care 20: 104–9.
+Cepoiu-Martin M, Tam-Tham H, Patten S, et al. (2016)
+Predictors of long-term care placement in persons with
+dementia: a systematic review and metaanalysis. Int J
+Geriatr Psychiatry 31: 1151–71.
+Ercoli L, Siddarth P, Huang SC, et al. (2006) Perceived loss of
+memory ability and cerebral metabolic decline in persons
+with the apolipoprotein E-IV genetic risk for Alzheimer
+disease. Arch Gen Psychiatry 63: 442–8.
+Gu Y, Brickman AM, Stern Y, et al. (2015) Mediterranean
+diet and brain structure in a multiethnic elderly cohort.
+Neurology 85: 1744–51.
+Hardman RJ, Kennedy G, Macpherson H, et al. (2016) Adherence
+to a Mediterranean-style diet and effects on cognition in
+adults: a qualitative evaluation and systematic review of
+longitudinal and prospective trials. Front Nutr 3: 1–13.
+Hinz FI, Geschwind DH (2017) Molecular genetics of
+neurodegenerative dementias. Cold Spring Harb Perspect
+Biol 9: a023705.
+Knight A, Bryan J, Murphy K (2016) Is the Mediterranean
+diet a feasible approach to preserving cognitive function
+and reducing risk of dementia for older adults in Western
+countries? New insights and future directions. Ageing Res
+Rev 25: 85–101.
+Kullmann S, Heni M, Hallschmid M, et al. (2016) Brain insulin
+resistance at the crossroads of metabolic and cognitive
+disorders in humans. Physiol Rev 96: 1169–209.
+Larson EB, Wang L, Bowen JD, et al. (2006) Exercise is
+associated with reduced risk for incident dementia among
+persons 65 years of age and older. Ann Intern Med 144:
+73–81.
+Lee HS, Park SW, Park YJ (2016) Effects of physical activity
+programs on the improvement of dementia symptom: a
+meta-analysis. Biomed Res Int 2016: 2920146.
+
+599
+
+
+
+
+<<<PAGE 633>>>
+
+Index
+
+major causes of, 488–96
+psychosis in, 110, 134, 157, 521–3
+psychosis in, treatment, 523–7
+symptomatic treatments, 503–5
+dendrites, 2
+depression, 145, See also bipolar
+depression, unipolar depression
+affective symptoms, 278, 280
+circadian rhythm disorder in, 271–5
+clinical effects of treatment, 284–5
+dementia and, 534–5
+drug side effects, 200
+drug treatment, 229, 239
+insomnia and, 418
+major depressive disorder. See major
+depressive disorder
+major depressive episode. See major
+depressive episode
+mixed features of, 251
+monoamine hypothesis of, 264–5, 290
+monoamine receptor hypothesis of,
+264–6, 267, 290
+mood stabilizer treatment, 288
+neuroplasticity and neuroprogression
+hypothesis of, 266–76
+serotonin or dopamine blockers in, 342
+symptom-based algorithm treatment,
+280
+time course of effects of drugs, 266
+depression with mixed features, 248, 342
+depressive psychosis, 78, 157
+descending spinal norepinephrine
+pathway, 390, 392
+descending spinal serotonergic pathway,
+390, 394
+desensitization, 63, 64
+desvenlafaxine, 299, 302
+deuteration, 175, 177, 354
+dextromethadone, 355–8
+dextromethorphan, 306, 353–4, 533, 536
+diabetes, 198, 199, 415
+diabetic ketoacidosis, 199, 200
+Diagnostic and Statistical Manual of
+Mental Disorders (DSM-5)
+ADHD, 463
+insomnia, 420
+major depressive episode, 245
+manic episode, 245
+mixed features, 248
+dietary tyramine interaction, 338
+diphenhydramine, 426
+direct (go) dopamine pathway, 89, 90
+disorganized/excited psychosis, 78
+disorientation, 78
+dissociation-assisted psychotherapy, 574
+dissociative anesthesia, 570
+dissociatives, 569–71
+disulfiram, 556
+
+DNA methylation, 24
+donepezil, 510
+DOPA decarboxylase, 253
+dopamine, 5
+acetylcholine and, 166
+conversion to norepinephrine, 253
+increase in prefrontal cortex, 299–302
+inefficient tuning of PFC by, 454–63
+projections, 279
+release, 5HT2A regulation, 184–8
+synthesis, 79, 80
+volume neurotransmission, 8
+dopamine β-hydroxylase, 253
+dopamine blockers, 468
+adverse effects, 524
+bipolar disorder spectrum, 338–45
+dopamine D1 receptors
+drugs targeting, 204–41
+dopamine D2 receptors. See also drugs
+targeting dopamine D2 receptors
+pre- and postsynaptic, 228
+dopamine D3 receptors, 343–5
+drugs targeting, 210, 240, 241
+dopamine deficiency syndrome, 306
+dopamine hypothesis of psychosis,
+79–95, 110–14, 141
+dopamine neurotransmitter network,
+79–91
+classic pathways and key brain
+regions, 84
+mesolimbic pathway, 89, 542–3
+nigrostriatal pathway, 87–9
+thalamic pathway, 85
+tuberoinfundibular pathway, 85
+dopamine receptors, 81–5
+dopamine theory of addiction, 542–3
+dopamine transporters (DATs), 31, 80
+ADHD treatment, 473–9
+inhibition, 294, 333
+dopaminergic neurons, 79
+dorsal anterior cingulate cortex (dACC),
+450, 451
+dorsal horn neurons, 382–4
+dorsal horn, descending spinal synapses
+in, 390–5
+dorsal root ganglia, 380, 381
+dorsolateral prefrontal cortex, 387, 400,
+449
+doxepin, 425, 427
+drug abuse, 447, 539
+DAT occupancy and, 476, 479
+reversal of habit, 571–4
+stimulants, 544–7
+drug-induced dystonia, 166, 169
+drug-induced parkinsonism, 165, 166–9,
+181
+drugs targeting dopamine D1 receptors,
+204–41
+
+drugs targeting dopamine D2 receptors,
+159, 242
+agitation in dementia, 197
+antidepressant actions, 195–234
+anxiolytic actions, 196
+cardiometabolic actions, 198–201
+first generation, 179–82, 201–3
+individual properties, 204–41
+mesocortical, 163
+mesolimbic/mesostriatal, 161–3
+nigrostriatal, 165–81
+partial agonists, 189–92, 204–41
+serotonin 2A and, 182–8
+tuberoinfundibular, 164
+drugs targeting dopamine D3 receptors,
+210, 240, 241
+drugs targeting serotonin receptors, 159,
+243
+1A receptors, 192–5, 207
+1B and 1D receptors, 214
+2A receptors, 182–8
+2C receptor, 211
+3 receptor, 212
+6 and 7 receptors, 213
+agitation in dementia, 197
+antidepressant actions, 195–234
+anxiolytic actions, 196
+cardiometabolic actions, 198–201
+individual properties, 204–41
+DSST (digital symbol substitution test), 317
+dual orexin receptor antagonists
+(DORAs), 423–4, 430
+duloxetine, 299, 302–3, 535
+dynorphins, 390
+dyslipidemia, 198
+dystonia, drug-induced, 166, 169
+eating disorders, 293, 575
+Ecstasy, 358, 569
+empathogens, 569
+endocannabinoids, 6, 563, 564
+enkephalins, 390
+entactogens, 569
+enzyme inhibitors, 45
+irreversible, 46
+reversible, 47
+enzymes, 45–50
+activity, 45
+epigenetics, 23–6
+Epworth Sleepiness Scale, 430
+escitalopram, 296
+esketamine, 331, 353, 571
+eslicarbazepine, 352
+euphoria, 560
+excessive daytime sleepiness. See
+hypersomnia
+excitation–secretion coupling, 6, 8–9,
+73, 75
+617
+
+

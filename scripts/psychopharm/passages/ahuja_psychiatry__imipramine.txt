@@ -1,0 +1,1428 @@
+<<<PAGE 28>>>
+
+16
+
+A Short Textbook of Psychiatry
+
+Contd...
+Thyroid function tests: Refractory depression, rapid
+cycling mood disorder. Treatment with lithium, carbamazepine.
+Electrocardiogram (ECG): Age>35 years, Treatment with
+lithium, antidepressants, ECT, antipsychotics.
+HIV testing: Intravenous drug users, suggestive sexual
+history, AIDS dementia.
+VDRL: Suggestive sexual history.
+Chest X-ray: Age>35 years, Treatment with ECT.
+Skull X-ray: History of head Injury.
+Serum CK: Neuroleptic malignant syndrome (markedly
+increased levels).
+Toxicology Screen
+Useful when substance use is suspected; for example,
+alcohol, cocaine, opiates, cannabis, phencyclidine,
+benzodiazepines, barbiturates; remember that certain
+medications can cause false positive results (for example,
+quetiapine for methadone).
+Drug Levels
+Drug levels are indicated to test for therapeutic blood
+levels, for toxic blood levels, and for testing drug
+compliance. Examples are lithium (0.6-1.0 meq/L),
+carbamazepine (4-12 mg/ml), valproate (50-100 mg/
+ml), haloperidol (8-18 ng/ml), tricyclic antidepressants
+(nortriptyline 50-150 ng/ml; imipramine 200-250 ng/
+ml), benzodiazepines, barbiturates and clozapine (350500 μg/L).
+Electrophysiological Tests
+EEG (Electroencephalogram): Seizures, dementia, pseudoseizures vs. seizures, episodic abnormal behaviour.
+BEAM (Brain electrical activity mapping): Provides
+topographic imaging of EEG data.
+Video-Telemetry EEG: Pseudoseizures vs. seizures.
+Evoked potentials (e.g. p300): Research tool.
+Polysomnography/Sleep studies: Sleep disorders, seizures (occurring in sleep). The various components in
+sleep studies include EEG, ECG, EOG, EMG, airflow
+measurement, penile tumescence, oxygen saturation,
+body temperature, GSR (Galvanic skin response), and
+body movement.
+Holter ECG: Panic disorder.
+
+Brain Imaging Tests (Cranial)
+Computed Tomography (CT) Scan: Dementia, delirium,
+seizures, first episode psychosis.
+Magnetic Resonance Imaging (MRI) Scan: Dementia.
+Higher resolution than CT scan.
+Positron Emission Tomography (PET) Scan: Research tool
+for study of brain function and physiology.
+Single Photon Emission Computed Tomography (SPECT)
+Scan: Research tool.
+Magnetic Resonance (MR) Angiography: Research tool
+Magnetic Resonance Spectroscopy (MRS): Research tool
+Neuroendocrine Tests
+Dexamethasone Suppression Test (DST): Research tool
+in depression (response to antidepressants or ECT). If
+plasma cortisol is >5 mg/100 ml following administration of dexamethasone (1 mg, given at 11 PM the night
+before and plasma cortisol taken at 4 PM and 11 PM
+the next day), it indicates non-suppression.
+TRH Stimulation Test: Lithium-induced hypothyroidism,
+refractory depression. If the serum TSH is >35 mIU/ml
+(following 500 mg of TRH given IV), the test is positive.
+Serum Prolactin Levels: Seizures vs. pseudoseizures,
+galactorrhoea with antipsychotics.
+Serum 17-hydroxycorticosteroid: Organic mood (depression) disorder.
+Serum Melatonin Levels: Seasonal mood disorders.
+Biochemical Tests
+5-HIAA: Research tool (depression, suicidal and/or
+aggressive behaviour).
+MHPG: Research tool (depression).
+Platelet MAO: Research tool (depression).
+Catecholamine levels: Organic anxiety disorder (e.g.
+pheochromocytoma).
+Genetic Tests
+Cytogenetic work-up is useful in some cases of mental
+retardation.
+Sexual Disorder Investigations
+Papaverine test: Male erectile disorder (intracavernosal
+injection of papaverine is sometimes used to differentiate
+organic from non-organic male erectile disorder).
+Nocturnal penile tumescence: Male erectile disorder.
+Contd...
+
+
+
+
+<<<PAGE 40>>>
+
+28
+
+A Short Textbook of Psychiatry
+
+OTHER ORGANIC MENTAL
+DISORDERS (DUE TO BRAIN DAMAGE
+AND DYSFUNCTION, AND TO
+PHYSICAL DISEASES)
+This group includes miscellaneous mental disorders
+which are causally related to brain dysfunction due to
+primary cerebral disease, systemic disease (secondary), or toxic substances.
+According to ICD-10, an evidence of cerebral
+disease, damage or dysfunction, or of systemic
+physical disease, known to be associated with one
+of the listed syndromes is required, with a temporal
+relationship between development of the underlying
+disease and the onset of the mental syndrome, with
+recovery from the mental disorder following removal
+or improvement of the underlying presumed cause,
+and an absence of evidence to suggest an alternative
+cause of the mental syndrome (such as a strong family
+history or precipitating stress).
+If conditions 1 and 2 are present, a provisional
+diagnosis can be made; if all four are present, the
+certainty of diagnosis is significantly increased.
+The following clinical conditions are known to
+be associated with an increased risk for these other
+organic mental disorders:
+
+Primary Cerebral Diseases
+Epilepsy, limbic encephalitis, Huntington’s disease,
+head trauma, brain neoplasms, vascular cerebral disease, cerebral malformations.
+
+Systemic Diseases
+Extracranial neoplasms (e.g. carcinoma pancreas),
+collagen diseases (e.g. SLE), endocrine disease (e.g.
+hypothyroidism, hyperthyroidism, Cushing’s disease),
+metabolic disorders (e.g. hypoglycaemia, porphyria,
+hypoxia); infectious diseases (e.g. trypanosomiasis).
+
+Drugs
+Steroids, propranolol, levodopa, methyldopa, antihypertensives, antimalarials, alcohol and other psychoactive substances.
+
+ORGANIC HALLUCINOSIS
+According to ICD-10, presence of persistent or recurrent hallucinations due to an underlying organic cause
+is required for the diagnosis of organic hallucinosis,
+in addition to the general guidelines for the diagnosis
+of other organic mental disorders, described earlier.
+It is important to rule out any major disturbance of
+consciousness, intelligence, memory, mood or
+thought.
+These hallucinations can occur in any sensory
+modality but are usually visual (most common) or
+auditory in nature. In many cases, they depend on
+the underlying cause. These hallucinations can range
+from very simple and unformed, to very complex and
+well-organised. Usually the patients realise that the
+hallucinations are not real but sometimes there may
+be a delusional elaboration of hallucinations.
+
+Aetiology
+1. Drugs: Hallucinogens (LSD, psilocybin, mescaline), cocaine, cannabis, phencyclidine (PCP),
+levodopa, bromocriptine, amantadine, ephedrine,
+propranolol, pentazocine, methylphenidate, imipramine, anticholinergics, bromide.
+2. Alcohol: In alcoholic hallucinosis, auditory hallucinations are usually more common.
+3. Sensory deprivation.
+4. ‘Release’ hallucinations due to sensory pathway
+disease, e.g. bilateral cataracts, otosclerosis, optic
+neuritis.
+5. Migraine.
+6. Epilepsy: Complex partial seizures.
+7. Intracranial space occupying lesions.
+8. Temporal arteritis.
+9. Brain stem lesions (peduncular hallucinosis).
+
+Management
+1. Treatment of the underlying cause, if treatable.
+2. Symptomatic treatment with a low dose of an
+antipsychotic medication (such as Haloperidol,
+Risperidone and Olanzapine) may be needed.
+
+
+
+
+<<<PAGE 60>>>
+
+A Short Textbook of Psychiatry
+
+48
+
+Table 4.9: Phases in Cocaine Withdrawal Syndrome
+Phase
+I (Crash phase)
+
+Sub-stage
+i
+ii
+iii
+
+II
+
+i
+
+Duration
+
+Clinical Features
+
+9 hours
+to
+4 days
+after discontinuation
+
+Agitation, depression, anorexia,
+craving +++
+Fatigue, depression, sleepiness, craving +
+Exhaustion, hypersomnia with intermittent
+awakening, hyperphagia, craving ±
+Normal sleep, improved mood, craving ±
+
+4 to 7 days
+after
+discontinuation
+
+ii
+III (Extinction phase)
+
+After 7-10 days of
+discontinuation
+
+Cocaine use disorder is commonly associated with
+mood disorder, particularly major depression and
+cyclothymia.
+
+Treatment of Cocaine Overdose
+The treatment of overdose consists of oxygenation,
+muscle relaxants, and IV thiopentone and/or IV
+diazepam (for seizures and severe anxiety).
+IV propranolol, a specific antagonist of cocaineinduced sympathomimetic effects, can be helpful,
+administered by a specialist. Haloperidol (or pimozide) can be used for the treatment of psychosis, as
+well as for blocking the cardio-stimulatory effects of
+cocaine. These must be administered very carefully
+by an expert specialist.
+
+Treatment of Chronic Cocaine Use
+The management of underlying (or co-existent) psychopathology is probably the most important step in
+the management of chronic cocaine use.
+The pharmacological treatment includes the
+use of bromocriptine (a dopaminergic agonist) and
+amantadine (an antiparkinsonian) in reducing cocaine
+craving.
+Other useful drugs are desipramine, imipramine
+and trazodone (both for reducing craving and for
+antidepressant effect). The goal of the treatment is
+total abstinence from cocaine use.
+The psychosocial management techniques, such as
+supportive psychotherapy and contingent behaviour
+
+Anxiety, anergia, anhedonia, craving ++
+No withdrawal symptoms, increased
+vulnerability to relapse
+
+therapy, are useful in the post-withdrawal treatment
+and in the prevention of relapse.
+
+AMPHETAMINE USE DISORDER
+Though synthesised by Edleano in 1887, it was introduced in Medicine in 1932 as benzedrine inhaler, for
+the treatment of coryza, rhinitis and asthma. Later, it
+was recommended for a variety of conditions such as
+narcolepsy, postencephalitic parkinsonism, obesity,
+depression, and even to heighten energy and capacity to work.
+Amphetamine refers to a unique chemical which
+is basically phenyl-iso-propylamine or methylphenethylamine. It is a powerful CNS stimulant,
+with peripheral sympathomimetic effects too. The
+dextro-amphetamine isomer is nearly 3-4 times more
+potent than the levo-isomer. It acts primarily on norepinephrine release in brain, along with an action on
+the release of dopamine and serotonin.
+Although still clinically indicated for narcolepsy
+and attention deficit hyperactivity disorder (and very
+rarely for obesity and mild depression), one of the
+commonest patterns of ‘use’ is seen amongst the
+students and sports-persons to overcome the need for
+sleep and fatigue. Tolerance usually develops to the
+central as well as cardiovascular effects of amphetamines.
+Recently, there has been a resurgence of amphetamine use in USA and Europe, with the availability of
+
+
+
+
+<<<PAGE 88>>>
+
+76
+
+A Short Textbook of Psychiatry
+
+Mania represents a reaction formation (Table 17.1)
+to depression according to the psychodynamic theory.
+
+Table 6.5: Some Commonly used Antidepressants
+Generic Name
+
+Stress
+Increased number of stressful life events before the
+onset or relapse has a formative rather than a precipitating effect in depression though they can serve
+a precipitant role in mania. Increased stressors in
+the early period of development are probably more
+important in depression.
+
+Cognitive and Behavioural Theories
+The mechanisms of causation of depression, according
+to these theories, include depressive negative
+cognition (cognitive theory), learned helplessness
+(animal model), and anger directed inwards. These
+concepts are useful in the psychological treatment of
+mild (to moderate) depression.
+Several other theories have also been propounded
+but are currently considered to be of doubtful value
+as theories of causation of depression.
+
+DIFFERENTIAL DIAGNOSIS
+The first step in the differential diagnosis of any mood
+disorder is to exclude a disorder with known organic
+cause, e.g. organic (especially drug-induced) mood
+disorders and dementia (differential diagnosis from
+depressive pseudodementia).
+The second step is to rule out a possibility of acute
+and transient psychotic disorders, schizo-affective
+disorder, and schizophrenia.
+The third step is to exclude the possibility of other
+non-organic psychoses such as delusional disorders.
+The fourth step is to exclude the possibility of
+adjustment disorder with depressed mood, generalised
+anxiety disorder, normal grief reaction, and obsessive compulsive disorder (with or without secondary
+depression).
+In addition to the main diagnosis, it is also important to look for co-morbid medical (such as diabetes,
+hypertension) and/or psychiatric disorders (such as
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+
+Agomelatin
+Amitriptyline
+Amoxapine
+Bupropion
+Citalopram
+Clomipramine
+Doxepine
+Dosulepin/Dotheipin
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Imipramine
+Lofepramine
+Mianserin
+Mirtazapine
+Moclobemide
+Nortriptyline
+Paroxetine
+Reboxetine
+Sertraline
+Tianeptin
+Trazodone
+Venlafaxine
+
+Usual Therapeutic
+Range (mg/day)
+25-50
+75-300
+150-300
+150-450
+10-40
+75-250
+75-300
+75-150
+30-120
+10-20
+20-60
+50-200
+75-300
+140-210
+30-120
+15-45
+300-600
+150-300
+10-40
+10-12
+50-200
+37.5
+300-600
+75-375
+
+anxiety, panic, alcohol or drug misuse, or personality disorder) on a multi-axial diagnostic system
+(Table 1.4).
+
+MANAGEMENT
+Somatic Treatment
+Antidepressants
+Antidepressants are the treatment of choice for a vast
+majority of depressive episodes. Some of the commonly used antidepressants with their usual range of
+therapeutic dosage are listed in Table 6.5. (Antidepressants are discussed in more detail in Chapter 15).
+
+
+
+
+<<<PAGE 89>>>
+
+Mood Disorders
+
+The usual starting dose is about 75-150 mg of
+imipramine equivalent. The clinical improvement
+is assessed after about two weeks. In case of nonimprovement, the dose can usually be increased up
+to 300 mg of imipramine equivalent.
+It should be remembered that it may take up to
+3 weeks before any appreciable response may be
+noticed. Before stopping or changing a drug, the
+particular drug should be given in a therapeutically
+adequate dose for at least 6 weeks.
+A variety of antidepressants are now available
+in the market. Since almost all antidepressants are
+equal in antidepressant efficacy and there is no single
+antidepressant effective for all depressed patients, the
+choice of antidepressant is often dictated by other factors. These factors include cost and ease of availability
+of the drug, the side-effect profile of the drug, past
+history of response and (any) co-morbid medical or
+psychiatric disorders. An individualised choice has to
+be made in each patient, keeping these various factors in mind.
+Imipramine, amitriptyline and other related drugs
+are called tricyclic antidepressants (TCAs). The
+newer antidepressants such as selective serotonin
+reuptake inhibitors (SSRIs) (e.g. fluoxetine, sertraline,
+citalopram), mirtazapine, and serotonin norepinephrine reuptake inhibitors (SNRIs) (e.g. venlafaxine,
+duloxetine) have very little anti cholinergic side
+effects and, hence, are generally safer drugs to use in
+elderly patients with benign hypertrophy of prostate.
+However, both venlafaxine and duloxetine have been
+associated with hypertension and should be used with
+care in those with a history of cardiac illness.
+The antidepressant dosage is monitored on the
+basis of clinical improvement. Routine monitoring
+of blood levels is not usually indicated.
+For the first, uncomplicated, depressive episode,
+the patient should receive full therapeutic dose of the
+chosen antidepressant for a period of 6-9 months,
+after achieving full remission. It is wise to taper the
+antidepressant medication, when the treatment is to
+be stopped after the continuation phase.
+
+77
+
+There are three main phases of treatment:
+i. Acute treatment (till remission occurs),
+ii. Continuation treatment (from remission till end
+of treatment), and
+iii. Maintenance treatment (to prevent further recurrences).
+Maintenance treatment may be indicated in the
+following patients:
+i. Partial response to acute treatment.
+ii. Poor symptom control during the continuation
+treatment.
+iii. More than 3 episodes (90% chances of recurrence).
+iv. More than 2 episodes with early age of onset,
+or recurrence within 2 years of stopping
+antidepressants, or severe and/or life-threatening
+depression, or family history of mood disorder.
+v. Chronic depression (> 2 years) or double depression.
+About 20-35% of depressed patients are refractory
+to antidepressant medication. The management of a
+treatment refractory depressed patient is best done
+by a psychiatrist, often at a tertiary care centre. These
+patients may require one of the following alternatives:
+i. A change of antidepressant (Switch),
+ii. Combination of two types of antidepressants,
+iii. Augmentation with lithium,
+iv. Augmentation with T3 or T4,
+v. Augmentation with antipsychotics,
+vi. Electroconvulsive therapy, or
+vii. Use of newer and experimental techniques.
+One type of depression, namely delusional depression (depression with psychotic features), is usually
+refractory to antidepressants alone. The treatments of
+choice in this condition include:
+i. An antidepressant with ECT, or
+ii. An antidepressant with antipsychotics, or
+iii. An antidepressant with lithium.
+
+Electroconvulsive Therapy (ECT)
+The indications for ECT in depression include:
+i. Severe depression with suicidal risk.
+
+
+
+
+<<<PAGE 156>>>
+
+144
+
+A Short Textbook of Psychiatry
+
+iii. Cyproheptadine: This is particularly helpful in
+inducing weight gain, decreasing depressive
+symptoms and increasing appetite, if anorexia
+is actually present. The usual dose is 8-32 mg/
+day, in divided doses. However, co-prescription
+with SSRIs can interfere with their effectiveness
+as Cyproheptadine is a serotonin antagonist.
+5. Group therapy and family therapy can be helpful
+in psycho-education for the patient and carers/
+family about nature of anorexia nervosa and its
+treatment. Psycho-education may also include
+discussion of current social norms of slimming
+and fitness, since there is evidence to suggest that
+anorexia nervosa is far more common in countries
+with social pressures for slimming, such as USA
+and UK. India is indeed quite fast catching up with
+similar social pressures.
+The prognosis is generally better if diagnosis
+is made early, absence of previous hospitalisations
+and absence of bulimic episodes. Weight gain and
+improvement in mental outlook often precede return
+of menstrual function.
+
+Bulimia Nervosa
+Bulimia nervosa is an eating disorder characterised
+by the following clinical features:
+1. Bulimia nervosa usually has an onset in early teens
+or adolescence.
+2. There is an intense fear of becoming obese. There
+may be an earlier history of anorexia nervosa.
+3. There is usually body-image disturbance and the
+person is unable to perceive own body size accurately.
+4. There is a persistent preoccupation with eating,
+and an irresistible craving for food. There are
+episodes of overeating in which large amounts of
+food are consumed within short periods of time
+(eating binges).
+5. There are attempts to ‘counteract’ the effects of
+overeating by one or more of the following: selfinduced vomiting, purgative abuse, periods of
+starvation, and/or use of drugs such as appetite
+suppressants.
+
+6. No known medical illness is present which can
+account for the disorder.
+7. Absence of any other primary psychiatric disorder.
+
+Treatment
+The various treatment modalities that can be used
+include:
+1. Behaviour therapy: This is based on providing
+positive reinforcements (and at times negative
+reinforcements) contingent on the control of binge
+eating by the patient. See Chapter 18 for further
+details for BT.
+2. Individual psychotherapy: See Chapters 17 and
+18 for further details.
+3. Antidepressant drugs are an important adjunct
+to other modes of therapy. A Selective serotonin
+uptake inhibitor (SSRI) such as Fluoxetine (in
+doses of 20-60 mg) is particularly useful as it can
+cause loss of appetite at least in the initial phase
+of treatment, along with its antidepressant effect.
+The drugs used in the past have included tricyclic
+antidepressants such as imipramine, though they
+are currently not widely used.
+4. Group therapy and family therapy: These methods
+are used for psycho-education of patient and
+carers/family about nature of bulimia nervosa and
+its treatment.
+
+Obesity (Overeating Associated with Other
+Psychological Disturbances)
+Obesity caused by a reaction to distressing events is
+included here. Obesity caused by drugs or endocrinal
+factors, or due to constitutional factors is not considered a psychiatric disorder.
+Treatment options depend on the underlying cause;
+for example, psychotherapy (for present or past psychological distress), antidepressants (for depression),
+advice from dietician, drug treatment, or even bariatric
+surgery.
+
+Binge Eating Disorders
+In binge eating disorder, large amounts of food are
+consumed in a relatively short period, followed by
+
+
+
+
+<<<PAGE 179>>>
+
+Child Psychiatry
+
+those who begin with symptoms for the first time in
+adulthood.
+
+Treatment
+The management of ADD consists of the following
+methods:
+
+Pharmacotherapy
+1. Stimulant medication: Dextro-amphetamine or
+dexamphetamine (2.5-20 mg/day) and methylphenidate (5-60 mg/day) have been traditionally
+used. Currently, Methylphenidate is the drug
+of choice in the treatment of ADD, with a high
+response rate. Methylphenidate is also available
+in sustained release formulations which are preferable due to improved treatment concordance
+and convenience of once a day dose.
+Both dexamphetamine and methylphenidate
+act on the reticular activating system, causing
+stimulation of the inhibitory influences on the
+cerebral cortex, thus decreasing hyperactivity
+and/or distractibility.
+2. Others: When stimulant medication is not available or is not effective, other drugs can be used
+after careful individual consideration of the risks
+and benefits in the individual patient. These
+include clonidine, tricyclic antidepressants
+(such as imipramine), bupropion, venlafaxine,
+chlorproma zine, thiorida zine, and lithium
+carbonate.
+Atomoxetine, a norepinephrine reuptake inhibitor,
+may be an alternative for children who do not respond
+to stimulants. The usual dose range is 0.5-1.2 mg/kg/
+day. Atomoxetine appears to be the drug of choice in
+adult ADD.
+Barbiturates are contraindicated in ADD as they
+increase hyperactivity.
+
+Behaviour Modification
+Counselling and Supportive Psychotherapy
+Behaviour modification and counselling are very
+important in the successful management of ADD and
+can be used along with drug therapy.
+
+167
+
+CONDUCT DISORDERS
+Conduct disorder is characterised by a persistent and
+significant pattern of conduct, in which the basic rights
+of others are violated or rules of society are not followed. The diagnosis is only made when the conduct
+is far in excess of the routine mischief of children and
+adolescents. The onset occurs much before 18 years
+of age, usually even before puberty.
+The disorder is much more (about 5-10 times)
+common in males. In United States of America, about
+10% of all male children under the age of 18 have
+conduct disorder.
+According to ICD-10, there are four subtypes of
+conduct disorder:
+1. Conduct disorder confined to the family context.
+2. Unsocialised conduct disorder.
+3. Socialised conduct disorder.
+4. Oppositional defiant disorder.
+The characteristic clinical features include:
+1. Frequent lying.
+2. Stealing or robbery.
+3. Running away from home and school.
+4. Physical violence such as rape, fire-setting, assault
+or breaking-in, use of weapons.
+5. Cruelty towards other people and animals.
+In the more common socialised (group) type of
+conduct disorder, the person claims loyalty to his or
+her group. The unsocialised (solitary) type is a more
+serious disorder with usually a severe underlying
+psychopathology. Earlier, the patients with conduct
+disorder were called as juvenile delinquents.
+Many patients of conduct disorder, especially
+socialised (group) type, go on to improve markedly and may lead well adjusted lives. Some others,
+especially those with severe symptomatology, have
+a more chronic course and may be diagnosed with
+antisocial personality disorder (or traits) after 18
+years of age.
+In addition to the typical symptoms of conduct
+disorder, secondary complications often develop
+such as substance misuse or dependence, unwanted
+pregnancies, criminal record, suicidal and homicidal
+behaviour.
+
+
+
+
+<<<PAGE 181>>>
+
+Child Psychiatry
+
+ziprasidone, quetiapine, and sulpiride. Treatment
+options are often chosen based on adverse effect
+profile of each drug (which adverse effects to avoid).
+SSRIs (such as fluoxetine) have been used for the
+treatment of co-morbid obsessive compulsive symptoms.
+In the resistant cases or in case of severe sideeffects, pimozide or clonidine can be used under
+expert supervision. Behaviour therapy can sometimes
+be used, as an adjunct.
+
+NON-ORGANIC ENURESIS
+Enuresis is repetitive voiding of urine, either during
+the day or night, at inappropriate places. This state of
+affairs is normal in infancy.
+Most children achieve bladder control by the age
+of three years. By the age of 5 years, there are still
+about 7% of children who wet their bed. Technically,
+enuresis is diagnosed only after 5 years of age (and
+at least 4 years of mental age).
+Enuresis can be either of:
+1. Primary type, where bladder control has never
+been achieved, or
+2. Secondary type, where enuresis emerges after a
+period of bladder control (at least one year).
+The majority (about 80%) of children with enuresis
+have nocturnal bed wetting only. Non-organic enuresis
+is more common (about two times) in males.
+
+Aetiology
+The exact cause of enuresis is not known. A variety
+of factors, which are implicated in its causation, are
+largely biopsychosocial. About 75% of children with
+enuresis have a first degree relative with history of
+enuresis.
+The most commonly occurring factors, however,
+are psychosocial, such as emotional disturbances, insecurity, sibling rivalry, death of a parent. An organic
+cause must be looked for in children with diurnal
+enuresis (15% of all cases of diurnal enuresis) and
+adolescents with enuresis. The organic causes are
+present in about 5% of cases and include worm infes-
+
+169
+
+tation, spina bifida, neurogenic bladder, urinary tract
+infection, diabetes mellitus, and seizure disorder.
+In secondary enuresis, the age of onset is usually
+5-8 years. Enuresis tends to remit spontaneously and
+only 1% of children with enuresis continue to have
+the disorder in adulthood.
+
+Treatment
+The management consists of one or more of the following measures:
+1. Restriction of fluid intake after 8 PM, in nocturnal
+enuresis.
+2. Bladder training during daytime, aimed at increasing the holding-time of bladder. This is carried out
+in a step-by-step manner using positive reinforcements.
+3. Interruption of sleep before the expected time of
+bed wetting. The child should be fully woken up
+and made aware of passing of urine.
+4. Conditioning devices, which cause an alarm to
+sound as soon as the voided urine touches the bedsheet. It is important to check the child’s hearing
+before starting treatment. The alarm causes inhibition of further micturition and the child awakens. If
+properly used, it is an effective method of therapy.
+5. Supportive psychotherapy for the child, parents
+and the whole family is often needed.
+6. Pharmacotherapy: Drug treatment is usually not
+a preferred option for the treatment of enuresis.
+The drug of choice in those who need pharmacotherapy has traditionally been a tricyclic antidepressant, usually imipramine (25-75 mg/day). It
+probably acts by its anticholinergic effect as well as
+by decreasing the deep sleep (stage 4 NREM-sleep)
+period. However, there is a risk of sudden death in
+some children with the use of tricyclic antidepressants.
+It should never be used for children under the age of
+6 years.
+Intranasal desmopressin has been found useful
+in some patients and is a good alternative. The other
+drugs that have been used for this purpose include
+diazepam, anticholinergics, amphetamines, placebos,
+but none have shown a good therapeutic response.
+
+
+
+
+<<<PAGE 194>>>
+
+182
+
+A Short Textbook of Psychiatry
+
+of depression. The first tricyclic antidepressant (TCA)
+imipramine was used in 1958 by Thomas Kuhn. It was
+different from phenothiazines by only a replacement
+of sulphur with an ethylene linkage. With this small
+structural difference (discovered by chance), imipramine was found not effective as an antipsychotic
+but instead quite beneficial in depressed patients.
+Since 1958, the number of antidepressants has been
+gradually increasing.
+Antidepressants have no euphoriant effect when
+administered to normal, non-depressed individuals.
+
+Indications
+Presently, the indications for the use of antidepressants
+include:
+Depression
+1. Depressive episode (also called major depression,
+endogenous depression)
+2. Depressive episode with melancholia (with or
+without ECTs)
+3. Depressive episode with psychotic features (with
+antipsychotics or ECTs)
+4. Dysthymia (with psychotherapy)
+5. Reactive depression (with psychotherapy)
+6. Depressive equivalents and masked depression
+(sometimes)
+7. Atypical depression (e.g. MAO inhibitors)
+8. Secondary depression (e.g. in hypothyroidism,
+Cushing’s syndrome)
+9. Abnormal grief reaction
+Child Psychiatric Disorders
+1. Enuresis (with or without behaviour therapy)
+2. Attention deficit disorder with hyperactivity (in
+low doses, after 6 years of age, when stimulant
+medication is not available)
+3. School phobia (sometimes, in low doses)
+4. Separation anxiety disorder (in children)
+5. Somnambulism
+6. Night terrors
+Other Psychiatric Disorders
+1. Panic attacks (e.g. SSRIs)
+2. Agoraphobia and social phobia
+3. Obsessive compulsive disorder with or without
+depression (e.g. clomipramine, SSRIs)
+
+4. Cataplexy (associated with narcolepsy)
+5. Aggression in elderly (e.g. trazodone)
+6. Eating disorders (e.g. fluoxetine in bulimia nervosa)
+7. Borderline personality disorder (for treatment of
+depressive symptoms)
+8. Trichotillomania (e.g. clomipramine; fluoxetine)
+9. Depersonalisation syndrome
+10. Post-traumatic stress disorder (PTSD)
+11. Generalised anxiety disorder (e.g. SSRIs)
+12. Nicotine dependence (e.g. bupropion is used for
+treatment of craving)
+13. Alcohol dependence (e.g. fluoxetine sometimes
+used for treatment of craving)
+Medical Disorders
+1. Chronic pain (in low doses, e.g. amitriptyline,
+duloxetine)
+2. Migraine (as an adjuvant)
+
+Classification
+Classification and properties of antidepressants
+(Table 15.6).
+
+Pharmacokinetics
+The oral dose of TCAs is incompletely though adequately absorbed. As they are highly anticholinergic
+in nature, they delay gastric emptying and slow gastrointestinal motility. SSRIs are well absorbed from the
+gastrointestinal tract.
+These antidepressants, much like antipsychotics, are highly lipophilic and are highly protein
+bound. Thus they have a large volume of distribution and tend to accumulate in areas with good blood
+supply. Like antipsychotics, they are also not dialysable.
+Their other pharmacokinetic properties of TCAs
+are similar to those of phenothiazines. The half-life
+is long, usually more than 24 hours. Although TCAs
+can be administered in a single night-time dose, the
+routine clinical practice is to prescribe divided doses,
+at least in the initial days of treatment, to prevent
+accumulated side-effects. The metabolism of TCAs is
+by oxidation (hepatic microsomal enzymes) followed
+by conjugation (glucoronic acid). The major metabolites of imipramine and amitriptyline (desipramine and
+
+
+
+
+<<<PAGE 195>>>
+
+Psychopharmacology
+
+183
+
+Table 15.6: Classification and Properties of Antidepressants
+Drugs
+
+Oral Dose
+(mg/d)
+
+Some Common Adverse Effects#
+Sedation* Orthostatic Hypotension* Anticholinergic*
+
+I. Cyclic Antidepressants
+A. Tricyclic Tertiary Amines
+1. Amitriptyline
+75-300
++++
+2. Clomipramine
+75-250
+++
+3. Dosulepin (Dotheipin)
+75-300
++++
+4. Doxepine
+75-300
++++
+5. Imipramine
+75-300
+++
+6. Lofepramine
+70-210
++
+7. Tri-imipramine
+75-300
++++
+B. Tricyclic Secondary Amines
+1. Desipramine
+75-300
+±
+2. Nortriptyline
+75-200
++
+3. Protriptyline
+15-60
+0
+C. Tetracyclic Antidepressants
+1. Amoxapine
+150-400
++
+2. Maprotiline
+75-225
+++
+3. Mianserin
+30-120
++++
+D. Bicyclic Antidepressants
+1. Viloxazine
+100-300
+±
+II. Selective Serotonin Reuptake Inhibitors (SSRIs)
+1. Citalopram
+20-40
+±
+2. Escitalopram
+10-20
+±
+3. Fluoxetine
+20-60
+±
+4. Fluvoxamine
+50-300
+±
+5. Paroxetine
+20-40
++
+6. Sertraline
+50-200
+±
+III. Serotonin Norepinephrine Reuptake Inhibitors (SNRIs)
+1. Duloxetine
+60
+±
+2. Venlafaxine
+75-375
++
+
++++
+++
++++
++++
+++
++
+++
+
++++
+++
+++
++
+++
++
+++
+
++
+++
+++
+
+++
++
+++
+
++
+++
+±
+
+++
+++
+±
+
+±
+
+±
+
+±
+±
+0
+±
+0
+±
+
+0
+0
+0
+±
+±
+0
+
+±
+±
+
+±
+±
+
+IV. Norepinephrine Serotonin Reuptake Enhancers (NSREs)
+1. Tianeptin
+37.5
++
+0
+V. Noradrenergic and Specific Serotonergic Antagonists (NaSSAs)
+1. Mirtazapine
+15-45
++++
++
+VI. Norepinephrine Dopamine Reuptake Inhibitors (NDRIs)
+1. Bupropion
+150-450
+Activating 0
+VII. Serotonin Antagonists and Reuptake Inhibitors (SARIs)
+1. Nefazodone
+200-600
+++
++
+(withdrawn from market)
+2. Trazodone
+150-400
++++
+±
+
+±
+±
+0
+±
+±
+Contd...
+
+
+
+
+<<<PAGE 197>>>
+
+Psychopharmacology
+
+It is essential to continue the antidepressant for a
+period of further 6 months after reaching remission, in
+the first episode of depressive disorder (and for longer
+duration in subsequent episodes) to prevent recurrence of symptoms. It is important to prescribe the
+antidepressant in the same dose as used for treatment
+unless there are adverse effects requiring a decrease
+in dose.
+Only when adequate doses (150-300 mg
+imipramine equivalent) have been administered for
+an adequate period (at least 6 weeks) without a clinical response then the drug can be called ineffective
+for that patient. Another drug, usually from a different
+class or group, or ECT may then be used.
+
+Side Effects and Toxicity
+The common side effects of antidepressants with their
+management are summarised in Table 15.7.
+TCAs are dangerous in overdose; amitriptyline
+and dosulepin (dotheipin) are particularly cardiotoxic
+whilst lofepramine is the safest amongst TCAs. Clinical features of overdose include agitation, delirium,
+paralytic ileus, urinary retention, coma, respiratory
+depression, seizures, hyperpyrexia, cardiac arrhythmias, conduction defects, mydriasis, and death. The
+lethal dose of imipramine is 1-2 g. (40-80 tabs. of
+25 mg imipramine equivalence).
+The treatment options in overdose include gastric
+lavage/induction of vomiting, activated charcoal for
+adsorption, cardio-respiratory resuscitation, treatment
+of seizures (if they occur), general supportive care
+and symptomatic management. Quinidine-like drugs
+are contraindicated whilst antiarrhythmics such as
+lignocaine can be helpful. Physostigmine 0.5 mg
+IV/IM bolus repeated to a total of 3-4 mg/day may
+be used under careful supervision. Coma often reverts
+in less than 24 hours, although toxicity lasts for
+5-6 days.
+Co-prescription of serotonergic drugs (such as
+SSRIs) with other serotonergic agents and especially
+MAOIs can lead to serotonin syndrome. It is characterised by a classic triad of mental status changes,
+neuromuscular abnormalities and autonomic hyper-
+
+185
+
+activity. These include anxiety, agitation, confusion,
+clonus (e.g. ankle clonus, ocular clonus), hyperreflexia, myoclonus, rigidity, increased heart rate, tremor,
+flushing, hyperthermia and excessive sweating. Death
+can occur in severe serotonin syndrome.
+Treatment includes discontinuation of the offending drug(s), supportive management and (sometimes)
+use of serotonin and histamine antagonist cyproheptadine.
+
+Refractory Depression
+About 20-35% of patients do not respond to the
+antidepressant therapy. The chief reasons for this
+non-response include:
+1. Poor drug concordance.
+2. Inadequate dosage.
+3. Insufficient treatment duration.
+4. Low plasma antidepressant levels.
+5. Incorrect diagnosis.
+Even when these important reasons are excluded,
+there still remains a group (15-20%) of depressed
+patients who are non-responders or poor-responders.
+Such patients should receive a trial of another antidepressant preferably from a different group (e.g. SNRI)
+for adequate duration. In case the patient still does not
+respond, the treatment of choice of refractory depression is electroconvulsive therapy (ECT), though other
+treatment choices (such as lithium augmentation) are
+also available.
+
+MOOD STABILISING DRUGS
+(DRUGS USED IN PROPHYLAXIS
+OF BIPOLAR DISORDER)
+These drugs are usually effective in treatment of mania and therefore the word antimanic is often used to
+describe them. But as they are effective in preventing
+mood swings in bipolar disorder, the better term is
+mood-stabilising agent or a prophylactic agent. The
+most commonly used mood-stabilising agents include
+lithium, valproate, carbamazepine, and lamotrigine,
+though there are several other experimental mood
+stabilisers such as oxcarbazepine.
+
+
+
+
+<<<PAGE 198>>>
+
+A Short Textbook of Psychiatry
+
+186
+
+Table 15.7: Side Effects of Antidepressants
+Category and
+Side Effect
+
+Probable Cause
+
+Maximum with
+(For example)
+
+Minimum with
+(For example)
+
+Management
+
+Amitriptyline
+
+Fluoxetine
+
+See table for side effects of
+antipsychotics (Table 15.3)
+
+Amitriptyline
+Amitriptyline
+Amitriptyline
+Amitriptyline
+Amitriptyline
+Amitriptyline
+
+Fluoxetine
+Fluoxetine
+Fluoxetine
+Fluoxetine
+Fluoxetine
+Fluoxetine
+
+Amitriptyline
+
+Fluoxetine
+
+Amitriptyline
+Amitriptyline
+Paroxetine
+
+Mirtazapine
+Bupropion
+Mirtazapine
+Bupropion
+
+SSRIs
+TCAs
+Trazodone
+
+Mirtazapine
+Bupropion
+Not known
+
+α Adrenergic
+blockade
+
+Amitriptyline
+
+Protriptyline
+Fluoxetine
+
+2. Tremor and
+Other EPSE
+3. Jitteriness
+syndrome
+
+Serotonergic
+
+Amoxapine
+
+Not known
+
+Adrenergic;
+Serotonergic
+
+Imipramine
+Fluoxetine
+
+MAOI
+
+4. Withdrawal
+syndrome (mild)
+
+Dependence
+
+Imipramine
+Paroxetine
+
+Protriptyline
+Fluoxetine
+
+5. Seizures
+
+Decreased
+threshold
+
+Bupropion
+Amitriptyline
+
+Nomifensine
+Fluoxetine
+
+A. Autonomic Side Effects
+1. Dry mouth
+Muscarinic
+Cholinergic
+blockade
+2. Constipation
+–do–
+3. Cycloplegia
+–do–
+4. Mydriasis
+–do–
+5. Urinary retention –do–
+6. Delirium
+–do–
+–do–
+7. Aggravation of
+narrow angle
+glaucoma
+8. Orthostatic
+α1 Adrenergic
+hypotension
+blockade
+B. Sexual Side Effects
+1. Impotence
+α1 Adrenergic
+blockade
+2. Impaired/
+α1 Adrenergic
+retarded
+blockade
+ejaculation
+3. Anorgasmia
+
+5-HT blockade
+
+4. Priapism
+
+Not known
+
+C. CNS Effects
+1. Sedation
+
+Do not use in elderly and in
+patients with past history.
+Change or stop drug.
+See table for side effects of
+antipsychotics (Table 15.3)
+
+Cyproheptadine given 1 hour
+before, can reverse anorgasmia and retarded ejaculation
+caused by SSRIs.
+
+Stop drug; muscular relaxation; sometimes surgical
+procedure needed
+This side effect may be beneficial; Otherwise decrease
+dose. Change drug. Give
+single dose only at night.
+Decrease dose. Change drug.
+This is very common in
+first week of therapy. Add
+diazepam for first 1-2 weeks.
+Tolerance occurs.
+Slow withdrawal of drug.
+Decrease dose. Change drug.
+Contd...
+
+
+
+
+<<<PAGE 200>>>
+
+A Short Textbook of Psychiatry
+
+188
+Contd...
+Category and
+Side Effect
+2. Severe hepatic
+necrosis (rare)
+3. Hyperpyrexia
+
+4. Bleeding
+
+5. Hyponatraemia
+
+Probable Cause
+
+Maximum with
+(For example)
+
+Minimum with
+(For example)
+
+Management
+
+Toxic or
+Hypersensitive
+Interaction with
+tricyclics or
+meperidine
+Decreased
+platelet serotonin
+
+Iproniazid
+
+Tranylcypromine
+
+Not known
+
+Not known
+
+SSRIs
+
+Not known
+
+SSRIs
+SNRIs
+
+Not known;
+Probably MAOIs
+
+Stop/change drug. Supportive
+care; Death rate high.
+Stop drug. Keep a gap of
+1 week between imipramine
+and MAOI. Supportive care.
+Change drug. Do not coprescribe other drugs that
+increase risk of bleeding;
+Gastro-protective drugs such
+as PPIs can decrease risk
+to some extent in high-risk
+patients
+Risk higher in elderly; Avoid
+co-prescribing other drugs
+that cause hyponatraemia
+(such as diuretics); monitor
+closely
+
+Probably SIADH
+
+Recently, several atypical antipsychotics such as
+olanzapine, quetiapine and aripiprazole have been
+added to list of drugs used in maintenance treatment
+of bipolar disorder. In addition, other antipsychotics
+such as risperidone (and the others mentioned above)
+are also used as antimanic agents.
+Lamotrigine and Quetiapine (and its metabolite
+norquetiapine) appear to have particular efficacy for
+treatment of bipolar depression. There is a risk of skin
+rash with lamotrigine particularly early in treatment
+and the risk appears higher with faster escalation of
+dose as well as with co-prescription of valproate. It is
+therefore important to increase the dose of lamotrigine
+very gradually as suggested in the summary of product
+characteristics (SPC) and the dose prescribed depends
+on other co-prescribed drugs (such as carbamazepine
+and valproate).
+
+LITHIUM
+Lithium (Li) is an element (Atomic number 3 and
+Atomic weight 7) which is the smallest alkali ion.
+
+The element was discovered in 1817 by Arfuedson.
+Since then, it has been used for treatment of gout and
+for salt replacement in cardiac disease, but its use was
+restricted due to fatal toxicity.
+It was rediscovered in 1949 by John Cade, for use
+in treatment of mania but its potential went unrecognised as it was discovered in Australia. Mogen Schou
+in 1957, had to rediscover it yet again before it became
+popular as a treatment of mania.
+
+Indications
+Although lithium salts are used in treatment of a
+myriad of psychiatric and non-psychiatric disorders,
+the established indications are only the following
+ones:
+1. Treatment of acute mania
+2. Prophylaxis of bipolar mood disorder.
+In addition, the following may also constitute
+possible clinical indications of lithium use:
+3. Treatment of schizo-affective disorder
+4. Prophylaxis of unipolar mood disorder
+5. Treatment of cyclothymia
+
+

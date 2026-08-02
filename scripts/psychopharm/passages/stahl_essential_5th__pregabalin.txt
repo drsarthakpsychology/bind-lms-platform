@@ -1,0 +1,1256 @@
+<<<PAGE 87>>>
+
+Chapter 3: Ion Channels
+
+Opening a Presynaptic Voltage-Sensitive N or P/Q
+Calcium Channel: Triggers Neurotransmitter Release
+glutamate
+
+ß
+
+3
+
+ß
+
+vesicle
+snare
+N
+P/Q
+
+A
+
+N
+P/Q
+
+2
+
+B
+
+Ca++
+Figure 3-23 N and P/Q voltage-sensitive calcium channels. Voltage-sensitive calcium channels that are most relevant to
+psychopharmacology are termed N and P/Q channels. These ion channels are presynaptic and involved in the regulation of
+neurotransmitter release. The intracellular amino acids linking the second and third subunits of the α1 unit form a snare that hooks onto
+synaptic vesicles (A). When a nerve impulse arrives, the snare “fires,” leading to neurotransmitter release (B).
+
+the VSCC, as was described above for the VSSC; instead,
+the amino acids connecting the second and third subunits
+of the VSCC work as a “snare” to hook up with synaptic
+vesicles and regulate the release of neurotransmitter
+into the synapse during synaptic neurotransmission
+(Figure 3-22A and Figure 3-23). The orientation of the
+calcium channel in Figure 3-22B is with the outside of the
+cell at the top of the page, and this is switched in Figure
+3-22C so that the inside of the cell is now at the top of
+the page, so the reader can see how these channels might
+look in various configurations in space. In all cases, the
+direction of ion flow is from outside the cell to the inside
+when that channel opens to allow ion flow to occur.
+Several proteins flank the α1 pore-forming unit of a
+VSCC, called γ, β, and α2δ (Figure 3-22C). Shown here
+are γ units that span the membrane, cytoplasmic β units,
+and a curious protein called α2δ, because it has two parts:
+a δ part that is transmembrane, and an α2 part that is
+extracellular (Figure 3-22C). The functions of all these
+proteins associated with the α1 pore-forming unit of a
+VSCC are just beginning to be understood, but already
+it is known that the α2δ protein is the target of certain
+psychotropic drugs, such as the anticonvulsants pregabalin
+and gabapentin, and that this α2δ protein may be involved
+in regulating conformational changes of the ion channel to
+change the way the ion channel opens and closes.
+
+As would be expected, there are several subtypes of
+VSCCs (Table 3-4). The vast array of VSCCs indicates
+that the term “calcium channel” is much too general, and
+in fact can be confusing. For example, calcium channels
+associated with the ligand-gated ion channels discussed
+in the previous section, especially those associated
+with glutamate and nicotinic cholinergic ionotropic
+receptors, are members of an entirely different class of
+ion channels from the VSCCs under discussion here. As
+we have mentioned, calcium channels associated with
+this previously discussed class of ion channels are called
+ligand-gated ion channels, ionotropic receptors, or ionchannel-linked receptors, to distinguish them from VSCCs.
+The specific subtypes of VSCCs of most interest to
+psychopharmacology are those that are presynaptic, that
+regulate neurotransmitter release, and that are targeted
+by certain psychotropic drugs. This subtype designation
+of VSCC is shown in Table 3-4 and such channels are
+known as N or P/Q channels.
+Another well-known subtype of VSCC is the L channel.
+This channel exists not only in the central nervous system,
+where its functions are still being clarified, but also on
+vascular smooth muscle where it regulates blood pressure
+and where a group of drugs known as dihydropyridine
+“calcium channel blockers” interact as therapeutic
+antihypertensives to lower blood pressure. R and T
+71
+
+
+
+
+<<<PAGE 363>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Table 7-3 Anticonvulsant mood stabilizers
+
+Agent
+
+Putative clinical actions
+Epilepsy
+
+Mania-minded
+
+Depression-minded
+
+Treat from
+above
+
+Stabilize
+from above
+
+Treat from
+below
+
+Stabilize from
+below
+
+Valproate
+
+++++
+
+++++
+
+++
+
++
+
++/−
+
+Carbamazepine
+
+++++
+
+++++
+
+++
+
++
+
++/−
+
+Lamotrigine
+
+++++
+
++/−
+
+++++
+
++++
+
+++++
+
+Oxcarbazepine/licarbazepine
+
+++++
+
+++
+
++
+
++/−
+
++/−
+
+Riluzole
+
++
+
++
+
++/−
+
+Topiramate
+
+++++
+
++/−
+
++/−
+
+Gabapentin
+
+++++
+
++/−
+
++/−
+
+Pregabalin
+
+++++
+
++/−
+
++/−
+
+Anticonvulsants with Proven Efficacy in Bipolar Disorder
+Valproic Acid (Valproate, Sodium Valproate)
+
+As for all anticonvulsants, the exact mechanism of action
+of valproic acid (also, sodium valproate, valproate) is
+uncertain; however, even less may be known about the
+mechanism of valproate than for other anticonvulsants.
+Various hypotheses are discussed here, and summarized in
+Figures 7-75 through 7-78. At least three possibilities exist
+for how valproic acid works: inhibiting voltage-sensitive
+sodium channels (Figure 7-76), boosting the actions of the
+neurotransmitter GABA (γ-aminobutyric acid) (Figure
+7-77), and regulating downstream signal transduction
+cascades (Figure 7-78). It is not known whether these
+actions explain the mood-stabilizing actions, the
+anticonvulsant actions, the anti-migraine actions, or the
+side effects of valproic acid. Obviously, this simple molecule
+has multiple and complex clinical effects, and research
+is trying to determine which of the various possibilities
+explain the “mood-stabilizing” antimanic effects of valproic
+acid so that new agents with more efficacy and fewer
+side effects can be developed by targeting the relevant
+pharmacological mechanism for bipolar disorder.
+One hypothesis to explain mood-stabilizing antimanic
+actions is the possibility that valproate acts to diminish
+excessive neurotransmission by diminishing the flow of
+ions through voltage-sensitive sodium channels (VSSCs)
+(Figure 7-76). VSSCs are discussed in Chapter 3 and
+illustrated in Figures 3-19 through 3-21. No specific
+molecular site of action for valproate has been identified,
+but it is possible that valproate may change the sensitivity
+of sodium channels by altering phosphorylation of
+
+7
+
+valproic acid
+
+Na+
+++
+Ca
+
+Glu
+GABA
+Figure 7-75 Valproic acid. Shown here is an icon of the
+pharmacological actions of valproic acid, an anticonvulsant
+used in the treatment of bipolar disorder. Valproic acid (also
+valproate) may work by interfering with voltage-sensitive sodium
+channels, enhancing the inhibitory actions of γ-aminobutyric
+acid (GABA), and regulating downstream signal transduction
+cascades, although which of these actions may be related to
+mood stabilization is not clear. Valproate may also interact with
+other ion channels, such as voltage-sensitive calcium channels,
+and also indirectly block glutamate (Glu) actions.
+
+347
+
+
+
+
+<<<PAGE 368>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+titration period required when starting lamotrigine
+makes it difficult to show any useful effectiveness for
+mania, which generally requires treatment with drugs
+that can work quickly. A third aspect of lamotrigine
+is that it is generally well tolerated, with one glaring
+exception: a propensity to cause rashes, including (rarely)
+the life-threatening Stevens Johnson syndrome (toxic
+epidermal necrolysis). Rashes caused by lamotrigine
+can be minimized by very slow up-titration of the drug
+during initiation of therapy, avoiding or managing drug
+interactions, such as those with valproate that raise
+lamotrigine levels, and by understanding how to identify
+and manage serious rashes, including being able to
+distinguish them from benign rashes (see discussion of
+lamotrigine in Stahl’s Essential Psychopharmacology: the
+Prescriber’s Guide). Finally, lamotrigine seems to have
+some unique aspects to its mechanism of action (Figure
+7-82), namely to reduce the release of the excitatory
+neurotransmitter glutamate. It is not clear whether this
+action is secondary to blocking the activation of VSSCs
+(Figure 7-82) or to some additional synaptic action.
+Reducing excitatory glutamatergic neurotransmission,
+especially if excessive during bipolar depression, may be
+a unique mechanism of action of lamotrigine and explain
+why it has such a different clinical profile as a treatment
+from below and a stabilizer from below for bipolar
+depression.
+Anticonvulsants with Uncertain or Doubtful Efficacy in
+Bipolar Disorder
+Oxcarbazepine/Eslicarbazepine
+
+Oxcarbazepine is structurally related to carbamazepine,
+but is not a metabolite of carbamazepine. Oxcarbazepine
+is actually not the active form of the drug, but a prodrug
+that is immediately converted into a 10-hydroxy
+derivative, also called the monohydroxy derivative,
+and most recently has been named licarbazepine. The
+active form of licarbazepine is the S enantiomer, known
+as eslicarbazepine. Thus, oxcarbazepine really works
+via conversion to eslicarbazepine, which is itself now
+available as an anticonvulsant.
+Oxcarbazepine has a presumed mechanism of
+anticonvulsant action the same as that for carbamazepine,
+namely, binding to the open-channel conformation of the
+VSSC at a site within the channel itself on the α subunit
+(as in Figure 7-80). However, oxcarbazepine seems to
+have some important differences from carbamazepine,
+including being less sedating, having less bone marrow
+toxicity, and also having less CYP450 3A4 interactions,
+352
+
+making it a more tolerable agent that is easier to dose. On
+the other hand, oxcarbazepine has never been proven to
+work in acute bipolar mania or depression. Nevertheless,
+because of a similar postulated mechanism of action
+but a better tolerability profile, oxcarbazepine and more
+recently eslicarbazepine have been utilized “off-label” by
+many clinicians especially for the manic phase of bipolar
+disorder.
+Topiramate
+
+Topiramate is another compound approved as an
+anticonvulsant and for migraine, and recently, in
+combination with bupropion, for weight loss in obesity.
+Topiramate has been tested in bipolar disorder, but
+with ambiguous results (Table 7-3). It does seem to be
+associated with weight loss and is sometimes given as an
+adjunct to drugs for psychosis or to mood stabilizers that
+cause weight gain, but can cause unacceptable sedation
+in some patients. Topiramate is also being tested in
+various substance abuse disorders, including stimulant
+abuse and alcoholism. However, topiramate is not clearly
+effective as a mood stabilizer, either from evidence-based
+randomized controlled trials (which are not consistently
+positive) or from clinical practice.
+Gabapentin and Pregabalin
+
+These anticonvulsants seem to have little or no action as
+mood stabilizers, yet are robust treatments for various
+pain conditions, from neuropathic pain to fibromyalgia,
+and for various anxiety disorders, and are discussed in
+more detail in Chapter 8 on anxiety and Chapter 9 on
+pain.
+Calcium Channel Blockers (L-Type)
+
+There are several types of calcium channels, not
+only the N or P/Q channels linked to secretion of
+neurotransmitters, targeted by α2δ ligands and discussed
+in Chapter 3 (see Figures 3-23 and 3-24), but also L
+channels localized on vascular smooth muscle and
+which are targeted by various antihypertensive and
+antiarrhythmic drugs, commonly called “calcium channel
+blockers.” L-type channels are located on neurons where
+their function is still being debated, and some anecdotal
+evidence suggests that calcium channel blockers,
+especially dihydropyridine-type calcium channel blockers,
+may be useful for some patients with bipolar disorder.
+Riluzole
+
+This agent has anticonvulsant actions in preclinical
+models, but was developed to slow the progression
+
+
+
+
+<<<PAGE 382>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Autonomic Output of Fear
+
+The Hippocampus:
+An Internal Fearmonger
+
+LC
+
+amygdala
+
+fear response
+
+overactivation
+
+cardiovascular
+locus coeruleus
+atherosclerosis
+cardiac ischemia
+BP
+HR variability
+MI
+sudden death
+
+Figure 8-12 Autonomic output of fear. Autonomic responses
+are typically associated with feelings of fear. These include
+increases in heart rate (HR) and blood pressure (BP), which are
+regulated by reciprocal connections between the amygdala
+and the locus coeruleus (LC). Long-term activation of this circuit
+may lead to increased risk of atherosclerosis, cardiac ischemia,
+change in BP, decreased HR variability, myocardial infarction
+(MI), or even sudden death.
+
+glutamate, and voltage-gated ion channels (Figure
+8-15), greatly overlapping with many of the same
+neurotransmitters and regulators known to modulate the
+amygdala (Figure 8-14).
+
+BENZODIAZEPINES AS DRUGS
+FOR ANXIETY
+A simplified notion of how benzodiazepines might
+modulate excessive output from the amygdala during
+fear responses in anxiety disorders is shown in Figure
+8-18. Excessive amygdala activity (shown in Figures
+8-8 through Figure 8-12 and in Figure 8-17A) is
+theoretically reduced by benzodiazepines. These agents
+enhance phasic inhibition of GABA (γ-aminobutyric
+acid) by positive allosteric modulation of postsynaptic
+GABAA receptors (see Chapter 6 for explanation of
+positive allosteric modulation by benzodiazepines at
+GABAA receptors and Figures 6-20 through 6-23). The
+anxiolytic actions of benzodiazepines are hypothetically
+at GABAA receptors localized within the amygdala, where
+366
+
+amygdala
+hippocampus
+Figure 8-13 The hippocampus and re-experiencing. Anxiety
+can be triggered not only by an external stimulus but also by
+an individual’s memories. Traumatic memories stored in the
+hippocampus can activate the amygdala, causing the amygdala,
+in turn, to activate other brain regions and generate a fear
+response. This is termed re-experiencing and is a particular
+feature of posttraumatic stress disorder.
+
+benzodiazepines hypothetically blunt fear-associated
+outputs, thereby reducing the symptom of fear (Figure
+8-17B). Benzodiazepines interacting at subtypes of
+GABAA receptors are discussed in Chapter 6 and
+illustrated in Figures 6-19 through 6-23. Benzodiazepines
+also theoretically modulate excessive output from
+worry loops (Figure 8-18A) by enhancing the actions of
+inhibitory interneurons in CSTC circuits (Figure 8-18B),
+thereby reducing the symptom of worry.
+
+ALPHA-2-DELTA LIGANDS AS
+ANXIOLYTICS
+We have discussed voltage-sensitive calcium channels
+(VSCCs) in Chapter 3 and have illustrated presynaptic N
+and P/Q subtypes of VSCCs and their role in excitatory
+neurotransmitter release (see Figures 3-18 and 3-22
+through 3-24). Gabapentin and pregabalin, also known
+as α2δ ligands since they bind to the α2δ subunit of
+presynaptic N and P/Q VSCCs, block the release of
+excitatory neurotransmitters such as glutamate that occurs
+when neurotransmission is excessive, as postulated in
+the amygdala to cause fear (Figure 8-17A) and in CSTC
+circuits to cause worry (Figure 8-18A). Hypothetically, α2δ
+ligands bind to open, overly active VSCCs in the amygdala
+(Figure 8-17C) to reduce fear, and in CSTC circuits (Figure
+8-18C) to reduce worry. The α2δ ligands pregabalin and
+
+
+
+
+<<<PAGE 393>>>
+
+Chapter 8: Anxiety, Trauma, and Treatment
+
+briefly in Chapter 7 and illustrated in Figures 7-87 and
+7-88. Ketamine is more extensively discussed in Chapter
+7 as well. Future research is trying to determine how
+to use psychotherapy to provoke emotional memories
+and reactivate them by producing a state where a
+pharmacological agent such as a hallucinogen producing
+a dissociative state, including ketamine as well as
+psilocybin or MDMA, could be administered to disrupt
+reconsolidation of these emotional memories and thereby
+relieve symptoms of anxiety, trauma, re-experiencing
+and other emotional memories of PTSD and anxiety
+disorders, and existential distress in terminally ill patients.
+These are early days in terms of applying this concept
+in clinical settings, but this notion supports the growing
+idea that psychotherapy and psychopharmacology can be
+synergistic. Much more needs to be learned as to how to
+exploit this theoretical synergy.
+
+TREATMENTS FOR ANXIETY
+DISORDER SUBTYPES
+Generalized Anxiety Disorder
+
+Psychopharmacological treatments for generalized
+anxiety disorder overlap greatly with those for
+other anxiety disorders and depression and include
+SSRIs, SNRIs, benzodiazepines, buspirone, and α2δ
+ligands such as pregabalin and gabapentin. While
+benzodiazepines should not be prescribed to a patient
+with generalized anxiety disorder who is abusing other
+substances, particularly alcohol, benzodiazepines can
+be useful in patients who are not substance abusers
+for short terms when initiating an SSRI or SNRI, since
+these serotonergic agents are often activating, difficult
+to tolerate early in dosing, and have a delayed onset
+of action. In other patients, benzodiazepines can be
+useful to “top up” an SSRI or SNRI for patients who
+have experienced only partial relief of symptoms and
+have stabilized on SSRI/SNRI therapy. Benzodiazepines
+can also be useful for occasional intermittent use when
+symptoms surge and sudden relief is needed. Alpha-2delta ligands are a good alternative to benzodiazepines
+in some patients. These ligands are approved for the
+treatment of anxiety in Europe and other countries
+but not in the US, yet can be useful “off-label” as
+augmenting agents.
+Other “off-label” treatments for anxiety can
+include mirtazapine, trazodone, vilazodone, tricyclic
+antidepressants, or even sedating antihistamines such as
+hydroxyzine.
+
+Panic Disorder
+
+Panic attacks occur in many conditions, not just panic
+disorder, and panic disorder is frequently comorbid with
+the other anxiety disorders and with major depression.
+It is thus not surprising that contemporary treatments
+for panic disorder overlap significantly with those for
+the other anxiety disorders and with those for major
+depression. Treatments include SSRIs and SNRIs, as
+well as benzodiazepines, and α2δ ligands. “Off-label”
+treatments of panic attacks in anxiety disorders can also
+include mirtazapine and trazodone. The monoamine
+oxidase inhibitors (MAOIs), discussed in Chapter 7, are
+much neglected in psychopharmacology in general and
+for the treatment of treatment-resistant panic disorder in
+particular. However, MAOIs can have powerful efficacy
+in panic and should be considered when other agents
+fail. Cognitive behavioral psychotherapy is both an
+alternative or an augmentation to psychopharmacological
+approaches, and can help modify cognitive distortions,
+and, through exposure, diminish phobic avoidance
+behaviors.
+Social Anxiety Disorder
+
+The treatment options for this anxiety disorder are
+very similar to those for panic disorder with a few
+noteworthy differences. The SSRIs and SNRIs and α2δ
+ligands are certainly useful treatments, but the utility
+of benzodiazepine is not as widely accepted as it might
+be for generalized anxiety disorder and panic disorder.
+There is also less evidence for the utility of older drugs for
+depression for use in social anxiety disorder. Beta blockers,
+sometimes with benzodiazepines, can be useful for some
+patients with very discrete types of social anxiety, such
+as performance anxiety. One drug that is (unfortunately)
+quite effective but obviously should not be used is alcohol
+for the treatment of social anxiety symptoms. Many
+patients of course are aware of this and abuse alcohol
+before they seek safer and more effective treatment.
+Cognitive behavioral psychotherapy can be a powerful
+intervention, sometimes better than drugs for certain
+patients, and often helpful in combination with drugs.
+PTSD
+
+Although some treatments such as certain SSRIs are
+approved for PTSD, psychopharmacological treatments
+for PTSD are not as effective as these same treatments are
+in anxiety disorders. Also, PTSD is so highly comorbid
+that many of the psychopharmacological treatments
+are more effectively aimed at comorbidities such as
+
+377
+
+8
+
+
+
+
+<<<PAGE 411>>>
+
+Chapter 9: Chronic Pain and Its Treatment
+
+SNRI Action Boosts 5HT Inhibition of Pain
+
+back
+pain
+
+stomach
+pain
+
+muscle/
+joint
+pain
+descending
+5HT
+projections
+
+= SNRI
+SNRI
+boosts 5HT
+
+back posture
+
+digestion
+
+muscle/joint movement
+
+C
+Figure 9-13C Enhancement of descending serotonergic inhibition. A serotonin–norepinephrine reuptake inhibitor (SNRI) can increase
+serotonergic neurotransmission in the descending spinal pathway to the dorsal horn, and thus may enhance inhibition of bodily input
+so that it does not reach the brain and get interpreted as pain. However, the noradrenergic effects of SNRIs may be more relevant to
+suppression of nociceptive input.
+
+changes within the pain pathways that facilitate
+survival and enhance function for the individual.
+However, maladaptive changes can also hijack these
+same mechanisms to inappropriately maintain pain
+without relevant tissue injury, as may occur in various
+forms of neuropathic pain, ranging from diabetes to
+fibromyalgia and beyond.
+
+TARGETING SENSITIZED
+CIRCUITS IN CHRONIC PAIN
+CONDITIONS
+Chronic pain perpetuated as a marker of an irreversible
+sensitization process within the central nervous system
+has already been discussed as a disorder triggered by
+progressive molecular changes due to abnormal neuronal
+activity within the pain pathway, sometimes called
+central sensitization. When this occurs at the spinal
+or segmental level, it is likely linked to the multiple
+different neurotransmitters released there, with each
+neurotransmitter’s release mechanism requiring presynaptic
+depolarization and activation of N-type and P/Q-type
+
+voltage-sensitive calcium channels (VSCCs; Figure 9-14),
+which is often coupled to the release of glutamate, but also
+to aspartate, substance P (SP), calcitonin-gene-related
+peptide (CGRP), and other neurotransmitters (Figure 9-2).
+When this occurs at suprasegmental levels in the thalamus
+and cortex, it is likely linked to release mostly of glutamate
+via the same N-type and P/Q-type VSCCs (Figures 9-14
+and 9-15). The idea is that low release of neurotransmitter
+creates no pain response because there is insufficient
+neurotransmitter release to stimulate the postsynaptic
+receptors (Figure 9-14A). However, normal amounts of
+neurotransmitter release cause a full nociceptive pain
+response and acute pain (Figure 9-14B). Hypothetically,
+in states of central sensitization, there is excessive
+and unnecessary ongoing nociceptive activity causing
+neuropathic pain (Figure 9-15A). Blocking VSCCs with the
+α2δ ligands gabapentin or pregabalin (Figures 9-15B and
+9-16) inhibits release of various neurotransmitters in the
+dorsal horn (Figures 9-2, 9-15B, and 9-17A) or in thalamus
+and cortex (Figures 9-15B and 9-17B) and has indeed
+proven to be an effective treatment for various disorders
+causing neuropathic pain. Gabapentin and pregabalin
+395
+
+9
+
+
+
+
+<<<PAGE 413>>>
+
+Chapter 9: Chronic Pain and Its Treatment
+
+Central Sensitization and
+Excessive Nociceptive Activity
+
+N
+P/Q
+
+N
+Q
+P/
+
+dorsal horn, thalamus,
+or cortex
+
+A
+
+Relief of Painful Excessive Nociceptive
+Activity in Central Sensitization
+
+neuropathic pain
+= alpha-2delta ligand
+
+N
+Q
+P/
+
+N
+P/Q
+
+9
+
+B
+
+neuropathic pain
+
+Figure 9-15 Activity-dependent nociception in pain pathways, part 2: neuropathic pain. The degree of nociceptive neuronal activity
+in pain pathways determines whether one experiences acute pain. An action potential on a presynaptic neuron triggers sodium
+influx, which in turn leads to calcium influx, and ultimately release of neurotransmitter. (A) Strong or repetitive action potentials can
+cause prolonged opening of calcium channels, which may lead to excessive release of neurotransmitter into the synaptic cleft, and
+consequently to excessive stimulation of postsynaptic neurons. Ultimately this may induce molecular, synaptic, and structural changes,
+including sprouting, which are the theoretical substrates for central sensitization syndromes. In other words, this can lead to neuropathic
+pain. (B) Alpha-2-delta ligands such as gabapentin or pregabalin bind to the α2δ subunit of voltage-sensitive calcium channels (VSCCs),
+changing their conformation to reduce calcium influx and therefore reduce excessive stimulation of postsynaptic receptors.
+
+397
+
+
+
+
+<<<PAGE 414>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+gabapentin
+
+Figure 9-16 Gabapentin and
+pregabalin. Shown here are icons
+of the pharmacological actions of
+gabapentin and pregabalin. These
+agents bind to the α2δ subunit of
+voltage-sensitive calcium channels
+(VSCCs).
+
+pregabalin
+
+VSCC
+2 site
+
+OUCH!
+
+VSCC
+2 site
+
+Figure 9-17 Anatomic actions of α2δ
+ligands. (A) Alpha-2-delta ligands
+may bind to voltage-sensitive calcium
+channels in the dorsal horn to reduce
+excitatory neurotransmission and
+alleviate pain. (B) Alpha-2-delta ligands
+may also bind to voltage-sensitive
+calcium channels in the thalamus
+and cortex to reduce excitatory
+neurotransmission and alleviate pain.
+
+OUCH!
+
+(Figure 9-16) may more selectively bind the “open-channel”
+conformation of VSCCs (Figures 9-17 and 9-18), and thus
+be particularly effective in blocking those channels that are
+the most active, with a “use-dependent” form of inhibition
+398
+
+(Figures 9-17B and 9-18B). This molecular action predicts
+more affinity for centrally sensitized VSCCs that are actively
+conducting neuronal impulses within the pain pathway.
+Thus, they have a selective action on those VSCCs causing
+
+
+
+
+<<<PAGE 415>>>
+
+Chapter 9: Chronic Pain and Its Treatment
+
+Molecular Action of Alpha-2-Delta Ligands
+A. Open conformation of VSCC
+inside the cell
+
+ß
+
+N
+P/Q
+
+outside the cell
+++
+Ca
+
+B. Alpha-2-delta ligand binding to open
+conformation and inhibiting VSCC
+
+ß
+
+N
+P/Q
+
+C. Closed conformation of VSCC
+
+ß
+
+N
+P/Q
+2
+
+Figure 9-18 Binding of α2δ ligands. (A) Calcium influx occurs
+when voltage-sensitive calcium channels (VSCCs) are in the
+open-channel conformation. (B) Alpha-2-delta ligands such as
+gabapentin and pregabalin have greatest affinity for the openchannel conformation and thus block those channels that are
+most active. (C) When VSCCs are in the closed conformation
+α2δ ligands do not bind and thus do not disrupt normal
+neurotransmission.
+
+neuropathic pain, ignoring other VSCCs that are not open,
+and thus not interfering with normal neurotransmission in
+central neurons uninvolved in mediating the pathological
+pain state.
+Treatment of pain, including neuropathic pain
+conditions, may be less costly when you “pay” for it
+
+in advance, or at least early in the game. The hope is
+that early treatment of pain could interfere with the
+development of chronic persistent painful conditions
+by blocking the ability of painful experiences to imprint
+themselves upon the central nervous system by not
+allowing triggering of central sensitization. Thus, the
+mechanisms whereby symptomatic suffering of chronic
+neuropathic pain is relieved, such as with SNRIs or α2δ
+ligands, may also be the same mechanisms that could
+prevent disease progression to chronic persistent pain
+states. This notion calls for aggressive treatment of
+painful symptoms in these conditions that theoretically
+have their origin within the central nervous system, thus
+“intercepting” the central sensitization process before
+it is durably imprinted into angry circuits. Thus, major
+depression and anxiety disorders and fibromyalgia can
+all be treated with SNRIs and/or α2δ ligands to eliminate
+painful physical symptoms and thereby improve the
+chances of reaching full symptomatic remission. The
+opportunity to prevent permanent pain syndromes
+or progressive worsening of pain is one reason why
+pain is increasingly being considered a psychiatric
+“vital sign” that must be assessed routinely in the
+evaluation and treatment of psychiatric disorders by
+psychopharmacologists. Future testing of agents capable
+of reducing pain should be done to determine whether
+eliminating painful symptoms early in the course of
+psychiatric and functional somatic illnesses will improve
+outcomes, including preventing symptomatic relapses,
+the development of treatment resistance or even brain
+atrophy from stress in pain states (Figure 9-9), and
+hippocampal atrophy from stress in anxiety and affective
+disorders (Figure 6-30). Pre-emptively treating pain
+before it occurs, or at least rescuing centrally mediated
+and sensitizing pain by intercepting such pain before it
+becomes permanent, may be some of the most promising
+therapeutic applications of dual reuptake inhibitors and
+α2δ ligands and deserves careful clinical evaluation.
+
+TARGETING ANCILLARY
+SYMPTOMS IN FIBROMYALGIA
+We have repeatedly mentioned the proven usefulness
+of the α2δ ligands gabapentin and pregabalin and
+the SNRIs duloxetine, milnacipran, venlafaxine, and
+desvenlafaxine for treating the painful symptoms of
+fibromyalgia, yet these two classes have not been studied
+extensively in combination. Nevertheless, they are
+frequently used together in clinical practice on an empiric
+basis and anecdotally have been shown to give additive
+399
+
+9
+
+
+
+
+<<<PAGE 442>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Hypothetical Actions
+of DORAs
+Wakefulness
+
+norepinephrine
+
+= DORA
+
+serotonin
+
+raphe
+LC
+
+histamine
+
+TMN
+
+basal
+forebrain
+
+PFC
+glutamate
+
+acetylcholine
+
+PPT/LDT
+
+LH/PH
+
+What Is Diphenhydramine’s (Benadryl’s)
+Mechanism as a Hypnotic?
+
+thalamus
+
+H1 antagonists have only been anecdotally associated
+with tolerance, but not with withdrawal, dependence, or
+rebound.
+Anticonvulsants as Hypnotics
+
+M1
+
+H
+1
+
+diphenhydramine
+
+Figure 10-38 Diphenhydramine. Diphenhydramine is a
+histamine 1 (H1) receptor antagonist commonly used as a
+hypnotic. However, this agent is not selective for H1 receptors
+and thus can also have additional effects. Specifically,
+diphenhydramine is also a muscarinic 1 (M1) receptor antagonist
+and thus can have anticholinergic effects (blurred vision,
+constipation, memory problems, dry mouth).
+
+antagonist (Figure 10-39), without either unwanted
+anticholinergic properties, or the serotonin and
+norepinephrine reuptake blocking properties that make
+it a drug for depression at high doses (Figure 10-39). In
+fact, doxepin is so selective at low doses that it is even
+being used in trace doses as a PET ligand to label central
+nervous system H1 receptors selectively. At clinical doses
+much smaller than those necessary for its antidepressant
+actions, doxepin occupies a substantial number of central
+nervous system H1 receptors (Figures 10-39 and 10-40)
+and has proven hypnotic actions. Blocking one of the
+most important arousal neurotransmitters histamine and
+its actions at H1 receptors is clearly an effective way to
+induce sleep.
+426
+
+Figure 10-37 Hypothetical actions
+of dual orexin receptor antagonists
+(DORAs). By blocking orexin receptors,
+and particularly orexin 2 receptors,
+DORAs prevent orexin from promoting
+the release of other wake-promoting
+neurotransmitters.
+
+Anticonvulsants are not approved for the treatment of
+insomnia but some are prescribed off-label in order to
+promote sleep, especially gabapentin and pregabalin. The
+mechanism of action of these agents as open-channel,
+N and P/Q voltage-gated ion-channel inhibitors, also
+called α2δ ligands, is explained in Chapter 9 on pain and
+illustrated in Figures 9-15 through 9-18. These α2δ ligands
+are approved not only for pain and epilepsy, but in some
+countries for anxiety, and their anxiolytic actions are
+explained in Chapter 8 on anxiety and illustrated in Figures
+8-17 and 8-18. Although not particularly sedating, the α2δ
+ligands pregabalin and gabapentin can enhance slow-wave
+sleep, restorative sleep, and assist in the improvement of
+pain.
+Hypnotic Actions and Pharmacokinetics: Your Sleep Is
+at the Mercy of Your Drug Levels!
+
+So far in this chapter, we have discussed the
+pharmacodynamic properties of drugs to treat insomnia;
+that is, their pharmacological mechanism of action. Many
+areas of psychopharmacology involve drugs classified
+by their immediate molecular actions, but that have
+important delayed molecular events that are more clearly
+linked to their therapeutic effects, which are also often
+delayed. This is not so for drugs with hypnotic actions. For
+sleep-inducing agents, their immediate pharmacological
+
+
+
+
+<<<PAGE 546>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Neurodegeneration in Dementia Compromises
+Top-Down Inhibition: Motor Output
+
+top-down inhibition
+
+Figure 12-45B Neurodegeneration
+in dementia compromises topdown inhibition: motor output. (1)
+Accumulation of Aβ plaques and tau
+tangles destroys glutamate neurons
+projecting to the striatum and thus
+reduces top-down cortical inhibition.
+(2) GABA input into the thalamus is
+insufficient and sensory input is not
+adequately filtered. (3) Excessive
+thalamic output directly to the cortex
+and (4) via the amygdala generates a
+reflexive motor response.
+
+agitation
+cortex
+
+4
+
+3
+1
+
+2
+
+striatum
+
+amygdala
+
++
++
++
+
+thalamus
+
+Up until now, treatments of agitation in AD have not
+been particularly effective, including dopamine receptor
+blockers already mentioned. In the absence of any
+approved agents, first-line pharmacological treatment
+of agitation and aggression in dementia is actually
+considered by many experts to be therapy with selective
+serotonin reuptake inhibitors (SSRIs) and serotonin–
+norepinephrine reuptake inhibitors (SNRIs), which can
+help some patients. Second-line treatments that may help
+avoid use of dopamine receptor blocking drugs include
+β blockers, carbamazepine, and perhaps gabapentin and
+pregabalin, but not valproate, topiramate, oxcarbazepine,
+or benzodiazepines. Unfortunately, in addition to
+not causing robust efficacy, many of these agents are
+associated with significant side effects including sedation,
+unsteady gait, diarrhea, and weakness. Carbamazepine has
+perhaps shown the greatest efficacy amongst unapproved
+drugs so far in treating neuropsychiatric symptoms of
+dementia but has significant side-effect risks and may
+interact with other medications commonly prescribed to
+elderly patients. Cholinesterase inhibitors have little if any
+benefit for most of the behavioral symptoms of dementia
+except in patients with Lewy body dementias.
+530
+
+sensory input
+
+Targeting Multimodal Neurotransmitters
+(Norepinephrine, Serotonin, and Dopamine) for the
+Symptomatic Treatment of Agitation in Alzheimer
+Disease
+
+Brexpiprazole is a serotonin–dopamine–norepinephrine
+antagonist/partial agonist discussed in Chapter 5 as
+one of the drugs approved to treat psychosis (Figure
+5-57) and in Chapter 7 as one of the drugs to augment
+SSRIs/SNRI to treat unipolar major depression. This
+agent combines several simultaneous mechanisms to
+quell the excessive activity of the agitation network in
+AD: namely by its well-known dopamine D2 partial
+agonist actions combined with 5HT1A partial agonist
+and 5HT2A antagonist actions, as well as by its relatively
+unique additional actions blocking both α1- and α2adrenergic receptors (Figure 5-57 and Figure 12-47).
+Despite brexpiprazole having a warning for increased
+mortality in dementia-related psychosis, using this
+agent for agitation in AD and in doses lower than those
+generally used to treat psychosis in schizophrenia may
+provide a greater safety margin, especially since it is
+the hypothetical synergy of its five actions that leads to
+therapeutic efficacy in agitation of AD (Figure 12-47).
+
+
+
+
+<<<PAGE 636>>>
+
+Index
+
+neurofibrillary tangles, 488, 502, 503
+neuroinflammation, 270
+neuroleptic-induced deficit syndrome,
+162
+neuroleptic malignant syndrome, 169
+neuroleptics, 162
+neuronal cell loss, 488, 490, 491
+neurons, 1, 2
+general structure, 2
+neuropathic pain, 380, 382–90, See also
+fibromyalgia
+central mechanisms, 382–6
+peripheral mechanisms, 382
+neuropathic pain syndromes, 380
+neuropeptides, 35
+neuroplasticity and neuroprogression
+hypothesis of depression, 266–76
+neurotransmission, 1, See also chemical
+neurotransmission
+anatomical basis of, 1–5
+neurotransmitters, 5–6
+enzymes as. See enzymes
+psychosis pathways, 79
+transporters. See transporters
+neurotrophic factors, loss of, 266, 268
+neurotrophin-linked systems, 11, 12
+neutropenia, 224
+NGF (nerve growth factor), 6
+nicotine, 63, 466, 547–53
+alternative forms of delivery, 551
+treatment of addiction, 548–53
+nicotinic receptors, 506, 507–9, 548
+nigrostriatal dopamine pathway, 87–9
+nitric oxide, 6
+nitric oxide synthase, 295
+NMDA antagonism, 328, 330, 355
+NMDA glutamate hypofunction
+hypothesis of psychosis, 105–14
+NMDA glutamate receptors, 97–101, 104
+histamine at, 406
+hypofunction, 111, 114
+NMDA receptor activation, 375
+nociception, 380, 381
+pain pathways, 396
+nociceptive nerve fibers, activation, 381
+nociceptive pathway, 381
+from the spinal cord to the brain,
+382–4
+to the spinal cord, 381–2
+non-24-hour sleep–wake disorder, 437,
+438
+non-REM sleep, 413, 414
+noradrenaline. See norepinephrine
+noradrenergic hyperactivity, 370–2
+norepinephrine, 5, 252–6, 370
+action termination, 253
+inefficient tuning of prefrontal cortex
+by, 454–63
+620
+
+projections, 279
+synthesis, 252
+norepinephrine–dopamine reuptake
+inhibitors (NDRIs), 303–6, 333
+norepinephrine receptors, 254–6, 258
+norepinephrine transporters (NETs),
+31, 254
+norepinephrine transporter (NET)
+inhibition, 294, 298–303, 370
+ADHD, 480–4
+norquetiapine, 227
+NRX101, 237
+NSAIDs (nonsteroidal anti-inflammatory
+drugs), 382
+nucleosomes, 23
+nucleus accumbens, 162
+obesity, 198, 415, 575
+obsessive–compulsive disorder (OCD),
+295, 360, 576–7
+obstructive sleep apnea, 430, 431, 434,
+443
+olanzapine, 218, 225
+fluoxetine combination, 293, 326, 343
+ondansetron, 556
+OPC4392, 193
+open state, 63
+opiates, 559
+opioid use disorder, 355
+opioids, 375, 390, 556, 559
+abstinence, 573
+addiction, 559–60
+addiction, treatment of, 560–2
+endogenous neurotransmitter system,
+559
+orbital frontal cortex, 454
+orexin, 409, 435
+dual orexin receptor antagonists,
+423–4, 430
+orexin receptors, 407
+orexins, 406–11
+oxcarbazepine, 352
+oxycodone (OxyContin), 559
+pain, 379–84, See also chronic pain
+definition, 380
+in dementia, 537
+mood and anxiety disorders and, 387
+paliperidone, 223, 235
+PAMs (positive allosteric modulators),
+64–6, 421–3
+panic attacks, 361, 377, 569
+panic disorder, 361, 372, 377
+paralytic ileus, 167, 183
+paranoid psychosis, 78
+parkinsonism, drug-induced, 165, 166–9,
+181
+Parkinson’s disease, 338
+
+Alzheimer disease comorbidity, 494
+cognitive dysfunction, 493
+Parkinson’s disease dementia, 492–5
+Parkinson’s disease psychosis, 78, 133,
+136, 139, 157, 524
+paroxetine, 294, 295
+partial agonists, 41, 43–4, 57–61, 189–95,
+204–41
+Pavlov’s dogs, 370
+pentameric ligand-gated ion channels, 53
+perceptual distortions, 78
+periaqueductal gray, 390
+peripheral pain, 379
+perospirone, 233, 241
+PET scans
+beta-amyloid, 499, 501
+FDG PET, 490, 492, 502
+pharmacodynamics, 49
+pharmacokinetics, 49
+hypnotic actions, 426–30
+pharmacological extinction, 573
+phasic dopamine system, 455
+phasic inhibition, 259
+phencyclidine, 106, 569–71
+phosphatase, third messenger, 15, 16
+phosphoprotein cascades, 15–18
+phosphoprotein messenger, 13–15
+pimavanserin, 231, 240, 526
+pitolisant, 444
+plasma membrane transporters, 30
+polygenic risk score, 150
+polysomnography, 420, 431
+positive affect, 278, 280, 306
+positive symptoms, 90, 141, 156
+psychosis, 92–3
+postsynaptic dopamine receptors, 81
+posttraumatic stress disorder (PTSD),
+360, 362
+drug treatment, 196
+fear conditioning, 372
+treatments for, 377, 568, 574
+prazocin, 370
+predementia AD, 500–2
+prefrontal cortex
+disorder of the, 449–53, 463
+dopamine neurotransmission, 8
+dorsolateral, 387, 400, 449
+GABA interneurons, 105–10
+increased dopamine in, 299–302
+inefficient tuning of, 454–63
+ventromedial, 372, 374
+pregabalin, 352, 366, 395, 426
+presymptomatic stage of Alzheimer
+disease, 499–501
+presynaptic dopamine receptors, 81, 82
+primary afferent neurons, 380, 381
+primary transcript, 26
+prisons, 146, 156
+
+

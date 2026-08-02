@@ -1,0 +1,1686 @@
+<<<PAGE 8>>>
+
+0521011698pre.qxd
+
+9/13/04
+
+10:34 AM
+
+Page vii
+
+Table of contents
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+25.
+26.
+27.
+28.
+29.
+30.
+31.
+32.
+33.
+
+Introduction
+
+xi
+
+List of icons
+
+xiii
+
+alprazolam
+amisulpride
+amitriptyline
+amoxapine
+aripiprazole
+atomoxetine
+bupropion
+buspirone
+carbamazepine
+chlordiazepoxide
+chlorpromazine
+citalopram
+clomipramine
+clonazepam
+clonidine
+clorazepate
+clozapine
+d-amphetamine
+desipramine
+diazepam
+d,l-amphetamine
+d,l-methylphenidate
+d-methylphenidate
+donepezil
+dothiepin
+doxepin
+duloxetine
+escitalopram
+estazolam
+flumazenil
+flunitrazepam
+fluoxetine
+flupenthixol
+
+1
+7
+13
+19
+25
+31
+37
+43
+47
+53
+57
+63
+69
+75
+81
+87
+91
+97
+103
+109
+115
+121
+127
+133
+139
+145
+151
+157
+163
+167
+171
+175
+181
+vii
+
+
+
+
+<<<PAGE 32>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 15
+
+(continued) AMITRIPTYLINE
+
+• Tolerance to sedative effects may develop
+with long-term use
+
+Long-Term Use
+
+What To Do About Side Effects
+
+Habit Forming
+
+• Wait
+• Wait
+• Wait
+• Lower the dose
+• Switch to an SSRI or newer antidepressant
+
+• No
+
+Best Augmenting Agents for Side
+Effects
+• Many side effects cannot be improved with
+an augmenting agent
+
+DOSING AND USE
+Usual Dosage Range
+• 50–150 mg/day
+
+Dosage Forms
+• Capsule 25 mg, 50 mg, 100 mg
+
+How to Dose
+• Initial 25 mg/day at bedtime; increase by
+25 mg every 3–7 days
+• 75 mg/day in divided doses; increase to
+150 mg/day; maximum 300 mg/day
+
+Dosing Tips
+• If given in a single dose, should generally
+be administered at bedtime because of its
+sedative properties
+• If given in split doses, largest dose should
+generally be given at bedtime because of
+its sedative properties
+• If patients experience nightmares, split
+dose and do not give large dose at bedtime
+• Patients treated for chronic pain may only
+require lower doses
+• If intolerable anxiety, insomnia, agitation,
+akathisia, or activation occur either upon
+dosing initiation or discontinuation,
+consider the possibility of activated bipolar
+disorder, and switch to a mood stabilizer or
+an atypical antipsychotic
+
+Overdose
+• Death may occur; CNS depression,
+convulsions, cardiac dysrhythmias, severe
+hypotension, ECG changes, coma
+
+• Safe
+
+How to Stop
+• Taper to avoid withdrawal effects
+• Even with gradual dose reduction, some
+withdrawal symptoms may appear within
+the first 2 weeks
+• Many patients tolerate 50% dose reduction
+for 3 days, then another 50% reduction for
+3 days, then discontinuation
+• If withdrawal symptoms emerge during
+discontinuation, raise dose to stop
+symptoms and then restart withdrawal
+much more slowly
+
+Pharmacokinetics
+• Substrate for CYP450 2D6 and 1A2
+• Plasma half-life 10–28 hours
+• Metabolized to an active metabolite,
+nortriptyline, which is predominantly a
+norepinephrine reuptake inhibitor, by
+demethylation via CYP450 1A2
+
+Drug Interactions
+• Tramadol increases the risk of seizures in
+patients taking TCAs
+• Use of TCAs with anticholinergic drugs
+may result in paralytic ileus or
+hyperthermia
+• Fluoxetine, paroxetine, bupropion,
+duloxetine, and other CYP450 2D6
+inhibitors may increase TCA concentrations
+• Fluvoxamine, a CYP450 1A2 inhibitor, can
+decrease the conversion of amitriptyline to
+nortriptyline and increase amitriptyline
+plasma concentrations
+• Cimetidine may increase plasma
+concentrations of TCAs and cause
+anticholinergic symptoms
+• Phenothiazines or haloperidol may raise
+TCA blood concentrations
+• May alter effects of antihypertensive drugs;
+may inhibit hypotensive effects of clonidine
+• Use of TCAs with sympathomimetic agents
+may increase sympathetic activity
+• Methylphenidate may inhibit metabolism of
+TCAs
+• Activation and agitation, especially
+following switching or adding
+
+15
+
+
+
+
+<<<PAGE 54>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 37
+
+BUPROPION
+THERAPEUTICS
+Brands • Wellbutrin, Wellbutrin SR,
+Wellbutrin XL
+• Zyban
+see index for additional brand names
+
+Generic? Yes (bupropion and bupropion
+SR)
+
+Class
+• NDRI (norepinephrine dopamine reuptake
+inhibitor); antidepressant; smoking
+cessation treatment
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Major depressive disorder (bupropion,
+bupropion SR, and bupropion XL)
+• Nicotine addiction (bupropion SR)
+• Bipolar depression
+• Attention deficit / hyperactivity disorder
+• Sexual dysfunction
+
+How The Drug Works
+• Boosts neurotransmitters
+norepinephrine/noradrenaline and
+dopamine
+• Blocks norepinephrine reuptake pump
+(norepinephrine transporter), presumably
+increasing norepinephrine
+neurotransmission
+• Since dopamine is inactivated by
+norepinephrine reuptake in frontal cortex,
+which largely lacks dopamine transporters,
+bupropion can increase dopamine
+neurotransmission in this part of the brain
+• Blocks dopamine reuptake pump
+(dopamine transporter), presumably
+increasing dopaminergic
+neurotransmission
+
+How Long Until It Works
+• Onset of therapeutic actions usually not
+immediate, but often delayed 2 to 4 weeks
+• If it is not working within 6 to 8 weeks for
+depression, it may require a dosage
+increase or it may not work at all
+• May continue to work for many years to
+prevent relapse of symptoms
+
+If It Works
+• The goal of treatment of depression is
+complete remission of current symptoms
+as well as prevention of future relapses
+• Treatment of depression most often
+reduces or even eliminates symptoms, but
+is not a cure since symptoms can recur
+after medicine stopped
+• Continue treatment of depression until all
+symptoms are gone (remission)
+• Once symptoms of depression are gone,
+continue treating for 1 year for the first
+episode of depression
+• For second and subsequent episodes of
+depression, treatment may need to be
+indefinite
+• Treatment for nicotine addiction should
+consist of a single treatment for 6 weeks
+
+If It Doesn’t Work
+• Many patients only have a partial response
+where some symptoms are improved but
+others persist (especially insomnia, fatigue,
+and problems concentrating)
+• Other patients may be nonresponders,
+sometimes called treatment-resistant or
+treatment-refractory
+• Some patients who have an initial response
+may relapse even though they continue
+treatment, sometimes called “poop-out”
+• Consider increasing dose, switching to
+another agent or adding an appropriate
+augmenting agent
+• Consider psychotherapy
+• Consider evaluation for another diagnosis
+or for a comorbid condition (e.g., medical
+illness, substance abuse, etc.)
+• Some patients may experience apparent
+lack of consistent efficacy due to activation
+of latent or underlying bipolar disorder, and
+require antidepressant discontinuation and
+a switch to a mood stabilizer, although this
+may be a less frequent problem with
+bupropion than with other antidepressants
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+• Trazodone for residual insomnia
+• Benzodiazepines for residual anxiety
+✽ Can be added to SSRIs to reverse SSRIinduced sexual dysfunction, SSRI-induced
+apathy (use combinations of
+antidepressants with caution as this may
+
+37
+
+
+
+
+<<<PAGE 55>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 38
+
+BUPROPION (continued)
+activate bipolar disorder and suicidal
+ideation)
+✽ Can be added to SSRIs to treat partial
+responders
+✽ Often used as an augmenting agent to
+mood stabilizers and/or atypical
+antipsychotics in bipolar depression
+• Mood stabilizers or atypical antipsychotics
+can also be added to bupropion for
+psychotic depression or treatment-resistant
+depression
+• Hypnotics for insomnia
+• Mirtazapine, modafinil, atomoxetine (add
+with caution and at lower doses since
+bupropion could theoretically raise
+atomoxetine levels) both for residual
+symptoms of depression and attention
+deficit disorder
+
+Weight Gain
+
+• Reported but not expected
+
+Sedation
+
+• Reported but not expected
+
+What To Do About Side Effects
+
+Tests
+• None for healthy individuals
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• Side effects are probably caused in part by
+actions of norepinephrine and dopamine in
+brain areas with undesired effects (e.g.,
+insomnia, tremor, agitation, headache,
+dizziness)
+• Side effects are probably also caused in
+part by actions of norepinephrine in the
+periphery with undesired effects (e.g.,
+sympathetic and parasympathetic effects
+such as dry mouth, constipation, nausea,
+anorexia, sweating)
+• Most side effects are immediate but often
+go away with time
+
+Notable Side Effects
+• Dry mouth, constipation, nausea, weight
+loss, anorexia
+• Insomnia, dizziness, headache, agitation,
+tremor, abdominal pain, tinnitus
+• Sweating
+• Hypertension (rare)
+
+Life Threatening or
+Dangerous Side Effects
+• Rare seizures (higher incidence for
+immediate release than for sustained
+release; risk increases with doses above
+the recommended maximums; risk
+38
+
+increases for patients with predisposing
+factors)
+• Hypomania (more likely in bipolar patients
+but perhaps less common than with some
+other antidepressants)
+• Rare induction of mania and activation of
+suicidal ideation
+
+• Wait
+• Wait
+• Wait
+• Keep dose as low as possible
+• Take no later than mid-afternoon to avoid
+insomnia
+• Switch to another drug
+
+Best Augmenting Agents for Side
+Effects
+• Often best to try another antidepressant
+monotherapy prior to resorting to
+augmentation strategies to treat side
+effects
+• Trazodone or a hypnotic for drug-induced
+insomnia
+• Mirtazapine for insomnia, agitation, and
+gastrointestinal side effects
+• Benzodiazepines or buspirone for druginduced anxiety, agitation
+• Many side effects are dose-dependent (i.e.,
+they increase as dose increases, or they
+reemerge until tolerance re-develops)
+• Many side effects are time-dependent (i.e.,
+they start immediately upon dosing and
+upon each dose increase, but go away with
+time)
+• Activation and agitation may represent the
+induction of a bipolar state, especially a
+mixed dysphoric bipolar II condition
+sometimes associated with suicidal
+ideation, and require the addition of
+lithium, a mood stabilizer or an atypical
+antipsychotic, and/or discontinuation of
+bupropion
+
+
+
+
+<<<PAGE 56>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 39
+
+(continued) BUPROPION
+
+DOSING AND USE
+Usual Dosage Range
+• Bupropion: 225–450 mg in 3 divided doses
+(maximum single dose 150 mg)
+• Bupropion SR: 200–450 mg in 2 divided
+doses (maximum single dose 200 mg)
+• Bupropion XL: 150–450 mg once daily
+
+Dosage Forms
+• Bupropion: tablet 75 mg, 100 mg
+• Bupropion SR (sustained release): tablet
+100 mg, 150 mg, 200 mg
+• Bupropion XL (extended release): tablet
+150 mg, 300 mg
+
+How to Dose
+• Depression: for bupropion immediate
+release, dosing should be in divided doses,
+starting at 75 mg twice daily, increasing to
+100 mg twice daily, then to 100 mg 3 times
+daily; maximum dose 450 mg per day
+• Depression: for bupropion SR, initial dose
+100 mg twice a day, increase to 150 mg
+twice a day after at least 3 days; wait 4
+weeks or longer to ensure drug effects
+before increasing dose; maximum dose
+400 mg total per day
+• Depression: for bupropion XL, initial dose
+150 mg once daily in the morning; can
+increase to 300 mg QD after 4 days;
+maximum dose 450 mg once daily
+• Nicotine addiction [for bupropion SR]:
+Initial dose 150 mg/day once a day,
+increase to 150 mg twice a day after at
+least 3 days; maximum dose 300 mg/day;
+bupropion treatment should begin
+1–2 weeks before smoking is discontinued
+
+450 mg/day, experts can prudently increase
+dosing beyond the therapeutic range while
+monitoring closely, informing the patient of
+the potential risk of seizures and weighing
+risk benefit ratios in difficult-to-treat
+patients
+• When used for bipolar depression, it is
+usually as an augmenting agent to mood
+stabilizers, lithium, and/or atypical
+antipsychotics
+• For smoking cessation, may be used in
+conjunction with nicotine replacement
+therapy
+• Do not break or chew SR or XL tablets as
+this will alter controlled release properties
+• The more anxious and agitated the patient,
+the lower the starting dose, the slower the
+titration, and the more likely the need for a
+concomitant agent such as trazodone or a
+benzodiazepine
+• If intolerable anxiety, insomnia, agitation,
+akathisia, or activation occur either upon
+dosing initiation or discontinuation,
+consider the possibility of activated bipolar
+disorder and switch to a mood stabilizer or
+an atypical antipsychotic
+
+Overdose
+• Rarely lethal; seizures, cardiac
+disturbances, hallucinations, loss of
+consciousness
+
+Long-Term Use
+• For smoking cessation, treatment for up to
+6 months has been found effective
+
+Habit Forming
+• No
+
+How to Stop
+Dosing Tips
+• XL formulation has replaced immediate
+release and SR formulations as the
+preferred option
+• XL is best dosed once a day, whereas SR is
+best dosed twice daily, and immediate
+release is best dosed 3 times daily
+• Dosing higher than 450 mg/day
+(400 mg/day SR) increases seizure risk
+• Patients who do not respond to
+450 mg/day should discontinue use or get
+blood levels of bupropion and its major
+active metabolite 6-hydroxy-bupropion
+• If levels of parent drug and active
+metabolite are low despite dosing at
+
+• Tapering is prudent to avoid withdrawal
+effects, but no well-documented tolerance,
+dependence, or withdrawal reactions
+
+Pharmacokinetics
+• Inhibits CYP450 2D6
+• Parent half-life 10–14 hours
+• Metabolite half-life 20–27 hours
+
+Drug Interactions
+• Tramadol increases the risk of seizures in
+patients taking an antidepressant
+• Can increase tricyclic antidepressant levels;
+use with caution with tricyclic
+39
+
+
+
+
+<<<PAGE 57>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 40
+
+BUPROPION (continued)
+antidepressants or when switching from a
+TCA to bupropion
+• Can be fatal when combined with MAO
+inhibitors, so do not use with MAO
+inhibitors or for at least 14 days after
+MAOIs are stopped
+• Do not start an MAO inhibitor for at least
+two weeks after discontinuing bupropion
+• Via CYP450 2D6 inhibition, bupropion
+could theoretically interfere with the
+analgesic actions of codeine, and increase
+the plasma levels of some beta blockers
+and of atomoxetine
+• Via CYP450 2D6 inhibition, bupropion
+could theoretically increase concentrations
+of thioridazine and cause dangerous
+cardiac arrhythmias
+
+Other Warnings/
+Precautions
+• Use cautiously with other drugs that increase
+seizure risk (TCAs, lithium, phenothiazines,
+thioxanthenes, some antipsychotics)
+• Bupropion should be used with caution in
+patients taking levodopa or amantadine, as
+these agents can potentially enhance
+dopamine neurotransmission and be
+activating
+• Do not use if patient has severe insomnia
+• Use with caution in patients with bipolar
+disorder unless treated with concomitant
+mood stabilizing agent
+• Monitor patients for activation of suicidal
+ideation, especially children and
+adolescents
+
+Do Not Use
+• Zyban in combination with any formulation
+of Wellbutrin
+• If patient has history of seizures
+• If patient is anorexic or bulimic, either
+currently or in the past, but see Pearls
+• If patient is abruptly discontinuing alcohol
+or sedative use
+• If patient has had recent head injury
+• If patient has a nervous system tumor
+• If patient is taking an MAO inhibitor
+• If patient is taking thioridazine
+• If there is a proven allergy to bupropion
+
+40
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Lower initial dose, perhaps give less
+frequently
+• Drug concentration may be increased
+• Patient should be monitored closely
+
+Hepatic Impairment
+• Lower initial dose, perhaps give less
+frequently
+• Patient should be monitored closely
+• In severe hepatic cirrhosis, bupropion XL
+should be administered at no more than
+150 mg every other day
+
+Cardiac Impairment
+• Limited available data
+• Evidence of rise in supine blood pressure
+• Use with caution
+
+Elderly
+• Some patients may tolerate lower doses
+better
+
+Children and Adolescents
+• Use with caution, observing for activation
+of known or unknown bipolar disorder
+and/or suicidal ideation, and strongly
+consider informing parents or guardian of
+this risk so they can help observe child or
+adolescent patients
+• Safety and efficacy have not been
+established
+• May be used for ADHD in children or
+adolescents
+• May be used for smoking cessation in
+adolescents
+• Preliminary research suggests efficacy in
+comorbid depression and ADHD
+• Dosage may follow adult pattern for
+adolescents
+• Children may require lower doses initially,
+with a maximum dose of 300 mg/day
+
+Pregnancy
+• Risk Category B [animal studies do not
+show adverse effects; no controlled studies
+in humans]
+• Pregnant women wishing to stop smoking
+may consider behavioral therapy before
+pharmacotherapy
+
+
+
+
+<<<PAGE 58>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 41
+
+(continued) BUPROPION
+
+• Not generally recommended for use during
+pregnancy, especially during first trimester
+• Must weigh the risk of treatment (first
+trimester fetal development, third trimester
+newborn delivery) to the child against the
+risk of no treatment (recurrence of
+depression, maternal health, infant
+bonding) to the mother and child
+• For many patients this may mean
+continuing treatment during pregnancy
+
+Breast Feeding
+• Some drug is found in mother’s breast milk
+• If child becomes irritable or sedated, breast
+feeding or drug may need to be
+discontinued
+• Immediate postpartum period is a high-risk
+time for depression, especially in women
+who have had prior depressive episodes,
+so drug may need to be reinstituted late in
+the third trimester or shortly after
+childbirth to prevent a recurrence during
+the postpartum period
+• Must weigh benefits of breast feeding with
+risks and benefits of antidepressant
+treatment versus non-treatment to both the
+infant and the mother
+• For many patients, this may mean
+continuing treatment during breast feeding
+
+THE ART OF PSYCHOPHARMACOLOGY
+Potential Advantages
+• Retarded depression
+• Atypical depression
+• Bipolar depression
+• Patients concerned about sexual
+dysfunction
+• Patients concerned about weight gain
+
+Pearls
+
+✽ May be effective if SSRIs have failed or
+
+for SSRI “poop-out”
+• Less likely to produce hypomania than
+some other antidepressants
+✽ May improve cognitive
+slowing/pseudodementia
+✽ Reduces hypersomnia and fatigue
+• Approved to help reduce craving during
+smoking cessation
+• Anecdotal use in attention deficit disorder
+• May cause sexual dysfunction only
+infrequently
+• May exacerbate tics
+• Bupropion may not be as effective in
+anxiety disorders as many other
+antidepressants
+• Prohibition for use in eating disorders is
+related to past observations when
+bupropion immediate release was dosed at
+especially high levels to low body weight
+patients with active anorexia nervosa
+• Current practice suggests that patients of
+normal BMI without additional risk factors
+for seizures can benefit from bupropion,
+especially if given prudent doses of the XL
+formulation; such treatment should be
+administered by experts, and patients
+should be monitored closely and informed
+of the potential risks
+• The active enantiomer of the principle
+active metabolite (+6-hydroxy-bupropion)
+is in clinical development as a novel
+antidepressant
+
+Potential Disadvantages
+• Patients experiencing weight loss
+associated with their depression
+• Patients who are excessively activated
+
+Primary Target Symptoms
+• Depressed mood
+• Sleep disturbance, especially hypersomnia
+• Cravings associated with nicotine
+withdrawal
+• Cognitive functioning
+
+41
+
+
+
+
+<<<PAGE 59>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 42
+
+BUPROPION (continued)
+
+Suggested Reading
+Ferry L, Johnston JA. Efficacy and safety of
+bupropion SR for smoking cessation: data
+from clinical trials and five years of
+postmarketing experience. Int J Clin Pract
+2003;57(3):224–30.
+
+Masand PS, Gupta S. Long-term side effects
+of newer-generation antidepressants: SSRIs,
+venlafaxine, nefazodone, bupropion, and
+mirtazapine. Ann Clin Psychiatry
+2002;14(3):175–82.
+
+Hirschfeld RM. Efficacy of SSRIs and newer
+antidepressants in severe depression:
+comparison with TCAs. Journal of Clinical
+Psychiatry 1999;60:326–335.
+
+Nieuwstraten CE, Dolovich LR. Bupropion
+versus selective serotonin-reuptake inhibitors
+for treatment of depression. Ann
+Pharmacother 2001;35(12):1608–13.
+
+Horst WD, Preskorn SH. Mechanisms of
+action and clinical characteristics of three
+atypical antidepressants: venlafaxine,
+nefazodone, bupropion. Journal of Affective
+Disorders 1998;51:237–254.
+
+42
+
+
+
+
+<<<PAGE 193>>>
+
+0521011698s04.qxd
+
+9/2/04
+
+2:34 PM
+
+Page 176
+
+FLUOXETINE (continued)
+• Modafinil, especially for fatigue, sleepiness,
+and lack of concentration
+• Mood stabilizers or atypical antipsychotics
+for bipolar depression, psychotic
+depression, treatment-resistant depression,
+or treatment-resistant anxiety disorders
+✽ Fluoxetine has been specifically studied in
+combination with olanzapine (olanzapinefluoxetine combination) with excellent
+results for bipolar depression, treatmentresistant unipolar depression, and
+psychotic depression
+• Benzodiazepines
+• If all else fails for anxiety disorders,
+consider gabapentin or tiagabine
+• Hypnotics for insomnia
+• Classically, lithium, buspirone, or thyroid
+hormone
+
+• Mostly central nervous system (insomnia
+but also sedation, agitation, tremors,
+headache, dizziness)
+• Note: patients with diagnosed or
+undiagnosed bipolar or psychotic disorders
+may be more vulnerable to CNS-activating
+actions of SSRIs
+• Autonomic (sweating)
+• Bruising and rare bleeding
+
+Life Threatening or
+Dangerous Side Effects
+• Rare seizures
+• Rare induction of mania and activation of
+suicidal ideation
+
+Weight Gain
+
+Tests
+• None for healthy individuals
+
+SIDE EFFECTS
+
+• Reported but not expected
+• Possible weight loss, especially short-term
+
+Sedation
+
+How Drug Causes Side Effects
+• Theoretically due to increases in serotonin
+concentrations at serotonin receptors in
+parts of the brain and body other than
+those that cause therapeutic actions (e.g.,
+unwanted actions of serotonin in sleep
+centers causing insomnia, unwanted
+actions of serotonin in the gut causing
+diarrhea, etc.)
+• Increasing serotonin can cause diminished
+dopamine release and might contribute to
+emotional flattening, cognitive slowing, and
+apathy in some patients
+• Most side effects are immediate but often
+go away with time, in contrast to most
+therapeutic effects which are delayed and
+are enhanced over time
+✽ Fluoxetine’s unique 5HT2C antagonist
+properties could contribute to agitation,
+anxiety, and undesirable activation,
+especially early in dosing
+
+Notable Side Effects
+• Sexual dysfunction (men: delayed
+ejaculation, erectile dysfunction; men and
+women: decreased sexual desire,
+anorgasmia)
+• Gastrointestinal (decreased appetite,
+nausea, diarrhea, constipation, dry mouth)
+
+176
+
+• Reported but not expected
+
+What To Do About Side Effects
+• Wait
+• Wait
+• Wait
+• If fluoxetine is activating, take in the
+morning to help reduce insomnia
+• Reduce dose to 10 mg, and either stay at
+this dose if tolerated and effective, or
+consider increasing again to 20 mg or
+more if tolerated but not effective at 10 mg
+• In a few weeks, switch or add other drugs
+
+Best Augmenting Agents for Side
+Effects
+• Often best to try another SSRI or another
+antidepressant monotherapy prior to
+resorting to augmentation strategies to
+treat side effects
+• Trazodone or a hypnotic for insomnia
+• Bupropion, sildenafil, vardenafil, or tadalafil
+for sexual dysfunction
+• Bupropion for emotional flattening,
+cognitive slowing, or apathy
+• Mirtazapine for insomnia, agitation, and
+gastrointestinal side effects
+
+
+
+
+<<<PAGE 248>>>
+
+0521011698s05.qxd
+
+9/2/04
+
+2:35 PM
+
+Page 231
+
+(continued) ISOCARBOXAZID
+
+Dosing Tips
+• Orthostatic hypotension, especially at high
+doses, may require splitting into 3 or 4
+daily doses
+• Patients receiving high doses may need to
+be evaluated periodically for effects on the
+liver
+• Little evidence to support efficacy of
+isocarboxazid at doses below 30 mg/day
+
+Overdose
+• Dizziness, sedation, ataxia, headache,
+insomnia, restlessness, anxiety, irritability;
+cardiovascular effects, confusion,
+respiratory depression, or coma may also
+occur
+
+Long-Term Use
+• May require periodic evaluation of hepatic
+function
+• MAOIs may lose some efficacy long-term
+
+levodopa, L-tryptophan, L-tyrosine, and
+phenylalanine)
+• Excitation, seizures, delirium, hyperpyrexia,
+circulatory collapse, coma, and death may
+result from combining MAO inhibitors with
+mepiridine or dextromethorphan
+• Do not combine with another MAO
+inhibitor, alcohol, buspirone, bupropion, or
+guanethidine
+• Adverse drug reactions can results from
+combining MAO inhibitors with
+tricyclic/tetracyclic antidepressants and
+related compounds, including
+carbamazepine, cyclobenzaprine, and
+mirtazapine, and should be avoided except
+by experts to treat difficult cases (see
+Pearls)
+• MAO inhibitors in combination with spinal
+anesthesia may cause combined
+hypotensive effects
+• Combination of MAOIs and CNS
+depressants may enhance sedation and
+hypotension
+
+Habit Forming
+• Some patients have developed dependence
+to MAOIs
+
+How to Stop
+• Generally no need to taper, as drug wears
+off slowly over 2–3 weeks
+
+Pharmacokinetics
+• Clinical duration of action may be up to 21
+days due to irreversible enzyme inhibition
+
+Drug Interactions
+• Tramadol may increase the risk of seizures
+in patients taking an MAO inhibitor
+• Can cause a fatal “serotonin syndrome”
+when combined with drugs that block
+serotonin reuptake (e.g., SSRIs, SNRIs,
+sibutramine, tramadol, etc.), so do not use
+with a serotonin reuptake inhibitor or for
+up to 5 weeks after stopping the serotonin
+reuptake inhibitor
+• Hypertensive crisis with headache,
+intracranial bleeding, and death may result
+from combining MAO inhibitors with
+sympathomimetic drugs (e.g.,
+amphetamines, methylphenidate, cocaine,
+dopamine, epinephrine, norepinephrine,
+and related compounds methyldopa,
+
+Other Warnings/
+Precautions
+• Use requires low tyramine diet
+• Patients taking MAO inhibitors should
+avoid high protein food that has undergone
+protein breakdown by aging, fermentation,
+pickling, smoking, or bacterial
+contamination
+• Patients taking MAO inhibitors should
+avoid cheeses (especially aged varieties),
+pickled herring, beer, wine, liver, yeast
+extract, dry sausage, hard salami,
+pepperoni, Lebanon bologna, pods of
+broad beans (fava beans), yogurt, and
+excessive use of caffeine and chocolate
+• Patient and prescriber must be vigilant to
+potential interactions with any drug,
+including antihypertensives and over-thecounter cough/cold preparations
+• Over-the-counter medications to avoid
+include cough and cold preparations,
+including those containing
+dextromethorphan, nasal decongestants
+(tablets, drops, or spray), hay-fever
+medications, sinus medications, asthma
+inhalant medications, anti-appetite
+medications, weight reducing preparations,
+“pep” pills
+
+231
+
+
+
+
+<<<PAGE 369>>>
+
+0521011698s07.qxd
+
+9/2/04
+
+2:44 PM
+
+Page 352
+
+PAROXETINE (continued)
+doses since paroxetine could theoretically
+raise atomoxetine levels); use
+combinations of antidepressants with
+caution as this may activate bipolar
+disorder and suicidal ideation
+• Modafinil, especially for fatigue, sleepiness,
+and lack of concentration
+• Mood stabilizers or atypical antipsychotics
+for bipolar depression, psychotic
+depression, treatment-resistant depression,
+or treatment-resistant anxiety disorders
+• Benzodiazepines
+• If all else fails for anxiety disorders,
+consider gabapentin or tiagabine
+• Hypnotics for insomnia
+• Classically, lithium, buspirone, or thyroid
+hormone
+
+• Note: patients with diagnosed or
+undiagnosed bipolar or psychotic disorders
+may be more vulnerable to CNS-activating
+actions of SSRIs
+• Autonomic (sweating)
+• Bruising and rare bleeding
+• Rare hyponatremia (mostly in elderly
+patients and generally reversible on
+discontinuation of paroxetine)
+
+Life Threatening or
+Dangerous Side Effects
+• Rare seizures
+• Rare induction of mania and activation of
+suicidal ideation
+
+Weight Gain
+
+Tests
+• None for healthy individuals
+• Occurs in significant minority
+
+SIDE EFFECTS
+
+Sedation
+
+How Drug Causes Side Effects
+• Theoretically due to increases in serotonin
+concentrations at serotonin receptors in
+parts of the brain and body other than
+those that cause therapeutic actions (e.g.,
+unwanted actions of serotonin in sleep
+centers causing insomnia, unwanted
+actions of serotonin in the gut causing
+diarrhea, etc.)
+• Increasing serotonin can cause diminished
+dopamine release and might contribute to
+emotional flattening, cognitive slowing, and
+apathy in some patients
+• Most side effects are immediate but often
+go away with time, in contrast to most
+therapeutic effects which are delayed and
+are enhanced over time
+✽ Paroxetine’s weak antimuscarinic
+properties can cause constipation, dry
+mouth, sedation
+
+Notable Side Effects
+• Sexual dysfunction (men: delayed
+ejaculation, erectile dysfunction; men and
+women: decreased sexual desire,
+anorgasmia)
+• Gastrointestinal (decreased appetite,
+nausea, diarrhea, constipation, dry mouth)
+• Mostly central nervous system (insomnia
+but also sedation, agitation, tremors,
+headache, dizziness)
+352
+
+• Many experience and/or can be significant
+in amount
+• Generally transient
+
+What To Do About Side Effects
+• Wait
+• Wait
+• Wait
+• If paroxetine is sedating, take at night to
+reduce daytime drowsiness
+• Reduce dose to 5–10 mg (12.5 mg for CR)
+until side effects abate, then increase as
+tolerated, usually to at least 20 mg (25 mg
+CR)
+• In a few weeks, switch or add other drugs
+
+Best Augmenting Agents for Side
+Effects
+• Often best to try another SSRI or another
+antidepressant monotherapy prior to
+resorting to augmentation strategies to
+treat side effects
+• Trazodone or a hypnotic for insomnia
+• Bupropion, sildenafil, vardenafil, or tadalafil
+for sexual dysfunction
+• Bupropion for emotional flattening,
+cognitive slowing, or apathy
+• Mirtazapine for insomnia, agitation, and
+gastrointestinal side effects
+
+
+
+
+<<<PAGE 390>>>
+
+0521011698s07.qxd
+
+9/2/04
+
+2:44 PM
+
+Page 373
+
+(continued) PHENELZINE
+
+Dosing Tips
+• Once dosing is stabilized, some patients
+may tolerate once or twice daily dosing
+rather than 3-times-a-day dosing
+• Orthostatic hypotension, especially at high
+doses, may require splitting into 4 daily
+doses
+• Patients receiving high doses may need to
+be evaluated periodically for effects on the
+liver
+• Little evidence to support efficacy of
+phenelzine below doses of 45 mg/day
+
+Overdose
+• Death may occur; dizziness, ataxia,
+sedation, headache, insomnia,
+restlessness, anxiety, irritability,
+cardiovascular effects, confusion,
+respiratory depression, coma
+
+Long-Term Use
+• May require periodic evaluation of hepatic
+function
+• MAOIs may lose efficacy long-term
+
+Habit Forming
+• Some patients have developed dependence
+to MAOIs
+
+How to Stop
+• Generally no need to taper, as the drug
+wears off slowly over 2–3 weeks
+
+Pharmacokinetics
+• Clinical duration of action may be up to 21
+days due to irreversible enzyme inhibition
+
+Drug Interactions
+• Tramadol may increase the risk of seizures
+in patients taking an MAO inhibitor
+• Can cause a fatal “serotonin syndrome”
+when combined with drugs that block
+serotonin reuptake (e.g., SSRIs, SNRIs,
+sibutramine, tramadol, etc.), so do not use
+with a serotonin reuptake inhibitor or for
+up to 5 weeks after stopping the serotonin
+reuptake inhibitor
+• Hypertensive crisis with headache,
+intracranial bleeding, and death may result
+from combining MAO inhibitors with
+sympathomimetic drugs (e.g.,
+amphetamines, methylphenidate, cocaine,
+
+dopamine, epinephrine, norepinephrine,
+and related compounds methyldopa,
+levodopa, L-tryptophan, L-tyrosine, and
+phenylalanine)
+• Excitation, seizures, delirium, hyperpyrexia,
+circulatory collapse, coma, and death may
+result from combining MAO inhibitors with
+mepiridine or dextromethorphan
+• Do not combine with another MAO
+inhibitor, alcohol, buspirone, bupropion, or
+guanethidine
+• Adverse drug reactions can result from
+combining MAO inhibitors with
+tricyclic/tetracyclic antidepressants and
+related compounds, including
+carbamazepine, cyclobenzaprine, and
+mirtazapine, and should be avoided except
+by experts to treat difficult cases
+• MAO inhibitors in combination with spinal
+anesthesia may cause combined
+hypotensive effects
+• Combination of MAOIs and CNS
+depressants may enhance sedation and
+hypotension
+
+Other Warnings/
+Precautions
+• Use requires low tyramine diet
+• Patients taking MAO inhibitors should
+avoid high protein food that has undergone
+protein breakdown by aging, fermentation,
+pickling, smoking, or bacterial
+contamination
+• Patients taking MAO inhibitors should
+avoid cheeses (especially aged varieties),
+pickled herring, beer, wine, liver, yeast
+extract, dry sausage, hard salami,
+pepperoni, Lebanon bologna, pods of
+broad beans (fava beans), yogurt, and
+excessive use of caffeine and chocolate
+• Patient and prescriber must be vigilant to
+potential interactions with any drug,
+including antihypertensives and over-thecounter cough/cold preparations
+• Over-the-counter medications to avoid
+include cough and cold preparations,
+including those containing
+dextromethorphan, nasal decongestants
+(tablets, drops, or spray), hay-fever
+medications, sinus medications, asthma
+inhalant medications, anti-appetite
+medications, weight reducing preparations,
+“pep” pills
+
+373
+
+
+
+
+<<<PAGE 391>>>
+
+0521011698s07.qxd
+
+9/2/04
+
+2:44 PM
+
+Page 374
+
+• Hypoglycemia may occur in diabetic
+patients receiving insulin or oral
+antidiabetic agents
+• Use cautiously in patients receiving
+reserpine, anesthetics, disulfiram,
+metrizamide, anticholinergic agents
+• Phenelzine is not recommended for use in
+patients who cannot be monitored closely
+• Monitor patients for activation of suicidal
+ideation, especially children and
+adolescents
+
+Elderly
+
+PHENELZINE (continued)
+
+Do Not Use
+• If patient is taking meperidine (pethidine)
+• If patient is taking a sympathomimetic
+agent or taking guanethidine
+• If patient is taking another MAOI
+• If patient is taking any agent that can
+inhibit serotonin reuptake (e.g., SSRIs,
+sibutramine, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, etc.)
+• If patient is taking diuretics,
+dextromethorphan, buspirone, bupropion
+• If patient has pheochromocytoma
+• If patient has cardiovascular or
+cerebrovascular disease
+• If patient has frequent or severe headaches
+• If patient is undergoing elective surgery
+and requires general anesthesia
+• If patient has a history of liver disease or
+abnormal liver function tests
+• If patient is taking a prohibited drug
+• If patient is not compliant with a lowtyramine diet
+• If there is a proven allergy to phenelzine
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Use with caution – drug may accumulate in
+plasma
+• May require lower than usual adult dose
+
+Hepatic Impairment
+• Phenelzine should not be used
+
+• Initial dose 7.5 mg/day; increase every few
+days by 7.5–15 mg/day
+• Elderly patients may have greater
+sensitivity to adverse effects
+
+Children and Adolescents
+• Not recommended for use under age 16
+• Use with caution, observing for activation
+of known or unknown bipolar disorder
+and/or suicidal ideation, and strongly
+consider informing parents or guardian of
+this risk so they can help observe child or
+adolescent patients
+
+Pregnancy
+• Risk Category C [some animal studies
+show adverse effects, no controlled studies
+in humans]
+• Not generally recommended for use during
+pregnancy, especially during first trimester
+• Possible increased incidence of fetal
+malformations if phenelzine is taken during
+the first trimester
+• Should evaluate patient for treatment with
+an antidepressant with a better risk/benefit
+ratio
+
+Breast Feeding
+• Some drug is found in mother’s breast milk
+• If child becomes irritable or sedated, breast
+feeding or drug may need to be
+discontinued
+• Immediate postpartum period is a high-risk
+time for depression, especially in women
+who have had prior depressive episodes,
+so drug may need to be reinstituted late in
+the third trimester or shortly after
+childbirth to prevent a recurrence during
+the postpartum period
+• Should evaluate patient for treatment with
+an antidepressant with a better risk/benefit
+ratio
+
+Cardiac Impairment
+• Contraindicated in patients with congestive
+heart failure or hypertension
+• Any other cardiac impairment may require
+lower than usual adult dose
+• Patients with angina pectoris or coronary
+artery disease should limit their exertion
+
+374
+
+THE ART OF PSYCHOPHARMACOLOGY
+Potential Advantages
+• Atypical depression
+• Severe depression
+• Treatment-resistant depression or anxiety
+disorders
+
+
+
+
+<<<PAGE 448>>>
+
+0521011698s08.qxd
+
+9/2/04
+
+2:46 PM
+
+Page 431
+
+(continued) SERTRALINE
+
+resorting to augmentation strategies to
+treat side effects
+• Trazodone or a hypnotic for insomnia
+• Bupropion, sildenafil, vardenafil or tadalafil
+for sexual dysfunction
+• Bupropion for emotional flattening,
+cognitive slowing, or apathy
+• Mirtazapine for insomnia, agitation, and
+gastrointestinal side effects
+• Benzodiazepines for jitteriness and anxiety,
+especially at initiation of treatment and
+especially for anxious patients
+• Many side effects are dose-dependent (i.e.,
+they increase as dose increases, or they
+reemerge until tolerance re-develops)
+• Many side effects are time-dependent (i.e.,
+they start immediately upon dosing and
+upon each dose increase, but go away with
+time)
+• Activation and agitation may represent the
+induction of a bipolar state, especially a
+mixed dysphoric bipolar II condition
+sometimes associated with suicidal
+ideation, and require the addition of
+lithium, a mood stabilizer or an atypical
+antipsychotic, and/or discontinuation of
+sertraline
+
+DOSING AND USE
+Usual Dosage Range
+• 50–200 mg/day
+
+Dosage Forms
+• Tablets 25 mg scored, 50 mg scored,
+100 mg
+
+How to Dose
+• Depression and OCD: initial 50 mg/day;
+usually wait a few weeks to assess drug
+effects before increasing dose, but can
+increase once a week; maximum generally
+200 mg/day; single dose
+• Panic and PTSD: initial 25 mg/day; increase
+to 50 mg/day after 1 week thereafter,
+usually wait a few weeks to assess drug
+effects before increasing dose; maximum
+generally 200 mg/day; single dose
+
+Dosing Tips
+• All tablets are scored, so to save costs,
+give 50 mg as half of 100 mg tablet, since
+
+100 mg and 50 mg tablets cost about the
+same in many markets
+• Give once daily, often in the mornings to
+reduce chances of insomnia
+• Many patients ultimately require more than
+50 mg dose per day
+• Some patients are dosed above 200 mg
+• Evidence that some treatment-resistant
+OCD patients may respond safely to doses
+up to 400 mg/day, but this is for experts
+and use with caution
+• The more anxious and agitated the patient,
+the lower the starting dose, the slower the
+titration, and the more likely the need for a
+concomitant agent such as trazodone or a
+benzodiazepine
+• If intolerable anxiety, insomnia, agitation,
+akathisia, or activation occur either upon
+dosing initiation or discontinuation,
+consider the possibility of activated bipolar
+disorder and switch to a mood stabilizer or
+atypical antipsychotic
+• Utilize half a 25 mg tablet (12.5 mg) when
+initiating treatment in patients with a
+history of intolerance to previous
+antidepressants
+
+Overdose
+• Rarely lethal in monotherapy overdose;
+vomiting, sedation, heart rhythm
+disturbances, dilated pupils, agitation;
+fatalities have been reported in sertraline
+overdose combined with other drugs or
+alcohol
+
+Long-Term Use
+• Safe
+
+Habit Forming
+• No
+
+How to Stop
+• Taper to avoid withdrawal effects
+(dizziness, nausea, stomach cramps,
+sweating, tingling, dysesthesias)
+• Many patients tolerate 50% dose reduction
+for 3 days, then another 50% reduction for
+3 days, then discontinuation
+• If withdrawal symptoms emerge during
+discontinuation, raise dose to stop
+symptoms and then restart withdrawal
+much more slowly
+
+Pharmacokinetics
+• Parent drug has 22–36 hour half-life
+431
+
+
+
+
+<<<PAGE 574>>>
+
+0521011698emt.qxd
+
+9/2/04
+
+2:51 PM
+
+Venefon (imipramine), 223
+venlafaxine, 505
+venlafaxine XR, 505
+Versed (midazolam), 291
+Vertigo (sulpiride), 435
+Vesparax (hydroxyzine), 219
+Vesparax mite (hydroxyzine), 219
+Vesparax Novum (hydroxyzine), 219
+Vigiten (lorazepam), 265
+Vincosedan (diazepam), 109
+Visergil (thioridazine), 447
+Vistaril (hydroxyzine), 219
+Vivacti (protriptyline), 391
+Vival (diazepam), 109
+Vivapryl (selegiline), 423
+Vividyl (nortriptyline), 229
+Vivol (diazepam), 109
+Volital (pemoline), 357
+Vulbegal (flunitrazepam), 171
+Vulpral (valproate), 499
+Wellbatrin (bupropion), 37
+Wellbutrin (bupropion), 37
+Wellbutrin SR (bupropion SR), 37
+Wellbutrin XL (bupropion XL), 37
+Xanax (alprazolam), 1
+Xanax XR (alprazolam XR), 1
+Xanor (alprazolam), 1
+Xepin (doxepin), 145
+
+Page 557
+
+Vesadol (haloperidol), 213
+Vesalium (haloperidol), 213
+Zactin (fluoxetine), 175
+Zafrionil (haloperidol), 213
+zaleplon, 511
+zelapon (selegiline), 423
+Zemorcon (sulpiride), 435
+Zeptol (carbamazepine), 47
+Zerenal (dothiepin), 139
+ziprasidone, 515
+Ziprexa (olanzapine), 335
+Zispin (mirtazapine), 301
+Zoleptil (zotepine), 533
+Zoloft (sertraline), 429
+zolpidem, 521
+Zonalon (doxepin), 145
+Zonegran (zonisamide), 525
+zonisamide, 525
+Zopax (alprazolam), 1
+zopiclone, 529
+Zopite (zotepine), 533
+zotepine, 533
+Z-Pam (temazepam), 443
+zuclopenthixol, 539
+Zuledin (chlorpromazine), 57
+Zyban (bupropion), 37
+Zymocomb (sulpiride), 435
+Zyprexa (olanzapine), 335
+
+557
+
+

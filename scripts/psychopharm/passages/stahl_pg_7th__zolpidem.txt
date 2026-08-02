@@ -1,0 +1,869 @@
+<<<PAGE 12>>>
+
+138 triiodothyronine
+139 trimipramine
+140 valbenazine
+141 valproate
+142 varenicline
+143 venlafaxine
+144 vilazodone
+145 vortioxetine
+146 zaleplon
+147 ziprasidone
+148 zolpidem
+149 zonisamide
+150 zopiclone
+151 zotepine
+152 zuclopenthixol
+Index by Drug Name
+Index by Use
+Index by Class
+Abbreviations
+
+
+
+
+<<<PAGE 1159>>>
+
+Suggested Reading
+Murphy P , Moline M , Mayleben D , et al. Lemborexant, a dual orexin
+receptor antagonist (DORA) for the treatment of insomnia disorder: results
+from a Bayesian, adaptive, randomized, double-blind, placebo-controlled
+study . J Clin Sleep Med 2017 ;13 (11 ):1289–99 .
+Rosenberg R , Murphy P , Zammit G , et al. Comparison of lemborexant
+with placebo and zolpidem tartrate extended release for the treatment of
+older adults with insomnia disorder: a phase 3 randomized clinical trial .
+JAMA Netw Open 2019 ;2 (12 ):e1918254 . doi:
+10.1001/jamanetworkopen.2019.18254 .
+Vermeeren A , Jongen S , Murphy M , et al. On-the-road driving
+performance the morning after bedtime administration of lemborexant in
+healthy adult and elderly volunteers . Sleep 2019 ;42 (4 ). pii: zsy260. doi:
+10.1093/sleep/zsy260 .
+
+
+
+
+<<<PAGE 1249>>>
+
+How Long Until It Works
+Can begin relieving withdrawal symptoms within the first day of
+dosing
+If It Works
+Reduces effects of opioid withdrawal
+Increases completion of opioid detoxification
+If It Doesn’t Work
+Evaluate for and address contributing factors
+Consider switching to another agent
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Support medications for withdrawal symptoms (e.g., guaifenesin,
+antacids, dioctyl sodium sulfosuccinate, psyllium hydrocolloid
+suspension, bismuth sulfate, acetaminophen, zolpidem)
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+
+
+
+
+<<<PAGE 1951>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Eszopiclone, zolpidem
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+None for healthy individuals
+For patients presenting with unexplained amenorrhea, galactorrhea,
+decreased libido, or problems with fertility, could consider
+measuring prolactin and testosterone levels
+
+Side Effects
+How Drug Causes Side Effects
+Actions at melatonin receptors that carry over to the next day could
+theoretically cause daytime sedation, fatigue, and sluggishness, but
+this is not common
+
+✽ Sedation
+✽ Dizziness
+
+Notable Side Effects
+
+
+
+
+<<<PAGE 2294>>>
+
+Suggested Reading
+Jonas JM , Coleman BS , Sheridan AQ , Kalinske RW . Comparative
+clinical profiles of triazolam versus other shorter-acting hypnotics . J Clin
+Psychiatry 1992 ;53 (Suppl):S19 –31.
+Lobo BL , Greene WL . Zolpidem: distinct from triazolam? Ann
+Pharmacother 1997 ;31 :625–32 .
+Rothschild AJ . Disinhibition, amnestic reactions, and other adverse
+reactions secondary to triazolam: a review of the literature . J Clin
+Psychiatry 1992 ;53 (Suppl):S69 –79.
+Yuan R , Flockhart DA , Balian JD . Pharmacokinetic and
+pharmacodynamic consequences of metabolism-based drug interactions
+with alprazolam, midazolam, and triazolam . J Clin Pharmacol 1999 ;39
+:1109 –25.
+
+
+
+
+<<<PAGE 2492>>>
+
+Zolpidem
+
+Therapeutics
+Brands
+Ambien
+Ambien CR
+Intermezzo
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: GABA positive allosteric
+modulator (GABA-PAM)
+Non-benzodiazepine hypnotic; alpha 1 isoform selective agonist of
+GABA-A/benzodiazepine receptors
+Commonly Prescribed for
+(bold for FDA approved)
+Short-term treatment of insomnia (controlled-release indication
+is not restricted to short-term)
+
+
+
+
+<<<PAGE 2493>>>
+
+As needed for the treatment of insomnia when a middle-of-thenight awakening is followed by difficulty returning to sleep and
+there are at least 4 hours of bedtime remaining before the
+planned time of wakening (Intermezzo)
+How the Drug Works
+Binds selectively to a subtype of the benzodiazepine receptor, the
+alpha 1 isoform
+May enhance GABA inhibitory actions that provide sedative
+hypnotic effects more selectively than other actions of GABA
+Boosts chloride conductance through GABA-regulated channels
+Inhibitory actions in sleep centers may provide sedative hypnotic
+effects
+CR formulation may allow sufficient drug to persist at receptors to
+improve total sleep time and to prevent early morning awakenings
+that can be associated with the immediate-release formulation of
+zolpidem
+How Long Until It Works
+Generally takes effect in less than an hour
+If It Works
+Improves quality of sleep
+
+
+
+
+<<<PAGE 2495>>>
+
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+Long-term adaptations of zolpidem immediate-release not well
+studied, but chronic studies of zolpidem CR and other alpha 1
+selective non-benzodiazepine hypnotics suggest lack of notable
+tolerance or dependence developing over time
+Notable Side Effects
+
+✽ Sedation
+✽ Dizziness, ataxia
+✽ Dose-dependent amnesia
+✽ Hyperexcitability, nervousness
+Rare hallucinations
+Diarrhea, nausea
+Headache
+
+Life-Threatening or Dangerous Side Effects
+Respiratory depression, especially when taken with other CNS
+depressants in overdose
+Rare angioedema
+Weight Gain
+
+
+
+
+<<<PAGE 2496>>>
+
+Reported but not expected
+Sedation
+Many experience and/or can be significant in amount
+What to Do About Side Effects
+Wait
+To avoid problems with memory, only take zolpidem or zolpidem
+CR if planning to have a full night’s sleep
+Lower the dose
+Switch to a shorter-acting sedative hypnotic
+Administer flumazenil if side effects are severe or life-threatening
+Best Augmenting Agents for Side Effects
+Many side effects cannot be improved with an augmenting agent
+
+Dosing And Use
+Usual Dosage Range
+10 mg/day at bedtime for 7–10 days (immediate-release)
+12.5 mg/day at bedtime (controlled-release)
+
+
+
+
+<<<PAGE 2497>>>
+
+Dosage Forms
+Immediate-release tablet 5 mg, 10 mg
+Controlled-release tablet 6.25 mg, 12.5 mg
+Sublingual tablet 1.75 mg, 3.5 mg, 5 mg, 10 mg
+Oral spray 5 mg
+How to Dose
+Men: 10 mg at bedtime for 7–10 days (immediate-release); 12.5 mg
+at bedtime for 7–10 days (controlled-release); 3.5 mg sublingually
+in the middle of the night if more than 4 hours of bedtime remain
+(Intermezzo)
+Women: 5 mg at bedtime for 7–10 days (immediate-release); 6.25
+mg at bedtime for 7–10 days (controlled-release); 1.75 mg
+sublingually in the middle of the night if more than 4 hours of
+bedtime remain (Intermezzo)
+Intermezzo formulation is administered sublingually in the middle
+of the night; it should be placed under the tongue and allowed to
+dissolve completely before swallowing
+Intermezzo formulation should not be taken more than once per
+night
+Dosing Tips
+
+✽ Zolpidem is not absorbed as quickly if taken with food, which
+could reduce onset of action
+
+
+
+
+<<<PAGE 2498>>>
+
+Patients with lower body weights may require only a 5 mg dose
+immediate-release or 6.25 mg controlled-release
+Zolpidem should generally not be prescribed in quantities greater
+than a 1-month supply; however, zolpidem CR is not restricted to
+short-term use
+Risk of dependence may increase with dose and duration of
+treatment
+
+✽ However, treatment with alpha 1 selective non-benzodiazepine
+hypnotics may cause less tolerance or dependence than benzodiazepine
+hypnotics
+Controlled-release tablets should be swallowed whole and should
+not be divided, crushed, or chewed
+Overdose
+No fatalities reported with zolpidem monotherapy; sedation, ataxia,
+confusion, hypotension, respiratory depression, coma
+Long-Term Use
+Original studies with zolpidem immediate-release did not assess
+long-term use
+Zolpidem CR is not restricted to short-term use
+Increased wakefulness during the latter part of the night (wearing
+off) or an increase in daytime anxiety (rebound) may occur with
+immediate-release and be less common with controlled-release
+
+
+
+
+<<<PAGE 2499>>>
+
+Habit Forming
+Zolpidem is a Schedule IV drug
+Some patients may develop dependence and/or tolerance; risk may
+be greater with higher doses
+History of drug addiction may increase risk of dependence
+How to Stop
+Although rebound insomnia could occur, this effect has not
+generally been seen with therapeutic doses of zolpidem or zolpidem
+CR
+If taken for more than a few weeks, taper to reduce chances of
+withdrawal effects
+Pharmacokinetics
+Short elimination half-life (approximately 2.5 hours)
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+Sertraline may increase plasma levels of zolpidem
+Rifampin may decrease plasma levels of zolpidem
+Ketoconazole may increase plasma levels of zolpidem
+Use with imipramine or chlorpromazine may be associated with
+decreased alertness
+
+
+
+
+<<<PAGE 2500>>>
+
+Other Warnings/Precautions
+Insomnia may be a symptom of a primary disorder, rather than a
+primary disorder itself
+Some patients may exhibit abnormal thinking or behavioral changes
+similar to those caused by other CNS depressants (i.e., either
+depressant actions or disinhibiting actions)
+Some depressed patients may experience a worsening of suicidal
+ideation
+Use only with extreme caution in patients with impaired respiratory
+function or obstructive sleep apnea
+Zolpidem and zolpidem CR should only be administered at bedtime
+Temporary memory loss may occur at doses above 10 mg/night
+Rare angioedema has occurred with sedative hypnotic use and could
+potentially cause fatal airway obstruction if it involves the throat,
+glottis, or larynx; thus if angioedema occurs treatment should be
+discontinued
+Sleep driving and other complex behaviors, such as eating and
+preparing food and making phone calls, have been reported in
+patients taking sedative hypnotics; in some cases these behaviors
+have resulted in serious injury or death, prompting the FDA to
+require a black box warning
+Do Not Use
+
+
+
+
+<<<PAGE 2501>>>
+
+If the patient has experienced an episode of complex sleep behaviors
+after taking a sleep medication
+If there is a proven allergy to zolpidem
+For Intermezzo, if the patient has fewer than 4 hours of bedtime
+remaining before the planned time of waking
+
+Special Populations
+Renal Impairment
+No dose adjustment necessary
+Patients should be monitored
+Hepatic Impairment
+Recommended dose 5 mg (immediate-release), 6.25 mg (controlledrelease), 1.75 mg (Intermezzo)
+Patients should be monitored
+Cardiac Impairment
+No available data
+Elderly
+Recommended initial dose: 5 mg (immediate-release), 6.25 mg
+(controlled-release), 1.75 mg (Intermezzo)
+
+
+
+
+<<<PAGE 2502>>>
+
+Elderly may have increased risk for falls, confusion
+Children and Adolescents
+Safety and efficacy have not been established
+Long-term effects of zolpidem or zolpidem CR in
+children/adolescents are unknown
+Should generally receive lower doses and be more closely
+monitored
+Hallucinations in children ages 6–17 have been reported
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+In animal studies, oral administration of zolpidem did not indicate a
+risk for adverse effects on fetal development at clinically relevant
+doses
+Infants whose mothers took sedative hypnotics during pregnancy
+may experience some withdrawal symptoms
+
+
+
+
+<<<PAGE 2504>>>
+
+Zolpidem has been shown to increase the total time asleep and to
+reduce the amount of nighttime awakenings
+Zolpidem CR may be even more effective on these sleep parameters
+than immediate-release zolpidem due to prolonged drug delivery
+
+✽ May be preferred over benzodiazepines because of its rapid onset of
+action, short duration of effect, and safety profile
+In some patients, zolpidem blood levels may be high enough the
+morning after use to impair activities that require alertness,
+including driving; this has prompted the US FDA to issue new
+dosing requirements
+Specifically, because clearance of zolpidem is slightly slower in
+women than in men, the FDA has required that the recommended
+dose be lowered for women
+The FDA also recommends that healthcare professionals consider
+prescribing lower doses for men as well
+A low-dose zolpidem product is approved for middle-of-the-night
+awakenings by sublingual administration
+May not be ideal for patients who desire immediate hypnotic onset
+and eat just prior to bedtime
+Not a benzodiazepine itself, but binds to benzodiazepine receptors
+May have fewer carryover side effects than some other sedative
+hypnotics
+
+
+
+
+<<<PAGE 2505>>>
+
+May cause less dependence than some other sedative hypnotics,
+especially in those without a history of substance abuse
+
+Suggested Reading
+Daley C , McNiel DE , Binder RL. “I did what?” Zolpidem and the courts .
+J Am Acad Psychiatry Law 2011 ;39 (4):535–42 .
+Greenblatt DJ , Roth T. Zolpidem for insomnia . Expert Opin Pharmacother
+2012 ;13 (6):879–93 .
+Rush CR . Behavioral pharmacology of zolpidem relative to
+benzodiazepines: a review . Pharmacol Biochem Behav 1998 ;61 :253–69 .
+Soyka M , Bottlender R , Moller HJ . Epidemiological evidence for a low
+abuse potential of zolpidem . Pharmacopsychiatry 2000 ;33 :138–41 .
+Toner LC , Tsambiras BM , Catalano G , Catalano MC , Cooper DS .
+Central nervous system side effects associated with zolpidem treatment .
+Clin Neuropharmacol 2000 ;23 :54 –8.
+
+
+
+
+<<<PAGE 2570>>>
+
+Alti-Trazodone (trazodone), 793
+Alti-Triazolam (triazolam), 799
+Alti-Valproic (valproate), 829
+Alupram (diazepam), 229
+Alzam (alprazolam), 11
+Alzon (alprazolam), 11
+Ambien (zolpidem), 871
+Ambien CR (zolpidem), 871
+Amboneural (selegiline), 705
+Ambien CR (zolpidem), 871
+Ambo-neural (selegiline), 705
+Amilin (amitriptyline), 25
+Amilit (amitriptyline), 25
+Aminazins (chlorpromazine), 153
+Amindan (selegiline), 705
+Amineurin (amitriptyline), 25
+Aminuerin Retard (amitriptyline), 25
+Amioxid (amitriptyline), 25
+amisulpride, 17
+Amitrip (amitriptyline), 25
+Amitriptilin (amitriptyline), 25
+Amitriptylin (amitriptyline), 25
+amitriptyline, 25
+Amitriptylinum (amitriptyline), 25
+Amitrol (amitriptyline), 25
+Amizepin (carbamazepine), 131
+Amizol (amitriptyline), 25
+amoxapine, 33
+
+
+
+
+<<<PAGE 2575>>>
+
+Belix (diphenhydramine), 235
+Belpax (amitriptyline), 25
+Belseren (clorazepate), 185
+Belsomra (suvorexant), 747
+Benadryl (diphenhydramine), 235
+Benpon (nortriptyline), 551
+Bentapam (diazepam), 229
+Benylin (diphenhydramine), 235
+Benzopin (diazepam), 229
+Benzotran (oxazepam), 569
+benztropine, 85
+Berk-Dothiepin (dothiepin), 249
+Besitran (sertraline), 721
+Bespar (buspirone), 123
+Betamaks (sulpiride), 741
+Betamed (diazepam), 229
+Betapam (diazepam), 229
+Bialzepam (diazepam), 229
+Bikalm (zolpidem), 871
+Bioperidolo (haloperidol), 347
+Bioxetin (fluoxetine), 301
+Biron (buspirone), 123
+Biscasil (chlorpromazine), 153
+Biston (carbamazepine), 131
+blonanserin, 89
+Bolvidon (mianserin), 495
+Bortalium (diazepam), 229
+bremelanotide, 95
+
+
+
+
+<<<PAGE 2577>>>
+
+Carbapin (carbamazepine), 131
+Carbatrol (carbamazepine), 131
+Carbium (carbamazepine), 131
+Carbolith (lithium), 415
+Carbolithium (lithium), 415
+Carbymal (carbamazepine), 131
+Cardilac (fluphenazine), 313
+cariprazine, 137
+Carpaz (carbamazepine), 131
+Cassadan (alprazolam), 11
+Cassipa (buprenorphine with naloxone), 111
+Catanidin (clonidine), 179
+Catapres (clonidine), 179
+Catapres-TTS (clonidine), 179
+Cedrol (zolpidem), 871
+Celexa (citalopram), 159
+Cenilene (fluphenazine), 313
+Centedrin (d,l-methylphenidate), 487
+Cereen (haloperidol), 347
+Championyl (sulpiride), 741
+Champix (varenicline), 837
+Chantix (varenicline), 837
+Chemmart (escitalopram), 269
+Chlorazin (chlorpromazine), 153
+chlordiazepoxide, 147
+Chlorpromazin (chlorpromazine), 153
+Chlorpromazina HCl (chlorpromazine), 153
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2579>>>
+
+Concerta (d,l-methylphenidate), 487
+Concordin (protriptyline), 657
+Concordine (protriptyline), 657
+Consta (risperidone), 687
+Contemnol (lithium), 415
+Contrave (naltrexone/bupropion), 541
+Control (lorazepam), 437
+Convulex (valproate), 829
+Convulsofin (valproate), 829
+Cosmopril (selegiline), 705
+Cotempla XR-ODT (d, l-methylphenidate), 487
+cyamemazine, 201
+Cymbalta (duloxetine), 263
+Cytomel (triiodothyronine), 813
+Dalcipran (milnacipran), 503
+Dalmadorm (flurazepam), 321
+Dalmane (flurazepam), 321
+Dalparan (zolpidem), 871
+Dapotum (fluphenazine), 313
+Dapotum Acutum (fluphenazine), 313
+Dapotum D (fluphenazine), 313
+Dapotum Depot (fluphenazine), 313
+Daprimen (amitriptyline), 25
+Darkene (flunitrazepam), 297
+Darleton (sulpiride), 741
+Daytrana (d, l-methylphenidate), 487
+Dayvigo (lemborexant), 395
+Decafen (fluphenazine), 313
+
+
+
+
+<<<PAGE 2584>>>
+
+Doxal (doxepin), 255
+Doxedyn (doxepin), 255
+doxepin, 255
+Dozic (haloperidol), 347
+D-Pam (diazepam), 229
+Drenian (diazepam), 229
+Dresent (sulpiride), 741
+Ducene (diazepam), 229
+duloxetine, 263
+Dumirox (fluvoxamine), 325
+Dumozolam (triazolam), 799
+Dumyrox (fluvoxamine), 325
+Duraclon (clonidine), 179
+Duract (dextromethorphan), 225
+Duradiazepam (diazepam), 229
+Duralith (lithium), 415
+Duraperidol (haloperidol), 347
+Durazepam (oxazepam), 569
+Durazolam (lorazepam), 437
+Dutonin (nefazodone), 545
+Dyanavel XR (amphetamine d,l), 45
+Eclorion (sulpiride), 741
+Edluar (zolpidem), 871
+Edronax (reboxetine), 681
+Efectin (venlafaxine), 841
+Efexir (venlafaxine), 841
+Efexor (venlafaxine), 841
+Efexor XL (venlafaxine), 841
+
+
+
+
+<<<PAGE 2592>>>
+
+Imavate (imipramine), 367
+Imipramiin (imipramine), 367
+Imipramin (imipramine), 367
+imipramine, 367
+Imovane (zopiclone), 879
+Inadalprem (lorazepam), 437
+Inderal (propranolol), 653
+Inderal LA (propranolol), 653
+Ingrezza (valbenazine), 825
+InnoPran XL (propranolol), 653
+Insom (flunitrazepam), 297
+Intermezzo (zolpidem), 871
+Intuniv (guanfacine), 343
+Invega (paliperidone), 581
+Invega Sustenna (paliperidone injectable), 581
+Invega Trinza (paliperidone), 581
+Ipnovel (midazolam), 499
+Iremo Sedofren (trifluoperazine), 803
+Iremofar (hydroxyzine), 355
+isocarboxazid, 375
+Ivadal (zolpidem), 871
+Ixel (milnacipran), 503
+Janimine (imipramine), 367
+Januar (oxazepam), 569
+Jardin (dothiepin), 249
+Jatroneural (trifluoperazine), 803
+Jatrosom (tranylcypromine), 787
+Jatrosom N (tranylcypromine), 787
+
+
+
+
+<<<PAGE 2602>>>
+
+Napoton (chlordiazepoxide), 147
+Narcozep (flunitrazepam), 297
+Nardelzine (phenelzine), 613
+Nardil (phenelzine), 613
+Narol (buspirone), 123
+Navane (thiothixene), 765
+Navicalm (hydroxyzine), 355
+Nefadar (nefazodone), 545
+nefazodone, 545
+Nefirel (nefazodone), 545
+Neo Gnostoride (chlordiazepoxide), 147
+Neodorm SP (temazepam), 755
+Neoride (sulpiride), 741
+Neurol (alprazolam), 11
+Neurolepsin (lithium), 415
+Neurolithium (lithium), 415
+Neurolytril (diazepam), 229
+Neurontin (gabapentin), 331
+Neurotol (carbamazepine), 131
+Neurotop (carbamazepine), 131
+Nevropromazine (chlorpromazine), 153
+Nicoflox (fluoxetine), 301
+Nifalin (lorazepam), 437
+Nilium (flunitrazepam), 297
+Niotal (zolpidem), 871
+Nipolept (zotepine), 883
+Nivalin (galantamine), 337
+Noam (diazepam), 229
+
+
+
+
+<<<PAGE 2613>>>
+
+Riminyl (galantamine), 337
+Risolid (chlordiazepoxide), 147
+Risperdal (risperidone), 687
+Risperdal Consta (risperidone injectable), 687
+risperidone, 687
+Risperin (risperidone), 687
+Rispolept (risperidone), 687
+Rispolin (risperidone), 687
+Ritalin (d,l-methylphenidate), 487
+Ritalin LA (d, l-methylphenidate), 487
+Ritalin SR (d,l-methylphenidate), 487
+Ritaline (d,l-methylphenidate), 487
+rivastigmine, 699
+Rivatril (clonazepam), 173
+Rivotril (clonazepam), 173
+Robitussin (dextromethorphan), 225
+Rocam (midazolam), 499
+Rohipnol (flunitrazepam), 297
+Rohypnol (flunitrazepam), 297
+Roipnol (flunitrazepam), 297
+Romazicon (flumazenil), 293
+Ronal (flunitrazepam), 297
+Ropan (flunitrazepam), 297
+Rozerem (ramelteon), 677
+Rubifen (d,l-methylphenidate), 487
+Rulivan (nefazodone), 545
+Sanval (zolpidem), 871
+Sanzur (fluoxetine), 301
+
+
+
+
+<<<PAGE 2617>>>
+
+sodium oxybate, 733
+Softramal (clorazepate), 185
+Solarix (moclobemide), 515
+Solian (amisulpride), 17
+Solidon (chlorpromazine), 153
+Solis (diazepam), 229
+solriamfetol, 737
+Somagerol (lorazepam), 437
+Somapam (temazepam), 755
+Somatarax (hydroxyzine), 355
+Sominex (diphenhydramine), 235
+Somniton (triazolam), 799
+Somnium (lorazepam), 437
+Somnol (flurazepam), 321
+Somnubene (flunitrazepam), 297
+Sonata (zaleplon), 859
+Songar (triazolam), 799
+Sovigen (zolpidem), 871
+Spasmilan (buspirone), 123
+Spasmo Praxiten (oxazepam), 569
+Sporalon (trifluoperazine), 803
+Spravato (esketamine), 275
+Spritam (levetiracetam), 399
+Stablon (tianeptine), 777
+Stalleril (thioridazine), 759
+Stamoneurol (sulpiride), 741
+Staurodorm (flurazepam), 321
+Staurodorm Neu (flurazepam), 321
+
+
+
+
+<<<PAGE 2618>>>
+
+Stavzor (valproate), 829
+Stazepine (carbamazepine), 131
+Stedon (diazepam), 229
+Stelabid (trifluoperazine), 803
+Stelabid forte (trifluoperazine), 803
+Stelabid mite (trifluoperazine), 803
+Stelazine (trifluoperazine), 803
+Stelbid (trifluoperazine), 803
+Stelbid forte (trifluoperazine), 803
+Stelium (trifluoperazine), 803
+Stelminal (amitriptyline), 25
+Stephadilat (fluoxetine), 301
+Stesolid (diazepam), 229
+Stilnoct (zolpidem), 871
+Stilnox (zolpidem), 871
+Strattera (atomoxetine), 79
+Stressigal (buspirone), 123
+Sublocade (buprenorphine injection), 111
+Suboxone (buprenorphine with naloxone), 111
+Subutex (buprenorphine), 111
+Sulamid (amisulpride), 17
+Sulp (sulpiride), 741
+Sulparex (sulpiride), 741
+Sulpiphar (sulpiride), 741
+Sulpirid (sulpiride), 741
+sulpiride, 741
+Sulpiryd (sulpiride), 741
+Sulpitil (sulpiride), 741
+
+
+
+
+<<<PAGE 2627>>>
+
+Zenzedi (amphetamine d), 39
+Zeptol (carbamazepine), 131
+Zerenal (dothiepin), 249
+ziprasidone, 863
+Ziprexa (olanzapine), 559
+Zispin (mirtazapine), 509
+Zoleptil (zotepine), 883
+Zoloft (sertraline), 721
+zolpidem, 871
+Zolpimist (zolpidem), 871
+Zonalon (doxepin), 255
+Zonegran (zonisamide), 875
+zonisamide, 875
+Zopax (alprazolam), 11
+zopiclone, 879
+Zopite (zotepine), 883
+zotepine, 883
+Z-Pam (temazepam), 755
+Zubsolv (buprenorphine with naloxone), 111
+zuclopenthixol, 889
+Zuledin (chlorpromazine), 153
+Zulex (acamprosate), 1
+Zulresso (brexanolone), 99
+Zyban (bupropion), 117
+Zymocomb (sulpiride), 741
+Zyprexa (olanzapine), 559
+Zyprexa Relprevv (olanzapine), 559
+Zyprexa Zydis (olanzapine), 559
+
+
+
+
+<<<PAGE 2643>>>
+
+maprotiline, 465
+mianserin, 495
+nortriptyline, 551
+quazepam , 663
+ramelteon , 677
+suvorexant , 747
+tasimelteon, 751
+temazepam , 755
+trazodone, 793
+triazolam , 799
+trimipramine, 817
+zaleplon , 859
+zolpidem , 871
+zopiclone, 879
+Mania
+alprazolam (adjunct), 11
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine , 131
+cariprazine , 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium , 415
+
+
+
+
+<<<PAGE 2669>>>
+
+midazolam, 499
+quazepam, 663
+ramelteon, 677
+suvorexant, 747
+tasimelteon, 751
+temazepam, 755
+trazodone, 793
+triazolam, 799
+zaleplon, 859
+zolpidem, 871
+zopiclone, 879
+Stimulants
+amphetamine (d), 39
+amphetamine (d,l), 45
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Substance use disorder treatments
+acamprosate, 1
+buprenorphine, 111
+bupropion, 117
+clonidine, 179
+cyamemazine, 201
+disulfiram, 239
+lofexidine, 427
+lorazepam, 437
+nalmefene, 533
+
+

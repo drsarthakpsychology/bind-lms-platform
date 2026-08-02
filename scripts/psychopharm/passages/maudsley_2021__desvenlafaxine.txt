@@ -1,0 +1,1026 @@
+<<<PAGE 333>>>
+
+312  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Recognised minimum effective doses of antidepressants
+The recommended minimum effective doses of antidepressants are summarised in Table 3.2.
+Table 3.2 The recommended minimum effective doses of antidepressants
+Antidepressant
+
+Dose
+
+Tricyclics
+
+Unclear; at least 75–100mg/day,1 possibly 125mg/day2
+
+Lofepramine
+
+140mg/day3
+
+CHAPTER 3
+
+SSRIs
+Citalopram
+
+20mg/day4
+
+Escitalopram
+
+10mg/day5
+
+Fluoxetine
+
+20mg/day6
+
+Fluvoxamine
+
+50mg/day7
+
+Paroxetine
+
+20mg/day8
+
+Sertraline
+
+50mg/day9
+
+Others
+Agomelatine
+
+25mg/day10
+
+Bupropion
+
+150mg/day11
+
+Desvenlafaxine
+
+50mg/day12
+
+Duloxetine
+
+60mg/day13,14
+
+Levomilnacipran
+
+40mg/day15
+
+Mirtazapine
+
+30mg/day (15mg?16)
+
+Moclobemide
+
+300mg/17
+
+Reboxetine
+
+8mg/day18
+
+Trazodone
+
+150mg/day19
+
+Venlafaxine
+
+75mg/day20
+
+Vilazodone
+
+20mg/day15
+
+Vortioxetine
+
+10mg/day15
+
+
+
+
+<<<PAGE 334>>>
+
+Depression and anxiety disorders  313
+
+1. Furukawa TA, et al. Meta-analysis of effects and side effects of low dosage tricyclic antidepressants in depression: systematic review. BMJ
+2002; 325:991.
+2. Donoghue J, et al. Suboptimal use of antidepressants in the treatment of depression. CNS Drugs 2000; 13:365–368.
+3. Lancaster SG, et al. Lofepramine. A review of its pharmacodynamic and pharmacokinetic properties, and therapeutic efficacy in depressive
+illness. Drugs 1989; 37:123–140.
+4. Montgomery SA, et al. The optimal dosing regimen for citalopram – a meta-analysis of nine placebo-controlled studies. Int Clin
+Psychopharmacol 1994; 9 Suppl 1:35–40.
+5. Burke WJ, et al. Fixed-dose trial of the single isomer SSRI escitalopram in depressed outpatients. J Clin Psychiatry 2002; 63:331–336.
+6. Altamura AC, et al. The evidence for 20mg a day of fluoxetine as the optimal dose in the treatment of depression. Br J Psychiatry Suppl 1988;
+109–112.
+7. Walczak DD, et al. The oral dose-effect relationship for fluvoxamine: a fixed-dose comparison against placebo in depressed outpatients. Ann
+Clin Psychiatry 1996; 8:139–151.
+8. Dunner DL, et al. Optimal dose regimen for paroxetine. J Clin Psychiatry 1992; 53 Suppl:21–26.
+9. Moon CAL, et al. A double-blind comparison of sertraline and clomipramine in the treatment of major depressive disorder and associative
+anxiety in general practice. J Psychopharm 1994; 8:171–176.
+10. Loo H, et al. Determination of the dose of agomelatine, a melatoninergic agonist and selective 5-HT(2C) antagonist, in the treatment of major
+depressive disorder: a placebo-controlled dose range study. Int Clin Psychopharmacol 2002; 17:239–247.
+11. Hewett K, et al. Eight-week, placebo-controlled, double-blind comparison of the antidepressant efficacy and tolerability of bupropion XR
+and venlafaxine XR. J Psychopharmacology 2009; 23:531–538.
+12. Kornstein SG, et al. The effect of desvenlafaxine 50 mg/day on a subpopulation of anxious/depressed patients: a pooled analysis of seven
+randomized, placebo-controlled studies. Human Psychopharmacology 2014; 29:492–501.
+13. Goldstein DJ, et al. Duloxetine in the treatment of depression: a double-blind placebo-controlled comparison with paroxetine. J Clin
+Psychopharmacol 2004; 24:389–399.
+14. Detke MJ, et al. Duloxetine, 60 mg once daily, for major depressive disorder: a randomized double-blind placebo-controlled trial. J Clin
+Psychiatry 2002; 63:308–315.
+15. He H, et al. Efficacy and tolerability of different doses of three new antidepressants for treating major depressive disorder: a PRISMAcompliant meta-analysis. J Psychiatr Res 2018; 96:247–259.
+16. Furukawa TA, et al. No benefit from flexible titration above minimum licensed dose in prescribing antidepressants for major depression:
+systematic review. Acta Psychiatr Scand 2020; 141:401–409.
+17. Priest RG, et al. Moclobemide in the treatment of depression. Rev Contemporary Pharmacother 1994; 5:35–43.
+18. Schatzberg AF. Clinical efficacy of reboxetine in major depression. J Clin Psychiatry 2000; 61 Suppl 10:31–38.
+19. Brogden RN, et al. Trazodone: a review of its pharmacological properties and therapeutic use in depression and anxiety. Drugs 1981;
+21:401–429.
+20. Feighner JP, et al. Efficacy of once-daily venlafaxine extended release (XR) for symptoms of anxiety in depressed outpatients. J Affect Disord
+1998; 47:55–62.
+
+CHAPTER 3
+
+References
+
+
+
+
+<<<PAGE 399>>>
+
+378  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Drug interactions with antidepressants
+Drugs can interact with each other in two different ways:
+
+CHAPTER 3
+
+■■
+
+Pharmacokinetic interactions where one drug interferes with the absorption, distribution, metabolism or elimination of another drug. This may result in a subtherapeutic
+effect or toxicity. The largest group of pharmacokinetic interactions involves drugs
+that inhibit or induce hepatic CYP450 enzymes (see Tables 3.14 and 3.15). Other
+enzyme systems include FMO1 and UGT.2 While both of these latter enzyme systems
+are involved in the metabolism of psychotropic drugs, the potential for drugs to
+inhibit or induce these enzyme systems has been less well studied.
+The clinical consequences of pharmacokinetic interactions in an individual patient
+can be difficult to predict. Some are highly clinically significant; for example, when
+paroxetine (a potent CYP2D6 inhibitor) is taken with tamoxifen, up to 1 extra
+woman in 20 will die within 5 years of stopping tamoxifen.3 The following factors
+affect outcome of interactions: the degree of enzyme inhibition or induction, the
+pharmacokinetic properties of the affected drug and other co-administered drugs,
+the relationship between plasma level and pharmacodynamic effect for the affected
+drug, and patient-specific factors such as variability in the role of primary and secondary metabolic pathways and the presence of co-morbid physical illness.4
+
+Table 3.14 Summary of antidepressant effects on CYP enzymes5–7
+Antidepressant
+
+Substrate for
+
+Inhibits
+
+Citalopram
+
+CYP2C19, CYP2D6, CYP3A4
+
+CYP2D6 (weak)
+
+Escitalopram
+
+CYP2C19, CYP2D6, CYP3A4
+
+CYP2D6 (weak)
+
+Fluoxetine
+
+CYP2D6, CYP3A4
+
+CYP2D6 (moderate to potent),
+CYP2C9 (moderate), CYP3A4
+(weak)
+
+Fluvoxamine
+
+CYP2D6; others possibly involved
+
+CYP1A2 (potent), CYP2C19
+(potent), CYP3A4 (weak), CYP2C9
+(weak)
+
+Paroxetine
+
+CYP2D6
+
+CYP2D6 (potent)
+
+Sertraline
+
+CYP3A4, CYP2D6 (minor) and possibly
+other pathways
+
+CYP2D6 (weak)
+
+Desvenlafaxine
+
+CYP3A4
+
+CYP2D6 (weak)
+CYP2D6 (moderate)
+
+SSRIs
+
+SNRIs
+
+Duloxetine
+
+CYP1A2, CYP2D6
+
+Levomilnacipran
+
+CYP3A4, CYP2C8, CYP2C19, CYP2D6
+
+Venlafaxine
+
+CYP2D6, CYP3A4
+
+CYP2D6 (weak)
+(Continued)
+
+
+
+
+<<<PAGE 406>>>
+
+Can cause significant
+Decrease in
+heart rate more postural hypotension
+common,
+although
+increase can also
+occur
+
+Increase in heart
+rate
+
+Marginally
+increased
+
+Increased in
+overdose
+
+No effect
+
+Trazodone26,47,48
+
+Tricyclics26,49–51
+
+Venlafaxine15,52–56
+(assume same for
+desvenlafaxine)
+
+Vilazodone57–59
+
+Vortioxetine60–62
+
+No effect
+
+Increased in overdose
+
+Some increase in
+postural blood
+pressure. At higher
+doses increase in
+blood pressure
+
+Postural hypotension
+
+Minimal effect on
+blood pressure
+
+Minimal effect
+on heart rate
+
+Sertraline41–45
+
+Blood pressure
+
+Heart rate
+
+Drug
+
+Table 3.16 (Continued)
+
+Arrhythmia
+
+No effect
+
+No effect, even in
+overdose
+
+Possible
+prolongation in
+overdose, but very
+rare
+
+None
+
+Conduction
+disturbance
+
+No effect
+
+No effect
+
+No effect
+
+Rare reports of
+Rare reports of
+cardiac arrhythmia conduction
+abnormalities
+in overdose
+
+No reports, even
+in overdose
+
+Contraindicated in
+patients with acute MI
+
+Drug of choice post MI
+but formal labelling
+acknowledges effect on
+QT cautions against use
+in patients with
+additional risk factors
+for QTc prolongation
+
+Licensed
+restrictions post-MI
+
+No specific
+contra-indication
+
+No specific
+contra-indication
+
+Has not been evaluated
+in post-MI patients.
+Caution advised
+
+Contraindicated in
+Slows cardiac
+patients with recent MI
+conduction
+– blocks cardiac
+Na/K channels
+
+Unclear
+Several case
+reports of
+prolonged QT and
+arrhythmia
+
+Prolongation of QTc Ventricular
+arrhythmia
+interval and QRS
+common in
+interval
+overdose. Torsade
+de Pointes
+reported
+
+Can prolong QTc
+interval
+
+No effect on QTc
+None
+interval at standard
+doses. Small
+increase (<10ms) at
+400mg/day.46
+
+QTc
+
+Trial data suggest no effect
+on QTc or on coagulation
+parameters
+
+Probably no effect on CV
+function in clinical doses
+
+Evidence for
+arrhythmogenic potential
+is slim, but avoid in
+coronary disease
+
+TCAs affect cardiac
+contractility. Some TCAs
+linked to ischaemic heart
+disease and sudden cardiac
+death. Avoid in coronary
+artery disease
+
+May be arrhythmogenic in
+patients with pre-existing
+cardiac disease
+
+Safe post MI and in heart
+failure
+
+Comments
+
+
+
+
+<<<PAGE 408>>>
+
+25. U.S. Food & Drug Administration. Highlights of Prescribing Information. Fetzima (levomilnacipran) extended-release capsules for oral use.
+2019; https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/204168s006lbl.pdf.
+26. Warrington SJ, et al. The cardiovascular effects of antidepressants. Psychol Med Monogr Suppl 1989; 16:i-40.
+27. Stern H, et al. Cardiovascular effects of single doses of the antidepressants amitriptyline and lofepramine in healthy subjects.
+Pharmacopsychiatry 1985; 18:272–277.
+28. WS W, et al. Acute myocarditis after massive phenelzine overdose. Eur J Clin Pharmacol 2007; 63:1007–1009.
+29. Periclou A, et al. Effects of milnacipran on cardiac repolarization in healthy participants. J Clin Pharmacol 2010; 50:422–433.
+30. U.S Food & Drug Administration. Highlights of Prescribing Information. Savella (milnacipran HCl) Tablets. 2009; https://www.accessdata.
+fda.gov/drugsatfda_docs/label/2011/022256s011lbl.pdf.
+31. Montgomery SA. Safety of mirtazapine: a review. Int Clin Psychopharmacol 1995; 10 Suppl 4:37–45.
+32. Honig A, et al. Treatment of post-myocardial infarction depressive disorder: a randomized, placebo-controlled trial with mirtazapine.
+Psychosom Med 2007; 69:606–613.
+33. Moll E, et al. Safety and efficacy during long-term treatment with moclobemide. Clin Neuropharmacol 1994; 17 Suppl 1:S74–S87.
+34. Hilton S, et al. Moclobemide safety: monitoring a newly developed product in the 1990s. J Clin Psychopharmacol 1995; 15:76S–83S.
+35. Downes MA, et al. QTc abnormalities in deliberate self-poisoning with moclobemide. Intern Med J 2005; 35:388–391.
+36. Kuhs H, et al. Cardiovascular effects of paroxetine. Psychopharmacology (Berl) 1990; 102:379–382.
+37. Roose SP, et al. Comparison of paroxetine and nortriptyline in depressed patients with ischemic heart disease. JAMA 1998; 279:287–291.
+38. Mucci M. Reboxetine: a review of antidepressant tolerability. J Psychopharmacology 1997; 11:S33–S37.
+39. KJ H, et al. Reboxetine: a review of its use in depression. CNS Drugs 1999; 12:65–83.
+40. Fleishaker JC, et al. Lack of effect of reboxetine on cardiac repolarization. Clin Pharmacol Ther 2001; 70:261–269.
+41. Shapiro PA, et al. An open-label preliminary trial of sertraline for treatment of major depression after acute myocardial infarction (the
+SADHAT Trial). Sertraline Anti-Depressant Heart Attack Trial. Am Heart J 1999; 137:1100–1106.
+42. Glassman AH, et al. Sertraline treatment of major depression in patients with acute MI or unstable angina. JAMA 2002; 288:701–709.
+43. Winkler D, et al. Trazodone-induced cardiac arrhythmias: a report of two cases. Human Psychopharmacology 2006; 21:61–62.
+44. Jiang W, et al. Safety and efficacy of sertraline for depression in patients with CHF (SADHART-CHF): a randomized, double-blind, placebocontrolled trial of sertraline for major depression with congestive heart failure. Am Heart J 2008; 156:437–444.
+45. Leftheriotis D, et al. The role of the selective serotonin re-uptake inhibitor sertraline in nondepressive patients with chronic ischemic heart
+failure: a preliminary study. Pacing Clin Electrophysiol 2010; 33:1217–1223.
+46. Abbas R, et al. A thorough QT study to evaluate the effects of a supratherapeutic dose of sertraline on cardiac repolarization in healthy
+subjects. Clin Pharmacol Drug Develop 2020; 9:307–320.
+47. JA S, et al. QT Prolongation and delayed atrioventricular conduction caused by acute ingestion of trazodone. Clin Toxicol (Phila) 2008;
+46:71–73.
+48. Dattilo PB, et al. Prolonged QT associated with an overdose of trazodone. J Clin Psychiatry 2007; 68:1309–1310.
+49. Hippisley-Cox J, et al. Antidepressants as risk factor for ischaemic heart disease: case-control study in primary care. BMJ 2001;
+323:666–669.
+50. Whyte IM, et al. Relative toxicity of venlafaxine and selective serotonin reuptake inhibitors in overdose compared to tricyclic antidepressants.
+QJM 2003; 96:369–374.
+51. van Noord C, et al. Psychotropic drugs associated with corrected QT interval prolongation. J Clin Psychopharmacol 2009; 29:9–15.
+52. Khawaja IS, et al. Cardiovascular effects of selective serotonin reuptake inhibitors and other novel antidepressants. Heart Dis 2003;
+5:153–160.
+53. Pfizer Limited. Summary of product characteristics. Efexor XL 75 mg hard prolonged release capsules. https://www.medicines.org.uk/2013.
+54. Letsas K, et al. QT interval prolongation associated with venlafaxine administration. Int J Cardiol 2006; 109:116–117.
+55. Taylor D, et al. Volte-face on venlafaxine–reasons and reflections. Journal of Psychopharmacology 2006; 20:597–601.
+56. Cooper JM, et al. Desvenlafaxine overdose and the occurrence of serotonin toxicity, seizures and cardiovascular effects. Clin Toxicol (Phila)
+2017; 55:18–24.
+57. Edwards J, et al. Vilazodone lacks proarrhythmogenic potential in healthy participants: a thorough ECG study. Int J Clin Pharmacol Ther
+2013; 51:456–465.
+58. Heise CW, et al. A review of vilazodone exposures with focus on serotonin syndrome effects. Clin Toxicol (Phila) 2017; 55:1004–1007.
+59. Gaw CE, et al. Evaluation of dose and outcomes for pediatric vilazodone ingestions. Clin Toxicol (Phila) 2018; 56:113–119.
+60. Citrome L. Vortioxetine for major depressive disorder: a systematic review of the efficacy and safety profile for this newly approved antidepressant – what is the number needed to treat, number needed to harm and likelihood to be helped or harmed? Int J Clin Pract 2014;
+68:60–82.
+61. Takeda Pharmaceuticals America Inc. Highlights of prescribing information. BRINTELLIX (vortioxetine) tablets. 2014; http://www.
+us.brintellix.com.
+62. Baldwin DS, et al. The safety and tolerability of vortioxetine: analysis of data from randomized placebo-controlled trials and open-label
+extension studies. J Psychopharmacology 2016; 30:242–252.
+63. Na K-S, et al. Can we recommend mirtazapine and bupropion for patients at risk for bleeding?: a systematic review and meta-analysis. J
+Affect Disord 2018; 225:221–226.
+
+CHAPTER 3
+
+Depression and anxiety disorders  387
+
+
+
+
+<<<PAGE 410>>>
+
+Depression and anxiety disorders  389
+
+Depression confers an increased risk of cardiovascular disease1 and sudden cardiac
+death2 perhaps because of platelet activation,3 decreased heart rate variability,4 reduced
+physical activity,5 an association with an increased risk of diabetes and/or other factors.
+Tricyclic antidepressants (TCAs) have established arrhythmogenic activity which
+arises as a result of potent blockade of cardiac sodium channels and variable activity at
+potassium channels.6 ECG changes produced include PR, QRS and QT prolongation
+and the Brugada syndrome.7 Normal clinical use of nortriptyline has been associated in
+one study with an increased risk of cardiac arrest,8 although a large cohort study did
+not confirm this finding.9 Lofepramine, for reasons unknown, seems to lack the overdose arrhythmogenicity of other TCAs, despite its major metabolite, desipramine, being
+a potent potassium channel blocker.10 Oddly, in one study,11 clinical use of lofepramine
+was associated with an increased risk of myocardial infarction, whereas other antidepressants were not. In patients taking tricyclics, ECG monitoring is a more meaningful
+and useful measure of toxicity than plasma level monitoring.
+There is limited evidence that venlafaxine is a sodium channel antagonist12 and a
+weak antagonist at hERG potassium channels. Arrhythmia is a rare occurrence even
+after massive overdose,13–16 and ECG changes no more common than with SSRIs.17 No
+ECG changes are seen in therapeutic dosing,18 and sudden cardiac death in clinical use
+is no more common than with fluoxetine or citalopram.9,19 Desvenlafaxine does not
+appear to prolong QT even in overdose.20
+Moclobemide,21 citalopram,22,23 escitalopram,24 bupropion (amfebutamone),25 trazodone26,27 and sertraline,28 amongst others,1 have been reported to prolong the QTc interval in overdose, but the clinical consequences of this are uncertain. Sertraline prolongs
+QT by 5–10ms at 400mg a day,29 but QT changes are not usually seen with most SSRIs
+at normal clinical doses.30,31 Nonetheless, an association between SSRIs (as a group)
+and QT changes in normal dosing can be shown,32 but this seems largely to be driven
+by the effects of citalopram and escitalopram.33 The effect is dose-related33 but modest.32 Neither a large database study9 nor a large cohort study34 found any association
+between citalopram treatment and arrhythmia or cardiac mortality in routine clinical
+practice; in fact, higher doses of citalopram (>40mg) were associated with fewer adverse
+outcomes than were lower doses.34 A large study found no excess risk of cardiac arrest
+and sudden death for citalopram or escitalopram,35 but a more recent Taiwanese study
+showed a small increase in mortality with these drugs.36
+Vortioxetine seems to have no effect on QT,37–39 similarly, agomelatine has no effect,
+even at supratherapeutic doses.40 Vilazodone has no effect on cardiac conduction.41
+Levomilnacipran42 and milnacipran43 probably have no effect on QT, at least at therapeutic doses.
+
+Use in at-risk patients
+There is clear evidence for the safety of sertraline44 and mirtazapine45 (and to a lesser
+extent, citalopram,45 fluoxetine46 and bupropion47) in subjects at risk of arrhythmia due
+to recent myocardial infarction. One trial found that SSRIs and trazodone decrease the
+risk of MI,48 another suggested no effect in either direction for any antidepressant.49
+
+CHAPTER 3
+
+Antidepressant-induced arrhythmia
+
+
+
+
+<<<PAGE 678>>>
+
+No formal recommendations are available for dosing in older adults2
+Reduced doses may be advisable in geriatric patients due to decreased clearance; every other day dosing may
+be considered in geriatric patients with poor tolerability to the drug
+For older adults, possible reduced renal clearance of desvenlafaxine should be considered when determining
+an appropriate dose
+Dosage in renal impairment:
+CrCl 50–80mL/minute: no dosage adjustment needed
+CrCl 30–50mL/minute: 50mg daily is the recommended daily and maximum dose
+CrCl <30mL/minute or end-stage renal disease: 50mg every other day is the recommended daily and
+maximum dose
+Older adults are also at greater risk for developing clinically significant hyponatremia2
+
+Depression/anxiety disorder
+
+Depression/anxiety disorder
+
+Duloxetine
+
+Escitalopram
+
+5mg mane
+
+30mg daily*
+
+5–10mg mane
+
+60mg daily
+
+10mg mane
+(Continued)
+
+120mg daily3
+(caution as limited data in
+elderly for this dose)
+
+400mg daily2
+
+75mg daily1
+
+Desvenlafaxine
+
+10mg nocte (dose increases should be
+cautious)
+
+30–75mg daily1 should be
+reached after about 10 days
+
+Depression/phobic and
+obsessional states
+
+20mg mane
+
+50mg nocte
+
+Maximum dose in
+elderly
+
+10–20mg mane
+
+Clomipramine
+
+10mg mane
+
+Depression/anxiety disorder
+
+25–50mg daily
+
+Usual maintenance dose
+
+Citalopram
+
+25mg nocte
+
+Starting dose
+
+Depression
+Monitor LFTs; data suggest
+that agomelatine is not
+effective in patients >75 years
+
+Specific indication/
+additional notes
+
+Agomelatine
+
+Antidepressants
+
+Drug
+
+A guide to medication doses of commonly used psychotropics in older adults
+
+
+
+
+<<<PAGE 687>>>
+
+666  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 6
+
+References
+1. Mylan. Summary of product characteristics. Clomipramine 25 mg Capsules, Hard. 2017; https://www.medicines.org.uk/emc/
+medicine/33260
+2. Prescribers’ Digital Reference. Desvenlafaxine – drug summary. 2017 (Last accessed September 2020); http://www.pdr.net/drug-summary/
+Khedezla-desvenlafaxine-3333.8274.
+3. Eli Lilly and Company Limited. Summary of product characteristics. Cymbalta 30mg hard gastro-resistant capsules, Cymbalta 60mg hard
+gastro-resistant capsules. 2020; https://www.medicines.org.uk/emc/medicine/15694.
+4. Zentiva. Summary of product characteristics. Molipaxin 100mg/Trazodone 100mg Capsules. 2020; https://www.medicines.org.uk/emc/
+medicine/26734.
+5. Prescribers’ Digital Reference. Trintellix (vortioxetine) – drug information. 2017 (Last accessed September 2020); http://www.pdr.net/druginformation/trintellix?druglabelid=3348
+6. Muller MJ, et al. Amisulpride doses and plasma levels in different age groups of patients with schizophrenia or schizoaffective disorder. J
+Psychopharmacol 2009; 23:278–286.
+7. Psarros C, et al. Amisulpride for the treatment of very-late-onset schizophrenia-like psychosis. Int J Geriatr Psychiatry 2009; 24:518–522.
+8. Clark-Papasavas C, et al. Towards a therapeutic window of D2/3 occupancy for treatment of psychosis in Alzheimer’s disease, with [F]fallypride positron emission tomography. Int J Geriatr Psychiatry 2014; 29:1001–1009.
+9. Prescribers’ digital reference. Brexpiprazole – Drug Summary. 2017 (Last accessed September 2020); http://www.pdr.net/drug-summary/
+Rexulti-brexpiprazole-3759
+10. Prescribers’ Digital Reference. Vraylar (cariprazine) – drug information. 2017 (Last accessed September 2020); http://www.pdr.net/druginformation/vraylar?druglabelid=3792.
+11. Jeste DV, et al. Conventional vs. newer antipsychotics in elderly patients. Am J Geriatr Psychiatry 1999; 7:70–76.
+12. Karim S, et al. Treatment of psychosis in elderly people. Adv Psychiatr Treatment 2005; 11:286–296.
+13. Group TPS. Low-dose clozapine for the treatment of drug-induced psychosis in Parkinson’s disease. N Engl J Med 1999; 340: 757–763.
+14. Intra-Cellular Therapies Inc. Highlights of prescribing information. Caplyta (lumateperone) capsules for oral use. 2019; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2019/209500s000lbl.pdf.
+15. Sunovion Pharmaceuticals Europe Ltd. Summary of product characteristics. Latuda 18.5mg, 37mg and 74mg film-coated tablets. 2020;
+https://www.medicines.org.uk/emc/medicine/29125.
+16. Sajatovic M, et al. Efficacy and tolerability of lurasidone in older adults with bipolar depression: analysis of two 6-week double-blind,
+placebo-controlled studies. Eur Psychiatry 2015; 30:1136.
+17. ACADIA Pharmaceuticals Inc. Highlights of prescribing information. Nuplazid (pimavanserin) tablets for oral use. 2016; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2016/207318lbl.pdf.
+18. Drugs.com. Piportil depot 50 mg/ml solution for injection. 2020 (Last accessed September 2020); https://www.drugs.com/uk/piportil-depot50-mg-ml-solution-for-injection-leaflet.html#.
+19. Otsuka Pharmaceutical (UK) Ltd. Summary of product characteristics. Abilify Maintena 300mg & 400mg powder and solvent for prolongedrelease suspension for injection and suspension for injection in pre filled syringe. 2020; https://www.medicines.org.uk/emc/medicine/31386.
+20. Eli Lily and Company Limited. Summary of product characteristics. Zypadhera 210mg powder and solvent for prolonged release suspension
+for injection. 2020; https://www.medicines.org.uk/emc/product/6429/smpc.
+21. Janssen-Cilag Limited. Summary of product characteristics. TREVICTA 175mg, 263mg, 350mg, 525mg prolonged release suspension for
+injection. 2019; https://www.medicines.org.uk/emc/medicine/32050.
+22. Janssen-Cilag Limited. Summary of product characteristics. RISPERDAL CONSTA 25 mg powder and solvent for prolonged-release suspension for intramuscular injection. 2018; https://www.medicines.org.uk/emc/medicine/9939.
+23. Essential Pharma Ltd. Summary of product characteristics. Camcolit 400mg controlled release Lithium Carbonate. 2020; https://www.
+medicines.org.uk/emc/product/10829/smpc.
+24. Eisai Inc. Highlights of prescribing information. DAYVIGO (lemborexant) tablets for oral use [controlled substance schedule pending]. 2019;
+https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/212028s000lbl.pdf#page=21.
+25. Upjohn UK Limited. Summary of product characteristics. Lyrica Capsules. 2020; https://www.medicines.org.uk/emc/medicine/14651.
+
+
+
+
+<<<PAGE 754>>>
+
+40. Gahr M, et al. Safety and tolerability of agomelatine: focus on hepatotoxicity. Curr Drug Metab 2014; 15:694–702.
+41. Billioti de Gage S, et al. Antidepressants and hepatotoxicity: a cohort study among 5 million individuals registered in the French National
+Health Insurance Database. CNS Drugs 2018; 32:673–684.
+42. Pladevall-Vila M, et al. Risk of acute liver injury in agomelatine and other antidepressant users in four European Countries: a cohort and
+nested case-control study using automated Health Data Sources. CNS Drugs 2019; 33:383–395.
+43. Hanje AJ, et al. Case report: fulminant hepatic failure involving duloxetine hydrochloride. Clin Gastroenterol Hepatol 2006; 4:912–917.
+44. Vuppalanchi R, et al. Duloxetine hepatotoxicity: a case-series from the drug-induced liver injury network. Aliment Pharmacol Ther 2010;
+32:1174–1183.
+45. Lin ND, et al. Hepatic outcomes among adults taking duloxetine: a retrospective cohort study in a US health care claims database. BMC
+Gastroenterol 2015; 15:134.
+46. McIntyre RS, et al. The hepatic safety profile of duloxetine: a review. Expert Opin Drug Metab Toxicol 2008; 4:281–285.
+47. Bunchorntavakul C, et al. Drug hepatotoxicity: newer agents. Clin Liver Dis 2017; 21:115–134.
+48. Schenker S, et al. Fluoxetine disposition and elimination in cirrhosis. Clin Pharmacol Ther 1988; 44:353–359.
+49. Cai Q, et al. Acute hepatitis due to fluoxetine therapy. Mayo Clin Proc 1999; 74:692–694.
+50. Friedenberg FK, et al. Hepatitis secondary to fluoxetine treatment. Am J Psychiatry 1996; 153:580.
+51. Johnston DE, et al. Chronic hepatitis related to use of fluoxetine. Am J Gastroenterol 1997; 92:1225–1226.
+52. Hale AS New antidepressants: use in high-risk patients. J Clin Psychiatry 1993; 54 Suppl:61–70.
+53. Stoeckel K, et al. Absorption and disposition of moclobemide in patients with advanced age or reduced liver or kidney function. Acta
+Psychiatr Scand Suppl 1990; 360:94–97.
+54. Lee KC, et al. Transdermal selegiline for the treatment of major depressive disorder. Neuropsychiatr Dis Treat 2007; 3:527–537.
+55. Thomas E, et al. Mirtazapine-induced steatosis. Int J Clin Pharmacol Ther 2017; 55:630–632.
+56. Shaheen AA, et al. The impact of depression and antidepressant usage on primary biliary cholangitis clinical outcomes. PLoS One 2018;
+13:e0194839.
+57. Benbow SJ, et al. Paroxetine and hepatotoxicity. BMJ 1997; 314:1387.
+58. Kuhs H, et al. A double-blind study of the comparative antidepressant effect of paroxetine and amitriptyline. Acta Psychiatr Scand Suppl
+1989; 350:145–146.
+59. de Bree H, et al. Fluvoxamine maleate: disposition in men. Eur J Drug Metab Pharmacokinet 1983; 8:175–179.
+60. Green BH Fluvoxamine and hepatic function. Br J Psychiatry 1988; 153:130–131.
+61. Milne RJ, et al. Citalopram: a review of its pharmacodynamic and pharmacokinetic properties, and therapeutic potential in depressive illness.
+Drugs 1991; 41:450–477.
+62. Lopez-Torres E, et al. Hepatotoxicity related to citalopram (Letter). Am J Psychiatry 2004; 161:923–924.
+63. Colakoglu O, et al. Toxic hepatitis associated with paroxetine. Int J Clin Pract 2005; 59:861–862.
+64. Rao N The clinical pharmacokinetics of escitalopram. Clin Pharmacokinet 2007; 46:281–290.
+65. Mullish BH, et al. Review article: depression and the use of antidepressants in patients with chronic liver disease or liver transplantation.
+Aliment Pharmacol Ther 2014; 40:880–892.
+66. Düll MM, et al. Treatment of pruritus secondary to liver disease. Current Gastroenterology Reports 2019; 21:48.
+67. A T, et al. Pharmacokinetics of reboxetine in volunteers with hepatic impairment. Clin Drug Investig 2000; 19:473–477.
+68. Medicines C. Lofepramine (Gamanil) and abnormal blood tests of liver function. Current Problems 1988; 23:2.
+69. Archer DF, et al. Cardiovascular, cerebrovascular, and hepatic safety of desvenlafaxine for 1 year in women with vasomotor symptoms associated with menopause. Menopause 2013; 20:47–56.
+70. Baird-Bellaire S, et al. An open-label, single-dose, parallel-group study of the effects of chronic hepatic impairment on the safety and pharmacokinetics of desvenlafaxine. Clin Ther 2013; 35:782–794.
+71. Ryan PB, et al. Atypical antipsychotics and the risks of acute kidney injury and related outcomes among older adults: a replication analysis
+and an evaluation of adapted confounding control strategies. Drugs Aging 2017; 34:211–219.
+72. Chen G, et al. Vortioxetine: clinical pharmacokinetics and drug interactions. Clin Pharmacokinet 2018; 57:673–686.
+73. Bjornsson E Hepatotoxicity associated with antiepileptic drugs. Acta Neurol Scand 2008; 118:281–290.
+74. Guo HL, et al. Valproic acid and the liver injury in patients with epilepsy: an update. Curr Pharm Des 2019; 25:343–351.
+75. Panei P, et al. Safety of psychotropic drug prescribed for attention-deficit/hyperactivity disorder in Italy. Adverse Drug Reaction Bulletin
+2010:999–1002.
+76. Reed VA, et al. The safety of atomoxetine for the treatment of children and adolescents with attention-deficit/hyperactivity disorder: a comprehensive review of over a decade of research. CNS Drugs 2016; 30:603–628.
+77. Tong HY, et al. Liver transplant in a patient under methylphenidate therapy: a case report and review of the literature. Case Rep Pediatr 2015;
+2015:437298.
+78. Shire Pharmaceuticals Limited. Summary of product characteristics. Elvanse 20mg 30mg 40mg 50mg 60mg 70mg Hard Capsules 2019;
+https://www.medicines.org.uk/emc/product/2979/smpc.
+79. Flynn Pharma Ltd. Summary of product characteristics. Amfexa 5mg 10mg 20mg Tablets 2018; https://www.medicines.org.uk/emc/product/7403/smpc.
+80. Vanga RR, et al. Adderall induced acute liver injury: a rare case and review of the literature. Case Rep Gastrointest Med 2013; 2013:902892.
+81. Hood B, et al. Eosinophilic hepatitis in an adolescent during lisdexamfetamine dimesylate treatment for ADHD. Pediatrics 2010;
+125:e1510–1513.
+
+CHAPTER 8
+
+Hepatic and renal impairment  733
+
+
+
+
+<<<PAGE 762>>>
+
+Hepatic and renal impairment  741
+
+Drug
+
+Comments
+
+Bupropion22,23,25,32,40,66–68
+(amfebutamone)
+
+0.5% excreted unchanged in the urine. Dosing: GFR <50mL/min, 150mg once
+daily. A single dose study in haemodialysis patients (stage 5 disease) recommended
+a dose of 150mg every 3 days. Metabolites may accumulate in renal impairment
+and clearance is reduced. Elevated levels increase risk of seizures. Has been used to
+treat sexual dysfunction in mild to moderately depressed patients with chronic
+kidney disease.
+
+Citalopram22,23,25,40,69–75
+
+<13% of citalopram is excreted unchanged in the urine. Single-dose studies in mild
+and moderate renal impairment show no change in the pharmacokinetics of
+citalopram. Dosing is as for normal renal function; however, use with caution if
+GFR <10mL/min due to reduced clearance. The manufacturer does not advise use if
+GFR <20mL/min. Renal failure has been reported with citalopram overdose.
+Citalopram can treat depression in chronic renal failure and improve quality of life
+but use of citalopram (or escitalopram) is associated with a higher risk of sudden
+cardiac death versus other SSRIs (fluoxetine, fluvoxamine, paroxetine, sertraline)
+when used in patients on haemodialysis (adjusted hazard ratio, 1.18; 95% CI 1.05,
+1.31). A case report of hyponatraemia has been reported in a renal transplant
+patient on citalopram.
+
+Clomipramine22,23,25,32,76
+
+2% of unchanged clomipramine is excreted in the urine. Dosing: GFR 20–50mL/min,
+dose as for normal renal function; GFR <20mL/min, effects unknown, start at a low
+dose and monitor patient for urinary retention, confusion, sedation and postural
+hypotension as accumulation can occur. There is a case report of clomipramineinduced interstitial nephritis and reversible acute renal failure.
+
+Desvenlafaxine12,22,77,78
+
+45% of desvenlafaxine is excreted unchanged in the urine. Manufacturer recommends:
+GFR 30–50mL/min, 50mg per day; GFR <30mL/min, 25mg daily. Half-life is prolonged
+and desvenlafaxine accumulates as GFR decreases. Urinary retention, delay when
+starting to pass urine and proteinuria, has been reported as adverse effects.
+
+Dosulepin22,25,79
+(dothiepin)
+
+56% of mainly active metabolites renally excreted. They have a long half-life and may
+accumulate, resulting in excessive sedation. Dosing: GFR 20–50mL/min, dose as for
+normal renal function; GFR <20mL/min, start with a small dose and titrate to
+response. Monitor patient for urinary retention, confusion, sedation and postural
+hypotension.
+
+Doxepin22,23,25,32,80
+
+<1% excreted unchanged in urine. Dosing: GFR 10–50mL/min as in normal renal
+function but monitor patient for urinary retention, confusion, sedation and postural
+hypotension; GFR <10mL/min start with a small dose and increase slowly.
+Manufacturer advises using with caution. Haemolytic anaemia with renal failure has
+been reported with doxepin. Used topically to treat pruritis in chronic renal failure.
+
+Duloxetine22,25,81–83
+
+<1% excreted unchanged in urine. Manufacturer states no dose adjustment is
+necessary for GFR >30mL/min; however, starting at a low dose and increasing slowly
+is advised. Duloxetine is contraindicated in patients with a GFR <30mL/min as it can
+accumulate in chronic kidney disease. Licensed to treat diabetic neuropathic pain and
+stress incontinence in women. Diabetes is a common cause of renal impairment. Two
+case reports of acute renal failure with duloxetine have been reported. Serotonin
+syndrome reported in a patient with chronic kidney disease on trazodone and
+duloxetine.84
+(Continued)
+
+CHAPTER 8
+
+Table 8.9 (Continued)
+
+
+
+
+<<<PAGE 772>>>
+
+55. Aweeka F, et al. The pharmacokinetics of ziprasidone in subjects with normal and impaired renal function. Br J Clin Pharmacol 2000;
+49:27S-33S.
+56. Roerig. Highlights of Prescribing Information: GEODON® (ziprasidone HCl) capsules; GEODON® (ziprasidone mesylate) injection for
+intramuscular use 2020; http://labeling.pfizer.com/ShowLabeling.aspx?id=584.
+57. Iskandar JW, et al. Transient agranulocytosis associated with ziprasidone in a 45-year-old man on hemodialysis. J Clin Psychopharmacol
+2015; 35:347–348.
+58. Basol N, et al. Beneficial effects of agomelatine in experimental model of sepsis-related acute kidney injury. Ulus Travma Acil Cerrahi Derg
+2016; 22:121–126.
+59. Karaman A, et al. A novel approach to contrast-induced nephrotoxicity: the melatonergic agent agomelatine. Br J Radiol 2016; 89:20150716.
+60. Lieberman JA, et al. Tricyclic antidepressant and metabolite levels in chronic renal failure. Clin Pharmacol Ther 1985; 37:301–307.
+61. Mitas JA, et al. Diabetic neuropathic pain: control by amitriptyline and fluphenazine in renal insufficiency. South Med J 1983; 76:462–463,
+467.
+62. Murphy EJ. Acute pain management pharmacology for the patient with concurrent renal or hepatic disease. Anaesth Intensive Care 2005;
+33:311–322.
+63. Constantino JL, et al. Pharmacokinetics of antidepressants in patients undergoing hemodialysis: a narrative literature review. Braz J Psychiatry
+2019; 41:441–446.
+64. Chen TY, et al. Amitriptyline-induced acute kidney injury and acute hepatitis: a case report. Am J Ther 2021; 28:e256-e258
+65. Sage Therapeutics Inc. Highlights of Prescribing Information. Zulresso (brexanolone) injection for intravenous use [controlled substance
+schedule pending] 2019; https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/211371lbl.pdf.
+66. Turpeinen M, et al. Effect of renal impairment on the pharmacokinetics of bupropion and its metabolites. Br J Clin Pharmacol 2007;
+64:165–173.
+67. Worrall SP, et al. Pharmacokinetics of bupropion and its metabolites in haemodialysis patients who smoke. A single dose study. Nephron Clin
+Pract 2004; 97:c83–c89.
+68. Ghoreishi A, et al. Bupropion as a treatment for sexual dysfunction among chronic kidney disease patients Acta Med Iran 2019;
+57:320–327.
+69. Joffe P, et al. Single-dose pharmacokinetics of citalopram in patients with moderate renal insufficiency or hepatic cirrhosis compared with
+healthy subjects. Eur J Clin Pharmacol 1998; 54:237–242.
+70. Kalender B, et al. Antidepressant treatment increases quality of life in patients with chronic renal failure. Ren Fail 2007; 29:817–822.
+71. Kelly CA, et al. Adult respiratory distress syndrome and renal failure associated with citalopram overdose. Hum Exp Toxicol 2003;
+22:103–105.
+72. Spigset O, et al. Citalopram pharmacokinetics in patients with chronic renal failure and the effect of haemodialysis. Eur J Clin Pharmacol
+2000; 56:699–703.
+73. Hosseini SH, et al. Citalopram versus psychological training for depression and anxiety symptoms in hemodialysis patients. Iran J Kidney Dis
+2012; 6:446–451.
+74. Sran H, et al. Confusion after starting citalopram in a renal transplant patient. BMJ Case Rep 2013; 2013:bcr2013010511.
+75. Assimon MM, et al. Comparative cardiac safety of selective serotonin reuptake inhibitors among individuals receiving maintenance hemodialysis. J Am Soc Nephrol 2019; 30:611–623.
+76. Onishi A, et al. Reversible acute renal failure associated with clomipramine-induced interstitial nephritis. Clin Exp Nephrol 2007;
+11:241–243.
+77. Wyeth Pharmaceuticals Inc. Highlights of Prescribing Information. PRISTIQ® (desvenlafaxine) Extended-Release Tablets, for oral use 2020;
+http://labeling.pfizer.com/showlabeling.aspx?id=497%20.
+78. Nichols AI, et al. The pharmacokinetics and safety of desvenlafaxine in subjects with chronic renal impairment. Int J Clin Pharmacol Ther
+2011; 49:3–13.
+79. Rees JA. Clinical interpretation of pharmacokinetic data on dothiepin hydrochloride (Dosulepin, Prothiaden). J Int Med Res 1981;
+9:98–102.
+80. Swarna SS, et al. Pruritus associated with chronic kidney disease: a comprehensive literature review. Cureus 2019; 11:e5256.
+81. Lobo ED, et al. Effects of varying degrees of renal impairment on the pharmacokinetics of duloxetine: analysis of a single-dose phase I study
+and pooled steady-state data from phase II/III trials. Clin Pharmacokinet 2010; 49:311–321.
+82. Ho NV, et al. Duloxetine-induced multi-system organ failure: a case report. Poster presented at American Geriatrics Society Annual Meeting,
+May 11–15, 2011: National Harbor, Maryland; 2011.
+83. Nguyen T, et al. Duloxetine uses in patients with kidney disease: different recommendations from the United States versus Europe and
+Canada. Am J Ther 2019; 26:e516-e519.
+84. Uong C, et al. Poster 91 serotonin syndrome in chronic kidney disease patient after given a dose of duloxetine while on trazodone: a case
+report. PM&R 2014; 6 (Suppl): S214–S215.
+85. Miriyala K, et al. Renal failure in a depressed adolescent on escitalopram. J Child Adolesc Psychopharmacol 2008; 18:405–408.
+86. Adiga GU, et al. Renal tubular defects from antidepressant use in an older adult: an uncommon but reversible adverse drug effect. Clin Drug
+Invest 2006; 26:607–610.
+87. Yazici AE, et al. Efficacy and tolerability of escitalopram in depressed patients with end stage renal disease: an open placebo-controlled study.
+Bull Clin Psychopharmacol 2012; 22:23–30.
+88. Bergstrom RF, et al. The effects of renal and hepatic disease on the pharmacokinetics, renal tolerance, and risk-benefit profile of fluoxetine.
+Int Clin Psychopharmacol 1993; 8:261–266.
+89. Blumenfield M, et al. Fluoxetine in depressed patients on dialysis. Int J Psychiatry Med 1997; 27:71–80.
+90. Levy NB, et al. Fluoxetine in depressed patients with renal failure and in depressed patients with normal kidney function. Gen Hosp
+Psychiatry 1996; 18:8–13.
+
+CHAPTER 8
+
+Hepatic and renal impairment  751
+
+
+
+
+<<<PAGE 862>>>
+
+Pharmacokinetics  841
+
+The target ranges listed in Table 11.2 have somewhat dubious usefulness and, in
+some cases, merely represent the range of values seen in clinical use. Assays for these
+drugs are likely to be available only in specialist units.
+
+Antipsychotics
+
+Target range (µg/L)
+
+Asenapine
+
+1–5
+
+Brexpiprazole
+
+40–140
+
+Cariprazine
+
+10–20
+
+Chlorpromazine
+
+30–300
+
+Flupentixol
+
+0.5–5 (cis-isomer)
+
+Fluphenazine
+
+1–10
+
+Haloperidol
+
+1–10
+
+Iloperidone
+
+5–10
+
+Lurasidone
+
+15–40
+
+Melperone
+
+30–100
+
+Sulpiride
+
+200–1000
+
+Ziprasidone
+
+50–200
+
+Zuclopenthixol
+
+4–50
+
+Antidepressants
+
+Target range (µg/L)
+
+Agomelatine
+
+7–300
+
+Citalopram
+
+50–110
+
+Desvenlafaxine
+
+100–400
+
+Dosulepin
+
+45–100
+
+Duloxetine
+
+30–120
+
+Escitalopram
+
+15–80
+
+Fluoxetine (+norfluoxetine)
+
+120–500
+
+Fluvoxamine
+
+60–230
+
+Levomilnacipran
+
+80–120
+
+Mianserin
+
+15–70
+
+CHAPTER 11
+
+Table 11.2 Target ranges for other psychotropics30,91
+
+(Continued)
+
+

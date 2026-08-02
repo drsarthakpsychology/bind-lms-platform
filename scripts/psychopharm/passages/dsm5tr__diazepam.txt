@@ -1,0 +1,551 @@
+<<<PAGE 780>>>
+
+When hallucinations occur in the absence of delirium (i.e., in a clear sensorium), a diagnosis of
+substance/medication-induced psychotic disorder should be considered.
+
+Diagnostic Features
+The essential feature of alcohol withdrawal is the presence of a characteristic withdrawal
+syndrome that develops within several hours to a few days after the cessation of (or reduction in)
+heavy and prolonged alcohol use (Criteria A and B). The withdrawal syndrome includes two or
+more of the symptoms reflecting autonomic hyperactivity and anxiety listed in Criterion B, along
+with gastrointestinal symptoms.
+Withdrawal symptoms cause clinically significant distress or impairment in social,
+occupational, or other important areas of functioning (Criterion C). The symptoms must not be
+attributable to another medical condition and are not better explained by another mental disorder
+(e.g., generalized anxiety disorder), including intoxication or withdrawal from another substance
+(e.g., sedative, hypnotic, or anxiolytic withdrawal) (Criterion D).
+Symptoms can be relieved by administering alcohol or benzodiazepines (e.g., diazepam). The
+withdrawal symptoms typically begin when blood concentrations of alcohol decline sharply (i.e.,
+within 4–12 hours) after alcohol use has been stopped or reduced. Reflecting the relatively fast
+metabolism of alcohol, symptoms of alcohol withdrawal usually peak in intensity during the
+second day of abstinence and are likely to improve markedly by the fourth or fifth day.
+Following acute withdrawal, however, symptoms of anxiety, insomnia, and autonomic
+dysfunction may persist for up to 3–6 months at lower levels of intensity.
+Fewer than 10% of individuals who develop alcohol withdrawal will ever develop dramatic
+symptoms (e.g., severe autonomic hyperactivity, tremors, alcohol withdrawal delirium). Tonicclonic seizures occur in fewer than 3% of individuals.
+
+Associated Features
+Although confusion and changes in consciousness are not core criteria for alcohol withdrawal,
+alcohol withdrawal delirium (see “Delirium” in the chapter “Neurocognitive Disorders”) may
+occur in the context of withdrawal. As is true for any agitated, confused state, regardless of the
+cause, in addition to a disturbance of consciousness and cognition, withdrawal delirium can
+include visual, tactile, or (rarely) auditory hallucinations
+566
+(delirium tremens). When alcohol withdrawal delirium develops, it is likely that a clinically
+relevant medical condition may be present (e.g., liver failure, pneumonia, gastrointestinal
+bleeding, sequelae of head trauma, hypoglycemia, an electrolyte imbalance, postoperative
+status).
+
+Prevalence
+It is estimated that approximately 50% of middle-class, highly functional individuals with
+alcohol use disorder in the United States have ever experienced a full alcohol withdrawal
+syndrome. Among individuals with alcohol use disorder who are hospitalized or homeless, the
+rate of alcohol withdrawal may be greater than 80%. Less than 10% of individuals in withdrawal
+
+
+
+
+<<<PAGE 852>>>
+
+relates to availability of the substances, both through an individual’s own prescriptions and from
+prescriptions dispensed to family and friends. In the United States, the historical patterns of
+sedative, hypnotic, or anxiolytic misuse relate to broad prescribing patterns. For instance, a
+marked decrease in prescription of barbiturates was associated with an increase in
+benzodiazepine prescriptions. Peer factors may relate to genetic predisposition in terms of how
+individuals select their environment. Other individuals at heightened risk might include those
+with alcohol use disorder who may receive repeated prescriptions in response to their complaints
+of alcohol-related anxiety or insomnia.
+Genetic and physiological. As with other substance use disorders, the risk for sedative, hypnotic,
+or anxiolytic use disorder has been found in U.S.-based twin registry studies to be related to
+individual, family, peer, social, and environmental factors. Within these domains, genetic factors
+play a particularly important role both directly and indirectly. Overall, across development,
+genetic factors seem to play a larger role in the onset of sedative, hypnotic, or anxiolytic use
+disorder as individuals age through puberty into adult life.
+Course modifiers. In nationally representative U.S. studies, early onset of use is associated with
+greater likelihood for developing a sedative, hypnotic, or anxiolytic use disorder.
+
+Culture-Related Diagnostic Issues
+Prescription patterns (and availability) of this class of substances vary across countries and
+populations, which may lead to variations in prevalence of sedative, hypnotic, or anxiolytic use
+disorder. In the United States, use of benzodiazepines has been more frequently reported by nonLatinx Whites than Latinx or African Americans. However, risk of the disorder may vary within
+populations exposed to these substances. For example, the 12-month prevalence of DSM-IV
+benzodiazepine use disorder among U.S. individuals who used benzodiazepines was higher
+among African Americans (3.0%) and non-Latinx “others” (2.6%) than among non-Latinx
+Whites (1.3%).
+
+Sex- and Gender-Related Diagnostic Issues
+Although estimates from individual studies vary, there appear to be no gender differences in the
+prevalence of sedative, hypnotic, or anxiolytic use disorder.
+625
+
+Diagnostic Markers
+Almost all sedative, hypnotic, or anxiolytic substances can be identified through laboratory
+evaluations of urine or blood (the latter of which can quantify the amounts of these agents in the
+body). Urine test results are likely to remain positive for up to approximately 1 week after the
+use of long-acting substances, such as diazepam or flurazepam.
+
+Association With Suicidal Thoughts or Behavior
+U.S. epidemiological studies show that hypnotics are associated with suicide, but it is unclear if
+this association is attributable to underlying psychiatric conditions such as depression and
+insomnia, which are themselves risk factors for suicide.
+
+
+
+
+<<<PAGE 859>>>
+
+Associated Features
+The timing and severity of the withdrawal syndrome will differ depending on the specific
+substance and its pharmacokinetics and pharmacodynamics. For example, withdrawal from
+shorter-acting substances that are rapidly absorbed and that have no active metabolites (e.g.,
+triazolam) can begin within hours after the substance is stopped; withdrawal from substances
+with long-acting metabolites (e.g., diazepam) may not begin for 1–2 days or longer. The
+withdrawal syndrome produced by substances in this class may be characterized by the
+development of a delirium that can be life-threatening. There may be evidence of tolerance and
+withdrawal in the absence of a diagnosis of a benzodiazepine use disorder in an individual who
+has abruptly discontinued benzodiazepines that were taken for long periods of time at prescribed
+and therapeutic doses.
+The time course of the withdrawal syndrome is generally predicted by the half-life of the
+substance. Medications whose actions typically last about 10 hours or less (e.g., lorazepam,
+oxazepam, temazepam) produce withdrawal symptoms within 6–8 hours of decreasing blood
+levels that peak in intensity on the second day and improve markedly by the fourth or fifth day.
+For substances with longer half-lives (e.g., diazepam), symptoms may not develop for more than
+1 week, peak in intensity during the second week, and decrease markedly during the third or
+fourth week. There may be additional longer-term symptoms at a much lower level of intensity
+that persist for several months.
+The longer the substance has been taken and the higher the dosages used, the more likely
+there will be severe withdrawal. However, withdrawal has been reported with as little as 15 mg
+of diazepam (or its equivalent in other benzodiazepines) when taken daily for several months.
+Doses of approximately 40 mg of diazepam (or its equivalent) daily are more likely to produce
+clinically relevant withdrawal symptoms, and even higher doses (e.g., 100 mg of diazepam) are
+more likely to be followed by withdrawal seizures or delirium. Sedative, hypnotic, or anxiolytic
+withdrawal delirium is characterized by disturbances in consciousness and cognition, with visual,
+tactile, or auditory hallucinations. When present, sedative, hypnotic, or anxiolytic withdrawal
+delirium should be diagnosed instead of withdrawal.
+
+Prevalence
+The prevalence of sedative, hypnotic, or anxiolytic withdrawal is unknown.
+
+Diagnostic Markers
+Seizures and autonomic instability in the setting of a history of prolonged exposure to sedative,
+hypnotic, or anxiolytic medications suggest a high likelihood of sedative, hypnotic, or anxiolytic
+withdrawal.
+
+Differential Diagnosis
+Other medical conditions.
+
+The symptoms of sedative, hypnotic, or anxiolytic withdrawal may be
+mimicked by other medical conditions (e.g., hypoglycemia, diabetic ketoacidosis). If seizures are
+a feature of the sedative, hypnotic, or anxiolytic withdrawal, the
+631
+
+
+
+
+<<<PAGE 1115>>>
+
+13. Feeling that someone could hear
+your thoughts, or that you
+could hear what another
+person was thinking?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+VIII.
+
+14. Problems with sleep that
+affected your sleep quality
+overall?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+IX.
+
+15. Problems with memory (e.g.,
+learning new information) or
+with location (e.g., finding
+your way home)?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+X.
+
+16. Unpleasant thoughts, urges, or
+images that repeatedly enter
+your mind?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+17. Feeling driven to perform
+certain behaviors or mental
+acts over and over again?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+XI.
+
+18. Feeling detached or distant from
+yourself, your body, your
+physical surroundings, or
+your memories?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+XII.
+
+19. Not knowing who you really are
+or what you want out of life?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+20. Not feeling close to other
+people or enjoying your
+relationships with them?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+21. Drink at least 4 drinks of any
+kind of alcohol in a single
+day?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+22. Smoke any cigarettes, a cigar,
+or pipe, or use snuff or
+chewing tobacco?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+23. Use any of the following
+medicines ON YOUR OWN,
+that is, without a doctor’s
+prescription, in greater
+amounts or longer than
+prescribed [e.g., painkillers
+(like Vicodin), stimulants
+(like Ritalin or Adderall),
+sedatives or tranquilizers
+(like sleeping pills or
+Valium), or drugs like
+marijuana, cocaine or crack,
+club drugs (like ecstasy),
+hallucinogens (like LSD),
+heroin, inhalants or solvents
+(like glue), or
+methamphetamine (like
+speed)]?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+XIII.
+
+849
+
+Parent/Guardian-Rated DSM-5 Level 1 Cross-Cutting Symptom
+Measure—Child Age 6–17
+
+
+
+
+<<<PAGE 1117>>>
+
+—that is, saw something or
+someone that no one else could
+see?
+X.
+
+16. Said that he/she had thoughts that
+kept coming into his/her mind
+that he/she would do something
+bad or that something bad
+would happen to him/her or to
+someone else?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+17. Said he/she felt the need to check
+on certain things over and over
+again, like whether a door was
+locked or whether the stove
+was turned off?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+18. Seemed to worry a lot about
+things he/she touched being
+dirty or having germs or being
+poisoned?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+1
+
+2
+
+3
+
+4
+
+19. Said that he/she had to do things
+0
+in a certain way, like counting
+or saying special things out
+loud, in order to keep
+something bad from
+happening?
+In the past TWO (2) WEEKS, has your child …
+XI.
+
+XII.
+
+20. Had an alcoholic beverage (beer,
+wine, liquor, etc.)?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+21. Smoked a cigarette, a cigar, or
+pipe, or used snuff or chewing
+tobacco?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+22. Used drugs like marijuana,
+cocaine or crack, club drugs
+(like ecstasy), hallucinogens
+(like LSD), heroin, inhalants or
+solvents (like glue), or
+methamphetamine (like speed)?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+23. Used any medicine without a
+doctor’s prescription (e.g.,
+painkillers [like Vicodin],
+stimulants [like Ritalin or
+Adderall], sedatives or
+tranquilizers [like sleeping pills
+or Valium], or steroids)?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+24. In the past TWO (2) WEEKS,
+has he/she talked about wanting
+to kill himself/herself or about
+wanting to commit suicide?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+25. Has he/she EVER tried to kill
+himself/herself?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+851
+
+Clinician-Rated Dimensions of Psychosis Symptom Severity
+As described in the chapter “Schizophrenia Spectrum and Other Psychotic Disorders,” psychotic
+disorders are heterogeneous, and symptom severity can predict important aspects of the illness,
+
+
+
+
+<<<PAGE 1329>>>
+
+contextual information in DSM-5-TR on, 27
+for delirium, 677
+for depressive disorder due to another medical condition, 208
+for encopresis, 404
+for neurocognitive disorders, 698, 701, 710, 720, 723, 725, 728
+for panic disorder, 240
+for pedophilic disorder, 795
+for pica, 373
+for premenstrual dysphoric disorder, 199
+for sexual dysfunctions, 484, 504
+for sleep-wake disorders, 414–415, 419–420, 426–427, 433, 438, 441, 455, 459, 463, 467
+for substance use disorders, 130, 205, 257, 293, 473, 638, 648, 716
+for suicidal behavior disorder, 922
+for trichotillomania, 283
+Diazepam, 630
+Diet, and dieting, 394, 395, 403. See also Appetite; Food preferences; Malnutrition; Mineral deficiencies
+Differences of sex development (DSDs), 511, 517, 518
+Differential diagnosis. See also specific disorders
+alternative explanations for personality pathology and, 883
+contextual information in DSM-5-TR, 27
+cultural concepts of distress and, 873
+provisional diagnosis and, 24
+substance/medication-induced mental disorders and, 552
+Dimensional approach
+to diagnosis, 14–15, 35, 734
+to personality traits, 892–893
+Diminished emotional expression, and negative symptoms, 102–103
+Dim light melatonin onset (DLMO), 445
+Disability. See also Distress
+generalized anxiety disorder and, 253
+major or mild neurocognitive disorder due to Huntington’s disease and, 728–729
+personality change due to another medical condition and, 777
+World Health Organization Disability Assessment Schedule and, 854
+Discontinuation, of antidepressants, 818
+Discrimination. See also Bias; Oppression; Racism
+alcohol use disorder and, 556, 557
+coding for, 832
+conduct disorder and, 535
+disruptive mood dysregulation disorder and, 180
+focus on in DSM-5-TR, 18–19
+gender dysphoria and, 519
+generalized anxiety disorder and, 253
+impact of on psychiatric diagnosis, 17–18
+major depressive disorder and, 189, 190
+misdiagnosis of schizophrenia and, 18, 116, 118, 119, 147
+panic disorder and, 238
+paranoid delusions and, 101
+paranoid personality disorder and, 739
+PTSD and, 308, 310
+revision process for DSM-5 and, 11
+social anxiety disorder and, 232
+tobacco-related disorders and, 648
+Disinhibited social engagement disorder, 295, 298–301
+Disinhibition, behavioral
+cannabis use disorder and, 579
+disruptive, impulse-control, and conduct disorders, 522
+inhalant use disorder and, 604
+major or mild frontotemporal neurocognitive disorder and, 696
+as personality trait, 893, 900–901
+social engagement disorder and, 299
+
+

@@ -1,0 +1,1197 @@
+<<<PAGE 351>>>
+
+Bupropion
+
+Therapeutics
+Brands
+WellbutrinWellbutrin SRWellbutrin XL
+Zyban
+Aplenzin
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: dopamine reuptake inhibitor and
+releaser (D-RIRe)
+NDRI (norepinephrine and dopamine reuptake inhibitor);
+antidepressant; smoking cessation treatment
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive disorder (bupropion, bupropion SR, and
+bupropion XL)
+
+
+
+
+<<<PAGE 352>>>
+
+Seasonal affective disorder (bupropion XL)
+Nicotine addiction (bupropion SR)
+Bipolar depression
+Attention deficit hyperactivity disorder (ADHD)
+Sexual dysfunction
+How the Drug Works
+Boosts neurotransmitters norepinephrine/noradrenaline and
+dopamine
+Blocks norepinephrine reuptake pump (norepinephrine transporter),
+presumably increasing norepinephrine neurotransmission
+Since dopamine is inactivated by norepinephrine reuptake in frontal
+cortex, which largely lacks dopamine transporters, bupropion can
+increase dopamine neurotransmission in this part of the brain
+Blocks dopamine reuptake pump (dopamine transporter),
+presumably increasing dopaminergic neurotransmission
+How Long Until It Works
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks
+If it is not working within 6–8 weeks for depression, it may require
+a dosage increase or it may not work at all
+
+
+
+
+<<<PAGE 355>>>
+
+Mood stabilizers or atypical antipsychotics can also be added to
+bupropion for psychotic depression or treatment-resistant depression
+Hypnotics for insomnia
+Mirtazapine, modafinil, atomoxetine (add with caution and at lower
+doses since bupropion could theoretically raise atomoxetine levels)
+both for residual symptoms of depression and attention deficit
+disorder
+Tests
+Recommended to assess blood pressure at baseline and periodically
+during treatment
+
+Side Effects
+How Drug Causes Side Effects
+Side effects are probably caused in part by actions of norepinephrine
+and dopamine in brain areas with undesired effects (e.g., insomnia,
+tremor, agitation, headache, dizziness)
+Side effects are probably also caused in part by actions of
+norepinephrine in the periphery with undesired effects (e.g.,
+sympathetic and parasympathetic effects such as dry mouth,
+constipation, nausea, anorexia, sweating)
+Most side effects are immediate but often go away with time
+
+
+
+
+<<<PAGE 358>>>
+
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of bupropion
+
+Dosing and Use
+Usual Dosage Range
+Bupropion: 225–450 mg in 3 divided doses (maximum single dose
+150 mg)
+Bupropion SR: 200–450 mg in 2 divided doses (maximum single
+dose 200 mg)
+Bupropion XL: 150–450 mg once daily (maximum single dose 450
+mg)
+Bupropion hydrobromide: 174–522 mg once daily (maximum single
+dose 522 mg)
+Dosage Forms
+Bupropion: tablet 75 mg, 100 mg
+Bupropion SR (sustained-release): tablet 100 mg, 150 mg, 200 mg
+Bupropion XL (extended-release): tablet 150 mg, 300 mg, 450 mg
+
+
+
+
+<<<PAGE 359>>>
+
+Bupropion hydrobromide (extended-release): tablet 174 mg, 378
+mg, 522 mg
+How to Dose
+Depression: for bupropion immediate-release, dosing should be in
+divided doses, starting at 75 mg twice daily, increasing to 100 mg
+twice daily, then to 100 mg 3 times daily; maximum dose 450 mg
+per day
+Depression: for bupropion SR, initial dose 100 mg twice a day,
+increase to 150 mg twice a day after at least 3 days; wait 4 weeks or
+longer to ensure drug effects before increasing dose; maximum dose
+400 mg total per day
+Depression: for bupropion XL, initial dose 150 mg once daily in the
+morning; can increase to 300 mg once daily after 4 days; maximum
+single dose 450 mg once daily
+Depression: for bupropion hydrobromide, initial dose 174 mg once
+daily in the morning; can increase to 522 mg administered as a
+single dose
+Nicotine addiction (for bupropion SR): initial dose 150 mg/day once
+a day, increase to 150 mg twice a day after at least 3 days; maximum
+dose 300 mg/day; bupropion treatment should begin 1–2 weeks
+before smoking is discontinued
+Dosing Tips
+
+
+
+
+<<<PAGE 360>>>
+
+XL formulation has replaced immediate-release and SR
+formulations as the preferred option
+XL is best dosed once a day, whereas SR is best dosed twice daily,
+and immediate-release is best dosed 3 times daily
+Dosing higher than 450 mg/day (400 mg/day SR) increases seizure
+risk
+Patients who do not respond to 450 mg/day should discontinue use
+or get blood levels of bupropion and its major active metabolite 6hydroxy-bupropion
+If levels of parent drug and active metabolite are low despite dosing
+at 450 mg/day, experts can prudently increase dosing beyond the
+therapeutic range while monitoring closely, informing the patient of
+the potential risk of seizures and weighing risk/benefit ratios in
+difficult-to-treat patients
+When used for bipolar depression, it is usually as an augmenting
+agent to mood stabilizers, lithium, and/or atypical antipsychotics
+For smoking cessation, may be used in conjunction with nicotine
+replacement therapy
+Do not break or chew SR or XL tablets as this will alter controlledrelease properties
+The more anxious and agitated the patient, the lower the starting
+dose, the slower the titration, and the more likely the need for a
+concomitant agent such as trazodone or a benzodiazepine
+
+
+
+
+<<<PAGE 362>>>
+
+Inhibits CYP450 2D6
+Parent half-life 10–14 hours
+Metabolite half-life 20–27 hours
+Food does not affect absorption
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can increase TCA levels; use with caution with TCAs or when
+switching from a TCA to bupropion
+Use with caution with MAOIs, including 14 days after MAOIs are
+stopped (for the expert)
+There is increased risk of hypertensive reaction if bupropion is used
+in conjunction with MAOIs or other drugs that increase
+norepinephrine
+There may be an increased risk of hypertension if bupropion is
+combined with nicotine replacement therapy
+Via CYP450 2D6 inhibition, bupropion could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine
+Via CYP450 2D6 inhibition, bupropion could theoretically increase
+concentrations of thioridazine and cause dangerous cardiac
+arrhythmias
+
+
+
+
+<<<PAGE 364>>>
+
+Zyban or Aplenzin in combination with each other or with any
+formulation of Wellbutrin
+If patient has history of seizures
+If patient is anorexic or bulimic, either currently or in the past, but
+see Pearls
+If patient is abruptly discontinuing alcohol, sedative use, or
+anticonvulsant medication
+If patient has had recent head injury
+If patient has a nervous system tumor
+If patient is taking an MAOI (except as noted under Drug
+Interactions)
+If patient is taking thioridazine
+If there is a proven allergy to bupropion
+
+Special Populations
+Renal Impairment
+Lower initial dose, perhaps give less frequently
+Drug concentration may be increased
+Patient should be monitored closely
+Hepatic Impairment
+
+
+
+
+<<<PAGE 365>>>
+
+Lower initial dose, perhaps give less frequently
+Patient should be monitored closely
+In severe hepatic cirrhosis, bupropion XL should be administered at
+no more than 150 mg every other day
+Cardiac Impairment
+Limited available data
+Evidence of rise in supine blood pressure
+Use with caution
+Elderly
+Some patients may tolerate lower doses better
+Reduction in the risk of suicidality with antidepressants compared to
+placebo in adults age 65 and older
+Children and Adolescents
+Carefully weigh the risks and benefits of pharmacological treatment
+against the risks and benefits of nontreatment with antidepressants
+and make sure to document this in the patient’s chart
+Monitor patients face-to-face regularly, particularly during the first
+several weeks of treatment
+Use with caution, observing for activation of known or unknown
+bipolar disorder and/or suicidal ideation, and inform parents or
+
+
+
+
+<<<PAGE 369>>>
+
+Primary Target Symptoms
+Depressed mood
+Sleep disturbance, especially hypersomnia
+Cravings associated with nicotine withdrawal
+Cognitive functioning
+Pearls
+
+✽ May be effective if SSRIs have failed or for SSRI “poop-out”
+Less likely to produce hypomania than some other antidepressants
+
+✽ May improve cognitive slowing/pseudodementia
+✽ Reduces hypersomnia and fatigue
+
+Approved to help reduce craving during smoking cessation
+Anecdotal use in attention deficit disorder
+May cause sexual dysfunction only infrequently
+May exacerbate tics
+Bupropion may not be as effective in anxiety disorders as many
+other antidepressants
+Prohibition for use in eating disorders due to increased risk of
+seizures is related to past observations when bupropion immediaterelease was dosed at especially high levels to low body weight
+patients with active anorexia nervosa
+
+
+
+
+<<<PAGE 370>>>
+
+Current practice suggests that patients of normal BMI without
+additional risk factors for seizures can benefit from bupropion,
+especially if given prudent doses of the XL formulation; such
+treatment should be administered by experts, and patients should be
+monitored closely and informed of the potential risks
+Recently approved hydrobromide salt formulation of bupropion may
+facilitate high dosing for difficult-to-treat patients, as it allows
+administration of single-pill doses up to 450 mg equivalency to
+bupropion hydrochloride salt (522 mg tablet), unlike bupropion
+hydrochloride controlled-release formulations for which the biggest
+dose in a single pill is 300 mg
+As bromide salts have anticonvulsant properties, hydrobromide salts
+of bupropion could theoretically reduce risk of seizures, but this has
+not been proven
+The active enantiomer of the principal active metabolite [(+)-6hydroxy-bupropion] is in clinical development as a novel
+antidepressant
+The combination of bupropion and naltrexone has demonstrated
+efficacy as a treatment for obesity and is currently being evaluated
+in a long-term study to assess the cardiovascular health outcomes of
+this treatment
+Phase 2 trials of the combination of bupropion and zonisamide for
+the treatment of obesity have been completed
+
+
+
+
+<<<PAGE 371>>>
+
+Suggested Reading
+Clayton AH . Extended-release bupropion: an antidepressant with a broad
+spectrum of therapeutic activity? Expert Opin Pharmacother 2007 ;8 (4
+):457–66 .
+Ferry L , Johnston JA . Efficacy and safety of bupropion SR for smoking
+cessation: data from clinical trials and five years of postmarketing
+experience . Int J Clin Pract 2003 ;57 (3 ):224–30 .
+Foley KF , DeSanty KP , Kast RE . Bupropion: pharmacology and
+therapeutic applications . Expert Rev Neurother 2006 ;6 (9 ):1249–65 .
+Jefferson JW , Pradko JF . Muir KT. Bupropion for major depressive
+disorder: pharmacokinetic and formulation considerations . Clin Ther 2005
+;27 (11 ):1685–95 .
+Papakostas GI , Nutt DJ , Hallett LA , et al. Resolution of sleepiness and
+fatigue in major depressive disorder: a comparison of bupropion and the
+selective serotonin reuptake inhibitors . Biol Psychiatry 2006 ;60 (12
+):1350–5 .
+
+
+
+
+<<<PAGE 474>>>
+
+Citalopram has been associated with both weight gain and weight
+loss in various studies, but is relatively weight neutral overall
+Sedation
+Occurs in significant minority
+What to Do About Side Effects
+Wait
+Wait
+Wait
+Take in the morning if nighttime insomnia
+Take at night if daytime sedation
+In a few weeks, switch to another agent or add other drugs
+Best Augmenting Agents for Side Effects
+Often best to try another SSRI or another antidepressant
+monotherapy prior to resorting to augmentation strategies to treat
+side effects
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, or apathy
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+
+
+
+
+<<<PAGE 756>>>
+
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use with sympathomimetic agents may increase sympathetic
+activity
+Methylphenidate may inhibit metabolism of TCAs
+Most drug interactions may be less likely at low doses (1–6 mg/day)
+due to the lack of effects on receptors other than the histamine 1
+receptors
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of doxepin
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 786>>>
+
+Sleep disturbance
+Anxiety
+Physical symptoms
+Pain
+Pearls
+Duloxetine has well-documented efficacy for the painful
+physical symptoms of depression
+Duloxetine has only somewhat greater potency for serotonin
+reuptake blockade than for norepinephrine reuptake blockade, but
+this is of unclear clinical significance as a differentiator from other
+SNRIs
+No head-to-head studies, but may have less hypertension than
+venlafaxine XR
+Powerful pro-noradrenergic actions may occur at doses greater than
+60 mg/day
+Not well studied in ADHD, but may be effective
+Approved in many countries for stress urinary incontinence
+Patients may have higher remission rate for depression on SNRIs
+than on SSRIs
+Add or switch to or from pro-noradrenergic agents (e.g.,
+atomoxetine, reboxetine, other SNRIs, mirtazapine, maprotiline,
+nortriptyline, desipramine, bupropion) with caution
+
+
+
+
+<<<PAGE 795>>>
+
+What to Do About Side Effects
+Wait
+Wait
+Wait
+In a few weeks, switch to another agent or add other drugs
+Best Augmenting Agents for Side Effects
+Often best to try another SSRI or another antidepressant
+monotherapy prior to resorting to augmentation strategies to treat
+side effects
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, or apathy
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+
+
+
+
+<<<PAGE 891>>>
+
+but not effective at 10 mg
+In a few weeks, switch or add other drugs
+Best Augmenting Agents for Side Effects
+Often best to try another SSRI or another antidepressant
+monotherapy prior to resorting to augmentation strategies to treat
+side effects
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, or apathy
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of fluoxetine
+
+
+
+
+<<<PAGE 903>>>
+
+✽ Actions at 5HT2C receptors may explain in part fluoxetine’s
+efficacy in combination with olanzapine for bipolar depression and
+treatment-resistant depression, since both agents have this property
+For sexual dysfunction, can augment with bupropion, sildenafil,
+vardenafil, or tadalafil, or switch to a non-SSRI such as bupropion
+or mirtazapine
+Mood disorders can be associated with eating disorders (especially
+in adolescent females) and be treated successfully with fluoxetine
+SSRIs may be less effective in women over 50, especially if they are
+not taking estrogen
+SSRIs may be useful for hot flushes in perimenopausal women
+Some postmenopausal women’s depression will respond better to
+fluoxetine plus estrogen augmentation than to fluoxetine alone
+Nonresponse to fluoxetine in elderly may require consideration of
+mild cognitive impairment or Alzheimer disease
+SSRIs may not cause as many patients to attain remission of
+depression as some other classes of antidepressants (e.g., SNRIs)
+A single pill containing both fluoxetine and olanzapine is available
+for combination treatment of bipolar depression, psychotic
+depression, and treatment-resistant unipolar depression
+
+Suggested Reading
+
+
+
+
+<<<PAGE 963>>>
+
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, or apathy
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of fluvoxamine
+
+Dosing And Use
+Usual Dosage Range
+100–300 mg/day for OCD
+100–200 mg/day for depression
+100–300 mg/day for social anxiety disorder
+
+
+
+
+<<<PAGE 1154>>>
+
+Absorption is delayed in the presence of food
+Drug Interactions
+Not recommended in patients taking concomitant strong or
+moderate CYP450 3A4 inhibitors
+Patients taking mild CYP450 3A4 inhibitors should receive a
+maximum dose of 5 mg/night
+Not recommended in patients taking concomitant strong or
+moderate CYP450 3A4 inducers
+Lemborexant decreases the AUC of drugs that are CYP450 2B6
+substrates (e.g., bupropion, methadone), potentially reducing their
+effectiveness
+Increased depressive effects when taken with other CNS depressants
+Other Warnings/Precautions
+Insomnia may be a symptom of a primary disorder, rather than a
+primary disorder itself
+Some patients may exhibit abnormal thinking or behavioral changes
+similar to those caused by other CNS depressants (i.e., either
+depressant actions or disinhibiting actions)
+Some depressed patients may experience a worsening of suicidal
+ideation
+Use only with caution in patients with impaired respiratory function
+or obstructive sleep apnea
+
+
+
+
+<<<PAGE 1472>>>
+
+Often best to try another antidepressant monotherapy prior to
+resorting to augmentation strategies to treat side effects
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Benzodiazepines for anxiety, agitation
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of milnacipran
+
+Dosing and Use
+Usual Dosage Range
+30–200 mg/day in 2 doses
+Dosage Forms
+
+
+
+
+<<<PAGE 1565>>>
+
+Naltrexone/Bupropion
+
+Therapeutics
+Brands
+Contrave
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: opioid receptor antagonist
+(naltrexone, O-RAn) and dopamine reuptake inhibitor and releaser
+(bupropion, D-RIRe)
+Opioid antagonist (naltrexone) combined with a norepinephrine
+dopamine reuptake inhibitor (bupropion); weight management
+medication
+Commonly Prescribed for
+(bold for FDA approved)
+Chronic weight management (adjunct to reduced-calorie diet
+and increased physical activity) in adults with an initial BMI of
+
+
+
+
+<<<PAGE 1566>>>
+
+at least 30 kg/m2 (obese) or at least 27 kg/m2 (overweight) in the
+presence of at least 1 weight-related comorbid condition
+How the Drug Works
+Bupropion increases dopamine and norepinephrine by blocking both
+the dopamine and the norepinephrine transporters. In the
+hypothalamus, these 2 neurotransmitters activate POMC neurons,
+causing the release of proopiomelanocortin (POMC). POMC is then
+broken down into alpha-melanocyte stimulating hormone, which
+binds to melanocortin 4 receptors to suppress appetite. However,
+stimulation of POMC neurons also activates an endogenous opioidmediated negative feedback loop, which mitigates the appetitesuppressing effects.
+Naltrexone can block mu opioid receptors, thus preventing opioidmediated negative feedback. Such an action would synergize with
+simultaneous activation of the appetite-suppressing pathway by
+bupropion. This results in more robust and long-lasting appetite
+suppression than with either drug alone
+How Long Until It Works
+At least 5% weight loss is generally achieved after 12 weeks on
+maximum daily dose
+If It Works
+Patients may achieve 5–10% reduction from baseline in body weight
+
+
+
+
+<<<PAGE 1567>>>
+
+If It Doesn’t Work
+Discontinue if 5% weight loss is not achieved after 12 weeks on
+maximum daily dose
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Naltrexone/bupropion itself should be administered in conjunction
+with reduced-calorie diet and increased physical activity
+Often best to try another strategy prior to resorting to augmentation
+Tests
+Measurement of blood glucose levels before and during treatment is
+recommended for patients with type 2 diabetes
+Measurement of blood pressure and heart rate prior to starting
+naltrexone/bupropion and during treatment is recommended,
+particularly in patients with cardiac or cerebrovascular disease
+
+Side Effects
+How Drug Causes Side Effects
+CNS side effects theoretically due to excessive actions at mu opioid
+receptors or excessive actions on norepinephrine and dopamine
+Notable Side Effects
+
+
+
+
+<<<PAGE 1569>>>
+
+Best Augmenting Agents for Side Effects
+Often best to try another treatment prior to resorting to
+augmentation strategies to treat side effects
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require discontinuation of
+bupropion
+
+Dosing and Use
+Usual Dosage Range
+16 mg naltrexone/180 mg bupropion twice per day
+Dosage Forms
+Extended-release tablet (naltrexone/bupropion) 8 mg/90 mg
+How to Dose
+Week 1: 8 mg/90 mg in the morning; week 2: increase to 8 mg/90
+mg twice per day; week 3: increase to 16 mg/180 mg in the morning
+and 8 mg/90 mg in the evening; week 4: increase to 16 mg/180 mg
+twice per day (maximum recommended dose)
+Discontinue if at least 5% weight loss is not achieved after 12 weeks
+on 16 mg/180 mg twice per day
+
+
+
+
+<<<PAGE 1570>>>
+
+Dosing Tips
+Do not break or chew tablets as this will alter controlled-release
+properties
+Can be taken with food, but should not be taken with a high-fat meal
+because this may increase bupropion and naltrexone systemic
+exposure
+Patients must be completely withdrawn and abstinent from opioids
+for 5 days (short-acting opioids) to 7 days (long-acting opioids)
+before starting naltrexone-bupropion; if patients require intermittent
+opioid treatment, naltrexone/bupropion should be temporarily
+discontinued and lower doses of opioids may be needed
+If intolerable anxiety, insomnia, agitation, akathisia, or activation
+occur upon either dosing initiation or discontinuation, consider the
+possibility of activated bipolar disorder and switch to a mood
+stabilizer or an atypical antipsychotic
+Overdose
+Naltrexone: nausea, abdominal pain, sedation, dizziness
+Bupropion: rarely lethal; seizures, cardiac disturbances,
+hallucinations, loss of consciousness
+Long-Term Use
+Has been evaluated in controlled studies up to 56 weeks
+
+
+
+
+<<<PAGE 1571>>>
+
+Habit Forming
+No
+How to Stop
+Tapering is prudent
+Pharmacokinetics
+Mean elimination half-life following a single dose of
+naltrexone/bupropion to healthy subjects was approximately 5 hours
+for naltrexone and 21 hours for bupropion
+Bupropion inhibits CYP450 2D6
+Drug Interactions
+Do not use with MAOIs, including 14 days after MAOIs are stopped
+Via CYP450 2D6 inhibition, naltrexone/bupropion could increase
+concentrations of drugs metabolized by CYP450 2D6 (e.g., TCAs,
+thioridazine); this may require lower doses of the concomitant
+medication
+Via CYP450 2D6 inhibition, bupropion could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine
+Bupropion is metabolized by CYP450 2B6; the maximum dose of
+naltrexone-bupropion in patients receiving a concomitant CYP450
+2B6 inhibitor (ticlopidine, clopidogrel) is 8 mg/90 mg twice per day;
+
+
+
+
+<<<PAGE 1572>>>
+
+coadministration of naltrexone/bupropion with CYP450 2B6
+inducers (e.g., ritonavir, lopinavir, efavirenz) is not recommended
+Bupropion should be used with caution in patients taking levodopa
+or amantadine, as these agents can potentially enhance dopamine
+neurotransmission and be activating
+Can block the effects of opioid-containing medications (e.g., some
+cough and cold remedies, antidiarrheal preparations, opioid
+analgesics)
+False-positive urine immunoassay screening tests for amphetamines
+have been reported in patients taking bupropion due to a lack of
+specificity of the screening tests
+False-positive results may be expected even following
+discontinuation of bupropion
+Naltrexone is hepatically metabolized by dihydrodiol
+dehydrogenase and not by the CYP450 enzyme system, and thus is
+unlikely to be affected by drugs that induce or inhibit CYP450
+enzymes
+Other Warnings/Precautions
+Naltrexone/bupropion can increase blood pressure or heart rate,
+particularly during the first 3 months of treatment
+Use cautiously with other drugs that increase seizure risk (TCAs,
+lithium, phenothiazines, thioxanthenes, some antipsychotics) or in
+
+
+
+
+<<<PAGE 1574>>>
+
+If patient is anorexic or bulimic, either currently or in the past
+If patient has acute hepatitis or liver failure
+If patient is abruptly discontinuing alcohol or sedative use
+If patient is taking opioid analgesics, is currently dependent on
+opioids, or is in acute opiate withdrawal
+If patient is taking an MAOI
+If patient is taking Wellbutrin, Zyban, Aplenzin, or any other
+formulation that contains bupropion
+If patient is taking Revia, Vivitrol, or any other formulation that
+contains naltrexone
+If there is a proven allergy to naltrexone or bupropion
+
+Special Populations
+Renal Impairment
+Maximum dose is 8 mg/90 mg twice per day in patients with
+moderate to severe impairment
+Not studied or recommended for use in patients with end-stage renal
+disease
+Hepatic Impairment
+Maximum dose is 8 mg/90 mg once per day in the morning
+
+
+
+
+<<<PAGE 1576>>>
+
+The Art of Psychopharmacology
+Potential Advantages
+Patients who have had past weight loss on either active compound
+alone may experience a more robust weight loss effect and better
+tolerability on the combination of naltrexone with bupropion than
+with administration of either drug alone
+Potential Disadvantages
+Women who are pregnant or wish to become pregnant
+Primary Target Symptoms
+Excess weight
+Pearls
+No head-to-head studies with other drugs approved for weight
+management, so comparative efficacy to these agents is unknown;
+however, some patients who do not respond to these other agents
+may respond to Contrave
+Unlike phentermine/topiramate, naltrexone/bupropion does not have
+abuse potential
+Could theoretically be effective in binge eating disorder
+May be useful in antipsychotic-induced weight gain, especially for
+nonpsychotic patients taking antipsychotic agents for depression
+
+
+
+
+<<<PAGE 1577>>>
+
+Contrave could theoretically exacerbate psychosis in patients with a
+psychotic disorder; however, no controlled studies of this use yet
+
+Suggested Reading
+Caixas A , Albert L , Capel I , Rigla M. Naltrexone sustainedrelease/bupropion sustained-release for the management of obesity: review
+of the data to date . Drug Des Devel Ther 2014 ;8 :1419 –27.
+Verpeut JL , Bello NT . Drug safety evaluation of naltrexone/bupropion for
+the treatment of obesity . Expert Opin Drug Saf 2014 ;13 (6 ):831–41 .
+Wang GJ , Tomasi D , Volkow ND , et al. Effect of combined naltrexone
+and bupropion therapy on the brain’s reactivity to food cues . Int J Obes
+(Lond) 2014 ;38 (5 ):682–8 .
+
+
+
+
+<<<PAGE 1715>>>
+
+Best Augmenting Agents for Side Effects
+Often best to try another SSRI or another antidepressant
+monotherapy prior to resorting to augmentation strategies to treat
+side effects
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, or apathy
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of paroxetine
+
+Dosing and Use
+Usual Dosage Range
+
+
+
+
+<<<PAGE 1728>>>
+
+✽ Often a preferred treatment of anxious depression as well as major
+depressive disorder comorbid with anxiety disorders
+
+✽ Withdrawal effects may be more likely than for some other SSRIs
+when discontinued (especially akathisia, restlessness, gastrointestinal
+symptoms, dizziness, tingling, dysesthesias, nausea, stomach cramps,
+restlessness)
+Inhibits own metabolism, so dosing is not linear
+
+✽ Paroxetine has mild anticholinergic actions that can enhance the
+rapid onset of anxiolytic and hypnotic efficacy but also cause mild
+anticholinergic side effects
+Can cause cognitive and affective “flattening”
+May be less activating than other SSRIs
+Paroxetine is a potent CYP450 2D6 inhibitor
+SSRIs may be less effective in women over 50, especially if they are
+not taking estrogen
+SSRIs may be useful for hot flushes in perimenopausal women
+Some anecdotal reports suggest greater weight gain and sexual
+dysfunction than some other SSRIs, but the clinical significance of
+this is unknown
+For sexual dysfunction, can augment with bupropion, sildenafil,
+tadalafil, or switch to a non-SSRI such as bupropion or mirtazapine
+Some postmenopausal women’s depression will respond better to
+paroxetine plus estrogen augmentation than to paroxetine alone
+
+
+
+
+<<<PAGE 2068>>>
+
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Trazodone, especially for insomnia
+In the USA, sertraline (Zoloft) is commonly augmented with
+bupropion (Wellbutrin) with good results in a combination
+anecdotally called “Well-loft” (use combinations of antidepressants
+with caution as this may activate bipolar disorder and suicidal
+ideation)
+Mirtazapine, reboxetine, or atomoxetine (add with caution and at
+lower doses since sertraline could theoretically raise atomoxetine
+levels); use combinations of antidepressants with caution as this
+may activate bipolar disorder and suicidal ideation
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+
+
+
+
+<<<PAGE 2072>>>
+
+Reduce dose to 25 mg or even 12.5 mg until side effects abate, then
+increase dose as tolerated, usually to at least 50 mg/day
+In a few weeks, switch or add other drugs
+Best Augmenting Agents for Side Effects
+Often best to try another SSRI or another antidepressant
+monotherapy prior to resorting to augmentation strategies to treat
+side effects
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, or apathy
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of sertraline
+
+
+
+
+<<<PAGE 2085>>>
+
+SSRIs may be less effective in women over 50, especially if they are
+not taking estrogen
+SSRIs may be useful for hot flushes in perimenopausal women
+For sexual dysfunction, can augment with bupropion, sildenafil,
+vardenafil, tadalafil, or switch to a non-SSRI such as bupropion or
+mirtazapine
+Some postmenopausal women’s depression will respond better to
+sertraline plus estrogen augmentation than to sertraline alone
+Nonresponse to sertraline in elderly may require consideration of
+mild cognitive impairment or Alzheimer disease
+Not as well tolerated as some SSRIs for panic, especially when
+dosing is initiated, unless given with co-therapies such as
+benzodiazepines or trazodone
+Relative lack of effect on prolactin may make it a preferred agent for
+some children, adolescents, and women
+Some evidence suggests that sertraline treatment during only the
+luteal phase may be more effective than continuous treatment for
+patients with PMDD
+
+Suggested Reading
+Cipriani A , La Ferla T , Furukawa TA , et al. Sertraline versus other
+antidepressive agents for depression . Cochrane Database Syst Rev 2010
+
+
+
+
+<<<PAGE 2396>>>
+
+Unknown if varenicline is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+Recommended either to discontinue drug or bottle feed
+
+The Art Of Psychopharmacology
+Potential Advantages
+More effective than other pharmacotherapies for smoking cessation
+Potential Disadvantages
+Not well studied in patients with comorbid psychiatric disorders
+Primary Target Symptoms
+Cravings associated with nicotine withdrawal
+Pearls
+More effective than nicotine or bupropion
+Unlike nicotine or bupropion, the patient cannot “smoke over”
+varenicline since varenicline, but not the others, will block the
+effects of additional smoked nicotine if the patient decides to smoke
+during treatment
+Although tested in the general population excluding psychiatric
+patients, where smoking rates in the USA are about 20–25%, there
+is great unmet need for smoking cessation treatments in patients
+
+
+
+
+<<<PAGE 2426>>>
+
+What to Do About Side Effects
+Wait
+Wait
+Wait
+In a few weeks, switch to another agent or add other drugs
+Best Augmenting Agents for Side Effects
+Often best to try another antidepressant monotherapy prior to
+resorting to augmentation strategies to treat side effects
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, or apathy
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+
+
+
+
+<<<PAGE 2442>>>
+
+Augmentation experience is limited compared to other
+antidepressants
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (use
+combinations of antidepressants with caution as this may activate
+bipolar disorder and suicidal ideation)
+Use with caution with antidepressants that are CYP450 2D6
+inhibitors (e.g., bupropion, duloxetine, fluoxetine, paroxetine), as
+these agents will increase vortioxetine levels and may require a dose
+reduction of vortioxetine
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin,
+pregabalin, or tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+
+
+
+<<<PAGE 2444>>>
+
+Reported but not expected
+What to Do About Side Effects
+Wait
+Wait
+Wait
+In a few weeks, switch to another agent or add other drugs
+Best Augmenting Agents for Side Effects
+Often best to try another antidepressant monotherapy prior to
+resorting to augmentation strategies to treat side effects
+Trazodone or a hypnotic for insomnia
+Sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, apathy, or
+sexual dysfunction (with caution, as bupropion can raise
+vortioxetine levels via CYP450 2D6 inhibition)
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+
+
+
+
+<<<PAGE 2576>>>
+
+brexanolone, 99
+brexpiprazole, 103
+Brisdelle (paroxetine), 593
+Brintellix (vortioxetine), 853
+BritLofex (lofexidine), 427
+Buprenex (buprenorphine), 111
+buprenorphine, 111
+buprenorphine with naloxone, 111
+bupropion, 117
+bupropion SR, 117
+bupropion XL, 117
+Buscalm (buspirone), 123
+Buspar (buspirone), 123
+BuSpar (buspirone), 123
+Buspimen (buspirone), 123
+buspirone, 123
+Buspisal (buspirone), 123
+Buteridol (haloperidol), 347
+Butrans (buprenorphine), 111
+Calmoflorine (sulpiride), 741
+Camcolit (lithium), 415
+Campral (acamprosate), 1
+Caplyta (lumateperone), 451
+caprylidene, 127
+Caprysin (clonidine), 179
+Carbabeta (carbamazepine), 131
+Carbagamma (carbamazepine), 131
+carbamazepine, 131
+
+
+
+
+<<<PAGE 2601>>>
+
+Moditen Depot (fluphenazine), 313
+Moditen Enanthate (fluphenazine), 313
+Modium (lorazepam), 437
+molindone, 527
+Molipaxin (trazodone), 793
+Motipress (nortriptyline), 551
+Motival (nortriptyline), 551
+Motivan (paroxetine), 593
+Movergan (selegiline), 705
+Moverin (selegiline), 705
+Moxadil (amoxapine), 33
+Multipax (hydroxyzine), 355
+Multum (chlordiazepoxide), 147
+Murelax (oxazepam), 569
+Mutan (fluoxetine), 301
+Mydayis (amphetamine d, l), 45
+Mylproin (valproate), 829
+Mysimba (naltrexone/bupropion), 541
+Nailin (nortriptyline), 551
+Nalin (nortriptyline), 551
+nalmefene, 533
+naloxone with buprenorphine, 111
+naltrexone, 537
+naltrexone/bupropion, 541
+Namenda (memantine), 473
+Namenda XR (memantine XR), 473
+Namzaric (memantine/donepezil combination), 243 , 473
+Nansius (clorazepate), 185
+
+
+
+
+<<<PAGE 2626>>>
+
+Vividyl (nortriptyline), 551
+Vivitrol (naltrexone), 537
+Vivol (diazepam), 229
+vortioxetine, 853
+Vraylar (cariprazine), 137
+Vulbegal (flunitrazepam), 297
+Vulpral (valproate), 829
+Vyleesi (bremelanotide), 95
+Vyvanse (lisdexamfetamine), 409
+Wakix (pitolisant), 639
+Wellbatrin (bupropion), 117
+Wellbutrin (bupropion), 117
+Wellbutrin SR (bupropion SR), 117
+Wellbutrin XL (bupropion XL), 117
+Xanax (alprazolam), 11
+Xanax XR (alprazolam XR), 11
+Xanor (alprazolam), 11
+Xepin (doxepin), 255
+Xeplion (paliperidone), 581
+Xyrem (sodium oxybate), 733
+Zactin (fluoxetine), 301
+Zafrionil (haloperidol), 347
+zaleplon, 859
+Zelapon (selegiline), 705
+Zemorcon (sulpiride), 741
+Zentiva (aripiprazole), 53
+
+
+
+
+<<<PAGE 2627>>>
+
+Zenzedi (amphetamine d), 39
+Zeptol (carbamazepine), 131
+Zerenal (dothiepin), 249
+ziprasidone, 863
+Ziprexa (olanzapine), 559
+Zispin (mirtazapine), 509
+Zoleptil (zotepine), 883
+Zoloft (sertraline), 721
+zolpidem, 871
+Zolpimist (zolpidem), 871
+Zonalon (doxepin), 255
+Zonegran (zonisamide), 875
+zonisamide, 875
+Zopax (alprazolam), 11
+zopiclone, 879
+Zopite (zotepine), 883
+zotepine, 883
+Z-Pam (temazepam), 755
+Zubsolv (buprenorphine with naloxone), 111
+zuclopenthixol, 889
+Zuledin (chlorpromazine), 153
+Zulex (acamprosate), 1
+Zulresso (brexanolone), 99
+Zyban (bupropion), 117
+Zymocomb (sulpiride), 741
+Zyprexa (olanzapine), 559
+Zyprexa Relprevv (olanzapine), 559
+Zyprexa Zydis (olanzapine), 559
+
+

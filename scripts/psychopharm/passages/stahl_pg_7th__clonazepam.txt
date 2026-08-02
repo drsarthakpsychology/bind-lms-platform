@@ -1,0 +1,1093 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 57>>>
+
+✽ Alprazolam and alprazolam XR generally dosed about twice the
+dosage of clonazepam
+Overdose
+Fatalities have been reported both in monotherapy and in
+conjunction with alcohol; sedation, confusion, poor coordination,
+diminished reflexes, coma
+Long-Term Use
+Risk of dependence, particularly for treatment periods longer than
+12 weeks and especially in patients with past or current
+polysubstance abuse
+Habit Forming
+Alprazolam is a Schedule IV drug
+Patients may develop dependence and/or tolerance with long-term
+use
+How to Stop
+Seizures may rarely occur on withdrawal, especially if withdrawal is
+abrupt; greater risk for doses above 4 mg and in those with
+additional risks for seizures, including those with a history of
+seizures
+
+
+
+
+<<<PAGE 65>>>
+
+Slower falls in plasma drug levels for alprazolam XR have the
+potential to facilitate drug discontinuation by reducing withdrawal
+symptoms, but this has not been proven
+
+✽ Alprozolam XR generally has longer biological duration of action
+than clonazepam
+
+✽ If clonazepam can be considered a “long-acting alprazolam-like
+anxiolytic,” then alprazolam XR can be considered “an even longeracting clonazepam-like anxiolytic” with the potential of improved
+tolerability features in terms of less euphoria, abuse, dependence, and
+withdrawal problems, but this has not been proven
+Though not systematically studied, benzodiazepines have been used
+effectively to treat catatonia and are the initial recommended
+treatment
+
+Suggested Reading
+DeVane CL , Ware MR , Lydiard RB . Pharmacokinetics,
+pharmacodynamics, and treatment issues of benzodiazepines: alprazolam,
+adinazolam, and clonazepam . Psychopharmacol Bull 1991 ;27 :463–73 .
+Greenblatt DJ , Wright CE . Clinical pharmacokinetics of alprazolam.
+Therapeutic implications . Clin Pharmacokinet 1993 ; 24 :453–71 .
+Jonas JM , Cohon MS . A comparison of the safety and efficacy of
+alprazolam versus other agents in the treatment of anxiety, panic, and
+
+
+
+
+<<<PAGE 508>>>
+
+Clonazepam
+
+Therapeutics
+Brands
+Klonopin
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: GABA positive allosteric
+modulator (GABA-PAM)
+Benzodiazepine (anxiolytic, anticonvulsant)
+Commonly Prescribed for
+(bold for FDA approved)
+Panic disorder, with or without agoraphobia
+Lennox-Gastaut syndrome (petit mal variant)
+Akinetic seizure
+Myoclonic seizure
+Absence seizure (petit mal)
+
+
+
+
+<<<PAGE 511>>>
+
+Consider presence of concomitant substance abuse
+Consider presence of clonazepam abuse
+Consider another diagnosis such as a comorbid medical condition
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Benzodiazepines are frequently used as augmenting agents for
+antipsychotics and mood stabilizers in the treatment of psychotic
+and bipolar disorders
+Benzodiazepines are frequently used as augmenting agents for
+SSRIs and SNRIs in the treatment of anxiety disorders
+Not generally rational to combine with other benzodiazepines
+Caution if using as an anxiolytic concomitantly with other sedative
+hypnotics for sleep
+Clonazepam is commonly combined with other anticonvulsants for
+the treatment of seizure disorders
+Tests
+In patients with seizure disorders, concomitant medical illness,
+and/or those with multiple concomitant long-term medications,
+periodic liver tests and blood counts may be prudent
+
+Side Effects
+
+
+
+
+<<<PAGE 515>>>
+
+Risk of dependence may increase with dose and duration of
+treatment
+For interdose symptoms of anxiety, can either increase dose or
+maintain same daily dose but divide into more frequent doses
+Can also use an as-needed occasional “top-up” dose for interdose
+anxiety
+Because seizure disorder can require doses much higher than 2
+mg/day, the risk of dependence may be greater in these patients
+Because panic disorder can require doses somewhat higher than 2
+mg/day, the risk of dependence may be greater in these patients than
+in anxiety patients maintained at lower doses
+Some severely ill seizure patients may require more than 20 mg/day
+Some severely ill panic patients may require 4 mg/day or more
+Frequency of dosing in practice is often greater than predicted from
+half-life, as duration of biological activity is often shorter than
+pharmacokinetic terminal half-life
+
+✽ Clonazepam is generally dosed half the dosage of alprazolam
+Escalation of dose may be necessary if tolerance develops in seizure
+disorders
+Escalation of dose usually not necessary in anxiety disorders, as
+tolerance to clonazepam does not generally develop in the treatment
+of anxiety disorders
+
+✽ Available as an oral disintegrating wafer
+
+
+
+
+<<<PAGE 516>>>
+
+Overdose
+Rarely fatal in monotherapy; sedation, confusion, coma, diminished
+reflexes
+Long-Term Use
+May lose efficacy for seizures; dose increase may restore efficacy
+Risk of dependence, particularly for treatment periods longer than
+12 weeks and especially in patients with past or current
+polysubstance abuse
+Habit Forming
+Clonazepam is a Schedule IV drug
+Patients may develop dependence and/or tolerance with long-term
+use
+How to Stop
+Patients with history of seizures may seize upon withdrawal,
+especially if withdrawal is abrupt
+Taper by 0.25 mg every 3 days to reduce chances of withdrawal
+effects
+For difficult-to-taper cases, consider reducing dose much more
+slowly after reaching 1.5 mg/day, perhaps by as little as 0.125 mg
+per week or less
+
+
+
+
+<<<PAGE 518>>>
+
+Inhibitors of CYP450 3A4 may affect the clearance of clonazepam,
+but dosage adjustment usually not necessary
+Flumazenil (used to reverse the effects of benzodiazepines) may
+precipitate seizures and should not be used in patients treated for
+seizure disorders with clonazepam
+Use of clonazepam with valproate may cause absence status
+Other Warnings/Precautions
+Boxed warning regarding the increased risk of CNS depressant
+effects when benzodiazepines and opioid medications are used
+together, including specifically the risk of slowed or difficulty
+breathing and death
+If alternatives to the combined use of benzodiazepines and opioids
+are not available, clinicians should limit the dosage and duration of
+each drug to the minimum possible while still achieving therapeutic
+efficacy
+Patients and their caregivers should be warned to seek medical
+attention if unusual dizziness, lightheadedness, sedation, slowed or
+difficulty breathing, or unresponsiveness occur
+Dosage changes should be made in collaboration with prescriber
+Use with caution in patients with pulmonary disease; rare reports of
+death after initiation of benzodiazepines in patients with severe
+pulmonary impairment
+
+
+
+
+<<<PAGE 519>>>
+
+History of drug or alcohol abuse often creates greater risk for
+dependency
+Clonazepam may induce grand mal seizures in patients with
+multiple seizure disorders
+Use only with extreme caution if patient has obstructive sleep apnea
+Some depressed patients may experience a worsening of suicidal
+ideation
+Some patients may exhibit abnormal thinking or behavioral changes
+similar to those caused by other CNS depressants (i.e., either
+depressant actions or disinhibiting actions)
+Do Not Use
+If patient has angle-closure glaucoma
+If patient has severe liver disease
+If there is a proven allergy to clonazepam or any benzodiazepine
+
+Special Populations
+Renal Impairment
+Dose should be reduced
+Hepatic Impairment
+Dose should be reduced
+
+
+
+
+<<<PAGE 520>>>
+
+Cardiac Impairment
+Benzodiazepines have been used to treat anxiety associated with
+acute myocardial infarction
+Elderly
+Should receive lower doses and be monitored
+Children and Adolescents
+Seizures –up to 10 years or 30 kg –0.01–0.03 mg/kg per day divided
+into 2–3 doses; maximum dose 0.05 mg/kg per day
+Safety and efficacy not established in panic disorder
+For anxiety, children and adolescents should generally receive lower
+doses and be more closely monitored
+Long-term effects of clonazepam in children/adolescents are
+unknown
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+
+
+
+
+<<<PAGE 521>>>
+
+Possible increased risk of birth defects when benzodiazepines are
+taken during pregnancy
+Because of the potential risks, clonazepam is not generally
+recommended as treatment for anxiety during pregnancy, especially
+during first trimester
+Drug should be tapered if discontinued
+Infants whose mothers received a benzodiazepine late in pregnancy
+may experience withdrawal effects
+Neonatal flaccidity has been reported in infants whose mothers took
+a benzodiazepine during pregnancy
+Seizures, even mild seizures, may cause harm to the embryo/fetus
+Breast Feeding
+Some drug is found in mother’s breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+Effects on infant have been observed and include feeding
+difficulties, sedation, and weight loss
+
+The Art of Psychopharmacology
+Potential Advantages
+Rapid onset of action
+Less sedation than some other benzodiazepines
+
+
+
+
+<<<PAGE 523>>>
+
+Generally used as second-line treatment for petit mal seizures if
+succinimides are ineffective
+Can be used as an adjunct or as monotherapy for seizure disorders
+Clonazepam is the only benzodiazepine that is used as a solo
+maintenance treatment for seizure disorders
+
+✽ Easier to taper than some other benzodiazepines because of long
+half-life
+
+✽ May have less abuse potential than some other benzodiazepines
+✽ May cause less depression, euphoria, or dependence than some
+other benzodiazepines
+
+✽ Clonazepam is often considered a “longer-acting alprazolam-like
+anxiolytic” with improved tolerability features in terms of less
+euphoria, abuse, dependence, and withdrawal problems, but this has
+not been proven
+When using to treat insomnia, remember that insomnia may be a
+symptom of some other primary disorder itself, and thus warrant
+evaluation for comorbid psychiatric and/or medical conditions
+Though not systematically studied, benzodiazepines have been used
+effectively to treat catatonia and are the initial recommended
+treatment
+
+Suggested Reading
+
+
+
+
+<<<PAGE 524>>>
+
+Davidson JR , Moroz G. Pivotal studies of clonazepam in panic disorder .
+Psychopharmacol Bull 1998 ;34 :169–74 .
+DeVane CL , Ware MR , Lydiard RB. Pharmacokinetics,
+pharmacodynamics, and treatment issues of benzodiazepines: alprazolam,
+adinazolam, and clonazepam . Psychopharmacol Bull 1991 ;27 :463–73 .
+Iqbal MM , Sobhan T , Ryals T. Effects of commonly used benzodiazepines
+on the fetus, the neonate, and the nursing infant . Psychiatr Serv 2002 ;53
+:39 –49 .
+Panayiotopoulos CP. Treatment of typical absence seizures and related
+epileptic syndromes . Paediatr Drugs 2001 ;3 :379 –403 .
+
+
+
+
+<<<PAGE 649>>>
+
+How Long Until It Works
+In clinical trials deutetrabenazine separated from placebo as early as
+weeks 2–4
+If It Works
+Patients should experience a significant reduction in the total
+Abnormal Involuntary Movement Scale (AIMS) score
+If It Doesn’t Work
+If tardive dyskinesia does not reverse with deutetrabenazine, then other
+management options include valbenazine, tetrabenazine, reserpine,
+clonazepam, amantadine, botulinum toxin injections for focal dystonia
+symptoms, or ginkgo biloba
+Some patients may require suppressive therapy, in which the offending
+antipsychotic is reinstituted or its dose raised; this should only be
+considered if the symptoms are very severe and cause marked
+functional impact (e.g., inability to eat; mouth sores from rubbing);
+this can make tardive dyskinesia worse in the long run, but the shortterm benefits may justify the risk for certain patients
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Deutetrabenazine is itself an augmenting agent to treat a side effect
+of antipsychotic drugs
+
+
+
+
+<<<PAGE 2358>>>
+
+How Long Until It Works
+In clinical trials valbenazine separated from placebo as early as
+week 2
+If It Works
+Patients should experience a significant reduction in the total
+Abnormal Involuntary Movement Scale (AIMS) score
+If It Doesn’t Work
+If tardive dyskinesia does not reverse with valbenazine, then other
+management options include deutetrabenazine, tetrabenazine,
+reserpine, clonazepam, amantadine, botulinum toxin injections for
+focal dystonia symptoms, or ginkgo biloba
+Some patients may require suppressive therapy, in which the offending
+antipsychotic is reinstituted or its dose raised; this should only be
+considered if the symptoms are very severe and cause marked
+functional impact (e.g., inability to eat; mouth sores from rubbing);
+this can make tardive dyskinesia worse in the long run, but the shortterm benefits may justify the risk for certain patients
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Valbenazine is itself an augmenting agent to treat a side effect of
+antipsychotic drugs
+
+
+
+
+<<<PAGE 2378>>>
+
+✽ Lamotrigine dose should be reduced by perhaps 50% if used with
+valproate, as valproate inhibits metabolism of lamotrigine and raises
+lamotrigine plasma levels, theoretically increasing the risk of rash
+Plasma levels of valproate may be lowered by carbamazepine,
+phenytoin, ethosuximide, phenobarbital, rifampin
+Aspirin may inhibit metabolism of valproate and increase valproate
+plasma levels
+Plasma levels of valproate may also be increased by felbamate,
+chlorpromazine, fluoxetine, fluvoxamine, topiramate, cimetidine,
+erythromycin, and ibuprofen
+Valproate inhibits metabolism of ethosuximide, phenobarbital, and
+phenytoin, and can thus increase their plasma levels
+No likely pharmacokinetic interactions of valproate with lithium or
+atypical antipsychotics
+Use of valproate with clonazepam may cause absence status
+Reports of hypothermia and hyperammonemia with or without
+encephalopthay in patients taking topiramate combined with
+valproate, though this is not due to a pharmacokinetic interaction; in
+patients who develop unexplained lethargy, vomiting, or change in
+mental status, an ammonia level should be measured
+Other Warnings/Precautions
+
+✽ Be alert to the following symptoms of hepatotoxicity that require
+immediate attention: malaise, weakness, lethargy, facial edema,
+
+
+
+
+<<<PAGE 2569>>>
+
+Adzenys ER (amphetamine d,l), 45
+Adzenys XR-ODT (amphetamine d,l), 45
+agomelatine, 5
+AH3 N (hydroxyzine), 355
+Aiglonyl (sulpiride), 741
+Alased (haloperidol), 347
+Albium (lorazepam), 437
+Aldazine (thioridazine), 759
+Alemoxan (clozapine), 191
+Alepam (oxazepam), 569
+Alertec (modafinil), 521
+Aleviatin (zonisamide), 875
+Alimoral (sulpiride), 741
+Aliseum (diazepam), 229
+Allegron (nortriptyline), 551
+allopregnanolone (brexanolone), 99
+Almazine (lorazepam), 437
+Aloperidin (haloperidol), 347
+Aloperidin Decanoate (haloperidol), 347
+Alpralid (alprazolam), 11
+Alpraz (alprazolam), 11
+alprazolam, 11
+alprazolam XR, 11
+Alprox (alprazolam), 11
+Alti-Alprazolam (alprazolam), 11
+Alti-Clonazepam (clonazepam), 173
+Alti-Desipramine (desipramine), 207
+Alti-Doxepin (doxepin), 255
+
+
+
+
+<<<PAGE 2571>>>
+
+amphetamine (d), 39
+amphetamine (d,l), 45
+Anafranil (clomipramine), 165
+Anafranil 75 (clomipramine), 165
+Anafranil Retard (clomipramine), 165
+Anatensoi Decanoaat (fluphenazine), 313
+Anatensol (fluphenazine), 313
+Anatensol Concentraat (fluphenazine), 313
+Anatensol Decanoate (fluphenazine), 313
+Ancholactil (chlorpromazine), 153
+Aneural (maprotiline), 465
+Aneurol (diazepam), 229
+Anexate (flumazenil), 293
+Ansilor (lorazepam), 437
+Ansiolin (diazepam), 229
+Ansised (buspirone), 123
+Ansium (diazepam), 229
+Ansium (sulpiride), 741
+Antabuse (disulfiram), 239
+Antalon (pimozide), 627
+Antelepsin (clonazepam), 173
+Anten (doxepin), 255
+Antenex (diazepam), 229
+Antideprin (imipramine), 367
+Antiparkin (selegiline), 705
+Antitussive (diphenhydramine), 235
+Antoderin (oxazepam), 569
+Anxial (buspirone), 123
+
+
+
+
+<<<PAGE 2572>>>
+
+Anxidin (clorazepate), 185
+Anxiolit (oxazepam), 569
+Anxiolit Plus (oxazepam), 569
+Anxiron (buspirone), 123
+Apaurin (diazepam), 229
+Apilepsin (valproate), 829
+Aplenzin (bupropion), 117
+Apo-Alprax (alprazolam), 11
+Apo-Amitriptyline (amitriptyline), 25
+Apo-Buspirone (buspirone), 123
+Apo-Carbamazepine (carbamazepine), 131
+Apo-Clomipramine (clomipramine), 165
+Apo-Clonazepam (clonazepam), 173
+Apo-Clonidine (clonidine), 179
+Apo-Clorazepate (clorazepate), 185
+Apo-Desipramine (desipramine), 207
+Apo-Diazepam (diazepam), 229
+Apo-Doxepin (doxepin), 255
+Apo-Fluoxetine (fluoxetine), 301
+Apo-Fluphenazine (fluphenazine), 313
+Apo-Haloperidol (haloperidol), 347
+Apoh-Hydroxyzine (hydroxyzine), 355
+Apo-Imipramine (imipramine), 367
+Apollonset (diazepam), 229
+Apo-Lorazem (lorazepam), 437
+Aponal (doxepin), 255
+Apo-Oxepam (oxazepam), 569
+Apo-Perphenazine (perphenazine), 607
+
+
+
+
+<<<PAGE 2578>>>
+
+Cibalith S-Lithonate (lithium), 415
+Cidoxepin (doxepin), 255
+Cipram (citalopram), 159
+Cipramil (citalopram), 159
+Ciprilex (escitalopram), 269
+Ciproxidine (pitolisant), 639
+Cisordinol (zuclopenthixol), 889
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+Clonazepamum (clonazepam), 173
+clonidine, 179
+Clonisin (clonidine), 179
+Clonistada (clonidine), 179
+Clopixol (zuclopenthixol), 889
+Clopixol Acuphase (zuclopenthixol), 889
+Clopixol Conc (zuclopenthixol), 889
+Clopress (clomipramine), 165
+clorazepate, 185
+Clordezalin (chlorpromazine), 153
+Clorpres (clonidine), 179
+clozapine, 191
+Clozaril (clozapine), 191
+Coaxil (tianeptine), 777
+Cogentin (benztropine), 85
+Cognitiv (selegiline), 705
+Combipres (clonidine), 179
+Complutine (diazepam), 229
+
+
+
+
+<<<PAGE 2591>>>
+
+Herphonal (trimipramine), 817
+Hetlioz (tasimelteon), 751
+Hexafene (hydroxyzine), 355
+Hexalid (diazepam), 229
+Hibanil (chlorpromazine), 153
+Hibernal (chlorpromazine), 153
+Hipnodane (quazepam), 663
+Hipnosedon (flunitrazepam), 297
+Histilos (hydroxyzine), 355
+Hopacem (mianserin), 495
+Horizant (gabapentin), 331
+Huberplex (chlordiazepoxide), 147
+Hydoic acid (valproate), 829
+Hydophen (clomipramine), 165
+Hydramine (diphenhydramine), 235
+Hydroxyzin (hydroxyzine), 355
+hydroxyzine, 355
+Hydroxyzinum (hydroxyzine), 355
+Hypam (triazolam), 799
+Hypnocalm (flunitrazepam), 297
+Hypnodorm (flunitrazepam), 297
+Hypnor (flunitrazepam), 297
+Hypnorex Retard (lithium), 415
+Hypnovel (midazolam), 499
+Idom (dothiepin), 249
+Iktoviril (clonazepam), 173
+Ilman (flunitrazepam), 297
+iloperidone, 359
+
+
+
+
+<<<PAGE 2593>>>
+
+Jatrosom N (trifluoperazine), 803
+Jornay PM (d, l-methylphenidate), 487
+Julap (selegiline), 705
+Jumex (selegiline), 705
+Jumexal (selegiline), 705
+Kai (lofexidine), 427
+Kainever (estazolam), 281
+Kalma (alprazolam), 11
+Kanopan 75 (maprotiline), 465
+Kapvay (clonidine), 179
+Karbazin (carbamazepine), 131
+Kataved (esketamine), 275
+Keppra (levetiracetam), 399
+Ketalar (ketamine), 383
+ketamine, 383
+Ketanest (esketamine), 275
+Ketanest S (esketamine), 275
+Kinabide (selegiline), 705
+Klarium (diazepam), 229
+Klofelins (clonidine), 179
+Klonopin (clonazepam), 173
+Klopoxid (chlordiazepoxide), 147
+Kloproman (chlorpromazine), 153
+Klorproman (chlorpromazine), 153
+Klotriptyl (chlordiazepoxide), 147
+Klozapol (clozapine), 191
+Labileno (lamotrigine), 387
+
+
+
+
+<<<PAGE 2607>>>
+
+Parmodalin (tranylcypromine), 787
+Parmodalin (trifluoperazine), 803
+Parnate (tranylcypromine), 787
+paroxetine, 593
+paroxetine CR, 593
+Parstelin (tranylcypromine), 787
+Parstelin (trifluoperazine), 803
+Pasrin (buspirone), 123
+Pax (diazepam), 229
+Paxal (alprazolam), 11
+Paxam (clonazepam), 173
+Paxil (paroxetine), 593
+Paxil CR (paroxetine CR), 593
+Paxium (chlordiazepoxide), 147
+Paxtibi (nortriptyline), 551
+Pazolan (alprazolam), 11
+Pefanium/Pefanic (chlordiazepoxide), 147
+Peratsin (perphenazine), 607
+Peratsin Dekanoaatti (perphenazine), 607
+Peratsin Enantaati (perphenazine), 607
+Perfenazin (perphenazine), 607
+Peridol (haloperidol), 347
+Permitil (fluphenazine), 313
+perospirone, 601
+perphenazine, 607
+Perseris (risperidone injection), 687
+Pertofrane (desipramine), 207
+Pertofrin (desipramine), 207
+
+
+
+
+<<<PAGE 2608>>>
+
+Phasal (lithium), 415
+phenelzine, 613
+phentermine/topiramate, 619
+Piefol (trifluoperazine), 803
+pimavanserin, 623
+pimozide, 627
+Piportil (pipothiazine), 633
+Piportil Depot (pipothiazine), 633
+Piportil L4 (pipothiazine), 633
+Piportil Longum-4 (pipothiazine), 633
+Piportil palmitate (pipothiazine), 633
+Piportyl palmitat (pipothiazine), 633
+pipothiazine, 633
+Pipotiazine (pipothiazine), 633
+Pirium (pimozide), 627
+pitolisant, 639
+Placidia (lorazepam), 437
+Placil (clomipramine), 165
+Placinoral (lorazepam), 437
+Planum (temazepam), 755
+Plegomazin (chlorpromazine), 153
+Plenur (lithium), 415
+Plurimen (selegiline), 705
+PMS-carbamazepine (carbamazepine), 131
+PMS-Clonazepam (clonazepam), 173
+PMS-Desipramine (desipramine), 207
+PMS-Fluoxetine (fluoxetine), 301
+PMS-Fluphenazine (fluphenazine), 313
+
+
+
+
+<<<PAGE 2613>>>
+
+Riminyl (galantamine), 337
+Risolid (chlordiazepoxide), 147
+Risperdal (risperidone), 687
+Risperdal Consta (risperidone injectable), 687
+risperidone, 687
+Risperin (risperidone), 687
+Rispolept (risperidone), 687
+Rispolin (risperidone), 687
+Ritalin (d,l-methylphenidate), 487
+Ritalin LA (d, l-methylphenidate), 487
+Ritalin SR (d,l-methylphenidate), 487
+Ritaline (d,l-methylphenidate), 487
+rivastigmine, 699
+Rivatril (clonazepam), 173
+Rivotril (clonazepam), 173
+Robitussin (dextromethorphan), 225
+Rocam (midazolam), 499
+Rohipnol (flunitrazepam), 297
+Rohypnol (flunitrazepam), 297
+Roipnol (flunitrazepam), 297
+Romazicon (flumazenil), 293
+Ronal (flunitrazepam), 297
+Ropan (flunitrazepam), 297
+Rozerem (ramelteon), 677
+Rubifen (d,l-methylphenidate), 487
+Rulivan (nefazodone), 545
+Sanval (zolpidem), 871
+Sanzur (fluoxetine), 301
+
+
+
+
+<<<PAGE 2629>>>
+
+Alzheimer disease
+caprylidene , 127
+donepezil , 243
+galantamine , 337
+memantine , 473
+rivastigmine , 699
+selegiline, 705
+Amnesia, Drug-induced
+midazolam , 499
+Anxiety
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone , 123
+chlordiazepoxide , 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate , 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam , 229
+dothiepin, 249
+doxepin , 255
+duloxetine, 263
+
+
+
+
+<<<PAGE 2633>>>
+
+bupropion, 117
+carbamazepine, 131
+cariprazine , 137
+fluoxetine, 301
+iloperidone, 359
+lamotrigine, 387
+lithium, 415
+lumateperone, 451
+lurasidone , 457
+modafinil, 521
+olanzapine/fluoxetine combination , 301 , 559
+quetiapine , 667
+risperidone, 687
+sertindole, 715
+valproate (divalproex), 829
+ziprasidone, 863
+Bipolar disorder
+amoxapine, 33
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+bupropion, 117
+carbamazepine, 131
+cariprazine , 137
+chlorpromazine, 153
+clonazepam (adjunct), 173
+clozapine, 191
+
+
+
+
+<<<PAGE 2636>>>
+
+lisdexamfetamine , 409
+topiramate, 781
+zonisamide, 875
+Cataplexy syndrome
+clomipramine, 165
+imipramine, 367
+pitolisant , 639
+sodium oxybate , 733
+Catatonia
+alprazolam, 11
+chlordiazepoxide, 147
+clonazepam, 173
+clorazepate, 185
+diazepam, 229
+estazolam, 281
+flunitrazepam, 297
+flurazepam, 321
+loflazepate, 431
+lorazepam, 437
+midazolam, 499
+oxazepam, 569
+quazepam, 663
+temazepam, 755
+triazolam, 799
+Chorea, Huntington’s disease
+deutetrabenazine , 221
+
+
+
+
+<<<PAGE 2642>>>
+
+prazosin , 643
+propranolol , 653
+Hypoactive sexual desire disorder
+bremelanotide , 95
+flibanserin , 289
+Insomnia
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+clomipramine, 165
+clonazepam, 173
+desipramine, 207
+diazepam, 229
+diphenhydramine , 235
+dothiepin, 249
+doxepin , 255
+estazolam , 281
+eszopiclone , 285
+flunitrazepam, 297
+flurazepam , 321
+hydroxyzine, 355
+imipramine, 367
+lemborexant , 395
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+
+
+
+
+<<<PAGE 2643>>>
+
+maprotiline, 465
+mianserin, 495
+nortriptyline, 551
+quazepam , 663
+ramelteon , 677
+suvorexant , 747
+tasimelteon, 751
+temazepam , 755
+trazodone, 793
+triazolam , 799
+trimipramine, 817
+zaleplon , 859
+zolpidem , 871
+zopiclone, 879
+Mania
+alprazolam (adjunct), 11
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine , 131
+cariprazine , 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium , 415
+
+
+
+
+<<<PAGE 2647>>>
+
+lofexidine , 427
+naltrexone , 537
+Panic disorder
+alprazolam , 11
+citalopram, 159
+clonazepam , 173
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine, 325
+isocarboxazid, 375
+lorazepam, 437
+mirtazapine, 509
+nefazodone, 545
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+reboxetine, 681
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Parkinson’s disease
+selegiline , 705
+zonisamide, 875
+Parkinson’s disease dementia
+
+
+
+
+<<<PAGE 2650>>>
+
+diazepam , 229
+hydroxyzine , 355
+lorazepam , 437
+midazolam , 499
+Pruritus
+doxepin, 255
+hydroxyzine , 355
+Pseudobulbar affect
+dextromethorphan (with quinidine) , 225
+Psychosis
+alprazolam (adjunct), 11
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine , 313
+haloperidol , 347
+iloperidone, 359
+
+
+
+
+<<<PAGE 2654>>>
+
+paliperidone , 581
+perospirone, 601
+perphenazine , 607
+pipothiazine, 633
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine , 759
+thiothixene , 765
+trifluoperazine , 803
+valproate (divalproex) (adjunct), 829
+ziprasidone , 863
+zotepine, 883
+zuclopenthixol, 889
+Seasonal affective disorder
+bupropion , 117
+Sedation-induction
+hydroxyzine , 355
+ketamine, 383
+midazolam , 499
+Seizure disorders
+carbamazepine , 131
+clonazepam , 173
+clorazepate (adjunct), 185
+diazepam , 229
+
+
+
+
+<<<PAGE 2658>>>
+
+Index by Class
+Anticholinergics
+benztropine, 85
+diphenhydramine, 235
+trihexyphenidyl, 809
+Anticonvulsants
+carbamazepine, 131
+clonazepam, 173
+clorazepate (adjunct), 185
+diazepam, 229
+gabapentin, 331
+lamotrigine, 387
+levetiracetam, 399
+lorazepam, 437
+oxcarbazepine, 575
+pregabalin, 647
+tiagabine, 771
+topiramate, 781
+valproate (divalproex), 829
+zonisamide (adjunct), 875
+Antidepressants
+agomelatine, 5
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+
+
+
+<<<PAGE 2665>>>
+
+galantamine, 337
+memantine, 473
+memantine/donepezil combination, 243 , 473
+rivastigmine, 699
+selegiline, 705
+Libido enhancers
+bremelanotide, 95
+flibanserin, 289
+Medical food
+caprylidene, 127
+l-methylfolate, 477
+Mood stabilizers
+alprazolam (adjunct), 11
+amoxapine, 33
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+bupropion, 117
+carbamazepine, 131
+cariprazine, 137
+chlorpromazine, 153
+clonazepam (adjunct), 173
+clozapine, 191
+doxepin, 255
+fluoxetine, 301
+flupenthixol, 307
+
+

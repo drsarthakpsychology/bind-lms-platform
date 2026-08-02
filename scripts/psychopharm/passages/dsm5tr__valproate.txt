@@ -1,0 +1,255 @@
+<<<PAGE 158>>>
+
+Regarding the specifier “with or without accompanying intellectual impairment,”
+understanding the (often uneven) intellectual profile of a child or adult with autism spectrum
+disorder is necessary for interpreting diagnostic features. Separate estimates of verbal and
+nonverbal skill are necessary (e.g., using untimed nonverbal tests to assess potential strengths in
+individuals with limited language).
+To use the specifier “with or without accompanying language impairment,” the current level
+of verbal functioning should be assessed and described. Examples of the specific descriptions for
+“with accompanying language impairment” might include no intelligible speech (nonverbal),
+single words only, or phrase speech. Language level in individuals “without accompanying
+language impairment” might be further described as speaks in full sentences or has fluent speech.
+Since receptive language may lag behind expressive language development in autism spectrum
+disorder, receptive and expressive language skills should be considered separately.
+The specifier “associated with a known genetic or other medical condition or environmental
+factor” can be applied when an individual has a known genetic condition (e.g., Rett syndrome,
+fragile X syndrome, Down syndrome), a known medical condition (e.g., epilepsy), or a history of
+environmental exposure in utero to a known teratogen or infection (e.g., fetal valproate
+syndrome, fetal alcohol syndrome, fetal rubella). This specifier should not be viewed as
+synonymous with causation of autism spectrum disorder. A condition may be listed as being
+associated with autism spectrum disorder when it is thought to be potentially clinically relevant
+or inform care and not because the clinician is asserting a cause. Examples include autism
+spectrum disorder associated with a unique genomic copy number variant that could be clinically
+relevant even if the specific abnormality may not have directly caused nor have previously been
+linked to autism spectrum disorder, or Crohn’s disease, which could exacerbate behavioral
+symptoms.
+60
+The specifier “associated with a neurodevelopmental, mental, or behavioral problem” can be
+applied to indicate problems (e.g., irritability, sleep problems, self-injurious behavior, or
+developmental regression) that contribute to the functional formulation or are a focus of
+treatment. Additional neurodevelopmental, mental, or behavioral disorders should also be noted
+as separate diagnoses (e.g., attention-deficit/hyperactivity disorder; developmental coordination
+disorder; disruptive behavior, impulse-control, and conduct disorders; anxiety, depressive, or
+bipolar disorders; tics or Tourette’s disorder; feeding, elimination, or sleep disorders).
+Catatonia can occur as a comorbid condition with autism spectrum disorder. In addition to
+classic symptoms of posturing, negativism (opposition or no response to instructions or external
+stimuli), mutism, and stupor, an increase or worsening of stereotypy and self-injurious behavior
+may form part of the symptom complex of catatonia in the setting of autism spectrum disorder.
+
+Diagnostic Features
+The essential features of autism spectrum disorder are persistent impairment in reciprocal social
+communication and social interaction (Criterion A), and restricted, repetitive patterns of
+behavior, interests, or activities (Criterion B). These symptoms are present from early childhood
+and limit or impair everyday functioning (Criteria C and D). The stage at which functional
+impairment becomes obvious will vary according to characteristics of the individual and his or
+
+
+
+
+<<<PAGE 164>>>
+
+Environmental.
+
+A variety of risk factors for neurodevelopmental disorders, such as advanced
+parental age, extreme prematurity, or in utero exposures to certain drugs or teratogens like
+valproic acid, may broadly contribute to risk of autism spectrum disorder.
+Genetic and physiological. Heritability estimates for autism spectrum disorder have ranged from
+37% to higher than 90%, based on twin concordance rates, and a more recent five-country cohort
+estimated heritability at 80%. Currently, as many as 15% of cases of autism spectrum disorder
+appear to be associated with a known genetic mutation, with different de novo copy number
+variants or de novo mutations in specific genes associated with the disorder in different families.
+However, even when a known genetic mutation is associated with autism spectrum disorder, it
+does not appear to be fully penetrant (i.e., not all individuals with that same genetic abnormality
+will develop autism spectrum disorder). Risk for the majority of cases appears to be polygenic,
+with perhaps hundreds of genetic loci making relatively small contributions. Whether these
+findings apply to all racial/ethnic populations equally is unclear, given the limited inclusion of
+communities of color in genetic research.
+65
+
+Culture-Related Diagnostic Issues
+Cultural differences exist in norms for social interaction, nonverbal communication, and
+relationships, but individuals with autism spectrum disorder are markedly impaired against the
+norms for their cultural context. Culture influences the perception of autistic behaviors, the
+perceived salience of some behaviors over others, and the expectations for child behavior and
+parenting practices. Considerable discrepancies are found in age at diagnosis of autism spectrum
+disorder in children from diverse ethnoracial backgrounds; most studies find delayed diagnosis
+among socially oppressed ethnic and racialized children. In addition to being diagnosed later,
+African American children are more often misdiagnosed with adjustment or conduct disorder
+than are White children.
+
+Sex- and Gender-Related Diagnostic Issues
+Autism spectrum disorder is diagnosed three to four times more often in males than in females,
+and on average, age at diagnosis is later in females. In clinic samples, females tend to be more
+likely to show accompanying intellectual developmental disorder as well as epilepsy, suggesting
+that girls without intellectual impairments or language delays may go unrecognized, perhaps
+because of subtler manifestation of social and communication difficulties. In comparison with
+males with autism spectrum disorder, females may have better reciprocal conversation, and be
+more likely to share interests, to integrate verbal and nonverbal behavior, and to modify their
+behavior by situation, despite having similar social understanding difficulties as males.
+Attempting to hide or mask autistic behavior (e.g., by copying the dress, voice, and manner of
+socially successful women) may also make diagnosis harder in some females. Repetitive
+behaviors may be somewhat less evident in females than in males, on average, and special
+interests may have a more social (e.g., a singer, an actor) or “normative” focus (e.g., horses),
+while remaining unusual in their intensity. Relative to the general population, rates of gender
+variance have been reported to be increased in autism spectrum disorder, with higher variance in
+females compared with males.
+
+
+
+
+<<<PAGE 1070>>>
+
+to antipsychotic medications that block dopamine D2 receptors. MIP occurs at higher rates with
+antipsychotics that have higher potency for the dopamine D2 receptor, such as haloperidol,
+fluphenazine, and risperidone, but there are no
+808
+differences in the clinical features of parkinsonism between first- and second-generation
+antipsychotics.
+Other medications that can cause MIP include calcium channel antagonists (e.g., flunarizine,
+cinnarizine), dopamine depleters (e.g., reserpine, tetrabenazine), antiepileptics (e.g., phenytoin,
+valproate, levetiracetam), antidepressants (e.g., selective serotonin reuptake inhibitors,
+monoamine oxidase inhibitors), lithium, chemotherapeutic drugs (e.g., cystosine arabinoside,
+cyclophosphamide, vincristine, doxorubicin, paclitaxel, etoposide), and immunosuppressants
+(e.g., cyclosporine, tacrolimus). Toxins (e.g., 1-methyl-4-phenyl-1,2,3,6-tetrahydropyridine
+[MPTP], organophosphate pesticides, manganese, methanol, cyanide, carbon monoxide, and
+carbon disulfide) may also cause MIP.
+The time course for development of MIP varies. Usually, MIP develops a few weeks after
+starting or raising the dose of a medication known to cause parkinsonism or after reducing an
+antiparkinsonian medication (e.g., an anticholinergic agent) that is being used to treat or prevent
+medication-induced dystonia or parkinsonian symptoms. However, MIP may also develop
+rapidly after starting or raising the dose of a medication or have an insidious onset after many
+months of exposure. With antipsychotic medications or other dopamine receptor blocking agents,
+MIP typically develops 2–4 weeks after starting the medication and usually by 3 months. Mainly
+with calcium channel blockers, a second peak of symptom onset is reported after about 1 year.
+Reported rates of MIP are affected by absence of standard diagnostic criteria, incorrect
+diagnosis or misattribution of MIP signs to Lewy body disease (e.g., Parkinson’s disease), or a
+psychiatric condition, and overall lack of recognition, especially in milder cases. It is estimated
+that at least 50% of outpatients receiving long-term antipsychotic treatment with typical agents
+develop parkinsonian signs or symptoms at some point in their course of treatment.
+There are no clinical characteristics that distinguish MIP reliably from Parkinson’s disease.
+Because motor signs and symptoms in Parkinson’s disease begin unilaterally and progress
+asymmetrically, the subacute onset of bilateral parkinsonism within weeks of starting an
+antipsychotic or other MIP-causing agent is highly suggestive for MIP. Parkinsonian signs are
+often symmetric in MIP, but asymmetric patterns are not uncommon and should not exclude a
+diagnosis of MIP. In addition, the course and presentation of parkinsonism should not be better
+accounted for by psychiatric phenomena, such as catatonia, negative symptoms of schizophrenia,
+or psychomotor retardation in a major depressive episode; other nonparkinsonian medicationinduced movement disorders; another neurological or medical condition (e.g., Parkinson’s
+disease, Wilson’s disease); or antipsychotic-exacerbated Parkinson’s disease.
+In MIP, rigidity and bradykinesia are more often present, whereas tremor is somewhat less
+common and may be absent. Parkinsonian tremor, also referred to as a “pill-rolling tremor,” is a
+steady, rhythmic oscillatory movement (3–6 cycles per second) that is apparent at rest and is
+typically slower than other tremors. It may be intermittent, unilateral or bilateral, or dependent on
+limb position (i.e., positional tremor). The tremor may involve the limbs, head, jaw, mouth, lip
+(“rabbit syndrome”), or tongue. As it is present at rest, the tremor can be suppressed, especially
+
+
+
+
+<<<PAGE 1080>>>
+
+These conditions include Huntington’s disease, Wilson’s disease, Sydenham’s (rheumatic)
+chorea, systemic lupus erythematosus, thyrotoxicosis, heavy metal poisoning, ill-fitting dentures,
+dyskinesia due to other medications such as L-dopa or bromocriptine, and spontaneous
+dyskinesias. Factors that may be helpful in making the distinction are evidence that the
+symptoms preceded the exposure to the antipsychotic medication or other dopamine receptor
+blocking agent or that other focal neurological signs are present. It should be noted that other
+movement disorders may coexist with tardive dyskinesia. Because spontaneous dyskinesia can
+occur in more than 5% of individuals and is also more common in elderly persons, it may be
+difficult to prove that antipsychotic medications produced tardive dyskinesia in a given
+individual. Tardive dyskinesia must be distinguished from symptoms that are due to a
+medication-induced acute movement disorder (e.g., medication-induced parkinsonism, acute
+dystonia, acute akathisia). Acute dystonia and acute akathisia can develop quickly within hours
+to days, and medication-induced parkinsonism develops within weeks of initiating or increasing
+the dose of an antipsychotic medication or other dopamine receptor blocking agent (or reducing
+the dose of a medication used to treat the acute extrapyramidal symptoms). Tardive dyskinesia,
+on the other hand, generally develops after more prolonged exposure to antipsychotic medication
+(months to years) and can appear after the withdrawal of antipsychotic medication; the minimum
+exposure history required for the diagnosis of tardive dyskinesia is antipsychotic medication use
+for at least 3 months (or 1 month in middle-age and elderly individuals).
+
+Tardive Dystonia Tardive Akathisia
+G24.09 Tardive Dystonia
+G25.71 Tardive Akathisia
+This category is for tardive syndromes involving other types of movement problems, such as
+dystonia or akathisia, which are distinguished by their late emergence in the course of treatment
+and their potential persistence for months to years, even in the face of discontinuation of an
+antipsychotic medication or other dopamine receptor blocking agent or dosage reduction.
+817
+
+Medication-Induced Postural Tremor
+G25.1 Medication-Induced Postural Tremor
+The essential feature of this condition is a fine tremor occurring during attempts to maintain a
+posture, which develops in association with the use of medication. Medications with which such
+a tremor may be associated include lithium, β-adrenergic medications (e.g., isoproterenol),
+stimulants (e.g., amphetamine), dopaminergic medications, anticonvulsant medications (e.g.,
+valproic acid), antidepressant medications, and methylxanthines (e.g., caffeine, theophylline).
+The tremor is a regular, rhythmic oscillation of the limbs (most commonly hands and fingers),
+head, mouth, or tongue, most commonly with a frequency of between 8 and 12 cycles per
+second. It is most easily observed when the affected body part is held in a sustained posture (e.g.,
+hands outstretched, mouth held open). The tremor may worsen in severity when the affected
+
+
+
+
+<<<PAGE 1335>>>
+
+1023
+of intermittent explosive disorder, 529
+of major depressive disorder, 189
+of neurocognitive disorders, 697
+of nightmare disorder, 458
+of OCD, 268
+of obstructive sleep apnea hypopnea, 432
+of opioid use disorder, 612
+of schizotypal personality disorder, 746
+of sleepwalking, 454
+of specific learning disorder, 82–83
+of stereotypic movement disorder, 91
+Fan nao, 879
+Fantasies, and female sexual interest/arousal disorder, 490
+Fatigue
+generalized anxiety disorder and, 251
+hypersomnolence disorder and, 420
+major depressive disorder and, 186
+Fear
+agoraphobia and, 247
+definition of, 215
+genito-pelvic pain/penetration disorder and, 494
+non–rapid eye movement sleep arousal disorders and, 453
+specific phobia and, 225
+Feeding and eating disorders, characteristics of, 371. See also Anorexia nervosa; Avoidant/restrictive food intake disorder;
+Binge-eating disorder; Bulimia nervosa; Pica; Rumination disorder
+Female orgasmic disorder, 485–489
+Female sexual interest/arousal disorder, 489–493, 495
+Fentanyl, 610, 612
+Fetal alcohol spectrum disorder (FASD), 919
+Fetal alcohol syndrome, 59, 917–918
+Fetal rubella, 59
+Fetal valproate syndrome, 59
+Fetishistic disorder, 779, 796–798, 800
+Fibromyalgia, 355, 498
+Field Trials, and revision process for DSM-5, 7–8
+Finland, prevalence of
+delirium in, 676
+delusional disorder in, 107
+nightmare disorder in, 459
+psychotic disorder due to another medical condition in, 132
+pyromania in, 538
+schizoaffective disorder in, 123
+sexual sadism disorder in, 791, 792
+tobacco-related disorders in, 649
+Firearms, alcohol use and possession of, 560
+First responders, and traumatic events, 306
+Five Factor Model of personality (FFM), 893
+Flashbacks
+acute stress disorder and, 318
+dissociative identity disorder and, 332
+PTSD and, 306, 313, 318
+substance/medication-induced psychotic disorder and, 130
+Flight of ideas, and manic episodes, 144
+Fluency. See Childhood-onset fluency disorder
+Flynn effect, and intellectual developmental disorders, 38
+Food avoidance emotional disorder, 377
+
+

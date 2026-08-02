@@ -1,0 +1,802 @@
+<<<PAGE 312>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+vilazodone
+
+escitalopram
+
+5HT1A
+
+S-citalopram
+
+SERT
+
+SERT
+SERT
+
+Figure 7-21 Escitalopram The R and S enantiomers of
+citalopram are mirror images of each other but have slightly
+different clinical properties. The R enantiomer is the one with
+weak antihistamine properties; the R and S enantiomers may
+also differ in their effects at the serotonin transporter. The S
+enantiomer of citalopram has been developed and marketed as
+escitalopram.
+
+However, dose increase is limited due to the potential
+of QTc prolongation at higher doses. These findings all
+suggest that it is not favorable for citalopram to contain
+the R enantiomer. In fact, some pharmacological evidence
+suggests that the R enantiomer may be pharmacologically
+active at SERTs in a manner that does not inhibit SERTs
+but actually interferes with the ability of the active S
+enantiomer to inhibit SERTs. This could lead to reduced
+SERT inhibition, reduced synaptic 5HT, and possibly
+reduced net therapeutic actions, especially at low doses.
+Escitalopram: The Quintessential SSRI
+
+The solution to improving the properties of racemic
+citalopram is to remove the unwanted R enantiomer.
+The resulting drug is known as escitalopram, as it
+is comprised of only the pure active S enantiomer
+(Figure 7-21). This maneuver appears to remove the
+antihistaminic properties and there are no higher dose
+restrictions to avoid QTc prolongation. In addition,
+removal of the potentially interfering R enantiomer
+makes the lowest dose of escitalopram more predictably
+efficacious. Escitalopram is therefore the SSRI for which
+pure SERT inhibition is most likely to explain almost all
+of its pharmacological actions. Escitalopram is considered
+perhaps the best-tolerated SSRI, with the fewest
+cytochrome P450 (CYP450)-mediated drug interactions.
+Serotonin Partial Agonist Reuptake Inhibitors (SPARIs)
+
+Vilazodone combines SERT inhibition with 5HT1A
+partial agonism. For this reason, vilazodone is called
+296
+
+Figure 7-22 Vilazodone. Vilazodone is a partial agonist at the
+serotonin 1A receptor and also inhibits serotonin reuptake; thus,
+it is referred to as a serotonin partial agonist reuptake inhibitor
+(SPARI).
+
+a SPARI (serotonin partial agonist reuptake inhibitor)
+(Figure 7-22). The combination of serotonin reuptake
+inhibition with 5HT1A partial agonism has long
+been known by clinicians to enhance the unipolar
+antidepressant properties and tolerability of SSRIs/SNRIs
+in some patients (e.g., adding the 5HT1A partial agonist
+buspirone [Chapter 8 on anxiety]; the serotonin 1A/
+dopamine 2 partial agonists aripiprazole, brexpiprazole,
+or cariprazine [Chapter 5]; or the serotonin/dopamine
+antagonist with 5HT1A partial agonist properties,
+quetiapine). With vilazodone this combination
+mechanism is achieved with only one drug, avoiding drug
+interactions and various off-target receptor actions that
+may be undesired with the other drugs listed.
+In animal models, adding 5HT1A partial agonism to
+SSRIs causes more immediate and robust elevations of
+brain 5HT levels than SSRIs do alone. This is thought to
+be due to the fact that 5HT1A partial agonists are a type of
+“artificial serotonin,” selective especially for presynaptic
+somatodendritic 5HT1A autoreceptors, and that 5HT1A
+partial agonist action occurs immediately after the drug
+is given (Figure 7-23). Thus, 5HT1A immediate partial
+agonist actions are theoretically additive or synergistic
+with simultaneous SERT inhibition (Figure 7-23) since
+this leads to faster and more robust actions at 5HT1A
+somatodendritic autoreceptors (Figure 7-24) than with
+SERT inhibition alone (Figure 7-12), including their
+downregulation (Figure 7-25). This hypothetically
+
+
+
+
+<<<PAGE 348>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Figure 7-62 Ketamine, AMPA
+receptors, and BDNF/VEGF
+release. Glutamate activity heavily
+modulates synaptic potentiation; this
+is specifically modulated through
+NMDA (N-methyl-D-aspartate)
+and AMPA (α-amino-3-hydroxy-5methyl-4-isoxazole-propionic acid)
+receptors. Ketamine is an NMDA
+receptor antagonist; however, its
+rapid antidepressant effects may
+also be related to indirect effects
+on AMPA receptor signaling. (A) A
+second hypothesis is that blockade
+of the NMDA receptor leads to rapid
+activation of AMPA, which activates
+voltage-sensitive calcium channels
+(VSCCs) to allow calcium influx. (B) This
+in turn would lead to activation of brainderived neurotrophic factor (BDNF)
+and VEGF (vascular endothelial growth
+factor) release, which bind to TRKB and
+FLK1 receptors, respectively, triggering
+cascades that induce dendritic spine
+formation.
+
+TRKB
+FLK1
+vesicle with
+VEGF
+vesicle with
+BDNF
+Ca++
+Glu
+AMPA
+receptor
+VSCC
+NMDA
+receptor
+blocked by
+ketamine
+
+A
+
+BDNF VEGF
+
+PLC /PI3K
+AKT
+
+dendritic
+spine
+formation
+
+B
+
+active as an acute rapid-onset antidepressant, and it is
+administered intranasally and rapidly, so that longer
+intravenous infusions are not necessary. After twiceweekly initiation, esketamine can be given intranasally
+in weekly or biweekly dosing as an augmenting agent
+to standard drugs for depression. A long-term study for
+up to a year of esketamine nasal spray plus a switch to
+an oral monoamine antidepressant not previously tried,
+showed sustained improvements in depression and
+acceptable safety.
+Other Drug Combinations for Treatment-Resistant
+Depression
+
+Other options to augment monoamine treatments for
+unipolar depression include agents that do not have
+robust antidepressant actions as monotherapies but
+can improve the action of the monoamine treatments
+332
+
+(e.g., lithium, buspirone, and thyroid), as well as the
+very popular and often effective strategy of combining
+two monoamine drugs, each approved for unipolar
+depression, to create pharmacological synergy. However,
+none of these strategies are specifically approved.
+Lithium
+
+Lithium is discussed below as a treatment for mania, but
+has been used as well for unipolar depressed patients who
+fail to respond to treatment. Lithium augmentation of
+monoamine reuptake inhibitors, particularly the classic
+tricyclic antidepressants also discussed below, has been
+used in the past to boost treatment response in unipolar
+depression. As augmentation for treatment-resistant
+unipolar depression, lithium is administered in doses
+lower than those used for mania, but it has fallen out of
+favor in recent years.
+
+
+
+
+<<<PAGE 349>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+esketamine
+NMDA
+
+known abilities to regulate neuronal organization,
+arborization, and synapse formation may have the
+downstream consequence of boosting monoamine
+neurotransmitters, and this may account for how thyroid
+hormones enhance antidepressant action in some patients.
+Augmentation of treatments for either unipolar or bipolar
+depression with thyroid hormones has also fallen out of
+favor in recent years.
+Triple-Action Combo: SSRI/SNRI + NDRI
+
+σ
+
+S-ketamine
+
+NMDA
+
+σ
+
++
+
++
+
+Figure 7-63 Esketamine. The R and S enantiomers of ketamine
+are mirror images of each other; the exact pharmacology of the
+R and S enantiomers and their active metabolites is still being
+determined. The S enantiomer of ketamine has been developed
+and marketed as esketamine.
+
+Buspirone
+
+Buspirone is a 5HT1A partial agonist, so putting it
+together with an SSRI/SNRI is very much similar to the
+use of vilazodone (Figure 7-22 through Figure 7-27)
+or vortioxetine (Figure 7-49) discussed above. Indeed,
+most of the serotonin/dopamine agents used to augment
+monoamine antidepressants have 5HT1A properties (e.g.,
+quetiapine, aripiprazole, brexpiprazole, and cariprazine).
+Administering drugs that have 5HT1A agonist actions is a
+favored approach for augmenting SSRI/SNRIs, but using
+buspirone for this is less common today than using other
+agents with 5HT1A properties.
+Thyroid Hormones
+
+Thyroid hormones act by binding to nuclear ligand
+receptors to form a nuclear ligand-activated transcription
+factor. Abnormalities in thyroid hormone levels have
+long been associated with depression, and various forms
+and doses of thyroid hormones have for many years been
+utilized as augmenting agents to drugs for depression
+either to boost their efficacy in patients with inadequate
+response or to speed up their onset of action. Thyroid’s
+
+If boosting one neurotransmitter is good, and two is
+better, maybe three boosted neurotransmitters is best
+(Figures 7-64). Triple action (i.e, serotonin, dopamine,
+and norepinephrine) drugs for depression therapy with
+modulation of all three monoamines would be predicted
+to occur by combining either an SSRI with an NDRI or
+combining an SNRI with an NDRI, providing even more
+noradrenergic and dopaminergic action (Figure 7-64).
+These are perhaps some of the most popular combinations
+of two drugs for depression utilized in the US.
+California Rocket Fuel: SNRI plus Mirtazapine
+
+This potentially powerful combination exploits the
+pharmacological synergy attained by adding the enhanced
+serotonin and norepinephrine release from inhibition of both
+serotonin and norepinephrine reuptake by an SNRI to the
+disinhibition of both serotonin and norepinephrine release
+by the α2 antagonist actions of mirtazapine (Figure 7-65). It
+is even possible that additional pro-dopaminergic actions
+result from the combination of norepinephrine reuptake
+blockade in the prefrontal cortex due to SNRIs with 5HT2C
+actions of mirtazapine disinhibiting dopamine release. This
+combination can provide very powerful antidepressant action
+for some patients with unipolar major depressive episodes.
+Arousal Combos
+
+The frequent complaints of residual fatigue; loss of
+energy, motivation, and sex drive; and problems
+concentrating/problems with alertness may be
+approached by combining either a stimulant (dopamine
+transport inhibitor or DAT inhibitor) with an SNRI,
+or modafinil (another DAT inhibitor) with an SNRI
+(Figure 7-66), to recruit triple monoamine action and
+especially enhancement of dopamine.
+Second-Line Monotherapies Used for TreatmentResistant Depression
+Tricyclic Antidepressants
+
+The tricyclic antidepressants (TCAs) (Table 7-2;
+Figure 7-67) were so-named because their chemical
+333
+
+7
+
+
+
+
+<<<PAGE 386>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+A serotonin 1A (5HT1A) partial agonist, buspirone, is
+recognized as a drug for generalized anxiety disorder, but
+not for treatment of the other anxiety/trauma disorder
+subtypes. 5HT1A partial agonists as augmenting agents
+to drugs for depressions are mentioned also in Chapter
+7, as are drugs for depression that combine 5HT1A
+partial agonism with serotonin reuptake inhibition (i.e.,
+serotonin partial agonist reuptake inhibitors [SPARIs]
+and vilazodone, see Figures 7-23 through 7-27), which
+should theoretically have anxiolytic actions as well as
+antidepressant action. The 5HT1A partial agonist properties
+of numerous drugs for psychosis are also discussed in
+Chapter 5 and illustrated in Figures 5-22 and 5-23, and
+the downstream actions of 5HT1A receptor stimulation are
+discussed in Chapter 4 and illustrated in Figure 4-44.
+The potential anxiolytic actions of buspirone
+could theoretically be due to 5HT1A partial agonist
+actions at both presynaptic and postsynaptic 5HT1A
+receptors (Figures 7-23 through 7-27), actions at both
+sites resulting in enhanced serotonergic activity in
+projections to the amygdala (Figure 8-17D), prefrontal
+cortex, striatum, and thalamus (Figure 8-18D), and thus
+reduce fear and worry, as well as other symptoms of
+both generalized anxiety disorder and major depression
+(Figure 8-1). SSRIs and SNRIs theoretically do the same
+thing (Figures 8-17D and 8-18D). Since the onset of
+anxiolytic action for buspirone is delayed, just as it is
+for drugs for depressions, this has led to the belief that
+5HT1A agonists exert their therapeutic effects by virtue
+of adaptive neuronal events and receptor events (Figures
+7-10 through 7-15 and Figures 7-23 through 7-27), rather
+than simply by the acute occupancy of 5HT1A receptors.
+In this way, the presumed mechanism of action of
+5HT1A partial agonists is analogous to the use of various
+drugs for depression, including SSRIs and SNRIs. These
+actions are quite different in timing from the use of
+benzodiazepines for anxiety – since benzodiazepines act
+acutely by occupancy of benzodiazepine receptors and
+not with a delay due to adaptation of the receptors.
+
+NORADRENERGIC
+HYPERACTIVITY IN ANXIETY
+Norepinephrine is another neurotransmitter with
+important regulatory input to the amygdala (Figure
+8-19A) and to the prefrontal cortex and thalamus in
+CSTC circuits (Figure 8-20A). Excessive noradrenergic
+output from the locus coeruleus can result not only
+in numerous peripheral manifestations of autonomic
+overdrive, as discussed above and as illustrated in
+370
+
+Figures 8-8 through 8-12, but also can trigger numerous
+central symptoms of anxiety and fear, such as nightmares,
+hyperarousal states, flashbacks, and panic attacks
+(Figure 8-19A). Excessive noradrenergic activity can
+also reduce the efficiency of information processing
+in the prefrontal cortex and thus in CSTC circuits, and
+theoretically cause worry (Figure 8-20A). Hypothetically,
+these symptoms may be mediated in part by excessive
+noradrenergic input onto α1- and β1-adrenergic
+postsynaptic receptors in the amygdala (Figure 8-19A)
+or prefrontal cortex (Figure 8-20A). Symptoms of
+hyperarousal like nightmares can be reduced in some
+patients with α1-adrenergic blockers such as prazocin
+(Figure 8-19B), and symptoms of fear (Figure 8-19C) and
+worry (Figure 8-20B) can be reduced by norepinephrine
+reuptake inhibitors (also called norepinephrine
+transporter [NET] inhibitors). The clinical effects of NET
+inhibitors can be confusing because symptoms of anxiety
+can actually be made transiently worse immediately
+following initiation of an SNRI or selective NET inhibitor,
+when noradrenergic activity is initially increased but the
+postsynaptic receptors have not yet adapted. However,
+these same NET inhibitory actions, if sustained over
+time, will downregulate and desensitize postsynaptic
+norepinephrine receptors such as β1 receptors, and
+hypothetically lead to the delayed reduction in symptoms
+of fear and worry long term (Figure 8-20B).
+
+FEAR CONDITIONING VERSUS
+FEAR EXTINCTION
+Fear conditioning is a concept as old as Pavlov’s dogs. If
+an aversive stimulus such as footshock is coupled with
+a neutral stimulus such as a bell, the animal learns to
+associate the two, and will develop fear when it hears a
+bell. In humans, fear can be “learned” during stressful
+experiences associated with emotional trauma, and is
+influenced by an individual’s genetic predisposition as
+well as by an individual’s prior exposure to environmental
+stressors that can cause stress sensitization of brain
+circuits (e.g., child abuse; see Chapter 6 and Figures
+6-28 and 6-33). Often, fearful situations are managed
+successfully and then forgotten. Some fears are crucial
+for survival, such as appropriately fearing dangerous
+situations, and thus the mechanism of learned fear,
+called fear conditioning, has been extremely well
+conserved across species, including humans. However,
+other fears that are “learned” and, if not “forgotten,” may
+hypothetically progress to anxiety disorders or a major
+depressive episode. This is a big problem since almost
+
+
+
+
+<<<PAGE 393>>>
+
+Chapter 8: Anxiety, Trauma, and Treatment
+
+briefly in Chapter 7 and illustrated in Figures 7-87 and
+7-88. Ketamine is more extensively discussed in Chapter
+7 as well. Future research is trying to determine how
+to use psychotherapy to provoke emotional memories
+and reactivate them by producing a state where a
+pharmacological agent such as a hallucinogen producing
+a dissociative state, including ketamine as well as
+psilocybin or MDMA, could be administered to disrupt
+reconsolidation of these emotional memories and thereby
+relieve symptoms of anxiety, trauma, re-experiencing
+and other emotional memories of PTSD and anxiety
+disorders, and existential distress in terminally ill patients.
+These are early days in terms of applying this concept
+in clinical settings, but this notion supports the growing
+idea that psychotherapy and psychopharmacology can be
+synergistic. Much more needs to be learned as to how to
+exploit this theoretical synergy.
+
+TREATMENTS FOR ANXIETY
+DISORDER SUBTYPES
+Generalized Anxiety Disorder
+
+Psychopharmacological treatments for generalized
+anxiety disorder overlap greatly with those for
+other anxiety disorders and depression and include
+SSRIs, SNRIs, benzodiazepines, buspirone, and α2δ
+ligands such as pregabalin and gabapentin. While
+benzodiazepines should not be prescribed to a patient
+with generalized anxiety disorder who is abusing other
+substances, particularly alcohol, benzodiazepines can
+be useful in patients who are not substance abusers
+for short terms when initiating an SSRI or SNRI, since
+these serotonergic agents are often activating, difficult
+to tolerate early in dosing, and have a delayed onset
+of action. In other patients, benzodiazepines can be
+useful to “top up” an SSRI or SNRI for patients who
+have experienced only partial relief of symptoms and
+have stabilized on SSRI/SNRI therapy. Benzodiazepines
+can also be useful for occasional intermittent use when
+symptoms surge and sudden relief is needed. Alpha-2delta ligands are a good alternative to benzodiazepines
+in some patients. These ligands are approved for the
+treatment of anxiety in Europe and other countries
+but not in the US, yet can be useful “off-label” as
+augmenting agents.
+Other “off-label” treatments for anxiety can
+include mirtazapine, trazodone, vilazodone, tricyclic
+antidepressants, or even sedating antihistamines such as
+hydroxyzine.
+
+Panic Disorder
+
+Panic attacks occur in many conditions, not just panic
+disorder, and panic disorder is frequently comorbid with
+the other anxiety disorders and with major depression.
+It is thus not surprising that contemporary treatments
+for panic disorder overlap significantly with those for
+the other anxiety disorders and with those for major
+depression. Treatments include SSRIs and SNRIs, as
+well as benzodiazepines, and α2δ ligands. “Off-label”
+treatments of panic attacks in anxiety disorders can also
+include mirtazapine and trazodone. The monoamine
+oxidase inhibitors (MAOIs), discussed in Chapter 7, are
+much neglected in psychopharmacology in general and
+for the treatment of treatment-resistant panic disorder in
+particular. However, MAOIs can have powerful efficacy
+in panic and should be considered when other agents
+fail. Cognitive behavioral psychotherapy is both an
+alternative or an augmentation to psychopharmacological
+approaches, and can help modify cognitive distortions,
+and, through exposure, diminish phobic avoidance
+behaviors.
+Social Anxiety Disorder
+
+The treatment options for this anxiety disorder are
+very similar to those for panic disorder with a few
+noteworthy differences. The SSRIs and SNRIs and α2δ
+ligands are certainly useful treatments, but the utility
+of benzodiazepine is not as widely accepted as it might
+be for generalized anxiety disorder and panic disorder.
+There is also less evidence for the utility of older drugs for
+depression for use in social anxiety disorder. Beta blockers,
+sometimes with benzodiazepines, can be useful for some
+patients with very discrete types of social anxiety, such
+as performance anxiety. One drug that is (unfortunately)
+quite effective but obviously should not be used is alcohol
+for the treatment of social anxiety symptoms. Many
+patients of course are aware of this and abuse alcohol
+before they seek safer and more effective treatment.
+Cognitive behavioral psychotherapy can be a powerful
+intervention, sometimes better than drugs for certain
+patients, and often helpful in combination with drugs.
+PTSD
+
+Although some treatments such as certain SSRIs are
+approved for PTSD, psychopharmacological treatments
+for PTSD are not as effective as these same treatments are
+in anxiety disorders. Also, PTSD is so highly comorbid
+that many of the psychopharmacological treatments
+are more effectively aimed at comorbidities such as
+
+377
+
+8
+
+
+
+
+<<<PAGE 593>>>
+
+Chapter 13: Impulsivity, Compulsivity, and Addiction
+
+habits in OCD as it therapeutically helps to migrate the
+neurocircuit of control of OCD behaviors from dorsal
+back to ventral, where it belongs. Some other form of
+doing this same thing may be the key to developing
+robust treatments for addictions, most of which
+have little or no highly effective therapeutic drugs or
+interventions.
+First-line drug treatment of OCD today is one of
+the SSRIs, although their efficacy is modest and half of
+patients treated with these agents show poor responses.
+Behavioral treatments such as exposure therapy with
+response prevention often have greater efficacy than
+serotonergic treatments. It seems as if serotonergic
+therapies suppress abnormal neurocircuitry, whereas
+exposure therapy may actually reverse abnormal
+neurocircuitry because symptoms continue to be
+improved after stopping exposure therapy but not after
+stopping SSRIs. Although second-line treatments with
+one of the tricyclic antidepressants with serotonergic
+properties, clomipramine, with serotonin–norepinephrine
+reuptake inhibitors (SNRIs) or with monoamine oxidase
+inhibitors (MAOIs) are all worthy of consideration,
+the best pharmacological option for a patient who
+has failed several SSRIs is often to consider very high
+doses with an SSRI or augmentation of an SSRI with a
+serotonin–dopamine blocker. The mechanisms of action
+of all of these agents are covered in detail in Chapter 5
+and 7. Augmentation of an SSRI with a benzodiazepine,
+lithium, or buspirone can also be considered. Repetitive
+transcranial magnetic stimulation (rTMS) is an approved
+treatment for OCD. Experimental treatments for OCD
+include deep brain stimulation, or even stereotactic
+ablation of the impulsive–compulsive pathways shown in
+Figures 13-1 and 13-2, for the most resistant of cases.
+Conditions related to OCD may respond somewhat
+to SSRIs, including hoarding, compulsive shopping,
+skin picking, and body dysmorphic disorder, but not
+especially trichotillomania (compulsive hair pulling).
+No agent is officially approved for any of these
+conditions (Table 13-1). Body dysmorphic disorder
+for example is preoccupation with perceived defects or
+flaws in appearance that cause repetitive behavior like
+looking in the mirror, grooming, reassurance seeking.
+Preoccupation with health, body function, and pain exist
+in hypochondriasis and somatization disorders and some
+experts consider these types of obsessions. It is clear that
+more robust treatments with a different mechanism of
+action are needed for the group of obsessive–compulsive
+related disorders.
+
+IMPULSE CONTROL DISORDERS
+A large variety of disorders that have lack of control
+of impulsivity are listed in Table 13-1. How many
+of these disorders can be conceptualized within the
+impulsive–compulsive spectrum, with abnormalities of
+cortico-striatal circuitry, remains to be shown, but the
+descriptive parallels between the impulsive symptoms of
+these various and sundry conditions gives face validity
+to this notion. Since the impulsivity of none of these
+conditions has an approved treatment, we are left with
+the hope that interventions that work in one of the
+impulsive–compulsive disorders may be effective across
+the spectrum of disorders that share this same dimension
+of psychopathology. However, this remains to be proven
+and has the risk of oversimplifying some very complex
+and very different disorders (Table 13-1). One general
+principle being tested and that may apply across the
+waterfront of these many and varied disorders is that
+interventions that can stop the frequent repetition of
+short-term rewarding impulsive behaviors may hopefully
+act to prevent converting them into long-term habits that
+lead to poor functional outcomes.
+Aggression and violence have long been controversial
+issues in psychiatry. Experts categorize violence as
+psychotic, impulsive, or psychopathic, with the most
+common being impulsive (Figure 13-31). Perhaps
+somewhat surprisingly, the least frequent type of
+violent act is one due to cold, calculated psychopathy.
+Psychopathic violence seems to be the most lethal and
+the least responsive to treatment. Approximately 20%
+of violent acts are of the psychotic variety and require
+standard if not aggressive treatment for the underlying
+psychotic illness. The most frequent type of violent
+act is impulsive, especially in institutional settings and
+especially in patients with underlying psychotic illnesses
+(Figure 13-31).
+Each type of aggression may be attributable to
+dysfunction in distinct neural circuits, with impulsive
+violence being linked to the same problems of balancing
+top-down inhibition with bottom-up emotional drives,
+as discussed in Chapter 12 on agitation in dementia
+and illustrated in Figures 12-43 and 12-44. Impulsive
+violence can occur in psychotic disorders of many types,
+including drug-induced psychosis, schizophrenia, and
+bipolar mania, as well as in borderline personality
+disorder and other impulsive–compulsive disorders
+(Table 13-1). Treatment of the underlying condition,
+often with drugs for psychosis (discussed in Chapter 5),
+
+577
+
+13
+
+
+
+
+<<<PAGE 632>>>
+
+Index
+
+atomoxetine, 480–1
+auditory hallucinations, 113
+autoreceptors
+alpha-2, 254, 256, 258
+monoamine, 8
+avolition, 142
+axoaxonic synapses, 1, 3
+axodendritic synapses, 1, 3
+axosomatic synapses, 1, 3
+barbiturates, 556
+bath salts, 546
+BDNF (brain-derived neurotrophic
+factor), 266, 268, 329
+behavioral addictions, 575
+behavioral variant FTD, 494
+benzodiazepine-insensitive GABAA
+receptors, 263–4
+benzodiazepines, 321, 366, 377
+caution with, 378
+insomnia treatment, 421–2
+benzodiazepine-sensitive GABAA
+receptors, 259–62
+beta-amyloid, 488, 496–8, 502
+detection, 499, 501
+beta blockers, 375, 376
+beta subunits, 68
+bifeprunox, 192
+binge-eating disorder, 575
+bipolar depression, 244
+drug treatment, 236, 240
+family history of, 250
+first-line treatment, 342
+identifying, 250
+missed or delayed diagnosis, 250
+schizophrenia and, 249
+suicide rates, 251
+versus unipolar, 249–51
+bipolar disorder
+anticonvulsants with proven efficacy,
+347–51
+anticonvulsants with uncertain
+efficacy, 352–3
+bipolar I, 247
+bipolar II, 244, 247
+combination treatments, 353
+drug treatment, 338–58
+blocking fear conditioning, 375–7
+blonanserin, 234, 241
+brexanolone, 320
+brexpiprazole, 192, 197, 230, 239, 327–8,
+378, 530–2
+bright light therapy, 438, 440, 444
+buprenorphine, 560, 561, 562
+bupropion, 306–8, 353–4, 480, 533
+nicotine addiction, 551
+sertraline combination, 294
+
+616
+
+buspirone, 333, 370
+butyrylcholinesterase, 505, 510
+caffeine, 440–1
+calcium channel blockers (L-type), 352
+cannabidiol (CBD), 563, 565, 567
+cannabis, 150, 563–7
+benefits and risks, 564
+side effects, 563
+therapeutic uses, 564
+carbamazepine, 350, 530
+cardiometabolic risk, 196, 224
+cardiometabolism, 198–201, 415
+cardiovascular disease, 156, 415, 432,
+492, 524
+carfentanil, 560
+cariprazine, 192, 231, 240, 328, 343–5
+cataplexy, 434, 435, 446
+catechol-O-methyltransferase, 253
+central disorders of hypersomnolence, 432
+central pain, 379
+central sensitization, 395
+chemical neurotransmission, 1, 28
+anatomical versus, 1–5
+epigenetics, 23–6
+ion channels and, 73–6
+mood disorders, 252–64
+principles of, 5–9
+signal transduction cascades, 9–23,
+28, 53
+triggering gene expression, 18
+ultradian sleep cycle, 414–16
+chemotherapy, side effects, 309
+child abuse, 370
+chlorpromazine, 161, 181, 201, 202
+choline, 505
+cholinergic agonists, 242
+cholinergic pathways, 509
+chromatin, 23
+chronic back pain, 388
+chronic pain, 379–400
+decreased gray matter, 387–90
+duloxetine treatment, 302–3
+milnacipran treatment, 303
+targeting sensitized circuits, 395–9
+treatment, 390–400
+circadian rhythm disorders, 430, 435–8
+depression, 271–5
+circadian rhythms, 307, 308
+setting of, 275
+circadian treatments, 438–40
+circadian wake drive, 409, 412
+citalopram, 295–6
+classic neurotransmission, 6
+clock genes, 271
+clomipramine, 335
+clonidine, 390, 482–3, 561
+
+closed state, 63
+clozapine, 217, 222–5
+cocaine, 544, 545
+codeine, 559
+cognition, Fab Four of, 317
+cognitive behavioral therapy, 374, 377, 576
+cognitive dysfunction
+ADHD, 455, 456, 458
+Alzheimer disease, 509–18
+chronic pain, 388
+depression, 273
+fibromyalgia, 390, 400
+Parkinson’s disease, 493
+sleep disorders, 402
+sleep disturbance and, 414, 417
+vortioxetine treatment, 315–17
+cognitive symptoms, schizophrenia, 95,
+144, 157
+competitive elimination, 151, 154
+compulsivity, 538–9, 571, 578
+impulsive–compulsive disorders,
+539–43, 575
+OCD, 295, 360, 576–7
+conceptual disorganization, 78
+conditioned responses, 539
+conditioned stimuli, 539, 544
+consolidation, 375
+constitutive activity, 37, 57
+continuous positive airway pressure, 443
+controlled substance, 447
+cortico-brainstem glutamate pathways, 102
+cortico-cortical glutamate pathways, 105
+cortico-striatal glutamate pathways, 104
+cortico-striato-thalamo-cortical (CSTC)
+loops, 87, 362, 365–9
+cortico-thalamic glutamate pathway, 105
+CREB system, 15
+criminogenic behavior, 146, 147
+cytochrome P450 (CYP450), 49–50, 323
+daridorexant, 424
+DAT transporter. See dopamine
+transporters (DATs)
+date rape drugs, 447, 559
+delayed sleep phase disorder, 435, 437
+delirium, 569
+delusions, 77, 141, 524
+Alzheimer disease, 157
+dementia, 521
+Parkinson’s disease psychosis, 157
+dementia, 486, 537, See also Alzheimer
+disease
+agitation in, 145, 157, 197
+apathy in, 536–7
+behavioral symptoms of, 521, 537
+definition, 487
+depression in, 534–5
+
+

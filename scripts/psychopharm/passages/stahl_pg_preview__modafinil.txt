@@ -1,0 +1,1036 @@
+<<<PAGE 7>>>
+
+Contents
+Introductionxi
+
+  1.
+  2.
+  3.
+  4.
+  5.
+  6.
+  7.
+  8.
+  9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+25.
+26.
+27.
+28.
+29.
+30.
+31.
+32.
+33.
+
+List of icons
+
+xv
+
+acamprosate
+agomelatine
+alprazolam
+amisulpride
+amitriptyline
+amoxapine
+amphetamine (d)
+amphetamine (d,l)
+aripiprazole
+armodafinil
+asenapine
+atomoxetine
+benztropine
+blonanserin
+bremelanotide
+brexanolone
+brexpiprazole
+buprenorphine
+bupropion
+buspirone
+caprylidene
+carbamazepine
+cariprazine
+chlordiazepoxide
+chlorpromazine
+citalopram
+clomipramine
+clonazepam
+clonidine
+clorazepate
+clozapine
+cyamemazine
+daridorexant
+
+1
+5
+11
+17
+25
+33
+39
+47
+55
+67
+73
+81
+87
+91
+97
+101
+105
+113
+119
+125
+129
+133
+139
+147
+153
+159
+165
+173
+179
+185
+191
+201
+207
+v
+
+
+
+
+<<<PAGE 9>>>
+
+73.
+74.
+75.
+76.
+77.
+78.
+79.
+80.
+81.
+82.
+83.
+84.
+85.
+86.
+87.
+88.
+89.
+90.
+91.
+92.
+93.
+94.
+95.
+96.
+97.
+98.
+99.
+100.
+101.
+102.
+103.
+104.
+105.
+106.
+107.
+108.
+109.
+110.
+111.
+
+lithium
+429
+lofepramine435
+lofexidine441
+loflazepate
+445
+lorazepam
+451
+loxapine
+457
+lumateperone
+465
+lurasidone
+473
+maprotiline
+481
+memantine489
+methylfolate (l)
+493
+methylphenidate (d)
+497
+methylphenidate (d,l)
+503
+mianserin
+511
+midazolam515
+milnacipran
+519
+mirtazapine
+525
+moclobemide
+531
+modafinil
+537
+molindone
+543
+nalmefene549
+naltrexone
+553
+naltrexone–bupropion
+557
+nefazodone563
+nortriptyline
+569
+olanzapine
+577
+olanzapine–samidorphan
+587
+oxazepam
+595
+oxcarbazepine
+601
+paliperidone
+607
+paroxetine
+619
+perospirone627
+perphenazine
+633
+phenelzine
+639
+phentermine–topiramate
+645
+pimavanserin
+651
+pimozide
+655
+pipothiazine
+661
+pitolisant
+667
+vii
+
+
+
+
+<<<PAGE 23>>>
+
+AGOMELATINE
+THERAPEUTICS
+Brands
+
+• Valdoxan
+
+Generic? No
+Class
+• Neuroscience-based Nomenclature:
+melatonin multimodal (Mel-MM)
+• Agonist at melatonergic 1 and melatonergic
+2 receptors
+• Antagonist at serotonin 2C receptors
+
+Commonly Prescribed for
+(bold for FDA approved)
+• Depression
+• Generalized anxiety disorder
+
+How the Drug Works
+• Actions at both melatonergic and serotonin
+2C receptors may be synergistic and
+increase norepinephrine and dopamine
+neurotransmission in the prefrontal cortex;
+may resynchronize circadian rhythms that
+are disturbed in depression
+• No influence on extracellular levels of
+serotonin
+
+If It Doesn’t Work
+• Many patients have only a partial response
+where some symptoms are improved but
+others persist (especially insomnia, fatigue,
+and problems concentrating)
+• Other patients may be nonresponders,
+sometimes called treatment-resistant or
+treatment-refractory
+• Consider increasing dose as early as 2
+weeks after initiating treatment if response
+is insufficient (decision on dose increase
+has to be balanced with a higher risk of
+transaminase elevation; any dose increase
+should be made on an individual patient
+benefit/risk basis and with strict respect of
+liver function tests monitoring)
+• Consider switching to another agent or
+adding an appropriate augmenting agent
+• Consider psychotherapy
+• Consider evaluation for another diagnosis
+or for a comorbid condition (e.g., medical
+illness, substance abuse, etc.)
+• Some patients may experience apparent
+lack of consistent efficacy due to activation
+of latent or underlying bipolar disorder, and
+require antidepressant discontinuation and
+a switch to a mood stabilizer
+
+ Best Augmenting Combos
+for Partial Response or
+Treatment Resistance
+
+How Long Until It Works
+• Daytime functioning, anhedonia, and sleep
+can improve from the first week of treatment
+• Onset of full therapeutic actions in
+depression is usually not immediate, but
+often delayed 2–4 weeks
+• May continue to work for many years to
+prevent relapse of symptoms
+
+If It Works
+• The goal of treatment is complete
+remission of current symptoms as well as
+prevention of future relapses
+• Treatment most often reduces or even
+eliminates symptoms, but not a cure since
+symptoms can recur after medicine is
+stopped
+• Continue treatment until all symptoms are
+gone (remission)
+• Once symptoms are gone, continue treating
+for 1 year for the first episode of depression
+• For second and subsequent episodes of
+depression, treatment may need to be
+indefinite
+
+• SSRIs (excluding fluvoxamine), SNRIs,
+bupropion, reboxetine, atomoxetine
+(use combinations of antidepressant
+with caution as this may activate bipolar
+disorder and suicidal ideation)
+• Modafinil, especially for fatigue, sleepiness,
+and lack of concentration
+• Mood stabilizers or atypical antipsychotics
+for bipolar depression, psychotic depression,
+or treatment-resistant depression
+• Benzodiazepines
+
+Tests
+• Liver function tests before initiation of
+treatment and then at 3 weeks, 6 weeks,
+12 weeks, 24 weeks, and thereafter when
+clinically indicated
+• When increasing the dose, liver function
+tests should be performed at the same
+frequency as when initiating treatment
+• Liver function tests should be repeated
+within 48 hours in any patient who
+develops raised transaminases
+5
+
+
+
+
+<<<PAGE 57>>>
+
+AMPHETAMINE (D)
+THERAPEUTICS
+Brands • Dexedrine
+• Dexedrine Spansule
+• Zenzedi
+• ProCentra
+• Xelstrym
+
+Generic? Yes
+Class
+• Neuroscience-based Nomenclature:
+dopamine, norepinephrine reuptake
+inhibitor and releaser (DN-RIRe)
+• Stimulant
+
+Commonly Prescribed for
+(bold for FDA approved)
+• Attention deficit hyperactivity disorder
+(ADHD) (ages 6 and older or 3 and older
+depending on formulation)
+• Narcolepsy (ages 6 and older)
+• Treatment-resistant depression
+
+How the Drug Works
+• Increases norepinephrine and especially
+dopamine actions by blocking their reuptake
+and facilitating their release
+• Enhancement of dopamine and
+norepinephrine actions in certain
+brain regions may improve attention,
+concentration, executive function, and
+wakefulness (e.g., dorsolateral prefrontal
+cortex)
+• Enhancement of dopamine actions in other
+brain regions (e.g., basal ganglia) may
+improve hyperactivity
+• Enhancement of dopamine and
+norepinephrine in yet other brain
+regions (e.g., medial prefrontal cortex,
+hypothalamus) may improve depression,
+fatigue, and sleepiness
+
+How Long Until It Works
+• Some immediate effects can be seen with
+first dosing
+• Can take several weeks to attain maximum
+therapeutic benefit, especially as dose is
+being titrated
+
+If It Works
+• The goal of treatment of ADHD is reduction
+of symptoms of inattentiveness, motor
+hyperactivity, and/or impulsiveness that
+disrupt social, school, and/or occupational
+functioning
+• Continue treatment until all symptoms are
+under control or improvement is stable and
+then continue treatment indefinitely as long
+as improvement persists
+• Reevaluate the need for treatment periodically
+• Treatment for ADHD begun in childhood
+may need to be continued into adolescence
+and adulthood if continued benefit is
+documented
+
+If It Doesn’t Work
+• Consider adjusting dose or switching to
+another formulation of d-amphetamine, to
+d,l-amphetamine, or to another agent
+• Consider behavioral therapy
+• Consider the presence of noncompliance
+and counsel patient and parents
+• Consider evaluation for another diagnosis
+or for a comorbid condition (e.g., bipolar
+disorder, substance abuse, medical illness,
+etc.)
+• Some ADHD patients and some depressed
+patients may experience lack of consistent
+efficacy due to activation of latent or
+underlying bipolar disorder, and require
+either augmenting with a mood stabilizer or
+switching to a mood stabilizer
+
+ Best Augmenting Combos for
+Partial Response or
+Treatment Resistance
+• Best to attempt other monotherapies prior
+to augmenting
+• Clonidine or guanfacine, especially
+extended-release formulations
+• For the expert, can combine immediaterelease formulation with a sustained-release
+formulation of d-amphetamine for ADHD
+• For the expert, can combine with modafinil
+or atomoxetine for ADHD
+• For the expert, can combine with atypical
+antipsychotics in treatment-resistant cases
+of bipolar disorder or ADHD
+• For the expert, can combine with
+antidepressants to boost antidepressant
+efficacy in treatment-resistant cases of
+depression while carefully monitoring patient
+
+39
+
+
+
+
+<<<PAGE 65>>>
+
+AMPHETAMINE (D,L)
+THERAPEUTICS
+Brands • Adderall
+• Adderall XR
+• Evekeo
+• Adzenys XR-ODT
+• Dyanavel XR
+• Mydayis
+• Adzenys ER
+
+Generic? Yes
+Class
+• Neuroscience-based Nomenclature:
+dopamine, norepinephrine reuptake
+inhibitor and releaser (DN-RIRe)
+• Stimulant
+
+Commonly Prescribed for
+(bold for FDA approved)
+• Attention deficit hyperactivity disorder
+(ADHD in patients ages 3 and older
+(Adderall, Evekeo)
+• ADHD in children ages 6–17 (Dyanavel
+XR)
+• ADHD in patients ages 6 and older
+(Adderall XR, Evekeo, Adzenys XR-ODT,
+Adzenys ER)
+• ADHD in patients ages 13 and older
+(Mydayis)
+• Narcolepsy in patients ages 6 and older
+(Adderall, Evekeo)
+• Exogenous obesity in patients ages 12
+and older (Evekeo)
+• Treatment-resistant depression
+
+How the Drug Works
+• Increases norepinephrine and especially
+dopamine actions by blocking their
+reuptake and facilitating their release
+• Enhancement of dopamine and
+norepinephrine actions in certain brain
+regions (e.g., dorsolateral prefrontal cortex)
+may improve attention, concentration,
+executive function, and wakefulness
+• Enhancement of dopamine actions in other
+brain regions (e.g., basal ganglia) may
+improve hyperactivity
+• Enhancement of dopamine and
+norepinephrine in yet other brain
+regions (e.g., medial prefrontal cortex,
+hypothalamus) may improve depression,
+fatigue, and sleepiness
+
+How Long Until It Works
+• Some immediate effects can be seen with
+first dosing
+• Can take several weeks to attain maximum
+therapeutic benefit, especially as dose is
+being titrated
+
+If It Works
+• The goal of treatment of ADHD is reduction
+of symptoms of inattentiveness, motor
+hyperactivity, and/or impulsiveness that
+disrupt social, school, and/or occupational
+functioning
+• Continue treatment until all symptoms are
+under control or improvement is stable and
+then continue treatment indefinitely as long
+as improvement persists
+• Reevaluate the need for treatment
+periodically
+• Treatment for ADHD begun in childhood
+may need to be continued into adolescence
+and adulthood if continued benefit is
+documented
+
+If It Doesn’t Work
+• Consider adjusting dose or switching to
+another formulation of d,l-amphetamine or
+to another agent
+• Consider behavioral therapy
+• Consider the presence of noncompliance
+and counsel patient and parents
+• Consider evaluation for another diagnosis
+or for a comorbid condition (e.g., bipolar
+disorder, substance abuse, medical illness,
+etc.)
+• Some ADHD patients and some depressed
+patients may experience lack of consistent
+efficacy due to activation of latent or
+underlying bipolar disorder, and require
+either augmenting with a mood stabilizer or
+switching to a mood stabilizer
+
+ Best Augmenting Combos
+for Partial Response or
+Treatment Resistance
+• Best to attempt other monotherapies prior
+to augmenting
+• Clonidine or guanfacine, especially
+extended-release formulations
+• For the expert, can combine immediaterelease formulation with a sustained-release
+formulation of d,l-amphetamine for ADHD
+• For the expert, can combine with modafinil
+or atomoxetine for ADHD
+47
+
+
+
+
+<<<PAGE 85>>>
+
+ARMODAFINIL
+THERAPEUTICS
+Brands
+
+• Nuvigil
+
+Generic? Yes
+Class
+• Neuroscience-based Nomenclature:
+dopamine reuptake inhibitor (D-RI)
+• Wake-promoting
+
+Commonly Prescribed for
+(bold for FDA approved)
+• Reducing excessive sleepiness in
+patients with narcolepsy and shift work
+sleep disorder
+• Reducing excessive sleepiness in
+patients with obstructive sleep apnea/
+hypopnea syndrome (OSAHS) (adjunct to
+standard treatment for underlying airway
+obstruction)
+• Attention deficit hyperactivity disorder
+(ADHD)
+• Fatigue and sleepiness in depression
+• Fatigue in multiple sclerosis
+• Bipolar depression
+
+How the Drug Works
+• Unknown, but clearly different
+from classical stimulants such as
+methylphenidate and amphetamine
+• Binds to and requires the presence of the
+dopamine transporter; also requires the
+presence of alpha adrenergic receptors
+• Hypothetically acts as an inhibitor of the
+dopamine transporter
+• Increases neuronal activity selectively in
+the hypothalamus
+• Presumably enhances activity in
+hypothalamic wakefulness center (TMN,
+tuberomammillary nucleus) within the
+hypothalamic sleep-wake switch by an
+unknown mechanism
+• Activates tuberomammillary nucleus
+neurons that release histamine
+• Activates other hypothalamic neurons that
+release orexin/hypocretin
+
+How Long Until It Works
+• Can immediately reduce daytime sleepiness
+and improve cognitive task performance
+within 2 hours of first dosing
+
+• Can take several days to optimize dosing
+and clinical improvement
+
+If It Works
+• Improves daytime sleepiness and may
+improve attention as well as fatigue
+• Does not generally prevent one from falling
+asleep when needed
+• May not completely normalize wakefulness
+• Treat until improvement stabilizes and then
+continue treatment indefinitely as long as
+improvement persists (studies support at
+least 12 weeks of treatment)
+
+If It Doesn’t Work
+• Change dose; some patients may do better
+with an increased dose but some may
+actually do better with a decreased dose
+• Augment or consider an alternative
+treatment for daytime sleepiness, fatigue,
+or ADHD
+
+ Best Augmenting Combos
+for Partial Response or
+Treatment Resistance
+• Armodafinil is itself an adjunct to standard
+treatments for OSAHS; if continuous
+positive airway pressure (CPAP) is the
+treatment of choice, a maximal effort to
+treat first with CPAP should be made prior
+to initiating armodafinil and CPAP
+should be continued after initiation of
+armodafinil
+• Armodafinil is itself an augmenting therapy
+to antidepressants for residual sleepiness
+and fatigue in major depressive disorder
+• Armodafinil is itself an augmenting therapy
+to mood stabilizers for bipolar depression
+• Best to attempt another monotherapy prior
+to augmenting with other drugs in the
+treatment of sleepiness associated with
+sleep disorders or problems concentrating
+in ADHD
+• Combination of armodafinil with stimulants
+such as methylphenidate or amphetamine
+or with atomoxetine for ADHD has not been
+systematically studied
+• However, such combinations may be useful
+options for experts, with close monitoring,
+when numerous monotherapies for
+sleepiness or ADHD have failed
+
+67
+
+
+
+
+<<<PAGE 86>>>
+
+ARMODAFINIL (continued)
+Tests
+• None for healthy individuals
+
+Best Augmenting Agents for Side
+Effects
+• Many side effects cannot be improved with
+an augmenting agent
+
+SIDE EFFECTS
+DOSING AND USE
+
+How Drug Causes Side Effects
+• Unknown
+• CNS side effects presumably due to
+excessive CNS actions on various
+neurotransmitter systems
+
+Usual Dosage Range
+
+Notable Side Effects
+
+• Tablet 50 mg, 100 mg, 150 mg, 200 mg,
+250 mg
+
+• Headache
+• Anxiety, dizziness, insomnia
+• Dry mouth, diarrhea, nausea
+
+ Life-Threatening or
+Dangerous Side Effects
+• Transient ECG ischemic changes in patients
+with mitral valve prolapse or left ventricular
+hypertrophy have been reported (rare)
+• Rare activation of (hypo)mania, anxiety,
+hallucinations, or suicidal ideation
+• Rare severe dermatologic reactions
+(Stevens–Johnson syndrome and others)
+• Angioedema, anaphylactoid reactions, and
+multi-organ hypersensitivity reactions have
+been reported
+
+Weight Gain
+• Reported but not expected
+
+Sedation
+• Reported but not expected
+• Patients are usually awakened and some
+may be activated
+
+What to Do About Side Effects
+• Wait
+• Lower the dose
+• For activation or insomnia, do not give in
+the evening
+• If unacceptable side effects persist,
+discontinue use
+• For life-threatening or dangerous side
+effects, discountinue immediately (e.g., at
+first sign of a drug-related rash)
+
+68
+
+• 150–250 mg/day
+
+Dosage Forms
+
+How to Dose
+• Titration up or down only necessary if
+not optimally efficacious at the standard
+starting dose of 150 mg once a day
+• For OSA and narcolepsy, give as a single
+dose in the morning
+• For shift work sleep disorder, give as a single
+dose 1 hour prior to the start of the work shift
+
+Dosing Tips
+• For sleepiness, more may be more: higher
+doses may be better than lower doses in
+patients with daytime sleepiness in sleep
+disorders
+• For problems concentrating and fatigue,
+less may be more: lower doses may be
+paradoxically better than higher in some
+patients
+• At high doses, may slightly induce its
+own metabolism, possibly by actions of
+inducing CYP3A4
+• Dose may creep upward in some
+patients with long-term treatment due to
+autoinduction; drug holiday may restore
+efficacy at original dose
+• Pharmacokinetics and clinical experience
+suggest armodafinil has longer duration
+of action than racemic modafinil, generally
+requiring only once daily administration
+
+Overdose
+• Agitation, insomnia, increase in
+hemodynamic parameters
+• Postmarketing experience includes
+CNS symptoms, such as restlessness,
+disorientation, confusion, excitation, and
+hallucinations; digestive changes, such as
+
+
+
+
+<<<PAGE 87>>>
+
+(continued) ARMODAFINIL
+
+nausea and diarrhea; and cardiovascular
+changes, such as tachycardia, bradycardia,
+hypertension, and chest pain
+
+Long-Term Use
+• The need for continued treatment should
+be reevaluated periodically
+
+Habit Forming?
+• Schedule IV; may have some potential for
+abuse but unusual in clinical practice
+
+How to Stop
+• Taper not necessary; patients may have
+sleepiness on discontinuation
+
+Pharmacokinetics
+• Metabolized by the liver
+• Elimination half-life approximately 15 hours
+• Inhibits CYP2C19
+• Induces CYP3A4 (and slightly CYP1A2)
+
+Drug Interactions
+• May increase plasma levels of drugs
+metabolized by CYP2C19 (e.g., diazepam,
+phenytoin, propranolol)
+• May decrease plasma levels of CYP3A4
+substrates such as ethinyl estradiol and
+triazolam
+• Due to induction of CYP3A4, effectiveness
+of steroidal contraceptives may be reduced
+by armodafinil, including 1 month after
+discontinuation
+• Inducers or inhibitors of CYP3A4
+may affect levels of armodafinil (e.g.,
+carbamazepine may lower modafinil plasma
+levels; fluvoxamine and fluoxetine may
+raise armodafinil plasma levels)
+• Armodafinil may slightly reduce its own
+levels by autoinduction of CYP3A4
+• Patients on armodafinil and warfarin should
+have prothrombin times monitored
+• Methylphenidate and dextroamphetamine
+may delay absorption of armodafinil by an
+hour
+• However, coadministration with
+methylphenidate or dextroamphetamine
+does not significantly change the
+pharmacokinetics of armodafinil or either
+stimulant
+• Interaction studies with MAOIs have not
+been performed, but MAOIs can be given
+with armodafinil by experts with cautious
+monitoring
+
+ Other Warnings/
+Precautions
+• Patients with history of drug abuse should
+be monitored closely
+• Armodafinil may cause CNS effects similar
+to those caused by other CNS agents
+(e.g., changes in mood and, theoretically,
+activation of psychosis, mania, or suicidal
+ideation)
+• Armodafinil should be used in patients with
+sleep disorders that have been completely
+evaluated for narcolepsy, OSAHS, and shift
+work sleep disorder
+• In OSAHS patients for whom CPAP is
+the treatment of choice, a maximal effort
+to treat first with CPAP should be made
+prior to initiating armodafinil, and then
+CPAP should be continued after initiating
+armodafinil
+• The effectiveness of hormonal
+contraceptives may be reduced when used
+with armodafinil and for 1 month after
+discontinuation of armodafinil
+• Armodafinil is not a replacement for sleep
+
+Do Not Use
+• If there is a proven allergy to armodafinil or
+modafinil
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Use with caution
+
+Hepatic Impairment
+• Reduce dose in severely impaired patients
+
+Cardiac Impairment
+• Use with caution
+• Not recommended for use in patients with
+a history of left ventricular hypertrophy,
+ischemic ECG changes, chest pain,
+arrhythmias, or recent myocardial
+infarction
+
+Elderly
+• Limited experience in patients over 65
+• Clearance of armodafinil may be reduced in
+elderly patients
+69
+
+
+
+
+<<<PAGE 88>>>
+
+ARMODAFINIL (continued)
+Potential Disadvantages
+Children and Adolescents
+• Safety and efficacy have not been
+established
+• Can be used cautiously by experts for
+children and adolescents
+
+Pregnancy
+• Effective June 30, 2015, the FDA requires
+changes to the content and format of
+pregnancy and lactation information
+in prescription drug labels, including
+the elimination of the pregnancy letter
+categories; the Pregnancy and Lactation
+Labeling Rule (PLLR or final rule) applies
+only to prescription drugs and will be
+phased in gradually for drugs approved on
+or after June 30, 2001
+• Controlled studies have not been conducted
+in pregnant women
+• Intrauterine growth restriction and
+spontaneous abortion have been reported
+with armodafinil and modafinil
+• In animal studies, developmental toxicity
+was observed at clinically relevant plasma
+exposures
+• Use in women of childbearing potential
+requires weighing potential benefits
+to the mother against potential risks to
+the fetus
+• Generally, armodafinil should be
+discontinued prior to anticipated
+pregnancies
+
+Breast Feeding
+• Unknown if armodafinil is secreted in
+human breast milk, but all psychotropics
+are assumed to be secreted in breast milk
+• Recommended either to discontinue drug
+or bottle feed
+
+THE ART OF PSYCHOPHARMACOLOGY
+Potential Advantages
+• Selective for areas of brain involved in
+sleep/wake promotion
+• Less activating and less abuse potential
+than stimulants
+
+70
+
+• May not work as well as stimulants in some
+patients
+
+Primary Target Symptoms
+• Sleepiness
+• Concentration
+• Physical and mental fatigue
+
+Pearls
+• Armodafinil is the longer-lasting R
+enantiomer of racemic modafinil
+• Armodafinil maintains high plasma
+concentrations later in the day than does
+modafinil on a mg-to-mg basis, which
+could theoretically result in improved
+wakefulness throughout the day with
+armodafinil compared to modafinil
+• Armodafinil is not a replacement for sleep
+• The treatment for sleep deprivation is
+sleep, not armodafinil
+• Controlled studies suggest armodafinil
+improves attention in OSAHS and shift
+work sleep disorder, but controlled studies
+of attention have not been performed in
+ADHD or major depressive disorder
+• Controlled studies of racemic modafinil in
+ADHD suggest improvement in attention
+• May be useful to treat fatigue in patients
+with depression as well as other disorders,
+such as multiple sclerosis, myotonic
+dystrophy, HIV/AIDS
+• May be useful in treating sleepiness
+associated with opioid analgesia,
+particularly in end-of-life management
+• Subjective sensation associated with
+armodafinil is usually one of normal
+wakefulness, not of stimulation, although
+jitteriness can rarely occur
+• Compared to traditional stimulants,
+armodafinil has a novel mechanism of
+action, novel therapeutic uses, and less
+abuse potential
+• Alpha 1 antagonists such as prazosin
+may block the therapeutic actions of
+armodafinil
+• Some controlled trials suggest efficacy in
+bipolar depression as an adjunct to atypical
+antipsychotics
+
+
+
+
+<<<PAGE 89>>>
+
+(continued) ARMODAFINIL
+
+Suggested Reading
+Darwish M, Kirby M, Hellriegel ET, Robertson P
+Jr. Interaction profile of armodafinil with
+medications metabolized by cytochrome
+P450 enzymes 1A2, 3A4, and 2C19 in
+healthy subjects. Clin Pharmacokinet
+2008;47(1):61–74.
+Darwish M, Kirby M, Hellriegel ET, Robertson P
+Jr. Armodafinil and modafinil have substantially
+
+different pharmacokinetic profiles despite
+having the same terminal half-lives: analysis
+of data from three randomized, single-dose,
+pharmacokinetic studies. Clin Drug Investig
+2009;29(9):613–23.
+Garnock-Jones KP, Dhillon S, Scott LJ.
+Armodafinil. CNS Drugs 2009;23(9):793–803.
+
+71
+
+

@@ -1,0 +1,994 @@
+<<<PAGE 449>>>
+
+428  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Box 3.6 Post-traumatic stress disorder (PTSD)
+First-line drug treatment
+(In order of preference)
+(NB psychological approaches should be used before drug treatments79,80)
+SSRIs
+(Up to maximum licensed doses)
+
+Paroxetine, sertraline or fluoxetine are the preferred SSRIs81,82
+Recommended by NICE79
+
+Venlafaxine modified release
+37.5mg–300mg83
+
+Recommended by NICE79
+
+CHAPTER 3
+
+Second-line treatment (Less well tolerated or weak evidence base, no order of preference)
+Antipsychotics
+Olanzapine
+5–20mg
+Risperidone
+0.5–6mg
+
+Antipsychotics may be effective for the intrusion symptoms (flashbacks
+and nightmares) but not the avoidance and hyperarousal symptoms of
+PTSD. Studies done as monotherapy or as adjunctive treatment84
+Risperidone specifically mentioned by NICE79
+
+Quetiapine
+50–800mg85
+Mirtazapine
+15–45mg/day86
+
+Recommended by NICE79
+Second most effective drug in a network meta-analysis87
+
+MAOI
+Phenelzine
+15–75mg/day88
+
+Recommended by NICE79
+Most effective drug in a network meta-analysis87
+
+Prazosin
+2–15mg nocte89
+
+For nightmares and sleep disturbances. Initiate at 1mg nocte and
+titrate dose gradually to reduce the risk of hypotension
+Supported by a systematic review90
+
+Tricyclic antidepressants
+Amitriptyline
+50–300mg/day91
+Imipramine
+50–300mg/day
+
+Amitriptyline is recommended by NICE79
+For all TCAs start at a low dose and increase dose according to
+tolerability
+Best supporting evidence is for desipramine but this drug is not widely
+available87
+
+IV Ketamine92,93
+
+Rapid reduction in symptom severity suggested. Good RCT showing
+acute and chronic efficacy94
+
+Experimental
+Duloxetine
+60–120mg
+
+Two small open studies suggest efficacy. Start at 30mg for one
+week95,96
+
+Lamotrigine
+up to 500mg/day
+
+Small double-blind study in 15 patients97
+
+Phenytoin
+plasma concentration 10–20ng/ml98
+
+Open-label study in 12 patients
+
+Valproate
+up to 2.5g99
+
+Probably not effective87
+
+nocte, at night
+
+
+
+
+<<<PAGE 454>>>
+
+57. Amsterdam JD, et al. A randomized, double-blind, placebo-controlled trial of oral Matricaria recutita (chamomile) extract therapy for generalized anxiety disorder. J Clin Psychopharmacol 2009; 29:378–382.
+58. Woelk H, et al. Ginkgo biloba special extract EGb 761 in generalized anxiety disorder and adjustment disorder with anxious mood: a randomized, double-blind, placebo-controlled trial. J Psychiatr Res 2007; 41:472–480.
+59. Kasper S, et al. Lavender oil preparation Silexan is effective in generalized anxiety disorder–a randomized, double-blind comparison to placebo and paroxetine. Int J Neuropsychopharmacol 2014; 17:859–869.
+60. Mathew SJ, et al. Open-label trial of riluzole in generalized anxiety disorder. Am J Psychiatry 2005; 162:2379–2381.
+61. Otto MW, et al. Discontinuation of benzodiazepine treatment: efficacy of cognitive-behavioral therapy for patients with panic disorder. Am
+J Psychiatry 1993; 150:1485–1490.
+62. Breilmann J, et al. Benzodiazepines versus placebo for panic disorder in adults. Cochrane Database Syst Rev 2019; 3:Cd010677.
+63. Andrisano C, et al. Newer antidepressants and panic disorder: a meta-analysis. Int Clin Psychopharmacol 2013; 28:33–45.
+64. Batelaan NM, et al. Evidence-based pharmacotherapy of panic disorder: an update. Int J Neuropsychopharmacol 2012; 15:403–415.
+65. Bighelli I, et al. Antidepressants versus placebo for panic disorder in adults. Cochrane Database Syst Rev 2018; 4:Cd010676.
+66. Boshuisen ML, et al. The effect of mirtazapine in panic disorder: an open label pilot study with a single-blind placebo run-in period. Int Clin
+Psychopharmacol 2001; 16:363–368.
+67. Zulfarina MS, et al. Pharmacological therapy in panic disorder: current guidelines and novel drugs discovery for treatment-resistant patient.
+Clin Psychopharmacol Neurosci 2019; 17:145–154.
+68. Tiller JW, et al. Moclobemide for anxiety disorders: a focus on moclobemide for panic disorder. Int Clin Psychopharmacol 1997; 12 Suppl
+6:S27–S30.
+69. Kruger MB, et al. The efficacy and safety of moclobemide compared to clomipramine in the treatment of panic disorder. Eur Arch Psychiatry
+Clin Neurosci 1999; 249 Suppl 1:S19–S24.
+70. Fahy TJ, et al. The galway study of panic disorder. I: clomipramine and lofepramine in DSM III-R panic disorder: a placebo controlled trial.
+J Affect Disord 1992; 25:63–75.
+71. Otto MW, et al. Randomized trial of D-cycloserine enhancement of cognitive-behavioral therapy for panic disorder. Depress Anxiety 2016;
+33:737–745.
+72. Pande AC, et al. Placebo-controlled study of gabapentin treatment of panic disorder. J Clin Psychopharmacol 2000; 20:467–471.
+73. Benjamin J, et al. Double-blind, placebo-controlled, crossover trial of inositol treatment for panic disorder. Am J Psychiatry 1995;
+152:1084–1086.
+74. Palatnik A, et al. Double-blind, controlled, crossover trial of inositol versus fluvoxamine for the treatment of panic disorder. J Clin
+Psychopharmacol 2001; 21:335–339.
+75. Hirschmann S, et al. Pindolol augmentation in patients with treatment-resistant panic disorder: a double-blind, placebo-controlled trial. J
+Clin Psychopharmacol 2000; 20:556–559.
+76. Woodman CL, et al. Panic disorder: treatment with valproate. J Clin Psychiatry 1994; 55:134–136.
+77. Primeau F, et al. Valproic acid and panic disorder. Can J Psychiatry 1990; 35:248–250.
+78. Astill Wright L, et al. Pharmacological prevention and early treatment of post-traumatic stress disorder and acute stress disorder: a systematic
+review and meta-analysis. Trans Psychiatry 2019; 9:334.
+79. National Institute for Clinical Excellence. Post-traumatic stress disorder. NICE Guideline [NG116]. 2018; https://www.nice.org.uk/guidance/
+NG116.
+80. Moore BA, et al. Management of post-traumatic stress disorder in veterans and military service members: a review of pharmacologic and
+psychotherapeutic interventions since 2016. Curr Psychiatry Rep 2021; 23:9.
+81. Hoskins M, et al. Pharmacotherapy for post-traumatic stress disorder: systematic review and meta-analysis. Br J Psychiatry 2015;
+206:93–100.
+82. Lee DJ, et al. Psychotherapy versus pharmacotherapy for posttraumatic stress disorder: systematic review and meta-analyses to determine
+first-line treatments. Depress Anxiety 2016; 33:792–806.
+83. Davidson J, et al. Treatment of posttraumatic stress disorder with venlafaxine extended release: a 6-month randomized controlled trial. Arch
+Gen Psychiatry 2006; 63:1158–1165.
+84. Han C, et al. The potential role of atypical antipsychotics for the treatment of posttraumatic stress disorder. J Psychiatr Res 2014;
+56:72–81.
+85. Villarreal G, et al. Efficacy of quetiapine monotherapy in posttraumatic stress disorder: a randomized, placebo-controlled trial. Am J
+Psychiatry 2016; 173:1205–1212.
+86. Davidson JR, et al. Mirtazapine vs. placebo in posttraumatic stress disorder: a pilot trial. Biol Psychiatry 2003; 53:188–191.
+87. Cipriani A, et al. Comparative efficacy and acceptability of pharmacological treatments for post-traumatic stress disorder in adults: a network meta-analysis. Psychol Med 2018; 48:1975–1984.
+88. Kosten TR, et al. Pharmacotherapy for posttraumatic stress disorder using phenelzine or imipramine. J Nerv Ment Dis 1991; 179:366–370.
+89. George KC, et al. Meta-analysis of the efficacy and safety of prazosin versus placebo for the treatment of nightmares and sleep disturbances
+in adults with posttraumatic stress disorder. J Trauma & Dissoc 2016; 17:494–510.
+90. Coventry PA, et al. Psychological and pharmacological interventions for posttraumatic stress disorder and comorbid mental health problems
+following complex traumatic events: systematic review and component network meta-analysis. PLoS Med 2020; 17:e1003262.
+91. Davidson J, et al. Treatment of posttraumatic stress disorder with amitriptyline and placebo. Arch Gen Psychiatry 1990; 47:259–266.
+92. Albott CS, et al. Efficacy, safety, and durability of repeated ketamine infusions for comorbid posttraumatic stress disorder and treatmentresistant depression. J Clin Psychiatry 2018; 79:17m11634.
+
+CHAPTER 3
+
+Depression and anxiety disorders  433
+
+
+
+
+<<<PAGE 654>>>
+
+Lithium – 1
+Lofepramine – 3
+
+Dipyridamole – 0
+
+Disopyramide – 2
+
+Docusate sodium – 0
+
+Domperidone – 1
+
+Donepezil – 0
+
+Dothiepin (Dosulepin) – 3
+
+Doxazosin – 0
+
+Doxepin – 3
+
+Bendroflumethiazide – 0
+
+Benzatropine – 3
+
+Betahistine – 0
+
+Bezafibrate – 0
+
+Bisacodyl – 0
+
+Bisoprolol – NK
+
+Bromocriptine – 1
+
+Budesonide (inhaler) – 0
+
+Loratadine – 0
+Lorazepam – 0
+
+Duloxetine – 0
+
+Enalapril – 0
+
+Enoxaparin – 0
+
+Bupropion – 0
+
+Buspirone – 1
+
+Cabergoline – 0
+
+Losartan – 0
+
+Loperamide – 0
+
+Doxycycline – 0
+
+Dulaglutide – 0
+
+Bumetanide – NK
+
+Buprenorphine – 0
+
+Lisinopril – 0
+
+Liraglutide – 0
+
+Levothyroxine (Thyroxine) – 0
+
+Levomepromazine
+(methotrimeprazine) – 2
+
+Levodopa – 0
+
+Levetiracetam – NK
+
+Lercanidipine – 0
+
+Lansoprazole – NK
+
+Lamotrigine – 0
+
+Lactulose – 0
+
+Rabeprazole – 0
+
+Quinine – 1
+
+Quinidine – 1
+
+Quetiapine – 2
+
+Propranolol – 0
+
+Propantheline – 2
+
+Promethazine – 3
+
+Promazine – 2
+
+Procyclidine – 3
+
+Prochlorperazine – 2
+
+Pregabalin – NK
+
+Prednisolone – 1
+
+Prazosin – 0
+
+Pravastatin – 0
+
+Pirenzepine – 1
+
+Pimozide – 2
+
+Phenytoin – NK
+
+Labetalol – 0
+
+Diphenhydramine – 2
+
+Dihydrocodeine – NK
+
+Atropine eye drops – 1
+
+Phenelzine – 1
+
+Ketorolac – 0
+
+Beclometasone dipropionate
+(inhaler) – 0
+
+Digoxin – NK
+
+Atropine – 3
+
+Pethidine – 2
+
+Perphenazine – 1
+
+Perindopril – 0
+
+Pergolide – 0
+
+Isosorbide mononitrate – 0
+
+Diltiazem – 0
+
+Dicycloverine (dicyclomine) – 2
+
+Atorvastatin – 0
+
+Isosorbide dinitrate – 0
+
+Dimenhydrinate – 2
+
+Diclofenac – 0
+
+Atomoxetine – 0
+
+Isocarboxazid – 1
+
+Azathioprine – 0
+
+Diazepam – 1
+
+Atenolol – 0
+
+Irbesartan – NK
+
+Baclofen – NK
+
+Dextropropoxyphene – NK
+
+Aspirin – 0
+
+(Continued )
+
+Zuclopentixol (zuclopenthixol) – 1
+
+Zotepine – 2
+
+Zopiclone – NK
+
+Zolpidem – 0
+
+Ziprasidone – 0
+
+Warfarin – 0
+
+Vortioxetine – 0
+
+Vitamins – 0
+
+Vitamin B12 – 0
+
+Verapamil – NK
+
+Venlafaxine – 0
+
+Valproate – 0
+
+Trospium – 0
+
+Trimipramine – 3
+
+Trimethoprim – 0
+
+Trihexyphenidyl (benzhexol) – 3
+
+Trifluoperazine – 2
+
+
+
+
+<<<PAGE 656>>>
+
+Prescribing in older people  635
+
+trospium,16 studies found no significant change in cognitive function.17,18 Studies investigating whether or not fesoterodine causes cognitive impairment found no detectable
+impairment of cognition in a variety of cognitive measurements (Table 6.5).19,20
+All tertiary amine drugs, i.e. oxybutynin, tolterodine, solifenacin, fesoterodine and
+darifenacin, are metabolised by cytochrome P450 (CYP450) enzymes. Increasing age or
+co-administration of drugs that inhibit these enzymes (e.g. erythromycin and fluoxetine) can lead to higher serum levels and therefore increased adverse effects. The metabolism of trospium is unknown, although metabolism via CYP450 system does not
+occur, meaning that pharmacokinetic drug interactions are unlikely with this drug.8
+Alpha-blockers for urinary retention
+Alpha-blockers such as tamsulosin, alfuzosin and prazosin cause drowsiness, dizziness
+and depression.21 There is no published literature reporting their effects on cognition,
+but alpha-blockers do not feature on any anticholinergic cognitive burden list.
+Drugs used in GI disorders
+Loperamide
+
+Although loperamide may have some anticholinergic activity, there are no data to suggest that it can worsen cognitive function in patients with dementia. It may add to the
+anticholinergic cognitive burden if used in conjunction with other anticholinergic drugs.
+Laxatives
+
+Antiemetics
+
+Cyclizine is a first-generation histamine antagonist and can impair cognitive and psychomotor performance (see antihistamines section).22
+Metoclopramide has little anticholinergic action, but the D2 receptor antagonism of
+both metoclopramide and prochlorperazine can produce movement disorders and so
+these drugs must be used with caution in people with dementia.
+Domperidone is a dopamine D2 receptor antagonist that does not usually cross the
+BBB. However, since BBB alterations can occur in dementia, CNS penetration of domperidone and resulting adverse effects can occur.23 Recent reports have highlighted a
+small increased risk of serious cardiac adverse effects with domperidone, especially in
+older people. The maximum dose has been reduced to 30mg/day and the maximum
+treatment duration should not exceed 1 week. Domperidone is now contraindicated
+in those with underlying cardiac conditions or severe hepatic impairment and in
+patients receiving other medications known to prolong QT interval or potent CYP3A4
+inhibitors.24
+Serotonin 5-HT3 receptor antagonists, used for treating chemotherapy-induced nausea and vomiting, do not have adverse effects on cognition, and they may have some
+
+CHAPTER 6
+
+There is no evidence to suggest that laxatives have any negative impact on cognitive
+function. In fact, since constipation can lead to delirium and BPSD, treating it may
+improve these symptoms.
+
+
+
+
+<<<PAGE 930>>>
+
+Miscellany  909
+
+Parameter
+
+Reference range10
+
+Agents reported to raise levels
+
+Agents reported to
+lower levels
+
+Bilirubin
+
+≤21μmol/L (total)
+
+Amitriptyline, atomoxetine,
+benzodiazepines, carbamazepine,
+chlordiazepoxide, chlorpromazine,
+citalopram, clomethiazole,
+clozapine, disulfiram, imipramine,
+fluphenazine, lamotrigine,
+meprobamate, milnacipran,
+olanzapine, phenothiazines,
+phenytoin, promethazine,
+sertraline, valbenazine, valproate;
+also associated with agents
+causing cholestasis/hepatic
+damage
+
+Barbiturates
+
+C-reactive protein
+
+<10mg/L
+
+Buprenorphine (rare); also
+associated with agents causing
+myocarditis (clozapine)
+
+None known
+
+Calcium
+
+2.20–2.60mmol/L (total,
+adjusted)
+1.15–1.34mmol/L (ionised)
+
+Lithium (rare)
+
+Barbiturates,
+carbamazepine,
+haloperidol, valproate
+
+Carbohydratedeficient transferrin
+(CDT)
+
+≤1.5%
+
+Alcohol (CDT levels of 1.6–1.9%
+suggest high intake; levels ≥ 2%
+suggest excessive intake)
+
+None known
+
+Chloride
+
+95–108mmol/L
+
+Agents causing hyperchloremic
+metabolic acidosis: topiramate,
+zonisamide
+
+Medications associated
+with SIADH: all
+antidepressants,
+antipsychotics
+(clozapine, haloperidol,
+olanzapine,
+phenothiazines,
+pimozide, risperidone/
+paliperidone,
+quetiapine);
+carbamazepine,
+laxative abuse
+
+Cholesterol (total)
+
+≤5.2mmol/L
+(usually compared to
+recommended action limits
+rather than reference
+ranges)
+
+Antipsychotics, especially those
+implicated in the metabolic
+syndrome (phenothiazines,
+clozapine, olanzapine and
+quetiapine). Rarely: aripiprazole,
+beta-blockers (additive effects with
+clozapine), carbamazepine,
+disulfiram, duloxetine, memantine,
+mirtazapine, modafinil, phenytoin,
+rivastigmine, sertraline, venlafaxine
+
+Prazosin, thyroid
+agents
+
+(Continued)
+
+CHAPTER 14
+
+Table 14.2 (Continued)
+
+
+
+
+<<<PAGE 932>>>
+
+Miscellany  911
+
+Parameter
+
+Reference range10
+
+Agents reported to raise levels
+
+Agents reported to
+lower levels
+
+Lactate
+dehydrogenase
+
+90–200U/L
+(levels rise gradually with
+age)
+
+Benzodiazepines, clozapine,
+methadone, TCAs (especially
+imipramine), valproate, also
+associated with agents causing NMS
+
+None known
+
+Lipoproteins: HDL
+
+>1.2mmol/L
+
+Carbamazepine, nicotine,
+phenobarbital, phenytoin
+
+Beta-blockers,
+olanzapine,
+phenothiazines,
+valproate
+
+Lipoproteins: LDL
+
+<3.5mmol/L
+
+Prazosin
+Beta-blockers, caffeine (controversial),
+carbamazepine, chlorpromazine,
+clozapine, iloperidone, memantine,
+mirtazapine, modafinil, olanzapine,
+phenothiazines, quetiapine, risperidone/
+paliperidone, rivastigmine, venlafaxine
+
+Phosphate
+
+0.8–1.5mmol/L
+
+Dexamfetamine; also associated with
+agents causing NMS
+
+Carbamazepine,
+lithium, mianserin,
+topiramate
+
+Potassium
+
+3.5–5.3mmol/L
+
+Beta-blockers, lithium
+
+Alcohol, disulfiram,
+caffeine, cocaine,
+haloperidol, lithium,
+mianserin, pregabalin,
+reboxetine,
+rivastigmine, sodium
+oxybate,
+sympathomimetics,
+topiramate,
+zonisamide; may also
+be a feature of
+delirium tremens
+
+Prolactin
+
+Normal: <350mU/L
+Abnormal: >600mU/L
+
+Antidepressants: especially
+Aripiprazole, dopamine
+amoxapine, MAOIs and TCAs; SSRIs
+agonists, pirenzepine
+and venlafaxine also implicated
+Antipsychotics: amisulpride, haloperidol,
+pimozide, risperidone/paliperidone,
+sulpiride and others (aripiprazole†,
+asenapine, brexpiprazole, cariprazine,
+clozapine, lurasidone, olanzapine,
+quetiapine and ziprasidone have
+minimal effects on prolactin levels)
+Other: benzodiazepines, buspirone,
+deutetrabena­zine, opioids, ramelteon,
+tetrabenazine, valbenazine
+
+Protein (total)
+
+60–80g/L
+
+None known
+
+Olanzapine (rarely)
+(Continued)
+
+CHAPTER 14
+
+Table 14.2 (Continued)
+
+
+
+
+<<<PAGE 933>>>
+
+912  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 14
+
+Table 14.2 (Continued)
+Parameter
+
+Reference range10
+
+Agents reported to raise levels
+
+Agents reported to
+lower levels
+
+Sodium
+
+133–146mmol/L
+
+Lithium (in overdose)
+
+Antidepressants:
+especially SSRIs/SNRIs;
+others also implicated
+Antipsychotics: all
+(via SIADH)
+Mood stabilisers:
+carbamazepine,
+lithium, valproate
+Other: benzodiazepines,
+clonidine, donepezil,
+memantine, rivastigmine
+Hyponatraemia should
+be considered in any
+patient on an
+antidepressant who
+develops confusion,
+convulsions or
+drowsiness
+
+Testosterone
+
+Males: 9.9–27.8nmol/L
+Females: 0.22– 2.9nmol/L
+
+Diazepam
+
+Opioids, ramelteon
+
+Thyroid-stimulating
+hormone
+
+0.3–4.0mU/L
+
+Aripiprazole, carbamazepine, lithium, Moclobemide, thyroid
+agents
+quetiapine, rivastigmine, sertraline,
+valproate (slightly)
+
+Thyroxine
+
+Free: 9–26pmol/L
+Total: 60–150nmol/L
+
+Rarely; amfetamine (heavy abuse),
+moclobemide, propranolol
+
+Triglycerides
+
+Barbiturates,
+carbamazepine,
+liothyronine, lithium
+(causes decreased T4
+secretion), opioids,
+phenytoin, valproate.
+Rarely implicated:
+aripiprazole, clozapine,
+quetiapine,
+rivastigmine, sertraline
+None known
+
+Triiodothyronine
+
+Free 3.0–6.8pmol/L; total
+1.2–2.9nmol/L
+
+Heroin, methadone
+
+Free T3: valproate; total
+T3: carbamazepine,
+lithium, propranolol
+
+Urate (uric acid)
+
+Females: 0.16–0.36mmol/L Alcohol (acute), caffeine (false positive), Sertraline (slightly)
+clozapine, levodopa, olanzapine, pindolol,
+Males: 0.21–0.43mmol/L
+prazosin, topiramate, zonisamide
+(increases with age)
+
+Urea
+
+2.5–7.8mmol/L
+(increases with age)
+
+Carbamazepine, levodopa; rarely with None known
+agents associated with anticonvulsant
+hypersensitivity syndrome and
+rhabdomyolysis
+
+*May also be associated with hypoglycaemia.
+†
+May also be associated with subnormal prolactin levels.
+
+
+
+
+<<<PAGE 974>>>
+
+Index  953
+
+pathological laughing or crying (PLC) 809
+patient-controlled analgesia (PCA)
+488–489, 489t
+PD. See Parkinson’s disease (PD)
+pemoline 811
+penfluridol 95
+penicillins 917t
+people living with HIV (PLWH)
+778, 779
+neurocognitive impairment in 780
+people with epilepsy (PWE) 785
+psychiatric symptoms in 785–786t
+peppermint oil 637
+pergolide 589
+perphenazine decanoate 932t
+persistent negative symptoms 32
+personality disorder 451
+pethidine 638
+P-glycoprotein (P-gp) 851
+pharmacodynamic interactions 379
+antidepressants
+MAOIs 380, 381t
+SSRIs/SNRIs 380
+tricyclic antidepressants 379–380
+pharmacokinetics 866, 867t
+absorption 866
+changes 822
+interactions 378, 851, 866, 867t
+metabolism 866
+pharmacological treatments 587
+pharmacotherapies 578
+phenelzine 743t
+phenothiazines 711t, 726t
+phenytoin 602, 836t
+phosphate 911t
+physical co-morbidity 673, 798
+physical deterioration 829
+physical illness 172
+physiological hyper-arousal 567
+PICU. See psychiatric intensive care unit
+(PICU)
+pimavanserin 711t, 726t, 740t, 816
+pimozide 588, 740t
+piperazine phenothiazines 3
+pipotiazine palmitate 933t
+pitolisant 730t
+plasma concentration assay 833
+plasma levels
+determination 834
+target range of 834
+plasma lipids, antipsychotic medications on
+149
+clinical management of
+dyslipidaemia 150–151
+clozapine 150
+effect of antipsychotic drugs on
+lipids 149
+olanzapine 149–150
+screening and monitoring 150
+plecanatide 234
+pneumonia, antipsychotics and 181–182
+polymorphism 851
+polysubstance abuse 512
+postmortem blood concentrations 847
+factors affecting 848t
+post mortem redistribution (PMR) 847
+post-stroke depression 362
+prophylaxis 362
+
+treatment 362–363
+post-traumatic stress disorder (PTSD) 424
+assessment and treatment of 567
+clinical guidance 567–568
+diagnosis of 567
+diagnostic issues 567
+postural hypotension 161
+potassium 911t
+prazosin 635
+prednisolone 621
+pregabalin 424, 590, 651, 809
+pregnancy
+bipolar disorder in 691–692
+bipolar illness during 689
+treatment with mood
+stabilisers 690–692
+depression in 689
+during pregnancy and
+postpartum 685
+discussions with pregnant women 681
+drug choice in 679–681
+other antidepressants 688–689
+psychiatric illness during 679
+psychosis in 684–685
+during pregnancy and
+postpartum 681–682
+psychotropics in 679, 694t
+sedatives 692–693
+ADHD 693–694, 693–694t
+rapid tranquillisation 693
+SSRIs 687–688
+treatment with antidepressants 685–686
+treatment with antipsychotics
+first generation 682
+second-generation 683–685
+tricyclic antidepressants 686
+pregnant women, discussions with 681
+Prescribing Observatory for Mental Health
+(POMH-UK) quality improvement
+programme 20
+product licence (PL) 923, 925, 925t
+common unlicensed uses of drugs in
+925, 925t
+prolactin 168, 911t
+antidepressants and 398–399t
+concentration, antipsychotic
+medication on 168t
+routine monitoring of 398
+prolactin release 398
+prolonged-release buprenorphine
+injection 484–485, 485t
+promethazine 639, 652, 693, 715t, 729t
+hydrochloride 935t
+prophylaxis 264
+in bipolar disorder 296
+combination treatment 297–298
+optimising lithium treatment 297
+dose for 27, 376
+of unipolar depression 249
+protein 911t
+proteinuria 735
+proton pump inhibitors (PPIs) 640
+prucalopride 234
+pseudobulbar affect (PBA) 809
+psychiatric aspects
+acute illness 8
+atypical eating disorders 10
+bulimia nervosa and binge eating
+
+disorder 9
+co-morbid depression 9
+co-morbid disorders 9
+psychotropic medicines 8
+relapse prevention 9
+psychiatric conditions, drug treatment of
+borderline personality disorder
+(BPD) 3–4
+antidepressants 4–5
+antipsychotics 4
+management of crisis 5
+memantine 5
+mood-stabilisers 5
+opioid antagonists 5
+delirium 13
+choice of drug 15
+clinical subtypes of 13
+diagnostic criteria for 13
+drugs used to treat 15–18, 15–18t
+general principles 14
+management 14
+outcome 14
+pharmacological prophylaxis 15–18,
+15–18t
+prevalence 13
+risk factors 13–14
+tools for evaluation 13
+eating disorders 7
+anorexia nervosa (AN), general
+guidance 7
+physical aspects
+electrolytes 7–8
+osteoporosis 8
+vitamins and minerals 7
+psychiatric aspects
+acute illness 8
+atypical eating disorders 10
+bulimia nervosa and binge eating
+disorder 9
+co-morbid depression 9
+co-morbid disorders 9
+psychotropic medicines 8
+relapse prevention 9
+psychiatric illness 172, 871
+at end of life 829
+prescribing in patients with 829–830t
+psychiatric intensive care unit (PICU) 58
+psychiatric medicines 883–885, 884t,
+885t
+psychiatric side effects 921
+psychiatry
+intravenous formulations in 937–939t
+intravenous medication in 937–939t
+off-label prescribing in 924
+psychogenic erectile dysfunction 405
+psychosis 806t, 810
+associated with stimulant
+drugs 512–513
+in childhood and adolescence 554
+effects of 172–173
+electroconvulsive therapy and 96
+adverse effects 97
+summary 97
+treatment-refractory
+schizophrenia 96–97
+first episode of 25–26
+in Parkinson’s disease (PD) 815–816
+psychotic depression 332–333
+
+

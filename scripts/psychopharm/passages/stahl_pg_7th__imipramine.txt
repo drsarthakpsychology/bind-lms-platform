@@ -1,0 +1,1485 @@
+<<<PAGE 9>>>
+
+54 flurazepam
+55 fluvoxamine
+56 gabapentin
+57 galantamine
+58 guanfacine
+59 haloperidol
+60 hydroxyzine
+61 iloperidone
+62 imipramine
+63 isocarboxazid
+64 ketamine
+65 lamotrigine
+66 lemborexant
+67 levetiracetam
+68 levomilnacipran
+69 lisdexamfetamine
+70 lithium
+71 lofepramine
+72 lofexidine
+73 loflazepate
+74 lorazepam
+75 loxapine
+76 lumateperone
+77 lurasidone
+78 maprotiline
+79 memantine
+80 methylfolate (l)
+81 methylphenidate (d)
+
+
+
+
+<<<PAGE 12>>>
+
+138 triiodothyronine
+139 trimipramine
+140 valbenazine
+141 valproate
+142 varenicline
+143 venlafaxine
+144 vilazodone
+145 vortioxetine
+146 zaleplon
+147 ziprasidone
+148 zolpidem
+149 zonisamide
+150 zopiclone
+151 zotepine
+152 zuclopenthixol
+Index by Drug Name
+Index by Use
+Index by Class
+Abbreviations
+
+
+
+
+<<<PAGE 617>>>
+
+Habit Forming
+No
+How to Stop
+Taper to avoid withdrawal effects
+Even with gradual dose reduction some withdrawal symptoms may
+appear within the first 2 weeks
+Many patients tolerate 50% dose reduction for 3 days, then another
+50% reduction for 3 days, then discontinuation
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Substrate for CYP450 2D6 and 1A2
+Is the active metabolite of imipramine, formed by demethylation via
+CYP450 1A2
+Half-life approximately 24 hours
+Food does not affect absorption
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking TCAs
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+
+
+
+
+<<<PAGE 620>>>
+
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is recovering from myocardial infarction
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to desipramine, imipramine, or
+lofepramine
+
+Special populations
+
+
+
+
+<<<PAGE 1081>>>
+
+Imipramine
+
+Therapeutics
+Brands
+Tofranil
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin norepinephrine
+reuptake inhibitor (SN-RI)
+Tricyclic antidepressant (TCA)
+Serotonin and norepinephrine/noradrenaline reuptake inhibitor
+Commonly Prescribed for
+(bold for FDA approved)
+Depression
+
+✽ Enuresis
+Anxiety
+
+Insomnia
+
+
+
+
+<<<PAGE 1082>>>
+
+Neuropathic pain/chronic pain
+Treatment-resistant depression
+Cataplexy syndrome
+How the Drug Works
+Boosts neurotransmitters serotonin and
+norepinephrine/noradrenaline
+Blocks serotonin reuptake pump (serotonin transporter), presumably
+increasing serotonergic neurotransmission
+Blocks norepinephrine reuptake pump (norepinephrine transporter),
+presumably increasing noradrenergic neurotransmission
+Presumably desensitizes both serotonin 1A receptors and beta
+adrenergic receptors
+Since dopamine is inactivated by norepinephrine reuptake in frontal
+cortex, which largely lacks dopamine transporters, imipramine can
+increase dopamine neurotransmission in this part of the brain
+May be effective in treating enuresis because of its anticholinergic
+properties
+How Long Until It Works
+May have immediate effects in treating insomnia or anxiety
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks
+
+
+
+
+<<<PAGE 1089>>>
+
+Dosing Tips
+If given in a single dose, should generally be administered at
+bedtime because of its sedative properties
+If given in split doses, largest dose should generally be given at
+bedtime because of its sedative properties
+If patients experience nightmares, split dose and do not give large
+dose at bedtime
+Patients treated for chronic pain may only require lower doses
+Tofranil-PM(r) (imipramine pamoate) 100 and 125 mg capsules
+contain the dye tartrazine (FD&C yellow No. 5), which may cause
+allergic reactions in some patients; this reaction is more likely in
+patients with sensitivity to aspirin
+If intolerable anxiety, insomnia, agitation, akathisia, or activation
+occur upon either dosing initiation or discontinuation, consider the
+possibility of activated bipolar disorder, and switch to a mood
+stabilizer or an atypical antipsychotic
+Overdose
+Death may occur; convulsions, cardiac dysrhythmias, severe
+hypotension, CNS depression, coma, changes in ECG
+Long-Term Use
+Safe
+
+
+
+
+<<<PAGE 1091>>>
+
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Fluvoxamine, a CYP450 1A2 inhibitor, can decrease the conversion
+of imipramine to desmethylimipramine (desipramine) and increase
+imipramine plasma concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use with sympathomimetic agents may increase sympathetic
+activity
+Methylphenidate may inhibit metabolism of TCAs
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of imipramine
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing imipramine
+
+
+
+
+<<<PAGE 1092>>>
+
+Generally, do not use with MAO inhibitors, including 14 days after
+MAOIs are stopped; do not start an MAOI for at least 5 half-lives (5
+to 7 days for most drugs) after discontinuing imipramine, but see
+Pearls
+Use with caution in patients with history of seizure, urinary
+retention, angle-closure glaucoma, hyperthyroidism
+TCAs can increase QTc interval, especially at toxic doses, which
+can be attained not only by overdose but also by combining with
+drugs that inhibit its metabolism via CYP450 2D6, potentially
+causing torsade de pointes-type arrhythmia or sudden death
+Because TCAs can prolong QTc interval, use with caution in
+patients who have bradycardia or who are taking drugs that can
+induce bradycardia (e.g., beta blockers, calcium channel blockers,
+clonidine, digitalis)
+Because TCAs can prolong QTc interval, use with caution in
+patients who have hypokalemia and/or hypomagnesemia or who are
+taking drugs that can induce hypokalemia and/or magnesemia (e.g.,
+diuretics, stimulant laxatives, intravenous amphotericin B,
+glucocorticoids, tetracosactide)
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+
+
+
+
+<<<PAGE 1093>>>
+
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is recovering from myocardial infarction
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to imipramine, desipramine, or
+lofepramine
+
+Special Populations
+Renal Impairment
+Cautious use; may need lower dose
+
+
+
+
+<<<PAGE 1094>>>
+
+Hepatic Impairment
+Cautious use; may need lower dose
+Cardiac Impairment
+Baseline ECG is recommended
+TCAs have been reported to cause arrhythmias, prolongation of
+conduction time, orthostatic hypotension, sinus tachycardia, and
+heart failure, especially in the diseased heart
+Myocardial infarction and stroke have been reported with TCAs
+TCAs produce QTc prolongation, which may be enhanced by the
+existence of bradycardia, hypokalemia, congenital or acquired long
+QTc interval, which should be evaluated prior to administering
+imipramine
+Use with caution if treating concomitantly with a medication likely
+to produce prolonged bradycardia, hypokalemia, slowing of
+intracardiac conduction, or prolongation of the QTc interval
+Avoid TCAs in patients with a known history of QTc prolongation,
+recent acute myocardial infarction, and uncompensated heart failure
+TCAs may cause a sustained increase in heart rate in patients with
+ischemic heart disease and may worsen (decrease) heart rate
+variability, an independent risk of mortality in cardiac populations
+Since SSRIs may improve (increase) heart rate variability in patients
+following a myocardial infarct and may improve survival as well as
+mood in patients with acute angina or following a myocardial
+
+
+
+
+<<<PAGE 1098>>>
+
+Potential Disadvantages
+Pediatric and geriatric patients
+Patients concerned with weight gain
+Cardiac patients
+Primary Target Symptoms
+Depressed mood
+Chronic pain
+Pearls
+Was once one of the most widely prescribed agents for depression
+
+✽ Probably the most preferred TCA for treating enuresis in children
+✽ Preference of some prescribers for imipramine over other TCAs for
+the treatment of enuresis is based more upon art and anecdote and
+empiric clinical experience than comparative clinical trials with other
+TCAs
+TCAs are no longer generally considered a first-line treatment
+option for depression because of their side effect profile
+TCAs may aggravate psychotic symptoms
+Alcohol should be avoided because of additive CNS effects
+Underweight patients may be more susceptible to adverse
+cardiovascular effects
+
+
+
+
+<<<PAGE 1100>>>
+
+Phenotypic testing may be necessary to detect this genetic variant
+prior to dosing with a tricyclic/tetracyclic antidepressant, especially
+in vulnerable populations such as children, elderly, cardiac
+populations, and those on concomitant medications
+Patients who seem to have extraordinarily severe side effects at
+normal or low doses may have this phenotypic CYP450 2D6 variant
+and require low doses or switching to another antidepressant not
+metabolized by 2D6
+
+Suggested Reading
+Anderson IM . Selective serotonin reuptake inhibitors versus tricyclic
+antidepressants: a meta-analysis of efficacy and tolerability . J Aff Disorders
+2000 ;58 :19 –36 .
+Anderson IM . Meta-analytical studies on new antidepressants . Br Med
+Bull 2001 ;57 :161–78 .
+Preskorn SH . Comparison of the tolerability of bupropion, fluoxetine,
+imipramine, nefazodone, paroxetine, sertraline, and venlafaxine . J Clin
+Psychiatry 1995 ;56 (Suppl 6):S12 –21.
+Workman EA , Short DD . Atypical antidepressants versus imipramine in
+the treatment of major depression: a meta-analysis . J Clin Psychiatry 1993
+;54 :5 –12.
+
+
+
+
+<<<PAGE 1106>>>
+
+Over-the-counter medications to avoid include cough and cold preparations, including those containing
+dextromethorphan (serotonin reuptake inhibitor), nasal decongestants (tablets, drops, or spray), hay-fever
+medications, sinus medications, asthma inhalant medications, anti-appetite medications, weight reducing
+preparations, “pep” pills (see Table 3 after Pearls)
+Hypoglycemia may occur in diabetic patients receiving insulin or oral antidiabetic agents (hydrazine effect)
+Binds and inactivates vitamin B6 (hydrazine effect); reversible with high-dose B6 administration
+Use cautiously in patients receiving reserpine, anesthetics, disulfiram, metrizamide, anticholinergic agents
+Isocarboxazid is not recommended for use in patients who cannot be monitored closely
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is taking dextromethorphan, a serotonin reuptake inhibitor
+If patient is taking diuretics or other antihypertensives without careful monitoring of blood pressure
+If patient has pheochromocytoma
+If patient has cardiovascular or cerebrovascular disease, until cleared by the patient’s medical doctor
+If patient is taking a prohibited drug
+If patient is not compliant with a low-tyramine diet
+If there is a proven allergy to isocarboxazid
+
+Special Populations
+Renal Impairment
+Use with caution –drug may accumulate in plasma
+May require lower than usual adult dose
+Hepatic Impairment
+Use cautiously in hepatic impairment
+Cardiac Impairment
+
+
+
+
+<<<PAGE 1109>>>
+
+✽ MAOIs should be for the expert, especially if combining with agents of potential risk (e.g., stimulants,
+trazodone, TCAs)
+
+✽ MAOIs should not be neglected as therapeutic agents for the treatment-resistant
+For treatment-resistant patients, experts can give a tricyclic/tetracyclic antidepressant other than
+clomipramine or imipramine simultaneously with an MAOI for patients who fail to respond to numerous
+other antidepressants
+Use of MAOIs with clomipramine is always prohibited because of the risk of serotonin syndrome and
+death due to serotonin reuptake inhibition
+Amoxapine may be the preferred trycyclic/tetracyclic antidepressant to combine with an MAOI in heroic
+cases due to its theoretically protective 5HT2A antagonist properties
+If this option is elected, start the MAOI with the tricyclic/tetracyclic antidepressant simultaneously at low
+doses after appropriate drug washout, then alternately increase doses of these agents every few days to a
+week as tolerated
+Although very strict dietary and concomitant drug restrictions must be observed to prevent hypertensive
+crises and serotonin syndrome, the most common side effects of MAOI and tricyclic/tetracyclic
+combinations may be weight gain and orthostatic hypotension
+Table 1. Drugs contraindicated due to risk of serotonin syndrome/toxicity
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+SSRIs
+
+MDMA (ecstasy)
+
+Meperidine
+
+Non-subcutaneous sumatriptan
+
+SNRIs
+
+Cocaine
+
+Tramadol
+
+Chlorpheniramine
+
+Clomipramine
+
+Methamphetamine
+
+Methadone
+
+Brompheniramine
+
+Imipramine
+
+St. John’s wort
+
+High-dose or
+injected
+amphetamine
+
+DextromethorphanLumateperoneZiprasidone
+
+Table 2. Dietary guidelines for patients taking MAOIs*
+Foods to avoid**
+
+Foods allowed
+
+Dried, aged, smoked, fermented, spoiled, or
+improperly stored meat, poultry, and fish
+
+Fresh or processed meat, poultry, and fish; properly
+stored pickled or smoked fish
+
+Broad bean pods
+
+All other vegetables
+
+Aged cheeses
+
+Processed cheese slices, cottage cheese, ricotta cheese,
+yogurt, cream cheese
+
+
+
+
+<<<PAGE 1240>>>
+
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to lofepramine, desipramine, or
+imipramine
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Baseline ECG is recommended
+TCAs have been reported to cause arrhythmias, prolongation of
+conduction time, orthostatic hypotension, sinus tachycardia, and
+
+
+
+
+<<<PAGE 1374>>>
+
+not safely tolerate normal doses of tricyclic/tetracyclic
+antidepressants and may require dose reduction
+Phenotypic testing may be necessary to detect this genetic variant
+prior to dosing with a tricyclic/tetracyclic antidepressant, especially
+in vulnerable populations such as children, elderly, cardiac
+populations, and those on concomitant medications
+Patients who seem to have extraordinarily severe side effects at
+normal or low doses may have this phenotypic CYP450 2D6 variant
+and require low doses or switching to another antidepressant not
+metabolized by 2D6
+
+Suggested Reading
+Anderson IM . Selective serotonin reuptake inhibitors versus tricyclic
+antidepressants: a meta-analysis of efficacy and tolerability . J Aff Disorders
+2000 ;58 :19 –36 .
+Anderson IM . Meta-analytical studies on new antidepressants . Br Med
+Bull 2001 ;57 :161–78 .
+Kane JM , Lieberman J . The efficacy of amoxapine, maprotiline, and
+trazodone in comparison to imipramine and amitriptyline: a review of the
+literature . Psychopharmacol Bull 1984 ;20 :240–9 .
+
+
+
+
+<<<PAGE 1504>>>
+
+Elimination half-life approximately 1–4 hours
+Clinical duration of action at least 24 hours
+Drug Interactions
+Tramadol (serotonin reuptake inhibitor) may increase the risk of seizures in patients taking an MAOI
+Can cause a fatal “serotonin syndrome” when combined with drugs that block serotonin reuptake, so do not
+use with a serotonin reuptake inhibitor or for 5 half-lives after stopping the serotonin reuptake inhibitor
+(see Table 1 after Pearls)
+Hypertensive crisis with headache, intracranial bleeding, and death may result from combining MAOIs
+with sympathomimetic drugs (e.g., amphetamines, methylphenidate, cocaine, dopamine, epinephrine,
+norepinephrine)
+Do not combine with another MAOI, alcohol, or guanethidine
+Adverse drug reactions can result from combining MAOIs with tricyclic/tetracyclic antidepressants and
+related compounds, including carbamazepine, cyclobenzaprine, and mirtazapine, and should be avoided
+except by experts
+MAOIs in combination with spinal anesthesia may cause combined hypotensive effects
+Combination of MAOIs and CNS depressants may enhance sedation and hypotension
+Cimetidine may increase plasma concentrations of moclobemide
+Moclobemide may enhance the effects of NSAIDs such as ibuprofen
+Risk of hypertensive crisis may be increased if moclobemide is used concurrently with levodopa or other
+dopaminergic agents
+Table 1. Drugs contraindicated due to risk of serotonin syndrome/toxicity
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+SSRIs
+
+MDMA (ecstasy)
+
+Meperidine
+
+Non-subcutaneous
+sumatriptan
+
+SNRIs
+
+Cocaine
+
+Tramadol
+
+Chlorpheniramine
+
+Clomipramine
+
+Methamphetamine
+
+Methadone
+
+Brompheniramine
+
+Imipramine
+
+St. John’s wort
+
+High-dose or injected
+.amphetamine
+
+Dextromethorphan
+Lumateperone
+Ziprasidone
+
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 1506>>>
+
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phente
+
+Pseudoephedrine
+
+MethylphenidateCocaineMethamphetamineModafinilArmodafinil
+
+NRIsNDRIs
+
+Local a
+contain
+vasoco
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is in an acute confusional state
+If patient has pheochromocytoma or thyrotoxicosis
+If there is a proven allergy to moclobemide
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Plasma concentrations are increased
+May require one-half to one-third of usual adult dose
+Cardiac Impairment
+Cardiac impairment may require lower than usual adult dose
+Patients with angina pectoris or coronary artery disease should limit their exertion
+Elderly
+Elderly patients may have greater sensitivity to adverse effects, but many tolerate MAOIs
+
+
+
+
+<<<PAGE 1508>>>
+
+Pearls
+MAOIs are generally reserved for third- or fourth-line use after SSRIs, SNRIs, and combinations of newer
+antidepressants have failed
+Patient should be advised not to take any prescription or over-the-counter drugs without consulting his/her
+doctor because of possible drug interactions with the MAOI
+Headache is often the first symptom of hypertensive crisis
+Moclobemide has a much reduced risk of interactions with tyramine than nonselective MAOIs
+Especially at higher doses of moclobemide, foods with high tyramine need to be avoided (see Table 2 )
+The rigid dietary restrictions may reduce compliance
+
+✽ May be a safer alternative to classical irreversible nonselective MAO-A and MAO-B inhibitors with less
+propensity for tyramine and drug interactions and hepatotoxicity (although not entirely free of interactions)
+May not be as effective at low doses, and may have more side effects at higher doses
+Moclobemide’s profile at higher doses may be more similar to classical MAOIs
+
+✽ Myths about the danger of dietary tyramine can be exaggerated, but prohibitions against concomitant
+drugs often not followed closely enough
+Orthostatic hypotension, insomnia, and sexual dysfunction are often the most troublesome common side
+effects
+
+✽ MAOIs should be for the expert, especially if combining with agents of potential risk (e.g., stimulants,
+trazodone, TCAs)
+
+✽ MAOIs should not be neglected as therapeutic agents for the treatment-resistant
+For treatment-resistant patients, experts can give a tricyclic/tetracyclic antidepressant other than
+clomipramine or imipramine simultaneously with an MAOI for patients who fail to respond to numerous
+other antidepressants
+Use of MAOIs with clomipramine is always prohibited because of the risk of serotonin syndrome and
+death due to serotonin reuptake inhibition
+Amoxapine may be a preferred trycyclic/tetracyclic antidepressant to combine with an MAOI in heroic
+cases due to its theoretically protective 5HT2A antagonist properties
+If this option is elected, start the MAOI with the tricyclic/tetracyclic antidepressant simultaneously at low
+doses after appropriate drug washout, then alternately increase doses of these agents every few days to a
+week as tolerated
+Although very strict dietary and concomitant drug restrictions must be observed to prevent hypertensive
+crises and serotonin syndrome, the most common side effects of MAOI and tricyclic/tetracyclic
+combinations may be weight gain and orthostatic hypotension
+
+
+
+
+<<<PAGE 1773>>>
+
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Imipramine
+
+High-dose or
+injected
+amphetamine
+
+Opioids
+
+St. John’s wort
+
+Other
+Dextromethorphan
+
+Lumateperone
+Ziprasidone
+
+Other Warnings/Precautions
+Use requires strict adherence to low-tyramine diet (see Table 2 after
+Pearls)
+Patient and prescriber must be vigilant to potential interactions with
+any drug, including antihypertensives and over-the-counter cough/cold
+preparations
+Over-the-counter medications to avoid include cough and cold
+preparations, including those containing dextromethorphan (serotonin
+reuptake inhibitor), nasal decongestants (tablets, drops, or spray), hayfever medications, sinus medications, asthma inhalant medications,
+anti-appetite medications, weight reducing preparations, “pep” pills
+(see Table 3 after Pearls)
+Hypoglycemia may occur in diabetic patients receiving insulin or oral
+antidiabetic agents (hydrazine effect)
+Binds and inactivates vitamin B6 (hydrazine effect); reversible with
+high-dose B6 administration
+
+
+
+
+<<<PAGE 1775>>>
+
+** Not necessary for 6 mg transdermal or low-dose oral selegiline
+Table 3. Drugs that boost norepinephrine: should only be used with caution
+with MAOIs
+Use With Caution:
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phentermine
+
+Pseudoephedrine
+
+Methylphenidate
+Cocaine
+Methamphetamine
+Modafinil
+Armodafinil
+
+NRIs NDRIs
+
+Local
+anesthetics
+containing
+vasoconstrictors
+Tapentadol
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake
+inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g.,
+SSRIs, tramadol, milnacipran, duloxetine, venlafaxine, clomipramine,
+imipramine, etc.)
+
+
+
+
+<<<PAGE 1780>>>
+
+Generally more weight gain and sexual dysfunction than with
+tranylcypromine
+MAOIs are generally reserved for third- or fourth-line use after SSRIs,
+SNRIs, and combinations of newer antidepressants have failed
+Patient should be advised not to take any prescription or over-thecounter drugs without consulting their doctor because of possible drug
+interactions with the MAOI
+Headache is often the first symptom of hypertensive crisis
+The rigid dietary restrictions may reduce compliance (see Table 2 after
+Pearls)
+Mood disorders can be associated with eating disorders (especially in
+adolescent females), and phenelzine can be used to treat both
+depression and bulimia
+
+✽ Myths about the danger of dietary tyramine can be exaggerated, but
+prohibitions against concomitant drugs often not followed closely
+enough
+Orthostatic hypotension, insomnia, and sexual dysfunction are often
+the most troublesome common side effects
+
+✽ MAOIs should be for the expert, especially if combining with agents
+of potential risk (e.g., stimulants, trazodone, TCAs)
+
+✽ MAOIs should not be neglected as therapeutic agents for the
+treatment-resistant
+For treatment-resistant patients, experts can give a tricyclic/tetracyclic
+antidepressant other than clomipramine or imipramine simultaneously
+
+
+
+
+<<<PAGE 2037>>>
+
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+Clomipramine
+
+Methamphetamine
+
+Methadone
+
+Brompheniramine
+
+Imipramine
+
+High-dose or
+injected
+amphetamine
+
+St. John’s wort
+
+Dextromethorphan
+
+Lumateperone
+Ziprasidone
+
+Other Warnings/Precautions
+Ingestion of a “high-tyramine meal” is generally defined as 40 mg or
+more of tyramine in the fasted state
+Studies show that 200–400 mg of tyramine in the fasted state (and
+even more ingestion of tyramine in the fed state) may be required for a
+hypertensive response with administration of the low-dose transdermal
+patch (6 mg/24 hours); thus, no dietary precautions are required at this
+dose
+Tyramine sensitivity of the low-dose transdermal patch (6 mg/24
+hours) may be comparable to that of low-dose oral selegiline (10 mg)
+with neither causing a hypertensive reaction to high-tyramine meals
+Tyramine sensitivity and hypertensive responses to the high-dose
+transdermal patch (12 mg/24 hours) may occur with administration of
+70–100 mg of tyramine in the fasted state, so dietary restrictions may
+
+
+
+
+<<<PAGE 2041>>>
+
+Table 3. Drugs that boost norepinephrine: should only be used with caution
+with MAOIs
+Use With Caution:
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phentermine
+
+Pseudoephedrine
+
+Methylphenidate
+Cocaine
+Methamphetamine
+Modafinil
+Armodafinil
+
+NRIs NDRIs
+
+Local
+anesthetics
+containing
+vasoconstrictors
+Tapentadol
+
+Do Not Use
+If patient is taking meperidine (pethidine) (a serotonin reuptake
+inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g.,
+SSRIs, tramadol, milnacipran, duloxetine, venlafaxine, clomipramine,
+imipramine, etc.)
+If patient is taking dextromethorphan (a serotonin reuptake inhibitor)
+
+
+
+
+<<<PAGE 2256>>>
+
+carbamazepine, cyclobenzaprine, and mirtazapine, and should be
+avoided except by experts
+MAOIs in combination with spinal anesthesia may cause combined
+hypotensive effects
+Combination of MAOIs and CNS depressants may enhance sedation
+and hypotension
+Table 1. Drugs contraindicated due to risk of serotonin syndrome/toxicity
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+SSRIs
+
+MDMA (ecstasy)
+
+Meperidine
+
+Non-subcutaneous
+sumatriptan
+
+SNRIs
+
+Cocaine
+
+Tramadol
+
+Chlorpheniramine
+
+Clomipramine
+
+Methamphetamine
+
+Methadone
+
+Brompheniramine
+
+Imipramine
+
+High-dose or
+injected
+amphetamine
+
+St. John’s wort
+
+Dextromethorphan
+
+Lumateperone
+Ziprasidone
+
+Other Warnings/Precautions
+Use requires strict adherence to low-tyramine diet (see Table 2 after
+Pearls)
+
+
+
+
+<<<PAGE 2331>>>
+
+Drug Interactions
+Thyroid hormones appear to increase catabolism of vitamin Kdependent clotting factors; patients stabilized on oral anticoagulants
+who are treated with triiodothyronine should be watched very
+closely when triiodothyronine is started and may require dose
+reduction of the oral anticoagulant
+Initiating thyroid replacement therapy may cause increases in
+insulin or oral hypoglycemic requirements; patients receiving
+insulin or oral hypoglycemics should be closely watched during
+initiation of triiodothyronine
+Cholestyramine binds both T4 and T3 in the intestine, thus
+impairing absorption of these thyroid hormones; therefore, 4 to 5
+hours should elapse between administration of cholestyramine and
+thyroid hormones
+Use of thyroid products with imipramine and other TCAs may
+increase receptor sensitivity and enhance antidepressant activity;
+transient cardiac arrhythmias have been observed; thyroid hormone
+activity may also be enhanced
+Thyroid preparations may potentiate the toxic effects of digitalis
+Use with caution with ketamine; may cause hypertension and
+tachycardia
+Use with catecholamines may increase their adrenergic effects;
+careful observation is required
+
+
+
+
+<<<PAGE 2337>>>
+
+Trimipramine
+
+Therapeutics
+Brands
+Surmontil
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: dopamine and serotonin
+receptor antagonist (DS-RAn)
+Tricyclic antidepressant (TCA)
+Serotonin and norepinephrine/noradrenaline reuptake inhibitor
+Commonly Prescribed for
+(bold for FDA approved)
+Depression
+Endogenous depression
+Anxiety
+Insomnia
+
+
+
+
+<<<PAGE 2338>>>
+
+Neuropathic pain/chronic pain
+Treatment-resistant depression
+How the Drug Works
+Boosts neurotransmitters serotonin and
+norepinephrine/noradrenaline
+Blocks serotonin reuptake pump (serotonin transporter), presumably
+increasing serotonergic neurotransmission
+Blocks norepinephrine reuptake pump (norepinephrine transporter),
+presumably increasing noradrenergic neurotransmission
+Presumably desensitizes both serotonin 1A receptors and beta
+adrenergic receptors
+Since dopamine is inactivated by norepinephrine reuptake in frontal
+cortex, which largely lacks dopamine transporters, trimipramine can
+increase dopamine neurotransmission in this part of the brain
+How Long Until It Works
+May have immediate effects in treating insomnia, agitation, or
+anxiety
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks
+If it is not working within 6–8 weeks for depression, it may require
+a dosage increase or it may not work at all
+
+
+
+
+<<<PAGE 2347>>>
+
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of trimipramine
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing trimipramine
+Generally, do not use with MAOIs, including 14 days after MAOIs
+are stopped; do not start an MAOI for at least 5 half-lives (5 to 7
+days for most drugs) after discontinuing trimipramine, but see Pearls
+Use with caution in patients with history of seizures, urinary
+retention, angle-closure glaucoma, hyperthyroidism
+TCAs can increase QTc interval, especially at toxic doses, which
+can be attained not only by overdose but also by combining with
+drugs that inhibit TCA metabolism via CYP450 2D6, potentially
+causing torsade de pointes-type arrhythmia or sudden death
+Because TCAs can prolong QTc interval, use with caution in
+patients who have bradycardia or who are taking drugs that can
+induce bradycardia (e.g., beta blockers, calcium channel blockers,
+clonidine, digitalis)
+Because TCAs can prolong QTc interval, use with caution in
+patients who have hypokalemia and/or hypomagnesemia or who are
+taking drugs that can induce hypokalemia and/or magnesemia (e.g.,
+
+
+
+
+<<<PAGE 2349>>>
+
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to trimipramine
+
+Special Populations
+Renal Impairment
+Use with caution; may need to lower dose
+Hepatic Impairment
+Use with caution; may need to lower dose
+Cardiac Impairment
+Baseline ECG is recommended
+TCAs have been reported to cause arrhythmias, prolongation of
+conduction time, orthostatic hypotension, sinus tachycardia, and
+heart failure, especially in the diseased heart
+Myocardial infarction and stroke have been reported with TCAs
+TCAs produce QTc prolongation, which may be enhanced by the
+existence of bradycardia, hypokalemia, congenital or acquired long
+QTc interval, which should be evaluated prior to administering
+trimipramine
+Use with caution if treating concomitantly with a medication likely
+to produce prolonged bradycardia, hypokalemia, slowing of
+
+
+
+
+<<<PAGE 2356>>>
+
+2000 ;58 :19 –36 .
+Anderson IM . Meta-analytical studies on new antidepressants . Br Med
+Bull 2001 ;57 :161–78 .
+Berger M , Gastpar M . Trimipramine: a challenge to current concepts on
+antidepressives . Eur Arch Psychiatry Clin Neurosci 1996 ;246 :235–9 .
+Lapierre YD . A review of trimipramine. 30 years of clinical use . Drugs
+1989 ;38 (Suppl 1):S17 –24; discussion S49 –50.
+
+
+
+
+<<<PAGE 2499>>>
+
+Habit Forming
+Zolpidem is a Schedule IV drug
+Some patients may develop dependence and/or tolerance; risk may
+be greater with higher doses
+History of drug addiction may increase risk of dependence
+How to Stop
+Although rebound insomnia could occur, this effect has not
+generally been seen with therapeutic doses of zolpidem or zolpidem
+CR
+If taken for more than a few weeks, taper to reduce chances of
+withdrawal effects
+Pharmacokinetics
+Short elimination half-life (approximately 2.5 hours)
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+Sertraline may increase plasma levels of zolpidem
+Rifampin may decrease plasma levels of zolpidem
+Ketoconazole may increase plasma levels of zolpidem
+Use with imipramine or chlorpromazine may be associated with
+decreased alertness
+
+
+
+
+<<<PAGE 2572>>>
+
+Anxidin (clorazepate), 185
+Anxiolit (oxazepam), 569
+Anxiolit Plus (oxazepam), 569
+Anxiron (buspirone), 123
+Apaurin (diazepam), 229
+Apilepsin (valproate), 829
+Aplenzin (bupropion), 117
+Apo-Alprax (alprazolam), 11
+Apo-Amitriptyline (amitriptyline), 25
+Apo-Buspirone (buspirone), 123
+Apo-Carbamazepine (carbamazepine), 131
+Apo-Clomipramine (clomipramine), 165
+Apo-Clonazepam (clonazepam), 173
+Apo-Clonidine (clonidine), 179
+Apo-Clorazepate (clorazepate), 185
+Apo-Desipramine (desipramine), 207
+Apo-Diazepam (diazepam), 229
+Apo-Doxepin (doxepin), 255
+Apo-Fluoxetine (fluoxetine), 301
+Apo-Fluphenazine (fluphenazine), 313
+Apo-Haloperidol (haloperidol), 347
+Apoh-Hydroxyzine (hydroxyzine), 355
+Apo-Imipramine (imipramine), 367
+Apollonset (diazepam), 229
+Apo-Lorazem (lorazepam), 437
+Aponal (doxepin), 255
+Apo-Oxepam (oxazepam), 569
+Apo-Perphenazine (perphenazine), 607
+
+
+
+
+<<<PAGE 2581>>>
+
+Deplin (l-methylfolate), 477
+Deprakine (valproate), 829
+Depral (sulpiride), 741
+Depramine (imipramine), 367
+Deprax (trazodone), 793
+Deprenon (fluoxetine), 301
+Deprenyl (selegiline), 705
+Depressase (maprotiline), 465
+Deprex (fluoxetine), 301
+Deprilan (selegiline), 705
+Deprilept (maprotiline), 465
+Deprimyl (lofepramine), 421
+Deprinocte (estazolam), 281
+Deprinol (imipramine), 367
+Depsin (mianserin), 495
+Deptran (doxepin), 255
+Deroxat (paroxetine), 593
+Desconex (loxapine), 443
+Desfax (desvenlafaxine), 215
+Desidox (doxepin), 255
+desipramine, 207
+Desisulpid (sulpiride), 741
+Desitriptylin (amitriptyline), 25
+desvenlafaxine, 215
+Desyrel (trazodone), 793
+deutetrabenazine, 221
+Devidon (trazodone), 793
+DexAlone (dextromethorphan), 225
+
+
+
+
+<<<PAGE 2592>>>
+
+Imavate (imipramine), 367
+Imipramiin (imipramine), 367
+Imipramin (imipramine), 367
+imipramine, 367
+Imovane (zopiclone), 879
+Inadalprem (lorazepam), 437
+Inderal (propranolol), 653
+Inderal LA (propranolol), 653
+Ingrezza (valbenazine), 825
+InnoPran XL (propranolol), 653
+Insom (flunitrazepam), 297
+Intermezzo (zolpidem), 871
+Intuniv (guanfacine), 343
+Invega (paliperidone), 581
+Invega Sustenna (paliperidone injectable), 581
+Invega Trinza (paliperidone), 581
+Ipnovel (midazolam), 499
+Iremo Sedofren (trifluoperazine), 803
+Iremofar (hydroxyzine), 355
+isocarboxazid, 375
+Ivadal (zolpidem), 871
+Ixel (milnacipran), 503
+Janimine (imipramine), 367
+Januar (oxazepam), 569
+Jardin (dothiepin), 249
+Jatroneural (trifluoperazine), 803
+Jatrosom (tranylcypromine), 787
+Jatrosom N (tranylcypromine), 787
+
+
+
+
+<<<PAGE 2599>>>
+
+Meilax (loflazepate), 431
+Meleril (thioridazine), 759
+Melipramin (imipramine), 367
+Melipramine (imipramine), 367
+Mellaril (thioridazine), 759
+Melleretten (thioridazine), 759
+Melleril (thioridazine), 759
+Melzine (thioridazine), 759
+Memac (donepezil), 243
+memantine, 473
+memantine/donepezil combination, 243 , 473
+memantine XR, 473
+Menfazona (nefazodone), 545
+Menrium (chlordiazepoxide), 147
+Mepizin (oxazepam), 569
+Meresa (sulpiride), 741
+Merlit (lorazepam), 437
+Metadate CD (d,l-methylphenidate), 487
+Metadate ER (d,l-methylphenidate), 487
+Metafolin (l-methylfolate), 477
+Metamidol (diazepam), 229
+methyfolate (l), 477
+Methylin (d,l-methylphenidate), 487
+Methylin ER (d,l-methylphenidate), 487
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Metylyl (desipramine), 207
+Miabene (mianserin), 495
+
+
+
+
+<<<PAGE 2604>>>
+
+Novazam (diazepam), 229
+Novhepar (lorazepam), 437
+Novo-Alprazol (alprazolam), 11
+Novo-Carbamaz (carbamazepine), 131
+Novo-Clonidine (clonodine), 179
+Novo-Clopamine (clomipramine), 165
+Novo-Clopate (clorazepate), 185
+Novodorm (triazolam), 799
+Novo-Doxepin (doxepin), 255
+Novo-fluoxetine (fluoxetine), 301
+Novo-Hydroxyzine (hydroxyzine), 355
+Novo-Lorazem (lorazepam), 437
+Novo-Maprotiline (maprotiline), 465
+Novo-Peridol (haloperidol), 347
+Novoprotect (amitriptyline), 25
+Novo-Selegine (selegiline), 705
+Novo-Trazodone (trazodone), 793
+Novo-Trimipramine (trimipramine), 817
+Novo-Triolam (triazolam), 799
+Novo-Valproic (valproate), 829
+Nozepams (oxazepam), 569
+Nu-Alpraz (alprazolam), 11
+Nu-Carbamazepine (carbamazepine), 131
+Nu-Clonidine (clonidine), 179
+Nuctalon (estazolam), 281
+Nuedexta (dextromethorphan with quinidine), 225
+Nufarol (sulpiride), 741
+Nulans (lorazepam), 437
+
+
+
+
+<<<PAGE 2605>>>
+
+Nu-Loraz (lorazepam), 437
+Nuplazid (pimavanserin), 623
+Nu-Trazodone (trazodone), 793
+Nu-Trimipramine (trimipramine), 817
+Nuvigil (armodafinil), 65
+Nycoflox (fluoxetine), 301
+Nylipark (sulpiride), 741
+Oasil (chlordiazepoxide), 147
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+Olasek (olanzapine), 559
+Oleptro (trazodone XR), 793
+Omaha (sulpiride), 741
+Omca (fluphenazine), 313
+Omiryl (sulpiride), 741
+Omnali Esteve (chlordiazepoxide), 147
+Omnipress (amoxapine), 33
+Oniria (quazepam), 663
+Opamin (oxazepam), 569
+Opamox (oxazepam), 569
+Opiran (pimozide), 627
+Orap (pimozide), 627
+Orfidal (lorazepam), 437
+Orfilept (valproate), 829
+Orfiril (valproate), 829
+Orfiril Retard (valproate), 829
+Ormodon (temazepam), 755
+Orsanil (thioridazine), 759
+
+
+
+
+<<<PAGE 2614>>>
+
+Saphris (asenapine), 71
+Sapilent (trimipramine), 817
+Sarafem (fluoxetine), 301
+Saroten (amitriptyline), 25
+Saroten Retard (amitriptyline), 25
+Sarotex (amitriptyline), 25
+Sartuzin (fluoxetine), 301
+Savella (milnacipran), 503
+Sebor (lorazepam), 437
+Secuado (asenapine), 71
+Securit (lorazepam), 437
+Sedacoroxen (imipramine), 367
+Sedans (chlordiazepoxide), 147
+Sedapon (lorazepam), 437
+Sedazin (lorazepam), 437
+Sedex (flunitrazepam), 297
+Sedizepan (lorazepam), 437
+Seduxen (chlordiazepoxide), 147
+Seduxen (diazepam), 229
+Seledat (selegiline), 705
+Selegam (selegiline), 705
+selegiline, 705
+Selepam (quazepam), 663
+Selepar (selegiline), 705
+Selepark (selegiline), 705
+Seletop 5 (selegiline), 705
+Selgene (selegiline), 705
+Selincro (nalmefene), 533
+
+
+
+
+<<<PAGE 2621>>>
+
+Thorazine (chlorpromazine), 153
+Thymal (lorazepam), 437
+tiagabine, 771
+tianeptine, 777
+Timelit (lofepramine), 421
+Timonil (carbamazepine), 131
+Tingus (fluoxetine), 301
+Tiprolisant (pitolisant), 639
+Tirodil (thioridazine), 759
+Titus (lorazepam), 437
+Tofranil (imipramine), 367
+Tofranil pamoata (imipramine), 367
+Tofranil-PM (imipramine), 367
+Tolid (lorazepam), 437
+Tolmin (mianserin), 495
+Tolvin (mianserin), 495
+Tolvon (mianserin), 495
+Tonirem (temazepam), 755
+Topamac (topiramate), 781
+Topamax (topiramate), 781
+Topimax (topiramate), 781
+topiramate, 781
+T-Pam (temazepam), 755
+Tramensan (trazodone), 793
+Trankilium (lorazepam), 437
+Trankimazin (alprazolam), 11
+Tranquase (diazepam), 229
+Tran-Quil (lorazepam), 437
+
+
+
+
+<<<PAGE 2623>>>
+
+Trilafon decanoaat (perphenazine), 607
+Trilafon dekanoat (perphenazine), 607
+Trilafon Depot (perphenazine), 607
+Trilafon enantat(e) (perphenazine), 607
+Trilafon enantato (perphenazine), 607
+Trilafon enenthaat (perphenazine), 607
+Trileptal (oxcarbazepine), 575
+Trilifan (perphenazine), 607
+Trilifan Retard (perphenazine), 607
+Trimen (trihexyphenidyl), 809
+trimipramine, 817
+Trimonil (carbamazepine), 131
+Trimonil Retard (carbamazepine), 131
+Trintellix (vortioxetine), 853
+Trion (triazolam), 799
+Tripamine Surmontil (trimipramine), 817
+Triptafen (perphenazine), 607
+Triptil (protriptyline), 657
+Triptyl (amitriptyline), 25
+Triptyl Depot (amitriptyline), 25
+Trisedyl (trifluoperazine), 803
+Trittico (trazodone), 793
+Trokendi XR (topiramate), 781
+Tropargal (nortriptyline), 551
+Tropium (chlordiazepoxide), 147
+Trycam (triazolam), 799
+Tryptanol (amitriptyline), 25
+Tryptine (amitriptyline), 25
+
+

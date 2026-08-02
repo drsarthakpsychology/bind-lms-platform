@@ -1,0 +1,987 @@
+<<<PAGE 13>>>
+
+1
+
+Diagnosis and Classification
+in Psychiatry
+
+Classification is a process by which phenomena are
+organized into categories so as to bring together those
+phenomena that most resemble each other and to separate those that differ. Any classification of psychiatric
+disorders, like that of medical illnesses, should ideally
+be based on aetiology. For a large majority of psychiatric disorders, no distinct aetiology is known at present,
+although there are many attractive probabilities for
+several of them. Therefore, one of the most rational
+ways to classify psychiatric disorders at present is
+probably syndromal. A syndrome is defined as a group
+of symptoms and signs that often occur together, and
+delineate a recognisable clinical condition.
+The syndromal approach of classifying psychiatric disorders, on the basis of their clinical signs and
+symptoms, is very similar to the historical approach
+of classification of medical illnesses, when aetiology
+of a majority of medical illnesses was still obscure.
+There are three major purposes of classification
+of psychiatric disorders:
+1. To enable communication regarding the diagnosis
+of disorders,
+2. To facilitate comprehension of the underlying
+causes of these disorders, and
+3. To aid prediction of the prognosis of psychiatric
+disorders.
+This syndromal approach of classification, in the
+absence of clearly known aetiologies, fulfils these
+purposes reasonably well.
+Before proceeding to look at current classifications
+of psychiatric disorders, it is important to define what
+is meant by the term, psychiatric disorder.
+
+DEFINITION OF A PSYCHIATRIC
+DISORDER
+The simplest way to conceptualize a psychiatric
+disorder is a disturbance of Cognition (i.e. Thought),
+Conation (i.e. Action), or Affect (i.e. Feeling), or any
+disequilibrium between the three domains. However,
+this simple definition is not very useful in routine
+clinical practice.
+Another way to define a psychiatric disorder or
+mental disorder is as a clinically significant psychological or behavioural syndrome that causes significant
+(subjective) distress, (objective) disability, or loss of
+freedom; and which is not merely a socially deviant
+behaviour or an expected response to a stressful life
+event (e.g. loss of a loved one). Conflicts between
+the society and the individual are not considered
+psychiatric disorders. A psychiatric disorder should
+be a manifestation of behavioural, psychological, and/
+or biological dysfunction in that person (Definition
+modified after DSM-IV-TR, APA).
+Although slightly lengthy, this definition defines
+a psychiatric disorder more accurately.
+
+NORMAL MENTAL HEALTH
+According to the World Health Organization (WHO),
+Health is a state of complete physical, mental and
+social well-being, and not merely absence of disease
+or infirmity.
+Normal mental health, much like normal health, is
+a rather difficult concept to define. There are several
+
+
+
+
+<<<PAGE 52>>>
+
+40
+
+A Short Textbook of Psychiatry
+
+and mammillary bodies. The changes are also seen
+in periventricular and periaqueductal grey matter,
+cerebellum and parts of brain stem.
+The underlying cause is believed to be usually
+severe untreated thiamine deficiency secondary to
+chronic alcohol use.
+Marchiafava-Bignami disease
+This is a rare disorder characterised by disorientation,
+epilepsy, ataxia, dysarthria, hallucinations, spastic
+limb paralysis, and deterioration of personality and
+intellectual functioning. There is a widespread demyelination of corpus callosum, optic tracts and cerebellar peduncles. The cause is probably an alcohol-related
+nutritional deficiency.
+
+Other Complications
+These include:
+i. Alcoholic dementia.
+ii. Cerebellar degeneration.
+iii. Peripheral neuropathy.
+iv. Central pontine myelinosis.
+
+Treatment
+Before starting any treatment, it is important to follow
+these steps:
+i. Ruling out (or diagnosing) any physical disorder.
+ii. Ruling out (or diagnosing) any psychiatric disorder
+and/or co-morbid substance use disorder.
+iii. Assessment of motivation for treatment.
+iv. Assessment of social support system.
+v. Assessment of personality characteristics of the
+patient.
+vi. Assessment of current and past social, interpersonal and occupational functioning.
+The treatment can be broadly divided into two
+categories which are often interlinked. These are
+detoxification and treatment of alcohol dependence.
+
+Detoxification
+Detoxification is the treatment of alcohol withdrawal
+symptoms, i.e. symptoms produced by the removal of
+the ‘toxin’ (alcohol). The best way to stop alcohol (or
+any other drug of dependence) is to stop it suddenly
+
+unless the risks of acute discontinuation are felt to be
+high by the treating team. This decision is often based
+on several factors including chronicity of alcohol
+dependence, daily amount consumed, past history of
+alcohol withdrawal complications, level of general
+health and the patient’s wishes.
+The usual duration of uncomplicated withdrawal
+syndrome is 7-14 days. The aim of detoxification is
+symptomatic management of emergent withdrawal
+symptoms.
+The drugs of choice for detoxification are usually
+benzodiazepines. Chlordiazepoxide (80-200 mg/day in
+divided doses) and diazepam (40-80 mg/day in divided
+doses) are the most frequently used benzodiazepines.
+The higher limit of the normal dose range is used in
+delirium tremens.
+A typical dose of Chlordiazepoxide in moderate
+alcohol dependence is 20 mg QID (four times a day)
+on day 1, 15 mg QID on day 2, 10 mg QID on day 3,
+5 mg QID on day 4, 5 mg BD on day 5 and none on
+day 6. However, in more severe dependence, higher
+doses are needed for longer periods (up to 10 days).
+These drugs are used in a standardised protocol, with
+the dosage steadily decreasing everyday before being
+stopped, usually on the tenth day. Clormethiazole (1-2
+g/day) and carbamazepine (600-1600 mg/day) are
+experimental drugs and should not be used routinely
+for detoxification.
+In addition, vitamins should also be administered.
+In patients suffering from (or likely to suffer from)
+delirium tremens, peripheral neuropathy, WernickeKorsakoff syndrome, and/or with other signs of vitamin B deficiency (especially thiamine and nicotinic
+acid), a preparation of vitamin B containing 100 mg
+of thiamine (vitamin B1) should be administered
+parenterally, twice everyday for 3-5 days. This should
+be followed by oral administration of vitamin B1 for
+at least 6 months.
+Care of hydration is another important step; it is
+extremely important not to administer 5% dextrose
+(or any carbohydrate) in delirium tremens (or even in
+uncomplicated alcohol withdrawal syndrome) without
+thiamine.
+
+
+
+
+<<<PAGE 63>>>
+
+Psychoactive Substance Use Disorders
+
+and use of activated charcoal can reduce drug absorption. If coma ensues, intensive care measures should
+be employed on an emergency basis.
+The treatment of withdrawal syndrome is usually
+conservative. However, pentobarbital substitution
+therapy has been suggested for treatment of withdrawal
+from short-acting barbiturates. After detoxification
+phase is over, follow-up supportive treatment and
+treatment of associated psychiatric disorder, usually
+depression, are important steps to prevent relapses.
+
+BENZODIAZEPINES AND OTHER
+SEDATIVE-HYPNOTIC USE DISORDER
+Since the discovery of chlordiazepoxide in 1957
+by Sternbach, benzodiazepines have replaced other
+sedative-hypnotics in treatment of insomnia and
+anxiety. These are currently one of the most often prescribed drugs. Benzodiazepines produce their effects
+by acting on the benzodiazepine receptors (GABAbenzodiazepine receptor complex), thereby indirectly
+increasing the action of GABA, the chief inhibitory
+neurotransmitter in the human brain.
+Benzodiazepine (or sedative-hypnotic) use disorder can be either iatrogenic or originating with illicit
+drug use. Dependence, both physical and psychological, can occur and tolerance is usually moderate.
+
+Intoxication and Complications
+Acute intoxication resembles alcohol intoxication
+whilst chronic intoxication causes tolerance, especially to the sedative and anticonvulsant actions of
+benzodiazepines. Excessive doses can lead to respiratory depression, coma and death while chronic use has
+been reported to cause amnestic syndrome.
+Some of the other complications of benzodiazepines, particularly with high dose and chronic
+use, include behavioural disinhibition, impulsivity,
+blackouts, memory loss, worsening of depression and
+interactions with other prescribed medications.
+
+51
+
+to heavy doses (more than 60-80 mg per day of diazepam), is characterised by marked anxiety, irritability,
+tremors, insomnia, vomiting, weakness, autonomic
+hyperactivity with postural hypotension, and seizures.
+Depression, transient psychotic episodes, suicidal
+ideation, perceptual disturbances and rarely delirium
+have also been reported in withdrawal period.
+
+Treatment
+The treatment of benzodiazepine intoxication is
+usually symptomatic. However, in cases of coma
+caused by benzodiazepine overdose, flumazenil (a
+benzodiazepine receptor antagonist) can be used in a
+dose of 0.3-1.0 mg IV, administered over 1-2 minutes.
+The treatment of low dose dependence syndrome
+(~15 mg/day of diazepam) is abrupt withdrawal and
+symptomatic management of withdrawal symptoms.
+However, moderate to high dose dependence is best
+managed by gradual withdrawal in a step-wise manner
+(a reduction of ~10% of the dose every day). Sometimes
+a slower withdrawal is clinically indicated (see Ashton
+Manual in Suggested Further Reading List).
+The best treatment is probably prevention by limiting benzodiazepine use to no more than 2-4 weeks of
+prescription at most.
+After the detoxification phase, an adequate follow-up
+and supportive treatment is essential to prevent relapses.
+
+INHALANTS OR VOLATILE SOLVENT
+USE DISORDER
+The commonly used volatile solvents include gasoline (petrol), glues, aerosols (spray paints), thinners,
+varnish remover and industrial solvents. The active
+ingredients usually include toluene, benzene, acetone
+and halogenated hydrocarbons.
+Volatile solvent misuse is more common in early
+adolescence as a group activity, particularly in low
+socioeconomic status groups (e.g. rag-pickers in
+Mumbai and Delhi).
+
+Withdrawal Syndrome
+
+Intoxication and Complications
+
+A typical withdrawal syndrome, after cessation of
+prolonged use (more than 4-6 weeks) of moderate
+
+Inhalation of a volatile solvent leads to euphoria, excitement, belligerence, dizziness, slurring of speech,
+
+
+
+
+<<<PAGE 102>>>
+
+A Short Textbook of Psychiatry
+
+90
+
+Table 8.2: Symptoms of Anxiety
+1. Physical Symptoms
+A. Motoric Symptoms: Tremors; Restlessness;
+Muscle twitches; Fearful facial expression
+B. Autonomic and Visceral Symptoms: Palpitations;
+Tachycardia; Sweating; Flushes; Dyspnoea;
+Hyperventilation; Constriction in the chest; Dry
+mouth; Frequency and hesitancy of micturition;
+Dizziness; Diarrhoea; Mydriasis
+2. Psychological Symptoms
+A. Cognitive Symptoms: Poor concentration; Distractibility; Hyperarousal; Vigilance or scanning; Negative automatic thoughts
+B. Perceptual Symptoms: Derealisation; Depersonalisation
+C. Affective Symptoms: Diffuse, unpleasant, and
+vague sense of apprehension; Fearfulness; Inability to relax; Irritability; Feeling of impending
+doom (when severe)
+D. Other Symptoms: Insomnia (initial); Increased
+sensitivity to noise; Exaggerated startle response.
+
+Generalised Anxiety Disorder
+This is characterised by an insidious onset in the third
+decade and a stable, usually chronic course which may
+or may not be punctuated by repeated panic attacks
+(episodes of acute anxiety). The symptoms of anxiety should last for at least a period of 6 months for a
+diagnosis of generalised anxiety disorder to be made.
+The one year prevalence of generalised anxiety
+disorder in the general population is about 2.5-8%. It
+is the commonest psychiatric disorder in the population. As anxiety is a cardinal feature of almost all
+psychiatric disorders, it is very important to exclude
+other diagnoses. The most important differential diagnosis is from depressive disorders and organic anxiety
+disorder.
+
+Panic Disorder
+This is characterised by discrete episodes of acute
+anxiety. The onset is usually in early third decade
+
+with often a chronic course. The panic attacks occur
+recurrently every few days. There may or may not be
+an underlying generalised anxiety disorder.
+The episode is usually sudden in onset, lasts for a
+few minutes and is characterised by very severe anxiety. Classically the symptoms begin unexpectedly or
+‘out-of-the-blue’. Usually there is no apparent precipitating factor, though some patients report exposure to
+phobic stimuli as a precipitant.
+The differential diagnosis is from organic anxiety
+disorder (Chapter 3) (e.g. secondary to hypoglycaemia, hyperthyroidism, phaeochromocytoma) and
+cardiac disorders (e.g. MVPS or mitral valve prolapse
+syndrome).
+The life time prevalence of panic disorder is
+1.5-2%, with 3-4% reporting subsyndromal panic
+symptoms (i.e. panic symptoms not severe enough to
+qualify for panic disorder). Panic disorder is usually
+seen about 2-3 times more often in females. Panic
+disorder can present either alone or with agoraphobia.
+
+Aetiology
+The cause of anxiety disorders is not clearly known.
+There are however several theories, of which more
+than one may be applicable in a particular patient.
+1. Psychodynamic Theory
+According to this theory, anxiety is a signal that
+something is disturbing the internal psychological
+equilibrium. This is called as signal anxiety. This
+signal anxiety arouses the ego to take defensive action
+which is usually in the form of repression, a primary
+defense mechanism. Ordinarily when repression fails,
+other secondary defense mechanisms (such as conversion, isolation) are called into action.
+In anxiety, repression fails to function adequately but the secondary defense mechanisms are
+not activated. Hence, anxiety comes to the fore-front
+unopposed. Developmentally, primitive anxiety is
+manifested as somatic symptomatology while developmentally advanced anxiety is signal anxiety. Panic
+anxiety, according to this theory, is closely related to
+the separation anxiety of childhood.
+
+
+
+
+<<<PAGE 185>>>
+
+Psychopharmacology
+
+173
+
+Table 15.1: A Brief History of Psychopharmacology
+<4000 BC Ayurveda describes treatment of psychiatric patients with sympathy and kindness. The methods of
+treatment included dhatura and roots of serpentina plant mixed with oil (ghee).
+1853
+Bromide used as a sedative-hypnotic.
+1869
+Chloral hydrate used in the treatment of melancholia and mania.
+1882
+Paraldehyde used as a hypnotic.
+1883
+Phenothiazines synthesised during synthesis of methylene blue (Bernthsen).
+1903
+Barbiturates (barbital) used for sedation in 1903; phenobarbital introduced in 1912.
+1917
+Malarial treatment for General Paralysis of Insane (GPI) received a Nobel prize (Julius von Wagner
+Jauregg).
+1922
+Barbiturate-induced coma introduced for the treatment of psychoses (Jacob Klaesi).
+1927
+Insulin-shock treatment introduced for schizophrenia (Manfred Sakel).
+1931
+First report of successful treatment of psychoses (Ganesh Sen and Kartik Bose from India); using
+Rauwolfia serpentina extract (reserpine). Report ignored till Nathan Kline (1958) confirmed the finding.
+1934
+Metrazol-induced convulsions used for the treatment of psychoses (Laszlo von Meduna).
+1936
+Frontal lobotomy advocated for treatment of psychiatric disorders (Egas Moniz and Almenda Lima).
+1937
+Amphetamines used in the treatment of behaviour disorders of children (C Bradley).
+1938
+Electroconvulsive therapy used for the treatment of psychoses (Ugo Cerletti and Lucio Bini).
+1940
+Phenytoin used as an anticonvulsant (Tracy Putnam).
+1943
+LSD synthesised (Albert Hofmann).
+1949
+Lithium used in mania (John F Cade); did not receive much attention even in Australia.
+1950
+Chlorpromazine synthesised while making a better antihistaminic than promethazine (Charpentier).
+1950
+Methylphenidate used in treatment of ADHD, then known as Minimal Brain Dysfunction (MBD).
+1951
+Lytic cocktail used (Laborit); Chlorpromazine earlier used (as ‘456 ORP’) in artificial hibernation.
+1951
+Isoniazid (INH) found to have mood elevating properties in patients with tuberculosis. Iproniazid, a
+MAOI and a derivative of INH, was later (1958) introduced for treatment of depression.
+1952
+The revolution in psychopharmacology came with introduction of chlorpromazine (Jean Delay and
+Pierre Deniker). The number of admissions in mental hospitals show a sudden decrease after introduction of chlorpromazine.
+1955
+Meprobamate was introduced as an anti-anxiety agent.
+1958
+Imipramine, a tricyclic antidepressant (TCA) synthesised by Haflinger and Schindler in the late 1940’s,
+was introduced for treatment of depression in 1958 (Thomas Kuhn).
+1958
+MAOIs (e.g. iproniazid) introduced for treatment of depression (Nathan Kline).
+1958
+Haloperidol synthesised in Belgium (Janssen).
+1960
+Chlordiazepoxide used as an anti-anxiety agent in 1960-1961 (Sternbach; Synthesised in 1957).
+1966
+Valpromide (Valproate) used in bipolar disorder (Lambert).
+1968
+Pimozide used for treatment of schizophrenia (Janssen).
+1967
+Clomipramine used in OCD (Fernandez and Lopez-Ibor).
+1971
+Carbamazepine used in bipolar disorder (Takezaki and Hanoaka) (Synthesized in 1953 by Schindler).
+1986
+Buspirone introduced in US market as a non-benzodiazepine anti-anxiety agent.
+1988
+Clozapine re-discovered in US as an effective treatment for refractory schizophrenia (Kane et al)
+(Synthesised in 1959). Approved by US FDA in 1990 and introduced in Indian market in 1995.
+1990s
+Second Generation Antipsychotics introduced in market starting with Risperidone.
+
+
+
+
+<<<PAGE 206>>>
+
+194
+
+A Short Textbook of Psychiatry
+
+Cyclic Ethers
+An example is paraldehyde. It is not used commonly
+as it is not very effective and is also dependence
+producing.
+Others
+Antipsychotics (such as thioridazine, flupentixol,
+olanzapine, quetiapine) and antidepressants (such as
+doxepine) have sometimes been used for the treatment
+of severe, intractable anxiety. However, antipsychotics
+are not the drugs of first choice and should be used
+with extreme discretion (with balancing of risks and
+benefits) when all other drugs have failed to benefit.
+Antidepressants (such as SSRIs, SNRIs and Mirtazapine) have recently emerged as treatments of choice
+in several anxiety disorders including generalised
+anxiety disorder, obsessive compulsive disorder, panic
+disorder and obsessive compulsive disorder. There is
+some data to support that smaller starting doses are
+better as anxiety symptoms may worsen initially in
+treatment.
+Beta (β) Blockers
+An example is propranolol which is particularly effective in treatment of peripheral somatic manifestations
+of anxiety. It is also helpful in treatment of anticipatory anxiety and situational anxiety. Propranolol can
+be used either alone or along with benzodiazepines.
+β-blockers are not treatments of first choice in the
+treatment of psychic or psychological manifestations
+of anxiety.
+Propranolol is contraindicated in patients with
+bronchial asthma and cardiac conditions. It should be
+used with caution in patients of age 40 and above. The
+usual dose is 40-240 mg/day, administered in divided
+doses.
+
+Benzodiazepines
+Since the discovery of chlordiazepoxide in 1957 by
+Sternbach, benzodiazepines have replaced other antianxiety drugs and hypnotics though SSRIs are now
+gradually becoming drugs of first choice in management of anxiety disorders.
+The benzodiazepines can be classified according
+to their elimination half-lives (Table 15.9).
+
+Indications
+The indications for use of benzodiazepines include
+the following:
+1. Generalised anxiety disorder; adjustment disorder
+with anxious mood (Short-term use)
+2. Panic disorder, agoraphobia, and school phobia (particularly alprazolam and clonazepam;
+short-term use, along with antidepressants)
+3. Agitated depression (short-term use, along with
+antidepressants, for first 1-2 weeks)
+4. Short-term treatment of insomnia
+5. Stage 4 NREM-sleep disorders such as enuresis,
+somnambulism (diazepam reduces duration of
+Stage 4 NREM-sleep)
+6. Nightmares (diazepam also reduces the REMsleep duration).
+7. Pre-medication in anaesthesia (intravenous
+lorazepam, midazolam, or diazepam)
+8. Anticonvulsant use (drugs of choice for status epilepticus, myoclonic seizures and certain infantile
+spasms)
+9. To produce skeletal muscle relaxation (e.g. in
+tetanus, cerebral palsy)
+10. Treatment of alcohol and other drug withdrawal
+syndromes
+11. For minor surgical, endoscopic or obstetric procedures
+12. Acute mania (lorazepam, usually with lithium or
+atypical antipsychotics).
+13. Antipsychotic-induced akathisia
+14. Emergency management of acute psycho ses
+(IV lorazepam, along with parenteral antipsychotics).
+15. Narcoanalysis or abreaction (IV diazepam)
+Whenever administered, benzodiazepines should
+not be ordinarily used for more than 2-4 weeks at a
+time; otherwise risk of dependence is quite high and
+tolerance occurs.
+Mechanism of Action
+The exact mechanism of action of benzodiazepines is
+not clear. The discovery of the benzodiazepine receptors in 1977 shed some light on the mode of action
+(Fig. 15.1).
+
+
+
+
+<<<PAGE 207>>>
+
+Psychopharmacology
+
+195
+
+Table 15.9: Classification and Properties of Benzodiazepines
+Class and Drug
+
+Elimination
+Half-life
+(Hours)
+
+I. Very Short Acting Drugs
+1. Midazolam
+2-5 hours
+2. Triazolam
+
+2-5 hours
+
+Usual
+Hypnotic
+Dose (mg
+HS/Nocte)
+
+Oral Dose
+(mg/day)
+
+Parenteral
+Dose (mg)
+
+Active
+Metabolites
+
+Other Comments
+
+___
+
+___
+
+___
+
+___
+
+0.125-0.25 ___
+mg
+
+___
+
+α-hydroxytriazolam
+
+Used for
+anaesthesia
+Rapid oral absorption; Marketed as
+hypnotic
+
+α-hydroxyalprazolam
+___
+
+II. Short Acting Drugs
+1. Alprazolam
+6-20 hours
+
+___
+
+0.5-6.0 mg ___
+
+2. Estazolam
+3. Loprazolam
+
+8-24 hours
+6-12 hours
+
+1-2 mg
+1-2 mg
+
+1-2 mg
+___
+
+___
+___
+
+4. Lormetazepam
+5. Lorazepam
+
+10-12 hours 0.5-1.5 mg
+10-20 hours 0.5-2.0 mg
+
+___
+
+___
+
+2-6 mg
+
+2-4 mg
+
+6. Oxazepam
+
+5-15 hours
+
+15-120 mg ___
+
+7. Temazepam
+
+10-20 hours 10-20 mg
+
+III. Long Acting Drugs
+1. Chlorazepate
+30-100
+hours
+
+15-30 mg
+
+7.5-30 mg
+
+Piperazine
+N-oxide
+Lorazepam
+None
+None
+
+10-20 mg
+
+___
+
+Oxazepam
+
+7.5-60 mg
+
+___
+
+Nordiazepam
+
+2. Chlordiazepoxide
+
+25-48 hours 10-25 mg
+
+3. Clonazepam
+
+20-40 hours ___
+
+15-100 mg 50-100 mg Desmethyldemoxepam
+___
+0.5-20 mg 2-5 mg
+
+4. Diazepam
+
+14-90 hours 2-10 mg
+
+2-30 mg
+
+2-20 mg
+
+Nordiazepam
+
+5. Flurazepam
+
+30-100
+hours
+
+15-60 mg
+
+___
+
+6. Halazepam
+7. Nitrazepam
+
+30-60 hours 20-40 mg
+20-60 hours 5-10 mg
+
+Desmethylhydroxy-ethylflurazepam
+Nordiazepam
+Nordiazepam
+
+15-30 mg
+
+40-160 mg ___
+___
+5-20 mg
+
+___
+___
+___
+___
+High dependence
+potential
+Slow oral
+absorption
+Slow oral
+absorption
+Hydrolysed to
+active form in
+stomach
+Erratic absorption
+after IM injection
+Also used in treatment of epilepsy
+Erratic absorption
+after IM injection
+Marketed as a
+hypnotic
+___
+Marketed as a
+hypnotic
+Contd...
+
+
+
+
+<<<PAGE 212>>>
+
+A Short Textbook of Psychiatry
+
+200
+
+Table 16.1: A Brief Early History of Biological Treatments in Psychiatry
+Year
+
+Treatment
+
+Started by
+
+1785
+1917
+1922
+1931
+1933
+1934
+1936
+1938
+1949
+1952
+1954
+1958
+1958
+1958
+1960
+
+Camphor-induced seizures
+Malarial treatment of GPI
+Barbiturate coma therapy
+Reserpine (1st drug treatment in psychosis)
+Insulin coma therapy
+Cardiazol (metrazol) induced seizures
+Psychosurgery (prefrontal leucotomy)
+Electroshock (electroconvulsive therapy)
+Lithium (for mania)
+Chlorpromazine (1st antipsychotic)
+Meprobamate
+Iproniazid (1st MAO inhibitor)
+Imipramine (1st tricyclic antidepressant)
+Haloperidol (1st non-phenothiazine antipsychotic)
+Chlordiazepoxide (1st benzodiazepine)
+
+W Oliver
+Julius Wagner von Jauregg
+Jacob Klaesi
+Ganesh Sen, Kartik Bose
+Manfred Sakel
+LLJ von Meduna
+Egas Moniz, Almenda Lima
+Ugo Cerletti, Lucio Bini
+John F Cade
+Jean PL Delay, Pierre Deniker
+FM Berger
+Nathan Kline
+Thomas Kuhn
+Janssen
+Hugo Sternbach
+
+iv. With melancholia
+v. With psychotic features
+vi. With unsatisfactory response to drug therapy
+vii. Where drugs are contraindicated, or have
+serious side effects
+viii. Where speedier recovery is needed.
+2. Severe catatonia (non-organic)
+i. With stupor
+ii. With poor intake of food and fluids
+iii. With unsatisfactory response to drug therapy
+iv. Where drugs are contraindicated, or have
+serious side-effects.
+v. Where speedier recovery is needed.
+3. Severe psychoses (schizophrenia or mania)
+i. With risk of suicide, homicide or danger of
+physical assault
+ii. With unsatisfactory response to drug therapy
+iii. Where drugs are contraindicated, or have
+serious side effects
+iv. With very prominent depressive features (e.g.
+schizo-affective disorder).
+The use of ECT in mania and schizophrenia is
+not a treatment of first choice and is employed only
+in the above-mentioned conditions. A history of good
+
+response with ECT and patient preference for ECT
+also determine the use of ECT.
+The 1990 APA Task Force on ECT also defined
+as suggestive indications (for occasional use) the following disorders:
+1. Organic mental disorders (e.g. organic mood syndrome, organic hallucinosis, organic delusional
+disorder, and delirium).
+2. Medical disorders (e.g. organic catatonia, neuroleptic malignant syndrome and parkinsonism).
+
+Pre-treatment Evaluation
+The pre-treatment evaluation consists of the following steps:
+1. An informed consent, taken from the patient. If the
+patient does not have capacity or competence to
+give consent, consideration must be given to the
+most recent legal guidelines and local procedures
+which can include the best interest decision with
+consent of guardian/family and additional opinion
+from another professional.
+2. Detailed medical and psychiatric history taking,
+which includes the current and past treatment history.
+
+
+
+
+<<<PAGE 266>>>
+
+254
+
+A Short Textbook of Psychiatry
+
+Blackouts 37
+Bladder training 169
+Blocking 12
+Blood
+alcohol concentration 39
+lithium levels 190
+Blunted affect 58
+Borderline personality disorder 60,
+117, 228
+Brain imaging 64, 75
+Brief
+dissociative stupor 100
+history of psychopharmacology 173
+pulse ECT 202
+Bromocriptine 48, 132
+Bruxism 140
+Bulimia nervosa 144
+Buprenorphine 44, 45
+Bupropion 52
+Buspirone 92, 98, 197
+
+Childhood
+history 9
+psychosis 165
+Chlordiazepoxide 40, 51
+Chlorpromazine 66
+Cholinesterase inhibitors 25, 26
+Chromatography 157
+Chronic
+depression 74, 77
+fatigue syndrome 109
+Circumscribed amnesia 101
+Citalopram 26
+Citrated calcium carbimide 42
+Civil responsibility 229
+Classical
+conditioning model 214
+psychoanalysis 213
+psychosomatic disorders 147
+Classification in
+child psychiatry 162
+psychiatry 2
+Classification of
+alcoholism 37
+benzodiazepines 196
+mental retardation 156
+psychotropic drugs 172
+Claustrophobia 93
+Clerambault’s syndrome 84
+Clomipramine 98, 131
+Clonazepam 94, 98
+Clonidine 44, 167, 169
+Clozapine 52, 53, 66
+Cocaine 47
+overdose 48
+preparations 47
+use disorder 46
+withdrawal syndrome 48
+Code of ethics for psychiatrists 234
+Cognitive
+behaviour therapy 68, 79, 94, 98,
+112, 215, 216
+behavioural theory 91
+therapy 215
+Combativeness 225
+Command hallucinations 57
+Common
+examples of psychosomatic disorders
+148
+psychiatric emergencies 222
+themes in suicide 222
+Community
+mental health 235
+psychiatry 235
+
+C
+Caffeine 52, 53
+CAGE questionnaire 37, 39
+Cannabis
+preparations 45
+use disorder 45
+Capgras’ syndrome 87
+Carbamazepine 79, 192
+Carphologia 20
+Castration anxiety 211
+Cataplexy 138
+Catastrophic reaction 22
+Catatonia 59
+Catatonic
+behaviour 58
+features 57
+schizophrenia 59
+signs 11, 225
+stupor 67, 225
+syndrome 225
+withdrawal 225
+Causes of
+catatonic stupor 225
+hypersomnia 138
+mental retardation 157
+Censor 206
+Central mental health authority 233, 237
+Cerebral palsy 159
+Chasing the dragon 43
+Child
+abuse 228
+psychiatry 162
+
+Comparison of delirium and dementia 22
+Complex partial seizures 29, 31, 61, 227
+Complicated grief reaction 152
+Complications of
+alcohol dependence 39
+chronic alcohol use 38
+Conceptual thinking stage 153
+Concrete thinking stage 153
+Conditioning devices 169
+Conduct disorders 167
+Conjugal paranoia 84
+Consultation-liaison psychiatry 149
+Continuous amnesia 101
+Contraindications of disulfiram 42
+Conversion
+disorder 99
+release symptoms 102
+Coping
+mechanisms 207
+skills training 112
+Coprolalia 168
+Cortical dementia 24
+Counselling 110
+Counter
+phobic defense 210
+thoughts 96
+Covert sensitisation 41, 215
+CPAP 139
+Crack 47
+Cretinism 159
+Criminal lunatic 232
+Crisis 221
+intervention 112
+centre 228
+Critical
+comments 64
+remarks 68
+Cross-gender homosexuality 122
+Culture bound syndromes 110
+Cyclothymia 73
+Cyproheptadine 144
+
+D
+Dangerous Drug Act of 1930 233
+Deep brain stimulation 199
+Defense mechanism 90
+Definition of psychiatric disorder 1
+Deliberate self-harm 222
+Delirium 19, 21, 23
+tremens 38, 41
+Delusion of doubles 87
+Delusional
+depression 77, 78
+
+

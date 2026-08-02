@@ -1,0 +1,1112 @@
+<<<PAGE 132>>>
+
+Anticholinergic drugs
+given orally, IM or IV
+depending on the severity of
+symptoms20
+
+Treatment
+
+■■
+
+Remember the patient may be
+unable to swallow
+■■ Response to IV administration
+will be seen within 5 minutes
+■■ Response to IM administration
+takes around 20 minutes
+■■ Tardive dystonia may respond to
+ECT35,36
+■■ Where severe symptoms do not
+respond to simpler measures
+including switching to an antipsychotic with a low propensity
+for EPS, botulinum toxin may be
+effective37,38
+
+Acute dystonia can occur within
+hours of starting antipsychotic
+medication (minutes if the IM or IV
+route is used).
+Tardive dystonia occurs after
+months to years of antipsychotic
+treatment.
+
+Time taken to
+develop
+
+Dystonia (uncontrolled
+muscular spasm)
+
+■■
+
+■■
+
+Reduce the antipsychotic dose
+Change to an antipsychotic medication with a lower propensity for
+pseudoparkinsonism (see section
+on relative liability of antipsychotic
+medications for adverse effects)
+■■ Prescribe an anticholinergic. The
+majority of patients do not require
+long-term anticholinergic agents.
+Use should be reviewed at least
+every 3 months. Do not prescribe
+at night (symptoms usually absent
+during sleep)
+
+Several options are
+available depending on the clinical
+circumstances:
+
+Days to weeks after
+antipsychotic medication is
+started or the dose is
+increased
+
+Pseudoparkinsonism
+(bradykinesia, tremor, etc.)
+
+Reduce the antipsychotic dose
+Change to an antipsychotic drug
+with lower propensity for akathisia (see sections on akathisia and
+relative liability of antipsychotic
+medications for adverse effects)
+■■ A reduction in symptoms may be
+seen with:39–41 low-dose propranolol, 30–80mg/day, clonazepam
+(low dose), 5HT2 antagonists
+such as: cyproheptadine,36
+mirtazapine,40 trazodone,42,43
+mianserin,44 and cyproheptadine36 may help, as may possibly
+diphenhydramine.45
+Anticholinergics are generally
+unhelpful unless akathisia is part of
+a general EPS spectrum46
+
+All are unlicensed for this indication
+
+■■
+
+■■
+
+Acute akathisia occurs within hours
+to weeks of starting antipsychotic
+medication or increasing the dose.
+Akathisia that has persisted for
+several months or so is called
+‘chronic akathisia’. Tardive akathisia
+tends to occur later in treatment
+and may be exacerbated or
+provoked by antipsychotic dose
+reduction or withdrawal.16
+
+Akathisia
+(restlessness)16
+
+■■
+
+Stop anticholinergic if prescribed
+Reduce dose of antipsychotic medication
+■■ Change to an antipsychotic with lower
+propensity for TD,47–50 note that data are
+conflicting.51,52
+■■ Clozapine is the antipsychotic most
+likely to be associated with resolution of
+symptoms.53,54 Quetiapine may also be
+useful in this regard.55
+■■ Both valbenazine and deutetrabenazine
+have a positive risk-benefit balance as
+add-on treatments53,56–60
+■■ There is also some evidence for
+tetrabenazine and ginkgo biloba61 as
+add-on treatments. For other treatment
+options60,62 the review by the American
+Academy of Neurology63 and the section
+on tardive dyskinesia
+■■
+
+Months to years
+The proportion of cases showing
+reversibility on cessation of antipsychotic
+medication is unclear and may partly
+depend on age20
+
+Tardive dyskinesia
+(abnormal involuntary movements)
+
+
+
+
+<<<PAGE 136>>>
+
+Effective
+
+Continue at reduced dose
+
+CHAPTER 1
+
+Reduce dose of current antipsychotic
+medication/switch from antipsychotic
+polypharmacy to monotherapy (if possible) or
+slow rate of dosage increase15,16
+Ineffective/not appropriate
+
+Switch to quetiapine/olanzapine17–19
+(lowest effective dose possible)
+
+Effective
+
+(clozapine also an option if the psychiatric
+diagnosis is treatment-resistant schizophrenia20)
+
+Continue
+
+Ineffective/not appropriate to switch
+
+Consider low-dose
+propranolol: 30–80mg/day10,21,22
+(start at 10mg tds)
+
+Effective
+
+NB. Note contra-indications
+(asthma, bradycardia, hypotension, etc.)
+
+Continue if no
+contraindications
+
+Not effective/contra-indicated
+
+Consider low-dose (15mg) mirtazapine or
+mianserin (30mg)
+(5HT2A antagonists)23–25
+
+Effective
+
+Continue
+
+Not effective/not tolerated
+
+Consider an antimuscarinic drug16
+(e.g. benzatropine 6mg/day)
+Weak support for efficacy26,27 and risk of
+cognitive and anticholinergic adverse effects, but
+may be effective where other EPS present6,10,13
+
+Effective
+
+Continue, but attempt
+withdrawal
+after several months
+
+Ineffective/no other EPS
+
+Consider cyproheptadine 16mg/day22,28
+
+Effective
+
+Continue, if no
+contraindications
+
+Ineffective
+
+Consider a benzodiazepine15,16
+(e.g. diazepam up to 15mg/day clonazepam
+0.5–3mg/day)
+
+Effective
+
+Continue, but attempt slow
+withdrawal after 2–4 weeks
+(risk of dependence)
+
+Ineffective
+
+Consider clonidine 0.2–0.8mg/day16,29
+
+Effective
+
+Continue if tolerated;
+withdraw very slowly
+
+(Continued)
+
+
+
+
+<<<PAGE 137>>>
+
+116  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+(Continued)
+Notes
+Akathisia is sometimes difficult to diagnose with certainty. Clinical physical examination schedules for EPS
+have been proposed.30,31 For each patient, a careful history of symptoms, medication response and side
+effects, and comorbid substance use is essential.
+■■ Evaluate the efficacy of each treatment option over at least 1 month. Some effect may be seen after a few
+days, but it may take much longer to become apparent in those with chronic akathisia.
+■■ Withdraw previously ineffective akathisia treatments before starting the next option in the algorithm.
+■■ Combinations of treatment may be considered for refractory cases if carefully monitored.
+■■ Other possible treatments for acute akathisia that have been investigated include vitamin B6,32,33 pregabalin,34 diphenhydramine,35 trazodone23,36 and zolmitriptan.37,38 Always read the primary literature before
+considering any of the treatment options.
+■■ Parenteral midazolam (1.5mg) has been successfully used to prevent akathisia associated with IV metoclopramide,39 suggesting a specific therapeutic effect for midazolam and perhaps benzodiazepines more
+generally.
+■■ In some cases where agitation/akathisia are known short-lived effects of antipsychotic medication when
+initiated (e.g. with aripiprazole, cariprazine), prophylactic or rescue benzodiazepines may be prescribed for
+a limited period. Clinical experience suggests this practice is effective.
+■■
+
+21. Adler L, et al. A controlled assessment of propranolol in the treatment of neuroleptic-induced akathisia. Br J Psychiatry 1986; 149:42–45.
+22. Fischel T, et al. Cyproheptadine versus propranolol for the treatment of acute neuroleptic-induced akathisia: a comparative double-blind
+study. J Clin Psychopharmacol 2001; 21:612–615.
+23. Laoutidis ZG, et al. 5-HT2A receptor antagonists for the treatment of neuroleptic-induced akathisia: a systematic review and meta-analysis.
+Int J Neuropsychopharmacol 2014; 17:823–832.
+24. Poyurovsky M, et al. Mirtazapine – a multifunctional drug: low dose for akathisia. CNS Spectr 2011; 16:63.
+25. Poyurovsky M. Acute antipsychotic-induced akathisia revisited. Br J Psychiatry 2010; 196:89–91.
+26. Rathbone J, et al. Anticholinergics for neuroleptic-induced acute akathisia. Cochrane Database Syst Rev 2006; CD003727.
+27. Baskak B, et al. The effectiveness of intramuscular biperiden in acute akathisia: a double-blind, randomized, placebo-controlled study. J Clin
+Psychopharmacol 2007; 27:289–294.
+28. Weiss D, et al. Cyproheptadine treatment in neuroleptic-induced akathisia. Br J Psychiatry 1995; 167:483–486.
+29. Zubenko GS, et al. Use of clonidine in treating neuroleptic-induced akathisia. Psychiatry Res 1984; 13:253–259.
+30. Gervin M, et al. Assessment of drug-related movement disorders in schizophrenia. Adv Psychiatr Treatment 2000; 6:332–341.
+31. Cunningham Owens DA. Guide to the extrapyramidal side effects of antipsychotic drugs. Cambridge University Press; 1999.
+32. Miodownik C, et al. Vitamin B6 versus mianserin and placebo in acute neuroleptic-induced akathisia: a randomized, double-blind, controlled
+study. Clin Neuropharmacol 2006; 29:68–72.
+33. Lerner V, et al. Vitamin B6 treatment in acute neuroleptic-induced akathisia: a randomized, double-blind, placebo-controlled study. J Clin
+Psychiatry 2004; 65:1550–1554.
+34. De Berardis D, et al. Reversal of aripiprazole-induced tardive akathisia by addition of pregabalin. J Neuropsychiatry Clin Neurosci 2013;
+25:E9–E10.
+35. Friedman BW, et al. A randomized trial of diphenhydramine as prophylaxis against metoclopramide-induced akathisia in nauseated emergency department patients. Ann Emerg Med 2009; 53:379–385.
+36. Stryjer R, et al. Trazodone for the treatment of neuroleptic-induced acute akathisia: a placebo-controlled, double-blind, crossover study. Clin
+Neuropharmacol 2010; 33:219–222.
+37. Gross-Isseroff R, et al. The 5-HT1D receptor agonist zolmitriptan for neuroleptic-induced akathisia: an open label preliminary study. Int Clin
+Psychopharmacol 2005; 20:23–25.
+38. Avital A, et al. Zolmitriptan compared to propranolol in the treatment of acute neuroleptic-induced akathisia: a comparative double-blind
+study. Eur Neuropsychopharmacol 2009; 19:476–482.
+39. Erdur B, et al. A trial of midazolam vs diphenhydramine in prophylaxis of metoclopramide-induced akathisia. Am J Emerg Med 2012;
+30:84–91.
+
+
+
+
+<<<PAGE 140>>>
+
+Table 1.16 Other options for the treatment of TD
+Drug
+
+Comments
+Use is supported by a small randomised, placebo-controlled trial. Low risk of toxicity
+
+Amino acids
+
+74
+
+Botulinum toxin
+
+Case reports of success for localised dyskinesia. Probably now treatment of choice for
+disabling or distressing focal symptoms
+
+Calcium antagonists79
+
+A few published studies but not widely used. Cochrane is dismissive.80 A metaanalysis found no effect49
+
+Donepezil81–83
+
+Supported by a single open study and case series. One negative RCT (n = 12). Dose
+is 10mg/day. No clear evidence of efficacy for rivastigmine or galantamine84
+
+Fish oils85,86
+
+Very limited support for the use of EPA at dose of 2g/day
+
+75–78
+
+Fluvoxamine87
+
+Three case reports. Dose is 100mg/day. Beware of interactions
+
+Gabapentin
+
+Adds weight to theory that GABAergic mechanisms improve TD.
+Dose is 900–1200mg/day. Inconclusive data on other GABA agonists89
+
+Levetiracetam90–93
+
+Three published case studies. One RCT. Dose up to 3000mg/day
+
+Melatonin
+
+Use is supported by a meta-analysis of four trials.95 Usually well tolerated. Dose is
+10mg/day. Some evidence that melatonin receptor genotype determines risk of TD96
+
+Naltrexone97
+
+May be effective when added to benzodiazepines. Well tolerated.
+Dose is 200mg/day
+
+Ondansetron98,99
+
+Limited evidence but low toxicity.
+Dose – up to 12mg/day
+
+Propranolol100–102
+
+Formerly a relatively widely used treatment. Open-label studies only and a
+prospective randomized trial is probably warranted. Dose is 40–120mg/day. Beware
+of contra-indications (asthma, bradycardia, hypotension)
+
+Quercetin103
+
+Plant compound which is thought to be an antioxidant.
+Some promising case reports103–105
+
+Sodium oxybate106
+
+One case report. Dose was 8g/day
+
+Repetitive transcranial
+magnetic stimulation
+(rTMS)107,108
+
+RCT data on patients with ‘tardive syndromes’ suggest the potential for bilateral
+hemispheric high frequency rTMS to be a feasible treatment where TD is
+unresponsive to ‘first-line’ medical treatment107
+
+Zolpidem109
+
+Three case reports. Dose 10–30mg a day
+
+88
+
+94
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  119
+
+
+
+
+<<<PAGE 143>>>
+
+CHAPTER 1
+
+122  The Maudsley® Prescribing Guidelines in Psychiatry
+
+74. Richardson MA, et al. Efficacy of the branched-chain amino acids in the treatment of tardive dyskinesia in men. Am J Psychiatry 2003;
+160:1117–1124.
+75. Tarsy D, et al. An open-label study of botulinum toxin A for treatment of tardive dystonia. Clin Neuropharmacol 1997; 20:90–93.
+76. Brashear A, et al. Comparison of treatment of tardive dystonia and idiopathic cervical dystonia with botulinum toxin type A. Mov Disord
+1998; 13:158–161.
+77. Hennings JM, et al. Successful treatment of tardive lingual dystonia with botulinum toxin: case report and review of the literature. Prog
+Neuropsychopharmacol Biol Psychiatry 2008; 32:1167–1171.
+78. Beckmann YY, et al. Treatment of intractable tardive lingual dyskinesia with botulinum toxin. J Clin Psychopharmacol 2011; 31:250–251.
+79. Essali A, et al. Calcium channel blockers for neuroleptic-induced tardive dyskinesia. Cochrane Database Syst Rev 2011; Cd000206.
+80. Essali A, et al. Calcium channel blockers for antipsychotic-induced tardive dyskinesia. Cochrane Database Syst Rev 2018; 3:Cd000206.
+81. Caroff SN, et al. Treatment of tardive dyskinesia with donepezil. J Clin Psychiatry 2001; 62:128–129.
+82. Bergman J, et al. Beneficial effect of donepezil in the treatment of elderly patients with tardive movement disorders. J Clin Psychiatry 2005;
+66:107–110.
+83. Ogunmefun A, et al. Effect of donepezil on tardive dyskinesia. J Clin Psychopharmacol 2009; 29:102–104.
+84. Tammenmaa-Aho I, et al. Cholinergic medication for antipsychotic-induced tardive dyskinesia. Cochrane Database Syst Rev 2018;
+3:Cd000207.
+85. Emsley R, et al. The effects of eicosapentaenoic acid in tardive dyskinesia: a randomized, placebo-controlled trial. Schizophr Res 2006;
+84:112–120.
+86. Vaddadi K, et al. Tardive dyskinesia and essential fatty acids. Int Rev Psychiatry 2006; 18:133–143.
+87. Albayrak Y, et al. Beneficial effects of sigma-1 agonist fluvoxamine for tardive dyskinesia and tardive akathisia in patients with schizophrenia: report of three cases. Psychiatry Investig 2013; 10:417–420.
+88. Hardoy MC, et al. Gabapentin in antipsychotic-induced tardive dyskinesia: results of 1-year follow-up. J Affect Disord 2003;
+75:125–130.
+89. Alabed S, et al. Gamma-aminobutyric acid agonists for antipsychotic-induced tardive dyskinesia. Cochrane Database Syst Rev 2018;
+4:Cd000203.
+90. McGavin CL, et al. Levetiracetam as a treatment for tardive dyskinesia: a case report. Neurology 2003; 61:419.
+91. Meco G, et al. Levetiracetam in tardive dyskinesia. Clin Neuropharmacol 2006; 29:265–268.
+92. Woods SW, et al. Effects of levetiracetam on tardive dyskinesia: a randomized, double-blind, placebo-controlled study. J Clin Psychiatry
+2008; 69:546–554.
+93. Chen PH, et al. Rapid improvement of neuroleptic-induced tardive dyskinesia with levetiracetam in an interictal psychotic patient. J Clin
+Psychopharmacol 2010; 30:205–207.
+94. Shamir E, et al. Melatonin treatment for tardive dyskinesia: a double-blind, placebo-controlled, crossover study. Arch Gen Psychiatry 2001;
+58:1049–1052.
+95. Sun CH, et al. Adjunctive melatonin for tardive dyskinesia in patients with schizophrenia: a meta-analysis. Shanghai Arch Psychiatry 2017;
+29:129–136.
+96. Lai IC, et al. Analysis of genetic variations in the human melatonin receptor (MTNR1A, MTNR1B) genes and antipsychotics-induced
+tardive dyskinesia in schizophrenia. World J Biol Psychiatry 2011; 12:143–148.
+97. Wonodi I, et al. Naltrexone treatment of tardive dyskinesia in patients with schizophrenia. J Clin Psychopharmacol 2004; 24:441–445.
+98. Sirota P, et al. Use of the selective serotonin 3 receptor antagonist ondansetron in the treatment of neuroleptic-induced tardive dyskinesia.
+Am J Psychiatry 2000; 157:287–289.
+99. Naidu PS, et al. Reversal of neuroleptic-induced orofacial dyskinesia by 5-HT3 receptor antagonists. Eur J Pharmacol 2001;
+420:113–117.
+100. Perenyi A, et al. Propranolol in the treatment of tardive dyskinesia. Biol Psychiatry 1983; 18:391–394.
+101. Pitts FN, Jr. Treatment of tardive dyskinesia with propranolol. J Clin Psychiatry 1982; 43:304.
+102. Hatcher-Martin JM, et al. Propranolol therapy for Tardive dyskinesia: a retrospective examination. Parkinsonism Relat Disord 2016;
+32:124–126.
+103. Naidu PS, et al. Reversal of haloperidol-induced orofacial dyskinesia by quercetin, a bioflavonoid. Psychopharmacology 2003;
+167:418–423.
+104. Naidu PS, et al. Quercetin, a bioflavonoid, attenuates haloperidol-induced orofacial dyskinesia. Neuropharmacology 2003;
+44:1100–1106.
+105. Naidu PS, et al. Reversal of reserpine-induced orofacial dyskinesia and cognitive dysfunction by quercetin. Pharmacology 2004;
+70:59–67.
+106. Berner JE. A case of sodium oxybate treatment of tardive dyskinesia and bipolar disorder. J Clin Psychiatry 2008; 69:862.
+107. Khedr EM, et al. Repetitive transcranial magnetic stimulation for treatment of tardive syndromes: double randomized clinical trial. J Neur
+Trans 2019; 126:183–191.
+108. Brambilla P, et al. Transient improvement of tardive dyskinesia induced with rTMS. Neurology 2003; 61:1155.
+109. Waln O, et al. Zolpidem improves tardive dyskinesia and akathisia. Mov Disord 2013; 28:1748–1749.
+
+
+
+
+<<<PAGE 271>>>
+
+250  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Formulations
+
+CHAPTER 2
+
+There is no clinically significant difference in the pharmacokinetics of the two most
+widely prescribed brands of lithium in the UK: Priadel and Camcolit. The UK manufacturers of Priadel attempted to withdraw the formulation but this is currently under
+review.33 Other preparations should not be assumed to be bioequivalent and should be
+prescribed by brand.
+■■
+■■
+
+Each of the lithium carbonate 400mg tablets contains 10.8mmol/lithium.
+Lithium citrate liquid is available in two strengths and should be administered twice daily:
+■■ 5.4mmol/5mL is equivalent to 200mg lithium carbonate.
+■■ 10.8mmol/5mL is equivalent to 400mg lithium carbonate.
+
+Lack of clarity over which liquid preparation is intended when prescribing can lead to
+the patient receiving a sub-therapeutic or toxic dose.
+
+Adverse effects
+Most side effects are dose and plasma level related. These include mild gastrointestinal
+upset, fine tremor, polyuria and polydipsia. Polyuria may occur more frequently with
+twice daily dosing.34,35 Propranolol can be useful in lithium-induced tremor. Some skin
+conditions such as psoriasis and acne can be aggravated by lithium therapy. Lithium
+can also cause a metallic taste in the mouth, ankle oedema and weight gain.
+Lithium can cause a reduction in urinary concentrating capacity – nephrogenic
+diabetes insipidus – hence the occurrence of thirst and polyuria. This effect is usually
+reversible in the short to medium term but renal effects may be irreversible after longterm treatment (>15 years).36 Lithium treatment can also lead to a reduction in the
+glomerular filtration rate (GFR) although the magnitude of the risk is uncertain.36
+Lithium levels of >0.8mmol/L are associated with a higher risk of renal toxicity, and
+prolonged lithium treatment requires regular monitoring of kidney function.37
+In the longer term, lithium increases the risk of hypothyroidism;38 in middle-aged
+women, the risk may be up to 20%.39 A case has been made for testing thyroid autoantibodies in this group before starting lithium (to better estimate risk) and for measuring
+thyroid function tests (TFTs) more frequently in the first year of treatment.40
+Hypothyroidism is easily treated with thyroxine. TFTs usually return to normal when
+lithium is discontinued. Lithium also more rarely increases the risk of hyperthyroidism
+and hyperparathyroidism, and some recommend that calcium levels should be monitored in patients on long-term treatment.41,42 Clinical consequences of chronically
+increased serum calcium include renal stones, osteoporosis, dyspepsia, hypertension and
+renal impairment. For a review of the toxicity profile of lithium, see McKnight et al.41
+
+Lithium toxicity
+Toxic effects reliably occur at levels >1.5mmol/L and usually consist of gastrointestinal
+effects (increasing anorexia, nausea and diarrhoea) and CNS effects (muscle weakness,
+drowsiness, confusion, ataxia, course tremor and muscle twitching).43 Above 2mmol/L,
+increased disorientation and seizures usually occur, which can progress to coma, and
+
+
+
+
+<<<PAGE 447>>>
+
+426  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Box 3.4 Generalised anxiety disorder
+Crisis management
+Drug
+
+Comment
+
+Benzodiazepines
+
+Normally for short-term use only: max. 2–4 weeks although
+some are of the opinion that risks are overstated42
+
+CHAPTER 3
+
+First-line drug treatment (In order of preference)29
+SSRIs
+(Up to maximum licensed dose)
+
+May initially exacerbate symptoms. A lower starting dose is
+recommended. Fluoxetine and sertraline are preferred options12
+
+SNRIs14
+(Up to maximum licensed dose)
+
+May initially exacerbate symptoms. A lower starting dose is
+recommended
+
+Pregabalin
+150–600mg/day in divided doses
+
+Response may be seen in the first week of treatment.43
+Increasingly misused. Significant withdrawal syndrome
+
+Second-line drug treatment (Less well tolerated or weaker evidence base, no order of preference)
+Agomelatine44
+10–50mg/day
+
+Agomelatine has been shown to prevent relapse over a
+6-month period45
+
+Betablockers
+Propranolol 40–120mg/day in divided doses
+
+Initiate at 40mg and titrate dose up to effect if needed. Useful
+for somatic symptoms, particularly tachycardia46
+
+Buspirone
+15–60mg/day in divided doses
+
+Has a delayed onset of action, takes up to 6 weeks to show
+equal efficacy with benzodiazepines47
+
+Hydroxyzine
+50–100mg/day in divided doses
+
+It is unclear whether hydroxyzine is effective due to an
+anxiolytic effect or a sedative effect48
+
+Quetiapine
+(MR, 50–300mg)
+
+Recommended as monotherapy. Probably not effective as
+adjunctive therapy to SSRI/SNRI in treatment resistance49
+
+Tricyclic antidepressants
+Clomipramine
+50–250mg/day50–52
+Imipramine
+75–200mg/day in divided doses53
+
+Initiate clomipramine at 10mg/day and increase the dose
+gradually
+
+MAOI
+Phenelzine
+45–90mg/day in divided doses54
+
+For mixed anxiety and depressive states. Patients need to avoid
+food high in tyramine
+
+Initiate imipramine 25mg every 4 days and when at 100mg can
+increase in 50mg increments10
+
+Mirtazapine
+15–30mg nocte55,56
+Experimental
+Chamomile
+220–1500mg/day
+
+Two RCTs, one positive, one negative using standardised doses
+of chamomile and placebo57
+
+Gingko biloba
+240mg–480mg/day
+
+One positive RCT using standardised doses of gingko biloba
+and placebo58
+
+Lavender oil preparation
+80–160mg/day
+
+One positive RCT using standardised doses of lavender oil
+compared to placebo and paroxetine59
+
+Riluzole
+50–100mg/day doses60
+
+Liver function monitoring required
+
+nocte, at night
+
+
+
+
+<<<PAGE 604>>>
+
+Children and adolescents  583
+
+Melatonin, has been shown in 17 studies to be beneficial in children with ASD.71 A
+meta-analysis of five studies showed good efficacy with doses ranging from 1mg to
+10mg and treatment lasting from 14 days to over 4 years.72 Melatonin is usually very
+well tolerated.72,73 One RCT showed that, whilst melatonin improved sleep onset, child’s
+behaviour during the day did not improve.74
+There is also evidence that melatonin combined with CBT is superior to melatonin
+only, CBT only and placebo in reducing symptoms of insomnia.75
+Risperidone may benefit sleep difficulties in those with extreme irritability. In the
+anxious or depressed child, antidepressants may be beneficial. Insomnia due to hyperarousal may benefit from clonidine or clonazepam.76
+
+SSRIs have yet to show specific efficacy in ASD. Recent preliminary data from a randomised
+placebo-blind clinical trial showed beneficial effects of fluoxetine in reducing OCD symptoms in children with ASD, although confounding factors precluded firm conclusions.77 In
+a recent systematic review,6 although risperidone was reported by several studies to reduce
+OCD and anxiety symptoms in young people with ASD, the primary selection of participants for high levels of irritability did not allow firm conclusions about specific effects of
+risperidone on OCD and anxiety. The review concluded that overall, there is little or no
+evidence for treating anxiety or OCD symptoms with risperidone, clomipramine or an
+SSRI. The recent BAP guidance6 is to cautiously follow the existing BAP guidelines for
+treating anxiety and OCD.78 There are some data on buspirone effectively targeting anxiety
+in ASD79 and propranolol showing positive cognitive effects in ASD.80 However, further
+evaluation is needed. Guidance on doses of fluoxetine can be found in Box 5.4.
+Fluoxetine in children and adolescents
+When using fluoxetine to treat repetitive behaviours in ASD patients, doses much lower
+than those used to treat depression are normally required. It is advisable to use a liquid
+preparation and begin at the lowest possible dose, monitoring for adverse effects. A
+suitable regime is outlined in Box 5.4.
+Box 5.4 Use of fluoxetine in children and adolescents
+Liquid fluoxetine: (as hydrochloride) 20mg/5mL
+2.5mg/day a day for 1 week; note that 2.5mg = 0.625mL which is difficult to measure accurately.
+Follow with flexible titration schedule based on weight, tolerability and adverse-effects up to a
+maximum dose of 0.8mg/kg/day (0.3mg/kg for week 2, 0.5mg/kg/day for week 3, and 0.8mg/kg/
+day subsequently). Reduction may be indicated if adverse effects are problematic.
+Adverse effects
+Monitor for treatment emergent suicidal behaviour, self-harm and hostility, particularly at the
+beginning of treatment.
+■■ Hyponatraemia is also possible – see section in Chapter 3.
+■■
+
+CHAPTER 5
+
+Anxiety, OCD and depression
+
+
+
+
+<<<PAGE 826>>>
+
+Table 10.8 Evidence and experience regarding the pharmacological treatment of mental and behavioural
+symptoms in Huntington’s disease
+Symptoms
+
+Treatments
+
+Anxiety
+
+■■
+
+Depression
+
+■■
+
+Obsessive
+compulsive
+behaviours or
+preservation
+
+■■
+
+Irritability or
+agitation24
+
+■■
+
+Reported 16.7–24% lifetime prevalence in HD.17 There are no RCTs to guide choice; however, olanzapine 5mg/d substantially improved anxiety symptoms in one small open label
+pilot study.17 SSRIs and SNRIs have been suggested as first line treatment.4,7 Some guidelines have recommended considering SGAs (quetiapine,7 risperidone or olanzapine) for
+anxiety associated with personality or behavioural disturbances8 or when other treatments
+fail.7 Anxiolytics such as benzodiazepines or buspirone may also be useful.8
+
+Reported 20–56% lifetime prevalence in HD.17 Treatment is typically required: depression
+is linked to a lower quality of life in HD and increases the risk of suicide.17,18 There are no
+RCTs to guide choice.19 However, most experts agree that depression in HD responds well
+to antidepressants. SSRIs are the preferred first-line treatment.4,7
+■■ SSRIs: Two controlled trials examined the effects of fluoxetine and citalopram in nondepressed patients with HD. Despite excluding depressed patients, both showed near
+significant improvements in depressive symptoms.19 Note that tetrabenazine is metabolised
+by CYP2D6; inhibitors of this enzyme (e.g. fluoxetine, paroxetine) may increase levels.
+■■ SNRIs: Venlafaxine was effective in an uncontrolled study;19 however, one in five developed side effects, such as nausea and irritability.17
+■■ TCAs: Beneficial effects reported in some cases20 but generally their use should be avoided
+or limited. TCAs’ anticholinergic properties may worsen hyperkinesias and cognition.20 Toxicity in overdose may also make them less suitable choices (suicidality is increased in HD17).
+■■ Others: Mirtazapine was used successfully in a case report of severe depression.4 In a case
+registry study it was one of the most frequently prescribed treatments for depression in
+HD.17 Lithium produced improvements in suicidality in a small case series19 but experience is very limited, and tolerability may be poor. MAOIs have been used in earlier case
+studies;20 a lack of recent experience and important interactions with tetrabenazine make
+these less suitable. ECT has been suggested in severe cases.7,21,22
+There are no RCTs.23 International consensus supports the use of SSRIs first line;7 use of
+clomipramine is also supported,17 but tolerability may be poor. Case studies document the
+successful use of fluoxetine, paroxetine and sertraline.4 One study of two patients with
+preservation and aggression reported beneficial effects with buspirone.17 For ideational
+preservation, consensus also supports the use of olanzapine or risperidone (particularly if
+associated with irritability).7
+
+Reported prevalence of 38–73% in HD. Initial management is non-pharmacological
+(e.g. by addressing possible triggers such as pain or akathisia and using behavioural/
+psychological approaches). No medications are approved specifically, but expert consensus
+supports the use of SSRIs as preferred first-line agents with antipsychotics being the next
+most favoured alternative monotherapy. Clinical features influence treatment choice. For
+example, SGAs (e.g. olanzapine, risperidone, quetiapine) may be preferred in the presence
+of chorea, acute irritability, aggression or impulsivity. Benzodiazepines are a popularly
+used adjunctive therapy. Guidelines have also recommended mirtazapine or mianserin
+in patients not benefitting from maximum doses of SSRIs, especially in those with a
+comorbid sleep disorder. In cases nonresponsive to antidepressants and/or antipsychotics,
+adjunctive mood stabilisers have also been recommended.7
+■■ Aggressive behaviours: A wide variety of psychotropics have been used with reported
+beneficial effects (e.g. antipsychotics, lithium, valproate, propranolol, medroxyprogesterone, SSRIs, buspirone).20,25 Antipsychotics have been used most commonly. The evidence
+base is too limited to make specific treatment recommendations25 but low-dose antipsychotics can be considered.4 ECT was helpful in a few case reports agitation refractory to
+pharmacotherapy.21
+
+CHAPTER 10
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  805
+
+
+
+
+<<<PAGE 827>>>
+
+CHAPTER 10
+
+806  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 10.8 (Continued)
+Symptoms
+
+Treatments
+
+Apathy
+
+■■
+
+Psychosis
+
+■■
+
+Common in HD and appears to worsen with disease progression.17 Some sedative medications (e.g. antipsychotics, benzodiazepines, tetrabenazine) may contribute, so dose
+reduction or withdrawal should be considered.7 Bupropion was recently studied in one multicentre RCT and found to be ineffective.26 Other agents, including methylphenidate, atomoxetine, modafinil, amantadine and bromocriptine have been trialled with little success.17
+
+One of the least prevalent psychiatric manifestations of HD, perhaps due to the use of
+antidopaminergics for motor symptoms.17 There are no RCTs to guide choice; treatment is
+empirical. Note that antipsychotic drugs may exacerbate any underlying movement disorder.
+■■ SGAs: Olanzapine and risperidone are used most frequently;17 low starting doses are
+recommended.4 Case reports support the efficacy of risperidone, quetiapine, aripiprazole
+and amisulpride.20 Clozapine may be considered in refractory cases5,20 or akinetic forms of
+HD with debilitating parkinsonian symptoms.7
+■■ FGAs: Used less frequently due to the risk of dystonia and parkinsonism; however, haloperidol has been used when chorea is also problematic to the patient.20
+
+Table 10.9 Summary of available treatments for mental state and behavioural changes in Huntington’s disease5,7,17
+Most commonly prescribed
+pharmacological treatments
+
+Alternatives
+
+Anxiety
+
+SSRIs, mirtazapine, pregabalin,
+venlafaxine
+
+Olanzapine, risperidone, quetiapine
+benzodiazepines, propranolol, buspirone
+
+Depression or
+suicidality
+
+SSRIs, mirtazapine, venlafaxine
+
+TCAs; ECT in refractory cases
+
+Obsessive compulsive
+behaviours
+
+SSRIs
+
+Clomipramine
+
+Irritability or agitation
+
+SSRIs, SGAs (olanzapine, risperidone,
+sulpiride), tiapride, benzodiazepines
+
+Antiseizure medications (lamotrigine,
+carbamazepine, valproate), TCAs, buspirone,
+propranolol; consider trial of an analgesic
+
+Apathy
+
+None
+
+None
+
+Psychosis
+
+Olanzapine, risperidone, haloperidol,
+sulpiride, tiapride, injectable
+antipsychotic medication
+
+Clozapine, quetiapine
+
+Symptoms
+
+symptoms are perhaps the most amenable to pharmacotherapy.5 In general, psychiatric
+treatment choices are selected as they would be in other conditions,4 though patients
+are relatively more sensitive to side effects.4 The most commonly prescribed psychotropics are summarised in Table 10.8 (mostly based on low quality evidence).17
+
+
+
+
+<<<PAGE 894>>>
+
+Other substances  873
+
+Drug interactions
+
+Withdrawal symptoms7
+Withdrawal symptoms occur within 6–12 hours of stopping smoking and include
+intense craving, depressed mood, insomnia, anxiety, restlessness, irritability, difficulty
+concentrating and increased appetite. Nicotine withdrawal can be confused with
+depression, anxiety, sleep disorders and mania. Withdrawal can also exacerbate the
+symptoms of schizophrenia.
+
+Smoking cessation
+See section on ‘Nicotine and smoking cessation’ in Chapter 4 – Addictions and substance misuse.
+
+References
+1. Goff DC et al. Cigarette smoking in schizophrenia: relationship to psychopathology and medication side effects. Am J Psychiatry 1992;
+149:1189–1194.
+2. Winterer G. Why do patients with schizophrenia smoke? Curr Opin Psychiatry 2010; 23:112–119.
+3. Benowitz NL et al. Cardiovascular effects of nasal and transdermal nicotine and cigarette smoking. Hypertension 2002; 39:1107–1112.
+4. Yevtushenko OO et al. Influence of 5-HT2 C receptor and leptin gene polymorphisms, smoking and drug treatment on metabolic disturbances in patients with schizophrenia. Br J Psychiatry 2008; 192:424–428.
+5. Anderson JE et al. Treating tobacco use and dependence: an evidence-based clinical practice guideline for tobacco cessation. Chest 2002;
+121:932–941.
+6. Berrettini W. Nicotine addiction. Am J Psychiatry 2008; 165:1089–1092.
+7. Ziedonis DM et al. Schizophrenia and nicotine use: report of a pilot smoking cessation program and review of neurobiological and clinical
+issues. Schizophr Bull 1997; 23:247–254.
+8. Lyon ER. A review of the effects of nicotine on schizophrenia and antipsychotic medications. Psychiatr Serv 1999; 50:1346–1350.
+9. Sharma R et al. Motivations and limitations associated with vaping among people with mental illness: a qualitative analysis of reddit discussions. Int J Environ Res Public Health 2016; 14:7.
+10. Bianco CL. Rates of electronic cigarette use among adults with a chronic mental illness. Addict Behav 2019; 89:1–4.
+11. Weiser M et al. Higher rates of cigarette smoking in male adolescents before the onset of schizophrenia: a historical-prospective cohort study.
+Am J Psychiatry 2004; 161:1219–1223.
+12. Hunter A et al. The effects of tobacco smoking, and prenatal tobacco smoke exposure, on risk of schizophrenia: a systematic review and
+meta-analysis. Nicotine Tobacco Res 2020; 22:3–10.
+13. Caponnetto P et al. Tobacco smoking, related harm and motivation to quit smoking in people with schizophrenia spectrum disorders. Health
+Psychol Res 2020; 8:9042.
+14. Harris JG et al. Effects of nicotine on cognitive deficits in schizophrenia. Neuropsychopharmacology 2004; 29:1378–1385.
+15. Gupta T et al. Nicotine usage is associated with elevated processing speed, spatial working memory, and visual learning performance in youth
+at ultrahigh-risk for psychosis. Psychiatry Res 2014; 220:687–690.
+16. Ferchiou A et al. Exploring the relationships between tobacco smoking and schizophrenia in first-degree relatives. Psychiatry Res 2012;
+200:674–678.
+17. McEvoy JP et al. Smoking and therapeutic response to clozapine in patients with schizophrenia. Biol Psychiatry 1999; 46:125–129.
+
+CHAPTER 12
+
+Polycyclic hydrocarbons in tobacco smoke are known to stimulate the hepatic microsomal enzyme system, particularly P4501A2,8 the enzyme responsible for the metabolism
+of many psychotropic drugs. Smoking can lower the blood levels of some drugs by up
+to 50%.8 This can affect both efficacy and side effects and needs to be taken into
+account when making clinical decisions. The drugs most likely to be affected are
+clozapine,43 fluphenazine, haloperidol, chlorpromazine, olanzapine, many tricyclic antidepressants, mirtazapine, fluvoxamine and propranolol. Vaping has no effect on hepatic
+enzyme function. See section on ‘Smoking and psychotropic drugs’ in Chapter 11.
+
+
+
+
+<<<PAGE 933>>>
+
+912  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 14
+
+Table 14.2 (Continued)
+Parameter
+
+Reference range10
+
+Agents reported to raise levels
+
+Agents reported to
+lower levels
+
+Sodium
+
+133–146mmol/L
+
+Lithium (in overdose)
+
+Antidepressants:
+especially SSRIs/SNRIs;
+others also implicated
+Antipsychotics: all
+(via SIADH)
+Mood stabilisers:
+carbamazepine,
+lithium, valproate
+Other: benzodiazepines,
+clonidine, donepezil,
+memantine, rivastigmine
+Hyponatraemia should
+be considered in any
+patient on an
+antidepressant who
+develops confusion,
+convulsions or
+drowsiness
+
+Testosterone
+
+Males: 9.9–27.8nmol/L
+Females: 0.22– 2.9nmol/L
+
+Diazepam
+
+Opioids, ramelteon
+
+Thyroid-stimulating
+hormone
+
+0.3–4.0mU/L
+
+Aripiprazole, carbamazepine, lithium, Moclobemide, thyroid
+agents
+quetiapine, rivastigmine, sertraline,
+valproate (slightly)
+
+Thyroxine
+
+Free: 9–26pmol/L
+Total: 60–150nmol/L
+
+Rarely; amfetamine (heavy abuse),
+moclobemide, propranolol
+
+Triglycerides
+
+Barbiturates,
+carbamazepine,
+liothyronine, lithium
+(causes decreased T4
+secretion), opioids,
+phenytoin, valproate.
+Rarely implicated:
+aripiprazole, clozapine,
+quetiapine,
+rivastigmine, sertraline
+None known
+
+Triiodothyronine
+
+Free 3.0–6.8pmol/L; total
+1.2–2.9nmol/L
+
+Heroin, methadone
+
+Free T3: valproate; total
+T3: carbamazepine,
+lithium, propranolol
+
+Urate (uric acid)
+
+Females: 0.16–0.36mmol/L Alcohol (acute), caffeine (false positive), Sertraline (slightly)
+clozapine, levodopa, olanzapine, pindolol,
+Males: 0.21–0.43mmol/L
+prazosin, topiramate, zonisamide
+(increases with age)
+
+Urea
+
+2.5–7.8mmol/L
+(increases with age)
+
+Carbamazepine, levodopa; rarely with None known
+agents associated with anticonvulsant
+hypersensitivity syndrome and
+rhabdomyolysis
+
+*May also be associated with hypoglycaemia.
+†
+May also be associated with subnormal prolactin levels.
+
+
+
+
+<<<PAGE 939>>>
+
+918  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 14.4 (Continued)
+Drug
+
+Psychiatric side effect
+
+Comment
+
+Psychosis including hallucinations,
+panic attacks, suicidal ideation and
+attempts, anxiety, depression,
+restlessness, confusion. Abnormal
+dreams/nightmares are common
+with mefloquine
+
+Symptoms begin early in treatment.
+Patients should be advised to stop
+treatment if these develop and seek
+medical advice. Psychiatric ADRs are
+more common with mefloquine than
+chloroquine. Reactions can even occur
+after discontinuation of the drug.
+Mefloquine should not be prescribed
+for patients with an active or a history
+of a psychiatric diagnosis
+
+Antimalarials
+Chloroquine, mefloquine
+
+CHAPTER 14
+
+Antiparkinsonian treatments
+Levodopa
+
+Visual hallucinations, depression,
+hypomania, sleep disturbances,
+abnormal dreams, cognitive
+impairment, agitation, psychosis,
+delirium
+
+Dopamine agonists
+
+Sedation, psychomotor agitation,
+anxiety, akathisia, sleep
+disturbances, psychosis, cognitive
+impairment, delirium, visual
+hallucinations
+
+Amantadine
+
+Decreased concentration, sleep
+disturbances, visual hallucinations,
+irritability, anxiety, depression,
+euphoria, fatigue, psychosis,
+delirium
+
+Selegiline (MAO-B inhibitor)
+
+Sleep disturbances, agitation,
+psychosis
+
+Entacapone (COMT inhibitor)
+
+Sleep disturbances, hallucinations,
+delirium
+
+These are associated with more
+psychiatric adverse effects than
+levodopa
+
+Primary metabolites include
+levamfetamines
+
+Cardiovascular agents
+β-Blockers
+
+Fatigue, sedation, sleep
+disturbances and nightmares,
+cognitive impairment, depression,
+hallucinations, psychosis, delirium
+
+Disturbances more common with
+lipophilic β-blockers (e.g. propranolol,
+metoprolol) than with hydrophilic
+β-blockers (e.g. atenolol, sotalol,
+nadolol). Propranolol most commonly
+associated with depressive symptoms,
+but even with this drug, causality has
+not clearly been established. Reports
+of psychiatric ADRs from numerous
+clinical trials are equivocal.
+
+

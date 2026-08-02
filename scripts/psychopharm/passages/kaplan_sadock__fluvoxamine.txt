@@ -1,0 +1,930 @@
+<<<PAGE 633>>>
+
+the treatment of anxiety disorders in children and adolescents.
+A large, multisite investigation by the NIMH (Research Units in Pediatric
+Psychopharmacology [RUPP]) confirmed the safety and efficacy of
+fluvoxamine in the treatment of childhood separation anxiety disorder,
+generalized anxiety disorder, and social anxiety disorder. This double-blind,
+placebo-controlled study of 128 children and adolescents revealed that 76
+percent of children in the group treated with fluvoxamine showed significant
+improvement compared with 29 percent of those in the placebo group.
+Response to medication was noticeable after only 2 weeks of treatment.
+Fluvoxamine dosages ranged from 50 to 250 mg/day in children and up to
+300 mg/day in adolescents. Children and adolescents with less comorbid
+depressive symptoms had the best response. Youths who responded
+continued fluvoxamine for 6 months, and almost all of them continued to be
+responders at the 6-month mark.
+Several other randomized clinical trials have also supported the efficacy of
+SSRIs in the treatment of child and adolescent anxiety disorders. A
+randomized, controlled trial found fluoxetine, at a dose of 20 mg/day, to be
+safe and effective for children with these disorders, with minor side effects
+including gastrointestinal distress, headache, and drowsiness. Also, a
+randomized clinical trial for the treatment of generalized anxiety disorder in
+children lends support for the efficacy of sertraline. Finally, a large industry
+randomized clinical trial of paroxetine in the treatment of children with social
+anxiety disorder found that paroxetine was associated with a response in 78
+percent of children treated. The dose of paroxetine was 10 to 50 mg/day.
+The FDA has placed a “black box” warning on antidepressants, including
+all of the SSRI agents, used in the treatment of any childhood disorder,
+because of concerns about increased suicidality; however, no individual
+childhood anxiety study has found a statistically significant increase in
+suicidal thoughts or behaviors.
+Currently, we do not recommend using tricyclic drugs due to their
+potentially serious cardiac adverse effects. Other agents, including buspirone
+and β-adrenergic receptor antagonists such as propranolol, have been used
+clinically in children with anxiety disorders, but currently, no data support
+their efficacy. Diphenhydramine may be used in the short term to control
+sleep disturbances in children with anxiety disorders. Open trials and one
+double-blind, placebo-controlled study suggested that alprazolam, a
+
+
+
+
+<<<PAGE 653>>>
+
+intervention in the treatment of OCD in youth increases the response rates. A
+controlled comparison of family CBT and psychoeducation and relaxation
+(PRT) in 71 families of children with OCD showed that clinical remission
+rates in the FCBT group were significantly higher than those in the PRT
+group. The FCBT treatment reduced parent involvement and accommodation
+in their affected child’s symptoms, which led to decreased symptomatology.
+A randomized controlled study investigating web-camera delivered FCBT
+(W-CBT) compared to a waitlist condition assigned 31 families to one of the
+above conditions. Assessments were conducted immediately before and after
+treatment and at a 3-month follow-up for the W-CBT group. The W-CBT
+group was superior to the waitlist control group on all primary outcome
+measures, with large effect sizes. Eighty-one percent of the W-CBT group
+responded, compared to 13 percent of the waitlist group. The children
+maintained the gains at the 3-month follow-up assessment. The authors
+conclude that W-CBT may be efficacious in the treatment of OCD in youth
+and may be a promising tool for future dissemination.
+Exposure and response prevention (ERP) was studied in a group format in
+youth with OCD in a community-based program. Group-based ERP was
+effective in reducing OCD symptom severity and depressive symptoms, but
+not anxiety symptoms, in a naturalistic treatment setting for children with
+OCD and comorbid anxiety or depressive features.
+Multiple randomized clinical trials establish the efficacy of SSRIs for OCD
+in youth. A meta-analysis of 13 studies of SSRIs, including sertraline,
+fluvoxamine, fluoxetine, and paroxetine, has provided evidence of the
+efficacy of SSRIs with a moderate effect size. A randomized controlled
+clinical trial of citalopram versus fluoxetine in youth with OCD found that
+citalopram was as safe and effective as fluoxetine for the treatment of OCD
+in children and adolescents. There have been no apparent differences in the
+rate of response for the individual SSRIs.
+Currently, three SSRIs: sertraline (at least 6 years), fluoxetine (at least 7
+years), and fluvoxamine (at least 8 years), as well as clomipramine (at least
+10 years), have received FDA approval for the treatment of OCD in youth.
+The black-box warning for antidepressants used in children for any disorder,
+including OCD, is applicable so that close monitoring for suicidal ideation or
+behavior is mandated when using these agents in children.
+Typical side effects that emerge with the use of SSRIs include insomnia,
+
+
+
+
+<<<PAGE 1247>>>
+
+Maintenance
+
+6–24 mo Return to full
+or
+function and
+longer
+quality of life
+Prevention of
+recurrence
+
+Continue
+psychoeducation
+Rehabilitate
+Manage
+comorbidities
+Monitor for
+recurrence
+
+Modified from Lam RW, McIntosh D, Wang J, Enns MW, Kolivakis T, Michalak EE, Sareen J,
+Song WY, Kennedy SH, MacQueen GM, Milev RV, Parikh SV, Ravindran AV; CANMAT
+Depression Work Group. Canadian Network for Mood and Anxiety Treatments (CANMAT)
+2016 clinical guidelines for the management of adults with major depressive disorder: section
+1. Disease burden and principles of care. Can J Psychiatry. 2016;61(9):510–523.
+
+Table 7-11
+SSRI and SNRI Antidepressant Medications and Their Side
+Effect Profiles
+Side Effect Frequency
+Drug Class
+
+Recommended 10–30%
+Dose Range
+(mg)
+
+>30%
+
+SSRI
+Citalopram
+
+20–40
+
+Nausea, dry mouth, None
+sweating
+
+Escitalopram
+
+10–20
+
+Male sexual
+dysfunction and
+nausea
+
+Fluoxetine
+
+20–60
+
+Nausea, dry mouth, None
+somnolence,
+nervousness,
+anxiety,
+insomnia,
+tremor, anorexia
+
+Fluvoxamine
+
+100–300
+
+Dry mouth,
+
+None
+
+Nausea
+
+
+
+
+<<<PAGE 1679>>>
+
+possibly by dopaminergic activity and increased production of
+norepinephrine.
+Venlafaxine and the SSRIs most often have adverse effects because of the
+rise in serotonin levels. A lowering of the sex drive and difficulty reaching
+orgasm occur in both sexes. Cyproheptadine, an antihistamine with
+antiserotonergic effects, and methylphenidate, with adrenergic effects, may
+reverse those adverse effects. Trazodone is associated with the rare
+occurrence of priapism, the symptom of prolonged erection in the absence of
+sexual stimuli. That symptom appears to result from the α1-adrenergic
+antagonism of trazodone.
+Table 16-12
+Some Pharmacologic Agents Implicated in Inhibited Female
+Orgasma
+Tricyclic antidepressants
+Imipramine (Tofranil)
+Clomipramine (Anafranil)
+Nortriptyline (Aventyl)
+Monoamine oxidase inhibitors
+Tranylcypromine (Parnate)
+Phenelzine (Nardil)
+Isocarboxazid (Marplan)
+Dopamine receptor antagonists
+Thioridazine (Mellaril)
+Trifluoperazine (Stelazine)
+Selective serotonin reuptake inhibitors
+Fluoxetine (Prozac)
+Paroxetine (Paxil)
+Sertraline (Zoloft)
+Fluvoxamine (Luvox)
+Citalopram (Celexa)
+aThe interrelation between female sexual dysfunction and pharmacologic agents has been
+
+less extensively evaluated than male reactions. Oral contraceptives are reported to decrease
+
+
+
+
+<<<PAGE 1935>>>
+
+that no blood is visible. It carries a boxed warning for postinjection delirium
+sedation syndrome (PDSS). Patients are at risk for severe sedation (including
+coma) and must be observed for 3 hours after each injection in a registered
+facility. In controlled studies, all patients with PDSS recovered, and there
+were no deaths reported. It is postulated that PDSS is secondary to increased
+levels of olanzapine secondary to accidental rupture of a blood vessel,
+causing extreme sedation or delirium. Patients should be managed as
+clinically appropriate and, if necessary, monitored in a facility capable of
+resuscitation. The injection can be given every 2 or 4 weeks, depending on
+the dosing guidelines.
+Drug Interactions. Fluvoxamine (Luvox) and cimetidine (Tagamet)
+increase, and carbamazepine and phenytoin decrease, serum concentrations of
+olanzapine. Ethanol increases olanzapine absorption by more than 25 percent,
+leading to increased sedation. Olanzapine has little effect on the metabolism
+of other drugs.
+Side Effects. Other than clozapine, olanzapine consistently causes a more
+significant amount and more frequent weight gain than other atypicals. This
+effect is not dose-related and continues over time. Clinical trial data suggest it
+peaks after 9 months, after which it may continue to increase more slowly.
+Somnolence, dry mouth, dizziness, constipation, dyspepsia, increased
+appetite, akathisia, and tremor are associated with olanzapine use. A small
+number of patients (2 percent) may need to discontinue the use of the drug
+because of transaminase elevation. There is a dose-related risk of EPS. The
+manufacturer recommends a “periodic” assessment of blood sugar and
+transaminases during treatment with olanzapine. There is an FDA-mandated
+warning about an increased risk of stroke among patients with dementia
+treated with SDAs, but this risk is small and is outweighed by improved
+behavioral control that treatment may produce.
+Quetiapine (Seroquel)
+Indications. Quetiapine is indicated for the treatment of schizophrenia. It is
+also indicated for the acute treatment of manic episodes associated with
+bipolar I disorder, both as monotherapy and as an adjunct to lithium or
+
+
+
+
+<<<PAGE 1965>>>
+
+Fluvoxamine
+
+Fluvoxamine inhibits
+metabolism of
+haloperidol and
+clozapine
+
+Increased
+concentrations of
+haloperidol and
+clozapine
+
+Guanethidine
+
+Antipsychotic antagonizes
+guanethidine reuptake
+
+Impaired
+antihypertensive
+effect
+
+Lithium
+
+Unknown
+
+Rare reports of
+neurotoxicity
+
+Meperidine
+
+Additive CNS depression
+
+Hypotension and
+sedation
+
+Drug Interactions Assessed to Have Minor or Moderate Severity
+Amphetamines,
+anorexiants
+
+Decreased pharmacologic
+effect of amphetamine
+
+Diminished weight
+loss effect;
+amphetamines
+may exacerbate
+psychosis
+
+ACEIs
+
+Additive hypotensive crisis
+
+Hypotension,
+postural
+intolerance
+
+Antacids
+containing
+aluminum
+
+Insoluble complex formed
+in GI tract
+
+Possible reduced
+antipsychotic
+effect
+
+AD nonspecific
+
+Decreased metabolism of
+AD through competitive
+inhibition
+
+Increased AD
+concentration
+
+Benzodiazepines Increased pharmacologic
+effect of the
+benzodiazepine
+
+Respiratory
+depression,
+stupor,
+hypotension
+
+
+
+
+<<<PAGE 1967>>>
+
+Phenothiazines, especially thioridazine, may decrease the metabolism of
+and cause toxic concentrations of phenytoin. Barbiturates may increase the
+metabolism of DRAs.
+Tricyclic drugs and SSRIs that inhibit CYP2D6—paroxetine (Paxil),
+fluoxetine (Prozac), and fluvoxamine (Luvox)—interact with DRAs,
+resulting in increased plasma concentrations of both drugs. The
+anticholinergic, sedative, and hypotensive effects of the drugs may also be
+cumulative.
+Typical antipsychotics may inhibit the hypotensive effects of αmethyldopa (Aldomet). Conversely, typical antipsychotics may have an
+additive effect on some hypotensive drugs. Antipsychotic drugs have a
+variable effect on the hypotensive effects of clonidine. Propranolol (Inderal)
+coadministration increases the blood concentrations of both drugs.
+The DRAs potentiate the CNS-depressant effects of the sedatives,
+antihistamines, opiates, opioids, and alcohol, particularly in persons with
+impaired respiratory status. When these agents are taken with alcohol, the
+risk for heatstroke may be increased.
+Cigarette smoking may decrease the plasma levels of the typical
+antipsychotic drugs. Epinephrine has a paradoxical hypotensive effect in
+persons taking typical antipsychotics. These drugs may decrease the blood
+concentration of warfarin (Coumadin), resulting in decreased bleeding time.
+The phenothiazines, thioridazine, and pimozide should not be coadministered
+with other agents that prolong the QT interval. Thioridazine is
+contraindicated in patients taking drugs that inhibit the CYP2D6 isoenzyme
+or in patients with reduced levels of CYP2D6.
+Laboratory Interferences
+Chlorpromazine and perphenazine (Trilafon) may cause both false-positive
+and false-negative results in immunologic pregnancy tests and falsely
+elevated bilirubin (with reagent test strips) and urobilinogen (with Ehrlich
+reagent test) values. These drugs are associated with an abnormal shift in the
+results of the glucose tolerance test. However, that shift may reflect the
+effects of the drugs on the glucose-regulating system. Phenothiazines have
+been reported to interfere with the measurement of 17-ketosteroids and 17hydroxycorticosteroids and produce false-positive results in tests for
+
+
+
+
+<<<PAGE 1974>>>
+
+21.2 Antidepressants
+SELECTIVE SEROTONIN REUPTAKE INHIBITORS
+Fluoxetine (Prozac), the first SSRI marketed in the United States, rapidly
+captured the favor of both clinicians and the general public as reports
+emerged of dramatic patient responses to treatment of depression. Patients no
+longer experienced such side effects as dry mouth, constipation, sedation,
+orthostatic hypotension, and tachycardia, typical side effects associated with
+the earlier antidepressant drugs—the TCAs and MAOIs. It was also
+significantly safer when taken in overdose than any previously available
+antidepressant. A significant effect of fluoxetine’s popularity was that it
+helped ameliorate the long-standing stigma of depression and its treatment.
+Table 21-15
+Currently Approved Indications of the Selective Serotonin
+Reuptake Inhibitors in the United States for Adult and
+Pediatric Populations
+
+Other SSRIs followed fluoxetine. These include sertraline (Zoloft),
+paroxetine (Paxil), fluvoxamine (Luvox), citalopram (Celexa), escitalopram
+(Lexapro), and vilazodone (Viibryd). These drugs are all equally effective in
+
+
+
+
+<<<PAGE 1975>>>
+
+treating depression. However, some are approved by the U.S. FDA for
+multiple indications, such as major depression, OCD, PTSD, PMDD, panic
+disorder, and social phobia (social anxiety disorder) (Table 21-15). Note that
+fluvoxamine is not FDA approved as an antidepressant, a fact that is due to a
+marketing decision. It is considered an antidepressant in other countries.
+Although all SSRIs are equally effective, there are meaningful differences
+in pharmacodynamics, pharmacokinetics, and side effects, differences that
+might affect clinical responses among individual patients. This would explain
+why some patients have better clinical responses to a particular SSRI than
+another. The SSRIs have proven more problematic in terms of some side
+effects than the original clinical trials suggested. Quality-of-life–associated
+adverse effects such as nausea, sexual dysfunction, and weight gain
+sometimes mitigate the therapeutic benefits of the SSRIs. There can also be
+distressing withdrawal symptoms when SSRIs are stopped abruptly. This
+withdrawal is especially true with paroxetine but also occurs when other
+SSRIs with short half-lives are stopped.
+Pharmacologic Actions
+Pharmacokinetics. A significant difference among the SSRIs is their
+broad range of serum half-lives. Fluoxetine has the most prolonged half-life:
+4 to 6 days; its active metabolite has a half-life of 7 to 9 days. The half-life of
+sertraline is 26 hours, and its less active metabolite has a half-life of 3 to 5
+days. The half-lives of the other three, which do not have metabolites with
+significant pharmacologic activity, are 35 hours for citalopram, 27 to 32
+hours for escitalopram, 21 hours for paroxetine, and 15 hours for
+fluvoxamine. As a rule, the SSRIs are well absorbed after oral administration
+and have their peak effects in the range of 3 to 8 hours. Absorption of
+sertraline may be slightly enhanced by food.
+There are also differences in plasma protein–binding percentages among
+the SSRIs, with sertraline, fluoxetine, and paroxetine being the most highly
+bound and escitalopram being the least bound.
+All SSRIs are metabolized in the liver by the CYP450 enzymes. Because
+the SSRIs have such a broad therapeutic index, other drugs rarely produce
+problematic increases in SSRI concentrations. The most critical drug–drug
+interactions involving the SSRIs occur as a result of the SSRIs inhibiting the
+
+
+
+
+<<<PAGE 1976>>>
+
+metabolism of the coadministered medication. Each of the SSRIs possesses a
+potential for slowing or blocking the metabolism of many drugs (Table 2116). Fluvoxamine is the most problematic of the drugs in this respect. It has a
+marked effect on several of the CYP enzymes. Examples of clinically
+significant interactions include fluvoxamine and theophylline (Slo-Bid, TheoDur) through CYP1A2 interaction, fluvoxamine and clozapine (Clozaril)
+through CYP1A2 inhibition; and fluvoxamine with alprazolam (Xanax) or
+clonazepam (Klonopin) through CYP3A4 inhibition. Fluoxetine and
+paroxetine also possess significant effects on the CYP2D6 isozyme, which
+may interfere with the efficacy of opiate analogs, such as codeine and
+hydrocodone, by blocking the conversion of these agents to their active form.
+Thus, coadministration of fluoxetine and paroxetine with an opiate interferes
+with its analgesic effects. Sertraline, citalopram, and escitalopram are least
+likely to complicate treatment because of interactions.
+The pharmacokinetics of vilazodone (5 to 80 mg) is dose-proportional.
+Steady-state plasma levels are achieved in about 3 days. The elimination of
+vilazodone is primarily by hepatic metabolism with a terminal half-life of
+approximately 25 hours.
+Pharmacodynamics. The SSRIs are believed to exert their therapeutic
+effects through serotonin reuptake inhibition. They derive their name because
+they have little effect on the reuptake of norepinephrine or dopamine. Often,
+adequate clinical activity and saturation of the 5-HT transporters are achieved
+at starting dosages. As a rule, higher dosages do not increase antidepressant
+efficacy but may increase the risk of adverse effects.
+Table 21-16
+CYP450 Inhibitory Potential of Commonly Prescribed
+Antidepressants
+
+
+
+
+<<<PAGE 1981>>>
+
+DEPRESSION IN ELDERLY AND MEDICALLY ILL PERSONS. The SSRIs are safe and
+
+well tolerated when used to treat elderly and medically ill persons. As a class,
+they have little or no cardiotoxic, anticholinergic, antihistaminergic, or αadrenergic adverse effects. Paroxetine does have some anticholinergic
+activity, which may lead to constipation and worsening of cognition. The
+SSRIs can produce subtle cognitive deficits, prolonged bleeding time, and
+hyponatremia, all of which may impact the health of this population. The
+SSRIs are effective in poststroke depression and dramatically reduce the
+symptom of crying.
+DEPRESSION IN CHILDREN. The use of SSRI antidepressants in children and
+
+adolescents has been controversial. Few studies have shown clear-cut
+benefits from the use of these drugs, and studies show that there may be an
+increase in suicidal or aggressive impulses. However, some children and
+adolescents do exhibit dramatic responses to these drugs in terms of
+depression and anxiety. Fluoxetine has most consistently demonstrated
+effectiveness in reducing symptoms of depressive disorder in both children
+and adolescents. This fact may be a function of the quality of the clinical
+trials involved. Sertraline is effective in treating social anxiety disorder in this
+population, especially when combined with cognitive-behavioral therapy.
+Given the potential adverse effect of untreated depression and anxiety in a
+young population and the uncertainty about many aspects of how children
+and adolescents might react to medication, any use of SSRIs should be
+undertaken only within the context of comprehensive management of the
+patient.
+Anxiety Disorders
+OBSESSIVE-COMPULSIVE DISORDER. Fluvoxamine, paroxetine, sertraline, and
+
+fluoxetine are indicated for the treatment of OCD in persons older than the
+age of 18 years. Fluvoxamine, fluoxetine, and sertraline have also been
+approved for the treatment of children with OCD (ages 6 to 17 years). About
+50 percent of persons with OCD begin to show symptoms in childhood or
+adolescence, and more than half of these respond favorably to medication.
+Beneficial responses can be dramatic. Long-term data support the model of
+
+
+
+
+<<<PAGE 1984>>>
+
+modestly beneficial for weight loss. A significant percentage of all persons
+who take SSRIs, including fluoxetine, lose weight initially but later may gain
+weight. However, all SSRIs may cause initial weight gain.
+PREMENSTRUAL DYSPHORIC DISORDER. PMDD is characterized by debilitating
+
+mood and behavioral changes in the week preceding menstruation that
+interferes with normal functioning. Sertraline, paroxetine, fluoxetine, and
+fluvoxamine have been reported to reduce the symptoms of PMDD.
+Controlled trials of fluoxetine and sertraline administered either throughout
+the cycle or only during the luteal phase (the 2 weeks between ovulation and
+menstruation) showed both schedules to be equally effective.
+An additional observation of unclear significance was that fluoxetine was
+associated with changing the duration of the menstrual period by more than 4
+days, either lengthening or shortening it. The effects of SSRIs on menstrual
+cycle length are mostly unknown and may warrant careful monitoring in
+women of reproductive age.
+Off-Label Uses
+The anorgasmic effects of SSRIs make them
+useful as a treatment for men with premature ejaculation. The SSRIs permit
+intercourse for a significantly more extended period and are reported to
+improve sexual satisfaction in couples in which the man has premature
+ejaculation. Fluoxetine and sertraline are useful for this purpose.
+PREMATURE EJACULATION.
+
+The SSRIs may reduce obsessive-compulsive behavior in
+people with paraphilias. The SSRIs diminish the average time per day spent
+in unconventional sexual fantasies, urges, and activities. Evidence suggests a
+more significant response to sexual obsessions than for paraphilic behavior.
+PARAPHILIAS.
+
+Obsessive-compulsive behavior, poor social relatedness, and
+aggression are prominent autistic features that may respond to serotonergic
+agents such as SSRIs and clomipramine (Anafranil). Sertraline and
+fluvoxamine have been shown in controlled and open-label trials to mitigate
+aggressiveness, self-injurious behavior, repetitive behaviors, some degree of
+language delay, and (rarely) lack of social relatedness in adults with autistic
+AUTISM.
+
+
+
+
+<<<PAGE 1991>>>
+
+Sweating. Some patients experience sweating while being treated with
+SSRIs. This sweating is independent of the temperature in the environment.
+Nocturnal sweating may drench bed sheets and require a change of
+nightclothes. Terazosin (Hytrin), 1 or 2 mg/day, is often dramatically
+effective in counteracting sweating.
+Overdose. The adverse reactions associated with overdose of vilazodone at
+doses of 200 to 280 mg, as observed in clinical trials, included serotonin
+syndrome, lethargy, restlessness, hallucinations, and disorientation.
+Selective Serotonin Reuptake Inhibitor Withdrawal. The abrupt
+discontinuance of SSRI use, especially one with a shorter half-life such as
+paroxetine or fluvoxamine, has been associated with a withdrawal syndrome
+that may include dizziness, weakness, nausea, headache, rebound depression,
+anxiety, insomnia, poor concentration, upper respiratory symptoms,
+paresthesias, and migraine-like symptoms. It usually does not appear until
+after at least 6 weeks of treatment and usually resolves spontaneously in 3
+weeks. Persons who experienced transient adverse effects in the first weeks
+of taking an SSRI are more likely to experience discontinuation symptoms.
+Fluoxetine is the SSRI least likely to be associated with this syndrome
+because the half-life of its metabolite is more than 1 week, and it effectively
+tapers itself. Fluoxetine has therefore been used in some cases to treat the
+discontinuation syndrome caused by the termination of other SSRIs.
+Nevertheless, a delayed and attenuated withdrawal syndrome occurs with
+fluoxetine as well.
+Drug Interactions
+The SSRIs do not interfere with most other drugs. A serotonin syndrome
+(Table 21-17) can develop with concurrent administration of MAOIs, Ltryptophan, lithium, or other antidepressants that inhibit the reuptake of
+serotonin. Fluoxetine, sertraline, and paroxetine can raise plasma
+concentrations of TCAs, which can cause clinical toxicity. Several potential
+pharmacokinetic interactions have been described based on in vitro analyses
+of the CYP enzymes, but clinically relevant interactions are rare. SSRIs that
+inhibit CYP2D6 may interfere with the analgesic effects of hydrocodone and
+oxycodone. These drugs can also reduce the effectiveness of tamoxifen
+
+
+
+
+<<<PAGE 1993>>>
+
+CYP2D6 enzyme. Cimetidine can increase the concentration of sertraline and
+paroxetine, and phenobarbital (Luminal) and phenytoin can decrease the
+concentration of paroxetine. Because of the potential for interference with the
+CYP2D6 enzyme, the coadministration of paroxetine with other
+antidepressants, phenothiazines, and antiarrhythmic drugs should be
+undertaken with caution. Paroxetine may increase the anticoagulant effect of
+warfarin. Coadministration of paroxetine and tramadol may precipitate
+serotonin syndrome in elderly persons.
+Fluvoxamine. Among the SSRIs, fluvoxamine appears to present the most
+risk for drug–drug interactions. Fluvoxamine is metabolized by the enzyme
+CYP3A4, which may be inhibited by ketoconazole (Nizoral). Fluvoxamine
+may increase the half-life of alprazolam, triazolam (Halcion), and diazepam,
+and it should not be coadministered with these agents. Fluvoxamine may
+increase theophylline levels threefold and warfarin levels twofold, with
+significant clinical consequences; thus, the serum levels of the latter drugs
+should be closely monitored, and the doses adjusted accordingly.
+Fluvoxamine raises concentrations and may increase the activity of clozapine,
+carbamazepine, methadone (Dolophine, Methadose), propranolol (Inderal),
+and diltiazem (Cardizem). Fluvoxamine has no significant interactions with
+lorazepam (Ativan) or digoxin (Lanoxin).
+Citalopram. Citalopram is not a potent inhibitor of any CYP enzymes.
+Concurrent administration of cimetidine increases concentrations of
+citalopram by about 40 percent. Citalopram does not significantly affect the
+metabolism of, nor is its metabolism significantly affected by, digoxin,
+lithium, warfarin, carbamazepine, or imipramine (Tofranil). Citalopram
+increases the plasma concentrations of metoprolol (Lopressor) twofold, but
+this usually does not affect BP or heart rate. Data on coadministration of
+citalopram and potent inhibitors of CYP3A4 or CYP2D6 are not available.
+Escitalopram. Escitalopram is a moderate inhibitor of CYP2D6 and has
+been shown to raise desipramine (Norpramin) and metoprolol concentrations
+significantly.
+Vilazodone. Vilazodone dose should be reduced to 20 mg when
+
+
+
+
+<<<PAGE 1995>>>
+
+administered in the morning or in the evening. Administration after eating
+may reduce the GI adverse effects. Sertraline oral concentrate (1 mL = 20
+mg) has 12 percent alcohol content and must be diluted before use. When
+used to treat panic disorder, sertraline should be initiated at 25 mg to reduce
+the risk of provoking a panic attack.
+Paroxetine. Immediate-release paroxetine is available in scored 20-mg
+tablets; in unscored 10-, 30-, and 40-mg tablets; and as an orange-flavored
+10-mg/5-mL oral suspension. Paroxetine use for the treatment of depression
+is usually initiated at a dosage of 10 or 20 mg a day. An increase in the
+dosage should be considered when an adequate response is not seen in 1 to 3
+weeks. At that point, the clinician can initiate upward dose titration in 10-mg
+increments at weekly intervals to a maximum of 50 mg a day. Persons who
+experience GI upset may benefit from taking the drug with food. Paroxetine
+can be taken initially as a single daily dose in the evening; higher dosages
+may be divided into two doses per day.
+A delayed-release formulation of paroxetine, paroxetine CR, is available in
+12.5-, 25-, and 37.5-mg tablets. The starting dosages of paroxetine CR are 25
+mg/day for depression and 12.5 mg/day for panic disorder.
+Paroxetine is the SSRI most likely to produce a discontinuation syndrome,
+because plasma concentrations decrease rapidly in the absence of continuous
+dosing. Paroxetine use should be tapered gradually to limit the symptoms of
+abrupt discontinuation, with dosage reductions every 2 to 3 weeks.
+Fluvoxamine. Fluvoxamine is the only SSRI not approved by the FDA as
+an antidepressant. It is indicated for OCD. It is available in unscored 25-mg
+tablets and scored 50- and 100-mg tablets. The effective daily dosage range is
+50 to 300 mg a day. A usual starting dosage is 50 mg once a day at bedtime
+for the first week, after which the dosage can be adjusted according to the
+adverse effects and clinical response. Dosages above 100 mg a day may be
+divided into twice-daily dosing. A temporary dosage reduction or slower
+upward titration may be necessary if nausea develops over the first 2 weeks
+of therapy. Although fluvoxamine can also be administered as a single
+evening dose to minimize its adverse effects, its short half-life may lead to
+interdose withdrawal. An extended-release formulation is available in 100and 150-mg dose strengths. All fluvoxamine formulations should be
+
+
+
+
+<<<PAGE 1996>>>
+
+swallowed with food without chewing the tablet. Abrupt discontinuation of
+fluvoxamine may cause a discontinuation syndrome owing to its short halflife.
+Citalopram. Citalopram is available in 20- and 40-mg scored tablets and as
+a liquid (10 mg/5 mL). The usual starting dosage is 20 mg a day for the first
+week, after which it usually is increased to 40 mg a day. For elderly persons
+or persons with hepatic impairment, 20 mg a day is recommended. Tablets
+should be taken once daily in either the morning or the evening with or
+without food.
+Escitalopram. Escitalopram is available as 10- and 20-mg scored tablets, as
+well as an oral solution at a concentration of 5 mg/5 mL. The recommended
+dosage of escitalopram is 10 mg/day. In clinical trials, no additional benefit
+was noted when 20 mg/day was used.
+Vilazodone. Vilazodone is available as 10-, 20-, and 40-mg tablets. The
+recommended therapeutic dose of vilazodone is 40 mg once daily. Treatment
+should be titrated, starting with an initial dose of 10 mg once daily for 7 days,
+followed by 20 mg once daily for an additional 7 days, and then an increase
+to 40 mg once daily. Vilazodone should be taken with food. If vilazodone is
+taken without food, inadequate drug concentrations may result, and the
+drug’s effectiveness may be diminished. Vilazodone is not approved for use
+in children. The safety and efficacy of vilazodone in pediatric patients have
+not been studied. The patient’s age should not influence the dose, nor does
+mild or moderate hepatic impairment. Vilazodone has not been studied in
+patients with severe hepatic impairment. No dose adjustment is
+recommended in patients with mild, moderate, or severe renal impairment.
+Pregnancy and Breastfeeding. Except for paroxetine, the SSRIs are safe
+to take during pregnancy when deemed necessary for the treatment of the
+mother. There are no controlled human data regarding vilazodone use during
+pregnancy, nor are there human data regarding drug concentrations in breast
+milk. Transient QTc prolongation has been noted in newborns whose mother
+was being treated with an SSRI during pregnancy.
+
+
+
+
+<<<PAGE 2030>>>
+
+advised to avoid driving or using dangerous equipment if sedated by TCAs.
+Sympathomimetics. Tricyclic drug use with sympathomimetic drugs may
+cause serious cardiovascular effects.
+Oral Contraceptives. Birth control pills may decrease TCA plasma
+concentrations through the induction of hepatic enzymes.
+Other Drug Interactions. Nicotine may reduce TCA concentrations.
+Plasma concentrations may also be lowered by ascorbic acid, ammonium
+chloride, barbiturates, cigarette smoking, carbamazepine, chloral hydrate,
+lithium (Eskalith), and primidone (Mysoline). TCA plasma concentrations
+may be increased by concurrent use of acetazolamide (Diamox), sodium
+bicarbonate, acetylsalicylic acid, cimetidine, thiazide diuretics, fluoxetine,
+paroxetine, and fluvoxamine (Luvox). Plasma concentrations of the TCAs
+may rise three- to fourfold when administered concurrently with fluoxetine,
+fluvoxamine, and paroxetine.
+Laboratory Interferences
+The tricyclic compounds are present at low concentrations and are not likely
+to interfere with other laboratory assays. They may interfere with the
+determination of conventional neuroleptic blood concentrations because of
+their structural similarity and the low concentrations of some neuroleptics.
+Dosage and Clinical Guidelines
+Persons who intend to take TCAs should undergo routine physical and
+laboratory examinations, including a CBC, a WBC count with differential,
+and serum electrolytes with liver function tests. An ECG should be obtained
+for all persons, especially women older than 40 years of age and men older
+than 30 years of age. The TCAs are contraindicated in persons with a QTc
+greater than 450 milliseconds. The initial dose should be small and should be
+raised gradually. Because of the availability of highly effective alternatives to
+TCAs, a newer agent should be used if there is any medical condition that
+may interact adversely with the TCAs.
+Elderly persons and children are more sensitive to TCA adverse effects
+
+
+
+
+<<<PAGE 2091>>>
+
+Cyclosporine
+Desipramine
+Dicumarol
+Doxepin
+Doxycycline
+Ethosuximide
+Felbamate
+Fentanyl
+Fluphenazine
+Haloperidol
+Hormonal contraceptives
+Imipramine
+Lamotrigine
+Methadone
+Methsuximide
+Methylprednisolone
+Nimodipine
+Pancuronium
+Phensuximide
+Phenytoin
+Primidone
+Theophylline
+Valproate
+Warfarin
+Carbamazepine may increase drug
+plasma concentrations of
+Clomipramine
+Phenytoin
+Primidone
+
+Fluoxetine
+Fluvoxamine
+Gemfibrozil
+Itraconazole
+Ketoconazole
+Isoniazida
+Itraconazole
+Lamotrigine
+Loratadine
+Macrolides
+Nefazodone
+Nicotinamide
+Propoxyphene
+Terfenadine
+Troleandomycin
+Valproatea
+Verapamil
+Viloxazine
+Drugs that may decrease
+carbamazepine plasma
+concentrations
+Carbamazepine
+(autoinduction)
+Cisplatin
+Doxorubicin HCl
+Felbamate
+Phenobarbital
+Phenytoin
+Primidone
+Rifampinb
+Theophylline
+Valproate
+
+aIncreased concentrations of the active 10,11-epoxide.
+bDecreased concentrations of carbamazepine and increased concentrations of the 10,11-
+
+epoxide.
+Table by Carlos A. Zarate, Jr., M.D. and Mauricio Tohen, M.D.
+
+
+
+
+<<<PAGE 2122>>>
+
+Hyperacusis
+
+Myoclonus
+
+Nausea
+
+Delirium
+
+Difficulty concentrating
+
+Seizures
+
+Drug Interactions
+The most common and potentially severe benzodiazepine receptor agonist
+interaction is excessive sedation and respiratory depression occurring when
+benzodiazepines are administered concomitantly with other CNS depressants,
+such as alcohol, barbiturates, tricyclic and tetracyclic drugs, DRAs, opioids,
+and antihistamines. Ataxia and dysarthria may be likely to occur when
+lithium, antipsychotics, and clonazepam are combined. The combination of
+benzodiazepines and clozapine (Clozaril) has been reported to cause delirium
+and should be avoided. Cimetidine (Tagamet), disulfiram (Antabuse),
+isoniazid, estrogen, and oral contraceptives increase the plasma concentration
+of diazepam, chlordiazepoxide, clorazepate, and flurazepam. However,
+antacids may reduce the GI absorption of benzodiazepines. The plasma
+concentrations of triazolam and alprazolam are increased to potentially toxic
+concentrations by nefazodone (Serzone) and fluvoxamine (Luvox).
+The manufacturer of nefazodone recommends that the dosage of triazolam
+be lowered by 75 percent, and the dosage of alprazolam be lowered by 50
+percent, when given concomitantly with nefazodone. Over-the-counter
+preparations of the kava plant, advertised as a “natural tranquilizer,” can
+potentiate the action of benzodiazepine receptor agonists through synergistic
+overactivation of GABA receptors. Carbamazepine can lower the plasma
+concentration of alprazolam. Antacids and food may decrease the plasma
+concentrations of benzodiazepines, and smoking may increase the
+metabolism of benzodiazepines. The benzodiazepines may increase the
+plasma concentrations of phenytoin and digoxin (Lanoxin). The SSRIs may
+prolong and exacerbate the severity of zolpidem-induced hallucinations.
+Deaths have been reported when parental lorazepam is given with parental
+olanzapine.
+Dosage and Clinical Guidelines
+
+
+
+
+<<<PAGE 2147>>>
+
+Precautions and Adverse Events. Headache is the most common side
+effect of ramelteon. Other adverse effects may include somnolence, fatigue,
+dizziness, worsening insomnia, depression, nausea, and diarrhea. We should
+not use the drug in patients with severe hepatic impairment. It is also not
+recommended in patients with severe sleep apnea or severe chronic
+obstructive pulmonary disease. Prolactin levels may be increased in women.
+The drug should be used with caution, if at all, in nursing mothers and
+pregnant women.
+Ramelteon has been found sometimes to decrease blood cortisol and
+testosterone and to increase prolactin. Female patients should be monitored
+for the cessation of menses and galactorrhea, decreased libido, and fertility
+problems. The safety and effectiveness of ramelteon in children has not been
+established.
+Drug Interactions. CYP1A2 is the major isozyme involved in the hepatic
+metabolism of ramelteon. Accordingly, fluvoxamine (Luvox) and other
+CYP1A2 inhibitors may increase the side effects of ramelteon.
+Ramelteon should be administered with caution in patients taking CYP1A2
+inhibitors, potent CYP3A4 inhibitors such as ketoconazole, and strong
+CYP2C inhibitors such as fluconazole (Diflucan). No clinically meaningful
+interactions were found when ramelteon was coadministered with
+omeprazole, theophylline, dextromethorphan, midazolam, digoxin, and
+warfarin.
+Dosing and Clinical Guidelines. The usual dose of ramelteon is 8 mg
+within 30 minutes of going to bed. It should not be taken with or immediately
+after high-fat meals.
+Melatonin
+Melatonin (N-acetyl-5-methoxytryptamine) is a hormone produced mainly at
+night in the pineal gland. Ingested melatonin can reach and bind to
+melatonin-binding sites in the brains of mammals and produce somnolence
+when used at high doses. Melatonin is available as a dietary supplement and
+is not a medication. Few well-controlled clinical trials have been conducted
+to determine its effectiveness in treating such conditions as insomnia, jet lag,
+and sleep disturbances related to shift work.
+
+
+
+
+<<<PAGE 2172>>>
+
+flashes. The withdrawal symptoms usually resolve after 2 weeks. However, a
+protracted methadone abstinence syndrome is possible that may include
+restlessness and insomnia.
+The withdrawal symptoms associated with buprenorphine are similar to but
+less marked than those caused by methadone. In particular, buprenorphine is
+sometimes used to ease the transition from methadone to opioid receptor
+antagonists or abstinence because of the relatively mild withdrawal reaction
+associated with discontinuation of buprenorphine.
+Drug–Drug Interactions
+Opioid receptor agonists can potentiate the CNS-depressant effects of
+alcohol, barbiturates, benzodiazepines, other opioids, low-potency DRAs,
+tricyclic and tetracyclic drugs, and MAOIs. Carbamazepine (Tegretol),
+phenytoin (Dilantin), barbiturates, rifampin (Rimactane, Rifadin), and heavy
+long-term consumption of alcohol may induce hepatic enzymes, which may
+lower the plasma concentration of methadone or buprenorphine and thereby
+precipitate withdrawal symptoms. In contrast, however, hepatic enzyme
+induction may increase the plasma concentration of active levomethadyl
+metabolites and cause toxicity.
+Acute opioid withdrawal symptoms may be precipitated in persons on
+methadone maintenance therapy who take pure opioid receptor antagonists
+such as naltrexone, nalmefene (Revex, Selincro), and naloxone (Narcan);
+partial agonists such as buprenorphine; or mixed agonist–antagonists such as
+pentazocine (Talwin). These symptoms may be mitigated by the use of
+clonidine, a benzodiazepine, or both.
+Competitive inhibition of methadone or buprenorphine metabolism after
+short-term use of alcohol or administration of cimetidine (Tagamet),
+erythromycin, ketoconazole (Nizoral), fluoxetine (Prozac), fluvoxamine
+(Luvox), loratadine (Claritin), quinidine (Quinidex), and alprazolam (Xanax)
+may lead to higher plasma concentrations or a prolonged duration of action of
+methadone or buprenorphine. Medications that alkalinize the urine may
+reduce methadone excretion.
+Methadone maintenance may also increase plasma concentrations of
+desipramine (Norpramin, Pertofrane) and fluvoxamine. The use of
+methadone may increase zidovudine (Retrovir) concentrations, which
+
+

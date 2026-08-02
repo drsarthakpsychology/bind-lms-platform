@@ -1,0 +1,822 @@
+<<<PAGE 156>>>
+
+Catatonia
+There are two catatonia sub-types, a retarded or stuporous form with decreased psychomotor behaviour and an excited form, characterised by agitation, combativeness,
+impulsivity and apparently purposeless overactivity.1,2 The former tends to present as
+stupor: the key features include mutism, rigidity, marked psychomotor retardation,
+negativism, posturing, waxy flexibility, and catalepsy. While historically associated with
+schizophrenia, stupor is also seen in other psychiatric conditions such as depression
+and, less commonly, mania,3–8 alcohol9 or benzodiazepine withdrawal10 and conversion
+disorder.3,4,11–17 If psychiatric stupor is left untreated, physical health complications are
+unavoidable and develop rapidly. Prompt treatment is crucial to prevent serious complications such as dehydration, venous thrombosis, pulmonary embolism, pneumonia,
+and ultimately death.18
+A catatonic syndrome may be produced by a variety of systemic, neurological and
+toxic conditions, including developmental disorders such as autism, neurodegenerative
+conditions19,20 and the following:
+subarachnoid haemorrhages
+basal ganglia disorders
+■■ non-convulsive status epilepticus
+■■ locked-in and akinetic mutism states
+■■ endocrine and metabolic disorders, e.g. Wilson’s21
+■■ Prader–Willi syndrome
+■■ antiphospholipid syndrome22
+■■ autoimmune encephalitis23
+■■ systemic lupus erythematosus24
+■■ infections (especially CNS infections)
+■■ dementia
+■■ drug withdrawal and toxic drug states, e.g. after abrupt withdrawal of clozapine and
+withdrawal of zolpidem, benzodiazepines25 and many non-psychotropic medications,
+including medicines used in oncology.
+■■
+■■
+
+The treatment of stupor in the context of catatonia is somewhat dependent on its cause
+but should usually include benzodiazepines. Benzodiazepines alone are the drugs of
+choice for stupor occurring in the context of affective and conversion disorders.5,6,26 It is
+postulated that benzodiazepines may act by increasing GABAergic transmission or
+reducing levels of brain-derived neurotrophic factor.27 There is most clinical experience
+with lorazepam. Many patients will respond to standard doses (up to 4mg per day), but
+repeated and higher doses (between 8mg and 24mg per day) may be needed.28 One
+small, observational study of patients with catatonic stupor in the context of a mood
+disorder,5 either major depressive disorder or bipolar disorder, used a lorazepam-diazepam treatment protocol and reported a response in 10 of the 12 patients with intramuscular lorazepam 2–4mg. In another study using a very similar protocol, relief of symptoms
+was achieved in 18 out of 21 patients with catatonia caused by general medical conditions or substance misuse.29 Where benzodiazepines are effective, the benefit is of rapid
+onset. A test dose of zolpidem (10mg) may predict response to benzodiazepines,30 and
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  135
+
+
+
+
+<<<PAGE 160>>>
+
+20. Dhossche DM, et al. Catatonia in psychiatric illnesses, in SH Fatemi, PJ Clayton, eds. The medical basis of psychiatry. Totowa, NJ: Humana
+Press; 2008:471–486.
+21. Shetageri VN, et al. Case report: catatonia as a presenting symptom of Wilsons disease. Indian J Psychiatry 2011; 53 Suppl 5:S93–S94.
+22. Cardinal RN, et al. Psychosis and catatonia as a first presentation of antiphospholipid syndrome. Br J Psychiatry 2009; 195:272.
+23. Rogers JP, et al. Catatonia and the immune system: a review. Lancet Psychiatry 2019; 6:620–630.
+24. Pustilnik S, et al. Catatonia as the presenting symptom in systemic lupus erythematosus. J Psychiatr Pract 2011; 17:217–221.
+25. Lander M, et al. Review of withdrawal catatonia: what does this reveal about clozapine? Trans Psychiatry 2018; 8:139.
+26. Sienaert P, et al. Adult catatonia: etiopathogenesis, diagnosis and treatment. Neuropsychiatry 2013; 3:391–399.
+27. Huang TL, et al. Lorazepam reduces the serum brain-derived neurotrophic factor level in schizophrenia patients with catatonia. Prog
+Neuropsychopharmacol Biol Psychiatry 2009; 33:158–159.
+28. Fink M, et al. Neuroleptic malignant syndrome is malignant catatonia, warranting treatments efficacious for catatonia. Prog
+Neuropsychopharmacol Biol Psychiatry 2006; 30:1182–1183.
+29. Lin CC, et al. The lorazepam and diazepam protocol for catatonia due to general medical condition and substance in liaison psychiatry. PLoS
+One 2017; 12:e0170452.
+30. Javelot H, et al. Zolpidem test and catatonia. J Clin Pharm Ther 2015; 40:699–701.
+31. Bastiampillai T, et al. Treatment refractory chronic catatonia responsive to zolpidem challenge. Aust N Z J Psychiatry 2016; 50:98.
+32. Peglow S, et al. Treatment of catatonia with zolpidem. J Neuropsychiatry Clin Neurosci 2013; 25:E13.
+33. Bush G, et al. Catatonia. II: Treatment with lorazepam and electroconvulsive therapy. Acta Psychiatr Scand 1996; 93:137–143.
+34. Rosebush PI, et al. Catatonia: re-awakening to a forgotten disorder. Mov Disord 1999; 14:395–397.
+35. Ungvari GS, et al. Lorazepam for chronic catatonia: a randomized, double-blind, placebo-controlled cross-over study. Psychopharmacology
+1999; 142:393–398.
+36. Dutt A, et al. Phenomenology and treatment of Catatonia: a descriptive study from north India. Indian J Psychiatry 2011; 53:36–40.
+37. Gibson RC, et al. Benzodiazepines for catatonia in people with schizophrenia and other serious mental illnesses. Cochrane Database Syst Rev
+2008; CD006570.
+38. Luchini F, et al. Catatonia and neuroleptic malignant syndrome: two disorders on a same spectrum? Four case reports. J Nerv Ment Dis 2013;
+201:36–42.
+39. Mishima T, et al. [Diazepam-responsive malignant catatonia in a patient with an initial clinical diagnosis of neuroleptic malignant syndrome:
+a case report]. Brain Nerve 2011; 63:503–507.
+40. Rodriguez S, et al. Neuroleptic malignant syndrome or catatonia? A case report. J Crit Care Med 2020; 6:190–193.
+41. Fink M. Expanding the catatonia tent: recognizing electroconvulsive therapy responsive syndromes. J Ect 2020: [Epub ahead of print].
+42. Mann SC, et al. Catatonia, malignant catatonia, and neuroleptic malignant syndrome. Curr Psychiatry Rev 2013; 9:111–119.
+43. Taylor MA, et al. Catatonia in psychiatric classification: a home of its own. Am J Psychiatry 2003; 160:1233–1241.
+44. Cristancho P, et al. Successful use of right unilateral ECT for catatonia: a case series. J Ect 2014; 30:69–72.
+45. Philbin D, et al. Catatonic schizophrenia: therapeutic challenges and potentially a new role for electroconvulsive therapy? BMJ Case Rep
+2013; 2013.
+46. Takebayashi M. [Electroconvulsive therapy in schizophrenia]. Nihon Rinsho 2013; 71:694–700.
+47. Oviedo G, et al. Trends in the administration of electroconvulsive therapy for schizophrenia in Colombia: Descriptive study and literature
+review. Eur Arch Psychiatry Clin Neurosci 2013; 263 Suppl 1:S98.
+48. Pompili M, et al. Indications for electroconvulsive treatment in schizophrenia: a systematic review. SchizophrRes 2013; 146:1–9.
+49. Ogando Portilla N, et al. Electroconvulsive therapy as an effective treatment in neuroleptic malignant syndrome: purposely a case. Eur
+Psychiatry 2013; 28 Suppl 1:1.
+50. Unal A, et al. Effective treatment of catatonia by combination of benzodiazepine and electroconvulsive therapy. J Ect 2013; 29:206–209.
+51. Kaliora SC, et al. The practice of electroconvulsive therapy in Greece. J ECT 2013; 29:219–224.
+52. Girardi P, et al. Life-saving electroconvulsive therapy in a patient with near-lethal catatonia. Riv Psichiatr 2012; 47:535–537.
+53. Kumar V, et al. Electroconvulsive therapy in pregnancy. Indian J Psychiatry 2011; 53 Suppl 5:S100–S101.
+54. Weiss M, et al. Treatment of catatonia with electroconvulsive therapy in adolescents. J Child Adolesc Psychopharmacol 2012; 22:96–100.
+55. Bauer J, et al. Should the term catatonia be explicitly included in the ICD-10 description of acute transient psychotic disorder F23.0? Nord J
+Psychiatry 2012; 66:68–69.
+56. Mohammadbeigi H, et al. Electroconvulsive therapy in single manic episodes: a case series. Afr J Psychiatry 2011; 14:56–59.
+57. Dragasek J. [Utilisation of electroconvulsive therapy in treatment of depression disorders]. Psychiatrie 2011; 15:1211–1219.
+58. Sienaert P, et al. A clinical review of the treatment of catatonia. Front Psychiatry 2014; 5:181.
+59. Luchini F, et al. Electroconvulsive therapy in catatonic patients: efficacy and predictors of response. World J Psychiatry 2015; 5:182–192.
+60. Lloyd JR, et al. Electroconvulsive therapy for patients with catatonia: current perspectives. Neuropsychiatr Dis Treat 2020; 16:2191–2208.
+61. Van Waarde JA, et al. Electroconvulsive therapy for catatonia: treatment characteristics and outcomes in 27 patients. J Ect 2010;
+26:248–252.
+62. Jain A, et al. Catatonic Schizophrenia. StatPearls. Treasure Island (FL): statPearls Publishing Copyright © 2020, StatPearls Publishing LLC.
+2020.
+63. Kellner CH, et al. Electroconvulsive therapy for catatonia. Am J Psychiatry 2010; 167:1127–1128.
+64. Van Den EF, et al. The use of atypical antipsychotics in the treatment of catatonia. Eur Psychiatry 2005; 20:422–429.
+65. Caroff SN, et al. Movement disorders associated with atypical antipsychotic drugs. J Clin Psychiatry 2002; 63 Suppl 4:12–19.
+66. Guzman CS, et al. Treatment of periodic catatonia with atypical antipsychotic, olanzapine. Psychiatry Clin Neurosci 2008; 62:482.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  139
+
+
+
+
+<<<PAGE 471>>>
+
+450  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+References
+1. Schieveld JNM, et al. On benzodiazepines, paradoxical agitation, hyperactive delirium, and chloride homeostasis. Crit Care Med 2018;
+46:1558–1559.
+2. Dietch JT, et al. Aggressive dyscontrol in patients treated with benzodiazepines. J Clin Psychiatry 1988; 49:184–188.
+3. Rothschild AJ, et al. Comparison of the frequency of behavioral disinhibition on alprazolam, clonazepam, or no benzodiazepine in hospitalized psychiatric patients. J Clin Psychopharmacol 2000; 20:7–11.
+4. Bramness JG, et al. Flunitrazepam: psychomotor impairment, agitation and paradoxical reactions. Forensic Sci Int 2006; 159:83–91.
+5. O’Sullivan GH, et al. Safety and side-effects of alprazolam. Controlled study in agoraphobia with panic disorder. Br J Psychiatry 1994;
+165:79–86.
+6. Gardner DL, et al. Alprazolam-induced dyscontrol in borderline personality disorder. Am J Psychiatry 1985; 142:98–100.
+7. Albrecht B, et al. Motivational drive and alprazolam misuse: a recipe for aggression? Psychiatry Res 2016; 240:381–389.
+8. Albrecht B, et al. Benzodiazepine use and aggressive behaviour: a systematic review. Aust N Z J Psychiatry 2014; 48:1096–1114.
+9. Sabe M, et al. Zolpidem stimulant effect: induced mania case report and systematic review of cases. Prog Neuropsychopharmacol Biol
+Psychiatry 2019; 94:109643.
+10. Poceta JS. Zolpidem ingestion, automatisms, and sleep driving: a clinical and legal case series. JClinSleep Med 2011; 7:632–638.
+11. Pressman MR. Sleep driving: sleepwalking variant or misuse of z-drugs? Sleep MedRev 2011; 15:285–292.
+12. Daley C, et al. ‘I did what?’ Zolpidem and the courts. J Am Acad Psychiatry Law 2011; 39:535–542.
+13. Bond AJ. Drug-induced behavioural disinhibition incidence, mechanisms and therapeutic implications. CNS Drugs 1998; 9:41–57.
+14. Hakimi Y, et al. Paradoxical adverse drug reactions: descriptive analysis of French reports. Eur J Clin Pharmacol 2020; 76:1169–1174.
+15. Hawkridge SM, et al. A risk-benefit assessment of pharmacotherapy for anxiety disorders in children and adolescents. Drug Saf 1998;
+19:283–297.
+16. Kandemir H, et al. Behavioral disinhibition, suicidal ideation, and self-mutilation related to clonazepam. J Child Adolesc Psychopharmacol
+2008; 18:409.
+17. Daderman AM, et al. Flunitrazepam (Rohypnol) abuse in combination with alcohol causes premeditated, grievous violence in male juvenile
+offenders. J Am Acad Psychiatry Law 1999; 27:83–99.
+18. van der Bijl P, et al. Disinhibitory reactions to benzodiazepines: a review. J Oral Maxillofac Surg 1991; 49:519–523.
+19. McKenzie WS, et al. Paradoxical reaction following administration of a benzodiazepine. J Oral MaxillofacSurg 2010; 68:3034–3036.
+20. Wilson KE, et al. Complications associated with intravenous midazolam sedation in anxious dental patients. Prim Dent Care 2011;
+18:161–166.
+21. Short TG, et al. Paradoxical reactions to benzodiazepines–a genetically determined phenomenon? Anaesth Intensive Care 1987;
+15:330–331.
+22. Weisman AM, et al. Effects of clorazepate, diazepam, and oxazepam on a laboratory measurement of aggression in men. Int Clin
+Psychopharmacol 1998; 13:183–188.
+23. Blair RJ, et al. Selective impairment in the recognition of anger induced by diazepam. Psychopharmacology (Berl) 1999; 147:335–338.
+24. Wallace PS, et al. Reduction of appeasement-related affect as a concomitant of diazepam-induced aggression: evidence for a link between
+aggression and the expression of self-conscious emotions. Aggress Behav 2009; 35:203–212.
+25. Tae CH, et al. Paradoxical reaction to midazolam in patients undergoing endoscopy under sedation: incidence, risk factors and the effect of
+flumazenil. Dig Liver Dis 2014; 46:710–715.
+26. Bond AJ, et al. Behavioural aggression in panic disorder after 8 weeks’ treatment with alprazolam. J Affect Disord 1995; 35:117–123.
+27. Paton C. Benzodiazepines and disinhibition: a review. Psychiatric Bull 2002; 26:460–462.
+
+
+
+
+<<<PAGE 686>>>
+
+Insomnia – short-term use (up
+to 13 weeks)
+
+Generalised anxiety disorder
+Dose adjustment based on renal
+function (see product
+information)25
+
+Insomnia (short-term use – up
+to 4 weeks)
+
+Insomnia (short-term use – up
+to 4 weeks)
+
+Melatonin
+
+Pregabalin
+
+Zolpidem
+
+Zopiclone
+
+3.75mg nocte
+
+5mg nocte
+
+Usually 25mg bd (increase by
+25mg bd weekly)
+Up to 75mg bd (if healthy and
+normal renal function)
+
+2mg (modified release) once daily
+(1–2 hours before bedtime)
+
+0.5mg daily
+
+3.75–7.5mg nocte
+
+5mg nocte
+
+Usually 150mg daily*
+Up to 150mg bd (if healthy and
+normal renal function)
+
+0.5–2mg daily*
+
+7.5mg nocte
+
+5mg nocte
+
+150–300mg/day*
+
+2mg/day
+
+*There is no specific information available in the literature for these drug doses in elderly patients – the doses stated are a guide only. Where there are no data, the
+maximum doses are conservative and may be exceeded if the drug is well tolerated and following clinician’s assessment.
+bs, bis die (twice a day); mane, morning; nocte, at night; prn, pro re nata (as required); tds, ter die sumendum (three times a day).
+
+PRN only – avoid regular use
+due to short half-life and risk of
+dependence
+
+Lorazepam
+
+
+
+
+<<<PAGE 750>>>
+
+Hepatic and renal impairment  729
+
+Table 8.3 (Continued)
+Drug
+
+Comments
+
+Valproate
+
+74
+
+Highly protein bound and hepatically metabolised. Dosage reduction with close
+monitoring of LFTs in moderate hepatic impairment. Use plasma levels (measure free
+levels − total concentrations may appear to be normal) to guide dosage. Caution
+advised. Contraindicated in severe and/or active hepatic impairment, or family history
+of severe impairment; impairment of usual metabolic pathway can lead to generation
+of hepatotoxic metabolites via alternative pathway. Risk of liver toxicity is increased in
+people with hepatic insufficiency if salicylates are used concomitantly. Associated
+with elevated LFTs and serious hepatotoxicity including fulminant hepatic failure
+(sometimes fatal). Mitochondrial disease, learning disability, polypharmacy, metabolic
+disorders and underlying hepatic disease may be risk factors. Particularly hepatotoxic
+in very young children. The greatest risk is in the first three months of treatment.
+
+Stimulants in hepatic impairment5,6,75
+Recommendations for the use of stimulant medications in hepatic impairment are outlined in Table 8.4.
+Table 8.4 Stimulants in hepatic impairment
+Atomoxetine76
+
+Reduce initial and target dose by 50% in moderate impairment, and by 75% in
+severe impairment. Very rare reports of liver toxicity, manifested by elevated hepatic
+enzymes, and raised bilirubin with jaundice. SPC states ‘discontinue in patients with
+jaundice or laboratory evidence of liver injury, and do not restart’.
+
+Methylphenidate77
+
+Rare reports of liver dysfunction and hypersensitivity reactions.
+
+Dexamphetamine/
+lisdexamphetamine78,79
+
+Little experience in liver disease, manufacturers recommend cautious dose titration.
+Very rarely associated with abnormal liver function, two case reports of
+hepatotoxicity.80,81
+
+Sedatives in hepatic impairment
+Table 8.5 summarises recommended sedatives in hepatic impairment.
+
+Benzodiazepines
+
+Extensively hepatically metabolised. Prolonged duration of effect particularly for drugs
+with active metabolites (diazepam, midazolam, clonazepam). Lorazepam, oxazepam and
+temazepam do not have active metabolites and are preferred; lorazepam is considered
+the best tolerated in advanced liver disease19 and is commonly used in alcohol
+withdrawal. Serum enzyme elevations are uncommon and liver injury very rare.19
+
+Promethazine6
+
+Extensive hepatic metabolism. Manufacturers recommend caution in liver
+impairment. Jaundice reported with high doses, no reports of LFT abnormalities or
+toxicity with lower doses.19
+
+Z drugs6,82,83
+
+Hepatically metabolised, but all have a relatively short half-life (1–7 hours). Reduce
+initial doses in mild to moderate impairment (use zopiclone 3.75mg, zolpidem 5mg,
+zaleplon 5mg), avoid in severe impairment. Zaleplon is subject to significant first-pass
+metabolism and zolpidem plasma concentrations and half-life are significantly
+increased in hepatic impairment; these agents should be used with caution.84 Although
+zopiclone has the longer half-life, this may not be clinically relevant except in severe
+disease.83 Zopiclone and zaleplon have not been associated with hepatotoxicity. There
+are rare reports of abnormal LFTs and a single case of liver injury with zolpidem.19
+(Continued)
+
+CHAPTER 8
+
+Table 8.5 Sedatives in hepatic impairment
+
+
+
+
+<<<PAGE 768>>>
+
+Hepatic and renal impairment  747
+
+Table 8.11 (Continued)
+Drug
+
+Comments
+
+Promethazine22,23,25,32,180
+
+Dose reduction usually not necessary; however, promethazine has a long half-life so
+monitor for excessive sedative effects in patients with renal impairment.
+Manufacturer advises caution in renal impairment. There is a case report of interstitial
+nephritis in a patient who was a poor metaboliser of promethazine.
+
+Temazepam22,23,25,32
+
+<2% excreted unchanged in urine. In renal impairment the inactive metabolite can
+accumulate. Monitor for excessive sedative effects. Dosing: GFR 20–50mL/min, dose
+as normal renal function; GFR <20mL/min, dose as in normal renal function but start
+with 5mg.
+
+Zolpidem22,23,25,154,181
+
+Clearance moderately reduced in renal impairment. No dose adjustment required in
+renal impairment. Zolpidem 1mg has been used to treat insomnia in patients on
+haemodialysis. Ongoing RCT of zolpidem to aid sleep in haemodialysis patients with
+pruritis.182 Associated with acute pyelonephritis in women.183
+
+Zopiclone22,23,25,184,185
+
+Less than 5% excreted unchanged in urine. Manufacturer states no accumulation of
+zopiclone in renal impairment but suggests starting at 3.75mg. Dosing: GFR <10mL/
+min, start with lower dose. Interstitial nephritis reported rarely.
+
+Drug
+
+Comments
+
+Donepezil23,25,186–188
+
+17% excreted unchanged in urine. Dosing is as in normal renal function for GFR
+<10–50mL/min. Manufacturer states that clearance not affected by renal impairment.
+Single dose studies find similar pharmacokinetics in moderate and severe renal
+impairment compared with healthy controls. Has been used at a dose of 3mg/day in
+an elderly patient with Alzheimer’s dementia on dialysis. Single case of
+rhabdomyolysis causing acute renal failure.189
+
+Galantamine23,25
+
+18–22% is excreted unchanged in urine. Dose as in normal renal function for GFR
+10–50mL/min and at GFR <10mL/min start at a low dose and increase slowly.
+Manufacturer contraindicates use in GFR <10mL/min. Plasma levels may be increased
+in patients with moderate and severe renal impairment.
+
+Memantine22,23,190
+
+Manufacturers recommend a 10mg dose if GFR 5–29mL/min; 10mg daily for 7 days
+then increased to 20mg daily if tolerated for GFR >30–49mL/min. Renal tubular
+acidosis, severe urinary tract infections and alkalisation of urine (e.g. by drastic
+dietary changes) can increase plasma levels of memantine. Acute renal failure has
+been reported with memantine.
+
+Rivastigmine23,25
+
+0% excreted unchanged in urine. Dosing advice for GFR <50mL/min start at a low
+dose and gradually increase. Steady state plasma concentrations are not affected by
+renal function.191
+
+CHAPTER 8
+
+Table 8.12 Anti-dementia drugs in renal impairment
+
+
+
+
+<<<PAGE 774>>>
+
+131. Fillastre JP, et al. Pharmacokinetics of lamotrigine in patients with renal impairment: influence of haemodialysis. Drugs Exp Clin Res 1993;
+19:25–32.
+132. Schaub JE, et al. Multisystem adverse reaction to lamotrigine. Lancet 1994; 344:481.
+133. Wootton R, et al. Comparison of the pharmacokinetics of lamotrigine in patients with chronic renal failure and healthy volunteers. Br J
+Clin Pharmacol 1997; 43:23–27.
+134. Bansal AD, et al. Use of antiepileptic drugs in patients with chronic kidney disease and end stage renal disease. Seminars in Dialysis 2015;
+28:404–412.
+135. Gitlin M. Lithium and the kidney: an updated review. Drug Saf 1999; 20:231–243.
+136. Lepkifker E, et al. Renal insufficiency in long-term lithium treatment. J Clin Psychiatry 2004; 65:850–856.
+137. McKnight RF, et al. Lithium toxicity profile: a systematic review and meta-analysis. Lancet 2012; 379:721–728.
+138. Shine B, et al. Long-term effects of lithium on renal, thyroid, and parathyroid function: a retrospective analysis of laboratory data. Lancet
+2015; 386:461–468.
+139. Clos S, et al. Long-term effect of lithium maintenance therapy on estimated glomerular filtration rate in patients with affective disorders: a
+population-based cohort study. Lancet Psychiatry 2015; 2:1075–1083.
+140. Schoot TS, et al. Systematic review and practical guideline for the prevention and management of the renal side effects of lithium therapy.
+Eur Neuropsychopharmacol 2020; 31:16–32.
+141. Davis J, et al. Lithium and nephrotoxicity: a literature review of approaches to clinical management and risk stratification. BMC Nephrol
+2018; 19:305.
+142. Engels N, et al. Successful lithium treatment in a patient on hemodialysis. Bipolar Disorders 2019; 21:285–287.
+143. Smith GC, et al. Anticonvulsants as a cause of Fanconi syndrome. Nephrol Dial Transplant 1995; 10:543–545.
+144. Fukuda Y, et al. Immunologically mediated chronic tubulo-interstitial nephritis caused by valproate therapy. Nephron 1996; 72:328–329.
+145. Watanabe T, et al. Secondary renal Fanconi syndrome caused by valproate therapy. Pediatr Nephrol 2005; 20:814-817.
+146. Zaki EL, et al. Renal injury from valproic acid: case report and literature review. Pediatr Neurol 2002; 27:318–319.
+147. Tanaka H, et al. Distal type of renal tubular acidosis after anti-epileptic therapy in a girl with infantile spasms. Clin Exp Nephrol 1999;
+3:311–313.
+148. Knorr M, et al. Fanconi syndrome caused by antiepileptic therapy with valproic acid. Epilepsia 2004; 45:868–871.
+149. Rahman MH, et al. Acute hemolysis with acute renal failure in a patient with valproic acid poisoning treated with charcoal hemoperfusion.
+Hemodial Int 2006; 10:256–259.
+150. Koga S, et al. Risk factors for sodium valproate-induced renal tubular dysfunction. Clin Exp Nephrol 2018; 22:420–425.
+151. Hayes JF, et al. Adverse renal, endocrine, hepatic, and metabolic events during maintenance mood stabilizer treatment for bipolar disorder:
+a population-based cohort study. PLoS Med 2016; 13:e1002058.
+152. Kessing LV, et al. Continuation of lithium after a diagnosis of chronic kidney disease. Acta Psychiatr Scand 2017; 136:615–622.
+153. Pentikainen PJ, et al. Pharmacokinetics of chlormethiazole in healthy volunteers and patients with cirrhosis of the liver. Eur J Clin
+Pharmacol 1980; 17:275–284.
+154. Dashti-Khavidaki S, et al. Comparing effects of clonazepam and zolpidem on sleep quality of patients on maintenance hemodialysis. Iran J
+Kidney Dis 2011; 5:404–409.
+155. Sadjadi SA, et al. Allergic interstitial nephritis due to diazepam. Arch Intern Med 1987; 147:579.
+156. Sunovion Pharmaceuticals Inc. Highlights of Prescribing Information. LUNESTA® (eszopiclone) tablets, for oral use 2020; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2014/021476s030lbl.pdf.
+157. Blum RA, et al. Pharmacokinetics of gabapentin in subjects with various degrees of renal function. Clin Pharmacol Ther 1994;
+56:154–159.
+158. Miller A, et al. Gabapentin toxicity in renal failure: the importance of dose adjustment. Pain Med 2009; 10:190–192.
+159. Upjohn UK Limited. Summary of product characteristics. Neurontin 600mg film-coated tablets 2020; https://www.medicines.org.uk/emc/
+product/3197/smpc.
+160. Yeddi A, et al. Myoclonus and altered mental status induced by single dose of gabapentin in a patient with end-stage renal disease: a case
+report and literature review. Am J Ther 2019; 26:e768–e770.
+161. Ishida JH, et al. Gabapentin and pregabalin use and association with adverse outcomes among hemodialysis patients. J Am Soc Nephrol
+2018; 29:1970–1978.
+162. Gobo-Oliveira M, et al. Gabapentin versus dexchlorpheniramine as treatment for uremic pruritus: a randomised controlled trial. Eur J
+Dermatol 2018; 28:488–495.
+163. Gunal AI, et al. Gabapentin therapy for pruritus in haemodialysis patients: a randomized, placebo-controlled, double-blind trial. Nephrol
+Dial Transplant 2004; 19:3137–3139.
+164. Beladi Mousavi SS, et al. The effect of gabapentin on muscle cramps during hemodialysis: a double-blind clinical trial. Saudi J Kidney Dis
+Transpl 2015; 26:1142–1148.
+165. Razazian N, et al. Gabapentin versus levodopa-c for the treatment of restless legs syndrome in hemodialysis patients: a randomized clinical
+trial. Saudi J Kidney Dis Transpl 2015; 26:271–278.
+166. Rossi GM, et al. Randomized trial of two after-dialysis gabapentin regimens for severe uremic pruritus in hemodialysis patients. Intern
+Emerg Med 2019; 14:1341–1346.
+167. Eisai Inc. Highlights of Prescribing Information. Dayvigo (lemborexant) tablets for oral use [controlled substance schedule pending] 2019;
+https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/212028s000lbl.pdf.
+168. Huang CE, et al. Intramuscular lorazepam in catatonia in patients with acute renal failure: a report of two cases. Chang Gung Med J 2010;
+33:106–109.
+
+CHAPTER 8
+
+Hepatic and renal impairment  753
+
+
+
+
+<<<PAGE 775>>>
+
+CHAPTER 8
+
+754  The Maudsley® Prescribing Guidelines in Psychiatry
+
+169. Reynolds HN, et al. Hyperlactatemia, increased osmolar gap, and renal dysfunction during continuous lorazepam infusion. Crit Care Med
+2000; 28:1631–1634.
+170. Verbeeck RK, et al. Impaired elimination of lorazepam following subchronic administration in two patients with renal failure. Br J Clin
+Pharmacol 1981; 12:749–751.
+171. Yaucher NE, et al. Propylene glycol-associated renal toxicity from lorazepam infusion. Pharmacotherapy 2003; 23:1094–1099.
+172. Zar T, et al. Acute kidney injury, hyperosmolality and metabolic acidosis associated with lorazepam. Nat Clin Pract Nephrol 2007;
+3:515–520.
+173. Hayman M, et al. Acute tubular necrosis associated with propylene glycol from concomitant administration of intravenous lorazepam and
+trimethoprim-sulfamethoxazole. Pharmacotherapy 2003; 23:1190–1194.
+174. Upjohn UK Limited. Lyrica 25mg 50mg 75mg 100mg 150mg 200mg 225mg and 300mg hard capsules 2020; https://www.medicines.org.
+uk/emc/product/10303/smpc.
+175. Desai A, et al. Gabapentin or pregabalin induced myoclonus: a case series and literature review. J Clin Neurosci 2019; 61:225–234.
+176. Du YT, et al. Seizure induced by sudden cessation of pregabalin in a patient with chronic kidney disease. BMJ Case Rep 2017;
+2017:bcr2016219158.
+177. Foroutan N, et al. Comparison of pregabalin with doxepin in the management of uremic pruritus: a randomized single blind clinical trial.
+Hemodial Int 2017; 21:63–71.
+178. Otsuki T, et al. Efficacy and safety of pregabalin for the treatment of neuropathic pain in patients undergoing hemodialysis. Clin Drug
+Investig 2017; 37:95–102.
+179. Murray TG, et al. Renal disease, age, and oxazepam kinetics. Clin Pharmacol Ther 1981; 30:805–809.
+180. Leung N, et al. Acute kidney injury in patients with inactive cytochrome P450 polymorphisms. Ren Fail 2009; 31:749–752.
+181. Drover DR. Comparative pharmacokinetics and pharmacodynamics of short-acting hypnosedatives: zaleplon, zolpidem and zopiclone.
+Clin Pharmacokinet 2004; 43:227–238.
+182. Rehman IU, et al. A randomized controlled trial for effectiveness of zolpidem versus acupressure on sleep in hemodialysis patients having
+chronic kidney disease-associated pruritus. Medicine (Baltimore) 2018; 97:e10764.
+183. Hsu FG, et al. Use of zolpidem and risk of acute pyelonephritis in women: a population-based case–control study in Taiwan. J Clin
+Pharmacol 2017; 57:376–381.
+184. Goa KL, et al. Zopiclone. A review of its pharmacodynamic and pharmacokinetic properties and therapeutic efficacy as an hypnotic. Drugs
+1986; 32:48–65.
+185. Hussain N, et al. Zopiclone-induced acute interstitial nephritis. Am J Kidney Dis 2003; 41:E17.
+186. Suwata J, et al. New acetylcholinesterase inhibitor (donepezil) treatment for Alzheimer’s disease in a chronic dialysis patient. Nephron
+2002; 91:330–332.
+187. Nagy CF, et al. Steady-state pharmacokinetics and safety of donepezil HCl in subjects with moderately impaired renal function. Br J Clin
+Pharmacol 2004; 58 (Suppl 1):18–24.
+188. Tiseo PJ, et al. An evaluation of the pharmacokinetics of donepezil HCl in patients with moderately to severely impaired renal function. Br
+J Clin Pharmacol 1998; 46 (Suppl 1):56–60.
+189. Sahin OZ, et al. A rare case of acute renal failure secondary to rhabdomyolysis probably induced by donepezil. Case Rep Nephrol 2014;
+2014:214359.
+190. Periclou A, et al. Pharmacokinetic study of memantine in healthy and renally impaired subjects. Clin Pharmacol Ther 2006; 79:134–143.
+191. Lefevre G, et al. Effects of renal impairment on steady-state plasma concentrations of Rivastigmine: a population pharmacokinetic analysis
+of capsule and patch formulations in patients with Alzheimer’s disease. Drugs Aging 2016; 33:725–736.
+192. AMAG Pharmaceutical Inc. Highlights of prescribing information. Vyleesi (bremelanotide injection) for subcutaneous use 2019; https://
+www.accessdata.fda.gov/drugsatfda_docs/label/2019/210557s000lbl.pdf.
+193. Nelson ME, et al. Melanotan II injection resulting in systemic toxicity and rhabdomyolysis. Clin Toxicol (Phila) 2012; 50:1169–1173.
+194. Teva Pharmaceuticals USA Inc. Highlights of prescribing information. Austedo (deutetrabenazine) tablets for oral use 2020; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2017/209885lbl.pdf.
+195. Lincoln Medical Limited. Wakix 4.5mg/18mg film-coated tablets 2016; https://www.medicines.org.uk/emc/product/7402.
+196. Bioprojet Pharma. Highlights of prescribing information. Wakix (pitolisant) tablets for oral use 2019; https://www.accessdata.fda.gov/
+drugsatfda_docs/label/2019/211150s000lbl.pdf.
+197. Smith WB, et al. Effect of renal impairment on the pharmacokinetics of prucalopride: a single-dose open-label Phase I study. Drug Des
+Devel Ther 2012; 6:407–415.
+198. Shire Pharmaceuticals Limited. Resolor 1mg and 2mg film-coated tablets 2019; https://www.medicines.org.uk/emc/product/584/smpc.
+199. Sivabalasundaram V, et al. Prucalopride-associated acute tubular necrosis. World J Clin Cases 2014; 2:380–384.
+200. Jazz Pharmaceuticals UK. Sunosi 75mg and 140mg film-coated tablets 2020; https://www.medicines.org.uk/emc/product/11017/smpc.
+201. Zomorodi K, et al. Single-dose pharmacokinetics and safety of solriamfetol in participants with normal or impaired renal function and with
+end-stage renal disease requiring hemodialysis. J Clin Pharmacol 2019; 59:1120–1129.
+202. Neurocrine Biosciences Inc. Highlights of prescribing information. Ingrezza (valbenazine) capsules for oral use 2020; https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/209241lbl.pdf.
+203. Gregg LP, et al. Pharmacologic and psychological interventions for depression treatment in patients with kidney disease. Curr Opin
+Nephrol Hypertens 2020; 29:457–464.
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 900>>>
+
+Psychotropic drugs in special conditions  879
+
+Table 13.1 (Continued)
+
+Drug or drug group
+
+Toxicity in
+overdose
+
+Smallest dose likely
+to cause death
+
+Methadone104,105
+
+High
+
+20–50mg may be fatal in
+non-users. Co-ingestion of
+benzodiazepines increases
+toxicity.
+
+Drowsiness, nausea, hypotension,
+respiratory depression, coma,
+rhabdomyolysis.
+
+Modafinil106–108
+
+Low
+
+Unclear, but no fatalities
+reported.
+Overdoses of >6g have not
+caused death.
+
+Tachycardia, insomnia, agitation, anxiety,
+nausea, hypertension, dystonia.
+
+Pregabalin109,110
+
+Low
+
+No deaths reported.One
+overdose of 8.4g caused
+unconsciousness and coma.
+
+May be asymptomatic.
+Sedation and coma may occur.
+
+Suvorexant108
+
+Low
+
+Unclear. No deaths reported.
+
+Sedation, vomiting.
+
+Zolpidem111,112
+
+Low
+
+Unclear. Probably >200mg.
+Fatality rare in those taking
+zolpidem alone.
+
+Drowsiness, agitation, respiratory
+depression, tachycardia, coma.
+
+Zopiclone102,113,114
+
+Low
+
+Unclear. Probably >100mg.
+Fatality rare in those taking
+zopiclone alone.
+
+Ataxia, nausea, diplopia, drowsiness,
+coma.
+
+ECG, electrocardiogram; GI, gastrointestinal; MAOI, monoamine oxidase inhibitor; MI, myocardial infarction; NMS,
+neuroleptic malignant syndrome; SPC, summary of product characteristics; SSRI, selective serotonin reuptake
+inhibitor.
+High = Less than 1 week’s supply likely to cause serious toxicity or death.
+Moderate = 1–4 weeks’ supply likely to cause serious toxicity or death.
+Low = Death or serious toxicity unlikely even if more than 1 month’s supply taken.
+
+References
+1. Howland RH Critical appraisal and update on the clinical utility of agomelatine, a melatonergic agonist, for the treatment of major depressive disease in adults. Neuropsychiatr Dis Treat 2009; 5:563–576.
+2. Wong A, et al. Agomelatine overdose and related toxicity. Toxicology Communications 2018; 2:62–65.
+3. Buckley NA, et al. ‘Atypical’ antidepressants in overdose: clinical considerations with respect to safety. Drug Saf 2003; 26:539–551.
+4. Mercerolle M, et al. A fatal case of bupropion (Zyban) overdose. J Anal Toxicol 2008; 32:192–196.
+5. Murray B, et al. Single-agent bupropion exposures: clinical characteristics and an atypical cause of serotonin toxicity. J Med Toxicol 2020;
+16:12–16.
+6. Overberg A, et al. Toxicity of bupropion overdose compared with selective serotonin reuptake inhibitors. Pediatrics 2019; 144:e20183295.
+7. Zhu Y, et al. Atypical findings in massive bupropion overdose: a case report and discussion of psychopharmacologic issues. J Psychiatr Pract
+2016; 22:405–409.
+8. Alibegovic A, et al. Fatal overdose with a combination of SNRIs venlafaxine and duloxetine. Forensic Sci Med Pathol 2019; 15:258–261.
+9. Menchetti M, et al. Non-fatal overdose of duloxetine in combination with other antidepressants and benzodiazepines. World J Biol Psychiatry
+2009; 10:385–389.
+10. White N, et al. Suicidal antidepressant overdoses: a comparative analysis by antidepressant type. J Med Toxicol 2008; 4:238–250.
+11. Darracq MA, et al. A retrospective review of isolated duloxetine-exposure cases. ClinToxicol(Phila) 2013; 51:106–110.
+12. Scanlon KA, et al. Comprehensive duloxetine analysis in a fatal overdose. J Anal Toxicol 2016; 40:167–170.
+13. Cassidy S, et al. Fatal toxicity of antidepressant drugs in overdose. Br Med J 1987; 295:1021–1024.
+14. Henry JA, et al. Relative mortality from overdose of antidepressants. BMJ 1995; 310:221–224.
+15. Crome P. Antidepressant overdosage. Drugs 1982; 23:431–461.
+16. Henry JA. Epidemiology and relative toxicity of antidepressant drugs in overdose. Drug Saf 1997; 16:374–390.
+
+CHAPTER 13
+
+Signs and symptoms of overdose
+
+
+
+
+<<<PAGE 905>>>
+
+884  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 13
+
+Table 13.2 Psychotropics and driving
+Drug
+
+Effect
+
+Alcohol
+
+Alcohol causes sedation and impaired coordination, vision, attention and informationprocessing. Alcohol-dependent drivers are twice as likely to be involved in traffic accidents and
+offences than licensed drivers as a whole,5 and a third of all fatal RTAs involve alcoholdependent drivers.5 Young drivers who use alcohol in combination with illicit drugs are
+particularly at high risk.12,13
+
+Antiseizure
+medication
+
+Initial, dose-related side effects may affect driving ability (e.g. blurred vision, ataxia and
+sedation). There are strict rules regarding epilepsy and driving. Lamotrigine may have limited
+effects on driving ability.14
+
+Antidepressants
+
+People who are prescribed an antidepressant have an increased risk of being involved in a RTA
+particularly at treatment initiation. SSRIs may have some advantages over TCAs, but driving
+ability is still diminished compared with healthy individuals,15 suggesting that depression itself
+may make a major contribution.16,17 SSRIs tend not to impair driving in healthy volunteers.18–20 In
+remitted patients on SSRIs, driving performance may likewise not be impaired.21 Initiation
+effects caused by mirtazapine diminish to an extent when it is given as a single dose at night,
+but many people experience substantial hangover which can impair driving.22 Effects may
+disappear in chronic treatment.23 Trazodone also appears to impair driving ability.24 Agomelatine
+and venlafaxine may actually improve driving performance.25 Vortioxetine has no effect.23
+Intranasal esketamine seems to have no effect on driving ability 8 hours post dose.26
+
+Antipsychotics
+
+Sedation and EPS can impair coordination and response time.2 A high proportion of patients
+treated with antipsychotics may have an impaired ability to drive.27,28 One study found that
+patients with schizophrenia taking atypical antipsychotics or clozapine performed better in tests
+of skills related to car-driving ability than patients with schizophrenia taking first-generation
+antipsychotics,29 but 25% of all patients were severely impaired with respect to driving skills.
+
+Hypnotics and
+Anxiolytics
+
+Benzodiazepines cause sedation and impaired attention, information processing, memory and
+motor coordination, and along with opiates are the medicines most frequently implicated in
+RTAs.30,31 When used as anxiolytics and hypnotics, benzodiazepines, zopiclone and zolpidem are
+associated with an increased risk of RTAs.30 There is some gender variation in the pharmacokinetics
+of zolpidem with females having higher drug plasma concentrations than males for any given dose;
+the driving ability of females may therefore be particularly impaired.3 Zolpidem may additionally be
+associated with automatism and ‘sleep driving’.32 Zaleplon and the newer hypnotics acting at
+melatonin or serotonin receptors have not been found to have any negative residual effects on
+driving ability.33 Orexin receptor antagonists (suvorexant and lemborexant), available in some
+countries, appear not to impair driving the day after being taken.34,35
+
+Lithium
+
+Lithium may impair visual adaptation to the dark,2 but the implications for driving safety are
+unknown. Many patients treated with lithium can be shown to be unfit to drive,14 although the
+exact contribution of lithium is difficult to determine. Elderly people who take lithium may be at
+increased risk of being involved in an injurious motor vehicle crash.36
+
+Methylphenidate
+
+Some studies have demonstrated that reaction time is longer in patients with ADHD which may in
+turn be associated with increased driving risks.37 Other studies have found that methylphenidate
+improved driving performance in adults with ADHD,38 again suggesting that illness may make a
+bigger contribution to fitness to drive than the specific pharmacology of the treatment.38
+
+Opioids
+
+Opioids have major adverse effect on the risk of RTA.39 Buprenorphine and methadone reduce
+driving ability at low doses in non addicts.40
+
+ADHD, attention deficit hyperactivity disorder; EPS, extrapyramidal symptoms; RTA, road traffic accident; SSRI,
+selective serotonin reuptake inhibitor; TCA, tricyclic antidepressant.
+
+

@@ -1,0 +1,774 @@
+<<<PAGE 551>>>
+
+Trauma Affect Regulation: Guide for Education and Therapy
+(TARGET). TARGET, an affect regulation therapy, combines CBT
+components, such as cognitive processing, with affect modulation. We would
+usually consider this for adolescents between the ages of 13 and 19 who
+experience maltreatment or chronic traumatic exposure to such things as
+community violence or domestic violence. It usually requires 12 sessions,
+which focus on past or current situations. As with SPARCS treatment,
+gradual exposure may occur in the context of recounting past trauma but is
+not a core component of the treatment. A randomized trial with 59 delinquent
+girls aged 13 to 17 years who met full or partial criteria for PTSD found that
+TARGET reduced anxiety, anger, depression, and PTSD cognitions.
+TARGET is a promising treatment for girls with histories of delinquency,
+especially to reduce anger and to enhance optimism and self-efficacy.
+Psychopharmacological Treatment. Clinicians have used several
+pharmacologic agents to treat children and adolescents with PTSD, often
+focused on diminishing intrusive thoughts, hyperarousal, and avoidance, with
+some success and mixed results. Given the frequent comorbidity of
+depressive disorder, anxiety disorders, and behavioral problems associated
+with PTSD, we might use a multitude of psychopharmacological agents.
+Psychiatrists often use antidepressant agents as adjuncts to psychosocial
+treatments in youth with PTSD. Although sertraline and paroxetine are
+approved by the FDA in the treatment of PTSD in adults, there is scant
+evidence to support their use for the core symptoms of PTSD in youth. An
+RCT of TF-CBT plus sertraline compared to TF-CBT plus placebo in 24
+children with PTSD found that both groups had a significant reduction in
+PTSD symptoms, with no significant difference between the groups. One
+multicenter placebo-controlled study of 131 children aged 6 to 17 years with
+PTSD tested sertraline over 10 weeks. Results showed sertraline to be a safe
+treatment; however, it was not effective when compared to placebo. An RCT
+using citalopram did not show the superiority of citalopram over placebo in
+the treatment of core PTSD symptoms. There is, however, evidence
+suggesting that the use of SSRIs in traumatized children with burns may be
+preventive regarding the development of PTSD. Published literature
+demonstrates that up to 50 percent of children with moderate to severe burns
+develop PTSD. Thus preventive strategies are essential. A randomized
+
+
+
+
+<<<PAGE 552>>>
+
+controlled study of sertraline to prevent PTSD found that children who
+received sertraline, flexibly dosed between 25 and 150 mg/day, had a
+decrease in parent-reported symptoms of PTSD over 8 weeks compared to a
+placebo group. Among the child-reported symptoms, however, there was no
+significant difference between the two groups.
+Psychiatrists sometimes use antiadrenergic agents to treat dysregulation of
+the noradrenergic system in adults and youth with PTSD. α2-Agonists such as
+clonidine and guanfacine, for example, have been used to decrease
+norepinephrine release, whereas centrally acting β-antagonists such as
+propranolol, and α1-antagonists such as prazosin, are hypothesized to
+improve hyperarousal and intrusive thoughts through attenuation of
+norepinephrine postsynaptically. Although there are some data in adults with
+PTSD to support the use of these agents, there are mainly case reports for
+youths. There is a suggestion that guanfacine may reduce nightmares in
+children with PTSD and that clonidine may diminish symptoms of
+reenactment of traumatic events in children. One report of propranolol
+treatment in 11 pediatric patients with PTSD from sexual or physical abuse
+with a mean age of 8.5 years, who exhibited agitation and hyperarousal,
+indicated some decrease in symptoms in 8 of the 11 children studied. Another
+open study of transdermal clonidine treatment of preschoolers with PTSD
+suggests that clonidine may be efficacious in this population in decreasing
+activation and hyperarousal. An additional open trial of oral clonidine with
+dosage ranges of 0.05 to 0.1 mg twice daily similarly suggests that this
+medication may provide some relief for the symptoms of hyperarousal,
+impulsivity, and agitation in young children with PTSD.
+Second-generation antipsychotics such as risperidone, olanzapine,
+quetiapine, ziprasidone, and aripiprazole have been studied in adults with
+PTSD with mixed results. Risperidone and aripiprazole both have FDA
+approval for use in children and adolescents with aggression, severe
+behavioral dyscontrol, and severe psychiatric disorders; however, there are no
+controlled trials with children with PTSD. For example, there is one case
+series of three preschool-age children who exhibited symptoms of acute
+stress disorder and who had severe thermal burns improved after being
+treated with risperidone.
+In children and adolescents with PTSD, there is one open-label trial of
+
+
+
+
+<<<PAGE 567>>>
+
+depression severity pretreatment and posttreatment using parent ratings on
+the Preschool Reelings Checklist-Scale Version (PFC-S), a 20-item checklist.
+Results revealed that both groups showed significant improvement, with
+particular improvement in the PCIT-ED group concerning emotion
+recognition, child executive functioning, and parenting stress. This pilot
+study indicates that PCIT-ED is a promising novel intervention for preschool
+depression that deserves further investigation.
+Pharmacotherapy
+Fluoxetine and escitalopram have FDA approval in the treatment of major
+depression in adolescents. Three RCTs of fluoxetine in depressed children
+and adolescents demonstrate its efficacy. The common side effects are similar
+as for adults: headache, gastrointestinal symptoms, sedation, and insomnia.
+Short-term randomized clinical trials have demonstrated the efficacy of
+citalopram and sertraline compared with placebo in the treatment of major
+depression in children and adolescents. Sertraline was efficacious in two
+multicenter, double-blind, placebo-controlled trials of 376 children and
+adolescents. The doses of sertraline ranged from 50 to 200 mg a day or
+placebo. Nearly 70 percent of the subjects had a greater than 40 percent
+decrease in depression rating scale scores (compared with 56 percent in the
+placebo group). The most common side effects are anorexia, vomiting,
+diarrhea, and agitation.
+Citalopram has been demonstrated in one RCT in the United States to be
+efficacious in 174 children and adolescents treated with citalopram at doses
+of 20 to 40 mg a day or placebo for 8 weeks. Significantly more of the group
+on citalopram showed improvement compared with placebo on the
+depression rating scale (CDRS-R). A significantly increased response rate
+(response defined as less than 28 on CDRS-R) of 35 percent occurred in the
+citalopram group, compared with 24 percent of the placebo group. Common
+side effects that emerged included headache, nausea, insomnia, rhinitis,
+abdominal pain, dizziness, fatigue, and flu-like symptoms.
+RCTs to date that have not shown efficacy on primary outcome measures
+include those using mirtazapine and tricyclic antidepressants. A metaanalysis of SSRI trials in depressed children and adolescents found the
+efficacy of SSRIs compared to placebo with an average response rate of 60
+
+
+
+
+<<<PAGE 631>>>
+
+50 percent of these children developed another anxiety disorder. Studies have
+shown significant overlap between separation anxiety disorder and depressive
+disorders. In cases with multiple comorbidities, the prognosis is more
+guarded. Longitudinal data indicate that some children with severe school
+refusal continue to resist attending school into adolescence and remain
+impaired for many years.
+
+TREATMENT
+The treatment of child and adolescent separation anxiety disorder,
+generalized anxiety disorder, and social anxiety disorder are often considered
+together, given the frequent comorbidity and overlapping symptomatology of
+these disorders. A multimodal comprehensive treatment approach usually
+includes psychotherapy, most often CBT, family education, family
+psychosocial intervention, and pharmacologic interventions, such as SSRIs.
+The best evidence-based treatments for childhood anxiety disorders include
+CBT and SSRIs. The comparative efficacy of CBT, SSRI medication, and
+their combination (CBT + SSRI) in the treatment of childhood anxiety
+disorders was investigated in the NIMH-funded CAMS. This double-blind,
+placebo-controlled, multi-site study included 488 children and adolescents
+with separation anxiety disorder, generalized anxiety disorder, or social
+anxiety disorder. The investigators treated them with either CBT alone, SSRI
+medication (sertraline) alone, both CBT and sertraline, or placebo. After an
+acute treatment phase of 12 weeks, those in the combined CBT + sertraline
+group had an 80.7 percent response rate of much or very much improved on
+the clinical global improvement (CGI) rating. Response rates for the CBTonly and sertraline-only groups were 59.7 and 54.9 percent, respectively. The
+placebo response was 23.7 percent. Over time, during an open follow-up, the
+combination of CBT plus sertraline continued to provide the most efficacy.
+All three treatments—CBT, sertraline, and their combination—were superior
+to placebo and thus effective treatments in childhood anxiety, but combined
+treatment was most likely to help children and adolescents with anxiety
+disorders. A trial of CBT may be applied first, if available, when a child can
+function sufficiently to engage in daily activities while obtaining this
+treatment. For a child with severe impairment, however, a combination of
+treatments is recommended. CBT is a first-line evidence-based treatment for
+
+
+
+
+<<<PAGE 633>>>
+
+the treatment of anxiety disorders in children and adolescents.
+A large, multisite investigation by the NIMH (Research Units in Pediatric
+Psychopharmacology [RUPP]) confirmed the safety and efficacy of
+fluvoxamine in the treatment of childhood separation anxiety disorder,
+generalized anxiety disorder, and social anxiety disorder. This double-blind,
+placebo-controlled study of 128 children and adolescents revealed that 76
+percent of children in the group treated with fluvoxamine showed significant
+improvement compared with 29 percent of those in the placebo group.
+Response to medication was noticeable after only 2 weeks of treatment.
+Fluvoxamine dosages ranged from 50 to 250 mg/day in children and up to
+300 mg/day in adolescents. Children and adolescents with less comorbid
+depressive symptoms had the best response. Youths who responded
+continued fluvoxamine for 6 months, and almost all of them continued to be
+responders at the 6-month mark.
+Several other randomized clinical trials have also supported the efficacy of
+SSRIs in the treatment of child and adolescent anxiety disorders. A
+randomized, controlled trial found fluoxetine, at a dose of 20 mg/day, to be
+safe and effective for children with these disorders, with minor side effects
+including gastrointestinal distress, headache, and drowsiness. Also, a
+randomized clinical trial for the treatment of generalized anxiety disorder in
+children lends support for the efficacy of sertraline. Finally, a large industry
+randomized clinical trial of paroxetine in the treatment of children with social
+anxiety disorder found that paroxetine was associated with a response in 78
+percent of children treated. The dose of paroxetine was 10 to 50 mg/day.
+The FDA has placed a “black box” warning on antidepressants, including
+all of the SSRI agents, used in the treatment of any childhood disorder,
+because of concerns about increased suicidality; however, no individual
+childhood anxiety study has found a statistically significant increase in
+suicidal thoughts or behaviors.
+Currently, we do not recommend using tricyclic drugs due to their
+potentially serious cardiac adverse effects. Other agents, including buspirone
+and β-adrenergic receptor antagonists such as propranolol, have been used
+clinically in children with anxiety disorders, but currently, no data support
+their efficacy. Diphenhydramine may be used in the short term to control
+sleep disturbances in children with anxiety disorders. Open trials and one
+double-blind, placebo-controlled study suggested that alprazolam, a
+
+
+
+
+<<<PAGE 652>>>
+
+Overall, the prognosis is hopeful for most children and adolescents with
+mild to moderate OCD. In about 10 percent of cases, OCD may represent a
+prodrome of a psychotic disorder in children and adolescents. In youth with
+subthreshold OCD symptoms, there is a high risk of developing the full OCD
+disorder within 2 years. Childhood OCD is responsive to available
+treatments, resulting in improvement, if not complete remission, in the
+majority of cases.
+
+TREATMENT
+CBT and SSRIs are both efficacious treatments for OCD in youth. CBT
+geared toward children of varying ages is based on the principle of
+developmentally appropriate exposure to the feared stimuli coupled with
+response prevention, leading to diminishing anxiety over time on exposure to
+feared situations. CBT manuals can ensure that the therapist can make
+developmentally appropriate interventions and that the child and parents
+receive comprehensive education.
+Treatment guidelines for children and adolescents with mild to moderate
+OCD recommend a trial of CBT before initiating medication. However, the
+POTS, a multi-site National Institute of Health (NIH)–funded investigation of
+sertraline and CBT, each alone and in combination, for the treatment of
+childhood-onset OCD, revealed that the combination was superior to either
+treatment alone. Each treatment alone also provided encouraging levels of
+response. The mean daily dose of sertraline was 133 mg/day in the group
+administered the combination treatment, and 170 mg/day for the sertraline
+alone group. Improvement with the pharmacologic intervention of childhood
+OCD usually occurs within 8 to 12 weeks of treatment. Most children and
+adolescents who experienced remission with acute treatment using SSRIs
+were still responsive over a year. Among youth with OCD who obtain a
+partial response to a therapeutic trial of SSRI treatment, augmentation with a
+short-term OCD-specific CBT leads to a significantly greater response.
+Evidence shows that higher treatment expectations by patients and families
+link to better treatment response, greater compliance with home-based CBT
+assignments, less drop out of treatment, and reduced impairment.
+In addition to individual CBT, both family and group CBT interventions
+are efficacious in the treatment of childhood OCD. Family CBT (FCBT)
+
+
+
+
+<<<PAGE 1248>>>
+
+headaches,
+somnolence,
+agitation,
+insomnia,
+sweating, tremor,
+anorexia,
+dizziness,
+constipation
+Paroxetine
+
+20–60
+
+Nausea, diarrhea,
+dry mouth,
+headaches,
+somnolence,
+insomnia,
+sweating,
+asthenia, male
+sexual
+dysfunction,
+dizziness
+
+None
+
+Sertraline
+
+50–200
+
+Nausea, diarrhea,
+dry mouth,
+headaches,
+somnolence,
+insomnia,
+fatigue, tremor,
+male sexual
+dysfunction,
+dizziness
+
+None
+
+75–375
+
+Headaches,
+Nausea
+somnolence, dry
+mouth,
+dizziness,
+nervousness,
+insomnia,
+
+SNRI
+Venlafaxine
+
+
+
+
+<<<PAGE 1975>>>
+
+treating depression. However, some are approved by the U.S. FDA for
+multiple indications, such as major depression, OCD, PTSD, PMDD, panic
+disorder, and social phobia (social anxiety disorder) (Table 21-15). Note that
+fluvoxamine is not FDA approved as an antidepressant, a fact that is due to a
+marketing decision. It is considered an antidepressant in other countries.
+Although all SSRIs are equally effective, there are meaningful differences
+in pharmacodynamics, pharmacokinetics, and side effects, differences that
+might affect clinical responses among individual patients. This would explain
+why some patients have better clinical responses to a particular SSRI than
+another. The SSRIs have proven more problematic in terms of some side
+effects than the original clinical trials suggested. Quality-of-life–associated
+adverse effects such as nausea, sexual dysfunction, and weight gain
+sometimes mitigate the therapeutic benefits of the SSRIs. There can also be
+distressing withdrawal symptoms when SSRIs are stopped abruptly. This
+withdrawal is especially true with paroxetine but also occurs when other
+SSRIs with short half-lives are stopped.
+Pharmacologic Actions
+Pharmacokinetics. A significant difference among the SSRIs is their
+broad range of serum half-lives. Fluoxetine has the most prolonged half-life:
+4 to 6 days; its active metabolite has a half-life of 7 to 9 days. The half-life of
+sertraline is 26 hours, and its less active metabolite has a half-life of 3 to 5
+days. The half-lives of the other three, which do not have metabolites with
+significant pharmacologic activity, are 35 hours for citalopram, 27 to 32
+hours for escitalopram, 21 hours for paroxetine, and 15 hours for
+fluvoxamine. As a rule, the SSRIs are well absorbed after oral administration
+and have their peak effects in the range of 3 to 8 hours. Absorption of
+sertraline may be slightly enhanced by food.
+There are also differences in plasma protein–binding percentages among
+the SSRIs, with sertraline, fluoxetine, and paroxetine being the most highly
+bound and escitalopram being the least bound.
+All SSRIs are metabolized in the liver by the CYP450 enzymes. Because
+the SSRIs have such a broad therapeutic index, other drugs rarely produce
+problematic increases in SSRI concentrations. The most critical drug–drug
+interactions involving the SSRIs occur as a result of the SSRIs inhibiting the
+
+
+
+
+<<<PAGE 1976>>>
+
+metabolism of the coadministered medication. Each of the SSRIs possesses a
+potential for slowing or blocking the metabolism of many drugs (Table 2116). Fluvoxamine is the most problematic of the drugs in this respect. It has a
+marked effect on several of the CYP enzymes. Examples of clinically
+significant interactions include fluvoxamine and theophylline (Slo-Bid, TheoDur) through CYP1A2 interaction, fluvoxamine and clozapine (Clozaril)
+through CYP1A2 inhibition; and fluvoxamine with alprazolam (Xanax) or
+clonazepam (Klonopin) through CYP3A4 inhibition. Fluoxetine and
+paroxetine also possess significant effects on the CYP2D6 isozyme, which
+may interfere with the efficacy of opiate analogs, such as codeine and
+hydrocodone, by blocking the conversion of these agents to their active form.
+Thus, coadministration of fluoxetine and paroxetine with an opiate interferes
+with its analgesic effects. Sertraline, citalopram, and escitalopram are least
+likely to complicate treatment because of interactions.
+The pharmacokinetics of vilazodone (5 to 80 mg) is dose-proportional.
+Steady-state plasma levels are achieved in about 3 days. The elimination of
+vilazodone is primarily by hepatic metabolism with a terminal half-life of
+approximately 25 hours.
+Pharmacodynamics. The SSRIs are believed to exert their therapeutic
+effects through serotonin reuptake inhibition. They derive their name because
+they have little effect on the reuptake of norepinephrine or dopamine. Often,
+adequate clinical activity and saturation of the 5-HT transporters are achieved
+at starting dosages. As a rule, higher dosages do not increase antidepressant
+efficacy but may increase the risk of adverse effects.
+Table 21-16
+CYP450 Inhibitory Potential of Commonly Prescribed
+Antidepressants
+
+
+
+
+<<<PAGE 1981>>>
+
+DEPRESSION IN ELDERLY AND MEDICALLY ILL PERSONS. The SSRIs are safe and
+
+well tolerated when used to treat elderly and medically ill persons. As a class,
+they have little or no cardiotoxic, anticholinergic, antihistaminergic, or αadrenergic adverse effects. Paroxetine does have some anticholinergic
+activity, which may lead to constipation and worsening of cognition. The
+SSRIs can produce subtle cognitive deficits, prolonged bleeding time, and
+hyponatremia, all of which may impact the health of this population. The
+SSRIs are effective in poststroke depression and dramatically reduce the
+symptom of crying.
+DEPRESSION IN CHILDREN. The use of SSRI antidepressants in children and
+
+adolescents has been controversial. Few studies have shown clear-cut
+benefits from the use of these drugs, and studies show that there may be an
+increase in suicidal or aggressive impulses. However, some children and
+adolescents do exhibit dramatic responses to these drugs in terms of
+depression and anxiety. Fluoxetine has most consistently demonstrated
+effectiveness in reducing symptoms of depressive disorder in both children
+and adolescents. This fact may be a function of the quality of the clinical
+trials involved. Sertraline is effective in treating social anxiety disorder in this
+population, especially when combined with cognitive-behavioral therapy.
+Given the potential adverse effect of untreated depression and anxiety in a
+young population and the uncertainty about many aspects of how children
+and adolescents might react to medication, any use of SSRIs should be
+undertaken only within the context of comprehensive management of the
+patient.
+Anxiety Disorders
+OBSESSIVE-COMPULSIVE DISORDER. Fluvoxamine, paroxetine, sertraline, and
+
+fluoxetine are indicated for the treatment of OCD in persons older than the
+age of 18 years. Fluvoxamine, fluoxetine, and sertraline have also been
+approved for the treatment of children with OCD (ages 6 to 17 years). About
+50 percent of persons with OCD begin to show symptoms in childhood or
+adolescence, and more than half of these respond favorably to medication.
+Beneficial responses can be dramatic. Long-term data support the model of
+
+
+
+
+<<<PAGE 1984>>>
+
+modestly beneficial for weight loss. A significant percentage of all persons
+who take SSRIs, including fluoxetine, lose weight initially but later may gain
+weight. However, all SSRIs may cause initial weight gain.
+PREMENSTRUAL DYSPHORIC DISORDER. PMDD is characterized by debilitating
+
+mood and behavioral changes in the week preceding menstruation that
+interferes with normal functioning. Sertraline, paroxetine, fluoxetine, and
+fluvoxamine have been reported to reduce the symptoms of PMDD.
+Controlled trials of fluoxetine and sertraline administered either throughout
+the cycle or only during the luteal phase (the 2 weeks between ovulation and
+menstruation) showed both schedules to be equally effective.
+An additional observation of unclear significance was that fluoxetine was
+associated with changing the duration of the menstrual period by more than 4
+days, either lengthening or shortening it. The effects of SSRIs on menstrual
+cycle length are mostly unknown and may warrant careful monitoring in
+women of reproductive age.
+Off-Label Uses
+The anorgasmic effects of SSRIs make them
+useful as a treatment for men with premature ejaculation. The SSRIs permit
+intercourse for a significantly more extended period and are reported to
+improve sexual satisfaction in couples in which the man has premature
+ejaculation. Fluoxetine and sertraline are useful for this purpose.
+PREMATURE EJACULATION.
+
+The SSRIs may reduce obsessive-compulsive behavior in
+people with paraphilias. The SSRIs diminish the average time per day spent
+in unconventional sexual fantasies, urges, and activities. Evidence suggests a
+more significant response to sexual obsessions than for paraphilic behavior.
+PARAPHILIAS.
+
+Obsessive-compulsive behavior, poor social relatedness, and
+aggression are prominent autistic features that may respond to serotonergic
+agents such as SSRIs and clomipramine (Anafranil). Sertraline and
+fluvoxamine have been shown in controlled and open-label trials to mitigate
+aggressiveness, self-injurious behavior, repetitive behaviors, some degree of
+language delay, and (rarely) lack of social relatedness in adults with autistic
+AUTISM.
+
+
+
+
+<<<PAGE 1986>>>
+
+stools are usually dose-related and transient, usually resolving within a few
+weeks. Sometimes flatulence and diarrhea persist, especially during sertraline
+treatment. Initial anorexia may also occur and is most frequent with
+fluoxetine. SSRI-induced appetite and weight loss begin as soon as the drug
+is taken and peak at 20 weeks, after which weight often returns to baseline.
+Up to one-third of persons taking SSRIs will gain weight, sometimes more
+than 20 lb. This effect is mediated through a metabolic mechanism, an
+increase in appetite, or both. It happens gradually and is usually resistant to
+diet and exercise regimens. Paroxetine is associated with more frequent,
+rapid, and pronounced weight gain than the other SSRIs, especially among
+young women.
+Cardiovascular Effects. All SSRIs can lengthen the QT interval in
+otherwise healthy people and cause drug-induced long QT syndrome,
+especially when taken in overdose. The risk of QTc prolongation increases
+when an antidepressant and an antipsychotic are used in combination, an
+increasingly common practice. Citalopram stands out as the SSRI with the
+most pronounced effect on QT intervals. A QT study to assess the effects of
+20- and 60-mg doses of citalopram on the QT interval in adults, compared
+with placebo, found a maximum mean prolongation in the individually
+corrected QT intervals were 8.5 milliseconds for 20-mg citalopram and 18.5
+milliseconds for 60 mg. For 40 mg, prolongation of the corrected QT interval
+was estimated to be 12.6 milliseconds. Based on these findings, the FDA has
+issued the following recommendation regarding citalopram use:
+20 mg a day is the maximum recommended dose for patients with hepatic
+impairment, who are older than 60 years of age, who are CYP2C19 poor
+metabolizers, or who are taking concomitant cimetidine (Tagamet).
+No longer prescribe at doses greater than 40 mg a day.
+Do not use in patients with congenital long QT syndrome.
+Correct hypokalemia and hypomagnesemia before administering
+citalopram.
+Monitor electrolytes as clinically indicated.
+Consider more frequent electrocardiograms in patients with congestive
+heart failure, bradyarrhythmias, or patients on concomitant medications that
+
+
+
+
+<<<PAGE 1991>>>
+
+Sweating. Some patients experience sweating while being treated with
+SSRIs. This sweating is independent of the temperature in the environment.
+Nocturnal sweating may drench bed sheets and require a change of
+nightclothes. Terazosin (Hytrin), 1 or 2 mg/day, is often dramatically
+effective in counteracting sweating.
+Overdose. The adverse reactions associated with overdose of vilazodone at
+doses of 200 to 280 mg, as observed in clinical trials, included serotonin
+syndrome, lethargy, restlessness, hallucinations, and disorientation.
+Selective Serotonin Reuptake Inhibitor Withdrawal. The abrupt
+discontinuance of SSRI use, especially one with a shorter half-life such as
+paroxetine or fluvoxamine, has been associated with a withdrawal syndrome
+that may include dizziness, weakness, nausea, headache, rebound depression,
+anxiety, insomnia, poor concentration, upper respiratory symptoms,
+paresthesias, and migraine-like symptoms. It usually does not appear until
+after at least 6 weeks of treatment and usually resolves spontaneously in 3
+weeks. Persons who experienced transient adverse effects in the first weeks
+of taking an SSRI are more likely to experience discontinuation symptoms.
+Fluoxetine is the SSRI least likely to be associated with this syndrome
+because the half-life of its metabolite is more than 1 week, and it effectively
+tapers itself. Fluoxetine has therefore been used in some cases to treat the
+discontinuation syndrome caused by the termination of other SSRIs.
+Nevertheless, a delayed and attenuated withdrawal syndrome occurs with
+fluoxetine as well.
+Drug Interactions
+The SSRIs do not interfere with most other drugs. A serotonin syndrome
+(Table 21-17) can develop with concurrent administration of MAOIs, Ltryptophan, lithium, or other antidepressants that inhibit the reuptake of
+serotonin. Fluoxetine, sertraline, and paroxetine can raise plasma
+concentrations of TCAs, which can cause clinical toxicity. Several potential
+pharmacokinetic interactions have been described based on in vitro analyses
+of the CYP enzymes, but clinically relevant interactions are rare. SSRIs that
+inhibit CYP2D6 may interfere with the analgesic effects of hydrocodone and
+oxycodone. These drugs can also reduce the effectiveness of tamoxifen
+
+
+
+
+<<<PAGE 1992>>>
+
+(Nolvadex, Soltamox). The combined use of SSRIs and NSAIDs increases
+the risk of gastric bleeding.
+Table 21-17
+Serotonin Syndrome Symptoms
+Diarrhea
+
+Myoclonus
+
+Diaphoresis
+
+Hyperactive reflexes
+
+Tremor
+
+Disorientation
+
+Ataxia
+
+Lability of mood
+
+The SSRIs, particularly fluvoxamine, should not be used with clozapine
+because it raises clozapine concentrations, increasing the risk of seizure. The
+SSRIs may increase the duration and severity of zolpidem (Ambien)-induced
+side effects, including hallucinations.
+Fluoxetine. Fluoxetine can be administered with tricyclic drugs, but the
+clinician should use low dosages of the tricyclic drug. Because the hepatic
+enzyme CYP2D6 metabolizes it, fluoxetine may interfere with the
+metabolism of other drugs in the 7 percent of the population who have an
+inefficient isoform of this enzyme, the so-called poor metabolizers.
+Fluoxetine may slow down the metabolism of carbamazepine (Tegretol),
+antineoplastic agents, diazepam (Valium), and phenytoin (Dilantin). Drug
+interactions have been described for fluoxetine that may affect the plasma
+levels of benzodiazepines, antipsychotics, and lithium. Fluoxetine and other
+SSRIs may interact with warfarin (Coumadin), increasing the risk of bleeding
+and bruising.
+Sertraline. Sertraline may displace warfarin from plasma proteins and may
+increase the prothrombin time. The drug interaction data on sertraline support
+a generally similar profile to that of fluoxetine, although sertraline does not
+interact as strongly with the CYP2D6 enzyme.
+Paroxetine. Paroxetine has a higher risk for drug interactions than does
+either fluoxetine or sertraline because it is a more potent inhibitor of the
+
+
+
+
+<<<PAGE 1993>>>
+
+CYP2D6 enzyme. Cimetidine can increase the concentration of sertraline and
+paroxetine, and phenobarbital (Luminal) and phenytoin can decrease the
+concentration of paroxetine. Because of the potential for interference with the
+CYP2D6 enzyme, the coadministration of paroxetine with other
+antidepressants, phenothiazines, and antiarrhythmic drugs should be
+undertaken with caution. Paroxetine may increase the anticoagulant effect of
+warfarin. Coadministration of paroxetine and tramadol may precipitate
+serotonin syndrome in elderly persons.
+Fluvoxamine. Among the SSRIs, fluvoxamine appears to present the most
+risk for drug–drug interactions. Fluvoxamine is metabolized by the enzyme
+CYP3A4, which may be inhibited by ketoconazole (Nizoral). Fluvoxamine
+may increase the half-life of alprazolam, triazolam (Halcion), and diazepam,
+and it should not be coadministered with these agents. Fluvoxamine may
+increase theophylline levels threefold and warfarin levels twofold, with
+significant clinical consequences; thus, the serum levels of the latter drugs
+should be closely monitored, and the doses adjusted accordingly.
+Fluvoxamine raises concentrations and may increase the activity of clozapine,
+carbamazepine, methadone (Dolophine, Methadose), propranolol (Inderal),
+and diltiazem (Cardizem). Fluvoxamine has no significant interactions with
+lorazepam (Ativan) or digoxin (Lanoxin).
+Citalopram. Citalopram is not a potent inhibitor of any CYP enzymes.
+Concurrent administration of cimetidine increases concentrations of
+citalopram by about 40 percent. Citalopram does not significantly affect the
+metabolism of, nor is its metabolism significantly affected by, digoxin,
+lithium, warfarin, carbamazepine, or imipramine (Tofranil). Citalopram
+increases the plasma concentrations of metoprolol (Lopressor) twofold, but
+this usually does not affect BP or heart rate. Data on coadministration of
+citalopram and potent inhibitors of CYP3A4 or CYP2D6 are not available.
+Escitalopram. Escitalopram is a moderate inhibitor of CYP2D6 and has
+been shown to raise desipramine (Norpramin) and metoprolol concentrations
+significantly.
+Vilazodone. Vilazodone dose should be reduced to 20 mg when
+
+
+
+
+<<<PAGE 1994>>>
+
+coadministered with CYP3A4 potent inhibitors. Concomitant use with
+inducers of CYP3A4 can result in inadequate drug concentrations and may
+diminish effectiveness. The effect of CYP3A4 inducers on the systemic
+exposure of vilazodone has not been evaluated.
+Laboratory Interferences
+In general, the SSRIs do not interfere with any laboratory tests. There have
+been some reports of false-positive urine toxicology for benzodiazepines in
+patients taking sertraline; if this is suspected, additional confirmation can be
+sought via gas chromatography-mass spectrometry.
+Dosage and Clinical Guidelines
+Fluoxetine. Fluoxetine is available in 10- and 20-mg capsules, in a scored
+10-mg tablet, as a 90-mg enteric-coated capsule for once-weekly
+administration, and as an oral concentrate (20 mg/5 mL). Fluoxetine is also
+marketed as Sarafem for PMDD. For depression, the initial dosage is usually
+10 or 20 mg orally each day, usually given in the morning, because insomnia
+is a potential adverse effect of the drug. Fluoxetine should be taken with food
+to minimize possible nausea. The long half-lives of the drug and its
+metabolite contribute to 4 weeks to reach steady-state concentrations. Twenty
+milligrams is often as effective as higher doses for treating depression. The
+maximum dosage recommended by the manufacturer is 80 mg a day. To
+minimize the early side effects of anxiety and restlessness, some clinicians
+initiate fluoxetine use at 5 to 10 mg a day, either with the scored 10-mg tablet
+or by using the liquid preparation. Alternatively, because of the long half-life
+of fluoxetine, its use can be initiated with an every-other-day administration
+schedule. The dosage of fluoxetine (and other SSRIs) that is effective in other
+indications may differ from the dosage generally used for depression.
+Sertraline. Sertraline is available in scored 25-, 50-, and 100-mg tablets. For
+the initial treatment of depression, sertraline use should be initiated with a
+dosage of 50 mg once daily. To limit the GI effects, some clinicians begin at
+25 mg a day and increase to 50 mg a day after 3 weeks. Patients who do not
+respond after 1 to 3 weeks may benefit from dosage increases of 50 mg every
+week up to a maximum of 200 mg given once daily. Sertraline can be
+
+
+
+
+<<<PAGE 1995>>>
+
+administered in the morning or in the evening. Administration after eating
+may reduce the GI adverse effects. Sertraline oral concentrate (1 mL = 20
+mg) has 12 percent alcohol content and must be diluted before use. When
+used to treat panic disorder, sertraline should be initiated at 25 mg to reduce
+the risk of provoking a panic attack.
+Paroxetine. Immediate-release paroxetine is available in scored 20-mg
+tablets; in unscored 10-, 30-, and 40-mg tablets; and as an orange-flavored
+10-mg/5-mL oral suspension. Paroxetine use for the treatment of depression
+is usually initiated at a dosage of 10 or 20 mg a day. An increase in the
+dosage should be considered when an adequate response is not seen in 1 to 3
+weeks. At that point, the clinician can initiate upward dose titration in 10-mg
+increments at weekly intervals to a maximum of 50 mg a day. Persons who
+experience GI upset may benefit from taking the drug with food. Paroxetine
+can be taken initially as a single daily dose in the evening; higher dosages
+may be divided into two doses per day.
+A delayed-release formulation of paroxetine, paroxetine CR, is available in
+12.5-, 25-, and 37.5-mg tablets. The starting dosages of paroxetine CR are 25
+mg/day for depression and 12.5 mg/day for panic disorder.
+Paroxetine is the SSRI most likely to produce a discontinuation syndrome,
+because plasma concentrations decrease rapidly in the absence of continuous
+dosing. Paroxetine use should be tapered gradually to limit the symptoms of
+abrupt discontinuation, with dosage reductions every 2 to 3 weeks.
+Fluvoxamine. Fluvoxamine is the only SSRI not approved by the FDA as
+an antidepressant. It is indicated for OCD. It is available in unscored 25-mg
+tablets and scored 50- and 100-mg tablets. The effective daily dosage range is
+50 to 300 mg a day. A usual starting dosage is 50 mg once a day at bedtime
+for the first week, after which the dosage can be adjusted according to the
+adverse effects and clinical response. Dosages above 100 mg a day may be
+divided into twice-daily dosing. A temporary dosage reduction or slower
+upward titration may be necessary if nausea develops over the first 2 weeks
+of therapy. Although fluvoxamine can also be administered as a single
+evening dose to minimize its adverse effects, its short half-life may lead to
+interdose withdrawal. An extended-release formulation is available in 100and 150-mg dose strengths. All fluvoxamine formulations should be
+
+
+
+
+<<<PAGE 2083>>>
+
+development of a life-threatening rash or permanent disfiguration.
+Estimates of the rate of severe rash vary, depending on the source of the
+data. In some studies, the incidence of severe rashes was 0.08 percent in adult
+patients receiving lamotrigine as initial monotherapy and 0.13 percent in
+adult patients receiving lamotrigine as adjunctive therapy. German registry
+data, based on clinical practice, suggest that the risk of rash may be as low as
+1 in 5,000 patients. The appearance of any rash necessitates immediate
+discontinuation of drug administration.
+It is known that the likelihood of a rash increases if the recommended
+starting dose and speed of dose increase exceed what is recommended.
+Concomitant administration of valproic acid also increases risk and should be
+avoided if possible. If valproate is used, a more conservative dosing regimen
+is followed. Children and adolescents younger than age 16 years appear to be
+more susceptible to rash with lamotrigine. If patients miss more than 4
+consecutive days of lamotrigine treatment, they need to restart therapy at the
+initial starting dose and titrate upward as if they had not already been on the
+medication.
+Laboratory Testing
+There is no proven correlation between lamotrigine blood concentrations and
+either antiseizure effects or efficacy in bipolar disorders. Laboratory tests are
+not useful in predicting the occurrence of adverse events.
+Drug Interactions
+Lamotrigine has significant, well-characterized drug interactions involving
+other anticonvulsants. The most potentially serious lamotrigine drug
+interaction involves concurrent use of valproic acid, which doubles serum
+lamotrigine concentrations. Lamotrigine decreases the plasma concentration
+of valproic acid by 25 percent. Sertraline (Zoloft) also increases plasma
+lamotrigine concentrations, but to a lesser extent than does valproic acid.
+Lamotrigine concentrations are decreased by 40 to 50 percent with
+concomitant administration of carbamazepine, phenytoin, or phenobarbital.
+Combinations of lamotrigine and other anticonvulsants have complex effects
+on the time of peak plasma concentration and the plasma half-life of
+lamotrigine.
+
+
+
+
+<<<PAGE 3426>>>
+
+required course for his advanced degree and being arrested for disturbing
+the peace. He had consistently lied to his family about where he stood
+with his coursework and about having skipped an examination that would
+have qualified him to use his professional degree. He had also not told
+them that he had been using marijuana almost daily for several years and
+occasionally used hallucinogens. His arrest for disorderly conduct was for
+swimming naked in an apartment complex in the middle of the night
+while taking hallucinogens.
+Mr. A’s use of marijuana began early in college but became daily
+during graduate school. He was diagnosed as having bipolar I disorder
+early in his senior year at college after an apparent episode of mania. His
+mood disorder was well controlled on lithium (Eskalith). During graduate
+school, he was episodically compliant with medications, preferring to try
+to maintain a state of hypomania. He saw a psychiatrist every 3 to 6
+months for medication checks. During his 4 years in graduate school, he
+had two clear episodes of depression and began taking sertraline (Zoloft),
+100 mg/day, with questionable benefit. Mr. A believed that he could be a
+great writer. He spent most of his time reading and trying to write. He
+dreamed of going to New York and becoming part of a group of avantgarde writers that would parallel the Algonquin Club of the 1930s or the
+Beat poets of the late 1940s. This aspiration and his marijuana abuse
+predated his development of bipolar I disorder. He attended class
+episodically, nonetheless performing adequately. His last class had no
+final examination but required a paper. He planned to write this paper in
+the form of a play, involving a dialogue between two thinkers from
+different times and cultures. His professor was very excited about this
+idea, but Mr. A kept postponing the task until he was forced to extend his
+schooling by a year. His other significant interest during this time
+involved growing and photographing flowers.
+Mr. A was born and raised in a large city. His father had been very
+successful in commercial real estate, and his mother, after raising the
+children, used the substantial real estate holdings she inherited from her
+father to set up a business to manage them. Most of the money was
+placed in trust for the patient and his siblings. His mother had total
+financial control of the trusts and doled out the proceeds to the children
+as they needed them. There was no family history of any psychiatric
+
+

@@ -1,0 +1,632 @@
+<<<PAGE 78>>>
+
+66
+
+A Short Textbook of Psychiatry
+Table 5.7: Antipsychotic Dose in Schizophrenia
+
+Drug
+
+Oral Dose Range
+(mg/day)
+
+Parenteral Dose
+(mg/day)
+
+Equivalent Oral Dose*
+(Equal to 100 mg CPZ)
+
+A. Typical/Traditional/First Generation Antipsychotics
+1. Chlorpromazine (CPZ)
+300-1000
+50-100 IM
+100
+2. Flupentixol
+3-18
+—
+2
+3. Haloperidol
+5-30
+5-10 IM
+2-3
+4. Loxapine
+25-250
+—
+10
+5. Pimozide
+4-12
+—
+2
+6. Prochlorperazine
+45-150
+40-80 IM
+15
+7. Sulpiride
+400-2400
+—
+200
+8. Thioridazine
+300-600
+—
+100
+9. Trifluoperazine
+15-50
+1-5 IM
+5
+10. Triflupromazine
+100-400
+30-60 IM
+25
+11. Zuclopenthixol
+25-150
+50-100 IM
+25
+B. Atypical/Second Generation Antipsychotics
+12. Amisulpride
+400-1200
+—
+—
+13. Aripiprazole
+5-30
+5.25-15 IM
+—
+14. Clozapine
+50-900
+—
+50
+15. Olanzapine
+5-20
+2.5-10 IM
+2-3
+16. Paliperidone
+3-12
+—
+—
+17. Quetiapine
+150-800
+—
+50-100
+18. Risperidone
+2-16
+—
+0.5-1.0
+19. Ziprasidone
+40-160
+—
+20
+20. Zotepine
+75-300
+—
+—
+*Equivalent doses are at best approximations only. The dose in a particular patient should be chosen on an individualised basis by the treating professional.
+
+aripiprazole, and ziprasidone, are more commonly
+used than the older typical (or first generation) antipsychotics such as trifluoperazine and haloperidol, in
+acute stages. Atypical antipsychotics are also more
+useful when negative symptoms are prominent, e.g.
+in chronic schizophrenia.
+Clozapine, another atypical antipsychotic, is
+available in the Indian market. The clinical trials have
+shown that clozapine is effective in about 30% of
+patients who had no beneficial response to traditional
+(typical and atypical) antipsychotics. It is an effective
+drug; however, as it can cause agranulocytosis and
+seizures as side-effects, it should be used with caution,
+with regular WBC and neutrophil counts as advised
+by the Summary of Product Characteristics (SPC).
+
+Drug treatment is usually administered in the
+outpatient setting as:
+1. There are very few number of psychiatric beds in
+India,
+2. Majorities of families are willing to care for the
+patients at home, and
+3. Majority of patients do not require hospitalisation.
+However, hospitalisation is indicated if there is:
+1. Neglect of food and water intake,
+2. Danger to self or others,
+3. Poor treatment adherence,
+4. Significant neglect of self-care, or
+5. Lack of social support with evidence of abovementioned risks.
+
+
+
+
+<<<PAGE 187>>>
+
+Psychopharmacology
+
+Steady state plasma levels are usually reached in
+5-10 days. Once the drug is withdrawn, it may remain
+in body for many days to many months. The main metabolic pathway is through liver (hepatic microsomal
+enzymes). Oxidation and conjugation are the most
+important methods of metabolism for phenothiazines.
+Many of the metabolites, such as mesoridazine (for
+thioridazine), reduced haloperidol (for haloperidol)
+and 9-hydroxy-risperidone (for risperidone), are also
+active compounds. Chlorpromazine has more than 150
+metabolites, some of which are active. The excretion
+of the metabolites is through kidneys and liver (enterohepatic circulation).
+Most of the antipsychotics tend to have a therapeutic window. If the blood level is below this ‘window’,
+the drug is ineffective. If the blood level is higher than
+the upper limit of the ‘window’, there is toxicity or
+the drug is again ineffective.
+
+Classification
+A classification of currently available antipsychotic
+drugs is presented in Table 15.2.
+
+Mechanism of Action
+The exact mechanism of action of antipsychotics is
+unknown. However, one of the major mechanisms
+appears to be antidopaminergic activity of these drugs.
+Antipsychotic drugs block D2-receptors, which are
+mainly present in mesolimbic-mesocortical system
+(mesolimbic system is concerned with emotional reactions), nigro-striatal system and tubero-infundibular
+system. The relative potencies of these drugs in competing for D2-receptors parallel quite closely their
+clinical potencies.
+It is currently believed that antipsychotic drugs
+are effective in treating psychosis due to their action on the D2-receptors located in the mesolimbic
+system whilst extrapyramidal side-effects (EPSE)
+are caused by blockade of D2-receptors situated in
+nigro-striatal system and hyperprolactinaemia is
+caused by D2-blockade in tubero-infundibular system.
+However, other neurotransmitters (such as 5-HT, acetylcholine) are clearly implicated (see below; atypical
+antipsychotics). Sedation is caused by histaminergic
+
+175
+
+blockade which is usually highest for drugs such as
+chlorpromazine and thioridazine.
+
+Second Generation Antipsychotics
+A search for an antipsychotic drug which acts only
+on the mesolimbic system but has no effect on nigrostriatal or tubero-infundibular systems, has led to the
+development of a heterogeneous group of drugs collectively known as atypical or newer antipsychotics.
+These are also known as second generation antipsychotics (SGAs) or serotonin-dopamine antagonists
+or (SDAs). These include risperidone, quetiapine,
+olanzapine, amisulpride, paliperidone, zotepine,
+ziprasidone and aripiprazole.
+By definition these drugs are effective antipsychotics without theoretically producing undesirable
+extrapyramidal side-effects (i.e. antipsychotics without neuroleptic effect), or causing elevation of serum
+prolactin levels. These are characterised by a selective
+limbic dopamine blockade, D4-receptor blockade, or
+a combination of potent 5-HT2 and weak D2 antagonism. These drugs should theoretically be safer with
+lesser incidence of serious side-effects such as tardive
+dyskinesia and neuroleptic malignant syndrome.
+Clozapine is one such drug but it can cause
+agranulocytosis and seizures. Risperidone, olanzapine,
+quetiapine, aripiprazole, amisulpride and ziprasidone
+are currently being used widely as atypical antipsychotics, while paliperidone and zotepine are also
+available in the international market.
+Atypical antipsychotics, in addition to their effect
+on positive symptoms, are believed to be effective
+in treatment of negative symptoms (such as apathy,
+decreased sociality, anhedonia) of chronic schizophrenia. Clozapine in particular is effective in management
+of treatment-resistant schizophrenia. However, there
+is need for close haematological monitoring for
+neutropenia or agranulocytosis as suggested in SPC
+of the drug.
+
+Side Effects
+The antipsychotics are safe drugs with a high therapeutic index and wide margin of safety in routine
+clinical dosages. In spite of this safety, a wide range
+
+
+
+
+<<<PAGE 188>>>
+
+A Short Textbook of Psychiatry
+
+176
+
+Table 15.2: Classification and Properties of Antipsychotics
+Drugs
+
+Oral Dose
+(mg/d)
+
+Parenteral
+Dose (mg)
+
+I. Phenothiazines
+A. Aliphatics
+1. Chlorpromazine
+300-1000 50-100 IM
+(CPZ)
+2. Triflupromazine
+100-400
+30-60 IM
+B. Piperidines
+____
+1. Mesoridazine
+100-400
+____
+2. Thioridazine
+300-600
+C. Piperazines
+____
+1. Fluphenazine
+2-20
+2. Prochlorperazine
+45-150
+40-80 IM
+3. Trifluoperazine
+15-50
+1-5 IM
+II. Thioxanthenes
+A. Aliphatics
+1. Chlorprothixene
+75-600
+25-75 IM
+B. Piperazines
+____
+1. Flupentixol
+3-18
+2. Thiothixene
+6-60
+2-6 IM
+3. Zuclopenthixol
+25-150
+50-100 IM
+III. Butyrophenones
+1. Haloperidol
+5-30
+5-10 IM
+2. Trifluperidol
+0.5-8.0
+2.5-5.0 IM
+IV. Diphenylbutylpiperidines
+____
+1. Penfluridol
+20-60 mg
+weekly
+____
+2. Pimozide
+4-20
+V. Indolic Derivatives (Dihydroindolones)
+____
+1. Molindone
+50-225
+
+#
+
+Sedation
+
+Some Common Adverse Effects**
+Hypotension
+EPSE* Weight
+Gain
+
+Increased
+Prolactin
+
++++
+
++++
+
++
+
+++
+
+++
+
+++
+
+++
+
+++
+
+++
+
+++
+
+++
++++
+
++
+++
+
++
++
+
+++
+++
+
++
++
+
++
++
++
+
++
++
++
+
++++
++++
++++
+
++
++
++
+
++++
++++
++++
+
++++
+
+++
+
+++
+
+++
+
+++
+
++
++
+++
+
++
+++
+++
+
+++
+++
+++
+
+++
+++
+++
+
+++
+++
++++
+
++
+±
+
++
+±
+
++++
++++
+
++
++
+
++++
+++
+
++
+
++
+
+++
+
++
+
+++
+
++
+
++
+
+++
+
++
+
++++
+
+++
+
+0
+
++
+
+±
+
+±
+
+++
+
+++
+
++
+
++++
+
++++
+
+0
+
++++
+
+0
+
++
++
+
++
++
+
++
++
+
++++
++++
+
+VI. Dibenzoxapines
+____
+1. Loxapine
+25-250
+++
+VII. Atypical or Second Generation Antipsychotics
+A. Dibenzodiazepines
+____
+1. Clozapine
+50-900
++++
+B. Substituted Benzamides
+1. Amisulpride
+400-1200 ____
+±
+2. Sulpiride (not
+400-2400 ____
+±
+called atypical
+usually)
+
+Contd...
+
+
+
+
+<<<PAGE 265>>>
+
+Index
+
+A
+Abnormal illness behaviour 99, 209
+Abreaction 104, 218
+Abstract thinking 14
+Acamprosate 42
+Acetylcholine 64, 75
+Acrophobia 93
+Acute
+and transient psychotic disorders 61,
+76
+intoxication 33, 37, 46
+polymorphic psychotic disorder
+with symptoms of schizophrenia
+86
+without symptoms of schizophrenia 86
+psychosis 228
+schizophrenia-like psychotic disorder
+60, 86
+stress reaction 111
+Adenoma sebaceum 159
+Adjustment disorder 112
+with depressed mood 76
+Admission under special circumstances
+232
+Adolescent thinking 155
+Affective
+disorders 69
+flattening 57, 62
+spectrum disorders 81
+Agitated depression 81
+Agonist substitution therapy 44
+Agoraphobia 92
+with panic disorder 93
+without panic disorder 93
+AIDS dementia complex 25
+Akathisia 228
+Akinesis 225
+Alcohol
+and substance history 10
+sensitising drugs 41
+use disorders 35, 228
+anonymous 41
+hallucinosis 28, 38
+seizures 38
+
+Algophobia 93
+Alogia 57, 62
+Alprazolam 94, 98, 131
+Alzheimer’s
+dementia 23
+disease 26
+Amantadine 48
+Ambitendency 59, 225
+Ambivalence 55, 56
+Ambulatory schizophrenia 117
+Amine hypothesis 184
+Amisulpride 66
+Amitriptyline 30
+Amok 110, 111
+Amotivational syndrome 46
+Amphetamine 29, 48
+induced psychoses 61
+use disorder 48
+Amygdalotomy 204
+Amytal interview 218
+Androgens 132
+Anhedonia 12, 56, 57, 62
+Anorexia nervosa 142
+Antiandrogens 126
+Anti-anxiety drugs 193
+Anticipation 210
+Anti-craving agents 42
+Antidepressant 30, 76, 82, 87, 92, 95,
+105, 112, 144, 181
+Antimanic 185
+Antipsychotic 26, 30, 65, 67, 68, 78, 87,
+143, 168
+depot preparations 181
+dose in schizophrenia 66
+drugs 174
+Antisocial personality disorder 167
+Anxiety 71
+disorder 89
+Anxious personality disorder 117
+Apathy 56
+Apomorphine 132
+Appetite 71
+Arctic hysteria 111
+Aripiprazole 29, 66, 168
+Ashton manual 51
+Asperger’s syndrome 165
+
+Assertiveness training 131
+Association disturbances 55
+Astasia abasia 100
+Asterixis 20
+Atenolol 92
+Atomoxetine 167
+Attempted suicide 222
+Attention
+deficit disorder 166
+seeking 103
+Atypical
+antipsychotics 29, 65
+depression 81
+Audible thoughts 55, 56
+Auditory hallucinations 13, 56
+Autism 55, 163, 164
+Autistic
+disorder 163
+thinking 55
+Autochthonous delusions 56
+Automatic obedience 59, 225
+Aversion therapy 41, 103, 126, 215
+Ayurveda 54
+
+B
+Bad trip 50
+Barbiturate 167, 193
+use disorder 50
+Battered child syndrome 228
+Behaviour
+modification 105, 131, 161, 167
+therapy 41, 80, 94, 131, 143, 144,
+214
+Behavioural theory 91, 97
+Benperidol 126
+Benzodiazepines 40, 87, 92, 98, 105, 112,
+137, 140, 194
+receptor antagonist 51, 196
+Beta blockers 194
+Binge eating disorders 144
+Biological
+functions 72
+theories 63, 75, 91, 94
+Biopsychosocial model 17, 147
+Bipolar disorder 73, 75
+subtypes 73
+
+

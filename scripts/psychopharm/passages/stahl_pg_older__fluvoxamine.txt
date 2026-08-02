@@ -1,0 +1,1652 @@
+<<<PAGE 9>>>
+
+0521011698pre.qxd
+
+34.
+35.
+36.
+37.
+38.
+39.
+40.
+41.
+42.
+43.
+44.
+45.
+46.
+47.
+48.
+49.
+50.
+51.
+52.
+53.
+54.
+55.
+56.
+57.
+58.
+59.
+60.
+61.
+62.
+63.
+64.
+65.
+66.
+67.
+68.
+69.
+70.
+71.
+72.
+73.
+viii
+
+9/13/04
+
+fluphenazine
+flurazepam
+fluvoxamine
+gabapentin
+galantamine
+haloperidol
+hydroxyzine
+imipramine
+isocarboxazid
+lamotrigine
+levetiracetam
+lithium
+lofepramine
+loflazepate
+lorazepam
+loxapine
+maprotiline
+memantine
+mesoridazine
+midazolam
+milnacipran
+mirtazapine
+moclobemide
+modafinil
+molindone
+nefazodone
+nortriptyline
+olanzapine
+oxazepam
+oxcarbazepine
+paroxetine
+pemoline
+perospirone
+perphenazine
+phenelzine
+pimozide
+pipothiazine
+pregabalin
+protriptyline
+quazepam
+
+10:34 AM
+
+Page viii
+
+185
+191
+195
+201
+207
+213
+219
+223
+229
+235
+243
+247
+253
+259
+265
+271
+277
+283
+287
+291
+295
+301
+307
+313
+319
+323
+329
+335
+341
+345
+351
+357
+361
+365
+371
+377
+383
+387
+391
+397
+
+
+
+
+<<<PAGE 91>>>
+
+0521011698s02.qxd
+
+9/2/04
+
+2:29 PM
+
+Page 74
+
+CLOMIPRAMINE (continued)
+• Thus, at steady state, plasma drug activity
+is generally more noradrenergic (with
+higher de-CMI levels) than serotonergic
+(with lower parent CMI levels)
+• Addition of the SSRI and CYP450 1A2
+inhibitor fluvoxamine blocks this
+conversion and results in higher CMI levels
+than de-CMI levels
+• For the expert only: addition of the SSRI
+fluvoxamine to CMI in treatment-resistant
+OCD can powerfully enhance serotonergic
+activity, not only due to the inherent additive
+pharmacodynamic serotonergic activity of
+fluvoxamine added to CMI, but also due to
+a favorable pharmacokinetic interaction
+inhibiting CYP450 1A2 and thus converting
+CMI’s metabolism to a more powerful
+serotonergic portfolio of parent drug
+✽ One of the most favored TCAs for treating
+severe depression
+• Tricyclic antidepressants are no longer
+generally considered a first-line treatment
+option for depression because of their side
+effect profile
+• Tricyclic antidepressants continue to be
+useful for severe or treatment-resistant
+depression
+• Tricyclic antidepressants are often a firstline treatment option for chronic pain
+✽ Unique among TCAs, clomipramine has a
+potentially fatal interaction with MAOIs in
+addition to the danger of hypertension
+characteristic of all MAOI-TCA combinations
+✽ A potentially fatal serotonin syndrome with
+high fever, seizures, and coma, analogous to
+that caused by SSRIs and MAOIs, can occur
+with clomipramine and SSRIs, presumably
+
+due to clomipramine’s potent serotonin
+reuptake blocking properties
+• TCAs may aggravate psychotic symptoms
+• Alcohol should be avoided because of
+additive CNS effects
+• Underweight patients may be more
+susceptible to adverse cardiovascular effects
+• Children, patients with inadequate
+hydration, and patients with cardiac
+disease may be more susceptible to TCAinduced cardiotoxicity than healthy adults
+• Patients on TCAs should be aware that they
+may experience symptoms such as
+photosensitivity or blue-green urine
+• SSRIs may be more effective than TCAs in
+women, and TCAs may be more effective
+than SSRIs in men
+• Since tricyclic/tetracyclic antidepressants
+are substrates for CYP450 2D6, and 7% of
+the population (especially Caucasians) may
+have a genetic variant leading to reduced
+activity of 2D6, such patients may not
+safely tolerate normal doses of
+tricyclic/tetracyclic antidepressants and
+may require dose reduction
+• Phenotypic testing may be necessary to
+detect this genetic variant prior to dosing
+with a tricyclic/tetracyclic antidepressant,
+especially in vulnerable populations such
+as children, elderly, cardiac populations,
+and those on concomitant medications
+• Patients who seem to have extraordinarily
+severe side effects at normal or low doses
+may have this phenotypic CYP450 2D6
+variant and require low doses or switching
+to another antidepressant not metabolized
+by 2D6
+
+Suggested Reading
+Anderson IM. Meta-analytical studies on new
+antidepressants. Br Med Bull 2001;
+57:161–178.
+Anderson IM. Selective serotonin reuptake
+inhibitors versus tricyclic antidepressants: a
+meta-analysis of efficacy and tolerability. J Aff
+Disorders 2000;58:19–36.
+
+74
+
+Cox BJ, Swinson RP, Morrison B, Lee PS.
+Clomipramine, fluoxetine, and behavior
+therapy in the treatment of obsessivecompulsive disorder: a meta-analysis. J Behav
+Ther Exp Psychiatry 1993;24:149–53.
+Feinberg M. Clomipramine for obsessivecompulsive disorder. Am Fam Physician 1991;
+43:1735–8.
+
+
+
+
+<<<PAGE 111>>>
+
+0521011698s02.qxd
+
+9/2/04
+
+2:30 PM
+
+Page 94
+
+CLOZAPINE (continued)
+
+✽ Treatment should be suspended if
+
+absolute neutrophil count falls below
+1,000/mm3
+• Treatment should be suspended if white
+blood cell count falls below 2,000/mm3
+• Treatment should be suspended if
+eosinophil count rises above 4,000/mm3,
+and continued once it falls below
+3,000/mm3
+• If treatment is discontinued for more than
+2 days, it may need to be reinitiated at a
+lower dose and slowly increased in order
+to maximize tolerability
+• Plasma half-life suggests twice daily
+administration, but in practice it may be
+given once a day at night
+• Doses over 550 mg/day may require
+concomitant anticonvulsant administration
+to reduce the chances of a seizure
+✽ Rebound psychosis may occur unless
+dose is very slowly tapered, by
+100 mg/week or less
+
+Overdose
+• Sometimes lethal; changes in heart rhythm,
+excess salivation, respiratory depression,
+altered state of consciousness
+
+Long-Term Use
+• Treatment to reduce risk of suicidal
+behavior should be continued for at least
+2 years
+• Often used for long-term maintenance in
+treatment-resistant schizophrenia
+
+Habit Forming
+• No
+
+How to Stop
+• Slow down-titration (over 6 to 8 weeks),
+especially when simultaneously beginning
+a new antipsychotic while switching (i.e.,
+cross-titration)
+✽ Rapid discontinuation may lead to
+rebound psychosis and worsening of
+symptoms
+
+Drug Interactions
+• Dose may need to be reduced if given in
+conjunction with CYP450 1A2 inhibitors
+(e.g., fluvoxamine)
+• Dose may need to be raised if given in
+conjunction with CYP450 1A2 inducers
+(e.g., cigarette smoke)
+• CYP450 2D6 inhibitors (e.g., paroxetine,
+fluoxetine, duloxetine) can raise clozapine
+levels, but dosage adjustment usually not
+necessary
+• CYP450 3A4 inhibitors (e.g., nefazodone,
+fluvoxamine, fluoxetine) can raise clozapine
+levels, but dosage adjustment usually not
+necessary
+• Clozapine may enhance effects of
+antihypertensive drugs
+
+Other Warnings/
+Precautions
+• Possible association between myocarditis
+and cardiomyopathy and clozapine use,
+even in physically healthy individuals
+• Should not be used in conjunction with
+agents that are known to cause
+agranulocytosis
+• Use with caution in patients with glaucoma
+• Use with caution in patients with enlarged
+prostate
+
+Do Not Use
+• In patients with myeloproliferative disorder
+• In patients with uncontrolled epilepsy
+• In patients with granulocytopenia
+• In patients with CNS depression
+• If there is a proven allergy to clozapine
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Should be used with caution
+
+Hepatic Impairment
+
+Pharmacokinetics
+
+• Should be used with caution
+
+• Half-life 5–16 hours
+• Metabolized by multiple CYP450 enzymes,
+including 1A2, 2D6, and 3A4
+
+Cardiac Impairment
+
+94
+
+• Should be used with caution, particularly if
+patient is taking concomitant medication
+
+
+
+
+<<<PAGE 212>>>
+
+0521011698s04.qxd
+
+9/2/04
+
+2:34 PM
+
+Page 195
+
+FLUVOXAMINE
+THERAPEUTICS
+Brands • Luvox
+see index for additional brand names
+Generic? Yes
+Class
+• SSRI (selective serotonin reuptake
+inhibitor); often classified as an
+antidepressant, but it is not just an
+antidepressant
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Obsessive-compulsive disorder (OCD)
+• Depression
+• Panic disorder
+• Generalized anxiety disorder (GAD)
+• Social anxiety disorder (social phobia)
+• Posttraumatic stress disorder (PTSD)
+
+How The Drug Works
+• Boosts neurotransmitter serotonin
+• Blocks serotonin reuptake pump (serotonin
+transporter)
+• Desensitizes serotonin receptors, especially
+serotonin 1A receptors
+• Presumably increases serotonergic
+neurotransmission
+✽ Fluvoxamine also has antagonist
+properties at sigma 1 receptors
+
+How Long Until It Works
+
+✽ Some patients may experience relief of
+
+insomnia or anxiety early after initiation of
+treatment
+• Onset of therapeutic actions usually not
+immediate, but often delayed 2 to 4 weeks
+• If it is not working within 6 to 8 weeks, it
+may require a dosage increase or it may
+not work at all
+• May continue to work for many years to
+prevent relapse of symptoms
+
+If It Works
+• The goal of treatment is complete
+remission of current symptoms as well as
+prevention of future relapses
+• Treatment most often reduces or even
+eliminates symptoms, but not a cure since
+symptoms can recur after medicine
+stopped
+
+• Continue treatment until all symptoms are
+gone (remission) or significantly reduced
+(e.g., OCD)
+• Once symptoms gone, continue treating for
+1 year for the first episode of depression
+• For second and subsequent episodes of
+depression, treatment may need to be
+indefinite
+• Use in anxiety disorders may also need to
+be indefinite
+
+If It Doesn’t Work
+• Many patients only have a partial response
+where some symptoms are improved but
+others persist (especially insomnia, fatigue,
+and problems concentrating in depression)
+• Other patients may be nonresponders,
+sometimes called treatment-resistant or
+treatment-refractory
+• Some patients who have an initial response
+may relapse even though they continue
+treatment, sometimes called “poop-out”
+• Consider increasing dose, switching to
+another agent or adding an appropriate
+augmenting agent
+• Consider psychotherapy
+• Consider evaluation for another diagnosis
+or for a comorbid condition (e.g., medical
+illness, substance abuse, etc.)
+• Some patients may experience apparent
+lack of consistent efficacy due to activation
+of latent or underlying bipolar disorder, and
+require antidepressant discontinuation and
+a switch to a mood stabilizer
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+• For the expert, consider cautious addition
+of clomipramine for treatment-resistant
+OCD
+• Trazodone, especially for insomnia
+• Bupropion, mirtazapine, reboxetine, or
+atomoxetine (use combinations of
+antidepressants with caution as this may
+activate bipolar disorder and suicidal
+ideation)
+• Modafinil, especially for fatigue, sleepiness,
+and lack of concentration
+• Mood stabilizers or atypical antipsychotics
+for bipolar depression, psychotic
+depression, treatment-resistant depression,
+or treatment-resistant anxiety disorders
+• Benzodiazepines
+
+195
+
+
+
+
+<<<PAGE 213>>>
+
+0521011698s04.qxd
+
+9/2/04
+
+2:34 PM
+
+Page 196
+
+FLUVOXAMINE (continued)
+• If all else fails for anxiety disorders,
+consider gabapentin or tiagabine
+• Hypnotics for insomnia
+• Classically, lithium, buspirone, or thyroid
+hormone
+• In Europe and Japan, augmentation is
+more commonly administered for the
+treatment of depression and anxiety
+disorders, especially with benzodiazepines
+and lithium
+• In the US, augmentation is more
+commonly administered for the treatment
+of OCD, especially with atypical
+antipsychotics, buspirone, or even
+clomipramine; clomipramine should be
+added with caution and at low doses as
+fluvoxamine can alter clomipramine
+metabolism and raise its levels
+
+• Mostly central nervous system (insomnia
+but also sedation, agitation, tremors,
+headache, dizziness)
+• Note: patients with diagnosed or
+undiagnosed bipolar or psychotic disorders
+may be more vulnerable to CNS-activating
+actions of SSRIs
+• Autonomic (sweating)
+• Bruising and rare bleeding
+• Rare hyponatremia
+
+Life Threatening or
+Dangerous Side Effects
+• Rare seizures
+• Rare induction of mania and activation of
+suicidal ideation
+
+Weight Gain
+
+Tests
+• None for healthy individuals
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• Theoretically due to increases in serotonin
+concentrations at serotonin receptors in
+parts of the brain and body other than
+those that cause therapeutic actions (e.g.,
+unwanted actions of serotonin in sleep
+centers causing insomnia, unwanted
+actions of serotonin in the gut causing
+diarrhea, etc.)
+• Increasing serotonin can cause diminished
+dopamine release and might contribute to
+emotional flattening, cognitive slowing, and
+apathy in some patients
+• Most side effects are immediate but often
+go away with time, in contrast to most
+therapeutic effects which are delayed and
+are enhanced over time
+✽ Fluvoxamine’s sigma 1 antagonist
+properties may contribute to sedation and
+fatigue in some patients
+
+Notable Side Effects
+• Sexual dysfunction (men: delayed
+ejaculation, erectile dysfunction; men and
+women: decreased sexual desire,
+anorgasmia)
+• Gastrointestinal (decreased appetite,
+nausea, diarrhea, constipation, dry mouth)
+
+196
+
+• Reported but not expected
+• Patients may actually experience weight
+loss
+
+Sedation
+
+• Many experience and/or can be significant
+in amount
+
+What To Do About Side Effects
+• Wait
+• Wait
+• Wait
+• If fluvoxamine is sedating, take at night to
+reduce drowsiness
+• Reduce dose
+• In a few weeks, switch or add other drugs
+
+Best Augmenting Agents for Side
+Effects
+• Often best to try another SSRI or another
+antidepressant monotherapy prior to
+resorting to augmentation strategies to
+treat side effects
+• Trazodone or a hypnotic for insomnia
+• Bupropion, sildenafil, vardenafil, or tadalafil
+for sexual dysfunction
+• Bupropion for emotional flattening,
+cognitive slowing, or apathy
+• Mirtazapine for insomnia, agitation, and
+gastrointestinal side effects
+
+
+
+
+<<<PAGE 214>>>
+
+0521011698s04.qxd
+
+9/2/04
+
+2:34 PM
+
+Page 197
+
+(continued) FLUVOXAMINE
+
+• Benzodiazepines for jitteriness and anxiety,
+especially at initiation of treatment and
+especially for anxious patients
+• Many side effects are dose-dependent (i.e.,
+they increase as dose increases, or they
+reemerge until tolerance re-develops)
+• Many side effects are time-dependent (i.e.,
+they start immediately upon dosing and
+upon each dose increase, but go away with
+time)
+• Activation and agitation may represent the
+induction of a bipolar state, especially a
+mixed dysphoric bipolar II condition
+sometimes associated with suicidal
+ideation, and require the addition of
+lithium, a mood stabilizer or an atypical
+antipsychotic, and/or discontinuation of
+fluvoxamine
+
+DOSING AND USE
+Usual Dosage Range
+• 100–300 mg/day for OCD
+• 100–200 mg/day for depression
+
+Dosage Forms
+• Tablets 25 mg, 50 mg scored, 100 mg
+scored
+
+How to Dose
+• Initial 50 mg/day; increase by 50 mg/day in
+4–7 days; usually wait a few weeks to
+assess drug effects before increasing dose
+further, but can increase by 50 mg/day
+every 4–7 days until desired efficacy is
+reached; maximum 300 mg/day
+• Doses below 100 mg/day usually given as
+a single dose at bedtime; doses above
+100 mg/day can be divided into two doses
+to enhance tolerability, with the larger dose
+administered at night, but can also be
+given as a single dose at bedtime
+
+Dosing Tips
+• 50 mg and 100 mg tablets are scored, so
+to save costs, give 25 mg as half of 50 mg
+tablet, and give 50 mg as half of 100 mg
+tablet
+• To improve tolerability, dosing can either
+be given once a day, usually all at night, or
+split either symmetrically or
+
+asymmetrically, usually with more of the
+dose given at night
+• Some patients take more than 300 mg/day
+• If intolerable anxiety, insomnia, agitation,
+akathisia, or activation occur either upon
+dosing initiation or discontinuation,
+consider the possibility of activated bipolar
+disorder and switch to a mood stabilizer or
+an atypical antipsychotic
+
+Overdose
+• Rare fatalities have been reported, both in
+combination with other drugs and alone;
+sedation, dizziness, vomiting, diarrhea,
+irregular heartbeat, seizures, coma,
+breathing difficulty
+
+Long-Term Use
+• Safe
+
+Habit Forming
+• No
+
+How to Stop
+• Taper to avoid withdrawal effects
+(dizziness, nausea, stomach cramps,
+sweating, tingling, dysesthesias)
+• Many patients tolerate 50% dose reduction
+for 3 days, then another 50% reduction for
+3 days, then discontinuation
+• If withdrawal symptoms emerge during
+discontinuation, raise dose to stop
+symptoms and then restart withdrawal
+much more slowly
+
+Pharmacokinetics
+• Parent drug has 9–28 hour half-life
+• Inhibits CYP450 3A4
+• Inhibits CYP450 1A2
+• Inhibits CYP450 2C9/2C19
+
+Drug Interactions
+• Tramadol increases the risk of seizures in
+patients taking an antidepressant
+• Can increase tricyclic antidepressant levels;
+use with caution with tricyclic
+antidepressants
+• Can cause a fatal “serotonin syndrome”
+when combined with MAO inhibitors, so do
+not use with MAO inhibitors or for at least
+14 days after MAOIs are stopped
+• Do not start an MAO inhibitor for at least
+2 weeks after discontinuing fluvoxamine
+
+197
+
+
+
+
+<<<PAGE 215>>>
+
+0521011698s04.qxd
+
+9/2/04
+
+2:34 PM
+
+Page 198
+
+FLUVOXAMINE (continued)
+• May displace highly protein bound drugs
+(e.g., warfarin)
+• Can rarely cause weakness, hyperreflexia,
+and incoordination when combined with
+sumatriptan or possibly with other triptans,
+requiring careful monitoring of patient
+• Via CYP450 1A2 inhibition, fluvoxamine
+may reduce clearance of theophylline and
+clozapine, thus raising their levels and
+requiring their dosing to be lowered
+• Fluvoxamine administered with either
+caffeine or theophylline can thus cause
+jitteriness, excessive stimulation, or rarely
+seizures, so concomitant use should
+proceed cautiously
+• Metabolism of fluvoxamine may be
+enhanced in smokers and thus its levels
+lowered, requiring higher dosing
+• Via CYP450 3A4 inhibition, fluvoxamine
+may reduce clearance of carbamazepine
+and benzodiazepines such as alprazolam
+and triazolam, and thus require dosage
+reduction
+• Via CYP450 3A4 inhibition, fluvoxamine
+could theoretically increase concentrations
+of certain cholesterol lowering HMG CoA
+reductase inhibitors, especially simvastatin,
+atorvastatin, and lovastatin, but not
+pravastatin or fluvastatin, which would
+increase the risk of rhabdomyolysis; thus,
+coadministration of fluvoxamine with
+certain HMG CoA reductase inhibitors
+should proceed with caution
+• Via CYP450 3A4 inhibition, fluvoxamine
+could theoretically increase the
+concentrations of pimozide, and cause QTc
+prolongation and dangerous cardiac
+arrhythmias
+
+Other Warnings/
+Precautions
+• Add or initiate other antidepressants with
+caution for up to two weeks after
+discontinuing fluvoxamine
+• Use with caution in patients with history of
+seizure
+• Use with caution in patients with bipolar
+disorder unless treated with concomitant
+mood stabilizing agent
+• May cause photosensitivity
+• Monitor patients for activation of suicidal
+ideation, especially children and
+adolescents
+
+198
+
+Do Not Use
+• If patient is taking an MAO inhibitor
+• If patient is taking thioridazine or pimozide
+• If there is a proven allergy to fluvoxamine
+
+SPECIAL POPULATIONS
+Renal Impairment
+• No dose adjustment
+
+Hepatic Impairment
+• Lower dose or give less frequently, perhaps
+by half; use slower titration
+
+Cardiac Impairment
+• Preliminary research suggests that
+fluvoxamine is safe in these patients
+• Treating depression with SSRIs in patients
+with acute angina or following myocardial
+infarction may reduce cardiac events and
+improve survival as well as mood
+
+Elderly
+• May require lower initial dose and slower
+titration
+
+Children and Adolescents
+• Approved for ages 8–17 for OCD
+• 8–17: initial 25 mg/day at bedtime;
+increase by 25 mg/day every 4–7 days;
+maximum 200 mg/day; doses above
+50 mg/day should be divided into 2 doses
+with the larger dose administered at
+bedtime
+• Preliminary evidence suggests efficacy for
+other anxiety disorders and depression in
+children and adolescents
+• Use with caution, observing for activation
+of known or unknown bipolar disorder
+and/or suicidal ideation, and strongly
+consider informing parents or guardian of
+this risk so they can help observe child or
+adolescent patients
+
+Pregnancy
+• Risk Category C [some animal studies
+show adverse effects, no controlled studies
+in humans]
+• Not generally recommended for use during
+pregnancy, especially during first trimester
+
+
+
+
+<<<PAGE 216>>>
+
+0521011698s04.qxd
+
+9/2/04
+
+2:34 PM
+
+Page 199
+
+(continued) FLUVOXAMINE
+
+• Nonetheless, continuous treatment during
+pregnancy may be necessary and has not
+been proven to be harmful to the fetus
+• At delivery there may be more bleeding in
+the mother and transient irritability or
+sedation in the newborn
+• Must weigh the risk of treatment (first
+trimester fetal development, third trimester
+newborn delivery) to the child against the
+risk of no treatment (recurrence of
+depression, maternal health, infant
+bonding) to the mother and child
+• For many patients this may mean
+continuing treatment during pregnancy
+• Neonates exposed to SSRIs or SNRIs late
+in the third trimester have developed
+complications requiring prolonged
+hospitalization, respiratory support, and
+tube feeding; reported symptoms are
+consistent with either a direct toxic effect
+of SSRIs and SNRIs or, possibly, a drug
+discontinuation syndrome, and include
+respiratory distress, cyanosis, apnea,
+seizures, temperature instability, feeding
+difficulty, vomiting, hypoglycemia,
+hypotonia, hypertonia, hyperreflexia,
+tremor, jitteriness, irritability, and constant
+crying
+
+Breast Feeding
+• Some drug is found in mother’s breast milk
+• Trace amounts may be present in nursing
+children whose mothers are on
+fluvoxamine
+• If child becomes irritable or sedated, breast
+feeding or drug may need to be
+discontinued
+• Immediate postpartum period is a high-risk
+time for depression, especially in women
+who have had prior depressive episodes,
+so drug may need to be reinstituted late in
+the third trimester or shortly after
+childbirth to prevent a recurrence during
+the postpartum period
+• Must weigh benefits of breast feeding with
+risks and benefits of antidepressant
+treatment versus non-treatment to both the
+infant and the mother
+• For many patients this may mean
+continuing treatment during breast feeding
+
+THE ART OF PSYCHOPHARMACOLOGY
+Potential Advantages
+• Patients with mixed anxiety/depression
+• Generic is less expensive than brand name
+where available
+
+Potential Disadvantages
+• Patients with irritable bowel or multiple
+gastrointestinal complaints
+• Can require dose titration and twice daily
+dosing
+
+Primary Target Symptoms
+• Depressed mood
+• Anxiety
+
+Pearls
+
+✽ Often a preferred treatment of anxious
+
+depression as well as major depressive
+disorder comorbid with anxiety disorders
+• Some withdrawal effects, especially
+gastrointestinal effects
+• May have lower incidence of sexual
+dysfunction than other SSRIs
+• Preliminary research suggests that
+fluvoxamine is efficacious in obsessivecompulsive symptoms in schizophrenia
+when combined with antipsychotics
+• Not FDA approved for depression, but used
+widely for depression in many countries
+• SSRIs may be less effective in women over
+50, especially if they are not taking
+estrogen
+• SSRIs may be useful for hot flushes in
+perimenopausal women
+✽ Actions at sigma 1 receptors may explain
+in part fluvoxamine’s sometimes rapid
+onset effects in anxiety disorders and
+insomnia
+✽ Actions at sigma 1 receptors may explain
+potential advantages of fluvoxamine for
+psychotic depression and delusional
+depression
+✽ For treatment-resistant OCD, consider
+cautious combination of fluvoxamine and
+clomipramine by an expert
+• Normally, clomipramine (CMI), a potent
+serotonin reuptake blocker, at steady state
+is metabolized extensively to its active
+metabolite desmethyl-clomipramine (deCMI), a potent noradrenergic reuptake
+blocker
+
+199
+
+
+
+
+<<<PAGE 217>>>
+
+0521011698s04.qxd
+
+9/2/04
+
+2:34 PM
+
+Page 200
+
+FLUVOXAMINE (continued)
+• Thus, at steady state, plasma drug activity
+is generally more noradrenergic (with
+higher de-CMI levels) than serotonergic
+(with lower parent CMI levels)
+• Addition of a CYP450 1A2 inhibitor,
+fluvoxamine, blocks this conversion and
+results in higher CMI levels than de-CMI
+levels
+• Thus, addition of the SSRI fluvoxamine to
+CMI in treatment-resistant OCD can
+
+powerfully enhance serotonergic activity,
+not only due to the inherent serotonergic
+activity of fluvoxamine, but also due to a
+favorable pharmacokinetic interaction
+inhibiting CYP450 1A2 and thus converting
+CMI’s metabolism to a more powerful
+serotonergic portfolio of parent drug
+
+Suggested Reading
+Cheer SM, Figgitt DP. Spotlight on fluvoxamine
+in anxiety disorders in children and
+adolescents. CNS Drugs. 2002;16:139–44.
+Edwards JG, Anderson I. Systematic review
+and guide to selection of selective serotonin
+reuptake inhibitors. Drugs. 1999;57:507–533.
+Figgitt DP, McClellan KJ. Fluvoxamine. An
+updated review of its use in the management
+of adults with anxiety disorders. Drugs.
+2000;60:925–954.
+200
+
+Pigott TA, Seay SM. A review of the efficacy of
+selective serotonin reuptake inhibitors in
+obsessive-compulsive disorder. Journal of
+Clinical Psychiatry. 1999;60:101–106.
+Wares MR. Fluvoxamine: a review of the
+controlled trials in depression. Journal of
+Clinical Psychiatry. 1997;58(suppl 5):15–23.
+
+
+
+
+<<<PAGE 553>>>
+
+0521011698s10.qxd
+
+9/2/04
+
+2:49 PM
+
+Page 536
+
+ZOTEPINE (continued)
+• Can decrease the effects of levodopa,
+dopamine agonists
+• Epinephrine may lower blood pressure
+• May interact with hypotensive agents due
+to alpha 1 adrenergic blockade
+• May enhance QTc prolongation of other
+drugs capable of prolonging QTc interval
+• Plasma concentrations increased by
+diazepam, fluoxetine
+• Zotepine may increase plasma levels of
+phenytoin
+• May increase risk of bleeding if used with
+anticoagulants
+• Theoretically, dose may need to be raised if
+given in conjunction with CYP450 1A2
+inducers (e.g., cigarette smoke)
+• Theoretically, dose may need to be lowered
+if given in conjunction with CYP450 1A2
+inhibitors (e.g., fluvoxamine) in order to
+prevent dangers of dose-dependent QTc
+prolongation
+• Theoretically, dose may need to be lowered
+if given in conjunction with CYP450 3A4
+inhibitors (e.g., fluvoxamine, nefazodone,
+fluoxetine) in order to prevent dangers of
+dose-dependent QTc prolongation
+
+Other Warnings/
+Precautions
+• Not recommended for use with sibutramine
+• Use cautiously in patients with alcohol
+withdrawal or convulsive disorders
+because of possible lowering of seizure
+threshold
+• If signs of neuroleptic malignant syndrome
+develop, treatment should be immediately
+discontinued
+• Because zotepine may dose-dependently
+prolong QTc interval, use with caution in
+patients who have bradycardia or who are
+taking drugs that can induce bradycardia
+(e.g., beta blockers, calcium channel
+blockers, clonidine, digitalis)
+• Because zotepine may dose-dependently
+prolong QTc interval, use with caution in
+patients who have hypokalemia and or
+hypomagnesemia or who are taking drugs
+than can induce hypokalemia and/or
+magnesemia (e.g., diuretics, stimulant
+laxatives, intravenous amphotericin B,
+glucocorticoids, tetracosactide)
+• Because zotepine dose-dependently
+prolongs QTc interval, use with caution in
+patients taking any agent capable of
+536
+
+increasing zotepine plasma levels (e.g.,
+diazepam, CYP450 1A2 inhibitors and
+CYP450 3A4 inhibitors)
+
+Do Not Use
+• If patient has epilepsy or family history of
+epilepsy
+• If patient has gout or history of
+nephrolithiasis
+• If patient is taking other CNS depressants
+• If patient is taking high doses of other
+antipsychotics
+• If patient is taking agents capable of
+significantly prolonging QTc interval (e.g.,
+pimozide; thioridazine; selected
+antiarrhythmics such as quinidine,
+disopyramide, amiodarone, and sotalol;
+selected antibiotics such as moxifloxacin
+and sparfloxacin)
+• If there is a history of QTc prolongation or
+cardiac arrhythmia, recent acute
+myocardial infarction, uncompensated
+heart failure
+• If patient is pregnant or breast feeding
+• If there is a proven allergy to zotepine
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Recommended starting dose 25 mg twice a
+day; recommended maximum dose
+generally 75 mg twice a day
+
+Hepatic Impairment
+• Recommended starting dose 25 mg twice a
+day; recommended maximum dose
+generally 75 mg twice a day
+• May require weekly monitoring of liver
+function during the first few months of
+treatment
+
+Cardiac Impairment
+• Drug should be used with caution
+• Zotepine produces a dose-dependent
+prolongation of QTc interval, which may be
+enhanced by the existence of bradycardia,
+hypokalemia, congenital or acquired long
+QTc interval, which should be evaluated
+prior to administering zotepine
+• Use with caution if treating concomitantly
+with a medication likely to produce
+prolonged bradycardia, hypokalemia,
+slowing of intracardiac conduction, or
+prolongation of the QTc interval
+
+
+
+
+<<<PAGE 565>>>
+
+0521011698emt.qxd
+
+9/2/04
+
+2:51 PM
+
+Digton (sulpiride), 435
+Diligan (hydroxyzine), 219
+Dinalexin (fluoxetine), 175
+Dipromal (valproate), 499
+Discimer (trifluoperazine), 487
+Distedon (diazepam), 109
+divalproex (valproate), 499
+Divial (lorazepam), 265
+Dixarit (clonidine), 81
+Dixibon (sulpiride), 435
+Dizac (diazepam), 109
+Dobren (sulpiride), 435
+Dobupal (venlafaxine), 505
+Dogmatil (sulpiride), 435
+Dogmatyl (sulpiride), 435
+Dolmatil (sulpiride), 435
+Domical (amitriptyline), 13
+Dominans (nortriptyline), 329
+Domnamid (estazolam), 163
+DOM-trazodone (trazodone), 477
+donepezil, 133
+Doneurin (doxepin), 145
+Donix (lorazepam), 265
+Dopress (Dothiepin), 139
+Doral (quazepam), 397
+Dorken (clorazepate), 87
+Dorm (lorazepam), 265
+Dormalin (quazepam), 397
+Dormapam (temazepam), 443
+Dorme (quazepam), 397
+Dormicum (midazolam), 291
+Dormodor (flurazepam), 191
+Dothep (Dothiepin), 139
+dothiepin, 139
+Doxal (doxepin), 145
+Doxedyn (doxepin), 145
+doxepin, 145
+Dozic (haloperidol), 213
+Drenian (diazepam), 109
+Dresent (sulpiride), 435
+Ducene (diazepam), 109
+duloxetine, 151
+Dumirox (fluvoxamine), 195
+Dumozolam (triazolam), 483
+Dumyrox (fluvoxamine), 195
+Duraclon (clonidine), 81
+Duradiazepam (diazepam), 109
+Duralith (lithium), 247
+Duraperidol (haloperidol), 213
+Durazepam (oxazepam), 341
+Durazolam (lorazepam), 265
+Dutonin (nefazodone), 323
+Dynalert (pemoline), 357
+Dynamin (pemoline), 357
+Eclorion (sulpiride), 435
+Edronax (reboxetine), 407
+Efectin (venlafaxine), 505
+548
+
+Page 548
+
+Efexir (venlafaxine), 505
+Efexor (venlafaxine), 505
+Efexor XL (venlafaxine), 505
+Effexor (venlafaxine), 505
+Effexor XR (venlafaxine), 505
+Effiplen (buspirone), 43
+Egibren (selegiline), 423
+Eglonyl (sulpiride), 435
+Elavil (amitriptyline), 13
+Elavil Plus (amitriptyline), 13
+Eldepryl (selegiline), 423
+Elenium (chlordiazepoxide), 53
+Eliwel (amitriptyline), 13
+Elopram (citalopram), 63
+Elroquil N (hydroxyzine), 219
+Elperil (thioridazine), 447
+Emdalen (lofepramine), 253
+Endep (amitriptyline), 13
+Enimon (sulpiride), 435
+Epial (carbamazepine), 47
+Epilim (valproate), 499
+Epitol (carbamazepine), 47
+Epitomax (topiramate), 465
+Equilid (sulpiride), 435
+Equitam (lorazepam), 265
+Ergenyl (valproate), 499
+Eridan (diazepam), 109
+Erocap (fluoxetine), 175
+Ergocalm (lorazepam), 265
+escitalopram, 157
+Esculid (diazepam), 109
+Esilgan (estazolam), 163
+Esipride (sulpiride), 435
+Eskalith (lithium), 247
+Eskalith CR (lithium), 247
+Eskazine (trifluoperazine), 487
+Esparon (alprazolam), 1
+estazolam, 163
+Ethipam (diazepam), 103
+Ethipramine (imipramine), 223
+Euhypnos (temazepam), 443
+Euipnos (temazepam), 443
+Eurosan (diazepam), 109
+Eutimil (paroxetine), 351
+Eutimox (fluphenazine), 185
+Evacalm (diazepam), 109
+Everiden (valproate), 499
+Exan (buspirone), 43
+Excegran (zonisamide), 525
+Exelon (rivastigmine), 417
+Exogran (zonisamide), 525
+Exostrept (fluoxetine), 175
+Fardalan (sulpiride), 435
+Fargenor (chlordiazepoxide), 53
+Faustan (diazepam), 109
+Faverin (fluvoxamine), 195
+Felicium (fluoxetine), 175
+
+
+
+
+<<<PAGE 566>>>
+
+0521011698emt.qxd
+
+9/2/04
+
+2:51 PM
+
+Felison (flurazepam), 191
+Fenactil (chlorpromazine), 57
+Fentazin (perphenazine), 365
+Fevarin (fluvoxamine), 195
+Fidelan (sulpiride), 435
+Finlepsin (carbamazepine), 47
+Flaracantyl (thioridazine), 447
+Flonital (fluoxetine), 175
+Floxyfral (fluvoxamine), 195
+Fluanxol (flupenthixol), 181
+Fluanxol Depot (flupenthixol), 181
+Fluanxol Depot 2% (flupenthixol), 181
+Fluanxol Depot 10% (flupenthixol), 181
+Fluanxol LP 20 mg/mL (flupenthixol), 181
+Fluanxol LP 100 mg/mL (flupenthixol), 181
+Fluanxol Retard (flupenthixol), 181
+Fluctin (fluoxetine), 175
+Fluctine (fluoxetine), 175
+Fludecate (fluphenazine), 185
+Flufenazin (fluphenazine), 185
+Flufenazin dekanoat (fluphenazine), 185
+Flufenazin Enantat (fluphenazine), 185
+flumazenil, 167
+Fluni OPT (flunitrazepam), 171
+Flunimerck (flunitrazepam), 171
+Fluninoc (flunitrazepam), 171
+Flunipam (flunitrazepam), 171
+Flunitrax (flunitrazepam), 171
+flunitrazepam, 171
+Flunox (flurazepam), 191
+Fluocim (fluoxetine), 175
+Fluoxeren (fluoxetine), 175
+fluoxetine, 175
+Fluoxifar (fluoxetine), 175
+Fluoxin (fluoxetine), 175
+Flupam (flunitrazepam), 171
+flupenthixol, 181
+fluphenazine, 185
+flurazepam, 191
+Fluscand (flunitrazepam), 171
+Flutepam (flurazepam), 191
+Flutin (fluoxetine), 175
+Flutraz (flunitrazepam), 171
+Fluval (fluoxetine), 175
+fluvoxamine, 195
+Fluxadir (fluoxetine), 175
+Fluxonil (fluoxetine), 175
+Focalin (d-methylphenidate), 121
+Foille (trifluoperazine), 487
+Fokalepsin (carbamazepine), 47
+Fondur (fluoxetine), 175
+Fontex (fluoxetine), 175
+Fonzac (fluoxetine), 175
+Fortunan (haloperidol), 213
+Frontal (alprazolam), 1
+Frosinor (paroxetine), 351
+Frosnor (paroxetine), 351
+
+Page 549
+
+gabapentin, 201
+Gabitril (tiagabine), 457
+galantamine, 207
+Gamanil (lofepramine), 253
+Gamibetal Plus (diazepam), 109
+Gamonil (lofepramine), 253
+Gen-Alprazolam (alprazolam), 1
+Gen-Clomipramine (clomipramine), 69
+Gen-Triazolam (triazolam), 483
+Gen-Valproic (valproate), 499
+Geodon (ziprasidone), 515
+Gewakalm (diazepam), 103
+Gladem (sertraline), 429
+Gnostorid (oxazepam), 341
+Gobanal (diazepam), 109
+Haemiton (clonidine), 81
+Halcion (triazolam), 483
+Haldol (haloperidol), 213
+Haldol decanoas (haloperidol), 213
+Haldol Decanoat (haloperidol), 213
+Haldol Decanoate (haloperidol), 213
+Haldol Decanoato (haloperidol), 213
+Haldol Depot (haloperidol), 213
+Haldol L.A. (haloperidol), 213
+Haloneural (haloperidol), 213
+Haloper (haloperidol), 213
+haloperidol, 213
+Haloperidol Decanoat (haloperidol), 213
+Haloperidol decanoato (haloperidol), 213
+Haloperin (haloperidol), 213
+Haloperin depotinjektio (haloperidol), 213
+Harmomed (dothiepin), 139
+Harmoned (diazepam), 109
+Helex (alprazolam), 1
+Helogaphen (chlordiazepoxide), 53
+Hermolepsin (carbamazepine), 47
+Herphonal (trimipramine), 493
+Hexafene (hydroxyzine), 219
+Hexalid (diazepam), 109
+Hibanil (chlorpromazine), 57
+Hibernal (chlorpromazine), 57
+Hipnodane (quazepam), 397
+Hipnosedon (flunitrazepam), 171
+Histilos (hydroxyzine), 219
+Huberplex (chlordiazepoxide), 53
+Hydoic acid (valproate), 499
+Hydophen (clomipramine), 69
+Hydroxyzin (hydroxyzine), 219
+hydroxyzine, 219
+Hydroxyzinum (hydroxyzine), 219
+Hypam (triazolam), 483
+Hypnocalm (flunitrazepam), 171
+Hypnodorm (flunitrazepam), 171
+Hypnor (flunitrazepam), 171
+Hypnorex retard (lithium), 247
+Hypnovel (midazolam), 291
+Hyton Asa (pemoline), 357
+549
+
+
+
+
+<<<PAGE 568>>>
+
+0521011698emt.qxd
+
+9/2/04
+
+2:51 PM
+
+Lorsilan (lorazepam), 265
+Lorzem (lorazepam), 265
+Lovan (fluoxetine), 175
+Loxapac (loxapine), 271
+loxapine, 271
+Loxitane (loxapine), 271
+Ludiomil (maprotiline), 277
+Lullan (perospirone), 361
+Lustral (sertraline), 429
+Luvox (fluvoxamine), 195
+Lyogen (fluphenazine), 185
+Lyogen Depot (fluphenazine), 185
+Lyoridin Depot (fluphenazine), 185
+Lyorodin (fluphenazine), 185
+Lyrica (pregabalin), 387
+Majorpin (zotepine), 533
+Mallorol (thioridazine), 447
+Maludil (maprotiline), 277
+Mandro-Zep (diazepam), 109
+Manerix (moclobemide), 307
+Maniprex (lithium), 247
+Mapro Gry (maprotiline), 277
+Mapro Tablinen (maprotiline), 277
+Maprolu (maprotiline), 277
+Maprolu-50 (maprotiline), 277
+Maprostad (maprotiline), 277
+Maprotibene (maprotiline), 277
+Maprotilin (maprotiline), 277
+maprotiline, 277
+Marax (hyroxyzine), 219
+Mareen 50 (doxepin), 145
+Mariastel (sulpiride), 435
+Marplan (isocarboxazid), 229
+Martimil (nortriptyline), 329
+Masmoran (hydroxyzine), 219
+Maveral (fluvoxamine), 195
+Maximed (protriptyline), 391
+Mazepine (carbamazepine), 47
+Maxivalet (amitriptyline), 13
+Medipam (diazepam), 109
+Medopam (oxazepam), 341
+Mefurine (thioridazine), 447
+Megaphen (chlorpromazine), 37
+Meilax (loflazepate), 259
+Meleril (thioridazine), 447
+Melipramin (imipramine), 223
+Melipramine (imipramine), 223
+Mellaril (thioridazine), 447
+Melleretten (thioridazine), 447
+Melleril (thioridazine), 447
+Melzine (thioridazine), 447
+Memac (donepezil), 133
+memantine, 283
+Menfazona (nefazodone), 323
+Menrium (chlordiazepoxide), 53
+Mepizin (oxazepam), 341
+Meresa (sulpiride), 435
+
+Page 551
+
+Merlit (lorazepam), 265
+mesoridazine, 287
+Metadate CD (d,l-methylphenidate), 121
+Metadate ER (d,l-methylphenidate), 121
+Metamidol (diazepam), 109
+Methylin (d,l-methylphenidate), 121
+Methylin ER (d,l-methylphenidate), 121
+Methylphenidate (d,l-methylphenidate), 121
+Metylyl (desipramine), 103
+Mialin (alprazolam), 1
+midazolam, 291
+Milithin (lithium), 247
+milnacipran, 295
+Mipralin (imipramine), 223
+Mirbanil (sulpiride), 435
+Mirenil (fluphenazine), 185
+Mirenil Prolongatum (fluphenazine), 185
+Mirfat (clonidine), 81
+Mirfudorm (oxazepam), 341
+Mirpan (maprotiline), 277
+mirtazapine, 301
+Moban (molindone), 319
+Mocloamine (moclobemide), 307
+moclobemide, 307
+modafinil, 313
+Modalina (trifluoperazine), 487
+Modecate (fluphenazine), 185
+Modiodal (modafinil), 313
+Moditen (fluphenazine), 185
+Moditen Action Prolongee (fluphenazine), 185
+Moditen Depot (fluphenazine), 185
+Moditen Enanthate (fluphenazine), 185
+Modium (lorazepam), 265
+molindone, 319
+Molipaxin (trazodone), 477
+Motipress (nortriptyline), 329
+Motival (nortriptyline), 329
+Motivan (paroxetine), 351
+Movergan (selegiline), 423
+Moverin (selegiline), 423
+Moxadil (amoxapine), 19
+Multipax (hydroxyzine), 219
+Multum (chlordiazepoxide), 53
+Murelax (oxazepam), 341
+Mutan (fluoxetine), 175
+Mylproin (valproate), 499
+Nailin (nortriptyline), 329
+Nalin (nortriptyline), 329
+Namenda (memantine), 283
+Nansius (clorazepate), 87
+Napoton (chlordiazepoxide), 53
+Narcozep (flunitrazepam), 171
+Nardelzine (phenelzine), 371
+Nardil (phenelzine), 371
+Narol (buspirone), 43
+Navane (thiothixene), 453
+Navicalm (hydroxyzine), 219
+551
+
+
+
+
+<<<PAGE 579>>>
+
+0521011698emt.qxd
+
+9/2/04
+
+nortriptyline, 329
+pregabalin, 387
+tiagabine, 457
+topiramate, 465
+trimipramine, 493
+valproate (divalproex), 499
+zonisamide, 525
+Neutropenia
+lithium, 247
+Nicotine addiction
+bupropion, 37
+Obsessive-compulsive disorder
+citalopram, 63
+clomipramine, 69
+escitalopram, 157
+fluoxetine, 175
+fluvoxamine, 195
+paroxetine, 351
+sertraline, 429
+venlafaxine, 505
+Panic disorder
+alprazolam, 1
+citalopram, 63
+clonazepam, 75
+escitalopram, 157
+fluoxetine, 175
+fluvoxamine, 195
+isocarboxazid, 229
+lorazepam, 265
+mirtazapine, 301
+nefazodone, 323
+paroxetine, 351
+phenelzine, 371
+pregabalin, 387
+reboxetine, 407
+sertraline, 429
+tranylcypromine, 471
+venlafaxine, 505
+Parkinson’s disease
+selegiline, 423
+zonisamide, 525
+Peripheral neuropathic pain
+pregabalin, 387
+Porphyria
+chlorpromazine, 57
+Postherpetic neuralgia
+gabapentin, 201
+
+562
+
+2:51 PM
+
+Page 562
+
+Posttraumatic stress disorder
+citalopram, 63
+clonidine, 81
+escitalopram, 157
+fluoxetine, 175
+fluvoxamine, 195
+mirtazapine, 301
+nefazodone, 323
+paroxetine, 351
+sertraline, 429
+venlafaxine, 505
+Premenstrual dysphoric disorder
+citalopram, 63
+escitalopram, 157
+fluoxetine, 175
+paroxetine, 351
+sertraline, 429
+venlafaxine, 505
+Pruritus
+doxepin, 145
+hydroxyzine, 219
+Psychosis
+alprazolam (adjunct), 1
+amisulpride, 7
+aripiprazole, 25
+carbamazepine (adjunct), 47
+chlorpromazine, 57
+clonazepam (adjunct), 75
+clozapine, 41
+flupenthixol, 181
+fluphenazine, 185
+haloperidol, 213
+lamotrigine (adjunct), 235
+lorazepam (adjunct), 265
+loxapine, 271
+mesoridazine, 287
+molindone, 319
+olanzapine, 335
+perospirone, 361
+perphenazine, 365
+pimozide, 377
+pipothiazine, 383
+quetiapine, 401
+risperidone, 411
+sulpiride, 435
+thioridazine, 447
+thiothixene, 453
+trifluoperazine, 487
+valproate (divalproex) (adjunct), 499
+ziprasidone, 515
+zotepine, 533
+zuclopenthixol, 539
+
+

@@ -1,0 +1,544 @@
+<<<PAGE 351>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Arousal Combos
+SNRI + stimulant
+= SNRI
+
+5HT
+
+NE
+
+DA
+
+single boost
+
+double boost
+
+single boost
+
+= stimulant
+
+SERT
+
+NET
+
+SNRI
+
+SNRI
+
+A
+
+DAT
+stimulant
+
+stimulant
+
+SNRI + modafinil
+= SNRI
+
+5HT
+
+NE
+
+DA
+
+single boost
+
+single boost
+
+single boost
+
+= modafinil
+
+SERT
+B
+
+NET
+SNRI
+
+SNRI
+
+DAT
+
+7
+
+modafinil
+
+Figure 7-66 Arousal combo: SNRI plus stimulant/modafinil. (A) Serotonin (5HT) and dopamine (DA) are single-boosted and
+norepinephrine (NE) is double-boosted when a serotonin–norepinephrine reuptake inhibitor (SNRI) is combined with a stimulant. (B)
+Serotonin (5HT) and norepinephrine (NE) are single-boosted by the serotonin–norepinephrine reuptake inhibitor (SNRI) while dopamine
+(DA) is single-boosted by modafinil.
+
+Table 7-2 Some tricyclic antidepressants still in use
+
+Generic name
+
+Trade name
+
+Clomipramine
+
+Anafranil
+
+Imipramine
+
+Tofranil
+
+Amitriptyline
+
+Elavil; Endep; Tryptizol;
+Laroxyl
+
+Nortriptyline
+
+Pamelor; Aventyl
+
+Protriptyline
+
+Vivactil
+
+Maprotiline
+
+Ludiomil
+
+Amoxapine
+
+Asendin
+
+Doxepin
+
+Sinequan; Adapin
+
+Desipramine
+
+Norpramin; Pertofran
+
+Trimipramine
+
+Surmontil
+
+Dothiepin
+
+Prothiaden
+
+Lofepramine
+
+Deprimyl; Gamanil
+
+Tianeptine
+
+Coaxil; Stablon
+
+structure contains three rings. The TCAs were
+synthesized about the same time that other threeringed phenothiazine molecules were shown to be
+effective tranquilizers for schizophrenia (i.e., the early
+D2 antagonist drugs such as chlorpromazine) but were
+a disappointment when tested as drugs for psychosis.
+However, during testing for schizophrenia, they were
+serendipitously discovered to be effective in unipolar
+depression. Tricyclic antidepressants are not merely drugs
+for depression since one of them (clomipramine) has
+anti-obsessive–compulsive disorder; many of them have
+anti-panic effects at antidepressant doses and efficacy for
+neuropathic and low back pain at low doses.
+Long after their antidepressant properties were
+observed, the TCAs were discovered to block the reuptake
+pumps for norepinephrine (i.e., NET), or for both
+norepinephrine and serotonin (i.e., SERT) (see Figure
+7-67A). Some tricyclics have equal or greater potency for
+SERT inhibition (e.g., clomipramine); others are more
+selective for NET inhibition (e.g., desipramine, maprotiline,
+335
+
+
+
+
+<<<PAGE 352>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+TCA
+H1
+
+sodium channel
+blocker
+Na+
+
+α1
+
+SERT
+
+NET
+
+M1
+A
+
+H1
+
+sodium channel
+blocker
+Na+
+
+α1
+
+NET
+
+M1
+B
+
+H1
+
+sodium channel
+blocker
+Na+
+
+α1
+
+nortriptyline, protriptyline) (Figure 7-67B). Most, however,
+block both serotonin and norepinephrine reuptake to
+some extent (Figure 7-67A). In addition, some TCAs have
+antagonist actions at 5HT2A and 5HT2C receptors, which
+could contribute to the therapeutic profile of those tricyclics
+that have such pharmacological actions (Figure 7-67C).
+The major limitation to the TCAs has never been their
+efficacy: these are quite effective agents. The problem
+with drugs in this class is the fact that all of them share
+at least four other unwanted pharmacological actions,
+namely, blockade of muscarinic cholinergic receptors, H1
+histamine receptors, α1-adrenergic receptors, and voltagesensitive sodium channels (Figure 7-67). As already
+discussed, blockade of H1 receptors causes sedation and
+may cause weight gain (see Chapter 5 and Figure 5-13A).
+Blockade of muscarinic cholinergic receptors, also known
+as anticholinergic actions, causes dry mouth, blurred
+vision, urinary retention, and constipation (Figure 5-8).
+Blockade of α1-adrenergic receptors may be therapeutic
+but also causes orthostatic hypotension and dizziness
+(Figure 5-13B). Tricyclic antidepressants also weakly
+block voltage-sensitive sodium channels in the heart
+and brain at therapeutic doses; in overdose, this action
+is thought to be the cause of coma and seizures due to
+central nervous system actions, and cardiac arrhythmias
+and cardiac arrest and death due to peripheral cardiac
+actions (Figure 7-68). The lethal dose of a TCA is only
+about a 30-day supply of drug. For this reason, it has
+been said that each time you are giving the patient a
+1-month’s prescription for a TCA, you are handing them a
+loaded gun. Obviously, this is often not a good idea in the
+treatment of a disorder associated with so much suicide;
+thus, TCAs have largely fallen out of favor except for
+patients who fail to respond to the various first-line drugs
+for depression discussed up to this point in this chapter.
+Monoamine Oxidase Inhibitors (MAOIs)
+
+SERT
+
+5HT2A
+C
+
+T2
+
+5H
+
+M1
+
+NET
+
+C
+Figure 7-67 Icons of tricyclic antidepressants (TCAs). All
+tricyclic antidepressants block reuptake of norepinephrine
+and are antagonists at histamine 1 (H1), α1-adrenergic, and
+muscarinic cholinergic receptors; they also block voltagesensitive sodium channels (A, B, and C). Some TCAs are also
+potent inhibitors of the serotonin reuptake pump (A, C), and
+some may additionally be antagonists at serotonin 2A and 2C
+receptors (C).
+
+336
+
+The first clinically effective drugs for depression ever
+discovered were inhibitors of the enzyme monoamine
+oxidase (MAO). They were found by accident when an
+anti-tuberculosis drug was observed to help depression
+that coexisted in some of the patients who had
+tuberculosis. This anti-tuberculosis drug, iproniazid, was
+eventually found to work in depression by inhibiting the
+enzyme MAO. However, inhibition of MAO was unrelated
+to its anti-tubercular actions. Although best known as
+powerful drugs to treat depression, the monoamine
+oxidase inhibitors (MAOIs) are also highly effective
+therapeutic agents for certain anxiety disorders such
+as panic disorder and social anxiety disorder. MAOIs
+
+
+
+
+<<<PAGE 496>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Noradrenergic Treatment of ADHD
+Atomoxetine
+
+Atomoxetine (Figure 11-37) is a selective norepinephrine
+reuptake inhibitor (NRI). Sometimes called NET
+inhibitors, the selective NRIs have known antidepressant
+properties (discussed in Chapter 7). In terms of their
+mechanism of therapeutic action in ADHD, it is the same
+as just discussed for stimulants acting at the NETs here
+in Chapter 11, and as previously discussed for drugs used
+to treat depression in Chapter 7 and illustrated in Figure
+7-33. Blocking NETs in the prefrontal cortex increases
+
+Comparing the Molecular Actions of
+Atomoxetine and Bupropion
+DAT
+
+NDRIs
+NET
+
+NE
+neuron
+
+DA
+neuron
+
+NRIs
+NET
+
+Figure 11-37 Comparing the molecular actions of atomoxetine
+and bupropion. Atomoxetine is a selective norepinephrine
+reuptake inhibitor (NRI), while bupropion is a norepinephrine–
+dopamine reuptake inhibitor (NDRI). Both agents block the
+norepinephrine transporters (NETs) in the prefrontal cortex,
+which leads to an increase in both norepinephrine (NE) and
+dopamine (DA) there (because NETs also transport dopamine).
+NDRIs also block the dopamine transporters (DATs), which
+are not present in the prefrontal cortex but are present in the
+nucleus accumbens.
+
+480
+
+both DA and NE in the prefrontal cortex (Figure 11-38)
+and is why NET inhibitors are thought to work in ADHD.
+However, since there are few NE neurons and NETs in
+nucleus accumbens, inhibiting NET does not lead to an
+increase in either NE or DA there (Figure 11-38) and is
+why NET inhibitors are thought not to have reinforcing,
+abuse, or addiction potential.
+Bupropion is a weak NRI and also a weak DAT
+inhibitor known as a norepinephrine–dopamine reuptake
+inhibitor (NDRI), and was previously discussed as a
+treatment for depression in Chapter 7 and illustrated
+in Figures 7-34 through 7-36; see also Figure 11-37).
+Several tricyclic antidepressants (TCAs) have notable
+NRI actions, such as desipramine and nortriptyline. All of
+these agents with NRI properties have been utilized in the
+treatment of ADHD, with varying amounts of success, but
+only atomoxetine is well-investigated and approved for
+this use in children and adults.
+Atomoxetine’s hypothetical actions in ADHD patients
+with stress and comorbidity states, presumably linked
+to excessive and phasic DA and NE release, are shown
+conceptually by comparing the untreated states in Figures
+11-11 and 11-12 with the changes that theoretically follow
+chronic treatment with atomoxetine in Figure 11-39. That
+is, ADHD linked to conditions that are associated with
+chronic stress and comorbidities is theoretically caused
+by overly active NE and DA circuits in the prefrontal
+cortex, resulting in an excess of phasic NE and DA
+activity (Figure 11-13). When slow onset, long duration,
+and essentially perpetual NET inhibition occurs in the
+prefrontal cortex due to atomoxetine, this theoretically
+restores tonic postsynaptic D1 and α2A-adrenergic
+signaling, downregulates phasic NE and DA actions, and
+desensitizes postsynaptic NE and DA receptors (Figure
+11-39). The possible consequence of this is to reduce
+stress as ADHD symptoms are improved. If so, decreases
+in ADHD symptoms could potentially be accompanied
+by decreases in anxiety, depression, and heavy drinking.
+Unlike stimulant use, where the therapeutic actions are
+at the mercy of plasma drug levels and momentary NET/
+DAT occupancies, actions from long-term NRI actions
+give 24-hour symptom relief, in much the same manner
+as do SSRIs (selective serotonin reuptake inhibitors) and
+SNRIs (serotonin–norepinephrine reuptake inhibitors)
+for the treatment of depression and anxiety. Selective
+NRIs generally have smaller effect sizes for reducing
+ADHD symptoms than stimulants in short-term trials,
+especially in patients without comorbidity. However,
+NRIs are not necessarily inferior in ADHD patients who
+
+
+
+
+<<<PAGE 497>>>
+
+Atomoxetine in ADHD with Weak
+Prefrontal NE and DA Signals
+nucleus accumbens - no action
+
+prefrontal cortex
+NE
+neuron
+
+DA
+neuron
+
+VMAT2
+
+DA
+neuron
+
+VMAT2
+
+VMAT2
+
+NET
+
+atomoxetine
+DA
+
+NE
+
+α2A
+
+D1
+
++
+
++
+
+DA
+
+DAT
+
+Figure 11-38 Atomoxetine in
+ADHD with weak prefrontal
+norepinephrine (NE) and dopamine
+(DA) signals. Through its blockade of
+norepinephrine transporters (NETs),
+atomoxetine causes NE and DA levels
+to increase in the prefrontal cortex,
+where inactivation of both of these
+neurotransmitters is largely due to
+NETs (on the left). At the same time,
+the relative lack of NETs in the nucleus
+accumbens prevents atomoxetine from
+increasing NE or DA levels in that brain
+area, thus reducing the risk of abuse (on
+the right). Other NET inhibitors would
+be expected to have the same effects.
+
+D1 D2
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+NET inhibitors
+atomoxetine (NRI), reboxetine (NRI), bupropion (NDRI), venlafaxine (SNRI),
+duloxetine (SNRI), desvenlafaxine (SNRI), milnacipran (SNRI),
+desipramine (TCA), nortriptyline (TCA)
+
+Chronic Treatment with Atomoxetine in ADHD
+with Excessive Prefrontal NE and DA Signals
+prefrontal cortex
+excessive NE and DA signals
+
+stress
+
+stress
+
+Alpha-2A-Adrenergic Agonists
+
+ADHD anxiety substance
+abuse
+
+chronic treatment with atomoxetine
+NE
+neuron
+
+DA
+neuron
+
+VMAT2
+
+VMAT2
+NET
+
+atomoxetine
+DA
+
+NE
+
+α2A
+
+D1
+
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
+have not been previously treated with stimulants, nor in
+ADHD patients who have been treated long term (more
+than 8–11 weeks). NRIs may actually be preferred to
+stimulants in patients with complex comorbidities, side
+effects, or lack of response to stimulants.
+
+RESPONSE
+Figure 11-39 Chronic treatment with atomoxetine in ADHD
+with excessive signals. ADHD linked to conditions that are
+associated with chronic stress and comorbidities is theoretically
+caused by overly active NE and DA circuits. Continuous
+blockade of NETs could restore tonic postsynaptic D1 and α2Aadrenergic signaling, downregulate phasic NE and DA actions,
+and desensitize postsynaptic NE and DA receptors.
+
+Norepinephrine receptors are discussed in Chapter 6
+and illustrated in Figures 6-14 through 6-16. There are
+numerous subtypes of α-adrenergic receptors, from
+presynaptic autoreceptors, generally of the α2A subtype
+(Figure 6-14) to postsynaptic α2A, α2B, α2C, and α1
+subtypes α1A, α1B, and α1D (Figures 6-14 through 6-16).
+Alpha-2A receptors are widely distributed throughout the
+central nervous system, with high levels in the cortex and
+locus coeruleus. These receptors are thought to be the
+primary mediators of the effects of NE in the prefrontal
+cortex, regulating symptoms of inattention, hyperactivity,
+and impulsivity in ADHD. Alpha-2B receptors are in high
+concentrations in the thalamus and may be important
+in mediating sedating actions of NE, while α2C receptors
+are densest in striatum. Alpha-1 receptors generally have
+opposing actions to α2 receptors, with α2 mechanisms
+predominating when NE release is low or moderate
+(i.e., for normal attention), but with α1 mechanisms
+predominating at NE synapses when NE release is
+high (e.g., associated with stress and comorbidity) and
+contributing to cognitive impairment. Thus, selective
+NRIs at low doses will first increase activity at α2A
+481
+
+11
+
+

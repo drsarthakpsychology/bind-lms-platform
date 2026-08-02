@@ -1,0 +1,1236 @@
+<<<PAGE 309>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+If blockade of SERT explains the shared clinical and
+pharmacological actions of SSRIs, what explains their
+differences? Although there is no generally accepted
+explanation that accounts for the commonly observed
+clinical phenomena of different efficacy and tolerability
+of various SSRIs in individual patients, it makes sense to
+consider those unique pharmacological characteristics
+of the six SSRIs that are not shared with each other as
+candidates to explain the broad range of individual
+patient reactions to different SSRIs (Figures 7-16 through
+7-21). Each SSRI has secondary pharmacological actions
+other than SERT blockade, and no two SSRIs have
+identical secondary pharmacological characteristics.
+Whether these secondary binding profiles can account for
+the differences in efficacy and tolerability in individual
+patients remains to be proven. However, it does lead to
+provocative hypothesis generation and gives a rational
+basis for psychopharmacologists trying more than one of
+these agents rather than thinking “they are all the same.”
+Sometimes only an empiric trial of different SSRIs will
+lead to the best match of drug to an individual patient.
+Fluoxetine: An SSRI with 5HT2C Antagonist Properties
+
+In addition to serotonin reuptake inhibition, fluoxetine
+also has 5HT2C antagonist actions that may explain
+many of its unique clinical properties (Figure 7-16).
+5HT2C antagonism may contribute to its antidepressant
+actions and also to its efficacy in other disorders,
+especially in eating disorders. Other drugs for unipolar
+
+fluoxetine
+5HT2C
+
+NET
+
+SERT
+SERT
+
+Figure 7-16 Fluoxetine. In addition to serotonin reuptake
+inhibition, fluoxetine has norepinephrine reuptake inhibition
+(NRI) and serotonin 2C antagonist actions (5HT2C). 5HT2C
+antagonism can lead to disinhibition of norepinephrine and
+dopamine; this action may be responsible for fluoxetine’s
+activating effects. NRI may be clinically relevant only at very high
+doses.
+
+depression with 5HT2C antagonist properties include
+trazodone, mirtazapine, agomelatine, and some tricyclic
+antidepressants, and these will be described below.
+Finally, two serotonin 2A/dopamine 2 antagonists,
+quetiapine (Figure 5-45) and olanzapine (Figure 5-44),
+also have potent 5HT2C antagonist properties. Both
+agents are used to treat psychosis (see Chapter 5) but are
+also approved for augmenting other drugs for unipolar
+depression, treatment-resistant unipolar depression,
+and bipolar depression. Blocking serotonin action at
+5HT2C receptors disinhibits (i.e., enhances) release of
+both norepinephrine and dopamine, actions theoretically
+beneficial for the treatment of depression (see Chapter
+6 and Figure 6-24B and also the discussion below on
+agomelatine).
+The good news about 5HT2C antagonism may be
+that it is generally activating, and the reason why
+many patients, even from the first dose, detect an
+energizing and fatigue-reducing effect of fluoxetine, with
+improvement in concentration and attention as well. This
+mechanism is perhaps best matched to depressed patients
+with reduced positive affect (Figure 6-41), hypersomnia,
+psychomotor retardation, apathy, and fatigue. Fluoxetine
+is also approved in some countries in combination with
+olanzapine for treatment-resistant unipolar depression
+and for bipolar depression. Since olanzapine also has
+5HT2C antagonist actions (Figure 5-44), it may be that
+adding the 5HT2C antagonist actions of olanzapine to
+those of fluoxetine could theoretically lead to further
+enhanced dopamine and norepinephrine release in
+the cortex to mediate the antidepressant actions of this
+combination. 5HT2C antagonism may also contribute
+to the anti-bulimia effect of higher doses of fluoxetine,
+the only SSRI approved for the treatment of this eating
+disorder. The bad news could be that 5HT2C antagonist
+actions of fluoxetine may contribute to this agent being
+sometimes less well matched to patients with agitation,
+insomnia, and anxiety, who may experience unwanted
+activation and even a panic attack if given an agent that
+further activates them.
+Fluoxetine also has weak norepinephrine reuptake
+blocking properties (Figure 7-16), which may become
+clinically relevant at very high doses. Fluoxetine has
+a long half-life (2–3 days), and its active metabolite
+an even longer half-life (2 weeks). The long halflife is advantageous in that it seems to reduce the
+withdrawal reactions that are characteristic of sudden
+discontinuation of some SSRIs, but it also means that
+it takes a long time to clear the drug and its active
+
+293
+
+7
+
+
+
+
+<<<PAGE 310>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+metabolite after discontinuing fluoxetine, and prior
+to starting other agents such as a monoamine oxidase
+(MAO) inhibitor. Fluoxetine is not only available as a
+once-daily formulation, but also as a once-weekly oral
+dosage formulation.
+Sertraline: An SSRI with Dopamine Transporter (DAT)
+Inhibition and σ1 Binding
+
+This SSRI has two candidate mechanisms that
+distinguish it: dopamine transporter (DAT) inhibition
+and σ1 receptor binding (Figure 7-17). The DAT
+inhibitory actions are controversial since they are
+weaker than the SERT inhibitory actions, thus leading
+some experts to suggest that there is not sufficient
+DAT occupancy by sertraline to be clinically relevant.
+However, as will be discussed later in the section on
+norepinephrine–dopamine reuptake inhibitors (NDRIs),
+it is not clear that high degrees of DAT occupancy
+are necessary or even desirable in order to contribute
+to antidepressant actions. That is, perhaps only a
+small amount of DAT inhibition is sufficient to cause
+improvement in energy, motivation, and concentration,
+especially when added to another action such as SERT
+inhibition. In fact, high-impact DAT inhibition is the
+property of reinforcing stimulants, including cocaine
+and methamphetamine, and would not generally be
+desired in a drug for depression (see discussion of DAT
+inhibitors in Chapter 11 on ADHD and Chapter 13 on
+impulsivity, compulsivity, and addiction).
+
+sertraline
+
+Anecdotally, clinicians have observed the mild and
+desirable activating actions of sertraline in some patients
+with “atypical depression,” improving symptoms of
+hypersomnia, low energy, and mood reactivity. A favorite
+combination of some clinicians for depressed patients is
+to add bupropion to sertraline (i.e., Wellbutrin to Zoloft,
+sometimes called “Well-oft”), adding together the weak
+DAT inhibitory properties of each agent. Clinicians have
+also observed the overactivation of some patients with
+panic disorder by sertraline, thus requiring slower dose
+titration in some patients with anxiety symptoms. All of
+these actions of sertraline are consistent with weak DAT
+inhibitory actions contributing to its clinical portfolio of
+actions.
+The σ1 actions of sertraline are not well understood,
+but might contribute to its anxiolytic effects and
+especially to its effects in psychotic and delusional
+depression, where sertraline may have advantageous
+therapeutic effects compared to some other SSRIs.
+Paroxetine: An SSRI with Muscarinic Anticholinergic and
+Norepinephrine Transporter (NET) Inhibitory Actions
+
+This SSRI tends to be more calming, even sedating, early
+in treatment compared to the more activating actions of
+both fluoxetine and sertraline discussed above. Perhaps
+the mild anticholinergic actions of paroxetine contribute
+to this clinical profile (Figure 7-18). Paroxetine also
+has weak norepinephrine transporter (NET) inhibitory
+properties, which could contribute to its efficacy in
+depression, especially at high doses. The advantages of
+
+paroxetine
+DAT
+
+M1
+
+NET
+
+SERT
+SERT
+
+SERT
+SERT
+
+NOS
+
+Figure 7-17 Sertraline. Sertraline has dopamine transporter
+(DAT) inhibition and σ1 receptor binding in addition to serotonin
+reuptake inhibition (SRI). The clinical relevance of sertraline’s
+DAT inhibition is unknown, although it may improve energy,
+motivation, and concentration. Its sigma properties may
+contribute to anxiolytic actions and may also be helpful in
+patients with psychotic depression.
+
+294
+
+Figure 7-18 Paroxetine. In addition to serotonin reuptake
+inhibition, paroxetine has mild anticholinergic actions
+(M1), which can be calming or possibly sedating; weak
+norepinephrine transporter (NET) inhibition, which may
+contribute to further antidepressant actions; and inhibition of
+the enzyme nitric oxide synthase (NOS), which may contribute to
+sexual dysfunction.
+
+
+
+
+<<<PAGE 311>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+dual serotonin plus norepinephrine reuptake inhibiting
+properties, or SNRI actions, are discussed below in the
+section on SNRIs. It is possible that weak to moderate
+NET inhibition of paroxetine may contribute importantly
+to its antidepressant actions.
+Paroxetine also inhibits the enzyme nitric oxide
+synthase, which could theoretically contribute to
+sexual dysfunction, especially in men. Paroxetine
+is also notorious for causing withdrawal reactions
+upon sudden discontinuation, with symptoms such
+as akathisia, restlessness, gastrointestinal symptoms,
+dizziness, and tingling, especially when suddenly
+discontinued from long-term high-dose treatment. This
+is possibly due not only to SERT inhibition properties,
+since all SSRIs can cause discontinuation reactions,
+but also to anticholinergic rebound when paroxetine
+is rapidly discontinued. Paroxetine is available in a
+controlled-release formulation, which may mitigate
+some of its side effects, including discontinuation
+reactions.
+Fluvoxamine: An SSRI with σ1 Receptor Binding
+Properties
+
+This SSRI was among the first to be launched for the
+treatment of depression worldwide, but was never
+officially approved for depression in the US, so it has been
+considered more of an agent for the treatment of OCD
+in the US. Like sertraline, fluvoxamine binds at σ1 sites,
+but this action is more potent for fluvoxamine than for
+sertraline (Figure 7-19). The physiological function of
+σ1 sites is still a mystery, and thus sometimes called the
+“sigma enigma,” but has been linked both to anxiety and
+psychosis. Preclinical studies suggest that fluvoxamine
+
+may be an agonist at σ1 receptors, and that this property
+may contribute an additional pharmacological action
+to help explain fluvoxamine’s well-known anxiolytic
+properties. Fluvoxamine also has shown therapeutic
+activity in both psychotic and delusional depression,
+where it, like sertraline, may have advantages over other
+SSRIs.
+Fluvoxamine is now available as a controlled-release
+formulation, which makes once-daily administration
+possible, unlike immediate-release fluvoxamine, whose
+shorter half-life often requires twice-daily administration.
+In addition, recent trials of controlled-release
+fluvoxamine show impressive remission rates in both
+OCD and social anxiety disorder, as well as possibly less
+peak-dose sedation.
+Citalopram: An SSRI with a “Good” and a “Bad”
+Enantiomer
+
+This SSRI is comprised of two enantiomers, R and S,
+which are mirror images of each other (Figure 7-20).
+The mixture of these enantiomers is known as racemic
+citalopram, or commonly just as citalopram, and has
+mild antihistamine properties that reside in the R
+enantiomer. Racemic citalopram is generally one of
+the better-tolerated SSRIs, and has favorable findings
+in the treatment of depression in the elderly, but has a
+somewhat inconsistent therapeutic action at the lowest
+dose, often requiring dose increase to optimize treatment.
+citalopram: R+S citalopram
+
+fluvoxamine
+S
+ram
+lop
+
+cita
+
+1H
+
+R
+rpo
+lat
+i
+
+ma
+
+c
+
+SERT
+
+Figure 7-19 Fluvoxamine. Fluvoxamine’s secondary properties
+include actions at σ1 receptors, which may be anxiolytic as well
+as beneficial for psychotic depression.
+
+Figure 7-20 Citalopram. Citalopram consists of two
+enantiomers, R and S. Some pharmacological evidence suggests
+that the R enantiomer may be pharmacologically active at SERTs
+in a manner that does not inhibit SERTs but actually interferes
+with the ability of the active S enantiomer to inhibit SERTs. The R
+enantiomer also has weak antihistamine properties.
+
+295
+
+7
+
+
+
+
+<<<PAGE 318>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+7-33C). The bottom line is that NET inhibition increases
+both NE and DA in the prefrontal cortex. Thus, SNRIs
+have two-and-a-half mechanisms: boosting serotonin
+throughout the brain, boosting NE throughout the brain,
+and boosting DA in the prefrontal cortex (but not in other
+DA projection areas).
+Venlafaxine
+
+Depending upon the dose, venlafaxine has different
+degrees of inhibition of serotonin reuptake (most potent
+and robust even at low doses) versus NE reuptake
+(moderate potency and robust only at higher doses)
+(Figure 7-28). However, there are no significant actions
+on other receptors. It remains controversial whether
+venlafaxine or other SNRIs have greater efficacy in
+unipolar major depression than SSRIs, either in terms
+of enhanced remission rates, more robust sustained
+remission over long-term treatment, or greater efficacy
+for treatment-resistant unipolar depression, but this does
+seem plausible given two mechanisms and the boosting
+of two monoamines. Venlafaxine is approved and widely
+used for several anxiety disorders as well. Adding
+NET inhibition likely accounts for two side effects of
+venlafaxine in some patients: sweating and elevated blood
+pressure.
+Venlafaxine is available as an extended-release
+formulation, which not only allows for once-daily
+administration but also significantly reduces side
+effects, especially nausea. In contrast to several other
+psychotropic drugs available in controlled-release
+formulations, extended-release venlafaxine is a
+considerable improvement over the immediate-release
+formulation, which has fallen into little or no use because
+of unacceptable nausea and other side effects, especially
+when immediate-release venlafaxine is started or when
+it is stopped. However, venlafaxine even in controlledrelease formulation can cause withdrawal reactions,
+sometimes quite bothersome, especially after sudden
+discontinuation from high-dose long-term treatment.
+Nevertheless, the controlled-release formulation is highly
+preferred because of enhanced tolerability.
+Desvenlafaxine
+
+Venlafaxine is a substrate for CYP450 2D6, which
+converts it to an active metabolite desvenlafaxine (Figure
+7-28). Desvenlafaxine has greater NET inhibition relative
+to SERT inhibition compared to venlafaxine. Normally,
+after venlafaxine administration, the plasma levels of
+venlafaxine are about half of those for desvenlafaxine.
+However, this is highly variable, depending upon whether
+302
+
+the patient is taking another drug that is a CYP450 2D6
+inhibitor, which shifts the plasma levels towards more
+venlafaxine and less desvenlafaxine, also reducing the
+relative amount of NET inhibition. Variability in plasma
+levels of venlafaxine versus desvenlafaxine is also due
+to genetic polymorphisms for CYP450 2D6, such that
+poor metabolizers will shift the ratio of these two drugs
+towards more parent venlafaxine and away from the
+active metabolite desvenlafaxine, and thus reduce the
+relative amount of NET inhibition. As a result of these
+considerations, it can be somewhat unpredictable
+how much NET inhibition a given dose of venlafaxine
+will have in a given patient at a given time, whereas
+this is more predictable for desvenlafaxine. Expert
+clinicians have learned to solve this problem with skilled
+dose titration of venlafaxine, but the development of
+desvenlafaxine as a separate drug may also solve this
+problem, with less need for dose titration and more
+consistent NET inhibition at a given dose across all
+patients.
+Duloxetine
+
+This SNRI, characterized pharmacologically by slightly
+more potent SERT than NET inhibition (Figure 7-29), has
+transformed how we think about depression and pain.
+Classic teaching was that depression caused pain that was
+psychic (as in “I feel your pain”) and not somatic (as in
+“ouch”), and that psychic pain was secondary to emotional
+suffering in depression; therefore, it was thought,
+anything that made depression better would make psychic
+pain better nonspecifically. Somatic pain was thus not
+thought to be caused by depression, although depression
+could supposedly make it worse, and classically somatic
+pain was not treated with drugs for depression.
+Studies with duloxetine have changed all this. Not
+only does this SNRI relieve unipolar depression in the
+absence of pain, but it also relieves pain in the absence
+of depression. All sorts of pain are improved by this
+SNRI, from diabetic peripheral neuropathic pain, to
+fibromyalgia, to chronic musculoskeletal pain such
+as that associated with osteoarthritis and low back
+problems, and more. These findings of the efficacy
+of duloxetine for multiple pain syndromes have also
+validated that painful physical (somatic) symptoms
+are a legitimate set of symptoms that accompany
+depression and are not just a form of emotional pain.
+The use of SNRIs such as duloxetine in pain syndromes
+is discussed in Chapter 9. So, duloxetine has established
+efficacy not only in unipolar depression and in chronic
+pain, but also in patients with chronic painful physical
+
+
+
+
+<<<PAGE 319>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+symptoms of unipolar depression. Painful physical
+symptoms are frequently ignored or missed by patients
+and clinicians alike in the setting of unipolar major
+depression, and until recently, the link of these symptoms
+to major depression was not well appreciated, in part
+because painful physical symptoms are not included
+in the list of symptoms for the formal diagnostic
+criteria for depression (see Chapter 6 and Figure 6-1).
+Nevertheless, it is now widely appreciated that painful
+physical symptoms are frequently associated with a
+major depressive episode, and are also one of the leading
+residual symptoms after initial treatment with drugs for
+depression (Figure 7-5). It appears that the dual SNRI
+actions of duloxetine and other SNRIs are superior to
+the selective serotonergic actions of SSRIs for treatment
+of conditions such as neuropathic pain of diabetes and
+chronic painful physical symptoms associated with
+depression. The role of NET inhibition seems to be
+critical for the treatment not only of painful conditions
+without depression, but also for painful physical
+symptoms associated with depression. Duloxetine
+has also shown efficacy in the treatment of cognitive
+symptoms of depression that are prominent in geriatric
+depression, possibly exploiting the pro-noradrenergic and
+pro-dopaminergic consequences of NET inhibition in the
+prefrontal cortex (see Figure 7-33).
+Duloxetine can be given once a day, but this is usually
+only a good idea after the patient has had a chance to
+become tolerant to it after initiating it at twice-daily
+dosing, especially during titration to higher doses.
+Duloxetine may have a lower incidence of hypertension
+and milder withdrawal reactions than venlafaxine.
+Milnacipran
+
+Milnacipran is the first SNRI marketed in Japan and many
+European countries such as France, where it is currently
+marketed as a drug for unipolar depression. In the US,
+milnacipran is not approved for unipolar depression,
+but is approved for fibromyalgia. Interestingly, it is the
+other way around in Europe: milnacipran is approved for
+unipolar depression but not approved for the treatment
+of fibromyalgia. Milnacipran is a bit different from other
+SNRIs in that it is a relatively more potent NET than
+SERT inhibitor (Figure 7-30), whereas the others are
+more potent SERT than NET inhibitors (Figures 7-28
+and 7-29). This unique pharmacological profile may
+explain milnacipran’s somewhat different clinical profile
+compared to other SNRIs. Since noradrenergic actions
+may be equally or more important for treatment of painrelated conditions compared to serotonergic actions, the
+
+robust NET inhibition of milnacipran suggests that it may
+be particularly useful in chronic pain related conditions,
+not just fibromyalgia where it is approved, but possibly
+as well for the painful physical symptoms associated with
+unipolar depression and chronic neuropathic pain.
+Milnacipran’s potent NET inhibition also suggests
+a potentially favorable pharmacological profile for the
+treatment of cognitive symptoms, including cognitive
+symptoms of unipolar depression as well as cognitive
+symptoms frequently associated with fibromyalgia,
+sometimes called “fibro-fog.” Other clinical observations
+possibly linked to milnacipran’s robust NET inhibition
+are that it can be more energizing and activating than
+other SNRIs. Common residual symptoms after treatment
+with an SSRI include not only cognitive symptoms, but
+also fatigue, lack of energy, and lack of interest, among
+other symptoms (Figure 7-5). NET inhibition may be
+related to observations that milnacipran may cause
+more sweating and urinary hesitancy than some other
+SNRIs. For patients with urinary hesitancy, generally
+due theoretically to robust pro-noradrenergic actions at
+bladder α1 receptors, an α1 antagonist can reduce these
+symptoms. Milnacipran must generally be given twice
+daily due to its shorter half-life.
+Levomilnacipran
+
+Milnacipran is actually a racemic mixture of two
+enantiomers (Figure 7-30). The S or levo enantiomer
+is the active enantiomer (Figure 7-31) and has been
+independently developed for unipolar major depressive
+disorder in the US, where it is mostly available. Like
+racemic milnacipran, levomilnacipran has greater NET
+inhibition than SERT inhibition and may target fatigue
+and lack of energy as potential clinical advantages. Also,
+it is dosed in a controlled-release formulation, so, unlike
+racemic milnacipran, can be given only once a day.
+Norepinephrine–Dopamine Reuptake Inhibitors
+(NDRIs): Bupropion
+
+For many years, the mechanism of action of bupropion
+has been unclear and still remains somewhat
+controversial. Bupropion itself only has weak reuptake
+blocking properties for dopamine (DAT inhibition),
+and for norepinephrine (NET inhibition) (Figures 7-34
+and 7-35). No other specific or potent pharmacological
+actions have been consistently identified for this
+agent. Bupropion’s actions both as a drug for unipolar
+depression and upon norepinephrine and dopamine
+neurotransmission, however, have always appeared to be
+more powerful than these weak properties could explain,
+303
+
+7
+
+
+
+
+<<<PAGE 331>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Trazodone for Depression:
+Serotonin Antagonist/
+Reuptake Inhibitor (SARI)
+α
+1
+
+Trazodone for Insomnia:
+Multifunctional Neurotransmitter
+Antagonist
+
+α
+2
+
+A
+T1
+5H
+
+5H
+
+α1
+
+H
+1
+
+T2
+
+A
+
+5HT1D
+
+trazodone
+mianserin
+
+H1
+
+SERT
+
+5HT2A
+
+B
+HT2
+
+5HT7
+
+5H
+
+T2
+C
+
+5
+
+Figure 7-46 Trazodone at different doses. (Left)
+High doses that recruit saturation of the
+serotonin transporter (i.e., 150–600 mg) are
+required for trazodone to have therapeutic
+actions in depression. At this high dose,
+trazodone is a multifunctional serotonergic
+agent with antagonist actions at 5HT2A and
+5HT2C receptors as well as additional serotonin
+receptors. Trazodone is also an α1 and histamine
+1 (H1) antagonist at these doses. (Right) At lower
+doses of trazodone (i.e., 25–150 mg), it does
+not saturate the serotonin transporter; it does,
+however, retain antagonist actions at 5HT2A, α1,
+and H1 receptors, with corresponding efficacy for
+insomnia.
+
+dose for depression
+(150-600 mg)
+
+dose for insomnia
+(25-150 mg)
+
+Figure 7-47 Trazodone IR versus XR
+given once nightly. Shown here are
+steady-state estimates of the plasma
+trazodone levels from the hypnotic dosing
+of 50, 75, or 100 mg once nightly of
+trazodone immediate release (IR). Peak
+drug concentrations are reached rapidly
+with a similarly rapid fall off overnight.
+The minimum levels estimated for
+antidepressant actions of trazodone are
+reached transiently, if at all, by hypnotic
+dosing. By contrast, 300 mg of trazodone
+extended release (XR) given once
+nightly generates plasma levels that rise
+slowly and never fall below minimum
+antidepressant concentrations. Peak levels
+of trazodone XR at 300 mg are about the
+same as the peak levels of trazodone IR
+at 100 mg.
+
+Trazodone IR vs. XR Given Once Nightly
+2.2
+2
+1.8
+1.6
+1.4
+
+300 mg XR qhs
+
+mg/L
+
+1.2
+1
+
+100 mg IR qhs
+
+minimum
+antidepressant
+concentration
+
+0.8
+0.65
+0.5
+0.3
+
+75 mg IR qhs
+50 mg IR qhs
+
+0.1
+0
+23:30
+
+4:00
+
+8:00
+
+12:00
+
+16:00
+
+20:00
+
+23:30
+
+hours
+
+Vortioxetine
+
+Vortioxetine is a drug approved for treating unipolar
+depression and which causes SERT inhibition as well as
+having antagonist actions at 5HT3 and 5HT7 receptors,
+with agonist actions at 5HT1A receptors and weak
+partial agonist to antagonist actions at 5HT1B/D receptors
+(Figure 7-49). This unique blend of pharmacological
+actions leads to downstream release of many different
+neurotransmitters as will be explained here, and these
+actions hypothetically lead to antidepressant effects
+in unipolar depression, characterized by robust pro-
+
+cognitive actions, especially improving processing speed.
+The importance of cognitive symptoms in unipolar
+depression is discussed in Chapter 6 as the possible
+clinical consequence of loss of neurotrophic factors,
+synapses, and neurons (Figures 6-27 through 6-31).
+What is cognitive processing speed and what could
+be the mechanism by which vortioxetine improves this
+more than other antidepressants? “Cognition” is not a
+single, simple brain function and “cognitive dysfunction”
+is not a single, simple symptom. Cognitive impairment
+that can be measured as part of the symptom profile
+315
+
+7
+
+
+
+
+<<<PAGE 333>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+vortioxetine
+T
+5H
+1A
+
+5H
+
+T1B
+
+5HT1D
+
+SERT
+
+T3
+
+5HT7
+
+5H
+
+Figure 7-49 Vortioxetine. Vortioxetine is a serotonin reuptake
+inhibitor and also has actions at several serotonin receptors,
+including 5HT1A, 5HT1B, 5HT1D, 5HT3, and 5HT7.
+
+somewhat whimsical way to categorize cognitive
+dysfunction and to understand the role of improving
+individual domains of cognition applicable to
+psychopharmacology is illustrated in Figure 7-50 as the
+“Fab Four” of cognition. Remember the original Fab
+Four, the Beatles? Each musician can represent one of the
+Fab Four of cognition as well. John, arguably the leader,
+wanted all the attention, so he represents “attention,”
+which some also refer to as concentration. Paul, perhaps
+the brains of the operation and the writer of many of
+the songs, is “executive function,” also called “problem
+solving.” The quiet culture carrier of the group, George,
+represents memory, of which there are many kinds,
+short-term, long-term, verbal, and more. And finally, the
+drummer, Ringo, represents processing speed, or pace.
+You can imagine if any of these four is out of synch with
+the other three, the music would be a disaster. All four
+can potentially be compromised in psychiatric disorders.
+It turns out that for depression, a test that measures a bit
+of all these dimensions of cognition, but arguably most
+prominently measures processing speed, is the DSST
+(digital symbol substitution test). When processing speed
+is slowed, just like an offbeat drummer in a band, overall
+cognitive functioning can also feel like a disaster for a
+depressed patient, lagging in cognitive performance,
+with mental effort now becoming exhausting and
+work productivity greatly reduced, all causing great
+frustration. This simple, quick DSST can be useful in
+
+7
+Figure 7-50 The “Fab Four” of cognition. Cognition is not
+a single, simple brain function. Rather, there are four major
+cognitive domains, represented here by the four members
+of the Beatles: attention or concentration (John), executive
+function or problem solving (Paul), memory (George), and
+processing speed (Ringo). All four domains work in concert to
+keep cognition playing at its best; if any one of these domains
+dysfunctions, then cognitive impairment can occur.
+
+calibrating the objective decline in cognitive performance
+of patients with subjective cognitive complaints, and in
+tracking their improvement on treatment. Vortioxetine
+improves cognition better than other antidepressants in
+unipolar major depression, as demonstrated by superior
+performance on the DSST measuring processing speed.
+How does vortioxetine work as an antidepressant and
+specifically how does it exert its superior pro-cognitive
+effects?
+SERT Inhibition and 5HT1A Agonism
+
+To begin, vortioxetine is a SERT inhibitor and a 5HT1A
+agonist, thus combining the actions already discussed
+for SSRIs (Figures 7-10 through 7-15) and for combining
+SERT inhibition with 5HT1A agonists (see Chapter 5 and
+Figures 7-23 through 7-27). These mechanisms alone
+are sufficient for antidepressant action since they raise
+both serotonin levels (SERT inhibition) and the pro317
+
+
+
+
+<<<PAGE 342>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+or more trials of the various first-line monoamine agents
+discussed so far in this chapter.
+Olanzapine–Fluoxetine Combination
+
+Dopamine 2 (D2) antagonist actions likely account for
+olanzapine’s approval in schizophrenia, bipolar mania,
+and bipolar maintenance. 5HT2A antagonist actions
+likely account for some of olanzapine’s ability to improve
+symptoms of depression (5HT2A actions on mood are
+discussed in Chapter 5 and illustrated in Figure 5-17C).
+However, the fact that olanzapine works much better for
+unipolar (or bipolar) depression when combined with
+fluoxetine suggests that not only are serotonin reuptake
+blocking properties a component of the antidepressant
+effect of olanzapine–fluoxetine combination therapy,
+but also 5HT2C antagonist actions (Figure 7-38). Both
+olanzapine and fluoxetine are 5HT2C antagonists, and, in
+combination, the net 5HT2C antagonism is greater than
+with either drug alone. So, this olanzapine–fluoxetine
+combination for depression could be considered a potent
+SERT/5HT2C inhibitor. Although highly efficacious for
+treatment-resistant unipolar depression (Table 7-1),
+the combination of olanzapine with fluoxetine is often
+associated with unacceptable weight gain and metabolic
+disturbances. Olanzapine–fluoxetine combination is also
+approved for bipolar depression and is discussed in the
+section on bipolar depression below.
+Quetiapine
+
+Quetiapine (see Chapter 5 and Figure 5-45) is approved
+for schizophrenia, acute bipolar mania, and bipolar
+maintenance, likely due to its D2 antagonist actions.
+
+Its efficacy as an augmenting agent to SSRIs/SNRIs for
+depression is likely linked to the combined actions of
+quetiapine and its active metabolite norquetiapine at both
+5HT2C receptors (Figure 7-38) and at the norepinephrine
+transporter (NET) (Figure 5-34; also described in Chapter
+5 and illustrated in Figure 5-45). In addition, quetiapine
+acts at other candidate receptors for antidepressant
+efficacy including as an antagonist at 5HT2A (Chapter 5
+and Figure 5-17C), 5HT7 (Figure 7-53C) and α2A receptors
+(Figure 5-35), as well as an agonist at 5HT1A receptors
+(Chapter 5 and Figure 5-22). All of these receptor actions
+are hypothetically associated with antidepressant efficacy
+and, added together, could make a theoretically powerful
+synergy of antidepressant mechanisms (Table 7-1).
+However, quetiapine can cause a great deal of sedation
+and moderate weight gain and metabolic disturbance due
+to its other receptor actions. Quetiapine is also approved
+for bipolar depression and discussed in the section on
+bipolar depression below.
+Aripiprazole
+
+This D2/5HT1A partial agonist (Chapter 5 and Figure
+5-56) is approved for schizophrenia, acute bipolar
+mania, and bipolar maintenance and is one of the most
+extensively prescribed augmenting agents to SSRIs/
+SNRIs in unipolar major depression (in the US) (Table
+7-1). It likely acts in schizophrenia and bipolar mania
+as a D2 partial agonist, whereas its prominent 5HT1A
+partial agonist actions (Chapter 5 and Figure 5-22)
+likely contribute to its antidepressant actions. Secondary
+properties with potential antidepressant action may
+also be contributory including D3, 5HT7, 5HT2C, and α2
+
+Table 7-1 Serotonin/dopamine blockers for bipolar spectrum
+
+Evidence of
+efficacy in
+mixed features
+
+FDA-approved for
+bipolar depression
+
+Aripiprazole
+Asenapine
+
+Yes, MMX
+
+FDA-approved
+for bipolar
+mania
+
+FDA-approved
+for bipolar
+maintenance
+
+FDA-approved for
+major depressive
+disorder
+
+Yes
+
+Yes
+
+Yes (adjunct)
+
+Yes
+
+Yes
+
+Brexpiprazole
+
+Yes (adjunct)
+
+Cariprazine
+
+Yes, MMX, DMX
+
+Yes
+
+Lurasidone
+
+Yes, DMX*
+
+Yes
+
+Olanzapine
+
+Yes, MMX
+
+Yes (with fluoxetine)
+
+Yes
+
+Yes
+
+Yes (with fluoxetine)
+
+Quetiapine
+
+Yes, MMX
+
+Yes
+
+Yes
+
+Yes
+
+Yes (adjunct)
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Risperidone
+Ziprasidone
+
+Yes, MMX
+
+MMX, mania with mixed features; DMX, depression with mixed features.
+*unipolar and bipolar depression.
+
+326
+
+Yes
+
+
+
+
+<<<PAGE 496>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Noradrenergic Treatment of ADHD
+Atomoxetine
+
+Atomoxetine (Figure 11-37) is a selective norepinephrine
+reuptake inhibitor (NRI). Sometimes called NET
+inhibitors, the selective NRIs have known antidepressant
+properties (discussed in Chapter 7). In terms of their
+mechanism of therapeutic action in ADHD, it is the same
+as just discussed for stimulants acting at the NETs here
+in Chapter 11, and as previously discussed for drugs used
+to treat depression in Chapter 7 and illustrated in Figure
+7-33. Blocking NETs in the prefrontal cortex increases
+
+Comparing the Molecular Actions of
+Atomoxetine and Bupropion
+DAT
+
+NDRIs
+NET
+
+NE
+neuron
+
+DA
+neuron
+
+NRIs
+NET
+
+Figure 11-37 Comparing the molecular actions of atomoxetine
+and bupropion. Atomoxetine is a selective norepinephrine
+reuptake inhibitor (NRI), while bupropion is a norepinephrine–
+dopamine reuptake inhibitor (NDRI). Both agents block the
+norepinephrine transporters (NETs) in the prefrontal cortex,
+which leads to an increase in both norepinephrine (NE) and
+dopamine (DA) there (because NETs also transport dopamine).
+NDRIs also block the dopamine transporters (DATs), which
+are not present in the prefrontal cortex but are present in the
+nucleus accumbens.
+
+480
+
+both DA and NE in the prefrontal cortex (Figure 11-38)
+and is why NET inhibitors are thought to work in ADHD.
+However, since there are few NE neurons and NETs in
+nucleus accumbens, inhibiting NET does not lead to an
+increase in either NE or DA there (Figure 11-38) and is
+why NET inhibitors are thought not to have reinforcing,
+abuse, or addiction potential.
+Bupropion is a weak NRI and also a weak DAT
+inhibitor known as a norepinephrine–dopamine reuptake
+inhibitor (NDRI), and was previously discussed as a
+treatment for depression in Chapter 7 and illustrated
+in Figures 7-34 through 7-36; see also Figure 11-37).
+Several tricyclic antidepressants (TCAs) have notable
+NRI actions, such as desipramine and nortriptyline. All of
+these agents with NRI properties have been utilized in the
+treatment of ADHD, with varying amounts of success, but
+only atomoxetine is well-investigated and approved for
+this use in children and adults.
+Atomoxetine’s hypothetical actions in ADHD patients
+with stress and comorbidity states, presumably linked
+to excessive and phasic DA and NE release, are shown
+conceptually by comparing the untreated states in Figures
+11-11 and 11-12 with the changes that theoretically follow
+chronic treatment with atomoxetine in Figure 11-39. That
+is, ADHD linked to conditions that are associated with
+chronic stress and comorbidities is theoretically caused
+by overly active NE and DA circuits in the prefrontal
+cortex, resulting in an excess of phasic NE and DA
+activity (Figure 11-13). When slow onset, long duration,
+and essentially perpetual NET inhibition occurs in the
+prefrontal cortex due to atomoxetine, this theoretically
+restores tonic postsynaptic D1 and α2A-adrenergic
+signaling, downregulates phasic NE and DA actions, and
+desensitizes postsynaptic NE and DA receptors (Figure
+11-39). The possible consequence of this is to reduce
+stress as ADHD symptoms are improved. If so, decreases
+in ADHD symptoms could potentially be accompanied
+by decreases in anxiety, depression, and heavy drinking.
+Unlike stimulant use, where the therapeutic actions are
+at the mercy of plasma drug levels and momentary NET/
+DAT occupancies, actions from long-term NRI actions
+give 24-hour symptom relief, in much the same manner
+as do SSRIs (selective serotonin reuptake inhibitors) and
+SNRIs (serotonin–norepinephrine reuptake inhibitors)
+for the treatment of depression and anxiety. Selective
+NRIs generally have smaller effect sizes for reducing
+ADHD symptoms than stimulants in short-term trials,
+especially in patients without comorbidity. However,
+NRIs are not necessarily inferior in ADHD patients who
+
+
+
+
+<<<PAGE 497>>>
+
+Atomoxetine in ADHD with Weak
+Prefrontal NE and DA Signals
+nucleus accumbens - no action
+
+prefrontal cortex
+NE
+neuron
+
+DA
+neuron
+
+VMAT2
+
+DA
+neuron
+
+VMAT2
+
+VMAT2
+
+NET
+
+atomoxetine
+DA
+
+NE
+
+α2A
+
+D1
+
++
+
++
+
+DA
+
+DAT
+
+Figure 11-38 Atomoxetine in
+ADHD with weak prefrontal
+norepinephrine (NE) and dopamine
+(DA) signals. Through its blockade of
+norepinephrine transporters (NETs),
+atomoxetine causes NE and DA levels
+to increase in the prefrontal cortex,
+where inactivation of both of these
+neurotransmitters is largely due to
+NETs (on the left). At the same time,
+the relative lack of NETs in the nucleus
+accumbens prevents atomoxetine from
+increasing NE or DA levels in that brain
+area, thus reducing the risk of abuse (on
+the right). Other NET inhibitors would
+be expected to have the same effects.
+
+D1 D2
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+NET inhibitors
+atomoxetine (NRI), reboxetine (NRI), bupropion (NDRI), venlafaxine (SNRI),
+duloxetine (SNRI), desvenlafaxine (SNRI), milnacipran (SNRI),
+desipramine (TCA), nortriptyline (TCA)
+
+Chronic Treatment with Atomoxetine in ADHD
+with Excessive Prefrontal NE and DA Signals
+prefrontal cortex
+excessive NE and DA signals
+
+stress
+
+stress
+
+Alpha-2A-Adrenergic Agonists
+
+ADHD anxiety substance
+abuse
+
+chronic treatment with atomoxetine
+NE
+neuron
+
+DA
+neuron
+
+VMAT2
+
+VMAT2
+NET
+
+atomoxetine
+DA
+
+NE
+
+α2A
+
+D1
+
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
+have not been previously treated with stimulants, nor in
+ADHD patients who have been treated long term (more
+than 8–11 weeks). NRIs may actually be preferred to
+stimulants in patients with complex comorbidities, side
+effects, or lack of response to stimulants.
+
+RESPONSE
+Figure 11-39 Chronic treatment with atomoxetine in ADHD
+with excessive signals. ADHD linked to conditions that are
+associated with chronic stress and comorbidities is theoretically
+caused by overly active NE and DA circuits. Continuous
+blockade of NETs could restore tonic postsynaptic D1 and α2Aadrenergic signaling, downregulate phasic NE and DA actions,
+and desensitize postsynaptic NE and DA receptors.
+
+Norepinephrine receptors are discussed in Chapter 6
+and illustrated in Figures 6-14 through 6-16. There are
+numerous subtypes of α-adrenergic receptors, from
+presynaptic autoreceptors, generally of the α2A subtype
+(Figure 6-14) to postsynaptic α2A, α2B, α2C, and α1
+subtypes α1A, α1B, and α1D (Figures 6-14 through 6-16).
+Alpha-2A receptors are widely distributed throughout the
+central nervous system, with high levels in the cortex and
+locus coeruleus. These receptors are thought to be the
+primary mediators of the effects of NE in the prefrontal
+cortex, regulating symptoms of inattention, hyperactivity,
+and impulsivity in ADHD. Alpha-2B receptors are in high
+concentrations in the thalamus and may be important
+in mediating sedating actions of NE, while α2C receptors
+are densest in striatum. Alpha-1 receptors generally have
+opposing actions to α2 receptors, with α2 mechanisms
+predominating when NE release is low or moderate
+(i.e., for normal attention), but with α1 mechanisms
+predominating at NE synapses when NE release is
+high (e.g., associated with stress and comorbidity) and
+contributing to cognitive impairment. Thus, selective
+NRIs at low doses will first increase activity at α2A
+481
+
+11
+
+

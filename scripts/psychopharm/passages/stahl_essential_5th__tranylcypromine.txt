@@ -1,0 +1,256 @@
+<<<PAGE 353>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Figure 7-68 Tricyclic antidepressants
+and overdose. Tricyclic
+antidepressants block voltagesensitive sodium channels in the brain
+(top) and heart (bottom). In overdose,
+this action can lead to coma, seizures,
+arrhythmia, and even death.
+
+Overdose
+
+H1
+
+coma
+sodium
+channel
+
+seizures
+
+H1
+
+arrhythmia
+sodium
+channel
+
+are barely prescribed any more today. Only about one
+in every 3,000 to 5,000 prescriptions for a drug to treat
+depression is a MAOI and only a few hundred experts
+prescribe MAOIs out of the hundreds of thousands
+who prescribe other drugs for depression in the US.
+Prescribing MAOIs is beginning to become a lost art
+in psychopharmacology as many familiar with them
+learned to use MAOIs before the 1990s when SSRIs were
+introduced and largely replaced MAOIs. Most of these
+prescribers of MAOIs are now retiring from practice.
+Nevertheless, MAOIs are a most powerful drug class
+for unipolar depression and those who prescribe them
+have seen many patients who respond to nothing else
+get better on MAOIs. The reader who is an advanced
+psychopharmacologist should gain familiarity and
+experience with these agents so that patients who still
+need them can get them. The reader is referred to specific
+reviews on MAOIs including some of the author, to help
+navigate dietary restrictions and drug interactions.
+The MAOIs phenelzine, tranylcypromine,
+isocarboxazid, and selegiline are all irreversible enzyme
+
+death
+
+7
+
+inhibitors, and thus enzyme activity returns only after
+new enzyme is synthesized about 2–3 weeks later.
+Amphetamine is also a weak but reversible MAOI; some
+MAOIs have properties related to amphetamine. For
+example, tranylcypromine has a chemical structure
+modeled on amphetamine, and thus in addition to MAOI
+properties, it also has amphetamine-like dopaminereleasing properties. The MAOI selegiline itself does not
+have amphetamine-like properties, but is metabolized
+to both l-amphetamine and l-methamphetamine. Thus,
+there is a close mechanistic link between some MAOIs and
+additional amphetamine-like dopamine-releasing actions.
+MAO Subtypes
+
+MAO exists in two subtypes, A and B. The A form
+preferentially metabolizes the monoamines most closely
+linked to depression (i.e., serotonin and norepinephrine)
+whereas the B form preferentially metabolizes trace
+amines such as phenethylamine (see Chapter 5 and
+Figures 5-64 through 5-66 for further discussion on
+trace amines). Both MAO-A and MAO-B metabolize
+337
+
+
+
+
+<<<PAGE 638>>>
+
+Index
+
+sertraline, 294, 378
+setiptiline, 309
+shift work disorder, 435, 436, 444
+sigma-1 binding, 294, 295
+signal propagation, 74
+signal transduction cascades, 9–23, 28,
+53
+four important types of, 11, 12
+second messenger, forming, 11–14
+second messenger, to phosphoprotein
+cascades, 15–18
+second messenger, to phosphoprotein
+messenger, 13–15
+time course, 11
+silent antagonists, 41, 42, 45, 192
+Sinclair method, 573
+SLC1 gene family, 31, 35
+SLC17 gene family, 31, 35
+SLC18 gene family, 31, 35
+SLC32 gene family, 31, 35
+SLC6 gene family, 30, 31–5
+sleep
+neurobiology of, 402–15
+purpose of, 414–15
+REM and non-REM, 413, 414, 435
+sleepiness, 430–4
+sleep/wake cycle, 412–13
+disturbance of, 414, 416
+small interfering RNA (siRNA), 27
+small nuclear RNA (snRNA), 27
+smoking, 476, See also nicotine
+cessation, 306, 573
+snare proteins, 73
+SNRIs (serotonin–norepinephrine
+reuptake inhibitors), 298–303
+α2δ ligand combinations, 399
+anxiety disorders, 368
+arousal combo, 333
+mirtazapine combination, 333
+pain treatment, 380
+triple action combo, 333
+social anxiety disorder, 362, 372, 377
+sodium oxybate, 446–8
+sodium potassium ATPase (sodium
+pump), 32, 33
+sodium valproate, 347–50
+solriamfetol, 444
+soma, 2
+somatic pain, 302
+somatosensory cortex, 380
+specific neutral amino acid transporters
+(SNATs), 96
+spinobulbar tracts, 380
+spinothalamic tract, 380
+SSRIs (selective serotonin reuptake
+inhibitors), 289–96
+anxiety disorders, 368
+
+622
+
+clinical uses of, 289
+common features of six drugs, 289–92
+depression in dementia, 534
+OCD, 577
+triple-action combo, 333
+unique properties of six drugs, 292–3
+stabilizers. See partial agonists
+steroids, neuroactive, 320–5
+Stevens Johnson syndrome, 352
+stigma, 145
+stimulants, 467–79, 544–7
+atypical, 546
+slow release vs. fast release, 478–9
+targeting DATs, 473–8
+treatment of addiction, 547
+stimulus-response conditioning, 571
+strengthening, synapse, 151, 154
+stress, ADHD, 467, 469, 480
+stroke, 492, 524
+Stroop test, 450, 451
+subjective memory complaints, 487, 488
+sublingual formulation, 232
+substance addictions, 544–75
+substrates, 45, 46
+suicide, 145, 156
+clozapine treatment, 223
+depressed patients, 251
+mixed feature patients, 251
+prevention, 346
+suicide inhibitors, 46
+sulpiride, 202, 205
+supersensitivity, 170, 171
+suprachiasmatic nucleus, 275, 307
+suprasegmental central sensitization,
+384, 390
+suvorexant, 423
+synapses, 1, 3
+enlarged, 5
+synaptic neurotransmission, 4
+synaptogenesis, 151, 154
+tardive dyskinesia (TD), 166
+pathophysiology, 170–4
+treatment, 174–81
+tasimelteon, 439
+tau protein, 488, 494, 502, 503
+tetrabenazine, 175–6
+tetrahydrocannabinol (THC), 563, 565,
+567
+tetrameric ligand-gated ion channels,
+54–5
+thalamic dopamine pathway, 85
+thalamo-cortical glutamate pathway, 104
+third-messenger kinase, 14, 16
+third-messenger phosphatase, 15, 16
+thyroid, 333
+tonic inhibition, 259, 263
+
+topiramate, 201, 352, 556, 575
+trace amines, 241–38
+tradozone, 311–15, 424–5
+transduction, 381
+transfer RNA (tRNA), 27
+transporters, 29–35, 50
+classification and structure, 29–31
+histamine and neuropeptides, 35
+monoamine, 30, 31–4, 208
+SLC1 gene family, 31
+vesicular, 32, 35
+tranylcypromine, 337
+traumatic memories, 356, 366, 375, 574
+trazodone, 535
+treatment responsiveness, 155
+tricyclic antidepressants (TCAs), 333–7
+triglyceride levels, 197, 198, 199
+tryptophan, 114
+tuberoinfundibular dopamine pathway,
+85
+tuberomammillary nucleus, 406, 408
+type 2 diabetes, 415
+tyramine, 338
+tyrosine, 80, 252
+tyrosine hydroxylase, 253
+ultradian sleep cycle, 413–16
+unipolar depression, 34, 244
+augmenting strategies for, 325–35
+drugs for, 289–325
+monoamine reuptake blockers, 285–8
+or bipolar, 249–51
+second-line monotherapies, 333–8
+treatment resistance in, 323–38
+valbenazine, 177
+valproic acid (valproate), 347–50
+varenicline, 551, 552, 573
+vascular dementia, 491–2, 534
+VEGF (vascular endothelial growth
+factor), 329
+venlafaxine, 299, 302
+ventromedial prefrontal cortex, 372, 374
+vesicular transporter for glutamate, 99
+vesicular transporters, 31, 32, 35
+VIAATs (vesicular inhibitory amino acid
+transporters), 255
+vilazodone, 296–9
+viloxazine, 485
+violence, 145–7, 575, 577–8
+visual hallucinations, 113, 524
+vital sign, 381, 399, 401
+VMAT1, 174
+VMAT2 inhibition, 174–81
+VMAT2 transporter, 31, 81, 254
+VMATs (vesicular monoamine
+transporters), 35
+
+

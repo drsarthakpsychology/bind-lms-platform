@@ -1,0 +1,963 @@
+<<<PAGE 633>>>
+
+the treatment of anxiety disorders in children and adolescents.
+A large, multisite investigation by the NIMH (Research Units in Pediatric
+Psychopharmacology [RUPP]) confirmed the safety and efficacy of
+fluvoxamine in the treatment of childhood separation anxiety disorder,
+generalized anxiety disorder, and social anxiety disorder. This double-blind,
+placebo-controlled study of 128 children and adolescents revealed that 76
+percent of children in the group treated with fluvoxamine showed significant
+improvement compared with 29 percent of those in the placebo group.
+Response to medication was noticeable after only 2 weeks of treatment.
+Fluvoxamine dosages ranged from 50 to 250 mg/day in children and up to
+300 mg/day in adolescents. Children and adolescents with less comorbid
+depressive symptoms had the best response. Youths who responded
+continued fluvoxamine for 6 months, and almost all of them continued to be
+responders at the 6-month mark.
+Several other randomized clinical trials have also supported the efficacy of
+SSRIs in the treatment of child and adolescent anxiety disorders. A
+randomized, controlled trial found fluoxetine, at a dose of 20 mg/day, to be
+safe and effective for children with these disorders, with minor side effects
+including gastrointestinal distress, headache, and drowsiness. Also, a
+randomized clinical trial for the treatment of generalized anxiety disorder in
+children lends support for the efficacy of sertraline. Finally, a large industry
+randomized clinical trial of paroxetine in the treatment of children with social
+anxiety disorder found that paroxetine was associated with a response in 78
+percent of children treated. The dose of paroxetine was 10 to 50 mg/day.
+The FDA has placed a “black box” warning on antidepressants, including
+all of the SSRI agents, used in the treatment of any childhood disorder,
+because of concerns about increased suicidality; however, no individual
+childhood anxiety study has found a statistically significant increase in
+suicidal thoughts or behaviors.
+Currently, we do not recommend using tricyclic drugs due to their
+potentially serious cardiac adverse effects. Other agents, including buspirone
+and β-adrenergic receptor antagonists such as propranolol, have been used
+clinically in children with anxiety disorders, but currently, no data support
+their efficacy. Diphenhydramine may be used in the short term to control
+sleep disturbances in children with anxiety disorders. Open trials and one
+double-blind, placebo-controlled study suggested that alprazolam, a
+
+
+
+
+<<<PAGE 1072>>>
+
+Auta J, Kadriu B, Giusti P, Costa E, Guidotti A. Anticonvulsant, anxiolytic,
+and non-sedating actions of imidazenil and other imidazo-benzodiazepine
+carboxamide derivatives. Pharmacol Biochem Behav. 2010;95(4):383.
+Baggish AL, Weiner RB, Kanayama G, Hudson JI, Picard MH, Hutter AM
+Jr, Pope HJ Jr. Long-term anabolic-androgenic steroid use is associated
+with left ventricular dysfunction. Circ Heart Fail. 2010;3:472.
+Baillie AJ, Sannibale C, Stapinski LA, Teesson M, Rapee RM, Haber PS. An
+investigator-blinded randomized study to compare the efficacy of
+combined CBT for alcohol use disorders and social anxiety disorder versus
+CBT focused on alcohol alone in adults with comorbid disorders: The
+Combined Alcohol Social Phobia (CASP) trial protocol. BMC Psychiatry.
+2013;13:199.
+Balster RL, Cruz SL, Howard MO, Dell CA, Cottler LB. Classification of
+abused inhalants. Addiction. 2009;104:878.
+Baltazar A, Hopkins G, McBride D, Vanderwaal C, Pepper S, Mackey S.
+Parental influence on inhalant use. J Child Adolesc Subst Abuse.
+2013;22(1):25–37.
+Barceloux DG. Amphetamines and phenethylamine derivatives. In: Medical
+Toxicology of Drug Abuse: Synthesized Chemicals and Psychoactive
+Plants. Hoboken, NJ: John Wiley & Sons; 2012:3.
+Barceloux DG. Barbiturates (amobarbital, butalbital, pentobarbital,
+secobarbital). In: Medical Toxicology of Drugs Abuse: Synthesized
+Chemicals and Psychoactive Plants. Hoboken, NJ: John Wiley & Sons
+Inc.; 2012:467.
+Barnett SR, Riddle MA. Anxiolytics and sedative/hypnotics:
+Benzodiazepines, buspirone, and other. In: Martin A, Scahill L, Kratochvil
+C, eds. Pediatric Psychopharmacology: Principles and Practice. New
+York: Oxford University Press Inc.; 2011:338.
+Barry DT, Beitel M, Cutter CJ, Joshi D, Falcioni J, Schottenfeld RS.
+Conventional and nonconventional pain treatment utilization among opioid
+dependent individuals with pain seeking methadone maintenance
+treatment: A needs assessment study. J Addict Med. 2010;4:81.
+Basile JR, Binmadi NO, Zhou H, Yang Y-H, Paoli A, Proia P.
+Supraphysiological doses of performance enhancing anabolic-androgenic
+steroids exert direct toxic effects on neuron-like cells. Front Cell Neurosci.
+2013;7:69.
+
+
+
+
+<<<PAGE 1254>>>
+
+to pick a medication in a different class. For example, we might switch from
+an SSRI to an SNRI. However, when putting these assumptions to the test, it
+is difficult to find any advantage for any particular strategy. For example, in
+the landmark STAR*D study, which remains one of the most extensive
+studies of treatment strategies following initial failure, although medication
+switches were modestly helpful, both switches within and outside a class
+were equally effective.
+Among augmentation options, several approaches have reasonable
+evidence. Several antipsychotics, most notably quetiapine and aripiprazole,
+are effective for augmentation. Lithium augmentation is also effective for
+augmenting both SSRIs and TCAs. There are also positive studies of thyroid
+hormone. However, this strategy is rarely used in clinical practice owing to
+the need for ongoing monitoring and potential adverse effects. Several other
+agents have been studied, including bupropion, buspirone, lamotrigine,
+methylphenidate, and pindolol; however, these have limited placebocontrolled data. One meta-analysis of the available data on switching
+strategies concluded that quetiapine and aripiprazole have the best evidence
+as augmentation agents. However, we should use these cautiously given their
+side effect profile.
+NOVEL PHARMACOLOGIC AGENTS
+
+Ketamine. The anesthetic agent ketamine is effective in treatment-resistant
+depression. It has a mechanism of action that inhibits the postsynaptic
+glutamate-binding protein N-methyl-D-aspartate (NMDA) receptor. Because
+abnormalities in glutamatergic signaling seem to have a role in major
+depressive disorder, this may account for its efficacy. Until recently,
+ketamine was only available intravenously, limiting its use as we had to
+monitor patients while they received an infusion of the drug over 30 minutes
+in a clinical setting. The most common side effects are dizziness, headache,
+and poor coordination, which are transitory. Dissociative symptoms,
+including hallucinations, may also occur. A positive response is usually seen
+within 24 hours, making this a genuinely novel substance in that it appears to
+act much more rapidly than standard antidepressants. However, the effect
+seems to be short-lived, and wears off after between 2 and 7 days, again
+limiting its use. There are little data on longer-term treatment as well as
+concern over associated adverse effects, particularly the psychogenic effect.
+
+
+
+
+<<<PAGE 1304>>>
+
+suggest that they be mostly limited to short-term use, either as an adjunct to
+SSRIs during the initial treatment phase or for acute use during exacerbations
+of the anxiety. Generally, most guidelines recommend that we should only
+consider long-term benzodiazepines for patients who do not respond or
+cannot tolerate the SSRIs. The main concerns are the potential for
+dependence, as well as the cognitive and other side effects. Tolerance to the
+anxiolytic effects does not seem to develop.
+Antipsychotics and anticonvulsants are not recommended as initial therapy
+but may have some role for treatment-resistant patients. Among them,
+quetiapine is popular and may be useful as a second-line treatment for
+generalized anxiety disorder.
+Buspirone is an azapirone, and effective for the treatment of generalized
+anxiety disorders. It is given in three divided doses during the day. The time
+to effect is similar to that for antidepressants, several weeks, and may take as
+long as several months. It may be useful as an adjunct to antidepressants for
+other anxiety disorders; however, most of the evidence is anecdotal.
+β-Blockers, such as propranolol, are sometimes used for anxiety disorders,
+particularly social anxiety disorder. However, the available evidence does not
+support this use. Anecdotally, many consider it useful for social anxiety,
+particularly performance anxiety. The presumed mechanism is the drug’s
+ability to block many of the physiologic symptoms of anxiety. However,
+there is little data to support this, and at least one study showed no effect.
+One study concluded it might be useful for performance anxiety—
+specifically musical performances—however, it also had significant side
+effects that could impair performance.
+Antihistamines, such as hydroxyzine, are also used, particularly as
+alternatives to benzodiazepines for acute treatment. It has some evidence for
+its use in generalized anxiety disorder. We know little about its long-term
+effect.
+Table 8-6 lists the common classes of drugs used for anxiety disorders and
+the evidence supporting their use.
+Treatment Approach. Table 8-7 gives some pointers for using
+medications to treat patients with anxiety.
+For most anxiety disorders, a conservative approach is, to begin with, an
+SSRI. Benzodiazepines are most useful when a patient requires rapid control
+
+
+
+
+<<<PAGE 1305>>>
+
+of severe anxiety symptoms. In those cases, a short-term benzodiazepine,
+such as lorazepam or alprazolam, is helpful in the short term. Concurrently,
+an SSRI should be started and slowly increased.
+For panic disorder, SSRIs or the serotonin–norepinephrine reuptake
+inhibitor (SNRI) venlafaxine are first-line options. Tricyclic antidepressants
+or MAOIs are effective but less preferably given their side effects. Other
+agents, such as mirtazapine, are other second-line options. As mentioned, the
+benzodiazepines are effective options but mainly used for short-term use or
+exacerbations. Long-term antidepressant therapy is useful for preventing
+relapse, with studies suggesting that the beneficial effects last for up to 1 to 3
+years. When appropriate, maintenance therapy should be discontinued very
+slowly.
+For generalized anxiety disorder, the approach is similar, with SSRIs and
+SNRIs being the first-line treatments. Reasonable alternatives if those are not
+effective include agomelatine, pregabalin, buspirone, and quetiapine.
+For social anxiety disorder, the approach is similar to those already
+described, with SSRIs and SNRIs being the first-line choice. Pregabalin and
+clonazepam also have strong evidence, although the same caveats for other
+benzodiazepines apply to clonazepam. Phenelzine is effective as well but is
+rarely used because of the side effects. Tricyclic antidepressants, buspirone,
+and quetiapine are not recommended owing to their side effects. As noted
+above, β-blockers may be useful for performance anxiety. However, their use
+does not appear to generalize to other types of social anxiety.
+Table 8-6
+Evidence-Based Recommendations for Monotherapy of
+Anxiety Disorders
+Anxiety Disorders
+Classes and
+Agents
+
+GAD
+
+PD
+
+SAD
+
+SSRIs
+
+First line
+
+First line
+
+First line
+
+SNRIs
+
+First line
+
+First line
+
+First line
+
+TCAs
+
+Second line
+
+Second line
+
+Not
+
+
+
+
+<<<PAGE 1358>>>
+
+There is some evidence that, as in the case of OCD, doses higher than those
+ordinarily used in the treatment of depression are beneficial in BDD, as are
+longer durations. Again, the duration of treatment should be longer, with
+gradual tapering of dosage and close monitoring of emergent symptoms.
+Patients who do not respond to one SRI may respond to another. There is
+anecdotal evidence that buspirone augmentation of SRIs is useful in partial
+responders. There is little controlled data on using dopamine receptor
+blockers as augmenting agents; what exists is not encouraging. However,
+clinicians have reported anecdotal evidence for using aripiprazole as an
+augmenting agent. Also, irreversible MAOIs have some positive, although
+experiential, reports.
+Relation to Plastic Surgery. Few data exist about the number of patients
+seeking plastic surgery who have BDD. One study found that only 2 percent
+of the patients in a plastic surgery clinic had the diagnosis, but DSM-5
+reports the figure to be 7 to 8 percent. The overall percentage may be much
+higher, however. Surgical requests are varied: removal of facial sags, jowls,
+wrinkles, or puffiness; rhinoplasty; breast reduction or enhancement; and
+penile enlargement. Men who request penile enlargements and women who
+request cosmetic surgery of the labia of the vagina or the lips of the mouth
+may be suffering from this disorder. Commonly associated with the belief
+about appearance is an unrealistic expectation of how much surgery will
+correct the defect. As reality sets in, the person realizes they have not solved
+their problems by merely altering a perceived cosmetic defect. These patients,
+hopefully, will explore their feelings of inadequacy using psychotherapy. The
+patients may take out their unfulfilled expectations and anger by taking legal
+action against their plastic surgeons or becoming depressed.
+Hoarding Disorder
+HD is challenging to treat. Although it shows similarities to OCD, effective
+treatments for OCD have shown little benefit for patients with HD. In one
+study, only 18 percent of patients responded to medication and CBT. The
+challenges posed by hoarding patients to typical CBT treatment include poor
+insight into the behavior and low motivation and resistance to treatment.
+The most effective treatment for the disorder is a cognitive-behavioral
+
+
+
+
+<<<PAGE 1558>>>
+
+frustrated and concerned about sleeplessness and its effect on her work.
+Her work involves sitting at a microscope for 6 hours out of a 9-hour
+working day and meticulously documenting her findings. Her final output
+has not suffered, but she must now “double check” for accuracy.
+She describes herself as a worrier and a Type-A personality. The
+patient does not know how to relax. For example, on vacation she
+continually worries about things that can go wrong. She will not even
+begin to unwind until she has arrived at the destination, checked in, and
+unpacked. Even then, she is unable to relax.
+Medical history is unremarkable except for tonsillectomy (age 16
+years),
+migraine
+headaches
+(current),
+and
+diet-controlled
+hypercholesterolemia. She takes naproxen as needed for headache. She
+does not currently drink caffeinated beverages, smoke tobacco, or drink
+alcoholic beverages. She does not use recreational drugs.
+The problem with insomnia began after relocation to a new city and
+place of employment. She attributes her insomnia to the noisy
+neighborhood in which she now lives. She first sought treatment 18
+months ago. Her family practice physician diagnosed depression, and she
+was started on fluoxetine that made her “climb the walls.” Antihistamines
+were tried next with similar results. She was then switched to low-dose
+trazodone (for sleep) and developed nausea. After these medical
+interventions, she sought medical care elsewhere. Zolpidem 5 mg was
+prescribed, but it made her feel drugged and upon discontinuation she had
+withdrawal effects. Another family practice physician diagnosed
+“nonspecific anxiety disorder” and began buspirone; an experience she
+describes as “having an alien try to climb out of my skin.” Buspirone was
+discontinued. Paroxetine was tried for 8 weeks with no effect. Finally, a
+psychiatrist was consulted, who diagnosed adult attention-deficit disorder
+(without hyperactivity) and suggested treatment with methylphenidate. At
+this point, the patient was convinced that a stimulant would not help her
+insomnia and demanded referral to a sleep disorders center.
+DISCUSSION
+Ms. W’s symptoms fall into the broad category of an insomnia, and the
+symptoms began after having moved from one city to another.
+Environmental sleep disorder (noise) and adjustment sleep disorder (new
+
+
+
+
+<<<PAGE 1772>>>
+
+correct diagnosis. With a likelihood of subcortical seizure-like activity,
+medications that lower the seizure threshold can aggravate the situation.
+Selective serotonin reuptake inhibitors (SSRIs), trazodone, and buspirone are
+useful in reducing impulsivity and aggression. Propranolol and other βadrenergic receptor antagonists and calcium channel inhibitors have also been
+effective in some cases.
+Some neurosurgeons have performed operative treatments for intractable
+violence and aggression. No evidence indicates that such treatment is
+effective.
+Kleptomania
+Because true kleptomania is rare, reports of treatment tend to be individual
+case descriptions or a short series of cases. Insight-oriented psychotherapy
+and psychoanalysis have been successful but depend on patients’
+motivations. Those who feel guilt and shame may be helped by insightoriented psychotherapy because of their increased motivation to change their
+behavior.
+Case reports and case series suggest that cognitive-behavioral therapy may
+be helpful. Specific behavior therapies, including systematic desensitization,
+aversive conditioning, and a combination of aversive conditioning and altered
+social contingencies, have been reported successful, even when motivation
+was lacking. SSRIs, such as fluoxetine and fluvoxamine, appear to be
+effective in some patients with kleptomania; however, there are also reports
+of fluoxetine having no benefit in kleptomania. Case reports indicated
+successful treatment with tricyclic drugs, trazodone, lithium, valproate,
+topiramate, naltrexone, methylphenidate, and electroconvulsive therapy. In a
+controlled trial of antidepressants, escitalopram was found to have no benefit
+in treating kleptomania. Though limited by small sample size and open-label
+design, high-dose naltrexone was reported to be effective in reducing the urge
+to steal in patients with kleptomania.
+Pyromania
+Little has been written about the treatment of pyromania, and treating
+firesetters has been difficult because of their lack of motivation. No single
+treatment has been proved effective; as a result, most therapists try various
+
+
+
+
+<<<PAGE 1815>>>
+
+Table 19-12
+Pharmacotherapy of
+Personality Disorders
+
+Target
+
+Symptom
+
+Domains
+
+of
+
+Choice of Drugs According to Target Symptoms of Personality
+Disorders
+Target Symptom
+
+Drug/Treatment of
+Choice
+
+Not
+Recommended
+
+I. Mood Dysregulation and Anxiety
+Anxiety
+Chronic cognitive
+
+Psychotherapy,
+Benzodiazepines
+SSRIs, SNRIs,
+MAOIs, Low-Dose
+Novel
+Psychotropics
+(aripiprazole,
+quetiapine)
+Valproate and other
+GABA analogs
+(clonazepam and
+buspirone)
+
+Chronic somatic
+
+MAOIs, SNRIs
+(duloxetine,
+milnacipran)
+Pregabalin and other
+GABA analogs,
+TCAs, betablockers
+
+Obsessions
+
+SSRIs, Antipsychotics
+(quetiapine), TCAs
+(clomipramine),
+Mild NMDA
+antagonists
+
+If used—
+benzodiazepines
+with long half-life
+and short trials
+preferred
+
+
+
+
+<<<PAGE 1891>>>
+
+Benzodiazepines
+Clonazepam
+
+Klonopin
+
+PO 1 mg bid Akathisia, acute
+dystonia
+
+Lorazepam
+
+Ativan
+
+PO 1 mg tid
+
+Buspirone
+
+BuSpar
+
+PO 20–40
+mg qid
+
+Tardive dyskinesia
+
+Vitamin E
+
+—
+
+PO 1,200–
+1,600
+IU/day
+
+Tardive dyskinesia
+
+PO, orally; IM, intramuscularly; IV, intravenously; bid, twice a day; tid, three times a day; qid;
+four times a day.
+DIFFERENTIAL DIAGNOSIS. The differential diagnosis
+
+includes seizures and
+
+tardive dyskinesia.
+COURSE AND PROGNOSIS. Dystonia can fluctuate spontaneously and respond
+
+to reassurance, so the clinician gets the false impression that the movement is
+hysterical or entirely under conscious control.
+Table 21-4
+Treatment of Neuroleptic Malignant Syndrome
+Intervention
+
+Dosing
+
+Effectiveness
+
+Amantadine
+
+200–400 mg PO/day in
+divided doses
+
+Beneficial as
+monotherapy or
+in combination;
+decrease in
+death rate
+
+Bromocriptine
+
+2.5 mg PO bid or tid, may
+increase to a total of 45
+mg/day
+
+Mortality reduced
+as a single or
+combined agent
+
+Levodopa/carbidopa Levodopa 50–100 mg/day
+
+Case reports of
+
+
+
+
+<<<PAGE 2039>>>
+
+dilated pupils, and hyperactive deep tendon reflexes. Involuntary movements
+may be present, particularly in the face and the jaw. Acidification of the urine
+markedly hastens the excretion of MAOIs, and dialysis can be of some use.
+Phentolamine or chlorpromazine may be useful if hypertension is a problem.
+Moclobemide alone in overdosage causes relatively mild and reversible
+symptoms.
+Drug Interactions
+The significant drug–drug interactions involving MAOIs are listed in Table
+21-23. Most antidepressants, as well as precursor agents, should be avoided.
+Persons should be instructed to tell any other physicians or dentists who are
+treating them that they are taking an MAOI. MAOIs may potentiate the
+action of CNS depressants, including alcohol and barbiturates. MAOIs should
+not be coadministered with serotonergic drugs, such as SSRIs and
+clomipramine (Anafranil), because this combination can trigger serotonin
+syndrome. The use of lithium or tryptophan with an irreversible MAOI may
+also induce serotonin syndrome. Initial symptoms of serotonin syndrome can
+include tremor, hypertonicity, myoclonus, and autonomic signs, which can
+then progress to hallucinosis, hyperthermia, and even death. Fatal reactions
+had occurred when MAOIs were combined with meperidine (Demerol) or
+fentanyl (Sublimaze).
+Table 21-23
+Drugs to Be Avoided during Monoamine Oxidase Inhibitor
+Treatment (Partial Listing)
+Never Use
+Antiasthmatics
+Antihypertensives (methyldopa, guanethidine, reserpine)
+Buspirone
+Levodopa
+Opioids (especially meperidine, dextromethorphan,
+propoxyphene, tramadol; morphine or codeine may be less
+dangerous)
+Cold, allergy, or sinus medications containing dextromethorphan
+
+
+
+
+<<<PAGE 2123>>>
+
+The clinical decision to treat an anxious person with a benzodiazepine should
+be carefully considered. Medical causes of anxiety (e.g., thyroid dysfunction,
+caffeinism, and prescription medications) should be ruled out.
+Benzodiazepine use should be started at a low dosage, and the person should
+be instructed regarding the drug’s sedative properties and abuse potential. An
+estimated length of therapy should be decided at the beginning of therapy,
+and the need for continued therapy should be reevaluated at least monthly
+because of the problems associated with long-term use. However, certain
+persons with anxiety disorders are unresponsive to treatments other than
+benzodiazepines in long-term use.
+Benzodiazepines are available in a wide range of formulations.
+Clonazepam is available in a wafer formulation that facilitates its use in
+patients who have trouble swallowing pills. Alprazolam is available in an
+extended-release form, which reduces the frequency of dosing. Some
+benzodiazepines are more potent than others in that one compound requires a
+relatively smaller dosage than another compound to achieve the same effect.
+For example, clonazepam requires 0.25 mg to achieve the same effect as 5
+mg of diazepam; thus, clonazepam is considered a high-potency
+benzodiazepine. Conversely, oxazepam has an approximate dosage
+equivalence of 15 mg and is a low-potency drug.
+Table 21-43 lists preparations and doses of medications discussed in this
+chapter.
+
+BUSPIRONE
+Buspirone hydrochloride (BuSpar) is classified as an azapirone and is
+chemically distinct from other psychotropic agents. It acts on two types of
+receptors, serotonin (5-HT) and dopamine (D). It has a high affinity for the 5HT1A serotonin receptor, acting as an agonist or partial agonist, and moderate
+affinity for the D2 dopamine receptor, acting as both an agonist and an
+antagonist. The approved indication for this psychotropic drug is for the
+treatment of GAD. It was initially believed to be a better alternative to the
+benzodiazepine drug group because buspirone does not possess
+anticonvulsant and muscle relaxant effects. Reports continue to appear that
+some patients benefit from the addition of buspirone to their antidepressant
+regimen. Its use in this role is more common than its use as an anxiolytic.
+
+
+
+
+<<<PAGE 2124>>>
+
+Interestingly, the antidepressant drug vilazodone (Viibryd) inhibits 5-HT
+reuptake and acts as a 5-HT1A receptor partial agonist.
+Pharmacologic Actions
+Buspirone is well absorbed from the GI tract, but absorption is delayed by
+food ingestion. Peak plasma levels are achieved 40 to 90 minutes after oral
+administration. At doses of 10 to 40 mg, single-dose linear pharmacokinetics
+are observed. Nonlinear pharmacokinetics are observed after multiple doses.
+Because of its short half-life (2 to 11 hours), buspirone is dosed three times
+daily. An active metabolite of buspirone, 1-pyrimidinylpiperazine (1-PP), is
+about 20 percent less potent than buspirone but is up to 30 percent more
+concentrated in the brain than the parent compound. The elimination half-life
+of 1-PP is 6 hours.
+Buspirone does not affect the GABA-associated chloride ion channel or
+the serotonin reuptake transporter, targets of other drugs that are effective in
+GAD. Buspirone also has activity at 5-HT2 and dopamine type 2 (D2)
+receptors, although the significance of the effects at these receptors is
+unknown. At D2 receptors, it has properties of both an agonist and an
+antagonist.
+Therapeutic Indications
+Generalized Anxiety Disorder. Buspirone is a narrow-spectrum
+antianxiety agent with demonstrated efficacy only in the treatment of GAD.
+In contrast to the SSRIs or venlafaxine, buspirone is not effective in the
+treatment of panic disorder, OCD, or social phobia. Buspirone, however, has
+an advantage over these agents in that it does not typically cause sexual
+dysfunction or weight gain.
+Some evidence suggests that, compared with benzodiazepines, buspirone is
+generally more useful for symptoms of anger and hostility, equally effective
+for psychic symptoms of anxiety, and less effective for somatic symptoms of
+anxiety. The full benefit of buspirone is evident only at dosages above 30 mg
+a day. Compared with the benzodiazepines, buspirone has a delayed onset of
+action and lacks any euphoric effect. Unlike benzodiazepines, buspirone has
+no immediate effects, and patients should be told that a full clinical response
+
+
+
+
+<<<PAGE 2125>>>
+
+may take 2 to 4 weeks. If an immediate response is needed, patients can be
+started on a benzodiazepine and then withdrawn from the drug after
+buspirone’s effects begin. Sometimes the sedative effects of benzodiazepines,
+which are not found with buspirone, are desirable; however, these sedative
+effects may cause impaired motor performance and cognitive deficits.
+Other Disorders. Many other clinical uses of buspirone have been
+reported, but most have not been confirmed in controlled trials. Evidence of
+the efficacy of high-dosage buspirone (30 to 90 mg a day) for depressive
+disorders is mixed. Buspirone appears to have weak antidepressant activity,
+which has led to its use as an augmenting agent in patients who have failed
+standard antidepressant therapy. In a large study, buspirone augmentation of
+SSRIs worked as well as other commonly used strategies. Buspirone is
+sometimes used to augment SSRIs in the treatment of OCD. There are reports
+that buspirone may be beneficial against the increased arousal and flashbacks
+associated with PTSD.
+Because buspirone does not act on the GABA–chloride ion channel
+complex, the drug is not recommended for the treatment of withdrawal from
+benzodiazepines, alcohol, or sedative-hypnotic drugs, except as treatment of
+comorbid anxiety symptoms.
+Scattered trials suggest that buspirone reduces aggression and anxiety in
+persons with organic brain disease or traumatic brain injury. It is also used
+for SSRI-induced bruxism and sexual dysfunction, nicotine craving, and
+ADHD.
+Precautions and Adverse Reactions
+Buspirone does not cause weight gain, sexual dysfunction, discontinuation
+symptoms, or significant sleep disturbance. It does not produce sedation or
+cognitive and psychomotor impairment. The most common adverse effects of
+buspirone are headache, nausea, dizziness, and (rarely) insomnia. No sedation
+is associated with buspirone. Some persons may report a minor feeling of
+restlessness, although that symptom may reflect an incompletely treated
+anxiety disorder. No deaths have been reported from overdoses of buspirone,
+and the median lethal dose is estimated to be 160 to 550 times the
+recommended daily dose. Buspirone should be used with caution by persons
+
+
+
+
+<<<PAGE 2126>>>
+
+with hepatic and renal impairment, pregnant women, and nursing mothers.
+Buspirone can be used safely by the elderly.
+Drug Interactions
+The coadministration of buspirone and haloperidol (Haldol) results in
+increased blood concentrations of haloperidol. Buspirone should not be used
+with MAOIs to avoid hypertensive episodes, and a 2-week washout period
+should pass between the discontinuation of MAOI use and the initiation of
+treatment with buspirone. Drugs or foods that inhibit CYP3A4, for example,
+erythromycin, itraconazole (Sporanox), nefazodone (Serzone), and grapefruit
+juice, increase buspirone plasma concentrations.
+Laboratory Interferences
+Single doses of buspirone can cause transient elevations in growth hormone,
+prolactin, and cortisol concentrations, although the effects are not clinically
+significant.
+Dosage and Clinical Guidelines
+Buspirone is available in single-scored 5- and 10-mg tablets and triple-scored
+15- and 30-mg tablets; treatment is usually initiated with either 5 mg orally
+three times daily or 7.5 mg orally twice daily. The dosage can be raised 5 mg
+every 2 to 4 days to the usual dosage range of 15 to 60 mg a day.
+Buspirone should not be used in patients with past hypersensitivity to
+buspirone, in cases of diabetes-associated metabolic acidosis, or patients with
+severely compromised liver or renal function.
+Switching from a Benzodiazepine to Buspirone. Buspirone is not
+cross-tolerant with benzodiazepines, barbiturates, or alcohol. A common
+clinical problem, therefore, is how to initiate buspirone therapy in a person
+who is currently taking benzodiazepines. There are two alternatives. First, the
+clinician can start buspirone treatment gradually while the benzodiazepine is
+being withdrawn. Second, the clinician can start buspirone treatment and
+bring the person up to a therapeutic dosage for 2 to 3 weeks while the person
+is still receiving the regular dosage of the benzodiazepine and then slowly
+taper the benzodiazepine dosage. Patients who have received
+
+
+
+
+<<<PAGE 2127>>>
+
+benzodiazepines in the past, especially in recent months, may find that
+buspirone is not as effective as the benzodiazepines in the treatment of their
+anxiety. This difference might be explained by the absence of the immediate
+mildly euphoric and sedative effects of benzodiazepines. The
+coadministration of buspirone and benzodiazepines may be useful in the
+treatment of persons with anxiety disorders who have not responded to
+treatment with either drug alone.
+
+β-ADRENERGIC RECEPTOR ANTAGONISTS
+Because of the innervations of many, if not most, peripheral organs and
+vasculature by the sympathetic division of the autonomic nervous system,
+their functions are ultimately controlled, in part, by one of the two major
+classes of adrenergic receptors: α-receptors (see Table 33-2) and β-receptors.
+These receptors are further subdivided based on their action and location, and
+they are located both peripherally and in the CNS. Shortly after being
+introduced for cardiac indications, propranolol (Inderal) was reported to be
+useful for agitation, and its use in psychiatry spread rapidly. The five most
+commonly used β-receptor antagonists in psychiatry are propranolol, nadolol
+(Corgard), metoprolol (Lopressor, Toprol), pindolol (Visken), and atenolol
+(Tenormin) (Table 21-45).
+Pharmacologic Actions
+The β-receptor antagonists differ concerning lipophilicities, metabolic routes,
+β-receptor selectivity, and half-lives. The absorption of the β-receptor
+antagonists from the GI tract is variable. The agents that are most soluble in
+lipids (i.e., are lipophilic) are likely to cross the blood–brain barrier and enter
+the brain; those agents that are least lipophilic are less likely to enter the
+brain. When CNS effects are desired, a lipophilic drug may be preferred;
+when only peripheral effects are desired, a less lipophilic drug may be
+indicated.
+Table 21-45
+β-Adrenergic Drugs Used in Psychiatry
+
+
+
+
+<<<PAGE 2216>>>
+
+Cyproheptadine
+
+Periactin
+
+4–6
+
+Table 21-59
+Other Histamine Antagonists often Prescribed
+Class
+
+Generic
+Name
+
+Trade
+Name
+
+Second-generation histamine 1 receptor
+antagonists
+
+Cetirizine
+
+Zyrtec
+
+Loratadine
+
+Claritin
+
+Fexofenadine Allegra
+Histamine 2 receptor antagonists
+
+Nizatidine
+
+Axid
+
+Famotidine
+
+Pepcid
+
+Ranitidine
+
+Zantac
+
+Cimetidine
+
+Tagamet
+
+Activation of H1 receptors stimulates wakefulness; therefore, receptor
+antagonism causes sedation. All four agents also possess some antimuscarinic
+cholinergic activity. Cyproheptadine is unique among the drugs because it
+has both potent antihistamine and serotonin 5-HT2-receptor antagonist
+properties.
+Therapeutic Indications
+Antihistamines are useful as a treatment for neuroleptic-induced
+parkinsonism, neuroleptic-induced acute dystonia, and neuroleptic-induced
+akathisia. They are an alternative to anticholinergics and amantadine for these
+purposes. The antihistamines are relatively safe hypnotics, but they are not
+superior to the benzodiazepines, which have been much better studied in
+terms of efficacy and safety. The antihistamines have not been proven
+effective for long-term anxiolytic therapy; therefore, the benzodiazepines,
+buspirone (BuSpar), or SSRIs are preferable for such treatment.
+Cyproheptadine is sometimes used to treat impaired orgasms, especially
+
+
+
+
+<<<PAGE 2276>>>
+
+of Psychiatry. 9th ed. Vol. 2. Philadelphia, PA: Lippincott Williams &
+Wilkins; 2009:3044.
+Faber J, Sansone RA. Buspirone: a possible cause of alopecia. Innov Clin
+Neurosci. 2013;10(1):12–13.
+Flomenbaum NE, Goldfrank LR, Hoffman RS, Howland MA, Lewin NA.
+Goldfrank’s Toxicologic Emergencies. 8th ed. New York: McGraw-Hill;
+2006.
+Hutto B, Fairchild A, Bright R. γ-Hydroxybutyrate withdrawal and chloral
+hydrate. Am J Psychiatry. 2000;157:1706.
+Jovaisas B; and Canadian Pharmacists Association. CPS 2020: Compendium
+of Pharmaceuticals and Specialities: Canada’s Trusted Drug Reference.
+Canadian Pharmacists Association, 2020.
+Kaplan GB, Greenblatt DJ, Ehrenberg BL, Goddard JE, Harmatz JS.
+Differences in pharmacodynamics but not pharmacokinetics between
+subjects with panic disorder and healthy subjects after treatment with a
+single dose of alprazolam. J Clin Psychopharmacol. 2000;20:338–346.
+Katsura M. Functional involvement of cerebral diazepam binding inhibitor
+(DBI) in the establishment of drug dependence. Nippon Yakurigaku Zasshi.
+2001;117:
+159–168.
+Koerner IK, Brambrink AM. Brain protection by anesthetic agents. Curr
+Opin Anaesthesiol. 2006;19:481.
+Korpi ER, Matilla MJ, Wisden W, Luddens H. GABA(A)-receptor subtypes:
+clinical efficacy and selectivity of benzodiazepine site ligands. Ann Med.
+1997;29:275–282.
+Le Foll B, Boileau I. Repurposing buspirone for drug addiction treatment. Int
+J Neuropsychopharmacol. 2013;16(2):251–253.
+Levitt AJ, Schaffer A, Lanctôt KL. Buspirone. In: Sadock BJ, Sadock VA,
+Ruiz P, eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry.
+9th ed. Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins:
+2009:3060.
+McAinsh J, Cruickshank JM. Beta-blockers and central nervous system side
+effects. Pharmacol Ther. 1990;46(2):163–197.
+McCarron MM, Schulze BW, Walberg CB, Thompson GA, Ansari A. Short
+acting barbiturate overdosage: correlation of intoxication score with serum
+barbiturate concentration. JAMA. 1982;248:55.
+
+
+
+
+<<<PAGE 2277>>>
+
+McIntyre RS. β-Adrenergic receptor antagonists. In: Sadock BJ, Sadock VA,
+Ruiz P, eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry.
+9th ed. Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins;
+2009:3009.
+Myers RA, Plym MJ, Signor LJ, Lodge NJ. 1-(2-pyrimidinyl)-piperazine, a
+buspirone metabolite, modulates bladder function in the anesthetized rat.
+Neurourol Urodyn. 2004;23(7):709–115.
+Navines R, Martin-Santos R, Gomez-Gil E, Martinez De Osaba MJ, Gasto C.
+Interaction between serotonin 5-Htla receptors and beta-endorphins
+modulates antidepressant response. Prog Neuropsychopharmacol Biol
+Psychiatry. 2008;32:1804–1809.
+Peskind ER, Tsuang DW, Bonner LT, Pascualy M, Riekse RG. Propranolol
+for disruptive behaviors in nursing home residents with probable or
+possible Alzheimer disease: a placebo-controlled study. Alzheimer Dis
+Assoc Disord. 2005;19(1):23–28.
+Rosa MA, Rosa MO, Marcolin MA, Fregni F. Cardiovascular effects of
+anesthesia in ECT: a randomized, double-blind comparison of etomidate,
+propofol and thiopental. J ECT. 2007;23:6–8.
+Sempere T, Urbina M, Lima L. 5-HT1A and beta-adrenergic receptors
+regulate proliferation of rat blood lymphocytes. Neuroimmunomodulation.
+2004;11(5):307.
+Silberstein SD, McCrory DC. Butalbital in the treatment of headache: history,
+pharmacology, and efficacy. Headache. 2001;41:953–967.
+Smith MC, Riskin BJ. The clinical use of barbiturates in neurological
+disorders. Drugs. 1991;42:365–378.
+Syvalahti E, Penttila J, Majasuo H, Palvimaki EP, Laakso A. Combined
+treatment with citalopram and buspirone: effects on serotonin 5-HT2A and
+5-HT2C receptors in the rat brain. Pharmacopsychiatry. 2006;39(1):1–8.
+Van Oudenhove L, Kindt S, Vos R, Coulie B, Tack J. Influence of buspirone
+on gastric sensorimotor function in man. Aliment Pharmacol Ther.
+2008;28:1326–1333.
+Wheeler DS, Jensen RA, Poss WB. A randomized, blinded comparison of
+chloral hydrate and midazolam sedation in children undergoing
+echocardiography. Clin Pediatr. 2001;40:381–387.
+Wong H, Dockens RC, Pajor L, Yeola S, Grace JE Jr. 6-Hydroxybuspirone is
+
+
+
+
+<<<PAGE 2278>>>
+
+a major active metabolite of buspirone: assessment of pharmacokinetics
+and 5-hydroxytryptamine 1A receptor occupancy in rats. Drug Metab
+Dispos. 2007;35(8):1387–1392.
+Drugs Used to Treat Sleep Disorders
+Bannan N, Rooney S, O’Connor J. Zopiclone misuse: an update from Dublin.
+Drug Alcohol Rev. 2007;26:83–85.
+Boehlein JK, Kinzie JD. Pharmacologic reduction of CNS noradrenergic
+activity in PTSD: the case for clonidine and prazosin. J Psychiatr Pract.
+2007;13:72–78.
+Calvo JR, Gonzalez-Yanes C, Maldonado M. The role of melatonin in the
+cells of the innate immunity: a review. J Pineal Res. 2013;55(2):103–120.
+DeMicco M, Wang-Weigand S, Zhang J. Long-term therapeutic effects of
+ramelteon treatment in adults with chronic insomnia: a 1-year study. Sleep.
+2006;
+29(Suppl):A234.
+Doghramji K. Melatonin and its receptors: a new class of sleep-promoting
+agents. J Clin Sleep Med. 2007;3(5 Suppl):S17.
+Erman M, Seiden D, Zammit G, Sainati S, Zhang J. An efficacy, safety, and
+dose-response study of ramelteon in patients with chronic primary
+insomnia. Sleep Med. 2006;7(1):17–24.
+Johnson MW, Suess PE, Griffiths RR. Ramelteon: a novel hypnotic lacking
+abuse liability and sedative adverse effects. Arch Gen Psychiatry.
+2006;63(10):
+1149–1157.
+Karim A, Bradford D, Siebert F, Zhao Z. Pharmacokinetic effect of multiple
+oral doses of donepezil on ramelteon, and vice versa, in healthy adults.
+Sleep. 2007;
+30(Suppl):A244.
+Kato K, Hirai K, Nishiyama K, Uchikawa O, Fukatsu K. Neurochemical
+properties of ramelteon (TAK-375), a selective MT1/MT2 receptor agonist.
+Neuropharmacology. 2005;48(2):301–310.
+Lemmer B. The sleep–wake cycle and sleeping pills. Physiol Behav.
+2009;90:285.
+Lieberman JA. Update on the safety considerations in the management of
+insomnia with hypnotics: incorporating modified-release formulations into
+
+
+
+
+<<<PAGE 3615>>>
+
+Bruininks-Oseretsky Test of Motor Development, 151
+Bruxism, sleep, 501–502, 515
+Bulimia nervosa, 628
+clinical features, 469
+comorbidity, 475
+course and prognosis, 476
+diagnosis and clinical features, 471–473, 472t
+differential diagnosis, 474
+epidemiology, 478
+etiology, 479
+developmental factors, 479
+environmental and social factors, 480
+genetic and biologic factors, 479
+psychological factors, 479–480
+pathology and laboratory examination, 473–474
+treatment, 477–478
+Bulimia Test-Revised (BULIT-R), 44–45
+Bullying, 903–904
+cyber, 333, 904
+physical, 903
+social, 903
+verbal, 903
+Buprenorphine, 293, 689
+for opioid withdrawal, 295
+Bupropion, 600, 607, 732
+for ADHD, 137
+associated euphoric feeling, 636
+in bulimia nervosa treatment, 478
+dosage and clinical guidelines, 636–637
+drug interactions, 636
+laboratory interferences, 636
+pharmacologic actions, 635
+precautions and adverse reactions, 636
+for smoking cessation, 310, 310t
+therapeutic indications, 635–636
+BuSpar. See Buspirone
+Buspirone, 672–673
+
+

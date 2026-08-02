@@ -1,0 +1,422 @@
+<<<PAGE 1249>>>
+
+sweating, male
+sexual
+dysfunction
+Desvenlafaxine
+
+50–100
+
+Dry mouth,
+dizziness,
+nausea,
+sweating
+
+None
+
+Duloxetine
+
+30–120
+
+Nausea, dry mouth, None
+constipation,
+insomnia, male
+sexual
+dysfunction
+
+Levomilnacipran
+
+20–80
+
+Nausea, dry mouth, None
+headaches, male
+sexual
+dysfunction
+
+Other Second-Generation and Novel Antidepressants
+Agomelatinea
+
+25–50
+
+None
+
+None
+
+Bupropion
+
+150–450
+
+Insomnia, dry
+mouth, nausea
+
+Headaches
+
+Mirtazapine
+
+15–60
+
+Dry mouth,
+constipation,
+increased
+appetite, weight
+gain
+
+Somnolence
+
+Moclobemidea
+
+300–600
+
+None
+
+None
+
+Vilazodone
+
+10–40
+
+Diarrhea, nausea,
+headaches
+
+None
+
+Vortioxetine
+
+10–20
+
+Nausea
+
+None
+
+aNot routinely available in the United States.
+
+
+
+
+<<<PAGE 1306>>>
+
+recommended
+MAOIs
+
+Insufficient
+evidence
+
+Second line
+
+Second line
+
+RIMA-Moclobemide Insufficient
+evidence
+
+Insufficient
+evidence
+
+Second Line
+
+Other Psychotropics Second line
+—Agomelatine,
+Buspirone,
+Mirtazapine
+
+Second line
+
+Second line
+
+Benzodiazepines
+
+Second line
+
+Second line
+
+Second line
+
+Atypical
+Second line
+Antipsychotics—
+Quetiapine
+
+Insufficient
+evidence
+
+Not
+recommended
+
+Anticonvulsant—
+Pregabalin
+
+Insufficient
+evidence
+
+Second line
+
+Second line
+
+Note: Beta-adrenergic blocking agents are recommended only for performance anxiety.
+RIMA, reversible monoamine oxidase inhibitor; GAD, generalized anxiety disorder; PD, panic
+disorder; SAD, social anxiety disorder.
+
+In the case of specific phobia, psychotherapies, particularly behavioral
+therapies, are the first-line choice. SSRIs may be helpful, although there are
+few studies of SSRIs for this disorder.
+For agoraphobia, the main goal of pharmacotherapy is to treat the panic
+attacks that are usually comorbid. Early studies did not support the use of
+medications for “pure” agoraphobia; however, there has been little research
+since.
+Psychosocial Therapies
+There is strong support for a variety of psychosocial therapies for anxiety
+disorders, including cognitive-behavioral therapy (CBT), behavioral
+therapies, and interpersonal therapy. Studies of CBT suggest it has a
+substantial effect on generalized anxiety disorder, panic disorder, and social
+anxiety disorder, although this evidence is tempered by concerns about
+
+
+
+
+<<<PAGE 2034>>>
+
+used as a treatment for tuberculosis, but its antidepressant properties were
+discovered by chance when some treated patients experienced elevation of
+mood during treatment. Despite their effectiveness, prescription of MAOIs as
+first-line agents has always been limited by concern about the development of
+potentially lethal hypertension and the consequent need for a restrictive diet.
+The use of MAOIs declined further after the introduction of the SSRIs and
+other new agents. They are now mainly relegated to use in treatment-resistant
+cases. Thus, the second-line status of MAOIs has less to do with
+considerations of efficacy than with safety concerns. The currently available
+MAOIs
+include
+phenelzine
+(Nardil),
+isocarboxazid
+(Marplan),
+tranylcypromine (Parnate), rasagiline (Azilect), moclobemide (Manerix), and
+selegiline (Eldepryl).
+Two subsequent advances in the field of antidepressant MAOIs involve the
+introduction of a selective reversible inhibitor of MAOA (RIMA),
+moclobemide (Manerix), in the early 1990s into most countries except the
+United States, and in 2005, the introduction of a transdermal delivery form of
+selegiline (Emsam) in the United States that is used for the treatment of
+parkinsonism. Other RIMA agents, including brofaromine (Consonar) and
+befloxatone, have not been submitted for registration despite favorable
+outcomes in clinical trials.
+Pharmacologic Actions
+Phenelzine, tranylcypromine, and isocarboxazid are readily absorbed after
+oral administration and reach peak plasma concentrations within 2 hours.
+Whereas their plasma half-lives are in the range of 2 to 3 hours, their tissue
+half-lives are considerably longer. Because they irreversibly inactivate
+MAOs, the therapeutic effect of a single dose of irreversible MAOIs may
+persist for as long as 2 weeks. The RIMA moclobemide is rapidly absorbed
+and has a half-life of 0.5 to 3.5 hours. Because it is a reversible inhibitor,
+moclobemide has a much briefer clinical effect after a single dose than do
+irreversible MAOIs.
+The MAO enzymes are found on the outer membranes of mitochondria,
+where they degrade cytoplasmic and extraneuronal monoamine
+neurotransmitters such as norepinephrine, serotonin, dopamine, epinephrine,
+and tyramine. MAOIs act in the CNS, the sympathetic nervous system, the
+
+
+
+
+<<<PAGE 2036>>>
+
+another, the clinician should taper and stop the use of the first drug for 10 to
+14 days before beginning the use of the second drug.
+Paresthesias, myoclonus, and muscle pains are occasionally seen in
+persons treated with MAOIs. Paresthesias may be secondary to MAOIinduced pyridoxine deficiency, which may respond to supplementation with
+pyridoxine, 50 to 150 mg orally each day. Occasionally, persons complain of
+feeling drunk or confused, perhaps indicating that the dosage should be
+reduced and then increased gradually. Reports that the hydrazine MAOIs are
+associated with hepatotoxic effects are relatively uncommon. MAOIs are less
+cardiotoxic and less epileptogenic than are the tricyclic and tetracyclic drugs.
+The most common adverse effects of the RIMA moclobemide are
+dizziness, nausea, and insomnia or sleep disturbance. RIMAs cause fewer GI
+adverse effects than do SSRIs. Moclobemide does not have adverse
+anticholinergic or cardiovascular effects, and it has not been reported to
+interfere with sexual function.
+MAOIs should be used with caution by persons with renal disease,
+cardiovascular disease, or hyperthyroidism. MAOIs may alter the dosage of a
+hypoglycemic agent required by persons with diabetes. MAOIs have been
+significantly associated with the induction of mania in persons in the
+depressed phase of bipolar I disorder and triggering a psychotic
+decompensation in persons with schizophrenia. MAOIs are contraindicated
+during pregnancy, although data on their teratogenic risk are minimal.
+Nursing women should not take MAOIs because the drugs can pass into
+breast milk.
+Tyramine-Induced Hypertensive Crisis. The most worrisome side
+effect of MAOIs is the tyramine-induced hypertensive crisis. The amino acid
+tyramine is usually transformed via GI metabolism. However, MAOIs
+inactivate GI metabolism of dietary tyramine, thus allowing intact tyramine
+to enter the circulation. A hypertensive crisis may subsequently occur as a
+result of a powerful pressor effect of the amino acid. Tyramine-containing
+foods should be avoided for 2 weeks after the last dose of an irreversible
+MAOI to allow the resynthesis of adequate concentrations of MAO enzymes.
+Accordingly, foods rich in tyramine (Table 21-22) or other
+sympathomimetic amines, such as ephedrine, pseudoephedrine (Sudafed), or
+dextromethorphan (Trocal), should be avoided by persons who are taking
+
+
+
+
+<<<PAGE 2038>>>
+
+Others: Banana or avocado (ripe or not), banana peel
+aAny food left out to age or spoil can spontaneously develop tyramine through fermentation.
+bAlcohol can produce profound orthostasis interacting with monoamine oxidase inhibitors
+
+(MAOIs) but cannot produce direct hypotensive reactions.
+cWhite wines, gin, and vodka have no tyramine content.
+Table by Jonathan M. Himmelhoch, M.D.
+
+An MAOI-induced hypertensive crisis should be treated with α-adrenergic
+antagonists—for example, phentolamine (Regitine) or chlorpromazine
+(Thorazine). These drugs lower BP within 5 minutes. IV furosemide (Lasix)
+can be used to reduce fluid load, and a β-adrenergic receptor antagonist can
+control tachycardia. A sublingual 10-mg dose of nifedipine (Procardia) can
+be given and repeated after 20 minutes. Persons with thyrotoxicosis or
+pheochromocytoma should not use MAOIs.
+The risk of tyramine-induced hypertensive crises is relatively low for
+persons who are taking RIMAs, such as moclobemide and befloxatone. These
+drugs have relatively little inhibitory activity for MAOB, and because they are
+reversible, regular activity of existing MAOA returns within 16 to 48 hours of
+the last dose of a RIMA. Therefore, the dietary restrictions are less stringent
+for RIMAs, applying only to foods containing high concentrations of
+tyramine, which need to be avoided for 3 days after the last dose of a RIMA.
+A reasonable dietary recommendation for persons taking RIMAs is to avoid
+eating tyramine-containing foods 1 hour before and 2 hours after taking a
+RIMA.
+Spontaneous, nontyramine-induced hypertensive crisis is a rare occurrence,
+usually shortly after the first exposure of an MAOI. Persons experiencing
+such a crisis should avoid MAOIs altogether.
+Withdrawal. Abrupt cessation of regular doses of MAOIs may cause a selflimited discontinuation syndrome consisting of arousal, mood disturbances,
+and somatic symptoms. Dosages should be gradually tapered over several
+weeks to avoid these symptoms.
+Overdose. It often takes 1 to 6 hours after an overdose for the toxic
+symptoms to occur. MAOI overdose is characterized by agitation that can
+progress to coma with hyperthermia, hypertension, tachypnea, tachycardia,
+
+
+
+
+<<<PAGE 2039>>>
+
+dilated pupils, and hyperactive deep tendon reflexes. Involuntary movements
+may be present, particularly in the face and the jaw. Acidification of the urine
+markedly hastens the excretion of MAOIs, and dialysis can be of some use.
+Phentolamine or chlorpromazine may be useful if hypertension is a problem.
+Moclobemide alone in overdosage causes relatively mild and reversible
+symptoms.
+Drug Interactions
+The significant drug–drug interactions involving MAOIs are listed in Table
+21-23. Most antidepressants, as well as precursor agents, should be avoided.
+Persons should be instructed to tell any other physicians or dentists who are
+treating them that they are taking an MAOI. MAOIs may potentiate the
+action of CNS depressants, including alcohol and barbiturates. MAOIs should
+not be coadministered with serotonergic drugs, such as SSRIs and
+clomipramine (Anafranil), because this combination can trigger serotonin
+syndrome. The use of lithium or tryptophan with an irreversible MAOI may
+also induce serotonin syndrome. Initial symptoms of serotonin syndrome can
+include tremor, hypertonicity, myoclonus, and autonomic signs, which can
+then progress to hallucinosis, hyperthermia, and even death. Fatal reactions
+had occurred when MAOIs were combined with meperidine (Demerol) or
+fentanyl (Sublimaze).
+Table 21-23
+Drugs to Be Avoided during Monoamine Oxidase Inhibitor
+Treatment (Partial Listing)
+Never Use
+Antiasthmatics
+Antihypertensives (methyldopa, guanethidine, reserpine)
+Buspirone
+Levodopa
+Opioids (especially meperidine, dextromethorphan,
+propoxyphene, tramadol; morphine or codeine may be less
+dangerous)
+Cold, allergy, or sinus medications containing dextromethorphan
+
+
+
+
+<<<PAGE 2040>>>
+
+or sympathomimetics
+SSRIs, clomipramine, venlafaxine, sibutramine
+Sympathomimetics (amphetamines, cocaine, methylphenidate,
+dopamine, epinephrine, norepinephrine, isoproterenol,
+ephedrine, pseudoephedrine, phenylpropanolamine)
+L-Tryptophan
+Use Carefully
+Anticholinergics
+Antihistamines
+Disulfiram
+Bromocriptine
+Hydralazine
+Sedative-hypnotics
+Terpin hydrate with codeine
+Tricyclics and tetracyclics (avoid clomipramine)
+SSRI, selective serotonin reuptake inhibitor.
+
+When switching from an irreversible MAOI to any other type of
+antidepressant drug, persons should wait at least 14 days after the last dose of
+the MAOI before beginning the use of the next drug to allow replenishment
+of the body’s MAOs. When switching from an antidepressant to an
+irreversible MAOI, persons should wait 10 to 14 days (or 5 weeks for
+fluoxetine [Prozac]) before starting the use of the MAOI to avoid drug–drug
+interactions. In contrast, MAO activity recovers completely 24 to 48 hours
+after the last dose of a RIMA.
+The effects of the MAOIs on hepatic enzymes are poorly studied.
+Tranylcypromine inhibits CYP2C19. Moclobemide inhibits CYP2D6,
+CYP2C19, and CYP1A2 and is a substrate for 2C19.
+Cimetidine (Tagamet) and fluoxetine significantly reduce the elimination
+of moclobemide. Modest doses of fluoxetine and moclobemide administered
+concurrently may be well tolerated, with no significant pharmacodynamic or
+pharmacokinetic interactions.
+Laboratory Interferences
+MAOIs may lower blood glucose concentrations. MAOIs artificially raise
+
+
+
+
+<<<PAGE 2042>>>
+
+(Eldepryl)
+Moclobemide
+(Manerix)
+
+300–600
+
+600
+
+100- or 150-mg
+tablets
+
+Even though coadministration of MAOIs with TCAs, SSRIs, or lithium is
+generally contraindicated, these combinations have been used successfully
+and safely to treat patients with refractory depression. However, they should
+be used with extreme caution.
+Hepatic transaminase serum concentrations should be monitored
+periodically because of the potential for hepatotoxicity, especially with
+phenelzine and isocarboxazid. Elderly persons may be more sensitive to
+MAOI adverse effects than are younger adults. MAO activity increases with
+age, so MAOI dosages for elderly persons are the same as those required for
+younger adults. We know little about using MAOIs in children.
+Studies have suggested that transdermal selegiline has antidepressant
+properties. Although selegiline is a type B inhibitor at low doses, it becomes
+less selective as the dose is increased.
+
+THYROID HORMONES
+Thyroid hormones—levothyroxine (Synthroid, Levothroid, Levoxine) and
+liothyronine (Cytomel)—are used in psychiatry either alone or as an
+augmentation to treat persons with depression or rapid-cycling bipolar I
+disorder. They can convert an antidepressant-nonresponsive person into an
+antidepressant-responsive person. Thyroid hormones are also used as
+replacement therapy for persons treated with lithium (Eskalith) who have
+developed a hypothyroid state. Successful use of thyroid hormone as an
+intervention for treatment-resistant patients was first reported in the early
+1970s. Study results since then have been mixed; however, most show that
+patients taking triiodothyronine (T3) are twice as likely to respond to
+antidepressant treatment versus placebo. These studies have found that
+augmentation with T3 is significant with TCAs and SSRIs. Nevertheless,
+many endocrinologists object to the use of thyroid hormones as
+antidepressant augmentation agents, citing such risks as osteoporosis and
+cardiac arrhythmias.
+
+

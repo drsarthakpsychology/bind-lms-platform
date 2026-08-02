@@ -1,0 +1,211 @@
+<<<PAGE 10>>>
+
+112.
+113.
+114.
+115.
+116.
+117.
+118.
+119.
+120.
+121.
+122.
+123.
+124.
+125.
+126.
+127.
+128.
+129.
+130.
+131.
+132.
+133.
+134.
+135.
+136.
+137.
+138.
+139.
+140.
+141.
+142.
+143.
+144.
+145.
+146.
+147.
+148.
+149.
+150.
+viii
+
+prazosin
+671
+pregabalin
+675
+propranolol681
+protriptyline
+685
+quazepam
+691
+quetiapine
+695
+ramelteon
+703
+reboxetine
+707
+risperidone
+713
+rivastigmine725
+selegiline731
+serdexmethylphenidate
+741
+sertindole
+747
+sertraline
+753
+sildenafil
+761
+sodium oxybate
+765
+solriamfetol
+769
+sulpiride
+773
+suvorexant779
+tasimelteon783
+temazepam787
+thioridazine791
+thiothixene797
+tiagabine803
+tianeptine809
+topiramate813
+tranylcypromine819
+trazodone825
+triazolam831
+trifluoperazine835
+trihexyphenidyl841
+triiodothyronine845
+trimipramine849
+valbenazine857
+valproate861
+varenicline869
+venlafaxine873
+vilazodone879
+viloxazine885
+
+
+
+
+<<<PAGE 87>>>
+
+(continued) ARMODAFINIL
+
+nausea and diarrhea; and cardiovascular
+changes, such as tachycardia, bradycardia,
+hypertension, and chest pain
+
+Long-Term Use
+• The need for continued treatment should
+be reevaluated periodically
+
+Habit Forming?
+• Schedule IV; may have some potential for
+abuse but unusual in clinical practice
+
+How to Stop
+• Taper not necessary; patients may have
+sleepiness on discontinuation
+
+Pharmacokinetics
+• Metabolized by the liver
+• Elimination half-life approximately 15 hours
+• Inhibits CYP2C19
+• Induces CYP3A4 (and slightly CYP1A2)
+
+Drug Interactions
+• May increase plasma levels of drugs
+metabolized by CYP2C19 (e.g., diazepam,
+phenytoin, propranolol)
+• May decrease plasma levels of CYP3A4
+substrates such as ethinyl estradiol and
+triazolam
+• Due to induction of CYP3A4, effectiveness
+of steroidal contraceptives may be reduced
+by armodafinil, including 1 month after
+discontinuation
+• Inducers or inhibitors of CYP3A4
+may affect levels of armodafinil (e.g.,
+carbamazepine may lower modafinil plasma
+levels; fluvoxamine and fluoxetine may
+raise armodafinil plasma levels)
+• Armodafinil may slightly reduce its own
+levels by autoinduction of CYP3A4
+• Patients on armodafinil and warfarin should
+have prothrombin times monitored
+• Methylphenidate and dextroamphetamine
+may delay absorption of armodafinil by an
+hour
+• However, coadministration with
+methylphenidate or dextroamphetamine
+does not significantly change the
+pharmacokinetics of armodafinil or either
+stimulant
+• Interaction studies with MAOIs have not
+been performed, but MAOIs can be given
+with armodafinil by experts with cautious
+monitoring
+
+ Other Warnings/
+Precautions
+• Patients with history of drug abuse should
+be monitored closely
+• Armodafinil may cause CNS effects similar
+to those caused by other CNS agents
+(e.g., changes in mood and, theoretically,
+activation of psychosis, mania, or suicidal
+ideation)
+• Armodafinil should be used in patients with
+sleep disorders that have been completely
+evaluated for narcolepsy, OSAHS, and shift
+work sleep disorder
+• In OSAHS patients for whom CPAP is
+the treatment of choice, a maximal effort
+to treat first with CPAP should be made
+prior to initiating armodafinil, and then
+CPAP should be continued after initiating
+armodafinil
+• The effectiveness of hormonal
+contraceptives may be reduced when used
+with armodafinil and for 1 month after
+discontinuation of armodafinil
+• Armodafinil is not a replacement for sleep
+
+Do Not Use
+• If there is a proven allergy to armodafinil or
+modafinil
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Use with caution
+
+Hepatic Impairment
+• Reduce dose in severely impaired patients
+
+Cardiac Impairment
+• Use with caution
+• Not recommended for use in patients with
+a history of left ventricular hypertrophy,
+ischemic ECG changes, chest pain,
+arrhythmias, or recent myocardial
+infarction
+
+Elderly
+• Limited experience in patients over 65
+• Clearance of armodafinil may be reduced in
+elderly patients
+69
+
+

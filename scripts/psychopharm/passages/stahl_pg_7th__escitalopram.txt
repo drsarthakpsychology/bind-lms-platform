@@ -1,0 +1,858 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 479>>>
+
+Other Warnings/Precautions
+Use with caution in patients with history of seizures
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is taking an MAOI
+If patient is taking thioridazine or pimozide
+If there is a proven allergy to citalopram or escitalopram
+
+Special Populations
+Renal Impairment
+
+
+
+
+<<<PAGE 484>>>
+
+The Art of Psychopharmacology
+Potential Advantages
+Elderly patients
+Patients excessively activated or sedated by other SSRIs
+Potential Disadvantages
+May require dosage titration to attain optimal efficacy
+Can be sedating in some patients
+Primary Target Symptoms
+Depressed mood
+Anxiety
+Panic attacks, avoidant behavior, reexperiencing, hyperarousal
+Sleep disturbance, both insomnia and hypersomnia
+Pearls
+
+✽ May be more tolerable than some other antidepressants
+May have less sexual dysfunction than some other SSRIs
+May be especially well tolerated in the elderly
+
+✽ May be less well tolerated than escitalopram
+
+Documentation of efficacy in anxiety disorders is less
+comprehensive than for escitalopram and other SSRIs
+
+
+
+
+<<<PAGE 789>>>
+
+Escitalopram
+
+Therapeutics
+Brands
+Lexapro
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin reuptake inhibitor (SRI)
+SSRI (selective serotonin reuptake inhibitor); often classified as an
+antidepressant, but it is not just an antidepressant
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive disorder (ages 12 and older)
+Generalized anxiety disorder (GAD)
+Panic disorder
+Obsessive-compulsive disorder (OCD)
+
+
+
+
+<<<PAGE 793>>>
+
+Side effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin concentrations at
+serotonin receptors in parts of the brain and body other than those
+that cause therapeutic actions (e.g., unwanted actions of serotonin in
+sleep centers causing insomnia, unwanted actions of serotonin in the
+gut causing diarrhea, etc.)
+Increasing serotonin can cause diminished dopamine release and
+might contribute to emotional flattening, cognitive slowing, and
+apathy in some patients
+Most side effects are immediate but often go away with time, in
+contrast to most therapeutic effects which are delayed and are
+enhanced over time
+
+✽ As escitalopram has no known important secondary pharmacologic
+properties, its side effects are presumably all mediated by its serotonin
+reuptake blockade
+Notable Side Effects
+Sexual dysfunction (men: delayed ejaculation, erectile dysfunction;
+men and women: decreased sexual desire, anorgasmia)
+Gastrointestinal (decreased appetite, nausea, diarrhea, constipation,
+dry mouth)
+Mostly central nervous system (insomnia but also sedation,
+agitation, tremors, headache, dizziness)
+
+
+
+
+<<<PAGE 794>>>
+
+Note: patients with diagnosed or undiagnosed bipolar or psychotic
+disorders may be more vulnerable to CNS-activating actions of
+SSRIs
+Autonomic (sweating)
+Bruising and rare bleeding
+Rare hyponatremia (mostly in elderly patients and generally
+reversible on discontinuation of escitalopram
+SIADH (syndrome of inappropriate antidiuretic hormone secretion)
+Life-Threatening or Dangerous Side Effects
+Rare seizures
+Rare induction of mania
+Rare activation of suicidal ideation and behavior (suicidality) (shortterm studies did not show an increase in the risk of suicidality with
+antidepressants compared to placebo beyond age 24)
+Weight Gain
+Reported but not expected
+Sedation
+Reported but not expected
+
+
+
+
+<<<PAGE 796>>>
+
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of escitalopram
+
+Dosing and use
+Usual Dosage Range
+10–20 mg/day
+Dosage Forms
+Tablet 5 mg, 10 mg (scored), 20 mg (scored)
+Oral solution 5 mg/5 mL
+How to Dose
+Initial 10 mg/day; increase to 20 mg/day if necessary; single-dose
+administration, morning or evening
+Dosing Tips
+Given once daily, any time of day tolerated
+
+✽ 10 mg of escitalopram may be comparable in efficacy to 40 mg of
+citalopram with fewer side effects
+Thus, give an adequate trial of 10 mg prior to giving 20 mg
+Some patients require dosing with 30 or 40 mg
+
+
+
+
+<<<PAGE 798>>>
+
+Pharmacokinetics
+Mean terminal half-life 27–32 hours
+Steady-state plasma concentrations achieved within 1 week
+Substrate for CYP450 2C19 and 3A4
+No significant actions on CYP450 enzymes
+Food does not affect absorption
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or for at least 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing escitalopram
+Could theoretically cause weakness, hyperreflexia, and
+incoordination when combined with sumatriptan or possibly other
+triptans, requiring careful monitoring of patient
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+NSAIDs may impair effectiveness of SSRIs
+Few known adverse drug interactions
+
+
+
+
+<<<PAGE 799>>>
+
+Other Warnings/Precautions
+Use with caution in patients with history of seizures
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is taking an MAOI
+If patient is taking pimozide
+If there is a proven allergy to escitalopram or citalopram
+
+Special populations
+Renal Impairment
+
+
+
+
+<<<PAGE 800>>>
+
+No dose adjustment for mild to moderate impairment
+Use cautiously in patients with severe impairment
+Hepatic Impairment
+Recommended dose 10 mg/day
+Cardiac Impairment
+Not systematically evaluated in patients with cardiac impairment
+Preliminary data suggest that citalopram is safe in patients with
+cardiac impairment, suggesting that escitalopram is also safe
+Treating depression with SSRIs in patients with acute angina or
+following myocardial infarction may reduce cardiac events and
+improve survival as well as mood
+Elderly
+Recommended dose 10 mg/day
+Risk of SIADH with SSRIs is higher in the elderly
+Reduction in the risk of suicidality with antidepressants compared to
+placebo in adults age 65 and older
+Children and Adolescents
+Approved for depression in adolescents ages 12–17
+
+
+
+
+<<<PAGE 803>>>
+
+Breast Feeding
+Some drug is found in mother’s breast milk
+Trace amounts may be present in nursing children whose mothers
+are on escitalopram
+If child becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+Immediate postpartum period is a high-risk time for depression,
+especially in women who have had prior depressive episodes, so
+drug may need to be reinstituted late in the third trimester or shortly
+after childbirth to prevent a recurrence during the postpartum period
+Must weigh benefits of breast feeding with risks and benefits of
+antidepressant treatment versus nontreatment to both the infant and
+the mother
+For many patients, this may mean continuing treatment during
+breast feeding
+
+The art of psychopharmacology
+Potential Advantages
+Patients taking concomitant medications (few drug interactions and
+fewer even than with citalopram)
+Patients requiring faster onset of action
+Potential Disadvantages
+
+
+
+
+<<<PAGE 804>>>
+
+More expensive than citalopram in markets where citalopram is
+generic
+Primary Target Symptoms
+Depressed mood
+Anxiety
+Panic attacks, avoidant behavior, reexperiencing, hyperarousal
+Sleep disturbance, both insomnia and hypersomnia
+Pearls
+
+✽ May be among the best-tolerated antidepressants
+May have less sexual dysfunction than some other SSRIs
+May be better tolerated than citalopram
+Can cause cognitive and affective “flattening”
+
+✽ R-citalopram may interfere with the binding of S-citalopram at the
+serotonin transporter
+
+✽ For this reason, S-citalopram may be more than twice as potent as
+R,S-citalopram (i.e., citalopram)
+Thus, 10 mg starting dose of S-citalopram may have the therapeutic
+efficacy of 40 mg of R,S-citalopram
+Thus, escitalopram may have faster onset and better efficacy with
+reduced side effects compared to R,S-citalopram
+
+
+
+
+<<<PAGE 805>>>
+
+Some data may actually suggest remission rates comparable to
+SNRIs, but this is not proven
+
+✽ Escitalopram is commonly used with augmenting agents, as it is the
+SSRI with the least interaction at either CYP450 2D6 or 3A4,
+therefore causing fewer pharmacokinetically mediated drug
+interactions with augmenting agents than other SSRIs
+SSRIs may be less effective in women over 50, especially if they are
+not taking estrogen
+SSRIs may be useful for hot flushes in perimenopausal women
+Some postmenopausal women’s depression will respond better to
+escitalopram plus estrogen augmentation than to escitalopram alone
+Nonresponse to escitalopram in elderly may require consideration of
+mild cognitive impairment or Alzheimer disease
+
+Suggested Reading
+Baldwin DS , Reines EH , Guiton C , Weiller E. Escitalopram therapy for
+major depression and anxiety disorders . Ann Pharmacother 2007 ;41 (10
+):1583 –92.
+Bareggi SR , Mundo E , Dell’Osso B , Altamura AC . The use of
+escitalopram beyond major depression: pharmacological aspects, efficacy
+and tolerability in anxiety disorders . Expert Opin Drug Metab Toxicol 2007
+;3 (5 ):741–53 .
+
+
+
+
+<<<PAGE 806>>>
+
+Burke WJ . Escitalopram . Expert Opin Investig Drugs 2002 ;11 (10 ):1477
+–86.
+
+
+
+
+<<<PAGE 1581>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Venlafaxine and escitalopram may be the best tolerated when
+
+switching or augmenting with a serotonin reuptake inhibitor, as neither
+is a potent CYP450 2D6 inhibitor (use combinations of antidepressants
+with caution as this may activate bipolar disorder and suicidal
+ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines for anxiety, but give alprazolam cautiously with
+nefazodone as alprazolam levels can be much higher in the presence
+of nefazodone
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+
+✽ Liver function testing is not required but is often prudent given the
+small but finite risk of serious hepatoxicity
+
+✽ However, to date no clinical strategy, including routine liver
+function tests, has been identified to reduce the risk of irreversible
+liver failure
+
+Side Effects
+
+
+
+
+<<<PAGE 2577>>>
+
+Carbapin (carbamazepine), 131
+Carbatrol (carbamazepine), 131
+Carbium (carbamazepine), 131
+Carbolith (lithium), 415
+Carbolithium (lithium), 415
+Carbymal (carbamazepine), 131
+Cardilac (fluphenazine), 313
+cariprazine, 137
+Carpaz (carbamazepine), 131
+Cassadan (alprazolam), 11
+Cassipa (buprenorphine with naloxone), 111
+Catanidin (clonidine), 179
+Catapres (clonidine), 179
+Catapres-TTS (clonidine), 179
+Cedrol (zolpidem), 871
+Celexa (citalopram), 159
+Cenilene (fluphenazine), 313
+Centedrin (d,l-methylphenidate), 487
+Cereen (haloperidol), 347
+Championyl (sulpiride), 741
+Champix (varenicline), 837
+Chantix (varenicline), 837
+Chemmart (escitalopram), 269
+Chlorazin (chlorpromazine), 153
+chlordiazepoxide, 147
+Chlorpromazin (chlorpromazine), 153
+Chlorpromazina HCl (chlorpromazine), 153
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2578>>>
+
+Cibalith S-Lithonate (lithium), 415
+Cidoxepin (doxepin), 255
+Cipram (citalopram), 159
+Cipramil (citalopram), 159
+Ciprilex (escitalopram), 269
+Ciproxidine (pitolisant), 639
+Cisordinol (zuclopenthixol), 889
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+Clonazepamum (clonazepam), 173
+clonidine, 179
+Clonisin (clonidine), 179
+Clonistada (clonidine), 179
+Clopixol (zuclopenthixol), 889
+Clopixol Acuphase (zuclopenthixol), 889
+Clopixol Conc (zuclopenthixol), 889
+Clopress (clomipramine), 165
+clorazepate, 185
+Clordezalin (chlorpromazine), 153
+Clorpres (clonidine), 179
+clozapine, 191
+Clozaril (clozapine), 191
+Coaxil (tianeptine), 777
+Cogentin (benztropine), 85
+Cognitiv (selegiline), 705
+Combipres (clonidine), 179
+Complutine (diazepam), 229
+
+
+
+
+<<<PAGE 2586>>>
+
+Equilid (sulpiride), 741
+Equitam (lorazepam), 437
+Er Ding (lofexidine), 427
+Ergenyl (valproate), 829
+Ergocalm (lorazepam), 437
+Eridan (diazepam), 229
+Erocap (fluoxetine), 301
+escitalopram, 269
+Esculid (diazepam), 229
+Esilgan (estazolam), 281
+Esipride (sulpiride), 741
+Eskalith (lithium), 415
+Eskalith CR (lithium), 415
+Eskazine (trifluoperazine), 803
+esketamine, 275
+Esparon (alprazolam), 11
+estazolam, 281
+Estorra (eszopiclone), 285
+eszopiclone, 285
+Ethipam (diazepam), 229
+Ethipramine (imipramine), 367
+Euhypnos (temazepam), 755
+Euipnos (temazepam), 755
+Eurosan (diazepam), 229
+Eutimil (paroxetine), 593
+Eutimox (fluphenazine), 313
+Evacalm (diazepam), 229
+Evekeo (amphetamine d,l), 45
+
+
+
+
+<<<PAGE 2595>>>
+
+Lexapro (escitalopram), 269
+Li-450 (lithium), 415
+Librax (chlordiazepoxide), 147
+Libraxin (chlordiazepoxide), 147
+Librium (chlordiazepoxide), 147
+Lidone (molindone), 527
+Li-Liquid (lithium), 415
+Lilly Fluoxetine (fluoxetine), 301
+Limbatril (chlordiazepoxide), 147
+Limbatril F (chlordiazepoxide), 147
+Limbitrol (chlordiazepoxide), 147
+Limbitrol F (chlordiazepoxide), 147
+Limbitryl (chlordiazepoxide), 147
+Limbitryl Plus (chlordiazepoxide), 147
+lisdexamfetamine, 409
+Liskonum (lithium), 415
+Litarex (lithium), 415
+Lithane (lithium), 415
+Lithiofor (lithium), 415
+Lithionit (lithium), 415
+Lithiucarb (lithium), 415
+lithium, 415
+Lithium-aspartat (lithium), 415
+Lithium carbonate tablets (lithium), 415
+Lithium carbonicum (lithium), 415
+Lithium citrate syrup (lithium), 415
+Lithium-Duriles (lithium), 415
+Lithiumkarbonat (lithium), 415
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2638>>>
+
+cariprazine, 137
+citalopram , 159
+clomipramine, 165
+cyamemazine, 201
+desipramine , 207
+desvenlafaxine , 215
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin , 255
+duloxetine , 263
+escitalopram , 269
+esketamine , 275
+fluoxetine , 301
+fluoxetine/olanzapine combination , 301 , 559
+flupenthixol, 307
+fluvoxamine, 325
+iloperidone, 359
+imipramine , 367
+isocarboxazid , 375
+ketamine, 383
+lamotrigine (adjunct), 387
+levomilnacipran , 403
+lisdexamfetamine, 409
+lithium (adjunct), 415
+l-methylfolate (adjunct) , 477
+lofepramine, 421
+lumateperone, 451
+lurasidone, 457
+
+
+
+
+<<<PAGE 2641>>>
+
+Generalized anxiety disorder
+agomelatine, 5
+alprazolam , 11
+citalopram, 159
+desvenlafaxine, 215
+duloxetine , 263
+escitalopram , 269
+fluoxetine, 301
+fluvoxamine, 325
+mirtazapine, 509
+paroxetine , 509
+pregabalin, 647
+propranolol, 653
+sertraline, 721
+tiagabine (adjunct), 771
+venlafaxine , 841
+vortioxetine, 853
+Glossopharyngeal neuralgia
+carbamazepine, 131
+Hiccups, intractable
+chlorpromazine , 153
+Hypersalivation
+clonidine, 179
+Hypertension
+clonidine , 179
+guanfacine , 343
+
+
+
+
+<<<PAGE 2646>>>
+
+pregabalin , 647
+sodium oxybate, 733
+tiagabine, 771
+topiramate, 781
+trimipramine, 817
+valproate (divalproex), 829
+zonisamide, 875
+Nicotine addiction
+bupropion , 117
+varenicline , 837
+Non-24-hour sleep-wake disorder
+tasimelteon , 751
+Obsessive-compulsive disorder
+aripiprazole (adjunct), 53
+citalopram, 159
+clomipramine , 165
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine , 325
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+vilazodone, 847
+Opioid dependence
+buprenorphine , 111
+clonidine, 179
+
+
+
+
+<<<PAGE 2647>>>
+
+lofexidine , 427
+naltrexone , 537
+Panic disorder
+alprazolam , 11
+citalopram, 159
+clonazepam , 173
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine, 325
+isocarboxazid, 375
+lorazepam, 437
+mirtazapine, 509
+nefazodone, 545
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+reboxetine, 681
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Parkinson’s disease
+selegiline , 705
+zonisamide, 875
+Parkinson’s disease dementia
+
+
+
+
+<<<PAGE 2648>>>
+
+rivastigmine , 699
+Parkinson’s disease psychosis
+pimavanserin , 623
+Pervasive developmental disorders
+guanfacine, 343
+Porphyria
+chlorpromazine , 153
+Postherpetic neuralgia
+gabapentin , 331
+pregabalin , 647
+Postpartum depression
+brexanolone , 99
+Posttraumatic stress disorder
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+cariprazine, 137
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+dextromethorphan (with quinidine), 225
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+
+
+
+
+<<<PAGE 2649>>>
+
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+mirtazapine, 509
+nefazodone, 545
+olanzapine, 558
+paliperidone, 580
+paroxetine , 593
+prazosin (nightmares) 643
+propranolol (prophylactic) 653
+quetiapine, 667
+risperidone, 687
+sertraline , 721
+venlafaxine, 841
+ziprasidone, 863
+Premenstrual dysphoric disorder
+alprazolam, 11
+citalopram, 159
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+Preoperative anxiety
+chlordiazepoxide , 147
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2656>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine , 325
+isocarboxazid, 375
+moclobemide, 515
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Stress urinary incontinence
+duloxetine, 263
+Tardive dyskinesia
+deutetrabenazine , 221
+valbenazine , 825
+Tetanus
+chlorpromazine , 153
+Tourette’s syndrome/tic disorders
+aripiprazole , 53
+clonidine, 179
+guanfacine, 343
+haloperidol , 347
+pimozide , 627
+
+
+
+
+<<<PAGE 2659>>>
+
+amitriptyline, 25
+amoxapine, 33
+atomoxetine, 79
+brexanolone, 99
+bupropion, 117
+citalopram, 159
+clomipramine, 165
+desipramine, 207
+desvenlafaxine, 215
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+esketamine, 275
+fluoxetine, 301
+fluvoxamine, 325
+imipramine, 367
+isocarboxazid, 375
+ketamine, 383
+levomilnacipran, 403
+l-methylfolate (adjunct), 477
+lofepramine, 421
+maprotiline, 465
+mianserin, 495
+milnacipran, 503
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+

@@ -1,0 +1,1236 @@
+<<<PAGE 7>>>
+
+Contents
+Introduction
+List of icons
+1 acamprosate
+2 agomelatine
+3 alprazolam
+4 amisulpride
+5 amitriptyline
+6 amoxapine
+7 amphetamine (d)
+8 amphetamine (d,l)
+9 aripiprazole
+10 armodafinil
+11 asenapine
+12 atomoxetine
+13 benztropine
+14 blonanserin
+15 bremelanotide
+16 brexanolone
+17 brexpiprazole
+18 buprenorphine
+19 bupropion
+20 buspirone
+21 caprylidene
+22 carbamazepine
+23 cariprazine
+24 chlordiazepoxide
+25 chlorpromazine
+
+
+
+
+<<<PAGE 93>>>
+
+Lithium, buspirone, thyroid hormone (for depression)
+Gabapentin, tiagabine, other anticonvulsants, even opiates if done
+by experts while monitoring carefully in difficult cases (for chronic
+pain)
+Tests
+Baseline ECG is recommended for patients over age 50
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antidepressant
+
+
+
+
+<<<PAGE 113>>>
+
+problems concentrating)
+Other patients may be nonresponders, sometimes called treatmentresistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, thyroid hormone
+Tests
+Baseline ECG is recommended for patients over age 50
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+
+
+
+
+<<<PAGE 357>>>
+
+✽ Patients may experience weight loss
+Sedation
+Reported but not expected
+What to Do About Side Effects
+Wait
+Wait
+Wait
+Keep dose as low as possible
+Take no later than mid-afternoon to avoid insomnia
+Switch to another drug
+Best Augmenting Agents for Side Effects
+Often best to try another antidepressant monotherapy prior to
+resorting to augmentation strategies to treat side effects
+Trazodone or a hypnotic for drug-induced insomnia
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines or buspirone for drug-induced anxiety, agitation
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+
+
+
+
+<<<PAGE 372>>>
+
+Buspirone
+
+Therapeutics
+Brands
+BuSpar
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin receptor partial
+agonist (S-RPA)
+Anxiolytic (azapirone; serotonin 1A partial agonist; serotonin
+stabilizer)
+Commonly Prescribed for
+(bold for FDA approved)
+Management of anxiety disorders
+Short-term treatment of symptoms of anxiety
+Mixed anxiety and depression
+Treatment-resistant depression (adjunctive)
+
+
+
+
+<<<PAGE 373>>>
+
+How the Drug Works
+Binds to serotonin type 1A receptors
+Partial agonist actions postsynaptically may theoretically diminish
+serotonergic activity and contribute to anxiolytic actions
+Partial agonist actions at presynaptic somatodendritic serotonin
+autoreceptors may theoretically enhance serotonergic activity and
+contribute to antidepressant actions
+How Long Until It Works
+Generally takes within 2–4 weeks to achieve efficacy
+If it is not working within 6–8 weeks, it may require a dosage
+increase or it may not work at all
+If It Works
+The goal of treatment is complete remission of symptoms as well as
+prevention of future relapses
+Treatment most often reduces or even eliminates symptoms, but not
+a cure since symptoms can recur after medicine stopped
+Chronic anxiety disorders may require long-term maintenance with
+buspirone to control symptoms
+If It Doesn’t Work
+Consider switching to another agent (a benzodiazepine or
+antidepressant)
+
+
+
+
+<<<PAGE 374>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Sedative hypnotic for insomnia
+Buspirone is often given as an augmenting agent to SSRIs or SNRIs
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Serotonin partial agonist actions in parts of the brain and body and
+at receptors other than those that cause therapeutic actions
+Notable Side Effects
+
+✽ Dizziness, headache, nervousness, sedation, excitement
+Nausea
+Restlessness
+Life-Threatening or Dangerous Side Effects
+Rare cardiac symptoms
+Weight Gain
+
+
+
+
+<<<PAGE 377>>>
+
+Taper generally not necessary
+Pharmacokinetics
+Metabolized primarily by CYP450 3A4
+Elimination half-life approximately 2–3 hours
+Absorption is affected by food
+Drug Interactions
+Use with caution with MAOIs, including 14 days after MAOIs are
+stopped (for the expert)
+CYP450 3A4 inhibitors (e.g., fluxotine, fluvoxamine, nefazodone)
+may reduce clearance of buspirone and raise its plasma levels, so the
+dose of buspirone may need to be lowered when given
+concomitantly with these agents
+CYP450 3A4 inducers (e.g., carbamazepine) may increase clearance
+of buspirone, so the dose of buspirone may need to be raised
+Buspirone may increase plasma concentrations of haloperidol
+Buspirone may raise levels of nordiazepam, the active metabolite of
+diazepam, which may result in increased symptoms of dizziness,
+headache, or nausea
+Other Warnings/Precautions
+None
+
+
+
+
+<<<PAGE 378>>>
+
+Do Not Use
+If patient is taking an MAOI (except as noted under Drug
+Interactions)
+If there is a proven allergy to buspirone
+
+Special Populations
+Renal Impairment
+Use with caution
+Not recommended for patients with severe renal impairment
+Hepatic Impairment
+Use with caution
+Not recommended for patients with severe hepatic impairment
+Cardiac Impairment
+Buspirone has been used to treat hostility in patients with cardiac
+impairment
+Elderly
+Some patients may tolerate lower doses better
+Children and Adolescents
+
+
+
+
+<<<PAGE 379>>>
+
+Studies in children age 6–17 do not show significant reduction in
+anxiety symptoms in generalized anxiety disorder (GAD)
+Safety profile in children encourages use
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+Animal studies have not shown adverse effects
+Not generally recommended in pregnancy, but may be safer than
+some other options
+Breast Feeding
+Some drug is found in mother’s breast milk
+Trace amounts may be present in nursing children whose mothers
+are on buspirone
+If child becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+
+
+
+
+<<<PAGE 380>>>
+
+The Art of Psychopharmacology
+Potential Advantages
+Safety profile
+Lack of dependence, withdrawal
+Lack of sexual dysfunction or weight gain
+Potential Disadvantages
+Takes 4 weeks for results, whereas benzodiazepines have immediate
+effects
+Primary Target Symptoms
+Anxiety
+Pearls
+
+✽ Buspirone does not appear to cause dependence and shows virtually
+no withdrawal symptoms
+May have less severe side effects than benzodiazepines
+
+✽ Generally lack of sexual dysfunction
+
+Buspirone may reduce sexual dysfunction associated with GAD and
+with serotonergic antidepressants
+Sedative effects may be more likely at doses above 20 mg/day
+
+
+
+
+<<<PAGE 381>>>
+
+May have less anxiolytic efficacy than benzodiazepines for some
+patients
+Buspirone is generally reserved as an augmenting agent to treat
+anxiety
+
+Suggested Reading
+Apter JT , Allen LA . Buspirone: future directions . J Clin
+Psychopharmacol 1999 ;19 :86 –93 .
+Mahmood I , Sahaiwalla C . Clinical pharmacokinetics and
+pharmacodynamics of buspirone, an anxiolytic drug . Clin Pharmacokinet
+1999 ;36 :277–87 .
+Pecknold JC . A risk-benefit assessment of buspirone in the treatment of
+anxiety disorders . Drug Saf 1997 ;16 :118–32 .
+Sramek JJ , Hong WW , Hamid S , Nape B , Cutler NR . Meta-analysis of
+the safety and tolerability of two dose regimens of buspirone in patients
+with persistent anxiety . Depress Anxiety 1999 ;9 :131–4 .
+
+
+
+
+<<<PAGE 471>>>
+
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (add with
+caution and at lower doses since citalopram could theoretically raise
+atomoxetine levels); use combinations of antidepressants with
+caution as this may activate bipolar disorder and suicidal ideation
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin or
+tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+
+
+
+
+<<<PAGE 489>>>
+
+Use in OCD may also need to be indefinite, starting from the time of
+initial treatment
+Use in other anxiety disorders and chronic pain may also need to be
+indefinite, but long-term treatment is not well studied in these
+conditions
+If It Doesn’t Work
+Many patients have only a partial response where some symptoms
+are improved but others persist (especially insomnia, fatigue, and
+problems concentrating)
+Other patients may be nonresponders, sometimes called treatmentresistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy, especially behavioral therapy in OCD
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, hormone (for depression and OCD)
+
+
+
+
+<<<PAGE 556>>>
+
+Though not systematically studied, benzodiazepines have been used
+effectively to treat catatonia and are the initial recommended
+treatment
+
+Suggested Reading
+Griffith JL , Murray GB . Clorazepate in the treatment of complex partial
+seizures with psychic symptomatology . J Nerv Ment Dis 1985 ;173 :185 –6
+.
+Kiejna A , Kantorska-Janiec M , Malyszczak K . [The use of chlorazepate
+dipotassium (Tranxene) in the states of restlessness and agitation] .
+Psychiatr Pol 1997 ;31 :753 –60 .
+Mielke L , Breinbauer B , Schubert M , et al. [Comparison of the
+effectiveness of orally administered clorazepate dipotassium and
+nordiazepam on preoperative anxiety] . Anaesthesiol Reanim 1995 ;20 :144
+–8 .
+Rickels K , Schweizer E , Csanalosi I , Case WG , Chung H . Long-term
+treatment of anxiety and risk of withdrawal. Prospective comparison of
+clorazepate and buspirone . Arch Gen Psychiatry 1988 ;45 :444 –50 .
+
+
+
+
+<<<PAGE 611>>>
+
+fatigue, and problems concentrating)
+Other depressed patients may be nonresponders, sometimes called
+treatment-resistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, thyroid hormone (for depression)
+Gabapentin, tiagabine, other anticonvulsants, even opiates if done
+by experts while monitoring carefully in difficult cases (for chronic
+pain)
+Tests
+Baseline ECG is recommended for patients over age 50
+
+✽ Monitoring of plasma drug levels is available
+
+
+
+
+<<<PAGE 633>>>
+
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin or
+tiagabine
+Hypnotics or trazodone for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+Check blood pressure before initiating treatment and regularly
+during treatment
+
+Side effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin and norepinephrine
+concentrations at receptors in parts of the brain and body other than
+those that cause therapeutic actions (e.g., unwanted actions of
+serotonin in sleep centers causing insomnia, unwanted actions of
+norepinephrine on acetylcholine release causing constipation and
+dry mouth, etc.)
+Most side effects are immediate but often go away with time
+Notable Side Effects
+Most side effects increase with higher doses, at least transiently
+Insomnia, sedation, anxiety, dizziness
+
+
+
+
+<<<PAGE 727>>>
+
+Many depressed patients have only a partial response where some
+symptoms are improved but others persist (especially insomnia,
+fatigue, and problems concentrating)
+Other depressed patients may be nonresponders, sometimes called
+treatment-resistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, thyroid hormone (for depression)
+Gabapentin, tiagabine, other anticonvulsants, even opiates if done
+by experts while monitoring carefully in difficult cases (for chronic
+pain)
+Tests
+Baseline ECG is recommended for patients over age 50
+
+
+
+
+<<<PAGE 748>>>
+
+Many depressed patients have only a partial response where some
+symptoms are improved but others persist (especially insomnia,
+fatigue, and problems concentrating)
+Other depressed patients may be nonresponders, sometimes called
+treatment-resistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+If insomnia does not improve after 7–10 days, it may be a
+manifestation of a primary psychiatric or physical illness such as
+obstructive sleep apnea or restless leg syndrome, which requires
+independent evaluation
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, thyroid hormone (for depression)
+Trazodone, GABA-ergic sedative hypnotics (for insomnia)
+Gabapentin, tiagabine, other anticonvulsants, even opiates if done
+by experts while monitoring carefully in difficult cases (for chronic
+
+
+
+
+<<<PAGE 773>>>
+
+action for depression, but observe for activation of bipolar disorder
+and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin,
+pregabalin, or tiagabine
+Hypnotics or trazodone for insomnia
+Classically, lithium, buspirone, or thyroid hormone for depression
+Tests
+Check blood pressure before initiating treatment and regularly
+during treatment
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin and norepinephrine
+concentrations at receptors in parts of the brain and body other than
+those that cause therapeutic actions (e.g., unwanted actions of
+serotonin in sleep centers causing insomnia, unwanted actions of
+
+
+
+
+<<<PAGE 792>>>
+
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (use
+combinations of antidepressants with caution as this may activate
+bipolar disorder and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin or
+tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+
+
+
+<<<PAGE 888>>>
+
+resistant anxiety disorders
+
+✽ Fluoxetine has been specifically studied in combination with
+olanzapine (olanzapine/fluoxetine combination) with excellent results
+for bipolar depression, treatment-resistant unipolar depression, and
+psychotic depression
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin or
+tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin concentrations at
+serotonin receptors in parts of the brain and body other than those
+that cause therapeutic actions (e.g., unwanted actions of serotonin in
+sleep centers causing insomnia, unwanted actions of serotonin in the
+gut causing diarrhea, etc.)
+Increasing serotonin can cause diminished dopamine release and
+might contribute to emotional flattening, cognitive slowing, and
+
+
+
+
+<<<PAGE 896>>>
+
+Via CYP450 3A4 inhibition, may increase the levels of alprazolam,
+buspirone, and triazolam
+Via CYP450 3A4 inhibition, fluoxetine could theoretically increase
+concentrations of certain cholesterol-lowering HMG CoA reductase
+inhibitors, especially simvastatin, atorvastatin, and lovastatin, but
+not pravastatin or fluvastatin, which would increase the risk of
+rhabdomyolysis; thus, coadministration of fluoxetine with certain
+HMG CoA reductase inhibitors should proceed with caution
+Via CYP450 3A4 inhibition, fluoxetine could theoretically increase
+the concentrations of pimozide, and cause QTc prolongation and
+dangerous cardiac arrhythmias
+Other Warnings/Precautions
+
+✽ Add or initiate other antidepressants with caution for up to 5 weeks
+after discontinuing fluoxetine
+Use with caution in patients with history of seizure
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+
+
+
+
+<<<PAGE 959>>>
+
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+For the expert, consider cautious addition of clomipramine for
+treatment-resistant OCD
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (use
+combinations of antidepressants with caution as this may activate
+bipolar disorder and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin or
+tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+
+
+
+
+<<<PAGE 960>>>
+
+In Europe and Japan, augmentation is more commonly administered
+for the treatment of depression and anxiety disorders, especially
+with benzodiazepines and lithium
+In the USA, augmentation is more commonly administered for the
+treatment of OCD, especially with atypical antipsychotics,
+buspirone, or even clomipramine; clomipramine should be added
+with caution and at low doses as fluvoxamine can alter
+clomipramine metabolism and raise its levels
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin concentrations at
+serotonin receptors in parts of the brain and body other than those
+that cause therapeutic actions (e.g., unwanted actions of serotonin in
+sleep centers causing insomnia, unwanted actions of serotonin in the
+gut causing diarrhea, etc.)
+Increasing serotonin can cause diminished dopamine release and
+might contribute to emotional flattening, cognitive slowing, and
+apathy in some patients
+Most side effects are immediate but often go away with time, in
+contrast to most therapeutic effects which are delayed and are
+
+
+
+
+<<<PAGE 1084>>>
+
+Use in anxiety disorders and chronic pain may also need to be
+indefinite, but long-term treatment is not well studied in these
+conditions
+If It Doesn’t Work
+Many depressed patients have only a partial response where some
+symptoms are improved but others persist (especially insomnia,
+fatigue, and problems concentrating)
+Other depressed patients may be nonresponders, sometimes called
+treatment-resistant or treatment-refractory
+Consider increasing dose, switching to another agent or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, thyroid hormone (for depression)
+Gabapentin, tiagabine, other anticonvulsants, even opiates if done
+by experts while monitoring carefully in difficult cases (for chronic
+
+
+
+
+<<<PAGE 1176>>>
+
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Augmentation experience is limited compared to other
+antidepressants
+Benzodiazepines can reduce insomnia and anxiety
+Bupropion, mirtazapine, reboxetine, or atomoxetine (use
+combinations of antidepressants with caution as this may activate
+bipolar disorder and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Hypnotics or trazodone for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+Check heart rate and blood pressure before initiating treatment and
+regularly during treatment
+
+
+
+
+<<<PAGE 1231>>>
+
+Many depressed patients have only a partial response where some
+symptoms are improved but others persist (especially insomnia,
+fatigue, and problems concentrating)
+Other depressed patients may be nonresponders, sometimes called
+treatment-resistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, thyroid hormone (for depression)
+Gabapentin, tiagabine, other anticonvulsants, even opiates if done
+by experts while monitoring carefully in difficult cases (for chronic
+pain)
+Tests
+Baseline ECG is recommended for patients over age 50
+
+
+
+
+<<<PAGE 1358>>>
+
+fatigue, and problems concentrating)
+Other depressed patients may be nonresponders, sometimes called
+treatment-resistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, thyroid hormone (for depression)
+Gabapentin, tiagabine, other anticonvulsants, even opiates if done
+by experts while monitoring carefully in difficult cases (for chronic
+pain)
+Tests
+Baseline ECG is recommended for patients over age 50
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+
+
+
+
+<<<PAGE 1469>>>
+
+Although no controlled studies and little clinical experience, adding
+other agents for treating fibromyalgia and chronic neuropathic pain
+could theoretically include gabapentin, tiagabine, other
+anticonvulsants, or even opiates if done by experts while monitoring
+carefully in difficult cases
+Mirtazapine, bupropion, reboxetine, atomoxetine (use combinations
+of antidepressants with caution as this may activate bipolar disorder
+and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Hypnotics or trazodone for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+Check blood pressure before initiating treatment and regularly
+during treatment
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin and norepinephrine
+concentrations at receptors in parts of the brain and body other than
+
+
+
+
+<<<PAGE 1581>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Venlafaxine and escitalopram may be the best tolerated when
+
+switching or augmenting with a serotonin reuptake inhibitor, as neither
+is a potent CYP450 2D6 inhibitor (use combinations of antidepressants
+with caution as this may activate bipolar disorder and suicidal
+ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines for anxiety, but give alprazolam cautiously with
+nefazodone as alprazolam levels can be much higher in the presence
+of nefazodone
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+
+✽ Liver function testing is not required but is often prudent given the
+small but finite risk of serious hepatoxicity
+
+✽ However, to date no clinical strategy, including routine liver
+function tests, has been identified to reduce the risk of irreversible
+liver failure
+
+Side Effects
+
+
+
+
+<<<PAGE 1587>>>
+
+by half or more
+Via CYP450 3A4, nefazodone may increase plasma concentrations
+of buspirone, so buspirone dose may need to be reduced
+Via CYP450 3A4 inhibition, nefazodone could theoretically
+increase concentrations of certain cholesterol lowering HMG CoA
+reductase inhibitors, especially simvastatin, atorvastatin, and
+lovastatin, but not pravastatin or fluvastatin, which would increase
+the risk of rhabdomyolysis; thus, coadministration of nefazodone
+with certain HMG CoA reductase inhibitors should proceed with
+caution
+Via CYP450 3A4 inhibition, nefazodone could theoretically
+increase the concentrations of pimozide, and cause QTc
+prolongation and dangerous cardiac arrhythmias
+Nefazodone may reduce clearance of haloperidol, so haloperidol
+dose may need to be reduced
+It is recommended to discontinue nefazodone prior to elective
+surgery because of the potential for interaction with general
+anesthetics
+Other Warnings/Precautions
+
+✽ Hepatotoxicity, sometimes requiring liver transplant and/or fatal,
+has occurred with nefazodone use. Risk may be one in every 250,000
+to 300,000 patient years. Patients should be advised to report
+symptoms such as jaundice, dark urine, loss of appetite, nausea, and
+abdominal pain to prescriber immediately. If patient develops signs of
+
+
+
+
+<<<PAGE 1598>>>
+
+fatigue, and problems concentrating)
+Other depressed patients may be nonresponders, sometimes called
+treatment-resistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, thyroid hormone (for depression)
+Gabapentin, tiagabine, other anticonvulsants, even opiates if done
+by experts while monitoring carefully in difficult cases (for chronic
+pain)
+Tests
+Baseline ECG is recommended for patients over age 50
+
+✽ Monitoring of plasma drug levels is available
+
+
+
+
+<<<PAGE 1712>>>
+
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin or
+tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin concentrations at
+serotonin receptors in parts of the brain and body other than those
+that cause therapeutic actions (e.g., unwanted actions of serotonin in
+sleep centers causing insomnia, unwanted actions of serotonin in the
+gut causing diarrhea, etc.)
+Increasing serotonin can cause diminished dopamine release and
+might contribute to emotional flattening, cognitive slowing, and
+apathy in some patients
+
+
+
+
+<<<PAGE 1894>>>
+
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, thyroid hormone
+Tests
+Baseline ECG is recommended for patients over age 50
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+
+
+
+
+<<<PAGE 1964>>>
+
+SSRIs, SNRIs, mirtazapine (use combinations of antidepressants
+with caution as this may activate bipolar disorder and suicidal
+ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines for anxiety
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Norepinephrine increases in parts of the brain and body and at
+receptors other than those that cause therapeutic actions (e.g.,
+unwanted actions of norepinephrine on acetylcholine release causing
+constipation and dry mouth, etc.)
+Most side effects are immediate but often go away with time
+Notable Side Effects
+
+
+
+
+<<<PAGE 1969>>>
+
+May need to reduce reboxetine dose or avoid concomitant use with
+inhibitors of CYP450 3A4, such as azole and antifungals, macrolide
+antibiotics, fluvoxamine, nefazodone, fluoxetine, sertraline, etc.
+Via CYP450 2D6 inhibition, reboxetine could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine and TCAs
+Via CYP450 2D6 inhibition, reboxetine could theoretically increase
+concentrations of thioridazine and cause dangerous cardiac
+arrhythmias
+Via CYP450 3A4 inhibition, reboxetine may increase the levels of
+alprazolam, buspirone, and triazolam
+Via CYP450 3A4 inhibition, reboxetine could theoretically increase
+concentrations of certain cholesterol lowering HMG CoA reductase
+inhibitors, especially simvastatin, atorvastatin, and lovastatin, but
+not pravastatin or fluvastatin, which would increase the risk of
+rhabdomyolysis; thus, coadministration of reboxetine with certain
+HMG CoA reductase inhibitors should proceed with caution
+Via CYP450 3A4 inhibition, reboxetine could theoretically increase
+the concentrations of pimozide, and cause QTc prolongation and
+dangerous cardiac arrhythmias
+Use with ergotamine may increase blood pressure
+Hypokalemia may occur if reboxetine is used with diuretics
+Use with caution with MAO inhibitors, including 14 days after
+MAOIs are stopped
+
+
+
+
+<<<PAGE 2069>>>
+
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin or
+tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin concentrations at
+serotonin receptors in parts of the brain and body other than those
+that cause therapeutic actions (e.g., unwanted actions of serotonin in
+sleep centers causing insomnia, unwanted actions of serotonin in the
+gut causing diarrhea, etc.)
+
+✽ Increasing serotonin can cause diminished dopamine release and
+might contribute to emotional flattening, cognitive slowing, and apathy
+in some patients, although this could theoretically be diminished in
+some patients by sertraline’s dopamine reuptake blocking properties
+Most side effects are immediate but often go away with time, in
+contrast to most therapeutic effects which are delayed and are
+enhanced over time
+
+
+
+
+<<<PAGE 2340>>>
+
+If It Doesn’t Work
+Many depressed patients have only a partial response where some
+symptoms are improved but others persist (especially insomnia,
+fatigue, and problems concentrating)
+Other depressed patients may be nonresponders, sometimes called
+treatment-resistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium, buspirone, thyroid hormone (for depression)
+Gabapentin, tiagabine, other anticonvulsants, even opiates if done
+by experts while monitoring carefully in difficult cases (for chronic
+pain)
+Tests
+Baseline ECG is recommended for patients over age 50
+
+
+
+
+<<<PAGE 2442>>>
+
+Augmentation experience is limited compared to other
+antidepressants
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (use
+combinations of antidepressants with caution as this may activate
+bipolar disorder and suicidal ideation)
+Use with caution with antidepressants that are CYP450 2D6
+inhibitors (e.g., bupropion, duloxetine, fluoxetine, paroxetine), as
+these agents will increase vortioxetine levels and may require a dose
+reduction of vortioxetine
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin,
+pregabalin, or tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+
+
+
+<<<PAGE 2571>>>
+
+amphetamine (d), 39
+amphetamine (d,l), 45
+Anafranil (clomipramine), 165
+Anafranil 75 (clomipramine), 165
+Anafranil Retard (clomipramine), 165
+Anatensoi Decanoaat (fluphenazine), 313
+Anatensol (fluphenazine), 313
+Anatensol Concentraat (fluphenazine), 313
+Anatensol Decanoate (fluphenazine), 313
+Ancholactil (chlorpromazine), 153
+Aneural (maprotiline), 465
+Aneurol (diazepam), 229
+Anexate (flumazenil), 293
+Ansilor (lorazepam), 437
+Ansiolin (diazepam), 229
+Ansised (buspirone), 123
+Ansium (diazepam), 229
+Ansium (sulpiride), 741
+Antabuse (disulfiram), 239
+Antalon (pimozide), 627
+Antelepsin (clonazepam), 173
+Anten (doxepin), 255
+Antenex (diazepam), 229
+Antideprin (imipramine), 367
+Antiparkin (selegiline), 705
+Antitussive (diphenhydramine), 235
+Antoderin (oxazepam), 569
+Anxial (buspirone), 123
+
+
+
+
+<<<PAGE 2572>>>
+
+Anxidin (clorazepate), 185
+Anxiolit (oxazepam), 569
+Anxiolit Plus (oxazepam), 569
+Anxiron (buspirone), 123
+Apaurin (diazepam), 229
+Apilepsin (valproate), 829
+Aplenzin (bupropion), 117
+Apo-Alprax (alprazolam), 11
+Apo-Amitriptyline (amitriptyline), 25
+Apo-Buspirone (buspirone), 123
+Apo-Carbamazepine (carbamazepine), 131
+Apo-Clomipramine (clomipramine), 165
+Apo-Clonazepam (clonazepam), 173
+Apo-Clonidine (clonidine), 179
+Apo-Clorazepate (clorazepate), 185
+Apo-Desipramine (desipramine), 207
+Apo-Diazepam (diazepam), 229
+Apo-Doxepin (doxepin), 255
+Apo-Fluoxetine (fluoxetine), 301
+Apo-Fluphenazine (fluphenazine), 313
+Apo-Haloperidol (haloperidol), 347
+Apoh-Hydroxyzine (hydroxyzine), 355
+Apo-Imipramine (imipramine), 367
+Apollonset (diazepam), 229
+Apo-Lorazem (lorazepam), 437
+Aponal (doxepin), 255
+Apo-Oxepam (oxazepam), 569
+Apo-Perphenazine (perphenazine), 607
+
+
+
+
+<<<PAGE 2575>>>
+
+Belix (diphenhydramine), 235
+Belpax (amitriptyline), 25
+Belseren (clorazepate), 185
+Belsomra (suvorexant), 747
+Benadryl (diphenhydramine), 235
+Benpon (nortriptyline), 551
+Bentapam (diazepam), 229
+Benylin (diphenhydramine), 235
+Benzopin (diazepam), 229
+Benzotran (oxazepam), 569
+benztropine, 85
+Berk-Dothiepin (dothiepin), 249
+Besitran (sertraline), 721
+Bespar (buspirone), 123
+Betamaks (sulpiride), 741
+Betamed (diazepam), 229
+Betapam (diazepam), 229
+Bialzepam (diazepam), 229
+Bikalm (zolpidem), 871
+Bioperidolo (haloperidol), 347
+Bioxetin (fluoxetine), 301
+Biron (buspirone), 123
+Biscasil (chlorpromazine), 153
+Biston (carbamazepine), 131
+blonanserin, 89
+Bolvidon (mianserin), 495
+Bortalium (diazepam), 229
+bremelanotide, 95
+
+
+
+
+<<<PAGE 2576>>>
+
+brexanolone, 99
+brexpiprazole, 103
+Brisdelle (paroxetine), 593
+Brintellix (vortioxetine), 853
+BritLofex (lofexidine), 427
+Buprenex (buprenorphine), 111
+buprenorphine, 111
+buprenorphine with naloxone, 111
+bupropion, 117
+bupropion SR, 117
+bupropion XL, 117
+Buscalm (buspirone), 123
+Buspar (buspirone), 123
+BuSpar (buspirone), 123
+Buspimen (buspirone), 123
+buspirone, 123
+Buspisal (buspirone), 123
+Buteridol (haloperidol), 347
+Butrans (buprenorphine), 111
+Calmoflorine (sulpiride), 741
+Camcolit (lithium), 415
+Campral (acamprosate), 1
+Caplyta (lumateperone), 451
+caprylidene, 127
+Caprysin (clonidine), 179
+Carbabeta (carbamazepine), 131
+Carbagamma (carbamazepine), 131
+carbamazepine, 131
+
+

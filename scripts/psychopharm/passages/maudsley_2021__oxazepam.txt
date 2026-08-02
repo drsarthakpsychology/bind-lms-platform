@@ -1,0 +1,883 @@
+<<<PAGE 157>>>
+
+CHAPTER 1
+
+136  The Maudsley® Prescribing Guidelines in Psychiatry
+
+frequent dosing of zolpidem may provide effective treatment.31,32 IV lorazepam has also
+been used to predict response.33
+Catatonia in schizophrenia may be somewhat less likely to respond to benzodiazepines alone, with a response in 40–50%34 of cases. A double-blind, placebo-controlled,
+cross-over trial with lorazepam up to 6mg per day demonstrated no effect on chronic
+catatonic symptoms in patients with established schizophrenia,35 similar to the poor
+effect of lorazepam in a non-randomised trial.36 A Cochrane review37 searched for RCTs
+in which people with schizophrenia or other similar SMI had received benzodiazepines
+or another relevant treatment for catatonia. Only one study was eligible, which involved
+17 participants treated with lorazepam or oxazepam: there was no clear difference in
+effect. The authors noted that no data were available for benzodiazepines compared
+with either placebo or standard care.
+A further complication in schizophrenia is that of differential diagnosis, which
+includes extrapyramidal side effects and the neuroleptic malignant syndrome (NMS).
+Debate continues regarding the similarities and differences between catatonic stupor in
+psychosis and NMS.38–41 Two terms have been coined – lethal catatonia and malignant
+catatonia42 to describe stupor, which is accompanied by autonomic instability or hyperthermia. This potentially fatal condition cannot be distinguished from NMS, either
+clinically or by laboratory testing, leading to the suggestion that NMS may be a variant
+form of malignant catatonia.43 However, NMS can probably be ruled out in the absence
+of any prior or recent administration of a dopamine antagonist.
+The vast majority of evidence published recently as well as over previous decades
+suggests that prompt ECT remains the most successful treatment for catatonia.33,36,44–60
+ECT-responsive catatonia has been recognised in the context of NMS, delirious mania,
+self-injurious behaviours in autism, and limbic encephalitis.41 While it has been suggested that response to ECT may be lower in patients with schizophrenia (or in those
+who have been treated with antipsychotic medication) than in patients with mood disorders,61 ECT is still considered the treatment of choice for catatonic schizophrenia that
+has failed to respond to an adequate trial of benzodiazepines.62 In malignant catatonia,
+every effort should be made to maximise the effect of ECT by using liberal stimulus
+dosing to induce well-generalised seizures.63 Physical health needs should be prioritised
+and inpatient medical care obtained when necessary, especially for those showing autonomic instability and those whose dietary intake cannot be managed in psychiatric
+care.
+The use of antipsychotic medication should be carefully considered. Some authors
+recommend that antipsychotics should be avoided altogether in catatonic patients,
+although there are case reports of successful treatment with aripiprazole, risperidone,
+olanzapine, ziprasidone and clozapine.64–69 There is probably most evidence supporting
+clozapine and olanzapine. Combination treatment with benzodiazepines can be effective when each fails individually.70,71
+When considering using antipsychotic medication take into account the history of a
+patient, their previous diagnosis and previous response to antipsychotic treatment, and
+the likelihood that non-adherence precipitated stupor. It should be noted that physical
+health conditions, as in the examples listed earlier in this section, can present with a
+
+
+
+
+<<<PAGE 463>>>
+
+442  The Maudsley® Prescribing Guidelines in Psychiatry
+
+There has been limited formal study into the duration of withdrawal symptoms, with
+some reports of weeks-long duration, but they can last longer than a year, especially in
+the case of long-term use.20,23 For a minority, withdrawal symptoms can be protracted
+and last years, sometimes called the ‘post-acute withdrawal syndrome’.26
+
+Stopping benzodiazepines
+
+CHAPTER 3
+
+If the patient is in agreement, benzodiazepines should be withdrawn. Tapering can be
+difficult and should not be imposed on a patient against their will. A cluster randomised
+trial supports the effectiveness of a face-to-face educational intervention.27 Continuing
+support can be required to prepare a patient for withdrawal and to support them
+through the process (e.g. psychological therapies or self-help groups).28
+
+Dosage reduction (tapering)
+Gradual reduction of benzodiazepine dose reduces the intensity of withdrawal symptoms by spreading them out over a longer time period (and giving time for neural adaptations to the drug to resolve).22 Meta-analysis has confirmed that gradual dose
+reduction (‘tapering’) improves drug cessation rates compared with routine clinical
+care.29 Most studies find that a gradual withdrawal over at least 10 weeks is most successful in achieving long-term abstinence,30 although many patients will require considerably longer (sometimes several years). Sudden benzodiazepine withdrawal has
+potentially fatal consequences, so tapering is always advisable.
+
+Direct taper or switching to diazepam?
+Patients who take short- or intermediate-acting benzodiazepines can be tapered off
+these drugs directly but more than once a day dosing might be required.
+An alternative approach is to switch to an equivalent dose of diazepam (which has a
+long half-life and therefore might provokes less severe withdrawal),20,24 noting that
+some patients report withdrawal symptoms from abrupt switches to diazepam and so
+a step-wise switch is probably prudent. Cochrane is lukewarm about switching to diazepam.30 Approximate ‘diazepam equivalent’31 doses are shown Table 3.29. Owing to
+Table 3.29 Approximate ‘diazepam equivalent’31 doses
+Chlordiazepoxide
+
+25mg
+
+Clonazepam
+
+0.5mg
+
+Diazepam
+
+10mg
+
+Lorazepam
+
+1mg
+
+Lormetazepam
+
+1–2mg
+
+Nitrazepam
+
+10mg
+
+Oxazepam
+
+20mg
+
+Temazepam
+
+20mg
+
+
+
+
+<<<PAGE 471>>>
+
+450  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+References
+1. Schieveld JNM, et al. On benzodiazepines, paradoxical agitation, hyperactive delirium, and chloride homeostasis. Crit Care Med 2018;
+46:1558–1559.
+2. Dietch JT, et al. Aggressive dyscontrol in patients treated with benzodiazepines. J Clin Psychiatry 1988; 49:184–188.
+3. Rothschild AJ, et al. Comparison of the frequency of behavioral disinhibition on alprazolam, clonazepam, or no benzodiazepine in hospitalized psychiatric patients. J Clin Psychopharmacol 2000; 20:7–11.
+4. Bramness JG, et al. Flunitrazepam: psychomotor impairment, agitation and paradoxical reactions. Forensic Sci Int 2006; 159:83–91.
+5. O’Sullivan GH, et al. Safety and side-effects of alprazolam. Controlled study in agoraphobia with panic disorder. Br J Psychiatry 1994;
+165:79–86.
+6. Gardner DL, et al. Alprazolam-induced dyscontrol in borderline personality disorder. Am J Psychiatry 1985; 142:98–100.
+7. Albrecht B, et al. Motivational drive and alprazolam misuse: a recipe for aggression? Psychiatry Res 2016; 240:381–389.
+8. Albrecht B, et al. Benzodiazepine use and aggressive behaviour: a systematic review. Aust N Z J Psychiatry 2014; 48:1096–1114.
+9. Sabe M, et al. Zolpidem stimulant effect: induced mania case report and systematic review of cases. Prog Neuropsychopharmacol Biol
+Psychiatry 2019; 94:109643.
+10. Poceta JS. Zolpidem ingestion, automatisms, and sleep driving: a clinical and legal case series. JClinSleep Med 2011; 7:632–638.
+11. Pressman MR. Sleep driving: sleepwalking variant or misuse of z-drugs? Sleep MedRev 2011; 15:285–292.
+12. Daley C, et al. ‘I did what?’ Zolpidem and the courts. J Am Acad Psychiatry Law 2011; 39:535–542.
+13. Bond AJ. Drug-induced behavioural disinhibition incidence, mechanisms and therapeutic implications. CNS Drugs 1998; 9:41–57.
+14. Hakimi Y, et al. Paradoxical adverse drug reactions: descriptive analysis of French reports. Eur J Clin Pharmacol 2020; 76:1169–1174.
+15. Hawkridge SM, et al. A risk-benefit assessment of pharmacotherapy for anxiety disorders in children and adolescents. Drug Saf 1998;
+19:283–297.
+16. Kandemir H, et al. Behavioral disinhibition, suicidal ideation, and self-mutilation related to clonazepam. J Child Adolesc Psychopharmacol
+2008; 18:409.
+17. Daderman AM, et al. Flunitrazepam (Rohypnol) abuse in combination with alcohol causes premeditated, grievous violence in male juvenile
+offenders. J Am Acad Psychiatry Law 1999; 27:83–99.
+18. van der Bijl P, et al. Disinhibitory reactions to benzodiazepines: a review. J Oral Maxillofac Surg 1991; 49:519–523.
+19. McKenzie WS, et al. Paradoxical reaction following administration of a benzodiazepine. J Oral MaxillofacSurg 2010; 68:3034–3036.
+20. Wilson KE, et al. Complications associated with intravenous midazolam sedation in anxious dental patients. Prim Dent Care 2011;
+18:161–166.
+21. Short TG, et al. Paradoxical reactions to benzodiazepines–a genetically determined phenomenon? Anaesth Intensive Care 1987;
+15:330–331.
+22. Weisman AM, et al. Effects of clorazepate, diazepam, and oxazepam on a laboratory measurement of aggression in men. Int Clin
+Psychopharmacol 1998; 13:183–188.
+23. Blair RJ, et al. Selective impairment in the recognition of anger induced by diazepam. Psychopharmacology (Berl) 1999; 147:335–338.
+24. Wallace PS, et al. Reduction of appeasement-related affect as a concomitant of diazepam-induced aggression: evidence for a link between
+aggression and the expression of self-conscious emotions. Aggress Behav 2009; 35:203–212.
+25. Tae CH, et al. Paradoxical reaction to midazolam in patients undergoing endoscopy under sedation: incidence, risk factors and the effect of
+flumazenil. Dig Liver Dis 2014; 46:710–715.
+26. Bond AJ, et al. Behavioural aggression in panic disorder after 8 weeks’ treatment with alprazolam. J Affect Disord 1995; 35:117–123.
+27. Paton C. Benzodiazepines and disinhibition: a review. Psychiatric Bull 2002; 26:460–462.
+
+
+
+
+<<<PAGE 480>>>
+
+Addictions and substance misuse  459
+
+treatment for the prophylaxis and/or treatment of Wernicke–Korsakoff syndrome and
+other vitamin-related neuropsychiatric conditions.
+In the UK, chlordiazepoxide is the benzodiazepine used for most patients in most
+centres as it is considered to have a relatively low dependence-forming potential. Some
+centres use diazepam. A short-acting benzodiazepine such as oxazepam or lorazepam
+may be used in individuals with impaired liver function.
+There are three types of assisted withdrawal regimens: fixed-dose reduction (the
+most common in non-specialist settings), variable-dose reduction (usually results in less
+benzodiazepine being administered but best reserved for settings where staff have specialist skills in managing alcohol withdrawal) and finally front-loading (infrequently
+used, and reserved for severe alcohol withdrawal).2,9 Assisted withdrawal regimens
+should never be started if BAC is very high or is still rising. Monitor patients for oversedation/respiratory depression.
+
+Fixed-dose regimens use can be used in community or non-specialist inpatient/residential settings for uncomplicated patients. Patients should be started on a dose of benzodiazepine selected after an assessment of the severity of alcohol dependence (clinical
+history, number of units per drinking day and score on the SADQ. With respect to
+chlordiazepoxide, a general rule of thumb is that the starting dose can be estimated
+from current alcohol consumption. For example, if 20 units/day are being consumed,
+the starting dose should be 20mg four times a day. The dose is then tapered to zero over
+5–10 days. Alcohol withdrawal symptoms should be monitored using a validated
+instrument such as the CIWA-Ar12 or the SAWS.13
+Mild alcohol dependence usually requires very small doses of chlordiazepoxide or
+else may be managed without medication.
+For moderate alcohol dependence, a typical regime might be 10–20mg chlordiazepoxide 4 times a day, reducing gradually over 5–7 days. Note that 5–7 days’ treatment
+is adequate and longer treatment is rarely helpful or necessary. It is advisable to monitor withdrawal and BAC daily before providing the day’s medication. This may mean
+that community pharmacologically assisted alcohol withdrawals should start on a
+Monday and last for 5 days.
+
+Table 4.4 Moderate alcohol dependence: example of a
+fixed-dose chlordiazepoxide treatment regimen.
+Total daily dose (mg)
+Day 1
+
+20mg qds
+
+80
+
+Day 2
+
+15mg qds
+
+60
+
+Day 3
+
+10mg qds
+
+40
+
+Day 4
+
+5mg qds
+
+20
+
+Day 5
+
+5mg bd
+
+10
+
+bd, bis die (twice a day); qds, quarter die sumendum (four times a day).
+
+CHAPTER 4
+
+Fixed-dose reduction regimen
+
+
+
+
+<<<PAGE 736>>>
+
+Infant plasma concentration
+
+Not reported
+
+No published data available at
+the time of writing.
+
+Not reported.
+
+Drug
+
+Benzodiazepines4,14,38,182–189
+
+Promethazine
+
+Zopiclone, zolpidem and
+zaleplon4,190–192
+
+Table 7.6 Hypnotics in breast-feeding
+
+Zaleplon = 1.5%
+Zopiclone = 1.5%
+Zolpidem = 0.02–0.18%
+
+Clonazepam – 2.8%
+Diazepam – 0.88–7.1%
+Lorazepam – 2.6–2.9%
+Oxazepam – 0.28–1%
+
+Estimated daily infant dose
+as proportion of maternal
+dose (RID)
+
+None reported.
+
+No adverse effects have been
+reported in others.
+
+In a telephone survey of 124
+women two reported CNS
+depression in their
+breastfeeding neonates. One
+of the children was exposed to
+benzodiazepines in utero.
+
+Restlessness and mild
+drowsiness with alprazolam.
+
+One case of persistent apnoea
+with clonazepam.
+
+Sedation, lethargy, weight loss
+and mild jaundice.
+
+Acute adverse effects in
+infant
+
+None reported but not studied.
+
+Non reported but not studied.
+
+Developmental effects in
+infant
+
+
+
+
+<<<PAGE 750>>>
+
+Hepatic and renal impairment  729
+
+Table 8.3 (Continued)
+Drug
+
+Comments
+
+Valproate
+
+74
+
+Highly protein bound and hepatically metabolised. Dosage reduction with close
+monitoring of LFTs in moderate hepatic impairment. Use plasma levels (measure free
+levels − total concentrations may appear to be normal) to guide dosage. Caution
+advised. Contraindicated in severe and/or active hepatic impairment, or family history
+of severe impairment; impairment of usual metabolic pathway can lead to generation
+of hepatotoxic metabolites via alternative pathway. Risk of liver toxicity is increased in
+people with hepatic insufficiency if salicylates are used concomitantly. Associated
+with elevated LFTs and serious hepatotoxicity including fulminant hepatic failure
+(sometimes fatal). Mitochondrial disease, learning disability, polypharmacy, metabolic
+disorders and underlying hepatic disease may be risk factors. Particularly hepatotoxic
+in very young children. The greatest risk is in the first three months of treatment.
+
+Stimulants in hepatic impairment5,6,75
+Recommendations for the use of stimulant medications in hepatic impairment are outlined in Table 8.4.
+Table 8.4 Stimulants in hepatic impairment
+Atomoxetine76
+
+Reduce initial and target dose by 50% in moderate impairment, and by 75% in
+severe impairment. Very rare reports of liver toxicity, manifested by elevated hepatic
+enzymes, and raised bilirubin with jaundice. SPC states ‘discontinue in patients with
+jaundice or laboratory evidence of liver injury, and do not restart’.
+
+Methylphenidate77
+
+Rare reports of liver dysfunction and hypersensitivity reactions.
+
+Dexamphetamine/
+lisdexamphetamine78,79
+
+Little experience in liver disease, manufacturers recommend cautious dose titration.
+Very rarely associated with abnormal liver function, two case reports of
+hepatotoxicity.80,81
+
+Sedatives in hepatic impairment
+Table 8.5 summarises recommended sedatives in hepatic impairment.
+
+Benzodiazepines
+
+Extensively hepatically metabolised. Prolonged duration of effect particularly for drugs
+with active metabolites (diazepam, midazolam, clonazepam). Lorazepam, oxazepam and
+temazepam do not have active metabolites and are preferred; lorazepam is considered
+the best tolerated in advanced liver disease19 and is commonly used in alcohol
+withdrawal. Serum enzyme elevations are uncommon and liver injury very rare.19
+
+Promethazine6
+
+Extensive hepatic metabolism. Manufacturers recommend caution in liver
+impairment. Jaundice reported with high doses, no reports of LFT abnormalities or
+toxicity with lower doses.19
+
+Z drugs6,82,83
+
+Hepatically metabolised, but all have a relatively short half-life (1–7 hours). Reduce
+initial doses in mild to moderate impairment (use zopiclone 3.75mg, zolpidem 5mg,
+zaleplon 5mg), avoid in severe impairment. Zaleplon is subject to significant first-pass
+metabolism and zolpidem plasma concentrations and half-life are significantly
+increased in hepatic impairment; these agents should be used with caution.84 Although
+zopiclone has the longer half-life, this may not be clinically relevant except in severe
+disease.83 Zopiclone and zaleplon have not been associated with hepatotoxicity. There
+are rare reports of abnormal LFTs and a single case of liver injury with zolpidem.19
+(Continued)
+
+CHAPTER 8
+
+Table 8.5 Sedatives in hepatic impairment
+
+
+
+
+<<<PAGE 751>>>
+
+730  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 8.5 (Continued)
+Melatonin6,85
+
+Complex handling of melatonin in liver impairment: reduced clearance and
+prolonged half-life contribute to higher circulating levels of endogenous melatonin in
+daytime hours; negative feedback and accumulation of toxic products results in
+reduced endogenous production. Relevance to dosing of exogenous melatonin is
+unclear, although toxicity of melatonin is minimal. Manufacturer recommends
+avoiding in liver disease. Rarely associated with changes in LFTs.
+
+Other psychotropics in hepatic impairment
+Table 8.6 gives a summary of other psychotropics recommended in hepatic impairment.
+Table 8.6 Other psychotropics in hepatic impairment
+Bremelanotide6
+
+No dose adjustment required in mild to moderate hepatic impairment. Use with caution
+in severe impairment; adverse effects more likely.27 One case of acute hepatitis reported.
+
+Deutetrabenazine5,19
+
+Not studied in hepatic impairment, but based on experience with tetrabenazine, use
+is contraindicated. Limited information available but clinically relevant hepatotoxicity
+not reported. Occasional asymptomatic rises in ALT.
+
+Lemborexant6,27
+
+No dose adjustment in mild impairment (risk of increased somnolence), starting and
+maximum dose of 5mg once nightly in moderate impairment, not recommended in
+severe impairment. Little experience but hepatotoxicity not reported.86
+
+Pitolisant5,27
+
+Extensively hepatically metabolised. No dose adjustment in mild impairment. In
+moderate impairment the half-life is doubled; daily dose can be increased two weeks
+after initiation, daily maximum 18mg. Contraindicated in severe impairment. Hepatic
+enzyme increases are uncommon.
+
+Solriamfetol5
+
+Not metabolised. No known problems in liver impairment, no reports of liver injury.
+
+Valbenazine6,19
+
+Hepatically metabolised pro-drug of alpha-dihydrotetrabenazine. Unlike
+deutetrabenazine, not contra-indicated in liver disease, but maximum dose of 40mg
+in moderate to severe impairment. Few data, but no reports of clinically relevant liver
+injury other than a single report of reactivation of pre-existing hepatitis C.
+
+Psychotropics in hepatic impairment
+Table 8.7 gives an outline of recommended psychotropics in hepatic impairment.
+
+CHAPTER 8
+
+Table 8.7 Psychotropics in hepatic impairment
+Drug group
+
+Recommended drugs
+
+Antipsychotics
+
+Sulpiride/amisulpride: no dosage reduction required if renal function is normal
+Paliperidone: if depot required
+
+Antidepressants
+
+Paroxetine, sertraline, citalopram, or vortioxetine: start at low dose. Titrate
+slowly (if required) as above.
+
+Mood-stabilisers
+
+Lithium: use plasma levels to guide dosage. Care needed if ascites status changes.
+
+Sedatives
+
+Lorazepam, oxazepam, temazepam: as short half-life with no active metabolites
+Use low doses with caution, as sedative drugs used in severe disease can precipitate
+hepatic encephalopathy
+Zopiclone: 3.75mg with care in moderate hepatic impairment
+
+
+
+
+<<<PAGE 767>>>
+
+746  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+Table 8.11 (Continued )
+Drug
+
+Comments
+
+Diazepam22,25,32,155
+
+Less than 0.5% is excreted unchanged. Dosing: GFR 20–50mL/min, dose as in
+normal renal function; GFR <20mL/min, use small doses and titrate to response.
+Long-acting, active metabolites accumulate in renal impairment; monitor patients for
+excessive sedation and encephalopathy. One case of interstitial nephritis with
+diazepam has been reported in a patient with chronic renal failure.
+
+Eszopiclone156
+
+Less than 10% excreted unchanged in the urine. No dose adjustment is needed in
+renal impairment.
+
+Gabapentin
+
+100% excreted unchanged in urine, clearance is reduced in renal impairment
+resulting in higher plasma concentrations and longer elimination half-lives.157 As
+expected this may result in toxicity in renal impairment if doses are not reduced.158
+Acute renal failure has been reported;159 myoclonus;160 altered mental status, fall and
+fracture when used in patients on haemodialysis for restless legs, itch and
+neuropathic pain.161,162 Has been used to treat pruritis, muscle cramps and restless
+legs syndrome in haemodialysis patients in RCTs.163–165 Dosing advice differs; GFR
+15–60mL/min start low and increase according to response; GFR <15mL/min, 300mg
+alternate days32,159 or 100mg at night then increase according to tolerability25,166 but
+care toxicity as described above. Manufacturer has table of very specific dosing in
+renal impairment in SMPC.159
+
+Lemborexant41,167
+
+<1% excreted unchanged in urine. Manufacturer states no dose adjustment needed
+in renal impairment but exposure increases during severe renal impairment with a
+potential increased risk of somnolence.
+
+Lorazepam22,23,25,32,168–173
+
+<1% excreted unchanged in urine, dose as in normal renal function but carefully
+according to response as some may need lower doses. Monitor for excessive
+sedation. Impaired elimination reported in two patients with severe renal impairment
+and also reports of propylene glycol in lorazepam injection causing renal impairment
+and acute tubular necrosis. However, lorazepam injection has been successfully used
+to treat catatonia in two patients with renal failure.
+
+Nitrazepam23,25
+
+Less than 5% excreted unchanged in the urine. Dosing GFR 10–50mL/min as per
+normal renal function; GFR <10mL/min start with small dose and increase slowly.
+Manufacturer advises reducing dose in renal impairment. Monitor patient for
+sedation and unsteadiness.
+
+Pregabalin
+
+Up to 99% excreted unchanged in urine. Acute renal failure reported.174 Associated
+with altered mental status and falls when used in patients on haemodialysis,161 and
+myoclonus.175 Case report of seizure on abrupt cessation in patient with CKD.176 Used
+to treat uraemic pruritis and neuropathic pain in patients on haemodialysis.177,178
+Dosing advice differs; titrate dosing by tolerability and response for all GFRs; GFR
+30–60mL/min, 75mg daily; GFR 15–30mL/min, 25–50mg daily; GFR <15mL/min,
+25mg daily. Manufacturer has table of very specific dosing in renal impairment in
+SMPC.174
+
+Oxazepam22,25,32,179
+
+Less than 1% excreted unchanged in the urine. Dose adjustment needed in severe
+renal impairment. Oxazepam may take longer to reach steady state in patients with
+renal impairment. Dosing: GFR 10–50mL/min, dose as in normal renal function; GFR
+<10mL/min, start at a low dose and increase according to response. Monitor for
+excessive sedation.
+
+
+
+
+<<<PAGE 775>>>
+
+CHAPTER 8
+
+754  The Maudsley® Prescribing Guidelines in Psychiatry
+
+169. Reynolds HN, et al. Hyperlactatemia, increased osmolar gap, and renal dysfunction during continuous lorazepam infusion. Crit Care Med
+2000; 28:1631–1634.
+170. Verbeeck RK, et al. Impaired elimination of lorazepam following subchronic administration in two patients with renal failure. Br J Clin
+Pharmacol 1981; 12:749–751.
+171. Yaucher NE, et al. Propylene glycol-associated renal toxicity from lorazepam infusion. Pharmacotherapy 2003; 23:1094–1099.
+172. Zar T, et al. Acute kidney injury, hyperosmolality and metabolic acidosis associated with lorazepam. Nat Clin Pract Nephrol 2007;
+3:515–520.
+173. Hayman M, et al. Acute tubular necrosis associated with propylene glycol from concomitant administration of intravenous lorazepam and
+trimethoprim-sulfamethoxazole. Pharmacotherapy 2003; 23:1190–1194.
+174. Upjohn UK Limited. Lyrica 25mg 50mg 75mg 100mg 150mg 200mg 225mg and 300mg hard capsules 2020; https://www.medicines.org.
+uk/emc/product/10303/smpc.
+175. Desai A, et al. Gabapentin or pregabalin induced myoclonus: a case series and literature review. J Clin Neurosci 2019; 61:225–234.
+176. Du YT, et al. Seizure induced by sudden cessation of pregabalin in a patient with chronic kidney disease. BMJ Case Rep 2017;
+2017:bcr2016219158.
+177. Foroutan N, et al. Comparison of pregabalin with doxepin in the management of uremic pruritus: a randomized single blind clinical trial.
+Hemodial Int 2017; 21:63–71.
+178. Otsuki T, et al. Efficacy and safety of pregabalin for the treatment of neuropathic pain in patients undergoing hemodialysis. Clin Drug
+Investig 2017; 37:95–102.
+179. Murray TG, et al. Renal disease, age, and oxazepam kinetics. Clin Pharmacol Ther 1981; 30:805–809.
+180. Leung N, et al. Acute kidney injury in patients with inactive cytochrome P450 polymorphisms. Ren Fail 2009; 31:749–752.
+181. Drover DR. Comparative pharmacokinetics and pharmacodynamics of short-acting hypnosedatives: zaleplon, zolpidem and zopiclone.
+Clin Pharmacokinet 2004; 43:227–238.
+182. Rehman IU, et al. A randomized controlled trial for effectiveness of zolpidem versus acupressure on sleep in hemodialysis patients having
+chronic kidney disease-associated pruritus. Medicine (Baltimore) 2018; 97:e10764.
+183. Hsu FG, et al. Use of zolpidem and risk of acute pyelonephritis in women: a population-based case–control study in Taiwan. J Clin
+Pharmacol 2017; 57:376–381.
+184. Goa KL, et al. Zopiclone. A review of its pharmacodynamic and pharmacokinetic properties and therapeutic efficacy as an hypnotic. Drugs
+1986; 32:48–65.
+185. Hussain N, et al. Zopiclone-induced acute interstitial nephritis. Am J Kidney Dis 2003; 41:E17.
+186. Suwata J, et al. New acetylcholinesterase inhibitor (donepezil) treatment for Alzheimer’s disease in a chronic dialysis patient. Nephron
+2002; 91:330–332.
+187. Nagy CF, et al. Steady-state pharmacokinetics and safety of donepezil HCl in subjects with moderately impaired renal function. Br J Clin
+Pharmacol 2004; 58 (Suppl 1):18–24.
+188. Tiseo PJ, et al. An evaluation of the pharmacokinetics of donepezil HCl in patients with moderately to severely impaired renal function. Br
+J Clin Pharmacol 1998; 46 (Suppl 1):56–60.
+189. Sahin OZ, et al. A rare case of acute renal failure secondary to rhabdomyolysis probably induced by donepezil. Case Rep Nephrol 2014;
+2014:214359.
+190. Periclou A, et al. Pharmacokinetic study of memantine in healthy and renally impaired subjects. Clin Pharmacol Ther 2006; 79:134–143.
+191. Lefevre G, et al. Effects of renal impairment on steady-state plasma concentrations of Rivastigmine: a population pharmacokinetic analysis
+of capsule and patch formulations in patients with Alzheimer’s disease. Drugs Aging 2016; 33:725–736.
+192. AMAG Pharmaceutical Inc. Highlights of prescribing information. Vyleesi (bremelanotide injection) for subcutaneous use 2019; https://
+www.accessdata.fda.gov/drugsatfda_docs/label/2019/210557s000lbl.pdf.
+193. Nelson ME, et al. Melanotan II injection resulting in systemic toxicity and rhabdomyolysis. Clin Toxicol (Phila) 2012; 50:1169–1173.
+194. Teva Pharmaceuticals USA Inc. Highlights of prescribing information. Austedo (deutetrabenazine) tablets for oral use 2020; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2017/209885lbl.pdf.
+195. Lincoln Medical Limited. Wakix 4.5mg/18mg film-coated tablets 2016; https://www.medicines.org.uk/emc/product/7402.
+196. Bioprojet Pharma. Highlights of prescribing information. Wakix (pitolisant) tablets for oral use 2019; https://www.accessdata.fda.gov/
+drugsatfda_docs/label/2019/211150s000lbl.pdf.
+197. Smith WB, et al. Effect of renal impairment on the pharmacokinetics of prucalopride: a single-dose open-label Phase I study. Drug Des
+Devel Ther 2012; 6:407–415.
+198. Shire Pharmaceuticals Limited. Resolor 1mg and 2mg film-coated tablets 2019; https://www.medicines.org.uk/emc/product/584/smpc.
+199. Sivabalasundaram V, et al. Prucalopride-associated acute tubular necrosis. World J Clin Cases 2014; 2:380–384.
+200. Jazz Pharmaceuticals UK. Sunosi 75mg and 140mg film-coated tablets 2020; https://www.medicines.org.uk/emc/product/11017/smpc.
+201. Zomorodi K, et al. Single-dose pharmacokinetics and safety of solriamfetol in participants with normal or impaired renal function and with
+end-stage renal disease requiring hemodialysis. J Clin Pharmacol 2019; 59:1120–1129.
+202. Neurocrine Biosciences Inc. Highlights of prescribing information. Ingrezza (valbenazine) capsules for oral use 2020; https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/209241lbl.pdf.
+203. Gregg LP, et al. Pharmacologic and psychological interventions for depression treatment in patients with kidney disease. Curr Opin
+Nephrol Hypertens 2020; 29:457–464.
+
+
+
+
+<<<PAGE 801>>>
+
+CHAPTER 10
+
+780  The Maudsley® Prescribing Guidelines in Psychiatry
+
+antipsychotics, quetiapine, olanzapine and aripiprazole (as there is lower risk of EPSEs).
+A case report describes successful treatment of ‘HIV mania’ with ziprasidone.30
+
+Anxiety disorders
+Anxiety disorders are highly prevalent in PLWH. Generalised anxiety, panic disorders
+and PTSD are commonly reported. SSRIs are first-line options for anxiety and panic
+disorders treatment in standard guidelines, as well as in PLWH3 (see ‘Depression’ in this
+section for preferred options). Benzodiazepines may have some utility in the acute treatment of anxiety but require caution because of the potential of misuse, possible drug
+interactions and increased risk of neurocognitive impairment in PLWH.31
+Lorazepam, oxazepam and temazepam are metabolised by non-CYP450 pathways,
+hence have lower risk of interactions and may be preferred options for PLWH.32
+Buspirone may also be useful.33
+
+HIV-associated neurocognitive disorders
+In the current era of effective antiretrovirals, the incidence of severe HIV-associated
+cerebral disease has declined dramatically; however, more subtle forms of HIVassociated neurocognitive disorders (HAND) remain prevalent.34,35 Risk factors include
+comorbidities (e.g. HCV coinfection), HIV infection itself and patient genetic factors.
+HAND encompasses three sub-disorders, ranging from more common, asymptomatic
+neurocognitive impairment (ANI), to more severe less common, HIV-associated dementia (HAD) disorders. Screening for cognitive impairment is recommended in PLWH.11
+CogState or the HIV dementia scale have been used though may not identify ANI.35
+Symptoms include apathy, irritability, inertia, lack of spontaneity, social withdrawal,
+psychomotor slowing, complaints of diminished attention and concentration, emotional lability, and occasionally, ‘HIV mania’.29
+The main treatment is antiretroviral therapy with high CNS penetration effectiveness
+(CPE) aiming at reaching good levels in the CNS with minimal drug-related neurotoxicity.
+Further adjunctive treatments have been studied (minocycline, memantine, selegiline, lithium, valproate, lexipafant, nimodipine, psychostimulants, natalizumab interferons, etc.).36
+In a recent study paroxetine was associated with neurocognitive improvements (after
+adjusting for depression),37 while a trial of rivastigmine patch was negative. Further
+studies are needed to confirm the effects of these adjunctive treatments for HAND.
+
+Interactions between antiretroviral drugs and psychotropics
+Pharmacokinetic interactions between antiretroviral drugs and psychotropics occur frequently and can be clinically significant. Potential interactions should be checked for all
+patients receiving antiretrovirals and psychotropics concomitantly. Drug history for
+checking drug interactions should include current prescribed medication, alternative/
+herbal treatments, recreational drugs and other non-prescribed medicines.34
+Readers are directed to regularly updated online resources for information about individual pharmacokinetic interactions:
+■■
+■■
+
+www.hiv-druginteractions.org (also available as an App)
+www.hivinsite.ucsf.edu
+
+
+
+
+<<<PAGE 906>>>
+
+Psychotropic drugs in special conditions  885
+
+Table 13.3 Benzodiazepines concentration in normal dosing and the legal limit
+
+Clonazepam 0.5–6.0mg41,42
+
+5–80µg/L (50)
+
+Diazepam 5–30mg
+
+50–1000µg/L (550)
+
+43
+
+Flunitrazepam 0.5–2.0mg
+
+10–20µg/L (300)
+
+Lorazepam 1–4mg46,47
+
+10–70µg/L (100)
+
+44,45
+
+Oxazepam 15–30mg48
+
+250–600µg/L (300)
+
+Temazepam 10–20mg
+
+200–900µg/L (1000)
+
+49
+
+In regards to methadone, doses of up to 80mg a day generally give plasma levels
+below the UK legal limit.50 The legal limits listed here apply only to those who are lawfully prescribed the drug in question – the driver may be subject to prosecution if it can
+be proved the drugs were taken illicitly.
+
+Other medicines
+Many psychotropics can impair alertness, concentration and driving performance.
+Medicines that block H1, α1-adrenergic or cholinergic receptors may be particularly
+problematic. Effects are particularly marked at the start of treatment and after
+increasing the dose. Drivers must be made aware of any potential for impairment
+and are advised to evaluate their driving performance at these times. They must stop
+driving if adversely affected.51 The use of alcohol will further increase any
+impairment.
+Some antipsychotics and antidepressants lower the seizure threshold. In the UK,
+the DVLA advises this is taken into consideration when prescribing for a driver.
+Further information about the effects of psychotropics on driving can be found in
+Table 13.2.
+Medication-induced sedation
+Many psychotropics are sedating. The more sedating a medicine is, the more likely it is
+to impair driving ability. Other medicines, either prescribed or bought over the counter,
+may also be sedative and/or affect driving ability (e.g. antihistamines5). One study
+found that 89% of patients taking other psychotropics in addition to antidepressants
+failed a battery of ‘fitness to drive’ tests.52 Since the degree of sedation any individual
+will experience is very difficult to predict, patients prescribed sedating medicines should
+be advised not to drive if they feel sedated. In the UK, it is the responsibility of the
+driver to ensure they are fit to drive.
+
+CHAPTER 13
+
+Range of concentrations reported
+(legal limit)
+
+Drug/daily dose
+
+
+
+
+<<<PAGE 909>>>
+
+888  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 13
+
+48. Smink BE, et al. The concentration of oxazepam and oxazepam glucuronide in oral fluid, blood and serum after controlled administration of
+15 and 30 mg oxazepam. Br J Clin Pharmacol 2008; 66:556–560.
+49. Greenblatt DJ, et al. Clinical pharmacokinetics of the newer benzodiazepines. Clin Pharmacokinet 1983; 8:233–252.
+50. Ferrari A, et al. Methadone – metabolism, pharmacokinetics and interactions. Pharmacol Res 2004; 50:551–559.
+51. Department of Transport. Medication and Road Safety: A Scoping Study. Road Safety Research Report No. 116. 2010; https://webarchive.
+nationalarchives.gov.uk/20101007211118/http://www.dft.gov.uk/pgr/roadsafety/research/rsrr/theme3/report16findings.pdf
+52. Grabe HJ, et al. The influence of polypharmacological antidepressive treatment on central nervous information processing of depressed
+patients: implications for fitness to drive. Neuropsychobiology 1998; 37:200–204.
+53. Driver and Vehicle Licensing Agency. At a glance guide to the current medical standards of fitness to drive. 2013 (last updated March 2020);
+https://www.gov.uk/government/publications/at-a-glance.
+54. General Medical Council. Good practice in prescribing and managing medicines and devices. 2013; https://www.gmc-uk.org/guidance/ethical_guidance/14316.asp.
+
+
+
+
+<<<PAGE 935>>>
+
+914  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 14.3 (Continued)
+Parameter
+
+Reference range
+
+Agents reported to raise
+levels
+
+Agents reported to lower
+levels
+
+Mean cell
+haemoglobin
+
+27–32pg
+
+Medications associated with
+megaloblastic anaemia e.g. all
+antiseizure medications,
+nitrous oxide
+
+None known
+
+Mean cell haemoglobin 320–360g/L
+concentration
+
+Alcohol
+
+Mean cell volume
+
+80–100fL
+
+Monocytes
+
+0.2–0.8 × 10 /L
+
+Haloperidol
+
+None known
+
+Neutrophils
+
+2.0–7.5 × 109/L
+(may be lower in people of
+African descent due to
+benign ethnic neutropenia)
+
+Bupropion, carbamazepine†,
+citalopram, chlorpromazine,
+clozapine†, duloxetine,
+fluoxetine, fluphenazine,
+haloperidol, lamotrigine,
+lithium, maprotiline,
+olanzapine, quetiapine,
+risperidone/paliperidone,
+rivastigmine, tiotixene,
+trazodone, venlafaxine
+
+Agents associated with
+agranulocytosis:
+amoxapine, aripiprazole,
+barbiturates, carbamazepine,
+chlordiazepoxide,
+chlorpromazine, clozapine‡,
+cocaine (adulterated),
+diazepam, fluphenazine,
+haloperidol, meprobamate,
+mianserin, mirtazapine,
+olanzapine, pirenzepine,
+promethazine, risperidone/
+paliperidone, TCAs
+(especially imipramine),
+tranylcypromine, valproate
+
+CHAPTER 14
+
+9
+
+Agents associated with
+leucopoenia: amitriptyline,
+amoxapine, asenapine,
+bupropion, carbamazepine,
+cariprazine, chlorpromazine,
+citalopram, clomipramine,
+clonazepam, clozapine,
+duloxetine, fluoxetine,
+fluphenazine, galantamine,
+haloperidol, lamotrigine,
+lorazepam, lumateperone,
+lurasidone, memantine,
+meprobamate, mianserin,
+mirtazapine, modafinil, nitrous
+oxide, olanzapine, oxazepam,
+phenelzine, pregabalin,
+promethazine, quetiapine,
+tranylcypromine, valproate,
+venlafaxine, ziprasidone
+Agents associated with
+neutropenia: sertraline,
+trazodone, valproate
+Packed cell volume
+
+Females: 0.37–0.47L/L
+Males: 0.40–0.52L/L
+
+Clozapine (rare), testosterone
+
+Benzodiazepines (rare),
+buprenorphine, naltrexone,
+vigabatrin
+
+

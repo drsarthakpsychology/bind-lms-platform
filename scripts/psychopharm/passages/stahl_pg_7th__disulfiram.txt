@@ -1,0 +1,538 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 699>>>
+
+Disulfiram
+
+Therapeutics
+Brands
+Antabuse
+see index for additional brand names
+Generic?
+Yes
+Class
+Alcohol dependence treatment
+Commonly Prescribed for
+(bold for FDA approved)
+Maintenance of alcohol abstinence
+How the Drug Works
+Irreversibly inhibits aldehyde dehydrogenase, the enzyme involved
+in second-stage metabolism of alcohol
+Alcohol is metabolized to acetaldehyde, which in turn is
+metabolized by aldehyde dehydrogenase; thus, disulfiram blocks
+this second-stage metabolism
+
+
+
+
+<<<PAGE 700>>>
+
+If alcohol is consumed by a patient taking disulfiram, toxic levels of
+acetaldehyde build up, causing unpleasant side effects
+This aversive experience ideally leads to negative conditioning, in
+which patients abstain from alcohol in order to avoid the unpleasant
+effects
+How Long Until It Works
+Disulfiram’s effects are immediate; patients should not take
+disulfiram until at least 12 hours after drinking
+If It Works
+Increases abstinence from alcohol
+If It Doesn’t Work
+Patients who drink alcohol while taking disulfiram can experience
+side effects, including alcohol toxicity
+Evaluate for and address contributing factors
+Consider switching to another agent
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Augmentation with behavioral, educational, and/or supportive
+therapy in groups or as an individual is probably key to successful
+treatment
+
+
+
+
+<<<PAGE 701>>>
+
+Tests
+Baseline and follow-up liver function tests
+
+Side effects
+How Drug Causes Side Effects
+When alcohol is consumed by a patient taking disulfiram, levels of
+acetaldehyde build up, causing side effects of alcohol toxicity
+One of disulfiram’s metabolites is carbon disulfide, which may be
+excreted through the lungs; this could account for the side effect of
+metallic taste
+Notable Side Effects
+Metallic taste, dermatitis, sedation
+Flushing, headache, tachycardia, nausea, vomiting (if alcohol is
+consumed)
+Life-Threatening or Dangerous Side Effects
+Hepatotoxicity
+Myocardial infarction, congestive heart failure, respiratory
+depression, other signs of alcohol toxicity (if alcohol is consumed)
+Weight Gain
+
+
+
+
+<<<PAGE 703>>>
+
+How to Dose
+The patient should not take disulfiram until at least 12 hours after
+drinking
+Initial 250–500 mg/day for 1–2 weeks
+Usually dosed in the morning but can be dosed at night if sedation is
+a problem
+Maintenance dose usually 250 mg/day; maximum dose 500 mg/day
+Dosing Tips
+The patient must be fully informed of the disulfiram-alcohol
+reaction
+The patient should be advised not to consume any food or beverages
+containing alcohol or to use any alcohol-containing preparations
+(e.g., cough syrup)
+The patient should be warned that reactions may occur up to 2
+weeks after disulfiram is stopped
+The patient should carry an emergency card stating that he or she is
+taking disulfiram
+Overdose
+Unknown
+Long-Term Use
+
+
+
+
+<<<PAGE 704>>>
+
+Maintenance treatment should be continued until the patient is
+recovered
+Habit Forming
+No
+How to Stop
+Taper not necessary
+A disulfiram-alcohol reaction may occur for up to 2 weeks after
+disulfiram is stopped
+Pharmacokinetics
+Half-life of parent drug is 60–120 hours
+Half-life of metabolites is 13.9 hours (diethyldithiocarbamate) and
+8.9 hours (carbon disulfide)
+Drug Interactions
+Disulfiram may increase blood levels of phenytoin; baseline and
+follow-up levels of phenytoin should be taken
+Disulfiram may prolong prothrombin time, requiring dose
+adjustment of oral anticoagulants
+Use with isoniazid may lead to unsteady gait or change in mental
+status
+
+
+
+
+<<<PAGE 705>>>
+
+Other Warnings/Precautions
+Disulfiram should not be given to a patient in a state of alcohol
+intoxication or without the patient’s full knowledge
+Not recommended for patients older than age 60 or for those with
+severe pulmonary disease, chronic renal failure, diabetes, peripheral
+neuropathy, seizures, cirrhosis, or portal hypertension
+Use with extreme caution in patients with hypothyroidism, epilepsy,
+cerebral damage
+Patients taking disulfiram should not be exposed to ethylene
+dibromide or its vapors, as this has resulted in a higher incidence of
+tumors in rats
+Do Not Use
+If the patient is in a state of alcohol intoxication
+Without the patient’s full knowledge
+For at least 12 hours after the patient last drank
+If patient is taking metronidazole, amprenavir, ritonavir, or sertraline
+If patient has psychosis
+If patient has cardiovascular disease
+If there is a proven allergy to disulfiram
+If there is a proven allergy to thiuram derivatives
+
+
+
+
+<<<PAGE 707>>>
+
+Controlled studies have not been conducted in pregnant women
+Some animal studies have shown adverse effects
+Pregnant women needing to stop drinking may consider behavioral
+therapy before pharmacotherapy
+Not generally recommended for use during pregnancy, especially
+during first trimester
+Breast Feeding
+Unknown if disulfiram is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+The art of psychopharmacology
+Potential Advantages
+Individuals who are motivated to abstain from alcohol
+Potential Disadvantages
+Adherence rates can be low
+Primary Target Symptoms
+Alcohol dependence
+Pearls
+
+
+
+
+<<<PAGE 708>>>
+
+Some evidence of efficacy in comorbid alcohol use disorder and
+PTSD
+Preliminary evidence of efficacy for use in cocaine dependence,
+both alone and comorbid with alcohol use disorder
+
+Suggested Reading
+Barth KS , Malcolm RJ . Disulfiram: an old therapeutic with new
+applications . CNS Neurol Disord Drug Targets 2010 ;9 (1 ):5 –12.
+Jorgensen CH , Pedersen B , Tonnesen H. The efficacy of disulfiram for the
+treatment of alcohol use disorder . Alcohol Clin Exp Res 2011 ;35 (10
+):1749 –58.
+Pani PP , Troqu E , Vacca R , et al. Disulfiram for the treatment of cocaine
+dependence . Cochrane Database Syst Rev 2010 ;20 (1 ):CD007024 .
+
+
+
+
+<<<PAGE 1106>>>
+
+Over-the-counter medications to avoid include cough and cold preparations, including those containing
+dextromethorphan (serotonin reuptake inhibitor), nasal decongestants (tablets, drops, or spray), hay-fever
+medications, sinus medications, asthma inhalant medications, anti-appetite medications, weight reducing
+preparations, “pep” pills (see Table 3 after Pearls)
+Hypoglycemia may occur in diabetic patients receiving insulin or oral antidiabetic agents (hydrazine effect)
+Binds and inactivates vitamin B6 (hydrazine effect); reversible with high-dose B6 administration
+Use cautiously in patients receiving reserpine, anesthetics, disulfiram, metrizamide, anticholinergic agents
+Isocarboxazid is not recommended for use in patients who cannot be monitored closely
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is taking dextromethorphan, a serotonin reuptake inhibitor
+If patient is taking diuretics or other antihypertensives without careful monitoring of blood pressure
+If patient has pheochromocytoma
+If patient has cardiovascular or cerebrovascular disease, until cleared by the patient’s medical doctor
+If patient is taking a prohibited drug
+If patient is not compliant with a low-tyramine diet
+If there is a proven allergy to isocarboxazid
+
+Special Populations
+Renal Impairment
+Use with caution –drug may accumulate in plasma
+May require lower than usual adult dose
+Hepatic Impairment
+Use cautiously in hepatic impairment
+Cardiac Impairment
+
+
+
+
+<<<PAGE 1774>>>
+
+Use cautiously in patients receiving reserpine, anesthetics, disulfiram,
+metrizamide, anticholinergic agents
+Phenelzine is not recommended for use in patients who cannot be
+monitored closely
+Table 2. Dietary guidelines for patients taking MAOIs*
+Foods to avoid**
+
+Foods allowed
+
+Dried, aged, smoked, fermented,
+spoiled, or improperly stored meat,
+poultry, and fish
+
+Fresh or processed meat, poultry,
+and fish; properly stored pickled or
+smoked fish
+
+Broad bean pods
+
+All other vegetables
+
+Aged cheeses
+
+Processed cheese slices, cottage
+cheese, ricotta cheese, yogurt, cream
+cheese
+
+Tap and unpasteurized beer
+
+Canned or bottled beer and alcohol
+
+Marmite
+
+Brewer’s and baker’s yeast
+
+Banana peel
+
+Bananas, avocados, raspberries
+
+Sauerkraut, kimchee
+
+Peanuts
+
+Soy products/tofu
+Tyramine-containing nutritional
+supplement
+* Consult up-to-date listing of tyramine content, as most foods now have
+low tyramine amounts
+
+
+
+
+<<<PAGE 2039>>>
+
+Pseudoephedrine may need to be avoided when administering
+transdermal selegiline, particularly at higher doses of selegiline or in
+vulnerable patients with hypertension
+Although risk may be reduced with transdermal administration of
+selegiline, patient and prescriber must be vigilant to potential
+interactions with any drug, including antihypertensives and over-thecounter cough/cold preparations
+Over-the-counter medications to avoid or use with caution under the
+care of an expert include cough and cold preparations, including those
+containing dextromethorphan (a serotonin reuptake inhibitor), nasal
+decongestants (tablets, drops, or spray), hay-fever medications, sinus
+medications, asthma inhalant medications, anti-appetite medications,
+weight reducing preparations, “pep” pills (see Table 3 after Pearls)
+Certain transdermal patches containing even small traces of aluminum
+or other metals in the adhesive backing can cause skin burns if worn
+during MRI, so warn patients taking the transdermal formulation about
+this possibility and advise them to disclose this information if they
+need an MRI
+Hypoglycemia may occur in diabetic patients receiving insulin or oral
+antidiabetic agents (more so with hydrazine MAOIs)
+Use cautiously in patients receiving reserpine, anesthetics, disulfiram,
+metrizamide, anticholinergic agents
+Selegiline is not recommended for use in patients who cannot be
+monitored closely
+
+
+
+
+<<<PAGE 2078>>>
+
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is taking an MAOI
+If patient is taking pimozide
+If patient is taking thioridazine
+Use of sertraline oral concentrate is contraindicated with disulfiram
+due to the alcohol content of the concentrate
+If there is a proven allergy to sertraline
+
+Special Populations
+Renal Impairment
+
+
+
+
+<<<PAGE 2257>>>
+
+Patient and prescriber must be vigilant to potential interactions with
+any drug, including antihypertensives and over-the-counter cough/cold
+preparations
+Over-the-counter medications to avoid include cough and cold
+preparations, including those containing dextromethorphan (serotonin
+reuptake inhibitor), nasal decongestants (tablets, drops, or spray), hayfever medications, sinus medications, asthma inhalant medications,
+anti-appetite medications, weight reducing preparations, “pep” pills
+(see Table 3 after Pearls)
+Hypoglycemia may occur in diabetic patients receiving insulin or oral
+antidiabetic agents, although more so with hydrazine MAOIs than
+with tranylcypromine
+Use cautiously in patients receiving reserpine, anesthetics, disulfiram,
+metrizamide, anticholinergic agents
+Tranylcypromine is not recommended for use in patients who cannot
+be monitored closely
+Table 2. Dietary guidelines for patients taking MAOIs*
+Foods to avoid**
+
+Foods allowed
+
+Dried, aged, smoked, fermented,
+spoiled, or improperly stored meat,
+poultry, and fish
+
+Fresh or processed meat, poultry,
+and fish; properly stored pickled or
+smoked fish
+
+Broad bean pods
+
+All other vegetables
+
+
+
+
+<<<PAGE 2571>>>
+
+amphetamine (d), 39
+amphetamine (d,l), 45
+Anafranil (clomipramine), 165
+Anafranil 75 (clomipramine), 165
+Anafranil Retard (clomipramine), 165
+Anatensoi Decanoaat (fluphenazine), 313
+Anatensol (fluphenazine), 313
+Anatensol Concentraat (fluphenazine), 313
+Anatensol Decanoate (fluphenazine), 313
+Ancholactil (chlorpromazine), 153
+Aneural (maprotiline), 465
+Aneurol (diazepam), 229
+Anexate (flumazenil), 293
+Ansilor (lorazepam), 437
+Ansiolin (diazepam), 229
+Ansised (buspirone), 123
+Ansium (diazepam), 229
+Ansium (sulpiride), 741
+Antabuse (disulfiram), 239
+Antalon (pimozide), 627
+Antelepsin (clonazepam), 173
+Anten (doxepin), 255
+Antenex (diazepam), 229
+Antideprin (imipramine), 367
+Antiparkin (selegiline), 705
+Antitussive (diphenhydramine), 235
+Antoderin (oxazepam), 569
+Anxial (buspirone), 123
+
+
+
+
+<<<PAGE 2582>>>
+
+Dexamphetamine (d-amphetamine), 39
+Dexamphetamine sulfate (d-amphetamine), 39
+Dexedrine (d-amphetamine), 39
+Dexedrine Spansules (d-amphetamine), 39
+Dexmethylphenidate (d-methylphenidate), 481
+dextromethorphan, 221
+Dextro Stat (d-amphetamine), 39
+Diaceplex (diazepam), 229
+Diaceplex simple (diazepam), 229
+Diapam (diazepam), 229
+Diaquel (diazepam), 229
+Diastat (diazepam), 229
+Diazemuls (diazepam), 229
+diazepam, 229
+Dibenil (diphenhydramine), 235
+Dicepin B6 (diazepam), 229
+Digton (sulpiride), 741
+Diligan (hydroxyzine), 355
+Dinalexin (fluoxetine), 301
+Diphen (diphenhydramine), 235
+diphenhydramine, 235
+Dipromal (valproate), 829
+Discimer (trifluoperazine), 803
+Distedon (diazepam), 229
+disulfiram, 239
+divalproex (valproate), 829
+Divial (lorazepam), 437
+Dixarit (clonidine), 179
+
+
+
+
+<<<PAGE 2628>>>
+
+Index by Use
+Commonly Prescribed For (bold for FDA approved)
+Aggression
+clozapine, 191
+cyamemazine, 201
+propranolol, 653
+zuclopenthixol, 889
+Alcohol abstinence
+acamprosate , 1
+disulfiram , 239
+Alcohol dependence, 255
+nalmefene, 533
+naltrexone , 537
+Alcohol withdrawal
+chlordiazepoxide , 11
+clonidine, 179
+clorazepate , 185
+diazepam , 229
+lorazepam, 437
+oxazepam , 569
+
+
+
+
+<<<PAGE 2669>>>
+
+midazolam, 499
+quazepam, 663
+ramelteon, 677
+suvorexant, 747
+tasimelteon, 751
+temazepam, 755
+trazodone, 793
+triazolam, 799
+zaleplon, 859
+zolpidem, 871
+zopiclone, 879
+Stimulants
+amphetamine (d), 39
+amphetamine (d,l), 45
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Substance use disorder treatments
+acamprosate, 1
+buprenorphine, 111
+bupropion, 117
+clonidine, 179
+cyamemazine, 201
+disulfiram, 239
+lofexidine, 427
+lorazepam, 437
+nalmefene, 533
+
+

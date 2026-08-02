@@ -1,0 +1,1277 @@
+<<<PAGE 484>>>
+
+Addictions and substance misuse  463
+
+Relapse prevention
+There is no place for the continued use of benzodiazepines beyond treatment of the
+acute alcohol withdrawal syndrome. Acamprosate and supervised disulfiram are
+licensed for treatment of alcohol dependence in the UK and may be offered in combination with psychosocial treatment.2 Treatment should be initiated by a specialist service.
+After 12 weeks, transfer of the prescribing to the GP may be appropriate, although
+specialist care may continue (shared care). Naltrexone is also recommended as an
+adjunct in the treatment of moderate and severe alcohol dependence.2 As it does not
+have marketing authorisation for the treatment of alcohol dependence in the UK,
+informed consent should be sought and documented prior to commencing treatment.
+
+Acamprosate is a synthetic taurine analogue that acts as a functional glutamatergic
+N-methyl-d-aspartate antagonist and also increases γ-aminobutyric acid (GABA)-ergic
+function. The number needed to treat (NNT) for the maintenance of abstinence has
+been calculated as 9–11.9 The treatment effect is most pronounced at 6 months with the
+risk ratio (compared with placebo) of returning to drinking behaviour dropping to
+0.83, though the effect has been shown to be significant for up to 12 months.2,20,21
+Acamprosate should be initiated as soon as possible after abstinence has been achieved
+(the BAP consensus guidelines9 recommend that acamprosate should be started ‘during
+detoxification’ because of its potential neuroprotective effect). NICE2 recommends that
+acamprosate should be continued for up to 6 months with regular (monthly) supervision. The SPC recommends that it is given for 1 year.
+Acamprosate is relatively well tolerated; side effects include diarrhoea, abdominal
+pain, nausea, vomiting and pruritis.2 It is contraindicated in severe renal or hepatic
+impairment, thus baseline liver and kidney function tests should be performed before
+commencing treatment. Acamprosate should be avoided in individuals who are pregnant or breastfeeding.
+Acamprosate: NICE Clinical Guideline 115, 20112,20
+Acamprosate should be offered for relapse prevention in moderately to severely dependent
+drinkers, in combination with psychosocial treatment. It should be prescribed for up to 6 months,
+or longer for those who perceive benefit and wish to continue taking it. The dose is 1998mg daily
+(666mg three times per day) for individuals over 60kg. For those under 60kg, the dose is 1332mg
+daily. Treatment should be stopped in those who continue to drink for 4–6 weeks after starting
+the drug.
+
+Naltrexone
+Opioid blockade prevents increased dopaminergic activity after the consumption of
+alcohol, thus reducing its rewarding effects. Naltrexone, a non-selective opioid receptor
+antagonist, significantly reduces relapse to heavy drinking.2,22 Although early trials used
+a dose of 50mg/day, more recent US studies have used 100mg/day. In the UK, the usual
+dose is 50mg/day with a trial dose of 25mg for 2 days to check for side effects.
+
+CHAPTER 4
+
+Acamprosate
+
+
+
+
+<<<PAGE 485>>>
+
+464  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Naltrexone is well tolerated but side effects include nausea (especially in the early
+stages of treatment), headache, abdominal pain, reduced appetite and tiredness. A
+comprehensive medical assessment should be carried out prior to commencing naltrexone, together with baseline renal function tests and LFTs. Naltrexone can be
+started when patients are still drinking or during medically assisted withdrawal.
+There is no clear evidence as to the optimal duration of treatment but 6 months
+appears to be an appropriate period with follow up, including monitoring liver
+function.9
+Patients on naltrexone should not be given opioid agonist drugs for analgesia: nonopioid analgesics should be used instead. In the event that opioid analgesia is necessary,
+it can be instituted 48–72 hours after cessation of naltrexone. Hepatotoxicity has been
+described with high doses of naltrexone, so use should be avoided in acute liver
+failure.23
+
+CHAPTER 4
+
+Naltrexone: NICE Clinical Guideline 115, 20112,22
+Naltrexone [50mg/day] should be offered for relapse prevention in moderately to severely
+dependent drinkers, in combination with psychosocial treatment. It should be prescribed for up to
+6 months, or longer for those who perceive benefit and wish to continue taking it. Treatment
+should be stopped in those who continue to drink for 4–6 weeks after starting the drug or in
+those who feel unwell while taking it.
+
+Long-acting injectable naltrexone has been developed to improve compliance. Side
+effects are similar to those seen with the oral preparation.24 NICE concluded that the
+initial evidence was encouraging but not enough to support routine use.
+Nalmefene
+Nalmefene is also an opioid antagonist, recommended by NICE as an option for reducing alcohol consumption, for people with alcohol dependence.2,22 It has been shown in
+one indirect meta-analysis to be superior to naltrexone in reducing heavy drinking.25
+However, use of nalmefene remains controversial, with another meta-analysis suggested that nalmefene had only limited efficacy in reducing alcohol consumption and
+that its value in treating alcohol addiction and relapse prevention is not fully
+established.26
+Disulfiram (antabuse)
+Disulfiram inhibits the enzyme aldehyde dehydrogenase, thus preventing complete
+metabolism of alcohol in the liver. This results in an accumulation of the toxic intermediate product acetaldehyde, which causes the alcohol–disulfiram reaction.
+
+
+
+
+<<<PAGE 486>>>
+
+Addictions and substance misuse  465
+
+Mild alcohol–disulfiram reaction
+Facial flushing
+■■ Sweating
+■■ Nausea
+■■ Hyperventilation
+■■ Dyspnea
+■■ Tachycardia
+■■ Hypotension
+■■
+
+Contraindications
+Ingestion of alcohol within the previous 24 hours
+■■ Cardiac failure
+■■ Coronary artery disease
+■■ Hypertension
+■■ Cerebrovascular disease
+■■ Pregnancy
+■■ Breastfeeding
+■■ Liver disease
+■■ Peripheral neuropathy
+■■ Severe mental illness
+Severe alcohol–disulfiram reaction
+Acute heart failure
+■■ Myocardial infarction
+■■ Arrhythmias
+■■ Bradycardia
+■■ Respiratory depression
+■■ Severe hypotension
+■■
+
+The therapeutic effect of disulfiram is thus mediated by its incompatibility with alcohol, resulting in alcohol aversion. Supervised medication optimises compliance and
+contributes to effectiveness.
+The intensity of the intolerance reaction is dose dependent, both with regard to the
+amount of alcohol consumed and the dose of disulfiram. However, it is thought that
+much of the therapeutic effect is mediated by the mental anticipation of the aversive
+reaction, rather than the pharmacological action itself. Sudden death is more prevalent
+at doses above 1000mg.27 With this in mind, the value of prescribing higher doses of
+disulfiram must be carefully considered.
+Doses are 800mg for the first dose, reducing to 100–200mg daily for maintenance. In
+co-morbid alcohol and cocaine dependence, doses of 500mg daily have been given.
+Halitosis is a common side effect. If there is a sudden onset of jaundice (the rare complication of hepatotoxicity), the patient should stop the drug and seek urgent medical
+attention.
+The evidence for disulfiram is weaker than for acamprosate and naltrexone.2 In the
+UK, NICE recommends its use ‘as a second-line option for moderate-to-severe alcohol
+dependence for patients who are not suitable for acamprosate or naltrexone or have a
+specified preference for disulfiram and who aim to stay abstinent from alcohol’.2
+
+CHAPTER 4
+
+■■
+
+
+
+
+<<<PAGE 487>>>
+
+466  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Disulfiram: NICE Clinical Guideline 115, 20112
+Disulfiram should be considered in combination with a psychological intervention for patients who
+wish to achieve abstinence, but for whom acamprosate or naltrexone is not suitable. Treatment
+should be started at least 24 hours after the last drink and should be overseen by a family member
+or a carer. Monitoring is recommended every 2 weeks for the first 2 months, then monthly for the
+following 4 months. Medical monitoring should be continued at 6 monthly intervals after the first
+6 months. Patients must not consume any alcohol while taking disulfiram.
+
+Baclofen
+
+CHAPTER 4
+
+Baclofen is a GABA-B agonist that does not have a licence for use in alcohol dependence but is nevertheless used by some clinicians. A recent meta-analysis failed to find
+positive effects for baclofen and did not support its use as a first-line treatment for
+alcohol-use disorders.28 Baclofen was associated with higher rates of adverse effects,
+including depression, vertigo, somnolence, numbness and muscle rigidity.
+Antiseizure medications
+There is currently insufficient evidence to support the clinical use of antiseizure medications in the treatment of alcohol dependence, although a significant association has
+been found for fewer drinks per drinking day and lower average heavy drinking compared with placebo.29 Most research has been carried out on topiramate. There have
+been fewer studies on gabapentin30 valproate and levetiracetam.
+
+Pregnancy and alcohol use
+Evidence indicates that alcohol consumption during pregnancy may cause harm to the
+foetus. The DoH advises that women should not drink any alcohol at all during pregnancy.1 Drinking even 1–2 units/day during pregnancy can increase the risk of having a
+pre-term, low birthweight or small for gestational age baby. NICE guidelines changed
+in December 2018 to refer to the CMO guidelines.
+For alcohol-dependent pregnant women who have withdrawal symptoms, pharmacological cover for detoxification should be offered, ideally in an inpatient setting. The timing
+of detoxification in relation to the trimester of pregnancy should be risk assessed against
+continued alcohol consumption and risks to the foetus.9 Chlordiazepoxide has been suggested as being unlikely to pose a substantial risk; however, dose-dependent malformations
+have been observed.9 The UK Teratology Information Service31 provides national advice
+for healthcare professionals and likes to follow up on pregnancies that require alcohol
+detoxification. Specialist advice should always be sought (see also section ‘Pregnancy’ in
+Chapter 7). No relapse prevention medication has been evaluated in pregnancy.9
+
+Children and adolescents
+Children and young people (10–17 years) should be assessed as outlined in NICE
+Clinical Guideline 115, 2011.2
+
+
+
+
+<<<PAGE 490>>>
+
+Addictions and substance misuse  469
+
+shown that the combination was associated with better drinking outcomes than lithium
+alone. However, the combination did not confer any extra benefit than lithium alone in
+improving mood (see BAP consensus 2012).9 Note that, in those who continue to drink,
+electrolyte imbalance may precipitate lithium toxicity. Lithium is best avoided completely in binge drinkers.
+Naltrexone should be offered, in the first instance, to help bipolar patients reduce
+their alcohol consumption.9 If naltrexone is not effective, then acamprosate should be
+offered. In the event that both naltrexone and acamprosate fail to promote abstinence,
+disulfiram should be considered, and the risks made known to the patient.
+
+Anxiety is commonly observed in alcohol-dependent individuals during intoxication,
+withdrawal and in the early days of abstinence. Alcohol is typically used to self-medicate anxiety disorders, particularly social anxiety. In alcohol-dependent individuals
+who experience anxiety it is often difficult to determine the extent to which the anxiety
+is a symptom of the alcohol-use disorder or whether it is an independent disorder.
+Medically assisted withdrawal and supported abstinence for up to 8 weeks are required
+before a full assessment can be made. If a medically assisted withdrawal is not possible,
+then treatment of the anxiety disorder should still be attempted, following guidelines
+for the respective anxiety disorder.
+The use of benzodiazepines is controversial9 because of the increased risk of benzodiazepine misuse and dependence. Benzodiazepines should only be considered following assessment in a specialist addiction service.
+One meta-analysis suggests that buspirone is effective in reducing symptoms of anxiety, but not alcohol consumption.9,40 Studies have also shown that paroxetine (up to
+60mg/day) was superior to placebo in reducing social anxiety in co-morbid patients:
+alcohol consumption was not affected.9,40
+Either naltrexone or disulfiram, alone or combined, improved drinking outcomes
+compared with placebo in patients with post-traumatic stress disorder and alcohol
+dependence. Both acamprosate and baclofen have shown benefit in reducing anxiety in
+post hoc analyses of alcohol dependence trials (see BAP consensus for references9). It is
+therefore important to ensure that these patients are enabled to become abstinent and
+are prescribed relapse prevention medication. Anxiety should then be treated according
+to the appropriate NICE guidelines.
+Schizophrenia
+Patients with schizophrenia who also have an alcohol-use disorder should be assessed
+and alcohol-specific relapse prevention treatment considered, either naltrexone or
+acamprosate. Antipsychotic medication should be optimised,9 and clozapine may be
+considered. However, there is insufficient evidence to recommend the use of any one
+antipsychotic medication over another.
+
+CHAPTER 4
+
+Anxiety
+
+
+
+
+<<<PAGE 491>>>
+
+470  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 4
+
+References
+1. Department of Health and Social Care. UK chief medical officers’ guidelines on how to keep health risks from drinking alcohol to a low level.
+2016; https://www.gov.uk/government/publications/alcohol-consumption-advice-on-low-risk-drinking.
+2. National Institute for Health and Clinical Excellence. Alcohol use disorders: diagnosis, assessment and management of harmful drinking and
+alcohol dependence. Clinical Guidance [CG115]. 2011 (last checked July 2019); https://www.nice.org.uk/guidance/cg115.
+3. National Institute for Health and Care Excellence. Alcohol-use disorders: prevention. Public health guideline [PH24]. 2010; (last checked July
+2019). https://www.nice.org.uk/guidance/ph24.
+4. Babor T, et al. AUDIT: the alcohol use disorders identification test guidelines for use in primary care. 2nd edition. 2001; http://whqlibdoc.
+who.int/hq/2001/WHO_MSD_MSB_01.6a.pdf?ua=1.
+5. Stockwell T, et al. The severity of alcohol dependence questionnaire: its use, reliability and validity. Br J Addict 1983; 78:145–155.
+6. Minozzi S, et al. Anticonvulsants for alcohol withdrawal. Cochrane Database Syst Rev 2010; CD005064.
+7. Amato L, et al. Efficacy and safety of pharmacological interventions for the treatment of the Alcohol Withdrawal Syndrome. Cochrane
+Database Syst Rev 2011; CD008537.
+8. Brathen G, et al. EFNS guideline on the diagnosis and management of alcohol-related seizures: report of an EFNS task force. Eur J Neurol
+2005; 12:575–581.
+9. Lingford-Hughes AR, et al. Evidence-based guidelines for the pharmacological management of substance abuse, harmful use, addiction and
+comorbidity: recommendations from BAP. J Psychopharmacol 2012; 26:899–952.
+10. NSW Government. Drug and alcohol withdrawal clinical practice guidelines. 2008; https://www1.health.nsw.gov.au/pds/ActivePDSDocuments/
+GL2008_011.pdf.
+11. Schuckit MA. Recognition and management of withdrawal delirium (delirium tremens). N Engl J Med 2014; 371:2109–2113.
+12. Sullivan JT, et al. Assessment of alcohol withdrawal: the revised clinical institute withdrawal assessment for alcohol scale (CIWA-Ar). Br J
+Addict 1989; 84:1353–1357.
+13. Gossop M, et al. A Short Alcohol Withdrawal Scale (SAWS): development and psychometric properties. Addict Biol 2002; 7:37–43.
+14. National Institute for Health and Clinical Excellence. Alcohol-use disorders: physical complications. Clinical Guidance [CG100] 2010 (last
+updated April 2017); https://www.nice.org.uk/guidance/cg100.
+15. Thomson AD, et al. Time to act on the inadequate management of Wernicke’s encephalopathy in the UK. Alcohol Alcohol 2013; 48:4–8.
+16. Thomson AD, et al. The Royal College of Physicians report on alcohol: guidelines for managing Wernicke’s encephalopathy in the accident
+and Emergency Department. Alcohol Alcohol 2002; 37:513–521.
+17. Day E, et al. Thiamine for prevention and treatment of Wernicke-Korsakoff Syndrome in people who abuse alcohol. Cochrane Database Syst
+Rev 2013; 7:CD004033.
+18. Thomson A, et al. Incidence of adverse reactions to parenteral thiamine in the treatment of Wernicke’s encephalopathy, and recommendations. Alcohol Alcohol 2019; 54:609–614.
+19. BNF Online. British national formulary. 2020; https://www.medicinescomplete.com/mc/bnf/current.
+20. Rösner S, et al. Acamprosate for alcohol dependence. Cochrane Database Syst Rev 2010; Cd004332.
+21. Donoghue K, et al. The efficacy of acamprosate and naltrexone in the treatment of alcohol dependence, Europe versus the rest of the world:
+a meta-analysis. Addiction 2015; 110:920–930.
+22. Rösner S, et al. Opioid antagonists for alcohol dependence. Cochrane Database Syst Rev 2010; Cd001867.
+23. Accord Healthcare Limited. Summary of Product Characteristics. Naltrexone Hydrochloride 50 mg Film-coated Tablets. 2014; https://www.
+medicines.org.uk/emc/medicine/25878.
+24. Krupitsky E, et al. Injectable extended-release naltrexone (XR-NTX) for opioid dependence: long-term safety and effectiveness. Addiction
+2013; 108:1628–1637.
+25. Soyka M, et al. Comparing nalmefene and naltrexone in alcohol dependence: are there any differences? Results from an indirect meta-analysis. Pharmacopsychiatry 2016; 49:66–75.
+26. Palpacuer C, et al. Risks and benefits of nalmefene in the treatment of adult alcohol dependence: a systematic literature review and metaanalysis of published and unpublished double-blind randomized controlled trials. PLoS Med 2015; 12:e1001924.
+27. Mutschler J, et al. Current findings and mechanisms of action of disulfiram in the treatment of alcohol dependence. Pharmacopsychiatry
+2016; 49:137–141.
+28. Minozzi S, et al. Baclofen for alcohol use disorder. Cochrane Database Syst Rev 2018; 11:Cd012557.
+29. Pani PP, et al. Anticonvulsants for alcohol dependence. Cochrane Database Syst Rev 2014; Cd008544.
+30. Kranzler HR, et al. A meta-analysis of the efficacy of gabapentin for treating alcohol use disorder. Addiction 2019; 114:1547–1555.
+31. UK Teratology Information Service (UKTIS). 2020; www.uktis.org.
+32. O’Malley SS, et al. Reduction of alcohol drinking in young adults by naltrexone: a double-blind, placebo-controlled, randomized clinical trial
+of efficacy and safety. J Clin Psychiatry 2015; 76:e207–e213.
+33. Miranda R, et al. Effects of naltrexone on adolescent alcohol cue reactivity and sensitivity: an initial randomized trial. Addict Biol 2014;
+19:941–954.
+34. Pettinati HM, et al. Gender differences with high-dose naltrexone in patients with co-occurring cocaine and alcohol dependence. J Subst
+Abuse Treat 2008; 34:378–390.
+35. Public Health England. Better care for people with co-occurring mental health and alcohol/drug use conditions. A guide for commissioners
+and service providers. 2017; https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/625809/Co-occurring_mental_
+health_and_alcohol_drug_use_conditions.pdf.
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+
+
+
+<<<PAGE 882>>>
+
+Pharmacokinetics  861
+
+Enzyme
+
+Inhibited by
+
+Potential consequences
+
+Alcohol dehydrogenase
+
+Aspirin
+H2 antagonists
+
+Reduced metabolism of alcohol
+resulting in higher plasma levels for
+longer periods of time
+
+Aldehyde dehydrogenase
+
+Chlorpropamide
+Disulfiram
+Griseofulvin
+Isoniazid
+Isosorbide dinitrate
+Metronidazole*
+Nitrofurantoin
+Sulphamethoxazole
+Tolbutamide
+
+Reduced ability to metabolise
+acetaldehyde leading to ‘Antabuse’
+type reaction: facial flushing,
+headache, tachycardia, nausea and
+vomiting, arrhythmias and
+hypotension
+
+Evidence that metronidazole has any effect on aldehyde dehydrogenase is surprisingly weak.10–12
+
+*
+
+Interactions are difficult to predict in alcohol misusers because two opposing processes may be at work: competition for enzymatic sites during periods of consumption
+or intoxication (increasing drug plasma levels) and enzyme induction prevailing during
+periods of sobriety (reducing drug plasma levels8). In chronic drinkers, particularly
+those who binge-drink, serum levels of prescribed drugs may reach toxic levels during
+periods of intoxication with alcohol and then be sub-therapeutic when the patient is
+sober. Even in non-intoxicated individuals there is some evidence that co-administered
+alcohol confers competitive inhibition of CYP3A4, leading to increased exposure to
+drugs metabolised by this enzyme (Table 11.6).13 This makes it very difficult to optimise
+treatment of physical or mental illness.
+
+Table 11.6 Co-administration of alcohol and substrates for CYP2E1 and CYP3A4
+Substrates for enzyme
+(note: this is not an
+exhaustive list)
+CYP2E1
+
+Paracetamol
+Isoniazid
+Phenobarbitone
+Warfarin
+Zopiclone
+
+Effects in an intoxicated
+patient
+
+Effects in a chronic, sober
+drinker
+
+Competition between
+alcohol and drug leading to
+reduced rates of metabolism
+of both compounds.
+Increased plasma levels may
+lead to toxicity
+
+Activity of CYP2E1 is increased
+up 10-fold
+Increased metabolism of drugs
+potentially leading to
+therapeutic failure
+
+(Continued)
+
+CHAPTER 11
+
+Table 11.5 Drugs that inhibit alcohol dehydrogenase and aldehyde dehydrogenase
+
+
+
+
+<<<PAGE 885>>>
+
+864  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+Table 11.8 Psychotropic drugs: choice in patients who continue to drink
+Safest choice
+
+Best avoided
+
+Antipsychotics
+
+Sulpiride and amisulpride
+Paliperidone, if depot required
+(non-sedative and renally excreted)
+
+Very sedative antipsychotics such as
+chlorpromazine and clozapine
+
+Antidepressants
+
+SSRI – citalopram, sertraline
+Potent inhibitors of CYP3A4 (fluoxetine,
+paroxetine) may decrease alcohol
+metabolism in chronic drinkers
+
+TCAs, because impairment of metabolism
+by alcohol (while intoxicated) can lead to
+increased plasma levels and consequent
+signs and symptoms of overdose (profound
+hypotension, seizures, arrhythmias and
+coma)
+Cardiac effects can be exacerbated by
+electrolyte disturbances
+Combinations of TCAs and alcohol
+profoundly impair psychomotor skills
+Mirtazapine – often very sedative
+MAOIs as can cause profound hypotension.
+Also potential interaction with tyraminecontaining drinks which can lead to
+hypertensive crisis
+
+Mood stabilisers
+
+Valproate
+Carbamazepine
+Note: higher plasma levels achieved
+during periods of alcohol intoxication may
+be poorly tolerated
+
+Lithium, because it has a narrow
+therapeutic index and alcohol-related
+dehydration and electrolyte disturbance can
+precipitate lithium toxicity
+
+NB. Be aware of the possibility of hepatic failure or reduced hepatic function in chronic alcohol misusers. See section
+on hepatic impairment in Chapter 8.
+Also note risk of hepatic toxicity with some recommended drugs (e.g. valproate).
+
+References
+1. Zakhari S. Overview: how is alcohol metabolized by the body? Alcohol Research & Health: The Journal of the National Institute on Alcohol
+Abuse and Alcoholism 2006; 29:245–254.
+2. Tanaka E. Toxicological interactions involving psychiatric drugs and alcohol: an update. J Clin Pharm Ther 2003; 28:81–95.
+3. Wan Chih T. Alcohol-related drug interactions. Pharmacist’s Letter/Prescriber’s Letter 2008; 24:240106.
+4. Smith RG. An appraisal of potential drug interactions in cigarette smokers and alcohol drinkers. J Am Podiatr Med Assoc 2009; 99:81–88.
+5. Salmela KS, et al. Respective roles of human cytochrome P-4502E1, 1A2, and 3A4 in the hepatic microsomal ethanol oxidizing system.
+Alcohol Clin Exp Res 1998; 22:2125–2132.
+6. Hamitouche S, et al. Ethanol oxidation into acetaldehyde by 16 recombinant human cytochrome P450 isoforms: role of CYP2C isoforms in
+human liver microsomes. Toxicol Lett 2006; 167:221–230.
+7. Koster M, et al. Seizures during antidepressant treatment in psychiatric inpatients–results from the transnational pharmacovigilance project
+“Arzneimittelsicherheit in der Psychiatrie” (AMSP) 1993–2008. Psychopharmacology 2013; 230:191–201.
+8. Cederbaum AI. Alcohol metabolism. Clin Liver Dis 2012; 16:667–685.
+9. Wall TL, et al. Biology, genetics, and environment: underlying factors influencing alcohol metabolism. Alcohol Research: Current Reviews
+2016; 38:59–68.
+10. Williams CS, et al. Do ethanol and metronidazole interact to produce a disulfiram-like reaction? Ann Pharmacother 2000; 34:255–257.
+11. Visapää JP, et al. Lack of disulfiram-like reaction with metronidazole and ethanol. Ann Pharmacother 2002; 36:971–974.
+12. Mergenhagen KA, et al. Fact versus fiction: a review of the evidence behind alcohol and antibiotic interactions. Antimicrob Agents Chemother
+2020; 64:e02167–02119.
+13. Huang Z, et al. Influence of ethanol on the metabolism of alprazolam. Expert Opin Drug Metab Toxicol 2018; 14:551–559.
+
+
+
+
+<<<PAGE 888>>>
+
+Other substances  867
+
+Table 12.3 Interacting substance
+Interacting substance
+
+Effect
+
+Comment
+
+CYP1A2 inhibitors:
+Oestrogens
+Cimetidine
+Fluvoxamine (may
+decrease caffeine
+clearance by 80%)13
+Disulfiram
+
+Reduce caffeine clearance
+
+Effects of caffeine may be prolonged or increased
+
+Cigarette smoke*
+
+CYP1A2 inducer – increasing
+caffeine metabolism5
+
+Smokers may require higher doses of caffeine
+to gain desired effects5
+
+Lithium
+
+High doses of caffeine may reduce
+lithium levels
+
+Caffeine withdrawal may increase lithium
+levels14
+
+MAOIs
+
+May enhance stimulant CNS effects
+
+Clozapine
+
+Caffeine may increase clozapine
+plasma concentrations by up to
+60%15
+
+SSRIs
+
+Large doses of caffeine may increase
+risk of serotonin syndrome16
+
+Benzodiazepines
+
+Caffeine may act as an antagonist
+
+Adverse effects may be increased
+
+Thought to be via competitive inhibition of
+CYP1A2. Other drugs affected by caffeineinduced inhibition of the enzyme include
+olanzapine, imipramine and clomipramine
+
+Reduces the efficacy of benzodiazepines7
+
+Vaping has no effect on CYP1A2 function.
+
+*
+
+CNS, central nervous system; MAOI, monoamine oxidase inhibitor; SSRI, selective serotonin reuptake inhibitor.
+
+Caffeine intoxication
+The Diagnostic and Statistical Manual of Mental Disorders DSM-V17 defines caffeine
+intoxication as the recent consumption of caffeine, usually in excess of 250mg, accompanied by five or more of the symptoms in Box 12.1.
+In caffeine intoxication, these symptoms cause significant distress or impairment in
+social, occupational or other important areas of functioning and are not due to a general medical condition or better accounted for by another mental disorder (e.g. an anxiety disorder).
+
+Box 12.1 Symptoms of caffeine intoxication
+Restlessness
+Nervousness
+■■ Excitement
+■■ Insomnia
+■■ Flushed face
+■■ Diuresis
+
+Gastrointestinal disturbance
+Muscle twitching
+■■ Rambling flow of thought and speech
+■■ Tachycardia or cardiac arrhythmia
+■■ Periods of inexhaustibility
+■■ Psychomotor agitation
+
+■■
+
+■■
+
+■■
+
+■■
+
+CHAPTER 12
+
+May precipitate caffeine toxicity
+
+
+
+
+<<<PAGE 927>>>
+
+906  The Maudsley® Prescribing Guidelines in Psychiatry
+
+approximately 14 hours when given with glucuronidation-inducing drugs such as carbamazepine or phenytoin. The half-life is increased to approximately 70 hours when
+given with valproate. This means that the time before complete re-titration is necessary
+therefore varies between 3 and 7 days, depending on the other drugs prescribed.1
+
+Table 14.1 Restarting medication up to two weeks after stopping oral treatment (data obtained from EU
+regulatory documents (SPCs)2)
+
+CHAPTER 14
+
+Drugs that require re-titration
+
+Drug
+
+Time after which
+re-titration must
+be performed
+
+Clozapine
+
+48 hours
+
+See ‘Re-starting
+clozapine after
+after a break in
+treatment’ in
+Chapter 1
+
+Lamotrigine
+
+3–7 days
+
+See discussion in
+the text
+
+3 days
+Methadone
+Buprenorphine 3 days
+
+Further guidance
+
+See ‘Opioid
+dependence’ in
+Chapter 4
+
+Paliperidone
+long-acting
+injection
+
+Depends on
+formulation
+
+See ‘Paliperidone
+palmitate
+long-acting
+injection’ in
+Chapter 1
+
+Aripiprazole
+long-acting
+injection
+
+>5 weeks if 2nd or
+3rd dose missed
+
+See ‘Aripiprazole
+long-acting
+injection’ in
+Chapter 1
+
+Drugs that are
+usually safe for
+restarting at
+the previous
+dose
+Acamprosate
+Asenapine
+Fluoxetine
+Haloperidol
+Isocarboxazid
+Lofepramine
+Methylphenidate
+Phenelzine
+Sulpiride
+Tranylcypromine
+Valproate
+
+Drugs that are probably
+safe for restarting at
+the previous dose
+Antipsychotics (except
+clozapine, quetiapine and
+risperidone)
+Carbamazepine
+Cholinesterase inhibitors
+CNS stimulants
+Disulfiram
+Lithium (titration advised if
+renal function has changed)
+MAOIs
+Memantine
+Naltrexone
+Other antidepressants (but
+beware loss of tolerance to
+sedative effects)
+Pregabalin
+SSRIs
+TCAs (but beware loss of
+tolerance to sedative and
+hypotensive effects)
+
+>6 weeks in
+chronic treatment
+CNS, central nervous system; MAOI, monoamine oxidase inhibitor; SSRI, selective serotonin reuptake inhibitor; TCA,
+tricyclic antidepressant.
+
+References
+1. Aurobindo Pharma – Milpharm Ltd. Summary of Product Characteristics. Lamotrigine 25mg Tablets. 2019; https://www.medicines.org.uk/
+emc/product/4736/smpc.
+2. EMC. https://www.medicines.org.uk/emc/; accessed June 2020.
+
+
+
+
+<<<PAGE 930>>>
+
+Miscellany  909
+
+Parameter
+
+Reference range10
+
+Agents reported to raise levels
+
+Agents reported to
+lower levels
+
+Bilirubin
+
+≤21μmol/L (total)
+
+Amitriptyline, atomoxetine,
+benzodiazepines, carbamazepine,
+chlordiazepoxide, chlorpromazine,
+citalopram, clomethiazole,
+clozapine, disulfiram, imipramine,
+fluphenazine, lamotrigine,
+meprobamate, milnacipran,
+olanzapine, phenothiazines,
+phenytoin, promethazine,
+sertraline, valbenazine, valproate;
+also associated with agents
+causing cholestasis/hepatic
+damage
+
+Barbiturates
+
+C-reactive protein
+
+<10mg/L
+
+Buprenorphine (rare); also
+associated with agents causing
+myocarditis (clozapine)
+
+None known
+
+Calcium
+
+2.20–2.60mmol/L (total,
+adjusted)
+1.15–1.34mmol/L (ionised)
+
+Lithium (rare)
+
+Barbiturates,
+carbamazepine,
+haloperidol, valproate
+
+Carbohydratedeficient transferrin
+(CDT)
+
+≤1.5%
+
+Alcohol (CDT levels of 1.6–1.9%
+suggest high intake; levels ≥ 2%
+suggest excessive intake)
+
+None known
+
+Chloride
+
+95–108mmol/L
+
+Agents causing hyperchloremic
+metabolic acidosis: topiramate,
+zonisamide
+
+Medications associated
+with SIADH: all
+antidepressants,
+antipsychotics
+(clozapine, haloperidol,
+olanzapine,
+phenothiazines,
+pimozide, risperidone/
+paliperidone,
+quetiapine);
+carbamazepine,
+laxative abuse
+
+Cholesterol (total)
+
+≤5.2mmol/L
+(usually compared to
+recommended action limits
+rather than reference
+ranges)
+
+Antipsychotics, especially those
+implicated in the metabolic
+syndrome (phenothiazines,
+clozapine, olanzapine and
+quetiapine). Rarely: aripiprazole,
+beta-blockers (additive effects with
+clozapine), carbamazepine,
+disulfiram, duloxetine, memantine,
+mirtazapine, modafinil, phenytoin,
+rivastigmine, sertraline, venlafaxine
+
+Prazosin, thyroid
+agents
+
+(Continued)
+
+CHAPTER 14
+
+Table 14.2 (Continued)
+
+
+
+
+<<<PAGE 964>>>
+
+Index
+
+AACAP. See American Academy of Child
+and Adolescent Psychiatry (AACAP)
+absolute neutrophil count (ANC) 237
+acamprosate 463
+ACE inhibitors. See angiotensin-converting
+enzyme (ACE) inhibitors
+acetylcholine (ACh) 604
+acetylcholinesterase (AChE) inhibitors 604,
+820
+in AD
+interactions 613
+memantine 612–613
+NICE recommendations 617
+other treatments 618
+reasons for stopping treatment 616
+when to stop treatment 613–616,
+614–615t
+benefits of combining 609
+benefits of treatment with 607
+combination of 613
+efficacy of 616, 631
+for rare dementias associated with
+neurological conditions 625
+reactions to 609
+safety and efficacy of 625
+AChE inhibitors. See acetylcholinesterase
+(AChE) inhibitors
+acute behavioural disturbance (ABD) in
+acute admissions
+diagnosis 524
+epidemiology and pathophysiology 524
+outcomes 525
+treatment 524–525
+acute illness 8
+acutely disturbed/violent behaviour 56
+oral/inhaled treatment 56
+parenteral treatment 56–59
+practical measures 59
+zuclopenthixol acetate (ZA) 60–64
+acute mania
+
+first-line treatments for 551t
+physical monitoring for people
+with 279–281, 279f, 280t, 281t
+ADAPT. See Adolescent Depression
+Antidepressants and Psychotherapy
+Trial (ADAPT)
+addictions 451–452. See also alcohol
+ADHD. See attention deficit hyperactivity
+disorder (ADHD)
+adherence, medication 897–898
+assessing 900–901
+Cochrane review of 898
+definition of 897
+depot/long-acting antipsychotics 902
+determinants of 899
+financial incentives 902–903
+impact of non-adherence 898–899
+mapping out interventions 899–901
+monitoring adherence and assessing
+attitudes to 901
+rate of non-adherence to 898
+strategies for improving 899
+taking aids 902
+Adolescent Depression Antidepressants and
+Psychotherapy Trial (ADAPT) 541
+Adrenergic α2 agonists 588
+aducanumab 623
+adverse drug reactions (ADRs) 610
+adverse effect sensitivity 798
+AF. See atrial fibrillation (AF)
+affective illness 679
+ageing body 601
+aggressive behaviours 805t
+agomelatine 337, 389, 705t, 727t, 741t,
+820, 856t, 875t
+agranulocytosis 222, 236–237, 238
+development of 237
+prevalence of 236
+risk factors for 236
+akathisia 114–116
+
+alanine aminotransferase (ALT) 907t
+albumin 908t
+alcohol 860
+acamprosate 463
+advice and recommendations 453
+anticonvulsants 466
+anxiety 469
+assessment and brief structured
+intervention 453–454
+bipolar affective disorder 468–469
+children and adolescents 466–467
+coexisting and benzodiazepine
+dependence 467
+coexisting and opioid dependence 467
+coexisting dependence and cocaine use
+467
+co-morbid and nicotine dependence 467
+co-morbid mental health disorders 468
+concurrent alcohol- and drug-use
+disorders 467
+depression 468
+disulfiram (Antabuse) 464–466
+misusers 861
+nalmefene 464
+naltrexone 463–464
+older adults 467
+pharmacodynamic interactions
+with 862–863t
+pregnancy and alcohol use 466
+relapse prevention 463
+schizophrenia 469
+unit of 453
+Wernicke’s encephalopathy 461
+parenteral B-complex 461–462
+presentation 461
+prophylactic thiamine 461
+withdrawal 454–455, 454–455t
+delirium 472–473, 473t
+fixed-dose reduction
+regimen 459–460
+
+The Maudsley® Prescribing Guidelines in Psychiatry, Fourteenth Edition. David M. Taylor,
+Thomas R. E. Barnes and Allan H. Young.
+© 2021 David M. Taylor. Published 2021 by John Wiley & Sons Ltd.
+
+
+
+
+<<<PAGE 969>>>
+
+948  Index
+
+cocaine 467
+detoxification 511
+substitution treatment 511
+Cochrane systematic review 2018 52
+Cockroft and Gault equation 735
+codeine 638
+cognitive behavioural therapy (CBT) 556
+cognitive decline, consumption of 621
+cognitive enhancers, characteristics of 604,
+605–606t
+cognitive impairment 810
+combined antipsychotic medications
+(antipsychotic polypharmacy) 20
+adverse effects 21–22
+in clinical practice 22
+long-term antipsychotic
+treatment 20–21
+poor response to antipsychotic
+monotherapy 20
+communication impairment 579
+community detoxification 456
+co-morbid autistic spectrum disorder 797
+co-morbid depression 9, 401
+co-morbid disorders 9
+comorbidity, detection and treatment of
+587
+co-morbid mental health disorders 468
+co-morbid psychiatric illness 571
+compliance aids 902
+conventional antipsychotics 296
+covert administration
+algorithm for determining 671f
+guidance on 667–669
+CPY1A2, 852
+CPY2B6, 852
+CPY2C8, 853
+CPY2C9, 853
+CPY2C19, 853
+CPY2D6, 854
+C-reactive protein 909t
+creatine kinase 910t
+creatinine 910t
+Crocus sativus (saffron) 620
+cyclizine 635, 639
+CYP2A6 enzyme 852
+CYP3A4 enzyme 855
+alcohol and substrates for 861–862t
+CYP2B7 enzymes 852
+CYP2E1 enzyme 854
+alcohol and substrates for 861–862t
+CYP450 enzyme 378
+antidepressant effects on 378–379t
+cyproheptadine 925t
+cyproterone 590
+cytochrome P450 (CYP450) enzymes
+635
+darifenacin 631
+dehydration 863
+delirium 13, 638, 778
+choice of drug 15
+clinical subtypes of 13
+diagnostic criteria for 13
+drugs used to treat 15–18, 15–18t
+general principles 14
+management 14
+outcome 14
+pharmacological prophylaxis 15–18,
+
+15–18t
+prevalence 13
+risk factors 13–14
+tools for evaluation 13
+delirium tremens 472–473, 473t
+administration schedules for 473t
+treatment of 472
+delusional intensity 561
+demeclocycline 165t
+dementia 604, 883
+adverse effects, cholinesterase
+inhibitors 610–611
+Alzheimer’s disease (AD) 604
+memantine 604, 605–606t
+cardiovascular effects of drugs 611
+combination treatment 609
+diagnosis 650
+discontinuation of medication 616
+dosing and formulations 608–609
+efficacy of cognitive enhancers used in
+607
+other effects 608
+safer prescribing for physical conditions in
+631
+switching between drugs used in
+607–608
+tolerability 609–610
+dementia with Lewy bodies (DLB) 624
+depot antipsychotics 72
+depot/long-acting antipsychotics 902
+depression 583, 778–779, 805t, 808, 810,
+820, 872
+alcohol 468
+and anxiety 795t
+in childhood and adolescence
+after prescribing 544–545
+clinical guidance 541
+diagnostic issues 541
+medication treatment for 543–544
+before prescribing 542
+summary of pharmacotherapy for
+544t
+what to prescribe 542–544
+description of 305
+and diabetes 401–402, 402t
+drug treatment of 314, 314f
+effects of 404
+NICE guidelines 305–306
+non-drug treatments for 788
+in older people 673–676
+prescribing in 674–675t, 674–676
+in Parkinson’s disease (PD) 814
+post-stroke 362
+prophylaxis 362
+treatment 362–363
+during pregnancy and postpartum 685
+principles of prescribing in 305,
+306t
+psychotic 332–333
+recurrent 374–375, 374f
+second-generation antipsychotics 270
+stimulants in 357–359t
+symptoms of 309
+treatment of 788
+treatment-resistant See treatment-resistant
+depression
+desvenlafaxine 389, 741t
+deutetrabenazine 589, 730t
+
+dexamfetamine/lisdexamfetamine 569,
+571, 716t, 729t
+dexmedetomidine 937t
+dextromethorphan/quinidine, bupropion/
+dextromethorphan 652, 809
+diabetes mellitus 401–402, 402t
+diazepam 472, 771t, 937t
+dibenzoylmethane (DBM) 622
+dietary habits 621
+digoxin 602, 639
+dimebon 619
+discontinuation syndrome 607
+disulfiram (Antabuse)
+alcohol 464–466
+NICE clinical guideline 466
+diuretics 253
+DLB. See dementia with Lewy bodies (DLB)
+domperidone 635
+donepezil (AriceptR) 607, 612, 613,
+614t, 772t
+clinical trials of 624
+Cochrane review for 623
+doses of 609
+sustained release 608
+dopamine 168, 871
+agonists 169, 918t
+antagonists 47
+receptors, super-sensitivity of 28
+dose–response relationship 837
+dose response, systematic analysis of 17
+dosulepin (dothiepin) 742t
+doxepin 368, 742t, 857t
+drinks, content of 865t
+Driver and Vehicle Licensing Agency
+(DVLA) 883
+driving and psychotropic medicines 883
+duty of driver 886
+duty of prescriber 886
+effects of mental illness 883
+medication-induced sedation 885
+medicines 885
+psychiatric medicines, driving and
+UK law 883–885, 884t, 885t
+droperidol 58, 938t
+Drug Attitude Inventory (DAI) 901
+drug–drug interactions 614–615t,
+638–639
+drug-induced parkinsonism 778
+drug interactions with alcohol 860
+metabolism of alcohol 860–862
+pharmacodynamic interactions
+862–863t, 862–864, 864t
+pharmacokinetic interactions 860
+drug-placebo differences 307
+drugs. See also specific drugs
+acceptable use of 925
+classes, tapering other 446
+concentrations 835, 847
+degradation of 847
+distribution of 847
+with established target ranges 835–836t
+interactions 873
+in psychiatric practice 925t
+tolerability 609–610
+dual diagnosis 797
+dual re-uptake inhibitors 308
+duloxetine 308, 688, 706t, 727t, 742t,
+779, 857t
+
+

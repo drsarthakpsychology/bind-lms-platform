@@ -1,0 +1,1355 @@
+<<<PAGE 402>>>
+
+Depression and anxiety disorders  381
+
+CYP1A2
+
+CYP2B6
+
+CYP2C9
+
+CYP2C19
+
+CYP2D6
+
+CYP3A4/5/7
+
+Genetic
+polymorphism
+Ultra-rapid
+metabolisers
+possible
+
+2–10% of total
+hepatic CYP
+content16
+
+5–10% of
+Caucasians
+poor
+metabolisers
+
+~20% of Asians
+and 3–5%
+Caucasians are
+poor metabolisers
+
+3–5% of
+Caucasians poor
+metabolisers
+
+60% p450
+content
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Carbamazepine
+Charcoal cooking
+Tobacco smoke
+Omeprazole
+Phenobarbital
+Phenytoin
+
+Carbamazepine
+Efavirenz
+Lopinavir
+Rifampicin
+Ritonavir
+
+Phenytoin
+Rifampicin
+
+Apalutamide
+Rifampicin
+Enzalutamide
+Artemisinin
+Efavirenz
+
+Carbamazepine
+Phenytoin
+
+Carbamazepine
+Phenytoin
+Prednisolone
+Rifampicin
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Cimetidine
+Ciprofloxacin
+Erythromycin
+Fluvoxamine
+
+Clopidogrel
+Ticlopidine
+Voriconazole
+
+Cimetidine
+Fluoxetine
+Fluvoxamine
+Moclobemide
+Sertraline
+
+Fluconazole
+Fluoxetine
+Fluvoxamine
+Esomeprazole
+Moclobemide
+Omeprazole
+Voriconazole
+Armodafinil
+Etravirine
+Isoniazid
+Modafinil
+Cimetidine
+
+Chlorpromazine
+Bupropion
+Duloxetine
+Fluoxetine
+Fluphenazine
+Haloperidol
+Paroxetine
+Sertraline
+Tricyclics
+
+Erythromycin
+Fluoxetine
+Fluvoxamine
+Grapefruit Juice
+Ketoconazole
+Norfluoxetine
+Paroxetine
+Sertraline
+Tricyclics
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Agomelatine
+Benzodiazepines
+Caffeine
+Clozapine
+Duloxetine
+Haloperidol
+Mirtazapine
+Olanzapine
+Ramelteon
+Theophylline
+Tizanidine
+Tricyclics
+Warfarin
+
+Bupropion
+Methadone
+Tramadol
+
+Agomelatine
+Bupropion
+Citalopram
+Diazepam
+Omeprazole
+Phenytoin
+Tricyclics
+Warfarin
+
+Citalopram
+Diazepam
+Moclobemide
+
+Clozapine
+Codeine
+Donepezil
+Duloxetine
+Haloperidol
+Phenothiazines
+Risperidone
+Tamoxifen
+Tricyclics
+Tramadol
+Trazodone
+Venlafaxine
+Vortioxetine
+
+Calcium
+Blockers
+Carbamazepine
+Clozapine
+Donepezil
+Erythromycin
+Galantamine
+Methadone
+Levomilnacipran
+Mirtazapine
+Reboxetine
+Risperidone
+Statins
+Tricyclics
+Valproate
+Venlafaxine
+Vilazodone
+Vortioxetine
+Z-hypnotics
+
+CHAPTER 3
+
+Table 3.15 Pharmacokinetic interactions – a brief summary of important interactions3,15
+
+
+
+
+<<<PAGE 463>>>
+
+442  The Maudsley® Prescribing Guidelines in Psychiatry
+
+There has been limited formal study into the duration of withdrawal symptoms, with
+some reports of weeks-long duration, but they can last longer than a year, especially in
+the case of long-term use.20,23 For a minority, withdrawal symptoms can be protracted
+and last years, sometimes called the ‘post-acute withdrawal syndrome’.26
+
+Stopping benzodiazepines
+
+CHAPTER 3
+
+If the patient is in agreement, benzodiazepines should be withdrawn. Tapering can be
+difficult and should not be imposed on a patient against their will. A cluster randomised
+trial supports the effectiveness of a face-to-face educational intervention.27 Continuing
+support can be required to prepare a patient for withdrawal and to support them
+through the process (e.g. psychological therapies or self-help groups).28
+
+Dosage reduction (tapering)
+Gradual reduction of benzodiazepine dose reduces the intensity of withdrawal symptoms by spreading them out over a longer time period (and giving time for neural adaptations to the drug to resolve).22 Meta-analysis has confirmed that gradual dose
+reduction (‘tapering’) improves drug cessation rates compared with routine clinical
+care.29 Most studies find that a gradual withdrawal over at least 10 weeks is most successful in achieving long-term abstinence,30 although many patients will require considerably longer (sometimes several years). Sudden benzodiazepine withdrawal has
+potentially fatal consequences, so tapering is always advisable.
+
+Direct taper or switching to diazepam?
+Patients who take short- or intermediate-acting benzodiazepines can be tapered off
+these drugs directly but more than once a day dosing might be required.
+An alternative approach is to switch to an equivalent dose of diazepam (which has a
+long half-life and therefore might provokes less severe withdrawal),20,24 noting that
+some patients report withdrawal symptoms from abrupt switches to diazepam and so
+a step-wise switch is probably prudent. Cochrane is lukewarm about switching to diazepam.30 Approximate ‘diazepam equivalent’31 doses are shown Table 3.29. Owing to
+Table 3.29 Approximate ‘diazepam equivalent’31 doses
+Chlordiazepoxide
+
+25mg
+
+Clonazepam
+
+0.5mg
+
+Diazepam
+
+10mg
+
+Lorazepam
+
+1mg
+
+Lormetazepam
+
+1–2mg
+
+Nitrazepam
+
+10mg
+
+Oxazepam
+
+20mg
+
+Temazepam
+
+20mg
+
+
+
+
+<<<PAGE 464>>>
+
+Depression and anxiety disorders  443
+
+individual differences some patients may require more or less diazepam to control withdrawal symptoms.
+The half-lives of benzodiazepines vary greatly. The degree of sedation that they
+induce also varies, making it difficult to determine exact equivalents. Table 3.28 is an
+approximate guide only. Extra precautions apply in patients with hepatic dysfunction,
+as diazepam and other longer-acting drugs may accumulate to toxic levels.
+
+Pattern of tapering
+The relationship between dose of benzodiazepine and their effect on their principal
+target, the GABA-A receptor, is hyperbolic, with the following implications:
+Reducing dose by fixed amounts (e.g. 12.5mg in Figure 3.6a) will give rise to increasingly large reductions in GABA-A occupancy.
+■■ This is consistent with clinical observation that withdrawal symptoms are non-linearly related to dose reduction (e.g. a 1mg reduction of diazepam is tolerable from
+20mg but intolerable from 5mg32).
+■■ Reducing diazepam dose by 5mg from 50mg will cause a reduction of 2.3 percentage
+points of GABA-A occupancy, but a 5mg reduction from 5mg will cause a reduction
+of 18.3 percentage points.
+In order to reduce the dose of benzodiazepine by equal amounts of effect at their
+major target, hyperbolically reducing doses are required (Figure 3.6b):
+This means that the size of dose reductions should be smaller and smaller as the total
+dose gets smaller.
+■■ In practice, these reductions can be most easily calculated based on a proportion of
+the most recent dose (an exponential pattern).
+■■
+
+(b)
+
+100
+
+GABA-A occupancy (%)
+
+GABA-A occupancy (%)
+
+(a)
+
+80
+60
+40
+20
+
+100
+80
+60
+40
+20
+0
+
+0
+0
+
+50
+Diazepam dose (mg)
+
+100
+
+0
+
+50
+Diazepam dose (mg)
+
+Figure 3.6 (a) Linear reductions of dose cause increasingly large reductions in effect on GABA-A receptor
+occupancy. (b) Reducing effect on GABA-A receptors by even amounts, requires hyperbolically reducing
+doses of diazepam. Note how small final doses will be required to be in order to prevent too large a final
+‘step down’. Adapted from Brouillet et al. (199133).
+
+100
+
+CHAPTER 3
+
+■■
+
+
+
+
+<<<PAGE 466>>>
+
+Depression and anxiety disorders  445
+
+Reductions should be made according to a proportion (e.g. 10%) of the last dose.
+This means the reductions recommended will become smaller and smaller as the total
+dose is lowered. Most patients will be able to proceed between a rate of about 5–10%
+of their most recent dose per month.
+■■ After reduction withdrawal symptoms should be monitored for 2–4 weeks, or until
+symptoms have resolved. Monitoring may take the form of simple measures of symptoms each day (e.g. out of 10) or using standardised benzodiazepine withdrawal
+scales.
+■■ Further reduction should be titrated to the tolerability of this experience. If symptoms
+are intolerable, an increase in dose, a period of stabilisation and more gradual reduction is needed. Mild, tolerable symptoms mean the reduction can continue to reduce
+at the same rate.
+
+Troubleshooting
+If significant withdrawal symptoms emerge at any point, either hold the current dose
+to allow them to resolve, or if intolerable increase to the last dose at which the symptoms were tolerable, and remain there until symptoms resolve. After stabilisation,
+tapering will need to be more gradual: with reduction in smaller amounts and/or
+longer periods in between reductions.
+■■ The experience of distressing withdrawal symptoms does not indicate that a patient
+cannot stop benzodiazepines, but that they will need to taper more slowly, with
+smaller reductions than they have been undertaking (some need to taper at less than
+5% of the most recent dose per month).
+■■ At very small doses, liquid formulations may be required, which are available for
+drugs such as diazepam and lorazepam. Switching to these drugs may therefore be
+useful; other options include specially compounded liquids. Many patients report
+cutting up fragments of tablets and weighing them or making their own solutions
+from crushed tablets, but this approach cannot be recommended.
+■■ Final doses before completely stopping the drug will need to be very small to avoid a
+larger reduction in effect on the brain. For example, for a patient reducing diazepam
+at 10% per month, the final dose will need to be 0.25mg.33
+■■
+
+Reduction schedules
+A simple guide to diazepam dose reductions:
+■■
+
+Reduce by 5–10mg/day every 2–4 weeks, down to a daily dose of 50mg
+
+■■
+
+Reduce by 2–5mg/day every 2–4 weeks, down to a daily dose of 20mg
+
+■■
+
+Reduce by 1–2mg/day every 2–4 weeks, down to a daily dose of 10mg
+
+■■
+
+Reduce by 0.5–1mg/day every 2–4 weeks, down to a daily dose of 5mg
+
+■■
+
+Reduce by 0.25–0.5mg/day every 2–4 weeks, down to a daily dose of 2.5mg
+
+■■
+
+Reduce by 0.1–0.25mg/day every 2–4 weeks until stopped
+
+CHAPTER 3
+
+■■
+
+
+
+
+<<<PAGE 493>>>
+
+472  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 4
+
+Alcohol withdrawal delirium – delirium tremens
+Delirium tremens occurs in around 3–5% of those admitted to hospital for alcohol
+withdrawal, so it is likely to be encountered by those working in psychiatric liaison.1 It
+is an agitated delirium that develops around 72 hours after the last drink. Previous
+seizures or delirium, low potassium, low magnesium, thiamine deficiency and systemic
+disease predispose to its development, as does under-treated alcohol withdrawal.
+Recognising delirium tremens is important because of its high mortality and because its
+treatment is different from delirium arising from other causes (larger doses of benzodiazepines, more caution with antipsychotics).
+This is a prescribing guideline but it bears repeating that delirium tremens is a medical emergency and you need to see the patient. The patient should be nursed in a general
+hospital,2 preferably in a high dependency unit1,3 although in practice this can be difficult to arrange. Appropriate management requires joint work between psychiatric,
+medical and nursing teams, to identify and correct contributing physical factors such as
+electrolyte imbalance, thiamine deficiency and sepsis, while minimising behavioural
+disturbance via psychosocial measures (side room for a low stimulus environment, 1:1
+nursing observations, frequent reorientation and reassurance) and pharmacological
+treatment. ITU outreach or on call should be informed early, and should be directly
+involved if the patient is not accepting oral medication and requires parenteral highdose benzodiazepines.
+The evidence base for treatment of delirium tremens is sparse and is mostly from
+before 1979.1,4 Meta-analysis comparing sedative hypnotics (diazepam, pentobarbital
+and paraldehyde) and antipsychotics found a six-fold increased odds of mortality in
+patients treated with neuroleptics.4 More recent studies comparing IV lorazepam with
+or without phenobarbital, or addition of dexmedetomidine,5 were performed in the
+ICU environment, so have limited applicability to the general ward setting.
+NICE guideline CG100 (update 2017) recommends nursing in a general hospital and
+use of lorazepam orally or IV, with little further elaboration.2 The New South Wales guidance from Australia recommends diazepam and is more detailed (see Table 4.7). A recent
+New England Journal of Medicine (NEJM) review suggests to ‘administer doses of benzodiazepines, preferably intravenously, in doses high enough to produce a lightly dozing, but
+still arousable, state, while monitoring vital signs, until delirium abates’ and lists protocols for use of both lorazepam and diazepam, derived from earlier RCTs1 (see Table 4.7).
+The following points unite these approaches:
+Doses of diazepam or lorazepam are given close together in a ‘loading fashion’ with
+a maximum of an hour apart.
+■■ High doses are permitted.
+■■ Antipsychotics are not used, or are used only after large doses of benzodiazepines
+have failed.
+■■
+
+Thus, available research evidence and more detailed government guidelines advocate
+treatment of delirium tremens, which differs from ordinarily rapid tranquillisation or
+other delirium protocols. This may need to be communicated explicitly to ITU teams,
+who may (unwisely) follow a standard rapid tranquillisation protocol with relatively
+low doses of benzodiazepines, including haloperidol.
+
+
+
+
+<<<PAGE 494>>>
+
+Addictions and substance misuse  473
+
+Table 4.7 Detailed administration schedules for delirium tremens
+New South Wales Guidance3
+
+NEJM diazepam1
+
+NEJM lorazepam1
+
+Regimen 1:
+20mg diazepam orally hourly until
+light sedation achieved
+Max 80mg
+Sublingual olanzapine 10mg if
+continued agitation
+
+Regimen 1:
+10–20mg diazepam orally or IV
+1–4 hourly
+
+Regimen 1:
+8mg lorazepam orally, IM or IV every
+15 minutes (2 doses). If a third dose
+required, give 8mg IV When
+sedation achieved give 10–30mg/
+hour
+Regimen 2:
+1–4mg lorazepam IM every 30–60
+minutes until sedation achieved then
+hourly as needed
+Regimen 3:
+1–4mg lorazepam IV every 5–15
+minutes as needed
+
+All patients with delirium tremens should have IV thiamine (as Pabrinex in the UK)
+at treatment dose, as malnutrition is a known predisposing cause of DTs. Sufficient
+sedation should be achieved to facilitate the giving of this treatment and IV
+rehydration.
+Clinical experience indicates that medical and ITU teams are most comfortable with
+NSW Regime 1 (oral diazepam loading) or NEJM Regime 2 (IM lorazepam), in the first
+instance. NICE suggests that haloperidol can be used to manage behavioural disturbance in delirium tremens, but others urge caution in view of its cardiotoxicity and
+propensity to provoke seizures.1,2 Both NICE and the New South Wales guidance suggest
+olanzapine as a possibility for behavioural disturbance refractory to benzodiazepines.2,3
+Loading of benzodiazepines should not be done in patients with chronic obstructive
+pulmonary disease (COPD) or other respiratory compromise and it is more likely that
+these patients will require respiratory support in order to tolerate medically assisted
+detoxification, so early involvement of the ITU team is critical. Care should be taken to
+monitor respiratory rate (RR) and oxygenation particularly in those patients who are
+smokers and may have occult respiratory disease. Prescription of ‘when necessary’
+flumazenil to reverse benzodiazepine toxicity is advisable.
+
+References
+1. Schuckit MA. Recognition and management of withdrawal delirium (delirium tremens). N Engl J Med 2014; 371:2109–2113.
+2. National Institute for Health and Clinical Excellence. Alcohol-use disorders: physical complications. Clinical Guidance [CG100]. 2010 (last
+updated April 2017); https://www.nice.org.uk/guidance/cg100.
+3. NSW Government. Drug and alcohol withdrawal clinical practice guidelines. 2008; https://www1.health.nsw.gov.au/pds/
+ActivePDSDocuments/GL2008_011.pdf.
+4. Mayo-Smith MF, et al. Management of alcohol withdrawal delirium. An evidence-based practice guideline. Arch Intern Med 2004;
+164:1405–1412.
+5. Nguyen TA, et al. Phenobarbital and symptom-triggered lorazepam versus lorazepam alone for severe alcohol withdrawal in the intensive
+care unit. Alcohol 2020; 82:23–27.
+
+CHAPTER 4
+
+Regimen 2:
+If unable to accept diazepam, IV
+midazolam 5mg, then 2mg/hour in
+HDU setting
+2mg lorazepam is an alternative to
+IV midazolam if it is not available
+
+Regimen 2:
+5mg IV bolus
+Then 10mg IV boluses every 10
+minutes × 2
+Then 20mg IV bolus if needed
+Then 5–20mg IV diazepam/hour
+
+
+
+
+<<<PAGE 536>>>
+
+Addictions and substance misuse  515
+
+Information Service (NPIS), specifically the NPIS 24-hour telephone service and the
+poisons information database TOXBASE®.
+The two scenarios with which clinicians should be conversant are unplanned acute
+withdrawal and planned elective withdrawal in dependent users.
+
+Table 4.18 Management of acute unplanned withdrawal
+Setting
+
+■■
+
+Initial
+pharmacotherapy
+
+■■
+
+Adjunctive
+pharmacotherapy
+
+■■
+
+Acute unplanned withdrawal is a medical emergency and should be managed in the
+acute hospital inpatient setting
+■■ Severe withdrawal may require admission to an intensive care unit
+Initiate diazepam 20mg PO when early withdrawal symptoms are observed
+Diazepam can be repeated at 30 minutes to 4 hourly intervals until symptoms are controlled
+■■ Most cases of GBL withdrawal require 60–80mg diazepam in the first 24 hours
+■■ Higher daily dosages of up to 300mg PO diazepam may be necessary
+■■ If the patient becomes drowsy, withhold diazepam and review diagnosis
+■■ One-to-one nursing care may assist in managing severe cases
+■■ Have flumazenil to hand should reversal of effects be required
+Initiate baclofen 10mg PO tds in combination with benzodiazepine withdrawal regimen
+where benzodiazepines prove to be inadequate
+■■ This can be titrated to 20mg PO tds in cases of continued anxiety and agitation
+■■ In cases of severe withdrawal consider addition of phenobarbital in doses of 150–450mg/
+day IV* (ICU only)
+■■ In cases where severe withdrawal remains uncontrolled, IV anaesthetic such as propofol*
+may be required (ICU only). Thiopental* coma has also been used in severe resistant
+withdrawal8
+
+*The respiratory depressant effects of phenobarbital, thiopental and propofol cannot be reversed, and facilities for
+mechanical ventilation should be available.
+ICU, intensive care unit; IV, intravenous; po, per os (by mouth); tds, ter die sumendum (three times a day).
+
+Table 4.19 Management of planned elective withdrawal
+Setting
+
+■■
+■■
+
+Pre-withdrawal
+
+All patients undergoing planned withdrawal should be medically supervised
+Ambulatory community detoxification should only be attempted where there is no history of delirium or psychosis. A third party should be at home who is able to monitor
+and support the withdrawal process. There should be the option of transferring the
+patient to an inpatient unit if symptoms are not well controlled
+
+Discuss treatment plan with the patient and person who will be supporting them
+Encourage the patient to keep a week-long diary of GBL use, including dose frequency
+and quantity
+■■ Encourage the patient to cease ‘on-top’ drug use such as mephedrone and crystal methamphetamine, prior to elective withdrawal
+■■ Start baclofen 10mg PO tds 3–7 days before target withdrawal date
+■■ Encourage patients to reduce GBL dose as much as tolerable either by reducing each
+dose by 0.1mL every 1–2 days or increasing the time period between doses
+■■
+■■
+
+CHAPTER 4
+
+■■
+
+
+
+
+<<<PAGE 537>>>
+
+CHAPTER 4
+
+516  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Withdrawal
+
+■■
+
+Post-withdrawal
+
+■■
+
+On day 1 of planned ambulatory withdrawal, ask the patient to attend having used no
+GBL for a minimum of 2 hours, and advise to dispose of their remaining supplies of GBL
+■■ Advise patients who will need to stay at the clinic for up to 4 hours on day 1 that they
+cannot drive motor vehicles during withdrawal, and should not drink alcohol or take
+other sedatives during withdrawal
+■■ Increase baclofen to 20mg PO tds
+■■ Initiate benzodiazepine treatment once signs and symptoms of withdrawal develop –
+tachycardia, sweaty palms, fine tremor, anxiety. Start diazepam 20mg, review after 2
+hours and monitor for anxiety/sedation/respiratory depression. Repeat up to 20mg PO
+diazepam if indicated
+■■ Once 6 hours have passed since the last GBL usage, the patient may be given up to a
+further 40mg diazepam, and then seen on the following 2 days
+■■ At each daily visit, review diazepam dosage and titrate to symptoms. Diazepam is seldom
+needed beyond 7 days. Typical initial daily doses of diazepam are around 40–60mg/day
+Continue baclofen 20mg PO tds following benzodiazepine withdrawal reducing over
+4–6 weeks. One of the few trials in this area successfully used 45–60mg a day for 3
+months9
+■■ After withdrawal, persisting anxiety and insomnia are common, and there is a high
+risk of relapse. Before initiating elective withdrawal management, a plan should be in
+place to monitor and support patients for a minimum of 4 weeks to minimise the risk of
+relapse
+
+po, per os (by mouth); tds, ter die sumendum (three times a day).
+
+References
+1. Kamal RM, et al. Pharmacological treatment in gamma-hydroxybutyrate (GHB) and gamma-butyrolactone (GBL) Dependence: detoxification and relapse prevention. CNS Drugs 2017; 31:51–64.
+2. Bell J, et al. Gamma-butyrolactone (GBL) dependence and withdrawal. Addiction 2011; 106:442–447.
+3. Novel Psychoactive Treatment UK Network (NEPTUNE). Guidance on the clinical management of acute and chronic harms of club drugs
+and novel psychoactive substances. 2015; http://neptune-clinical-guidance.co.uk/wp-content/uploads/2015/03/NEPTUNE-GuidanceMarch-2015.pdf.
+4. LeTourneau JL, et al. Baclofen and gamma-hydroxybutyrate withdrawal. Neurocrit Care 2008; 8:430–433.
+5. Floyd CN, et al. Baclofen in gamma-hydroxybutyrate withdrawal: patterns of use and online availability. Eur J Clin Pharmacol 2018;
+74:349–356.
+6. Dijkstra BA, et al. Detoxification with titration and tapering in gamma-hydroxybutyrate (GHB) dependent patients: the Dutch GHB monitor
+project. Drug Alcohol Depend 2017; 170:164–173.
+7. Beurmanjer H, et al. Tapering with pharmaceutical GHB or benzodiazepines for detoxification in GHB-dependent patients: a matched-subject observational study of treatment-as-usual in Belgium and the Netherlands. CNS Drugs 2020; 34:651–659.
+8. Vos CF, et al. Successful treatment of severe, treatment resistant GHB withdrawal through thiopental-coma. Subst Abus 2020; 1–6.
+9. Beurmanjer H, et al. Baclofen to prevent relapse in gamma-hydroxybutyrate (GHB)-dependent patients: a multicentre, open-label, non-randomized, controlled trial. CNS Drugs 2018; 32:437–442.
+
+
+
+
+<<<PAGE 538>>>
+
+Addictions and substance misuse  517
+
+Benzodiazepine prescribing increased during the 1960s and 1970s, mainly because of
+their improved safety profile relative to barbiturates. However, it was soon noted that
+benzodiazepines have a high potential for causing dependence. Prescriptions originally
+started for other disorders were often continued long term and led to the development of
+dependence. This was and is particularly common in older patients and those with anxiety
+spectrum disorders or depression. In England, the prescribing of benzodiazepines has
+fallen to 14.9 million prescription items in 2018–2019, from 16.3 million in 2015–2016.
+There are a number of novel or ‘designer’ benzodiazepines (e.g. etizolam, flualprazolam, flunitrazolam and norfludiazepam). There is limited information available about
+the health and social harms of these substances, but they are likely to be similar to or
+worse than the established benzodiazepines.1 Some of these benzodiazepines (flualprazolam, flunitrazolam and norfludiazepam) are classified in Schedule 1 in the UK – pharmaceutical benzodiazepines are in Schedule 3 or 4. Outside being prescribed,
+benzodiazepines can be acquired via the illicit market, diversion of scripts and Internet
+purchasing (thought to be a rising trend).2
+Benzodiazepine dependence can be thought of as either iatrogenic (low daily doses
+prescribed over many years) or non-iatrogenic (high doses, illicitly obtained, consumed
+intermittently).
+
+Discontinuation
+A previously published (now withdrawn) Cochrane review evaluated the evidence for
+pharmacological interventions for benzodiazepine mono-dependence, and concluded
+that a gradual reduction of benzodiazepine dose was preferable to an abrupt discontinuation.3 A more recent review confirmed that withdrawal over a period of less than
+6 months is appropriate for most patients4 and the UK drug misuse and dependence
+guidelines suggest a reduction of about one-eighth of the daily dose every 2 weeks.5 The
+Australian GP guidelines comment that the evidence for the ‘optimal rate of tapering is
+lacking’ and ‘the exact rate of reduction should be individualised according to the drug,
+dose and duration of treatment’.6
+A meta-analysis supports the effectiveness of multi-faceted prescribing interventions
+(usually including psychological interventions/support) in reducing benzodiazepine use
+in older patients,7 and one RCT has demonstrated that a simple educational approach
+based on self-efficacy theory resulted in about a quarter of long-term elderly benzodiazepine users engaging voluntarily in reducing and discontinuing use.8 A 2018 Cochrane
+review could find no pharmaceutical add-on that could help facilitate the withdrawal
+process. Some drugs seemed to be associated with some beneficial effects, but the evidence quality was too low for any clinical recommendations to be made.9
+A large number of patients presenting to addiction services may be using illicit benzodiazepines in addition to their primary substance of abuse. People with non-iatrogenic
+benzodiazepine dependence often consume doses greater than 100mg diazepam a day.
+Although some services provide prescriptions for benzodiazepines, there is no evidence
+that substitute prescribing of benzodiazepines ultimately reduces benzodiazepine misuse.
+If benzodiazepines are prescribed, this should ideally be for a short-term, time-limited
+(2–3 weeks) prescription and with a view to detoxification.
+
+CHAPTER 4
+
+Benzodiazepine misuse
+
+
+
+
+<<<PAGE 539>>>
+
+518  The Maudsley® Prescribing Guidelines in Psychiatry
+
+If patients have been prescribed benzodiazepines for a substantial period of time, it
+may be preferable to convert to equivalents of diazepam as this is longer acting and so
+less likely to be associated with withdrawal symptoms. Benzodiazepine dependence as
+part of polysubstance dependence should also be treated by a gradual withdrawal of
+the medication. Benzodiazepines prescribed at greater than 30mg diazepam equivalent
+per day may cause harm5 and so this should be avoided if at all possible (such doses are
+rare in iatrogenic dependence10). Psychosocial interventions including contingency
+management have had some success at reducing benzodiazepine use. A Cochrane review
+found that ‘there is evidence to support the use of CBT plus taper to reduce BZD use in
+the short term. There is currently no evidence to support the use of MI. In addition,
+there is some emerging evidence that simple interventions, such as structured consultation and individually tailored GP letters, may be worth exploring further.’11
+
+CHAPTER 4
+
+Pregnancy and benzodiazepine misuse
+Benzodiazepines are not major human teratogens but should ideally be gradually discontinued before a planned pregnancy. If a woman is prescribed benzodiazepines and
+found to be pregnant, the prescription should be gradually withdrawn over as short a
+time as possible, being mindful of the risk of withdrawal seizures and the potential
+consequences for the pregnant woman and foetus. A risk–benefit analysis should be
+undertaken and specialist advice sought (see section ‘Pregnancy’ in Chapter 7). As for
+all patients, it may be appropriate for a woman dependent on benzodiazepines to be
+stabilised on diazepam, prior to dose reduction.5
+
+Summary
+Benzodiazepines should be withdrawn at a rate of around one-eighth of the dose every 2 weeks.
+Discontinuation should usually be completed within 6 months.
+■■ Switching to an equivalent dose of diazepam before withdrawal is commonplace.
+■■ Benzodiazepine misuse is frequently seen in multi-substance misuse where opioids may be the
+primary drug of dependence.
+■■
+■■
+
+Typical diazepam withdrawal schedule for iatrogenic dependence
+Baseline
+
+30mg/day
+
+Week 2
+
+25mg/day
+
+Week 4
+
+20mg/day
+
+Week 6
+
+18mg/day
+
+Week 8
+
+16mg/day
+
+Week 10
+
+14mg/day
+
+Week 12
+
+12mg/day
+
+Week 14
+
+10mg/day
+
+Then reduce by 2mg/day every 2 weeks if tolerated.
+
+
+
+
+<<<PAGE 685>>>
+
+Agitation
+
+Agitation
+
+Insomnia
+
+Diazepam
+
+Lemborexant24
+
+Specific indication/additional
+notes
+
+Clonazepam
+
+Anxiolytics/hypnotics
+
+Drug
+
+5mg nocte
+(take no more than once per
+night, immediately before bed)
+
+1mg tds
+
+0.5mg daily
+
+Starting dose
+
+5–10mg nocte
+
+1mg tds*
+
+1–2mg/day*
+
+Usual maintenance dose
+
+Sodium valproate: 100–200mg
+bd*
+
+Sodium valproate: 50mg bd
+(liquid) or 100mg bd*
+
+Agitation in dementia (not
+licensed and not recommended)
+Check response, tolerability and
+plasma levels for guide
+
+10mg nocte
+Elderly are at a higher risk of falls.
+Caution when using doses >5mg
+in patients ≥65 years old
+
+7.5–15mg/day in divided doses
+(for anxiety)
+
+4mg/day*
+
+Maximum dose in elderly
+
+Sodium valproate: 200mg bd*
+
+Sodium valproate: 400mg bd*
+Semi-sodium valproate: 1 g
+daily*
+
+Sodium valproate: 200–400mg
+bd*
+Semi-sodium valproate: 500mg
+to 1g daily*
+
+Sodium valproate: 100–200mg
+bd*
+Semi-sodium valproate: 250mg
+daily or bd*
+
+Bipolar disorder
+Check LFTs and consider
+checking plasma levels
+
+Sodium valproate
+
+600–1200mg daily (aim for
+plasma levels 0.4–0.7 mmol/L in
+elderly)23
+
+200–600mg daily*
+
+100*–200mg nocte
+
+Bipolar disorder
+Mania/depression
+Caution: drug interactions
+Check renal and thyroid
+function and regularly monitor
+plasma levels
+
+Lithium carbonate M/R
+
+Maximum dose in elderly
+
+Usual maintenance dose
+
+Starting dose
+
+Specific indication/Additional
+notes
+
+Drug
+
+(Continued )
+
+
+
+
+<<<PAGE 850>>>
+
+Prescribing in patients with psychiatric illness at the end of life
+Generally, prescribing in patients with psychiatric illness who are approaching end of
+life should follow the principles of good prescribing practice in palliative care.1 This
+includes reviewing the appropriateness of a drug, its dose and potential for its discontinuation. Furthermore, if swallowing becomes impaired, it includes making adjustments, such as the use of liquid preparations or parenteral administration.
+There is a lack of specific guidance around long-term psychiatric medications in this
+setting to support clinicians. This adds to reluctance, particularly by generalists, to
+adjust or stop such drugs.2,3 This suggests there is scope for improved liaison between
+non-psychiatry and psychiatry services.
+Physical deterioration may impact on factors (e.g. reducing smoking, drinking less
+fluid) which in turn alter a drug’s pharmacokinetics and/or pharmacodynamics, making
+ongoing review important. Furthermore, polypharmacy is common, increasing the risk
+of drug–drug interaction and toxicity, for example, tramadol and SSRI antidepressants
+leading to serotonin toxicity.
+Depression is common4 but often not recognised at the end of life.5 This is important,
+given that antidepressants may be beneficial even when prognosis is short.6 Mirtazapine
+and citalopram are most strongly supported for use in this population.7 Psychostimulants
+such as modafinil may reduce symptoms of depression in the short term, but there is
+less evidence for sustained effectiveness.8
+There is a lack of evidence to guide drug management of anxiety at the end of life.9,10
+Non-drug approaches have a stronger evidence base for effectiveness.11
+Though commonly used for management of delirium, evidence of effectiveness of
+antipsychotics is mixed. Nonetheless, national guidelines support their use for very
+distressed patients or those for whom other approaches have been unsuccessful.12
+Table 10.14 Examples of drugs prescribed in psychiatry which are also used for symptom management in
+palliative care1
+Symptom
+
+Example drugs
+
+Neuropathic pain
+
+Amitriptyline
+Imipramine
+Duloxetine
+Gabapentin/pregabalin
+Clonazepam
+
+Nausea and vomiting
+
+Haloperidol
+Olanzapine
+Lorazepam
+
+Anorexia
+
+Mirtazapine
+
+Skeletal muscle spasm
+
+Diazepam
+(Continued)
+
+CHAPTER 10
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  829
+
+
+
+
+<<<PAGE 874>>>
+
+Pharmacokinetics  853
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Zopiclone*
+
+Not known
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Bupropion*
+Fluoxetine*
+Lamotrigine
+Phenobarbital
+Phenytoin
+Sertraline*
+Valproate
+
+Fluoxetine*
+Fluvoxamine
+Modafinil
+Valproate
+
+Carbamazepine
+SJW
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Carbamazepine*
+Citalopram
+Clomipramine*
+Diazepam
+Escitalopram
+Fluoxetine*
+Imipramine*
+?Melatonin
+?Methadone
+Moclobemide
+Phenytoin
+Sertraline*
+Suvorexant
+Trimipramine*
+
+Escitalopram*
+Fluvoxamine
+Moclobemide
+Modafinil
+Topiramate
+
+Carbamazepine
+SJW
+
+CPY2C9
+
+CPY2C19
+
+CHAPTER 11
+
+CPY2C8
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 908>>>
+
+15. Brunnauer A, et al. The effects of most commonly prescribed second generation antidepressants on driving ability: a systematic review : 70th
+Birthday Prof. Riederer. J Neural Transm 2013; 120:225–232.
+16. Bramness JG, et al. Minor increase in risk of road traffic accidents after prescriptions of antidepressants: a study of population registry data
+in Norway. J Clin Psychiatry 2008; 69:1099–1103.
+17. Verster JC, et al. Psychoactive medication and traffic safety. Int J Environ Res Public Health 2009; 6:1041–1054.
+18. Iwamoto K, et al. The effects of acute treatment with paroxetine, amitriptyline, and placebo on driving performance and cognitive function
+in healthy Japanese subjects: a double-blind crossover trial. Human Psychopharmacol 2008; 23:399–407.
+19. Ridout F, et al. A placebo controlled investigation into the effects of paroxetine and mirtazapine on measures related to car driving performance. Human Psychopharmacol 2003; 18:261–269.
+20. Wingen M, et al. Actual driving performance and psychomotor function in healthy subjects after acute and subchronic treatment with escitalopram, mirtazapine, and placebo: a crossover trial. J Clin Psychiatry 2005; 66:436–443.
+21. Miyata A, et al. Driving performance of stable outpatients with depression undergoing real-world treatment. Psychiatry Clin Neurosci 2018;
+72:399–408.
+22. Verster JC, et al. Mirtazapine as positive control drug in studies examining the effects of antidepressants on driving ability. Eur J Pharmacol
+2015; 753:252–256.
+23. Theunissen EL, et al. A randomized trial on the acute and steady-state effects of a new antidepressant, vortioxetine (Lu AA21004), on actual
+driving and cognition. Clin Pharmacol Ther 2013; 93:493–501.
+24. Ip EJ, et al. The effect of trazodone on standardized field sobriety tests. Pharmacotherapy 2013; 33:369–374.
+25. Brunnauer A, et al. Driving performance and psychomotor function in depressed patients treated with agomelatine or venlafaxine.
+Pharmacopsychiatry 2015; 48:65–71.
+26. van de Loo A, et al. The effects of intranasal esketamine (84 mg) and oral mirtazapine (30 mg) on on-road driving performance: a doubleblind, placebo-controlled study. Psychopharmacology (Berl) 2017; 234:3175–3183.
+27. Grabe HJ, et al. The influence of clozapine and typical neuroleptics on information processing of the central nervous system under clinical
+conditions in schizophrenic disorders: implications for fitness to drive. Neuropsychobiology 1999; 40:196–201.
+28. Wylie KR, et al. Effects of depot neuroleptics on driving performance in chronic schizophrenic patients. J Neurol Neurosurg Psychiatry 1993;
+56:910–913.
+29. Brunnauer A, et al. The impact of antipsychotics on psychomotor performance with regards to car driving skills. J Clin Psychopharmacol
+2004; 24:155–160.
+30. Dassanayake T, et al. Effects of benzodiazepines, antidepressants and opioids on driving: a systematic review and meta-analysis of epidemiological and experimental evidence. Drug Saf 2011; 34:125–156.
+31. Rudisill TM, et al. Medication use and the risk of motor vehicle collisions among licensed drivers: a systematic review. Accid Anal Prev 2016;
+96:255–270.
+32. Poceta JS. Zolpidem ingestion, automatisms, and sleep driving: a clinical and legal case series. J Clin Sleep Med 2011; 7:632–638.
+33. Verster JC, et al. Hypnotics and driving safety: meta-analyses of randomized controlled trials applying the on the-road driving test. Current
+Drug Safety 2006; 1:63–71.
+34. Vermeeren A, et al. On-the-road driving performance the morning after bedtime administration of lemborexant in healthy adult and elderly
+volunteers. Sleep 2019; 42:zsy260.
+35. Vermeeren A, et al. On-the-road driving performance the morning after bedtime use of suvorexant 15 and 30 mg in healthy elderly.
+Psychopharmacology (Berl) 2016; 233:3341–3351.
+36. Etminan M, et al. Use of lithium and the risk of injurious motor vehicle crash in elderly adults: case-control study nested within a cohort. BMJ
+2004; 328:558–559.
+37. Hashemian F, et al. A comparison of the effects of reboxetine and placebo on reaction time in adults with Attention Deficit-Hyperactivity
+Disorder (ADHD). Daru 2011; 19:231–235.
+38. Classen S, et al. Evidence-based review on interventions and determinants of driving performance in teens with attention deficit hyperactivity
+disorder or autism spectrum disorder. Traffic Inj Prev 2013; 14:188–193.
+39. Hetland A, et al. Medications and impaired driving. Ann Pharmacother 2014; 48:494–506.
+40. Strand MC, et al. Pharmacokinetics of single doses of methadone and buprenorphine in blood and oral fluid in healthy volunteers and correlation with effects on psychomotor and cognitive functions. J Clin Psychopharmacol 2019; 39:489–493.
+41. Sjo O, et al. Pharmacokinetics and side-effects of clonazepam and its 7-amino-metabolite in man. Eur J Clin Pharmacol 1975; 8:249–254.
+42. Berlin A, et al. Pharmacokinetics of the anticonvulsant drug clonazepam evaluated from single oral and intravenous doses and by repeated
+oral administration. Eur J Clin Pharmacol 1975; 9:155–159.
+43. Rutherford DM, et al. Plasma concentrations of diazepam and desmethyldiazepam during chronic diazepam therapy. Br J Clin Pharmacol
+1978; 6:69–73.
+44. Wickstrom E, et al. Pharmacokinetic and clinical observations on prolonged administration of flunitrazepam. Eur J Clin Pharmacol 1980;
+17:189–196.
+45. Mattila MA, et al. Flunitrazepam: a review of its pharmacological properties and therapeutic use. Drugs 1980; 20:353–374.
+46. Greenblatt DJ, et al. Single- and multiple-dose kinetics of oral lorazepam in humans: the predictability of accumulation. J Pharmacokinet
+Biopharm 1979; 7:159–179.
+47. Greenblatt DJ, et al. Pharmacokinetic comparison of sublingual lorazepam with intravenous, intramuscular, and oral lorazepam. J Pharm Sci
+1982; 71:248–252.
+
+CHAPTER 13
+
+Psychotropic drugs in special conditions  887
+
+
+
+
+<<<PAGE 933>>>
+
+912  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 14
+
+Table 14.2 (Continued)
+Parameter
+
+Reference range10
+
+Agents reported to raise levels
+
+Agents reported to
+lower levels
+
+Sodium
+
+133–146mmol/L
+
+Lithium (in overdose)
+
+Antidepressants:
+especially SSRIs/SNRIs;
+others also implicated
+Antipsychotics: all
+(via SIADH)
+Mood stabilisers:
+carbamazepine,
+lithium, valproate
+Other: benzodiazepines,
+clonidine, donepezil,
+memantine, rivastigmine
+Hyponatraemia should
+be considered in any
+patient on an
+antidepressant who
+develops confusion,
+convulsions or
+drowsiness
+
+Testosterone
+
+Males: 9.9–27.8nmol/L
+Females: 0.22– 2.9nmol/L
+
+Diazepam
+
+Opioids, ramelteon
+
+Thyroid-stimulating
+hormone
+
+0.3–4.0mU/L
+
+Aripiprazole, carbamazepine, lithium, Moclobemide, thyroid
+agents
+quetiapine, rivastigmine, sertraline,
+valproate (slightly)
+
+Thyroxine
+
+Free: 9–26pmol/L
+Total: 60–150nmol/L
+
+Rarely; amfetamine (heavy abuse),
+moclobemide, propranolol
+
+Triglycerides
+
+Barbiturates,
+carbamazepine,
+liothyronine, lithium
+(causes decreased T4
+secretion), opioids,
+phenytoin, valproate.
+Rarely implicated:
+aripiprazole, clozapine,
+quetiapine,
+rivastigmine, sertraline
+None known
+
+Triiodothyronine
+
+Free 3.0–6.8pmol/L; total
+1.2–2.9nmol/L
+
+Heroin, methadone
+
+Free T3: valproate; total
+T3: carbamazepine,
+lithium, propranolol
+
+Urate (uric acid)
+
+Females: 0.16–0.36mmol/L Alcohol (acute), caffeine (false positive), Sertraline (slightly)
+clozapine, levodopa, olanzapine, pindolol,
+Males: 0.21–0.43mmol/L
+prazosin, topiramate, zonisamide
+(increases with age)
+
+Urea
+
+2.5–7.8mmol/L
+(increases with age)
+
+Carbamazepine, levodopa; rarely with None known
+agents associated with anticonvulsant
+hypersensitivity syndrome and
+rhabdomyolysis
+
+*May also be associated with hypoglycaemia.
+†
+May also be associated with subnormal prolactin levels.
+
+

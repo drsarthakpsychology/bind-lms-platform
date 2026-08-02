@@ -1,0 +1,854 @@
+<<<PAGE 412>>>
+
+It consists of seven interactive computer games that target changes in facial
+expression, attention to the eye region of the face, holistic face recognition,
+and identifying emotional expression. An RCT of this program with children
+with autism spectrum disorder provided evidence that after 20 hours of face
+training with Let’s Face It!, compared to the control group, the trained
+children demonstrated improvement in their ability to focus on the eye region
+of a face and improved their analytic and holistic face-processing skills.
+Several studies using virtual reality environments to teach children with
+autism spectrum disorder social skills and interaction have provided evidence
+of their value. In one study, a virtual café for children with autism spectrum
+disorder allowed the children to practice ordering and paying for drinks and
+food by navigation with the use of a computer mouse.
+Psychopharmacological Interventions
+Psychopharmacological interventions in autism spectrum disorder help
+ameliorate behavioral symptoms rather than core features of autism spectrum
+disorder. Target symptoms include irritability, broadly including aggression,
+temper tantrums, and self-injurious behaviors, hyperactivity, impulsivity, and
+inattention.
+Irritability. Two second-generation antipsychotics, risperidone, and
+aripiprazole, have been approved by the Food and Drug Administration
+(FDA) in the United States for treatment of irritability in individuals with
+autism spectrum disorder. Risperidone, a high-potency antipsychotic with
+combined dopamine (D2) and serotonin (5-HT2) receptor antagonist
+properties, has been shown to subdue aggressive or self-injurious behaviors
+in children with and without autism spectrum disorder. There have been
+seven RCTs, three reanalysis studies, and two add-on studies, which have
+converged to confirm risperidone as an efficacious pharmacologic treatment
+for irritability in children and adolescents with autism spectrum disorder.
+Typical doses range from 0.5 to 1.5 mg. Some of the preschoolers in this
+study were also receiving intensive behavioral treatments. Risperidone is
+considered the first-line of medication treatment for children and adolescents
+with autism spectrum disorder who exhibit severe irritability. Despite its
+efficacy, risperidone’s main side effects of weight gain and increased
+
+
+
+
+<<<PAGE 413>>>
+
+appetite, metabolic side effects such as hyperglycemia, prolactin elevation,
+and dyslipidemia, along with other common adverse effects such as fatigue,
+drowsiness, dizziness, and drooling, have limited its use in some individuals.
+Risperidone should be used with caution in individuals with underlying
+cardiac abnormalities or hypotension, since risperidone may contribute to
+orthostatic hypotension. In further continuation studies of risperidone in the
+treatment of irritability in autism spectrum disorder, persistent efficacy and
+tolerability were found over 6 months, with a rapid return of symptoms in
+good responders when discontinuing the risperidone. Other drugs studied in
+the treatment of irritability in autism spectrum disorder include aripiprazole
+and olanzapine.
+Two extensive studies utilizing aripiprazole in the treatment of tantrums,
+aggression, and self-injury in children and adolescents with autism spectrum
+disorder found that aripiprazole was both efficacious and safe. Doses ranged
+from 5 to 15 mg/day. The main side effects included sedation, dizziness,
+insomnia, akathisia, nausea, and vomiting. Although weight gain was not as
+pronounced as with risperidone, it was still considered a moderate adverse
+event, with approximately 1.3 to 1.5 kg gained during an 8-week study
+period. The weight gain was similar at the lower and higher doses.
+Olanzapine, which blocks 5-HT2A and D2 receptors and also blocks
+muscarinic receptors, has been studied in children and adolescents with
+autism spectrum disorder for the treatment of irritability with a trend toward a
+positive response; however, significant weight gain of approximately 3.5 kg
+occurred. The main side effect was sedation.
+Hyperactivity, Impulsivity, and Inattention. There have been several
+randomized placebo-controlled trials of methylphenidate for the treatment of
+hyperactivity, impulsivity, and inattention in children and adolescents with
+autism spectrum disorder. The Research Units of Pediatric
+Psychopharmacology found methylphenidate to be at least moderately
+efficacious at doses of 0.25 to 0.5 mg/kg for youth with autism spectrum
+disorder and ADHD symptoms. The efficacy of methylphenidate in this
+population was less effective than in children with ADHD without autism
+spectrum disorder, and children with autism spectrum disorder developed
+more frequent side effects, including increased irritability, compared to
+ADHD children. A study of methylphenidate in the treatment of hyperactivity
+
+
+
+
+<<<PAGE 414>>>
+
+and inattention in preschoolers with autism spectrum disorder found the
+stimulant safe and relatively efficacious; half of the preschoolers developed
+side effects including increased stereotypies, gastrointestinal upset, sleep
+problems, and emotional lability. Among nonstimulants, one double-blind
+placebo-controlled study of hyperactivity, impulsivity, and inattention using
+atomoxetine in children with autism spectrum disorder found that it was
+significantly more effective than placebo. Side effects included sedation,
+irritability, constipation, and nausea. Clonidine, an α-agonist, has also been
+studied in children with autism spectrum disorder for the treatment of
+hyperactivity with mixed results. Guanfacine may also help in some cases.
+Repetitive and Stereotypic Behavior. Antidepressants and mood
+stabilizers have been studied for the treatment of these core symptoms of
+autism spectrum disorder. One study with fluoxetine found the medication
+group only slightly better and not significantly better than the placebo group
+regarding the target symptoms, and another trial with escitalopram found no
+difference between groups. Risperidone, however, was found to be effective
+in targeting irritability, and restrictive and repetitive behaviors were
+improved. One study using valproate in a 12-week trial with 55 children with
+a mean age of 9½ years with autism spectrum disorder found that those who
+were considered responders to irritability also spent less time engaging in
+repetitive behaviors.
+Agents Administered for Behavioral Impairment in Autism
+Spectrum Disorder Based On Open Trials. Quetiapine is an
+antipsychotic with more potent 5-HT2A than D2 receptor blocking properties.
+Although there are only open-label trials with this agent, some experts use
+this when risperidone and olanzapine fail or are intolerable. Doses range from
+50 to 200 mg/day. Adverse effects include drowsiness, tachycardia, agitation,
+and weight gain.
+Clozapine has a heterocyclic chemical structure that is related to certain
+first-generation antipsychotics, such as loxapine, although clozapine carries a
+lower risk of extrapyramidal symptoms. It is not generally used in the
+treatment of aggression and self-injurious behavior unless those behaviors
+coexist with psychotic symptoms. The most severe adverse effect is
+agranulocytosis, which necessitates monitoring white blood cell count weekly
+
+
+
+
+<<<PAGE 503>>>
+
+was able to manage the urge without performing the tic. The treatment
+team referred Jake to a child and adolescent psychiatrist who decided to
+re-start the Concerta at 36 mg/day and titrated it back up to 54 mg/day
+without worsening of the tics. Jake responded well to his behavioral
+therapy, and over 8 weeks, he had learned how to become aware of the
+urges that occurred before his tics and to replace his usual tics with lessdistressing and less-disruptive behaviors.
+However, when Jake entered the seventh grade, he had an exacerbation
+of his motor and vocal tics and was also touching objects repeatedly
+throughout the day. Jake again became despondent, not wanting to go to
+school. It was decided by his psychologist to add relaxation training to
+his behavioral treatment, and his child and adolescent psychiatrist added
+another medication to his pharmacologic regimen. His psychiatrist
+prescribed risperidone, 0.5 mg/day, which was titrated up to 1 mg twice
+daily. Jake became stabilized within a month and was able to continue in
+his school and even went to some parties. Jake and his parents understood
+the waxing and waning nature of his tics and were hopeful that they
+would begin to see some decrease in his tic symptoms within the next
+few years. At follow-up, when Jake was 15 years of age, Jake had
+minimal tic symptoms; an occasional eye blink and rare throat clearing
+was all that was observable. Jake was not currently in behavioral
+treatment. However, over the years, he had, on a few occasions, received
+some booster therapy sessions to brush up on his habit reversal training
+when he had a minor exacerbation of tics. Jake had been taken off his
+risperidone 2 years before without exacerbation of tics. Jake continued
+well controlled on Concerta, did well in school, and became more
+popular after joining the soccer team. (Adapted from L. Scahill M.S.N.,
+Ph.D. and J.F. Leckman, M.D.)
+Table 2-23
+Clinical Assessment Tools in Tic Disorders
+Domain
+
+Type
+
+Reliability Sensitive
+and
+to
+Validity
+Change
+
+
+
+
+<<<PAGE 511>>>
+
+affinity for dopamine D2 and serotonin 5-HT2 receptors, is the most wellstudied atypical antipsychotic in the treatment of tics. There is considerable
+evidence for its efficacy. Multiple randomized, controlled studies in children
+and adolescents have shown favorable results compared to placebo as well as
+in head-to-head studies with the typical antipsychotics haloperidol and
+pimozide. Risperidone was associated with fewer adverse events compared to
+typical antipsychotics; however, it can cause weight gain, metabolic side
+effects, and hyperprolactinemia. In a randomized, double-blind, parallelgroup study of Tourette disorder comparing risperidone to pimozide,
+risperidone showed superiority in reducing comorbid obsessive-compulsive
+symptoms as well as reducing tics. In other randomized clinical trials,
+risperidone reduced tics in children, adolescents, and adults with mean daily
+doses of 2.5 mg with a range of 1 to 6 mg.
+Haloperidol and pimozide are the two most well-investigated and FDAapproved antipsychotic agents in the treatment of Tourette disorder.
+However, atypical antipsychotics such as risperidone are often first-line
+agents due to their safer side-effect profiles. Both haloperidol and pimozide
+are efficacious in multiple randomized clinical trials in the treatment of
+Tourette disorder. Both haloperidol and pimozide present significant risks for
+extrapyramidal side effects; in a long-term naturalistic follow-up study,
+haloperidol produces more significant acute dyskinesia and dystonia
+compared to pimozide.
+A third typical antipsychotic, fluphenazine, has been used in the United
+States for many years in the treatment of tic disorders in the absence of robust
+data supporting its efficacy. A small controlled study of fluphenazine,
+trifluphenazine, and haloperidol found similar reductions in tics; however,
+haloperidol has more extrapyramidal side effects and more sedation. The
+frequency of sedation, dystonia, and akathisia of typical antipsychotics,
+probably due to their predominant dopaminergic blockade in the nigrostriatal
+pathways, limits their use and increases the appeal of the atypical
+antipsychotics. Risperidone and pimozide had equal efficacy in one study of
+children, adolescents, and adults with Tourette disorder.
+Aripiprazole has become a pharmacologic agent of interest in the treatment
+of tic disorders due to its mode of action; in addition to its D2 receptor
+antagonistic actions, aripiprazole is also a partial D2 and 5-HT1A receptor
+
+
+
+
+<<<PAGE 552>>>
+
+controlled study of sertraline to prevent PTSD found that children who
+received sertraline, flexibly dosed between 25 and 150 mg/day, had a
+decrease in parent-reported symptoms of PTSD over 8 weeks compared to a
+placebo group. Among the child-reported symptoms, however, there was no
+significant difference between the two groups.
+Psychiatrists sometimes use antiadrenergic agents to treat dysregulation of
+the noradrenergic system in adults and youth with PTSD. α2-Agonists such as
+clonidine and guanfacine, for example, have been used to decrease
+norepinephrine release, whereas centrally acting β-antagonists such as
+propranolol, and α1-antagonists such as prazosin, are hypothesized to
+improve hyperarousal and intrusive thoughts through attenuation of
+norepinephrine postsynaptically. Although there are some data in adults with
+PTSD to support the use of these agents, there are mainly case reports for
+youths. There is a suggestion that guanfacine may reduce nightmares in
+children with PTSD and that clonidine may diminish symptoms of
+reenactment of traumatic events in children. One report of propranolol
+treatment in 11 pediatric patients with PTSD from sexual or physical abuse
+with a mean age of 8.5 years, who exhibited agitation and hyperarousal,
+indicated some decrease in symptoms in 8 of the 11 children studied. Another
+open study of transdermal clonidine treatment of preschoolers with PTSD
+suggests that clonidine may be efficacious in this population in decreasing
+activation and hyperarousal. An additional open trial of oral clonidine with
+dosage ranges of 0.05 to 0.1 mg twice daily similarly suggests that this
+medication may provide some relief for the symptoms of hyperarousal,
+impulsivity, and agitation in young children with PTSD.
+Second-generation antipsychotics such as risperidone, olanzapine,
+quetiapine, ziprasidone, and aripiprazole have been studied in adults with
+PTSD with mixed results. Risperidone and aripiprazole both have FDA
+approval for use in children and adolescents with aggression, severe
+behavioral dyscontrol, and severe psychiatric disorders; however, there are no
+controlled trials with children with PTSD. For example, there is one case
+series of three preschool-age children who exhibited symptoms of acute
+stress disorder and who had severe thermal burns improved after being
+treated with risperidone.
+In children and adolescents with PTSD, there is one open-label trial of
+
+
+
+
+<<<PAGE 613>>>
+
+of school-age children. School settings can also use behavioral techniques to
+promote socially acceptable behavior toward peers and to discourage covert
+antisocial incidents.
+Psychopharmacologic
+Interventions.
+The
+efficacy
+of
+psychopharmacologic interventions includes several placebo-controlled
+studies of risperidone for aggression in youth associated with disruptive
+behavior disorders or mental retardation. Also, risperidone is superior to
+placebo in reducing aggressive behavior in a large 6-month placebosubstitution study. One randomized, double-blind placebo-controlled trial
+with quetiapine also showed efficacy for aggressive behavior. Early studies
+of antipsychotics, most notably haloperidol, reported decreased aggressive
+and assaultive behaviors in children with a variety of psychiatric disorders.
+Atypical antipsychotics risperidone, olanzapine, quetiapine, ziprasidone, and
+aripiprazole have generally replaced the older antipsychotics in clinical
+practice due to their comparable efficacy and improved side effect profiles.
+Side effects of second-generation antipsychotics include sedation, increased
+prolactin levels (with risperidone use), and extrapyramidal symptoms,
+including akathisia. In general, however, the atypical antipsychotics appear to
+be well tolerated. A study of sodium valproate in youth with conduct disorder
+showed that those who responded most robustly exhibited aggression
+characterized by agitation, dysphoria, and distress. Although early trials
+suggested that carbamazepine was useful to control aggression, a doubleblind, placebo-controlled study did not show the superiority of
+carbamazepine over placebo in decreasing aggression. A pilot study found
+that clonidine may decrease aggression. The SSRIs, including fluoxetine,
+sertraline, paroxetine, and citalopram, are used clinically to target symptoms
+of impulsivity, irritability, and mood lability, which frequently accompany
+conduct disorder. Conduct disorder often coexists with ADHD, learning
+disorders, and, over time, mood disorders, and substance-related disorders;
+thus, we also need to treat concurrent disorders.
+Epidemiology
+In the United States, conduct disorder ranges from 6 to 16 percent for males,
+and from 2 to 9 percent for females. The ratio of conduct disorder in males
+
+
+
+
+<<<PAGE 665>>>
+
+social skills deficits, attention deficits, and academic difficulties that often
+accompany childhood-onset schizophrenia.
+Pharmacotherapy
+Second-generation antipsychotics, serotonin-dopamine antagonists, are the
+current mainstay pharmacologic treatments for children and adolescents with
+schizophrenia. Current data include six randomized clinical trials in youth
+investigating the efficacy of second-generation antipsychotics for early-onset
+schizophrenia, with limited support for one agent over the others. Although
+clozapine, a serotonin receptor antagonist with some dopamine (D2)
+antagonism, may be more effective in reducing positive and negative
+symptoms, it remains a choice of last resort in youth based on its side effects.
+To date, however, evidence from multisite randomized clinical trials supports
+some efficacy of risperidone, olanzapine, aripiprazole, and clozapine in the
+treatment of childhood- and adolescent-onset schizophrenia. Two randomized
+clinical trials using risperidone in adolescents with schizophrenia found
+risperidone at doses up to 3 mg/day to be superior to placebo. A multisite
+randomized 6-week controlled trial of olanzapine in adolescents with
+schizophrenia found that it was more efficacious than a placebo. An RCT of
+aripiprazole at two fixed doses found that it was superior to placebo in the
+treatment of positive symptoms of adolescent schizophrenia; however, more
+than 40 percent of subjects in the active medication group did not achieve
+remission. Finally, clozapine is more effective than haloperidol in improving
+both positive and negative symptoms in treatment-resistant schizophrenia in
+youth. More recently, a study compared clozapine to high doses of
+olanzapine and found that response rates were about twice as high for
+clozapine as olanzapine (66 percent vs. 33 percent) when the investigators
+defined response as 30 percent or better reduction in symptoms on the Brief
+Psychiatric Rating Scale and improvement on the Clinical Global Impression
+Scale. The Treatment of Early-Onset Schizophrenia Spectrum Disorders
+Study compared the efficacy of risperidone and olanzapine with those of
+molindone, a mid-potency first-generation antipsychotic. In this study,
+lacking a placebo group, each of these agents provided a similar therapeutic
+effect; however, fewer than half of the patients responded optimally. Despite
+the limited randomized controlled studies of second-generation
+
+
+
+
+<<<PAGE 666>>>
+
+antipsychotics for the treatment of schizophrenia in youth, the FDA is
+progressively approving the use of these agents for pediatric schizophrenia
+and bipolar illness. In 2007, the FDA approved the use of risperidone and
+aripiprazole for the treatment of schizophrenia in 13- to 17-year-olds. The
+FDA approved the use of olanzapine and quetiapine in 2009 for the treatment
+of schizophrenia in 13- to 17-year-olds. Lurasidone and paliperidone were
+approved by the FDA in 2017 for the treatment of schizophrenia in
+adolescents.
+A double-blind, randomized 8-week controlled trial compared the efficacy
+and safety of olanzapine to clozapine in childhood-onset schizophrenia.
+Children with childhood-onset schizophrenia who were resistant to at least
+two previous treatments with antipsychotics were randomized to treatment
+for 8 weeks with either olanzapine or clozapine followed by a 2-year openlabel follow-up. Using the Clinical Global Impression of Severity of
+Symptoms Scale and Schedule for the Assessment of Negative/Positive
+Symptoms, clozapine was associated with a significant reduction in all
+outcome measures. In contrast, olanzapine showed improvement on some
+measures but not on all. The only statistically significant measure in which
+clozapine was superior to olanzapine was in alleviating negative symptoms
+compared with baseline. Clozapine was associated with more adverse events,
+such as lipid abnormalities and a seizure in one patient.
+Several studies have provided evidence that risperidone, a benzisoxazole
+derivative, is as effective as the older high-potency first-generation
+antipsychotics, such as haloperidol, and causes less frequent severe side
+effects in the treatment of schizophrenia in older adolescents and adults.
+Published case reports and limited more extensive controlled studies have
+supported the efficacy of risperidone in the treatment of psychosis in children
+and adolescents. Risperidone can cause weight gain and dystonic reactions
+and other extrapyramidal adverse effects in children and adolescents.
+Olanzapine is generally well tolerated for extrapyramidal adverse effects
+compared with first-generation antipsychotics and risperidone, but it is
+associated with moderate sedation and significant weight gain.
+Psychosocial Interventions
+Psychosocial interventions aimed at family education and patient and family
+
+
+
+
+<<<PAGE 750>>>
+
+Risperidone
+
+0.5–1 mg a EPS concerns
+day
+
+Limited data in
+delirium
+
+Olanzapine
+
+5–10 mg a
+day
+
+Higher mortality
+in dementia
+patients
+
+Quetiapine
+
+25–150 mg More sedating
+a day
+
+Metabolic
+syndrome
+
+Benzodiazepine
+Lorazepam
+
+0.5–3 mg a Respiratory
+day and
+depression,
+as
+paradoxical
+needed
+agitation
+every 4
+hr
+
+Best use in
+delirium
+secondary to
+alcohol or
+benzodiazepine
+withdrawal
+Can worsen other
+types of
+delirium
+
+EPIDEMIOLOGY
+Delirium is a common disorder, with most incidence and prevalence rates
+reported in elderly adults. In community studies, 1 percent of elderly persons
+age 55 years or older have delirium (13 percent in the age 85 years and older
+group in the community). Among elderly emergency department patients, 5
+to 10 percent have delirium. At the time of admission to medical wards,
+between 15 and 21 percent of older patients meet the criteria for deliriumprevalent cases. Of patients free of delirium at the time of hospital admission,
+5 to 30 percent reported subsequent incidences of delirium during
+hospitalization. Delirium occurs in 10 to 15 percent of general surgical
+patients, 30 percent of open-heart surgery patients, and more than 50 percent
+of patients treated for hip fractures. Delirium occurs in 70 to 87 percent of
+intensive care unit patients and up to 83 percent of all patients receiving end
+of life care. Sixty percent of patients in nursing homes or post-acute care
+
+
+
+
+<<<PAGE 1681>>>
+
+problem
+No obvious nonpharmacologic
+precipitant
+Dissipates with drug
+discontinuation
+Antipsychotic drugs and
+ejaculatory problems
+
+Perphenazine
+Chlorpromazine
+Trifluoperazine
+Haloperidol
+Mesoridazine
+Chlorprothixene
+
+Antipsychotic drugs and priapism
+
+Perphenazine
+Mesoridazine
+Chlorpromazine
+Thioridazine
+Fluphenazine
+Molindone
+Risperidone
+Clozapine
+
+Table by R. T. Seagraves, M.D.
+
+Because depression is associated with decreased libido, varying levels of
+sexual dysfunction and anhedonia are part of the disease process. Some
+patients report improved sexual functioning as their depression improves
+because of antidepressant medication. The phenomenon makes evaluating
+sexual side effects difficult; also, the side effects may disappear with time,
+perhaps because a biogenic amine homeostatic mechanism comes into play.
+
+
+
+
+<<<PAGE 1930>>>
+
+Other Indications. About 10 percent of patients with schizophrenia exhibit
+outwardly aggressive or violent behavior, and the SDAs are effective for the
+treatment of such aggression. Other off-label indications include acquired
+immunodeficiency syndrome (AIDS) dementia, autism spectrum disorders,
+Tourette disorder, Huntington disease, and Lesch–Nyhan syndrome.
+Risperidone and olanzapine have been used to control aggression and selfinjury in children. These drugs are sometimes coadministered with stimulants
+to children with ADHD who are comorbid for either oppositional–
+defiant disorder or conduct disorder. SDAs—especially olanzapine,
+quetiapine, and clozapine—are useful in persons who have severe tardive
+dyskinesia. The SDAs are also effective for treating psychotic depression and
+for psychosis secondary to head trauma, dementia, or treatment drugs.
+Treatment with SDAs decreases the risk of suicide and water intoxication
+in patients with schizophrenia. Patients with treatment-resistant OCD have
+responded to the SDAs; however, a few persons treated with the SDAs have
+been noted to develop treatment-emergent symptoms of OCD. Some patients
+with borderline personality disorder may improve with the SDAs.
+Some data suggest that treatment with conventional DRAs has protective
+effects against the progression of schizophrenia when used during the first
+episode of psychosis. Ongoing studies are looking at whether the use of
+SDAs in at-risk patients with early evidence of disease prevents deterioration,
+thus improving long-term outcomes.
+Adverse Effects
+The SDAs share a similar spectrum of adverse reactions but differ
+considerably in terms of frequency or severity of their occurrence. Specific
+side effects that are more common with an individual SDA are emphasized in
+the discussion of each drug in subsequent text.
+Risperidone (Risperdal)
+Indications. Risperidone is indicated for the acute and maintenance
+treatment of schizophrenia in adults and the treatment of schizophrenia in
+adolescents ages 13 to 17 years. Risperidone is also indicated for the shortterm treatment of acute manic or mixed episodes associated with bipolar I
+disorder in adults and children and adolescents ages 10 to 17 years. The
+
+
+
+
+<<<PAGE 1931>>>
+
+combination of risperidone with lithium or valproate is indicated for the
+short-term treatment of acute manic or mixed episodes associated with
+bipolar I disorder.
+Risperidone is also indicated for the treatment of irritability associated with
+an autistic spectrum disorder in children and adolescents ages 5 to 16 years,
+including symptoms of aggression toward others, deliberate selfinjuriousness, temper tantrums, and quickly changing moods.
+Pharmacology. Risperidone is a benzisoxazole. It undergoes extensive
+first-pass hepatic metabolism to 9-hydroxy risperidone, a metabolite with
+equivalent antipsychotic activity. Peak plasma levels of the parent compound
+occur within 1 hour for the parent compound and 3 hours for the metabolite.
+Risperidone has bioactivity of 70 percent. The combined half-life of
+risperidone and 9-hydroxy risperidone averages 20 hours, so it is useful in
+once-daily dosing. Risperidone is an antagonist of the serotonin 5-HT2A,
+dopamine D2, α1-adrenergic and α2-adrenergic, and histamine H1 receptors. It
+has a low affinity for α-adrenergic and muscarinic cholinergic receptors.
+Risperidone is a potent antagonist of D2 receptors, as potent as haloperidol,
+however unlike haloperidol it causes less EPS.
+Dosages. The recommended dose range and frequency of risperidone
+dosing have changed since the drug first came into clinical use. Risperidone
+is available in 0.25-, 0.5-, 1-, 2-, 3-, and 4-mg tablets and a 1-mg/mL oral
+solution. The initial dosage is usually 1 to 2 mg at night, which can then be
+increased to 4 mg/day. Positron emission tomography (PET) studies have
+shown that dosages of 1 to 4 mg/day provide the required D2 blockade for a
+therapeutic effect. At first, it was believed that because of its short
+elimination half-life, risperidone should be given twice a day, but studies
+have shown equal efficacy with once-a-day dosing. Dosages above 6 mg a
+day are associated with a higher incidence of adverse effects, particularly
+EPS. There is no correlation between plasma concentrations and therapeutic
+effects. Dosing guidelines for adolescents and children are different from
+those for adults, requiring lower starting dosages; higher dosages are
+associated with more adverse effects.
+
+
+
+
+<<<PAGE 1932>>>
+
+Side Effects. The EPS of risperidone is largely dosage dependent, and there
+has been a trend to using lower doses than initially recommended. Weight
+gain, anxiety, nausea and vomiting, rhinitis, erectile dysfunction, orgasmic
+dysfunction, and increased pigmentation are associated with risperidone use.
+The most common drug-related reasons for discontinuation of risperidone use
+are EPS, dizziness, hyperkinesias, somnolence, and nausea. Marked elevation
+of prolactin may occur. Weight gain occurs more commonly with risperidone
+use in children than in adults.
+Risperidone is also available as an orally disintegrating tablet (Risperdal
+M-Tab), which is available in 0.5, 1, and 2 mg strengths, and in a depot
+formulation (Risperdal Consta), which is given as an intramuscular (IM)
+injection formulation every 2 weeks. The dose may be 25, 50, or 75 mg. Oral
+risperidone should be coadministered with Risperdal Consta for the first 3
+weeks before being discontinued.
+Drug Interactions. Inhibition of CYP2D6 by drugs such as paroxetine and
+fluoxetine can block the formation of risperidone’s active metabolite.
+Risperidone is a weak inhibitor of CYP2D6 and has little effect on other
+drugs. Combined use of risperidone and SSRIs may result in significant
+elevation of prolactin, with associated galactorrhea and breast enlargement.
+Paliperidone (Invega)
+Indications. Paliperidone is indicated for the acute and maintenance
+treatment of schizophrenia. Paliperidone is also indicated for the acute
+treatment of schizoaffective disorder as monotherapy or as an adjunct to
+mood stabilizers or antidepressants.
+Pharmacology. Paliperidone is a benzisoxazole derivative and is the
+primary active metabolite of risperidone. Peak plasma concentrations (Cmax)
+are achieved approximately 24 hours after dosing, and steady-state
+concentrations of paliperidone are attained within 4 or 5 days. The hepatic
+isoenzymes CYP2D6 and CYP3A4 play a limited role in the metabolism and
+elimination of paliperidone, so no dose adjustment is required in patients with
+mild or moderate hepatic impairment.
+
+
+
+
+<<<PAGE 1949>>>
+
+of blood glucose, lipids, and body weight is recommended.
+Although the transition from a DRA to an SDA may be made abruptly, it is
+wiser to taper off the DRA slowly while titrating up the SDA. Clozapine and
+olanzapine both have anticholinergic effects, and the transition from one to
+the other can usually be accomplished with little risk of cholinergic rebound.
+The transition from risperidone to olanzapine is best accomplished by
+tapering the risperidone off over 3 weeks while simultaneously beginning
+olanzapine at 10 mg a day. Risperidone, quetiapine, and ziprasidone lack
+anticholinergic effects, and the abrupt transition from a DRA, olanzapine, or
+clozapine to one of these agents may cause cholinergic rebound, which
+consists of excessive salivation, nausea, vomiting, and diarrhea. The risk of
+cholinergic rebound can be mitigated by initially augmenting risperidone,
+quetiapine, or ziprasidone with an anticholinergic drug, which is then tapered
+off slowly. Any initiation and termination of SDA use should be
+accomplished gradually.
+It is wise to overlap the administration of the new drug with the old drug.
+Of interest, some people have a more robust clinical response while taking
+the two agents during the transition and then regressing on monotherapy with
+the newer drug. We know little about the safety of combination antipsychotic
+treatment.
+Persons receiving regular injections of depot formulations of a DRA who
+are to switch to SDA use are given the first dose of the SDA on the day the
+next injection is due.
+Persons who developed agranulocytosis while taking clozapine can safely
+switch to olanzapine use, although initiation of olanzapine use amid
+clozapine-induced agranulocytosis can prolong the time of recovery from the
+usual 3 to 4 days up to 11 to 12 days. It is prudent to wait for the resolution of
+agranulocytosis before initiating olanzapine use. Emergence or recurrence of
+agranulocytosis has not been reported with olanzapine, even in persons who
+developed it while taking clozapine.
+SDA use by pregnant women has not been studied, but consideration
+should be given to the potential of risperidone to raise prolactin
+concentrations, sometimes up to three to four times the upper limit of the
+normal range. Because the drugs can be excreted in breast milk, they should
+not be taken by nursing mothers. The dosages for selected SDAs are given in
+Table 21-9.
+
+
+
+
+<<<PAGE 1961>>>
+
+paralytic ileus, although the relief is only transitory. Bethanechol
+(Urecholine) (20 to 40 mg a day) may be useful in some persons with urinary
+retention.
+Weight gain is associated with increased mortality and morbidity and with
+medication noncompliance. Low-potency DRAs may cause significant
+weight gain but not as much as is seen with the SDAs olanzapine (Zyprexa)
+and clozapine (Clozaril). Molindone and perhaps loxapine (Loxitane) appear
+to be least likely to cause weight gain.
+Endocrine Effects. Blockade of the dopamine receptors in the
+tuberoinfundibular tract results in the increased secretion of prolactin, which
+can result in breast enlargement, galactorrhea, amenorrhea, and inhibited
+orgasm in women and impotence in men. The SDAs, except risperidone
+(Risperdal), are not significantly associated with an increase in prolactin
+levels and may be the drugs of choice for persons experiencing disturbing
+side effects from increased prolactin release.
+Sexual Adverse Effects. Both men and women taking DRAs can
+experience anorgasmia and decreased libido. Up to 50 percent of men who
+take antipsychotics report ejaculatory and erectile disturbances. Sildenafil
+(Viagra), vardenafil (Levitra), and tadalafil (Cialis) are often used to treat
+psychotropic-induced orgasmic dysfunction, but they have not been studied
+in combination with the DRAs. Thioridazine is mainly associated with
+decreased libido and retrograde ejaculation in men. Priapism and reports of
+painful orgasms have also been described, both possibly resulting from α1adrenergic antagonist activity.
+Skin and Eye Effects. Allergic dermatitis and photosensitivity may occur,
+especially with low-potency agents. Urticarial, maculopapular, petechial, and
+edematous eruptions may occur early in treatment, generally in the first few
+weeks, and remit spontaneously. A photosensitivity reaction that resembles a
+severe sunburn also occurs in some persons taking chlorpromazine. Persons
+should be warned of this adverse effect, should spend no more than 30 to 60
+minutes in the sun, and should use sunscreens. Long-term chlorpromazine
+use is associated with blue-gray discoloration of skin areas exposed to
+sunlight. The skin changes often begin with a tan or golden brown color and
+
+
+
+
+<<<PAGE 1982>>>
+
+OCD as a genetically determined, lifelong condition that is best treated
+continuously with drugs and cognitive-behavioral therapy from the onset of
+symptoms in childhood throughout the lifespan.
+SSRI dosages for OCD may need to be higher than those required to treat
+depression. Although some responses can be seen in the first few weeks of
+treatment, it may take several months for the maximum effects to become
+evident. Patients who fail to obtain adequate relief of their OCD symptoms
+with an SSRI will usually benefit from the addition of a small dose of
+risperidone (Risperdal). Apart from the extrapyramidal side effects of
+risperidone, patients should be monitored for increases in prolactin levels
+when this combination is used. Clinically, hyperprolactinemia may manifest
+as gynecomastia and galactorrhea (in both men and women) and loss of
+menses.
+Several disorders are now considered to be within the OCD spectrum. This
+spectrum includes several conditions and symptoms characterized by
+nonsuicidal self-mutilation, such as trichotillomania, eyebrow picking, nose
+picking, nail-biting, compulsive picking of skin blemishes, and cutting.
+Patients with these behaviors benefit from treatment with SSRIs. Other
+spectrum disorders include compulsive gambling, compulsive shopping,
+hypochondriasis, and body dysmorphic disorder.
+PANIC DISORDER. Paroxetine, fluoxetine, and sertraline are indicated for the
+
+treatment of panic disorder, with or without agoraphobia. These agents work
+less rapidly than do benzodiazepines but are far superior to them for the
+treatment of panic disorder with comorbid depression. Citalopram and
+fluvoxamine also may reduce spontaneous or induced panic attacks. Because
+fluoxetine can initially heighten anxiety symptoms, persons with panic
+disorder must begin taking small dosages (5 mg a day) and increase the
+dosage slowly. Low doses of benzodiazepines may be given to manage this
+side effect.
+SOCIAL ANXIETY DISORDER. SSRIs are effective agents in the treatment of
+
+social phobia. They reduce both symptoms and disability. The response rate
+is comparable to that seen with the MAOI phenelzine (Nardil), the previous
+standard treatment. The SSRIs are safer to use than MAOIs or
+benzodiazepines.
+
+
+
+
+<<<PAGE 2190>>>
+
+Therapeutic Indications
+There is considerably more experience in clinical psychiatry with clonidine
+than with guanfacine. There is recent interest in the use of guanfacine for the
+same indications that respond to clonidine due to guanfacine’s longer halflife and relative lack of sedative effects.
+Withdrawal from Opioids, Alcohol, Benzodiazepines, or Nicotine.
+Clonidine and guanfacine are effective in reducing the autonomic symptoms
+of rapid opioid withdrawal (e.g., hypertension, tachycardia, dilated pupils,
+sweating, lacrimation, and rhinorrhea) but not the associated subjective
+sensations. Clonidine administration (0.1 to 0.2 mg two to four times a day)
+is initiated before detoxification and is then tapered off over 1 to 2 weeks
+(Table 21-55).
+Clonidine and guanfacine can reduce symptoms of alcohol and
+benzodiazepine withdrawal, including anxiety, diarrhea, and tachycardia.
+They can reduce craving, anxiety, and irritability symptoms of nicotine
+withdrawal. The transdermal patch formulation of clonidine is associated
+with better long-term compliance for purposes of detoxification than is the
+tablet formulation.
+Tourette Disorder. Clonidine and guanfacine are effective drugs for the
+treatment of Tourette disorder. Most clinicians begin treatment for Tourette
+disorder with the standard DRAs haloperidol (Haldol) and pimozide (Orap)
+and the SDAs risperidone (Risperdal) and olanzapine (Zyprexa). However, if
+concerned about the adverse effects of these drugs, the clinician may begin
+treatment with clonidine or guanfacine. The starting dose of clonidine for
+children is 0.05 mg a day; it can be increased to 0.3 mg a day in divided
+doses. Clonidine may take long periods (e.g., 4 to 6 months) to positively
+effect the symptoms of the disorder. The response rate has been reported to
+be up to 70 percent.
+Table 21-54
+α2-Adrenergic Receptor Agonists Used in Psychiatrya
+
+
+
+
+<<<PAGE 3137>>>
+
+Benzodiazepines Increased beta activity
+Clozapine
+(Clozaril)
+
+Nonspecific change
+
+Olanzapine
+(Zyprexa)
+
+Nonspecific change
+
+Risperidone
+(Risperdal)
+
+Nonspecific change
+
+Quetiapine
+(Seroquel)
+
+No significant changes
+
+Aripiprazole
+(Abilify)
+
+No significant changes
+
+Lithium
+
+Slowing or paroxysmal activity
+
+Alcohol
+
+Decreased alpha activity; increased theta activity
+
+Opioids
+
+Decreased alpha activity; increased voltage of
+theta and delta waves; in overdose, slow waves
+
+Barbiturates
+
+Increased beta activity; in withdrawal states,
+generalized paroxysmal activity and spike
+discharges
+
+Marijuana
+
+Increased alpha activity in frontal area of brain;
+overall slow alpha activity
+
+Cocaine
+
+Similar to marijuana
+
+Inhalants
+
+Diffuse slowing of delta and theta waves
+
+Nicotine
+
+Increased alpha activity; in withdrawal, marked
+decrease in alpha activity
+
+Caffeine
+
+In withdrawal, increase in amplitude or voltage of
+theta activity
+
+Topographic Quantitative Electroencephalography (QEEG)
+
+
+
+
+<<<PAGE 3732>>>
+
+Riluzole, 607
+Rimonabant, 976
+Risperdal. See Risperidone
+Risperidone, 598, 608, 627
+for bipolar disorder, 375t
+in dissociative identity disorder, 448
+dosages, 609–610
+drug interactions, 610
+for early-onset bipolar disorder, 183
+for early-onset schizophrenia, 209–210
+indications, 609
+for irritability in autism spectrum disorder, 128
+pharmacology, 609
+for PTSD, 173
+for schizophrenia, 353t
+side effects, 610
+for tics, 160
+Rivastigmine, 697
+RLS. See Restless legs syndrome (RLS)
+Robidone. See Hydrocodone
+Rogers, Carl, 1087–1088
+Roger v. Oken, 840
+Rohypnol, 303, 304
+Role-playing, 771
+Ropinirole, 598, 705
+for restless legs syndrome, 515
+Rorschach, Herman, 58
+Rorschach test, 58–59, 59f, 59t
+Inkblots, 83t, 84
+Rotigotine, for restless legs syndrome, 515
+Rotter Incomplete Sentences Blank, 83t
+Rouse v. Cameron, 840
+Rozerem. See Ramelteon
+rTMS. See Repetitive transcranial magnetic stimulation (rTMS)
+Rubella, 104
+Rubinstein–Taybi syndrome, 86t
+Rumination disorder, 164–166
+
+

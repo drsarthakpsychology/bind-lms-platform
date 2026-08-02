@@ -1,0 +1,1191 @@
+<<<PAGE 36>>>
+
+If It Doesn’t Work
+Many patients have only a partial response where some symptoms
+are improved but others persist (especially insomnia, fatigue, and
+problems concentrating)
+Other patients may be nonresponders, sometimes called treatmentresistant or treatment-refractory
+Consider increasing dose as early as 2 weeks after initiating
+treatment if response is insufficient (decision on dose increase has to
+be balanced with a higher risk of transaminase elevation; any dose
+increase should be made on an individual patient benefit/risk basis
+and with strict respect of liver function tests monitoring)
+Consider switching to another agent or adding an appropriate
+augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+SSRIs (excluding fluvoxamine), SNRIs, bupropion, reboxetine,
+atomoxetine (use combinations of antidepressant with caution as
+
+
+
+
+<<<PAGE 41>>>
+
+No need to taper dose
+Pharmacokinetics
+Half-life 1–2 hours
+Metabolized primarily by CYP450 1A2
+Drug Interactions
+Use of agomelatine with potent CYP450 1A2 inhibitors (e.g.,
+fluvoxamine) is contraindicated
+Tramadol increases the risk of seizures in patients taking an
+antidepressant (class warning)
+Other Warnings/Precautions
+Use with caution in patients with hepatic injury risk factors, such as
+obesity/overweight/non-alcoholic fatty liver disease, diabetes,
+patients who drink large quantities of alcohol and/or have alcohol
+use disorder, or who take medication associated with risk of hepatic
+injury. Doctors should ask their patients if they have ever had liver
+problems
+If symptoms or signs of potential liver injury (dark urine, lightcolored stools, yellow skin/eyes, pain in upper right belly, sustained
+new-onset and unexplained fatigue) are present, agomelatine should
+be discontinued immediately
+
+
+
+
+<<<PAGE 42>>>
+
+Use caution in patients with pretreatment elevated transaminases (>
+the upper limit of the normal range and <3 times the upper limit of
+the normal range)
+Discontinue treatment if serum transaminases increase to 3 times the
+upper limit of normal; liver function tests should be performed
+regularly until serum transaminases return to normal
+Agomelatine should be administered at bedtime
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children off label (an unapproved use), carefully
+weigh the risks and benefits of pharmacological treatment against
+the risks and benefits of nontreatment with antidepressants and
+make sure to document this in the patient’s chart
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient has hepatic impairment
+If patient has transaminase levels >3 times the upper limit of normal
+If patient is taking a potent CYP450 1A2 inhibitor (e.g.,
+fluvoxamine, ciprofloxacin)
+
+
+
+
+<<<PAGE 59>>>
+
+Food does not affect absorption
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+(see Warnings below)
+Inhibitors of CYP450 3A, such as nefazodone, fluvoxamine,
+fluoxetine, and even grapefruit juice, may decrease clearance of
+alprazolam and thereby raise alprazolam plasma levels and enhance
+sedative side effects; alprazolam dose may need to be lowered
+Thus, azole antifungal agents (such as ketoconazole and
+itraconazole), macrolide antibiotics, and protease inhibitors may
+also raise alprazolam plasma levels
+Inducers of CYP450 3A, such as carbamazepine, may increase
+clearance of alprazolam and lower alprazolam plasma levels and
+possibly reduce therapeutic effects
+Other Warnings/Precautions
+Boxed warning regarding the increased risk of CNS depressant
+effects when benzodiazepines and opioid medications are used
+together, including specifically the risk of slowed or difficulty
+breathing and death
+If alternatives to the combined use of benzodiazepines and opioids
+are not available, clinicians should limit the dosage and duration of
+each drug to the minimum possible while still achieving therapeutic
+efficacy
+
+
+
+
+<<<PAGE 64>>>
+
+Not effective for treating bipolar disorder as a monotherapy, but can
+be used as an adjunct to mood stabilizers and antipsychotics
+May both cause depression and treat depression in different patients
+Risk of seizure is greatest during the first 3 days after
+discontinuation of alprazolam, especially in those with prior
+seizures, head injuries, or withdrawal from drugs of abuse
+Clinical duration of action may be shorter than plasma half-life,
+leading to dosing more frequently than 2–3 times daily in some
+patients, especially for immediate-release alprazolam
+Adding fluvoxamine, fluoxetine, or nefazodone can increase
+alprazolam levels and make the patient very sleepy unless the
+alprazolam dose is lowered by half or more
+When using to treat insomnia, remember that insomnia may be a
+symptom of some other primary disorder itself, and thus warrant
+evaluation for comorbid psychiatric and/or medical conditions
+
+✽ Alprazolam XR may be less sedating than immediate-release
+alprazolam
+
+✽ Alprazolam XR may be dosed less frequently than immediaterelease alprazolam, and lead to less interdose breakthrough symptoms
+and less “clock-watching” in anxious patients
+Slower rises in plasma drug levels for alprazolam XR have the
+potential to reduce euphoria/abuse liability, but this has not been
+proven
+
+
+
+
+<<<PAGE 188>>>
+
+Often used for long-term maintenance in various behavioral
+disorders
+Should periodically reevaluate long-term usefulness in individual
+patients, but treatment may need to continue for many years
+Habit Forming
+No
+How to Stop
+See Switching section of individual agents for how to stop
+aripiprazole
+Rapid discontinuation could theoretically lead to rebound psychosis
+and worsening of symptoms, but less likely with aripiprazole due to
+its long half-life
+Pharmacokinetics
+Metabolized primarily by CYP450 2D6 and CYP450 3A4
+Mean elimination half-life 75 hours (aripiprazole) and 94 hours
+(major metabolite dehydro-aripiprazole)
+Food does not affect absorption
+Drug Interactions
+Ketaconazole and possibly other CYP450 3A4 inhibitors such as
+nefazodone, fluvoxamine, and fluoxetine may increase plasma
+
+
+
+
+<<<PAGE 215>>>
+
+Inducers or inhibitors of CYP450 3A4 may affect levels of
+armodafinil (e.g., carbamazepine may lower modafinil plasma
+levels; fluvoxamine and fluoxetine may raise armodafinil plasma
+levels)
+Armodafinil may slightly reduce its own levels by autoinduction of
+CYP450 3A4
+Patients on armodafinil and warfarin should have prothrombin times
+monitored
+Methylphenidate and dextroamphetamine may delay absorption of
+armodafinil by an hour
+
+✽ However, coadministration with methylphenidate or
+dextroamphetamine does not significantly change the
+pharmacokinetics of armodafinil or either stimulant
+Interaction studies with MAOIs have not been performed, but
+MAOIs can be given with armodafinil by experts with cautious
+monitoring
+Other Warnings/Precautions
+Patients with history of drug abuse should be monitored closely
+Armodafinil may cause CNS effects similar to those caused by other
+CNS agents (e.g., changes in mood and, theoretically, activation of
+psychosis, mania, or suicidal ideation)
+Armodafinil should be used in patients with sleep disorders that
+have been completely evaluated for narcolepsy, OSAHS, and shift
+
+
+
+
+<<<PAGE 377>>>
+
+Taper generally not necessary
+Pharmacokinetics
+Metabolized primarily by CYP450 3A4
+Elimination half-life approximately 2–3 hours
+Absorption is affected by food
+Drug Interactions
+Use with caution with MAOIs, including 14 days after MAOIs are
+stopped (for the expert)
+CYP450 3A4 inhibitors (e.g., fluxotine, fluvoxamine, nefazodone)
+may reduce clearance of buspirone and raise its plasma levels, so the
+dose of buspirone may need to be lowered when given
+concomitantly with these agents
+CYP450 3A4 inducers (e.g., carbamazepine) may increase clearance
+of buspirone, so the dose of buspirone may need to be raised
+Buspirone may increase plasma concentrations of haloperidol
+Buspirone may raise levels of nordiazepam, the active metabolite of
+diazepam, which may result in increased symptoms of dizziness,
+headache, or nausea
+Other Warnings/Precautions
+None
+
+
+
+
+<<<PAGE 401>>>
+
+Renally excreted
+Active metabolite (carbamazepine-10,11 epoxide)
+Initial half-life 26–65 hours (35–40 hours for extended-release
+formulation); half-life 12–17 hours with repeated doses
+Half-life of active metabolite is approximately 34 hours
+
+✽ Is not only a substrate for CYP450 3A4, but also an inducer of
+CYP450 3A4
+
+✽ Thus, carbamazepine induces its own metabolism, often requiring
+an upward dosage adjustment
+Is also an inducer of CYP450 2C9 and weakly of 1A2 and 2C19
+Food does not affect absorption
+Drug Interactions
+Enzyme-inducing antiepileptic drugs (carbamazepine itself as well
+as phenobarbital, phenytoin, and primidone) may increase the
+clearance of carbamazepine and lower its plasma levels
+CYP450 3A4 inducers, such as carbamazepine itself, can lower the
+plasma levels of carbamazepine
+CYP450 3A4 inhibitors, such as nefazodone, fluvoxamine, and
+fluoxetine, can increase plasma levels of carbamazepine
+Carbamazepine can increase plasma levels of clomipramine,
+phenytoin, primidone
+
+
+
+
+<<<PAGE 490>>>
+
+For the expert: consider cautious addition of fluvoxamine for
+treatment-resistant OCD
+Thyroid hormone (for depression)
+Atypical antipsychotics (for OCD)
+Tests
+Baseline ECG is recommended for patients over age 50
+
+✽ Monitoring of plasma drug levels is potentially available at
+specialty laboratories for the expert
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+
+
+
+
+<<<PAGE 496>>>
+
+Inhibits CYP450 2D6
+Half-life approximately 17–28 hours
+Food does not affect absorption
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking TCAs
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or at least for 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing clomipramine
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Fluvoxamine, a CYP450 1A2 inhibitor, can decrease the conversion
+of clomipramine to desmethyl-clomipramine, and increase
+clomipramine plasma concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs
+
+
+
+
+<<<PAGE 504>>>
+
+Patients with seizure disorders
+Primary Target Symptoms
+Depressed mood
+Obsessive thoughts
+Compulsive behaviors
+Pearls
+
+✽ The only TCA with proven efficacy in OCD
+Normally, clomipramine (CMI), a potent serotonin reuptake blocker,
+at steady state is metabolized extensively to its active metabolite
+desmethyl-clomipramine (de-CMI), a potent nonadrenaline reuptake
+blocker, by the enzyme CYP450 1A2
+Thus, at steady state, plasma drug activity is generally more
+noradrenergic (with higher de-CMI levels) than serotonergic (with
+lower parent CMI levels)
+Addition of the SSRI and CYP450 1A2 inhibitor fluvoxamine
+blocks this conversion and results in higher CMI levels than de-CMI
+levels
+For the expert only: addition of the SSRI fluvoxamine to CMI in
+treatment-resistant OCD can powerfully enhance serotonergic
+activity, not only due to the inherent additive pharmacodynamic
+serotonergic activity of fluvoxamine added to CMI, but also due to a
+favorable pharmacokinetic interaction inhibiting CYP450 1A2 and
+
+
+
+
+<<<PAGE 578>>>
+
+In the presence of a strong CYP450 1A2 inhibitor (e.g.,
+fluvoxamine, ciprofloxacin): use 1/3 the dose of clozapine
+In the presence of a strong CYP450 1A2 inducer (e.g., cigarette
+smoke), clozapine plasma levels are decreased
+May need to decrease clozapine dose by up to 50% during periods
+of extended smoking cessation (>1 week)
+Strong CYP450 2D6 inhibitors (e.g., bupropion, duloxetine,
+paroxetine, fluoxetine) can raise clozapine levels; dose adjustment
+may be necessary
+Strong CYP450 3A4 inhibitors (e.g., ketoconazole) can raise
+clozapine levels; dose adjustment may be necessary
+Clozapine may enhance effects of antihypertensive drugs
+May antagonize levodopa, dopamine agonists
+Other Warnings/Precautions
+Use with caution in patients on other anticholinergic agents
+(benztropine, trihexyphenidyl, olanzapine, quetiapine,
+chlorpromazine, oxybutynin, and other antimuscarinics)
+Constipation caused by clozapine can uncommonly lead to serious
+bowel complications, so advise patients of the risk and the need to
+stay hydrated, question patients about their bowel movements
+throughout treatment, and advise them to contact a healthcare
+professional right away if they have difficulty having a bowel
+
+
+
+
+<<<PAGE 779>>>
+
+Metabolized mainly by CYP450 2D6 and CYP450 1A2
+Inhibitor of CYP450 2D6 (probably clinically significant) and
+CYP450 1A2 (probably not clinically significant)
+Absorption may be delayed by up to 3 hours and clearance may be
+increased by one-third after an evening dose as compared to a
+morning dose
+Food does not affect absorption
+Drug Interactions
+Can increase TCA levels; use with caution with TCAs or when
+switching from a TCA to duloxetine
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or for at least 14 days after
+MAOIs are stopped
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing duloxetine
+Inhibitors of CYP450 1A2, such as fluvoxamine, increase plasma
+levels of duloxetine and may require a dosage reduction of
+duloxetine
+Cigarette smoking induces CYP450 1A2 and may reduce plasma
+levels of duloxetine, but dosage modifications are not recommended
+for smokers
+
+
+
+
+<<<PAGE 956>>>
+
+Fluvoxamine
+
+Therapeutics
+Brands
+Luvox
+Luvox CR
+see index for additional brand names
+Generic?
+Yes (not for fluvoxamine CR)
+Class
+Neuroscience-based Nomenclature: serotonin reuptake inhibitor (SRI)
+SSRI (selective serotonin reuptake inhibitor); often classified as an
+antidepressant, but it is not just an antidepressant
+Commonly Prescribed for
+(bold for FDA approved)
+Obsessive-compulsive disorder (OCD)(fluvoxamine and
+fluvoxamine CR)
+Social anxiety disorder (fluvoxamine CR)
+
+
+
+
+<<<PAGE 960>>>
+
+In Europe and Japan, augmentation is more commonly administered
+for the treatment of depression and anxiety disorders, especially
+with benzodiazepines and lithium
+In the USA, augmentation is more commonly administered for the
+treatment of OCD, especially with atypical antipsychotics,
+buspirone, or even clomipramine; clomipramine should be added
+with caution and at low doses as fluvoxamine can alter
+clomipramine metabolism and raise its levels
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin concentrations at
+serotonin receptors in parts of the brain and body other than those
+that cause therapeutic actions (e.g., unwanted actions of serotonin in
+sleep centers causing insomnia, unwanted actions of serotonin in the
+gut causing diarrhea, etc.)
+Increasing serotonin can cause diminished dopamine release and
+might contribute to emotional flattening, cognitive slowing, and
+apathy in some patients
+Most side effects are immediate but often go away with time, in
+contrast to most therapeutic effects which are delayed and are
+
+
+
+
+<<<PAGE 963>>>
+
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, or apathy
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of fluvoxamine
+
+Dosing And Use
+Usual Dosage Range
+100–300 mg/day for OCD
+100–200 mg/day for depression
+100–300 mg/day for social anxiety disorder
+
+
+
+
+<<<PAGE 966>>>
+
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Parent drug has 9–28 hour half-life
+Inhibits CYP450 3A4
+Inhibits CYP450 1A2
+Inhibits CYP450 2C9/2C19
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can increase tricyclic antidepressant levels; use with caution with
+TCAs
+Can cause a fatal “serotonin syndrome” when combined with MAO
+inhibitors (MAOIs), so do not use with MAOIs or for at least 14
+days after MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing fluvoxamine
+May displace highly protein-bound drugs (e.g., warfarin)
+Can rarely cause weakness, hyperreflexia, and incoordination when
+combined with sumatriptan or possibly with other triptans, requiring
+careful monitoring of patient
+
+
+
+
+<<<PAGE 967>>>
+
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+NSAIDs may impair effectiveness of SSRIs
+Via CYP450 1A2 inhibition, fluvoxamine may reduce clearance of
+theophylline and clozapine, thus raising their levels and requiring
+their dosing to be lowered
+Fluvoxamine administered with either caffeine or theophylline can
+thus cause jitteriness, excessive stimulation, or rarely seizures, so
+concomitant use should proceed cautiously
+Metabolism of fluvoxamine may be enhanced in smokers and thus
+its levels lowered, requiring higher dosing
+Via CYP450 3A4 inhibition, fluvoxamine may reduce clearance of
+carbamazepine and benzodiazepines such as alprazolam and
+triazolam, and thus require dosage reduction
+Via CYP450 3A4 inhibition, fluvoxamine could theoretically
+increase concentrations of certain cholesterol-lowering HMG CoA
+reductase inhibitors, especially simvastatin, atorvastatin, and
+lovastatin, but not pravastatin or fluvastatin, which would increase
+the risk of rhabdomyolysis; thus, coadministration of fluvoxamine
+with certain HMG CoA reductase inhibitors should proceed with
+caution
+Via CYP450 3A4 inhibition, fluvoxamine could theoretically
+increase the concentrations of pimozide, and cause QTc
+prolongation and dangerous cardiac arrhythmias
+
+
+
+
+<<<PAGE 969>>>
+
+If there is a proven allergy to fluvoxamine
+
+Special Populations
+Renal Impairment
+Consider lower initial dose
+Hepatic Impairment
+Lower dose or give less frequently, perhaps by half; use slower
+titration
+Cardiac Impairment
+Preliminary research suggests that fluvoxamine is safe in these
+patients
+Treating depression with SSRIs in patients with acute angina or
+following myocardial infarction may reduce cardiac events and
+improve survival as well as mood
+Elderly
+May require lower initial dose and slower titration
+Reduction in the risk of suicidality with antidepressants compared to
+placebo in adults age 65 and older
+Children and Adolescents
+
+
+
+
+<<<PAGE 972>>>
+
+distress, cyanosis, apnea, seizures, temperature instability, feeding
+difficulty, vomiting, hypoglycemia, hypotonia, hypertonia,
+hyperreflexia, tremor, jitteriness, irritability, and constant crying
+National Pregnancy Registry for Antidepressants: 1-866-961-2388,
+https://womensmentalhealth.org/research/pregnancyregistry/antidepr
+essants
+Breast Feeding
+Some drug is found in mother’s breast milk
+Trace amounts may be present in nursing children whose mothers
+are on fluvoxamine
+If child becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+Immediate postpartum period is a high-risk time for depression,
+especially in women who have had prior depressive episodes, so
+drug may need to be reinstituted late in the third trimester or shortly
+after childbirth to prevent a recurrence during the postpartum period
+Must weigh benefits of breast feeding with risks and benefits of
+antidepressant treatment versus nontreatment to both the infant and
+the mother
+For many patients this may mean continuing treatment during breast
+feeding
+
+
+
+
+<<<PAGE 973>>>
+
+The Art Of Psychopharmacology
+Potential Advantages
+Patients with mixed anxiety/depression
+Generic is less expensive than brand name where available
+Potential Disadvantages
+Patients with irritable bowel or multiple gastrointestinal complaints
+Can require dose titration and twice daily dosing
+Primary Target Symptoms
+Depressed mood
+Anxiety
+Pearls
+
+✽ Often a preferred treatment of anxious depression as well as major
+depressive disorder comorbid with anxiety disorders
+Some withdrawal effects, especially gastrointestinal effects
+May have lower incidence of sexual dysfunction than other SSRIs
+Preliminary research suggests that fluvoxamine is efficacious in
+obsessive-compulsive symptoms in schizophrenia when combined
+with antipsychotics
+
+
+
+
+<<<PAGE 974>>>
+
+Not FDA approved for depression, but used widely for depression in
+many countries
+CR formulation may be better tolerated than immediate-release
+formulation, particularly with less sedation
+SSRIs may be less effective in women over 50, especially if they are
+not taking estrogen
+SSRIs may be useful for hot flushes in perimenopausal women
+
+✽ Actions at sigma 1 receptors may explain in part fluvoxamine’s
+sometimes rapid onset effects in anxiety disorders and insomnia
+
+✽ Actions at sigma 1 receptors may explain potential advantages of
+fluvoxamine for psychotic depression and delusional depression
+
+✽ For treatment-resistant OCD, consider cautious combination of
+fluvoxamine and clomipramine by an expert
+Normally, clomipramine (CMI), a potent serotonin reuptake blocker,
+at steady state is metabolized extensively to its active metabolite
+desmethyl-clomipramine (de-CMI), a potent noradrenergic reuptake
+blocker
+Thus, at steady state, plasma drug activity is generally more
+noradrenergic (with higher de-CMI levels) than serotonergic (with
+lower parent CMI levels)
+Addition of a CYP450 1A2 inhibitor, fluvoxamine, blocks this
+conversion and results in higher CMI levels than de-CMI levels
+
+
+
+
+<<<PAGE 975>>>
+
+Thus, addition of the SSRI fluvoxamine to CMI in treatmentresistant OCD can powerfully enhance serotonergic activity, not
+only due to the inherent serotonergic activity of fluvoxamine, but
+also due to a favorable pharmacokinetic interaction inhibiting
+CYP450 1A2 and thus converting CMI’s metabolism to a more
+powerful serotonergic portfolio of parent drug
+
+Suggested Reading
+Cheer SM , Figgitt DP . Spotlight on fluvoxamine in anxiety disorders in
+children and adolescents . CNS Drugs 2002 ;16 :139–44 .
+Edwards JG , Anderson I . Systematic review and guide to selection of
+selective serotonin reuptake inhibitors . Drugs 1999 ;57 :507–33 .
+Figgitt DP , McClellan KJ . Fluvoxamine. An updated review of its use in
+the management of adults with anxiety disorders . Drugs 2000 ;60 :925–54 .
+Omori M , Watanabe N , Nakagawa A , et al. Fluvoxamine versus other
+anti-depressive agents for depression . Cochrane Database Syst Rev 2010
+;17 (3 ):CD006114 .
+Pigott TA , Seay SM . A review of the efficacy of selective serotonin
+reuptake inhibitors in obsessive-compulsive disorder . J Clin Psychiatry
+1999 ;60 :101–6 .
+
+
+
+
+<<<PAGE 1322>>>
+
+Pharmacokinetics
+Terminal half-life approximately 18 hours after intravenous
+administration
+Metabolized by multiple enzymes, including CYP450 3A4 and
+CYP450 1A2
+Absorption is delayed in the presence of food; ingestion of a highfat meal reduces Cmax by 33% and increases mean AUC by 9%
+Drug Interactions
+Avoid concomitant use with moderate or strong CYP450 3A4
+inhibitors (e.g., fluvoxamine, nefazodone, foods such as grapefruit
+juice)
+Avoid concomitant use with CYP450 3A4 inducers (e.g.,
+carbamazepine, phenytoin, St. John’s wort)
+Avoid concomitant use with UGT (uridine 5’-diphosphoglucuronosyltransferase) inhibitors (e.g., valproate)
+Little potential to affect metabolism of drugs cleared by CYP450
+enzymes
+May enhance the effects of antihypertensive drugs
+May antagonize levodopa, dopamine agonists
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 1344>>>
+
+Down-titration, especially when simultaneously beginning a new
+antipsychotic while switching (i.e., cross-titration)
+Rapid discontinuation could theoretically lead to rebound psychosis
+and worsening of symptoms
+Pharmacokinetics
+Half-life 18–31 hours (shorter half-life better documented at the 40
+mg dose)
+Metabolized by CYP450 3A4
+Cmax and bioavailability are reduced if taken without food
+Drug Interactions
+Inhibitors of CYP450 3A4 (e.g., nefazodone, fluvoxamine,
+fluoxetine, ketoconazole) may increase plasma levels of lurasidone
+Coadministration of lurasidone with a strong CYP450 3A4 inhibitor
+(e.g., ketoconazole) or with a strong CYP450 3A4 inducer (e.g.,
+rifampin) is contraindicated
+Coadministration of lurasidone with moderate CYP450 3A4
+inhibitors can be considered; recommended starting dose is 20
+mg/day; recommended maximum dose is 80 mg/day
+Moderate inducers of CYP450 3A4 may decrease plasma levels of
+lurasidone
+May enhance the effects of antihypertensive drugs
+
+
+
+
+<<<PAGE 1460>>>
+
+How to Stop
+If administration was prolonged, do not stop abruptly
+Pharmacokinetics
+Elimination half-life 1.8–6.4 hours
+Active metabolite
+Drug Interactions
+If CNS depressants are used concomitantly, midazolam dose should
+be reduced by half or more
+Increased depressive effects when taken with other CNS depressants
+(see Warnings below)
+Drugs that inhibit CYP450 3A4, such as nefazodone and
+fluvoxamine, may reduce midazolam clearance and thus raise
+midazolam levels
+Midazolam decreases the minimum alveolar concentration of
+halothane needed for general anesthesia
+Other Warnings/Precautions
+Boxed warning regarding the increased risk of CNS depressant
+effects when benzodiazepines and opioid medications are used
+together, including specifically the risk of slowed or difficulty
+breathing and death
+
+
+
+
+<<<PAGE 1518>>>
+
+Induces CYP450 3A4 (and slightly 1A2 and 2B6)
+Drug Interactions
+May increase plasma levels of drugs metabolized by CYP450 2C19
+(e.g., diazepam, phenytoin, propranolol)
+Modafinil may increase plasma levels of CYP450 2D6 substrates
+such as TCAs and SSRIs, perhaps requiring downward dose
+adjustments of these agents
+Modafinil may decrease plasma levels of CYP450 3A4 substrates
+such as ethinyl estradiol and triazolam
+Due to induction of CYP450 3A4, effectiveness of hormonal
+contraceptives may be reduced by modafinil, including 1 month
+after discontinuation
+Inducers or inhibitors of CYP450 3A4 may affect levels of
+modafinil (e.g., carbamazepine may lower modafinil plasma levels;
+fluvoxamine and fluoxetine may raise modafinil plasma levels)
+Modafinil may slightly reduce its own levels by autoinduction of
+CYP450 3A4
+Modafinil may increase clearance of drugs dependent on CYP450
+1A2 and reduce their plasma levels
+Patients on modafinil and warfarin should have prothrombin times
+monitored
+Methylphenidate may delay absorption of modafinil by an hour
+
+
+
+
+<<<PAGE 1815>>>
+
+Rapid discontinuation may lead to rebound psychosis and worsening
+of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after pimozide is discontinued
+Pharmacokinetics
+Metabolized by CYP450 3A and to a lesser extent by CYP450 1A2
+Mean elimination half-life approximately 55 hours
+Drug Interactions
+May decrease the effects of levodopa, dopamine agonists
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+May increase the effects of antihypertensive drugs
+
+✽ Use with CYP450 3A4 inhibitors (e.g., drugs such as fluoxetine,
+sertraline, fluvoxamine, and nefazodone; foods such as grapefruit
+juice) can raise pimozide levels and increase the risks of dangerous
+arrhythmias
+Use of pimozide and fluoxetine may lead to bradycardia
+Additive effects may occur if used with CNS depressants
+Some patients taking a neuroleptic and lithium have developed an
+encephalopathic syndrome similar to neuroleptic malignant
+syndrome
+
+
+
+
+<<<PAGE 1917>>>
+
+If taken for more than a few weeks, taper to reduce chances of
+withdrawal effects
+Patients with seizure history may seize upon sudden withdrawal
+Rebound insomnia may occur the first 1–2 nights after stopping
+For patients with severe problems discontinuing a benzodiazepine,
+dosing may need to be tapered over many months (i.e., reduce dose
+by 1% every 3 days by crushing tablet and suspending or dissolving
+in 100 mL of fruit juice and then disposing of 1 mL and drinking the
+rest; 3–7 days later, dispose of 2 mL, and so on). This is both a form
+of very slow biological tapering and a form of behavioral
+desensitization
+Pharmacokinetics
+Half-life 25–41 hours
+Active metabolite
+Metabolized in part by CYP450 3A4
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+(see Warnings below)
+Effects of quazepam may be increased by CYP450 3A4 inhibitors
+such as nefazodone or fluvoxamine
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 1955>>>
+
+Pharmacokinetics
+Metabolized predominantly by CYP450 1A2
+CYP450 3A4 and 2C are also involved in metabolism of ramelteon
+Mean elimination half-life of parent drug 1–2.6 hours
+Mean elimination half-life of major metabolite, M-II, is 2–5 hours
+Drug Interactions
+Inhibitors of CYP450 1A2, such as fluvoxamine, could increase
+plasma levels of ramelteon
+Inducers of CYP450, such as rifampin, could decrease plasma levels
+of ramelteon
+Inhibitors of CYP450 3A4, such as ketoconazole, could increase
+plasma levels of ramelteon
+Inhibitors of CYP450 2C9, such as fluconazole, could increase
+plasma levels of ramelteon
+Exercise caution if combining with alcohol
+No interaction with fluoxetine (CYP450 2D6 inhibitor)
+Other Warnings/Precautions
+Insomnia may be a symptom of a primary disorder, rather than a
+primary disorder itself
+Use only with extreme caution in patients with impaired respiratory
+function or obstructive sleep apnea
+
+
+
+
+<<<PAGE 1956>>>
+
+Ramelteon should only be administered at bedtime
+May decrease testosterone levels or increase prolactin levels, but the
+clinical significance of this is unknown
+Patients who develop angioedema after treatment with ramelteon
+should not be rechallenged
+Do Not Use
+With fluvoxamine
+In patients with severe hepatic impairment
+If there is a proven allergy to ramelteon
+
+Special Populations
+Renal Impairment
+Dose adjustment not generally necessary
+Hepatic Impairment
+Use with caution in patients with moderate hepatic impairment
+Not recommended for use in patients with severe impairment
+Cardiac Impairment
+Dosage adjustment may not be necessary
+
+
+
+
+<<<PAGE 2058>>>
+
+No
+How to Stop
+Down-titration, especially when simultaneously beginning a new
+antipsychotic while switching (i.e., cross-titration)
+Rapid discontinuation could theoretically lead to rebound psychosis
+and worsening of symptoms
+Pharmacokinetics
+Terminal half-life approximately 3 days
+Extensively metabolized by CYP450 2D6 and 3A
+Drug Interactions
+May increase effects of antihypertensive agents
+May antagonize levodopa, dopamine agonists
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+Inhibitors of CYP450 2D6 (e.g., paroxetine, fluoxetine, duloxetine,
+quinidine) may significantly increase plasma levels of sertindole and
+require a dosage reduction of sertindole
+Inhibitors of CYP450 3A (e.g., nefazodone, fluvoxamine,
+fluoxetine, ketoconazole) can increase plasma levels of sertindole
+and concomitant use of these agents with sertindole is
+contraindicated
+
+
+
+
+<<<PAGE 2092>>>
+
+Pharmacokinetics
+Maximum observed plasma concentrations are reached within 30–
+120 minutes (median 60 minutes) of oral dosing
+Metabolized to an active metabolite, primarily by CYP450 3A4
+(major route) and CYP450 2C9 (minor route)
+Parent drug and its active metabolite have approximately 4-hour
+terminal half-lives
+Absorption is delayed if taken with a high-fat meal
+Drug Interactions
+CYP450 3A4 inhibitors (e.g., ritonavir, ketoconazole, itraconazole,
+erythromycin, fluvoxamine, fluoxetine) can increase plasma levels of
+sildenafil
+In patients taking ritonavir, maximum single dose is 25 mg in a 48hour period
+In patients taking erythromycin or strong CYP450 3A4 inhibitors,
+consider a starting dose of 25 mg
+Additive blood pressure lowering effects may occur with concomitant
+use of nitrates, alpha blockers, and antihypertensives
+If coadministered with an alpha blocker, the patient should be stable on
+the alpha blocker prior to initiating sildenafil; starting dose of
+sildenafil should be 25 mg
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 2153>>>
+
+Has been studied and found safe in a small number of patients for up
+to 1 year
+Habit Forming
+No
+How to Stop
+Taper not necessary
+Pharmacokinetics
+Mean elimination half-life 1.3 hours
+Metabolized by CYP450 1A2 and CYP 450 3A4
+Drug Interactions
+Inhibitors of CYP450 1A2, such as fluvoxamine, could increase
+plasma levels of tasimelteon, so combination of tasimelteon with
+fluvoxamine or other strong CYP450 1A2 inhibitors should be
+avoided
+Inducers of CYP450 3A4, such as rifampin, could decrease plasma
+levels of tasimelteon, so combination of tasimelteon with CYP450
+3A4 inducers should be avoided
+Efficacy may be reduced if given in conjunction with CYP450 1A2
+inducers (e.g., cigarette smoke)
+
+
+
+
+<<<PAGE 2212>>>
+
+Drug Interactions
+Clearance of tiagabine may be reduced and thus plasma levels
+increased if taken with a non-enzyme-inducing antiepileptic drug
+(e.g., valproate, gabapentin, lamotrigine), so tiagabine dose may
+need to be reduced
+CYP450 3A4 inducers such as carbamazepine can lower the plasma
+levels of tiagabine
+CYP450 3A4 inhibitors such as nefazodone, fluvoxamine, and
+fluoxetine could theoretically increase the plasma levels of tiagabine
+Clearance of tiagabine is increased if taken with an enzymeinducing antiepileptic drug (e.g., carbamazepine, phenobarbital,
+phenytoin, primidone) and thus plasma levels are reduced ; however,
+no dose adjustments are necessary for treatment of epilepsy as the
+dosing recommendations for epilepsy are based on adjunctive
+treatment with an enzyme-inducing antiepileptic drug
+Despite common actions upon GABA, no pharmacodynamic or
+pharmacokinetic interactions have been shown when tiagabine is
+combined with the benzodiazepine triazolam or with alcohol
+However, sedating actions of any two sedative drugs given in
+combination can be additive
+Other Warnings/Precautions
+Seizures have occurred in individuals without epilepsy who took
+tiagabine
+
+
+
+
+<<<PAGE 2378>>>
+
+✽ Lamotrigine dose should be reduced by perhaps 50% if used with
+valproate, as valproate inhibits metabolism of lamotrigine and raises
+lamotrigine plasma levels, theoretically increasing the risk of rash
+Plasma levels of valproate may be lowered by carbamazepine,
+phenytoin, ethosuximide, phenobarbital, rifampin
+Aspirin may inhibit metabolism of valproate and increase valproate
+plasma levels
+Plasma levels of valproate may also be increased by felbamate,
+chlorpromazine, fluoxetine, fluvoxamine, topiramate, cimetidine,
+erythromycin, and ibuprofen
+Valproate inhibits metabolism of ethosuximide, phenobarbital, and
+phenytoin, and can thus increase their plasma levels
+No likely pharmacokinetic interactions of valproate with lithium or
+atypical antipsychotics
+Use of valproate with clonazepam may cause absence status
+Reports of hypothermia and hyperammonemia with or without
+encephalopthay in patients taking topiramate combined with
+valproate, though this is not due to a pharmacokinetic interaction; in
+patients who develop unexplained lethargy, vomiting, or change in
+mental status, an ammonia level should be measured
+Other Warnings/Precautions
+
+✽ Be alert to the following symptoms of hepatotoxicity that require
+immediate attention: malaise, weakness, lethargy, facial edema,
+
+
+
+
+<<<PAGE 2429>>>
+
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Mean terminal half-life 25 hours
+Metabolized by CYP450 3A4
+Absorption and bioavailability are reduced by half when taken on an
+empty stomach
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOI or for at least 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing vilazodone
+Inhibitors of CYP450 3A4, such as nefazodone, fluoxetine,
+fluvoxamine, and even grapefruit juice, may decrease the clearance
+of vilazodone and thereby raise its plasma levels, so dose should be
+reduced to 20 mg when coadminstered with strong CYP3A4
+inhibitors
+Inducers of CYP450 3A4, such as carbamazepine, may increase
+clearance of vilazodone and thus lower its plasma levels and
+
+
+
+
+<<<PAGE 2512>>>
+
+Habit Forming
+No
+How to Stop
+Taper
+Epilepsy patients may seize upon withdrawal, especially if
+withdrawal is abrupt
+Rapid discontinuation may increase the risk of relapse in bipolar
+patients
+Discontinuation symptoms uncommon
+Pharmacokinetics
+Plasma elimination half-life approximately 63 hours
+Metabolized in part by CYP450 3A4
+Partially eliminated renally
+Drug Interactions
+Agents that inhibit CYP450 3A4 (such as nefazodone, fluvoxamine,
+and fluoxetine) may decrease the clearance of zonisamide, and
+increase plasma zonisamide levels, possibly requiring lower doses
+of zonisamide
+Agents that induce CYP450 3A4 (such as carbamazepine) may
+increase the clearance of zonisamide and decrease plasma
+
+
+
+
+<<<PAGE 2542>>>
+
+Drug Interactions
+Combined use with phenothiazines may increase risk of seizures
+Can decrease the effects of levodopa, dopamine agonists
+Epinephrine may lower blood pressure
+May interact with hypotensive agents due to alpha 1 adrenergic
+blockade
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+Plasma concentrations increased by diazepam, fluoxetine
+Zotepine may increase plasma levels of phenytoin
+May increase risk of bleeding if used with anticoagulants
+Theoretically, dose may need to be raised if given in conjunction
+with CYP450 1A2 inducers (e.g., cigarette smoke)
+Theoretically, dose may need to be lowered if given in conjunction
+with CYP450 1A2 inhibitors (e.g., fluvoxamine) in order to prevent
+dangers of dose-dependent QTc prolongation
+Theoretically, dose may need to be lowered if given in conjunction
+with CYP450 3A4 inhibitors (e.g., fluvoxamine, nefazodone,
+fluoxetine) in order to prevent dangers of dose-dependent QTc
+prolongation
+Other Warnings/Precautions
+Not recommended for use with sibutramine
+
+
+
+
+<<<PAGE 2584>>>
+
+Doxal (doxepin), 255
+Doxedyn (doxepin), 255
+doxepin, 255
+Dozic (haloperidol), 347
+D-Pam (diazepam), 229
+Drenian (diazepam), 229
+Dresent (sulpiride), 741
+Ducene (diazepam), 229
+duloxetine, 263
+Dumirox (fluvoxamine), 325
+Dumozolam (triazolam), 799
+Dumyrox (fluvoxamine), 325
+Duraclon (clonidine), 179
+Duract (dextromethorphan), 225
+Duradiazepam (diazepam), 229
+Duralith (lithium), 415
+Duraperidol (haloperidol), 347
+Durazepam (oxazepam), 569
+Durazolam (lorazepam), 437
+Dutonin (nefazodone), 545
+Dyanavel XR (amphetamine d,l), 45
+Eclorion (sulpiride), 741
+Edluar (zolpidem), 871
+Edronax (reboxetine), 681
+Efectin (venlafaxine), 841
+Efexir (venlafaxine), 841
+Efexor (venlafaxine), 841
+Efexor XL (venlafaxine), 841
+
+
+
+
+<<<PAGE 2587>>>
+
+Everiden (valproate), 829
+Exan (buspirone), 123
+Excegran (zonisamide), 875
+Exelon (rivastigmine), 699
+Exogran (zonisamide), 875
+Exostrept (fluoxetine), 301
+Fanapt (iloperidone), 359
+Fardalan (sulpiride), 741
+Fargenor (chlordiazepoxide), 147
+Faustan (diazepam), 229
+Faverin (fluvoxamine), 325
+Fazaclo ODT (clozapine), 191
+Felicium (fluoxetine), 301
+Felison (flurazepam), 321
+Fenactil (chlorpromazine), 153
+Fentazin (perphenazine), 607
+Fetzima (levomilnacipran), 403
+Fevarin (fluvoxamine), 325
+Fidelan (sulpiride), 741
+Finlepsin (carbamazepine), 131
+Flaracantyl (thioridazine), 759
+flibanserin, 289
+Flonital (fluoxetine), 301
+Floxyfral (fluvoxamine), 325
+Fluanxol (flupenthixol), 307
+Fluanxol Depot (flupenthixol), 307
+Fluanxol Depot 10% (flupenthixol), 307
+Fluanxol Depot 2% (flupenthixol), 307
+
+
+
+
+<<<PAGE 2597>>>
+
+Lorsilan (lorazepam), 437
+Lorzem (lorazepam), 437
+Lovan (fluoxetine), 301
+Loxapac (loxapine), 443
+loxapine, 443
+Loxitane (loxapine), 443
+Lucemyra (lofexidine), 427
+Ludiomil (maprotiline), 465
+Lullan (perospirone), 601
+lumateperone, 451
+Lumin (mianserin), 495
+Lunesta (eszopiclone), 285
+lurasidone, 457
+Lustral (sertraline), 721
+Luvox (fluvoxamine), 325
+Luvox SR (fluvoxamine), 325
+Lyogen (fluphenazine), 313
+Lyogen Depot (fluphenazine), 313
+Lyoridin Depot (fluphenazine), 313
+Lyorodin (fluphenazine), 313
+Lyrica (pregabalin), 647
+Lyrica CR (pregabalin), 647
+
+

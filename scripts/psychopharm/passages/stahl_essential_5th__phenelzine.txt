@@ -1,0 +1,76 @@
+<<<PAGE 353>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Figure 7-68 Tricyclic antidepressants
+and overdose. Tricyclic
+antidepressants block voltagesensitive sodium channels in the brain
+(top) and heart (bottom). In overdose,
+this action can lead to coma, seizures,
+arrhythmia, and even death.
+
+Overdose
+
+H1
+
+coma
+sodium
+channel
+
+seizures
+
+H1
+
+arrhythmia
+sodium
+channel
+
+are barely prescribed any more today. Only about one
+in every 3,000 to 5,000 prescriptions for a drug to treat
+depression is a MAOI and only a few hundred experts
+prescribe MAOIs out of the hundreds of thousands
+who prescribe other drugs for depression in the US.
+Prescribing MAOIs is beginning to become a lost art
+in psychopharmacology as many familiar with them
+learned to use MAOIs before the 1990s when SSRIs were
+introduced and largely replaced MAOIs. Most of these
+prescribers of MAOIs are now retiring from practice.
+Nevertheless, MAOIs are a most powerful drug class
+for unipolar depression and those who prescribe them
+have seen many patients who respond to nothing else
+get better on MAOIs. The reader who is an advanced
+psychopharmacologist should gain familiarity and
+experience with these agents so that patients who still
+need them can get them. The reader is referred to specific
+reviews on MAOIs including some of the author, to help
+navigate dietary restrictions and drug interactions.
+The MAOIs phenelzine, tranylcypromine,
+isocarboxazid, and selegiline are all irreversible enzyme
+
+death
+
+7
+
+inhibitors, and thus enzyme activity returns only after
+new enzyme is synthesized about 2–3 weeks later.
+Amphetamine is also a weak but reversible MAOI; some
+MAOIs have properties related to amphetamine. For
+example, tranylcypromine has a chemical structure
+modeled on amphetamine, and thus in addition to MAOI
+properties, it also has amphetamine-like dopaminereleasing properties. The MAOI selegiline itself does not
+have amphetamine-like properties, but is metabolized
+to both l-amphetamine and l-methamphetamine. Thus,
+there is a close mechanistic link between some MAOIs and
+additional amphetamine-like dopamine-releasing actions.
+MAO Subtypes
+
+MAO exists in two subtypes, A and B. The A form
+preferentially metabolizes the monoamines most closely
+linked to depression (i.e., serotonin and norepinephrine)
+whereas the B form preferentially metabolizes trace
+amines such as phenethylamine (see Chapter 5 and
+Figures 5-64 through 5-66 for further discussion on
+trace amines). Both MAO-A and MAO-B metabolize
+337
+
+

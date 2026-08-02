@@ -1,0 +1,882 @@
+<<<PAGE 315>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+1A
+
+5HT1A
+autoreceptor
+SERT
+SPARI
+
+1A
+
+1A
+
+1A
+
+1A
+1A
+1A
+1A
+2A
+2C
+3
+6
+7
+
+DA
+
+1A
+
+Figure 7-27 Mechanism of action
+of serotonin partial agonist reuptake
+inhibitors (SPARIs), part 5. Finally,
+once the SPARIs have blocked the
+serotonin transporter (SERT), increased
+somatodendritic serotonin (5HT),
+desensitized somatodendritic 5HT1A
+autoreceptors, turned on neuronal
+impulse flow, and increased release
+of 5HT from axon terminals, the final
+step (shown here, red circle) may be
+the desensitization of postsynaptic 5HT
+receptors. This timeframe correlates
+with antidepressant action. In addition,
+the addition of 5HT1A partial agonism
+may lead to downstream enhancement
+of dopamine (DA) release, which may
+mitigate sexual dysfunction.
+
+1A
+
+SPARI action: finally, antidepressant actions begin, and downstream enhancement
+of DA release may mitigate sexual dysfunction
+
+SERT
+
+SERT
+
+venlafaxine
+
+CYP
+2D6
+
+SERT
+
+SERT
+
+desvenlafaxine
+
+NET
+
+7
+
+NET
+
+Figure 7-28 Venlafaxine and desvenlafaxine. Venlafaxine inhibits both the serotonin transporter (SERT) and the norepinephrine
+transporter (NET), thus combining two therapeutic mechanisms in one agent. Venlafaxine’s serotonergic actions are present at
+low doses, while its noradrenergic actions are progressively enhanced as dose increases. Venlafaxine is converted to its active
+metabolite, desvenlafaxine, by CYP450 2D6. Like venlafaxine, desvenlafaxine inhibits reuptake of serotonin and norepinephrine, but
+its NET actions are greater relative to its SERT actions compared to venlafaxine. Venlafaxine administration usually results in plasma
+levels of venlafaxine that are about half those of desvenlafaxine; however, this can vary depending on genetic polymorphisms of
+CYP450 2D6 and if patients are taking drugs that are inhibitors or inducers of CYP450 2D6. Thus, the degree of NET inhibition with
+venlafaxine administration may be unpredictable. Desvenlafaxine has now been developed as a separate drug. It has relatively greater
+norepinephrine reuptake inhibition than venlafaxine but is still more potent at the SERT.
+
+duloxetine
+
+SERT
+SERT
+
+NET
+Figure 7-29 Duloxetine. Duloxetine inhibits both the serotonin
+transporter (SERT) and the norepinephrine transporter (NET).
+Its noradrenergic actions may contribute to efficacy for painful
+physical symptoms.
+
+dual monoamine mechanisms may lead to more efficacy is
+the finding that the SNRI venlafaxine frequently seems to
+have greater unipolar antidepressant efficacy as the dose
+increases, theoretically due to recruiting more and more
+NET inhibition as the dose is raised (i.e., the noradrenergic
+“boost”). Clinicians and experts currently debate whether
+remission rates are higher with SNRIs compared to SSRIs
+or whether SNRIs are more helpful in depressed patients
+who fail to respond to SSRIs than are other options. One
+area where SNRIs have established clear efficacy but SSRIs
+have not is in the treatment of pain.
+NET Inhibition Increases Dopamine in the Prefrontal
+Cortex
+
+Although SNRIs are commonly called “dual action”
+serotonin–norepinephrine agents, they actually have
+299
+
+
+
+
+<<<PAGE 318>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+7-33C). The bottom line is that NET inhibition increases
+both NE and DA in the prefrontal cortex. Thus, SNRIs
+have two-and-a-half mechanisms: boosting serotonin
+throughout the brain, boosting NE throughout the brain,
+and boosting DA in the prefrontal cortex (but not in other
+DA projection areas).
+Venlafaxine
+
+Depending upon the dose, venlafaxine has different
+degrees of inhibition of serotonin reuptake (most potent
+and robust even at low doses) versus NE reuptake
+(moderate potency and robust only at higher doses)
+(Figure 7-28). However, there are no significant actions
+on other receptors. It remains controversial whether
+venlafaxine or other SNRIs have greater efficacy in
+unipolar major depression than SSRIs, either in terms
+of enhanced remission rates, more robust sustained
+remission over long-term treatment, or greater efficacy
+for treatment-resistant unipolar depression, but this does
+seem plausible given two mechanisms and the boosting
+of two monoamines. Venlafaxine is approved and widely
+used for several anxiety disorders as well. Adding
+NET inhibition likely accounts for two side effects of
+venlafaxine in some patients: sweating and elevated blood
+pressure.
+Venlafaxine is available as an extended-release
+formulation, which not only allows for once-daily
+administration but also significantly reduces side
+effects, especially nausea. In contrast to several other
+psychotropic drugs available in controlled-release
+formulations, extended-release venlafaxine is a
+considerable improvement over the immediate-release
+formulation, which has fallen into little or no use because
+of unacceptable nausea and other side effects, especially
+when immediate-release venlafaxine is started or when
+it is stopped. However, venlafaxine even in controlledrelease formulation can cause withdrawal reactions,
+sometimes quite bothersome, especially after sudden
+discontinuation from high-dose long-term treatment.
+Nevertheless, the controlled-release formulation is highly
+preferred because of enhanced tolerability.
+Desvenlafaxine
+
+Venlafaxine is a substrate for CYP450 2D6, which
+converts it to an active metabolite desvenlafaxine (Figure
+7-28). Desvenlafaxine has greater NET inhibition relative
+to SERT inhibition compared to venlafaxine. Normally,
+after venlafaxine administration, the plasma levels of
+venlafaxine are about half of those for desvenlafaxine.
+However, this is highly variable, depending upon whether
+302
+
+the patient is taking another drug that is a CYP450 2D6
+inhibitor, which shifts the plasma levels towards more
+venlafaxine and less desvenlafaxine, also reducing the
+relative amount of NET inhibition. Variability in plasma
+levels of venlafaxine versus desvenlafaxine is also due
+to genetic polymorphisms for CYP450 2D6, such that
+poor metabolizers will shift the ratio of these two drugs
+towards more parent venlafaxine and away from the
+active metabolite desvenlafaxine, and thus reduce the
+relative amount of NET inhibition. As a result of these
+considerations, it can be somewhat unpredictable
+how much NET inhibition a given dose of venlafaxine
+will have in a given patient at a given time, whereas
+this is more predictable for desvenlafaxine. Expert
+clinicians have learned to solve this problem with skilled
+dose titration of venlafaxine, but the development of
+desvenlafaxine as a separate drug may also solve this
+problem, with less need for dose titration and more
+consistent NET inhibition at a given dose across all
+patients.
+Duloxetine
+
+This SNRI, characterized pharmacologically by slightly
+more potent SERT than NET inhibition (Figure 7-29), has
+transformed how we think about depression and pain.
+Classic teaching was that depression caused pain that was
+psychic (as in “I feel your pain”) and not somatic (as in
+“ouch”), and that psychic pain was secondary to emotional
+suffering in depression; therefore, it was thought,
+anything that made depression better would make psychic
+pain better nonspecifically. Somatic pain was thus not
+thought to be caused by depression, although depression
+could supposedly make it worse, and classically somatic
+pain was not treated with drugs for depression.
+Studies with duloxetine have changed all this. Not
+only does this SNRI relieve unipolar depression in the
+absence of pain, but it also relieves pain in the absence
+of depression. All sorts of pain are improved by this
+SNRI, from diabetic peripheral neuropathic pain, to
+fibromyalgia, to chronic musculoskeletal pain such
+as that associated with osteoarthritis and low back
+problems, and more. These findings of the efficacy
+of duloxetine for multiple pain syndromes have also
+validated that painful physical (somatic) symptoms
+are a legitimate set of symptoms that accompany
+depression and are not just a form of emotional pain.
+The use of SNRIs such as duloxetine in pain syndromes
+is discussed in Chapter 9. So, duloxetine has established
+efficacy not only in unipolar depression and in chronic
+pain, but also in patients with chronic painful physical
+
+
+
+
+<<<PAGE 409>>>
+
+Chapter 9: Chronic Pain and Its Treatment
+
+SNRI Action Boosts NE Inhibition of Pain
+
+back
+pain
+
+stomach
+pain
+
+muscle/
+joint
+pain
+descending
+NE
+projections
+
+= SNRI
+SNRI
+boosts NE
+
+back posture
+
+C
+
+digestion
+
+muscle/joint movement
+
+Figure 9-12C Enhancement of descending noradrenergic inhibition. A serotonin–norepinephrine reuptake inhibitor (SNRI) can
+increase noradrenergic neurotransmission in the descending spinal pathway to the dorsal horn, and thus may enhance inhibition of
+bodily input so that it does not reach the brain and get interpreted as pain.
+
+Descending inhibition, mostly via serotonin and
+noradrenergic pathways, is normally active at rest and
+is thought to act physiologically to mask perception
+of irrelevant nociceptive input (e.g., from digestion,
+joint movement, etc.) (Figures 9-12A and 9-13A).
+One hypothesis for why patients with depression or
+fibromyalgia or related chronic pain disorders perceive
+pain when there is no obvious sign of peripheral
+trauma is that descending inhibition may not be acting
+adequately to mask irrelevant nociceptive input. This
+leads to the perception of pain from what is actually
+normal input that is ordinarily ignored (Figures 9-12B
+and 9-13B). If this descending monoaminergic inhibition
+is enhanced with an SNRI, irrelevant nociceptive inputs
+from joints, muscles, and the back in fibromyalgia and
+depression, and from digestion and the gastrointestinal
+tract in irritable bowel syndrome, depression, and anxiety
+disorders, are hypothetically once again ignored and
+thus are no longer perceived as painful (Figures 9-12C
+and 9-13C). SNRIs include duloxetine, milnacipran,
+levomilnacipran, venlafaxine, desvenlafaxine, and some
+tricyclic antidepressants (TCAs). SNRIs and TCAs are
+discussed extensively in Chapter 7.
+
+Descending inhibition is also activated during severe
+injury by incoming nociceptive input, and in dangerous
+“conflict” situations via limbic structures, causing the
+release of endogenous opioid peptides (Figure 9-11B),
+serotonin (Figure 9-13A), and norepinephrine (Figure
+9-12A). When this happens, this reduces not only the
+release of nociceptive neurotransmitters in the dorsal
+horn (Figure 9-2) but also the transmission of nociceptive
+impulses up the spinal cord into the brain (Figure 9-3),
+thereby reducing the perception of pain, dulling it to
+allow escape from the situation without the injury
+compromising physical performance in the short run
+(reduction of “ouch” in Figure 9-3). On return to safety,
+descending facilitation replaces the inhibition to redress
+the balance, increase awareness of the injury, and force
+rest of the injured part (lots of “ouch” in Figure 9-3).
+The power of this system can be seen in humans
+persevering through severe injury on the sports
+field and on the battle field. The placebo effect may
+also involve endogenous opioid release from these
+descending inhibitory neurons (Figure 9-11B), since
+activation of a placebo response to pain is reversible by
+the μ-opioid antagonist naloxone. These are adaptive
+393
+
+9
+
+
+
+
+<<<PAGE 415>>>
+
+Chapter 9: Chronic Pain and Its Treatment
+
+Molecular Action of Alpha-2-Delta Ligands
+A. Open conformation of VSCC
+inside the cell
+
+ß
+
+N
+P/Q
+
+outside the cell
+++
+Ca
+
+B. Alpha-2-delta ligand binding to open
+conformation and inhibiting VSCC
+
+ß
+
+N
+P/Q
+
+C. Closed conformation of VSCC
+
+ß
+
+N
+P/Q
+2
+
+Figure 9-18 Binding of α2δ ligands. (A) Calcium influx occurs
+when voltage-sensitive calcium channels (VSCCs) are in the
+open-channel conformation. (B) Alpha-2-delta ligands such as
+gabapentin and pregabalin have greatest affinity for the openchannel conformation and thus block those channels that are
+most active. (C) When VSCCs are in the closed conformation
+α2δ ligands do not bind and thus do not disrupt normal
+neurotransmission.
+
+neuropathic pain, ignoring other VSCCs that are not open,
+and thus not interfering with normal neurotransmission in
+central neurons uninvolved in mediating the pathological
+pain state.
+Treatment of pain, including neuropathic pain
+conditions, may be less costly when you “pay” for it
+
+in advance, or at least early in the game. The hope is
+that early treatment of pain could interfere with the
+development of chronic persistent painful conditions
+by blocking the ability of painful experiences to imprint
+themselves upon the central nervous system by not
+allowing triggering of central sensitization. Thus, the
+mechanisms whereby symptomatic suffering of chronic
+neuropathic pain is relieved, such as with SNRIs or α2δ
+ligands, may also be the same mechanisms that could
+prevent disease progression to chronic persistent pain
+states. This notion calls for aggressive treatment of
+painful symptoms in these conditions that theoretically
+have their origin within the central nervous system, thus
+“intercepting” the central sensitization process before
+it is durably imprinted into angry circuits. Thus, major
+depression and anxiety disorders and fibromyalgia can
+all be treated with SNRIs and/or α2δ ligands to eliminate
+painful physical symptoms and thereby improve the
+chances of reaching full symptomatic remission. The
+opportunity to prevent permanent pain syndromes
+or progressive worsening of pain is one reason why
+pain is increasingly being considered a psychiatric
+“vital sign” that must be assessed routinely in the
+evaluation and treatment of psychiatric disorders by
+psychopharmacologists. Future testing of agents capable
+of reducing pain should be done to determine whether
+eliminating painful symptoms early in the course of
+psychiatric and functional somatic illnesses will improve
+outcomes, including preventing symptomatic relapses,
+the development of treatment resistance or even brain
+atrophy from stress in pain states (Figure 9-9), and
+hippocampal atrophy from stress in anxiety and affective
+disorders (Figure 6-30). Pre-emptively treating pain
+before it occurs, or at least rescuing centrally mediated
+and sensitizing pain by intercepting such pain before it
+becomes permanent, may be some of the most promising
+therapeutic applications of dual reuptake inhibitors and
+α2δ ligands and deserves careful clinical evaluation.
+
+TARGETING ANCILLARY
+SYMPTOMS IN FIBROMYALGIA
+We have repeatedly mentioned the proven usefulness
+of the α2δ ligands gabapentin and pregabalin and
+the SNRIs duloxetine, milnacipran, venlafaxine, and
+desvenlafaxine for treating the painful symptoms of
+fibromyalgia, yet these two classes have not been studied
+extensively in combination. Nevertheless, they are
+frequently used together in clinical practice on an empiric
+basis and anecdotally have been shown to give additive
+399
+
+9
+
+
+
+
+<<<PAGE 416>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+improvement in relieving pain. Each class of drug may
+also help different ancillary symptoms in fibromyalgia,
+so the combination of α2δ ligands with SNRIs may lead to
+broader symptom relief than using either alone, although
+both are effective for pain in fibromyalgia. That is, α2δ
+ligands may reduce symptoms of anxiety in fibromyalgia
+(see discussion of α2δ ligands in anxiety in Chapter 8 and
+illustrated in Figures 8-17C and 8-18C) and for improving
+the slow-wave sleep disorder of fibromyalgia (sleep
+disorders and their treatment are discussed in further
+detail in Chapter 10). SNRIs can be useful in reducing
+symptoms of depression and anxiety in fibromyalgia
+(see Chapter 7 on treatment for mood disorders) and
+for treating fatigue as well as the cognitive symptoms
+associated with fibromyalgia, sometimes also called fibrofog (see Figures 9-8 and 9-9). Problems with executive
+functioning in a wide variety of clinical conditions are
+generally linked to inefficient information processing
+in the dorsolateral prefrontal cortex (DLPFC) where
+dopamine neurotransmission is important in regulating
+brain circuits (see Chapter 4 on cognition in schizophrenia
+and Figure 4-17). This concept of dopaminergic
+regulation of cognition in the DLPFC and the role of
+boosting dopamine neurotransmission to improve
+executive dysfunction is also discussed in Chapter 11
+on attention deficit hyperactivity disorder. Since SNRIs
+increase dopamine concentrations in the DLPFC (see
+Figure 7-33C), SNRI agents can also potentially improve
+symptoms of fibro-fog in fibromyalgia patients. This
+may be particularly so for the SNRIs milnacipran and
+levomilnacipran, which have potent norepinephrine
+reuptake binding properties at all clinically effective doses
+(Figures 7-30 and 7-31), or for higher doses of the SNRIs
+duloxetine (Figure 7-29), venlafaxine, and desvenlafaxine
+(Figure 7-28), which act to increase norepinephrine
+reuptake blocking properties of these agents and thus act
+to increase concentrations of dopamine in the DLPFC
+(Figure 7-33C). Other strategies for improving fibro-fog
+in fibromyalgia patients include the same ones used to
+treat cognitive dysfunction in depression, and include
+modafinil, armodafinil, selective norepinephrine reuptake
+inhibitors (NRIs) such as atomoxetine, norepinephrine–
+dopamine reuptake inhibitors (NDRIs) such as bupropion,
+and with caution, stimulants. SNRIs, sometimes
+augmented with modafinil, stimulants, or bupropion can
+also be useful for symptoms of physical fatigue as well as
+mental fatigue in fibromyalgia patients.
+Second-line treatments for pain in fibromyalgia
+can include sedating drugs for depression including
+
+400
+
+mirtazapine and tricyclic antidepressants, as well as
+the tricyclic muscle relaxant cyclobenzapine. Other
+sleep aids such as benzodiazepines, hypnotics, and
+trazodone can be helpful in relieving sleep disturbance
+in fibromyalgia. Evidence is also accumulating for the
+efficacy of γ-hydroxybutyrate (GHB or sodium oxybate)
+in fibromyalgia (use with extreme caution because of
+diversion and abuse potential). GHB is approved for
+narcolepsy, enhances slow-wave sleep, and is discussed
+in Chapter 10 on sleep (see Figures 10-67 and 10-68). In
+heroic cases the use of GHB by experts for the treatment
+of severe and treatment-resistant cases of fibromyalgia
+may be justified. A number of anticonvulsants other than
+the α2δ ligands (Figure 9-16) are also used second-line for
+chronic neuropathic pain states, including fibromyalgia.
+These agents are thought to target voltage-gated sodium
+channels rather than voltage-gated calcium channels
+and thus seem to have a different mechanism of action
+than α2δ ligands and may be effective in patients with
+inadequate response to α2δ ligands.
+
+SUMMARY
+This chapter has defined pain, and has explained
+the processing of nociceptive neuronal activity into
+the perception of pain by pathways that lead to the
+spinal cord, and then up the spinal cord to the brain.
+Neuropathic pain is discussed extensively, including
+both peripheral and central mechanisms, and the
+concept of central sensitization. The key role of
+descending inhibitory pathways that reduce the activity
+of nociceptive pain neurons with the release of serotonin
+and norepinephrine is explained, and shown to be
+the basis for the actions of serotonin–norepinephrine
+reuptake inhibitors (SNRIs) as agents that reduce the
+perception of pain in conditions ranging from major
+depression to fibromyalgia to diabetic peripheral
+neuropathic pain, low back pain, osteoarthritis, and
+related conditions. The critical role of voltage-sensitive
+calcium channels (VSCCs) is also explained, providing
+the basis for the actions of α2δ ligands as agents that
+also reduce the perception of pain in diabetic peripheral
+neuropathic pain, fibromyalgia, painful physical
+symptoms of depression and anxiety disorders, shingles,
+and other neuropathic pain conditions. Finally, the
+spectrum of conditions from affective disorders to
+chronic neuropathic pain disorders is introduced, with
+emphasis on the condition of fibromyalgia and its newly
+evolving psychopharmacological treatments.
+
+
+
+
+<<<PAGE 497>>>
+
+Atomoxetine in ADHD with Weak
+Prefrontal NE and DA Signals
+nucleus accumbens - no action
+
+prefrontal cortex
+NE
+neuron
+
+DA
+neuron
+
+VMAT2
+
+DA
+neuron
+
+VMAT2
+
+VMAT2
+
+NET
+
+atomoxetine
+DA
+
+NE
+
+α2A
+
+D1
+
++
+
++
+
+DA
+
+DAT
+
+Figure 11-38 Atomoxetine in
+ADHD with weak prefrontal
+norepinephrine (NE) and dopamine
+(DA) signals. Through its blockade of
+norepinephrine transporters (NETs),
+atomoxetine causes NE and DA levels
+to increase in the prefrontal cortex,
+where inactivation of both of these
+neurotransmitters is largely due to
+NETs (on the left). At the same time,
+the relative lack of NETs in the nucleus
+accumbens prevents atomoxetine from
+increasing NE or DA levels in that brain
+area, thus reducing the risk of abuse (on
+the right). Other NET inhibitors would
+be expected to have the same effects.
+
+D1 D2
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+NET inhibitors
+atomoxetine (NRI), reboxetine (NRI), bupropion (NDRI), venlafaxine (SNRI),
+duloxetine (SNRI), desvenlafaxine (SNRI), milnacipran (SNRI),
+desipramine (TCA), nortriptyline (TCA)
+
+Chronic Treatment with Atomoxetine in ADHD
+with Excessive Prefrontal NE and DA Signals
+prefrontal cortex
+excessive NE and DA signals
+
+stress
+
+stress
+
+Alpha-2A-Adrenergic Agonists
+
+ADHD anxiety substance
+abuse
+
+chronic treatment with atomoxetine
+NE
+neuron
+
+DA
+neuron
+
+VMAT2
+
+VMAT2
+NET
+
+atomoxetine
+DA
+
+NE
+
+α2A
+
+D1
+
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
+have not been previously treated with stimulants, nor in
+ADHD patients who have been treated long term (more
+than 8–11 weeks). NRIs may actually be preferred to
+stimulants in patients with complex comorbidities, side
+effects, or lack of response to stimulants.
+
+RESPONSE
+Figure 11-39 Chronic treatment with atomoxetine in ADHD
+with excessive signals. ADHD linked to conditions that are
+associated with chronic stress and comorbidities is theoretically
+caused by overly active NE and DA circuits. Continuous
+blockade of NETs could restore tonic postsynaptic D1 and α2Aadrenergic signaling, downregulate phasic NE and DA actions,
+and desensitize postsynaptic NE and DA receptors.
+
+Norepinephrine receptors are discussed in Chapter 6
+and illustrated in Figures 6-14 through 6-16. There are
+numerous subtypes of α-adrenergic receptors, from
+presynaptic autoreceptors, generally of the α2A subtype
+(Figure 6-14) to postsynaptic α2A, α2B, α2C, and α1
+subtypes α1A, α1B, and α1D (Figures 6-14 through 6-16).
+Alpha-2A receptors are widely distributed throughout the
+central nervous system, with high levels in the cortex and
+locus coeruleus. These receptors are thought to be the
+primary mediators of the effects of NE in the prefrontal
+cortex, regulating symptoms of inattention, hyperactivity,
+and impulsivity in ADHD. Alpha-2B receptors are in high
+concentrations in the thalamus and may be important
+in mediating sedating actions of NE, while α2C receptors
+are densest in striatum. Alpha-1 receptors generally have
+opposing actions to α2 receptors, with α2 mechanisms
+predominating when NE release is low or moderate
+(i.e., for normal attention), but with α1 mechanisms
+predominating at NE synapses when NE release is
+high (e.g., associated with stress and comorbidity) and
+contributing to cognitive impairment. Thus, selective
+NRIs at low doses will first increase activity at α2A
+481
+
+11
+
+
+
+
+<<<PAGE 633>>>
+
+Index
+
+major causes of, 488–96
+psychosis in, 110, 134, 157, 521–3
+psychosis in, treatment, 523–7
+symptomatic treatments, 503–5
+dendrites, 2
+depression, 145, See also bipolar
+depression, unipolar depression
+affective symptoms, 278, 280
+circadian rhythm disorder in, 271–5
+clinical effects of treatment, 284–5
+dementia and, 534–5
+drug side effects, 200
+drug treatment, 229, 239
+insomnia and, 418
+major depressive disorder. See major
+depressive disorder
+major depressive episode. See major
+depressive episode
+mixed features of, 251
+monoamine hypothesis of, 264–5, 290
+monoamine receptor hypothesis of,
+264–6, 267, 290
+mood stabilizer treatment, 288
+neuroplasticity and neuroprogression
+hypothesis of, 266–76
+serotonin or dopamine blockers in, 342
+symptom-based algorithm treatment,
+280
+time course of effects of drugs, 266
+depression with mixed features, 248, 342
+depressive psychosis, 78, 157
+descending spinal norepinephrine
+pathway, 390, 392
+descending spinal serotonergic pathway,
+390, 394
+desensitization, 63, 64
+desvenlafaxine, 299, 302
+deuteration, 175, 177, 354
+dextromethadone, 355–8
+dextromethorphan, 306, 353–4, 533, 536
+diabetes, 198, 199, 415
+diabetic ketoacidosis, 199, 200
+Diagnostic and Statistical Manual of
+Mental Disorders (DSM-5)
+ADHD, 463
+insomnia, 420
+major depressive episode, 245
+manic episode, 245
+mixed features, 248
+dietary tyramine interaction, 338
+diphenhydramine, 426
+direct (go) dopamine pathway, 89, 90
+disorganized/excited psychosis, 78
+disorientation, 78
+dissociation-assisted psychotherapy, 574
+dissociative anesthesia, 570
+dissociatives, 569–71
+disulfiram, 556
+
+DNA methylation, 24
+donepezil, 510
+DOPA decarboxylase, 253
+dopamine, 5
+acetylcholine and, 166
+conversion to norepinephrine, 253
+increase in prefrontal cortex, 299–302
+inefficient tuning of PFC by, 454–63
+projections, 279
+release, 5HT2A regulation, 184–8
+synthesis, 79, 80
+volume neurotransmission, 8
+dopamine β-hydroxylase, 253
+dopamine blockers, 468
+adverse effects, 524
+bipolar disorder spectrum, 338–45
+dopamine D1 receptors
+drugs targeting, 204–41
+dopamine D2 receptors. See also drugs
+targeting dopamine D2 receptors
+pre- and postsynaptic, 228
+dopamine D3 receptors, 343–5
+drugs targeting, 210, 240, 241
+dopamine deficiency syndrome, 306
+dopamine hypothesis of psychosis,
+79–95, 110–14, 141
+dopamine neurotransmitter network,
+79–91
+classic pathways and key brain
+regions, 84
+mesolimbic pathway, 89, 542–3
+nigrostriatal pathway, 87–9
+thalamic pathway, 85
+tuberoinfundibular pathway, 85
+dopamine receptors, 81–5
+dopamine theory of addiction, 542–3
+dopamine transporters (DATs), 31, 80
+ADHD treatment, 473–9
+inhibition, 294, 333
+dopaminergic neurons, 79
+dorsal anterior cingulate cortex (dACC),
+450, 451
+dorsal horn neurons, 382–4
+dorsal horn, descending spinal synapses
+in, 390–5
+dorsal root ganglia, 380, 381
+dorsolateral prefrontal cortex, 387, 400,
+449
+doxepin, 425, 427
+drug abuse, 447, 539
+DAT occupancy and, 476, 479
+reversal of habit, 571–4
+stimulants, 544–7
+drug-induced dystonia, 166, 169
+drug-induced parkinsonism, 165, 166–9,
+181
+drugs targeting dopamine D1 receptors,
+204–41
+
+drugs targeting dopamine D2 receptors,
+159, 242
+agitation in dementia, 197
+antidepressant actions, 195–234
+anxiolytic actions, 196
+cardiometabolic actions, 198–201
+first generation, 179–82, 201–3
+individual properties, 204–41
+mesocortical, 163
+mesolimbic/mesostriatal, 161–3
+nigrostriatal, 165–81
+partial agonists, 189–92, 204–41
+serotonin 2A and, 182–8
+tuberoinfundibular, 164
+drugs targeting dopamine D3 receptors,
+210, 240, 241
+drugs targeting serotonin receptors, 159,
+243
+1A receptors, 192–5, 207
+1B and 1D receptors, 214
+2A receptors, 182–8
+2C receptor, 211
+3 receptor, 212
+6 and 7 receptors, 213
+agitation in dementia, 197
+antidepressant actions, 195–234
+anxiolytic actions, 196
+cardiometabolic actions, 198–201
+individual properties, 204–41
+DSST (digital symbol substitution test), 317
+dual orexin receptor antagonists
+(DORAs), 423–4, 430
+duloxetine, 299, 302–3, 535
+dynorphins, 390
+dyslipidemia, 198
+dystonia, drug-induced, 166, 169
+eating disorders, 293, 575
+Ecstasy, 358, 569
+empathogens, 569
+endocannabinoids, 6, 563, 564
+enkephalins, 390
+entactogens, 569
+enzyme inhibitors, 45
+irreversible, 46
+reversible, 47
+enzymes, 45–50
+activity, 45
+epigenetics, 23–6
+Epworth Sleepiness Scale, 430
+escitalopram, 296
+esketamine, 331, 353, 571
+eslicarbazepine, 352
+euphoria, 560
+excessive daytime sleepiness. See
+hypersomnia
+excitation–secretion coupling, 6, 8–9,
+73, 75
+617
+
+

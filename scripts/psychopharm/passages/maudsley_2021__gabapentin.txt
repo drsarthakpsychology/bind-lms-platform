@@ -1,0 +1,881 @@
+<<<PAGE 140>>>
+
+Table 1.16 Other options for the treatment of TD
+Drug
+
+Comments
+Use is supported by a small randomised, placebo-controlled trial. Low risk of toxicity
+
+Amino acids
+
+74
+
+Botulinum toxin
+
+Case reports of success for localised dyskinesia. Probably now treatment of choice for
+disabling or distressing focal symptoms
+
+Calcium antagonists79
+
+A few published studies but not widely used. Cochrane is dismissive.80 A metaanalysis found no effect49
+
+Donepezil81–83
+
+Supported by a single open study and case series. One negative RCT (n = 12). Dose
+is 10mg/day. No clear evidence of efficacy for rivastigmine or galantamine84
+
+Fish oils85,86
+
+Very limited support for the use of EPA at dose of 2g/day
+
+75–78
+
+Fluvoxamine87
+
+Three case reports. Dose is 100mg/day. Beware of interactions
+
+Gabapentin
+
+Adds weight to theory that GABAergic mechanisms improve TD.
+Dose is 900–1200mg/day. Inconclusive data on other GABA agonists89
+
+Levetiracetam90–93
+
+Three published case studies. One RCT. Dose up to 3000mg/day
+
+Melatonin
+
+Use is supported by a meta-analysis of four trials.95 Usually well tolerated. Dose is
+10mg/day. Some evidence that melatonin receptor genotype determines risk of TD96
+
+Naltrexone97
+
+May be effective when added to benzodiazepines. Well tolerated.
+Dose is 200mg/day
+
+Ondansetron98,99
+
+Limited evidence but low toxicity.
+Dose – up to 12mg/day
+
+Propranolol100–102
+
+Formerly a relatively widely used treatment. Open-label studies only and a
+prospective randomized trial is probably warranted. Dose is 40–120mg/day. Beware
+of contra-indications (asthma, bradycardia, hypotension)
+
+Quercetin103
+
+Plant compound which is thought to be an antioxidant.
+Some promising case reports103–105
+
+Sodium oxybate106
+
+One case report. Dose was 8g/day
+
+Repetitive transcranial
+magnetic stimulation
+(rTMS)107,108
+
+RCT data on patients with ‘tardive syndromes’ suggest the potential for bilateral
+hemispheric high frequency rTMS to be a feasible treatment where TD is
+unresponsive to ‘first-line’ medical treatment107
+
+Zolpidem109
+
+Three case reports. Dose 10–30mg a day
+
+88
+
+94
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  119
+
+
+
+
+<<<PAGE 302>>>
+
+Bipolar disorder  281
+
+Treatment
+
+Comments
+
+Allopurinol
+(300–600mg/day)
+
+A meta-analysis of five studies of adjunct allopurinol found an effect size of just
+less than 0.346
+
+Celecoxib
+(400mg/day)47
+
+Small RCT (n = 46) suggests benefit when used as adjunct to valproate
+
+Clozapine48–50
+
+Established treatment option for refractory mania/bipolar disorder. Rapid titration
+has been reported51
+
+Ebselen52
+
+Inhibits inositol monophosphatase (similar to lithium). Preliminary evidence of benefit
+
+Gabapentin
+(up to 2.4g/day)
+
+Probably only effective by virtue of an anxiolytic effect. Rarely used. Possibly
+useful as prophylaxis56
+
+Levetiracetam57,58
+(up to 4000mg/day)
+
+Possibly effective but controlled studies required. One case of levetiracetam
+causing mania59
+
+Memantine60
+(10–30mg/day)
+
+Conflicting evidence61–63
+
+Melatonin 6mg/day64
+
+Preliminary evidence of benefit as an adjunct to standard treatment. One small
+negative study65
+
+Oxcarbazepine66–72
+(around 300–3000mg/day)
+
+Probably effective acutely and as prophylaxis although one controlled study
+conducted (in youths) was negative73
+
+Phenytoin74
+(300–400mg/day)
+
+Rarely used. Limited data
+Complex kinetics with narrow therapeutic range
+
+Ritanserin75
+(10mg/day)
+
+Supported by a single RCT. Well tolerated. May protect against
+extrapyramidal symptoms (EPS)
+
+Tamoxifen76
+(20–140mg/day)
+
+Possibly effective. Five small RCTs. Dose–response relationship is unclear. Good
+evidence for efficacy as adjunct and as monotherapy, with large effect size
+
+Topiramate77
+(up to 300mg/day)
+
+Probably not effective. Less effective than lithium.2
+
+Tryptophan depletion78
+
+Supported by a small RCT
+
+Ziprasidone
+
+Supported by three RCTs. Widely used outside the UK
+
+53–55
+
+79–81
+
+References
+1. Cipriani A, et al. Comparative efficacy and acceptability of antimanic drugs in acute mania: a multiple-treatments meta-analysis. Lancet
+2011; 378:1306–1315.
+2. McKnight RF, et al. Lithium for acute mania. Cochrane Database Syst Rev 2019; 6:Cd004048.
+3. Jochim J, et al. Valproate for acute mania. Cochrane Database Syst Rev 2019; 10:Cd004052.
+4. Mahajan V, et al. Efficacy and safety of asenapine versus olanzapine in combination with divalproex for acute mania: a randomized controlled trial. J Clin Psychopharmacol 2019; 39:305–311.
+5. Smith LA, et al. Acute bipolar mania: a systematic review and meta-analysis of co-therapy vs. monotherapy. Acta Psychiatr Scand 2007;
+115:12–20.
+
+CHAPTER 2
+
+Table 2.7 Mania – other possible treatments
+Alphabetical order – no preference implied by order in the table. Consult specialist and primary literature before
+using any treatment listed.
+
+
+
+
+<<<PAGE 304>>>
+
+39. Sekhar S, et al. Efficacy of sodium valproate and haloperidol in the management of acute mania: a randomized open-label comparative study.
+J Clin Pharmacol 2010; 50:688–692.
+40. Fontana E, et al. Intravenous valproate in the treatment of acute manic episode in bipolar disorder: a review. J Affect Disord 2020;
+260:738–743.
+41. Li DJ, et al. Efficacy, safety and tolerability of aripiprazole in bipolar disorder: an updated systematic review and meta-analysis of randomized
+controlled trials. Prog Neuropsychopharmacol Biol Psychiatry 2017; 79:289–301.
+42. Romeo B, et al. Meta-analysis and review of dopamine agonists in acute episodes of mood disorder: efficacy and safety. J Psychopharmacol
+2018; 32:385–396.
+43. Vieta E, et al. Effect of cariprazine across the symptoms of mania in bipolar I disorder: analyses of pooled data from phase II/III trials. Eur
+Neuropsychopharmacol 2015; 25:1882–1891.
+44. Chang HY, et al. The efficacy and tolerability of paliperidone in mania of bipolar disorder: a preliminary meta-analysis. Exp Clin
+Psychopharmacol 2017; 25:422–433.
+45. Pajonk FG, et al. Rapid dose titration of quetiapine for the treatment of acute schizophrenia and acute mania: a case series. J Psychopharmacol
+2006; 20:119–124.
+46. Chen AT, et al. Allopurinol augmentation in acute mania: a meta-analysis of placebo-controlled trials. J Affect Disord 2018; 226:245–250.
+47. Arabzadeh S, et al. Celecoxib adjunctive therapy for acute bipolar mania: a randomized, double-blind, placebo-controlled trial. Bipolar
+Disord 2015; 17:606–614.
+48. Mahmood T, et al. Clozapine in the management of bipolar and schizoaffective manic episodes resistant to standard treatment. Aust N Z J
+Psychiatry 1997; 31:424–426.
+49. Green AI, et al. Clozapine in the treatment of refractory psychotic mania. Am J Psychiatry 2000; 157:982–986.
+50. Ifteni P, et al. Switching bipolar disorder patients treated with clozapine to another antipsychotic medication: a mirror image study.
+Neuropsychiatr Dis Treat 2017; 13:201–204.
+51. Aksoy Poyraz C, et al. Effectiveness of ultra-rapid dose titration of clozapine for treatment-resistant bipolar mania: case series. Ther Adv
+Psychopharmacol 2015; 5:237–242.
+52. Sharpley AL, et al. A phase 2a randomised, double-blind, placebo-controlled, parallel-group, add-on clinical trial of ebselen (SPI-1005) as a
+novel treatment for mania or hypomania. Psychopharmacology (Berl) 2020; 237:3773–3782.
+53. Macdonald KJ, et al. Newer antiepileptic drugs in bipolar disorder: rationale for use and role in therapy. CNS Drugs 2002; 16:549–562.
+54. Cabras PL, et al. Clinical experience with gabapentin in patients with bipolar or schizoaffective disorder: results of an open-label study. J Clin
+Psychiatry 1999; 60:245–248.
+55. Pande AC, et al. Gabapentin in bipolar disorder: a placebo-controlled trial of adjunctive therapy. Gabapentin Bipolar Disorder Study Group.
+Bipolar Disord 2000; 2 (3 Pt 2):249–255.
+56. Vieta E, et al. A double-blind, randomized, placebo-controlled, prophylaxis study of adjunctive gabapentin for bipolar disorder. J Clin
+Psychiatry 2006; 67:473–477.
+57. Grunze H, et al. Levetiracetam in the treatment of acute mania: an open add-on study with an on-off-on design. J Clin Psychiatry 2003;
+64:781–784.
+58. Goldberg JF, et al. Levetiracetam for acute mania (Letter). Am J Psychiatry 2002; 159:148.
+59. Park EM, et al. Acute mania associated with levetiracetam treatment. Psychosomatics 2014; 55:98–100.
+60. Koukopoulos A, et al. Antimanic and mood-stabilizing effect of memantine as an augmenting agent in treatment-resistant bipolar disorder.
+Bipolar Disord 2010; 12:348–349.
+61. Veronese N, et al. Acetylcholinesterase inhibitors and memantine in bipolar disorder: a systematic review and best evidence synthesis of the
+efficacy and safety for multiple disease dimensions. J Affect Disord 2016; 197:268–280.
+62. Serra G, et al. Three-year, naturalistic, mirror-image assessment of adding memantine to the treatment of 30 treatment-resistant patients with
+bipolar disorder. J Clin Psychiatry 2015; 76:e91–e97.
+63. Omranifard V, et al. Evaluation of the effect of memantine supplementation in the treatment of acute phase of mania in bipolar disorder of
+elderly patients: a double-blind randomized controlled trial. Adv Biomed Res 2018; 7:148.
+64. Moghaddam HS, et al. Efficacy of melatonin as an adjunct in the treatment of acute mania: a double-blind and placebo-controlled trial. Int
+Clin Psychopharmacol 2020; 35:81–88.
+65. Quested DJ, et al. Melatonin in acute mania investigation (MIAMI-UK). A randomized controlled trial of add-on melatonin in bipolar disorder. Bipolar Disord 2021; 23:176–185
+66. Benedetti A, et al. Oxcarbazepine as add-on treatment in patients with bipolar manic, mixed or depressive episode. J Affect Disord 2004;
+79:273–277.
+67. Lande RG. Oxcarbazepine: efficacy, safety, and tolerability in the treatment of mania. Int J Psychiatry Clin Pract 2004; 8:37–40.
+68. Ghaemi SN, et al. Oxcarbazepine treatment of bipolar disorder. J Clin Psychiatry 2003; 64:943–945.
+69. Pratoomsri W, et al. Oxcarbazepine in the treatment of bipolar disorder: a review. Can J Psychiatry 2006; 51:540–545.
+70. Juruena MF, et al. Bipolar I and II disorder residual symptoms: oxcarbazepine and carbamazepine as add-on treatment to lithium in a doubleblind, randomized trial. Prog Neuropsychopharmacol Biol Psychiatry 2009; 33:94–99.
+71. Suppes T, et al. Comparison of two anticonvulsants in a randomized, single-blind treatment of hypomanic symptoms in patients with bipolar
+disorder. Aust N Z J Psychiatry 2007; 41:397–402.
+72. Vieta E, et al. A double-blind, randomized, placebo-controlled prophylaxis trial of oxcarbazepine as adjunctive treatment to lithium in the
+long-term treatment of bipolar I and II disorder. Int J Neuropsychopharmacol 2008; 11:445–452.
+
+CHAPTER 2
+
+Bipolar disorder  283
+
+
+
+
+<<<PAGE 448>>>
+
+Depression and anxiety disorders  427
+
+Box 3.5 Panic disorder
+Crisis management
+Drug
+
+Comment
+
+Benzodiazepines
+
+Rapid effect although panic symptoms return quickly if the drug is
+withdrawn.61 NICE do not recommend.6 Cochrane lukewarm62
+
+SSRIs
+(Up to maximum licensed dose)
+
+Therapeutic effect can be delayed (this applies to all
+antidepressants64) and patients can experience an initial
+exacerbation of panic symptoms.6 Use supported by Cochrane65
+
+Venlafaxine MR
+75–225mg63
+
+Initiate at 37.5mg for 7 days
+
+Second-line treatment (Less well tolerated or weak evidence base, no order of preference)
+Mirtazapine
+15–60mg/day66
+
+A meta-analysis suggests that mirtazapine does not help with
+panic symptoms but with the anxiety associated with this
+disorder.63 Rather limited data overall67
+
+Moclobemide
+300–600mg/day68
+
+One fixed-dose study of 450mg/day and one flexible-dose study
+suggest efficacy68,69
+
+MAOIs
+Phenelzine
+10–60mg/day64
+
+No long-term studies, reserve for treatment-resistant cases due to
+poor tolerability64
+
+Tricyclic antidepressants
+Clomipramine
+25–250mg/day64
+Imipramine
+25–300mg/day64
+Lofepramine
+70–140mg/day in divided doses70
+
+Start with a low dose and increase dose according to response
+and tolerability
+
+Experimental
+D-cycloserine
+50mg/day
+
+A RCT suggests acceleration of treatment response to CBT, but
+this advantage is lost at follow-up71
+
+Gabapentin
+600–3600mg/day
+
+One RCT showed no difference between gabapentin and placebo.
+However, significant improvement was demonstrated in the more
+severely ill72
+
+Inositol
+12g/day73
+
+One positive PCT in 21 patients. Equivalent to fluvoxamine in one
+study.74 Well tolerated
+
+Levetiracetam
+250mg twice daily67
+
+Usually well tolerated
+
+Pindolol
+7.5mg/day
+
+Efficacy suggested in a small 21-patient DB-PCT where pindolol
+2.5mg tds was used to augment fluoxetine in treatment-resistant
+panic disorder75
+
+Valproate
+500–2250mg/day
+
+Two very small positive open studies76,77
+
+Hydrocortisone
+
+Only acute treatment shown to prevent development of PTSD78
+
+DB-PCT, double blind randomised controlled trial, CBT, cognitive behavioural therapy
+
+CHAPTER 3
+
+First-line drug treatment
+(In order of preference)6,63
+
+
+
+
+<<<PAGE 451>>>
+
+430  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Box 3.7 (Continued)
+Pregabalin
+75–225mg/day added to sertraline
+
+One small positive RCT121
+
+Riluzole
+50mg bd added to existing drug
+treatment122
+
+Variable results in early trials110
+
+Anti-androgen – Triptorelin
+3.75mg IM every 4 weeks added to
+existing drug treatment123
+
+Open label study done in six men
+
+i.v. treatment
+Clomipramine IV124
+
+Quicker onset of action suggested compared to oral treatments.
+One clomipramine study suggests clomipramine IV efficacy after
+failure with oral clomipramine
+Ketamine – developing evidence base110
+
+Ketamine IV125,126
+Once weekly morphine
+15–45mg added to existing drug
+treatment127
+
+Small study involving 23 treatment-resistant patients. Positive
+effects were transient.
+
+bd, bis die (twice a day); CBT (cognitive behavioural therapy)
+
+Box 3.8 Social phobia (social anxiety disorder)
+First-line drug treatment128 (In order of preference)
+SSRIs
+(Up to maximum licensed dose)
+
+If no response to the first SSRI, try an alternative SSRI
+Supporting meta-analyses for fluvoxamine129 and citalopram130
+Emerging data for vilazodone131
+
+Venlafaxine modified release
+75–225mg/day
+Second-line drug treatment (Less well tolerated or weaker evidence base, no order of preference)
+Olanzapine
+5–20mg132
+
+Few studies with antipsychotics. Most evidence with olanzapine
+
+Atenolol
+25–100mg/day
+
+Reduces autonomic symptoms in performance situations132
+
+Benzodiazepines
+Clonazepam
+0.3–6mg/day132
+Sertraline plus clonazepam
+up to 3mg/day133
+
+Benzodiazepines are helpful on PRN basis. Most evidence for treatment
+with clonazepam and bromazepam
+Switching an SSRI to venlafaxine no more effective than adding clonazepam
+to SSRI133
+
+Gabapentin
+900–3600mg/day132
+Levetiracetam
+300–3000mg/day in divided
+doses134
+(Continued)
+
+
+
+
+<<<PAGE 461>>>
+
+440  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Benzodiazepines, z-drugs and gabapentinoids: dependence,
+detoxification and discontinuation
+In most developed countries, the use of benzodiazepines or z-drugs is restricted to a
+maximum 2–4 weeks.1–3 However, long-term use remains common in the United
+Kingdom, with 300,000 adults taking either a benzodiazepine or z-drug for more
+than 12 months.4 Most guidelines, including NICE, recommend that people on
+long-term benzodiazepines or z-drugs should be advised to stop because tolerance
+to these drugs (which can develop after 2–4 weeks) means that they are not effectives for insomnia or anxiety over the long term, and because dependence is likely
+to develop, meaning that treatment is continued only to prevent withdrawal symptoms (Table 3.27).5
+Gabapentinoids (GABA analogues), with near identical mode of action to benzodiazepines, also can cause addiction, physical dependence and withdrawal over the same
+time period.6–8 In total, 1.5 million people in England are prescribed gabapentinoids,9
+and the number of prescriptions for these medications has risen seven-fold in the last
+10 years.10
+
+Table 3.27 Adverse effects of benzodiazepines
+
+Cognitive*11–13
+
+Reactions which can be mistaken for a
+psychiatric disorder14
+
+■■
+
+Deficits in memory
+Deficits in attention
+■■ Increased reaction time
+■■ Motor incoordination
+■■ Drowsiness
+■■ Nightmares/intrusive thoughts
+■■ Impaired judgement
+■■ Perceptual illusions/hallucinations
+
+■■
+
+■■
+
+■■
+
+Agitation
+Emotional lability
+■■ Restlessness
+■■ Inter-dose withdrawal
+
+■■
+
+Physical15
+Motor incoordination/ataxia
+■■ Dizziness
+■■ Slurred speech
+■■ Sensory alterations (tinnitus/strange tastes/paraesthesia/numbness/burning)
+■■ Rash
+■■ Autonomic dysfunction (tachycardia/bradycardia/
+diaphoresis/hypotension/hypertension)
+
+■■
+
+■■
+
+■■
+
+■■
+
+Increased morbidity12,13
+Increased risk of motor vehicle accidents
+■■ Higher risk of falls (elderly)
+■■ Delirium (elderly)
+■■ ?Dementia
+■■ ?Cancer
+■■ ?Infections
+
+■■
+
+■■
+
+■■
+
+Emotional15
+Depression/dysphoria
+■■ Numbness/emotional anaesthesia
+■■ Anxiety/phobias/panic
+■■ Anger/irritability/mood lability
+■■ Excitement/euphoria
+
+Behavioural15
+Insomnia
+■■ Avoidance/agoraphobia
+■■ Appetite/weight (anorexia, weight gain)
+■■ Impulsivity/disinhibition
+■■ Suicidality
+■■ Aggression
+
+*Some of these impairments can persist after discontinuation
+
+
+
+
+<<<PAGE 467>>>
+
+446  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Tapering other drug classes
+The same principles apply to tapering z-drugs or gabapentinoids. Gabapentinoids can
+cause severe withdrawal effects, although there is wide inter-individual variation.
+Although z-drugs are used once daily, tolerance and withdrawal are reported, even after
+brief or intermittent use.38,39 Tapering according to a similar exponential scheme (or
+sometimes cross-titration to diazepam) may be required for cessation. The main withdrawal symptoms are insomnia and anxiety. Ideally, they should be tapered at a rate
+that maintains sleep.
+
+CHAPTER 3
+
+References
+1. BNF Online. British national formulary. 2020; https://www.medicinescomplete.com/mc/bnf/current.
+2. National Institute for Clinical Excellence. Guidance on the use of zaleplon, zolpidem and zopiclone for the short-term management of insomnia. Technical Appraisal [TA77]. 2004 (reviewed August 2010); https://www.nice.org.uk/guidance/ta77.
+3. National Institute for Health and Clinical Excellence. Generalised anxiety disorder and panic disorder in adults: management. Clinical
+Guideline [CG113]. 2011 (last updated July 2019); https://www.nice.org.uk/guidance/cg113.
+4. Davies J, et al. Long-term benzodiazepine and Z-drugs use in the UK: a survey of general practice. Br J Gen Pract 2017; 67:e609–e613.
+5. National Institute for Health and Care Excellence. Benzodiazepine and z-drug withdrawal. 2019; https://cks.nice.org.uk/topics/
+benzodiazepine-z-drug-withdrawal/?_escaped_fragment_=topicsummary.
+6. Schifano F, et al. An insight into Z-drug abuse and dependence: an examination of reports to the European Medicines Agency Database of
+Suspected Adverse Drug Reactions. Int J Neuropsychopharmacol 2019; 22:270–277.
+7. Evoy KE, et al. Abuse and misuse of pregabalin and gabapentin. Drugs 2017; 77:403–426.
+8. Public Health England. Advice for prescribers on the risk of the misuse of pregabalin and gabapentin. 2014; https://assets.publishing.service.
+gov.uk/government/uploads/system/uploads/attachment_data/file/385791/PHE-NHS_England_pregabalin_and_gabapentin_advice_
+Dec_2014.pdf.
+9. Marsden J, et al. Medicines associated with dependence or withdrawal: a mixed-methods public health review and national database study
+in England. Lancet Psychiatry 2019; 6:935–950.
+10. Gov.UK. Dependence and withdrawal associated with some prescribed medicines. An evidence review. 2020; https://www.gov.uk/govern​
+ment/publications/prescribed-medicines-review-report.
+11. Crowe SF, et al. The residual medium and long-term cognitive effects of benzodiazepine use: an updated meta-analysis. Arch Clin
+Neuropsychol 2018; 33:901–911.
+12. Brandt J, et al. Benzodiazepines and Z-drugs: an updated review of major adverse outcomes reported on in epidemiologic research. Drugs in
+R&D 2017; 17:493–507.
+13. Donnelly K, et al. Benzodiazepines, Z-drugs and the risk of hip fracture: a systematic review and meta-analysis. PLoS One 2017; 12:e0174730.
+14. Gutierrez MA, et al. Paradoxical reactions to benzodiazepines. Am J Nurs 2001; 101:34–39; quiz 39–40.
+15. Guina J, et al. Benzodiazepines I: upping the care on downers: the evidence of risks, benefits and alternatives. J Clin Med 2018; 7:17.
+16. Golombok S, et al. Cognitive impairment in long-term benzodiazepine users. Psychol Med 1988; 18:365–374.
+17. Finkle WD, et al. Risk of fractures requiring hospitalization after an initial prescription for zolpidem, alprazolam, lorazepam, or diazepam in
+older adults. J Am Geriatr Soc 2011; 59:1883–1890.
+18. Molero Y, et al. Associations between gabapentinoids and suicidal behaviour, unintentional overdoses, injuries, road traffic incidents, and
+violent crime: population based cohort study in Sweden. BMJ 2019; 365:l2147.
+19. Schweizer E, et al. Long-term therapeutic use of benzodiazepines. II. Effects of gradual taper. Arch Gen Psychiatry 1990; 47:908–915.
+20. Schweizer E, et al. Benzodiazepine dependence and withdrawal: a review of the syndrome and its clinical management. Acta Psychiatr Scand
+1998; 98 Suppl 393:95–101.
+21. Uhlenhuth EH, et al. International study of expert judgment on therapeutic use of benzodiazepines and other psychotherapeutic medications:
+IV. Therapeutic dose dependence and abuse liability of benzodiazepines in the long-term treatment of anxiety disorders. J Clin
+Psychopharmacol 1999; 19:23S–29S.
+22. Ashton H. The diagnosis and management of benzodiazepine dependence. Curr Opin Psychiatry 2005; 18:249–255.
+23. Ashton H. Benzodiazepine withdrawal: outcome in 50 patients. Br J Addict 1987; 82:665–671.
+24. Soyka M. Treatment of benzodiazepine dependence. N Engl J Med 2017; 376:1147–1157.
+25. Petursson H. The benzodiazepine withdrawal syndrome. Addiction 1994; 89:1455–1459.
+26. Ashton H. Protracted Withdrawal From Benzodiazepines: The Post-Withdrawal Syndrome.Psychiatr Ann 1995; 1:174–179.
+27. Tannenbaum C, et al. Reduction of inappropriate benzodiazepine prescriptions among older adults through direct patient education: the
+empower cluster randomized trial. JAMA Int Med 2014; 174:890–898.
+28. Guy A, et al. Guidance for psychological therapists: enabling conversations with clients taking or withdrawing from prescribed psychiatric
+drugs. London: APPG for Prescribed Drug Dependence; 2019.
+
+
+
+
+<<<PAGE 672>>>
+
+Prescribing in older people  651
+
+One RCT of valproate that included an open-label extension found it to be ineffective in controlling symptoms. Seven of the 39 patients enrolled died during the 12-week
+extension phase study period, although the deaths could not be attributed to the drug.75
+A study investigating the optimal dose of valproic acid in dementia found that whilst
+serum levels between 40μg/L and 60μg/L and relatively low doses (7–12mg/kg/day) are
+associated with improvements in agitation in some patients, similar levels produced no
+significant improvements in others and led to substantial side effects.76 A 2009 Cochrane
+review of valproate for the treatment of agitation in dementia found no evidence of
+efficacy but advocated the need for further research into its use in dementia.77 Valproate
+does not delay emergence of agitation in dementia.78 Literature reviews of antiseizure
+medication in non-cognitive symptoms of dementia found that valproate, oxcarbazepine and lithium showed low or no evidence of efficacy and that more RCTs are needed
+to strengthen the evidence for gabapentin, topiramate and lamotrigine.74
+Preliminary low-grade evidence based on case series and case reviews suggests a possible beneﬁt of gabapentin and pregabalin in patients with BPSD in AD. Evidence in
+frontotemporal dementia is lacking.79 In a small case series, gabapentin reduced aggression among seven patients with vascular dementia or mixed vascular/AD, using daily
+doses ranging from 200mg to 600mg daily. Three of the seven patients were able to discontinue antipsychotics after gabapentin initiation; thus, it may be useful in patients with
+cardiac conditions where antipsychotics are inappropriate. Caution should be noted
+about the use of gabapentin in Lewy body dementia; dramatic worsening of neuropsychiatric symptoms has been reported after its use to treat behavioural symptoms.80
+Although clearly beneficial in some patients, antiseizure medications/mood stabilisers cannot be recommended for routine use in the treatment of the neuropsychiatric
+symptoms in dementia at present.73
+
+Melatonin and sleep disturbances in AD
+
+Evidence regarding the effectiveness of melatonin supplementation on sleep in patients
+with AD is limited. Six double-blind randomised placebo-controlled trials, mostly of
+limited sample size have been published. Although it is clear that melatonin has no significant side effects, even at high doses, the results of studies have been equivocal. Some
+studies showed beneficial effects, mainly improvement of day/night-time sleep ratio and
+decrease of nocturnal activity whilst other studies failed to demonstrate objective effectiveness.81 Non-pharmacological management of sleep disturbances using established
+sleep hygiene methods should be the first-line treatment for insomnia in dementia.82
+A 2016 Cochrane review83 of pharmacotherapies for sleep disturbances in dementia
+found no RCTs of many drugs that are widely prescribed for sleep problems in dementia,
+including the benzodiazepine and non-benzodiazepine hypnotics, although there is considerable uncertainty about the balance of benefits and risks associated with these common
+treatments. From the studies identified, there was no evidence that melatonin (up to 10mg)
+helped sleep problems in patients with moderate-to-severe dementia due to AD. There was
+
+CHAPTER 6
+
+Recommendation: Limited evidence to support its use – use may be justified where other
+treatments are contraindicated or ineffective. Valproate is best avoided.
+
+
+
+
+<<<PAGE 767>>>
+
+746  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+Table 8.11 (Continued )
+Drug
+
+Comments
+
+Diazepam22,25,32,155
+
+Less than 0.5% is excreted unchanged. Dosing: GFR 20–50mL/min, dose as in
+normal renal function; GFR <20mL/min, use small doses and titrate to response.
+Long-acting, active metabolites accumulate in renal impairment; monitor patients for
+excessive sedation and encephalopathy. One case of interstitial nephritis with
+diazepam has been reported in a patient with chronic renal failure.
+
+Eszopiclone156
+
+Less than 10% excreted unchanged in the urine. No dose adjustment is needed in
+renal impairment.
+
+Gabapentin
+
+100% excreted unchanged in urine, clearance is reduced in renal impairment
+resulting in higher plasma concentrations and longer elimination half-lives.157 As
+expected this may result in toxicity in renal impairment if doses are not reduced.158
+Acute renal failure has been reported;159 myoclonus;160 altered mental status, fall and
+fracture when used in patients on haemodialysis for restless legs, itch and
+neuropathic pain.161,162 Has been used to treat pruritis, muscle cramps and restless
+legs syndrome in haemodialysis patients in RCTs.163–165 Dosing advice differs; GFR
+15–60mL/min start low and increase according to response; GFR <15mL/min, 300mg
+alternate days32,159 or 100mg at night then increase according to tolerability25,166 but
+care toxicity as described above. Manufacturer has table of very specific dosing in
+renal impairment in SMPC.159
+
+Lemborexant41,167
+
+<1% excreted unchanged in urine. Manufacturer states no dose adjustment needed
+in renal impairment but exposure increases during severe renal impairment with a
+potential increased risk of somnolence.
+
+Lorazepam22,23,25,32,168–173
+
+<1% excreted unchanged in urine, dose as in normal renal function but carefully
+according to response as some may need lower doses. Monitor for excessive
+sedation. Impaired elimination reported in two patients with severe renal impairment
+and also reports of propylene glycol in lorazepam injection causing renal impairment
+and acute tubular necrosis. However, lorazepam injection has been successfully used
+to treat catatonia in two patients with renal failure.
+
+Nitrazepam23,25
+
+Less than 5% excreted unchanged in the urine. Dosing GFR 10–50mL/min as per
+normal renal function; GFR <10mL/min start with small dose and increase slowly.
+Manufacturer advises reducing dose in renal impairment. Monitor patient for
+sedation and unsteadiness.
+
+Pregabalin
+
+Up to 99% excreted unchanged in urine. Acute renal failure reported.174 Associated
+with altered mental status and falls when used in patients on haemodialysis,161 and
+myoclonus.175 Case report of seizure on abrupt cessation in patient with CKD.176 Used
+to treat uraemic pruritis and neuropathic pain in patients on haemodialysis.177,178
+Dosing advice differs; titrate dosing by tolerability and response for all GFRs; GFR
+30–60mL/min, 75mg daily; GFR 15–30mL/min, 25–50mg daily; GFR <15mL/min,
+25mg daily. Manufacturer has table of very specific dosing in renal impairment in
+SMPC.174
+
+Oxazepam22,25,32,179
+
+Less than 1% excreted unchanged in the urine. Dose adjustment needed in severe
+renal impairment. Oxazepam may take longer to reach steady state in patients with
+renal impairment. Dosing: GFR 10–50mL/min, dose as in normal renal function; GFR
+<10mL/min, start at a low dose and increase according to response. Monitor for
+excessive sedation.
+
+
+
+
+<<<PAGE 774>>>
+
+131. Fillastre JP, et al. Pharmacokinetics of lamotrigine in patients with renal impairment: influence of haemodialysis. Drugs Exp Clin Res 1993;
+19:25–32.
+132. Schaub JE, et al. Multisystem adverse reaction to lamotrigine. Lancet 1994; 344:481.
+133. Wootton R, et al. Comparison of the pharmacokinetics of lamotrigine in patients with chronic renal failure and healthy volunteers. Br J
+Clin Pharmacol 1997; 43:23–27.
+134. Bansal AD, et al. Use of antiepileptic drugs in patients with chronic kidney disease and end stage renal disease. Seminars in Dialysis 2015;
+28:404–412.
+135. Gitlin M. Lithium and the kidney: an updated review. Drug Saf 1999; 20:231–243.
+136. Lepkifker E, et al. Renal insufficiency in long-term lithium treatment. J Clin Psychiatry 2004; 65:850–856.
+137. McKnight RF, et al. Lithium toxicity profile: a systematic review and meta-analysis. Lancet 2012; 379:721–728.
+138. Shine B, et al. Long-term effects of lithium on renal, thyroid, and parathyroid function: a retrospective analysis of laboratory data. Lancet
+2015; 386:461–468.
+139. Clos S, et al. Long-term effect of lithium maintenance therapy on estimated glomerular filtration rate in patients with affective disorders: a
+population-based cohort study. Lancet Psychiatry 2015; 2:1075–1083.
+140. Schoot TS, et al. Systematic review and practical guideline for the prevention and management of the renal side effects of lithium therapy.
+Eur Neuropsychopharmacol 2020; 31:16–32.
+141. Davis J, et al. Lithium and nephrotoxicity: a literature review of approaches to clinical management and risk stratification. BMC Nephrol
+2018; 19:305.
+142. Engels N, et al. Successful lithium treatment in a patient on hemodialysis. Bipolar Disorders 2019; 21:285–287.
+143. Smith GC, et al. Anticonvulsants as a cause of Fanconi syndrome. Nephrol Dial Transplant 1995; 10:543–545.
+144. Fukuda Y, et al. Immunologically mediated chronic tubulo-interstitial nephritis caused by valproate therapy. Nephron 1996; 72:328–329.
+145. Watanabe T, et al. Secondary renal Fanconi syndrome caused by valproate therapy. Pediatr Nephrol 2005; 20:814-817.
+146. Zaki EL, et al. Renal injury from valproic acid: case report and literature review. Pediatr Neurol 2002; 27:318–319.
+147. Tanaka H, et al. Distal type of renal tubular acidosis after anti-epileptic therapy in a girl with infantile spasms. Clin Exp Nephrol 1999;
+3:311–313.
+148. Knorr M, et al. Fanconi syndrome caused by antiepileptic therapy with valproic acid. Epilepsia 2004; 45:868–871.
+149. Rahman MH, et al. Acute hemolysis with acute renal failure in a patient with valproic acid poisoning treated with charcoal hemoperfusion.
+Hemodial Int 2006; 10:256–259.
+150. Koga S, et al. Risk factors for sodium valproate-induced renal tubular dysfunction. Clin Exp Nephrol 2018; 22:420–425.
+151. Hayes JF, et al. Adverse renal, endocrine, hepatic, and metabolic events during maintenance mood stabilizer treatment for bipolar disorder:
+a population-based cohort study. PLoS Med 2016; 13:e1002058.
+152. Kessing LV, et al. Continuation of lithium after a diagnosis of chronic kidney disease. Acta Psychiatr Scand 2017; 136:615–622.
+153. Pentikainen PJ, et al. Pharmacokinetics of chlormethiazole in healthy volunteers and patients with cirrhosis of the liver. Eur J Clin
+Pharmacol 1980; 17:275–284.
+154. Dashti-Khavidaki S, et al. Comparing effects of clonazepam and zolpidem on sleep quality of patients on maintenance hemodialysis. Iran J
+Kidney Dis 2011; 5:404–409.
+155. Sadjadi SA, et al. Allergic interstitial nephritis due to diazepam. Arch Intern Med 1987; 147:579.
+156. Sunovion Pharmaceuticals Inc. Highlights of Prescribing Information. LUNESTA® (eszopiclone) tablets, for oral use 2020; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2014/021476s030lbl.pdf.
+157. Blum RA, et al. Pharmacokinetics of gabapentin in subjects with various degrees of renal function. Clin Pharmacol Ther 1994;
+56:154–159.
+158. Miller A, et al. Gabapentin toxicity in renal failure: the importance of dose adjustment. Pain Med 2009; 10:190–192.
+159. Upjohn UK Limited. Summary of product characteristics. Neurontin 600mg film-coated tablets 2020; https://www.medicines.org.uk/emc/
+product/3197/smpc.
+160. Yeddi A, et al. Myoclonus and altered mental status induced by single dose of gabapentin in a patient with end-stage renal disease: a case
+report and literature review. Am J Ther 2019; 26:e768–e770.
+161. Ishida JH, et al. Gabapentin and pregabalin use and association with adverse outcomes among hemodialysis patients. J Am Soc Nephrol
+2018; 29:1970–1978.
+162. Gobo-Oliveira M, et al. Gabapentin versus dexchlorpheniramine as treatment for uremic pruritus: a randomised controlled trial. Eur J
+Dermatol 2018; 28:488–495.
+163. Gunal AI, et al. Gabapentin therapy for pruritus in haemodialysis patients: a randomized, placebo-controlled, double-blind trial. Nephrol
+Dial Transplant 2004; 19:3137–3139.
+164. Beladi Mousavi SS, et al. The effect of gabapentin on muscle cramps during hemodialysis: a double-blind clinical trial. Saudi J Kidney Dis
+Transpl 2015; 26:1142–1148.
+165. Razazian N, et al. Gabapentin versus levodopa-c for the treatment of restless legs syndrome in hemodialysis patients: a randomized clinical
+trial. Saudi J Kidney Dis Transpl 2015; 26:271–278.
+166. Rossi GM, et al. Randomized trial of two after-dialysis gabapentin regimens for severe uremic pruritus in hemodialysis patients. Intern
+Emerg Med 2019; 14:1341–1346.
+167. Eisai Inc. Highlights of Prescribing Information. Dayvigo (lemborexant) tablets for oral use [controlled substance schedule pending] 2019;
+https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/212028s000lbl.pdf.
+168. Huang CE, et al. Intramuscular lorazepam in catatonia in patients with acute renal failure: a report of two cases. Chang Gung Med J 2010;
+33:106–109.
+
+CHAPTER 8
+
+Hepatic and renal impairment  753
+
+
+
+
+<<<PAGE 809>>>
+
+CHAPTER 10
+
+788  The Maudsley® Prescribing Guidelines in Psychiatry
+
+doses ≥900mg/day, topiramate at doses ≥400mg/day). These drugs can lower plasma
+levels of multiple psychotropics, possibly leading to treatment failure.
+
+Pharmacodynamic interactions13
+Adverse effects with antiseizure medications that may overlap with psychotropic
+adverse effects include:
+Weight gain: Caused by some antiseizure medications (e.g. carbamazepine, gabapentin, pregabalin, valproate)
+■■ Sexual adverse effects: With phenobarbital and primidone but possible with all
+enzyme-inducing antiseizure medications
+■■ Hyponatraemia: With carbamazepine, oxcarbazepine (note, if severe, it can provoke
+seizures)
+■■ Osteoporosis and osteopenia: Reported with long-term use of enzyme-inducing
+antiseizure medications
+■■ Blood dyscrasias: Reported with valproate carbamazepine and especially with
+felbamate10
+■■
+
+Psychotropics and the risk of seizures in people with epilepsy
+In the general population, the annual incidence of unprovoked seizures is about 50 per
+100,000 persons.23 It is notable that the incidence of unprovoked seizures in the placebo
+arms of randomised controlled trials of antidepressants and antipsychotics is approximately 15-fold higher, suggesting that both depression and psychosis are risk factors for
+seizures.24 A bidirectional relationship between epilepsy and several psychiatric illnesses
+has been demonstrated, whereby not only do PWE have a higher risk of developing a
+psychiatric illness, but people with psychiatric illness have a higher risk of developing
+epilepsy.5,6 This bidirectional relationship exists for depression, anxiety, psychosis and
+suicidality.3,5,6 Thus, the occurrence of seizures may, in some cases, be the expression of
+the natural progression of a psychiatric illness, unrelated to the use of psychotropics.
+Reports of seizures associated with psychotropics must factor in this bidirectional relationship between psychiatric illness and epilepsy. For example, although observational
+studies have reported an association between antidepressant treatment and seizures,25 a
+similar association is also found with non-drug treatments for depression (counselling, for
+example).26 These findings are consistent with depression itself being the main risk factor
+for seizures. In fact, one analysis of controlled studies with psychotropics showed that the
+incidence of seizures was substantially lower among patients receiving most antidepressants (SSRIs, for example) in comparison with those randomised to placebo.24 Nonetheless,
+definitive data are lacking in PWE27,28 and certain psychotropics have a dose-related risk
+of seizures within usual dose ranges. Most can cause seizures in overdose. Note also that
+almost all antidepressants and antipsychotics have been associated with hyponatraemia
+(see section on hyponatraemia) and seizures may occur if this is severe.17,29 General guidance on the safety of psychotropics in PWE is summarised in Table 10.5.
+Electroconvulsive therapy (ECT) has anticonvulsive properties and is worth considering in the treatment of depression in patients with unstable epilepsy.8,17,22 ECT does
+not appear to cause or worsen epilepsy.17,30
+
+

@@ -1,0 +1,1617 @@
+<<<PAGE 312>>>
+
+Bipolar disorder  291
+
+Drug/regime
+
+Comments
+
+Aripiprazole96–99
+
+Limited support from open studies as add-on treatment. RCT negative. Possibly not
+effective.95
+
+Carbamazepine1,13,100
+
+Occasionally recommended but database is poor and effect modest. May have
+useful activity when added to other mood stabilisers.
+
+Gabapentin1,101,102
+
+Open studies suggest modest effect when added to mood stabilisers or
+antipsychotics. Doses average around 1750mg/day. Anxiolytic effect may account
+for apparent effect in bipolar depression
+
+Inositol103
+
+Small, randomised, pilot study suggests that 12g/day inositol is effective in bipolar
+depression
+
+Mifepristone104,105
+
+Some evidence of mood-elevating properties in bipolar depression although this
+was not replicated in a larger trial. Improved cognitive function in both trials. Dose
+used was 600mg/day.
+
+Modafinil106
+
+Meta-analysis of five studies of modafinil/armodafinil suggests robust benefit on
+response and remission with good tolerability and no evidence of increased risk of
+switching.
+
+Omega-3 fatty acids107,108
+
+One positive RCT (1g/2g a day) and one negative (6g a day)
+
+statistical significance.98 Another analysis of trials not involving antidepressants109
+(7307 participants) found a statistical advantage over placebo for olanzapine + fluoxetine, valproate, quetiapine, lurasidone, olanzapine, aripiprazole and carbamazepine (in
+order of effect size, highest first).
+A 2014 network meta-analysis of 29 studies included 8331 subjects.110 Overall olanzapine + fluoxetine, lurasidone, olanzapine, valproate, SSRIs and quetiapine were ranked highest in terms of effect size and response with olanzapine + fluoxetine ranked first for both.
+The most recent network meta-analysis included 11,448 participants in 50 studies.111 Drugs
+found to be more effective than placebo were olanzapine + fluoxetine, olanzapine, valproate, cariprazine, lamotrigine, lurasidone and quetiapine. Interestingly, imipramine and
+fluoxetine were also more effective than placebo (but with wide confidence intervals).
+
+Summary of drug choice
+The combination of olanzapine + fluoxetine is probably the most effective treatment
+available for bipolar depression but its use is constrained by the well known adverse
+effect profile of olanzapine. SSRIs other than fluoxetine may be effective but should
+probably be avoided unless clear individual benefit is obvious.53 Alternative first-line
+choices are quetiapine, olanzapine, lurasidone, lamotrigine and valproate. These drugs
+differ substantially in adverse effect profile, tolerability and cost, each of which needs
+to be considered when prescribing for an individual. Lithium is also effective but supporting evidence is relatively weak. Second-line drugs include ketamine and, increasingly, modafinil. Aripiprazole, risperidone, ziprasidone, tricyclics (with the exception of
+imipramine) and MAOIs (with the exception of tranylcypromine) are probably not
+effective and should not be used routinely.110
+
+CHAPTER 2
+
+Table 2.11 Other possible treatments – seek specialist advice before using
+
+
+
+
+<<<PAGE 389>>>
+
+368  The Maudsley® Prescribing Guidelines in Psychiatry
+
+One attraction of IV administration of antidepressants may be a more rapid onset of
+action, but this is not consistently demonstrated in controlled studies.29
+Extensive studies of IV ketamine, a glutamate N-methyl-d-aspartate (NMDA) receptor antagonist have demonstrated rapid, albeit short-lived antidepressant effects.30
+Concerns over long-term duration of response may be less relevant for acutely medically unwell patients. Ketamine has also been delivered via intranasal,31 IM and SC
+routes,32,33 sublingually3,34 and via transmucosal routes.35 IV scopolamine (hyoscine) as
+an antidepressant has also been investigated and has produced rapid antidepressant
+effects within 72 hours in both unipolar and bipolar depression.36–38
+
+CHAPTER 3
+
+Transdermal
+Amitriptyline gel is used in pain clinics as an adjuvant in the treatment of a variety of
+chronic pain conditions.39,40 It is usually prepared as a 50mmol/L or 100mmol/L gel
+with or without lidocaine, and although it has proven analgesic activity there are no
+published data on the plasma levels attained via this route. Nortriptyline hydrochloride
+has been formulated as a transdermal patch for smoking cessation.41 Nanoemulsion
+formulations of imipramine and of doxepin have also been formulated for transdermal
+delivery for use as analgesics.42 At the time of writing there are no published studies on
+nortriptyline patches or imipramine or doxepin nanoemulsions in depression. It is
+unlikely that any of these formulations achieve plasma concentrations high enough to
+elicit antidepressant effects.
+Oral selegiline at doses greater than 20mg/day may be antidepressant, but enzyme
+selectivity is lost at these doses, necessitating a tyramine-restricted diet.43,44 Selegiline
+can be administered transdermally. It is efficacious and tolerable and delivers 25–30%
+of the selegiline content over 24 hours and steady-state plasma concentrations are
+achieved within 5 days of daily dosing.45 This route bypasses first-pass metabolism,
+thereby providing a higher, more sustained, plasma concentration of selegiline while
+being relatively sparing of the gastrointestinal MAO-A system.46,47 There seems to be no
+need for tyramine restriction when the lower dose patch (6mg/24 hours) is used, and
+there have been no reports of hypertensive reactions even with the higher dose patch.
+Patients using the higher strength patches (9mg or 12mg/24 hours) should avoid very
+high tyramine content food substances,48 but generally transdermal selegiline is well
+tolerated.
+Rectal
+The rectal mucosa lacks the extensive villi and microvilli of other parts of the gastrointestinal tract limiting its surface area. Therefore, rectal agents need to be in a formulation that maximises the extent of contact the active ingredient will have with the
+mucosa. There are no readily available antidepressant suppositories, but extemporaneous preparation is possible. For example, amitriptyline (in cocoa butter) suppositories
+have been manufactured by a hospital pharmacy and administered in a dose of 50mg
+twice daily with some subjective success.49,50 Doxepin capsules have been administered
+via the rectal route directly in the treatment of cancer-related pain (without a special
+formulation) and produced plasma concentrations within the supposed therapeutic
+
+
+
+
+<<<PAGE 392>>>
+
+Depression and anxiety disorders  371
+
+Drug name and
+route
+
+Dosing information
+
+Manufacturer
+
+Notes
+
+Transdermal
+selegiline
+
+6mg/24 hours, 9mg/24
+hours, 12mg/24 hours
+Starting dose is 6mg/24
+hours. Titration to
+higher doses in
+3mg/24 hours
+increments at ≥2-week
+intervals, up to a
+maximum dose of
+12mg/24 hours59
+
+Bristol Myers Squib,
+available via Alliance
+Wholesaler
+
+The 6mg/24 hours dose does not
+require a tyramine restricted diet
+At higher doses, although no
+hypertensive crisis reactions have been
+reported, the manufacturer
+recommends avoiding high tyramine
+content food substances
+Application site reactions and insomnia
+are the most common reported side
+effects
+
+Rectal
+amitriptyline
+
+Doses up to 50mg bd
+
+Case reports only
+
+Rectal
+clomipramine
+
+No detailed information
+available
+
+Suppositories have
+been manufactured by
+pharmacies
+
+Rectal
+imipramine
+
+No detailed information
+available
+
+Rectal doxepin
+
+No detailed information
+available
+
+Capsules have been
+used rectally
+
+Rectal sertraline
+
+Starting dose: a 25mg
+tablet was placed inside
+the rectal chamber
+daily. This was titrated
+up at 3-day intervals to
+a maximal dose of
+100mg on day 10
+
+Tablets have been used
+rectally
+
+Levels at the 100mg steady-state dose
+revealed detectable serum levels of
+sertraline, but not the metabolite. The
+levels fell within the reported range of
+levels for orally administered sertraline.
+No adverse effects were recorded
+
+Rectal trazodone
+
+No detailed information
+available
+
+Suppositories have
+been manufactured by
+pharmacies
+
+Trazodone in the rectal formulation has
+been used for post-operative or cancer
+pain control rather than antidepressant
+activity
+
+Ketamine
+
+IV: 0.5mg/kg over 40
+minutes
+SC: first dose 0.25mg/
+kg bolus (range
+12.5–25mg), standard
+treatment dose 0.5mg/
+kg bolus (range
+25–50mg)
+SL: 1.5mg/kg
+
+IV preparation is widely
+available
+
+SC ketamine is less likely to cause side
+effects (dissociative symptoms or blood
+pressure changes) compared to IV. SL
+apparently also well tolerated.
+Experience is increasing with ketamine,
+but expert advice before commencing
+is recommended
+
+Note: Availability of all preparations listed varies over time and from country to country.
+bd, bis die (twice a day).
+
+CHAPTER 3
+
+Table 3.13 (Continued)
+
+
+
+
+<<<PAGE 394>>>
+
+35. Nguyen L, et al. Off-label use of transmucosal ketamine as a rapid-acting antidepressant: a retrospective chart review. Neuropsychiatr Dis
+Treat 2015; 11:2667–2673.
+36. Jaffe RJ, et al. Scopolamine as an antidepressant: a systematic review. Clin Neuropharmacol 2013; 36:24–26.
+37. Furey ML, et al. Pulsed intravenous administration of scopolamine produces rapid antidepressant effects and modest side effects. J Clin
+Psychiatry 2013; 74:850–851.
+38. Drevets WC, et al. Replication of scopolamine’s antidepressant efficacy in major depressive disorder: a randomized, placebo-controlled clinical trial. Biol Psychiatry 2010; 67:432–438.
+39. Gerner P, et al. Topical amitriptyline in healthy volunteers. Reg Anesth Pain Med 2003; 28:289–293.
+40. Ho KY, et al. Topical amitriptyline versus lidocaine in the treatment of neuropathic pain. Clin J Pain 2008; 24:51–55.
+41. Melero A, et al. Nortriptyline for smoking cessation: release and human skin diffusion from patches. Int J Pharm 2009; 378:101–107.
+42. Sandig AG, et al. Transdermal delivery of imipramine and doxepin from newly oil-in-water nanoemulsions for an analgesic and anti-allodynic
+activity: development, characterization and in vivo evaluation. Colloids SurfB Biointerfaces 2013; 103:558–565.
+43. Sunderland T, et al. High-dose selegiline in treatment-resistant older depressive patients. Arch Gen Psychiatry 1994; 51:607–615.
+44. Mann JJ, et al. A controlled study of the antidepressant efficacy and side effects of (-)-deprenyl. A selective monoamine oxidase inhibitor. Arch
+Gen Psychiatry 1989; 46:45–50.
+45. Viatris. EMSAM®* (selegiline transdermal system). 2021; https://www.viatris.com/en-us/lm/countryhome/us-products/productcatalog/
+productdetails?id=bcd487dc-1180-48d3-a0ca-4ac8927c6980.
+46. Wecker L, et al. Transdermal selegiline: targeted effects on monoamine oxidases in the brain. Biol Psychiatry 2003; 54:1099–1104.
+47. Azzaro AJ, et al. Pharmacokinetics and absolute bioavailability of selegiline following treatment of healthy subjects with the selegiline transdermal system (6 mg/24 h): a comparison with oral selegiline capsules. J Clin Pharmacol 2007; 47:1256–1267.
+48. Amsterdam JD, et al. Selegiline transdermal system in the prevention of relapse of major depressive disorder: a 52-week, double-blind, placebo-substitution, parallel-group clinical trial. J Clin Psychopharmacol 2006; 26:579–586.
+49. Adams S. Amitriptyline suppositories. N Engl J Med 1982; 306:996.
+50. Mirassou MM. Rectal antidepressant medication in the treatment of depression. J Clin Psychiatry 1998; 59:29.
+51. Storey P, et al. Rectal doxepin and carbamazepine therapy in patients with cancer. N Engl J Med 1992; 327:1318–1319.
+52. Chaumeil JC, et al. Formulation of suppositories containing imipramine and clomipramine chlorhydrates. Drug Dev Ind Pharm 1988;
+15–17:2225–2239.
+53. Leung JG, et al. Rectal bioavailability of sertraline tablets in a critically ill patient with bowel compromise. J Clin Psychopharmacol 2017;
+37:372–373.
+54. Lopes R, et al. The utility of intravenous clomipramine in a case of Cotard’s syndrome. Rev Bras Psiquiatr 2013; 35:212–213.
+55. Fallon BA, et al. Intravenous clomipramine for obsessive-compulsive disorder refractory to oral clomipramine: a placebo-controlled study.
+Arch Gen Psychiatry 1998; 55:918–924.
+56. Karameh WK, et al. Intravenous clomipramine for treatment-resistant obsessive-compulsive disorder. Int J Neuropsychopharmacol 2015;
+19:pyv084.
+57. Buoli M, et al. Is trazodone more effective than clomipramine in major depressed outpatients? A single-blind study with intravenous and oral
+administration. CNS Spectr 2019; 24:258–264.
+58. Maragakis BP. A double-blind comparison of oral amitriptyline and low-dose intramuscular flupenthixol decanoate in depressive illness. Curr
+Med Res Opin 1990; 12:51–57.
+59. Nandagopal JJ, et al. Selegiline transdermal system: a novel treatment option for major depressive disorder. Exp Opin Pharmacother 2009;
+10:1665–1673.
+
+CHAPTER 3
+
+Depression and anxiety disorders  373
+
+
+
+
+<<<PAGE 400>>>
+
+Depression and anxiety disorders  379
+
+Table 3.14 (Continued)
+Antidepressant
+
+Substrate for
+
+Inhibits
+
+TCAs
+Amitriptyline
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Desipramine
+
+CYP2D6
+
+Dosulepin
+
+CYP2D6 and possibly other pathways
+
+Doxepin
+
+CYP2D6, CYP1A2 (minor), CYP3A4
+(minor)
+
+Imipramine
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Nortriptyline
+
+CYP2D6
+
+Trimipramine
+
+CYP2D6
+
+Agomelatine
+
+CYP1A2
+
+Bupropion
+
+CYP2B6
+
+Esketamine
+
+CYP3A4, CYP2B6
+
+Mianserin
+
+CYP2D6
+
+Mirtazapine
+
+CYP1A2, CYP2D6, CYP3A4
+
+Reboxetine
+
+CYP3A4
+
+Trazodone
+
+CYP3A4
+
+Vortioxetine
+
+CYP2D6, CYP2A6, CYP2B6, CYP2C8,
+CYP2C9, CYP2C19, CYP3A4
+
+Vilazodone
+
+CYP3A4
+
+CHAPTER 3
+
+Clomipramine
+
+Others
+
+CYP2D6 (potent)
+
+CYP2D6 (weak)
+
+CYP2C8
+
+CYP enzymes highlighted in bold indicate:
+predominant metabolic enzyme pathway or
+■■ predominant enzyme activity.
+■■
+
+■■
+
+Pharmacodynamic interactions where the effects of one drug are altered by another
+drug via physiological mechanisms such as direct competition at receptor sites (e.g.
+dopamine agonists with dopamine blockers may negate any therapeutic effect), augmentation of the same neurotransmitter pathway (e.g. fluoxetine with tramadol or a
+triptan can lead to serotonin syndrome) or an effect on the physiological functioning
+of an organ/organ system in different ways (e.g. SSRIs impair clotting and NSAIDs
+irritate the gastric mucosa so when these drugs are used together, the risk of GI bleeds
+is increased). Up-to-date interaction tables are readily available online and most
+known interactions are described in an individual product’s literature.
+
+Pharmacodynamic interactions
+Tricyclic antidepressants7–10
+■■
+
+are H1 blockers (sedative). This effect can be exacerbated by other sedative drugs or
+alcohol. Beware respiratory depression
+
+
+
+
+<<<PAGE 421>>>
+
+CHAPTER 3
+
+400  The Maudsley® Prescribing Guidelines in Psychiatry
+
+26. Schlosser R, et al. Effects of subchronic paroxetine administration on night-time endocrinological profiles in healthy male volunteers.
+Psychoneuroendocrinology 2000; 25:377–388.
+27. Nadeem HS, et al. Comparison of the effects of citalopram and escitalopram on 5-Ht-mediated neuroendocrine responses.
+Neuropsychopharmacology 2004; 29:1699–1703.
+28. Egberts AC, et al. Non-puerperal lactation associated with antidepressant drug use. Br J Clin Pharmacol 1997; 44:277–281.
+29. Peterson MC. Reversible galactorrhea and prolactin elevation related to fluoxetine use. Mayo Clin Proc 2001; 76:215–216.
+30. Morrison J, et al. Galactorrhea induced by paroxetine. Can J Psychiatry 2001; 46:88–89.
+31. Evrensel A, et al. A case of galactorrhea during paroxetine treatment. Int J Psychiatry Med 2016; 51:302–305.
+32. Selvaraj V, et al. Escitalopram-induced amenorrhea and false positive urine pregnancy test. Korean J Fam Med 2017; 38:40–42.
+33. Mahasuar R, et al. Euprolactinemic galactorrhea associated with use of imipramine and escitalopram in a postmenopausal woman. Gen
+Hosp Psychiatry 2010; 32:341–343.
+34. Vispute C, et al. Fluvoxamine-induced reversible euprolactinemic galactorrhea in a case of obsessive-compulsive disorder. Ann Indian
+Psychiatry 2017; 1:127–128.
+35. Ekinci N, et al. Sertraline-related amenorrhea in an adolescent. Clin Neuropharmacol 2019; 42:99–100.
+36. Fava GA, et al. Prolactin, cortisol, and antidepressant treatment. Am J Psychiatry 1988; 145:358–360.
+37. Orlander H, et al. Imipramine induced elevation of prolactin levels in patients with HIV/AIDS improved their immune status. West Indian
+Med J 2009; 58:207–213.
+38. Meltzer HY, et al. Lack of effect of tricyclic antidepressants on serum prolactin levels. Psychopharmacology (Berl) 1977; 51:185–187.
+39. Gadd EM, et al. Antidepressants and galactorrhoea. Int Clin Psychopharmacol 1987; 2:361–363.
+40. Anand VS. Clomipramine–induced galactorrhoea and amenorrhoea. Br J Psychiatry 1985; 147:87–88.
+41. Fowlie S, et al. Hyperprolactinaemia and nonpuerperal lactation associated with clomipramine. Scott Med J 1987; 32:52.
+42. Kukreti P, et al. Rising trend of use of antidepressants induced non- puerperal lactation: a case report. JCDR 2016; 10:Vd01–vd02.
+43. Arslan FC, et al. Trazodone induced galactorrhea: a case report. Gen Hosp Psychiatry 2015; 37:373.e371–372.
+44. Mahableshwarkar AR, et al. A randomized, double-blind, fixed-dose study comparing the efficacy and tolerability of vortioxetine 2.5 and 10
+mg in acute treatment of adults with generalized anxiety disorder. Human Psychopharmacology 2014; 29:64–72.
+45. Baldwin DS, et al. Vortioxetine (Lu AA21004) in the long-term open-label treatment of major depressive disorder. Curr Med Res Opin 2012;
+28:1717–1724.
+46. Verma A, et al. Risks associated with vortioxetine in the established therapeutic indication. Curr Neuropharmacol 2020. [Epub ahead of
+print].
+
+
+
+
+<<<PAGE 442>>>
+
+Depression and anxiety disorders  421
+
+Antidepressants: relative adverse effects – a rough guide
+Table 3.26 gives a very approximate, unreferenced view of the absolute and relative risk
+of a small range of adverse effects associated with standard antidepressants.
+
+Table 3.26 Common adverse effects of antidepressants
+
+Sedation
+
+Postural
+hypotension§
+
+Cardiac
+conduction
+disturbance§
+
+Anticholinergic Nausea/
+effects
+Vomiting
+
+Sexual
+dysfunction§
+
+Amitriptyline
+
++++
+
++++
+
++++
+
++++
+
++
+
++++
+
+Clomipramine
+
+++
+
++++
+
++++
+
+++
+
+++
+
++++
+
+Dosulepin
+
++++
+
++++
+
++++
+
+++
+
++
+
++
+
+Doxepin
+
++++
+
+++
+
++++
+
++++
+
++
+
++
+
+Imipramine
+
+++
+
++++
+
++++
+
++++
+
++
+
++
+
+Lofepramine
+
++
+
++
+
++
+
+++
+
++
+
++
+
+Nortriptyline
+
++
+
+++
+
+++
+
++
+
++
+
++
+
+Trimipramine
+
++++
+
++++
+
+++
+
+++
+
++
+
++
+
+Agomelatine
+
++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Duloxetine (SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Levomilnacipran
+(SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Mianserin
+
+++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Mirtazapine
+
++++
+
++
+
+–
+
++
+
++
+
+–
+
+Reboxetine
+
++
+
+–*
+
+–
+
++
+
++
+
++
+
+Trazodone
+
++++
+
++
+
++
+
++
+
++
+
++
+
+Venlafaxine (SNRI)
+
+–
+
+–*
+
++
+
+–
+
++++
+
++++
+
+Citalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Escitalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Fluoxetine
+
+–
+
+–
+
+–
+
+–
+
+++
+
++++
+
+Fluvoxamine
+
++
+
+–
+
+–
+
+–
+
++++
+
++++
+
+Paroxetine
+
++
+
+–
+
+–
+
++
+
+++
+
++++
+
+Drug
+
+Other
+antidepressants
+
+Selective
+serotonin
+reuptake
+inhibitors (SSRIs)
+
+(Continued)
+
+CHAPTER 3
+
+Tricyclics
+
+
+
+
+<<<PAGE 447>>>
+
+426  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Box 3.4 Generalised anxiety disorder
+Crisis management
+Drug
+
+Comment
+
+Benzodiazepines
+
+Normally for short-term use only: max. 2–4 weeks although
+some are of the opinion that risks are overstated42
+
+CHAPTER 3
+
+First-line drug treatment (In order of preference)29
+SSRIs
+(Up to maximum licensed dose)
+
+May initially exacerbate symptoms. A lower starting dose is
+recommended. Fluoxetine and sertraline are preferred options12
+
+SNRIs14
+(Up to maximum licensed dose)
+
+May initially exacerbate symptoms. A lower starting dose is
+recommended
+
+Pregabalin
+150–600mg/day in divided doses
+
+Response may be seen in the first week of treatment.43
+Increasingly misused. Significant withdrawal syndrome
+
+Second-line drug treatment (Less well tolerated or weaker evidence base, no order of preference)
+Agomelatine44
+10–50mg/day
+
+Agomelatine has been shown to prevent relapse over a
+6-month period45
+
+Betablockers
+Propranolol 40–120mg/day in divided doses
+
+Initiate at 40mg and titrate dose up to effect if needed. Useful
+for somatic symptoms, particularly tachycardia46
+
+Buspirone
+15–60mg/day in divided doses
+
+Has a delayed onset of action, takes up to 6 weeks to show
+equal efficacy with benzodiazepines47
+
+Hydroxyzine
+50–100mg/day in divided doses
+
+It is unclear whether hydroxyzine is effective due to an
+anxiolytic effect or a sedative effect48
+
+Quetiapine
+(MR, 50–300mg)
+
+Recommended as monotherapy. Probably not effective as
+adjunctive therapy to SSRI/SNRI in treatment resistance49
+
+Tricyclic antidepressants
+Clomipramine
+50–250mg/day50–52
+Imipramine
+75–200mg/day in divided doses53
+
+Initiate clomipramine at 10mg/day and increase the dose
+gradually
+
+MAOI
+Phenelzine
+45–90mg/day in divided doses54
+
+For mixed anxiety and depressive states. Patients need to avoid
+food high in tyramine
+
+Initiate imipramine 25mg every 4 days and when at 100mg can
+increase in 50mg increments10
+
+Mirtazapine
+15–30mg nocte55,56
+Experimental
+Chamomile
+220–1500mg/day
+
+Two RCTs, one positive, one negative using standardised doses
+of chamomile and placebo57
+
+Gingko biloba
+240mg–480mg/day
+
+One positive RCT using standardised doses of gingko biloba
+and placebo58
+
+Lavender oil preparation
+80–160mg/day
+
+One positive RCT using standardised doses of lavender oil
+compared to placebo and paroxetine59
+
+Riluzole
+50–100mg/day doses60
+
+Liver function monitoring required
+
+nocte, at night
+
+
+
+
+<<<PAGE 448>>>
+
+Depression and anxiety disorders  427
+
+Box 3.5 Panic disorder
+Crisis management
+Drug
+
+Comment
+
+Benzodiazepines
+
+Rapid effect although panic symptoms return quickly if the drug is
+withdrawn.61 NICE do not recommend.6 Cochrane lukewarm62
+
+SSRIs
+(Up to maximum licensed dose)
+
+Therapeutic effect can be delayed (this applies to all
+antidepressants64) and patients can experience an initial
+exacerbation of panic symptoms.6 Use supported by Cochrane65
+
+Venlafaxine MR
+75–225mg63
+
+Initiate at 37.5mg for 7 days
+
+Second-line treatment (Less well tolerated or weak evidence base, no order of preference)
+Mirtazapine
+15–60mg/day66
+
+A meta-analysis suggests that mirtazapine does not help with
+panic symptoms but with the anxiety associated with this
+disorder.63 Rather limited data overall67
+
+Moclobemide
+300–600mg/day68
+
+One fixed-dose study of 450mg/day and one flexible-dose study
+suggest efficacy68,69
+
+MAOIs
+Phenelzine
+10–60mg/day64
+
+No long-term studies, reserve for treatment-resistant cases due to
+poor tolerability64
+
+Tricyclic antidepressants
+Clomipramine
+25–250mg/day64
+Imipramine
+25–300mg/day64
+Lofepramine
+70–140mg/day in divided doses70
+
+Start with a low dose and increase dose according to response
+and tolerability
+
+Experimental
+D-cycloserine
+50mg/day
+
+A RCT suggests acceleration of treatment response to CBT, but
+this advantage is lost at follow-up71
+
+Gabapentin
+600–3600mg/day
+
+One RCT showed no difference between gabapentin and placebo.
+However, significant improvement was demonstrated in the more
+severely ill72
+
+Inositol
+12g/day73
+
+One positive PCT in 21 patients. Equivalent to fluvoxamine in one
+study.74 Well tolerated
+
+Levetiracetam
+250mg twice daily67
+
+Usually well tolerated
+
+Pindolol
+7.5mg/day
+
+Efficacy suggested in a small 21-patient DB-PCT where pindolol
+2.5mg tds was used to augment fluoxetine in treatment-resistant
+panic disorder75
+
+Valproate
+500–2250mg/day
+
+Two very small positive open studies76,77
+
+Hydrocortisone
+
+Only acute treatment shown to prevent development of PTSD78
+
+DB-PCT, double blind randomised controlled trial, CBT, cognitive behavioural therapy
+
+CHAPTER 3
+
+First-line drug treatment
+(In order of preference)6,63
+
+
+
+
+<<<PAGE 449>>>
+
+428  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Box 3.6 Post-traumatic stress disorder (PTSD)
+First-line drug treatment
+(In order of preference)
+(NB psychological approaches should be used before drug treatments79,80)
+SSRIs
+(Up to maximum licensed doses)
+
+Paroxetine, sertraline or fluoxetine are the preferred SSRIs81,82
+Recommended by NICE79
+
+Venlafaxine modified release
+37.5mg–300mg83
+
+Recommended by NICE79
+
+CHAPTER 3
+
+Second-line treatment (Less well tolerated or weak evidence base, no order of preference)
+Antipsychotics
+Olanzapine
+5–20mg
+Risperidone
+0.5–6mg
+
+Antipsychotics may be effective for the intrusion symptoms (flashbacks
+and nightmares) but not the avoidance and hyperarousal symptoms of
+PTSD. Studies done as monotherapy or as adjunctive treatment84
+Risperidone specifically mentioned by NICE79
+
+Quetiapine
+50–800mg85
+Mirtazapine
+15–45mg/day86
+
+Recommended by NICE79
+Second most effective drug in a network meta-analysis87
+
+MAOI
+Phenelzine
+15–75mg/day88
+
+Recommended by NICE79
+Most effective drug in a network meta-analysis87
+
+Prazosin
+2–15mg nocte89
+
+For nightmares and sleep disturbances. Initiate at 1mg nocte and
+titrate dose gradually to reduce the risk of hypotension
+Supported by a systematic review90
+
+Tricyclic antidepressants
+Amitriptyline
+50–300mg/day91
+Imipramine
+50–300mg/day
+
+Amitriptyline is recommended by NICE79
+For all TCAs start at a low dose and increase dose according to
+tolerability
+Best supporting evidence is for desipramine but this drug is not widely
+available87
+
+IV Ketamine92,93
+
+Rapid reduction in symptom severity suggested. Good RCT showing
+acute and chronic efficacy94
+
+Experimental
+Duloxetine
+60–120mg
+
+Two small open studies suggest efficacy. Start at 30mg for one
+week95,96
+
+Lamotrigine
+up to 500mg/day
+
+Small double-blind study in 15 patients97
+
+Phenytoin
+plasma concentration 10–20ng/ml98
+
+Open-label study in 12 patients
+
+Valproate
+up to 2.5g99
+
+Probably not effective87
+
+nocte, at night
+
+
+
+
+<<<PAGE 489>>>
+
+468  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Co-morbid mental health disorders
+People with alcohol-use disorders often present with other mental health disorders,
+particularly anxiety and depression. Public Health England has described it as ‘the
+norm rather than the exception’ and encourage a collaborative, effective and flexible
+approach between frontline services, stating that it is ‘everyone’s job’ and that there is
+‘no wrong door’.35
+Substance-use disorders including alcohol misuse should never be a reason to exclude a
+patient from:
+■■
+■■
+
+Crisis psychiatric services
+Mood/anxiety/personality services after completion of detoxification.
+
+CHAPTER 4
+
+Depression
+Depressive and anxiety symptoms occur commonly during alcohol withdrawal, but usually diminish by the third or fourth week of abstinence. Meta-analyses suggest that antidepressants with mixed pharmacology (the tricyclics imipramine or trimipramine)
+perform better than selective serotonin reuptake inhibitors (SSRIs; fluoxetine or sertraline) in reducing depressive symptoms in individuals with an alcohol-use disorder, but the
+antidepressant effect is modest.2,9,36,37 A greater antidepressant effect was seen if the diagnosis of depression was made after at least 1 week of abstinence, thus excluding those
+with affective symptoms caused by alcohol withdrawal. There is stronger evidence for
+depression categorised as independent, rather than substance induced.36 As treatment
+effects are masked by comparatively large placebo effects, which conceal improvements
+that would otherwise be attributed to medication, there is a need for larger randomised
+placebo-controlled trials. Despite the evidence for tricyclics, they are not recommended
+in clinical practice because of their potential for cardiotoxicity and toxicity in overdose.
+Relapse prevention medication should be considered in combination with antidepressants. Pettinati et al.38 showed that the combination of sertraline (200mg/day) with
+naltrexone (100mg/day) had superior outcomes – improved drinking outcomes and
+better mood – compared with placebo and compared with each drug alone. In contrast,
+citalopram showed no benefit when added to naltrexone.39
+Secondary analyses of acamprosate and naltrexone trials suggest that:
+acamprosate has an indirect modest beneficial effect on depression via increasing
+abstinence and
+■■ in depressed alcohol-dependent patients, the combination of naltrexone and an antidepressant may be better than either drug alone,9 but findings are not consistent.39
+■■
+
+Bipolar affective disorder
+Bipolar patients tend to use alcohol to reduce symptoms of anxiety. Where there is comorbidity, it is important to treat the different phases as recommended in guidelines for
+bipolar disorder. It may be worth adding sodium valproate to lithium as two trials have
+
+
+
+
+<<<PAGE 695>>>
+
+Lofepramine
+
+Older
+tricyclics20
+
+Moderate,
+although
+constipation/
+sweating can be
+severe
+
+All can also cause
+central
+anticholinergic
+effects (confusion)
+
+Marked with
+others
+
+Variable: moderate
+with nortriptyline,
+imipramine and
+dosulepin
+(dothiepin)
+
+Anticholinergic
+side effects
+(urinary retention,
+dry mouth,
+blurred vision,
+constipation)
+
+Can be a
+problem but
+generally
+better
+tolerated
+than the
+older tricyclics
+
+All can cause
+postural
+hypotension
+Dosage
+titration is
+required
+
+Postural
+hypotension
+
+Table 6.8 Antidepressants and older people
+
+Minimal
+
+Variable:
+from
+minimal
+with
+imipramine
+to profound
+with
+trimipramine
+
+Sedation
+
+Few data, but
+lack of
+spontaneous
+reports may
+indicate less
+potential than
+the older
+tricyclics
+
+All tricyclics
+can cause
+weight gain
+
+Weight
+gain
+
+Relatively safe
+
+Dothiepin and
+amitriptyline
+are the most
+toxic (seizures
+and cardiac
+arrhythmia)
+
+Safety in
+overdose
+
+Less likely to cause
+hyponatraemia than other
+TCAs and SSRIs
+
+Raised LFTs
+
+Increased risk of bleeds with
+serotonergic drugs
+
+Seizures, anticholinergicinduced cognitive
+impairment
+
+Other side effects
+
+Mainly pharmacodynamic:
+increased sedation with
+benzodiazepines, increased
+hypotension with diuretics,
+increased constipation with
+other anticholinergic drugs,
+etc.
+
+Drug interactions
+
+
+
+
+<<<PAGE 763>>>
+
+742  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+Table 8.9 (Continued )
+Drug
+
+Comments
+
+Escitalopram22,25,75,85–87
+
+8% excreted unchanged in urine. The manufacturer states dosage adjustment is not
+necessary in patients with mild or moderate renal impairment but caution is advised
+if GFR <30mL/min, so start with a low dose and increase slowly. A case study of
+reversible renal tubular defects and another of renal failure have been reported with
+escitalopram. One study says effective versus placebo in end stage renal disease. Use
+of escitalopram (or citalopram) is associated with a higher risk of sudden cardiac
+death versus other SSRIs (fluoxetine, fluvoxamine, paroxetine, sertraline) when used
+in patients on haemodialysis (adjusted hazard ratio, 1.18; 95% CI 1.05, 1.31).
+
+Fluoxetine13,22,23,25,32,40,88–91
+
+2.5–5% of fluoxetine and 10% of the active metabolite norfluoxetine are excreted
+unchanged in the urine. Dosing: GFR 20–50mL/min dose as normal renal function; GFR
+<20mL/min use a low dose or on alternate days and increase according to response.
+Plasma levels after 2 months treatment with 20mg (in patients on dialysis with GFR
+<10mL/min) are similar to those with normal renal function. Efficacy studies of fluoxetine
+in depression and renal disease are conflicting. One small placebo controlled study of
+fluoxetine in patients on chronic dialysis found no significant differences in depression
+scores between the two groups after 8 weeks of treatment. Another found fluoxetine
+effective. A case series (n = 4) of once-weekly fluoxetine 90mg or 180mg use in depressed
+patients on haemodialysis describes efficacious use with better tolerability at 90mg dose.
+
+Fluvoxamine22,25,32,40,63
+
+2% is excreted unchanged in urine. Little information on its use in renal impairment.
+Manufacturer cautions in renal impairment. Dosing: GFR 10–50mL/min dose as for
+normal renal function; GFR <10mL/min dose as for normal renal function but start on
+a low dose and titrate slowly. Acute renal failure has been reported. Variations in
+albumin levels might affect serum concentrations of fluvoxamine in haemodialysis.
+
+Imipramine22,23,25,32,60
+
+<5% excreted unchanged in the urine. No specific dose adjustment necessary in
+renal impairment (GFR <10–50mL/min). Monitor patient for urinary retention,
+confusion, sedation and postural hypotension. Renal impairment with imipramine
+has been reported and manufacturer advises caution in severe renal impairment.
+Renal damage reported rarely.
+
+Lofepramine22,23,25,92
+
+There is little information about the use of lofepramine in renal impairment. Less
+than 5% is excreted unchanged in the urine. Dosing: GFR 10–50mL/min dose as in
+normal renal function; GFR <10mL/min start with a small dose and titrate slowly.
+Manufacturer contraindicates in severe renal impairment. As with imipramine,
+desipramine is the major metabolite.
+
+Mirtazapine22,23,25,93
+
+75% excreted unchanged in the urine. Clearance is reduced by 30% in patients with
+a GFR of 11–39mL/min and by 50% in patients with a GFR <10mL/min. Dosing
+advice: GFR 10–50mL/min dose as for normal renal function; GFR <10mL/min start at
+a low dose and monitor closely. Mirtazapine has been used to treat pruritis caused by
+renal failure and appetite loss in patients on dialysis.94 Rarely associated with kidney
+calculus formation.
+
+Moclobemide22,23,25,95,96
+
+<1% of parent drug excreted unchanged in the urine. However, an active metabolite
+was found to be raised in patients with renal impairment but was not thought to
+affect dosing. The manufacturer advises that dose adjustments are not required in
+renal impairment. Dosing: GFR <10–50mL/min dose as in normal renal function.
+(Continued)
+
+
+
+
+<<<PAGE 850>>>
+
+Prescribing in patients with psychiatric illness at the end of life
+Generally, prescribing in patients with psychiatric illness who are approaching end of
+life should follow the principles of good prescribing practice in palliative care.1 This
+includes reviewing the appropriateness of a drug, its dose and potential for its discontinuation. Furthermore, if swallowing becomes impaired, it includes making adjustments, such as the use of liquid preparations or parenteral administration.
+There is a lack of specific guidance around long-term psychiatric medications in this
+setting to support clinicians. This adds to reluctance, particularly by generalists, to
+adjust or stop such drugs.2,3 This suggests there is scope for improved liaison between
+non-psychiatry and psychiatry services.
+Physical deterioration may impact on factors (e.g. reducing smoking, drinking less
+fluid) which in turn alter a drug’s pharmacokinetics and/or pharmacodynamics, making
+ongoing review important. Furthermore, polypharmacy is common, increasing the risk
+of drug–drug interaction and toxicity, for example, tramadol and SSRI antidepressants
+leading to serotonin toxicity.
+Depression is common4 but often not recognised at the end of life.5 This is important,
+given that antidepressants may be beneficial even when prognosis is short.6 Mirtazapine
+and citalopram are most strongly supported for use in this population.7 Psychostimulants
+such as modafinil may reduce symptoms of depression in the short term, but there is
+less evidence for sustained effectiveness.8
+There is a lack of evidence to guide drug management of anxiety at the end of life.9,10
+Non-drug approaches have a stronger evidence base for effectiveness.11
+Though commonly used for management of delirium, evidence of effectiveness of
+antipsychotics is mixed. Nonetheless, national guidelines support their use for very
+distressed patients or those for whom other approaches have been unsuccessful.12
+Table 10.14 Examples of drugs prescribed in psychiatry which are also used for symptom management in
+palliative care1
+Symptom
+
+Example drugs
+
+Neuropathic pain
+
+Amitriptyline
+Imipramine
+Duloxetine
+Gabapentin/pregabalin
+Clonazepam
+
+Nausea and vomiting
+
+Haloperidol
+Olanzapine
+Lorazepam
+
+Anorexia
+
+Mirtazapine
+
+Skeletal muscle spasm
+
+Diazepam
+(Continued)
+
+CHAPTER 10
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  829
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+

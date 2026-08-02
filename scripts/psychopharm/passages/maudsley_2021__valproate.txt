@@ -1,0 +1,791 @@
+<<<PAGE 278>>>
+
+Bipolar disorder  257
+
+Valproate
+
+Valproate is a simple branched-chain fatty acid. Its mechanism of action is complex
+and not fully understood. Valproate inhibits the catabolism of γ-aminobutyric acid
+(GABA), reduces the turnover of arachidonic acid, activates the extracellular
+­signal-regulated kinase (ERK) pathway and thus alters synaptic plasticity, interferes
+with intracellular, signalling promotes BDNF expression and reduces levels of protein
+kinase C. Recent research has focused on the ability of valproate to alter the expression of multiple genes that are involved in transcription regulation, cytoskeletal modifications and ion homeostasis. Other mechanisms that have been proposed include
+depletion of inositol, and indirect effects on non-GABA pathways through inhibition
+of voltage-gated sodium channels.
+There is a growing literature relating to the potential use of valproate as an adjunctive treatment in several types of cancer; the relevant mechanism of action being inhibition of histone deacetylase,2–4 a property that may also confer some effects on
+neuroplasticity.5
+
+Formulations
+Valproate is available in the UK in three forms: sodium valproate, valproic acid (licensed
+for the treatment of epilepsy) and semi-sodium valproate (licensed for the treatment of
+acute mania). Both semi-sodium and sodium valproate are metabolised to valproic
+acid, which is responsible for the pharmacological activity of all three preparations.6
+Clinical studies of the treatment of affective disorders variably use sodium valproate,
+semi-sodium valproate, ‘valproate’ or valproic acid. The great majority has used semisodium valproate.
+In the US, valproic acid is widely used in the treatment of bipolar illness,7 and in the
+UK sodium valproate is widely used. It is important to remember that doses of sodium
+valproate and semi-sodium valproate are not equivalent; a slightly higher (approximately 10%) dose is required if sodium valproate is used to allow for the extra sodium
+content.
+It is unclear if there is any difference in efficacy between valproic acid, valproate
+semi-sodium and sodium valproate. A large US quasi-experimental study found that
+inpatients who initially received the semi-sodium preparation had a hospital stay that
+was a third longer than patients who initially received valproic acid.8 Note that sodium
+valproate controlled release (Epilim Chrono9) can be administered as a once daily dose,
+whereas other sodium and semi-sodium valproate preparations require at least twice
+daily administration.
+
+Indications
+Randomised controlled trials (RCTs) have shown valproate to be effective in the treatment of mania,10,11 with a response rate of 50% and a number needed to treat (NNT)
+of 2–4,12 although large negative studies do exist.13 One RCT found lithium to be more
+
+CHAPTER 2
+
+Mechanism of action1
+
+
+
+
+<<<PAGE 279>>>
+
+CHAPTER 2
+
+258  The Maudsley® Prescribing Guidelines in Psychiatry
+
+effective overall than valproate11 but a large (n = 300) randomised open trial of 12 weeks
+duration found lithium and valproate to be equally effective in the treatment of acute
+mania.14 Valproate may be effective in patients who have failed to respond to lithium;
+in a small placebo-controlled RCT (n = 36) in patients who had failed to respond to or
+could not tolerate lithium, the median decrease in the Young Mania Rating Scale scores
+was 54% in the valproate group and 5% in the placebo group.15 It may be less effective
+than olanzapine, both as monotherapy16 and as an adjunctive treatment to lithium12 in
+acute mania. A network meta-analysis reported that valproate was less effective but
+better tolerated than lithium.17
+A meta-analysis of four small RCTs concluded that valproate is effective in bipolar
+depression with a small to medium effect size.18 A 2020 meta-analysis placed divalproex 5th out of 21 treatments for bipolar depression.19
+Although open-label studies suggest that valproate is effective in the prophylaxis
+of bipolar affective disorder,20 RCT data are limited.21,22 Bowden et al.23 found no
+difference between lithium, valproate and placebo in the primary outcome measure,
+time to any mood episode, although valproate was superior to lithium and placebo
+on some secondary outcome measures. This study can be criticised for including
+patients who were ‘not ill enough’ and for not lasting ‘long enough’ (1 year). In
+another RCT,21 which lasted for 47 weeks, there was no difference in relapse rates
+between valproate and olanzapine. The study had no placebo arm and the attrition
+rate was high, so is difficult to interpret. A post hoc analysis of data from this study
+found that patients with rapid cycling illness had a better very early response to valproate than to olanzapine but that this advantage was not maintained.22 Outcomes
+with respect to manic symptoms for those who did not have a rapid cycling illness
+were better at 1 year with olanzapine than valproate. In a further 20 months’ RCT
+of lithium versus valproate in patients with rapid cycling illness, both the relapse and
+attrition rate were high, and no difference in efficacy between valproate and lithium
+was apparent.24 More recently, the BALANCE study found lithium to be numerically
+superior to valproate, and the combination of lithium and valproate to be statistically superior to valproate alone.25 Aripiprazole in combination with valproate is
+superior to valproate alone.26
+The National Institute for Health and Clinical Excellence (NICE) recommends valproate as a first-line option for the treatment of acute episodes of mania, in combination with an antidepressant for the treatment of acute episodes of depression, and for
+prophylaxis,27 but importantly NOT in women of child-bearing potential.27,28 Cochrane
+conclude that the evidence supporting the use of valproate as prophylaxis is limited,29
+yet use for this indication has substantially increased in recent years.30 Indeed, in the US,
+valproate use in BD has risen at the expense of lithium use, despite the latter drug’s
+recommendation as the first-line drug.31
+Valproate is sometimes used to treat aggressive behaviours of variable aetiology.32
+One very small RCT (n = 16) failed to detect any advantage for risperidone augmented
+with valproate over risperidone alone in reducing hostility in patients with schizophrenia.33 A mirror-image study found that, in patients with schizophrenia or BD in a secure
+setting, valproate decreased agitation.34
+There is a small positive placebo-controlled RCT of valproate in generalised anxiety
+disorder.35
+
+
+
+
+<<<PAGE 280>>>
+
+Bipolar disorder  259
+
+The pharmacokinetics of valproate are complex, following a three-compartmental
+model and showing protein-binding saturation. Plasma level monitoring is supposedly
+of more limited use than with lithium or carbamazepine.36 There may be a linear association between valproate serum levels and response in acute mania, with serum levels
+<55mg/L being no more effective than placebo and levels >94mg/L being associated
+with the most robust response,37 although these data are weak.36 Note that this is the
+top of the reference range (for epilepsy) that is quoted on laboratory forms. Optimal
+serum levels during the maintenance phase are unknown, but are likely to be at least
+50mg/L.38 Achieving therapeutic plasma levels rapidly using a loading dose regimen is
+generally well tolerated. Plasma levels can also be used to detect non-compliance or
+toxicity.
+
+Adverse effects
+Valproate can cause both gastric irritation and hyperammonaemia,39 both of which can
+lead to nausea. Lethargy and confusion can occasionally occur with starting doses
+above 750mg/day. Weight gain can be significant,40 particularly when valproate is used
+in combination with clozapine. Valproate causes dose-related tremor in up to a quarter
+of patients.41 In the majority of these patients, it is intention/postural tremor that is
+problematic, but a very small proportion develop parkinsonism associated with cognitive decline; these symptoms are reversible when valproate is discontinued.42
+Hair loss (with curly regrowth) and peripheral oedema can occur, as can thrombocytopenia, leucopenia, red cell hypoplasia and pancreatitis.43 Valproate can cause hyperandrogenism in women44 and has been linked with the development of polycystic
+ovaries; the evidence supporting this association is conflicting. Valproate is a major
+human teratogen (see section ‘Pregnancy’, Chapter 7). Valproate may very rarely cause
+fulminant hepatic failure. Young children receiving multiple antiseizure medications are
+most at risk. Any patient with raised liver function tests (LFTs; common in early treatment45) should be evaluated clinically and other markers of hepatic function such as
+albumin and clotting time should be checked.
+Many side effects of valproate are dose related (peak plasma-level related) and an
+increase in frequency and severity when the plasma level is >100mg/L. The once daily
+Chrono form of sodium valproate does not produce as high peak plasma levels as the
+conventional formulation, and so may be better tolerated.
+Valproate and other antiseizure medications have been associated with an increased
+risk of suicidal behaviour,46 but this finding is not consistent across studies.47 Patients
+with depression48 or who take another antiseizure medication that increases the risk of
+developing depression may be a subgroup at greater risk.49
+Note that valproate is eliminated mainly through the kidneys, partly in the form of
+ketone bodies, and may give a false positive urine test for ketones.
+
+Pre-treatment tests
+Baseline full blood count (FBC), LFTs and weight or BMI are recommended by NICE.
+
+CHAPTER 2
+
+Plasma levels
+
+
+
+
+<<<PAGE 281>>>
+
+260  The Maudsley® Prescribing Guidelines in Psychiatry
+
+On-treatment monitoring
+
+CHAPTER 2
+
+NICE recommends that FBC and LFTs should be repeated after 6 months, and that
+Body Mass Index (BMI) should be monitored. Valproate SPCs recommend more frequent LFTs during the first 6 months with albumin and clotting measured if enzyme
+levels are abnormal.
+
+Discontinuation
+It is unknown if abrupt discontinuation of valproate worsens the natural course of
+bipolar illness in the same way that discontinuation of lithium does. A small naturalistic
+retrospective study suggests that it might.50 Until further data are available, if valproate
+is to be discontinued, it should be done slowly over at least a month.
+
+Use in women of child-bearing age
+Valproate is an established human teratogen. NICE recommends that alternative antiseizure medications are preferred in women with epilepsy51 and that valproate should not
+be used to treat bipolar illness in women of child-bearing age.27 The Medicines and
+Healthcare products Regulatory Agency (MHRA) published the valproate toolkit, providing a set of resources for patients, GPs, pharmacists and specialists.52
+The toolkit and the SPCs for sodium valproate and semi-sodium valproate9,53 state
+that:
+these drugs should not be initiated in women of child-bearing potential without specialist advice (from a neurologist or a psychiatrist)
+■■ women who are trying to conceive and require valproate should be prescribed prophylactic folate.
+■■
+
+Women who have mania are likely to be sexually disinhibited when unwell. The risk of
+unplanned pregnancy is likely to be above population norms (where 50% of pregnancies are unplanned).
+The teratogenic potential of valproate is not widely appreciated and many women of
+child-bearing age are not advised of the need for contraception or prophylactic
+folate.54,55 Valproate may also cause impaired cognitive function in children exposed to
+valproate in utero.56 See section ‘Pregnancy’. Most now agree that valproate should not
+be used in women under 50 years of age, and an outright prohibition of its use in these
+patients is being considered in some countries.
+
+Interactions with other drugs
+Valproate is highly protein bound and can be displaced by other protein bound drugs
+such as aspirin, leading to toxicity. Aspirin also inhibits the metabolism of valproate:
+a dose of at least 300mg aspirin is required.57 Other, less strongly protein bound drugs
+such as warfarin can be displaced by valproate, leading to higher free levels and
+toxicity.
+
+
+
+
+<<<PAGE 282>>>
+
+Valproate is hepatically metabolised; drugs that inhibit CYP enzymes can increase
+valproate levels (e.g. erythromycin, fluoxetine and cimetidine). Valproate can increase
+the plasma levels of some drugs by inhibition of glucuronidation. Examples include
+tricyclic antidepressant (TCAs; particularly clomipramine58), lamotrigine,59 quetiapine,60 warfarin61 and phenobarbital. Valproate may also significantly lower plasma
+olanzapine concentrations; the mechanism is unknown.62
+Pharmacodynamic interactions also occur. The anticonvulsant effect of valproate is
+antagonised by drugs that lower the seizure threshold (e.g. antipsychotics). Weight gain
+can be exacerbated by other drugs such as clozapine and olanzapine.
+
+Table 2.3 Valproate – prescribing and monitoring
+Indications
+
+Mania, hypomania, bipolar depression and prophylaxis of bipolar affective disorder. May
+reduce aggression in a range of psychiatric disorders (data weak).
+Note that sodium valproate is licensed only for epilepsy and semi-sodium valproate only
+for acute mania.
+
+Pre-valproate
+workup
+
+FBC and LFTs. Baseline measure of weight desirable
+
+Prescribing
+
+Titrate dose upwards against response and side effects. Loading doses can be used and
+are generally well tolerated.
+Note that CR sodium valproate (Epilim Chrono9) can be given once daily. All other
+formulations must be administered at least twice daily.
+Plasma levels can be used to assure adequate dosing and treatment compliance. Blood
+should be taken immediately before the next dose.
+
+Monitoring
+
+FBC and LFTs if clinically indicated
+Weight (or BMI)
+
+Stopping
+
+Reduce slowly over at least 1 month
+
+References
+1. Rosenberg G. The mechanisms of action of valproate in neuropsychiatric disorders: can we see the forest for the trees? Cell Mol Life Sci 2007;
+64:2090–2103.
+2. Kuendgen A, et al. Valproic acid for the treatment of myeloid malignancies. Cancer 2007; 110:943–954.
+3. Atmaca A, et al. Valproic acid (VPA) in patients with refractory advanced cancer: a dose escalating phase I clinical trial. Br J Cancer 2007;
+97:177–182.
+4. Hallas J, et al. Cancer risk in long-term users of valproate: a population-based case-control study. Cancer Epidemiol Biomarkers Prev 2009;
+18:1714–1719.
+5. Gervain J, et al. Valproate reopens critical-period learning of absolute pitch. Front Syst Neurosci 2013; 7:1–11.
+6. Fisher C, et al. Sodium valproate or valproate semisodium: is there a difference in the treatment of bipolar disorder? Psychiatric Bull 2003;
+27:446–448.
+7. Iqbal SU, et al. Divalproex sodium vs. valproic acid: drug utilization patterns, persistence rates and predictors of hospitalization among VA
+patients diagnosed with bipolar disorder. J Clin Pharm Ther 2007; 32:625–632.
+8. Wassef AA, et al. Lower effectiveness of divalproex versus valproic acid in a prospective, quasi-experimental clinical trial involving 9,260
+psychiatric admissions. Am J Psychiatry 2005; 162:330–339.
+9. Sanofi. Summary of product characteristics. Epilim Chrono 500mg. 2020; https://www.medicines.org.uk/emc/medicine/6779.
+10. Bowden CL, et al. Efficacy of divalproex vs lithium and placebo in the treatment of mania. The Depakote Mania Study Group. JAMA 1994;
+271:918–924.
+
+CHAPTER 2
+
+Bipolar disorder  261
+
+
+
+
+<<<PAGE 283>>>
+
+CHAPTER 2
+
+262  The Maudsley® Prescribing Guidelines in Psychiatry
+
+11. Freeman TW, et al. A double-blind comparison of valproate and lithium in the treatment of acute mania. Am J Psychiatry 1992;
+149:108–111.
+12. Nasrallah HA, et al. Carbamazepine and valproate for the treatment of bipolar disorder: a review of the literature. J Affect Disord 2006;
+95:69–78.
+13. Hirschfeld RM, et al. A randomized, placebo-controlled, multicenter study of divalproex sodium extended-release in the acute treatment of
+mania. J Clin Psychiatry 2010; 71:426–432.
+14. Bowden C, et al. A 12-week, open, randomized trial comparing sodium valproate to lithium in patients with bipolar I disorder suffering from
+a manic episode. Int Clin Psychopharmacol 2008; 23:254–262.
+15. Pope HG, Jr., et al. Valproate in the treatment of acute mania. A placebo-controlled study. Arch Gen Psychiatry 1991; 48:62–68.
+16. Novick D, et al. Translation of randomised controlled trial findings into clinical practice: comparison of olanzapine and valproate in the
+EMBLEM study. Pharmacopsychiatry 2009; 42:145–152.
+17. Cipriani A, et al. Comparative efficacy and acceptability of antimanic drugs in acute mania: a multiple-treatments meta-analysis. Lancet
+2011; 378:1306–1315.
+18. Smith LA, et al. Valproate for the treatment of acute bipolar depression: systematic review and meta-analysis. J Affect Disord 2010;
+122:1–9.
+19. Bahji A, et al. Comparative efficacy and tolerability of pharmacological treatments for the treatment of acute bipolar depression: A systematic
+review and network meta-analysis. J Affect Disord 2020; 269:154–184.
+20. Calabrese JR, et al. Spectrum of efficacy of valproate in 55 patients with rapid-cycling bipolar disorder. Am J Psychiatry 1990;
+147:431–434.
+21. Tohen M, et al. Olanzapine versus divalproex sodium for the treatment of acute mania and maintenance of remission: a 47-week study. Am
+J Psychiatry 2003; 160:1263–1271.
+22. Suppes T, et al. Rapid versus non-rapid cycling as a predictor of response to olanzapine and divalproex sodium for bipolar mania and maintenance of remission: post hoc analyses of 47-week data. J Affect Disord 2005; 89:69–77.
+23. Bowden CL, et al. A randomized, placebo-controlled 12-month trial of divalproex and lithium in treatment of outpatients with bipolar I
+disorder. Divalproex Maintenance Study Group. Arch Gen Psychiatry 2000; 57:481–489.
+24. Calabrese JR, et al. A 20-month, double-blind, maintenance trial of lithium versus divalproex in rapid-cycling bipolar disorder. Am J
+Psychiatry 2005; 162:2152–2161.
+25. Geddes JR, et al. Lithium plus valproate combination therapy versus monotherapy for relapse prevention in bipolar I disorder (BALANCE):
+a randomised open-label trial. Lancet 2010; 375:385–395.
+26. Marcus R, et al. Efficacy of aripiprazole adjunctive to lithium or valproate in the long-term treatment of patients with bipolar I disorder with
+an inadequate response to lithium or valproate monotherapy: a multicenter, double-blind, randomized study. Bipolar Disord 2011;
+13:133–144.
+27. National Institute for Health and Care Excellence. Bipolar disorder: assessment and management. Clinical Guidance [CG198]. 2014 (Last
+updated February 2020); https://www.nice.org.uk/guidance/cg185.
+28. National Institute for Health and Care Excellence. Antenatal and postnatal mental health: clinical management and service guidance. Clinical
+Guidance [CG192]. 2014 (Last updated: February 2020); https://www.nice.org.uk/guidance/cg192.
+29. Cipriani A, et al. Valproic acid, valproate and divalproex in the maintenance treatment of bipolar disorder. Cochrane Database Syst Rev 2013;
+10:CD003196.
+30. Hayes J, et al. Prescribing trends in bipolar disorder: cohort study in the United Kingdom THIN primary care database 1995–2009. PLoSOne
+2011; 6:e28725.
+31. Lin Y, et al. Trends in prescriptions of lithium and other medications for patients with bipolar disorder in office-based practices in the United
+States: 1996–2015. J Affect Disord 2020; 276:883–889.
+32. Lindenmayer JP, et al. Use of sodium valproate in violent and aggressive behaviors: a critical review. J Clin Psychiatry 2000; 61:123–128.
+33. Citrome L, et al. Risperidone alone versus risperidone plus valproate in the treatment of patients with schizophrenia and hostility. Int Clin
+Psychopharmacol 2007; 22:356–362.
+34. Gobbi G, et al. Efficacy of topiramate, valproate, and their combination on aggression/agitation behavior in patients with psychosis. J Clin
+Psychopharmacol 2006; 26:467–473.
+35. Aliyev NA, et al. Valproate (depakine-chrono) in the acute treatment of outpatients with generalized anxiety disorder without psychiatric
+comorbidity: randomized, double-blind placebo-controlled study. Eur Psychiatry 2008; 23:109–114.
+36. Haymond J, et al. Does valproic acid warrant therapeutic drug monitoring in bipolar affective disorder? Ther Drug Monit 2010; 32:19–29.
+37. Allen MH, et al. Linear relationship of valproate serum concentration to response and optimal serum levels for acute mania. Am J Psychiatry
+2006; 163:272–275.
+38. Taylor D, et al. Doses of carbamazepine and valproate in bipolar affective disorder. Psychiatric Bull 1997; 21:221–223.
+39. Segura-Bruna N, et al. Valproate-induced hyperammonemic encephalopathy. Acta Neurol Scand 2006; 114:1–7.
+40. El-Khatib F, et al. Valproate, weight gain and carbohydrate craving: a gender study. Seizure 2007; 16:226–232.
+41. Zadikoff C, et al. Movement disorders in patients taking anticonvulsants. J Neurol Neurosurg Psychiatry 2007; 78:147–151.
+42. Ristic AJ, et al. The frequency of reversible parkinsonism and cognitive decline associated with valproate treatment: a study of 364 patients
+with different types of epilepsy. Epilepsia 2006; 47:2183–2185.
+43. Gerstner T, et al. Valproic acid-induced pancreatitis: 16 new cases and a review of the literature. J Gastroenterol 2007; 42:39–48.
+44. Joffe H, et al. Valproate is associated with new-onset oligoamenorrhea with hyperandrogenism in women with bipolar disorder. Biol
+Psychiatry 2006; 59:1078–1086.
+
+
+
+
+<<<PAGE 301>>>
+
+CHAPTER 2
+
+280  The Maudsley® Prescribing Guidelines in Psychiatry
+
+available29 suggest combination treatments ‘tend to work faster’ and that ‘20% more
+patients will respond to combination therapy’ (compared with monotherapy).
+Conversely, guidelines from Australia and New Zealand suggest trying an antipsychotic
+first and only adding a mood stabiliser ‘if monotherapy does not suffice’.30 In practice,
+there is often a strong tendency to use combination therapy from the outset.
+The diagram outlines a treatment strategy for mania and hypomania. These recommendations are based on the UK NICE guidelines,6 BAP guidelines31 and individual
+references cited. Where an antipsychotic is recommended, choose from those licensed
+for mania/BD, that is, most conventional drugs including aripiprazole, asenapine, olanzapine, risperidone and quetiapine. Suggested doses and alternative treatments are outlined in the tables that follow.
+
+Table 2.6 Drug treatment of mania - suggested doses
+Drug
+
+Dose
+
+Lithium
+
+400mg/day, increasing every 3–4 days according to plasma levels. At least one study has used
+800mg as a starting dose32
+
+Valproate
+
+As semi-sodium – 250mg three times daily increasing according to tolerability and plasma levels.
+Slow release semi-sodium valproate may also be effective (at 15–30mg/kg)33 but there is one
+failed study34
+As sodium valproate slow release – 500mg/day increasing as above
+Higher, ‘loading doses’ have been used, both oral35–37 and intravenous (IV).38,39 Dose is 20–30mg/
+kg/day
+A review of 13 studies suggested ‘IV valproate as a loading therapy is an efficacious, safe and
+well-tolerated treatment’40
+
+Aripiprazole
+
+15mg/day increasing up to 30mg/day as required.41 Doses lower than 15mg may not be effective42
+
+Asenapine
+
+5mg bd increasing to 10mg bd as required
+
+Cariprazine
+
+3mg/day increasing up to 12mg a day as required43
+
+Olanzapine
+
+10mg/day increasing to 15mg or 20mg as required
+
+Risperidone
+
+2mg or 3mg/day increased to 6mg/day as required
+The use of paliperidone in mania is not well supported44
+
+Quetiapine
+
+IR – 100mg/day increasing to 800mg as required. Higher starting doses have been used45
+XL – 300/day increasing to 600mg/day on day 2
+
+Haloperidol
+
+5–10mg/day increasing to 15mg if required
+
+Lorazepam
+
+Up to 4mg/day (some centres use higher doses)
+
+22,23
+
+Clonzapam
+
+21,23
+
+Up to 8mg/day
+
+bd, bis die (twice a day), IR, immediate release, XL, extended release
+
+
+
+
+<<<PAGE 303>>>
+
+CHAPTER 2
+
+282  The Maudsley® Prescribing Guidelines in Psychiatry
+
+6. National Institute for Health and Care Excellence. Bipolar disorder: assessment and management. Clinical Guidance [CG185]. 2014 (Last
+updated February 2020); https://www.nice.org.uk/guidance/cg185.
+7. Goodwin GM. Evidence-based guidelines for treating bipolar disorder: revised second edition–recommendations from the British Association
+for Psychopharmacology. J Psychopharmacol 2009; 23:346–388.
+8. American Psychiatric Association. Guideline watch: practice guideline for the treatment of patients with bipolar disorder, 2nd edition.
+Washington, DC: American Psychiatric Association; 2005. doi:10.1176/appi.books.9780890423363.148430.
+9. Sachs GS. Decision tree for the treatment of bipolar disorder. J Clin Psychiatry 2003; 64 Suppl 8:35–40.
+10. Tohen M, et al. A 12-week, double-blind comparison of olanzapine vs haloperidol in the treatment of acute mania. Arch Gen Psychiatry
+2003; 60:1218–1226.
+11. Baldessarini RJ, et al. Olanzapine versus placebo in acute mania treatment responses in subgroups. J Clin Psychopharmacol 2003;
+23:370–376.
+12. Sachs G, et al. Quetiapine with lithium or divalproex for the treatment of bipolar mania: a randomized, double-blind, placebo-controlled
+study. Bipolar Disord 2004; 6:213–223.
+13. Yatham LN, et al. Quetiapine versus placebo in combination with lithium or divalproex for the treatment of bipolar mania. J Clin
+Psychopharmacol 2004; 24:599–606.
+14. Yatham LN, et al. Risperidone plus lithium versus risperidone plus valproate in acute and continuation treatment of mania. Int Clin
+Psychopharmacol 2004; 19:103–109.
+15. Bowden CL, et al. Risperidone in combination with mood stabilizers: a 10-week continuation phase study in bipolar I disorder. J Clin
+Psychiatry 2004; 65:707–714.
+16. Hirschfeld RM, et al. Rapid antimanic effect of risperidone monotherapy: a 3-week multicenter, double-blind, placebo-controlled trial. Am J
+Psychiatry 2004; 161:1057–1065.
+17. Bowden CL, et al. A randomized, double-blind, placebo-controlled efficacy and safety study of quetiapine or lithium as monotherapy for
+mania in bipolar disorder. J Clin Psychiatry 2005; 66:111–121.
+18. Khanna S, et al. Risperidone in the treatment of acute mania: double-blind, placebo-controlled study. Br J Psychiatry 2005; 187:229–234.
+19. Young RC, et al. GERI-BD: a randomized double-blind controlled trial of lithium and divalproex in the treatment of mania in older patients
+with bipolar disorder. Am J Psychiatry 2017; 174:1086–1093.
+20. Conus P, et al. Olanzapine or chlorpromazine plus lithium in first episode psychotic mania: an 8-week randomised controlled trial. Eur
+Psychiatry 2015; 30:975–982.
+21. Sachs GS, et al. Adjunctive clonazepam for maintenance treatment of bipolar affective disorder. J Clin Psychopharmacol 1990; 10:42–47.
+22. Modell JG, et al. Inpatient clinical trial of lorazepam for the management of manic agitation. J Clin Psychopharmacol 1985; 5:109–113.
+23. Curtin F, et al. Clonazepam and lorazepam in acute mania: a Bayesian meta-analysis. J Affect Disord 2004; 78:201–208.
+24. Taylor D, et al. Doses of carbamazepine and valproate in bipolar affective disorder. Psychiatric Bull 1997; 21:221–223.
+25. Allen MH, et al. Linear relationship of valproate serum concentration to response and optimal serum levels for acute mania. Am J Psychiatry
+2006; 163:272–275.
+26. Swann AC, et al. Lithium treatment of mania: clinical characteristics, specificity of symptom change, and outcome. Psychiatry Res 1986;
+18:127–141.
+27. Goldberg JF, et al. A history of substance abuse complicates remission from acute mania in bipolar disorder. J Clin Psychiatry 1999;
+60:733–740.
+28. Hui TP, et al. A systematic review and meta-analysis of clinical predictors of lithium response in bipolar disorder. Acta Psychiatr Scand 2019;
+140:94–115.
+29. Yatham LN, et al. Canadian Network for Mood and Anxiety Treatments (CANMAT) and International Society for Bipolar Disorders (ISBD)
+2018 guidelines for the management of patients with bipolar disorder. Bipolar Disord 2018; 20:97–170.
+30. Malhi GS, et al. The 2020 Royal Australian and New Zealand College of Psychiatrists Clinical Practice Guidelines for mood disorders:
+bipolar disorder summary. Bipolar Disord 2020. 22:805–821.
+31. Goodwin GM, et al. Evidence-based guidelines for treating bipolar disorder: revised third edition recommendations from the British
+Association for Psychopharmacology. J Psychopharmacol 2016; 30:495–553.
+32. Bowden CL, et al. Efficacy of valproate versus lithium in mania or mixed mania: a randomized, open 12-week trial. Int Clin Psychopharmacol
+2010; 25:60–67.
+33. McElroy SL, et al. Randomized, double-blind, placebo-controlled study of divalproex extended release loading monotherapy in ambulatory
+bipolar spectrum disorder patients with moderate-to-severe hypomania or mild mania. J Clin Psychiatry 2010; 71:557–565.
+34. Hirschfeld RM, et al. A randomized, placebo-controlled, multicenter study of divalproex sodium extended-release in the acute treatment of
+mania. J Clin Psychiatry 2010; 71:426–432.
+35. McElroy SL, et al. A randomized comparison of divalproex oral loading versus haloperidol in the initial treatment of acute psychotic mania.
+J Clin Psychiatry 1996; 57:142–146.
+36. Hirschfeld RM, et al. Safety and tolerability of oral loading divalproex sodium in acutely manic bipolar patients. J Clin Psychiatry 1999;
+60:815–818.
+37. Hirschfeld RM, et al. The safety and early efficacy of oral-loaded divalproex versus standard-titration divalproex, lithium, olanzapine, and
+placebo in the treatment of acute mania associated with bipolar disorder. J Clin Psychiatry 2003; 64:841–846.
+38. Jagadheesan K, et al. Acute antimanic efficacy and safety of intravenous valproate loading therapy: an open-label study. Neuropsychobiology
+2003; 47:90–93.
+
+
+
+
+<<<PAGE 570>>>
+
+Children and adolescents  549
+
+Table 5.1 Summary of RCT evidence on medication used in youth with bipolar mania
+Medication
+
+Comments
+
+Lithium
+
+Lithium is cleared relatively quickly in children so twice daily dosing will be required,
+especially when using liquid or non-modified release preparations.20 One double-blind
+placebo-controlled randomised trial21 showed significant reductions in substance use and
+clinical ratings after 6 weeks, in 25 adolescents with BD and comorbid substance misuse. In
+a double-blind placebo-controlled discontinuation trial (N = 40) over 2 weeks, no significant
+difference in relapse rates were found between lithium and placebo22
+A later double-blind placebo-controlled study (N = 81), over 8 weeks, demonstrated a
+significantly larger change in YMRS score in lithium-treated youth, but with a differentiation
+from the placebo group only appearing after 6 weeks of treatment. There was a significant
+increase in thyrotropin with lithium, but no difference in weight gain23
+Lithium and divalproex did not differ in an 18-month maintenance trial in youths (N = 60),
+who initially stabilised on the combination pharmacotherapy of lithium and divalproex.24
+However, given the compelling evidence for lithium maintenance and prophylaxis in adults,
+we recommend that clinicians consider its use in adolescents in preference to valproate
+
+Valproate
+
+In an RCT (N = 150)28 divalproex ER (titrated to clinical response or 80–125mg/L) did not
+lead to significant differences in mean YMRS compared with placebo at 4 weeks (also see
+risperidone and quetiapine sections below)
+
+Oxcarbazepine
+
+A double-blind placebo-controlled study (N = 116) did not show significant differences
+between placebo and oxcarbazepine (mean dose 1,515mg/day) in reducing mania rating at
+7 weeks29
+
+Olanzapine
+
+A double-blind, placebo-controlled study (N = 161)30 showed olanzapine (5–20mg/day) to
+be significantly more effective than placebo in YMRS mean score reduction over a period of
+3 weeks. Note the higher weight gain in the treatment group (weight gain was 3.7kg for
+olanzapine versus 0.3kg for placebo) and the associated significantly increased fasting
+glucose, total cholesterol, AST, ALT and uric acid
+
+Risperidone
+
+A double-blind, placebo-controlled study (N = 169) showed risperidone (at doses 0.5–2.5 or
+3–6mg) to be significantly more effective than placebo in YMRS mean score reduction in a
+3-week follow up.31 The lower dose seems to lead to same benefits at a lower risk of side
+effects. Sleepiness and fatigue were common in the treatment arms. Note, mean weight
+increase in treatment groups (0.7kg versus 1.7kg for the low and 1.4 for the high dose arm)
+In the Treatment of Early Age Mania (TEAM) study, higher response rates (and metabolic side
+effects) occurred with risperidone (mean dose of 2.57mg) versus lithium (mean level of
+1.09mmol/L) and divalproex sodium (mean level of 113.6mg/L).32 A randomised follow-up of
+this study, showed again the superiority of risperidone as an alternative treatment for
+non-responders to lithium and divalproex sodium, and as an add-on treatment to partially
+responders to the two MS.33 However, these results need to be interpreted with caution as the
+definition of mania was broad and different to how bipolar disorder is defined by most UK
+clinicians. Similar reasons provoke caution when considering another placebo-controlled
+double-blind trial showing significantly better results for risperidone (mean dose 0.5mg) versus
+valproic acid (mean level 81mg/L) in 3–7 years old children supposedly diagnosed with mania34
+(Continued)
+
+CHAPTER 5
+
+A meta analysis25 found lithium to be ‘clearly inferior’ to risperidone in mania. One small
+6-month study found higher relapse rates in those who discontinued lithium compared
+with those who continued.26 Another naturalistic 8-month study showed lithium to be
+effective and well tolerated27
+
+
+
+
+<<<PAGE 620>>>
+
+Children and adolescents  599
+
+Doses of commonly used psychotropic drugs in children and
+adolescents
+The doses of commonly used drugs are presented in Table 5.8.
+Table 5.8 Starting doses of commonly used psychotropic drugs in children and adolescents1,2 *
+Drug
+
+Starting dose**
+
+Comment
+
+Aripiprazole
+
+2mg
+
+Adjust dose according to response and
+adverse effects
+
+Clozapine
+
+6.25–12.5mg
+
+Use plasma levels to determine
+maintenance dose
+
+Olanzapine
+
+2.5–5mg
+
+Adjust dose according to response and
+adverse effects
+
+Quetiapine
+
+25mg
+
+Effective dose usually in the range
+150–200mg daily
+
+Risperidone
+
+0.25–2mg
+
+Adjust dose according to response and
+adverse effects
+
+Fluoxetine
+
+5–10mg/day
+
+Adjust dose according to response and
+adverse effects
+
+Sertraline
+
+25–50mg daily
+
+Effective dose usually in the range
+50–100mg daily
+
+Citalopram
+
+10mg daily
+
+Effective dose 10–40mg (note QT effects)
+
+Lithium
+
+100–200mg/day
+lithium carbonate
+
+Use plasma levels to determine
+maintenance dose
+
+Valproate
+
+10–20mg/kg/day in divided
+doses
+
+Use plasma levels to determine
+maintenance dose. Do not offer valproate
+to girls or young women of child bearing
+potential unless there is a pregnancy
+prevention programme (PPP) in place3
+
+Melatonin
+
+2mg at night
+
+Effective dose 2–10mg
+
+Antipsychotics
+
+Other Drugs
+
+We have removed haloperidol, amitriptyline, escitalopram and carbamazepine from this table as none of these are
+recommended in children.
+**
+Suggested approximate oral starting doses (see primary literature for doses in individual indications). Lower dose in
+suggested range is for children weighing less than 25kg.
+*
+
+References
+1. BNF Online. British National Formulary 2020; https://www.medicinescomplete.com/mc/bnf/current.
+2. BNFC Online. British National Formulary for Children 2020; https://www.medicinescomplete.com/#/browse/bnfc.
+3. GOV.UK Guidance. Valproate use by women and girls 2020; https://www.gov.uk/guidance/valproate-use-by-women-and-girls.
+
+CHAPTER 5
+
+Antidepressants
+
+
+
+
+<<<PAGE 685>>>
+
+Agitation
+
+Agitation
+
+Insomnia
+
+Diazepam
+
+Lemborexant24
+
+Specific indication/additional
+notes
+
+Clonazepam
+
+Anxiolytics/hypnotics
+
+Drug
+
+5mg nocte
+(take no more than once per
+night, immediately before bed)
+
+1mg tds
+
+0.5mg daily
+
+Starting dose
+
+5–10mg nocte
+
+1mg tds*
+
+1–2mg/day*
+
+Usual maintenance dose
+
+Sodium valproate: 100–200mg
+bd*
+
+Sodium valproate: 50mg bd
+(liquid) or 100mg bd*
+
+Agitation in dementia (not
+licensed and not recommended)
+Check response, tolerability and
+plasma levels for guide
+
+10mg nocte
+Elderly are at a higher risk of falls.
+Caution when using doses >5mg
+in patients ≥65 years old
+
+7.5–15mg/day in divided doses
+(for anxiety)
+
+4mg/day*
+
+Maximum dose in elderly
+
+Sodium valproate: 200mg bd*
+
+Sodium valproate: 400mg bd*
+Semi-sodium valproate: 1 g
+daily*
+
+Sodium valproate: 200–400mg
+bd*
+Semi-sodium valproate: 500mg
+to 1g daily*
+
+Sodium valproate: 100–200mg
+bd*
+Semi-sodium valproate: 250mg
+daily or bd*
+
+Bipolar disorder
+Check LFTs and consider
+checking plasma levels
+
+Sodium valproate
+
+600–1200mg daily (aim for
+plasma levels 0.4–0.7 mmol/L in
+elderly)23
+
+200–600mg daily*
+
+100*–200mg nocte
+
+Bipolar disorder
+Mania/depression
+Caution: drug interactions
+Check renal and thyroid
+function and regularly monitor
+plasma levels
+
+Lithium carbonate M/R
+
+Maximum dose in elderly
+
+Usual maintenance dose
+
+Starting dose
+
+Specific indication/Additional
+notes
+
+Drug
+
+(Continued )
+
+

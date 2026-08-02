@@ -1,0 +1,225 @@
+<<<PAGE 88>>>
+
+76
+
+A Short Textbook of Psychiatry
+
+Mania represents a reaction formation (Table 17.1)
+to depression according to the psychodynamic theory.
+
+Table 6.5: Some Commonly used Antidepressants
+Generic Name
+
+Stress
+Increased number of stressful life events before the
+onset or relapse has a formative rather than a precipitating effect in depression though they can serve
+a precipitant role in mania. Increased stressors in
+the early period of development are probably more
+important in depression.
+
+Cognitive and Behavioural Theories
+The mechanisms of causation of depression, according
+to these theories, include depressive negative
+cognition (cognitive theory), learned helplessness
+(animal model), and anger directed inwards. These
+concepts are useful in the psychological treatment of
+mild (to moderate) depression.
+Several other theories have also been propounded
+but are currently considered to be of doubtful value
+as theories of causation of depression.
+
+DIFFERENTIAL DIAGNOSIS
+The first step in the differential diagnosis of any mood
+disorder is to exclude a disorder with known organic
+cause, e.g. organic (especially drug-induced) mood
+disorders and dementia (differential diagnosis from
+depressive pseudodementia).
+The second step is to rule out a possibility of acute
+and transient psychotic disorders, schizo-affective
+disorder, and schizophrenia.
+The third step is to exclude the possibility of other
+non-organic psychoses such as delusional disorders.
+The fourth step is to exclude the possibility of
+adjustment disorder with depressed mood, generalised
+anxiety disorder, normal grief reaction, and obsessive compulsive disorder (with or without secondary
+depression).
+In addition to the main diagnosis, it is also important to look for co-morbid medical (such as diabetes,
+hypertension) and/or psychiatric disorders (such as
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+
+Agomelatin
+Amitriptyline
+Amoxapine
+Bupropion
+Citalopram
+Clomipramine
+Doxepine
+Dosulepin/Dotheipin
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Imipramine
+Lofepramine
+Mianserin
+Mirtazapine
+Moclobemide
+Nortriptyline
+Paroxetine
+Reboxetine
+Sertraline
+Tianeptin
+Trazodone
+Venlafaxine
+
+Usual Therapeutic
+Range (mg/day)
+25-50
+75-300
+150-300
+150-450
+10-40
+75-250
+75-300
+75-150
+30-120
+10-20
+20-60
+50-200
+75-300
+140-210
+30-120
+15-45
+300-600
+150-300
+10-40
+10-12
+50-200
+37.5
+300-600
+75-375
+
+anxiety, panic, alcohol or drug misuse, or personality disorder) on a multi-axial diagnostic system
+(Table 1.4).
+
+MANAGEMENT
+Somatic Treatment
+Antidepressants
+Antidepressants are the treatment of choice for a vast
+majority of depressive episodes. Some of the commonly used antidepressants with their usual range of
+therapeutic dosage are listed in Table 6.5. (Antidepressants are discussed in more detail in Chapter 15).
+
+
+
+
+<<<PAGE 196>>>
+
+184
+
+A Short Textbook of Psychiatry
+
+Contd...
+Drugs
+
+Oral Dose
+Some Common Adverse Effects#
+(mg/d)
+Sedation* Orthostatic Hypotension* Anticholinergic*
+VIII. Noradrenergic Reuptake Inhibitors (NARIs)
+1. Reboxetine
+8-10
+±
+±
+±
+IX. Mono-amine Oxidase Inhibitors (MAOIs)
+A. Irreversible Non-selective and Selective MAOIs
+Not available in India
+B. Reversible Selective MAO-B Inhibitors
+1. Selegiline
+5-10
+Useful in Parkinsonism
+C. Reversible Selective MAO-A Inhibitors (RIMAs)
+1. Moclobemide
+300-600
+Activating 0
+0
+X. Melatonin receptor agonist and 5-HT2C antagonist
+1. Agomelatin
+25-50
++
+0
+0
+# The estimate of common adverse effects in this table is a very rough and empirical guideline to the clinical use of
+antidepressants. The drug dosage in each patient needs to be individualised based on the clinical symptoms, their
+severity, response to treatment and several other clinical factors.
+* 0 = Absent; ± = Probable/Very little; + = Mild; ++ = Moderate; +++ = Severe
+
+nortriptyline respectively) are active antidepressants
+themselves. Fluoxetine is demethylated in liver to
+norfluoxetine.
+With the regular administration of TCAs, a constant blood level is achieved usually by the end of
+two weeks. Although routine monitoring of blood
+levels is not indicated, it may become important in
+cases of toxicity. Also, some antidepressants such
+as nortriptyline and protriptyline have a therapeutic
+window.
+Antidepressants (especially SSRIs, e.g. fluoxetine)
+also cause inhibition of cytochrome P450 enzymes in
+liver (e.g. CYP P450 2D6 and CYP P450 3A4).
+The MAO inhibitors are absorbed well by oral
+route, and are predominantly metabolised in liver by
+acetylation.
+
+Mechanism of Action
+The exact mechanism of action is not clearly known.
+It appears from clinical studies that the predominant
+action of antidepressants is to increase the catecholamine levels in brain (Amine hypothesis).
+Tricyclic antidepressants are also called as Monoamine reuptake inhibitors (MARIs). Their main modes
+of action include:
+
+1. Blocking reuptake of norepinephrine (NE), serotonin (5HT) and/or dopamine (DA) at the nerve
+terminals, thus increasing NE, 5HT and/or DA
+levels at the receptor site.
+2. Down-regulation of the β-adrenergic receptors.
+The Mono-amine oxidase inhibitors (MAOIs)
+instead act on mono-amine oxidase (MAO) which
+is responsible for degradation of catecholamines following their reuptake. The final effect is the same, i.e.
+a functional increase in the NE and/or 5HT levels at
+receptor site.
+Another important clinical point is that it takes
+5-10 days before a MAOI, and 2-3 weeks before a
+non-MAOI antidepressant, has any evident action on
+depression (although sleep, anxiety and agitation may
+respond earlier). The reason for this is not fully clear
+though an increase in brain amine levels is possibly
+responsible for antidepressant action. However, postsynaptic events (such as down-regulation of postsynaptic receptors) are probably more important and they
+take longer than an increase in amine levels. Therefore,
+it is of no benefit to prescribe antidepressants on an
+SOS or PRN (as needed) basis. They must be administered regularly in appropriate doses to achieve the
+desired effect.
+
+

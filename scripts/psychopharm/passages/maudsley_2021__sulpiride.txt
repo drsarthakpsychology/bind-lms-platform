@@ -1,0 +1,1498 @@
+<<<PAGE 33>>>
+
+CHAPTER 1
+
+12  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Licensed maximum doses
+The following table lists the licensed maximum doses of antipsychotics according to the
+EMA labelling as of February 2021.
+Drug
+
+Maximum dose
+
+FGAs – oral
+Chlorpromazine
+
+1000mg/day
+
+Flupentixol
+
+18mg/day
+
+Haloperidol
+
+20mg/day
+
+Levomepromazine
+
+1200mg/day
+
+Pericyazine
+
+300mg/day
+
+Perphenazine
+
+24mg/day (64mg/day hospitalised patients)
+
+Pimozide
+
+20mg/day
+
+Sulpiride
+
+2400mg/day
+
+Trifluoperazine
+
+20mg/day
+
+Zuclopenthixol
+
+150mg/day
+
+SGAs – oral
+Amisulpride
+
+1200mg/day
+
+Aripiprazole
+
+30mg/day
+
+Asenapine
+
+20mg/day (sublingual)
+
+Cariprazine
+
+6mg/day
+
+Clozapine
+
+900mg/day
+
+Lurasidone
+
+160mg (HCl)/148mg (base)/day
+
+Olanzapine
+
+20mg/day
+
+Paliperidone
+
+12mg/day
+
+Quetiapine
+
+750mg/day schizophrenia (800mg/day for MR preparation)
+800mg/day bipolar disorder
+
+Risperidone
+
+16mg/day
+
+Sertindole
+
+24mg/day
+
+Long-acting injections
+Aripiprazole depot
+
+400mg/month
+
+Flupentixol depot
+
+400mg/week
+
+Fluphenazine depot
+
+100mg every 14–35 days
+
+Haloperidol depot
+
+300mg every 4 weeks
+
+Paliperidone depot
+1-monthly
+
+150mg/month
+
+
+
+
+<<<PAGE 35>>>
+
+CHAPTER 1
+
+14  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Equivalent doses
+Knowledge of equivalent dosages is useful when switching between FGAs. Estimates of
+‘neuroleptic’ or ‘chlorpromazine’ equivalence, in milligrams a day, between these medications are based on clinical experience, expert panel opinion (using various methods)
+and any dopamine binding studies available.
+Table 1.2 provides approximate equivalent doses for FGAs.1–4 The values given should
+be seen as a rough guide when switching from one FGA to another and are no substitute
+for clinical titration of the new medication dose against adverse effects and response.
+Equivalent doses of SGAs may be less clinically relevant as these medications tend to
+have better defined, evidence-based licensed dose ranges. There are several different
+ways of calculating equivalence based on, for example, defined daily dose,5 minimum
+effective dose6,7 and average dose.8 These methods give different estimates of equivalence. A very rough guide to equivalent SGA daily dosages is given in the Table 1.3.3,4,7–9
+There is considerable disagreement about exact equivalencies, even amongst the references cited here. Clozapine is not included because this has a distinct initial titration
+schedule and a high dose-plasma level variability and because it probably has a different mechanism of action.
+Comparing potencies of FGAs with SGAs introduces yet more uncertainty with
+respect to dose equivalence. Very approximately, 100mg chlorpromazine is equivalent
+to 1.5mg risperidone.3
+
+Table 1.2 Equivalent doses of first generation antipsychotics
+Drug
+
+Equivalent dose (consensus)
+
+Range of values in literature
+
+Chlorpromazine
+
+100mg/day
+
+Reference
+
+Flupentixol
+
+3mg/day
+
+2–3mg/day
+
+Flupentixol depot
+
+10mg/week
+
+10–20mg/week
+
+Fluphenazine
+
+2mg/day
+
+1–5mg/day
+
+Fluphenazine depot
+
+5mg/week
+
+1–12.5mg/week
+
+Haloperidol
+
+2mg/day
+
+1.5–5mg/day
+
+Haloperidol depot
+
+15mg/week
+
+5–25mg/week
+
+Pericyazine
+
+10mg/day
+
+10mg/day
+
+Perphenazine
+
+10mg/day
+
+5–10mg/day
+
+Pimozide
+
+2mg/day
+
+1.33–2mg/day
+
+Pipotiazine depot
+
+10mg/week
+
+10–12.5mg/week
+
+Sulpiride
+
+200mg/day
+
+133–300mg/day
+
+Trifluoperazine
+
+5mg/day
+
+2.5–5mg/day
+
+Zuclopenthixol
+
+25mg/day
+
+25–60mg/day
+
+Zuclopenthixol depot
+
+100mg/week
+
+40–100mg/week
+
+
+
+
+<<<PAGE 60>>>
+
+Action to be taken if
+results outside
+reference range
+
+Parameter/
+test
+
+Suggested
+frequency
+
+ECG19,20
+
+Baseline and when Discuss with/refer to
+cardiologist if
+target dose is
+abnormality detected
+reached (ECG
+changes rare in
+practice21) on
+admission to
+hospital and before
+discharge if
+medication regimen
+changed.
+
+Blood
+pressure
+
+Baseline; frequently
+during dose
+titration and dosage
+changes to detect
+antipsychoticinduced changes,
+and generally
+monitor physical
+health
+
+Prolactin
+
+Liver
+function
+tests
+(LFTs)23–25
+
+Medications with
+special precautions
+
+Medications for which
+monitoring is not
+required
+
+Haloperidol, pimozide,
+sertindole – ECG
+mandatory;
+ziprasidone – ECG
+mandatory in some
+situations
+
+Risk of sudden cardiac
+death increased with
+most antipsychotic
+medications.22 Ideally, all
+patients should be
+offered an ECG at least
+yearly
+
+If severe hypotension or
+hypertension (clozapine)
+observed, slow rate of
+titration. Consider
+switching to another
+antipsychotic if
+symptomatic postural
+hypotension. Treat
+hypertension in line with
+NICE guidelines
+
+Clozapine,
+chlorpromazine and
+quetiapine most likely
+to be associated with
+postural hypotension
+
+Amisulpride, aripiprazole,
+brexpiprazole,
+cariprazine, lurasidone,
+trifluoperazine, sulpiride
+
+Baseline, then at 6
+months, then yearly
+to detect
+antipsychoticinduced changes
+
+Switch medications if
+hyperprolactinaemia
+confirmed and
+symptomatic. Consider
+tests of bone mineral
+density (e.g. DEXA
+scanning) for those with
+chronically raised
+prolactin.
+
+Amisulpride, sulpiride,
+risperidone and
+paliperidone particularly
+associated with
+hyperprolactinaemia
+
+Asenapine, aripiprazole,
+brexpiprazole,
+cariprazine, clozapine,
+lurasidone, quetiapine,
+olanzapine (<20mg), and
+ziprasidone usually do
+not elevate plasma
+prolactin, but worth
+measuring if symptoms
+arise
+
+Baseline, then yearly
+as part of a routine
+physical health
+check and to detect
+chronic
+antipsychoticinduced changes
+(rare)
+
+Stop suspect medication
+if LFTs indicate hepatitis
+(transaminases × 3
+normal) or functional
+damage (PT/albumin
+change)
+
+Clozapine and
+chlorpromazine
+associated with hepatic
+failure
+
+Amisulpride, sulpiride
+
+Baseline, then if NMS See the section on NMS
+Creatinine
+suspected
+phospho
+kinase (CPK)
+
+None
+NMS more likely with
+high-potency firstgeneration antipsychotic
+medications
+
+Other tests: Patients on clozapine may benefit from an EEG,26,27 as this may help determine the need for anticonvulsant treatment (although interpretation is obviously complex). Those on quetiapine should have thyroid function
+tests yearly, although the risk of abnormality is very small.28,29
+Key: DEXA, dual-energy X-ray absorptiometry; NMS, neuroleptic malignant syndrome; PT, prothrombin time;
+BMI – body mass index; ECG – electrocardiograph; EEG – electroencephalogram; GFR – glomerular filtration rate;
+IFG – impaired fasting glucose.
+Note: This table is a summary – see individual sections for detail and discussion.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  39
+
+
+
+
+<<<PAGE 144>>>
+
+Antipsychotic-induced weight gain
+Weight gain, a cardiometabolic risk factor, is a common side effect of antipsychotic
+medication.1 The mechanisms underlying antipsychotic-induced weight gain are not well
+understood,2 although factors such as 5HT2C antagonism, H1 antagonism, D2 antagonism, and increased serum leptin (leading to leptin desensitisation)3–5 are commonly
+implicated. There is no evidence that these medications exert any direct metabolic effect:
+weight gain seems to result from increased food intake and, in some cases, reduced
+energy expenditure.6,7 The risk of weight gain appears to be related to clinical response8,9
+(although the association may be too small to be clinically important10), which may have
+a genetic basis.11 Weight gain may be more pronounced in antipsychotic-naïve patients
+and during the early stages of the treatment of psychotic illness,12–14 and women may be
+at greater risk than men.15,16
+Almost all available antipsychotic medications have been associated with weight
+gain,12 although the mean gain in body weight varies substantially between the medications. There is also marked inter-individual variation among those treated, with some
+losing weight, some gaining no weight and some gaining a great deal of weight. Thus,
+knowledge of the mean increase in weight reported for a particular medication may not
+be a helpful predictor of how much weight an individual might gain. Assessment of the
+relative liability for weight gain of different antipsychotic medications is based largely
+on short term studies. Notwithstanding these limitations, the results of indirect and
+direct meta-analyses suggest that these medications can be clustered into three groups
+based on their relative risk of weight gain17 (see Table 1.17).
+Table 1.17 Antipsychotic-induced weight gain18–25
+Drug
+
+Risk/extent of weight gain
+
+Clozapine
+
+High
+
+Olanzapine
+Chlorpromazine
+
+Moderate
+
+Iloperidone
+Sertindole
+Quetiapine
+Risperidone
+Paliperidone
+Amisulpride
+Asenapine
+Brexpiprazole
+Aripiprazole
+Cariprazine
+Haloperidol
+Lumateperone
+Lurasidone
+Sulpiride
+Trifluoperazine
+Ziprasidone
+
+Low
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  123
+
+
+
+
+<<<PAGE 164>>>
+
+given the problems associated with QTc measurements. Lastly, keep in mind that differences in the effects of different antipsychotics on the QT interval rarely reach statistical
+significance, even in meta-analyses (Table 1.21).29
+Outside these guidelines, readers are directed to the RISQ-PATH study,30 which provides a scoring system for the prediction of QT prolongation (to above normal ranges)
+in any patient. RISQ-PATH has a 98% negative predictive value, so allowing a reduction in monitoring in low-risk patients. The RISQ-PATH method uses CredibleMeds
+categorisation for drug effects on QT – this, too, is recommeded.31
+Table 1.21 Effects of antipsychotics on QTC13,22,23,32–61.
+No effect
+Brexpiprazole*
+Cariprazine*
+Lurasidone
+Lumateperone*
+Low effect
+Aripiprazole**
+Asenapine
+Clozapine
+Flupentixol
+Fluphenazine
+Perphenazine
+Prochlorperazine
+Olanzapine***
+Paliperidone
+Risperidone
+Sulpiride
+
+Moderate effect
+Amisulpride****
+Chlorpromazine
+Haloperidol
+Iloperidone
+Levomepromazine
+Melperone
+Pimavanserin
+Quetiapine
+Ziprasidone
+High effect
+Any intravenous antipsychotic
+Pimozide
+Sertindole
+Any drug or combination of drugs used in doses exceeding
+recommended maximum
+Unknown effect
+Loxapine
+Pipotiazine
+Trifluoperazine
+Zuclopenthixol
+
+*Limited clinical experience (association with QT prolongation may emerge).
+**One case of torsades de pointes (TDP) reported,62 two cases of QT prolongation63,64 and an association with TDP
+found in database study.65 Healthy volunteer data suggest aripiprazole causes QTc prolongation of around 8ms.66
+Aripiprazole may increase QT dispersion.67
+***Isolated cases of QTc prolongation37,68 and has effects on cardiac ion channel, IKr,69 other data suggest no effect
+on QTC.23,35,36,70
+****TDP common in overdose,25,71 strong association with TDP in clinical doses.65
+
+Aripiprazole remains in the low effect group having previously been firmly placed in
+‘no effect’. Data are rather contradictory, with most studies showing a decrease in QTc
+associated with aripiprazole use52 even in children and adolescents.72 However, later
+data62,63,65,66,73 cast doubt on assumptions of cardiac safety. Interestingly, a 2020 paper
+analysing reports of events in > 400,000 inpatients over 20 years found aripiprazole
+had the lowest rate of cardiac events (0.06%) of all antipsychotics.74
+Lurasidone remains in the ‘no effect’ group,52 although one study mentioned in the
+US labelling75 reports a QT lengthening of 7.5mg in people receiving 120mg (111mg) a
+day. Those receiving 600mg (555mg) daily showed a lower change (+4.6ms). These
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  143
+
+
+
+
+<<<PAGE 189>>>
+
+CHAPTER 1
+
+168  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Hyperprolactinaemia
+Dopamine inhibits prolactin release, and so dopamine antagonists can be expected to
+increase prolactin plasma levels. The degree of prolactin elevation is probably doserelated,1 and for most antipsychotic medications the threshold activity (D2 occupancy)
+for increased prolactin is very close to that of therapeutic efficacy.2 Genetic differences
+may also play a part.3 Table 1.29 groups individual antipsychotics according to their
+effect on prolactin concentrations.
+
+Table 1.29 Effects of antipsychotic medication on prolactin concentration4–11
+Prolactin-sparing (prolactin
+increase very rare)
+
+Prolactin–elevating (low risk
+minor changes only)
+
+Prolactin-elevating (high risk;
+major changes)
+
+Aripiprazole
+
+Lurasidone
+
+Amisulpride
+
+Asenapine
+
+Olanzapine
+
+Paliperidone
+
+Brexpiprazole
+
+Ziprasidone
+
+Risperidone
+
+Cariprazine
+
+Sulpiride
+
+Clozapine
+
+FGAs
+
+Iloperidone
+Lumateperone
+Pimavanserin
+Quetiapine
+
+Hyperprolactinaemia is often superficially asymptomatic (i.e. the patient does not
+spontaneously report problems), and there is some evidence that hyperprolactinaemia
+does not affect subjective quality of life.12 Nonetheless, persistent elevation of plasma
+prolactin is associated with suppression of the hypothalamic-pituitary-gonadal axis.13
+Symptoms of this include sexual dysfunction14 (but note that other pharmacological
+activities also give rise to sexual dysfunction15), menstrual disturbances,4,16 breast
+growth and galactorrhoea,16 and may include delusions of pregnancy.17 Long-term
+adverse consequences are reductions in bone mineral density,18,19 and a possible increase
+in the risk of breast cancer.20
+Prolactin can also be raised because of stress, pregnancy and lactation, seizures, renal
+impairment and other medical conditions,7,21,22 including prolactinoma. When measuring prolactin, the sample should be taken early in the morning and stress during
+venepuncture should be minimised.22
+
+
+
+
+<<<PAGE 204>>>
+
+Switching antipsychotics
+Summary of recommendations for switching antipsychotics because of poor
+tolerability.
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Acute EPS
+Dystonia, parkinsonism, bradykinesia
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Olanzapine
+Quetiapine
+
+Clozapine
+Lurasidone
+Ziprasidone
+
+Akathisia2,9,10
+
+Olanzapine
+Quetiapine
+
+Clozapine
+Brexpiprazole
+
+Dyslipidaemia7,8,11–16
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Asenapine
+Brexpiprazole
+Cariprazine
+
+Impaired glucose
+tolerance7,8,15,17–21
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Brexpiprazole
+Cariprazine
+Haloperidol
+
+Hyperprolactinaemia7,8,15,22–28
+
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+Olanzapine
+Ziprasidone
+
+Postural hypotension8,15,29
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Haloperidol
+Sulpiride
+Trifluoperazine
+
+QT prolongation27,30–37
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+Paliperidone
+
+Low dose monotherapy of any
+drug not formally contraindicated in QT prolongation
+(with ECG monitoring)
+
+Sedation7,8,27
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Risperidone
+Sulpiride
+
+Haloperidol
+Trifluoperazine
+Ziprasidone
+
+1–8
+
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  183
+
+
+
+
+<<<PAGE 250>>>
+
+Table 1.40 (Continued)
+Treatment
+
+Comments
+
+Oxybutynin
+5mg up to twice daily62
+
+Single case report
+
+Pirenzepine
+50–150mg/day63–65
+
+Selective M1, M4 antagonist. Extensive clinical experience suggests
+efficacy in some but only randomised trial suggested no effect. Still
+widely used. Does not have a UK licence for any indication. May
+cause constipation.
+
+Propantheline
+7.5mg at night15,16
+
+Peripheral anticholinergic. No central effects. Two RCTs (one
+positive). May worsen constipation
+
+Quetiapine51
+
+May reduce hypersalivation by allowing lower doses of clozapine to
+be used
+
+Sulpiride
+150–300mg/day5,16,66,67
+
+Supported by one, small positive RCT and a Cochrane Review of
+clozapine augmentation with sulpiride (at higher sulpiride doses).
+May allow dose reduction of clozapine
+
+References
+1. Man WH, et al. Reporting patterns of sialorrhea comparing users of clozapine to users of other antipsychotics: a disproportionality analysis
+using vigibase. J Clin Psychopharmacol 2020; 40:283–286.
+2. Subramanian S, et al. Clozapine dose for schizophrenia. Cochrane Database Syst Rev 2017; 6:Cd009555.
+3. Schoretsanitis G, et al. Elevated clozapine concentrations in clozapine-treated patients with hypersalivation. Clin Pharmacokinet 2021;
+60:329–335.
+4. Hinkes R, et al. Aspiration pneumonia possibly secondary to clozapine-induced sialorrhea. J Clin Psychopharmacol 1996; 16:462–463.
+5. Saenger RC, et al. Aspiration pneumonia due to clozapine-induced sialorrhea. Clin Schizophr Relat Psychoses 2016; 9:170–172.
+6. Gurrera RJ, et al. Aspiration pneumonia: an underappreciated risk of clozapine treatment. J Clin Psychopharmacol 2016; 36:174–176.
+7. Kaplan J, et al. Clozapine-associated aspiration pneumonia: case series and review of the literature. Psychosomatics 2017; 58:199–203.
+8. Praharaj SK, et al. Clozapine-induced sialorrhea: pathophysiology and management strategies. Psychopharmacology 2006; 185:265–273.
+9. Davydov L, et al. Clozapine-induced hypersalivation. Ann Pharmacother 2000; 34:662–665.
+10. Rogers DP, et al. Therapeutic options in the treatment of clozapine-induced sialorrhea. Pharmacotherapy 2000; 20:1092–1095.
+11. Rabinowitz T, et al. The effect of clozapine on saliva flow rate: a pilot study. Biol Psychiatry 1996; 40:1132–1134.
+12. Ben Aryeh H, et al. Salivary flow-rate and composition in schizophrenic patients on clozapine: subjective reports and laboratory data. Biol
+Psychiatry 1996; 39:946–949.
+13. Praharaj SK, et al. Salivary flow rate in patients with schizophrenia on clozapine. Clin Neuropharmacol 2010; 33:176–178.
+14. Sockalingam S, et al. Review: insufficient evidence to guide use of drugs for clozapine induced hypersalivation. Evid Based Ment Health 2009;
+12:12.
+15. Syed R, et al. Pharmacological interventions for clozapine-induced hypersalivation. Cochrane Database Syst Rev 2008; Cd005579.
+16. Chen SY, et al. Treatment strategies for clozapine-induced sialorrhea: a systematic review and meta-analysis. CNS Drugs 2019;
+33:225–238.
+17. Palmer SE, et al. Life-threatening clozapine-induced gastrointestinal hypomotility: an analysis of 102 cases. J Clin Psychiatry 2008;
+69:759–768.
+18. West S, et al. Clozapine induced gastrointestinal hypomotility: a potentially life threatening adverse event. A review of the literature. Gen
+Hosp Psychiatry 2017; 46:32–37.
+19. Kreinin A, et al. Amisulpride treatment of clozapine-induced hypersalivation in schizophrenia patients: a randomized, double-blind, placebocontrolled cross-over study. Int Clin Psychopharmacol 2006; 21:99–103.
+20. Kreinin A, et al. Amisulpride versus moclobemide in treatment of clozapine-induced hypersalivation. World J Biol Psychiatry 2010;
+12:620–626.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  229
+
+
+
+
+<<<PAGE 741>>>
+
+CHAPTER 7
+
+720  The Maudsley® Prescribing Guidelines in Psychiatry
+
+144. Ylikorkala O, et al. Treatment of inadequate lactation with oral sulpiride and buccal oxytocin. Obstet Gynecol 1984; 63:57–60.
+145. Ylikorkala O, et al. Sulpiride improves inadequate lactation. Br Med J 1982; 285:249–251.
+146. Aono T, et al. Augmentation of puerperal lactation by oral administration of sulpiride. J Clin Endocrinol Metab 1970; 48:478–482.
+147. Polatti F. Sulpiride isomers and milk secretion in puerperium. Clin Exp Obstet Gynecol 1982; 9:144–147.
+148. Aono T, et al. Effect of sulpiride on poor puerperal lactation. Am J Obstet Gynecol 1982; 143:927–932.
+149. Matheson I, et al. Milk concentrations of flupenthixol, nortriptyline and zuclopenthixol and between-breast differences in two patients. Eur
+J Clin Pharmacol 1988; 35:217–220.
+150. Kirk L, et al. Concentrations of Cis(Z)-flupentixol in maternal serum, amniotic fluid, umbilical cord serum, and milk. Psychopharmacology
+(Berl) 1980; 72:107–108.
+151. Aaes-Jorgensen T, et al. Zuclopenthixol levels in serum and breast milk. Psychopharmacology (Berl) 1986; 90:417–418.
+152. Schlotterbeck P, et al. Low concentration of ziprasidone in human milk: a case report. Int J Neuropsychopharmacol 2009; 12:437–438.
+153. Chaudron LH, et al. Mood stabilizers during breastfeeding: a review. J Clin Psychiatry 2000; 61:79–90.
+154. Wisner KL, et al. Serum levels of valproate and carbamazepine in breastfeeding mother-infant pairs. J Clin Psychopharmacol 1998;
+18:167–169.
+155. Ernst CL, et al. The reproductive safety profile of mood stabilizers, atypical antipsychotics, and broad-spectrum psychotropics. J Clin
+Psychiatry 2002; 63 Suppl 4:42–55.
+156. Meador KJ, et al. Effects of breastfeeding in children of women taking antiepileptic drugs. Neurology 2010; 75:1954–1960.
+157. Zhao M, et al. [A case report of monitoring on carbamazepine in breast feeding woman]. Beijing Da Xue Xue Bao 2010; 42:602–603.
+158. Froescher W, et al. Carbamazepine levels in breast milk. Ther Drug Monit 1984; 6:266–271.
+159. Frey B, et al. Transient cholestatic hepatitis in a neonate associated with carbamazepine exposure during pregnancy and breast-feeding. EurJ
+Pediatr 1990; 150:136–138.
+160. Merlob P, et al. Transient hepatic dysfunction in an infant of an epileptic mother treated with carbamazepine during pregnancy and breastfeeding. Ann Pharmacother 1992; 26:1563–1565.
+161. Veiby G, et al. Early child development and exposure to antiepileptic drugs prenatally and through breastfeeding: a prospective cohort study
+on children of women with epilepsy. JAMA Neurol 2013; 70:1367–1374.
+162. Pynnonen S, et al. Letter: carbamazepine and mother’s milk. Lancet 1975; 2:563.
+163. Meador KJ, et al. Breastfeeding in children of women taking antiepileptic drugs: cognitive outcomes at age 6 years. JAMA Pediatrics 2014;
+168:729–736.
+164. Ohman I, et al. Lamotrigine in pregnancy: pharmacokinetics during delivery, in the neonate, and during lactation. Epilepsia 2000;
+41:709–713.
+165. Liporace J, et al. Concerns regarding lamotrigine and breast-feeding. Epilepsy Behav 2004; 5:102–105.
+166. Gentile S. Lamotrigine in pregnancy and lactation (Letter). Arch Women’s Mental Health 2005; 8:57–58.
+167. Page-Sharp M, et al. Transfer of lamotrigine into breast milk (Letter). Ann Pharmacother 2006; 40:1470–1471.
+168. Rambeck B, et al. Concentrations of lamotrigine in a mother on lamotrigine treatment and her newborn child. Eur J Clin Pharmacol 1997;
+51:481–484.
+169. Tomson T, et al. Lamotrigine in pregnancy and lactation: a case report. Epilepsia 1997; 38:1039–1041.
+170. Newport DJ, et al. Lamotrigine in breast milk and nursing infants: determination of exposure. Pediatrics 2008; 122:e223–e231.
+171. Fotopoulou C, et al. Prospectively assessed changes in lamotrigine-concentration in women with epilepsy during pregnancy, lactation and
+the neonatal period. Epilepsy Res 2009; 85:60–64.
+172. Nordmo E, et al. Severe apnea in an infant exposed to lamotrigine in breast milk. Ann Pharmacother 2009; 43:1893–1897.
+173. Wakil L, et al. Neonatal outcomes with the use of lamotrigine for bipolar disorder in pregnancy and breastfeeding: a case series and review
+of the literature. Psychopharmacol Bull 2009; 42:91–98.
+174. Birnbaum AK, et al. Antiepileptic drug exposure in infants of breastfeeding mothers with epilepsy. JAMA Neurol 2020; 77:441–450.
+175. Kacirova I, et al. A short communication: lamotrigine levels in milk, mothers, and breastfed infants during the first postnatal month. Ther
+Drug Monit 2019; 41:401–404.
+176. Bedussi F, et al. Normocytic normochromic anaemia and asymptomatic neutropenia in a 40-day-old infant breastfed by an epileptic mother
+treated with lamotrigine: infant’s adverse drug reaction. J Paediatr Child Health 2018; 54:104–105.
+177. Newmark RL, et al. Risk-benefit assessment of infant exposure to lithium through breast milk: a systematic review of the literature. Int Rev
+Psychiatry (Abingdon, England) 2019; 31:295–304.
+178. Westergren T, et al. Probable topiramate-induced diarrhea in a 2-month-old breast-fed child - A case report. Epilepsy Behav Case Rep 2014;
+2:22–23.
+179. Gentile S. Topiramate in pregnancy and breastfeeding. Clin Drug Investig 2009; 29:139–141.
+180. Piontek CM, et al. Serum valproate levels in 6 breastfeeding mother-infant pairs. J Clin Psychiatry 2000; 61:170–172.
+181. Bjornsson E. Hepatotoxicity associated with antiepileptic drugs. Acta Neurol Scand 2008; 118:281–290.
+182. Spigset O, et al. Excretion of psychotropic drugs into breast milk: pharmacokinetic overview and therapeutic implications. CNS Drugs
+1998; 9:111–134.
+183. Hagg S, et al. Anticonvulsant use during lactation. Drug Saf 2000; 22:425–440.
+184. Iqbal MM, et al. Effects of commonly used benzodiazepines on the fetus, the neonate, and the nursing infant. Psychiatr Serv 2002;
+53:39–49.
+185. Buist A, et al. Breastfeeding and the use of psychotropic medication: a review. J Affect Disord 1990; 19:197–206.
+186. Fisher JB, et al. Neonatal apnea associated with maternal clonazepam therapy: a case report. Obstet Gynecol 1985; 66:34S–35S.
+187. Davanzo R, et al. Benzodiazepine e allattamento materno. Medico E Bambino 2008; 27:109–114.
+
+
+
+
+<<<PAGE 751>>>
+
+730  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 8.5 (Continued)
+Melatonin6,85
+
+Complex handling of melatonin in liver impairment: reduced clearance and
+prolonged half-life contribute to higher circulating levels of endogenous melatonin in
+daytime hours; negative feedback and accumulation of toxic products results in
+reduced endogenous production. Relevance to dosing of exogenous melatonin is
+unclear, although toxicity of melatonin is minimal. Manufacturer recommends
+avoiding in liver disease. Rarely associated with changes in LFTs.
+
+Other psychotropics in hepatic impairment
+Table 8.6 gives a summary of other psychotropics recommended in hepatic impairment.
+Table 8.6 Other psychotropics in hepatic impairment
+Bremelanotide6
+
+No dose adjustment required in mild to moderate hepatic impairment. Use with caution
+in severe impairment; adverse effects more likely.27 One case of acute hepatitis reported.
+
+Deutetrabenazine5,19
+
+Not studied in hepatic impairment, but based on experience with tetrabenazine, use
+is contraindicated. Limited information available but clinically relevant hepatotoxicity
+not reported. Occasional asymptomatic rises in ALT.
+
+Lemborexant6,27
+
+No dose adjustment in mild impairment (risk of increased somnolence), starting and
+maximum dose of 5mg once nightly in moderate impairment, not recommended in
+severe impairment. Little experience but hepatotoxicity not reported.86
+
+Pitolisant5,27
+
+Extensively hepatically metabolised. No dose adjustment in mild impairment. In
+moderate impairment the half-life is doubled; daily dose can be increased two weeks
+after initiation, daily maximum 18mg. Contraindicated in severe impairment. Hepatic
+enzyme increases are uncommon.
+
+Solriamfetol5
+
+Not metabolised. No known problems in liver impairment, no reports of liver injury.
+
+Valbenazine6,19
+
+Hepatically metabolised pro-drug of alpha-dihydrotetrabenazine. Unlike
+deutetrabenazine, not contra-indicated in liver disease, but maximum dose of 40mg
+in moderate to severe impairment. Few data, but no reports of clinically relevant liver
+injury other than a single report of reactivation of pre-existing hepatitis C.
+
+Psychotropics in hepatic impairment
+Table 8.7 gives an outline of recommended psychotropics in hepatic impairment.
+
+CHAPTER 8
+
+Table 8.7 Psychotropics in hepatic impairment
+Drug group
+
+Recommended drugs
+
+Antipsychotics
+
+Sulpiride/amisulpride: no dosage reduction required if renal function is normal
+Paliperidone: if depot required
+
+Antidepressants
+
+Paroxetine, sertraline, citalopram, or vortioxetine: start at low dose. Titrate
+slowly (if required) as above.
+
+Mood-stabilisers
+
+Lithium: use plasma levels to guide dosage. Care needed if ascites status changes.
+
+Sedatives
+
+Lorazepam, oxazepam, temazepam: as short half-life with no active metabolites
+Use low doses with caution, as sedative drugs used in severe disease can precipitate
+hepatic encephalopathy
+Zopiclone: 3.75mg with care in moderate hepatic impairment
+
+
+
+
+<<<PAGE 761>>>
+
+740  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 8.8 (Continued )
+Drug
+
+Comments
+
+Risperidone22,23,25,40,50–53
+
+Clearance of risperidone and the active metabolite of risperidone (9-OH-) is reduced
+by 60% in patients with moderate to severe renal disease. Dosing: GFR <50mL/min
+0.5mg twice daily for at least 1 week, then increasing by 0.5mg twice daily to
+1–2mg bd. The manufacturer advises caution when using risperidone in renal
+impairment. The long-acting injection should only be used after titration with oral
+risperidone as described above. If 2mg orally is tolerated, 25mg intramuscularly
+every 2 weeks can be administered. There are two case reports of successful use of
+risperidone long-acting injection in haemodialysis at a dose of 50mg 2-weekly in one
+patient and 37.5mg then 25mg in an older adult. Another describes the successful
+use of risperidone in a child with steroid-induced psychosis and nephrotic syndrome.
+
+Sulpiride8,22,23,25,54
+
+Almost totally renally excreted, with 95% excreted in urine and faeces as unchanged
+sulpiride. Dosing regimen: GFR 30–60mL/min, give 70% of normal dose; GFR
+10–30mL/min give 50% of normal dose; GFR <10mL/min give 34% of normal dose.
+There is a case report of renal failure with sulpiride due to diabetic coma and
+rhabdomyolysis. Probably best avoided in renal impairment.
+
+Trifluoperazine25
+
+Less than 1% excreted unchanged in the urine. Dose GFR <10–50mL/min as for
+normal renal function – start with a low dose. Very limited data.
+
+Ziprasidone22,40,55,56
+
+<1% is renally excreted unchanged. No dose adjustment needed for GFR >10mL/min
+but care needed with using the injection as it contains a renally eliminated excipient
+(cyclodextrin sodium). Case report of 80mg twice daily dose used in a patient on
+haemodialysis who then developed agranulocytosis.57
+
+Zuclopenthixol22,23,25
+
+10–20% of unchanged drug and metabolites excreted unchanged in urine.
+Manufacturer cautions use in renal disease as can accumulate. Dosing: 10–50mL/min
+dose as in normal renal function; GFR <10mL/min start with 50% of the dose and titrate
+slowly. Avoid both depot preparations (acetate and decanoate) in renal impairment.
+
+CHAPTER 8
+
+Table 8.9 Antidepressants in renal impairment12
+Drug
+
+Comments
+
+Agomelatine23
+
+Negligible renal excretion of unchanged agomelatine. No data on use in renal
+disease. Manufacturer says pharmacokinetics unchanged in small study of 25mg
+dose in severe renal impairment but cautions use in moderate or severe renal disease.
+Nephroprotective effects have been observed in rats.58,59
+
+Amitriptyline22,23,25,32,40,60–64
+
+<2% excreted unchanged in urine; no dose adjustment needed in renal failure. Dose
+as in normal renal function but start at a low dose and increase slowly. Monitor
+patient for urinary retention, confusion, sedation and postural hypotension. Has been
+used to treat pain in those with renal disease. Plasma level or ECG monitoring may
+be useful. Associated with acute kidney injury.
+
+Brexanolone41,65
+
+Less than 1% excreted unchanged in urine. Manufacturer states no dosage
+adjustment is recommended in patients with GFR 15–60mL/min; avoid use in patients
+with GFR <15mL/min because of the potential accumulation of the injection
+solubilising agent, betadex sulfobutyl ether sodium.
+(Continued)
+
+
+
+
+<<<PAGE 770>>>
+
+Hepatic and renal impairment  749
+
+Summary – recommended psychotropics in renal impairment
+Where renal function declines while on existing drug treatment, rule-out existing drugs
+as a cause of reduced function and continue at a dose suggested in Tables 8.8–8.13.
+Where new drug treatment is required follow the suggestions below:
+Drug group
+
+Recommended drugs
+
+Antipsychotics
+
+■■
+
+No agent clearly preferred to another; however, avoid sulpiride and amisulpride
+avoid highly anticholinergic agents because they can contribute to urinary retention
+■■ first generation antipsychotic – suggest haloperidol 2–6mg a day
+■■ second generation antipsychotic – suggest olanzapine 5mg a day
+■■
+
+Antidepressants203
+
+No agent clearly preferred to another; however, reasonable choices are
+Sertraline but poor efficacy data in renal disease
+■■ Citalopram (care QTc prolonging effects and greater risk of sudden death in those
+on haemodialysis vs. other SSRIs)
+■■ Fluoxetine but care long half-life and need for alternate day dosing at lower GFRs
+■■ CBT where available
+■■
+■■
+
+Mood stabilisers
+
+■■
+■■
+
+Anxiolytics and
+hypnotics
+
+■■
+
+Anti-dementia drugs
+
+■■
+
+No agent clearly preferred to another; however, avoid lithium if possible
+suggest start one the following at a low dose and increase slowly, monitor for
+adverse effects: valproate or lamotrigine
+
+No agent clearly preferred to another; however, excessive sedation is more likely to
+occur in patients with renal impairment, so monitor all patients carefully
+■■ lorazepam and zopiclone are suggested as reasonable choices
+No agent clearly preferred to another, however, rivastigmine is a reasonable
+choice
+
+1. National Institute for Clinical Excellence. 4-year surveillance (2017) – Chronic kidney disease in adults (2014) NICE guideline [CG182];
+https://www.nice.org.uk/guidance/cg182/evidence/appendix-a2-cg182-summary-of-new-evidence-from-surveillance-pdf-4429248447.
+2. Levey AS, et al. A new equation to estimate glomerular filtration rate. Ann Intern Med 2009; 150:604–612.
+3. National Institute for Health and Care Excellence. Chronic kidney disease in adults: assessment and management. Clinical Guidance 182
+[CG182] 2015; https://www.nice.org.uk/guidance/cg182.
+4. National Institute for Clinical Excellence. Surveillance report 2017 – Chronic kidney disease (stage 4 or 5): management of ­hyperphosphataemia
+(2013) NICE Guideline CG157. Chronic kidney disease in adults: assessment and management (2014) NICE guideline CG182 and Chronic
+kidney disease: managing anaemia (2015) NICE guideline NG8 2017; https://www.nice.org.uk/guidance/cg182/resources/surveillance-report2017-chronic-kidney-disease-stage-4-or-5-management-of-hyperphosphataemia-2013-nice-guideline-cg157-chronic-kidney-disease-inadults-assessment-and-management-2014-nice-guideline–pdf-5740305984709.
+5. Tangri N, et al. A predictive model for progression of chronic kidney disease to kidney failure. JAMA 2011; 305:1553–1559.
+6. Brater DC. Measurement of renal function during drug development. Br J Clin Pharmacol 2002; 54:87–95.
+7. Chinnadurai R, et al. Impact of chronic kidney disease on the drugs eliminated predominantly through a non-renal route: a proof of concept
+study with Citalopram. Nephrol Dial Transplant 2019; 34:gfz103.SP268.
+8. Toprak O, et al. New-onset type II diabetes mellitus, hyperosmolar non-ketotic coma, rhabdomyolysis and acute renal failure in a patient
+treated with sulpiride. Nephrol Dial Transplant 2005; 20:662–663.
+9. Baumgart U, et al. Olanzapine-induced acute rhabdomyolysis – a case report. Pharmacopsychiatry 2005; 38:36–37.
+10. Marsh SJ, et al. Rhabdomyolysis and acute renal failure during high-dose haloperidol therapy. Ren Fail 1995; 17:475–478.
+11. Smith RP, et al. Quetiapine overdose and severe rhabdomyolysis. J Clin Psychopharmacol 2004; 24:343.
+12. Nagler EV, et al. Antidepressants for depression in stage 3-5 chronic kidney disease: a systematic review of pharmacokinetics, efficacy and
+safety with recommendations by European Renal Best Practice (ERBP). Nephrol Dial Transplant 2012; 27:3736–3745.
+13. Palmer SC, et al. Antidepressants for treating depression in adults with end-stage kidney disease treated with dialysis. The Cochrane Database
+of Systematic Reviews 2016:CD004541.
+14. Dev V, et al. Higher anti-depressant dose and major adverse outcomes in moderate chronic kidney disease: a retrospective population-based
+study. BMC Nephrol 2014; 15:79.
+
+CHAPTER 8
+
+References
+
+
+
+
+<<<PAGE 811>>>
+
+CHAPTER 10
+
+790  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 10.5 (Continued)
+Safety in
+epilepsy
+
+Drug
+
+Comments
+
+Antipsychotics
+Low risk
+– good
+choices
+
+Amisulpride/
+sulpiride
+
+Considered to be safe in PWE.43 Renally excreted, so low risk of
+pharmacokinetic interactions with antiseizure medications. Seizures
+uncommon in overdose44
+
+Aripiprazole
+
+Rarely lowers seizure threshold.5 Incidence of seizures similar to placebo in
+RCTs24
+
+Ziprasidone
+
+Probably low
+risk – use
+with caution
+(limited
+evidence)
+
+High potency
+FGAs
+
+For example, fluphenazine, haloperidol, trifluoperazine, flupentixol. Low risk
+of lowering the seizure threshold5
+
+Risperidone
+
+Unlikely to lower the seizure threshold.5 Incidence of seizures similar to
+placebo in RCTs.24 Has been recommended for PWE.32,45 Evidence of safety in
+a case series of adolescents with epilepsy46
+
+Asenapine
+
+Seizure rate similar to placebo in RCTs.47 Data and clinical experience of use
+in PWE is extremely limited
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Moderate
+risk – care
+required
+
+Olanzapine
+Quetiapine
+
+Olanzapine and quetiapine both associated with seizures in RCTs.24 However,
+olanzapine causes more EEG abnormalities.44 Overall risk of reducing the
+seizure threshold is considered to be low5 and olanzapine has been
+recommended by some for PWE.32 Data relating to olanzapine are difficult to
+interpret. EEG changes are seen in some but not all studies48 and it has been
+reported to be both anticonvulsant49 and proconvulsant.50 Quetiapine has a
+high risk of drug interaction in PWE45
+
+Higher risk
+– care
+required
+
+Clozapine
+
+Most epileptogenic antipsychotic.32 However, has been used successfully in
+PWE stable on antiseizure medications without worsening seizures51 and
+even in treatment-resistant epilepsy.52 Note, should not be used with
+carbamazepine (risk of blood dyscrasias and reduced clozapine levels).
+Valproate or lamotrigine are the antiseizure medications of choice
+
+Higher risk
+– avoid
+
+Low potency FGAs
+(e.g.
+chlorpromazine)
+
+Best avoided in PWE.31 Doses of chlorpromazine above 1g/day have a 9%
+incidence of seizures
+
+Loxapine
+
+Highest rate of seizures amongst the FGAs53
+
+Depot
+antipsychotics
+
+None of the depot preparations currently available are thought to be
+epileptogenic, however:
+■■ The kinetics of depots are complex (seizures may be delayed)
+■■ If seizures do occur, the offending drug may not be easily withdrawn.
+Depots should be used with extreme care
+
+Zotepine
+
+Has established dose-related pro-convulsive effect44
+(Continued)
+
+
+
+
+<<<PAGE 862>>>
+
+Pharmacokinetics  841
+
+The target ranges listed in Table 11.2 have somewhat dubious usefulness and, in
+some cases, merely represent the range of values seen in clinical use. Assays for these
+drugs are likely to be available only in specialist units.
+
+Antipsychotics
+
+Target range (µg/L)
+
+Asenapine
+
+1–5
+
+Brexpiprazole
+
+40–140
+
+Cariprazine
+
+10–20
+
+Chlorpromazine
+
+30–300
+
+Flupentixol
+
+0.5–5 (cis-isomer)
+
+Fluphenazine
+
+1–10
+
+Haloperidol
+
+1–10
+
+Iloperidone
+
+5–10
+
+Lurasidone
+
+15–40
+
+Melperone
+
+30–100
+
+Sulpiride
+
+200–1000
+
+Ziprasidone
+
+50–200
+
+Zuclopenthixol
+
+4–50
+
+Antidepressants
+
+Target range (µg/L)
+
+Agomelatine
+
+7–300
+
+Citalopram
+
+50–110
+
+Desvenlafaxine
+
+100–400
+
+Dosulepin
+
+45–100
+
+Duloxetine
+
+30–120
+
+Escitalopram
+
+15–80
+
+Fluoxetine (+norfluoxetine)
+
+120–500
+
+Fluvoxamine
+
+60–230
+
+Levomilnacipran
+
+80–120
+
+Mianserin
+
+15–70
+
+CHAPTER 11
+
+Table 11.2 Target ranges for other psychotropics30,91
+
+(Continued)
+
+
+
+
+<<<PAGE 927>>>
+
+906  The Maudsley® Prescribing Guidelines in Psychiatry
+
+approximately 14 hours when given with glucuronidation-inducing drugs such as carbamazepine or phenytoin. The half-life is increased to approximately 70 hours when
+given with valproate. This means that the time before complete re-titration is necessary
+therefore varies between 3 and 7 days, depending on the other drugs prescribed.1
+
+Table 14.1 Restarting medication up to two weeks after stopping oral treatment (data obtained from EU
+regulatory documents (SPCs)2)
+
+CHAPTER 14
+
+Drugs that require re-titration
+
+Drug
+
+Time after which
+re-titration must
+be performed
+
+Clozapine
+
+48 hours
+
+See ‘Re-starting
+clozapine after
+after a break in
+treatment’ in
+Chapter 1
+
+Lamotrigine
+
+3–7 days
+
+See discussion in
+the text
+
+3 days
+Methadone
+Buprenorphine 3 days
+
+Further guidance
+
+See ‘Opioid
+dependence’ in
+Chapter 4
+
+Paliperidone
+long-acting
+injection
+
+Depends on
+formulation
+
+See ‘Paliperidone
+palmitate
+long-acting
+injection’ in
+Chapter 1
+
+Aripiprazole
+long-acting
+injection
+
+>5 weeks if 2nd or
+3rd dose missed
+
+See ‘Aripiprazole
+long-acting
+injection’ in
+Chapter 1
+
+Drugs that are
+usually safe for
+restarting at
+the previous
+dose
+Acamprosate
+Asenapine
+Fluoxetine
+Haloperidol
+Isocarboxazid
+Lofepramine
+Methylphenidate
+Phenelzine
+Sulpiride
+Tranylcypromine
+Valproate
+
+Drugs that are probably
+safe for restarting at
+the previous dose
+Antipsychotics (except
+clozapine, quetiapine and
+risperidone)
+Carbamazepine
+Cholinesterase inhibitors
+CNS stimulants
+Disulfiram
+Lithium (titration advised if
+renal function has changed)
+MAOIs
+Memantine
+Naltrexone
+Other antidepressants (but
+beware loss of tolerance to
+sedative effects)
+Pregabalin
+SSRIs
+TCAs (but beware loss of
+tolerance to sedative and
+hypotensive effects)
+
+>6 weeks in
+chronic treatment
+CNS, central nervous system; MAOI, monoamine oxidase inhibitor; SSRI, selective serotonin reuptake inhibitor; TCA,
+tricyclic antidepressant.
+
+References
+1. Aurobindo Pharma – Milpharm Ltd. Summary of Product Characteristics. Lamotrigine 25mg Tablets. 2019; https://www.medicines.org.uk/
+emc/product/4736/smpc.
+2. EMC. https://www.medicines.org.uk/emc/; accessed June 2020.
+
+

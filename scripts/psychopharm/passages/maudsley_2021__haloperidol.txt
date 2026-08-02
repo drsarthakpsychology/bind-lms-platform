@@ -1,0 +1,1666 @@
+<<<PAGE 30>>>
+
+Minimum effective doses
+Table 1.1 suggests the minimum dose of antipsychotic likely to be effective in first- or multiepisode schizophrenia. Most patients will respond to the dose suggested, although others
+may require higher doses. Given the variation in individual response, all doses should be
+considered approximate. Primary references are provided where available, but consensus
+opinion has also been used. Only oral treatment with commonly used drugs is covered.
+Table 1.1 Minimum effective dose/day – antipsychotics
+Drug
+
+First episode
+
+Multi-episode
+
+Chlorpromazine1
+
+200mg*
+
+300mg
+
+Haloperidol
+
+2mg
+
+4mg
+
+Sulpiride8
+
+400mg*
+
+800mg
+
+10mg*
+
+15mg
+
+Amisulpride11–16
+
+300mg*
+
+400mg*
+
+Aripiprazole7,17–22
+
+10mg
+
+10mg
+
+Asenapine
+
+10mg*
+
+10mg
+
+Blonanserin24
+
+Not known
+
+8mg
+
+Brexpiprazole25–27
+
+2mg*
+
+4mg
+
+Cariprazine
+
+1.5mg*
+
+1.5mg
+
+Iloperidone7,21,22,30
+
+4mg*
+
+8mg
+
+Lumateperone
+
+Not known
+
+42mg*
+
+Lurasidone
+
+40mg HCl/37mg base*
+
+40mg HCl/37mg base
+
+Olanzapine4,7,33–35
+
+5mg
+
+7.5mg
+
+Paliperidone
+
+3mg*
+
+3mg
+
+Pimavanserin
+
+Not known
+
+34mg**
+
+Quetiapine39–44
+
+150mg* (but higher doses often used45)
+
+300mg
+
+3,7,46–49
+
+Risperidone
+
+2mg
+
+4mg
+
+7,21,50–52
+
+Ziprasidone
+
+40mg*
+
+80mg
+
+FGAs
+
+2–7
+
+Trifluoperazine
+
+9,10
+
+SGAs
+
+7,22,23
+
+28,29
+
+31
+
+7,32
+
+22
+36–38
+
+*Estimate – too few data available
+**FDA-approved for Parkinson’s disease psychosis; dose in schizophrenia not known
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  9
+
+
+
+
+<<<PAGE 33>>>
+
+CHAPTER 1
+
+12  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Licensed maximum doses
+The following table lists the licensed maximum doses of antipsychotics according to the
+EMA labelling as of February 2021.
+Drug
+
+Maximum dose
+
+FGAs – oral
+Chlorpromazine
+
+1000mg/day
+
+Flupentixol
+
+18mg/day
+
+Haloperidol
+
+20mg/day
+
+Levomepromazine
+
+1200mg/day
+
+Pericyazine
+
+300mg/day
+
+Perphenazine
+
+24mg/day (64mg/day hospitalised patients)
+
+Pimozide
+
+20mg/day
+
+Sulpiride
+
+2400mg/day
+
+Trifluoperazine
+
+20mg/day
+
+Zuclopenthixol
+
+150mg/day
+
+SGAs – oral
+Amisulpride
+
+1200mg/day
+
+Aripiprazole
+
+30mg/day
+
+Asenapine
+
+20mg/day (sublingual)
+
+Cariprazine
+
+6mg/day
+
+Clozapine
+
+900mg/day
+
+Lurasidone
+
+160mg (HCl)/148mg (base)/day
+
+Olanzapine
+
+20mg/day
+
+Paliperidone
+
+12mg/day
+
+Quetiapine
+
+750mg/day schizophrenia (800mg/day for MR preparation)
+800mg/day bipolar disorder
+
+Risperidone
+
+16mg/day
+
+Sertindole
+
+24mg/day
+
+Long-acting injections
+Aripiprazole depot
+
+400mg/month
+
+Flupentixol depot
+
+400mg/week
+
+Fluphenazine depot
+
+100mg every 14–35 days
+
+Haloperidol depot
+
+300mg every 4 weeks
+
+Paliperidone depot
+1-monthly
+
+150mg/month
+
+
+
+
+<<<PAGE 35>>>
+
+CHAPTER 1
+
+14  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Equivalent doses
+Knowledge of equivalent dosages is useful when switching between FGAs. Estimates of
+‘neuroleptic’ or ‘chlorpromazine’ equivalence, in milligrams a day, between these medications are based on clinical experience, expert panel opinion (using various methods)
+and any dopamine binding studies available.
+Table 1.2 provides approximate equivalent doses for FGAs.1–4 The values given should
+be seen as a rough guide when switching from one FGA to another and are no substitute
+for clinical titration of the new medication dose against adverse effects and response.
+Equivalent doses of SGAs may be less clinically relevant as these medications tend to
+have better defined, evidence-based licensed dose ranges. There are several different
+ways of calculating equivalence based on, for example, defined daily dose,5 minimum
+effective dose6,7 and average dose.8 These methods give different estimates of equivalence. A very rough guide to equivalent SGA daily dosages is given in the Table 1.3.3,4,7–9
+There is considerable disagreement about exact equivalencies, even amongst the references cited here. Clozapine is not included because this has a distinct initial titration
+schedule and a high dose-plasma level variability and because it probably has a different mechanism of action.
+Comparing potencies of FGAs with SGAs introduces yet more uncertainty with
+respect to dose equivalence. Very approximately, 100mg chlorpromazine is equivalent
+to 1.5mg risperidone.3
+
+Table 1.2 Equivalent doses of first generation antipsychotics
+Drug
+
+Equivalent dose (consensus)
+
+Range of values in literature
+
+Chlorpromazine
+
+100mg/day
+
+Reference
+
+Flupentixol
+
+3mg/day
+
+2–3mg/day
+
+Flupentixol depot
+
+10mg/week
+
+10–20mg/week
+
+Fluphenazine
+
+2mg/day
+
+1–5mg/day
+
+Fluphenazine depot
+
+5mg/week
+
+1–12.5mg/week
+
+Haloperidol
+
+2mg/day
+
+1.5–5mg/day
+
+Haloperidol depot
+
+15mg/week
+
+5–25mg/week
+
+Pericyazine
+
+10mg/day
+
+10mg/day
+
+Perphenazine
+
+10mg/day
+
+5–10mg/day
+
+Pimozide
+
+2mg/day
+
+1.33–2mg/day
+
+Pipotiazine depot
+
+10mg/week
+
+10–12.5mg/week
+
+Sulpiride
+
+200mg/day
+
+133–300mg/day
+
+Trifluoperazine
+
+5mg/day
+
+2.5–5mg/day
+
+Zuclopenthixol
+
+25mg/day
+
+25–60mg/day
+
+Zuclopenthixol depot
+
+100mg/week
+
+40–100mg/week
+
+
+
+
+<<<PAGE 78>>>
+
+Schizophrenia and related psychoses  57
+
+Compared with IV midazolam alone, a combination of IV olanzapine or IV droperidol with IV midazolam was more rapidly effective and resulted in fewer subsequent
+doses of medication being required.16
+■■ IM midazolam 7.5–15mg was more rapidly sedating than a combination of haloperidol 5–10mg and promethazine 50mg (TREC 1).17
+■■ Olanzapine 10mg was as effective as a combination of haloperidol 10mg and promethazine 25–50mg in the short term, but the effect did not last as long (TREC 4).18
+■■ A combination of haloperidol 5–10mg and promethazine 50mg was more effective
+and better tolerated than haloperidol 5–10mg alone (6% of patients had an acute
+dystonic reaction) (TREC 3).19
+■■ A combination of haloperidol 10mg and promethazine 25–50mg was more effective
+than lorazepam 4mg (TREC 2).20
+■■ A combination of IM chlorpromazine 100mg, haloperidol 5mg and promethazine
+25mg was no better than IM haloperidol 5mg plus promethazine 25mg (TREC
+Lebanon).21
+■■ A combination of IV midazolam and IV droperidol was more rapidly sedating than
+either IV droperidol or IV olanzapine alone. Fewer patients in the midazolam-droperidol group required additional medication doses to achieve sedation.22
+■■ IM olanzapine was more effective than IM aripiprazole in the treatment of agitation
+in schizophrenia in the short term (at 2 hours), but there was no significant difference
+between treatments at 24 hours.23
+■■ IM midazolam 5mg was faster acting and more effective than olanzapine 10mg,
+ziprasidone 20mg and both 5 and 10mg haloperidol in a large (n = 737) Emergency
+Room study.24
+■■ In an open-label study, the combination of IM haloperidol and IM lorazepam was
+found to be similar in efficacy to IM olanzapine.25
+■■ IM droperidol and IM haloperidol were equally effective.26
+Cochrane concluded that haloperidol alone is effective in the management of acute
+behavioural disturbance but poorly tolerated, and that co-administration of promethazine (but not lorazepam) improves tolerability.27,28 However, NICE considers the evidence relating to the use of promethazine for this purpose to be inconclusive.29 When
+assessing haloperidol plus promethazine, Cochrane concluded that the combination is
+effective for use in patients who are aggressive due to psychosis, and its use is based on
+good evidence. The resumption of aggression and need for further injections was more
+likely with olanzapine than with the haloperidol–promethazine combination. The
+authors also stated that ‘haloperidol used on its own without something to offset its
+frequent and serious adverse effects does seem difficult to justify’.30 Cochrane concluded that available data for aripiprazole are rather poor. This evidence suggests that
+aripiprazole is more effective than placebo and haloperidol alone, but not olanzapine.
+However, caution is advised when generalising these results to real-world practice.31
+A systematic review and meta-analysis of IM olanzapine for agitation found IM
+olanzapine and IM haloperidol to be equally effective, but IM olanzapine was associated with a lower incidence of EPSEs.32 Cochrane suggests that droperidol is effective
+and may be used to control people with very disturbed and aggressive behaviours
+caused by psychosis.33 Droperidol is seeing a resurgence in use in some countries having
+
+CHAPTER 1
+
+■■
+
+
+
+
+<<<PAGE 79>>>
+
+CHAPTER 1
+
+58  The Maudsley® Prescribing Guidelines in Psychiatry
+
+become available again (its initial withdrawal was voluntary, so reintroduction is not
+prohibited).
+In a meta-analysis that examined the tolerability of IM antipsychotics when used for
+the treatment of agitation, the incidence of acute dystonia with haloperidol was reported
+to be 5%, with SGAs performing considerably better.34 Acute EPS may adversely affect
+longer-term compliance.35 In addition, the formal prescribing information in most
+countries for haloperidol calls for a pre-treatment ECG36,37 and recommends that concomitant antipsychotics are not prescribed. The mean increase in QTc after 10mg IM
+haloperidol can be up to 15ms, but the range is wide.38
+Note that promethazine may inhibit the metabolism of haloperidol;39 a pharmacokinetic interaction that is potentially clinically significant given the potential of haloperidol to prolong QTc. While this is unlikely to be problematic if a single dose is
+administered, repeat dosing may confer risk.
+Droperidol is also associated with QT changes (the reason for its past withdrawal).
+In an observational study set in hospital emergency departments, of the 1009 patients
+administered parenteral droperidol only 13 patients (1.28%) had an abnormal QT
+recorded after dose administration. In 7 of these cases another contributory factor was
+identified. There were no cases of torsades de pointes.26 In all RT studies of IM droperidol, the overall rate of QT > 500ms was less than 2%.2
+Intravenous treatment is now rarely used in RT but where benefits are thought to
+outweigh risks it may be considered as a last resort. A small study comparing high dose
+IV haloperidol with IV diazepam found both drugs to be effective at 24 hours.40 Two
+large observational studies have examined the safety of IV olanzapine when used in the
+emergency department. The indications for its use varied: agitation being the most common. In one study,41 in the group treated for agitation (n = 265), over a third of patients
+required an additional sedative dose after the initial IV olanzapine dose. Hypoxia was
+reported in 17.7% of cases and supplemental oxygen was used in 20.4% cases. Six
+patients required intubation (two of these because of olanzapine treatment). In the
+other study,42 IV olanzapine (n = 295) was compared with IM olanzapine (n = 489).
+Additional doses were not required for 81% of patients in the IV group and 84% of
+patients in the IM group. Respiratory depression was more commonly observed in the
+group receiving IV olanzapine. Five patients in the IM group and two in the IV group
+required intubation.
+In an acute psychiatric setting, high dose sedation (defined as a dose of more than
+10mg of haloperidol, droperidol or midazolam) was not more effective than lower doses
+but was associated with more adverse effects (hypotension and oxygen desaturation).43
+Consistent with this, a small RCT supports the efficacy of low dose haloperidol, although
+both efficacy and tolerability were superior when midazolam was co-prescribed.44 These
+data broadly support the use of standard doses in clinical emergencies, but the need for
+further physical restraint after lower doses needs to be considered.
+A small observational study supports the effectiveness of buccal midazolam in a
+PICU setting.45 Parenteral administration of midazolam, particularly in higher doses,
+may cause over-sedation accompanied by respiratory depression.46 Lorazepam IM is an
+established treatment and TREC 220 supports its efficacy, although combining all results
+from the TREC studies suggests midazolam 7.5–15mg is probably more effective. A
+Cochrane review of benzodiazepines for psychosis-induced aggression and agitation
+
+
+
+
+<<<PAGE 86>>>
+
+9. Kwentus J, et al. Rapid acute treatment of agitation in patients with bipolar I disorder: a multicenter, randomized, placebo-controlled clinical
+trial with inhaled loxapine. BipolarDisord 2012; 14:31–40.
+10. Allen MH, et al. Efficacy and safety of loxapine for inhalation in the treatment of agitation in patients with schizophrenia: a randomized,
+double-blind, placebo-controlled trial. J Clin Psychiatry 2011; 72:1313–1321.
+11. Kahl KG, et al. Inhaled loxapine for acute treatment of agitation in patients with borderline personality disorder: a case series. J Clin
+Psychopharmacol 2015; 35:741–743.
+12. Roncero C, et al. Effectiveness of inhaled loxapine in dual-diagnosis patients: a case series. Clin Neuropharmacol 2016; 39:206–209.
+13. Citrome L. Comparison of intramuscular ziprasidone, olanzapine, or aripiprazole for agitation: a quantitative review of efficacy and safety.
+J Clin Psychiatry 2007; 68:1876–1885.
+14. Perrin E, et al. A prospective, observational study of the safety and effectiveness of intramuscular psychotropic treatment in acutely agitated
+patients with schizophrenia and bipolar mania. Eur Psychiatry 2012; 27:234–239.
+15. Ferraz Goncalves JA, et al. Comparison of haloperidol alone and in combination with midazolam for the treatment of acute agitation in an
+inpatient palliative care service. J Pain Palliat Care Pharmacother 2016; 30:284–288.
+16. Chan EW, et al. Intravenous droperidol or olanzapine as an adjunct to midazolam for the acutely agitated patient: a multicenter, randomized,
+double-blind, placebo-controlled clinical trial. Ann Emerg Med 2013; 61:72–81.
+17. TREC Collaborative Group. Rapid tranquillisation for agitated patients in emergency psychiatric rooms: a randomised trial of midazolam
+versus haloperidol plus promethazine. BMJ 2003; 327:708–713.
+18. Raveendran NS, et al. Rapid tranquillisation in psychiatric emergency settings in India: pragmatic randomised controlled trial of intramuscular olanzapine versus intramuscular haloperidol plus promethazine. BMJ 2007; 335:865.
+19. Huf G, et al. Rapid tranquillisation in psychiatric emergency settings in Brazil: pragmatic randomised controlled trial of intramuscular haloperidol versus intramuscular haloperidol plus promethazine. BMJ 2007; 335:869.
+20. Alexander J, et al. Rapid tranquillisation of violent or agitated patients in a psychiatric emergency setting. Pragmatic randomised trial of
+intramuscular lorazepam v. haloperidol plus promethazine. Br J Psychiatry 2004; 185:63–69.
+21. Dib JE, et al. Rapid tranquillisation in a psychiatric emergency hospital in Lebanon: TREC-Lebanon – a pragmatic randomised controlled
+trial of intramuscular haloperidol and promethazine v. intramuscular haloperidol, promethazine and chlorpromazine. Psychol Med 2021:
+[Epub ahead of print].
+22. Taylor DM, et al. Midazolam-droperidol, droperidol, or olanzapine for acute agitation: a randomized clinical trial. Ann Emerg Med 2017;
+69:318–326.e311.
+23. Kittipeerachon M, et al. Intramuscular olanzapine versus intramuscular aripiprazole for the treatment of agitation in patients with schizophrenia: a pragmatic double-blind randomized trial. Schizophr Res 2016; 176:231–238.
+24. Klein LR, et al. Intramuscular midazolam, olanzapine, ziprasidone, or haloperidol for treating acute agitation in the emergency department.
+Ann Emerg Med 2018; 72:374–385.
+25. Huang CL, et al. Intramuscular olanzapine versus intramuscular haloperidol plus lorazepam for the treatment of acute schizophrenia with
+agitation: an open-label, randomized controlled trial. J Formos Med Assoc 2015; 114:438–445.
+26. Calver L, et al. The safety and effectiveness of droperidol for sedation of acute behavioral disturbance in the emergency department. Ann
+Emerg Med 2015; 66:230–238.e231.
+27. Powney MJ, et al. Haloperidol for psychosis-induced aggression or agitation (rapid tranquillisation). Cochrane Database Syst Rev 2012;
+11:CD009377.
+28. Ostinelli EG, et al. Haloperidol for psychosis-induced aggression or agitation (rapid tranquillisation). Cochrane Database Syst Rev 2017;
+7:Cd009377.
+29. National Institute for Health and Clinical Excellence. Violence and aggression: short-term management in mental health, health and community settings. NICE guideline [NG10]. 2015 (last checked December 2019); https://www.nice.org.uk/guidance/NG10.
+30. Huf G, et al. Haloperidol plus promethazine for psychosis-induced aggression. Cochrane Database Syst Rev 2016; 11:Cd005146.
+31. Ostinelli EG, et al. Aripiprazole (intramuscular) for psychosis-induced aggression or agitation (rapid tranquillisation). Cochrane Database
+Syst Rev 2018; 1:Cd008074.
+32. Kishi T, et al. Intramuscular olanzapine for agitated patients: a systematic review and meta-analysis of randomized controlled trials. J
+Psychiatr Res 2015; 68:198–209.
+33. Khokhar MA, et al. Droperidol for psychosis-induced aggression or agitation. Cochrane Database Syst Rev 2016; 12:Cd002830.
+34. Satterthwaite TD, et al. A meta-analysis of the risk of acute extrapyramidal symptoms with intramuscular antipsychotics for the treatment of
+agitation. J Clin Psychiatry 2008; 69:1869–1879.
+35. Van Harten PN, et al. Acute dystonia induced by drug treatment. Br Med J 1999; 319:623–626.
+36. Pharmacovigilance Working Party. Public assessment report on neuroleptics and cardiac safety, in particular QT prolongation, cardiac
+arrhythmias, ventricular tachycardia and torsades de pointes. 2006.
+37. Janssen-Cilag Ltd. Summary of product characteristics. haldol decanoate. 2020; https://www.medicines.org.uk/emc/product/968/smpc.
+38. Miceli JJ, et al. Effects of high-dose ziprasidone and haloperidol on the QTc interval after intramuscular administration: a randomized, singleblind, parallel-group study in patients with schizophrenia or schizoaffective disorder. Clin Ther 2010; 32:472–491.
+39. Suzuki A, et al. Histamine H1-receptor antagonists, promethazine and homochlorcyclizine, increase the steady-state plasma concentrations
+of haloperidol and reduced haloperidol. TherDrug Monit 2003; 25:192–196.
+40. Lerner Y, et al. Acute high-dose parenteral haloperidol treatment of psychosis. Am J Psychiatry 1979; 136:1061–1064.
+41. Martel ML, et al. A large retrospective cohort of patients receiving intravenous olanzapine in the emergency department. Acad Emerg Med
+2016; 23:29–35.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  65
+
+
+
+
+<<<PAGE 164>>>
+
+given the problems associated with QTc measurements. Lastly, keep in mind that differences in the effects of different antipsychotics on the QT interval rarely reach statistical
+significance, even in meta-analyses (Table 1.21).29
+Outside these guidelines, readers are directed to the RISQ-PATH study,30 which provides a scoring system for the prediction of QT prolongation (to above normal ranges)
+in any patient. RISQ-PATH has a 98% negative predictive value, so allowing a reduction in monitoring in low-risk patients. The RISQ-PATH method uses CredibleMeds
+categorisation for drug effects on QT – this, too, is recommeded.31
+Table 1.21 Effects of antipsychotics on QTC13,22,23,32–61.
+No effect
+Brexpiprazole*
+Cariprazine*
+Lurasidone
+Lumateperone*
+Low effect
+Aripiprazole**
+Asenapine
+Clozapine
+Flupentixol
+Fluphenazine
+Perphenazine
+Prochlorperazine
+Olanzapine***
+Paliperidone
+Risperidone
+Sulpiride
+
+Moderate effect
+Amisulpride****
+Chlorpromazine
+Haloperidol
+Iloperidone
+Levomepromazine
+Melperone
+Pimavanserin
+Quetiapine
+Ziprasidone
+High effect
+Any intravenous antipsychotic
+Pimozide
+Sertindole
+Any drug or combination of drugs used in doses exceeding
+recommended maximum
+Unknown effect
+Loxapine
+Pipotiazine
+Trifluoperazine
+Zuclopenthixol
+
+*Limited clinical experience (association with QT prolongation may emerge).
+**One case of torsades de pointes (TDP) reported,62 two cases of QT prolongation63,64 and an association with TDP
+found in database study.65 Healthy volunteer data suggest aripiprazole causes QTc prolongation of around 8ms.66
+Aripiprazole may increase QT dispersion.67
+***Isolated cases of QTc prolongation37,68 and has effects on cardiac ion channel, IKr,69 other data suggest no effect
+on QTC.23,35,36,70
+****TDP common in overdose,25,71 strong association with TDP in clinical doses.65
+
+Aripiprazole remains in the low effect group having previously been firmly placed in
+‘no effect’. Data are rather contradictory, with most studies showing a decrease in QTc
+associated with aripiprazole use52 even in children and adolescents.72 However, later
+data62,63,65,66,73 cast doubt on assumptions of cardiac safety. Interestingly, a 2020 paper
+analysing reports of events in > 400,000 inpatients over 20 years found aripiprazole
+had the lowest rate of cardiac events (0.06%) of all antipsychotics.74
+Lurasidone remains in the ‘no effect’ group,52 although one study mentioned in the
+US labelling75 reports a QT lengthening of 7.5mg in people receiving 120mg (111mg) a
+day. Those receiving 600mg (555mg) daily showed a lower change (+4.6ms). These
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  143
+
+
+
+
+<<<PAGE 204>>>
+
+Switching antipsychotics
+Summary of recommendations for switching antipsychotics because of poor
+tolerability.
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Acute EPS
+Dystonia, parkinsonism, bradykinesia
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Olanzapine
+Quetiapine
+
+Clozapine
+Lurasidone
+Ziprasidone
+
+Akathisia2,9,10
+
+Olanzapine
+Quetiapine
+
+Clozapine
+Brexpiprazole
+
+Dyslipidaemia7,8,11–16
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Asenapine
+Brexpiprazole
+Cariprazine
+
+Impaired glucose
+tolerance7,8,15,17–21
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Brexpiprazole
+Cariprazine
+Haloperidol
+
+Hyperprolactinaemia7,8,15,22–28
+
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+Olanzapine
+Ziprasidone
+
+Postural hypotension8,15,29
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Haloperidol
+Sulpiride
+Trifluoperazine
+
+QT prolongation27,30–37
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+Paliperidone
+
+Low dose monotherapy of any
+drug not formally contraindicated in QT prolongation
+(with ECG monitoring)
+
+Sedation7,8,27
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Risperidone
+Sulpiride
+
+Haloperidol
+Trifluoperazine
+Ziprasidone
+
+1–8
+
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  183
+
+
+
+
+<<<PAGE 402>>>
+
+Depression and anxiety disorders  381
+
+CYP1A2
+
+CYP2B6
+
+CYP2C9
+
+CYP2C19
+
+CYP2D6
+
+CYP3A4/5/7
+
+Genetic
+polymorphism
+Ultra-rapid
+metabolisers
+possible
+
+2–10% of total
+hepatic CYP
+content16
+
+5–10% of
+Caucasians
+poor
+metabolisers
+
+~20% of Asians
+and 3–5%
+Caucasians are
+poor metabolisers
+
+3–5% of
+Caucasians poor
+metabolisers
+
+60% p450
+content
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Carbamazepine
+Charcoal cooking
+Tobacco smoke
+Omeprazole
+Phenobarbital
+Phenytoin
+
+Carbamazepine
+Efavirenz
+Lopinavir
+Rifampicin
+Ritonavir
+
+Phenytoin
+Rifampicin
+
+Apalutamide
+Rifampicin
+Enzalutamide
+Artemisinin
+Efavirenz
+
+Carbamazepine
+Phenytoin
+
+Carbamazepine
+Phenytoin
+Prednisolone
+Rifampicin
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Cimetidine
+Ciprofloxacin
+Erythromycin
+Fluvoxamine
+
+Clopidogrel
+Ticlopidine
+Voriconazole
+
+Cimetidine
+Fluoxetine
+Fluvoxamine
+Moclobemide
+Sertraline
+
+Fluconazole
+Fluoxetine
+Fluvoxamine
+Esomeprazole
+Moclobemide
+Omeprazole
+Voriconazole
+Armodafinil
+Etravirine
+Isoniazid
+Modafinil
+Cimetidine
+
+Chlorpromazine
+Bupropion
+Duloxetine
+Fluoxetine
+Fluphenazine
+Haloperidol
+Paroxetine
+Sertraline
+Tricyclics
+
+Erythromycin
+Fluoxetine
+Fluvoxamine
+Grapefruit Juice
+Ketoconazole
+Norfluoxetine
+Paroxetine
+Sertraline
+Tricyclics
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Agomelatine
+Benzodiazepines
+Caffeine
+Clozapine
+Duloxetine
+Haloperidol
+Mirtazapine
+Olanzapine
+Ramelteon
+Theophylline
+Tizanidine
+Tricyclics
+Warfarin
+
+Bupropion
+Methadone
+Tramadol
+
+Agomelatine
+Bupropion
+Citalopram
+Diazepam
+Omeprazole
+Phenytoin
+Tricyclics
+Warfarin
+
+Citalopram
+Diazepam
+Moclobemide
+
+Clozapine
+Codeine
+Donepezil
+Duloxetine
+Haloperidol
+Phenothiazines
+Risperidone
+Tamoxifen
+Tricyclics
+Tramadol
+Trazodone
+Venlafaxine
+Vortioxetine
+
+Calcium
+Blockers
+Carbamazepine
+Clozapine
+Donepezil
+Erythromycin
+Galantamine
+Methadone
+Levomilnacipran
+Mirtazapine
+Reboxetine
+Risperidone
+Statins
+Tricyclics
+Valproate
+Venlafaxine
+Vilazodone
+Vortioxetine
+Z-hypnotics
+
+CHAPTER 3
+
+Table 3.15 Pharmacokinetic interactions – a brief summary of important interactions3,15
+
+
+
+
+<<<PAGE 618>>>
+
+Children and adolescents  597
+
+Table 5.7 (Continued)
+Medication
+
+Dose
+
+Onset of action
+
+Comment
+
+Midazolam* IM, IV
+or buccal11,12
+
+0.1–0.15mg/kg (IM)
+
+10–20 minutes
+IM
+(1–3 minutes IV)
+
+Quicker onset and shorter duration of action
+than lorazepam or diazepam.
+
+Buccal midazolam
+300–500µg/kg or
+6–10 years = 7.5mg
+>10 years = 10mg
+
+IV administration should only be used
+(usually as a last resort) with extreme
+caution and where resuscitation facilities are
+available.
+Shorter onset and duration of action than
+haloperidol
+When given as buccal liquid, onset of action
+is 15–30 minutes.13 Some published data in
+mental health but only in adults.14 Buccal
+liquid is unlicensed for this use.
+
+Ziprasidone IM16–19
+(not UK)
+
+0.1mg/kg/dose by slow IV
+injection.
+Max 40mg total daily
+dose <12 years and
+60mg >12 years
+
+1–3 minutes
+
+10–20mg
+
+15–30 minutes
+IM
+
+Long half-life that does not correlate with
+length of sedation. Possibility of
+accumulation
+Never give as IM injection
+Apparently effective. QT prolongation is of
+concern in this patient group
+ECG essential
+
+Aripiprazole IM
+
+9.75mg
+
+15–30 minutes
+
+Promethazine IM
+
+<12 years: 5–25mg
+(max 50mg/day)
+
+Up to 60 minutes An effective sedative, although has a slow
+onset of action. Useful if the cause of
+behavioural disturbance is unknown and there
+is concern about the use of antipsychotic
+medication in a child or young person
+
+20,21
+
+>12 years: 25–50mg
+(max 100mg/day)
+
+Evidence of effectiveness in adults but no
+clinical trial data for children and adolescents
+
+*Note that young people are particularly vulnerable to disinhibitory reactions with benzodiazepines.
+
+Oral medication should always be offered (and repeated if necessary if the young
+person is willing to take it), before resorting to parenteral treatment. Buccal midazolam14 and inhaled loxapine22 have not been widely investigated in children in RT at
+the time of writing and have limited availability. Buccal midazolam is commonly used
+for seizures in children. Monitoring after RT is the same as in adults (see section on RT,
+Chapter 3).
+
+CHAPTER 5
+
+Diazepam* IV
+(not for IM
+administration)15
+
+
+
+
+<<<PAGE 669>>>
+
+648  The Maudsley® Prescribing Guidelines in Psychiatry
+
+It is recommended that all patients prescribed antipsychotics should have the following
+tests at baseline, at 3 months and annually:
+1. Blood pressure and pulse
+2. Weight (ideally also monitor monthly for the first 3 months)
+3. Blood tests
+a. fasting glucose or HbA1c
+b. urea and electrolytes (U&Es), including eGFR
+c. full blood count (FBC)
+d. lipids (if possible fasting)
+e. liver function tests (LFTs)
+f. prolactin levels
+4. ECG (repeat at between 4 weeks and 3 months or when clinically indicated)
+In-patients or physically frail patients may need more frequent physical health
+monitoring.
+■■ Review of the antipsychotic drug needs to be done at 4–6 weeks (maybe earlier for inpatients), then at 3 months and then every 6 months if physically stable and there are no
+adverse effects. Consider stopping the antipsychotic at each review, where appropriate.
+■■ It may sometimes be difficult to get the recommended investigations, for example due
+to high levels of patient agitation and resistance, or due to the urgency of the situation.
+In these cases, a risk benefit analysis should again be carried out, recognising that by not
+having the investigations, the risk of prescribing an antipsychotic is even higher and an
+antipsychotic should only be prescribed if the risks of not giving it are even higher still.
+■■
+
+CHAPTER 6
+
+Table 6.7 Reduction or discontinuation regimen for antipsychotic drugs in BPSD – a guide53
+Antipsychotic
+
+Usual dose range
+in dementia
+
+Suggested regimen for reduction/discontinuation
+(generally reduce over 2–4 weeks, ideally over 4 weeks if possible)
+
+Amisulpride
+
+25–50mg/day
+
+Reduce by 12.5–25mg every 1–2 weeks (depending on dose), then stop
+
+Aripiprazole
+
+5–15mg/day
+
+Reduce by 5mg every 1–2 weeks (depending on dose), then stop
+(if patient is on 5mg daily, reduce to 2.5mg for 2 weeks; however, note
+that tablets are not scored and liquid is expensive – contact local
+pharmacist for advice)
+
+Haloperidol
+
+Not recommended in older people with dementia (except in delirium)
+Reduce by 0.25–0.5mg every 1–2 weeks (depending on the dose), then stop
+
+Olanzapine
+
+2.5–10mg/day
+
+Reduce by 2.5mg every 1–2 weeks (depending on dose), then stop
+
+Quetiapine
+
+12.5–300mg/day
+
+For doses 12.5–100mg/day: reduce by 12.5–25mg every 1–2 weeks
+(depending on the dose) and then stop
+For doses >100mg to 300mg/day: reduce by 25–50mg every 1–2 weeks
+(depending on the dose), then stop
+If dose is 300mg/day, reduce to 150–200mg/day for 1 week, then by
+50mg per week
+
+Risperidone
+
+0.25–2mg/day
+
+Reduce by 0.25–0.5mg every 1–2 weeks (depending on dose), then stop
+
+For higher doses, reduce gradually over 4 weeks.
+NB: If serious adverse effects occur, stop antipsychotic drug immediately.
+
+
+
+
+<<<PAGE 795>>>
+
+CHAPTER 9
+
+774  The Maudsley® Prescribing Guidelines in Psychiatry
+
+37. Ford AH, et al. The healthy heart-mind trial: randomized controlled trial of melatonin for prevention of delirium. J Am Geriatr Soc 2020;
+68:112–119.
+38. Oh ES, et al. Effects of ramelteon on the prevention of postoperative delirium in older patients undergoing orthopedic surgery: the recover
+randomized controlled trial. Am J Geriatr Psychiatry 2021; 29:90–100.
+39. Hatta K, et al. Preventive effects of ramelteon on delirium: a randomized placebo-controlled trial. JAMA Psychiatry 2014; 71:397–403.
+40. Jaiswal SJ, et al. Ramelteon for prevention of postoperative delirium: a randomized controlled trial in patients undergoing elective pulmonary
+thromboendarterectomy. Crit Care Med 2019; 47:1751–1758.
+41. Kim MS, et al. Comparative efficacy and acceptability of pharmacological interventions for the treatment and prevention of delirium: A
+systematic review and network meta-analysis. J Psychiatr Res 2020; 125:164–176.
+42. Adams AD, et al. The role of suvorexant in the prevention of delirium during acute hospitalization: A systematic review. J Crit Care 2020;
+59:1–5.
+43. Lu Y, et al. Promoting sleep and circadian health may prevent postoperative delirium: A systematic review and meta-analysis of randomized
+clinical trials. Sleep Med Rev 2019; 48:101207.
+44. Salvi F, et al. Non-pharmacological approaches in the prevention of delirium. Eur Geriatr Med 2020; 11:71–81.
+45. Fricchione GL, et al. Postoperative delirium. Am J Psychiatry 2008; 165:803–812.
+46. Zayed Y, et al. Haloperidol for the management of delirium in adult intensive care unit patients: A systematic review and meta-analysis of
+randomized controlled trials. J Crit Care 2019; 50:280–286.
+47. Burry L, et al. Antipsychotics for treatment of delirium in hospitalised non-ICU patients. Cochrane Database Syst Rev 2018; 6:Cd005594.
+48. Schrijver EJ, et al. Low dose oral haloperidol does not prolong QTc interval in older acutely hospitalised adults: a subanalysis of a randomised
+double-blind placebo-controlled study. J Geriatr Cardiol 2018; 15:401–407.
+49. Boettger S, et al. Atypical antipsychotics in the management of delirium: a review of the empirical literature. Palliat Support Care 2005;
+3:227–237.
+50. Leentjens AF, et al. Delirium in elderly people: an update. Curr Opin Psychiatry 2005; 18:325–330.
+51. Boettger S, et al. Aripiprazole and haloperidol in the treatment of delirium. Aust NZJ Psychiatry 2011; 45:477–482.
+52. Martinotti G, et al. Psychomotor agitation and hyperactive delirium in COVID-19 patients treated with aripiprazole 9.75mg/1.3 ml
+immediate release. Psychopharmacology (Berl) 2020:1–5.
+53. Skrobik YK, et al. Olanzapine vs haloperidol: treating delirium in a critical care setting. Intensive Care Med 2004; 30:444–449.
+54. Sipahimalani A, et al. Olanzapine in the treatment of delirium. Psychosomatics 1998; 39:422–430.
+55. Duff G Atypical antipsychotic drugs and stroke – Committee on safety of medicines 2004; https://webarchive.nationalarchives.gov.
+uk/20141206131857/http://www.mhra.gov.uk/home/groups/pl-p/documents/websiteresources/con019488.pdf.
+56. Kim SW, et al. Risperidone versus olanzapine for the treatment of delirium. Hum Psychopharmacol 2010; 25:298–302.
+57. Grover S, et al. Comparative efficacy study of haloperidol, olanzapine and risperidone in delirium. J Psychosom Res 2011; 71:277–281.
+58. Yoon HJ, et al. Efficacy and safety of haloperidol versus atypical antipsychotic medications in the treatment of delirium. BMC Psychiatry
+2013; 13:240.
+59. Lorenzo MP, et al. Intravenous olanzapine in a critically ill patient: an evolving route of administration. Hosp Pharm 2020; 55:108–111.
+60. Bourgeois JA, et al. Prolonged delirium managed with risperidone. Psychosomatics 2005; 46:90–91.
+61. Gupta N, et al. Effectiveness of risperidone in delirium. Can J Psychiatry 2005; 50:75.
+62. Liu CY, et al. Efficacy of risperidone in treating the hyperactive symptoms of delirium. Int Clin Psychopharmacol 2004; 19:165–168.
+63. Horikawa N, et al. Treatment for delirium with risperidone: results of a prospective open trial with 10 patients. Gen Hosp Psychiatry 2003;
+25:289–292.
+64. Han CS, et al. A double-blind trial of risperidone and haloperidol for the treatment of delirium. Psychosomatics 2004; 45:297–301.
+65. Hakim SM, et al. Early treatment with risperidone for subsyndromal delirium after on-pump cardiac surgery in the elderly: a randomized
+trial. Anesthesiology 2012; 116:987–997.
+66. Torres R, et al. Use of quetiapine in delirium: case reports. Psychosomatics 2001; 42:347–349.
+67. Sasaki Y, et al. A prospective, open-label, flexible-dose study of quetiapine in the treatment of delirium. J Clin Psychiatry 2003;
+64:1316–1321.
+68. Devlin JW, et al. Efficacy and safety of quetiapine in critically ill patients with delirium: a prospective, multicenter, randomized, double-blind,
+placebo-controlled pilot study. Crit Care Med 2010; 38:419–427.
+69. Hawkins SB, et al. Quetiapine for the treatment of delirium. J Hosp Med 2013; 8:215–220.
+70. Tahir TA, et al. A randomized controlled trial of quetiapine versus placebo in the treatment of delirium. J Psychosom Res 2010;
+69:485–490.
+71. Grover S, et al. Comparative effectiveness of quetiapine and haloperidol in delirium: A single blind randomized controlled study. World J
+Psychiatry 2016; 6:365–371.
+72. Mangan KC, et al. Evaluating the risk profile of quetiapine in treating delirium in the intensive care adult population: A retrospective review.
+J Crit Care 2018; 47:169–172.
+73. Young CC, et al. Intravenous ziprasidone for treatment of delirium in the intensive care unit. Anesthesiology 2004; 101:794–795.
+74. Chan D, et al. Delirium: making the diagnosis, improving the prognosis. Geriatrics 1999; 54:28–42.
+75. Sampson EL, et al. A randomized, double-blind, placebo-controlled trial of donepezil hydrochloride (Aricept) for reducing the incidence of
+postoperative delirium after elective total hip replacement. Int J Geriatr Psychiatry 2007; 22:343–349.
+76. Dautzenberg PL, et al. Adding rivastigmine to antipsychotics in the treatment of a chronic delirium. Age Ageing 2004; 33:516–517.
+
+
+
+
+<<<PAGE 927>>>
+
+906  The Maudsley® Prescribing Guidelines in Psychiatry
+
+approximately 14 hours when given with glucuronidation-inducing drugs such as carbamazepine or phenytoin. The half-life is increased to approximately 70 hours when
+given with valproate. This means that the time before complete re-titration is necessary
+therefore varies between 3 and 7 days, depending on the other drugs prescribed.1
+
+Table 14.1 Restarting medication up to two weeks after stopping oral treatment (data obtained from EU
+regulatory documents (SPCs)2)
+
+CHAPTER 14
+
+Drugs that require re-titration
+
+Drug
+
+Time after which
+re-titration must
+be performed
+
+Clozapine
+
+48 hours
+
+See ‘Re-starting
+clozapine after
+after a break in
+treatment’ in
+Chapter 1
+
+Lamotrigine
+
+3–7 days
+
+See discussion in
+the text
+
+3 days
+Methadone
+Buprenorphine 3 days
+
+Further guidance
+
+See ‘Opioid
+dependence’ in
+Chapter 4
+
+Paliperidone
+long-acting
+injection
+
+Depends on
+formulation
+
+See ‘Paliperidone
+palmitate
+long-acting
+injection’ in
+Chapter 1
+
+Aripiprazole
+long-acting
+injection
+
+>5 weeks if 2nd or
+3rd dose missed
+
+See ‘Aripiprazole
+long-acting
+injection’ in
+Chapter 1
+
+Drugs that are
+usually safe for
+restarting at
+the previous
+dose
+Acamprosate
+Asenapine
+Fluoxetine
+Haloperidol
+Isocarboxazid
+Lofepramine
+Methylphenidate
+Phenelzine
+Sulpiride
+Tranylcypromine
+Valproate
+
+Drugs that are probably
+safe for restarting at
+the previous dose
+Antipsychotics (except
+clozapine, quetiapine and
+risperidone)
+Carbamazepine
+Cholinesterase inhibitors
+CNS stimulants
+Disulfiram
+Lithium (titration advised if
+renal function has changed)
+MAOIs
+Memantine
+Naltrexone
+Other antidepressants (but
+beware loss of tolerance to
+sedative effects)
+Pregabalin
+SSRIs
+TCAs (but beware loss of
+tolerance to sedative and
+hypotensive effects)
+
+>6 weeks in
+chronic treatment
+CNS, central nervous system; MAOI, monoamine oxidase inhibitor; SSRI, selective serotonin reuptake inhibitor; TCA,
+tricyclic antidepressant.
+
+References
+1. Aurobindo Pharma – Milpharm Ltd. Summary of Product Characteristics. Lamotrigine 25mg Tablets. 2019; https://www.medicines.org.uk/
+emc/product/4736/smpc.
+2. EMC. https://www.medicines.org.uk/emc/; accessed June 2020.
+
+
+
+
+<<<PAGE 935>>>
+
+914  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 14.3 (Continued)
+Parameter
+
+Reference range
+
+Agents reported to raise
+levels
+
+Agents reported to lower
+levels
+
+Mean cell
+haemoglobin
+
+27–32pg
+
+Medications associated with
+megaloblastic anaemia e.g. all
+antiseizure medications,
+nitrous oxide
+
+None known
+
+Mean cell haemoglobin 320–360g/L
+concentration
+
+Alcohol
+
+Mean cell volume
+
+80–100fL
+
+Monocytes
+
+0.2–0.8 × 10 /L
+
+Haloperidol
+
+None known
+
+Neutrophils
+
+2.0–7.5 × 109/L
+(may be lower in people of
+African descent due to
+benign ethnic neutropenia)
+
+Bupropion, carbamazepine†,
+citalopram, chlorpromazine,
+clozapine†, duloxetine,
+fluoxetine, fluphenazine,
+haloperidol, lamotrigine,
+lithium, maprotiline,
+olanzapine, quetiapine,
+risperidone/paliperidone,
+rivastigmine, tiotixene,
+trazodone, venlafaxine
+
+Agents associated with
+agranulocytosis:
+amoxapine, aripiprazole,
+barbiturates, carbamazepine,
+chlordiazepoxide,
+chlorpromazine, clozapine‡,
+cocaine (adulterated),
+diazepam, fluphenazine,
+haloperidol, meprobamate,
+mianserin, mirtazapine,
+olanzapine, pirenzepine,
+promethazine, risperidone/
+paliperidone, TCAs
+(especially imipramine),
+tranylcypromine, valproate
+
+CHAPTER 14
+
+9
+
+Agents associated with
+leucopoenia: amitriptyline,
+amoxapine, asenapine,
+bupropion, carbamazepine,
+cariprazine, chlorpromazine,
+citalopram, clomipramine,
+clonazepam, clozapine,
+duloxetine, fluoxetine,
+fluphenazine, galantamine,
+haloperidol, lamotrigine,
+lorazepam, lumateperone,
+lurasidone, memantine,
+meprobamate, mianserin,
+mirtazapine, modafinil, nitrous
+oxide, olanzapine, oxazepam,
+phenelzine, pregabalin,
+promethazine, quetiapine,
+tranylcypromine, valproate,
+venlafaxine, ziprasidone
+Agents associated with
+neutropenia: sertraline,
+trazodone, valproate
+Packed cell volume
+
+Females: 0.37–0.47L/L
+Males: 0.40–0.52L/L
+
+Clozapine (rare), testosterone
+
+Benzodiazepines (rare),
+buprenorphine, naltrexone,
+vigabatrin
+
+
+
+
+<<<PAGE 959>>>
+
+938  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 14.8 (Continued)
+Medication
+
+Indication
+
+Class
+
+Droperidol19–24
+
+Acute
+disturbance
+
+Butyrophenone 5–10mg
+(D2 antagonist)
+
+Haloperidol
+
+Acute
+Butyrophenone 5–10mg
+disturbance24–27 (D2 antagonist)
+
+CHAPTER 14
+
+Ketamine
+
+Lorazepam
+
+Dosea
+
+Adverse Effectsb
+
+Comments
+
+Combination with
+Historical concerns
+over QT prolongation midazolam is more
+have been contested effective than either
+IV droperidol is
+in subsequent
+superior to lorazepam
+reviews and trials
+Dystonia, hypoxia
+
+Lack of robust recent
+evidence
+ECG essential
+
+Delirium28–30
+
+Over sedation
+2–2.5mg every
+hypokinesia
+4–8 hours
+Up to 10mg slow
+bolus
+
+Most recent evidence
+showed effect not
+superior to placebo in
+ICU delirium
+ECG essential
+
+Acute
+NMDA
+disturbance31–34 antagonist
+
+1–5mg/kg
+
+No effect on
+respiratory drive.
+May increase heart
+rate and blood
+pressure
+
+Supported by the
+Royal College of
+Emergency Medicine
+
+Depression35–43
+
+0.5mg/kg, diluted No serious adverse
+events. Dissociation
+in 0.9% saline,
+over a 40-minute was common.
+Transient blood
+period
+pressure elevation
+(absolute dose
+26–60mg)
+
+Most recent evidence
+supports weekly
+infusions and is more
+positive than previous
+Cochrane review
+(2015)44
+
+Bipolar
+depression44,45
+
+0.5mg/kg
+
+Well tolerated
+
+Cochrane (2015)44
+suggests evidence is
+limited, though a
+2018 study found it
+safe and effective
+
+Fatigue46
+
+0.5mg/kg
+
+Mild and transient
+
+Apparently safe and
+effective
+
+No significant side
+effects reported
+
+Inferior to IV
+droperidol
+
+Difficult to say as
+was given in
+combination with
+haloperidol
+
+Combination with
+haloperidol more
+effective than
+haloperidol
+
+Acute
+disturbance23
+Delirium29
+
+Midazolam20,21,47,48 Acute
+disturbance
+
+Benzodiazepine
+3mg of
+lorazepam in
+25mL of 0.9%
+normal saline
+solution
+Benzodiazepine 2.5–15mg
+
+Safe but respiratory High dose protocols
+are not more
+depression is a
+possibility, especially effective but have
+higher adverse events
+in higher doses
+incidence.
+Combination with
+droperidol more
+effective
+
+

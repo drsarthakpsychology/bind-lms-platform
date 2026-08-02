@@ -1,0 +1,178 @@
+<<<PAGE 199>>>
+
+Chapter 5: Targeting for Psychosis
+
+Table 5-1 Earliest agents used to treat psychosis
+
+Generic name
+
+Trade name
+
+Comment
+
+Chlorpromazine
+
+Thorazine
+
+Low potency
+
+Cyamemazine
+
+Tercian
+
+Popular in France;
+not available in
+the US
+
+Flupenthixol
+
+Depixol
+
+Depot; not
+available in the US
+
+Fluphenazine
+
+Prolixin
+
+High potency;
+depot
+
+Haloperidol
+
+Haldol
+
+High potency;
+depot
+
+Loxapine
+
+Loxitane
+
+Mesoridazine
+
+Serentil
+
+Low potency;
+QTc issues;
+discontinued
+
+Perphenazine
+
+Trilafon
+
+High potency
+
+Pimozide
+
+Orap
+
+High potency;
+Tourette syndrome;
+QTc issues; second
+line
+
+Pipothiazine
+
+Piportil
+
+Depot; not
+available in the US
+
+Sulpiride
+
+Dolmatil
+
+Not available in
+the US
+
+Thioridazine
+
+Mellaril
+
+Low potency; QTc
+issues;
+second line
+
+Thiothixene
+
+Navane
+
+High potency
+
+Trifluoperazine
+
+Stelazine
+
+High potency
+
+Zuclopenthixol
+
+Clopixol
+
+Depot; not
+available in the US
+
+blockers that cause DIP less frequently are the agents
+that have stronger anticholinergic properties. These latter
+agents have a sort of “inbuilt” anticholinergic property
+that accompanies their D2 antagonist property. Although
+DIP may occur less frequently with such agents, the
+risk of constipation and potential for life-threatening
+paralytic ileus is higher, especially when combined
+with other drugs with anticholinergic properties, and
+requires more monitoring of gastrointestinal status and
+bowel movements. A few selected agents from the firstgeneration class of D2 antagonists are discussed in more
+detail below.
+
+DRUGS TARGETING SEROTONIN
+2A RECEPTORS WITH OR
+WITHOUT SIMULTANEOUSLY
+TARGETING DOPAMINE D2
+RECEPTORS
+In an attempt to improve the efficacy and the tolerability
+of the first-generation classic drugs for psychosis with
+D2 antagonist properties, a newer class of drugs with
+antipsychotic action combines D2 antagonism
+with serotonin (5HT) 2A antagonism, so-called secondgeneration antipsychotics or atypical antipsychotics.
+We will refer to them as 5HT2A antagonists/D2
+antagonists with antipsychotic properties, and not as
+“antipsychotics” or “atypical antipsychotics.” An even
+newer class of drugs with antipsychotic properties
+are agents with 5HT2A antagonism without any D2
+antagonism. Some preclinical studies suggest that all
+known 5HT2A antagonists may actually be inverse
+agonists (see Chapter 2 and Figures 2-9 and 2-10) rather
+than antagonists at 5HT2A receptors (Figure 5-15). Since
+it is not clear what clinical distinction there is between
+an inverse agonist (Chapter 2 and Figures 2-9 and 2-10)
+and an antagonist (Figures 2-6 and 2-10) at 5HT2A
+receptors, we will continue to refer to these agents using
+the simpler term “antagonist.”
+Antagonism of serotonin 5HT2A receptors appears
+to improve both the efficacy and the side effects of D2
+antagonism:
+Schizophrenia. Clinical trials show that adding
+selective 5HT2A antagonists to drugs with D2
+antagonism/partial agonism may improve positive
+symptoms of psychosis in schizophrenia. Also,
+there is some indication that the more potent
+a 5HT2A/D2 antagonist is for 5HT2A receptors
+compared to potency for D2 receptors, the lower
+the degree of D2 antagonism that may be necessary
+to treat positive symptoms, and also the better
+tolerated the drug might be. More research is
+necessary on this possibility.
+Parkinson’s disease psychosis and dementiarelated psychosis. Antagonism of serotonin 5HT2A
+receptors alone appears to provide sufficient
+antipsychotic action to be useful as monotherapy
+for other causes of psychosis, such as Parkinson’s
+disease psychosis and dementia-related psychosis,
+allowing D2 antagonism and its side effects to be
+avoided entirely.
+
+183
+
+5
+
+

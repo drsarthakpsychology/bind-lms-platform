@@ -1,0 +1,898 @@
+<<<PAGE 166>>>
+
+Table 1.23 Non-psychotropics associated with QT prolongation
+(see Crediblemeds.org for latest information)
+Antibiotics
+Erythromycin
+Clarithromycin
+Ampicillin
+Co-trimoxazole
+Pentamidine
+(some four quinolones affect QTc –
+see manufacturers’ literature)
+
+Antiarrhythmics
+Quinidine
+Disopyramide
+Procainamide
+Sotalol
+Amiodarone
+Bretylium
+
+Antimalarials
+Chloroquine
+Mefloquine
+Quinine
+
+Others
+Amantadine
+Cyclosporin
+Diphenhydramine
+Hydroxyzine
+Methadone
+Nicardipine
+Tamoxifen
+
+Note: β2 agonists and sympathomimetics may provoke torsade de
+pointes in patients with prolonged QTc.
+
+Consider measuring QTc within a week of achieving a therapeutic dose of a newly
+prescribed antipsychotic that is associated with a moderate or high risk of QTc prolongation or of newly prescribed combined antipsychotics (Table 1.24).
+
+Metabolic inhibition
+The effect of drugs on the QTc interval is usually plasma level-dependent. Drug interactions are therefore important, especially when metabolic inhibition results in increased
+plasma levels of the drug affecting QTc. Commonly used metabolic inhibitors include
+fluvoxamine, fluoxetine, paroxetine and valproate.
+Table 1.24 Management of QT prolongation in patients receiving antipsychotic drugs
+QTc
+
+Action
+
+Refer to cardiologist
+
+<440ms (men) or <470ms (women) None unless abnormal T-wave morphology
+
+Consider if in doubt
+
+>440ms (men) or > 470ms
+(women) but < 500ms
+
+Consider reducing dose or switching to drug
+of lower effect; repeat ECG
+
+Consider
+
+>500ms
+
+Repeat ECG. Stop suspected causative drug(s) Immediately
+and switch to drug of lower effect
+
+Abnormal T-wave morphology
+
+Review treatment. Consider reducing dose or
+switching to drug of lower effect
+
+Immediately
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  145
+
+
+
+
+<<<PAGE 374>>>
+
+Depression and anxiety disorders  353
+
+Psychotropics are often continued during ECT, and some agents (particularly antidepressants1,2) enhance its efficacy.
+Table 3.11 summarises the effect of various psychotropics on seizure duration during
+ECT. Note that there are few well-controlled studies in this area, and so recommendations should be viewed with this in mind.
+Be aware also that choice of anaesthetic agent profoundly affects seizure duration3–8
+as well as the severity of post-ictal confusion and ECT efficacy.9,10 The use of ketamine
+as an anaesthetic does not ultimately improve outcome with ECT,11,12 but it may provide short-term benefits in improving depressive symptoms at the early stages of ECT.13
+Aside from concurrent medication, there are many factors that influence seizure threshold and duration.14
+Table 3.11 Effect of psychotropic drugs on seizure duration in ECT
+
+Drug
+
+Effect on ECT
+seizure duration
+
+Benzodiazepines19
+
+Reduced
+Mixed evidence and
+clinical implications
+unclear
+
+Comments3,15–18
+All may raise seizure threshold and so should be avoided where
+possible. Many are long-acting and may need to be discontinued
+some days before ECT. Benzodiazepines may also complicate
+anaesthesia and may reduce efficacy of ECT.
+If sedation is required, consider hydroxyzine. If benzodiazepine use
+is very long term and essential, continue and use higher stimulus,
+bilaterally.
+
+SSRIs2,20–23
+
+Minimal effect;
+small increase
+possible
+
+Generally considered safe to use during ECT. Beware complex
+pharmacokinetic interactions with anaesthetic agents. Isolated case
+reports of serotonin syndrome with fluoxetine and paroxetine with
+ECT.24,25
+
+Venlafaxine26
+
+Minimal effect at
+standard doses
+
+Limited data suggest no effect on seizure duration but possibility of
+increased risk of asystole with doses above 300mg/day.27 Clearly
+epileptogenic in higher doses. ECG advised.
+
+Mirtazapine2,28
+
+Minimal effect –
+small increase
+
+Apparently safe in ECT and, like other antidepressants, may enhance
+ECT efficacy. May reduce post ECT nausea and headache.
+
+Duloxetine29,30
+
+Not known
+
+One case report suggests duloxetine does not complicate ECT.
+Another links its use to ventricular tachycardia.
+
+TCAs2,21,31
+
+Possibly increased
+
+Few data relevant to ECT but many TCAs lower seizure threshold.
+TCAs are associated with arrhythmia following ECT and should be
+avoided in elderly patients and those with cardiac disease. In others, it
+is preferable to continue TCA treatment during ECT. Close monitoring
+is essential. Beware hypotension and risk of prolonged seizures.
+
+MAOIs32
+
+Minimal effect
+
+Data relating to ECT very limited but long history of ECT use during
+MAOI therapy.
+MAOIs probably do not affect seizure duration but interactions with
+sympathomimetics occasionally used in anaesthesia are possible and
+may lead to hypertensive crisis. Transdermal selegiline seems safe.33
+MAOIs may be continued during ECT, but the anaesthetist must be
+informed. Beware hypotension.
+(Continued)
+
+CHAPTER 3
+
+Electroconvulsive therapy (ECT) and psychotropic drugs
+
+
+
+
+<<<PAGE 447>>>
+
+426  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Box 3.4 Generalised anxiety disorder
+Crisis management
+Drug
+
+Comment
+
+Benzodiazepines
+
+Normally for short-term use only: max. 2–4 weeks although
+some are of the opinion that risks are overstated42
+
+CHAPTER 3
+
+First-line drug treatment (In order of preference)29
+SSRIs
+(Up to maximum licensed dose)
+
+May initially exacerbate symptoms. A lower starting dose is
+recommended. Fluoxetine and sertraline are preferred options12
+
+SNRIs14
+(Up to maximum licensed dose)
+
+May initially exacerbate symptoms. A lower starting dose is
+recommended
+
+Pregabalin
+150–600mg/day in divided doses
+
+Response may be seen in the first week of treatment.43
+Increasingly misused. Significant withdrawal syndrome
+
+Second-line drug treatment (Less well tolerated or weaker evidence base, no order of preference)
+Agomelatine44
+10–50mg/day
+
+Agomelatine has been shown to prevent relapse over a
+6-month period45
+
+Betablockers
+Propranolol 40–120mg/day in divided doses
+
+Initiate at 40mg and titrate dose up to effect if needed. Useful
+for somatic symptoms, particularly tachycardia46
+
+Buspirone
+15–60mg/day in divided doses
+
+Has a delayed onset of action, takes up to 6 weeks to show
+equal efficacy with benzodiazepines47
+
+Hydroxyzine
+50–100mg/day in divided doses
+
+It is unclear whether hydroxyzine is effective due to an
+anxiolytic effect or a sedative effect48
+
+Quetiapine
+(MR, 50–300mg)
+
+Recommended as monotherapy. Probably not effective as
+adjunctive therapy to SSRI/SNRI in treatment resistance49
+
+Tricyclic antidepressants
+Clomipramine
+50–250mg/day50–52
+Imipramine
+75–200mg/day in divided doses53
+
+Initiate clomipramine at 10mg/day and increase the dose
+gradually
+
+MAOI
+Phenelzine
+45–90mg/day in divided doses54
+
+For mixed anxiety and depressive states. Patients need to avoid
+food high in tyramine
+
+Initiate imipramine 25mg every 4 days and when at 100mg can
+increase in 50mg increments10
+
+Mirtazapine
+15–30mg nocte55,56
+Experimental
+Chamomile
+220–1500mg/day
+
+Two RCTs, one positive, one negative using standardised doses
+of chamomile and placebo57
+
+Gingko biloba
+240mg–480mg/day
+
+One positive RCT using standardised doses of gingko biloba
+and placebo58
+
+Lavender oil preparation
+80–160mg/day
+
+One positive RCT using standardised doses of lavender oil
+compared to placebo and paroxetine59
+
+Riluzole
+50–100mg/day doses60
+
+Liver function monitoring required
+
+nocte, at night
+
+
+
+
+<<<PAGE 453>>>
+
+CHAPTER 3
+
+432  The Maudsley® Prescribing Guidelines in Psychiatry
+
+22. Choy Y, et al. Three-year medication prophylaxis in panic disorder: to continue or discontinue? A naturalistic study. Compr Psychiatry 2007;
+48:419–425.
+23. Michelson D, et al. Continuing treatment of panic disorder after acute response: randomised, placebo-controlled trial with fluoxetine. The
+Fluoxetine Panic Disorder Study Group. Br J Psychiatry 1999; 174:213–218.
+24. Davidson J, et al. Efficacy of sertraline in preventing relapse of posttraumatic stress disorder: results of a 28-week double-blind, placebocontrolled study. Am J Psychiatry 2001; 158:1974–1981.
+25. Stein DJ, et al. Pharmacotherapy for post traumatic stress disorder (PTSD). Cochrane Database Syst Rev 2006; CD002795.
+26. Martenyi F, et al. Fluoxetine v. placebo in prevention of relapse in post-traumatic stress disorder. Br J Psychiatry 2002; 181:315–320.
+27. The Expert Consensus Panel for obsessive-compulsive disorder. Treatment of obsessive-compulsive disorder. J Clin Psychiatry 1997; 58 Suppl
+4:2–72.
+28. Catapano F, et al. Obsessive-compulsive disorder: a 3-year prospective follow-up study of patients treated with serotonin reuptake inhibitors
+OCD follow-up study. J Psychiatr Res 2006; 40:502–510.
+29. National Institute for Clinical Excellence. Surveillance decision. Evidence: obsessive-compulsive disorder and body dysmorphic disorder:
+treatment. Clinical Guidance [CG31]. 2005 (last updated February 2019); https://www.nice.org.uk/guidance/cg31/resources/2019-surveil​
+lance-of-obsessivecompulsive-disorder-and-body-dysmorphic-disorder-treatment-nice-guideline-cg31-6713804845/chapter/
+Surveillance-decision?tab=evidence.
+30. Blomhoff S, et al. Randomised controlled general practice trial of sertraline, exposure therapy and combined treatment in generalised social
+phobia. Br J Psychiatry 2001; 179:23–30.
+31. Hood SD and Nutt DJ. ‘Psychopharmacological treatments: an overview,’ in WR Crozier and LE Alden, eds., International handbook of
+social anxiety concepts, research and interventions relating to the self and shyness. Oxford: John Wiley and Sons Ltd; 2001.
+32. Mayo-Wilson E, et al. Psychological and pharmacological interventions for social anxiety disorder in adults: a systematic review and network
+meta-analysis. Lancet Psychiatry 2014; 1:368–376.
+33. National Institute for Clinical Excellence. Depression: the treatment and management of depression in adults. Clinical Guidance [CG90].
+2009 (last reviewed December 2013); https://www.nice.org.uk/guidance/cg90.
+34. Pollack MH. Refractory generalized anxiety disorder. J Clin Psychiatry 2009; 70 Suppl 2:32–38.
+35. Lancia M, et al. Pregabalin abuse in combination with other drugs: monitoring among methadone patients. Front Psychiatry 2019; 10:1022.
+36. Hägg S, et al. Current evidence on abuse and misuse of gabapentinoids. Drug Saf 2020; 43:1235–1254.
+37. Naveed S, et al. Pregabalin-associated discontinuation symptoms: a case report. Cureus 2018; 10:e3425.
+38. Roberts NP, et al. Early psychological interventions to treat acute traumatic stress symptoms. Cochrane Database Syst Rev 2010; CD007944.
+39. Skapinakis P, et al. Pharmacological and psychotherapeutic interventions for management of obsessive-compulsive disorder in adults: a systematic review and network meta-analysis. Lancet Psychiatry 2016; 3:730–739.
+40. van Apeldoorn FJ, et al. Is a combined therapy more effective than either CBT or SSRI alone? Results of a multicenter trial on panic disorder
+with or without agoraphobia. Acta Psychiatr Scand 2008; 117:260–270.
+41. Marcus SM, et al. A comparison of medication side effect reports by panic disorder patients with and without concomitant cognitive behavior
+therapy. Am J Psychiatry 2007; 164:273–275.
+42. Offidani E, et al. Efficacy and tolerability of benzodiazepines versus antidepressants in anxiety disorders: a systematic review and metaanalysis. Psychother Psychosom 2013; 82:355–362.
+43. Generoso MB, et al. Pregabalin for generalized anxiety disorder: an updated systematic review and meta-analysis. Int Clin Psychopharmacol
+2017; 32:49–55.
+44. Wang SM, et al. Agomelatine for the treatment of generalized anxiety disorder: a meta-analysis. Clin Psychopharmacol Neurosci 2020;
+18:423–433.
+45. Stein DJ, et al. Agomelatine prevents relapse in generalized anxiety disorder: a 6-month randomized, double-blind, placebo-controlled discontinuation study. J Clin Psychiatry 2012; 73:1002–1008.
+46. Hayes PE, et al. Beta-blockers in anxiety disorders. J Affect Disord 1987; 13:119–130.
+47. Chessick CA, et al. Azapirones for generalized anxiety disorder. Cochrane Database Syst Rev 2006; 3:CD006115.
+48. Guaiana G, et al. Hydroxyzine for generalised anxiety disorder. Cochrane Database Syst Rev 2010; Cd006815.
+49. Khan A, et al. Extended-release quetiapine fumarate (quetiapine XR) as adjunctive therapy in patients with generalized anxiety disorder and
+a history of inadequate treatment response: a randomized, double-blind study. Ann Clin Psychiatry 2014; 26:3–18.
+50. Wingerson D, et al. Clomipramine treatment for generalized anxiety disorder. J Clin Psychopharmacol 1992; 12:214–215.
+51. den Boer JA, et al. Effect of serotonin uptake inhibitors in anxiety disorders; a double-blind comparison of clomipramine and fluvoxamine.
+Int Clin Psychopharmacol 1987; 2:21–32.
+52. Kahn RS, et al. Effect of a serotonin precursor and uptake inhibitor in anxiety disorders; a double-blind comparison of 5-hydroxytryptophan,
+clomipramine and placebo. Int Clin Psychopharmacol 1987; 2:33–45.
+53. Rickels K, et al. Antidepressants for the treatment of generalized anxiety disorder. A Placebo-controlled Comparison of Imipramine,
+Trazodone, and Diazepam. Arch Gen Psychiatry 1993; 50:884–895.
+54. Robinson DS, et al. The monoamine oxidase inhibitor, phenelzine, in the treatment of depressive –anxiety states. A Controlled Clinical Trial.
+Arch Gen Psychiatry 1973; 29:407–413.
+55. Gambi F, et al. Mirtazapine treatment of generalized anxiety disorder: a fixed dose, open label study. J Psychopharmacology 2005;
+19:483–487.
+56. Sitsen JMA, et al. Mirtazapine, a Novel Antidepressant, in the Treatment of Anxiety Symptoms. Drug Invest 1994; 8:339–344.
+
+
+
+
+<<<PAGE 653>>>
+
+Dexamfetamine
+(dexamphetamine) – 0
+
+Aripiprazole – 1
+
+Ipratropium bromide – 0
+
+Insulin – 0
+
+Indapamide – 0
+
+Imipramine – 3
+
+Peppermint oil – 0
+
+Penicillin – 0
+
+Paroxetine – 2
+
+Paracetamol – 0
+
+Pantoprazole – 0
+
+Dexamethasone – NK
+
+Amlodipine – 0
+
+Oxybutynin – 3
+
+Apomorphine – 0
+
+Cyclizine – 1
+
+Amitriptyline – 3
+
+Hyoscine hydrobromide – 3
+
+Oxcarbazepine – NK
+
+Desipramine – 2
+
+Co-tenidone – 0
+
+Amisulpride – 0
+
+Hydroxyzine – 1
+
+Orphenadrine – 3
+
+Apixaban – NK
+
+Colchicine – NK
+
+Amiodarone – 1
+
+Hydrocortisone – NK
+
+Orlistat – 0
+
+Darifenacin – 0
+
+Codeine – NK
+
+Aminophylline – 0
+
+Hydrocodone – NK
+
+Ondansetron – 0
+
+Anastrozole – NK
+
+Co-careldopa – 0
+
+Amiloride – 0
+
+Hydrochlorothiazide – 0
+
+Omeprazole – 0
+
+Iloperidone – 1
+
+Co-beneldopa – 0
+
+Amantadine – 2
+
+Heparin – 0
+
+Dabigatran – NK
+
+Clozapine – 3
+
+Alverine – 0
+
+Olanzapine – 2
+
+Haloperidol – 0
+
+Amoxicillin – 0
+
+Clopidogrel – 0
+
+Alprazolam – 0
+
+Nortriptyline – 3
+
+Granisetron – 0
+
+Nitrofurantoin – NK
+
+Paliperidone – 1
+
+Clonidine – NK
+
+Allopurinol – NK
+
+Gliclazide – 0
+
+Nimodipine – 0
+
+Ibuprofen – 0
+
+Clonazepam – NK
+
+Alimemazine (trimeprazine) – 3
+
+Gaviscon – 0
+
+Nifedipine – 0
+
+Cyproheptadine – 3
+
+Clomipramine – 3
+
+Alfuzosin – 0
+
+Galantamine – 0
+
+Naproxen – 0
+
+Oxycodone – NK
+
+Clemastine – 3
+
+Alendronic acid
+(Alendronate) – 0
+
+Gabapentin – 0
+
+Hysoscine butylbromide
+(buscopan) – 1
+
+Clarithromycin – NK
+
+Adcal – 0
+
+Table 6.4 Anticholinergic effect on cognition (AEC) scores4 (updated October 2020)
+
+Trazodone – 0
+
+Tramadol – 0
+
+Topiramate – NK
+
+Tolterodine – 2
+
+Tolcapone – 0
+
+Tizanidine – NK
+
+Tiotropium bromide
+(inhalation) – 0
+
+Thiamine – 0
+
+Theophylline – 0
+
+Tetracycline – 0
+
+Temazepam – 1
+
+Tamsulosin – 0
+
+Tamoxifen – NK
+
+Sulpiride – 0
+
+Sulphasalazine – 0
+
+Spironolactone – NK
+
+Sotalol – 0
+
+Solifenacin – 1
+
+Sitagliptin – 0
+
+
+
+
+<<<PAGE 660>>>
+
+Prescribing in older people  639
+
+relationships than other opiates. It is therefore, theoretically at least, a good candidate
+for oral analgesia in dementia.44 Caution, however, should be used in addictive behaviours due to considerable problems with addiction and misuse. Buprenorphine transdermal patches probably have fewer side effects than many other opiates.
+Antihistamines
+First-generation H1 antihistamines include chlorpheniramine, hydroxyzine, cyclizine
+and promethazine. They are non-selective, have anticholinergic activity and readily
+penetrate the BBB, which can lead to unwanted cognitive side effects. They can impair
+cognitive and psychomotor performance and can trigger seizures, dyskinesia, dystonia
+and hallucinations. The second-generation H1 antihistamines (such as loratadine, cetirizine and fexofenadine) penetrate poorly into the CNS and are considerably less likely
+to cause these adverse effects. Moreover, they lack any anticholinergic effects.22
+
+A Cochrane review assessed the clinical efficacy and tolerability of statins in the treatment of dementia47 and showed that there was no significant benefit from statins in
+terms of cognitive function, but equally no evidence that statins were detrimental to
+cognition. Earlier case reports had highlighted subjective complaints of memory loss
+associated with the use of statins.48 These tended to occur within 2 months of starting
+the drug and were most commonly associated with simvastatin. In the event of a patient
+experiencing cognitive problems on simvastatin, it may be worth first stopping the
+drug, and if the complaint resolves, try atorvastatin or pravastatin instead, as these
+drugs are less likely to cross the BBB. A more recent Cochrane review49 assessed the
+efficacy of statins in the prevention of dementia and concluded that there was no evidence that statins given in late life to people at risk of vascular disease prevented cognitive decline or dementia.
+Antihypertensives
+Mid-life hypertension has negative effects on cognition and increases the risk of a person developing dementia.50 There is no evidence that antihypertensive treatment worsens cognition. It appears to have a positive effect on global cognition, and long-term
+treatment of hypertension can reduce the risk of dementia.51,52
+Other cardiac drugs
+Digoxin has been associated with acute confusional states at therapeutic drug concentrations.53 It has also been reported to cause nightmares.54 However, one study showed that
+the treatment of cardiac failure with digoxin improved cognitive performance in 25% of
+the patients treated (and in 23% of the patients treated who did not have cardiac failure).55 There are some case reports of amiodarone being associated with delirium.56,57
+
+CHAPTER 6
+
+Statins
+
+
+
+
+<<<PAGE 661>>>
+
+640  The Maudsley® Prescribing Guidelines in Psychiatry
+
+H2 antagonists and proton pump inhibitors (PPIs)
+Histamine-2 receptor antagonists (e.g. cimetidine, ranitidine and famotidine) are rarely
+used nowadays. Cimetidine causes several pharmacokinetic interactions, and ranitidine
+products have been recalled due to possible contamination with NDMA
+(N-nitrosodimethylamine). NDMA has been identified as a potential risk factor in the
+development of certain cancers. Famotidine remains in use. CNS reactions to these
+drugs have been reported, especially with cimetidine.58 A study looking at observational
+data on PPIs found an association between PPI use and incident dementia. This is supported by pharmacoepidemiological analyses on primary data and is in line with animal studies in which the use of PPIs increased the levels of β-amyloid in the brains of
+mice.59 Randomised, prospective clinical trials are needed to confirm this association.
+Many patients on PPIs have Helicobacter pylori–infected gastric mucosa. As Helicobacter
+has been reported to be associated with cognitive deterioration, this could be the mechanism behind the apparent link between PPI drugs and dementia. Furthermore, this
+association was not replicated in other studies.60,61
+Antibiotics
+There are reports of many antibiotics being associated with delirium62,63 but there is no
+consistent pattern of them causing cognitive impairment. Given the importance of
+treating infection in dementia, the most appropriate antibiotic for the infection being
+treated should be used. Antituberculous therapy, particularly isoniazid, has attracted
+some case reports of adverse psychiatric reactions (Table 6.6).64
+
+CHAPTER 6
+
+Table 6.6 Recommended drugs and drugs to avoid in dementia (adapted with permission26)
+Recommended drugs
+in dementia
+
+Condition
+
+Drug class or drug name
+
+Drugs to avoid in dementia
+
+Allergic conditions
+
+Antihistamines
+
+Chlorphenamine
+Promethazine
+Hydroxyzine
+Cyproheptadine
+Cyclizine
+(and other first-generation
+antihistamines)
+
+Asthma/COPD
+
+Bronchodilators
+
+Constipation
+
+Laxatives
+
+No evidence to suggest that laxatives have any negative
+impact on cognitive function
+Constipation itself may worsen cognition
+
+Diarrhoea
+
+Loperamide
+
+Low-potency anticholinergic. Not known to have effects on
+cognitive function; however, may add to the anticholinergic
+cognitive burden if used in combination to other anticholinergics
+
+Cetirizine
+Loratadine
+Fexofenadine
+(and other second-generation
+antihistamines)
+
+Beta-agonists
+Inhaled anticholinergics (have
+not been reported to affect
+cognition)
+Theophylline
+
+
+
+
+<<<PAGE 971>>>
+
+950  Index
+
+clinical features 794
+management of psychiatric disorders in
+people 795t
+psychiatric disorders in people with
+794, 795t
+human sexual response 172t
+Huntington’s disease (HD) 803
+cognitive symptoms 807
+mental and behavioural symptoms 804–806,
+805–806t
+mental state and behavioural changes in
+806t
+motor symptoms 803, 804t
+huperzine A 619
+hydroxychloroquine 621
+hydroxyzine 639
+hyoscine butylbromide (Buscopan) 637
+hyoscine hydrobromide (scopolamine) 637
+hyperglycaemia 164
+hyperlipidaemia 164
+hyperprolactinaemia 46, 168
+antidepressants and 398–399, 398–399t
+and antipsychotics 168
+contra-indications 169
+effects of antipsychotic medication on
+prolactin concentration 168t
+management 169
+summary of management 169–170,
+170t
+treatment of 169
+hypertension 161–162
+hypertriglyceridaemia 149
+hypnotics in breastfeeding 704, 715t
+hypokinetic rigidity 804t
+hypomania, treatment of 547
+hyponatraemia 164–166
+idalopirdine 621
+iloperidone 712t, 725t
+imipramine 368, 369, 742t
+Individual Case Safety Reports
+from VigiBase 610
+infant exposure 702
+inhalation 871
+injectable diamorphine 491
+inpatient detoxification 456
+insomnia 102
+Instrumental Activities of Daily
+Living 609–610
+interferon-alpha-induced
+depression 779
+interictal psychiatric disorders 785
+International Classification of Diseases 10
+(ICD-10) 451
+intoxication 867–868
+intracranial/intracerebral haemorrhage
+(ICH) 411–412, 412t
+intramuscular (IM) clozapine 192
+general recommendations for
+prescribing 192t
+intramuscular injections 932
+site of administration
+of 932–935t
+intramuscular (IM) thiamine
+preparations 462
+intranasal naloxone 474–475, 475f
+intravenous treatment 58
+irritability/agitation 805t
+isotretinoin 920t
+
+ketamine/esketamine 58, 333, 367, 925t, 938t
+adverse effects 329–330t
+background 328
+dosing recommendations for different
+routes of 329–330t
+mechanism 328
+route 328
+ketanserin 590
+lactate dehydrogenase 911t
+LAI. See long-acting injectable (LAI)
+lamotrigine 650, 690, 691, 713t, 728t,
+744t, 824t, 835t, 905–906, 906t
+laxatives 635, 640t
+learning disabilities, psychotropic
+medications for people with
+behavioural problems to 797
+general considerations 797
+key practice areas 797–798
+medications for behaviour
+disorder 799–800t
+mental illness 797
+lemborexant 730t
+levetiracetam 590
+levodopa 918t
+levomilnacipran 389, 727t
+licensed indications 923–924
+light therapy 645
+linaclotide 234
+lipoproteins 911t
+liquid fluoxetine 583
+lisdexamfetamine 569, 571, 580, 716t
+lisinopril 917t
+lithium 238, 376, 581, 602, 714t, 728t,
+744–745t, 779, 800, 810, 820, 824t,
+836t
+acute treatment of mania 247–248
+adverse effects 250
+angiotensin-converting enzyme (ACE)
+inhibitors 252–253
+augmentation of antidepressants in
+unipolar depression 248–249
+bipolar depression 248–249
+carbamazepine 254
+clinically relevant drug interactions 254t
+discontinuation 251–252, 252t
+diuretics 253
+formulations 250
+interactions with other drugs 252
+maintenance treatment of 248
+mechanism of action 247
+non-steroidal anti-inflammatory drugs
+(NSAIDs) 253–254
+on-treatment monitoring 251
+plasma levels 249
+prescribing and monitoring 252t
+pre-treatment tests 251
+prophylaxis of unipolar depression 249
+and suicide 249
+toxicity 250–251
+uses of 249
+liver function tests (LFTs) 723, 724
+lofepramine 389, 743t
+long-acting injectable (LAI) 67
+antipsychotic preparations 21, 92–93
+differences between 70
+long-acting injectable antipsychotic
+medication 67, 74–75
+advice on prescribing 68–70, 69t
+
+differences between 70
+doses and frequencies 69t
+loperamide 635
+loratadine 639
+lorazepam 472, 934t
+low-density lipoprotein (LDL) 149
+loxapine 857t
+lubiprostone 234
+lumateperone 652, 725t, 739t, 851
+lumateperone tosylate 710t
+lurasidone 143–144, 271, 554, 710t, 725t,
+739t, 820, 824t
+malabsorptive procedures 822
+mania 810
+acute treatment of 247–248
+second-generation antipsychotics 269–270
+symptoms of 547
+treatment of 264, 547
+massage therapy 644–645
+MCI. See mild cognitive impairment (MCI)
+mebeverine 637
+medication adherence 897–898
+assessing 900–901
+depot/long-acting antipsychotics 902
+financial incentives 902–903
+impact of non-adherence 898–899
+mapping out interventions 899–901
+monitoring adherence and assessing
+attitudes to 901
+rate of non-adherence to 898
+strategies for improving adherence 899
+taking aids 902
+Medication Adherence Rating Scale
+(MARS) 901
+medication-induced sedation 885
+medicines 885. See also drugs
+adherence, NICE guideline for 4
+mefloquine 918t
+melatonin 583, 730t, 925t
+adult and paediatric studies of 593–594
+preparations of 593
+in RCTs 594
+in treatment of insomnia 593
+adverse effects 594
+dose 594–595, 595f
+efficacy 593–594
+Melissa balm 644
+memantine (ExibaR) 604, 605–606t, 610,
+612, 615t, 624, 820
+borderline personality disorder (BPD) 5
+doses of 609
+extended release (ER) 608–609
+prospective data for 612
+mental capacity, assessment of 667
+mental disorder 883
+Mental Health Act (MHA) 603, 927
+arranging and preparing for SOAD
+visits 928
+capacity 929–930
+civil and forensic detention
+sections 927–928
+community patients 931
+completion of forms T2 and T3, 928
+consent 929
+electro-convulsive therapy (ECT) 931
+Section 132 duty of managers of
+hospitals 930
+Section 62 urgent treatment 930
+
+

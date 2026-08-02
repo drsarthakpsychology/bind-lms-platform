@@ -1,0 +1,926 @@
+<<<PAGE 205>>>
+
+for therapeutic reasons. Ingestion of 500 mg/kg of aspirin may be fatal. Most
+patients will develop symptoms of toxicity when salicylate levels are greater
+than 40 mg/dL. Common symptoms of toxicity include acid–base
+abnormalities, tachypnea, tinnitus, nausea, and vomiting. In cases of severe
+toxicity, symptoms may include hyperthermia, altered mental status,
+pulmonary edema, and death.
+Antipsychotic Agents
+CLOZAPINE. Clozapine (Clozaril) levels are trough levels determined in the
+
+morning before administration of the morning dose of medication. A
+therapeutic range for clozapine has not been established; however, a level of
+100 mg/mL is widely considered to be the minimum therapeutic threshold. At
+least 350 mg/mL of clozapine is considered to be necessary to achieve
+therapeutic response in patients with refractory schizophrenia. The likelihood
+of seizures and other side effects increase with clozapine levels greater than
+1,200 mg/mL or doses greater than 600 mg per day or both. Clozapine is a
+common cause of leukopenia in psychiatry. When moderate to severe
+leucopenia develops, clozapine treatment must be interrupted, but patients
+may be retreated with clozapine in the future.
+Mood Stabilizers
+Carbamazepine (Tegretol) may produce changes in the
+levels of white blood cells, platelets, and, under rare circumstances, red blood
+cells. Anemia, aplastic anemia, leucopenia, and thrombocytopenia may all
+occur but are rare. Pretreatment evaluations typically include CBC.
+Carbamazepine may produce hyponatremia. This hyponatremia is usually
+mild and does not produce clinical symptoms. However, carbamazepine may
+cause the syndrome of inappropriate secretion of antidiuretic hormone
+(SIADH). Carbamazepine may produce a variety of congenital abnormalities,
+including spina bifida and anomalies of the fingers. Manifestations of toxicity
+may include nausea, vomiting, urinary retention, ataxia, confusion,
+drowsiness, agitation, or nystagmus. At very high levels, symptoms may also
+include cardiac dysrhythmias, seizures, and respiratory depression.
+CARBAMAZEPINE.
+
+
+
+
+<<<PAGE 414>>>
+
+and inattention in preschoolers with autism spectrum disorder found the
+stimulant safe and relatively efficacious; half of the preschoolers developed
+side effects including increased stereotypies, gastrointestinal upset, sleep
+problems, and emotional lability. Among nonstimulants, one double-blind
+placebo-controlled study of hyperactivity, impulsivity, and inattention using
+atomoxetine in children with autism spectrum disorder found that it was
+significantly more effective than placebo. Side effects included sedation,
+irritability, constipation, and nausea. Clonidine, an α-agonist, has also been
+studied in children with autism spectrum disorder for the treatment of
+hyperactivity with mixed results. Guanfacine may also help in some cases.
+Repetitive and Stereotypic Behavior. Antidepressants and mood
+stabilizers have been studied for the treatment of these core symptoms of
+autism spectrum disorder. One study with fluoxetine found the medication
+group only slightly better and not significantly better than the placebo group
+regarding the target symptoms, and another trial with escitalopram found no
+difference between groups. Risperidone, however, was found to be effective
+in targeting irritability, and restrictive and repetitive behaviors were
+improved. One study using valproate in a 12-week trial with 55 children with
+a mean age of 9½ years with autism spectrum disorder found that those who
+were considered responders to irritability also spent less time engaging in
+repetitive behaviors.
+Agents Administered for Behavioral Impairment in Autism
+Spectrum Disorder Based On Open Trials. Quetiapine is an
+antipsychotic with more potent 5-HT2A than D2 receptor blocking properties.
+Although there are only open-label trials with this agent, some experts use
+this when risperidone and olanzapine fail or are intolerable. Doses range from
+50 to 200 mg/day. Adverse effects include drowsiness, tachycardia, agitation,
+and weight gain.
+Clozapine has a heterocyclic chemical structure that is related to certain
+first-generation antipsychotics, such as loxapine, although clozapine carries a
+lower risk of extrapyramidal symptoms. It is not generally used in the
+treatment of aggression and self-injurious behavior unless those behaviors
+coexist with psychotic symptoms. The most severe adverse effect is
+agranulocytosis, which necessitates monitoring white blood cell count weekly
+
+
+
+
+<<<PAGE 665>>>
+
+social skills deficits, attention deficits, and academic difficulties that often
+accompany childhood-onset schizophrenia.
+Pharmacotherapy
+Second-generation antipsychotics, serotonin-dopamine antagonists, are the
+current mainstay pharmacologic treatments for children and adolescents with
+schizophrenia. Current data include six randomized clinical trials in youth
+investigating the efficacy of second-generation antipsychotics for early-onset
+schizophrenia, with limited support for one agent over the others. Although
+clozapine, a serotonin receptor antagonist with some dopamine (D2)
+antagonism, may be more effective in reducing positive and negative
+symptoms, it remains a choice of last resort in youth based on its side effects.
+To date, however, evidence from multisite randomized clinical trials supports
+some efficacy of risperidone, olanzapine, aripiprazole, and clozapine in the
+treatment of childhood- and adolescent-onset schizophrenia. Two randomized
+clinical trials using risperidone in adolescents with schizophrenia found
+risperidone at doses up to 3 mg/day to be superior to placebo. A multisite
+randomized 6-week controlled trial of olanzapine in adolescents with
+schizophrenia found that it was more efficacious than a placebo. An RCT of
+aripiprazole at two fixed doses found that it was superior to placebo in the
+treatment of positive symptoms of adolescent schizophrenia; however, more
+than 40 percent of subjects in the active medication group did not achieve
+remission. Finally, clozapine is more effective than haloperidol in improving
+both positive and negative symptoms in treatment-resistant schizophrenia in
+youth. More recently, a study compared clozapine to high doses of
+olanzapine and found that response rates were about twice as high for
+clozapine as olanzapine (66 percent vs. 33 percent) when the investigators
+defined response as 30 percent or better reduction in symptoms on the Brief
+Psychiatric Rating Scale and improvement on the Clinical Global Impression
+Scale. The Treatment of Early-Onset Schizophrenia Spectrum Disorders
+Study compared the efficacy of risperidone and olanzapine with those of
+molindone, a mid-potency first-generation antipsychotic. In this study,
+lacking a placebo group, each of these agents provided a similar therapeutic
+effect; however, fewer than half of the patients responded optimally. Despite
+the limited randomized controlled studies of second-generation
+
+
+
+
+<<<PAGE 666>>>
+
+antipsychotics for the treatment of schizophrenia in youth, the FDA is
+progressively approving the use of these agents for pediatric schizophrenia
+and bipolar illness. In 2007, the FDA approved the use of risperidone and
+aripiprazole for the treatment of schizophrenia in 13- to 17-year-olds. The
+FDA approved the use of olanzapine and quetiapine in 2009 for the treatment
+of schizophrenia in 13- to 17-year-olds. Lurasidone and paliperidone were
+approved by the FDA in 2017 for the treatment of schizophrenia in
+adolescents.
+A double-blind, randomized 8-week controlled trial compared the efficacy
+and safety of olanzapine to clozapine in childhood-onset schizophrenia.
+Children with childhood-onset schizophrenia who were resistant to at least
+two previous treatments with antipsychotics were randomized to treatment
+for 8 weeks with either olanzapine or clozapine followed by a 2-year openlabel follow-up. Using the Clinical Global Impression of Severity of
+Symptoms Scale and Schedule for the Assessment of Negative/Positive
+Symptoms, clozapine was associated with a significant reduction in all
+outcome measures. In contrast, olanzapine showed improvement on some
+measures but not on all. The only statistically significant measure in which
+clozapine was superior to olanzapine was in alleviating negative symptoms
+compared with baseline. Clozapine was associated with more adverse events,
+such as lipid abnormalities and a seizure in one patient.
+Several studies have provided evidence that risperidone, a benzisoxazole
+derivative, is as effective as the older high-potency first-generation
+antipsychotics, such as haloperidol, and causes less frequent severe side
+effects in the treatment of schizophrenia in older adolescents and adults.
+Published case reports and limited more extensive controlled studies have
+supported the efficacy of risperidone in the treatment of psychosis in children
+and adolescents. Risperidone can cause weight gain and dystonic reactions
+and other extrapyramidal adverse effects in children and adolescents.
+Olanzapine is generally well tolerated for extrapyramidal adverse effects
+compared with first-generation antipsychotics and risperidone, but it is
+associated with moderate sedation and significant weight gain.
+Psychosocial Interventions
+Psychosocial interventions aimed at family education and patient and family
+
+
+
+
+<<<PAGE 1141>>>
+
+of these medications. As a result, patients treated with these medications—or
+with clozapine—may require weeks to reach a therapeutic dose. Although
+most patients develop tolerance to sedation and postural hypotension,
+sedation may continue to be a problem. In these patients, daytime drowsiness
+may interfere with a patient’s attempts to return to community life.
+All antipsychotics elevate prolactin levels, which can result in galactorrhea
+and irregular menses. Long-term elevations in prolactin and the resultant
+suppression in gonadotropin-releasing hormone can cause suppression in
+gonadal hormones. These, in turn, may have effects on libido and sexual
+functioning. There is also concern that elevated prolactin may cause
+decreases in bone density and lead to osteoporosis. The concerns about
+hyperprolactinemia, sexual functioning, and bone density are based on
+experiences with prolactin elevations related to tumors and other causes. It is
+unclear if these risks are also associated with the lower elevations that occur
+with prolactin-elevating drugs.
+HEALTH MONITORING IN PATIENTS RECEIVING ANTIPSYCHOTICS. Because of the
+
+effects of the second-generation antipsychotics on insulin metabolism,
+psychiatrists should monitor several health indicators, including BMI, fasting
+blood glucose, and lipid profiles. We should weigh patients and calculate
+their BMIs for every visit for at least 6 months after a medication change.
+Clozapine. Clozapine is considered the most effective of antipsychotics,
+particularly in patients who have been unresponsive to other treatments.
+However, it is a challenging drug to administer, given its risk of both severe
+side effects (agranulocytosis in approximately 0.3 percent of those taking it,
+seizures in as high as 5 percent of those on doses above 600 mg, and, more
+rarely, myocarditis) and common ones (hypersalivation, sedation,
+tachycardia, weight gain, and postural hypotension). The concerns over
+agranulocytosis have resulted in a monitoring system in the United States in
+which patients who receive clozapine must be in a program of weekly blood
+monitoring for the first 6 months and biweekly monitoring for the next 6
+months, and monthly after that.
+These limitations have relegated clozapine to a later treatment option, and
+most guidelines recommend considering it after a patient has failed at least
+two other antipsychotic trials.
+
+
+
+
+<<<PAGE 1681>>>
+
+problem
+No obvious nonpharmacologic
+precipitant
+Dissipates with drug
+discontinuation
+Antipsychotic drugs and
+ejaculatory problems
+
+Perphenazine
+Chlorpromazine
+Trifluoperazine
+Haloperidol
+Mesoridazine
+Chlorprothixene
+
+Antipsychotic drugs and priapism
+
+Perphenazine
+Mesoridazine
+Chlorpromazine
+Thioridazine
+Fluphenazine
+Molindone
+Risperidone
+Clozapine
+
+Table by R. T. Seagraves, M.D.
+
+Because depression is associated with decreased libido, varying levels of
+sexual dysfunction and anhedonia are part of the disease process. Some
+patients report improved sexual functioning as their depression improves
+because of antidepressant medication. The phenomenon makes evaluating
+sexual side effects difficult; also, the side effects may disappear with time,
+perhaps because a biogenic amine homeostatic mechanism comes into play.
+
+
+
+
+<<<PAGE 1929>>>
+
+risk (1.6 to 1.7 times) of death compared with placebo. All of these agents are
+considered first-line drugs for schizophrenia except clozapine, which may
+cause adverse hematologic effects that require weekly blood sampling.
+Schizophrenia and Schizoaffective Disorder. The SDAs are useful for
+treating acute and chronic psychoses such as schizophrenia and
+schizoaffective disorder, in both adults and adolescents. SDAs are as good as
+or better than typical antipsychotics (DRAs) for the treatment of positive
+symptoms in schizophrenia and superior to DRAs for the treatment of
+negative symptoms. Compared with persons treated with DRAs, persons
+treated with SDAs have fewer relapses and require less frequent
+hospitalization, fewer emergency department visits, less phone contact with
+mental health professionals, and less treatment in day programs.
+Because clozapine has potentially life-threatening adverse effects, it is
+appropriate only for patients with schizophrenia who are resistant to all other
+antipsychotics. Other indications for clozapine include treatment of persons
+with severe tardive dyskinesia—which can be reversed with high dosages in
+some cases—and those with a low threshold for EPS. Persons who tolerate
+clozapine have done well on long-term therapy. The effectiveness of
+clozapine may be increased by augmentation with risperidone, which raises
+clozapine concentrations and sometimes results in dramatic clinical
+improvement.
+Mood Disorders. Most of the SDAs (clozapine being a notable exception)
+are FDA approved for the treatment of acute mania. Some of these agents,
+including aripiprazole, olanzapine, quetiapine, and quetiapine XR, are also
+approved for the maintenance treatment in bipolar disorder as monotherapy
+or adjunctive therapy. The SDAs improve depressive symptoms in
+schizophrenia, and both clinical experience and clinical trials show that all of
+the SDAs augment antidepressants in the acute management of major
+depression. At this time, olanzapine, in combination with fluoxetine, has been
+approved for treatment-resistant depression, and aripiprazole and quetiapine
+XR are indicated for adjunctive therapy to antidepressants in MDDs.
+Quetiapine and quetiapine XR are also approved in bipolar depression. A
+fixed combination of olanzapine and fluoxetine (Symbyax) is approved as a
+treatment for acute bipolar depression.
+
+
+
+
+<<<PAGE 1942>>>
+
+absorbed sublingually. The agent dissolves in saliva within seconds and is
+absorbed through the oral mucosa. Sublingual administration avoids first-pass
+hepatic metabolism. Patients should be advised to avoid drinking or eating
+for 10 minutes after taking asenapine because this may lower the blood
+levels. The recommended starting and target dose for schizophrenia is 5 mg
+twice a day. In bipolar disorder, the patient may be started on 10 mg twice a
+day, and if necessary, the dosage may be lowered to 5 mg twice a day,
+depending on the tolerability issues. In acute schizophrenia treatment, there is
+no evidence of added benefit with a 10 mg twice-daily dose, but there is an
+apparent increase in specific adverse reactions. In both bipolar I disorder and
+schizophrenia, the maximum dose should not exceed 10 mg two times a day.
+The safety of doses above 10 mg twice a day has not been evaluated in
+clinical studies.
+Side Effects. The most common side effects observed in schizophrenic and
+bipolar disorders are somnolence, dizziness, EPS other than akathisia, and
+increased weight. In clinical trials, the mean weight gain after 52 weeks is 0.9
+kg, and there were no clinically relevant differences in lipid profile and blood
+glucose after 52 weeks. In clinical trials, asenapine was found to increase the
+QTc interval in a range of 2 to 5 milliseconds compared to placebo. No
+patients treated with asenapine experienced QTc increases 60 milliseconds or
+greater from baseline measurements, nor did any experience a QTc of 500
+milliseconds or more. Nevertheless, asenapine should be avoided in
+combination with other drugs known to prolong QTc interval in patients with
+congenital prolongation of QT interval or a history of cardiac arrhythmias,
+and in circumstances that may increase the occurrence of torsades de pointes.
+Asenapine can elevate prolactin levels, and the elevation can persist during
+chronic administration. Galactorrhea, amenorrhea, gynecomastia, and
+impotence may occur.
+Clozapine (Clozaril)
+Indications. In addition to being the most effective drug treatment for
+patients who have failed to respond to standard therapies, clozapine has been
+shown to benefit patients with severe tardive dyskinesia. Clozapine
+suppresses these dyskinesias, but the abnormal movements return when
+
+
+
+
+<<<PAGE 1943>>>
+
+clozapine is discontinued. This suppression is true even though clozapine, on
+rare occasions, may cause tardive dyskinesia. Other clinical situations in
+which clozapine may be used include the treatment of psychotic patients
+intolerant of EPS caused by other agents, treatment-resistant mania, severe
+psychotic depression, idiopathic Parkinson disease, Huntington disease, and
+suicidal patients with schizophrenia or schizoaffective disorder. Other
+treatment-resistant disorders that have demonstrated response to clozapine
+include pervasive developmental disorder, autism of childhood, and OCD
+(either alone or in combination with an SSRI). Used by itself, clozapine may
+very rarely induce obsessive-compulsive symptoms.
+Pharmacology. Clozapine is a dibenzothiazepine. It is rapidly absorbed,
+with peak plasma levels reached in about 2 hours. Steady state is achieved in
+less than 1 week if twice-daily dosing is used. The elimination half-life is
+about 12 hours. Clozapine has two significant metabolites, one of which, Ndimethyl clozapine, may have some pharmacologic activities. Clozapine is an
+antagonist of 5-HT2A, D1, D3, D4, and α (especially α1) receptors. It has
+relatively low potency as a D2 receptor antagonist. Data from PET scanning
+show that whereas 10 mg of haloperidol produces 80 percent occupancy of
+striatal D2 receptors, clinically significant dosages of clozapine occupy only
+40 to 50 percent of striatal D2 receptors. This difference in D2 receptor
+occupancy is probably why clozapine does not cause EPS. It has also been
+postulated that clozapine and other SDAs bind more loosely to the D2
+receptor, and because of this “fast dissociation,” more normal dopamine
+neurotransmission is possible.
+Dosages. Clozapine is available in 25- and 100-mg tablets. The initial
+dosage is usually 25 mg one or two times daily, although a conservative
+initial dosage is 12.5 mg twice daily. The dosage can then be increased
+gradually (25 mg a day every 2 or 3 days) to 300 mg a day in divided doses,
+usually two or three times a day. Dosages up to 900 mg a day can be used.
+Testing for blood concentrations of clozapine may be helpful in patients who
+fail to respond. Studies have found that plasma concentrations greater than
+350 µg/mL are associated with a better likelihood of response.
+
+
+
+
+<<<PAGE 1944>>>
+
+Drug Interactions. Clozapine should not be used with any other drug that
+is associated with the development of agranulocytosis or bone marrow
+suppression. Such drugs include carbamazepine, phenytoin, propylthiouracil,
+sulfonamides, and captopril (Capoten). Lithium combined with clozapine
+may increase the risk of seizures, confusion, and movement disorders.
+Lithium should not be used in combination with clozapine by persons who
+have experienced an episode of neuroleptic malignant syndrome.
+Clomipramine (Anafranil) can increase the risk of seizure by lowering the
+seizure threshold and by increasing clozapine plasma concentrations.
+Risperidone, fluoxetine, paroxetine, and fluvoxamine increase serum
+concentrations of clozapine. The addition of paroxetine may precipitate
+clozapine-associated neutropenia.
+Side Effects. The most common drug-related adverse effects are sedation,
+dizziness, syncope, tachycardia, hypotension, electrocardiography (ECG)
+changes, nausea, and vomiting. Other common adverse effects include
+fatigue, weight gain, various GI symptoms (most commonly constipation),
+anticholinergic effects, and subjective muscle weakness. Sialorrhea, or
+hypersalivation, is a side effect that begins early in treatment and is most
+evident at night. Patients report that their pillows are drenched with saliva.
+This side effect is most likely the result of impairment of swallowing.
+Although there are reports that clonidine or amitriptyline may help reduce
+hypersalivation, the most practical solution is to put a towel over the pillow.
+The risk of seizures is about 4 percent in patients taking dosages greater
+than 600 mg a day. Leukopenia, granulocytopenia, agranulocytosis, and fever
+occur in about 1 percent of patients. During the first year of treatment, there
+is a 0.73 percent risk of clozapineinduced agranulocytosis. The risk during the second year is 0.07 percent. For
+neutropenia, the risk is 2.32 percent and 0.69 percent, respectively, during the
+first and second years of treatment. The only contraindications to the use of
+clozapine are a WBC count below 3,500 cells/mm3; a previous bone marrow
+disorder; a history of agranulocytosis during clozapine treatment; or the use
+of another drug that is known to suppress the bone marrow, such as
+carbamazepine (Tegretol).
+During the first 6 months of treatment, weekly WBC counts are indicated
+to monitor the patient for the development of agranulocytosis. If the WBC
+
+
+
+
+<<<PAGE 1945>>>
+
+count remains normal, the frequency of testing can be decreased to every 2
+weeks. Although monitoring is expensive, an early indication of
+agranulocytosis can prevent a fatal outcome. Clozapine should be
+discontinued if the WBC count is below 3,000 cells/mm3 or the granulocyte
+count is below 1,500/mm3. Also, a hematologic consultation should be
+obtained, and obtaining a bone marrow sample should be considered. Persons
+with agranulocytosis should not be reexposed to the drug. Clozapine cannot
+be dispensed without proof of monitoring.
+Patients exhibiting symptoms of chest pain, shortness of breath, fever, or
+tachypnea should be immediately evaluated for myocarditis or
+cardiomyopathy, an infrequent but serious adverse effect ending in death.
+Serial CPK-MB (creatine phosphokinase with myocardial band fractions),
+troponin levels, and ECG studies are recommended, with immediate
+discontinuation of clozapine.
+Iloperidone (Fanapt)
+Indications. Iloperidone (Fanapt) is indicated for the acute treatment of
+schizophrenia in adults. The safety and efficacy of iloperidone in children and
+adolescents has not been established.
+Pharmacology. Iloperidone is not a derivative of another antipsychotic
+agent. It has complex multiple antagonist effects on several neurotransmitter
+systems. Iloperidone has a strong affinity for dopamine D3 receptors,
+followed by decreasing affinities of α2c-noradrenergic, 5-HT1a, D2a, and 5HT6 receptors. Iloperidone has a low affinity for histaminergic receptors. As
+with other antipsychotics, the clinical significance of this receptor binding
+affinity is unknown.
+Iloperidone has a peak concentration of 2 to 4 hours and a half-life that is
+dependent on hepatic isoenzyme metabolism. It is metabolized primarily
+through CYP2D6 and CYP3A4, and the dosage should be reduced by half
+when administered concomitantly with potent inhibitors of these two
+isoenzymes. The half-life is 18 to 26 hours in CYP2D6 extensive
+metabolizers and is 31 to 37 hours in CYP2D6 poor metabolizers. Of note,
+approximately 7 to 10 percent of whites and 3 to 8 percent of African
+Americans cannot metabolize CYP2D6 substrates; hence, dosing should be
+
+
+
+
+<<<PAGE 1948>>>
+
+Clinical Guidelines for SDAs
+All SDAs are appropriate for the management of an initial psychotic episode,
+but clozapine is reserved for persons who are refractory to all other
+antipsychotic drugs. If a person does not respond to the first SDA, other
+SDAs should be tried. The choice of drug should be based on the patient’s
+clinical status and history of response to medication. Recent studies have
+challenged the notion that SDAs require 4 to 6 weeks to reach full
+effectiveness, and it may take up to 8 weeks for the full clinical effects of an
+SDA to become apparent. The newer meta-analyses suggest that the apparent
+benefits may be seen as early as 2 to 3 weeks, and early response or failure is
+an indicator of subsequent response or failure.
+Nevertheless, it is acceptable practice to augment an SDA with a highpotency DRA or benzodiazepine in the first few weeks of use. Lorazepam
+(Ativan) 1 to 2 mg orally or IM can be used as needed for acute agitation.
+Once effective, dosages can be lowered as tolerated. Clinical improvement
+may take 6 months of treatment with SDAs in some, particularly treatmentrefractory persons.
+The use of all SDAs must be initiated at low dosages and gradually tapered
+upward to therapeutic dosages. The potential development of adverse effects
+necessitates the gradual increase in dosage. If a person stops taking an SDA
+for more than 36 hours, drug use should be resumed at the initial titration
+schedule. After the decision to terminate olanzapine or clozapine use, dosages
+should be tapered whenever possible to avoid cholinergic rebound symptoms
+such as diaphoresis, flushing, diarrhea, and hyperactivity.
+After assuring themselves of the appropriateness of SDA treatment, the
+clinician should explain the risks and benefits of SDA treatment to the person
+and the family. In the case of clozapine, an informed consent procedure
+should be documented in the person’s chart. The patient’s history should
+include information about blood disorders, epilepsy, cardiovascular disease,
+hepatic and renal diseases, and drug abuse. The presence of a hepatic or renal
+disease necessitates using low starting dosages of the drug. The physical
+examination should include supine and standing BP measurements to screen
+for orthostatic hypotension. The laboratory examination should include an
+ECG and several complete blood counts (CBCs) with WBC counts, which
+can then be averaged; and liver and renal function tests. Periodic monitoring
+
+
+
+
+<<<PAGE 1949>>>
+
+of blood glucose, lipids, and body weight is recommended.
+Although the transition from a DRA to an SDA may be made abruptly, it is
+wiser to taper off the DRA slowly while titrating up the SDA. Clozapine and
+olanzapine both have anticholinergic effects, and the transition from one to
+the other can usually be accomplished with little risk of cholinergic rebound.
+The transition from risperidone to olanzapine is best accomplished by
+tapering the risperidone off over 3 weeks while simultaneously beginning
+olanzapine at 10 mg a day. Risperidone, quetiapine, and ziprasidone lack
+anticholinergic effects, and the abrupt transition from a DRA, olanzapine, or
+clozapine to one of these agents may cause cholinergic rebound, which
+consists of excessive salivation, nausea, vomiting, and diarrhea. The risk of
+cholinergic rebound can be mitigated by initially augmenting risperidone,
+quetiapine, or ziprasidone with an anticholinergic drug, which is then tapered
+off slowly. Any initiation and termination of SDA use should be
+accomplished gradually.
+It is wise to overlap the administration of the new drug with the old drug.
+Of interest, some people have a more robust clinical response while taking
+the two agents during the transition and then regressing on monotherapy with
+the newer drug. We know little about the safety of combination antipsychotic
+treatment.
+Persons receiving regular injections of depot formulations of a DRA who
+are to switch to SDA use are given the first dose of the SDA on the day the
+next injection is due.
+Persons who developed agranulocytosis while taking clozapine can safely
+switch to olanzapine use, although initiation of olanzapine use amid
+clozapine-induced agranulocytosis can prolong the time of recovery from the
+usual 3 to 4 days up to 11 to 12 days. It is prudent to wait for the resolution of
+agranulocytosis before initiating olanzapine use. Emergence or recurrence of
+agranulocytosis has not been reported with olanzapine, even in persons who
+developed it while taking clozapine.
+SDA use by pregnant women has not been studied, but consideration
+should be given to the potential of risperidone to raise prolactin
+concentrations, sometimes up to three to four times the upper limit of the
+normal range. Because the drugs can be excreted in breast milk, they should
+not be taken by nursing mothers. The dosages for selected SDAs are given in
+Table 21-9.
+
+
+
+
+<<<PAGE 1961>>>
+
+paralytic ileus, although the relief is only transitory. Bethanechol
+(Urecholine) (20 to 40 mg a day) may be useful in some persons with urinary
+retention.
+Weight gain is associated with increased mortality and morbidity and with
+medication noncompliance. Low-potency DRAs may cause significant
+weight gain but not as much as is seen with the SDAs olanzapine (Zyprexa)
+and clozapine (Clozaril). Molindone and perhaps loxapine (Loxitane) appear
+to be least likely to cause weight gain.
+Endocrine Effects. Blockade of the dopamine receptors in the
+tuberoinfundibular tract results in the increased secretion of prolactin, which
+can result in breast enlargement, galactorrhea, amenorrhea, and inhibited
+orgasm in women and impotence in men. The SDAs, except risperidone
+(Risperdal), are not significantly associated with an increase in prolactin
+levels and may be the drugs of choice for persons experiencing disturbing
+side effects from increased prolactin release.
+Sexual Adverse Effects. Both men and women taking DRAs can
+experience anorgasmia and decreased libido. Up to 50 percent of men who
+take antipsychotics report ejaculatory and erectile disturbances. Sildenafil
+(Viagra), vardenafil (Levitra), and tadalafil (Cialis) are often used to treat
+psychotropic-induced orgasmic dysfunction, but they have not been studied
+in combination with the DRAs. Thioridazine is mainly associated with
+decreased libido and retrograde ejaculation in men. Priapism and reports of
+painful orgasms have also been described, both possibly resulting from α1adrenergic antagonist activity.
+Skin and Eye Effects. Allergic dermatitis and photosensitivity may occur,
+especially with low-potency agents. Urticarial, maculopapular, petechial, and
+edematous eruptions may occur early in treatment, generally in the first few
+weeks, and remit spontaneously. A photosensitivity reaction that resembles a
+severe sunburn also occurs in some persons taking chlorpromazine. Persons
+should be warned of this adverse effect, should spend no more than 30 to 60
+minutes in the sun, and should use sunscreens. Long-term chlorpromazine
+use is associated with blue-gray discoloration of skin areas exposed to
+sunlight. The skin changes often begin with a tan or golden brown color and
+
+
+
+
+<<<PAGE 1965>>>
+
+Fluvoxamine
+
+Fluvoxamine inhibits
+metabolism of
+haloperidol and
+clozapine
+
+Increased
+concentrations of
+haloperidol and
+clozapine
+
+Guanethidine
+
+Antipsychotic antagonizes
+guanethidine reuptake
+
+Impaired
+antihypertensive
+effect
+
+Lithium
+
+Unknown
+
+Rare reports of
+neurotoxicity
+
+Meperidine
+
+Additive CNS depression
+
+Hypotension and
+sedation
+
+Drug Interactions Assessed to Have Minor or Moderate Severity
+Amphetamines,
+anorexiants
+
+Decreased pharmacologic
+effect of amphetamine
+
+Diminished weight
+loss effect;
+amphetamines
+may exacerbate
+psychosis
+
+ACEIs
+
+Additive hypotensive crisis
+
+Hypotension,
+postural
+intolerance
+
+Antacids
+containing
+aluminum
+
+Insoluble complex formed
+in GI tract
+
+Possible reduced
+antipsychotic
+effect
+
+AD nonspecific
+
+Decreased metabolism of
+AD through competitive
+inhibition
+
+Increased AD
+concentration
+
+Benzodiazepines Increased pharmacologic
+effect of the
+benzodiazepine
+
+Respiratory
+depression,
+stupor,
+hypotension
+
+
+
+
+<<<PAGE 1976>>>
+
+metabolism of the coadministered medication. Each of the SSRIs possesses a
+potential for slowing or blocking the metabolism of many drugs (Table 2116). Fluvoxamine is the most problematic of the drugs in this respect. It has a
+marked effect on several of the CYP enzymes. Examples of clinically
+significant interactions include fluvoxamine and theophylline (Slo-Bid, TheoDur) through CYP1A2 interaction, fluvoxamine and clozapine (Clozaril)
+through CYP1A2 inhibition; and fluvoxamine with alprazolam (Xanax) or
+clonazepam (Klonopin) through CYP3A4 inhibition. Fluoxetine and
+paroxetine also possess significant effects on the CYP2D6 isozyme, which
+may interfere with the efficacy of opiate analogs, such as codeine and
+hydrocodone, by blocking the conversion of these agents to their active form.
+Thus, coadministration of fluoxetine and paroxetine with an opiate interferes
+with its analgesic effects. Sertraline, citalopram, and escitalopram are least
+likely to complicate treatment because of interactions.
+The pharmacokinetics of vilazodone (5 to 80 mg) is dose-proportional.
+Steady-state plasma levels are achieved in about 3 days. The elimination of
+vilazodone is primarily by hepatic metabolism with a terminal half-life of
+approximately 25 hours.
+Pharmacodynamics. The SSRIs are believed to exert their therapeutic
+effects through serotonin reuptake inhibition. They derive their name because
+they have little effect on the reuptake of norepinephrine or dopamine. Often,
+adequate clinical activity and saturation of the 5-HT transporters are achieved
+at starting dosages. As a rule, higher dosages do not increase antidepressant
+efficacy but may increase the risk of adverse effects.
+Table 21-16
+CYP450 Inhibitory Potential of Commonly Prescribed
+Antidepressants
+
+
+
+
+<<<PAGE 2077>>>
+
+depressant (e.g., alcohol), and increased severity of extrapyramidal
+symptoms, which usually responds to treatment with antiparkinsonian drugs.
+Valproate can usually be safely combined with carbamazepine or SDAs.
+Perhaps the most worrisome interaction of valproate and a psychotropic drug
+involves lamotrigine. Since the approval of lamotrigine for the treatment of
+bipolar disorder, it is more likely that patients will be treated with both
+agents. Valproate more than doubles lamotrigine concentrations, increasing
+the risk of a severe rash (Stevens–Johnson syndrome and toxic epidermal
+necrolysis).
+The plasma concentrations of carbamazepine, diazepam (Valium),
+amitriptyline (Elavil), nortriptyline (Pamelor), and phenobarbital (Luminal)
+may also be increased when these drugs are coadministered with valproate.
+Also, the plasma concentrations of phenytoin (Dilantin) and desipramine
+(Norpramin) may be decreased when they are combined with valproate. The
+plasma concentrations of valproate may be decreased when the drug is
+coadministered with carbamazepine and may be increased when
+coadministered with guanfacine (Tenex), amitriptyline, or fluoxetine
+(Prozac). Valproate can be displaced from plasma proteins by carbamazepine,
+diazepam, and aspirin. Persons who are treated with anticoagulants (e.g.,
+aspirin and warfarin [Coumadin]) should also be monitored when valproate
+use is initiated to assess the development of any undesired augmentation of
+the anticoagulation effects. Interactions of valproate with other drugs are
+listed in Table 21-34.
+Table 21-34
+Interactions of Valproate with Other Drugs
+Drug
+
+Interactions Reported with Valproate
+
+Lithium
+
+Increased tremor
+
+Antipsychotics
+
+Increased sedation; increased extrapyramidal
+effects; delirium and stupor (single report)
+
+Clozapine
+
+Increased sedation; confusional syndrome (single
+report)
+
+Carbamazepine Acute psychosis (single report); ataxia, nausea,
+
+
+
+
+<<<PAGE 2090>>>
+
+consisting of fever, rash, eosinophilia, and possibly fatal myocarditis.
+Cleft palate, fingernail hypoplasia, microcephaly, and spina bifida in
+infants may be associated with the maternal use of carbamazepine during
+pregnancy. Pregnant women should not use carbamazepine unless necessary.
+All women with childbearing potential should take 1 to 4 mg of folic acid
+daily, even if they are not trying to conceive. Carbamazepine is secreted in
+breast milk.
+Drug Interactions. Carbamazepine decreases serum concentrations of
+numerous drugs as a result of the prominent induction of hepatic CYP3A4
+(Table 21-39). Monitoring for a decrease in clinical effects is frequently
+indicated. Carbamazepine can decrease the blood concentrations of oral
+contraceptives, resulting in breakthrough bleeding and uncertain prophylaxis
+against pregnancy. Carbamazepine should not be administered with MAOIs,
+which should be discontinued at least 2 weeks before initiating treatment with
+carbamazepine. Grapefruit juice inhibits the hepatic metabolism of
+carbamazepine. When carbamazepine and valproate are used in combination,
+the dosage of carbamazepine should be decreased because valproate displaces
+carbamazepine binding on proteins, and the dosage of valproate may need to
+be increased.
+Table 21-39
+Carbamazepine: Drug Interactions
+Effect of Carbamazepine on Plasma Agents that May Affect
+Concentrations of Concomitant
+Carbamazepine Plasma
+Agents
+Concentrations
+Carbamazepine may decrease drug Agents that may increase
+plasma concentration of:
+carbamazepine plasma
+Acetaminophen
+concentration:
+Alprazolam
+Allopurinol
+Amitriptyline
+Cimetidine
+Bupropion
+Clarithromycin
+Clomipramine
+Danazol
+Clonazepam
+Diltiazem
+Clozapine
+Erythromycin
+
+
+
+
+<<<PAGE 2236>>>
+
+human pregnancy may expose the fetus to significant risk.
+The most common side effects include drowsiness, loss of appetite,
+dizziness, headache, nausea, and agitation or irritability. Zonisamide has also
+been associated with hypohidrosis. There is a 2 to 4 percent risk of kidney
+stones. Other drugs known to provoke stones, such as topiramate or
+acetazolamide (Diamox), should not be combined with zonisamide. Severe,
+but rare, adverse drug reactions include Stevens–Johnson syndrome, toxic
+epidermal necrolysis, and metabolic acidosis.
+Typical dosing for weight loss has not been established. Generally,
+zonisamide is started at 100 mg at night for 2 weeks, and increased by 100
+mg daily every 2 weeks to a target dose of 200 to 600 mg/day in one or two
+daily doses.
+Metformin (Glucophage). Metformin is a medication for type 2 diabetes
+mellitus. Its actions include reduction of hepatic glucose production, reduced
+intestinal glucose absorption, increased insulin sensitivity, and improved
+peripheral glucose uptake and regulation. It does not increase insulin
+secretion.
+When used as an adjunct to SGAs, it has consistently been shown to
+reduce body weight and waist circumference. Metformin probably has the
+best evidence of therapeutic benefit for the treatment of antipsychotic druginduced metabolic syndrome. In several studies, metformin has been shown
+to attenuate or reverse some of the weight gain induced by antipsychotics.
+The degree of effect on body weight compares favorably with the effect of
+other treatment options that are approved for weight reduction. The weight
+loss effect of adjunctive metformin appears to be stronger in drug-naive
+patients treated with SGA medications. This effect is most evident for those
+being treated with clozapine (Clozaril) and olanzapine (Zyprexa). Based on
+the existing evidence, if weight gain occurs after SGA initiation, despite
+lifestyle intervention, metformin should be considered.
+Common side effects include nausea, vomiting, abdominal pain, and loss
+of appetite. GI side effects can be mitigated by dividing the dose, taking the
+drug after meals, or using delayed-release formulations.
+One serious treatment risk is that of lactic acidosis. This side effect is more
+common in those with reduced renal function than other patients. Although
+very rare (approximately 9 in 100,000 persons/yr), it has a 50 percent
+
+
+
+
+<<<PAGE 3137>>>
+
+Benzodiazepines Increased beta activity
+Clozapine
+(Clozaril)
+
+Nonspecific change
+
+Olanzapine
+(Zyprexa)
+
+Nonspecific change
+
+Risperidone
+(Risperdal)
+
+Nonspecific change
+
+Quetiapine
+(Seroquel)
+
+No significant changes
+
+Aripiprazole
+(Abilify)
+
+No significant changes
+
+Lithium
+
+Slowing or paroxysmal activity
+
+Alcohol
+
+Decreased alpha activity; increased theta activity
+
+Opioids
+
+Decreased alpha activity; increased voltage of
+theta and delta waves; in overdose, slow waves
+
+Barbiturates
+
+Increased beta activity; in withdrawal states,
+generalized paroxysmal activity and spike
+discharges
+
+Marijuana
+
+Increased alpha activity in frontal area of brain;
+overall slow alpha activity
+
+Cocaine
+
+Similar to marijuana
+
+Inhalants
+
+Diffuse slowing of delta and theta waves
+
+Nicotine
+
+Increased alpha activity; in withdrawal, marked
+decrease in alpha activity
+
+Caffeine
+
+In withdrawal, increase in amplitude or voltage of
+theta activity
+
+Topographic Quantitative Electroencephalography (QEEG)
+
+
+
+
+<<<PAGE 3523>>>
+
+Clozapine, risperidone,
+and olanzapine in the
+treatment of
+schizophrenia
+
+United States,
+Canada,
+Europe,
+England,
+South
+America,
+South Africa
+
+Kane J, Honigfield G, Singer J, Melt
+Clozaril Collaborative Study Gro
+treatment-resistant schizophreni
+comparison with chlorpromazine
+Psychiatry. 1988;45:789; Kane J
+Clozapine benefits and risks.
+1994;20:23; Ayd FJ Jr. Risperido
+unique antipsychotic. Int Drug Th
+1994;29:5; Marder SR, Meibach
+the treatment of schizophrenia.
+1994;151:825; Kane J. Risperido
+Psychiatry. 1994;151:802; Beasl
+Tran P, Satterlee W, Sanger T. O
+placebo and haloperidol acute ph
+North American double-blind ola
+Neuropsychopharmacology
+G, Kuntz A. Review of recent clin
+olanzapine. Br J Psychiatry
+Czobor P, Sheitman B, Lindenm
+Clozapine, olanzapine, risperido
+in the treatment of patients with c
+schizophrenia and schizoaffectiv
+
+

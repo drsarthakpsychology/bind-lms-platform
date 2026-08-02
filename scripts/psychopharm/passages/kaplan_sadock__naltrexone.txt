@@ -1,0 +1,859 @@
+<<<PAGE 415>>>
+
+during clozapine use. Its use is generally limited to treatment-resistant
+psychotic patients.
+Ziprasidone has receptor-blocking properties at the 5-HT2A and D2
+receptor sites and carries little risk of extrapyramidal and antihistaminic
+effects. No guidelines exist for its use in autistic children with aggressive and
+self-injurious behaviors; clinicians sometimes use it to treat these behaviors
+in treatment-resistant children. In studies of its use in adults with
+schizophrenia, dose ranges of 40 to 160 mg were effective. Adverse effects
+include sedation, dizziness, and lightheadedness. Before using this
+medication, the clinician should check an electrocardiogram.
+Lithium is efficacious in children with aggression without autism spectrum
+disorder, and it is used clinically in the treatment of aggressive or selfinjurious behaviors when antipsychotic medications are not helpful.
+Agents Used for Behavioral Impairment in Autism Spectrum
+Disorder without Evidence of Efficacy. A double-blind study
+investigated the efficacy of amantadine, which blocks N-methyl-D-aspartate
+(NMDA) receptors, in the treatment of behavioral disturbance, such as
+irritability, aggression, and hyperactivity, in children with autism. Some
+researchers have suggested that abnormalities of the glutamatergic system
+may contribute to the emergence of autism spectrum disorders. High
+glutamate levels occur in children with the formerly labeled Rett syndrome.
+In the amantadine study, 47 percent of children on amantadine were
+“improved” per their parents, and 37 percent of children on placebo were
+rated “improved” by parents in irritability and hyperactivity, although this
+difference was not statistically significant. Investigators rated the children on
+amantadine “significantly improved” for hyperactivity. A double-blind,
+placebo-controlled study of the efficacy of the anticonvulsant lamotrigine on
+hyperactivity in children with autism showed high rates of placebo
+improvement in ratings of hyperactivity, which were similar to response on
+the medication.
+Clomipramine is sometimes used but lacks RCTs to provide evidence of
+positive results. Fenfluramine, which reduces blood serotonin levels, has also
+been used but appears to be ineffective. Improvement does not seem to be
+associated with a reduction in blood serotonin levels. Naltrexone, an opioid
+
+
+
+
+<<<PAGE 914>>>
+
+Interventions) demonstrated that naltrexone improves clinical outcomes, and
+a Cochrane review of naltrexone concluded that naltrexone was effective in
+reducing heavy drinking days. The typical dose is 50 mg/day, and side effects
+include mild GI upset and lethargy.
+The second medication, acamprosate, antagonizes neuronal overactivity
+related to the excitatory neurotransmitter glutamate, at least in part, by acting
+as an antagonist to N-methyl-D-aspartate (NMDA) receptors. Acamprosate
+may diminish mild anxiety, mood swings, and other sleep difficulties
+associated with the protracted withdrawal syndrome observed after the first 4
+to 5 days of abstinence. The typical dose is about 2,000 mg divided into three
+doses per day and is associated with relatively mild side effects of GI
+problems such as diarrhea.
+A third possible drug of interest is the alcohol-sensitizing agent disulfiram.
+Disulfiram is given in daily doses of 250 mg before discharging the patient
+from the intensive first phase of outpatient rehabilitation or inpatient care.
+The goal is to place the patient in a condition in which drinking alcohol
+precipitates an uncomfortable physical reaction, including nausea, vomiting,
+and a burning sensation in the face and stomach. Few data support
+disulfiram’s effectiveness, most likely because patients stop it when they
+resume drinking. Many clinicians have stopped routinely prescribing the
+agent, partly in recognition of the dangers associated with the drug itself:
+mood swings, rare instances of psychosis, the possibility of increased
+peripheral neuropathies, the relatively rare occurrence of other significant
+neuropathies, and potentially fatal hepatitis. Moreover, we should not give
+disulfiram to patients with preexisting heart disease, cerebral thrombosis,
+diabetes, and some other conditions, because an alcohol reaction to the
+disulfiram could be fatal.
+Table 4-15 gives a summary of medications used for alcohol dependence.
+Two other medications, while not yet approved for the treatment of alcohol
+use disorders, are worth brief mention. Several studies using the
+anticonvulsant topiramate have reported improvement in drinking patterns.
+Additionally, some data suggest that the 5-HT3 ondansetron might be
+beneficial in alcohol use disorder treatment. No evidence exists that
+antidepressant medications, such as selective serotonin reuptake inhibitors
+(SSRIs), lithium, or antipsychotic medications, are significantly effective in
+
+
+
+
+<<<PAGE 916>>>
+
+Medications for Treating Alcohol Dependence
+
+Action
+
+Naltrexone
+
+Acamprosate
+
+Disulfiram
+
+Blocks opioid
+receptors,
+resulting in
+reduced
+craving and
+reduced
+reward in
+response to
+drinking
+
+Not well
+Inhibits
+understood.
+intermediate
+Likely an NMDA
+metabolism of
+receptor
+alcohol,
+antagonist and
+causing a
+positive allosteric
+buildup of
+modulator of
+acetaldehyde
+GABAa receptors
+and a reaction
+of flushing,
+sweating,
+nausea, and
+tachycardia if a
+patient drinks
+alcohol
+
+Contraindications Currently using Severe renal
+Concomitant use
+opioids or in
+impairment (CrCl
+of alcohol or
+acute opioid
+≤30 mL/min)
+alcoholwithdrawal;
+containing
+anticipated
+preparations or
+need for
+metronidazole;
+opioid
+coronary artery
+analgesics;
+disease; severe
+acute
+myocardial
+hepatitis or
+disease
+liver failure
+Precautions
+
+Other hepatic
+disease;
+renal
+impairment;
+history of
+
+Moderate renal
+High impulsivity—
+impairment
+likely to drink
+(dose
+while using it;
+adjustment for
+psychoses
+CrCl between 30
+(current or
+
+
+
+
+<<<PAGE 918>>>
+
+dizziness;
+headache;
+anxiety;
+fatigue
+
+headache; back
+pain; infection;
+flu syndrome;
+chills;
+somnolence;
+decreased libido;
+amnesia;
+confusion
+
+Examples of drug Opioid
+No clinically
+interactions
+analgesics
+relevant
+(blocks
+interactions
+action);
+known
+yohimbine
+(use with
+naltrexone
+increases
+negative drug
+effects)
+
+Usual adult
+dosage
+
+Amitriptyline;
+anticoagulants
+such as
+warfarin;
+diazepam;
+isoniazid;
+metronidazole;
+phenytoin;
+theophylline;
+warfarin; any
+nonprescription
+drug-containing
+alcohol
+
+Oral dose: 50
+Oral dose: 666 mg Oral dose: 250
+mg daily
+(two 333-mg
+mg daily (range
+before
+tablets) three
+125–500 mg)
+prescribing:
+times daily or, for
+before
+evaluate for
+patients with
+prescribing:
+possible
+moderate renal
+warn that the
+current opioid
+impairment (CrCl
+patient should
+use; consider
+30–50 mL/min),
+not take
+a urine
+reduce to 333
+disulfiram for at
+toxicology
+mg (one tablet)
+least 12 hr after
+screen for
+three times daily
+drinking and
+opioids,
+before
+that a
+including
+prescribing:
+disulfiramsynthetic
+establish
+alcohol reaction
+
+
+
+
+<<<PAGE 948>>>
+
+Opioid antagonists (e.g., naloxone, nalmefene, and naltrexone) bind to the
+receptor but do not exert any activity. These medications function as
+antagonists—they compete for binding at the receptor with agonists and
+partial agonists, and if the dose of the antagonist is high enough, they may
+displace the agonist from the receptor and prevent the agonist from binding to
+the receptor and exerting any effect. Naloxone reverses an overdose; as it is a
+short-acting agent, it can be dosed very accurately without the risk of an
+unnecessarily prolonged effect. Naltrexone is a long-acting agent used
+following detoxification as a strategy to prevent recurrent physiologic
+dependence and relapse.
+Overdose Treatment
+The first task in overdose treatment is to ensure an adequate airway.
+Tracheopharyngeal secretions should be aspirated, and it may be necessary to
+insert an airway. The patient should be ventilated mechanically until the
+clinicians can give naloxone. Naloxone is administered intravenously at a
+slow rate—initially about 0.8 mg per 70 kg of body weight. Signs of
+improvement (increased respiratory rate and pupillary dilation) should occur
+promptly. In patients physiologically dependent on opioids, too much
+naloxone may produce signs of withdrawal. If no response to the initial
+dosage occurs, clinicians can repeat the naloxone administration after
+intervals of a few minutes. If there is no response after 4 to 5 mg, some think
+that nonopioid substances may be contributing to the CNS depression. The
+duration of action of naloxone is short compared with that of many opioids,
+such as methadone and levomethadyl acetate, and repeated administration
+may be required to prevent recurrence of opioid toxicity.
+Table 4-22
+Substance
+and
+Non–Substance-Related
+Disorders in Opioid Users
+
+Psychiatric
+
+
+
+
+<<<PAGE 958>>>
+
+The endogenous opioids also have significant interactions with other
+neuronal systems, such as the dopaminergic and noradrenergic
+neurotransmitter systems. Several types of data indicate that the VTA
+dopaminergic neurons (which project to the cerebral cortex and the limbic
+system) mediate the rewarding properties of opioids.
+Heroin, the most commonly abused opioid, is more lipid-soluble than
+morphine. It crosses the blood–brain barrier faster and has a more rapid and
+pleasurable onset than morphine. First introduced as a treatment for morphine
+addiction, heroin is more dependence-producing than morphine. Codeine,
+which occurs naturally as about 0.5 percent of the opiate alkaloids in opium,
+is absorbed quickly through the GI tract and is subsequently transformed into
+morphine in the body. Results of at least one study using positron emission
+tomography (PET) have suggested that one effect of all opioids is decreased
+cerebral blood flow (CBF) in selected brain regions in persons with opioid
+dependence. There is compelling evidence indicating that the endorphins are
+involved in other addictions, such as alcoholism, cocaine, and cannabinoid
+addiction. The opioid antagonist, naltrexone, has shown value in mitigating
+alcohol addiction.
+Tolerance and Dependence. Tolerance to all actions of opioid drugs
+does not develop uniformly. Tolerance to some actions of opioids can be so
+high that a 100-fold increase in dose is required to produce the original effect.
+For example, terminally ill cancer patients may need 200 to 300 mg a day of
+morphine, whereas a dose of 60 mg can easily be fatal to an opioid-naive
+person. The symptoms of opioid withdrawal do not appear unless a person
+has been using opioids for a long time or when cessation is particularly
+abrupt, as occurs when a person takes an opioid antagonist. The long-term
+use of opioids results in changes in the number and sensitivity of opioid
+receptors, which mediate at least some of the effects of tolerance and
+withdrawal. Although long-term use is associated with increased sensitivity
+of dopaminergic, cholinergic, and serotonergic neurons, the effect of opioids
+on the noradrenergic neurons is probably the primary mediator of the
+symptoms of opioid withdrawal. Short-term use of opioids appears to
+decrease the activity of the noradrenergic neurons in the locus ceruleus; longterm use activates a compensatory homeostatic mechanism within the
+neurons, and opioid withdrawal results in rebound hyperactivity. This
+
+
+
+
+<<<PAGE 1436>>>
+
+Electroconvulsive therapy (for refractory depression with persistent
+melancholic features across all dissociative identity disorder
+alters)
+Mood stabilizers (more useful for PTSD and anxiety than mood
+swings)
+Divalproex
+Lamotrigine
+Oral or intramuscular benzodiazepines
+Medications for sleep problems
+Low-dose trazodone
+Low-dose mirtazapine
+Low-dose tricyclic antidepressants
+Low-dose neuroleptics
+Benzodiazepines (often less helpful for sleep problems in this
+population)
+Zolpidem
+Anticholinergic agents (diphenhydramine, hydroxyzine)
+Medications for self-injury, addictions
+Naltrexone
+Brainwashing
+There are no empirical treatment studies of individuals subjected to extreme
+coercion applied in the service of indoctrination into a belief system or an
+attempt at identity alteration. The basic principles of phased trauma treatment
+would seem to provide an organizing framework for their care, as for victims
+of other forms of torture. Family and social interventions may be necessary
+because of the duress and disruption accompanying the precipitating events
+and the social effects of the profound changes in the patient’s attitudes,
+behaviors, and beliefs, as well as sequestration from everyday events during
+the period of captivity.
+Ganser Syndrome
+No systematic treatment studies have been conducted, given the rarity of this
+condition. In most case reports, the patient has been hospitalized and
+provided with a protective and supportive environment. In some instances,
+
+
+
+
+<<<PAGE 2167>>>
+
+long-term detoxification (up to 180 days), and maintenance (treatment
+beyond 180 days) of opioid-dependent individuals. For these purposes, it is
+only available through designated clinics called methadone maintenance
+treatment programs (MMTPs) and in hospitals and prisons. Methadone is a
+schedule II drug, which means that specific federal laws and regulations
+tightly govern its administration.
+Enrollment in a methadone program reduces the risk of death by 70
+percent; reduces illicit use of opioids and other substances of abuse; reduces
+criminal activity; reduces the risk of infectious diseases of all types, most
+importantly HIV and hepatitis B and C infection; and in pregnant women,
+reduces the risk of fetal and neonatal morbidity and mortality. The use of
+methadone maintenance frequently requires lifelong treatment.
+Some opioid-dependence treatment programs use a stepwise detoxification
+protocol in which a person addicted to heroin switches first to the potent
+agonist methadone; then to the weaker agonist buprenorphine; and finally to
+maintenance on an opioid receptor antagonist, such as naltrexone (ReVia).
+This approach minimizes the appearance of opioid withdrawal effects, which,
+if they occur, are mitigated with clonidine (Catapres). However, compliance
+with opioid receptor antagonist treatment is low outside of settings using
+intensive cognitive-behavioral techniques. In contrast, noncompliance with
+methadone maintenance precipitates opioid withdrawal symptoms, which
+serve to reinforce the use of methadone and make cognitive-behavioral
+therapy less than essential. Thus, some well-motivated, socially integrated
+former heroin addicts can use methadone for years without participation in a
+psychosocial support program.
+Data pooled from many reports indicate that methadone is more effective
+when taken at dosages above 60 mg a day. The analgesic effects of
+methadone are sometimes used in the management of chronic pain when less
+addictive agents are ineffective.
+PREGNANCY. Methadone maintenance, combined with effective psychosocial
+
+services and regular obstetric monitoring, significantly improves obstetric
+and neonatal outcomes for women addicted to heroin. Enrollment of a heroinaddicted pregnant woman in such a maintenance program reduces the risk of
+malnutrition, infection, preterm labor, spontaneous abortion, preeclampsia,
+eclampsia, abruptio placenta, and septic thrombophlebitis.
+
+
+
+
+<<<PAGE 2175>>>
+
+Naltrexone (Revia, Depade) and naloxone (Narcan) are competitive opioid
+antagonists. They bind to opioid receptors without causing their activation.
+Because these drugs induce opioid withdrawal effects in people using full
+opioid agonists, these drugs are classified as opioid antagonists.
+Naltrexone is the most widely used of these drugs. It has a relatively long
+half-life, is orally effective, is not associated with dysphoria, and is
+administered once daily. Naloxone, which predated naltrexone to treat
+narcotic overdose, became less widely used for preventing relapse to opiate
+use in detoxified opiate addicts. Since its introduction, naltrexone has been
+tried for the treatment of a wide range of psychiatric disorders, including,
+among others, eating disorders, autism, self-injurious behavior, cocaine
+dependence, gambling, and alcoholism. Naltrexone was approved for the
+treatment of alcohol dependence in 1994. Several generic formulations are
+also available. An extended-release, once-a-month injectable suspension
+(Vivitrol) was also approved in 2006. Nalmefene (Revex) is indicated for the
+complete or partial reversal of opioid drug effects and in the management of
+known or suspected opioid overdose. An oral formulation of nalmefene is
+available in some countries but not in the United States. Nalmefene (Revex,
+Selincro) is an opioid receptor antagonist that is sometimes used in the
+management of alcohol dependence.
+Pharmacologic Actions
+The GI tract rapidly absorbs oral opioid receptor antagonists. However,
+because of first-pass hepatic metabolism, only 60 percent of a dose of
+naltrexone and 40 to 50 percent of a dose of nalmefene reach the systemic
+circulation unchanged. Peak concentrations of naltrexone and its active
+metabolite, 6-β-naltrexol, are achieved within 1 hour of ingestion. The halflife of naltrexone is 1 to 3 hours, and the half-life of 6-β-naltrexol is 13 hours.
+Peak concentrations of nalmefene are achieved in about 1 to 2 hours, and the
+half-life is 8 to 10 hours. Clinically, a single dose of naltrexone effectively
+blocks the rewarding effects of opioids for 72 hours. Traces of 6-β-naltrexol
+may linger for up to 125 hours after a single dose.
+Naltrexone and nalmefene are competitive antagonists of opioid receptors.
+Understanding the pharmacology of opioid receptors can explain the
+difference in adverse effects caused by naltrexone and nalmefene. Opioid
+
+
+
+
+<<<PAGE 2176>>>
+
+receptors in the body are typed pharmacologically as µ, κ, or δ. Whereas
+activation of the κ- and δ-receptors is thought to reinforce opioid and alcohol
+consumption centrally, activation of µ-receptors is more closely associated
+with central and peripheral antiemetic effects. Because naltrexone is a
+relatively weak antagonist of κ- and δ-receptors and a potent µ-receptor
+antagonist, dosages of naltrexone that effectively reduce opioid and alcohol
+consumption also strongly block µ-receptors and, therefore, may cause
+nausea. Nalmefene, in contrast, is an equally potent antagonist of all three
+opioid receptor types, and dosages of nalmefene that effectively reduce
+opioid and alcohol consumption have no significantly increased effect on µreceptors. Thus, nalmefene is associated clinically with few GI adverse
+effects.
+Naloxone has the highest affinity for the µ-receptor but is a competitive
+antagonist at the µ-, κ-, and δ-receptors.
+Whereas the effects of opioid receptor antagonists on opioid use are easily
+understood in terms of competitive inhibition of opioid receptors, the effects
+of opioid receptor antagonists on alcohol dependence are less
+straightforward. That likely relates to the fact that the desire for and the
+effects of alcohol consumption appear to be regulated by several
+neurotransmitter systems, both opioid and nonopioid.
+Therapeutic Indications
+The combination of a cognitive-behavioral program plus the use of opioid
+receptor antagonists is more successful than either the cognitive-behavioral
+program or the use of opioid receptor antagonists alone. Naloxone is used as
+a screening test to ensure that the patient is opioid-free before the induction
+of therapy with naltrexone (see “Naloxone Challenge Test” in Table 21-53).
+Table 21-53
+Naloxone (Narcan) Challenge Test
+The naloxone challenge test should not be performed in a patient
+showing clinical signs or symptoms of opioid withdrawal or in a
+patient whose urine contains opioids. The naloxone challenge test
+may be administered by either the intravenous (IV) or the
+
+
+
+
+<<<PAGE 2177>>>
+
+subcutaneous route.
+IV challenge: After appropriate screening of the patient, 0.8 mg of
+naloxone should be drawn into a sterile syringe. If the IV route of
+administration is selected, 0.2 mg of naloxone should be injected,
+and while the needle is still in the patient’s vein, the patient should
+be observed for 30 s for evidence of withdrawal signs or
+symptoms. If there is no evidence of withdrawal, the remaining 0.6
+mg of naloxone should be injected and the patient observed for an
+additional 20 min for signs and symptoms of withdrawal.
+Subcutaneous challenge: If the subcutaneous route is selected, 0.8
+mg should be administered subcutaneously and the patient
+observed for signs and symptoms of withdrawal for 20 min.
+Conditions and technique for observation of patient: During the
+appropriate period of observation, the patient’s vital signs should
+be monitored, and the patient should be monitored for signs of
+withdrawal. It is also important to question the patient carefully.
+The signs and symptoms of opioid withdrawal include, but are not
+limited to, the following:
+Withdrawal signs: Stuffiness or running nose, tearing, yawning,
+sweating, tremor, vomiting, or piloerection
+Withdrawal symptoms: Feeling of temperature change, joint or
+bone and muscle pain, abdominal cramps, and formication
+(feeling of bugs crawling under skin)
+Interpretation of the challenge: Warning—the elicitation of the
+enumerated signs or symptoms indicates a potential risk for the
+subject, and naltrexone should not be administered. If no signs or
+symptoms of withdrawal are observed, elicited, or reported,
+naltrexone may be administered. If there is any doubt in the
+observer’s mind that the patient is not in an opioid-free state or is
+in continuing withdrawal, naltrexone should be withheld for 24 hr
+and the challenge repeated.
+Opioid Dependence. Patients in detoxification programs are usually
+weaned from potent opioid agonists such as heroin over days to weeks,
+during which emergent adrenergic withdrawal effects are treated as needed
+
+
+
+
+<<<PAGE 2178>>>
+
+with clonidine (Catapres). A serial protocol is sometimes used in which
+potent agonists are gradually replaced by weaker agonists followed by mixed
+agonist–antagonists and then finally by pure antagonists. For example, an
+abuser of the potent agonist heroin would switch first to the weaker agonist
+methadone (Dolophine), then to the partial agonist buprenorphine (Buprenex)
+or levomethadyl acetate (ORLAAM)—commonly called LAAM—and
+finally, after a 7- to 10-day washout period, to a pure antagonist, such as
+naltrexone or nalmefene. However, even with gradual detoxification, some
+persons continue to experience mild adverse effects or opioid withdrawal
+symptoms for the first several weeks of treatment with naltrexone.
+As the opioid receptor agonist potency diminishes, so do the adverse
+consequences of discontinuing the drug. Thus, because there are no
+pharmacologic barriers to discontinuation of pure opioid receptor antagonists,
+the social environment and frequent cognitive-behavioral intervention
+become significant factors supporting continued opioid abstinence. Because
+of poorly tolerated adverse symptoms, most persons not simultaneously
+enrolled in a cognitive-behavioral program stop taking opioid receptor
+antagonists within 3 months. Compliance with the administration of an opioid
+receptor antagonist regimen can also be increased with participation in a
+well-conceived voucher program.
+Issues of medication compliance should be a central focus of treatment. If
+a person with a history of opioid addiction stops taking a pure opioid receptor
+antagonist, the person’s risk of relapse into opioid abuse is exceedingly high,
+because the reintroduction of a potent opioid agonist would yield a very
+rewarding subjective “high.” In contrast, compliant persons do not develop
+tolerance to the therapeutic benefits of naltrexone even if it is administered
+continuously for 1 year or longer. Individuals may undergo several relapses
+and remissions before achieving long-term abstinence.
+Persons taking opioid receptor antagonists should also be warned that
+sufficiently high dosages of opioid agonists can overcome the receptor
+antagonism of naltrexone or nalmefene, which may lead to hazardous and
+unpredictable levels of receptor activation (see “Precautions and Adverse
+Reactions”).
+Rapid Detoxification. The recommended period of opioid abstinence
+before starting opioid receptor antagonists is 7 to 10 days. However, to avoid
+
+
+
+
+<<<PAGE 2179>>>
+
+this, rapid detoxification protocols have been developed. Continuous
+administration of adjunct clonidine—to reduce the adrenergic withdrawal
+symptoms—and adjunct benzodiazepines, such as oxazepam (Serax)—to
+reduce muscle spasms and insomnia—can permit the use of oral opioid
+receptor antagonists on the first day of opioid cessation. Detoxification can
+thus be completed within 48 to 72 hours, at which point opioid receptor
+antagonist maintenance is initiated. Moderately severe withdrawal symptoms
+may be experienced on the first day, but they taper off rapidly after that.
+Because of the potential hypotensive effects of clonidine, the BP of
+persons undergoing rapid detoxification must be closely monitored for the
+first 8 hours. Outpatient rapid detoxification settings must therefore be
+adequately prepared to administer emergency care.
+The main advantage of rapid detoxification is that the transition from
+opioid abuse to maintenance treatment occurs over just 2 or 3 days. The
+completion of detoxification in as little time as possible minimizes the risk
+that the person will relapse into opioid abuse during the detoxification
+protocol.
+Alcohol Use Disorder. Opioid receptor antagonists are also used as
+adjuncts to cognitive-behavioral programs for the treatment of alcohol use
+disorder. Opioid receptor antagonists reduce alcohol craving and alcohol
+consumption, and they ameliorate the severity of relapses. Concomitant
+opioid receptor antagonist treatment added to an effective cognitivebehavioral program may halve the risk of relapse into heavy alcohol
+consumption.
+The newer agent, nalmefene, has several potential pharmacologic and
+clinical advantages over its predecessor, naltrexone, for the treatment of
+alcohol use disorder. Whereas naltrexone may cause reversible transaminase
+elevations in persons who take dosages of 300 mg a day (which is six times
+the recommended dosage for treatment of alcohol and opioid dependence [50
+mg a day]), nalmefene has not been associated with any hepatotoxicity.
+Clinically effective dosages of naltrexone are discontinued by 10 to 15
+percent of persons because of adverse effects, most commonly nausea. In
+contrast, discontinuation of nalmefene because of an adverse event is rare at
+the clinically effective dosage of 20 mg a day and in the range of 10 percent
+at excessive dosages—that is, 80 mg a day. Because of its pharmacokinetic
+
+
+
+
+<<<PAGE 2180>>>
+
+profile, a given dosage of nalmefene may also produce a more sustained
+opioid antagonist effect than does naltrexone.
+The efficacy of opioid receptor antagonists in reducing alcohol craving
+may be augmented with an SSRI, although data from large trials are needed
+to assess this potential synergistic effect more fully.
+Precautions and Adverse Reactions
+Because opioid receptor antagonists are used for sustaining a drug-free state
+after opioid detoxification, great care must be taken to ensure that an
+adequate washout period elapses. This detox requires at least 5 days for a
+short-acting opioid such as heroin and at least 10 days for longer-acting
+opioids such as methadone—after the last dose of opioids and before the first
+dose of an opioid receptor antagonist is taken. Self-report and urine
+toxicology screens should determine the opioid-free state. If any question
+persists of whether opioids are in the body despite a negative urine screen
+result, then a naloxone challenge test should be performed. Naloxone
+challenge is used because its opioid antagonism lasts less than 1 hour, but
+those of naltrexone and nalmefene may persist for more than 24 hours. Thus,
+any withdrawal effects elicited by naloxone will be relatively short-lived (see
+“Dosage and Clinical Guidelines”). Symptoms of acute opioid withdrawal
+include drug craving, a feeling of temperature change, musculoskeletal pain,
+and GI distress. Signs of opioid withdrawal include confusion, drowsiness,
+vomiting, and diarrhea. Naltrexone and nalmefene should not be taken if
+naloxone infusion causes any signs of opioid withdrawal except as part of a
+supervised rapid detoxification protocol.
+A set of adverse effects resembling a vestigial withdrawal syndrome tends
+to affect up to 10 percent of persons who take opioid receptor antagonists. Up
+to 15 percent of persons taking naltrexone may experience abdominal pain,
+cramps, nausea, and vomiting, which may be limited by transiently halving
+the dosage or altering the time of administration. Adverse CNS effects of
+naltrexone, experienced by up to 10 percent of persons, include headache,
+low energy, insomnia, anxiety, and nervousness. Joint and muscle pains may
+occur in up to 10 percent of persons taking naltrexone, as may rash.
+Naltrexone may cause dosage-related hepatic toxicity at dosages well
+above 50 mg a day; 20 percent of persons taking 300 mg a day of naltrexone
+
+
+
+
+<<<PAGE 2181>>>
+
+may experience serum aminotransferase concentrations 3 to 19 times the
+upper limit of normal. The hepatocellular injury of naltrexone appears to be a
+dose-related toxic effect rather than an idiosyncratic reaction. At the lowest
+dosages of naltrexone required for significant opioid antagonism,
+hepatocellular injury is not typically observed. However, naltrexone dosages
+as low as 50 mg a day may be hepatotoxic in persons with underlying liver
+disease, such as persons with cirrhosis of the liver caused by chronic alcohol
+abuse. Serum aminotransferase concentrations should be monitored monthly
+for the first 6 months of naltrexone therapy and after that based on clinical
+suspicion. Hepatic enzyme concentrations usually return to normal after
+discontinuation of naltrexone therapy.
+If analgesia is required while a dose of an opioid receptor antagonist is
+pharmacologically active, opioid agonists should be avoided in favor of
+benzodiazepines or other nonopioid analgesics. Persons taking opioid
+receptor antagonists should be instructed that low dosages of opioids will not
+affect them. However, larger dosages could overcome the receptor blockade
+and suddenly produce symptoms of profound opioid overdosage, with
+sedation possibly progressing to coma or death. Use of opioid receptor
+antagonists is contraindicated in persons who are taking opioid agonists,
+small amounts of which may be present in over-the-counter antiemetic and
+antitussive preparations; in persons with acute hepatitis or hepatic failure; and
+in persons who are hypersensitive to the drugs.
+Because naltrexone is transported across the placenta, opioid receptor
+antagonists should only be taken by pregnant women if a compelling need
+outweighs the potential risks to the fetus. It is not known whether opioid
+receptor antagonists are distributed into breast milk.
+Opioid receptor antagonists are relatively safe drugs, and the ingestion of
+high doses of opioid receptor antagonists should be treated with supportive
+measures combined with efforts to decrease GI absorption.
+Because buprenorphine has a high affinity and slow displacement from the
+opioid receptors, nalmefene may not wholly reverse buprenorphine-induced
+respiratory depression.
+Drug Interactions
+Many drug interactions involving opioid receptor antagonists have been
+
+
+
+
+<<<PAGE 2182>>>
+
+discussed earlier, including those with opioid agonists associated with drug
+abuse as well as those involving antiemetics and antitussives. Because of its
+extensive hepatic metabolism, naltrexone may affect or be affected by other
+drugs that influence hepatic enzyme levels. However, the clinical importance
+of these potential interactions is not known.
+One potentially hepatotoxic drug that has been used in some cases with
+opioid receptor antagonists is disulfiram (Antabuse). Although no adverse
+effects were observed, frequent laboratory monitoring is indicated when such
+combination therapy is contemplated. Opioid receptor antagonists have been
+reported to potentiate the sedation associated with the use of thioridazine
+(Mellaril), an interaction that probably applies equally to all low-potency
+DRAs.
+Intravenous nalmefene has been administered after benzodiazepines,
+inhalational anesthetics, muscle relaxants, and muscle relaxant antagonists
+were administered in conjunction with general anesthetics without any
+adverse reactions. Care should be taken when using flumazenil (Romazicon)
+and nalmefene together because both of these agents have been shown to
+induce seizures in preclinical studies.
+Laboratory Interferences
+The potential for false-positive urine for opiates using less specific urine
+screens such as enzyme-multiplied immunoassay technique (EMIT) may
+exist, given that naltrexone and nalmefene are derivatives of oxymorphone.
+Naltrexone does not interefere with thin-layer, gas-liquid, and high-pressure
+liquid chromatographic methods used for the detection of opiates in the urine.
+Dosage and Clinical Guidelines
+We should take several steps to ensure that the person is opioid-free. These
+steps are meant to avoid the possibility of precipitating an acute opioid
+withdrawal syndrome. Within a supervised detoxification setting, at least 5
+days should elapse after the last dose of short-acting opioids, such as heroin,
+hydromorphone (Dilaudid), meperidine (Demerol), or morphine, and at least
+10 days should elapse after the last dose of longer-acting opioids, such as
+methadone, before opioid antagonists are initiated. Some rapid detoxification
+protocols use shorter abstinence periods, however these require special
+
+
+
+
+<<<PAGE 2184>>>
+
+Rapid Detoxification. Rapid detoxification has been standardized using
+naltrexone, although nalmefene would be expected to be equally effective
+with fewer adverse effects. In rapid detoxification protocols, the addicted
+person stops opioid use abruptly and begins the first opioid-free day by
+taking clonidine 0.2 mg orally every 2 hours for nine doses, to a maximum
+dose of 1.8 mg, during which time the BP is monitored every 30 to 60
+minutes for the first 8 hours. Naltrexone 12.5 mg is administered 1 to 3 hours
+after the first dose of clonidine. To reduce muscle cramps and later insomnia,
+a short-acting benzodiazepine, such as oxazepam 30 to 60 mg, is
+administered simultaneously with the first dose of clonidine, and half of the
+initial dose is readministered every 4 to 6 hours as needed. The maximum
+daily dosage of oxazepam should not exceed 180 mg. The person undergoing
+rapid detoxification should be accompanied home by a reliable escort. On the
+second day, similar doses of clonidine and the benzodiazepine are
+administered but with a single dose of naltrexone 25 mg taken in the
+morning. Relatively asymptomatic persons may return home after 3 to 4
+hours. Administration of the daily maintenance dose of 50 mg of naltrexone
+is begun on the third day, and the dosages of clonidine and the
+benzodiazepine are gradually tapered off over 5 to 10 days.
+
+DISULFIRAM AND ACAMPROSATE
+Disulfiram (Antabuse) and acamprosate (Campral) are drugs used to treat
+alcohol use disorder. Disulfiram has suffered from a reputation as a
+dangerous medication only suitable for highly motivated and strictly
+supervised drinkers because of the severe physical reactions the drug causes
+after drinking. Experience has shown, however, that at recommended doses,
+it is an acceptable and safe medication for dependent drinkers seeking to
+sustain abstinence. The properties that constitute disulfiram’s main
+therapeutic effect (i.e., the ability to produce unpleasant symptoms after
+alcohol intake, also known as disulfiram–alcohol reaction) have created that
+perception of dangerousness.
+In the most severe cases, when disulfiram is combined with alcohol, severe
+clinical conditions can occur. These include respiratory depression,
+cardiovascular collapse, acute heart failure, convulsions, loss of
+consciousness, and death in rare cases. These potential complications, as well
+
+
+
+
+<<<PAGE 2284>>>
+
+Lippincott Williams & Wilkins; 2009:3004.
+Hser YI, Hoffman V, Grella CE, Anglin MD. A 33-year follow-up of
+narcotics addicts. Arch Gen Psychiatry. 2001;58:503–508.
+Ivanov I. Disulfiram and acamprosate. In: Sadock BJ, Sadock VA, Ruiz P,
+eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed.
+Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3099.
+Johnson BA. Update on neuropharmacological treatments for alcoholism:
+scientific basis and clinical findings. Biochem Pharmacol. 2008;75(1):34.
+Johnson BA, Ait-Daoud N, Prihoda TJ. Combining ondansetron and
+naltrexone effectively treats biologically predisposed alcoholics: from
+hypotheses to preliminary clinical evidence. Alcoholism Clin Exp Res.
+2000;24(5):737–742.
+Karachalios GN, Charalabopoulos A, Papalimneou V, Kiortsis D, Dimicco P.
+Withdrawal syndrome following cessation of antihypertensive drug
+therapy. Int J Clin Pract. 2005;5:562.
+King A, De Wit H, Riley RC, Cao D, Niaura R. Efficacy of naltrexone in
+smoking cessation: a preliminary study and an examination of sex
+differences. Nicotine Tobacco Res. 2006;8(5):671–682.
+Kleber HD. Methadone maintenance 4 decades later: thousands of lives saved
+but still controversial. JAMA. 2008;300:2303.
+Kornfield R, Watson S, Higashi AS, Conti RM, Dusetzina SB, Garfield CF,
+Dorsey ER, Huskamp HA, Alexander GC. Effects of FDA advisories on
+the pharmacologic treatment of ADHD, 2004–2008. Psychiatr Serv.
+2013;64(4):339–346.
+Krishnan-Sarin S, Rounsaville BJ, O’Malley SS. Opioid receptor antagonists:
+naltrexone and nalmefene. In: Sadock BJ, Sadock VA, Ruiz P, eds. Kaplan
+& Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3171.
+Krystal JH, Cramer JA, Kroll WF, Kirk GF, Rosenheck RA. Naltrexone in
+the treatment of alcohol dependence. N Engl J Med. 2001;345(24):1734.
+Laaksonen E, Koski-Jännes A, Salaspuro M, Ahtínen H, Alho H. A
+randomized, multicentre, open-label, comparative trial of disulfiram,
+naltrexone and acamprosate in the treatment of alcohol dependence.
+Alcohol. 2008;43(1):53–61.
+Likar R, Kayser H, Sittl R. Long-term management of chronic pain with
+transdermal buprenorphine: a multicenter, open-label, follow-up study in
+
+
+
+
+<<<PAGE 2285>>>
+
+patients from three short-term clinical trials. Clin Ther. 2006;28(6):943–
+952.
+Mann K, Kiefer F, Spanagel R, Littleton J. Acamprosate: recent findings and
+future research directions. Alcohol Clin Exp Res. 2008;32(7):1105–1110.
+Marsch LA, Bickel WK, Badger GJ, Stothart ME, Quesnel KJ. Comparison
+on pharmacological treatments for opioid-dependent adolescents: a
+randomized controlled trial. Arch Gen Psychiatry. 2005;62:1157.
+Mattick RP, Kimber J. Breen C, Davoli M. Buprenorphine maintenance
+versus placebo or methadone maintenance for opioid dependence.
+Cochrane Database Syst Rev. 2008:CD002207.
+Ming X, Gordon E, Kang N, Wagner GC. Use of clonidine in children with
+autism spectrum disorders. Brain Dev. 2008;30(7):454–760.
+Monterosso JR, Flannery BA, Pettinati HM, Oslin DW, Rukstalis M.
+Predicting treatment response to naltrexone: the influence of craving and
+family history. Am J Addict. 2001;10(3):258–268.
+Myers SM. The status of pharmacotherapy for autism spectrum disorders.
+Expert Opin Pharmacother. 2007;8(11):1579.
+Neumann AM, Blondell RD, Jaanimagi U, Giambrone AK, Homish GG,
+Lozano JR, Kowalik U, Azadfard M. A preliminary study comparing
+methadone and buprenorphine in patients with chronic pain and coexistent
+opioid addiction. J Addict Dis. 2013;32(1):68–78.
+Niederhofer H, Staffen W. Naltrexone and disulfiram in patients with alcohol
+dependence and comorbid psychiatric disorders. Biol Psychiatry.
+2005;57(10):1128.
+Oliva EM, Trafton JA, Harris AH, Gordon AJ. Trends in opioid agonist
+therapy in the Veterans Health Administration: is supply keeping up with
+demand? Am J Drug Alcohol Abuse. 2013;39(2):103–107.
+O’Malley SS, Cooney JL, Krishnan-Sarin S, Dubin J, McKee SA. A
+controlled trial of naltrexone augmentation of nicotine replacement for
+smoking cessation. Arch Intern Med. 2006;166:667.
+Raymond NC, Grant JE, Kim SW, Coleman E. Treatment of compulsive
+sexual behavior with naltrexone and serotonin reuptake inhibitors: two
+case studies. Int Clin Psychopharmacol. 2002;17(4):201.
+Ritvo JI, Park C. The psychiatric management of patients with alcohol
+dependence. Curr Treat Options Neurol. 2007;9(5):381.
+Sallee F, Connor DF, Newcorn JH. A review of the rationale and clinical
+
+

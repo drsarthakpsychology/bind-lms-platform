@@ -1,0 +1,997 @@
+<<<PAGE 10>>>
+
+82 methylphenidate (d,l)
+83 mianserin
+84 midazolam
+85 milnacipran
+86 mirtazapine
+87 moclobemide
+88 modafinil
+89 molindone
+90 nalmefene
+91 naltrexone
+92 naltrexone/bupropion
+93 nefazodone
+94 nortriptyline
+95 olanzapine
+96 oxazepam
+97 oxcarbazepine
+98 paliperidone
+99 paroxetine
+100 perospirone
+101 perphenazine
+102 phenelzine
+103 phentermine/topiramate
+104 pimavanserin
+105 pimozide
+106 pipothiazine
+107 pitolisant
+108 prazosin
+109 pregabalin
+
+
+
+
+<<<PAGE 52>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Benzodiazepines are frequently used as augmenting agents for
+antipsychotics and mood stabilizers in the treatment of psychotic
+and bipolar disorders
+Benzodiazepines are frequently used as augmenting agents for
+SSRIs and SNRIs in the treatment of anxiety disorders
+Not generally rational to combine with other benzodiazepines
+Caution if using as an anxiolytic concomitantly with other sedative
+hypnotics for sleep
+Could consider augmenting alprazolam with either gabapentin or
+pregabalin for treatment of anxiety disorders
+Tests
+In patients with seizure disorders, concomitant medical illness,
+and/or those with multiple concomitant long-term medications,
+periodic liver tests and blood counts may be prudent
+
+Side Effects
+How Drug Causes Side Effects
+Same mechanism for side effects as for therapeutic effects –namely
+due to excessive actions at benzodiazepine receptors
+
+
+
+
+<<<PAGE 772>>>
+
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Consider the presence of noncompliance and counsel the patient
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Augmentation experience is limited compared to other
+antidepressants and treatments for neuropathic pain
+Adding other agents to duloxetine for treating depression could
+follow the same practice for augmenting SSRIs or other SNRIs if
+done by experts while monitoring carefully in difficult cases
+Although no controlled studies and little clinical experience, adding
+other agents for treating diabetic peripheral neuropathic pain and
+fibromyalgia and neuropathic pain could theoretically include
+gabapentin, pregabalin, and tiagabine, if done by experts while
+monitoring carefully in difficult cases
+Mirtazapine (“California rocket fuel” for depression; a potentially
+powerful dual serotonin and norepinephrine combination, but
+observe for activation of bipolar disorder and suicidal ideation)
+Bupropion, reboxetine, nortriptyline, desipramine, maprotiline,
+atomoxetine (all potentially powerful enhancers of noradrenergic
+
+
+
+
+<<<PAGE 773>>>
+
+action for depression, but observe for activation of bipolar disorder
+and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin,
+pregabalin, or tiagabine
+Hypnotics or trazodone for insomnia
+Classically, lithium, buspirone, or thyroid hormone for depression
+Tests
+Check blood pressure before initiating treatment and regularly
+during treatment
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin and norepinephrine
+concentrations at receptors in parts of the brain and body other than
+those that cause therapeutic actions (e.g., unwanted actions of
+serotonin in sleep centers causing insomnia, unwanted actions of
+
+
+
+
+<<<PAGE 986>>>
+
+Pancreatic acinar adenocarcinomas have developed in male rats that
+were given gabapentin, but clinical significance is unknown
+Development of new tumors or worsening of tumors has occurred in
+humans taking gabapentin; it is unknown whether gabapentin
+affected the development or worsening of tumors
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+side effects immediately
+Do Not Use
+If there is a proven allergy to gabapentin or pregabalin
+
+Special Populations
+Renal Impairment
+Gabapentin is renally excreted, so the dose may need to be lowered
+Immediate-Release
+Creatinine Clearance
+(mL/min)
+
+Dosing
+
+30–59
+
+400–1400 mg/day in 2 doses
+
+16–29
+
+200–700 mg/day in 1 dose
+
+<16
+
+100–300 mg/day in 1 dose
+
+
+
+
+<<<PAGE 994>>>
+
+Stahl SM . Anticonvulsants and the relief of chronic pain: pregabalin and
+gabapentin as alpha(2)delta ligands at voltage-gated calcium channels . J
+Clin Psychiatry 2004 ;65 :596 –7 .
+Stahl SM . Anticonvulsants as anxiolytics, part 2: pregabalin and
+gabapentin as alpha(2)delta ligands at voltage-gated calcium channels . J
+Clin Psychiatry 2004 ;65 :460 –1 .
+
+
+
+
+<<<PAGE 1861>>>
+
+Pregabalin
+
+Therapeutics
+Brands
+Lyrica
+Lyrica CR
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: glutamate voltage-gated
+calcium channel blocker (Glu-CB)
+Anticonvulsant, antineuralgic for chronic pain, alpha 2 delta ligand
+at voltage-sensitive calcium channels
+Commonly Prescribed for
+(bold for FDA approved)
+Diabetic peripheral neuropathy (IR and CR)
+Postherpetic neuralgia (IR and CR)
+Fibromyalgia (IR)
+
+
+
+
+<<<PAGE 1862>>>
+
+Neuropathic pain associated with spinal cord injury (IR)
+Partial onset seizures in adults and pediatric patients ages 1
+month and older (IR, adjunctive)
+Peripheral neuropathic pain
+Generalized anxiety disorder (GAD)
+Panic disorder
+Social anxiety disorder
+How the Drug Works
+Pregabalin is a leucine analog and is transported both into the blood
+from the gut and also across the blood–brain barrier into the brain
+by the system L transport system (a sodium-independent
+transporter) as well as by additional sodium-dependent amino acid
+transporter systems
+
+✽ Binds to the alpha 2 delta subunit of voltage-sensitive calcium
+channels
+This closes N and P/Q presynaptic calcium channels, diminishing
+excessive neuronal activity and neurotransmitter release
+Although structurally related to gamma-aminobutyric acid (GABA),
+no known direct actions on GABA or its receptors
+How Long Until It Works
+Can reduce neuropathic pain and anxiety within a week
+
+
+
+
+<<<PAGE 1864>>>
+
+Consider the presence of noncompliance and counsel patient
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ In addition to being a first-line treatment for neuropathic pain and
+anxiety disorders, pregabalin is itself an augmenting agent to
+numerous other anticonvulsants in treating epilepsy
+For postherpetic neuralgia, pregabalin can decrease concomitant
+opiate use
+
+✽ For neuropathic pain, TCAs and SNRIs as well as tiagabine, other
+anticonvulsants, and even opiates can augment pregabalin if done by
+experts while carefully monitoring in difficult cases
+For anxiety, SSRIs, SNRIs, or benzodiazepines can augment
+pregabalin
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+
+
+
+
+<<<PAGE 1867>>>
+
+Oral solution 20 mg/mL
+Extended-release tablet 82.5 mg, 165 mg, 330 mg
+How to Dose
+Neuropathic pain (IR): initial 150 mg/day in 2–3 doses; can increase
+to 300 mg/day in 2–3 doses after 7 days; can increase to 600 mg/day
+in 2–3 doses after 7 more days; maximum dose generally 600
+mg/day (may be lower for diabetic peripheral neuropathy and
+fibromyalgia)
+Neuropathic pain (CR): 165 mg once per day; can increase to 330
+mg once per day within a week; maximum dose 660 mg once per
+day for postherpetic neuralgia
+Seizures (adults): initial 150 mg/day in 2–3 doses; can increase to
+300 mg/day in 2–3 doses after 7 days; can increase to 600 mg/day in
+2–3 doses after 7 more days; maximum dose generally 600 mg/day
+Dosing Tips
+
+✽ Generally given in one-third to one-sixth the dose of gabapentin
+If pregabalin is added to a second sedating agent, such as another
+anticonvulsant, a benzodiazepine, or an opiate, the titration period
+should be at least a week to improve tolerance to sedation
+Most patients need to take pregabalin IR only twice daily
+At the high end of the dosing range, tolerability may be enhanced by
+splitting IR dose into 3 or more divided doses
+
+
+
+
+<<<PAGE 1868>>>
+
+Extended-release formulation of pregabalin allows for once daily
+dosing
+Extended-release tablet should be swallowed whole and should not
+be split, crushed, or chewed
+For intolerable sedation with the immediate-release formulation, can
+give most of the dose at night and less during the day or switch to
+extended-release
+To improve slow-wave sleep, may only need to take pregabalin at
+bedtime
+May be taken with or without food
+Overdose
+No fatalities
+Long-Term Use
+Safe
+Habit Forming
+No
+How to Stop
+Taper over a minimum of 1 week
+
+
+
+
+<<<PAGE 1869>>>
+
+Epilepsy patients may seize upon withdrawal, especially if
+withdrawal is abrupt
+Discontinuation symptoms uncommon
+Pharmacokinetics
+Pregabalin is not metabolized but excreted intact renally
+Elimination half-life approximately 5–7 hours
+Drug Interactions
+Pregabalin has not been shown to have significant pharmacokinetic
+drug interactions
+Because pregabalin is excreted unchanged, it is unlikely to have
+significant pharmacokinetic drug interactions
+May add to or potentiate the sedative effects of oxycodone,
+lorazepam, and alcohol
+Other Warnings/Precautions
+Depressive effects, including respiratory depression, may be
+increased by other CNS depressants (opioids, benzodiazepines,
+alcohol, MAOIs, other anticonvulsants, etc.)
+Use lowest possible dose of pregabalin and monitor for symptoms
+of respiratory depression if patient is taking concomitant CNS
+depressant, has underlying respiratory disease, or is elderly
+
+
+
+
+<<<PAGE 1870>>>
+
+Dizziness and sedation could increase the chances of accidental
+injury (falls) in the elderly
+Increased incidence of hemangiosarcoma at high doses in mice
+involves platelet changes and associated endothelial cell
+proliferation not present in rats or humans; no evidence to suggest
+an associated risk for humans
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+side effects immediately
+Do Not Use
+If there is a proven allergy to pregabalin or gabapentin
+If patient has a problem of galactose intolerance, the Lapp lactase
+deficiency, or glucose-galactose malabsorption
+
+Special Populations
+Renal Impairment
+Pregabalin is renally excreted, so the dose may need to be lowered
+Dosing can be adjusted according to creatinine clearance, such that
+patients with clearance below 15 mL/min should receive 25–75
+mg/day in 1 dose, patients with clearance between 15–29 mL/min
+should receive 25–150 mg/day in 1–2 doses, and patients with
+
+
+
+
+<<<PAGE 1871>>>
+
+clearance between 30–59 mL/min should receive 75–300 mg/day in
+2–3 doses
+Starting dose should be at the bottom of the range; titrate as usual up
+to maximum dose
+Can be removed by hemodialysis; patients receiving hemodialysis
+may require a supplemental dose of pregabalin following
+hemodialysis (25–100 mg)
+Hepatic Impairment
+Dose adjustment not necessary
+Cardiac Impairment
+No specific recommendations
+Elderly
+Some patients may tolerate lower doses better
+Elderly patients may be more susceptible to adverse effects
+Children and Adolescents
+Approved for partial onset seizures in children ages 1 month and
+older
+Safety and efficacy have not been established in mental illness
+indications
+
+
+
+
+<<<PAGE 1872>>>
+
+Use should be reserved for the expert
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+In animal studies, developmental toxicity (including fetal structural
+abnormalities, skeletal malformations, retarded ossification, and
+decreased fetal body weight) was observed when pregabalin was
+administered to pregnant animals at doses greater than or equal to 16
+times the maximum recommended human dose (MRHD)
+Use in women of childbearing potential requires weighing potential
+benefits to the mother against the risks to the fetus
+Antiepileptic Drug Pregnancy Registry: 1-888-233-2334,
+www.aedpregnancyregistry.org
+Taper drug if discontinuing
+Seizures, even mild seizures, may cause harm to the embryo/fetus
+Breast Feeding
+
+
+
+
+<<<PAGE 1873>>>
+
+Unknown if pregabalin is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+If drug is continued while breast feeding, infant should be monitored
+for possible adverse effects
+If infant becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+
+The Art of Psychopharmacology
+Potential Advantages
+First-line for diabetic peripheral neuropathy
+Fibromyalgia
+Anxiety disorders
+Sleep
+Has relatively mild side effect profile
+Has few pharmacokinetic drug interactions
+More potent and probably better tolerated than gabapentin
+Potential Disadvantages
+Requires 2–3 times a day dosing
+Not approved for anxiety disorders in the USA
+
+
+
+
+<<<PAGE 1875>>>
+
+✽ One of the few agents that enhances slow-wave delta sleep, which
+may be helpful in chronic neuropathic pain syndromes
+Pregabalin is generally well tolerated, with only mild adverse effects
+
+✽ Although no head-to-head studies, appears to be better tolerated and
+more consistently efficacious at high doses than gabapentin
+
+✽ Drug absorption and clinical efficacy may be more consistent at
+high doses for pregabalin compared to gabapentin because of the
+higher potency of pregabalin and the fact that, unlike gabapentin, it is
+transported by more than one transport system
+
+Suggested Reading
+Lauria-Horner BA , Pohl RB . Pregabalin: a new anxiolytic . Expert Opin
+Investig Drugs 2003 ;12 :663–72 .
+Moore RA , Straube S , Wiffen PJ , Derry S , McQuay HJ . Pregabalin for
+acute and chronic pain in adults . Cochrane Database Syst Rev 2009 ;8 (3
+):CD007076 .
+Stahl SM . Anticonvulsants and the relief of chronic pain: pregabalin and
+gabapentin as alpha(2)delta ligands at voltage-gated calcium channels . J
+Clin Psychiatry 2004 ;65 :596–7 .
+Stahl SM . Anticonvulsants as anxiolytics, part 2: pregabalin and
+gabapentin as alpha(2)delta ligands at voltage-gated calcium channels . J
+Clin Psychiatry 2004 ;65 :460–1 .
+
+
+
+
+<<<PAGE 1876>>>
+
+Stahl SM , Eisenach JC , Taylor CP , et al. The diverse therapeutic actions
+of pregabalin: is a single mechanism responsible for several pharmacologic
+activities . Trends Pharmacological Sci 2013 ;34 (6 ):332–9 .
+
+
+
+
+<<<PAGE 2099>>>
+
+Consider an alternative treatment
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Sodium oxybate is itself often used as an augmenting therapy to
+stimulants, modafinil, or armodafinil for excessive sleepiness in
+narcolepsy
+
+✽ The majority of patients taking sodium oxybate in clinical trials for
+narcolepsy and cataplexy were taking a concomitant stimulant
+Often used as an augmenting agent for fibromyalgia with SNRIs
+(e.g., duloxetine, milnacipran) and alpha 2 delta ligands (e.g.,
+gabapentin, pregabalin), but has not been well studied in
+combination with these agents
+Tests
+None for healthy individuals
+
+Side effects
+How Drug Causes Side Effects
+Unknown
+CNS side effects presumably due to excessive CNS actions on
+various neurotransmitter systems
+
+
+
+
+<<<PAGE 2423>>>
+
+Consider switching to another agent or adding an appropriate
+augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (use
+combinations of antidepressants with caution as this may activate
+bipolar disorder and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin,
+pregabalin, or tiagabine
+Hypnotics for insomnia
+
+
+
+
+<<<PAGE 2442>>>
+
+Augmentation experience is limited compared to other
+antidepressants
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (use
+combinations of antidepressants with caution as this may activate
+bipolar disorder and suicidal ideation)
+Use with caution with antidepressants that are CYP450 2D6
+inhibitors (e.g., bupropion, duloxetine, fluoxetine, paroxetine), as
+these agents will increase vortioxetine levels and may require a dose
+reduction of vortioxetine
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin,
+pregabalin, or tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+
+
+
+<<<PAGE 2597>>>
+
+Lorsilan (lorazepam), 437
+Lorzem (lorazepam), 437
+Lovan (fluoxetine), 301
+Loxapac (loxapine), 443
+loxapine, 443
+Loxitane (loxapine), 443
+Lucemyra (lofexidine), 427
+Ludiomil (maprotiline), 465
+Lullan (perospirone), 601
+lumateperone, 451
+Lumin (mianserin), 495
+Lunesta (eszopiclone), 285
+lurasidone, 457
+Lustral (sertraline), 721
+Luvox (fluvoxamine), 325
+Luvox SR (fluvoxamine), 325
+Lyogen (fluphenazine), 313
+Lyogen Depot (fluphenazine), 313
+Lyoridin Depot (fluphenazine), 313
+Lyorodin (fluphenazine), 313
+Lyrica (pregabalin), 647
+Lyrica CR (pregabalin), 647
+
+
+
+
+<<<PAGE 2609>>>
+
+PMS-Fluphenazine Decanoate (fluphenazine), 313
+PMS-Haloperidol (haloperidol), 347
+PMS-Hydroxyzine (hydroxyzine), 355
+PMS-Lithium (lithium), 415
+PMS-Methylphenidate (d,l-methylphenidate), 487
+PMS-Trazodone (trazodone), 793
+Podium (diazepam), 229
+Poldoxin (doxepin), 255
+Polysal (amitriptyline), 25
+Portal (fluoxetine), 301
+Pragmarel (trazodone), 793
+Praxiten (oxazepam), 569
+prazosin, 643
+pregabalin, 647
+Priadel (lithium), 415
+Prisdal (citalopram), 159
+Prisma (mianserin), 495
+Pristiq (desvenlafaxine), 215
+Probuphine (buprenorphine), 111
+ProCentra (amphetamine d), 39
+Pro Dorm (lorazepam), 437
+Procythol (selegiline), 705
+Prolixin (fluphenazine), 313
+Prolixin Decanoate (fluphenazine), 313
+Prolixin Enanthate (fluphenazine), 313
+Prolongatum (fluphenazine), 313
+Pronervon T (temazepam), 755
+Propam (diazepam), 229
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2640>>>
+
+vilazodone , 847
+vortioxetine , 853
+Drug-induced parkinsonism
+benztropine , 85
+diphenhydramine, 235
+trihexyphenidyl , 809
+Erectile dysfunction
+sildenafil , 729
+Excessive sleepiness
+armodafinil , 65
+modafinil , 521
+pitolisant , 639
+sodium oxybate , 733
+solriamfetol , 737
+tasimelteon, 751
+Fatigue
+armodafinil, 65
+modafinil, 521
+Fibromyalgia
+amitriptyline, 25
+desvenlafaxine, 215
+duloxetine , 263
+levomilnacipran, 403
+milnacipran , 503
+pregabalin , 647
+sodium oxybate, 733
+
+
+
+
+<<<PAGE 2641>>>
+
+Generalized anxiety disorder
+agomelatine, 5
+alprazolam , 11
+citalopram, 159
+desvenlafaxine, 215
+duloxetine , 263
+escitalopram , 269
+fluoxetine, 301
+fluvoxamine, 325
+mirtazapine, 509
+paroxetine , 509
+pregabalin, 647
+propranolol, 653
+sertraline, 721
+tiagabine (adjunct), 771
+venlafaxine , 841
+vortioxetine, 853
+Glossopharyngeal neuralgia
+carbamazepine, 131
+Hiccups, intractable
+chlorpromazine , 153
+Hypersalivation
+clonidine, 179
+Hypertension
+clonidine , 179
+guanfacine , 343
+
+
+
+
+<<<PAGE 2646>>>
+
+pregabalin , 647
+sodium oxybate, 733
+tiagabine, 771
+topiramate, 781
+trimipramine, 817
+valproate (divalproex), 829
+zonisamide, 875
+Nicotine addiction
+bupropion , 117
+varenicline , 837
+Non-24-hour sleep-wake disorder
+tasimelteon , 751
+Obsessive-compulsive disorder
+aripiprazole (adjunct), 53
+citalopram, 159
+clomipramine , 165
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine , 325
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+vilazodone, 847
+Opioid dependence
+buprenorphine , 111
+clonidine, 179
+
+
+
+
+<<<PAGE 2647>>>
+
+lofexidine , 427
+naltrexone , 537
+Panic disorder
+alprazolam , 11
+citalopram, 159
+clonazepam , 173
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine, 325
+isocarboxazid, 375
+lorazepam, 437
+mirtazapine, 509
+nefazodone, 545
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+reboxetine, 681
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Parkinson’s disease
+selegiline , 705
+zonisamide, 875
+Parkinson’s disease dementia
+
+
+
+
+<<<PAGE 2648>>>
+
+rivastigmine , 699
+Parkinson’s disease psychosis
+pimavanserin , 623
+Pervasive developmental disorders
+guanfacine, 343
+Porphyria
+chlorpromazine , 153
+Postherpetic neuralgia
+gabapentin , 331
+pregabalin , 647
+Postpartum depression
+brexanolone , 99
+Posttraumatic stress disorder
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+cariprazine, 137
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+dextromethorphan (with quinidine), 225
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+
+
+
+
+<<<PAGE 2655>>>
+
+gabapentin (adjunct) , 331
+lamotrigine , 387
+levetiracetam , 399
+lorazepam , 437
+oxcarbazepine , 575
+pregabalin (adjunct) , 647
+tiagabine (adjunct) , 771
+topiramate , 781
+valproate (divalproex) , 829
+zonisamide , 875
+Sexual dysfunction
+bremelanotide , 95
+bupropion, 117
+flibanserin , 289
+sildenafil , 729
+Sleepiness, excessive
+armodafinil , 65
+modafinil , 521
+pitolisant , 639
+sodium oxybate , 733
+solriamfetol , 737
+tasimelteon, 751
+Social anxiety disorder
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+
+
+
+
+<<<PAGE 2656>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine , 325
+isocarboxazid, 375
+moclobemide, 515
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Stress urinary incontinence
+duloxetine, 263
+Tardive dyskinesia
+deutetrabenazine , 221
+valbenazine , 825
+Tetanus
+chlorpromazine , 153
+Tourette’s syndrome/tic disorders
+aripiprazole , 53
+clonidine, 179
+guanfacine, 343
+haloperidol , 347
+pimozide , 627
+
+
+
+
+<<<PAGE 2658>>>
+
+Index by Class
+Anticholinergics
+benztropine, 85
+diphenhydramine, 235
+trihexyphenidyl, 809
+Anticonvulsants
+carbamazepine, 131
+clonazepam, 173
+clorazepate (adjunct), 185
+diazepam, 229
+gabapentin, 331
+lamotrigine, 387
+levetiracetam, 399
+lorazepam, 437
+oxcarbazepine, 575
+pregabalin, 647
+tiagabine, 771
+topiramate, 781
+valproate (divalproex), 829
+zonisamide (adjunct), 875
+Antidepressants
+agomelatine, 5
+
+
+
+
+<<<PAGE 2663>>>
+
+oxazepam, 569
+paroxetine, 593
+phenelzine, 613
+prazosin, 643
+pregabalin, 647
+propranolol, 653
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine (adjunct), 771
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+trifluoperazine, 803
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+Attention deficit hyperactivity disorder treatments
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+chlorpromazine, 153
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+lisdexamfetamine, 409
+
+
+
+
+<<<PAGE 2666>>>
+
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam (adjunct), 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+pregabalin (adjunct), 647
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+valproate (divalproex), 829
+ziprasidone, 863
+zonisamide, 875
+
+
+
+
+<<<PAGE 2668>>>
+
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+pregabalin, 647
+sodium oxybate, 733
+tiagabine, 771
+topiramate, 781
+trimipramine, 817
+zonisamide, 875
+NMDA antagonists
+dextromethorphan, 225
+esketamine, 275
+ketamine, 383
+memantine, 473
+Phosphodiesterase-5 (PDE-5) inhibitor
+sildenafil, 729
+Sedative hypnotics
+agomelatine, 5
+estazolam, 281
+eszopiclone, 285
+flunitrazepam, 297
+flurazepam, 321
+lemborexant, 395
+
+

@@ -1,0 +1,840 @@
+<<<PAGE 9>>>
+
+73.
+74.
+75.
+76.
+77.
+78.
+79.
+80.
+81.
+82.
+83.
+84.
+85.
+86.
+87.
+88.
+89.
+90.
+91.
+92.
+93.
+94.
+95.
+96.
+97.
+98.
+99.
+100.
+101.
+102.
+103.
+104.
+105.
+106.
+107.
+108.
+109.
+110.
+111.
+
+lithium
+429
+lofepramine435
+lofexidine441
+loflazepate
+445
+lorazepam
+451
+loxapine
+457
+lumateperone
+465
+lurasidone
+473
+maprotiline
+481
+memantine489
+methylfolate (l)
+493
+methylphenidate (d)
+497
+methylphenidate (d,l)
+503
+mianserin
+511
+midazolam515
+milnacipran
+519
+mirtazapine
+525
+moclobemide
+531
+modafinil
+537
+molindone
+543
+nalmefene549
+naltrexone
+553
+naltrexone–bupropion
+557
+nefazodone563
+nortriptyline
+569
+olanzapine
+577
+olanzapine–samidorphan
+587
+oxazepam
+595
+oxcarbazepine
+601
+paliperidone
+607
+paroxetine
+619
+perospirone627
+perphenazine
+633
+phenelzine
+639
+phentermine–topiramate
+645
+pimavanserin
+651
+pimozide
+655
+pipothiazine
+661
+pitolisant
+667
+vii
+
+
+
+
+<<<PAGE 14>>>
+
+In addition, drugs for which switching between medications can be complicated
+have a special section called The Art of Switching, which includes clinical pearls and
+graphical representations to help guide the switching process.
+There is a list of icons used in this Guide following this Introduction and at the back
+of the Guide are several indices. The first is an index by drug name, giving both
+generic names (uncapitalized) and trade names (capitalized and followed by the generic name in parentheses). The second is an index of common uses for the generic
+drugs included in the Guide and is organized by disorder/symptom. Agents that are
+approved by the FDA for a particular use are shown in bold. The third index is
+organized by drug class and lists all the agents that fall within each particular class.
+In addition to these indices there is a list of abbreviations.
+Readers are encouraged to consult standard references1 and comprehensive psychiatry and pharmacology textbooks for more in-depth information. They are also
+reminded that the Art of Psychopharmacology section is the author’s opinion.
+It is strongly advised that readers familiarize themselves with the standard use of
+these drugs before attempting any of the more exotic uses discussed, such as unusual
+drug combinations and doses. Reading about both drugs before augmenting one
+with the other is also strongly recommended. Today’s psychopharmacologist should
+also regularly track blood pressure, weight, and body mass index for most of his or
+her patients. The dutiful clinician will also check out the drug interactions of noncentral nervous system (CNS) drugs with those that act in the CNS, including any
+prescribed by other clinicians.
+Certain drugs may be for experts only, and these might include clozapine, thioridazine, pimozide, nefazodone, and monoamine oxidase (MAO) inhibitors, among
+others. Off-label uses not approved by the FDA and inadequately studied doses or
+combinations of drugs may also be for the expert only, who can weigh risks and
+benefits in the presence of sometimes vague and conflicting evidence. Pregnant or
+nursing women, or people with two or more psychiatric illnesses, substance abuse,
+and/or a concomitant medical illness may be suitable patients for the expert only.
+Controlled substances also require expertise. Use your best judgment as to your level
+of expertise and realize that we are all learning in this rapidly advancing field. The
+practice of medicine is often not so much a science as it is an art. It is important to
+stay within the standards of medical care for the field, and also within your personal
+comfort zone, while trying to help extremely ill and often difficult patients with
+medicines that can relieve their suffering and sometimes transform their lives.
+Finally, this book is intended to be genuinely helpful for practitioners of psychopharmacology by providing them with the mixture of facts and opinions selected
+by the author. Ultimately, prescribing choices are the reader’s responsibility. Every
+effort has been made in preparing this book to provide accurate and up-to-date
+information in accord with accepted standards and practice at the time of publication. Nevertheless, the psychopharmacology field is evolving rapidly and the
+author and publisher make no warranties that the information contained herein is
+totally free from error, not least because clinical standards are constantly changing
+through research and regulation. Furthermore, the author and publisher disclaim
+
+1
+
+For example, Physician’s Desk Reference and Martindale: The Complete Drug Reference.
+
+xii
+
+
+
+
+<<<PAGE 36>>>
+
+AMISULPRIDE (continued)
+ Best Augmenting Combos
+for Partial Response or
+Treatment Resistance
+• Valproic acid (valproate, divalproex,
+divalproex ER)
+• Augmentation of amisulpride has not been
+systematically studied
+• Other mood-stabilizing anticonvulsants
+(carbamazepine, oxcarbazepine, lamotrigine)
+• Lithium
+• Benzodiazepines
+
+Tests
+• Although risk of diabetes and dyslipidemia
+with amisulpride has not been
+systematically studied, monitoring as for all
+other atypical antipsychotics is suggested
+Before starting an atypical antipsychotic
+• Weigh all patients and track BMI during
+treatment
+• Get baseline personal and family history
+of diabetes, obesity, dyslipidemia,
+hypertension, and cardiovascular disease
+• Get waistline circumference (at umbilicus),
+blood pressure, fasting plasma glucose,
+and fasting lipid profile
+• Determine if the patient
+• is overweight (BMI 25.0–29.9)
+• is obese (BMI ≥30)
+• has pre-diabetes (fasting plasma glucose
+100–125 mg/dL)
+• has diabetes (fasting plasma glucose
+≥126 mg/dL)
+• has hypertension (blood pressure
+>140/90 mmHg)
+• has dyslipidemia (increased total
+cholesterol, LDL cholesterol, and
+triglycerides; decreased HDL cholesterol)
+• Treat or refer such patients for treatment,
+including nutrition and weight management,
+physical activity counseling, smoking
+cessation, and medical management
+Monitoring after starting an atypical
+antipsychotic
+• BMI monthly for 3 months, then quarterly
+• Consider monitoring fasting triglycerides
+monthly for several months in patients at
+high risk for metabolic complications and
+when initiating or switching antipsychotics
+• Blood pressure, fasting plasma glucose,
+fasting lipids within 3 months and then
+annually, but earlier and more frequently
+for patients with diabetes or who have
+gained >5% initial weight
+18
+
+• Treat or refer for treatment and consider
+switching to another atypical antipsychotic for
+patients who become overweight, obese, prediabetic, diabetic, hypertensive, or dyslipidemic
+while receiving an atypical antipsychotic
+• Even in patients without known diabetes,
+be vigilant for the rare but life-threatening
+onset of diabetic ketoacidosis, which
+always requires immediate treatment by
+monitoring for the rapid onset of polyuria,
+polydipsia, weight loss, nausea, vomiting,
+dehydration, rapid respiration, weakness
+and clouding of sensorium, even coma
+• ECGs may be useful for selected patients
+(e.g., those with personal or family history of
+QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated
+heart failure; or taking agents that prolong
+QTc interval such as pimozide, thioridazine,
+selected antiarrhythmics, moxifloxacin,
+sparfloxacin, etc.)
+• Patients at risk for electrolyte disturbances
+(e.g., patients on diuretic therapy)
+should have baseline and periodic serum
+potassium and magnesium measurements
+• Patients with low white blood cell count
+or history of drug-induced leukopenia/
+neutropenia should have complete blood
+count monitored frequently during the first
+few months and amisulpride should be
+discontinued at the first sign of decline of
+white blood cells in the absence of other
+causative factors
+• Patients should be monitored periodically
+for the development of abnormal
+movements of tardive dyskinesia, using
+neurological exam and the Abnormal
+Involuntary Movement Scale (AIMS)
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• Acute blockade of dopamine 2 receptors
+in the striatum can cause drug-induced
+parkinsonism, dystonia, or akathisia
+• Chronic blockade of dopamine 2 receptors
+in the striatum can cause tardive dyskinesia
+• By blocking dopamine 2 receptors in the
+pituitary, it can cause elevations in prolactin
+• Mechanism of weight gain and increased
+incidence of diabetes and dyslipidemia with
+atypical antipsychotics is unknown, and
+risks vary based on the particular agent
+
+
+
+
+<<<PAGE 39>>>
+
+(continued) AMISULPRIDE
+
+• If patient is pregnant or nursing
+• If patient is taking agents capable of significantly prolonging QTc interval (e.g., pimozide;
+thioridazine; selected antiarrhythmics such
+as quinidine, disopyramide, amiodarone,
+and sotalol; selected antibiotics such as
+moxifloxacin and sparfloxacin)
+• If there is a history of QTc prolongation or
+cardiac arrhythmia, recent acute myocardial
+infarction, uncompensated heart failure
+• If patient is taking cisapride, intravenous
+erythromycin, or pentamidine
+• In children
+• If there is a proven allergy to amisulpride
+
+disturbances in dementia, no agent has
+been approved for treatment of elderly
+patients with behavioral symptoms of
+dementia such as agitation
+• Elderly patients with dementia-related
+psychosis treated with atypical
+antipsychotics are at an increased risk
+of death compared to placebo, and also
+have an increased risk of cerebrovascular
+events
+
+Children and Adolescents
+• Efficacy and safety not established under
+age 18
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Use with caution; drug may accumulate
+• Amisulpride is eliminated by the
+renal route; in cases of severe renal
+insufficiency, the dose should be
+decreased and intermittent treatment or
+switching to another antipsychotic should
+be considered
+
+Hepatic Impairment
+• Use with caution, but dose adjustment not
+generally necessary
+
+Cardiac Impairment
+• Amisulpride produces a dose-dependent
+prolongation of QTc interval, which
+may be enhanced by the existence of
+bradycardia, hypokalemia, congenital or
+acquired long QTc interval, which should
+be evaluated prior to administering
+amisulpride
+• Use with caution if treating concomitantly
+with a medication likely to produce
+prolonged bradycardia, hypokalemia,
+slowing of intracardiac conduction, or
+prolongation of the QTc interval
+• Avoid amisulpride in patients with a known
+history of QTc prolongation, recent acute
+myocardial infarction, and uncompensated
+heart failure
+
+Elderly
+• Some patients may be more susceptible to
+sedative and hypotensive effects
+• Although atypical antipsychotics
+are commonly used for behavioral
+
+Pregnancy
+• Although animal studies have not
+shown teratogenic effect, amisulpride is
+not recommended for use during
+pregnancy
+• There is a risk of abnormal muscle
+movements and withdrawal symptoms
+in newborns whose mothers took an
+antipsychotic during the third trimester;
+symptoms may include agitation,
+abnormally increased or decreased
+muscle tone, tremor, sleepiness,
+severe difficulty breathing, and difficulty
+feeding
+• Psychotic symptoms may worsen during
+pregnancy and some form of treatment
+may be necessary
+
+Breast Feeding
+Unknown if amisulpride is secreted in
+human breast milk, but all psychotropics are
+assumed to be secreted in breast milk
+• Recommended either to discontinue drug
+or bottle feed
+
+THE ART OF PSYCHOPHARMACOLOGY
+Potential Advantages
+• Not as clearly associated with weight gain
+as some other atypical antipsychotics
+• For patients who are responsive to lowdose activation effects that reduce negative
+symptoms and depression
+
+21
+
+
+
+
+<<<PAGE 44>>>
+
+AMITRIPTYLINE (continued)
+• Some patients may experience apparent
+lack of consistent efficacy due to activation
+of latent or underlying bipolar disorder, and
+require antidepressant discontinuation and
+a switch to a mood stabilizer
+
+ Best Augmenting Combos
+for Partial Response or
+Treatment Resistance
+• Lithium, buspirone, thyroid hormone (for
+depression)
+• Gabapentin, tiagabine, other
+anticonvulsants, even opiates if done
+by experts while monitoring carefully in
+difficult cases (for chronic pain)
+
+Tests
+• Baseline ECG is recommended for patients
+over age 50
+• Since tricyclic and tetracyclic
+antidepressants are frequently associated
+with weight gain, before starting treatment,
+weigh all patients and determine if the
+patient is already overweight
+(BMI 25.0–29.9) or obese (BMI ≥30)
+• Before giving a drug that can cause weight
+gain to an overweight or obese patient,
+consider determining whether the patient
+already has pre-diabetes (fasting plasma
+glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose ≥126 mg/dL), or
+dyslipidemia (increased total cholesterol, LDL
+cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients
+for treatment, including nutrition and weight
+management, physical activity counseling,
+smoking cessation, and medical management
+• Monitor weight and BMI during treatment
+• While giving a drug to a patient who has
+gained >5% of initial weight, consider
+evaluating for the presence of pre-diabetes,
+diabetes, or dyslipidemia, or consider
+switching to a different antidepressant
+• ECGs may be useful for selected patients
+(e.g., those with personal or family history of
+QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated
+heart failure; or taking agents that prolong
+QTc interval such as pimozide, thioridazine,
+selected antiarrhythmics, moxifloxacin,
+sparfloxacin, etc.)
+• Patients at risk for electrolyte disturbances
+(e.g., patients on diuretic therapy)
+should have baseline and periodic serum
+potassium and magnesium measurements
+26
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• Anticholinergic activity may explain
+sedative effects, dry mouth, constipation,
+and blurred vision
+• Sedative effects and weight gain may be
+due to antihistamine properties
+• Blockade of alpha adrenergic 1 receptors
+may explain dizziness, sedation, and
+hypotension
+• Cardiac arrhythmias and seizures,
+especially in overdose, may be caused by
+blockade of ion channels
+
+Notable Side Effects
+• Blurred vision, constipation, urinary
+retention, increased appetite, dry mouth,
+nausea, diarrhea, heartburn, unusual taste
+in mouth, weight gain
+• Fatigue, weakness, dizziness, sedation,
+headache, anxiety, nervousness,
+restlessness
+• Sexual dysfunction (impotence, change in
+libido)
+• Sweating, rash, itching
+
+ Life-Threatening or
+Dangerous Side Effects
+• Paralytic ileus, hyperthermia (TCAs +
+anticholinergic agents)
+• Lowered seizure threshold and rare
+seizures
+• Orthostatic hypotension, sudden death,
+arrhythmias, tachycardia
+• QTc prolongation
+• Hepatic failure, drug-induced parkinsonism
+• Increased intraocular pressure
+• Rare induction of mania
+• Rare activation of suicidal ideation and
+behavior (suicidality) (short-term studies
+did not show an increase in the risk of
+suicidality with antidepressants compared
+to placebo beyond age 24)
+
+Weight Gain
+• Many experience and/or can be significant
+in amount
+• Can increase appetite and carbohydrate
+craving
+
+
+
+
+<<<PAGE 46>>>
+
+AMITRIPTYLINE (continued)
+• Methylphenidate may inhibit metabolism
+of TCAs
+• Activation and agitation, especially
+following switching or adding
+antidepressants, may represent the
+induction of a bipolar state, especially
+a mixed dysphoric bipolar II condition
+sometimes associated with suicidal
+ideation, and require the addition of
+lithium, a mood stabilizer or an atypical
+antipsychotic, and/or discontinuation of
+amitriptyline
+
+ Other Warnings/
+Precautions
+• Add or initiate other antidepressants
+with caution for up to 2 weeks after
+discontinuing amitriptyline
+• Generally, do not use with MAOIs, including
+14 days after MAOIs are stopped; do not
+start an MAOI for at least 5 half-lives (5 to
+7 days for most drugs) after discontinuing
+amitriptyline, but see Pearls
+• Use with caution in patients with history of
+seizures, urinary retention, angle-closure
+glaucoma, hyperthyroidism
+• TCAs can increase QTc interval, especially
+at toxic doses, which can be attained not
+only by overdose but also by combining
+with drugs that inhibit TCA metabolism via
+CYP2D6, potentially causing torsade de
+pointes-type arrhythmia or sudden death
+• Because TCAs can prolong QTc interval,
+use with caution in patients who have
+bradycardia or who are taking drugs that
+can induce bradycardia (e.g., beta blockers,
+calcium channel blockers, clonidine,
+digitalis)
+• Because TCAs can prolong QTc interval,
+use with caution in patients who have
+hypokalemia and/or hypomagnesemia,
+or who are taking drugs that can induce
+hypokalemia and/or magnesemia (e.g.,
+diuretics, stimulant laxatives, intravenous
+amphotericin B, glucocorticoids,
+tetracosactide)
+• When treating children, carefully weigh
+the risks and benefits of pharmacological
+treatment against the risks and benefits
+of nontreatment with antidepressants and
+make sure to document this in the patient’s
+chart
+• Distribute the brochures provided by the
+FDA and the drug companies
+28
+
+• Whenever possible, warn patients and
+their caregivers about the possibility of
+activating side effects, and advise them to
+report such symptoms immediately
+• Monitor patients for activation of
+suicidal ideation, especially children and
+adolescents
+
+Do Not Use
+• If patient is recovering from myocardial
+infarction
+• If patient is taking agents capable of
+significantly prolonging QTc interval
+(e.g., pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin)
+• If there is a history of QTc prolongation or
+cardiac arrhythmia, recent acute myocardial
+infarction, uncompensated heart failure
+• If patient is taking drugs that inhibit TCA
+metabolism, including CYP2D6 inhibitors,
+except by an expert
+• If there is reduced CYP2D6 function,
+such as patients who are poor CYP2D6
+metabolizers, except by an expert and at
+low doses
+• If there is a proven allergy to amitriptyline
+or nortriptyline
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Use with caution; may need to lower dose
+
+Hepatic Impairment
+• Use with caution; may need to lower dose
+
+Cardiac Impairment
+• Baseline ECG is recommended
+• TCAs have been reported to cause
+arrhythmias, prolongation of conduction
+time, orthostatic hypotension, sinus
+tachycardia, and heart failure, especially in
+the diseased heart
+• Myocardial infarction and stroke have been
+reported with TCAs
+• TCAs produce QTc prolongation, which
+may be enhanced by the existence of
+bradycardia, hypokalemia, congenital or
+acquired long QTc interval, which should
+be evaluated prior to administering
+amitriptyline
+• Use with caution if treating concomitantly
+with a medication likely to produce
+prolonged bradycardia, hypokalemia,
+
+
+
+
+<<<PAGE 52>>>
+
+AMOXAPINE (continued)
+• Since tricyclic and tetracyclic
+antidepressants are frequently associated
+with weight gain, before starting treatment,
+weigh all patients and determine if
+the patient is already overweight (BMI
+25.0–29.9) or obese (BMI ≥30)
+• Before giving a drug that can cause weight
+gain to an overweight or obese patient,
+consider determining whether the patient
+already has pre-diabetes (fasting plasma
+glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose ≥126 mg/dL), or
+dyslipidemia (increased total cholesterol,
+LDL cholesterol, and triglycerides;
+decreased HDL cholesterol), and treat or
+refer such patients for treatment, including
+nutrition and weight management, physical
+activity counseling, smoking cessation, and
+medical management
+• Monitor weight and BMI during treatment
+• While giving a drug to a patient who has
+gained >5% of initial weight, consider
+evaluating for the presence of pre-diabetes,
+diabetes, or dyslipidemia, or consider
+switching to a different antidepressant
+• ECGs may be useful for selected patients
+(e.g., those with personal or family history of
+QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated
+heart failure; or taking agents that prolong
+QTc interval such as pimozide, thioridazine,
+selected antiarrhythmics, moxifloxacin,
+sparfloxacin, etc.)
+• Patients at risk for electrolyte disturbances
+(e.g., patients on diuretic therapy)
+should have baseline and periodic serum
+potassium and magnesium measurements
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• Anticholinergic activity may explain
+sedative effects, dry mouth, constipation,
+and blurred vision
+• Sedative effects and weight gain may be
+due to antihistamine properties
+• Blockade of alpha adrenergic 1 receptors
+may explain dizziness, sedation, and
+hypotension
+• Cardiac arrhythmias and seizures,
+especially in overdose, may be caused by
+blockade of ion channels
+34
+
+Notable Side Effects
+• Blurred vision, constipation, urinary
+retention, increased appetite, dry mouth,
+nausea, diarrhea, heartburn, unusual taste
+in mouth, weight gain
+• Fatigue, weakness, dizziness, sedation,
+headache, anxiety, nervousness,
+restlessness
+• Sexual dysfunction, sweating
+• Can cause drug-induced parkinsonism,
+akathisia, and theoretically, tardive
+dyskinesia
+
+ Life-Threatening or
+Dangerous Side Effects
+• Paralytic ileus, hyperthermia (TCAs/
+tetracyclics + anticholinergic agents)
+• Lowered seizure threshold and rare
+seizures
+• Orthostatic hypotension, sudden death,
+arrhythmias, tachycardia
+• QTc prolongation
+• Hepatic failure, drug-induced parkinsonism
+• Increased intraocular pressure
+• Rare induction of mania
+• Rare activation of suicidal ideation and
+behavior (suicidality) (short-term studies
+did not show an increase in the risk of
+suicidality with antidepressants compared
+to placebo beyond age 24)
+
+Weight Gain
+• Many experience and/or can be significant
+in amount
+• Can increase appetite and carbohydrate
+craving
+
+Sedation
+• Many experience and/or can be significant
+in amount
+• Tolerance to sedative effect may develop
+with long-term use
+
+What to Do About Side Effects
+• Wait
+• Wait
+• Wait
+• Lower the dose
+• Switch to an SSRI or newer antidepressant
+
+
+
+
+<<<PAGE 54>>>
+
+AMOXAPINE (continued)
+ideation, and require the addition of
+lithium, a mood stabilizer or an atypical
+antipsychotic, and/or discontinuation of
+amoxapine
+
+Other Warnings/Precautions
+• Add or initiate other antidepressants
+with caution for up to 2 weeks after
+discontinuing amoxapine
+• Generally, do not use with MAOIs, including
+14 days after MAOIs are stopped; do not
+start an MAOI for at least 5 half-lives (5 to
+7 days for most drugs) after discontinuing
+amoxapine, but see Pearls
+• Use with caution in patients with history
+of seizure, urinary retention, angle-closure
+glaucoma, hyperthyroidism
+• TCAs/tetracyclics can increase QTc
+interval, especially at toxic doses, which
+can be attained not only by overdose but
+also by combining with drugs that inhibit
+its metabolism via CYP2D6, potentially
+causing torsade de pointes-type arrhythmia
+or sudden death
+• Because TCAs/tetracyclics can prolong
+QTc interval, use with caution in patients
+who have bradycardia or who are taking
+drugs that can induce bradycardia (e.g.,
+beta blockers, calcium channel blockers,
+clonidine, digitalis)
+• Because TCAs/tetracyclics can prolong
+QTc interval, use with caution in
+patients who have hypokalemia and/
+or hypomagnesemia, or who are taking
+drugs that can induce hypokalemia and/
+or magnesemia (e.g., diuretics, stimulant
+laxatives, intravenous amphotericin B,
+glucocorticoids, tetracosactide)
+• When treating children, carefully weigh
+the risks and benefits of pharmacological
+treatment against the risks and benefits of
+nontreatment with antidepressants and make
+sure to document this in the patient’s chart
+• Distribute the brochures provided by the
+FDA and the drug companies
+• Whenever possible, warn patients and
+their caregivers about the possibility of
+activating side effects, and advise them to
+report such symptoms immediately
+• Monitor patients for activation of
+suicidal ideation, especially children and
+adolescents
+
+36
+
+Do Not Use
+• If patient is recovering from myocardial
+infarction
+• If patient is taking agents capable of
+significantly prolonging QTc interval
+(e.g., pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin)
+• If there is a history of QTc prolongation or
+cardiac arrhythmia, recent acute myocardial
+infarction, uncompensated heart failure
+• If patient is taking drugs that inhibit TCA/
+tetracyclic metabolism, including CYP2D6
+inhibitors, except by an expert
+• If there is reduced CYP2D6 function, such as
+patients who are poor CYP2D6 metabolizers,
+except by an expert and at low doses
+• If there is a proven allergy to amoxapine or
+loxapine
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Use with caution – may require lower than
+usual adult dose
+
+Hepatic Impairment
+• Use with caution – may require lower than
+usual adult dose
+
+Cardiac Impairment
+• Baseline ECG is recommended
+• TCAs/tetracyclics have been reported
+to cause arrhythmias, prolongation of
+conduction time, orthostatic hypotension,
+sinus tachycardia, and heart failure,
+especially in the diseased heart
+• Myocardial infarction and stroke have been
+reported with TCAs/tetracyclics
+• TCAs/tetracyclics produce QTc
+prolongation, which may be enhanced by
+the existence of bradycardia, hypokalemia,
+congenital or acquired long QTc interval,
+which should be evaluated prior to
+administering amoxapine
+• Use with caution if treating concomitantly
+with a medication likely to produce
+prolonged bradycardia, hypokalemia,
+slowing of intracardiac conduction, or
+prolongation of the QTc interval
+• Avoid TCAs/tetracyclics in patients with
+a known history of QTc prolongation,
+recent acute myocardial infarction, and
+uncompensated heart failure
+
+

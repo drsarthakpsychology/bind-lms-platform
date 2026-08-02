@@ -1,0 +1,349 @@
+<<<PAGE 10>>>
+
+0521011698pre.qxd
+
+74.
+75.
+76.
+77.
+78.
+79.
+80.
+81.
+82.
+83.
+84.
+85.
+86.
+87.
+88.
+89.
+90.
+91.
+92.
+93.
+94.
+95.
+96.
+97.
+98.
+99.
+100.
+101.
+
+9/13/04
+
+10:34 AM
+
+Page ix
+
+quetiapine
+reboxetine
+risperidone
+rivastigmine
+selegiline
+sertraline
+sulpiride
+tacrine
+temazepam
+thioridazine
+thiothixene
+tiagabine
+tianeptine
+topiramate
+tranylcypromine
+trazodone
+triazolam
+trifluoperazine
+trimipramine
+valproate
+venlafaxine
+zaleplon
+ziprasidone
+zolpidem
+zonisamide
+zopiclone
+zotepine
+zuclopenthixol
+
+401
+407
+411
+417
+423
+429
+435
+439
+443
+447
+453
+457
+461
+465
+471
+477
+483
+487
+493
+499
+505
+511
+515
+521
+525
+529
+533
+539
+
+Index by drug name
+(generic and international trade names)
+Index by use
+Index by class
+
+545
+559
+565
+
+Abbreviations
+
+569
+
+(FDA) Use-In-Pregnancy Ratings
+
+571
+
+ix
+
+
+
+
+<<<PAGE 13>>>
+
+0521011698pre.qxd
+
+9/13/04
+
+10:34 AM
+
+Page xii
+
+At the back of the Guide are several indices. The first is an index by drug name,
+giving both generic names (uncapitalized) and trade names (capitalized and followed by the generic name in parentheses). The second is an index of common
+uses for the generic drugs included in the Guide and is organized by
+disorder/symptom. Agents that are approved by the FDA for a particular use are
+shown in bold. The third index is organized by drug class, and lists all the agents
+that fall within each particular class. In addition to these indices there is a list of
+abbreviations and FDA definitions for the Pregnancy Categories A, B, C, D and X.
+A listing of the icons used in the Guide is included on pages xiii–xv.
+Readers are encouraged to consult standard references1 and comprehensive
+psychiatry and pharmacology textbooks for more in-depth information. They are
+also reminded that the art of psychopharmacology section is the author’s opinion.
+It is strongly advised that readers familiarize themselves with the standard use
+of these drugs before attempting any of the more exotic uses discussed, such as
+unusual drug combinations and doses. Reading about both drugs before augmenting one with the other is also strongly recommended. Today’s psychopharmacologist should also regularly track blood pressure, weight and body mass index for
+most of their patients. The dutiful clinician will also check out the drug interactions of non-central-nervous-system (CNS) drugs with those that act in the CNS,
+including any prescribed by other clinicians.
+Certain drugs may be for experts only and might include clozapine, thioridazine, pimozide, tacrine, pemoline, nefazodone, mesoridazine and MAO
+inhibitors, among others. Off-label uses not approved by the FDA and inadequately studied doses or combinations of drugs may also be for the expert only,
+who can weigh risks and benefits in the presence of sometimes vague and conflicting evidence. Pregnant or nursing women, or people with two or more psychiatric
+illnesses, substance abuse, and/or a concomitant medical illness may be suitable
+patients for the expert only. Controlled substances also require expertise. Use
+your best judgement as to your level of expertise and realize that we are all learning in this rapidly advancing field. The practice of medicine is often not so much
+a science as it is an art. It is important to stay within the standards of medical
+care for the field, and also within your personal comfort zone, while trying to help
+extremely ill and often difficult patients with medicines than can sometimes
+transform their lives and relieve their suffering.
+Finally, this book is intended to be genuinely helpful for practitioners of psychopharmacology by providing them with the mixture of facts and opinions
+selected by the author. Ultimately, prescribing choices are the reader’s responsibility. Every effort has been made in preparing this book to provide accurate and
+up-to-date information in accord with accepted standards and practice at the time
+of publication. Nevertheless, the psychopharmacology field is evolving rapidly
+and the author and publisher make no warranties that the information contained
+herein is totally free from error, not least because clinical standards are constantly changing through research and regulation. Furthermore, the author and publisher disclaim any responsibility for the continued currency of this information
+and disclaim all liability for any and all damages, including direct or consequential damages, resulting from the use of information contained in this book.
+Doctors recommending and patients using these drugs are strongly advised to pay
+careful attention to, and consult information provided by the manufacturer.
+
+1 For example, Physician’s Desk Reference and Martindale’s
+
+xii
+
+
+
+
+<<<PAGE 586>>>
+
+0521011698emt.qxd
+
+9/2/04
+
+2:51 PM
+
+Page 569
+
+Abbreviations
+5HT
+
+serotonin
+
+ACH
+
+acetylcholine
+
+ACHE
+
+acetylcholinesterase
+
+ADHD
+
+attention deficit hyperactivity disorder
+
+ALT
+
+alanine aminotransferase
+
+ALPT
+
+total serum alkaline phosphatase
+
+AST
+
+aspartate aminotransferase
+
+BID
+
+twice a day
+
+BMI
+
+body mass index
+
+BuChE
+
+butyrylcholinesterase
+
+CMI
+
+clomipramine
+
+CNS
+
+central nervous system
+
+CYP450
+
+cytochrome P450
+
+De-CMI
+
+desmethyl-clomipramine
+
+DA
+
+dopamine
+
+dl
+
+deciliter
+
+DLB
+
+dementia with Lewy bodies
+
+ECG
+
+electrocardiogram
+
+EEG
+
+electroencephalogram
+
+EKG
+
+electrocardiogram
+
+EPS
+
+extrapyramidal side effects
+
+ERT
+
+estrogen replacement therapy
+
+FDA
+
+Food and Drug Administration
+
+FSH
+
+follicle-stimulating hormone
+
+GAD
+
+generalized anxiety disorder
+
+GI
+
+gastrointestinal
+
+HDL
+
+high-density lipoprotein
+
+HMG CoA
+
+beta-hydroxy-beta-methylglutaryl Coenzyme A
+
+HRT
+
+hormone replacement therapy
+
+IM
+
+intramuscular
+
+IV
+
+intravenous
+
+LDL
+
+low-density lipoprotein
+
+LH
+
+luteinizing hormone
+
+Lb
+
+pound
+
+MAO
+
+monoamine oxidase
+
+MAOI
+
+monoamine oxidase inhibitor
+
+mCPP
+
+meta-chloro-phenyl-piperazine
+
+mg
+
+milligram
+
+mL
+
+milliliter
+
+mm Hg
+
+millimeters of mercury
+
+MDD
+
+major depressive disorder
+569
+
+

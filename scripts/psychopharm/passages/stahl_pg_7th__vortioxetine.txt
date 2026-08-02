@@ -1,0 +1,583 @@
+<<<PAGE 12>>>
+
+138 triiodothyronine
+139 trimipramine
+140 valbenazine
+141 valproate
+142 varenicline
+143 venlafaxine
+144 vilazodone
+145 vortioxetine
+146 zaleplon
+147 ziprasidone
+148 zolpidem
+149 zonisamide
+150 zopiclone
+151 zotepine
+152 zuclopenthixol
+Index by Drug Name
+Index by Use
+Index by Class
+Abbreviations
+
+
+
+
+<<<PAGE 21>>>
+
+serotonin-dopamine antagonist
+
+serotonin and norepinephrine reuptake inhibitor
+
+serotonin 1A partial agonist
+
+serotonin partial agonist reuptake inhibitor
+
+sodium oxybate
+
+stimulant
+
+thyroid hormone
+
+trazodone (serotonin antagonist/reuptake inhibitor)
+
+tricyclic/tetracyclic antidepressant
+
+vesicular monoamine transporter 2 inhibitor
+
+vortioxetine
+
+
+
+
+<<<PAGE 2435>>>
+
+Patients with sexual dysfunction on an SSRI/SNRI or who wish to
+avoid sexual dysfunction on an antidepressant
+Patients with weight gain on another antidepressant or who wish to
+avoid weight gain on an antidepressant
+Patients with mixed anxiety and depression
+Potential Disadvantages
+Patients who cannot take medication reliably with food
+Patients sensitive to gastrointestinal side effects such as diarrhea and
+nausea
+Primary Target Symptoms
+Depressed mood
+Anxiety
+Pearls
+Serotonin 1A partial agonist property is a relatively unique
+mechanism of action among approved antidepressants (also
+vortioxetine and atypical antipsychotic augmenting agents such as
+quetiapine, aripiprazole, brexpiprazole, and others)
+First member of a new antidepressant class, SPARIs, or serotonin
+partial agonist reuptake inhibitors
+Relative lack of sexual dysfunction and weight gain compared to
+many other antidepressants that block serotonin reuptake may be
+
+
+
+
+<<<PAGE 2438>>>
+
+Vortioxetine
+
+Therapeutics
+Brands
+Trintellix (formerly Brintellix)
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: serotonin multimodal (S-MM)
+Multimodal antidepressant
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive disorder
+Generalized anxiety disorder (GAD)
+Cognitive symptoms associated with depression
+Geriatric depression
+How the Drug Works
+
+
+
+
+<<<PAGE 2442>>>
+
+Augmentation experience is limited compared to other
+antidepressants
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (use
+combinations of antidepressants with caution as this may activate
+bipolar disorder and suicidal ideation)
+Use with caution with antidepressants that are CYP450 2D6
+inhibitors (e.g., bupropion, duloxetine, fluoxetine, paroxetine), as
+these agents will increase vortioxetine levels and may require a dose
+reduction of vortioxetine
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin,
+pregabalin, or tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+
+
+
+<<<PAGE 2444>>>
+
+Reported but not expected
+What to Do About Side Effects
+Wait
+Wait
+Wait
+In a few weeks, switch to another agent or add other drugs
+Best Augmenting Agents for Side Effects
+Often best to try another antidepressant monotherapy prior to
+resorting to augmentation strategies to treat side effects
+Trazodone or a hypnotic for insomnia
+Sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, apathy, or
+sexual dysfunction (with caution, as bupropion can raise
+vortioxetine levels via CYP450 2D6 inhibition)
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+
+
+
+
+<<<PAGE 2445>>>
+
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of vortioxetine
+
+Dosing And Use
+Usual Dosage Range
+5–20 mg/day
+Dosage Forms
+Tablet 5 mg, 10 mg, 15 mg, 20 mg
+How to Dose
+Initial 10 mg once daily; can decrease to 5 mg once daily or increase
+to 20 mg once daily depending on patient response; maximum
+recommended dose generally 20 mg once daily
+Dosing Tips
+Can be taken with or without food
+Tablet should not be divided, crushed, or dissolved
+
+
+
+
+<<<PAGE 2447>>>
+
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or for at least 14–21 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (about 14 days for
+vortioxetine with a half-life of 66 hours) after discontinuing
+vortioxetine
+Strong CYP450 2D6 inhibitors can increase plasma levels of
+vortioxetine, possibly requiring its dose to be decreased
+Broad CYP450 2D6 inducers can decrease plasma levels of
+vortioxetine, possibly requiring its dose to be increased
+Could theoretically cause weakness, hyperreflexia, and
+incoordination when combined with sumatriptan or possibly other
+triptans, requiring careful monitoring of patient
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+Other Warnings/Precautions
+Use with caution in patients with history of seizures
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+
+
+
+
+<<<PAGE 2448>>>
+
+Possible risk of hyponatremia related to SIADH (syndrome of
+inappropriate antidiuretic hormone secretion) with serotonergic
+drugs
+Not approved in children, so when treating children off label,
+carefully weigh the risks and benefits of pharmacological treatment
+against the risks and benefits of non-treatment with antidepressants
+and make sure to document this in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is taking an MAOI
+If there is a proven allergy to vortioxetine
+
+Special Populations
+Renal Impairment
+No dose adjustment necessary
+
+
+
+
+<<<PAGE 2449>>>
+
+Hepatic Impairment
+No dose adjustment necessary for mild to moderate impairment
+Has not been studied in patients with severe hepatic impairment
+Cardiac Impairment
+Not systematically evaluated in patients with cardiac impairment
+Treating depression with SSRIs in patients with acute angina or
+following myocardial infarction may reduce cardiac events and
+improve survival as well as mood; not known for vortioxetine
+Elderly
+No dose adjustment necessary
+Some patients may tolerate lower doses better
+Risk of SIADH with SSRIs is higher in the elderly
+Reduction in risk of suicidality with antidepressants compared to
+placebo in adults age 65 and older
+Children and Adolescents
+Safety and efficacy have not been established
+Carefully weigh the risks and benefits of pharmacological treatment
+against the risks and benefits of nontreatment with antidepressants
+and make sure to document this in the patient’s chart
+
+
+
+
+<<<PAGE 2452>>>
+
+Breast Feeding
+Unknown if vortioxetine is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+If child becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+Immediate postpartum period is a high-risk time for depression,
+especially in women who have had prior depressive episodes, so
+drug may need to be reinstituted late in the third trimester or shortly
+after childbirth to prevent a recurrence during the postpartum period
+Must weigh benefits of breast feeding with risks and benefits of
+antidepressant treatment versus nontreatment to both the infant and
+the mother
+For many patients, this may mean continuing treatment during
+breast feeding
+
+The Art Of Psychopharmacology
+Potential Advantages
+Patients with sexual dysfunction
+Patients with cognitive symptoms of depression
+Patients with residual cognitive symptoms after treatment with
+another antidepressant
+Elderly patients
+
+
+
+
+<<<PAGE 2453>>>
+
+Patients who have not responded to other antidepressants
+Patients who do not want weight gain
+Potential Disadvantages
+Cost
+Primary Target Symptoms
+Depressed mood
+Cognitive symptoms
+Anxiety
+Pearls
+In May 2016 the US FDA approved a brand name change from
+Brintellix to Trintellix in order to decrease prescribing and
+dispensing errors due to name confusion with the anti-platelet
+medication Brilinta (ticagrelor)
+May have less sexual dysfunction than SSRIs
+Multiple studies show pro-cognitive effects greater than a
+comparator antidepressant in patients with major depressive
+episodes
+Patients who do not respond to antidepressants with other
+mechanisms of action may respond to vortioxetine
+
+
+
+
+<<<PAGE 2454>>>
+
+Shown effective specifically in elderly patients with depression,
+with a positive trial in geriatric depression with improvement of
+cognition as well as mood
+Has a unique claim of preventing recurrences in major depression
+No weight gain in clinical trials
+Long half-life means vortioxetine can generally be abruptly
+discontinued, although some caution may be necessary when
+stopping higher doses (i.e., 15 or 20 mg/day)
+Despite serotonin 3 antagonist actions, nausea is common,
+presumably due to full agonist actions at serotonin 1A receptors
+Dose response for efficacy in depression: higher doses are more
+effective
+Vortioxetine has a unique multimodal mechanism of action
+Nonresponse to vortioxetine in elderly may require consideration of
+mild cognitive impairment or Alzheimer disease
+
+Suggested Reading
+Bang-Anderson B , Ruhland T , Jorgensen M , et al. Discovery of 1-[2-(2,4dimethylphenylsulfanyl)phenyl]piperazine (Lu AA21004): a novel
+multimodal compound for the treatment of major depressive disorder . J
+Med Chem 2011 ;54 (9):3206 –21.
+
+
+
+
+<<<PAGE 2455>>>
+
+Mork A , Montezinho LP , Miller S , et al. Vortioxetine (LU AA21004), a
+novel multimodal antidepressant, enhanced memory in rats . Pharmacol
+Biochem Behav 2013 ;105 :41 –50 .
+Stahl SM , Lee-Zimmerman C , Cartwright S , Morrissette DA .
+Serotonergic drugs for depression and beyond . Curr Drug Targets 2013 ;14
+(5):578–85 .
+Westrich I , Pehrson A , Zhong H , et al. In vitro and in vivo effects of the
+multimodal antidepressant vortioxetine (Lu AA21004) at human and rat
+targets . Int J Psychiatry Clin Pract 2012 ;5 (Suppl 1):S47 .
+
+
+
+
+<<<PAGE 2576>>>
+
+brexanolone, 99
+brexpiprazole, 103
+Brisdelle (paroxetine), 593
+Brintellix (vortioxetine), 853
+BritLofex (lofexidine), 427
+Buprenex (buprenorphine), 111
+buprenorphine, 111
+buprenorphine with naloxone, 111
+bupropion, 117
+bupropion SR, 117
+bupropion XL, 117
+Buscalm (buspirone), 123
+Buspar (buspirone), 123
+BuSpar (buspirone), 123
+Buspimen (buspirone), 123
+buspirone, 123
+Buspisal (buspirone), 123
+Buteridol (haloperidol), 347
+Butrans (buprenorphine), 111
+Calmoflorine (sulpiride), 741
+Camcolit (lithium), 415
+Campral (acamprosate), 1
+Caplyta (lumateperone), 451
+caprylidene, 127
+Caprysin (clonidine), 179
+Carbabeta (carbamazepine), 131
+Carbagamma (carbamazepine), 131
+carbamazepine, 131
+
+
+
+
+<<<PAGE 2623>>>
+
+Trilafon decanoaat (perphenazine), 607
+Trilafon dekanoat (perphenazine), 607
+Trilafon Depot (perphenazine), 607
+Trilafon enantat(e) (perphenazine), 607
+Trilafon enantato (perphenazine), 607
+Trilafon enenthaat (perphenazine), 607
+Trileptal (oxcarbazepine), 575
+Trilifan (perphenazine), 607
+Trilifan Retard (perphenazine), 607
+Trimen (trihexyphenidyl), 809
+trimipramine, 817
+Trimonil (carbamazepine), 131
+Trimonil Retard (carbamazepine), 131
+Trintellix (vortioxetine), 853
+Trion (triazolam), 799
+Tripamine Surmontil (trimipramine), 817
+Triptafen (perphenazine), 607
+Triptil (protriptyline), 657
+Triptyl (amitriptyline), 25
+Triptyl Depot (amitriptyline), 25
+Trisedyl (trifluoperazine), 803
+Trittico (trazodone), 793
+Trokendi XR (topiramate), 781
+Tropargal (nortriptyline), 551
+Tropium (chlordiazepoxide), 147
+Trycam (triazolam), 799
+Tryptanol (amitriptyline), 25
+Tryptine (amitriptyline), 25
+
+
+
+
+<<<PAGE 2626>>>
+
+Vividyl (nortriptyline), 551
+Vivitrol (naltrexone), 537
+Vivol (diazepam), 229
+vortioxetine, 853
+Vraylar (cariprazine), 137
+Vulbegal (flunitrazepam), 297
+Vulpral (valproate), 829
+Vyleesi (bremelanotide), 95
+Vyvanse (lisdexamfetamine), 409
+Wakix (pitolisant), 639
+Wellbatrin (bupropion), 117
+Wellbutrin (bupropion), 117
+Wellbutrin SR (bupropion SR), 117
+Wellbutrin XL (bupropion XL), 117
+Xanax (alprazolam), 11
+Xanax XR (alprazolam XR), 11
+Xanor (alprazolam), 11
+Xepin (doxepin), 255
+Xeplion (paliperidone), 581
+Xyrem (sodium oxybate), 733
+Zactin (fluoxetine), 301
+Zafrionil (haloperidol), 347
+zaleplon, 859
+Zelapon (selegiline), 705
+Zemorcon (sulpiride), 741
+Zentiva (aripiprazole), 53
+
+
+
+
+<<<PAGE 2631>>>
+
+trazodone, 793
+trifluoperazine , 803
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Attention deficit hyperactivity disorder
+amphetamine (d) , 39
+amphetamine (d,l) , 45
+armodafinil, 65
+atomoxetine , 79
+bupropion, 117
+chlorpromazine (hyperactivity) , 153
+clonidine , 179
+guanfacine , 343
+haloperidol (hyperactivity) , 347
+lisdexamfetamine , 409
+methylphenidate (d) , 481
+methylphenidate (d,l) , 487
+modafinil, 521
+reboxetine, 681
+Autism-related irritability
+aripiprazole , 53
+risperidone , 687
+Behavioral problems
+aripiprazole, 53
+
+
+
+
+<<<PAGE 2640>>>
+
+vilazodone , 847
+vortioxetine , 853
+Drug-induced parkinsonism
+benztropine , 85
+diphenhydramine, 235
+trihexyphenidyl , 809
+Erectile dysfunction
+sildenafil , 729
+Excessive sleepiness
+armodafinil , 65
+modafinil , 521
+pitolisant , 639
+sodium oxybate , 733
+solriamfetol , 737
+tasimelteon, 751
+Fatigue
+armodafinil, 65
+modafinil, 521
+Fibromyalgia
+amitriptyline, 25
+desvenlafaxine, 215
+duloxetine , 263
+levomilnacipran, 403
+milnacipran , 503
+pregabalin , 647
+sodium oxybate, 733
+
+
+
+
+<<<PAGE 2641>>>
+
+Generalized anxiety disorder
+agomelatine, 5
+alprazolam , 11
+citalopram, 159
+desvenlafaxine, 215
+duloxetine , 263
+escitalopram , 269
+fluoxetine, 301
+fluvoxamine, 325
+mirtazapine, 509
+paroxetine , 509
+pregabalin, 647
+propranolol, 653
+sertraline, 721
+tiagabine (adjunct), 771
+venlafaxine , 841
+vortioxetine, 853
+Glossopharyngeal neuralgia
+carbamazepine, 131
+Hiccups, intractable
+chlorpromazine , 153
+Hypersalivation
+clonidine, 179
+Hypertension
+clonidine , 179
+guanfacine , 343
+
+
+
+
+<<<PAGE 2660>>>
+
+nortriptyline, 551
+paroxetine, 593
+phenelzine, 613
+protriptyline, 657
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+triiodothyronine, 813
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Antipsychotics
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine, 153
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine, 313
+haloperidol, 347
+
+

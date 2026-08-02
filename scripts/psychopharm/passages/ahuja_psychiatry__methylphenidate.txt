@@ -1,0 +1,612 @@
+<<<PAGE 40>>>
+
+28
+
+A Short Textbook of Psychiatry
+
+OTHER ORGANIC MENTAL
+DISORDERS (DUE TO BRAIN DAMAGE
+AND DYSFUNCTION, AND TO
+PHYSICAL DISEASES)
+This group includes miscellaneous mental disorders
+which are causally related to brain dysfunction due to
+primary cerebral disease, systemic disease (secondary), or toxic substances.
+According to ICD-10, an evidence of cerebral
+disease, damage or dysfunction, or of systemic
+physical disease, known to be associated with one
+of the listed syndromes is required, with a temporal
+relationship between development of the underlying
+disease and the onset of the mental syndrome, with
+recovery from the mental disorder following removal
+or improvement of the underlying presumed cause,
+and an absence of evidence to suggest an alternative
+cause of the mental syndrome (such as a strong family
+history or precipitating stress).
+If conditions 1 and 2 are present, a provisional
+diagnosis can be made; if all four are present, the
+certainty of diagnosis is significantly increased.
+The following clinical conditions are known to
+be associated with an increased risk for these other
+organic mental disorders:
+
+Primary Cerebral Diseases
+Epilepsy, limbic encephalitis, Huntington’s disease,
+head trauma, brain neoplasms, vascular cerebral disease, cerebral malformations.
+
+Systemic Diseases
+Extracranial neoplasms (e.g. carcinoma pancreas),
+collagen diseases (e.g. SLE), endocrine disease (e.g.
+hypothyroidism, hyperthyroidism, Cushing’s disease),
+metabolic disorders (e.g. hypoglycaemia, porphyria,
+hypoxia); infectious diseases (e.g. trypanosomiasis).
+
+Drugs
+Steroids, propranolol, levodopa, methyldopa, antihypertensives, antimalarials, alcohol and other psychoactive substances.
+
+ORGANIC HALLUCINOSIS
+According to ICD-10, presence of persistent or recurrent hallucinations due to an underlying organic cause
+is required for the diagnosis of organic hallucinosis,
+in addition to the general guidelines for the diagnosis
+of other organic mental disorders, described earlier.
+It is important to rule out any major disturbance of
+consciousness, intelligence, memory, mood or
+thought.
+These hallucinations can occur in any sensory
+modality but are usually visual (most common) or
+auditory in nature. In many cases, they depend on
+the underlying cause. These hallucinations can range
+from very simple and unformed, to very complex and
+well-organised. Usually the patients realise that the
+hallucinations are not real but sometimes there may
+be a delusional elaboration of hallucinations.
+
+Aetiology
+1. Drugs: Hallucinogens (LSD, psilocybin, mescaline), cocaine, cannabis, phencyclidine (PCP),
+levodopa, bromocriptine, amantadine, ephedrine,
+propranolol, pentazocine, methylphenidate, imipramine, anticholinergics, bromide.
+2. Alcohol: In alcoholic hallucinosis, auditory hallucinations are usually more common.
+3. Sensory deprivation.
+4. ‘Release’ hallucinations due to sensory pathway
+disease, e.g. bilateral cataracts, otosclerosis, optic
+neuritis.
+5. Migraine.
+6. Epilepsy: Complex partial seizures.
+7. Intracranial space occupying lesions.
+8. Temporal arteritis.
+9. Brain stem lesions (peduncular hallucinosis).
+
+Management
+1. Treatment of the underlying cause, if treatable.
+2. Symptomatic treatment with a low dose of an
+antipsychotic medication (such as Haloperidol,
+Risperidone and Olanzapine) may be needed.
+
+
+
+
+<<<PAGE 94>>>
+
+82
+
+A Short Textbook of Psychiatry
+
+The prevalence of winter seasonal mood disorder
+increases with increasing latitude.
+The treatment, in addition to the usual modes
+of management, also includes phototherapy, which
+consists of increasing the number of hours of day-light
+(using artificial, full-spectrum, white light of 2,50010,000 lux intensity, in the early morning, with eyes
+open) for the treatment of depression. The recent NICE
+guidelines for treatment of depression cast some doubt
+on efficacy of light therapy.
+
+Secondary Depression and Secondary
+Mania
+Both depressive and manic episodes can occur secondary to certain physical diseases and drugs. These
+have been discussed under organic mood disorders
+(Chapter 3).
+
+Neurotic Depression
+Neurotic depression is usually characterised by the
+following clinical features:
+1. Presence of mild to moderate depression.
+2. Depressive symptoms usually occur in response
+to a stressful situation but are often quite disproportionate to the severity of stress.
+3. Other ‘neurotic’ symptoms such as anxiety, obsessive symptoms, phobic symptoms, and multiple
+somatic symptoms, are often present.
+4. Preoccupation with the stressful condition is common.
+The typical course of neurotic depression is
+chronic, with fluctuations. Delusions, hallucinations
+and other psychotic features are characteristically
+absent. The other common features include:
+1. The reactivity of mood is preserved, i.e. the patient
+is able to emotionally react to the events occurring
+in his surroundings.
+2. There may be insomnia or hypersomnia. There is
+usually difficulty in initiating sleep and sometimes
+difficulty in awakening in the morning.
+3. The mood may be worse in the evening, at the end
+of the day. The mood may also become better in
+social gatherings and whilst engaged in recreational activities.
+
+4. Suicidal threats and gestures are more common
+than completed suicide. However, as suicide may
+be completed accidentally, all such threats should
+be taken seriously.
+An episode of major depression may become
+superimposed on an underlying neurotic depression.
+This is then known as double depression.
+Neurotic depression has been renamed as dysthymia or dysthymic disorder in DSM-IV-TR and
+ICD-10. This category does not require the presence
+of stress as a precipitating factor, and does not put
+emphasis on the presence of other neurotic symptoms
+or traits. Dysthymia is defined as any mild depression
+which is not severe enough to be called a depressive
+episode, and lasts for two years or more. This is more
+common in females, with an average age of onset in
+late third decade.
+A large number of psychotherapies have been
+advocated for neurotic depression. The choice of
+therapy mainly rests on the therapist’s expertise in
+a particular mode of therapy. Two important issues
+which often need to be addressed in the therapeutic
+relationship are:
+i. Dependency needs of the patient, and
+ii. Manipulative behaviour.
+Supportive psychotherapy is an important adjunct
+to the treatment.
+When depression is significant and/or is not
+responding to psychotherapy, antidepressants should
+be used. As mixed depression and anxiety are very
+common, addition of small doses of benzodiazepines
+to antidepressants may be needed for the first one
+or two weeks. However, one must be careful as
+benzodiazepines tend to get abused if prescribed for
+more than four weeks at one time.
+For non-responders to TCAs and SSRIs, and/or
+when other neurotic symptoms (such as hypochondriacal symptoms or depersonalisation) are prominent,
+MAOIs are the drugs of choice. Occasionally, amphetamines (such as methylphenidate) may be useful
+in mild depression; however, there is a significant risk
+of dependence.
+
+
+
+
+<<<PAGE 179>>>
+
+Child Psychiatry
+
+those who begin with symptoms for the first time in
+adulthood.
+
+Treatment
+The management of ADD consists of the following
+methods:
+
+Pharmacotherapy
+1. Stimulant medication: Dextro-amphetamine or
+dexamphetamine (2.5-20 mg/day) and methylphenidate (5-60 mg/day) have been traditionally
+used. Currently, Methylphenidate is the drug
+of choice in the treatment of ADD, with a high
+response rate. Methylphenidate is also available
+in sustained release formulations which are preferable due to improved treatment concordance
+and convenience of once a day dose.
+Both dexamphetamine and methylphenidate
+act on the reticular activating system, causing
+stimulation of the inhibitory influences on the
+cerebral cortex, thus decreasing hyperactivity
+and/or distractibility.
+2. Others: When stimulant medication is not available or is not effective, other drugs can be used
+after careful individual consideration of the risks
+and benefits in the individual patient. These
+include clonidine, tricyclic antidepressants
+(such as imipramine), bupropion, venlafaxine,
+chlorproma zine, thiorida zine, and lithium
+carbonate.
+Atomoxetine, a norepinephrine reuptake inhibitor,
+may be an alternative for children who do not respond
+to stimulants. The usual dose range is 0.5-1.2 mg/kg/
+day. Atomoxetine appears to be the drug of choice in
+adult ADD.
+Barbiturates are contraindicated in ADD as they
+increase hyperactivity.
+
+Behaviour Modification
+Counselling and Supportive Psychotherapy
+Behaviour modification and counselling are very
+important in the successful management of ADD and
+can be used along with drug therapy.
+
+167
+
+CONDUCT DISORDERS
+Conduct disorder is characterised by a persistent and
+significant pattern of conduct, in which the basic rights
+of others are violated or rules of society are not followed. The diagnosis is only made when the conduct
+is far in excess of the routine mischief of children and
+adolescents. The onset occurs much before 18 years
+of age, usually even before puberty.
+The disorder is much more (about 5-10 times)
+common in males. In United States of America, about
+10% of all male children under the age of 18 have
+conduct disorder.
+According to ICD-10, there are four subtypes of
+conduct disorder:
+1. Conduct disorder confined to the family context.
+2. Unsocialised conduct disorder.
+3. Socialised conduct disorder.
+4. Oppositional defiant disorder.
+The characteristic clinical features include:
+1. Frequent lying.
+2. Stealing or robbery.
+3. Running away from home and school.
+4. Physical violence such as rape, fire-setting, assault
+or breaking-in, use of weapons.
+5. Cruelty towards other people and animals.
+In the more common socialised (group) type of
+conduct disorder, the person claims loyalty to his or
+her group. The unsocialised (solitary) type is a more
+serious disorder with usually a severe underlying
+psychopathology. Earlier, the patients with conduct
+disorder were called as juvenile delinquents.
+Many patients of conduct disorder, especially
+socialised (group) type, go on to improve markedly and may lead well adjusted lives. Some others,
+especially those with severe symptomatology, have
+a more chronic course and may be diagnosed with
+antisocial personality disorder (or traits) after 18
+years of age.
+In addition to the typical symptoms of conduct
+disorder, secondary complications often develop
+such as substance misuse or dependence, unwanted
+pregnancies, criminal record, suicidal and homicidal
+behaviour.
+
+
+
+
+<<<PAGE 185>>>
+
+Psychopharmacology
+
+173
+
+Table 15.1: A Brief History of Psychopharmacology
+<4000 BC Ayurveda describes treatment of psychiatric patients with sympathy and kindness. The methods of
+treatment included dhatura and roots of serpentina plant mixed with oil (ghee).
+1853
+Bromide used as a sedative-hypnotic.
+1869
+Chloral hydrate used in the treatment of melancholia and mania.
+1882
+Paraldehyde used as a hypnotic.
+1883
+Phenothiazines synthesised during synthesis of methylene blue (Bernthsen).
+1903
+Barbiturates (barbital) used for sedation in 1903; phenobarbital introduced in 1912.
+1917
+Malarial treatment for General Paralysis of Insane (GPI) received a Nobel prize (Julius von Wagner
+Jauregg).
+1922
+Barbiturate-induced coma introduced for the treatment of psychoses (Jacob Klaesi).
+1927
+Insulin-shock treatment introduced for schizophrenia (Manfred Sakel).
+1931
+First report of successful treatment of psychoses (Ganesh Sen and Kartik Bose from India); using
+Rauwolfia serpentina extract (reserpine). Report ignored till Nathan Kline (1958) confirmed the finding.
+1934
+Metrazol-induced convulsions used for the treatment of psychoses (Laszlo von Meduna).
+1936
+Frontal lobotomy advocated for treatment of psychiatric disorders (Egas Moniz and Almenda Lima).
+1937
+Amphetamines used in the treatment of behaviour disorders of children (C Bradley).
+1938
+Electroconvulsive therapy used for the treatment of psychoses (Ugo Cerletti and Lucio Bini).
+1940
+Phenytoin used as an anticonvulsant (Tracy Putnam).
+1943
+LSD synthesised (Albert Hofmann).
+1949
+Lithium used in mania (John F Cade); did not receive much attention even in Australia.
+1950
+Chlorpromazine synthesised while making a better antihistaminic than promethazine (Charpentier).
+1950
+Methylphenidate used in treatment of ADHD, then known as Minimal Brain Dysfunction (MBD).
+1951
+Lytic cocktail used (Laborit); Chlorpromazine earlier used (as ‘456 ORP’) in artificial hibernation.
+1951
+Isoniazid (INH) found to have mood elevating properties in patients with tuberculosis. Iproniazid, a
+MAOI and a derivative of INH, was later (1958) introduced for treatment of depression.
+1952
+The revolution in psychopharmacology came with introduction of chlorpromazine (Jean Delay and
+Pierre Deniker). The number of admissions in mental hospitals show a sudden decrease after introduction of chlorpromazine.
+1955
+Meprobamate was introduced as an anti-anxiety agent.
+1958
+Imipramine, a tricyclic antidepressant (TCA) synthesised by Haflinger and Schindler in the late 1940’s,
+was introduced for treatment of depression in 1958 (Thomas Kuhn).
+1958
+MAOIs (e.g. iproniazid) introduced for treatment of depression (Nathan Kline).
+1958
+Haloperidol synthesised in Belgium (Janssen).
+1960
+Chlordiazepoxide used as an anti-anxiety agent in 1960-1961 (Sternbach; Synthesised in 1957).
+1966
+Valpromide (Valproate) used in bipolar disorder (Lambert).
+1968
+Pimozide used for treatment of schizophrenia (Janssen).
+1967
+Clomipramine used in OCD (Fernandez and Lopez-Ibor).
+1971
+Carbamazepine used in bipolar disorder (Takezaki and Hanoaka) (Synthesized in 1953 by Schindler).
+1986
+Buspirone introduced in US market as a non-benzodiazepine anti-anxiety agent.
+1988
+Clozapine re-discovered in US as an effective treatment for refractory schizophrenia (Kane et al)
+(Synthesised in 1959). Approved by US FDA in 1990 and introduced in Indian market in 1995.
+1990s
+Second Generation Antipsychotics introduced in market starting with Risperidone.
+
+
+
+
+<<<PAGE 237>>>
+
+Emergency Psychiatry
+
+with psychotic disorders. Follow-up care is very
+important to prevent future suicidal attempts or
+suicide.
+
+Stupor and Catatonic Syndrome
+Stupor is a common condition which presents at
+the emergency services. It is defined as a clinical
+syndrome of akinesis and mutism but with relative
+preservation of conscious awareness.
+The term stupor, traditionally, has a psychiatric
+connotation, but a careful analysis of the stuporous
+patients shows that a large majority of them have
+an underlying organic cerebral cause. Stupor is
+often associated with catatonic signs and symptoms
+(catatonic withdrawal or catatonic stupor). Catatonic
+syndrome is any disorder which presents with at least
+two catatonic signs. Catatonia can be either excited
+or withdrawn (or mixed). Only catatonic withdrawal
+is associated with stupor.
+The various catatonic signs include mutism, negativism, stupor, ambitendency, echolalia, echopraxia,
+automatic obedience, posturing, mannerisms, stereotypies, excitement (not goal-directed), impulsiveness,
+combativeness or nudism.
+
+Aetiology
+A wide variety of disorders can cause catatonic stupor.
+Some of the important causes are listed in Table 19.5.
+
+Differential Diagnosis
+It is of foremost importance to differentiate between
+organic stupor and psychogenic (or so called ‘functional’) stupor. This can be done on the basis of antecedent medical and psychiatric history, mode of onset,
+and detailed physical and neurological examination.
+The important differentiating points between an
+organic and a psychogenic stupor are tabulated in
+Table 19.6. If a diagnosis of organic catatonic stupor
+is made, a search for underlying cause should be made.
+On the other hand, if the pentothal/amytal/diazepam
+interview reveals psycho pathology, appropriate
+treatment can be instituted.
+
+225
+
+Table 19.5: Some Causes of Catatonic Stupor
+1. Neurological Disorders
+i. Post-encephalitic parkinsonism
+ii. Limbic encephalitis
+iii. Surgical procedures on basal ganglia
+iv. Neoplasms in diencephalon, frontal lobe and
+limbic system
+v. Subacute sclerosing panencephalitis (SSPE)
+vi. General paresis of insane (GPI)
+vii. Petit mal status
+viii. Post-ictal phase of epilepsy
+ix. Subdural haematoma
+x. Cerebral malaria
+xi. Cortical venous thrombosis
+2. Systemic and Metabolic Disorders
+i. Diabetic ketoacidosis
+ii. Acute intermittent porphyria
+iii. Hyperparathyroidism causing hypercalcaemia
+iv. Pellagra
+v. Hepatic encephalopathy
+vi. Systemic lupus erythematosis
+vii. Homocystinuria
+viii. Membranous glomerulonephritis
+3. Drugs and Poisoning
+i. Organic alkaloids
+ii. Antipsychotics
+iii. ACTH (therapeutic doses)
+iv. Aspirin
+v. Illuminating gas
+vi. Ethyl alcohol (large doses)
+vii. Levodopa
+viii. Disulfiram
+ix. CO poisoning
+x. Lithium toxicity
+xi. Methylphenidate
+xii. Phencyclidine (large doses)
+xiii. Mescaline
+4. Psychiatric Disorders
+i. Catatonic schizophrenia
+ii. Depressive stupor
+iii. Manic stupor
+iv. Periodic catatonia
+v. Conversion and dissociative disorder
+vi. Reactive psychosis
+vii. During hypnosis.
+
+
+
+
+<<<PAGE 269>>>
+
+Index
+Kleptomania 119
+Klismaphilia 126
+Koro 110, 111
+Korsakoff’s
+psychosis 38, 39
+syndrome 27
+Kurt Schneider 54
+
+L
+LAAM 44, 45
+La-belle-indifférence 103
+Lack of
+rapport 57
+sexual enjoyment disorder 126
+Lamotrigine 79, 188
+Larks 140
+Latah 110, 111
+Late paraphrenia 61
+Latency phase 212
+Latent schizophrenia 59
+Leaden paralysis 81
+Learned behaviour 214
+Learning disability 155
+Legal and ethical issues in psychiatry 229
+Lethal catatonia 59
+Leucotomy 203
+Lewy body dementia 25
+Licensing authority 232
+Life chart 7
+Limbic system 203
+Lithium 78, 188
+Long-sleepers 134
+Loosening of associations 55, 58, 59, 62
+Lorazepam 26, 29, 87, 149, 228
+Loss of ego boundaries 57, 65
+Loxapine 66
+LSD use disorder 49
+L-thyroxin 227
+L-tryptophan 137
+Lucid intervals 26
+Lunatic 232
+
+M
+Made
+feeling 55, 56
+impulses 55, 56
+volition 55, 56
+Maintenance therapy 44
+Major depression 105
+Male
+anorgasmia 128
+erectile disorder 127
+orgasmic disorder 128
+
+Malignant syndrome 228
+Malingering 119
+Mania 61, 70, 80, 227
+Manic
+depressive psychosis 73
+episode 30, 69
+stupor 70
+Mannerisms 57-59, 164
+MAOIs 81, 82
+Marchiafava-Bignami disease 40
+Marijuana 46
+Marital therapy 217
+Masked depression 80, 105, 106
+MCI code of medical ethics, 2002 234
+McNaughten rule 229
+Medical
+emergency 221
+interview 5
+Medicolegal aspects 224
+Megavitamin therapy 67
+Memantine 25, 26
+Memory disturbances 203
+Menstrual and obstetric history 9
+Mental
+and behavioural disorders in ICD-10
+3
+disorders 19
+Health
+Act, 1987 232, 233
+Authorities 232
+retardation 153, 155, 162, 164
+status examination 10, 11, 222
+Mentally ill
+person 232
+prisoner 232
+Metabolic syndrome 63
+Methadone 44
+maintenance 44
+Methylphenidate 167
+Michigan alcoholism screening test 37
+Migraine 28
+Mild cognitive disorder 32
+Milieu therapy 68
+Mini mental state examination 13
+Minimal brain dysfunction 166
+Minoxidyl 132
+Mirror-gazing 58
+Mirtazapine 30
+Misconceptions about suicide 224
+Mixed
+affective 61, 73
+episode 73
+anxiety depressive disorder 80
+
+257
+Monosymptomatic hypochondriacal
+psychosis 84, 85
+Mood 12, 69
+disorders 69, 76
+stabiliser 30
+stabilising drugs 185
+Morbid grief 151
+Motor activity 11
+Multi-axial classification 4
+Multifocal myoclonus 20
+Multi-infarct dementia 25
+Multiple personality disorder 102
+Munchausen syndrome 119
+Muslim Marriages Act 230
+Mutism 56, 59, 225, 171
+
+N
+Naloxone 44, 227
+challenge test 44
+Naltrexone 42, 44, 132
+Narcolepsy 138
+Narcotic
+anonymous 45
+antagonists 44
+Drugs and Psychotropic Substances
+(Amendment) Act, 2001 233
+Drugs and Psychotropic Substances
+Act (NDPSA), 1985 233
+National
+Crime Records Bureau 222
+Health Policy 235, 237
+Mental Health
+Advisory Group 237
+Programme 235
+Trust Act 161
+NDRI 52
+Necrophilia 126
+Negative
+reinforcement 215
+symptom 57, 58, 60-61
+Neurasthenia 109
+Neuroleptic
+malignant syndrome 228
+sensitivity syndrome 26
+Neurosis 89
+Neurotic
+depression 82
+traits 9
+Nicotine 52
+replacement therapy 52
+Night terrors 140
+Nightmares 140
+Nitrazepam 137
+
+

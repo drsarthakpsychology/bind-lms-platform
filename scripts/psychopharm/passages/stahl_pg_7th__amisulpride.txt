@@ -1,0 +1,1225 @@
+<<<PAGE 7>>>
+
+Contents
+Introduction
+List of icons
+1 acamprosate
+2 agomelatine
+3 alprazolam
+4 amisulpride
+5 amitriptyline
+6 amoxapine
+7 amphetamine (d)
+8 amphetamine (d,l)
+9 aripiprazole
+10 armodafinil
+11 asenapine
+12 atomoxetine
+13 benztropine
+14 blonanserin
+15 bremelanotide
+16 brexanolone
+17 brexpiprazole
+18 buprenorphine
+19 bupropion
+20 buspirone
+21 caprylidene
+22 carbamazepine
+23 cariprazine
+24 chlordiazepoxide
+25 chlorpromazine
+
+
+
+
+<<<PAGE 67>>>
+
+Amisulpride
+
+Therapeutics
+Brands
+Solian
+Barhemsys
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: dopamine receptor antagonist
+(D-RAn)
+Atypical antipsychotic (benzamide; possibly a dopamine stabilizer
+and dopamine partial agonist)
+Commonly Prescribed for
+(bold for FDA approved)
+Prevention of postoperative nausea and vomiting (PONV)
+(monotherapy or with antiemetic of a different class)
+(Barhemsys injection)
+
+
+
+
+<<<PAGE 68>>>
+
+Treatment of PONV in patients who have received antiemetic
+prophylaxis with an agent of a different class or have not
+received prophylaxis (Barhemsys injection)
+Schizophrenia, acute and chronic (outside of USA, especially
+Europe)
+Dysthymia
+How the Drug Works
+Theoretically blocks presynaptic dopamine 2 receptors at low doses
+Theoretically blocks postsynaptic dopamine 2 receptors at higher
+doses
+
+✽ May be a partial agonist at dopamine 2 receptors, which would
+theoretically reduce dopamine output when dopamine concentrations
+are high and increase dopamine output when dopamine concentrations
+are low
+Blocks dopamine 3 receptors, which may contribute to its clinical
+actions
+
+✽ Unlike other atypical antipsychotics, amisulpride does not have
+potent actions at serotonin 2A or serotonin 1A receptors
+
+✽ Does have antagonist actions at serotonin 7 receptors and serotonin
+2B receptors, which may contribute to antidepressant effects
+How Long Until It Works
+
+
+
+
+<<<PAGE 71>>>
+
+Augmentation of amisulpride has not been systematically studied
+Other mood-stabilizing anticonvulsants (carbamazepine,
+oxcarbazepine, lamotrigine)
+Lithium
+Benzodiazepines
+Tests
+
+✽ Although risk of diabetes and dyslipidemia with amisulpride has
+not been systematically studied, monitoring as for all other atypical
+antipsychotics is suggested
+Before starting an atypical antipsychotic
+
+✽ Weigh all patients and track BMI during treatment
+
+Get baseline personal and family history of diabetes, obesity,
+dyslipidemia, hypertension, and cardiovascular disease
+Get waistline circumference (at umbilicus), blood pressure, fasting
+plasma glucose, and fasting lipid profile
+Determine if the patient
+is overweight (BMI 25.0–29.9)
+is obese (BMI >30)
+has pre-diabetes (fasting plasma glucose 100–125 mg/dL)
+has diabetes (fasting plasma glucose >126 mg/dL)
+
+
+
+
+<<<PAGE 73>>>
+
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+Patients with low white blood cell count (WBC) or history of druginduced leukopenia/neutropenia should have complete blood count
+(CBC) monitored frequently during the first few months and
+amisulpride should be discontinued at the first sign of decline of
+WBC in the absence of other causative factors
+Patients should be monitored periodically for the development of
+abnormal movements of tardive dyskinesia, using neurological
+exam and the AIMS (Abnormal Involuntary Movement Scale)
+
+Side Effects
+How Drug Causes Side Effects
+Acute blockade of dopamine 2 receptors in the striatum can cause
+drug-induced parkinsonism, dystonia, or akathisia
+Chronic blockade of dopamine 2 receptors in the striatum can cause
+tardive dyskinesia
+
+
+
+
+<<<PAGE 74>>>
+
+By blocking dopamine 2 receptors in the pituitary, it can cause
+elevations in prolactin
+Mechanism of weight gain and increased incidence of diabetes and
+dyslipidemia with atypical antipsychotics is unknown, and risks
+vary based on the particular agent
+Notable Side Effects
+
+✽ Drug-induced parkinsonism
+✽ Galactorrhea, amenorrhea
+✽ Atypical antipsychotics may increase the risk for diabetes and
+dyslipidemia, although the specific risks associated with amisulpride
+are unknown
+Insomnia, sedation, agitation, anxiety
+Constipation, weight gain
+Tardive dyskinesia
+Risk of potentially irreversible involuntary dyskinetic movements
+may increase with cumulative dose and treatment duration
+Life-Threatening or Dangerous Side Effects
+Rare neuroleptic malignant syndrome (NMS) may cause
+hyperpyrexia, muscle rigidity, delirium, and autonomic instability
+with elevated creatine phosphokinase, myoglobinuria
+(rhabdomyolysis), and acute renal failure
+
+
+
+
+<<<PAGE 77>>>
+
+Tablet 50 mg, 100 mg, 200 mg, 400 mg
+Oral solution 100 mg/mL
+How to Dose
+Initial 400–800 mg/day in 2 doses; daily doses above 400 mg should
+be divided in 2; maximum generally 1200 mg/day
+See also the Switching section below, after Pearls
+Dosing Tips
+
+✽ Efficacy for negative symptoms in schizophrenia may be achieved
+at lower doses, while efficacy for positive symptoms may require
+higher doses
+Patients receiving low doses may only need to take the drug once
+daily
+
+✽ For dysthymia and depression, use only low doses
+✽ Dose-dependent QTc prolongation, so use with caution, especially
+at higher doses (>800 mg/day)
+
+✽ Amisulpride may accumulate in patients with renal insufficiency,
+requiring lower dosing or switching to another antipsychotic to avoid
+QTc prolongation in these patients
+Rather than raise the dose above normal dosing in acutely agitated
+patients requiring acute antipsychotic actions, consider short-term
+(one dose or more) augmentation with a benzodiazepine or another
+antipsychotic, especially intramuscularly
+
+
+
+
+<<<PAGE 78>>>
+
+Rather than raise the dose above normal dosing in partial
+responders, consider augmentation with a mood-stabilizing
+anticonvulsant, such as valproate, topiramate, or lamotrigine
+Children and elderly should generally be dosed at the lower end of
+the dosage spectrum
+Treatment should be suspended if absolute neutrophil count falls
+below 1000/mm3
+Overdose
+Sedation, coma, hypotension, drug-induced parkinsonism
+Long-Term Use
+Amisulpride is used for both acute and chronic schizophrenia
+treatment
+Should periodically reevaluate long-term usefulness in individual
+patients, but treatment may need to continue for many years
+Habit Forming
+No
+How to Stop
+See Switching section of individual agents for how to stop
+amisulpride
+
+
+
+
+<<<PAGE 79>>>
+
+Rapid discontinuation may lead to rebound psychosis and worsening
+of symptoms
+Pharmacokinetics
+Elimination half-life approximately 12 hours
+Excreted largely unchanged
+Drug Interactions
+Can decrease the effects of levodopa, dopamine agonists
+Can increase the effects of antihypertensive drugs
+CNS effects may be increased if used with a CNS depressant
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+Since amisulpride is only weakly metabolized, few drug interactions
+that could raise amisulpride plasma levels are expected
+Other Warnings/Precautions
+Use cautiously in patients with alcohol withdrawal or convulsive
+disorders because of possible lowering of seizure threshold
+If signs of neuroleptic malignant syndrome develop, treatment
+should be immediately discontinued
+Because amisulpride may dose-dependently prolong QTc interval,
+use with caution in patients who have bradycardia or who are taking
+
+
+
+
+<<<PAGE 80>>>
+
+drugs that can induce bradycardia (e.g., beta blockers, calcium
+channel blockers, clonidine, digitalis)
+Because amisulpride may dose-dependently prolong QTc interval,
+use with caution in patients who have hypokalemia and/or
+hypomagnesemia or who are taking drugs that can induce
+hypokalemia and/or magnesemia (e.g., diuretics, stimulant laxatives,
+intravenous amphotericin B, glucocorticoids, tetracosactide)
+Use only with caution if at all in Parkinson’s disease or Lewy body
+dementia, especially at high doses
+Atypical antipsychotics have the potential for cognitive and motor
+impairment, especially related to sedation
+Atypical antipsychotics can cause body temperature dysregulation;
+use caution in patients who may experience conditions that increase
+body temperature (e.g., strenuous exercise, saunas, extreme heat,
+dehydration, or concomitant anticholinergic medication)
+Antipsychotics may cause somnolence, postural hypotension, motor
+and sensory instability, which may lead to falls; for patients with
+diseases, conditions, or medications that could exacerbate these
+effects, complete fall risk assessments when initiating antipsychotic
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+As with any antipsychotic, use with caution in patients with history
+of seizures
+Do Not Use
+
+
+
+
+<<<PAGE 81>>>
+
+If patient has pheochromocytoma
+If patient has prolactin-dependent tumor
+If patient is pregnant or nursing
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide; thioridazine; selected antiarrhythmics such
+as quinidine, disopyramide, amiodarone, and sotalol; selected
+antibiotics such as moxifloxacin and sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking cisapride, intravenous erythromycin, or
+pentamidine
+In children
+If there is a proven allergy to amisulpride
+
+Special Populations
+Renal Impairment
+Use with caution; drug may accumulate
+Amisulpride is eliminated by the renal route; in cases of severe renal
+insufficiency, the dose should be decreased and intermittent
+treatment or switching to another antipsychotic should be
+considered
+
+
+
+
+<<<PAGE 82>>>
+
+Hepatic Impairment
+Use with caution, but dose adjustment not generally necessary
+Cardiac Impairment
+Amisulpride produces a dose-dependent prolongation of QTc
+interval, which may be enhanced by the existence of bradycardia,
+hypokalemia, congenital or acquired long QTc interval, which
+should be evaluated prior to administering amisulpride
+Use with caution if treating concomitantly with a medication likely
+to produce prolonged bradycardia, hypokalemia, slowing of
+intracardiac conduction, or prolongation of the QTc interval
+Avoid amisulpride in patients with a known history of QTc
+prolongation, recent acute myocardial infarction, and
+uncompensated heart failure
+Elderly
+Some patients may be more susceptible to sedative and hypotensive
+effects
+Although atypical antipsychotics are commonly used for behavioral
+disturbances in dementia, no agent has been approved for treatment
+of elderly patients with behavioral symptoms of dementia such as
+agitation
+Elderly patients with dementia-related psychosis treated with
+atypical antipsychotics are at an increased risk of death compared to
+
+
+
+
+<<<PAGE 83>>>
+
+placebo, and also have an increased risk of cerebrovascular events
+Children and Adolescents
+Efficacy and safety not established under age 18
+Pregnancy
+Although animal studies have not shown teratogenic effect,
+amisulpride is not recommended for use during pregnancy
+There is a risk of abnormal muscle movements and withdrawal
+symptoms in newborns whose mothers took an antipsychotic during
+the third trimester; symptoms may include agitation, abnormally
+increased or decreased muscle tone, tremor, sleepiness, severe
+difficulty breathing, and difficulty feeding
+Psychotic symptoms may worsen during pregnancy and some form
+of treatment may be necessary
+Breast Feeding
+Unknown if amisulpride is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+The Art of Psychopharmacology
+Potential Advantages
+
+
+
+
+<<<PAGE 84>>>
+
+Not as clearly associated with weight gain as some other atypical
+antipsychotics
+For patients who are responsive to low-dose activation effects that
+reduce negative symptoms and depression
+Potential Disadvantages
+Patients who have difficulty being compliant with twice daily
+dosing
+Patients for whom elevated prolactin may not be desired (e.g.,
+possibly pregnant patients; pubescent girls with amenorrhea;
+postmenopausal women with low estrogen who do not take estrogen
+replacement therapy)
+Patients with severe renal impairment
+Primary Target Symptoms
+Positive symptoms of psychosis
+Negative symptoms of psychosis
+Depressive symptoms
+Pearls
+
+✽ Efficacy has been particularly well demonstrated in patients with
+predominantly negative symptoms
+
+✽ The increase in prolactin caused by amisulpride may cause
+menstruation to stop
+
+
+
+
+<<<PAGE 85>>>
+
+For treatment-resistant patients with inadequate responses to
+clozapine, amisulpride may be a preferred augmentation option
+Risks of diabetes and dyslipidemia not well studied, but does not
+seem to cause as much weight gain as some other atypical
+antipsychotics
+Has atypical antipsychotic properties (i.e., antipsychotic action
+without a high incidence of drug-induced parkinsonism), especially
+at low doses, but not a serotonin dopamine antagonist
+Mediates its atypical antipsychotic properties via novel actions on
+dopamine receptors, perhaps dopamine stabilizing partial agonist
+actions on dopamine 2 receptors
+May be more of a dopamine 2 antagonist than aripiprazole, but less
+of a dopamine 2 antagonist than other atypical or conventional
+antipsychotics
+Low-dose activating actions may be beneficial for negative
+symptoms in schizophrenia
+Very low doses may be useful in dysthymia
+Compared to sulpiride, amisulpride has better oral bioavailability
+and more potency, thus allowing lower dosing, less weight gain, and
+a lower risk of drug-induced parkinsonism
+Compared to other atypical antipsychotics with potent serotonin 2A
+antagonism, amisulpride may have more drug-induced parkinsonism
+and prolactin elevation, but may still be classified as an atypical
+antipsychotic, particularly at low doses
+
+
+
+
+<<<PAGE 87>>>
+
+The Art of Switching
+Switching from Oral Antipsychotics to Amisulpride
+It is advisable to begin amisulpride at an intermediate dose and build
+the dose rapidly over 3–7 days
+Clinical experience has shown that asenapine, quetiapine, and
+olanzapine should be tapered off slowly over a period of 3–4 weeks,
+to allow patients to readapt to the withdrawal of blocking
+cholinergic, histaminergic, and alpha 1 receptors
+Clozapine should always be tapered off slowly, over a period of 4
+weeks or more
+* Benzodiazepine or anticholinergic medication can be administered
+during cross-titration to help alleviate side effects such as insomnia,
+agitation, and/or psychosis
+
+
+
+
+<<<PAGE 88>>>
+
+Suggested Reading
+Huhn M , Nikolakopoulou A , Schneider-Thoma J , et al. Comparative
+efficacy and tolerability of 32 oral antipsychotics for the acute treatment of
+adults with multi-episode schizophrenia: a systematic review and network
+meta-analysis . Lancet 2019 ;394:939–51 .
+Komossa K , Rummel-Kluge C , Hunder H , et al. Amisulpride versus other
+atypical antipsychotics for schizophrenia . Cochrane Database Syst Rev
+2010 ;(1):CD006624.
+Leucht S , Pitschel-Walz G , Engel RR , Kissling W . Amisulpride, an
+unusual “atypical” antipsychotic: a meta-analysis of randomized controlled
+trials . Am J Psychiatry 2002 ;159 (2 ):180–90 .
+
+
+
+
+<<<PAGE 203>>>
+
+Discontinuation of oral antipsychotic can begin following oral
+coverage of 14 days (Maintena) or 21 days (Aristada)
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone
+3–4-week down-titration is required for: asenapine, olanzapine,
+quetiapine
+4+-week down-titration is required for: clozapine
+
+
+
+
+<<<PAGE 242>>>
+
+Patients with inadequate responses to atypical antipsychotics may
+also benefit from a trial of augmentation with a conventional
+antipsychotic or switching to a conventional antipsychotic
+However, long-term polypharmacy with a combination of a
+conventional antipsychotic with an atypical antipsychotic may
+combine their side effects without clearly augmenting the efficacy
+of either
+For treatment-resistant patients, especially those with impulsivity,
+aggression, violence, and self-harm, long-term polypharmacy with 2
+atypical antipsychotics or with 1 atypical antipsychotic and 1
+conventional antipsychotic may be useful or even necessary while
+closely monitoring
+In such cases, it may be beneficial to combine 1 depot antipsychotic
+with 1 oral antipsychotic
+Although a frequent practice by some prescribers, adding 2
+conventional antipsychotics together has little rationale and may
+reduce tolerability without clearly enhancing efficacy
+
+The Art of Switching
+Switching from Oral Antipsychotics to Asenapine
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin asenapine at middle dose
+
+
+
+
+<<<PAGE 560>>>
+
+reported more often with clozapine than with some other
+antipsychotics
+Many bipolar patients may experience a reduction of symptoms by
+half or more
+Treatment may not only reduce mania but also prevent recurrences
+of mania in bipolar disorder
+If It Doesn’t Work
+Obtain clozapine plasma levels and continue titration
+Levels greater than 700 ng/mL are often not well tolerated
+No evidence to support dosing that results in plasma levels greater
+than 1000 ng/mL
+Some patients may require treatment with a conventional
+antipsychotic
+Some patients may require augmentation with a conventional
+antipsychotic or with an atypical antipsychotic (especially
+risperidone or amisulpride), but these are the most refractory of all
+psychotic patients and such treatment can be expensive
+
+✽ Consider augmentation with valproate, lamotrigine, or topiramate,
+but use caution with valproate as it can also cause bone marrow
+suppression and be sedating
+Consider noncompliance and switch to another antipsychotic with
+fewer side effects or to an antipsychotic that can be given by depot
+injection
+
+
+
+
+<<<PAGE 586>>>
+
+required to be certified in the Clozapine REMS program. Visit the
+Clozapine REMS program homepage for more information.
+
+The Art of Switching
+Switching from Oral Antipsychotics to Clozapine
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin clozapine at middle dose
+With risperidone, ziprasidone, iloperidone, and lurasidone, begin
+clozapine gradually, titrating over at least 2 weeks to allow patients
+to become tolerant to the sedating effect
+* Benzodiazepine or anticholinergic medication can be administered
+during cross-titration to help alleviate side effects such as insomnia,
+agitation, and/or psychosis. However, use with caution in combination
+with clozapine as this can increase the risk of circulatory collapse
+
+
+
+
+<<<PAGE 941>>>
+
+Response threshold is 0.81 ng/mL; plasma levels greater than 2–3
+ng/mL are generally not well tolerated, although treatment-resistant
+cases might tolerate and respond to plasma levels up to 4 ng/mL,
+which is the point of futility if no response and even if tolerated
+The Art Of Switching
+Switching from Oral Antipsychotics to Fluphenazine Decanoate
+
+Discontinuation of oral antipsychotic can begin immediately if
+adequate loading is pursued; otherwise, supplement with oral
+formulation at half-dose for at least 2 weeks
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone
+
+
+
+
+<<<PAGE 1045>>>
+
+Single injection volumes greater than 300 (3 mL) are not tolerated,
+so patients who require higher doses typically receive the monthly
+dose as split injections every 2 weeks
+A loading strategy advocated by some is to give 300 mg LAI every
+1–2 weeks for 2 doses and then measure plasma drug concentrations
+just prior to a third loading dose to see if a third dose is necessary
+
+The Art Of Switching
+Switching from Oral Antipsychotics to Haloperidol Decanoate
+
+Discontinuation of oral antipsychotic can begin immediately if
+adequate loading is pursued; however, oral coverage may still be
+necessary for the first week
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, paliperidone ER
+
+
+
+
+<<<PAGE 1078>>>
+
+conventional antipsychotic may be useful or even necessary while
+closely monitoring
+In such cases, it may be beneficial to combine 1 depot antipsychotic
+with 1 oral antipsychotic
+
+The Art of Switching
+Switching from Oral Antipsychotics to Iloperidone
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible
+Clinical experience has shown that quetiapine, olanzapine, and
+asenapine should be tapered off slowly over a period of 3–4 weeks,
+to allow patients to readapt to the withdrawal of blocking
+cholinergic, histaminergic, and alpha 1 receptors
+Clozapine should always be tapered off slowly, over a period of 4
+weeks or more
+* Benzodiazepine or anticholinergic medication can be administered
+during cross-titration to help alleviate side effects such as insomnia,
+agitation, and/or psychosis
+
+
+
+
+<<<PAGE 1353>>>
+
+Switching from Oral Antipsychotics to Lurasidone
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin lurasidone at an intermediate dose
+Clinical experience has shown that quetiapine, olanzapine, and
+asenapine should be tapered off slowly over a period of 3–4 weeks,
+to allow patients to readapt to the withdrawal of blocking
+cholinergic, histaminergic, and alpha 1 receptors
+Clozapine should always be tapered off slowly, over a period of 4
+weeks or more
+* Benzodiazepine or anticholinergic medication can be administered
+during cross-titration to help alleviate side effects such as insomnia,
+agitation, and/or psychosis
+
+
+
+
+<<<PAGE 1643>>>
+
+Discontinuation of oral antipsychotic can begin immediately if
+adequate loading is pursued
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, olanzapine, paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone, asenapine, quetiapine
+4+-week down-titration may be required for: clozapine
+
+The Art of Switching
+Switching from Oral Antipsychotics to Oral Olanzapine
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin olanzapine at middle dose
+
+
+
+
+<<<PAGE 1704>>>
+
+The Art of Switching
+Switching from Oral Antipsychotics to Paliperidone Palmitate
+(1-Month)
+
+Discontinuation of oral antipsychotic can begin immediately if
+adequate loading is pursued
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, lumateperone, or paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone
+3–4-week down-titration is required for: asenapine, olanzapine,
+quetiapine
+4+-week down-titration is required for: clozapine
+
+
+
+
+<<<PAGE 1705>>>
+
+For patients taking benzodiazepine or anticholinergic
+medication, this can be continued during cross-titration to help
+alleviate side effects such as insomnia, agitation, and/or
+psychosis. Once the patient is stable on LAI, these can be
+tapered one at a time as appropriate.
+The Art of Switching
+
+Switching from Oral Antipsychotics to
+Paliperidone ER
+
+Due to OROS technology, paliperidone ER can be initiated at full
+desired dose; however, titration over 1–2 weeks may be appropriate
+for some patients
+With amisulpride, aripiprazole, brexpiprazole, cariprazine, and
+lumateperone, immediate stop is possible; begin paliperidone ER at
+an intermediate, or if needed, effective dose
+Risperidone, ziprasidone, iloperidone, and lurasidone can be tapered
+off over a period of 1 week due to the risk of withdrawal symptoms
+such as insomnia
+Clinical experience has shown that quetiapine, olanzapine, and
+asenapine should be tapered off slowly over a period of 3–4 weeks,
+to allow patients to readapt to the withdrawal of blocking
+cholinergic, histaminergic, and alpha 1 receptors
+Clozapine should always be tapered off slowly, over a period of 4
+weeks or more
+* Benzodiazepine or anticholinergic medication can be administered
+during cross-titration to help alleviate side effects such as insomnia,
+
+
+
+
+<<<PAGE 1825>>>
+
+stabilization and maintenance
+If It Doesn’t Work
+Consider trying one of the first-line atypical antipsychotics
+(risperidone, olanzapine, quetiapine, ziprasidone, aripiprazole,
+paliperidone, amisulpride, asenapine, iloperidone, lurasidone)
+Consider trying another conventional antipsychotic
+If 2 or more antipsychotic monotherapies do not work, consider
+clozapine
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Augmentation of conventional antipsychotics has not been
+systematically studied
+Addition of a mood-stabilizing anticonvulsant such as valproate,
+carbamazepine, or lamotrigine may be helpful in both schizophrenia
+and bipolar mania
+Augmentation with lithium in bipolar mania may be helpful
+Addition of a benzodiazepine, especially short-term for agitation
+Tests
+
+✽ Since conventional antipsychotics are frequently associated with
+weight gain, before starting treatment, weigh all patients and determine
+
+
+
+
+<<<PAGE 1946>>>
+
+Patients with inadequate responses to atypical antipsychotics may
+benefit from determination of plasma drug levels and, if low, a
+dosage increase even beyond the usual prescribing limits
+For treatment-resistant patients, especially those with impulsivity,
+aggression, violence, and self-harm, long-term polypharmacy with 2
+atypical antipsychotics or with 1 atypical antipsychotic and 1
+conventional antipsychotic may be useful or even necessary while
+closely monitoring
+In such cases, it may be beneficial to combine 1 depot antipsychotic
+with 1 oral antipsychotic
+
+The Art of Switching
+Switching from Oral Antipsychotics to Quetiapine
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin quetiapine at middle dose
+With risperidone, ziprasidone, iloperidone, and lurasidone, it is
+generally advisable to begin quetiapine gradually, titrating over at
+least 2 weeks to allow patients to become tolerant to the sedating
+effect
+For more convenient dosing, patients who are currently being
+treated with divided doses of immediate-release tablets may be
+switched to extended-release quetiapine at the equivalent total daily
+dose taken once daily
+
+
+
+
+<<<PAGE 2003>>>
+
+injection, with similar magnitude and at levels that approach steady
+state; thus, no oral supplementation or loading is necessary
+90 mg and 120 mg doses correspond to 3 and 4 mg doses of oral
+risperidone, respectively
+Switching from Oral Antipsychotics to Risperidone Microspheres
+
+Discontinuation of oral antipsychotic can begin following a 3–4
+week oral coverage period
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone
+3–4-week down-titration is required for: asenapine, olanzapine,
+quetiapine
+4+-week down-titration is required for: clozapine
+
+
+
+
+<<<PAGE 2004>>>
+
+For patients taking benzodiazepine or anticholinergic
+medication, this can be continued during cross-titration to help
+alleviate side effects such as insomnia, agitation, and/or
+psychosis. Once the patient is stable on LAI, these can be
+tapered one at a time as appropriate.
+
+The Art of Switching
+Switching from Oral Antipsychotics to Risperidone
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin risperidone at an intermediate dose
+Concomitant use with paliperidone ER is not recommended;
+paliperidone ER is the active metabolite of risperidone, and the
+combination of the 2 may lead to additive active antipsychotic
+fraction exposure
+Clinical experience has shown that quetiapine, olanzapine, and
+asenapine should be tapered off slowly over a period of 3–4 weeks,
+to allow patients to readapt to the withdrawal of blocking
+cholinergic, histaminergic, and alpha 1 receptors
+Clozapine should always be tapered off slowly, over a period of 4
+weeks or more
+* Benzodiazepine or anticholinergic medication can be administered
+during cross-titration to help alleviate side effects such as insomnia,
+agitation, and/or psychosis
+
+
+
+
+<<<PAGE 2489>>>
+
+Less sedation than some antipsychotics, more than others (at
+moderate to high doses)
+
+✽ More activating than some other antipsychotics at low doses
+Anecdotal reports of utility in treatment-resistant cases, especially
+when adequately dosed
+
+✽ A short-acting intramuscular dosage formulation is available
+Approved for mania in children ages 10–17
+Patients with inadequate responses to atypical antipsychotics may
+benefit from determination of plasma drug levels and, if low, a
+dosage increase even beyond the usual prescribing limits
+For treatment-resistant patients, especially those with impulsivity,
+aggression, violence, and self-harm, long-term polypharmacy with 2
+atypical antipsychotics or with 1 atypical antipsychotic and 1
+conventional antipsychotic may be useful or even necessary while
+closely monitoring
+In such cases, it may be beneficial to combine 1 depot antipsychotic
+with 1 oral antipsychotic
+
+The Art Of Switching
+Switching from Oral Antipsychotics to Ziprasidone
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin ziprasidone at an intermediate dose
+
+
+
+
+<<<PAGE 2570>>>
+
+Alti-Trazodone (trazodone), 793
+Alti-Triazolam (triazolam), 799
+Alti-Valproic (valproate), 829
+Alupram (diazepam), 229
+Alzam (alprazolam), 11
+Alzon (alprazolam), 11
+Ambien (zolpidem), 871
+Ambien CR (zolpidem), 871
+Amboneural (selegiline), 705
+Ambien CR (zolpidem), 871
+Ambo-neural (selegiline), 705
+Amilin (amitriptyline), 25
+Amilit (amitriptyline), 25
+Aminazins (chlorpromazine), 153
+Amindan (selegiline), 705
+Amineurin (amitriptyline), 25
+Aminuerin Retard (amitriptyline), 25
+Amioxid (amitriptyline), 25
+amisulpride, 17
+Amitrip (amitriptyline), 25
+Amitriptilin (amitriptyline), 25
+Amitriptylin (amitriptyline), 25
+amitriptyline, 25
+Amitriptylinum (amitriptyline), 25
+Amitrol (amitriptyline), 25
+Amizepin (carbamazepine), 131
+Amizol (amitriptyline), 25
+amoxapine, 33
+
+
+
+
+<<<PAGE 2574>>>
+
+Atensine (diazepam), 229
+Aterax (hydroxyzine), 355
+Athymil (mianserin), 495
+Ativan (lorazepam), 437
+atomoxetine, 79
+Atretol (carbamazepine), 131
+Audilex (clorazepate), 185
+Audium (diazepam), 229
+Aurorix (moclobemide), 515
+Austedo (deutetrabenazine), 221
+Autal (acamprosate), 1
+Avant (haloperidol), 347
+Aventyl (nortriptyline), 551
+Avoxin (fluvoxamine), 325
+Axona (caprylidene), 127
+Axoren (buspirone), 123
+Azene (clorazepate), 185
+Azepa (carbamazepine), 131
+Azepal (carbamazepine), 131
+Azona (trazodone), 793
+Azor (alprazolam), 11
+Azutranquil (oxazepam), 569
+Barclyd (clonidine), 179
+Barhemsys (amisulpride), 17
+Beconerv neu (flurazepam), 321
+Belbuca (buprenorphine), 111
+Beldin (diphenhydramine), 235
+Belivon (risperidone), 687
+
+
+
+
+<<<PAGE 2580>>>
+
+Decanoate (haloperidol), 347
+Decazate (fluphenazine), 313
+Decentan (fluphenazine), 313
+Decentan (perphenazine), 607
+Decentan-Depot (perphenazine), 607
+Defanyl (amoxapine), 33
+Defobin (chlordiazepoxide), 147
+Deftan (lofepramine), 421
+Degranol (carbamazepine), 131
+Delepsine (valproate), 829
+Delgian (maprotiline), 465
+Delsym (dextromethorphan), 225
+Demolox (amoxapine), 33
+Deniban (amisulpride), 17
+Denion (diazepam), 229
+Depacon (valproate), 829
+Depakene (valproate), 829
+Depakine (LA) (valproate), 829
+Depakine Chrono (valproate), 829
+Depakine Zuur (valproate), 829
+Depakote (valproate), 829
+Depakote ER (valproate), 829
+Depakote sprinkle (valproate), 829
+Depamide (valproate), 829
+Deparkin (valproate), 829
+Depex (sulpiride), 741
+Depixol (flupenthixol), 307
+Depixol-Conc (flupenthixol), 307
+
+
+
+
+<<<PAGE 2616>>>
+
+Serpax (oxazepam), 569
+sertindole, 715
+Sertofren (desipramine), 207
+sertraline, 721
+Serzone (nefazodone), 545
+Setous (zotepine), 883
+Sevinol (fluphenazine), 313
+Sevium (haloperidol), 347
+Sibason (diazepam), 229
+Sicorelax (diazepam), 229
+Sigacalm (oxazepam), 569
+Sigaperidol (haloperidol), 347
+Signopam (temazepam), 755
+sildenafil, 729
+Silenor (doxepin), 255
+Silphen (diphenhydramine), 235
+Sinequan (doxepin), 255
+Sinquan (doxepin), 255
+Sinquane (doxepin), 255
+Siqualone (fluphenazine), 313
+Siqualone Decanoat (fluphenazine), 313
+Siqualone Enantat (fluphenazine), 313
+Sirtal (carbamazepine), 131
+S-ketamine (esketamine), 275
+SK-Pramine (imipramine), 367
+Sobile (oxazepam), 569
+Sobril (oxazepam), 569
+Socian (amisulpride), 17
+
+
+
+
+<<<PAGE 2617>>>
+
+sodium oxybate, 733
+Softramal (clorazepate), 185
+Solarix (moclobemide), 515
+Solian (amisulpride), 17
+Solidon (chlorpromazine), 153
+Solis (diazepam), 229
+solriamfetol, 737
+Somagerol (lorazepam), 437
+Somapam (temazepam), 755
+Somatarax (hydroxyzine), 355
+Sominex (diphenhydramine), 235
+Somniton (triazolam), 799
+Somnium (lorazepam), 437
+Somnol (flurazepam), 321
+Somnubene (flunitrazepam), 297
+Sonata (zaleplon), 859
+Songar (triazolam), 799
+Sovigen (zolpidem), 871
+Spasmilan (buspirone), 123
+Spasmo Praxiten (oxazepam), 569
+Sporalon (trifluoperazine), 803
+Spravato (esketamine), 275
+Spritam (levetiracetam), 399
+Stablon (tianeptine), 777
+Stalleril (thioridazine), 759
+Stamoneurol (sulpiride), 741
+Staurodorm (flurazepam), 321
+Staurodorm Neu (flurazepam), 321
+
+
+
+
+<<<PAGE 2618>>>
+
+Stavzor (valproate), 829
+Stazepine (carbamazepine), 131
+Stedon (diazepam), 229
+Stelabid (trifluoperazine), 803
+Stelabid forte (trifluoperazine), 803
+Stelabid mite (trifluoperazine), 803
+Stelazine (trifluoperazine), 803
+Stelbid (trifluoperazine), 803
+Stelbid forte (trifluoperazine), 803
+Stelium (trifluoperazine), 803
+Stelminal (amitriptyline), 25
+Stephadilat (fluoxetine), 301
+Stesolid (diazepam), 229
+Stilnoct (zolpidem), 871
+Stilnox (zolpidem), 871
+Strattera (atomoxetine), 79
+Stressigal (buspirone), 123
+Sublocade (buprenorphine injection), 111
+Suboxone (buprenorphine with naloxone), 111
+Subutex (buprenorphine), 111
+Sulamid (amisulpride), 17
+Sulp (sulpiride), 741
+Sulparex (sulpiride), 741
+Sulpiphar (sulpiride), 741
+Sulpirid (sulpiride), 741
+sulpiride, 741
+Sulpiryd (sulpiride), 741
+Sulpitil (sulpiride), 741
+
+
+
+
+<<<PAGE 2637>>>
+
+Delirium
+haloperidol (adjunct), 347
+lorazepam (adjunct), 437
+Dementia
+donepezil, 243
+galantamine, 337
+memantine, 473
+rivastigmine, 699
+selegiline, 705
+Dementia-related psychosis
+pimavanserin, 623
+Depression
+agomelatine, 5
+amisulpride, 17
+amitriptyline , 25
+amoxapine , 33
+amphetamine (d), 39
+amphetamine (d,l), 45
+aripiprazole (adjunct) , 53
+asenapine, 71
+atomoxetine, 79
+blonanserin, 89
+brexanolone , 99
+brexpiprazole (adjunct) , 103
+bupropion , 117
+buspirone (adjunct), 123
+
+
+
+
+<<<PAGE 2650>>>
+
+diazepam , 229
+hydroxyzine , 355
+lorazepam , 437
+midazolam , 499
+Pruritus
+doxepin, 255
+hydroxyzine , 355
+Pseudobulbar affect
+dextromethorphan (with quinidine) , 225
+Psychosis
+alprazolam (adjunct), 11
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine , 313
+haloperidol , 347
+iloperidone, 359
+
+
+
+
+<<<PAGE 2652>>>
+
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine, 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol, 347
+iloperidone, 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct), 477
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone , 581
+perospirone, 601
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+
+
+
+
+<<<PAGE 2653>>>
+
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+valproate (divalproex) (adjunct), 829
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Schizophrenia
+amisulpride, 17
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole , 103
+carbamazepine (adjunct), 131
+cariprazine , 137
+chlorpromazine , 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol , 347
+iloperidone , 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct) , 477
+loxapine , 443
+lumateperone , 451
+lurasidone , 457
+molindone , 527
+olanzapine , 558
+
+
+
+
+<<<PAGE 2660>>>
+
+nortriptyline, 551
+paroxetine, 593
+phenelzine, 613
+protriptyline, 657
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+triiodothyronine, 813
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Antipsychotics
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine, 153
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine, 313
+haloperidol, 347
+
+

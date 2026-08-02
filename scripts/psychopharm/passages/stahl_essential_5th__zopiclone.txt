@@ -1,0 +1,848 @@
+<<<PAGE 71>>>
+
+Chapter 3: Ion Channels
+
+Table 3-2 Key ligand-gated ion channels directly targeted by psychotropic drugs
+
+Neurotransmitter
+
+Ligand-gated ion
+channel receptor
+subtype directly
+targeted
+
+Pharmacological
+action
+
+Drug class
+
+Therapeutic
+action
+
+Acetylcholine
+
+Alpha4 Beta2
+nicotinic
+
+Partial agonist
+
+Nicotinic receptor
+partial agonist (NRPA)
+(varenicline)
+
+Smoking cessation
+
+GABAA
+benzodiazepine
+receptors
+
+Full agonist,
+phasic inhibition
+
+Benzodiazepines
+
+Anxiolytic
+
+GABAA nonbenzodiazepine
+PAM sites
+
+Full agonist,
+phasic inhibition
+
+“Z DRUGS”/hypnotics
+(zolpidem, zaleplon,
+zopiclone, eszopiclone)
+
+Improves insomnia
+
+GABAA neurosteroid
+sites
+(benzodiazepine
+insensitive)
+
+Full agonist,
+tonic inhibition
+
+Neuroactive steroids
+(allopregnanolone)
+
+Postpartum depression
+Rapid-acting
+antidepressant
+Anesthetic
+
+NMDA
+NAM channel sites/
+Mg++ sites
+
+Antagonist
+
+NMDA glutamate
+antagonist (memantine)
+
+Pro-cognitive in
+Alzheimer disease
+
+NMDA openchannel sites
+
+Antagonist
+
+PCP/phencyclidine
+Ketamine
+Dextromethorphan
+Dextromethadone
+
+Dissociative
+hallucinogen
+Anesthetic
+Pseudobulbar affect
+Agitation in Alzheimer
+disease
+Rapid-acting
+antidepressant
+Treatment-resistant
+depression
+
+5HT3
+
+Antagonist
+
+Mirtazapine
+Vortioxetine
+
+Pro-cognitive
+Antidepressant
+
+5HT3
+
+Antagonist
+
+Anti-emetic
+
+Reduce
+chemotherapyinduced emesis
+
+GABA
+
+Glutamate
+
+Serotonin
+
+3
+
+PAM, positive allosteric modulator; NAM, negative allosteric modulator; NMDA, N-methyl-D-aspartate; Mg, magnesium.
+
+ion channels (Figure 3-3) are analogous to pentameric
+subtypes of ion channels (Figure 3-2A), but just have four
+subunits rather than five. Receptor sites are in various
+locations on each of the subunits; some binding sites are
+in the channel, but many are present at different locations
+outside the channel.
+This tetrameric structure is typical of the ionotropic
+glutamate receptors known as AMPA (α-amino-3hydroxy-5-methyl-4-isoxazole-propionic acid), kainate,
+
+and NMDA (N-methyl-D-aspartate) subtypes (Table 3-3).
+Drugs that act directly at tetrameric ionotropic glutamate
+receptors are listed in Table 3-2. Receptor subtypes for
+glutamate according to the selective agonist acting at that
+receptor as well as the specific molecular subunits that
+comprise that subtype are listed in Table 3-3. Subtype
+selective drugs for ionotropic glutamate receptors are
+under investigation but not currently used in clinical
+practice.
+
+55
+
+
+
+
+<<<PAGE 438>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Figure 10-32 Promoting sleep. To
+treat insomnia, one can administer
+medications that enhance the
+sleep drive, such as the GABAergic
+benzodiazepines or Z drugs.
+Alternatively, one can administer
+medications that reduce arousal
+by inhibiting neurotransmission
+involved in wakefulness; notably,
+with antagonists at orexin, histamine,
+serotonin, or norepinephrine receptors.
+
+Promoting Sleep
+To Promote Sleep
+Enhance
+GABA
+Inhibit
+hypocretin/orexin
+acetylcholine
+dopamine
+
+insomnia
+
+norepinephrine
+serotonin
+histamine
+
+asleep
+
+deficient arousal
+
+as well as the related Z drugs discussed below, target
+those GABAA receptors that contain a γ subunit, are
+localized in postsynaptic areas, and mediate phasic
+inhibitory neurotransmission. For a GABAA receptor
+to be sensitive to benzodiazepines or to a Z drug, there
+must be two β units plus a γ unit of either the γ2 or γ3
+subtype, plus two α units of either the α1, α2, or α3 subtype
+(see Chapter 6 and Figure 6-20C). Benzodiazepines
+and Z drugs bind to a molecular site on the GABAA
+receptor that is different from where GABA itself binds
+(thus allosteric or “other site”). Currently available
+benzodiazepines are nonselective for GABAA receptors
+with different α subunits (Figure 10-33). As discussed in
+Chapter 6, GABAA receptors containing a δ subunit are
+extrasynaptic, mediate tonic neurotransmission, and are
+insensitive to benzodiazepines and Z drugs.
+Because benzodiazepines can cause long-term
+problems such as loss of efficacy over time (tolerance)
+and withdrawal effects, including rebound insomnia in
+some patients that is worse than their original insomnia,
+they are generally considered second-line agents for use
+as hypnotic drugs. However, when first-line hypnotic
+agents (either Z drugs or blockers of various other
+neurotransmitter receptors) fail to work, benzodiazepines
+still have a place in the treatment of insomnia,
+422
+
+excessive arousal
+
+particularly for severe and treatment-resistant insomnia
+associated with various psychiatric and medical illnesses.
+Z Drugs (GABAA Positive Allosteric Modulators)
+
+Another group of GABAA positive allosteric modulating
+drugs, sometimes called “Z drugs” (because they all
+start with the letter Z: zaleplon, zolpidem, zopiclone),
+are also prescribed for their hypnotic effects (Figure 1034). There is debate as to whether Z drugs bind to an
+allosteric site different from that of benzodiazepines,
+or whether they bind to the same site but perhaps in
+a different molecular manner that might produce less
+tolerance and dependence. Whether or not Z-drug
+binding differs from benzodiazepine binding at the
+allosteric site of so-called benzodiazepine-sensitive
+GABAA receptors, some Z drugs do bind selectively to α1
+subunits of benzodiazepine-sensitive GABAA receptors
+(e.g., zaleplon and zolpidem) (Figure 10-34). By contrast,
+benzodiazepines (and zopiclone/eszopiclone) bind to
+four α subunits (α1, α2, α3, and α5) (Figures 10-33 and
+10-34). The functional significance of α1 selectivity is not
+yet proven, but may contribute to lower risk of tolerance
+and dependence. The α1 subtype is known to be critical
+for producing sedation and thus is targeted by every
+effective GABAA PAM hypnotic, both benzodiazepines
+
+
+
+
+<<<PAGE 439>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+Benzo Hypnotics
+2-6
+days
+
+2-5
+days
+α5
+
+α1
+α3
+
+α2
+
+α5
+
+α1
+α3
+
+α2
+
+flurazepam (Dalmane)
+
+Dual Orexin Receptor Antagonists (DORAs)
+
+quazepam (Doral)
+
+1-2
+hours
+α5
+
+α1
+α2
+
+α3
+
+triazolam (Halcion)
+
+12-30
+hours
+
+4-20
+hours
+α5
+
+α1
+α2
+
+α3
+
+estazolam (ProSom)
+
+α5
+
+α1
+α2
+
+patients who have middle insomnia. For zopiclone, there
+is a racemic mixture of both R- and S-zopiclone, available
+outside the US, and the single S enantiomer, eszopiclone,
+available in the US (Figure 10-34). Clinically meaningful
+differences between the active enantiomer and the
+racemic mixture are debated.
+
+α3
+
+temazepam (Restoril)
+
+Figure 10-33 Benzodiazepine hypnotics. Five benzodiazepines
+that are approved in the United States for insomnia are shown
+here. These include flurazepam and quazepam, which have
+ultra-long half-lives; triazolam, which has an ultra-short half-life;
+and estazolam and temazepam, which have moderate half-lives.
+These benzodiazepines are nonselective for GABAA receptors
+with different α subunits.
+
+and Z drugs. The α1 subtype is also linked to daytime
+sedation, anticonvulsant actions, and possibly to amnesia.
+Adaptations of this receptor with chronic hypnotic
+treatments that target it are thought to lead to tolerance
+and withdrawal. The α2 receptor and α3 receptor subtypes
+are linked to anti-anxiety, muscle relaxant, and alcoholpotentiating actions. Finally, the α5 subtype, mostly in
+the hippocampus, may be linked to cognition and other
+functions.
+Multiple versions for two of the Z drugs, zolpidem
+and zopiclone, are available for clinical use. For zolpidem,
+a controlled-release formulation known as zolpidem
+CR (Figure 10-34) extends the duration of action of
+zolpidem immediate release from about 2–4 hours to
+a more optimized duration of 6–8 hours, improving
+sleep maintenance. An alternative dosage formulation of
+zolpidem for sublingual administration with faster onset
+and given at a fraction of the usual nighttime dose is
+also available for middle-of-the-night administration for
+
+Orexins/hypocretins, their receptors, and their pathways
+have been discussed above and are illustrated in Figures
+10-9 through 10-12. Pharmacological blockade of orexin
+receptors has hypnotic actions but not by enhancing
+inhibitory GABA action in the sleep-promoting center
+(VLPO) as do the benzodiazepines and Z drugs (Figure
+10-17). Instead, dual orexin receptor antagonists
+(DORAs) (at both orexin 1 and 2 receptors) block the
+wake-stabilizing effects of the orexins, especially at orexin
+2 receptors (Figures 10-35, 10-36). DORAs inhibit the
+ability of naturally occurring orexins from promoting
+the release of other wake-promoting neurotransmitters
+such as histamine, acetylcholine, norepinephrine,
+dopamine, and serotonin (as shown in Figure 10-37).
+After administration of a DORA, arousal is no longer
+enhanced and wakefulness is no longer stabilized by
+orexins, and the patient goes to sleep. Both suvorexant
+and lemborexant (Figure 10-35) improve not only the
+initiation but also the maintenance of sleep and do so
+without the side effects expected of a benzodiazepine
+or Z-drug hypnotic, namely lacking dependence,
+withdrawal, rebound, unsteady gait, falls, confusion,
+amnesia, or respiratory depression.
+Both suvorexant and lemborexant (Figure 10-35) are
+reversible inhibitors, which means that as endogenous
+orexins build up in the morning, the inhibitory action
+of the DORAs are reversed. Thus, at night, DORAs have
+more effect since there is a higher ratio of drug to orexin.
+As daylight begins, orexin levels rise just as DORA levels
+are falling, and there is less drug relative to the amount
+of orexin present, (i.e., lower ratio of drug to orexin).
+When a threshold of blockade of orexin receptors is
+no longer present, the patient awakens. Suvorexant
+has comparable affinity for orexin 1 and orexin 2
+receptors, and lemborexant has higher affinity for orexin
+2 receptors than orexin 1 receptors (Figure 10-35).
+Lemborexant reportedly exhibits much faster association
+and dissociation kinetics at orexin 2 receptors than
+suvorexant. The clinical significance of this is uncertain
+but may imply a faster reversibility of lemborexant
+than suvorexant in the morning as endogenous orexin
+levels rise to compete for binding at orexin receptors.
+423
+
+10
+
+
+
+
+<<<PAGE 440>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Figure 10-34 Z drugs: GABAA positive
+allosteric modulators (PAMs). Several
+Z drugs are shown here. These include
+racemic zopiclone (not available
+in the United States), eszopiclone,
+zaleplon, zolpidem, and zolpidem CR.
+Zaleplon, zolpidem, and zolpidem
+CR are selective for GABAA receptors
+that contain the α1 subunit; however,
+it does not appear that zopiclone or
+eszopiclone have this same selectivity.
+
+GABA A PAMs - “Z Drugs”
+
+12
+9
+
+12
+9
+
+3
+6
+
+α1
+
+12
+9
+
+3
+
+α5
+
+α1
+
+α3
+
+α2
+
+6
+
+α5
+α2
+
+α1
+
+α3
+
+R,S-zopiclone
+(Stilnox - not in US)
+
+α5
+α3
+
+α2
+
+eszopiclone
+(Lunesta)
+
+12
+9
+
+12
+9
+
+3
+6
+
+12
+3
+
+9
+
+6
+
+α1
+
+3
+6
+
+α1
+
+α1
+
+zaleplon
+(Sonata)
+
+zolpidem
+(Ambien)
+
+zolpidem CR
+(Ambien CR)
+OX1
+
+OX1
+
+R
+
+R
+
+suvorexant
+
+lemborexant
+
+OX2R
+
+OX2R
+
+Other DORAs (such as daridorexant) and also selective
+orexin 2 and selective orexin 1 antagonists are currently
+in development as well. Competition of endogenous
+neurotransmitter with drug for the same receptor is
+a concept also discussed in Chapter 7 regarding D3
+antagonists/partial agonists and dopamine itself at the D3
+receptor (see Figure 7-72).
+Serotonergic Hypnotics
+
+One of the most popular hypnotics is the 5HT2A/ α1/H1
+antagonist trazodone (Figure 7-46), even though this
+agent is not specifically approved for the treatment of
+424
+
+3
+
+6
+
+Figure 10-35 Orexin receptor antagonists. The
+dual orexin receptor antagonists suvorexant and
+lemborexant are shown here. Suvorexant has
+comparable affinity for orexin 1 (OX1R) and orexin
+2 (OX2R) receptors, while lemborexant has higher
+affinity for OX2R than for OX1R.
+
+insomnia (see Chapter 7 for discussion of trazodone’s use
+in depression and Figures 7-45 through 7-47). Trazodone,
+like the DORAs, is another agent that works to reduce
+arousal in insomnia rather than by enhancing sleep drive.
+Trazodone’s hypnotic mechanism is via blockade of the
+arousal neurotransmitters serotonin, norepinephrine,
+and histamine (Figure 7-46). Blockade of α1-adrenergic
+and H1 histaminergic pathways is discussed as a side
+effect of some drugs for psychosis in Chapter 5 and
+illustrated in Figures 5-13 and 5-14. Indeed, one does
+not want blockade of all these arousal neurotransmitters
+in the daytime. However, when α1 blockade is combined
+
+
+
+
+<<<PAGE 444>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+you go to sleep, and as soon as the drug falls below this
+threshold, you awaken. In practice, these effects may not
+be immediate, and being near the threshold may mean
+sleepiness but not sleep. Nevertheless, this is an important
+concept because it is not so much the pharmacokinetic
+half-life that is important for a hypnotic drug (i.e., how
+long until half the drug is gone), it is its duration of time
+above the sleep threshold. These concepts are illustrated
+in Figure 10-41A–D; the ideal profile for a hypnotic is
+shown in Figure 10-41A: neither too short a time above
+the threshold nor too long a time, but “just right”: the
+Goldilocks solution. In Figure 10-41B and 10-41C, the
+
+concept of too long a half-life, but more importantly too
+long above the threshold, is shown: “too hot” and the
+result is next-day residual effects. Finally, the concept
+of too short a half-life, but more importantly not long
+enough above the threshold, is shown (Figure 10-41D):
+“too cold” and the result is early morning awakenings
+before the desired time of rising. These same concepts of
+a drug needing to pierce a threshold, and sustain its level
+above that threshold to be effective, apply to another area
+of psychopharmacology: namely, the use of stimulants for
+the treatment of ADHD (attention deficit hyperactivity
+disorder). This will be discussed in Chapter 11 on ADHD.
+
+The Goldilocks Solution:
+The Ideal Hypnotic Agent
+
+5
+
+4
+
+sleep maintenance
+
+drug
+concentration 3
+
+sleep
+onset
+
+no hangover
+
+2
+
+serotonin histamine antagonist
+threshold (80%)
+
+1
+
+DORA threshold (65%)
+GABAA threshold (25%)
+0
+
+24
+
+48
+
+72
+
+96
+
+120
+
+144
+
+hours (taken nightly)
+duration above threshold: 8 hours
+examples: eszopiclone (Lunesta)
+zolpidem CR (Ambien CR)
+low-dose trazodone (Desyrel)
+low-dose doxepin antihistamines
+survorexant (Belsomra)
+lemborexant (Dayvigo)
+
+A
+
+Way Too Hot:
+
+Ultralong Half-Life Hypnotics Can
+Cause Drug Accumulation (Toxicity)
+night day
+
+toxicity
+
+5
+
+4
+
+drug
+concentration 3
+2
+
+relevant threshold
+
+1
+
+0
+
+24
+
+48
+
+72
+
+96
+
+120
+
+144
+
+hours (taken nightly)
+B
+
+428
+
+duration above threshold: 24-150 hours
+examples: flurazepam (Dalmane)
+quazepam (Doral)
+
+Figure 10-41A, B Pharmacokinetics
+of hypnotics, part 1. (A) For GABAA
+medications, the critical threshold
+of receptor occupancy for onset of
+hypnotic effects is 25–30%, for dual
+orexin receptor antagonists (DORAs)
+it is 65%, and for serotonin and
+histamine antagonists it is thought to
+be 80%. Both the onset to achieving
+the threshold, and the duration of
+time above the sleep threshold,
+are important for efficacy. The ideal
+hypnotic agent would have a duration
+above the threshold of approximately
+8 hours. (B) Hypnotics with ultra-long
+half-lives (greater than 24 hours; for
+example, flurazepam and quazepam)
+can cause drug accumulation with
+chronic use. This can result in too long
+a duration of time above the sleep
+threshold, and can cause impairment
+that has been associated with increased
+risk of falls, particularly in the elderly.
+
+
+
+
+<<<PAGE 609>>>
+
+Suggested Reading and Selected References
+
+Chahine LM, Chemali ZN (2006) Restless legs syndrome: a
+review. CNS Spectrums 11: 511–20.
+Dawson GR, Collinson N, Atack JR (2005) Development of
+subtype selective GABAA modulators. CNS Spectrums 10:
+21–7.
+De Lecea L, Winkelman JW (2020) Sleep and neuropsychiatric
+illness. Neuropsychopharmacol Rev 45: 1–216.
+Drover DR (2004) Comparative pharmacokinetics and
+pharmacodynamics of short-acting hypnosedatives –
+zaleplon, zolpidem and zopiclone. Clin Pharmacokinet 43:
+227–38.
+Durmer JS, Dinges DF (2005) Neurocognitive consequences of
+sleep deprivation. Semin Neurol 25: 117–29.
+Espana RA, Scammell TE (2011) Sleep neurobiology from a
+clinical perspective. Sleep 34: 845–58.
+Fava M, McCall WV, Krystal A, et al. (2006) Eszopiclone
+co-administered with fluoxetine in patients with insomnia
+coexisting with major depressive disorder. Biol Psychiatry
+59: 1052–60.
+Freedom T (2011) Sleep-related movement disorders. Dis Mon
+57: 438-47.
+Frenette E (2011) Restless legs syndrome in children: a review
+and update on pharmacological options. Curr Pharm
+Design 17: 1436–42.
+Garcia-Borreguero D, Allen R, Kohnen R, et al. (2010) Loss
+of response during long-term treatment of restless legs
+syndrome: guidelines approved by the International
+Restless Legs Syndrome Study Group for use in clinical
+trials. Sleep Med 11: 956–9.
+Green CB, Takahashi JS, Bass J (2008) The meter of
+metabolism. Cell 134: 728–42.
+
+Nofzinger EA, Buysse DJ, Germain A, et al. (2004) Functional
+neuroimaging evidence for hyperarousal in insomnia. Am J
+Psychiatry 161: 2126–9.
+Nutt D, Stahl SM (2010) Searching for perfect sleep: the
+continuing evolution of GABAA receptor modulators as
+hypnotics. J Psychopharmacol 24: 1601–2.
+Orzel-Gryglewska J (2010) Consequences of sleep deprivation.
+Int J Occup Med Environ Health 23: 95–114.
+Palma JA, Urrestarazu E, Iriarte J (2013) Sleep loss as a risk
+factor for neurologic disorders: a review. Sleep Med 14:
+229–36.
+Parthasarathy S, Vasquez MM, Halonen M, et al. (2015)
+Persistent insomnia is associated with mortality risk. Am J
+Med 128: 268–75.
+Pinto Jr LR, Alves RC, Caixeta E, et al. (2010) New
+guidelines for diagnosis and treatment of insomnia. Arq
+Neuropsiquiatr 68: 666–75.
+Plante DT (2017) Sleep propensity in psychiatric
+hypersomnolence: a systematic review and meta-analysis
+of multiple sleep latency findings. Sleep Med Rev 31: 48–57.
+Reeve K, Bailes B. (2010) Insomnia in adults: etiology and
+management. JNP 6: 53–60.
+Richey SM, Krystal AD (2011) Pharmacological advances in
+the treatment of insomnia. Curr Pharm Design 17: 1471–5.
+Roth T, Roehrs T (2000) Sleep organization and regulation.
+Neurology 54 (Suppl 1): S2–7.
+Sahar S, Sassone-Corsi P (2009) Metabolism and cancer: the
+circadian clock connection. Nature 9: 886–96.
+Schutte-Rodin S, Broch L, Buysse D, et al. (2008) Clinical
+guideline for the evaluation and management of chronic
+insomnia in adults. J Clin Sleep Med 4: 487–504.
+
+Harris J, Lack L, Kemo K, et al. (2012) A randomized
+controlled trial of intensive sleep retraining (ISR): a brief
+conditioning treatment for chronic insomnia. Sleep 35:
+49–60.
+
+Sehgal A, Mignot E (2011) Genetics of sleep and sleep
+disorders. Cell 146: 194–207.
+
+Hening W, Walters AS, Allen RP, et al. (2004) Impact,
+diagnosis and treatment of restless legs syndrome (RLS) in
+a primary care population: the REST (RLS Epidemiology,
+Symptoms, and Treatment) Primary Care Study. Sleep Med
+5: 237–46.
+
+Thorpe AJ, Clair A, Hochman S, et al. (2011) Possible sites
+of therapeutic action in restless legs syndrome: focus on
+dopamine and α2δ ligands. Eur Neurol 66: 18–29.
+
+Koffel EA, Koffel JB, Gehrman PR (2015) A meta-analysis of
+group cognitive behavioral therapy for insomnia. Sleep Med
+Rev 19: 6–16.
+Krystal AD, Walsh JK, Laska E, et al. (2003) Sustained efficacy
+of eszopiclone over 6 months of nightly treatment: results
+of a randomized, double-blind, placebo-controlled study in
+adults with chronic insomnia. Sleep 26: 793–9.
+Morin CM, Benca R (2012) Chronic insomnia. Lancet 379:
+1129–41.
+
+Tafti M (2009) Genetic aspects of normal and disturbed sleep.
+Sleep Med 10: S17–21.
+
+Vgontzas AN, Fernadez-Mendoza J, Bixler EO, et al. (2012)
+Persistent insomnia: the role of objective short sleep
+duration. Sleep 35: 61–8.
+Wu JC, Gillin JC, Buchsbaum MS, et al. (2006) Frontal lobe
+metabolic decreases with sleep deprivation not totally
+reversed by recovery sleep. Neuropsychopharmacology 31:
+2783–92.
+Zeitzer JM, Morales-Villagran A, Maidment NT (2006)
+Extracellular adenosine in the human brain during sleep
+and sleep deprivation: an in vivo microdialysis study. Sleep
+29: 455–61.
+
+593
+
+
+
+
+<<<PAGE 639>>>
+
+Index
+
+voltage-sensitive calcium channels
+(VSCCs), 70–3, 366, 395
+voltage-sensitive ion channels, 66–73, 76
+structure and function, 66
+voltage-sensitive sodium channels
+(VSSCs), 67–70, 347, 350, 351, 381
+volume neurotransmission, 6–9
+vortioxetine, 311, 315–20, 535
+
+wake-promoting agents, 440–8
+wakefulness, neurobiology of, 402–15
+weight gain, 198, 224
+widespread pain index (WPI), 387
+withdrawal syndrome, 546, 560
+worry, 362, 363
+neurobiology of, 365–9
+noradrenergic hyperactivity, 372
+
+xanomeline, 242
+Z drugs, 425–6
+ziprasidone, 224, 236
+zolpidem, 423
+zopiclone, 423
+zotepine, 221, 233
+
+623
+
+

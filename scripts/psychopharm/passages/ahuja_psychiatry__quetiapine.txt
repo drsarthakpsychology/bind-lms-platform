@@ -1,0 +1,1435 @@
+<<<PAGE 28>>>
+
+16
+
+A Short Textbook of Psychiatry
+
+Contd...
+Thyroid function tests: Refractory depression, rapid
+cycling mood disorder. Treatment with lithium, carbamazepine.
+Electrocardiogram (ECG): Age>35 years, Treatment with
+lithium, antidepressants, ECT, antipsychotics.
+HIV testing: Intravenous drug users, suggestive sexual
+history, AIDS dementia.
+VDRL: Suggestive sexual history.
+Chest X-ray: Age>35 years, Treatment with ECT.
+Skull X-ray: History of head Injury.
+Serum CK: Neuroleptic malignant syndrome (markedly
+increased levels).
+Toxicology Screen
+Useful when substance use is suspected; for example,
+alcohol, cocaine, opiates, cannabis, phencyclidine,
+benzodiazepines, barbiturates; remember that certain
+medications can cause false positive results (for example,
+quetiapine for methadone).
+Drug Levels
+Drug levels are indicated to test for therapeutic blood
+levels, for toxic blood levels, and for testing drug
+compliance. Examples are lithium (0.6-1.0 meq/L),
+carbamazepine (4-12 mg/ml), valproate (50-100 mg/
+ml), haloperidol (8-18 ng/ml), tricyclic antidepressants
+(nortriptyline 50-150 ng/ml; imipramine 200-250 ng/
+ml), benzodiazepines, barbiturates and clozapine (350500 μg/L).
+Electrophysiological Tests
+EEG (Electroencephalogram): Seizures, dementia, pseudoseizures vs. seizures, episodic abnormal behaviour.
+BEAM (Brain electrical activity mapping): Provides
+topographic imaging of EEG data.
+Video-Telemetry EEG: Pseudoseizures vs. seizures.
+Evoked potentials (e.g. p300): Research tool.
+Polysomnography/Sleep studies: Sleep disorders, seizures (occurring in sleep). The various components in
+sleep studies include EEG, ECG, EOG, EMG, airflow
+measurement, penile tumescence, oxygen saturation,
+body temperature, GSR (Galvanic skin response), and
+body movement.
+Holter ECG: Panic disorder.
+
+Brain Imaging Tests (Cranial)
+Computed Tomography (CT) Scan: Dementia, delirium,
+seizures, first episode psychosis.
+Magnetic Resonance Imaging (MRI) Scan: Dementia.
+Higher resolution than CT scan.
+Positron Emission Tomography (PET) Scan: Research tool
+for study of brain function and physiology.
+Single Photon Emission Computed Tomography (SPECT)
+Scan: Research tool.
+Magnetic Resonance (MR) Angiography: Research tool
+Magnetic Resonance Spectroscopy (MRS): Research tool
+Neuroendocrine Tests
+Dexamethasone Suppression Test (DST): Research tool
+in depression (response to antidepressants or ECT). If
+plasma cortisol is >5 mg/100 ml following administration of dexamethasone (1 mg, given at 11 PM the night
+before and plasma cortisol taken at 4 PM and 11 PM
+the next day), it indicates non-suppression.
+TRH Stimulation Test: Lithium-induced hypothyroidism,
+refractory depression. If the serum TSH is >35 mIU/ml
+(following 500 mg of TRH given IV), the test is positive.
+Serum Prolactin Levels: Seizures vs. pseudoseizures,
+galactorrhoea with antipsychotics.
+Serum 17-hydroxycorticosteroid: Organic mood (depression) disorder.
+Serum Melatonin Levels: Seasonal mood disorders.
+Biochemical Tests
+5-HIAA: Research tool (depression, suicidal and/or
+aggressive behaviour).
+MHPG: Research tool (depression).
+Platelet MAO: Research tool (depression).
+Catecholamine levels: Organic anxiety disorder (e.g.
+pheochromocytoma).
+Genetic Tests
+Cytogenetic work-up is useful in some cases of mental
+retardation.
+Sexual Disorder Investigations
+Papaverine test: Male erectile disorder (intracavernosal
+injection of papaverine is sometimes used to differentiate
+organic from non-organic male erectile disorder).
+Nocturnal penile tumescence: Male erectile disorder.
+Contd...
+
+
+
+
+<<<PAGE 41>>>
+
+Organic (Including Symptomatic) Mental Disorders
+
+ORGANIC CATATONIC DISORDER
+According to the ICD-10, the following features
+are required for the diagnosis of organic catatonic
+disorder, in addition to the general guidelines for the
+diagnosis of other organic mental disorders, described
+earlier:
+1. Stupor (diminution or complete absence of spontaneous movement with partial or complete mutism,
+negativism, and rigid posturing);
+2. Excitement (gross hypermotility with or without
+a tendency to assaultiveness);
+3. Mixed (shifting rapidly and unpredictably from
+hypo- to hyperactivity).
+The presence of other catatonic symptoms and
+signs increases the confidence in the diagnosis. The
+catatonic symptoms and signs are described in detail
+in Chapter 5.
+
+29
+
+earlier. It is important to rule out any major disturbance
+of consciousness, orientation, memory, or mood.
+The delusions are variable and the type depends on
+the underlying aetiology. The most common delusions
+are persecutory in nature. Hallucinations (visual more
+often than auditory) may accompany the delusions.
+Schneiderian first rank symptoms (SFRS) are usually
+not seen the organic delusional disorder (in contrast
+to schizophrenia).
+
+Diagnosis
+Organic delusional disorder secondary to amphetamine use may be difficult to differentiate from paranoid schizophrenia. The differentiating points are an
+acute onset, history of amphetamine use prior to the
+onset, predominant visual hallucinations which may
+be fleeting, absence of formal thought disorder and a
+more ‘appropriate’ affect.
+
+Aetiology
+
+Aetiology
+
+The aetiology and management of organic catatonic
+disorder is described in detail in Chapter 19.
+
+1. Drugs: Amphetamines, hallucinogens, cannabis,
+disulfiram
+2. Complex partial seizures (e.g. temporal lobe
+epilepsy)
+3. Huntington’s chorea (initial stages), Parkinson’s
+disease, Wilson’s disease, and idiopathic basal
+ganglia calcification
+4. Right parietal lobe lesions, especially vascular
+lesions
+5. Lesions involving limbic system (e.g. tumours)
+6. Spinocerebellar degeneration
+7. Cerebral malaria
+8. Herpes simplex encephalitis
+9. Nutritional deficiencies (Vitamin B12, iron)
+10. Demyelinating disorders (such as multiple sclerosis, metachromatic leukodystrophy)
+
+Management
+1. Treatment of the underlying cause, if amenable to
+treatment.
+2. Symptomatic treatment with low dose of a shortacting benzodiazepine (e.g. Lorazepam), or electroconvulsive therapy (if needed). Antipsychotics
+should usually be avoided as they can make
+catatonic features worse; however small doses
+of atypical antipsychotics such as Risperidone,
+Olanzapine, Aripiprazole or Quetiapine can be
+used with care.
+
+ORGANIC DELUSIONAL
+(SCHIZOPHRENIA-LIKE) DISORDER
+According to ICD-10, presence of predominant
+delusions caused by an underlying organic cause is
+required for the diagnosis of organic delusional disorder, in addition to the general guidelines for the
+diagnosis of other organic mental disorders, described
+
+Management
+1. Treatment of the underlying cause such as removal
+of toxic agent in amphetamine psychosis.
+2. Symptomatic management with a low dose of an
+antipsychotic medication (such as Risperidone, Haloperidol, Olanzapine, or Quetiapine) may be needed.
+
+
+
+
+<<<PAGE 78>>>
+
+66
+
+A Short Textbook of Psychiatry
+Table 5.7: Antipsychotic Dose in Schizophrenia
+
+Drug
+
+Oral Dose Range
+(mg/day)
+
+Parenteral Dose
+(mg/day)
+
+Equivalent Oral Dose*
+(Equal to 100 mg CPZ)
+
+A. Typical/Traditional/First Generation Antipsychotics
+1. Chlorpromazine (CPZ)
+300-1000
+50-100 IM
+100
+2. Flupentixol
+3-18
+—
+2
+3. Haloperidol
+5-30
+5-10 IM
+2-3
+4. Loxapine
+25-250
+—
+10
+5. Pimozide
+4-12
+—
+2
+6. Prochlorperazine
+45-150
+40-80 IM
+15
+7. Sulpiride
+400-2400
+—
+200
+8. Thioridazine
+300-600
+—
+100
+9. Trifluoperazine
+15-50
+1-5 IM
+5
+10. Triflupromazine
+100-400
+30-60 IM
+25
+11. Zuclopenthixol
+25-150
+50-100 IM
+25
+B. Atypical/Second Generation Antipsychotics
+12. Amisulpride
+400-1200
+—
+—
+13. Aripiprazole
+5-30
+5.25-15 IM
+—
+14. Clozapine
+50-900
+—
+50
+15. Olanzapine
+5-20
+2.5-10 IM
+2-3
+16. Paliperidone
+3-12
+—
+—
+17. Quetiapine
+150-800
+—
+50-100
+18. Risperidone
+2-16
+—
+0.5-1.0
+19. Ziprasidone
+40-160
+—
+20
+20. Zotepine
+75-300
+—
+—
+*Equivalent doses are at best approximations only. The dose in a particular patient should be chosen on an individualised basis by the treating professional.
+
+aripiprazole, and ziprasidone, are more commonly
+used than the older typical (or first generation) antipsychotics such as trifluoperazine and haloperidol, in
+acute stages. Atypical antipsychotics are also more
+useful when negative symptoms are prominent, e.g.
+in chronic schizophrenia.
+Clozapine, another atypical antipsychotic, is
+available in the Indian market. The clinical trials have
+shown that clozapine is effective in about 30% of
+patients who had no beneficial response to traditional
+(typical and atypical) antipsychotics. It is an effective
+drug; however, as it can cause agranulocytosis and
+seizures as side-effects, it should be used with caution,
+with regular WBC and neutrophil counts as advised
+by the Summary of Product Characteristics (SPC).
+
+Drug treatment is usually administered in the
+outpatient setting as:
+1. There are very few number of psychiatric beds in
+India,
+2. Majorities of families are willing to care for the
+patients at home, and
+3. Majority of patients do not require hospitalisation.
+However, hospitalisation is indicated if there is:
+1. Neglect of food and water intake,
+2. Danger to self or others,
+3. Poor treatment adherence,
+4. Significant neglect of self-care, or
+5. Lack of social support with evidence of abovementioned risks.
+
+
+
+
+<<<PAGE 90>>>
+
+78
+
+A Short Textbook of Psychiatry
+
+ii. Severe depression with stupor, severe psychomotor retardation, or somatic syndrome.
+iii. Severe treatment refractory depression.
+iv. Delusional depression (psychotic features).
+v. Presence of significant antidepressant sideeffects or intolerance to drugs.
+Severe depression with suicidal risk is the first and
+foremost indication for use of ECT. The prompt use
+of ECT can be life-saving in such a situation.
+The response is usually rapid, resulting in a marked
+improvement. In most clinical situations, usually 6-8
+ECTs are needed, given three times a week. When six
+ECTs are administered, the usual pattern is three ECTs
+in the first week, two in the second week and one in
+the third week.
+However, improvement is not sustained after
+stopping the ECTs. Therefore, antidepressants are
+often needed along with ECTs, in order to maintain
+the improvement achieved. The safety of the ECT
+procedure has now been well-established.
+ECT can also be used for acute manic excitement,
+if it is not adequately responding to antipsychotics and
+mood stabilisers.
+
+Lithium (Li)
+Lithium has traditionally been the drug of choice for
+the treatment of manic episode (acute phase) as well
+as for prevention of further episodes in bipolar mood
+disorder. It has also been used in treatment of depression with less success. (Lithium is discussed in detail
+in Chapter 15).
+There is usually a 1-2 week lag period before any
+appreciable response is observed. So, for treatment
+of acute manic episode, antipsychotics are usually
+administered along with lithium, in order to provide
+cover for the first few weeks.
+The usual therapeutic dose range is 900-1500 mg
+of lithium carbonate per day. Lithium treatment needs
+to be closely monitored by repeated blood levels, as
+the difference between the therapeutic and lethal blood
+levels is not very wide (narrow therapeutic index).
+Therapeutic blood lithium = 0.8-1.2 mEq/L
+Prophylactic blood lithium = 0.6-1.2 mEq/L
+
+A blood lithium level of >2.0 mEq/L is often
+associated with toxicity, while a level of more than
+2.5-3.0 mEq/L may be lethal.
+Although lithium is indicated for therapeutic use
+in all manic episodes, the preventive use is best in
+usually those patients with bipolar disorder, in whom
+the frequency of episodes is 1-3 per year or 2-5 per
+two years.
+The common acute toxic symptoms of lithium are
+neurological while the common chronic side-effects
+are nephrological and endocrinal (usually hypothyroidism).
+The important investigations before star ting
+lithium therapy include a complete general physical
+examination, full blood counts, ECG, urine routine
+examination (with/without 24 hour urine volume),
+renal function tests and thyroid function tests.
+
+Antipsychotics
+Antipsychotics are an important adjunct in the
+treatment of mood disorder. The commonly used
+drugs include risperidone, olanzapine, quetiapine,
+haloperidol, and aripiprazole. It is customary to use
+the atypical antipsychotics first, before considering
+the older typical antipsychotics.
+Some of the indications include:
+1. Acute manic episode
+• Along with mood stabilisers for the first few
+weeks, before the effect of mood stabilisers
+becomes apparent.
+• Where mood stabilisers are not effective, not indicated, or have significant side-effects.
+• Given parenterally (IM or IV) for emergency
+treatment of mania.
+• Recently, there has been some early evidence that
+atypical antipsychotics (e.g. olanzapine) might
+have some mood stabilising properties.
+2. Delusional depression
+As stated above, antipsychotics are important adjuncts
+in the treatment of delusional depression. Once again,
+it is customary to use atypical antipsychotics such as
+olanzapine, quetiapine, risperidone, and ziprasidone
+first, although any antipsychotic can be used.
+
+
+
+
+<<<PAGE 91>>>
+
+Mood Disorders
+
+iii. Bipolar depression
+There is recent evidence that quetiapine has antidepressant efficacy in bipolar depression.
+iv. Maintenance or prophylactic treatment in bipolar
+disorder
+Recent evidence shows that several atypical antipsychotics such as olanzapine, quetiapine and aripiprazole
+can be successfully used in the maintenance treatment
+of bipolar disorder.
+
+Other Mood Stabilisers
+The other mood stabilisers which are used in the treatment of bipolar mood disorders include:
+1. Sodium valproate
+• For acute treatment of mania and prevention of
+bipolar mood disorder.
+• Particularly useful in those patients who are refractory to lithium.
+• The dose range is usually 1000-3000 mg/day (the
+therapeutic blood levels are 50-125 mg/ml).
+• It has a faster onset of action than lithium, therefore, it can be used in acute treatment of mania
+effectively.
+2. Carbamazepine and Oxcarbazepine
+• For acute treatment of mania and prevention of
+bipolar mood disorder.
+• Particularly useful in those patients who are refractory to lithium and valproate.
+• Particularly effective when EEG is abnormal
+(although this is not necessary for the use of carbamazepine).
+• The dose range of carbamazepine is 600-1600 mg/
+day (the therapeutic blood levels are 4-12 mg/ml).
+• The use of carbamazepine in treatment of bipolar
+disorder has recently declined, partly due to its
+potential for drug interactions.
+• Oxcarbazepine has a narrow evidence base and its
+use in bipolar disorder is quite recent.
+3. Benzodiazepines
+Lorazepam (IV and orally) and clonazepam are used
+for the treatment of manic episode alone rarely; however, they have been used more often as adjuvants to
+antipsychotics.
+
+79
+
+4. Lamotrigine is particularly effective for bipolar
+depression and is recommended by several guidelines.
+5. T3 and T4 as adjuncts for the treatment of rapid cycling mood disorder and resistant depression.
+
+Other Treatments
+Psychosurgery is an extremely rarely used method
+of treatment and is resorted to only in exceptional
+circumstances.
+In depressive episode, which is either chronic or
+persistently recurrent with a limited or absent response
+to other modes of treatment, one of the following
+procedures may very rarely be performed:
+i. Stereotactic subcaudate tractotomy, or
+ii. Stereotactic limbic leucotomy.
+In carefully selected patients, the results are
+reported to be satisfactory. However, in the current
+day and age, psychosurgery is hardly ever considered
+in routine clinical practice.
+
+Psychosocial Treatment
+Although somatic treatment appears to be the primary
+mode of management in major mood disorders, psychosocial treatment is often helpful. These indications
+include:
+i. As an adjunct to somatic treatment.
+ii. In mild to moderate cases of depression.
+iii. Certain selected cases.
+These methods include (see Chapter 18 for details):
+
+Cognitive Behaviour Therapy
+Cognitive behaviour therapy (CBT) aims at correcting depressive negative cognitions (ideations) such
+as hopelessness, worthlessness, helplessness and pessimistic ideas, and replacing them by new cognitive
+and behavioural responses.
+CBT is useful in mild to moderate, non-bipolar
+depression and can be used with or without somatic
+treatment.
+
+Interpersonal Therapy
+Interpersonal therapy (IPT) attempts to recognise
+and explore interpersonal stressors, role disputes and
+
+
+
+
+<<<PAGE 181>>>
+
+Child Psychiatry
+
+ziprasidone, quetiapine, and sulpiride. Treatment
+options are often chosen based on adverse effect
+profile of each drug (which adverse effects to avoid).
+SSRIs (such as fluoxetine) have been used for the
+treatment of co-morbid obsessive compulsive symptoms.
+In the resistant cases or in case of severe sideeffects, pimozide or clonidine can be used under
+expert supervision. Behaviour therapy can sometimes
+be used, as an adjunct.
+
+NON-ORGANIC ENURESIS
+Enuresis is repetitive voiding of urine, either during
+the day or night, at inappropriate places. This state of
+affairs is normal in infancy.
+Most children achieve bladder control by the age
+of three years. By the age of 5 years, there are still
+about 7% of children who wet their bed. Technically,
+enuresis is diagnosed only after 5 years of age (and
+at least 4 years of mental age).
+Enuresis can be either of:
+1. Primary type, where bladder control has never
+been achieved, or
+2. Secondary type, where enuresis emerges after a
+period of bladder control (at least one year).
+The majority (about 80%) of children with enuresis
+have nocturnal bed wetting only. Non-organic enuresis
+is more common (about two times) in males.
+
+Aetiology
+The exact cause of enuresis is not known. A variety
+of factors, which are implicated in its causation, are
+largely biopsychosocial. About 75% of children with
+enuresis have a first degree relative with history of
+enuresis.
+The most commonly occurring factors, however,
+are psychosocial, such as emotional disturbances, insecurity, sibling rivalry, death of a parent. An organic
+cause must be looked for in children with diurnal
+enuresis (15% of all cases of diurnal enuresis) and
+adolescents with enuresis. The organic causes are
+present in about 5% of cases and include worm infes-
+
+169
+
+tation, spina bifida, neurogenic bladder, urinary tract
+infection, diabetes mellitus, and seizure disorder.
+In secondary enuresis, the age of onset is usually
+5-8 years. Enuresis tends to remit spontaneously and
+only 1% of children with enuresis continue to have
+the disorder in adulthood.
+
+Treatment
+The management consists of one or more of the following measures:
+1. Restriction of fluid intake after 8 PM, in nocturnal
+enuresis.
+2. Bladder training during daytime, aimed at increasing the holding-time of bladder. This is carried out
+in a step-by-step manner using positive reinforcements.
+3. Interruption of sleep before the expected time of
+bed wetting. The child should be fully woken up
+and made aware of passing of urine.
+4. Conditioning devices, which cause an alarm to
+sound as soon as the voided urine touches the bedsheet. It is important to check the child’s hearing
+before starting treatment. The alarm causes inhibition of further micturition and the child awakens. If
+properly used, it is an effective method of therapy.
+5. Supportive psychotherapy for the child, parents
+and the whole family is often needed.
+6. Pharmacotherapy: Drug treatment is usually not
+a preferred option for the treatment of enuresis.
+The drug of choice in those who need pharmacotherapy has traditionally been a tricyclic antidepressant, usually imipramine (25-75 mg/day). It
+probably acts by its anticholinergic effect as well as
+by decreasing the deep sleep (stage 4 NREM-sleep)
+period. However, there is a risk of sudden death in
+some children with the use of tricyclic antidepressants.
+It should never be used for children under the age of
+6 years.
+Intranasal desmopressin has been found useful
+in some patients and is a good alternative. The other
+drugs that have been used for this purpose include
+diazepam, anticholinergics, amphetamines, placebos,
+but none have shown a good therapeutic response.
+
+
+
+
+<<<PAGE 186>>>
+
+174
+
+A Short Textbook of Psychiatry
+
+The information in this chapter is necessarily very
+brief and introductory in nature. A much more detailed
+reading is definitely recommended before prescribing any psychotropic medication to a patient with
+consultation of local formularies and guidelines. This
+information should not be used to make any treatment
+decisions without further reading.
+
+ANTIPSYCHOTIC DRUGS
+Antipsychotics are psychotropic drugs which are
+used in the treatment of psychotic disorders and
+psychotic symptoms. These are also known as major
+tranquilisers, neuroleptics, ataractics, anti-schizophrenic drugs and D2-receptor (dopamine receptor)
+blockers; however, the term antipsychotic appears
+to be the most appropriate and the most widely used
+term.
+
+Indications
+Antipsychotics have previously been used as urinary
+antiseptics and anti-helminthic; however, their use
+stopped was due to toxicity and lack of efficacy.
+Although they have been used in a wide variety of
+conditions in the past their current use includes the
+following conditions.
+Organic Psychiatric Disorders
+1. Delirium (in small doses; e.g. haloperidol,
+risperidone)
+2. Dementia (careful and considered use for psychotic features, and severe agitation)
+3. Delirium tremens (and psychoses occurring
+in drug and alcohol withdrawal states; e.g.
+haloperidol, risperidone)
+4. Drug induced psychosis (e.g. haloperidol in
+amphetamine-induced psychosis)
+5. Other organic mental disorders (e.g. organic
+hallucinosis; organic delusional disorder; secondary mania)
+Non-organic Psychotic Disorders
+1. Schizophrenia
+2. Schizo-affective disorder
+3. Acute psychoses
+
+4. Mania (with or without mood stabilisers)
+5. Maintenance treatment of bipolar disorders
+(e.g. olanzapine, quetiapine)
+6. Major depression (for psychotic features,
+agitation, and melancholic features; along with
+antidepressants)
+7. Delusional disorders
+Neurotic and Other Psychiatric Disorders
+1. Severe, intractable, and disabling anxiety
+(rarely used and not recommended)
+2. Treatment refractory obsessive compulsive
+disorder (as an adjunct)
+3. Anorexia nervosa (rarely used and not widely
+recommended)
+Medical Disorders
+1. Huntington’s chorea (e.g. haloperidol)
+2. Intractable hiccups (e.g. chlorpromazine in low
+doses) (rarely used)
+3. Nausea and vomiting (rarely, in low doses);
+ondansetron, an anti-emetic drug, is a weak
+antipsychotic
+4. Tic disorders, e.g. Gilles de la Tourette syndrome (e.g. haloperidol, risperidone)
+
+Pharmacokinetics
+The orally administered antipsychotics are absorbed
+erratically and variably from gastrointestinal tract,
+with uneven blood levels. Intramuscular and intravenous administration provides much more reliable
+blood levels. On an average, the oral liquid dose produces a peak level at 1½ hours and the intramuscular
+dose peaks at 30 minutes.
+The antipsychotics are highly lipophilic and
+highly protein-bound. They easily enter areas with
+good blood supply such as brain, lung, kidneys and
+foetus, and accumulate there. They are not dialysable. The half-lives of most antipsychotics are long
+and theoretically a single daily dose is sufficient to
+produce sustained therapeutic blood levels. However
+in practice, divided doses are administered, at least
+initially, to decrease adverse effects. Later an attempt
+can be made to give the whole dose or a major part of
+total daily dose at night.
+
+
+
+
+<<<PAGE 187>>>
+
+Psychopharmacology
+
+Steady state plasma levels are usually reached in
+5-10 days. Once the drug is withdrawn, it may remain
+in body for many days to many months. The main metabolic pathway is through liver (hepatic microsomal
+enzymes). Oxidation and conjugation are the most
+important methods of metabolism for phenothiazines.
+Many of the metabolites, such as mesoridazine (for
+thioridazine), reduced haloperidol (for haloperidol)
+and 9-hydroxy-risperidone (for risperidone), are also
+active compounds. Chlorpromazine has more than 150
+metabolites, some of which are active. The excretion
+of the metabolites is through kidneys and liver (enterohepatic circulation).
+Most of the antipsychotics tend to have a therapeutic window. If the blood level is below this ‘window’,
+the drug is ineffective. If the blood level is higher than
+the upper limit of the ‘window’, there is toxicity or
+the drug is again ineffective.
+
+Classification
+A classification of currently available antipsychotic
+drugs is presented in Table 15.2.
+
+Mechanism of Action
+The exact mechanism of action of antipsychotics is
+unknown. However, one of the major mechanisms
+appears to be antidopaminergic activity of these drugs.
+Antipsychotic drugs block D2-receptors, which are
+mainly present in mesolimbic-mesocortical system
+(mesolimbic system is concerned with emotional reactions), nigro-striatal system and tubero-infundibular
+system. The relative potencies of these drugs in competing for D2-receptors parallel quite closely their
+clinical potencies.
+It is currently believed that antipsychotic drugs
+are effective in treating psychosis due to their action on the D2-receptors located in the mesolimbic
+system whilst extrapyramidal side-effects (EPSE)
+are caused by blockade of D2-receptors situated in
+nigro-striatal system and hyperprolactinaemia is
+caused by D2-blockade in tubero-infundibular system.
+However, other neurotransmitters (such as 5-HT, acetylcholine) are clearly implicated (see below; atypical
+antipsychotics). Sedation is caused by histaminergic
+
+175
+
+blockade which is usually highest for drugs such as
+chlorpromazine and thioridazine.
+
+Second Generation Antipsychotics
+A search for an antipsychotic drug which acts only
+on the mesolimbic system but has no effect on nigrostriatal or tubero-infundibular systems, has led to the
+development of a heterogeneous group of drugs collectively known as atypical or newer antipsychotics.
+These are also known as second generation antipsychotics (SGAs) or serotonin-dopamine antagonists
+or (SDAs). These include risperidone, quetiapine,
+olanzapine, amisulpride, paliperidone, zotepine,
+ziprasidone and aripiprazole.
+By definition these drugs are effective antipsychotics without theoretically producing undesirable
+extrapyramidal side-effects (i.e. antipsychotics without neuroleptic effect), or causing elevation of serum
+prolactin levels. These are characterised by a selective
+limbic dopamine blockade, D4-receptor blockade, or
+a combination of potent 5-HT2 and weak D2 antagonism. These drugs should theoretically be safer with
+lesser incidence of serious side-effects such as tardive
+dyskinesia and neuroleptic malignant syndrome.
+Clozapine is one such drug but it can cause
+agranulocytosis and seizures. Risperidone, olanzapine,
+quetiapine, aripiprazole, amisulpride and ziprasidone
+are currently being used widely as atypical antipsychotics, while paliperidone and zotepine are also
+available in the international market.
+Atypical antipsychotics, in addition to their effect
+on positive symptoms, are believed to be effective
+in treatment of negative symptoms (such as apathy,
+decreased sociality, anhedonia) of chronic schizophrenia. Clozapine in particular is effective in management
+of treatment-resistant schizophrenia. However, there
+is need for close haematological monitoring for
+neutropenia or agranulocytosis as suggested in SPC
+of the drug.
+
+Side Effects
+The antipsychotics are safe drugs with a high therapeutic index and wide margin of safety in routine
+clinical dosages. In spite of this safety, a wide range
+
+
+
+
+<<<PAGE 189>>>
+
+Psychopharmacology
+Contd...
+Drugs
+
+Oral Dose
+(mg/d)
+
+C. Benzisoxales
+1. Iloperidone
+4-24
+2. Paliperidone
+3-12
+3. Risperidone
+2-8
+D. Benzisothiazolyl
+1. Ziprasidone
+40-160
+E. Thienobenzodiazepine
+1. Olanzapine
+5-20
+F. Dibenzothiazepine
+1. Quetiapine
+150-750
+G. Partial Agonists
+1. Aripiprazole
+5-30
+2. Bifeprunox
+20
+H. Dibenzothiepin
+1. Zotepine
+75-300
+I. Dibenzooxepinopyrrole
+1. Asenapine
+5-10
+
+177
+
+#
+
+Parenteral
+Dose (mg)
+
+Sedation
+
+Some Common Adverse Effects**
+Hypotension
+EPSE* Weight
+Gain
+
+Increased
+Prolactin
+
+____
+____
+____
+
+0
++
++
+
++
+++
+++
+
++
++
++
+
+++
+++
+++
+
+0
++++
++++
+
+____
+
+±
+
++
+
+0
+
+±
+
+±
+
+2.5-10 IM
+
+++
+
++
+
+±
+
++++
+
++
+
+____
+
+++
+
+±
+
+0
+
+++
+
+0
+
+____
+____
+
+0
+0
+
+0
+0
+
+0
+0
+
+±
+±
+
+0
+0
+
+____
+
+++
+
+±
+
++
+
+++
+
+++
+
+____
+
+0
+
+±
+
+0
+
+±
+
+0
+
+#
+
+The estimate of common adverse effects in this table is a very rough and empirical guideline to the clinical use of
+antipsychotics. The drug dosage in each patient needs to be individualised based on the clinical symptoms, their
+severity, response to treatment and several other clinical factors.
+* EPSE means Extrapyramidal side effects.
+** 0 = Absent; ± = Probable/Very little; + = Mild; ++ = Moderate; +++ = Severe
+
+of side-effects do occur with the use of antipsychotics
+even in the therapeutic doses.
+The common side-effects are listed in Table 15.3
+with their mechanisms of causation and management.
+Some of newer antipsychotics appear to have a higher
+association with metabolic syndrome (see Chapter 5
+and Table 15.3).
+It is important to monitor physical health whilst
+prescribing antipsychotics and the following are the
+most commonly recommended minimum suggestions.
+Other investigations may also be indicated (such as
+ECG, HbA1c) based on clinical opinion.
+Baseline (before prescribing): Obtaining detailed
+personal and family history, Weight, BMI, Waist
+circumference, Blood pressure, WBC and Neutrophil
+count, Fasting blood sugar, Serum lipids, and LFTs.
+
+After 1 month: Weight, BMI, Blood pressure, Waist
+circumference, and Fasting blood sugar.
+After 3 months: Weight, BMI, Blood pressure, Waist
+circumference, and Fasting blood sugar.
+After 6 months: Weight, BMI, Blood pressure, Waist
+circumference, Fasting blood sugar, Serum lipids,
+and LFTs.
+After 12 months: Weight, BMI, Blood pressure, Waist
+circumference, Fasting blood sugar, and Serum lipids.
+Several antipsychotics can increase QTc interval
+(QT interval corrected for heart rate). These include
+sertindole, haloperidol, pimozide, ziprasidone, zotepine, quetiapine, or any intravenously administered
+antipsychotic. A similar effect is seen with administration of TCAs. QTc prolongation can be made worse
+with co-prescribed medications (e.g. anti-arrhythmics
+
+
+
+
+<<<PAGE 190>>>
+
+A Short Textbook of Psychiatry
+
+178
+
+Table 15.3: Side Effects of Antipsychotics
+Category and
+Probable Cause
+Maximum with
+Side Effect
+(For example)
+A. Autonomic Side Effects
+1. Dry mouth
+Muscarinic Choliner- Chlorpromazine
+gic blockade
+
+Minimum with
+(For example)
+
+Management
+
+Haloperidol
+Risperidone
+
+2. Constipation
+
+–do–
+
+Chlorpromazine
+
+Haloperidol
+Risperidone
+
+3. Cycloplegia
+
+–do–
+
+Chlorpromazine
+
+Haloperidol
+Risperidone
+
+4. Mydriasis
+
+–do–
+
+Haloperidol
+Risperidone
+
+5. Urinary
+Retention
+
+–do–
+
+Thioridazine;
+miosis with
+Chlorpromazine)
+Chlorpromazine
+
+Usually none; Tolerance
+develops; Occasionally
+Pilocarpine 2%
+Usually none; Tolerance
+develops; Bulk (or sometimes other) laxatives
+Usually none; Tolerance
+develops; Occasionally
+Pilocarpine 2%
+Usually none; Tolerance
+develops; Occasionally
+Pilocarpine 2%
+Usually none if only hesitancy occurs. Tolerance
+develops; Rule out BHP;
+Bethanethol or catheterisation for retention
+Physostigmine (neostigmine does not enter
+CNS); Diazepam sometimes supportive care
+Usually none; Tolerance
+develops; change in posture slowly. When severe,
+use plasma expanders,
+raise leg, supportive
+measures.
+Decrease dose. If severe,
+change medication.
+Decrease dose. If severe,
+change medication.
+
+6. Delirium (central –do–
+anticholinergic
+syndrome)
+
+Haloperidol
+Risperidone
+
+Chlorpromazine
+
+Haloperidol
+Risperidone
+
+7. Orthostatic
+hypotension
+
+α1 Adrenergic
+blockade
+
+Chlorpromazine
+
+Haloperidol
+Aripiprazole
+
+8. Impotence
+
+–do–
+
+Chlorpromazine
+
+Haloperidol
+
+9. Impaired
+–do–
+Thioridazine
+ejaculation
+B. Extra-pyramidal Side Effects (EPSE)
+1. Parkinsonian
+Dopaminergic (D2) Haloperidol
+syndrome
+receptor blockade in
+(esp. tremor)
+striatal areas
+2. Akathisia (motor –do–
+–do–
+restlessness)
+
+Haloperidol
+
+Clozapine
+Quetiapine
+Aripiprazole
+Clozapine
+Quetiapine
+
+Antiparkisonian medication for treatment; also
+for prevention if needed.
+Change of medication or
+reduction; Beta-blockers
+such as Propranolol; Benzodiazepines
+Contd...
+
+
+
+
+<<<PAGE 191>>>
+
+Psychopharmacology
+
+179
+
+Contd...
+Category and
+Side Effect
+3. Acute Dystonia
+
+Probable Cause
+—do—
+
+Maximum with
+(For example)
+—do—
+
+4. Rabbit Syndrome —do—
+—do—
+(Peri-oral tremor)
+Dopaminergic (D2) Not known
+5. Tardive
+Dyskinesia (late receptor
+onset oro-facial
+super-sensitivity
+dyskinesia)
+Not known
+Probably
+6. Neuroleptic
+haloperidol
+Malignant
+Syndrome
+(Fever, EPS,
+High CPK,
+catatonic
+symptoms and
+autonomic
+dysfunction)
+C. Other Central Nervous System Effects
+1. Seizures
+Decreased seizure
+Clozapine
+threshold
+Chlorpromazine
+(High doses)
+2. Sedation
+Histaminergic
+—do—
+blockade
+
+3. Depression or
+Decreased catecho- Not known
+Pseudolamine levels in
+depression
+brain
+D. Metabolic and Endocrine Side Effects
+1. Weight gain
+H1 blockade
+Almost all
+antipsychotics esp.
+Clozapine and
+Olanzapine
+2. Diabetes
+Not known
+Clozapine
+Olanzapine
+3. Galactorrhoea
+Increased Prolactin Haloperidol
+Risperidone
+with/without
+released due to
+amenorrhoea
+dopaminergic blockade in hypothalamus
+
+Minimum with
+(For example)
+—do—
+
+—do—
+Clozapine
+
+Not known
+
+Management
+Antiparkinsonian
+medication; Rule out
+hypercalcaemia
+Antiparkinsonian
+medication
+Treatment unsatisfactory,
+though several drugs are
+available. Prevention
+best.
+Bromocriptine, Dantrolene, Baclofen, General
+supportive care. Add-on
+lorazepam, Occasionally
+ECT
+
+Trifluoperazine
+
+Decrease dose. Change
+to a safer antipsychotic
+
+Haloperidol
+Aripiprazole
+
+This side effect may be
+beneficial. Otherwise
+decrease dose. Change
+drug. Give single dose
+only at night
+Decrease dose. Change
+drug. Occasionally antidepressants or ECT.
+
+SDAs
+(e.g. Ziprasidone)
+
+Aripiprazole
+Haloperidol
+
+Change drug. Dietary
+control. Exercises.
+
+Ziprasidone
+Aripiprazole
+Aripiprazole
+Quetiapine
+
+Change drug. Dietary
+control.
+None. Change drug.
+
+Contd...
+
+
+
+
+<<<PAGE 200>>>
+
+A Short Textbook of Psychiatry
+
+188
+Contd...
+Category and
+Side Effect
+2. Severe hepatic
+necrosis (rare)
+3. Hyperpyrexia
+
+4. Bleeding
+
+5. Hyponatraemia
+
+Probable Cause
+
+Maximum with
+(For example)
+
+Minimum with
+(For example)
+
+Management
+
+Toxic or
+Hypersensitive
+Interaction with
+tricyclics or
+meperidine
+Decreased
+platelet serotonin
+
+Iproniazid
+
+Tranylcypromine
+
+Not known
+
+Not known
+
+SSRIs
+
+Not known
+
+SSRIs
+SNRIs
+
+Not known;
+Probably MAOIs
+
+Stop/change drug. Supportive
+care; Death rate high.
+Stop drug. Keep a gap of
+1 week between imipramine
+and MAOI. Supportive care.
+Change drug. Do not coprescribe other drugs that
+increase risk of bleeding;
+Gastro-protective drugs such
+as PPIs can decrease risk
+to some extent in high-risk
+patients
+Risk higher in elderly; Avoid
+co-prescribing other drugs
+that cause hyponatraemia
+(such as diuretics); monitor
+closely
+
+Probably SIADH
+
+Recently, several atypical antipsychotics such as
+olanzapine, quetiapine and aripiprazole have been
+added to list of drugs used in maintenance treatment
+of bipolar disorder. In addition, other antipsychotics
+such as risperidone (and the others mentioned above)
+are also used as antimanic agents.
+Lamotrigine and Quetiapine (and its metabolite
+norquetiapine) appear to have particular efficacy for
+treatment of bipolar depression. There is a risk of skin
+rash with lamotrigine particularly early in treatment
+and the risk appears higher with faster escalation of
+dose as well as with co-prescription of valproate. It is
+therefore important to increase the dose of lamotrigine
+very gradually as suggested in the summary of product
+characteristics (SPC) and the dose prescribed depends
+on other co-prescribed drugs (such as carbamazepine
+and valproate).
+
+LITHIUM
+Lithium (Li) is an element (Atomic number 3 and
+Atomic weight 7) which is the smallest alkali ion.
+
+The element was discovered in 1817 by Arfuedson.
+Since then, it has been used for treatment of gout and
+for salt replacement in cardiac disease, but its use was
+restricted due to fatal toxicity.
+It was rediscovered in 1949 by John Cade, for use
+in treatment of mania but its potential went unrecognised as it was discovered in Australia. Mogen Schou
+in 1957, had to rediscover it yet again before it became
+popular as a treatment of mania.
+
+Indications
+Although lithium salts are used in treatment of a
+myriad of psychiatric and non-psychiatric disorders,
+the established indications are only the following
+ones:
+1. Treatment of acute mania
+2. Prophylaxis of bipolar mood disorder.
+In addition, the following may also constitute
+possible clinical indications of lithium use:
+3. Treatment of schizo-affective disorder
+4. Prophylaxis of unipolar mood disorder
+5. Treatment of cyclothymia
+
+
+
+
+<<<PAGE 206>>>
+
+194
+
+A Short Textbook of Psychiatry
+
+Cyclic Ethers
+An example is paraldehyde. It is not used commonly
+as it is not very effective and is also dependence
+producing.
+Others
+Antipsychotics (such as thioridazine, flupentixol,
+olanzapine, quetiapine) and antidepressants (such as
+doxepine) have sometimes been used for the treatment
+of severe, intractable anxiety. However, antipsychotics
+are not the drugs of first choice and should be used
+with extreme discretion (with balancing of risks and
+benefits) when all other drugs have failed to benefit.
+Antidepressants (such as SSRIs, SNRIs and Mirtazapine) have recently emerged as treatments of choice
+in several anxiety disorders including generalised
+anxiety disorder, obsessive compulsive disorder, panic
+disorder and obsessive compulsive disorder. There is
+some data to support that smaller starting doses are
+better as anxiety symptoms may worsen initially in
+treatment.
+Beta (β) Blockers
+An example is propranolol which is particularly effective in treatment of peripheral somatic manifestations
+of anxiety. It is also helpful in treatment of anticipatory anxiety and situational anxiety. Propranolol can
+be used either alone or along with benzodiazepines.
+β-blockers are not treatments of first choice in the
+treatment of psychic or psychological manifestations
+of anxiety.
+Propranolol is contraindicated in patients with
+bronchial asthma and cardiac conditions. It should be
+used with caution in patients of age 40 and above. The
+usual dose is 40-240 mg/day, administered in divided
+doses.
+
+Benzodiazepines
+Since the discovery of chlordiazepoxide in 1957 by
+Sternbach, benzodiazepines have replaced other antianxiety drugs and hypnotics though SSRIs are now
+gradually becoming drugs of first choice in management of anxiety disorders.
+The benzodiazepines can be classified according
+to their elimination half-lives (Table 15.9).
+
+Indications
+The indications for use of benzodiazepines include
+the following:
+1. Generalised anxiety disorder; adjustment disorder
+with anxious mood (Short-term use)
+2. Panic disorder, agoraphobia, and school phobia (particularly alprazolam and clonazepam;
+short-term use, along with antidepressants)
+3. Agitated depression (short-term use, along with
+antidepressants, for first 1-2 weeks)
+4. Short-term treatment of insomnia
+5. Stage 4 NREM-sleep disorders such as enuresis,
+somnambulism (diazepam reduces duration of
+Stage 4 NREM-sleep)
+6. Nightmares (diazepam also reduces the REMsleep duration).
+7. Pre-medication in anaesthesia (intravenous
+lorazepam, midazolam, or diazepam)
+8. Anticonvulsant use (drugs of choice for status epilepticus, myoclonic seizures and certain infantile
+spasms)
+9. To produce skeletal muscle relaxation (e.g. in
+tetanus, cerebral palsy)
+10. Treatment of alcohol and other drug withdrawal
+syndromes
+11. For minor surgical, endoscopic or obstetric procedures
+12. Acute mania (lorazepam, usually with lithium or
+atypical antipsychotics).
+13. Antipsychotic-induced akathisia
+14. Emergency management of acute psycho ses
+(IV lorazepam, along with parenteral antipsychotics).
+15. Narcoanalysis or abreaction (IV diazepam)
+Whenever administered, benzodiazepines should
+not be ordinarily used for more than 2-4 weeks at a
+time; otherwise risk of dependence is quite high and
+tolerance occurs.
+Mechanism of Action
+The exact mechanism of action of benzodiazepines is
+not clear. The discovery of the benzodiazepine receptors in 1977 shed some light on the mode of action
+(Fig. 15.1).
+
+

@@ -1,0 +1,1047 @@
+<<<PAGE 27>>>
+
+Psychiatric History and Examination
+
+The answers may be overly concrete or abstract.
+The appropriateness of answers is judged. Concretisation of responses or inappropriate answers may occur
+in schizophrenia.
+
+Insight
+Insight is the degree of awareness and understanding
+that the patient has regarding his illness.
+Ask the patient’s attitude towards his present state;
+whether there is an illness or not; if yes, which kind of
+illness (physical, psychiatric or both); is any treatment
+needed; is there hope for recovery; what is the cause of
+illness. Depending on the patient’s responses, insight
+can be graded on a six-point scale (Table 2.3).
+
+Judgement
+Judgement is the ability to assess a situation correctly
+and act appropriately within that situation. Both social
+and test judgement are assessed.
+i. Social judgement is observed during the hospital
+stay and during the interview session. It includes
+an evaluation of ‘personal judgement’.
+ii. Test judgement is assessed by asking the patient
+what he would do in certain test situations, such
+as ‘a house on fire’, or ‘a man lying on the road’,
+or ‘a sealed, stamped, addressed envelope lying
+on a street’.
+Judgement is rated as Good/Intact/Normal or Poor/
+Impaired/Abnormal.
+
+INVESTIGATIONS
+After a detailed history and examination, investigations (laboratory tests, diagnostic standardised
+interviews, family interviews, and/or psychological
+tests) are carried out based on the diagnostic and
+aetiological possibilities. Some of these investigations
+are described briefly in Table 2.4.
+
+FORMULATION
+After a comprehensive psychiatric assessment, a
+diagnostic formulation summarises the detailed posi-
+
+15
+
+Table 2.3: Clinical Rating of Insight
+Insight is rated on a 6-point scale from one to six.
+1. Complete denial of illness.
+2. Slight awareness of being sick and needing help, but
+denying it at the same time.
+3. Awareness of being sick, but it is attributed to external or physical factors.
+4. Awareness of being sick, due to something unknown
+in self.
+5. Intellectual Insight: Awareness of being ill and that
+the symptoms/failures in social adjustment are due
+to own particular irrational feelings/thoughts; yet
+does not apply this knowledge to the current/future
+experiences.
+6. True Emotional Insight: It is different from intellectual insight in that the awareness leads to significant
+basic changes in the future behaviour.
+
+Table 2.4: Some Investigations in Psychiatry
+I. Biological Investigations
+Medical Screen
+Some of the following tests may be useful in screening for the medical disorders causing the psychiatric
+symptoms. Some examples of indications are stated in
+front of the tests (these examples are not intended to be
+comprehensive).
+Haemoglobin: Routine screen.
+Total and differential leucocyte counts: Routine screen,
+Treatment with antipsychotics (e.g. clozapine), lithium,
+carbamazepine.
+Mean Corpuscular Volume (MCV): Alcohol dependence
+(increased).
+Urinalysis: Routine screen; Drug screening.
+Peripheral smear: Anaemia.
+Renal function tests: Treatment with lithium.
+Liver function tests: Treatment with carbamazepine,
+valproate, benzodiazepines. Alcohol dependence.
+Serum electrolytes: Dehydration, SIADH, Treatment with
+carbamazepine, antipsychotics, lithium.
+Blood glucose: Routine screen (age>35 years), treatment
+with antipsychotics
+Contd...
+
+
+
+
+<<<PAGE 28>>>
+
+16
+
+A Short Textbook of Psychiatry
+
+Contd...
+Thyroid function tests: Refractory depression, rapid
+cycling mood disorder. Treatment with lithium, carbamazepine.
+Electrocardiogram (ECG): Age>35 years, Treatment with
+lithium, antidepressants, ECT, antipsychotics.
+HIV testing: Intravenous drug users, suggestive sexual
+history, AIDS dementia.
+VDRL: Suggestive sexual history.
+Chest X-ray: Age>35 years, Treatment with ECT.
+Skull X-ray: History of head Injury.
+Serum CK: Neuroleptic malignant syndrome (markedly
+increased levels).
+Toxicology Screen
+Useful when substance use is suspected; for example,
+alcohol, cocaine, opiates, cannabis, phencyclidine,
+benzodiazepines, barbiturates; remember that certain
+medications can cause false positive results (for example,
+quetiapine for methadone).
+Drug Levels
+Drug levels are indicated to test for therapeutic blood
+levels, for toxic blood levels, and for testing drug
+compliance. Examples are lithium (0.6-1.0 meq/L),
+carbamazepine (4-12 mg/ml), valproate (50-100 mg/
+ml), haloperidol (8-18 ng/ml), tricyclic antidepressants
+(nortriptyline 50-150 ng/ml; imipramine 200-250 ng/
+ml), benzodiazepines, barbiturates and clozapine (350500 μg/L).
+Electrophysiological Tests
+EEG (Electroencephalogram): Seizures, dementia, pseudoseizures vs. seizures, episodic abnormal behaviour.
+BEAM (Brain electrical activity mapping): Provides
+topographic imaging of EEG data.
+Video-Telemetry EEG: Pseudoseizures vs. seizures.
+Evoked potentials (e.g. p300): Research tool.
+Polysomnography/Sleep studies: Sleep disorders, seizures (occurring in sleep). The various components in
+sleep studies include EEG, ECG, EOG, EMG, airflow
+measurement, penile tumescence, oxygen saturation,
+body temperature, GSR (Galvanic skin response), and
+body movement.
+Holter ECG: Panic disorder.
+
+Brain Imaging Tests (Cranial)
+Computed Tomography (CT) Scan: Dementia, delirium,
+seizures, first episode psychosis.
+Magnetic Resonance Imaging (MRI) Scan: Dementia.
+Higher resolution than CT scan.
+Positron Emission Tomography (PET) Scan: Research tool
+for study of brain function and physiology.
+Single Photon Emission Computed Tomography (SPECT)
+Scan: Research tool.
+Magnetic Resonance (MR) Angiography: Research tool
+Magnetic Resonance Spectroscopy (MRS): Research tool
+Neuroendocrine Tests
+Dexamethasone Suppression Test (DST): Research tool
+in depression (response to antidepressants or ECT). If
+plasma cortisol is >5 mg/100 ml following administration of dexamethasone (1 mg, given at 11 PM the night
+before and plasma cortisol taken at 4 PM and 11 PM
+the next day), it indicates non-suppression.
+TRH Stimulation Test: Lithium-induced hypothyroidism,
+refractory depression. If the serum TSH is >35 mIU/ml
+(following 500 mg of TRH given IV), the test is positive.
+Serum Prolactin Levels: Seizures vs. pseudoseizures,
+galactorrhoea with antipsychotics.
+Serum 17-hydroxycorticosteroid: Organic mood (depression) disorder.
+Serum Melatonin Levels: Seasonal mood disorders.
+Biochemical Tests
+5-HIAA: Research tool (depression, suicidal and/or
+aggressive behaviour).
+MHPG: Research tool (depression).
+Platelet MAO: Research tool (depression).
+Catecholamine levels: Organic anxiety disorder (e.g.
+pheochromocytoma).
+Genetic Tests
+Cytogenetic work-up is useful in some cases of mental
+retardation.
+Sexual Disorder Investigations
+Papaverine test: Male erectile disorder (intracavernosal
+injection of papaverine is sometimes used to differentiate
+organic from non-organic male erectile disorder).
+Nocturnal penile tumescence: Male erectile disorder.
+Contd...
+
+
+
+
+<<<PAGE 54>>>
+
+42
+
+A Short Textbook of Psychiatry
+
+Fig. 4.1: Disulfiram: Mode of Action
+
+The contraindications of disulfiram use are first
+trimester of pregnancy, coronary artery disease, liver
+failure, chronic renal failure, peripheral neuropathy,
+muscle disease and psychotic symptoms presently or
+in the past.
+In selected patients (such as an older age group,
+good motivation, good social support, absent underlying psychopathology and good treatment concordance), the response can be dramatic. In addition to
+oral preparations, subcutaneous disulfiram implants
+are also now available. However, they provide unpredictable blood levels of disulfiram.
+Other deterrent agents
+1. Citrated calcium carbimide (CCC): The mechanism of action is similar to disulfiram but onset of
+action occurs within 1 hour and is reversible. The
+usual dosage is 100 mg/d in two divided doses.
+2. Metronidazole.
+3. Animal charcoal, a fungus (Coprinus atramentarius), sulfonylureas and certain cephalosporins
+also cause a disulfiram like action.
+v. Anti-craving agents
+Acamprosate, naltrexone and SSRIs (such as fluoxetine) are among the medications tried as anti-craving
+agents in alcohol dependence.
+
+Acamprosate (the Ca++ salt of N-acetyl-homotaurinate)
+interacts with NMDA receptor-mediated glutamatergic neurotransmission in the various brain regions
+and reduces Ca++ fluxes through voltage-operated
+channels.
+Naltrexone (oral opioid receptor antagonist) probably interferes with alcohol-induced reinforcement
+by blocking opioid receptors. Fluoxetine (and other
+SSRIs) have been occasionally used as anti-craving
+agents in their usual antidepressant doses.
+vi. Other medications
+A variety of other medicines such as benzodiazepines, antidepressants, antipsychotics, lithium,
+carbamazepine, and even narcotics have been tried.
+These should be used only if there is a special indication for their use (for example, antidepressants for
+underlying depression).
+vii. Psychosocial rehabilitation
+Rehabilitation is an integral part of the multi-modal
+treatment of alcohol dependence.
+
+OPIOID USE DISORDERS
+Dried exudate obtained from unripe seed capsules of
+Papaver somniferum has been used and abused for
+
+
+
+
+<<<PAGE 89>>>
+
+Mood Disorders
+
+The usual starting dose is about 75-150 mg of
+imipramine equivalent. The clinical improvement
+is assessed after about two weeks. In case of nonimprovement, the dose can usually be increased up
+to 300 mg of imipramine equivalent.
+It should be remembered that it may take up to
+3 weeks before any appreciable response may be
+noticed. Before stopping or changing a drug, the
+particular drug should be given in a therapeutically
+adequate dose for at least 6 weeks.
+A variety of antidepressants are now available
+in the market. Since almost all antidepressants are
+equal in antidepressant efficacy and there is no single
+antidepressant effective for all depressed patients, the
+choice of antidepressant is often dictated by other factors. These factors include cost and ease of availability
+of the drug, the side-effect profile of the drug, past
+history of response and (any) co-morbid medical or
+psychiatric disorders. An individualised choice has to
+be made in each patient, keeping these various factors in mind.
+Imipramine, amitriptyline and other related drugs
+are called tricyclic antidepressants (TCAs). The
+newer antidepressants such as selective serotonin
+reuptake inhibitors (SSRIs) (e.g. fluoxetine, sertraline,
+citalopram), mirtazapine, and serotonin norepinephrine reuptake inhibitors (SNRIs) (e.g. venlafaxine,
+duloxetine) have very little anti cholinergic side
+effects and, hence, are generally safer drugs to use in
+elderly patients with benign hypertrophy of prostate.
+However, both venlafaxine and duloxetine have been
+associated with hypertension and should be used with
+care in those with a history of cardiac illness.
+The antidepressant dosage is monitored on the
+basis of clinical improvement. Routine monitoring
+of blood levels is not usually indicated.
+For the first, uncomplicated, depressive episode,
+the patient should receive full therapeutic dose of the
+chosen antidepressant for a period of 6-9 months,
+after achieving full remission. It is wise to taper the
+antidepressant medication, when the treatment is to
+be stopped after the continuation phase.
+
+77
+
+There are three main phases of treatment:
+i. Acute treatment (till remission occurs),
+ii. Continuation treatment (from remission till end
+of treatment), and
+iii. Maintenance treatment (to prevent further recurrences).
+Maintenance treatment may be indicated in the
+following patients:
+i. Partial response to acute treatment.
+ii. Poor symptom control during the continuation
+treatment.
+iii. More than 3 episodes (90% chances of recurrence).
+iv. More than 2 episodes with early age of onset,
+or recurrence within 2 years of stopping
+antidepressants, or severe and/or life-threatening
+depression, or family history of mood disorder.
+v. Chronic depression (> 2 years) or double depression.
+About 20-35% of depressed patients are refractory
+to antidepressant medication. The management of a
+treatment refractory depressed patient is best done
+by a psychiatrist, often at a tertiary care centre. These
+patients may require one of the following alternatives:
+i. A change of antidepressant (Switch),
+ii. Combination of two types of antidepressants,
+iii. Augmentation with lithium,
+iv. Augmentation with T3 or T4,
+v. Augmentation with antipsychotics,
+vi. Electroconvulsive therapy, or
+vii. Use of newer and experimental techniques.
+One type of depression, namely delusional depression (depression with psychotic features), is usually
+refractory to antidepressants alone. The treatments of
+choice in this condition include:
+i. An antidepressant with ECT, or
+ii. An antidepressant with antipsychotics, or
+iii. An antidepressant with lithium.
+
+Electroconvulsive Therapy (ECT)
+The indications for ECT in depression include:
+i. Severe depression with suicidal risk.
+
+
+
+
+<<<PAGE 90>>>
+
+78
+
+A Short Textbook of Psychiatry
+
+ii. Severe depression with stupor, severe psychomotor retardation, or somatic syndrome.
+iii. Severe treatment refractory depression.
+iv. Delusional depression (psychotic features).
+v. Presence of significant antidepressant sideeffects or intolerance to drugs.
+Severe depression with suicidal risk is the first and
+foremost indication for use of ECT. The prompt use
+of ECT can be life-saving in such a situation.
+The response is usually rapid, resulting in a marked
+improvement. In most clinical situations, usually 6-8
+ECTs are needed, given three times a week. When six
+ECTs are administered, the usual pattern is three ECTs
+in the first week, two in the second week and one in
+the third week.
+However, improvement is not sustained after
+stopping the ECTs. Therefore, antidepressants are
+often needed along with ECTs, in order to maintain
+the improvement achieved. The safety of the ECT
+procedure has now been well-established.
+ECT can also be used for acute manic excitement,
+if it is not adequately responding to antipsychotics and
+mood stabilisers.
+
+Lithium (Li)
+Lithium has traditionally been the drug of choice for
+the treatment of manic episode (acute phase) as well
+as for prevention of further episodes in bipolar mood
+disorder. It has also been used in treatment of depression with less success. (Lithium is discussed in detail
+in Chapter 15).
+There is usually a 1-2 week lag period before any
+appreciable response is observed. So, for treatment
+of acute manic episode, antipsychotics are usually
+administered along with lithium, in order to provide
+cover for the first few weeks.
+The usual therapeutic dose range is 900-1500 mg
+of lithium carbonate per day. Lithium treatment needs
+to be closely monitored by repeated blood levels, as
+the difference between the therapeutic and lethal blood
+levels is not very wide (narrow therapeutic index).
+Therapeutic blood lithium = 0.8-1.2 mEq/L
+Prophylactic blood lithium = 0.6-1.2 mEq/L
+
+A blood lithium level of >2.0 mEq/L is often
+associated with toxicity, while a level of more than
+2.5-3.0 mEq/L may be lethal.
+Although lithium is indicated for therapeutic use
+in all manic episodes, the preventive use is best in
+usually those patients with bipolar disorder, in whom
+the frequency of episodes is 1-3 per year or 2-5 per
+two years.
+The common acute toxic symptoms of lithium are
+neurological while the common chronic side-effects
+are nephrological and endocrinal (usually hypothyroidism).
+The important investigations before star ting
+lithium therapy include a complete general physical
+examination, full blood counts, ECG, urine routine
+examination (with/without 24 hour urine volume),
+renal function tests and thyroid function tests.
+
+Antipsychotics
+Antipsychotics are an important adjunct in the
+treatment of mood disorder. The commonly used
+drugs include risperidone, olanzapine, quetiapine,
+haloperidol, and aripiprazole. It is customary to use
+the atypical antipsychotics first, before considering
+the older typical antipsychotics.
+Some of the indications include:
+1. Acute manic episode
+• Along with mood stabilisers for the first few
+weeks, before the effect of mood stabilisers
+becomes apparent.
+• Where mood stabilisers are not effective, not indicated, or have significant side-effects.
+• Given parenterally (IM or IV) for emergency
+treatment of mania.
+• Recently, there has been some early evidence that
+atypical antipsychotics (e.g. olanzapine) might
+have some mood stabilising properties.
+2. Delusional depression
+As stated above, antipsychotics are important adjuncts
+in the treatment of delusional depression. Once again,
+it is customary to use atypical antipsychotics such as
+olanzapine, quetiapine, risperidone, and ziprasidone
+first, although any antipsychotic can be used.
+
+
+
+
+<<<PAGE 91>>>
+
+Mood Disorders
+
+iii. Bipolar depression
+There is recent evidence that quetiapine has antidepressant efficacy in bipolar depression.
+iv. Maintenance or prophylactic treatment in bipolar
+disorder
+Recent evidence shows that several atypical antipsychotics such as olanzapine, quetiapine and aripiprazole
+can be successfully used in the maintenance treatment
+of bipolar disorder.
+
+Other Mood Stabilisers
+The other mood stabilisers which are used in the treatment of bipolar mood disorders include:
+1. Sodium valproate
+• For acute treatment of mania and prevention of
+bipolar mood disorder.
+• Particularly useful in those patients who are refractory to lithium.
+• The dose range is usually 1000-3000 mg/day (the
+therapeutic blood levels are 50-125 mg/ml).
+• It has a faster onset of action than lithium, therefore, it can be used in acute treatment of mania
+effectively.
+2. Carbamazepine and Oxcarbazepine
+• For acute treatment of mania and prevention of
+bipolar mood disorder.
+• Particularly useful in those patients who are refractory to lithium and valproate.
+• Particularly effective when EEG is abnormal
+(although this is not necessary for the use of carbamazepine).
+• The dose range of carbamazepine is 600-1600 mg/
+day (the therapeutic blood levels are 4-12 mg/ml).
+• The use of carbamazepine in treatment of bipolar
+disorder has recently declined, partly due to its
+potential for drug interactions.
+• Oxcarbazepine has a narrow evidence base and its
+use in bipolar disorder is quite recent.
+3. Benzodiazepines
+Lorazepam (IV and orally) and clonazepam are used
+for the treatment of manic episode alone rarely; however, they have been used more often as adjuvants to
+antipsychotics.
+
+79
+
+4. Lamotrigine is particularly effective for bipolar
+depression and is recommended by several guidelines.
+5. T3 and T4 as adjuncts for the treatment of rapid cycling mood disorder and resistant depression.
+
+Other Treatments
+Psychosurgery is an extremely rarely used method
+of treatment and is resorted to only in exceptional
+circumstances.
+In depressive episode, which is either chronic or
+persistently recurrent with a limited or absent response
+to other modes of treatment, one of the following
+procedures may very rarely be performed:
+i. Stereotactic subcaudate tractotomy, or
+ii. Stereotactic limbic leucotomy.
+In carefully selected patients, the results are
+reported to be satisfactory. However, in the current
+day and age, psychosurgery is hardly ever considered
+in routine clinical practice.
+
+Psychosocial Treatment
+Although somatic treatment appears to be the primary
+mode of management in major mood disorders, psychosocial treatment is often helpful. These indications
+include:
+i. As an adjunct to somatic treatment.
+ii. In mild to moderate cases of depression.
+iii. Certain selected cases.
+These methods include (see Chapter 18 for details):
+
+Cognitive Behaviour Therapy
+Cognitive behaviour therapy (CBT) aims at correcting depressive negative cognitions (ideations) such
+as hopelessness, worthlessness, helplessness and pessimistic ideas, and replacing them by new cognitive
+and behavioural responses.
+CBT is useful in mild to moderate, non-bipolar
+depression and can be used with or without somatic
+treatment.
+
+Interpersonal Therapy
+Interpersonal therapy (IPT) attempts to recognise
+and explore interpersonal stressors, role disputes and
+
+
+
+
+<<<PAGE 197>>>
+
+Psychopharmacology
+
+It is essential to continue the antidepressant for a
+period of further 6 months after reaching remission, in
+the first episode of depressive disorder (and for longer
+duration in subsequent episodes) to prevent recurrence of symptoms. It is important to prescribe the
+antidepressant in the same dose as used for treatment
+unless there are adverse effects requiring a decrease
+in dose.
+Only when adequate doses (150-300 mg
+imipramine equivalent) have been administered for
+an adequate period (at least 6 weeks) without a clinical response then the drug can be called ineffective
+for that patient. Another drug, usually from a different
+class or group, or ECT may then be used.
+
+Side Effects and Toxicity
+The common side effects of antidepressants with their
+management are summarised in Table 15.7.
+TCAs are dangerous in overdose; amitriptyline
+and dosulepin (dotheipin) are particularly cardiotoxic
+whilst lofepramine is the safest amongst TCAs. Clinical features of overdose include agitation, delirium,
+paralytic ileus, urinary retention, coma, respiratory
+depression, seizures, hyperpyrexia, cardiac arrhythmias, conduction defects, mydriasis, and death. The
+lethal dose of imipramine is 1-2 g. (40-80 tabs. of
+25 mg imipramine equivalence).
+The treatment options in overdose include gastric
+lavage/induction of vomiting, activated charcoal for
+adsorption, cardio-respiratory resuscitation, treatment
+of seizures (if they occur), general supportive care
+and symptomatic management. Quinidine-like drugs
+are contraindicated whilst antiarrhythmics such as
+lignocaine can be helpful. Physostigmine 0.5 mg
+IV/IM bolus repeated to a total of 3-4 mg/day may
+be used under careful supervision. Coma often reverts
+in less than 24 hours, although toxicity lasts for
+5-6 days.
+Co-prescription of serotonergic drugs (such as
+SSRIs) with other serotonergic agents and especially
+MAOIs can lead to serotonin syndrome. It is characterised by a classic triad of mental status changes,
+neuromuscular abnormalities and autonomic hyper-
+
+185
+
+activity. These include anxiety, agitation, confusion,
+clonus (e.g. ankle clonus, ocular clonus), hyperreflexia, myoclonus, rigidity, increased heart rate, tremor,
+flushing, hyperthermia and excessive sweating. Death
+can occur in severe serotonin syndrome.
+Treatment includes discontinuation of the offending drug(s), supportive management and (sometimes)
+use of serotonin and histamine antagonist cyproheptadine.
+
+Refractory Depression
+About 20-35% of patients do not respond to the
+antidepressant therapy. The chief reasons for this
+non-response include:
+1. Poor drug concordance.
+2. Inadequate dosage.
+3. Insufficient treatment duration.
+4. Low plasma antidepressant levels.
+5. Incorrect diagnosis.
+Even when these important reasons are excluded,
+there still remains a group (15-20%) of depressed
+patients who are non-responders or poor-responders.
+Such patients should receive a trial of another antidepressant preferably from a different group (e.g. SNRI)
+for adequate duration. In case the patient still does not
+respond, the treatment of choice of refractory depression is electroconvulsive therapy (ECT), though other
+treatment choices (such as lithium augmentation) are
+also available.
+
+MOOD STABILISING DRUGS
+(DRUGS USED IN PROPHYLAXIS
+OF BIPOLAR DISORDER)
+These drugs are usually effective in treatment of mania and therefore the word antimanic is often used to
+describe them. But as they are effective in preventing
+mood swings in bipolar disorder, the better term is
+mood-stabilising agent or a prophylactic agent. The
+most commonly used mood-stabilising agents include
+lithium, valproate, carbamazepine, and lamotrigine,
+though there are several other experimental mood
+stabilisers such as oxcarbazepine.
+
+
+
+
+<<<PAGE 200>>>
+
+A Short Textbook of Psychiatry
+
+188
+Contd...
+Category and
+Side Effect
+2. Severe hepatic
+necrosis (rare)
+3. Hyperpyrexia
+
+4. Bleeding
+
+5. Hyponatraemia
+
+Probable Cause
+
+Maximum with
+(For example)
+
+Minimum with
+(For example)
+
+Management
+
+Toxic or
+Hypersensitive
+Interaction with
+tricyclics or
+meperidine
+Decreased
+platelet serotonin
+
+Iproniazid
+
+Tranylcypromine
+
+Not known
+
+Not known
+
+SSRIs
+
+Not known
+
+SSRIs
+SNRIs
+
+Not known;
+Probably MAOIs
+
+Stop/change drug. Supportive
+care; Death rate high.
+Stop drug. Keep a gap of
+1 week between imipramine
+and MAOI. Supportive care.
+Change drug. Do not coprescribe other drugs that
+increase risk of bleeding;
+Gastro-protective drugs such
+as PPIs can decrease risk
+to some extent in high-risk
+patients
+Risk higher in elderly; Avoid
+co-prescribing other drugs
+that cause hyponatraemia
+(such as diuretics); monitor
+closely
+
+Probably SIADH
+
+Recently, several atypical antipsychotics such as
+olanzapine, quetiapine and aripiprazole have been
+added to list of drugs used in maintenance treatment
+of bipolar disorder. In addition, other antipsychotics
+such as risperidone (and the others mentioned above)
+are also used as antimanic agents.
+Lamotrigine and Quetiapine (and its metabolite
+norquetiapine) appear to have particular efficacy for
+treatment of bipolar depression. There is a risk of skin
+rash with lamotrigine particularly early in treatment
+and the risk appears higher with faster escalation of
+dose as well as with co-prescription of valproate. It is
+therefore important to increase the dose of lamotrigine
+very gradually as suggested in the summary of product
+characteristics (SPC) and the dose prescribed depends
+on other co-prescribed drugs (such as carbamazepine
+and valproate).
+
+LITHIUM
+Lithium (Li) is an element (Atomic number 3 and
+Atomic weight 7) which is the smallest alkali ion.
+
+The element was discovered in 1817 by Arfuedson.
+Since then, it has been used for treatment of gout and
+for salt replacement in cardiac disease, but its use was
+restricted due to fatal toxicity.
+It was rediscovered in 1949 by John Cade, for use
+in treatment of mania but its potential went unrecognised as it was discovered in Australia. Mogen Schou
+in 1957, had to rediscover it yet again before it became
+popular as a treatment of mania.
+
+Indications
+Although lithium salts are used in treatment of a
+myriad of psychiatric and non-psychiatric disorders,
+the established indications are only the following
+ones:
+1. Treatment of acute mania
+2. Prophylaxis of bipolar mood disorder.
+In addition, the following may also constitute
+possible clinical indications of lithium use:
+3. Treatment of schizo-affective disorder
+4. Prophylaxis of unipolar mood disorder
+5. Treatment of cyclothymia
+
+
+
+
+<<<PAGE 201>>>
+
+Psychopharmacology
+
+6. Treatment of acute depression (as an adjuvant for
+refractory depression)
+7. Treatment of chronic alcoholism (in presence of
+significant depressive symptoms) and psychoactive use disorders (e.g. cocaine dependence)
+8. Treatment of impulsive aggression
+9. Treatment of Kleine-Levin syndrome.
+
+Pharmacokinetics
+Lithium is very rapidly absorbed from the gastrointestinal tract. The peak serum levels occur between
+30 minutes to 3 hours. The absorption is virtually
+complete in about 8 hours.
+The distribution is in total body water with a slow
+entry into the intracellular compartment. Lithium is
+not protein bound. The maximum levels occur in
+thyroid (3-5 times serum level), saliva (two times),
+milk (0.3-1.0 times) and CSF (0.4 times). The steady
+state levels are achieved in about 7 days. There is
+no metabolism of lithium in body and it is excreted
+almost entirely by the kidneys. Proximal reabsorption
+is influenced by the sodium balance, and depletion
+of sodium results in retention, causing higher blood
+levels of lithium.
+
+Mechanism of Action
+Lithium’s mechanism of action is not known; however,
+the following mechanisms have been hypothesised:
+1. It affects the Na+-K+ ATP-ase and accumulates
+intracellularly as a substitute of Na+.
+2. It inhibits the adenylate cyclase and thus decreases
+cAMP (II messenger) intracellularly.
+3. It accelerates the presynaptic reuptake and destruction of catecholamines, like norepinephrine.
+4. It inhibits the release of catecholamines at the
+synapse.
+5. It decreases the postsynaptic serotonin 5-HT2
+receptor sensitivity.
+6. It stabilizes the cell membrane, along with Ca++
+and Mg++.
+7. It decreases the Ca++ mobilisation from the intracellular pools by ITP (inositol-triphosphate)dependent Ca++ channels (II messenger system).
+
+189
+
+8. It interferes with the phosphatidyl-inositol cycle
+by blocking the conversion of IMP (inositol monophosphate) to inositol, by inositol monophosphate
+phosphatase. The muscarinic acetylcholine (Ach)
+receptor is among one of the neurotransmitter
+receptors linked to this system in brain. The
+antimanic effects of lithium may be attributed to
+this effect on Ach, thus affecting the cholinergicadrenergic balance.
+All these actions result in a decreased catecholamine activity, thus ameliorating mania. However,
+these mechanisms do not explain the antidepressant
+effect and the prophylactic effect in bipolar mood disorder. It is also described to possess NMDA (n-methyl
+d-aspartate) mediated neuroprotective properties.
+There is a lag period of 7-10 days before the onset
+of action occurs, which is probably due to the time
+taken to achieve steady state levels.
+
+Clinical Use
+Lithium is available in market in the form of the following preparations.
+1. Lithium carbonate (300 mg tablets; 400 mg
+sustained-release tablets)
+2. Lithium citrate (300 mg/5 ml liquid; not available
+in India)
+Before starting treatment, it is essential to ensure
+normal functioning of kidneys (one of the most important), thyroid, heart and central nervous system.
+After starting lithium, it is necessary to investigate
+these systems at repeated intervals.
+The usual profile of investigations is as follows:
+1. Routine general and systemic physical examination.
+2. Routine blood counts (Hb, TC, DC).
+3. Urine: routine and microscopic examination.
+4. ECG.
+5. Renal function tests (blood urea, serum creatinine,
+24 hour urine volume, urine specific gravity).
+eGFR with creatinine clearance test, if indicated.
+6. Thyroid function tests (TSH, T3, T4).
+The initial daily starting dose of lithium for treatment of acute mania is usually 900-2100 mg/day,
+
+
+
+
+<<<PAGE 202>>>
+
+A Short Textbook of Psychiatry
+
+190
+
+Table 15.8: Blood Lithium Levels
+(in treatment of bipolar disorder)
+• Therapeutic levels = 0.6-1.2 mEq/L (For the treatment of acute mania)
+• Prophylactic levels = 0.6-1.0 mEq/L (For relapse
+prevention in bipolar disorder)
+• Toxic lithium levels > 2.0 mEq/L
+
+given in 1-3 doses. Ideally, the treatment is started
+after serial lithium estimation, conducted after a loading dose of 600 mg or 900 mg of lithium carbonate,
+to determine pharmacokinetics. However, this method
+is much less frequently practiced these days.
+During treatment it is essential to estimate blood
+lithium levels at regular intervals (usually 3 monthly)
+(Table 15.8). The blood sample for estimation is
+taken 12 hours after the last lithium dose. If any
+changes are made in lithium dosage, the next blood
+level is estimated after at least 5-7 days of the last
+change.
+When stopping lithium treatment (except in cases
+of lithium toxicity), it is desirable to gradually taper
+the dose of lithium over several days or weeks in order
+to minimise the risk of early relapse on discontinuation.
+There is evidence from several studies that lithium
+substantially reduces the risk of suicide in bipolar
+disorder; however, it has a narrow margin of safety
+and it is important to remember this particularly in
+patient with active ideas or plans of suicide.
+
+Side Effects
+Adverse effects are common and toxicity can occur
+easily, if blood levels reach about 2.0 mEq/L; lifethreatening intoxication occurs, if levels reach about
+3.5 mEq/L. In acute administration, toxicity is primarily neurological whilst during maintenance therapy
+renal side effects are the commonest.
+The common side effects are listed below:
+I. Neurological
+1. Tremor: This is the commonest side effect,
+occurring in up to 50% of patients. Treatment is
+
+by decreasing the dose of lithium or by adding
+propranolol.
+2. Muscular weakness.
+3. Cogwheel rigidity (mild).
+4. Seizures (decreased threshold).
+5. Neurotoxicity: The important features include
+delirium, cerebellar signs, abnormal involuntary
+movements, seizures, and later coma. In some
+individuals, toxicity may occur even within the
+therapeutic range. The treatment of choice for
+acute toxicity is haemodialysis.
+II. Renal
+The renal side effects occur in about 10-50% of all
+patients on maintenance lithium therapy. Some of the
+features include:
+1. Polyuria, polydipsia.
+2. Tubular changes.
+3. Nephrogenic diabetes insipidus.
+4. Nephrotic syndrome.
+III. Cardiovascular
+The effects on heart are similar to those of hypokalaemia.
+The commonest ECG change is T-wave depression.
+IV. Endocrine
+1. Goitre.
+2. Hypothyroidism.
+3. Abnormal thyroid function (30-40%).
+4. Weight gain (pedal oedema is also common).
+V. Gastrointestinal
+These side effects include nausea, vomiting, diarrhoea,
+metallic taste and abdominal pain.
+VI. Dermatological
+These dermatological side effects include acneiform
+eruptions, papular eruptions and exacerbation of
+psoriasis.
+VII. Side effects during pregnancy and lactation
+1. Teratogenic (possibly).
+2. Increased incidence of Ebstein’s anomaly (distortion and downward displacement of tricuspid
+valve in the right ventricle), when taken in the first
+trimester.
+3. Secreted in milk with 30-100% of the maternal
+blood lithium levels. Lithium can therefore cause
+toxicity in the infant.
+
+
+
+
+<<<PAGE 203>>>
+
+Psychopharmacology
+
+Contraindications of Lithium Use
+1. Presence of clear evidence of cardiac, renal, thyroid or neurological dysfunction
+2. Presence of blood dyscrasia
+3. During pregnancy and lactation
+4. Concomitant administration of thiazide diuretics,
+tetracyclines or anaesthetics
+ACE inhibitors (such as captopril), Angiotensin
+II receptor antagonists (such as losartan), NSAIDs
+(nonsteroidal anti-inflammatory drugs) and COX-2
+inhibitors (such as celecoxib) can increase the risk of
+lithium toxicity in an unpredictable manner, especially
+in elderly.
+
+VALPROATE
+Valproate and lithium have been widely used as
+first line drugs for treatment of mania as well as for
+prophylaxis of bipolar mood disorder.
+Valproic acid was first synthesised by Burton
+and used as an organic solvent. In 1963, Meunier
+serendipitously discovered the antiepileptic properties of valproic acid, while Lambert reported in 1966
+that valpromide (a valproic acid analogue) might be
+effective as an antimanic. It was approved by the US
+FDA as an antiepileptic drug for absence seizures in
+1978 and for the treatment of acute mania (and for
+migraine headache prophylaxis) in 1996.
+Although its mechanism of action is not clearly
+understood, it increases GABA though other nonGABAergic mechanisms have been proposed.
+The term valproate is often used to denote all
+commercial preparations, since the common entity
+in blood is valproic acid. The following preparations
+of valproate are available in India:
+i. Valproate sodium
+ii. Divalproex (Enteric-coated stable coordination
+compound composed of sodium valproate and
+valproic acid in a 1:1 molar relationship)
+iii. Chrono preparations (Enteric-coated compound
+composed of sodium valproate and valproic acid
+in a 3:2 ratio).
+
+191
+
+It is rapidly and completely absorbed after oral
+administration. The peak plasma levels are reached
+at 1-4 hours after a single oral dose. The half-life of
+valproate is 8-17 hours.
+The usual dose of valproate is 1000-3000 mg/day
+orally in divided doses. The therapeutic blood level is
+50-125 mg/ml. Oral loading strategies (20-30 mg/kg/
+day) are rapidly effective in the management of acute
+mania.
+
+Indications
+In addition to its primary indication as an anticonvulsant, Valproate has several other indications in
+various psychiatric and neuropsychiatric disorders.
+
+Bipolar Disorders
+Acute Mania (as a first-line agent for the treatment
+of acute mania in oral and IV forms): Several factors
+associated with a favourable antimanic response to
+valproate (as well as carbamazepine) include:
+a. Co-morbid substance abuse or other psychiatric
+disorders
+b. Later age at onset and/or shorter duration of illness
+c. History of poor response to lithium
+d. Dysphoric mania, mixed affective episodes, or
+rapid cycling
+e. Organic/complicated mania associated with seizure disorder, history of head trauma, or EEG
+abnormalities
+f. D-M-I (Depression-Mania-Well Interval) pattern
+of illness, as opposed to the M-D-I pattern
+There is some suggestion that patients nonresponsive to valproate may respond well to
+carbamazepine.
+Prophylaxis: Valproate is probably less effective in
+maintenance treatment of bipolar disorder than in
+treatment of acute mania. It has been used alone, as
+well as along with lithium and other mood stabilisers
+in the maintenance treatment.
+The addition of valproate to lithium has been
+recognised as a useful treatment for mania refractory
+to lithium monotherapy.
+
+
+
+
+<<<PAGE 204>>>
+
+192
+
+A Short Textbook of Psychiatry
+
+Rapid cycling bipolar disorder and mixed (or dysphoric) mania: The patients with rapid cycling, mixed
+affective episodes, or dysphoric mania are often
+resistant to lithium treatment and respond better to
+valproate. Valproate is also effective in management
+of ultra-rapid cycling mood disorders.
+Bipolar depression: Valproate appears to be generally
+more effective in the treatment of acute mania than in
+bipolar depression.
+
+The use of valproate in pregnancy and lactation
+should be best avoided. The NICE guidelines for treatment of bipolar disorder recommend that valproate is
+best avoided in women of childbearing potential (see
+Further Reading List).
+In overdose, the amount of drug, that is not protein
+bound, is high. Therefore, dialysis is useful in the
+management of an overdose with valproate.
+
+Neurological Disorders
+
+Certain drug may increase (such as aspirin, cimetidine,
+ibuprofen, erythromycin, fluoxetine, fluvoxamine,
+phenothiazines) or decrease (such as carbamazepine,
+phenytoin, phenobarbital, ethosuximide, rifampicin,
+mefloquine) the serum levels of valproate.
+In addition, valproate increases serum levels of
+other drugs (such as lamotrigine, tricyclic antidepressants, zidovudine, tolbutamide).
+
+Migraine and Pain syndromes: Valproate has been
+used for prophylaxis of migraine headaches, as well
+as for aborting an acute attack (IV route). Valproate
+has also been used in treatment of trigeminal neuralgia
+and neuropathic pain.
+Seizure disorders: Valproate is primarily indicated for
+treatment of absence seizures (both simple and complex), complex partial seizures, myoclonic seizures,
+and generalised tonic-clonic seizures, as monotherapy
+as well as adjunct therapy.
+
+Other Disorders
+Valproate has also been used at times in several other
+conditions, including behavioural agitation in dementia, severe behavioural symptoms in mental retardation, ADHD and conduct disorder, schizoaffective
+disorder (bipolar type), alcohol withdrawal, tardive
+dyskinesia, impulse control disorder, panic disorder
+and borderline personality disorder.
+
+Side Effects
+Adverse effects are more common with valproate
+concentrations above 100 mg/ml.
+The common side effects are nausea, sedation, tremor, flushing, weight gain, thrombocytopenia, menstrual disturbances (in women) and hair
+loss. There are some reports of polycystic ovaries
+and hyperandrogenism in young women with
+epilepsy.
+The most serious, though relatively uncommon,
+side effects include hepatic toxicity (especially in
+young children), acute haemorrhagic pancreatitis, and
+Steven-Johnson syndrome.
+
+Drug Interactions
+
+CARBAMAZEPINE
+Like lithium and valproate, carbamazepine too has
+been used as an antimanic and for prophylaxis of bipolar disorder. It is a tricyclic compound synthesised
+in 1953 by Schindler. It has a structure similar to
+TCAs. The onset of action can be faster as compared
+to lithium, but slower compared to valproate.
+The usual dose is 600-1600 mg/day orally, in
+divided doses. The treatment is best monitored with
+repeated blood levels. The therapeutic blood levels
+are 4-12 μg/ml and the toxic blood levels are usually
+reached at >15 μg/ml.
+
+Indications
+The indications for use of carbamazepine include:
+1. Seizures
+i. Complex partial seizures (CPS)
+ii. Generalised tonic clonic seizures
+iii. Alcohol withdrawal seizures (rum fits), if persistent (also used sometimes for treatment of
+simple alcohol withdrawal syndrome)
+2. Psychiatric disorders
+i. Bipolar mood disorder (especially for rapid
+cyclers; lithium-refractory patients; lithium-
+
+

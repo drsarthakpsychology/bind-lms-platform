@@ -1,0 +1,1250 @@
+<<<PAGE 275>>>
+
+254  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 2
+
+The following drugs are NSAIDs or COX-2 inhibitors: aceclofenac, acemetacin,
+celecoxib, dexibuprofen, dexketoprofen, diclofenac, diflunisal, etodolac, etoricoxib,
+fenbufen, fenoprofen, flurbiprofen, ibuprofen, indometacin, ketoprofen, lumiracoxib, mefenamic acid, meloxicam, nabumetone, naproxen, piroxicam, sulindac, tenoxicam and tiaprofenic acid.
+Carbamazepine
+There are rare reports of neurotoxicity when carbamazepine is combined with lithium.
+Most are old and in the context of treatment involving high plasma lithium levels. It is
+of note though that carbamazepine can cause hyponatraemia, which may in turn lead
+to lithium retention and toxicity. Similarly, rare reports of CNS toxicity implicate SSRIs,
+another group of drugs that can cause hyponatraemia.
+Table 2.2 Lithium – clinically relevant drug interactions
+Drug group
+
+Magnitude of effect
+
+ACE inhibitors
+
+■■
+■■
+
+Thiazide
+diuretics
+
+■■
+
+NSAIDs
+
+■■
+
+■■
+
+■■
+
+Timescale
+of effect
+
+Additional information
+
+Unpredictable
+Up to fourfold increases
+in [Li]
+
+Develops over
+several weeks
+
+■■
+
+Unpredictable
+Up to fourfold increases
+in [Li]
+
+Usually apparent
+in first 10 days
+
+■■
+
+Unpredictable
+From 10% to more than
+fourfold increases in [Li]
+
+Variable; few days
+to several months
+
+■■
+
+Sevenfold increased risk of ­hospitalisation
+for lithium toxicity in the elderly
+■■ Angiotensin II receptor antagonists
+may be associated with similar risk.
+■■
+
+■■
+
+Loop diuretics are safer
+Any effect will be apparent in the first
+month
+NSAIDs are widely used on a PRN basis
+Can be bought without a prescription
+
+[Li], lithium concentration, prn, pro re nata (as required).
+
+References
+1. Bray NJ, et al. The genetics of neuropsychiatric disorders. Brain Neurosci Adv 2019; 2:2398212818799271.
+2. Alda M. Lithium in the treatment of bipolar disorder: pharmacology and pharmacogenetics. Mol Psychiatry 2015; 20:661–670.
+3. Jope RS, et al. Lithium to the rescue. 2016; http://dana.org/Cerebrum/2016/Lithium_to_the_Rescue.
+4. Hanson ND, et al. Lithium, but not fluoxetine or the corticotropin-releasing factor receptor 1 receptor antagonist R121919, increases cell
+proliferation in the adult dentate gyrus. J Pharmacol Exp Ther 2011; 337:180–186.
+5. Matsunaga S, et al. Lithium as a treatment for Alzheimer’s disease: a systematic review and meta-analysis. J Alzheimer’s Dis 2015;
+48:403–410.
+6. Netto I, et al. Reversible lithium neurotoxicity: review of the literature. Prim Care Companion CNS Disord 2012; 14. PCC.11r01197.
+7. Adityanjee, et al. The syndrome of irreversible lithium-effectuated neurotoxicity. Clin Neuropharmacol 2005; 28:38–49.
+8. Memon A, et al. Association between naturally occurring lithium in drinking water and suicide rates: systematic review and meta-analysis of
+ecological studies. Br J Psychiatry 2020; 1–12. 217:667-678.
+9. Kessing LV, et al. Association of lithium in drinking water with the incidence of dementia. JAMA Psychiatry 2017; 74:1005–1010.
+10. Goodwin GM, et al. Evidence-based guidelines for treating bipolar disorder: revised third edition recommendations from the British
+Association for Psychopharmacology. J Psychopharmacol 2016; 30:495–553.
+11. Hui TP, et al. A systematic review and meta-analysis of clinical predictors of lithium response in bipolar disorder. Acta Psychiatr Scand 2019;
+140:94–115.
+12. Bahji A, et al. Comparative efficacy and tolerability of pharmacological treatments for the treatment of acute bipolar depression: a systematic
+review and network meta-analysis. J Affect Disord 2020; 269:154–184.
+13. Taylor DM, et al. Comparative efficacy and acceptability of drug treatments for bipolar depression: a multiple-treatments meta-analysis. Acta
+Psychiatr Scand 2014; 130:452–469.
+
+
+
+
+<<<PAGE 285>>>
+
+264  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Carbamazepine
+
+CHAPTER 2
+
+Mechanism of action1
+Carbamazepine blocks voltage-dependent sodium channels thus inhibiting repetitive
+neuronal firing. It reduces glutamate release and decreases the turnover of dopamine
+and nor adrenaline. Carbamazepine has a similar molecular structure to TCAs.
+As well as blocking voltage-dependent sodium channels, oxcarbazepine (a structural
+derivative of carbamazepine) also increases potassium conductance and modulates
+high-voltage activated calcium channels.
+
+Formulations
+Carbamazepine is available as a liquid, chewable, immediate-release and controlledrelease tablets. Conventional formulations generally have to be administered two to three
+times daily. The controlled release preparation can be given once or twice daily, and the
+reduced fluctuation in serum levels usually leads to improved tolerability. This ­preparation
+has a lower bioavailability and an increase in dose of 10–15% may be required.
+
+Indications
+Carbamazepine is primarily used as an antiseizure medication in the treatment of grand mal
+and focal seizures. It is also used in the treatment of trigeminal neuralgia and, in the UK, is
+licensed for the treatment of bipolar illness in patients who do not respond to lithium.
+With respect to the treatment of mania, two placebo-controlled randomised studies
+have found the extended release formulation of carbamazepine to be effective; in both
+studies, the response rate in the carbamazepine arm was twice that in the placebo arm.2,3
+Carbamazepine was not particularly well tolerated; the incidence of dizziness, somnolence and nausea was high. Another study found carbamazepine alone to be as effective
+as carbamazepine plus olanzapine.4 NICE does not recommend carbamazepine as a
+first-line treatment for mania.5 A Cochrane review concluded that there were insufficient trials of adequate methodological quality on oxcarbazepine in the acute treatment
+of BD to inform about on its efficacy and acceptability.6
+Open studies suggest that carbamazepine monotherapy has some efficacy in bipolar
+depression;7 note that the evidence base supporting other strategies is stronger (see
+­section ‘Bipolar depression’). Carbamazepine may also be useful in unipolar depression
+either alone8 or as an augmentation strategy.9
+Carbamazepine is generally considered to be less effective than lithium in the prophylaxis of bipolar illness;10 several published studies report a low response rate and high
+drop-out rate. A meta-analysis (n = 464) failed to find a significant difference in efficacy
+between lithium and carbamazepine, but those who received carbamazepine were more
+likely to drop out of treatment because of side effects.11 Lithium is considered to be
+superior to carbamazepine in reducing suicidal behaviour,12 although data are not consistent13 and carbamazepine may have anti-suicidal properties.14 NICE considers carbamazepine to be a third-line prophylactic agent,5 and data emerging since this guidance
+support this positioning.15 Three small studies suggest that the related oxcarbazepine
+
+
+
+
+<<<PAGE 286>>>
+
+may have some prophylactic efficacy when used in combination with other mood-stabilising drugs.16–18
+There are data supporting the use of carbamazepine in the management of alcohol
+withdrawal symptoms,19 although the high doses required initially are often poorly
+tolerated. Cochrane does not consider the evidence strong enough to support the use of
+carbamazepine for this indication.20 Carbamazepine has also been used to manage
+aggressive behaviour in patients with schizophrenia;21 the quality of data is weak and
+the mode of action unknown. There are a number of case reports and open case series
+that report on the use of carbamazepine in various psychiatric illnesses such as panic
+disorder, borderline personality disorder and episodic dyscontrol syndrome.
+
+Plasma levels
+When carbamazepine is used as an antiseizure medication, the therapeutic range is generally considered to be 4–12mg/L, although the supporting evidence is not strong. In
+patients with affective illness, a dose of at least 600mg/day and a plasma level of at least
+7mg/L may be required,22 although this is not a consistent finding.4,8,23 Levels above
+12mg/L are associated with a higher side effect burden.
+Carbamazepine serum levels vary markedly within a dosage interval. It is therefore
+important to sample at a point in time where levels are likely to be reproducible for any
+given individual. The most appropriate way of monitoring is to take a trough level
+before the first dose of the day.
+Carbamazepine is a hepatic enzyme inducer that induces its own metabolism as well
+as that of other drugs including some antipsychotics. An initial plasma half-life of
+around 30 hours is reduced to around 12 hours on chronic dosing. For this reason,
+plasma levels should be checked 2–4 weeks after an increase in dose to ensure that the
+desired level is still being obtained.
+Most published clinical trials that demonstrate the efficacy of carbamazepine as a
+mood stabiliser use doses that are significantly higher (800–1200mg/day) than those
+commonly prescribed in the UK clinical practice.24
+
+Adverse effects1
+The main side effects associated with carbamazepine therapy are dizziness, diplopia,
+drowsiness, ataxia, nausea and headaches. They can sometimes be avoided by starting
+with a low dose and increasing slowly. Avoiding high peak blood levels by splitting the
+dose throughout the day or using a controlled release formulation may also help. Dry
+mouth, oedema and hyponatraemia are also common. Sexual dysfunction can occur,
+probably mediated through reduced testosterone levels.25 Around 3% of patients treated
+with carbamazepine develop a generalised erythematous rash. Serious exfoliative dermatological reactions can rarely occur; vulnerability is genetically determined,26 and genetic
+testing of people of Han Chinese or Thai origin is ­recommended before carbamazepine is
+prescribed. Carbamazepine is a known human teratogen (see Chapter 7).
+Carbamazepine commonly causes a chronic low white blood cell (WBC) count. One
+patient in 20,000 develops agranulocytosis and/or aplastic anaemia.27 Raised alkaline
+phosphatase (ALP) and gamma-glutamyl transferase (GGT) are common (a GGT of
+
+CHAPTER 2
+
+Bipolar disorder  265
+
+
+
+
+<<<PAGE 287>>>
+
+CHAPTER 2
+
+266  The Maudsley® Prescribing Guidelines in Psychiatry
+
+2–3 times normal is rarely a cause for concern28). A delayed multi-organ hypersensitivity reaction rarely occurs, mainly manifesting itself as various skin reactions, a low
+WBC count and abnormal LFTs. Fatalities have been reported.28,29 There is no clear
+timescale for these events.
+Some antiseizure medications have been associated with an increased risk of suicidal
+behaviour. Carbamazepine has not been implicated, either in general30,31 or more specifically in those with bipolar illness.32
+
+Pre-treatment tests
+Baseline urea and electrolytes (U&Es) FBC and LFTs are recommended by NICE. A
+baseline measure of weight is also desirable.
+
+On-treatment monitoring
+NICE recommends that U&Es, FBC and LFTs should be repeated after 6 months, and
+that weight (or BMI) should also be monitored.
+
+Discontinuation
+It is not known if abrupt discontinuation of carbamazepine worsens the natural course
+of bipolar illness in the same way that abrupt cessation of lithium does. In one small
+case series (n = 6), one patient developed depression within a month of discontinuation,33 while in another small case series (n = 4), three patients had a recurrence of their
+mood disorder within 3 months.34 Until further data are available, if carbamazepine is
+to be discontinued, it should be done slowly (over at least a month).
+
+Use in women of child-bearing age
+Carbamazepine is an established human teratogen (see Chapter 7).
+Women who have mania are likely to be sexually disinhibited. The risk of unplanned
+pregnancy is likely to be above population norms (where 50% of pregnancies are
+unplanned). If carbamazepine cannot be avoided, adequate contraception should be
+ensured (note the interaction between carbamazepine and oral contraceptives outlined
+below) and prophylactic folate prescribed.
+
+Interactions with other drugs35–38
+Carbamazepine is a potent inducer of hepatic cytochrome enzymes and is metabolised by
+CYP3A4. Plasma levels of most antidepressants, most antipsychotics, benzodiazepines,
+warfarin, zolpidem, some cholinesterase inhibitors, methadone, thyroxine, theophylline,
+oestrogens and other steroids may be reduced by carbamazepine, resulting in treatment
+failure. Patients requiring contraception should either receive a preparation containing
+not less than 50µg oestrogen or use a non-hormonal method. Drugs that inhibit CYP3A4
+will increase carbamazepine plasma levels and may precipitate toxicity. Examples include
+fluconazole, cimetidine, diltiazem, verapamil, erythromycin and some SSRIs.
+
+
+
+
+<<<PAGE 288>>>
+
+Pharmacodynamic interactions also occur. The anticonvulsant activity of carbamazepine is reduced by drugs that lower the seizure threshold (e.g. antipsychotics and antidepressants), the potential for carbamazepine to cause neutropenia may be increased by
+other drugs that have the potential to depress the bone marrow (e.g. clozapine), and the
+risk of hyponatraemia may be increased by other drugs that have the potential to
+deplete sodium (e.g. diuretics). Neurotoxicity has been reported when carbamazepine is
+used in combination with lithium. This is rare. For a full review of carbamazepine interactions, see chapter 17 of Applied Clinical Pharmacokinetics of Psychopharmacological
+Agents.39
+As carbamazepine is structurally similar to TCAs, in theory it should not be given
+within 14 days of discontinuing a monoamine oxidase inhibitor (MAOI).
+
+Table 2.4 Carbamazepine – prescribing and monitoring
+Indications
+
+Mania (not first line), bipolar depression (evidence weak), unipolar depression
+(evidence weak) and prophylaxis of bipolar disorder (third line after antipsychotics
+and valproate). Alcohol withdrawal (may be poorly tolerated)
+Carbamazepine is licensed for the treatment of bipolar illness in patients who do
+not respond to lithium
+
+Pre-carbamazepine workup
+
+U&Es, FBC and LFTs. Baseline measure of weight desirable
+
+Prescribing
+
+Titrate dose upwards against response and side effects; start with 100–200mg bd
+and aim for 400mg bd (some patients will require higher doses)
+Note that the modified release formulation (Tegretol Retard) can be given once to
+twice daily, is associated with less severe fluctuations in serum levels and is
+generally better tolerated
+Plasma levels can be used to assure adequate dosing and treatment compliance.
+Blood should be taken immediately before the next dose. Carbamazepine induces
+its own metabolism; serum levels (if used) should be re-checked a month after an
+increase in dose
+
+Monitoring
+
+U&Es, FBC and LFTs if clinically indicated
+Weight (or BMI)
+
+Stopping
+
+Reduce slowly over at least 1 month
+
+bd, bis in die (twice a day)
+
+References
+1. Novartis Pharmaceuticals UK Limited. Summary of product characteristics. Tegretol tablets 100mg, 200mg, 400mg. 2020; https://www.medi
+cines.org.uk/emc/medicine/1328.
+2. Weisler RH, et al. A multicenter, randomized, double-blind, placebo-controlled trial of extended-release carbamazepine capsules as monotherapy for bipolar disorder patients with manic or mixed episodes. J Clin Psychiatry 2004; 65:478–484.
+3. Weisler RH, et al. Extended-release carbamazepine capsules as monotherapy for acute mania in bipolar disorder: a multicenter, randomized,
+double-blind, placebo-controlled trial. J Clin Psychiatry 2005; 66:323–330.
+4. Tohen M, et al. Olanzapine plus carbamazepine v. carbamazepine alone in treating manic episodes. Br J Psychiatry 2008; 192:135–143.
+5. National Institute for Health and Care Excellence. Bipolar disorder: assessment and management. Clinical Guidance 185 [CG185]. 2014
+(Last updated February 2020); https://www.nice.org.uk/guidance/cg185.
+6. Vasudev A, et al. Oxcarbazepine for acute affective episodes in bipolar disorder. Cochrane Database Syst Rev 2011; Cd004857.
+7. Dilsaver SC, et al. Treatment of bipolar depression with carbamazepine: results of an open study. Biol Psychiatry 1996; 40:935–937.
+8. Zhang ZJ, et al. The effectiveness of carbamazepine in unipolar depression: a double-blind, randomized, placebo-controlled study. J Affect
+Disord 2008; 109:91–97.
+
+CHAPTER 2
+
+Bipolar disorder  267
+
+
+
+
+<<<PAGE 289>>>
+
+CHAPTER 2
+
+268  The Maudsley® Prescribing Guidelines in Psychiatry
+
+9. Kramlinger KG, et al. The addition of lithium to carbamazepine. Antidepressant efficacy in treatment-resistant depression. Arch Gen
+Psychiatry 1989; 46:794–800.
+10. Nasrallah HA, et al. Carbamazepine and valproate for the treatment of bipolar disorder: a review of the literature. J Affect Disord 2006;
+95:69–78.
+11. Ceron-Litvoc D, et al. Comparison of carbamazepine and lithium in treatment of bipolar disorder: a systematic review of randomized controlled trials. Human Psychopharmacol 2009; 24:19–28.
+12. Kleindienst N, et al. Differential efficacy of lithium and carbamazepine in the prophylaxis of bipolar disorder: results of the MAP study.
+Neuropsychobiology 2000; 42 Suppl 1:2–10.
+13. Yerevanian BI, et al. Bipolar pharmacotherapy and suicidal behavior. Part I: lithium, divalproex and carbamazepine. J Affect Disord 2007;
+103:5–11.
+14. Tsai CJ, et al. The rapid suicide protection of mood stabilizers on patients with bipolar disorder: a nationwide observational cohort study in
+Taiwan. J Affect Disord 2016; 196:71–77.
+15. Peselow ED, et al. Prophylactic efficacy of lithium, valproic acid, and carbamazepine in the maintenance phase of bipolar disorder: a naturalistic study. Int Clin Psychopharmacol 2016; 31:218–223.
+16. Vieta E, et al. A double-blind, randomized, placebo-controlled prophylaxis trial of oxcarbazepine as adjunctive treatment to lithium in the
+long-term treatment of bipolar I and II disorder. Int J Neuropsychopharmacol 2008; 11:445–452.
+17. Conway CR, et al. An open-label trial of adjunctive oxcarbazepine for bipolar disorder. J Clin Psychopharmacol 2006; 26:95–97.
+18. Juruena MF, et al. Bipolar I and II disorder residual symptoms: oxcarbazepine and carbamazepine as add-on treatment to lithium in a doubleblind, randomized trial. Prog Neuropsychopharmacol Biol Psychiatry 2009; 33:94–99.
+19. Malcolm R, et al. The effects of carbamazepine and lorazepam on single versus multiple previous alcohol withdrawals in an outpatient randomized trial. J Gen Intern Med 2002; 17:349–355.
+20. Minozzi S, et al. Anticonvulsants for alcohol withdrawal. Cochrane Database Syst Rev 2010; CD005064.
+21. Brieden T, et al. Psychopharmacological treatment of aggression in schizophrenic patients. Pharmacopsychiatry 2002; 35:83–89.
+22. Taylor D, et al. Doses of carbamazepine and valproate in bipolar affective disorder. Psychiatric Bull 1997; 21:221–223.
+23. Simhandl C, et al. The comparative efficacy of carbamazepine low and high serum level and lithium carbonate in the prophylaxis of affective
+disorders. J Affect Disord 1993; 28:221–231.
+24. Taylor DM, et al. Prescribing and monitoring of carbamazepine and valproate – a case note review. Psychiatric Bull 2000; 24:174–177.
+25. Lossius MI, et al. Reversible effects of antiepileptic drugs on reproductive endocrine function in men and women with epilepsy–a prospective
+randomized double-blind withdrawal study. Epilepsia 2007; 48:1875–1882.
+26. Hung SI, et al. Genetic susceptibility to carbamazepine-induced cutaneous adverse drug reactions. Pharmacogenet Genomics 2006;
+16:297–306.
+27. Kaufman DW, et al. Drugs in the aetiology of agranulocytosis and aplastic anaemia. Eur J Haematol Suppl 1996; 60:23–30.
+28. Bjornsson E. Hepatotoxicity associated with antiepileptic drugs. Acta Neurol Scand 2008; 118:281–290.
+29. Ganeva M, et al. Carbamazepine-induced drug reaction with eosinophilia and systemic symptoms (DRESS) syndrome: report of four cases
+and brief review. Int J Dermatol 2008; 47:853–860.
+30. Patorno E, et al. Anticonvulsant medications and the risk of suicide, attempted suicide, or violent death. JAMA 2010; 303:1401–1409.
+31. Andersohn F, et al. Use of antiepileptic drugs in epilepsy and the risk of self-harm or suicidal behavior. Neurology 2010; 75:335–340.
+32. Gibbons RD, et al. Relationship between antiepileptic drugs and suicide attempts in patients with bipolar disorder. Arch Gen Psychiatry
+2009; 66:1354–1360.
+33. Macritchie KA, et al. Does ‘rebound mania’ occur after stopping carbamazepine? A pilot study. J Psychopharmacol 2000; 14:266–268.
+34. Franks MA, et al. Bouncing back: is the bipolar rebound phenomenon peculiar to lithium? A retrospective naturalistic study. J Psychopharmacol
+2008; 22:452–456.
+35. Spina E, et al. Clinical significance of pharmacokinetic interactions between antiepileptic and psychotropic drugs. Epilepsia 2002; 43 Suppl
+2:37–44.
+36. Patsalos PN, et al. The importance of drug interactions in epilepsy therapy. Epilepsia 2002; 43:365–385.
+37. Crawford P. Interactions between antiepileptic drugs and hormonal contraception. CNS Drugs 2002; 16:263–272.
+38. Citrome L, et al. Pharmacokinetics of aripiprazole and concomitant carbamazepine. J Clin Psychopharmacol 2007; 27:279–283.
+39. Taylor D, et al. Clinically significant interactions with mood stabilisers, inM Jann, S Penzak, L Cohen, eds. Applied clinical pharmacokinetics
+and pharmacodynamics of psychopharmacological agents. Switzerland: ADIS 2016; 423–449.
+
+
+
+
+<<<PAGE 402>>>
+
+Depression and anxiety disorders  381
+
+CYP1A2
+
+CYP2B6
+
+CYP2C9
+
+CYP2C19
+
+CYP2D6
+
+CYP3A4/5/7
+
+Genetic
+polymorphism
+Ultra-rapid
+metabolisers
+possible
+
+2–10% of total
+hepatic CYP
+content16
+
+5–10% of
+Caucasians
+poor
+metabolisers
+
+~20% of Asians
+and 3–5%
+Caucasians are
+poor metabolisers
+
+3–5% of
+Caucasians poor
+metabolisers
+
+60% p450
+content
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Carbamazepine
+Charcoal cooking
+Tobacco smoke
+Omeprazole
+Phenobarbital
+Phenytoin
+
+Carbamazepine
+Efavirenz
+Lopinavir
+Rifampicin
+Ritonavir
+
+Phenytoin
+Rifampicin
+
+Apalutamide
+Rifampicin
+Enzalutamide
+Artemisinin
+Efavirenz
+
+Carbamazepine
+Phenytoin
+
+Carbamazepine
+Phenytoin
+Prednisolone
+Rifampicin
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Cimetidine
+Ciprofloxacin
+Erythromycin
+Fluvoxamine
+
+Clopidogrel
+Ticlopidine
+Voriconazole
+
+Cimetidine
+Fluoxetine
+Fluvoxamine
+Moclobemide
+Sertraline
+
+Fluconazole
+Fluoxetine
+Fluvoxamine
+Esomeprazole
+Moclobemide
+Omeprazole
+Voriconazole
+Armodafinil
+Etravirine
+Isoniazid
+Modafinil
+Cimetidine
+
+Chlorpromazine
+Bupropion
+Duloxetine
+Fluoxetine
+Fluphenazine
+Haloperidol
+Paroxetine
+Sertraline
+Tricyclics
+
+Erythromycin
+Fluoxetine
+Fluvoxamine
+Grapefruit Juice
+Ketoconazole
+Norfluoxetine
+Paroxetine
+Sertraline
+Tricyclics
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Agomelatine
+Benzodiazepines
+Caffeine
+Clozapine
+Duloxetine
+Haloperidol
+Mirtazapine
+Olanzapine
+Ramelteon
+Theophylline
+Tizanidine
+Tricyclics
+Warfarin
+
+Bupropion
+Methadone
+Tramadol
+
+Agomelatine
+Bupropion
+Citalopram
+Diazepam
+Omeprazole
+Phenytoin
+Tricyclics
+Warfarin
+
+Citalopram
+Diazepam
+Moclobemide
+
+Clozapine
+Codeine
+Donepezil
+Duloxetine
+Haloperidol
+Phenothiazines
+Risperidone
+Tamoxifen
+Tricyclics
+Tramadol
+Trazodone
+Venlafaxine
+Vortioxetine
+
+Calcium
+Blockers
+Carbamazepine
+Clozapine
+Donepezil
+Erythromycin
+Galantamine
+Methadone
+Levomilnacipran
+Mirtazapine
+Reboxetine
+Risperidone
+Statins
+Tricyclics
+Valproate
+Venlafaxine
+Vilazodone
+Vortioxetine
+Z-hypnotics
+
+CHAPTER 3
+
+Table 3.15 Pharmacokinetic interactions – a brief summary of important interactions3,15
+
+
+
+
+<<<PAGE 684>>>
+
+Monitor renal function
+
+Risperidone
+Long-acting injection
+
+25mg every 2 weeks
+
+If the last dose of 1-monthly
+paliperidone palmitate injectable is:
+50mg
+75mg
+100mg
+
+25mg every 2 weeks
+
+Initiate the 3-monthly injection
+at the following doses:
+175mg
+263mg
+350mg
+(There is no equivalent dose for
+the 25mg dose of 1-monthly
+paliperidone palmitate
+injection)21
+
+Bipolar disorder
+Caution: drug interactions
+Check LFTs, FBC and U&Es
+Consider checking plasma levels
+
+Bipolar disorder (titration as in
+young adults)
+Check for interactions and make
+appropriate dose alterations (see
+BNF)
+
+Lamotrigine
+
+Specific indication/Additional
+notes
+
+Carbamazepine
+
+Mood stabilisers
+
+Drug
+
+200–400mg/day*
+
+Increase by 25mg steps every
+14 days
+Increase by 25mg steps every
+14 days
+Increase by 50mg steps every
+14 days
+
+25mg daily (monotherapy)
+
+25mg on alternate days (if with
+valproate)
+50mg daily (if with
+carbamazepine)
+
+Usual maintenance dose
+
+50mg bd or 100mg bd*
+
+Starting dose
+
+NB: All antipsychotic drugs contain warnings for increased mortality in elderly patients with dementia.
+
+Dose based on renal function:
+Because elderly patients may
+have diminished renal function,
+they are dosed as in mild renal
+impairment even if tests show
+normal renal function*
+
+Paliperidone palmitate
+3-monthly injection
+
+100mg bd*
+
+100mg/day*
+
+200mg/day*
+
+600–800mg/day*
+
+(Continued)
+
+Maximum dose in elderly
+
+25mg every 2 weeks
+Consider 37.5mg every 2 weeks
+in patients treated with oral
+risperidone doses >4mg/day22
+
+350mg 3 monthly*
+
+
+
+
+<<<PAGE 741>>>
+
+CHAPTER 7
+
+720  The Maudsley® Prescribing Guidelines in Psychiatry
+
+144. Ylikorkala O, et al. Treatment of inadequate lactation with oral sulpiride and buccal oxytocin. Obstet Gynecol 1984; 63:57–60.
+145. Ylikorkala O, et al. Sulpiride improves inadequate lactation. Br Med J 1982; 285:249–251.
+146. Aono T, et al. Augmentation of puerperal lactation by oral administration of sulpiride. J Clin Endocrinol Metab 1970; 48:478–482.
+147. Polatti F. Sulpiride isomers and milk secretion in puerperium. Clin Exp Obstet Gynecol 1982; 9:144–147.
+148. Aono T, et al. Effect of sulpiride on poor puerperal lactation. Am J Obstet Gynecol 1982; 143:927–932.
+149. Matheson I, et al. Milk concentrations of flupenthixol, nortriptyline and zuclopenthixol and between-breast differences in two patients. Eur
+J Clin Pharmacol 1988; 35:217–220.
+150. Kirk L, et al. Concentrations of Cis(Z)-flupentixol in maternal serum, amniotic fluid, umbilical cord serum, and milk. Psychopharmacology
+(Berl) 1980; 72:107–108.
+151. Aaes-Jorgensen T, et al. Zuclopenthixol levels in serum and breast milk. Psychopharmacology (Berl) 1986; 90:417–418.
+152. Schlotterbeck P, et al. Low concentration of ziprasidone in human milk: a case report. Int J Neuropsychopharmacol 2009; 12:437–438.
+153. Chaudron LH, et al. Mood stabilizers during breastfeeding: a review. J Clin Psychiatry 2000; 61:79–90.
+154. Wisner KL, et al. Serum levels of valproate and carbamazepine in breastfeeding mother-infant pairs. J Clin Psychopharmacol 1998;
+18:167–169.
+155. Ernst CL, et al. The reproductive safety profile of mood stabilizers, atypical antipsychotics, and broad-spectrum psychotropics. J Clin
+Psychiatry 2002; 63 Suppl 4:42–55.
+156. Meador KJ, et al. Effects of breastfeeding in children of women taking antiepileptic drugs. Neurology 2010; 75:1954–1960.
+157. Zhao M, et al. [A case report of monitoring on carbamazepine in breast feeding woman]. Beijing Da Xue Xue Bao 2010; 42:602–603.
+158. Froescher W, et al. Carbamazepine levels in breast milk. Ther Drug Monit 1984; 6:266–271.
+159. Frey B, et al. Transient cholestatic hepatitis in a neonate associated with carbamazepine exposure during pregnancy and breast-feeding. EurJ
+Pediatr 1990; 150:136–138.
+160. Merlob P, et al. Transient hepatic dysfunction in an infant of an epileptic mother treated with carbamazepine during pregnancy and breastfeeding. Ann Pharmacother 1992; 26:1563–1565.
+161. Veiby G, et al. Early child development and exposure to antiepileptic drugs prenatally and through breastfeeding: a prospective cohort study
+on children of women with epilepsy. JAMA Neurol 2013; 70:1367–1374.
+162. Pynnonen S, et al. Letter: carbamazepine and mother’s milk. Lancet 1975; 2:563.
+163. Meador KJ, et al. Breastfeeding in children of women taking antiepileptic drugs: cognitive outcomes at age 6 years. JAMA Pediatrics 2014;
+168:729–736.
+164. Ohman I, et al. Lamotrigine in pregnancy: pharmacokinetics during delivery, in the neonate, and during lactation. Epilepsia 2000;
+41:709–713.
+165. Liporace J, et al. Concerns regarding lamotrigine and breast-feeding. Epilepsy Behav 2004; 5:102–105.
+166. Gentile S. Lamotrigine in pregnancy and lactation (Letter). Arch Women’s Mental Health 2005; 8:57–58.
+167. Page-Sharp M, et al. Transfer of lamotrigine into breast milk (Letter). Ann Pharmacother 2006; 40:1470–1471.
+168. Rambeck B, et al. Concentrations of lamotrigine in a mother on lamotrigine treatment and her newborn child. Eur J Clin Pharmacol 1997;
+51:481–484.
+169. Tomson T, et al. Lamotrigine in pregnancy and lactation: a case report. Epilepsia 1997; 38:1039–1041.
+170. Newport DJ, et al. Lamotrigine in breast milk and nursing infants: determination of exposure. Pediatrics 2008; 122:e223–e231.
+171. Fotopoulou C, et al. Prospectively assessed changes in lamotrigine-concentration in women with epilepsy during pregnancy, lactation and
+the neonatal period. Epilepsy Res 2009; 85:60–64.
+172. Nordmo E, et al. Severe apnea in an infant exposed to lamotrigine in breast milk. Ann Pharmacother 2009; 43:1893–1897.
+173. Wakil L, et al. Neonatal outcomes with the use of lamotrigine for bipolar disorder in pregnancy and breastfeeding: a case series and review
+of the literature. Psychopharmacol Bull 2009; 42:91–98.
+174. Birnbaum AK, et al. Antiepileptic drug exposure in infants of breastfeeding mothers with epilepsy. JAMA Neurol 2020; 77:441–450.
+175. Kacirova I, et al. A short communication: lamotrigine levels in milk, mothers, and breastfed infants during the first postnatal month. Ther
+Drug Monit 2019; 41:401–404.
+176. Bedussi F, et al. Normocytic normochromic anaemia and asymptomatic neutropenia in a 40-day-old infant breastfed by an epileptic mother
+treated with lamotrigine: infant’s adverse drug reaction. J Paediatr Child Health 2018; 54:104–105.
+177. Newmark RL, et al. Risk-benefit assessment of infant exposure to lithium through breast milk: a systematic review of the literature. Int Rev
+Psychiatry (Abingdon, England) 2019; 31:295–304.
+178. Westergren T, et al. Probable topiramate-induced diarrhea in a 2-month-old breast-fed child - A case report. Epilepsy Behav Case Rep 2014;
+2:22–23.
+179. Gentile S. Topiramate in pregnancy and breastfeeding. Clin Drug Investig 2009; 29:139–141.
+180. Piontek CM, et al. Serum valproate levels in 6 breastfeeding mother-infant pairs. J Clin Psychiatry 2000; 61:170–172.
+181. Bjornsson E. Hepatotoxicity associated with antiepileptic drugs. Acta Neurol Scand 2008; 118:281–290.
+182. Spigset O, et al. Excretion of psychotropic drugs into breast milk: pharmacokinetic overview and therapeutic implications. CNS Drugs
+1998; 9:111–134.
+183. Hagg S, et al. Anticonvulsant use during lactation. Drug Saf 2000; 22:425–440.
+184. Iqbal MM, et al. Effects of commonly used benzodiazepines on the fetus, the neonate, and the nursing infant. Psychiatr Serv 2002;
+53:39–49.
+185. Buist A, et al. Breastfeeding and the use of psychotropic medication: a review. J Affect Disord 1990; 19:197–206.
+186. Fisher JB, et al. Neonatal apnea associated with maternal clonazepam therapy: a case report. Obstet Gynecol 1985; 66:34S–35S.
+187. Davanzo R, et al. Benzodiazepine e allattamento materno. Medico E Bambino 2008; 27:109–114.
+
+
+
+
+<<<PAGE 773>>>
+
+CHAPTER 8
+
+752  The Maudsley® Prescribing Guidelines in Psychiatry
+
+91. Kauffman KM, et al. Higher dose weekly fluoxetine in hemodialysis patients: a case series report. Int J Psychiatry Med 2020; 56: 3–13.
+92. Lancaster SG, et al. Lofepramine. A review of its pharmacodynamic and pharmacokinetic properties, and therapeutic efficacy in depressive
+illness. Drugs 1989; 37:123–140.
+93. Davis MP, et al. Mirtazapine for pruritus. J Pain Symptom Manage 2003; 25:288–291.
+94. Shibata K, et al. SP704 The effect of mirtazapine in dialysis patient with appetite loss. Nephrol Dial Transplant 2015; 30 (Suppl 3): iii611.
+95. Schoerlin MP, et al. Disposition kinetics of moclobemide, a new MAO-A inhibitor, in subjects with impaired renal function. J Clin Pharmacol
+1990; 30:272–284.
+96. Stoeckel K, et al. Absorption and disposition of moclobemide in patients with advanced age or reduced liver or kidney function. Acta
+Psychiatr Scand Suppl 1990; 360:94–97.
+97. Pollock BG, et al. Metabolic and physiologic consequences of nortriptyline treatment in the elderly. Psychopharmacol Bull 1994;
+30:145–150.
+98. Doyle GD, et al. The pharmacokinetics of paroxetine in renal impairment. Acta Psychiatr Scand Suppl 1989; 350:89–90.
+99. Ishii T, et al. A rare case of combined syndrome of inappropriate antidiuretic hormone secretion and Fanconi syndrome in an elderly woman.
+Am J Kidney Dis 2006; 48:155–158.
+100. Kaye CM, et al. A review of the metabolism and pharmacokinetics of paroxetine in man. Acta Psychiatr Scand Suppl 1989; 350:60–75.
+101. Koo JR, et al. Treatment of depression and effect of antidepression treatment on nutritional status in chronic hemodialysis patients. Am J
+Med Sci 2005; 329:1–5.
+102. Coulomb F, et al. Pharmacokinetics of single-dose reboxetine in volunteers with renal insufficiency. J Clin Pharmacol 2000; 40:482–487.
+103. Dostert P, et al. Review of the pharmacokinetics and metabolism of reboxetine, a selective noradrenaline reuptake inhibitor. Eur
+Neuropsychopharmacol 1997; 7 (Suppl 1):S23–S35.
+104. Brewster UC, et al. Addition of sertraline to other therapies to reduce dialysis-associated hypotension. Nephrology (Carlton) 2003;
+8:296–301.
+105. Chan KY, et al. Use of sertraline for antihistamine-refractory uremic pruritus in renal palliative care patients. J Palliat Med 2013;
+16:966–970.
+106. Chander WP, et al. Serotonin syndrome in maintenance haemodialysis patients following sertraline treatment for depression. J Indian Med
+Assoc 2011; 109:36–37.
+107. Jain N, et al. Rationale and design of the Chronic Kidney Disease Antidepressant Sertraline Trial (CAST). Contemp Clin Trials 2013;
+34:136–144.
+108. Hedayati SS, et al. Effect of sertraline on depressive symptoms in patients with chronic kidney disease without dialysis dependence: the
+CAST randomized clinical trial. JAMA 2017; 318:1876–1890.
+109. Razeghi E, et al. A randomized crossover clinical trial of sertraline for intradialytic hypotension. Iran J Kidney Dis 2015; 9:323–330.
+110. Mehrotra R, et al. Comparative efficacy of therapies for treatment of depression for patients undergoing maintenance hemodialysis: a
+randomized clinical trial. Ann Intern Med 2019; 170:369–379.
+111. Friedli K, et al. Sertraline versus placebo in patients with major depressive disorder undergoing hemodialysis: a randomized, controlled
+feasibility trial. Clin J Am Soc Nephrol 2017; 12:280–286.
+112. Chien CW, et al. Sertraline-induced neutropenia and fatigue in a patient with end-stage renal disease. Am J Ther 2020:[Epub ahead of print].
+113. Zahed NS, et al. Impact of sertraline on serum concentration of CRP in hemodialysis patients with depression. J Renal Inj Prev 2017;
+6:65–69.
+114. Gregg LP, et al. Inflammation and response to sertraline treatment in patients with CKD and major depression. Am J Kidney Dis 2020;
+75:457–460.
+115. Catanese B, et al. A comparative study of trazodone serum concentrations in patients with normal or impaired renal function. Boll Chim
+Farm 1978; 117:424–427.
+116. Leighton JD, et al. Trimipramine-induced acute renal failure (Letter). N Z Med J 1986; 99:248.
+117. Simpson GM, et al. A preliminary study of trimipramine in chronic schizophrenia. Curr Ther Res Clin Exp 1966; 99:248.
+118. Troy SM, et al. The effect of renal disease on the disposition of venlafaxine. Clin Pharmacol Ther 1994; 56:14–21.
+119. Guldiken S, et al. Complete relief of pain in acute painful diabetic neuropathy of rapid glycaemic control (insulin neuritis) with venlafaxine
+HCL. Diabetes Nutr Metab 2004; 17:247–249.
+120. Pascale P, et al. Severe rhabdomyolysis following venlafaxine overdose. Ther Drug Monit 2005; 27:562–564.
+121. Takeda Pharmaceuticals America Inc. Highlights of Prescribing Information. BRINTELLIX (vortioxetine) tablets 2020; http://www.
+us.brintellix.com.
+122. Hegarty J, et al. Carbamazepine-induced acute granulomatous interstitial nephritis. Clin Nephrol 2002; 57:310–313.
+123. Hogg RJ, et al. Carbamazepine-induced acute tubulointerstitial nephritis. J Pediatr 1981; 98:830–832.
+124. Imai H, et al. Carbamazepine-induced granulomatous necrotizing angiitis with acute renal failure. Nephron 1989; 51:405–408.
+125. Jubert P, et al. Carbamazepine-induced acute renal failure. Nephron 1994; 66:121.
+126. Nicholls DP, et al. Acute renal failure from carbamazepine (Letter). Br Med J 1972; 4:490.
+127. Tutor-Crespo MJ, et al. Relative proportions of serum carbamazepine and its pharmacologically active 10,11-epoxy derivative: effect of
+polytherapy and renal insufficiency. Ups J Med Sci 2008; 113:171–180.
+128. Verrotti A, et al. Renal tubular function in patients receiving anticonvulsant therapy: a long-term study. Epilepsia 2000; 41:1432–1435.
+129. Hung CC, et al. Acute renal failure and its risk factors in Stevens-Johnson syndrome and toxic epidermal necrolysis. Am J Nephrol 2009;
+29:633–638.
+130. Fervenza FC, et al. Acute granulomatous interstitial nephritis and colitis in anticonvulsant hypersensitivity syndrome associated with lamotrigine treatment. Am J Kidney Dis 2000; 36:1034–1040.
+
+
+
+
+<<<PAGE 873>>>
+
+852  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY1A2
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine
+Amitriptyline*
+Asenapine
+Bupropion*
+Caffeine
+Chlorpromazine
+Clomipramine*
+Clozapine
+Duloxetine
+Fluphenazine
+Fluvoxamine
+Imipramine*
+Melatonin
+Mirtazapine*
+Olanzapine
+Perphenazine
+?Pimozide*
+Ramelteon
+Zolpidem*
+
+Fluvoxamine
+Moclobemide
+Perphenazine
+
+‘Barbiturates’
+Carbamazepine
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion*
+Caffeine
+Nicotine
+
+Tranylcypromine
+
+Phenobarbital
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Methadone*
+Nicotine
+Sertraline*
+
+Fluoxetine*
+Fluvoxamine
+Memantine
+Paroxetine*
+Sertraline*
+
+Carbamazepine*
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Buprenorphine*
+
+Not known
+
+Not known
+
+CYP2A6
+
+CPY2B6
+
+CYP2B7
+
+
+
+
+<<<PAGE 874>>>
+
+Pharmacokinetics  853
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Zopiclone*
+
+Not known
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Bupropion*
+Fluoxetine*
+Lamotrigine
+Phenobarbital
+Phenytoin
+Sertraline*
+Valproate
+
+Fluoxetine*
+Fluvoxamine
+Modafinil
+Valproate
+
+Carbamazepine
+SJW
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Carbamazepine*
+Citalopram
+Clomipramine*
+Diazepam
+Escitalopram
+Fluoxetine*
+Imipramine*
+?Melatonin
+?Methadone
+Moclobemide
+Phenytoin
+Sertraline*
+Suvorexant
+Trimipramine*
+
+Escitalopram*
+Fluvoxamine
+Moclobemide
+Modafinil
+Topiramate
+
+Carbamazepine
+SJW
+
+CPY2C9
+
+CPY2C19
+
+CHAPTER 11
+
+CPY2C8
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 927>>>
+
+906  The Maudsley® Prescribing Guidelines in Psychiatry
+
+approximately 14 hours when given with glucuronidation-inducing drugs such as carbamazepine or phenytoin. The half-life is increased to approximately 70 hours when
+given with valproate. This means that the time before complete re-titration is necessary
+therefore varies between 3 and 7 days, depending on the other drugs prescribed.1
+
+Table 14.1 Restarting medication up to two weeks after stopping oral treatment (data obtained from EU
+regulatory documents (SPCs)2)
+
+CHAPTER 14
+
+Drugs that require re-titration
+
+Drug
+
+Time after which
+re-titration must
+be performed
+
+Clozapine
+
+48 hours
+
+See ‘Re-starting
+clozapine after
+after a break in
+treatment’ in
+Chapter 1
+
+Lamotrigine
+
+3–7 days
+
+See discussion in
+the text
+
+3 days
+Methadone
+Buprenorphine 3 days
+
+Further guidance
+
+See ‘Opioid
+dependence’ in
+Chapter 4
+
+Paliperidone
+long-acting
+injection
+
+Depends on
+formulation
+
+See ‘Paliperidone
+palmitate
+long-acting
+injection’ in
+Chapter 1
+
+Aripiprazole
+long-acting
+injection
+
+>5 weeks if 2nd or
+3rd dose missed
+
+See ‘Aripiprazole
+long-acting
+injection’ in
+Chapter 1
+
+Drugs that are
+usually safe for
+restarting at
+the previous
+dose
+Acamprosate
+Asenapine
+Fluoxetine
+Haloperidol
+Isocarboxazid
+Lofepramine
+Methylphenidate
+Phenelzine
+Sulpiride
+Tranylcypromine
+Valproate
+
+Drugs that are probably
+safe for restarting at
+the previous dose
+Antipsychotics (except
+clozapine, quetiapine and
+risperidone)
+Carbamazepine
+Cholinesterase inhibitors
+CNS stimulants
+Disulfiram
+Lithium (titration advised if
+renal function has changed)
+MAOIs
+Memantine
+Naltrexone
+Other antidepressants (but
+beware loss of tolerance to
+sedative effects)
+Pregabalin
+SSRIs
+TCAs (but beware loss of
+tolerance to sedative and
+hypotensive effects)
+
+>6 weeks in
+chronic treatment
+CNS, central nervous system; MAOI, monoamine oxidase inhibitor; SSRI, selective serotonin reuptake inhibitor; TCA,
+tricyclic antidepressant.
+
+References
+1. Aurobindo Pharma – Milpharm Ltd. Summary of Product Characteristics. Lamotrigine 25mg Tablets. 2019; https://www.medicines.org.uk/
+emc/product/4736/smpc.
+2. EMC. https://www.medicines.org.uk/emc/; accessed June 2020.
+
+

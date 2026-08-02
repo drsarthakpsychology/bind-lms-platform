@@ -1,0 +1,988 @@
+<<<PAGE 633>>>
+
+the treatment of anxiety disorders in children and adolescents.
+A large, multisite investigation by the NIMH (Research Units in Pediatric
+Psychopharmacology [RUPP]) confirmed the safety and efficacy of
+fluvoxamine in the treatment of childhood separation anxiety disorder,
+generalized anxiety disorder, and social anxiety disorder. This double-blind,
+placebo-controlled study of 128 children and adolescents revealed that 76
+percent of children in the group treated with fluvoxamine showed significant
+improvement compared with 29 percent of those in the placebo group.
+Response to medication was noticeable after only 2 weeks of treatment.
+Fluvoxamine dosages ranged from 50 to 250 mg/day in children and up to
+300 mg/day in adolescents. Children and adolescents with less comorbid
+depressive symptoms had the best response. Youths who responded
+continued fluvoxamine for 6 months, and almost all of them continued to be
+responders at the 6-month mark.
+Several other randomized clinical trials have also supported the efficacy of
+SSRIs in the treatment of child and adolescent anxiety disorders. A
+randomized, controlled trial found fluoxetine, at a dose of 20 mg/day, to be
+safe and effective for children with these disorders, with minor side effects
+including gastrointestinal distress, headache, and drowsiness. Also, a
+randomized clinical trial for the treatment of generalized anxiety disorder in
+children lends support for the efficacy of sertraline. Finally, a large industry
+randomized clinical trial of paroxetine in the treatment of children with social
+anxiety disorder found that paroxetine was associated with a response in 78
+percent of children treated. The dose of paroxetine was 10 to 50 mg/day.
+The FDA has placed a “black box” warning on antidepressants, including
+all of the SSRI agents, used in the treatment of any childhood disorder,
+because of concerns about increased suicidality; however, no individual
+childhood anxiety study has found a statistically significant increase in
+suicidal thoughts or behaviors.
+Currently, we do not recommend using tricyclic drugs due to their
+potentially serious cardiac adverse effects. Other agents, including buspirone
+and β-adrenergic receptor antagonists such as propranolol, have been used
+clinically in children with anxiety disorders, but currently, no data support
+their efficacy. Diphenhydramine may be used in the short term to control
+sleep disturbances in children with anxiety disorders. Open trials and one
+double-blind, placebo-controlled study suggested that alprazolam, a
+
+
+
+
+<<<PAGE 963>>>
+
+with the benzodiazepines. Table 4-24 lists the equivalent therapeutic doses of
+benzodiazepines. Even when users take grossly excessive amounts (more
+than 2 g) in suicide attempts, the symptoms include only drowsiness,
+lethargy, ataxia, some confusion, and mild depression of the user’s vital
+signs. The most lethal overdoses occur when the user takes a benzodiazepine
+in combination with other sedatives, such as alcohol. In such cases, small
+doses of benzodiazepines can cause death. The availability of flumazenil, a
+specific benzodiazepine antagonist, has reduced the lethality of the
+benzodiazepines. Flumazenil can be used in emergency departments to
+reverse the effects of benzodiazepines.
+Table 4-24
+Approximate
+Therapeutic
+Benzodiazepines
+
+Equivalent
+
+Doses
+
+Generic Name
+
+Trade Name
+
+Dose (mg)
+
+Alprazolam
+
+Xanax
+
+1
+
+Chlordiazepoxide
+
+Librium
+
+25
+
+Clonazepam
+
+Klonopin
+
+0.5–1.0
+
+Clorazepate
+
+Tranxene
+
+15
+
+Diazepam
+
+Valium
+
+10
+
+Estazolam
+
+Prosom
+
+1
+
+Flurazepam
+
+Dalmane
+
+30
+
+Lorazepam
+
+Ativan
+
+2
+
+Oxazepam
+
+Serax
+
+30
+
+Temazepam
+
+Restoril
+
+20
+
+Triazolam
+
+Halcion
+
+0.25
+
+Quazepam
+
+Doral
+
+15
+
+Zolpidem
+
+Ambien
+
+10
+
+of
+
+
+
+
+<<<PAGE 1910>>>
+
+underdosing than in overshooting the recommended dose range.
+The time of dosing is usually based on the plasma half-life of a drug and its
+side effect profile. Sedating drugs are given all at night or with
+disproportionate daily doses at night. The opposite is true with activating
+drugs. The frequency of dosing is not as straightforward as with sedating
+drugs. Most dosing regimens of psychotropic drugs, such as once-a-day
+versus divided doses, are based on measurements of plasma concentrations
+rather than receptor occupancy in the brain. Evidence suggests a significant
+dissociation exists between the brain and plasma kinetics. Reliance on plasma
+kinetics as the basis for dosing regimens leads to a misunderstanding of
+necessary schedules.
+As a rule, psychotropic drugs should be used continuously. There are some
+possible exceptions, such as when treating insomnia, agitation, or situational
+anxiety. A common mistake is the use of high-potency benzodiazepines, such
+as alprazolam (Xanax) and clonazepam (Klonopin), only after an attack has
+begun. These drugs should be used as part of a regular schedule to prevent
+attacks.
+Some patients who experience sexual dysfunction while being treated with
+SSRIs take a drug holiday; that is, they skip a daily dose from time to time to
+facilitate sexual performance.
+Intermittent dosing regimens of SSRIs are effective as a treatment for
+premenstrual dysphoric disorder (PMDD). The drugs are taken daily during
+the 2-week luteal phase of the menstrual cycle.
+Duration of Treatment
+A common question from a patient is, “How long do I need to take the
+medication?” The answer depends on multiple variables. These include the
+specific disorder, the symptom duration, and family history. We should also
+consider the patient’s tolerance of and benefit from the medication. Patients
+can be given a reasonable explanation of the probabilities but should be told
+that it is first best to see if the medication works for them and whether any
+side effects are acceptable. Any more definitive discussion of treatment
+duration can be held once we can assess the degree of success. Even patients
+with a philosophical aversion to the use of psychotropic drugs may elect to
+stay on the medication indefinitely if the magnitude of improvement is
+
+
+
+
+<<<PAGE 1915>>>
+
+Sensitization
+Clinically manifested as the reverse of tolerance, sensitization is said to occur
+when sensitivity to a drug effect increases over time. In these cases, the same
+dose typically produces more pronounced effects as treatment progresses.
+Withdrawal
+The development of physiologic adaptation to a drug, with a subsequent risk
+of withdrawal symptoms, has been reported for many classes of psychotropic
+drugs. Technically, withdrawal should be considered a side effect. The
+probability and severity of these reactions are remote with most drugs and
+more frequent with others. As a general rule, the more abruptly a drug is
+stopped and the shorter its elimination half-life, the more likely it is that
+clinically significant withdrawal symptoms will occur. When using some
+short-acting drugs, withdrawal reactions can result from missed doses and
+during daily intervals between doses. Gradual tapering of medications after
+prolonged use is recommended whenever possible. Although this reduces the
+risk of withdrawal reactions, it does not ensure they will not occur. The socalled sedative-hypnotics and opiates are the agents most often associated
+with mentally and physically distressing discontinuation reactions. In some
+cases, such as barbiturate use, withdrawal can be fatal.
+Marked differences are found among agents, even within a given class,
+concerning the probability and severity of discontinuation effects. For
+example, the benzodiazepines alprazolam and triazolam (Halcion) commonly
+produce more immediate and intense withdrawal symptoms than other
+compounds. Among the SSRIs, there is a well-described withdrawal
+syndrome that appears to be more frequent and severe with paroxetine
+(Paxil). It can, however, occur with any SSRI. Even fluoxetine can be
+associated with discontinuation symptoms, but the symptoms may be delayed
+and attenuated because of the long elimination half-life of its active
+metabolite. These manifestations are subtle and are delayed for weeks after
+the last dose. Venlafaxine also produces severe SSRI-like withdrawal
+syndrome.
+In addition to half-life, many variables can influence the likelihood and
+degree of discontinuation symptoms. Changes in the rate of drug metabolism,
+as an example, can play a role. Paroxetine is primarily metabolized by the
+
+
+
+
+<<<PAGE 1916>>>
+
+cytochrome P450 (CYP) 2D6 isoenzyme. However, it is also a potent
+inhibitor of CYP 2D6. This results in autoinhibition, dose-dependent
+inhibition of its metabolism, with a subsequent increase in plasma
+concentrations of paroxetine. If the dose of paroxetine is decreased or the
+drug is stopped, the decline in its plasma concentrations can be steep, causing
+withdrawal to occur. Withdrawal can occur in rare cases in which the dose of
+a drug is not decreased, but a second agent, which had been inhibiting its
+metabolism, was stopped. For example, alprazolam is metabolized via the
+CYP 3A3/4 enzyme system. Nefazodone inhibits that enzyme. If a patient
+taking both agents for several weeks discontinues the nefazodone, it could
+result in a rapid increase in the rate of alprazolam metabolism and a
+consequent drop in plasma concentrations.
+The development of sustained-release versions of drugs, such as
+alprazolam, paroxetine, and venlafaxine, has not reduced the severity of their
+withdrawal reactions. The prolonged half-life of those agents results from
+delayed absorption rather than prolongation of the elimination phase. The
+frequency of drug dosing is reduced but not the rate of the falloff in plasma
+concentrations.
+Low bioavailability with a generic agent may account for the unexpected
+loss of clinical effect in the emergence of withdrawal symptoms. The
+occurrence of these events soon after refilling a prescription should prompt
+examination of the new medication. It should be confirmed whether the
+dispensed medication and dose are both correct. It is difficult to ascertain
+whether generic medications are genuinely equivalent, so the possibility
+exists that differences in potency may underlie adverse changes in clinical
+status.
+Withdrawal symptoms invariably occur hours or days after dose reduction
+or discontinuation. Symptoms resolve within a few weeks, so the persistence
+of symptoms argues against withdrawal. Although depletion studies have
+been shown to provoke the rapid return of symptoms, in clinical practice,
+psychotic and mood symptoms do not usually reappear abruptly after longterm treatment.
+
+COMBINATION OF DRUGS
+According to the American Psychiatric Association Practice Guidelines for
+
+
+
+
+<<<PAGE 1976>>>
+
+metabolism of the coadministered medication. Each of the SSRIs possesses a
+potential for slowing or blocking the metabolism of many drugs (Table 2116). Fluvoxamine is the most problematic of the drugs in this respect. It has a
+marked effect on several of the CYP enzymes. Examples of clinically
+significant interactions include fluvoxamine and theophylline (Slo-Bid, TheoDur) through CYP1A2 interaction, fluvoxamine and clozapine (Clozaril)
+through CYP1A2 inhibition; and fluvoxamine with alprazolam (Xanax) or
+clonazepam (Klonopin) through CYP3A4 inhibition. Fluoxetine and
+paroxetine also possess significant effects on the CYP2D6 isozyme, which
+may interfere with the efficacy of opiate analogs, such as codeine and
+hydrocodone, by blocking the conversion of these agents to their active form.
+Thus, coadministration of fluoxetine and paroxetine with an opiate interferes
+with its analgesic effects. Sertraline, citalopram, and escitalopram are least
+likely to complicate treatment because of interactions.
+The pharmacokinetics of vilazodone (5 to 80 mg) is dose-proportional.
+Steady-state plasma levels are achieved in about 3 days. The elimination of
+vilazodone is primarily by hepatic metabolism with a terminal half-life of
+approximately 25 hours.
+Pharmacodynamics. The SSRIs are believed to exert their therapeutic
+effects through serotonin reuptake inhibition. They derive their name because
+they have little effect on the reuptake of norepinephrine or dopamine. Often,
+adequate clinical activity and saturation of the 5-HT transporters are achieved
+at starting dosages. As a rule, higher dosages do not increase antidepressant
+efficacy but may increase the risk of adverse effects.
+Table 21-16
+CYP450 Inhibitory Potential of Commonly Prescribed
+Antidepressants
+
+
+
+
+<<<PAGE 1993>>>
+
+CYP2D6 enzyme. Cimetidine can increase the concentration of sertraline and
+paroxetine, and phenobarbital (Luminal) and phenytoin can decrease the
+concentration of paroxetine. Because of the potential for interference with the
+CYP2D6 enzyme, the coadministration of paroxetine with other
+antidepressants, phenothiazines, and antiarrhythmic drugs should be
+undertaken with caution. Paroxetine may increase the anticoagulant effect of
+warfarin. Coadministration of paroxetine and tramadol may precipitate
+serotonin syndrome in elderly persons.
+Fluvoxamine. Among the SSRIs, fluvoxamine appears to present the most
+risk for drug–drug interactions. Fluvoxamine is metabolized by the enzyme
+CYP3A4, which may be inhibited by ketoconazole (Nizoral). Fluvoxamine
+may increase the half-life of alprazolam, triazolam (Halcion), and diazepam,
+and it should not be coadministered with these agents. Fluvoxamine may
+increase theophylline levels threefold and warfarin levels twofold, with
+significant clinical consequences; thus, the serum levels of the latter drugs
+should be closely monitored, and the doses adjusted accordingly.
+Fluvoxamine raises concentrations and may increase the activity of clozapine,
+carbamazepine, methadone (Dolophine, Methadose), propranolol (Inderal),
+and diltiazem (Cardizem). Fluvoxamine has no significant interactions with
+lorazepam (Ativan) or digoxin (Lanoxin).
+Citalopram. Citalopram is not a potent inhibitor of any CYP enzymes.
+Concurrent administration of cimetidine increases concentrations of
+citalopram by about 40 percent. Citalopram does not significantly affect the
+metabolism of, nor is its metabolism significantly affected by, digoxin,
+lithium, warfarin, carbamazepine, or imipramine (Tofranil). Citalopram
+increases the plasma concentrations of metoprolol (Lopressor) twofold, but
+this usually does not affect BP or heart rate. Data on coadministration of
+citalopram and potent inhibitors of CYP3A4 or CYP2D6 are not available.
+Escitalopram. Escitalopram is a moderate inhibitor of CYP2D6 and has
+been shown to raise desipramine (Norpramin) and metoprolol concentrations
+significantly.
+Vilazodone. Vilazodone dose should be reduced to 20 mg when
+
+
+
+
+<<<PAGE 2018>>>
+
+is necessary for persons with renal disease.
+Drug Interactions and Laboratory Interferences. Nefazodone should
+not be given concomitantly with MAOIs. Also, nefazodone has particular
+drug–drug interactions with the triazolobenzodiazepines triazolam (Halcion)
+and alprazolam (Xanax) because of the inhibition of CYP3A4 by nefazodone.
+Potentially elevated levels of each of these drugs can develop after
+administration of nefazodone, but the levels of nefazodone are generally not
+affected. The dose of triazolam should be lowered by 75 percent, and the
+dose of alprazolam should be lowered by 50 percent, when given
+concomitantly with nefazodone.
+Nefazodone may slow the metabolism of digoxin; therefore, digoxin levels
+should be monitored carefully in persons taking both medications.
+Nefazodone also slows the metabolism of haloperidol (Haldol) so that the
+dosage of haloperidol should be reduced in persons taking both medications.
+The addition of nefazodone may also exacerbate the adverse effects of
+lithium carbonate (Eskalith).
+There are no known laboratory interferences associated with nefazodone.
+Dosage and Clinical Guidelines. Nefazodone is available in 50-, 200-,
+and 250-mg unscored tablets and 100- and 150-mg scored tablets. The
+recommended starting dosage of nefazodone is 100 mg twice a day, but 50
+mg twice a day may be better tolerated, especially by elderly persons. The
+dosage should be slowly raised in increments of 100 to 200 mg a day at
+intervals of no less than 1 week per increase to limit the development of
+adverse effects. The optimal dosage is 300 to 600 mg daily in two divided
+doses. However, some studies report that nefazodone is effective when taken
+once a day, especially at bedtime. Geriatric persons should receive dosages
+about two-thirds of the usual nongeriatric dosages, with a maximum of 400
+mg a day. Similar to other antidepressants, the clinical benefit of nefazodone
+usually appears after 2 to 4 weeks of treatment. Patients with the
+premenstrual syndrome are treated with a flexible dosage that averages about
+250 mg a day.
+Trazodone
+
+
+
+
+<<<PAGE 2090>>>
+
+consisting of fever, rash, eosinophilia, and possibly fatal myocarditis.
+Cleft palate, fingernail hypoplasia, microcephaly, and spina bifida in
+infants may be associated with the maternal use of carbamazepine during
+pregnancy. Pregnant women should not use carbamazepine unless necessary.
+All women with childbearing potential should take 1 to 4 mg of folic acid
+daily, even if they are not trying to conceive. Carbamazepine is secreted in
+breast milk.
+Drug Interactions. Carbamazepine decreases serum concentrations of
+numerous drugs as a result of the prominent induction of hepatic CYP3A4
+(Table 21-39). Monitoring for a decrease in clinical effects is frequently
+indicated. Carbamazepine can decrease the blood concentrations of oral
+contraceptives, resulting in breakthrough bleeding and uncertain prophylaxis
+against pregnancy. Carbamazepine should not be administered with MAOIs,
+which should be discontinued at least 2 weeks before initiating treatment with
+carbamazepine. Grapefruit juice inhibits the hepatic metabolism of
+carbamazepine. When carbamazepine and valproate are used in combination,
+the dosage of carbamazepine should be decreased because valproate displaces
+carbamazepine binding on proteins, and the dosage of valproate may need to
+be increased.
+Table 21-39
+Carbamazepine: Drug Interactions
+Effect of Carbamazepine on Plasma Agents that May Affect
+Concentrations of Concomitant
+Carbamazepine Plasma
+Agents
+Concentrations
+Carbamazepine may decrease drug Agents that may increase
+plasma concentration of:
+carbamazepine plasma
+Acetaminophen
+concentration:
+Alprazolam
+Allopurinol
+Amitriptyline
+Cimetidine
+Bupropion
+Clarithromycin
+Clomipramine
+Danazol
+Clonazepam
+Diltiazem
+Clozapine
+Erythromycin
+
+
+
+
+<<<PAGE 2114>>>
+
+The absorption, the attainment of peak concentrations, and the onset of
+action are quickest for diazepam (Valium), lorazepam (Ativan), alprazolam
+(Xanax), triazolam (Halcion), and estazolam (ProSom). The rapid onset of
+effects is vital to persons who take a single dose of a benzodiazepine to calm
+an episodic burst of anxiety or to fall asleep rapidly. Several benzodiazepines
+are effective after intravenous (IV) injection, but only lorazepam and
+midazolam (Versed) have rapid and reliable absorption after intramuscular
+(IM) administration.
+Diazepam, chlordiazepoxide, clonazepam (Klonopin), clorazepate,
+flurazepam (Dalmane), and quazepam (Doral) have plasma half-lives of 30
+hours to more than 100 hours and are technically described as long-acting
+benzodiazepines. The plasma half-lives of these compounds can be as high as
+200 hours in persons whose metabolism is genetically slow. Because the
+attainment of steady-state plasma concentrations of the drugs can take up to 2
+weeks, persons may experience symptoms and signs of toxicity after only 7
+to 10 days of treatment with a dosage that seemed initially to be in the
+therapeutic range.
+Clinically, half-life alone does not necessarily determine the duration of
+therapeutic action for most benzodiazepines. The fact that all
+benzodiazepines are lipid-soluble to varying degrees means that
+benzodiazepines and their active metabolites bind to plasma proteins. The
+extent of this binding is proportional to their lipid solubility. The amount of
+protein binding varies from 70 to 99 percent. Distribution, onset, and
+termination of action after a single dose are thus determined mainly by
+benzodiazepine lipid solubility, not elimination half-life. Preparations with
+high lipid solubility, such as diazepam and alprazolam, are absorbed rapidly
+from the GI tract and distribute rapidly to the brain by passive diffusion along
+a concentration gradient, resulting in a rapid onset of action. However, as the
+concentration of the medication increases in the brain and decreases in the
+bloodstream, the concentration gradient reverses itself, and these medications
+leave the brain rapidly, resulting in fast cessation of drug effect. Drugs with
+longer elimination half-lives, such as diazepam, may remain in the
+bloodstream for a substantially more extended time than their actual
+pharmacologic action at benzodiazepine receptors because the concentration
+in the brain decreases rapidly below the level necessary for a noticeable
+effect.
+
+
+
+
+<<<PAGE 2115>>>
+
+In contrast, lorazepam, which has a shorter elimination half-life than
+diazepam but is less lipid-soluble, has a slower onset of action after a single
+dose because the drug is absorbed and enters the brain more slowly.
+However, the duration of action after a single dose is longer because it takes
+longer for lorazepam to leave the brain and for brain levels to decrease below
+the concentration that produces an effect. In chronic dosing, some of these
+differences are not as apparent because brain levels are in equilibrium with
+higher and more consistent steady-state blood levels, but additional doses still
+produce a more rapid but briefer action with diazepam than with lorazepam.
+Benzodiazepines are distributed widely in adipose tissue. As a result,
+medications may persist in the body after discontinuation longer than would
+be predicted from their elimination half-lives. Also, the dynamic half-life
+(i.e., duration of action on the receptor) may be longer than the elimination
+half-life.
+The advantages of long–half-life drugs over short–half-life drugs include
+less frequent dosing, less variation in plasma concentration, and less severe
+withdrawal phenomena. The disadvantages include drug accumulation,
+increased risk of daytime psychomotor impairment, and increased daytime
+sedation.
+The half-lives of lorazepam, oxazepam (Serax), temazepam (Restoril), and
+estazolam are between 8 and 30 hours. Alprazolam has a half-life of 10 to 15
+hours, and triazolam has the shortest half-life (2 to 3 hours) of all the orally
+administered benzodiazepines. Rebound insomnia and anterograde amnesia
+are thought to be more of a problem with the short–half-life drugs than with
+the long–half-life drugs.
+Because the administration of medications more frequently than the
+elimination half-life leads to drug accumulation, medications such as
+diazepam and flurazepam accumulate with daily dosing, eventually resulting
+in increased daytime sedation.
+Some benzodiazepines (e.g., oxazepam) are conjugated directly by
+glucuronidation and are excreted. Most benzodiazepines are oxidized first by
+CYP3A4 and CYP2C19, often to active metabolites. These metabolites may
+then be hydroxylated to another active metabolite. For example, diazepam is
+oxidized to desmethyldiazepam, which, in turn, is hydroxylated to produce
+oxazepam. These products undergo glucuronidation to inactive metabolites.
+Several benzodiazepines (e.g., diazepam, chlordiazepoxide) have the same
+
+
+
+
+<<<PAGE 2117>>>
+
+of panic disorder, benzodiazepines have the advantage of working quickly
+and not causing significant sexual dysfunction and weight gain. However, the
+SSRIs are still often preferred because they target common comorbid
+conditions, such as depression or OCD. Benzodiazepines and SSRIs can be
+initiated together to treat acute panic symptoms; use of the benzodiazepine
+can be tapered after 3 to 4 weeks once the therapeutic benefits of the SSRI
+have emerged.
+SOCIAL ANXIETY DISORDER. Clonazepam is an effective treatment for social
+
+anxiety disorder. Also, several other benzodiazepines (e.g., diazepam) have
+been used as adjunctive medications for the treatment of social anxiety
+disorder.
+Benzodiazepines are used adjunctively for
+treatment of adjustment disorder with anxiety, pathologic anxiety associated
+with life events (e.g., after an accident), OCD, and PTSD.
+OTHER ANXIETY DISORDERS.
+
+ANXIETY ASSOCIATED WITH DEPRESSION. Depressed patients often experience
+
+significant anxiety, and antidepressant drugs may cause initial exacerbation
+of these symptoms. Accordingly, benzodiazepines are indicated for the
+treatment of anxiety associated with depression.
+Bipolar I and II Disorders
+Clonazepam, lorazepam, and alprazolam are useful in the management of
+acute manic episodes and as an adjuvant to maintenance therapy instead of
+antipsychotics. As an adjuvant to lithium (Eskalith) or lamotrigine
+(Lamictal), clonazepam may result in an increased time between cycles and
+fewer depressive episodes. Benzodiazepines may help patients with bipolar
+disorder sleep better.
+Catatonia. Lorazepam, sometimes in low doses (less than 5 mg/day) and
+sometimes in very high doses (12 mg/day or more), is regularly used to treat
+acute catatonia, which is more frequently associated with bipolar disorder
+than with schizophrenia. Other benzodiazepines have also been said to be
+helpful. However, there are no valid controlled trials of benzodiazepines in
+catatonia. Chronic catatonia does not respond as well to benzodiazepines.
+
+
+
+
+<<<PAGE 2120>>>
+
+with preexisting brain damage. Allergic reactions to the drugs are rare, but a
+few studies report maculopapular rashes and generalized itching. The
+symptoms of benzodiazepine intoxication include confusion, slurred speech,
+ataxia, drowsiness, dyspnea, and hyporeflexia.
+Triazolam has received significant attention in the media because of an
+alleged association with aggression. Therefore, the manufacturer
+recommends that the drug be used for no more than 10 days for the treatment
+of insomnia and that physicians carefully evaluate the emergence of any
+abnormal thinking or behavioral changes in persons treated with triazolam,
+giving appropriate consideration to all potential causes. Triazolam was
+banned in Great Britain in 1991.
+Persons with hepatic disease and elderly persons are particularly likely to
+have adverse effects and toxicity from the benzodiazepines, including hepatic
+coma, especially when the drugs are administered repeatedly or in high
+dosages. Benzodiazepines can produce clinically significant impairment of
+respiration in persons with chronic obstructive pulmonary disease and sleep
+apnea. Alprazolam may exert a direct appetite stimulant effect and may cause
+weight gain. The benzodiazepines should be used with caution by persons
+with a history of substance abuse, cognitive disorders, renal disease, hepatic
+disease, porphyria, CNS depression, or myasthenia gravis.
+Some data indicate that benzodiazepines are teratogenic; therefore, their
+use during pregnancy is not advised. Moreover, the use of benzodiazepines in
+the third trimester can precipitate a withdrawal syndrome in newborns. The
+drugs are secreted in the breast milk in sufficient concentrations to affect
+newborns. Benzodiazepines may cause dyspnea, bradycardia, and drowsiness
+in nursing babies.
+Tolerance, Dependence, and Withdrawal. When benzodiazepines are
+used for short periods (1 to 2 weeks) in moderate dosages, they usually cause
+no significant tolerance, dependence, or withdrawal effects. The short-acting
+benzodiazepines (e.g., triazolam) may be an exception to this rule because
+some persons have reported increased anxiety the day after taking a single
+dose of the drug and then stopping its use. Some persons also report a
+tolerance for the anxiolytic effects of benzodiazepines and require increased
+doses to maintain the clinical remission of symptoms.
+The appearance of a withdrawal syndrome, also called discontinuation
+
+
+
+
+<<<PAGE 2121>>>
+
+syndrome, depends on how long a person takes the drug, what dose, how
+quickly they taper it, and the half-life of the compound. Benzodiazepine
+withdrawal syndrome consists of anxiety, nervousness, diaphoresis,
+restlessness, irritability, fatigue, lightheadedness, tremor, insomnia, and
+weakness (Table 21-44). Abrupt discontinuation of benzodiazepines,
+particularly those with short half-lives, is associated with severe withdrawal
+symptoms, which may include depression, paranoia, delirium, and seizures.
+These severe symptoms are more likely to occur if flumazenil is used for the
+rapid reversal of the benzodiazepine receptor agonist effects. Some features
+of the syndrome may occur in as many as 90 percent of persons treated with
+the drugs. The development of severe withdrawal syndrome is seen only in
+persons who have taken high dosages for long periods. The syndrome may be
+delayed for 1 or 2 weeks in persons who had been taking benzodiazepines
+with long half-lives. Alprazolam seems to be significantly associated with an
+immediate and severe withdrawal syndrome and should be tapered gradually.
+When the medication is to be discontinued, the drug must be tapered
+slowly (25 percent a week); otherwise, recurrence or rebound of symptoms is
+likely. Monitoring of any withdrawal symptoms (possibly with a standardized
+rating scale) and psychological support of the person are helpful in the
+successful accomplishment of benzodiazepine discontinuation. Concurrent
+use of carbamazepine (Tegretol) during benzodiazepine discontinuation has
+been reported to permit a more rapid and better-tolerated withdrawal than
+does a gradual taper alone. The dosage range of carbamazepine used to
+facilitate withdrawal is 400 to 500 mg a day. Some clinicians report particular
+difficulty in tapering and discontinuing alprazolam, especially in persons who
+have been receiving high dosages for long periods. There have been reports
+of successful discontinuation of alprazolam by switching to clonazepam,
+which is then gradually withdrawn.
+Table 21-44
+Signs and Symptoms of Benzodiazepine Withdrawal
+Anxiety
+
+Tremor
+
+Irritability
+
+Depersonalization
+
+Insomnia
+
+Hyperesthesia
+
+
+
+
+<<<PAGE 2122>>>
+
+Hyperacusis
+
+Myoclonus
+
+Nausea
+
+Delirium
+
+Difficulty concentrating
+
+Seizures
+
+Drug Interactions
+The most common and potentially severe benzodiazepine receptor agonist
+interaction is excessive sedation and respiratory depression occurring when
+benzodiazepines are administered concomitantly with other CNS depressants,
+such as alcohol, barbiturates, tricyclic and tetracyclic drugs, DRAs, opioids,
+and antihistamines. Ataxia and dysarthria may be likely to occur when
+lithium, antipsychotics, and clonazepam are combined. The combination of
+benzodiazepines and clozapine (Clozaril) has been reported to cause delirium
+and should be avoided. Cimetidine (Tagamet), disulfiram (Antabuse),
+isoniazid, estrogen, and oral contraceptives increase the plasma concentration
+of diazepam, chlordiazepoxide, clorazepate, and flurazepam. However,
+antacids may reduce the GI absorption of benzodiazepines. The plasma
+concentrations of triazolam and alprazolam are increased to potentially toxic
+concentrations by nefazodone (Serzone) and fluvoxamine (Luvox).
+The manufacturer of nefazodone recommends that the dosage of triazolam
+be lowered by 75 percent, and the dosage of alprazolam be lowered by 50
+percent, when given concomitantly with nefazodone. Over-the-counter
+preparations of the kava plant, advertised as a “natural tranquilizer,” can
+potentiate the action of benzodiazepine receptor agonists through synergistic
+overactivation of GABA receptors. Carbamazepine can lower the plasma
+concentration of alprazolam. Antacids and food may decrease the plasma
+concentrations of benzodiazepines, and smoking may increase the
+metabolism of benzodiazepines. The benzodiazepines may increase the
+plasma concentrations of phenytoin and digoxin (Lanoxin). The SSRIs may
+prolong and exacerbate the severity of zolpidem-induced hallucinations.
+Deaths have been reported when parental lorazepam is given with parental
+olanzapine.
+Dosage and Clinical Guidelines
+
+
+
+
+<<<PAGE 2123>>>
+
+The clinical decision to treat an anxious person with a benzodiazepine should
+be carefully considered. Medical causes of anxiety (e.g., thyroid dysfunction,
+caffeinism, and prescription medications) should be ruled out.
+Benzodiazepine use should be started at a low dosage, and the person should
+be instructed regarding the drug’s sedative properties and abuse potential. An
+estimated length of therapy should be decided at the beginning of therapy,
+and the need for continued therapy should be reevaluated at least monthly
+because of the problems associated with long-term use. However, certain
+persons with anxiety disorders are unresponsive to treatments other than
+benzodiazepines in long-term use.
+Benzodiazepines are available in a wide range of formulations.
+Clonazepam is available in a wafer formulation that facilitates its use in
+patients who have trouble swallowing pills. Alprazolam is available in an
+extended-release form, which reduces the frequency of dosing. Some
+benzodiazepines are more potent than others in that one compound requires a
+relatively smaller dosage than another compound to achieve the same effect.
+For example, clonazepam requires 0.25 mg to achieve the same effect as 5
+mg of diazepam; thus, clonazepam is considered a high-potency
+benzodiazepine. Conversely, oxazepam has an approximate dosage
+equivalence of 15 mg and is a low-potency drug.
+Table 21-43 lists preparations and doses of medications discussed in this
+chapter.
+
+BUSPIRONE
+Buspirone hydrochloride (BuSpar) is classified as an azapirone and is
+chemically distinct from other psychotropic agents. It acts on two types of
+receptors, serotonin (5-HT) and dopamine (D). It has a high affinity for the 5HT1A serotonin receptor, acting as an agonist or partial agonist, and moderate
+affinity for the D2 dopamine receptor, acting as both an agonist and an
+antagonist. The approved indication for this psychotropic drug is for the
+treatment of GAD. It was initially believed to be a better alternative to the
+benzodiazepine drug group because buspirone does not possess
+anticonvulsant and muscle relaxant effects. Reports continue to appear that
+some patients benefit from the addition of buspirone to their antidepressant
+regimen. Its use in this role is more common than its use as an anxiolytic.
+
+
+
+
+<<<PAGE 2172>>>
+
+flashes. The withdrawal symptoms usually resolve after 2 weeks. However, a
+protracted methadone abstinence syndrome is possible that may include
+restlessness and insomnia.
+The withdrawal symptoms associated with buprenorphine are similar to but
+less marked than those caused by methadone. In particular, buprenorphine is
+sometimes used to ease the transition from methadone to opioid receptor
+antagonists or abstinence because of the relatively mild withdrawal reaction
+associated with discontinuation of buprenorphine.
+Drug–Drug Interactions
+Opioid receptor agonists can potentiate the CNS-depressant effects of
+alcohol, barbiturates, benzodiazepines, other opioids, low-potency DRAs,
+tricyclic and tetracyclic drugs, and MAOIs. Carbamazepine (Tegretol),
+phenytoin (Dilantin), barbiturates, rifampin (Rimactane, Rifadin), and heavy
+long-term consumption of alcohol may induce hepatic enzymes, which may
+lower the plasma concentration of methadone or buprenorphine and thereby
+precipitate withdrawal symptoms. In contrast, however, hepatic enzyme
+induction may increase the plasma concentration of active levomethadyl
+metabolites and cause toxicity.
+Acute opioid withdrawal symptoms may be precipitated in persons on
+methadone maintenance therapy who take pure opioid receptor antagonists
+such as naltrexone, nalmefene (Revex, Selincro), and naloxone (Narcan);
+partial agonists such as buprenorphine; or mixed agonist–antagonists such as
+pentazocine (Talwin). These symptoms may be mitigated by the use of
+clonidine, a benzodiazepine, or both.
+Competitive inhibition of methadone or buprenorphine metabolism after
+short-term use of alcohol or administration of cimetidine (Tagamet),
+erythromycin, ketoconazole (Nizoral), fluoxetine (Prozac), fluvoxamine
+(Luvox), loratadine (Claritin), quinidine (Quinidex), and alprazolam (Xanax)
+may lead to higher plasma concentrations or a prolonged duration of action of
+methadone or buprenorphine. Medications that alkalinize the urine may
+reduce methadone excretion.
+Methadone maintenance may also increase plasma concentrations of
+desipramine (Norpramin, Pertofrane) and fluvoxamine. The use of
+methadone may increase zidovudine (Retrovir) concentrations, which
+
+
+
+
+<<<PAGE 2243>>>
+
+brewers), which is used to treat depression, decreases the effectiveness of
+certain psychotropic drugs such as amitriptyline (Elavil), alprazolam (Xanax),
+paroxetine (Paxil), and sertraline (Zoloft), among others. Kava kava, which is
+used to treat anxiety states, has been associated with liver toxicity.
+Adverse Effects
+Adverse effects are possible, and toxic interactions with other drugs may
+occur with all phytomedicines, dietary supplements, and medicinal foods.
+Adulteration is possible, especially with phytomedicines. There are few or no
+consistent standard preparations available for most herbs. The FDA does not
+test medical foods; however, strict voluntary compliance is required. Safety
+profiles and knowledge of adverse effects of most of these substances have
+not been studied rigorously, however. Because of the paucity of clinical
+trials, all of these agents should be avoided during pregnancy; some herbs
+may act as abortifacients, for example. Because most of these substances or
+their metabolites are secreted in breast milk, they are contraindicated during
+lactation.
+Clinicians should always attempt to obtain a history of herbal use or the
+use of medical foods or nutritional supplements during the psychiatric
+evaluation.
+It is important to be nonjudgmental in dealing with patients who use these
+substances. Many do so for various reasons: (1) as part of their cultural
+tradition, (2) because they mistrust physicians or are dissatisfied with
+conventional medicine, or (3) because they experience relief of symptoms
+with the particular substance. Because patients will be more cooperative with
+traditional psychiatric treatments if they are allowed to continue using their
+preparations, psychiatrists should keep an open mind and not attribute all
+effects to suggestion. If psychotropic agents are prescribed, the clinician must
+be extraordinarily alert to the possibility of adverse effects as a result of
+drug–drug interactions, because many of these compounds have ingredients
+that produce physiologic changes in the body.
+Table 21-64
+Phytomedicinals with Psychoactive Effects
+
+
+
+
+<<<PAGE 2565>>>
+
+behavior
+secondary to fear
+and anxiety;
+suicidal behavior
+
+reinforcement of
+social support
+
+Adolescent crises
+
+Suicidal attempts
+Evaluation of suicidal
+and ideation;
+potential, extent of
+substance abuse,
+substance abuse,
+truancy, trouble
+family dynamics;
+with law,
+crisis-oriented family
+pregnancy,
+and individual
+running away;
+therapy;
+eating disorders;
+hospitalization if
+psychosis
+necessary;
+consultation with
+appropriate
+extrafamilial
+authorities
+
+Agoraphobia
+
+Panic; depression
+
+Alprazolam, 0.25–2 mg;
+antidepressant
+medication
+
+Agranulocytosis
+(clozapine induced)
+
+High fever,
+pharyngitis, oral
+and perianal
+ulcerations
+
+Discontinue medication
+immediately;
+administer
+granulocyte colonystimulating factor
+
+Akathisia
+
+Agitation,
+restlessness,
+muscle
+discomfort;
+dysphoria
+
+Reduce antipsychotic
+dosage; propranolol
+(30–120 mg a day);
+benzodiazepines;
+diphenhydramine
+orally or IV;
+benztropine IM
+
+Alcohol-Related Emergencies
+
+
+
+
+<<<PAGE 2576>>>
+
+psychiatrically ill;
+one spouse may
+be seeking
+hospitalization for
+the other
+
+histories from both,
+psychiatric evaluation
+at the time of
+presentation; may be
+precipitated by onset
+of untreated mood
+disorder or affective
+symptoms caused by
+medical illness or
+insidious-onset
+dementia; referral for
+management of the
+illness reduces
+immediate stress and
+enhances the
+healthier spouse’s
+coping capacity;
+children may give
+insights available only
+to someone intimately
+involved in the social
+system
+
+Migraine
+
+Throbbing, unilateral Sumatriptan 6 mg IM
+headache
+
+Mitral valve prolapse
+
+Associated with
+panic disorder;
+dyspnea and
+palpitations; fear
+and anxiety
+
+Echocardiogram;
+alprazolam or
+propranolol
+
+Neuroleptic malignant
+syndrome
+
+Hyperthermia;
+muscle rigidity;
+autonomic
+instability;
+parkinsonian
+
+Discontinue
+antipsychotic; IV
+dantrolene;
+bromocriptine orally;
+hydration and cooling;
+
+
+
+
+<<<PAGE 3595>>>
+
+and mood disorders, 280
+pathology, 285–287
+suicide among persons with, 280, 280t
+treatment, 283–285
+unspecified, 278
+women with, 279
+Alcohol use disorders, 62, 275
+epidemiology, 285
+etiology, 287
+behavioral theories, 287
+childhood history, 287–288
+genetic factors, 288, 288t
+psychodynamic theories, 287
+psychological theories, 287
+sociocultural theories, 287
+positive prognostic signs, 280, 280t
+treatment of, 280–283
+counseling, 282–283
+detoxification, 282–282
+intervention, 280, 281
+medications, 283, 284t
+rehabilitation, 282, 282t
+Alcohol use, in adolescents, 212, 214–215. See also Substance use
+disorders, in adolescents
+Alcohol use, in pregnancy, 886, 886f, 886t
+Alcohol withdrawal-related hallucinations, 284
+Aldehyde dehydrogenase, 286
+Alertness, assessment of, in MSE, 10, 11t
+Alexander, Franz, 753, 937, 1078–1079
+Alexithymia, 275
+Alkaline phosphatase elevations, 66
+Allopregnanolone, 978
+Allport, Gordon, 1079
+Alopecia areata, 21
+Alpha-synucleinopathies, 924
+Alpha waves, 999
+Alprazolam (Xanax), 602, 713
+
+

@@ -1,0 +1,664 @@
+<<<PAGE 1305>>>
+
+of severe anxiety symptoms. In those cases, a short-term benzodiazepine,
+such as lorazepam or alprazolam, is helpful in the short term. Concurrently,
+an SSRI should be started and slowly increased.
+For panic disorder, SSRIs or the serotonin–norepinephrine reuptake
+inhibitor (SNRI) venlafaxine are first-line options. Tricyclic antidepressants
+or MAOIs are effective but less preferably given their side effects. Other
+agents, such as mirtazapine, are other second-line options. As mentioned, the
+benzodiazepines are effective options but mainly used for short-term use or
+exacerbations. Long-term antidepressant therapy is useful for preventing
+relapse, with studies suggesting that the beneficial effects last for up to 1 to 3
+years. When appropriate, maintenance therapy should be discontinued very
+slowly.
+For generalized anxiety disorder, the approach is similar, with SSRIs and
+SNRIs being the first-line treatments. Reasonable alternatives if those are not
+effective include agomelatine, pregabalin, buspirone, and quetiapine.
+For social anxiety disorder, the approach is similar to those already
+described, with SSRIs and SNRIs being the first-line choice. Pregabalin and
+clonazepam also have strong evidence, although the same caveats for other
+benzodiazepines apply to clonazepam. Phenelzine is effective as well but is
+rarely used because of the side effects. Tricyclic antidepressants, buspirone,
+and quetiapine are not recommended owing to their side effects. As noted
+above, β-blockers may be useful for performance anxiety. However, their use
+does not appear to generalize to other types of social anxiety.
+Table 8-6
+Evidence-Based Recommendations for Monotherapy of
+Anxiety Disorders
+Anxiety Disorders
+Classes and
+Agents
+
+GAD
+
+PD
+
+SAD
+
+SSRIs
+
+First line
+
+First line
+
+First line
+
+SNRIs
+
+First line
+
+First line
+
+First line
+
+TCAs
+
+Second line
+
+Second line
+
+Not
+
+
+
+
+<<<PAGE 1306>>>
+
+recommended
+MAOIs
+
+Insufficient
+evidence
+
+Second line
+
+Second line
+
+RIMA-Moclobemide Insufficient
+evidence
+
+Insufficient
+evidence
+
+Second Line
+
+Other Psychotropics Second line
+—Agomelatine,
+Buspirone,
+Mirtazapine
+
+Second line
+
+Second line
+
+Benzodiazepines
+
+Second line
+
+Second line
+
+Second line
+
+Atypical
+Second line
+Antipsychotics—
+Quetiapine
+
+Insufficient
+evidence
+
+Not
+recommended
+
+Anticonvulsant—
+Pregabalin
+
+Insufficient
+evidence
+
+Second line
+
+Second line
+
+Note: Beta-adrenergic blocking agents are recommended only for performance anxiety.
+RIMA, reversible monoamine oxidase inhibitor; GAD, generalized anxiety disorder; PD, panic
+disorder; SAD, social anxiety disorder.
+
+In the case of specific phobia, psychotherapies, particularly behavioral
+therapies, are the first-line choice. SSRIs may be helpful, although there are
+few studies of SSRIs for this disorder.
+For agoraphobia, the main goal of pharmacotherapy is to treat the panic
+attacks that are usually comorbid. Early studies did not support the use of
+medications for “pure” agoraphobia; however, there has been little research
+since.
+Psychosocial Therapies
+There is strong support for a variety of psychosocial therapies for anxiety
+disorders, including cognitive-behavioral therapy (CBT), behavioral
+therapies, and interpersonal therapy. Studies of CBT suggest it has a
+substantial effect on generalized anxiety disorder, panic disorder, and social
+anxiety disorder, although this evidence is tempered by concerns about
+
+
+
+
+<<<PAGE 1318>>>
+
+subtypes under
+development
+Note: Gabapentin
+and pregabalin
+although
+structurally
+related to GAB
+do not act on
+GABA receptor
+Glutamate
+
+Amygdala,
+hippocampus,
+frontal and
+cingulate
+cortices
+
+Possible imbalance Efficacy of DCS as
+between tonic
+adjunct to
+GABAergic
+exposure
+inhibition and
+therapy for
+glutamateacrophobia, SA
+mediated
+and PD
+excitation in PD Glycine transporte
+inhibitors under
+study
+Metabotropic
+receptor
+modulators
+under study
+NMDA receptor
+antagonism as
+potential
+anxiolytic—
+preliminary
+efficacy of
+riluzole for GAD
+
+Neuropeptide Y
+(NPY)
+
+Amygdala,
+hippocampus,
+brainstem,
+nucleus
+accumbens,
+
+Low NPY levels in Intranasal
+PTSD, less well
+administration
+studied in
+may reduce
+anxiety disorders
+anxiety, under
+investigation
+
+
+
+
+<<<PAGE 1323>>>
+
+(12):CD008120.
+Dresler T, Guhn A, Tupak SV, Ehlis A-C, Herrmann MJ, Fallgatter AJ,
+Deckert J, Domschke K. Revise the revised? New dimensions of the
+neuroanatomical hypothesis of panic disorder. J Neural Transm (Vienna).
+2013;120(1):3–29.
+Fentz HN, Hoffart A, Jensen MB, Arendt M, O’Toole MS, Rosenberg NK,
+Hougaard E. Mechanisms of change in cognitive behaviour therapy for
+panic disorder: The role of panic self-efficacy and catastrophic
+misinterpretations. Behav Res Ther. 2013;51:579–587.
+Funayama T, Furukawa TA, Nakano Y, Noda Y, Ogawa S, Watanabe N,
+Chen J, Noguchi Y. In-situation safety behaviors among patients with
+panic disorder: Descriptive and correlational study. Psych Clin Neurosci.
+2013;67:332–339.
+Generoso MB, Trevizol AP, Kasper S, Cho HJ, Cordeiro Q, Shiozawa P.
+Pregabalin for generalized anxiety disorder: An updated systematic review
+and meta-analysis. Int Clin Psychopharmacol. 2017;32(1):49–55.
+Goodwin RD, Stein DJ. Anxiety disorders and drug dependence: Evidence on
+sequence and specificity among adults. Psych Clin Neurosci. 2013;67:167–
+173.
+Gorman JM, Kent JM, Sullivan GM, Coplan JD. Neuroanatomical hypothesis
+of panic disorder, revised. Am J Psychiatry. 2000;157(4):493–505.
+Gorman JM, Liebowitz MR, Fyer AJ, Stein J. A neuroanatomical hypothesis
+for panic disorder. Am J Psychiatry. 1989;146(2):148–161.
+Hamm AO. Specific phobias. Psychiatr Clin North Am. 2009;32(3):577.
+Hasin DS, Grant BF. The National Epidemiologic Survey on Alcohol and
+Related Conditions (NESARC) Waves 1 and 2: Review and summary of
+findings. Soc Psychiatry Psychiatr Epidemiol. 2015;50(11):1609–1640.
+Hofmann SG, Hinton DE. Cross-cultural aspects of anxiety disorders. Curr
+Psychiatry Rep. 2014;16(6):450.
+Julian LJ. Measures of anxiety. Arthritis Care Res (Hoboken) [Internet].
+2011 Nov [cited November 24, 2019];63(0 11):5467–5472. Available
+from: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879951/
+Khalsa SS, Feinstein JS, Li W, Feusner JD, Adolphs R, Hurlemann R. Panic
+anxiety in humans with bilateral amygdala lesions: Pharmacological
+induction via cardiorespiratory interoceptive pathways. J Neurosci.
+2016;36(12):3559–3566.
+
+
+
+
+<<<PAGE 1638>>>
+
+assuring sufficient sleep are first-line therapies. Sometimes, if the individual
+voluntarily makes very–rapid eye movements or is touched by another
+person, the episode will usually terminate.
+Sleep Enuresis. Treating sleep enuresis involves medication, behavioral
+interventions, or both. Among medications, desmopressin acetate is the
+preferred choice. Other medications used to treat sleep enuresis include
+imipramine and oxybutynin chloride. Behavioral treatments, including
+bladder training, using conditioning devices (bell and pad), diet modification,
+and fluid restriction, have reported success when properly administered.
+Other treatments include psychotherapy, motivational strategies, and
+hypnotherapy.
+Restless Legs Syndrome. Pharmacologically, the dopaminergic agonists
+pramipexole, rotigotine, and ropinirole are FDA approved and represent the
+treatment of choice. Other agents used to treat RLS include dopamine
+precursors (e.g., levodopa), benzodiazepines, opiates (including prolongedrelease oxycodone–naloxone), and antiepileptic drugs (e.g., gabapentin,
+pregabalin). When iron deficiency is present, or when ferritin levels are low,
+iron supplementation can also be helpful. Nonpharmacologic treatment
+includes avoiding alcohol or nicotine use close to bedtime, massaging the
+affected parts of the legs, taking hot baths, applying hot or cold to the
+affected areas, magnetic or electric stimulation therapy, and moderate
+exercise.
+Periodic Limb Movement Disorder Treatment. Pharmacotherapy for
+PLMD associated with RLS is the same as for RLS. Clinical trials of
+pharmacotherapy for other forms of PLMD are lacking. However,
+benzodiazepines, especially clonazepam, reportedly improve sleep in patients
+with PLMD.
+Sleep-Related Bruxism. The usual treatment involves having the patient
+wear an oral appliance to protect the teeth during sleep. There are two basic
+types of appliances: the soft one (mouth guard) is typically used in the short
+term, whereas the hard acrylic one (bite splint) is used long term and requires
+regular follow-up. Relaxation, biofeedback, hypnosis, physical therapy, and
+
+
+
+
+<<<PAGE 1815>>>
+
+Table 19-12
+Pharmacotherapy of
+Personality Disorders
+
+Target
+
+Symptom
+
+Domains
+
+of
+
+Choice of Drugs According to Target Symptoms of Personality
+Disorders
+Target Symptom
+
+Drug/Treatment of
+Choice
+
+Not
+Recommended
+
+I. Mood Dysregulation and Anxiety
+Anxiety
+Chronic cognitive
+
+Psychotherapy,
+Benzodiazepines
+SSRIs, SNRIs,
+MAOIs, Low-Dose
+Novel
+Psychotropics
+(aripiprazole,
+quetiapine)
+Valproate and other
+GABA analogs
+(clonazepam and
+buspirone)
+
+Chronic somatic
+
+MAOIs, SNRIs
+(duloxetine,
+milnacipran)
+Pregabalin and other
+GABA analogs,
+TCAs, betablockers
+
+Obsessions
+
+SSRIs, Antipsychotics
+(quetiapine), TCAs
+(clomipramine),
+Mild NMDA
+antagonists
+
+If used—
+benzodiazepines
+with long half-life
+and short trials
+preferred
+
+
+
+
+<<<PAGE 2097>>>
+
+OTHER ANTICONVULSANTS
+The anticonvulsants described in this section were developed for the
+treatment of epilepsy but were also found to have beneficial effects in
+psychiatric disorders. Also, these agents are used as skeletal muscle relaxants
+and in neurogenic pain. These drugs have a variety of mechanisms, including
+increasing GABAergic function or decreasing glutamatergic function. This
+section includes seven anticonvulsants: gabapentin (Neurontin), levetiracetam
+(Keppra), pregabalin (Lyrica), tiagabine (Gabitril), topiramate (Topamax),
+and zonisamide (Zonegran), as well as one of the first used anticonvulsants,
+phenytoin (Dilantin). Carbamazepine (Tegretol), valproate (Depakene,
+Depakote), lamotrigine (Lamictal), and oxcarbazepine (Trileptal) are
+discussed in separate sections.
+In 2008, the FDA issued a warning that these drugs may increase the risk
+of suicidal ideation or act in some persons compared with placebo; however,
+the relative risk for suicidality was higher in patients with epilepsy compared
+with those with psychiatric disorders. However, some published data
+contradict this warning. These studies suggest that anticonvulsants may have
+a protective effect on suicidal thoughts in bipolar disorder. Considering the
+inherently increased risk of suicide in persons with bipolar disorder,
+clinicians should be aware of these warnings.
+Gabapentin
+Gabapentin was first introduced as an antiepileptic drug and was found to
+have sedative effects that were useful in some psychiatric disorders,
+especially insomnia. It was also found to be beneficial in reducing
+neuropathic pain, including postherpetic neuralgia. It is used in anxiety
+disorders (social phobia and panic disorder), but not as the primary
+intervention in mania or treatment-resistant mood disorders.
+Pharmacologic Actions. Gabapentin circulates in the blood primarily
+unbound and is not appreciably metabolized in humans. It is eliminated
+unchanged by renal excretion and can be removed by hemodialysis. Food
+only moderately affects the rate and extent of absorption. Clearance is
+decreased in elderly persons, requiring dosage adjustments. Gabapentin
+
+
+
+
+<<<PAGE 2104>>>
+
+efficiently dosed once daily, preferably at nighttime.
+Therapeutic Indications. Its primary use is in the treatment of generalized
+seizure disorders and refractory partial seizures. In psychiatry, controlled
+studies found it to be of use in obesity and binge-eating disorder.
+Uncontrolled trials have found it useful in bipolar disorder, particularly
+mania; however, further studies are warranted for this indication.
+Precautions and Adverse Reactions. Zonisamide is a sulfonamide and
+thus may cause a fatal rash and blood dyscrasias, although these events are
+rare. About 4 percent of patients develop kidney stones. The most common
+side effects are drowsiness, cognitive impairment, insomnia, ataxia,
+nystagmus, paresthesia, speech abnormalities, constipation, diarrhea, nausea,
+and dry mouth. Weight loss is also a common side effect, which has been
+exploited as a therapy for patients who have gained weight during treatment
+with psychotropics or, as mentioned above, have ongoing difficulty
+controlling their eating. Zonisamide should not be used in pregnant women or
+breastfeeding mothers.
+Drug Interactions. Zonisamide does not inhibit CYP isoenzymes and does
+not instigate drug interactions. It is important not to combine carbonic
+anhydrase inhibitors with zonisamide because of an increased risk of
+nephrolithiasis related to increased blood levels of urea.
+Laboratory Interferences. Zonisamide can elevate hepatic alkaline
+phosphatase and increase blood urea nitrogen and creatinine.
+Dosages and Clinical Guidelines. Zonisamide is available in 100- and
+200-mg capsules. In epilepsy, the dosage range is 100 to 400 mg/day, with
+side effects becoming more pronounced at doses above 300 mg. Because of
+its long half-life, zonisamide can be given once a day.
+Pregabalin
+Pregabalin is pharmacologically similar to gabapentin. It is believed to work
+by inhibiting the release of excess excitatory neurotransmitters. It increases
+neuronal GABA levels, its binding affinity is six times greater than that of
+
+
+
+
+<<<PAGE 2105>>>
+
+gabapentin, and it has a longer half-life.
+Pharmacologic Actions. Pregabalin exhibits linear pharmacokinetics. It is
+rapidly absorbed in proportion to its dose. The time to maximal plasma
+concentration is about 1 hour, and to steady state is within 24 to 48 hours.
+Pregabalin demonstrates high bioavailability, and it has a mean elimination
+half-life of about 6.5 hours. Food does not affect absorption. Pregabalin does
+not bind to plasma proteins and is excreted virtually unchanged (<2 percent
+metabolism) by the kidneys. It is not subject to hepatic metabolism and does
+not induce or inhibit liver enzymes. Dose reduction may be necessary for
+patients with creatinine clearance (CLcr) less than 60 mL/min. Daily doses
+should be further reduced by approximately 50 percent for each additional 50
+percent decrease in CLcr. Pregabalin is highly cleared by hemodialysis so
+that additional doses may be needed for patients on chronic hemodialysis
+treatment after each hemodialysis treatment.
+Therapeutic Indications. Pregabalin is approved for the management of
+diabetic peripheral neuropathy and postherpetic neuralgia and adjunctive
+treatment of partial-onset seizures. It is of benefit to some patients with GAD.
+In studies, no consistent dose–response relationship was found, although 300
+mg of pregabalin per day was more effective than 150 or 450 mg. Some
+patients with panic disorder or social anxiety disorder may benefit from
+pregabalin, but little evidence supports its routine use in treating persons with
+these disorders. It was most recently approved for the treatment of
+fibromyalgia.
+Precautions and Adverse Reactions. The most common adverse events
+associated with pregabalin use are dizziness, somnolence, blurred vision,
+peripheral edema, amnesia or loss of memory, and tremors. Pregabalin
+potentiates the sedating effects of alcohol, antihistamines, benzodiazepines,
+and other CNS depressants. It remains to be seen if pregabalin is associated
+with benzodiazepine-type withdrawal symptoms. There are scant data about
+its use in pregnant women or nursing mothers, and it is best avoided in these
+patients.
+Drug Interactions. Given the absence of hepatic metabolism, pregabalin
+
+
+
+
+<<<PAGE 2106>>>
+
+lacks metabolic drug interactions.
+Laboratory Interferences. There are no effects on laboratory tests.
+Dosage and Clinical Guidelines. The recommended dose for
+postherpetic neuralgia is 50 or 100 mg orally three times a day. The
+recommended dose for diabetic peripheral neuropathy is 100 to 200 mg orally
+three times a day. Patients with fibromyalgia may require up to 450 to 600
+mg/day given in divided doses. Pregabalin is available as 25-, 50-, 75-, 100-,
+150-, 200-, 225-, and 300-mg capsules.
+Phenytoin
+Phenytoin sodium (Dilantin) is an antiepileptic drug and is related to the
+barbiturates in chemical structure. It is indicated for the control of generalized
+tonic–clonic (grand mal) and complex partial (psychomotor, temporal lobe)
+seizures and prevention and treatment of seizures occurring during or after
+neurosurgery. Studies have shown comparable efficacy of phenytoin to other
+anticonvulsants in bipolar disorder, but clinicians should take into account the
+danger of gingival hyperplasia, leukopenia, or anemia and the danger of
+toxicity caused by nonlinear pharmacokinetics.
+Pharmacologic Action. Similar to other anticonvulsants, phenytoin causes
+blockade of voltage-activated sodium channels and hence is efficacious as an
+antimanic agent. The plasma half-life after oral administration averages 22
+hours, with a range of 7 to 42 hours. Steady-state therapeutic levels are
+achieved at least 7 to 10 days (5 to 7 half-lives) after initiation of therapy,
+with recommended doses of 300 mg/day. Serum level should be obtained at
+least 5 to 7 half-lives after treatment initiation. Phenytoin is excreted in the
+bile, which is then reabsorbed from the intestinal tract and excreted in the
+urine. Urinary excretion of phenytoin occurs partly with glomerular filtration
+and by tubular secretion. Small incremental doses of phenytoin may increase
+the half-life and produce very substantial increases in serum levels. Patients
+should adhere strictly to the prescribed dosage, and serial monitoring of
+phenytoin levels is recommended.
+Therapeutic Indications. Apart from its indication in generalized tonic–
+
+
+
+
+<<<PAGE 2267>>>
+
+Benedetti A, Lattanzi L, Pini S, Musetti L, Dell’Osso L. Oxcarbazepine as
+add-on treatment in patients with bipolar manic, mixed, or depressive
+episode. J Affect Disord. 2004;79:273–277.
+Bialer M. Extended-release formulations for the treatment of epilepsy. CNS
+Drugs. 2007;21:765–774.
+Bowden CL, Swann AC, Calabrese JR, Rubenfaer LM, Wozniak PJ.
+Depakote ER Mania Study Group. A randomized, placebo-controlled,
+multicenter study of divalproex sodium extended release in the treatment
+of acute mania. J Clin Psychiatry. 2006;67:1501.
+Bray GA, Hollander P, Klein S, Kushner R, Levy B. A 6-month randomized,
+placebo-controlled, dose-ranging trial of topiramate for weight loss in
+obesity. Obes Res. 2003;11(6):722–733.
+Calabrese JR, Huffman RF, White RL. Lamotrigine in the acute treatment of
+bipolar depression: results of five double-blind, placebo-controlled clinical
+trials. Bipolar Disord. 2008;10:323–333.
+Chen PS, Wang CC, Bortner CD, Peng GS, Wu X, Pang H. Valproic acid and
+other histone deacetylase inhibitors induce microglial apoptosis and
+attenuate lipopolysaccharide-induced dopaminergic neurotoxicity.
+Neuroscience. 2007;149:203–212.
+Chustecka Z. Hydralazine and valproate appear to overcome resistance to
+chemotherapy. Ann Oncol. 2007;18:1529.
+Cipriani A, Hawton K, Stockton S, Geddes JR. Lithium in the prevention of
+suicide in mood disorders: updated systematic review and meta-analysis.
+BMJ. 2013;346: f3646.
+Cohen LS, Friedman JM, Jefferson JW, Johnson EM, Weiner ML. A
+reevaluation of risk of in utero exposure to lithium. JAMA. 1994;271:146–
+150.
+Collins J, McFarland B. Divalproex, lithium and suicide among medicaid
+patients with bipolar disorder. J Affect Dis. 2008;107:23–28.
+Cousins DA, Aribisala B, Ferrier I, Blamire AM. Lithium, gray matter, and
+magnetic resonance imaging signal. Biol Psychiatry. 2013;73(7):652–657.
+Crofford LJ, Rowbotham MC, Mease PJ, Russell IJ, Dworkin RH. Pregabalin
+for the treatment of fibromyalgia syndrome: results of a randomized,
+double-blind, placebo-controlled trial. Arthritis Rheum. 2005;52(4):1264.
+Delvendahl I, Lindemann H, Heidegger T, Normann C, Ziemann U, Mall V.
+Effects of lamotrigine on human motor cortex plasticity. Clin
+
+
+
+
+<<<PAGE 2268>>>
+
+Neurophysiol. 2013;124(1):
+148–153.
+Du J, Suzuki K, Wei Y, Wang Y, Blumenthal R. The anticonvulsants
+lamotrigine, riluzole, and valproate differentially regulate AMPA receptor
+membrane localization: Relationship to clinical effects in mood disorders.
+Neuropsychopharmacology. 2007;32:793–802.
+Dubovsky SL. Calcium channel inhibitors. In: Sadock BJ, Sadock VA, Ruiz
+P, eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed.
+Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3065.
+Dubovsky SL, Buzan RD, Thomas M, Kassner C, Cullum CM. Nicardipine
+improves the antidepressant action of ECT but does not improve cognition.
+J ECT. 2001;17:
+3–10.
+Einat H, Manji HK. Cellular plasticity cascades: genes-to-behavior pathways
+in animal models of bipolar disorder. Biol Psychiatry. 2006;59:1160–1171.
+Findling RL, Frazier TW, Youngstrom EA, McNamara NK, Stansbrey RJ.
+Doubleblind, placebo-controlled trial of divalproex monotherapy in the treatment
+of symptomatic youth at high risk for developing bipolar disorder. J Clin
+Psychiatry. 2007;68:781–788.
+Freeman R, Durso-Decruz E, Emir B. Efficacy, safety, and tolerability of
+pregabalin treatment for painful diabetic peripheral neuropathy: findings
+from seven randomized, controlled trials across a range of doses. Diabetes
+Care. 2008;31:1448–1454.
+Frye MA, Ketter TA, Kimbrell TA, Dunn RT, Speer AM. A placebocontrolled study of lamotrigine and gabapentin monotherapy in refractory
+mood disorders. J Clin Psychopharmacol. 2000;20(6):607–614.
+Gadde KM, Franciscy DM, Wagner HR 2nd, Krishnan KR. Zonisamide for
+weight loss in obese adults: a randomized controlled trial. JAMA.
+2003;289(14):1820–1825.
+Geddes JR, Burgess S, Hawton K, Jamison K, Goodwin GM. Long-term
+lithium therapy for bipolar disorder: systematic review and meta-analysis
+of randomized controlled trials. Am J Psychiatry. 2004;161:217–222.
+Geddes JR, Calabrese JR, Goodwin GM. Lamotrigine for treatment of bipolar
+depression: Independent meta-analysis and meta-regression of individual
+patient data from five randomised trials. Br J Psychiatry. 2009;194:4.
+
+
+
+
+<<<PAGE 2270>>>
+
+Jefferson JW, Greist JH. Lithium. In: Sadock BJ, Sadock VA, Ruiz P, eds.
+Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3132
+Johnson BA, Rosenthal N, Capece JA. Improvement of physical health and
+quality of life of alcohol-dependent individuals with topiramate treatment:
+US multisite randomized controlled trial. Arch Intern Med.
+2008;168:1188–1199.
+Johnson BA, Rosenthal N, Capece JA, Wiegand F, Mao L. Topiramate for
+treating alcohol dependence: a randomized controlled trial. JAMA.
+2007;298(14):1641.
+Kamalinia G, Brand S, Ghaeli P, Abedi N, Bajoghli H, Sharifi V, Zahiroddin
+A, Amini M, Rouini MR, Holsboer-Trachsler E, Mohammadpoor AH.
+Serum levels of sodium valproate in patients suffering from bipolar
+disorders: comparing acute and maintenance phases of mania.
+Pharmacopsychiatry. 2013;46(3):83–87.
+Kato T, Ishiwata M, Mori K, Washizuka S, Tajima O. Mechanisms of altered
+Ca2+ signaling in transformed lymphoblastoid cells from patients with
+bipolar disorder. Int J Neuropsychopharmacol. 2003;6:379–389.
+Ketter TA, Brooks JO, Hoblyn JC. Effectiveness of lamotrigine in bipolar
+disorder in a clinical setting. J Psychiatr Res. 2008;43:13–23.
+Ketter TA, Greist JH, Graham JA, Roberts JN, Thompson TR. The effect of
+dermatologic precautions on the incidence of rash with addition of
+lamotrigine in the treatment of bipolar I disorder: a randomized trial. J Clin
+Psychiatry. 2006;67(3):400–406.
+Ketter TA, Wang PW. Anticonvulsants: Gabapentin, levetiracetam,
+pregabalin, tiagabine, topiramate, zonisamide. In: Sadock BJ, Sadock VA,
+Ruiz P, eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry.
+9th ed. Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins;
+2009:3021.
+Ketter TA, Wang PW. Lamotrigine. In: Sadock BJ, Sadock VA, Ruiz P, eds.
+Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3127.
+Ketter TA, Wang PW, Becker OV, Nowakowska C, Yang YS. The diverse
+roles of anticonvulsants in bipolar disorders. Ann Clin Psychiatry.
+2003;15:95–108.
+Klitgaard H. Epilepsy therapy: anticonvulsants, lessons learned and unmet
+
+
+
+
+<<<PAGE 2271>>>
+
+medical needs. Expert Rev Neurother. 2013;13(1):13–14.
+Kozaric-Kovacic D, Eterovic M. Lamotrigine abolished aggression in a
+patient with treatment-resistant posttraumatic stress disorder. Clin
+Neuropharmacol. 2013;36(3):94–95.
+Kremer I, Vass A, Gorelik I, Bar G, Blanaru M, Javitt DC. Placebocontrolled trial of lamotrigine added to conventional and atypical
+antipsychotics in schizophrenia. Biol Psychiatry. 2004;56(6):441–446.
+Kushner SF, Khan A, Lane R, Olson WH. Topiramate monotherapy in the
+management of acute mania: results of four double-blind placebocontrolled trials. Bipolar Disord. 2006;8(1):15–27.
+Livingston C, Rampes H. Lithium: a review of its metabolic adverse effects.
+J Psychopharmacol. 2006;20:347–355.
+McClellan J, Kowatch R, Findling RL, Work Group on Quality Issues.
+Practice parameter for the assessment and treatment of children and
+adolescents with bipolar disorder. J Am Acad Child Adolesc Psychiatry.
+2007;46:107–125.
+McElroy SL, Hudson JI, Capece JA, Beyers K, Fisher AC. Topiramate for
+the treatment of binge eating disorder associated with obesity: a placebocontrolled study. Biol Psychiatry. 2007;61(9):1039–1048.
+McElroy SL, Kotwal R, Guerdjikova AI, Welge JA, Nelson EB. Zonisamide
+in the treatment of binge eating disorder with obesity: a randomized
+controlled trial. J Clin Psychiatry. 2006;67(12):1897–906.
+Mease PJ, Russell IJ, Arnold LM. A randomized, double-blind, placebocontrolled, phase III trial of pregabalin in the treatment of patients with
+fibromyalgia. J Rheumatol. 2008;35:502–514.
+Merideth CH. A single-center, double-blind, placebo-controlled evaluation of
+lamotrigine in the treatment of obesity in adults. J Clin Psychiatry.
+2006;67(2):258–262.
+Nahorski SR. Pharmacology of intracellular signaling pathways. Br J
+Pharmacol. 2006;147:S38.
+Perucca P, Mula M. Antiepileptic drug effects on mood and behavior:
+molecular targets. Epilepsy Behav. 2013;26(3):440–449.
+Post RM, Frye MA. Carbamazepine. In: Sadock BJ, Sadock VA, Ruiz P, eds.
+Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3073.
+Post RM, Frye MA. Valproate. In: Sadock BJ, Sadock VA, Ruiz P, eds.
+
+

@@ -1,0 +1,342 @@
+<<<PAGE 37>>>
+
+Organic (Including Symptomatic) Mental Disorders
+
+a marked decrease in brain choline acetyltransferase
+(CAT) with a similar decrease in brain acetylcholinesterase (AchE).
+At present, Alzheimer’s dementia is not considered a treatable disorder. However, Cholinesterase
+Inhibitors such as Rivastigmine (1.5 mg twice a day
+to 6 mg twice a day), Donepezil (5-10 mg/day), and
+Galantamine (4 mg twice a day to 12 mg twice a day)
+have been used in the recent past for treatment of
+moderate dementia with Alzheimer’s disease. These
+elevate acetylcholine (Ach) concentrations in cerebral
+cortex by slowing the degradation of acetylcholine
+released by still intact cholinergic neurons in Alzheimer’s disease.
+Memantine (5-20 mg/day), an N-methyl-Daspartate (NMDA) antagonist, is also available for the
+treatment of moderately severe to severe Alzheimer’s
+disease. There are several other drugs (such as ginkgo
+biloba, piracetam, and vitamin C and E) used for treatment, though their value remains uncertain.
+
+Multi-infarct Dementia
+Multi-infarct dementia is the second commonest cause
+of dementia, seen in 10-15% of all cases, though some
+studies indicate that multi-infarct dementia is probably far more common in India. It is also one of the
+important treatable causes of dementia.
+Occurrence of multiple cerebral infarctions can
+lead to a progressive disruption of brain function, leading to dementia. The most typical form of multi-infarct
+dementia is characterised by the following features:
+1. An abrupt onset,
+2. Acute exacerbations (due to repeated infarctions),
+3. Stepwise clinical deterioration (step-ladder pattern),
+4. Fluctuating course,
+5. Presence of hypertension (most commonly) or any
+other significant cardiovascular disease, and
+6. History of previous stroke or transient ischemic
+attacks (TIAs).
+Focal neurological signs are frequently present.
+Insight into the illness is usually present in the early
+part of the course. Emotional lability is common. EEG
+
+25
+
+(showing focal area of slowing) and brain imaging (CT
+scan or MRI scan of brain showing multiple infarcts)
+help in diagnosis. The treatment of the underlying
+cause can prevent further deterioration by preventing
+further infarctions.
+
+Hypothyroid Dementia
+This has been considered one of the most important
+treatable and reversible causes of dementia, second
+only to toxic dementias. Although it accounts for
+less than 1% of dementias, hypothyroidism should be
+suspected in every patient of dementia.
+Since clinical diagnosis of hypothyroid dementia
+may be difficult, laboratory tests should be used for
+correct diagnosis. Prompt treatment can reverse the
+dementing process and can lead to complete recovery
+if the treatment is started within two years of the onset
+of dementia.
+
+AIDS Dementia Complex
+About 50-70% of patients suffering from AIDS exhibit
+a triad of cognitive, behavioural and motoric deficits
+of subcortical dementia type and this is known as the
+AIDS-dementia complex (ADC). Dementia can in
+fact be an initial presentation in about 25% cases of
+AIDS.
+As the AIDS virus (a lenti-virus, a type of retrovirus) is highly neurotropic and the virus crosses the
+blood-brain barrier early in the course of the disease
+cognitive impairment is nearly ubiquitous in AIDS.
+The diagnosis is established by ELISA (enzymelinked immuno-sorbent assay) showing anti-HIV antibodies, and the Western Blot test (blotting of antibody
+specificities to HIV-specific proteins). A Cranial CT
+scan can show cortical atrophy 1-4 months before the
+onset of clinical dementia while MRI scan is helpful
+in detecting the white matter lesions.
+
+Lewy Body Dementia
+Lewy body dementia is now believed to be the second
+most common cause of the degenerative dementias,
+accounting for about 4% of all dementias. Typically,
+the clinical features of Lewy body dementia include:
+
+
+
+
+<<<PAGE 38>>>
+
+26
+
+A Short Textbook of Psychiatry
+
+i. Fluctuating cognitive impairment over weeks or
+months, with involvement of memory and higher
+cortical functions (such as language, visuo-spatial
+ability, praxis and reasoning). Lucid intervals can
+be present in between fluctuations.
+ii. Recurrent and detailed visual hallucinations.
+iii. Spontaneous extrapyramidal or parkinsonian
+symptoms such as rigidity and tremors.
+iv. Neuroleptic sensitivity syndrome, characterised by
+a marked sensitivity to the effects of typical doses
+of antipsychotic drugs (resulting in severe extrapyramidal side-effects with use of antipsychotics).
+Other clinical features may include repeated falls,
+autonomic dysfunction (e.g. orthostatic hypotension), urinary incontinence, delusions and depressive
+features. Although Lewy bodies (intra-cytoplasmic
+inclusion bodies) are also present in Parkinson’s
+disease, the occurrence of Lewy bodies in Lewy body
+dementia is more widespread. A PET (Positron Emission Tomography) or SPECT (Single Photon Emission
+Computerised Tomography) scan of brain may show
+low dopamine transporter uptake in basal ganglia.
+Antipsychotic medication should be avoided (or
+used with extreme caution and in low doses) in patients
+with Lewy body dementia.
+
+Management
+Basic Investigations
+The diagnostic tests are of great importance in finding the cause, or to exclude all other causes before
+diagnosing Alzheimer’s dementia.
+The list of investigations could include complete
+blood count, urinalysis, blood glucose, serum electrolytes, renal function tests, thyroid function tests, serum
+B12 and folate levels, serological tests for syphilis,
+arterial pO2 and pCO2, X-ray chest, ECG, X-ray skull,
+EEG, lumbar puncture, CT scan/MRI scan of brain,
+neuropsychological tests, and drug screens.
+
+Treatment of the Underlying Cause,
+if Treatable
+Some underlying causes of dementia are treatable
+(reversible dementias), for example, treatment of
+
+hypertension in multi-infarct dementia, thyroxin
+replacement in hypothyroid dementia, shunting in
+hydrocephalic dementia, levodopa in parkinsonism,
+and removal of the toxic agent in toxic dementias.
+Early treatment can prevent further deterioration of
+dementia.
+
+Symptomatic Management
+1. Environmental manipulation and focus on coping
+skills to reduce stress in day-to-day activities.
+2. Treatment of medical complications, if any.
+3. Care of food and hygiene
+4. Supportive care for the patient and family/carers.
+5. Anxiety symptoms can be treated with low dose of
+a short-acting benzodiazepine (such as Lorazepam
+and Oxazepam), though care should be taken to
+prevent benzodiazepine dependence/misuse.
+6. Depression can be treated with low doses of
+SSRIs such as Citalopram or Sertraline as these
+antidepressants have low anticholinergic activity
+and have a safer cardiac profile. Agents with high
+anticholinergic activity can cause confusion or
+even frank delirium.
+7. Psychotic symptoms and disruptive behaviours
+can be treated with low doses of antipsychotics.
+Haloperidol and Risperidone have usually been
+preferred as they are less sedating and have low
+cardiac toxicity, though Risperidone can cause
+postural hypotension. Recently, the use of antipsychotics in treatment of behavioural symptoms
+in dementia has decreased markedly due to
+possible association of antipsychotic use with
+increased mortality. Antipsychotics should
+also be avoided if Lewy body dementia is
+suspected.
+8. Short-term hospitalisation may be needed for
+emergent symptoms whilst a longer term hospitalisation or respite placement may be necessary
+in later stages.
+9. Specific drug treatment such as cholinesterase
+inhibitors (e.g. donepezil, rivastigmine, galantamine) in moderate Alzheimer’s disease, or
+memantine (NMDA antagonist) in moderate to
+severe Alzheimer’s disease, can be helpful.
+
+
+
+
+<<<PAGE 267>>>
+
+Index
+disorder 58, 61, 76, 83, 84
+dysmorphophobia 84
+halitosis 84
+parasitosis 84
+Delusions 58, 60, 62, 71
+Delusions of
+control 56
+grandeur 56, 70, 83
+jealousy 83
+nihilism 71
+persecution 56, 61, 70, 83
+reference 56
+Demence precoce 54
+Dementia 22, 23, 76
+praecox 54, 61
+Denial 65, 207
+Dependence syndrome 34
+Dependent personality disorder 118
+Depersonalisation 13, 46, 109
+derealisation syndrome 109
+disorder 109
+Depot antipsychotic 67
+Depressed mood 71
+Depression 61, 80, 95, 227
+with psychotic features 77
+Depressive
+episode 30, 71
+equivalent 81, 106
+ideation/cognition 71
+pseudodementia 23
+stupor 71
+Derealisation 13, 46, 109
+Desmopressin 169
+Deterrent agents 41
+Detoxification 40, 41, 44
+Developmental
+milestones 154
+reading disorder 162
+Dexamphetamine 167
+Dhat syndrome 110
+Diagnostic formulation 17
+Diazepam 40, 67, 87, 94, 112, 137, 149,
+218, 228
+Digit
+backwards 14
+span test 14
+Dipsomania 34, 36
+Disaster management 112
+Disintegrative psychosis 165
+Disorders of
+adult personality and behaviour 113
+affect 56
+excessive somnolence 137
+
+perception 56
+sexual preference 124
+Disorganised
+behaviour 62
+schizophrenia 58
+symptoms 62
+Dissocial personality disorder 115
+Dissociative
+amnesia 100, 101
+anaesthesia and sensory loss 100
+and conversion disorders 99
+convulsions 100, 101
+disorder 100
+fugue 101
+identity disorder 102
+motor disorders 99
+Distortion 207
+District mental health programme 237
+Disulfiram 41, 42
+ethanol reaction 41
+Divalproex 191
+Donepezil 25, 26
+Dopamine 75
+agonists 132
+Double depression 81
+Down’s syndrome 158
+Dream anxiety disorder 140
+Drug 33, 228
+and alcohol dependence 227
+induced psychoses 61
+Dual-role transvestism 122
+Duration of
+therapy 202
+untreated psychosis 63
+Dyslalia 163
+Dyssomnias 136
+Dysthymia 73, 82
+Dysthymic disorder 80, 82
+
+E
+Eating disorders 142
+Echolalia 56, 59, 168, 225
+Echopraxia 59, 225
+Ecstasy 70
+Educational history 9
+Ego 206
+defense mechanisms 206, 207
+ideal 206
+Egodystonic sexual orientation 123
+Ego-structure 214
+Ekbom syndrome 136, 137
+Elation 70
+Elective mutism 171
+
+255
+Electra complex 211
+Electroconvulsive therapy 29, 67, 77,
+98, 199, 228
+Electroshock therapy 199
+Elementary auditory hallucinations 56
+Elevated mood 70
+Emergency psychiatry 221
+Emil Kraepelin 54
+Emotional
+blunting 56
+lability 22, 25
+over-involvement 64
+shallowness 56
+Emotionally unstable personality disorder 116
+Emotions 69
+Encopresis 170
+English Lunacy Act of 1890 231
+Enuresis 169
+Environmental manipulation 26
+Epidemiology 55, 222
+Epilepsy 28
+Epileptic seizures 101
+Epiloia 159
+Erectile dysfunction 127
+Erotomania 84
+Erotomanic delusions 83
+Erythrophobia 93
+Eugen Bleuler 54, 55
+Euphoria 70
+Exaltation 70
+Excessive sexual drive 127
+Excited
+behaviour 227
+catatonia 59
+Expressed emotions 64, 65, 68
+Expressive language disorder 163
+
+F
+Factitious disorder 119
+Family
+and marital therapy 80
+history 7
+structure 7
+theories 64
+therapy 68, 144, 217
+tree 7
+Fantasy life 10
+Fatigability 72
+Female
+anorgasmia 130
+orgasmic disorder 130
+sexual arousal disorder 128
+
+

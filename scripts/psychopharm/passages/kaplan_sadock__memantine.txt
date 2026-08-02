@@ -1,0 +1,571 @@
+<<<PAGE 634>>>
+
+benzodiazepine, may help to control anxiety symptoms in separation anxiety
+disorder. Clonazepam has been studied in open trials and may be useful in
+controlling symptoms of panic and other anxiety symptoms.
+Although SSRIs and CBT alone and in combination have demonstrated
+efficacy in the treatment of anxiety disorders in youth, approximately 20 to
+35 percent of children and adolescents with anxiety disorders do not appear
+to benefit. Several novel agents may be useful, some based on their effect on
+the NMDA system. For example, D-cycloserine (DCS), currently FDA
+approved in the treatment of pediatric tuberculosis, is a partial receptor
+agonist of the NMDA system and is hypothesized to augment the benefits of
+exposure treatment for phobias. Some evidence suggests that DCS may
+increase the speed of exposure interventions; however, there is no proof of
+long-term gains. Riluzole is an antiglutamatergic agent that decreases
+glutamatergic transmission by inhibiting glutamate release and inactivation of
+sodium channels in cortical neurons and blocking GABA reuptake. Due to its
+antiglutamatergic effects, riluzole may provide augmentation in the treatment
+of OCD and generalized anxiety disorder. Another agent, memantine, an
+NMDA receptor antagonist with FDA approval in the treatment of
+Alzheimer’s disease, has been hypothesized to decrease anxiety due to its
+influence on the glutamatergic system. Published case reports have provided
+mixed results.
+Although most childhood anxiety disorders wax and wane over time,
+school refusal associated with separation anxiety disorder is a psychiatric
+emergency. A comprehensive treatment plan involves the child, the parents,
+and the child’s peers and school. Family interventions are critical in the
+management of separation anxiety disorder, especially in children who refuse
+to attend school, so that firm encouragement of school attendance is
+maintained while providing appropriate support. When a return to a full
+school day is overwhelming, the treatment team and school should help
+arrange a program so the child can progressively increase the time spent at
+school. Graded contact with an object of anxiety is a form of behavior
+modification useful for any type of separation anxiety. Some severe cases of
+school refusal require hospitalization. Cognitive-behavioral modalities
+include exposure to feared separations and cognitive strategies, such as
+coping self-statements aimed at increasing a sense of autonomy and mastery.
+
+
+
+
+<<<PAGE 777>>>
+
+from augmentation of cholinergic neurotransmission.
+Donepezil is well tolerated and widely used. We rarely use tacrine because
+of its potential for hepatotoxicity. Fewer clinical data are available for
+rivastigmine and galantamine, which appear more likely to cause
+gastrointestinal (GI) and neuropsychiatric adverse effects than does
+donepezil. None of these medications prevent the progressive neuronal
+degeneration of the disorder.
+Memantine protects neurons from excessive amounts of glutamate, which
+may be neurotoxic. Sometimes we may combine the drug with donepezil. It
+appears to improve dementia sometimes.
+Other Treatment Approaches. There are many drugs under development
+for cognitive-enhancing activity and this is a very active area of drug
+research. Novel strategies are focusing on the β-amyloid plaques and
+neurofibrillary tangles associated with Alzheimer and some other
+neurodegenerative disorders. In the case of amyloid plaques, attempts to
+reduce their formation, aggregation and to increase their clearance are
+underway, and several monoclonal and polyclonal antibody vaccines are
+being tested.
+Estrogen replacement therapy may reduce the risk of cognitive decline in
+postmenopausal women. However the data is correlational and clinical trials
+to date are largely disappointing. A variety of other interventions have been
+proposed to improve cognitive outcomes in dementia, including cognitive
+stimulation, music therapy, reminiscence therapy, omega 3 fish oil, statins,
+ginkgo biloba, aromatherapy, or nonsteroidal anti-inflammatory drugs;
+however, all lack sufficient evidence to make any recommendation. Exercise
+improves cognition in healthy adults, and there is some evidence of benefit in
+dementia, particularly in the early stages.
+
+EPIDEMIOLOGY
+With the aging population, the prevalence of dementia is rising. The
+prevalence of moderate to severe dementia in different population groups is
+approximately 5 percent in the general population older than 65 years of age,
+20 to 40 percent in the general population older than 85 years of age, 15 to 20
+percent in outpatient general medical practices, and 50 percent in chronic care
+
+
+
+
+<<<PAGE 1144>>>
+
+raising the dose may be helpful. If the level is relatively high, clinicians
+should consider whether side effects may be interfering with therapeutic
+response.
+If the patient is responding poorly, one may increase the dose above the
+usual therapeutic level; however, higher than recommended doses usually do
+not improve response. Changing to another drug is preferable.
+As discussed earlier, clozapine is useful for patients who respond poorly to
+other antipsychotics. Double-blind studies comparing clozapine with other
+antipsychotics indicated that clozapine had the most evident advantage over
+conventional drugs in patients with the most severe psychotic symptoms, as
+well as in those who had previously responded poorly to other antipsychotics.
+Researchers and clinicians have tried several adjunctive medications, most
+with mixed success. These include lamotrigine, mirtazapine, donepezil, Dalanine, D-serine, estradiol, memantine, and allopurinol.
+Other Somatic Treatments
+Researchers have studied electroconvulsive therapy (ECT) in both acute and
+chronic schizophrenia. Studies in recent-onset patients indicate that ECT is
+about as effective as antipsychotic medications and more effective than
+psychotherapy. Other studies suggest that supplementing antipsychotic
+medications with ECT is more effective than antipsychotic medications
+alone. Antipsychotic medications should be administered during and after
+ECT treatment.
+Some initial studies have suggested neuromodulation, using transcranial
+magnetic stimulation (TMS) or transcranial direct current stimulation (tDCS),
+may be useful for treating hallucinations or negative symptoms.
+Although we no longer consider psychosurgery to be appropriate
+treatment, some research centers practice it on a limited experimental basis
+for severe, intractable cases.
+Psychosocial Therapy
+Psychotherapy is considered an essential part of treatment for schizophrenia,
+and patients who receive psychotherapy along with medications tend to have
+better adherence to therapy, less negative symptoms, and better overall
+functioning.
+
+
+
+
+<<<PAGE 1356>>>
+
+TREATMENT
+Obsessive-Compulsive Disorder
+Pharmacotherapy. Effective medications include clomipramine and
+selective serotonin reuptake inhibitors (SSRIs, which, along with
+clomipramine and other serotonergic medications, are sometimes called
+serotonin reuptake inhibitor [SRIs]). Head-to-head comparisons of
+clomipramine and SSRIs show equal efficacy but better tolerability of the
+SSRIs. In general, clinicians must use higher doses to achieve an optimal
+effect. Examples are doses of 80 mg of fluoxetine or 200 mg of sertraline.
+Some patients respond to even higher doses. Exceeding the recommended
+doses is not, however, advisable for clomipramine or citalopram, due to
+safety concerns. There is also some evidence that response to SRIs is slower
+in OCD than in depression; clinicians are therefore encouraged to prescribe
+an SRI for at least 12 weeks before deciding to switch agents or augment
+with another psychotropic. A general rule of thumb is that we should
+continue to use the dose that was required to obtain a response for at least 1
+to 2 years. When discontinuing medication, there is a real risk of relapse, so
+this should be done very gradually, with small adjustments made every few
+months.
+Patients who fail to respond to one SRI may respond to another.
+The most extensive evidence base is for antipsychotics in adult OCD.
+Among those, risperidone and aripiprazole are best supported as adjuncts.
+Some studies have indicated that these are particularly useful in patients with
+tics, but not all data are consistent. When a response to these agents occurs, it
+typically happens relatively quickly (e.g., 4 weeks). When using dopamine
+receptor blockers, it is crucial to monitor adverse events.
+Memantine, riluzole, ketamine, lamotrigine, and N-acetylcysteine (NAC)
+are other promising augmentation agents.
+Psychotherapy. There is a long history of understanding OCD symptoms
+from a psychodynamic perspective, but there is no rigorous evidence that a
+psychodynamic approach is useful in the treatment of OCD. Instead,
+empirical research on the psychotherapy of OCD has emerged from
+behavioral and cognitive perspectives. Exposure and response prevention
+
+
+
+
+<<<PAGE 1816>>>
+
+(riluzole,
+memantine)
+Acute and severe
+
+Mirtazapine, Novel
+Psychotropics
+(quetiapine,
+aripiprazole,
+clozapine), TCAs,
+clonazepam,
+valproates, lithium
+
+Depression
+Atypical
+MAOIs, SSRIs,
+depression/dysphoria
+SNRIs,
+Classical depression
+Aripiprazole,
+Lurasidone,
+ziprasidone,
+quetiapine,
+Atypical
+antipsychotics (as
+monotherapy or
+augmentation)
+
+TCAs
+
+Emotional lability/rapid Lithium, Lamotrigine,
+cycling
+Valproate, Lowerdose
+antipsychotics
+(olanzapine,
+aripiprazole,
+clozapine,
+ziprasidone)
+
+TCAs
+(“catecholamine
+stress”),
+Standard
+antidepressants
+(risk of switching
+to mania)
+
+II. Behavior Dyscontrol
+Aggression/impulsivity
+Affective aggression
+Lithium, SSRIs,
+“Hot temper” with normal
+Anticonvulsants,
+
+Benzodiazepines
+(disinhibition)
+
+
+
+
+<<<PAGE 2196>>>
+
+therapy trial.
+3. In monotherapy trials, clinically relevant improvements were observed
+beginning at doses in the range 0.05 to 0.08 mg/kg once daily. Efficacy
+increased with increasing weight-adjusted dose (mg/kg). If well
+tolerated, doses up to 0.12 mg/kg once daily may provide additional
+benefit. Doses above 4 mg/day have not been systematically studied in
+controlled clinical trials.
+4. In the adjunctive trial, the majority of subjects reached optimal doses in
+the 0.05 to 0.12 mg/kg/day range.
+In clinical trials, there were dose-related and exposure-related risks for
+several clinically significant adverse reactions (e.g., hypotension,
+bradycardia, sedative events). Thus, consideration should be given to dosing
+an extended-release preparation of guanfacine on a milligram-per-kilogram
+basis in order to balance the exposure-related potential benefits and risks of
+treatment.
+
+21.8 Drugs Used for Cognitive
+Enhancement
+CHOLINESTERASE INHIBITORS
+Donepezil (Aricept), rivastigmine (Exelon), and galantamine (Reminyl) are
+cholinesterase inhibitors used to treat mild to moderate cognitive impairment
+in dementia of the Alzheimer type. They reduce the inactivation of the
+neurotransmitter acetylcholine and, thus, potentiate cholinergic
+neurotransmission, which in turn produces a modest improvement in memory
+and goal-directed thought. Memantine (Namenda) is not a cholinesterase
+inhibitor, producing its effects through blockade of NMDA receptors. Unlike
+the cholinesterase inhibitors, which are indicated for the mild to moderate
+stages of Alzheimer disease, memantine is indicated for the moderate to
+severe stages of the disease. Tacrine (Cognex), the first cholinesterase
+inhibitor to be introduced, is no longer used because of its multiple-daily
+dosing regimens, its potential for hepatotoxicity, and the consequent need for
+
+
+
+
+<<<PAGE 2197>>>
+
+frequent laboratory monitoring. Clinicians often combine a cholinesterase
+inhibitor with memantine, as this combination may provide a beneficial
+response compared with only cholinesterase inhibitor pharmacotherapy.
+Pharmacologic Actions
+Donepezil is entirely absorbed from the GI tract. Peak plasma concentrations
+are reached about 3 to 4 hours after oral dosing. The half-life of donepezil is
+70 hours in elderly persons, and it is taken only once daily. Steady-state
+levels are achieved within about 2 weeks. The presence of stable alcoholic
+cirrhosis reduces the clearance of donepezil by 20 percent. Rivastigmine
+(Exelon) is rapidly and completely absorbed from the GI tract and reaches
+peak plasma concentrations in 1 hour, but this is delayed by up to 90 minutes
+if rivastigmine is taken with food. The half-life of rivastigmine is 1 hour, but
+because it remains bound to cholinesterases, a single dose is therapeutically
+active for 10 hours, and it is taken twice daily. Galantamine (Reminyl) is an
+alkaloid similar to codeine and is extracted from daffodils of the plant
+Galanthus nivalis. It is readily absorbed, with maximum concentrations
+reached after 30 minutes to 2 hours. Food decreases the maximum
+concentration by 25 percent. The elimination half-life of galantamine is
+approximately 6 hours.
+Tacrine (Cognex) is absorbed rapidly from the GI tract. Peak plasma
+concentrations are reached about 90 minutes after oral dosing. The half-life of
+tacrine is about 2 to 4 hours, thereby necessitating four-times-daily dosing.
+Cholinesterase inhibitors are reversible, nonacylating inhibitors of either
+acetylcholinesterase or butyrylcholinesterase, the enzymes that catabolize
+choline-based esthers in the CNS. The enzyme inhibition increases synaptic
+concentrations of acetylcholine, especially in the hippocampus and cerebral
+cortex. Unlike tacrine, which is nonselective for all forms of
+acetylcholinesterase, donepezil appears to be selectively active within the
+CNS and has little activity in the periphery. Donepezil’s favorable side effect
+profile appears to correlate with its lack of inhibition of cholinesterases in the
+GI tract. Rivastigmine appears to have somewhat more peripheral activity
+than donepezil and is thus more likely to cause GI adverse effects than is
+donepezil.
+
+
+
+
+<<<PAGE 2201>>>
+
+Dosage and Clinical Guidelines. Before initiation of cholinesterase
+inhibitor therapy, potentially treatable causes of dementia should be ruled
+out, and the diagnosis of dementia of the Alzheimer type established.
+Donepezil is available in 5- and 10-mg tablets. Treatment should be
+initiated at 5 mg each night. If well tolerated and of some discernible benefit
+after 4 weeks, the dosage should be increased to a maintenance dosage of 10mg each night. Donepezil absorption is unaffected by meals.
+Rivastigmine is available in 1.5-, 3-, 4.5-, and 6-mg capsules. The
+recommended initial dosage is 1.5 mg twice daily for a minimum of 2 weeks,
+after which increases of 1.5 mg a day can be made at intervals of at least 2
+weeks to a target dosage of 6 mg a day, taken in two equal dosages. If
+tolerated, the dosage may be further titrated upward to a maximum of 6 mg
+twice daily. The administration of rivastigmine with food can reduce the risk
+of adverse GI events.
+Galantamine is available in 4-, 8-, and 16-mg tablets. The suggested dose
+range is 16 to 32 mg/day given twice a day. The higher dose is better
+tolerated than lower doses. The initial dosage is 8 mg/day, and after a
+minimum of 4 weeks, the dose can be raised. All subsequent dosage increases
+should occur at 4-week intervals and should be based on tolerability.
+Tacrine is available in 10-, 20-, 30-, and 40-mg capsules. Before the
+initiation of tacrine treatment, a complete physical and laboratory
+examination should be conducted, with particular attention to liver function
+tests and baseline hematologic indexes. Treatment should be initiated at 10
+mg four times a day and then raised by increments of 10 mg a dose every 6
+weeks up to 160 mg a day; the person’s tolerance of each dosage is indicated
+by the absence of unacceptable side effects and lack of elevation of ALT
+activity. Tacrine should be given four times daily—ideally 1 hour before
+meals because the absorption of tacrine is reduced by about 25 percent when
+it is taken during the first 2 hours after meals. If tacrine is used, the specific
+guidelines for tacrine-induced ALT listed above should be followed.
+
+MEMANTINE
+Pharmacologic Actions
+Memantine is well absorbed after oral administration. It reaches peak
+
+
+
+
+<<<PAGE 2202>>>
+
+concentrations in about 3 to 7 hours. Food does not affect the absorption of
+memantine. Memantine has linear pharmacokinetics over the therapeutic
+dosage range and has a terminal elimination half-life of about 60 to 80 hours.
+Plasma protein binding is 45 percent.
+Memantine undergoes little metabolism, with the majority (57 to 82
+percent) of an administered dose excreted unchanged in the urine; the
+remainder is converted primarily to three polar metabolites: the N-gludantan
+conjugate, 6-hydroxy memantine, and 1-nitroso-deaminated memantine.
+These metabolites possess minimal NMDA receptor antagonist activity.
+Memantine is a low- to moderate-affinity NMDA receptor antagonist. It is
+thought that the overexcitation of NMDA receptors by the neurotransmitter
+glutamate may play a role in Alzheimer disease because glutamate plays an
+integral role in the neural pathways associated with learning and memory.
+Excess glutamate overstimulates NMDA receptors to allow too much calcium
+into nerve cells, leading to the eventual cell death observed in Alzheimer
+disease. Memantine may protect cells against excess glutamate by partially
+blocking NMDA receptors associated with the abnormal transmission of
+glutamate while allowing for physiologic transmission associated with
+normal cell functioning.
+Therapeutic Indications
+Memantine is the only approved therapy in the United States for moderate to
+severe Alzheimer disease.
+Precautions and Adverse Reactions
+Memantine is safe and well tolerated. The most common adverse effects are
+dizziness, headache, constipation, and confusion. The use of memantine in
+patients with severe renal impairment is not recommended. In a documented
+case of an overdose with up to 400 mg of memantine, the patient experienced
+restlessness, psychosis, visual hallucinations, somnolence, stupor, and loss of
+consciousness. The patient recovered without permanent sequelae.
+Drug Interactions
+In vitro studies conducted with marker substrates of CYP450 enzymes
+(CYP1A2, 2A6, 2C9, 2D6, 2E1, and 3A4) showed minimal inhibition of
+
+
+
+
+<<<PAGE 2203>>>
+
+these enzymes by memantine. No pharmacokinetic interactions with drugs
+metabolized by these enzymes are expected.
+Because memantine is eliminated in part by tubular secretion,
+coadministration of drugs that use the same renal cationic system, including
+hydrochlorothiazide triamterene (Dyrenium), cimetidine (Tagamet),
+ranitidine (Zantac), quinidine, and nicotine, could potentially result in altered
+plasma levels of both agents. Coadministration of memantine with a
+combination of hydrochlorothiazide and triamterene did not affect the
+bioavailability of either memantine or triamterene, and the bioavailability of
+hydrochlorothiazide decreased by 20 percent.
+Urine pH is altered by diet, drugs (e.g., carbonic anhydrase inhibitors,
+topiramate [Topamax], sodium bicarbonate), and the clinical state of the
+patient (e.g., renal tubular acidosis or severe infections of the urinary tract).
+The clearance of memantine is reduced by about 80 percent under alkaline
+urine conditions at pH 8. Therefore, alterations of urine pH toward the
+alkaline condition may lead to an accumulation of the drug with a possible
+increase in adverse effects. Hence, memantine should be used with caution
+under these conditions.
+Laboratory Interferences
+No laboratory interferences have been associated with the use of memantine.
+Dosage and Clinical Guidelines
+Memantine is available in 5- and 10-mg tablets, with a recommended starting
+dose of 5 mg daily. The recommended target dose is 20 mg/day. The drug is
+administered twice daily in separate doses with 5-mg increment increases
+weekly depending on tolerability.
+Patients with mild to moderate disease receiving memantine in
+combination with a cholinesterase inhibitor have not been found to
+experience significantly greater benefit in cognition or overall function than
+those who receive a cholinesterase inhibitor alone.
+
+21.9 Drugs Used to Treat Sexual
+
+
+
+
+<<<PAGE 2287>>>
+
+2006;26(Suppl 1):S37.
+Weiss RD, O’malley SS, Hosking JD, Locastro JS, Swift R, COMBINE
+Study Research Group. Do patients with alcohol dependence respond to
+placebo? Results from the COMBINE Study. J Stud Alcohol Drugs.
+2008;69(6):878.
+Zarkin GA, Bray JW, Aldridge A, Mitra D, Mills MJ, Couper DJ, Cisler RA,
+COMBINE Cost-Effectiveness Research Group. Cost and costeffectiveness of the COMBINE study in alcohol-dependent patients. Arch
+Gen Psychiatry. 2008;65(10):1214–1221.
+Drugs Used for Cognitive Enhancement
+Auchus AP, Brasher HR, Salloway S, Korczyn AD, DeDeyn PP.
+Galantamine treatment of vascular dementia: a randomized trial.
+Neurology. 2007;69:448.
+Black SE, Doody R, Li H, McRae T, Jambor KM. Donepezil preserves
+cognition and global function in patients with severe Alzheimer’s disease.
+Neurology. 2007;
+69:459.
+Cummings J, Lefevre G, Small G, Appel-Dingemanse S. Pharmacokinetic
+rationale for rivastigmine patch. Neurology. 2007;69(4 Suppl 1):S10.
+Droogsma E, Veeger N, van Walderveen P, Niemarkt S, van Asselt D. Effect
+of treatment gaps in elderly patients with dementia treated with
+cholinesterase inhibitors. Neurology. 2013;80(17):1622.
+Edwards K, Royall D, Hershey L, Lichter D, Ake A. Efficacy and safety of
+galantamine in patients with dementia with Lewy body: a 24-week openlabel study. Dement Geriatr Cogn Disord. 2007;23:401.
+Jann MW, Small GW. Cholinesterase inhibitors. In: Sadock BJ, Sadock VA,
+Ruiz P, eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry.
+9th ed. Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins;
+2009:3089.
+Porsteinsson AP, Grossberg GT, Mintzer J, Memantine MEM MD 12 Study
+Group. Memantine treatment in patients with mild to moderate
+Alzheimer’s disease already receiving a cholinesterase inhibitor: a
+randomized, double-blind, placebo-controlled trial. Curr Alzheimer Res.
+2008;5:83–89.
+Qassem A, Snow V, Cross JT Jr, Forcicea MA, Hopkins R Jr, Shekelle P,
+
+
+
+
+<<<PAGE 2288>>>
+
+Adelman A, Mehr D, Schellhase K, Campos-Outcalt D, Santagoida P,
+Owens DK. Current pharmacologic treatment of dementia: a clinical
+practice guideline from the American College of Physicians and the
+American Academy of Family Physicians. Ann Intern Med. 2008;148:370–
+378.
+Reisberg B, Doody R, Stoffer A, Schmidt F, Ferris S. A 24-week open label
+extension study on memantine in moderate to severe Alzheimer’s disease.
+Arch Neurol. 2006;63:49.
+Ritchie C, Zhinchin G. Low dose, high dose, or no dose: better prescribing of
+cholinesterase inhibitors for Alzheimer’s disease. Int Psychogeriatr.
+2013;25(4):511–515.
+Seltzer B. Donepezil: an update. Expert Opin Pharmacother. 2007;8:1011–
+1023.
+Wagle KC, Rowan PJ, Poon O-YI, Kunik ME, Taffet GE, Braun UK.
+Initiation of cholinesterase inhibitors in an inpatient setting. Am J
+Alzheimer Dis Other Demen. 2013;28(4):377–383.
+Drugs Used to Treat Sexual Disorders
+Chivers ML, Rosen RC. Phosphodiesterase type 5 inhibitors and female
+sexual response: faulty protocols or paradigms? J Sex Med. 2010;7(2 Pt
+2):858–872.
+Claes HI, Goldstein I, Althof SE, Berner MM, Cappelleri JC, Bushmakin
+AG, Symonds T, Schnetzler G. Understanding the effects of sildenafil
+treatment on erection maintenance and erection hardness. J Sex Med.
+2010;7(6):2184–2191.
+Hatzimouratidis K, Burnett AL, Hatzichristou D, McCullough AR, Montorsi
+F, Mulhall JP. Phosphodiesterase type 5 inhibitors in postprostatectomy
+erectile dysfunction: a critical analysis of the basic science rationale and
+clinical application. Eur Urol. 2009;55(2):334–347.
+Hosain G, Latini DM, Kauth M, Goltz HH, Helmer DA. Sexual dysfunction
+among male veterans returning from Iraq and Afghanistan: prevalence and
+correlates. J Sex Med. 2013;10(2):516–523.
+Khan AS, Sheikh Z, Khan S, Dwivedi R, Benjamin E. Viagra deafness—
+Sensorineural hearing loss and phosphodiesterase-5 inhibitors.
+Laryngoscope. 2011;121(5):
+1049–1054.
+
+
+
+
+<<<PAGE 3027>>>
+
+robust enhancer of CBT, suggesting that pharmacologically augmenting
+neural plasticity may be used to bolster psychological interventions.
+Fragile X mental retardation protein (FMRP), which is deficient in
+individuals with fragile X syndrome, appears to be synthesized locally within
+the spine during times of NMDA receptor activation and also plays a role in
+transporting specific mRNAs to the spine for translation. Notably, mice in
+which the FMRP gene has been inactivated through a null mutation, as well
+as patients with fragile X syndrome have fewer dendritic spines, the
+preponderance of which have an immature morphology. Loss of FMRP
+exaggerates responses of mGluR5, which stimulates dendritic protein
+synthesis, and treatment with an mGluR5 antagonist reverses the fragile-X–
+like phenotype in mice with the FMRP gene inactivated.
+EXCITOTOXICITY.
+
+In the early 1970s, it was shown that the systemic
+administration of large amounts of monosodium glutamate to immature
+animals resulted in the degeneration of neurons in brain regions where the
+BBB was deficient.
+Excitotoxicity is also implicated as a proximate cause of neuronal
+degeneration in Alzheimer disease. Most evidence points to the toxic
+consequences of aggregates of β-amyloid, especially β-amyloid1-42. The βamyloid fibrils depolarize neurons, resulting in loss of the Mg2+ block and
+enhanced NMDA receptor sensitivity to glutamate. The fibrils also impair
+glutamate transport into astrocytes, thereby increasing the extracellular
+concentration of glutamate. β-Amyloid directly promotes oxidative stress
+through inflammation that further contributes to neuronal vulnerability to
+glutamate. Thus, several mechanisms contribute to neuronal vulnerability to
+NMDA-receptor–mediated excitotoxicity in Alzheimer disease. Memantine, a
+recently approved treatment for mild to moderate Alzheimer disease, is a
+weak noncompetitive inhibitor of NMDA receptors. It reduces the tonic
+sensitivity of NMDA receptors to excitotoxicity but does not interfere with
+“phasic” neurotransmission, thereby attenuating neuronal degeneration in
+Alzheimer disease.
+Inhibitory Amino Acids: GABA. GABA is the major inhibitory
+neurotransmitter in the brain, where it is broadly distributed and occurs in
+millimolar concentrations. Given its physiologic effects and distributions, it is
+
+
+
+
+<<<PAGE 3686>>>
+
+Megacolon, 483
+Megaloblastic madness, 262
+Melancholia, 380
+Melatonin, 514, 1003
+circadian rhythms and, 1004
+for insomnia, 509–510
+function of, 1004
+human, 1004
+rhythms, 1002
+seasonality and, 1003
+Melatonin (N-acetyl-5-methoxytryptamine), 681
+Melatonin receptor agonists, 680–681
+Mellaril. See Thioridazine
+Memantine
+for dementia, 239
+dosage and clinical guidelines, 699
+drug interactions, 699
+pharmacologic actions, 698–699
+precautions and adverse reactions, 699
+therapeutic indications, 699
+Memory
+anatomy of, 932–934
+assessment of, 54
+in MSE, 10, 11t, 13t
+cortical organization of memory, 1023–1024
+frontal contributions to memory, 1028
+functions, assessment of, 1030–1032, 1031f
+long-term, 49
+older adults, 89
+memory systems, 1028
+new learning capacity, 1032
+priming, 1027–1028
+psychogenic amnesia, 1032–1033
+remote memory, 1032
+retrograde amnesia, 1026–1027
+self-reports, 1032
+short-term, 49
+
+

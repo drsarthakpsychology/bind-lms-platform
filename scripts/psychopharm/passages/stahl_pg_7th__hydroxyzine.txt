@@ -1,0 +1,1036 @@
+<<<PAGE 9>>>
+
+54 flurazepam
+55 fluvoxamine
+56 gabapentin
+57 galantamine
+58 guanfacine
+59 haloperidol
+60 hydroxyzine
+61 iloperidone
+62 imipramine
+63 isocarboxazid
+64 ketamine
+65 lamotrigine
+66 lemborexant
+67 levetiracetam
+68 levomilnacipran
+69 lisdexamfetamine
+70 lithium
+71 lofepramine
+72 lofexidine
+73 loflazepate
+74 lorazepam
+75 loxapine
+76 lumateperone
+77 lurasidone
+78 maprotiline
+79 memantine
+80 methylfolate (l)
+81 methylphenidate (d)
+
+
+
+
+<<<PAGE 1048>>>
+
+Hydroxyzine
+
+Therapeutics
+Brands
+Atarax
+Marax
+Vistaril
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: histamine receptor antagonist
+(H-RAn)
+Antihistamine (anxiolytic, hypnotic, antiemetic)
+Commonly Prescribed for
+(bold for FDA approved)
+Anxiety and tension associated with psychoneurosis
+Adjunct in organic disease states in which anxiety is manifested
+Pruritus due to allergic conditions
+
+
+
+
+<<<PAGE 1050>>>
+
+For short-term symptoms of anxiety –after a few weeks, discontinue
+use or use on an “as-needed” basis
+For chronic anxiety disorders, the goal of treatment is complete
+remission of symptoms as well as prevention of future relapses
+For chronic anxiety disorders, treatment most often reduces or even
+eliminates symptoms, but not a cure since symptoms can recur after
+medicine stopped
+For long-term symptoms of anxiety, consider switching to an SSRI
+or SNRI for long-term maintenance
+If long-term maintenance is necessary, continue treatment for 6
+months after symptoms resolve, and then taper dose slowly
+If symptoms reemerge, consider treatment with an SSRI or SNRI, or
+consider restarting hydroxyzine
+If It Doesn’t Work
+Consider switching to another agent or adding an appropriate
+augmenting agent
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Hydroxyzine can be used as an adjunct to SSRIs or SNRIs in
+treating anxiety disorders
+Tests
+
+
+
+
+<<<PAGE 1051>>>
+
+None for healthy individuals
+Hydroxyzine may cause falsely elevated urinary concentrations of
+17-hydroxycorticosteroids in certain lab tests (e.g., Porter-Silber
+reaction, Glenn-Nelson method)
+
+Side Effects
+How Drug Causes Side Effects
+Blocking histamine 1 receptors can cause sedation
+Notable Side Effects
+Dry mouth, sedation, tremor
+Life-Threatening or Dangerous Side Effects
+Rare convulsions (generally at high doses)
+Rare cardiac arrest, death (intramuscular formulation combined with
+CNS depressants)
+Bronchodilation
+Respiratory depression
+Weight Gain
+Reported but not expected
+Sedation
+
+
+
+
+<<<PAGE 1053>>>
+
+Oral liquid 10 mg/5 mL
+Intramuscular 25 mg/mL, 50 mg/mL
+How to Dose
+Oral dosing does not require titration
+Emergency intramuscular injection: initial 50–100 mg, repeat every
+4–6 hours as needed
+Hydroxyzine intramuscular injection should not be given in the
+lower or mid-third of the arm and should only be given in the
+deltoid area if it is well developed
+In adults, hydroxyzine intramuscular injections may be given in the
+upper outer quadrant of the buttock or in the mid-lateral thigh
+Dosing Tips
+Hydroxyzine may be administered intramuscularly initially, but
+should be changed to oral administration as soon as possible
+Tolerance usually develops to sedation, allowing higher dosing over
+time
+Overdose
+Sedation, hypotension, possible QTc prolongation
+Long-Term Use
+
+
+
+
+<<<PAGE 1054>>>
+
+Evidence of efficacy for up to 16 weeks
+Habit Forming
+No
+How to Stop
+Taper generally not necessary
+Pharmacokinetics
+Rapidly absorbed from gastrointestinal tract
+Mean elimination half-life approximately 20 hours
+Drug Interactions
+If hydroxyzine is taken in conjunction with another CNS depressant,
+the dose of the CNS depressant should be reduced by half
+If hydroxyzine is used pre- or post-operatively, the dose of narcotic
+can be reduced
+If anticholinergic agents are used with hydroxyzine, the
+anticholinergic effects may be enhanced
+Hydroxyzine may reverse the vasopressor effect of epinephrine;
+patients requiring a vasopressor agent should use norepinephrine or
+metaraminol instead
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 1055>>>
+
+Hydroxyzine should not be administered subcutaneously, intraarterially, or intravenously
+Do Not Use
+If patient is in early stages of pregnancy
+If there is a proven allergy to hydroxyzine
+
+Special Populations
+Renal Impairment
+Dosage adjustment may not be necessary
+Hepatic Impairment
+Dosage adjustment may not be necessary
+Cardiac Impairment
+Hydroxyzine may be used to treat anxiety associated with cardiac
+impairment
+Elderly
+Some patients may tolerate lower doses better
+Elderly patients may be more sensitive to sedative and
+anticholinergic effects
+Should be avoided in elderly patients with dementia
+
+
+
+
+<<<PAGE 1056>>>
+
+Children and Adolescents
+Anxiety, pruritus (6 and older): 50–100 mg/day in divided doses
+Anxiety, pruritus (under 6): 50 mg/day in divided doses
+Sedative: 0.6 mg/kg oral, 0.5 mg/lb intramuscular injection
+Small children should not receive hydroxyzine by intramuscular
+injection in the periphery of the upper quadrant of the buttock unless
+absolutely necessary because of risk of damage to the sciatic nerve
+Hyperactive children should be monitored for paradoxical effects
+Pregnancy
+
+✽ Hydroxyzine is contraindicated in early pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Hydroxyzine intramuscular injection can be used prepartum,
+reducing narcotic requirements by up to 50%
+Breast Feeding
+Unknown if hydroxyzine is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+
+
+
+<<<PAGE 1058>>>
+
+Anxiolytic actions may be proportional to sedating actions
+Hydroxyzine tablets are made with 1,1,1- trichloroethane, which
+destroys ozone
+Hydroxyzine by intramuscular injection may be used to treat
+agitation during alcohol withdrawal
+Hydroxyzine may not be as effective as benzodiazepines or newer
+agents in the management of anxiety
+
+Suggested Reading
+Diehn F , Tefferi A . Pruritus in polycythaemia vera: prevalence, laboratory
+correlates and management . Br J Haematol 2001 ;115 :619–21 .
+Ferreri M , Hantouche EG . Recent clinical trials of hydroxyzine in
+generalized anxiety disorder . Acta Psychiatr Scand Suppl 1998 ;393 :102–8
+.
+Guaiana G , Barbui C , Cipriani A. Hydroxyzine for generalised anxiety
+disorder . Cochrane Database Syst Rev 2010 ;8 (12 ):CD006815 .
+Paton DM , Webster DR . Clinical pharmacokinetics of H1-receptor
+antagonists (the antihistamines) . Clin Pharmacokinet 1985 ;10 :477–97 .
+
+
+
+
+<<<PAGE 1119>>>
+
+Barbiturates and hydroxyzine may increase the effects of ketamine;
+avoid combination
+Other Warnings/Precautions
+Use with caution in patients with current or past history of
+psychiatric disorder; epilepsy, glaucoma, hypertension, heart failure,
+ischemic heart disease, and a history of cerebrovascular accidents
+Do Not Use
+If patient has a condition in which an increase in blood pressure
+would be hazardous
+If patient has schizophrenia or another psychotic disorder
+If patient has a condition in which an increase in intraocular
+pressure would be hazardous
+If there is a proven allergy to ketamine
+
+Special Populations
+Renal Impairment
+Reduce dose for moderate impairment
+Should not be used in severe impairment
+Hepatic Impairment
+Dose reduction not necessary
+
+
+
+
+<<<PAGE 2569>>>
+
+Adzenys ER (amphetamine d,l), 45
+Adzenys XR-ODT (amphetamine d,l), 45
+agomelatine, 5
+AH3 N (hydroxyzine), 355
+Aiglonyl (sulpiride), 741
+Alased (haloperidol), 347
+Albium (lorazepam), 437
+Aldazine (thioridazine), 759
+Alemoxan (clozapine), 191
+Alepam (oxazepam), 569
+Alertec (modafinil), 521
+Aleviatin (zonisamide), 875
+Alimoral (sulpiride), 741
+Aliseum (diazepam), 229
+Allegron (nortriptyline), 551
+allopregnanolone (brexanolone), 99
+Almazine (lorazepam), 437
+Aloperidin (haloperidol), 347
+Aloperidin Decanoate (haloperidol), 347
+Alpralid (alprazolam), 11
+Alpraz (alprazolam), 11
+alprazolam, 11
+alprazolam XR, 11
+Alprox (alprazolam), 11
+Alti-Alprazolam (alprazolam), 11
+Alti-Clonazepam (clonazepam), 173
+Alti-Desipramine (desipramine), 207
+Alti-Doxepin (doxepin), 255
+
+
+
+
+<<<PAGE 2572>>>
+
+Anxidin (clorazepate), 185
+Anxiolit (oxazepam), 569
+Anxiolit Plus (oxazepam), 569
+Anxiron (buspirone), 123
+Apaurin (diazepam), 229
+Apilepsin (valproate), 829
+Aplenzin (bupropion), 117
+Apo-Alprax (alprazolam), 11
+Apo-Amitriptyline (amitriptyline), 25
+Apo-Buspirone (buspirone), 123
+Apo-Carbamazepine (carbamazepine), 131
+Apo-Clomipramine (clomipramine), 165
+Apo-Clonazepam (clonazepam), 173
+Apo-Clonidine (clonidine), 179
+Apo-Clorazepate (clorazepate), 185
+Apo-Desipramine (desipramine), 207
+Apo-Diazepam (diazepam), 229
+Apo-Doxepin (doxepin), 255
+Apo-Fluoxetine (fluoxetine), 301
+Apo-Fluphenazine (fluphenazine), 313
+Apo-Haloperidol (haloperidol), 347
+Apoh-Hydroxyzine (hydroxyzine), 355
+Apo-Imipramine (imipramine), 367
+Apollonset (diazepam), 229
+Apo-Lorazem (lorazepam), 437
+Aponal (doxepin), 255
+Apo-Oxepam (oxazepam), 569
+Apo-Perphenazine (perphenazine), 607
+
+
+
+
+<<<PAGE 2573>>>
+
+Apo-Selegiline (selegiline), 705
+Apo-Thioridazine (thioridazine), 759
+Apo-Trazodone (trazodone), 793
+Apo-Triazo (triazolam), 799
+Apo-Trifluoperazine (trifluoperazine), 803
+Apo-Trimip (trimipramine), 817
+Apozepam (diazepam), 229
+Apo-Zopiclone (zopiclone), 879
+Aptensio XR (methylphenidate d,l), 487
+Aremis (sertraline), 721
+Aricept (donepezil), 243
+Arima (moclobemide), 515
+Aripax (lorazepam), 437
+aripiprazole, 53
+Aristada (aripiprazole), 53
+Aristada Initio (aripiprazole injection), 53
+Arminol (sulpiride), 741
+armodafinil, 65
+Arol (moclobemide), 515
+Aropax (paroxetine), 593
+Artane (trihexyphenidyl), 809
+asenapine, 71
+Asendin (amoxapine), 33
+Asendis (amoxapine), 33
+Asepin (triazolam), 799
+Aspam (diazepam), 229
+Atarax (hydroxyzine), 355
+Atarviton (diazepam), 229
+
+
+
+
+<<<PAGE 2574>>>
+
+Atensine (diazepam), 229
+Aterax (hydroxyzine), 355
+Athymil (mianserin), 495
+Ativan (lorazepam), 437
+atomoxetine, 79
+Atretol (carbamazepine), 131
+Audilex (clorazepate), 185
+Audium (diazepam), 229
+Aurorix (moclobemide), 515
+Austedo (deutetrabenazine), 221
+Autal (acamprosate), 1
+Avant (haloperidol), 347
+Aventyl (nortriptyline), 551
+Avoxin (fluvoxamine), 325
+Axona (caprylidene), 127
+Axoren (buspirone), 123
+Azene (clorazepate), 185
+Azepa (carbamazepine), 131
+Azepal (carbamazepine), 131
+Azona (trazodone), 793
+Azor (alprazolam), 11
+Azutranquil (oxazepam), 569
+Barclyd (clonidine), 179
+Barhemsys (amisulpride), 17
+Beconerv neu (flurazepam), 321
+Belbuca (buprenorphine), 111
+Beldin (diphenhydramine), 235
+Belivon (risperidone), 687
+
+
+
+
+<<<PAGE 2582>>>
+
+Dexamphetamine (d-amphetamine), 39
+Dexamphetamine sulfate (d-amphetamine), 39
+Dexedrine (d-amphetamine), 39
+Dexedrine Spansules (d-amphetamine), 39
+Dexmethylphenidate (d-methylphenidate), 481
+dextromethorphan, 221
+Dextro Stat (d-amphetamine), 39
+Diaceplex (diazepam), 229
+Diaceplex simple (diazepam), 229
+Diapam (diazepam), 229
+Diaquel (diazepam), 229
+Diastat (diazepam), 229
+Diazemuls (diazepam), 229
+diazepam, 229
+Dibenil (diphenhydramine), 235
+Dicepin B6 (diazepam), 229
+Digton (sulpiride), 741
+Diligan (hydroxyzine), 355
+Dinalexin (fluoxetine), 301
+Diphen (diphenhydramine), 235
+diphenhydramine, 235
+Dipromal (valproate), 829
+Discimer (trifluoperazine), 803
+Distedon (diazepam), 229
+disulfiram, 239
+divalproex (valproate), 829
+Divial (lorazepam), 437
+Dixarit (clonidine), 179
+
+
+
+
+<<<PAGE 2585>>>
+
+Effexor (venlafaxine), 841
+Effexor XR (venlafaxine), 841
+Effiplen (buspirone), 123
+Egibren (selegiline), 705
+Eglonyl (sulpiride), 741
+Elavil (amitriptyline), 25
+Elavil Plus (amitriptyline), 25
+Eldepryl (selegiline), 705
+Elenium (chlordiazepoxide), 147
+Elepsia XR (levetiracetam), 399
+Eliwel (amitriptyline), 25
+Ellefore (desvenlafaxine), 215
+Elmendos (lamotrigine), 387
+Elopram (citalopram), 159
+Elperil (thioridazine), 759
+Elroquil N (hydroxyzine), 355
+Elvanse (lisdexamfetamine), 409
+Emdalen (lofepramine), 421
+Emsam (selegiline), 705
+EnBrace HR (l-methylfolate), 477
+Endep (amitriptyline), 25
+Enimon (sulpiride), 741
+Enlyte (l-methylfolate), 477
+Epial (carbamazepine), 131
+Epilim (valproate), 829
+Epitol (carbamazepine), 131
+Epitomax (topiramate), 781
+Equetro (carbamazepine), 131
+
+
+
+
+<<<PAGE 2591>>>
+
+Herphonal (trimipramine), 817
+Hetlioz (tasimelteon), 751
+Hexafene (hydroxyzine), 355
+Hexalid (diazepam), 229
+Hibanil (chlorpromazine), 153
+Hibernal (chlorpromazine), 153
+Hipnodane (quazepam), 663
+Hipnosedon (flunitrazepam), 297
+Histilos (hydroxyzine), 355
+Hopacem (mianserin), 495
+Horizant (gabapentin), 331
+Huberplex (chlordiazepoxide), 147
+Hydoic acid (valproate), 829
+Hydophen (clomipramine), 165
+Hydramine (diphenhydramine), 235
+Hydroxyzin (hydroxyzine), 355
+hydroxyzine, 355
+Hydroxyzinum (hydroxyzine), 355
+Hypam (triazolam), 799
+Hypnocalm (flunitrazepam), 297
+Hypnodorm (flunitrazepam), 297
+Hypnor (flunitrazepam), 297
+Hypnorex Retard (lithium), 415
+Hypnovel (midazolam), 499
+Idom (dothiepin), 249
+Iktoviril (clonazepam), 173
+Ilman (flunitrazepam), 297
+iloperidone, 359
+
+
+
+
+<<<PAGE 2592>>>
+
+Imavate (imipramine), 367
+Imipramiin (imipramine), 367
+Imipramin (imipramine), 367
+imipramine, 367
+Imovane (zopiclone), 879
+Inadalprem (lorazepam), 437
+Inderal (propranolol), 653
+Inderal LA (propranolol), 653
+Ingrezza (valbenazine), 825
+InnoPran XL (propranolol), 653
+Insom (flunitrazepam), 297
+Intermezzo (zolpidem), 871
+Intuniv (guanfacine), 343
+Invega (paliperidone), 581
+Invega Sustenna (paliperidone injectable), 581
+Invega Trinza (paliperidone), 581
+Ipnovel (midazolam), 499
+Iremo Sedofren (trifluoperazine), 803
+Iremofar (hydroxyzine), 355
+isocarboxazid, 375
+Ivadal (zolpidem), 871
+Ixel (milnacipran), 503
+Janimine (imipramine), 367
+Januar (oxazepam), 569
+Jardin (dothiepin), 249
+Jatroneural (trifluoperazine), 803
+Jatrosom (tranylcypromine), 787
+Jatrosom N (tranylcypromine), 787
+
+
+
+
+<<<PAGE 2598>>>
+
+Majorpin (zotepine), 883
+Mallorol (thioridazine), 759
+Maludil (maprotiline), 465
+Mandro-Zep (diazepam), 229
+Manerix (moclobemide), 515
+Maniprex (lithium), 415
+Mapro Gry (maprotiline), 465
+Mapro Tablinen (maprotiline), 465
+Maprolu (maprotiline), 465
+Maprolu-50 (maprotiline), 465
+Maprostad (maprotiline), 465
+Maprotibene (maprotiline), 465
+Maprotilin (maprotiline), 465
+maprotiline, 465
+Marax (hyroxyzine), 355
+Mareen 50 (doxepin), 255
+Mariastel (sulpiride), 741
+Marplan (isocarboxazid), 375
+Martimil (nortriptyline), 551
+Masmoran (hydroxyzine), 355
+Maveral (fluvoxamine), 325
+Maximed (protriptyline), 657
+Maxivalet (amitriptyline), 25
+Mazepine (carbamazepine), 131
+Medipam (diazepam), 229
+Medopam (oxazepam), 569
+Mefurine (thioridazine), 759
+Megaphen (chlorpromazine), 153
+
+
+
+
+<<<PAGE 2601>>>
+
+Moditen Depot (fluphenazine), 313
+Moditen Enanthate (fluphenazine), 313
+Modium (lorazepam), 437
+molindone, 527
+Molipaxin (trazodone), 793
+Motipress (nortriptyline), 551
+Motival (nortriptyline), 551
+Motivan (paroxetine), 593
+Movergan (selegiline), 705
+Moverin (selegiline), 705
+Moxadil (amoxapine), 33
+Multipax (hydroxyzine), 355
+Multum (chlordiazepoxide), 147
+Murelax (oxazepam), 569
+Mutan (fluoxetine), 301
+Mydayis (amphetamine d, l), 45
+Mylproin (valproate), 829
+Mysimba (naltrexone/bupropion), 541
+Nailin (nortriptyline), 551
+Nalin (nortriptyline), 551
+nalmefene, 533
+naloxone with buprenorphine, 111
+naltrexone, 537
+naltrexone/bupropion, 541
+Namenda (memantine), 473
+Namenda XR (memantine XR), 473
+Namzaric (memantine/donepezil combination), 243 , 473
+Nansius (clorazepate), 185
+
+
+
+
+<<<PAGE 2602>>>
+
+Napoton (chlordiazepoxide), 147
+Narcozep (flunitrazepam), 297
+Nardelzine (phenelzine), 613
+Nardil (phenelzine), 613
+Narol (buspirone), 123
+Navane (thiothixene), 765
+Navicalm (hydroxyzine), 355
+Nefadar (nefazodone), 545
+nefazodone, 545
+Nefirel (nefazodone), 545
+Neo Gnostoride (chlordiazepoxide), 147
+Neodorm SP (temazepam), 755
+Neoride (sulpiride), 741
+Neurol (alprazolam), 11
+Neurolepsin (lithium), 415
+Neurolithium (lithium), 415
+Neurolytril (diazepam), 229
+Neurontin (gabapentin), 331
+Neurotol (carbamazepine), 131
+Neurotop (carbamazepine), 131
+Nevropromazine (chlorpromazine), 153
+Nicoflox (fluoxetine), 301
+Nifalin (lorazepam), 437
+Nilium (flunitrazepam), 297
+Niotal (zolpidem), 871
+Nipolept (zotepine), 883
+Nivalin (galantamine), 337
+Noam (diazepam), 229
+
+
+
+
+<<<PAGE 2604>>>
+
+Novazam (diazepam), 229
+Novhepar (lorazepam), 437
+Novo-Alprazol (alprazolam), 11
+Novo-Carbamaz (carbamazepine), 131
+Novo-Clonidine (clonodine), 179
+Novo-Clopamine (clomipramine), 165
+Novo-Clopate (clorazepate), 185
+Novodorm (triazolam), 799
+Novo-Doxepin (doxepin), 255
+Novo-fluoxetine (fluoxetine), 301
+Novo-Hydroxyzine (hydroxyzine), 355
+Novo-Lorazem (lorazepam), 437
+Novo-Maprotiline (maprotiline), 465
+Novo-Peridol (haloperidol), 347
+Novoprotect (amitriptyline), 25
+Novo-Selegine (selegiline), 705
+Novo-Trazodone (trazodone), 793
+Novo-Trimipramine (trimipramine), 817
+Novo-Triolam (triazolam), 799
+Novo-Valproic (valproate), 829
+Nozepams (oxazepam), 569
+Nu-Alpraz (alprazolam), 11
+Nu-Carbamazepine (carbamazepine), 131
+Nu-Clonidine (clonidine), 179
+Nuctalon (estazolam), 281
+Nuedexta (dextromethorphan with quinidine), 225
+Nufarol (sulpiride), 741
+Nulans (lorazepam), 437
+
+
+
+
+<<<PAGE 2609>>>
+
+PMS-Fluphenazine Decanoate (fluphenazine), 313
+PMS-Haloperidol (haloperidol), 347
+PMS-Hydroxyzine (hydroxyzine), 355
+PMS-Lithium (lithium), 415
+PMS-Methylphenidate (d,l-methylphenidate), 487
+PMS-Trazodone (trazodone), 793
+Podium (diazepam), 229
+Poldoxin (doxepin), 255
+Polysal (amitriptyline), 25
+Portal (fluoxetine), 301
+Pragmarel (trazodone), 793
+Praxiten (oxazepam), 569
+prazosin, 643
+pregabalin, 647
+Priadel (lithium), 415
+Prisdal (citalopram), 159
+Prisma (mianserin), 495
+Pristiq (desvenlafaxine), 215
+Probuphine (buprenorphine), 111
+ProCentra (amphetamine d), 39
+Pro Dorm (lorazepam), 437
+Procythol (selegiline), 705
+Prolixin (fluphenazine), 313
+Prolixin Decanoate (fluphenazine), 313
+Prolixin Enanthate (fluphenazine), 313
+Prolongatum (fluphenazine), 313
+Pronervon T (temazepam), 755
+Propam (diazepam), 229
+
+
+
+
+<<<PAGE 2610>>>
+
+Propaphenin (chlorpromazine), 153
+propranolol, 653
+Propymal (valproate), 829
+Prosedar (quazepam), 663
+ProSom (estazolam), 281
+Prosulpin (sulpiride), 741
+Prothiaden (dothiepin), 249
+Protiaden (dothiepin), 249
+protriptyline, 657
+Provigil (modafinil), 521
+Proxam (oxazepam), 569
+Prozac (fluoxetine), 301
+Prozil (chlorpromazine), 153
+Prozin (chlorpromazine), 153
+Prozyn (fluoxetine), 301
+Pryleugan (imipramine), 367
+Psicocen (sulpiride), 741
+Psicofar (chlordiazepoxide), 147
+Psiquiwas (oxazepam), 569
+Psychopax (diazepam), 229
+Psymoin (maprotiline), 465
+PT-141 (bremelanotide), 95
+Punktyl (lorazepam), 437
+Purata (oxazepam), 569
+Q-Med Hydroxyzine (hydroxyzine), 355
+Qsymia (phentermine/topiramate), 619
+Quait (lorazepam), 437
+Quastil (sulpiride), 741
+
+
+
+
+<<<PAGE 2617>>>
+
+sodium oxybate, 733
+Softramal (clorazepate), 185
+Solarix (moclobemide), 515
+Solian (amisulpride), 17
+Solidon (chlorpromazine), 153
+Solis (diazepam), 229
+solriamfetol, 737
+Somagerol (lorazepam), 437
+Somapam (temazepam), 755
+Somatarax (hydroxyzine), 355
+Sominex (diphenhydramine), 235
+Somniton (triazolam), 799
+Somnium (lorazepam), 437
+Somnol (flurazepam), 321
+Somnubene (flunitrazepam), 297
+Sonata (zaleplon), 859
+Songar (triazolam), 799
+Sovigen (zolpidem), 871
+Spasmilan (buspirone), 123
+Spasmo Praxiten (oxazepam), 569
+Sporalon (trifluoperazine), 803
+Spravato (esketamine), 275
+Spritam (levetiracetam), 399
+Stablon (tianeptine), 777
+Stalleril (thioridazine), 759
+Stamoneurol (sulpiride), 741
+Staurodorm (flurazepam), 321
+Staurodorm Neu (flurazepam), 321
+
+
+
+
+<<<PAGE 2624>>>
+
+Tryptizol (amitriptyline), 25
+Tydamine (trimipramine), 817
+Tymelyt (lofepramine), 421
+Ucerax (hydroxyzine), 355
+Umbrium (diazepam), 229
+Unilan (alprazolam), 11
+Unisedil (diazepam), 229
+Unitranxene (clorazepate), 185
+U-Pan (lorazepam), 437
+Uskan (oxazepam), 569
+Valaxona (diazepam), 229
+Valclair (chlordiazepoxide), 147
+valbenazine, 825
+Valclair (diazepam), 229
+Valcote 250 (valproate), 829
+Valdorm (flurazepam), 321
+Valdoxan (agomelatine), 5
+Valeans (alprazolam), 11
+Valinil (diazepam), 229
+Valiquid (diazepam), 229
+Valiquid 0.3 (diazepam), 229
+Valirem (sulpiride), 741
+Valium (diazepam), 229
+Valocordin Diazepam (diazepam), 229
+Valparine (valproate), 829
+Valpro (valproate), 829
+valproate, 829
+
+
+
+
+<<<PAGE 2625>>>
+
+valproic acid (valproate), 829
+valpromide (valproate), 829
+Valsera (flunitrazepam), 297
+Vandral (venlafaxine), 841
+varenicline, 837
+Vatran (diazepam), 229
+Venefon (imipramine), 367
+venlafaxine, 841
+venlafaxine XR, 841
+Versacloz (clozapine), 191
+Versed (midazolam), 499
+Vertigo (sulpiride), 741
+Vesadol (haloperidol), 347
+Vesalium (haloperidol), 347
+Vesparax (hydroxyzine), 355
+Vesparax mite (hydroxyzine), 355
+Vesparax Novum (hydroxyzine), 355
+Viagra (sildenafil), 729
+Vicks Formula 44 (diphenhydramine), 235
+Vigiten (lorazepam), 437
+Viibryd (vilazodone), 847
+vilazodone, 847
+Vincosedan (diazepam), 229
+Visergil (thioridazine), 759
+Vistaril (hydroxyzine), 355
+Vivactil (protriptyline), 657
+Vival (diazepam), 229
+Vivapryl (selegiline), 705
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2642>>>
+
+prazosin , 643
+propranolol , 653
+Hypoactive sexual desire disorder
+bremelanotide , 95
+flibanserin , 289
+Insomnia
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+clomipramine, 165
+clonazepam, 173
+desipramine, 207
+diazepam, 229
+diphenhydramine , 235
+dothiepin, 249
+doxepin , 255
+estazolam , 281
+eszopiclone , 285
+flunitrazepam, 297
+flurazepam , 321
+hydroxyzine, 355
+imipramine, 367
+lemborexant , 395
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+
+
+
+
+<<<PAGE 2645>>>
+
+sodium oxybate, 853
+Nausea/vomiting
+chlorpromazine , 153
+hydroxyzine , 355
+perphenazine , 607
+Neuropathic pain/chronic pain
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin, 255
+duloxetine , 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+
+
+
+
+<<<PAGE 2650>>>
+
+diazepam , 229
+hydroxyzine , 355
+lorazepam , 437
+midazolam , 499
+Pruritus
+doxepin, 255
+hydroxyzine , 355
+Pseudobulbar affect
+dextromethorphan (with quinidine) , 225
+Psychosis
+alprazolam (adjunct), 11
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine , 313
+haloperidol , 347
+iloperidone, 359
+
+
+
+
+<<<PAGE 2654>>>
+
+paliperidone , 581
+perospirone, 601
+perphenazine , 607
+pipothiazine, 633
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine , 759
+thiothixene , 765
+trifluoperazine , 803
+valproate (divalproex) (adjunct), 829
+ziprasidone , 863
+zotepine, 883
+zuclopenthixol, 889
+Seasonal affective disorder
+bupropion , 117
+Sedation-induction
+hydroxyzine , 355
+ketamine, 383
+midazolam , 499
+Seizure disorders
+carbamazepine , 131
+clonazepam , 173
+clorazepate (adjunct), 185
+diazepam , 229
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+

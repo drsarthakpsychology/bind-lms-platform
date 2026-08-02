@@ -1,0 +1,769 @@
+<<<PAGE 10>>>
+
+82 methylphenidate (d,l)
+83 mianserin
+84 midazolam
+85 milnacipran
+86 mirtazapine
+87 moclobemide
+88 modafinil
+89 molindone
+90 nalmefene
+91 naltrexone
+92 naltrexone/bupropion
+93 nefazodone
+94 nortriptyline
+95 olanzapine
+96 oxazepam
+97 oxcarbazepine
+98 paliperidone
+99 paroxetine
+100 perospirone
+101 perphenazine
+102 phenelzine
+103 phentermine/topiramate
+104 pimavanserin
+105 pimozide
+106 pipothiazine
+107 pitolisant
+108 prazosin
+109 pregabalin
+
+
+
+
+<<<PAGE 1500>>>
+
+Moclobemide
+
+Therapeutics
+Brands
+Aurorix
+Arima
+Manerix
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: serotonin, norepinephrine, dopamine reversible enzyme inhibitor (SNRevEI)
+Reversible inhibitor of monoamine oxidase A (MAO-A) (RIMA)
+Commonly Prescribed for
+(bold for FDA approved)
+Depression
+Social anxiety disorder
+How the Drug Works
+Reversibly blocks MAO-A from breaking down norepinephrine, dopamine, and serotonin
+This boosts noradrenergic and serotonergic neurotransmission
+MAO-A inhibition predominates unless significant concentrations of monoamines build up (e.g., due to
+dietary tyramine), in which case MAO-A inhibition is theoretically reversed
+How Long Until It Works
+Onset of therapeutic actions usually not immediate, but often delayed 2–4 weeks following adequate dosing
+If it is not working within 6–8 weeks, it may require a dosage increase or it may not work at all
+May continue to work for many years to prevent relapse of symptoms
+If It Works
+
+
+
+
+<<<PAGE 1501>>>
+
+The goal of treatment is complete remission of current symptoms as well as prevention of future relapses
+Treatment most often reduces or even eliminates symptoms, but not a cure since symptoms can recur after
+medicine stopped
+Continue treatment until all symptoms are gone (remission)
+Once symptoms are gone, continue treating for 1 year for the first episode of depression
+For second and subsequent episodes of depression, treatment may need to be indefinite
+Use in anxiety disorders may also need to be indefinite
+If It Doesn’t Work
+Many patients have only a partial response where some symptoms are improved but others persist
+(especially insomnia, fatigue, and problems concentrating)
+Other patients may be nonresponders, sometimes called treatment-resistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid condition (e.g., medical illness, substance
+abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy due to activation of latent or underlying
+bipolar disorder, and require antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment Resistance
+
+✽ Augmentation of MAOIs has not been systematically studied, and this is something for the expert, to be
+done with caution and with careful monitoring, but may be somewhat less risky with moclobemide than with
+other MAOIs
+
+✽ A stimulant such as d-amphetamine or methylphenidate (with caution; may activate bipolar disorder and
+suicidal ideation)
+Lithium
+Mood-stabilizing anticonvulsants
+Atypical antipsychotics (with special caution for those agents with monoamine reuptake blocking
+properties, such as lumateperone, ziprasidone, and zotepine)
+Tests
+Patients should be monitored for changes in blood pressure
+
+Side Effects
+
+
+
+
+<<<PAGE 1503>>>
+
+Dosing and Use
+Usual Dosage Range
+300–600 mg/day
+Dosage Forms
+Tablet 100 mg scored, 150 mg scored
+How to Dose
+Initial 300 mg/day in 3 divided doses after a meal; increase dose gradually; maximum dose generally 600
+mg/day; minimum dose generally 150 mg/day
+Dosing Tips
+
+✽ At higher doses, moclobemide also inhibits MAO-B and thereby loses its selectivity for MAO-A, with
+uncertain clinical consequences
+
+✽ Taking moclobemide after meals as opposed to before may minimize the chances of interactions with
+tyramine
+May be less toxic in overdose than TCAs and older MAOIs
+Clinical duration of action may be longer than biological half-life and allow twice daily dosing in some
+patients, or even once daily dosing, especially at lower doses
+Overdose
+Agitation, aggression, behavioral disturbances, gastrointestinal irritation
+Long-Term Use
+MAOIs may lose efficacy long-term
+Habit Forming
+Dependence to MAOIs reported but rare
+How to Stop
+Taper not generally necessary
+Pharmacokinetics
+Partially metabolized by CYP450 2C19 and 2D6
+Inactive metabolites
+
+
+
+
+<<<PAGE 1504>>>
+
+Elimination half-life approximately 1–4 hours
+Clinical duration of action at least 24 hours
+Drug Interactions
+Tramadol (serotonin reuptake inhibitor) may increase the risk of seizures in patients taking an MAOI
+Can cause a fatal “serotonin syndrome” when combined with drugs that block serotonin reuptake, so do not
+use with a serotonin reuptake inhibitor or for 5 half-lives after stopping the serotonin reuptake inhibitor
+(see Table 1 after Pearls)
+Hypertensive crisis with headache, intracranial bleeding, and death may result from combining MAOIs
+with sympathomimetic drugs (e.g., amphetamines, methylphenidate, cocaine, dopamine, epinephrine,
+norepinephrine)
+Do not combine with another MAOI, alcohol, or guanethidine
+Adverse drug reactions can result from combining MAOIs with tricyclic/tetracyclic antidepressants and
+related compounds, including carbamazepine, cyclobenzaprine, and mirtazapine, and should be avoided
+except by experts
+MAOIs in combination with spinal anesthesia may cause combined hypotensive effects
+Combination of MAOIs and CNS depressants may enhance sedation and hypotension
+Cimetidine may increase plasma concentrations of moclobemide
+Moclobemide may enhance the effects of NSAIDs such as ibuprofen
+Risk of hypertensive crisis may be increased if moclobemide is used concurrently with levodopa or other
+dopaminergic agents
+Table 1. Drugs contraindicated due to risk of serotonin syndrome/toxicity
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+SSRIs
+
+MDMA (ecstasy)
+
+Meperidine
+
+Non-subcutaneous
+sumatriptan
+
+SNRIs
+
+Cocaine
+
+Tramadol
+
+Chlorpheniramine
+
+Clomipramine
+
+Methamphetamine
+
+Methadone
+
+Brompheniramine
+
+Imipramine
+
+St. John’s wort
+
+High-dose or injected
+.amphetamine
+
+Dextromethorphan
+Lumateperone
+Ziprasidone
+
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 1505>>>
+
+Use still requires a low-tyramine diet, although more tyramine may be tolerated with moclobemide than
+with other MAOIs before eliciting a hypertensive reaction (see Table 2 after Pearls)
+Patient and prescriber must be vigilant to potential interactions with any drug, including antihypertensives
+and over-the-counter cough/cold preparations
+Over-the-counter medications to avoid include cough and cold preparations, including those containing
+dextromethorphan (serotonin reuptake inhibitor), nasal decongestants (tablets, drops, or spray), hay-fever
+medications, sinus medications, asthma inhalant medications, anti-appetite medications, weight reducing
+preparations, “pep” pills (see Table 3 after Pearls)
+Use cautiously in hypertensive patients
+Moclobemide is not recommended for use in patients who cannot be monitored closely
+Table 2. Dietary guidelines for patients taking MAOIs*
+Foods to avoid**
+
+Foods allowed
+
+Dried, aged, smoked, fermented, spoiled, or
+improperly stored meat, poultry, and fish
+
+Fresh or processed meat, poultry, and fish; properly
+stored pickled or smoked fish
+
+Broad bean pods
+
+All other vegetables
+
+Aged cheeses
+
+Processed cheese slices, cottage cheese, ricotta cheese,
+yogurt, cream cheese
+
+Tap and unpasteurized beer
+
+Canned or bottled beer and alcohol
+
+Marmite
+
+Brewer’s and baker’s yeast
+
+Banana peel
+
+Bananas, avocados, raspberries
+
+Sauerkraut, kimchee
+
+Peanuts
+
+Soy products/tofu
+Tyramine-containing nutritional supplement
+* Consult up-to-date listing of tyramine content, as most foods now have low tyramine amounts
+** Not necessary for 6 mg transdermal or low-dose oral selegiline
+Table 3. Drugs that boost norepinephrine: should only be used with caution with MAOIs
+Use With Caution:
+
+
+
+
+<<<PAGE 1506>>>
+
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phente
+
+Pseudoephedrine
+
+MethylphenidateCocaineMethamphetamineModafinilArmodafinil
+
+NRIsNDRIs
+
+Local a
+contain
+vasoco
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is in an acute confusional state
+If patient has pheochromocytoma or thyrotoxicosis
+If there is a proven allergy to moclobemide
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Plasma concentrations are increased
+May require one-half to one-third of usual adult dose
+Cardiac Impairment
+Cardiac impairment may require lower than usual adult dose
+Patients with angina pectoris or coronary artery disease should limit their exertion
+Elderly
+Elderly patients may have greater sensitivity to adverse effects, but many tolerate MAOIs
+
+
+
+
+<<<PAGE 1508>>>
+
+Pearls
+MAOIs are generally reserved for third- or fourth-line use after SSRIs, SNRIs, and combinations of newer
+antidepressants have failed
+Patient should be advised not to take any prescription or over-the-counter drugs without consulting his/her
+doctor because of possible drug interactions with the MAOI
+Headache is often the first symptom of hypertensive crisis
+Moclobemide has a much reduced risk of interactions with tyramine than nonselective MAOIs
+Especially at higher doses of moclobemide, foods with high tyramine need to be avoided (see Table 2 )
+The rigid dietary restrictions may reduce compliance
+
+✽ May be a safer alternative to classical irreversible nonselective MAO-A and MAO-B inhibitors with less
+propensity for tyramine and drug interactions and hepatotoxicity (although not entirely free of interactions)
+May not be as effective at low doses, and may have more side effects at higher doses
+Moclobemide’s profile at higher doses may be more similar to classical MAOIs
+
+✽ Myths about the danger of dietary tyramine can be exaggerated, but prohibitions against concomitant
+drugs often not followed closely enough
+Orthostatic hypotension, insomnia, and sexual dysfunction are often the most troublesome common side
+effects
+
+✽ MAOIs should be for the expert, especially if combining with agents of potential risk (e.g., stimulants,
+trazodone, TCAs)
+
+✽ MAOIs should not be neglected as therapeutic agents for the treatment-resistant
+For treatment-resistant patients, experts can give a tricyclic/tetracyclic antidepressant other than
+clomipramine or imipramine simultaneously with an MAOI for patients who fail to respond to numerous
+other antidepressants
+Use of MAOIs with clomipramine is always prohibited because of the risk of serotonin syndrome and
+death due to serotonin reuptake inhibition
+Amoxapine may be a preferred trycyclic/tetracyclic antidepressant to combine with an MAOI in heroic
+cases due to its theoretically protective 5HT2A antagonist properties
+If this option is elected, start the MAOI with the tricyclic/tetracyclic antidepressant simultaneously at low
+doses after appropriate drug washout, then alternately increase doses of these agents every few days to a
+week as tolerated
+Although very strict dietary and concomitant drug restrictions must be observed to prevent hypertensive
+crises and serotonin syndrome, the most common side effects of MAOI and tricyclic/tetracyclic
+combinations may be weight gain and orthostatic hypotension
+
+
+
+
+<<<PAGE 2568>>>
+
+Index by Drug Name
+(trade names and generic names)
+Abilify (aripiprazole), 53
+Abilify Discmelt (aripiprazole), 53
+Abilify Maintena (aripiprazole), 53
+Abilify MyCite (aripiprazole), 53
+Absenor (valproate), 829
+acamprosate, 1
+Aclonium (gabapentin), 331
+ACT Zopiclone (zopiclone), 879
+Acuilix (moclobemide), 515
+Adapin (doxepin), 255
+Adasuve (loxapine), 443
+Adderrall (d,l-amphetamine), 45
+Adderrall XR (d,l-amphetamine), 45
+Addyi (flibanserin), 289
+Adepil (amitriptyline), 25
+Adhansia XR (d, l-methylphenidate), 487
+Adipress (clonidine), 179
+Adofen (fluoxetine), 301
+Adumbran (oxazepam), 569
+Aduvanz (lisdexamfetamine), 409
+
+
+
+
+<<<PAGE 2573>>>
+
+Apo-Selegiline (selegiline), 705
+Apo-Thioridazine (thioridazine), 759
+Apo-Trazodone (trazodone), 793
+Apo-Triazo (triazolam), 799
+Apo-Trifluoperazine (trifluoperazine), 803
+Apo-Trimip (trimipramine), 817
+Apozepam (diazepam), 229
+Apo-Zopiclone (zopiclone), 879
+Aptensio XR (methylphenidate d,l), 487
+Aremis (sertraline), 721
+Aricept (donepezil), 243
+Arima (moclobemide), 515
+Aripax (lorazepam), 437
+aripiprazole, 53
+Aristada (aripiprazole), 53
+Aristada Initio (aripiprazole injection), 53
+Arminol (sulpiride), 741
+armodafinil, 65
+Arol (moclobemide), 515
+Aropax (paroxetine), 593
+Artane (trihexyphenidyl), 809
+asenapine, 71
+Asendin (amoxapine), 33
+Asendis (amoxapine), 33
+Asepin (triazolam), 799
+Aspam (diazepam), 229
+Atarax (hydroxyzine), 355
+Atarviton (diazepam), 229
+
+
+
+
+<<<PAGE 2574>>>
+
+Atensine (diazepam), 229
+Aterax (hydroxyzine), 355
+Athymil (mianserin), 495
+Ativan (lorazepam), 437
+atomoxetine, 79
+Atretol (carbamazepine), 131
+Audilex (clorazepate), 185
+Audium (diazepam), 229
+Aurorix (moclobemide), 515
+Austedo (deutetrabenazine), 221
+Autal (acamprosate), 1
+Avant (haloperidol), 347
+Aventyl (nortriptyline), 551
+Avoxin (fluvoxamine), 325
+Axona (caprylidene), 127
+Axoren (buspirone), 123
+Azene (clorazepate), 185
+Azepa (carbamazepine), 131
+Azepal (carbamazepine), 131
+Azona (trazodone), 793
+Azor (alprazolam), 11
+Azutranquil (oxazepam), 569
+Barclyd (clonidine), 179
+Barhemsys (amisulpride), 17
+Beconerv neu (flurazepam), 321
+Belbuca (buprenorphine), 111
+Beldin (diphenhydramine), 235
+Belivon (risperidone), 687
+
+
+
+
+<<<PAGE 2598>>>
+
+Majorpin (zotepine), 883
+Mallorol (thioridazine), 759
+Maludil (maprotiline), 465
+Mandro-Zep (diazepam), 229
+Manerix (moclobemide), 515
+Maniprex (lithium), 415
+Mapro Gry (maprotiline), 465
+Mapro Tablinen (maprotiline), 465
+Maprolu (maprotiline), 465
+Maprolu-50 (maprotiline), 465
+Maprostad (maprotiline), 465
+Maprotibene (maprotiline), 465
+Maprotilin (maprotiline), 465
+maprotiline, 465
+Marax (hyroxyzine), 355
+Mareen 50 (doxepin), 255
+Mariastel (sulpiride), 741
+Marplan (isocarboxazid), 375
+Martimil (nortriptyline), 551
+Masmoran (hydroxyzine), 355
+Maveral (fluvoxamine), 325
+Maximed (protriptyline), 657
+Maxivalet (amitriptyline), 25
+Mazepine (carbamazepine), 131
+Medipam (diazepam), 229
+Medopam (oxazepam), 569
+Mefurine (thioridazine), 759
+Megaphen (chlorpromazine), 153
+
+
+
+
+<<<PAGE 2600>>>
+
+Mialin (alprazolam), 11
+Mianeurin (mianserin), 495
+Miansan (mianserin), 495
+mianserin, 495
+Miansin (mianserin), 495
+Miaxan (mianserin), 495
+midazolam, 499
+Milithin (lithium), 415
+milnacipran, 503
+Minipress (prazosin), 643
+Minizide (prazosin), 643
+Mipralin (imipramine), 367
+Mirbanil (sulpiride), 741
+Mirenil (fluphenazine), 313
+Mirenil Prolongatum (fluphenazine), 313
+Mirfat (clonidine), 179
+Mirfudorm (oxazepam), 569
+Mirpan (maprotiline), 465
+mirtazapine, 509
+Moban (molindone), 527
+Mocloamine (moclobemide), 515
+moclobemide, 515
+modafinil, 521
+Modalina (trifluoperazine), 803
+Modecate (fluphenazine), 313
+Modiodal (modafinil), 521
+Moditen (fluphenazine), 313
+Moditen Action Prolongee (fluphenazine), 313
+
+
+
+
+<<<PAGE 2612>>>
+
+Relaxedans (chlordiazepoxide), 147
+Reliberan (chlordiazepoxide), 147
+Relistor (naltrexone), 537
+Relprevv (olanzapine), 559
+Remdue (flurazepam), 321
+Remergil (mirtazapine), 509
+Remeron (mirtazapine), 509
+Remestan (temazepam), 755
+Reminyl (galantamine), 337
+Reneuron (fluoxetine), 301
+Repazine (chlorpromazine), 153
+Reposium (temazepam), 755
+Reseril (nefazodone), 545
+Restful (sulpiride), 741
+Restoril (temazepam), 755
+Retinyl (maprotiline), 465
+Reval (diazepam), 229
+Revatio (sildenafil), 729
+Revia (naltrexone), 537
+Rexer (mirtazapine), 509
+Rexulti (brexpiprazole), 103
+Rho-Doxepin (doxepin), 255
+Rho-Fluphenazine Decanoate (fluphenazine), 313
+Rho-Haloperidol (haloperidol), 347
+Rho-Trimine (trimipramine), 817
+Ridazine (thioridazine), 759
+Rilamir (triazolam), 799
+Rimarix (moclobemide), 515
+
+
+
+
+<<<PAGE 2617>>>
+
+sodium oxybate, 733
+Softramal (clorazepate), 185
+Solarix (moclobemide), 515
+Solian (amisulpride), 17
+Solidon (chlorpromazine), 153
+Solis (diazepam), 229
+solriamfetol, 737
+Somagerol (lorazepam), 437
+Somapam (temazepam), 755
+Somatarax (hydroxyzine), 355
+Sominex (diphenhydramine), 235
+Somniton (triazolam), 799
+Somnium (lorazepam), 437
+Somnol (flurazepam), 321
+Somnubene (flunitrazepam), 297
+Sonata (zaleplon), 859
+Songar (triazolam), 799
+Sovigen (zolpidem), 871
+Spasmilan (buspirone), 123
+Spasmo Praxiten (oxazepam), 569
+Sporalon (trifluoperazine), 803
+Spravato (esketamine), 275
+Spritam (levetiracetam), 399
+Stablon (tianeptine), 777
+Stalleril (thioridazine), 759
+Stamoneurol (sulpiride), 741
+Staurodorm (flurazepam), 321
+Staurodorm Neu (flurazepam), 321
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2639>>>
+
+maprotiline , 465
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+mianserin, 495
+milnacipran, 503
+mirtazapine , 509
+moclobemide, 515
+modafinil (adjunct), 521
+nefazodone , 545
+nortriptyline , 551
+olanzapine, 559
+paliperidone, 581
+paroxetine , 593
+phenelzine , 613
+protriptyline , 657
+quetiapine (adjunct) , 667
+reboxetine, 681
+risperidone, 687
+selegiline , 705
+sertindole, 715
+sertraline , 721
+sulpiride, 741
+tianeptine, 777
+tranylcypromine , 787
+trazodone , 793
+triiodothyronine, 813
+trimipramine , 817
+venlafaxine , 841
+
+
+
+
+<<<PAGE 2656>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine , 325
+isocarboxazid, 375
+moclobemide, 515
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Stress urinary incontinence
+duloxetine, 263
+Tardive dyskinesia
+deutetrabenazine , 221
+valbenazine , 825
+Tetanus
+chlorpromazine , 153
+Tourette’s syndrome/tic disorders
+aripiprazole , 53
+clonidine, 179
+guanfacine, 343
+haloperidol , 347
+pimozide , 627
+
+
+
+
+<<<PAGE 2659>>>
+
+amitriptyline, 25
+amoxapine, 33
+atomoxetine, 79
+brexanolone, 99
+bupropion, 117
+citalopram, 159
+clomipramine, 165
+desipramine, 207
+desvenlafaxine, 215
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+esketamine, 275
+fluoxetine, 301
+fluvoxamine, 325
+imipramine, 367
+isocarboxazid, 375
+ketamine, 383
+levomilnacipran, 403
+l-methylfolate (adjunct), 477
+lofepramine, 421
+maprotiline, 465
+mianserin, 495
+milnacipran, 503
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+

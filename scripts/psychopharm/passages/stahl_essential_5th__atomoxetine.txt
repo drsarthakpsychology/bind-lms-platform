@@ -1,0 +1,840 @@
+<<<PAGE 416>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+improvement in relieving pain. Each class of drug may
+also help different ancillary symptoms in fibromyalgia,
+so the combination of α2δ ligands with SNRIs may lead to
+broader symptom relief than using either alone, although
+both are effective for pain in fibromyalgia. That is, α2δ
+ligands may reduce symptoms of anxiety in fibromyalgia
+(see discussion of α2δ ligands in anxiety in Chapter 8 and
+illustrated in Figures 8-17C and 8-18C) and for improving
+the slow-wave sleep disorder of fibromyalgia (sleep
+disorders and their treatment are discussed in further
+detail in Chapter 10). SNRIs can be useful in reducing
+symptoms of depression and anxiety in fibromyalgia
+(see Chapter 7 on treatment for mood disorders) and
+for treating fatigue as well as the cognitive symptoms
+associated with fibromyalgia, sometimes also called fibrofog (see Figures 9-8 and 9-9). Problems with executive
+functioning in a wide variety of clinical conditions are
+generally linked to inefficient information processing
+in the dorsolateral prefrontal cortex (DLPFC) where
+dopamine neurotransmission is important in regulating
+brain circuits (see Chapter 4 on cognition in schizophrenia
+and Figure 4-17). This concept of dopaminergic
+regulation of cognition in the DLPFC and the role of
+boosting dopamine neurotransmission to improve
+executive dysfunction is also discussed in Chapter 11
+on attention deficit hyperactivity disorder. Since SNRIs
+increase dopamine concentrations in the DLPFC (see
+Figure 7-33C), SNRI agents can also potentially improve
+symptoms of fibro-fog in fibromyalgia patients. This
+may be particularly so for the SNRIs milnacipran and
+levomilnacipran, which have potent norepinephrine
+reuptake binding properties at all clinically effective doses
+(Figures 7-30 and 7-31), or for higher doses of the SNRIs
+duloxetine (Figure 7-29), venlafaxine, and desvenlafaxine
+(Figure 7-28), which act to increase norepinephrine
+reuptake blocking properties of these agents and thus act
+to increase concentrations of dopamine in the DLPFC
+(Figure 7-33C). Other strategies for improving fibro-fog
+in fibromyalgia patients include the same ones used to
+treat cognitive dysfunction in depression, and include
+modafinil, armodafinil, selective norepinephrine reuptake
+inhibitors (NRIs) such as atomoxetine, norepinephrine–
+dopamine reuptake inhibitors (NDRIs) such as bupropion,
+and with caution, stimulants. SNRIs, sometimes
+augmented with modafinil, stimulants, or bupropion can
+also be useful for symptoms of physical fatigue as well as
+mental fatigue in fibromyalgia patients.
+Second-line treatments for pain in fibromyalgia
+can include sedating drugs for depression including
+
+400
+
+mirtazapine and tricyclic antidepressants, as well as
+the tricyclic muscle relaxant cyclobenzapine. Other
+sleep aids such as benzodiazepines, hypnotics, and
+trazodone can be helpful in relieving sleep disturbance
+in fibromyalgia. Evidence is also accumulating for the
+efficacy of γ-hydroxybutyrate (GHB or sodium oxybate)
+in fibromyalgia (use with extreme caution because of
+diversion and abuse potential). GHB is approved for
+narcolepsy, enhances slow-wave sleep, and is discussed
+in Chapter 10 on sleep (see Figures 10-67 and 10-68). In
+heroic cases the use of GHB by experts for the treatment
+of severe and treatment-resistant cases of fibromyalgia
+may be justified. A number of anticonvulsants other than
+the α2δ ligands (Figure 9-16) are also used second-line for
+chronic neuropathic pain states, including fibromyalgia.
+These agents are thought to target voltage-gated sodium
+channels rather than voltage-gated calcium channels
+and thus seem to have a different mechanism of action
+than α2δ ligands and may be effective in patients with
+inadequate response to α2δ ligands.
+
+SUMMARY
+This chapter has defined pain, and has explained
+the processing of nociceptive neuronal activity into
+the perception of pain by pathways that lead to the
+spinal cord, and then up the spinal cord to the brain.
+Neuropathic pain is discussed extensively, including
+both peripheral and central mechanisms, and the
+concept of central sensitization. The key role of
+descending inhibitory pathways that reduce the activity
+of nociceptive pain neurons with the release of serotonin
+and norepinephrine is explained, and shown to be
+the basis for the actions of serotonin–norepinephrine
+reuptake inhibitors (SNRIs) as agents that reduce the
+perception of pain in conditions ranging from major
+depression to fibromyalgia to diabetic peripheral
+neuropathic pain, low back pain, osteoarthritis, and
+related conditions. The critical role of voltage-sensitive
+calcium channels (VSCCs) is also explained, providing
+the basis for the actions of α2δ ligands as agents that
+also reduce the perception of pain in diabetic peripheral
+neuropathic pain, fibromyalgia, painful physical
+symptoms of depression and anxiety disorders, shingles,
+and other neuropathic pain conditions. Finally, the
+spectrum of conditions from affective disorders to
+chronic neuropathic pain disorders is introduced, with
+emphasis on the condition of fibromyalgia and its newly
+evolving psychopharmacological treatments.
+
+
+
+
+<<<PAGE 496>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Noradrenergic Treatment of ADHD
+Atomoxetine
+
+Atomoxetine (Figure 11-37) is a selective norepinephrine
+reuptake inhibitor (NRI). Sometimes called NET
+inhibitors, the selective NRIs have known antidepressant
+properties (discussed in Chapter 7). In terms of their
+mechanism of therapeutic action in ADHD, it is the same
+as just discussed for stimulants acting at the NETs here
+in Chapter 11, and as previously discussed for drugs used
+to treat depression in Chapter 7 and illustrated in Figure
+7-33. Blocking NETs in the prefrontal cortex increases
+
+Comparing the Molecular Actions of
+Atomoxetine and Bupropion
+DAT
+
+NDRIs
+NET
+
+NE
+neuron
+
+DA
+neuron
+
+NRIs
+NET
+
+Figure 11-37 Comparing the molecular actions of atomoxetine
+and bupropion. Atomoxetine is a selective norepinephrine
+reuptake inhibitor (NRI), while bupropion is a norepinephrine–
+dopamine reuptake inhibitor (NDRI). Both agents block the
+norepinephrine transporters (NETs) in the prefrontal cortex,
+which leads to an increase in both norepinephrine (NE) and
+dopamine (DA) there (because NETs also transport dopamine).
+NDRIs also block the dopamine transporters (DATs), which
+are not present in the prefrontal cortex but are present in the
+nucleus accumbens.
+
+480
+
+both DA and NE in the prefrontal cortex (Figure 11-38)
+and is why NET inhibitors are thought to work in ADHD.
+However, since there are few NE neurons and NETs in
+nucleus accumbens, inhibiting NET does not lead to an
+increase in either NE or DA there (Figure 11-38) and is
+why NET inhibitors are thought not to have reinforcing,
+abuse, or addiction potential.
+Bupropion is a weak NRI and also a weak DAT
+inhibitor known as a norepinephrine–dopamine reuptake
+inhibitor (NDRI), and was previously discussed as a
+treatment for depression in Chapter 7 and illustrated
+in Figures 7-34 through 7-36; see also Figure 11-37).
+Several tricyclic antidepressants (TCAs) have notable
+NRI actions, such as desipramine and nortriptyline. All of
+these agents with NRI properties have been utilized in the
+treatment of ADHD, with varying amounts of success, but
+only atomoxetine is well-investigated and approved for
+this use in children and adults.
+Atomoxetine’s hypothetical actions in ADHD patients
+with stress and comorbidity states, presumably linked
+to excessive and phasic DA and NE release, are shown
+conceptually by comparing the untreated states in Figures
+11-11 and 11-12 with the changes that theoretically follow
+chronic treatment with atomoxetine in Figure 11-39. That
+is, ADHD linked to conditions that are associated with
+chronic stress and comorbidities is theoretically caused
+by overly active NE and DA circuits in the prefrontal
+cortex, resulting in an excess of phasic NE and DA
+activity (Figure 11-13). When slow onset, long duration,
+and essentially perpetual NET inhibition occurs in the
+prefrontal cortex due to atomoxetine, this theoretically
+restores tonic postsynaptic D1 and α2A-adrenergic
+signaling, downregulates phasic NE and DA actions, and
+desensitizes postsynaptic NE and DA receptors (Figure
+11-39). The possible consequence of this is to reduce
+stress as ADHD symptoms are improved. If so, decreases
+in ADHD symptoms could potentially be accompanied
+by decreases in anxiety, depression, and heavy drinking.
+Unlike stimulant use, where the therapeutic actions are
+at the mercy of plasma drug levels and momentary NET/
+DAT occupancies, actions from long-term NRI actions
+give 24-hour symptom relief, in much the same manner
+as do SSRIs (selective serotonin reuptake inhibitors) and
+SNRIs (serotonin–norepinephrine reuptake inhibitors)
+for the treatment of depression and anxiety. Selective
+NRIs generally have smaller effect sizes for reducing
+ADHD symptoms than stimulants in short-term trials,
+especially in patients without comorbidity. However,
+NRIs are not necessarily inferior in ADHD patients who
+
+
+
+
+<<<PAGE 497>>>
+
+Atomoxetine in ADHD with Weak
+Prefrontal NE and DA Signals
+nucleus accumbens - no action
+
+prefrontal cortex
+NE
+neuron
+
+DA
+neuron
+
+VMAT2
+
+DA
+neuron
+
+VMAT2
+
+VMAT2
+
+NET
+
+atomoxetine
+DA
+
+NE
+
+α2A
+
+D1
+
++
+
++
+
+DA
+
+DAT
+
+Figure 11-38 Atomoxetine in
+ADHD with weak prefrontal
+norepinephrine (NE) and dopamine
+(DA) signals. Through its blockade of
+norepinephrine transporters (NETs),
+atomoxetine causes NE and DA levels
+to increase in the prefrontal cortex,
+where inactivation of both of these
+neurotransmitters is largely due to
+NETs (on the left). At the same time,
+the relative lack of NETs in the nucleus
+accumbens prevents atomoxetine from
+increasing NE or DA levels in that brain
+area, thus reducing the risk of abuse (on
+the right). Other NET inhibitors would
+be expected to have the same effects.
+
+D1 D2
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+NET inhibitors
+atomoxetine (NRI), reboxetine (NRI), bupropion (NDRI), venlafaxine (SNRI),
+duloxetine (SNRI), desvenlafaxine (SNRI), milnacipran (SNRI),
+desipramine (TCA), nortriptyline (TCA)
+
+Chronic Treatment with Atomoxetine in ADHD
+with Excessive Prefrontal NE and DA Signals
+prefrontal cortex
+excessive NE and DA signals
+
+stress
+
+stress
+
+Alpha-2A-Adrenergic Agonists
+
+ADHD anxiety substance
+abuse
+
+chronic treatment with atomoxetine
+NE
+neuron
+
+DA
+neuron
+
+VMAT2
+
+VMAT2
+NET
+
+atomoxetine
+DA
+
+NE
+
+α2A
+
+D1
+
++
+
++
++
+
++
+
++
+
++
+
++
+
++
+
+have not been previously treated with stimulants, nor in
+ADHD patients who have been treated long term (more
+than 8–11 weeks). NRIs may actually be preferred to
+stimulants in patients with complex comorbidities, side
+effects, or lack of response to stimulants.
+
+RESPONSE
+Figure 11-39 Chronic treatment with atomoxetine in ADHD
+with excessive signals. ADHD linked to conditions that are
+associated with chronic stress and comorbidities is theoretically
+caused by overly active NE and DA circuits. Continuous
+blockade of NETs could restore tonic postsynaptic D1 and α2Aadrenergic signaling, downregulate phasic NE and DA actions,
+and desensitize postsynaptic NE and DA receptors.
+
+Norepinephrine receptors are discussed in Chapter 6
+and illustrated in Figures 6-14 through 6-16. There are
+numerous subtypes of α-adrenergic receptors, from
+presynaptic autoreceptors, generally of the α2A subtype
+(Figure 6-14) to postsynaptic α2A, α2B, α2C, and α1
+subtypes α1A, α1B, and α1D (Figures 6-14 through 6-16).
+Alpha-2A receptors are widely distributed throughout the
+central nervous system, with high levels in the cortex and
+locus coeruleus. These receptors are thought to be the
+primary mediators of the effects of NE in the prefrontal
+cortex, regulating symptoms of inattention, hyperactivity,
+and impulsivity in ADHD. Alpha-2B receptors are in high
+concentrations in the thalamus and may be important
+in mediating sedating actions of NE, while α2C receptors
+are densest in striatum. Alpha-1 receptors generally have
+opposing actions to α2 receptors, with α2 mechanisms
+predominating when NE release is low or moderate
+(i.e., for normal attention), but with α1 mechanisms
+predominating at NE synapses when NE release is
+high (e.g., associated with stress and comorbidity) and
+contributing to cognitive impairment. Thus, selective
+NRIs at low doses will first increase activity at α2A
+481
+
+11
+
+
+
+
+<<<PAGE 501>>>
+
+Chapter 11: Attention Deficit Hyperactivity Disorder and Its Treatment
+
+The DAT inhibitor mazindol, once approved for
+appetite suppression, is in testing and so is a triple (5HT–
+NE–DA) reuptake inhibitor centanafadine.
+
+Viloxazine ER
+
+SUMMARY
+5HT2B
+NET
+5HT2C
+
+Figure 11-45 Viloxazine ER. Viloxazine is an inhibitor of
+the norepinephrine transporter (NET) and also has actions at
+serotonin 2B (5HT2B) and 5HT2C receptors. A controlled-release
+formulation is in late-stage clinical development for ADHD.
+
+action, and partially because they are patentable and
+commercializable. One newer aspect of controlled-release
+formulations is the potential to make them in a matrix
+that resists attempts to powderize for inhaling, snorting,
+smoking, or injecting.
+A selective NRI called viloxazine (Figure 11-45),
+once marketed abroad for the treatment of depression
+but never marketed in the US, has been repurposed in a
+controlled-release formulation for use in ADHD, and is
+now in late-stage clinical development for ADHD.
+
+ADHD has core symptoms of inattentiveness, impulsivity,
+and hyperactivity, linked theoretically to specific
+malfunctioning neuronal circuits in the prefrontal
+cortex. ADHD can also be conceptualized as a disorder
+of dysregulation of norepinephrine and dopamine in
+the prefrontal cortex, including some patients with
+deficient norepinephrine and dopamine and others with
+excessive norepinephrine and dopamine. Treatments
+theoretically return patients to normal efficiency of
+information processing in prefrontal circuits. There are
+differences between children and adults with ADHD,
+and special considerations exist for how to treat these
+two populations. The mechanisms of action, both in
+terms of pharmacodynamics and pharmacokinetics,
+for stimulant treatments of ADHD are discussed in
+detail. The goal is to amplify tonic but not phasic
+norepinephrine and dopamine actions in ADHD by
+controlling the rate of stimulant drug delivery, the degree
+of transporter occupancy, and the duration of transporter
+occupancy. Theoretical mechanisms of action of selective
+norepinephrine reuptake inhibitors such as atomoxetine
+and their possible advantages in adults with chronic
+stress and comorbidities are discussed. Actions of α2Aadrenergic agonists are also presented.
+
+11
+
+485
+
+
+
+
+<<<PAGE 615>>>
+
+Suggested Reading and Selected References
+
+Yang L, Cao Q, Shuai L (2012) Comparative study of
+OROS-MPH and atomoxetine on executive function
+improvement in ADHD: a randomized controlled trial. Int J
+Neuropsychopharmacol 15: 15–16.
+Zang YF, Jin Z, Weng XC, et al. (2005) Functional MRI in
+attention deficit hyperactivity disorder: evidence for
+hypofrontality. Brain Dev 27: 544–50.
+
+Aridi YS, Walker JL, Wright ORL (2017) The association
+between the Mediterranean dietary pattern and cognitive
+health: a systematic review. Nutrients 9: E674.
+Ballard C, Khan Z, Clack H, et al. (2011) Nonpharmacological
+treatment of Alzheimer disease. Can J Psychiatry 56:
+589–95.
+
+Zuvekas SH, Vitiello B (2012) Stimulant medication use in
+children: a 12-year perspective. Am J Psychiatry 169: 160–6.
+
+Buchman AS, Boyle PA, Yu L, et al. (2012) Total daily physical
+activity and the risk of AD and cognitive decline in older
+adults. Neurology 78: 1323–9.
+
+Chapter 12 (Dementia) and
+Acetylcholine
+
+Burmester B, Leathem J, Merrick P (2016) Subjective cognitive
+complaints and objective cognitive function in aging:
+a systematic review and meta-analysis of recent crosssectional findings. Neuropsychol Rev 26: 376–93.
+
+Neuronal Networks: Acetylcholine
+Bacher I, Rabin R, Woznica A, Sacvco KA, George TP (2010)
+Nicotinic receptor mechanisms in neuropsychiatric disorders:
+therapeutic implications. Prim Psychiatry 17: 35–41.
+Fryer AD, Christopoulos A, Nathanson NM (eds.) (2012)
+Muscarinic Receptors. Berlin: Springer-Verlag.
+Geldmacher DS, Provenano G, McRae T, et al. (2003)
+Donepezil is associated with delayed nursing home
+placement in patients with Alzheimer’s disease. J Am
+Geriatr Soc 51: 937–44.
+Grothe M, Heinsen H, Teipel SF (2012) Atrophy of the
+cholinergic basal forebrain over the adult age range and in
+early states of Alzheimer’s disease. Biol Psychiatry 71: 805–13.
+Hasselmo ME, Sarter M (2011) Nodes and models of
+forebrain cholinergic neuromodulation of cognition.
+Neuropsychopharmacology 36: 52–73.
+Lane RM, Potkin SG, Enz A (2006) Targeting
+acetylcholinesterase and butyrylcholinesterase in
+dementia. Int J Neuropsychopharmacol 9: 101–24.
+Ohta Y, Darwish M, Hishikawa N, et al. (2017) Therapeutic
+effects of drug switching between acetylcholinesterase
+inhibitors in patients with Alzheimer’s disease. Geriatr
+Gerontol Int 17: 1843–8.
+Pepeu G, Giovannini M (2017) The fate of the brain
+cholinergic neurons in neurodegenerative diseases. Brain
+Res 1670: 173–84.
+Tariot PN, Farlow MR, Grossberg GT, et al. (2004) Memantine
+treatment in patients with moderate to severe Alzheimer’s
+disease already receiving donepezil. JAMA 291: 317–24.
+
+Diet/Exercise/Genetics/Aging
+Anastasiou CA, Yannakoulia M, Kosmidis MH, et al. (2017)
+Mediterranean diet and cognitive health: initial results
+from the Hellenic Longitudinal Investigation of ageing and
+diet. PLOS ONE 12: e0182048.
+
+Cederholm T (2017) Fish consumption and omega-3 fatty acid
+supplementation for prevention or treatment of cognitive
+decline, dementia or Alzheimer’s disease in older adults:
+any news? Curr Opin Clin Nutr Metab Care 20: 104–9.
+Cepoiu-Martin M, Tam-Tham H, Patten S, et al. (2016)
+Predictors of long-term care placement in persons with
+dementia: a systematic review and metaanalysis. Int J
+Geriatr Psychiatry 31: 1151–71.
+Ercoli L, Siddarth P, Huang SC, et al. (2006) Perceived loss of
+memory ability and cerebral metabolic decline in persons
+with the apolipoprotein E-IV genetic risk for Alzheimer
+disease. Arch Gen Psychiatry 63: 442–8.
+Gu Y, Brickman AM, Stern Y, et al. (2015) Mediterranean
+diet and brain structure in a multiethnic elderly cohort.
+Neurology 85: 1744–51.
+Hardman RJ, Kennedy G, Macpherson H, et al. (2016) Adherence
+to a Mediterranean-style diet and effects on cognition in
+adults: a qualitative evaluation and systematic review of
+longitudinal and prospective trials. Front Nutr 3: 1–13.
+Hinz FI, Geschwind DH (2017) Molecular genetics of
+neurodegenerative dementias. Cold Spring Harb Perspect
+Biol 9: a023705.
+Knight A, Bryan J, Murphy K (2016) Is the Mediterranean
+diet a feasible approach to preserving cognitive function
+and reducing risk of dementia for older adults in Western
+countries? New insights and future directions. Ageing Res
+Rev 25: 85–101.
+Kullmann S, Heni M, Hallschmid M, et al. (2016) Brain insulin
+resistance at the crossroads of metabolic and cognitive
+disorders in humans. Physiol Rev 96: 1169–209.
+Larson EB, Wang L, Bowen JD, et al. (2006) Exercise is
+associated with reduced risk for incident dementia among
+persons 65 years of age and older. Ann Intern Med 144:
+73–81.
+Lee HS, Park SW, Park YJ (2016) Effects of physical activity
+programs on the improvement of dementia symptom: a
+meta-analysis. Biomed Res Int 2016: 2920146.
+
+599
+
+
+
+
+<<<PAGE 629>>>
+
+Suggested Reading and Selected References
+
+Liechti ME (2017) Modern clinical research on LSD.
+Neuropsychopharmacology 42: 2114–27.
+Madsen MK, Fisher PM, Burmester D, et al. (2019)
+Psychedelic effects of psilocybin correlate with serotonin
+2A receptor occupancy and plasma psilocin levels.
+Neuropsychopharmacology 44: 1328–34.
+Mithoefer MC, Wagner MT, Mithoefer AT, et
+al. (2011) The safety and efficacy of {+/−}
+3,4-methylenedioxymethamphetamine-assisted
+psychotherapy in subjects with chronic, treatmentresistant posttraumatic stress disorder: the first
+randomized controlled pilot study. J Psychopharmacol 25:
+439–52.
+Passie T, Halpern JH, Stichtenoth DO, et al. (2008) The
+pharmacology of lysergic acid diethylamide: a review. CNS
+Neurosci Ther 14: 295–314.
+Pitts EG, Minerva AR, Chandler EB, et al. (2017)
+3,4-Methylenedioxymethamphetamine increases affiliative
+behaviors in squirrel moneys in a serotonin 2A receptor
+dependent manner. Neuropsychopharmacology 42:
+1962–71.
+Quednow BB, Komeer M, Geyer MA, et al. (2012) Psilocybin
+induced deficits in autonomic and controlled inhibition
+are attenuated by ketanserin in healthy human volunteers.
+Neuropsychopharmacology 37: 630–40.
+Schmid Y, Enzler F, Gasser P, et al. (2015) Acute effects
+of lysergic acid diethylamine in healthy subjects. Biol
+Psychiatry 78: 544–53.
+Titeler M, Lyon RA, Gleenon RA (1988) Radioligand binding
+evidence implicates the brain 5HT2 receptor as a site of
+action for LSD and phenylisopropylamine hallucinogens.
+Psychopharmacology 94: 213–16.
+Urban NBL, Girgis RR, Talbot PS, et al. (2012) Sustained
+recreational use of Ecstasy is associated with altered pre
+and postsynaptic markers of serotonin transmission in
+neocortical areas: a PET study with [11C]DASB and [11C]
+MDL 100907. Neuropsychopharmacology 37: 1465–73.
+
+Binge Eating/Gambling
+Balodis IM, Kober H, Worhunsky PD, et al. (2012) Diminished
+frontostriatal activity during processing of monetary
+rewards and losses in pathological gambling. Biol
+Psychiatry 71: 749–57.
+Gearhardt AN, Yokum S, Orr PT, et al. (2011) Neural
+correlates of food addiction. Arch Gen Psychiatry 68:
+808–16.
+Grant JE, Kim SW, Hartman BK (2008) A double-blind,
+placebo-controlled study of the opiate antagonist
+naltrexone in the treatment of pathological gambling urges.
+J Clin Psychiatry 69: 783–9.
+
+Lawrence AJ, Luty J, Bogdan NA, Sahakian BJ, Clark L (2009)
+Impulsivity and response inhibition in alcohol dependence
+and problem gambling. Psychopharmacology 207: 163–72.
+Lobo DSS, Kennedy JL (2006) The genetics of gambling and
+behavioral addictions. CNS Spectrums 11: 931–9.
+McElroy SL, Hudson JI, Capece JA, et al. (2007) Topiramate
+for the treatment of binge eating disorder associated with
+obesity: a placebo-controlled study. Biol Psychiatry 61:
+1039–48.
+Miedl SF, Peters J, Buchel C (2012) Altered neural reward
+representations in pathological gamblers revealed by
+delay and probability discounting. Arch Gen Psychiatry 69:
+177–86.
+Salamone JD, Correa M, Mingote S, Weber SM (2002) Nucleus
+accumbens dopamine and the regulation of effort in
+food-seeking behavior: implications for studies of natural
+motivation, psychiatry, and drug abuse. J Pharmacol Exp
+Ther 305: 1–8.
+Van Holst RJ, Veltman DJ, Buchel C, van den Brink W,
+Goudriaan AE. (2012) Distorted expectancy coding in
+problem gambling: is the addictive in the anticipation? Biol
+Psychiatry 71: 741–8.
+Zack M, Poulos CX (2007) A D1 antagonist enhances the
+rewarding and priming effects of a gambling episode in
+pathological gamblers. Neuropsychopharmacology 32:
+1678–86.
+
+Impulsivity/Compulsivity
+Berlin HA, Rolls ET, Iversen SD (2005) Borderline personality
+disorder, impulsivity, and the orbitofrontal cortex. Am J
+Psychiatry 162: 2360–73.
+Chamberlain SR, del Campo N, Dowson J, et al. (2007)
+Atomoxetine improved response inhibition in adults with
+attention deficit/hyperactivity disorder. Biol Psychiatry 62:
+977–84.
+Chamberlain SR, Muller U, Blackwell AD, et al. (2006)
+Neurochemical modulation of response inhibition and
+probabilistic learning in humans. Science 311: 861–3.
+Chamberlain SR, Robbins TW, Winder-Rhodes S, et al. (2011)
+Translational approaches to frontostriatal dysfunction
+in attention-deficit/hyperactivity disorder using a
+computerized neuropsychological battery. Biol Psychiatry
+69: 1192–203.
+Dalley JW, Everitt BJ, Robbins TW (2011) Impulsivity,
+compulsivity, and top-down cognitive control. Neuron 69:
+680–94.
+Dalley JW, Mar AC, Economidou D, Robbins TW (2008)
+Neurobehavioral mechanisms of impulsivity: frontostriatal systems and functional neurochemistry. Pharmacol
+Biochem Behav 90: 250–60.
+
+613
+
+
+
+
+<<<PAGE 632>>>
+
+Index
+
+atomoxetine, 480–1
+auditory hallucinations, 113
+autoreceptors
+alpha-2, 254, 256, 258
+monoamine, 8
+avolition, 142
+axoaxonic synapses, 1, 3
+axodendritic synapses, 1, 3
+axosomatic synapses, 1, 3
+barbiturates, 556
+bath salts, 546
+BDNF (brain-derived neurotrophic
+factor), 266, 268, 329
+behavioral addictions, 575
+behavioral variant FTD, 494
+benzodiazepine-insensitive GABAA
+receptors, 263–4
+benzodiazepines, 321, 366, 377
+caution with, 378
+insomnia treatment, 421–2
+benzodiazepine-sensitive GABAA
+receptors, 259–62
+beta-amyloid, 488, 496–8, 502
+detection, 499, 501
+beta blockers, 375, 376
+beta subunits, 68
+bifeprunox, 192
+binge-eating disorder, 575
+bipolar depression, 244
+drug treatment, 236, 240
+family history of, 250
+first-line treatment, 342
+identifying, 250
+missed or delayed diagnosis, 250
+schizophrenia and, 249
+suicide rates, 251
+versus unipolar, 249–51
+bipolar disorder
+anticonvulsants with proven efficacy,
+347–51
+anticonvulsants with uncertain
+efficacy, 352–3
+bipolar I, 247
+bipolar II, 244, 247
+combination treatments, 353
+drug treatment, 338–58
+blocking fear conditioning, 375–7
+blonanserin, 234, 241
+brexanolone, 320
+brexpiprazole, 192, 197, 230, 239, 327–8,
+378, 530–2
+bright light therapy, 438, 440, 444
+buprenorphine, 560, 561, 562
+bupropion, 306–8, 353–4, 480, 533
+nicotine addiction, 551
+sertraline combination, 294
+
+616
+
+buspirone, 333, 370
+butyrylcholinesterase, 505, 510
+caffeine, 440–1
+calcium channel blockers (L-type), 352
+cannabidiol (CBD), 563, 565, 567
+cannabis, 150, 563–7
+benefits and risks, 564
+side effects, 563
+therapeutic uses, 564
+carbamazepine, 350, 530
+cardiometabolic risk, 196, 224
+cardiometabolism, 198–201, 415
+cardiovascular disease, 156, 415, 432,
+492, 524
+carfentanil, 560
+cariprazine, 192, 231, 240, 328, 343–5
+cataplexy, 434, 435, 446
+catechol-O-methyltransferase, 253
+central disorders of hypersomnolence, 432
+central pain, 379
+central sensitization, 395
+chemical neurotransmission, 1, 28
+anatomical versus, 1–5
+epigenetics, 23–6
+ion channels and, 73–6
+mood disorders, 252–64
+principles of, 5–9
+signal transduction cascades, 9–23,
+28, 53
+triggering gene expression, 18
+ultradian sleep cycle, 414–16
+chemotherapy, side effects, 309
+child abuse, 370
+chlorpromazine, 161, 181, 201, 202
+choline, 505
+cholinergic agonists, 242
+cholinergic pathways, 509
+chromatin, 23
+chronic back pain, 388
+chronic pain, 379–400
+decreased gray matter, 387–90
+duloxetine treatment, 302–3
+milnacipran treatment, 303
+targeting sensitized circuits, 395–9
+treatment, 390–400
+circadian rhythm disorders, 430, 435–8
+depression, 271–5
+circadian rhythms, 307, 308
+setting of, 275
+circadian treatments, 438–40
+circadian wake drive, 409, 412
+citalopram, 295–6
+classic neurotransmission, 6
+clock genes, 271
+clomipramine, 335
+clonidine, 390, 482–3, 561
+
+closed state, 63
+clozapine, 217, 222–5
+cocaine, 544, 545
+codeine, 559
+cognition, Fab Four of, 317
+cognitive behavioral therapy, 374, 377, 576
+cognitive dysfunction
+ADHD, 455, 456, 458
+Alzheimer disease, 509–18
+chronic pain, 388
+depression, 273
+fibromyalgia, 390, 400
+Parkinson’s disease, 493
+sleep disorders, 402
+sleep disturbance and, 414, 417
+vortioxetine treatment, 315–17
+cognitive symptoms, schizophrenia, 95,
+144, 157
+competitive elimination, 151, 154
+compulsivity, 538–9, 571, 578
+impulsive–compulsive disorders,
+539–43, 575
+OCD, 295, 360, 576–7
+conceptual disorganization, 78
+conditioned responses, 539
+conditioned stimuli, 539, 544
+consolidation, 375
+constitutive activity, 37, 57
+continuous positive airway pressure, 443
+controlled substance, 447
+cortico-brainstem glutamate pathways, 102
+cortico-cortical glutamate pathways, 105
+cortico-striatal glutamate pathways, 104
+cortico-striato-thalamo-cortical (CSTC)
+loops, 87, 362, 365–9
+cortico-thalamic glutamate pathway, 105
+CREB system, 15
+criminogenic behavior, 146, 147
+cytochrome P450 (CYP450), 49–50, 323
+daridorexant, 424
+DAT transporter. See dopamine
+transporters (DATs)
+date rape drugs, 447, 559
+delayed sleep phase disorder, 435, 437
+delirium, 569
+delusions, 77, 141, 524
+Alzheimer disease, 157
+dementia, 521
+Parkinson’s disease psychosis, 157
+dementia, 486, 537, See also Alzheimer
+disease
+agitation in, 145, 157, 197
+apathy in, 536–7
+behavioral symptoms of, 521, 537
+definition, 487
+depression in, 534–5
+
+

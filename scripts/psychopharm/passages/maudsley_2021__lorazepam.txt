@@ -1,0 +1,1231 @@
+<<<PAGE 78>>>
+
+Schizophrenia and related psychoses  57
+
+Compared with IV midazolam alone, a combination of IV olanzapine or IV droperidol with IV midazolam was more rapidly effective and resulted in fewer subsequent
+doses of medication being required.16
+■■ IM midazolam 7.5–15mg was more rapidly sedating than a combination of haloperidol 5–10mg and promethazine 50mg (TREC 1).17
+■■ Olanzapine 10mg was as effective as a combination of haloperidol 10mg and promethazine 25–50mg in the short term, but the effect did not last as long (TREC 4).18
+■■ A combination of haloperidol 5–10mg and promethazine 50mg was more effective
+and better tolerated than haloperidol 5–10mg alone (6% of patients had an acute
+dystonic reaction) (TREC 3).19
+■■ A combination of haloperidol 10mg and promethazine 25–50mg was more effective
+than lorazepam 4mg (TREC 2).20
+■■ A combination of IM chlorpromazine 100mg, haloperidol 5mg and promethazine
+25mg was no better than IM haloperidol 5mg plus promethazine 25mg (TREC
+Lebanon).21
+■■ A combination of IV midazolam and IV droperidol was more rapidly sedating than
+either IV droperidol or IV olanzapine alone. Fewer patients in the midazolam-droperidol group required additional medication doses to achieve sedation.22
+■■ IM olanzapine was more effective than IM aripiprazole in the treatment of agitation
+in schizophrenia in the short term (at 2 hours), but there was no significant difference
+between treatments at 24 hours.23
+■■ IM midazolam 5mg was faster acting and more effective than olanzapine 10mg,
+ziprasidone 20mg and both 5 and 10mg haloperidol in a large (n = 737) Emergency
+Room study.24
+■■ In an open-label study, the combination of IM haloperidol and IM lorazepam was
+found to be similar in efficacy to IM olanzapine.25
+■■ IM droperidol and IM haloperidol were equally effective.26
+Cochrane concluded that haloperidol alone is effective in the management of acute
+behavioural disturbance but poorly tolerated, and that co-administration of promethazine (but not lorazepam) improves tolerability.27,28 However, NICE considers the evidence relating to the use of promethazine for this purpose to be inconclusive.29 When
+assessing haloperidol plus promethazine, Cochrane concluded that the combination is
+effective for use in patients who are aggressive due to psychosis, and its use is based on
+good evidence. The resumption of aggression and need for further injections was more
+likely with olanzapine than with the haloperidol–promethazine combination. The
+authors also stated that ‘haloperidol used on its own without something to offset its
+frequent and serious adverse effects does seem difficult to justify’.30 Cochrane concluded that available data for aripiprazole are rather poor. This evidence suggests that
+aripiprazole is more effective than placebo and haloperidol alone, but not olanzapine.
+However, caution is advised when generalising these results to real-world practice.31
+A systematic review and meta-analysis of IM olanzapine for agitation found IM
+olanzapine and IM haloperidol to be equally effective, but IM olanzapine was associated with a lower incidence of EPSEs.32 Cochrane suggests that droperidol is effective
+and may be used to control people with very disturbed and aggressive behaviours
+caused by psychosis.33 Droperidol is seeing a resurgence in use in some countries having
+
+CHAPTER 1
+
+■■
+
+
+
+
+<<<PAGE 85>>>
+
+CHAPTER 1
+
+64  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Remedial measures in rapid tranquillisation (Continued)
+Irregular or slow (<50/min) pulse 		
+
+Refer to specialist medical care immediately.
+
+Fall in blood pressure (>30mmHg 		
+orthostatic drop or < 50mmHg diastolic)
+
+Have patient lie flat, tilt bed towards head.
+Monitor closely.
+
+Increased temperature 			(risk of NMS and perhaps arrhythmia).
+Check creatine kinase urgently.
+
+Guidelines for the use of flumazenil
+Indication for use	If, after the administration of lorazepam, midazolam or diazepam,
+respiratory rate falls below 10/min.
+Contraindications	Patients with epilepsy who have been receiving long-term
+benzodiazepines.
+Caution
+
+Dose should be carefully titrated in hepatic impairment.
+
+Dose and route of
+
+Initial: 200µg intravenously over 15 seconds
+
+administration
+
+– if required level of consciousness not achieved after 60 seconds, then,
+Subsequent dose: 100µg over 15 seconds.
+
+Time before dose
+
+60 seconds.
+
+can be repeated
+Maximum dose
+
+1mg in 24 hours
+(one initial dose and eight subsequent doses).
+
+Side-effects	Patients may become agitated, anxious or fearful on awakening.
+Seizures may occur in regular benzodiazepine users.
+Management
+
+Side-effects usually subside.
+
+Monitoring
+■■
+
+What to monitor?
+
+■■
+
+How often?	Continuously until respiratory rate returns tobaseline level.
+
+Respiratory rate
+Flumazenil has a short half-life (much shorter than diazepam) and
+respiratory function may recover and then deteriorate again.
+
+Note: If respiratory rate does not return to normal or patient is not alert after initial doses given,
+assume that sedation is due to some other cause.
+
+References
+1. Patel MX, et al. Joint BAP NAPICU evidence-based consensus guidelines for the clinical management of acute disturbance: de-escalation and
+rapid tranquillisation. J Psychopharmacology 2018; 32:601–640.
+2. Bak M, et al. The pharmacological management of agitated and aggressive behaviour: a systematic review and meta-analysis. Eur Psychiatry
+2019; 57:78–100.
+3. Currier GW, et al. Acute treatment of psychotic agitation: a randomized comparison of oral treatment with risperidone and lorazepam versus
+intramuscular treatment with haloperidol and lorazepam. J Clin Psychiatry 2004; 65:386–394.
+4. Ganesan S, et al. Effectiveness of quetiapine for the management of aggressive psychosis in the emergency psychiatric setting: a naturalistic
+uncontrolled trial. Int J Psychiatry Clin Pract 2005; 9:199–203.
+5. Simpson JR, Jr., et al. Impact of orally disintegrating olanzapine on use of intramuscular antipsychotics, seclusion, and restraint in an acute
+inpatient psychiatric setting. J Clin Psychopharmacol 2006; 26:333–335.
+6. Hsu WY, et al. Comparison of intramuscular olanzapine, orally disintegrating olanzapine tablets, oral risperidone solution, and intramuscular
+haloperidol in the management of acute agitation in an acute care psychiatric ward in Taiwan. J Clin Psychopharmacol 2010; 30:230–234.
+7. Pratts M, et al. A single-dose, randomized, double-blind, placebo-controlled trial of sublingual asenapine for acute agitation. Acta Psychiatr
+Scand 2014; 130:61–68.
+8. Lesem MD, et al. Rapid acute treatment of agitation in individuals with schizophrenia: multicentre, randomised, placebo-controlled study of
+inhaled loxapine. Br J Psychiatry 2011; 198:51–58.
+
+
+
+
+<<<PAGE 157>>>
+
+CHAPTER 1
+
+136  The Maudsley® Prescribing Guidelines in Psychiatry
+
+frequent dosing of zolpidem may provide effective treatment.31,32 IV lorazepam has also
+been used to predict response.33
+Catatonia in schizophrenia may be somewhat less likely to respond to benzodiazepines alone, with a response in 40–50%34 of cases. A double-blind, placebo-controlled,
+cross-over trial with lorazepam up to 6mg per day demonstrated no effect on chronic
+catatonic symptoms in patients with established schizophrenia,35 similar to the poor
+effect of lorazepam in a non-randomised trial.36 A Cochrane review37 searched for RCTs
+in which people with schizophrenia or other similar SMI had received benzodiazepines
+or another relevant treatment for catatonia. Only one study was eligible, which involved
+17 participants treated with lorazepam or oxazepam: there was no clear difference in
+effect. The authors noted that no data were available for benzodiazepines compared
+with either placebo or standard care.
+A further complication in schizophrenia is that of differential diagnosis, which
+includes extrapyramidal side effects and the neuroleptic malignant syndrome (NMS).
+Debate continues regarding the similarities and differences between catatonic stupor in
+psychosis and NMS.38–41 Two terms have been coined – lethal catatonia and malignant
+catatonia42 to describe stupor, which is accompanied by autonomic instability or hyperthermia. This potentially fatal condition cannot be distinguished from NMS, either
+clinically or by laboratory testing, leading to the suggestion that NMS may be a variant
+form of malignant catatonia.43 However, NMS can probably be ruled out in the absence
+of any prior or recent administration of a dopamine antagonist.
+The vast majority of evidence published recently as well as over previous decades
+suggests that prompt ECT remains the most successful treatment for catatonia.33,36,44–60
+ECT-responsive catatonia has been recognised in the context of NMS, delirious mania,
+self-injurious behaviours in autism, and limbic encephalitis.41 While it has been suggested that response to ECT may be lower in patients with schizophrenia (or in those
+who have been treated with antipsychotic medication) than in patients with mood disorders,61 ECT is still considered the treatment of choice for catatonic schizophrenia that
+has failed to respond to an adequate trial of benzodiazepines.62 In malignant catatonia,
+every effort should be made to maximise the effect of ECT by using liberal stimulus
+dosing to induce well-generalised seizures.63 Physical health needs should be prioritised
+and inpatient medical care obtained when necessary, especially for those showing autonomic instability and those whose dietary intake cannot be managed in psychiatric
+care.
+The use of antipsychotic medication should be carefully considered. Some authors
+recommend that antipsychotics should be avoided altogether in catatonic patients,
+although there are case reports of successful treatment with aripiprazole, risperidone,
+olanzapine, ziprasidone and clozapine.64–69 There is probably most evidence supporting
+clozapine and olanzapine. Combination treatment with benzodiazepines can be effective when each fails individually.70,71
+When considering using antipsychotic medication take into account the history of a
+patient, their previous diagnosis and previous response to antipsychotic treatment, and
+the likelihood that non-adherence precipitated stupor. It should be noted that physical
+health conditions, as in the examples listed earlier in this section, can present with a
+
+
+
+
+<<<PAGE 158>>>
+
+catatonia-like clinical picture, warranting treatment of the underlying medical condition (e.g. lupus72). Antipsychotic medication should be avoided when stupor develops
+during treatment with antipsychotic medication, if there are clear signs of NMS, and
+where muscle rigidity is accompanied by autonomic instability. Where NMS can be
+ruled out, and stupor occurs in the context of non-adherence to antipsychotic treatment, early re-establishment of antipsychotic medication is recommended with consideration of adjunctive benzodiazepines. This may be particularly relevant when catatonic
+symptoms have occurred following discontinuation of clozapine.25,73 Catatonia has also
+been reported after withdrawal of long-term benzodiazepine treatment.25
+
+Algorithm for treating catatonic stupor74
+Exclude or treat underlying physical
+illness
+Stupor in the context of
+affective/conversion disorder
+
+Lorazepam up to 4mg/day*
+Start with 2mg and give a
+further 2mg if no effects after
+three hours.
+Use IM route subsequently
+No response after 1–2 days
+
+Lorazepam**
+high dose
+8–24mg/day
+No response after 1–2 days
+
+ECT***
+
+Stupor in the context of psychotic illness
+
+NMS possible
+
+Rule out NMS
+
+Not taking antipsychotics
+medication
+
+NMS ruled out
+
+Consider SGA****
+e.g. clozapine, olanzapine
+Some authorities recommend
+co-therapy with benzodiazepines
+No response after
+1–2 days
+Follow benzodiazepine/ECT
+protocol opposite
+
+* Lorazepam is absorbed sublingually and is tasteless. This route may be preferred in non-cooperative
+patients or those who cannot swallow.
+** Intravenous diazepam or lorazepam may be considered here.
+*** Do not wait to give ECT if there is a significant danger to life.
+**** There is considerable uncertainty about the use of antipsychotics in catatonic stupor. Antipsychotics
+can induce catatonia75 (and risk of NMS in catatonic schizophrenia is much higher compared with
+non-catatonic schizophrenia76). An alternative approach is to use antipsychotics either once catatonia has
+resolved or when benzodiazepines or ECT have failed, and there is a clear psychotic illness.74
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  137
+
+
+
+
+<<<PAGE 301>>>
+
+CHAPTER 2
+
+280  The Maudsley® Prescribing Guidelines in Psychiatry
+
+available29 suggest combination treatments ‘tend to work faster’ and that ‘20% more
+patients will respond to combination therapy’ (compared with monotherapy).
+Conversely, guidelines from Australia and New Zealand suggest trying an antipsychotic
+first and only adding a mood stabiliser ‘if monotherapy does not suffice’.30 In practice,
+there is often a strong tendency to use combination therapy from the outset.
+The diagram outlines a treatment strategy for mania and hypomania. These recommendations are based on the UK NICE guidelines,6 BAP guidelines31 and individual
+references cited. Where an antipsychotic is recommended, choose from those licensed
+for mania/BD, that is, most conventional drugs including aripiprazole, asenapine, olanzapine, risperidone and quetiapine. Suggested doses and alternative treatments are outlined in the tables that follow.
+
+Table 2.6 Drug treatment of mania - suggested doses
+Drug
+
+Dose
+
+Lithium
+
+400mg/day, increasing every 3–4 days according to plasma levels. At least one study has used
+800mg as a starting dose32
+
+Valproate
+
+As semi-sodium – 250mg three times daily increasing according to tolerability and plasma levels.
+Slow release semi-sodium valproate may also be effective (at 15–30mg/kg)33 but there is one
+failed study34
+As sodium valproate slow release – 500mg/day increasing as above
+Higher, ‘loading doses’ have been used, both oral35–37 and intravenous (IV).38,39 Dose is 20–30mg/
+kg/day
+A review of 13 studies suggested ‘IV valproate as a loading therapy is an efficacious, safe and
+well-tolerated treatment’40
+
+Aripiprazole
+
+15mg/day increasing up to 30mg/day as required.41 Doses lower than 15mg may not be effective42
+
+Asenapine
+
+5mg bd increasing to 10mg bd as required
+
+Cariprazine
+
+3mg/day increasing up to 12mg a day as required43
+
+Olanzapine
+
+10mg/day increasing to 15mg or 20mg as required
+
+Risperidone
+
+2mg or 3mg/day increased to 6mg/day as required
+The use of paliperidone in mania is not well supported44
+
+Quetiapine
+
+IR – 100mg/day increasing to 800mg as required. Higher starting doses have been used45
+XL – 300/day increasing to 600mg/day on day 2
+
+Haloperidol
+
+5–10mg/day increasing to 15mg if required
+
+Lorazepam
+
+Up to 4mg/day (some centres use higher doses)
+
+22,23
+
+Clonzapam
+
+21,23
+
+Up to 8mg/day
+
+bd, bis die (twice a day), IR, immediate release, XL, extended release
+
+
+
+
+<<<PAGE 463>>>
+
+442  The Maudsley® Prescribing Guidelines in Psychiatry
+
+There has been limited formal study into the duration of withdrawal symptoms, with
+some reports of weeks-long duration, but they can last longer than a year, especially in
+the case of long-term use.20,23 For a minority, withdrawal symptoms can be protracted
+and last years, sometimes called the ‘post-acute withdrawal syndrome’.26
+
+Stopping benzodiazepines
+
+CHAPTER 3
+
+If the patient is in agreement, benzodiazepines should be withdrawn. Tapering can be
+difficult and should not be imposed on a patient against their will. A cluster randomised
+trial supports the effectiveness of a face-to-face educational intervention.27 Continuing
+support can be required to prepare a patient for withdrawal and to support them
+through the process (e.g. psychological therapies or self-help groups).28
+
+Dosage reduction (tapering)
+Gradual reduction of benzodiazepine dose reduces the intensity of withdrawal symptoms by spreading them out over a longer time period (and giving time for neural adaptations to the drug to resolve).22 Meta-analysis has confirmed that gradual dose
+reduction (‘tapering’) improves drug cessation rates compared with routine clinical
+care.29 Most studies find that a gradual withdrawal over at least 10 weeks is most successful in achieving long-term abstinence,30 although many patients will require considerably longer (sometimes several years). Sudden benzodiazepine withdrawal has
+potentially fatal consequences, so tapering is always advisable.
+
+Direct taper or switching to diazepam?
+Patients who take short- or intermediate-acting benzodiazepines can be tapered off
+these drugs directly but more than once a day dosing might be required.
+An alternative approach is to switch to an equivalent dose of diazepam (which has a
+long half-life and therefore might provokes less severe withdrawal),20,24 noting that
+some patients report withdrawal symptoms from abrupt switches to diazepam and so
+a step-wise switch is probably prudent. Cochrane is lukewarm about switching to diazepam.30 Approximate ‘diazepam equivalent’31 doses are shown Table 3.29. Owing to
+Table 3.29 Approximate ‘diazepam equivalent’31 doses
+Chlordiazepoxide
+
+25mg
+
+Clonazepam
+
+0.5mg
+
+Diazepam
+
+10mg
+
+Lorazepam
+
+1mg
+
+Lormetazepam
+
+1–2mg
+
+Nitrazepam
+
+10mg
+
+Oxazepam
+
+20mg
+
+Temazepam
+
+20mg
+
+
+
+
+<<<PAGE 494>>>
+
+Addictions and substance misuse  473
+
+Table 4.7 Detailed administration schedules for delirium tremens
+New South Wales Guidance3
+
+NEJM diazepam1
+
+NEJM lorazepam1
+
+Regimen 1:
+20mg diazepam orally hourly until
+light sedation achieved
+Max 80mg
+Sublingual olanzapine 10mg if
+continued agitation
+
+Regimen 1:
+10–20mg diazepam orally or IV
+1–4 hourly
+
+Regimen 1:
+8mg lorazepam orally, IM or IV every
+15 minutes (2 doses). If a third dose
+required, give 8mg IV When
+sedation achieved give 10–30mg/
+hour
+Regimen 2:
+1–4mg lorazepam IM every 30–60
+minutes until sedation achieved then
+hourly as needed
+Regimen 3:
+1–4mg lorazepam IV every 5–15
+minutes as needed
+
+All patients with delirium tremens should have IV thiamine (as Pabrinex in the UK)
+at treatment dose, as malnutrition is a known predisposing cause of DTs. Sufficient
+sedation should be achieved to facilitate the giving of this treatment and IV
+rehydration.
+Clinical experience indicates that medical and ITU teams are most comfortable with
+NSW Regime 1 (oral diazepam loading) or NEJM Regime 2 (IM lorazepam), in the first
+instance. NICE suggests that haloperidol can be used to manage behavioural disturbance in delirium tremens, but others urge caution in view of its cardiotoxicity and
+propensity to provoke seizures.1,2 Both NICE and the New South Wales guidance suggest
+olanzapine as a possibility for behavioural disturbance refractory to benzodiazepines.2,3
+Loading of benzodiazepines should not be done in patients with chronic obstructive
+pulmonary disease (COPD) or other respiratory compromise and it is more likely that
+these patients will require respiratory support in order to tolerate medically assisted
+detoxification, so early involvement of the ITU team is critical. Care should be taken to
+monitor respiratory rate (RR) and oxygenation particularly in those patients who are
+smokers and may have occult respiratory disease. Prescription of ‘when necessary’
+flumazenil to reverse benzodiazepine toxicity is advisable.
+
+References
+1. Schuckit MA. Recognition and management of withdrawal delirium (delirium tremens). N Engl J Med 2014; 371:2109–2113.
+2. National Institute for Health and Clinical Excellence. Alcohol-use disorders: physical complications. Clinical Guidance [CG100]. 2010 (last
+updated April 2017); https://www.nice.org.uk/guidance/cg100.
+3. NSW Government. Drug and alcohol withdrawal clinical practice guidelines. 2008; https://www1.health.nsw.gov.au/pds/
+ActivePDSDocuments/GL2008_011.pdf.
+4. Mayo-Smith MF, et al. Management of alcohol withdrawal delirium. An evidence-based practice guideline. Arch Intern Med 2004;
+164:1405–1412.
+5. Nguyen TA, et al. Phenobarbital and symptom-triggered lorazepam versus lorazepam alone for severe alcohol withdrawal in the intensive
+care unit. Alcohol 2020; 82:23–27.
+
+CHAPTER 4
+
+Regimen 2:
+If unable to accept diazepam, IV
+midazolam 5mg, then 2mg/hour in
+HDU setting
+2mg lorazepam is an alternative to
+IV midazolam if it is not available
+
+Regimen 2:
+5mg IV bolus
+Then 10mg IV boluses every 10
+minutes × 2
+Then 20mg IV bolus if needed
+Then 5–20mg IV diazepam/hour
+
+
+
+
+<<<PAGE 580>>>
+
+Children and adolescents  559
+
+Table 5.5 Typical dosage of medications for treatment of anxiety disorders in children
+and adolescents
+Medication
+
+Starting dose (mg)
+
+Dose range (mg/day)
+
+Sertraline
+
+12.5–25
+
+25–200
+
+Fluoxetine
+
+5–10
+
+10–60
+
+Fluvoxamine
+
+12.5–25
+
+50–200
+(BD if >50)
+
+Paroxetine
+
+5–10
+
+10–40
+
+5–10
+
+10–40
+
+Venlafaxine XR
+
+37.5
+
+37.5–225
+
+Duloxetine
+
+30
+
+30–120
+
+1
+
+1–6
+
+5 TDS
+
+15–60
+
+Clonazepam*
+
+0.25–0.5
+
+–
+
+Lorazepam
+
+0.5–1
+
+–
+
+SSRI
+
+Citalopram
+
+*
+
+SNRI
+
+Alpha2 agonist
+Guanfacine
+
+Buspirone*
+Benzodiazepine (PRN)
+
+*
+
+Treatments not supported by RCT evidence.
+Note: Always check dose with latest formal guidance, for example British National
+Formulary for Children (in the UK).
+BD - twice daily
+TDS - three times daily
+
+*
+
+Dosage for treatment with SSRIs is often similar to dosage in adults because of
+faster metabolism in children.
+■■ Therapeutic effect should appear by 6–8 weeks of treatment. It is important to
+communicate this to families.
+■■ If partial or non-response, consider accuracy of diagnosis, adequacy of medication
+trial, and compliance of patient.
+■■ To improve response, consider: adding CBT, changing medication (e.g. switch
+SSRIs, other classes), or combining medications (e.g. for co-morbidities, to treat
+side effects, to potentiate action). Augmentation strategies with buspirone, benzodiazepines, atypical antipsychotics, and stimulant medications have been proposed
+but lack empirical support.7
+■■ Maintenance phase
+■■ Continue maintenance treatment for at least 1 year of stable improvement.
+■■ Monitor response and side effects regularly.
+■■ Discontinuation phase
+■■
+
+CHAPTER 5
+
+5-HT1A partial agonist
+
+
+
+
+<<<PAGE 680>>>
+
+Iloperidone
+
+No formal recommendations are available for dosing in older adults
+(Continued)
+
+The oral bioavailability of clozapine is about half that of the intramuscular injection
+E.g. 50mg daily of the IM injection is roughly equivalent to 100mg daily of the tablets/oral solution. After
+each injection has been given, the patient must be observed every 15 minutes for the first 2 hours to
+check for excess sedation
+NB: If IM lorazepam is required, leave at least ONE HOUR between administration of IM clozapine and IM
+lorazepam
+
+50mg daily13
+
+IM injection
+
+25–37.5mg daily13
+
+6.25mg daily13
+
+Parkinson’s related psychosis
+
+100mg daily11,12
+
+6.25–12.5mg daily11,12 increased
+by not more than 6.25–12.5mg
+once or twice a week11
+
+Schizophrenia
+
+Clozapine
+
+50–100mg daily11,12
+
+Dosage not established in older adults10
+
+15mg daily* (combined oral + IM)
+
+20mg mane*
+
+50mg daily8
+
+200mg daily7 (caution > 100mg
+daily)*
+
+400mg daily6 (caution > 200mg
+daily)*
+
+Cariprazine
+
+5.25–9.75mg*
+
+5–15mg daily*
+
+25–50mg daily8
+
+50–100mg daily* (increase in
+25mg steps)
+
+100–200mg daily*
+
+Dosage not established in older adults9
+
+5.25mg*
+
+Control of agitation (IM
+injection)
+
+25mg nocte8
+
+Agitation/psychosis in dementia
+Caution: QTc prolongation
+5mg mane*
+
+25–50mg daily*
+
+Late life psychosis
+
+Schizophrenia, mania (oral)
+
+50mg daily*
+
+Chronic schizophrenia
+
+Brexpiprazole
+
+Aripiprazole
+
+Amisulpride
+
+Antipsychotics
+
+
+
+
+<<<PAGE 686>>>
+
+Insomnia – short-term use (up
+to 13 weeks)
+
+Generalised anxiety disorder
+Dose adjustment based on renal
+function (see product
+information)25
+
+Insomnia (short-term use – up
+to 4 weeks)
+
+Insomnia (short-term use – up
+to 4 weeks)
+
+Melatonin
+
+Pregabalin
+
+Zolpidem
+
+Zopiclone
+
+3.75mg nocte
+
+5mg nocte
+
+Usually 25mg bd (increase by
+25mg bd weekly)
+Up to 75mg bd (if healthy and
+normal renal function)
+
+2mg (modified release) once daily
+(1–2 hours before bedtime)
+
+0.5mg daily
+
+3.75–7.5mg nocte
+
+5mg nocte
+
+Usually 150mg daily*
+Up to 150mg bd (if healthy and
+normal renal function)
+
+0.5–2mg daily*
+
+7.5mg nocte
+
+5mg nocte
+
+150–300mg/day*
+
+2mg/day
+
+*There is no specific information available in the literature for these drug doses in elderly patients – the doses stated are a guide only. Where there are no data, the
+maximum doses are conservative and may be exceeded if the drug is well tolerated and following clinician’s assessment.
+bs, bis die (twice a day); mane, morning; nocte, at night; prn, pro re nata (as required); tds, ter die sumendum (three times a day).
+
+PRN only – avoid regular use
+due to short half-life and risk of
+dependence
+
+Lorazepam
+
+
+
+
+<<<PAGE 767>>>
+
+746  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+Table 8.11 (Continued )
+Drug
+
+Comments
+
+Diazepam22,25,32,155
+
+Less than 0.5% is excreted unchanged. Dosing: GFR 20–50mL/min, dose as in
+normal renal function; GFR <20mL/min, use small doses and titrate to response.
+Long-acting, active metabolites accumulate in renal impairment; monitor patients for
+excessive sedation and encephalopathy. One case of interstitial nephritis with
+diazepam has been reported in a patient with chronic renal failure.
+
+Eszopiclone156
+
+Less than 10% excreted unchanged in the urine. No dose adjustment is needed in
+renal impairment.
+
+Gabapentin
+
+100% excreted unchanged in urine, clearance is reduced in renal impairment
+resulting in higher plasma concentrations and longer elimination half-lives.157 As
+expected this may result in toxicity in renal impairment if doses are not reduced.158
+Acute renal failure has been reported;159 myoclonus;160 altered mental status, fall and
+fracture when used in patients on haemodialysis for restless legs, itch and
+neuropathic pain.161,162 Has been used to treat pruritis, muscle cramps and restless
+legs syndrome in haemodialysis patients in RCTs.163–165 Dosing advice differs; GFR
+15–60mL/min start low and increase according to response; GFR <15mL/min, 300mg
+alternate days32,159 or 100mg at night then increase according to tolerability25,166 but
+care toxicity as described above. Manufacturer has table of very specific dosing in
+renal impairment in SMPC.159
+
+Lemborexant41,167
+
+<1% excreted unchanged in urine. Manufacturer states no dose adjustment needed
+in renal impairment but exposure increases during severe renal impairment with a
+potential increased risk of somnolence.
+
+Lorazepam22,23,25,32,168–173
+
+<1% excreted unchanged in urine, dose as in normal renal function but carefully
+according to response as some may need lower doses. Monitor for excessive
+sedation. Impaired elimination reported in two patients with severe renal impairment
+and also reports of propylene glycol in lorazepam injection causing renal impairment
+and acute tubular necrosis. However, lorazepam injection has been successfully used
+to treat catatonia in two patients with renal failure.
+
+Nitrazepam23,25
+
+Less than 5% excreted unchanged in the urine. Dosing GFR 10–50mL/min as per
+normal renal function; GFR <10mL/min start with small dose and increase slowly.
+Manufacturer advises reducing dose in renal impairment. Monitor patient for
+sedation and unsteadiness.
+
+Pregabalin
+
+Up to 99% excreted unchanged in urine. Acute renal failure reported.174 Associated
+with altered mental status and falls when used in patients on haemodialysis,161 and
+myoclonus.175 Case report of seizure on abrupt cessation in patient with CKD.176 Used
+to treat uraemic pruritis and neuropathic pain in patients on haemodialysis.177,178
+Dosing advice differs; titrate dosing by tolerability and response for all GFRs; GFR
+30–60mL/min, 75mg daily; GFR 15–30mL/min, 25–50mg daily; GFR <15mL/min,
+25mg daily. Manufacturer has table of very specific dosing in renal impairment in
+SMPC.174
+
+Oxazepam22,25,32,179
+
+Less than 1% excreted unchanged in the urine. Dose adjustment needed in severe
+renal impairment. Oxazepam may take longer to reach steady state in patients with
+renal impairment. Dosing: GFR 10–50mL/min, dose as in normal renal function; GFR
+<10mL/min, start at a low dose and increase according to response. Monitor for
+excessive sedation.
+
+
+
+
+<<<PAGE 775>>>
+
+CHAPTER 8
+
+754  The Maudsley® Prescribing Guidelines in Psychiatry
+
+169. Reynolds HN, et al. Hyperlactatemia, increased osmolar gap, and renal dysfunction during continuous lorazepam infusion. Crit Care Med
+2000; 28:1631–1634.
+170. Verbeeck RK, et al. Impaired elimination of lorazepam following subchronic administration in two patients with renal failure. Br J Clin
+Pharmacol 1981; 12:749–751.
+171. Yaucher NE, et al. Propylene glycol-associated renal toxicity from lorazepam infusion. Pharmacotherapy 2003; 23:1094–1099.
+172. Zar T, et al. Acute kidney injury, hyperosmolality and metabolic acidosis associated with lorazepam. Nat Clin Pract Nephrol 2007;
+3:515–520.
+173. Hayman M, et al. Acute tubular necrosis associated with propylene glycol from concomitant administration of intravenous lorazepam and
+trimethoprim-sulfamethoxazole. Pharmacotherapy 2003; 23:1190–1194.
+174. Upjohn UK Limited. Lyrica 25mg 50mg 75mg 100mg 150mg 200mg 225mg and 300mg hard capsules 2020; https://www.medicines.org.
+uk/emc/product/10303/smpc.
+175. Desai A, et al. Gabapentin or pregabalin induced myoclonus: a case series and literature review. J Clin Neurosci 2019; 61:225–234.
+176. Du YT, et al. Seizure induced by sudden cessation of pregabalin in a patient with chronic kidney disease. BMJ Case Rep 2017;
+2017:bcr2016219158.
+177. Foroutan N, et al. Comparison of pregabalin with doxepin in the management of uremic pruritus: a randomized single blind clinical trial.
+Hemodial Int 2017; 21:63–71.
+178. Otsuki T, et al. Efficacy and safety of pregabalin for the treatment of neuropathic pain in patients undergoing hemodialysis. Clin Drug
+Investig 2017; 37:95–102.
+179. Murray TG, et al. Renal disease, age, and oxazepam kinetics. Clin Pharmacol Ther 1981; 30:805–809.
+180. Leung N, et al. Acute kidney injury in patients with inactive cytochrome P450 polymorphisms. Ren Fail 2009; 31:749–752.
+181. Drover DR. Comparative pharmacokinetics and pharmacodynamics of short-acting hypnosedatives: zaleplon, zolpidem and zopiclone.
+Clin Pharmacokinet 2004; 43:227–238.
+182. Rehman IU, et al. A randomized controlled trial for effectiveness of zolpidem versus acupressure on sleep in hemodialysis patients having
+chronic kidney disease-associated pruritus. Medicine (Baltimore) 2018; 97:e10764.
+183. Hsu FG, et al. Use of zolpidem and risk of acute pyelonephritis in women: a population-based case–control study in Taiwan. J Clin
+Pharmacol 2017; 57:376–381.
+184. Goa KL, et al. Zopiclone. A review of its pharmacodynamic and pharmacokinetic properties and therapeutic efficacy as an hypnotic. Drugs
+1986; 32:48–65.
+185. Hussain N, et al. Zopiclone-induced acute interstitial nephritis. Am J Kidney Dis 2003; 41:E17.
+186. Suwata J, et al. New acetylcholinesterase inhibitor (donepezil) treatment for Alzheimer’s disease in a chronic dialysis patient. Nephron
+2002; 91:330–332.
+187. Nagy CF, et al. Steady-state pharmacokinetics and safety of donepezil HCl in subjects with moderately impaired renal function. Br J Clin
+Pharmacol 2004; 58 (Suppl 1):18–24.
+188. Tiseo PJ, et al. An evaluation of the pharmacokinetics of donepezil HCl in patients with moderately to severely impaired renal function. Br
+J Clin Pharmacol 1998; 46 (Suppl 1):56–60.
+189. Sahin OZ, et al. A rare case of acute renal failure secondary to rhabdomyolysis probably induced by donepezil. Case Rep Nephrol 2014;
+2014:214359.
+190. Periclou A, et al. Pharmacokinetic study of memantine in healthy and renally impaired subjects. Clin Pharmacol Ther 2006; 79:134–143.
+191. Lefevre G, et al. Effects of renal impairment on steady-state plasma concentrations of Rivastigmine: a population pharmacokinetic analysis
+of capsule and patch formulations in patients with Alzheimer’s disease. Drugs Aging 2016; 33:725–736.
+192. AMAG Pharmaceutical Inc. Highlights of prescribing information. Vyleesi (bremelanotide injection) for subcutaneous use 2019; https://
+www.accessdata.fda.gov/drugsatfda_docs/label/2019/210557s000lbl.pdf.
+193. Nelson ME, et al. Melanotan II injection resulting in systemic toxicity and rhabdomyolysis. Clin Toxicol (Phila) 2012; 50:1169–1173.
+194. Teva Pharmaceuticals USA Inc. Highlights of prescribing information. Austedo (deutetrabenazine) tablets for oral use 2020; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2017/209885lbl.pdf.
+195. Lincoln Medical Limited. Wakix 4.5mg/18mg film-coated tablets 2016; https://www.medicines.org.uk/emc/product/7402.
+196. Bioprojet Pharma. Highlights of prescribing information. Wakix (pitolisant) tablets for oral use 2019; https://www.accessdata.fda.gov/
+drugsatfda_docs/label/2019/211150s000lbl.pdf.
+197. Smith WB, et al. Effect of renal impairment on the pharmacokinetics of prucalopride: a single-dose open-label Phase I study. Drug Des
+Devel Ther 2012; 6:407–415.
+198. Shire Pharmaceuticals Limited. Resolor 1mg and 2mg film-coated tablets 2019; https://www.medicines.org.uk/emc/product/584/smpc.
+199. Sivabalasundaram V, et al. Prucalopride-associated acute tubular necrosis. World J Clin Cases 2014; 2:380–384.
+200. Jazz Pharmaceuticals UK. Sunosi 75mg and 140mg film-coated tablets 2020; https://www.medicines.org.uk/emc/product/11017/smpc.
+201. Zomorodi K, et al. Single-dose pharmacokinetics and safety of solriamfetol in participants with normal or impaired renal function and with
+end-stage renal disease requiring hemodialysis. J Clin Pharmacol 2019; 59:1120–1129.
+202. Neurocrine Biosciences Inc. Highlights of prescribing information. Ingrezza (valbenazine) capsules for oral use 2020; https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/209241lbl.pdf.
+203. Gregg LP, et al. Pharmacologic and psychological interventions for depression treatment in patients with kidney disease. Curr Opin
+Nephrol Hypertens 2020; 29:457–464.
+
+
+
+
+<<<PAGE 850>>>
+
+Prescribing in patients with psychiatric illness at the end of life
+Generally, prescribing in patients with psychiatric illness who are approaching end of
+life should follow the principles of good prescribing practice in palliative care.1 This
+includes reviewing the appropriateness of a drug, its dose and potential for its discontinuation. Furthermore, if swallowing becomes impaired, it includes making adjustments, such as the use of liquid preparations or parenteral administration.
+There is a lack of specific guidance around long-term psychiatric medications in this
+setting to support clinicians. This adds to reluctance, particularly by generalists, to
+adjust or stop such drugs.2,3 This suggests there is scope for improved liaison between
+non-psychiatry and psychiatry services.
+Physical deterioration may impact on factors (e.g. reducing smoking, drinking less
+fluid) which in turn alter a drug’s pharmacokinetics and/or pharmacodynamics, making
+ongoing review important. Furthermore, polypharmacy is common, increasing the risk
+of drug–drug interaction and toxicity, for example, tramadol and SSRI antidepressants
+leading to serotonin toxicity.
+Depression is common4 but often not recognised at the end of life.5 This is important,
+given that antidepressants may be beneficial even when prognosis is short.6 Mirtazapine
+and citalopram are most strongly supported for use in this population.7 Psychostimulants
+such as modafinil may reduce symptoms of depression in the short term, but there is
+less evidence for sustained effectiveness.8
+There is a lack of evidence to guide drug management of anxiety at the end of life.9,10
+Non-drug approaches have a stronger evidence base for effectiveness.11
+Though commonly used for management of delirium, evidence of effectiveness of
+antipsychotics is mixed. Nonetheless, national guidelines support their use for very
+distressed patients or those for whom other approaches have been unsuccessful.12
+Table 10.14 Examples of drugs prescribed in psychiatry which are also used for symptom management in
+palliative care1
+Symptom
+
+Example drugs
+
+Neuropathic pain
+
+Amitriptyline
+Imipramine
+Duloxetine
+Gabapentin/pregabalin
+Clonazepam
+
+Nausea and vomiting
+
+Haloperidol
+Olanzapine
+Lorazepam
+
+Anorexia
+
+Mirtazapine
+
+Skeletal muscle spasm
+
+Diazepam
+(Continued)
+
+CHAPTER 10
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  829
+
+
+
+
+<<<PAGE 955>>>
+
+934  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 14.7 (Continued)
+
+CHAPTER 14
+
+Antipsychotic generic name and
+formulation
+
+Site(s) of administration
+
+Paliperidone palmitate
+Prolonged release suspension for injection
+every 3 months
+
+Deltoid muscle administration19
+The specified needle for administration of Trevicta into the deltoid
+muscle is determined by the patient’s weight.
+• For those ≥90kg, the thin wall 1½inch, 22 gauge (0.72mm ×
+38.1mm) needle should be used.
+• For those <90kg, the thin wall 1inch, 22 gauge (0.72mm ×
+25.4mm) needle should be used.
+It should be administered into the centre of the deltoid muscle.
+Deltoid injections should be alternated between the two deltoid
+muscles.
+Gluteal muscle administration19
+The needle to be used for administration of TREVICTA into the
+gluteal muscle is the thin wall 1½inch, 22 gauge (0.72mm ×
+38.1mm) needle regardless of body weight. It should be
+administered into the upper-outer quadrant of the gluteal muscle.
+Gluteal injections should be alternated between the two gluteal
+muscles.
+
+Risperidone microspheres
+Powder and vehicle for prolonged-release
+suspension
+
+Deep intramuscular deltoid or gluteal injection using the
+appropriate safety needle. For deltoid administration, use the
+1-inch needle alternating injections between the two arms. For
+gluteal administration, use the 2-inch needle alternating injections
+between the two buttocks.20
+
+Intramuscular injections for rapid tranquilisation
+Antipsychotic generic name and
+Formulation
+
+Site of administration
+
+Aripiprazole
+Solution for injection
+
+To enhance absorption and minimise variability, injection into the
+deltoid or deep within the gluteus maximus muscle,
+avoiding adipose regions, is recommended.21
+
+Haloperidol
+Solution for injection
+
+Intramuscular administration.22
+Preferably, gluteal muscle is selected when the dosage volume is
+high. Deltoid muscle is preferred for low doses of the injection.
+However, there is no information on the dosage limit for these
+specific muscle groups. Choice of site is at the discretion of the
+prescriber, according to the manufacturer.23
+
+Lorazepam
+Solution for injection
+
+Intramuscular administration.
+Can be administered into the gluteal, deltoid or frontal thigh
+area according to the manufacturer.24
+A 1:1 dilution of Ativan Injection with normal saline or Sterile
+Water for Injection BP is recommended in order to facilitate
+intramuscular administration and absorption.25
+
+
+
+
+<<<PAGE 959>>>
+
+938  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 14.8 (Continued)
+Medication
+
+Indication
+
+Class
+
+Droperidol19–24
+
+Acute
+disturbance
+
+Butyrophenone 5–10mg
+(D2 antagonist)
+
+Haloperidol
+
+Acute
+Butyrophenone 5–10mg
+disturbance24–27 (D2 antagonist)
+
+CHAPTER 14
+
+Ketamine
+
+Lorazepam
+
+Dosea
+
+Adverse Effectsb
+
+Comments
+
+Combination with
+Historical concerns
+over QT prolongation midazolam is more
+have been contested effective than either
+IV droperidol is
+in subsequent
+superior to lorazepam
+reviews and trials
+Dystonia, hypoxia
+
+Lack of robust recent
+evidence
+ECG essential
+
+Delirium28–30
+
+Over sedation
+2–2.5mg every
+hypokinesia
+4–8 hours
+Up to 10mg slow
+bolus
+
+Most recent evidence
+showed effect not
+superior to placebo in
+ICU delirium
+ECG essential
+
+Acute
+NMDA
+disturbance31–34 antagonist
+
+1–5mg/kg
+
+No effect on
+respiratory drive.
+May increase heart
+rate and blood
+pressure
+
+Supported by the
+Royal College of
+Emergency Medicine
+
+Depression35–43
+
+0.5mg/kg, diluted No serious adverse
+events. Dissociation
+in 0.9% saline,
+over a 40-minute was common.
+Transient blood
+period
+pressure elevation
+(absolute dose
+26–60mg)
+
+Most recent evidence
+supports weekly
+infusions and is more
+positive than previous
+Cochrane review
+(2015)44
+
+Bipolar
+depression44,45
+
+0.5mg/kg
+
+Well tolerated
+
+Cochrane (2015)44
+suggests evidence is
+limited, though a
+2018 study found it
+safe and effective
+
+Fatigue46
+
+0.5mg/kg
+
+Mild and transient
+
+Apparently safe and
+effective
+
+No significant side
+effects reported
+
+Inferior to IV
+droperidol
+
+Difficult to say as
+was given in
+combination with
+haloperidol
+
+Combination with
+haloperidol more
+effective than
+haloperidol
+
+Acute
+disturbance23
+Delirium29
+
+Midazolam20,21,47,48 Acute
+disturbance
+
+Benzodiazepine
+3mg of
+lorazepam in
+25mL of 0.9%
+normal saline
+solution
+Benzodiazepine 2.5–15mg
+
+Safe but respiratory High dose protocols
+are not more
+depression is a
+possibility, especially effective but have
+higher adverse events
+in higher doses
+incidence.
+Combination with
+droperidol more
+effective
+
+

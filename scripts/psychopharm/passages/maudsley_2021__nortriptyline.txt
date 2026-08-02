@@ -1,0 +1,1316 @@
+<<<PAGE 338>>>
+
+Depression and anxiety disorders  317
+
+Resistant depression is difficult to treat successfully, and outcomes are often poor,1–3
+especially if evidence-based protocols are not followed.4 Treatment-resistant depression
+is not a uniform entity but a complex spectrum of severity which can be graded5 and in
+which outcome is closely linked to grading.6 A significant minority of apparently resistant unipolar depression may in fact be bipolar depression7,8 which is often unresponsive
+to standard antidepressants9,10 (see section on ‘Bipolar depression’ in Chapter 2).
+Recently there has been a move to characterise treatment-resistant depression as ‘difficult-to-treat’ depression on the basis that the former description implies that depression
+treatments are normally effective and that non-response is therefore somehow abnormal.11 Others suggest abandoning treatment-resistant depression as a diagnosis (again
+proposing ‘difficult-to-treat’ depression) because it propels clinicians to try more and
+more drugs in increasingly complex regimens rather than managing expectations of
+recovery to a more realistic level.12
+Management of treatment-resistant depression has been informed by the STAR*D
+programme (Sequenced Treatment Alternatives to Relieve Depression). This was a
+pragmatic effectiveness study which used remission of symptoms as its main outcome.
+At stage 1,13 2,786 subjects received citalopram (mean dose 41.8mg/day) for 14 weeks;
+
+n = 2,876
+Out-patients with major depression
+Citalopram
+28%
+Switch
+n = 727
+
+Bupropion
+21.3%
+
+vs
+
+Venlafaxine
+24.8%
+
+vs
+
+Sertraline
+17.6%
+
+Switch
+n = 235
+
+Mirtazapine
+12.3%
+
+vs
+
+Augment
+n = 565
+
+Failed
+
+Add bupropion
+29.7%
+
+Failed
+
+Add lithium
+15.9%
+
+Nortriptyline
+19.8%
+
+n = 51
+
+Tranylcypromine
+6.9%
+Figure 3.2 Remission rates in STAR*D
+
+Failed
+
+vs
+
+vs
+
+Add buspirone
+30.1%
+
+Augment
+n = 142
+
+vs
+
+n = 58
+
+Mirtazapine + venlafaxine
+13.7%
+
+Add T3
+24.7%
+
+CHAPTER 3
+
+Management of treatment-resistant depression – first choice
+
+
+
+
+<<<PAGE 347>>>
+
+CHAPTER 3
+
+326  The Maudsley® Prescribing Guidelines in Psychiatry
+
+35. Nierenberg AA, et al. Lithium augmentation of nortriptyline for subjects resistant to multiple antidepressants. J Clin Psychopharmacol 2003;
+23:92–95.
+36. Fava M, et al. A comparison of mirtazapine and nortriptyline following two consecutive failed medication treatments for depressed outpatients: a STAR*D report. Am J Psychiatry 2006; 163:1161–1172.
+37. Shelton RC, et al. Olanzapine/fluoxetine combination for treatment-resistant depression: a controlled study of SSRI and nortriptyline resistance. J Clin Psychiatry 2005; 66:1289–1297.
+38. Stahl SM. Basic psychopharmacology of antidepressants, part 2: oestrogen as an adjunct to antidepressant treatment. J Clin Psychiatry 1998;
+59 Suppl 4:15–24.
+39. Liao Y, et al. Efficacy of omega-3 PUFAs in depression: a meta-analysis. Trans Psychiatry 2019; 9:190.
+40. McAskill R, et al. Pindolol augmentation of antidepressant therapy. Br J Psychiatry 1998; 173:203–208.
+41. Rasanen P, et al. Mitchell B. Balter award–1998. Pindolol and major affective disorders: a three-year follow-up study of 30,485 patients. J
+Clin Psychopharmacol 1999; 19:297–302.
+42. Perry EB, et al. Pindolol augmentation in depressed patients resistant to selective serotonin reuptake inhibitors: a double-blind, randomized,
+controlled trial. J Clin Psychiatry 2004; 65:238–243.
+43. Sokolski KN, et al. Once-daily high-dose pindolol for SSRI-refractory depression. Psychiatry Res 2004; 125:81–86.
+44. Whale R, et al. Pindolol augmentation of serotonin reuptake inhibitors for the treatment of depressive disorder: a systematic review. J
+Psychopharmacology 2010; 24:513–520.
+45. Carhart-Harris RL, et al. Psilocybin with psychological support for treatment-resistant depression: an open-label feasibility study. Lancet
+Psychiatry 2016; 3:619–627.
+46. Yoshimura R, et al. Addition of risperidone to sertraline improves sertraline-resistant refractory depression without influencing plasma concentrations of sertraline and desmethylsertraline. Human Psychopharmacology 2008; 23:707–713.
+47. Mahmoud RA, et al. Risperidone for treatment-refractory major depressive disorder: a randomized trial. Ann Intern Med 2007;
+147:593–602.
+48. Ostroff RB, et al. Risperidone augmentation of selective serotonin reuptake inhibitors in major depression. J Clin Psychiatry 1999;
+60:256–259.
+49. Rapaport MH, et al. Effects of risperidone augmentation in patients with treatment-resistant depression: results of open-label treatment followed by double-blind continuation. Neuropsychopharmacology 2006; 31:2505–2513.
+50. Stoll AL, et al. Tranylcypromine plus risperidone for treatment-refractory major depression. J Clin Psychopharmacol 2000; 20:495–496.
+51. Keitner GI, et al. A randomized, placebo-controlled trial of risperidone augmentation for patients with difficult-to-treat unipolar, non-psychotic major depression. J Psychiatr Res 2009; 43:205–214.
+52. Pancheri P, et al. A double-blind, randomized parallel-group, efficacy and safety study of intramuscular S-adenosyl-L-methionine 1,4-butanedisulphonate (SAMe) versus imipramine in patients with major depressive disorder. Int J Neuropsychopharmacol 2002; 5:287–294.
+53. Alpert JE, et al. S-adenosyl-L-methionine (SAMe) as an adjunct for resistant major depressive disorder: an open trial following partial or
+nonresponse to selective serotonin reuptake inhibitors or venlafaxine. J Clin Psychopharmacol 2004; 24:661–664.
+54. Sharma A, et al. S-adenosylmethionine (SAMe) for neuropsychiatric disorders: a clinician-oriented review of research. J Clin Psychiatry 2017;
+78:e656–e667.
+55. Galizia I, et al. S-adenosyl methionine (SAMe) for depression in adults. Cochrane Database Syst Rev 2016; 10:Cd011286.
+56. Trivedi MH, et al. Medication augmentation after the failure of SSRIs for depression. N Engl J Med 2006; 354:1243–1252.
+57. Appelberg BG, et al. Patients with severe depression may benefit from buspirone augmentation of selective serotonin reuptake inhibitors:
+results from a placebo-controlled, randomized, double-blind, placebo wash-in study. J Clin Psychiatry 2001; 62:448–452.
+58. Taylor D. Selective serotonin reuptake inhibitors and tricyclic antidepressants in combination – interactions and therapeutic uses. Br J
+Psychiatry 1995; 167:575–580.
+59. Malhi GS, et al. Management of resistant depression. Int J Psychiatry Clin Pract 1997; 1:269–276.
+60. Pope HG, Jr., et al. Testosterone gel supplementation for men with refractory depression: a randomized, placebo-controlled trial. Am J
+Psychiatry 2003; 160:105–111.
+61. Tobe EH, et al. Possible usefulness of tianeptine in treatment-resistant depression. Int J Psychiatry Clin Pract 2013; 17:313–316.
+62. Woo YS, et al. Tianeptine combination for partial or non-response to selective serotonin re-uptake inhibitor monotherapy. Psychiatry Clin
+Neurosci 2013; 67:219–227.
+63. Angst J, et al. The treatment of depression with L-5-hydroxytryptophan versus imipramine. Results of two open and one double-blind study.
+Arch Psychiatr Nervenkr 1977; 224:175–186.
+64. Alino JJ, et al. 5-Hydroxytryptophan (5-HTP) and a MAOI (nialamide) in the treatment of depressions. A double-blind controlled study. Int
+Pharmacopsychiatry 1976; 11:8–15.
+65. Hale AS, et al. Clomipramine, tryptophan and lithium in combination for resistant endogenous depression: seven case studies. Br J Psychiatry
+1987; 151:213–217.
+66. Young SN. Use of tryptophan in combination with other antidepressant treatments: a review. J Psychiatry Neurosci 1991; 16:241–246.
+67. Poirier MF, et al. Venlafaxine and paroxetine in treatment-resistant depression. Double-blind, randomised comparison. Br J Psychiatry 1999;
+175:12–16.
+68. Nierenberg AA, et al. Venlafaxine for treatment-resistant unipolar depression. J Clin Psychopharmacol 1994; 14:419–423.
+69. Smith D, et al. Efficacy and tolerability of venlafaxine compared with selective serotonin reuptake inhibitors and other antidepressants: a
+meta-analysis. Br J Psychiatry 2002; 180:396–404.
+70. Rush AJ, et al. Bupropion-SR, sertraline, or venlafaxine-XR after failure of SSRIs for depression. N Engl J Med 2006; 354:1231–1242.
+
+
+
+
+<<<PAGE 354>>>
+
+In clinical practice, at least until recent years, only a small proportion of patients with
+psychotic depression received an antipsychotic drug,24 perhaps reflecting clinicians’
+uncertainty regarding the risk–benefit ratio of this treatment strategy and the lack of
+consensus across published guidelines.25 Under-diagnosis (and hence inadequacy of
+treatment) of psychotic symptoms in depression is also a significant problem.3,26
+Nonetheless, some antipsychotic drugs such as quetiapine and olanzapine have useful
+antidepressant effects (as well as being antipsychotic) and so there is an empiric basis
+(in addition to the trial outcomes above) for their use as additive agents to antidepressant treatment.
+Long-term outcome is generally poorer for psychotic than non-psychotic depression.27,28 Patients with psychotic depression may also have a poorer response to combined pharmacological and psychological treatment than those with non-psychotic
+depression.29 People with psychotic depression are much more likely than those with
+non-psychotic depression to attempt and complete suicide.30
+Psychotic depression is one of the indications for ECT. Not only is ECT effective, it
+may also be more protective against relapse in psychotic depression than in non-psychotic depression.31 One small RCT demonstrated superiority of maintenance ECT plus
+nortriptyline over nortriptyline alone at 2 years.32
+Another approach is that based on antiglucocorticoid strategies, since HPA axis
+hyperactivity is more common in psychotic depression. One small open study found
+rapid effects of the glucocorticoid receptor antagonist mifepristone,33 although these
+findings have been criticised.34 Response may be related to mifepristone plasma levels
+(>1800ng/mL).35 Another analysis suggested a plasma concentration of above 1637ng/
+mL was robustly associated with response,36 albeit in a trial stopped early because of
+lack of efficacy of mifepristone.
+There is an anecdotal report of the successful use of methylphenidate in a patient
+who did not respond to robust doses of an antidepressant and antipsychotic combined.37 Other case reports describe successful outcome with lamotrigine38 and a combination of phenelzine, aripiprazole and quetiapine.39 Minocycline has also shown
+good effect, albeit in an open study.40
+Ketamine may also be effective in psychotic depression. One report41 describes successful use of intravenous ketamine (0.5mg/kg) in two patients unresponsive to standard treatments (one of the two patients had a diagnosis of schizoaffective disorder).
+Another42 outlines rapid response to esketamine (0.5mg/kg) given intravenously or subcutaneously) in four patients, two of whom had a primary diagnosis of unipolar
+depression.
+There is no specific indication for other therapies or augmentation strategies in psychotic depression over and above that for resistant depression or psychosis described
+elsewhere.
+
+Summary
+TCAs are probably drugs of first choice in psychotic depression.
+SSRIs/SNRIs are a second-line alternative when TCAs are poorly tolerated.
+■■ Augmentation of an antidepressant with olanzapine or quetiapine is recommended.
+■■ The optimum dose and duration of antipsychotic augmentation are unknown.
+■■
+■■
+
+CHAPTER 3
+
+Depression and anxiety disorders  333
+
+
+
+
+<<<PAGE 375>>>
+
+354  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Table 3.11 (Continued)
+
+Drug
+
+Effect on ECT
+seizure duration
+
+Lithium34–37,
+
+Possibly increased
+
+Conflicting data on lithium and ECT. The combination may be more
+likely to lead to delirium and confusion, and some authorities suggest
+discontinuing lithium 48 hours before ECT. In the UK, ECT is often used
+during lithium therapy but starting with a low stimulus and with very
+close monitoring. The combination is generally well tolerated.38 Note
+that lithium potentiates the effects of non-depolarising neuromuscular
+blockers such as suxamethonium. Concomitant use of thiopentone or
+propofol with lithium treatment lowers seizure threshold.39
+
+Antipsychotics40–44
+
+Variable – increased
+with phenothiazines
+and clozapine
+
+Few published data but widely used. Phenothiazines and clozapine
+are perhaps most likely to prolong seizures, and some suggest
+withdrawal before ECT. However, safe concurrent use has been
+reported (particularly with clozapine45,46 which is now usually
+continued). ECT is effective in clozapine non-response.47
+
+Others – no obvious
+effect reported
+
+Comments3,15–18
+
+ECT and antipsychotics appear generally to be a safe combination.
+Few data on aripiprazole, quetiapine and ziprasidone, but they too
+appear to be safe. One case series48 suggests antipsychotics increase
+post ictal cognitive dysfunction.
+Antiseizure
+medications49–52
+
+Reduced
+
+If used as a mood-stabiliser, continue but be prepared to use higher
+energy stimulus (not always required). If used for epilepsy, their
+effect is to normalise seizure threshold. Interactions are possible.
+Valproate may prolong the effect of thiopental; carbamazepine may
+inhibit neuromuscular blockade. A small RCT found no significant
+difference between carbamazepine and valproate (full dose vs half
+dose) in seizure duration, seizure threshold and cognition
+outcomes.53 Lamotrigine is reported to cause no problems.
+
+Barbiturates
+
+Reduced
+
+All barbiturates reduce seizure duration in ECT but are widely used
+as sedative anaesthetic agents.
+Thiopental and methohexital may be associated with cardiac
+arrhythmia.
+
+For drugs known to lower seizure threshold, treatment is best begun with a lowenergy stimulus (50mC). Staff should be alerted to the possibility of prolonged seizures
+and IV diazepam should be available. With drugs known to elevate seizure threshold,
+higher stimuli may, of course, be required. Methods are available to lower seizure
+threshold or prolong seizures,54 but discussion of these is beyond the scope of this book.
+ECT frequently causes confusion and disorientation; more rarely, it causes delirium.
+Concurrent lithium may increase the risk of delirium.34 There have also been two case
+reports of serotonin syndrome; one occurred after ECT in a patient on combination of
+trazodone, bupropion and quetiapine55 and the other in a patient receiving lithium
+duringECT therapy.56 Close observation is essential. Very limited data support the use
+of thiamine (200mg daily) in reducing post-ECT confusion.57 Nortriptyline seems to
+enhance ECT efficacy and reduce cognitive adverse effects.1 Cognitive enhancers (donepezil, memantine, rivastigmine) might improve cognitive function and reduce ECTinduced cognitive side effects (and appear to be safe).58,59 Ibuprofen may be used to
+prevent headache,60 and intranasal sumatriptan61 can be used to treat it.
+
+
+
+
+<<<PAGE 383>>>
+
+362  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Post-stroke depression
+Depression itself is a well-established risk factor for stroke.1–4 In addition, depression is
+seen in at least 30–40% of survivors of stroke5,6 and post-stroke depression is known
+to slow functional rehabilitation.7 Antidepressants may reduce depressive symptoms8
+and thereby facilitate faster rehabilitation.9 They may also improve global cognitive
+functioning,10,11 enhance motor recovery12,13 and even reduce mortality.14 Despite these
+benefits post-stroke depression often goes untreated.15
+
+CHAPTER 3
+
+Prophylaxis
+The high incidence of depression after stroke makes prophylaxis worthy of consideration. Pooled data suggest a robust prophylactic effect for antidepressants.16,17
+Nortriptyline, fluoxetine, escitalopram, duloxetine and sertraline appear to prevent
+post-stroke depression.18–22 Mirtazapine may both protect against depressive episodes
+and treat them.23 A well-designed, multicentre, placebo-controlled RCT found escitalopram to reduce the incidence of mild depressive symptoms but not moderate or severe
+symptoms.24
+A large cohort study that examined adverse outcomes in elderly patients treated with
+antidepressants reported that mirtazapine (and venlafaxine) may be associated with an
+increased risk of a new stroke compared with SSRIs or TCAs.25
+Mianserin seems ineffective in the treatment of post-stroke depression.26
+Amitriptyline27 and duloxetine28 are effective in treating central post-stroke pain.
+Routine use of antidepressants for the prevention of post-stroke depression is not
+recommended – Cochrane suggests that there may be a benefit, but note that the evidence is poor.29 Three recent large multicentre RCTs (not included in the Cochrane
+review) showed the risks of prescribing fluoxetine (bone fractures, falls, seizures) to
+outweigh benefits in the reduction in incident depression.30–32
+
+Treatment
+Treatment is complicated by medical co-morbidity and by the potential for interaction
+with other co-prescribed drugs (especially warfarin – see Box 3.2). Contraindication to
+antidepressant treatment is more likely with tricyclics than with SSRIs.33
+Fluoxetine,12,30,34,35 citalopram10,36–38 and nortriptyline39,40 are probably the most studied41 and seem to be effective and safe.42 SSRIs and nortriptyline are widely recommended for post-stroke depression. Reboxetine (which, like nortriptyline, does not
+affect platelet activity) may also be effective and well tolerated,43 although its effects
+overall are doubtful.44 Vortioxetine may be of particular interest owing to its additional
+benefits on cognition (independent of effects on depressive symptoms). It also does not
+appear to adversely affect cardiovascular parameters or interact with warfarin or aspirin, but there are currently no data to support its use specifically in post-stroke
+depression.
+Despite fears, SSRIs seem not to increase risk of stroke45 (post-stroke), although some
+doubt remains.46–49 (Stroke can be embolic or haemorrhagic – SSRIs may protect against
+the former50,51 and provoke the latter52,53 although the evidence base for this is rather
+
+
+
+
+<<<PAGE 384>>>
+
+weak54 – see section on ‘SSRIs and Bleeding’ in this chapter). Other side effects may also
+be problematic – specifically falls, bone fractures and epileptic seizures.30–32
+Antidepressants are clearly effective in post-stroke depression,42,55 and treatment
+should not usually be withheld (even though Cochrane is rather lukewarm about the
+benefits of antidepressants29). Inadequate treatment of depression increases the risk of
+stroke.14,56 Two multiple-treatments meta-analyses suggested that paroxetine might be
+the drug of choice when considering both efficacy and tolerability post-stroke, although
+small sample sizes and a lack of high-quality studies in this area limit the strength of
+this recommendation57,58 (each analysis included only one paroxetine trial, whereas a
+meta-analysis of four trials of paroxetine found no benefit59). A recent large multiple
+treatments meta-analysis of 51 trials ranked mirtazapine first for response rate, followed by venlafaxine and escitalopram, although the studies were limited to Chinese
+patients and so may lack generalisability.60
+
+Box 3.2 Post-stroke depression – recommended drugs
+SSRIs*
+Nortriptyline
+
+* Caution is clearly required if the index stroke was known to be haemorrhagic because
+SSRIs increase the risk of de novo haemorrhagic stroke (although absolute risk is low),
+especially when combined with warfarin or other anti-platelet drugs.61,62 If patient is
+taking warfarin, suggest citalopram or escitalopram (probably lowest interaction
+potential63) and use the lowest effective dose.49 Little is known of the pharmacokinetic
+interaction potential with direct-acting oral anticoagulants (DOACs). Citalopram or
+escitalopram may again be preferred as neither drug affects enzymes associated with
+DOAC metabolism.64
+Where SSRIs are given in any anticoagulated or aspirin-treated patient, consideration
+should be given to the prescription of a proton-pump inhibitor for gastric protection.
+Nortriptyline, which does not appear to increase risk of bleeding, is an alternative.
+
+References
+1. Wium-Andersen MK, et al. An attempt to explain the bidirectional association between ischaemic heart disease, stroke and depression: a
+cohort and meta-analytic approach. Br J Psychiatry 2020; 217:434–441.
+2. Pan A, et al. Depression and risk of stroke morbidity and mortality: a meta-analysis and systematic review. JAMA 2011; 306:1241–1249.
+3. Pequignot R, et al. Depressive symptoms, antidepressants and disability and future coronary heart disease and stroke events in older adults:
+the Three City Study. Eur J Epidemiol 2013; 28:249–256.
+4. Li CT, et al. Major depressive disorder and stroke risks: a 9-year follow-up population-based, matched cohort study. PLoS One 2012;
+7:e46818.
+5. Gainotti G, et al. Relation between depression after stroke, antidepressant therapy, and functional recovery. J Neurol Neurosurg Psychiatry
+2001; 71:258–261.
+6. Hayee MA, et al. Depression after stroke-analysis of 297 stroke patients. Bangladesh Med Res Counc Bull 2001; 27:96–102.
+7. Paolucci S, et al. Post-stroke depression, antidepressant treatment and rehabilitation results. A case-control study. Cerebrovasc Dis 2001;
+12:264–271.
+8. Xu XM, et al. Efficacy and feasibility of antidepressant treatment in patients with post-stroke depression. Medicine (Baltimore) 2016;
+95:e5349.
+
+CHAPTER 3
+
+Depression and anxiety disorders  363
+
+
+
+
+<<<PAGE 389>>>
+
+368  The Maudsley® Prescribing Guidelines in Psychiatry
+
+One attraction of IV administration of antidepressants may be a more rapid onset of
+action, but this is not consistently demonstrated in controlled studies.29
+Extensive studies of IV ketamine, a glutamate N-methyl-d-aspartate (NMDA) receptor antagonist have demonstrated rapid, albeit short-lived antidepressant effects.30
+Concerns over long-term duration of response may be less relevant for acutely medically unwell patients. Ketamine has also been delivered via intranasal,31 IM and SC
+routes,32,33 sublingually3,34 and via transmucosal routes.35 IV scopolamine (hyoscine) as
+an antidepressant has also been investigated and has produced rapid antidepressant
+effects within 72 hours in both unipolar and bipolar depression.36–38
+
+CHAPTER 3
+
+Transdermal
+Amitriptyline gel is used in pain clinics as an adjuvant in the treatment of a variety of
+chronic pain conditions.39,40 It is usually prepared as a 50mmol/L or 100mmol/L gel
+with or without lidocaine, and although it has proven analgesic activity there are no
+published data on the plasma levels attained via this route. Nortriptyline hydrochloride
+has been formulated as a transdermal patch for smoking cessation.41 Nanoemulsion
+formulations of imipramine and of doxepin have also been formulated for transdermal
+delivery for use as analgesics.42 At the time of writing there are no published studies on
+nortriptyline patches or imipramine or doxepin nanoemulsions in depression. It is
+unlikely that any of these formulations achieve plasma concentrations high enough to
+elicit antidepressant effects.
+Oral selegiline at doses greater than 20mg/day may be antidepressant, but enzyme
+selectivity is lost at these doses, necessitating a tyramine-restricted diet.43,44 Selegiline
+can be administered transdermally. It is efficacious and tolerable and delivers 25–30%
+of the selegiline content over 24 hours and steady-state plasma concentrations are
+achieved within 5 days of daily dosing.45 This route bypasses first-pass metabolism,
+thereby providing a higher, more sustained, plasma concentration of selegiline while
+being relatively sparing of the gastrointestinal MAO-A system.46,47 There seems to be no
+need for tyramine restriction when the lower dose patch (6mg/24 hours) is used, and
+there have been no reports of hypertensive reactions even with the higher dose patch.
+Patients using the higher strength patches (9mg or 12mg/24 hours) should avoid very
+high tyramine content food substances,48 but generally transdermal selegiline is well
+tolerated.
+Rectal
+The rectal mucosa lacks the extensive villi and microvilli of other parts of the gastrointestinal tract limiting its surface area. Therefore, rectal agents need to be in a formulation that maximises the extent of contact the active ingredient will have with the
+mucosa. There are no readily available antidepressant suppositories, but extemporaneous preparation is possible. For example, amitriptyline (in cocoa butter) suppositories
+have been manufactured by a hospital pharmacy and administered in a dose of 50mg
+twice daily with some subjective success.49,50 Doxepin capsules have been administered
+via the rectal route directly in the treatment of cancer-related pain (without a special
+formulation) and produced plasma concentrations within the supposed therapeutic
+
+
+
+
+<<<PAGE 400>>>
+
+Depression and anxiety disorders  379
+
+Table 3.14 (Continued)
+Antidepressant
+
+Substrate for
+
+Inhibits
+
+TCAs
+Amitriptyline
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Desipramine
+
+CYP2D6
+
+Dosulepin
+
+CYP2D6 and possibly other pathways
+
+Doxepin
+
+CYP2D6, CYP1A2 (minor), CYP3A4
+(minor)
+
+Imipramine
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Nortriptyline
+
+CYP2D6
+
+Trimipramine
+
+CYP2D6
+
+Agomelatine
+
+CYP1A2
+
+Bupropion
+
+CYP2B6
+
+Esketamine
+
+CYP3A4, CYP2B6
+
+Mianserin
+
+CYP2D6
+
+Mirtazapine
+
+CYP1A2, CYP2D6, CYP3A4
+
+Reboxetine
+
+CYP3A4
+
+Trazodone
+
+CYP3A4
+
+Vortioxetine
+
+CYP2D6, CYP2A6, CYP2B6, CYP2C8,
+CYP2C9, CYP2C19, CYP3A4
+
+Vilazodone
+
+CYP3A4
+
+CHAPTER 3
+
+Clomipramine
+
+Others
+
+CYP2D6 (potent)
+
+CYP2D6 (weak)
+
+CYP2C8
+
+CYP enzymes highlighted in bold indicate:
+predominant metabolic enzyme pathway or
+■■ predominant enzyme activity.
+■■
+
+■■
+
+Pharmacodynamic interactions where the effects of one drug are altered by another
+drug via physiological mechanisms such as direct competition at receptor sites (e.g.
+dopamine agonists with dopamine blockers may negate any therapeutic effect), augmentation of the same neurotransmitter pathway (e.g. fluoxetine with tramadol or a
+triptan can lead to serotonin syndrome) or an effect on the physiological functioning
+of an organ/organ system in different ways (e.g. SSRIs impair clotting and NSAIDs
+irritate the gastric mucosa so when these drugs are used together, the risk of GI bleeds
+is increased). Up-to-date interaction tables are readily available online and most
+known interactions are described in an individual product’s literature.
+
+Pharmacodynamic interactions
+Tricyclic antidepressants7–10
+■■
+
+are H1 blockers (sedative). This effect can be exacerbated by other sedative drugs or
+alcohol. Beware respiratory depression
+
+
+
+
+<<<PAGE 410>>>
+
+Depression and anxiety disorders  389
+
+Depression confers an increased risk of cardiovascular disease1 and sudden cardiac
+death2 perhaps because of platelet activation,3 decreased heart rate variability,4 reduced
+physical activity,5 an association with an increased risk of diabetes and/or other factors.
+Tricyclic antidepressants (TCAs) have established arrhythmogenic activity which
+arises as a result of potent blockade of cardiac sodium channels and variable activity at
+potassium channels.6 ECG changes produced include PR, QRS and QT prolongation
+and the Brugada syndrome.7 Normal clinical use of nortriptyline has been associated in
+one study with an increased risk of cardiac arrest,8 although a large cohort study did
+not confirm this finding.9 Lofepramine, for reasons unknown, seems to lack the overdose arrhythmogenicity of other TCAs, despite its major metabolite, desipramine, being
+a potent potassium channel blocker.10 Oddly, in one study,11 clinical use of lofepramine
+was associated with an increased risk of myocardial infarction, whereas other antidepressants were not. In patients taking tricyclics, ECG monitoring is a more meaningful
+and useful measure of toxicity than plasma level monitoring.
+There is limited evidence that venlafaxine is a sodium channel antagonist12 and a
+weak antagonist at hERG potassium channels. Arrhythmia is a rare occurrence even
+after massive overdose,13–16 and ECG changes no more common than with SSRIs.17 No
+ECG changes are seen in therapeutic dosing,18 and sudden cardiac death in clinical use
+is no more common than with fluoxetine or citalopram.9,19 Desvenlafaxine does not
+appear to prolong QT even in overdose.20
+Moclobemide,21 citalopram,22,23 escitalopram,24 bupropion (amfebutamone),25 trazodone26,27 and sertraline,28 amongst others,1 have been reported to prolong the QTc interval in overdose, but the clinical consequences of this are uncertain. Sertraline prolongs
+QT by 5–10ms at 400mg a day,29 but QT changes are not usually seen with most SSRIs
+at normal clinical doses.30,31 Nonetheless, an association between SSRIs (as a group)
+and QT changes in normal dosing can be shown,32 but this seems largely to be driven
+by the effects of citalopram and escitalopram.33 The effect is dose-related33 but modest.32 Neither a large database study9 nor a large cohort study34 found any association
+between citalopram treatment and arrhythmia or cardiac mortality in routine clinical
+practice; in fact, higher doses of citalopram (>40mg) were associated with fewer adverse
+outcomes than were lower doses.34 A large study found no excess risk of cardiac arrest
+and sudden death for citalopram or escitalopram,35 but a more recent Taiwanese study
+showed a small increase in mortality with these drugs.36
+Vortioxetine seems to have no effect on QT,37–39 similarly, agomelatine has no effect,
+even at supratherapeutic doses.40 Vilazodone has no effect on cardiac conduction.41
+Levomilnacipran42 and milnacipran43 probably have no effect on QT, at least at therapeutic doses.
+
+Use in at-risk patients
+There is clear evidence for the safety of sertraline44 and mirtazapine45 (and to a lesser
+extent, citalopram,45 fluoxetine46 and bupropion47) in subjects at risk of arrhythmia due
+to recent myocardial infarction. One trial found that SSRIs and trazodone decrease the
+risk of MI,48 another suggested no effect in either direction for any antidepressant.49
+
+CHAPTER 3
+
+Antidepressant-induced arrhythmia
+
+
+
+
+<<<PAGE 411>>>
+
+390  The Maudsley® Prescribing Guidelines in Psychiatry
+
+One study supports the safety of citalopram in patients with coronary artery disease50
+(although citalopram is linked to a risk of torsades de pointes51). Escitalopram did not
+affect mortality in a trial in patients with heart failure,52 and a later systematic review
+found no adverse effect on mortality for any SSRIs in heart failure.53 Sertraline may
+help improve cardiovascular risk factors,54 but in older people, there is an indication
+that all modern antidepressants confer an increased risk of arrhythmia.55
+
+CHAPTER 3
+
+Relative cardiotoxicity
+Relative cardiotoxicity of antidepressants is difficult to establish with any precision.
+Surveillance monitoring data suggest that all marketed antidepressants have been linked
+to arrhythmia (ranging from clinically insignificant to life threatening) and sudden cardiac death. For a substantial proportion of drugs these figures are more likely to reflect
+coincidence rather than causation.
+The Fatal Toxicity Index (FTI) may provide some means for comparison. This is a
+measure of the number of overdose deaths per million (FP10) prescriptions issued. FTI
+figures suggest high toxicity for tricyclic drugs (especially dosulepin but not lofepramine),
+medium toxicity for venlafaxine and moclobemide, and low toxicity for SSRIs, mirtazapine and reboxetine.56–60 However, FTI does not necessarily reflect only cardiotoxicity (antidepressants variously cause serotonin syndrome, seizures and coma) and is, in
+any case, open to other influences. This is best evidenced in the change in FTI over time.
+A good example here is nortriptyline, the FTI of which has been estimated at 0.616 and
+39.212 and several values in between.56,57,59 This change probably reflects changes in the
+type of patient prescribed nortriptyline, but ‘double-counting’ (nortriptyline is a metabolite of amitriptyline) at post-mortem also plays a part. There is good evidence that
+venlafaxine is relatively more often prescribed to patients with more severe depression
+and who are relatively more likely to attempt suicide.61–63 This is likely to inflate venlafaxine’s FTI and erroneously suggest greater inherent toxicity. Drugs with consistently
+low FTIs can probably be assumed to have very low risk of arrhythmias.
+Citalopram and escitalopram have very low overdose toxicity despite QT prolongation
+occurring in about one-third of reported overdoses.64 Standard doses of citalopram may
+be linked to an increased risk of cardiac arrest,8 but as mentioned earlier, other data suggest no increased risk of arrhythmia or death with standard and higher licensed doses of
+citalopram and escitalopram.34 Citalopram and escitalopram are probably the most cardiotoxic of the SSRIs, but their toxicity is modest at worst, and possibly insignificant.
+
+Summary
+Tricyclics (but not lofepramine) have an established link to ion channel blockade and
+cardiac arrhythmia.
+■■ Non-tricyclics generally have a very low risk of inducing arrhythmia.
+■■ Sertraline is recommended post MI, but other SSRIs and mirtazapine are also likely
+to be safe.
+■■ Bupropion, citalopram, escitalopram, moclobemide, lofepramine and venlafaxine
+should be used with caution or avoided in those at risk of serious arrhythmia (those
+with heart failure, left ventricular hypertrophy; previous arrhythmia or MI). An ECG
+should be performed at baseline and 1 week after every increase in dose if any of
+these drugs are used in at-risk patients.
+■■
+
+
+
+
+<<<PAGE 442>>>
+
+Depression and anxiety disorders  421
+
+Antidepressants: relative adverse effects – a rough guide
+Table 3.26 gives a very approximate, unreferenced view of the absolute and relative risk
+of a small range of adverse effects associated with standard antidepressants.
+
+Table 3.26 Common adverse effects of antidepressants
+
+Sedation
+
+Postural
+hypotension§
+
+Cardiac
+conduction
+disturbance§
+
+Anticholinergic Nausea/
+effects
+Vomiting
+
+Sexual
+dysfunction§
+
+Amitriptyline
+
++++
+
++++
+
++++
+
++++
+
++
+
++++
+
+Clomipramine
+
+++
+
++++
+
++++
+
+++
+
+++
+
++++
+
+Dosulepin
+
++++
+
++++
+
++++
+
+++
+
++
+
++
+
+Doxepin
+
++++
+
+++
+
++++
+
++++
+
++
+
++
+
+Imipramine
+
+++
+
++++
+
++++
+
++++
+
++
+
++
+
+Lofepramine
+
++
+
++
+
++
+
+++
+
++
+
++
+
+Nortriptyline
+
++
+
+++
+
+++
+
++
+
++
+
++
+
+Trimipramine
+
++++
+
++++
+
+++
+
+++
+
++
+
++
+
+Agomelatine
+
++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Duloxetine (SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Levomilnacipran
+(SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Mianserin
+
+++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Mirtazapine
+
++++
+
++
+
+–
+
++
+
++
+
+–
+
+Reboxetine
+
++
+
+–*
+
+–
+
++
+
++
+
++
+
+Trazodone
+
++++
+
++
+
++
+
++
+
++
+
++
+
+Venlafaxine (SNRI)
+
+–
+
+–*
+
++
+
+–
+
++++
+
++++
+
+Citalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Escitalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Fluoxetine
+
+–
+
+–
+
+–
+
+–
+
+++
+
++++
+
+Fluvoxamine
+
++
+
+–
+
+–
+
+–
+
++++
+
++++
+
+Paroxetine
+
++
+
+–
+
+–
+
++
+
+++
+
++++
+
+Drug
+
+Other
+antidepressants
+
+Selective
+serotonin
+reuptake
+inhibitors (SSRIs)
+
+(Continued)
+
+CHAPTER 3
+
+Tricyclics
+
+
+
+
+<<<PAGE 764>>>
+
+Hepatic and renal impairment  743
+
+Drug
+
+Comments
+
+Nortriptyline22,25,32,40,60,97
+
+<5% excreted unchanged in urine. If GFR 10–50mL/min, dose as in normal renal
+function; if GFR <10mL/min start at a low dose. Plasma level monitoring
+recommended at doses of >100mg/day, as plasma concentrations of active
+metabolites are raised in renal impairment. Worsening of GFR in elderly patients has
+also been reported. Plasma level monitoring can be useful.
+
+Paroxetine22,23,25,32,98–101
+
+Less than 2% of oral dose is excreted unchanged in the urine. Single-dose studies
+show increased plasma concentrations of paroxetine when GFR <30mL/min. Dosing
+advice differs: GFR 30–50mL/min dose as normal renal function; GFR <10–30mL/min
+start at 10mg/day (other source says start at 20mg) and increase dose according to
+response. Paroxetine 10mg daily and psychotherapy have been used successfully to
+treat depression in patients on chronic haemodialysis. Rarely associated with Fanconi
+syndrome and acute renal failure.
+
+Phenelzine22,25
+
+Approximately 1% excreted unchanged in the urine. No dose adjustment required in
+renal failure.
+
+Reboxetine22,23,25,102,103
+
+Approximately 10% of unchanged drug is excreted unchanged in the urine. Dosing:
+GFR <20mL/min, 2mg twice daily, adjusting dose according to response. Half-life is
+prolonged as renal function decreases.
+
+Sertraline22,23,25,32,104–108
+
+<0.2% of unchanged sertraline excreted in urine. Pharmacokinetics in renal
+impairment are unchanged in single dose studies but no published data on
+multiple dosing. Dosing is as for normal renal function. Sertraline has been used
+to treat dialysis-associated hypotension109 and uraemic pruritis; however acute
+renal failure has been reported so it should be used with caution. Overall, studies
+of sertraline in patients with depression and chronic kidney disease show lack of
+efficacy. The CAST study, an RCT of sertraline (median dose 150mg) versus PBO
+in chronic non-dialysis dependent kidney disease found no significant difference
+in depressive symptoms.108 The ASCEND trial of sertraline versus CBT in patients
+on haemodialysis with depression found no significant differences between
+sertraline (to 200mg) and CBT in response and remission rates but QIDS-C
+depression scores at 12 weeks were lower for sertraline than CBT.110 Another
+small RCT (ASSertID study) in patients with depression on haemodialysis reported
+no difference between sertraline and placebo.111 Has been associated with
+serotonin syndrome when used in patents on haemodialysis. Case report of
+neutropenia when used in ESRD.112 May reduce CRP in patients on haemodialysis
+with depression113 and a high CRP may predict response to sertraline (not
+placebo) in depression with CKD.114
+
+Trazodone22,23,25,115
+
+<5% excreted unchanged in urine but care needed as approximately 70% of active
+metabolite also excreted. Dosing: GFR 20–50mL/min, dose as normal renal function;
+GFR 10–20mL/min, dose as normal renal function but start with small dose and
+increase gradually; GFR <10mL/min, start with small doses and increase gradually.
+Serotonin syndrome reported in a patient with chronic kidney disease on trazodone
+and duloxetine.84
+(Continued)
+
+CHAPTER 8
+
+Table 8.9 (Continued)
+
+
+
+
+<<<PAGE 857>>>
+
+836  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 11.1 (Continued)
+Sample
+timing
+
+Time to steady
+state
+
+0.6–1.0mmol/L
+(0.4mmol may be
+sufficient for some
+patients/
+indications;
+>1.0mmol/L
+required for mania)
+
+12 hours
+
+5 days
+Post-dose
+
+Well-established target range,
+albeit derived from ancient data
+sources. A fairly recent study17
+suggested 0.6mmol/L was the
+minimum level for a prophylactic
+effect.
+
+Olanzapine
+
+20–40µg/L
+
+12 hours
+
+1 week
+
+See text.
+
+Paliperidone18
+
+20–60µg/L
+(9-OH risperidone)
+
+Trough
+
+2–3 days oral
+2 months depot
+
+Target range is the same as that
+established for risperidone.19 As
+with risperidone, routine plasma
+level monitoring is not
+recommended.
+
+Phenytoin5
+
+10–20mg/L
+
+Trough
+
+Variable
+
+Follows zero-order kinetics.
+Free levels may be useful in some
+circumstances.
+
+Quetiapine
+
+Around
+50–100µg/L?
+
+Trough?
+
+2–3 days oral
+
+Target range poorly defined.
+Plasma level monitoring not
+recommended. See text.
+
+Risperidone
+
+20–60µg/L
+(active moiety –
+risperidone + 9-OH
+risperidone)
+
+Trough
+
+2–3 days oral
+6–8 weeks
+injection
+
+Routine plasma level monitoring is
+not recommended.
+See text.
+
+Tricyclics20
+
+Nortriptyline
+50–150µg/L
+
+Trough
+
+2–3 days
+
+Rarely used and of dubious benefit.
+Use ECG to assess toxicity.
+
+Trough
+
+2–3 days
+
+Some doubt over value of levels in
+epilepsy and in bipolar disorder.
+Some evidence that, in mania,
+levels up to 125mg/L are tolerated
+and more effective than lower
+concentrations. Valproate plasma
+levels are linearly related to plasma
+ammonia.24
+
+Target range
+
+Lithium12–16
+
+CHAPTER 11
+
+Drug
+
+Comments
+
+Amitriptyline
+100–200µg/L
+
+Valproate4,5,21–23
+
+50–100mg/L
+Epilepsy and
+bipolar
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+

@@ -1,0 +1,344 @@
+<<<PAGE 8>>>
+
+34.
+35.
+36.
+37.
+38.
+39.
+40.
+41.
+42.
+43.
+44.
+45.
+46.
+47.
+48.
+49.
+50.
+51.
+52.
+53.
+54.
+55.
+56.
+57.
+58.
+59.
+60.
+61.
+62.
+63.
+64.
+65.
+66.
+67.
+68.
+69.
+70.
+71.
+72.
+vi
+
+desipramine
+211
+desvenlafaxine219
+deutetrabenazine
+225
+dexmedetomidine
+229
+dextromethorphan–bupropion
+233
+dextromethorphan–quinidine
+239
+diazepam
+243
+diphenhydramine
+249
+disulfiram
+253
+donepezil
+257
+dothiepin263
+doxepin269
+duloxetine
+277
+escitalopram
+283
+esketamine
+289
+estazolam
+295
+eszopiclone
+299
+flibanserin
+303
+flumazenil
+307
+flunitrazepam
+311
+fluoxetine
+315
+flupenthixol
+321
+fluphenazine
+327
+flurazepam
+335
+fluvoxamine
+339
+gabapentin
+345
+galantamine351
+guanfacine
+357
+haloperidol
+361
+hydroxyzine
+369
+iloperidone
+373
+imipramine381
+isocarboxazid
+389
+ketamine397
+lamotrigine
+401
+lemborexant
+409
+levetiracetam
+413
+levomilnacipran
+417
+lisdexamfetamine
+423
+
+
+
+
+<<<PAGE 29>>>
+
+ALPRAZOLAM
+THERAPEUTICS
+Brands
+
+• Xanax
+
+• Xanax XR
+
+Generic? Yes
+Class
+• Neuroscience-based Nomenclature: GABA
+positive allosteric modulator (GABA-PAM)
+• Benzodiazepine (anxiolytic)
+
+Commonly Prescribed for
+(bold for FDA approved)
+• Generalized anxiety disorder (IR)
+• Panic disorder (IR and XR)
+• Other anxiety disorders
+• Anxiety associated with depression
+• Premenstrual dysphoric disorder
+• Irritable bowel syndrome and other somatic
+symptoms associated with anxiety disorders
+• Insomnia
+• Acute mania (adjunctive)
+• Acute psychosis (adjunctive)
+• Catatonia
+
+How the Drug Works
+• Binds to benzodiazepine receptors at the
+GABA-A ligand-gated chloride channel complex
+• Enhances the inhibitory effects of GABA
+• Boosts chloride conductance through
+GABA-regulated channels
+• Inhibits neuronal activity presumably in
+amygdala-centered fear circuits to provide
+therapeutic benefits in anxiety disorders
+
+How Long Until It Works
+• Some immediate relief with first dosing is
+common; can take several weeks with daily
+dosing for maximal therapeutic benefit
+
+If It Works
+• For short-term symptoms of anxiety – after
+a few weeks, discontinue use or use on an
+“as-needed” basis
+• For chronic anxiety disorders, the goal of
+treatment is complete remission of symptoms
+as well as prevention of future relapses
+• For chronic anxiety disorders, treatment
+most often reduces or even eliminates
+symptoms, but not a cure since symptoms
+can recur after medicine stopped
+
+• For long-term symptoms of anxiety,
+consider switching to an SSRI or SNRI for
+long-term maintenance
+• If long-term maintenance with a
+benzodiazepine is necessary, continue
+treatment for 6 months after symptoms
+resolve, and then taper dose slowly
+• If symptoms reemerge, consider treatment
+with an SSRI or SNRI, or consider
+restarting the benzodiazepine; sometimes
+benzodiazepines have to be used in combination with SSRIs or SNRIs for best results
+
+If It Doesn’t Work
+• Consider switching to another agent or
+adding an appropriate augmenting agent
+• Consider psychotherapy, especially
+cognitive behavioral psychotherapy
+• Consider presence of concomitant
+substance abuse
+• Consider presence of alprazolam abuse
+• Consider another diagnosis, such as a
+comorbid medical condition
+
+ Best Augmenting Combos
+for Partial Response or
+Treatment Resistance
+• Benzodiazepines are frequently used as
+augmenting agents for antipsychotics
+and mood stabilizers in the treatment of
+psychotic and bipolar disorders
+• Benzodiazepines are frequently used as
+augmenting agents for SSRIs and SNRIs in
+the treatment of anxiety disorders
+• Not generally rational to combine with
+other benzodiazepines
+• Caution if using as an anxiolytic concomitantly with other sedative hypnotics for sleep
+• Could consider augmenting alprazolam
+with either gabapentin or pregabalin for
+treatment of anxiety disorders
+
+Tests
+• In patients with seizure disorders,
+concomitant medical illness, and/or those
+with multiple concomitant long-term
+medications, periodic liver tests and blood
+counts may be prudent
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• Same mechanism for side effects as for
+therapeutic effects – namely due to excessive
+actions at benzodiazepine receptors
+11
+
+
+
+
+<<<PAGE 44>>>
+
+AMITRIPTYLINE (continued)
+• Some patients may experience apparent
+lack of consistent efficacy due to activation
+of latent or underlying bipolar disorder, and
+require antidepressant discontinuation and
+a switch to a mood stabilizer
+
+ Best Augmenting Combos
+for Partial Response or
+Treatment Resistance
+• Lithium, buspirone, thyroid hormone (for
+depression)
+• Gabapentin, tiagabine, other
+anticonvulsants, even opiates if done
+by experts while monitoring carefully in
+difficult cases (for chronic pain)
+
+Tests
+• Baseline ECG is recommended for patients
+over age 50
+• Since tricyclic and tetracyclic
+antidepressants are frequently associated
+with weight gain, before starting treatment,
+weigh all patients and determine if the
+patient is already overweight
+(BMI 25.0–29.9) or obese (BMI ≥30)
+• Before giving a drug that can cause weight
+gain to an overweight or obese patient,
+consider determining whether the patient
+already has pre-diabetes (fasting plasma
+glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose ≥126 mg/dL), or
+dyslipidemia (increased total cholesterol, LDL
+cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients
+for treatment, including nutrition and weight
+management, physical activity counseling,
+smoking cessation, and medical management
+• Monitor weight and BMI during treatment
+• While giving a drug to a patient who has
+gained >5% of initial weight, consider
+evaluating for the presence of pre-diabetes,
+diabetes, or dyslipidemia, or consider
+switching to a different antidepressant
+• ECGs may be useful for selected patients
+(e.g., those with personal or family history of
+QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated
+heart failure; or taking agents that prolong
+QTc interval such as pimozide, thioridazine,
+selected antiarrhythmics, moxifloxacin,
+sparfloxacin, etc.)
+• Patients at risk for electrolyte disturbances
+(e.g., patients on diuretic therapy)
+should have baseline and periodic serum
+potassium and magnesium measurements
+26
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• Anticholinergic activity may explain
+sedative effects, dry mouth, constipation,
+and blurred vision
+• Sedative effects and weight gain may be
+due to antihistamine properties
+• Blockade of alpha adrenergic 1 receptors
+may explain dizziness, sedation, and
+hypotension
+• Cardiac arrhythmias and seizures,
+especially in overdose, may be caused by
+blockade of ion channels
+
+Notable Side Effects
+• Blurred vision, constipation, urinary
+retention, increased appetite, dry mouth,
+nausea, diarrhea, heartburn, unusual taste
+in mouth, weight gain
+• Fatigue, weakness, dizziness, sedation,
+headache, anxiety, nervousness,
+restlessness
+• Sexual dysfunction (impotence, change in
+libido)
+• Sweating, rash, itching
+
+ Life-Threatening or
+Dangerous Side Effects
+• Paralytic ileus, hyperthermia (TCAs +
+anticholinergic agents)
+• Lowered seizure threshold and rare
+seizures
+• Orthostatic hypotension, sudden death,
+arrhythmias, tachycardia
+• QTc prolongation
+• Hepatic failure, drug-induced parkinsonism
+• Increased intraocular pressure
+• Rare induction of mania
+• Rare activation of suicidal ideation and
+behavior (suicidality) (short-term studies
+did not show an increase in the risk of
+suicidality with antidepressants compared
+to placebo beyond age 24)
+
+Weight Gain
+• Many experience and/or can be significant
+in amount
+• Can increase appetite and carbohydrate
+craving
+
+

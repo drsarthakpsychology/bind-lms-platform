@@ -1,0 +1,170 @@
+<<<PAGE 56>>>
+
+Fish’s clinical psychopathology
+
+although as a rule they can copy written material. Difficulty in finding the
+correct word can occur in other varieties of aphasia, but in nominal aphasia
+it is the outstanding disorder. Nominal aphasia may be found with either
+diffuse brain damage or with focal lesions involving, for example, the
+dominant temporoparietal region.
+In central (conduction) aphasia the patient experiences substantial
+disturbances in language function with impairments of speech and writing.
+Speech is faulty in grammar and syntax and there is paraphasia. Both the
+receptive and expressive aspects of speech may be affected. This disorder is
+also known as ‘syntactical aphasia’ and may result from a number of different
+lesions (Lishman, 1998).
+Expressive aphasias
+The main type of expressive aphasia is cortical motor aphasia, which is
+also known as Broca’s aphasia, verbal aphasia or expressive aphasia. It
+is usually caused by lesions of Broca’s area in the posterior two-thirds of
+the third frontal convolution, but it can also result from lesions affecting
+the association fibres that run forward from the speech centre in the first
+temporal convolution. In this type of aphasia the patient has difficulty
+putting their thoughts into words and in severe cases speech may be
+restricted to expletives and a few words. The patient may use only one
+word, a paraphasic word, a phrase, or either ‘yes’ or ‘no’ or both these
+words. Frequently if a phrase is used it was present in the patient’s mind
+when the lesion occurred. Often these ‘recurring utterances’ or verbal
+stereotypies are produced with different intonations to produce different
+meanings.
+When the disorder is less severe the patient understands what is said
+to them and knows what they want to say but cannot find the right words.
+Words are often mispronounced and those with several syllables tend to be
+abbreviated. As a rule the patient realises that they are making mistakes and
+tries to correct them. Although words are often omitted, the organisation
+of sentences is not as severely affected as the use of words. The omission
+of articles and short words gives rise to a ‘telegram style’ of speech. Serial
+responses are often not affected, so that the patient may be able to count,
+recite the alphabet and give the days of the week. The expressive quality
+of speech is disordered, so that the intonation and stress are unusual and
+speech sounds stilted and odd. Usually the patient can swear and say words
+under emotional stress.
+In pure word-dumbness the patient is unable to speak spontaneously, to
+repeat words and to read aloud, but they can write spontaneously, copy and
+write to dictation. This disorder probably results from a lesion beneath the
+region of the insula (Lishman, 1998).
+
+References
+American Psychiatric Association (1994) Diagnostic and Statistical Manual of Mental Disorders
+(4th edn) (DSM–IV). Washington, DC: APA.
+
+52
+
+
+
+
+<<<PAGE 113>>>
+
+Personality disorders
+
+et al, 1999) consists of 11 screening items for the DSM−IV categories and
+takes 5−10 minutes to administer. It shows a high sensitivity and specificity.
+The Standardised Assessment of Personality (SAP; Mann et al, 1981) is an
+informant scale that can be used for screening although it is more often
+used as a full personality assessment tool. The Standardised Assessment
+of Personality Abbreviated Scale (SAPAS; Moran et al, 2003) consists of 8
+dichotomously rated items from SAP (Mann et al, 1981) completed by the
+subject. It shows good sensitivity and specificity and may prove feasible
+for use in everyday clinical practice. The Personality Assessment Schedule
+(PAS; Tyrer & Alexander, 1979) has a screening version (PAS−Q), which
+takes a few minutes to administer to the subject, but it can be used only by
+an interviewer already trained in the use of PAS.
+
+Structured assessment
+Questionnaires
+Although questionnaires, such as the Millon Clinical Multiaxial Inventory
+(MCMI; Millon, 1982) and the Personality Disorder Questionnaire (PDQ;
+Hyler et al, 1990) are convenient to use, they have the serious disadvantage
+of generating high false-positive rates due to overdiagnosis. The MCMI is a
+self-administered questionnaire of 175 items. It takes 25 minutes to complete
+and analysis is by computer. It provides an individual profile, an interpretive
+report, and a categorical assessment of personality limited to borderline,
+schizotypal and paranoid types. The most popular personality questionnaire
+the Neuroticism, Extraversion, Openness Personality Inventory (NEO−PR;
+Costa & McCrae, 1992b) consists of 250 self-rating items measured on a
+5-point Likert scale. The ease of use of questionnaires, taking no more than
+minutes to self-rate by the subject, is also their disadvantage, since they are
+incapable of distinguishing mental state features from personality traits.
+Interviews
+Structured interviews such as the PAS (Tyrer & Alexander, 1979) and
+the Diagnostic Interview for DSM−IV Personality Disorders (DIPD−IV;
+Zanarini et al, 1994) achieve good reliability, but are lengthy instruments
+and require training in their use. Other distinctions lie in their use of
+informants or subjects or both, an important consideration since there is
+evidence to suggest that reliability is higher with informants than with
+subjects alone (Modestin & Puhan, 2000).
+The PAS generates diagnoses both for ICD−10 and DSM−IV. It requires
+either the subject or the informant or both to provide information on 24
+traits of personality, and emphasis throughout is placed on the patient’s
+premorbid traits. It takes 30−40 minutes to administer.
+The Structured Interview for DSM−III Personality Disorders (SID–P;
+Pfohl et al, 1983) is a comprehensive semi-structured interview with 60
+items. Data are gathered from the subject and an informant to generate the
+diagnosis.
+109
+
+
+
+
+<<<PAGE 123>>>
+
+Personality disorders
+
+Chodoff, P. & Lyons, H. (1958) Hysteria, the hysterical personality and ‘hysterical’
+conversion. American Journal of Psychiatry, 114, 734−740.
+Costa, P. T. & McCrea, R. R. (1992a). The five-factor model of personality and its relevance
+to personality disorders. Journal of Personality Disorder, 6, 343−359.
+Costa, P. T. Jr & McCrae, R. R. (1992b) Revised NEO Personality Inventory (NEO-PI-R) and NEO
+Five-Factor Inventory (FFI) Manual. Odessa, FL: Psychological Assessment Resources.
+Dowson, J. H. & Grounds, A. T. (1995) Personality Disorders: Recognition and Clinical
+Management. Cambridge: Cambridge University Press.
+Eysenck, H. & Eysenck, S. B. G. (1964) Manual of the Eysenck Personality Inventory (EPQ).
+London: University of London Press.
+Fahlen, T. (1995) Personality traits in social phobia. Comparison with healthy controls.
+Journal of Clinical Psychiatry, 56, 560−568.
+Hathaway, S. R. & McKinley, J. C. (1940). A multiphasic personality schedule (Minnesota):
+construction of the schedule. Journal of Psychology, 10, 249−254.
+Hyler, S. E., Skodol, A. E., Kellman, H. D., et al (1990) Validity of the Personality Disorder
+Questionnaire – revised: comparison with two structured interviews. American Journal of
+Psychiatry, 147, 1043−1048.
+Langbehn, D. R., Pfohl, B. M., Reynolds, S. et al (1999) The Iowa personality disorder
+screen: development and preliminary validation of a brief screening interview. Journal of
+Personality Disorders, 13, 75−89.
+Livesley, W. J., Jang, K. L. & Vernon, P. A. (1998) Phenotypic and genetic structure of traits
+delineating personality disorder. Archives of General Psychiatry, 55, 941−48.
+Loranger, A.W., Susman, V. L., Oldham, J. M., et al (1985) Personality Disorder Examination
+(PDE). A Structured Interview for DSM−III−R and ICD−9 Personality Disorders. WHOI
+ADAMHA Pilot Version. White Plains, NY: New York Hospital, Comell Medical Center.
+Mann, A. H., Jenkins, R., Cutting, J. C., et al (1981) The development and use of a
+standardised assessment of abnormal personality. Psychological Medicine, 11, 839−847.
+Millon, T. (1982) Millon Clinical Multiaxial Inventory (2nd edn). Minneapolis: Interpretative
+Scoring System.
+Modestin, J. & Puhan, A. (2000) Comparison of assessments of personality disorder by
+patients and informants. Psychopathology, 33, 265−270.
+Moran, P., Leese, M, Lee, T., et al (2003) Standardised Assessment of Personality
+– Abbreviated Scale (SAPAS): preliminary validation of a brief scale for personality
+disorder. British Journal of Psychiatry, 183, 228−232.
+Mulder, R. T. & Joyce, P. R. (1997) Temperament and the structure of personality disorder
+symptoms. Psychological Medicine, 27, 99−106.
+Pfohl, B., Stangi, D. & Zimmerman, M. (1983) Structured Interview for DSM−III Personality
+(SIDP). Iowa City: University of Iowa.
+Phillips, K. A., Gunderson, J. G., Triebwasser, J., et al (1998) Reliability and validity of
+depressive personality disorder. American Journal of Psychiatry, 155, 1044−1048.
+Sara, G., Raven, P. & Mann, A. (1996) A comparison of DSM−III–R and ICD−10
+personality criteria in an out-patient population. Psychological Medicine, 26, 151−160.
+Schneider, K. (1923) [Die psychopathischen Personlichkeiten.] Vienna: Deuticke.
+Schneider, K. (1950) Psychopathic Personalities for Modern Classificatory Schemes (9th edn).
+London: Cassell.
+Spitzer, R. L., Williams, J. & Gibbon, M. (1987) Structured Clinical Interview for DSM−III–R
+(SCID−II). New York: Biometrics Research, New York State Psychiatric Institute.
+Thompson, D. J. & Goldberg, D. (1987) Hysterical personality disorder. The process
+of diagnosis in clinical and experimental settings. British Journal of Psychiatry, 150,
+241−245.
+Tyrer, P. (2002) Practice guidelines for the treatment of borderline personality disorder: a
+bridge too far. Journal of Personality Disorders, 16, 113−118.
+Tyrer, P. (2005) Deconstructing personality disorder. Quarterly Journal of Mental Health, 1,
+20−24.
+
+119
+
+

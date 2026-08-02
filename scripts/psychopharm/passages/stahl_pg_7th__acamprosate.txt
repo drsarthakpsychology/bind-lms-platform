@@ -1,0 +1,485 @@
+<<<PAGE 7>>>
+
+Contents
+Introduction
+List of icons
+1 acamprosate
+2 agomelatine
+3 alprazolam
+4 amisulpride
+5 amitriptyline
+6 amoxapine
+7 amphetamine (d)
+8 amphetamine (d,l)
+9 aripiprazole
+10 armodafinil
+11 asenapine
+12 atomoxetine
+13 benztropine
+14 blonanserin
+15 bremelanotide
+16 brexanolone
+17 brexpiprazole
+18 buprenorphine
+19 bupropion
+20 buspirone
+21 caprylidene
+22 carbamazepine
+23 cariprazine
+24 chlordiazepoxide
+25 chlorpromazine
+
+
+
+
+<<<PAGE 24>>>
+
+Acamprosate
+
+Therapeutics
+Brands
+Campral
+see index for additional brand names
+Generic?
+Not in USA
+Class
+Neuroscience-based Nomenclature: glutamate multimodal (GluMM)
+Alcohol dependence treatment
+Commonly Prescribed for
+(bold for FDA approved)
+Maintenance of alcohol abstinence
+How the Drug Works
+Theoretically reduces excitatory glutamate neurotransmission and
+increases inhibitory gamma-aminobutyric acid (GABA)
+neurotransmission
+
+
+
+
+<<<PAGE 25>>>
+
+Binds to and blocks certain glutamate receptors, including
+metabotropic glutamate receptors
+Because withdrawal of alcohol following chronic administration can
+lead to excessive glutamate activity and deficient GABA activity,
+acamprosate can act as “artificial alcohol” to mitigate these effects
+How Long Until It Works
+Has demonstrated efficacy in trials lasting between 13 and 52 weeks
+If It Works
+Increases abstinence from alcohol
+If It Doesn’t Work
+Evaluate for and address contributing factors
+Consider switching to another agent
+Consider augmenting with naltrexone
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Naltrexone
+Augmentation therapy may be more effective than monotherapy
+Augmentation with behavioral, educational, and/or supportive
+therapy in groups or as an individual is probably key to successful
+treatment
+
+
+
+
+<<<PAGE 28>>>
+
+Patient should begin treatment as soon as possible after achieving
+abstinence
+Recommended dose is 666 mg three times daily; titration is not
+required
+Dosing Tips
+Providing educational materials and counseling in combination with
+acamprosate treatment can increase the chances of success
+Patients should be advised to continue treatment even if relapse
+occurs, and to disclose any renewed drinking
+Although absorption of acamprosate is not affected by food, it may
+aid adherence if patients who regularly eat three meals per day take
+each dose with a meal
+Adherence with three times daily dosing can be a problem; having
+patient focus on frequent oral dosing of drug rather than frequent
+drinking may be helpful in some patients
+Overdose
+Limited available data; diarrhea
+Long-Term Use
+Has been studied in trials up to 1 year
+Habit Forming
+
+
+
+
+<<<PAGE 29>>>
+
+No
+How to Stop
+Taper not necessary
+Pharmacokinetics
+Terminal half-life 20–33 hours
+Excreted unchanged via the kidneys
+Drug Interactions
+Does not inhibit hepatic enzymes, and thus is unlikely to affect
+plasma concentrations of drugs metabolized by those enzymes
+Is not hepatically metabolized and thus is unlikely to be affected by
+drugs that induce or inhibit hepatic enzymes
+Concomitant administration with naltrexone may increase plasma
+levels of acamprosate, but this does not appear to be clinically
+significant and dose adjustment is not recommended
+Other Warnings/Precautions
+Monitor patients for emergence of depressed mood or suicidal
+ideation and behavior (suicidality)
+Use cautiously in individuals with known psychiatric illness
+Do Not Use
+
+
+
+
+<<<PAGE 30>>>
+
+If patient has severe renal impairment
+If there is a proven allergy to acamprosate
+
+Special Populations
+Renal Impairment
+For moderate impairment, recommended dose is 333 mg three times
+daily
+Contraindicated in severe impairment
+Hepatic Impairment
+Dose adjustment not generally necessary
+Cardiac Impairment
+Limited data available
+Elderly
+Some patients may tolerate lower doses better
+Consider monitoring renal function
+Children and Adolescents
+Safety and efficacy have not been established
+
+
+
+
+<<<PAGE 31>>>
+
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+In animal studies, acamprosate demonstrated teratogenicity in doses
+approximately equal to the human dose (rat studies) and in doses
+approximately 3 times the human dose (rabbit studies)
+Pregnant women needing to stop drinking may consider behavioral
+therapy before pharmacotherapy
+Not generally recommended for use during pregnancy, especially
+during first trimester
+Breast Feeding
+Unknown if acamprosate is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+Recommended either to discontinue drug or bottle feed
+
+The Art of Psychopharmacology
+Potential Advantages
+
+
+
+
+<<<PAGE 32>>>
+
+Individuals who have recently abstained from alcohol
+For the chronic daily drinker
+Potential Disadvantages
+Individuals who are not abstinent at time of treatment initiation
+For binge drinkers
+Primary Target Symptoms
+Alcohol dependence
+Pearls
+Because acamprosate serves as “artificial alcohol,” it may be less
+effective in situations in which the individual has not yet abstained
+from alcohol or suffers a relapse
+Thus acamprosate may be a preferred treatment if the goal is
+complete abstinence, but may not be preferred if the goal is reducedrisk drinking
+
+Suggested Reading
+Anton RF , O’Malley SS , Ciraulo DA , et al. Combined pharmacotherapies
+and behavioral interventions for alcohol dependence: the COMBINE study:
+a randomized controlled trial . JAMA 2006 ;295 (17 ): 2003 –17.
+
+
+
+
+<<<PAGE 33>>>
+
+Kranzler HR , Gage A . Acamprosate efficacy in alcohol-dependent
+patients: summary of results from three pivotal trials . Am J Addictions
+2008 ; 17 :70 –6.
+Rosner S , Leucht P , Soyka M . Acamprosate supports abstinence,
+naltrexone prevents excessive drinking: evidence from a met-analysis with
+unreported outcomes . J Psychopharmacol 2008 ;22 :11 –23 .
+
+
+
+
+<<<PAGE 1554>>>
+
+How the Drug Works
+Blocks mu opioid receptors, preventing exogenous opioids from
+binding there and thus preventing the pleasurable effects of opioid
+consumption
+Reduces alcohol consumption through modulation of opioid
+systems, thereby reducing the reinforcing effects of alcohol
+How Long Until It Works
+Can begin working within a few days but maximum effects may not
+be seen for a few weeks
+If It Works
+Reduces alcohol and opioid consumption by diminishing their
+reinforcing properties (rewarding effects, cravings)
+If It Doesn’t Work
+Evaluate for and address contributing factors
+Consider switching to another agent
+Consider augmenting with acamprosate
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Acamprosate
+Augmentation therapy may be more effective than monotherapy
+
+
+
+
+<<<PAGE 1559>>>
+
+Habit Forming
+No
+How to Stop
+Taper not necessary
+Pharmacokinetics
+Elimination half-life of oral naltrexone is approximately 13 hours
+Elimination half-life of naltrexone via injection is 5–10 days
+Drug Interactions
+Is hepatically metabolized by dihydrodiol dehydrogenase and not by
+the CYP450 enzyme system, and thus is unlikely to be affected by
+drugs that induce or inhibit CYP450 enzymes
+Can block the effects of opioid-containing medications (e.g., some
+cough and cold remedies, antidiarrheal preparations, opioid
+analgesics)
+Concomitant administration with acamprosate may increase plasma
+levels of acamprosate, but this does not appear to be clinically
+significant and dose adjustment is not recommended
+Other Warnings/Precautions
+Can cause hepatocellular injury when given in excessive doses
+
+
+
+
+<<<PAGE 1564>>>
+
+Some patients complain of apathy or loss of pleasure with chronic
+treatment
+The combination of naltrexone and bupropion has demonstrated
+efficacy as treatment for obesity and is currently being evaluated in
+a long-term study to assess the cardiovascular health outcomes of
+this treatment
+
+Suggested Reading
+Anton RF , O’Malley SS , Ciraulo DA , et al. Combined pharmacotherapies
+and behavioral interventions for alcohol dependence: the COMBINE study:
+a randomized controlled trial . JAMA 2006 ;295 (17 ):2003 –17.
+Johansson BA , Berglund M , Lindregn A . Efficacy of maintenance
+treatment with naltrexone for opioid dependence: a meta-analytical review .
+Addiction 2006 ;101 (4 ):491 –503 .
+Mannelli P , Peindl K , Masand PS , Patkar SS . Long-acting injectable
+naltrexone for the treatment of alcohol dependence . Expert Rev Neurother
+2007 ;7 (10 ):1265 –77.
+Rosner S , Leucht S , Lehert P , Soyka M . Acamprosate supports
+abstinence, naltrexone prevents excessive drinking: evidence from a metaanalysis with unreported outcomes . J Psychopharmacol 2008 ;22 :11 –23 .
+
+
+
+
+<<<PAGE 2568>>>
+
+Index by Drug Name
+(trade names and generic names)
+Abilify (aripiprazole), 53
+Abilify Discmelt (aripiprazole), 53
+Abilify Maintena (aripiprazole), 53
+Abilify MyCite (aripiprazole), 53
+Absenor (valproate), 829
+acamprosate, 1
+Aclonium (gabapentin), 331
+ACT Zopiclone (zopiclone), 879
+Acuilix (moclobemide), 515
+Adapin (doxepin), 255
+Adasuve (loxapine), 443
+Adderrall (d,l-amphetamine), 45
+Adderrall XR (d,l-amphetamine), 45
+Addyi (flibanserin), 289
+Adepil (amitriptyline), 25
+Adhansia XR (d, l-methylphenidate), 487
+Adipress (clonidine), 179
+Adofen (fluoxetine), 301
+Adumbran (oxazepam), 569
+Aduvanz (lisdexamfetamine), 409
+
+
+
+
+<<<PAGE 2574>>>
+
+Atensine (diazepam), 229
+Aterax (hydroxyzine), 355
+Athymil (mianserin), 495
+Ativan (lorazepam), 437
+atomoxetine, 79
+Atretol (carbamazepine), 131
+Audilex (clorazepate), 185
+Audium (diazepam), 229
+Aurorix (moclobemide), 515
+Austedo (deutetrabenazine), 221
+Autal (acamprosate), 1
+Avant (haloperidol), 347
+Aventyl (nortriptyline), 551
+Avoxin (fluvoxamine), 325
+Axona (caprylidene), 127
+Axoren (buspirone), 123
+Azene (clorazepate), 185
+Azepa (carbamazepine), 131
+Azepal (carbamazepine), 131
+Azona (trazodone), 793
+Azor (alprazolam), 11
+Azutranquil (oxazepam), 569
+Barclyd (clonidine), 179
+Barhemsys (amisulpride), 17
+Beconerv neu (flurazepam), 321
+Belbuca (buprenorphine), 111
+Beldin (diphenhydramine), 235
+Belivon (risperidone), 687
+
+
+
+
+<<<PAGE 2576>>>
+
+brexanolone, 99
+brexpiprazole, 103
+Brisdelle (paroxetine), 593
+Brintellix (vortioxetine), 853
+BritLofex (lofexidine), 427
+Buprenex (buprenorphine), 111
+buprenorphine, 111
+buprenorphine with naloxone, 111
+bupropion, 117
+bupropion SR, 117
+bupropion XL, 117
+Buscalm (buspirone), 123
+Buspar (buspirone), 123
+BuSpar (buspirone), 123
+Buspimen (buspirone), 123
+buspirone, 123
+Buspisal (buspirone), 123
+Buteridol (haloperidol), 347
+Butrans (buprenorphine), 111
+Calmoflorine (sulpiride), 741
+Camcolit (lithium), 415
+Campral (acamprosate), 1
+Caplyta (lumateperone), 451
+caprylidene, 127
+Caprysin (clonidine), 179
+Carbabeta (carbamazepine), 131
+Carbagamma (carbamazepine), 131
+carbamazepine, 131
+
+
+
+
+<<<PAGE 2627>>>
+
+Zenzedi (amphetamine d), 39
+Zeptol (carbamazepine), 131
+Zerenal (dothiepin), 249
+ziprasidone, 863
+Ziprexa (olanzapine), 559
+Zispin (mirtazapine), 509
+Zoleptil (zotepine), 883
+Zoloft (sertraline), 721
+zolpidem, 871
+Zolpimist (zolpidem), 871
+Zonalon (doxepin), 255
+Zonegran (zonisamide), 875
+zonisamide, 875
+Zopax (alprazolam), 11
+zopiclone, 879
+Zopite (zotepine), 883
+zotepine, 883
+Z-Pam (temazepam), 755
+Zubsolv (buprenorphine with naloxone), 111
+zuclopenthixol, 889
+Zuledin (chlorpromazine), 153
+Zulex (acamprosate), 1
+Zulresso (brexanolone), 99
+Zyban (bupropion), 117
+Zymocomb (sulpiride), 741
+Zyprexa (olanzapine), 559
+Zyprexa Relprevv (olanzapine), 559
+Zyprexa Zydis (olanzapine), 559
+
+
+
+
+<<<PAGE 2628>>>
+
+Index by Use
+Commonly Prescribed For (bold for FDA approved)
+Aggression
+clozapine, 191
+cyamemazine, 201
+propranolol, 653
+zuclopenthixol, 889
+Alcohol abstinence
+acamprosate , 1
+disulfiram , 239
+Alcohol dependence, 255
+nalmefene, 533
+naltrexone , 537
+Alcohol withdrawal
+chlordiazepoxide , 11
+clonidine, 179
+clorazepate , 185
+diazepam , 229
+lorazepam, 437
+oxazepam , 569
+
+
+
+
+<<<PAGE 2669>>>
+
+midazolam, 499
+quazepam, 663
+ramelteon, 677
+suvorexant, 747
+tasimelteon, 751
+temazepam, 755
+trazodone, 793
+triazolam, 799
+zaleplon, 859
+zolpidem, 871
+zopiclone, 879
+Stimulants
+amphetamine (d), 39
+amphetamine (d,l), 45
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Substance use disorder treatments
+acamprosate, 1
+buprenorphine, 111
+bupropion, 117
+clonidine, 179
+cyamemazine, 201
+disulfiram, 239
+lofexidine, 427
+lorazepam, 437
+nalmefene, 533
+
+

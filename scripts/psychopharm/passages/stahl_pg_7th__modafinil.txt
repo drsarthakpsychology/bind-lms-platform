@@ -1,0 +1,1469 @@
+<<<PAGE 37>>>
+
+this may activate bipolar disorder and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines
+Tests
+Liver function tests before initiation of treatment and then at 3
+weeks, 6 weeks, 12 weeks, 24 weeks, and thereafter when clinically
+indicated
+When increasing the dose, liver function tests should be performed
+at the same frequency as when initiating treatment
+Liver function tests should be repeated within 48 hours in any
+patient who develops raised transaminases
+
+Side Effects
+How Drug Causes Side Effects
+Adverse reactions usually mild to moderate and occur within the
+first 2 weeks of treatment
+Actions at melatonergic receptors and at 5HT2C receptors could
+contibute to the side effects described below
+
+
+
+
+<<<PAGE 209>>>
+
+If It Works
+
+✽ Improves daytime sleepiness and may improve attention as well as
+fatigue
+
+✽ Does not generally prevent one from falling asleep when needed
+May not completely normalize wakefulness
+Treat until improvement stabilizes and then continue treatment
+indefinitely as long as improvement persists (studies support at least
+12 weeks of treatment)
+If It Doesn’t Work
+
+✽ Change dose; some patients may do better with an increased dose
+but some may actually do better with a decreased dose
+Augment or consider an alternative treatment for daytime
+sleepiness, fatigue, or ADHD
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Armodafinil is itself an adjunct to standard treatments for OSAHS;
+if continuous positive airway pressure (CPAP) is the treatment of
+choice, a maximal effort to treat first with CPAP should be made prior
+to initiating armodafinil and CPAP should be continued after initiation
+of armodafinil
+
+✽ Armodafinil is itself an augmenting therapy to antidepressants for
+residual sleepiness and fatigue in major depressive disorder
+
+
+
+
+<<<PAGE 210>>>
+
+✽ Armodafinil is itself an augmenting therapy to mood stabilizers for
+bipolar depression
+Best to attempt another monotherapy prior to augmenting with other
+drugs in the treatment of sleepiness associated with sleep disorders
+or problems concentrating in ADHD
+Combination of armodafinil with stimulants such as
+methylphenidate or amphetamine or with atomoxetine for ADHD
+has not been systematically studied
+However, such combinations may be useful options for experts, with
+close monitoring, when numerous monotherapies for sleepiness or
+ADHD have failed
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Unknown
+CNS side effects presumably due to excessive CNS actions on
+various neurotransmitter systems
+
+✽ Headache
+
+Notable Side Effects
+
+
+
+
+<<<PAGE 213>>>
+
+Dosing Tips
+
+✽ For sleepiness, more may be more: higher doses may be better than
+lower doses in patients with daytime sleepiness in sleep disorders
+
+✽ For problems concentrating and fatigue, less may be more: lower
+doses may be paradoxically better than higher in some patients
+At high doses, may slightly induce its own metabolism, possibly by
+actions of inducing CYP450 3A4
+Dose may creep upward in some patients with long-term treatment
+due to autoinduction; drug holiday may restore efficacy at original
+dose
+Pharmacokinetics and clinical experience suggest armodafinil has
+longer duration of action than racemic modafinil, generally
+requiring only once daily administration
+Overdose
+Agitation, insomnia, increase in hemodynamic parameters
+Postmarketing experience includes CNS symptoms, such as
+restlessness, disorientation, confusion, excitation, and
+hallucinations; digestive changes, such as nausea and diarrhea; and
+cardiovascular changes, such as tachycardia, bradycardia,
+hypertension, and chest pain
+Long-Term Use
+The need for continued treatment should be reevaluated periodically
+
+
+
+
+<<<PAGE 214>>>
+
+Habit Forming
+Schedule IV; may have some potential for abuse but unusual in
+clinical practice
+How to Stop
+Taper not necessary; patients may have sleepiness on
+discontinuation
+Pharmacokinetics
+Metabolized by the liver
+Elimination half-life approximately 15 hours
+Inhibits CYP450 2C19
+Induces CYP450 3A4 (and slightly 1A2)
+Drug Interactions
+May increase plasma levels of drugs metabolized by CYP450 2C19
+(e.g., diazepam, phenytoin, propranolol)
+May decrease plasma levels of CYP450 3A4 substrates such as
+ethinyl estradiol and triazolam
+Due to induction of CYP450 3A4, effectiveness of steroidal
+contraceptives may be reduced by armodafinil, including 1 month
+after discontinuation
+
+
+
+
+<<<PAGE 215>>>
+
+Inducers or inhibitors of CYP450 3A4 may affect levels of
+armodafinil (e.g., carbamazepine may lower modafinil plasma
+levels; fluvoxamine and fluoxetine may raise armodafinil plasma
+levels)
+Armodafinil may slightly reduce its own levels by autoinduction of
+CYP450 3A4
+Patients on armodafinil and warfarin should have prothrombin times
+monitored
+Methylphenidate and dextroamphetamine may delay absorption of
+armodafinil by an hour
+
+✽ However, coadministration with methylphenidate or
+dextroamphetamine does not significantly change the
+pharmacokinetics of armodafinil or either stimulant
+Interaction studies with MAOIs have not been performed, but
+MAOIs can be given with armodafinil by experts with cautious
+monitoring
+Other Warnings/Precautions
+Patients with history of drug abuse should be monitored closely
+Armodafinil may cause CNS effects similar to those caused by other
+CNS agents (e.g., changes in mood and, theoretically, activation of
+psychosis, mania, or suicidal ideation)
+Armodafinil should be used in patients with sleep disorders that
+have been completely evaluated for narcolepsy, OSAHS, and shift
+
+
+
+
+<<<PAGE 216>>>
+
+work sleep disorder
+In OSAHS patients for whom CPAP is the treatment of choice, a
+maximal effort to treat first with CPAP should be made prior to
+initiating armodafinil, and then CPAP should be continued after
+initiating armodafinil
+The effectiveness of hormonal contraceptives may be reduced when
+used with armodafinil and for 1 month after discontinuation of
+armodafinil
+Armodafinil is not a replacement for sleep
+Do Not Use
+If there is a proven allergy to armodafinil or modafinil
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Reduce dose in severely impaired patients
+Cardiac Impairment
+Use with caution
+
+
+
+
+<<<PAGE 217>>>
+
+Not recommended for use in patients with a history of left
+ventricular hypertrophy, ischemic ECG changes, chest pain,
+arrhythmias, or recent myocardial infarction
+Elderly
+Limited experience in patients over 65
+Clearance of armodafinil may be reduced in elderly patients
+Children and Adolescents
+Safety and efficacy have not been established
+Can be used cautiously by experts for children and adolescents
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+Intrauterine growth restriction and spontaneous abortion have been
+reported with armodafinil and modafinil
+In animal studies, developmental toxicity was observed at clinically
+relevant plasma exposures
+
+
+
+
+<<<PAGE 218>>>
+
+Use in women of childbearing potential requires weighing potential
+benefits to the mother against potential risks to the fetus
+
+✽ Generally, armodafinil should be discontinued prior to anticipated
+pregnancies
+Breast Feeding
+Unknown if armodafinil is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+The Art of Psychopharmacology
+Potential Advantages
+Selective for areas of brain involved in sleep/wake promotion
+Less activating and less abuse potential than stimulants
+Potential Disadvantages
+May not work as well as stimulants in some patients
+Primary Target Symptoms
+Sleepiness
+Concentration
+Physical and mental fatigue
+
+
+
+
+<<<PAGE 219>>>
+
+Pearls
+Armodafinil is the longer-lasting R enantiomer of racemic modafinil
+Armodafinil maintains high plasma concentrations later in the day
+than does modafinil on a mg-to-mg basis, which could theoretically
+result in improved wakefulness throughout the day with armodafinil
+compared to modafinil
+
+✽ Armodafinil is not a replacement for sleep
+✽ The treatment for sleep deprivation is sleep, not armodafinil
+Controlled studies suggest armodafinil improves attention in
+OSAHS and shift work sleep disorder, but controlled studies of
+attention have not been performed in ADHD or major depressive
+disorder
+Controlled studies of racemic modafinil in ADHD suggest
+improvement in attention
+
+✽ May be useful to treat fatigue in patients with depression as well as
+other disorders, such as multiple sclerosis, myotonic dystrophy,
+HIV/AIDS
+May be useful in treating sleepiness associated with opioid
+analgesia, particularly in end-of-life management
+Subjective sensation associated with armodafinil is usually one of
+normal wakefulness, not of stimulation, although jitteriness can
+rarely occur
+
+✽ Compared to traditional stimulants, armodafinil has a novel
+mechanism of action, novel therapeutic uses, and less abuse potential
+
+
+
+
+<<<PAGE 220>>>
+
+Alpha 1 antagonists such as prazosin may block the therapeutic
+actions of armodafinil
+Some controlled trials suggest efficacy in bipolar depression as an
+adjunct to atypical antipsychotics
+
+Suggested Reading
+Darwish M , Kirby M , Hellriegel ET , Robertson P Jr . Interaction profile
+of armodafinil with medications metabolized by cytochrome P450 enzymes
+1A2, 3A4, and 2C19 in healthy subjects . Clin Pharmacokinet 2008 ;47 (1
+):61 –74 .
+Darwish M , Kirby M , Hellriegel ET , Robertson P Jr. Armodafinil and
+modafinil have substantially different pharmacokinetic profiles despite
+having the same terminal half-lives: analysis of data from three randomized,
+single-dose, pharmacokinetic studies . Clin Drug Investig 2009 ;29 (9
+):613–23 .
+Garnock-Jones KP , Dhillon S , Scott LJ . Armodafinil . CNS Drugs 2009
+;23 (9 ):793 –803 .
+
+
+
+
+<<<PAGE 355>>>
+
+Mood stabilizers or atypical antipsychotics can also be added to
+bupropion for psychotic depression or treatment-resistant depression
+Hypnotics for insomnia
+Mirtazapine, modafinil, atomoxetine (add with caution and at lower
+doses since bupropion could theoretically raise atomoxetine levels)
+both for residual symptoms of depression and attention deficit
+disorder
+Tests
+Recommended to assess blood pressure at baseline and periodically
+during treatment
+
+Side Effects
+How Drug Causes Side Effects
+Side effects are probably caused in part by actions of norepinephrine
+and dopamine in brain areas with undesired effects (e.g., insomnia,
+tremor, agitation, headache, dizziness)
+Side effects are probably also caused in part by actions of
+norepinephrine in the periphery with undesired effects (e.g.,
+sympathetic and parasympathetic effects such as dry mouth,
+constipation, nausea, anorexia, sweating)
+Most side effects are immediate but often go away with time
+
+
+
+
+<<<PAGE 471>>>
+
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (add with
+caution and at lower doses since citalopram could theoretically raise
+atomoxetine levels); use combinations of antidepressants with
+caution as this may activate bipolar disorder and suicidal ideation
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin or
+tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+
+
+
+
+<<<PAGE 632>>>
+
+Some patients who have an initial response may relapse even though
+they continue treatment, sometimes called “poop-out”
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Mirtazapine (“California rocket fuel” ; a potentially powerful dual
+serotonin and norepinephrine combination, but observe for
+activation of bipolar disorder and suicidal ideation)
+Bupropion, reboxetine, nortriptyline, desipramine, maprotiline,
+atomoxetine (all potentially powerful enhancers of noradrenergic
+action, but observe for activation of bipolar disorder and suicidal
+ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+
+
+
+
+<<<PAGE 887>>>
+
+Other patients may be nonresponders, sometimes called treatmentresistant or treatment-refractory
+Some patients who have an initial response may relapse even though
+they continue treatment, sometimes called “poop-out”
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (add with
+caution and at lower doses since fluoxetine could theoretically raise
+atomoxetine levels); use combinations of antidepressants with
+caution as this may activate bipolar disorder and suicidal ideation
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatment-
+
+
+
+
+<<<PAGE 1110>>>
+
+Foods to avoid**
+
+Foods allowed
+
+Tap and unpasteurized beer
+
+Canned or bottled beer and alcohol
+
+Marmite
+
+Brewer’s and baker’s yeast
+
+Banana peel
+
+Bananas, avocados, raspberries
+
+Sauerkraut, kimchee
+
+Peanuts
+
+Soy products/tofu
+Tyramine-containing nutritional supplement
+* Consult up-to-date listing of tyramine content, as most foods now have low tyramine amounts**Not
+necessary for 6 mg transdermal or low-dose oral selegiline
+Table 3. Drugs that boost norepinephrine: should only be used with caution with MAOIs
+Use With Caution:
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phente
+
+Pseudoephedrine
+
+MethylphenidateCocaineMethamphetamineModafinilArmodafinil
+
+NRIsNDRIs
+
+Local a
+contain
+vasoco
+
+Suggested Reading
+Gillman K. PsychoTropical Research (PTR). https://psychotropical.com .
+Gillman PK. A reassessment of the safety profile of monoamine oxidase inhibitors: elucidating tired old tyramine
+myths. J Neural Transm (Vienna) 2018 ;125(11):1707–17.
+Kennedy SH . Continuation and maintenance treatments in major depression: the neglected role of monoamine
+oxidase inhibitors . J Psychiatry Neurosci 1997 ;22 :127–31 .
+Kim T, Xu C, Amsterdam JD. Relative effectiveness of tricyclic antidepressant versus monoamine oxidase
+inhibitor monotherapy for treatment-resistant depression. J Affect Disord 2019 ;250:199–203.
+
+
+
+
+<<<PAGE 1487>>>
+
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+SSRIs, bupropion, reboxetine, atomoxetine (use combinations of
+antidepressants with caution as this may activate bipolar disorder
+and suicidal ideation)
+
+✽ Venlafaxine (“California rocket fuel” ; a potentially powerful dual
+serotonin and norepinephrine combination, but observe for activation
+of bipolar disorder and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines
+Hypnotics or trazodone for insomnia
+Tests
+None for healthy individuals
+May need liver function tests for those with hepatic abnormalities
+before initiating treatment
+
+
+
+
+<<<PAGE 1506>>>
+
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phente
+
+Pseudoephedrine
+
+MethylphenidateCocaineMethamphetamineModafinilArmodafinil
+
+NRIsNDRIs
+
+Local a
+contain
+vasoco
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is in an acute confusional state
+If patient has pheochromocytoma or thyrotoxicosis
+If there is a proven allergy to moclobemide
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Plasma concentrations are increased
+May require one-half to one-third of usual adult dose
+Cardiac Impairment
+Cardiac impairment may require lower than usual adult dose
+Patients with angina pectoris or coronary artery disease should limit their exertion
+Elderly
+Elderly patients may have greater sensitivity to adverse effects, but many tolerate MAOIs
+
+
+
+
+<<<PAGE 1510>>>
+
+Modafinil
+
+Therapeutics
+Brands
+Provigil
+Alertec
+Modiodal
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: dopamine reuptake inhibitor (DRI)
+Wake-promoting
+Commonly Prescribed for
+(bold for FDA approved)
+Reducing excessive sleepiness in patients with narcolepsy and
+shift work sleep disorder
+
+
+
+
+<<<PAGE 1512>>>
+
+Can immediately reduce daytime sleepiness and improve cognitive
+task performance within 2 hours of first dosing
+Can take several days to optimize dosing and clinical improvement
+If It Works
+
+✽ Improves daytime sleepiness and may improve attention as well as
+fatigue
+
+✽ Does not generally prevent one from falling asleep when needed
+May not completely normalize wakefulness
+Treat until improvement stabilizes and then continue treatment
+indefinitely as long as improvement persists (studies support at least
+12 weeks of treatment)
+If It Doesn’t Work
+
+✽ Change dose; some patients do better with an increased dose but
+some actually do better with a decreased dose
+Augment or consider an alternative treatment for daytime
+sleepiness, fatigue, or ADHD
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Modafinil is itself an adjunct to standard treatments for obstructive
+sleep apnea/hypopnea syndrome (OSAHS); if continuous positive
+airway pressure (CPAP) is the treatment of choice, a maximal effort to
+
+
+
+
+<<<PAGE 1513>>>
+
+treat first with CPAP should be made prior to initiating modafinil and
+CPAP should be continued after initiation of modafinil
+
+✽ Modafinil is itself an augmenting therapy to antidepressants for
+residual sleepiness and fatigue in major depressive disorder
+Best to attempt another monotherapy prior to augmenting with other
+drugs in the treatment of sleepiness associated with sleep disorders
+or problems concentrating in ADHD
+Combination of modafinil with stimulants such as methylphenidate
+or amphetamine or with atomoxetine for ADHD has not been
+systematically studied
+However, such combinations may be useful options for experts, with
+close monitoring, when numerous monotherapies for sleepiness or
+ADHD have failed
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Unknown
+CNS side effects presumably due to excessive CNS actions on
+various neurotransmitter systems
+
+
+
+
+<<<PAGE 1518>>>
+
+Induces CYP450 3A4 (and slightly 1A2 and 2B6)
+Drug Interactions
+May increase plasma levels of drugs metabolized by CYP450 2C19
+(e.g., diazepam, phenytoin, propranolol)
+Modafinil may increase plasma levels of CYP450 2D6 substrates
+such as TCAs and SSRIs, perhaps requiring downward dose
+adjustments of these agents
+Modafinil may decrease plasma levels of CYP450 3A4 substrates
+such as ethinyl estradiol and triazolam
+Due to induction of CYP450 3A4, effectiveness of hormonal
+contraceptives may be reduced by modafinil, including 1 month
+after discontinuation
+Inducers or inhibitors of CYP450 3A4 may affect levels of
+modafinil (e.g., carbamazepine may lower modafinil plasma levels;
+fluvoxamine and fluoxetine may raise modafinil plasma levels)
+Modafinil may slightly reduce its own levels by autoinduction of
+CYP450 3A4
+Modafinil may increase clearance of drugs dependent on CYP450
+1A2 and reduce their plasma levels
+Patients on modafinil and warfarin should have prothrombin times
+monitored
+Methylphenidate may delay absorption of modafinil by an hour
+
+
+
+
+<<<PAGE 1519>>>
+
+✽ However, coadministration with methylphenidate does not
+significantly change the pharmacokinetics of either modafinil or
+methylphenidate
+
+✽ Coadministration with dextroamphetamine also does not
+significantly change the pharmacokinetics of either modafinil or
+dextroamphetamine
+Interaction studies with MAOIs have not been performed, but
+MAOIs can be given with modafinil by experts with cautious
+monitoring
+Other Warnings/Precautions
+Patients with history of drug abuse should be monitored closely
+Modafinil may cause CNS effects similar to those caused by other
+CNS agents (e.g., changes in mood and, theoretically, activation of
+psychosis, mania, or suicidal ideation)
+Modafinil should be used in patients with sleep disorders that have
+been completely evaluated for narcolepsy, obstructive sleep
+apnea/hypopnea syndrome (OSAHS), and shift work sleep disorder
+In OSAHS patients for whom continuous positive airway pressure
+(CPAP) is the treatment of choice, a maximal effort to treat first with
+CPAP should be made prior to initiating modafinil, and then CPAP
+should be continued after initiating modafinil
+The effectiveness of hormonal contraceptives may be reduced when
+used with modafinil and for 1 month after discontinuation of
+
+
+
+
+<<<PAGE 1520>>>
+
+modafinil
+Modafinil is not a replacement for sleep
+Do Not Use
+If patient has severe hypertension
+If patient has cardiac arrhythmias
+If there is a proven allergy to modafinil
+
+Special Populations
+Renal Impairment
+Use with caution; dose reduction is recommended
+Hepatic Impairment
+Reduce dose by half in severely impaired patients
+Cardiac Impairment
+Use with caution
+Not recommended for use in patients with a history of left
+ventricular hypertrophy, ischemic ECG changes, chest pain,
+arrhythmias, or recent myocardial infarction
+Elderly
+
+
+
+
+<<<PAGE 1521>>>
+
+Limited experience in patients over 65
+Clearance of modafinil may be reduced in elderly patients
+Children and Adolescents
+Safety and efficacy not established under age 16
+Can be used cautiously by experts for children and adolescents
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+Intrauterine growth restriction and spontaneous abortion have been
+reported with armodafinil and modafinil
+In animal studies, developmental toxicity was observed at clinically
+relevant plasma exposures of armodafinil and modafinil
+Use in women of childbearing potential requires weighing potential
+benefits to the mother against potential risks to the fetus
+
+✽ Generally, modafinil should be discontinued prior to anticipated
+pregnancies
+
+
+
+
+<<<PAGE 1522>>>
+
+Breast Feeding
+Unknown if modafinil is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+The Art of Psychopharmacology
+Potential Advantages
+Selective for areas of brain involved in sleep/wake promotion
+Less activating and less abuse potential than stimulants
+Potential Disadvantages
+May not work as well as stimulants in some patients
+Primary Target Symptoms
+Sleepiness
+Concentration
+Physical and mental fatigue
+Pearls
+
+✽ Anecdotal usefulness for jet lag short-term (off label)
+✽ Modafinil is not a replacement for sleep
+✽ The treatment for sleep deprivation is sleep, not modafinil
+
+
+
+
+<<<PAGE 1523>>>
+
+Controlled studies suggest modafinil improves attention in OSAHS,
+shift work sleep disorder, and ADHD (both children and adults), but
+controlled studies of attention have not been performed in major
+depressive disorder
+
+✽ May be useful to treat fatigue in patients with depression as well as
+other disorders, such as multiple sclerosis, myotonic dystrophy,
+HIV/AIDS
+In depression, modafinil’s actions on fatigue appear to be
+independent of actions (if any) on mood
+In depression, modafinil’s actions on sleepiness also appear to be
+independent of actions (if any) on mood but may be linked to
+actions on fatigue or on global functioning
+Several controlled studies in depression show improvement in
+sleepiness or global functioning, especially for depressed patients
+with sleepiness and fatigue
+May be useful adjunct to mood stabilizers for bipolar depression
+May be useful in treating sleepiness associated with opioid
+analgesia, particularly in end-of-life management
+Subjective sensation associated with modafinil is usually one of
+normal wakefulness, not of stimulation, although jitteriness can
+rarely occur
+Anecdotally, some patients may experience wearing off of efficacy
+over time, especially for off-label uses, with restoration of efficacy
+
+
+
+
+<<<PAGE 1524>>>
+
+after a drug holiday; such wearing off is less likely with intermittent
+dosing
+
+✽ Compared to stimulants, modafinil has a novel mechanism of
+action, novel therapeutic uses, and less abuse potential, but is often
+inaccurately classified as a stimulant
+Alpha 1 antagonists such as prazosin may block the therapeutic
+actions of modafinil
+The active R enantiomer of modafinil, called armodafinil, is also
+available
+
+Suggested Reading
+Batejat DM , Lagarde DP . Naps and modafinil as countermeasures for the
+effects of sleep deprivation on cognitive performance . Aviat Space Environ
+Med 1999 ;70 :493–8 .
+Bourdon L , Jacobs I , Bateman WA , Vallerand AL . Effect of modafinil on
+heat production and regulation of body temperatures in cold-exposed
+humans . Aviat Space Environ Med 1994 ;65 :999 –1004 .
+Cox JM , Pappagallo M . Modafinil: a gift to portmanteau . Am J Hosp
+Palliat Care 2001 ;18 :408–10 .
+Jasinski DR , Koyacevic-Ristanovic. Evaluation of the abuse liability of
+modafinil and other drugs for excessive daytime sleepiness associated with
+narcolepsy . Clin Neuropharmacol 2000 ;23 :149–56 .
+
+
+
+
+<<<PAGE 1525>>>
+
+Kumar R. Approved and investigational uses of modafinil: an evidencebased review . Drugs 2008 ;68 (13 ):1803 –39.
+Wesensten NJ , Belenky G , Kautz MA , et al. Maintaining alertness and
+performance during sleep deprivation: modafinil versus caffeine .
+Psychopharmacology (Berl) 2002 ;159 :238–47 .
+
+
+
+
+<<<PAGE 1711>>>
+
+problems concentrating in depression)
+Other patients may be nonresponders, sometimes called treatmentresistant or treatment-refractory
+Some patients who have an initial response may relapse even though
+they continue treatment, sometimes called “poop-out”
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (add with
+caution and at lower doses since paroxetine could theoretically raise
+atomoxetine levels); use combinations of antidepressants with
+caution as this may activate bipolar disorder and suicidal ideation
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+
+
+
+
+<<<PAGE 1775>>>
+
+** Not necessary for 6 mg transdermal or low-dose oral selegiline
+Table 3. Drugs that boost norepinephrine: should only be used with caution
+with MAOIs
+Use With Caution:
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phentermine
+
+Pseudoephedrine
+
+Methylphenidate
+Cocaine
+Methamphetamine
+Modafinil
+Armodafinil
+
+NRIs NDRIs
+
+Local
+anesthetics
+containing
+vasoconstrictors
+Tapentadol
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake
+inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g.,
+SSRIs, tramadol, milnacipran, duloxetine, venlafaxine, clomipramine,
+imipramine, etc.)
+
+
+
+
+<<<PAGE 1840>>>
+
+Histamine 3 receptors are presynaptic autoreceptors; thus, when
+histamine binds to these receptors it shuts down further histamine
+release
+Antagonism/inverse agonism of histamine 3 receptors by pitolisant
+therefore disinhibits histamine release, boosting histamine levels in
+the brain and enhancing wakefulness
+How Long Until It Works
+Can take up to 8 weeks for some patients to achieve a clinical
+response
+If It Works
+Improves daytime sleepiness and may improve fatigue
+May improve cataplexy
+Treat until improvement stabilizes and then continue treatment
+indefinitely as long as improvement persists
+If It Doesn’t Work
+Augment or consider an alternative treatment
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Stimulants
+Modafinil or armodafinil
+
+
+
+
+<<<PAGE 1848>>>
+
+Breast Feeding
+Unknown if pitolisant is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+Recommended either to discontinue drug or bottle feed
+
+The Art of Psychopharmacology
+Potential Advantages
+Minimal abuse potential
+Potential Disadvantages
+Did not demonstrate non-inferiority to modafinil in clinical trials
+Primary Target Symptoms
+Daytime sleepiness
+Pearls
+Pitolisant has been approved in the EU since 2016 for the treatment
+of narcolepsy with or without cataplexy in adults
+Pitolisant is the only anti-narcoleptic drug that is not scheduled as a
+controlled substance in the USA
+Pitolisant was formerly known as tiprolisant
+
+
+
+
+<<<PAGE 2041>>>
+
+Table 3. Drugs that boost norepinephrine: should only be used with caution
+with MAOIs
+Use With Caution:
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phentermine
+
+Pseudoephedrine
+
+Methylphenidate
+Cocaine
+Methamphetamine
+Modafinil
+Armodafinil
+
+NRIs NDRIs
+
+Local
+anesthetics
+containing
+vasoconstrictors
+Tapentadol
+
+Do Not Use
+If patient is taking meperidine (pethidine) (a serotonin reuptake
+inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g.,
+SSRIs, tramadol, milnacipran, duloxetine, venlafaxine, clomipramine,
+imipramine, etc.)
+If patient is taking dextromethorphan (a serotonin reuptake inhibitor)
+
+
+
+
+<<<PAGE 2068>>>
+
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Trazodone, especially for insomnia
+In the USA, sertraline (Zoloft) is commonly augmented with
+bupropion (Wellbutrin) with good results in a combination
+anecdotally called “Well-loft” (use combinations of antidepressants
+with caution as this may activate bipolar disorder and suicidal
+ideation)
+Mirtazapine, reboxetine, or atomoxetine (add with caution and at
+lower doses since sertraline could theoretically raise atomoxetine
+levels); use combinations of antidepressants with caution as this
+may activate bipolar disorder and suicidal ideation
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+
+
+
+
+<<<PAGE 2099>>>
+
+Consider an alternative treatment
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Sodium oxybate is itself often used as an augmenting therapy to
+stimulants, modafinil, or armodafinil for excessive sleepiness in
+narcolepsy
+
+✽ The majority of patients taking sodium oxybate in clinical trials for
+narcolepsy and cataplexy were taking a concomitant stimulant
+Often used as an augmenting agent for fibromyalgia with SNRIs
+(e.g., duloxetine, milnacipran) and alpha 2 delta ligands (e.g.,
+gabapentin, pregabalin), but has not been well studied in
+combination with these agents
+Tests
+None for healthy individuals
+
+Side effects
+How Drug Causes Side Effects
+Unknown
+CNS side effects presumably due to excessive CNS actions on
+various neurotransmitter systems
+
+
+
+
+<<<PAGE 2112>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Best to attempt another monotherapy prior to augmenting with other
+drugs in the treatment of sleepiness associated with sleep disorders
+If choosing to augment, consider modafinil, armodafinil, or
+pitolisant
+Tests
+Before treatment, assess for presence of cardiac disease (history,
+family history, physical exam)
+Assess blood pressure and heart rate at baseline and periodically
+during treatment
+
+Side effects
+How Drug Causes Side Effects
+Side effects are probably caused in part by actions of norepinephrine
+and dopamine in brain areas with undesired effects (e.g., insomnia,
+anxiety, headache, increased blood pressure, nausea)
+Side effects are probably also caused in part by actions of
+norepinephrine in the periphery with undesired effects (e.g., nausea,
+increased blood pressure, increased heart rate)
+Most side effects are immediate but often go away with time
+
+
+
+
+<<<PAGE 2259>>>
+
+Use With Caution:
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phentermine
+
+Pseudoephedrine
+
+Methylphenidate
+Cocaine
+Methamphetamine
+Modafinil
+Armodafinil
+
+NRIs NDRIs
+
+Local
+anesthetics
+containing
+vasoconstrictors
+Tapentadol
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake
+inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g.,
+SSRIs, tramadol, milnacipran, duloxetine, venlafaxine, clomipramine,
+imipramine, etc.)
+If patient is taking dextromethorphan (serotonin reuptake inhibitior)
+If patient is taking diuretics or other antihypertensives without careful
+monitoring of blood pressure
+If patient has pheochromocytoma
+
+
+
+
+<<<PAGE 2442>>>
+
+Augmentation experience is limited compared to other
+antidepressants
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (use
+combinations of antidepressants with caution as this may activate
+bipolar disorder and suicidal ideation)
+Use with caution with antidepressants that are CYP450 2D6
+inhibitors (e.g., bupropion, duloxetine, fluoxetine, paroxetine), as
+these agents will increase vortioxetine levels and may require a dose
+reduction of vortioxetine
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin,
+pregabalin, or tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+
+
+
+<<<PAGE 2600>>>
+
+Mialin (alprazolam), 11
+Mianeurin (mianserin), 495
+Miansan (mianserin), 495
+mianserin, 495
+Miansin (mianserin), 495
+Miaxan (mianserin), 495
+midazolam, 499
+Milithin (lithium), 415
+milnacipran, 503
+Minipress (prazosin), 643
+Minizide (prazosin), 643
+Mipralin (imipramine), 367
+Mirbanil (sulpiride), 741
+Mirenil (fluphenazine), 313
+Mirenil Prolongatum (fluphenazine), 313
+Mirfat (clonidine), 179
+Mirfudorm (oxazepam), 569
+Mirpan (maprotiline), 465
+mirtazapine, 509
+Moban (molindone), 527
+Mocloamine (moclobemide), 515
+moclobemide, 515
+modafinil, 521
+Modalina (trifluoperazine), 803
+Modecate (fluphenazine), 313
+Modiodal (modafinil), 521
+Moditen (fluphenazine), 313
+Moditen Action Prolongee (fluphenazine), 313
+
+
+
+
+<<<PAGE 2610>>>
+
+Propaphenin (chlorpromazine), 153
+propranolol, 653
+Propymal (valproate), 829
+Prosedar (quazepam), 663
+ProSom (estazolam), 281
+Prosulpin (sulpiride), 741
+Prothiaden (dothiepin), 249
+Protiaden (dothiepin), 249
+protriptyline, 657
+Provigil (modafinil), 521
+Proxam (oxazepam), 569
+Prozac (fluoxetine), 301
+Prozil (chlorpromazine), 153
+Prozin (chlorpromazine), 153
+Prozyn (fluoxetine), 301
+Pryleugan (imipramine), 367
+Psicocen (sulpiride), 741
+Psicofar (chlordiazepoxide), 147
+Psiquiwas (oxazepam), 569
+Psychopax (diazepam), 229
+Psymoin (maprotiline), 465
+PT-141 (bremelanotide), 95
+Punktyl (lorazepam), 437
+Purata (oxazepam), 569
+Q-Med Hydroxyzine (hydroxyzine), 355
+Qsymia (phentermine/topiramate), 619
+Quait (lorazepam), 437
+Quastil (sulpiride), 741
+
+
+
+
+<<<PAGE 2631>>>
+
+trazodone, 793
+trifluoperazine , 803
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Attention deficit hyperactivity disorder
+amphetamine (d) , 39
+amphetamine (d,l) , 45
+armodafinil, 65
+atomoxetine , 79
+bupropion, 117
+chlorpromazine (hyperactivity) , 153
+clonidine , 179
+guanfacine , 343
+haloperidol (hyperactivity) , 347
+lisdexamfetamine , 409
+methylphenidate (d) , 481
+methylphenidate (d,l) , 487
+modafinil, 521
+reboxetine, 681
+Autism-related irritability
+aripiprazole , 53
+risperidone , 687
+Behavioral problems
+aripiprazole, 53
+
+
+
+
+<<<PAGE 2640>>>
+
+vilazodone , 847
+vortioxetine , 853
+Drug-induced parkinsonism
+benztropine , 85
+diphenhydramine, 235
+trihexyphenidyl , 809
+Erectile dysfunction
+sildenafil , 729
+Excessive sleepiness
+armodafinil , 65
+modafinil , 521
+pitolisant , 639
+sodium oxybate , 733
+solriamfetol , 737
+tasimelteon, 751
+Fatigue
+armodafinil, 65
+modafinil, 521
+Fibromyalgia
+amitriptyline, 25
+desvenlafaxine, 215
+duloxetine , 263
+levomilnacipran, 403
+milnacipran , 503
+pregabalin , 647
+sodium oxybate, 733
+
+
+
+
+<<<PAGE 2644>>>
+
+lorazepam (adjunct), 437
+lurasidone, 457
+olanzapine , 559
+paliperidone, 581
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+valproate (divalproex) , 829
+ziprasidone , 863
+zotepine, 883
+Migraine
+propranolol , 653
+topiramate , 781
+valproate (divalproex) , 829
+zonisamide, 875
+Muscle spasm
+diazepam , 229
+lorazepam, 437
+Narcolepsy
+amphetamine (d) , 39
+amphetamine (d,l) , 45
+armodafinil , 65
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l) , 487
+modafinil, 521
+
+
+
+
+<<<PAGE 2655>>>
+
+gabapentin (adjunct) , 331
+lamotrigine , 387
+levetiracetam , 399
+lorazepam , 437
+oxcarbazepine , 575
+pregabalin (adjunct) , 647
+tiagabine (adjunct) , 771
+topiramate , 781
+valproate (divalproex) , 829
+zonisamide , 875
+Sexual dysfunction
+bremelanotide , 95
+bupropion, 117
+flibanserin , 289
+sildenafil , 729
+Sleepiness, excessive
+armodafinil , 65
+modafinil , 521
+pitolisant , 639
+sodium oxybate , 733
+solriamfetol , 737
+tasimelteon, 751
+Social anxiety disorder
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+
+
+
+
+<<<PAGE 2664>>>
+
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+reboxetine, 681
+Benzodiazepine antagonist
+flumazenil, 293
+Cognitive enhancers
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+caprylidene, 127
+clonidine, 179
+donepezil, 243
+galantamine, 337
+memantine, 473
+memantine/donepezil combination, 243 , 473
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+reboxetine, 681
+rivastigmine, 699
+Dementia treatments
+caprylidene, 127
+donepezil, 243
+
+
+
+
+<<<PAGE 2670>>>
+
+naltrexone, 537
+oxazepam, 569
+varenicline, 837
+Tic suppressants
+aripiprazole, 53
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+pimozide, 627
+Wake-promoting agents
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+pitolisant, 639
+sodium oxybate, 733
+solriamfetol, 737
+Weight management
+amphetamine (d,l), 45
+naltrexone/bupropion, 541
+phentermine/topiramate, 619
+zonisamide, 875
+
+

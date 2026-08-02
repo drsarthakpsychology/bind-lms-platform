@@ -1,0 +1,930 @@
+<<<PAGE 88>>>
+
+76
+
+A Short Textbook of Psychiatry
+
+Mania represents a reaction formation (Table 17.1)
+to depression according to the psychodynamic theory.
+
+Table 6.5: Some Commonly used Antidepressants
+Generic Name
+
+Stress
+Increased number of stressful life events before the
+onset or relapse has a formative rather than a precipitating effect in depression though they can serve
+a precipitant role in mania. Increased stressors in
+the early period of development are probably more
+important in depression.
+
+Cognitive and Behavioural Theories
+The mechanisms of causation of depression, according
+to these theories, include depressive negative
+cognition (cognitive theory), learned helplessness
+(animal model), and anger directed inwards. These
+concepts are useful in the psychological treatment of
+mild (to moderate) depression.
+Several other theories have also been propounded
+but are currently considered to be of doubtful value
+as theories of causation of depression.
+
+DIFFERENTIAL DIAGNOSIS
+The first step in the differential diagnosis of any mood
+disorder is to exclude a disorder with known organic
+cause, e.g. organic (especially drug-induced) mood
+disorders and dementia (differential diagnosis from
+depressive pseudodementia).
+The second step is to rule out a possibility of acute
+and transient psychotic disorders, schizo-affective
+disorder, and schizophrenia.
+The third step is to exclude the possibility of other
+non-organic psychoses such as delusional disorders.
+The fourth step is to exclude the possibility of
+adjustment disorder with depressed mood, generalised
+anxiety disorder, normal grief reaction, and obsessive compulsive disorder (with or without secondary
+depression).
+In addition to the main diagnosis, it is also important to look for co-morbid medical (such as diabetes,
+hypertension) and/or psychiatric disorders (such as
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+
+Agomelatin
+Amitriptyline
+Amoxapine
+Bupropion
+Citalopram
+Clomipramine
+Doxepine
+Dosulepin/Dotheipin
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Imipramine
+Lofepramine
+Mianserin
+Mirtazapine
+Moclobemide
+Nortriptyline
+Paroxetine
+Reboxetine
+Sertraline
+Tianeptin
+Trazodone
+Venlafaxine
+
+Usual Therapeutic
+Range (mg/day)
+25-50
+75-300
+150-300
+150-450
+10-40
+75-250
+75-300
+75-150
+30-120
+10-20
+20-60
+50-200
+75-300
+140-210
+30-120
+15-45
+300-600
+150-300
+10-40
+10-12
+50-200
+37.5
+300-600
+75-375
+
+anxiety, panic, alcohol or drug misuse, or personality disorder) on a multi-axial diagnostic system
+(Table 1.4).
+
+MANAGEMENT
+Somatic Treatment
+Antidepressants
+Antidepressants are the treatment of choice for a vast
+majority of depressive episodes. Some of the commonly used antidepressants with their usual range of
+therapeutic dosage are listed in Table 6.5. (Antidepressants are discussed in more detail in Chapter 15).
+
+
+
+
+<<<PAGE 110>>>
+
+98
+
+A Short Textbook of Psychiatry
+
+Treatment
+Psychotherapy
+1. Psychoanalytic psychotherapy is used in certain
+selected patients, who are psychologically oriented.
+2. Supportive psychotherapy is an important adjunct to other modes of treatment. Supportive
+psychotherapy is also needed by the family
+members.
+
+Behaviour Therapy and Cognitive
+Behaviour Therapy
+Behaviour modification is an effective mode of
+therapy, with a success rate as high as 80%, especially
+for the compulsive acts. It is customary these days to
+combine CBT with BT at most centres.
+The techniques used are listed below (They are
+described in Chapter 18):
+i. Thought-stopping (and its modifications).
+ii. Response prevention.
+iii. Systematic desensitisation.
+iv. Modelling.
+
+Drug Treatment
+1. Benzodiazepines (e.g. alprazolam, clonazepam)
+have a limited role in controlling anxiety as
+adjuncts and should be used very sparingly.
+2. Antidepressants: Some patients may improve
+dramatically with specific serotonin reuptake
+inhibitors (SSRIs).
+Clomipramine (75-300 mg/day), a nonspecific
+serotonin reuptake inhibitor (SRI), was the first
+drug used effectively in the treatment of OCD.
+The response is better in the presence of depressive symptoms, but many patients with pure
+OCD also improve substantially.
+Fluoxetine (20-80 mg/day) is a good alternative to clomipramine and often preferred these
+days for its better side-effect profile. Fluvoxamine (50-200 mg/day) is marketed as a specific
+anti-obsessional SSRI drug, whilst paroxetine
+
+(20-40 mg/day) and sertraline (50-200 mg/day)
+are also effective in some patients.
+3. Antipsychotics: These are occasionally used in
+low doses (e.g. haloperidol, risperidone, olanzapine, aripiprazole, pimozide) in the treatment
+of severe, disabling anxiety.
+4. Buspirone has also been used beneficially as
+an adjunct for augmentation of SSRIs, in some
+patients.
+
+Electroconvulsive Therapy
+In presence of severe depression with OCD, ECT may
+be needed. ECT is particularly indicated when there is
+a risk of suicide and/or when there is a poor response
+to the other modes of treatment. However, ECT is not
+the treatment of first choice in OCD.
+
+Psychosurgery
+Psychosurgery can be used in treatment of OCD that
+has become intractable, and is not responding to other
+methods of treatment. It is worth mentioning that
+psychosurgery is only available as a treatment choice
+at a very few centres throughout the world.
+The best responders are usually those who have
+significant associated depression, although pure
+obsessives also do respond. The main benefit is the
+marked reduction in associated distress and severe
+anxiety.
+The procedures which can be employed are:
+i. Stereotactic limbic leucotomy.
+ii. Stereotactic subcaudate tractotomy.
+Psychosurgery is usually followed by intensive
+behaviour therapy aimed at rehabilitation. However,
+with the easy availability of SSRIs, and a good response of OCD symptoms to SSRIs and other pharmacological measures, psychosurgery is very rarely
+used in the treatment of OCD.
+Very often, a comprehensive treatment of OCD
+requires that multiple treatment modalities (e.g. drug
+treatment and BT/CBT) be combined in a specific
+manner, suitable to the particular patient being treated
+at the time.
+
+
+
+
+<<<PAGE 143>>>
+
+Sexual Disorders
+
+1. Treatment of the underlying physical or psychiatric
+disorder, if present.
+2. Psychoanalysis: This is particularly indicated when
+the dysfunction is more pervasive and involves personality difficulties. The goal is not symptom removal but
+is resolution of the underlying unconscious conflicts.
+3. Hypnosis: Hypnosis can be used either alone or in
+conjunction with other therapies aiming at symptom
+removal. However, only suggestible patients can be
+hypnotised.
+4. Group psychotherapy: Patients of same sex with
+different sexual problems or of both sexes with similar
+sexual problems can be treated in group therapy
+sessions. The focus is usually on providing education
+regarding normal sexuality and to remove anxiety
+or guilt by sharing viewpoints in a group setting.
+Although occasionally used alone, it is more helpful
+as an adjunct to other methods of treatment.
+5. Behaviour therapy: The methods commonly employed include the following:
+i. Relaxation training, e.g. Jacobson’s progressive
+relaxation technique.
+ii. Assertiveness training.
+iii. Systematic desensitisation, aimed at reducing
+the phobic anxiety related to the sexual act, e.g.
+in sexual aversion disorder.
+iv. Biofeedback, using a penile plethysmograph.
+6. Masters’ and Johnson’s technique: This is one of the
+most popular and successful methods of treatment for
+psychosexual dysfunctions. The patient is not treated
+alone, but both the partners are treated together. This
+is called as dual-sex therapy, where both the sexual
+partners are treated by a team of therapists (one male
+and one female), although later modifications of this
+technique use only one therapist.
+The goal of the treatment is symptom removal,
+using simple behavioural techniques. The couple is
+usually seen on a weekly basis; however, the sessions
+can be more frequent if the couple is encountering
+particular difficulties during treatment. Some common
+steps before starting therapy include:
+i. Detailed history taking (sexual history) from each
+partner separately.
+
+131
+
+ii. Round-table discussions aiming at:
+a. Education about normal sexuality.
+b. Understanding of the couple’s current sexual
+problem(s).
+c. Enhancing communication between the partners regarding sexual matters.
+iii. Behaviour modification steps, depending on the
+type of psychosexual dysfunction.
+Brief examples of the techniques used are:
+a. Sensate focus technique: This is used particularly
+for treatment of impotence, although it is also
+useful in management of other dysfunctions as
+well. The aim is to ‘discover’ on body (excluding genital area) ‘sensate focuses’ (body areas
+where manipulation leads to sexual arousal).
+This is usually a general exercise before any
+sex therapy.
+b. Squeeze technique (Seman’s technique): This
+has been used in treatment of premature ejaculation. The female partner is asked to manually
+stimulate the penis causing erection. When the
+male partner experiences ‘ejaculatory inevitability’, the female partner ‘squeezes’ the penis
+on the coronal ridge thus delaying ejaculation.
+There are similar simple techniques (such as
+orgasmic conditioning, desensitisation) for treatment
+of other psychosexual dysfunctions. The response
+rate is close to 80%, with maximum success in the
+treatment of premature ejaculation.
+7. Oral drug therapy: Till very recently, this was rarely
+a treatment of first choice in sexual dysfunctions.
+Current indications of drug treatment include:
+i. Treatment of underlying psychiatric disorder.
+ii. Intense anxiety related to sexual activity may
+require use of low dose benzodiazepines (such
+as alprazolam) for a very limited period (to
+prevent benzodiazepine misuse or dependence).
+iii. Premature ejaculation may sometimes require
+treatment with fluoxetine, trazodone, or tricyclic
+antidepressants such as clomipramine (to retard
+ejaculation).
+iv. Several drugs have been used in the treatment
+of impotence with varying degrees of efficacy,
+
+
+
+
+<<<PAGE 155>>>
+
+Behavioural Syndromes Associated with Psychological Disturbances and Physiological Factors
+
+exercises. ‘Anorexia’ is actually a misnomer as there
+is never really a decrease in appetite, initially; in fact
+patient is often preoccupied with food. A lot of time
+may be spent in collecting recipes and cooking food
+for significant others.
+Depressive symptoms are common and so are
+obsessive-compulsive personality traits. Psychomotor activity is usually increased. In severe cases, fine
+lanugo hair may develop all over the body. Women
+with anorexia nervosa can present with poor sexual
+adjustment, with conflicts about being a woman and
+fear of pregnancy. Many patients are unconsciously
+unable to accept a ‘female role’.
+A large number (up to 50%) of patients with anorexia nervosa also have bulimic episodes. These are
+characterised by rapid consumption of large amounts
+of food in a relatively short period of time, occurring
+usually when alone. This is known as eating binges
+or binge-eating. These binges are followed by intense
+guilt and attempts to remove eaten food, for example,
+by self-induced vomiting, laxative abuse, and/or diuretic abuse.
+If untreated, the weight loss can become
+mar ked. Death may occur due to hypokalaemia
+(caused by self-induced vomiting), dehydration,
+malnutrition or congestive cardiac failure (caused by
+anaemia).
+Anorexia nervosa should be differentiated from
+other conditions capable of causing significant weight
+loss. These include medical illnesses (such as hypopituitarism, lateral hypothalamic lesion and debilitating
+systemic illnesses, e.g. disseminated tuberculosis) and
+psychiatric disorders (such as depressive disorder and
+schizophrenia).
+Another important differential diagnosis is bulimia
+nervosa. Although bulimic episodes are common in
+anorexia nervosa (binge eating followed by vomiting), patients of bulimia nervosa usually maintain a
+near normal body weight (or are overweight), in sharp
+contrast to the patients with anorexia nervosa.
+
+Treatment
+The treatment of anorexia nervosa can be considered
+in two phases, which often merge into each other.
+
+•
+
+143
+
+Short-term treatment, to encourage weight gain
+and correct nutritional deficiencies, if any.
+• Long-term treatment, aimed at maintaining the
+near normal weight achieved in short-term treatment and preventing relapses.
+The various treatment modalities used can include:
+1. Behaviour therapy (BT): Behavioural treatments
+are based on providing positive reinforcements
+(and at times, negative reinforcements) contingent
+on weight gain by the patient. See Chapter 18 for
+further details for BT.
+A too rapid weight gain is not desirable or safe.
+The weight gain should not exceed 1.5 to 2 kg in
+a fortnight. As patients are usually unable to eat
+a large meal, especially in the initial part of treatment, it is advisable to suggest more number of
+meals (about six) per day. Occasionally, forceful
+Ryle’s tube feeding may be needed initially, in
+resistant patients.
+2. Individual psychotherapy is often helpful in addition to supportive physical treatment. This could
+involve psychotherapy with a focus on cognitive
+behaviour therapy, psychodynamic principles or
+supportive measures. See Chapter 17 and 18 for
+more details.
+3. Hospitalisation, with adequate nursing care for
+food intake and weight gain, can be helpful in
+short-term treatment as well as prevention and/
+or treatment of complications. However, hospitalisation does not necessarily ensure long-term
+improvement. It is important to keep a close eye
+on water and electrolyte balance, need for supplementation with vitamins and minerals, and prevent
+osteoporosis.
+4. Drugs are an important adjunct to other modes of
+therapy. The drugs used can include:
+i. Antipsychotics: Chlorpromazine is rarely used
+these days. Olanzapine has efficacy in improving weight gain but it is important to be aware of
+possibility of prolongation of QTc particularly
+in patients with low BMI.
+ii. Antidepressants (such as fluoxetine, clomipramine) for treatment of anorexia nervosa and/
+or associated depression.
+
+
+
+
+<<<PAGE 185>>>
+
+Psychopharmacology
+
+173
+
+Table 15.1: A Brief History of Psychopharmacology
+<4000 BC Ayurveda describes treatment of psychiatric patients with sympathy and kindness. The methods of
+treatment included dhatura and roots of serpentina plant mixed with oil (ghee).
+1853
+Bromide used as a sedative-hypnotic.
+1869
+Chloral hydrate used in the treatment of melancholia and mania.
+1882
+Paraldehyde used as a hypnotic.
+1883
+Phenothiazines synthesised during synthesis of methylene blue (Bernthsen).
+1903
+Barbiturates (barbital) used for sedation in 1903; phenobarbital introduced in 1912.
+1917
+Malarial treatment for General Paralysis of Insane (GPI) received a Nobel prize (Julius von Wagner
+Jauregg).
+1922
+Barbiturate-induced coma introduced for the treatment of psychoses (Jacob Klaesi).
+1927
+Insulin-shock treatment introduced for schizophrenia (Manfred Sakel).
+1931
+First report of successful treatment of psychoses (Ganesh Sen and Kartik Bose from India); using
+Rauwolfia serpentina extract (reserpine). Report ignored till Nathan Kline (1958) confirmed the finding.
+1934
+Metrazol-induced convulsions used for the treatment of psychoses (Laszlo von Meduna).
+1936
+Frontal lobotomy advocated for treatment of psychiatric disorders (Egas Moniz and Almenda Lima).
+1937
+Amphetamines used in the treatment of behaviour disorders of children (C Bradley).
+1938
+Electroconvulsive therapy used for the treatment of psychoses (Ugo Cerletti and Lucio Bini).
+1940
+Phenytoin used as an anticonvulsant (Tracy Putnam).
+1943
+LSD synthesised (Albert Hofmann).
+1949
+Lithium used in mania (John F Cade); did not receive much attention even in Australia.
+1950
+Chlorpromazine synthesised while making a better antihistaminic than promethazine (Charpentier).
+1950
+Methylphenidate used in treatment of ADHD, then known as Minimal Brain Dysfunction (MBD).
+1951
+Lytic cocktail used (Laborit); Chlorpromazine earlier used (as ‘456 ORP’) in artificial hibernation.
+1951
+Isoniazid (INH) found to have mood elevating properties in patients with tuberculosis. Iproniazid, a
+MAOI and a derivative of INH, was later (1958) introduced for treatment of depression.
+1952
+The revolution in psychopharmacology came with introduction of chlorpromazine (Jean Delay and
+Pierre Deniker). The number of admissions in mental hospitals show a sudden decrease after introduction of chlorpromazine.
+1955
+Meprobamate was introduced as an anti-anxiety agent.
+1958
+Imipramine, a tricyclic antidepressant (TCA) synthesised by Haflinger and Schindler in the late 1940’s,
+was introduced for treatment of depression in 1958 (Thomas Kuhn).
+1958
+MAOIs (e.g. iproniazid) introduced for treatment of depression (Nathan Kline).
+1958
+Haloperidol synthesised in Belgium (Janssen).
+1960
+Chlordiazepoxide used as an anti-anxiety agent in 1960-1961 (Sternbach; Synthesised in 1957).
+1966
+Valpromide (Valproate) used in bipolar disorder (Lambert).
+1968
+Pimozide used for treatment of schizophrenia (Janssen).
+1967
+Clomipramine used in OCD (Fernandez and Lopez-Ibor).
+1971
+Carbamazepine used in bipolar disorder (Takezaki and Hanoaka) (Synthesized in 1953 by Schindler).
+1986
+Buspirone introduced in US market as a non-benzodiazepine anti-anxiety agent.
+1988
+Clozapine re-discovered in US as an effective treatment for refractory schizophrenia (Kane et al)
+(Synthesised in 1959). Approved by US FDA in 1990 and introduced in Indian market in 1995.
+1990s
+Second Generation Antipsychotics introduced in market starting with Risperidone.
+
+
+
+
+<<<PAGE 194>>>
+
+182
+
+A Short Textbook of Psychiatry
+
+of depression. The first tricyclic antidepressant (TCA)
+imipramine was used in 1958 by Thomas Kuhn. It was
+different from phenothiazines by only a replacement
+of sulphur with an ethylene linkage. With this small
+structural difference (discovered by chance), imipramine was found not effective as an antipsychotic
+but instead quite beneficial in depressed patients.
+Since 1958, the number of antidepressants has been
+gradually increasing.
+Antidepressants have no euphoriant effect when
+administered to normal, non-depressed individuals.
+
+Indications
+Presently, the indications for the use of antidepressants
+include:
+Depression
+1. Depressive episode (also called major depression,
+endogenous depression)
+2. Depressive episode with melancholia (with or
+without ECTs)
+3. Depressive episode with psychotic features (with
+antipsychotics or ECTs)
+4. Dysthymia (with psychotherapy)
+5. Reactive depression (with psychotherapy)
+6. Depressive equivalents and masked depression
+(sometimes)
+7. Atypical depression (e.g. MAO inhibitors)
+8. Secondary depression (e.g. in hypothyroidism,
+Cushing’s syndrome)
+9. Abnormal grief reaction
+Child Psychiatric Disorders
+1. Enuresis (with or without behaviour therapy)
+2. Attention deficit disorder with hyperactivity (in
+low doses, after 6 years of age, when stimulant
+medication is not available)
+3. School phobia (sometimes, in low doses)
+4. Separation anxiety disorder (in children)
+5. Somnambulism
+6. Night terrors
+Other Psychiatric Disorders
+1. Panic attacks (e.g. SSRIs)
+2. Agoraphobia and social phobia
+3. Obsessive compulsive disorder with or without
+depression (e.g. clomipramine, SSRIs)
+
+4. Cataplexy (associated with narcolepsy)
+5. Aggression in elderly (e.g. trazodone)
+6. Eating disorders (e.g. fluoxetine in bulimia nervosa)
+7. Borderline personality disorder (for treatment of
+depressive symptoms)
+8. Trichotillomania (e.g. clomipramine; fluoxetine)
+9. Depersonalisation syndrome
+10. Post-traumatic stress disorder (PTSD)
+11. Generalised anxiety disorder (e.g. SSRIs)
+12. Nicotine dependence (e.g. bupropion is used for
+treatment of craving)
+13. Alcohol dependence (e.g. fluoxetine sometimes
+used for treatment of craving)
+Medical Disorders
+1. Chronic pain (in low doses, e.g. amitriptyline,
+duloxetine)
+2. Migraine (as an adjuvant)
+
+Classification
+Classification and properties of antidepressants
+(Table 15.6).
+
+Pharmacokinetics
+The oral dose of TCAs is incompletely though adequately absorbed. As they are highly anticholinergic
+in nature, they delay gastric emptying and slow gastrointestinal motility. SSRIs are well absorbed from the
+gastrointestinal tract.
+These antidepressants, much like antipsychotics, are highly lipophilic and are highly protein
+bound. Thus they have a large volume of distribution and tend to accumulate in areas with good blood
+supply. Like antipsychotics, they are also not dialysable.
+Their other pharmacokinetic properties of TCAs
+are similar to those of phenothiazines. The half-life
+is long, usually more than 24 hours. Although TCAs
+can be administered in a single night-time dose, the
+routine clinical practice is to prescribe divided doses,
+at least in the initial days of treatment, to prevent
+accumulated side-effects. The metabolism of TCAs is
+by oxidation (hepatic microsomal enzymes) followed
+by conjugation (glucoronic acid). The major metabolites of imipramine and amitriptyline (desipramine and
+
+
+
+
+<<<PAGE 195>>>
+
+Psychopharmacology
+
+183
+
+Table 15.6: Classification and Properties of Antidepressants
+Drugs
+
+Oral Dose
+(mg/d)
+
+Some Common Adverse Effects#
+Sedation* Orthostatic Hypotension* Anticholinergic*
+
+I. Cyclic Antidepressants
+A. Tricyclic Tertiary Amines
+1. Amitriptyline
+75-300
++++
+2. Clomipramine
+75-250
+++
+3. Dosulepin (Dotheipin)
+75-300
++++
+4. Doxepine
+75-300
++++
+5. Imipramine
+75-300
+++
+6. Lofepramine
+70-210
++
+7. Tri-imipramine
+75-300
++++
+B. Tricyclic Secondary Amines
+1. Desipramine
+75-300
+±
+2. Nortriptyline
+75-200
++
+3. Protriptyline
+15-60
+0
+C. Tetracyclic Antidepressants
+1. Amoxapine
+150-400
++
+2. Maprotiline
+75-225
+++
+3. Mianserin
+30-120
++++
+D. Bicyclic Antidepressants
+1. Viloxazine
+100-300
+±
+II. Selective Serotonin Reuptake Inhibitors (SSRIs)
+1. Citalopram
+20-40
+±
+2. Escitalopram
+10-20
+±
+3. Fluoxetine
+20-60
+±
+4. Fluvoxamine
+50-300
+±
+5. Paroxetine
+20-40
++
+6. Sertraline
+50-200
+±
+III. Serotonin Norepinephrine Reuptake Inhibitors (SNRIs)
+1. Duloxetine
+60
+±
+2. Venlafaxine
+75-375
++
+
++++
+++
++++
++++
+++
++
+++
+
++++
+++
+++
++
+++
++
+++
+
++
+++
+++
+
+++
++
+++
+
++
+++
+±
+
+++
+++
+±
+
+±
+
+±
+
+±
+±
+0
+±
+0
+±
+
+0
+0
+0
+±
+±
+0
+
+±
+±
+
+±
+±
+
+IV. Norepinephrine Serotonin Reuptake Enhancers (NSREs)
+1. Tianeptin
+37.5
++
+0
+V. Noradrenergic and Specific Serotonergic Antagonists (NaSSAs)
+1. Mirtazapine
+15-45
++++
++
+VI. Norepinephrine Dopamine Reuptake Inhibitors (NDRIs)
+1. Bupropion
+150-450
+Activating 0
+VII. Serotonin Antagonists and Reuptake Inhibitors (SARIs)
+1. Nefazodone
+200-600
+++
++
+(withdrawn from market)
+2. Trazodone
+150-400
++++
+±
+
+±
+±
+0
+±
+±
+Contd...
+
+
+
+
+<<<PAGE 266>>>
+
+254
+
+A Short Textbook of Psychiatry
+
+Blackouts 37
+Bladder training 169
+Blocking 12
+Blood
+alcohol concentration 39
+lithium levels 190
+Blunted affect 58
+Borderline personality disorder 60,
+117, 228
+Brain imaging 64, 75
+Brief
+dissociative stupor 100
+history of psychopharmacology 173
+pulse ECT 202
+Bromocriptine 48, 132
+Bruxism 140
+Bulimia nervosa 144
+Buprenorphine 44, 45
+Bupropion 52
+Buspirone 92, 98, 197
+
+Childhood
+history 9
+psychosis 165
+Chlordiazepoxide 40, 51
+Chlorpromazine 66
+Cholinesterase inhibitors 25, 26
+Chromatography 157
+Chronic
+depression 74, 77
+fatigue syndrome 109
+Circumscribed amnesia 101
+Citalopram 26
+Citrated calcium carbimide 42
+Civil responsibility 229
+Classical
+conditioning model 214
+psychoanalysis 213
+psychosomatic disorders 147
+Classification in
+child psychiatry 162
+psychiatry 2
+Classification of
+alcoholism 37
+benzodiazepines 196
+mental retardation 156
+psychotropic drugs 172
+Claustrophobia 93
+Clerambault’s syndrome 84
+Clomipramine 98, 131
+Clonazepam 94, 98
+Clonidine 44, 167, 169
+Clozapine 52, 53, 66
+Cocaine 47
+overdose 48
+preparations 47
+use disorder 46
+withdrawal syndrome 48
+Code of ethics for psychiatrists 234
+Cognitive
+behaviour therapy 68, 79, 94, 98,
+112, 215, 216
+behavioural theory 91
+therapy 215
+Combativeness 225
+Command hallucinations 57
+Common
+examples of psychosomatic disorders
+148
+psychiatric emergencies 222
+themes in suicide 222
+Community
+mental health 235
+psychiatry 235
+
+C
+Caffeine 52, 53
+CAGE questionnaire 37, 39
+Cannabis
+preparations 45
+use disorder 45
+Capgras’ syndrome 87
+Carbamazepine 79, 192
+Carphologia 20
+Castration anxiety 211
+Cataplexy 138
+Catastrophic reaction 22
+Catatonia 59
+Catatonic
+behaviour 58
+features 57
+schizophrenia 59
+signs 11, 225
+stupor 67, 225
+syndrome 225
+withdrawal 225
+Causes of
+catatonic stupor 225
+hypersomnia 138
+mental retardation 157
+Censor 206
+Central mental health authority 233, 237
+Cerebral palsy 159
+Chasing the dragon 43
+Child
+abuse 228
+psychiatry 162
+
+Comparison of delirium and dementia 22
+Complex partial seizures 29, 31, 61, 227
+Complicated grief reaction 152
+Complications of
+alcohol dependence 39
+chronic alcohol use 38
+Conceptual thinking stage 153
+Concrete thinking stage 153
+Conditioning devices 169
+Conduct disorders 167
+Conjugal paranoia 84
+Consultation-liaison psychiatry 149
+Continuous amnesia 101
+Contraindications of disulfiram 42
+Conversion
+disorder 99
+release symptoms 102
+Coping
+mechanisms 207
+skills training 112
+Coprolalia 168
+Cortical dementia 24
+Counselling 110
+Counter
+phobic defense 210
+thoughts 96
+Covert sensitisation 41, 215
+CPAP 139
+Crack 47
+Cretinism 159
+Criminal lunatic 232
+Crisis 221
+intervention 112
+centre 228
+Critical
+comments 64
+remarks 68
+Cross-gender homosexuality 122
+Culture bound syndromes 110
+Cyclothymia 73
+Cyproheptadine 144
+
+D
+Dangerous Drug Act of 1930 233
+Deep brain stimulation 199
+Defense mechanism 90
+Definition of psychiatric disorder 1
+Deliberate self-harm 222
+Delirium 19, 21, 23
+tremens 38, 41
+Delusion of doubles 87
+Delusional
+depression 77, 78
+
+

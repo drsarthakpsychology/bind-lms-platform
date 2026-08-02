@@ -1,0 +1,575 @@
+<<<PAGE 46>>>
+
+34
+
+A Short Textbook of Psychiatry
+
+The withdrawal state is further classified as:
+i. uncomplicated;
+ii. with convulsions; and
+iii. with delirium.
+
+Dependence Syndrome
+According to the ICD-10, the dependence syndrome is
+a cluster of physiological, behavioural, and cognitive
+phenomena in which the use of a substance or a class
+of substances takes on a much higher priority for a
+given individual than other behaviours that once had
+greater value.
+A central descriptive characteristic of the dependence syndrome is the desire (often strong and
+sometimes overpowering) to take psycho active
+substances (which may or may not have been medically prescribed), alcohol, or tobacco. There may be
+evidence that return to substance use after a period
+of abstinence leads to a more rapid reappearance of
+other features of the syndrome than occurs with nondependent individuals.
+A definite diagnosis of dependence should usually
+be made only if at least three of the following have
+been experienced or exhibited at sometime during the
+previous year:
+1. A strong desire or sense of compulsion to take the
+substance.
+2. Difficulties in controlling the substance-taking
+behaviour in terms of its onset, termination, or
+levels of use.
+3. A physiological withdrawal state when the substance use has ceased or reduced, as evidenced
+by the characteristic withdrawal syndrome for
+the substance; or use of the same (or a closely
+related) substance with the intention of relieving
+or avoiding withdrawal symptoms.
+4. Evidence of tolerance, such that increased doses of
+the psychoactive substance are required in order to
+achieve effects originally produced by lower doses
+(clear examples of this are found in the alcoholand opiate-dependent individuals who may take
+daily doses that are sufficient to incapacitate or
+kill non-tolerant users).
+
+5. Progressive neglect of alternative pleasures or
+interests because of psychoactive substance use,
+increased amount of time necessary to obtain or
+take the substance or to recover from its effects.
+6. Persisting with substance use despite clear evidence of overtly harmful consequences, such as
+harm to the liver through excessive drinking,
+depressive mood states consequent to periods of
+heavy substance use, or drug-related impairment
+of cognitive functioning; efforts should be made
+to determine that the user was actually, or could
+be expected to be, aware of the nature and extent
+of the harm.
+A narrowing of personal repertoire of patterns of
+psychoactive substance use has also been described as
+a characteristic feature of the dependence syndrome
+(e.g. a tendency to drink in the same way on weekdays
+and weekends, regardless of the social constraints that
+determine appropriate drinking behaviour).
+The dependence syndrome can be further coded
+as (ICD-10):
+i. currently abstinent;
+ii. currently abstinent, but in a protected environment
+(e.g. in hospital, in a therapeutic community, in
+prison, etc.);
+iii. currently on a clinically supervised maintenance
+or replacement regime (controlled dependence,
+e.g. with methadone; nicotine gum or nicotine
+patch);
+iv. currently abstinent, but receiving treatment with
+aversive or blocking drugs (e.g. naltrexone or
+disulfiram);
+v. currently using the substance (active dependence);
+vi. continuous use; and
+vii. episodic use (dipsomania).
+The dependence can be either psychic, or physical,
+or both.
+
+Harmful Use
+Harmful use is characterised by:
+1. Continued drug use, despite the awareness of
+harmful medical and/or social effect of the drug
+being used, and/or
+
+
+
+
+<<<PAGE 54>>>
+
+42
+
+A Short Textbook of Psychiatry
+
+Fig. 4.1: Disulfiram: Mode of Action
+
+The contraindications of disulfiram use are first
+trimester of pregnancy, coronary artery disease, liver
+failure, chronic renal failure, peripheral neuropathy,
+muscle disease and psychotic symptoms presently or
+in the past.
+In selected patients (such as an older age group,
+good motivation, good social support, absent underlying psychopathology and good treatment concordance), the response can be dramatic. In addition to
+oral preparations, subcutaneous disulfiram implants
+are also now available. However, they provide unpredictable blood levels of disulfiram.
+Other deterrent agents
+1. Citrated calcium carbimide (CCC): The mechanism of action is similar to disulfiram but onset of
+action occurs within 1 hour and is reversible. The
+usual dosage is 100 mg/d in two divided doses.
+2. Metronidazole.
+3. Animal charcoal, a fungus (Coprinus atramentarius), sulfonylureas and certain cephalosporins
+also cause a disulfiram like action.
+v. Anti-craving agents
+Acamprosate, naltrexone and SSRIs (such as fluoxetine) are among the medications tried as anti-craving
+agents in alcohol dependence.
+
+Acamprosate (the Ca++ salt of N-acetyl-homotaurinate)
+interacts with NMDA receptor-mediated glutamatergic neurotransmission in the various brain regions
+and reduces Ca++ fluxes through voltage-operated
+channels.
+Naltrexone (oral opioid receptor antagonist) probably interferes with alcohol-induced reinforcement
+by blocking opioid receptors. Fluoxetine (and other
+SSRIs) have been occasionally used as anti-craving
+agents in their usual antidepressant doses.
+vi. Other medications
+A variety of other medicines such as benzodiazepines, antidepressants, antipsychotics, lithium,
+carbamazepine, and even narcotics have been tried.
+These should be used only if there is a special indication for their use (for example, antidepressants for
+underlying depression).
+vii. Psychosocial rehabilitation
+Rehabilitation is an integral part of the multi-modal
+treatment of alcohol dependence.
+
+OPIOID USE DISORDERS
+Dried exudate obtained from unripe seed capsules of
+Papaver somniferum has been used and abused for
+
+
+
+
+<<<PAGE 56>>>
+
+44
+
+A Short Textbook of Psychiatry
+
+Treatment
+Before treatment, a correct diagnosis must be made
+on the basis of history, examination (pin-point pupils
+during intoxication or withdrawal symptoms) and/or
+laboratory tests. These tests are:
+1. Naloxone challenge test (to precipitate withdrawal
+symptoms).
+2. Urinary opioids testing: With radioimmunoassay
+(RIA), free radical assay tech nique (FRAT),
+thin layer chromatography (TLC), gas-liquid
+chromatography (GLC), high pressure liquid
+chromatography (HPLC) or enzyme-multiplied
+immunoassay technique (EMIT).
+The treatment can be divided into three main types:
+1. Treatment of overdose.
+2. Detoxification.
+3. Maintenance therapy.
+
+Treatment of Opioid Overdose
+An overdose of opioid can be treated with narcotic
+antagonists (such as naloxone, naltrexone). Usually an
+intravenous injection of 2 mg naloxone, followed by a
+repeat injection in 5-10 minutes, can cause reversal of
+overdose. But as naloxone has a short half-life repeated
+doses may be needed every 1-2 hours. This should be
+combined with general care and supportive treatment.
+
+Detoxification
+This is a mode of treatment in which the dependent
+person is ‘taken off’ opioids. This is usually done
+abruptly, followed by management of emergent
+withdrawal symptoms. It is highly recommended that
+detoxification is conducted in a safe manner under
+expert guidance of a specialist.
+The withdrawal symptoms can be managed by one
+of the following methods:
+1. Use of substitution drugs such as methadone (not
+available in India at present) to ameliorate the
+withdrawal symptoms.
+The aim is to gradually taper off the patient from
+methadone (which is less addicting, has a longer
+half-life, decreases possible criminal behaviour,
+and has a much milder withdrawal syndrome).
+However, relapses are common and its opponents
+
+argue that one type of dependence is often replaced
+by another (methadone).
+2. Clonidine is an α2 agonist that acts by inhibiting
+norepinephrine release at presynaptic α2 receptors. The usual dose is 0.3-1.2 mg/day, and drug
+is tapered off in 10-14 days. It can be started after
+stoppage of either the opioid itself or the substitution drug (methadone). The important side effects
+of clonidine are excessive sedation and postural
+hypotension. Clonidine treatment is usually started
+in an inpatient psychiatric or specialist alcohol and
+drug treatment centre setting.
+3. Naltrexone with Clonidine: Naltrexone is an orally
+available narcotic antagonist which, when given to
+an opioid dependent individual, causes withdrawal
+symptoms. These symptoms are managed with the
+addition of clonidine for 10-14 days after which
+clonidine is withdrawn and the patient is continued
+on naltrexone alone. Now if the person takes an
+opioid, there are no pleasurable experiences, as
+the opioid receptors are blocked by naltrexone.
+Therefore, this method is a combination of detoxification and maintenance treatment. The usual
+dose of naltrexone is 100 mg orally, administered
+on alternate days. Once again treatment is usually
+started in an inpatient psychiatric or specialist
+alcohol and drug treatment centre setting.
+4. Other Drugs: The other detoxification agents
+include LAAM (levo-alpha-acetyl-methadol),
+propoxyphene, diphenoxylate, buprenorphine
+(long acting synthetic partial μ-agonist which can
+be administered sublingually), and lofexidine (α2
+agonist, similar to clonidine).
+In particular, Buprenorphine has recently been
+used widely for detoxification as well as for maintenance treatment in many parts of the World. Care
+must be exercised as there is potential for misuse
+with buprenorphine.
+
+Maintenance Therapy
+After the detoxification phase is over, the patient is
+maintained on one of the following regimens:
+1. Methadone maintenance
+(Agonist substitution therapy)
+
+
+
+
+<<<PAGE 57>>>
+
+Psychoactive Substance Use Disorders
+
+This a very popular method used widely in the
+Western World. 20-50 mg/day of methadone is given
+to the patients to ‘shift’ them from ‘hard’ drugs, thus
+decreasing IV use and criminal behaviour. Its use
+in India has not been recommended by an expert
+committee for de-addiction services.
+Other drugs such as LAAM and buprenorphine
+can be used for maintenance treatment.
+2. Opioid antagonists
+Opioid antagonists have been in use for a long time
+but they were either partial antagonists (such as nalorphine) or had to be administered parenterally (such as
+naloxone). Now with the availability of orally effective
+and very potent antagonists, such as naltrexone, the
+use of opioid antagonists in routine practice has been
+simplified. The usual maintenance dose is 100 mg on
+Mondays and Wednesdays, and 150 mg on Fridays.
+Naltrexone combined with clonidine, as described
+above, is a very effective method for detoxification
+as well as for maintenance treatment.
+3. Other methods
+These include individual psychotherapy, behaviour
+therapy, interpersonal therapy, cognitive behaviour
+therapy (CBT), motivational enhancement therapy,
+self-control strategies, psychotropic drugs for associated psychopathology, family therapy, and group
+therapy (e.g. in therapeutic communities such as Synanon, self-help groups such as Narcotic Anonymous or
+NA). These methods have to be tailored for use in an
+individual patient.
+
+45
+
+4. Psychosocial rehabilitation
+This is a very important step in the post-detoxification
+phase, in the absence of which relapse rates can be
+very high. Rehabilitation should be at both occupational and social levels.
+
+CANNABIS USE DISORDER
+Cannabis is derived from the hemp plant, Cannabis
+sativa, which has several varieties named after the
+region in which it is found (e.g. sativa indica in India
+and Pakistan, and americana in America).
+Cannabis (street names: grass, hash or hashish,
+marihuana) produces more than 400 identifiable
+chemicals of which about 50 are cannabinoids, the
+most active being Δ-9-tetrahydrocannabinol (Δ9THC). The pistillate form of the female plant is more
+important in cannabis production (Table 4.8).
+Recently, a Gi-protein (inhibitory G-protein) linked
+cannabinoid receptor has been found (in basal ganglia,
+hippocampus and cerebellum) which inhibits the adenylate cyclase activity in a dose-dependent manner.
+Cannabis produces a very mild physical dependence, with a relatively mild withdrawal syndrome,
+which is characterised by fine tremors, irritability, restlessness, nervousness, insomnia, decreased
+appetite and craving. This syndrome begins within
+few hours of stopping cannabis use and lasts for 4 to
+5 days. However, some health professionals feel that
+there is no true physical dependence with cannabis.
+
+Table 4.8: Cannabis Preparations
+Cannabis
+Preparation
+
+Portion of Plant
+
+1
+
+Hashish/Charas
+
+2
+
+Ganja
+
+3
+
+Bhang
+
+4
+
+Hash oil
+
+Resinous exudate from the flowering
+tops of cultivated plantsh
+Small leaves and brackets of inflorescence
+of highly cultivated plants
+Dried leaves, flowering shoots and
+cut tops of uncultivated plants
+Lipid soluble plant extract
+
+THC Content (%)
+
+Potency
+(as compared to ‘Bhang’)
+
+8-14
+
+10
+
+1-2
+
+2
+
+1
+
+1
+
+15-40
+
+25
+
+
+
+
+<<<PAGE 144>>>
+
+132
+
+A Short Textbook of Psychiatry
+
+e.g. alpha-blockers (such as yohim bine,
+idazoxan), opiate antagonists (such as naltrexone), dopamine agonists (such as bromocriptine, apomorphine), pentoxifylline, and topical
+drugs (glyceryl trinitrate, minoxidyl, papaverine
+and PgE1 and E2).
+v. Sildenafil citrate has been used for treatment
+of erectile dysfunction. Rapidly absorbed after oral administration, the maximum plasma
+concentration is reached in 30-120 minutes. It
+is metabolised in liver (mainly by cytochrome
+P450 3A4) and is converted to an active metabolite. Sildenafil has a terminal half life of about
+4 hours. It is highly bound to plasma proteins
+and is not dialysable. It is a competitive and
+selective inhibitor of cGMP (cyclic guanosine monophosphate)-specific PDE-5 (phosphodiesterase type 5). It prevents the rate of
+breakdown of cGMP causing enhanced relaxation of cavernosal smooth muscle, increase in arterial flow in to corpus cavernosa, compression
+of subtunical veins, and hence penile erection.
+The typical dose is 50 mg (25-100 mg), 1 hour
+before sexual activity. The maximum recommended dosing frequency is once a day. The
+drug acts only in the presence of sexual stimulation. The adverse effects include transient and
+mild headache, flushing, dyspepsia, and nasal
+congestion. Caution needs to be exercised in
+patients with known history of hypersensitivity,
+
+with poor cardiovascular status, with anatomical deformation of penis, with conditions that
+predispose to priapism, and especially those on
+nitrates.
+Other similar drugs include tadalafil and verdenafil.
+vi. Hormonal treatment (e.g. androgens) should
+not be employed unless there is an evidence of
+hormonal dysfunction.
+It should always be remembered that prescription
+of the non-essential drugs may worsen sexual dysfunction.
+8. Intracavernosal Injection of Vasoactive Drugs
+(IIVD): Papaverine, an alkaloid and a vasoactive
+substance, has been used as an intracavernosal injection in the differential diagnosis of organic and
+non-organic impotence and also for treatment of
+impotence (either alone; or along with phentolamine,
+phenoxy-benzamine, alprostadil or prostaglandin E1,
+and/or atropine).
+9. Physical devices: Various suction devices (for
+producing artificial penile tumescence) and penile
+prosthetic implants are available. Their use, however,
+should be limited to only those patients who suffer
+from organic sexual disorder or in whom a sufficient
+and regular trial of psychological management has
+been completing, with distress persisting.
+10. Vascular surgery: Rarely, vascular surgery may
+be needed for some patients with underlying vascular
+insufficiency (organic sexual disorder).
+
+
+
+
+<<<PAGE 269>>>
+
+Index
+Kleptomania 119
+Klismaphilia 126
+Koro 110, 111
+Korsakoff’s
+psychosis 38, 39
+syndrome 27
+Kurt Schneider 54
+
+L
+LAAM 44, 45
+La-belle-indifférence 103
+Lack of
+rapport 57
+sexual enjoyment disorder 126
+Lamotrigine 79, 188
+Larks 140
+Latah 110, 111
+Late paraphrenia 61
+Latency phase 212
+Latent schizophrenia 59
+Leaden paralysis 81
+Learned behaviour 214
+Learning disability 155
+Legal and ethical issues in psychiatry 229
+Lethal catatonia 59
+Leucotomy 203
+Lewy body dementia 25
+Licensing authority 232
+Life chart 7
+Limbic system 203
+Lithium 78, 188
+Long-sleepers 134
+Loosening of associations 55, 58, 59, 62
+Lorazepam 26, 29, 87, 149, 228
+Loss of ego boundaries 57, 65
+Loxapine 66
+LSD use disorder 49
+L-thyroxin 227
+L-tryptophan 137
+Lucid intervals 26
+Lunatic 232
+
+M
+Made
+feeling 55, 56
+impulses 55, 56
+volition 55, 56
+Maintenance therapy 44
+Major depression 105
+Male
+anorgasmia 128
+erectile disorder 127
+orgasmic disorder 128
+
+Malignant syndrome 228
+Malingering 119
+Mania 61, 70, 80, 227
+Manic
+depressive psychosis 73
+episode 30, 69
+stupor 70
+Mannerisms 57-59, 164
+MAOIs 81, 82
+Marchiafava-Bignami disease 40
+Marijuana 46
+Marital therapy 217
+Masked depression 80, 105, 106
+MCI code of medical ethics, 2002 234
+McNaughten rule 229
+Medical
+emergency 221
+interview 5
+Medicolegal aspects 224
+Megavitamin therapy 67
+Memantine 25, 26
+Memory disturbances 203
+Menstrual and obstetric history 9
+Mental
+and behavioural disorders in ICD-10
+3
+disorders 19
+Health
+Act, 1987 232, 233
+Authorities 232
+retardation 153, 155, 162, 164
+status examination 10, 11, 222
+Mentally ill
+person 232
+prisoner 232
+Metabolic syndrome 63
+Methadone 44
+maintenance 44
+Methylphenidate 167
+Michigan alcoholism screening test 37
+Migraine 28
+Mild cognitive disorder 32
+Milieu therapy 68
+Mini mental state examination 13
+Minimal brain dysfunction 166
+Minoxidyl 132
+Mirror-gazing 58
+Mirtazapine 30
+Misconceptions about suicide 224
+Mixed
+affective 61, 73
+episode 73
+anxiety depressive disorder 80
+
+257
+Monosymptomatic hypochondriacal
+psychosis 84, 85
+Mood 12, 69
+disorders 69, 76
+stabiliser 30
+stabilising drugs 185
+Morbid grief 151
+Motor activity 11
+Multi-axial classification 4
+Multifocal myoclonus 20
+Multi-infarct dementia 25
+Multiple personality disorder 102
+Munchausen syndrome 119
+Muslim Marriages Act 230
+Mutism 56, 59, 225, 171
+
+N
+Naloxone 44, 227
+challenge test 44
+Naltrexone 42, 44, 132
+Narcolepsy 138
+Narcotic
+anonymous 45
+antagonists 44
+Drugs and Psychotropic Substances
+(Amendment) Act, 2001 233
+Drugs and Psychotropic Substances
+Act (NDPSA), 1985 233
+National
+Crime Records Bureau 222
+Health Policy 235, 237
+Mental Health
+Advisory Group 237
+Programme 235
+Trust Act 161
+NDRI 52
+Necrophilia 126
+Negative
+reinforcement 215
+symptom 57, 58, 60-61
+Neurasthenia 109
+Neuroleptic
+malignant syndrome 228
+sensitivity syndrome 26
+Neurosis 89
+Neurotic
+depression 82
+traits 9
+Nicotine 52
+replacement therapy 52
+Night terrors 140
+Nightmares 140
+Nitrazepam 137
+
+

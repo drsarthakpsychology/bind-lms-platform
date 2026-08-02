@@ -1,0 +1,899 @@
+<<<PAGE 137>>>
+
+116  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+(Continued)
+Notes
+Akathisia is sometimes difficult to diagnose with certainty. Clinical physical examination schedules for EPS
+have been proposed.30,31 For each patient, a careful history of symptoms, medication response and side
+effects, and comorbid substance use is essential.
+■■ Evaluate the efficacy of each treatment option over at least 1 month. Some effect may be seen after a few
+days, but it may take much longer to become apparent in those with chronic akathisia.
+■■ Withdraw previously ineffective akathisia treatments before starting the next option in the algorithm.
+■■ Combinations of treatment may be considered for refractory cases if carefully monitored.
+■■ Other possible treatments for acute akathisia that have been investigated include vitamin B6,32,33 pregabalin,34 diphenhydramine,35 trazodone23,36 and zolmitriptan.37,38 Always read the primary literature before
+considering any of the treatment options.
+■■ Parenteral midazolam (1.5mg) has been successfully used to prevent akathisia associated with IV metoclopramide,39 suggesting a specific therapeutic effect for midazolam and perhaps benzodiazepines more
+generally.
+■■ In some cases where agitation/akathisia are known short-lived effects of antipsychotic medication when
+initiated (e.g. with aripiprazole, cariprazine), prophylactic or rescue benzodiazepines may be prescribed for
+a limited period. Clinical experience suggests this practice is effective.
+■■
+
+21. Adler L, et al. A controlled assessment of propranolol in the treatment of neuroleptic-induced akathisia. Br J Psychiatry 1986; 149:42–45.
+22. Fischel T, et al. Cyproheptadine versus propranolol for the treatment of acute neuroleptic-induced akathisia: a comparative double-blind
+study. J Clin Psychopharmacol 2001; 21:612–615.
+23. Laoutidis ZG, et al. 5-HT2A receptor antagonists for the treatment of neuroleptic-induced akathisia: a systematic review and meta-analysis.
+Int J Neuropsychopharmacol 2014; 17:823–832.
+24. Poyurovsky M, et al. Mirtazapine – a multifunctional drug: low dose for akathisia. CNS Spectr 2011; 16:63.
+25. Poyurovsky M. Acute antipsychotic-induced akathisia revisited. Br J Psychiatry 2010; 196:89–91.
+26. Rathbone J, et al. Anticholinergics for neuroleptic-induced acute akathisia. Cochrane Database Syst Rev 2006; CD003727.
+27. Baskak B, et al. The effectiveness of intramuscular biperiden in acute akathisia: a double-blind, randomized, placebo-controlled study. J Clin
+Psychopharmacol 2007; 27:289–294.
+28. Weiss D, et al. Cyproheptadine treatment in neuroleptic-induced akathisia. Br J Psychiatry 1995; 167:483–486.
+29. Zubenko GS, et al. Use of clonidine in treating neuroleptic-induced akathisia. Psychiatry Res 1984; 13:253–259.
+30. Gervin M, et al. Assessment of drug-related movement disorders in schizophrenia. Adv Psychiatr Treatment 2000; 6:332–341.
+31. Cunningham Owens DA. Guide to the extrapyramidal side effects of antipsychotic drugs. Cambridge University Press; 1999.
+32. Miodownik C, et al. Vitamin B6 versus mianserin and placebo in acute neuroleptic-induced akathisia: a randomized, double-blind, controlled
+study. Clin Neuropharmacol 2006; 29:68–72.
+33. Lerner V, et al. Vitamin B6 treatment in acute neuroleptic-induced akathisia: a randomized, double-blind, placebo-controlled study. J Clin
+Psychiatry 2004; 65:1550–1554.
+34. De Berardis D, et al. Reversal of aripiprazole-induced tardive akathisia by addition of pregabalin. J Neuropsychiatry Clin Neurosci 2013;
+25:E9–E10.
+35. Friedman BW, et al. A randomized trial of diphenhydramine as prophylaxis against metoclopramide-induced akathisia in nauseated emergency department patients. Ann Emerg Med 2009; 53:379–385.
+36. Stryjer R, et al. Trazodone for the treatment of neuroleptic-induced acute akathisia: a placebo-controlled, double-blind, crossover study. Clin
+Neuropharmacol 2010; 33:219–222.
+37. Gross-Isseroff R, et al. The 5-HT1D receptor agonist zolmitriptan for neuroleptic-induced akathisia: an open label preliminary study. Int Clin
+Psychopharmacol 2005; 20:23–25.
+38. Avital A, et al. Zolmitriptan compared to propranolol in the treatment of acute neuroleptic-induced akathisia: a comparative double-blind
+study. Eur Neuropsychopharmacol 2009; 19:476–482.
+39. Erdur B, et al. A trial of midazolam vs diphenhydramine in prophylaxis of metoclopramide-induced akathisia. Am J Emerg Med 2012;
+30:84–91.
+
+
+
+
+<<<PAGE 445>>>
+
+CHAPTER 3
+
+424  The Maudsley® Prescribing Guidelines in Psychiatry
+
+of action may be as long as 6 weeks. Women may respond better to SSRIs than men.20
+There is some evidence that augmentation with clonazepam leads to a more rapid
+response (but not a greater magnitude of response overall).18 The optimal duration of
+treatment is unknown but should be at least 8 months.21 A large naturalistic study
+showed convincing evidence of benefit for at least 3 years.22 Less than half are likely to
+remain well after medication is withdrawn.23
+Lower starting doses are also required in post-traumatic stress disorder (PTSD),
+although high doses (e.g. fluoxetine 60mg) are usually required for full effect. Response
+is usually seen within 8 weeks, but can take up to 12 weeks.23 Treatment should be
+continued for at least 6 months and probably longer.11,24,25
+Although the doses of SSRIs licensed for the treatment of obsessive compulsive disorder (OCD) are higher than those licensed for the treatment of depression (e.g. fluoxetine 60mg, paroxetine 40–60mg), lower (standard antidepressant) doses may be
+effective, particularly for maintenance treatment.26 Initial response is usually slower to
+emerge than in depression (can take 10–12 weeks). Dose should be increased to gain
+maximal benefit. Treatment should continue for at least 1 year.11 The relapse rate in
+those who continue treatment for 2 years is half that of those who stop treatment after
+initial response (25–40% vs 80%).27 In most people with OCD, the condition is persistent and symptom severity fluctuates over time.28 Second-line treatment is usually the
+addition of either risperidone or aripiprazole.
+Body dysmorphic disorder (BDD) should be treated initially with CBT. If symptoms
+are moderate to severe, adding an SSRI may improve outcome.29 Buspirone may usefully augment the SSRI,29 although no RCT has been conducted.
+Standard antidepressant starting doses are well tolerated in social phobia,30,31 and
+dosage titration may benefit some patients but is not always required. Some benefit is
+usually seen within 8 weeks, and treatment should be continued for at least a year and
+probably longer.31 NICE recommends CBT as first-line treatment for Social Anxiety.32
+All patients treated with SSRIs should be monitored for the development of akathisia,
+increased anxiety and the emergence of suicidal ideation; the risk is thought to be greatest in those <30 years, those with co-morbid depression and those already known to be
+at higher risk of suicide.29,33
+SSRIs should not be stopped abruptly, as patients with anxiety spectrum disorders are
+particularly sensitive to discontinuation symptoms (see section on Antidepressant withdrawal symptoms). The dose should be reduced as slowly as tolerated over several months.
+
+Pregabalin
+Pregabalin is licensed for the treatment of GAD. Several large RCTs have demonstrated
+its efficacy and tolerability and comparable speed of onset of action to a benzodiazepine.34 The dose of pregabalin in GAD is initially 150mg, increased gradually to maximum of 600mg in 2 to 3 divided doses. It is widely misused (often alongside opioids35),
+and there is a significant risk of diversion.36 Pregabalin should not be stopped abruptly
+as it may precipitate a severe withdrawal syndrome that includes seizures.37
+
+Psychological approaches
+There is good evidence to support the efficacy of psychological interventions in anxiety
+spectrum disorders.11,38 Examples include exposure therapy in OCD and social phobia.
+Initial drug therapy may be required to help the patient become more receptive to
+
+
+
+
+<<<PAGE 447>>>
+
+426  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Box 3.4 Generalised anxiety disorder
+Crisis management
+Drug
+
+Comment
+
+Benzodiazepines
+
+Normally for short-term use only: max. 2–4 weeks although
+some are of the opinion that risks are overstated42
+
+CHAPTER 3
+
+First-line drug treatment (In order of preference)29
+SSRIs
+(Up to maximum licensed dose)
+
+May initially exacerbate symptoms. A lower starting dose is
+recommended. Fluoxetine and sertraline are preferred options12
+
+SNRIs14
+(Up to maximum licensed dose)
+
+May initially exacerbate symptoms. A lower starting dose is
+recommended
+
+Pregabalin
+150–600mg/day in divided doses
+
+Response may be seen in the first week of treatment.43
+Increasingly misused. Significant withdrawal syndrome
+
+Second-line drug treatment (Less well tolerated or weaker evidence base, no order of preference)
+Agomelatine44
+10–50mg/day
+
+Agomelatine has been shown to prevent relapse over a
+6-month period45
+
+Betablockers
+Propranolol 40–120mg/day in divided doses
+
+Initiate at 40mg and titrate dose up to effect if needed. Useful
+for somatic symptoms, particularly tachycardia46
+
+Buspirone
+15–60mg/day in divided doses
+
+Has a delayed onset of action, takes up to 6 weeks to show
+equal efficacy with benzodiazepines47
+
+Hydroxyzine
+50–100mg/day in divided doses
+
+It is unclear whether hydroxyzine is effective due to an
+anxiolytic effect or a sedative effect48
+
+Quetiapine
+(MR, 50–300mg)
+
+Recommended as monotherapy. Probably not effective as
+adjunctive therapy to SSRI/SNRI in treatment resistance49
+
+Tricyclic antidepressants
+Clomipramine
+50–250mg/day50–52
+Imipramine
+75–200mg/day in divided doses53
+
+Initiate clomipramine at 10mg/day and increase the dose
+gradually
+
+MAOI
+Phenelzine
+45–90mg/day in divided doses54
+
+For mixed anxiety and depressive states. Patients need to avoid
+food high in tyramine
+
+Initiate imipramine 25mg every 4 days and when at 100mg can
+increase in 50mg increments10
+
+Mirtazapine
+15–30mg nocte55,56
+Experimental
+Chamomile
+220–1500mg/day
+
+Two RCTs, one positive, one negative using standardised doses
+of chamomile and placebo57
+
+Gingko biloba
+240mg–480mg/day
+
+One positive RCT using standardised doses of gingko biloba
+and placebo58
+
+Lavender oil preparation
+80–160mg/day
+
+One positive RCT using standardised doses of lavender oil
+compared to placebo and paroxetine59
+
+Riluzole
+50–100mg/day doses60
+
+Liver function monitoring required
+
+nocte, at night
+
+
+
+
+<<<PAGE 451>>>
+
+430  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Box 3.7 (Continued)
+Pregabalin
+75–225mg/day added to sertraline
+
+One small positive RCT121
+
+Riluzole
+50mg bd added to existing drug
+treatment122
+
+Variable results in early trials110
+
+Anti-androgen – Triptorelin
+3.75mg IM every 4 weeks added to
+existing drug treatment123
+
+Open label study done in six men
+
+i.v. treatment
+Clomipramine IV124
+
+Quicker onset of action suggested compared to oral treatments.
+One clomipramine study suggests clomipramine IV efficacy after
+failure with oral clomipramine
+Ketamine – developing evidence base110
+
+Ketamine IV125,126
+Once weekly morphine
+15–45mg added to existing drug
+treatment127
+
+Small study involving 23 treatment-resistant patients. Positive
+effects were transient.
+
+bd, bis die (twice a day); CBT (cognitive behavioural therapy)
+
+Box 3.8 Social phobia (social anxiety disorder)
+First-line drug treatment128 (In order of preference)
+SSRIs
+(Up to maximum licensed dose)
+
+If no response to the first SSRI, try an alternative SSRI
+Supporting meta-analyses for fluvoxamine129 and citalopram130
+Emerging data for vilazodone131
+
+Venlafaxine modified release
+75–225mg/day
+Second-line drug treatment (Less well tolerated or weaker evidence base, no order of preference)
+Olanzapine
+5–20mg132
+
+Few studies with antipsychotics. Most evidence with olanzapine
+
+Atenolol
+25–100mg/day
+
+Reduces autonomic symptoms in performance situations132
+
+Benzodiazepines
+Clonazepam
+0.3–6mg/day132
+Sertraline plus clonazepam
+up to 3mg/day133
+
+Benzodiazepines are helpful on PRN basis. Most evidence for treatment
+with clonazepam and bromazepam
+Switching an SSRI to venlafaxine no more effective than adding clonazepam
+to SSRI133
+
+Gabapentin
+900–3600mg/day132
+Levetiracetam
+300–3000mg/day in divided
+doses134
+(Continued)
+
+
+
+
+<<<PAGE 452>>>
+
+Depression and anxiety disorders  431
+
+Box 3.8 (Continued)
+Moclobemide
+600mg/day in divided doses
+
+Initiate at 300mg/day in divided doses. Moclobemide has a UK licence for
+Social Phobia. Recommended by NICE128
+
+Phenelzine
+15–90mg/day135
+
+Avoidance of tyramine-rich food important
+Recommended by NICE128
+
+Pregabalin
+150–600mg/day132
+
+600mg/day superior to placebo132
+
+Ketamine
+0.5mg.kg IV
+
+One good RCT136
+
+Topiramate
+25–400mg/day137
+
+Small open label study of 23 patients suggests efficacy but poorly tolerated
+
+Valproate
+500–2500mg/day138
+
+Small open label study of 17 patients suggests efficacy
+
+PRN, pro re nata (as required)
+
+References
+1. Nash JR and Nutt DJ. Pharmacotherapy of anxiety. Handb Exp Pharmacol 2005; 469–501.
+2. Martin JL, et al. Benzodiazepines in generalized anxiety disorder: heterogeneity of outcomes based on a systematic review and meta-analysis
+of clinical trials. J Psychopharmacology 2007; 21:774–782.
+3. Benitez CI, et al. Use of benzodiazepines and selective serotonin reuptake inhibitors in middle-aged and older adults with anxiety disorders:
+a longitudinal and prospective study. Am J Geriatr Psychiatry 2008; 16:5–13.
+4. Demyttenaere K, et al. Clinical factors influencing the prescription of antidepressants and benzodiazepines: results from the European study
+of the epidemiology of mental disorders (ESEMeD). J Affect Disord 2008; 110:84–93.
+5. Hirschtritt ME, et al. Balancing the risks and benefits of benzodiazepines. JAMA 2021; 325:347–348.
+6. National Institute for Health and Clinical Excellence. Generalised anxiety disorder and panic disorder in adults: management. Clinical
+Guideline [CG113]. 2011 (last updated July 2019); http://guidance.nice.org.uk/CG113.
+7. Davidson JR. Use of benzodiazepines in social anxiety disorder, generalized anxiety disorder, and posttraumatic stress disorder. J Clin
+Psychiatry 2004; 65 Suppl 5:29–33.
+8. Scott A, et al. Antidepressant drugs in the treatment of anxiety disorders. Adv Psychiatric Treatment 2001; 7:275–282.
+9. Ballenger JC. Remission rates in patients with anxiety disorders treated with paroxetine. J Clin Psychiatry 2004; 65:1696–1707.
+10. Davidson JR, et al. A psychopharmacological treatment algorithm for generalised anxiety disorder (GAD). J Psychopharmacology 2010;
+24:3–26.
+11. Baldwin DS, et al. Evidence-based pharmacological treatment of anxiety disorders, post-traumatic stress disorder and obsessive-compulsive
+disorder: a revision of the 2005 guidelines from the British Association for Psychopharmacology. J Psychopharmacol 2014; 28:403–439.
+12. Baldwin D, et al. Efficacy of drug treatments for generalised anxiety disorder: systematic review and meta-analysis. BMJ 2011; 342:d1199.
+13. Slee A, et al. Pharmacological treatments for generalised anxiety disorder: a systematic review and network meta-analysis. Lancet 2019;
+393:768–777.
+14. Kong W, et al. Comparative remission rates and tolerability of drugs for generalised anxiety disorder: a systematic review and network metaanalysis of double-blind randomized controlled trials. Front Pharmacol 2020; 11:580858.
+15. Caillard V, et al. Comparative effects of low and high doses of clomipramine and placebo in panic disorder: a double-blind controlled study.
+French University Antidepressant Group. Acta Psychiatr Scand 1999; 99:51–58.
+16. Wade AG, et al. The effect of citalopram in panic disorder. Br J Psychiatry 1997; 170:x549–x553.
+17. Londborg PD, et al. Sertraline in the treatment of panic disorder. A multi-site, double-blind, placebo-controlled, fixed-dose investigation. Br
+J Psychiatry 1998; 173:54–60.
+18. Pollack MH, et al. Combined paroxetine and clonazepam treatment strategies compared to paroxetine monotherapy for panic disorder. J
+Psychopharmacology 2003; 17:276–282.
+19. Jakubovski E, et al. Systematic review and meta-analysis: dose-response curve of SSRIs and SNRIs in anxiety disorders. Depress Anxiety
+2019; 36:198–212.
+20. Clayton AH, et al. Sex differences in clinical presentation and response in panic disorder: pooled data from sertraline treatment studies. Arch
+Women’s Mental Health 2006; 9:151–157.
+21. Rickels K, et al. Panic disorder: long-term pharmacotherapy and discontinuation. J Clin Psychopharmacol 1998; 18:12S-18S.
+
+CHAPTER 3
+
+Experimental
+
+
+
+
+<<<PAGE 467>>>
+
+446  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Tapering other drug classes
+The same principles apply to tapering z-drugs or gabapentinoids. Gabapentinoids can
+cause severe withdrawal effects, although there is wide inter-individual variation.
+Although z-drugs are used once daily, tolerance and withdrawal are reported, even after
+brief or intermittent use.38,39 Tapering according to a similar exponential scheme (or
+sometimes cross-titration to diazepam) may be required for cessation. The main withdrawal symptoms are insomnia and anxiety. Ideally, they should be tapered at a rate
+that maintains sleep.
+
+CHAPTER 3
+
+References
+1. BNF Online. British national formulary. 2020; https://www.medicinescomplete.com/mc/bnf/current.
+2. National Institute for Clinical Excellence. Guidance on the use of zaleplon, zolpidem and zopiclone for the short-term management of insomnia. Technical Appraisal [TA77]. 2004 (reviewed August 2010); https://www.nice.org.uk/guidance/ta77.
+3. National Institute for Health and Clinical Excellence. Generalised anxiety disorder and panic disorder in adults: management. Clinical
+Guideline [CG113]. 2011 (last updated July 2019); https://www.nice.org.uk/guidance/cg113.
+4. Davies J, et al. Long-term benzodiazepine and Z-drugs use in the UK: a survey of general practice. Br J Gen Pract 2017; 67:e609–e613.
+5. National Institute for Health and Care Excellence. Benzodiazepine and z-drug withdrawal. 2019; https://cks.nice.org.uk/topics/
+benzodiazepine-z-drug-withdrawal/?_escaped_fragment_=topicsummary.
+6. Schifano F, et al. An insight into Z-drug abuse and dependence: an examination of reports to the European Medicines Agency Database of
+Suspected Adverse Drug Reactions. Int J Neuropsychopharmacol 2019; 22:270–277.
+7. Evoy KE, et al. Abuse and misuse of pregabalin and gabapentin. Drugs 2017; 77:403–426.
+8. Public Health England. Advice for prescribers on the risk of the misuse of pregabalin and gabapentin. 2014; https://assets.publishing.service.
+gov.uk/government/uploads/system/uploads/attachment_data/file/385791/PHE-NHS_England_pregabalin_and_gabapentin_advice_
+Dec_2014.pdf.
+9. Marsden J, et al. Medicines associated with dependence or withdrawal: a mixed-methods public health review and national database study
+in England. Lancet Psychiatry 2019; 6:935–950.
+10. Gov.UK. Dependence and withdrawal associated with some prescribed medicines. An evidence review. 2020; https://www.gov.uk/govern​
+ment/publications/prescribed-medicines-review-report.
+11. Crowe SF, et al. The residual medium and long-term cognitive effects of benzodiazepine use: an updated meta-analysis. Arch Clin
+Neuropsychol 2018; 33:901–911.
+12. Brandt J, et al. Benzodiazepines and Z-drugs: an updated review of major adverse outcomes reported on in epidemiologic research. Drugs in
+R&D 2017; 17:493–507.
+13. Donnelly K, et al. Benzodiazepines, Z-drugs and the risk of hip fracture: a systematic review and meta-analysis. PLoS One 2017; 12:e0174730.
+14. Gutierrez MA, et al. Paradoxical reactions to benzodiazepines. Am J Nurs 2001; 101:34–39; quiz 39–40.
+15. Guina J, et al. Benzodiazepines I: upping the care on downers: the evidence of risks, benefits and alternatives. J Clin Med 2018; 7:17.
+16. Golombok S, et al. Cognitive impairment in long-term benzodiazepine users. Psychol Med 1988; 18:365–374.
+17. Finkle WD, et al. Risk of fractures requiring hospitalization after an initial prescription for zolpidem, alprazolam, lorazepam, or diazepam in
+older adults. J Am Geriatr Soc 2011; 59:1883–1890.
+18. Molero Y, et al. Associations between gabapentinoids and suicidal behaviour, unintentional overdoses, injuries, road traffic incidents, and
+violent crime: population based cohort study in Sweden. BMJ 2019; 365:l2147.
+19. Schweizer E, et al. Long-term therapeutic use of benzodiazepines. II. Effects of gradual taper. Arch Gen Psychiatry 1990; 47:908–915.
+20. Schweizer E, et al. Benzodiazepine dependence and withdrawal: a review of the syndrome and its clinical management. Acta Psychiatr Scand
+1998; 98 Suppl 393:95–101.
+21. Uhlenhuth EH, et al. International study of expert judgment on therapeutic use of benzodiazepines and other psychotherapeutic medications:
+IV. Therapeutic dose dependence and abuse liability of benzodiazepines in the long-term treatment of anxiety disorders. J Clin
+Psychopharmacol 1999; 19:23S–29S.
+22. Ashton H. The diagnosis and management of benzodiazepine dependence. Curr Opin Psychiatry 2005; 18:249–255.
+23. Ashton H. Benzodiazepine withdrawal: outcome in 50 patients. Br J Addict 1987; 82:665–671.
+24. Soyka M. Treatment of benzodiazepine dependence. N Engl J Med 2017; 376:1147–1157.
+25. Petursson H. The benzodiazepine withdrawal syndrome. Addiction 1994; 89:1455–1459.
+26. Ashton H. Protracted Withdrawal From Benzodiazepines: The Post-Withdrawal Syndrome.Psychiatr Ann 1995; 1:174–179.
+27. Tannenbaum C, et al. Reduction of inappropriate benzodiazepine prescriptions among older adults through direct patient education: the
+empower cluster randomized trial. JAMA Int Med 2014; 174:890–898.
+28. Guy A, et al. Guidance for psychological therapists: enabling conversations with clients taking or withdrawing from prescribed psychiatric
+drugs. London: APPG for Prescribed Drug Dependence; 2019.
+
+
+
+
+<<<PAGE 503>>>
+
+482  The Maudsley® Prescribing Guidelines in Psychiatry
+
+approximately 5 days after the last dose increase. Once the patient has been stabilised
+on an adequate dose, methadone should be prescribed as a single regular daily dose. It
+should not be prescribed on a ‘when necessary’ basis or at variable dosage. It is good
+practice to supervise consumption for the first few months.
+■■
+
+Subsequent period
+
+CHAPTER 4
+
+Subsequent increases of 5–10mg methadone can continue after the first week, but there
+should be at least a week between each successive increase.1 It may take several weeks to
+reach the therapeutic daily dose of 60–120mg.1 Stabilisation is usually achieved within 6
+weeks but may take longer. However, it is important to consider that some patients may
+require more rapid stabilisation. This would need to be balanced by a high level of supervision and observation, thereby allowing the ability to increase doses more rapidly. A
+therapeutic dose is one that eliminates opioid withdrawal symptoms and is effective in
+stopping on top of use of heroin, without excess sedation.37 Prescribers should take into
+account factors that may influence the choice of methadone dose, e.g. co-morbid cocaine
+use, as cocaine decreases methadone levels, and increased age as lower methadone doses
+appear to be associated with overdose risk in the population aged >45.28
+Methadone cautions
+■■
+
+Intoxication
+
+Methadone should not be given to any patient showing signs of intoxication, especially
+due to alcohol or other depressant drugs (e.g. benzodiazepines).27,38 Risk of fatal overdose
+is greatly enhanced when methadone is taken concomitantly with alcohol and other respiratory depressant drugs, including benzodiazepines and pregabalin, which can increase
+the risk of overdose.39,40 Concurrent alcohol and both prescribed and illicit drug consumption must be borne in mind when considering subsequent prescribing of methadone
+due to the increased risk of overdose associated with polysubstance misuse.25,31,38,41
+■■
+
+Severe hepatic/renal dysfunction
+
+Metabolism and elimination of methadone may be affected in which case the dose or
+dosing interval should be adjusted accordingly against clinical presentation. Because of
+extended plasma half-life, the interval between assessments during initial dosing may
+need to be extended.
+Methadone overdose
+
+In the event of methadone overdose, naloxone should be administered as described in
+the section ‘Opioid overdose’.
+Methadone and risk of torsades de pointes/QT interval prolongation
+
+Methadone, either alone or combined with other QT prolonging agents, may increase
+the likelihood of QT interval prolongation on the electrocardiogram, which is associated with torsades de pointes and can be fatal.42–44
+
+
+
+
+<<<PAGE 519>>>
+
+CHAPTER 4
+
+498  The Maudsley® Prescribing Guidelines in Psychiatry
+
+period of acute pain are to manage the pain and avoid the consequences of withdrawal,
+so it is important to maintain sufficient background medication to achieve both. Liaison
+with both the inpatient pain team and the local addictions services, as well as collaborative discussion with the patient, is important. The patient may be known to the addiction services, who will be able to inform the treatment plan, assist in a reliable conversion
+from street drugs (if these are also being taken) to prescribed analgesics and help plan
+a smooth transition from acute pain intervention to ongoing management of the
+patient’s substance misuse.35 Further details can be found in a consensus document by
+the British Pain Society, Royal College of Psychiatrists, Royal College of GPs and the
+Advisory Council on the Misuse of Drugs.82
+As advised in the consensus document, in palliative care, the principles of providing
+analgesia ‘in substance misusers are fundamentally no different from those for other
+adult patients needing palliative care’, although increased liaison with substance misuse
+services is essential. Those who are opioid dependent may receive maintenance therapy
+from a substance misuse service ‘and this should be regarded as a separate prescription
+from that for analgesia when attending as a [pain clinic] outpatient’, as also described in
+the context of chronic non-cancer pain above. During admission all medication would
+usually be received from the inpatient unit, but with ‘a clear plan for separate follow-ups
+for substance misuse and symptom palliation … in place on discharge except during the
+terminal phase of an illness’.82 Again, further details can be found in the consensus advice
+document.82 Subsequent to the publication of this document, there have been concerns
+regarding the abuse potential of pregabalin, a non-opioid medication used for chronic
+pain,70 and the potential for prescription of pregabalin and opioids to increase the potential for overdose.39 Caution is advised when prescribing pregabalin for chronic pain.
+
+Pregnancy and opioid use (also see section ‘Substance misuse in
+pregnancy’ in this chapter)
+Substitute prescribing can occur at any time in pregnancy and carries a lower risk than continuing
+illicit use. Treatment should strike a balance between stabilising drug use and minimising the dose
+of OST in order to prevent neonatal abstinence syndrome (NAS).1
+
+Women can present with opioid dependency at any stage in pregnancy, and stabilisation
+on substitute methadone is the treatment of choice. Detoxification in the first trimester
+is contraindicated due to the risk of spontaneous abortion and in the third trimester it is
+associated with preterm delivery, foetal distress and stillbirth. If detoxification is
+requested, this is most safely achieved in the second trimester but should only be supervised by specialists with the appropriate competencies and with careful monitoring for
+any evidence of instability. Detoxification should be prescribed in small frequent decrements, e.g. 2–3mg of methadone every 3–5 days.1 Enforcing detoxification is contraindicated as it is likely to deter some clients from seeking help, and the majority will then
+return to opioid use at some point during their pregnancy;83 fluctuating opioid concentrations in the maternal blood from intermittent use of illicit opioids may then lead to
+foetal withdrawal or overdose.84,85 Buprenorphine is associated with less severe neonatal
+withdrawal symptoms.14 However, buprenorphine should not be initiated in pregnancy
+or switched to methadone because of the risk of inducing withdrawal in the foetus.
+
+
+
+
+<<<PAGE 686>>>
+
+Insomnia – short-term use (up
+to 13 weeks)
+
+Generalised anxiety disorder
+Dose adjustment based on renal
+function (see product
+information)25
+
+Insomnia (short-term use – up
+to 4 weeks)
+
+Insomnia (short-term use – up
+to 4 weeks)
+
+Melatonin
+
+Pregabalin
+
+Zolpidem
+
+Zopiclone
+
+3.75mg nocte
+
+5mg nocte
+
+Usually 25mg bd (increase by
+25mg bd weekly)
+Up to 75mg bd (if healthy and
+normal renal function)
+
+2mg (modified release) once daily
+(1–2 hours before bedtime)
+
+0.5mg daily
+
+3.75–7.5mg nocte
+
+5mg nocte
+
+Usually 150mg daily*
+Up to 150mg bd (if healthy and
+normal renal function)
+
+0.5–2mg daily*
+
+7.5mg nocte
+
+5mg nocte
+
+150–300mg/day*
+
+2mg/day
+
+*There is no specific information available in the literature for these drug doses in elderly patients – the doses stated are a guide only. Where there are no data, the
+maximum doses are conservative and may be exceeded if the drug is well tolerated and following clinician’s assessment.
+bs, bis die (twice a day); mane, morning; nocte, at night; prn, pro re nata (as required); tds, ter die sumendum (three times a day).
+
+PRN only – avoid regular use
+due to short half-life and risk of
+dependence
+
+Lorazepam
+
+
+
+
+<<<PAGE 767>>>
+
+746  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+Table 8.11 (Continued )
+Drug
+
+Comments
+
+Diazepam22,25,32,155
+
+Less than 0.5% is excreted unchanged. Dosing: GFR 20–50mL/min, dose as in
+normal renal function; GFR <20mL/min, use small doses and titrate to response.
+Long-acting, active metabolites accumulate in renal impairment; monitor patients for
+excessive sedation and encephalopathy. One case of interstitial nephritis with
+diazepam has been reported in a patient with chronic renal failure.
+
+Eszopiclone156
+
+Less than 10% excreted unchanged in the urine. No dose adjustment is needed in
+renal impairment.
+
+Gabapentin
+
+100% excreted unchanged in urine, clearance is reduced in renal impairment
+resulting in higher plasma concentrations and longer elimination half-lives.157 As
+expected this may result in toxicity in renal impairment if doses are not reduced.158
+Acute renal failure has been reported;159 myoclonus;160 altered mental status, fall and
+fracture when used in patients on haemodialysis for restless legs, itch and
+neuropathic pain.161,162 Has been used to treat pruritis, muscle cramps and restless
+legs syndrome in haemodialysis patients in RCTs.163–165 Dosing advice differs; GFR
+15–60mL/min start low and increase according to response; GFR <15mL/min, 300mg
+alternate days32,159 or 100mg at night then increase according to tolerability25,166 but
+care toxicity as described above. Manufacturer has table of very specific dosing in
+renal impairment in SMPC.159
+
+Lemborexant41,167
+
+<1% excreted unchanged in urine. Manufacturer states no dose adjustment needed
+in renal impairment but exposure increases during severe renal impairment with a
+potential increased risk of somnolence.
+
+Lorazepam22,23,25,32,168–173
+
+<1% excreted unchanged in urine, dose as in normal renal function but carefully
+according to response as some may need lower doses. Monitor for excessive
+sedation. Impaired elimination reported in two patients with severe renal impairment
+and also reports of propylene glycol in lorazepam injection causing renal impairment
+and acute tubular necrosis. However, lorazepam injection has been successfully used
+to treat catatonia in two patients with renal failure.
+
+Nitrazepam23,25
+
+Less than 5% excreted unchanged in the urine. Dosing GFR 10–50mL/min as per
+normal renal function; GFR <10mL/min start with small dose and increase slowly.
+Manufacturer advises reducing dose in renal impairment. Monitor patient for
+sedation and unsteadiness.
+
+Pregabalin
+
+Up to 99% excreted unchanged in urine. Acute renal failure reported.174 Associated
+with altered mental status and falls when used in patients on haemodialysis,161 and
+myoclonus.175 Case report of seizure on abrupt cessation in patient with CKD.176 Used
+to treat uraemic pruritis and neuropathic pain in patients on haemodialysis.177,178
+Dosing advice differs; titrate dosing by tolerability and response for all GFRs; GFR
+30–60mL/min, 75mg daily; GFR 15–30mL/min, 25–50mg daily; GFR <15mL/min,
+25mg daily. Manufacturer has table of very specific dosing in renal impairment in
+SMPC.174
+
+Oxazepam22,25,32,179
+
+Less than 1% excreted unchanged in the urine. Dose adjustment needed in severe
+renal impairment. Oxazepam may take longer to reach steady state in patients with
+renal impairment. Dosing: GFR 10–50mL/min, dose as in normal renal function; GFR
+<10mL/min, start at a low dose and increase according to response. Monitor for
+excessive sedation.
+
+
+
+
+<<<PAGE 775>>>
+
+CHAPTER 8
+
+754  The Maudsley® Prescribing Guidelines in Psychiatry
+
+169. Reynolds HN, et al. Hyperlactatemia, increased osmolar gap, and renal dysfunction during continuous lorazepam infusion. Crit Care Med
+2000; 28:1631–1634.
+170. Verbeeck RK, et al. Impaired elimination of lorazepam following subchronic administration in two patients with renal failure. Br J Clin
+Pharmacol 1981; 12:749–751.
+171. Yaucher NE, et al. Propylene glycol-associated renal toxicity from lorazepam infusion. Pharmacotherapy 2003; 23:1094–1099.
+172. Zar T, et al. Acute kidney injury, hyperosmolality and metabolic acidosis associated with lorazepam. Nat Clin Pract Nephrol 2007;
+3:515–520.
+173. Hayman M, et al. Acute tubular necrosis associated with propylene glycol from concomitant administration of intravenous lorazepam and
+trimethoprim-sulfamethoxazole. Pharmacotherapy 2003; 23:1190–1194.
+174. Upjohn UK Limited. Lyrica 25mg 50mg 75mg 100mg 150mg 200mg 225mg and 300mg hard capsules 2020; https://www.medicines.org.
+uk/emc/product/10303/smpc.
+175. Desai A, et al. Gabapentin or pregabalin induced myoclonus: a case series and literature review. J Clin Neurosci 2019; 61:225–234.
+176. Du YT, et al. Seizure induced by sudden cessation of pregabalin in a patient with chronic kidney disease. BMJ Case Rep 2017;
+2017:bcr2016219158.
+177. Foroutan N, et al. Comparison of pregabalin with doxepin in the management of uremic pruritus: a randomized single blind clinical trial.
+Hemodial Int 2017; 21:63–71.
+178. Otsuki T, et al. Efficacy and safety of pregabalin for the treatment of neuropathic pain in patients undergoing hemodialysis. Clin Drug
+Investig 2017; 37:95–102.
+179. Murray TG, et al. Renal disease, age, and oxazepam kinetics. Clin Pharmacol Ther 1981; 30:805–809.
+180. Leung N, et al. Acute kidney injury in patients with inactive cytochrome P450 polymorphisms. Ren Fail 2009; 31:749–752.
+181. Drover DR. Comparative pharmacokinetics and pharmacodynamics of short-acting hypnosedatives: zaleplon, zolpidem and zopiclone.
+Clin Pharmacokinet 2004; 43:227–238.
+182. Rehman IU, et al. A randomized controlled trial for effectiveness of zolpidem versus acupressure on sleep in hemodialysis patients having
+chronic kidney disease-associated pruritus. Medicine (Baltimore) 2018; 97:e10764.
+183. Hsu FG, et al. Use of zolpidem and risk of acute pyelonephritis in women: a population-based case–control study in Taiwan. J Clin
+Pharmacol 2017; 57:376–381.
+184. Goa KL, et al. Zopiclone. A review of its pharmacodynamic and pharmacokinetic properties and therapeutic efficacy as an hypnotic. Drugs
+1986; 32:48–65.
+185. Hussain N, et al. Zopiclone-induced acute interstitial nephritis. Am J Kidney Dis 2003; 41:E17.
+186. Suwata J, et al. New acetylcholinesterase inhibitor (donepezil) treatment for Alzheimer’s disease in a chronic dialysis patient. Nephron
+2002; 91:330–332.
+187. Nagy CF, et al. Steady-state pharmacokinetics and safety of donepezil HCl in subjects with moderately impaired renal function. Br J Clin
+Pharmacol 2004; 58 (Suppl 1):18–24.
+188. Tiseo PJ, et al. An evaluation of the pharmacokinetics of donepezil HCl in patients with moderately to severely impaired renal function. Br
+J Clin Pharmacol 1998; 46 (Suppl 1):56–60.
+189. Sahin OZ, et al. A rare case of acute renal failure secondary to rhabdomyolysis probably induced by donepezil. Case Rep Nephrol 2014;
+2014:214359.
+190. Periclou A, et al. Pharmacokinetic study of memantine in healthy and renally impaired subjects. Clin Pharmacol Ther 2006; 79:134–143.
+191. Lefevre G, et al. Effects of renal impairment on steady-state plasma concentrations of Rivastigmine: a population pharmacokinetic analysis
+of capsule and patch formulations in patients with Alzheimer’s disease. Drugs Aging 2016; 33:725–736.
+192. AMAG Pharmaceutical Inc. Highlights of prescribing information. Vyleesi (bremelanotide injection) for subcutaneous use 2019; https://
+www.accessdata.fda.gov/drugsatfda_docs/label/2019/210557s000lbl.pdf.
+193. Nelson ME, et al. Melanotan II injection resulting in systemic toxicity and rhabdomyolysis. Clin Toxicol (Phila) 2012; 50:1169–1173.
+194. Teva Pharmaceuticals USA Inc. Highlights of prescribing information. Austedo (deutetrabenazine) tablets for oral use 2020; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2017/209885lbl.pdf.
+195. Lincoln Medical Limited. Wakix 4.5mg/18mg film-coated tablets 2016; https://www.medicines.org.uk/emc/product/7402.
+196. Bioprojet Pharma. Highlights of prescribing information. Wakix (pitolisant) tablets for oral use 2019; https://www.accessdata.fda.gov/
+drugsatfda_docs/label/2019/211150s000lbl.pdf.
+197. Smith WB, et al. Effect of renal impairment on the pharmacokinetics of prucalopride: a single-dose open-label Phase I study. Drug Des
+Devel Ther 2012; 6:407–415.
+198. Shire Pharmaceuticals Limited. Resolor 1mg and 2mg film-coated tablets 2019; https://www.medicines.org.uk/emc/product/584/smpc.
+199. Sivabalasundaram V, et al. Prucalopride-associated acute tubular necrosis. World J Clin Cases 2014; 2:380–384.
+200. Jazz Pharmaceuticals UK. Sunosi 75mg and 140mg film-coated tablets 2020; https://www.medicines.org.uk/emc/product/11017/smpc.
+201. Zomorodi K, et al. Single-dose pharmacokinetics and safety of solriamfetol in participants with normal or impaired renal function and with
+end-stage renal disease requiring hemodialysis. J Clin Pharmacol 2019; 59:1120–1129.
+202. Neurocrine Biosciences Inc. Highlights of prescribing information. Ingrezza (valbenazine) capsules for oral use 2020; https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/209241lbl.pdf.
+203. Gregg LP, et al. Pharmacologic and psychological interventions for depression treatment in patients with kidney disease. Curr Opin
+Nephrol Hypertens 2020; 29:457–464.
+
+
+
+
+<<<PAGE 927>>>
+
+906  The Maudsley® Prescribing Guidelines in Psychiatry
+
+approximately 14 hours when given with glucuronidation-inducing drugs such as carbamazepine or phenytoin. The half-life is increased to approximately 70 hours when
+given with valproate. This means that the time before complete re-titration is necessary
+therefore varies between 3 and 7 days, depending on the other drugs prescribed.1
+
+Table 14.1 Restarting medication up to two weeks after stopping oral treatment (data obtained from EU
+regulatory documents (SPCs)2)
+
+CHAPTER 14
+
+Drugs that require re-titration
+
+Drug
+
+Time after which
+re-titration must
+be performed
+
+Clozapine
+
+48 hours
+
+See ‘Re-starting
+clozapine after
+after a break in
+treatment’ in
+Chapter 1
+
+Lamotrigine
+
+3–7 days
+
+See discussion in
+the text
+
+3 days
+Methadone
+Buprenorphine 3 days
+
+Further guidance
+
+See ‘Opioid
+dependence’ in
+Chapter 4
+
+Paliperidone
+long-acting
+injection
+
+Depends on
+formulation
+
+See ‘Paliperidone
+palmitate
+long-acting
+injection’ in
+Chapter 1
+
+Aripiprazole
+long-acting
+injection
+
+>5 weeks if 2nd or
+3rd dose missed
+
+See ‘Aripiprazole
+long-acting
+injection’ in
+Chapter 1
+
+Drugs that are
+usually safe for
+restarting at
+the previous
+dose
+Acamprosate
+Asenapine
+Fluoxetine
+Haloperidol
+Isocarboxazid
+Lofepramine
+Methylphenidate
+Phenelzine
+Sulpiride
+Tranylcypromine
+Valproate
+
+Drugs that are probably
+safe for restarting at
+the previous dose
+Antipsychotics (except
+clozapine, quetiapine and
+risperidone)
+Carbamazepine
+Cholinesterase inhibitors
+CNS stimulants
+Disulfiram
+Lithium (titration advised if
+renal function has changed)
+MAOIs
+Memantine
+Naltrexone
+Other antidepressants (but
+beware loss of tolerance to
+sedative effects)
+Pregabalin
+SSRIs
+TCAs (but beware loss of
+tolerance to sedative and
+hypotensive effects)
+
+>6 weeks in
+chronic treatment
+CNS, central nervous system; MAOI, monoamine oxidase inhibitor; SSRI, selective serotonin reuptake inhibitor; TCA,
+tricyclic antidepressant.
+
+References
+1. Aurobindo Pharma – Milpharm Ltd. Summary of Product Characteristics. Lamotrigine 25mg Tablets. 2019; https://www.medicines.org.uk/
+emc/product/4736/smpc.
+2. EMC. https://www.medicines.org.uk/emc/; accessed June 2020.
+
+

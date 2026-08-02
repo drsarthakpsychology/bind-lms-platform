@@ -1,0 +1,679 @@
+<<<PAGE 175>>>
+
+5
+
+Targeting Dopamine and Serotonin
+Receptors for Psychosis, Mood, and
+Beyond: So-Called “Antipsychotics”
+
+Targeting Mesolimbic/Mesostriatal Dopamine D2
+Receptors Causes Antipsychotic Actions 161
+Targeting Dopamine D2 Receptors in Mesolimbic/
+Mesostriatal and Mesocortical Pathways Causes
+Secondary Negative Symptoms 162
+Secondary Negative Symptoms Due to Targeting
+Mesolimbic Dopamine D2 Receptors 162
+Secondary Negative Symptoms Due to Targeting
+Mesocortical Dopamine D2 Receptors 163
+Targeting Tuberoinfundibular Dopamine D2
+Receptors Causes Elevation of Prolactin 164
+Targeting Nigrostriatal Dopamine D2 Receptors
+Causes Motor Side Effects 165
+Drug-Induced Parkinsonism 166
+Drug-Induced Acute Dystonia 169
+Akathisia 169
+Neuroleptic Malignant Syndrome 169
+Tardive Dyskinesia 170
+Drugs Targeting Dopamine D2 Receptors:
+So-Called First Generation or Conventional
+“Antipsychotics” 179
+Drugs Targeting Serotonin 2A Receptors with or
+without Simultaneously Targeting Dopamine D2
+Receptors 183
+5HT2A Receptor Regulation of Dopamine Release in
+Three Downstream Pathways 184
+Drugs Targeting Serotonin 1A Receptors and
+Dopamine D2 Receptors as Partial Agonists 189
+D2 Partial Agonism 189
+How Does D2 Partial Agonism Cause Fewer Motor
+Side Effects than D2 Antagonism? 192
+5HT1A Partial Agonism 193
+Links between Receptor Binding Properties
+of Drugs Used to Treat Psychosis and Other
+Therapeutic Actions and Side Effects 195
+
+This chapter explores drugs that target dopamine
+receptors, serotonin receptors, or both, for the treatment
+of psychosis, mania, and depression. It also explores
+myriad additional neurotransmitter receptors that
+these agents engage. The drugs covered in this chapter
+have classically been called “antipsychotics,” but this
+terminology is now considered out of date and confusing
+since these same agents are used even more frequently for
+
+Mania 195
+Antidepressant Actions in Bipolar and Unipolar
+Depression 195
+Anxiolytic Actions 196
+Agitation in Dementia 197
+Sedative Hypnotic and Sedating Actions 197
+Cardiometabolic Actions 198
+Pharmacological Properties of Selected Individual
+First-Generation D2 Antagonists 201
+Chlorpromazine 201
+Fluphenazine 202
+Haloperidol 202
+Sulpiride 202
+Amisulpride 203
+An Overview of the Pharmacological Properties
+of Individual 5HT2A/ D2 Antagonists and D2/5HT1A
+Partial Agonists: The Pines (Peens), Many Dones
+and a Rone, Two Pips and a Rip 204
+The Pines (Peens) 222
+Many Dones and a Rone 234
+Two Pips and a Rip 239
+Selective 5HT2A Antagonist 240
+The Others 240
+Future Treatments for Schizophrenia 241
+Roluperidone (MIN-101) 241
+D3 Antagonists 241
+Trace Amine Receptor Agonists and SEP363856 241
+Cholinergic Agonists 242
+A Few Other Ideas 242
+Summary 242
+
+mood disorders than for psychosis, yet are not classified
+as “antidepressants.” As mentioned earlier, throughout
+this textbook we strive to utilize modern neurosciencebased nomenclature, where drugs are named for their
+pharmacological mechanism of action and not for
+their clinical indication. Thus, drugs discussed in this
+chapter have “antipsychotic action” but are not called
+“antipsychotics”; they also have “antidepressant action”
+159
+
+
+
+
+<<<PAGE 199>>>
+
+Chapter 5: Targeting for Psychosis
+
+Table 5-1 Earliest agents used to treat psychosis
+
+Generic name
+
+Trade name
+
+Comment
+
+Chlorpromazine
+
+Thorazine
+
+Low potency
+
+Cyamemazine
+
+Tercian
+
+Popular in France;
+not available in
+the US
+
+Flupenthixol
+
+Depixol
+
+Depot; not
+available in the US
+
+Fluphenazine
+
+Prolixin
+
+High potency;
+depot
+
+Haloperidol
+
+Haldol
+
+High potency;
+depot
+
+Loxapine
+
+Loxitane
+
+Mesoridazine
+
+Serentil
+
+Low potency;
+QTc issues;
+discontinued
+
+Perphenazine
+
+Trilafon
+
+High potency
+
+Pimozide
+
+Orap
+
+High potency;
+Tourette syndrome;
+QTc issues; second
+line
+
+Pipothiazine
+
+Piportil
+
+Depot; not
+available in the US
+
+Sulpiride
+
+Dolmatil
+
+Not available in
+the US
+
+Thioridazine
+
+Mellaril
+
+Low potency; QTc
+issues;
+second line
+
+Thiothixene
+
+Navane
+
+High potency
+
+Trifluoperazine
+
+Stelazine
+
+High potency
+
+Zuclopenthixol
+
+Clopixol
+
+Depot; not
+available in the US
+
+blockers that cause DIP less frequently are the agents
+that have stronger anticholinergic properties. These latter
+agents have a sort of “inbuilt” anticholinergic property
+that accompanies their D2 antagonist property. Although
+DIP may occur less frequently with such agents, the
+risk of constipation and potential for life-threatening
+paralytic ileus is higher, especially when combined
+with other drugs with anticholinergic properties, and
+requires more monitoring of gastrointestinal status and
+bowel movements. A few selected agents from the firstgeneration class of D2 antagonists are discussed in more
+detail below.
+
+DRUGS TARGETING SEROTONIN
+2A RECEPTORS WITH OR
+WITHOUT SIMULTANEOUSLY
+TARGETING DOPAMINE D2
+RECEPTORS
+In an attempt to improve the efficacy and the tolerability
+of the first-generation classic drugs for psychosis with
+D2 antagonist properties, a newer class of drugs with
+antipsychotic action combines D2 antagonism
+with serotonin (5HT) 2A antagonism, so-called secondgeneration antipsychotics or atypical antipsychotics.
+We will refer to them as 5HT2A antagonists/D2
+antagonists with antipsychotic properties, and not as
+“antipsychotics” or “atypical antipsychotics.” An even
+newer class of drugs with antipsychotic properties
+are agents with 5HT2A antagonism without any D2
+antagonism. Some preclinical studies suggest that all
+known 5HT2A antagonists may actually be inverse
+agonists (see Chapter 2 and Figures 2-9 and 2-10) rather
+than antagonists at 5HT2A receptors (Figure 5-15). Since
+it is not clear what clinical distinction there is between
+an inverse agonist (Chapter 2 and Figures 2-9 and 2-10)
+and an antagonist (Figures 2-6 and 2-10) at 5HT2A
+receptors, we will continue to refer to these agents using
+the simpler term “antagonist.”
+Antagonism of serotonin 5HT2A receptors appears
+to improve both the efficacy and the side effects of D2
+antagonism:
+Schizophrenia. Clinical trials show that adding
+selective 5HT2A antagonists to drugs with D2
+antagonism/partial agonism may improve positive
+symptoms of psychosis in schizophrenia. Also,
+there is some indication that the more potent
+a 5HT2A/D2 antagonist is for 5HT2A receptors
+compared to potency for D2 receptors, the lower
+the degree of D2 antagonism that may be necessary
+to treat positive symptoms, and also the better
+tolerated the drug might be. More research is
+necessary on this possibility.
+Parkinson’s disease psychosis and dementiarelated psychosis. Antagonism of serotonin 5HT2A
+receptors alone appears to provide sufficient
+antipsychotic action to be useful as monotherapy
+for other causes of psychosis, such as Parkinson’s
+disease psychosis and dementia-related psychosis,
+allowing D2 antagonism and its side effects to be
+avoided entirely.
+
+183
+
+5
+
+
+
+
+<<<PAGE 218>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+M1
+
+M3
+M4
+
+5HT2A
+
+M
+
+5
+H
+1
+
+α1
+
+chlorpromazine
+5HT2C
+
+D1
+
+α1
+
+D3
+
++++ +++
+
+D3
+
+D4
+
+5HT
+
+7
+
+5H
+
+T6
+
+D2
+
+H1
+
+D2
+
++++
+
++++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ 5HT5A D5
++ +
+
+5HT2A D4
+
+5HT2C 5HT6 5HT7
+
+M5
+
+M1
+
+M3
+
+M4
+
+D1
+
+H2
+
++
+
+M2 5HT1E 5HT1D α2
+
++
+
++
+
++
+
++
+
+Figure 5-27 Chlorpromazine’s pharmacological and binding profile. This figure portrays a qualitative consensus of current thinking
+about the binding properties of chlorpromazine. In addition to the D2 receptor, chlorpromazine binds potently to α1-adrenergic
+receptors, D3 receptors, and H1 receptors, and also has actions at numerous other receptors as shown. As with all agents discussed in
+this chapter, binding properties vary greatly with technique and from one laboratory to another; they are constantly being revised and
+updated.
+
+associated with sedation (muscarinic, α1, and histamine
+antagonism), as well as other side effects (see Figures 5-8
+and 5-13). Chlorpromazine is often prescribed to exploit
+its sedation in patients who do well with sedation,
+particularly short-term orally or as a short-acting
+intramuscular injection when needed to treat agitation or
+a sudden worsening in psychosis, often administered on
+top of another drug in the same class that is given daily.
+Fluphenazine
+
+This agent is another phenothiazine, although
+more potent than chlorpromazine and less sedating
+(Figure 5-28). It has both short-acting and long-acting
+202
+
+formulations for convenient use, and it is one of the agents
+for which monitoring plasma drug levels may be useful.
+Haloperidol
+
+Haloperidol (Figure 5-29) is one of the most potent
+D2 antagonists, and less sedating than some others. It
+also has both short- and long-acting formulations for
+convenient use and it, too, is one of the agents for which
+monitoring plasma drug levels may be useful.
+Sulpiride
+
+Sulpiride (Figure 5-30) has D2 antagonist properties
+and, as expected, generally causes motor side effects
+
+
+
+
+<<<PAGE 219>>>
+
+Chapter 5: Targeting for Psychosis
+
+5HT2A
+
+H
+1
+
+α1
+
+α2B
+
+fluphenazine
+
+α2C
+D1
+
+5
+
+T6
+
+5H
+
+5H
+
+T7
+
+D2
+
+D2
+
+D3
+
+5HT7
+
+++++ ++++ +++
+
+α1
+
+D5
+
+D5
+
+5HT2A α2C
+
+D4
+
+H1
+
+5HT6
+
+D3
+
+D4
+
+D1
+
+α2B
+
++++ ++ ++ ++ ++ ++ ++ ++ ++ α2A 5HT1B 5HT1D M5 5HT1E H2 5HT1A 5HT2C
++ + + + + + + +
+
+Figure 5-28 Fluphenazine’s pharmacological and binding profile. This figure portrays a qualitative consensus of current thinking about
+the binding properties of fluphenazine. Along with D2 antagonism, fluphenazine has potent actions at D3, 5HT7, and α1-adrenergic
+receptors, and binds at numerous other receptors as well. As with all agents discussed in this chapter, binding properties vary greatly
+with technique and from one laboratory to another; they are constantly being revised and updated.
+
+and prolactin elevation at usual antipsychotic doses.
+However, particularly at lower doses, it may be a bit
+activating, and have efficacy for negative symptoms of
+schizophrenia and for depression for unclear reasons.
+Dopamine 3 antagonist/partial agonist actions in
+depression are discussed in Chapter 7 on treatments
+for mood disorders, and this is a candidate explanation
+(see Figure 5-30). Sulpiride remains a popular option for
+treating psychosis in countries outside the US such as the
+UK, as it may be better tolerated than some of the other
+original D2 agents.
+Amisulpride
+
+Amisulpride (Figure 5-31) is structurally related to
+sulpiride (Figure 5-30) and was developed and marketed
+
+outside the US. Some early preclinical data suggest that
+it might be more selective for mesolimbic/mesostriatal
+dopamine receptors than for nigrostriatal dopamine
+receptors, and thus might have a lower propensity for
+motor side effects at antipsychotic doses. There are reports
+of amisulpride’s efficacy for the negative symptoms of
+schizophrenia and for depression at doses lower than
+those used to treat positive symptoms of psychosis.
+Amisulpride has some D3 antagonist actions and some
+weak 5HT7 antagonist actions, which may explain some of
+its negative symptom and antidepressant actions (Figure
+5-31). Antidepressant actions of D3 antagonism/partial
+agonism and 5HT7 antagonism are discussed in Chapter 7.
+The active isomer of amisulpride is in early clinical testing
+for possible development in the US.
+
+203
+
+
+
+
+<<<PAGE 634>>>
+
+Index
+
+excitatory amino acid transporter, 96, 99
+excitement, 78
+executive dysfunction, 144, 449–50
+exposure therapy, 374, 378, 574, 576, 577
+extinction
+fear, 373, 374–5, 574
+pharmacological, 573
+extrapyramidal symptoms, 166
+F17464, 241
+FDG PET, 490, 492, 502
+fear, 363–6
+neurobiology of, 364–5
+noradrenergic hyperactivity, 371
+fear conditioning, 370–4
+blocking, 375–7
+fear extinction, 373, 374–5, 574
+fentanyl, 559
+fibro-fog, 390, 400
+fibromyalgia, 303, 387–9
+cognitive dysfunction, 388, 400
+targeting ancillary symptoms,
+399–400
+treatment, 448
+fight or flight response, 359, 364
+first messengers, 11, 13
+flashbacks, 568
+flumazenil, 263
+fluoxetine, 293–4
+olanzapine combination, 293, 326,
+343
+fluphenazine, 202, 203
+fluvoxamine, 295
+forensic hospitals, 146, 147, 156
+frontotemporal dementias, 494–6
+frontotemporal lobar degeneration, 494
+full agonists, 37–41, 56, 192
+G protein, 14
+G-protein-linked receptors, 36–45, 50
+agonist spectrum, 37, 43, 45
+agonists, 37–41
+antagonists, 41–3
+inverse agonists, 42, 44–5
+no agonist, 37
+partial agonists, 41, 43–4
+structure and function, 36
+G-protein-linked systems, 11, 12, 13
+GABA (γ-aminobutyric acid), 5, 257–64,
+349
+action termination, 258
+synthesis, 255
+GABA interneurons
+5HT receptors on, 121, 125, 130
+prefrontal cortex, 105–10
+GABA receptors, 258–64
+GABAA, 321, 366, 421–3
+GABAA receptor subtypes, 258–61
+618
+
+GABAA, benzodiazepine-insensitive,
+263–4
+GABAA, benzodiazepine-sensitive,
+259–62
+GABA transaminase (GABA-T), 258
+GABA transporter (GAT), 34, 258
+GABAergic drugs, 276
+gabapentin, 352, 366, 395, 426
+galanthamine, 514
+gambling disorder, 575
+gamma-hydroxybutyrate (GHB), 400,
+446–8, 559
+gene activation, 18, 19, 24, 25
+gene expression
+epigenetics, 23–6
+molecular mechanism, 18–23
+neurotransmission triggering, 18
+phosphoprotein triggering cascades,
+15–18
+gene silencing, 24, 25
+generalized anxiety disorder, 361, 377
+genetic testing, 323–5
+genetics
+ADHD, 463
+schizophrenia, 148–50
+genotyping, 50
+ghrelin, 415
+glucose metabolism, 490
+glutamate, 5, 96
+agitation in Alzheimer disease, 533
+Alzheimer disease target, 515–18
+key pathways in the brain, 102
+synthesis, 96–7
+synthesis of GABA from, 255
+glutamate hypothesis of psychosis,
+95–114
+glutamate neurotransmitter network,
+96–106
+glutamate receptors, 99–105
+ionotropic, 54
+metabotropic, 100, 103
+NMDA. See NMDA glutamate
+receptors
+glutamate transporters, 34
+glutamic acid decarboxylase, 255
+glycine transporters, 34
+glycine, synthesis, 97–9
+Goldilocks solution, 43, 60, 191, 227,
+428
+grandiose expansiveness, 78
+gray matter, chronic pain, 387–90
+GSK-3 (glycogen synthase kinase), 48
+guanfacine, 482–3
+habit circuit, 544, 561, 571, 572
+habits, 538, 539, 576
+hallucinations, 77, 113, 141, 435, 568
+dementia, 521
+
+Parkinson’s disease psychosis, 157
+visual, 113, 524
+hallucinogen-assisted psychotherapy,
+355–8, 376
+hallucinogens, 135, 138, 567–9
+haloperidol, 181, 202, 204
+heroin, 559, 561, 573
+heteroreceptors, 125
+hippocampal-accumbens glutamate
+pathway, 104
+hippocampus, 372, 374
+histamine, 35, 402–6, 409
+histamine 1 antagonism, 425–6, 427
+histamine receptors, 406
+histones, methylation, 23
+homeostatic sleep drive, 408, 412
+hormone-linked systems, 11, 12
+hostile belligerence, 78
+HPA (hypothalamic-pituitary-adrenal)
+axis, 266, 270
+human genome, 18
+Huntington’s disease, 28, 175
+hydrocodone (Vicodin), 559
+hyperactivity, 452, 454, 463
+hyperalgesia, 380
+hyperarousal, 418
+hyperdopaminergia, 90, 92, 93
+hyperglycemic hyperosmolar syndrome,
+199, 200
+hyperprolactinemia, 165, 187, 192
+hypersomnia, 402, 430–40
+causes of, 431–5
+treatment of, 440–8
+hypervigilance, 402
+hypnotic actions, 311
+insomnia treatment, 421–30
+hypnotics, sedative, 556
+hypocretins, 406–11
+hypodopaminergia, 95
+hypomania, 248
+hypothalamic neurons, 407
+idiopathic hypersomnia, 432, 433
+illusions, 568
+iloperidone, 225, 236
+immediate early genes, 19, 20
+impulse control disorders, 577–8
+impulsive–compulsive disorders, 539
+binge eating, 575
+neurocircuitry of, 539–43
+impulsive violence, 147, 577
+impulsivity, 452, 454, 463, 538–9, 571, 578
+inactivation state, 61, 63
+inattention, 449, 450, 451, 463
+indirect (stop) dopamine pathway, 89, 90
+inhalants, 547
+inherited disease, classic theory of, 148
+insomnia, 311, 402, 418–20
+
+

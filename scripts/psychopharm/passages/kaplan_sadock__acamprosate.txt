@@ -1,0 +1,518 @@
+<<<PAGE 881>>>
+
+term behavioral change (rehabilitation); whether the program makes
+extensive use of pharmacologic interventions; and whether the program
+mainly uses individual therapy, Alcoholics Anonymous (AA) or other 12step principles, or therapeutic community principles. For example, the
+National Institute on Drug Abuse suggested the following categories of
+treatment: long-term residential treatment, short-term residential treatment,
+outpatient treatment programs, individualized drug counseling, group
+counseling, and treatments for individuals involved in the criminal justice
+system.
+Selecting a Treatment
+Not all interventions apply to all types of substance use disorders, and some
+of the more coercive interventions used for illicit drugs do not apply to legal
+substances, such as tobacco. Addictive behaviors do not change abruptly but
+through a series of stages. Experts propose five stages in this gradual process:
+precontemplation, contemplation, preparation, action, and maintenance. For
+some types of addictions, the therapeutic alliance improves when the
+treatment approach is tailored to the patient’s stage of readiness to change.
+Interventions for some drug use disorders may have a specific pharmacologic
+agent as a critical component; for example, disulfiram, naltrexone, or
+acamprosate for alcoholism; methadone, levomethadyl acetate, or
+buprenorphine for heroin addiction; and nicotine delivery devices,
+varenicline, or bupropion for tobacco dependence.
+In general, brief interventions (e.g., a few weeks of detoxification, whether
+in or out of a hospital) used for persons who are severely dependent on illicit
+opioids have limited effect on outcome measured a few months later.
+Substantial reductions in illicit drug use, antisocial behaviors, and psychiatric
+distress among patients dependent on cocaine or heroin are much more likely
+following treatment lasting at least 3 months. Such a time-in-treatment effect
+occurs across very different modalities, from residential therapeutic
+communities to ambulatory methadone maintenance programs. Although
+some patients appear to benefit from a few days or weeks of treatment, a
+substantial percentage of users of illicit drugs drop out (or are dropped) from
+treatment before they have achieved significant benefits.
+Treatment outcomes vary widely; this is partly due to the great variety of
+
+
+
+
+<<<PAGE 910>>>
+
+mg of chlordiazepoxide given every 4 hours orally, or lorazepam, given
+intravenously (IV) if oral medication is not possible. A high-calorie, highcarbohydrate diet supplemented by multivitamins is also essential.
+Physically restraining patients with the DTs is risky; they may fight against
+the restraints to a dangerous level of exhaustion. When patients are disorderly
+and uncontrollable, it may be preferable to use a seclusion room. Adjunctive
+antipsychotic medications, such as haloperidol, are sometimes used to control
+severe agitation and hallucinations. However, antipsychotic medications may
+reduce the seizure threshold in patients. Dehydration, often exacerbated by
+diaphoresis and fever, can be corrected with fluids given by mouth or IV.
+Anorexia, vomiting, and diarrhea often occur during withdrawal. The
+emergence of focal neurologic symptoms, lateralizing seizures, increased
+intracranial pressure, or evidence of skull fractures or other indications of
+CNS pathology should prompt clinicians to examine a patient for neurologic
+disease.
+Warm, supportive psychotherapy in the treatment of DTs is essential.
+Patients are often bewildered, frightened, and anxious because of their
+tumultuous symptoms, and skillful verbal support is imperative.
+Protracted Withdrawal. Symptoms of anxiety, insomnia, and mild
+autonomic overactivity are likely to continue for 2 to 6 months after the acute
+withdrawal has disappeared. These protracted withdrawal symptoms may
+enhance the probability of relapse. Although there is little evidence that
+medications are helpful, it is possible that some of the medications used for
+the rehabilitation phase, especially acamprosate, may work by diminishing
+some of these symptoms. The clinician should warn the patient that some
+level of sleep problems or feelings of nervousness might remain after acute
+withdrawal and discuss cognitive and behavioral approaches that might be
+appropriate to help the patient feel comfortable.
+Rehabilitation
+For most patients, rehabilitation includes three major components, which are
+listed in Table 4-13. These components happen at a difficult time: the patient
+may still be experiencing withdrawal symptoms as well as life crises.
+Repetition will be necessary, with frequent reminders of how vital abstinence
+
+
+
+
+<<<PAGE 914>>>
+
+Interventions) demonstrated that naltrexone improves clinical outcomes, and
+a Cochrane review of naltrexone concluded that naltrexone was effective in
+reducing heavy drinking days. The typical dose is 50 mg/day, and side effects
+include mild GI upset and lethargy.
+The second medication, acamprosate, antagonizes neuronal overactivity
+related to the excitatory neurotransmitter glutamate, at least in part, by acting
+as an antagonist to N-methyl-D-aspartate (NMDA) receptors. Acamprosate
+may diminish mild anxiety, mood swings, and other sleep difficulties
+associated with the protracted withdrawal syndrome observed after the first 4
+to 5 days of abstinence. The typical dose is about 2,000 mg divided into three
+doses per day and is associated with relatively mild side effects of GI
+problems such as diarrhea.
+A third possible drug of interest is the alcohol-sensitizing agent disulfiram.
+Disulfiram is given in daily doses of 250 mg before discharging the patient
+from the intensive first phase of outpatient rehabilitation or inpatient care.
+The goal is to place the patient in a condition in which drinking alcohol
+precipitates an uncomfortable physical reaction, including nausea, vomiting,
+and a burning sensation in the face and stomach. Few data support
+disulfiram’s effectiveness, most likely because patients stop it when they
+resume drinking. Many clinicians have stopped routinely prescribing the
+agent, partly in recognition of the dangers associated with the drug itself:
+mood swings, rare instances of psychosis, the possibility of increased
+peripheral neuropathies, the relatively rare occurrence of other significant
+neuropathies, and potentially fatal hepatitis. Moreover, we should not give
+disulfiram to patients with preexisting heart disease, cerebral thrombosis,
+diabetes, and some other conditions, because an alcohol reaction to the
+disulfiram could be fatal.
+Table 4-15 gives a summary of medications used for alcohol dependence.
+Two other medications, while not yet approved for the treatment of alcohol
+use disorders, are worth brief mention. Several studies using the
+anticonvulsant topiramate have reported improvement in drinking patterns.
+Additionally, some data suggest that the 5-HT3 ondansetron might be
+beneficial in alcohol use disorder treatment. No evidence exists that
+antidepressant medications, such as selective serotonin reuptake inhibitors
+(SSRIs), lithium, or antipsychotic medications, are significantly effective in
+
+
+
+
+<<<PAGE 916>>>
+
+Medications for Treating Alcohol Dependence
+
+Action
+
+Naltrexone
+
+Acamprosate
+
+Disulfiram
+
+Blocks opioid
+receptors,
+resulting in
+reduced
+craving and
+reduced
+reward in
+response to
+drinking
+
+Not well
+Inhibits
+understood.
+intermediate
+Likely an NMDA
+metabolism of
+receptor
+alcohol,
+antagonist and
+causing a
+positive allosteric
+buildup of
+modulator of
+acetaldehyde
+GABAa receptors
+and a reaction
+of flushing,
+sweating,
+nausea, and
+tachycardia if a
+patient drinks
+alcohol
+
+Contraindications Currently using Severe renal
+Concomitant use
+opioids or in
+impairment (CrCl
+of alcohol or
+acute opioid
+≤30 mL/min)
+alcoholwithdrawal;
+containing
+anticipated
+preparations or
+need for
+metronidazole;
+opioid
+coronary artery
+analgesics;
+disease; severe
+acute
+myocardial
+hepatitis or
+disease
+liver failure
+Precautions
+
+Other hepatic
+disease;
+renal
+impairment;
+history of
+
+Moderate renal
+High impulsivity—
+impairment
+likely to drink
+(dose
+while using it;
+adjustment for
+psychoses
+CrCl between 30
+(current or
+
+
+
+
+<<<PAGE 2184>>>
+
+Rapid Detoxification. Rapid detoxification has been standardized using
+naltrexone, although nalmefene would be expected to be equally effective
+with fewer adverse effects. In rapid detoxification protocols, the addicted
+person stops opioid use abruptly and begins the first opioid-free day by
+taking clonidine 0.2 mg orally every 2 hours for nine doses, to a maximum
+dose of 1.8 mg, during which time the BP is monitored every 30 to 60
+minutes for the first 8 hours. Naltrexone 12.5 mg is administered 1 to 3 hours
+after the first dose of clonidine. To reduce muscle cramps and later insomnia,
+a short-acting benzodiazepine, such as oxazepam 30 to 60 mg, is
+administered simultaneously with the first dose of clonidine, and half of the
+initial dose is readministered every 4 to 6 hours as needed. The maximum
+daily dosage of oxazepam should not exceed 180 mg. The person undergoing
+rapid detoxification should be accompanied home by a reliable escort. On the
+second day, similar doses of clonidine and the benzodiazepine are
+administered but with a single dose of naltrexone 25 mg taken in the
+morning. Relatively asymptomatic persons may return home after 3 to 4
+hours. Administration of the daily maintenance dose of 50 mg of naltrexone
+is begun on the third day, and the dosages of clonidine and the
+benzodiazepine are gradually tapered off over 5 to 10 days.
+
+DISULFIRAM AND ACAMPROSATE
+Disulfiram (Antabuse) and acamprosate (Campral) are drugs used to treat
+alcohol use disorder. Disulfiram has suffered from a reputation as a
+dangerous medication only suitable for highly motivated and strictly
+supervised drinkers because of the severe physical reactions the drug causes
+after drinking. Experience has shown, however, that at recommended doses,
+it is an acceptable and safe medication for dependent drinkers seeking to
+sustain abstinence. The properties that constitute disulfiram’s main
+therapeutic effect (i.e., the ability to produce unpleasant symptoms after
+alcohol intake, also known as disulfiram–alcohol reaction) have created that
+perception of dangerousness.
+In the most severe cases, when disulfiram is combined with alcohol, severe
+clinical conditions can occur. These include respiratory depression,
+cardiovascular collapse, acute heart failure, convulsions, loss of
+consciousness, and death in rare cases. These potential complications, as well
+
+
+
+
+<<<PAGE 2185>>>
+
+as the development of alternative antialcohol medications, have been the
+limiting factors for the broader use of disulfiram. Unlike disulfiram,
+acamprosate, the other drug discussed in this section, does not produce
+aversive side effects. Acamprosate is now prescribed more commonly than
+disulfiram in outpatient settings, but disulfiram is prescribed more often in
+inpatient settings because it helps facilitate initial abstinence.
+Other drugs that are useful in reducing alcohol consumption include
+naltrexone (ReVia, Trexan), nalmefene (Revex), topiramate (Topamax), and
+gabapentin (Neurontin). These agents are discussed in their respective
+sections.
+Disulfiram
+Pharmacologic Actions. Disulfiram is almost completely absorbed from
+the GI tract after oral administration. Its half-life is estimated to be 60 to 120
+hours. Therefore, it may take 1 or 2 weeks to eliminate disulfiram from the
+body after taking the last dose.
+The metabolism of ethanol proceeds through oxidation via alcohol
+dehydrogenase to the formation of acetaldehyde, which is further metabolized
+to acetyl-coenzyme A (acetyl-CoA) by aldehyde dehydrogenase. Disulfiram
+is an aldehyde dehydrogenase inhibitor that interferes with the metabolism of
+alcohol by producing a marked increase in blood acetaldehyde concentration.
+The accumulation of acetaldehyde (to a level up to 10 times higher than
+occurs in the normal metabolism of alcohol) produces a wide array of
+unpleasant reactions, called the disulfiram–alcohol reaction, characterized by
+nausea, throbbing headache, vomiting, hypertension, flushing, sweating,
+thirst, dyspnea, tachycardia, chest pain, vertigo, and blurred vision. The
+reaction occurs almost immediately after the ingestion of one alcoholic drink
+and may last from 30 minutes to 2 hours.
+BLOOD CONCENTRATIONS IN RELATION TO ACTION. Plasma concentrations of
+
+disulfiram vary among individuals because of several factors, most notably
+age and hepatic function. In general, the severity of disulfiram–alcohol
+reaction is proportional to the amount of the ingested disulfiram and alcohol.
+Nevertheless, disulfiram plasma levels are rarely obtained in clinical practice.
+The positive correlation between plasma concentrations of alcohol and the
+
+
+
+
+<<<PAGE 2188>>>
+
+Acamprosate
+Pharmacologic Actions. Acamprosate’s mechanism of action is not fully
+understood, but it is thought to antagonize neuronal overactivity related to the
+actions of the excitatory neurotransmitter glutamate. In part, this may result
+from antagonism of NMDA receptors.
+Indications. Acamprosate is used for treating alcohol-dependent individuals
+seeking to continue to remain alcohol-free after they have stopped drinking.
+Its efficacy in promoting abstinence has not been demonstrated in persons
+who have not undergone detoxification and who have not achieved alcohol
+abstinence before beginning treatment.
+Precautions and Adverse Effects. Side effects are mostly seen early in
+treatment and are usually mild and transient. The most common side effects
+are headache, diarrhea, flatulence, abdominal pain, paresthesias, and various
+skin reactions. No adverse events occur after abrupt withdrawal of
+acamprosate, even after long-term use. There is no evidence of addiction to
+the drug. Patients with severe renal impairment (creatinine clearance of less
+than 30 mL/min) should not be given acamprosate.
+Drug Interactions. Alcohol and acamprosate do not affect each other’s
+pharmacokinetics. The same is true when adding disulfiram or diazepam to
+acamprosate. Coadministration of naltrexone with acamprosate produces an
+increase in concentrations of acamprosate. No adjustment of dosage is
+recommended in such patients. The pharmacokinetics of naltrexone and its
+major metabolite 6-β-naltrexol were unaffected after coadministration with
+acamprosate. During clinical trials, patients taking acamprosate
+concomitantly with antidepressants more commonly reported both weight
+gain and weight loss compared with patients taking either medication alone.
+Laboratory Interferences. Acamprosate has not been shown to interfere
+with commonly performed laboratory tests.
+Dosage and Clinical Guidelines. It is important to remember that
+acamprosate should not be used to treat alcohol withdrawal symptoms. It
+should only be started after the individual has been successfully weaned off
+
+
+
+
+<<<PAGE 2189>>>
+
+alcohol. Patients should show a commitment to remaining abstinent, and
+treatment should be part of a comprehensive management program that
+includes counseling or support group attendance.
+Each tablet contains acamprosate calcium 333 mg, which is equivalent to
+300 mg of acamprosate. The dose of acamprosate is different for different
+patients. The recommended dosage is two 333-mg tablets (each dose should
+total 666 mg) taken three times daily. Although dosing may be done without
+regard to meals, dosing with meals was used during clinical trials and is
+suggested as an aid to compliance in patients who regularly eat three meals
+daily. A lower dose may be useful in some patients. A missed dose should be
+taken as soon as possible. However, if it is almost time for the next dose, the
+missed dose should be skipped, and then the regular dosing schedule should
+be resumed. Doses should not be doubled up. For patients with moderate
+renal impairment (creatinine clearance of 30 to 50 mL/min), a starting dosage
+of one 333-mg tablet taken three times daily is recommended. People with
+severe renal insufficiency should not take acamprosate.
+
+CLONIDINE AND GUANFACINE
+Clonidine and guanfacine are marketed as hypertension treatments.
+Guanfacine is more selective and less potent than clonidine, but clonidine is
+the most widely used α2-agonist.
+Pharmacologic Actions
+Clonidine and guanfacine are presynaptic α2-receptor agonists. They inhibit
+sympathetic outflow and cause vasodilation of blood vessels. Clonidine and
+guanfacine are well absorbed from the GI tract and reach peak plasma levels
+1 to 3 hours after oral administration. The half-life of clonidine is 6 to 20
+hours, and that of guanfacine is 10 to 30 hours.
+The agonist effects of clonidine and guanfacine on presynaptic α2adrenergic receptors in the sympathetic nuclei of the brain result in a decrease
+in the amount of norepinephrine released from the presynaptic nerve
+terminals. This decrease serves to reset the body’s sympathetic tone at a
+lower level and decrease arousal. Table 21-54 provides a summary of α2adrenergic receptor agonists used in psychiatry.
+
+
+
+
+<<<PAGE 2284>>>
+
+Lippincott Williams & Wilkins; 2009:3004.
+Hser YI, Hoffman V, Grella CE, Anglin MD. A 33-year follow-up of
+narcotics addicts. Arch Gen Psychiatry. 2001;58:503–508.
+Ivanov I. Disulfiram and acamprosate. In: Sadock BJ, Sadock VA, Ruiz P,
+eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed.
+Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3099.
+Johnson BA. Update on neuropharmacological treatments for alcoholism:
+scientific basis and clinical findings. Biochem Pharmacol. 2008;75(1):34.
+Johnson BA, Ait-Daoud N, Prihoda TJ. Combining ondansetron and
+naltrexone effectively treats biologically predisposed alcoholics: from
+hypotheses to preliminary clinical evidence. Alcoholism Clin Exp Res.
+2000;24(5):737–742.
+Karachalios GN, Charalabopoulos A, Papalimneou V, Kiortsis D, Dimicco P.
+Withdrawal syndrome following cessation of antihypertensive drug
+therapy. Int J Clin Pract. 2005;5:562.
+King A, De Wit H, Riley RC, Cao D, Niaura R. Efficacy of naltrexone in
+smoking cessation: a preliminary study and an examination of sex
+differences. Nicotine Tobacco Res. 2006;8(5):671–682.
+Kleber HD. Methadone maintenance 4 decades later: thousands of lives saved
+but still controversial. JAMA. 2008;300:2303.
+Kornfield R, Watson S, Higashi AS, Conti RM, Dusetzina SB, Garfield CF,
+Dorsey ER, Huskamp HA, Alexander GC. Effects of FDA advisories on
+the pharmacologic treatment of ADHD, 2004–2008. Psychiatr Serv.
+2013;64(4):339–346.
+Krishnan-Sarin S, Rounsaville BJ, O’Malley SS. Opioid receptor antagonists:
+naltrexone and nalmefene. In: Sadock BJ, Sadock VA, Ruiz P, eds. Kaplan
+& Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3171.
+Krystal JH, Cramer JA, Kroll WF, Kirk GF, Rosenheck RA. Naltrexone in
+the treatment of alcohol dependence. N Engl J Med. 2001;345(24):1734.
+Laaksonen E, Koski-Jännes A, Salaspuro M, Ahtínen H, Alho H. A
+randomized, multicentre, open-label, comparative trial of disulfiram,
+naltrexone and acamprosate in the treatment of alcohol dependence.
+Alcohol. 2008;43(1):53–61.
+Likar R, Kayser H, Sittl R. Long-term management of chronic pain with
+transdermal buprenorphine: a multicenter, open-label, follow-up study in
+
+
+
+
+<<<PAGE 2285>>>
+
+patients from three short-term clinical trials. Clin Ther. 2006;28(6):943–
+952.
+Mann K, Kiefer F, Spanagel R, Littleton J. Acamprosate: recent findings and
+future research directions. Alcohol Clin Exp Res. 2008;32(7):1105–1110.
+Marsch LA, Bickel WK, Badger GJ, Stothart ME, Quesnel KJ. Comparison
+on pharmacological treatments for opioid-dependent adolescents: a
+randomized controlled trial. Arch Gen Psychiatry. 2005;62:1157.
+Mattick RP, Kimber J. Breen C, Davoli M. Buprenorphine maintenance
+versus placebo or methadone maintenance for opioid dependence.
+Cochrane Database Syst Rev. 2008:CD002207.
+Ming X, Gordon E, Kang N, Wagner GC. Use of clonidine in children with
+autism spectrum disorders. Brain Dev. 2008;30(7):454–760.
+Monterosso JR, Flannery BA, Pettinati HM, Oslin DW, Rukstalis M.
+Predicting treatment response to naltrexone: the influence of craving and
+family history. Am J Addict. 2001;10(3):258–268.
+Myers SM. The status of pharmacotherapy for autism spectrum disorders.
+Expert Opin Pharmacother. 2007;8(11):1579.
+Neumann AM, Blondell RD, Jaanimagi U, Giambrone AK, Homish GG,
+Lozano JR, Kowalik U, Azadfard M. A preliminary study comparing
+methadone and buprenorphine in patients with chronic pain and coexistent
+opioid addiction. J Addict Dis. 2013;32(1):68–78.
+Niederhofer H, Staffen W. Naltrexone and disulfiram in patients with alcohol
+dependence and comorbid psychiatric disorders. Biol Psychiatry.
+2005;57(10):1128.
+Oliva EM, Trafton JA, Harris AH, Gordon AJ. Trends in opioid agonist
+therapy in the Veterans Health Administration: is supply keeping up with
+demand? Am J Drug Alcohol Abuse. 2013;39(2):103–107.
+O’Malley SS, Cooney JL, Krishnan-Sarin S, Dubin J, McKee SA. A
+controlled trial of naltrexone augmentation of nicotine replacement for
+smoking cessation. Arch Intern Med. 2006;166:667.
+Raymond NC, Grant JE, Kim SW, Coleman E. Treatment of compulsive
+sexual behavior with naltrexone and serotonin reuptake inhibitors: two
+case studies. Int Clin Psychopharmacol. 2002;17(4):201.
+Ritvo JI, Park C. The psychiatric management of patients with alcohol
+dependence. Curr Treat Options Neurol. 2007;9(5):381.
+Sallee F, Connor DF, Newcorn JH. A review of the rationale and clinical
+
+
+
+
+<<<PAGE 3036>>>
+
+NMDA receptor function. The GABA receptor effects may be associated
+with the anxiolytic effects of ethanol. Persistent abuse and dependency on
+ethanol result in a downregulation of GABAA receptors and an upregulation
+of NMDA receptors such that acute discontinuation of ethanol results in a
+hyperexcitable state characterized by delirium tremens. Furthermore,
+supersensitive NMDA receptors in the context of thiamine deficiency may
+contribute to the excitotoxic neuron degeneration of Wernicke–Korsakoff
+syndrome.
+Acamprosate is a derivative of homotaurine that was developed as an agent
+to reduce alcohol consumption, craving, and relapse in alcoholic patients, for
+which it exhibits moderate efficacy in clinical trials. Because taurine
+resembles GABA, it was thought that acamprosate acted via GABAA
+receptors, but electrophysiologic studies found little evidence to support this
+hypothesis. Subsequent studies demonstrated that it inhibited NMDA
+receptor responses in cortical slices and recombinant NMDA receptors. The
+precise mechanism whereby acamprosate alters NMDA receptor function,
+however, remains unclear.
+Fetal alcohol syndrome is the most common preventable cause of mental
+retardation. Convincing evidence has been developed that the
+microencephaly associated with fetal alcohol exposure results from inhibition
+of NMDA receptor function, resulting in widespread neuronal apoptosis in
+the immature cortex. NMDA receptor activation is essential for immature
+neuronal survival and differentiation.
+Neuropeptides
+Neuropeptides represent the most diverse class of signaling molecules in the
+CNS. Initially discovered for their role in the hypothalamic regulation of
+pituitary hormone secretion, the complex role of peptides in brain function
+has emerged over the last 30 years. Many neuropeptides and their receptors
+are widely distributed within the CNS, where they have an extraordinary
+array of direct or neuromodulatory effects, ranging from modulating
+neurotransmitter release and neuronal firing patterns to the regulation of
+emotionality and complex behaviors. More than 100 unique biologically
+active neuropeptides have been identified in the brain, a subset of which is
+presented in Table 33-3. Adding to the complexity of neuropeptide systems
+
+
+
+
+<<<PAGE 3588>>>
+
+Index
+Page numbers followed by f indicate figures, page numbers followed by t
+indicated tables, and page numbers in boldface indicate main discussions.
+AA. See Alcoholics Anonymous (AA)
+AACAP. See American Academy of Child and Adolescent Psychiatry
+(AACAP)
+AAIDD. See American Association on Intellectual and Developmental
+Disability (AAIDD)
+Abdominal breathing, for insomnia, 512, 512t
+Aberrant Behavior Checklist (ABC), 85
+Abilify. See Aripiprazole
+Abnormal Involuntary Movement Scale (AIMS), 11, 347, 597t
+Abraham, Karl, 799, 1078
+Absence seizure, 250, 251f
+Abstinence, 296, 329
+Abstract reasoning, assessment of, in MSE, 11, 11t
+Acalculia, 48, 145. See also Mathematics deficits
+Acamprosate, 694
+in alcohol use disorder treatment, 283, 284t
+ACC. See Anterior cingulate cortex (ACC)
+Acculturation problem, 586
+Acculturative stress, 1048–1049
+Acetaminophen toxicity, 63
+Acetylcholine, 227
+Acetyl coenzyme A (ACoA), 958
+Acetylcysteine (Mucomyst), 63
+Achenbach Child Behavior Checklist, 77, 78
+Ackerman, Nathan, 764
+
+

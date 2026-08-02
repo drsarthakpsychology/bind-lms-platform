@@ -1,0 +1,947 @@
+<<<PAGE 415>>>
+
+during clozapine use. Its use is generally limited to treatment-resistant
+psychotic patients.
+Ziprasidone has receptor-blocking properties at the 5-HT2A and D2
+receptor sites and carries little risk of extrapyramidal and antihistaminic
+effects. No guidelines exist for its use in autistic children with aggressive and
+self-injurious behaviors; clinicians sometimes use it to treat these behaviors
+in treatment-resistant children. In studies of its use in adults with
+schizophrenia, dose ranges of 40 to 160 mg were effective. Adverse effects
+include sedation, dizziness, and lightheadedness. Before using this
+medication, the clinician should check an electrocardiogram.
+Lithium is efficacious in children with aggression without autism spectrum
+disorder, and it is used clinically in the treatment of aggressive or selfinjurious behaviors when antipsychotic medications are not helpful.
+Agents Used for Behavioral Impairment in Autism Spectrum
+Disorder without Evidence of Efficacy. A double-blind study
+investigated the efficacy of amantadine, which blocks N-methyl-D-aspartate
+(NMDA) receptors, in the treatment of behavioral disturbance, such as
+irritability, aggression, and hyperactivity, in children with autism. Some
+researchers have suggested that abnormalities of the glutamatergic system
+may contribute to the emergence of autism spectrum disorders. High
+glutamate levels occur in children with the formerly labeled Rett syndrome.
+In the amantadine study, 47 percent of children on amantadine were
+“improved” per their parents, and 37 percent of children on placebo were
+rated “improved” by parents in irritability and hyperactivity, although this
+difference was not statistically significant. Investigators rated the children on
+amantadine “significantly improved” for hyperactivity. A double-blind,
+placebo-controlled study of the efficacy of the anticonvulsant lamotrigine on
+hyperactivity in children with autism showed high rates of placebo
+improvement in ratings of hyperactivity, which were similar to response on
+the medication.
+Clomipramine is sometimes used but lacks RCTs to provide evidence of
+positive results. Fenfluramine, which reduces blood serotonin levels, has also
+been used but appears to be ineffective. Improvement does not seem to be
+associated with a reduction in blood serotonin levels. Naltrexone, an opioid
+
+
+
+
+<<<PAGE 819>>>
+
+abnormalities in memory and speech, we should suspect a temporal lobe
+tumor.
+COGNITION. Impaired intellectual functioning often accompanies the presence
+
+of a brain tumor, regardless of its type or location.
+LANGUAGE SKILLS. Disorders of language function may be severe, mainly if
+
+tumor growth is rapid. Defects of language function often obscure all other
+mental symptoms.
+Table 3-34
+Commonly Used Anticonvulsant Drugs
+Drug
+
+Use
+
+Carbamazepine Generalized tonic–clonic, partial
+
+Maintenance
+Dosage
+(mg/day)
+600–1,200
+
+Clonazepam
+
+Absence, atypical myoclonic
+
+2–12
+
+Ethosuximide
+
+Absence
+
+1,000–2,000
+
+Gabapentin
+
+Complex partial seizures
+(augmentation)
+
+900–3,600
+
+Lamotrigine
+
+Complex partial seizures,
+generalized (augmentation)
+
+300–500
+
+Oxcarbazepine Partial
+
+600–2,400
+
+Phenobarbital
+
+Generalized tonic–clonic
+
+100–200
+
+Phenytoin
+
+Generalized tonic–clonic, partial,
+status epilepticus
+
+300–500
+
+Primidone
+
+Partial
+
+750–1,000
+
+Tiagabine
+
+Generalized
+
+32–56
+
+Topiramate
+
+Complex partial seizures
+(augmentation)
+
+200–400
+
+
+
+
+<<<PAGE 1200>>>
+
+Anticonvulsants. Valproate (valproic acid or divalproex sodium) has
+surpassed lithium in use for acute mania. Unlike lithium, valproate is only
+indicated for acute mania, although most experts agree it also has
+prophylactic effects. Normal dose levels of valproic acid are 750 to 2,500
+mg/day, achieving blood levels between 50 and 120 µg/mL. Rapid oral
+loading with 15 to 20 mg/kg of divalproex sodium from day 1 of treatment
+has been well tolerated and associated with a rapid onset of response. Some
+laboratory testing is required during valproate treatment.
+Carbamazepine has been used worldwide for decades as a first-line
+treatment for acute mania. The FDA approved it for acute mania in the
+United States in 2004. Typical doses of carbamazepine to treat acute mania
+range between 600 and 1,800 mg/day associated with blood levels of between
+4 and 12 µg/mL. The keto congener of carbamazepine, oxcarbazepine, is
+better tolerated than carbamazepine, but the data for its efficacy are
+conflicting. A Cochrane review concluded there is insufficient evidence for
+this medication in acute mania.
+Antipsychotics. The FDA approved many of the atypical antipsychotics for
+use in bipolar disorder. We list them in Table 6-7. Compared with older
+agents, such as haloperidol and chlorpromazine, atypical antipsychotics have
+a lesser liability for excitatory postsynaptic potential and tardive dyskinesia;
+many do not increase prolactin. However, many of them have the risk of
+weight gain with its associated medical problems. Some patients, however,
+require maintenance treatment with antipsychotic medication.
+Acute Bipolar Depression
+Lithium. There is limited evidence for lithium in bipolar depression. Early
+studies were promising, but later placebo-controlled studies did not confirm
+lithium’s efficacy. More extensive studies that included lithium did suggest
+that lithium was at least as useful as other mood stabilizers for bipolar
+depression.
+Anticonvulsants. The most promising anticonvulsant has been lamotrigine,
+which has several reasonable studies showing efficacy for bipolar depression.
+Its major limitation is that it must be titrated gradually to prevent a severe
+
+
+
+
+<<<PAGE 1356>>>
+
+TREATMENT
+Obsessive-Compulsive Disorder
+Pharmacotherapy. Effective medications include clomipramine and
+selective serotonin reuptake inhibitors (SSRIs, which, along with
+clomipramine and other serotonergic medications, are sometimes called
+serotonin reuptake inhibitor [SRIs]). Head-to-head comparisons of
+clomipramine and SSRIs show equal efficacy but better tolerability of the
+SSRIs. In general, clinicians must use higher doses to achieve an optimal
+effect. Examples are doses of 80 mg of fluoxetine or 200 mg of sertraline.
+Some patients respond to even higher doses. Exceeding the recommended
+doses is not, however, advisable for clomipramine or citalopram, due to
+safety concerns. There is also some evidence that response to SRIs is slower
+in OCD than in depression; clinicians are therefore encouraged to prescribe
+an SRI for at least 12 weeks before deciding to switch agents or augment
+with another psychotropic. A general rule of thumb is that we should
+continue to use the dose that was required to obtain a response for at least 1
+to 2 years. When discontinuing medication, there is a real risk of relapse, so
+this should be done very gradually, with small adjustments made every few
+months.
+Patients who fail to respond to one SRI may respond to another.
+The most extensive evidence base is for antipsychotics in adult OCD.
+Among those, risperidone and aripiprazole are best supported as adjuncts.
+Some studies have indicated that these are particularly useful in patients with
+tics, but not all data are consistent. When a response to these agents occurs, it
+typically happens relatively quickly (e.g., 4 weeks). When using dopamine
+receptor blockers, it is crucial to monitor adverse events.
+Memantine, riluzole, ketamine, lamotrigine, and N-acetylcysteine (NAC)
+are other promising augmentation agents.
+Psychotherapy. There is a long history of understanding OCD symptoms
+from a psychodynamic perspective, but there is no rigorous evidence that a
+psychodynamic approach is useful in the treatment of OCD. Instead,
+empirical research on the psychotherapy of OCD has emerged from
+behavioral and cognitive perspectives. Exposure and response prevention
+
+
+
+
+<<<PAGE 1436>>>
+
+Electroconvulsive therapy (for refractory depression with persistent
+melancholic features across all dissociative identity disorder
+alters)
+Mood stabilizers (more useful for PTSD and anxiety than mood
+swings)
+Divalproex
+Lamotrigine
+Oral or intramuscular benzodiazepines
+Medications for sleep problems
+Low-dose trazodone
+Low-dose mirtazapine
+Low-dose tricyclic antidepressants
+Low-dose neuroleptics
+Benzodiazepines (often less helpful for sleep problems in this
+population)
+Zolpidem
+Anticholinergic agents (diphenhydramine, hydroxyzine)
+Medications for self-injury, addictions
+Naltrexone
+Brainwashing
+There are no empirical treatment studies of individuals subjected to extreme
+coercion applied in the service of indoctrination into a belief system or an
+attempt at identity alteration. The basic principles of phased trauma treatment
+would seem to provide an organizing framework for their care, as for victims
+of other forms of torture. Family and social interventions may be necessary
+because of the duress and disruption accompanying the precipitating events
+and the social effects of the profound changes in the patient’s attitudes,
+behaviors, and beliefs, as well as sequestration from everyday events during
+the period of captivity.
+Ganser Syndrome
+No systematic treatment studies have been conducted, given the rarity of this
+condition. In most case reports, the patient has been hospitalized and
+provided with a protective and supportive environment. In some instances,
+
+
+
+
+<<<PAGE 1880>>>
+
+Thus, blockade of serotonin reuptake by SSRIs can cause nausea and sexual
+dysfunction. The D2 blockade of drugs used to treat psychosis can cause
+extrapyramidal side effects. Agonist action of benzodiazepine receptors can
+cause ataxia and daytime sleepiness. In these cases, additional medications
+are frequently used to make the primary agent better tolerated.
+Time Course
+Adverse effects differ in terms of their onset and duration. Some side effects
+appear at the outset of treatment and then rapidly diminish. Nausea occurring
+with SSRIs or venlafaxine (Effexor) and sedation occurring with mirtazapine
+(Remeron) are good examples of early, time-limited side effects. Early-onset,
+but persistent, side effects include a dry mouth that is associated with
+noradrenergic reuptake inhibition or antimuscarinic activity. Some side
+effects appear later in treatment (late-appearing side effects) and, sometimes
+may be just the opposite of adverse events early in treatment. For example,
+patients may typically lose weight during early treatment with SSRIs, only to
+find, over time, a reversal occurs, so that they gain weight.
+Similarly, early activation or agitation may be followed by constant fatigue
+or apathy. Because most data about new drugs come from short-term studies,
+generally 8 weeks in duration, early-onset side effects are overrepresented in
+product information and descriptions of newly marketed information.
+Clinicians must follow the letters to the editor sections of journals and other
+sources of information to update their understanding of the real side effect
+profile of a drug.
+Adverse effects differ in their impact on compliance and the potential to
+cause harm. Depending on a patient’s threshold of tolerance for a side effect
+and the impact on the quality of life, side effects can lead to drug
+discontinuation. Examples of serious side effects include agranulocytosis
+(clozapine), Stevens–Johnson syndrome (lamotrigine [Lamictal]), hepatic
+failure (nefazodone [Serzone]), stroke (phenelzine [Nardil]), and heart block
+(thioridazine [Mellaril]). Overall, the risk of life-threatening side effects with
+psychotropics is low. Drugs that carry such a risk should be monitored more
+closely, and the prescribing physician should take into account whether the
+potential clinical benefits justify the additional risk. Any drug with a serious
+risk, as reflected in a black box warning, is generally used less extensively
+
+
+
+
+<<<PAGE 1902>>>
+
+Cognitive Impairment. Cognitive impairment means a disturbance in the
+capacity to think. Some agents, such as the benzodiazepine agonists, are
+recognized as causes of cognitive impairment. Other widely used
+psychotropics, such as the SSRIs, lamotrigine (Lamictal), topiramate
+(Topamax), gabapentin (Neurontin), lithium, TCAs, and bupropion, however,
+are also associated with varying degrees of memory impairment and wordfinding difficulties. In contrast to the benzodiazepine-induced anterograde
+amnesia, these agents cause a more subtle type of absent-mindedness. Drugs
+with anticholinergic properties are likely to worsen memory performance.
+Sweating. Severe perspiration unrelated to ambient temperature is
+associated with TCAs, SSRIs, and venlafaxine. This side effect is often
+socially disabling. Attempts can be made to treat this side effect with alpha
+agents, such as terazosin (Hytrin) and oxybutynin (Ditropan).
+Cardiovascular Disturbances. Newer agents are less likely to have
+direct cardiac effects. Many older agents, such as TCAs and phenothiazines,
+affected BP and cardiac conduction. Thioridazine (Mellaril), which has been
+in use for decades, has been shown to prolong the QTc interval in a doserelated manner and may increase the risk of sudden death by delaying
+ventricular repolarization and causing torsades de pointes. Newer drugs are
+now routinely scrutinized for evidence of cardiac effects. A promising
+treatment for psychosis, sertindole (Serlect), was not marketed because the
+FDA would have required a black box warning. Slight QTc effects noted with
+ziprasidone (Geodon) delayed the marketing of that drug. Clozapine can
+cause myocarditis in rare cases.
+Rash. Any medication is a potential source of a drug rash. Some
+psychotropics, such as carbamazepine (Equetro, Tegretol) and lamotrigine,
+have been linked to an increased risk of severe exfoliative dermatitis.
+Commonly referred to as Stevens–Johnson syndrome, this condition is a
+systemic, immune-mediated reaction that can prove fatal or result in
+permanent scarring or blindness. All patients should be informed about the
+potential seriousness of widespread lesions that occur above the neck, that
+involve the mucous membranes, and that may be associated with fever and
+
+
+
+
+<<<PAGE 2077>>>
+
+depressant (e.g., alcohol), and increased severity of extrapyramidal
+symptoms, which usually responds to treatment with antiparkinsonian drugs.
+Valproate can usually be safely combined with carbamazepine or SDAs.
+Perhaps the most worrisome interaction of valproate and a psychotropic drug
+involves lamotrigine. Since the approval of lamotrigine for the treatment of
+bipolar disorder, it is more likely that patients will be treated with both
+agents. Valproate more than doubles lamotrigine concentrations, increasing
+the risk of a severe rash (Stevens–Johnson syndrome and toxic epidermal
+necrolysis).
+The plasma concentrations of carbamazepine, diazepam (Valium),
+amitriptyline (Elavil), nortriptyline (Pamelor), and phenobarbital (Luminal)
+may also be increased when these drugs are coadministered with valproate.
+Also, the plasma concentrations of phenytoin (Dilantin) and desipramine
+(Norpramin) may be decreased when they are combined with valproate. The
+plasma concentrations of valproate may be decreased when the drug is
+coadministered with carbamazepine and may be increased when
+coadministered with guanfacine (Tenex), amitriptyline, or fluoxetine
+(Prozac). Valproate can be displaced from plasma proteins by carbamazepine,
+diazepam, and aspirin. Persons who are treated with anticoagulants (e.g.,
+aspirin and warfarin [Coumadin]) should also be monitored when valproate
+use is initiated to assess the development of any undesired augmentation of
+the anticoagulation effects. Interactions of valproate with other drugs are
+listed in Table 21-34.
+Table 21-34
+Interactions of Valproate with Other Drugs
+Drug
+
+Interactions Reported with Valproate
+
+Lithium
+
+Increased tremor
+
+Antipsychotics
+
+Increased sedation; increased extrapyramidal
+effects; delirium and stupor (single report)
+
+Clozapine
+
+Increased sedation; confusional syndrome (single
+report)
+
+Carbamazepine Acute psychosis (single report); ataxia, nausea,
+
+
+
+
+<<<PAGE 2081>>>
+
+capsules
+Divalproex
+Depakote ER
+sodium
+(250, 500
+extendedmg)
+release
+
+4–17 hr
+
+LAMOTRIGINE
+Lamotrigine (Lamictal) was developed as a result of screening folate
+antagonists as anticonvulsants. Lamotrigine proved effective in several
+animal models of epilepsy, was developed as an antiepileptic drug, and was
+marketed for the adjunctive treatment of partial seizures in the United States
+in 1995. Initial, postmarketing, open, clinical experience suggested efficacy
+in a variety of neurologic and psychiatric conditions, coupled with good
+tolerability (aside from the risk of rash). Later, double-blind, placebocontrolled studies revealed that lamotrigine was useful for some, but not all,
+of the neurologic and psychiatric conditions reported in open studies.
+Therefore, lamotrigine appeared effective as a maintenance treatment for
+bipolar disorder and was approved for the maintenance treatment of bipolar I
+disorder in 2003. Lamotrigine also appeared to have potential utility in acute
+bipolar depression. However, the magnitude of the effect was too modest to
+yield consistently superior performance compared with placebo, and hence
+lamotrigine did not receive approval for the treatment of acute bipolar
+depression.
+Similarly, limited data suggested that lamotrigine had potential utility in
+rapid-cycling bipolar disorder. Lamotrigine did not appear to be as effective
+as the primary intervention in acute mania. Thus, lamotrigine has emerged as
+an agent that appears to “stabilize mood from below” in the sense that it may
+maximally impact the depressive component of bipolar disorders.
+Pharmacologic Actions
+Lamotrigine is wholly absorbed, has a bioavailability of 98 percent, and has a
+steady-state plasma half-life of 25 hours. However, the rate of metabolism of
+lamotrigine varies over a sixfold range, depending on which other drugs are
+administered concomitantly. Dosing is escalated slowly to twice-a-day
+
+
+
+
+<<<PAGE 2082>>>
+
+maintenance dosing. Food does not affect its absorption, and it is 55 percent
+protein-bound in the plasma; 94 percent of lamotrigine and its inactive
+metabolites are excreted in the urine. Among the better-delineated
+biochemical actions of lamotrigine is the blockade of voltage-sensitive
+sodium channels, which in turn modulates the release of glutamate and
+aspartate and has a slight effect on calcium channels. Lamotrigine modestly
+increases plasma serotonin concentrations, possibly through inhibition of
+serotonin reuptake, and is a weak inhibitor of serotonin 5-HT3 receptors.
+Therapeutic Indications
+Bipolar Disorder. Lamotrigine is indicated in the treatment of bipolar
+disorder and may prolong the time between episodes of depression and
+mania. It is more effective in lengthening the intervals between depressive
+episodes than manic episodes. It is also useful as a treatment for rapid-cycling
+bipolar disorder.
+Other Indications. There have been reports of therapeutic benefit in the
+treatment of borderline personality disorder and the treatment for various pain
+syndromes.
+Precautions and Adverse Reactions
+Lamotrigine is remarkably well tolerated. The absence of sedation, weight
+gain, and other metabolic effects are noteworthy. The most common adverse
+effects—dizziness, ataxia, somnolence, headache, diplopia, blurred vision,
+and nausea—are typically mild. Anecdotal reports of cognitive impairment
+and joint or back pain are standard.
+The appearance of a rash, which is common and occasionally very severe,
+is a source of concern. About 8 percent of patients started on lamotrigine
+develop a benign maculopapular rash during the first 4 months of treatment,
+and the drug should be discontinued if a rash develops. Even though these
+rashes are benign, there is concern that, in some cases, they may represent
+early manifestations of Stevens–Johnson syndrome or toxic epidermal
+necrolysis. Nevertheless, even if lamotrigine is discontinued immediately
+upon the development of a rash or other signs of hypersensitivity reaction,
+such as fever and lymphadenopathy, this may not prevent subsequent
+
+
+
+
+<<<PAGE 2083>>>
+
+development of a life-threatening rash or permanent disfiguration.
+Estimates of the rate of severe rash vary, depending on the source of the
+data. In some studies, the incidence of severe rashes was 0.08 percent in adult
+patients receiving lamotrigine as initial monotherapy and 0.13 percent in
+adult patients receiving lamotrigine as adjunctive therapy. German registry
+data, based on clinical practice, suggest that the risk of rash may be as low as
+1 in 5,000 patients. The appearance of any rash necessitates immediate
+discontinuation of drug administration.
+It is known that the likelihood of a rash increases if the recommended
+starting dose and speed of dose increase exceed what is recommended.
+Concomitant administration of valproic acid also increases risk and should be
+avoided if possible. If valproate is used, a more conservative dosing regimen
+is followed. Children and adolescents younger than age 16 years appear to be
+more susceptible to rash with lamotrigine. If patients miss more than 4
+consecutive days of lamotrigine treatment, they need to restart therapy at the
+initial starting dose and titrate upward as if they had not already been on the
+medication.
+Laboratory Testing
+There is no proven correlation between lamotrigine blood concentrations and
+either antiseizure effects or efficacy in bipolar disorders. Laboratory tests are
+not useful in predicting the occurrence of adverse events.
+Drug Interactions
+Lamotrigine has significant, well-characterized drug interactions involving
+other anticonvulsants. The most potentially serious lamotrigine drug
+interaction involves concurrent use of valproic acid, which doubles serum
+lamotrigine concentrations. Lamotrigine decreases the plasma concentration
+of valproic acid by 25 percent. Sertraline (Zoloft) also increases plasma
+lamotrigine concentrations, but to a lesser extent than does valproic acid.
+Lamotrigine concentrations are decreased by 40 to 50 percent with
+concomitant administration of carbamazepine, phenytoin, or phenobarbital.
+Combinations of lamotrigine and other anticonvulsants have complex effects
+on the time of peak plasma concentration and the plasma half-life of
+lamotrigine.
+
+
+
+
+<<<PAGE 2084>>>
+
+Laboratory Interferences
+Lamotrigine does not interfere with any laboratory tests.
+Dosage and Administration
+In the clinical trials leading to the approval of lamotrigine as a treatment for
+bipolar disorder, no consistent increase in efficacy was associated with doses
+above 200 mg/day. Most patients should take between 100 and 200 mg a day.
+In epilepsy, the drug is administered twice daily, but in bipolar disorder, the
+total dose can be taken once a day, either in the morning or night, depending
+on whether the patient finds the drug activating or sedating.
+Lamotrigine is available as unscored 25-, 100-, 150-, and 200-mg tablets.
+The primary determinant of lamotrigine dosing is the minimization of the risk
+of rash. Lamotrigine should not be taken by anyone younger than 16 years of
+age. Because valproic acid markedly slows the elimination of lamotrigine,
+concomitant administration of these two drugs necessitates a much slower
+titration (Table 21-37). People with renal insufficiency should aim for a lower
+maintenance dosage. The appearance of any rash necessitates immediate
+discontinuation of lamotrigine administration. Lamotrigine should usually be
+discontinued gradually over 2 weeks unless a rash emerges, in which case it
+should be discontinued over 1 to 2 days.
+Lamotrigine orally disintegrating tablets (Lamictal ODT) are available for
+patients who have difficulty swallowing. It is the only antiepileptic treatment
+that is available in an orally disintegrating formulation. It is available in 25,
+50, 100, and 200 mg strengths and matches the dose of lamotrigine tablets.
+Chewable dispersible tablets of 2, 5, and 25 mg are also available.
+
+CARBAMAZEPINE AND OXCARBAZEPINE
+Carbamazepine (Tegretol) possesses some structural similarity to the TCA
+imipramine (Tofranil). It was approved for use in the United States for the
+treatment of trigeminal neuralgia in 1968 and temporal lobe epilepsy
+(complex partial seizures) in 1974. Interestingly, carbamazepine was first
+synthesized as a potential antidepressant, but because of its atypical profile in
+several animal models, it was initially developed for use in pain and seizure
+disorders. It is now recognized in most guidelines as a second-line mood
+
+
+
+
+<<<PAGE 2085>>>
+
+stabilizer useful in the treatment and prevention of both phases of bipolar
+affective disorder. A long-acting sustained release formulation (Equetro) was
+approved by the U.S. FDA for the treatment of acute mania in 2002.
+Table 21-37
+Lamotrigine Dosing (mg/day)
+Treatment
+
+Weeks 1–2
+
+Weeks
+3–4
+
+Weeks 4–5
+
+Lamotrigine
+monotherapy
+
+25
+
+50
+
+100–200 (200
+maximum)
+
+Lamotrigine +
+carbamazepine
+
+50
+
+100
+
+200–400 (400
+maximum)
+
+Lamotrigine +
+valproate
+
+25 every other 25
+day
+
+50–100 (100
+maximum)
+
+An analog of carbamazepine, oxcarbazepine (Trileptal), was marketed as
+an antiseizure medication in the United States in 2000. Previously it was used
+as a treatment for pediatric epilepsy in Europe since 1990. Because of its
+similarity to carbamazepine, many clinicians began to use it as a treatment for
+patients with bipolar disorder. Despite some reports that oxcarbazepine has
+mood-stabilizing properties, this has not been confirmed in large, placebocontrolled trials.
+Carbamazepine
+Pharmacologic Actions. The absorption of carbamazepine is slow and
+unpredictable. Food enhances absorption. Peak plasma concentrations are
+reached 2 to 8 hours after a single dose, and steady-state levels are reached
+after 2 to 4 days on a steady dosage. It is 70 to 80 percent protein-bound. The
+half-life of carbamazepine ranges from 18 to 54 hours, with an average of 26
+hours. However, with chronic administration, the half-life of carbamazepine
+decreases to an average of 12 hours. This results from the induction of
+hepatic CYP450 enzymes by carbamazepine, specifically the autoinduction
+of carbamazepine metabolism. The induction of hepatic enzymes reaches its
+
+
+
+
+<<<PAGE 2091>>>
+
+Cyclosporine
+Desipramine
+Dicumarol
+Doxepin
+Doxycycline
+Ethosuximide
+Felbamate
+Fentanyl
+Fluphenazine
+Haloperidol
+Hormonal contraceptives
+Imipramine
+Lamotrigine
+Methadone
+Methsuximide
+Methylprednisolone
+Nimodipine
+Pancuronium
+Phensuximide
+Phenytoin
+Primidone
+Theophylline
+Valproate
+Warfarin
+Carbamazepine may increase drug
+plasma concentrations of
+Clomipramine
+Phenytoin
+Primidone
+
+Fluoxetine
+Fluvoxamine
+Gemfibrozil
+Itraconazole
+Ketoconazole
+Isoniazida
+Itraconazole
+Lamotrigine
+Loratadine
+Macrolides
+Nefazodone
+Nicotinamide
+Propoxyphene
+Terfenadine
+Troleandomycin
+Valproatea
+Verapamil
+Viloxazine
+Drugs that may decrease
+carbamazepine plasma
+concentrations
+Carbamazepine
+(autoinduction)
+Cisplatin
+Doxorubicin HCl
+Felbamate
+Phenobarbital
+Phenytoin
+Primidone
+Rifampinb
+Theophylline
+Valproate
+
+aIncreased concentrations of the active 10,11-epoxide.
+bDecreased concentrations of carbamazepine and increased concentrations of the 10,11-
+
+epoxide.
+Table by Carlos A. Zarate, Jr., M.D. and Mauricio Tohen, M.D.
+
+
+
+
+<<<PAGE 2117>>>
+
+of panic disorder, benzodiazepines have the advantage of working quickly
+and not causing significant sexual dysfunction and weight gain. However, the
+SSRIs are still often preferred because they target common comorbid
+conditions, such as depression or OCD. Benzodiazepines and SSRIs can be
+initiated together to treat acute panic symptoms; use of the benzodiazepine
+can be tapered after 3 to 4 weeks once the therapeutic benefits of the SSRI
+have emerged.
+SOCIAL ANXIETY DISORDER. Clonazepam is an effective treatment for social
+
+anxiety disorder. Also, several other benzodiazepines (e.g., diazepam) have
+been used as adjunctive medications for the treatment of social anxiety
+disorder.
+Benzodiazepines are used adjunctively for
+treatment of adjustment disorder with anxiety, pathologic anxiety associated
+with life events (e.g., after an accident), OCD, and PTSD.
+OTHER ANXIETY DISORDERS.
+
+ANXIETY ASSOCIATED WITH DEPRESSION. Depressed patients often experience
+
+significant anxiety, and antidepressant drugs may cause initial exacerbation
+of these symptoms. Accordingly, benzodiazepines are indicated for the
+treatment of anxiety associated with depression.
+Bipolar I and II Disorders
+Clonazepam, lorazepam, and alprazolam are useful in the management of
+acute manic episodes and as an adjuvant to maintenance therapy instead of
+antipsychotics. As an adjuvant to lithium (Eskalith) or lamotrigine
+(Lamictal), clonazepam may result in an increased time between cycles and
+fewer depressive episodes. Benzodiazepines may help patients with bipolar
+disorder sleep better.
+Catatonia. Lorazepam, sometimes in low doses (less than 5 mg/day) and
+sometimes in very high doses (12 mg/day or more), is regularly used to treat
+acute catatonia, which is more frequently associated with bipolar disorder
+than with schizophrenia. Other benzodiazepines have also been said to be
+helpful. However, there are no valid controlled trials of benzodiazepines in
+catatonia. Chronic catatonia does not respond as well to benzodiazepines.
+
+
+
+
+<<<PAGE 2268>>>
+
+Neurophysiol. 2013;124(1):
+148–153.
+Du J, Suzuki K, Wei Y, Wang Y, Blumenthal R. The anticonvulsants
+lamotrigine, riluzole, and valproate differentially regulate AMPA receptor
+membrane localization: Relationship to clinical effects in mood disorders.
+Neuropsychopharmacology. 2007;32:793–802.
+Dubovsky SL. Calcium channel inhibitors. In: Sadock BJ, Sadock VA, Ruiz
+P, eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed.
+Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3065.
+Dubovsky SL, Buzan RD, Thomas M, Kassner C, Cullum CM. Nicardipine
+improves the antidepressant action of ECT but does not improve cognition.
+J ECT. 2001;17:
+3–10.
+Einat H, Manji HK. Cellular plasticity cascades: genes-to-behavior pathways
+in animal models of bipolar disorder. Biol Psychiatry. 2006;59:1160–1171.
+Findling RL, Frazier TW, Youngstrom EA, McNamara NK, Stansbrey RJ.
+Doubleblind, placebo-controlled trial of divalproex monotherapy in the treatment
+of symptomatic youth at high risk for developing bipolar disorder. J Clin
+Psychiatry. 2007;68:781–788.
+Freeman R, Durso-Decruz E, Emir B. Efficacy, safety, and tolerability of
+pregabalin treatment for painful diabetic peripheral neuropathy: findings
+from seven randomized, controlled trials across a range of doses. Diabetes
+Care. 2008;31:1448–1454.
+Frye MA, Ketter TA, Kimbrell TA, Dunn RT, Speer AM. A placebocontrolled study of lamotrigine and gabapentin monotherapy in refractory
+mood disorders. J Clin Psychopharmacol. 2000;20(6):607–614.
+Gadde KM, Franciscy DM, Wagner HR 2nd, Krishnan KR. Zonisamide for
+weight loss in obese adults: a randomized controlled trial. JAMA.
+2003;289(14):1820–1825.
+Geddes JR, Burgess S, Hawton K, Jamison K, Goodwin GM. Long-term
+lithium therapy for bipolar disorder: systematic review and meta-analysis
+of randomized controlled trials. Am J Psychiatry. 2004;161:217–222.
+Geddes JR, Calabrese JR, Goodwin GM. Lamotrigine for treatment of bipolar
+depression: Independent meta-analysis and meta-regression of individual
+patient data from five randomised trials. Br J Psychiatry. 2009;194:4.
+
+
+
+
+<<<PAGE 2269>>>
+
+Ghaemi NS, Ko JY, Katzow JJ. Oxcarbazepine treatment of refractory
+bipolar disorder: a retrospective chart review. Bipolar Disord.
+2002;4(1):70–74.
+Goldberg JF, Bowden CL, Calabrese JR. Six-month prospective life charting
+of mood symptoms with lamotrigine monotherapy versus placebo in rapid
+cycling bipolar disorder. Biol Psychiatry. 2008;63:125.
+Goodwin FK, Jamison KR. Manic-Depressive Illness. 2nd ed. New York:
+Oxford University Press; 2007.
+Goodwin GM, Bowden CL, Calabrese JR, Grunze H, Kasper S. A pooled
+analysis of 2 placebo-controlled 18-month trials of lamotrigine and lithium
+maintenance in bipolar I disorder. J Clin Psychiatry. 2004;65:432–441.
+Grunze H, Erfurth A, Marcuse A, Amann B, Normann C. Tiagabine appears
+not to be efficacious in the treatment of acute mania. J Clin Psychiatry.
+1999;60(11):
+759–762.
+Hartong EG, Moleman P, Hoogduin CA, Broekman TG, Nolen WA.
+Prophylactic efficacy of lithium versus carbamazepine in treatment-naive
+bipolar patients. J Clin Psychiatry. 2003;64:144–151.
+Harwood AJ. Lithium and bipolar mood disorder: the inositol-depletion
+hypothesis revisited. Mol Psychiatry. 2005;10:117.
+Hasan M, Pulman J, Marson AG. Calcium antagonists as an add-on therapy
+for drug-resistant epilepsy. Cochrane Database Syst Rev.
+2013;3:CD002750.
+Hoopes SP, Reimherr FW, Hedges DW, Rosenthal NR, Kamin M. Treatment
+of bulimia nervosa with topiramate in a randomized, double-blind,
+placebo-controlled trial, part 1: improvement in binge and purge measures.
+J Clin Psychiatry. 2003;64(11):
+1335–1341.
+Ikeda A, Kato T. Biological predictors of lithium response in bipolar
+disorder. Psychiatry Clin Neurosci. 2003;57:243–250.
+Ishioka M, Yasui-Furukori N, Hashimoto K, Sugawara N. Neuroleptic
+malignant syndrome induced by lamotrigine. Clin Neuropharmacol.
+2013;36(4):131–132.
+Isojarvi JI, Huuskonen UE, Pakarinen AJ, Vuolteenaho O, Myllyla VV. The
+regulation of serum sodium after replacing carbamazepine with
+oxcarbazepine. Epilepsia. 2001;42(6):741–745.
+
+
+
+
+<<<PAGE 2270>>>
+
+Jefferson JW, Greist JH. Lithium. In: Sadock BJ, Sadock VA, Ruiz P, eds.
+Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3132
+Johnson BA, Rosenthal N, Capece JA. Improvement of physical health and
+quality of life of alcohol-dependent individuals with topiramate treatment:
+US multisite randomized controlled trial. Arch Intern Med.
+2008;168:1188–1199.
+Johnson BA, Rosenthal N, Capece JA, Wiegand F, Mao L. Topiramate for
+treating alcohol dependence: a randomized controlled trial. JAMA.
+2007;298(14):1641.
+Kamalinia G, Brand S, Ghaeli P, Abedi N, Bajoghli H, Sharifi V, Zahiroddin
+A, Amini M, Rouini MR, Holsboer-Trachsler E, Mohammadpoor AH.
+Serum levels of sodium valproate in patients suffering from bipolar
+disorders: comparing acute and maintenance phases of mania.
+Pharmacopsychiatry. 2013;46(3):83–87.
+Kato T, Ishiwata M, Mori K, Washizuka S, Tajima O. Mechanisms of altered
+Ca2+ signaling in transformed lymphoblastoid cells from patients with
+bipolar disorder. Int J Neuropsychopharmacol. 2003;6:379–389.
+Ketter TA, Brooks JO, Hoblyn JC. Effectiveness of lamotrigine in bipolar
+disorder in a clinical setting. J Psychiatr Res. 2008;43:13–23.
+Ketter TA, Greist JH, Graham JA, Roberts JN, Thompson TR. The effect of
+dermatologic precautions on the incidence of rash with addition of
+lamotrigine in the treatment of bipolar I disorder: a randomized trial. J Clin
+Psychiatry. 2006;67(3):400–406.
+Ketter TA, Wang PW. Anticonvulsants: Gabapentin, levetiracetam,
+pregabalin, tiagabine, topiramate, zonisamide. In: Sadock BJ, Sadock VA,
+Ruiz P, eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry.
+9th ed. Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins;
+2009:3021.
+Ketter TA, Wang PW. Lamotrigine. In: Sadock BJ, Sadock VA, Ruiz P, eds.
+Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3127.
+Ketter TA, Wang PW, Becker OV, Nowakowska C, Yang YS. The diverse
+roles of anticonvulsants in bipolar disorders. Ann Clin Psychiatry.
+2003;15:95–108.
+Klitgaard H. Epilepsy therapy: anticonvulsants, lessons learned and unmet
+
+
+
+
+<<<PAGE 2271>>>
+
+medical needs. Expert Rev Neurother. 2013;13(1):13–14.
+Kozaric-Kovacic D, Eterovic M. Lamotrigine abolished aggression in a
+patient with treatment-resistant posttraumatic stress disorder. Clin
+Neuropharmacol. 2013;36(3):94–95.
+Kremer I, Vass A, Gorelik I, Bar G, Blanaru M, Javitt DC. Placebocontrolled trial of lamotrigine added to conventional and atypical
+antipsychotics in schizophrenia. Biol Psychiatry. 2004;56(6):441–446.
+Kushner SF, Khan A, Lane R, Olson WH. Topiramate monotherapy in the
+management of acute mania: results of four double-blind placebocontrolled trials. Bipolar Disord. 2006;8(1):15–27.
+Livingston C, Rampes H. Lithium: a review of its metabolic adverse effects.
+J Psychopharmacol. 2006;20:347–355.
+McClellan J, Kowatch R, Findling RL, Work Group on Quality Issues.
+Practice parameter for the assessment and treatment of children and
+adolescents with bipolar disorder. J Am Acad Child Adolesc Psychiatry.
+2007;46:107–125.
+McElroy SL, Hudson JI, Capece JA, Beyers K, Fisher AC. Topiramate for
+the treatment of binge eating disorder associated with obesity: a placebocontrolled study. Biol Psychiatry. 2007;61(9):1039–1048.
+McElroy SL, Kotwal R, Guerdjikova AI, Welge JA, Nelson EB. Zonisamide
+in the treatment of binge eating disorder with obesity: a randomized
+controlled trial. J Clin Psychiatry. 2006;67(12):1897–906.
+Mease PJ, Russell IJ, Arnold LM. A randomized, double-blind, placebocontrolled, phase III trial of pregabalin in the treatment of patients with
+fibromyalgia. J Rheumatol. 2008;35:502–514.
+Merideth CH. A single-center, double-blind, placebo-controlled evaluation of
+lamotrigine in the treatment of obesity in adults. J Clin Psychiatry.
+2006;67(2):258–262.
+Nahorski SR. Pharmacology of intracellular signaling pathways. Br J
+Pharmacol. 2006;147:S38.
+Perucca P, Mula M. Antiepileptic drug effects on mood and behavior:
+molecular targets. Epilepsy Behav. 2013;26(3):440–449.
+Post RM, Frye MA. Carbamazepine. In: Sadock BJ, Sadock VA, Ruiz P, eds.
+Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3073.
+Post RM, Frye MA. Valproate. In: Sadock BJ, Sadock VA, Ruiz P, eds.
+
+
+
+
+<<<PAGE 2273>>>
+
+Lamotrigine in treatment-resistant schizophrenia: a randomized placebocontrolled crossover trial. Biol Psychiatry. 2003;54(11):1241–1248.
+Trankner A, Sander C, Schonknecht P. A critical review of the recent
+literature and selected therapy guidelines since 2006 on the use of
+lamotrigine in bipolar disorder. Neuropsychiatr Dis Treat. 2013;9:101–
+111.
+Triggle DJ. Calcium channel antagonists: clinical uses—past, present and
+future. Biochem Pharmacol. 2007;74:1–9.
+Trinka E, Marson AG, Paesschen WV, Kälviäinen R, Marovac J, Duncan B,
+Buyle S, Hallström Y, Hon P, Muscas GC, Newton M, Meencke HJ, Smith
+PE, Pohlmann-Eden B, KOMET Study Group. KOMET: an unblinded,
+randomised, two parallel group, stratified trial comparing the effectiveness
+of levetiracetam with controlled-release carbamazepine and extendedrelease sodium valproate as monotherapy in patients with newly diagnosed
+epilepsy. J Neurol Neurosurg Psychiatry. 2013;84(10):1138–1147.
+Tritt K, Nickel C, Lahmann C, Leiberich PK, Rother WK. Lamotrigine
+treatment of aggression in female borderline-patients: a randomized,
+double-blind, placebocontrolled study. J Psychopharmacol. 2005;19(3):287–291.
+Viguera AC, Newport DJ, Ritchie J, Stowe Z, Whitfield T. Lithium in breast
+milk and nursing infants: clinical implications. Am J Psychiatry.
+2007;164:342–345.
+Vrielynck P. Current and emerging treatments for absence seizures in young
+patients. Neuropsychiatr Dis Treat. 2013;9:963–975.
+Wagner KD, Kowatch RA, Emslie GJ, Findling RL, Wilens TE, McCague K.
+A doubleblind, randomized, placebo-controlled trial of oxcarbazepine in the
+treatment of bipolar disorder in children and adolescents. Am J Psychiatry.
+2006;163(7):
+1179–1186.
+Walz JC, Frey BN, Andreazza AC, Cereser KM, Cacilhas AA. Effects of
+lithium and valproate on serum and hippocampal neurotrophin-3 levels in
+an animal model of mania. J Psychiatr Res. 2008;42(5):416–421.
+Wang HY, Friedman E. Increased association of brain protein kinase C with
+the receptor for activated C kinase-1 (RACK1) in bipolar affective
+disorder. Biol Psychiatry. 2001;50:364.
+
+
+
+
+<<<PAGE 3677>>>
+
+Laboratory testing and therapeutic blood monitoring, 603
+Laboratory testing, in psychiatry. See Medical assessment and laboratory
+testing
+Lacan, Jacques, 1084
+Lactate dehydrogenase (LDH), 66
+Lamictal. See Lamotrigine
+Lamotrigine, 253t, 375, 593, 600
+antiseizure effects or efficacy, 659
+dosage and administration, 660, 660t
+drug interactions, 659–660
+pharmacologic actions, 659
+precautions and adverse reactions, 659
+therapeutic indications, 659
+Language
+assessment of, 54
+competence, 107
+development, milestones in, 108t
+Language disorders, 47–48, 107–114, 109t, 143
+autism spectrum disorder and, 126, 126t
+differential diagnosis of, 111t
+in DSM-5, 107, 109, 109t
+expressive language deficits, 107–111
+clinical features, 109
+comorbidity, 111
+course and prognosis, 110
+diagnosis, 109–110
+differential diagnosis, 110, 111t
+etiology, 111
+treatment, 111
+mixed receptive and expressive deficits, 112
+clinical features, 112
+comorbidity, 113
+course and prognosis, 113
+diagnosis, 112
+differential diagnosis, 113
+
+

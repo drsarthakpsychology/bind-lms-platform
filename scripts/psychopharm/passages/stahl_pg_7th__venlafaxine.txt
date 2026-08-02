@@ -1,0 +1,1296 @@
+<<<PAGE 47>>>
+
+discontinuation syndrome: a 24-week randomized, double-blind, placebocontrolled trial . J Clin Psychiatry 2009 ;70 :1128 –37.
+Kennedy SH , Avedisova A , BelaÃ¯di C , Picarel-Blanchot F , de Bodinat
+C. Sustained efficacy of agomelatine 10 mg, 25 mg, and 25–50 mg on
+depressive symptoms and functional outcomes in patients with major
+depressive disorder . A placebo-controlled study over 6 months.
+Neuropsychopharmacol 2016 ;26 (2 ):378–89 .
+Khoo AL , Zhou HJ , Teng M , et al. Network meta-analysis and costeffectiveness analysis of new generation antidepressants . CNS Drugs 2015
+;29 (8 ):695 –712 .
+Martinotti G , Sepede G , Gambi F , et al. Agomelatine versus venlafaxine
+XR in the treatment of anhedonia in major depressive disorder: a pilot study
+. J Clin Psychopharmacol 2012 ;32 (4 ):487–91 .
+Racagni G , Riva MA , Molteni R , et al. Mode of action of agomelatine:
+synergy between melatonergic and 5-HT2C receptors . World J Biol
+Psychiatry 2011 ;12 (8 ):574–87 .
+Stahl SM . Mechanism of action of agomelatine: a novel antidepressant
+exploiting synergy between monoaminergic and melatonergic properties .
+CNS Spectr 2014 ;19 :207–12
+Stahl SM , Fava M , Trivedi M , et al. Agomelatine in the treatment of
+major depressive disorder. An 8 week, multicenter, randomized, placebocontrolled trial . J Clin Psychiatry 2010 ;71 (5 ):616–26 .
+
+
+
+
+<<<PAGE 141>>>
+
+plasma levels, so such agents can be useful to administer after an
+overdose but may also lower therapeutic efficacy of amphetamines
+Gastrointestinal alkalinizing agents (sodium bicarbonate, etc.) and
+urinary alkalinizing agents (acetazolamide, some thiazides) increase
+amphetamine plasma levels and potentiate amphetamine’s actions
+Desipramine and protryptiline can cause striking and sustained
+increases in brain concentrations of d-amphetamine and may also
+add to d-amphetamine’s cardiovascular effects
+Theoretically, other agents with norepinephrine reuptake blocking
+properties, such as venlafaxine, duloxetine, atomoxetine,
+milnacipran, and reboxetine, could also add to amphetamine’s CNS
+and cardiovascular effects
+Amphetamines may counteract the sedative effects of antihistamines
+Haloperidol, chlorpromazine, and lithium may inhibit stimulatory
+effects of amphetamines
+Theoretically, atypical antipsychotics should also inhibit stimulatory
+effects of amphetamines
+Theoretically, amphetamines could inhibit the antipsychotic actions
+of antipsychotics
+Theoretically, amphetamines could inhibit the mood-stabilizing
+actions of atypical antipsychotics in some patients
+Combinations of amphetamines with mood stabilizers (lithium,
+anticonvulsants, atypical antipsychotics) is generally something for
+
+
+
+
+<<<PAGE 163>>>
+
+Substrate for CYP450 2D6
+Drug Interactions
+May affect blood pressure and should be used cautiously with agents
+used to control blood pressure
+Gastrointestinal acidifying agents (guanethidine, reserpine, glutamic
+acid, ascorbic acid, fruit juices, etc.) and urinary acidifying agents
+(ammonium chloride, sodium phosphate, etc.) lower amphetamine
+plasma levels, so such agents can be useful to administer after an
+overdose but may also lower therapeutic efficacy of amphetamines
+Gastrointestinal alkalinizing agents (sodium bicarbonate, etc.) and
+urinary alkalinizing agents (acetazolamide, some thiazides) increase
+amphetamine plasma levels and potentiate amphetamine’s actions
+Desipramine and protryptiline can cause striking and sustained
+increases in brain concentrations of amphetamine and may also add
+to amphetamine’s cardiovascular effects
+Theoretically, other agents with norepinephrine reuptake blocking
+properties, such as venlafaxine, duloxetine, atomoxetine,
+milnacipran, and reboxetine, could also add to amphetamine’s CNS
+and cardiovascular effects
+Amphetamines may counteract the sedative effects of antihistamines
+Haloperidol, chlorpromazine, and lithium may inhibit stimulatory
+effects of amphetamines
+
+
+
+
+<<<PAGE 630>>>
+
+Social anxiety disorder (social phobia)
+Panic disorder
+Posttraumatic stress disorder (PTSD)
+Premenstrual dysphoric disorder (PMDD)
+How the Drug Works
+Boosts neurotransmitters serotonin, norepinephrine/noradrenaline,
+and dopamine
+Blocks serotonin reuptake pump (serotonin transporter), presumably
+increasing serotonergic neurotransmission
+Blocks norepinephrine reuptake pump (norepinephrine transporter),
+presumably increasing noradrenergic neurotransmission
+Desensitizes both serotonin 1A receptors and beta adrenergic
+receptors
+Since dopamine is inactivated by norepinephrine reuptake in frontal
+cortex, which largely lacks dopamine transporters, desvenlafaxine
+can increase dopamine neurotransmission in this part of the brain
+How Long Until It Works
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks
+If it is not working within 6 or 8 weeks for depression, it may
+require a dosage increase or it may not work at all
+
+
+
+
+<<<PAGE 636>>>
+
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of desvenlafaxine
+
+Dosing and use
+Usual Dosage Range
+Depression: 50 mg once daily
+Dosage Forms
+Tablet (extended-release) 25 mg, 50 mg, 100 mg
+How to Dose
+Initial dose 50 mg once daily; maximum recommended dose
+generally 100 mg once daily; doses up to 400 mg once daily have
+been shown to be effective but higher doses are associated with
+increased side effects
+Dosing Tips
+Desvenlafaxine is the active metabolite O-desmethylvenlafaxine
+(ODV) of venlafaxine, and is formed as the result of CYP450 2D6
+More potent at the serotonin transporter (SERT) than at the
+norepinephrine transporter (NET), but has greater inhibition of NET
+relative to SERT compared to venlafaxine
+
+
+
+
+<<<PAGE 637>>>
+
+Nonresponders at lower doses may try higher doses to be assured of
+the benefits of dual SNRI action
+For vasomotor symptoms, current data suggest that a dose of 100
+mg/day is effective
+Do not break or chew tablets, as this will alter controlled-release
+properties
+For some patients with severe problems discontinuing
+desvenlafaxine, it may be useful to add an SSRI with a long halflife, especially fluoxetine, prior to taper of desvenlafaxine. While
+maintaining fluoxetine dosing, first slowly taper desvenlafaxine and
+then taper fluoxetine
+Be sure to differentiate between reemergence of symptoms requiring
+reinstitution of treatment and withdrawal symptoms
+May dose up to 400 mg/day in patients who do not respond to lower
+doses, if tolerated
+Overdose
+No fatalities have been reported as monotherapy; headache,
+vomiting, agitation, dizziness, nausea, constipation, diarrhea, dry
+mouth, paresthesia, tachycardia
+Desvenlafaxine is the active metabolite of venlafaxine; fatal toxicity
+index data from the UK suggest a higher rate of deaths from
+overdose with venlafaxine than with SSRIs; it is unknown whether
+
+
+
+
+<<<PAGE 638>>>
+
+this is related to differences in patients who receive venlafaxine or
+to potential cardiovascular toxicity of venlafaxine
+Long-Term Use
+See doctor regularly to monitor blood pressure
+Habit Forming
+No
+How to Stop
+Taper to avoid withdrawal effects (dizziness, nausea, diarrhea,
+sweating, anxiety, irritability)
+Recommended taper schedule is to give a fully daily dose (50 mg)
+less frequently
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Active metabolite of venlafaxine
+Half-life 9–13 hours
+Minimally metabolized by CYP450 3A4
+Food does not affect absorption
+
+
+
+
+<<<PAGE 639>>>
+
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or for at least 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing desvenlafaxine
+Can rarely cause weakness, hyperreflexia, and incoordination when
+combined with sumatriptan or possibly other triptans, requiring
+careful monitoring of patient
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+NSAIDs may impair effectiveness of SSRIs
+Potent inhibitors of CYP450 3A4 may increase plasma levels of
+desvenlafaxine, but the clinical significance of this is unknown
+Few known adverse drug interactions
+False-positive urine immunoassay screening tests for phencyclidine
+(PCP) and amphetamine have been reported in patients taking
+desvenlafaxine, due to a lack of specificity of the screening tests.
+False-positive test results may be expected for several days
+following discontinuation of desvenlafaxine
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 640>>>
+
+Use with caution in patients with history of seizure
+Use with caution in patients with heart disease
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient has uncontrolled angle-closure glaucoma
+If patient is taking an MAOI
+If there is a proven allergy to desvenlafaxine or venlafaxine
+
+Special populations
+
+
+
+
+<<<PAGE 641>>>
+
+Renal Impairment
+For moderate impairment, recommended dose is 50 mg/day
+For severe impairment, recommended dose is 50 mg every other day
+Patients on dialysis should not receive subsequent dose until dialysis
+is completed
+Hepatic Impairment
+Doses greater than 100 mg/day not recommended
+Cardiac Impairment
+Drug should be used with caution
+Hypertension should be controlled prior to initiation of
+desvenlafaxine and should be monitored regularly during treatment
+Desvenlafaxine has a dose-dependent effect on increasing blood
+pressure
+Desvenlafaxine is the active metabolite of venlafaxine, which is
+contraindicated in patients with heart disease in the UK
+Venlafaxine can block cardiac ion channels in vitro and worsens
+(i.e., reduces) heart rate variability in depression, perhaps due to
+norepinephrine reuptake inhibition
+Elderly
+Some patients may tolerate lower doses better
+
+
+
+
+<<<PAGE 644>>>
+
+National Pregnancy Registry for Antidepressants: 1-866-961-2388,
+https://womensmentalhealth.org/research/pregnancyregistry/antidepr
+essants
+Breast Feeding
+Some drug is found in mother’s breast milk
+Trace amounts may be present in nursing children whose mothers
+are on desvenlafaxine
+If child becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+Immediate postpartum period is a high-risk time for depression,
+especially in women who have had prior depressive episodes, so
+drug may need to be reinstituted late in the third trimester or shortly
+after childbirth to prevent a recurrence during the postpartum period
+Must weigh benefits of breast feeding with risks and benefits of
+antidepressant treatment versus nontreatment to both the infant and
+the mother
+For many patients, this may mean continuing treatment during
+breast feeding
+
+The art of psychopharmacology
+Potential Advantages
+Patients with retarded depression
+
+
+
+
+<<<PAGE 645>>>
+
+Patients with atypical depression
+Patients with depression may have higher remission rates on SNRIs
+than on SSRIs
+Depressed patients with somatic symptoms, fatigue, and pain
+Depressed patients with vasomotor symptoms
+Patients who do not respond or remit on treatment with SSRIs
+Potential Disadvantages
+Patients sensitive to nausea
+Patients with borderline or uncontrolled hypertension
+Patients with cardiac disease
+Primary Target Symptoms
+Depressed mood
+Energy, motivation, and interest
+Sleep disturbance
+Physical symptoms
+Pain
+Pearls
+Because desvenlafaxine is only minimally metabolized by CYP450
+3A4 and is not metabolized at all by CYP450 2D6, as venlafaxine
+
+
+
+
+<<<PAGE 646>>>
+
+is, it should have more consistent plasma levels than venlafaxine
+In addition, although desvenlafaxine, like venlafaxine, is more
+potent at the serotonin transporter (SERT) than the norepinephrine
+transporter (NET), it has relatively greater actions on NET versus
+SERT than venlafaxine does at comparable doses
+The greater potency for NET may make it a preferable agent for
+conditions theoretically associated with targeting norepinephrine
+actions, such as vasomotor symptoms and fibromyalgia
+May be particularly helpful for hot flushes in perimenopausal
+women
+May be effective in patients who fail to respond to SSRIs
+May be used in combination with other antidepressants for
+treatment-refractory cases
+May be effective in a broad array of anxiety disorders and possibly
+adult ADHD, although it has not been studied in these conditions
+May be associated with higher depression remission rates than
+SSRIs
+Because of recent studies from the UK that suggest a higher rate of
+deaths from overdose with venlafaxine than with SSRIs, and
+because of its potential to affect heart function, venlafaxine can only
+be prescribed in the UK by specialist doctors and is contraindicated
+there in patients with heart disease
+Overdose data are from fatal toxicity index studies, which do not
+take into account patient characteristics or whether drug use was
+
+
+
+
+<<<PAGE 647>>>
+
+first- or second-line
+Venlafaxine’s toxicity in overdose is less than that for TCAs
+
+Suggested Reading
+Deecher DC , Beyer CE , Johnston G , et al. Desvenlafaxine succinate: a
+new serotonin and norepinephrine reuptake inhibitor . J Pharmacol Exp
+Ther 2006 ;318 (2 ):657–65 .
+Lieberman DZ , Montgomery SA , Tourian KA , et al. A pooled analysis of
+two placebo-controlled trials of desvenlafaxine in major depressive disorder
+. Int Clin Psychopharmacol 2008 ;23 (4 ):188–97 .
+Speroff L , Gass M , Constantine G . Efficacy and tolerability of
+desvenlafaxine succinate treatment for menopausal vasomotor symptoms: a
+randomized controlled trial . Obstet Gynecol 2008 ;111 (1 ):77 –87 .
+
+
+
+
+<<<PAGE 786>>>
+
+Sleep disturbance
+Anxiety
+Physical symptoms
+Pain
+Pearls
+Duloxetine has well-documented efficacy for the painful
+physical symptoms of depression
+Duloxetine has only somewhat greater potency for serotonin
+reuptake blockade than for norepinephrine reuptake blockade, but
+this is of unclear clinical significance as a differentiator from other
+SNRIs
+No head-to-head studies, but may have less hypertension than
+venlafaxine XR
+Powerful pro-noradrenergic actions may occur at doses greater than
+60 mg/day
+Not well studied in ADHD, but may be effective
+Approved in many countries for stress urinary incontinence
+Patients may have higher remission rate for depression on SNRIs
+than on SSRIs
+Add or switch to or from pro-noradrenergic agents (e.g.,
+atomoxetine, reboxetine, other SNRIs, mirtazapine, maprotiline,
+nortriptyline, desipramine, bupropion) with caution
+
+
+
+
+<<<PAGE 1100>>>
+
+Phenotypic testing may be necessary to detect this genetic variant
+prior to dosing with a tricyclic/tetracyclic antidepressant, especially
+in vulnerable populations such as children, elderly, cardiac
+populations, and those on concomitant medications
+Patients who seem to have extraordinarily severe side effects at
+normal or low doses may have this phenotypic CYP450 2D6 variant
+and require low doses or switching to another antidepressant not
+metabolized by 2D6
+
+Suggested Reading
+Anderson IM . Selective serotonin reuptake inhibitors versus tricyclic
+antidepressants: a meta-analysis of efficacy and tolerability . J Aff Disorders
+2000 ;58 :19 –36 .
+Anderson IM . Meta-analytical studies on new antidepressants . Br Med
+Bull 2001 ;57 :161–78 .
+Preskorn SH . Comparison of the tolerability of bupropion, fluoxetine,
+imipramine, nefazodone, paroxetine, sertraline, and venlafaxine . J Clin
+Psychiatry 1995 ;56 (Suppl 6):S12 –21.
+Workman EA , Short DD . Atypical antidepressants versus imipramine in
+the treatment of major depression: a meta-analysis . J Clin Psychiatry 1993
+;54 :5 –12.
+
+
+
+
+<<<PAGE 1106>>>
+
+Over-the-counter medications to avoid include cough and cold preparations, including those containing
+dextromethorphan (serotonin reuptake inhibitor), nasal decongestants (tablets, drops, or spray), hay-fever
+medications, sinus medications, asthma inhalant medications, anti-appetite medications, weight reducing
+preparations, “pep” pills (see Table 3 after Pearls)
+Hypoglycemia may occur in diabetic patients receiving insulin or oral antidiabetic agents (hydrazine effect)
+Binds and inactivates vitamin B6 (hydrazine effect); reversible with high-dose B6 administration
+Use cautiously in patients receiving reserpine, anesthetics, disulfiram, metrizamide, anticholinergic agents
+Isocarboxazid is not recommended for use in patients who cannot be monitored closely
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is taking dextromethorphan, a serotonin reuptake inhibitor
+If patient is taking diuretics or other antihypertensives without careful monitoring of blood pressure
+If patient has pheochromocytoma
+If patient has cardiovascular or cerebrovascular disease, until cleared by the patient’s medical doctor
+If patient is taking a prohibited drug
+If patient is not compliant with a low-tyramine diet
+If there is a proven allergy to isocarboxazid
+
+Special Populations
+Renal Impairment
+Use with caution –drug may accumulate in plasma
+May require lower than usual adult dose
+Hepatic Impairment
+Use cautiously in hepatic impairment
+Cardiac Impairment
+
+
+
+
+<<<PAGE 1198>>>
+
+May affect blood pressure and should be used cautiously with agents
+used to control blood pressure
+Gastrointestinal acidifying agents (guanethidine, reserpine, glutamic
+acid, ascorbic acid, fruit juices, etc.) and urinary acidifying agents
+(ammonium chloride, sodium phosphate, etc.) lower amphetamine
+plasma levels, so such agents can be useful to administer after an
+overdose but may also lower therapeutic efficacy of amphetamines
+Gastrointestinal alkalinizing agents (sodium bicarbonate, etc.) and
+urinary alkalinizing agents (acetazolamide, some thiazides) increase
+amphetamine plasma levels and potentiate amphetamine’s actions
+Desipramine and protryptiline can cause striking and sustained
+increases in brain concentrations of d-amphetamine and may also
+add to d-amphetamine’s cardiovascular effects
+Theoretically, other agents with norepinephrine reuptake blocking
+properties, such as venlafaxine, duloxetine, atomoxetine,
+milnacipran, and reboxetine, could also add to amphetamine’s CNS
+and cardiovascular effects
+Amphetamines may counteract the sedative effects of antihistamines
+Haloperidol, chlorpromazine, and lithium may inhibit stimulatory
+effects of amphetamine
+Theoretically, atypical antipsychotics should also inhibit stimulatory
+effects of amphetamines
+Theoretically, amphetamines could inhibit the antipsychotic actions
+of antipsychotics
+
+
+
+
+<<<PAGE 1431>>>
+
+First-pass metabolism is not extensive with transdermal dosing, thus
+resulting in notably higher exposure to methylphenidate and lower
+exposure to metabolites as compared to oral dosing
+Drug Interactions
+May affect blood pressure and should be used cautiously with agents
+used to control blood pressure
+May inhibit metabolism of SSRIs, anticonvulsants (phenobarbital,
+phenytoin, primidone), TCA, and coumarin anticoagulants,
+requiring downward dosage adjustments of these drugs
+Serious adverse effects may occur if combined with clonidine
+(controversial)
+Use with MAOIs, including within 14 days of MAOI use, is not
+advised, but this can sometimes be considered by experts who
+monitor depressed patients closely when other treatment options for
+depression fail
+CNS and cardiovascular actions of d,l-methylphenidate could
+theoretically be enhanced by combination with agents that block
+norepinephrine reuptake, such as the TCAs desipramine or
+protriptyline, venlafaxine, duloxetine, atomoxetine, milnacipran,
+and reboxetine
+Theoretically, antipsychotics should inhibit the stimulatory effects of
+d,l-methylphenidate
+
+
+
+
+<<<PAGE 1453>>>
+
+Patients with cardiovascular disease
+Potential Disadvantages
+Patients particularly concerned about gaining weight
+Patients with low energy
+Primary Target Symptoms
+Depressed mood
+Sleep disturbance
+Anxiety
+Pearls
+
+✽ Adding alpha 2 antagonism to agents that block serotonin and/or
+norepinephrine reuptake may be synergistic for severe depression
+Adding mianserin to venlafaxine or SSRIs may reverse druginduced anxiety and insomnia
+Efficacy of mianserin for depression in cancer patients has been
+shown in small controlled studies
+
+✽ Only causes sexual dysfunction infrequently
+Generally better tolerated than TCAs, including safer in overdose
+General lack of cardiovascular toxicity
+
+
+
+
+<<<PAGE 1487>>>
+
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+SSRIs, bupropion, reboxetine, atomoxetine (use combinations of
+antidepressants with caution as this may activate bipolar disorder
+and suicidal ideation)
+
+✽ Venlafaxine (“California rocket fuel” ; a potentially powerful dual
+serotonin and norepinephrine combination, but observe for activation
+of bipolar disorder and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines
+Hypnotics or trazodone for insomnia
+Tests
+None for healthy individuals
+May need liver function tests for those with hepatic abnormalities
+before initiating treatment
+
+
+
+
+<<<PAGE 1498>>>
+
+✽ Adding alpha 2 antagonism to agents that block serotonin and/or
+norepinephrine reuptake may be synergistic for severe depression
+Adding mirtazapine to venlafaxine or SSRIs may reverse druginduced anxiety and insomnia
+Adding mirtazapine’s 5HT3 antagonism to venlafaxine or SSRIs
+may reverse drug-induced nausea, diarrhea, stomach cramps, and
+gastrointestinal side effects
+SSRIs, venlafaxine, bupropion, phentermine, or stimulants may
+mitigate mirtazapine-induced weight gain
+If weight gain has not occurred by week 6 of treatment, it is less
+likely for there to be significant weight gain
+Has been demonstrated to have an earlier onset of action than SSRIs
+
+✽ Does not affect the CYP450 system, and so may be preferable in
+patients requiring concomitant medications
+
+Preliminary evidence suggests efficacy as an augmenting agent to
+haloperidol in treating negative symptoms of schizophrenia
+Anecdotal reports of efficacy in recurrent brief depression
+Weight gain as a result of mirtazapine treatment is more likely in
+women than in men, and before menopause rather than after
+
+✽ May cause sexual dysfunction only infrequently
+
+Patients can have carryover sedation and intoxicated-like feeling if
+particularly sensitive to sedative side effects when initiating dosing
+
+
+
+
+<<<PAGE 1506>>>
+
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phente
+
+Pseudoephedrine
+
+MethylphenidateCocaineMethamphetamineModafinilArmodafinil
+
+NRIsNDRIs
+
+Local a
+contain
+vasoco
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is in an acute confusional state
+If patient has pheochromocytoma or thyrotoxicosis
+If there is a proven allergy to moclobemide
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Plasma concentrations are increased
+May require one-half to one-third of usual adult dose
+Cardiac Impairment
+Cardiac impairment may require lower than usual adult dose
+Patients with angina pectoris or coronary artery disease should limit their exertion
+Elderly
+Elderly patients may have greater sensitivity to adverse effects, but many tolerate MAOIs
+
+
+
+
+<<<PAGE 1775>>>
+
+** Not necessary for 6 mg transdermal or low-dose oral selegiline
+Table 3. Drugs that boost norepinephrine: should only be used with caution
+with MAOIs
+Use With Caution:
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phentermine
+
+Pseudoephedrine
+
+Methylphenidate
+Cocaine
+Methamphetamine
+Modafinil
+Armodafinil
+
+NRIs NDRIs
+
+Local
+anesthetics
+containing
+vasoconstrictors
+Tapentadol
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake
+inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g.,
+SSRIs, tramadol, milnacipran, duloxetine, venlafaxine, clomipramine,
+imipramine, etc.)
+
+
+
+
+<<<PAGE 2399>>>
+
+Venlafaxine
+
+Therapeutics
+Brands
+Effexor
+Effexor XR
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin and norepinephrine
+reuptake inhibitor (SN-RI)
+SNRI (dual serotonin and norepinephrine reuptake inhibitor); often
+classified as an antidepressant, but it is not just an antidepressant
+Commonly Prescribed for
+(bold for FDA approved)
+Depression
+Generalized anxiety disorder (GAD)
+Social anxiety disorder (social phobia)
+
+
+
+
+<<<PAGE 2406>>>
+
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of venlafaxine
+
+Dosing And Use
+Usual Dosage Range
+Depression: 75–225 mg/day, once daily (extended-release) or
+divided into 2–3 doses (immediate-release)
+GAD: 150–225 mg/day
+Dosage Forms
+Capsule (extended-release) 37.5 mg, 75 mg, 150 mg
+Tablet (extended-release) 37.5 mg, 75 mg, 150 mg, 225 mg
+Tablet 25 mg scored, 37.5 mg scored, 50 mg scored, 75 mg scored,
+100 mg scored
+How to Dose
+Initial dose 37.5 mg once daily (extended-release) or 25–50 mg
+divided into 2–3 doses (immediate-release) for a week, if tolerated;
+
+
+
+
+<<<PAGE 2407>>>
+
+increase daily dose generally no faster than 75 mg every 4 days until
+desired efficacy is reached; maximum dose generally 375 mg/day
+Usually try doses at 75 mg increments for a few weeks prior to
+incrementing by an additional 75 mg
+Dosing Tips
+At all doses, potent serotonin reuptake blockade
+75–225 mg/day may be predominantly serotonergic in some
+patients, and dual serotonin and norepinephrine acting in other
+patients
+225–375 mg/day is dual serotonin and norepinephrine acting in most
+patients
+
+✽ Thus, nonresponders at lower doses should try higher doses to be
+assured of the benefits of dual SNRI action
+At very high doses (e.g., >375 mg/day), dopamine reuptake blocked
+as well in some patients
+Up to 600 mg/day has been given for heroic cases
+Venlafaxine has an active metabolite O-desmethylvenlafaxine
+(ODV), which is formed as the result of CYP450 2D6
+Thus, CYP450 2D6 inhibition reduces the formation of ODV, but
+this is of uncertain clinical significance
+
+✽ Consider checking plasma levels of ODV and venlafaxine in
+nonresponders who tolerate high doses, and if plasma levels are low,
+
+
+
+
+<<<PAGE 2408>>>
+
+experts can prudently prescribe doses above 375 mg/day while
+monitoring closely
+Do not break or chew venlafaxine XR capsules, as this will alter
+controlled-release properties
+
+✽ For patients with severe problems discontinuing venlafaxine,
+dosing may need to be tapered over many months (i.e., reduce dose by
+1% every 3 days by crushing tablet and suspending or dissolving in
+100 mL of fruit juice, and then disposing of 1 mL and drinking the
+rest; 3–7 days later, dispose of 2 mL, and so on). This is both a form of
+very slow biological tapering and a form of behavioral desensitization
+(not for XR)
+For some patients with severe problems discontinuing venlafaxine,
+it may be useful to add an SSRI with a long half-life, especially
+fluoxetine, prior to taper of venlafaxine; while maintaining
+fluoxetine dosing, first slowly taper venlafaxine and then taper
+fluoxetine
+Be sure to differentiate between reemergence of symptoms requiring
+reinstitution of treatment and withdrawal symptoms
+Overdose
+Can be lethal; may cause no symptoms; possible symptoms include
+sedation, convulsions, rapid heartbeat
+Fatal toxicity index data from the UK suggest a higher rate of deaths
+from overdose with venlafaxine than with SSRIs
+
+
+
+
+<<<PAGE 2409>>>
+
+Unknown whether this is related to differences in patients who
+receive venlafaxine or to potential cardiovascular toxicity of
+venlafaxine
+Long-Term Use
+See doctor regularly to monitor blood pressure, especially at doses
+>225 mg/day
+Habit Forming
+No
+How to Stop
+Taper to avoid withdrawal effects (dizziness, nausea, stomach
+cramps, sweating, tingling, dysesthesias)
+Many patients tolerate 50% dose reduction for 3 days, then another
+50% reduction for 3 days, then discontinuation
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+
+✽ Withdrawal effects can be more common or more severe with
+venlafaxine than with some other antidepressants
+Pharmacokinetics
+Parent drug has 3–7 hour half-life
+Active metabolite has 9–13 hour half-life
+
+
+
+
+<<<PAGE 2410>>>
+
+Food does not affect absorption
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOI or for at least 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing venlafaxine
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+Concomitant use with cimetidine may reduce clearance of
+venlafaxine and raise venlafaxine levels
+Could theoretically interfere with the analgesic actions of codeine or
+possibly with other triptans
+Few known adverse drug interactions
+Other Warnings/Precautions
+Use with caution in patients with history of seizures
+Use with caution in patients with heart disease
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+
+
+
+
+<<<PAGE 2411>>>
+
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient has uncontrolled angle-closure glaucoma
+If patient is taking an MAOI
+If there is a proven allergy to venlafaxine
+
+Special Populations
+Renal Impairment
+Lower dose by 25–50%
+Patients on dialysis should not receive subsequent dose until dialysis
+is completed
+
+
+
+
+<<<PAGE 2412>>>
+
+Hepatic Impairment
+Lower dose by 50%
+Cardiac Impairment
+Drug should be used with caution
+Hypertension should be controlled prior to initiation of venlafaxine
+and should be monitored regularly during treatment
+Venlafaxine has a dose-dependent effect on increasing blood
+pressure
+Venlafaxine is contraindicated in patients with heart disease in the
+UK
+Venlafaxine can block cardiac ion channels in vitro
+Venlafaxine worsens (i.e., reduces) heart rate variability in
+depression, perhaps due to norepinephrine reuptake inhibition
+Elderly
+Some patients may tolerate lower doses better
+Risk of SIADH with SSRIs is higher in the elderly
+Reduction in the risk of suicidality with antidepressants compared to
+placebo in adults age 65 and older
+Children and Adolescents
+
+
+
+
+<<<PAGE 2414>>>
+
+Nonetheless, continuous treatment during pregnancy may be
+necessary and has not been proven to be harmful to the fetus
+Must weigh the risk of treatment (first trimester fetal development,
+third trimester newborn delivery) to the child against the risk of no
+treatment (recurrence of depression, maternal health, infant
+bonding) to the mother and child
+For many patients this may mean continuing treatment during
+pregnancy
+Neonates exposed to SSRIs or SNRIs late in the third trimester have
+developed complications requiring prolonged hospitalization,
+respiratory support, and tube feeding; reported symptoms are
+consistent with either a direct toxic effect of SSRIs and SNRIs or,
+possibly, a drug discontinuation syndrome, and include respiratory
+distress, cyanosis, apnea, seizures, temperature instability, feeding
+difficulty, vomiting, hypoglycemia, hypotonia, hypertonia,
+hyperreflexia, tremor, jitteriness, irritability, and constant crying
+National Pregnancy Registry for Antidepressants: 1-866-961-2388,
+https://womensmentalhealth.org/research/pregnancyregistry/antidepr
+essants
+Breast Feeding
+Some drug is found in mother’s breast milk
+Trace amounts may be present in nursing children whose mothers
+are on venlafaxine
+
+
+
+
+<<<PAGE 2417>>>
+
+✽ Has greater potency for serotonin reuptake blockade than for
+norepinephrine reuptake blockade, but this is of unclear clinical
+significance as a differentiating feature from other SNRIs
+
+✽ In vitro binding studies tend to underestimate in vivo potency for
+reuptake blockade, as they do not factor in the presence of high
+concentrations of an active metabolite, higher oral mg dosing, or the
+lower protein binding which can increase functional drug levels at
+receptor sites
+Effective dose range is broad (i.e., 75–375 mg in many difficult
+cases, and up to 600 mg or more in heroic cases)
+
+✽ Preliminary studies in neuropathic pain and fibromyalgia suggest
+potential efficacy
+Efficacy as well as side effects (especially nausea and increased
+blood pressure) are dose-dependent
+Blood pressure increases rare for XR formulation in doses up to 225
+mg
+More withdrawal reactions reported upon discontinuation than for
+some other antidepressants
+May be helpful for hot flushes in perimenopausal women
+May be associated with higher depression remission rates than
+SSRIs
+
+✽ Because of recent studies from the UK that suggest a higher rate of
+deaths from overdose with venlafaxine than with SSRIs, and because
+of its potential to affect heart function, venlafaxine can only be
+
+
+
+
+<<<PAGE 2418>>>
+
+prescribed in the UK by specialist doctors and is contraindicated there
+in patients with heart disease
+Overdose data are from fatal toxicity index studies, which do not
+take into account patient characteristics or whether drug use was
+first- or second-line
+Venlafaxine’s toxicity in overdose is less than that for TCAs
+
+Suggested Reading
+Buckley NA , McManus PR . Fatal toxicity of serotonergic and other
+antidepressant drugs: analysis of United Kingdom mortality data . BMJ
+2002 ;325 :1332 –3.
+Cheeta S , Schifano F , Oyefeso A , Webb L , Ghodse AH . Antidepressantrelated deaths and antidepressant prescriptions in England and Wales,
+1998–2000 . Br J Psychiatry 2004 ;184 :41 –7.
+Davidson J , Watkins L , Owens M , et al. Effects of paroxetine and
+venlafaxine XR on heart rate variability in depression . J Clin
+Psychopharmacol 2005 ;25 :480 –4 .
+Hackett D . Venlafaxine XR in the treatment of anxiety . Acta Psychiatrica
+Scand 2000 ;406 (Suppl):S30–5.
+Sheehan DV . Attaining remission in generalized anxiety disorder:
+venlafaxine extended-release comparative data . J Clin Psychiatry 2001 ;62
+(Suppl 19):S26 –31.
+
+
+
+
+<<<PAGE 2419>>>
+
+Smith D , Dempster C , Glanville J , Freemantle N , Anderson I . Efficacy
+and tolerability of venlafaxine compared with selective serotonin reuptake
+inhibitors and other antidepressants: a meta-analysis . Br J Psychiatry 2002
+;180 :396 –404 .
+Wellington K , Perry CM . Venlafaxine extended-release: a review of its use
+in the management of major depression . CNS Drugs 2001 ;15 :643–9 .
+
+
+
+
+<<<PAGE 2581>>>
+
+Deplin (l-methylfolate), 477
+Deprakine (valproate), 829
+Depral (sulpiride), 741
+Depramine (imipramine), 367
+Deprax (trazodone), 793
+Deprenon (fluoxetine), 301
+Deprenyl (selegiline), 705
+Depressase (maprotiline), 465
+Deprex (fluoxetine), 301
+Deprilan (selegiline), 705
+Deprilept (maprotiline), 465
+Deprimyl (lofepramine), 421
+Deprinocte (estazolam), 281
+Deprinol (imipramine), 367
+Depsin (mianserin), 495
+Deptran (doxepin), 255
+Deroxat (paroxetine), 593
+Desconex (loxapine), 443
+Desfax (desvenlafaxine), 215
+Desidox (doxepin), 255
+desipramine, 207
+Desisulpid (sulpiride), 741
+Desitriptylin (amitriptyline), 25
+desvenlafaxine, 215
+Desyrel (trazodone), 793
+deutetrabenazine, 221
+Devidon (trazodone), 793
+DexAlone (dextromethorphan), 225
+
+
+
+
+<<<PAGE 2584>>>
+
+Doxal (doxepin), 255
+Doxedyn (doxepin), 255
+doxepin, 255
+Dozic (haloperidol), 347
+D-Pam (diazepam), 229
+Drenian (diazepam), 229
+Dresent (sulpiride), 741
+Ducene (diazepam), 229
+duloxetine, 263
+Dumirox (fluvoxamine), 325
+Dumozolam (triazolam), 799
+Dumyrox (fluvoxamine), 325
+Duraclon (clonidine), 179
+Duract (dextromethorphan), 225
+Duradiazepam (diazepam), 229
+Duralith (lithium), 415
+Duraperidol (haloperidol), 347
+Durazepam (oxazepam), 569
+Durazolam (lorazepam), 437
+Dutonin (nefazodone), 545
+Dyanavel XR (amphetamine d,l), 45
+Eclorion (sulpiride), 741
+Edluar (zolpidem), 871
+Edronax (reboxetine), 681
+Efectin (venlafaxine), 841
+Efexir (venlafaxine), 841
+Efexor (venlafaxine), 841
+Efexor XL (venlafaxine), 841
+
+
+
+
+<<<PAGE 2585>>>
+
+Effexor (venlafaxine), 841
+Effexor XR (venlafaxine), 841
+Effiplen (buspirone), 123
+Egibren (selegiline), 705
+Eglonyl (sulpiride), 741
+Elavil (amitriptyline), 25
+Elavil Plus (amitriptyline), 25
+Eldepryl (selegiline), 705
+Elenium (chlordiazepoxide), 147
+Elepsia XR (levetiracetam), 399
+Eliwel (amitriptyline), 25
+Ellefore (desvenlafaxine), 215
+Elmendos (lamotrigine), 387
+Elopram (citalopram), 159
+Elperil (thioridazine), 759
+Elroquil N (hydroxyzine), 355
+Elvanse (lisdexamfetamine), 409
+Emdalen (lofepramine), 421
+Emsam (selegiline), 705
+EnBrace HR (l-methylfolate), 477
+Endep (amitriptyline), 25
+Enimon (sulpiride), 741
+Enlyte (l-methylfolate), 477
+Epial (carbamazepine), 131
+Epilim (valproate), 829
+Epitol (carbamazepine), 131
+Epitomax (topiramate), 781
+Equetro (carbamazepine), 131
+
+
+
+
+<<<PAGE 2622>>>
+
+Tranquipam (lorazepam), 437
+Tranquirit (diazepam), 229
+Tranquo (oxazepam), 569
+Tranquo/Tablinen (diazepam), 229
+Transene (clorazepate), 185
+Tranxene (clorazepate), 185
+Tranxilen (clorazepate), 185
+Tranxilium (clorazepate), 185
+tranylcypromine, 787
+Tranzen (clorazepate), 185
+Travin (buspirone), 123
+Trazepam (oxazepam), 569
+trazodone, 793
+trazodone XR, 793
+Trazolan (trazodone), 793
+Tremorex (selegiline), 705
+Trepiline (amitriptyline), 25
+Tresleen (sertraline), 721
+Trevicta (paliperidone), 581
+Trevilor (venlafaxine), 841
+Trewilor (venlafaxine), 841
+triazolam, 799
+Triazoral (triazolam), 799
+Trifluo perazin (trifluoperazine), 803
+trifluoperazine, 803
+trihexyphenidyl, 809
+triiodothyronine, 813
+Trilafon (perphenazine), 607
+
+
+
+
+<<<PAGE 2625>>>
+
+valproic acid (valproate), 829
+valpromide (valproate), 829
+Valsera (flunitrazepam), 297
+Vandral (venlafaxine), 841
+varenicline, 837
+Vatran (diazepam), 229
+Venefon (imipramine), 367
+venlafaxine, 841
+venlafaxine XR, 841
+Versacloz (clozapine), 191
+Versed (midazolam), 499
+Vertigo (sulpiride), 741
+Vesadol (haloperidol), 347
+Vesalium (haloperidol), 347
+Vesparax (hydroxyzine), 355
+Vesparax mite (hydroxyzine), 355
+Vesparax Novum (hydroxyzine), 355
+Viagra (sildenafil), 729
+Vicks Formula 44 (diphenhydramine), 235
+Vigiten (lorazepam), 437
+Viibryd (vilazodone), 847
+vilazodone, 847
+Vincosedan (diazepam), 229
+Visergil (thioridazine), 759
+Vistaril (hydroxyzine), 355
+Vivactil (protriptyline), 657
+Vival (diazepam), 229
+Vivapryl (selegiline), 705
+
+
+
+
+<<<PAGE 2641>>>
+
+Generalized anxiety disorder
+agomelatine, 5
+alprazolam , 11
+citalopram, 159
+desvenlafaxine, 215
+duloxetine , 263
+escitalopram , 269
+fluoxetine, 301
+fluvoxamine, 325
+mirtazapine, 509
+paroxetine , 509
+pregabalin, 647
+propranolol, 653
+sertraline, 721
+tiagabine (adjunct), 771
+venlafaxine , 841
+vortioxetine, 853
+Glossopharyngeal neuralgia
+carbamazepine, 131
+Hiccups, intractable
+chlorpromazine , 153
+Hypersalivation
+clonidine, 179
+Hypertension
+clonidine , 179
+guanfacine , 343
+
+
+
+
+<<<PAGE 2647>>>
+
+lofexidine , 427
+naltrexone , 537
+Panic disorder
+alprazolam , 11
+citalopram, 159
+clonazepam , 173
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine, 325
+isocarboxazid, 375
+lorazepam, 437
+mirtazapine, 509
+nefazodone, 545
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+reboxetine, 681
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Parkinson’s disease
+selegiline , 705
+zonisamide, 875
+Parkinson’s disease dementia
+
+
+
+
+<<<PAGE 2649>>>
+
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+mirtazapine, 509
+nefazodone, 545
+olanzapine, 558
+paliperidone, 580
+paroxetine , 593
+prazosin (nightmares) 643
+propranolol (prophylactic) 653
+quetiapine, 667
+risperidone, 687
+sertraline , 721
+venlafaxine, 841
+ziprasidone, 863
+Premenstrual dysphoric disorder
+alprazolam, 11
+citalopram, 159
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+Preoperative anxiety
+chlordiazepoxide , 147
+chlorpromazine, 153
+
+

@@ -1,0 +1,825 @@
+<<<PAGE 105>>>
+
+Chapter 4: Psychosis, Schizophrenia, and Neurotransmitter Networks
+
+Go - Direct Pathway Activated
+
+Stop - Indirect Pathway Activated
+STOP:
+don’t go
+
+GO
+
++ glu
+
+Cortex
+
+Cortex
+
+-
+
+GABA
+
+Thalamus
+
+Thalamus
+
+4
+
++ glu
+GABA
+-
+
+STN
+
+GPi /SN r
+activation of
+direct pathway
+“GO”
+
+STN= subthalamic nucleus
+SNr = substantia nigra reticulata
+SNc = substantia nigra compacta
+GPe = globus pallidus externa
+GPi = globus pallidus interna
+glu = glutamate
+GABA = γ-aminobutyric acid
+
+STN
+
+GPi /SN r
+
+GABA
+-
+
+GPe
+
+GPe
+
+Striatum
+
+activation of
+indirect pathway
+“STOP”
+“don’t go”
+
+Striatum
+
+SNc
+
+Figure 4-13C Activation of the direct (go) dopamine
+pathway. A γ-aminobutyric acid (GABA) neuron projecting
+from the striatum to the globus pallidus interna is activated. The
+released GABA inhibits activity of another GABAergic neuron
+that projects to the thalamus. In the absence of GABA release in
+the thalamus, a glutamatergic neuron is activated and releases
+glutamate into the cortex, stimulating movement.
+
+neck). These same movement disorders can be replicated
+by drugs that block D2 DA receptors in this pathway,
+causing drug-induced parkinsonism (sometimes called
+by its better-known but much less accurate name
+extrapyramidal symptoms or EPS). This will be discussed
+in more detail in Chapter 5 on drugs for the treatment of
+psychosis.
+Not only can too little DA activity cause movement
+disorders, so can too much. Thus, hyperactivity of
+DA in the nigrostriatal pathway is thought to underlie
+various hyperkinetic movement disorders such as chorea,
+dyskinesias, and tics (in conditions such as Huntington’s
+disease, Tourette syndrome, and others). Chronic
+stimulation of D2 DA receptors in the nigrostriatal
+pathway by treatment of Parkinson’s disease with
+levodopa is hypothesized to underlie the emergence of
+abnormal hyperkinetic and dyskinetic movements (called
+
+STN= subthalamic nucleus
+SNr = substantia nigra reticulata
+SNc= substantia nigra compacta
+GPe = globus pallidus externa
+GP i = globus pallidus interna
+glu = glutamate
+GABA = γ-aminobutyric acid
+
+SN c
+
+Figure 4-13D Activation of the indirect (stop) dopamine
+pathway. A γ-aminobutyric acid (GABA) neuron projecting from
+the striatum to the globus pallidus externa is activated. The
+released GABA inhibits activity of another GABAergic neuron
+that projects to the subthalamic nucleus (STN). In the absence
+of GABA release in the STN, a glutamatergic neuron is activated
+and releases glutamate into the globus pallidus interna, which
+in turn stimulates a GABAergic neuron to release GABA into
+the thalamus. GABA then binds to a glutamatergic neuron,
+inhibiting it from releasing glutamate into the cortex and thus
+inhibiting movement.
+
+levodopa-induced dyskinesias or LID). Chronic blockade
+of these same D2 DA receptors in the nigrostriatal
+pathway is hypothesized to cause another hyperkinetic
+movement disorder known as tardive dyskinesia. Tardive
+dyskinesia and its treatment will be discussed further in
+Chapter 5 on drugs for psychosis.
+The Mesolimbic Dopamine Pathway
+
+The mesolimbic DA pathway projects from DA cell
+bodies in the VTA of the brainstem (i.e., mesencephalon)
+to the nucleus accumbens in the ventral striatum,
+which is part of the limbic system (thus, mesolimbic)
+(Figures 4-10 and 4-14 A–D). DA release from this
+pathway is thought to have an important role in several
+
+89
+
+
+
+
+<<<PAGE 185>>>
+
+Chapter 5: Targeting for Psychosis
+
+M1 Inserted
+cholinergic neuron
+
+ACh
+
+LAXATIVE
+constipation
+
+E
+E
+
+P Q
+P
+Q
+blurred
+vision
+
+cognitive
+dysfunction
+
+M1
+receptor
+dry mouth
+drowsiness
+
+Figure 5-8 Side effects of muscarinic cholinergic receptor blockade. Blockade of muscarinic cholinergic receptors can reduce druginduced parkinsonism, but can also induce side effects such as constipation, blurred vision, dry mouth, drowsiness, and cognitive
+dysfunction (problems with memory and concentration, slowed cognitive processing).
+
+or stopping anticholinergic medications, or use of
+amantadine, which lacks anticholinergic properties but
+can mitigate the symptoms of DIP.
+Amantadine’s mechanism of action is thought to be
+weak antagonism of NMDA (N-methyl-D-aspartate)
+glutamate receptors, possibly leading to downstream
+changes in the activity of dopamine in both the direct
+and indirect striatal motor pathways. No matter what its
+actual mechanism of action, amantadine can be useful
+for improving DIP and also has some evidence of being
+useful in TD and levodopa-induced dyskinesias caused by
+levodopa treatment of Parkinson’s disease.
+Drug-Induced Acute Dystonia
+
+Occasionally, exposure to D2 blockers, especially those
+with neither serotonergic nor anticholinergic properties,
+can cause a condition called dystonia, often upon first
+exposure to the D2 blocker. Dystonia is intermittent
+spasmodic or sustained involuntary contraction of the
+muscles in the face, neck, trunk, pelvis, extremities,
+or even the eyes. Drug-induced dystonias can be
+frightening and severe; fortunately, administration of an
+intramuscular injection of an anticholinergic is nearly
+always effective within 20 minutes. The cause and the
+treatment of this condition are other examples of the
+clinical significance of the balance between dopamine
+and acetylcholine in the motor striatum for the regulation
+of movements (Figures 5-7A, 5-7B, and 5-7C).
+Chronic treatment with D2 blockers can also cause
+late-onset dystonia as a manifestation of tardive
+dyskinesia, sometimes also called tardive dystonia. This
+requires TD treatment, as anticholinergics rarely work for
+
+this condition and can even make this form of dystonia
+worse.
+Akathisia
+
+Akathisia is a syndrome of motor restlessness seen
+commonly after treatment with D2 blockers. Akathisia
+has both subjective and objective features. Subjectively,
+there is a sense of inner restlessness, mental unease, or
+dysphoria. Objectively, there are restless movements,
+most typical being lower-limb movements such as
+rocking from foot to foot, walking or marching in place
+when standing, or pacing. Sometimes drug-induced
+akathisia can be difficult to distinguish from the
+agitation and repetitive restless movements that are
+part of the underlying psychiatric disorder. Akathisia is
+not particularly effectively treated with anticholinergic
+medication, but instead is often more effectively treated
+with either β-adrenergic blockers or benzodiazepines.
+Serotonin 2A antagonists can also be helpful.
+Neuroleptic Malignant Syndrome
+
+A rare but potentially fatal complication can occur with
+D2 receptor blockade, possibly due in part to D2 receptor
+blockade specifically in the nigrostriatal motor pathway.
+This is called the “neuroleptic malignant syndrome,”
+associated with extreme muscular rigidity, high fevers,
+coma, and even death. Some consider neuroleptic
+malignant syndrome to be the most extreme form of
+DIP; others theorize that this is a toxic complication
+of D2 blocking drugs on cell membranes, including
+muscle. It constitutes a medical emergency that requires
+withdrawal of the D2 blocker, muscle-relaxing agents such
+169
+
+5
+
+
+
+
+<<<PAGE 186>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+as dantrolene and dopamine agonists, as well as intensive
+supportive medical treatment.
+Tardive Dyskinesia
+Pathophysiology
+
+Overall, about 5% of patients maintained on D2
+antagonists that have little or no serotonin receptor
+action will develop TD every year (i.e., about 25% of
+patients by 5 years), not a very encouraging prospect
+for an illness starting in the early 20s and requiring
+lifelong treatment. The risk of developing TD in elderly
+subjects may be as high as 25% within the first year of
+exposure to D2 antagonists. Estimates for the newer D2
+drugs for psychosis that have serotonergic receptor action
+are more difficult to obtain since many patients taking
+them have taken the older drugs as well in the past.
+Nevertheless, for those likely to have taken only newer
+D2 antagonists/5HT2A antagonists or D2/5HT1A partial
+agonists, the rate of TD may be about half the rate of the
+older drugs. These newer agents may mitigate DIP as
+well by the mechanisms discussed in detail below. Those
+mechanisms are both 5HT2A antagonism and 5HT1A
+partial agonism. Perhaps these mechanisms by which
+they mitigate DIP serve also to mitigate the chances of
+getting TD.
+Who amongst all those who receive drugs for
+psychosis will get TD and how does this happen? Some
+evidence suggests that those who are most vulnerable
+to having DIP with acute D2 blockade may also be
+those who are the most vulnerable to getting TD with
+chronic D2 blockade. One theory is that nigrostriatal
+D2 receptors most sensitive to blockade trigger a form
+of undesirable neuroplasticity called supersensitivity
+in reaction to D2 receptor blockade (Figures 5-6). If D2
+receptor blockade is removed early enough, TD may
+reverse. This reversal is theoretically due to a “resetting”
+of supersensitive D2 receptors by an appropriate return
+to normal in the number or sensitivity of D2 receptors in
+the nigrostriatal pathway once the antipsychotic drug that
+had been blocking these receptors is removed. However,
+after long-term treatment, sometimes the D2 receptors
+apparently cannot reset back to normal, even when D2
+blocking drugs are discontinued. This leads to TD that
+is irreversible, persisting whether or not D2 blockers are
+administered.
+Interestingly, D2 receptors in the motor striatum
+also appear to react in much the same way to chronic
+stimulation by levodopa in Parkinson’s disease as they do
+to chronic blockade by D2 antagonists/partial agonists in
+170
+
+schizophrenia. That is, chronic levodopa administration
+in Parkinson’s disease can lead to levodopa-induced
+dyskinesias that look very similar to TD, and may share a
+similar pathophysiology of aberrant striatal plasticity and
+abnormal neuronal “learning.” Perhaps the lesson here is
+not to mess with your dopamine receptors in the motor
+striatum or consequences may ensue!
+A more detailed view of D2 antagonist/partial agonist
+effects in the nigrostriatal dopamine system is shown in
+Figures 5-9A, 5-9B, and 5-9C. This view was introduced
+in Chapter 4 and illustrated in Figures 4-13B, 4-13C,
+4-13D, 4-13E, and 4-13F. Some fibers of the nigrostriatal
+dopamine pathway, particularly those projecting medially
+to the associative striatum, may be hyperactive as part
+of the limbic (emotional) system and contribute to the
+positive symptoms of psychosis (see Figure 4-16B).
+Other nigrostriatal dopamine projections, particularly
+those projecting to the sensorimotor striatum, are part
+of the extrapyramidal nervous system and control motor
+movements and those are the nigrostriatal dopaminergic
+neurons depicted in Figures 5-9A, 5-9B, and 5-9C.
+Normally, dopamine acts at D2 receptors in the
+indirect motor pathway, which is the receptor subtype
+present in this pathway. The so-called indirect pathway
+is also the pathway for “stop” actions (Figures 4-13F and
+5-9A). Since D2 receptors are inhibitory, dopamine causes
+inhibition of the stop pathway; a fancy way for dopamine
+to say “go” in this pathway (Figures 4-13B and 5-9A).
+Thus, dopamine at D2 receptors in the indirect pathway
+triggers a “go” signal.
+What happens when this action of dopamine is
+blocked? When acute D2 antagonists/partial agonists
+are administered, this blocks the ability of dopamine to
+say “go” because these drugs inhibit dopamine’s action
+in the “stop” pathway. Another way to say this is that D2
+antagonists say “stop” in the indirect pathway (Figure
+5-9B). If there is too much “stop,” this can result in DIP
+(Figure 5-9B). In technical terms, when “stop” is not
+inhibited by dopamine action at D2 receptors in the
+indirect pathway because of the presence of a D2 blocker,
+then movements are “stopped” – sometimes so much
+so that the slow, rigid movements of DIP are produced
+(Figure 5-9B).
+If this situation is allowed to persist, D2 receptors in
+the indirect pathway of the motor striatum hypothetically
+react to the acute D2 receptor blockade shown in Figure
+5-9B by “learning” to have TD when D2 blockade
+becomes chronic (Figure 5-9C). The theoretical
+mechanism for this is a proliferation of excess numbers
+
+
+
+
+<<<PAGE 354>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+dopamine and tyramine, another trace amine. Both
+MAO-A and MAO-B are in the brain. Noradrenergic
+neurons (Figure 6-13) and dopaminergic neurons (Figure
+4-3) are thought to contain both MAO-A and MAO-B,
+with MAO-A activity perhaps predominant, whereas
+serotonergic neurons are thought to contain only MAO-B
+(Figure 4-37). MAO-A is the major form of this enzyme
+outside of the brain, with the exception of platelets and
+lymphocytes, which have MAO-B.
+Brain MAO-A must be substantially inhibited
+for antidepressant efficacy to occur (Figure 7-69).
+This is not surprising, since this is the form of
+MAO that preferentially metabolizes serotonin and
+norepinephrine, two of the three monoamines linked
+to depression and to antidepressant actions, both of
+which demonstrate increased brain levels after MAO-A
+inhibition (Figure 7-69). MAO-A, along with MAO-B,
+also metabolizes dopamine, but inhibition of MAO-A
+alone does not appear to lead to robust increases in
+brain dopamine levels since MAO-B can still metabolize
+dopamine (Figure 7-69).
+Inhibition of MAO-B is not effective as an
+antidepressant, as there is no direct effect on either
+serotonin or norepinephrine metabolism, and little
+or no dopamine accumulates due to the continued
+action of MAO-A (Figure 7-70). What therefore is the
+therapeutic value of MAO-B inhibition? When this
+enzyme is selectively inhibited, it can boost the action
+of concomitantly administered levodopa in Parkinson’s
+disease and reduce on/off motor fluctuations. Three
+MAO-B inhibitors selegiline, rasagiline, and safinamide
+are approved for use in patients with Parkinson’s disease,
+but are not effective at selective MAO-B doses for the
+treatment of depression.
+When MAO-B is inhibited simultaneously with
+MAO-A, there is robust elevation of dopamine as well as
+serotonin and norepinephrine (Figure 7-71). This would
+theoretically provide the most powerful antidepressant
+efficacy across the range of depressive symptoms, from
+diminished positive affect to increased negative affect
+(see Figure 6-41). Thus, MAO-A plus MAO-B inhibition
+is one of the few therapeutic strategies available to
+increase dopamine in depression, and therefore to treat
+refractory symptoms of diminished positive affect.
+The Dietary Tyramine Interaction
+
+One of the biggest barriers to using MAOIs has
+traditionally been the concern that a patient taking
+a MAOI may develop a hypertensive crisis after
+ingesting tyramine in the diet, classically from cheese.
+338
+
+Normally, the release of norepinephrine by tyramine
+is inconsequential because MAO-A safely destroys this
+released norepinephrine. However, tyramine in the
+presence of MAO-A inhibition can elevate blood pressure
+because norepinephrine is not safely destroyed. Every
+prescriber of MAOIs should counsel patients taking the
+classic MAOIs about diet and keep up to date with the
+tyramine content of foods their patients wish to eat.
+Drug–Drug Interactions for MAOIs
+
+While MAOIs are famous for their tyramine reactions,
+drug–drug interactions are potentially more important
+clinically. Drug–drug interactions may not only be
+more common than dietary interactions with tyramine,
+but some drug interactions can be dangerous or even
+lethal. Drug interactions with MAOIs are often poorly
+understood by many practitioners. Since most candidates
+for MAOI treatment will require treatment with many
+concomitant drugs over time, including treatment
+for coughs and colds and for pain, this can prevent
+psychopharmacologists from prescribing a MAOI if they
+do not know which drugs are safe to give and which
+ones must be avoided. There are two general types of
+potentially dangerous drug interactions with MAOIs for a
+practitioner to understand and avoid: those that can raise
+blood pressure by sympathomimetic actions and those
+that can cause a potentially fatal serotonin syndrome by
+serotonin reuptake inhibition. Every prescriber of MAOIs
+should counsel patients taking the classic MAOIs about
+drug interactions and keep up to date with the latest
+warnings about drug interactions of MAOIs with drugs
+their patients are concomitantly prescribed. Several
+reviews on these details are available, including some of
+the author’s, and are referenced at the end of the book.
+
+DRUGS FOR BIPOLAR DISORDER
+SPECTRUM
+Serotonin/Dopamine Blockers: Not Just for Psychosis
+and Psychotic Mania
+
+When D2 blockers were approved for schizophrenia,
+it was not surprising that these agents would work for
+psychotic symptoms associated with mania, since the
+D2 antagonist actions predict efficacy for psychosis
+in general (discussed in Chapter 5). However, it was
+somewhat surprising when these dopamine/serotonin
+blockers proved effective for the core nonpsychotic
+symptoms of mania (Figure 6-2) and for maintenance
+treatment to prevent the recurrence of mania. These latter
+actions are similar to the antimanic therapeutic actions of
+
+
+
+
+<<<PAGE 525>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+mediators of cognitive functioning in the prefrontal
+cortex. When they are presynaptic and on cholinergic
+neurons, they appear to mediate a “feed-forward”
+release process where ACh can facilitate its own release
+by occupying presynaptic α7 nicotinic receptors (Figure
+12-28). Furthermore, α7 nicotinic receptors are present
+on neurons that release other neurotransmitters, such as
+dopamine and glutamate neurons (Figure 12-29). When
+ACh diffuses away from its synapse to occupy these
+presynaptic heteroreceptors, it facilitates the release of the
+neurotransmitter there (e.g., dopamine or glutamate) (see
+Figure 12-29).
+Just as described in earlier chapters for other ligandgated ion channels such as the GABAA receptor (in
+Chapter 6 on mood disorders; see Figures 6-20 and 6-21;
+see also Chapter 7 drugs for depression; Figure 7-56) and
+the NMDA (N-methyl-D-aspartate) receptor (see Chapter
+4 on psychosis and Figure 4-30; and Chapter 10 on sleep
+and Figure 10-4), it appears that ligand-gated nicotinic
+cholinergic receptors are also regulated by allosteric
+modulators (Figure 12-30). Muscarinic receptors may
+also be modulated by positive allosteric modulators (not
+shown). Positive allosteric modulators (PAMs) have been
+well characterized for nicotinic receptors in brain; indeed,
+the cholinesterase inhibitor galantamine used in AD has
+a second therapeutic mechanism as a PAM for nicotinic
+receptors as described for this agent below.
+The principle cholinergic pathways are illustrated in
+Figures 12-31 and 12-32. Cell bodies of some cholinergic
+pathways arise from the brainstem and project to many
+brain regions, including the prefrontal cortex, basal
+forebrain, thalamus, hypothalamus, amygdala, and
+hippocampus (Figure 12-31). Other cholinergic pathways
+have their cell bodies in the basal forebrain, project to the
+prefrontal cortex, amygdala, and hippocampus, and are
+thought to be particularly important for memory (Figure
+12-32). Additional cholinergic fibers in the basal ganglia
+are not illustrated.
+Symptomatic Treatment of Memory and Cognition in
+Alzheimer Disease by Inhibiting Acetylcholinesterase
+
+It is well established that cholinergic dysfunction
+accompanies age-related cognitive decline, hypothetically
+due to the early loss of cholinergic neurons from
+the nucleus basalis (compare Figure 12-33A normal
+cognition and 12-33B mild cognitive impairment).
+At this early stage of memory decline, cholinergic
+innervation is lost, but cholinergic postsynaptic targets
+remain (Figure 12-33B), so that stimulating postsynaptic
+
+Allosteric Modulation of Nicotinic Receptors
+Ca++
+
+ACh
+
+allosteric
+modulator
+
+Figure 12-30 Allosteric modulation of nicotinic
+receptors. Nicotinic receptors can be regulated by allosteric
+modulators. These ligand-gated ion channels control the flow
+of calcium into the neuron (top panel). When acetylcholine is
+bound to these receptors, it allows calcium to pass into the
+neuron (middle panel). A positive allosteric modulator bound
+in the presence of acetylcholine increases the frequency of
+opening of the channel and thus can allow for more calcium to
+pass into the neuron (bottom panel).
+
+cholinergic receptors by increasing ACh levels with
+acetylcholinesterase inhibition can hypothetically restore
+some of the lost function of degenerated cholinergic
+neurons (Figure 12-33C; effective cholinergic treatment
+of cognition in early AD). This model is analogous to
+Parkinson’s disease treatment with levodopa restoring
+some of the lost function of degenerated dopamine
+neurons. However, as AD progresses from MCI and early
+dementia to later stages of dementia, there is progressive
+loss of neocortical and hippocampal neurons. In the
+
+509
+
+12
+
+
+
+
+<<<PAGE 553>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+These various descriptions all integrate the notion
+of lack of spontaneous behaviors and emotions with
+diminished reactivity to the environment, often the
+opposite to what is observed in agitation (see Table 12-8).
+The clinical presentation of apathy often differs
+among various types of dementias; for instance, affective
+apathy is more common in the behavioral variant of FTD
+compared to AD. Both dopaminergic and cholinergic
+neurotransmitter systems seem to be involved in the
+various types of apathy; potential treatments, therefore,
+include dopamine agonists such as bupropion, levodopa,
+and stimulants, as well as cholinesterase inhibitors, but
+none is approved for this use and none is particularly
+robust in efficacy.
+A primary reason why drugs used for depression
+do not work well in apathy of dementia is that apathy
+is not depression. That is, guilt, worthlessness, and
+hopelessness, the symptom hallmarks of depression
+(see Chapter 6 and Figure 6-1), are typically not
+present in patients with apathy in dementia. When
+use of medications for apathy in dementia is needed,
+cholinesterase inhibitors may be effective in some
+patients and are a first-line consideration in AD, but
+might work better for prevention of these symptoms than
+for their treatment once they have emerged. Also, FTD
+patients may be more likely to benefit from SSRIs (e.g.,
+citalopram or escitalopram) or SNRIs.
+Other Treatments for the Behavioral Symptoms of
+Dementia
+
+As mentioned earlier and shown in Table 12-9,
+there are several non-pharmacological options for
+treating neuropsychiatric symptoms in patients with
+dementia, and given the risks associated with many
+pharmacological treatments, the lack of approval of
+many agents, and their relative lack of efficacy, nonpharmacological interventions should always be
+considered first-line. This will also be the case even
+if pimavanserin is approved for psychosis in all-cause
+dementia and if brexpiprazole and dextromethorphan–
+bupropion are approved for agitation in AD.
+It is particularly important to keep in mind that
+physical pain, infection, or local irritation can be
+
+the underlying cause for many secondary behavioral
+symptoms in patients with dementia. Just as with
+household pets or small children, a patient with dementia
+may not be able to express or describe the physical pain
+they are experiencing; thus it is up to astute clinicians and
+caregivers to identify and treat causes of pain that may be
+leading to neuropsychiatric symptoms, such as agitation
+and depression, in patients with dementia. If pain is
+contributing to behavioral symptoms, psychotropic
+medications may have little effect whereas alleviating the
+source of the pain may be quite effective. For instance,
+treatment with simple acetaminophen (paracetamol)
+can sometimes ameliorate agitation. Similarly, other
+modifiable sources of behavioral symptoms (e.g.,
+boredom, excess stimulation, etc.) should be recognized
+and addressed.
+
+SUMMARY
+The most common dementia is Alzheimer disease (AD),
+and the leading theory for its etiology is the amyloid
+cascade hypothesis. Other dementias including vascular
+dementia, dementia with Lewy bodies, Parkinson’s
+disease dementia, and frontotemporal dementia are
+also discussed as well, as are their differing pathologies,
+clinical presentations, and neuroimaging findings.
+New diagnostic criteria define three stages of AD:
+asymptomatic, mild cognitive impairment, and
+dementia. Major research efforts have recently pivoted
+away from attempting to find disease-modifying
+treatments that could halt or even reverse the course
+of this illness by interfering with Aβ accumulation in
+the brain because many such treatments have failed
+over the past 30 years. Leading treatments for AD
+today include symptomatic treatment of memory and
+cognition with the cholinesterase inhibitors, based upon
+the cholinergic hypothesis of amnesia, and memantine,
+an NMDA antagonist, based upon the glutamate
+hypothesis of cognitive decline. Novel treatments
+on the threshold of approval include the 5HT2A
+antagonist pimavanserin for symptomatic treatment
+of dementia-related psychosis, and both brexpiprazole
+and dextromethorphan–bupropion for symptomatic
+treatment of agitation in AD.
+
+537
+
+12
+
+
+
+
+<<<PAGE 635>>>
+
+Index
+
+behavioral treatments, 430
+diagnosis and comorbidities, 418–20
+treatment, 421–31
+insulin resistance, 197, 198, 200
+internet addiction, 575
+interneurons, 380
+inverse agonists, 42, 44–5, 61, 62, 240
+ion-channel-linked systems, 11, 12
+ion channels, 76
+ligand-gated. See ligand-gated ion
+channels
+neurotransmission and, 73–6
+voltage-sensitive. See voltage-sensitive
+ion channels
+ionotropic glutamate receptors, 54
+iproniazid, 336
+irreversible enzyme inhibitors, 46
+kainate receptors, 101, 104
+ketamine, 106, 328–32, 353, 376, 569–71
+ketamine-assisted psychotherapy, 574
+kinase, third messenger, 14, 16
+lamotrigine, 350–1
+late genes, 20, 22
+lemborexant, 423
+leptin, 415
+leucine zippers, 19, 20, 21
+levodopa, 170
+levomilnacipran, 300, 303
+Lewy bodies, 157
+Lewy body dementias, 492–5
+licarbazepine, 352
+ligand-gated ion channels, 51–66, 76
+agonist spectrum, 56–62
+allosteric modulation, 64–6
+different states of, 61–4
+gatekeeper, 52
+pentameric subtypes, 53
+structure and function, 53
+tetrameric subtypes, 54–5
+lisdexamfetamine, 473, 575
+lithium, 48, 332, 345–6
+local anesthesia, 380
+lofexidine, 561
+long-term potentiation, 151
+LSD, 358, 568
+lumateperone, 227, 237–9
+lurasidone, 226, 236, 343
+magic mushrooms, 358
+magnesium, 104
+magnetic resonance imaging, 491
+major depressive disorder, 246, 252
+anxiety disorder and, 360–2
+core symptoms, 360
+major depressive episode, 248, 277
+symptoms and circuits, 277
+
+mania
+anticonvulsant treatment, 346
+carbamazepine treatment, 350
+drug treatment, 195
+lithium treatment, 345
+mixed features of, 248, 251
+mood stabilizer treatment, 288
+serotonin and dopamine blockers in,
+338, 342
+valproate treatment, 349
+manic episodes, 245, 277, 278
+MAOIs. See monoamine oxidase
+inhibitors
+mazindol, 485
+MDMA, 356, 376, 378, 569–71
+assisted psychotherapy, 574
+MDPV, 546
+medication-assisted therapy, 561
+melatonergic agents, 439, 440
+melatonin, 275, 439, 440
+melatonin receptors, 306
+memantine, 520, 521–4, 533
+memory difficulties, 316
+Alzheimer disease, 509–18
+memory, traumatic, 356, 366, 375,
+574
+mesocortical dopamine pathway, 95
+mesocortical hypodopaminergia, 95
+mesolimbic dopamine pathway, 89,
+542–3
+mesolimbic hyperdopaminergia, 90
+mesostriatal hyperdopaminergia, 93
+messenger RNA (mRNA), 26
+metabolic highway, 198, 199, 201
+metabolic monitoring, 196, 199
+metabolic toolkit, 201
+metabotropic glutamate receptors, 100,
+103
+metformin, 201
+methadone, 355, 559, 560, 561, 562
+methylation, 23, 24
+methylphenidate, 441–2, 469–72, 484
+formulations, 470
+mianserin, 309
+microRNA (miRNA), 27
+migrants, 150
+mild cognitive impairment, 487, 490,
+493, 500–2
+milnacipran, 300, 303
+mirtazapine, 232, 308–13, 333
+mixed dementia, 495
+mixed features, 248, 251–2
+modafinil, 333, 442–4
+Molly, 358, 569
+monoamine autoreceptors, 8
+monoamine hypothesis of depression,
+264–5, 290
+monoamine oxidase (MAO), 253
+
+monoamine oxidase inhibitors (MAOIs),
+336–7, 377
+bipolar depression, 342
+dietary tyramine interaction, 338
+drug–drug interactions, 338
+subtypes, 337–41
+monoamine projections, 279
+monoamine receptor hypothesis of
+depression, 264–6, 267, 290
+monoamine transporters, 30, 31–4, 208
+unipolar depression, 285–8
+mood disorders, 244, 282, See also mania,
+depression
+description of, 244–52
+future treatments for, 353–8
+mixed features of, 248, 251–2
+neurobiology of, 252–76
+pain disorders and, 387
+symptom-based treatments, 279–82
+symptoms and circuits in, 277–82
+mood episodes, 246
+mood related psychosis, 157
+mood spectrum, 244–9
+mood-stabilizers, 288, 345–6
+mood-stabilizing action, 283
+morphine, 559, 561
+motivation, lack of, 536
+motor disturbances, 78
+motor side effects, 165–81
+partial agonists, 192
+mu-opioid receptors, 390, 556
+multimodal monoamines, 530–2
+Multiple Sleep Latency Test, 431
+muscarinic receptors, 506–7
+nalmefene, 556, 573
+naloxone, 560
+naltrexone, 306, 556, 561, 563, 573, 575
+NAMs (negative allosteric modulators),
+64–6
+narcolepsy, 407, 430, 433, 435, 443, 444,
+446
+nausea and vomiting, 309
+n-back test, 449, 451
+nefazodone, 311
+negative affect, 278, 280
+negative feedback regulatory signal, 255
+negative symptoms, 95, 142–4, 156
+secondary, 162–3
+NET transporters. See norepinephrine
+transporters (NETs)
+neuroactive steroids, 320–5
+neurobiology
+mood disorders, 252–76
+sleep and wakefulness, 402–15
+neurodevelopment, 151, 152
+ADHD, 463–5
+schizophrenia, 151–3
+619
+
+

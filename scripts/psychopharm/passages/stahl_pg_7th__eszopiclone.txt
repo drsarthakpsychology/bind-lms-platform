@@ -1,0 +1,511 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 835>>>
+
+Eszopiclone
+
+Therapeutics
+Brands
+Lunesta
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: GABA positive allosteric
+modulator (GABA-PAM)
+Non-benzodiazepine hypnotic; alpha 1 isoform selective agonist of
+GABA-A/benzodiazepine receptors
+Commonly Prescribed for
+(bold for FDA approved)
+Insomnia
+Primary insomnia
+Chronic insomnia
+Transient insomnia
+
+
+
+
+<<<PAGE 837>>>
+
+obstructive sleep apnea or restless leg syndrome, which requires
+independent evaluation
+Increase the dose
+Improve sleep hygiene
+Switch to another agent
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+None for healthy individuals
+
+Side effects
+How Drug Causes Side Effects
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+
+✽ Chronic studies of eszopiclone suggest lack of notable tolerance or
+dependence developing over time
+
+
+
+
+<<<PAGE 839>>>
+
+Wait
+To avoid problems with memory, take eszopiclone only if planning
+to have a full night’s sleep
+Lower the dose
+Switch to a shorter-acting sedative hypnotic
+Administer flumazenil if side effects are severe or life-threatening
+Best Augmenting Agents for Side Effects
+Many side effects cannot be improved with an augmenting agent
+
+Dosing and Use
+Usual Dosage Range
+2–3 mg at bedtime
+Dosage Forms
+Tablet 1 mg, 2 mg, 3 mg
+How to Dose
+No titration, take dose at bedtime
+Dosing Tips
+Not restricted to short-term use
+
+
+
+
+<<<PAGE 840>>>
+
+No notable development of tolerance or dependence seen in studies
+up to 6 months
+Recent study adding eszopiclone to patients with major depression
+and only a partial response to fluoxetine showed improvement not
+only in residual insomnia, but in other residual symptoms of
+depression as well
+Most studies were done with 3 mg dose or less at night, but some
+patients with insomnia associated with psychiatric disorders may
+require higher dosing
+However, doses higher than 3 mg may be associated with carryover
+effects, hallucinations, or other CNS adverse effects
+To avoid problems with memory or carryover sedation, only take
+eszopiclone if planning to have a full night’s sleep
+Most notable side effect may be unpleasant taste
+Other side effects can include sedation, dizziness, dose-dependent
+amnesia, nervousness, dry mouth, and headache
+Overdose
+Few reports of eszopiclone overdose, but probably similar to
+zopiclone overdose
+Rare fatalities have been reported in zopiclone overdose
+Symptoms associated with zopiclone overdose include clumsiness,
+mood changes, sedation, weakness, breathing trouble,
+unconsciousness
+
+
+
+
+<<<PAGE 841>>>
+
+Long-Term Use
+No development of tolerance was seen in studies up to 6 months
+Habit Forming
+Eszopiclone is a Schedule IV drug
+Some patients could develop dependence and/or tolerance with
+drugs of this class; risk may be theoretically greater with higher
+doses
+History of drug addiction may theoretically increase risk of
+dependence
+How to Stop
+Rebound insomnia may occur the first night after stopping
+If taken for more than a few weeks, taper to reduce chances of
+withdrawal effects
+Pharmacokinetics
+Metabolized by CYP450 3A4 and 2E1
+Terminal elimination half-life approximately 6 hours
+Heavy high-fat meal slows absorption, which could reduce effect on
+sleep latency
+Drug Interactions
+
+
+
+
+<<<PAGE 842>>>
+
+Increased depressive effects when taken with other CNS depressants
+Inhibitors of CYP450 3A4, such as nefazodone and fluvoxamine,
+could increase plasma levels of eszopiclone
+Inducers of CYP450 3A4, such as rifampicin, could decrease plasma
+levels of eszopiclone
+Other Warnings/Precautions
+Insomnia may be a symptom of a primary disorder, rather than a
+primary disorder itself
+Some patients may exhibit abnormal thinking or behavioral changes
+similar to those caused by other CNS depressants (i.e., either
+depressant actions or disinhibiting actions)
+Some depressed patients may experience a worsening of suicidal
+ideation
+Use only with caution in patients with impaired respiratory function
+or obstructive sleep apnea
+Eszopiclone should only be administered at bedtime
+Rare angioedema has occurred with sedative hypnotic use and could
+potentially cause fatal airway obstruction if it involves the throat,
+glottis, or larynx; thus if angioedema occurs treatment should be
+discontinued
+Sleep driving and other complex behaviors, such as eating and
+preparing food and making phone calls, have been reported in
+patients taking sedative hypnotics; in some cases these behaviors
+
+
+
+
+<<<PAGE 843>>>
+
+have resulted in serious injury or death, prompting the FDA to
+require a black box warning
+Do Not Use
+If the patient has experienced an episode of complex sleep behaviors
+after taking a sleep medication
+If there is a proven allergy to eszopiclone or zopiclone
+
+Special populations
+Renal Impairment
+Dose adjustment not generally necessary
+Hepatic Impairment
+Dose adjustment not generally recommended for mild-to-moderate
+hepatic impairment
+For severe impairment, recommended initial dose 1 mg at bedtime;
+maximum dose 2 mg at bedtime
+Cardiac Impairment
+Dosage adjustment may not be necessary
+Elderly
+May be more susceptible to adverse effects
+
+
+
+
+<<<PAGE 844>>>
+
+Initial dose 1 mg at bedtime; maximum dose generally 2 mg at
+bedtime
+Children and Adolescents
+Safety and efficacy have not been established
+Long-term effects of eszopiclone in children/adolescents are
+unknown
+Should generally receive lower doses and be more closely
+monitored
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+Infants whose mothers took sedative hypnotics during pregnancy
+may experience some withdrawal symptoms
+Neonatal flaccidity has been reported in infants whose mothers took
+sedative hypnotics during pregnancy
+Breast Feeding
+
+
+
+
+<<<PAGE 845>>>
+
+Unknown if eszopiclone is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+The art of psychopharmacology
+Potential Advantages
+Primary insomnia
+Chronic insomnia
+Those who require long-term treatment
+Those with depression whose insomnia does not resolve with
+antidepressant treatment
+Potential Disadvantages
+More expensive than some other sedative hypnotics
+Primary Target Symptoms
+Time to sleep onset
+Nighttime awakenings
+Total sleep time
+Pearls
+
+
+
+
+<<<PAGE 846>>>
+
+✽ May be preferred over benzodiazepines because of its rapid onset of
+action, short duration of effect, and safety profile
+Eszopiclone is the best documented agent to be safe for long-term
+use, with little or no suggestion of tolerance, dependence, or abuse
+May even be safe to consider in patients with a past history of
+substance abuse who require treatment with a hypnotic
+May be preferred over benzodiazepine hypnotics, which all cause
+tolerance, dependence, and abuse as a class
+Not a benzodiazepine itself but binds to the benzodiazepine receptor
+May be a preferred agent in primary insomnia
+Targeting insomnia may prevent the onset of depression and
+maintain remission after recovery from depression
+Rebound insomnia does not appear to be common
+
+Suggested Reading
+Eszopiclone: esopiclone, estorra, S-zopiclone, zopiclone–Sepracor . Drugs
+R D 2005 ;6 (2 ):111–15 .
+Krystal AD , Walsh JK , Laska E , et al. Sustained efficacy of eszopiclone
+over 6 months of nightly treatment: results of a randomized, double-blind,
+placebo-controlled study in adults with chronic insomnia . Sleep 2003 ;26
+(7 ):793 –9 .
+
+
+
+
+<<<PAGE 847>>>
+
+Zammit GK , McNabb LJ , Caron J , Amato DA , Roth T . Efficacy and
+safety of eszopiclone across 6-weeks of treatment for primary insomnia .
+Curr Med Res Opin 2004 ;20 (12 ):1979 –91.
+
+
+
+
+<<<PAGE 1951>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Eszopiclone, zolpidem
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+None for healthy individuals
+For patients presenting with unexplained amenorrhea, galactorrhea,
+decreased libido, or problems with fertility, could consider
+measuring prolactin and testosterone levels
+
+Side Effects
+How Drug Causes Side Effects
+Actions at melatonin receptors that carry over to the next day could
+theoretically cause daytime sedation, fatigue, and sluggishness, but
+this is not common
+
+✽ Sedation
+✽ Dizziness
+
+Notable Side Effects
+
+
+
+
+<<<PAGE 2521>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+
+✽ Long-term adaptations of zopiclone, a mixture of an active S
+enantiomer and an inactive R enantiomer, have not been well studied,
+but chronic studies of the active isomer eszopiclone suggest lack of
+notable tolerance or dependence developing over time
+Notable Side Effects
+
+✽ Sedation
+✽ Dizziness, ataxia
+✽ Dose-dependent amnesia
+
+
+
+
+<<<PAGE 2528>>>
+
+Potential Disadvantages
+More expensive than some other sedative hypnotics
+Primary Target Symptoms
+Time to sleep onset
+Nighttime awakenings
+Total sleep time
+Pearls
+
+✽ May be preferred over benzodiazepines because of its rapid onset of
+action, short duration of effect, and safety profile
+Zopiclone does not appear to be a highly dependence-causing drug,
+at least not in patients with no history of drug abuse
+Rebound insomnia does not appear to be common
+Not a benzodiazepine itself, but binds to benzodiazepine receptors
+May have fewer carryover side effects than some other sedative
+hypnotics
+The active enantiomer of zopiclone, eszopiclone, has received an
+approvable letter from the US FDA
+
+Suggested Reading
+
+
+
+
+<<<PAGE 2586>>>
+
+Equilid (sulpiride), 741
+Equitam (lorazepam), 437
+Er Ding (lofexidine), 427
+Ergenyl (valproate), 829
+Ergocalm (lorazepam), 437
+Eridan (diazepam), 229
+Erocap (fluoxetine), 301
+escitalopram, 269
+Esculid (diazepam), 229
+Esilgan (estazolam), 281
+Esipride (sulpiride), 741
+Eskalith (lithium), 415
+Eskalith CR (lithium), 415
+Eskazine (trifluoperazine), 803
+esketamine, 275
+Esparon (alprazolam), 11
+estazolam, 281
+Estorra (eszopiclone), 285
+eszopiclone, 285
+Ethipam (diazepam), 229
+Ethipramine (imipramine), 367
+Euhypnos (temazepam), 755
+Euipnos (temazepam), 755
+Eurosan (diazepam), 229
+Eutimil (paroxetine), 593
+Eutimox (fluphenazine), 313
+Evacalm (diazepam), 229
+Evekeo (amphetamine d,l), 45
+
+
+
+
+<<<PAGE 2597>>>
+
+Lorsilan (lorazepam), 437
+Lorzem (lorazepam), 437
+Lovan (fluoxetine), 301
+Loxapac (loxapine), 443
+loxapine, 443
+Loxitane (loxapine), 443
+Lucemyra (lofexidine), 427
+Ludiomil (maprotiline), 465
+Lullan (perospirone), 601
+lumateperone, 451
+Lumin (mianserin), 495
+Lunesta (eszopiclone), 285
+lurasidone, 457
+Lustral (sertraline), 721
+Luvox (fluvoxamine), 325
+Luvox SR (fluvoxamine), 325
+Lyogen (fluphenazine), 313
+Lyogen Depot (fluphenazine), 313
+Lyoridin Depot (fluphenazine), 313
+Lyorodin (fluphenazine), 313
+Lyrica (pregabalin), 647
+Lyrica CR (pregabalin), 647
+
+
+
+
+<<<PAGE 2642>>>
+
+prazosin , 643
+propranolol , 653
+Hypoactive sexual desire disorder
+bremelanotide , 95
+flibanserin , 289
+Insomnia
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+clomipramine, 165
+clonazepam, 173
+desipramine, 207
+diazepam, 229
+diphenhydramine , 235
+dothiepin, 249
+doxepin , 255
+estazolam , 281
+eszopiclone , 285
+flunitrazepam, 297
+flurazepam , 321
+hydroxyzine, 355
+imipramine, 367
+lemborexant , 395
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+
+
+
+
+<<<PAGE 2668>>>
+
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+pregabalin, 647
+sodium oxybate, 733
+tiagabine, 771
+topiramate, 781
+trimipramine, 817
+zonisamide, 875
+NMDA antagonists
+dextromethorphan, 225
+esketamine, 275
+ketamine, 383
+memantine, 473
+Phosphodiesterase-5 (PDE-5) inhibitor
+sildenafil, 729
+Sedative hypnotics
+agomelatine, 5
+estazolam, 281
+eszopiclone, 285
+flunitrazepam, 297
+flurazepam, 321
+lemborexant, 395
+
+

@@ -1,0 +1,706 @@
+<<<PAGE 78>>>
+
+66
+
+A Short Textbook of Psychiatry
+Table 5.7: Antipsychotic Dose in Schizophrenia
+
+Drug
+
+Oral Dose Range
+(mg/day)
+
+Parenteral Dose
+(mg/day)
+
+Equivalent Oral Dose*
+(Equal to 100 mg CPZ)
+
+A. Typical/Traditional/First Generation Antipsychotics
+1. Chlorpromazine (CPZ)
+300-1000
+50-100 IM
+100
+2. Flupentixol
+3-18
+—
+2
+3. Haloperidol
+5-30
+5-10 IM
+2-3
+4. Loxapine
+25-250
+—
+10
+5. Pimozide
+4-12
+—
+2
+6. Prochlorperazine
+45-150
+40-80 IM
+15
+7. Sulpiride
+400-2400
+—
+200
+8. Thioridazine
+300-600
+—
+100
+9. Trifluoperazine
+15-50
+1-5 IM
+5
+10. Triflupromazine
+100-400
+30-60 IM
+25
+11. Zuclopenthixol
+25-150
+50-100 IM
+25
+B. Atypical/Second Generation Antipsychotics
+12. Amisulpride
+400-1200
+—
+—
+13. Aripiprazole
+5-30
+5.25-15 IM
+—
+14. Clozapine
+50-900
+—
+50
+15. Olanzapine
+5-20
+2.5-10 IM
+2-3
+16. Paliperidone
+3-12
+—
+—
+17. Quetiapine
+150-800
+—
+50-100
+18. Risperidone
+2-16
+—
+0.5-1.0
+19. Ziprasidone
+40-160
+—
+20
+20. Zotepine
+75-300
+—
+—
+*Equivalent doses are at best approximations only. The dose in a particular patient should be chosen on an individualised basis by the treating professional.
+
+aripiprazole, and ziprasidone, are more commonly
+used than the older typical (or first generation) antipsychotics such as trifluoperazine and haloperidol, in
+acute stages. Atypical antipsychotics are also more
+useful when negative symptoms are prominent, e.g.
+in chronic schizophrenia.
+Clozapine, another atypical antipsychotic, is
+available in the Indian market. The clinical trials have
+shown that clozapine is effective in about 30% of
+patients who had no beneficial response to traditional
+(typical and atypical) antipsychotics. It is an effective
+drug; however, as it can cause agranulocytosis and
+seizures as side-effects, it should be used with caution,
+with regular WBC and neutrophil counts as advised
+by the Summary of Product Characteristics (SPC).
+
+Drug treatment is usually administered in the
+outpatient setting as:
+1. There are very few number of psychiatric beds in
+India,
+2. Majorities of families are willing to care for the
+patients at home, and
+3. Majority of patients do not require hospitalisation.
+However, hospitalisation is indicated if there is:
+1. Neglect of food and water intake,
+2. Danger to self or others,
+3. Poor treatment adherence,
+4. Significant neglect of self-care, or
+5. Lack of social support with evidence of abovementioned risks.
+
+
+
+
+<<<PAGE 188>>>
+
+A Short Textbook of Psychiatry
+
+176
+
+Table 15.2: Classification and Properties of Antipsychotics
+Drugs
+
+Oral Dose
+(mg/d)
+
+Parenteral
+Dose (mg)
+
+I. Phenothiazines
+A. Aliphatics
+1. Chlorpromazine
+300-1000 50-100 IM
+(CPZ)
+2. Triflupromazine
+100-400
+30-60 IM
+B. Piperidines
+____
+1. Mesoridazine
+100-400
+____
+2. Thioridazine
+300-600
+C. Piperazines
+____
+1. Fluphenazine
+2-20
+2. Prochlorperazine
+45-150
+40-80 IM
+3. Trifluoperazine
+15-50
+1-5 IM
+II. Thioxanthenes
+A. Aliphatics
+1. Chlorprothixene
+75-600
+25-75 IM
+B. Piperazines
+____
+1. Flupentixol
+3-18
+2. Thiothixene
+6-60
+2-6 IM
+3. Zuclopenthixol
+25-150
+50-100 IM
+III. Butyrophenones
+1. Haloperidol
+5-30
+5-10 IM
+2. Trifluperidol
+0.5-8.0
+2.5-5.0 IM
+IV. Diphenylbutylpiperidines
+____
+1. Penfluridol
+20-60 mg
+weekly
+____
+2. Pimozide
+4-20
+V. Indolic Derivatives (Dihydroindolones)
+____
+1. Molindone
+50-225
+
+#
+
+Sedation
+
+Some Common Adverse Effects**
+Hypotension
+EPSE* Weight
+Gain
+
+Increased
+Prolactin
+
++++
+
++++
+
++
+
+++
+
+++
+
+++
+
+++
+
+++
+
+++
+
+++
+
+++
++++
+
++
+++
+
++
++
+
+++
+++
+
++
++
+
++
++
++
+
++
++
++
+
++++
++++
++++
+
++
++
++
+
++++
++++
++++
+
++++
+
+++
+
+++
+
+++
+
+++
+
++
++
+++
+
++
+++
+++
+
+++
+++
+++
+
+++
+++
+++
+
+++
+++
++++
+
++
+±
+
++
+±
+
++++
++++
+
++
++
+
++++
+++
+
++
+
++
+
+++
+
++
+
+++
+
++
+
++
+
+++
+
++
+
++++
+
+++
+
+0
+
++
+
+±
+
+±
+
+++
+
+++
+
++
+
++++
+
++++
+
+0
+
++++
+
+0
+
++
++
+
++
++
+
++
++
+
++++
++++
+
+VI. Dibenzoxapines
+____
+1. Loxapine
+25-250
+++
+VII. Atypical or Second Generation Antipsychotics
+A. Dibenzodiazepines
+____
+1. Clozapine
+50-900
++++
+B. Substituted Benzamides
+1. Amisulpride
+400-1200 ____
+±
+2. Sulpiride (not
+400-2400 ____
+±
+called atypical
+usually)
+
+Contd...
+
+
+
+
+<<<PAGE 191>>>
+
+Psychopharmacology
+
+179
+
+Contd...
+Category and
+Side Effect
+3. Acute Dystonia
+
+Probable Cause
+—do—
+
+Maximum with
+(For example)
+—do—
+
+4. Rabbit Syndrome —do—
+—do—
+(Peri-oral tremor)
+Dopaminergic (D2) Not known
+5. Tardive
+Dyskinesia (late receptor
+onset oro-facial
+super-sensitivity
+dyskinesia)
+Not known
+Probably
+6. Neuroleptic
+haloperidol
+Malignant
+Syndrome
+(Fever, EPS,
+High CPK,
+catatonic
+symptoms and
+autonomic
+dysfunction)
+C. Other Central Nervous System Effects
+1. Seizures
+Decreased seizure
+Clozapine
+threshold
+Chlorpromazine
+(High doses)
+2. Sedation
+Histaminergic
+—do—
+blockade
+
+3. Depression or
+Decreased catecho- Not known
+Pseudolamine levels in
+depression
+brain
+D. Metabolic and Endocrine Side Effects
+1. Weight gain
+H1 blockade
+Almost all
+antipsychotics esp.
+Clozapine and
+Olanzapine
+2. Diabetes
+Not known
+Clozapine
+Olanzapine
+3. Galactorrhoea
+Increased Prolactin Haloperidol
+Risperidone
+with/without
+released due to
+amenorrhoea
+dopaminergic blockade in hypothalamus
+
+Minimum with
+(For example)
+—do—
+
+—do—
+Clozapine
+
+Not known
+
+Management
+Antiparkinsonian
+medication; Rule out
+hypercalcaemia
+Antiparkinsonian
+medication
+Treatment unsatisfactory,
+though several drugs are
+available. Prevention
+best.
+Bromocriptine, Dantrolene, Baclofen, General
+supportive care. Add-on
+lorazepam, Occasionally
+ECT
+
+Trifluoperazine
+
+Decrease dose. Change
+to a safer antipsychotic
+
+Haloperidol
+Aripiprazole
+
+This side effect may be
+beneficial. Otherwise
+decrease dose. Change
+drug. Give single dose
+only at night
+Decrease dose. Change
+drug. Occasionally antidepressants or ECT.
+
+SDAs
+(e.g. Ziprasidone)
+
+Aripiprazole
+Haloperidol
+
+Change drug. Dietary
+control. Exercises.
+
+Ziprasidone
+Aripiprazole
+Aripiprazole
+Quetiapine
+
+Change drug. Dietary
+control.
+None. Change drug.
+
+Contd...
+
+
+
+
+<<<PAGE 272>>>
+
+260
+
+A Short Textbook of Psychiatry
+
+Shavasna 219
+Short-sleepers 134
+Side effects of
+antidepressants 186
+antipsychotics 178
+psychotropic medication 228
+Sigmund Freud 205
+Signal anxiety 90
+Sildenafil 132
+Simple
+dissociative disorder 100
+schizophrenia 60
+Sleep 71
+apnoea 139
+attacks 137, 138
+deprivation 135
+disorders 133, 135
+drunkenness 138
+hygiene 137
+paralysis 138
+related enuresis 140
+spindles 133
+studies 75
+terrors 140
+Social
+drift 65
+history 9
+judgement 15
+manner 11
+phobia 93
+skills training 215
+package 68
+withdrawal 60
+Sociocultural theories 65
+Soft neurological signs 64
+Somatic
+delusions 56, 83
+passivity 13, 55
+Somatisation disorder 104, 105
+Somatoform
+autonomic dysfunction 106
+disorder 104
+Somnambulism 140
+Somniloquy 140
+Specific
+arithmetic disorder 163
+developmental disorder of
+motor function 163
+speech and language 163
+personality disorders 113
+phobia 93
+reading disorder 162
+
+Speech 12, 70
+disorders 170
+Splitting 117, 210
+Squeeze technique 131
+SSRIs 26, 30, 81, 144, 169
+Stages of sleep 134
+Stammering 170
+Startle reaction 111
+State
+anxiety 89
+Mental Health Rules, 1990 233
+Stereotactic
+limbic leucotomy 79, 204
+subcaudate tractotomy 79, 204
+Stockholm syndrome 209
+Stress
+management 112
+vulnerability hypothesis in schizophrenia 64
+Structural theory of mind 206
+Stupor 29, 59, 199, 225
+Stuporous catatonia 59
+Subcortical dementia 24, 25
+Substance abuse 35
+Substitution drugs 44
+Suction devices 132
+Suicidal
+gesture 222
+ideas 71
+risk 72, 199
+Suicide 57, 72, 222
+Sulpiride 66, 169
+Sun downing 20
+Super-ego 206, 212
+Supportive psychotherapy 82, 85, 98,
+105, 112, 167, 169, 220
+Suppression 207, 210
+Synaesthesias 46
+Synanon 45
+Syndrome of subjective doubles 87
+Systematic desensitisation 94, 131, 215
+
+T
+Tactile hallucinations 38
+Tadalafil 132
+TCAs 81, 82, 184
+Temporal
+arteritis 28
+lobe epilepsy 31
+Test judgement 15
+Testamentary capacity 230, 231
+
+Theory of psychosexual development 207
+Therapeutic
+community 68
+window 184
+Thiamine 27, 227
+deficiency 27
+Thioridazine 66
+Third
+person hallucinations 56
+psychoses 83
+Thought
+and speech disorders 55
+blocking 56
+broadcasting 56
+diffusion 55
+disorder 58, 62
+echo 56
+insertion 55, 95
+withdrawal 55, 56
+Thymia 82
+Thymoleptics 181
+Tic disorders 168
+Token economy 215
+Topographic theory of mind 205
+Tourette’s
+disorder 168
+syndrome 168
+Trait anxiety 89
+Trance and possession disorders 102
+Transcendental meditation 92, 219
+Transcranial magnetic stimulation 199
+Transexualism 121
+Transfer of property 231
+Transient global amnesia 27
+Trazodone 131, 137
+Trichotillomania 119, 171
+Tricyclic antidepressants 77, 131
+Trifluoperazine 66
+Triflupromazine 66
+Tuberous sclerosis 159
+Type
+A
+behaviour 148
+personality 147
+I and Type II schizophrenia 61
+Types of psychiatric emergencies 221
+
+U
+Ultra-rapid cycling 74
+Unconscious 205
+Undifferentiated schizophrenia 60
+
+

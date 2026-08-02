@@ -1,0 +1,768 @@
+<<<PAGE 342>>>
+
+and Figure 2-4 demonstrates examples of the typical defects.
+The entire syndrome occurs in up to 15 percent of babies born to women
+who regularly ingest large amounts of alcohol. Babies born to women who
+consume alcohol regularly during pregnancy have a high incidence of
+ADHD, learning disorders, and intellectual disability without facial
+dysmorphism.
+Prenatal Drug Exposure. Prenatal exposure to opioids, such as heroin,
+often results in infants who are small for their gestational age, with head
+circumference below the tenth percentile and withdrawal symptoms that
+appear within the first 2 days of life. The withdrawal symptoms of infants
+include irritability, hypertonia, tremor, vomiting, a high-pitched cry, and an
+abnormal sleep pattern. Seizures are unusual, but the withdrawal syndrome
+can be life-threatening to infants if it is untreated. Diazepam, phenobarbital,
+chlorpromazine, and paregoric have been used to treat neonatal opioid
+withdrawal. The long-term sequelae of prenatal opioid exposure are not fully
+known; the children’s developmental milestones and intellectual functions
+may be within the normal range, but they have an increased risk for
+impulsivity and behavioral problems. Infants prenatally exposed to cocaine
+are at high risk for low birth weight and premature delivery. In the early
+neonatal period, they may have transient neurologic and behavioral
+abnormalities, including abnormal results on EEG studies, tachycardia, poor
+feeding patterns, irritability, and excessive drowsiness. The physiologic and
+behavioral abnormalities are from cocaine intoxication, not withdrawal, as
+cocaine excretion may take up to a week after.
+Table 2-3
+Impairment in Disorders with Inborn Errors of Metabolism
+
+
+
+
+<<<PAGE 1200>>>
+
+Anticonvulsants. Valproate (valproic acid or divalproex sodium) has
+surpassed lithium in use for acute mania. Unlike lithium, valproate is only
+indicated for acute mania, although most experts agree it also has
+prophylactic effects. Normal dose levels of valproic acid are 750 to 2,500
+mg/day, achieving blood levels between 50 and 120 µg/mL. Rapid oral
+loading with 15 to 20 mg/kg of divalproex sodium from day 1 of treatment
+has been well tolerated and associated with a rapid onset of response. Some
+laboratory testing is required during valproate treatment.
+Carbamazepine has been used worldwide for decades as a first-line
+treatment for acute mania. The FDA approved it for acute mania in the
+United States in 2004. Typical doses of carbamazepine to treat acute mania
+range between 600 and 1,800 mg/day associated with blood levels of between
+4 and 12 µg/mL. The keto congener of carbamazepine, oxcarbazepine, is
+better tolerated than carbamazepine, but the data for its efficacy are
+conflicting. A Cochrane review concluded there is insufficient evidence for
+this medication in acute mania.
+Antipsychotics. The FDA approved many of the atypical antipsychotics for
+use in bipolar disorder. We list them in Table 6-7. Compared with older
+agents, such as haloperidol and chlorpromazine, atypical antipsychotics have
+a lesser liability for excitatory postsynaptic potential and tardive dyskinesia;
+many do not increase prolactin. However, many of them have the risk of
+weight gain with its associated medical problems. Some patients, however,
+require maintenance treatment with antipsychotic medication.
+Acute Bipolar Depression
+Lithium. There is limited evidence for lithium in bipolar depression. Early
+studies were promising, but later placebo-controlled studies did not confirm
+lithium’s efficacy. More extensive studies that included lithium did suggest
+that lithium was at least as useful as other mood stabilizers for bipolar
+depression.
+Anticonvulsants. The most promising anticonvulsant has been lamotrigine,
+which has several reasonable studies showing efficacy for bipolar depression.
+Its major limitation is that it must be titrated gradually to prevent a severe
+
+
+
+
+<<<PAGE 1681>>>
+
+problem
+No obvious nonpharmacologic
+precipitant
+Dissipates with drug
+discontinuation
+Antipsychotic drugs and
+ejaculatory problems
+
+Perphenazine
+Chlorpromazine
+Trifluoperazine
+Haloperidol
+Mesoridazine
+Chlorprothixene
+
+Antipsychotic drugs and priapism
+
+Perphenazine
+Mesoridazine
+Chlorpromazine
+Thioridazine
+Fluphenazine
+Molindone
+Risperidone
+Clozapine
+
+Table by R. T. Seagraves, M.D.
+
+Because depression is associated with decreased libido, varying levels of
+sexual dysfunction and anhedonia are part of the disease process. Some
+patients report improved sexual functioning as their depression improves
+because of antidepressant medication. The phenomenon makes evaluating
+sexual side effects difficult; also, the side effects may disappear with time,
+perhaps because a biogenic amine homeostatic mechanism comes into play.
+
+
+
+
+<<<PAGE 1909>>>
+
+the patient’s consent, relatives and other clinicians should be instructed about
+the reasons for the drug treatment, as well as the expected benefits and
+potential risks.
+
+DOSING, DURATION, AND MONITORING
+Dosing
+The clinically effective dose for treatment depends on the characteristics of
+the drug and patient factors, such as inherited sensitivity and ability to
+metabolize a drug, concurrent medical disorders, use of concurrent
+medications, and history of exposure to previous medications.
+Plasma concentrations of many psychotropics can vary up to 10-fold.
+Thus, to some extent, the optimal dose for an individual is ultimately
+determined by trial and error, guided by the empirical evidence of the usual
+dose range for that drug. In some cases, it may prove helpful to test patients
+for genetic polymorphisms involving hepatic enzymes. Patients who are
+ultrarapid metabolizers of certain drugs may require higher than standard
+dosing. Slow metabolizers might demonstrate side effects and even toxicity at
+very low doses.
+Some drugs demonstrate a clear relationship between increases in the dose
+and clinical response. This dose–response curve plots the drug concentration
+against the effects of the drug.
+The potency of a drug refers to the relative dose required to achieve
+specific effects, not to its efficacy. Haloperidol, for example, is more potent
+than chlorpromazine (Thorazine) because approximately 5 mg of haloperidol
+is required to achieve the same therapeutic effect as 100 mg of
+chlorpromazine. These drugs, however, are equal in their clinical efficacy—
+that is, the maximal clinical response achievable by the administration of a
+drug.
+Drugs must be used in effective dosages for sufficient periods. Although
+drug tolerability and safety are always considerations, subtherapeutic doses
+and incomplete therapeutic trials should be avoided. The use of inadequate
+doses merely exposes the patient to the risk of side effects without providing
+the probability of therapeutic benefit. Because of the wide margin of safety
+associated with most currently prescribed medications, more risk exists in
+
+
+
+
+<<<PAGE 1937>>>
+
+drugs have been well studied. Phenytoin increases quetiapine clearance
+fivefold; no significant pharmacokinetic interactions have been noted. Avoid
+the use of quetiapine with drugs that increase the QT interval and in patients
+with risk factors for prolonged QT interval. The FDA has added a new
+warning about quetiapine, cautioning prescribers about potential prolongation
+of the QT interval when above-recommended amounts of quetiapine are
+combined with specific drugs. Quetiapine should not be combined with other
+drugs that are known to prolong QTc. This includes class 1A antiarrhythmics
+(e.g., quinidine, procainamide) or class III antiarrhythmics (e.g., amiodarone,
+sotalol), antipsychotic medications (e.g., ziprasidone, chlorpromazine,
+thioridazine), antibiotics (e.g., gatifloxacin, moxifloxacin), or any other class
+of medications known to prolong the QTc interval (e.g., pentamidine,
+levomethadyl acetate, methadone). Quetiapine should also be avoided in
+circumstances that may increase the risk of occurrence of torsade de pointes
+or sudden death, including (1) a history of cardiac arrhythmias such as
+bradycardia; (2) hypokalemia or hypomagnesemia; (3) concomitant use of
+other drugs that prolong the QTc interval; and (4) presence of congenital
+prolongation of the QT interval. Postmarketing cases also show increases in
+QT interval in patients who overdose on quetiapine.
+Side Effects. Somnolence, postural hypotension, and dizziness are the most
+common adverse effects of quetiapine. These are usually transient and are
+best managed with initial gradual upward titration of the dosage. Quetiapine
+is the SDA least likely to cause EPS, regardless of dose. This makes it
+particularly useful in treating patients with Parkinson disease who develop
+dopamine agonist-induced psychosis. Prolactin elevation is rare and both
+transient and mild when it occurs. Quetiapine is associated with modest
+transient weight gain in some persons, but some patients occasionally gain a
+considerable amount of weight. The relationship between quetiapine and the
+development of diabetes is not as clearly established as are the cases
+involving the use of olanzapine. Small increases in heart rate, constipation,
+and a transient increase in liver transaminases may also occur. Initial
+concerns about cataract formation, based on animal studies, have not been
+borne out since the drug has been in clinical use. Nevertheless, it might be
+prudent to test for lens abnormalities early in treatment and periodically after
+that.
+
+
+
+
+<<<PAGE 1939>>>
+
+Side Effects. Somnolence, headache, dizziness, nausea, and
+lightheadedness are the most common adverse effects in patients taking
+ziprasidone. The drug has almost no significant effects outside the CNS, is
+associated with almost no weight gain, and does not cause sustained prolactin
+elevation. Concerns about prolongation of the QTc complex have deterred
+some clinicians from using ziprasidone as a first choice. The QTc interval has
+been shown to increase in patients treated with 40 and 120 mg/day.
+Ziprasidone is contraindicated in combination with other drugs known to
+prolong the QTc interval. These include, but are not limited to, dofetilide,
+sotalol, quinidine, other class IA and III antiarrhythmics, mesoridazine,
+thioridazine,
+chlorpromazine,
+droperidol,
+pimozide,
+sparfloxacin,
+gatifloxacin, moxifloxacin, halofantrine, mefloquine, pentamidine, arsenic
+trioxide, levomethadyl acetate, dolasetron mesylate, probucol, and
+tacrolimus. Ziprasidone should be avoided in patients with congenital long
+QT syndrome and patients with a history of cardiac arrhythmias.
+Aripiprazole (Abilify)
+Aripiprazole is a potent 5-HT2A antagonist and is indicated for the treatment
+of both schizophrenia and acute mania. It is also approved for the
+augmentation of antidepressant agents in MDD. Aripiprazole is a D2
+antagonist, but can also act as a partial D2 agonist. Partial D2 agonists
+compete at D2 receptors for endogenous dopamine, thereby producing a
+functional reduction of dopamine activity.
+Indications. Aripiprazole is indicated for the treatment of schizophrenia.
+Short-term, 4- to 6-week studies comparing aripiprazole with haloperidol and
+risperidone in patients with schizophrenia and schizoaffective disorder have
+shown comparable efficacy. Dosages of 15, 20, and 30 mg a day were found
+to be effective. Long-term studies suggest that aripiprazole is effective as a
+maintenance treatment at a daily dose of 15 to 30 mg.
+Aripiprazole is also indicated for the acute and maintenance treatment of
+manic and mixed episodes associated with bipolar I disorder. It is also used
+as adjunctive therapy to either lithium or valproate for the acute treatment of
+manic and mixed episodes associated with bipolar I disorder.
+Aripiprazole is indicated for use as adjunctive therapy to antidepressants
+
+
+
+
+<<<PAGE 1950>>>
+
+DOPAMINE RECEPTOR ANTAGONISTS (FIRSTGENERATION ANTIPSYCHOTICS)
+The DRAs represent the first group of effective agents for schizophrenia and
+other psychotic illnesses. The first of these drugs, the phenothiazine
+chlorpromazine (Thorazine), was introduced in the early 1950s. Other DRAs
+include all of the antipsychotics in the following groups: phenothiazines,
+butyrophenones, thioxanthenes, dibenzoxazepines, dihydroindoles, and
+diphenylbutylpiperidines. Because these agents are associated with
+extrapyramidal side effects (EPS) at clinically effective dosages, newer
+antipsychotic drugs—the SDAs—have gradually replaced the older agents in
+the United States. The SDAs are differentiated from earlier drugs by their
+lower liability to cause extrapyramidal side effects. These newer drugs have
+other liabilities, most notably a propensity to cause weight gain, lipid
+elevations, and diabetes. Therefore, a reason to still consider the use of the
+DRAs is their lower risk of causing significant metabolic abnormalities.
+Intermediate-potency DRAs, such as perphenazine (Trilafon), are as effective
+and well tolerated as the SDAs. Manufacturing of molindone (Moban), the
+DRA with the lowest risk of weight gain and metabolic side effects, was
+discontinued in the United States.
+Table 21-9
+Comparison of Usual Dosinga for Some Available SecondGeneration Antipsychotics in Schizophrenia
+
+
+
+
+<<<PAGE 1953>>>
+
+continued during the first month or so of depot antipsychotic treatment.
+Antipsychotic activity derives from the inhibition of dopaminergic
+neurotransmission. The DRAs are effective when approximately 72 percent
+of dopamine D2 receptors in the brain are occupied. The DRAs also block
+noradrenergic, cholinergic, and histaminergic receptors, with different drugs
+having different effects on these receptor systems.
+Some generalizations can be made about the DRAs based on their potency.
+Potency refers to the amount of drug that is required to achieve therapeutic
+effects. Low-potency drugs such as chlorpromazine and thioridazine
+(Mellaril), given in doses of several 100 mg/day, typically produce more
+weight gain and sedation than high-potency agents such as haloperidol and
+fluphenazine, usually given in doses of less than 10 mg/day. High-potency
+agents are also more likely to cause EPS. Some factors influencing the
+pharmacologic actions of DRAs are listed in Table 21-10.
+Therapeutic Indications
+Many types of psychiatric and neurologic disorders may benefit from
+treatment with DRAs. Some of these indications are shown in Table 21-11.
+Schizophrenia and Schizoaffective Disorder. The DRAs are useful in
+both the short- and long-term management of schizophrenia and
+schizoaffective disorder. They both reduce acute symptoms and prevent
+future exacerbations. These agents produce their most dramatic effects on the
+positive symptoms of schizophrenia (e.g., hallucinations, delusions, and
+agitation). Negative symptoms (e.g., emotional withdrawal and ambivalence)
+are less likely to improve significantly, and they may appear to worsen
+because these drugs produce constriction of facial expression and akinesia,
+side effects that mimic negative symptoms.
+Table 21-11
+Indications for Dopamine Receptor Antagonists
+Acute psychotic episodes in schizophrenia and schizoaffective
+disorder
+Maintenance treatment in schizophrenia and schizoaffective
+
+
+
+
+<<<PAGE 1958>>>
+
+women, and young persons are affected more commonly than are elderly
+persons. The mortality rate can reach 20 to 30 percent, or even higher, when
+depot medications are involved. Rates are also increased when high doses of
+high-potency agents are used.
+If the neuroleptic malignant syndrome is suspected, the DRA should be
+stopped immediately, and the following done: medical support to cool the
+person; monitoring of vital signs, electrolytes, fluid balance, and renal output;
+and symptomatic treatment of fever. Antiparkinsonian medications may
+reduce some of the muscle rigidity. Dantrolene (Dantrium), a skeletal muscle
+relaxant (0.8 to 2.5 mg/kg every 6 hours, up to a total dosage of 10 mg a day),
+may be useful in the treatment of this disorder. When the person can take oral
+medications, dantrolene can be given in doses of 100 to 200 mg a day.
+Bromocriptine (20 to 30 mg a day in four divided doses) or amantadine can
+be added to the regimen. Treatment should usually be continued for 5 to 10
+days. When drug treatment is restarted, the clinician should consider
+switching to a low-potency drug or an SDA, although these agents—
+including clozapine—may also cause the neuroleptic malignant syndrome.
+Seizure Threshold. DRAs may lower the seizure threshold.
+Chlorpromazine, thioridazine, and other low-potency drugs are thought to be
+more epileptogenic than are high-potency drugs. The risk of inducing a
+seizure by drug administration warrants consideration when the person
+already has a seizure disorder or brain lesion.
+Sedation. The blockade of histamine H1 receptors is the usual cause of
+sedation associated with DRAs. Chlorpromazine is the most sedating typical
+antipsychotic. The relative sedative properties of the drugs are summarized in
+Table 21-12. Giving the entire daily dose at bedtime usually eliminates any
+problems from sedation, and tolerance for this adverse effect often develops.
+Central Anticholinergic Effects. The symptoms of central
+anticholinergic activity include severe agitation; disorientation to time,
+person, and place; hallucinations; seizures; high fever; and dilated pupils.
+Stupor and coma may ensue. The treatment of anticholinergic toxicity
+consists of discontinuing the causal agent or agents, close medical
+supervision, and physostigmine (Antilirium, Eserine), 2 mg by slow
+
+
+
+
+<<<PAGE 1959>>>
+
+intravenous (IV) infusion, repeated within 1 hour as necessary. Too much
+physostigmine is dangerous, and symptoms of physostigmine toxicity include
+hypersalivation and sweating. Atropine sulfate (0.5 mg) can reverse the
+effects of physostigmine toxicity.
+Cardiac Effects. The DRAs decrease cardiac contractility, disrupt enzyme
+contractility in cardiac cells, increase circulating levels of catecholamines,
+and prolong atrial and ventricular conduction time and refractory periods.
+Low-potency DRAs, particularly the phenothiazines, are usually more
+cardiotoxic than are high-potency drugs. One exception is haloperidol, which
+has been linked to abnormal heart rhythm, ventricular arrhythmias, torsades
+de pointes, and sudden death when injected IV. Pimozide, sulpiride, and
+droperidol (a butyrophenone) also prolong the QTc interval and have been
+associated with torsades de pointes and sudden death. In one study,
+thioridazine was responsible for 28 (61 percent) of the 46 sudden
+antipsychotic deaths. In 15 of these cases, it was the only drug ingested.
+Chlorpromazine also causes prolongation of the QT and PR intervals,
+blunting of the T waves, and depression of the ST segment. These drugs are
+thus indicated only when other agents have been ineffective.
+Sudden Death. Occasional reports of sudden cardiac death during
+treatment with DRAs may be the result of cardiac arrhythmias. Other causes
+may include seizure, asphyxiation, malignant hyperthermia, heatstroke, and
+neuroleptic malignant syndrome. However, there does seem to be an overall
+increased incidence of sudden death with antipsychotics.
+Orthostatic (Postural) Hypotension. Orthostatic (postural) hypotension
+is most frequent with low-potency drugs, particularly chlorpromazine,
+thioridazine, and chlorprothixene. When using intramuscular (IM) lowpotency DRAs, the clinician should measure the patient’s BP (lying and
+standing) before and after the first dose and during the first few days of
+treatment.
+Orthostatic hypotension is mediated by adrenergic blockade and occurs
+most frequently during the first few days of treatment. Tolerance often
+develops for this side effect, which is why the initial dosing of these drugs is
+lower than the usual therapeutic dose. Fainting or falls, although uncommon,
+
+
+
+
+<<<PAGE 1961>>>
+
+paralytic ileus, although the relief is only transitory. Bethanechol
+(Urecholine) (20 to 40 mg a day) may be useful in some persons with urinary
+retention.
+Weight gain is associated with increased mortality and morbidity and with
+medication noncompliance. Low-potency DRAs may cause significant
+weight gain but not as much as is seen with the SDAs olanzapine (Zyprexa)
+and clozapine (Clozaril). Molindone and perhaps loxapine (Loxitane) appear
+to be least likely to cause weight gain.
+Endocrine Effects. Blockade of the dopamine receptors in the
+tuberoinfundibular tract results in the increased secretion of prolactin, which
+can result in breast enlargement, galactorrhea, amenorrhea, and inhibited
+orgasm in women and impotence in men. The SDAs, except risperidone
+(Risperdal), are not significantly associated with an increase in prolactin
+levels and may be the drugs of choice for persons experiencing disturbing
+side effects from increased prolactin release.
+Sexual Adverse Effects. Both men and women taking DRAs can
+experience anorgasmia and decreased libido. Up to 50 percent of men who
+take antipsychotics report ejaculatory and erectile disturbances. Sildenafil
+(Viagra), vardenafil (Levitra), and tadalafil (Cialis) are often used to treat
+psychotropic-induced orgasmic dysfunction, but they have not been studied
+in combination with the DRAs. Thioridazine is mainly associated with
+decreased libido and retrograde ejaculation in men. Priapism and reports of
+painful orgasms have also been described, both possibly resulting from α1adrenergic antagonist activity.
+Skin and Eye Effects. Allergic dermatitis and photosensitivity may occur,
+especially with low-potency agents. Urticarial, maculopapular, petechial, and
+edematous eruptions may occur early in treatment, generally in the first few
+weeks, and remit spontaneously. A photosensitivity reaction that resembles a
+severe sunburn also occurs in some persons taking chlorpromazine. Persons
+should be warned of this adverse effect, should spend no more than 30 to 60
+minutes in the sun, and should use sunscreens. Long-term chlorpromazine
+use is associated with blue-gray discoloration of skin areas exposed to
+sunlight. The skin changes often begin with a tan or golden brown color and
+
+
+
+
+<<<PAGE 1962>>>
+
+progress to such colors as slate gray, metallic blue, and purple. These
+discolorations resolve when the patient is switched to another medication.
+Irreversible retinal pigmentation is associated with the use of thioridazine
+at dosages above 1,000 mg a day. An early symptom of the side effect can
+sometimes be nocturnal confusion related to difficulty with night vision. The
+pigmentation can progress even after thioridazine administration is stopped,
+finally resulting in blindness. It is for this reason that the maximum
+recommended dosage of thioridazine is 800 mg/day.
+Patients taking chlorpromazine may develop a relatively benign
+pigmentation of the eyes, characterized by whitish brown granular deposits
+concentrated in the anterior lens and posterior cornea and visible only by slitlens examination. The deposits can progress to opaque white and yellowbrown granules, often stellate. Occasionally, the conjunctiva is discolored by
+a brown pigment. No retinal damage is seen, and vision is rarely impaired.
+This condition gradually resolves when chlorpromazine is discontinued.
+Jaundice. Elevations of liver enzymes during treatment with a DRA tend to
+be transient and not clinically significant. When chlorpromazine first came
+into use, cases of obstructive or cholestatic jaundice were reported, usually in
+the first month of treatment and heralded by symptoms of upper abdominal
+pain, nausea, and vomiting. This adverse effect was followed by fever, rash,
+eosinophilia, bilirubin in the urine, and increases in levels of serum bilirubin,
+alkaline phosphatase, and hepatic transaminases. Reported cases are now
+sporadic, but if jaundice occurs, the medication should be discontinued.
+Overdoses. Overdoses typically consist of exaggerated DRA side effects.
+Symptoms and signs include CNS depression, EPS, mydriasis, rigidity,
+restlessness, decreased deep tendon reflexes, tachycardia, and hypotension.
+The severe symptoms of overdose include delirium, coma, respiratory
+depression, and seizures. Haloperidol may be among the safest typical
+antipsychotics in overdose. After an overdose, electroencephalography (EEG)
+shows diffuse slowing and low voltage. An extreme overdose may lead to
+delirium and coma, with respiratory depression and hypotension. Lifethreatening overdose usually involves the ingestion of other CNS
+depressants, such as alcohol or benzodiazepines.
+Activated charcoal, if possible, and gastric lavage should be administered
+
+
+
+
+<<<PAGE 1968>>>
+
+phenylketonuria.
+Dosage and Clinical Guidelines
+Contraindications to the use of DRAs include the following: (1) a history of a
+severe allergic response; (2) the possible ingestion of a substance that will
+interact with the antipsychotic to induce CNS depression (e.g., alcohol,
+opioids, barbiturates, and benzodiazepines) or anticholinergic delirium (e.g.,
+scopolamine and possibly phencyclidine [PCP]); (3) the presence of a severe
+cardiac abnormality; (4) a high risk for seizures; (5) the presence of narrowangle glaucoma or prostatic hypertrophy if a drug with high anticholinergic
+activity is to be used; and (6) the presence or a history of tardive dyskinesia.
+Antipsychotics should be administered with caution in persons with hepatic
+disease because impaired hepatic metabolism may result in high plasma
+concentrations. The usual assessment should include a CBC with WBC
+indexes, liver function tests, and electrocardiography (ECG), especially in
+women older than 40 years of age and men older than 30 years of age.
+Elderly persons and children are more sensitive to side effects than are young
+adults, so the dosage of the drug should be adjusted accordingly.
+Various patients may respond to widely different dosages of
+antipsychotics; therefore, there is no set dosage for any given antipsychotic
+drug. Because of side effects, it is a reasonable clinical practice to begin at a
+low dosage and increase as necessary. It is important to remember that the
+maximal effects of a particular dosage may not be evident for 4 to 6 weeks.
+Available preparations and dosages of the DRAs are given in Table 21-14.
+Short-Term Treatment. The equivalent of 5 to 20 mg of haloperidol is a
+reasonable dose for an adult in an acute state. An older adult may benefit
+from as little as 1 mg of haloperidol. The administration of more than 25 mg
+of chlorpromazine in one injection may result in profound hypotension. IM
+administration results in peak plasma levels in about 30 minutes versus 90
+minutes using the oral route. Doses of drugs for IM administration are about
+half those given by the oral route. In a short-term treatment setting, the
+person should be observed for 1 hour after the first dose of medication. After
+that time, most clinicians administer a second dose or a sedative agent (e.g., a
+benzodiazepine) to achieve effective behavioral control. Possible sedatives
+
+
+
+
+<<<PAGE 1969>>>
+
+include lorazepam (Ativan) (2 mg IM) and amobarbital (50 to 250 mg IM).
+Rapid Neuroleptization. Rapid neuroleptization (also called
+psychotolysis) is the practice of administering hourly IM doses of
+antipsychotic medications until marked sedation is achieved. However,
+several research studies have shown that merely waiting several more hours
+after one dose yields the same clinical improvement as is seen with repeated
+doses. Nevertheless, clinicians must be careful to keep patients from
+becoming violent while they are psychotic. Clinicians can help prevent
+violent episodes by using adjuvant sedatives or by temporarily using physical
+restraints until the persons can control their behavior.
+Early Treatment. A full 6 weeks may be necessary to evaluate the extent of
+the improvement in psychotic symptoms. However, agitation and excitement
+usually improve quickly with antipsychotic treatment. About 75 percent of
+persons with a short history of illness show significant improvement in their
+psychosis. Psychotic symptoms, both positive and negative, usually continue
+to improve 3 to 12 months after the initiation of treatment.
+About 5 mg of haloperidol or 300 mg of chlorpromazine is a usual
+effective daily dose. In the past, much higher doses were used, but evidence
+suggests that it resulted in more side effects without additional benefits. A
+single daily dose is usually given at bedtime to help induce sleep and to
+reduce the incidence of adverse effects. However, bedtime dosing for elderly
+persons may increase their risk of falling if they get out of bed during the
+night. The sedative effects of typical antipsychotics last only a few hours, in
+contrast to the antipsychotic effects, which last for 1 to 3 days.
+Intermittent Medications. It is a common clinical practice to order
+medications to be given intermittently as needed (PRN). Although this
+practice may be reasonable during the first few days that a person is
+hospitalized, the amount of time the person takes antipsychotic drugs, rather
+than an increase in dosage, is what produces therapeutic improvement.
+Clinicians on inpatient services may feel pressured by staff members to write
+PRN antipsychotic orders; such orders should include specific symptoms,
+how often the drugs should be given, and how many doses can be given each
+day. Clinicians may choose to use small doses for the PRN doses (e.g., 2 mg
+
+
+
+
+<<<PAGE 1972>>>
+
+drug should be determined if feasible. After a patient has been on a particular
+dosage for at least five times the half-life of the drug and thus approaches
+steady-state concentrations, blood levels may be helpful. It is standard
+practice to obtain plasma samples at trough levels—just before the daily dose
+is given, usually at least 12 hours after the previous dose, and most
+commonly 20 to 24 hours after the previous dose. Most antipsychotics have
+no well-defined dose–response curve. The best-studied drug is haloperidol,
+which may have a therapeutic window ranging from 2 to 15 ng/mL. Other
+therapeutic ranges that have been reasonably well documented are 30 to 100
+ng/mL for chlorpromazine and 0.8 to 2.4 ng/mL for perphenazine.
+Treatment-Resistant Persons. Unfortunately, 10 to 35 percent of
+persons with schizophrenia do not obtain significant benefit from the
+antipsychotic drugs. Treatment resistance is a failure on at least two adequate
+trials of antipsychotics from two pharmacologic classes. It is useful to
+determine plasma concentrations for such persons because it is possible that
+they are slow or rapid metabolizers or are not taking their medication.
+Clozapine has been conclusively shown to be effective when given to patients
+who have failed multiple trials of DRAs.
+Adjunctive Medications. It is common practice to use DRAs in
+conjunction with other psychotropic agents, either to treat side effects or to
+improve symptoms further. Most commonly, this involves the use of lithium
+or other mood-stabilizing agents, SSRIs, or benzodiazepines. It was once held
+that antidepressant drugs exacerbated psychosis in patients with
+schizophrenia. In all likelihood, this observation involved patients with
+bipolar disorder who were misdiagnosed as having schizophrenia. Abundant
+evidence suggests that antidepressants improve symptoms of depression in
+patients with schizophrenia. In some cases, amphetamines can be added to
+DRAs if patients remain withdrawn and apathetic.
+Choice of Drug
+Given their proven efficacy in managing acute psychotic symptoms and the
+fact that prophylactic administration of antiparkinsonian medication prevents
+or minimizes acute motor abnormalities, DRAs are still valuable, especially
+for short-term therapy. There is a considerable cost advantage to a DRA
+
+
+
+
+<<<PAGE 1990>>>
+
+Electrolyte and Glucose Disturbances. The SSRIs may acutely
+decrease glucose concentrations; therefore, diabetic patients should be
+carefully monitored. Long-term use may be associated with increased glucose
+levels, although it remains to be proven whether this is the result of a
+pharmacologic effect. Antidepressant users may have other characteristics
+that raise their odds of developing diabetes, or may be more likely to be
+diagnosed with diabetes or other medical conditions as a result of being in
+treatment for depression.
+Cases of SSRI-associated hyponatremia and the syndrome of inappropriate
+antidiuretic hormone have been seen in some patients, especially those who
+are older or treated with diuretics.
+Endocrine and Allergic Reactions. The SSRIs can increase prolactin
+levels and cause mammoplasia and galactorrhea in both men and women.
+Breast changes are reversible upon discontinuation of the drug, but this may
+take several months to occur.
+Various types of rashes appear in about 4 percent of all patients; in a small
+subset of these patients, the allergic reaction may generalize and involve the
+pulmonary system, rarely resulting in fibrotic damage and dyspnea. SSRI
+treatment may have to be discontinued in patients with drug-related rashes.
+Serotonin Syndrome. Concurrent administration of an SSRI with an
+MAOI, L-tryptophan, or lithium (Eskalith) can raise plasma serotonin
+concentrations to toxic levels, producing a constellation of symptoms called
+serotonin syndrome. This severe and possibly fatal syndrome of serotonin
+overstimulation comprises, in order of appearance as the condition worsens,
+(1) diarrhea; (2) restlessness; (3) extreme agitation, hyperreflexia, and
+autonomic instability with possible rapid fluctuations in vital signs; (4)
+myoclonus, seizures, hyperthermia, uncontrollable shivering, and rigidity;
+and (5) delirium, coma, status epilepticus, cardiovascular collapse, and death.
+Treatment of serotonin syndrome consists of removing the offending
+agents and promptly instituting comprehensive supportive care. Supportive
+care and treatment may include nitroglycerine, cyproheptadine (Periactin),
+methysergide (Sansert), cooling blankets, chlorpromazine (Thorazine),
+dantrolene (Dantrium), benzodiazepines, anticonvulsants, mechanical
+ventilation, and paralyzing agents.
+
+
+
+
+<<<PAGE 2038>>>
+
+Others: Banana or avocado (ripe or not), banana peel
+aAny food left out to age or spoil can spontaneously develop tyramine through fermentation.
+bAlcohol can produce profound orthostasis interacting with monoamine oxidase inhibitors
+
+(MAOIs) but cannot produce direct hypotensive reactions.
+cWhite wines, gin, and vodka have no tyramine content.
+Table by Jonathan M. Himmelhoch, M.D.
+
+An MAOI-induced hypertensive crisis should be treated with α-adrenergic
+antagonists—for example, phentolamine (Regitine) or chlorpromazine
+(Thorazine). These drugs lower BP within 5 minutes. IV furosemide (Lasix)
+can be used to reduce fluid load, and a β-adrenergic receptor antagonist can
+control tachycardia. A sublingual 10-mg dose of nifedipine (Procardia) can
+be given and repeated after 20 minutes. Persons with thyrotoxicosis or
+pheochromocytoma should not use MAOIs.
+The risk of tyramine-induced hypertensive crises is relatively low for
+persons who are taking RIMAs, such as moclobemide and befloxatone. These
+drugs have relatively little inhibitory activity for MAOB, and because they are
+reversible, regular activity of existing MAOA returns within 16 to 48 hours of
+the last dose of a RIMA. Therefore, the dietary restrictions are less stringent
+for RIMAs, applying only to foods containing high concentrations of
+tyramine, which need to be avoided for 3 days after the last dose of a RIMA.
+A reasonable dietary recommendation for persons taking RIMAs is to avoid
+eating tyramine-containing foods 1 hour before and 2 hours after taking a
+RIMA.
+Spontaneous, nontyramine-induced hypertensive crisis is a rare occurrence,
+usually shortly after the first exposure of an MAOI. Persons experiencing
+such a crisis should avoid MAOIs altogether.
+Withdrawal. Abrupt cessation of regular doses of MAOIs may cause a selflimited discontinuation syndrome consisting of arousal, mood disturbances,
+and somatic symptoms. Dosages should be gradually tapered over several
+weeks to avoid these symptoms.
+Overdose. It often takes 1 to 6 hours after an overdose for the toxic
+symptoms to occur. MAOI overdose is characterized by agitation that can
+progress to coma with hyperthermia, hypertension, tachypnea, tachycardia,
+
+
+
+
+<<<PAGE 3464>>>
+
+Biologic models had existed before. For example, in the 1930s, Papez
+theorized that emotions were caused by a circuit connecting the limbic lobe,
+amygdala, septal region, and hippocampus. Electroconvulsive therapy was
+also developed in the 1930s and used to treat depression as early as the
+1940s.
+An early influence on biologic explanations for etiology was Otto Loewi’s
+discovery of acetylcholine’s role as a neurotransmitter. In proving this, Loewi
+(Fig. 35-10) employed a now-famous experiment, published in 1921, in
+which he used the saline solution from one frog heart to stimulate the rate in a
+second denervated heart, thus proving that a chemical must control the heart
+rate. He later showed that this chemical was acetylcholine. This was the first
+experiment that showed that a chemical could cause a response absent of
+electrical stimulation, thus discovering the critical role of neurotransmitters.
+Loewi’s experiment is famous, not only for its scientific value but also
+that the idea for the experiment came in a dream. Although he wrote
+down the dream when briefly waking from it, he could not make sense of
+his scribbles the next morning. Fortunately, he went on to have the same
+dream the next night, and when awakening from that, he rushed to his
+laboratory to perform what would become Nobel Prize-winning research.
+The practical beginning of biologic psychiatry occurred with the
+serendipitous discovery of several drugs that could treat mental disorders,
+including chlorpromazine for schizophrenia, imipramine and iproniazid for
+depression, and lithium carbonate for bipolar disorder. In each case, the initial
+importance of the drug was not appreciated. For example, chlorpromazine
+was synthesized from promethazine, an antihistamine, in a search for more
+stable antihistamine sedatives. It was initially used as an anesthetic adjunct,
+and its antipsychotic properties were only later recognized after psychiatrists
+began administering it to manic and psychotic patients, again originally as a
+sedative.
+Imipramine was also first synthesized as an antihistamine, and, following
+in the footsteps of chlorpromazine, tried as an antipsychotic before some case
+reports convinced the manufacturers to investigate its role as an
+antidepressant. Supporting these findings was the discovery that certain
+
+
+
+
+<<<PAGE 3622>>>
+
+memory, 80
+mood, 79
+motor behavior, 80
+orientation, 79
+parent–child interaction, 79
+physical appearance, 79
+separation and reunion, 79
+social relatedness, 80
+speech and language, 79
+thought process and content, 79–80
+questionnaires and rating scales, 78
+recommendations and treatment plan, 84
+Children’s Apperception Test (CAT), 84
+Children’s Depression Rating Scale-Revised (CDRS-R), 176, 177
+Children’s Interview for Psychiatric Syndromes (ChIPS), 77–78
+Children’s Personality Questionnaire, 83t
+Chinese Classification of Mental Disorders (CCMD-2-R), 1056
+Chloral hydrate, 298, 678–679
+Chlordiazepoxide, for alcohol withdrawal treatment, 281
+Chlorpromazine, 602, 619, 622
+for schizophrenia, 353t
+Cholecystokinin (CCK), 479, 969
+Cholinesterase inhibitors, 696, 959, 986
+dosage and clinical guidelines, 698
+drug interactions, 698
+pharmacologic actions, 697
+precautions and adverse reactions, 697–698, 698t
+therapeutic indications, 697
+Chorionic villi sampling (CVS), 97
+Chronic fatigue syndrome (CFS), 986
+immune component of, 985
+Chronic grief, 851
+Chronic illness care model, 874
+Chronic motor or vocal tic disorder, 162
+Chronic obstructive pulmonary disease (COPD), and insomnia, 491
+Chronobiology, 1001–1002
+Chronotherapy, 514–515
+
+
+
+
+<<<PAGE 3755>>>
+
+Thanatos, 1061
+Thematic Apperception Test (TAT), 59–60, 59f, 59t, 83t, 84
+Theory of Psychoanalytic Technique (Menninger), 1085
+Therapeutic alliance, 2–3
+Therapeutic communities, 296
+Therapeutic-graded exposure, 772
+Therapeutic index, 600
+Therapeutic trial of a drug, 603
+Thermocapsulotomy, 742
+Theta waves, 999
+Thiamine, 277, 284
+deficiency, 262
+Thiazides, 601
+Thioridazine, 19, 593
+and QTc prolongation, 67
+Third-generation antidepressants, 591
+Third individuation, 906
+Thorazine. See Chlorpromazine
+Thorndike, Edward, 1018
+Thought blocking, 10t
+Thought content
+compulsions, 9
+delusions, 9–10
+in initial psychiatric interview, 9–10, 13t
+obsessional thoughts, 9
+Thought process
+formal disorders, 10t
+initial assessment of, 10, 13t
+Three Essays on the Theory of Sexuality (Freud), 1061
+Thyroid axis activity, 395
+Thyroid disorders, 65, 260–261
+Thyroid function tests, 648
+Thyroid hormones
+dosage and clinical guidelines, 648
+drug interactions, 647
+laboratory interferences, 648
+pharmacologic actions, 647
+
+

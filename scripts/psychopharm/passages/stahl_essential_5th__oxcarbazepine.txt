@@ -1,0 +1,653 @@
+<<<PAGE 363>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Table 7-3 Anticonvulsant mood stabilizers
+
+Agent
+
+Putative clinical actions
+Epilepsy
+
+Mania-minded
+
+Depression-minded
+
+Treat from
+above
+
+Stabilize
+from above
+
+Treat from
+below
+
+Stabilize from
+below
+
+Valproate
+
+++++
+
+++++
+
+++
+
++
+
++/−
+
+Carbamazepine
+
+++++
+
+++++
+
+++
+
++
+
++/−
+
+Lamotrigine
+
+++++
+
++/−
+
+++++
+
++++
+
+++++
+
+Oxcarbazepine/licarbazepine
+
+++++
+
+++
+
++
+
++/−
+
++/−
+
+Riluzole
+
++
+
++
+
++/−
+
+Topiramate
+
+++++
+
++/−
+
++/−
+
+Gabapentin
+
+++++
+
++/−
+
++/−
+
+Pregabalin
+
+++++
+
++/−
+
++/−
+
+Anticonvulsants with Proven Efficacy in Bipolar Disorder
+Valproic Acid (Valproate, Sodium Valproate)
+
+As for all anticonvulsants, the exact mechanism of action
+of valproic acid (also, sodium valproate, valproate) is
+uncertain; however, even less may be known about the
+mechanism of valproate than for other anticonvulsants.
+Various hypotheses are discussed here, and summarized in
+Figures 7-75 through 7-78. At least three possibilities exist
+for how valproic acid works: inhibiting voltage-sensitive
+sodium channels (Figure 7-76), boosting the actions of the
+neurotransmitter GABA (γ-aminobutyric acid) (Figure
+7-77), and regulating downstream signal transduction
+cascades (Figure 7-78). It is not known whether these
+actions explain the mood-stabilizing actions, the
+anticonvulsant actions, the anti-migraine actions, or the
+side effects of valproic acid. Obviously, this simple molecule
+has multiple and complex clinical effects, and research
+is trying to determine which of the various possibilities
+explain the “mood-stabilizing” antimanic effects of valproic
+acid so that new agents with more efficacy and fewer
+side effects can be developed by targeting the relevant
+pharmacological mechanism for bipolar disorder.
+One hypothesis to explain mood-stabilizing antimanic
+actions is the possibility that valproate acts to diminish
+excessive neurotransmission by diminishing the flow of
+ions through voltage-sensitive sodium channels (VSSCs)
+(Figure 7-76). VSSCs are discussed in Chapter 3 and
+illustrated in Figures 3-19 through 3-21. No specific
+molecular site of action for valproate has been identified,
+but it is possible that valproate may change the sensitivity
+of sodium channels by altering phosphorylation of
+
+7
+
+valproic acid
+
+Na+
+++
+Ca
+
+Glu
+GABA
+Figure 7-75 Valproic acid. Shown here is an icon of the
+pharmacological actions of valproic acid, an anticonvulsant
+used in the treatment of bipolar disorder. Valproic acid (also
+valproate) may work by interfering with voltage-sensitive sodium
+channels, enhancing the inhibitory actions of γ-aminobutyric
+acid (GABA), and regulating downstream signal transduction
+cascades, although which of these actions may be related to
+mood stabilization is not clear. Valproate may also interact with
+other ion channels, such as voltage-sensitive calcium channels,
+and also indirectly block glutamate (Glu) actions.
+
+347
+
+
+
+
+<<<PAGE 366>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+has unacceptable side effects such as hair loss, weight
+gain, and sedation. Certain problems can be avoided by
+lowering the dose, but this will generally lower efficacy,
+and thus there may be the requirement to combine
+valproate with other mood stabilizers, especially when
+valproate is given in lower doses. Some side effects may
+be related more to chronicity of exposure rather than
+to dose and thus may not be avoidable by reducing the
+dose. This includes warnings for bone marrow, liver,
+pancreatic, and fetal toxicities such as neural-tube
+defects, as well as concerns about weight gain, metabolic
+complications, and possible risk of amenorrhea and
+polycystic ovaries in women of child-bearing potential. A
+syndrome of menstrual disturbances, polycystic ovaries,
+hyperandrogenism, obesity, and insulin resistance may be
+associated with valproic acid therapy in such women.
+Carbamazepine
+
+Carbamazepine (Figure 7-79) was actually the first to
+be shown to be effective in the manic phase of bipolar
+disorder, but did not receive US FDA approval until
+recently as a once-daily controlled-release formulation.
+Although carbamazepine and valproate both act
+effectively on the manic phase of bipolar disorder (Table
+
+carbamazepine
+Ca ++
+
+7-3), they appear to have different pharmacological
+mechanisms of action, including different side-effect
+profiles. Thus, carbamazepine is hypothesized to act by
+blocking voltage-sensitive sodium channels (VSSCs)
+(Figure 7-80), perhaps at a site within the channel itself,
+also known as the α subunit of VSSCs. As mentioned
+earlier, VSSCs are discussed in Chapter 3 and illustrated
+in Figures 3-19 through 3-21. The hypothesized action
+of carbamazepine upon the α subunit of VSSCs (Figure
+7-80) is different from the hypothesized actions of
+valproate on these sodium channels (Figure 7-76), but
+may be similar to how the anticonvulsants oxcarbazepine
+and its active metabolite eslicarbazepine also act.
+Although both carbamazepine and valproate are
+anticonvulsants and both treat mania from above, there
+are differences between these two “anticonvulsants”
+beyond their presumed pharmacological mechanisms
+of therapeutic action in mania. For example, valproate
+is proven effective in migraine, but carbamazepine is
+proven effective in neuropathic pain. Furthermore,
+carbamazepine has a different side-effect profile
+than valproate, including more profound immediate
+suppressant effects upon the bone marrow, requiring
+initial monitoring of blood counts (blood counts
+including platelets should also be periodically monitored
+on valproate), and notable induction of the cytochrome
+P450 enzyme 3A4. Both carbamazepine and valproate are
+sedating and can cause fetal toxicity such as neural-tube
+defects.
+Lamotrigine
+
+K+
+
+GABA
+Na+ channel
+unit
+Figure 7-79 Carbamazepine. Shown here is an icon of the
+pharmacological actions of carbamazepine, an anticonvulsant
+used in the treatment of bipolar disorder. Carbamazepine may
+work by binding to the α subunit of voltage-sensitive sodium
+channels (VSSCs) and could perhaps have actions at other ion
+channels for calcium and potassium. By interfering with voltagesensitive channels, carbamazepine may enhance the inhibitory
+actions of γ-aminobutyric acid (GABA).
+
+350
+
+Lamotrigine (Figure 7-81) is approved as a “mood
+stabilizer” for entirely different clinical indications
+than the anticonvulsant mood stabilizers valproate and
+carbamazepine, making the point that anticonvulsants
+do not all have the same therapeutic actions in bipolar
+disorder. Lamotrigine is not approved to treat mania
+or depression in bipolar disorder, but is approved to
+prevent recurrence of both mania and depression in
+bipolar disorder. There are many curious things about
+lamotrigine as a “mood stabilizer.” First, the US FDA
+has not approved its use for acute bipolar depression,
+yet most experts believe that lamotrigine is effective for
+bipolar depression. A second interesting thing about
+lamotrigine is that even though it has some overlapping
+mechanistic actions with carbamazepine, namely binding
+to the open-channel conformation of VSSCs (Figure
+7-82), lamotrigine is not approved for bipolar mania.
+Perhaps lamotrigine’s pharmacological actions are not
+potent enough at sodium channels, or perhaps the long
+
+
+
+
+<<<PAGE 368>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+titration period required when starting lamotrigine
+makes it difficult to show any useful effectiveness for
+mania, which generally requires treatment with drugs
+that can work quickly. A third aspect of lamotrigine
+is that it is generally well tolerated, with one glaring
+exception: a propensity to cause rashes, including (rarely)
+the life-threatening Stevens Johnson syndrome (toxic
+epidermal necrolysis). Rashes caused by lamotrigine
+can be minimized by very slow up-titration of the drug
+during initiation of therapy, avoiding or managing drug
+interactions, such as those with valproate that raise
+lamotrigine levels, and by understanding how to identify
+and manage serious rashes, including being able to
+distinguish them from benign rashes (see discussion of
+lamotrigine in Stahl’s Essential Psychopharmacology: the
+Prescriber’s Guide). Finally, lamotrigine seems to have
+some unique aspects to its mechanism of action (Figure
+7-82), namely to reduce the release of the excitatory
+neurotransmitter glutamate. It is not clear whether this
+action is secondary to blocking the activation of VSSCs
+(Figure 7-82) or to some additional synaptic action.
+Reducing excitatory glutamatergic neurotransmission,
+especially if excessive during bipolar depression, may be
+a unique mechanism of action of lamotrigine and explain
+why it has such a different clinical profile as a treatment
+from below and a stabilizer from below for bipolar
+depression.
+Anticonvulsants with Uncertain or Doubtful Efficacy in
+Bipolar Disorder
+Oxcarbazepine/Eslicarbazepine
+
+Oxcarbazepine is structurally related to carbamazepine,
+but is not a metabolite of carbamazepine. Oxcarbazepine
+is actually not the active form of the drug, but a prodrug
+that is immediately converted into a 10-hydroxy
+derivative, also called the monohydroxy derivative,
+and most recently has been named licarbazepine. The
+active form of licarbazepine is the S enantiomer, known
+as eslicarbazepine. Thus, oxcarbazepine really works
+via conversion to eslicarbazepine, which is itself now
+available as an anticonvulsant.
+Oxcarbazepine has a presumed mechanism of
+anticonvulsant action the same as that for carbamazepine,
+namely, binding to the open-channel conformation of the
+VSSC at a site within the channel itself on the α subunit
+(as in Figure 7-80). However, oxcarbazepine seems to
+have some important differences from carbamazepine,
+including being less sedating, having less bone marrow
+toxicity, and also having less CYP450 3A4 interactions,
+352
+
+making it a more tolerable agent that is easier to dose. On
+the other hand, oxcarbazepine has never been proven to
+work in acute bipolar mania or depression. Nevertheless,
+because of a similar postulated mechanism of action
+but a better tolerability profile, oxcarbazepine and more
+recently eslicarbazepine have been utilized “off-label” by
+many clinicians especially for the manic phase of bipolar
+disorder.
+Topiramate
+
+Topiramate is another compound approved as an
+anticonvulsant and for migraine, and recently, in
+combination with bupropion, for weight loss in obesity.
+Topiramate has been tested in bipolar disorder, but
+with ambiguous results (Table 7-3). It does seem to be
+associated with weight loss and is sometimes given as an
+adjunct to drugs for psychosis or to mood stabilizers that
+cause weight gain, but can cause unacceptable sedation
+in some patients. Topiramate is also being tested in
+various substance abuse disorders, including stimulant
+abuse and alcoholism. However, topiramate is not clearly
+effective as a mood stabilizer, either from evidence-based
+randomized controlled trials (which are not consistently
+positive) or from clinical practice.
+Gabapentin and Pregabalin
+
+These anticonvulsants seem to have little or no action as
+mood stabilizers, yet are robust treatments for various
+pain conditions, from neuropathic pain to fibromyalgia,
+and for various anxiety disorders, and are discussed in
+more detail in Chapter 8 on anxiety and Chapter 9 on
+pain.
+Calcium Channel Blockers (L-Type)
+
+There are several types of calcium channels, not
+only the N or P/Q channels linked to secretion of
+neurotransmitters, targeted by α2δ ligands and discussed
+in Chapter 3 (see Figures 3-23 and 3-24), but also L
+channels localized on vascular smooth muscle and
+which are targeted by various antihypertensive and
+antiarrhythmic drugs, commonly called “calcium channel
+blockers.” L-type channels are located on neurons where
+their function is still being debated, and some anecdotal
+evidence suggests that calcium channel blockers,
+especially dihydropyridine-type calcium channel blockers,
+may be useful for some patients with bipolar disorder.
+Riluzole
+
+This agent has anticonvulsant actions in preclinical
+models, but was developed to slow the progression
+
+
+
+
+<<<PAGE 546>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Neurodegeneration in Dementia Compromises
+Top-Down Inhibition: Motor Output
+
+top-down inhibition
+
+Figure 12-45B Neurodegeneration
+in dementia compromises topdown inhibition: motor output. (1)
+Accumulation of Aβ plaques and tau
+tangles destroys glutamate neurons
+projecting to the striatum and thus
+reduces top-down cortical inhibition.
+(2) GABA input into the thalamus is
+insufficient and sensory input is not
+adequately filtered. (3) Excessive
+thalamic output directly to the cortex
+and (4) via the amygdala generates a
+reflexive motor response.
+
+agitation
+cortex
+
+4
+
+3
+1
+
+2
+
+striatum
+
+amygdala
+
++
++
++
+
+thalamus
+
+Up until now, treatments of agitation in AD have not
+been particularly effective, including dopamine receptor
+blockers already mentioned. In the absence of any
+approved agents, first-line pharmacological treatment
+of agitation and aggression in dementia is actually
+considered by many experts to be therapy with selective
+serotonin reuptake inhibitors (SSRIs) and serotonin–
+norepinephrine reuptake inhibitors (SNRIs), which can
+help some patients. Second-line treatments that may help
+avoid use of dopamine receptor blocking drugs include
+β blockers, carbamazepine, and perhaps gabapentin and
+pregabalin, but not valproate, topiramate, oxcarbazepine,
+or benzodiazepines. Unfortunately, in addition to
+not causing robust efficacy, many of these agents are
+associated with significant side effects including sedation,
+unsteady gait, diarrhea, and weakness. Carbamazepine has
+perhaps shown the greatest efficacy amongst unapproved
+drugs so far in treating neuropsychiatric symptoms of
+dementia but has significant side-effect risks and may
+interact with other medications commonly prescribed to
+elderly patients. Cholinesterase inhibitors have little if any
+benefit for most of the behavioral symptoms of dementia
+except in patients with Lewy body dementias.
+530
+
+sensory input
+
+Targeting Multimodal Neurotransmitters
+(Norepinephrine, Serotonin, and Dopamine) for the
+Symptomatic Treatment of Agitation in Alzheimer
+Disease
+
+Brexpiprazole is a serotonin–dopamine–norepinephrine
+antagonist/partial agonist discussed in Chapter 5 as
+one of the drugs approved to treat psychosis (Figure
+5-57) and in Chapter 7 as one of the drugs to augment
+SSRIs/SNRI to treat unipolar major depression. This
+agent combines several simultaneous mechanisms to
+quell the excessive activity of the agitation network in
+AD: namely by its well-known dopamine D2 partial
+agonist actions combined with 5HT1A partial agonist
+and 5HT2A antagonist actions, as well as by its relatively
+unique additional actions blocking both α1- and α2adrenergic receptors (Figure 5-57 and Figure 12-47).
+Despite brexpiprazole having a warning for increased
+mortality in dementia-related psychosis, using this
+agent for agitation in AD and in doses lower than those
+generally used to treat psychosis in schizophrenia may
+provide a greater safety margin, especially since it is
+the hypothetical synergy of its five actions that leads to
+therapeutic efficacy in agitation of AD (Figure 12-47).
+
+
+
+
+<<<PAGE 636>>>
+
+Index
+
+neurofibrillary tangles, 488, 502, 503
+neuroinflammation, 270
+neuroleptic-induced deficit syndrome,
+162
+neuroleptic malignant syndrome, 169
+neuroleptics, 162
+neuronal cell loss, 488, 490, 491
+neurons, 1, 2
+general structure, 2
+neuropathic pain, 380, 382–90, See also
+fibromyalgia
+central mechanisms, 382–6
+peripheral mechanisms, 382
+neuropathic pain syndromes, 380
+neuropeptides, 35
+neuroplasticity and neuroprogression
+hypothesis of depression, 266–76
+neurotransmission, 1, See also chemical
+neurotransmission
+anatomical basis of, 1–5
+neurotransmitters, 5–6
+enzymes as. See enzymes
+psychosis pathways, 79
+transporters. See transporters
+neurotrophic factors, loss of, 266, 268
+neurotrophin-linked systems, 11, 12
+neutropenia, 224
+NGF (nerve growth factor), 6
+nicotine, 63, 466, 547–53
+alternative forms of delivery, 551
+treatment of addiction, 548–53
+nicotinic receptors, 506, 507–9, 548
+nigrostriatal dopamine pathway, 87–9
+nitric oxide, 6
+nitric oxide synthase, 295
+NMDA antagonism, 328, 330, 355
+NMDA glutamate hypofunction
+hypothesis of psychosis, 105–14
+NMDA glutamate receptors, 97–101, 104
+histamine at, 406
+hypofunction, 111, 114
+NMDA receptor activation, 375
+nociception, 380, 381
+pain pathways, 396
+nociceptive nerve fibers, activation, 381
+nociceptive pathway, 381
+from the spinal cord to the brain,
+382–4
+to the spinal cord, 381–2
+non-24-hour sleep–wake disorder, 437,
+438
+non-REM sleep, 413, 414
+noradrenaline. See norepinephrine
+noradrenergic hyperactivity, 370–2
+norepinephrine, 5, 252–6, 370
+action termination, 253
+inefficient tuning of prefrontal cortex
+by, 454–63
+620
+
+projections, 279
+synthesis, 252
+norepinephrine–dopamine reuptake
+inhibitors (NDRIs), 303–6, 333
+norepinephrine receptors, 254–6, 258
+norepinephrine transporters (NETs),
+31, 254
+norepinephrine transporter (NET)
+inhibition, 294, 298–303, 370
+ADHD, 480–4
+norquetiapine, 227
+NRX101, 237
+NSAIDs (nonsteroidal anti-inflammatory
+drugs), 382
+nucleosomes, 23
+nucleus accumbens, 162
+obesity, 198, 415, 575
+obsessive–compulsive disorder (OCD),
+295, 360, 576–7
+obstructive sleep apnea, 430, 431, 434,
+443
+olanzapine, 218, 225
+fluoxetine combination, 293, 326, 343
+ondansetron, 556
+OPC4392, 193
+open state, 63
+opiates, 559
+opioid use disorder, 355
+opioids, 375, 390, 556, 559
+abstinence, 573
+addiction, 559–60
+addiction, treatment of, 560–2
+endogenous neurotransmitter system,
+559
+orbital frontal cortex, 454
+orexin, 409, 435
+dual orexin receptor antagonists,
+423–4, 430
+orexin receptors, 407
+orexins, 406–11
+oxcarbazepine, 352
+oxycodone (OxyContin), 559
+pain, 379–84, See also chronic pain
+definition, 380
+in dementia, 537
+mood and anxiety disorders and, 387
+paliperidone, 223, 235
+PAMs (positive allosteric modulators),
+64–6, 421–3
+panic attacks, 361, 377, 569
+panic disorder, 361, 372, 377
+paralytic ileus, 167, 183
+paranoid psychosis, 78
+parkinsonism, drug-induced, 165, 166–9,
+181
+Parkinson’s disease, 338
+
+Alzheimer disease comorbidity, 494
+cognitive dysfunction, 493
+Parkinson’s disease dementia, 492–5
+Parkinson’s disease psychosis, 78, 133,
+136, 139, 157, 524
+paroxetine, 294, 295
+partial agonists, 41, 43–4, 57–61, 189–95,
+204–41
+Pavlov’s dogs, 370
+pentameric ligand-gated ion channels, 53
+perceptual distortions, 78
+periaqueductal gray, 390
+peripheral pain, 379
+perospirone, 233, 241
+PET scans
+beta-amyloid, 499, 501
+FDG PET, 490, 492, 502
+pharmacodynamics, 49
+pharmacokinetics, 49
+hypnotic actions, 426–30
+pharmacological extinction, 573
+phasic dopamine system, 455
+phasic inhibition, 259
+phencyclidine, 106, 569–71
+phosphatase, third messenger, 15, 16
+phosphoprotein cascades, 15–18
+phosphoprotein messenger, 13–15
+pimavanserin, 231, 240, 526
+pitolisant, 444
+plasma membrane transporters, 30
+polygenic risk score, 150
+polysomnography, 420, 431
+positive affect, 278, 280, 306
+positive symptoms, 90, 141, 156
+psychosis, 92–3
+postsynaptic dopamine receptors, 81
+posttraumatic stress disorder (PTSD),
+360, 362
+drug treatment, 196
+fear conditioning, 372
+treatments for, 377, 568, 574
+prazocin, 370
+predementia AD, 500–2
+prefrontal cortex
+disorder of the, 449–53, 463
+dopamine neurotransmission, 8
+dorsolateral, 387, 400, 449
+GABA interneurons, 105–10
+increased dopamine in, 299–302
+inefficient tuning of, 454–63
+ventromedial, 372, 374
+pregabalin, 352, 366, 395, 426
+presymptomatic stage of Alzheimer
+disease, 499–501
+presynaptic dopamine receptors, 81, 82
+primary afferent neurons, 380, 381
+primary transcript, 26
+prisons, 146, 156
+
+

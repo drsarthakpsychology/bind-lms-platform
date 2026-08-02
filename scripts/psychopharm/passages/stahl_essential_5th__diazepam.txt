@@ -1,0 +1,107 @@
+<<<PAGE 22>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+practice before the discovery of β-endorphin; marijuana
+was smoked before the discovery of cannabinoid
+receptors and endocannabinoids; the benzodiazepines
+Valium (diazepam) and Xanax (alprazolam) were
+prescribed before the discovery of benzodiazepine
+receptors; and the antidepressants Elavil (amitriptyline)
+and Prozac (fluoxetine) entered clinical practice before
+molecular clarification of the serotonin transporter
+site. This underscores the point that the great majority
+of drugs that act in the central nervous system act
+upon the process of neurotransmission. Indeed, this
+apparently occurs at times in a manner that can mimic
+the actions of the brain itself, when the brain uses its
+own chemicals.
+Input to any neuron can involve many different
+neurotransmitters coming from many different neuronal
+circuits. Understanding these inputs to neurons within
+functioning circuits can provide a rational basis for
+selecting and combining therapeutic agents. This
+theme is discussed extensively in each chapter on the
+various psychiatric disorders. The idea is that for the
+modern psychopharmacologist to influence abnormal
+neurotransmission in patients with psychiatric disorders,
+it may be necessary to target neurons in specific circuits.
+Since these networks of neurons send and receive
+information via a variety of neurotransmitters, it may
+therefore be not only rational but necessary to use
+multiple drugs with multiple neurotransmitter actions
+for patients with psychiatric disorders, especially if single
+agents with single neurotransmitter mechanisms are not
+effective in relieving symptoms.
+Neurotransmission: Classic, Retrograde, and Volume
+
+Classic neurotransmission begins with an electrical
+process by which neurons send electrical impulses from
+one part of the cell to another part of the same cell via
+their axons (see neuron A of Figure 1-3). However,
+these electrical impulses do not jump directly to other
+neurons. Classic neurotransmission between neurons
+involves one neuron hurling a chemical messenger, or
+neurotransmitter, at the receptors of a second neuron
+(see the synapse between neuron A and neuron B in
+Figure 1-3). This happens frequently but not exclusively
+at the sites of synaptic connections. In the human brain,
+a hundred billion neurons each make thousands of
+synapses with other neurons for an estimated trillion
+chemically neurotransmitting synapses.
+Communication between all these neurons at synapses
+is chemical, not electrical. That is, an electrical impulse
+
+6
+
+in the first neuron is converted to a chemical signal at
+the synapse between it and a second neuron, in a process
+known as excitation–secretion coupling, the first stage of
+chemical neurotransmission. This occurs predominantly
+but not exclusively in one direction, from the presynaptic
+axon terminal to a second postsynaptic neuron (Figures
+1-2 and 1-3). Finally, neurotransmission continues in
+the second neuron either by converting the chemical
+information from the first neuron back into an electrical
+impulse in the second neuron, or, perhaps more elegantly,
+by the chemical information from the first neuron
+triggering a cascade of further chemical messages within
+the second neuron to change that neuron’s molecular and
+genetic functioning (Figure 1-3).
+An interesting twist to chemical neurotransmission
+is the discovery that postsynaptic neurons can also
+“talk back” to their presynaptic neurons. They can do
+this via retrograde neurotransmission from the second
+neuron to the first at the synapse between them (Figure
+1-5, right panel). Chemicals produced specifically as
+retrograde neurotransmitters at some synapses include
+the endocannabinoids (EC, also known as “endogenous
+marijuana”), which are synthesized in the postsynaptic
+neuron. They are then released and diffuse to presynaptic
+cannabinoid receptors such as the CB1 or cannabinoid
+1 receptor (Figure 1-5, right panel). Another retrograde
+neurotransmitter is the gaseous neurotransmitter nitric
+oxide (NO), which is synthesized postsynaptically and
+then diffuses out of the postsynaptic membrane and
+into the presynaptic membrane to interact with cyclic
+guanosine monophosphate (cGMP)-sensitive targets
+there (Figure 1-5, right panel). A third type of retrograde
+neurotransmitter are neurotrophic factors such as nerve
+growth factor (NGF), which is released from postsynaptic
+sites, and then diffuses to the presynaptic neuron,
+where it is taken up into vesicles, and transported all
+the way back to the cell nucleus via retrograde transport
+systems to interact with the genome there (Figure 1-5,
+right panel). What these retrograde neurotransmitters
+have to say to the presynaptic neuron and how this
+modifies or regulates the communication between pre
+and postsynaptic neuron are subjects of intense active
+investigation.
+In addition to “reverse” or retrograde
+neurotransmission at synapses, some neurotransmission
+does not need a synapse at all! Neurotransmission
+without a synapse is called volume neurotransmission, or
+nonsynaptic diffusion neurotransmission (examples are
+shown in Figures 1-6 through 1-8). Chemical messengers
+
+

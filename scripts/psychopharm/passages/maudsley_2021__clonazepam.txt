@@ -1,0 +1,1162 @@
+<<<PAGE 132>>>
+
+Anticholinergic drugs
+given orally, IM or IV
+depending on the severity of
+symptoms20
+
+Treatment
+
+■■
+
+Remember the patient may be
+unable to swallow
+■■ Response to IV administration
+will be seen within 5 minutes
+■■ Response to IM administration
+takes around 20 minutes
+■■ Tardive dystonia may respond to
+ECT35,36
+■■ Where severe symptoms do not
+respond to simpler measures
+including switching to an antipsychotic with a low propensity
+for EPS, botulinum toxin may be
+effective37,38
+
+Acute dystonia can occur within
+hours of starting antipsychotic
+medication (minutes if the IM or IV
+route is used).
+Tardive dystonia occurs after
+months to years of antipsychotic
+treatment.
+
+Time taken to
+develop
+
+Dystonia (uncontrolled
+muscular spasm)
+
+■■
+
+■■
+
+Reduce the antipsychotic dose
+Change to an antipsychotic medication with a lower propensity for
+pseudoparkinsonism (see section
+on relative liability of antipsychotic
+medications for adverse effects)
+■■ Prescribe an anticholinergic. The
+majority of patients do not require
+long-term anticholinergic agents.
+Use should be reviewed at least
+every 3 months. Do not prescribe
+at night (symptoms usually absent
+during sleep)
+
+Several options are
+available depending on the clinical
+circumstances:
+
+Days to weeks after
+antipsychotic medication is
+started or the dose is
+increased
+
+Pseudoparkinsonism
+(bradykinesia, tremor, etc.)
+
+Reduce the antipsychotic dose
+Change to an antipsychotic drug
+with lower propensity for akathisia (see sections on akathisia and
+relative liability of antipsychotic
+medications for adverse effects)
+■■ A reduction in symptoms may be
+seen with:39–41 low-dose propranolol, 30–80mg/day, clonazepam
+(low dose), 5HT2 antagonists
+such as: cyproheptadine,36
+mirtazapine,40 trazodone,42,43
+mianserin,44 and cyproheptadine36 may help, as may possibly
+diphenhydramine.45
+Anticholinergics are generally
+unhelpful unless akathisia is part of
+a general EPS spectrum46
+
+All are unlicensed for this indication
+
+■■
+
+■■
+
+Acute akathisia occurs within hours
+to weeks of starting antipsychotic
+medication or increasing the dose.
+Akathisia that has persisted for
+several months or so is called
+‘chronic akathisia’. Tardive akathisia
+tends to occur later in treatment
+and may be exacerbated or
+provoked by antipsychotic dose
+reduction or withdrawal.16
+
+Akathisia
+(restlessness)16
+
+■■
+
+Stop anticholinergic if prescribed
+Reduce dose of antipsychotic medication
+■■ Change to an antipsychotic with lower
+propensity for TD,47–50 note that data are
+conflicting.51,52
+■■ Clozapine is the antipsychotic most
+likely to be associated with resolution of
+symptoms.53,54 Quetiapine may also be
+useful in this regard.55
+■■ Both valbenazine and deutetrabenazine
+have a positive risk-benefit balance as
+add-on treatments53,56–60
+■■ There is also some evidence for
+tetrabenazine and ginkgo biloba61 as
+add-on treatments. For other treatment
+options60,62 the review by the American
+Academy of Neurology63 and the section
+on tardive dyskinesia
+■■
+
+Months to years
+The proportion of cases showing
+reversibility on cessation of antipsychotic
+medication is unclear and may partly
+depend on age20
+
+Tardive dyskinesia
+(abnormal involuntary movements)
+
+
+
+
+<<<PAGE 136>>>
+
+Effective
+
+Continue at reduced dose
+
+CHAPTER 1
+
+Reduce dose of current antipsychotic
+medication/switch from antipsychotic
+polypharmacy to monotherapy (if possible) or
+slow rate of dosage increase15,16
+Ineffective/not appropriate
+
+Switch to quetiapine/olanzapine17–19
+(lowest effective dose possible)
+
+Effective
+
+(clozapine also an option if the psychiatric
+diagnosis is treatment-resistant schizophrenia20)
+
+Continue
+
+Ineffective/not appropriate to switch
+
+Consider low-dose
+propranolol: 30–80mg/day10,21,22
+(start at 10mg tds)
+
+Effective
+
+NB. Note contra-indications
+(asthma, bradycardia, hypotension, etc.)
+
+Continue if no
+contraindications
+
+Not effective/contra-indicated
+
+Consider low-dose (15mg) mirtazapine or
+mianserin (30mg)
+(5HT2A antagonists)23–25
+
+Effective
+
+Continue
+
+Not effective/not tolerated
+
+Consider an antimuscarinic drug16
+(e.g. benzatropine 6mg/day)
+Weak support for efficacy26,27 and risk of
+cognitive and anticholinergic adverse effects, but
+may be effective where other EPS present6,10,13
+
+Effective
+
+Continue, but attempt
+withdrawal
+after several months
+
+Ineffective/no other EPS
+
+Consider cyproheptadine 16mg/day22,28
+
+Effective
+
+Continue, if no
+contraindications
+
+Ineffective
+
+Consider a benzodiazepine15,16
+(e.g. diazepam up to 15mg/day clonazepam
+0.5–3mg/day)
+
+Effective
+
+Continue, but attempt slow
+withdrawal after 2–4 weeks
+(risk of dependence)
+
+Ineffective
+
+Consider clonidine 0.2–0.8mg/day16,29
+
+Effective
+
+Continue if tolerated;
+withdraw very slowly
+
+(Continued)
+
+
+
+
+<<<PAGE 139>>>
+
+118  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+Treatment – additional agents
+Given that there is insufficient evidence to recommend dose reduction as a treatment
+for TD, and that switching or withdrawing antipsychotic medication is not always
+effective or advisable, additional agents are often used. A 2020 meta-analysis49 found
+clear benefit only for the three licensed VMAT-2 inhibitors, vitamin E, amantadine and
+vitamin B6 (pyridoxine). Table 1.15 describes the most frequently prescribed add-on
+drugs for TD.
+Table 1.15 First-choice agents (alphabetical order; no preference implied)
+Drug
+
+Comments
+Rarely used but apparently effective at 100–300mg a day
+
+Amantadine49–52
+Benzodiazepines
+
+Widely used for TD, but Cochrane review considered that the limited evidence for
+efficacy is inconclusive.53 Intermittent use may be necessary to avoid tolerance to
+effects. Most commonly used are clonazepam 1–4mg/day and diazepam 6–25mg/day,
+with better supporting evidence for the former36,54
+
+Deutetrabenazine8,52,55–57
+
+Deutetrabenazine (VMAT-2 inhibitor) is also effective as a treatment for TD. Licensed
+for TD in the USA.58 Better supporting evidence than for tetrabenazine. Longer
+half-life than tetrabenazine but still needs to be taken twice a day. Low incidence of
+psychiatric and neurological effects. Dose is 12–48mg/day
+
+Ginkgo biloba52,59
+
+Well tolerated. Cochrane review concluded that while Ginkgo biloba could reduce TD
+symptoms, the available evidence did not justify its routine use as a treatment.60 A
+meta-analysis of three Chinese RCTs showed a good effect with 240mg/day61
+
+Pyridoxine62
+
+Supported by Cochrane63 and a meta-analysis.49
+Dose – up to 400mg/day
+
+Tetrabenazine64,65
+
+Only licensed treatment for moderate to severe TD in UK. Depression, drowsiness,
+parkinsonism and akathisia may occur.54,66 Dose is 25–200mg/day. Reserpine (similar
+mode of action) also effective but rarely, if ever, used
+
+Valbenazine8,56,60,67–70
+
+The evidence supports a favourable benefit-risk ratio for valbenazine (VMAT-2
+inhibitor) as a treatment for TD. Licensed for TD in the USA.71 A dose of 80mg once
+daily is effective with a benign cardiovascular profile. Low incidence of depression and
+akathisia
+
+Vitamin E49,72
+
+Numerous studies but efficacy remains to be conclusively established. Cochrane
+suggest that there is evidence only for slowing deterioration of TD.8,73 Dose is in the
+range 400–1600 IU/day
+
+32,33
+
+Treatment – other possible options
+The large number of proposed treatments for TD undoubtedly reflects the somewhat
+limited effectiveness of standard remedies, at least before the introduction of valbenazine and deutetrabenazine. Table 1.16 lists some of these putative treatments in alphabetical order.
+
+
+
+
+<<<PAGE 300>>>
+
+Bipolar disorder  279
+
+Drug treatment is the mainstay of therapy for mania and hypomania. Both ­antipsychotics
+and mood stabilisers are effective (although the nomenclature here is unhelpful – most,
+possibly all, antipsychotics are antimanic and most mood stabilisers reduce psychotic
+symptoms in mania). Sedative and anxiolytic drugs (e.g. benzodiazepines) may add to
+the effects of these drugs.
+Drug choice is made difficult by the small number of direct comparisons and so no
+drug can be recommended over another on efficacy grounds. However, a multiple treatments meta-analysis1 (which allows indirect comparison) suggested that olanzapine,
+risperidone, haloperidol and quetiapine had the best combination of efficacy and
+­acceptability. Cochrane suggests olanzapine is more effective than both lithium2 and
+valproate3 when used as monotherapy. Olanzapine may also be more effective than
+asenapine.4
+The benefit of antipsychotic–mood stabiliser combinations (compared with mood
+stabiliser alone) is established for those relapsing while on mood stabilisers but less
+clear for those presenting on no treatment.5–9 The most recent international guidelines
+
+Stop antidepressant treatment
+
+Is the patient taking antimanic* medication?
+
+No
+Consider:
+An antipsychotic (if symptoms severe or
+behaviour disturbed)
+
+Yes
+If taking an antipsychotic,
+Check compliance and dose. Increase if
+necessary. Consider adding lithium or
+valproate.
+
+Or
+Valproate (avoid in women of child-bearing
+potential)
+Or
+Lithium (if future adherence likely)
+If response is inadequate
+Combine antipsychotic and valproate or
+lithium
+All patients – consider adding short-term
+benzodiazepine21–23
+(lorazepam or clonazepam)
+
+If taking lithium**, check plasma levels,
+consider increasing the dose to give levels
+1.0–1.2mmol/L (to treat the acute episode),
+and/or adding an antipsychotic
+If taking valproate, check plasma
+levels7,8,24,25 increase dose to give levels up
+to 125mg/L if tolerated. Consider adding an
+antipsychotic.
+If taking lithium or valproate and mania is
+severe check level, add an antipsychotic.5
+If taking carbamazepine, consider adding
+antipsychotic (higher doses may be needed
+as antipsychotic levels reduced).
+All patients – consider adding short-term
+benzodiazepine21–23
+(lorazepam or clonazepam)
+
+*In this context, antimanic = antipsychotic or mood stabiliser.
+**Lithium may be somewhat less effective in mixed states26 or substance misuse27 and in those with rapid cycling or exhibiting
+psychotic symptoms.28
+
+Figure 2.1 Treatment of acute mania or hypomania5–20
+
+CHAPTER 2
+
+Treatment of acute mania or hypomania
+
+
+
+
+<<<PAGE 451>>>
+
+430  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Box 3.7 (Continued)
+Pregabalin
+75–225mg/day added to sertraline
+
+One small positive RCT121
+
+Riluzole
+50mg bd added to existing drug
+treatment122
+
+Variable results in early trials110
+
+Anti-androgen – Triptorelin
+3.75mg IM every 4 weeks added to
+existing drug treatment123
+
+Open label study done in six men
+
+i.v. treatment
+Clomipramine IV124
+
+Quicker onset of action suggested compared to oral treatments.
+One clomipramine study suggests clomipramine IV efficacy after
+failure with oral clomipramine
+Ketamine – developing evidence base110
+
+Ketamine IV125,126
+Once weekly morphine
+15–45mg added to existing drug
+treatment127
+
+Small study involving 23 treatment-resistant patients. Positive
+effects were transient.
+
+bd, bis die (twice a day); CBT (cognitive behavioural therapy)
+
+Box 3.8 Social phobia (social anxiety disorder)
+First-line drug treatment128 (In order of preference)
+SSRIs
+(Up to maximum licensed dose)
+
+If no response to the first SSRI, try an alternative SSRI
+Supporting meta-analyses for fluvoxamine129 and citalopram130
+Emerging data for vilazodone131
+
+Venlafaxine modified release
+75–225mg/day
+Second-line drug treatment (Less well tolerated or weaker evidence base, no order of preference)
+Olanzapine
+5–20mg132
+
+Few studies with antipsychotics. Most evidence with olanzapine
+
+Atenolol
+25–100mg/day
+
+Reduces autonomic symptoms in performance situations132
+
+Benzodiazepines
+Clonazepam
+0.3–6mg/day132
+Sertraline plus clonazepam
+up to 3mg/day133
+
+Benzodiazepines are helpful on PRN basis. Most evidence for treatment
+with clonazepam and bromazepam
+Switching an SSRI to venlafaxine no more effective than adding clonazepam
+to SSRI133
+
+Gabapentin
+900–3600mg/day132
+Levetiracetam
+300–3000mg/day in divided
+doses134
+(Continued)
+
+
+
+
+<<<PAGE 463>>>
+
+442  The Maudsley® Prescribing Guidelines in Psychiatry
+
+There has been limited formal study into the duration of withdrawal symptoms, with
+some reports of weeks-long duration, but they can last longer than a year, especially in
+the case of long-term use.20,23 For a minority, withdrawal symptoms can be protracted
+and last years, sometimes called the ‘post-acute withdrawal syndrome’.26
+
+Stopping benzodiazepines
+
+CHAPTER 3
+
+If the patient is in agreement, benzodiazepines should be withdrawn. Tapering can be
+difficult and should not be imposed on a patient against their will. A cluster randomised
+trial supports the effectiveness of a face-to-face educational intervention.27 Continuing
+support can be required to prepare a patient for withdrawal and to support them
+through the process (e.g. psychological therapies or self-help groups).28
+
+Dosage reduction (tapering)
+Gradual reduction of benzodiazepine dose reduces the intensity of withdrawal symptoms by spreading them out over a longer time period (and giving time for neural adaptations to the drug to resolve).22 Meta-analysis has confirmed that gradual dose
+reduction (‘tapering’) improves drug cessation rates compared with routine clinical
+care.29 Most studies find that a gradual withdrawal over at least 10 weeks is most successful in achieving long-term abstinence,30 although many patients will require considerably longer (sometimes several years). Sudden benzodiazepine withdrawal has
+potentially fatal consequences, so tapering is always advisable.
+
+Direct taper or switching to diazepam?
+Patients who take short- or intermediate-acting benzodiazepines can be tapered off
+these drugs directly but more than once a day dosing might be required.
+An alternative approach is to switch to an equivalent dose of diazepam (which has a
+long half-life and therefore might provokes less severe withdrawal),20,24 noting that
+some patients report withdrawal symptoms from abrupt switches to diazepam and so
+a step-wise switch is probably prudent. Cochrane is lukewarm about switching to diazepam.30 Approximate ‘diazepam equivalent’31 doses are shown Table 3.29. Owing to
+Table 3.29 Approximate ‘diazepam equivalent’31 doses
+Chlordiazepoxide
+
+25mg
+
+Clonazepam
+
+0.5mg
+
+Diazepam
+
+10mg
+
+Lorazepam
+
+1mg
+
+Lormetazepam
+
+1–2mg
+
+Nitrazepam
+
+10mg
+
+Oxazepam
+
+20mg
+
+Temazepam
+
+20mg
+
+
+
+
+<<<PAGE 685>>>
+
+Agitation
+
+Agitation
+
+Insomnia
+
+Diazepam
+
+Lemborexant24
+
+Specific indication/additional
+notes
+
+Clonazepam
+
+Anxiolytics/hypnotics
+
+Drug
+
+5mg nocte
+(take no more than once per
+night, immediately before bed)
+
+1mg tds
+
+0.5mg daily
+
+Starting dose
+
+5–10mg nocte
+
+1mg tds*
+
+1–2mg/day*
+
+Usual maintenance dose
+
+Sodium valproate: 100–200mg
+bd*
+
+Sodium valproate: 50mg bd
+(liquid) or 100mg bd*
+
+Agitation in dementia (not
+licensed and not recommended)
+Check response, tolerability and
+plasma levels for guide
+
+10mg nocte
+Elderly are at a higher risk of falls.
+Caution when using doses >5mg
+in patients ≥65 years old
+
+7.5–15mg/day in divided doses
+(for anxiety)
+
+4mg/day*
+
+Maximum dose in elderly
+
+Sodium valproate: 200mg bd*
+
+Sodium valproate: 400mg bd*
+Semi-sodium valproate: 1 g
+daily*
+
+Sodium valproate: 200–400mg
+bd*
+Semi-sodium valproate: 500mg
+to 1g daily*
+
+Sodium valproate: 100–200mg
+bd*
+Semi-sodium valproate: 250mg
+daily or bd*
+
+Bipolar disorder
+Check LFTs and consider
+checking plasma levels
+
+Sodium valproate
+
+600–1200mg daily (aim for
+plasma levels 0.4–0.7 mmol/L in
+elderly)23
+
+200–600mg daily*
+
+100*–200mg nocte
+
+Bipolar disorder
+Mania/depression
+Caution: drug interactions
+Check renal and thyroid
+function and regularly monitor
+plasma levels
+
+Lithium carbonate M/R
+
+Maximum dose in elderly
+
+Usual maintenance dose
+
+Starting dose
+
+Specific indication/Additional
+notes
+
+Drug
+
+(Continued )
+
+
+
+
+<<<PAGE 750>>>
+
+Hepatic and renal impairment  729
+
+Table 8.3 (Continued)
+Drug
+
+Comments
+
+Valproate
+
+74
+
+Highly protein bound and hepatically metabolised. Dosage reduction with close
+monitoring of LFTs in moderate hepatic impairment. Use plasma levels (measure free
+levels − total concentrations may appear to be normal) to guide dosage. Caution
+advised. Contraindicated in severe and/or active hepatic impairment, or family history
+of severe impairment; impairment of usual metabolic pathway can lead to generation
+of hepatotoxic metabolites via alternative pathway. Risk of liver toxicity is increased in
+people with hepatic insufficiency if salicylates are used concomitantly. Associated
+with elevated LFTs and serious hepatotoxicity including fulminant hepatic failure
+(sometimes fatal). Mitochondrial disease, learning disability, polypharmacy, metabolic
+disorders and underlying hepatic disease may be risk factors. Particularly hepatotoxic
+in very young children. The greatest risk is in the first three months of treatment.
+
+Stimulants in hepatic impairment5,6,75
+Recommendations for the use of stimulant medications in hepatic impairment are outlined in Table 8.4.
+Table 8.4 Stimulants in hepatic impairment
+Atomoxetine76
+
+Reduce initial and target dose by 50% in moderate impairment, and by 75% in
+severe impairment. Very rare reports of liver toxicity, manifested by elevated hepatic
+enzymes, and raised bilirubin with jaundice. SPC states ‘discontinue in patients with
+jaundice or laboratory evidence of liver injury, and do not restart’.
+
+Methylphenidate77
+
+Rare reports of liver dysfunction and hypersensitivity reactions.
+
+Dexamphetamine/
+lisdexamphetamine78,79
+
+Little experience in liver disease, manufacturers recommend cautious dose titration.
+Very rarely associated with abnormal liver function, two case reports of
+hepatotoxicity.80,81
+
+Sedatives in hepatic impairment
+Table 8.5 summarises recommended sedatives in hepatic impairment.
+
+Benzodiazepines
+
+Extensively hepatically metabolised. Prolonged duration of effect particularly for drugs
+with active metabolites (diazepam, midazolam, clonazepam). Lorazepam, oxazepam and
+temazepam do not have active metabolites and are preferred; lorazepam is considered
+the best tolerated in advanced liver disease19 and is commonly used in alcohol
+withdrawal. Serum enzyme elevations are uncommon and liver injury very rare.19
+
+Promethazine6
+
+Extensive hepatic metabolism. Manufacturers recommend caution in liver
+impairment. Jaundice reported with high doses, no reports of LFT abnormalities or
+toxicity with lower doses.19
+
+Z drugs6,82,83
+
+Hepatically metabolised, but all have a relatively short half-life (1–7 hours). Reduce
+initial doses in mild to moderate impairment (use zopiclone 3.75mg, zolpidem 5mg,
+zaleplon 5mg), avoid in severe impairment. Zaleplon is subject to significant first-pass
+metabolism and zolpidem plasma concentrations and half-life are significantly
+increased in hepatic impairment; these agents should be used with caution.84 Although
+zopiclone has the longer half-life, this may not be clinically relevant except in severe
+disease.83 Zopiclone and zaleplon have not been associated with hepatotoxicity. There
+are rare reports of abnormal LFTs and a single case of liver injury with zolpidem.19
+(Continued)
+
+CHAPTER 8
+
+Table 8.5 Sedatives in hepatic impairment
+
+
+
+
+<<<PAGE 774>>>
+
+131. Fillastre JP, et al. Pharmacokinetics of lamotrigine in patients with renal impairment: influence of haemodialysis. Drugs Exp Clin Res 1993;
+19:25–32.
+132. Schaub JE, et al. Multisystem adverse reaction to lamotrigine. Lancet 1994; 344:481.
+133. Wootton R, et al. Comparison of the pharmacokinetics of lamotrigine in patients with chronic renal failure and healthy volunteers. Br J
+Clin Pharmacol 1997; 43:23–27.
+134. Bansal AD, et al. Use of antiepileptic drugs in patients with chronic kidney disease and end stage renal disease. Seminars in Dialysis 2015;
+28:404–412.
+135. Gitlin M. Lithium and the kidney: an updated review. Drug Saf 1999; 20:231–243.
+136. Lepkifker E, et al. Renal insufficiency in long-term lithium treatment. J Clin Psychiatry 2004; 65:850–856.
+137. McKnight RF, et al. Lithium toxicity profile: a systematic review and meta-analysis. Lancet 2012; 379:721–728.
+138. Shine B, et al. Long-term effects of lithium on renal, thyroid, and parathyroid function: a retrospective analysis of laboratory data. Lancet
+2015; 386:461–468.
+139. Clos S, et al. Long-term effect of lithium maintenance therapy on estimated glomerular filtration rate in patients with affective disorders: a
+population-based cohort study. Lancet Psychiatry 2015; 2:1075–1083.
+140. Schoot TS, et al. Systematic review and practical guideline for the prevention and management of the renal side effects of lithium therapy.
+Eur Neuropsychopharmacol 2020; 31:16–32.
+141. Davis J, et al. Lithium and nephrotoxicity: a literature review of approaches to clinical management and risk stratification. BMC Nephrol
+2018; 19:305.
+142. Engels N, et al. Successful lithium treatment in a patient on hemodialysis. Bipolar Disorders 2019; 21:285–287.
+143. Smith GC, et al. Anticonvulsants as a cause of Fanconi syndrome. Nephrol Dial Transplant 1995; 10:543–545.
+144. Fukuda Y, et al. Immunologically mediated chronic tubulo-interstitial nephritis caused by valproate therapy. Nephron 1996; 72:328–329.
+145. Watanabe T, et al. Secondary renal Fanconi syndrome caused by valproate therapy. Pediatr Nephrol 2005; 20:814-817.
+146. Zaki EL, et al. Renal injury from valproic acid: case report and literature review. Pediatr Neurol 2002; 27:318–319.
+147. Tanaka H, et al. Distal type of renal tubular acidosis after anti-epileptic therapy in a girl with infantile spasms. Clin Exp Nephrol 1999;
+3:311–313.
+148. Knorr M, et al. Fanconi syndrome caused by antiepileptic therapy with valproic acid. Epilepsia 2004; 45:868–871.
+149. Rahman MH, et al. Acute hemolysis with acute renal failure in a patient with valproic acid poisoning treated with charcoal hemoperfusion.
+Hemodial Int 2006; 10:256–259.
+150. Koga S, et al. Risk factors for sodium valproate-induced renal tubular dysfunction. Clin Exp Nephrol 2018; 22:420–425.
+151. Hayes JF, et al. Adverse renal, endocrine, hepatic, and metabolic events during maintenance mood stabilizer treatment for bipolar disorder:
+a population-based cohort study. PLoS Med 2016; 13:e1002058.
+152. Kessing LV, et al. Continuation of lithium after a diagnosis of chronic kidney disease. Acta Psychiatr Scand 2017; 136:615–622.
+153. Pentikainen PJ, et al. Pharmacokinetics of chlormethiazole in healthy volunteers and patients with cirrhosis of the liver. Eur J Clin
+Pharmacol 1980; 17:275–284.
+154. Dashti-Khavidaki S, et al. Comparing effects of clonazepam and zolpidem on sleep quality of patients on maintenance hemodialysis. Iran J
+Kidney Dis 2011; 5:404–409.
+155. Sadjadi SA, et al. Allergic interstitial nephritis due to diazepam. Arch Intern Med 1987; 147:579.
+156. Sunovion Pharmaceuticals Inc. Highlights of Prescribing Information. LUNESTA® (eszopiclone) tablets, for oral use 2020; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2014/021476s030lbl.pdf.
+157. Blum RA, et al. Pharmacokinetics of gabapentin in subjects with various degrees of renal function. Clin Pharmacol Ther 1994;
+56:154–159.
+158. Miller A, et al. Gabapentin toxicity in renal failure: the importance of dose adjustment. Pain Med 2009; 10:190–192.
+159. Upjohn UK Limited. Summary of product characteristics. Neurontin 600mg film-coated tablets 2020; https://www.medicines.org.uk/emc/
+product/3197/smpc.
+160. Yeddi A, et al. Myoclonus and altered mental status induced by single dose of gabapentin in a patient with end-stage renal disease: a case
+report and literature review. Am J Ther 2019; 26:e768–e770.
+161. Ishida JH, et al. Gabapentin and pregabalin use and association with adverse outcomes among hemodialysis patients. J Am Soc Nephrol
+2018; 29:1970–1978.
+162. Gobo-Oliveira M, et al. Gabapentin versus dexchlorpheniramine as treatment for uremic pruritus: a randomised controlled trial. Eur J
+Dermatol 2018; 28:488–495.
+163. Gunal AI, et al. Gabapentin therapy for pruritus in haemodialysis patients: a randomized, placebo-controlled, double-blind trial. Nephrol
+Dial Transplant 2004; 19:3137–3139.
+164. Beladi Mousavi SS, et al. The effect of gabapentin on muscle cramps during hemodialysis: a double-blind clinical trial. Saudi J Kidney Dis
+Transpl 2015; 26:1142–1148.
+165. Razazian N, et al. Gabapentin versus levodopa-c for the treatment of restless legs syndrome in hemodialysis patients: a randomized clinical
+trial. Saudi J Kidney Dis Transpl 2015; 26:271–278.
+166. Rossi GM, et al. Randomized trial of two after-dialysis gabapentin regimens for severe uremic pruritus in hemodialysis patients. Intern
+Emerg Med 2019; 14:1341–1346.
+167. Eisai Inc. Highlights of Prescribing Information. Dayvigo (lemborexant) tablets for oral use [controlled substance schedule pending] 2019;
+https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/212028s000lbl.pdf.
+168. Huang CE, et al. Intramuscular lorazepam in catatonia in patients with acute renal failure: a report of two cases. Chang Gung Med J 2010;
+33:106–109.
+
+CHAPTER 8
+
+Hepatic and renal impairment  753
+
+
+
+
+<<<PAGE 825>>>
+
+CHAPTER 10
+
+804  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 10.7 Evidence and experience regarding the pharmacological treatment of motor symptoms in Huntington’s disease
+Symptoms
+
+Treatments
+
+Chorea
+
+■■
+
+Hypokinetic
+rigidity
+
+■■
+
+Levodopa may provide partial and temporary relief of symptoms.7 Note the potential for
+such drugs to exacerbate behavioural disturbances.8 Rigidity may be caused/worsened by
+antipsychotics or tetrabenazine; dose reduction or discontinuation should be considered in
+the first instance, after weighing any derived benefits against symptoms severity.7 Positive
+case reports exist for amantadine and dopamine agonists (though guidelines do not make
+recommendations on their use).7
+
+Myoclonus
+
+■■
+
+Valproate or clonazepam have been suggested, used alone or combination.7 Levetiracetam
+is a therapeutic alternative.7
+
+Dystonia
+
+■■
+
+Botulinum toxin injections have been suggested for focal dystonia;7 clonazepam or baclofen has been suggested for non-focal dystonia.4
+
+Tetrabenazine: Unlike antipsychotics, tetrabenazine’s effectiveness is well established.6,7,9
+However, adverse effects including sedation, depression and parkinsonism may limit its
+clinical benefit. In clinical practice, many prefer to use tetrabenazine first line in patients
+without depressive symptoms and suicidal behaviour.7 Compliance with a multiple daily
+dosing regimen (e.g. TDS) is needed. Deutetrabenazine, licensed in the United States
+for chorea in HD, has not been directly compared with tetrabenazine but it may offer an
+improved pharmacokinetic and side effect profile.9
+■■ Antipsychotics: Considered first-line treatment, particularly in the presence of depression, aggression, psychosis, or when poor drug compliance is suspected7,8,10 despite a lack
+of data from RCTs. SGAs such as risperidone or olanzapine are used most commonly.7
+Potentially limiting side effects include dyskinesia, parkinsonism and metabolic syndrome.4
+FGAs have been used successfully but are less popular in clinical practice because of the
+risk of EPSEs.10 The Enroll-HD observational database has suggested that risperidone and
+olanzapine are at least as effective as tetrabenazine11 but worsen cognition.12 For severe
+chorea, antipsychotics and tetrabenazine have been used in combination.7 Tetrabenazine
+and deutetrabenazine both have the potential for QT prolongation, as do most antipsychotics.
+■■ Other agents: Amantadine, riluzole and nabilone have been recommended as alternatives to tetrabenazine,13 but the evidence base for beneficial effects with these agents is
+controversial,4 and some guidelines recommend against using amantadine and riluzole7,8
+or do not mention at all.7 Clinical trials with other cannabinoids (nabiximols and cannabidiol) showed no difference from placebo.14 Clonazepam is sometimes used as an adjunctive therapy in the presence of comorbid features; a small case series reported benefit with
+high doses.4,15 Levetiracetam has been used successfully in two small open label studies;
+somnolence led to a 33% dropout in one study and parkinsonism was also reported.15
+Pridopidine has not been shown to be effective in RCTs so far; further evaluation is
+required.16 Other negative studies also include those examining the use of latrepirdine,
+ethyl-EPA and mavoglurant.15
+
+Mental and behavioural symptoms
+A wide variety of mental and behavioural symptoms occur in HD, including anxiety,
+depression, suicidality, preservation, disinhibition, irritability, apathy and, rarely, psychosis.17 Mental and behavioural symptoms can emerge before motor disturbances and
+reduce quality of life substantially.17 In comparison with other HD features, psychiatric
+
+
+
+
+<<<PAGE 850>>>
+
+Prescribing in patients with psychiatric illness at the end of life
+Generally, prescribing in patients with psychiatric illness who are approaching end of
+life should follow the principles of good prescribing practice in palliative care.1 This
+includes reviewing the appropriateness of a drug, its dose and potential for its discontinuation. Furthermore, if swallowing becomes impaired, it includes making adjustments, such as the use of liquid preparations or parenteral administration.
+There is a lack of specific guidance around long-term psychiatric medications in this
+setting to support clinicians. This adds to reluctance, particularly by generalists, to
+adjust or stop such drugs.2,3 This suggests there is scope for improved liaison between
+non-psychiatry and psychiatry services.
+Physical deterioration may impact on factors (e.g. reducing smoking, drinking less
+fluid) which in turn alter a drug’s pharmacokinetics and/or pharmacodynamics, making
+ongoing review important. Furthermore, polypharmacy is common, increasing the risk
+of drug–drug interaction and toxicity, for example, tramadol and SSRI antidepressants
+leading to serotonin toxicity.
+Depression is common4 but often not recognised at the end of life.5 This is important,
+given that antidepressants may be beneficial even when prognosis is short.6 Mirtazapine
+and citalopram are most strongly supported for use in this population.7 Psychostimulants
+such as modafinil may reduce symptoms of depression in the short term, but there is
+less evidence for sustained effectiveness.8
+There is a lack of evidence to guide drug management of anxiety at the end of life.9,10
+Non-drug approaches have a stronger evidence base for effectiveness.11
+Though commonly used for management of delirium, evidence of effectiveness of
+antipsychotics is mixed. Nonetheless, national guidelines support their use for very
+distressed patients or those for whom other approaches have been unsuccessful.12
+Table 10.14 Examples of drugs prescribed in psychiatry which are also used for symptom management in
+palliative care1
+Symptom
+
+Example drugs
+
+Neuropathic pain
+
+Amitriptyline
+Imipramine
+Duloxetine
+Gabapentin/pregabalin
+Clonazepam
+
+Nausea and vomiting
+
+Haloperidol
+Olanzapine
+Lorazepam
+
+Anorexia
+
+Mirtazapine
+
+Skeletal muscle spasm
+
+Diazepam
+(Continued)
+
+CHAPTER 10
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  829
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 906>>>
+
+Psychotropic drugs in special conditions  885
+
+Table 13.3 Benzodiazepines concentration in normal dosing and the legal limit
+
+Clonazepam 0.5–6.0mg41,42
+
+5–80µg/L (50)
+
+Diazepam 5–30mg
+
+50–1000µg/L (550)
+
+43
+
+Flunitrazepam 0.5–2.0mg
+
+10–20µg/L (300)
+
+Lorazepam 1–4mg46,47
+
+10–70µg/L (100)
+
+44,45
+
+Oxazepam 15–30mg48
+
+250–600µg/L (300)
+
+Temazepam 10–20mg
+
+200–900µg/L (1000)
+
+49
+
+In regards to methadone, doses of up to 80mg a day generally give plasma levels
+below the UK legal limit.50 The legal limits listed here apply only to those who are lawfully prescribed the drug in question – the driver may be subject to prosecution if it can
+be proved the drugs were taken illicitly.
+
+Other medicines
+Many psychotropics can impair alertness, concentration and driving performance.
+Medicines that block H1, α1-adrenergic or cholinergic receptors may be particularly
+problematic. Effects are particularly marked at the start of treatment and after
+increasing the dose. Drivers must be made aware of any potential for impairment
+and are advised to evaluate their driving performance at these times. They must stop
+driving if adversely affected.51 The use of alcohol will further increase any
+impairment.
+Some antipsychotics and antidepressants lower the seizure threshold. In the UK,
+the DVLA advises this is taken into consideration when prescribing for a driver.
+Further information about the effects of psychotropics on driving can be found in
+Table 13.2.
+Medication-induced sedation
+Many psychotropics are sedating. The more sedating a medicine is, the more likely it is
+to impair driving ability. Other medicines, either prescribed or bought over the counter,
+may also be sedative and/or affect driving ability (e.g. antihistamines5). One study
+found that 89% of patients taking other psychotropics in addition to antidepressants
+failed a battery of ‘fitness to drive’ tests.52 Since the degree of sedation any individual
+will experience is very difficult to predict, patients prescribed sedating medicines should
+be advised not to drive if they feel sedated. In the UK, it is the responsibility of the
+driver to ensure they are fit to drive.
+
+CHAPTER 13
+
+Range of concentrations reported
+(legal limit)
+
+Drug/daily dose
+
+
+
+
+<<<PAGE 908>>>
+
+15. Brunnauer A, et al. The effects of most commonly prescribed second generation antidepressants on driving ability: a systematic review : 70th
+Birthday Prof. Riederer. J Neural Transm 2013; 120:225–232.
+16. Bramness JG, et al. Minor increase in risk of road traffic accidents after prescriptions of antidepressants: a study of population registry data
+in Norway. J Clin Psychiatry 2008; 69:1099–1103.
+17. Verster JC, et al. Psychoactive medication and traffic safety. Int J Environ Res Public Health 2009; 6:1041–1054.
+18. Iwamoto K, et al. The effects of acute treatment with paroxetine, amitriptyline, and placebo on driving performance and cognitive function
+in healthy Japanese subjects: a double-blind crossover trial. Human Psychopharmacol 2008; 23:399–407.
+19. Ridout F, et al. A placebo controlled investigation into the effects of paroxetine and mirtazapine on measures related to car driving performance. Human Psychopharmacol 2003; 18:261–269.
+20. Wingen M, et al. Actual driving performance and psychomotor function in healthy subjects after acute and subchronic treatment with escitalopram, mirtazapine, and placebo: a crossover trial. J Clin Psychiatry 2005; 66:436–443.
+21. Miyata A, et al. Driving performance of stable outpatients with depression undergoing real-world treatment. Psychiatry Clin Neurosci 2018;
+72:399–408.
+22. Verster JC, et al. Mirtazapine as positive control drug in studies examining the effects of antidepressants on driving ability. Eur J Pharmacol
+2015; 753:252–256.
+23. Theunissen EL, et al. A randomized trial on the acute and steady-state effects of a new antidepressant, vortioxetine (Lu AA21004), on actual
+driving and cognition. Clin Pharmacol Ther 2013; 93:493–501.
+24. Ip EJ, et al. The effect of trazodone on standardized field sobriety tests. Pharmacotherapy 2013; 33:369–374.
+25. Brunnauer A, et al. Driving performance and psychomotor function in depressed patients treated with agomelatine or venlafaxine.
+Pharmacopsychiatry 2015; 48:65–71.
+26. van de Loo A, et al. The effects of intranasal esketamine (84 mg) and oral mirtazapine (30 mg) on on-road driving performance: a doubleblind, placebo-controlled study. Psychopharmacology (Berl) 2017; 234:3175–3183.
+27. Grabe HJ, et al. The influence of clozapine and typical neuroleptics on information processing of the central nervous system under clinical
+conditions in schizophrenic disorders: implications for fitness to drive. Neuropsychobiology 1999; 40:196–201.
+28. Wylie KR, et al. Effects of depot neuroleptics on driving performance in chronic schizophrenic patients. J Neurol Neurosurg Psychiatry 1993;
+56:910–913.
+29. Brunnauer A, et al. The impact of antipsychotics on psychomotor performance with regards to car driving skills. J Clin Psychopharmacol
+2004; 24:155–160.
+30. Dassanayake T, et al. Effects of benzodiazepines, antidepressants and opioids on driving: a systematic review and meta-analysis of epidemiological and experimental evidence. Drug Saf 2011; 34:125–156.
+31. Rudisill TM, et al. Medication use and the risk of motor vehicle collisions among licensed drivers: a systematic review. Accid Anal Prev 2016;
+96:255–270.
+32. Poceta JS. Zolpidem ingestion, automatisms, and sleep driving: a clinical and legal case series. J Clin Sleep Med 2011; 7:632–638.
+33. Verster JC, et al. Hypnotics and driving safety: meta-analyses of randomized controlled trials applying the on the-road driving test. Current
+Drug Safety 2006; 1:63–71.
+34. Vermeeren A, et al. On-the-road driving performance the morning after bedtime administration of lemborexant in healthy adult and elderly
+volunteers. Sleep 2019; 42:zsy260.
+35. Vermeeren A, et al. On-the-road driving performance the morning after bedtime use of suvorexant 15 and 30 mg in healthy elderly.
+Psychopharmacology (Berl) 2016; 233:3341–3351.
+36. Etminan M, et al. Use of lithium and the risk of injurious motor vehicle crash in elderly adults: case-control study nested within a cohort. BMJ
+2004; 328:558–559.
+37. Hashemian F, et al. A comparison of the effects of reboxetine and placebo on reaction time in adults with Attention Deficit-Hyperactivity
+Disorder (ADHD). Daru 2011; 19:231–235.
+38. Classen S, et al. Evidence-based review on interventions and determinants of driving performance in teens with attention deficit hyperactivity
+disorder or autism spectrum disorder. Traffic Inj Prev 2013; 14:188–193.
+39. Hetland A, et al. Medications and impaired driving. Ann Pharmacother 2014; 48:494–506.
+40. Strand MC, et al. Pharmacokinetics of single doses of methadone and buprenorphine in blood and oral fluid in healthy volunteers and correlation with effects on psychomotor and cognitive functions. J Clin Psychopharmacol 2019; 39:489–493.
+41. Sjo O, et al. Pharmacokinetics and side-effects of clonazepam and its 7-amino-metabolite in man. Eur J Clin Pharmacol 1975; 8:249–254.
+42. Berlin A, et al. Pharmacokinetics of the anticonvulsant drug clonazepam evaluated from single oral and intravenous doses and by repeated
+oral administration. Eur J Clin Pharmacol 1975; 9:155–159.
+43. Rutherford DM, et al. Plasma concentrations of diazepam and desmethyldiazepam during chronic diazepam therapy. Br J Clin Pharmacol
+1978; 6:69–73.
+44. Wickstrom E, et al. Pharmacokinetic and clinical observations on prolonged administration of flunitrazepam. Eur J Clin Pharmacol 1980;
+17:189–196.
+45. Mattila MA, et al. Flunitrazepam: a review of its pharmacological properties and therapeutic use. Drugs 1980; 20:353–374.
+46. Greenblatt DJ, et al. Single- and multiple-dose kinetics of oral lorazepam in humans: the predictability of accumulation. J Pharmacokinet
+Biopharm 1979; 7:159–179.
+47. Greenblatt DJ, et al. Pharmacokinetic comparison of sublingual lorazepam with intravenous, intramuscular, and oral lorazepam. J Pharm Sci
+1982; 71:248–252.
+
+CHAPTER 13
+
+Psychotropic drugs in special conditions  887
+
+

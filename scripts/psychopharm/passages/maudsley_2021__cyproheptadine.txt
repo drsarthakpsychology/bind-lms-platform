@@ -1,0 +1,1124 @@
+<<<PAGE 132>>>
+
+Anticholinergic drugs
+given orally, IM or IV
+depending on the severity of
+symptoms20
+
+Treatment
+
+■■
+
+Remember the patient may be
+unable to swallow
+■■ Response to IV administration
+will be seen within 5 minutes
+■■ Response to IM administration
+takes around 20 minutes
+■■ Tardive dystonia may respond to
+ECT35,36
+■■ Where severe symptoms do not
+respond to simpler measures
+including switching to an antipsychotic with a low propensity
+for EPS, botulinum toxin may be
+effective37,38
+
+Acute dystonia can occur within
+hours of starting antipsychotic
+medication (minutes if the IM or IV
+route is used).
+Tardive dystonia occurs after
+months to years of antipsychotic
+treatment.
+
+Time taken to
+develop
+
+Dystonia (uncontrolled
+muscular spasm)
+
+■■
+
+■■
+
+Reduce the antipsychotic dose
+Change to an antipsychotic medication with a lower propensity for
+pseudoparkinsonism (see section
+on relative liability of antipsychotic
+medications for adverse effects)
+■■ Prescribe an anticholinergic. The
+majority of patients do not require
+long-term anticholinergic agents.
+Use should be reviewed at least
+every 3 months. Do not prescribe
+at night (symptoms usually absent
+during sleep)
+
+Several options are
+available depending on the clinical
+circumstances:
+
+Days to weeks after
+antipsychotic medication is
+started or the dose is
+increased
+
+Pseudoparkinsonism
+(bradykinesia, tremor, etc.)
+
+Reduce the antipsychotic dose
+Change to an antipsychotic drug
+with lower propensity for akathisia (see sections on akathisia and
+relative liability of antipsychotic
+medications for adverse effects)
+■■ A reduction in symptoms may be
+seen with:39–41 low-dose propranolol, 30–80mg/day, clonazepam
+(low dose), 5HT2 antagonists
+such as: cyproheptadine,36
+mirtazapine,40 trazodone,42,43
+mianserin,44 and cyproheptadine36 may help, as may possibly
+diphenhydramine.45
+Anticholinergics are generally
+unhelpful unless akathisia is part of
+a general EPS spectrum46
+
+All are unlicensed for this indication
+
+■■
+
+■■
+
+Acute akathisia occurs within hours
+to weeks of starting antipsychotic
+medication or increasing the dose.
+Akathisia that has persisted for
+several months or so is called
+‘chronic akathisia’. Tardive akathisia
+tends to occur later in treatment
+and may be exacerbated or
+provoked by antipsychotic dose
+reduction or withdrawal.16
+
+Akathisia
+(restlessness)16
+
+■■
+
+Stop anticholinergic if prescribed
+Reduce dose of antipsychotic medication
+■■ Change to an antipsychotic with lower
+propensity for TD,47–50 note that data are
+conflicting.51,52
+■■ Clozapine is the antipsychotic most
+likely to be associated with resolution of
+symptoms.53,54 Quetiapine may also be
+useful in this regard.55
+■■ Both valbenazine and deutetrabenazine
+have a positive risk-benefit balance as
+add-on treatments53,56–60
+■■ There is also some evidence for
+tetrabenazine and ginkgo biloba61 as
+add-on treatments. For other treatment
+options60,62 the review by the American
+Academy of Neurology63 and the section
+on tardive dyskinesia
+■■
+
+Months to years
+The proportion of cases showing
+reversibility on cessation of antipsychotic
+medication is unclear and may partly
+depend on age20
+
+Tardive dyskinesia
+(abnormal involuntary movements)
+
+
+
+
+<<<PAGE 136>>>
+
+Effective
+
+Continue at reduced dose
+
+CHAPTER 1
+
+Reduce dose of current antipsychotic
+medication/switch from antipsychotic
+polypharmacy to monotherapy (if possible) or
+slow rate of dosage increase15,16
+Ineffective/not appropriate
+
+Switch to quetiapine/olanzapine17–19
+(lowest effective dose possible)
+
+Effective
+
+(clozapine also an option if the psychiatric
+diagnosis is treatment-resistant schizophrenia20)
+
+Continue
+
+Ineffective/not appropriate to switch
+
+Consider low-dose
+propranolol: 30–80mg/day10,21,22
+(start at 10mg tds)
+
+Effective
+
+NB. Note contra-indications
+(asthma, bradycardia, hypotension, etc.)
+
+Continue if no
+contraindications
+
+Not effective/contra-indicated
+
+Consider low-dose (15mg) mirtazapine or
+mianserin (30mg)
+(5HT2A antagonists)23–25
+
+Effective
+
+Continue
+
+Not effective/not tolerated
+
+Consider an antimuscarinic drug16
+(e.g. benzatropine 6mg/day)
+Weak support for efficacy26,27 and risk of
+cognitive and anticholinergic adverse effects, but
+may be effective where other EPS present6,10,13
+
+Effective
+
+Continue, but attempt
+withdrawal
+after several months
+
+Ineffective/no other EPS
+
+Consider cyproheptadine 16mg/day22,28
+
+Effective
+
+Continue, if no
+contraindications
+
+Ineffective
+
+Consider a benzodiazepine15,16
+(e.g. diazepam up to 15mg/day clonazepam
+0.5–3mg/day)
+
+Effective
+
+Continue, but attempt slow
+withdrawal after 2–4 weeks
+(risk of dependence)
+
+Ineffective
+
+Consider clonidine 0.2–0.8mg/day16,29
+
+Effective
+
+Continue if tolerated;
+withdraw very slowly
+
+(Continued)
+
+
+
+
+<<<PAGE 137>>>
+
+116  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+(Continued)
+Notes
+Akathisia is sometimes difficult to diagnose with certainty. Clinical physical examination schedules for EPS
+have been proposed.30,31 For each patient, a careful history of symptoms, medication response and side
+effects, and comorbid substance use is essential.
+■■ Evaluate the efficacy of each treatment option over at least 1 month. Some effect may be seen after a few
+days, but it may take much longer to become apparent in those with chronic akathisia.
+■■ Withdraw previously ineffective akathisia treatments before starting the next option in the algorithm.
+■■ Combinations of treatment may be considered for refractory cases if carefully monitored.
+■■ Other possible treatments for acute akathisia that have been investigated include vitamin B6,32,33 pregabalin,34 diphenhydramine,35 trazodone23,36 and zolmitriptan.37,38 Always read the primary literature before
+considering any of the treatment options.
+■■ Parenteral midazolam (1.5mg) has been successfully used to prevent akathisia associated with IV metoclopramide,39 suggesting a specific therapeutic effect for midazolam and perhaps benzodiazepines more
+generally.
+■■ In some cases where agitation/akathisia are known short-lived effects of antipsychotic medication when
+initiated (e.g. with aripiprazole, cariprazine), prophylactic or rescue benzodiazepines may be prescribed for
+a limited period. Clinical experience suggests this practice is effective.
+■■
+
+21. Adler L, et al. A controlled assessment of propranolol in the treatment of neuroleptic-induced akathisia. Br J Psychiatry 1986; 149:42–45.
+22. Fischel T, et al. Cyproheptadine versus propranolol for the treatment of acute neuroleptic-induced akathisia: a comparative double-blind
+study. J Clin Psychopharmacol 2001; 21:612–615.
+23. Laoutidis ZG, et al. 5-HT2A receptor antagonists for the treatment of neuroleptic-induced akathisia: a systematic review and meta-analysis.
+Int J Neuropsychopharmacol 2014; 17:823–832.
+24. Poyurovsky M, et al. Mirtazapine – a multifunctional drug: low dose for akathisia. CNS Spectr 2011; 16:63.
+25. Poyurovsky M. Acute antipsychotic-induced akathisia revisited. Br J Psychiatry 2010; 196:89–91.
+26. Rathbone J, et al. Anticholinergics for neuroleptic-induced acute akathisia. Cochrane Database Syst Rev 2006; CD003727.
+27. Baskak B, et al. The effectiveness of intramuscular biperiden in acute akathisia: a double-blind, randomized, placebo-controlled study. J Clin
+Psychopharmacol 2007; 27:289–294.
+28. Weiss D, et al. Cyproheptadine treatment in neuroleptic-induced akathisia. Br J Psychiatry 1995; 167:483–486.
+29. Zubenko GS, et al. Use of clonidine in treating neuroleptic-induced akathisia. Psychiatry Res 1984; 13:253–259.
+30. Gervin M, et al. Assessment of drug-related movement disorders in schizophrenia. Adv Psychiatr Treatment 2000; 6:332–341.
+31. Cunningham Owens DA. Guide to the extrapyramidal side effects of antipsychotic drugs. Cambridge University Press; 1999.
+32. Miodownik C, et al. Vitamin B6 versus mianserin and placebo in acute neuroleptic-induced akathisia: a randomized, double-blind, controlled
+study. Clin Neuropharmacol 2006; 29:68–72.
+33. Lerner V, et al. Vitamin B6 treatment in acute neuroleptic-induced akathisia: a randomized, double-blind, placebo-controlled study. J Clin
+Psychiatry 2004; 65:1550–1554.
+34. De Berardis D, et al. Reversal of aripiprazole-induced tardive akathisia by addition of pregabalin. J Neuropsychiatry Clin Neurosci 2013;
+25:E9–E10.
+35. Friedman BW, et al. A randomized trial of diphenhydramine as prophylaxis against metoclopramide-induced akathisia in nauseated emergency department patients. Ann Emerg Med 2009; 53:379–385.
+36. Stryjer R, et al. Trazodone for the treatment of neuroleptic-induced acute akathisia: a placebo-controlled, double-blind, crossover study. Clin
+Neuropharmacol 2010; 33:219–222.
+37. Gross-Isseroff R, et al. The 5-HT1D receptor agonist zolmitriptan for neuroleptic-induced akathisia: an open label preliminary study. Int Clin
+Psychopharmacol 2005; 20:23–25.
+38. Avital A, et al. Zolmitriptan compared to propranolol in the treatment of acute neuroleptic-induced akathisia: a comparative double-blind
+study. Eur Neuropsychopharmacol 2009; 19:476–482.
+39. Erdur B, et al. A trial of midazolam vs diphenhydramine in prophylaxis of metoclopramide-induced akathisia. Am J Emerg Med 2012;
+30:84–91.
+
+
+
+
+<<<PAGE 196>>>
+
+Table 1.31 (Continued)
+Drug
+
+Type of problem
+
+Lumateperone
+
+■■
+■■
+
+Pimavanserin
+
+■■
+■■
+
+Iloperidone
+
+■■
+■■
+
+Does not appear to affect prolactin66
+No sexual side effects reported in (short) clinical trials67
+Does not bind to dopamine receptors,68 therefore has no effect on prolactin
+May improve sexual function in patients with depression69
+Does not usually affect prolactin70
+Some reports of sexual dysfunction in adverse event reporting databases,71 case reports
+of retrograde ejaculation72
+
+Treatment
+Before attempting to treat sexual dysfunction, a thorough assessment is essential to
+determine the most likely cause. Assuming that physical pathology (diabetes, hypertension, cardiovascular disease, etc.) has been excluded or treated (e.g. obesity73), the following principles apply.
+Spontaneous remission may occasionally occur33 but may take 6 months to become
+apparent, if at all,30 and may be more likely related to a reduction in severity of illness,
+rather than tolerance to the antipsychotic itself. When symptoms persist, the most obvious first step is to decrease the dose or discontinue the offending drug where appropriate. The next step is to switch to a different drug that is less likely to cause the specific
+sexual problem experienced (see Table 1.30). Another option is to add 5–10mg aripiprazole – this can normalise prolactin and improve sexual function.74–77 If this fails or
+is not practicable, ‘antidote’ drugs can be tried: for example, cyproheptadine (a 5HT2
+antagonist at doses of 4–16mg/day) has been used to treat SSRI-induced sexual dysfunction, but sedation is a common side-effect. There is some evidence that mirtazapine
+(also a 5HT2 antagonist as well as an alpha-2 antagonist) may relieve orgasmic dysfunction in FGA-treated patients.78 Amantadine, bupropion, buspirone, bethanechol
+and yohimbine have all been used with varying degrees of success but have a number
+of unwanted side effects and interactions with other drugs. Given that hyperprolactinaemia may contribute to sexual dysfunction, selegiline (enhances dopamine activity)
+has been tested in an RCT. This was negative.79 Testosterone patches have been shown
+to increase libido in women, although be aware that breast cancer risk may be significantly increased (Table 1.32).80,81
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  175
+
+
+
+
+<<<PAGE 197>>>
+
+CHAPTER 1
+
+176  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 1.32 Remedial treatments for psychotropic-induced sexual dysfunction
+Drug
+
+Pharmacology
+
+Potential treatment for
+
+Side effects
+
+Alprostadil1,13
+
+Prostaglandin
+
+Erectile dysfunction
+
+Pain, fibrosis,
+hypotension, priapism
+
+Amantadine1,82
+
+Dopamine agonist
+
+Prolactin-induced reduction in
+desire and arousal (dopamine
+increases libido and facilitates
+ejaculation)
+
+Return of psychotic
+symptoms, GI effects,
+nervousness, insomnia,
+rash
+
+Bethanechol83
+
+Cholinergic or
+cholinergic potentiation
+of adrenergic
+neurotransmission
+
+Anticholinergic induced arousal
+problems and anorgasmia (from
+TCAs, antipsychotics, etc.)
+
+Nausea and vomiting,
+colic, bradycardia,
+blurred vision,
+sweating
+
+Bromocriptine11
+
+Dopamine agonist
+
+Prolactin-induced reduction in
+desire and arousal
+
+Return of psychotic
+symptoms, GI effects
+
+Bupropion84,85
+
+Noradrenaline and
+dopamine
+reuptake inhibitor
+
+SSRI-induced sexual dysfunction
+(evidence poor)
+
+Concentration
+problems, reduced
+sleep, tremor
+
+Buspirone86
+
+5HT1a partial agonist
+
+SSRI-induced sexual dysfunction,
+particularly decreased libido and
+anorgasmia
+
+Nausea, dizziness,
+headache
+
+Cyproheptadine1,86,87
+
+5HT2 antagonist
+
+Sexual dysfunction caused by
+increased serotonin transmission
+(e.g. SSRIs),
+particularly anorgasmia
+
+Sedation and fatigue.
+Reversal of the
+therapeutic
+effect of
+antidepressants
+
+Flibanserin (licensed
+in USA)88
+
+5-HT1A agonist, 5-HT2A
+antagonist, dopamine
+antagonist
+
+Lack or loss of sexual desire in
+premenopausal women. Appears
+to be safe in women taking
+antidepressants89
+
+Hypotension, syncope,
+sedation, dizziness,
+nausea, dry mouth
+
+Sildenafil13,90–93
+tadalafil,94 lodenafil,95
+vardenafil96
+
+Phosphodiesterase
+inhibitors
+
+Erectile dysfunction of any
+aetiology. Anorgasmia in women.
+Effective when prolactin raised
+
+Mild headaches,
+dizziness, nasal
+congestion
+
+Yohimbine1,13,97–99
+
+Central and peripheral
+α2 adrenoceptor
+antagonist
+
+SSRI-induced sexual dysfunction,
+particularly erectile dysfunction,
+decreased libido and anorgasmia
+(evidence poor)
+
+Anxiety, nausea, fine
+tremor, increased BP,
+sweating, fatigue
+
+Pimavanserin69
+
+Inverse agonist at
+5-HT2A and 5-HT2C
+
+Sexual dysfunction in depression
+with inadequate response to
+antidepressants. Improvement in
+sexual function independently of
+effect on depression unconfirmed.
+
+Peripheral oedema,
+nausea, confusion
+
+Bremelanotide100
+
+Melanocortin receptor
+agonist
+
+Hypoactive sexual desire in
+premenopausal women. No
+published data on use in patients
+with psychiatric diagnoses.
+
+Flushing, nausea,
+headache
+
+Note: The use of the drugs listed above should ideally be under the care or supervision of a specialist in sexual
+dysfunction.
+
+
+
+
+<<<PAGE 200>>>
+
+63. Tran PV, et al. Double-blind comparison of olanzapine versus risperidone in the treatment of schizophrenia and other psychotic disorders. J
+Clin Psychopharmacol 1997; 17:407–418.
+64. Raja M. Risperidone-induced absence of ejaculation. Int Clin Psychopharmacol 1999; 14:317–319.
+65. Aizenberg D, et al. Sexual dysfunction in male schizophrenic patients. J Clin Psychiatry 1995; 56:137–141.
+66. Correll CU, et al. Safety and tolerability of lumateperone 42 mg: an open-label antipsychotic switch study in outpatients with stable schizophrenia. Schizophr Res 2021; 228:198–205.
+67. Correll CU, et al. Efficacy and safety of lumateperone for treatment of schizophrenia: a randomized clinical trial. JAMA Psychiatry 2020;
+77:349–358.
+68. Cruz MP. Pimavanserin (Nuplazid): a treatment for hallucinations and delusions associated with Parkinson’s disease. P & T 2017;
+42:368–371.
+69. Freeman MP, et al. Improvement of sexual functioning during treatment of MDD with adjunctive pimavanserin: a secondary analysis.
+Depress Anxiety 2020; 37:485–495.
+70. Peuskens J, et al. The effects of novel and newly approved antipsychotics on serum prolactin levels: a comprehensive review. CNS Drugs
+2014; 28:421–453.
+71. Subeesh V, et al. Novel adverse events of iloperidone: a disproportionality analysis in US Food and Drug Administration Adverse Event
+Reporting System (FAERS) Database. Current Drug Safety 2019; 14:21–26.
+72. Freeman SA. Iloperidone-induced retrograde ejaculation. Int Clin Psychopharmacol 2013; 28:156.
+73. Theleritis C, et al. Sexual dysfunction and central obesity in patients with first episode psychosis. Eur Psychiatry 2017; 42:1–7.
+74. Shim JC, et al. Adjunctive treatment with a dopamine partial agonist, aripiprazole, for antipsychotic-induced hyperprolactinemia: a placebocontrolled trial. Am J Psychiatry 2007; 164:1404–1410.
+75. Yasui-Furukori N, et al. Dose-dependent effects of adjunctive treatment with aripiprazole on hyperprolactinemia induced by risperidone in
+female patients with schizophrenia. J Clin Psychopharmacol 2010; 30:596–599.
+76. Trives MZ, et al. Effect of the addition of aripiprazole on hyperprolactinemia associated with risperidone long-acting injection. J Clin
+Psychopharmacol 2013; 33:538–541.
+77. Kelly DL, et al. Adjunct aripiprazole reduces prolactin and prolactin-related adverse effects in premenopausal women with psychosis: results
+from the DAAMSEL clinical trial. J Clin Psychopharmacol 2018; 38:317–326.
+78. Terevnikov V, et al. Add-on mirtazapine improves orgasmic functioning in patients with schizophrenia treated with first-generation antipsychotics. Nord J Psychiatry 2017; 71:77–80.
+79. Kodesh A, et al. Selegiline in the treatment of sexual dysfunction in schizophrenic patients maintained on neuroleptics: a pilot study. Clin
+Neuropharmacol 2003; 26:193–195.
+80. Davis SR, et al. Testosterone for low libido in postmenopausal women not taking estrogen. N Eng J Med 2008; 359:2005–2017.
+81. Schover LR. Androgen therapy for loss of desire in women: is the benefit worth the breast cancer risk? FertilSteril 2008; 90:129–140.
+82. Valevski A, et al. Effect of amantadine on sexual dysfunction in neuroleptic-treated male schizophrenic patients. Clin Neuropharmacol 1998;
+21:355–357.
+83. Gross MD. Reversal by bethanechol of sexual dysfunction caused by anticholinergic antidepressants. Am J Psychiatry 1982;
+139:1193–1194.
+84. Masand PS, et al. Sustained-release bupropion for selective serotonin reuptake inhibitor-induced sexual dysfunction: a randomized, doubleblind, placebo-controlled, parallel-group study. Am J Psychiatry 2001; 158:805–807.
+85. Rezaei O, et al. The effect of bupropion on sexual function in patients with Schizophrenia: a randomized clinical trial. Eur J Psychiatry 2017;
+32.
+86. Rothschild AJ. Sexual side effects of antidepressants. J Clin Psychiatry 2000; 61 Suppl 11:28–36.
+87. Lauerma H. Successful treatment of citalopram-induced anorgasmia by cyproheptadine. Acta Psychiatr Scand 1996; 93:69–70.
+88. IBM Watson Health. IBM Micromedex Solutions. 2020; https://www.ibm.com/watson-health/about/micromedex.
+89. Clayton AH, et al. Effect of lurasidone on sexual function in major depressive disorder patients with subthreshold hypomanic symptoms
+(mixed features): results from a placebo-controlled trial. J Clin Psychiatry 2018; 79:18m12132.
+90. Nurnberg HG, et al. Sildenafil for women patients with antidepressant-induced sexual dysfunction. Psychiatr Serv 1999; 50:1076–1078.
+91. Salerian AJ, et al. Sildenafil for psychotropic-induced sexual dysfunction in 31 women and 61 men. J Sex Marital Ther 2000; 26:133–140.
+92. Gopalakrishnan R, et al. Sildenafil in the treatment of antipsychotic-induced erectile dysfunction: a randomized, double-blind, placebo-controlled, flexible-dose, two-way crossover trial. Am J Psychiatry 2006; 163:494–499.
+93. Mazzilli R, et al. Erectile dysfunction in patients taking psychotropic drugs and treated with phosphodiesterase-5 inhibitors. Arch Ital Urol
+Androl 2018; 90:44–48.
+94. De Boer MK, et al. Efficacy of tadalafil on erectile dysfunction in male patients using antipsychotics: a double-blind, placebo-controlled,
+crossover pilot study. J Clin Psychopharmacol 2014; 34:380–382.
+95. Nunes LV, et al. Adjunctive treatment with lodenafil carbonate for erectile dysfunction in outpatients with schizophrenia and spectrum: a
+randomized, double-blind, crossover, placebo-controlled trial. J Sex Med 2013; 10:1136–1145.
+96. Mitsonis CI, et al. Vardenafil in the treatment of erectile dysfunction in outpatients with chronic schizophrenia: a flexible-dose, open-label
+study. J Clin Psychiatry 2008; 69:206–212.
+97. Jacobsen FM. Fluoxetine-induced sexual dysfunction and an open trial of yohimbine. J Clin Psychiatry 1992; 53:119–122.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  179
+
+
+
+
+<<<PAGE 428>>>
+
+Depression and anxiety disorders  407
+
+Strategy
+
+Details
+
+Pharmacological
+treatments
+
+■■
+
+Phosphodiesterase inhibitors: both sildenafil and tadalafil have been shown
+to improve sexual functioning in men with antidepressant-related erectile
+dysfunction.23,28 Limited evidence in women though one RCT found benefits.23
+■■ Bupropion: may be useful in women at higher doses (300mg/day).28 Lower doses
+appear to be ineffective.23 A positive RCT in men29 was later retracted.
+■■ Mirtazapine: Evidence is mixed. Open studies suggest some benefit for antidepressant-induced SD, but negative results were reported in one RCT.27
+■■ Transdermal testosterone: RCTs provide evidence of possible efficacy in women
+with SSRI/SNRI-emergent loss of libido30 and in men who continue to take serotonergic antidepressants with low or low-normal testosterone levels.31
+■■ Others:12 many other agents have been studied; however, some of these have
+little or no evidence of their effectiveness. Buspirone was effective in one study
+for citalopram- or paroxetine-induced sexual dysfunction, but ineffective in another
+study with fluoxetine. Cyproheptadine has been used successfully in case reports of
+SSRI-induced sexual dysfunction in men, and for anorgasmia in women. Loratadine
+was effective in a small open study for men with SSRI-induced erectile dysfunction.
+Amantadine was effective in earlier studies for SSRI-induced sexual dysfunction, but
+recent results have been negative. Yohimbine may be more effective for medication-induced SD and improvements were reported by patients in two small studies
+(although results were nonsignificant). Bethanechol appears to help with TCAinduced sexual dysfunction when taken before sexual activity. Granisetron has been
+evaluated but the existing data are not definitive. Flibanserin and bremelanotide
+are approved by FDA for treatment of HSDD in premenopausal women32 but there
+are no data to support use for antidepressant-induced SD.
+■■ Augmenting agents in treatment-resistant depression: some drugs used as an
+adjunct for treatment-resistant depression have been associated with improvement in
+sexual functioning in secondary analyses. Aripiprazole improved sexual functioning
+and desire, though only in women.24 Brexpiprazole was associated with modest
+improvements in one analysis.33 Pimavanserin,used as an add on treatment to SSRIs/
+SNRIs, improved sexual functioning in another analysis.34
+
+References
+1. McCabe MP, et al. Incidence and prevalence of sexual dysfunction in women and men: a consensus statement from the fourth international
+consultation on sexual medicine 2015. J Sex Med 2016; 13:144–152.
+2. Chokka PR, et al. Assessment and management of sexual dysfunction in the context of depression. Ther Adv Psychopharmacol 2018;
+8:13–23.
+3. Pereira-Miranda E, et al. Overweight and obesity associated with higher depression prevalence in adults: a systematic review and metaanalysis. J Am Coll Nutr 2017; 36:223–233.
+4. Semenkovich K, et al. Depression in type 2 diabetes mellitus: prevalence, impact, and treatment. Drugs 2015; 75:577–587.
+5. Cohen BE, et al. State of the art review: depression, stress, anxiety, and cardiovascular disease. Am J Hypertens 2015; 28:1295–1302.
+6. Montejo AL, et al. The impact of severe mental disorders and psychotropic medications on sexual health and its implications for clinical
+management. World Psychiatry 2018; 17:3–11.
+7. McGahuey CA, et al. The Arizona Sexual Experience Scale (ASEX): reliability and validity. J Sex Marital Ther 2000; 26:25–40.
+8. Papakostas GI. Identifying patients who need a change in depression treatment and implementing that change. J Clin Psychiatry 2016;
+77:e1009.
+9. Kennedy SH, et al. Sexual dysfunction before antidepressant therapy in major depression. J Affect Disord 1999; 56:201–208.
+10. Clayton AH, et al. Antidepressants and sexual dysfunction: mechanisms and clinical implications. Postgrad Med 2014; 126:91–99.
+11. Ishak WW, et al. Sexual satisfaction and quality of life in major depressive disorder before and after treatment with citalopram in the STAR*D
+study. J Clin Psychiatry 2013; 74:256–261.
+12. Clayton AH, et al. Sexual dysfunction due to psychotropic medications. Psychiatr Clin North Am 2016; 39:427–463.
+13. Rothmore J. Antidepressant-induced sexual dysfunction. Med J Aust 2020; 212:329–334.
+14. Bala A, et al. Post-SSRI sexual dysfunction: a literature review. Sex Med Rev 2018; 6:29–34.
+15. McMahon CG. Dapoxetine: a new option in the medical management of premature ejaculation. Ther Adv Urol 2012; 4:233–251.
+
+CHAPTER 3
+
+Table 3.21 (Continued)
+
+
+
+
+<<<PAGE 661>>>
+
+640  The Maudsley® Prescribing Guidelines in Psychiatry
+
+H2 antagonists and proton pump inhibitors (PPIs)
+Histamine-2 receptor antagonists (e.g. cimetidine, ranitidine and famotidine) are rarely
+used nowadays. Cimetidine causes several pharmacokinetic interactions, and ranitidine
+products have been recalled due to possible contamination with NDMA
+(N-nitrosodimethylamine). NDMA has been identified as a potential risk factor in the
+development of certain cancers. Famotidine remains in use. CNS reactions to these
+drugs have been reported, especially with cimetidine.58 A study looking at observational
+data on PPIs found an association between PPI use and incident dementia. This is supported by pharmacoepidemiological analyses on primary data and is in line with animal studies in which the use of PPIs increased the levels of β-amyloid in the brains of
+mice.59 Randomised, prospective clinical trials are needed to confirm this association.
+Many patients on PPIs have Helicobacter pylori–infected gastric mucosa. As Helicobacter
+has been reported to be associated with cognitive deterioration, this could be the mechanism behind the apparent link between PPI drugs and dementia. Furthermore, this
+association was not replicated in other studies.60,61
+Antibiotics
+There are reports of many antibiotics being associated with delirium62,63 but there is no
+consistent pattern of them causing cognitive impairment. Given the importance of
+treating infection in dementia, the most appropriate antibiotic for the infection being
+treated should be used. Antituberculous therapy, particularly isoniazid, has attracted
+some case reports of adverse psychiatric reactions (Table 6.6).64
+
+CHAPTER 6
+
+Table 6.6 Recommended drugs and drugs to avoid in dementia (adapted with permission26)
+Recommended drugs
+in dementia
+
+Condition
+
+Drug class or drug name
+
+Drugs to avoid in dementia
+
+Allergic conditions
+
+Antihistamines
+
+Chlorphenamine
+Promethazine
+Hydroxyzine
+Cyproheptadine
+Cyclizine
+(and other first-generation
+antihistamines)
+
+Asthma/COPD
+
+Bronchodilators
+
+Constipation
+
+Laxatives
+
+No evidence to suggest that laxatives have any negative
+impact on cognitive function
+Constipation itself may worsen cognition
+
+Diarrhoea
+
+Loperamide
+
+Low-potency anticholinergic. Not known to have effects on
+cognitive function; however, may add to the anticholinergic
+cognitive burden if used in combination to other anticholinergics
+
+Cetirizine
+Loratadine
+Fexofenadine
+(and other second-generation
+antihistamines)
+
+Beta-agonists
+Inhaled anticholinergics (have
+not been reported to affect
+cognition)
+Theophylline
+
+
+
+
+<<<PAGE 786>>>
+
+14. Wade TD, et al. Comparative efficacy of pharmacological and non-pharmacological interventions for the acute treatment of adult outpatients
+with anorexia nervosa: study protocol for the systematic review and network meta-analysis of individual data. J Eat Disord 2017; 5:24.
+15. Blanchet C, et al. Medication in AN: a multidisciplinary overview of meta-analyses and systematic reviews. J Clin Med 2019; 8
+16. Andries A, et al. Dronabinol in severe, enduring anorexia nervosa: a randomized controlled trial. Int J Eat Disord 2014; 47:18–23.
+17. Gross H, et al. A double-blind trial of delta 9-tetrahydrocannabinol in primary anorexia nervosa. J Clin Psychopharmacol 1983;
+3:165–171.
+18. Connan F, et al. Biochemical and endocrine complications. Eur Eat Disord Rev 2000; 8:144–157.
+19. Claudino AM, et al. Antidepressants for anorexia nervosa. Cochrane Database Syst Rev 2006:CD004365.
+20. Barbarich NC, et al. Use of nutritional supplements to increase the efficacy of fluoxetine in the treatment of anorexia nervosa. Int J Eat
+Disord 2004; 35:10–15.
+21. Rossi G, et al. Pharmacological treatment of anorexia nervosa: a retrospective study in preadolescents and adolescents. Clin Pediatr (Phila)
+2007; 46:806–811.
+22. Malina A, et al. Olanzapine treatment of anorexia nervosa: a retrospective study. Int J Eat Disord 2003; 33:234–237.
+23. La Via MC, et al. Case reports of olanzapine treatment of anorexia nervosa. Int J Eat Disord 2000; 27:363–366.
+24. Su JC, et al. Zinc supplementation in the treatment of anorexia nervosa. Eat Weight Disord 2002; 7:20–22.
+25. Marrazzi MA, et al. Naltrexone use in the treatment of anorexia nervosa and bulimia nervosa. Int Clin Psychopharmacol 1995;
+10:163–172.
+26. Halmi KA, et al. Anorexia nervosa. Treatment efficacy of cyproheptadine and amitriptyline Arch Gen Psychiatry 1986; 43:177–181.
+27. Fazeli PK, et al. Treatment with a ghrelin agonist in outpatient women with anorexia nervosa: a randomized clinical trial. J Clin Psychiatry
+2018; 79.
+28. Russell J, et al. Intranasal oxytocin in the treatment of anorexia nervosa: randomized controlled trial during re-feeding.
+Psychoneuroendocrinology 2018; 87:83–92.
+29. Kimball A, et al. A randomized placebo-controlled trial of low-dose testosterone therapy in women with anorexia nervosa. J Clin Endocrinol
+Metab 2019; 104:4347–4355.
+30. Kaye WH, et al. Double-blind placebo-controlled administration of fluoxetine in restricting- and restricting-purging-type anorexia nervosa.
+Biol Psychiatry 2001; 49:644–652.
+31. Walsh BT, et al. Fluoxetine after weight restoration in anorexia nervosa: a randomized controlled trial. JAMA 2006; 295:2605–2612.
+32. Himmerich H, et al. Pharmacological treatment of eating disorders, comorbid mental health problems, malnutrition and physical health consequences. Pharmacol Ther 2020:107667.
+33. Vocks S, et al. Meta-analysis of the effectiveness of psychological and pharmacological treatments for binge eating disorder. Int J Eat Disord
+2010; 43:205–217.
+34. Fluoxetine Bulimia Nervosa Collaborative Study Group. Fluoxetine in the treatment of bulimia nervosa. A multicenter, placebo-controlled,
+double-blind trial. Arch Gen Psychiatry 1992; 49:139–147.
+35. Goldstein DJ, et al. Long-term fluoxetine treatment of bulimia nervosa. Fluoxetine Bulimia Nervosa Research Group. Br J Psychiatry 1995;
+166:660–666.
+36. Romano SJ, et al. A placebo-controlled study of fluoxetine in continued treatment of bulimia nervosa after successful acute fluoxetine
+treatment. Am J Psychiatry 2002; 159:96–102.
+37. Bacaltchuk J, et al. Antidepressants versus placebo for people with bulimia nervosa. Cochrane Database Syst Rev 2003:CD003391.
+38. Sysko R, et al. Early response to antidepressant treatment in bulimia nervosa. Psychol Med 2010; 40:999–1005.
+39. Nourredine M, et al. Efficacy and safety of topiramate in binge eating disorder: a systematic review and meta-analysis. CNS Spectr
+2020:1–9.
+40. White MA, et al. Bupropion for overweight women with binge-eating disorder: a randomized, double-blind, placebo-controlled trial. J Clin
+Psychiatry 2013; 74:400–406.
+41. Leombruni P, et al. Duloxetine in obese binge eater outpatients: preliminary results from a 12-week open trial. Hum Psychopharmacol 2009;
+24:483–488.
+42. Guerdjikova AI, et al. Lamotrigine in the treatment of binge-eating disorder with obesity: a randomized, placebo-controlled monotherapy
+trial. Int Clin Psychopharmacol 2009; 24:150–158.
+43. Trunko ME, et al. A pilot open series of lamotrigine in DBT-treated eating disorders characterized by significant affective dysregulation and
+poor impulse control. Borderline Personality Disord Emot Dysregul 2017; 4:21.
+44. Ricca V, et al. Zonisamide combined with cognitive behavioral therapy in binge eating disorder: a one-year follow-up study. Psychiatry
+(Edgmont) 2009; 6:23–28.
+45. Guerdjikova AI, et al. Zonisamide in the treatment of bulimia nervosa: an open-label, pilot, prospective study. Int J Eat Disord 2013;
+46:747–750.
+46. McElroy SL, et al. Acamprosate in the treatment of binge eating disorder: a placebo-controlled trial. Int J Eat Disord 2011; 44:81–90.
+47. McElroy SL, et al. Sodium oxybate in the treatment of binge eating disorder: an open-label, prospective study. Int J Eat Disord 2011;
+44:262–268.
+48. Hilbert A, et al. Meta-analysis on the long-term effectiveness of psychological and medical treatments for binge-eating disorder. Int J Eat
+Disord 2020; 53:1353–1376.
+49. Ghaderi A, et al. Psychological, pharmacological, and combined treatments for binge eating disorder: a systematic review and meta-analysis.
+Peer J 2018; 6:e5113.
+
+CHAPTER 9
+
+Drug treatment of other psychiatric conditions   765
+
+
+
+
+<<<PAGE 946>>>
+
+Miscellany  925
+
+Examples of acceptable use of drugs outside their product licences/labels
+Table 14.6 gives examples of common unlicensed uses of drugs in psychiatric practice.
+These examples would all fulfil the Bolam and Bolitho criteria in principle. An exhaustive list of unlicensed uses is impossible to prepare as: the evidence base is constantly
+changing and because the expertise and experience of prescribers varies. A particular
+strategy may be justified in the hands of a specialist in psychopharmacology based on
+a tertiary referral centre but be much more difficult to justify if initiated by someone
+with a special interest in psychotherapy who rarely prescribes.
+
+Drug/drug group
+
+Unlicensed use(s)
+
+Further information
+
+Second generation
+antipsychotics
+
+Psychotic illness other than
+schizophrenia
+
+Licensed indications vary markedly, and in most cases
+are unlikely to reflect real differences in efficacy
+between drugs
+
+Clozapine
+
+Bipolar disorder
+
+Substantial evidence to support efficacy when
+standard treatments have failed to control symptoms
+
+Cyproheptadine
+
+Akathisia
+
+Some evidence to support efficacy in this distressing
+and difficult to treat adverse effect of antipsychotics
+
+Fluoxetine/Sertraline
+
+Generalised anxiety disorder
+
+Substantial supporting evidence
+
+Ketamine (racemate)
+
+Refractory depression
+
+Substantial evidence with both racemate and
+S-isomer
+
+Melatonin (circadin)
+
+Insomnia in children
+
+Licence covers adults >55 years only. Probably
+preferable to unlicensed formulations of melatonin
+
+Methylphenidate
+
+ADHD in children under 6
+
+Established clinical practice
+
+Naltrexone
+
+Self-injurious behaviour in
+people with learning disabilities
+
+Limited evidence base
+Acceptable in specialist hands
+
+Sodium valproate
+
+Treatment and prophylaxis of
+bipolar disorder
+
+Established clinical practice
+Evidence from other valproate preparations
+
+Note that some drugs do not have a UK licence for any indication. Two commonly
+prescribed examples in psychiatric practice are immediate release formulations of melatonin (used to treat insomnia in children and adolescents) and pirenzepine (used to treat
+clozapine-induced hypersalivation). Awareness of the evidence base and documentation
+of potential benefits, side effects and patient consent are especially important here.
+
+References
+1. Datapharm Communications Ltd. Summary of product characteristics. Electronic Medicines Compendium 2020; http://www.medicines.org.
+uk/emc.
+2. Maher AR, et al. Efficacy and comparative effectiveness of atypical antipsychotic medications for off-label uses in adults: a systematic review
+and meta-analysis. JAMA 2011; 306:1359–1369.
+3. Bolam v Friern Barnet Hospital Management Committee. The Weekly Law Reports 1957; 1:582.
+4. Bolitho v City and Hackney Health Authority. The Weekly Law Reports 1997; 3:1151.
+
+CHAPTER 14
+
+Table 14.6 Examples of common unlicensed uses of drugs in psychiatric practice
+
+
+
+
+<<<PAGE 969>>>
+
+948  Index
+
+cocaine 467
+detoxification 511
+substitution treatment 511
+Cochrane systematic review 2018 52
+Cockroft and Gault equation 735
+codeine 638
+cognitive behavioural therapy (CBT) 556
+cognitive decline, consumption of 621
+cognitive enhancers, characteristics of 604,
+605–606t
+cognitive impairment 810
+combined antipsychotic medications
+(antipsychotic polypharmacy) 20
+adverse effects 21–22
+in clinical practice 22
+long-term antipsychotic
+treatment 20–21
+poor response to antipsychotic
+monotherapy 20
+communication impairment 579
+community detoxification 456
+co-morbid autistic spectrum disorder 797
+co-morbid depression 9, 401
+co-morbid disorders 9
+comorbidity, detection and treatment of
+587
+co-morbid mental health disorders 468
+co-morbid psychiatric illness 571
+compliance aids 902
+conventional antipsychotics 296
+covert administration
+algorithm for determining 671f
+guidance on 667–669
+CPY1A2, 852
+CPY2B6, 852
+CPY2C8, 853
+CPY2C9, 853
+CPY2C19, 853
+CPY2D6, 854
+C-reactive protein 909t
+creatine kinase 910t
+creatinine 910t
+Crocus sativus (saffron) 620
+cyclizine 635, 639
+CYP2A6 enzyme 852
+CYP3A4 enzyme 855
+alcohol and substrates for 861–862t
+CYP2B7 enzymes 852
+CYP2E1 enzyme 854
+alcohol and substrates for 861–862t
+CYP450 enzyme 378
+antidepressant effects on 378–379t
+cyproheptadine 925t
+cyproterone 590
+cytochrome P450 (CYP450) enzymes
+635
+darifenacin 631
+dehydration 863
+delirium 13, 638, 778
+choice of drug 15
+clinical subtypes of 13
+diagnostic criteria for 13
+drugs used to treat 15–18, 15–18t
+general principles 14
+management 14
+outcome 14
+pharmacological prophylaxis 15–18,
+
+15–18t
+prevalence 13
+risk factors 13–14
+tools for evaluation 13
+delirium tremens 472–473, 473t
+administration schedules for 473t
+treatment of 472
+delusional intensity 561
+demeclocycline 165t
+dementia 604, 883
+adverse effects, cholinesterase
+inhibitors 610–611
+Alzheimer’s disease (AD) 604
+memantine 604, 605–606t
+cardiovascular effects of drugs 611
+combination treatment 609
+diagnosis 650
+discontinuation of medication 616
+dosing and formulations 608–609
+efficacy of cognitive enhancers used in
+607
+other effects 608
+safer prescribing for physical conditions in
+631
+switching between drugs used in
+607–608
+tolerability 609–610
+dementia with Lewy bodies (DLB) 624
+depot antipsychotics 72
+depot/long-acting antipsychotics 902
+depression 583, 778–779, 805t, 808, 810,
+820, 872
+alcohol 468
+and anxiety 795t
+in childhood and adolescence
+after prescribing 544–545
+clinical guidance 541
+diagnostic issues 541
+medication treatment for 543–544
+before prescribing 542
+summary of pharmacotherapy for
+544t
+what to prescribe 542–544
+description of 305
+and diabetes 401–402, 402t
+drug treatment of 314, 314f
+effects of 404
+NICE guidelines 305–306
+non-drug treatments for 788
+in older people 673–676
+prescribing in 674–675t, 674–676
+in Parkinson’s disease (PD) 814
+post-stroke 362
+prophylaxis 362
+treatment 362–363
+during pregnancy and postpartum 685
+principles of prescribing in 305,
+306t
+psychotic 332–333
+recurrent 374–375, 374f
+second-generation antipsychotics 270
+stimulants in 357–359t
+symptoms of 309
+treatment of 788
+treatment-resistant See treatment-resistant
+depression
+desvenlafaxine 389, 741t
+deutetrabenazine 589, 730t
+
+dexamfetamine/lisdexamfetamine 569,
+571, 716t, 729t
+dexmedetomidine 937t
+dextromethorphan/quinidine, bupropion/
+dextromethorphan 652, 809
+diabetes mellitus 401–402, 402t
+diazepam 472, 771t, 937t
+dibenzoylmethane (DBM) 622
+dietary habits 621
+digoxin 602, 639
+dimebon 619
+discontinuation syndrome 607
+disulfiram (Antabuse)
+alcohol 464–466
+NICE clinical guideline 466
+diuretics 253
+DLB. See dementia with Lewy bodies (DLB)
+domperidone 635
+donepezil (AriceptR) 607, 612, 613,
+614t, 772t
+clinical trials of 624
+Cochrane review for 623
+doses of 609
+sustained release 608
+dopamine 168, 871
+agonists 169, 918t
+antagonists 47
+receptors, super-sensitivity of 28
+dose–response relationship 837
+dose response, systematic analysis of 17
+dosulepin (dothiepin) 742t
+doxepin 368, 742t, 857t
+drinks, content of 865t
+Driver and Vehicle Licensing Agency
+(DVLA) 883
+driving and psychotropic medicines 883
+duty of driver 886
+duty of prescriber 886
+effects of mental illness 883
+medication-induced sedation 885
+medicines 885
+psychiatric medicines, driving and
+UK law 883–885, 884t, 885t
+droperidol 58, 938t
+Drug Attitude Inventory (DAI) 901
+drug–drug interactions 614–615t,
+638–639
+drug-induced parkinsonism 778
+drug interactions with alcohol 860
+metabolism of alcohol 860–862
+pharmacodynamic interactions
+862–863t, 862–864, 864t
+pharmacokinetic interactions 860
+drug-placebo differences 307
+drugs. See also specific drugs
+acceptable use of 925
+classes, tapering other 446
+concentrations 835, 847
+degradation of 847
+distribution of 847
+with established target ranges 835–836t
+interactions 873
+in psychiatric practice 925t
+tolerability 609–610
+dual diagnosis 797
+dual re-uptake inhibitors 308
+duloxetine 308, 688, 706t, 727t, 742t,
+779, 857t
+
+

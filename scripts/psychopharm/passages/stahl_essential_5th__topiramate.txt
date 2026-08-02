@@ -1,0 +1,1106 @@
+<<<PAGE 217>>>
+
+Chapter 5: Targeting for Psychosis
+
+The psychopharmacologist’s metabolic toolkit is quite
+simple (Figure 5-25). It involves a flow chart that tracks
+perhaps as few as four parameters over time, especially
+before and after switches from one agent to another, or
+as new risk factors evolve. These four parameters are
+weight (as body mass index), fasting triglycerides, fasting
+glucose, and blood pressure.
+The management of patients at risk for
+cardiometabolic disease can be quite simple as
+well, although patients who already have developed
+dyslipidemia, hypertension, diabetes, and heart disease
+will likely require management of these problems by a
+medical specialist. However, the psychopharmacologist
+is left with a very simple set of options for managing
+patients with cardiometabolic risk who are prescribed
+one of these drugs with any amount of metabolic risk
+(Figure 5-26). The major factors that determine whether
+a patient progresses along the metabolic highway to
+premature death include:
+those that are unmanageable (genetic makeup and age)
+those that are modestly manageable (change in
+lifestyle such as diet, exercise, and stopping
+smoking)
+those that are most manageable, namely the selection
+of medication and perhaps switching from one
+that is causing increased risk in a particular
+patient, to one that monitoring demonstrates
+reduces that risk
+Other options for managing the metabolic syndrome
+and dyslipidemia in patients taking serotonin/dopamine
+antagonists is the promising possibility that co-therapy
+with other agents may prevent weight gain and possibly
+dyslipidemia. That is, the anti-diabetes drug metformin
+has been shown in several studies to cause weight loss
+after drug-induced weight gain and, perhaps even more
+impressively, to reduce weight gain when starting a
+high- or moderate-metabolic-risk agent. Less consistent
+results have also been reported for the anticonvulsant
+topiramate. A new agent on the horizon that can reduce
+olanzapine-induced weight gain is the combination of the
+μ-opioid antagonist samidorphan with olanzapine.
+
+for individual discussion here. To characterize all the
+receptor binding properties of all the various drugs
+that treat psychosis, we show these properties both by
+simplified icons and by binding strips that represent
+all the known receptors that drug binds as one box per
+receptor, in rank order from most potent on the far left
+to least potent on the far right (see Figures 5-27 through
+5-31 for some of the original D2 antagonists, and see
+subsequent figures for the other drugs to treat psychosis).
+Specifically, the pharmacological binding properties
+of each drug can be represented as a row of semiquantitative and rank-order relative binding potencies at
+numerous neurotransmitter receptors. These figures are
+conceptual and not precisely quantitative, can differ from
+one laboratory to another, species to species, method to
+method, and the consensus values for binding properties
+evolve over time. More potent binding (higher affinity) is
+shown to the left of the value for the D2 receptor, which
+is indicated by a vertical dotted line; less potent binding
+(lower affinity) is shown to the right.
+Drugs used to treat psychosis are arguably the most
+complicated medicines in psychopharmacology, if
+not indeed in all of medicine, and this method should
+hopefully give the reader a rapid semi-quantitative grasp
+of the individual pharmacological properties of two
+dozen different drugs used to treat psychosis, and how
+these compare to all the other drugs that treat psychosis,
+and to do it in a glance.
+Dopamine 2 antagonists/partial agonists are generally
+dosed for antipsychotic action so that at least 60–80% of
+D2 receptors are occupied. Thus, all receptors to the left
+of D2 in the various figures of these drugs are occupied
+at the level of 60% or more at antipsychotic dosing levels.
+The receptors shown to the right of D2 in these individual
+drug figures are occupied at a level of less than 60% at
+antipsychotic dosing levels. Only those receptors that are
+bound by a drug within an order of magnitude of potency
+of D2 affinity are likely to have clinically relevant actions
+at antipsychotic doses, and maybe no relevant actions at
+lower doses such as doses used to treat depression.
+
+PHARMACOLOGICAL
+PROPERTIES OF SELECTED
+INDIVIDUAL FIRST-GENERATION
+D2 ANTAGONISTS
+
+One of the very first agents with D2 antagonist properties
+used to treat psychosis is chlorpromazine, in the chemical
+class of phenothiazine. It was originally branded as
+“Largactil” meaning it had a large number of actions, but
+none of its actions were known to be linked to any specific
+receptor at that time. Those “large actions” are shown in
+Figure 5-27, and in addition to therapeutic D2 antagonism,
+chlorpromazine has numerous receptor actions
+
+The original D2 antagonists launched approximately
+70 years ago are still used to treat psychosis and a few
+of the most commonly prescribed agents are selected
+
+Chlorpromazine
+
+201
+
+5
+
+
+
+
+<<<PAGE 363>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Table 7-3 Anticonvulsant mood stabilizers
+
+Agent
+
+Putative clinical actions
+Epilepsy
+
+Mania-minded
+
+Depression-minded
+
+Treat from
+above
+
+Stabilize
+from above
+
+Treat from
+below
+
+Stabilize from
+below
+
+Valproate
+
+++++
+
+++++
+
+++
+
++
+
++/−
+
+Carbamazepine
+
+++++
+
+++++
+
+++
+
++
+
++/−
+
+Lamotrigine
+
+++++
+
++/−
+
+++++
+
++++
+
+++++
+
+Oxcarbazepine/licarbazepine
+
+++++
+
+++
+
++
+
++/−
+
++/−
+
+Riluzole
+
++
+
++
+
++/−
+
+Topiramate
+
+++++
+
++/−
+
++/−
+
+Gabapentin
+
+++++
+
++/−
+
++/−
+
+Pregabalin
+
+++++
+
++/−
+
++/−
+
+Anticonvulsants with Proven Efficacy in Bipolar Disorder
+Valproic Acid (Valproate, Sodium Valproate)
+
+As for all anticonvulsants, the exact mechanism of action
+of valproic acid (also, sodium valproate, valproate) is
+uncertain; however, even less may be known about the
+mechanism of valproate than for other anticonvulsants.
+Various hypotheses are discussed here, and summarized in
+Figures 7-75 through 7-78. At least three possibilities exist
+for how valproic acid works: inhibiting voltage-sensitive
+sodium channels (Figure 7-76), boosting the actions of the
+neurotransmitter GABA (γ-aminobutyric acid) (Figure
+7-77), and regulating downstream signal transduction
+cascades (Figure 7-78). It is not known whether these
+actions explain the mood-stabilizing actions, the
+anticonvulsant actions, the anti-migraine actions, or the
+side effects of valproic acid. Obviously, this simple molecule
+has multiple and complex clinical effects, and research
+is trying to determine which of the various possibilities
+explain the “mood-stabilizing” antimanic effects of valproic
+acid so that new agents with more efficacy and fewer
+side effects can be developed by targeting the relevant
+pharmacological mechanism for bipolar disorder.
+One hypothesis to explain mood-stabilizing antimanic
+actions is the possibility that valproate acts to diminish
+excessive neurotransmission by diminishing the flow of
+ions through voltage-sensitive sodium channels (VSSCs)
+(Figure 7-76). VSSCs are discussed in Chapter 3 and
+illustrated in Figures 3-19 through 3-21. No specific
+molecular site of action for valproate has been identified,
+but it is possible that valproate may change the sensitivity
+of sodium channels by altering phosphorylation of
+
+7
+
+valproic acid
+
+Na+
+++
+Ca
+
+Glu
+GABA
+Figure 7-75 Valproic acid. Shown here is an icon of the
+pharmacological actions of valproic acid, an anticonvulsant
+used in the treatment of bipolar disorder. Valproic acid (also
+valproate) may work by interfering with voltage-sensitive sodium
+channels, enhancing the inhibitory actions of γ-aminobutyric
+acid (GABA), and regulating downstream signal transduction
+cascades, although which of these actions may be related to
+mood stabilization is not clear. Valproate may also interact with
+other ion channels, such as voltage-sensitive calcium channels,
+and also indirectly block glutamate (Glu) actions.
+
+347
+
+
+
+
+<<<PAGE 368>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+titration period required when starting lamotrigine
+makes it difficult to show any useful effectiveness for
+mania, which generally requires treatment with drugs
+that can work quickly. A third aspect of lamotrigine
+is that it is generally well tolerated, with one glaring
+exception: a propensity to cause rashes, including (rarely)
+the life-threatening Stevens Johnson syndrome (toxic
+epidermal necrolysis). Rashes caused by lamotrigine
+can be minimized by very slow up-titration of the drug
+during initiation of therapy, avoiding or managing drug
+interactions, such as those with valproate that raise
+lamotrigine levels, and by understanding how to identify
+and manage serious rashes, including being able to
+distinguish them from benign rashes (see discussion of
+lamotrigine in Stahl’s Essential Psychopharmacology: the
+Prescriber’s Guide). Finally, lamotrigine seems to have
+some unique aspects to its mechanism of action (Figure
+7-82), namely to reduce the release of the excitatory
+neurotransmitter glutamate. It is not clear whether this
+action is secondary to blocking the activation of VSSCs
+(Figure 7-82) or to some additional synaptic action.
+Reducing excitatory glutamatergic neurotransmission,
+especially if excessive during bipolar depression, may be
+a unique mechanism of action of lamotrigine and explain
+why it has such a different clinical profile as a treatment
+from below and a stabilizer from below for bipolar
+depression.
+Anticonvulsants with Uncertain or Doubtful Efficacy in
+Bipolar Disorder
+Oxcarbazepine/Eslicarbazepine
+
+Oxcarbazepine is structurally related to carbamazepine,
+but is not a metabolite of carbamazepine. Oxcarbazepine
+is actually not the active form of the drug, but a prodrug
+that is immediately converted into a 10-hydroxy
+derivative, also called the monohydroxy derivative,
+and most recently has been named licarbazepine. The
+active form of licarbazepine is the S enantiomer, known
+as eslicarbazepine. Thus, oxcarbazepine really works
+via conversion to eslicarbazepine, which is itself now
+available as an anticonvulsant.
+Oxcarbazepine has a presumed mechanism of
+anticonvulsant action the same as that for carbamazepine,
+namely, binding to the open-channel conformation of the
+VSSC at a site within the channel itself on the α subunit
+(as in Figure 7-80). However, oxcarbazepine seems to
+have some important differences from carbamazepine,
+including being less sedating, having less bone marrow
+toxicity, and also having less CYP450 3A4 interactions,
+352
+
+making it a more tolerable agent that is easier to dose. On
+the other hand, oxcarbazepine has never been proven to
+work in acute bipolar mania or depression. Nevertheless,
+because of a similar postulated mechanism of action
+but a better tolerability profile, oxcarbazepine and more
+recently eslicarbazepine have been utilized “off-label” by
+many clinicians especially for the manic phase of bipolar
+disorder.
+Topiramate
+
+Topiramate is another compound approved as an
+anticonvulsant and for migraine, and recently, in
+combination with bupropion, for weight loss in obesity.
+Topiramate has been tested in bipolar disorder, but
+with ambiguous results (Table 7-3). It does seem to be
+associated with weight loss and is sometimes given as an
+adjunct to drugs for psychosis or to mood stabilizers that
+cause weight gain, but can cause unacceptable sedation
+in some patients. Topiramate is also being tested in
+various substance abuse disorders, including stimulant
+abuse and alcoholism. However, topiramate is not clearly
+effective as a mood stabilizer, either from evidence-based
+randomized controlled trials (which are not consistently
+positive) or from clinical practice.
+Gabapentin and Pregabalin
+
+These anticonvulsants seem to have little or no action as
+mood stabilizers, yet are robust treatments for various
+pain conditions, from neuropathic pain to fibromyalgia,
+and for various anxiety disorders, and are discussed in
+more detail in Chapter 8 on anxiety and Chapter 9 on
+pain.
+Calcium Channel Blockers (L-Type)
+
+There are several types of calcium channels, not
+only the N or P/Q channels linked to secretion of
+neurotransmitters, targeted by α2δ ligands and discussed
+in Chapter 3 (see Figures 3-23 and 3-24), but also L
+channels localized on vascular smooth muscle and
+which are targeted by various antihypertensive and
+antiarrhythmic drugs, commonly called “calcium channel
+blockers.” L-type channels are located on neurons where
+their function is still being debated, and some anecdotal
+evidence suggests that calcium channel blockers,
+especially dihydropyridine-type calcium channel blockers,
+may be useful for some patients with bipolar disorder.
+Riluzole
+
+This agent has anticonvulsant actions in preclinical
+models, but was developed to slow the progression
+
+
+
+
+<<<PAGE 546>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Neurodegeneration in Dementia Compromises
+Top-Down Inhibition: Motor Output
+
+top-down inhibition
+
+Figure 12-45B Neurodegeneration
+in dementia compromises topdown inhibition: motor output. (1)
+Accumulation of Aβ plaques and tau
+tangles destroys glutamate neurons
+projecting to the striatum and thus
+reduces top-down cortical inhibition.
+(2) GABA input into the thalamus is
+insufficient and sensory input is not
+adequately filtered. (3) Excessive
+thalamic output directly to the cortex
+and (4) via the amygdala generates a
+reflexive motor response.
+
+agitation
+cortex
+
+4
+
+3
+1
+
+2
+
+striatum
+
+amygdala
+
++
++
++
+
+thalamus
+
+Up until now, treatments of agitation in AD have not
+been particularly effective, including dopamine receptor
+blockers already mentioned. In the absence of any
+approved agents, first-line pharmacological treatment
+of agitation and aggression in dementia is actually
+considered by many experts to be therapy with selective
+serotonin reuptake inhibitors (SSRIs) and serotonin–
+norepinephrine reuptake inhibitors (SNRIs), which can
+help some patients. Second-line treatments that may help
+avoid use of dopamine receptor blocking drugs include
+β blockers, carbamazepine, and perhaps gabapentin and
+pregabalin, but not valproate, topiramate, oxcarbazepine,
+or benzodiazepines. Unfortunately, in addition to
+not causing robust efficacy, many of these agents are
+associated with significant side effects including sedation,
+unsteady gait, diarrhea, and weakness. Carbamazepine has
+perhaps shown the greatest efficacy amongst unapproved
+drugs so far in treating neuropsychiatric symptoms of
+dementia but has significant side-effect risks and may
+interact with other medications commonly prescribed to
+elderly patients. Cholinesterase inhibitors have little if any
+benefit for most of the behavioral symptoms of dementia
+except in patients with Lewy body dementias.
+530
+
+sensory input
+
+Targeting Multimodal Neurotransmitters
+(Norepinephrine, Serotonin, and Dopamine) for the
+Symptomatic Treatment of Agitation in Alzheimer
+Disease
+
+Brexpiprazole is a serotonin–dopamine–norepinephrine
+antagonist/partial agonist discussed in Chapter 5 as
+one of the drugs approved to treat psychosis (Figure
+5-57) and in Chapter 7 as one of the drugs to augment
+SSRIs/SNRI to treat unipolar major depression. This
+agent combines several simultaneous mechanisms to
+quell the excessive activity of the agitation network in
+AD: namely by its well-known dopamine D2 partial
+agonist actions combined with 5HT1A partial agonist
+and 5HT2A antagonist actions, as well as by its relatively
+unique additional actions blocking both α1- and α2adrenergic receptors (Figure 5-57 and Figure 12-47).
+Despite brexpiprazole having a warning for increased
+mortality in dementia-related psychosis, using this
+agent for agitation in AD and in doses lower than those
+generally used to treat psychosis in schizophrenia may
+provide a greater safety margin, especially since it is
+the hypothetical synergy of its five actions that leads to
+therapeutic efficacy in agitation of AD (Figure 12-47).
+
+
+
+
+<<<PAGE 572>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+(N-methyl-D-aspartate) receptors and at postsynaptic
+mGluR receptors (Figure 13-15).
+Alcohol’s reinforcing effects are theoretically mediated
+not only by its effects at GABA and glutamate synapses,
+causing downstream dopamine release in the mesolimbic
+pathway, but also by actions at opioid synapses within
+mesolimbic reward circuitry (Figure 13-15). Opioid
+neurons arise in the arcuate nucleus and project to the
+VTA, synapsing on both glutamate and GABA neurons.
+The net result of alcohol actions on opioid synapses is
+thought to be the release of dopamine in the nucleus
+acccumbens (Figure 13-15). Alcohol may do this by either
+directly acting upon μ-opioid receptors or by releasing
+endogenous opioids such as β-endorphin.
+Treatment of Alcoholism
+
+The actions of alcohol on opioid synapses create the
+rationale for blocking μ-opioid receptors with antagonists
+such as naltrexone or nalmefene (Figure 13-16).
+Naltrexone and nalmefene (approved outside the US)
+are μ-opioid antagonists that hypothetically block the
+euphoria and “high” of heavy drinking. This theory is
+supported by clinical trials that show that naltrexone
+given either orally or by a 30-day-long acting injection
+reduces days of heavy drinking (defined as five or more
+drinks per day for a man and four or more for a woman)
+and also increases the chances of attaining complete
+abstinence from alcohol. If you drink when you take an
+opioid antagonist, the opioids released by alcohol do not
+lead to pleasure, so why bother drinking? Some patients
+may also say, why bother taking the opioid antagonist,
+of course, and relapse back into drinking alcohol.
+Thus, a long-acting injection may be preferable but,
+unfortunately, hardly any of this is prescribed.
+Acamprosate is a derivative of the amino acid
+taurine and interacts with both the glutamate system
+to inhibit it, and with the GABA system to enhance it,
+a bit like a form of “artificial alcohol” (compare Figure
+13-15 with Figure 13-17). Thus, when alcohol is taken
+chronically and then withdrawn, the adaptive changes
+that it hypothetically causes in both the glutamate
+system and the GABA system create a state of glutamate
+overexcitement and even excitotoxicity as well as GABA
+deficiency. To the extent that acamprosate can substitute
+for alcohol in patients during withdrawal, the actions of
+acamprosate mitigate the glutamate hyperactivity and
+the GABA deficiency (Figure 13-17). This occurs because
+acamprosate appears to have direct blocking actions on
+certain glutamate receptors, particularly mGluR receptors
+
+556
+
+(specifically mGlu5 and perhaps mGlu2). One way or
+another, acamprosate apparently reduces the glutamate
+release associated with alcohol withdrawal (Figure 1317). Actions, if any, at NMDA receptors may be indirect,
+as are actions at GABA systems, both of which may be
+secondary downstream effects from acamprosate’s actions
+on mGluR receptors (Figure 13-17). Although approved,
+acamprosate is not prescribed very often.
+Disulfiram is the classic drug for treating alcoholism.
+It is an irreversible inhibitor of the liver enzyme aldehyde
+dehydrogenase that normally metabolizes alcohol.
+When alcohol is ingested in the presence of disulfiram,
+alcohol’s metabolism is inhibited and the result is the
+build-up of toxic levels of acetaldehyde. This creates an
+aversive experience with flushing, nausea, vomiting,
+and hypotension, hopefully conditioning the patient to
+a negative rather than positive response to drinking.
+Obviously, compliance is a problem with this agent, and
+its aversive reactions are occasionally dangerous. Use of
+disulfiram was greater in the past and is not prescribed
+very often today.
+Unapproved agents that may be effective in treating
+alcoholism include the anticonvulsant topiramate and
+the 5HT3 antagonist ondansetron. Several other agents
+are used “off-label,” especially in Europe. The subject of
+how to treat alcohol abuse and dependence is obviously
+complex, and any psychopharmacological treatment
+for alcoholism is more effective when integrated with
+appropriate psychopharmacological treatment of
+comorbid psychiatric disorders, as well as with structured
+therapies such as 12-step programs, a topic which is
+beyond the scope of this text.
+Sedative Hypnotics
+
+Sedative hypnotics include barbiturates and related agents
+such as ethchlorvynol and ethinamate, chloral hydrate
+and derivatives, and piperidinedione derivatives such as
+glutethimide and methyprylon. Experts often include
+alcohol, benzodiazepines, (discussed in Chapter 8), and
+Z-drug hypnotics (discussed in Chapter 10) in this class
+as well. The mechanism of action of sedative hypnotics
+is basically thought to be the same as those described in
+Chapter 7 (on drugs for depression), Chapter 8 (on drugs
+for anxiety), and Chapter 10 (on drugs for insomnia) and
+illustrated in Figure 13-14, namely as positive allosteric
+modulators (PAMs) of either benzodiazepine-sensitive
+(Figure 13-14A) or benzodiazepine-insensitive (Figure
+13-14B) GABAA receptors, or both. Barbiturates are
+much less safe in overdose than benzodiazepines, cause
+
+
+
+
+<<<PAGE 591>>>
+
+Chapter 13: Impulsivity, Compulsivity, and Addiction
+
+by a trusted and experienced therapist, can facilitate
+the blocking or weakening of reconsolidation of painful
+emotional memories.
+
+BEHAVIORAL ADDICTIONS
+Binge Eating Disorder
+
+Can you become addicted to food? Can your brain
+circuits make you eat it? Although “food addiction” is not
+yet accepted as a formal diagnosis, binge eating disorder
+(BED) is now a formal DSM diagnosis. When external
+stimuli are triggers for maladaptive eating habits that are
+performed despite apparent satiety and adverse health
+consequences, this defines a compulsion and a habit, with
+the formation of aberrant eating behaviors in a manner
+that parallels drug addiction. Compulsive eating in BED
+and bulimia can be mirrored by compulsive rejection of
+food as in anorexia nervosa. BED is characterized by loss
+of control for eating, much as substance abuse has loss of
+control over seeking and taking a substance. For formal
+diagnostic criteria and clinical descriptions of BED as
+well as differentiation from the related disorder bulimia
+nervosa, the reader is referred to standard reference
+books. Here, we address the construct of BED as falling
+within the category of an impulsive–compulsive disorder.
+Briefly, BED is defined as having recurrent episodes
+of binge eating, with binges being eaten in a discrete
+period of time, an amount of food larger than most people
+would eat in a similar amount of time under similar
+circumstances. What was once perhaps pleasurable eating
+to satisfy hunger and appetite has now become mindless,
+compulsive eating, out of control, and associated with
+marked distress. Not everyone with BED is obese and not
+everyone with obesity has BED even though about half
+of people with BED are obese. BED is the most common
+eating disorder but is commonly undiagnosed. Many
+clinicians do not inquire about this even if the patient
+is obese, perhaps because of fear that asking will be
+taken as offensive by the patient. It is a reality that most
+BED patients coming to a healthcare professional have a
+comorbid psychiatric condition, and are usually seeking
+treatment for that rather than for binge eating. In fact,
+80% of patients with BED meet the criteria for a mood
+disorder, anxiety disorder, other substance abuse disorder,
+or ADHD. One thing for a clinician to remember is to ask
+about binge eating in patients with any of these conditions
+because treatment is available and the long-term
+complications of obesity are serious (discussed in Chapter
+5 on drugs for psychosis). In fact, the D-amphetamine
+
+precursor lisdexamfetamine discussed in Chapter 11 on
+ADHD and illustrated in Figure 11-31 is the only currently
+approved treatment for BED.
+Several agents with limited efficacy and side effects
+used off-label include topiramate, several drugs used
+to treat depression, and naltrexone. BED is another
+condition that belongs in the addictive disorders group
+and amongst the impulsive–compulsive disorders as
+it, too, is hypothesized to be linked to abnormalities in
+cortical striatal circuitry where impulsivity (Figure 13-1)
+leads to compulsivity (Figure 13-2). The mechanism
+of D-amphetamine reversing binge eating symptoms
+may not be due to suppressing appetite since appetite
+no longer really drives binge eating disorder when it
+becomes compulsive. Instead, it is known that stimulants
+induce neuroplasticity particularly in the striatum.
+Hypothetically, promotion of striatal neuroplasticity
+could help reverse food-related behaviors that have
+had their control migrate from ventral to dorsal control
+when impulsive eating became compulsive. As for most
+impulsive–compulsive disorders, most studies adding
+various psychotherapies to drug treatment of BED report
+enhancement of efficacy.
+Other Behavioral Addictions
+
+Although behaviors such as gambling and too much
+internet gaming have many parallels to BED and to
+substance abuse disorders, these are not yet generally
+recognized formally as behavioral “addictions.” Internet
+addiction can involve an inability to stop the behavior,
+tolerance, withdrawal, and relief when reinitiating
+the behavior. Many experts believe gambling disorder
+should be classified along with drug addiction and
+BED as a nonsubstance abuse/behavioral addiction
+disorder. Gambling disorder is characterized by repeated
+unsuccessful efforts to stop despite adverse consequences,
+tolerance (gambling higher and higher dollar amounts),
+psychological withdrawal when not gambling, and relief
+when reinitiating gambling. Gambling has been observed
+after treatment with dopamine agonists and partial
+agonists, suggesting that stimulating the mesolimbic
+dopamine reward system can induce gambling in some
+patients. The neurobiology and treatment of other
+behavioral disorders listed in Table 13-1 are all under
+investigation as possible impulsive to compulsive and
+thus ventral to dorsal shifts of control of the abnormal
+or undesired behavior. The hope is that therapies useful
+for one of the impulsive–compulsive disorders might be
+helpful across the spectrum of other disorders in this group.
+
+575
+
+13
+
+
+
+
+<<<PAGE 625>>>
+
+Suggested Reading and Selected References
+
+Koob GF, Le Moal M (2008) Addiction and the brain
+antireward system. Ann Rev Psychol 59: 29–53.
+Koob GF, Volkow ND (2010) Neurocircuitry of addiction.
+Neuropsychopharmacology 35: 217–38.
+Mandyam CD, Koob GF (2012) The addicted brain craves
+new neurons: putative role for adult-born progenitors in
+promoting recovery. Trends Neurosci 35: 250–60.
+Nestler EJ (2005) Is there a common molecular pathway for
+addiction? Nat Neurosci 11: 1445–9.
+Nutt DJ, Hughes AL, Erritzoe D, et al. (2015) The dopamine
+theory of addiction: 40 years of highs and lows. Nat Rev
+Neurosci 16: 305–22.
+Schneider S, Peters J, Bromberg U, et al. (2012) Risk taking
+and the adolescent reward system: a potential common
+link to substance abuse. Am J Psychiatry 169: 39–46.
+Solway A, Gu X, Montague PR (2017) Forgetting to be
+addicted: reconsolidation and the disconnection of things
+past. Biol Psychiatry 82: 774–5
+
+DeWitte P, Littleton J, Parot P, Koob G (2005) Neuroprotective
+and abstinence-promoting effects of acamprosate.
+Elucidating the mechanism of action. CNS Drugs 6:
+517–37.
+Garbutt JC, Kranzler HR, O’Malley SS, et al. (2005) Efficacy
+and tolerability of long-acting injectable naltrexone for
+alcohol dependence. A randomized controlled trial. JAMA
+293: 1617–25.
+Kiefer F, Wiedemann K (2004) Combined therapy: what does
+acamprosate and naltrexone combination tell us? Alcohol
+Alcohol 39: 542–7.
+Kiefer F, Jahn H, Tarnaske T, et al. (2003) Comparing and
+combining naltrexone and acamprosate in relapse
+prevention of alcoholism. Arch Gen Psychiatry 60: 92–9.
+Mann K, Bladstrom A, Torup T, et al. (2013) Extending the
+treatment options in alcohol dependence: a randomized
+controlled study of as-needed nalmefene. Biol Psychiatry
+73: 706–13.
+
+Volkow ND, Wang GJ, Fowler JS, Tomasi D, Telang F (2011)
+Addiction: beyond dopamine reward circuitry. Proc Natl
+Acad Sci USA 108: 15037–42.
+
+Martinez D, Gil R, Slifstein M, et al. (2005) Alcohol
+dependence is associated with blunted dopamine
+transmission in the ventral striatum. Biol Psychiatry 58:
+779–86.
+
+Substance Abuse: Alcohol
+
+Mason BJ (2003) Acamprosate and naltrexone treatment
+for alcohol dependence: an evidence-based risk-benefits
+assessment. Eur Neuropsychopharmacol 13: 469–75.
+
+Anton RF, O’Malley SS, Ciraulo DA, et al. (2006) Combined
+pharmacotherapies and behavioral interventions for
+alcohol dependence. The combine study: a randomized
+controlled trial. JAMA 295: 2003–17.
+Anton RF, Pettinati H, Zweben A, et al. (2004) A multi site
+dose ranging study of nalmefene in the treatment of
+alcohol dependence. J Clin Psychopharmacol 24: 421–8.
+Braus DH, Schumann G, Machulla HJ, Bares R, Mann K (2005)
+Correlation of stable elevations in striatal μ-opioid receptor
+availability in detoxified alcoholic patients with alcohol
+craving. A positron emission tomography study using carbon
+11-labeled carfentanil. Arch Gen Psychiatry 62: 57–64.
+Crevecoeur D, Cousins SJ, Denering L, et al. (2018)
+Effectiveness of extended release naltrexone to reduce
+alcohol cravings and use behaviors during treatment and at
+follow-up. J Subst Abuse Treat 85: 105–8.
+Dahchour A, DeWitte P (2003) Effects of acamprosate on
+excitatory amino acids during multiple ethanol withdrawal
+periods. Alcohol Clin Exp Res 3: 465–70.
+Dakwar E, Levin F, Hart CL, et al. (2020) A single ketamine
+infusion combined with motivational enhancement
+therapy for alcohol use disorder: a randomized
+midazolam controlled pilot study. Am J Psychiatry 172:
+125–33.
+DeWitte P (2004) Imbalance between neuroexcitatory and
+neuroinhibitory amino acids causes craving for ethanol.
+Addict Behav 29: 1325–39.
+
+Mason BJ (2005) Acamprosate in the treatment of alcohol
+dependence. Expert Opin Pharmacother 6: 2103–15.
+Mason BJ, Goodman AM, Chabac S, Lehert P (2006) Effect of
+oral acamprosate on abstinence in patients with alcohol
+dependence in a double-blind, placebo-controlled trial: the
+role of patient motivation. J Psychiatr Res 40: 382–92.
+Netzeband JG, Gruol DL (1995) Modulatory effects of acute
+ethanol on metabotropic glutamate responses in cultured
+Purkinje neurons. Brain Res 688: 105–13.
+O’Brien CO (2015) In treating alcohol use disorders, why
+not use evidence-based treatment? Am J Psychiatry 172:
+305–7.
+Palpacuer C, Duprez R, Huneau A, et al. (2017)
+Pharmacologically controlled drinking in the treatment
+of alcohol dependence or alcohol use disorders: a
+systematic review with direct and network meta analyses
+on nalmefene, naltrexone, acamprosate, baclofen and
+topiramate. Addiction 113: 220–37.
+Petrakis IL, Poling J, Levinson C (2005) Naltrexone and
+disulfiram in patients with alcohol dependence and
+comorbid psychiatric disorders. Biol Psychiatry 57:
+1128–37.
+Pettinati HM, O’Brien CP, Rabinowitz AR (2006) The status
+of naltrexone in the treatment of alcohol dependence.
+Specific effects on heavy drinking. J Clin Psychopharmacol
+26: 610–25.
+609
+
+
+
+
+<<<PAGE 629>>>
+
+Suggested Reading and Selected References
+
+Liechti ME (2017) Modern clinical research on LSD.
+Neuropsychopharmacology 42: 2114–27.
+Madsen MK, Fisher PM, Burmester D, et al. (2019)
+Psychedelic effects of psilocybin correlate with serotonin
+2A receptor occupancy and plasma psilocin levels.
+Neuropsychopharmacology 44: 1328–34.
+Mithoefer MC, Wagner MT, Mithoefer AT, et
+al. (2011) The safety and efficacy of {+/−}
+3,4-methylenedioxymethamphetamine-assisted
+psychotherapy in subjects with chronic, treatmentresistant posttraumatic stress disorder: the first
+randomized controlled pilot study. J Psychopharmacol 25:
+439–52.
+Passie T, Halpern JH, Stichtenoth DO, et al. (2008) The
+pharmacology of lysergic acid diethylamide: a review. CNS
+Neurosci Ther 14: 295–314.
+Pitts EG, Minerva AR, Chandler EB, et al. (2017)
+3,4-Methylenedioxymethamphetamine increases affiliative
+behaviors in squirrel moneys in a serotonin 2A receptor
+dependent manner. Neuropsychopharmacology 42:
+1962–71.
+Quednow BB, Komeer M, Geyer MA, et al. (2012) Psilocybin
+induced deficits in autonomic and controlled inhibition
+are attenuated by ketanserin in healthy human volunteers.
+Neuropsychopharmacology 37: 630–40.
+Schmid Y, Enzler F, Gasser P, et al. (2015) Acute effects
+of lysergic acid diethylamine in healthy subjects. Biol
+Psychiatry 78: 544–53.
+Titeler M, Lyon RA, Gleenon RA (1988) Radioligand binding
+evidence implicates the brain 5HT2 receptor as a site of
+action for LSD and phenylisopropylamine hallucinogens.
+Psychopharmacology 94: 213–16.
+Urban NBL, Girgis RR, Talbot PS, et al. (2012) Sustained
+recreational use of Ecstasy is associated with altered pre
+and postsynaptic markers of serotonin transmission in
+neocortical areas: a PET study with [11C]DASB and [11C]
+MDL 100907. Neuropsychopharmacology 37: 1465–73.
+
+Binge Eating/Gambling
+Balodis IM, Kober H, Worhunsky PD, et al. (2012) Diminished
+frontostriatal activity during processing of monetary
+rewards and losses in pathological gambling. Biol
+Psychiatry 71: 749–57.
+Gearhardt AN, Yokum S, Orr PT, et al. (2011) Neural
+correlates of food addiction. Arch Gen Psychiatry 68:
+808–16.
+Grant JE, Kim SW, Hartman BK (2008) A double-blind,
+placebo-controlled study of the opiate antagonist
+naltrexone in the treatment of pathological gambling urges.
+J Clin Psychiatry 69: 783–9.
+
+Lawrence AJ, Luty J, Bogdan NA, Sahakian BJ, Clark L (2009)
+Impulsivity and response inhibition in alcohol dependence
+and problem gambling. Psychopharmacology 207: 163–72.
+Lobo DSS, Kennedy JL (2006) The genetics of gambling and
+behavioral addictions. CNS Spectrums 11: 931–9.
+McElroy SL, Hudson JI, Capece JA, et al. (2007) Topiramate
+for the treatment of binge eating disorder associated with
+obesity: a placebo-controlled study. Biol Psychiatry 61:
+1039–48.
+Miedl SF, Peters J, Buchel C (2012) Altered neural reward
+representations in pathological gamblers revealed by
+delay and probability discounting. Arch Gen Psychiatry 69:
+177–86.
+Salamone JD, Correa M, Mingote S, Weber SM (2002) Nucleus
+accumbens dopamine and the regulation of effort in
+food-seeking behavior: implications for studies of natural
+motivation, psychiatry, and drug abuse. J Pharmacol Exp
+Ther 305: 1–8.
+Van Holst RJ, Veltman DJ, Buchel C, van den Brink W,
+Goudriaan AE. (2012) Distorted expectancy coding in
+problem gambling: is the addictive in the anticipation? Biol
+Psychiatry 71: 741–8.
+Zack M, Poulos CX (2007) A D1 antagonist enhances the
+rewarding and priming effects of a gambling episode in
+pathological gamblers. Neuropsychopharmacology 32:
+1678–86.
+
+Impulsivity/Compulsivity
+Berlin HA, Rolls ET, Iversen SD (2005) Borderline personality
+disorder, impulsivity, and the orbitofrontal cortex. Am J
+Psychiatry 162: 2360–73.
+Chamberlain SR, del Campo N, Dowson J, et al. (2007)
+Atomoxetine improved response inhibition in adults with
+attention deficit/hyperactivity disorder. Biol Psychiatry 62:
+977–84.
+Chamberlain SR, Muller U, Blackwell AD, et al. (2006)
+Neurochemical modulation of response inhibition and
+probabilistic learning in humans. Science 311: 861–3.
+Chamberlain SR, Robbins TW, Winder-Rhodes S, et al. (2011)
+Translational approaches to frontostriatal dysfunction
+in attention-deficit/hyperactivity disorder using a
+computerized neuropsychological battery. Biol Psychiatry
+69: 1192–203.
+Dalley JW, Everitt BJ, Robbins TW (2011) Impulsivity,
+compulsivity, and top-down cognitive control. Neuron 69:
+680–94.
+Dalley JW, Mar AC, Economidou D, Robbins TW (2008)
+Neurobehavioral mechanisms of impulsivity: frontostriatal systems and functional neurochemistry. Pharmacol
+Biochem Behav 90: 250–60.
+
+613
+
+
+
+
+<<<PAGE 638>>>
+
+Index
+
+sertraline, 294, 378
+setiptiline, 309
+shift work disorder, 435, 436, 444
+sigma-1 binding, 294, 295
+signal propagation, 74
+signal transduction cascades, 9–23, 28,
+53
+four important types of, 11, 12
+second messenger, forming, 11–14
+second messenger, to phosphoprotein
+cascades, 15–18
+second messenger, to phosphoprotein
+messenger, 13–15
+time course, 11
+silent antagonists, 41, 42, 45, 192
+Sinclair method, 573
+SLC1 gene family, 31, 35
+SLC17 gene family, 31, 35
+SLC18 gene family, 31, 35
+SLC32 gene family, 31, 35
+SLC6 gene family, 30, 31–5
+sleep
+neurobiology of, 402–15
+purpose of, 414–15
+REM and non-REM, 413, 414, 435
+sleepiness, 430–4
+sleep/wake cycle, 412–13
+disturbance of, 414, 416
+small interfering RNA (siRNA), 27
+small nuclear RNA (snRNA), 27
+smoking, 476, See also nicotine
+cessation, 306, 573
+snare proteins, 73
+SNRIs (serotonin–norepinephrine
+reuptake inhibitors), 298–303
+α2δ ligand combinations, 399
+anxiety disorders, 368
+arousal combo, 333
+mirtazapine combination, 333
+pain treatment, 380
+triple action combo, 333
+social anxiety disorder, 362, 372, 377
+sodium oxybate, 446–8
+sodium potassium ATPase (sodium
+pump), 32, 33
+sodium valproate, 347–50
+solriamfetol, 444
+soma, 2
+somatic pain, 302
+somatosensory cortex, 380
+specific neutral amino acid transporters
+(SNATs), 96
+spinobulbar tracts, 380
+spinothalamic tract, 380
+SSRIs (selective serotonin reuptake
+inhibitors), 289–96
+anxiety disorders, 368
+
+622
+
+clinical uses of, 289
+common features of six drugs, 289–92
+depression in dementia, 534
+OCD, 577
+triple-action combo, 333
+unique properties of six drugs, 292–3
+stabilizers. See partial agonists
+steroids, neuroactive, 320–5
+Stevens Johnson syndrome, 352
+stigma, 145
+stimulants, 467–79, 544–7
+atypical, 546
+slow release vs. fast release, 478–9
+targeting DATs, 473–8
+treatment of addiction, 547
+stimulus-response conditioning, 571
+strengthening, synapse, 151, 154
+stress, ADHD, 467, 469, 480
+stroke, 492, 524
+Stroop test, 450, 451
+subjective memory complaints, 487, 488
+sublingual formulation, 232
+substance addictions, 544–75
+substrates, 45, 46
+suicide, 145, 156
+clozapine treatment, 223
+depressed patients, 251
+mixed feature patients, 251
+prevention, 346
+suicide inhibitors, 46
+sulpiride, 202, 205
+supersensitivity, 170, 171
+suprachiasmatic nucleus, 275, 307
+suprasegmental central sensitization,
+384, 390
+suvorexant, 423
+synapses, 1, 3
+enlarged, 5
+synaptic neurotransmission, 4
+synaptogenesis, 151, 154
+tardive dyskinesia (TD), 166
+pathophysiology, 170–4
+treatment, 174–81
+tasimelteon, 439
+tau protein, 488, 494, 502, 503
+tetrabenazine, 175–6
+tetrahydrocannabinol (THC), 563, 565,
+567
+tetrameric ligand-gated ion channels,
+54–5
+thalamic dopamine pathway, 85
+thalamo-cortical glutamate pathway, 104
+third-messenger kinase, 14, 16
+third-messenger phosphatase, 15, 16
+thyroid, 333
+tonic inhibition, 259, 263
+
+topiramate, 201, 352, 556, 575
+trace amines, 241–38
+tradozone, 311–15, 424–5
+transduction, 381
+transfer RNA (tRNA), 27
+transporters, 29–35, 50
+classification and structure, 29–31
+histamine and neuropeptides, 35
+monoamine, 30, 31–4, 208
+SLC1 gene family, 31
+vesicular, 32, 35
+tranylcypromine, 337
+traumatic memories, 356, 366, 375, 574
+trazodone, 535
+treatment responsiveness, 155
+tricyclic antidepressants (TCAs), 333–7
+triglyceride levels, 197, 198, 199
+tryptophan, 114
+tuberoinfundibular dopamine pathway,
+85
+tuberomammillary nucleus, 406, 408
+type 2 diabetes, 415
+tyramine, 338
+tyrosine, 80, 252
+tyrosine hydroxylase, 253
+ultradian sleep cycle, 413–16
+unipolar depression, 34, 244
+augmenting strategies for, 325–35
+drugs for, 289–325
+monoamine reuptake blockers, 285–8
+or bipolar, 249–51
+second-line monotherapies, 333–8
+treatment resistance in, 323–38
+valbenazine, 177
+valproic acid (valproate), 347–50
+varenicline, 551, 552, 573
+vascular dementia, 491–2, 534
+VEGF (vascular endothelial growth
+factor), 329
+venlafaxine, 299, 302
+ventromedial prefrontal cortex, 372, 374
+vesicular transporter for glutamate, 99
+vesicular transporters, 31, 32, 35
+VIAATs (vesicular inhibitory amino acid
+transporters), 255
+vilazodone, 296–9
+viloxazine, 485
+violence, 145–7, 575, 577–8
+visual hallucinations, 113, 524
+vital sign, 381, 399, 401
+VMAT1, 174
+VMAT2 inhibition, 174–81
+VMAT2 transporter, 31, 81, 254
+VMATs (vesicular monoamine
+transporters), 35
+
+

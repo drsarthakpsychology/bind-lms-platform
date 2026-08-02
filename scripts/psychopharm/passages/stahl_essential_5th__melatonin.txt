@@ -1,0 +1,1562 @@
+<<<PAGE 55>>>
+
+Chapter 2: Transporters, Receptors, and Enzymes
+
+Table 2-4 Key G-protein-linked receptors directly targeted by psychotropic drugs
+
+Neurotransmitter
+
+G-protein
+receptor and
+pharmacological
+subtype directly
+targeted
+
+Pharmacological
+action
+
+Therapeutic
+action
+
+Dopamine
+
+D2
+
+Antagonist or
+partial agonist
+
+Antipsychotic; antimanic
+
+Serotonin
+
+5HT2A
+
+Antagonist or
+inverse agonist
+
+Antipsychotic actions in Parkinson’s disease
+psychosis
+Antipsychotic actions in dementia-related psychosis
+Reduced drug-induced parkinsonism
+
+2
+
+Possible reduction of negative symptoms in
+schizophrenia
+Possible mood stabilizing and antidepressant
+actions in bipolar disorder
+Improve insomnia and anxiety
+Agonist
+
+Psychotomimetic actions
+Experimental treatment of refractory depression
+and other disorders, especially accompanying
+psychotherapy
+
+5HT1B/1D
+
+Antagonist or
+partial agonist
+
+Possible pro-cognitive and antidepressant actions
+
+5HT2C
+
+Antagonist
+
+Antidepressant
+
+5HT6
+
+?
+
+?
+
+5HT7
+
+Antagonist
+
+Possible pro-cognitive and antidepressant actions
+
+5HT1A
+
+Partial agonist
+
+Reduced drug-induced parkinsonism
+Anxiolytic
+Booster of antidepressant actions of SSRIs/SNRIs
+
+Norepinephrine
+
+Alpha 2
+
+Alpha 1
+
+Antagonist
+
+Antidepressant actions
+
+Agonist
+
+Improved cognition and behavioral disturbance in
+ADHD
+
+Antagonist
+
+Improved sleep (nightmares)
+Improved agitation in Alzheimer disease
+Side effects of orthostatic hypotension and possibly
+sedation
+
+GABA
+
+GABA-B
+
+Agonist
+
+Cataplexy
+Sleepiness in narcolepsy
+Possible enhanced slow-wave sleep
+Pain reduction in chronic pain and fibromyalgia
+Possible utility for alcohol use disorder and alcohol
+withdrawal
+
+Melatonin
+
+MT1
+
+Agonist
+
+Improvement of insomnia and circadian rhythms
+
+MT2
+
+Agonist
+
+Improvement of insomnia and circadian rhythms
+
+39
+
+
+
+
+<<<PAGE 287>>>
+
+Chapter 6: Mood Disorders
+
+Hippocampal Atrophy and Hyperactive HPA in Depression
+
+glucocorticoid
+antagonist
+
+CRF
+antagonist
+
+hypothalamus
+
+corticotropinreleasing
+factor
+
+ids
+
+co
+
+co
+
+glu
+adrenal
+gland
+
+o
+rtic
+
+amygdala
+hippocampus
+
+6
+pituitary
+
+ACTH
+vasopressin 1B
+antagonist
+
+Figure 6-32B Hippocampal atrophy and hyperactive HPA axis in depression. In situations of chronic stress, hyperactivity of the HPA
+axis leads to excessive glucocorticoid release, which may eventually cause hippocampal atrophy. Because the hippocampus inhibits
+the HPA axis, atrophy in this region may lead to chronic activation of the HPA axis, which may increase risk of developing a psychiatric
+illness. Because the HPA axis is central to stress processing, it may be that novel targets for treating stress-induced disorders lie within
+the axis. Mechanisms being examined include antagonism of glucocorticoid receptors, corticotropin-releasing factor (CRF) receptors,
+and vasopressin 1B receptors.
+
+epigenetic changes to unwanted gene expression (Figure
+6-31), leading ultimately to loss of synapses and death of
+neurons (Figure 6-31 and 6-33D).
+Another hypothesis for the neurobiological basis
+at least for some patients with depression is that it is a
+circadian rhythm disorder casing a phase delay in the
+sleep–wakefulness cycle (Figure 6-34). The degree of this
+phase delay correlates with the severity of depression.
+Numerous physiological measurements of circadian
+rhythms are also altered in depression, from flattening
+of the daily body-temperature cycle, elevation of
+cortisol secretion throughout the day, and also reducing
+melatonin secretion that also normally peaks at night
+and in the dark (Figure 6-35). Elevations of cortisol
+secretion and abnormalities of the HPA axis in depression
+are discussed above (Figures 6-32A and B). Other
+circadian rhythms that may be disrupted in depression
+include a reduction in BDNF and neurogenesis, also
+
+discussed above, and these normally peak at night.
+Desynchronization of biological processes can be so
+pervasive in depression that it is possible to characterize
+depression as fundamentally a circadian illness. It is
+possible, at least for some patients, that depression is due
+to a “broken” circadian clock. Numerous genes operate in
+a circadian manner, sensitive to light–dark rhythms and
+called clock genes. Abnormalities in various clock genes
+have been linked to mood disorders and for these patients
+with a circadian rhythm disorder (Figure 6-34), circadian
+rhythm treatments such as bright light (Figure 6-36A),
+melatonin (Figure 6-36B), phase advance, phase delay,
+and even sleep deprivation can have therapeutic effects.
+Not only do all of these various factors triggered by
+neuroinflammation, stress, genetics, and the environment
+(Figures 6-28, 6-30, 6-31, and 6-33) contribute to
+synaptic dysfunction and structural brain abnormalities
+with functional decline, theoretically they ultimately
+271
+
+
+
+
+<<<PAGE 290>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Depression Causes Phase Delay in the Circadian Rhythms
+of Sleep-Wake Cycles
+“phase delay”
+
+Healthy Control
+
+Depression
+sleep
+11 pm
+7 am
+
+7 am
+
+sleep
+11 pm
+
+7 am
+
+Cortisol (ng/ml)
+
+Body Temperature
+( C)
+
+Physiological Measurements of Circadian Rhythms
+Are Altered in Depression
+37.2
+
+Healthy Control
+
+37.0
+36.8
+
+Depression
+
+36.6
+36.4
+220
+170
+120
+70
+20
+
+Melatonin (pg/ml)
+
+Figure 6-34 Depression can cause
+phase delay in circadian rhythms
+of sleep/wake cycles. Circadian
+rhythms describe events that occur
+on a 24-hour cycle. Many biological
+systems follow a circadian rhythm; in
+particular, circadian rhythms are key to
+the regulation of sleep/wake cycles. In
+patients with depression, the circadian
+rhythm is often “phase delayed,” which
+means that because wakefulness is
+not promoted in the morning, such
+patients tend to sleep later. They also
+have trouble falling asleep at night,
+which further promotes feelings of
+sleepiness during the day.
+
+100
+
+Figure 6-35 Physiological
+measurements of circadian rhythms
+are altered in some patients with
+depression. Circadian rhythms
+are evident in multiple biological
+functions, including body temperature,
+hormone levels, blood pressure,
+metabolism, cellular regeneration,
+sleep/wake cycles, and DNA
+transcription and translation. The
+internal coordination ordered by
+the circadian rhythm is essential to
+optimal health. In depression, there are
+altered physiological measurements
+of circadian rhythms, including less
+fluctuation in body temperature over
+the course of a 24-hour cycle, the same
+pattern but elevated cortisol levels
+over 24 hours, and the absence of a
+spike in melatonin levels at night.
+
+80
+60
+40
+20
+
+6 am
+
+noon
+
+6 pm
+
+midnight
+
+6 am
+
+severity of the symptoms in a current episode, again
+suggesting past damage. Cognitive symptoms are one of
+the most – if not the most – common residual symptom
+between depressive episodes once sadness and other
+symptoms recover. Thus, cognitive symptoms can
+endure longer than mood symptoms in major depressive
+disorder.
+How bad is the cognitive dysfunction? Some
+estimate that it is about the same degree of impairment
+as one has after a night of sleep deprivation, or after
+being legally intoxicated with alcohol, or after taking
+274
+
+noon
+
+a high dose of a benzodiazepine or antihistamine.
+Can you imagine living all day long, every day, with
+this degree of cognitive impairment? Cognitive
+dysfunction of this degree is not specific for patients
+with depression, but is very common across many
+psychiatric disorders, from unipolar to bipolar
+disorder, schizophrenia, anxiety/trauma/impulsive
+disorders, ADHD (attention deficit hyperactivity
+disorder), and beyond. Targeting cognitive symptoms
+with current treatments across psychiatric disorders
+is therefore an important therapeutic strategy, and
+
+
+
+
+<<<PAGE 291>>>
+
+retinohypothalamic
+tract
+SCN
+
+pineal
+gland
+
+6
+Figure 6-36A The setting of circadian rhythms, part 1. Although various factors can affect the setting of circadian rhythms, light is the
+most powerful synchronizer. When light enters through the eye it is translated via the retinohypothalamic tract to the suprachiasmatic
+nucleus (SCN) within the hypothalamus. The SCN, in turn, signals the pineal gland to turn off melatonin production. For individuals with
+depression who have dysregulation of circadian rhythms, bright-light therapy in the early morning may help to reset the circadian rhythm.
+Figure 6-36B Melatonin and
+circadian rhythms. During
+darkness, there is no input from
+the retinohypothalamic tract to
+the suprachiasmatic nucleus (SCN)
+within the hypothalamus. Thus,
+signals the pineal gland
+melatonin darkness
+to produce melatonin. Melatonin,
+in turn, can act on the SCN to reset
+circadian rhythms. For individuals
+with depression who have
+dysregulated circadian rhythms,
+melatonin in the early evening may
+help to reset the circadian rhythm.
+
+retinohypothalamic
+tract
+SCN
+
+pineal
+gland
+
+275
+
+
+
+
+<<<PAGE 322>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Agomelatine
+
+Agomelatine (Figure 7-37) is approved to treat unipolar
+depression in many countries outside of the US. It has
+agonist actions at melatonin 1 (MT1) and melatonin
+2 (MT2) receptors and antagonist actions at 5HT2C
+receptors (Figure 7-37). As discussed above in the section
+
+agomelatine
+
+B
+
+T2
+
+306
+
+symptoms of reduced positive affect following treatment
+with an SSRI or an SNRI, or who develop these symptoms
+as a side effect of an SSRI or SNRI, frequently benefit from
+switching to bupropion or from augmenting their SSRI
+or SNRI treatment with bupropion. The combination
+of bupropion with an SSRI or an SNRI has a theoretical
+rationale as a strategy for covering the entire symptom
+portfolio from symptoms of reduced positive affect to
+symptoms of increased negative affect (Figure 6-41).
+Bupropion combined with the μ-opioid antagonist
+naltrexone is approved for the treatment of obesity and
+mentioned in Chapter 13 on impulsivity/compulsivity
+syndromes. Bupropion combined with the NMDA (Nmethyl-D-aspartate) antagonist dextromethorphan is in
+late-stage clinical trials both for depression (mentioned
+below) and for agitation in Alzheimer disease (discussed
+in Chapter 12 on dementia).
+
+5H
+
+controlled-release formulations, DAT inhibitors are less
+abusable and more useful for ADHD (see Chapter 11).
+The issue to be considered here is whether a low level
+of slow-onset and long-lasting DAT occupancy is the
+desirable solution for the DAT mechanism to be useful
+as a drug for unipolar depression: thus, not too much or
+too fast DAT inhibition and therefore abusable; not too
+little DAT inhibition and therefore ineffective; but just
+enough DAT inhibition with slow enough onset and long
+enough duration of action to make it an effective drug for
+unipolar depression.
+The fact that bupropion is not known to be
+particularly abusable, is not a scheduled substance, yet
+is proven effective for treating nicotine addiction, is
+consistent with the possibility that it is occupying DATs
+in the striatum and nucleus accumbens in a manner
+sufficient to mitigate craving but not sufficient to
+cause abuse (Figure 7-36C). This use of bupropion for
+smoking cessation is discussed further in Chapter 13 on
+drug abuse and reward. Perhaps this low level of DAT
+occupancy (Figure 7-36C) is also how bupropion works in
+unipolar depression, combined with an equally low action
+on NETs (Figure 7-36A and 7-36B).
+Bupropion was originally marketed only in the
+US as an immediate-release dosage formulation for
+three-times-daily administration as a drug for unipolar
+depression. Development of a twice-daily formulation
+(bupropion SR) and then a once-daily formulation
+(bupropion XL) have not only reduced the frequency
+of seizures at peak plasma drug levels, but have also
+increased convenience and enhanced compliance as well.
+Thus, the use of immediate-release bupropion is all but
+abandoned in favor of once-daily administration.
+Bupropion is generally activating or even stimulating.
+Bupropion does not appear to cause the bothersome sexual
+dysfunction that frequently occurs with many drugs for
+unipolar depression that act by SERT inhibition, probably
+because bupropion lacks a significant serotonergic
+component to its mechanism of action. Thus, bupropion
+has proven to be a useful drug for unipolar depression not
+only for patients who cannot tolerate the serotonergic side
+effects of SSRIs, but also for patients whose depression
+does not respond to serotonergic boosting by SSRIs.
+Consistent with its pharmacological profile, bupropion
+is especially targeted at the symptoms of the “dopamine
+deficiency syndrome” and “reduced positive affect” (see
+Figure 6-41), including improvement in the symptoms
+of loss of happiness, joy, interest, pleasure, energy,
+enthusiasm, alertness, and self-confidence. Almost every
+active clinician knows that patients who have residual
+
+5H
+
+T2
+
+C
+
+MT1
+
+MT2
+
+Figure 7-37 Agomelatine. Endogenous melatonin is secreted
+by the pineal gland and mainly acts in the suprachiasmatic
+nucleus to regulate circadian rhythms. There are three types
+of receptors for melatonin: 1 and 2 (MT1 and MT2), which are
+both involved in sleep, and 3, which is actually the enzyme
+NRH–quinine oxidoreductase 2 and not thought to be involved
+in sleep physiology. Agomelatine is not only a melatonin 1
+and 2 receptor agonist, but is also a 5HT2C and 5HT2B receptor
+antagonist, and is available to treat depression in countries
+outside of the US.
+
+
+
+
+<<<PAGE 323>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Agomelatine Releases Norepinephrine and Dopamine in the Frontal Cortex
+350
+
+agomelatine
+vehicle
+
+DA change from Basal (%)
+
+NE change from Basal (%)
+
+250
+
+200
+
+150
+100
+
+300
+250
+200
+150
+100
+
+0
+
+60
+
+120
+
+180
+
+0
+
+time (min)
+
+60
+
+120
+
+180
+
+time (min)
+
+DA release
+
+NE release
+
+prefrontal cortex
+overactivation
+
+NE
+neuron
+
+locus coeruleus
+
+VTA
+
+DA
+neuron
+
+7
+
+GABA
+interneurons
+5HT2C
+
+agomelatine
+
+agomelatine
+
+5HT
+neuron
+
+raphe
+
+brainstem neurotransmitter centers
+Figure 7-38 Agomelatine releases norepinephrine and dopamine in the prefrontal cortex. Normally, serotonin binding at 5HT2C
+receptors on γ-aminobutyric acid (GABA) interneurons in the brainstem inhibits norepinephrine (NE) and dopamine (DA) release in the
+prefrontal cortex. When a 5HT2C antagonist such as agomelatine binds to 5HT2C receptors on GABA interneurons (bottom red circle), it
+prevents serotonin (5HT) from binding there and thus prevents inhibition of NE and DA release in the prefrontal cortex; in other words, it
+disinhibits their release (top red circles).
+
+on fluoxetine, 5HT2C antagonist actions are a property
+of several drugs used to treat unipolar depression
+(agomelatine, fluoxetine, trazodone, mirtazapine,
+some tricyclic antidepressants) and bipolar depression
+(olanzapine and quetiapine). 5HT2C receptors are
+located in the midbrain raphe and prefrontal cortex
+where they regulate the release of dopamine and
+norepinephrine, an action thought to improve depressive
+symptoms (see Figure 7-38). 5HT2C receptors are also
+
+localized in the suprachiasmatic nucleus (SCN) of the
+hypothalamus, the brain’s “pacemaker,” where they
+interact with melatonin receptors also located there
+(Figure 7-39). Light is detected by the retina during
+the day, and this information travels to the SCN via the
+retinohypothalamic tract (Figure 7-39; see also Chapter
+6 and Figures 6-36A and 6-36B), which normally
+synchronizes many circadian rhythms downstream from
+the SCN. For example, both melatonin receptors and
+307
+
+
+
+
+<<<PAGE 324>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+5HT2C receptors fluctuate in a circadian manner in the
+SCN, with high receptor expression at night/dark and low
+receptor expression in the day/light. That makes sense
+since melatonin is only secreted at night in the dark (see
+Chapter 6 and Figures 6-35 and 6-36B). In some patients
+with unipolar depression, however, circadian rhythms
+are “out of synch,” including low melatonin secretion at
+night among numerous other changes. Theoretically,
+agomelatine, by stimulating melatonin receptors in the
+SCN and simultaneously blocking 5HT2C receptors there
+
+as well, appears to resynchronize circadian rhythms,
+reverse the phase delay of depression, and thereby exert
+an antidepressant effect (Figure 7-39).
+Mirtazapine
+
+Mirtazapine (Figure 7-40) is marketed worldwide and, unlike
+almost every other drug for unipolar depression, it
+does not block any monoamine transporter. Instead,
+mirtazapine is a multifunctional drug with five principal
+mechanisms of action: 5HT2A, 5HT2C, 5HT3, α2-adrenergic,
+
+NE
+
+DA
+
+agomelatine
+VTA LC
+
+retinohypothalamic
+tract
+SCN
+
+pineal
+gland
+
+Healthy Control
+Depression
+sleep
+11 pm 7 am
+
+7 am
+
+sleep
+11 pm 7 am
+
+Figure 7-39 Agomelatine may resynchronize circadian rhythms. Agomelatine, which acts as an agonist at melatonin 1 and 2 receptors,
+may resynchronize circadian rhythms by acting as “substitute melatonin.” Thus, even in the absence of melatonin production in the
+pineal gland, agomelatine can stimulate melatonin 1 and 2 receptors in the suprachiasmatic nucleus (SCN) to reset circadian rhythms.
+5HT2C receptors are also present in the SCN and blocked by agomelatine. In addition, by blocking 5HT2C receptors in the ventral
+tegmental area (VTA) and locus coeruleus (LC), agomelatine promotes dopamine (DA) and norepinephrine (NE) release in the prefrontal
+cortex.
+α
+1
+
+α
+2A
+
+α
+2A
+
+H
+1
+
+H
+1
+
+mirtazapine
+(NaSSA)
+
+5HT2A
+
+2C
+
+2C
+
+5HT
+
+T3
+5H
+
+T3
+
+5HT
+
+5H
+
+308
+
+mianserin
+mianserin
+
+5HT2A
+
+Figure 7-40 Mirtazapine and
+mianserin. Mirtazapine’s primary
+therapeutic action is α2 antagonism.
+It also blocks three serotonin (5HT)
+receptors: 5HT2A, 5HT2C, and 5HT3.
+Finally, it blocks histamine 1 (H1)
+receptors. Mianserin has a similar
+binding profile to mirtazapine, the only
+difference being additional effects at α1
+receptors. NaSSA: noradrenergic and
+specific serotonergic antidepressant.
+
+
+
+
+<<<PAGE 429>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+Processes Regulating Sleep
+ultradian
+(sleep cycle)
+
+awake
+REM
+stage 1
+stage 2
+stage 3
+stage 4
+
+homeostatic
+(sleep drive)
+circadian
+(wake drive)
+7 am
+
+11 pm
+
+sleep
+7 am
+
+11 pm
+
+sleep
+7 am
+
+Figure 10-18 Processes regulating sleep. The sleep/wake cycle is mediated by two opposing drives: homeostatic sleep drive
+and circadian wake drive. The circadian wake drive is a result of input (light, melatonin, activity) to the suprachiasmatic nucleus of
+the hypothalamus, which stimulates the release of orexin to stabilize wakefulness. Homeostatic sleep drive is dependent on the
+accumulation of adenosine, which increases the longer one is awake and decreases with sleep. Accumulated adenosine leads to
+disinhibition of the ventrolateral preoptic nucleus and thus the release of GABA in the tuberomammillary nucleus to inhibit wakefulness.
+As the day progresses, circadian wake drive diminishes and homeostatic sleep drive increases until a tipping point is reached. Sleep
+itself consists of multiple phases that recur in a cyclical manner; this process is known as the ultradian cycle and depicted at the top of
+this figure.
+
+the posterior hypothalamus. Then, orexin has a number of
+knock-on effects:
+• Orexin induces the release of acetylcholine from
+the basal forebrain in cortical areas and from the
+pedunculopontine and laterodorsal tegmental nuclei
+onto the thalamus (Figure 10-13)
+• Orexin also causes the release of dopamine from the
+ventral tegmental area onto cortical areas (Figure 10-14)
+• Orexin stimulates the release of norepinephrine from
+the locus coeruleus onto cortical areas (Figure 10-15)
+• Finally, orexin also instigates the release of serotonin
+from the raphe nuclei onto both the basal forebrain
+and the thalamus (Figure 10-16)
+Then, as light fades, norepinephrine from the locus
+coeruleus and serotonin from the raphe nuclei build
+up and are released onto neurons in the lateral
+hypothalamus, causing negative feedback inhibiting
+the release of orexin. Without orexin, wakefulness is no
+longer stabilized, and the VLPO and GABA take charge
+and suppress all the arousal neurotransmitters (Figure
+10-17). Thus, sleep is facilitated and melatonin is secreted
+at night in the dark. Then the cycle repeats itself as
+
+rest restores homeostatic sleep drive and light initiates
+wakefulness neurotransmitters.
+Ultradian Cycles
+
+In addition to the daily sleep/wake cycle (Figure 10-18),
+there is also an ultradian sleep cycle (see inset of Figure
+10-18; this cycle occurs faster [ultra] than a day [dian]
+and is thus called ultradian). A complete ultradian sleep
+cycle (non-REM [rapid eye movement] and REM) lasts
+approximately 90 minutes and occurs four to five times a
+night (Figure 10-18, inset). Stages 1 and 2 of sleep make
+up non-REM sleep, whereas stages 3 and 4 of the sleep
+cycle are part of deeper, slow-wave sleep. During the
+normal sleep period, the duration of non-REM sleep is
+gradually reduced during the night while the duration
+of REM sleep is increased. REM sleep is characterized
+by faster activity on an electroencephalogram (EEG) –
+similar to that seen during periods of wakefulness – as
+well as distinct eye movements, and peripheral muscle
+paralysis and loss of muscle tone called atonia. It is during
+REM sleep that dreaming occurs, and positron emission
+tomography (PET) studies have shown activation of
+413
+
+10
+
+
+
+
+<<<PAGE 435>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+Conditions Associated with Insomnia
+Medical Conditions
+
+Substance Abuse
+
+Psychiatric Conditions
+
+Behavioral/
+Psychological Causes
+
+Figure 10-27 Conditions associated with
+insomnia. Numerous conditions are associated
+with insomnia, including medical conditions,
+psychiatric disorders, other sleep/wake disorders,
+and substance use. Insomnia may also be related to
+medication side effects.
+
+(SIGH)
+
+Medication Side Effects
+
+Sleep/Wake Disorders
+
+Figure 10-28 Biology of insomnia.
+Numerous neuroanatomical,
+neurobiological, and autonomic
+abnormalities have been
+associated with insomnia. There
+are also several genetic factors that
+have been linked to an increased
+risk for insomnia.
+
+Biology of Insomnia
+Neuroanatomical Abnormalities
+Reduced gray matter in left orbitofrontal
+cortex and hippocampus
+GABA
+
+Neurobiological Abnormalities
+
+Decreased GABA levels in occipital and anterior cingulate cortices
+Reduced nocturnal melatonin secretion
+melatonin
+Increased glucose metabolism
+Attenuated sleep-related reduction in glucose metabolism
+BDNF
+in wake-promoting regions
+Decreased serum BDNF
+
+Autonomic Nervous System Abnormalities
+Heart rate elevations and variability
+Increased metabolic rate
+Increased body temp
+HPA axis activation
+Increased NE
+
+10
+
+HPA
+Axis
+
+Systemic Inflammation
+
+IL-6
+
+Genetic Factors
+CLOCK gene polymorphisms
+GABA-A receptor gene polymorphisms
+Serotonin reuptake transporter (SERT) gene polymorphisms
+Human leukocyte antigen (HLA) gene polymorphisms
+Epigenetic modifications affecting genes involved
+in the response to stress
+
+419
+
+
+
+
+<<<PAGE 445>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+Figure 10-41C, D Pharmacokinetics
+of hypnotics, part 2. (C) For hypnotics
+with moderately long half-lives (15–30
+hours), receptor occupancies above the
+sleep threshold may not wear off until
+after the individual needs to awaken,
+potentially leading to “hangover”
+effects (sedation, memory problems).
+(D) For hypnotics with ultra-short halflives (1–3 hours), receptor occupancies
+above the sleep threshold may not
+last long enough, causing loss of sleep
+maintenance.
+
+Still Too Hot:
+
+Moderately Long Half-Life Hypnotics
+Do Not Wear Off Until After
+Time to Awaken (Hangover)
+5
+
+4
+
+drug
+concentration 3
+
+hangover, levels high after
+time to awaken
+
+2
+
+relevant threshold
+
+1
+
+0
+
+24
+
+48
+
+hours (taken nightly)
+
+72
+
+96
+
+120
+
+144
+
+duration above threshold: 15-30 hours
+examples: estazolam (ProSom)
+temazepam (Restoril)
+most TCAs
+mirtazapine (Remeron)
+chlorpromazine (Thorazine)
+
+C
+
+Too Cold:
+
+Short Half-Life Hypnotics Wear Off
+Before Time to Awaken
+(Loss of Sleep Maintenance)
+5
+
+4
+
+drug
+concentration 3
+
+loss of sleep maintenance
+low levels before time
+to awaken
+
+2
+
+relevant threshold
+
+1
+
+0
+
+24
+
+48
+
+hours (taken nightly)
+D
+
+72
+
+10
+
+96
+120
+144
+half-lives: 1-3 hours
+examples: triazolam (Halcion)
+zaleplon (Sonata)
+zolpidem (Ambien)
+melatonin
+ramelteon (Rozerem)
+
+The reason these concepts are important to the
+prescriber is not so much the precision of the estimates
+of thresholds, as these may vary from patient to
+patient. Instead, these concepts inform the prescriber
+about what to do to get the Goldilocks solution for
+individual patients. If the patient is not falling asleep
+quickly enough, theoretically the patient does not reach
+threshold fast enough, so either give the drug earlier in
+
+the evening, or don’t take with food (food can delay the
+absorption of some agents), or raise the dose, or change
+the mechanism. If the patient is not sleeping long enough
+(Figure 10-41D), theoretically threshold levels are lost too
+early, so either raise the dose or switch to a drug with a
+longer duration of action above the threshold (generally,
+this would be drugs with a longer pharmacokinetic
+half-life; see Figures 10-41A and 10-41C). If the patient
+429
+
+
+
+
+<<<PAGE 454>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Resetting Circadian Rhythms
+Offset Circadian Rhythm in
+Advanced Sleep Disorder
+
+Offset Circadian Rhythm in
+Delayed Sleep Disorder
+
+12am
+9pm
+
+12am
+3am
+
+9pm
+
+Waketime
+
+Bedtime
+6pm
+
+6am
+
+3pm
+
+9am
+
+3am
+
+Bedtime
+
+Adjustment using
+pharmacological
+and/or nonpharmacological
+treatment
+
+6pm
+
+Figure 10-55 Resetting circadian
+rhythms. Circadian treatments, such as
+bright light and melatonergic agents,
+can be used to reset circadian rhythms
+in both advanced and delayed sleep
+phase disorders. For advanced sleep
+phase disorder, early evening bright
+light and early morning melatonin can
+be useful. For delayed sleep phase
+disorder, morning bright light and
+evening melatonin can be useful.
+
+6am
+
+3pm
+
+9am
+
+Waketime 12pm
+
+12pm
+
+Desired Sleep/Wake Schedule
+Bedtime
+
+12am
+
+9pm
+
+3am
+
+Waketime
+6pm
+
+6am
+
+3pm
+
+9am
+12pm
+
+Bright Light Therapy
+
+morning hours and awaken in the late morning/early
+afternoon. DSPD is the most common of the circadian
+rhythm disorders and has been associated with
+polymorphisms in the CLOCK gene (another essential
+element of the molecular clock). Similarly to advanced
+sleep phase disorder (ASPD), sleep duration and quality
+of sleep are normal; however, the shift in the sleep/wake
+schedule interferes with daily functioning. Many normal
+teens have a mild to moderate form of ASPD, as do many
+patients with depression.
+Non-24-hour sleep–wake disorder (Figure 10-54)
+is a circadian rhythm disorder that primarily affects
+individuals who are blind. Those who are visually
+impaired lack the ability to entrain the internal circadian
+clock with light acting on the suprachiasmatic nucleus via
+the retinohypothalamic tract. This free-running internal
+clock leads to irregular sleep/wake patterns that may
+cause both insomnia and excessive daytime sleepiness.
+Circadian Treatments
+
+Figure 10-56 Bright light therapy. Bright light therapy is
+a circadian treatment. Morning bright light can be used for
+patients with delayed sleep phase disorders and may also be
+beneficial for patients with shift work sleep disorder. Bright light
+therapy is also used as a treatment for depression.
+
+438
+
+Circadian treatments can be helpful in resetting the offset
+circadian rhythms of both advanced sleep phase disorder
+and delayed sleep phase disorder (Figure 10-55). This
+includes both bright light (Figure 10-56) and melatonergic
+agents (Figure 10-57). These same circadian treatments
+can be used adjunctively to drugs for depression in the
+
+
+
+
+<<<PAGE 455>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+treatment of mood disorders or adjunctively to modafinil/
+armodafinil for shift work disorder.
+Morning light and evening melatonin can help
+depression, delayed sleep phase disorder, and shift work
+disorder. On the other hand, early evening light and
+early morning melatonin can help advanced sleep phase
+disorder. Non-24-hour sleep–wake disorder benefits from
+synchronization of circadian rhythms by the powerful
+melatonergic agent tasimelteon (Figure 10-57). These
+various circadian treatments can also be beneficial in
+resetting the biological clock in normal elderly people
+(morning melatonin and evening light) and normal teens
+(morning light and evening melatonin). Parents have
+long recognized the benefits of letting in early morning
+sunlight by opening the shades to get hibernating teens
+up and going in time for school.
+Melatonergic Hypnotics
+
+Melatonin is the neurotransmitter secreted by the pineal
+gland, and acts especially in the suprachiasmatic nucleus
+to regulate circadian rhythms (discussed in Chapter 6
+and illustrated in Figures 6-34 to 6-36). Melatonin shifts
+circadian rhythms, especially in those with phase delay
+when taken at the desired appropriate bedtime, not only
+
+for depressed patients, those who have delayed phase sleep
+disorder, and many normal teenagers, but also for many
+experiencing jet lag from travel-induced shifts in circadian
+rhythms. In all cases, melatonin can facilitate sleep onset.
+Melatonin acts at three different sites, not only
+melatonin 1 (MT1) and melatonin 2 (MT2) receptors, but
+also at a third site, sometimes called the melatonin 3 site,
+which is now known to be the enzyme NRH–quinone
+oxidoreductase 2, and which is probably not involved in
+sleep physiology (Figure 10-57). MT1-mediated inhibition
+of neurons in the suprachiasmatic nucleus (SCN) could
+help to promote sleep by decreasing the wake-promoting
+actions of the circadian “clock” or “pacemaker” that
+functions there, perhaps by attenuating the SCN’s alerting
+signals, allowing sleep signals to predominate, and thus
+inducing sleep. Phase shifting and circadian rhythm
+effects of the normal sleep/wake cycle are thought to
+be primarily mediated by MT2 receptors, which entrain
+these signals in the SCN.
+Ramelteon is a MT1/MT2 agonist marketed for
+insomnia, and tasimelteon, another MT1/MT2 agonist,
+is marketed for non-24-hour sleep–wake disorder
+(Figure 10-57). These agents improve sleep onset,
+sometimes better when used for several days in a row.
+
+Melatonergic Agents
+
+ramelteon
+tasimelteon
+
+melatonin
+MT3
+
+MT1
+
+MT2
+
+MT1
+
+5HT2B
+
+5HT2C
+
+agomelatine
+
+MT1
+
+MT2
+
+Figure 10-57 Melatonergic
+agents. Endogenous melatonin is
+secreted by the pineal gland and
+mainly acts in the suprachiasmatic
+nucleus to regulate circadian
+rhythms. There are three types
+of receptors for melatonin: MT1
+and MT2, which are both involved
+in sleep, and MT3, which is
+actually the enzyme NRH–quinine
+oxidoreductase 2 and not thought
+to be involved in sleep physiology.
+There are several different agents
+that act at melatonin receptors.
+Melatonin itself, available over
+the counter, acts at MT1 and MT2
+receptors as well as at the MT3 site.
+Both ramelteon and tasimelteon
+are MT1 and MT2 receptor agonists
+and seem to provide sleep onset
+though not necessarily sleep
+maintenance. Agomelatine is
+not only a MT1 and MT2 receptor
+agonist, but is also a serotonin
+5HT2C and 5HT2B receptor
+antagonist and is available as an
+antidepressant outside the US.
+
+MT2
+
+439
+
+10
+
+
+
+
+<<<PAGE 460>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Mechanism of Action of
+Modafinil/Armodafinil
+
+DA reuptake
+pump
+
+modafinil
+
+DA
+
+when needing to function during the daytime when
+sleepy. Exposure to light alters circadian rhythms and
+suppresses melatonin release. Treatment with 10,000
+lux, bright, blue light for 30 minutes a day may be used
+to reset circadian rhythms (Figure 10-56). Importantly,
+the administration of bright light therapy must be
+appropriately timed in accordance with the patient’s
+circadian phase of melatonin secretion, with light
+administration occurring approximately 8 hours after
+evening melatonin secretion (possibly amplified by
+oral dosing with a melatonin agent, Figure 10-57) or
+in accordance with a predetermined bright light phase
+response curve. One form of bright light therapy, dawn
+simulation therapy, applies a slow, incremental light
+signal at the end of the sleep cycle. Data show that
+performance, alertness, and mood during the night shift
+can be improved in shift workers using bright light reentrainment of circadian rhythms.
+Solriamfetol, a Wake-Promoting NDRI
+
++
++
++
++
+increase in tonic firing,
+downstream increase in HA
+and activation of wake-related
+circuits
+Figure 10-62 Mechanism of action of modafinil/
+armodafinil. Modafinil and armodafinil bind with weak affinity
+for the dopamine transporter (DAT); however, their plasma
+levels are high and this compensates for the low binding.
+Increased synaptic dopamine (DA) following blockade of DAT
+leads to increased tonic firing and downstream effects on
+neurotransmitters involved in wakefulness, including histamine
+(HA) and orexin/hypocretin.
+
+Shift Work Disorder
+
+Shift work disorder (Figure 10-51) can be tricky to
+treat, especially if the patient has an ever-evolving and
+unstable shift work schedule. Suffice it to say, shift
+workers are frequently sleepy, but still must work,
+drive, and function. Modafinil/armodafinil can make
+a big difference in an individual’s ability to function
+with alertness when suffering from shift work disorder.
+Supplementing modafinil/armodafinil with circadian
+rhythm adjunctive therapy is often helpful (Figure
+10-55). This includes trying to reset the biological
+clock with morning light (Figure 10-56), especially
+444
+
+Solriamfetol is a recently approved agent for daytime
+sleepiness, both in patients with narcolepsy and as an
+adjunct to mechanical treatments for airway obstruction
+in patients with OSA. It works by norepinephrine and
+dopamine reuptake inhibition (see Chapter 7 and Figures
+7-34 through 7-36), and seems to be more potent than
+bupropion in this aspect, and less potent but more tolerable
+and less abusable than amphetamines or methylphenidate.
+Its short half-life is consistent with morning dosing wearing
+off in time for sleep.
+Pitolisant, H3 Presynaptic Antagonist
+
+Pitolisant (Figure 10-65) is a drug with a novel
+mechanism for improving wakefulness in narcolepsy
+by blocking the normal action of presynaptic H3
+autoreceptors (Figure 10-66A,B) to inhibit histamine
+release. Inhibiting the presynaptic H3 receptor causes
+the disinhibition (that is, the release) of presynaptic
+histamine (Figure 10-66C), and this is wake-promoting.
+Pitolisant, a presynaptic H3 autoreceptor antagonist
+(Figures 10-65 and 10-66C), is approved for the treatment
+of narcolepsy, and there are anecdotal observations that
+it may be effective in cataplexy as well. Pitolisant is not a
+controlled substance and has no known abuse potential
+and is in testing for improving excessive daytime
+sleepiness in OSA. Pitolisant can be overly activating,
+causing anxiety or insomnia. Studies suggest it may
+be about as effective as modafinil but perhaps not as
+effective as amphetamine/methylphenidate for improving
+excessive daytime sleepiness.
+
+
+
+
+<<<PAGE 635>>>
+
+Index
+
+behavioral treatments, 430
+diagnosis and comorbidities, 418–20
+treatment, 421–31
+insulin resistance, 197, 198, 200
+internet addiction, 575
+interneurons, 380
+inverse agonists, 42, 44–5, 61, 62, 240
+ion-channel-linked systems, 11, 12
+ion channels, 76
+ligand-gated. See ligand-gated ion
+channels
+neurotransmission and, 73–6
+voltage-sensitive. See voltage-sensitive
+ion channels
+ionotropic glutamate receptors, 54
+iproniazid, 336
+irreversible enzyme inhibitors, 46
+kainate receptors, 101, 104
+ketamine, 106, 328–32, 353, 376, 569–71
+ketamine-assisted psychotherapy, 574
+kinase, third messenger, 14, 16
+lamotrigine, 350–1
+late genes, 20, 22
+lemborexant, 423
+leptin, 415
+leucine zippers, 19, 20, 21
+levodopa, 170
+levomilnacipran, 300, 303
+Lewy bodies, 157
+Lewy body dementias, 492–5
+licarbazepine, 352
+ligand-gated ion channels, 51–66, 76
+agonist spectrum, 56–62
+allosteric modulation, 64–6
+different states of, 61–4
+gatekeeper, 52
+pentameric subtypes, 53
+structure and function, 53
+tetrameric subtypes, 54–5
+lisdexamfetamine, 473, 575
+lithium, 48, 332, 345–6
+local anesthesia, 380
+lofexidine, 561
+long-term potentiation, 151
+LSD, 358, 568
+lumateperone, 227, 237–9
+lurasidone, 226, 236, 343
+magic mushrooms, 358
+magnesium, 104
+magnetic resonance imaging, 491
+major depressive disorder, 246, 252
+anxiety disorder and, 360–2
+core symptoms, 360
+major depressive episode, 248, 277
+symptoms and circuits, 277
+
+mania
+anticonvulsant treatment, 346
+carbamazepine treatment, 350
+drug treatment, 195
+lithium treatment, 345
+mixed features of, 248, 251
+mood stabilizer treatment, 288
+serotonin and dopamine blockers in,
+338, 342
+valproate treatment, 349
+manic episodes, 245, 277, 278
+MAOIs. See monoamine oxidase
+inhibitors
+mazindol, 485
+MDMA, 356, 376, 378, 569–71
+assisted psychotherapy, 574
+MDPV, 546
+medication-assisted therapy, 561
+melatonergic agents, 439, 440
+melatonin, 275, 439, 440
+melatonin receptors, 306
+memantine, 520, 521–4, 533
+memory difficulties, 316
+Alzheimer disease, 509–18
+memory, traumatic, 356, 366, 375,
+574
+mesocortical dopamine pathway, 95
+mesocortical hypodopaminergia, 95
+mesolimbic dopamine pathway, 89,
+542–3
+mesolimbic hyperdopaminergia, 90
+mesostriatal hyperdopaminergia, 93
+messenger RNA (mRNA), 26
+metabolic highway, 198, 199, 201
+metabolic monitoring, 196, 199
+metabolic toolkit, 201
+metabotropic glutamate receptors, 100,
+103
+metformin, 201
+methadone, 355, 559, 560, 561, 562
+methylation, 23, 24
+methylphenidate, 441–2, 469–72, 484
+formulations, 470
+mianserin, 309
+microRNA (miRNA), 27
+migrants, 150
+mild cognitive impairment, 487, 490,
+493, 500–2
+milnacipran, 300, 303
+mirtazapine, 232, 308–13, 333
+mixed dementia, 495
+mixed features, 248, 251–2
+modafinil, 333, 442–4
+Molly, 358, 569
+monoamine autoreceptors, 8
+monoamine hypothesis of depression,
+264–5, 290
+monoamine oxidase (MAO), 253
+
+monoamine oxidase inhibitors (MAOIs),
+336–7, 377
+bipolar depression, 342
+dietary tyramine interaction, 338
+drug–drug interactions, 338
+subtypes, 337–41
+monoamine projections, 279
+monoamine receptor hypothesis of
+depression, 264–6, 267, 290
+monoamine transporters, 30, 31–4, 208
+unipolar depression, 285–8
+mood disorders, 244, 282, See also mania,
+depression
+description of, 244–52
+future treatments for, 353–8
+mixed features of, 248, 251–2
+neurobiology of, 252–76
+pain disorders and, 387
+symptom-based treatments, 279–82
+symptoms and circuits in, 277–82
+mood episodes, 246
+mood related psychosis, 157
+mood spectrum, 244–9
+mood-stabilizers, 288, 345–6
+mood-stabilizing action, 283
+morphine, 559, 561
+motivation, lack of, 536
+motor disturbances, 78
+motor side effects, 165–81
+partial agonists, 192
+mu-opioid receptors, 390, 556
+multimodal monoamines, 530–2
+Multiple Sleep Latency Test, 431
+muscarinic receptors, 506–7
+nalmefene, 556, 573
+naloxone, 560
+naltrexone, 306, 556, 561, 563, 573, 575
+NAMs (negative allosteric modulators),
+64–6
+narcolepsy, 407, 430, 433, 435, 443, 444,
+446
+nausea and vomiting, 309
+n-back test, 449, 451
+nefazodone, 311
+negative affect, 278, 280
+negative feedback regulatory signal, 255
+negative symptoms, 95, 142–4, 156
+secondary, 162–3
+NET transporters. See norepinephrine
+transporters (NETs)
+neuroactive steroids, 320–5
+neurobiology
+mood disorders, 252–76
+sleep and wakefulness, 402–15
+neurodevelopment, 151, 152
+ADHD, 463–5
+schizophrenia, 151–3
+619
+
+

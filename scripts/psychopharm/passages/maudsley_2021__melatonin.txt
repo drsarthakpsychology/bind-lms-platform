@@ -1,0 +1,921 @@
+<<<PAGE 140>>>
+
+Table 1.16 Other options for the treatment of TD
+Drug
+
+Comments
+Use is supported by a small randomised, placebo-controlled trial. Low risk of toxicity
+
+Amino acids
+
+74
+
+Botulinum toxin
+
+Case reports of success for localised dyskinesia. Probably now treatment of choice for
+disabling or distressing focal symptoms
+
+Calcium antagonists79
+
+A few published studies but not widely used. Cochrane is dismissive.80 A metaanalysis found no effect49
+
+Donepezil81–83
+
+Supported by a single open study and case series. One negative RCT (n = 12). Dose
+is 10mg/day. No clear evidence of efficacy for rivastigmine or galantamine84
+
+Fish oils85,86
+
+Very limited support for the use of EPA at dose of 2g/day
+
+75–78
+
+Fluvoxamine87
+
+Three case reports. Dose is 100mg/day. Beware of interactions
+
+Gabapentin
+
+Adds weight to theory that GABAergic mechanisms improve TD.
+Dose is 900–1200mg/day. Inconclusive data on other GABA agonists89
+
+Levetiracetam90–93
+
+Three published case studies. One RCT. Dose up to 3000mg/day
+
+Melatonin
+
+Use is supported by a meta-analysis of four trials.95 Usually well tolerated. Dose is
+10mg/day. Some evidence that melatonin receptor genotype determines risk of TD96
+
+Naltrexone97
+
+May be effective when added to benzodiazepines. Well tolerated.
+Dose is 200mg/day
+
+Ondansetron98,99
+
+Limited evidence but low toxicity.
+Dose – up to 12mg/day
+
+Propranolol100–102
+
+Formerly a relatively widely used treatment. Open-label studies only and a
+prospective randomized trial is probably warranted. Dose is 40–120mg/day. Beware
+of contra-indications (asthma, bradycardia, hypotension)
+
+Quercetin103
+
+Plant compound which is thought to be an antioxidant.
+Some promising case reports103–105
+
+Sodium oxybate106
+
+One case report. Dose was 8g/day
+
+Repetitive transcranial
+magnetic stimulation
+(rTMS)107,108
+
+RCT data on patients with ‘tardive syndromes’ suggest the potential for bilateral
+hemispheric high frequency rTMS to be a feasible treatment where TD is
+unresponsive to ‘first-line’ medical treatment107
+
+Zolpidem109
+
+Three case reports. Dose 10–30mg a day
+
+88
+
+94
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  119
+
+
+
+
+<<<PAGE 150>>>
+
+33. Manu P, et al. Weight gain and obesity in schizophrenia: epidemiology, pathobiology, and management. Acta Psychiatr Scand 2015;
+132:97–108.
+34. Praharaj SK, et al. Amantadine for olanzapine-induced weight gain: a systematic review and meta-analysis of randomized placebo-controlled
+trials. Ther Adv Psychopharmacol 2012; 2:151–156.
+35. Zheng W, et al. Amantadine for antipsychotic-related weight gain: meta-analysis of randomized placebo-controlled trials. J Clin
+Psychopharmacol 2017; 37:341–346.
+36. Kucukgoncu S, et al. Alpha-lipoic acid (ALA) as a supplementation for weight loss: results from a meta-analysis of randomized controlled
+trials. Obes Rev 2017; 18:594–601.
+37. Kim E, et al. A preliminary investigation of alpha-lipoic acid treatment of antipsychotic drug-induced weight gain in patients with schizophrenia. J Clin Psychopharmacol 2008; 28:138–146.
+38. Ratliff JC, et al. An open-label pilot trial of alpha-lipoic acid for weight loss in patients with schizophrenia without diabetes. Clin Schizophr
+Relat Psychoses 2015; 8:196–200.
+39. Zheng W, et al. Efficacy and safety of adjunctive aripiprazole in schizophrenia: meta-analysis of randomized controlled trials. J Clin
+Psychopharmacol 2016; 36:628–636.
+40. Barak N, et al. A randomized, double-blind, placebo-controlled pilot study of betahistine to counteract olanzapine-associated weight gain. J
+Clin Psychopharmacol 2016; 36:253–256.
+41. Lian J, et al. Ameliorating antipsychotic-induced weight gain by betahistine: mechanisms and clinical implications. Pharmacol Res 2016;
+106:51–63.
+42. Gadde KM, et al. Bupropion for weight loss: an investigation of efficacy and tolerability in overweight and obese women. Obes Res 2001;
+9:544–551.
+43. Jain AK, et al. Bupropion SR vs. placebo for weight loss in obese patients with depressive symptoms. Obes Res 2002; 10:1049–1056.
+44. Tsoi DT, et al. Interventions for smoking cessation and reduction in individuals with schizophrenia. Cochrane Database Syst Rev 2013;
+2:CD007253.
+45. Greig SL, et al. Naltrexone ER/Bupropion ER: a review in obesity management. Drugs 2015; 75:1269–1280.
+46. Hinze-Selch D, et al. Effect of coadministration of clozapine and fluvoxamine versus clozapine monotherapy on blood cell counts, plasma
+levels of cytokines and body weight. Psychopharmacology 2000; 149:163–169.
+47. Lu ML, et al. Effects of adjunctive fluvoxamine on metabolic parameters and psychopathology in clozapine-treated patients with schizophrenia: a 12-week, randomized, double-blind, placebo-controlled study. Schizophr Res 2018; 193:126–133.
+48. Lu ML, et al. Adjunctive fluvoxamine inhibits clozapine-related weight gain and metabolic disturbances. J Clin Psychiatry 2004;
+65:766–771.
+49. Larsen JR, et al. Effect of liraglutide treatment on prediabetes and overweight or obesity in clozapine- or olanzapine-treated patients with
+schizophrenia spectrum disorder: a randomized clinical trial. JAMA Psychiatry 2017; 74:719–728.
+50. Mayfield K, et al. Glucagon-like peptide-1 agonists combating clozapine-associated obesity and diabetes. J Psychopharmacology 2016;
+30:227–236.
+51. Siskind D, et al. Treatment of clozapine-associated obesity and diabetes with exenatide (CODEX) in adults with schizophrenia: a randomised
+controlled trial. Diabetes, Obesity & Metabolism 2017; 20:1050–1055.
+52. Ishoy PL, et al. Effect of GLP-1 receptor agonist treatment on body weight in obese antipsychotic-treated patients with schizophrenia: a
+randomized, placebo-controlled trial. Diabetes, Obesity & Metabolism 2017; 19:162–171.
+53. Zheng W, et al. Metformin for weight gain and metabolic abnormalities associated with antipsychotic treatment: meta-analysis of randomized placebo-controlled trials. J Clin Psychopharmacol 2015; 35:x499–x509.
+54. Wang C, et al. Outcomes and safety of concomitant topiramate or metformin for antipsychotics-induced obesity: a randomized-controlled
+trial. Ann General Psychiatry 2020; 19:68.
+55. Anagnostou E, et al. Metformin for treatment of overweight induced by atypical antipsychotic medication in young people with autism
+spectrum disorder: a randomized clinical trial. JAMA Psychiatry 2016; 73:928–937.
+56. Handen BL, et al. A randomized, placebo-controlled trial of metformin for the treatment of overweight induced by antipsychotic medication
+in young people with autism spectrum disorder: open-label extension. J Am Acad Child Adolesc Psychiatry 2017; 56:849–856.e846.
+57. Chapman LE, et al. Association between metformin and vitamin B12 deficiency in patients with type 2 diabetes: a systematic review and
+meta-analysis. Diabetes Metab 2016; 42:316–327.
+58. Agahi M, et al. Effect of melatonin in reducing second-generation antipsychotic metabolic effects: a double blind controlled clinical trial.
+Diabetes Metab Syndr 2017; 12:9–15.
+59. Wang HR, et al. The role of melatonin and melatonin agonists in counteracting antipsychotic-induced metabolic side effects: a systematic
+review. Int Clin Psychopharmacol 2016; 31:301–306.
+60. Porfirio MC, et al. Can melatonin prevent or improve metabolic side effects during antipsychotic treatments? Neuropsychiatr Dis Treat 2017;
+13:2167–2174.
+61. Henderson DC, et al. Effects of modafinil on weight, glucose and lipid metabolism in clozapine-treated patients with schizophrenia. Schizophr
+Res 2011; 130:53–56.
+62. Roerig JL, et al. An exploration of the effect of modafinil on olanzapine associated weight gain in normal human subjects. Biol Psychiatry
+2009; 65:607–613.
+63. Taveira TH, et al. The effect of naltrexone on body fat mass in olanzapine-treated schizophrenic or schizoaffective patients: a randomized
+double-blind placebo-controlled pilot study. J Psychopharmacology 2014; 28:395–400.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  129
+
+
+
+
+<<<PAGE 304>>>
+
+39. Sekhar S, et al. Efficacy of sodium valproate and haloperidol in the management of acute mania: a randomized open-label comparative study.
+J Clin Pharmacol 2010; 50:688–692.
+40. Fontana E, et al. Intravenous valproate in the treatment of acute manic episode in bipolar disorder: a review. J Affect Disord 2020;
+260:738–743.
+41. Li DJ, et al. Efficacy, safety and tolerability of aripiprazole in bipolar disorder: an updated systematic review and meta-analysis of randomized
+controlled trials. Prog Neuropsychopharmacol Biol Psychiatry 2017; 79:289–301.
+42. Romeo B, et al. Meta-analysis and review of dopamine agonists in acute episodes of mood disorder: efficacy and safety. J Psychopharmacol
+2018; 32:385–396.
+43. Vieta E, et al. Effect of cariprazine across the symptoms of mania in bipolar I disorder: analyses of pooled data from phase II/III trials. Eur
+Neuropsychopharmacol 2015; 25:1882–1891.
+44. Chang HY, et al. The efficacy and tolerability of paliperidone in mania of bipolar disorder: a preliminary meta-analysis. Exp Clin
+Psychopharmacol 2017; 25:422–433.
+45. Pajonk FG, et al. Rapid dose titration of quetiapine for the treatment of acute schizophrenia and acute mania: a case series. J Psychopharmacol
+2006; 20:119–124.
+46. Chen AT, et al. Allopurinol augmentation in acute mania: a meta-analysis of placebo-controlled trials. J Affect Disord 2018; 226:245–250.
+47. Arabzadeh S, et al. Celecoxib adjunctive therapy for acute bipolar mania: a randomized, double-blind, placebo-controlled trial. Bipolar
+Disord 2015; 17:606–614.
+48. Mahmood T, et al. Clozapine in the management of bipolar and schizoaffective manic episodes resistant to standard treatment. Aust N Z J
+Psychiatry 1997; 31:424–426.
+49. Green AI, et al. Clozapine in the treatment of refractory psychotic mania. Am J Psychiatry 2000; 157:982–986.
+50. Ifteni P, et al. Switching bipolar disorder patients treated with clozapine to another antipsychotic medication: a mirror image study.
+Neuropsychiatr Dis Treat 2017; 13:201–204.
+51. Aksoy Poyraz C, et al. Effectiveness of ultra-rapid dose titration of clozapine for treatment-resistant bipolar mania: case series. Ther Adv
+Psychopharmacol 2015; 5:237–242.
+52. Sharpley AL, et al. A phase 2a randomised, double-blind, placebo-controlled, parallel-group, add-on clinical trial of ebselen (SPI-1005) as a
+novel treatment for mania or hypomania. Psychopharmacology (Berl) 2020; 237:3773–3782.
+53. Macdonald KJ, et al. Newer antiepileptic drugs in bipolar disorder: rationale for use and role in therapy. CNS Drugs 2002; 16:549–562.
+54. Cabras PL, et al. Clinical experience with gabapentin in patients with bipolar or schizoaffective disorder: results of an open-label study. J Clin
+Psychiatry 1999; 60:245–248.
+55. Pande AC, et al. Gabapentin in bipolar disorder: a placebo-controlled trial of adjunctive therapy. Gabapentin Bipolar Disorder Study Group.
+Bipolar Disord 2000; 2 (3 Pt 2):249–255.
+56. Vieta E, et al. A double-blind, randomized, placebo-controlled, prophylaxis study of adjunctive gabapentin for bipolar disorder. J Clin
+Psychiatry 2006; 67:473–477.
+57. Grunze H, et al. Levetiracetam in the treatment of acute mania: an open add-on study with an on-off-on design. J Clin Psychiatry 2003;
+64:781–784.
+58. Goldberg JF, et al. Levetiracetam for acute mania (Letter). Am J Psychiatry 2002; 159:148.
+59. Park EM, et al. Acute mania associated with levetiracetam treatment. Psychosomatics 2014; 55:98–100.
+60. Koukopoulos A, et al. Antimanic and mood-stabilizing effect of memantine as an augmenting agent in treatment-resistant bipolar disorder.
+Bipolar Disord 2010; 12:348–349.
+61. Veronese N, et al. Acetylcholinesterase inhibitors and memantine in bipolar disorder: a systematic review and best evidence synthesis of the
+efficacy and safety for multiple disease dimensions. J Affect Disord 2016; 197:268–280.
+62. Serra G, et al. Three-year, naturalistic, mirror-image assessment of adding memantine to the treatment of 30 treatment-resistant patients with
+bipolar disorder. J Clin Psychiatry 2015; 76:e91–e97.
+63. Omranifard V, et al. Evaluation of the effect of memantine supplementation in the treatment of acute phase of mania in bipolar disorder of
+elderly patients: a double-blind randomized controlled trial. Adv Biomed Res 2018; 7:148.
+64. Moghaddam HS, et al. Efficacy of melatonin as an adjunct in the treatment of acute mania: a double-blind and placebo-controlled trial. Int
+Clin Psychopharmacol 2020; 35:81–88.
+65. Quested DJ, et al. Melatonin in acute mania investigation (MIAMI-UK). A randomized controlled trial of add-on melatonin in bipolar disorder. Bipolar Disord 2021; 23:176–185
+66. Benedetti A, et al. Oxcarbazepine as add-on treatment in patients with bipolar manic, mixed or depressive episode. J Affect Disord 2004;
+79:273–277.
+67. Lande RG. Oxcarbazepine: efficacy, safety, and tolerability in the treatment of mania. Int J Psychiatry Clin Pract 2004; 8:37–40.
+68. Ghaemi SN, et al. Oxcarbazepine treatment of bipolar disorder. J Clin Psychiatry 2003; 64:943–945.
+69. Pratoomsri W, et al. Oxcarbazepine in the treatment of bipolar disorder: a review. Can J Psychiatry 2006; 51:540–545.
+70. Juruena MF, et al. Bipolar I and II disorder residual symptoms: oxcarbazepine and carbamazepine as add-on treatment to lithium in a doubleblind, randomized trial. Prog Neuropsychopharmacol Biol Psychiatry 2009; 33:94–99.
+71. Suppes T, et al. Comparison of two anticonvulsants in a randomized, single-blind treatment of hypomanic symptoms in patients with bipolar
+disorder. Aust N Z J Psychiatry 2007; 41:397–402.
+72. Vieta E, et al. A double-blind, randomized, placebo-controlled prophylaxis trial of oxcarbazepine as adjunctive treatment to lithium in the
+long-term treatment of bipolar I and II disorder. Int J Neuropsychopharmacol 2008; 11:445–452.
+
+CHAPTER 2
+
+Bipolar disorder  283
+
+
+
+
+<<<PAGE 569>>>
+
+548  The Maudsley® Prescribing Guidelines in Psychiatry
+
+The duration of most medication trials is between 3 and 5 weeks. This should guide
+decisions about how long to try a single drug in a patient. A complete absence of
+response at 1–2 weeks should prompt a switch to another SGA.
+■■ If non-response, check compliance, measure levels (where possible) and consider
+increasing dose. Consider concurrent use of SGA and MS.
+■■ Judicious extrapolation of the evidence from adults7 is required because of the very
+limited evidence base in youth with BP. This includes treatment duration and
+prophylaxis.5,6,8
+■■ Maintenance treatment should follow adult guidelines. Consider the use of lithium
+early in the course of treatment, either by switching to lithium monotherapy prophylaxis or as an adjunct to a successful acute medication.
+■■
+
+Specific issues
+Bipolar depression is a common clinical challenge and its treatment has been studied
+much less in youth compared than in adults (see Table 5.2). Antidepressants should be
+used with care and only in presence of an antimanic agent.5 There is limited evidence for
+the benefit of antidepressants in bipolar depression in adults.9 Because of the dearth of
+trials in youth, we are compelled to extrapolate from adult studies5 and recommend use
+of the olanzapine/fluoxetine combination or quetiapine as first-line treatment, along with
+lurasidone which is supported by evidence from trials in children aged 10–17.10–12
+■■ The exact relationship between ADHD and BD is still debated. Some evidence suggests
+that stimulants in children with ADHD and manic symptoms may be well tolerated13
+and that they may be safe and effective to use after mood stabilisation.13 Caution and
+experience with prescribing these drugs are required (see Tables 5.3 and 5.4).
+■■ The DSM-5 has introduced the new category of Disruptive Mood Dysregulation
+Disorder (DMDD) to capture severely irritable children (who were commonly misdiagnosed as having BD in the United States). There is as yet no established treatment
+for DMDD; lithium is ineffective,14 but SSRIs and psychological treatment options,
+such as parenting interventions, may be considered.15
+
+CHAPTER 5
+
+■■
+
+Other treatments
+There is evidence for adults and children that adjunct treatments including psychoeducation, CBT and especially family-focused interventions, can enhance treatment
+and reduce depression relapse rates in bipolar disorder.16
+■■ The use of high-frequency repetitive transcranial magnetic stimulation (rTMS) in
+adolescents with treatment-resistant unipolar depression is only supported by openlabel studies17 and no RCT has been done in youth with either unipolar or bipolar
+depression. Therefore, its use is still considered experimental. One randomised shamcontrolled study of rTMS in the right prefrontal cortex was ineffective in treating
+acute mania in youth, as an add-on to standard pharmacotherapy (N = 26).18
+■■ One small trial supports the adjunctive use of melatonin (6mg/day) in adults with
+mania.19 Evidence is not sufficient to recommend the use of melatonin in children but
+it is enough to allow an assumption of safety in this age group during manic episodes.
+■■
+
+
+
+
+<<<PAGE 604>>>
+
+Children and adolescents  583
+
+Melatonin, has been shown in 17 studies to be beneficial in children with ASD.71 A
+meta-analysis of five studies showed good efficacy with doses ranging from 1mg to
+10mg and treatment lasting from 14 days to over 4 years.72 Melatonin is usually very
+well tolerated.72,73 One RCT showed that, whilst melatonin improved sleep onset, child’s
+behaviour during the day did not improve.74
+There is also evidence that melatonin combined with CBT is superior to melatonin
+only, CBT only and placebo in reducing symptoms of insomnia.75
+Risperidone may benefit sleep difficulties in those with extreme irritability. In the
+anxious or depressed child, antidepressants may be beneficial. Insomnia due to hyperarousal may benefit from clonidine or clonazepam.76
+
+SSRIs have yet to show specific efficacy in ASD. Recent preliminary data from a randomised
+placebo-blind clinical trial showed beneficial effects of fluoxetine in reducing OCD symptoms in children with ASD, although confounding factors precluded firm conclusions.77 In
+a recent systematic review,6 although risperidone was reported by several studies to reduce
+OCD and anxiety symptoms in young people with ASD, the primary selection of participants for high levels of irritability did not allow firm conclusions about specific effects of
+risperidone on OCD and anxiety. The review concluded that overall, there is little or no
+evidence for treating anxiety or OCD symptoms with risperidone, clomipramine or an
+SSRI. The recent BAP guidance6 is to cautiously follow the existing BAP guidelines for
+treating anxiety and OCD.78 There are some data on buspirone effectively targeting anxiety
+in ASD79 and propranolol showing positive cognitive effects in ASD.80 However, further
+evaluation is needed. Guidance on doses of fluoxetine can be found in Box 5.4.
+Fluoxetine in children and adolescents
+When using fluoxetine to treat repetitive behaviours in ASD patients, doses much lower
+than those used to treat depression are normally required. It is advisable to use a liquid
+preparation and begin at the lowest possible dose, monitoring for adverse effects. A
+suitable regime is outlined in Box 5.4.
+Box 5.4 Use of fluoxetine in children and adolescents
+Liquid fluoxetine: (as hydrochloride) 20mg/5mL
+2.5mg/day a day for 1 week; note that 2.5mg = 0.625mL which is difficult to measure accurately.
+Follow with flexible titration schedule based on weight, tolerability and adverse-effects up to a
+maximum dose of 0.8mg/kg/day (0.3mg/kg for week 2, 0.5mg/kg/day for week 3, and 0.8mg/kg/
+day subsequently). Reduction may be indicated if adverse effects are problematic.
+Adverse effects
+Monitor for treatment emergent suicidal behaviour, self-harm and hostility, particularly at the
+beginning of treatment.
+■■ Hyponatraemia is also possible – see section in Chapter 3.
+■■
+
+CHAPTER 5
+
+Anxiety, OCD and depression
+
+
+
+
+<<<PAGE 607>>>
+
+586  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 5
+
+69. Krakowiak P, et al. Sleep problems in children with autism spectrum disorders, developmental delays, and typical development: a populationbased study. J Sleep Res 2008; 17:197–206.
+70. Sanchez-Barcelo EJ, et al. Clinical uses of melatonin in pediatrics. Int J Pediatr 2011; 2011:892624.
+71. Doyen C, et al. Melatonin in children with autistic spectrum disorders: recent and practical data. Eur Child Adolesc Psychiatry 2011;
+20:231–239.
+72. Rossignol DA, et al. Melatonin in autism spectrum disorders: a systematic review and meta-analysis. Dev Med Child Neurol 2011;
+53:783–792.
+73. Andersen IM, et al. Melatonin for insomnia in children with autism spectrum disorders. J Child Neurol 2008; 23:482–485.
+74. Gringras P, et al. Melatonin for sleep problems in children with neurodevelopmental disorders: randomised double masked placebo controlled trial. BMJ 2012; 345:e6664.
+75. Cortesi F, et al. Controlled-release melatonin, singly and combined with cognitive behavioural therapy, for persistent insomnia in children
+with autism spectrum disorders: a randomized placebo-controlled trial. J Sleep Res 2012; 21:700–709.
+76. Johnson KP, et al. Sleep in children with autism spectrum disorders. Curr Treat Options Neurol 2008; 10:350–359.
+77. Reddihough DS, et al. Effect of fluoxetine on obsessive-compulsive behaviors in children and adolescents with autism spectrum disorders: a
+randomized clinical trial. JAMA 2019; 322:1561–1569.
+78. Baldwin DS, et al. Evidence-based guidelines for the pharmacological treatment of anxiety disorders: recommendations from the British
+Association for Psychopharmacology. J Psychopharm 2005; 19:567–596.
+79. Buitelaar JK, et al. Buspirone in the management of anxiety and irritability in children with pervasive developmental disorders: results of an
+open-label study. J Clin Psychiatry 1998; 59:56–59.
+80. Narayanan A, et al. Effect of propranolol on functional connectivity in autism spectrum disorder–a pilot study. Brain Imaging and Behavior
+2010; 4:189–197.
+
+
+
+
+<<<PAGE 614>>>
+
+Children and adolescents  593
+
+Insomnia is a common symptom in childhood. Underlying causes may be behavioural
+(inappropriate sleep associations or bedtime resistance), physiological (delayed sleep
+phase syndrome) or related to underlying mood disorders (anxiety, depression and
+bipolar disorder). All forms of insomnia are more common in children with learning
+difficulties, autism, ADHD and sensory impairments (particularly visual). Although
+behavioural interventions should be the primary intervention and have a robust evidence base, exogenous melatonin is now the ‘first-line’ medication prescribed for childhood insomnia.1
+Melatonin is a hormone that is produced by the pineal gland in a circadian manner.
+The evening rise in melatonin, enabled by darkness, precedes the onset of natural sleep
+by about 2 hours.2 Melatonin is involved in the induction of sleep and in synchronisation of the circadian system.
+There is a wide variety of unlicensed fast-release, slow-release and liquid preparations of melatonin. Many products rely on food-grade rather than pharmaceutical
+grade melatonin and some are expensive. A prolonged-release formulation of melatonin (Circadin) was licensed in the UK in April 2008 as a short term treatment of
+insomnia in patients over 55 years of age. Many children are unable to swallow these
+tablets, and although they can be crushed (and become immediate release) the Product
+Licence limited children’s access to a pharmaceutical-grade prolonged release preparation. However, in the UK, a prolonged-release melatonin minitablet ‘Slenyto’ mimicking the endogenous release profile of the hormone at night has now been licensed
+for children with autism. It was evaluated in a phase III multicentre randomized,
+placebo-controlled study of children with autism. The study began with a 13-week
+double-blind treatment period followed by an extended open-label period with continued efficacy and safety monitoring. Results included clinically significant improvement in caregivers’ diary-reported sleep initiation and maintenance (sleep latency,
+total sleep time, longest sleep period).3 Effects were maintained in the long-term
+period. The medication was well tolerated and no unexpected safety issues were
+reported. The study was the only ‘Class 1’ rated study in a recent Practice Guideline
+publication on the treatment for insomnia and disrupted sleep behaviour in children
+and adolescents with ASD by the American Academy of Neurology.4 Secondary outcomes showed improvements in child’s social functioning and behaviour, and caregivers’ well-being.
+Lack of any ‘head to head’ studies means that there are still no good data on whether,
+or when, immediate-release melatonin preparations should be used. There are additionally a number of melatonin analogues already produced, or in development5 although
+they are virtually never used in the paediatric population. There is no evidence from
+equivalence studies of any superiority over melatonin itself.
+
+Efficacy
+A meta-analysis that included adult and paediatric studies of melatonin used for the
+treatment of primary sleep disorders demonstrated that melatonin decreases sleep
+
+CHAPTER 5
+
+Melatonin in the treatment of insomnia in children and adolescents
+
+
+
+
+<<<PAGE 615>>>
+
+594  The Maudsley® Prescribing Guidelines in Psychiatry
+
+onset latency, increases total sleep time and improves overall sleep quality. The effects
+of melatonin on sleep are modest but do not appear to dissipate with continued melatonin use.6
+
+Adverse effects
+Many of the children who have received melatonin in RCTs and published case series
+had developmental problems and/or sensory deficits. The scope for detecting subtle
+adverse effects in this population is limited. Screening for adverse effects was not routine in all studies. Early reports included a very small case series cases where melatonin was been reported to worsen seizures7 and exacerbate asthma8,9 in the short
+term. Other reported adverse effects include headache, depression, restlessness, confusion, nausea, tachycardia and pruritis.10,11 In the more recent largest placebo-controlled studies to date involving children with learning difficulty, autism and
+epilepsy,12–14 and the most recent minitablet study (PedPRM) there were no excess
+adverse effects in the treatment group over that recorded for placebo, and in particular seizures were not worsened. A Cochrane review found no worsening of seizure
+frequency in patients with epilepsy given melatonin.15 There was no detectable impact
+on puberty in a recent paper.16
+
+CHAPTER 5
+
+Dose
+The cut-off point between physiological and pharmacological doses in children is
+less than 500µg. Physiological doses of melatonin may result in very high receptor
+occupancy. The doses used in RCTs and published case series vary hugely with
+between 500µg and 5mg being the most common doses although much lower and
+higher doses have been used. The optimal dose is unknown and there is no evidence
+to support a direct relationship between dose and response.17 In one large RCT 18%
+of children seemed to respond to a 500µg dose but others seemed to require much
+higher doses (12mg).14 Increasing doses above 5mg is likely to provoke the direct
+sedative effects on melatonin, rather than its sleep phase-shifting properties. This
+might be necessary and helpful for some children with severe and bilateral brain
+injury.
+The use of salivary melatonin measurements is an expensive but effective way to
+identify those children with the most delayed sleep phase (likely to have the best
+response to exogenous melatonin) and those children who are slow metabolisers of
+melatonin in whom serum levels accumulate during the daytime (particularly on higher
+doses) and in whom efficacy will eventually be lost (Figure 5.3).
+
+
+
+
+<<<PAGE 616>>>
+
+Children and adolescents  595
+
+Childhood insomnia
+Identify and treat
+secondary causes
+Sleep hygiene
+Parent-led sleep behavioural interventions
+
+Discontinue
+melatonin
+
+No response
+to >5mg
+
+Not effective
+Melatonin*
+Use Slenyto* 2−5mg
+Consider use of >5mg if response poor
+
+Response
+Continue at minimum effective dose
+
+Figure 5.3 Summary of recommendations.
+
+References
+1. Gringras P. When to use drugs to help sleep. Arch Dis Child 2008; 93:976–981.
+2. Macchi MM, et al. Human pineal physiology and functional significance of melatonin. Front Neuroendocrinol 2004; 25:177–195.
+3. Gringras P, et al. Efficacy and safety of pediatric prolonged-release melatonin for insomnia in children with autism spectrum disorder. J Am
+Acad Child Adolescent Psychiatry 2017; 56:948–957.e944.
+4. Williams Buckley A, et al. Practice guideline: treatment for insomnia and disrupted sleep behavior in children and adolescents with autism
+spectrum disorder: report of the Guideline Development, Dissemination, and Implementation Subcommittee of the American Academy of
+Neurology. Neurology 2020; 94:392–404.
+5. Arendt J, et al. Melatonin and its agonists: an update. Br J Psychiatry 2008; 193:267–269.
+6. Ferracioli-Oda E, et al. Meta-analysis: melatonin for the treatment of primary sleep disorders. PLoS One 2013; 8:e63773.
+7. Sheldon SH Pro-convulsant effects of oral melatonin in neurologically disabled children. Lancet 1998; 351:1254.
+8. Maestroni GJ The immunoneuroendocrine role of melatonin. J Pineal Res 1993; 14:1–10.
+9. Sutherland ER, et al. Elevated serum melatonin is associated with the nocturnal worsening of asthma. J Allergy Clin Immunol 2003;
+112:513–517.
+10. Chase JE, et al. Melatonin: therapeutic use in sleep disorders. Ann Pharmacother 1997; 31:1218–1226.
+11. Jan JE, et al. Melatonin treatment of sleep-wake cycle disorders in children and adolescents. Dev Med Child Neurol 1999; 41:491–500.
+12. Coppola G, et al. Melatonin in wake-sleep disorders in children, adolescents and young adults with mental retardation with or without epilepsy: a double-blind, cross-over, placebo-controlled trial. Brain Dev 2004; 26:373–376.
+13. Garstang J, et al. Randomized controlled trial of melatonin for children with autistic spectrum disorders and sleep problems. Child Care
+Health Dev 2006; 32:585–589.
+14. Gringras P, et al. Melatonin for sleep problems in children with neurodevelopmental disorders: randomised double masked placebo controlled trial. BMJ 2012; 345:e6664.
+15. Brigo F, et al. Melatonin as add-on treatment for epilepsy. Cochrane Database Syst Rev 2016:Cd006967.
+16. Malow BA, et al. Sleep, growth, and puberty after 2 years of prolonged-release melatonin in children with autism spectrum disorder. J Am
+Acad Child Adolesc Psychiatry 2020:S0890-8567(0820)30034-30034.
+17. Sack RL, et al. Sleep-promoting effects of melatonin: at what dose, in whom, under what conditions, and by what mechanisms? Sleep 1997;
+20:908–915.
+
+CHAPTER 5
+
+*At present this is the only UK preparation of melatonin with a product licence for children with ASD.
+The mini pills can be administered in yoghurt/apple sauce and more children are able to swallow them.
+(All forms of melatonin can be crushed and mixed in water (but cease to be prolonged release) if the
+child cannot swallow tablets.)
+
+
+
+
+<<<PAGE 620>>>
+
+Children and adolescents  599
+
+Doses of commonly used psychotropic drugs in children and
+adolescents
+The doses of commonly used drugs are presented in Table 5.8.
+Table 5.8 Starting doses of commonly used psychotropic drugs in children and adolescents1,2 *
+Drug
+
+Starting dose**
+
+Comment
+
+Aripiprazole
+
+2mg
+
+Adjust dose according to response and
+adverse effects
+
+Clozapine
+
+6.25–12.5mg
+
+Use plasma levels to determine
+maintenance dose
+
+Olanzapine
+
+2.5–5mg
+
+Adjust dose according to response and
+adverse effects
+
+Quetiapine
+
+25mg
+
+Effective dose usually in the range
+150–200mg daily
+
+Risperidone
+
+0.25–2mg
+
+Adjust dose according to response and
+adverse effects
+
+Fluoxetine
+
+5–10mg/day
+
+Adjust dose according to response and
+adverse effects
+
+Sertraline
+
+25–50mg daily
+
+Effective dose usually in the range
+50–100mg daily
+
+Citalopram
+
+10mg daily
+
+Effective dose 10–40mg (note QT effects)
+
+Lithium
+
+100–200mg/day
+lithium carbonate
+
+Use plasma levels to determine
+maintenance dose
+
+Valproate
+
+10–20mg/kg/day in divided
+doses
+
+Use plasma levels to determine
+maintenance dose. Do not offer valproate
+to girls or young women of child bearing
+potential unless there is a pregnancy
+prevention programme (PPP) in place3
+
+Melatonin
+
+2mg at night
+
+Effective dose 2–10mg
+
+Antipsychotics
+
+Other Drugs
+
+We have removed haloperidol, amitriptyline, escitalopram and carbamazepine from this table as none of these are
+recommended in children.
+**
+Suggested approximate oral starting doses (see primary literature for doses in individual indications). Lower dose in
+suggested range is for children weighing less than 25kg.
+*
+
+References
+1. BNF Online. British National Formulary 2020; https://www.medicinescomplete.com/mc/bnf/current.
+2. BNFC Online. British National Formulary for Children 2020; https://www.medicinescomplete.com/#/browse/bnfc.
+3. GOV.UK Guidance. Valproate use by women and girls 2020; https://www.gov.uk/guidance/valproate-use-by-women-and-girls.
+
+CHAPTER 5
+
+Antidepressants
+
+
+
+
+<<<PAGE 672>>>
+
+Prescribing in older people  651
+
+One RCT of valproate that included an open-label extension found it to be ineffective in controlling symptoms. Seven of the 39 patients enrolled died during the 12-week
+extension phase study period, although the deaths could not be attributed to the drug.75
+A study investigating the optimal dose of valproic acid in dementia found that whilst
+serum levels between 40μg/L and 60μg/L and relatively low doses (7–12mg/kg/day) are
+associated with improvements in agitation in some patients, similar levels produced no
+significant improvements in others and led to substantial side effects.76 A 2009 Cochrane
+review of valproate for the treatment of agitation in dementia found no evidence of
+efficacy but advocated the need for further research into its use in dementia.77 Valproate
+does not delay emergence of agitation in dementia.78 Literature reviews of antiseizure
+medication in non-cognitive symptoms of dementia found that valproate, oxcarbazepine and lithium showed low or no evidence of efficacy and that more RCTs are needed
+to strengthen the evidence for gabapentin, topiramate and lamotrigine.74
+Preliminary low-grade evidence based on case series and case reviews suggests a possible beneﬁt of gabapentin and pregabalin in patients with BPSD in AD. Evidence in
+frontotemporal dementia is lacking.79 In a small case series, gabapentin reduced aggression among seven patients with vascular dementia or mixed vascular/AD, using daily
+doses ranging from 200mg to 600mg daily. Three of the seven patients were able to discontinue antipsychotics after gabapentin initiation; thus, it may be useful in patients with
+cardiac conditions where antipsychotics are inappropriate. Caution should be noted
+about the use of gabapentin in Lewy body dementia; dramatic worsening of neuropsychiatric symptoms has been reported after its use to treat behavioural symptoms.80
+Although clearly beneficial in some patients, antiseizure medications/mood stabilisers cannot be recommended for routine use in the treatment of the neuropsychiatric
+symptoms in dementia at present.73
+
+Melatonin and sleep disturbances in AD
+
+Evidence regarding the effectiveness of melatonin supplementation on sleep in patients
+with AD is limited. Six double-blind randomised placebo-controlled trials, mostly of
+limited sample size have been published. Although it is clear that melatonin has no significant side effects, even at high doses, the results of studies have been equivocal. Some
+studies showed beneficial effects, mainly improvement of day/night-time sleep ratio and
+decrease of nocturnal activity whilst other studies failed to demonstrate objective effectiveness.81 Non-pharmacological management of sleep disturbances using established
+sleep hygiene methods should be the first-line treatment for insomnia in dementia.82
+A 2016 Cochrane review83 of pharmacotherapies for sleep disturbances in dementia
+found no RCTs of many drugs that are widely prescribed for sleep problems in dementia,
+including the benzodiazepine and non-benzodiazepine hypnotics, although there is considerable uncertainty about the balance of benefits and risks associated with these common
+treatments. From the studies identified, there was no evidence that melatonin (up to 10mg)
+helped sleep problems in patients with moderate-to-severe dementia due to AD. There was
+
+CHAPTER 6
+
+Recommendation: Limited evidence to support its use – use may be justified where other
+treatments are contraindicated or ineffective. Valproate is best avoided.
+
+
+
+
+<<<PAGE 686>>>
+
+Insomnia – short-term use (up
+to 13 weeks)
+
+Generalised anxiety disorder
+Dose adjustment based on renal
+function (see product
+information)25
+
+Insomnia (short-term use – up
+to 4 weeks)
+
+Insomnia (short-term use – up
+to 4 weeks)
+
+Melatonin
+
+Pregabalin
+
+Zolpidem
+
+Zopiclone
+
+3.75mg nocte
+
+5mg nocte
+
+Usually 25mg bd (increase by
+25mg bd weekly)
+Up to 75mg bd (if healthy and
+normal renal function)
+
+2mg (modified release) once daily
+(1–2 hours before bedtime)
+
+0.5mg daily
+
+3.75–7.5mg nocte
+
+5mg nocte
+
+Usually 150mg daily*
+Up to 150mg bd (if healthy and
+normal renal function)
+
+0.5–2mg daily*
+
+7.5mg nocte
+
+5mg nocte
+
+150–300mg/day*
+
+2mg/day
+
+*There is no specific information available in the literature for these drug doses in elderly patients – the doses stated are a guide only. Where there are no data, the
+maximum doses are conservative and may be exceeded if the drug is well tolerated and following clinician’s assessment.
+bs, bis die (twice a day); mane, morning; nocte, at night; prn, pro re nata (as required); tds, ter die sumendum (three times a day).
+
+PRN only – avoid regular use
+due to short half-life and risk of
+dependence
+
+Lorazepam
+
+
+
+
+<<<PAGE 751>>>
+
+730  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 8.5 (Continued)
+Melatonin6,85
+
+Complex handling of melatonin in liver impairment: reduced clearance and
+prolonged half-life contribute to higher circulating levels of endogenous melatonin in
+daytime hours; negative feedback and accumulation of toxic products results in
+reduced endogenous production. Relevance to dosing of exogenous melatonin is
+unclear, although toxicity of melatonin is minimal. Manufacturer recommends
+avoiding in liver disease. Rarely associated with changes in LFTs.
+
+Other psychotropics in hepatic impairment
+Table 8.6 gives a summary of other psychotropics recommended in hepatic impairment.
+Table 8.6 Other psychotropics in hepatic impairment
+Bremelanotide6
+
+No dose adjustment required in mild to moderate hepatic impairment. Use with caution
+in severe impairment; adverse effects more likely.27 One case of acute hepatitis reported.
+
+Deutetrabenazine5,19
+
+Not studied in hepatic impairment, but based on experience with tetrabenazine, use
+is contraindicated. Limited information available but clinically relevant hepatotoxicity
+not reported. Occasional asymptomatic rises in ALT.
+
+Lemborexant6,27
+
+No dose adjustment in mild impairment (risk of increased somnolence), starting and
+maximum dose of 5mg once nightly in moderate impairment, not recommended in
+severe impairment. Little experience but hepatotoxicity not reported.86
+
+Pitolisant5,27
+
+Extensively hepatically metabolised. No dose adjustment in mild impairment. In
+moderate impairment the half-life is doubled; daily dose can be increased two weeks
+after initiation, daily maximum 18mg. Contraindicated in severe impairment. Hepatic
+enzyme increases are uncommon.
+
+Solriamfetol5
+
+Not metabolised. No known problems in liver impairment, no reports of liver injury.
+
+Valbenazine6,19
+
+Hepatically metabolised pro-drug of alpha-dihydrotetrabenazine. Unlike
+deutetrabenazine, not contra-indicated in liver disease, but maximum dose of 40mg
+in moderate to severe impairment. Few data, but no reports of clinically relevant liver
+injury other than a single report of reactivation of pre-existing hepatitis C.
+
+Psychotropics in hepatic impairment
+Table 8.7 gives an outline of recommended psychotropics in hepatic impairment.
+
+CHAPTER 8
+
+Table 8.7 Psychotropics in hepatic impairment
+Drug group
+
+Recommended drugs
+
+Antipsychotics
+
+Sulpiride/amisulpride: no dosage reduction required if renal function is normal
+Paliperidone: if depot required
+
+Antidepressants
+
+Paroxetine, sertraline, citalopram, or vortioxetine: start at low dose. Titrate
+slowly (if required) as above.
+
+Mood-stabilisers
+
+Lithium: use plasma levels to guide dosage. Care needed if ascites status changes.
+
+Sedatives
+
+Lorazepam, oxazepam, temazepam: as short half-life with no active metabolites
+Use low doses with caution, as sedative drugs used in severe disease can precipitate
+hepatic encephalopathy
+Zopiclone: 3.75mg with care in moderate hepatic impairment
+
+
+
+
+<<<PAGE 873>>>
+
+852  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY1A2
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine
+Amitriptyline*
+Asenapine
+Bupropion*
+Caffeine
+Chlorpromazine
+Clomipramine*
+Clozapine
+Duloxetine
+Fluphenazine
+Fluvoxamine
+Imipramine*
+Melatonin
+Mirtazapine*
+Olanzapine
+Perphenazine
+?Pimozide*
+Ramelteon
+Zolpidem*
+
+Fluvoxamine
+Moclobemide
+Perphenazine
+
+‘Barbiturates’
+Carbamazepine
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion*
+Caffeine
+Nicotine
+
+Tranylcypromine
+
+Phenobarbital
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Methadone*
+Nicotine
+Sertraline*
+
+Fluoxetine*
+Fluvoxamine
+Memantine
+Paroxetine*
+Sertraline*
+
+Carbamazepine*
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Buprenorphine*
+
+Not known
+
+Not known
+
+CYP2A6
+
+CPY2B6
+
+CYP2B7
+
+

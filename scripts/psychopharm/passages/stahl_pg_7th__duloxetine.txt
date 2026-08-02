@@ -1,0 +1,1228 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 99>>>
+
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Fluvoxamine, a CYP450 1A2 inhibitor, can decrease the conversion
+of amitriptyline to nortriptyline and increase amitriptyline plasma
+concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use of TCAs with sympathomimetic agents may increase
+sympathetic activity
+Methylphenidate may inhibit metabolism of TCAs
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of amitriptyline
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 109>>>
+
+Guaiana G , Barbui C , Hotopf M. Amitriptyline for depression . Cochrane
+Database Syst Rev 2007 ;(3):CD004186 .
+Hauser W , Petzke F , Uceyler N , Sommer C. Comparative efficacy and
+acceptability of amitriptyline, duloxetine and milnacipran in fibromyalgia
+syndrome: a systematic review with meta-analysis . Rheumatology (Oxford)
+2011 ;50 (3 ):532–43 .
+Torrente Castells E , Vazquez Delgado E , Gay Escoda C. Use of
+amitriptyline for the treatment of chronic tension-type headache. Review of
+the literature . Med Oral Patol Oral Cir Bucal 2008 ;13 (9 ):E567 –72.
+
+
+
+
+<<<PAGE 119>>>
+
+Many patients tolerate 50% dose reduction for 3 days, then another
+50% reduction for 3 days, then discontinuation
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Substrate for CYP450 2D6
+Half-life of parent drug approximately 8 hours
+
+✽ 7- and 8-hydroxymetabolites are active and possess serotonin 2A
+and dopamine 2 antagonist properties, similar to atypical
+antipsychotics
+
+✽ Amoxapine is the N-desmethyl metabolite of the conventional
+antipsychotic loxapine
+Half-life of the active metabolites approximately 24 hours
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking TCAs
+Use of TCAs/tetracyclics with anticholinergic drugs may result in
+paralytic ileus or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA/tetracyclic concentrations
+Cimetidine may increase plasma concentrations of
+TCAs/tetracyclics and cause anticholinergic symptoms
+
+
+
+
+<<<PAGE 141>>>
+
+plasma levels, so such agents can be useful to administer after an
+overdose but may also lower therapeutic efficacy of amphetamines
+Gastrointestinal alkalinizing agents (sodium bicarbonate, etc.) and
+urinary alkalinizing agents (acetazolamide, some thiazides) increase
+amphetamine plasma levels and potentiate amphetamine’s actions
+Desipramine and protryptiline can cause striking and sustained
+increases in brain concentrations of d-amphetamine and may also
+add to d-amphetamine’s cardiovascular effects
+Theoretically, other agents with norepinephrine reuptake blocking
+properties, such as venlafaxine, duloxetine, atomoxetine,
+milnacipran, and reboxetine, could also add to amphetamine’s CNS
+and cardiovascular effects
+Amphetamines may counteract the sedative effects of antihistamines
+Haloperidol, chlorpromazine, and lithium may inhibit stimulatory
+effects of amphetamines
+Theoretically, atypical antipsychotics should also inhibit stimulatory
+effects of amphetamines
+Theoretically, amphetamines could inhibit the antipsychotic actions
+of antipsychotics
+Theoretically, amphetamines could inhibit the mood-stabilizing
+actions of atypical antipsychotics in some patients
+Combinations of amphetamines with mood stabilizers (lithium,
+anticonvulsants, atypical antipsychotics) is generally something for
+
+
+
+
+<<<PAGE 163>>>
+
+Substrate for CYP450 2D6
+Drug Interactions
+May affect blood pressure and should be used cautiously with agents
+used to control blood pressure
+Gastrointestinal acidifying agents (guanethidine, reserpine, glutamic
+acid, ascorbic acid, fruit juices, etc.) and urinary acidifying agents
+(ammonium chloride, sodium phosphate, etc.) lower amphetamine
+plasma levels, so such agents can be useful to administer after an
+overdose but may also lower therapeutic efficacy of amphetamines
+Gastrointestinal alkalinizing agents (sodium bicarbonate, etc.) and
+urinary alkalinizing agents (acetazolamide, some thiazides) increase
+amphetamine plasma levels and potentiate amphetamine’s actions
+Desipramine and protryptiline can cause striking and sustained
+increases in brain concentrations of amphetamine and may also add
+to amphetamine’s cardiovascular effects
+Theoretically, other agents with norepinephrine reuptake blocking
+properties, such as venlafaxine, duloxetine, atomoxetine,
+milnacipran, and reboxetine, could also add to amphetamine’s CNS
+and cardiovascular effects
+Amphetamines may counteract the sedative effects of antihistamines
+Haloperidol, chlorpromazine, and lithium may inhibit stimulatory
+effects of amphetamines
+
+
+
+
+<<<PAGE 189>>>
+
+levels of aripiprazole
+Carbamazepine and possibly other inducers of CYP450 3A4 may
+decrease plasma levels of aripiprazole
+Quinidine and possibly other inhibitors of CYP450 2D6 such as
+paroxetine, fluoxetine, and duloxetine may increase plasma levels of
+aripiprazole
+Aripiprazole may enhance the effects of antihypertensive drugs
+Aripiprazole may antagonize levodopa, dopamine agonists
+Other Warnings/Precautions
+There have been reports of problems with impulse control in
+patients taking aripiprazole, including compulsive gambling,
+shopping, binge eating, and sexual activity; use caution when
+prescribing to patients at high risk for impulse-control problems
+(e.g., patients with bipolar disorder, impulsive personality,
+obsessive-compulsive disorder, substance use disorders) and
+monitor all patients for emergence of these symptoms; dose should
+be lowered or discontinued if impulse-control problems manifest
+Use with caution in patients with conditions that predispose to
+hypotension (dehydration, overheating)
+Atypical antipsychotics have the potential for cognitive and motor
+impairment, especially related to sedation
+Atypical antipsychotics can cause body temperature dysregulation;
+use caution in patients who may experience conditions that increase
+
+
+
+
+<<<PAGE 496>>>
+
+Inhibits CYP450 2D6
+Half-life approximately 17–28 hours
+Food does not affect absorption
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking TCAs
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or at least for 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing clomipramine
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Fluvoxamine, a CYP450 1A2 inhibitor, can decrease the conversion
+of clomipramine to desmethyl-clomipramine, and increase
+clomipramine plasma concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs
+
+
+
+
+<<<PAGE 578>>>
+
+In the presence of a strong CYP450 1A2 inhibitor (e.g.,
+fluvoxamine, ciprofloxacin): use 1/3 the dose of clozapine
+In the presence of a strong CYP450 1A2 inducer (e.g., cigarette
+smoke), clozapine plasma levels are decreased
+May need to decrease clozapine dose by up to 50% during periods
+of extended smoking cessation (>1 week)
+Strong CYP450 2D6 inhibitors (e.g., bupropion, duloxetine,
+paroxetine, fluoxetine) can raise clozapine levels; dose adjustment
+may be necessary
+Strong CYP450 3A4 inhibitors (e.g., ketoconazole) can raise
+clozapine levels; dose adjustment may be necessary
+Clozapine may enhance effects of antihypertensive drugs
+May antagonize levodopa, dopamine agonists
+Other Warnings/Precautions
+Use with caution in patients on other anticholinergic agents
+(benztropine, trihexyphenidyl, olanzapine, quetiapine,
+chlorpromazine, oxybutynin, and other antimuscarinics)
+Constipation caused by clozapine can uncommonly lead to serious
+bowel complications, so advise patients of the risk and the need to
+stay hydrated, question patients about their bowel movements
+throughout treatment, and advise them to contact a healthcare
+professional right away if they have difficulty having a bowel
+
+
+
+
+<<<PAGE 618>>>
+
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use of TCAs with sympathomimetic agents may increase
+sympathetic activity
+Methylphenidate may inhibit metabolism of TCAs
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of desipramine
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing desipramine
+Generally, do not use with MAOIs, including 14 days after MAOIs
+are stopped; do not start an MAOI for at least 5 half-lives (5 to 7
+days for most drugs) after discontinuing desipramine, but see Pearls
+
+
+
+
+<<<PAGE 733>>>
+
+Many patients tolerate 50% dose reduction for 3 days, then another
+50% reduction for 3 days, then discontinuation
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Substrate for CYP450 2D6
+Half-life approximately 14–40 hours
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking TCAs
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use of TCAs with sympathomimetic agents may increase
+sympathetic activity
+Methylphenidate may inhibit metabolism of TCAs
+
+
+
+
+<<<PAGE 756>>>
+
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use with sympathomimetic agents may increase sympathetic
+activity
+Methylphenidate may inhibit metabolism of TCAs
+Most drug interactions may be less likely at low doses (1–6 mg/day)
+due to the lack of effects on receptors other than the histamine 1
+receptors
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of doxepin
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 768>>>
+
+Duloxetine
+
+Therapeutics
+Brands
+Cymbalta
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin norepinephrine
+reuptake inhibitor (SN-RI)
+SNRI (dual serotonin and norepinephrine reuptake inhibitor); may
+be classified as an antidepressant, but it is not just an antidepressant
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive disorder
+Diabetic peripheral neuropathic pain (DPNP)
+Fibromyalgia
+Generalized anxiety disorder, acute and maintenance
+
+
+
+
+<<<PAGE 769>>>
+
+Chronic musculoskeletal pain
+Stress urinary incontinence
+Neuropathic pain/chronic pain
+Other anxiety disorders
+How the Drug Works
+Boosts neurotransmitters serotonin, norepinephrine/noradrenaline,
+and dopamine
+Blocks serotonin reuptake pump (serotonin transporter), presumably
+increasing serotonergic neurotransmission
+Blocks norepinephrine reuptake pump (norepinephrine transporter),
+presumably increasing noradrenergic neurotransmission
+Presumably desensitizes both serotonin 1A receptors and beta
+adrenergic receptors
+Since dopamine is inactivated by norepinephrine reuptake in frontal
+cortex, which largely lacks dopamine transporters, duloxetine can
+increase dopamine neurotransmission in this part of the brain
+Weakly blocks dopamine reuptake pump (dopamine transporter),
+and may increase dopamine neurotransmission
+How Long Until It Works
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks for depression
+
+
+
+
+<<<PAGE 772>>>
+
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Consider the presence of noncompliance and counsel the patient
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Augmentation experience is limited compared to other
+antidepressants and treatments for neuropathic pain
+Adding other agents to duloxetine for treating depression could
+follow the same practice for augmenting SSRIs or other SNRIs if
+done by experts while monitoring carefully in difficult cases
+Although no controlled studies and little clinical experience, adding
+other agents for treating diabetic peripheral neuropathic pain and
+fibromyalgia and neuropathic pain could theoretically include
+gabapentin, pregabalin, and tiagabine, if done by experts while
+monitoring carefully in difficult cases
+Mirtazapine (“California rocket fuel” for depression; a potentially
+powerful dual serotonin and norepinephrine combination, but
+observe for activation of bipolar disorder and suicidal ideation)
+Bupropion, reboxetine, nortriptyline, desipramine, maprotiline,
+atomoxetine (all potentially powerful enhancers of noradrenergic
+
+
+
+
+<<<PAGE 776>>>
+
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of duloxetine
+
+Dosing and Use
+Usual Dosage Range
+40–60 mg/day in 1–2 doses for depression
+60 mg once daily for diabetic peripheral neuropathic pain and
+fibromyalgia
+60 mg once daily for generalized anxiety disorder
+40 mg twice daily for stress urinary incontinence
+Dosage Forms
+Capsule 20 mg, 30 mg, 40 mg, 60 mg
+How to Dose
+
+
+
+
+<<<PAGE 779>>>
+
+Metabolized mainly by CYP450 2D6 and CYP450 1A2
+Inhibitor of CYP450 2D6 (probably clinically significant) and
+CYP450 1A2 (probably not clinically significant)
+Absorption may be delayed by up to 3 hours and clearance may be
+increased by one-third after an evening dose as compared to a
+morning dose
+Food does not affect absorption
+Drug Interactions
+Can increase TCA levels; use with caution with TCAs or when
+switching from a TCA to duloxetine
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or for at least 14 days after
+MAOIs are stopped
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing duloxetine
+Inhibitors of CYP450 1A2, such as fluvoxamine, increase plasma
+levels of duloxetine and may require a dosage reduction of
+duloxetine
+Cigarette smoking induces CYP450 1A2 and may reduce plasma
+levels of duloxetine, but dosage modifications are not recommended
+for smokers
+
+
+
+
+<<<PAGE 780>>>
+
+Inhibitors of CYP450 2D6, such as paroxetine, fluoxetine, and
+quinidine, may increase plasma levels of duloxetine and require a
+dosage reduction of duloxetine
+Via CYP450 1A2 inhibition, duloxetine could theoretically reduce
+clearance of theophylline and clozapine; however, studies of
+coadministration with theophylline did not demonstrate significant
+effects of duloxetine on theophylline pharmacokinetics
+Via CYP450 2D6 inhibition, duloxetine could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine
+Via CYP450 2D6 inhibition, duloxetine could theoretically increase
+concentrations of thioridazine and cause dangerous cardiac
+arrhythmias
+Other Warnings/Precautions
+Use with caution in patients with history of seizures
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+Rare reports of hepatotoxicity; although causality has not been
+established, duloxetine should be discontinued in patients who
+develop jaundice or other evidence of significant liver dysfunction
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+
+
+
+
+<<<PAGE 781>>>
+
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Duloxetine may increase blood pressure, so blood pressure should
+be monitored during treatment
+Do Not Use
+If patient has uncontrolled angle-closure glaucoma
+If patient has substantial alcohol use
+If patient is taking an MAOI
+If patient is taking thioridazine
+If there is a proven allergy to duloxetine
+
+Special Populations
+Renal Impairment
+
+
+
+
+<<<PAGE 782>>>
+
+Dose adjustment generally not necessary for mild to moderate
+impairment
+Not recommended for use in patients with end-stage renal disease
+(requiring dialysis) or severe renal impairment
+Hepatic Impairment
+Not to be administered to patients with any hepatic insufficiency
+Not recommended for use in patients with substantial alcohol use
+Increased risk of elevation of serum transaminase levels
+Cardiac Impairment
+Drug should be used with caution
+Duloxetine may raise blood pressure
+Elderly
+Some patients may tolerate lower doses better
+Reduction in the risk of suicidality with antidepressants compared to
+placebo in adults age 65 and older
+Children and Adolescents
+Carefully weigh the risks and benefits of pharmacological treatment
+against the risks and benefits of nontreatment with antidepressants
+and make sure to document this in the patient’s chart
+
+
+
+
+<<<PAGE 786>>>
+
+Sleep disturbance
+Anxiety
+Physical symptoms
+Pain
+Pearls
+Duloxetine has well-documented efficacy for the painful
+physical symptoms of depression
+Duloxetine has only somewhat greater potency for serotonin
+reuptake blockade than for norepinephrine reuptake blockade, but
+this is of unclear clinical significance as a differentiator from other
+SNRIs
+No head-to-head studies, but may have less hypertension than
+venlafaxine XR
+Powerful pro-noradrenergic actions may occur at doses greater than
+60 mg/day
+Not well studied in ADHD, but may be effective
+Approved in many countries for stress urinary incontinence
+Patients may have higher remission rate for depression on SNRIs
+than on SSRIs
+Add or switch to or from pro-noradrenergic agents (e.g.,
+atomoxetine, reboxetine, other SNRIs, mirtazapine, maprotiline,
+nortriptyline, desipramine, bupropion) with caution
+
+
+
+
+<<<PAGE 787>>>
+
+Add or switch to or from CYP450 2D6 substrates with caution (e.g.,
+atomoxetine, maprotiline, nortriptyline, desipramine)
+Mechanism of action as SNRI suggests it may be effective in some
+patients who fail to respond to SSRIs
+
+Suggested Reading
+Arnold LM , Pritchett YL , D’Souza DN , et al. Duloxetine for the
+treatment of fibromyalgia in women: pooled results from two randomized,
+placebo-controlled trials . J Womens Health (Larchmt) 2007 ;16 (8 ):1145 –
+56.
+Bymaster FP , Dreshfield-Ahmad LJ , Threlkeld PG , et al. Comparative
+affinity of duloxetine and venlafaxine for serotonin and norepinephrine
+transporters in vitro and in vivo, human serotonin receptor subtypes, and
+other neuronal receptors . Neuropsychopharmacology 2001 ;25 (6 ):871–80
+.
+Hartford J , Kornstein S , Liebowitz M , et al. Duloxetine as an SNRI
+treatment for generalized anxiety disorder: results from placebo and activecontrolled trial . Int Clin Psychopharmacol 2007 ;22 (3 ):167–74 .
+Muller N , Schennach R , Riedel M , Moller HJ . Duloxetine in the
+treatment of major psychiatric and neuropathic disorders . Expert Rev
+Neurother 2008 ;8 (4 ):527–36 .
+
+
+
+
+<<<PAGE 788>>>
+
+Zinner NR . Duloxetine: a serotonin-noradrenaline re-uptake inhibitor for
+the treatment of stress urinary incontinence . Expert Opin Investig Drugs
+2003 ;12 (9 ):1559 –66.
+
+
+
+
+<<<PAGE 1071>>>
+
+Metabolized by CYP450 2D6 and 3A4
+Food does not affect absorption
+Drug Interactions
+May increase effects of antihypertensive agents
+May antagonize levodopa, dopamine agonists
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+Inhibitors of CYP450 2D6 (e.g., paroxetine, fluoxetine, duloxetine,
+quinidine) may increase plasma levels of iloperidone and require a
+dosage reduction by one-half of iloperidone
+Inhibitors of CYP450 3A4 (e.g., nefazodone, fluvoxamine,
+fluoxetine, ketoconazole) may increase plasma levels of iloperidone
+and require a dosage reduction by one-half of iloperidone
+Other Warnings/Precautions
+Use with caution in patients with conditions that predispose to
+hypotension (dehydration, overheating)
+Atypical antipsychotics have the potential for cognitive and motor
+impairment, especially related to sedation
+Atypical antipsychotics can cause body temperature dysregulation;
+use caution in patients who may experience conditions that increase
+body temperature (e.g., strenuous exercise, saunas, extreme heat,
+dehydration, or concomitant anticholinergic medication)
+
+
+
+
+<<<PAGE 1091>>>
+
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Fluvoxamine, a CYP450 1A2 inhibitor, can decrease the conversion
+of imipramine to desmethylimipramine (desipramine) and increase
+imipramine plasma concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use with sympathomimetic agents may increase sympathetic
+activity
+Methylphenidate may inhibit metabolism of TCAs
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of imipramine
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing imipramine
+
+
+
+
+<<<PAGE 1106>>>
+
+Over-the-counter medications to avoid include cough and cold preparations, including those containing
+dextromethorphan (serotonin reuptake inhibitor), nasal decongestants (tablets, drops, or spray), hay-fever
+medications, sinus medications, asthma inhalant medications, anti-appetite medications, weight reducing
+preparations, “pep” pills (see Table 3 after Pearls)
+Hypoglycemia may occur in diabetic patients receiving insulin or oral antidiabetic agents (hydrazine effect)
+Binds and inactivates vitamin B6 (hydrazine effect); reversible with high-dose B6 administration
+Use cautiously in patients receiving reserpine, anesthetics, disulfiram, metrizamide, anticholinergic agents
+Isocarboxazid is not recommended for use in patients who cannot be monitored closely
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is taking dextromethorphan, a serotonin reuptake inhibitor
+If patient is taking diuretics or other antihypertensives without careful monitoring of blood pressure
+If patient has pheochromocytoma
+If patient has cardiovascular or cerebrovascular disease, until cleared by the patient’s medical doctor
+If patient is taking a prohibited drug
+If patient is not compliant with a low-tyramine diet
+If there is a proven allergy to isocarboxazid
+
+Special Populations
+Renal Impairment
+Use with caution –drug may accumulate in plasma
+May require lower than usual adult dose
+Hepatic Impairment
+Use cautiously in hepatic impairment
+Cardiac Impairment
+
+
+
+
+<<<PAGE 1198>>>
+
+May affect blood pressure and should be used cautiously with agents
+used to control blood pressure
+Gastrointestinal acidifying agents (guanethidine, reserpine, glutamic
+acid, ascorbic acid, fruit juices, etc.) and urinary acidifying agents
+(ammonium chloride, sodium phosphate, etc.) lower amphetamine
+plasma levels, so such agents can be useful to administer after an
+overdose but may also lower therapeutic efficacy of amphetamines
+Gastrointestinal alkalinizing agents (sodium bicarbonate, etc.) and
+urinary alkalinizing agents (acetazolamide, some thiazides) increase
+amphetamine plasma levels and potentiate amphetamine’s actions
+Desipramine and protryptiline can cause striking and sustained
+increases in brain concentrations of d-amphetamine and may also
+add to d-amphetamine’s cardiovascular effects
+Theoretically, other agents with norepinephrine reuptake blocking
+properties, such as venlafaxine, duloxetine, atomoxetine,
+milnacipran, and reboxetine, could also add to amphetamine’s CNS
+and cardiovascular effects
+Amphetamines may counteract the sedative effects of antihistamines
+Haloperidol, chlorpromazine, and lithium may inhibit stimulatory
+effects of amphetamine
+Theoretically, atypical antipsychotics should also inhibit stimulatory
+effects of amphetamines
+Theoretically, amphetamines could inhibit the antipsychotic actions
+of antipsychotics
+
+
+
+
+<<<PAGE 1237>>>
+
+Even with gradual dose reduction some withdrawal symptoms may
+appear within the first 2 weeks
+Many patients tolerate 50% dose reduction for 3 days, then another
+50% reduction for 3 days, then discontinuation
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Substrate for CYP450 2D6
+Half-life of parent compound approximately 1.5–6 hours
+
+✽ Major metabolite is the antidepressant desipramine, with a half-life
+of approximately 24 hours
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking TCAs
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+
+
+
+
+<<<PAGE 1364>>>
+
+Even with gradual dose reduction some withdrawal symptoms may
+appear within the first 2 weeks
+Many patients tolerate 50% dose reduction for 3 days, then another
+50% reduction for 3 days, then discontinuation
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Substrate for CYP450 2D6
+Mean half-life approximately 51 hours
+Peak plasma concentration 8–24 hours
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking TCAs
+Use of TCAs/tetracyclics with anticholinergic drugs may result in
+paralytic ileus or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA/tetracyclic concentrations
+Cimetidine may increase plasma concentrations of
+TCAs/tetracyclics and cause anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA/tetracyclic blood
+concentrations
+
+
+
+
+<<<PAGE 1408>>>
+
+monitor depressed patients closely when other treatment options for
+depression fail
+CNS and cardiovascular actions of d-methylphenidate could
+theoretically be enhanced by combination with agents that block
+norepinephrine reuptake, such as the TCAs desipramine or
+protriptyline, venlafaxine, duloxetine, atomoxetine, milnacipran,
+and reboxetine
+Theoretically, antipsychotics should inhibit the stimulatory effects of
+d-methylphenidate
+Theoretically, d-methylphenidate could inhibit the antipsychotic
+actions of antipsychotics
+Theoretically, d-methylphenidate could inhibit the mood-stabilizing
+actions of atypical antipsychotics in some patients
+Combinations of d-methylphenidate with mood stabilizers (lithium,
+anticonvulsants, atypical antipsychotics) is generally something for
+experts only, when monitoring patients closely and when other
+options fail
+Antacids or acid suppressants could alter the release of extendedrelease formulation
+Other Warnings/Precautions
+Use with caution in patients with any degree of hypertension,
+hyperthyroidism, or history of drug abuse
+
+
+
+
+<<<PAGE 1431>>>
+
+First-pass metabolism is not extensive with transdermal dosing, thus
+resulting in notably higher exposure to methylphenidate and lower
+exposure to metabolites as compared to oral dosing
+Drug Interactions
+May affect blood pressure and should be used cautiously with agents
+used to control blood pressure
+May inhibit metabolism of SSRIs, anticonvulsants (phenobarbital,
+phenytoin, primidone), TCA, and coumarin anticoagulants,
+requiring downward dosage adjustments of these drugs
+Serious adverse effects may occur if combined with clonidine
+(controversial)
+Use with MAOIs, including within 14 days of MAOI use, is not
+advised, but this can sometimes be considered by experts who
+monitor depressed patients closely when other treatment options for
+depression fail
+CNS and cardiovascular actions of d,l-methylphenidate could
+theoretically be enhanced by combination with agents that block
+norepinephrine reuptake, such as the TCAs desipramine or
+protriptyline, venlafaxine, duloxetine, atomoxetine, milnacipran,
+and reboxetine
+Theoretically, antipsychotics should inhibit the stimulatory effects of
+d,l-methylphenidate
+
+
+
+
+<<<PAGE 1506>>>
+
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phente
+
+Pseudoephedrine
+
+MethylphenidateCocaineMethamphetamineModafinilArmodafinil
+
+NRIsNDRIs
+
+Local a
+contain
+vasoco
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is in an acute confusional state
+If patient has pheochromocytoma or thyrotoxicosis
+If there is a proven allergy to moclobemide
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Plasma concentrations are increased
+May require one-half to one-third of usual adult dose
+Cardiac Impairment
+Cardiac impairment may require lower than usual adult dose
+Patients with angina pectoris or coronary artery disease should limit their exertion
+Elderly
+Elderly patients may have greater sensitivity to adverse effects, but many tolerate MAOIs
+
+
+
+
+<<<PAGE 1605>>>
+
+Tramadol increases the risk of seizures in patients taking TCAs
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations and cause side
+effects including dangerous arrhythmias
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use of TCAs with sympathomimetic agents may increase
+sympathetic activity
+Methylphenidate may inhibit metabolism of TCAs
+Nortriptyline may raise plasma levels of dicumarol
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of nortriptyline
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 1775>>>
+
+** Not necessary for 6 mg transdermal or low-dose oral selegiline
+Table 3. Drugs that boost norepinephrine: should only be used with caution
+with MAOIs
+Use With Caution:
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phentermine
+
+Pseudoephedrine
+
+Methylphenidate
+Cocaine
+Methamphetamine
+Modafinil
+Armodafinil
+
+NRIs NDRIs
+
+Local
+anesthetics
+containing
+vasoconstrictors
+Tapentadol
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake
+inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g.,
+SSRIs, tramadol, milnacipran, duloxetine, venlafaxine, clomipramine,
+imipramine, etc.)
+
+
+
+
+<<<PAGE 1900>>>
+
+Tramadol increases the risk of seizures in patients taking TCAs
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other 2D6
+inhibitors may increase TCA concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anti-cholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use with sympathomimetic agents may increase sympathetic
+activity
+Methylphenidate may inhibit metabolism of TCAs
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of protriptyline
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing protriptyline
+
+
+
+
+<<<PAGE 2041>>>
+
+Table 3. Drugs that boost norepinephrine: should only be used with caution
+with MAOIs
+Use With Caution:
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phentermine
+
+Pseudoephedrine
+
+Methylphenidate
+Cocaine
+Methamphetamine
+Modafinil
+Armodafinil
+
+NRIs NDRIs
+
+Local
+anesthetics
+containing
+vasoconstrictors
+Tapentadol
+
+Do Not Use
+If patient is taking meperidine (pethidine) (a serotonin reuptake
+inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g.,
+SSRIs, tramadol, milnacipran, duloxetine, venlafaxine, clomipramine,
+imipramine, etc.)
+If patient is taking dextromethorphan (a serotonin reuptake inhibitor)
+
+
+
+
+<<<PAGE 2058>>>
+
+No
+How to Stop
+Down-titration, especially when simultaneously beginning a new
+antipsychotic while switching (i.e., cross-titration)
+Rapid discontinuation could theoretically lead to rebound psychosis
+and worsening of symptoms
+Pharmacokinetics
+Terminal half-life approximately 3 days
+Extensively metabolized by CYP450 2D6 and 3A
+Drug Interactions
+May increase effects of antihypertensive agents
+May antagonize levodopa, dopamine agonists
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+Inhibitors of CYP450 2D6 (e.g., paroxetine, fluoxetine, duloxetine,
+quinidine) may significantly increase plasma levels of sertindole and
+require a dosage reduction of sertindole
+Inhibitors of CYP450 3A (e.g., nefazodone, fluvoxamine,
+fluoxetine, ketoconazole) can increase plasma levels of sertindole
+and concomitant use of these agents with sertindole is
+contraindicated
+
+
+
+
+<<<PAGE 2099>>>
+
+Consider an alternative treatment
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Sodium oxybate is itself often used as an augmenting therapy to
+stimulants, modafinil, or armodafinil for excessive sleepiness in
+narcolepsy
+
+✽ The majority of patients taking sodium oxybate in clinical trials for
+narcolepsy and cataplexy were taking a concomitant stimulant
+Often used as an augmenting agent for fibromyalgia with SNRIs
+(e.g., duloxetine, milnacipran) and alpha 2 delta ligands (e.g.,
+gabapentin, pregabalin), but has not been well studied in
+combination with these agents
+Tests
+None for healthy individuals
+
+Side effects
+How Drug Causes Side Effects
+Unknown
+CNS side effects presumably due to excessive CNS actions on
+various neurotransmitter systems
+
+
+
+
+<<<PAGE 2179>>>
+
+Rapid discontinuation may lead to rebound psychosis and worsening
+of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after thioridazine is discontinued
+Pharmacokinetics
+Metabolized by CYP450 2D6
+Drug Interactions
+May decrease the effects of levodopa, dopamine agonists
+May increase the effects of antihypertensive drugs
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+
+✽ CYP450 2D6 inhibitors including paroxetine, fluoxetine,
+duloxetine, bupropion, sertraline, citalopram, and others can raise
+thioridazine to dangerous levels
+
+✽ Fluvoxamine, propranolol, and pindolol also inhibit thioridazine
+metabolism and can raise thioridazine to dangerous levels
+Respiratory depression/arrest may occur if used with a barbiturate
+Additive effects may occur if used with CNS depressants
+Alcohol and diuretics may increase the risk of hypotension;
+epinephrine may lower blood pressure
+
+
+
+
+<<<PAGE 2346>>>
+
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Substrate for CYP450 2D6, 2C19, and 2C9
+Half-life approximately 7–23 hours
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking TCAs
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use with sympathomimetic agents may increase sympathetic
+activity
+Methylphenidate may inhibit metabolism of TCAs
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+
+
+
+
+<<<PAGE 2442>>>
+
+Augmentation experience is limited compared to other
+antidepressants
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (use
+combinations of antidepressants with caution as this may activate
+bipolar disorder and suicidal ideation)
+Use with caution with antidepressants that are CYP450 2D6
+inhibitors (e.g., bupropion, duloxetine, fluoxetine, paroxetine), as
+these agents will increase vortioxetine levels and may require a dose
+reduction of vortioxetine
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin,
+pregabalin, or tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+
+
+
+<<<PAGE 2579>>>
+
+Concerta (d,l-methylphenidate), 487
+Concordin (protriptyline), 657
+Concordine (protriptyline), 657
+Consta (risperidone), 687
+Contemnol (lithium), 415
+Contrave (naltrexone/bupropion), 541
+Control (lorazepam), 437
+Convulex (valproate), 829
+Convulsofin (valproate), 829
+Cosmopril (selegiline), 705
+Cotempla XR-ODT (d, l-methylphenidate), 487
+cyamemazine, 201
+Cymbalta (duloxetine), 263
+Cytomel (triiodothyronine), 813
+Dalcipran (milnacipran), 503
+Dalmadorm (flurazepam), 321
+Dalmane (flurazepam), 321
+Dalparan (zolpidem), 871
+Dapotum (fluphenazine), 313
+Dapotum Acutum (fluphenazine), 313
+Dapotum D (fluphenazine), 313
+Dapotum Depot (fluphenazine), 313
+Daprimen (amitriptyline), 25
+Darkene (flunitrazepam), 297
+Darleton (sulpiride), 741
+Daytrana (d, l-methylphenidate), 487
+Dayvigo (lemborexant), 395
+Decafen (fluphenazine), 313
+
+

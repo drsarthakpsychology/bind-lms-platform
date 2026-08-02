@@ -1,0 +1,583 @@
+<<<PAGE 78>>>
+
+66
+
+A Short Textbook of Psychiatry
+Table 5.7: Antipsychotic Dose in Schizophrenia
+
+Drug
+
+Oral Dose Range
+(mg/day)
+
+Parenteral Dose
+(mg/day)
+
+Equivalent Oral Dose*
+(Equal to 100 mg CPZ)
+
+A. Typical/Traditional/First Generation Antipsychotics
+1. Chlorpromazine (CPZ)
+300-1000
+50-100 IM
+100
+2. Flupentixol
+3-18
+—
+2
+3. Haloperidol
+5-30
+5-10 IM
+2-3
+4. Loxapine
+25-250
+—
+10
+5. Pimozide
+4-12
+—
+2
+6. Prochlorperazine
+45-150
+40-80 IM
+15
+7. Sulpiride
+400-2400
+—
+200
+8. Thioridazine
+300-600
+—
+100
+9. Trifluoperazine
+15-50
+1-5 IM
+5
+10. Triflupromazine
+100-400
+30-60 IM
+25
+11. Zuclopenthixol
+25-150
+50-100 IM
+25
+B. Atypical/Second Generation Antipsychotics
+12. Amisulpride
+400-1200
+—
+—
+13. Aripiprazole
+5-30
+5.25-15 IM
+—
+14. Clozapine
+50-900
+—
+50
+15. Olanzapine
+5-20
+2.5-10 IM
+2-3
+16. Paliperidone
+3-12
+—
+—
+17. Quetiapine
+150-800
+—
+50-100
+18. Risperidone
+2-16
+—
+0.5-1.0
+19. Ziprasidone
+40-160
+—
+20
+20. Zotepine
+75-300
+—
+—
+*Equivalent doses are at best approximations only. The dose in a particular patient should be chosen on an individualised basis by the treating professional.
+
+aripiprazole, and ziprasidone, are more commonly
+used than the older typical (or first generation) antipsychotics such as trifluoperazine and haloperidol, in
+acute stages. Atypical antipsychotics are also more
+useful when negative symptoms are prominent, e.g.
+in chronic schizophrenia.
+Clozapine, another atypical antipsychotic, is
+available in the Indian market. The clinical trials have
+shown that clozapine is effective in about 30% of
+patients who had no beneficial response to traditional
+(typical and atypical) antipsychotics. It is an effective
+drug; however, as it can cause agranulocytosis and
+seizures as side-effects, it should be used with caution,
+with regular WBC and neutrophil counts as advised
+by the Summary of Product Characteristics (SPC).
+
+Drug treatment is usually administered in the
+outpatient setting as:
+1. There are very few number of psychiatric beds in
+India,
+2. Majorities of families are willing to care for the
+patients at home, and
+3. Majority of patients do not require hospitalisation.
+However, hospitalisation is indicated if there is:
+1. Neglect of food and water intake,
+2. Danger to self or others,
+3. Poor treatment adherence,
+4. Significant neglect of self-care, or
+5. Lack of social support with evidence of abovementioned risks.
+
+
+
+
+<<<PAGE 187>>>
+
+Psychopharmacology
+
+Steady state plasma levels are usually reached in
+5-10 days. Once the drug is withdrawn, it may remain
+in body for many days to many months. The main metabolic pathway is through liver (hepatic microsomal
+enzymes). Oxidation and conjugation are the most
+important methods of metabolism for phenothiazines.
+Many of the metabolites, such as mesoridazine (for
+thioridazine), reduced haloperidol (for haloperidol)
+and 9-hydroxy-risperidone (for risperidone), are also
+active compounds. Chlorpromazine has more than 150
+metabolites, some of which are active. The excretion
+of the metabolites is through kidneys and liver (enterohepatic circulation).
+Most of the antipsychotics tend to have a therapeutic window. If the blood level is below this ‘window’,
+the drug is ineffective. If the blood level is higher than
+the upper limit of the ‘window’, there is toxicity or
+the drug is again ineffective.
+
+Classification
+A classification of currently available antipsychotic
+drugs is presented in Table 15.2.
+
+Mechanism of Action
+The exact mechanism of action of antipsychotics is
+unknown. However, one of the major mechanisms
+appears to be antidopaminergic activity of these drugs.
+Antipsychotic drugs block D2-receptors, which are
+mainly present in mesolimbic-mesocortical system
+(mesolimbic system is concerned with emotional reactions), nigro-striatal system and tubero-infundibular
+system. The relative potencies of these drugs in competing for D2-receptors parallel quite closely their
+clinical potencies.
+It is currently believed that antipsychotic drugs
+are effective in treating psychosis due to their action on the D2-receptors located in the mesolimbic
+system whilst extrapyramidal side-effects (EPSE)
+are caused by blockade of D2-receptors situated in
+nigro-striatal system and hyperprolactinaemia is
+caused by D2-blockade in tubero-infundibular system.
+However, other neurotransmitters (such as 5-HT, acetylcholine) are clearly implicated (see below; atypical
+antipsychotics). Sedation is caused by histaminergic
+
+175
+
+blockade which is usually highest for drugs such as
+chlorpromazine and thioridazine.
+
+Second Generation Antipsychotics
+A search for an antipsychotic drug which acts only
+on the mesolimbic system but has no effect on nigrostriatal or tubero-infundibular systems, has led to the
+development of a heterogeneous group of drugs collectively known as atypical or newer antipsychotics.
+These are also known as second generation antipsychotics (SGAs) or serotonin-dopamine antagonists
+or (SDAs). These include risperidone, quetiapine,
+olanzapine, amisulpride, paliperidone, zotepine,
+ziprasidone and aripiprazole.
+By definition these drugs are effective antipsychotics without theoretically producing undesirable
+extrapyramidal side-effects (i.e. antipsychotics without neuroleptic effect), or causing elevation of serum
+prolactin levels. These are characterised by a selective
+limbic dopamine blockade, D4-receptor blockade, or
+a combination of potent 5-HT2 and weak D2 antagonism. These drugs should theoretically be safer with
+lesser incidence of serious side-effects such as tardive
+dyskinesia and neuroleptic malignant syndrome.
+Clozapine is one such drug but it can cause
+agranulocytosis and seizures. Risperidone, olanzapine,
+quetiapine, aripiprazole, amisulpride and ziprasidone
+are currently being used widely as atypical antipsychotics, while paliperidone and zotepine are also
+available in the international market.
+Atypical antipsychotics, in addition to their effect
+on positive symptoms, are believed to be effective
+in treatment of negative symptoms (such as apathy,
+decreased sociality, anhedonia) of chronic schizophrenia. Clozapine in particular is effective in management
+of treatment-resistant schizophrenia. However, there
+is need for close haematological monitoring for
+neutropenia or agranulocytosis as suggested in SPC
+of the drug.
+
+Side Effects
+The antipsychotics are safe drugs with a high therapeutic index and wide margin of safety in routine
+clinical dosages. In spite of this safety, a wide range
+
+
+
+
+<<<PAGE 189>>>
+
+Psychopharmacology
+Contd...
+Drugs
+
+Oral Dose
+(mg/d)
+
+C. Benzisoxales
+1. Iloperidone
+4-24
+2. Paliperidone
+3-12
+3. Risperidone
+2-8
+D. Benzisothiazolyl
+1. Ziprasidone
+40-160
+E. Thienobenzodiazepine
+1. Olanzapine
+5-20
+F. Dibenzothiazepine
+1. Quetiapine
+150-750
+G. Partial Agonists
+1. Aripiprazole
+5-30
+2. Bifeprunox
+20
+H. Dibenzothiepin
+1. Zotepine
+75-300
+I. Dibenzooxepinopyrrole
+1. Asenapine
+5-10
+
+177
+
+#
+
+Parenteral
+Dose (mg)
+
+Sedation
+
+Some Common Adverse Effects**
+Hypotension
+EPSE* Weight
+Gain
+
+Increased
+Prolactin
+
+____
+____
+____
+
+0
++
++
+
++
+++
+++
+
++
++
++
+
+++
+++
+++
+
+0
++++
++++
+
+____
+
+±
+
++
+
+0
+
+±
+
+±
+
+2.5-10 IM
+
+++
+
++
+
+±
+
++++
+
++
+
+____
+
+++
+
+±
+
+0
+
+++
+
+0
+
+____
+____
+
+0
+0
+
+0
+0
+
+0
+0
+
+±
+±
+
+0
+0
+
+____
+
+++
+
+±
+
++
+
+++
+
+++
+
+____
+
+0
+
+±
+
+0
+
+±
+
+0
+
+#
+
+The estimate of common adverse effects in this table is a very rough and empirical guideline to the clinical use of
+antipsychotics. The drug dosage in each patient needs to be individualised based on the clinical symptoms, their
+severity, response to treatment and several other clinical factors.
+* EPSE means Extrapyramidal side effects.
+** 0 = Absent; ± = Probable/Very little; + = Mild; ++ = Moderate; +++ = Severe
+
+of side-effects do occur with the use of antipsychotics
+even in the therapeutic doses.
+The common side-effects are listed in Table 15.3
+with their mechanisms of causation and management.
+Some of newer antipsychotics appear to have a higher
+association with metabolic syndrome (see Chapter 5
+and Table 15.3).
+It is important to monitor physical health whilst
+prescribing antipsychotics and the following are the
+most commonly recommended minimum suggestions.
+Other investigations may also be indicated (such as
+ECG, HbA1c) based on clinical opinion.
+Baseline (before prescribing): Obtaining detailed
+personal and family history, Weight, BMI, Waist
+circumference, Blood pressure, WBC and Neutrophil
+count, Fasting blood sugar, Serum lipids, and LFTs.
+
+After 1 month: Weight, BMI, Blood pressure, Waist
+circumference, and Fasting blood sugar.
+After 3 months: Weight, BMI, Blood pressure, Waist
+circumference, and Fasting blood sugar.
+After 6 months: Weight, BMI, Blood pressure, Waist
+circumference, Fasting blood sugar, Serum lipids,
+and LFTs.
+After 12 months: Weight, BMI, Blood pressure, Waist
+circumference, Fasting blood sugar, and Serum lipids.
+Several antipsychotics can increase QTc interval
+(QT interval corrected for heart rate). These include
+sertindole, haloperidol, pimozide, ziprasidone, zotepine, quetiapine, or any intravenously administered
+antipsychotic. A similar effect is seen with administration of TCAs. QTc prolongation can be made worse
+with co-prescribed medications (e.g. anti-arrhythmics
+
+
+
+
+<<<PAGE 270>>>
+
+258
+
+A Short Textbook of Psychiatry
+
+NMDA 52
+antagonist 26
+NMHP 236
+NMS 87
+Nonorganic
+dyspareunia 130
+vaginismus 130
+Non-REM sleep 133
+Norepinephrine 75
+Normal
+aging process 23
+child development 153
+mental health 1
+Nuclear schizophrenia 58
+Nymphomania 127
+
+Orgasmic disorders/dysfunctions 128
+Othello syndrome 84
+Other
+acute predominantly delusional psychotic disorders 86
+biological methods of treatment 199
+organic mental disorders 28
+psychiatric emergencies 228
+Oxazepam 26
+Oxcarbazepine 79
+
+O
+Obesity 144
+Obsessions 12, 95-97, 168
+Obsessive
+compulsive
+disorder 76, 95
+personality disorder 118
+symptoms 169
+rumination 96
+Occupational history 9
+Oculocephalic reflex 226
+Oedipus complex 211
+Olanzapine 28-30, 66, 168
+Oneiroid schizophrenia 60
+Operant conditioning 215
+model 214
+Opiate antagonists 132
+Opioid
+antagonists 45
+derivatives 43
+use disorders 42
+Opium and Revenue Laws Act, 1950 233
+Oppositional defiant disorder 167
+Organic
+amnestic syndrome 27, 39
+anxiety 90
+disorder 30, 91
+catatonic disorder 29
+delusional disorder 29
+dissociative disorder 32
+emotionally labile disorder 32
+hallucinosis 28
+mood disorder 30, 72
+personality disorder 31
+sexual disorder 132
+stupor 225, 226
+
+P
+PAD syndrome 81
+Paedophilia 126
+Palilalia 168
+Paliperidone 66
+Pananxiety 60
+Panic disorder 90, 93, 228
+Pan-neurosis 60
+Pansexuality 60
+Papaverine 132
+Papez circuit 204
+Paranoid
+disorder 83, 84
+personality disorder 58, 84, 114
+schizophrenia 58, 61, 84
+Paraphasias 56
+Paraphilias 124
+Parental counselling 165
+Parkinsonian symptoms 26
+Parsi Marriage and Divorce Act 230
+Passive-aggressive personality disorder
+118
+Pathological
+grief reaction 151
+intoxication 33, 37
+laughter and crying 30
+Pavor nocturnus 140
+Pedigree chart 7
+Peduncular hallucinosis 28
+Penis envy 211
+Pentothal/amytal/diazepam interview 225
+Perinatal history 9
+Periodic limb movement disorder 136
+Pernicious catatonia 59
+Perpetuating and/or relieving factors 6
+Perplexity 56
+Perseveration 56
+Persistent
+delusional disorders 83
+mood disorder 73
+somatoform pain disorder 109
+
+Personality
+disorders 113
+traits 113
+Persons with Disability Act 161
+Pfropf schizophrenia 61
+Phallic phase 211
+Phencyclidine use disorder 52
+Phenelzine 95
+Phenylalanine 158
+Phenylketonuria 157
+Phobia 92
+Phobic
+anxiety-depersonalisation syndrome
+81
+companion 93
+disorder 92
+Phonological disorder 163
+Phototherapy 82
+Physical causes of male erectile disorder/
+impotence 128
+Physiology of hyperventilation syndrome
+107
+Physostigmine 227
+Piblokto 110, 111
+Pickwickian syndrome 139
+Pimozide 66, 85, 169
+Polysomnography 135, 137
+Poor drug concordance 181
+Positive
+reinforcement 215
+symptoms 62
+Possession hysteria 102
+Post-cardiac surgery delirium 149
+Post-natal blues 145
+Postpartum
+psychiatric disorders 145
+psychosis 145
+Post-schizophrenic depression 60
+Post-traumatic stress disorder 112
+Poverty of
+ideation 56
+speech 56, 62
+Pranayama 92, 219
+Predisposing factors 6, 20
+in delirium 21
+Prefrontal lobotomy 203
+Pregabalin 198
+Premature ejaculation 130, 131
+Premenstrual
+syndrome 108
+tension 108
+Premorbid
+histrionic personality traits 103
+personality 10
+
+

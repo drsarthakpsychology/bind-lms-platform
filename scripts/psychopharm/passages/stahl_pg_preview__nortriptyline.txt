@@ -1,0 +1,349 @@
+<<<PAGE 9>>>
+
+73.
+74.
+75.
+76.
+77.
+78.
+79.
+80.
+81.
+82.
+83.
+84.
+85.
+86.
+87.
+88.
+89.
+90.
+91.
+92.
+93.
+94.
+95.
+96.
+97.
+98.
+99.
+100.
+101.
+102.
+103.
+104.
+105.
+106.
+107.
+108.
+109.
+110.
+111.
+
+lithium
+429
+lofepramine435
+lofexidine441
+loflazepate
+445
+lorazepam
+451
+loxapine
+457
+lumateperone
+465
+lurasidone
+473
+maprotiline
+481
+memantine489
+methylfolate (l)
+493
+methylphenidate (d)
+497
+methylphenidate (d,l)
+503
+mianserin
+511
+midazolam515
+milnacipran
+519
+mirtazapine
+525
+moclobemide
+531
+modafinil
+537
+molindone
+543
+nalmefene549
+naltrexone
+553
+naltrexone–bupropion
+557
+nefazodone563
+nortriptyline
+569
+olanzapine
+577
+olanzapine–samidorphan
+587
+oxazepam
+595
+oxcarbazepine
+601
+paliperidone
+607
+paroxetine
+619
+perospirone627
+perphenazine
+633
+phenelzine
+639
+phentermine–topiramate
+645
+pimavanserin
+651
+pimozide
+655
+pipothiazine
+661
+pitolisant
+667
+vii
+
+
+
+
+<<<PAGE 45>>>
+
+(continued) AMITRIPTYLINE
+
+Sedation
+
+Overdose
+
+• Many experience and/or can be significant
+in amount
+• Tolerance to sedative effects may develop
+with long-term use
+
+• Death may occur; CNS depression,
+convulsions, cardiac dysrhythmias, severe
+hypotension, ECG changes, coma
+
+Long-Term Use
+• Safe
+
+What to Do About Side Effects
+
+Habit Forming?
+
+• Wait
+• Wait
+• Wait
+• Lower the dose
+• Switch to an SSRI or newer antidepressant
+
+How to Stop
+
+Best Augmenting Agents for Side
+Effects
+• Many side effects cannot be improved with
+an augmenting agent
+
+DOSING AND USE
+Usual Dosage Range
+• 50–150 mg/day
+
+Dosage Forms
+• Tablet 10 mg, 25 mg, 50 mg, 75 mg, 100
+mg, 150 mg
+
+How to Dose
+• Initial 25 mg/day at bedtime; increase by
+25 mg every 3–7 days
+• 75 mg/day in divided doses; increase to
+150 mg/day; maximum 300 mg/day
+
+Dosing Tips
+• If given in a single dose, should generally
+be administered at bedtime because of its
+sedative properties
+• If given in split doses, largest dose should
+generally be given at bedtime because of its
+sedative properties
+• If patients experience nightmares, split
+dose and do not give large dose at bedtime
+• Patients treated for chronic pain may only
+require lower doses
+• If intolerable anxiety, insomnia, agitation,
+akathisia, or activation occur upon either
+dosing initiation or discontinuation,
+consider the possibility of activated bipolar
+disorder, and switch to a mood stabilizer or
+an atypical antipsychotic
+
+• No
+• Taper to avoid withdrawal effects
+• Even with gradual dose reduction, some
+withdrawal symptoms may appear within
+the first 2 weeks
+• Many patients tolerate 50% dose reduction
+for 3 days, then another 50% reduction for
+3 days, then discontinuation
+• If withdrawal symptoms emerge during
+discontinuation, raise dose to stop
+symptoms and then restart withdrawal
+much more slowly
+
+Pharmacokinetics
+• Substrate for CYP2D6 and CYP1A2
+• Plasma half-life 10–28 hours
+• Metabolized to an active metabolite,
+nortriptyline, which is predominantly a
+norepinephrine reuptake inhibitor, by
+demethylation via CYP1A2
+• Food does not affect absorption
+
+Drug Interactions
+• Tramadol increases the risk of seizures in
+patients taking TCAs
+• Use of TCAs with anticholinergic drugs may
+result in paralytic ileus or hyperthermia
+• Fluoxetine, paroxetine, bupropion,
+duloxetine, and other CYP2D6 inhibitors
+may increase TCA concentrations
+• Fluvoxamine, a CYP1A2 inhibitor, can
+decrease the conversion of amitriptyline
+to nortriptyline and increase amitriptyline
+plasma concentrations
+• Cimetidine may increase plasma
+concentrations of TCAs and cause
+anticholinergic symptoms
+• Phenothiazines or haloperidol may raise
+TCA blood concentrations
+• May alter effects of antihypertensive drugs;
+may inhibit hypotensive effects of clonidine
+• Use of TCAs with sympathomimetic agents
+may increase sympathetic activity
+27
+
+
+
+
+<<<PAGE 46>>>
+
+AMITRIPTYLINE (continued)
+• Methylphenidate may inhibit metabolism
+of TCAs
+• Activation and agitation, especially
+following switching or adding
+antidepressants, may represent the
+induction of a bipolar state, especially
+a mixed dysphoric bipolar II condition
+sometimes associated with suicidal
+ideation, and require the addition of
+lithium, a mood stabilizer or an atypical
+antipsychotic, and/or discontinuation of
+amitriptyline
+
+ Other Warnings/
+Precautions
+• Add or initiate other antidepressants
+with caution for up to 2 weeks after
+discontinuing amitriptyline
+• Generally, do not use with MAOIs, including
+14 days after MAOIs are stopped; do not
+start an MAOI for at least 5 half-lives (5 to
+7 days for most drugs) after discontinuing
+amitriptyline, but see Pearls
+• Use with caution in patients with history of
+seizures, urinary retention, angle-closure
+glaucoma, hyperthyroidism
+• TCAs can increase QTc interval, especially
+at toxic doses, which can be attained not
+only by overdose but also by combining
+with drugs that inhibit TCA metabolism via
+CYP2D6, potentially causing torsade de
+pointes-type arrhythmia or sudden death
+• Because TCAs can prolong QTc interval,
+use with caution in patients who have
+bradycardia or who are taking drugs that
+can induce bradycardia (e.g., beta blockers,
+calcium channel blockers, clonidine,
+digitalis)
+• Because TCAs can prolong QTc interval,
+use with caution in patients who have
+hypokalemia and/or hypomagnesemia,
+or who are taking drugs that can induce
+hypokalemia and/or magnesemia (e.g.,
+diuretics, stimulant laxatives, intravenous
+amphotericin B, glucocorticoids,
+tetracosactide)
+• When treating children, carefully weigh
+the risks and benefits of pharmacological
+treatment against the risks and benefits
+of nontreatment with antidepressants and
+make sure to document this in the patient’s
+chart
+• Distribute the brochures provided by the
+FDA and the drug companies
+28
+
+• Whenever possible, warn patients and
+their caregivers about the possibility of
+activating side effects, and advise them to
+report such symptoms immediately
+• Monitor patients for activation of
+suicidal ideation, especially children and
+adolescents
+
+Do Not Use
+• If patient is recovering from myocardial
+infarction
+• If patient is taking agents capable of
+significantly prolonging QTc interval
+(e.g., pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin)
+• If there is a history of QTc prolongation or
+cardiac arrhythmia, recent acute myocardial
+infarction, uncompensated heart failure
+• If patient is taking drugs that inhibit TCA
+metabolism, including CYP2D6 inhibitors,
+except by an expert
+• If there is reduced CYP2D6 function,
+such as patients who are poor CYP2D6
+metabolizers, except by an expert and at
+low doses
+• If there is a proven allergy to amitriptyline
+or nortriptyline
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Use with caution; may need to lower dose
+
+Hepatic Impairment
+• Use with caution; may need to lower dose
+
+Cardiac Impairment
+• Baseline ECG is recommended
+• TCAs have been reported to cause
+arrhythmias, prolongation of conduction
+time, orthostatic hypotension, sinus
+tachycardia, and heart failure, especially in
+the diseased heart
+• Myocardial infarction and stroke have been
+reported with TCAs
+• TCAs produce QTc prolongation, which
+may be enhanced by the existence of
+bradycardia, hypokalemia, congenital or
+acquired long QTc interval, which should
+be evaluated prior to administering
+amitriptyline
+• Use with caution if treating concomitantly
+with a medication likely to produce
+prolonged bradycardia, hypokalemia,
+
+

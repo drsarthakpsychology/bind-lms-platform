@@ -1,0 +1,565 @@
+<<<PAGE 7>>>
+
+Contents
+Introduction
+List of icons
+1 acamprosate
+2 agomelatine
+3 alprazolam
+4 amisulpride
+5 amitriptyline
+6 amoxapine
+7 amphetamine (d)
+8 amphetamine (d,l)
+9 aripiprazole
+10 armodafinil
+11 asenapine
+12 atomoxetine
+13 benztropine
+14 blonanserin
+15 bremelanotide
+16 brexanolone
+17 brexpiprazole
+18 buprenorphine
+19 bupropion
+20 buspirone
+21 caprylidene
+22 carbamazepine
+23 cariprazine
+24 chlordiazepoxide
+25 chlorpromazine
+
+
+
+
+<<<PAGE 18>>>
+
+List of icons
+
+agomelatine
+
+alcohol dependence treatment
+
+alpha adrenergic blocker
+
+alpha 2 agonist
+
+anticonvulsant
+
+antiparkinson/anticholinergic
+
+benzodiazepine
+
+benzodiazepine receptor antagonist
+
+beta blocker
+
+cholinesterase inhibitor
+
+dopamine 2 antagonist
+
+
+
+
+<<<PAGE 34>>>
+
+Agomelatine
+
+Therapeutics
+Brands
+Valdoxan
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: melatonin multimodal (MelMM)
+Agonist at melatonergic 1 and melatonergic 2 receptors
+Antagonist at 5HT2C receptors
+Commonly Prescribed for
+(bold for FDA approved)
+Depression
+Generalized anxiety disorder
+How the Drug Works
+
+
+
+
+<<<PAGE 39>>>
+
+What to Do About Side Effects
+Wait
+Wait
+Stop if transaminase levels reach 3 times the upper limit of normal
+Switch to another drug
+Best Augmenting Agents for Side Effects
+Often best to try another antidepressant monotherapy prior to
+resorting to augmentation strategies to treat side effects
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Many side effects cannot be improved with an augmenting agent
+Therotically activation and agitation may represent the induction of
+a bipolar state, especially a mixed dysphoric bipolar II condition
+sometimes associated with suicidal ideation, and require the addition
+of lithium, a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of agomelatine (class warning)
+
+Dosing and Use
+Usual Dosage Range
+25–50 mg/day at bedtime
+Dosage Forms
+
+
+
+
+<<<PAGE 41>>>
+
+No need to taper dose
+Pharmacokinetics
+Half-life 1–2 hours
+Metabolized primarily by CYP450 1A2
+Drug Interactions
+Use of agomelatine with potent CYP450 1A2 inhibitors (e.g.,
+fluvoxamine) is contraindicated
+Tramadol increases the risk of seizures in patients taking an
+antidepressant (class warning)
+Other Warnings/Precautions
+Use with caution in patients with hepatic injury risk factors, such as
+obesity/overweight/non-alcoholic fatty liver disease, diabetes,
+patients who drink large quantities of alcohol and/or have alcohol
+use disorder, or who take medication associated with risk of hepatic
+injury. Doctors should ask their patients if they have ever had liver
+problems
+If symptoms or signs of potential liver injury (dark urine, lightcolored stools, yellow skin/eyes, pain in upper right belly, sustained
+new-onset and unexplained fatigue) are present, agomelatine should
+be discontinued immediately
+
+
+
+
+<<<PAGE 42>>>
+
+Use caution in patients with pretreatment elevated transaminases (>
+the upper limit of the normal range and <3 times the upper limit of
+the normal range)
+Discontinue treatment if serum transaminases increase to 3 times the
+upper limit of normal; liver function tests should be performed
+regularly until serum transaminases return to normal
+Agomelatine should be administered at bedtime
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children off label (an unapproved use), carefully
+weigh the risks and benefits of pharmacological treatment against
+the risks and benefits of nontreatment with antidepressants and
+make sure to document this in the patient’s chart
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient has hepatic impairment
+If patient has transaminase levels >3 times the upper limit of normal
+If patient is taking a potent CYP450 1A2 inhibitor (e.g.,
+fluvoxamine, ciprofloxacin)
+
+
+
+
+<<<PAGE 43>>>
+
+If patient is taking an MAO inhibitor (MAOI)
+If patient has galactose intolerance, Lapp lactase deficiency, or
+glucose-galactose malabsorption
+If there is a proven allergy to agomelatine
+
+Special Populations
+Renal Impairment
+Drug should be used with caution
+Hepatic Impairment
+Contraindicated
+Cardiac Impairment
+Dose adjustment not necessary
+Elderly
+Efficacy and safety have been established (< 75 years old)
+Dose adjustment not necessary
+Should not be used in patients age 75 years and older
+Should not be used in elderly patients with dementia
+Children and Adolescents
+
+
+
+
+<<<PAGE 44>>>
+
+Carefully weigh the risks and benefits of pharmacological treatment
+against the risks and benefits of nontreatment with antidepressants
+and make sure to document this in the patient’s chart
+Monitor patients face-to-face regularly, particularly during the first
+several weeks of treatment
+Safety and efficacy have not been established and it is not
+recommended
+Pregnancy
+Controlled studies have not been conducted in pregnant women
+Not generally recommended for use during pregnancy, especially
+during first trimester
+Must weigh the risk of treatment (first trimester fetal development,
+third trimester newborn delivery) to the child against the risk of no
+treatment (recurrence of depression, maternal health, infant
+bonding) to the mother and child
+For many patients this may mean continuing treatment during
+pregnancy
+Breast Feeding
+Unknown if agomelatine is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+Therefore, breast feeding or drug needs to be discontinued
+
+
+
+
+<<<PAGE 45>>>
+
+Immediate postpartum period is a high-risk time for depression,
+especially in women who have had prior depressive episodes, so
+drug may need to be reinstituted late in the third trimester or shortly
+after childbirth to prevent a recurrence during the postpartum period
+
+The Art of Psychopharmacology
+Potential Advantages
+Patients with lack of energy, anhedonia, anxious comorbidity, and
+sleep-wake disturbances
+Patients particularly concerned about sexual side effects or weight
+gain
+Potential Disadvantages
+Patients with hepatic impairment
+Primary Target Symptoms
+Depressed mood, anhedonia
+Functioning
+Anxiety within depression
+Pearls
+Agomelatine represents a novel approach to depression through a
+novel pharmacologic profile, agonist at melatonergic MT1 / MT2
+
+
+
+
+<<<PAGE 46>>>
+
+receptors and antagonist at 5HT2C receptors acting synergistically
+This synergy provides agomelatine with a distinctive efficacy
+profile, different from conventional antidepressants with potentially
+an early and continuous improvement over time
+Agomelatine improves anhedonia early in treatment
+Improves anxiety in major depressive disorder
+May be fewer withdrawals/discontinuations for adverse events than
+with other antidepressants
+No significant effect on cardiac parameters such as blood pressure
+and heart rate
+Some data suggest that agomelatine may be specially efficacious in
+achieving functional remission
+Agomelatine may improve sleep quality by promoting proper
+maintenance of circadian rhythms underlying a normal sleep-wake
+cycle
+
+Suggested Reading
+DeBodinat C , Guardiola-Lemaitre B , Mocaer E , et al. Agomelatine, the
+first melatonergic antidepressant: discovery, characterization, and
+development . Nat Rev Drug Discov 2010 ;9 :628–42 .
+Goodwin GM , Emsley R , Rembry S , Rouillon F. Agomelatine prevents
+relapse in patients with major depressive disorder without evidence of a
+
+
+
+
+<<<PAGE 47>>>
+
+discontinuation syndrome: a 24-week randomized, double-blind, placebocontrolled trial . J Clin Psychiatry 2009 ;70 :1128 –37.
+Kennedy SH , Avedisova A , BelaÃ¯di C , Picarel-Blanchot F , de Bodinat
+C. Sustained efficacy of agomelatine 10 mg, 25 mg, and 25–50 mg on
+depressive symptoms and functional outcomes in patients with major
+depressive disorder . A placebo-controlled study over 6 months.
+Neuropsychopharmacol 2016 ;26 (2 ):378–89 .
+Khoo AL , Zhou HJ , Teng M , et al. Network meta-analysis and costeffectiveness analysis of new generation antidepressants . CNS Drugs 2015
+;29 (8 ):695 –712 .
+Martinotti G , Sepede G , Gambi F , et al. Agomelatine versus venlafaxine
+XR in the treatment of anhedonia in major depressive disorder: a pilot study
+. J Clin Psychopharmacol 2012 ;32 (4 ):487–91 .
+Racagni G , Riva MA , Molteni R , et al. Mode of action of agomelatine:
+synergy between melatonergic and 5-HT2C receptors . World J Biol
+Psychiatry 2011 ;12 (8 ):574–87 .
+Stahl SM . Mechanism of action of agomelatine: a novel antidepressant
+exploiting synergy between monoaminergic and melatonergic properties .
+CNS Spectr 2014 ;19 :207–12
+Stahl SM , Fava M , Trivedi M , et al. Agomelatine in the treatment of
+major depressive disorder. An 8 week, multicenter, randomized, placebocontrolled trial . J Clin Psychiatry 2010 ;71 (5 ):616–26 .
+
+
+
+
+<<<PAGE 48>>>
+
+Stein DJ , Picarel-Blanchot F , Kennedy SH . Efficacy of the novel
+antidepressant agomelatine on anxiety symptoms in major depression . Hum
+Psychopharmacol 2013 ;28 (2 ):151–9 .
+Taylor D , Sparshatt A , Varma S , Olofinjana O . Antidepressant efficacy of
+agomelatine: meta-analysis of published and unpublished studies . BMJ
+2014 ;348 :g2496.
+
+
+
+
+<<<PAGE 2569>>>
+
+Adzenys ER (amphetamine d,l), 45
+Adzenys XR-ODT (amphetamine d,l), 45
+agomelatine, 5
+AH3 N (hydroxyzine), 355
+Aiglonyl (sulpiride), 741
+Alased (haloperidol), 347
+Albium (lorazepam), 437
+Aldazine (thioridazine), 759
+Alemoxan (clozapine), 191
+Alepam (oxazepam), 569
+Alertec (modafinil), 521
+Aleviatin (zonisamide), 875
+Alimoral (sulpiride), 741
+Aliseum (diazepam), 229
+Allegron (nortriptyline), 551
+allopregnanolone (brexanolone), 99
+Almazine (lorazepam), 437
+Aloperidin (haloperidol), 347
+Aloperidin Decanoate (haloperidol), 347
+Alpralid (alprazolam), 11
+Alpraz (alprazolam), 11
+alprazolam, 11
+alprazolam XR, 11
+Alprox (alprazolam), 11
+Alti-Alprazolam (alprazolam), 11
+Alti-Clonazepam (clonazepam), 173
+Alti-Desipramine (desipramine), 207
+Alti-Doxepin (doxepin), 255
+
+
+
+
+<<<PAGE 2624>>>
+
+Tryptizol (amitriptyline), 25
+Tydamine (trimipramine), 817
+Tymelyt (lofepramine), 421
+Ucerax (hydroxyzine), 355
+Umbrium (diazepam), 229
+Unilan (alprazolam), 11
+Unisedil (diazepam), 229
+Unitranxene (clorazepate), 185
+U-Pan (lorazepam), 437
+Uskan (oxazepam), 569
+Valaxona (diazepam), 229
+Valclair (chlordiazepoxide), 147
+valbenazine, 825
+Valclair (diazepam), 229
+Valcote 250 (valproate), 829
+Valdorm (flurazepam), 321
+Valdoxan (agomelatine), 5
+Valeans (alprazolam), 11
+Valinil (diazepam), 229
+Valiquid (diazepam), 229
+Valiquid 0.3 (diazepam), 229
+Valirem (sulpiride), 741
+Valium (diazepam), 229
+Valocordin Diazepam (diazepam), 229
+Valparine (valproate), 829
+Valpro (valproate), 829
+valproate, 829
+
+
+
+
+<<<PAGE 2637>>>
+
+Delirium
+haloperidol (adjunct), 347
+lorazepam (adjunct), 437
+Dementia
+donepezil, 243
+galantamine, 337
+memantine, 473
+rivastigmine, 699
+selegiline, 705
+Dementia-related psychosis
+pimavanserin, 623
+Depression
+agomelatine, 5
+amisulpride, 17
+amitriptyline , 25
+amoxapine , 33
+amphetamine (d), 39
+amphetamine (d,l), 45
+aripiprazole (adjunct) , 53
+asenapine, 71
+atomoxetine, 79
+blonanserin, 89
+brexanolone , 99
+brexpiprazole (adjunct) , 103
+bupropion , 117
+buspirone (adjunct), 123
+
+
+
+
+<<<PAGE 2641>>>
+
+Generalized anxiety disorder
+agomelatine, 5
+alprazolam , 11
+citalopram, 159
+desvenlafaxine, 215
+duloxetine , 263
+escitalopram , 269
+fluoxetine, 301
+fluvoxamine, 325
+mirtazapine, 509
+paroxetine , 509
+pregabalin, 647
+propranolol, 653
+sertraline, 721
+tiagabine (adjunct), 771
+venlafaxine , 841
+vortioxetine, 853
+Glossopharyngeal neuralgia
+carbamazepine, 131
+Hiccups, intractable
+chlorpromazine , 153
+Hypersalivation
+clonidine, 179
+Hypertension
+clonidine , 179
+guanfacine , 343
+
+
+
+
+<<<PAGE 2642>>>
+
+prazosin , 643
+propranolol , 653
+Hypoactive sexual desire disorder
+bremelanotide , 95
+flibanserin , 289
+Insomnia
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+clomipramine, 165
+clonazepam, 173
+desipramine, 207
+diazepam, 229
+diphenhydramine , 235
+dothiepin, 249
+doxepin , 255
+estazolam , 281
+eszopiclone , 285
+flunitrazepam, 297
+flurazepam , 321
+hydroxyzine, 355
+imipramine, 367
+lemborexant , 395
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+
+
+
+
+<<<PAGE 2658>>>
+
+Index by Class
+Anticholinergics
+benztropine, 85
+diphenhydramine, 235
+trihexyphenidyl, 809
+Anticonvulsants
+carbamazepine, 131
+clonazepam, 173
+clorazepate (adjunct), 185
+diazepam, 229
+gabapentin, 331
+lamotrigine, 387
+levetiracetam, 399
+lorazepam, 437
+oxcarbazepine, 575
+pregabalin, 647
+tiagabine, 771
+topiramate, 781
+valproate (divalproex), 829
+zonisamide (adjunct), 875
+Antidepressants
+agomelatine, 5
+
+
+
+
+<<<PAGE 2661>>>
+
+iloperidone, 359
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin, 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Anxiolytics
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone, 123
+
+
+
+
+<<<PAGE 2668>>>
+
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+pregabalin, 647
+sodium oxybate, 733
+tiagabine, 771
+topiramate, 781
+trimipramine, 817
+zonisamide, 875
+NMDA antagonists
+dextromethorphan, 225
+esketamine, 275
+ketamine, 383
+memantine, 473
+Phosphodiesterase-5 (PDE-5) inhibitor
+sildenafil, 729
+Sedative hypnotics
+agomelatine, 5
+estazolam, 281
+eszopiclone, 285
+flunitrazepam, 297
+flurazepam, 321
+lemborexant, 395
+
+

@@ -1,0 +1,592 @@
+<<<PAGE 1001>>>
+
+rennet/concurrent MAOI, or other bupropion use. Though bupropion at one
+point carried a black box warning regarding neuropsychiatric adverse events
+during smoking cessation, the FDA has since removed this warning. This
+medication can be started 1 to 2 weeks before a quit date and used for up to 6
+months post quit. Of interest, another antidepressant, nortriptyline, appears to
+be useful for smoking cessation as well.
+Varenicline is a partial agonist at the α4β2 neuronal nicotinic acetylcholine
+receptor; it both relieves craving and withdrawal and, unlike other
+medications, reduces the reinforcing effects of nicotine by blocking
+dopaminergic stimulation responsible for smoking reinforcement/reward.
+While there were concerns about the FDA-issued black box warnings for
+neuropsychiatric adverse events (depressed mood, agitation, changes in
+behavior, suicidal ideation, and suicide), more recent research of varenicline
+in psychiatric patients has found that psychiatric symptoms do not worsen nor
+does the risk of suicide increase. The FDA has removed the black box
+warning associated with neuropsychiatric adverse events from varenicline.
+There is also a concern for potential cardiovascular adverse events in patients
+taking varenicline (“a small, increased risk of certain cardiovascular adverse
+events in people who have a cardiovascular disease”). Clinicians should
+counsel patients on these risks and monitor for symptoms related to mental
+status and cardiac status.
+Combined Psychosocial and Pharmacologic Therapy
+Several studies have shown that combining nicotine replacement and
+behavior therapy increases quit rates over either therapy alone.
+
+EPIDEMIOLOGY
+The 2018 Monitoring the Future Survey reported that nicotine use via
+cigarettes is currently at a historic low. Thirty-day smoking rates among
+eighth, tenth and twelfth graders were 2.2 percent, 4.2 percent, and 7.6
+percent, respectively. However, vaping, which involves the use of a batterypowered device to heat a liquid to or other substances until it aerosolizes
+chemicals for inhalation, increased significantly in 2018. Popular
+manufacturers of vaping liquids commonly sell them in flavors that are
+especially appealing to adolescents. Thirty-day nicotine vaping prevalence
+
+
+
+
+<<<PAGE 1679>>>
+
+possibly by dopaminergic activity and increased production of
+norepinephrine.
+Venlafaxine and the SSRIs most often have adverse effects because of the
+rise in serotonin levels. A lowering of the sex drive and difficulty reaching
+orgasm occur in both sexes. Cyproheptadine, an antihistamine with
+antiserotonergic effects, and methylphenidate, with adrenergic effects, may
+reverse those adverse effects. Trazodone is associated with the rare
+occurrence of priapism, the symptom of prolonged erection in the absence of
+sexual stimuli. That symptom appears to result from the α1-adrenergic
+antagonism of trazodone.
+Table 16-12
+Some Pharmacologic Agents Implicated in Inhibited Female
+Orgasma
+Tricyclic antidepressants
+Imipramine (Tofranil)
+Clomipramine (Anafranil)
+Nortriptyline (Aventyl)
+Monoamine oxidase inhibitors
+Tranylcypromine (Parnate)
+Phenelzine (Nardil)
+Isocarboxazid (Marplan)
+Dopamine receptor antagonists
+Thioridazine (Mellaril)
+Trifluoperazine (Stelazine)
+Selective serotonin reuptake inhibitors
+Fluoxetine (Prozac)
+Paroxetine (Paxil)
+Sertraline (Zoloft)
+Fluvoxamine (Luvox)
+Citalopram (Celexa)
+aThe interrelation between female sexual dysfunction and pharmacologic agents has been
+
+less extensively evaluated than male reactions. Oral contraceptives are reported to decrease
+
+
+
+
+<<<PAGE 2022>>>
+
+led to the development of a new class of antidepressant compounds, the
+tricyclics (TCAs). In turn, the finding that imipramine blocked reuptake of
+norepinephrine led to research into the role of catecholamines in depression.
+After the introduction of imipramine, several other antidepressant compounds
+were developed that shared a basic tricyclic structure and had relatively
+similar effects. Later, other heterocyclic compounds were also marketed that
+were somewhat similar in structure and that had relatively comparable
+secondary properties. At one time, amitriptyline (Elavil, Endep) and
+imipramine were the two most commonly prescribed antidepressants in the
+United States. However, because of their anticholinergic and antihistaminic
+side effects, they are rarely used for depression. Nortriptyline (Aventyl,
+Pamelor) and desipramine (Norpramin, Pertofrane) became preferred.
+Nortriptyline has the least effect on orthostatic hypotension, and desipramine
+is the least anticholinergic. Although introduced as antidepressants, the
+therapeutic indications for these agents have grown to include panic disorder,
+GAD, PTSD, OCD, and pain syndromes. The introduction of newer
+antidepressant agents with more selective actions on neurotransmitters or
+with unique mechanisms of action has sharply reduced the prescribing of
+TCAs and tetracyclics. The improved safety profiles of the newer drugs,
+especially when taken in overdose, also contributed to the decline in the use
+of older drugs. Nevertheless, the TCAs and tetracyclics remain unsurpassed
+in terms of their antidepressant efficacy. Table 21-20 lists TCA and
+tetracyclic drugs and their available preparations.
+Pharmacologic Actions
+The absorption of most TCAs is complete after oral administration, and there
+is significant metabolism from the first-pass effect. Peak plasma
+concentrations occur within 2 to 8 hours, and the half-lives of the TCAs vary
+from 10 to 70 hours; nortriptyline, maprotiline (Ludiomil), and particularly
+protriptyline (Vivactil) can have longer half-lives. The long half-lives allow
+all the compounds to be given once daily; 5 to 7 days is needed to reach
+steady-state plasma concentrations. Imipramine pamoate (Tofranil) is a depot
+form of the drug for intramuscular (IM) administration; indications for the
+use of this preparation are limited.
+The TCAs undergo hepatic metabolism by the CYP450 enzyme system.
+
+
+
+
+<<<PAGE 2023>>>
+
+Clinically relevant drug interactions may result from competition for enzyme
+CYP2D6 among TCAs and quinidine, cimetidine (Tagamet), fluoxetine
+(Prozac), sertraline (Zoloft), paroxetine (Paxil), phenothiazines,
+carbamazepine (Tegretol), and the type IC antiarrhythmics propafenone
+(Rythmol) and flecainide (Tambocor). Concomitant administration of TCAs
+and these inhibitors may slow down the metabolism and raise the plasma
+concentrations of TCAs. Additionally, genetic variations in the activity of
+CYP2D6 may account for up to a 40-fold difference in plasma TCA
+concentrations in different persons. The dosage of the TCA may need to be
+adjusted to correct changes in the rate of hepatic TCA metabolism.
+Table 21-20
+Tricyclic and Tetracyclic Drug Preparations
+
+The TCAs block the transporter site for norepinephrine and serotonin, thus
+increasing synaptic concentrations of these neurotransmitters. Each drug
+differs in its affinity for each of these transporters, with clomipramine
+(Anafranil) being the most serotonin selective and desipramine the most
+norepinephrine selective of the TCAs. Secondary effects of the TCAs include
+antagonism at the muscarinic acetylcholine, histamine H1, and α1- and α2adrenergic receptors. The potency of these effects on other receptors largely
+determines the side effect profile of each drug. Amoxapine, nortriptyline,
+desipramine, and maprotiline have the least anticholinergic activity; doxepin
+has the most antihistaminergic activity. Although they are more likely to
+cause constipation, sedation, dry mouth, or lightheadedness than the SSRIs,
+the TCAs are less prone to cause sexual dysfunction, significant long-term
+
+
+
+
+<<<PAGE 2027>>>
+
+are discontinued. It can result in falls and injuries in affected persons.
+Nortriptyline may be the drug least likely to cause this problem. Orthostatic
+hypotension is treated with avoidance of caffeine, intake of at least 2 L of
+fluid per day, and addition of salt to the diet unless the person is being treated
+for hypertension. In persons taking antihypertensive agents, reduction of the
+dosage may reduce the risk of orthostatic hypotension. Other possible
+autonomic effects are profuse sweating, palpitations, and increased BP.
+Although some persons respond to fludrocortisone (Florinef), 0.02 to 0.05 mg
+twice a day, the drug has potential toxicities. It is preferable to substitute an
+SSRI than to use a mineralocorticoid such as fludrocortisone. The TCAs’ use
+should be discontinued several days before elective surgery because of the
+occurrence of hypertensive episodes during surgery in persons receiving
+TCAs.
+Sedation. Sedation is a common effect of the TCAs and may be welcomed
+if sleeplessness has been a problem. The sedative effect of the TCAs is a
+result of anticholinergic and antihistaminergic activities. Amitriptyline,
+trimipramine, and doxepin are the most sedating agents; imipramine,
+amoxapine, nortriptyline, and maprotiline are less sedating; and desipramine
+and protriptyline are the least sedating agents.
+Neurologic Effects. A fine, rapid tremor may occur. Myoclonic twitches
+and tremors of the tongue and the upper extremities are common. Rare effects
+include speech blockage, paresthesia, peroneal palsies, and ataxia.
+Amoxapine is unique in causing parkinsonian symptoms, akathisia, and
+even dyskinesia because of the dopaminergic blocking activity of one of its
+metabolites. Amoxapine may also cause neuroleptic malignant syndrome in
+rare cases. Maprotiline may cause seizures when the dosage is increased too
+quickly or is kept at high levels for too long. Clomipramine and amoxapine
+may lower the seizure threshold more than other drugs in the class. As a
+class, however, the TCAs have a relatively low risk for inducing seizures
+except in persons who are at risk for seizures (e.g., persons with epilepsy and
+those with brain lesions). Although such persons can still use the TCAs, the
+initial dosages should be lower than usual, and subsequent dosage increases
+should be gradual.
+
+
+
+
+<<<PAGE 2031>>>
+
+than are young adults. In children, the ECG should be regularly monitored
+during the use of a TCA.
+The available preparations of TCAs are presented in Table 21-20. The
+dosages and therapeutic blood levels for the TCAs vary among the drugs
+(Table 21-21). Except for protriptyline, all of the TCAs should be started at
+25 mg a day and increased as tolerated. Divided doses at first reduce the
+severity of the adverse effects, although most of the dosage should be given
+at night to help induce sleep if a sedating drug such as amitriptyline is used.
+Eventually, the entire daily dose can be given at bedtime. A common clinical
+mistake is to stop increasing the dosage when the person is tolerating the drug
+but taking less than the maximum therapeutic dose and does not show clinical
+improvement. The clinician should routinely assess the person’s pulse and
+orthostatic changes in BP while the dosage is being increased.
+Nortriptyline use should be started at 25 mg a day. Most patients need only
+75 mg a day to achieve a blood level of 100 mg/nL. However, the dosage
+may be raised to 150 mg a day if needed. Amoxapine use should be started at
+150 mg a day and raised to 400 mg a day. Protriptyline use should be started
+at 15 mg a day and raised to 60 mg a day. Maprotiline has been associated
+with an increased incidence of seizures. This risk is most significant if the
+dosage is raised too quickly or is maintained at too high a level. Maprotiline
+use should be started at 25 mg a day and increased over 4 weeks to 225 mg a
+day. It should be kept at that level for only 6 weeks and then be reduced to
+175 to 200 mg a day.
+Persons with chronic pain may be particularly sensitive to adverse effects
+when TCA use is started. Therefore, treatment should begin with low dosages
+that are raised in small increments. However, persons with chronic pain may
+experience relief on long-term low-dosage therapy, such as amitriptyline or
+nortriptyline at 10 to 75 mg a day.
+Table 21-21
+General Information for the Tricyclic and Tetracyclic
+Antidepressants
+Generic
+Name
+
+Trade Name Usual Adult
+Dosage Range
+(mg/day)
+
+Therapeutic Plasma
+Concentrations
+(µg/mL)
+
+
+
+
+<<<PAGE 2032>>>
+
+Imipramine
+
+Tofranil
+
+150–300
+
+150–300a
+
+Desipramine
+
+Norpramin,
+150–300
+Pertofrane
+
+150–300a
+
+Trimipramine Surmontil
+
+150–300
+
+150–300
+
+Amitriptyline
+
+Elavil, Endep 150–300
+
+100–250b
+
+Nortriptyline
+
+Pamelor,
+Aventyl
+
+50–150
+
+50–150a (maximum)
+
+Protriptyline
+
+Vivactil
+
+15–60
+
+75–250
+
+Amoxapine
+
+Asendin
+
+150–400
+
+200–500c
+
+Doxepin
+
+Adapin,
+Sinequan
+
+150–300
+
+100–250a
+
+Maprotiline
+
+Ludiomil
+
+150–230
+
+150–300a
+
+Clomipramine Anafranil
+
+130–250
+
+50 to 250c
+
+aExact range may vary among laboratories.
+bIncludes parent compound and desmethyl metabolite.
+cEstimated from limited studies.
+
+The TCAs should be avoided in children except as a last resort. Dosing
+guidelines in children for imipramine include initiation at 1.5 mg/kg a day.
+The dosage can be titrated to no more than 5 mg/kg a day. In enuresis, the
+dosage is usually 50 to 100 mg a day, taken at bedtime. Clomipramine use
+can be initiated at 50 mg a day and increased to no more than 3 mg/kg per
+day or 200 mg a day.
+When TCA treatment is discontinued, the dosage should first be decreased
+to three-fourths the maximal dosage for a month. At that time, if no
+symptoms are present, drug use can be tapered by 25 mg (5 mg for
+protriptyline) every 4 to 7 days. Slow tapering avoids a cholinergic rebound
+syndrome consisting of nausea, upset stomach, sweating, headache, neck
+pain, and vomiting. This syndrome can be treated by reinstituting a small
+dosage of the drug and tapering more slowly than before. Several case reports
+note the appearance of rebound mania or hypomania after the abrupt
+
+
+
+
+<<<PAGE 2033>>>
+
+discontinuation of TCA use.
+Plasma Concentrations and Therapeutic Drug Monitoring.
+Clinical determinations of plasma concentrations should be conducted after 5
+to 7 days on the same dosage of medication and 8 to 12 hours after the last
+dose. Because of variations in absorption and metabolism, there may be a 30to 50-fold difference in the plasma concentrations in persons given the same
+dosage of a TCA. Nortriptyline is unique in its association with a therapeutic
+window—that is, plasma concentrations below 50 ng/mL or above 150
+ng/mL may reduce its efficacy.
+Plasma concentrations may be useful in confirming compliance, assessing
+reasons for drug failures, and documenting effective plasma concentrations
+for future treatment. Clinicians should always treat the person and not the
+plasma concentration. Some persons have adequate clinical responses with
+seemingly subtherapeutic plasma concentrations, and other persons only
+respond at supratherapeutic plasma concentrations without experiencing
+adverse effects. The latter situation, however, should alert the clinician to
+monitor the person’s condition with, for example, serial ECG recordings.
+Overdose Attempts. Overdose attempts with TCAs are severe and can
+often be fatal. Prescriptions for these drugs should be nonrefillable and for no
+longer than 1 week at a time for patients at risk for suicide. Amoxapine may
+be more likely than the other TCAs to result in death when taken in overdose.
+The newer antidepressants are safer in overdose.
+Symptoms of overdose include agitation, delirium, convulsions,
+hyperactive deep tendon reflexes, bowel and bladder paralysis, dysregulation
+of BP and temperature, and mydriasis. The patient then progresses to coma
+and perhaps respiratory depression. Cardiac arrhythmias may not respond to
+treatment. Because of the long half-lives of TCAs, the patients are at risk of
+cardiac arrhythmias for 3 to 4 days after the overdose, so they should be
+monitored in intensive care medical settings.
+
+MONOAMINE OXIDASE INHIBITORS
+Introduced in the late 1950s, MAOIs were the first class of approved
+antidepressant drugs. The first of these drugs, isoniazid, was intended to be
+
+
+
+
+<<<PAGE 2077>>>
+
+depressant (e.g., alcohol), and increased severity of extrapyramidal
+symptoms, which usually responds to treatment with antiparkinsonian drugs.
+Valproate can usually be safely combined with carbamazepine or SDAs.
+Perhaps the most worrisome interaction of valproate and a psychotropic drug
+involves lamotrigine. Since the approval of lamotrigine for the treatment of
+bipolar disorder, it is more likely that patients will be treated with both
+agents. Valproate more than doubles lamotrigine concentrations, increasing
+the risk of a severe rash (Stevens–Johnson syndrome and toxic epidermal
+necrolysis).
+The plasma concentrations of carbamazepine, diazepam (Valium),
+amitriptyline (Elavil), nortriptyline (Pamelor), and phenobarbital (Luminal)
+may also be increased when these drugs are coadministered with valproate.
+Also, the plasma concentrations of phenytoin (Dilantin) and desipramine
+(Norpramin) may be decreased when they are combined with valproate. The
+plasma concentrations of valproate may be decreased when the drug is
+coadministered with carbamazepine and may be increased when
+coadministered with guanfacine (Tenex), amitriptyline, or fluoxetine
+(Prozac). Valproate can be displaced from plasma proteins by carbamazepine,
+diazepam, and aspirin. Persons who are treated with anticoagulants (e.g.,
+aspirin and warfarin [Coumadin]) should also be monitored when valproate
+use is initiated to assess the development of any undesired augmentation of
+the anticoagulation effects. Interactions of valproate with other drugs are
+listed in Table 21-34.
+Table 21-34
+Interactions of Valproate with Other Drugs
+Drug
+
+Interactions Reported with Valproate
+
+Lithium
+
+Increased tremor
+
+Antipsychotics
+
+Increased sedation; increased extrapyramidal
+effects; delirium and stupor (single report)
+
+Clozapine
+
+Increased sedation; confusional syndrome (single
+report)
+
+Carbamazepine Acute psychosis (single report); ataxia, nausea,
+
+
+
+
+<<<PAGE 2256>>>
+
+overview of the results of basic and clinical research. Int J
+Neuropsychopharmacol. 2000;3:149–165.
+Bech P, Allerup P, Larsen E, Csillag C, Licht R. Escitalopram versus
+nortriptyline: how to let the clinical GENDEP data tell us what they
+contained. Acta Psychiatr Scand. 2013;127(4):328–329.
+Cettomai D, McArthur JC. Mirtazapine use in human immunodeficiency
+virus-infected patients with progressive multifocal leukoencephalopathy.
+Arch Neurol. 2009;66(2):255–258.
+Chambers CD, Hernandez-Diaz S, Van Marter LJ, Werler MM, Louik C.
+Selective serotonin-reuptake inhibitors and risk of persistent pulmonary
+hypertension of the newborn. N Engl J Med. 2006;354:579–587.
+Charney DS, Delgado PL, Price LH, Heninger GR. The receptor sensitivity
+hypothesis of antidepressant action: a review of antidepressant effects on
+serotonin function. In: Brown SL, van Praag HM, eds. The Role of
+Serotonin in Psychiatric Disorders. New York: Brunner/Mazel; 1991:29.
+Choung RS, Cremonini F, Thapa P, Zinsmeister AR, Talley NJ. The effect of
+short-term, low-dose tricyclic and tetracyclic antidepressant treatment on
+satiation, postnutrient load gastrointestinal symptoms and gastric
+emptying: a double-blind, randomized, placebo-controlled trial.
+Neurogastroenterol Motil. 2008;20:220–227.
+Cipriani A, Barbui C, Brambilla P, Furukawa TA, Hotopf M. Are all
+antidepressants really the same? The case of fluoxetine: a systematic
+review. J Clin Psychiatry. 2006;67:850–864.
+Cipriani A, Furukawa TA, Salanti G, Geddes JR, Higgins JPT. Comparative
+efficacy and acceptability of 12 new-generation antidepressants: a
+multiple-treatments meta-analysis. Lancet. 2009;373:746–758.
+Ciraulo DA, Knapp C, Rotrosen J, Sarid-Segal O, Seliger C. Nefazodone
+treatment of cocaine dependence with comorbid depressive symptoms.
+Addiction. 2005;
+100(Suppl 1):23–31.
+Clayton A, Kornstein S, Prakash A, Mallinckrodt C, Wohlreich M. Changes
+in sexual functioning associated with duloxetine, escitalopram, and
+placebo in the treatment of patients with major depressive disorder. J Sex
+Med. 2007;4:917–929.
+Clayton AH, Montejo AL. Major depressive disorder, antidepressants, and
+sexual dysfunction. J Clin Psychiatry. 2006;67(Suppl 6):33.
+
+
+
+
+<<<PAGE 2258>>>
+
+Diem SJ, Blackwell TL, Stone KL, Yaffe K, Haney EM. Use of
+antidepressants and rates of hip bone loss in older women: the study of
+osteoporotic fractures. Arch Intern Med. 2007;167:1240–1245.
+Duman RS, Heninger GR, Nestler EJ. A molecular and cellular theory of
+depression. Arch Gen Psychiatry. 1997;54:597–606.
+Dykens JA, Jamieson JD, Marroquin LD, Nadanaciva S, Xu JJ, Dunn MC,
+Smith AR, Will Y. In vitro assessment of mitochondrial dysfunction and
+cytotoxicity of nefazodone, trazodone, and buspirone. Toxicol Sci.
+2008;103(2):335–345.
+Elkin I, Shea T, Watkins JT. NIMH treatment of depression collaborative
+research program: general effectiveness of treatments. Arch Gen
+Psychiatry. 1989;46:971.
+Elmer LW, Bertoni JM. The increasing role of monoamine oxidase type B
+inhibitors in Parkinson’s disease therapy. Expert Opin Pharmacother.
+2008;9:2759–2772.
+Fava M, Rush AJ, Wisniewski SR, Nierenberg AA, Alpert JE. A comparison
+of mirtazapine and nortriptyline following two consecutive failed
+medication treatments for depressed outpatients: a STAR*D report. Am J
+Psychiatry. 2006;163(7):1161–1172.
+Foley KF, DeSanty KP, Kast RE. Bupropion: pharmacology and therapeutic
+applications. Expert Rev Neurother. 2006;6(9):1249–1265.
+Frampton JE, Plosker GL. Duloxetine: a review of its use in the treatment of
+major depressive disorder. CNS Drugs. 2007;21:581–609.
+Frampton JE, Plosker GL, Masand PS. Selegiline transdermal system in the
+treatment of major depressive disorder. Drugs. 2007;67:257.
+Frank E, Kupfer DJ, Perel JM. Three-year outcomes for maintenance
+therapies in recurrent depression. Arch Gen Psychiatry. 1990;47:1093.
+Glassman AH, O’Connor CM, Califf RM, Swedberg K, Schwartz P.
+Association of low bone mineral density with selective serotonin reuptake
+inhibitor use by older men. Arch Intern Med. 2007;167(12):1246–1251.
+Goldberg JF. A preliminary open trial of nefazodone added to mood
+stabilizers for bipolar depression. J Affect Disord. 2013;144(1–2):176–178.
+Goldberg JF, Thase ME. Monoamine oxidase inhibitors revisited: what you
+should know. J Clin Psychiatry. 2013;74(2):189–191.
+Hettema JM, Kornstein SG. Trazodone. In: Sadock BJ, Sadock VA, Ruiz P,
+eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed.
+
+
+
+
+<<<PAGE 2263>>>
+
+double-blind comparison of duloxetine and venlafaxine in the treatment of
+patients with major depressive disorder. J Psychiatr Res. 2008;42:22–34.
+Perkins KA, Karelitz JL, Jao NC, Stratton E. Possible reinforcement
+enhancing effects of bupropion during initial smoking abstinence. Nicotine
+Tob Res. 2013;15(6):
+1141–1145.
+Posternak M, Novak S, Stern A, Hennessey J, Joffe A. A pilot effectiveness
+study: placebo-controlled trial of adjunctive L-triiodothyronine (T3) used
+to accelerate and potentiate the antidepressant response. Int J
+Neuropsychopharmacol. 2008;11(1):15–25.
+Reeves RR, Ladner ME. Additional evidence of the abuse potential of
+bupropion. J Clin Pharmacol. 2013;33(4):584–585.
+Roose S, Laghrissi-Thode F, Kennedy JS, Nelson JC, Bigger JT. A
+comparison of paroxetine and nortriptyline in depressed patients with
+ischemic heart disease. JAMA. 1998;279:287–91.
+Rynn M, Russell J, Erickson J, Detke MJ, Ball S. Efficacy and safety of
+duloxetine in the treatment of generalized anxiety disorder: a flexible-dose,
+progressive-titration, placebo-controlled trial. Depress
+Anxiety.
+2008;25:182–189.
+Salahudeen MS, Wright C M, Peterson GM. “Esketamine: new hope for the
+treatment of treatment-resistant depression? A narrative review.” Ther Adv
+Drug
+Saf.
+2020;11:
+2042098620937899.
+https://doi.org/10.1177/2042098620937899.
+Salsali M, Holt A, Baker GB. Inhibitory effects of the monoamine oxidase
+inhibitor tranylcypromine on the cytochrome P450 enzymes CYP2C19,
+CYP2C6, and CYP2D6. Cell Mol Neurobiol. 2004;24:63–76.
+Sasada K, Iwamoto K, Kawano N, Kohmura K, Yamamoto M, Aleksic B,
+Ebe K, Noda Y, Ozaki N. Effects of repeated dosing with mirtazapine,
+trazodone, or placebo on driving performance and cognitive function in
+healthy volunteers. Hum Psychopharmacol. 2013;28(3):281–286.
+Scarff JR. “Use of Brexanolone for Postpartum Depression.” Innov Clin
+Neurosci. 2019;16(11–12):32–35.
+Schatzberg AF, Kremer C, Rodrigues HE, Murphy GM Jr. Double-blind,
+randomized comparison of mirtazapine and paroxetine in elderly depressed
+patients. Am J Geriatr Psychiatry. 2002;10:541–550.
+
+
+
+
+<<<PAGE 2299>>>
+
+2001
+
+The largest modern controlled trial of relapse prevention
+post-ECT with continuation pharmacotherapy
+demonstrates a significantly better outcome for
+combined treatment with a tricyclic antidepressant
+(nortriptyline) plus lithium compared with nortriptyline
+alone or placebo during the first 6 months post-ECT.
+
+ECT, electroconvulsive therapy.
+
+Mechanism of Action
+The induction of a bilateral generalized seizure is necessary for both the
+beneficial and adverse effects of ECT. Although a seizure superficially seems
+as though it is an all-or-none event, some data indicate that not all generalized
+seizures involve all the neurons in deep brain structures (e.g., the basal
+ganglia and the thalamus); recruitment of these deep neurons may be
+necessary for full therapeutic benefit. After the generalized seizure, the
+electroencephalogram (EEG) shows about 60 to 90 seconds of postictal
+suppression. This period is followed by high-voltage delta and theta waves,
+with a return to preseizure activity in about 30 minutes. During a series of
+ECT treatments, the interictal EEG is generally slower and of greater
+amplitude than usual, but the EEG returns to pretreatment appearance 1
+month to 1 year after the end of the course of treatment.
+Positron emission tomography (PET) studies of both cerebral blood flow
+and glucose use have shown that during seizures, cerebral blood flow, use of
+glucose and oxygen, and permeability of the blood–brain barrier increase.
+After the seizure, blood flow and glucose metabolism are decreased, perhaps
+most markedly in the frontal lobes. Some research indicates that the degree of
+decrease in cerebral metabolism is correlated with therapeutic response.
+Seizure foci in idiopathic epilepsy are hypometabolic during interictal
+periods; ECT itself acts as an anticonvulsant because its administration is
+associated with an increase in the seizure threshold as treatment progresses.
+Recent data suggest that for 1 to 2 months following a session of ECT, EEGs
+record a massive increase in slow-wave activity located over the prefrontal
+cortex in patients who responded well to the ECT. High-intensity, bilateral
+stimulation produced the best response; low-intensity, unilateral stimulation,
+
+

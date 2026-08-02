@@ -7,18 +7,6 @@
       "Edit",
       "Write",
       "Bash"
-    ],
-    "allow": [
-      "Bash(rm -rf:*)",
-      "Bash(sudo:*)",
-      "Bash(git push:*)",
-      "Bash(git reset --hard:*)",
-      "Bash(git clean:*)",
-      "Bash(:(){:|:&};:)",
-      "Read(**/.env)",
-      "Read(**/.env.*)",
-      "Read(**/*.pem)",
-      "Read(**/id_rsa*)"
     ]
   }
 }

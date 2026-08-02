@@ -1,0 +1,1049 @@
+<<<PAGE 10>>>
+
+82 methylphenidate (d,l)
+83 mianserin
+84 midazolam
+85 milnacipran
+86 mirtazapine
+87 moclobemide
+88 modafinil
+89 molindone
+90 nalmefene
+91 naltrexone
+92 naltrexone/bupropion
+93 nefazodone
+94 nortriptyline
+95 olanzapine
+96 oxazepam
+97 oxcarbazepine
+98 paliperidone
+99 paroxetine
+100 perospirone
+101 perphenazine
+102 phenelzine
+103 phentermine/topiramate
+104 pimavanserin
+105 pimozide
+106 pipothiazine
+107 pitolisant
+108 prazosin
+109 pregabalin
+
+
+
+
+<<<PAGE 12>>>
+
+138 triiodothyronine
+139 trimipramine
+140 valbenazine
+141 valproate
+142 varenicline
+143 venlafaxine
+144 vilazodone
+145 vortioxetine
+146 zaleplon
+147 ziprasidone
+148 zolpidem
+149 zonisamide
+150 zopiclone
+151 zotepine
+152 zuclopenthixol
+Index by Drug Name
+Index by Use
+Index by Class
+Abbreviations
+
+
+
+
+<<<PAGE 15>>>
+
+In addition, drugs for which switching between medications can be
+complicated have a special section called The Art of Switching, which
+includes clinical pearls and graphical representations to help guide the
+switching process.
+There is a list of icons used in this Guide following this Introduction
+and at the back of the Guide are several indices. The first is an index by
+drug name, giving both generic names (uncapitalized) and trade names
+(capitalized and followed by the generic name in parentheses). The second
+is an index of common uses for the generic drugs included in the Guide and
+is organized by disorder/symptom. Agents that are approved by the FDA for
+a particular use are shown in bold. The third index is organized by drug
+class and lists all the agents that fall within each particular class. In addition
+to these indices there is a list of abbreviations.
+Readers are encouraged to consult standard references
+
+1
+
+and
+
+comprehensive psychiatry and pharmacology textbooks for more in-depth
+information. They are also reminded that the Art of Psychopharmacology
+section is the author’s opinion.
+It is strongly advised that readers familiarize themselves with the
+standard use of these drugs before attempting any of the more exotic uses
+discussed, such as unusual drug combinations and doses. Reading about
+both drugs before augmenting one with the other is also strongly
+recommended. Today’s psychopharmacologist should also regularly track
+blood pressure, weight, and body mass index for most of his or her patients.
+The dutiful clinician will also check out the drug interactions of non-central
+nervous system (CNS) drugs with those that act in the CNS, including any
+prescribed by other clinicians.
+
+
+
+
+<<<PAGE 19>>>
+
+dopamine 2 partial agonist
+
+dual orexin receptor antagonist
+
+flibanserin
+
+histaminic
+
+lithium
+
+medical food
+
+melanocortin receptor agonist
+
+l-methylfolate
+
+modafinil (wake-promoter)
+
+monoamine oxidase inhibitor
+
+naltrexone/bupropion
+
+
+
+
+<<<PAGE 25>>>
+
+Binds to and blocks certain glutamate receptors, including
+metabotropic glutamate receptors
+Because withdrawal of alcohol following chronic administration can
+lead to excessive glutamate activity and deficient GABA activity,
+acamprosate can act as “artificial alcohol” to mitigate these effects
+How Long Until It Works
+Has demonstrated efficacy in trials lasting between 13 and 52 weeks
+If It Works
+Increases abstinence from alcohol
+If It Doesn’t Work
+Evaluate for and address contributing factors
+Consider switching to another agent
+Consider augmenting with naltrexone
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Naltrexone
+Augmentation therapy may be more effective than monotherapy
+Augmentation with behavioral, educational, and/or supportive
+therapy in groups or as an individual is probably key to successful
+treatment
+
+
+
+
+<<<PAGE 29>>>
+
+No
+How to Stop
+Taper not necessary
+Pharmacokinetics
+Terminal half-life 20–33 hours
+Excreted unchanged via the kidneys
+Drug Interactions
+Does not inhibit hepatic enzymes, and thus is unlikely to affect
+plasma concentrations of drugs metabolized by those enzymes
+Is not hepatically metabolized and thus is unlikely to be affected by
+drugs that induce or inhibit hepatic enzymes
+Concomitant administration with naltrexone may increase plasma
+levels of acamprosate, but this does not appear to be clinically
+significant and dose adjustment is not recommended
+Other Warnings/Precautions
+Monitor patients for emergence of depressed mood or suicidal
+ideation and behavior (suicidality)
+Use cautiously in individuals with known psychiatric illness
+Do Not Use
+
+
+
+
+<<<PAGE 33>>>
+
+Kranzler HR , Gage A . Acamprosate efficacy in alcohol-dependent
+patients: summary of results from three pivotal trials . Am J Addictions
+2008 ; 17 :70 –6.
+Rosner S , Leucht P , Soyka M . Acamprosate supports abstinence,
+naltrexone prevents excessive drinking: evidence from a met-analysis with
+unreported outcomes . J Psychopharmacol 2008 ;22 :11 –23 .
+
+
+
+
+<<<PAGE 294>>>
+
+Safe and effective in controlled trials (24 weeks) and open-label
+extension studies lasting an additional 52 weeks
+Habit Forming
+No
+How to Stop
+Bremelanotide is administered as needed
+Pharmacokinetics
+Tmax is approximately 1 hour
+Mean terminal half-life approximately 2.7 hours
+Absorption is not affected by injection site (thigh or abdomen)
+Drug Interactions
+Bremelanotide may slow gastric emptying, which could impact the
+rate and extent of absorption of concomitantly administered oral
+medications
+Bremelanotide may significantly decrease exposure to oral
+naltrexone, so avoid use with orally administered naltrexonecontaining products
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 370>>>
+
+Current practice suggests that patients of normal BMI without
+additional risk factors for seizures can benefit from bupropion,
+especially if given prudent doses of the XL formulation; such
+treatment should be administered by experts, and patients should be
+monitored closely and informed of the potential risks
+Recently approved hydrobromide salt formulation of bupropion may
+facilitate high dosing for difficult-to-treat patients, as it allows
+administration of single-pill doses up to 450 mg equivalency to
+bupropion hydrochloride salt (522 mg tablet), unlike bupropion
+hydrochloride controlled-release formulations for which the biggest
+dose in a single pill is 300 mg
+As bromide salts have anticonvulsant properties, hydrobromide salts
+of bupropion could theoretically reduce risk of seizures, but this has
+not been proven
+The active enantiomer of the principal active metabolite [(+)-6hydroxy-bupropion] is in clinical development as a novel
+antidepressant
+The combination of bupropion and naltrexone has demonstrated
+efficacy as a treatment for obesity and is currently being evaluated
+in a long-term study to assess the cardiovascular health outcomes of
+this treatment
+Phase 2 trials of the combination of bupropion and zonisamide for
+the treatment of obesity have been completed
+
+
+
+
+<<<PAGE 540>>>
+
+May block the autonomic symptoms in anxiety and panic disorders
+(e.g., palpitations, sweating) and improve subjective anxiety as well
+May be useful in decreasing the autonomic arousal of PTSD
+May be useful as an as-needed medication for stage fright or other
+predictable socially phobic situations
+May also be useful when added to SSRIs for reducing arousal and
+dissociative symptoms in PTSD
+May block autonomic symptoms of opioid withdrawal (e.g.,
+palpitations, sweating) especially in inpatients, but muscle aches,
+irritability, and insomnia may not be well suppressed by clonidine
+Often prescribed with naltrexone to suppress symptoms of opioid
+withdrawal; this requires monitoring of the patient for 8 hours on the
+first day due to the potential severity of naltrexone-induced
+withdrawal and the potential blood pressure effects of clonidine
+May be useful in decreasing the hypertension, tachycardia, and
+tremulousness associated with alcohol withdrawal, but not the
+seizures or delirium tremens in complicated alcohol withdrawal
+Clonidine may improve social relationships, affectual responses, and
+sensory responses in autistic disorder
+Clonidine may reduce the incidence of menopausal flushing
+Growth hormone response to clonidine may be reduced during
+menses
+
+
+
+
+<<<PAGE 1253>>>
+
+Because lofexidine and methadone both prolong the QT interval,
+ECG monitoring is recommended when they are used concomitantly
+Concomitant use of lofexidine and oral naltrexone alters the steadystate pharmacokinetics of naltrexone, and it is possible that
+naltrexone efficacy may be reduced
+Plasma concentrations of lofexidine may be increased by drugs that
+inhibit CYP450 2D6 (e.g., paroxetine, fluoxetine), so lofexidine
+dose may need to be reduced if coadministered, and patients should
+be monitored for orthostatic hypotension and bradycardia
+Other Warnings/Precautions
+Monitor vital signs before dosing and monitor patients for
+symptoms related to bradycardia and orthostasis; for outpatient use,
+ensure that patients are capable of self-monitoring signs and
+symptoms
+Avoid use in patients with severe coronary insufficiency, recent
+myocardial infarction, cerebrovascular disease, marked bradycardia,
+or chronic renal failure
+Lofexidine prolongs the QT interval; its use should be avoided in
+patients with known QT prolongation, and ECG should be
+monitored in patients with electrolyte abnormalities, congestive
+heart failure, bradyarrhythmias, hepatic or renal impairment, or in
+patients taking agents capable of causing QT prolongation
+Patients who complete opioid discontinuation are at increased risk
+of fatal overdose should they resume opioid use
+
+
+
+
+<<<PAGE 1551>>>
+
+it has been shown to reduce alcohol consumption on average by
+60%
+Reduction in alcohol consumption has been shown to be maintained
+for 12 years
+There is no clinically reported dose-dependent hepatotoxicity
+Like naltrexone, nalmefene is a mu opioid receptor antagonist;
+however, nalmefene is also a partial agonist at kappa opioid
+receptors, which are thought to contribute to the dysphoria and
+anxiety experienced during alcohol withdrawal
+Nalmefene is unique in that it is taken as needed when the patient
+perceives a risk of drinking alcohol
+
+Suggested Reading
+Gual A , He Y , Torup L , et al. A randomized, double-blind, placebocontrolled, efficacy study of nalmefene, as-needed use, in patients with
+alcohol dependence . Eur Neuropsychopharmacol 2013 ;23 :1432 –42.
+Keating GM . Nalmefene: a review of its use in the treatment of alcohol
+dependence . CNS Drugs 2013 ;27 :761–72 .
+Mann K , Bladstrom A , Torup L , Gual A , van den Brink W. Extending the
+treatment options in alcohol dependence: a randomized controlled study of
+as-needed nalmefene . Biol Psychiatry 2013 ;73 (8 ):706–13 .
+
+
+
+
+<<<PAGE 1553>>>
+
+Naltrexone
+
+Therapeutics
+Brands
+Revia (oral)
+Vivitrol (injection)
+see index for additional brand names
+Generic?
+Yes (not injection or solution)
+Class
+Neuroscience-based Nomenclature: opioid receptor antagonist (ORAn)
+Alcohol dependence treatment; mu opioid receptor antagonist
+Commonly Prescribed for
+(bold for FDA approved)
+Alcohol dependence
+Blockade of effects of exogenously administered opioids (oral)
+Prevention of relapse to opioid dependence (injection)
+
+
+
+
+<<<PAGE 1557>>>
+
+Oral: 50 mg/day or 100 mg on Mon and Wed and 150 mg on Fri
+Injection: 380 mg every 4 weeks
+Dosage Forms
+Tablet 25 mg, 50 mg, 100 mg
+Methylnaltrexone bromide tablet 150 mg
+Solution (subcutaneous) 8 mg/0.4 mL, 12 mg/0.6 mL
+Intramuscular formulation 380 mg/vial
+How to Dose
+Patient should be opioid-free for 7–10 days prior to initiating
+treatment with naltrexone, as confirmed by negative urine screen
+and/or naloxone challenge test
+For treating alcohol dependence (oral): recommended dose is 50
+mg/day; titration is not required
+For treating alcohol dependence (injection): 380 mg delivered
+intramuscularly in the gluteal region every 4 weeks; alternate
+buttocks; must be administered by health-care professional
+For treating opioid dependence (oral): initial 25 mg/day; day 2 can
+increase to 50 mg/day
+For treating opioid dependence (injection): 380 mg delivered
+intramuscularly in the gluteal region every 4 weeks or once a month;
+alternate buttocks; must be administered by healthcare professional
+
+
+
+
+<<<PAGE 1558>>>
+
+Dosing Tips
+Providing educational materials and counseling in combination with
+naltrexone treatment can increase the chances of success
+Individuals who abstain from alcohol for several days prior to
+initiating treatment with naltrexone may have greater reductions in
+the number of drinking days as well as number of heavy drinking
+days, and may also be more likely to abstain completely throughout
+treatment
+Long-acting naltrexone (injection) must be kept refrigerated
+For long-acting naltrexone (injection), the suspension should be
+administered immediately after mixing
+Adherence greatly enhanced and assured for 30 days at a time when
+administering by once monthly depot injection; oral treatment
+requires 30 decisions to comply in 30 days whereas long-acting
+injection requires only one decision every 30 days to comply
+Patients must be completely withdrawn and abstinent from opioids
+for 5 days (short-acting opioids) to 7 days (long-acting opioids)
+before starting naltrexone
+Overdose
+Nausea, abdominal pain, sedation, dizziness, injection site reactions
+Long-Term Use
+Has been studied in trials up to 1 year
+
+
+
+
+<<<PAGE 1559>>>
+
+Habit Forming
+No
+How to Stop
+Taper not necessary
+Pharmacokinetics
+Elimination half-life of oral naltrexone is approximately 13 hours
+Elimination half-life of naltrexone via injection is 5–10 days
+Drug Interactions
+Is hepatically metabolized by dihydrodiol dehydrogenase and not by
+the CYP450 enzyme system, and thus is unlikely to be affected by
+drugs that induce or inhibit CYP450 enzymes
+Can block the effects of opioid-containing medications (e.g., some
+cough and cold remedies, antidiarrheal preparations, opioid
+analgesics)
+Concomitant administration with acamprosate may increase plasma
+levels of acamprosate, but this does not appear to be clinically
+significant and dose adjustment is not recommended
+Other Warnings/Precautions
+Can cause hepatocellular injury when given in excessive doses
+
+
+
+
+<<<PAGE 1560>>>
+
+To prevent withdrawal in patients dependent on opioids, patients
+must be opioid-free for at least 7–10 days prior to initiating
+treatment
+Attempts by patients to overcome blockade of opioid receptors by
+taking large amounts of exogenous opioids could lead to opioid
+intoxication or even fatal overdose
+Individuals who have been previously treated with naltrexone
+should be warned that they may respond to lower doses of opioids
+than previously used, and thus previous doses may also lead to
+opioid intoxication
+Individuals receiving naltrexone who require pain management with
+opioid analgesia may need a higher dose than usual and may
+experience deeper and more prolonged respiratory depression; pain
+management with non-opioid or rapid-acting opioid analgesics is
+recommended if possible
+Monitor patients for emergence of depressed mood or suicidality
+Use cautiously in individuals with known psychiatric illness
+Injection should be used cautiously in individuals with
+thrombocytopenia or any coagulation disorder
+Do Not Use
+If patient is taking opioid analgesics
+If patient is currently dependent on opioids or is in acute opiate
+withdrawal
+
+
+
+
+<<<PAGE 1561>>>
+
+If patient has failed the naloxone challenge test or has a positive
+urine screen for opioids
+If patient has acute hepatitis or liver failure
+If there is a proven allergy to naltrexone
+If there is a proven allergy to polylactideco-glycolide (PLG),
+arboxymethylcellulose, or any other components of the diluent
+(injection)
+
+Special Populations
+Renal Impairment
+Dose adjustment not generally necessary for mild impairment
+Not studied in moderate to severe renal impairment
+Hepatic Impairment
+Has the potential to cause hepatocellular injury when given in
+excessive doses
+Dose adjustment not generally necessary for mild impairment
+Not studied in severe hepatic impairment
+Contraindicated in acute hepatitis or liver failure
+Cardiac Impairment
+Limited available data
+
+
+
+
+<<<PAGE 1564>>>
+
+Some patients complain of apathy or loss of pleasure with chronic
+treatment
+The combination of naltrexone and bupropion has demonstrated
+efficacy as treatment for obesity and is currently being evaluated in
+a long-term study to assess the cardiovascular health outcomes of
+this treatment
+
+Suggested Reading
+Anton RF , O’Malley SS , Ciraulo DA , et al. Combined pharmacotherapies
+and behavioral interventions for alcohol dependence: the COMBINE study:
+a randomized controlled trial . JAMA 2006 ;295 (17 ):2003 –17.
+Johansson BA , Berglund M , Lindregn A . Efficacy of maintenance
+treatment with naltrexone for opioid dependence: a meta-analytical review .
+Addiction 2006 ;101 (4 ):491 –503 .
+Mannelli P , Peindl K , Masand PS , Patkar SS . Long-acting injectable
+naltrexone for the treatment of alcohol dependence . Expert Rev Neurother
+2007 ;7 (10 ):1265 –77.
+Rosner S , Leucht S , Lehert P , Soyka M . Acamprosate supports
+abstinence, naltrexone prevents excessive drinking: evidence from a metaanalysis with unreported outcomes . J Psychopharmacol 2008 ;22 :11 –23 .
+
+
+
+
+<<<PAGE 1565>>>
+
+Naltrexone/Bupropion
+
+Therapeutics
+Brands
+Contrave
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: opioid receptor antagonist
+(naltrexone, O-RAn) and dopamine reuptake inhibitor and releaser
+(bupropion, D-RIRe)
+Opioid antagonist (naltrexone) combined with a norepinephrine
+dopamine reuptake inhibitor (bupropion); weight management
+medication
+Commonly Prescribed for
+(bold for FDA approved)
+Chronic weight management (adjunct to reduced-calorie diet
+and increased physical activity) in adults with an initial BMI of
+
+
+
+
+<<<PAGE 1566>>>
+
+at least 30 kg/m2 (obese) or at least 27 kg/m2 (overweight) in the
+presence of at least 1 weight-related comorbid condition
+How the Drug Works
+Bupropion increases dopamine and norepinephrine by blocking both
+the dopamine and the norepinephrine transporters. In the
+hypothalamus, these 2 neurotransmitters activate POMC neurons,
+causing the release of proopiomelanocortin (POMC). POMC is then
+broken down into alpha-melanocyte stimulating hormone, which
+binds to melanocortin 4 receptors to suppress appetite. However,
+stimulation of POMC neurons also activates an endogenous opioidmediated negative feedback loop, which mitigates the appetitesuppressing effects.
+Naltrexone can block mu opioid receptors, thus preventing opioidmediated negative feedback. Such an action would synergize with
+simultaneous activation of the appetite-suppressing pathway by
+bupropion. This results in more robust and long-lasting appetite
+suppression than with either drug alone
+How Long Until It Works
+At least 5% weight loss is generally achieved after 12 weeks on
+maximum daily dose
+If It Works
+Patients may achieve 5–10% reduction from baseline in body weight
+
+
+
+
+<<<PAGE 1567>>>
+
+If It Doesn’t Work
+Discontinue if 5% weight loss is not achieved after 12 weeks on
+maximum daily dose
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Naltrexone/bupropion itself should be administered in conjunction
+with reduced-calorie diet and increased physical activity
+Often best to try another strategy prior to resorting to augmentation
+Tests
+Measurement of blood glucose levels before and during treatment is
+recommended for patients with type 2 diabetes
+Measurement of blood pressure and heart rate prior to starting
+naltrexone/bupropion and during treatment is recommended,
+particularly in patients with cardiac or cerebrovascular disease
+
+Side Effects
+How Drug Causes Side Effects
+CNS side effects theoretically due to excessive actions at mu opioid
+receptors or excessive actions on norepinephrine and dopamine
+Notable Side Effects
+
+
+
+
+<<<PAGE 1569>>>
+
+Best Augmenting Agents for Side Effects
+Often best to try another treatment prior to resorting to
+augmentation strategies to treat side effects
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require discontinuation of
+bupropion
+
+Dosing and Use
+Usual Dosage Range
+16 mg naltrexone/180 mg bupropion twice per day
+Dosage Forms
+Extended-release tablet (naltrexone/bupropion) 8 mg/90 mg
+How to Dose
+Week 1: 8 mg/90 mg in the morning; week 2: increase to 8 mg/90
+mg twice per day; week 3: increase to 16 mg/180 mg in the morning
+and 8 mg/90 mg in the evening; week 4: increase to 16 mg/180 mg
+twice per day (maximum recommended dose)
+Discontinue if at least 5% weight loss is not achieved after 12 weeks
+on 16 mg/180 mg twice per day
+
+
+
+
+<<<PAGE 1570>>>
+
+Dosing Tips
+Do not break or chew tablets as this will alter controlled-release
+properties
+Can be taken with food, but should not be taken with a high-fat meal
+because this may increase bupropion and naltrexone systemic
+exposure
+Patients must be completely withdrawn and abstinent from opioids
+for 5 days (short-acting opioids) to 7 days (long-acting opioids)
+before starting naltrexone-bupropion; if patients require intermittent
+opioid treatment, naltrexone/bupropion should be temporarily
+discontinued and lower doses of opioids may be needed
+If intolerable anxiety, insomnia, agitation, akathisia, or activation
+occur upon either dosing initiation or discontinuation, consider the
+possibility of activated bipolar disorder and switch to a mood
+stabilizer or an atypical antipsychotic
+Overdose
+Naltrexone: nausea, abdominal pain, sedation, dizziness
+Bupropion: rarely lethal; seizures, cardiac disturbances,
+hallucinations, loss of consciousness
+Long-Term Use
+Has been evaluated in controlled studies up to 56 weeks
+
+
+
+
+<<<PAGE 1571>>>
+
+Habit Forming
+No
+How to Stop
+Tapering is prudent
+Pharmacokinetics
+Mean elimination half-life following a single dose of
+naltrexone/bupropion to healthy subjects was approximately 5 hours
+for naltrexone and 21 hours for bupropion
+Bupropion inhibits CYP450 2D6
+Drug Interactions
+Do not use with MAOIs, including 14 days after MAOIs are stopped
+Via CYP450 2D6 inhibition, naltrexone/bupropion could increase
+concentrations of drugs metabolized by CYP450 2D6 (e.g., TCAs,
+thioridazine); this may require lower doses of the concomitant
+medication
+Via CYP450 2D6 inhibition, bupropion could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine
+Bupropion is metabolized by CYP450 2B6; the maximum dose of
+naltrexone-bupropion in patients receiving a concomitant CYP450
+2B6 inhibitor (ticlopidine, clopidogrel) is 8 mg/90 mg twice per day;
+
+
+
+
+<<<PAGE 1572>>>
+
+coadministration of naltrexone/bupropion with CYP450 2B6
+inducers (e.g., ritonavir, lopinavir, efavirenz) is not recommended
+Bupropion should be used with caution in patients taking levodopa
+or amantadine, as these agents can potentially enhance dopamine
+neurotransmission and be activating
+Can block the effects of opioid-containing medications (e.g., some
+cough and cold remedies, antidiarrheal preparations, opioid
+analgesics)
+False-positive urine immunoassay screening tests for amphetamines
+have been reported in patients taking bupropion due to a lack of
+specificity of the screening tests
+False-positive results may be expected even following
+discontinuation of bupropion
+Naltrexone is hepatically metabolized by dihydrodiol
+dehydrogenase and not by the CYP450 enzyme system, and thus is
+unlikely to be affected by drugs that induce or inhibit CYP450
+enzymes
+Other Warnings/Precautions
+Naltrexone/bupropion can increase blood pressure or heart rate,
+particularly during the first 3 months of treatment
+Use cautiously with other drugs that increase seizure risk (TCAs,
+lithium, phenothiazines, thioxanthenes, some antipsychotics) or in
+
+
+
+
+<<<PAGE 1573>>>
+
+patients with predisposing factors that may increase the risk of
+seizures (e.g., history of head trauma)
+To prevent withdrawal in patients dependent on opioids, patients
+must be opioid-free (including tramadol) for at least 7–10 days prior
+to initiating treatment
+Attempts by patients to overcome blockade of opioid receptors by
+taking large amounts of exogenous opioids could lead to opioid
+intoxication or even fatal overdose
+Individuals who have previously been treated with naltrexone
+should be warned that they may respond to lower doses of opioids
+than previously used, and thus previous doses may also lead to
+opioid intoxication
+Weight loss may increase the risk of hypoglycemia in patients with
+type 2 diabetes mellitus treated with insulin and/or insulin
+secretagogues, and medication adjustments may be necessary
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+Warn patients about the possibility of activation of suicidal ideation
+and advise them to report such side effects immediately
+Do Not Use
+If patient has uncontrolled hypertension
+If patient is pregnant
+If patient has history of seizures
+
+
+
+
+<<<PAGE 1574>>>
+
+If patient is anorexic or bulimic, either currently or in the past
+If patient has acute hepatitis or liver failure
+If patient is abruptly discontinuing alcohol or sedative use
+If patient is taking opioid analgesics, is currently dependent on
+opioids, or is in acute opiate withdrawal
+If patient is taking an MAOI
+If patient is taking Wellbutrin, Zyban, Aplenzin, or any other
+formulation that contains bupropion
+If patient is taking Revia, Vivitrol, or any other formulation that
+contains naltrexone
+If there is a proven allergy to naltrexone or bupropion
+
+Special Populations
+Renal Impairment
+Maximum dose is 8 mg/90 mg twice per day in patients with
+moderate to severe impairment
+Not studied or recommended for use in patients with end-stage renal
+disease
+Hepatic Impairment
+Maximum dose is 8 mg/90 mg once per day in the morning
+
+
+
+
+<<<PAGE 1576>>>
+
+The Art of Psychopharmacology
+Potential Advantages
+Patients who have had past weight loss on either active compound
+alone may experience a more robust weight loss effect and better
+tolerability on the combination of naltrexone with bupropion than
+with administration of either drug alone
+Potential Disadvantages
+Women who are pregnant or wish to become pregnant
+Primary Target Symptoms
+Excess weight
+Pearls
+No head-to-head studies with other drugs approved for weight
+management, so comparative efficacy to these agents is unknown;
+however, some patients who do not respond to these other agents
+may respond to Contrave
+Unlike phentermine/topiramate, naltrexone/bupropion does not have
+abuse potential
+Could theoretically be effective in binge eating disorder
+May be useful in antipsychotic-induced weight gain, especially for
+nonpsychotic patients taking antipsychotic agents for depression
+
+
+
+
+<<<PAGE 1577>>>
+
+Contrave could theoretically exacerbate psychosis in patients with a
+psychotic disorder; however, no controlled studies of this use yet
+
+Suggested Reading
+Caixas A , Albert L , Capel I , Rigla M. Naltrexone sustainedrelease/bupropion sustained-release for the management of obesity: review
+of the data to date . Drug Des Devel Ther 2014 ;8 :1419 –27.
+Verpeut JL , Bello NT . Drug safety evaluation of naltrexone/bupropion for
+the treatment of obesity . Expert Opin Drug Saf 2014 ;13 (6 ):831–41 .
+Wang GJ , Tomasi D , Volkow ND , et al. Effect of combined naltrexone
+and bupropion therapy on the brain’s reactivity to food cues . Int J Obes
+(Lond) 2014 ;38 (5 ):682–8 .
+
+
+
+
+<<<PAGE 2579>>>
+
+Concerta (d,l-methylphenidate), 487
+Concordin (protriptyline), 657
+Concordine (protriptyline), 657
+Consta (risperidone), 687
+Contemnol (lithium), 415
+Contrave (naltrexone/bupropion), 541
+Control (lorazepam), 437
+Convulex (valproate), 829
+Convulsofin (valproate), 829
+Cosmopril (selegiline), 705
+Cotempla XR-ODT (d, l-methylphenidate), 487
+cyamemazine, 201
+Cymbalta (duloxetine), 263
+Cytomel (triiodothyronine), 813
+Dalcipran (milnacipran), 503
+Dalmadorm (flurazepam), 321
+Dalmane (flurazepam), 321
+Dalparan (zolpidem), 871
+Dapotum (fluphenazine), 313
+Dapotum Acutum (fluphenazine), 313
+Dapotum D (fluphenazine), 313
+Dapotum Depot (fluphenazine), 313
+Daprimen (amitriptyline), 25
+Darkene (flunitrazepam), 297
+Darleton (sulpiride), 741
+Daytrana (d, l-methylphenidate), 487
+Dayvigo (lemborexant), 395
+Decafen (fluphenazine), 313
+
+
+
+
+<<<PAGE 2601>>>
+
+Moditen Depot (fluphenazine), 313
+Moditen Enanthate (fluphenazine), 313
+Modium (lorazepam), 437
+molindone, 527
+Molipaxin (trazodone), 793
+Motipress (nortriptyline), 551
+Motival (nortriptyline), 551
+Motivan (paroxetine), 593
+Movergan (selegiline), 705
+Moverin (selegiline), 705
+Moxadil (amoxapine), 33
+Multipax (hydroxyzine), 355
+Multum (chlordiazepoxide), 147
+Murelax (oxazepam), 569
+Mutan (fluoxetine), 301
+Mydayis (amphetamine d, l), 45
+Mylproin (valproate), 829
+Mysimba (naltrexone/bupropion), 541
+Nailin (nortriptyline), 551
+Nalin (nortriptyline), 551
+nalmefene, 533
+naloxone with buprenorphine, 111
+naltrexone, 537
+naltrexone/bupropion, 541
+Namenda (memantine), 473
+Namenda XR (memantine XR), 473
+Namzaric (memantine/donepezil combination), 243 , 473
+Nansius (clorazepate), 185
+
+
+
+
+<<<PAGE 2612>>>
+
+Relaxedans (chlordiazepoxide), 147
+Reliberan (chlordiazepoxide), 147
+Relistor (naltrexone), 537
+Relprevv (olanzapine), 559
+Remdue (flurazepam), 321
+Remergil (mirtazapine), 509
+Remeron (mirtazapine), 509
+Remestan (temazepam), 755
+Reminyl (galantamine), 337
+Reneuron (fluoxetine), 301
+Repazine (chlorpromazine), 153
+Reposium (temazepam), 755
+Reseril (nefazodone), 545
+Restful (sulpiride), 741
+Restoril (temazepam), 755
+Retinyl (maprotiline), 465
+Reval (diazepam), 229
+Revatio (sildenafil), 729
+Revia (naltrexone), 537
+Rexer (mirtazapine), 509
+Rexulti (brexpiprazole), 103
+Rho-Doxepin (doxepin), 255
+Rho-Fluphenazine Decanoate (fluphenazine), 313
+Rho-Haloperidol (haloperidol), 347
+Rho-Trimine (trimipramine), 817
+Ridazine (thioridazine), 759
+Rilamir (triazolam), 799
+Rimarix (moclobemide), 515
+
+
+
+
+<<<PAGE 2626>>>
+
+Vividyl (nortriptyline), 551
+Vivitrol (naltrexone), 537
+Vivol (diazepam), 229
+vortioxetine, 853
+Vraylar (cariprazine), 137
+Vulbegal (flunitrazepam), 297
+Vulpral (valproate), 829
+Vyleesi (bremelanotide), 95
+Vyvanse (lisdexamfetamine), 409
+Wakix (pitolisant), 639
+Wellbatrin (bupropion), 117
+Wellbutrin (bupropion), 117
+Wellbutrin SR (bupropion SR), 117
+Wellbutrin XL (bupropion XL), 117
+Xanax (alprazolam), 11
+Xanax XR (alprazolam XR), 11
+Xanor (alprazolam), 11
+Xepin (doxepin), 255
+Xeplion (paliperidone), 581
+Xyrem (sodium oxybate), 733
+Zactin (fluoxetine), 301
+Zafrionil (haloperidol), 347
+zaleplon, 859
+Zelapon (selegiline), 705
+Zemorcon (sulpiride), 741
+Zentiva (aripiprazole), 53
+
+
+
+
+<<<PAGE 2628>>>
+
+Index by Use
+Commonly Prescribed For (bold for FDA approved)
+Aggression
+clozapine, 191
+cyamemazine, 201
+propranolol, 653
+zuclopenthixol, 889
+Alcohol abstinence
+acamprosate , 1
+disulfiram , 239
+Alcohol dependence, 255
+nalmefene, 533
+naltrexone , 537
+Alcohol withdrawal
+chlordiazepoxide , 11
+clonidine, 179
+clorazepate , 185
+diazepam , 229
+lorazepam, 437
+oxazepam , 569
+
+
+
+
+<<<PAGE 2647>>>
+
+lofexidine , 427
+naltrexone , 537
+Panic disorder
+alprazolam , 11
+citalopram, 159
+clonazepam , 173
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine, 325
+isocarboxazid, 375
+lorazepam, 437
+mirtazapine, 509
+nefazodone, 545
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+reboxetine, 681
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Parkinson’s disease
+selegiline , 705
+zonisamide, 875
+Parkinson’s disease dementia
+
+
+
+
+<<<PAGE 2657>>>
+
+Tremor
+propranolol , 653
+Trigeminal neuralgia
+carbamazepine , 131
+Vasomotor symptoms
+clonidine, 179
+desvenlafaxine, 215
+duloxetine, 263
+paroxetine , 593
+Weight management
+amphetamine (d,l), 45
+naltrexone/bupropion , 541
+phentermine/topiramate , 619
+topiramate , 781
+zonisamide, 875
+
+
+
+
+<<<PAGE 2670>>>
+
+naltrexone, 537
+oxazepam, 569
+varenicline, 837
+Tic suppressants
+aripiprazole, 53
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+pimozide, 627
+Wake-promoting agents
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+pitolisant, 639
+sodium oxybate, 733
+solriamfetol, 737
+Weight management
+amphetamine (d,l), 45
+naltrexone/bupropion, 541
+phentermine/topiramate, 619
+zonisamide, 875
+
+
+
+
+<<<PAGE 2671>>>
+
+Abbreviations
+5HT
+serotonin
+ACh
+acetylcholine
+AChE
+acetylcholinesterase
+ADHD
+attention deficit hyperactivity disorder
+AE
+adverse effect
+AIMS
+Abnormal Involuntary Movement Scale
+ALPT
+total serum alkaline phosphatase
+ALT
+
+

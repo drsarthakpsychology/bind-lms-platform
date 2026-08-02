@@ -1,0 +1,1630 @@
+<<<PAGE 333>>>
+
+312  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Recognised minimum effective doses of antidepressants
+The recommended minimum effective doses of antidepressants are summarised in Table 3.2.
+Table 3.2 The recommended minimum effective doses of antidepressants
+Antidepressant
+
+Dose
+
+Tricyclics
+
+Unclear; at least 75–100mg/day,1 possibly 125mg/day2
+
+Lofepramine
+
+140mg/day3
+
+CHAPTER 3
+
+SSRIs
+Citalopram
+
+20mg/day4
+
+Escitalopram
+
+10mg/day5
+
+Fluoxetine
+
+20mg/day6
+
+Fluvoxamine
+
+50mg/day7
+
+Paroxetine
+
+20mg/day8
+
+Sertraline
+
+50mg/day9
+
+Others
+Agomelatine
+
+25mg/day10
+
+Bupropion
+
+150mg/day11
+
+Desvenlafaxine
+
+50mg/day12
+
+Duloxetine
+
+60mg/day13,14
+
+Levomilnacipran
+
+40mg/day15
+
+Mirtazapine
+
+30mg/day (15mg?16)
+
+Moclobemide
+
+300mg/17
+
+Reboxetine
+
+8mg/day18
+
+Trazodone
+
+150mg/day19
+
+Venlafaxine
+
+75mg/day20
+
+Vilazodone
+
+20mg/day15
+
+Vortioxetine
+
+10mg/day15
+
+
+
+
+<<<PAGE 391>>>
+
+370  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 3.13 (Continued)
+Drug name and
+route
+
+CHAPTER 3
+
+Intravenous
+clomipramine
+
+Dosing information
+
+Manufacturer
+
+Notes
+
+25mg/2mL injection
+Starting dose is 25mg
+diluted in 500mL NaCl
+0.9% by slow infusion
+over 90 minutes.
+Increased to 250–
+300mg in increments of
+25mg/day over 10–14
+days54,55
+
+Novartis
+Defiante
+
+The most common reported side
+effects are similar to the oral
+formulation, which included nausea,
+sweating, restlessness, flushing,
+drowsiness, fatigue, abdominal distress
+and nervousness. ECG monitoring
+recommended
+
+Another report used
+starting dose of 50mg
+IV per day and titrated
+up to a maximum dose
+of 225mg/day over 5–7
+days56
+
+Reduction of symptoms was detected
+after one week of the first IV dose
+
+Intravenous
+citalopram
+
+40mg/mL injection
+Doses from 20 to 40mg
+in 250mL NaCL 0.9%
+or Glucose 5%
+Doses up to 80mg have
+been used for OCD
+Rate of infusion is
+20mg per hour
+
+Lundbeck – available in
+some countries. Not
+licensed in the UK, can
+be imported from
+Germany but may take
+3–4 weeks to obtain
+
+The most commonly reported side
+effects are nausea, headache, tremor
+and somnolence similar to adverse
+effects of the oral preparation. A case
+of acute hyperkinetic delirium has also
+been reported. Used for depression
+and obsessive compulsive disorder.
+ECG monitoring recommended
+
+Intravenous
+escitalopram
+
+10mg slow infusion
+over 60 minutes
+
+Lundbeck – not
+marketed anywhere in
+the world
+
+Studies to date have only looked at
+pharmacokinetic profile. ECG
+monitoring recommended
+
+Intravenous
+mirtazapine
+
+6mg/2mL infusion
+solution
+15mg/5mL infusion
+solution
+Dose 15mg in Glucose
+5% over 60 minutes
+
+Contact local importer
+
+The most common reported side
+effects are nausea, sedation and
+dizziness similar to side effects of the
+oral preparation
+
+Intravenous
+trazodone57
+
+25–100mg in 250mL of
+saline daily for 1 week,
+lasting approximately
+1.5 hours. IV doses
+were decided according
+to the severity of
+depressive symptoms
+
+Available only in Italy
+
+Trazodone showed a significant
+improvement of symptoms only after
+one week of IV treatment and was
+better tolerated than clomipramine
+
+Intramuscular
+flupentixol
+decanoate
+depot58
+
+5–10mg/2 weeks
+
+Lundbeck
+Mylan
+
+IM flupentixol had a mood-elevating
+effect and is well tolerated at these
+doses. Extrapyramidal effects are rarely
+seen. Side-effects reported include dry
+mouth, dizziness and drowsiness
+
+
+
+
+<<<PAGE 399>>>
+
+378  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Drug interactions with antidepressants
+Drugs can interact with each other in two different ways:
+
+CHAPTER 3
+
+■■
+
+Pharmacokinetic interactions where one drug interferes with the absorption, distribution, metabolism or elimination of another drug. This may result in a subtherapeutic
+effect or toxicity. The largest group of pharmacokinetic interactions involves drugs
+that inhibit or induce hepatic CYP450 enzymes (see Tables 3.14 and 3.15). Other
+enzyme systems include FMO1 and UGT.2 While both of these latter enzyme systems
+are involved in the metabolism of psychotropic drugs, the potential for drugs to
+inhibit or induce these enzyme systems has been less well studied.
+The clinical consequences of pharmacokinetic interactions in an individual patient
+can be difficult to predict. Some are highly clinically significant; for example, when
+paroxetine (a potent CYP2D6 inhibitor) is taken with tamoxifen, up to 1 extra
+woman in 20 will die within 5 years of stopping tamoxifen.3 The following factors
+affect outcome of interactions: the degree of enzyme inhibition or induction, the
+pharmacokinetic properties of the affected drug and other co-administered drugs,
+the relationship between plasma level and pharmacodynamic effect for the affected
+drug, and patient-specific factors such as variability in the role of primary and secondary metabolic pathways and the presence of co-morbid physical illness.4
+
+Table 3.14 Summary of antidepressant effects on CYP enzymes5–7
+Antidepressant
+
+Substrate for
+
+Inhibits
+
+Citalopram
+
+CYP2C19, CYP2D6, CYP3A4
+
+CYP2D6 (weak)
+
+Escitalopram
+
+CYP2C19, CYP2D6, CYP3A4
+
+CYP2D6 (weak)
+
+Fluoxetine
+
+CYP2D6, CYP3A4
+
+CYP2D6 (moderate to potent),
+CYP2C9 (moderate), CYP3A4
+(weak)
+
+Fluvoxamine
+
+CYP2D6; others possibly involved
+
+CYP1A2 (potent), CYP2C19
+(potent), CYP3A4 (weak), CYP2C9
+(weak)
+
+Paroxetine
+
+CYP2D6
+
+CYP2D6 (potent)
+
+Sertraline
+
+CYP3A4, CYP2D6 (minor) and possibly
+other pathways
+
+CYP2D6 (weak)
+
+Desvenlafaxine
+
+CYP3A4
+
+CYP2D6 (weak)
+CYP2D6 (moderate)
+
+SSRIs
+
+SNRIs
+
+Duloxetine
+
+CYP1A2, CYP2D6
+
+Levomilnacipran
+
+CYP3A4, CYP2C8, CYP2C19, CYP2D6
+
+Venlafaxine
+
+CYP2D6, CYP3A4
+
+CYP2D6 (weak)
+(Continued)
+
+
+
+
+<<<PAGE 410>>>
+
+Depression and anxiety disorders  389
+
+Depression confers an increased risk of cardiovascular disease1 and sudden cardiac
+death2 perhaps because of platelet activation,3 decreased heart rate variability,4 reduced
+physical activity,5 an association with an increased risk of diabetes and/or other factors.
+Tricyclic antidepressants (TCAs) have established arrhythmogenic activity which
+arises as a result of potent blockade of cardiac sodium channels and variable activity at
+potassium channels.6 ECG changes produced include PR, QRS and QT prolongation
+and the Brugada syndrome.7 Normal clinical use of nortriptyline has been associated in
+one study with an increased risk of cardiac arrest,8 although a large cohort study did
+not confirm this finding.9 Lofepramine, for reasons unknown, seems to lack the overdose arrhythmogenicity of other TCAs, despite its major metabolite, desipramine, being
+a potent potassium channel blocker.10 Oddly, in one study,11 clinical use of lofepramine
+was associated with an increased risk of myocardial infarction, whereas other antidepressants were not. In patients taking tricyclics, ECG monitoring is a more meaningful
+and useful measure of toxicity than plasma level monitoring.
+There is limited evidence that venlafaxine is a sodium channel antagonist12 and a
+weak antagonist at hERG potassium channels. Arrhythmia is a rare occurrence even
+after massive overdose,13–16 and ECG changes no more common than with SSRIs.17 No
+ECG changes are seen in therapeutic dosing,18 and sudden cardiac death in clinical use
+is no more common than with fluoxetine or citalopram.9,19 Desvenlafaxine does not
+appear to prolong QT even in overdose.20
+Moclobemide,21 citalopram,22,23 escitalopram,24 bupropion (amfebutamone),25 trazodone26,27 and sertraline,28 amongst others,1 have been reported to prolong the QTc interval in overdose, but the clinical consequences of this are uncertain. Sertraline prolongs
+QT by 5–10ms at 400mg a day,29 but QT changes are not usually seen with most SSRIs
+at normal clinical doses.30,31 Nonetheless, an association between SSRIs (as a group)
+and QT changes in normal dosing can be shown,32 but this seems largely to be driven
+by the effects of citalopram and escitalopram.33 The effect is dose-related33 but modest.32 Neither a large database study9 nor a large cohort study34 found any association
+between citalopram treatment and arrhythmia or cardiac mortality in routine clinical
+practice; in fact, higher doses of citalopram (>40mg) were associated with fewer adverse
+outcomes than were lower doses.34 A large study found no excess risk of cardiac arrest
+and sudden death for citalopram or escitalopram,35 but a more recent Taiwanese study
+showed a small increase in mortality with these drugs.36
+Vortioxetine seems to have no effect on QT,37–39 similarly, agomelatine has no effect,
+even at supratherapeutic doses.40 Vilazodone has no effect on cardiac conduction.41
+Levomilnacipran42 and milnacipran43 probably have no effect on QT, at least at therapeutic doses.
+
+Use in at-risk patients
+There is clear evidence for the safety of sertraline44 and mirtazapine45 (and to a lesser
+extent, citalopram,45 fluoxetine46 and bupropion47) in subjects at risk of arrhythmia due
+to recent myocardial infarction. One trial found that SSRIs and trazodone decrease the
+risk of MI,48 another suggested no effect in either direction for any antidepressant.49
+
+CHAPTER 3
+
+Antidepressant-induced arrhythmia
+
+
+
+
+<<<PAGE 411>>>
+
+390  The Maudsley® Prescribing Guidelines in Psychiatry
+
+One study supports the safety of citalopram in patients with coronary artery disease50
+(although citalopram is linked to a risk of torsades de pointes51). Escitalopram did not
+affect mortality in a trial in patients with heart failure,52 and a later systematic review
+found no adverse effect on mortality for any SSRIs in heart failure.53 Sertraline may
+help improve cardiovascular risk factors,54 but in older people, there is an indication
+that all modern antidepressants confer an increased risk of arrhythmia.55
+
+CHAPTER 3
+
+Relative cardiotoxicity
+Relative cardiotoxicity of antidepressants is difficult to establish with any precision.
+Surveillance monitoring data suggest that all marketed antidepressants have been linked
+to arrhythmia (ranging from clinically insignificant to life threatening) and sudden cardiac death. For a substantial proportion of drugs these figures are more likely to reflect
+coincidence rather than causation.
+The Fatal Toxicity Index (FTI) may provide some means for comparison. This is a
+measure of the number of overdose deaths per million (FP10) prescriptions issued. FTI
+figures suggest high toxicity for tricyclic drugs (especially dosulepin but not lofepramine),
+medium toxicity for venlafaxine and moclobemide, and low toxicity for SSRIs, mirtazapine and reboxetine.56–60 However, FTI does not necessarily reflect only cardiotoxicity (antidepressants variously cause serotonin syndrome, seizures and coma) and is, in
+any case, open to other influences. This is best evidenced in the change in FTI over time.
+A good example here is nortriptyline, the FTI of which has been estimated at 0.616 and
+39.212 and several values in between.56,57,59 This change probably reflects changes in the
+type of patient prescribed nortriptyline, but ‘double-counting’ (nortriptyline is a metabolite of amitriptyline) at post-mortem also plays a part. There is good evidence that
+venlafaxine is relatively more often prescribed to patients with more severe depression
+and who are relatively more likely to attempt suicide.61–63 This is likely to inflate venlafaxine’s FTI and erroneously suggest greater inherent toxicity. Drugs with consistently
+low FTIs can probably be assumed to have very low risk of arrhythmias.
+Citalopram and escitalopram have very low overdose toxicity despite QT prolongation
+occurring in about one-third of reported overdoses.64 Standard doses of citalopram may
+be linked to an increased risk of cardiac arrest,8 but as mentioned earlier, other data suggest no increased risk of arrhythmia or death with standard and higher licensed doses of
+citalopram and escitalopram.34 Citalopram and escitalopram are probably the most cardiotoxic of the SSRIs, but their toxicity is modest at worst, and possibly insignificant.
+
+Summary
+Tricyclics (but not lofepramine) have an established link to ion channel blockade and
+cardiac arrhythmia.
+■■ Non-tricyclics generally have a very low risk of inducing arrhythmia.
+■■ Sertraline is recommended post MI, but other SSRIs and mirtazapine are also likely
+to be safe.
+■■ Bupropion, citalopram, escitalopram, moclobemide, lofepramine and venlafaxine
+should be used with caution or avoided in those at risk of serious arrhythmia (those
+with heart failure, left ventricular hypertrophy; previous arrhythmia or MI). An ECG
+should be performed at baseline and 1 week after every increase in dose if any of
+these drugs are used in at-risk patients.
+■■
+
+
+
+
+<<<PAGE 417>>>
+
+396  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+References
+1. Egger C, et al. A review on hyponatremia associated with SSRIs, reboxetine and venlafaxine. Int J Psychiatry Clin Pract 2006; 10:17–26.
+2. Liamis G, et al. A review of drug-induced hyponatremia. Am J Kidney Dis 2008; 52:144–153.
+3. Letmaier M, et al. Hyponatraemia during psychopharmacological treatment: results of a drug surveillance programme. Int J
+Neuropsychopharmacol 2012; 15:739–748.
+4. Kruger S, et al. Duloxetine and hyponatremia: a report of 5 cases. J Clin Psychopharmacol 2007; 27:101–104.
+5. Naschitz JE. Escitalopram dose-dependent hyponatremia. J Clin Pharmacol 2018; 58:834–835.
+6. Das S, et al. Dose dependent hyponatremia caused by Vilazodone: a case report. Asian J Psychiatr 2019; 43:213.
+7. Gandhi S, et al. Second-generation antidepressants and hyponatremia risk: a population-based cohort study of older adults. Am J Kidney Dis
+2017; 69:87–96.
+8. Mohan S, et al. Prevalence of hyponatremia and association with mortality: results from NHANES. Am J Med 2013; 126:1127–1137.e1121.
+9. Selmer C, et al. Hyponatremia, all-cause mortality, and risk of cancer diagnoses in the primary care setting: a large population study. Eur J
+Intern Med 2016; 36:36–43.
+10. Thomas A, et al. Hyponatraemia and the syndrome of inappropriate antidiuretic hormone secretion associated with drug therapy in psychiatric patients. CNS Drugs 1995; 5:357–369.
+11. Movig KL, et al. Serotonergic antidepressants associated with an increased risk for hyponatraemia in the elderly. Eur J Clin Pharmacol 2002;
+58:143–148.
+12. Movig KL, et al. Association between antidepressant drug use and hyponatraemia: a case-control study. Br J Clin Pharmacol 2002;
+53:363–369.
+13. Kirby D, et al. Hyponatraemia and selective serotonin re-uptake inhibitors in elderly patients. Int J Geriatr Psychiatry 2001; 16:484–493.
+14. De Picker L, et al. Antidepressants and the risk of hyponatremia: a class-by-class review of literature. Psychosomatics 2014; 55:536–547.
+15. Dirks AC, et al. Recurrent hyponatremia after substitution of citalopram with duloxetine. J Clin Psychopharmacol 2007; 27:313.
+16. Lim SY, et al. Hyponatraemia: the importance of obtaining a detailed history and corroborating point-of-care analysis with laboratory testing. BMJ Case Rep 2019; 12:e229221.
+17. Bavbek N, et al. Recurrent hyponatremia associated with citalopram and mirtazapine. Am J Kidney Dis 2006; 48:e61–e62.
+18. Ladino M, et al. Mirtazapine-induced hyponatremia in an elderly hospice patient. J Palliat Med 2006; 9:258–260.
+19. Cheah CY, et al. Mirtazapine associated with profound hyponatremia: two case reports. Am J Geriatr Pharmacother 2008; 6:91–95.
+20. Grover S, et al. Escitalopram-associated hyponatremia. Psychiatry Clin Neurosci 2007; 61:132–133.
+21. Covyeou JA, et al. Hyponatremia associated with escitalopram. N Engl J Med 2007; 356:94–95.
+22. Vidyasagar S, et al. Escitalopram induced SIADH in an elderly female: a case study. Psychopharmacol Bull 2017; 47:64–67.
+23. Şahan E, et al. Duloxetine induced hyponatremia. Turk Psikiyatri Dergisi 2019; 30:287–289.
+24. Sun CF, et al. Duloxetine-induced hyponatremia in an elderly male patient with treatment-refractory major depressive disorder. Case Rep
+Psychiatry 2019; 2019:4109150.
+25. Hu D, et al. Hyponatremia induced by duloxetine: a case report. Consult Pharm 2018; 33:446–449.
+26. Yoshida K, et al. Acute hyponatremia resulting from duloxetine-induced syndrome of inappropriate antidiuretic hormone secretion. Intern
+Med 2019; 58:1939–1942.
+27. Wang D, et al. Rapid-onset hyponatremia and delirium following duloxetine treatment for postherpetic neuralgia: case report and literature
+review. Medicine (Baltimore) 2018; 97:e13178.
+28. Takayama A, et al. Duloxetine and angiotensin II receptor blocker combination potentially induce severe hyponatremia in an elderly woman.
+Intern Med 2019; 58:1791–1794.
+29. Pelayo-Terán JM, et al. Safety in the use of antidepressants: vortioxetine-induce hyponatremia in a case report. Revista de psiquiatria y salud
+mental 2017; 10:219–220.
+30. Lundbeck Limited. Summary of product characteristics. Brintellix (vortioxetine) tablets 5, 10 and 20mg. 2020; https://www.medicines.org.
+uk/emc/medicine/30904.
+31. Lee G, et al. Syndrome of inappropriate secretion of antidiuretic hormone due to desvenlafaxine. Gen Hosp Psychiatry 2013; 35:574.
+e571–573.
+32. O’Sullivan D, et al. Hyponatraemia and lofepramine. Br J Psychiatry 1987; 150:720–721.
+33. Wylie KR, et al. Lofepramine-induced hyponatraemia. Br J Psychiatry 1989; 154:419–420.
+34. Ranieri P, et al. Reboxetine and hyponatremia. N Engl J Med 2000; 342:215–216.
+35. Miller MG. Tricyclics as a possible cause of hyponatremia in psychiatric patients. Am J Psychiatry 1989; 146:807.
+36. Colgate R. Hyponatraemia and inappropriate secretion of antidiuretic hormone associated with the use of imipramine. Br J Psychiatry 1993;
+163:819–822.
+37. Koelkebeck K, et al. A case of non-SIADH-induced hyponatremia in depression after treatment with reboxetine. World J Biol Psychiatry
+2009; 10:609–611.
+38. Kate N, et al. Bupropion-induced hyponatremia. Gen Hosp Psychiatry 2013; 35:681.e611–682.
+39. Mercier S, et al. Severe hyponatremia induced by moclobemide (in French). Therapie 1997; 52:82–83.
+40. Peterson JC, et al. Inappropriate antidiuretic hormone secondary to a monamine oxidase inhibitor. JAMA 1978; 239:1422–1423.
+41. Rochoy M, et al. [Antidepressive agents and hyponatremia: a literature review and a case/non-case study in the French Pharmacovigilance
+database]. Therapie 2018; 73:389–398.
+
+
+
+
+<<<PAGE 442>>>
+
+Depression and anxiety disorders  421
+
+Antidepressants: relative adverse effects – a rough guide
+Table 3.26 gives a very approximate, unreferenced view of the absolute and relative risk
+of a small range of adverse effects associated with standard antidepressants.
+
+Table 3.26 Common adverse effects of antidepressants
+
+Sedation
+
+Postural
+hypotension§
+
+Cardiac
+conduction
+disturbance§
+
+Anticholinergic Nausea/
+effects
+Vomiting
+
+Sexual
+dysfunction§
+
+Amitriptyline
+
++++
+
++++
+
++++
+
++++
+
++
+
++++
+
+Clomipramine
+
+++
+
++++
+
++++
+
+++
+
+++
+
++++
+
+Dosulepin
+
++++
+
++++
+
++++
+
+++
+
++
+
++
+
+Doxepin
+
++++
+
+++
+
++++
+
++++
+
++
+
++
+
+Imipramine
+
+++
+
++++
+
++++
+
++++
+
++
+
++
+
+Lofepramine
+
++
+
++
+
++
+
+++
+
++
+
++
+
+Nortriptyline
+
++
+
+++
+
+++
+
++
+
++
+
++
+
+Trimipramine
+
++++
+
++++
+
+++
+
+++
+
++
+
++
+
+Agomelatine
+
++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Duloxetine (SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Levomilnacipran
+(SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Mianserin
+
+++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Mirtazapine
+
++++
+
++
+
+–
+
++
+
++
+
+–
+
+Reboxetine
+
++
+
+–*
+
+–
+
++
+
++
+
++
+
+Trazodone
+
++++
+
++
+
++
+
++
+
++
+
++
+
+Venlafaxine (SNRI)
+
+–
+
+–*
+
++
+
+–
+
++++
+
++++
+
+Citalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Escitalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Fluoxetine
+
+–
+
+–
+
+–
+
+–
+
+++
+
++++
+
+Fluvoxamine
+
++
+
+–
+
+–
+
+–
+
++++
+
++++
+
+Paroxetine
+
++
+
+–
+
+–
+
++
+
+++
+
++++
+
+Drug
+
+Other
+antidepressants
+
+Selective
+serotonin
+reuptake
+inhibitors (SSRIs)
+
+(Continued)
+
+CHAPTER 3
+
+Tricyclics
+
+
+
+
+<<<PAGE 450>>>
+
+Depression and anxiety disorders  429
+
+Box 3.7 Obsessive compulsive disorder
+First-line drug treatment (In order of preference)
+Drug
+
+Comments
+
+Any SSRI
+(Up to maximum licensed dose
+
+If the first SSRI is not tolerated or has a poor response an
+alternative SSRI may be tried29
+
+Clomipramine
+(Up to 250mg)
+
+Owing to poorer tolerability, recommended trying at least one SSRI
+first29
+
+39
+
+Add antipsychotic to SSRI
+(Low to moderate doses of
+antipsychotics used in studies)100,101
+
+Most evidence supports the use of aripiprazole or risperidone.100
+Some evidence for haloperidol101
+
+Citalopram
+40mg with clomipramine 150mg
+
+Based on small randomised open label study102 Recommended by
+NICE29
+ECG monitoring required
+
+Acetylcysteine103
+up to 2400mg/day added to SRRI or
+clomipramine
+
+Gastrointestinal adverse effects may be problematic. Two of five
+controlled studies negative. Pooled effect shows benefit104
+
+Lamotrigine
+100mg + added to SSRI105
+
+Lamotrigine dose must be titrated gradually as indicated in the SPC
+May worsen OCD in some106
+
+Topiramate
+up to 400mg added to SSRI107,108
+
+Topiramate is not well tolerated, suggested benefits for compulsion
+but not obsessions.107 Two trials found topiramate ineffective109,110
+
+Experimental
+High dose SSRI:
+Escitalopram
+25–50mg111
+Sertraline
+250–400mg112
+
+Dose titrated gradually according to tolerability. ECG monitoring
+recommended
+
+Memantine
+
+Good evidence for 20mg/day added to SSRIs113
+
+NSAIDS
+Eg celecoxib 400mg/day
+
+Some supporting evidence110
+
+Amantadine
+200mg/day
+
+One positive RCT114
+
+SNRIs
+Venlafaxine
+up to 375mg115
+Duloxetine
+60mg116
+Mirtazapine
+30–60mg117
+
+Small trial in 30 patients
+
+5HT3 antagonists
+Granisetron
+1mg with fluvoxamine 200mg118
+Ondansetron
+4mg with fluoxetine 20mg119
+
+Some evidence for each drug but ondansetron may be the more
+effective120
+
+(Continued)
+
+CHAPTER 3
+
+Second-line drug treatment (Unlicensed or weaker evidence base)
+
+
+
+
+<<<PAGE 564>>>
+
+started at low doses (25–50mg daily and 5–10mg daily, respectively) and titrated
+to therapeutic doses (50–200mg daily and 10–20mg daily, respectively). The halflives of sertraline, escitalopram, and some other antidepressants may be shorter
+in young people than adults, so twice-daily dosing may be considered, particularly at low doses, to prevent discontinuation symptoms.24 Escitalopram is
+approved by the FDA for treatment of depression in patients aged 12 years
+and over.
+■■ Partial or non-response to SSRI alone: For children and adolescents who have
+significant depressive symptoms resulting in distress or impairment despite an
+adequate trial of an SSRI alone, consider combination SSRI and psychological
+therapy.21,25
+■■ Medication for treatment-resistant depression (partial or non-response to SSRI
+and psychological therapy): For children and adolescents who have significant
+depressive symptoms resulting in distress or impairment despite adequate trials of
+an SSRI (fluoxetine) and psychological therapy, consider a switch to a different
+SSRI (sertraline, citalopram4 or escitalopram).25 This guidance is based on the
+TORDIA trial, the only randomised controlled trial that has examined the comparative efficacy of different treatment strategies for SSRI-resistant depression in
+young people.6 This trial found that many participants improved when switched
+to another SSRI or venlafaxine, and improved even more when this medication
+switch was combined with concurrent CBT. A switch to an SSRI was just as efficacious as a switch to venlafaxine but had less severe side effects, so an SSRI switch
+is preferred.
+■■ If limited response despite adequate trials of the above medications, consider augmenting SSRI treatment with another medication such as a second-generation antipsychotic or lithium – in particular, consider augmentation if there has been partial
+response to an SSRI. Alternatively, consider switching to an antidepressant from a
+different class, for example mirtazapine (particularly consider mirtazapine if sleep is
+poor).
+Finally, if still no response to these medications and the young person’s depression is
+very severe, interventional treatments could be considered, such as repetitive transcranial magnetic stimulation, electroconvulsive therapy or esketamine. These interventional treatments are not recommended for young children. Owing to a lack of
+research in children and adolescents, all recommendations beyond switching to a
+different SSRI are based on evidence from adult studies.25
+■■ NICE recommends against prescribing paroxetine, venlafaxine, tricyclic antidepressants, or St. John’s Wort for depression in young people, because of potential side
+effects and interactions.4
+■■ Omega-3 fatty acid supplementation has minimal-to-no benefit in adults with depression,25 and although an initial randomised controlled trial in young people suggested
+a benefit,26 a subsequent larger trial did not demonstrate effectiveness.27 Therefore,
+omega-3 fatty acid supplementation is not recommended for depression in young
+people.
+■■ Box 5.1 summarises medication treatment for depression in children and adolescents.
+
+CHAPTER 5
+
+Children and adolescents  543
+
+
+
+
+<<<PAGE 565>>>
+
+544  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Box 5.1 Summary of pharmacotherapy for depression in children and adolescents3,4,21,25
+Medication
+
+Starting dose
+
+Therapeutic dose range
+
+First line
+
+Fluoxetine
+(FDA approved for 8 years and
+over)
+
+10mg/day
+
+20–60mg/day
+
+Second line
+
+Sertraline
+or
+Citalopram*
+
+25–50mg/day
+
+50–200mg/day
+
+5–10mg/day
+
+10–40mg/day
+
+Third line
+
+Escitalopram
+(FDA approved for 12 years and
+over)
+
+5–10mg/day
+
+10–20mg/day
+
+Fourth line
+
+Consider augmentation of antidepressant with second-generation antipsychotic
+or lithium**
+Consider mirtazapine** (where sedation required)
+
+*Caution advised in cardiac or hepatic disease.
+**No RCTs available in young people (but evidence from adult trials).
+
+CHAPTER 5
+
+After prescribing
+Acute phase
+Monitor for adverse effects regularly, for example weekly for the first four weeks.
+Children and adolescents generally tolerate SSRIs well. Potential adverse effects
+include those experienced by adults, described in Chapter 3. Additionally, young people taking SSRIs have a small increased risk of suicidality and switch to mania (see
+‘specific issues’ below). Therefore risk of harm, mood, and behaviour should be monitored closely and addressed.3,4,21,25
+■■ After four weeks of SSRI treatment at a therapeutic dose, assess response including
+depression severity using the measures completed at baseline. Most therapeutic effects
+appear by four weeks.9
+■■ If partial or non-response, consider the possibility of poor treatment adherence, inaccurate diagnosis, comorbidity, or modifiable maintaining factors.
+■■ If none of these factors explain the continued depressive symptoms and the young
+person does not have adverse effects, consider increasing the dose. Reassess four
+weekly.3,25
+■■ If adverse effects develop, consider reducing the dose to the highest tolerated dose.
+■■ If partial or non-response after eight weeks of the maximum recommended (or highest tolerated) therapeutic dose of an SSRI, consider the medication changes outlined
+above.
+■■
+
+Maintenance phase
+■■
+
+Continue medication for 6–12 months after remission to reduce the risk of relapse.
+Consider a longer maintenance phase if depressive episodes were recurrent or
+chronic.3,4,21,25
+
+
+
+
+<<<PAGE 678>>>
+
+No formal recommendations are available for dosing in older adults2
+Reduced doses may be advisable in geriatric patients due to decreased clearance; every other day dosing may
+be considered in geriatric patients with poor tolerability to the drug
+For older adults, possible reduced renal clearance of desvenlafaxine should be considered when determining
+an appropriate dose
+Dosage in renal impairment:
+CrCl 50–80mL/minute: no dosage adjustment needed
+CrCl 30–50mL/minute: 50mg daily is the recommended daily and maximum dose
+CrCl <30mL/minute or end-stage renal disease: 50mg every other day is the recommended daily and
+maximum dose
+Older adults are also at greater risk for developing clinically significant hyponatremia2
+
+Depression/anxiety disorder
+
+Depression/anxiety disorder
+
+Duloxetine
+
+Escitalopram
+
+5mg mane
+
+30mg daily*
+
+5–10mg mane
+
+60mg daily
+
+10mg mane
+(Continued)
+
+120mg daily3
+(caution as limited data in
+elderly for this dose)
+
+400mg daily2
+
+75mg daily1
+
+Desvenlafaxine
+
+10mg nocte (dose increases should be
+cautious)
+
+30–75mg daily1 should be
+reached after about 10 days
+
+Depression/phobic and
+obsessional states
+
+20mg mane
+
+50mg nocte
+
+Maximum dose in
+elderly
+
+10–20mg mane
+
+Clomipramine
+
+10mg mane
+
+Depression/anxiety disorder
+
+25–50mg daily
+
+Usual maintenance dose
+
+Citalopram
+
+25mg nocte
+
+Starting dose
+
+Depression
+Monitor LFTs; data suggest
+that agomelatine is not
+effective in patients >75 years
+
+Specific indication/
+additional notes
+
+Agomelatine
+
+Antidepressants
+
+Drug
+
+A guide to medication doses of commonly used psychotropics in older adults
+
+
+
+
+<<<PAGE 738>>>
+
+15. Lee A, et al. Frequency of infant adverse events that are associated with citalopram use during breast-feeding. Am J Obstet Gynecol 2004;
+190:218–221.
+16. Heikkinen T, et al. Citalopram in pregnancy and lactation. Clin Pharmacol Ther 2002; 72:184–191.
+17. Jensen PN, et al. Citalopram and desmethylcitalopram concentrations in breast milk and in serum of mother and infant. Ther Drug Monit
+1997; 19:236–239.
+18. Spigset O, et al. Excretion of citalopram in breast milk. Br J Clin Pharmacol 1997; 44:295–298.
+19. Rampono J, et al. Citalopram and demethylcitalopram in human milk; distribution, excretion and effects in breast fed infants. Br J Clin
+Pharmacol 2000; 50:263–268.
+20. Schmidt K, et al. Citalopram and breast-feeding: serum concentration and side effects in the infant. Biol Psychiatry 2000; 47:164–165.
+21. Franssen EJ, et al. Citalopram serum and milk levels in mother and infant during lactation. Ther Drug Monit 2006; 28:2–4.
+22. Werremeyer A. Ziprasidone and citalopram use in pregnancy and lactation in a woman with psychotic depression. Am J Psychiatry 2009;
+166:1298.
+23. Hendrick V, et al. Weight gain in breastfed infants of mothers taking antidepressant medications. J Clin Psychiatry 2003; 64:410–412.
+24. Boyce PM, et al. Duloxetine transfer across the placenta during pregnancy and into milk during lactation. Arch Women’s Mental Health
+2011; 14:169–172.
+25. Briggs GG, et al. Use of duloxetine in pregnancy and lactation. Ann Pharmacother 2009; 43:1898–1902.
+26. Lobo ED, et al. Pharmacokinetics of duloxetine in breast milk and plasma of healthy postpartum women. Clin Pharmacokinet 2008;
+47:103–109.
+27. Collin-Lévesque L, et al. Infant exposure to methylphenidate and duloxetine during lactation. Breastfeed Med 2018; 13:221–225.
+28. Gentile S. Escitalopram late in pregnancy and while breast-feeding (Letter). Ann Pharmacother 2006; 40:1696–1697.
+29. Castberg I, et al. Excretion of escitalopram in breast milk. J Clin Psychopharmacol 2006; 26:536–538.
+30. Rampono J, et al. Transfer of escitalopram and its metabolite demethylescitalopram into breastmilk. Br J Clin Pharmacol 2006;
+62:316–322.
+31. Potts AL, et al. Necrotizing enterocolitis associated with in utero and breast milk exposure to the selective serotonin reuptake inhibitor,
+escitalopram. J Perinatol 2007; 27:120–122.
+32. Ilett KF, et al. Estimation of infant dose and assessment of breastfeeding safety for escitalopram use in postnatal depression. Ther Drug
+Monit 2005; 27:248.
+33. Bellantuono C, et al. The safety of escitalopram during pregnancy and breastfeeding: a comprehensive review. Hum Psychopharmacol 2012;
+27:534–539.
+34. Yoshida K, et al. Fluoxetine in breast-milk and developmental outcome of breast-fed infants. Br J Psychiatry 1998; 172:175–178.
+35. Lester BM, et al. Possible association between fluoxetine hydrochloride and colic in an infant. J Am Acad Child Adolesc Psychiatry 1993;
+32:1253–1255.
+36. Hendrick V, et al. Fluoxetine and norfluoxetine concentrations in nursing infants and breast milk. Biol Psychiatry 2001; 50:775–782.
+37. Hale TW, et al. Fluoxetine toxicity in a breastfed infant. Clin Pediatr 2001; 40:681–684.
+38. Malone K, et al. Antidepressants, antipsychotics, benzodiazepines, and the breastfeeding dyad. Perspect Psychiatr Care 2004; 40:73–85.
+39. Heikkinen T, et al. Pharmacokinetics of fluoxetine and norfluoxetine in pregnancy and lactation. Clin Pharmacol Ther 2003; 73:330–337.
+40. Epperson CN, et al. Maternal fluoxetine treatment in the postpartum period: effects on platelet serotonin and plasma drug levels in breastfeeding mother-infant pairs. Pediatrics 2003; 112:e425.
+41. Taddio A, et al. Excretion of fluoxetine and its metabolite, norfluoxetine, in human breast milk. J Clin Pharmacol 1996; 36:42–47.
+42. Brent NB, et al. Fluoxetine and carbamazepine concentrations in a nursing mother/infant pair. Clin Pediatr (Phila) 1998; 37:41–44.
+43. Kristensen JH, et al. Distribution and excretion of fluoxetine and norfluoxetine in human milk. Br J Clin Pharmacol 1999; 48:521–527.
+44. Burch KJ, et al. Fluoxetine/norfluoxetine concentrations in human milk. Pediatrics 1992; 89:676–677.
+45. Morris R, et al. Serotonin syndrome in a breast-fed neonate. BMJ Case Rep 2015; 2015.
+46. Hendrick V, et al. Use of sertraline, paroxetine and fluvoxamine by nursing women. Br J Psychiatry 2001; 179:163–166.
+47. Piontek CM, et al. Serum fluvoxamine levels in breastfed infants. J Clin Psychiatry 2001; 62:111–113.
+48. Yoshida K, et al. Fluvoxamine in breast-milk and infant development. Br J Clin Pharmacol 1997; 44:210–211.
+49. Hagg S, et al. Excretion of fluvoxamine into breast milk. Br J Clin Pharmacol 2000; 49:286–288.
+50. Arnold LM, et al. Fluvoxamine concentrations in breast milk and in maternal and infant sera. J Clin Psychopharmacol 2000; 20:491–492.
+51. Kristensen JH, et al. The amount of fluvoxamine in milk is unlikely to be a cause of adverse effects in breastfed infants. J Hum Lact 2002;
+18:139–143.
+52. Wright S, et al. Excretion of fluvoxamine in breast milk. Br J Clin Pharmacol 1991; 31:209.
+53. Uguz F. Gastrointestinal side effects in the baby of a breastfeeding woman treated with low-dose fluvoxamine. J Hum Lact 2015;
+31:371–373.
+54. Snider DE, Jr., et al. Should women taking antituberculosis drugs breast-feed? Arch Intern Med 1984; 144:589–590.
+55. Singh N, et al. Transfer of isoniazid from circulation to breast milk in lactating women on chronic therapy for tuberculosis. Br J Clin
+Pharmacol 2008; 65:418–422.
+56. Buist A, et al. Mianserin in breast milk (Letter). Br J Clin Pharmacol 1993; 36:133–134.
+57. Smit M, et al. Mirtazapine in pregnancy and lactation: data from a case series. J Clin Psychopharmacol 2015; 35:163–167.
+58. Smit M, et al. Mirtazapine in pregnancy and lactation – a systematic review. Eur Neuropsychopharmacol 2016; 26:126–135.
+59. Buist A, et al. Plasma and human milk concentrations of moclobemide in nursing mothers. Human Psychopharmacology 1998;
+13:579–582.
+
+CHAPTER 7
+
+Pregnancy and breastfeeding  717
+
+
+
+
+<<<PAGE 763>>>
+
+742  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+Table 8.9 (Continued )
+Drug
+
+Comments
+
+Escitalopram22,25,75,85–87
+
+8% excreted unchanged in urine. The manufacturer states dosage adjustment is not
+necessary in patients with mild or moderate renal impairment but caution is advised
+if GFR <30mL/min, so start with a low dose and increase slowly. A case study of
+reversible renal tubular defects and another of renal failure have been reported with
+escitalopram. One study says effective versus placebo in end stage renal disease. Use
+of escitalopram (or citalopram) is associated with a higher risk of sudden cardiac
+death versus other SSRIs (fluoxetine, fluvoxamine, paroxetine, sertraline) when used
+in patients on haemodialysis (adjusted hazard ratio, 1.18; 95% CI 1.05, 1.31).
+
+Fluoxetine13,22,23,25,32,40,88–91
+
+2.5–5% of fluoxetine and 10% of the active metabolite norfluoxetine are excreted
+unchanged in the urine. Dosing: GFR 20–50mL/min dose as normal renal function; GFR
+<20mL/min use a low dose or on alternate days and increase according to response.
+Plasma levels after 2 months treatment with 20mg (in patients on dialysis with GFR
+<10mL/min) are similar to those with normal renal function. Efficacy studies of fluoxetine
+in depression and renal disease are conflicting. One small placebo controlled study of
+fluoxetine in patients on chronic dialysis found no significant differences in depression
+scores between the two groups after 8 weeks of treatment. Another found fluoxetine
+effective. A case series (n = 4) of once-weekly fluoxetine 90mg or 180mg use in depressed
+patients on haemodialysis describes efficacious use with better tolerability at 90mg dose.
+
+Fluvoxamine22,25,32,40,63
+
+2% is excreted unchanged in urine. Little information on its use in renal impairment.
+Manufacturer cautions in renal impairment. Dosing: GFR 10–50mL/min dose as for
+normal renal function; GFR <10mL/min dose as for normal renal function but start on
+a low dose and titrate slowly. Acute renal failure has been reported. Variations in
+albumin levels might affect serum concentrations of fluvoxamine in haemodialysis.
+
+Imipramine22,23,25,32,60
+
+<5% excreted unchanged in the urine. No specific dose adjustment necessary in
+renal impairment (GFR <10–50mL/min). Monitor patient for urinary retention,
+confusion, sedation and postural hypotension. Renal impairment with imipramine
+has been reported and manufacturer advises caution in severe renal impairment.
+Renal damage reported rarely.
+
+Lofepramine22,23,25,92
+
+There is little information about the use of lofepramine in renal impairment. Less
+than 5% is excreted unchanged in the urine. Dosing: GFR 10–50mL/min dose as in
+normal renal function; GFR <10mL/min start with a small dose and titrate slowly.
+Manufacturer contraindicates in severe renal impairment. As with imipramine,
+desipramine is the major metabolite.
+
+Mirtazapine22,23,25,93
+
+75% excreted unchanged in the urine. Clearance is reduced by 30% in patients with
+a GFR of 11–39mL/min and by 50% in patients with a GFR <10mL/min. Dosing
+advice: GFR 10–50mL/min dose as for normal renal function; GFR <10mL/min start at
+a low dose and monitor closely. Mirtazapine has been used to treat pruritis caused by
+renal failure and appetite loss in patients on dialysis.94 Rarely associated with kidney
+calculus formation.
+
+Moclobemide22,23,25,95,96
+
+<1% of parent drug excreted unchanged in the urine. However, an active metabolite
+was found to be raised in patients with renal impairment but was not thought to
+affect dosing. The manufacturer advises that dose adjustments are not required in
+renal impairment. Dosing: GFR <10–50mL/min dose as in normal renal function.
+(Continued)
+
+
+
+
+<<<PAGE 862>>>
+
+Pharmacokinetics  841
+
+The target ranges listed in Table 11.2 have somewhat dubious usefulness and, in
+some cases, merely represent the range of values seen in clinical use. Assays for these
+drugs are likely to be available only in specialist units.
+
+Antipsychotics
+
+Target range (µg/L)
+
+Asenapine
+
+1–5
+
+Brexpiprazole
+
+40–140
+
+Cariprazine
+
+10–20
+
+Chlorpromazine
+
+30–300
+
+Flupentixol
+
+0.5–5 (cis-isomer)
+
+Fluphenazine
+
+1–10
+
+Haloperidol
+
+1–10
+
+Iloperidone
+
+5–10
+
+Lurasidone
+
+15–40
+
+Melperone
+
+30–100
+
+Sulpiride
+
+200–1000
+
+Ziprasidone
+
+50–200
+
+Zuclopenthixol
+
+4–50
+
+Antidepressants
+
+Target range (µg/L)
+
+Agomelatine
+
+7–300
+
+Citalopram
+
+50–110
+
+Desvenlafaxine
+
+100–400
+
+Dosulepin
+
+45–100
+
+Duloxetine
+
+30–120
+
+Escitalopram
+
+15–80
+
+Fluoxetine (+norfluoxetine)
+
+120–500
+
+Fluvoxamine
+
+60–230
+
+Levomilnacipran
+
+80–120
+
+Mianserin
+
+15–70
+
+CHAPTER 11
+
+Table 11.2 Target ranges for other psychotropics30,91
+
+(Continued)
+
+
+
+
+<<<PAGE 874>>>
+
+Pharmacokinetics  853
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Zopiclone*
+
+Not known
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Bupropion*
+Fluoxetine*
+Lamotrigine
+Phenobarbital
+Phenytoin
+Sertraline*
+Valproate
+
+Fluoxetine*
+Fluvoxamine
+Modafinil
+Valproate
+
+Carbamazepine
+SJW
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Carbamazepine*
+Citalopram
+Clomipramine*
+Diazepam
+Escitalopram
+Fluoxetine*
+Imipramine*
+?Melatonin
+?Methadone
+Moclobemide
+Phenytoin
+Sertraline*
+Suvorexant
+Trimipramine*
+
+Escitalopram*
+Fluvoxamine
+Moclobemide
+Modafinil
+Topiramate
+
+Carbamazepine
+SJW
+
+CPY2C9
+
+CPY2C19
+
+CHAPTER 11
+
+CPY2C8
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+

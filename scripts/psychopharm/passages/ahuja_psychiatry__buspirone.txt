@@ -1,0 +1,512 @@
+<<<PAGE 104>>>
+
+92
+
+A Short Textbook of Psychiatry
+
+These techniques include Jacobson’s progressive
+relaxation technique, yoga, pranayama, self-hypnosis, and meditation (including TM or transcendental
+meditation).
+3. Other Behaviour Therapies
+The behaviour therapies include biofeedback and
+hyperventilation control. These methods are important
+adjuncts to treatment.
+4. Drug Treatment
+The differential response of generalised anxiety and
+panic to drug treatment has lead to what is called as
+the pharmacological dissection of anxiety disorders
+though this differentiation has become much more
+diluted recently with antidepressants used in treatment
+of both conditions.
+The drugs of choice for generalised anxiety disorder have traditionally been benzodiazepines, and for
+panic disorder, antidepressants. Both benzodiazepines
+and antidepressants are discussed in detail in Chapter
+15. It is useful to begin the treatment of panic disorders
+with small doses of antidepressants, usually SSRIs
+(e.g. fluoxetine).
+Benzodiazepines (such as alprazolam and clonazepam) are useful in short-term treatment of both
+generalised anxiety and panic disorders. However,
+tolerance and dependence potential limit the use of
+these drugs. Several antidepressants (such as sertraline) are now licensed for treatment of anxiety and
+panic disorders.
+β-blockers such as propranolol and atenolol are
+particularly useful in the management of anticipatory
+anxiety (e.g. anxiety occurring before going on stage
+or before examinations). However, due care must be
+exercised in the use of propranolol in the patients with
+history of asthma, bradycardia or heart block. Atenolol
+does not cross the blood brain barrier and takes care
+of only the peripheral symptoms of anxiety. It also has
+less likelihood of causing bronchial constriction than
+propranolol.
+Buspirone is an anti-anxiety drug (discussed in
+Chapter 15) which does not have any dependence
+potential, unlike benzodiazepines. It takes about 2-3
+weeks before its action is apparent. It may be prefer-
+
+able to benzodiazepines for the long-term management
+of anxiety disorder. It, however, has not much role in
+the management of panic disorder.
+
+PHOBIC DISORDER
+Phobia is defined as an irrational fear of a specific
+object, situation or activity, often leading to persistent
+avoidance of the feared object, situation or activity.
+The characteristic features of phobia are described
+in Table 8.3. The common types of phobias are:
+1. Agoraphobia,
+2. Social phobia, and
+3. Specific (Simple) phobia.
+
+Agoraphobia
+Agoraphobia is an example of irrational fear of situations. It is the commonest type of phobia encountered
+in clinical practice. Women far out-number men in
+suffering from agoraphobia in the Western countries.
+It is characterised by an irrational fear of being
+in places away from the familiar setting of home.
+Although it was earlier thought to be a fear of open
+spaces only, now it includes fear of open spaces, public places, crowded places, and any other place from
+where there is no easy escape to a safe place.
+Table 8.3: Phobia: Some Characteristic Features
+1. Presence of the fear of an object, situation or activity.
+2. The fear is out of proportion to the dangerousness
+perceived.
+3. Patient recognises the fear as irrational and unjustified (Insight is present).
+4. Patient is unable to control the fear and is very
+distressed by it.
+5. This leads to persistent avoidance of the particular
+object, situation or activity.
+6. Gradually, the phobia and the phobic object become
+a preoccupation with the patient, resulting in marked
+distress and restriction of the freedom of mobility
+(afraid to encounter the phobic object; phobic avoidance).
+
+
+
+
+<<<PAGE 110>>>
+
+98
+
+A Short Textbook of Psychiatry
+
+Treatment
+Psychotherapy
+1. Psychoanalytic psychotherapy is used in certain
+selected patients, who are psychologically oriented.
+2. Supportive psychotherapy is an important adjunct to other modes of treatment. Supportive
+psychotherapy is also needed by the family
+members.
+
+Behaviour Therapy and Cognitive
+Behaviour Therapy
+Behaviour modification is an effective mode of
+therapy, with a success rate as high as 80%, especially
+for the compulsive acts. It is customary these days to
+combine CBT with BT at most centres.
+The techniques used are listed below (They are
+described in Chapter 18):
+i. Thought-stopping (and its modifications).
+ii. Response prevention.
+iii. Systematic desensitisation.
+iv. Modelling.
+
+Drug Treatment
+1. Benzodiazepines (e.g. alprazolam, clonazepam)
+have a limited role in controlling anxiety as
+adjuncts and should be used very sparingly.
+2. Antidepressants: Some patients may improve
+dramatically with specific serotonin reuptake
+inhibitors (SSRIs).
+Clomipramine (75-300 mg/day), a nonspecific
+serotonin reuptake inhibitor (SRI), was the first
+drug used effectively in the treatment of OCD.
+The response is better in the presence of depressive symptoms, but many patients with pure
+OCD also improve substantially.
+Fluoxetine (20-80 mg/day) is a good alternative to clomipramine and often preferred these
+days for its better side-effect profile. Fluvoxamine (50-200 mg/day) is marketed as a specific
+anti-obsessional SSRI drug, whilst paroxetine
+
+(20-40 mg/day) and sertraline (50-200 mg/day)
+are also effective in some patients.
+3. Antipsychotics: These are occasionally used in
+low doses (e.g. haloperidol, risperidone, olanzapine, aripiprazole, pimozide) in the treatment
+of severe, disabling anxiety.
+4. Buspirone has also been used beneficially as
+an adjunct for augmentation of SSRIs, in some
+patients.
+
+Electroconvulsive Therapy
+In presence of severe depression with OCD, ECT may
+be needed. ECT is particularly indicated when there is
+a risk of suicide and/or when there is a poor response
+to the other modes of treatment. However, ECT is not
+the treatment of first choice in OCD.
+
+Psychosurgery
+Psychosurgery can be used in treatment of OCD that
+has become intractable, and is not responding to other
+methods of treatment. It is worth mentioning that
+psychosurgery is only available as a treatment choice
+at a very few centres throughout the world.
+The best responders are usually those who have
+significant associated depression, although pure
+obsessives also do respond. The main benefit is the
+marked reduction in associated distress and severe
+anxiety.
+The procedures which can be employed are:
+i. Stereotactic limbic leucotomy.
+ii. Stereotactic subcaudate tractotomy.
+Psychosurgery is usually followed by intensive
+behaviour therapy aimed at rehabilitation. However,
+with the easy availability of SSRIs, and a good response of OCD symptoms to SSRIs and other pharmacological measures, psychosurgery is very rarely
+used in the treatment of OCD.
+Very often, a comprehensive treatment of OCD
+requires that multiple treatment modalities (e.g. drug
+treatment and BT/CBT) be combined in a specific
+manner, suitable to the particular patient being treated
+at the time.
+
+
+
+
+<<<PAGE 185>>>
+
+Psychopharmacology
+
+173
+
+Table 15.1: A Brief History of Psychopharmacology
+<4000 BC Ayurveda describes treatment of psychiatric patients with sympathy and kindness. The methods of
+treatment included dhatura and roots of serpentina plant mixed with oil (ghee).
+1853
+Bromide used as a sedative-hypnotic.
+1869
+Chloral hydrate used in the treatment of melancholia and mania.
+1882
+Paraldehyde used as a hypnotic.
+1883
+Phenothiazines synthesised during synthesis of methylene blue (Bernthsen).
+1903
+Barbiturates (barbital) used for sedation in 1903; phenobarbital introduced in 1912.
+1917
+Malarial treatment for General Paralysis of Insane (GPI) received a Nobel prize (Julius von Wagner
+Jauregg).
+1922
+Barbiturate-induced coma introduced for the treatment of psychoses (Jacob Klaesi).
+1927
+Insulin-shock treatment introduced for schizophrenia (Manfred Sakel).
+1931
+First report of successful treatment of psychoses (Ganesh Sen and Kartik Bose from India); using
+Rauwolfia serpentina extract (reserpine). Report ignored till Nathan Kline (1958) confirmed the finding.
+1934
+Metrazol-induced convulsions used for the treatment of psychoses (Laszlo von Meduna).
+1936
+Frontal lobotomy advocated for treatment of psychiatric disorders (Egas Moniz and Almenda Lima).
+1937
+Amphetamines used in the treatment of behaviour disorders of children (C Bradley).
+1938
+Electroconvulsive therapy used for the treatment of psychoses (Ugo Cerletti and Lucio Bini).
+1940
+Phenytoin used as an anticonvulsant (Tracy Putnam).
+1943
+LSD synthesised (Albert Hofmann).
+1949
+Lithium used in mania (John F Cade); did not receive much attention even in Australia.
+1950
+Chlorpromazine synthesised while making a better antihistaminic than promethazine (Charpentier).
+1950
+Methylphenidate used in treatment of ADHD, then known as Minimal Brain Dysfunction (MBD).
+1951
+Lytic cocktail used (Laborit); Chlorpromazine earlier used (as ‘456 ORP’) in artificial hibernation.
+1951
+Isoniazid (INH) found to have mood elevating properties in patients with tuberculosis. Iproniazid, a
+MAOI and a derivative of INH, was later (1958) introduced for treatment of depression.
+1952
+The revolution in psychopharmacology came with introduction of chlorpromazine (Jean Delay and
+Pierre Deniker). The number of admissions in mental hospitals show a sudden decrease after introduction of chlorpromazine.
+1955
+Meprobamate was introduced as an anti-anxiety agent.
+1958
+Imipramine, a tricyclic antidepressant (TCA) synthesised by Haflinger and Schindler in the late 1940’s,
+was introduced for treatment of depression in 1958 (Thomas Kuhn).
+1958
+MAOIs (e.g. iproniazid) introduced for treatment of depression (Nathan Kline).
+1958
+Haloperidol synthesised in Belgium (Janssen).
+1960
+Chlordiazepoxide used as an anti-anxiety agent in 1960-1961 (Sternbach; Synthesised in 1957).
+1966
+Valpromide (Valproate) used in bipolar disorder (Lambert).
+1968
+Pimozide used for treatment of schizophrenia (Janssen).
+1967
+Clomipramine used in OCD (Fernandez and Lopez-Ibor).
+1971
+Carbamazepine used in bipolar disorder (Takezaki and Hanoaka) (Synthesized in 1953 by Schindler).
+1986
+Buspirone introduced in US market as a non-benzodiazepine anti-anxiety agent.
+1988
+Clozapine re-discovered in US as an effective treatment for refractory schizophrenia (Kane et al)
+(Synthesised in 1959). Approved by US FDA in 1990 and introduced in Indian market in 1995.
+1990s
+Second Generation Antipsychotics introduced in market starting with Risperidone.
+
+
+
+
+<<<PAGE 209>>>
+
+Psychopharmacology
+
+dose (mg nocte/HS); usual oral dose (mg/day; if applicable); usual parenteral dose (mg; if applicable);
+active metabolites and other comments.
+Side Effects
+The side effects of benzodiazepines include nausea,
+vomiting, weakness, epigastric pain, diarrhoea, vertigo, blurring of vision, body aches, urinary incontinence (rare), impotence, sedation, lassitude, increased
+reaction time, ataxia (in high doses), dry mouth,
+retrograde amnesia (rare), impairment of driving
+skills, severe effects when administered with alcohol,
+irritability, disinhibited behaviour, dependence and
+withdrawal symptoms (on stopping the drug).
+Cross-tolerance occurs with barbiturates, methaqualone and ethyl alcohol. A worsening of depression and pre-existing psychosis with use of benzodiazepines has been reported.
+Since withdrawal symptoms usually occur after
+long-term use, benzodiazepines should be withdrawn
+slowly.
+
+Newer Drugs
+1. Buspirone
+Buspirone is a non-benzodiazepine, anti-anxiety drug.
+It is an azaspiro decanedione (azapirone) derivative.
+Buspirone is a 5-HT1A partial agonist and a selective
+DA autoreceptor antagonist. It also inhibits the spontaneous firing of 5-HT neurons.
+It does not seem to act on the benzodiazepine receptors. It is anxioselective, with no sedative action,
+and no anticonvulsant or muscle-relaxant properties.
+It is administered in a dose of 15-30 mg/day, in a
+thrice daily schedule due to a short half-life. As it has
+a slower and more gradual onset of action, it usually
+takes about two weeks before its anti-anxiety effects
+are evident. Buspirone is not useful in treatment of
+panic disorder. The common side effects include dizziness, headache, lightheadedness and diarrhoea.
+As it is an anxio-selective and lacks any risk of
+dependence, it was hoped that it might replace the
+benzodiazepines as the drug of choice in treatment
+of generalised anxiety disorders. However, it is not
+as widely used as it was once expected.
+
+197
+
+2. Zopiclone
+Zopiclone belongs to a new class of non-benzodiazepine drugs, the cyclopyrrolones. Cyclopyrrolone
+derivatives also act on the GABA receptors, but at a
+site distinct from that of benzodiazepines. Zopiclone
+has a short duration of action as well as shorter onset.
+After oral administration, it is absorbed rapidly, with
+peak plasma concentration occurring in about 60
+minute. The elimination half-life is 4-6 hours.
+The usual dose of zopiclone is 3.75-7.5 mg
+at bedtime (lower dose in elderly patients and in
+patients with severe hepatic failure). The side effects
+include bitter taste, dry mouth, drowsiness, nausea
+and headache. Its safety in children, in pregnancy
+and lactation is not proven. It is clinically superior
+to benzodiazepines in subjective awakening quality,
+well-being, and attention span in the morning.
+3. Zolpidem
+Zolpidem is an imidazopyridine derivative which
+is marketed as a hypnotic. It is administered in a
+dose of 5-10 mg for hypnotic use. It has a half-life
+of 2-3 hours; therefore it is useful in the treatment
+of difficulty in initiation of sleep (initial insomnia).
+The side effects include drowsiness, dizziness,
+headache, depression, nausea, dry mouth, and myalgia.
+It should not be used for more than two weeks at one
+time. Its safety in children, in pregnancy and lactation
+is not proven.
+4. Zalpelon
+Zalpelon is a pyrazolo-pyrimidine derivative which
+is marketed as a hypnotic. Although a non-benzodiazepine drug, it acts on the omega-1 benzodiazepine
+receptor located on the alpha sub-unit of the GABA-A
+receptor complex (causing sedation), with very little
+effect on omega-2 and omega-3 receptors.
+It is administered in a dose of 5-10 mg for
+hypnotic use. It has a half-life of one hour with a rapid
+onset of effect. Therefore, it is useful in treatment
+of difficulty in initiation of sleep (initial insomnia).
+It can be taken again at night if there is more than
+4 hours of sleep time remaining. Because of the very
+short half-life, there is virtually no hangover in the
+morning.
+
+
+
+
+<<<PAGE 266>>>
+
+254
+
+A Short Textbook of Psychiatry
+
+Blackouts 37
+Bladder training 169
+Blocking 12
+Blood
+alcohol concentration 39
+lithium levels 190
+Blunted affect 58
+Borderline personality disorder 60,
+117, 228
+Brain imaging 64, 75
+Brief
+dissociative stupor 100
+history of psychopharmacology 173
+pulse ECT 202
+Bromocriptine 48, 132
+Bruxism 140
+Bulimia nervosa 144
+Buprenorphine 44, 45
+Bupropion 52
+Buspirone 92, 98, 197
+
+Childhood
+history 9
+psychosis 165
+Chlordiazepoxide 40, 51
+Chlorpromazine 66
+Cholinesterase inhibitors 25, 26
+Chromatography 157
+Chronic
+depression 74, 77
+fatigue syndrome 109
+Circumscribed amnesia 101
+Citalopram 26
+Citrated calcium carbimide 42
+Civil responsibility 229
+Classical
+conditioning model 214
+psychoanalysis 213
+psychosomatic disorders 147
+Classification in
+child psychiatry 162
+psychiatry 2
+Classification of
+alcoholism 37
+benzodiazepines 196
+mental retardation 156
+psychotropic drugs 172
+Claustrophobia 93
+Clerambault’s syndrome 84
+Clomipramine 98, 131
+Clonazepam 94, 98
+Clonidine 44, 167, 169
+Clozapine 52, 53, 66
+Cocaine 47
+overdose 48
+preparations 47
+use disorder 46
+withdrawal syndrome 48
+Code of ethics for psychiatrists 234
+Cognitive
+behaviour therapy 68, 79, 94, 98,
+112, 215, 216
+behavioural theory 91
+therapy 215
+Combativeness 225
+Command hallucinations 57
+Common
+examples of psychosomatic disorders
+148
+psychiatric emergencies 222
+themes in suicide 222
+Community
+mental health 235
+psychiatry 235
+
+C
+Caffeine 52, 53
+CAGE questionnaire 37, 39
+Cannabis
+preparations 45
+use disorder 45
+Capgras’ syndrome 87
+Carbamazepine 79, 192
+Carphologia 20
+Castration anxiety 211
+Cataplexy 138
+Catastrophic reaction 22
+Catatonia 59
+Catatonic
+behaviour 58
+features 57
+schizophrenia 59
+signs 11, 225
+stupor 67, 225
+syndrome 225
+withdrawal 225
+Causes of
+catatonic stupor 225
+hypersomnia 138
+mental retardation 157
+Censor 206
+Central mental health authority 233, 237
+Cerebral palsy 159
+Chasing the dragon 43
+Child
+abuse 228
+psychiatry 162
+
+Comparison of delirium and dementia 22
+Complex partial seizures 29, 31, 61, 227
+Complicated grief reaction 152
+Complications of
+alcohol dependence 39
+chronic alcohol use 38
+Conceptual thinking stage 153
+Concrete thinking stage 153
+Conditioning devices 169
+Conduct disorders 167
+Conjugal paranoia 84
+Consultation-liaison psychiatry 149
+Continuous amnesia 101
+Contraindications of disulfiram 42
+Conversion
+disorder 99
+release symptoms 102
+Coping
+mechanisms 207
+skills training 112
+Coprolalia 168
+Cortical dementia 24
+Counselling 110
+Counter
+phobic defense 210
+thoughts 96
+Covert sensitisation 41, 215
+CPAP 139
+Crack 47
+Cretinism 159
+Criminal lunatic 232
+Crisis 221
+intervention 112
+centre 228
+Critical
+comments 64
+remarks 68
+Cross-gender homosexuality 122
+Culture bound syndromes 110
+Cyclothymia 73
+Cyproheptadine 144
+
+D
+Dangerous Drug Act of 1930 233
+Deep brain stimulation 199
+Defense mechanism 90
+Definition of psychiatric disorder 1
+Deliberate self-harm 222
+Delirium 19, 21, 23
+tremens 38, 41
+Delusion of doubles 87
+Delusional
+depression 77, 78
+
+

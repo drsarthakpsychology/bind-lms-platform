@@ -1,0 +1,813 @@
+<<<PAGE 217>>>
+
+out the possibility of a seizure disorder.
+Evoked Potential. Evoked potential (EP) testing is the measurement of the
+EEG response to specific sensory stimulation. The stimulation may be visual,
+auditory, or somatosensory. During visual EPs, the patient is exposed to
+flashing lights or a checkerboard pattern. With auditory EP, the patient hears
+a specific tone. In somatosensory EP, the patient experiences an electrical
+stimulation to an extremity. These stimuli repeatedly occur while the patient
+undergoes a routine EEG. Using a computer, the responses to these stimuli
+are recorded and averaged. The time frame is measured in milliseconds.
+These tests are useful in neurology and neurosurgery. For example, they
+assist in the assessment of demyelinating disorders such as multiple sclerosis
+(MS). In psychiatry, EP testing may help in the differentiation of organic
+from functional impairments. A classical example is the use of EP testing to
+evaluate possible hysterical blindness. The usefulness of these tests in
+psychiatry is still under investigation.
+Polysomnography. Polysomnography is used to assess disorders of sleep
+by concurrently assessing the EEG, ECG, blood oxygen saturation,
+respiration, body temperature, electromyogram, and electrooculogram.
+Polysomnography has demonstrated an increase in the overall amount of
+rapid eye movement (REM) sleep and a shortened period before the onset of
+REM sleep (decreased REM latency) in patients with major depression.
+These studies may assist in differentiating depression from other conditions
+that mimic depression. For example, patients who appear depressed from
+dementia do not have decreased REM latency or an increase in the amount of
+REM sleep.
+Electrocardiogram
+The ECG is a graphical representation of the electrical activity of the heart.
+Abnormalities in this activity correlate with cardiac pathology. The ECG is
+most commonly used in psychiatry to assess the side effects of psychotropic
+medications.
+Ziprasidone has been associated with a dose-related prolongation of the
+QTc interval. There is a known association of fatal arrhythmias (e.g., torsades
+de pointes) with QTc prolongation from some other medications. For this
+
+
+
+
+<<<PAGE 218>>>
+
+reason, clinicians usually obtain an ECG before initiation of treatment with
+ziprasidone. Ziprasidone is contraindicated in patients with a known history
+of QTc prolongation (including congenital long QT syndrome), with recent
+acute myocardial infarction, or with uncompensated heart failure.
+Bradycardia, hypokalemia or hypomagnesemia, or the concurrent use of other
+drugs that prolong the QTc interval all increase the risk of severe
+arrhythmias. Ziprasidone should be discontinued in patients who have
+persistent QTc measurements greater than 500 milliseconds.
+Like ziprasidone, thioridazine has been associated with prolongation of the
+QTc interval in a dose-related manner. Prolongation of the QTc interval has
+been associated with torsades de pointes arrhythmias and sudden death. An
+ECG should be obtained before initiating treatment with thioridazine to rule
+out QTc prolongation. Many other antipsychotics can along prolong the QTc
+interval particularly in patients with preexisting arrhythmia.
+TCAs are, at times, associated with ECG changes. Anticholinergic effects
+may increase heart rate. Prolongation of the PR, QT, and QRS intervals,
+along with ST-segment and T-wave abnormalities, may occur. The TCAs can
+cause or increase preexisting atrioventricular or bundle branch block. When
+the QTc exceeds 0.440 seconds, a patient is at an increased risk for sudden
+death due to cardiac arrhythmias. Many clinicians obtain an ECG before
+beginning a TCA in a patient older than 40 years of age and any patient with
+known cardiovascular disease.
+Lithium therapy can cause benign reversible T-wave changes, which can
+impair sinoatrial (SA) node function and can cause heart block. ECGs are
+often obtained before initiation of treatment with lithium and in cases of
+lithium toxicity or overdose.
+Psychiatrists, when treating patients with specific psychiatric diagnoses,
+also use the ECG. Eating disorder patients commonly have low potassium
+levels that may result in abnormal ECG recordings. As the serum potassium
+drops below normal, T waves become flat (or inverted), and U waves may
+appear.
+Holter Monitoring. Holter monitoring is the continuous recording of a
+patient’s ECG activity for a sustained period (e.g., 24 hours). Patients are
+ambulatory during this time. It is useful for the evaluation of dizziness,
+palpitations, and syncope. It is commonly used in the evaluation of patients
+
+
+
+
+<<<PAGE 415>>>
+
+during clozapine use. Its use is generally limited to treatment-resistant
+psychotic patients.
+Ziprasidone has receptor-blocking properties at the 5-HT2A and D2
+receptor sites and carries little risk of extrapyramidal and antihistaminic
+effects. No guidelines exist for its use in autistic children with aggressive and
+self-injurious behaviors; clinicians sometimes use it to treat these behaviors
+in treatment-resistant children. In studies of its use in adults with
+schizophrenia, dose ranges of 40 to 160 mg were effective. Adverse effects
+include sedation, dizziness, and lightheadedness. Before using this
+medication, the clinician should check an electrocardiogram.
+Lithium is efficacious in children with aggression without autism spectrum
+disorder, and it is used clinically in the treatment of aggressive or selfinjurious behaviors when antipsychotic medications are not helpful.
+Agents Used for Behavioral Impairment in Autism Spectrum
+Disorder without Evidence of Efficacy. A double-blind study
+investigated the efficacy of amantadine, which blocks N-methyl-D-aspartate
+(NMDA) receptors, in the treatment of behavioral disturbance, such as
+irritability, aggression, and hyperactivity, in children with autism. Some
+researchers have suggested that abnormalities of the glutamatergic system
+may contribute to the emergence of autism spectrum disorders. High
+glutamate levels occur in children with the formerly labeled Rett syndrome.
+In the amantadine study, 47 percent of children on amantadine were
+“improved” per their parents, and 37 percent of children on placebo were
+rated “improved” by parents in irritability and hyperactivity, although this
+difference was not statistically significant. Investigators rated the children on
+amantadine “significantly improved” for hyperactivity. A double-blind,
+placebo-controlled study of the efficacy of the anticonvulsant lamotrigine on
+hyperactivity in children with autism showed high rates of placebo
+improvement in ratings of hyperactivity, which were similar to response on
+the medication.
+Clomipramine is sometimes used but lacks RCTs to provide evidence of
+positive results. Fenfluramine, which reduces blood serotonin levels, has also
+been used but appears to be ineffective. Improvement does not seem to be
+associated with a reduction in blood serotonin levels. Naltrexone, an opioid
+
+
+
+
+<<<PAGE 512>>>
+
+agonist and a 5-HT2A antagonist. A multisite double-blind controlled study of
+aripiprazole in children with Tourette disorder in China found a reduction in
+tic behaviors in about 60 percent of the aripiprazole group compared to about
+64 percent reduction in a group treated with tiapride, a benzamide with
+selective D2 receptor antagonism. There was no significant difference
+between the two groups. Although sedation and sleep disturbance are
+common side effects with aripiprazole, weight gain is less pronounced than
+with risperidone.
+Olanzapine and ziprasidone are also efficacious in the treatment of tic
+disorders in at least one RCT. Sedation and weight gain were prominent side
+effects with olanzapine, and potential QT prolongation was an issue with
+ziprasidone. Quetiapine is a potentially useful agent in the treatment of tics,
+with its higher affinity for 5-HT2 receptors than for D2 receptors. However,
+randomized clinical trials are needed. Clozapine, contrary to many other
+atypical antipsychotics, is not useful in the treatment of tics.
+NORADRENERGIC AGENTS.
+
+Noradrenergic agents, including clonidine and
+guanfacine, as well as atomoxetine, are frequently used in children as primary
+treatments or adjunctive treatments for comorbid ADHD and tics. Several
+studies have provided some evidence for the efficacy of clonidine, an α2adrenergic agent, in the treatment of tics in children, adolescents, and adults
+with tic disorders. The largest randomized trial with oral clonidine compared
+to placebo found a modest reduction in tics with clonidine. A multisite
+randomized, double-blind placebo-controlled trial using the clonidine patch
+in the treatment of tic disorders in children found a significant improvement
+in tic symptoms (about 69 percent) compared to about 47 percent of the
+children in the control group. The usual dose range for clonidine is from 0.05
+mg orally three times daily to 0.1 mg four times daily, and for guanfacine, it
+is from 1 to 4 mg/day. When used in these dosage ranges, adverse effects of
+the α-adrenergic agents may include drowsiness, headache, irritability, and
+occasional hypotension.
+Guanfacine can treat children with ADHD successfully, although its
+efficacy regarding reducing tics is controversial. In one randomized clinical
+trial treating 34 children with ADHD and tics, guanfacine was superior to
+placebo in the reduction of tics. In another double-blind placebo-controlled
+
+
+
+
+<<<PAGE 552>>>
+
+controlled study of sertraline to prevent PTSD found that children who
+received sertraline, flexibly dosed between 25 and 150 mg/day, had a
+decrease in parent-reported symptoms of PTSD over 8 weeks compared to a
+placebo group. Among the child-reported symptoms, however, there was no
+significant difference between the two groups.
+Psychiatrists sometimes use antiadrenergic agents to treat dysregulation of
+the noradrenergic system in adults and youth with PTSD. α2-Agonists such as
+clonidine and guanfacine, for example, have been used to decrease
+norepinephrine release, whereas centrally acting β-antagonists such as
+propranolol, and α1-antagonists such as prazosin, are hypothesized to
+improve hyperarousal and intrusive thoughts through attenuation of
+norepinephrine postsynaptically. Although there are some data in adults with
+PTSD to support the use of these agents, there are mainly case reports for
+youths. There is a suggestion that guanfacine may reduce nightmares in
+children with PTSD and that clonidine may diminish symptoms of
+reenactment of traumatic events in children. One report of propranolol
+treatment in 11 pediatric patients with PTSD from sexual or physical abuse
+with a mean age of 8.5 years, who exhibited agitation and hyperarousal,
+indicated some decrease in symptoms in 8 of the 11 children studied. Another
+open study of transdermal clonidine treatment of preschoolers with PTSD
+suggests that clonidine may be efficacious in this population in decreasing
+activation and hyperarousal. An additional open trial of oral clonidine with
+dosage ranges of 0.05 to 0.1 mg twice daily similarly suggests that this
+medication may provide some relief for the symptoms of hyperarousal,
+impulsivity, and agitation in young children with PTSD.
+Second-generation antipsychotics such as risperidone, olanzapine,
+quetiapine, ziprasidone, and aripiprazole have been studied in adults with
+PTSD with mixed results. Risperidone and aripiprazole both have FDA
+approval for use in children and adolescents with aggression, severe
+behavioral dyscontrol, and severe psychiatric disorders; however, there are no
+controlled trials with children with PTSD. For example, there is one case
+series of three preschool-age children who exhibited symptoms of acute
+stress disorder and who had severe thermal burns improved after being
+treated with risperidone.
+In children and adolescents with PTSD, there is one open-label trial of
+
+
+
+
+<<<PAGE 582>>>
+
+presence of lifetime psychosis, and bipolar disorder not otherwise specified
+diagnosis. Over the follow-up period, about 20 percent of subjects with
+bipolar II disorder converted to bipolar I disorder, and 25 percent of the
+bipolar disorder not otherwise specified subjects developed bipolar I disorder
+or bipolar II disorder during the follow-up period.
+Similar to the natural history of bipolar disorders in adults, children have a
+wide range of symptom severity in manic and depressed episodes. The more
+frequent diagnostic conversions from bipolar II disorder to bipolar I disorder
+among children and adolescents, compared with adults, highlight the lack of
+stability of the bipolar II disorder diagnosis in youth. This is also the case
+concerning conversion from bipolar disorder not otherwise specified to other
+bipolar disorders. When bipolar disorder occurs in young children, recovery
+rates are lower. Also, there is a higher likelihood mixed states and rapid
+cycling, and higher rates of polarity changes compared with those who
+develop bipolar disorders in late adolescence or early adulthood.
+
+TREATMENT
+Treatment of early-onset bipolar disorder incorporates multimodal
+interventions including pharmacotherapy, psychoeducation, psychosocial
+intervention with the family and the child, and school interventions to
+optimize a child’s school adjustment and achievement.
+Pharmacotherapy
+Two classes of medications—atypical antipsychotics and mood-stabilizing
+agents—are the most well-studied agents that provide efficacy in the
+treatment of early-onset bipolar disorders. Eight RCTs have shown the
+efficacy of atypical antipsychotic agents in the treatment of bipolar disorder
+in youth between the ages of 10 and 17 years. These studies compared an
+atypical antipsychotic to placebo, or compared an atypical antipsychotic to a
+mood stabilizer, or added an antipsychotic to a mood-stabilizing agent. The
+atypical antipsychotics included olanzapine, quetiapine, risperidone,
+aripiprazole, and ziprasidone. All five of the atypical antipsychotic studies
+demonstrated significant efficacy in the treatment of early-onset bipolar
+manic or mixed states. A recent trial comparing quetiapine and valproate
+found that both were efficacious, but the quetiapine was superior in the speed
+
+
+
+
+<<<PAGE 746>>>
+
+Electroencephalogram
+Chest radiograph
+Blood and urine drug screens
+Additional tests when indicated
+Blood, urine, and cerebrospinal fluid cultures
+B12, folic acid concentrations
+Computed tomography or magnetic resonance imaging brain scan
+Lumbar puncture and CSF examination
+Agitation is a poorly defined symptom that can range from distressed
+anxiety to physical aggression. Because of the ambiguity of the term,
+agitation is challenging to study. However, some scales are available to aid
+research, such as the Richmond Agitation-Sedation Scale. Many medications
+have anecdotal support. However, studies on the pharmacologic treatment of
+agitation in delirium are disappointing. The antipsychotics are most
+commonly used. The approach is analogous to the above approach for
+psychosis in delirium, with adjustments for the severity and prolongation of
+the delirium. Sodium valproate given IV may be useful when antipsychotics
+fail. For severe agitation, dexmedetomidine, an α2-adrenoreceptor agonist
+that is used as a sedative, can help sedate a patient, mainly a mechanically
+ventilated patient, without the deliriogenic effects of many other sedatives.
+Second-generation antipsychotics, such as risperidone, clozapine,
+olanzapine, quetiapine, ziprasidone, and aripiprazole, may be considered for
+delirium management, but clinical trial experience with these agents for
+delirium is limited. Ziprasidone appears to have an activating effect and may
+not be appropriate in delirium management. Olanzapine is available for
+intramuscular (IM) use and as a rapidly disintegrating oral preparation. These
+routes of administration may be preferable for some patients with delirium
+who are poorly compliant with medications or who are too sedated to
+swallow medications safely.
+Insomnia is difficult to treat. Benzodiazepines might be helpful; however,
+they risk worsening a patient’s confusion. Also, there is no conclusive
+evidence to support the use of benzodiazepines in non–alcohol-related
+delirium. If pain is the cause, a physician should not hesitate to prescribe
+
+
+
+
+<<<PAGE 1138>>>
+
+derangements.
+EXTRAPYRAMIDAL SIDE EFFECTS. Most first-generation antipsychotics cause
+
+extrapyramidal side effects, including parkinsonian symptoms, dystonias, and
+akathisia. Although less common in second-generation antipsychotics,
+extrapyramidal effects can still occur.
+Clinicians have several alternatives for treating these side effects. These
+include reducing the dose of the antipsychotic, adding an antiparkinson
+medication, and changing the patient to a medication that is less likely to
+cause extrapyramidal side effects. The most effective antiparkinson
+medications are anticholinergic antiparkinson drugs. However, these
+medications have additional side effects, including dry mouth, constipation,
+blurred vision, and, often, memory loss. Also, these medications are often
+only partially effective, leaving patients with substantial amounts of lingering
+extrapyramidal side effects. Centrally acting β-blockers, such as propranolol,
+may help treat akathisia. Most patients respond to dosages between 30 and 90
+mg per day.
+If prescribing conventional antipsychotics, clinicians may consider
+prescribing prophylactic antiparkinson medications for patients who are
+likely to experience disturbing extrapyramidal side effects. These include
+patients who have a history of extrapyramidal side effect sensitivity and those
+treated with relatively high doses of high-potency drugs. Prophylactic
+antiparkinson medications may help when prescribing high-potency drugs for
+young men, who tend to have an increased vulnerability for developing
+dystonias. Again, these patients should be candidates for newer drugs.
+Some individuals are highly sensitive to extrapyramidal side effects at the
+dose that is necessary to control their psychosis. For many of these patients,
+medication side effects may seem worse than the illness itself. These patients
+should be treated routinely with a medication less likely to cause
+extrapyramidal side effects. Risperidone may cause extrapyramidal side
+effects even at low doses—for example, 0.5 mg—but the severity and risk are
+increased at higher doses—for example, more than 6 mg. Olanzapine and
+ziprasidone are also associated with dose-related parkinsonism and akathisia.
+About 20 to 30 percent of patients on long-term
+treatment with a first-generation antipsychotic will exhibit symptoms of
+TARDIVE DYSKINESIA.
+
+
+
+
+<<<PAGE 1201>>>
+
+skin rash. Evidence for valproate and other anticonvulsants is limited.
+Gabapentin and levetiracetam appear to be ineffective.
+Antipsychotics. Several of the atypical antipsychotics have shown efficacy
+for bipolar depression. Quetiapine has the best evidence. It appears that
+quetiapine, in a modest dose (300 mg/day), is sufficient to improve
+symptoms. Olanzapine, lurasidone, and cariprazine also have positive studies,
+and the FDA approved lurasidone for this indication. Ziprasidone and
+aripiprazole do not appear to be effective.
+Antidepressants. It remains controversial whether antidepressants are useful
+for the depressive phase of bipolar disorder. This is particularly true in
+patients with rapid cycling and mixed states. They seem to be less effective
+than for major depressive disorder and may induce cycling, mania, or
+hypomania. The risk of inducing mania seems highest for tricyclic
+antidepressants, monoamine oxidase inhibitors, and perhaps the serotonin
+norepinephrine reuptake inhibitors such as venlafaxine. Most experts agree
+that antidepressants are not appropriate as monotherapy for patients with
+bipolar disorder.
+Whether we can use them as adjuncts is also controversial. Some
+antidepressants have some evidence of efficacy for adjunctive therapy, such
+as fluoxetine. On the whole, the available evidence suggests they may have
+some usefulness when combined with a mood stabilizer.
+
+
+
+
+<<<PAGE 1434>>>
+
+medication response is likely to be partial, devising the best “shock-absorber”
+system for the patient at a given time. In general, success is more likely if the
+target symptoms are present across most or all personality states, rather than
+confined to one or a few. Because rapid symptom oscillations are
+characteristic in this population, it is not advisable to chase each symptom
+shift with a medication change.
+The most robust medication treatment effect in this patient population is
+the response of nightmares to the α1-adrenergic antagonist prazosin. If the
+patient tolerates the blood pressure effects, dosages of prazosin as high as 25
+mg daily, in single or twice-daily doses, can be useful. Daytime dosing may
+also be effective for control of flashbacks and intrusive symptoms.
+Doxazosin, a longer-acting α1-adrenergic antagonist, may also help with
+nightmares and intrusive symptoms in PTSD.
+Antidepressant medications can reduce depression and stabilize mood. A
+variety of PTSD symptoms, especially intrusive and hyperarousal symptoms,
+are partially medication responsive. Clinicians report some success with
+SSRI, tricyclic, and monoamine oxidase (MAO) antidepressants, β-blockers,
+clonidine, anticonvulsants, and benzodiazepines in reducing intrusive
+symptoms, hyperarousal, and anxiety in patients with a dissociative identity
+disorder. Patients with obsessive-compulsive symptoms may respond to
+serotonergic antidepressants. Emerging data suggest that naltrexone may help
+ameliorate recurrent self-injurious behaviors in a subset of traumatized
+patients.
+The atypical neuroleptics, such as risperidone, quetiapine, ziprasidone,
+aripiprazole, and olanzapine, may be more effective and better tolerated than
+typical neuroleptics for overwhelming anxiety and intrusive PTSD symptoms
+in patients with dissociative identity disorder. However, weight gain and
+metabolic syndrome may be a particularly problematic side effect for these
+nonpsychotic patients. Occasionally, an extremely disorganized,
+overwhelmed, chronically ill patient with dissociative identity disorder, who
+has not responded to trials of other neuroleptics, responds favorably to a trial
+of clozapine.
+Electroconvulsive Therapy. For some patients, ECT helps to ameliorate
+refractory mood disorders and does not worsen dissociative memory
+
+
+
+
+<<<PAGE 1816>>>
+
+(riluzole,
+memantine)
+Acute and severe
+
+Mirtazapine, Novel
+Psychotropics
+(quetiapine,
+aripiprazole,
+clozapine), TCAs,
+clonazepam,
+valproates, lithium
+
+Depression
+Atypical
+MAOIs, SSRIs,
+depression/dysphoria
+SNRIs,
+Classical depression
+Aripiprazole,
+Lurasidone,
+ziprasidone,
+quetiapine,
+Atypical
+antipsychotics (as
+monotherapy or
+augmentation)
+
+TCAs
+
+Emotional lability/rapid Lithium, Lamotrigine,
+cycling
+Valproate, Lowerdose
+antipsychotics
+(olanzapine,
+aripiprazole,
+clozapine,
+ziprasidone)
+
+TCAs
+(“catecholamine
+stress”),
+Standard
+antidepressants
+(risk of switching
+to mania)
+
+II. Behavior Dyscontrol
+Aggression/impulsivity
+Affective aggression
+Lithium, SSRIs,
+“Hot temper” with normal
+Anticonvulsants,
+
+Benzodiazepines
+(disinhibition)
+
+
+
+
+<<<PAGE 1902>>>
+
+Cognitive Impairment. Cognitive impairment means a disturbance in the
+capacity to think. Some agents, such as the benzodiazepine agonists, are
+recognized as causes of cognitive impairment. Other widely used
+psychotropics, such as the SSRIs, lamotrigine (Lamictal), topiramate
+(Topamax), gabapentin (Neurontin), lithium, TCAs, and bupropion, however,
+are also associated with varying degrees of memory impairment and wordfinding difficulties. In contrast to the benzodiazepine-induced anterograde
+amnesia, these agents cause a more subtle type of absent-mindedness. Drugs
+with anticholinergic properties are likely to worsen memory performance.
+Sweating. Severe perspiration unrelated to ambient temperature is
+associated with TCAs, SSRIs, and venlafaxine. This side effect is often
+socially disabling. Attempts can be made to treat this side effect with alpha
+agents, such as terazosin (Hytrin) and oxybutynin (Ditropan).
+Cardiovascular Disturbances. Newer agents are less likely to have
+direct cardiac effects. Many older agents, such as TCAs and phenothiazines,
+affected BP and cardiac conduction. Thioridazine (Mellaril), which has been
+in use for decades, has been shown to prolong the QTc interval in a doserelated manner and may increase the risk of sudden death by delaying
+ventricular repolarization and causing torsades de pointes. Newer drugs are
+now routinely scrutinized for evidence of cardiac effects. A promising
+treatment for psychosis, sertindole (Serlect), was not marketed because the
+FDA would have required a black box warning. Slight QTc effects noted with
+ziprasidone (Geodon) delayed the marketing of that drug. Clozapine can
+cause myocarditis in rare cases.
+Rash. Any medication is a potential source of a drug rash. Some
+psychotropics, such as carbamazepine (Equetro, Tegretol) and lamotrigine,
+have been linked to an increased risk of severe exfoliative dermatitis.
+Commonly referred to as Stevens–Johnson syndrome, this condition is a
+systemic, immune-mediated reaction that can prove fatal or result in
+permanent scarring or blindness. All patients should be informed about the
+potential seriousness of widespread lesions that occur above the neck, that
+involve the mucous membranes, and that may be associated with fever and
+
+
+
+
+<<<PAGE 1927>>>
+
+now more commonly used than the “typical” antipsychotics. In contrast to the
+earlier antipsychotic drugs, the SGAs have significant effects on both the
+dopamine and serotonin systems. Their pharmacology is complex, with
+individual drugs in this group having multiple neurotransmitter effects. All
+SGAs are indicated for the treatment of schizophrenia. Most of these SGA
+drugs have also received approval as monotherapy or adjunctive therapy in
+the treatment of bipolar disorder. Some have also been approved as adjuncts
+for the treatment of major depression.
+As of 2020, 13 SGA drugs were approved by the FDA. These include the
+following:
+Aripiprazole (marketed as Abilify)
+Asenapine Maleate (marketed as Saphris)
+Brexpiprazole (marketed as Rexulti)
+Cariprazine (marketed as Vraylar)
+Clozapine (marketed as Clozaril)
+Iloperidone (marketed as Fanapt)
+Lumateperone (marketed as Caplyta)
+Lurasidone (marketed as Latuda)
+Olanzapine (marketed as Zyprexa, and as Symbyax in combination with
+fluoxetine)
+Paliperidone (marketed as Invega)
+Quetiapine (marketed as Seroquel)
+Risperidone (marketed as Risperdal)
+Ziprasidone (marketed as Geodon)
+It is arguable whether the SGAs represent an improvement in overall
+tolerability than the DRAs. Although there is an improvement concerning a
+lowered, not absent, risk of EPS, most of the drugs in this group often
+produce substantial weight gain, which in turn increases the potential for the
+development of diabetes mellitus. Olanzapine and clozapine appear to
+account for most cases of weight gain and drug-induced diabetes mellitus.
+The other agents pose a smaller risk of these side effects; nevertheless, the
+FDA has requested that all SGAs carry a warning label that patients taking
+the drugs need to be monitored closely, and has recommended the following
+factors be considered for all patients prescribed SGAs:
+
+
+
+
+<<<PAGE 1937>>>
+
+drugs have been well studied. Phenytoin increases quetiapine clearance
+fivefold; no significant pharmacokinetic interactions have been noted. Avoid
+the use of quetiapine with drugs that increase the QT interval and in patients
+with risk factors for prolonged QT interval. The FDA has added a new
+warning about quetiapine, cautioning prescribers about potential prolongation
+of the QT interval when above-recommended amounts of quetiapine are
+combined with specific drugs. Quetiapine should not be combined with other
+drugs that are known to prolong QTc. This includes class 1A antiarrhythmics
+(e.g., quinidine, procainamide) or class III antiarrhythmics (e.g., amiodarone,
+sotalol), antipsychotic medications (e.g., ziprasidone, chlorpromazine,
+thioridazine), antibiotics (e.g., gatifloxacin, moxifloxacin), or any other class
+of medications known to prolong the QTc interval (e.g., pentamidine,
+levomethadyl acetate, methadone). Quetiapine should also be avoided in
+circumstances that may increase the risk of occurrence of torsade de pointes
+or sudden death, including (1) a history of cardiac arrhythmias such as
+bradycardia; (2) hypokalemia or hypomagnesemia; (3) concomitant use of
+other drugs that prolong the QTc interval; and (4) presence of congenital
+prolongation of the QT interval. Postmarketing cases also show increases in
+QT interval in patients who overdose on quetiapine.
+Side Effects. Somnolence, postural hypotension, and dizziness are the most
+common adverse effects of quetiapine. These are usually transient and are
+best managed with initial gradual upward titration of the dosage. Quetiapine
+is the SDA least likely to cause EPS, regardless of dose. This makes it
+particularly useful in treating patients with Parkinson disease who develop
+dopamine agonist-induced psychosis. Prolactin elevation is rare and both
+transient and mild when it occurs. Quetiapine is associated with modest
+transient weight gain in some persons, but some patients occasionally gain a
+considerable amount of weight. The relationship between quetiapine and the
+development of diabetes is not as clearly established as are the cases
+involving the use of olanzapine. Small increases in heart rate, constipation,
+and a transient increase in liver transaminases may also occur. Initial
+concerns about cataract formation, based on animal studies, have not been
+borne out since the drug has been in clinical use. Nevertheless, it might be
+prudent to test for lens abnormalities early in treatment and periodically after
+that.
+
+
+
+
+<<<PAGE 1938>>>
+
+Ziprasidone (Geodon)
+Indications. Ziprasidone is indicated for the treatment of schizophrenia.
+Ziprasidone is also indicated as monotherapy for the acute treatment of manic
+or mixed episodes associated with bipolar I disorder and as an adjunct to
+lithium or valproate for the maintenance treatment of bipolar I disorder.
+Pharmacology. Ziprasidone is a benzisothiazole piperazine. Peak plasma
+concentrations of ziprasidone are reached in 2 to 6 hours. Steady-state levels
+ranging from 5 to 10 hours are reached between the first and the third days of
+treatment. The mean terminal half-life at steady state ranges from 5 to 10
+hours, which accounts for the recommendation that twice-daily dosing is
+necessary. Bioavailability doubles when ziprasidone is taken with food, and
+therefore it should be taken with food.
+Peak serum concentrations of IM ziprasidone occur after approximately 1
+hour, with a half-life of 2 to 5 hours.
+Ziprasidone, similar to the other SDAs, blocks 5-HT2A and D2 receptors. It
+is also an antagonist of 5-HT1D, 5-HT2C, D3, D4, α1, and H1 receptors. It has
+a very low affinity for D1, M1, and α2 receptors. Also, ziprasidone has agonist
+activity at the serotonin 5-HT1A receptors and is an SSRI and a
+norepinephrine reuptake inhibitor. This action is consistent with clinical
+reports that ziprasidone has antidepressant-like effects in nonschizophrenic
+patients.
+Dosages. Ziprasidone is available in 20-, 40-, 60-, and 80-mg capsules.
+Ziprasidone for IM use comes as a single-use 20 mg/mL vial. Oral
+ziprasidone dosing should be initiated at 40 mg a day, divided into two daily
+doses. Studies have shown efficacy in the range of 80 to 160 mg a day,
+divided twice daily. In clinical practice, doses as high as 240 mg a day are
+being used. The recommended IM dosage is 10 to 20 mg every 2 hours for
+the 10-mg dose and every 4 hours for the 20-mg dose. The maximum total
+daily dose of IM ziprasidone is 40 mg.
+Other than interactions with other drugs that prolong the QTc complex,
+ziprasidone appears to have a low potential for clinically significant drug
+interactions.
+
+
+
+
+<<<PAGE 1939>>>
+
+Side Effects. Somnolence, headache, dizziness, nausea, and
+lightheadedness are the most common adverse effects in patients taking
+ziprasidone. The drug has almost no significant effects outside the CNS, is
+associated with almost no weight gain, and does not cause sustained prolactin
+elevation. Concerns about prolongation of the QTc complex have deterred
+some clinicians from using ziprasidone as a first choice. The QTc interval has
+been shown to increase in patients treated with 40 and 120 mg/day.
+Ziprasidone is contraindicated in combination with other drugs known to
+prolong the QTc interval. These include, but are not limited to, dofetilide,
+sotalol, quinidine, other class IA and III antiarrhythmics, mesoridazine,
+thioridazine,
+chlorpromazine,
+droperidol,
+pimozide,
+sparfloxacin,
+gatifloxacin, moxifloxacin, halofantrine, mefloquine, pentamidine, arsenic
+trioxide, levomethadyl acetate, dolasetron mesylate, probucol, and
+tacrolimus. Ziprasidone should be avoided in patients with congenital long
+QT syndrome and patients with a history of cardiac arrhythmias.
+Aripiprazole (Abilify)
+Aripiprazole is a potent 5-HT2A antagonist and is indicated for the treatment
+of both schizophrenia and acute mania. It is also approved for the
+augmentation of antidepressant agents in MDD. Aripiprazole is a D2
+antagonist, but can also act as a partial D2 agonist. Partial D2 agonists
+compete at D2 receptors for endogenous dopamine, thereby producing a
+functional reduction of dopamine activity.
+Indications. Aripiprazole is indicated for the treatment of schizophrenia.
+Short-term, 4- to 6-week studies comparing aripiprazole with haloperidol and
+risperidone in patients with schizophrenia and schizoaffective disorder have
+shown comparable efficacy. Dosages of 15, 20, and 30 mg a day were found
+to be effective. Long-term studies suggest that aripiprazole is effective as a
+maintenance treatment at a daily dose of 15 to 30 mg.
+Aripiprazole is also indicated for the acute and maintenance treatment of
+manic and mixed episodes associated with bipolar I disorder. It is also used
+as adjunctive therapy to either lithium or valproate for the acute treatment of
+manic and mixed episodes associated with bipolar I disorder.
+Aripiprazole is indicated for use as adjunctive therapy to antidepressants
+
+
+
+
+<<<PAGE 1949>>>
+
+of blood glucose, lipids, and body weight is recommended.
+Although the transition from a DRA to an SDA may be made abruptly, it is
+wiser to taper off the DRA slowly while titrating up the SDA. Clozapine and
+olanzapine both have anticholinergic effects, and the transition from one to
+the other can usually be accomplished with little risk of cholinergic rebound.
+The transition from risperidone to olanzapine is best accomplished by
+tapering the risperidone off over 3 weeks while simultaneously beginning
+olanzapine at 10 mg a day. Risperidone, quetiapine, and ziprasidone lack
+anticholinergic effects, and the abrupt transition from a DRA, olanzapine, or
+clozapine to one of these agents may cause cholinergic rebound, which
+consists of excessive salivation, nausea, vomiting, and diarrhea. The risk of
+cholinergic rebound can be mitigated by initially augmenting risperidone,
+quetiapine, or ziprasidone with an anticholinergic drug, which is then tapered
+off slowly. Any initiation and termination of SDA use should be
+accomplished gradually.
+It is wise to overlap the administration of the new drug with the old drug.
+Of interest, some people have a more robust clinical response while taking
+the two agents during the transition and then regressing on monotherapy with
+the newer drug. We know little about the safety of combination antipsychotic
+treatment.
+Persons receiving regular injections of depot formulations of a DRA who
+are to switch to SDA use are given the first dose of the SDA on the day the
+next injection is due.
+Persons who developed agranulocytosis while taking clozapine can safely
+switch to olanzapine use, although initiation of olanzapine use amid
+clozapine-induced agranulocytosis can prolong the time of recovery from the
+usual 3 to 4 days up to 11 to 12 days. It is prudent to wait for the resolution of
+agranulocytosis before initiating olanzapine use. Emergence or recurrence of
+agranulocytosis has not been reported with olanzapine, even in persons who
+developed it while taking clozapine.
+SDA use by pregnant women has not been studied, but consideration
+should be given to the potential of risperidone to raise prolactin
+concentrations, sometimes up to three to four times the upper limit of the
+normal range. Because the drugs can be excreted in breast milk, they should
+not be taken by nursing mothers. The dosages for selected SDAs are given in
+Table 21-9.
+
+
+
+
+<<<PAGE 2063>>>
+
+The coadministration of lithium and carbamazepine, lamotrigine,
+valproate, and clonazepam may increase lithium concentrations and
+aggravate lithium-induced neurologic adverse effects. Treatment with the
+combination should be initiated at slightly lower dosages than usual, and the
+dosages should be increased gradually. Changes from one to another
+treatment for mania should be made carefully, with as little temporal overlap
+between the drugs as possible.
+Most diuretics (e.g., thiazide and potassium-sparing) can increase lithium
+concentrations; when treatment with such a diuretic is stopped, the clinician
+may need to increase the person’s daily lithium dosage. Osmotic and loop
+diuretics, carbonic anhydrase inhibitors, and xanthines (including caffeine)
+may reduce lithium concentrations to below therapeutic concentrations.
+Whereas ACEIs may cause an increase in lithium concentrations, the AT1
+angiotensin II receptor inhibitors losartan (Cozaar) and irbesartan (Avapro)
+do not alter lithium concentrations. A wide range of NSAIDs can decrease
+lithium clearance, thereby increasing lithium concentrations. These drugs
+include indomethacin (Indocin), phenylbutazone (Azolid), diclofenac
+(Voltaren), ketoprofen (Orudis), oxyphenbutazone (Oxalid), ibuprofen
+(Motrin, Advil), piroxicam (Feldene), and naproxen (Naprosyn). Aspirin and
+sulindac (Clinoril) do not affect lithium concentrations.
+The coadministration of lithium and quetiapine (Seroquel) may cause
+somnolence but is otherwise well tolerated. The coadministration of lithium
+and ziprasidone (Geodon) may modestly increase the incidence of tremors.
+The coadministration of lithium and calcium channel inhibitors should be
+avoided because of potentially fatal neurotoxicity.
+A person taking lithium who is about to undergo ECT should discontinue
+taking lithium 2 days before beginning ECT to reduce the risk of delirium.
+Laboratory Interferences
+Lithium does not interfere with any laboratory tests, but lithium-induced
+alterations include an increased WBC count, decreased serum thyroxine, and
+increased serum calcium. Blood collected in a lithium–heparin anticoagulant
+tube will produce falsely elevated lithium concentrations.
+Dosage and Clinical Guidelines
+
+
+
+
+<<<PAGE 3660>>>
+
+smell, 21–22
+visual inspection, 21
+Generativity, mental health and, 1036
+Genes, mental disorders and, 923
+Genetic counseling. See also Psychiatric genetic counseling
+definitions, 794
+risk communication, 797
+steps and process, 796t
+symbols for pedigree, 795f
+Genetic epistemology, 1007
+Genetic markers, 989
+Genitourinary system, review of, 20
+Genome-wide association (GWA) studies, 990
+of bipolar disorders, 985
+gene mapping and, 987f
+Geodon. See Ziprasidone
+Geophagia, 163
+Geriatric Depression Scale, 54t, 90
+Geriatric Depression Scale (Short Version), 806t
+Geriatric psychiatry
+psychiatric problems of elderly, 804. See also Mental disorders of old
+age
+psychopharmacological treatment, 809
+psychotherapeutic interventions, 809
+Gerstmann–Sträussler–Scheinker disorder (GSS), 257
+Gerstmann syndrome, 145, 927. See also Mathematics deficits
+Gesell, Arnold, 887
+Gesell Infant Scale, 81
+Gilligan, Carol, 902
+Global and cultural issues in psychiatry, 875–881. See also World
+psychiatry
+Glucophage. See Metformin
+Gobal aphasia, 48
+Goldstein, Kurt, 236, 1081
+Goodenough Draw-a-Person Test, 85
+Goodness of fit, 893
+Grammar, 107
+
+
+
+
+<<<PAGE 3738>>>
+
+Seasonality, 1003–1004
+Seclusion and restraint, 841
+indications and contraindications for, 841t
+restrictions for, 841t
+Secobarbital, 298
+Secondary autonomous ego functions, 1065
+Secondary prevention, 868
+Secondary revision, 1059
+Second-generation antidepressants, 591
+Second-generation or atypical antipsychotic (SGA) drugs, 594, 608
+adverse effects, 609
+aripiprazole (Abilify), 612–613
+asenapine (Saphris), 613
+clinical guidelines, 615
+clozapine (Clozaril), 613–614
+dosing, 616t
+drugs approved by FDA, 608
+lumateperone (Caplyta), 615
+lurasidone (Latuda), 614–615
+mechanisms of action, 608–609
+for mood disorders, 609
+olanzapine (Zyprexa), 610–611
+paliperidone (Invega), 610
+quetiapine (Seroquel), 611–612
+risk of extrapyramidal side effects (EPS), 608
+risperidone (Risperdal), 609–610
+for schizophrenia and schizoaffective disorder, 609
+therapeutic indications, 609
+ziprasidone (Geodon), 612
+Second individuation, 906
+Sedating drugs, 602
+Sedative-, hypnotic-, anxiolytic-related disorders, 298–302
+abuse, patterns of
+intravenous use, 299
+oral use, 298–299
+clinical features
+barbiturate-like substances, 298
+
+

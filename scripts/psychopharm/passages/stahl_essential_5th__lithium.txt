@@ -1,0 +1,1137 @@
+<<<PAGE 64>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+inhibition is depicted as binding with strings (Figure
+2-13A), such that the substrate can cut them with
+scissors (Figure 2-13B) and displace the enzyme
+inhibitor, and bind the enzyme itself with its own strings
+(Figure 2-13C).
+These concepts can be applied potentially to any
+enzyme system. Several enzymes are involved in
+neurotransmission, including in the synthesis and
+destruction of neurotransmitters, as well as in signal
+transduction. Only a few enzymes are known to be
+targeted by psychotropic drugs currently used in
+clinical practice, namely monoamine oxidase (MAO),
+acetylcholinesterase, and glycogen synthase kinase
+(GSK). MAO inhibitors are discussed in more detail
+in Chapter 7 on treatments for mood disorders and
+acetylcholinesterase inhibitors are discussed in more
+detail in Chapter 12 on dementia. Briefly, regarding
+GSK, the antimanic agent lithium may target this
+
+important enzyme in the signal transduction
+pathway of neurotrophic factors (Figure 2-14). That
+is, some neurotrophins, growth factors, and other
+signaling pathways act through a specific downstream
+phosphoprotein, an enzyme called GSK-3 (glycogen
+synthase kinase), to promote cell death (so-called
+proapoptotic actions). Lithium has the capacity to
+inhibit this enzyme (Figure 2-14B). It is possible
+that inhibition of GSK-3 is physiologically relevant,
+because this action could lead to neuroprotective
+actions, long-term plasticity, and may contribute to
+the antimanic and mood-stabilizing actions known to
+be associated with lithium. It is also possible that the
+antimanic agent valproate and the neurostimulatory
+treatment for depression ECT (electroconvulsive
+therapy) may have actions on GSK-3 as well (Figure
+2-14B). The development of novel GSK-3 inhibitors is
+in progress.
+
+GSK-3 (Glycogen Synthase Kinase):
+Possible Target for Lithium and Other Mood Stabilizers
+
+neurotrophin
+
+insulin
+IGF-1
+
+Wnt
+glycoproteins
+
+neurotrophin
+
+insulin
+IGF-1
+
+Wnt
+glycoproteins
+
+membrane
+
+P
+
+GSK-3
+
+P
+
+lithium
+? valproate
+? ECT
+
+GSK-3
+
+proapoptotic
+neuroprotective
+long-term plasticity
+antimanic / mood stabilizer
+Figure 2-14 Receptor tyrosine kinases. Receptor tyrosine kinases are potential targets for novel psychotropic drugs. Left: Some
+neurotrophins, growth factors, and other signaling pathways act through a downstream phosphoprotein, an enzyme called GSK-3
+(glycogen synthase kinase), to promote cell death (proapoptotic actions). Right: Lithium and possibly some other mood stabilizers
+may inhibit this enzyme, which could lead to neuroprotective actions and long-term plasticity as well as possibly contribute to moodstabilizing actions.
+
+48
+
+
+
+
+<<<PAGE 348>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Figure 7-62 Ketamine, AMPA
+receptors, and BDNF/VEGF
+release. Glutamate activity heavily
+modulates synaptic potentiation; this
+is specifically modulated through
+NMDA (N-methyl-D-aspartate)
+and AMPA (α-amino-3-hydroxy-5methyl-4-isoxazole-propionic acid)
+receptors. Ketamine is an NMDA
+receptor antagonist; however, its
+rapid antidepressant effects may
+also be related to indirect effects
+on AMPA receptor signaling. (A) A
+second hypothesis is that blockade
+of the NMDA receptor leads to rapid
+activation of AMPA, which activates
+voltage-sensitive calcium channels
+(VSCCs) to allow calcium influx. (B) This
+in turn would lead to activation of brainderived neurotrophic factor (BDNF)
+and VEGF (vascular endothelial growth
+factor) release, which bind to TRKB and
+FLK1 receptors, respectively, triggering
+cascades that induce dendritic spine
+formation.
+
+TRKB
+FLK1
+vesicle with
+VEGF
+vesicle with
+BDNF
+Ca++
+Glu
+AMPA
+receptor
+VSCC
+NMDA
+receptor
+blocked by
+ketamine
+
+A
+
+BDNF VEGF
+
+PLC /PI3K
+AKT
+
+dendritic
+spine
+formation
+
+B
+
+active as an acute rapid-onset antidepressant, and it is
+administered intranasally and rapidly, so that longer
+intravenous infusions are not necessary. After twiceweekly initiation, esketamine can be given intranasally
+in weekly or biweekly dosing as an augmenting agent
+to standard drugs for depression. A long-term study for
+up to a year of esketamine nasal spray plus a switch to
+an oral monoamine antidepressant not previously tried,
+showed sustained improvements in depression and
+acceptable safety.
+Other Drug Combinations for Treatment-Resistant
+Depression
+
+Other options to augment monoamine treatments for
+unipolar depression include agents that do not have
+robust antidepressant actions as monotherapies but
+can improve the action of the monoamine treatments
+332
+
+(e.g., lithium, buspirone, and thyroid), as well as the
+very popular and often effective strategy of combining
+two monoamine drugs, each approved for unipolar
+depression, to create pharmacological synergy. However,
+none of these strategies are specifically approved.
+Lithium
+
+Lithium is discussed below as a treatment for mania, but
+has been used as well for unipolar depressed patients who
+fail to respond to treatment. Lithium augmentation of
+monoamine reuptake inhibitors, particularly the classic
+tricyclic antidepressants also discussed below, has been
+used in the past to boost treatment response in unipolar
+depression. As augmentation for treatment-resistant
+unipolar depression, lithium is administered in doses
+lower than those used for mania, but it has fallen out of
+favor in recent years.
+
+
+
+
+<<<PAGE 358>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+lithium and various anticonvulsant ion channel blockers
+that act by very different mechanisms (described below).
+More surprising yet is that some of these same serotonin/
+dopamine antagonists/partial agonists are effective for
+bipolar depression, albeit by mechanisms likely distinct
+from D2 antagonism/partial agonism. The questions
+that arise are how serotonin 2/dopamine 2 antagonists
+and dopamine 2/serotonin 1A partial agonists work in
+both the manic and depressed poles of bipolar disorder.
+More recently, some of these same serotonin/dopamine
+drugs have evidence of efficacy in unipolar depression
+as augmenting agents to SSRIs/SNRIs when there is
+inadequate response, as discussed above. Furthermore,
+some of these same serotonin/dopamine drugs now
+have additional evidence of efficacy in unipolar and
+bipolar depression with mixed features of mania. Do they
+work by the same mechanisms across the entire bipolar
+spectrum (Figure 6-7)? Is this a class effect of these drugs
+or do specific drugs work in some but not all parts of the
+bipolar spectrum?
+Putative Pharmacological Mechanism of Serotonin/
+Dopamine Antagonists/Partial Agonists in Mania
+
+The short answer to the question of how serotonin/
+dopamine blockers work in mania is that we do not
+really know. On the one hand, PET scans of patients
+with mania show the same excessive presynaptic
+dopamine levels and release in mesostriatal dopamine
+neurons in acute bipolar mania as for acute psychosis in
+schizophrenia, described extensively in Chapter 4 and
+illustrated in Figures 4-15, 4-16, and Figure 5-2. Thus,
+blocking the excessive dopamine at D2 receptors should
+have as much of an antimanic effect in bipolar mania as
+it has an antipsychotic effect in schizophrenia. Indeed,
+acute bipolar mania is treated with serotonin/dopamine
+blockers in much the same manner as acute psychosis is
+treated in schizophrenia, including dosing and expected
+onset of action within minutes to hours. However, not all
+agents in the serotonin/dopamine blocker class approved
+to treat schizophrenia are also approved to treat acute
+bipolar mania, and not all of those approved for acute
+bipolar mania are approved for bipolar maintenance (see
+Table 7-1). Differences in receptor binding profiles could
+explain why some agents are approved in mania and
+others not; commercial considerations could also explain
+why some agents are not approved in mania. To enhance
+antimanic response and to prevent relapse into another
+episode of mania, lithium and valproate are commonly
+used in conjunction with those dopamine/serotonin
+
+342
+
+blockers approved for the treatment of mania, but this is
+not done for the treatment of schizophrenia, as lithium
+and valproate do not clearly augment the efficacy of
+serotonin/dopamine blockers in schizophrenia.
+Serotonin/Dopamine Antagonists/Partial Agonists
+across the Depression Spectrum: Bipolar Depression,
+Depression with Mixed Features, and as Adjuncts to
+SSRIs/SNRIs in Unipolar Major Depression
+
+The serotonin/dopamine antagonists/partial agonists
+have proven to be quite versatile therapeutics: from
+schizophrenia, to mania, to adjuncts for SSRIs/SNRIs in
+unipolar depression, as we have discussed in this chapter
+so far. Here we consider the extension of therapeutic use
+of at least some of the agents in this class to the treatment
+of bipolar depression and the closely related state of
+major depressive episodes with mixed features of mania.
+A major paradigm shift is afoot in the treatment of
+bipolar depression and depression with mixed features.
+We used to ask: “Don’t we treat all forms of depression
+with so-called antidepressants, drugs that inhibit the
+reuptake of monoamines?” Although most patients with
+depression, including those with bipolar depression and
+depression with mixed features, do receive monoamine
+reuptake inhibiting drugs, the modern answer to
+this question is increasingly becoming a resounding
+“No!!” Practice guidelines and US FDA approvals are
+moving away from the treatment of bipolar depression
+or depression with mixed features with the standard
+monoamine reuptake inhibiting agents that are so
+commonly used for the treatment of unipolar depression.
+Reuptake inhibitors are increasingly reserved to treat
+patients with unipolar depression only if they do not
+have mixed features, and patients with bipolar depression
+only as second-line agents to augment other agents. Best
+practice is evolving for bipolar depression or depression
+with mixed features, so now first-line treatment is one of
+the specifically approved serotonin/dopamine blockers,
+not a monoamine reuptake inhibitor. However, there
+is plenty of controversy over this recommendation, as
+many prescribers and some experts still advocate for
+monoamine reuptake inhibitors in some patients with
+bipolar depression. But more and more studies are
+showing failure of the monoamine reuptake inhibiting
+drugs to work consistently in bipolar depression or in
+mixed features, and, furthermore, monoamine reuptake
+inhibitors can induce intolerable activating side effects
+and even manic episodes and suicidality in patients
+with bipolar/mixed depression. Other studies do show
+
+
+
+
+<<<PAGE 361>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Mesocortical Dopamine Pathway
+D1
+
+D3 antagonist/
+partial agonist
+
+D1
+
+D3
+
+(SIGH)
+
+A
+
+negative
+symptoms
+
+(SIGH)
+
+affective
+symptoms
+
+B
+
+negative
+symptoms
+
+affective
+symptoms
+
+Figure 7-73 Dopamine 3 antagonism/partial agonism in the ventral tegmental area (VTA). (A) Presynaptic D3 receptors detect
+dopamine and inhibit further dopamine release. These receptors are present in the VTA but not in the prefrontal cortex. There are,
+however, postsynaptic D2 receptors in the prefrontal cortex, which are stimulated by dopamine. Shown here is the mesocortical
+dopamine pathway, with stimulation of D3 receptors resulting in reduced dopamine release in the prefrontal cortex. Low levels of
+dopamine in the prefrontal cortex is hypothesized to contribute to depressed mood, reduced motivation, and cognitive symptoms, all of
+which occur in mood disorders, as well as to negative symptoms in schizophrenia. (B) Antagonism/partial agonism of D3 receptors in the
+VTA can increase dopamine release in the prefrontal cortex. Because there are no D3 receptors in the prefrontal cortex, D3 antagonists/
+partial agonists have no effect there. Dopamine is free to stimulate D1 receptors, hypothetically improving symptoms of depression.
+
+autoreceptors in the VTA on dopamine cell bodies for a
+population of mesocortical neurons. The function of these
+D3 receptors is to detect dopamine and inhibit further
+dopamine release (Figure 7-73A). However, these same
+neurons projecting to the prefrontal cortex do not have
+presynaptic autoreceptors on their axon terminals (see
+Chapter 4 discussion and Figure 4-9; see also Figure 7-73).
+D3 antagonists will have no effect in the prefrontal cortex
+since there are few D3 receptors there. In Chapter 4 we
+discussed how most of the dopamine receptors in prefrontal
+cortex are postsynaptic and D1 (Figure 4-9). What this
+means is that when D3 antagonists/partial agonists act
+in the VTA to block them, this disinhibits the dopamine
+neurons projecting to prefrontal cortex and they release
+dopamine onto D1 receptors (Figure 7-73B). This action
+hypothetically improves symptoms of depression and is one
+explanation for why cariprazine has antidepressant actions,
+and also why it has more robust improvement of negative
+symptoms of schizophrenia than other drugs for psychosis.
+Improvement in energy, motivation, and “brightening”
+are observed after D3 antagonism in patients with both
+mood disorders and schizophrenia, and animal models
+demonstrate precognitive actions and also improvements in
+substance abuse.
+
+Cariprazine is approved for acute bipolar mania and
+for acute bipolar depression (Table 7-1). Post hoc analyses
+show significant clinical improvement both in mania
+with mixed features of depression and bipolar depression
+with mixed features of mania. Studies as adjunctive
+treatment for patients with unipolar depression on
+SSRIs/SNRIs have early indications of efficacy reported.
+Thus, cariprazine has some of the most robust and
+wide-ranging efficacy known across the entire bipolar
+spectrum (Figure 6-7).
+Lithium, the Classic “Antimanic” and “Mood
+Stabilizer”
+
+Bipolar mania has classically been treated with lithium
+for more than 50 years. Lithium is an ion whose
+mechanism of action is not certain. Candidates for its
+mechanism of action are various signal transduction sites
+beyond neurotransmitter receptors (Figure 7-74). This
+includes second messengers such as the phosphatidyl
+inositol system, where lithium inhibits the enzyme
+inositol monophosphatase; modulation of G proteins;
+and, most recently, regulation of gene expression for
+growth factors and neuronal plasticity by interaction
+with downstream signal transduction cascades, including
+345
+
+7
+
+
+
+
+<<<PAGE 362>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Possible Mechanism of Lithium Action on Downstream
+Signal Transduction Cascades
+neurotrophin
+
+NT1
+
+GE
+
+NT
+
+++
+
+++
+
+Figure 7-74 Lithium’s mechanism
+of action. Although lithium is
+the oldest treatment for bipolar
+disorder, its mechanism of action
+is still not well understood. Several
+possible mechanisms exist and
+are shown here. Lithium may work
+by affecting signal transduction,
+perhaps through its inhibition of
+second-messenger enzymes such as
+inositol monophosphatase (right), by
+modulation of G proteins (middle), or
+by interaction at various sites within
+downstream signal transduction
+cascades, including glycogen
+synthase kinase 3 (GSK-3) (left).
+
+2
+P
+
+GSK-3
+
+= lithium
+
+promotes neuroprotection
+long-term plasticity
+antimanic / mood stabilizer
+
+inhibition of GSK-3 (glycogen synthase kinase 3) and
+protein kinase C (Figure 7-74).
+However lithium works, it is proven effective in manic
+episodes, and in maintenance of recurrence, especially
+for manic episodes and, perhaps to a lesser extent, for
+depressive episodes. Lithium is well established to help
+prevent suicide in patients with mood disorders. It is
+also used to treat depressive episodes in bipolar disorder
+and as an augmenting agent to drugs for depression
+in treatment-resistant unipolar depression, but is not
+formally approved for these uses.
+A number of factors have led to an unfortunate
+decline in the use of lithium in recent years, including
+the entry of multiple new treatment options into the
+therapeutic armamentarium for bipolar disorder, the
+side effects of lithium, and the monitoring burden that is
+part of prescribing lithium. The modern use of lithium
+by experts departs from its classic use as a high-dose
+monotherapy for euphoric mania, with lithium often
+utilized now as one member of a portfolio of treatments,
+often allowing once-daily administration and at lower
+doses when combined with other mood stabilizers.
+Well-known side effects of lithium include
+gastrointestinal symptoms such as dyspepsia, nausea,
+vomiting, and diarrhea, as well as weight gain, hair
+loss, acne, tremor, sedation, decreased cognition, and
+incoordination. There are also potential long-term
+346
+
+adverse effects upon the thyroid and kidney. Lithium has
+a narrow therapeutic window, requiring monitoring of
+plasma drug levels.
+Anticonvulsants as “Mood Stabilizers”
+
+Based upon theories that mania may “kindle” further
+episodes of mania, a logical parallel with seizure disorders
+was drawn, since seizures can “kindle” more seizures.
+Several anticonvulsants (Table 7-3) are categorized on the
+basis of whether they are “mania-minded,” i.e., treat from
+above and stabilize from above (Figure 7-7); “depressionminded,” i.e., treat from below and stabilize from below
+(Figure 7-8); or both. Because the known anticonvulsants
+carbamazepine and valproate proved effective in treating
+the manic phase of bipolar disorder, this has led to the
+idea that any anticonvulsant would be a mood stabilizer,
+especially for mania. However, this has not proven to be
+the case (Table 7-3) since anticonvulsants do not all act
+by the same pharmacological mechanisms, as discussed
+below. These agents for mania or bipolar depression are
+better classified for their pharmacological mechanism of
+action at ion channels rather than as “mood stabilizers”
+or “anticonvulsants.” Numerous mood stabilizers that
+are also anticonvulsants are discussed below, including
+not only those with proven efficacy in different phases of
+bipolar disorder, but also those with dubious efficacy in
+bipolar disorder (Table 7-3).
+
+
+
+
+<<<PAGE 365>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+sodium channels, either by binding directly to the VSSC
+or its regulatory units, or by inhibiting phosphorylating
+enzymes (Figure 7-76). If less sodium is able to pass into
+neurons, this may lead to diminished release of glutamate
+and therefore less excitatory neurotransmission, but
+this is only a theory. There may be additional effects of
+valproate on other voltage-sensitive ion channels, but
+these are poorly characterized and may relate to side
+effects as well as to therapeutic effects.
+Another idea is that valproate enhances the actions
+of GABA, either by increasing its release, decreasing its
+reuptake, or slowing its metabolic inactivation (Figure
+7-77). The direct site of action of valproate that causes the
+enhancement of GABA remains unknown, but there is good
+evidence that the downstream effect of valproate ultimately
+does result in more GABA activity, and thus more inhibitory
+neurotransmission, possibly explaining antimanic actions.
+Finally, a number of downstream actions on complex
+signal transduction cascades have been described (Figure
+7-78). Like lithium, valproate may inhibit GSK-3, but it may
+also target many other downstream sites, from blockade
+of phosphokinase C (PKC) and MARCKS (myristoylated
+alanine-rich C kinase substrate), to activating various
+signals that promote neuroprotection and long-term
+
+plasticity such as ERK (extracellular signal-regulated
+kinase) kinase, BCL2 (cytoprotective protein B-cell
+lymphoma/leukemia-2 gene), GAP43 (growth associated
+protein 43), and others (Figure 7-78). The effects of these
+signal transduction cascades are only now being clarified,
+and which of these possible effects of valproate might be
+relevant to mood-stabilizing actions are not yet understood.
+Valproate is proven effective for the acute manic phase
+of bipolar disorder, and is commonly used long-term to
+prevent recurrence of mania, although its prophylactic
+effects have not been as well established as its acute
+effects in mania (Table 7-3). Antidepressant actions of
+valproate have also not been well established, nor has it
+been shown to convincingly stabilize against recurrent
+depressive episodes, but there may be some efficacy for
+the depressed phase of bipolar disorder in some patients.
+Some experts believe valproic acid is more effective than
+lithium for rapid cycling and mixed episodes of mania.
+In reality, such episodes are very difficult to treat, and
+combinations of two or more mood stabilizers, including
+lithium plus valproate plus serotonin/dopamine blockers,
+are usually in order. For optimum efficacy, it may be
+ideal to push the dose of valproate, but no drug works
+if your patient refuses to take it, and valproic acid often
+
+Possible Sites of Action of Valproate on Downstream
+Signal Transduction Cascades
+neurotrophin
+
+NT1
+
+GE
+
+Ras/Raf/MEK
+
+2
+
+P
+
+ERK
+activation
+
+GSK-3
+= valproate
+
+Figure 7-78 Possible sites of action
+of valproate on downstream signal
+transduction cascades. Valproate
+has been shown to have multiple
+downstream effects on signal
+transduction cascades, which may
+be involved in its antimanic effects.
+Valproate inhibits glycogen synthase
+kinase 3 (GSK-3), phosphokinase C
+(PKC), and myristoylated alaninerich C kinase substrate (MARCKS).
+In addition, valproate activates
+signals that promote neuroprotection
+and long-term plasticity, such as
+extracellular signal-regulated kinase
+(ERK), cytoprotective protein B-cell
+lymphoma/leukemia-2 gene (BCL2),
+and growth associated protein 43
+(GAP43).
+
+PKC
+promotes neuroprotection
+long-term plasticity
+antimanic / mood stabilizer
+MARCKS
+BCL2
+activation
+
+GAP43
+activation
+
+neuronal genome
+
+349
+
+7
+
+
+
+
+<<<PAGE 369>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+of amyotrophic lateral sclerosis (ALS, or Lou Gehrig’s
+disease). Theoretically, riluzole binds to VSSCs and
+prevents glutamate release, in an action similar to that
+postulated for lamotrigine (see Figure 7-82). The idea is
+that diminishing glutamate release in ALS would prevent
+the postulated excitotoxicity that may be causing death
+of motor neurons in ALS. Excessive glutamate activity
+may be occurring not only in ALS, but also in bipolar
+depression, although this is not necessarily so severe as to
+cause widespread neuronal loss.
+
+remission of symptoms: treat from above and stabilize
+from above (Figure 7-7) and treat from below and
+stabilize from below (Figure 7-8).
+
+FUTURE TREATMENTS FOR
+MOOD DISORDERS
+Dextromethorphan–Bupropion and
+Dextromethorphan–Quinidine
+
+As discussed above, one of the most interesting
+developments in the treatment of resistant unipolar
+depression in recent years has been the observation that
+infusions of subanesthetic doses of ketamine or intranasal
+administration of esketamine can exert an immediate
+antidepressant effect and can often immediately reduce
+suicidal thoughts. Since the effects are often not sustained
+for more than a few days, investigators have searched for
+oral ketamine-like agents that could have rapid onset,
+sustained efficacy, greater ease of administration, and better
+tolerability in patients with treatment-resistant illness.
+Several such possibilities are in development, namely
+various NMDA antagonists with additional pharmacological
+properties. One agent combines the NMDA antagonist
+dextromethorphan with the CYP450 2D6 inhibitor and
+NDRI bupropion (also known as AXS-05), and the other
+
+Combinations are the Standard for Treating Bipolar
+Disorder
+
+Given the disappointing number of patients who
+attain satisfactory response in bipolar disorder from
+monotherapy, it is more the rule than the exception
+that bipolar patients receive combination treatments.
+Although first-line treatment may be one of the
+serotonin/dopamine agents, if this fails to adequately
+control mania, another treatment for mania such as
+valproate or lithium may be added (Figure 7-83). On
+the other hand, if serotonin/dopamine agents fail to
+adequately control depression, lamotrigine may be added
+or, controversially, a monoamine reuptake inhibitor
+(Figure 7-83). The goal is four treatments for fullest
+
+Combos for Bipolar Disorder
+Evidence-Based Bipolar Combos for Mania
+
++
+5HT/DA blocker-lithium
+combo
+
+5HT/DA blocker
+
+lithium
+
++
+5HT/DA blockervalproate combo
+
+valproate
+
+5HT/DA blocker
+
+Practice-Based Bipolar Combos for Depression
+
+Figure 7-83 Bipolar disorder
+combinations. Most patients
+with bipolar disorder will require
+treatment with two or more agents.
+The combinations with the most
+evidence for mania include addition
+of a serotonin/dopamine antagonist
+to either lithium or valproate.
+Combinations that are not well
+studied in controlled trials but that
+have some practice-based evidence
+for depression include a serotonin/
+dopamine antagonist plus lamotrigine.
+Although controversial, some clinicians
+add a monoamine reuptake inhibitor to
+a serotonin/dopamine antagonist for
+bipolar depression.
+
++
+5HT/DA blockerLamictal combo
+
+Lamictal/
+lamotrigine
+
+5HT/DA blocker
+
+Careful Combo
+
++
+5HT/DA blockerLamictal combo
+
+5HT/DA blocker
+
++
+Lamictal/
+lamotrigine
+
+monoamine
+reuptake
+blocker
+
+353
+
+7
+
+
+
+
+<<<PAGE 603>>>
+
+Suggested Reading and Selected References
+
+BALANCE investigators and collaborators, et al. (2010)
+Lithium plus valproate combination therapy versus
+monotherapy for relapse prevention in bipolar I disorder
+(BALANCE): a randomized open-label trial. Lancet 375:
+385–95.
+Baldessarini RJ, Tondo L, Vazquez GH (2019) Pharmacological
+treatment of adult bipolar disorder. Mol Psychiatry 24:
+198–217.
+Bang-Andersen B, Ruhland T, Jorgensen M, et al. (2011)
+Discovery of 1-[2-(2,4-dimethylphenylsulfanyl)phenyl]
+piperazine (LuAA21004): a novel multimodal compound
+for the treatment of major depressive disorder. J Med Chem
+54: 3206–21.
+Carhart-Harris RL, Bolstridge M, Day CMG, et al.
+(2018) Psilocybin with psychological support for
+treatment-resistant depression: six month follow up.
+Psychopharmacology 235: 399–408.
+Carhart-Harris RL, Bolstridge M, Rucker J, et al. (2016)
+Psilocybin with psychological support for treatment
+resistant depression: an open label feasibility study. Lancet
+Psychiatry 3: 619–27.
+Carhart-Harris RL, Goodwin GM (2017) The therapeutic
+potential of psychedelic drugs: past, present and future,
+Neuropsychopharmacology 42: 2105–13.
+Carhart-Harris RL, Leech R, Williams TM, et al. (2012)
+Implications for psychedelic assisted psychotherapy:
+a functional magnetic resonance imaging study
+with psilocybin. Br J Psychiatry: doi:10.1192/bjp.
+bp.111.103309.
+Chiu CT, Chuan DM (2010) Molecular actions and therapeutic
+potential of lithium in preclinical and clinical studies of
+CNS disorders. Pharmacol Ther 128: 281–304.
+Cipriani A, Pretty H, Hawton K, Geddes JR (2005) Lithium in
+the prevention of suicidal behavior and all-cause mortality
+in patients with mood disorders: a systematic review of
+randomized trials. Am J Psychiatry 162: 1805–19.
+Frye MA, Grunze H, Suppes T, et al. (2007) A placebocontrolled evaluation of adjunctive modafinil in the
+treatment of bipolar depression. Am J Psychiatry 164:
+1242–9.
+Grady M, Stahl SM (2012) Practical guide for prescribing
+MAOI: Debunking myths and removing barriers. CNS
+Spectrums 17: 2–10.
+Mork A, Pehrson A, Brennum LT, et al. (2012)
+Pharmacological effects of Lu AA21004: a novel
+multimodal compound for the treatment of major
+depressive disorder. J Pharmacol Exp Ther 340: 666–75.
+Pasquali L, Busceti CL, Fulceri F, Paparelli A, Fornai F (2010)
+Intracellular pathways underlying the effects of lithium.
+Behav Pharmacol 21: 473–92.
+
+Perlis RH, Ostacher MJ, Goldberg JF, et al. (2010) Transition
+to mania during treatment of bipolar depression.
+Neuropsychopharmacology 35: 2545–52.
+Pompili M, Vazquez GH, Forte A, Morrissette DA, Stahl
+SM (2020) Pharmacological treatment of mixed
+states. Psychiatr Clin N Am 43: 157–86. doi:10.1016/j.
+psc.2019.10.015
+Schwartz TL, Siddiqui US, Stahl SM (2011) Vilazodone: a
+brief pharmacologic and clinical review of the novel SPARI
+(serotonin partial agonist and reuptake inhibitor). Ther
+Adv Psychopharmacol 1: 81–7.
+Settimo L, Taylor D (2018) Evaluating the dose-dependent
+mechanism of action of trazodone by estimation of
+occupancies for different brain neurotransmitter targets. J
+Psychopharmacol 32: 960104.
+Stahl SM (2009) Mechanism of action of trazodone: a
+multifunctional drug. CNS Spectrums 14: 536–46.
+Stahl SM (2012) Psychotherapy as an epigenetic “drug”:
+psychiatric therapeutics target symptoms linked to
+malfunctioning brain circuits with psychotherapy as well
+as with drugs. J Clin Pharm Ther 37: 249–53.
+Stahl SM (2014) Mechanism of action of the SPARI
+vilazodone: (serotonin partial agonist reuptake inhibitor).
+CNS Spectrums 19: 105–9.
+Stahl SM (2014) Mechanism of action of agomelatine:
+a novel antidepressant exploiting synergy between
+monoaminergic and melatonergic properties. CNS
+Spectrums 19: 207–12.
+Stahl SM (2015) Modes and nodes explain the mechanism
+of action of vortioxetine, a multimodal agent (MMA):
+enhancing serotonin release by combining serotonin
+(5HT) transporter inhibition with actions at 5HT receptors
+(5HT1A, 5HT1B, 5HT1D, 5HT7 receptors). CNS Spectrums
+20: 93–7.
+Stahl SM (2015) Modes and nodes explain the mechanism of
+action of vortioxetine, multimodal agent (MMA): actions
+at serotonin receptors may enhance downstream release of
+four pro-cognitive neurotransmitters. CNS Spectrums 20:
+515–19.
+Stahl SM, Fava M, Trivedi M (2010) Agomelatine in the
+treatment of major depressive disorder: an 8 week,
+multicenter, randomized, placebo-controlled trial. J Clin
+Psychiatry 71: 616–26.
+Undurraga J, Baldessarini RJ, Valenti M, et al. (2012) Bipolar
+depression: clinical correlates of receiving antidepressants.
+J Affect Disord 139: 89–93.
+Zajecka J, Schatzberg A, Stahl SM, et al. (2010) Efficacy and
+safety of agomelatine in the treatment of major depressive
+disorder: a multicenter, randomized, double-blind, placebocontrolled trial. J Clin Psychopharmacol 30: 135–44.
+
+587
+
+
+
+
+<<<PAGE 621>>>
+
+Suggested Reading and Selected References
+
+Sabbagh MN, Schauble B, Anand K, et al. (2017) Histopathology
+and florbetaben PET in patients incorrectly diagnosed with
+Alzheimer’s disease. J Alzheimers Dis 56: 441–6.
+
+Wishart HA, Saykin AJ, McAllister TW, et al. (2006) Regional
+brain atrophy in cognitively intact adults with a single
+APOE ε4 allele. Neurology 67: 1221–4.
+
+Scheinin NM, Aalto S, Kaprio J, et al. (2011) Early detection of
+Alzheimer disease. Neurology 77: 453–60.
+
+Wolk DA, Grachev ID, Buckley C, et al. (2011) Association
+between in vivo fluorine 18-labeled flutemetamol
+amyloid positron emission tomography imaging and in
+vivo cerebral cortical histopathology. Arch Neurol 68:
+1398–403.
+
+Sharma N, Singh AN (2016) Exploring biomarkers for
+Alzheimer’s disease. J Clin Diag Res 10: KE01–06.
+Simonsen AH, Herukka SK, Andreasen N, et al. (2017)
+Recommendations for CSF AD biomarkers in the
+diagnostic evaluation of dementia. Alzheimers Dement 13:
+285–95.
+Sperling RA, Aisen PS, Beckett LA, et al. (2011) Toward
+defining the preclinical stages of Alzheimer’s disease:
+recommendations from the National Institute on Aging
+and the Alzheimer’s Association Workgroup. Alzheimers
+Dement 7: 280–92.
+Spies PE, Claasen JA, Peer PG, et al. (2013) A prediction
+model to calculate probability of Alzheimer’s disease using
+cerebrospinal fluid biomarkers. Alzheimers Dement 9:
+262–8.
+Spies PE, Verbeek MM, van Groen T, et al. (2012) Reviewing
+reasons for the decreased CSF Abeta42 concentration in
+Alzheimer disease. Front Biosci (Landmark Ed) 17: 2024–34.
+Spira AP, Gottesman RF (2017) Sleep disturbance: an
+emerging opportunity for Alzheimer’s disease prevention?
+Int Psychogeriatr 29: 529–31.
+Tarawneh R, Holtzman DM (2012) The clinical problem
+of symptomatic Alzheimer disease and mild cognitive
+impairment. Cold Spring Harbor Perspect Med 2: a006148.
+Tariot PN, Aisen PS (2009) Can lithium or valproate untie
+tangles in Alzheimer’s disease? J Clin Psychiatry 70: 919–21.
+Uzun S, Kozumplik O, Folnegovic-Smalc V (2011) Alzheimer’s
+dementia: current data review. Coll Antropol 35: 1333–7.
+Venkataraman A, Kalk N, Sewell G, et al. (2017) Alcohol and
+Alzheimer’s disease: does alcohol dependence contribute
+to beta-amyloid deposition, neuroinflammation and
+neurodegeneration in Alzheimer’s disease? Alcohol
+Alcoholism 52: 151–8.
+Villemagne VL, Doré V, Bourgeat P, et al. (2017) Aβ-amyloid
+and tau imaging in dementia. Semin Nucl Med 47: 75–88.
+Wagner M, Wolf S, Reischies FM, et al. (2012) Biomarker
+validation of a cued recall memory deficit in prodromal
+Alzheimer disease. Neurology 78: 379–86.
+Weintraub S, Wicklund AH, Salmon DP (2012) The
+neuropsychological profile of Alzheimer disease. Cold
+Spring Harb Perspect Med 2 :a006171.
+Williams MM, Xiong C, Morris JC, Galvin JE (2006) Survival
+and mortality differences between dementia with Lewy
+bodies vs. Alzheimer’s disease. Neurology 67: 1935–41.
+
+Yaffe K, Tocco M, Petersen RC, et al. (2012) The epidemiology
+of Alzheimer’s disease: laying the foundation for drug
+design, conduct, and analysis of clinical trials. Alzheimers
+Dement 8: 237–42.
+Yan R (2016) Stepping closer to treating Alzheimer’s disease
+patients with BACE1 inhibitor drugs. Transl Neurodegen
+5: 13.
+Yeh HL, Tsai SJ (2008) Lithium may be useful in the
+prevention of Alzheimer’s disease in individuals at risk of
+presenile familial Alzheimer’s disease. Med Hypotheses 71:
+948–51.
+
+Behavioral Symptoms of Dementia
+Alexopoulos GS (2003) Role of executive function in late life
+depression. J Clin Psychiatry 64 (Suppl 14): 18–23.
+Ballard C, Oyebode F (1995) Psychotic symptoms in patients
+with dementia. Int J Geriatr Psychiatry 10: 743–52.
+Ballard C, Neill D, O’Brien J, et al. (2000) Anxiety, depression
+and psychosis in vascular dementia: prevalence and
+associations. J Affect Disord 59: 97–106.
+Bao AM, Meynen G, Swaab DF (2008) The stress system in
+depression and neurodegeneration: focus on the human
+hypothalamus. Brain Res Rev 57: 531–53.
+Barnes DE, Yaffe K, Byers AL, et al. (2012) Midlife vs. late-life
+depressive symptoms and risk of dementia. Arch Gen
+Psychiatry 6: 493–8.
+Bassetti CL, Bargiotas P (2018) REM sleep behavior disorder.
+Front Neurol Neurosci 41: 104–16.
+Bennett S, Thomas AJ (2014) Depression and dementia: cause,
+consequence or coincidence? Maturita 79:184–90.
+Buoli M, Serati M, Caldiroli A, et al. (2017) Pharmacological
+management of psychiatric symptoms in frontotemporal
+dementia: a systematic review. J Geriatr Psychiatry 30:
+162–9.
+Burns A, Jacoby R, Levy R (1990) Psychiatric phenomena
+in Alzheimer’s disease. II: disorders of perception. Br J
+Psychiatry 157: 76–81, 92–4.
+Canevelli M, Valleta M, Trebbastoni A, et al. (2016)
+Sundowning in dementia: clinical relevance,
+pathophysiological determinants, and therapeutic
+approaches. Front Med (Lausanne) 3: 73.
+
+605
+
+
+
+
+<<<PAGE 635>>>
+
+Index
+
+behavioral treatments, 430
+diagnosis and comorbidities, 418–20
+treatment, 421–31
+insulin resistance, 197, 198, 200
+internet addiction, 575
+interneurons, 380
+inverse agonists, 42, 44–5, 61, 62, 240
+ion-channel-linked systems, 11, 12
+ion channels, 76
+ligand-gated. See ligand-gated ion
+channels
+neurotransmission and, 73–6
+voltage-sensitive. See voltage-sensitive
+ion channels
+ionotropic glutamate receptors, 54
+iproniazid, 336
+irreversible enzyme inhibitors, 46
+kainate receptors, 101, 104
+ketamine, 106, 328–32, 353, 376, 569–71
+ketamine-assisted psychotherapy, 574
+kinase, third messenger, 14, 16
+lamotrigine, 350–1
+late genes, 20, 22
+lemborexant, 423
+leptin, 415
+leucine zippers, 19, 20, 21
+levodopa, 170
+levomilnacipran, 300, 303
+Lewy bodies, 157
+Lewy body dementias, 492–5
+licarbazepine, 352
+ligand-gated ion channels, 51–66, 76
+agonist spectrum, 56–62
+allosteric modulation, 64–6
+different states of, 61–4
+gatekeeper, 52
+pentameric subtypes, 53
+structure and function, 53
+tetrameric subtypes, 54–5
+lisdexamfetamine, 473, 575
+lithium, 48, 332, 345–6
+local anesthesia, 380
+lofexidine, 561
+long-term potentiation, 151
+LSD, 358, 568
+lumateperone, 227, 237–9
+lurasidone, 226, 236, 343
+magic mushrooms, 358
+magnesium, 104
+magnetic resonance imaging, 491
+major depressive disorder, 246, 252
+anxiety disorder and, 360–2
+core symptoms, 360
+major depressive episode, 248, 277
+symptoms and circuits, 277
+
+mania
+anticonvulsant treatment, 346
+carbamazepine treatment, 350
+drug treatment, 195
+lithium treatment, 345
+mixed features of, 248, 251
+mood stabilizer treatment, 288
+serotonin and dopamine blockers in,
+338, 342
+valproate treatment, 349
+manic episodes, 245, 277, 278
+MAOIs. See monoamine oxidase
+inhibitors
+mazindol, 485
+MDMA, 356, 376, 378, 569–71
+assisted psychotherapy, 574
+MDPV, 546
+medication-assisted therapy, 561
+melatonergic agents, 439, 440
+melatonin, 275, 439, 440
+melatonin receptors, 306
+memantine, 520, 521–4, 533
+memory difficulties, 316
+Alzheimer disease, 509–18
+memory, traumatic, 356, 366, 375,
+574
+mesocortical dopamine pathway, 95
+mesocortical hypodopaminergia, 95
+mesolimbic dopamine pathway, 89,
+542–3
+mesolimbic hyperdopaminergia, 90
+mesostriatal hyperdopaminergia, 93
+messenger RNA (mRNA), 26
+metabolic highway, 198, 199, 201
+metabolic monitoring, 196, 199
+metabolic toolkit, 201
+metabotropic glutamate receptors, 100,
+103
+metformin, 201
+methadone, 355, 559, 560, 561, 562
+methylation, 23, 24
+methylphenidate, 441–2, 469–72, 484
+formulations, 470
+mianserin, 309
+microRNA (miRNA), 27
+migrants, 150
+mild cognitive impairment, 487, 490,
+493, 500–2
+milnacipran, 300, 303
+mirtazapine, 232, 308–13, 333
+mixed dementia, 495
+mixed features, 248, 251–2
+modafinil, 333, 442–4
+Molly, 358, 569
+monoamine autoreceptors, 8
+monoamine hypothesis of depression,
+264–5, 290
+monoamine oxidase (MAO), 253
+
+monoamine oxidase inhibitors (MAOIs),
+336–7, 377
+bipolar depression, 342
+dietary tyramine interaction, 338
+drug–drug interactions, 338
+subtypes, 337–41
+monoamine projections, 279
+monoamine receptor hypothesis of
+depression, 264–6, 267, 290
+monoamine transporters, 30, 31–4, 208
+unipolar depression, 285–8
+mood disorders, 244, 282, See also mania,
+depression
+description of, 244–52
+future treatments for, 353–8
+mixed features of, 248, 251–2
+neurobiology of, 252–76
+pain disorders and, 387
+symptom-based treatments, 279–82
+symptoms and circuits in, 277–82
+mood episodes, 246
+mood related psychosis, 157
+mood spectrum, 244–9
+mood-stabilizers, 288, 345–6
+mood-stabilizing action, 283
+morphine, 559, 561
+motivation, lack of, 536
+motor disturbances, 78
+motor side effects, 165–81
+partial agonists, 192
+mu-opioid receptors, 390, 556
+multimodal monoamines, 530–2
+Multiple Sleep Latency Test, 431
+muscarinic receptors, 506–7
+nalmefene, 556, 573
+naloxone, 560
+naltrexone, 306, 556, 561, 563, 573, 575
+NAMs (negative allosteric modulators),
+64–6
+narcolepsy, 407, 430, 433, 435, 443, 444,
+446
+nausea and vomiting, 309
+n-back test, 449, 451
+nefazodone, 311
+negative affect, 278, 280
+negative feedback regulatory signal, 255
+negative symptoms, 95, 142–4, 156
+secondary, 162–3
+NET transporters. See norepinephrine
+transporters (NETs)
+neuroactive steroids, 320–5
+neurobiology
+mood disorders, 252–76
+sleep and wakefulness, 402–15
+neurodevelopment, 151, 152
+ADHD, 463–5
+schizophrenia, 151–3
+619
+
+

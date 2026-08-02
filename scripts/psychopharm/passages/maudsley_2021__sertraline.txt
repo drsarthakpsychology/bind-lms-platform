@@ -1,0 +1,1542 @@
+<<<PAGE 333>>>
+
+312  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Recognised minimum effective doses of antidepressants
+The recommended minimum effective doses of antidepressants are summarised in Table 3.2.
+Table 3.2 The recommended minimum effective doses of antidepressants
+Antidepressant
+
+Dose
+
+Tricyclics
+
+Unclear; at least 75–100mg/day,1 possibly 125mg/day2
+
+Lofepramine
+
+140mg/day3
+
+CHAPTER 3
+
+SSRIs
+Citalopram
+
+20mg/day4
+
+Escitalopram
+
+10mg/day5
+
+Fluoxetine
+
+20mg/day6
+
+Fluvoxamine
+
+50mg/day7
+
+Paroxetine
+
+20mg/day8
+
+Sertraline
+
+50mg/day9
+
+Others
+Agomelatine
+
+25mg/day10
+
+Bupropion
+
+150mg/day11
+
+Desvenlafaxine
+
+50mg/day12
+
+Duloxetine
+
+60mg/day13,14
+
+Levomilnacipran
+
+40mg/day15
+
+Mirtazapine
+
+30mg/day (15mg?16)
+
+Moclobemide
+
+300mg/17
+
+Reboxetine
+
+8mg/day18
+
+Trazodone
+
+150mg/day19
+
+Venlafaxine
+
+75mg/day20
+
+Vilazodone
+
+20mg/day15
+
+Vortioxetine
+
+10mg/day15
+
+
+
+
+<<<PAGE 338>>>
+
+Depression and anxiety disorders  317
+
+Resistant depression is difficult to treat successfully, and outcomes are often poor,1–3
+especially if evidence-based protocols are not followed.4 Treatment-resistant depression
+is not a uniform entity but a complex spectrum of severity which can be graded5 and in
+which outcome is closely linked to grading.6 A significant minority of apparently resistant unipolar depression may in fact be bipolar depression7,8 which is often unresponsive
+to standard antidepressants9,10 (see section on ‘Bipolar depression’ in Chapter 2).
+Recently there has been a move to characterise treatment-resistant depression as ‘difficult-to-treat’ depression on the basis that the former description implies that depression
+treatments are normally effective and that non-response is therefore somehow abnormal.11 Others suggest abandoning treatment-resistant depression as a diagnosis (again
+proposing ‘difficult-to-treat’ depression) because it propels clinicians to try more and
+more drugs in increasingly complex regimens rather than managing expectations of
+recovery to a more realistic level.12
+Management of treatment-resistant depression has been informed by the STAR*D
+programme (Sequenced Treatment Alternatives to Relieve Depression). This was a
+pragmatic effectiveness study which used remission of symptoms as its main outcome.
+At stage 1,13 2,786 subjects received citalopram (mean dose 41.8mg/day) for 14 weeks;
+
+n = 2,876
+Out-patients with major depression
+Citalopram
+28%
+Switch
+n = 727
+
+Bupropion
+21.3%
+
+vs
+
+Venlafaxine
+24.8%
+
+vs
+
+Sertraline
+17.6%
+
+Switch
+n = 235
+
+Mirtazapine
+12.3%
+
+vs
+
+Augment
+n = 565
+
+Failed
+
+Add bupropion
+29.7%
+
+Failed
+
+Add lithium
+15.9%
+
+Nortriptyline
+19.8%
+
+n = 51
+
+Tranylcypromine
+6.9%
+Figure 3.2 Remission rates in STAR*D
+
+Failed
+
+vs
+
+vs
+
+Add buspirone
+30.1%
+
+Augment
+n = 142
+
+vs
+
+n = 58
+
+Mirtazapine + venlafaxine
+13.7%
+
+Add T3
+24.7%
+
+CHAPTER 3
+
+Management of treatment-resistant depression – first choice
+
+
+
+
+<<<PAGE 399>>>
+
+378  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Drug interactions with antidepressants
+Drugs can interact with each other in two different ways:
+
+CHAPTER 3
+
+■■
+
+Pharmacokinetic interactions where one drug interferes with the absorption, distribution, metabolism or elimination of another drug. This may result in a subtherapeutic
+effect or toxicity. The largest group of pharmacokinetic interactions involves drugs
+that inhibit or induce hepatic CYP450 enzymes (see Tables 3.14 and 3.15). Other
+enzyme systems include FMO1 and UGT.2 While both of these latter enzyme systems
+are involved in the metabolism of psychotropic drugs, the potential for drugs to
+inhibit or induce these enzyme systems has been less well studied.
+The clinical consequences of pharmacokinetic interactions in an individual patient
+can be difficult to predict. Some are highly clinically significant; for example, when
+paroxetine (a potent CYP2D6 inhibitor) is taken with tamoxifen, up to 1 extra
+woman in 20 will die within 5 years of stopping tamoxifen.3 The following factors
+affect outcome of interactions: the degree of enzyme inhibition or induction, the
+pharmacokinetic properties of the affected drug and other co-administered drugs,
+the relationship between plasma level and pharmacodynamic effect for the affected
+drug, and patient-specific factors such as variability in the role of primary and secondary metabolic pathways and the presence of co-morbid physical illness.4
+
+Table 3.14 Summary of antidepressant effects on CYP enzymes5–7
+Antidepressant
+
+Substrate for
+
+Inhibits
+
+Citalopram
+
+CYP2C19, CYP2D6, CYP3A4
+
+CYP2D6 (weak)
+
+Escitalopram
+
+CYP2C19, CYP2D6, CYP3A4
+
+CYP2D6 (weak)
+
+Fluoxetine
+
+CYP2D6, CYP3A4
+
+CYP2D6 (moderate to potent),
+CYP2C9 (moderate), CYP3A4
+(weak)
+
+Fluvoxamine
+
+CYP2D6; others possibly involved
+
+CYP1A2 (potent), CYP2C19
+(potent), CYP3A4 (weak), CYP2C9
+(weak)
+
+Paroxetine
+
+CYP2D6
+
+CYP2D6 (potent)
+
+Sertraline
+
+CYP3A4, CYP2D6 (minor) and possibly
+other pathways
+
+CYP2D6 (weak)
+
+Desvenlafaxine
+
+CYP3A4
+
+CYP2D6 (weak)
+CYP2D6 (moderate)
+
+SSRIs
+
+SNRIs
+
+Duloxetine
+
+CYP1A2, CYP2D6
+
+Levomilnacipran
+
+CYP3A4, CYP2C8, CYP2C19, CYP2D6
+
+Venlafaxine
+
+CYP2D6, CYP3A4
+
+CYP2D6 (weak)
+(Continued)
+
+
+
+
+<<<PAGE 402>>>
+
+Depression and anxiety disorders  381
+
+CYP1A2
+
+CYP2B6
+
+CYP2C9
+
+CYP2C19
+
+CYP2D6
+
+CYP3A4/5/7
+
+Genetic
+polymorphism
+Ultra-rapid
+metabolisers
+possible
+
+2–10% of total
+hepatic CYP
+content16
+
+5–10% of
+Caucasians
+poor
+metabolisers
+
+~20% of Asians
+and 3–5%
+Caucasians are
+poor metabolisers
+
+3–5% of
+Caucasians poor
+metabolisers
+
+60% p450
+content
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Carbamazepine
+Charcoal cooking
+Tobacco smoke
+Omeprazole
+Phenobarbital
+Phenytoin
+
+Carbamazepine
+Efavirenz
+Lopinavir
+Rifampicin
+Ritonavir
+
+Phenytoin
+Rifampicin
+
+Apalutamide
+Rifampicin
+Enzalutamide
+Artemisinin
+Efavirenz
+
+Carbamazepine
+Phenytoin
+
+Carbamazepine
+Phenytoin
+Prednisolone
+Rifampicin
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Cimetidine
+Ciprofloxacin
+Erythromycin
+Fluvoxamine
+
+Clopidogrel
+Ticlopidine
+Voriconazole
+
+Cimetidine
+Fluoxetine
+Fluvoxamine
+Moclobemide
+Sertraline
+
+Fluconazole
+Fluoxetine
+Fluvoxamine
+Esomeprazole
+Moclobemide
+Omeprazole
+Voriconazole
+Armodafinil
+Etravirine
+Isoniazid
+Modafinil
+Cimetidine
+
+Chlorpromazine
+Bupropion
+Duloxetine
+Fluoxetine
+Fluphenazine
+Haloperidol
+Paroxetine
+Sertraline
+Tricyclics
+
+Erythromycin
+Fluoxetine
+Fluvoxamine
+Grapefruit Juice
+Ketoconazole
+Norfluoxetine
+Paroxetine
+Sertraline
+Tricyclics
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Agomelatine
+Benzodiazepines
+Caffeine
+Clozapine
+Duloxetine
+Haloperidol
+Mirtazapine
+Olanzapine
+Ramelteon
+Theophylline
+Tizanidine
+Tricyclics
+Warfarin
+
+Bupropion
+Methadone
+Tramadol
+
+Agomelatine
+Bupropion
+Citalopram
+Diazepam
+Omeprazole
+Phenytoin
+Tricyclics
+Warfarin
+
+Citalopram
+Diazepam
+Moclobemide
+
+Clozapine
+Codeine
+Donepezil
+Duloxetine
+Haloperidol
+Phenothiazines
+Risperidone
+Tamoxifen
+Tricyclics
+Tramadol
+Trazodone
+Venlafaxine
+Vortioxetine
+
+Calcium
+Blockers
+Carbamazepine
+Clozapine
+Donepezil
+Erythromycin
+Galantamine
+Methadone
+Levomilnacipran
+Mirtazapine
+Reboxetine
+Risperidone
+Statins
+Tricyclics
+Valproate
+Venlafaxine
+Vilazodone
+Vortioxetine
+Z-hypnotics
+
+CHAPTER 3
+
+Table 3.15 Pharmacokinetic interactions – a brief summary of important interactions3,15
+
+
+
+
+<<<PAGE 408>>>
+
+25. U.S. Food & Drug Administration. Highlights of Prescribing Information. Fetzima (levomilnacipran) extended-release capsules for oral use.
+2019; https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/204168s006lbl.pdf.
+26. Warrington SJ, et al. The cardiovascular effects of antidepressants. Psychol Med Monogr Suppl 1989; 16:i-40.
+27. Stern H, et al. Cardiovascular effects of single doses of the antidepressants amitriptyline and lofepramine in healthy subjects.
+Pharmacopsychiatry 1985; 18:272–277.
+28. WS W, et al. Acute myocarditis after massive phenelzine overdose. Eur J Clin Pharmacol 2007; 63:1007–1009.
+29. Periclou A, et al. Effects of milnacipran on cardiac repolarization in healthy participants. J Clin Pharmacol 2010; 50:422–433.
+30. U.S Food & Drug Administration. Highlights of Prescribing Information. Savella (milnacipran HCl) Tablets. 2009; https://www.accessdata.
+fda.gov/drugsatfda_docs/label/2011/022256s011lbl.pdf.
+31. Montgomery SA. Safety of mirtazapine: a review. Int Clin Psychopharmacol 1995; 10 Suppl 4:37–45.
+32. Honig A, et al. Treatment of post-myocardial infarction depressive disorder: a randomized, placebo-controlled trial with mirtazapine.
+Psychosom Med 2007; 69:606–613.
+33. Moll E, et al. Safety and efficacy during long-term treatment with moclobemide. Clin Neuropharmacol 1994; 17 Suppl 1:S74–S87.
+34. Hilton S, et al. Moclobemide safety: monitoring a newly developed product in the 1990s. J Clin Psychopharmacol 1995; 15:76S–83S.
+35. Downes MA, et al. QTc abnormalities in deliberate self-poisoning with moclobemide. Intern Med J 2005; 35:388–391.
+36. Kuhs H, et al. Cardiovascular effects of paroxetine. Psychopharmacology (Berl) 1990; 102:379–382.
+37. Roose SP, et al. Comparison of paroxetine and nortriptyline in depressed patients with ischemic heart disease. JAMA 1998; 279:287–291.
+38. Mucci M. Reboxetine: a review of antidepressant tolerability. J Psychopharmacology 1997; 11:S33–S37.
+39. KJ H, et al. Reboxetine: a review of its use in depression. CNS Drugs 1999; 12:65–83.
+40. Fleishaker JC, et al. Lack of effect of reboxetine on cardiac repolarization. Clin Pharmacol Ther 2001; 70:261–269.
+41. Shapiro PA, et al. An open-label preliminary trial of sertraline for treatment of major depression after acute myocardial infarction (the
+SADHAT Trial). Sertraline Anti-Depressant Heart Attack Trial. Am Heart J 1999; 137:1100–1106.
+42. Glassman AH, et al. Sertraline treatment of major depression in patients with acute MI or unstable angina. JAMA 2002; 288:701–709.
+43. Winkler D, et al. Trazodone-induced cardiac arrhythmias: a report of two cases. Human Psychopharmacology 2006; 21:61–62.
+44. Jiang W, et al. Safety and efficacy of sertraline for depression in patients with CHF (SADHART-CHF): a randomized, double-blind, placebocontrolled trial of sertraline for major depression with congestive heart failure. Am Heart J 2008; 156:437–444.
+45. Leftheriotis D, et al. The role of the selective serotonin re-uptake inhibitor sertraline in nondepressive patients with chronic ischemic heart
+failure: a preliminary study. Pacing Clin Electrophysiol 2010; 33:1217–1223.
+46. Abbas R, et al. A thorough QT study to evaluate the effects of a supratherapeutic dose of sertraline on cardiac repolarization in healthy
+subjects. Clin Pharmacol Drug Develop 2020; 9:307–320.
+47. JA S, et al. QT Prolongation and delayed atrioventricular conduction caused by acute ingestion of trazodone. Clin Toxicol (Phila) 2008;
+46:71–73.
+48. Dattilo PB, et al. Prolonged QT associated with an overdose of trazodone. J Clin Psychiatry 2007; 68:1309–1310.
+49. Hippisley-Cox J, et al. Antidepressants as risk factor for ischaemic heart disease: case-control study in primary care. BMJ 2001;
+323:666–669.
+50. Whyte IM, et al. Relative toxicity of venlafaxine and selective serotonin reuptake inhibitors in overdose compared to tricyclic antidepressants.
+QJM 2003; 96:369–374.
+51. van Noord C, et al. Psychotropic drugs associated with corrected QT interval prolongation. J Clin Psychopharmacol 2009; 29:9–15.
+52. Khawaja IS, et al. Cardiovascular effects of selective serotonin reuptake inhibitors and other novel antidepressants. Heart Dis 2003;
+5:153–160.
+53. Pfizer Limited. Summary of product characteristics. Efexor XL 75 mg hard prolonged release capsules. https://www.medicines.org.uk/2013.
+54. Letsas K, et al. QT interval prolongation associated with venlafaxine administration. Int J Cardiol 2006; 109:116–117.
+55. Taylor D, et al. Volte-face on venlafaxine–reasons and reflections. Journal of Psychopharmacology 2006; 20:597–601.
+56. Cooper JM, et al. Desvenlafaxine overdose and the occurrence of serotonin toxicity, seizures and cardiovascular effects. Clin Toxicol (Phila)
+2017; 55:18–24.
+57. Edwards J, et al. Vilazodone lacks proarrhythmogenic potential in healthy participants: a thorough ECG study. Int J Clin Pharmacol Ther
+2013; 51:456–465.
+58. Heise CW, et al. A review of vilazodone exposures with focus on serotonin syndrome effects. Clin Toxicol (Phila) 2017; 55:1004–1007.
+59. Gaw CE, et al. Evaluation of dose and outcomes for pediatric vilazodone ingestions. Clin Toxicol (Phila) 2018; 56:113–119.
+60. Citrome L. Vortioxetine for major depressive disorder: a systematic review of the efficacy and safety profile for this newly approved antidepressant – what is the number needed to treat, number needed to harm and likelihood to be helped or harmed? Int J Clin Pract 2014;
+68:60–82.
+61. Takeda Pharmaceuticals America Inc. Highlights of prescribing information. BRINTELLIX (vortioxetine) tablets. 2014; http://www.
+us.brintellix.com.
+62. Baldwin DS, et al. The safety and tolerability of vortioxetine: analysis of data from randomized placebo-controlled trials and open-label
+extension studies. J Psychopharmacology 2016; 30:242–252.
+63. Na K-S, et al. Can we recommend mirtazapine and bupropion for patients at risk for bleeding?: a systematic review and meta-analysis. J
+Affect Disord 2018; 225:221–226.
+
+CHAPTER 3
+
+Depression and anxiety disorders  387
+
+
+
+
+<<<PAGE 450>>>
+
+Depression and anxiety disorders  429
+
+Box 3.7 Obsessive compulsive disorder
+First-line drug treatment (In order of preference)
+Drug
+
+Comments
+
+Any SSRI
+(Up to maximum licensed dose
+
+If the first SSRI is not tolerated or has a poor response an
+alternative SSRI may be tried29
+
+Clomipramine
+(Up to 250mg)
+
+Owing to poorer tolerability, recommended trying at least one SSRI
+first29
+
+39
+
+Add antipsychotic to SSRI
+(Low to moderate doses of
+antipsychotics used in studies)100,101
+
+Most evidence supports the use of aripiprazole or risperidone.100
+Some evidence for haloperidol101
+
+Citalopram
+40mg with clomipramine 150mg
+
+Based on small randomised open label study102 Recommended by
+NICE29
+ECG monitoring required
+
+Acetylcysteine103
+up to 2400mg/day added to SRRI or
+clomipramine
+
+Gastrointestinal adverse effects may be problematic. Two of five
+controlled studies negative. Pooled effect shows benefit104
+
+Lamotrigine
+100mg + added to SSRI105
+
+Lamotrigine dose must be titrated gradually as indicated in the SPC
+May worsen OCD in some106
+
+Topiramate
+up to 400mg added to SSRI107,108
+
+Topiramate is not well tolerated, suggested benefits for compulsion
+but not obsessions.107 Two trials found topiramate ineffective109,110
+
+Experimental
+High dose SSRI:
+Escitalopram
+25–50mg111
+Sertraline
+250–400mg112
+
+Dose titrated gradually according to tolerability. ECG monitoring
+recommended
+
+Memantine
+
+Good evidence for 20mg/day added to SSRIs113
+
+NSAIDS
+Eg celecoxib 400mg/day
+
+Some supporting evidence110
+
+Amantadine
+200mg/day
+
+One positive RCT114
+
+SNRIs
+Venlafaxine
+up to 375mg115
+Duloxetine
+60mg116
+Mirtazapine
+30–60mg117
+
+Small trial in 30 patients
+
+5HT3 antagonists
+Granisetron
+1mg with fluvoxamine 200mg118
+Ondansetron
+4mg with fluoxetine 20mg119
+
+Some evidence for each drug but ondansetron may be the more
+effective120
+
+(Continued)
+
+CHAPTER 3
+
+Second-line drug treatment (Unlicensed or weaker evidence base)
+
+
+
+
+<<<PAGE 565>>>
+
+544  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Box 5.1 Summary of pharmacotherapy for depression in children and adolescents3,4,21,25
+Medication
+
+Starting dose
+
+Therapeutic dose range
+
+First line
+
+Fluoxetine
+(FDA approved for 8 years and
+over)
+
+10mg/day
+
+20–60mg/day
+
+Second line
+
+Sertraline
+or
+Citalopram*
+
+25–50mg/day
+
+50–200mg/day
+
+5–10mg/day
+
+10–40mg/day
+
+Third line
+
+Escitalopram
+(FDA approved for 12 years and
+over)
+
+5–10mg/day
+
+10–20mg/day
+
+Fourth line
+
+Consider augmentation of antidepressant with second-generation antipsychotic
+or lithium**
+Consider mirtazapine** (where sedation required)
+
+*Caution advised in cardiac or hepatic disease.
+**No RCTs available in young people (but evidence from adult trials).
+
+CHAPTER 5
+
+After prescribing
+Acute phase
+Monitor for adverse effects regularly, for example weekly for the first four weeks.
+Children and adolescents generally tolerate SSRIs well. Potential adverse effects
+include those experienced by adults, described in Chapter 3. Additionally, young people taking SSRIs have a small increased risk of suicidality and switch to mania (see
+‘specific issues’ below). Therefore risk of harm, mood, and behaviour should be monitored closely and addressed.3,4,21,25
+■■ After four weeks of SSRI treatment at a therapeutic dose, assess response including
+depression severity using the measures completed at baseline. Most therapeutic effects
+appear by four weeks.9
+■■ If partial or non-response, consider the possibility of poor treatment adherence, inaccurate diagnosis, comorbidity, or modifiable maintaining factors.
+■■ If none of these factors explain the continued depressive symptoms and the young
+person does not have adverse effects, consider increasing the dose. Reassess four
+weekly.3,25
+■■ If adverse effects develop, consider reducing the dose to the highest tolerated dose.
+■■ If partial or non-response after eight weeks of the maximum recommended (or highest tolerated) therapeutic dose of an SSRI, consider the medication changes outlined
+above.
+■■
+
+Maintenance phase
+■■
+
+Continue medication for 6–12 months after remission to reduce the risk of relapse.
+Consider a longer maintenance phase if depressive episodes were recurrent or
+chronic.3,4,21,25
+
+
+
+
+<<<PAGE 580>>>
+
+Children and adolescents  559
+
+Table 5.5 Typical dosage of medications for treatment of anxiety disorders in children
+and adolescents
+Medication
+
+Starting dose (mg)
+
+Dose range (mg/day)
+
+Sertraline
+
+12.5–25
+
+25–200
+
+Fluoxetine
+
+5–10
+
+10–60
+
+Fluvoxamine
+
+12.5–25
+
+50–200
+(BD if >50)
+
+Paroxetine
+
+5–10
+
+10–40
+
+5–10
+
+10–40
+
+Venlafaxine XR
+
+37.5
+
+37.5–225
+
+Duloxetine
+
+30
+
+30–120
+
+1
+
+1–6
+
+5 TDS
+
+15–60
+
+Clonazepam*
+
+0.25–0.5
+
+–
+
+Lorazepam
+
+0.5–1
+
+–
+
+SSRI
+
+Citalopram
+
+*
+
+SNRI
+
+Alpha2 agonist
+Guanfacine
+
+Buspirone*
+Benzodiazepine (PRN)
+
+*
+
+Treatments not supported by RCT evidence.
+Note: Always check dose with latest formal guidance, for example British National
+Formulary for Children (in the UK).
+BD - twice daily
+TDS - three times daily
+
+*
+
+Dosage for treatment with SSRIs is often similar to dosage in adults because of
+faster metabolism in children.
+■■ Therapeutic effect should appear by 6–8 weeks of treatment. It is important to
+communicate this to families.
+■■ If partial or non-response, consider accuracy of diagnosis, adequacy of medication
+trial, and compliance of patient.
+■■ To improve response, consider: adding CBT, changing medication (e.g. switch
+SSRIs, other classes), or combining medications (e.g. for co-morbidities, to treat
+side effects, to potentiate action). Augmentation strategies with buspirone, benzodiazepines, atypical antipsychotics, and stimulant medications have been proposed
+but lack empirical support.7
+■■ Maintenance phase
+■■ Continue maintenance treatment for at least 1 year of stable improvement.
+■■ Monitor response and side effects regularly.
+■■ Discontinuation phase
+■■
+
+CHAPTER 5
+
+5-HT1A partial agonist
+
+
+
+
+<<<PAGE 620>>>
+
+Children and adolescents  599
+
+Doses of commonly used psychotropic drugs in children and
+adolescents
+The doses of commonly used drugs are presented in Table 5.8.
+Table 5.8 Starting doses of commonly used psychotropic drugs in children and adolescents1,2 *
+Drug
+
+Starting dose**
+
+Comment
+
+Aripiprazole
+
+2mg
+
+Adjust dose according to response and
+adverse effects
+
+Clozapine
+
+6.25–12.5mg
+
+Use plasma levels to determine
+maintenance dose
+
+Olanzapine
+
+2.5–5mg
+
+Adjust dose according to response and
+adverse effects
+
+Quetiapine
+
+25mg
+
+Effective dose usually in the range
+150–200mg daily
+
+Risperidone
+
+0.25–2mg
+
+Adjust dose according to response and
+adverse effects
+
+Fluoxetine
+
+5–10mg/day
+
+Adjust dose according to response and
+adverse effects
+
+Sertraline
+
+25–50mg daily
+
+Effective dose usually in the range
+50–100mg daily
+
+Citalopram
+
+10mg daily
+
+Effective dose 10–40mg (note QT effects)
+
+Lithium
+
+100–200mg/day
+lithium carbonate
+
+Use plasma levels to determine
+maintenance dose
+
+Valproate
+
+10–20mg/kg/day in divided
+doses
+
+Use plasma levels to determine
+maintenance dose. Do not offer valproate
+to girls or young women of child bearing
+potential unless there is a pregnancy
+prevention programme (PPP) in place3
+
+Melatonin
+
+2mg at night
+
+Effective dose 2–10mg
+
+Antipsychotics
+
+Other Drugs
+
+We have removed haloperidol, amitriptyline, escitalopram and carbamazepine from this table as none of these are
+recommended in children.
+**
+Suggested approximate oral starting doses (see primary literature for doses in individual indications). Lower dose in
+suggested range is for children weighing less than 25kg.
+*
+
+References
+1. BNF Online. British National Formulary 2020; https://www.medicinescomplete.com/mc/bnf/current.
+2. BNFC Online. British National Formulary for Children 2020; https://www.medicinescomplete.com/#/browse/bnfc.
+3. GOV.UK Guidance. Valproate use by women and girls 2020; https://www.gov.uk/guidance/valproate-use-by-women-and-girls.
+
+CHAPTER 5
+
+Antidepressants
+
+
+
+
+<<<PAGE 679>>>
+
+Major depressive disorder
+
+Agitation in dementia
+Avoid single doses >100mg
+
+Vortioxetine
+
+Depression
+
+Trazodone
+
+Depression/anxiety disorder
+Monitor BP on initiation
+
+25mg bd*
+
+Depression/anxiety disorder
+
+Sertraline
+
+Venlafaxine
+
+100mg daily in divided doses or as a
+single night-time dose4
+
+Depression
+
+Mirtazapine
+
+5–10mg daily5
+
+37.5mg mane (increased to 75mg XL
+mane after 1 week)*
+
+25–50mg mane (25mg can be increased
+to 50mg mane after 1 week)
+
+7.5mg nocte or usually 15mg nocte*
+
+35mg nocte*
+
+Depression
+
+5–20mg daily5
+
+75–150mg (XL) mane*
+
+25–100mg daily*
+
+100–200mg daily*
+
+50–100mg mane*
+
+15–30mg nocte
+
+70mg nocte*
+
+20mg mane
+
+20mg mane
+
+Lofepramine
+
+Usual maintenance dose
+
+Starting dose
+
+Depression/anxiety disorder
+Caution as long half-life and
+inhibitor of several CYP
+enzymes
+
+Specific indication/
+additional notes
+
+Fluoxetine
+
+Drug
+
+(Continued )
+
+20mg daily5
+Max for CYP2D6 poor
+metabolisers: 10mg/day.
+Co-administration
+of certain drugs may need
+to be avoided or dosage
+adjustments may be
+necessary; review drug
+interactions
+
+150mg daily (occasionally
+225mg daily necessary)*
+
+200mg daily* (in divided
+doses)
+
+300mg daily4
+
+100mg (occasionally up to
+150mg mane)*
+
+45mg nocte
+
+140mg nocte or in divided
+doses* (occasionally
+210mg nocte required)
+
+40mg mane usually (but
+60mg can be used)
+
+Maximum dose in
+elderly
+
+
+
+
+<<<PAGE 739>>>
+
+CHAPTER 7
+
+718  The Maudsley® Prescribing Guidelines in Psychiatry
+
+60. Pons G, et al. Moclobemide excretion in human breast milk. Br J Clin Pharmacol 1990; 29:27–31.
+61. Begg EJ, et al. Paroxetine in human milk. Br J Clin Pharmacol 1999; 48:142–147.
+62. Stowe ZN, et al. Paroxetine in human breast milk and nursing infants. Am J Psychiatry 2000; 157:185–189.
+63. Misri S, et al. Paroxetine levels in postpartum depressed women, breast milk, and infant serum. J Clin Psychiatry 2000; 61:828–832.
+64. Ohman R, et al. Excretion of paroxetine into breast milk. J Clin Psychiatry 1999; 60:519–523.
+65. Berle JO, et al. Breastfeeding during maternal antidepressant treatment with serotonin reuptake inhibitors: infant exposure, clinical symptoms, and cytochrome p450 genotypes. J Clin Psychiatry 2004; 65:1228–1234.
+66. Merlob P, et al. Paroxetine during breast-feeding: infant weight gain and maternal adherence to counsel. Eur J Pediatr 2004;
+163:135–139.
+67. Abdul Aziz A, et al. Severe paroxetine induced hyponatremia in a breast fed infant. J Bahrain Med Soc 2004; 16:195–198.
+68. Hendrick V, et al. Paroxetine use during breast-feeding. J Clin Psychopharmacol 2000; 20:587–589.
+69. Spigset O, et al. Paroxetine level in breast milk. J Clin Psychiatry 1996; 57:39.
+70. Uguz F, et al. Short-term safety of paroxetine and sertraline in breastfed infants: a retrospective cohort study from a university hospital.
+Breastfeed Med 2016; 11:487–489.
+71. Hackett LP, et al. Transfer of reboxetine into breastmilk, its plasma concentrations and lack of adverse effects in the breastfed infant. Eur J
+Clin Pharmacol 2006; 62:633–638.
+72. Llewellyn A, et al. Psychotropic medications in lactation. J Clin Psychiatry 1998; 59 Suppl 2:41–52.
+73. Mammen OK, et al. Sertraline and norsertraline levels in three breastfed infants. J Clin Psychiatry 1997; 58:100–103.
+74. Altshuler LL, et al. Breastfeeding and sertraline: a 24-hour analysis. J Clin Psychiatry 1995; 56:243–245.
+75. Dodd S, et al. Sertraline analysis in the plasma of breast-fed infants. Aust N Z J Psychiatry 2001; 35:545–546.
+76. Dodd S, et al. Sertraline in paired blood plasma and breast-milk samples from nursing mothers. Hum Psychopharmacol 2000;
+15:161–264.
+77. Epperson N, et al. Maternal sertraline treatment and serotonin transport in breast-feeding mother-infant pairs. Am J Psychiatry 2001;
+158:1631–1637.
+78. Stowe ZN, et al. The pharmacokinetics of sertraline excretion into human breast milk: determinants of infant serum concentrations. J Clin
+Psychiatry 2003; 64:73–80.
+79. Muller MJ, et al. Serotonergic overstimulation in a preterm infant after sertraline intake via breastmilk. Breastfeed Med 2013; 8:327–329.
+80. Wisner KL, et al. Serum sertraline and N-desmethylsertraline levels in breast-feeding mother-infant pairs. Am J Psychiatry 1998;
+155:690–692.
+81. Verbeeck RK, et al. Excretion of trazodone in breast milk. Br J Clin Pharmacol 1986; 22:367–370.
+82. Yoshida K, et al. Psychotropic drugs in mothers’ milk: a comprehensive review of assay methods, pharmacokinetics and of safety of breastfeeding. J Psychopharmacol 1999; 13:64–80.
+83. Misri S, et al. Benefits and risks to mother and infant of drug treatment for postnatal depression. Drug Saf 2002; 25:903–911.
+84. Yoshida K, et al. Investigation of pharmacokinetics and of possible adverse effects in infants exposed to tricyclic antidepressants in breastmilk. J Affect Disord 1997; 43:225–237.
+85. Frey OR, et al. Adverse effects in a newborn infant breast-fed by a mother treated with doxepin. Ann Pharmacother 1999; 33:690–693.
+86. Ilett KF, et al. The excretion of dothiepin and its primary metabolites in breast milk. Br J Clin Pharmacol 1992; 33:635–639.
+87. Kemp J, et al. Excretion of doxepin and N-desmethyldoxepin in human milk. Br J Clin Pharmacol 1985; 20:497–499.
+88. Buist A, et al. Effect of exposure to dothiepin and northiaden in breast milk on child development. Br J Psychiatry 1995; 167:370–373.
+89. Khachman D, et al. Clomipramine in breast milk: a case study J Pharm Clin 2007; 28:33–38.
+90. Uguz F. Poor feeding and severe sedation in a newborn nursed by a mother on a low dose of amitriptyline. Breastfeed Med 2017;
+12:67–68.
+91. Koren G, et al. Can venlafaxine in breast milk attenuate the norepinephrine and serotonin reuptake neonatal withdrawal syndrome. J
+Obstet Gynaecol Can 2006; 28:299–302.
+92. Ilett KF, et al. Distribution of venlafaxine and its O-desmethyl metabolite in human milk and their effects in breastfed infants. Br J Clin
+Pharmacol 2002; 53:17–22.
+93. Newport DJ, et al. Venlafaxine in human breast milk and nursing infant plasma: determination of exposure. J Clin Psychiatry 2009;
+70:1304–1310.
+94. Ilett KF, et al. Assessment of infant dose through milk in a lactating woman taking amisulpride and desvenlafaxine for treatment-resistant
+depression. Ther Drug Monit 2010; 32:704–707.
+95. Misri S, et al. Quetiapine augmentation in lactation: a series of case reports. J Clin Psychopharmacol 2006; 26:508–511.
+96. Hendrick V, et al. Venlafaxine and breast-feeding. Am J Psychiatry 2001; 158:2089–2090.
+97. Rampono J, et al. Estimation of desvenlafaxine transfer into milk and infant exposure during its use in lactating women with postnatal
+depression. Arch Womens Ment Health 2011; 14:49–53.
+98. Ilett KF, et al. Distribution and excretion of venlafaxine and O-desmethylvenlafaxine in human milk. Br J Clin Pharmacol 1998;
+45:459–462.
+99. Teoh S, et al. Estimation of rac-amisulpride transfer into milk and of infant dose via milk during its use in a lactating woman with bipolar
+disorder and schizophrenia. Breastfeed Med 2010; 6:85–88.
+100. Uguz F. breastfed infants exposed to combined antipsychotics: two case reports. Am J Ther 2016; 23:e1962–e1964.
+101. O’Halloran SJ, et al. A liquid chromatography-tandem mass spectrometry method for quantifying amisulpride in human plasma and breast
+milk, applied to measuring drug transfer to a fully breast-fed neonate. Ther Drug Monit 2016; 38:493–498.
+
+
+
+
+<<<PAGE 764>>>
+
+Hepatic and renal impairment  743
+
+Drug
+
+Comments
+
+Nortriptyline22,25,32,40,60,97
+
+<5% excreted unchanged in urine. If GFR 10–50mL/min, dose as in normal renal
+function; if GFR <10mL/min start at a low dose. Plasma level monitoring
+recommended at doses of >100mg/day, as plasma concentrations of active
+metabolites are raised in renal impairment. Worsening of GFR in elderly patients has
+also been reported. Plasma level monitoring can be useful.
+
+Paroxetine22,23,25,32,98–101
+
+Less than 2% of oral dose is excreted unchanged in the urine. Single-dose studies
+show increased plasma concentrations of paroxetine when GFR <30mL/min. Dosing
+advice differs: GFR 30–50mL/min dose as normal renal function; GFR <10–30mL/min
+start at 10mg/day (other source says start at 20mg) and increase dose according to
+response. Paroxetine 10mg daily and psychotherapy have been used successfully to
+treat depression in patients on chronic haemodialysis. Rarely associated with Fanconi
+syndrome and acute renal failure.
+
+Phenelzine22,25
+
+Approximately 1% excreted unchanged in the urine. No dose adjustment required in
+renal failure.
+
+Reboxetine22,23,25,102,103
+
+Approximately 10% of unchanged drug is excreted unchanged in the urine. Dosing:
+GFR <20mL/min, 2mg twice daily, adjusting dose according to response. Half-life is
+prolonged as renal function decreases.
+
+Sertraline22,23,25,32,104–108
+
+<0.2% of unchanged sertraline excreted in urine. Pharmacokinetics in renal
+impairment are unchanged in single dose studies but no published data on
+multiple dosing. Dosing is as for normal renal function. Sertraline has been used
+to treat dialysis-associated hypotension109 and uraemic pruritis; however acute
+renal failure has been reported so it should be used with caution. Overall, studies
+of sertraline in patients with depression and chronic kidney disease show lack of
+efficacy. The CAST study, an RCT of sertraline (median dose 150mg) versus PBO
+in chronic non-dialysis dependent kidney disease found no significant difference
+in depressive symptoms.108 The ASCEND trial of sertraline versus CBT in patients
+on haemodialysis with depression found no significant differences between
+sertraline (to 200mg) and CBT in response and remission rates but QIDS-C
+depression scores at 12 weeks were lower for sertraline than CBT.110 Another
+small RCT (ASSertID study) in patients with depression on haemodialysis reported
+no difference between sertraline and placebo.111 Has been associated with
+serotonin syndrome when used in patents on haemodialysis. Case report of
+neutropenia when used in ESRD.112 May reduce CRP in patients on haemodialysis
+with depression113 and a high CRP may predict response to sertraline (not
+placebo) in depression with CKD.114
+
+Trazodone22,23,25,115
+
+<5% excreted unchanged in urine but care needed as approximately 70% of active
+metabolite also excreted. Dosing: GFR 20–50mL/min, dose as normal renal function;
+GFR 10–20mL/min, dose as normal renal function but start with small dose and
+increase gradually; GFR <10mL/min, start with small doses and increase gradually.
+Serotonin syndrome reported in a patient with chronic kidney disease on trazodone
+and duloxetine.84
+(Continued)
+
+CHAPTER 8
+
+Table 8.9 (Continued)
+
+
+
+
+<<<PAGE 773>>>
+
+CHAPTER 8
+
+752  The Maudsley® Prescribing Guidelines in Psychiatry
+
+91. Kauffman KM, et al. Higher dose weekly fluoxetine in hemodialysis patients: a case series report. Int J Psychiatry Med 2020; 56: 3–13.
+92. Lancaster SG, et al. Lofepramine. A review of its pharmacodynamic and pharmacokinetic properties, and therapeutic efficacy in depressive
+illness. Drugs 1989; 37:123–140.
+93. Davis MP, et al. Mirtazapine for pruritus. J Pain Symptom Manage 2003; 25:288–291.
+94. Shibata K, et al. SP704 The effect of mirtazapine in dialysis patient with appetite loss. Nephrol Dial Transplant 2015; 30 (Suppl 3): iii611.
+95. Schoerlin MP, et al. Disposition kinetics of moclobemide, a new MAO-A inhibitor, in subjects with impaired renal function. J Clin Pharmacol
+1990; 30:272–284.
+96. Stoeckel K, et al. Absorption and disposition of moclobemide in patients with advanced age or reduced liver or kidney function. Acta
+Psychiatr Scand Suppl 1990; 360:94–97.
+97. Pollock BG, et al. Metabolic and physiologic consequences of nortriptyline treatment in the elderly. Psychopharmacol Bull 1994;
+30:145–150.
+98. Doyle GD, et al. The pharmacokinetics of paroxetine in renal impairment. Acta Psychiatr Scand Suppl 1989; 350:89–90.
+99. Ishii T, et al. A rare case of combined syndrome of inappropriate antidiuretic hormone secretion and Fanconi syndrome in an elderly woman.
+Am J Kidney Dis 2006; 48:155–158.
+100. Kaye CM, et al. A review of the metabolism and pharmacokinetics of paroxetine in man. Acta Psychiatr Scand Suppl 1989; 350:60–75.
+101. Koo JR, et al. Treatment of depression and effect of antidepression treatment on nutritional status in chronic hemodialysis patients. Am J
+Med Sci 2005; 329:1–5.
+102. Coulomb F, et al. Pharmacokinetics of single-dose reboxetine in volunteers with renal insufficiency. J Clin Pharmacol 2000; 40:482–487.
+103. Dostert P, et al. Review of the pharmacokinetics and metabolism of reboxetine, a selective noradrenaline reuptake inhibitor. Eur
+Neuropsychopharmacol 1997; 7 (Suppl 1):S23–S35.
+104. Brewster UC, et al. Addition of sertraline to other therapies to reduce dialysis-associated hypotension. Nephrology (Carlton) 2003;
+8:296–301.
+105. Chan KY, et al. Use of sertraline for antihistamine-refractory uremic pruritus in renal palliative care patients. J Palliat Med 2013;
+16:966–970.
+106. Chander WP, et al. Serotonin syndrome in maintenance haemodialysis patients following sertraline treatment for depression. J Indian Med
+Assoc 2011; 109:36–37.
+107. Jain N, et al. Rationale and design of the Chronic Kidney Disease Antidepressant Sertraline Trial (CAST). Contemp Clin Trials 2013;
+34:136–144.
+108. Hedayati SS, et al. Effect of sertraline on depressive symptoms in patients with chronic kidney disease without dialysis dependence: the
+CAST randomized clinical trial. JAMA 2017; 318:1876–1890.
+109. Razeghi E, et al. A randomized crossover clinical trial of sertraline for intradialytic hypotension. Iran J Kidney Dis 2015; 9:323–330.
+110. Mehrotra R, et al. Comparative efficacy of therapies for treatment of depression for patients undergoing maintenance hemodialysis: a
+randomized clinical trial. Ann Intern Med 2019; 170:369–379.
+111. Friedli K, et al. Sertraline versus placebo in patients with major depressive disorder undergoing hemodialysis: a randomized, controlled
+feasibility trial. Clin J Am Soc Nephrol 2017; 12:280–286.
+112. Chien CW, et al. Sertraline-induced neutropenia and fatigue in a patient with end-stage renal disease. Am J Ther 2020:[Epub ahead of print].
+113. Zahed NS, et al. Impact of sertraline on serum concentration of CRP in hemodialysis patients with depression. J Renal Inj Prev 2017;
+6:65–69.
+114. Gregg LP, et al. Inflammation and response to sertraline treatment in patients with CKD and major depression. Am J Kidney Dis 2020;
+75:457–460.
+115. Catanese B, et al. A comparative study of trazodone serum concentrations in patients with normal or impaired renal function. Boll Chim
+Farm 1978; 117:424–427.
+116. Leighton JD, et al. Trimipramine-induced acute renal failure (Letter). N Z Med J 1986; 99:248.
+117. Simpson GM, et al. A preliminary study of trimipramine in chronic schizophrenia. Curr Ther Res Clin Exp 1966; 99:248.
+118. Troy SM, et al. The effect of renal disease on the disposition of venlafaxine. Clin Pharmacol Ther 1994; 56:14–21.
+119. Guldiken S, et al. Complete relief of pain in acute painful diabetic neuropathy of rapid glycaemic control (insulin neuritis) with venlafaxine
+HCL. Diabetes Nutr Metab 2004; 17:247–249.
+120. Pascale P, et al. Severe rhabdomyolysis following venlafaxine overdose. Ther Drug Monit 2005; 27:562–564.
+121. Takeda Pharmaceuticals America Inc. Highlights of Prescribing Information. BRINTELLIX (vortioxetine) tablets 2020; http://www.
+us.brintellix.com.
+122. Hegarty J, et al. Carbamazepine-induced acute granulomatous interstitial nephritis. Clin Nephrol 2002; 57:310–313.
+123. Hogg RJ, et al. Carbamazepine-induced acute tubulointerstitial nephritis. J Pediatr 1981; 98:830–832.
+124. Imai H, et al. Carbamazepine-induced granulomatous necrotizing angiitis with acute renal failure. Nephron 1989; 51:405–408.
+125. Jubert P, et al. Carbamazepine-induced acute renal failure. Nephron 1994; 66:121.
+126. Nicholls DP, et al. Acute renal failure from carbamazepine (Letter). Br Med J 1972; 4:490.
+127. Tutor-Crespo MJ, et al. Relative proportions of serum carbamazepine and its pharmacologically active 10,11-epoxy derivative: effect of
+polytherapy and renal insufficiency. Ups J Med Sci 2008; 113:171–180.
+128. Verrotti A, et al. Renal tubular function in patients receiving anticonvulsant therapy: a long-term study. Epilepsia 2000; 41:1432–1435.
+129. Hung CC, et al. Acute renal failure and its risk factors in Stevens-Johnson syndrome and toxic epidermal necrolysis. Am J Nephrol 2009;
+29:633–638.
+130. Fervenza FC, et al. Acute granulomatous interstitial nephritis and colitis in anticonvulsant hypersensitivity syndrome associated with lamotrigine treatment. Am J Kidney Dis 2000; 36:1034–1040.
+
+
+
+
+<<<PAGE 863>>>
+
+842  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+Table 11.2 (Continued)
+Antidepressants
+
+Target range (µg/L)
+
+Milnacipran
+
+100–150
+
+Mirtazapine
+
+30–80
+
+Moclobemide
+
+300–1000
+
+Paroxetine
+
+20–65
+
+Reboxetine
+
+60–350
+
+Sertraline
+
+10–150
+
+Trazodone
+
+700–1000
+
+Venlafaxine
+(+O-desmethylvenlafaxine)
+
+100–400
+
+Vilazodone
+
+30–70
+
+Vortioxetine
+
+15–60
+
+References
+1. Mann K, et al. Appropriateness of therapeutic drug monitoring for antidepressants in routine psychiatric inpatient care. Ther Drug Monit
+2006; 28:83–88.
+2. Jakobsen MI, et al. The significance of sampling time in therapeutic drug monitoring of clozapine. Acta Psychiatr Scand 2017;
+135:159–169.
+3. Hiemke C. relationships of psychoactive drugs and the problem to calculate therapeutic reference ranges. Ther Drug Monit 2019; 41:
+174–179.
+4. Taylor D, et al. Doses of carbamazepine and valproate in bipolar affective disorder. Psychiatric Bulletin 1997; 21:221–223.
+5. Eadie MJ. Anticonvulsant drugs. Drugs 1984; 27: 328–363.
+6. Chbili C, et al. Relationships between pharmacokinetic parameters of carbamazepine and therapeutic response in patients with bipolar
+disease. Ann Biol Clin (Paris) 2014; 72:453–459.
+7. Cohen AF, et al. Lamotrigine, a new anticonvulsant: pharmacokinetics in normal humans. Clin Pharmacol Ther 1987; 42:535–541.
+8. Kilpatrick ES, et al. Concentration-effect and concentration-toxicity relations with lamotrigine: a prospective study. Epilepsia 1996;
+37:534–538.
+9. Johannessen SI, et al. Therapeutic drug monitoring of the newer antiepileptic drugs. Ther Drug Monit 2003; 25:347–363.
+10. Kagawa S, et al. Relationship between plasma concentrations of lamotrigine and its early therapeutic effect of lamotrigine augmentation
+therapy in treatment-resistant depressive disorder. Ther Drug Monit 2014; 36:730–733.
+11. Nakamura A, et al. Prediction of an optimal dose of lamotrigine for augmentation therapy in treatment-resistant depressive disorder from
+plasma lamotrigine concentration at week 2. Ther Drug Monit 2016; 38:379–382.
+12. Schou M. Forty years of lithium treatment. Arch Gen Psychiatry 1997; 54: 9–13.
+13. Anon. Using lithium safely. Drug Ther Bull 1999; 37:22–24.
+14. Nicholson J, et al. Monitoring patients on lithium – a good practice guideline. Psychiatric Bulletin 2002; 26:348–351.
+15. National Institute for Health and Care Excellence. Bipolar disorder: assessment and management: Clinical Guidance [CG185] 2014 (last
+updated February 2020); https://www.nice.org.uk/guidance/cg185.
+16. Severus WE, et al. What is the optimal serum lithium level in the long-term treatment of bipolar disorder–a review? Bipolar Disorders 2008;
+10:231–237.
+17. Nolen WA, et al. The association of the effect of lithium in the maintenance treatment of bipolar disorder with lithium plasma levels: a post
+hoc analysis of a double-blind study comparing switching to lithium or placebo in patients who responded to quetiapine (Trial 144). Bipolar
+Disorders 2013; 15:100–109.
+18. Nazirizadeh Y, et al. Serum concentrations of paliperidone versus risperidone and clinical effects. Eur J Clin Pharmacol 2010;
+66:797–803.
+19. Schoretsanitis G, et al. A systematic review and combined analysis of therapeutic drug monitoring studies for oral paliperidone. Expert Rev
+Clin Pharmacol 2018; 11:625–639.
+20. Taylor D, et al. Plasma levels of tricyclics and related antidepressants: are they necessary or useful? Psychiatric Bulletin 1995; 19:548–550.
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+

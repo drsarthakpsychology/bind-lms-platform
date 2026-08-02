@@ -1,0 +1,113 @@
+<<<PAGE 169>>>
+
+Select PB20 Unintentional exposure to or harmful effects of opioids or related analgesics as underlying
+cause. Use additional code XM05B3 Diamorphine to identify the specific substance reported. Add main
+injury from Chapter 22 NE60 Harmful effects of drugs, medicaments or biological substances, not elsewhere
+classified, NEC to the cluster. The cluster is PB20&XM05B3/NE60.
+
+Example 2
+1 (a) Poisoning by amphetamine
+(b)
+(c)
+(d)
+2
+
+Toxic levels of heroin and flunitrazepam
+
+By placing amphetamine poisoning alone in Part 1 and reporting the other substances as contributing
+causes of death in Part 2, the certifier has identified amphetamine as the substance most likely to have
+caused the death. Select PB22 Unintentional exposure to or harmful effects of psychostimulants as
+underlying cause. Use additional code XM48Z9 Amfetamine to identify the specific substance reported.
+And add NE60 Harmful effects of drugs, medicaments or biological substances, not elsewhere classified to
+the cluster. The cluster is PB22&XM48Z9/NE60.
+
+Example 3
+1 (a) Poisoning by alcohol
+(b)
+(c)
+(d)
+2
+
+Toxic levels of heroin and flunitrazepam
+
+By placing alcohol poisoning alone in Part 1 and reporting the other substances as contributing causes of
+death in Part 2, the certifier has identified alcohol as the substance most likely to have caused the death.
+Select PB30 Unintentional exposure to or harmful effects of alcohols as underlying cause. And add NE61
+Harmful effects of or exposure to noxious substances, chiefly nonmedicinal as to source, not elsewhere
+classified to the cluster. The cluster is PB30/NE61.
+
+Example 4
+1 (a) Alcohol poisoning
+(b)
+(c)
+(d)
+2
+
+Diazepam and amitriptyline present
+
+By placing alcohol poisoning alone in Part 1 and reporting the other substances as
+contributing causes of death in Part 2, the certifier has identified alcohol as the most
+important substance in bringing about the death. Select PB30 Unintentional exposure to or
+harmful effects of alcohols as underlying cause. And add NE61 Harmful effects of or
+exposure to noxious substances, chiefly nonmedicinal as to source, not elsewhere classified
+to the cluster. The cluster is PB30/NE61
+2.19.6.2 The drug most likely to have caused death is not specified
+If multiple substances are reported as contributing to the death but none of the substance is
+specified as the substance most likely to have caused the death, follow these instructions:
+ICD-11 Reference Guide
+
+167
+
+
+
+
+<<<PAGE 170>>>
+
+(a) Code combinations of alcohol with a drug to the drug
+Example 5
+1 (a) Toxic levels of alcohol and flunitrazepam
+(b)
+(c)
+(d)
+2
+
+Diazepam and amitriptyline present
+
+By placing toxic levels of alcohol and flunitrazepam in Part 1 and reporting the other substances as
+contributing causes of death in Part 2, the certifier has identified alcohol and flunitrazepam as the most
+important substances in bringing about the death. Of these two, select poisoning by flunitrazepam
+because combinations of alcohol with a drug are coded to the drug. Select PB21 Unintentional exposure to
+or harmful effects of sedative hypnotic drugs or other CNS depressants as underlying cause. Use additional
+code XM9W71 Flunitrazepam to identify the specific substance reported. And add NE60 Harmful effects of
+drugs, medicaments or biological substances, not elsewhere classified, NEC. The cluster is
+PB21&XM9W71/NE60.
+
+(b) Code combinations of multiple drugs, as follows:
+•
+If the external cause of the multiple drugs reported is the same select that as the
+underlying cause of death.
+•
+If the external cause of the multiple drugs reported is not the same, code PB29
+Unintentional exposure to or harmful effects of multiple drugs, medicaments or
+biological substances as the underlying cause of death.
+Use additional code from Chapter X, if applicable, to identify the substance most likely to
+have caused the death by referring to Section 2.19.6.3 Identification of the drug most likely
+to have caused death.
+Note that when adding more than one drugs in optional use cases, the substance most likely
+to have caused the death identified as above must be coded first.
+Example 6
+1 (a) Toxic levels of heroin and amphetamine
+(b)
+(c)
+(d)
+2
+Neither heroin nor amphetamine are identified as the substance most likely to have caused the death and
+the external cause of these drugs are not the same. Code to PB29 Unintentional exposure to or harmful
+effects of multiple drugs, medicaments or biological substances as the underlying cause of death. Go to
+Section 2.19.6.3 to identify the drug most likely to have caused the death.
+
+168
+
+ICD-11 MMS
+
+

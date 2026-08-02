@@ -1,0 +1,1443 @@
+<<<PAGE 7>>>
+
+Contents
+Introduction
+List of icons
+1 acamprosate
+2 agomelatine
+3 alprazolam
+4 amisulpride
+5 amitriptyline
+6 amoxapine
+7 amphetamine (d)
+8 amphetamine (d,l)
+9 aripiprazole
+10 armodafinil
+11 asenapine
+12 atomoxetine
+13 benztropine
+14 blonanserin
+15 bremelanotide
+16 brexanolone
+17 brexpiprazole
+18 buprenorphine
+19 bupropion
+20 buspirone
+21 caprylidene
+22 carbamazepine
+23 cariprazine
+24 chlordiazepoxide
+25 chlorpromazine
+
+
+
+
+<<<PAGE 49>>>
+
+Alprazolam
+
+Therapeutics
+Brands
+XanaxXanax XR
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: GABA positive allosteric
+modulator (GABA-PAM)
+Benzodiazepine (anxiolytic)
+Commonly Prescribed for
+(bold for FDA approved)
+Generalized anxiety disorder (IR)
+Panic disorder (IR and XR)
+Other anxiety disorders
+Anxiety associated with depression
+Premenstrual dysphoric disorder
+
+
+
+
+<<<PAGE 51>>>
+
+For chronic anxiety disorders, the goal of treatment is complete
+remission of symptoms as well as prevention of future relapses
+For chronic anxiety disorders, treatment most often reduces or even
+eliminates symptoms, but not a cure since symptoms can recur after
+medicine stopped
+For long-term symptoms of anxiety, consider switching to an SSRI
+or SNRI for long-term maintenance
+If long-term maintenance with a benzodiazepine is necessary,
+continue treatment for 6 months after symptoms resolve, and then
+taper dose slowly
+If symptoms reemerge, consider treatment with an SSRI or SNRI, or
+consider restarting the benzodiazepine; sometimes benzodiazepines
+have to be used in combination with SSRIs or SNRIs for best results
+If It Doesn’t Work
+Consider switching to another agent or adding an appropriate
+augmenting agent
+Consider psychotherapy, especially cognitive behavioral
+psychotherapy
+Consider presence of concomitant substance abuse
+Consider presence of alprazolam abuse
+Consider another diagnosis, such as a comorbid medical condition
+
+
+
+
+<<<PAGE 52>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Benzodiazepines are frequently used as augmenting agents for
+antipsychotics and mood stabilizers in the treatment of psychotic
+and bipolar disorders
+Benzodiazepines are frequently used as augmenting agents for
+SSRIs and SNRIs in the treatment of anxiety disorders
+Not generally rational to combine with other benzodiazepines
+Caution if using as an anxiolytic concomitantly with other sedative
+hypnotics for sleep
+Could consider augmenting alprazolam with either gabapentin or
+pregabalin for treatment of anxiety disorders
+Tests
+In patients with seizure disorders, concomitant medical illness,
+and/or those with multiple concomitant long-term medications,
+periodic liver tests and blood counts may be prudent
+
+Side Effects
+How Drug Causes Side Effects
+Same mechanism for side effects as for therapeutic effects –namely
+due to excessive actions at benzodiazepine receptors
+
+
+
+
+<<<PAGE 54>>>
+
+Sedation
+Occurs in significant minority
+Especially at initiation of treatment or when dose increases
+Tolerance often develops over time
+What to Do About Side Effects
+Wait
+Wait
+Wait
+Lower the dose
+Switch to alprazolam XR
+Take largest dose at bedtime to avoid sedative effects during the day
+Switch to another agent
+Administer flumazenil if side effects are severe or life-threatening
+Best Augmenting Agents for Side Effects
+Many side effects cannot be improved with an augmenting agent
+
+Dosing and Use
+Usual Dosage Range
+Anxiety: alprazolam IR: 1–4 mg/day
+
+
+
+
+<<<PAGE 55>>>
+
+Panic: alprazolam IR: 5–6 mg/day
+Panic: alprazolam XR: 3–6 mg/day
+Dosage Forms
+Alprazolam IR tablet 0.25 mg scored, 0.4 mg (Japan), 0.5 mg
+scored, 0.8 mg (Japan), 1 mg scored, 2 mg multiscored
+Alprazolam IR solution, concentrate 1 mg/mL
+Alprazolam XR (extended-release) tablet 0.5 mg, 1 mg, 2 mg, 3 mg
+How to Dose
+For anxiety, alprazolam IR should be started at 0.75–1.5 mg/day
+divided into 3 doses; increase dose every 3–4 days until desired
+efficacy is reached; maximum dose generally 4 mg/day
+For panic, alprazolam IR should be started at 1.5 mg/day divided
+into 3 doses; increase 1 mg or less every 3–4 days until desired
+efficacy is reached, increasing by smaller amounts for dosage over 4
+mg/day; may require as much as 10 mg/day for desired efficacy in
+difficult cases
+For panic, alprazolam XR should be started at 0.5–1 mg/day once
+daily in the morning; dose may be increased by 1 mg/day every 3–4
+days until desired efficacy is reached; maximum dose generally 10
+mg/day
+Dosing Tips
+
+
+
+
+<<<PAGE 56>>>
+
+Use lowest possible effective dose for the shortest possible period of
+time (a benzodiazepine-sparing strategy)
+Assess need for continued treatment regularly
+Risk of dependence may increase with dose and duration of
+treatment
+For interdose symptoms of anxiety, can either increase dose or
+maintain same total daily dose but divide into more frequent doses,
+or give as extended-release formulation
+Can also use an as-needed occasional “top-up” dose for interdose
+anxiety
+Because panic disorder can require doses higher than 4 mg/day, the
+risk of dependence may be greater in these patients
+Some severely ill patients may require 8 mg/day or more
+Extended-release formulation only needs to be taken once or twice
+daily
+Do not break or chew XR tablets as this will alter controlled-release
+properties
+Frequency of dosing in practice is often greater than predicted from
+half-life, as duration of biological activity is often shorter than
+pharmacokinetic terminal half-life
+Alprazolam and alprazolam XR generally dosed about one-tenth the
+dosage of diazepam
+
+
+
+
+<<<PAGE 57>>>
+
+✽ Alprazolam and alprazolam XR generally dosed about twice the
+dosage of clonazepam
+Overdose
+Fatalities have been reported both in monotherapy and in
+conjunction with alcohol; sedation, confusion, poor coordination,
+diminished reflexes, coma
+Long-Term Use
+Risk of dependence, particularly for treatment periods longer than
+12 weeks and especially in patients with past or current
+polysubstance abuse
+Habit Forming
+Alprazolam is a Schedule IV drug
+Patients may develop dependence and/or tolerance with long-term
+use
+How to Stop
+Seizures may rarely occur on withdrawal, especially if withdrawal is
+abrupt; greater risk for doses above 4 mg and in those with
+additional risks for seizures, including those with a history of
+seizures
+
+
+
+
+<<<PAGE 59>>>
+
+Food does not affect absorption
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+(see Warnings below)
+Inhibitors of CYP450 3A, such as nefazodone, fluvoxamine,
+fluoxetine, and even grapefruit juice, may decrease clearance of
+alprazolam and thereby raise alprazolam plasma levels and enhance
+sedative side effects; alprazolam dose may need to be lowered
+Thus, azole antifungal agents (such as ketoconazole and
+itraconazole), macrolide antibiotics, and protease inhibitors may
+also raise alprazolam plasma levels
+Inducers of CYP450 3A, such as carbamazepine, may increase
+clearance of alprazolam and lower alprazolam plasma levels and
+possibly reduce therapeutic effects
+Other Warnings/Precautions
+Boxed warning regarding the increased risk of CNS depressant
+effects when benzodiazepines and opioid medications are used
+together, including specifically the risk of slowed or difficulty
+breathing and death
+If alternatives to the combined use of benzodiazepines and opioids
+are not available, clinicians should limit the dosage and duration of
+each drug to the minimum possible while still achieving therapeutic
+efficacy
+
+
+
+
+<<<PAGE 60>>>
+
+Patients and their caregivers should be warned to seek medical
+attention if unusual dizziness, lightheadedness, sedation, slowed or
+difficulty breathing, or unresponsiveness occur
+Dosage changes should be made in collaboration with prescriber
+Use with caution in patients with pulmonary disease; rare reports of
+death after initiation of benzodiazepines in patients with severe
+pulmonary impairment
+History of drug or alcohol abuse often creates greater risk for
+dependency
+Hypomania and mania have occurred in depressed patients taking
+alprazolam
+Use only with extreme caution if patient has obstructive sleep apnea
+Some depressed patients may experience a worsening of suicidal
+ideation
+Some patients may exhibit abnormal thinking or behavioral changes
+similar to those caused by other CNS depressants (i.e., either
+depressant actions or disinhibiting actions)
+Do Not Use
+If patient has angle-closure glaucoma
+If patient is taking ketoconazole or itraconazole (azole antifungal
+agents)
+If there is a proven allergy to alprazolam or any benzodiazepine
+
+
+
+
+<<<PAGE 61>>>
+
+Special Populations
+Renal Impairment
+Drug should be used with caution
+Hepatic Impairment
+Should begin with lower starting dose (0.5–0.75 mg/day in 2 or 3
+divided doses)
+Cardiac Impairment
+Benzodiazepines have been used to treat anxiety associated with
+acute myocardial infarction
+Elderly
+Should begin with lower starting dose (0.5–0.75 mg/day in 2 or 3
+divided doses) and be monitored closely
+Children and Adolescents
+Safety and efficacy not established but often used, especially shortterm and at the lower end of the dosing scale
+Long-term effects of alprazolam in children/adolescents are
+unknown
+Should generally receive lower doses and be more closely
+monitored
+
+
+
+
+<<<PAGE 62>>>
+
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Possible increased risk of birth defects when benzodiazepines are
+taken during pregnancy
+Because of the potential risks, alprazolam is not generally
+recommended as treatment for anxiety during pregnancy, especially
+during first trimester
+Drug should be tapered if discontinued
+Infants whose mothers received a benzodiazepine late in pregnancy
+may experience withdrawal effects
+Neonatal flaccidity has been reported in infants whose mothers took
+a benzodiazepine during pregnancy
+Seizures, even mild seizures, may cause harm to the embryo/fetus
+Breast Feeding
+Some drug is found in mother’s breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+Effects on infant have been observed and include feeding
+difficulties, sedation, and weight loss
+
+
+
+
+<<<PAGE 64>>>
+
+Not effective for treating bipolar disorder as a monotherapy, but can
+be used as an adjunct to mood stabilizers and antipsychotics
+May both cause depression and treat depression in different patients
+Risk of seizure is greatest during the first 3 days after
+discontinuation of alprazolam, especially in those with prior
+seizures, head injuries, or withdrawal from drugs of abuse
+Clinical duration of action may be shorter than plasma half-life,
+leading to dosing more frequently than 2–3 times daily in some
+patients, especially for immediate-release alprazolam
+Adding fluvoxamine, fluoxetine, or nefazodone can increase
+alprazolam levels and make the patient very sleepy unless the
+alprazolam dose is lowered by half or more
+When using to treat insomnia, remember that insomnia may be a
+symptom of some other primary disorder itself, and thus warrant
+evaluation for comorbid psychiatric and/or medical conditions
+
+✽ Alprazolam XR may be less sedating than immediate-release
+alprazolam
+
+✽ Alprazolam XR may be dosed less frequently than immediaterelease alprazolam, and lead to less interdose breakthrough symptoms
+and less “clock-watching” in anxious patients
+Slower rises in plasma drug levels for alprazolam XR have the
+potential to reduce euphoria/abuse liability, but this has not been
+proven
+
+
+
+
+<<<PAGE 65>>>
+
+Slower falls in plasma drug levels for alprazolam XR have the
+potential to facilitate drug discontinuation by reducing withdrawal
+symptoms, but this has not been proven
+
+✽ Alprozolam XR generally has longer biological duration of action
+than clonazepam
+
+✽ If clonazepam can be considered a “long-acting alprazolam-like
+anxiolytic,” then alprazolam XR can be considered “an even longeracting clonazepam-like anxiolytic” with the potential of improved
+tolerability features in terms of less euphoria, abuse, dependence, and
+withdrawal problems, but this has not been proven
+Though not systematically studied, benzodiazepines have been used
+effectively to treat catatonia and are the initial recommended
+treatment
+
+Suggested Reading
+DeVane CL , Ware MR , Lydiard RB . Pharmacokinetics,
+pharmacodynamics, and treatment issues of benzodiazepines: alprazolam,
+adinazolam, and clonazepam . Psychopharmacol Bull 1991 ;27 :463–73 .
+Greenblatt DJ , Wright CE . Clinical pharmacokinetics of alprazolam.
+Therapeutic implications . Clin Pharmacokinet 1993 ; 24 :453–71 .
+Jonas JM , Cohon MS . A comparison of the safety and efficacy of
+alprazolam versus other agents in the treatment of anxiety, panic, and
+
+
+
+
+<<<PAGE 66>>>
+
+depression: a review of the literature . J Clin Psychiatry 1993 ;54
+(Suppl):S25 –45.
+Klein E . The role of extended-release benzodiazepines in the treatment of
+anxiety: a risk-benefit evaluation with a focus on extended-release
+alprazolam . J Clin Psychiatry 2002 ;63 (Suppl 14):S27 –33 .
+Speigel DA . Efficacy studies of alprazolam in panic disorder .
+Psychopharmacol Bull 1998 ; 34 :191–5 .
+van Marwijk H , Allick G , Wegman F , Bax A , Riphagen II . Alprazolam
+for depression . Cochrane Database Syst Rev 2012 ; (7) :CD007139.
+
+
+
+
+<<<PAGE 515>>>
+
+Risk of dependence may increase with dose and duration of
+treatment
+For interdose symptoms of anxiety, can either increase dose or
+maintain same daily dose but divide into more frequent doses
+Can also use an as-needed occasional “top-up” dose for interdose
+anxiety
+Because seizure disorder can require doses much higher than 2
+mg/day, the risk of dependence may be greater in these patients
+Because panic disorder can require doses somewhat higher than 2
+mg/day, the risk of dependence may be greater in these patients than
+in anxiety patients maintained at lower doses
+Some severely ill seizure patients may require more than 20 mg/day
+Some severely ill panic patients may require 4 mg/day or more
+Frequency of dosing in practice is often greater than predicted from
+half-life, as duration of biological activity is often shorter than
+pharmacokinetic terminal half-life
+
+✽ Clonazepam is generally dosed half the dosage of alprazolam
+Escalation of dose may be necessary if tolerance develops in seizure
+disorders
+Escalation of dose usually not necessary in anxiety disorders, as
+tolerance to clonazepam does not generally develop in the treatment
+of anxiety disorders
+
+✽ Available as an oral disintegrating wafer
+
+
+
+
+<<<PAGE 523>>>
+
+Generally used as second-line treatment for petit mal seizures if
+succinimides are ineffective
+Can be used as an adjunct or as monotherapy for seizure disorders
+Clonazepam is the only benzodiazepine that is used as a solo
+maintenance treatment for seizure disorders
+
+✽ Easier to taper than some other benzodiazepines because of long
+half-life
+
+✽ May have less abuse potential than some other benzodiazepines
+✽ May cause less depression, euphoria, or dependence than some
+other benzodiazepines
+
+✽ Clonazepam is often considered a “longer-acting alprazolam-like
+anxiolytic” with improved tolerability features in terms of less
+euphoria, abuse, dependence, and withdrawal problems, but this has
+not been proven
+When using to treat insomnia, remember that insomnia may be a
+symptom of some other primary disorder itself, and thus warrant
+evaluation for comorbid psychiatric and/or medical conditions
+Though not systematically studied, benzodiazepines have been used
+effectively to treat catatonia and are the initial recommended
+treatment
+
+Suggested Reading
+
+
+
+
+<<<PAGE 524>>>
+
+Davidson JR , Moroz G. Pivotal studies of clonazepam in panic disorder .
+Psychopharmacol Bull 1998 ;34 :169–74 .
+DeVane CL , Ware MR , Lydiard RB. Pharmacokinetics,
+pharmacodynamics, and treatment issues of benzodiazepines: alprazolam,
+adinazolam, and clonazepam . Psychopharmacol Bull 1991 ;27 :463–73 .
+Iqbal MM , Sobhan T , Ryals T. Effects of commonly used benzodiazepines
+on the fetus, the neonate, and the nursing infant . Psychiatr Serv 2002 ;53
+:39 –49 .
+Panayiotopoulos CP. Treatment of typical absence seizures and related
+epileptic syndromes . Paediatr Drugs 2001 ;3 :379 –403 .
+
+
+
+
+<<<PAGE 896>>>
+
+Via CYP450 3A4 inhibition, may increase the levels of alprazolam,
+buspirone, and triazolam
+Via CYP450 3A4 inhibition, fluoxetine could theoretically increase
+concentrations of certain cholesterol-lowering HMG CoA reductase
+inhibitors, especially simvastatin, atorvastatin, and lovastatin, but
+not pravastatin or fluvastatin, which would increase the risk of
+rhabdomyolysis; thus, coadministration of fluoxetine with certain
+HMG CoA reductase inhibitors should proceed with caution
+Via CYP450 3A4 inhibition, fluoxetine could theoretically increase
+the concentrations of pimozide, and cause QTc prolongation and
+dangerous cardiac arrhythmias
+Other Warnings/Precautions
+
+✽ Add or initiate other antidepressants with caution for up to 5 weeks
+after discontinuing fluoxetine
+Use with caution in patients with history of seizure
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+
+
+
+
+<<<PAGE 967>>>
+
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+NSAIDs may impair effectiveness of SSRIs
+Via CYP450 1A2 inhibition, fluvoxamine may reduce clearance of
+theophylline and clozapine, thus raising their levels and requiring
+their dosing to be lowered
+Fluvoxamine administered with either caffeine or theophylline can
+thus cause jitteriness, excessive stimulation, or rarely seizures, so
+concomitant use should proceed cautiously
+Metabolism of fluvoxamine may be enhanced in smokers and thus
+its levels lowered, requiring higher dosing
+Via CYP450 3A4 inhibition, fluvoxamine may reduce clearance of
+carbamazepine and benzodiazepines such as alprazolam and
+triazolam, and thus require dosage reduction
+Via CYP450 3A4 inhibition, fluvoxamine could theoretically
+increase concentrations of certain cholesterol-lowering HMG CoA
+reductase inhibitors, especially simvastatin, atorvastatin, and
+lovastatin, but not pravastatin or fluvastatin, which would increase
+the risk of rhabdomyolysis; thus, coadministration of fluvoxamine
+with certain HMG CoA reductase inhibitors should proceed with
+caution
+Via CYP450 3A4 inhibition, fluvoxamine could theoretically
+increase the concentrations of pimozide, and cause QTc
+prolongation and dangerous cardiac arrhythmias
+
+
+
+
+<<<PAGE 1464>>>
+
+Patients with premenstrual syndrome may be less sensitive to
+midazolam than healthy women throughout the cycle
+Midazolam clearance may be reduced in postmenopausal women
+compared to premenopausal women
+Though not systematically studied, benzodiazepines have been used
+effectively to treat catatonia and are the initial recommended
+treatment
+
+Suggested Reading
+Blumer JL . Clinical pharmacology of midazolam in infants and children .
+Clin Pharmacokinet 1998 ;35 :37 –47 .
+Fountain NB , Adams RE . Midazolam treatment of acute and refractory
+status epilepticus . Clin Neuropharmacol 1999 ;22 :261–7 .
+Shafer A . Complications of sedation with midazolam in the intensive care
+unit and a comparison with other sedative regimens . Crit Care Med 1998
+;26 :947–56 .
+Yuan R , Flockhart DA , Balian JD . Pharmacokinetic and
+pharmacodynamic consequences of metabolism-based drug interactions
+with alprazolam, midazolam, and triazolam . J Clin Pharmacol 1999 ;39
+:1109 –25.
+
+
+
+
+<<<PAGE 1581>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Venlafaxine and escitalopram may be the best tolerated when
+
+switching or augmenting with a serotonin reuptake inhibitor, as neither
+is a potent CYP450 2D6 inhibitor (use combinations of antidepressants
+with caution as this may activate bipolar disorder and suicidal
+ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines for anxiety, but give alprazolam cautiously with
+nefazodone as alprazolam levels can be much higher in the presence
+of nefazodone
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+
+✽ Liver function testing is not required but is often prudent given the
+small but finite risk of serious hepatoxicity
+
+✽ However, to date no clinical strategy, including routine liver
+function tests, has been identified to reduce the risk of irreversible
+liver failure
+
+Side Effects
+
+
+
+
+<<<PAGE 1586>>>
+
+Taper is prudent to avoid withdrawal effects, but problems in
+withdrawal not common
+Pharmacokinetics
+Half-life of parent compound is 2–4 hours
+Half-life of active mebatolites up to 12 hours
+Inhibits CYP450 3A4
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+May interact with SSRIs such as paroxetine, fluoxetine, and others
+that inhibit CYP450 2D6
+
+✽ Since a metabolite of nefazodone, mCPP, is a substrate of CYP450
+2D6, combination of 2D6 inhibitors with nefazodone will raise mCPP
+levels, leading to stimulation of 5HT2C receptors and causing
+dizziness and agitation
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or for at least 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing nefazodone
+Via CYP450 3A4 inhibition, nefazodone may increase the half-life
+of alprazolam and triazolam, so their dosing may need to be reduced
+
+
+
+
+<<<PAGE 1969>>>
+
+May need to reduce reboxetine dose or avoid concomitant use with
+inhibitors of CYP450 3A4, such as azole and antifungals, macrolide
+antibiotics, fluvoxamine, nefazodone, fluoxetine, sertraline, etc.
+Via CYP450 2D6 inhibition, reboxetine could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine and TCAs
+Via CYP450 2D6 inhibition, reboxetine could theoretically increase
+concentrations of thioridazine and cause dangerous cardiac
+arrhythmias
+Via CYP450 3A4 inhibition, reboxetine may increase the levels of
+alprazolam, buspirone, and triazolam
+Via CYP450 3A4 inhibition, reboxetine could theoretically increase
+concentrations of certain cholesterol lowering HMG CoA reductase
+inhibitors, especially simvastatin, atorvastatin, and lovastatin, but
+not pravastatin or fluvastatin, which would increase the risk of
+rhabdomyolysis; thus, coadministration of reboxetine with certain
+HMG CoA reductase inhibitors should proceed with caution
+Via CYP450 3A4 inhibition, reboxetine could theoretically increase
+the concentrations of pimozide, and cause QTc prolongation and
+dangerous cardiac arrhythmias
+Use with ergotamine may increase blood pressure
+Hypokalemia may occur if reboxetine is used with diuretics
+Use with caution with MAO inhibitors, including 14 days after
+MAOIs are stopped
+
+
+
+
+<<<PAGE 2035>>>
+
+Because first-pass metabolism is not extensive with transdermal
+dosing, this results in notably higher exposure to selegiline and lower
+exposure to metabolites as compared to oral dosing
+With transdermal selegiline, 25–30% of selegiline content is delivered
+systemically over 24 hours from each patch
+Mean half-life of transdermal selegiline is approximately 18–25 hours
+Steady-state mean elimination half-life of oral selegiline is
+approximately 10 hours
+Drug Interactions
+Many misunderstandings about what drugs can be combined with
+MAOIs
+Theoretically and especially at high doses, selegiline could cause a
+fatal “serotonin syndrome” when combined with drugs that block
+serotonin reuptake, so do not use with a serotonin reuptake inhibitor
+for up to 5 half-lives after stopping the serotonin reuptake inhibitor
+(i.e., “wash-in” of selegiline should be about 1 week after
+discontinuing most agents [except 5 weeks or more after discontinuing
+fluoxetine because of its long half-life and that of its active
+metabolite]) (see Table 1 after Pearls)
+When discontinuing selegiline (“wash-out” period), wait 2 weeks
+before starting another antidepressant in order to allow enough time
+for the body to regenerate MAO enzyme
+Transdermal: no pharmacokinetic drug interactions present in studies
+with alprazolam, ibuprofen, levothyroxine, olanzapine, risperidone,
+
+
+
+
+<<<PAGE 2076>>>
+
+Can increase TCA levels; use with caution with TCAs or when
+switching from a TCA to sertraline
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or for at least 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing sertraline
+May displace highly protein-bound drugs (e.g., warfarin)
+Can rarely cause weakness, hyperreflexia, and incoordination when
+combined with sumatriptan or possibly with other triptans, requiring
+careful monitoring of patient
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+NSAIDs may impair effectiveness of SSRIs
+Via CYP450 2D6 inhibition, sertraline could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine
+Via CYP450 2D6 inhibition sertraline could theoretically increase
+concentrations of thioridazine and cause dangerous cardiac
+arrhythmias
+Via CYP450 3A4 inhibition, sertraline may increase the levels of
+alprazolam, buspirone, and triazolam
+
+
+
+
+<<<PAGE 2294>>>
+
+Suggested Reading
+Jonas JM , Coleman BS , Sheridan AQ , Kalinske RW . Comparative
+clinical profiles of triazolam versus other shorter-acting hypnotics . J Clin
+Psychiatry 1992 ;53 (Suppl):S19 –31.
+Lobo BL , Greene WL . Zolpidem: distinct from triazolam? Ann
+Pharmacother 1997 ;31 :625–32 .
+Rothschild AJ . Disinhibition, amnestic reactions, and other adverse
+reactions secondary to triazolam: a review of the literature . J Clin
+Psychiatry 1992 ;53 (Suppl):S69 –79.
+Yuan R , Flockhart DA , Balian JD . Pharmacokinetic and
+pharmacodynamic consequences of metabolism-based drug interactions
+with alprazolam, midazolam, and triazolam . J Clin Pharmacol 1999 ;39
+:1109 –25.
+
+
+
+
+<<<PAGE 2569>>>
+
+Adzenys ER (amphetamine d,l), 45
+Adzenys XR-ODT (amphetamine d,l), 45
+agomelatine, 5
+AH3 N (hydroxyzine), 355
+Aiglonyl (sulpiride), 741
+Alased (haloperidol), 347
+Albium (lorazepam), 437
+Aldazine (thioridazine), 759
+Alemoxan (clozapine), 191
+Alepam (oxazepam), 569
+Alertec (modafinil), 521
+Aleviatin (zonisamide), 875
+Alimoral (sulpiride), 741
+Aliseum (diazepam), 229
+Allegron (nortriptyline), 551
+allopregnanolone (brexanolone), 99
+Almazine (lorazepam), 437
+Aloperidin (haloperidol), 347
+Aloperidin Decanoate (haloperidol), 347
+Alpralid (alprazolam), 11
+Alpraz (alprazolam), 11
+alprazolam, 11
+alprazolam XR, 11
+Alprox (alprazolam), 11
+Alti-Alprazolam (alprazolam), 11
+Alti-Clonazepam (clonazepam), 173
+Alti-Desipramine (desipramine), 207
+Alti-Doxepin (doxepin), 255
+
+
+
+
+<<<PAGE 2570>>>
+
+Alti-Trazodone (trazodone), 793
+Alti-Triazolam (triazolam), 799
+Alti-Valproic (valproate), 829
+Alupram (diazepam), 229
+Alzam (alprazolam), 11
+Alzon (alprazolam), 11
+Ambien (zolpidem), 871
+Ambien CR (zolpidem), 871
+Amboneural (selegiline), 705
+Ambien CR (zolpidem), 871
+Ambo-neural (selegiline), 705
+Amilin (amitriptyline), 25
+Amilit (amitriptyline), 25
+Aminazins (chlorpromazine), 153
+Amindan (selegiline), 705
+Amineurin (amitriptyline), 25
+Aminuerin Retard (amitriptyline), 25
+Amioxid (amitriptyline), 25
+amisulpride, 17
+Amitrip (amitriptyline), 25
+Amitriptilin (amitriptyline), 25
+Amitriptylin (amitriptyline), 25
+amitriptyline, 25
+Amitriptylinum (amitriptyline), 25
+Amitrol (amitriptyline), 25
+Amizepin (carbamazepine), 131
+Amizol (amitriptyline), 25
+amoxapine, 33
+
+
+
+
+<<<PAGE 2572>>>
+
+Anxidin (clorazepate), 185
+Anxiolit (oxazepam), 569
+Anxiolit Plus (oxazepam), 569
+Anxiron (buspirone), 123
+Apaurin (diazepam), 229
+Apilepsin (valproate), 829
+Aplenzin (bupropion), 117
+Apo-Alprax (alprazolam), 11
+Apo-Amitriptyline (amitriptyline), 25
+Apo-Buspirone (buspirone), 123
+Apo-Carbamazepine (carbamazepine), 131
+Apo-Clomipramine (clomipramine), 165
+Apo-Clonazepam (clonazepam), 173
+Apo-Clonidine (clonidine), 179
+Apo-Clorazepate (clorazepate), 185
+Apo-Desipramine (desipramine), 207
+Apo-Diazepam (diazepam), 229
+Apo-Doxepin (doxepin), 255
+Apo-Fluoxetine (fluoxetine), 301
+Apo-Fluphenazine (fluphenazine), 313
+Apo-Haloperidol (haloperidol), 347
+Apoh-Hydroxyzine (hydroxyzine), 355
+Apo-Imipramine (imipramine), 367
+Apollonset (diazepam), 229
+Apo-Lorazem (lorazepam), 437
+Aponal (doxepin), 255
+Apo-Oxepam (oxazepam), 569
+Apo-Perphenazine (perphenazine), 607
+
+
+
+
+<<<PAGE 2574>>>
+
+Atensine (diazepam), 229
+Aterax (hydroxyzine), 355
+Athymil (mianserin), 495
+Ativan (lorazepam), 437
+atomoxetine, 79
+Atretol (carbamazepine), 131
+Audilex (clorazepate), 185
+Audium (diazepam), 229
+Aurorix (moclobemide), 515
+Austedo (deutetrabenazine), 221
+Autal (acamprosate), 1
+Avant (haloperidol), 347
+Aventyl (nortriptyline), 551
+Avoxin (fluvoxamine), 325
+Axona (caprylidene), 127
+Axoren (buspirone), 123
+Azene (clorazepate), 185
+Azepa (carbamazepine), 131
+Azepal (carbamazepine), 131
+Azona (trazodone), 793
+Azor (alprazolam), 11
+Azutranquil (oxazepam), 569
+Barclyd (clonidine), 179
+Barhemsys (amisulpride), 17
+Beconerv neu (flurazepam), 321
+Belbuca (buprenorphine), 111
+Beldin (diphenhydramine), 235
+Belivon (risperidone), 687
+
+
+
+
+<<<PAGE 2577>>>
+
+Carbapin (carbamazepine), 131
+Carbatrol (carbamazepine), 131
+Carbium (carbamazepine), 131
+Carbolith (lithium), 415
+Carbolithium (lithium), 415
+Carbymal (carbamazepine), 131
+Cardilac (fluphenazine), 313
+cariprazine, 137
+Carpaz (carbamazepine), 131
+Cassadan (alprazolam), 11
+Cassipa (buprenorphine with naloxone), 111
+Catanidin (clonidine), 179
+Catapres (clonidine), 179
+Catapres-TTS (clonidine), 179
+Cedrol (zolpidem), 871
+Celexa (citalopram), 159
+Cenilene (fluphenazine), 313
+Centedrin (d,l-methylphenidate), 487
+Cereen (haloperidol), 347
+Championyl (sulpiride), 741
+Champix (varenicline), 837
+Chantix (varenicline), 837
+Chemmart (escitalopram), 269
+Chlorazin (chlorpromazine), 153
+chlordiazepoxide, 147
+Chlorpromazin (chlorpromazine), 153
+Chlorpromazina HCl (chlorpromazine), 153
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2586>>>
+
+Equilid (sulpiride), 741
+Equitam (lorazepam), 437
+Er Ding (lofexidine), 427
+Ergenyl (valproate), 829
+Ergocalm (lorazepam), 437
+Eridan (diazepam), 229
+Erocap (fluoxetine), 301
+escitalopram, 269
+Esculid (diazepam), 229
+Esilgan (estazolam), 281
+Esipride (sulpiride), 741
+Eskalith (lithium), 415
+Eskalith CR (lithium), 415
+Eskazine (trifluoperazine), 803
+esketamine, 275
+Esparon (alprazolam), 11
+estazolam, 281
+Estorra (eszopiclone), 285
+eszopiclone, 285
+Ethipam (diazepam), 229
+Ethipramine (imipramine), 367
+Euhypnos (temazepam), 755
+Euipnos (temazepam), 755
+Eurosan (diazepam), 229
+Eutimil (paroxetine), 593
+Eutimox (fluphenazine), 313
+Evacalm (diazepam), 229
+Evekeo (amphetamine d,l), 45
+
+
+
+
+<<<PAGE 2589>>>
+
+Flutepam (flurazepam), 321
+Flutin (fluoxetine), 301
+Flutraz (flunitrazepam), 297
+Fluval (fluoxetine), 301
+fluvoxamine, 325
+Fluxadir (fluoxetine), 301
+Fluxonil (fluoxetine), 301
+Focalin (d-methylphenidate), 481
+Focalin XR (d-methylphenidate), 481
+Foille (trifluoperazine), 803
+Fokalepsin (carbamazepine), 131
+Fondur (fluoxetine), 301
+Fontex (fluoxetine), 301
+Fonzac (fluoxetine), 301
+Forfivo (bupropion), 117
+Fortunan (haloperidol), 347
+Frontal (alprazolam), 11
+Frosinor (paroxetine), 593
+Frosnor (paroxetine), 593
+gabapentin, 331
+Gabitril (tiagabine), 771
+galantamine, 337
+Gamanil (lofepramine), 421
+Gamibetal Plus (diazepam), 229
+Gamonil (lofepramine), 421
+Gen-Alprazolam (alprazolam), 11
+Gen-Clomipramine (clomipramine), 165
+Gen-Triazolam (triazolam), 799
+
+
+
+
+<<<PAGE 2590>>>
+
+Gen-Valproic (valproate), 829
+Geodon (ziprasidone), 863
+Gewakalm (diazepam), 229
+Gladem (sertraline), 721
+Gnostorid (oxazepam), 569
+Gobanal (diazepam), 229
+guanfacine, 343
+Haemiton (clonidine), 179
+Halcion (triazolam), 799
+Haldol (haloperidol), 347
+Haldol decanoas (haloperidol), 347
+Haldol Decanoat (haloperidol), 347
+Haldol Decanoate (haloperidol), 347
+Haldol Decanoato (haloperidol), 347
+Haldol Depot (haloperidol), 347
+Haldol L.A. (haloperidol), 347
+Haloneural (haloperidol), 347
+Haloper (haloperidol), 347
+haloperidol, 347
+Haloperidol Decanoat (haloperidol), 347
+Haloperidol Decanoato (haloperidol), 347
+Haloperin (haloperidol), 347
+Haloperin depotinjektio (haloperidol), 347
+Harmomed (dothiepin), 249
+Harmoned (diazepam), 229
+Helex (alprazolam), 11
+Helogaphen (chlordiazepoxide), 147
+Hermolepsin (carbamazepine), 131
+
+
+
+
+<<<PAGE 2593>>>
+
+Jatrosom N (trifluoperazine), 803
+Jornay PM (d, l-methylphenidate), 487
+Julap (selegiline), 705
+Jumex (selegiline), 705
+Jumexal (selegiline), 705
+Kai (lofexidine), 427
+Kainever (estazolam), 281
+Kalma (alprazolam), 11
+Kanopan 75 (maprotiline), 465
+Kapvay (clonidine), 179
+Karbazin (carbamazepine), 131
+Kataved (esketamine), 275
+Keppra (levetiracetam), 399
+Ketalar (ketamine), 383
+ketamine, 383
+Ketanest (esketamine), 275
+Ketanest S (esketamine), 275
+Kinabide (selegiline), 705
+Klarium (diazepam), 229
+Klofelins (clonidine), 179
+Klonopin (clonazepam), 173
+Klopoxid (chlordiazepoxide), 147
+Kloproman (chlorpromazine), 153
+Klorproman (chlorpromazine), 153
+Klotriptyl (chlordiazepoxide), 147
+Klozapol (clozapine), 191
+Labileno (lamotrigine), 387
+
+
+
+
+<<<PAGE 2600>>>
+
+Mialin (alprazolam), 11
+Mianeurin (mianserin), 495
+Miansan (mianserin), 495
+mianserin, 495
+Miansin (mianserin), 495
+Miaxan (mianserin), 495
+midazolam, 499
+Milithin (lithium), 415
+milnacipran, 503
+Minipress (prazosin), 643
+Minizide (prazosin), 643
+Mipralin (imipramine), 367
+Mirbanil (sulpiride), 741
+Mirenil (fluphenazine), 313
+Mirenil Prolongatum (fluphenazine), 313
+Mirfat (clonidine), 179
+Mirfudorm (oxazepam), 569
+Mirpan (maprotiline), 465
+mirtazapine, 509
+Moban (molindone), 527
+Mocloamine (moclobemide), 515
+moclobemide, 515
+modafinil, 521
+Modalina (trifluoperazine), 803
+Modecate (fluphenazine), 313
+Modiodal (modafinil), 521
+Moditen (fluphenazine), 313
+Moditen Action Prolongee (fluphenazine), 313
+
+
+
+
+<<<PAGE 2602>>>
+
+Napoton (chlordiazepoxide), 147
+Narcozep (flunitrazepam), 297
+Nardelzine (phenelzine), 613
+Nardil (phenelzine), 613
+Narol (buspirone), 123
+Navane (thiothixene), 765
+Navicalm (hydroxyzine), 355
+Nefadar (nefazodone), 545
+nefazodone, 545
+Nefirel (nefazodone), 545
+Neo Gnostoride (chlordiazepoxide), 147
+Neodorm SP (temazepam), 755
+Neoride (sulpiride), 741
+Neurol (alprazolam), 11
+Neurolepsin (lithium), 415
+Neurolithium (lithium), 415
+Neurolytril (diazepam), 229
+Neurontin (gabapentin), 331
+Neurotol (carbamazepine), 131
+Neurotop (carbamazepine), 131
+Nevropromazine (chlorpromazine), 153
+Nicoflox (fluoxetine), 301
+Nifalin (lorazepam), 437
+Nilium (flunitrazepam), 297
+Niotal (zolpidem), 871
+Nipolept (zotepine), 883
+Nivalin (galantamine), 337
+Noam (diazepam), 229
+
+
+
+
+<<<PAGE 2604>>>
+
+Novazam (diazepam), 229
+Novhepar (lorazepam), 437
+Novo-Alprazol (alprazolam), 11
+Novo-Carbamaz (carbamazepine), 131
+Novo-Clonidine (clonodine), 179
+Novo-Clopamine (clomipramine), 165
+Novo-Clopate (clorazepate), 185
+Novodorm (triazolam), 799
+Novo-Doxepin (doxepin), 255
+Novo-fluoxetine (fluoxetine), 301
+Novo-Hydroxyzine (hydroxyzine), 355
+Novo-Lorazem (lorazepam), 437
+Novo-Maprotiline (maprotiline), 465
+Novo-Peridol (haloperidol), 347
+Novoprotect (amitriptyline), 25
+Novo-Selegine (selegiline), 705
+Novo-Trazodone (trazodone), 793
+Novo-Trimipramine (trimipramine), 817
+Novo-Triolam (triazolam), 799
+Novo-Valproic (valproate), 829
+Nozepams (oxazepam), 569
+Nu-Alpraz (alprazolam), 11
+Nu-Carbamazepine (carbamazepine), 131
+Nu-Clonidine (clonidine), 179
+Nuctalon (estazolam), 281
+Nuedexta (dextromethorphan with quinidine), 225
+Nufarol (sulpiride), 741
+Nulans (lorazepam), 437
+
+
+
+
+<<<PAGE 2606>>>
+
+Orthon (fluoxetine), 301
+Oxabenz (oxazepam), 569
+Oxahexal (oxazepam), 569
+Oxaline (oxazepam), 569
+Oxanid (oxazepam), 569
+Oxapam (oxazepam), 569
+Oxapax (oxazepam), 569
+Oxaphar (oxazepam), 569
+Oxa-Puren (oxazepam), 569
+Oxascand (oxazepam), 569
+oxazepam, 569
+oxcarbazepine, 575
+Oxepam (oxazepam), 569
+Oxepam Expidet (oxazepam), 569
+Ox-Pam (oxazepam), 569
+Oxtellar XR (oxcarbazepine), 575
+Oxyperazine (trifluoperazine), 803
+Ozodeprin (sulpiride), 741
+Paceum (diazepam), 229
+Pacinol (fluphenazine), 313
+Pacium (diazepam), 229
+paliperidone, 581
+Pamelor (nortriptyline), 551
+Panix (alprazolam), 11
+Pantrop Retard (chlordiazepoxide), 147
+Paracefan (clonidine), 179
+Paratil (sulpiride), 741
+Parkinyl (selegiline), 705
+
+
+
+
+<<<PAGE 2607>>>
+
+Parmodalin (tranylcypromine), 787
+Parmodalin (trifluoperazine), 803
+Parnate (tranylcypromine), 787
+paroxetine, 593
+paroxetine CR, 593
+Parstelin (tranylcypromine), 787
+Parstelin (trifluoperazine), 803
+Pasrin (buspirone), 123
+Pax (diazepam), 229
+Paxal (alprazolam), 11
+Paxam (clonazepam), 173
+Paxil (paroxetine), 593
+Paxil CR (paroxetine CR), 593
+Paxium (chlordiazepoxide), 147
+Paxtibi (nortriptyline), 551
+Pazolan (alprazolam), 11
+Pefanium/Pefanic (chlordiazepoxide), 147
+Peratsin (perphenazine), 607
+Peratsin Dekanoaatti (perphenazine), 607
+Peratsin Enantaati (perphenazine), 607
+Perfenazin (perphenazine), 607
+Peridol (haloperidol), 347
+Permitil (fluphenazine), 313
+perospirone, 601
+perphenazine, 607
+Perseris (risperidone injection), 687
+Pertofrane (desipramine), 207
+Pertofrin (desipramine), 207
+
+
+
+
+<<<PAGE 2611>>>
+
+quazepam, 663
+Quazium (quazepam), 663
+Qudexy (topiramate), 781
+Qudexy SR (topiramate), 781
+quetiapine, 667
+Quiedorm (quazepam), 663
+Quilibrex (oxazepam), 569
+QuilliChew ER (methylphenidate d,l), 487
+Quillivant XR (methylphenidate d,l), 487
+Quilonum (lithium), 415
+Quilonum Retard (lithium), 415
+Quinolorm (lithium), 415
+Quinolorm Retard (lithium), 415
+Quiridil (sulpiride), 741
+Quitaxon (doxepin), 255
+Radepur (chlordiazepoxide), 147
+ramelteon, 677
+Razadyne (galantamine), 337
+Razadyne ER (galantamine), 337
+Razolam (alprazolam), 11
+Reagila (cariprazine), 137
+reboxetine, 681
+Redomex (amitriptyline), 25
+Redomex Diffucaps (amitriptyline), 25
+Regepar (selegiline), 705
+Rekynda (bremelanotide), 95
+Relanium (diazepam), 229
+Relax Sedans (chlordiazepoxide), 147
+
+
+
+
+<<<PAGE 2619>>>
+
+Sulpivert (sulpiride), 741
+Sulpril (sulpiride), 741
+Sunosi (solriamfetol), 737
+Suprium (sulpiride), 741
+Surmontil (trimipramine), 817
+suvorexant, 747
+Suxidina (oxazepam), 569
+Sylador (haloperidol), 347
+Symbyax (olanzapine/fluoxetine combination), 301 , 559
+Synedil (sulpiride), 741
+Synedil Fort (sulpiride), 741
+Syneudon 50 (amitriptyline), 25
+Tafil (alprazolam), 11
+Tagonis (paroxetine), 593
+Tardotol (carbamazepine), 131
+Taro-Carbamazepine (carbamazepine), 131
+tasimelteon, 751
+Tatanka (alprazolam), 11
+Tatig (sertraline), 721
+Tatinol (tianeptine), 777
+Tavor (lorazepam), 437
+Tazepam (oxazepam), 569
+Tegretal (carbamazepine), 131
+Tegretol (carbamazepine), 131
+Tegretol LP (carbamazepine), 131
+Teledomin (milnacipran), 503
+Temador (temazepam), 755
+Temaze (temazepam), 755
+
+
+
+
+<<<PAGE 2621>>>
+
+Thorazine (chlorpromazine), 153
+Thymal (lorazepam), 437
+tiagabine, 771
+tianeptine, 777
+Timelit (lofepramine), 421
+Timonil (carbamazepine), 131
+Tingus (fluoxetine), 301
+Tiprolisant (pitolisant), 639
+Tirodil (thioridazine), 759
+Titus (lorazepam), 437
+Tofranil (imipramine), 367
+Tofranil pamoata (imipramine), 367
+Tofranil-PM (imipramine), 367
+Tolid (lorazepam), 437
+Tolmin (mianserin), 495
+Tolvin (mianserin), 495
+Tolvon (mianserin), 495
+Tonirem (temazepam), 755
+Topamac (topiramate), 781
+Topamax (topiramate), 781
+Topimax (topiramate), 781
+topiramate, 781
+T-Pam (temazepam), 755
+Tramensan (trazodone), 793
+Trankilium (lorazepam), 437
+Trankimazin (alprazolam), 11
+Tranquase (diazepam), 229
+Tran-Quil (lorazepam), 437
+
+
+
+
+<<<PAGE 2624>>>
+
+Tryptizol (amitriptyline), 25
+Tydamine (trimipramine), 817
+Tymelyt (lofepramine), 421
+Ucerax (hydroxyzine), 355
+Umbrium (diazepam), 229
+Unilan (alprazolam), 11
+Unisedil (diazepam), 229
+Unitranxene (clorazepate), 185
+U-Pan (lorazepam), 437
+Uskan (oxazepam), 569
+Valaxona (diazepam), 229
+Valclair (chlordiazepoxide), 147
+valbenazine, 825
+Valclair (diazepam), 229
+Valcote 250 (valproate), 829
+Valdorm (flurazepam), 321
+Valdoxan (agomelatine), 5
+Valeans (alprazolam), 11
+Valinil (diazepam), 229
+Valiquid (diazepam), 229
+Valiquid 0.3 (diazepam), 229
+Valirem (sulpiride), 741
+Valium (diazepam), 229
+Valocordin Diazepam (diazepam), 229
+Valparine (valproate), 829
+Valpro (valproate), 829
+valproate, 829
+
+
+
+
+<<<PAGE 2626>>>
+
+Vividyl (nortriptyline), 551
+Vivitrol (naltrexone), 537
+Vivol (diazepam), 229
+vortioxetine, 853
+Vraylar (cariprazine), 137
+Vulbegal (flunitrazepam), 297
+Vulpral (valproate), 829
+Vyleesi (bremelanotide), 95
+Vyvanse (lisdexamfetamine), 409
+Wakix (pitolisant), 639
+Wellbatrin (bupropion), 117
+Wellbutrin (bupropion), 117
+Wellbutrin SR (bupropion SR), 117
+Wellbutrin XL (bupropion XL), 117
+Xanax (alprazolam), 11
+Xanax XR (alprazolam XR), 11
+Xanor (alprazolam), 11
+Xepin (doxepin), 255
+Xeplion (paliperidone), 581
+Xyrem (sodium oxybate), 733
+Zactin (fluoxetine), 301
+Zafrionil (haloperidol), 347
+zaleplon, 859
+Zelapon (selegiline), 705
+Zemorcon (sulpiride), 741
+Zentiva (aripiprazole), 53
+
+
+
+
+<<<PAGE 2627>>>
+
+Zenzedi (amphetamine d), 39
+Zeptol (carbamazepine), 131
+Zerenal (dothiepin), 249
+ziprasidone, 863
+Ziprexa (olanzapine), 559
+Zispin (mirtazapine), 509
+Zoleptil (zotepine), 883
+Zoloft (sertraline), 721
+zolpidem, 871
+Zolpimist (zolpidem), 871
+Zonalon (doxepin), 255
+Zonegran (zonisamide), 875
+zonisamide, 875
+Zopax (alprazolam), 11
+zopiclone, 879
+Zopite (zotepine), 883
+zotepine, 883
+Z-Pam (temazepam), 755
+Zubsolv (buprenorphine with naloxone), 111
+zuclopenthixol, 889
+Zuledin (chlorpromazine), 153
+Zulex (acamprosate), 1
+Zulresso (brexanolone), 99
+Zyban (bupropion), 117
+Zymocomb (sulpiride), 741
+Zyprexa (olanzapine), 559
+Zyprexa Relprevv (olanzapine), 559
+Zyprexa Zydis (olanzapine), 559
+
+
+
+
+<<<PAGE 2629>>>
+
+Alzheimer disease
+caprylidene , 127
+donepezil , 243
+galantamine , 337
+memantine , 473
+rivastigmine , 699
+selegiline, 705
+Amnesia, Drug-induced
+midazolam , 499
+Anxiety
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone , 123
+chlordiazepoxide , 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate , 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam , 229
+dothiepin, 249
+doxepin , 255
+duloxetine, 263
+
+

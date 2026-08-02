@@ -1,0 +1,591 @@
+<<<PAGE 526>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Cholinergic Projections from Brainstem
+
+PFC
+
+S
+NA
+
+T
+
+BF
+
+Hy
+C
+NT
+
+A
+H
+
+SC
+
+Figure 12-31 Cholinergic projections from the brainstem. The
+cell bodies of some cholinergic neurons are found in the
+brainstem and project to many different brain regions, including
+the basal forebrain (BF), prefrontal cortex (PFC), thalamus (T),
+hypothalamus (Hy), amygdala (A), and hippocampus (H).
+
+Cholinergic Projections from Basal Forebrain
+
+functioning by stopping the destruction of ACh. This
+can be readily accomplished by inhibiting the enzyme
+acetylcholinesterase (Figure 12-23A and Figure 12-25).
+Inhibition of acetylcholinesterase causes the build-up of
+ACh because ACh’s action can no longer be as efficiently
+terminated. Enhanced availability of ACh is proven to
+impact cognitive and memory symptoms in AD patients,
+sometimes enhancing memory, but more often helping
+to retain current levels of memory function and thus
+slowing the decline in memory.
+Donepezil
+
+Donepezil is a reversible, long-acting, selective inhibitor
+of AChE without inhibition of BuChE (Figure 12-34).
+Donepezil inhibits AChE in pre- and postsynaptic
+cholinergic neurons, and in other areas of the central
+nervous system outside of cholinergic neurons where
+this enzyme is widespread (Figure 12-34A). Its central
+nervous system actions boost the availability of ACh at
+the remaining sites normally innervated by cholinergic
+neurons, but which are now suffering from a deficiency of
+ACh as presynaptic cholinergic neurons die off (Figures
+12-33B and 12-33C). Donepezil also inhibits AChE in
+the periphery, where its actions in the gastrointestinal
+(GI) tract can produce GI side effects (Figure 12-34B).
+Donepezil is easy to dose, has mostly GI side effects, and
+these are mostly transient.
+Rivastigmine
+
+PFC
+
+S
+NA
+
+T
+
+BF
+Hy
+C
+NT
+
+A
+H
+
+SC
+
+Figure 12-32 Cholinergic projections from the basal
+forebrain. The cell bodies of some cholinergic neurons are
+found in the basal forebrain (BF) and project to the prefrontal
+cortex (PFC), amygdala (A), and hippocampus (H). These
+projections may be particularly important for memory.
+
+process, receptor targets of cholinergic therapies are
+also lost and symptomatic pro-cholinergic treatment
+with acetylcholinesterase inhibitors begins to lose its
+effectiveness (Figure 12-33D; progression of AD and loss
+of cholinergic treatment effectiveness).
+Nevertheless, the most successful approach to
+the intermediate-term treatment of cognitive and
+memory symptoms in AD is to boost cholinergic
+510
+
+Rivastigmine is “pseudoirreversible” (which means it
+reverses itself over hours), intermediate-acting, not only
+selective for AChE over BuChE, but perhaps for AChE in
+the cortex and hippocampus over AChE in other areas
+of brain (Figure 12-35A). Rivastigmine also inhibits
+BuChE within glia, which may contribute somewhat
+to the enhancement of ACh levels within the central
+nervous system (Figure 12-35A). Inhibition of BuChE
+within glia may be even more important in patients
+with AD as they develop gliosis when cortical neurons
+die, because these glia contain BuChE, and inhibition
+of this increased enzyme activity may have a favorable
+action on increasing the availability of ACh to remaining
+cholinergic receptors via this second mechanism (Figure
+12-35B). Rivastigmine appears to have comparable safety
+and efficacy to donepezil, although it may have more
+GI side effects when given orally, perhaps due to its
+pharmacokinetic profile, and perhaps due to inhibition of
+both AChE and BuChE in the periphery (Figure 12-35C).
+However, there is now a transdermal formulation of
+rivastigmine available that greatly reduces the peripheral
+
+
+
+
+<<<PAGE 530>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+side effects of oral rivastigmine, probably by optimizing
+drug delivery, and reducing peak drug concentrations.
+
+inhibition of AChE (Figure 12-36A) could be enhanced
+when joined by the second action of galantamine at
+nicotinic receptors (Figure 12-36B). Thus, raising ACh
+levels at nicotinic cholinergic receptors by AChE inhibition
+could be boosted by the positive allosteric modulating
+actions of galantamine (Figure 12-36B). However, it has
+not been proven that this theoretically advantageous
+second action as a nicotinic positive allosteric modulator
+(PAM) translates into clinical advantages.
+
+Galantamine
+
+Galantamine is a very interesting cholinesterase
+inhibitor found in snowdrops and daffodils! It has a dual
+mechanism of action, matching AChE inhibition (Figure
+12-36A) with positive allosteric modulation of nicotinic
+cholinergic receptors (Figure 12-36B). Theoretically, the
+
+Rivastigmine Actions: CNS
+central
+acetylcholine
+neuron
+glial cell
+
+R
+R
+
+R
+AChE
+
+rivastigmine
+
+R
+BuChE
+
+R
+
+ACh
+
+R
+
+!
+514
+
+AChE rivastigmine
+
+Figure 12-35A Rivastigmine
+actions, part one. Rivastigmine is a
+pseudoirreversible inhibitor (it reverses
+itself over hours) of the enzymes
+acetylcholinesterase (AChE) and
+butyrylcholinesterase (BuChE), which
+are present both in the central nervous
+system (CNS) and peripherally. Central
+cholinergic neurons are important for
+regulation of memory; thus, in the CNS,
+the boost of acetylcholine caused by
+AChE blockade contributes to improved
+cognitive functioning. In particular,
+rivastigmine appears to be somewhat
+selective for AChE in the cortex and
+hippocampus – two regions important
+for memory – over other areas of the
+brain. Rivastigmine’s blockade of BuChE
+in glia may also contribute to enhanced
+acetylcholine levels.
+
+
+
+
+<<<PAGE 531>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+Rivastigmine Actions: Gliosis
+central
+acetylcholine
+neuron
+glial cell
+
+glial cell
+
+Figure 12-35B Rivastigmine actions,
+part two. Rivastigmine inhibits the
+enzymes acetylcholinesterase (AChE)
+and butyrylcholinesterase (BuChE),
+which are present both in the central
+nervous system (CNS) and peripherally.
+Inhibition of BuChE may be more
+important in later stages of disease,
+because as more cholinergic neurons
+die and gliosis occurs, BuChE activity
+increases.
+
+R
+R
+
+R
+
+R
+AChE
+
+R
+
+rivastigmine
+
+R
+
+BuChE
+
+BuChE
+
+R
+gliosis
+
+R
+
+AChE rivastigmine
+
+R
+
+R
+
+R
+
+R
+
+BuChE
+
+BuChE
+
+glial cell
+
+TARGETING GLUTAMATE FOR
+THE SYMPTOMATIC TREATMENT
+OF MEMORY AND COGNITION
+IN ALZHEIMER DISEASE
+Cholinergic dysfunction of course is not the
+only problem in AD, and there is progressive
+neurodegeneration of both cholinergic and
+glutamatergic circuits as patients transition from MCI
+to AD. Glutamate has been hypothesized to be released
+in excess once AD develops (see Figure 4-52D and
+discussion in Chapter 4; see also Figure 12-23A, left),
+perhaps in part triggered by neurotoxic Aβ plaques
+
+glial cell
+
+and neurofibrillary tangles that release glutamate from
+normal inhibition by GABA as GABA interneurons
+degenerate (see Chapter 4 and Figure 4-52D and also
+compare Figures 12-37A, 12-37B, and12-37C). That
+is, in the resting state, glutamate is normally quiet,
+and the NMDA receptor is physiologically blocked
+by magnesium ions (Figure 12-37A). When normal
+excitatory neurotransmission comes along, a flurry of
+glutamate is released (Figure 12-37B). The postsynaptic
+NMDA receptor is a “coincidence detector” and allows
+inflow of ions if three things happen at the same
+time: neuronal depolarization, often from activation
+
+515
+
+12
+
+
+
+
+<<<PAGE 532>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Rivastigmine Actions: Peripheral
+peripheral
+acetylcholine
+neuron
+
+R
+R
+
+AChE rivastigmine
+
+R
+
+R
+
+R
+
+ACh
+
+R
+
+BuChE
+R
+
+R
+
+gut
+
+AChE
+
+R
+
+R
+
+Figure 12-35C Rivastigmine actions, part three. Rivastigmine
+inhibits the enzymes acetylcholinesterase (AChE) and
+butyrylcholinesterase (BuChE), which are present both in the
+central nervous system (CNS) and peripherally. Peripheral
+cholinergic neurons in the gut are involved in gastrointestinal
+effects; thus the boost in peripheral acetylcholine caused by
+AChE and BuChE blockade may contribute to gastrointestinal
+side effects.
+
+of nearby AMPA (α-amino-3-hydroxy-5-methyl4-isoxazole-propionic acid) receptors; glutamate
+occupying its binding site on the NMDA receptor;
+and the cotransmitter glycine occupying its site on the
+NMDA receptor (Figure 12-37B). If plaques and tangles
+cause a steady “leak” of glutamate (see Chapter 4 and
+Figure 4-52D), this would theoretically interfere with
+the fine-tuning of glutamate neurotransmission, and
+possibly interfere with memory and learning, but not
+necessarily be damaging to neurons (Figure 12-37C).
+Hypothetically, as AD progresses, glutamate release
+could be increased to a level that is tonically bombarding
+the postsynaptic receptor, eventually killing off dendrites
+and then killing off full neurons due to excitotoxic cell
+death (Figure 12-23A and Figure 12-37C).
+Memantine
+
+The rationale for the use of memantine (Figure 12-38),
+a type of NMDA antagonist, is to reduce abnormal
+516
+
+activation of glutamate neurotransmission and thus
+interfere with the pathophysiology of AD, improve
+cognitive function, and slow the rate of decline over
+time (Figure 12-23A and Figure 12-37D). Blocking
+NMDA receptors chronically would hypothetically
+interfere with memory formation and neuroplasticity.
+So what do you do to decrease the excessive and
+sustained but low level of excitotoxic activation of
+NMDA receptors, yet not interfere with learning,
+memory, and neuroplasticity, and without inducing a
+schizophrenia-like state?
+The answer seems to be that you interfere with
+NMDA-mediated glutamatergic neurotransmission with
+a weak (low-affinity) NMDA antagonist that works at the
+same site, plugging the ion channel where the magnesium
+ion normally blocks this channel at rest (Figure 12-37D).
+That is, memantine is an uncompetitive open-channel
+NMDA receptor antagonist with low to moderate affinity,
+voltage dependence, and fast blocking and unblocking
+kinetics. That is a fancy way of saying that it only blocks
+the ion channel of the NMDA receptor when it is open.
+This is why it is called an open-channel antagonist and
+why it is dependent upon voltage: namely, to open the
+channel. It is also a fancy way of saying that memantine
+blocks the open channel quickly, but is readily and
+quickly reversible if a barrage of glutamate comes along
+from normal neurotransmission (Figure 12-37E).
+This concept is illustrated in Figures 12-37C, 12-37D,
+and 12-37E. First, the hypothetical state of the glutamate
+neuron during Alzheimer excitotoxicity is illustrated
+in Figure 12-37C. Here, steady, tonic, and excessive
+amounts of glutamate are continuously released in a
+manner that interferes with the normal resting state of
+the glutamate neuron (Figure 12-37C), and in a manner
+that interferes with established memory functions,
+new learning, and normal neuronal plasticity in AD.
+Eventually, this leads to the activation of intracellular
+enzymes that produce toxic free radicals that damage
+the membranes of the postsynaptic dendrite and
+eventually destroy the entire neuron (Figure 12-37C).
+When memantine is given, it blocks this tonic glutamate
+release from having downstream effects, hypothetically
+returning the glutamate neuron to a new resting state,
+despite the continuous release of glutamate (Figure 1237D). Theoretically, this stops the excessive glutamate
+from interfering with the resting glutamate neuron’s
+physiological activity, therefore improving memory; it
+also theoretically stops the excessive glutamate from
+causing neurotoxicity, therefore slowing the rate of
+
+
+
+
+<<<PAGE 637>>>
+
+Index
+
+processing speed, 317
+prodromal negative symptoms, 143
+proinflammatory molecules, 270
+projection neurons, 380
+prolactin levels, 164, 187, 193
+pseudobulbar affect, 535
+psilocin, 568
+psilocybin, 358, 376, 568, 569
+assisted psychotherapy,
+psychedelic experience, 568
+psychiatric vital sign, 381, 399, 401
+psychic pain, 302
+psychomotor retardation, 78
+psychopathic violence, 147, 577
+psychosis, 77, 158, See also schizophrenia
+cannabis and, 563
+dementia, prevalence in, 521
+dementia-related, 110, 134, 157, 521–3
+dementia-related, treatment of, 523–7
+depressive, 78, 157
+dopamine hypothesis of, 79–95,
+110–14, 141
+drug treatment. See drugs targeting
+serotonin receptors, drugs targeting
+dopamine D2 receptors
+glutamate hypothesis of, 95–114
+mood-related, 157
+neurotransmitter pathways, 79
+other psychotic disorders, 156–8
+paranoid, 78
+Parkinson’s disease. See Parkinson’s
+disease psychosis
+positive symptoms of, 90, 92–3
+serotonin hyperfunction hypothesis
+of, 131–41
+serotonin hypothesis of, 111–41
+symptoms of, 77–8
+psychotherapy
+anxiety disorders, 359
+cognitive behavioral therapy, 374,
+377, 576
+dissociation-assisted, 574
+hallucinogen-assisted, 355–8, 376
+ketamine-assisted, 574
+MDMA-assisted, 574
+psilocybin-assisted, 574
+PTSD, 378
+psychotic violence, 146, 577
+psychotomimetic experience, 569
+psychotropic drugs
+enzymes as targets of, 45–50
+G-protein-linked receptors as targets,
+36–45, 50
+ion channels as targets of, 51–76
+molecular targets, 29
+nomenclature, 29
+transporters as targets, 29–35, 50
+
+PTSD. See posttraumatic stress disorder
+(PTSD)
+quetiapine, 219, 220, 227–32, 326, 343
+quinidine, 353–4, 534, 536
+radafaxine, 304
+ramelteon, 439
+rasagiline, 338
+rashes, 352
+receptor tyrosine kinases, 48
+reconsolidation, 374, 375, 376, 574
+recurrence in depression, 284
+reduced positive affect, 280, 306
+relapse, 571
+in depression, 284, 286
+REM sleep, 413, 414, 435
+remission in depression, 284, 286
+repetitive transcranial magnetic
+stimulation (rTMS), 577
+reserpine, 174
+response in depression, 284
+resting state, 57, 61, 63
+retrograde neurotransmission, 6–7
+reuptake pumps, 174, See also
+transporters
+reversible enzyme inhibitors, 47
+reward, 542, 544
+reward conditioning, 545
+reward pathway, 572
+rheostat analogy, 43
+ribosomal RNA (rRNA), 27
+riluzole, 352
+risperidone, 222, 234, 235
+rivastigmine, 510–16
+RNA, 26–7
+RNA interference, 26
+roluperidone, 235, 241
+safinamide, 338
+SAGE-217, 322
+salivation, excessive, 224
+samidorphan, 201
+schizoaffective disorder, 249
+schizophrenia, 141, 156, See also
+psychosis
+affective symptoms, 95, 145
+aggressive symptoms, 145–7
+bipolar disorder and, 249
+cognitive symptoms, 95, 144, 157
+dopamine hypothesis of psychosis in,
+92–5
+drug treatment. See drugs targeting
+serotonin receptors, drugs targeting
+dopamine D2 receptors
+future drug treatment, 241–2
+genetics and, 148–50
+life expectancy, 156
+
+nature and nurture of, 149
+negative symptoms, 95, 142–4, 156
+neurodegeneration and, 154–6
+neurodevelopment and, 151–3
+NMDA receptor hypofunction, 111, 114
+positive symptoms, 141, 156
+positive symptoms of psychosis in, 92–3
+second messenger
+forming, 11–14
+to phosphoprotein cascades, 15–18
+to phosphoprotein messenger, 13–15
+secondary negative symptoms, 162–3
+sedation, 197, 202
+sedative hypnotics, 556
+segmental central sensitization, 384
+selegiline, 337, 338
+SEP-363856, 242
+serine, synthesis, 97–9
+serious mental illness (SMI), 156
+serotonergic hypnotics, 424–5
+serotonin, 5, 113
+anxiety and, 368–70
+dementia-related psychosis, 524–7
+neuronal network, 121
+projections, 279
+synthesis and termination of action,
+114–15
+serotonin antagonist/reuptake inhibitors
+(SARIs), 311–16
+serotonin blockers
+bipolar disorder spectrum, 338–45
+serotonin hyperfunction hypothesis of
+psychosis, 131–41
+serotonin hypothesis of psychosis,
+111–41
+serotonin network, 113–33
+constructing, 119–21
+serotonin partial agonist reuptake
+inhibitor (SPARI), 296–9
+serotonin receptors. See also drugs
+targeting serotonin receptors
+5HT1A, 116, 118, 121, 296–9, 317
+5HT1B, 125, 318
+5HT1B/D, 118, 119, 318
+5HT2A, 125
+5HT2A, dopamine release regulation,
+184–8
+5HT2A, hyperactivity/imbalance,
+111–41
+5HT2B, 117, 119
+5HT2C, 125, 293–4
+5HT3, 125–9, 309–13, 318
+5HT6, 130
+5HT7, 130–3, 318–24
+overview, 114
+serotonin transporters (SERTs), 31, 33
+inhibition of, 289, 296, 317, 318–24
+sertindole, 232, 240
+621
+
+

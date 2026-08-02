@@ -1,0 +1,917 @@
+<<<PAGE 108>>>
+
+Risperidone long-acting injection
+Risperidone was the first FGA to be made available as a depot, or long-acting, injectable formulation. Doses of 25–50mg every 2 weeks appear to be as effective as oral doses
+of 2–6mg/day.1 The long-acting injection also seems to be well tolerated – fewer than
+10% of patients experienced EPS, and fewer than 6% withdrew from a long-term trial
+because of adverse effects.2 Oral risperidone increases prolactin,3 as does RLAI,4 but
+levels appear to reduce somewhat following a switch from oral to injectable risperidone.5–7 Rates of tardive dyskinesia are said to be low.8 There are no direct comparisons
+with standard depots using randomised controlled designs, but comparisons from
+observational studies are available and results have been mixed. Switching from FGA
+depots in stable patients to RLAI has been shown to be less successful than remaining
+on the FGA depot;9 in contrast, discontinuation rates were lower with RLAI when
+compared with FGAs.10
+Uncertainty remains over the dose–response relationship for RLAI. Studies randomising subjects to different fixed doses of RLAI show no differences in response according
+to dose.11 One randomised, fixed-dose yearlong study suggested better outcome for
+50mg every two weeks than with 25mg, although no observed difference reached statistical significance.12 Naturalistic studies indicate doses higher than 25mg/2 weeks are
+frequently used.13,14 One study suggested higher doses were associated with better
+outcome.15,16
+Plasma levels afforded by 25mg/2 weeks seem to be similar to, or even lower than,
+levels provided by 2mg/day oral risperidone.17,18 One study of TDM samples found
+9.5% of plasma samples from people apparently receiving risperidone LAI contained
+no risperidone or 9OH-risperidone.19 Striatal dopamine D2 occupancies are low (perhaps subtherapeutic) in people receiving 25mg/2 weeks.20,21 So, although fixed-dose
+studies have not revealed clear advantages for doses above 25mg/2 weeks other indicators cast doubt on the assumption that 25mg/2 weeks will be adequate for all or even
+most patients. While this conundrum remains unresolved the need for careful dose titration becomes of great importance. This is perhaps most efficiently achieved by establishing the required dose of oral risperidone and converting this dose into the equivalent
+injection dose. Trials have clearly established that switching from 2mg oral to 25mg
+injection and 4mg oral to 50mg injection is usually successful2,22,23 (switching from 4mg/
+day to 25mg/2 week increases the risk of relapse24). There remains a question over the
+equivalent dose for 6mg oral: in theory, patients should be switched to 75mg injection,
+but this dose showed no advantage over lower doses in clinical trials and is in any case
+above the licensed maximum dose. Nevertheless, an observational study reported successful outcomes in patients treated with doses in excess of 75mg/2 weeks (range
+75–200mg) with continuation rates of 95% after 3 years.25 Paliperidone palmitate
+150mg a month is equivalent to oral risperidone 6mg/day. In fact, for many reasons,
+paliperidone palmitate (9-hydroxyrisperidone) may be preferred to risperidone injection (as Risperdal Consta): it acts acutely, can be given monthly, does not require cold
+storage and has a wider, more useful dose range (see the section on paliperidone LAI).
+Risperidone long-acting injection differs importantly from other depots, and the following should be noted:
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  87
+
+
+
+
+<<<PAGE 109>>>
+
+88  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Risperidone depot is not an esterified form of the parent drug. It contains risperidone
+coated in polymer to form microspheres. These microspheres have to be suspended in
+an aqueous base immediately before use.
+■■ The injection must be stored in a fridge (consider the practicalities for community
+staff).
+■■ It is available in doses of 25mg, 37.5mg and 50mg. The whole vial must be used
+(because of the nature of the suspension). This means that there is limited flexibility
+in dosing.
+■■ A test dose is not required or sensible. (Testing tolerability with oral risperidone is
+desirable but not always practical.)
+■■ It takes 3–4 weeks for the first injection to produce therapeutic plasma levels. Patients
+must be maintained on a full dose of their previous antipsychotic for at least 3 weeks
+after the administration of the first risperidone injection. Oral antipsychotic cover is
+sometimes required for longer (6–8 weeks). If the patient is not already receiving an
+oral antipsychotic, oral risperidone should be prescribed. (See Table 1.10 for advice
+on switching from depots.) Patients who refuse oral treatment and are acutely ill
+should not be given RLAI because of the long delay in drug release.
+■■ Risperidone depot must be administered every 2 weeks. The Product Licence does not
+allow longer intervals between doses. There is little flexibility to negotiate with
+patients about the frequency of administration, although monthly injections may be
+effective.26
+■■ The most effective way of predicting response to RLAI is to establish dose and
+response with oral risperidone.
+■■ Risperidone injection is not considered suitable for patients with treatment refractory
+schizophrenia, although there are studies showing positive effects.27,28
+
+CHAPTER 1
+
+■■
+
+For guidance on switching to risperidone long-acting injection, see Table 1.10.
+
+Table 1.10 Switching to risperidone long-acting injection (RLAI)
+Switching from
+
+Recommended method of switching
+
+Comments
+
+No treatment (new
+patient or recently
+non-compliant)
+
+Start risperidone oral at 2mg/day and
+titrate to effective dose. If tolerated,
+prescribe equivalent dose of RLAI
+
+Use oral risperidone before giving injection to
+assure good tolerability
+
+Continue with oral risperidone for at
+least 3 weeks then taper over 1–2 weeks.
+Be prepared to continue oral risperidone
+for longer
+
+Those stabilised on 2mg/day start on
+25mg/2 weeks
+Those on higher doses, start on
+37.5mg/2 weeks and be prepared to use
+50mg/2 weeks
+(Manufacturer advice may differ from this –
+our guidance is based on numerous studies of
+dose-related outcome and on comparative
+plasma levels)
+
+
+
+
+<<<PAGE 110>>>
+
+Table 1.10 (Continued)
+Switching from
+
+Recommended method of switching
+
+Comments
+
+Oral risperidone
+
+Prescribe equivalent dose of RLAI
+
+See above
+
+Oral antipsychotics
+(not risperidone)
+
+Either:
+a. Switch to oral risperidone and titrate
+to effective dose. If tolerated, prescribe
+equivalent dose of RLAI
+
+Dose assessment is difficult in those switching
+from another antipsychotic. Broadly speaking,
+those on low oral doses should be switched to
+25mg/2 weeks
+
+Continue with oral risperidone for at
+least 3 weeks then taper over
+1–2 weeks. Be prepared to continue
+oral risperidone for longer
+
+‘Low’ in this context means towards the lower
+end of the licensed dose range or around the
+minimum dose known to be effective
+
+Or:
+b. Give RLAI and then slowly discontinue
+oral antipsychotics after 3–4 weeks. Be
+prepared to continue oral
+antipsychotics for longer
+Depot antipsychotic
+
+Give RLAI one week before the last
+depot injection is given
+
+Those on higher oral doses should receive
+37.5mg or 50mg every two weeks. The
+continued need for oral antipsychotics after
+3–4 weeks may indicate that higher doses of
+RLAI are required
+Dose of RLAI difficult to predict. For those on
+low doses (see above) start at 25mg/2 weeks
+and then adjust as necessary
+Start RLAI at 37.5mg/2 weeks in those
+previously maintained on doses in the middle
+or upper range of licensed doses. Be prepared
+to increase to 50mg/2 weeks
+
+Antipsychotic
+polypharmacy with
+depot
+
+Aim to treat patient with RLAI as the sole
+antipsychotic. As before, RLAI dose should be
+Slowly taper oral antipsychotics 3–4 weeks dictated, as far as is possible, by the total dose
+of oral and injectable antipsychotic
+later. Be prepared to continue oral
+Give RLAI 1 week before the last depot
+injection is given
+
+antipsychotics for longer
+
+References
+1. Chue P, et al. Comparative efficacy and safety of long-acting risperidone and risperidone oral tablets. Eur Neuropsychopharmacol 2005;
+15:111–117.
+2. Fleischhacker WW, et al. Treatment of schizophrenia with long-acting injectable risperidone: a 12-month open-label trial of the first longacting second-generation antipsychotic. J Clin Psychiatry 2003; 64:1250–1257.
+3. Kleinberg DL, et al. Prolactin levels and adverse events in patients treated with risperidone. J Clin Psychopharmacol 1999; 19:57–61.
+4. Fu DJ, et al. Paliperidone palmitate versus oral risperidone and risperidone long-acting injection in patients with recently diagnosed schizophrenia: a tolerability and efficacy comparison. Int Clin Psychopharmacol 2014; 29:45–55.
+5. Bai YM, et al. A comparative efficacy and safety study of long-acting risperidone injection and risperidone oral tablets among hospitalized
+patients: 12-week randomized, single-blind study. Pharmacopsychiatry 2006; 39:135–141.
+6. Bai YM, et al. Pharmacokinetics study for hyperprolactinemia among schizophrenics switched from risperidone to risperidone long-acting
+injection. J Clin Psychopharmacol 2007; 27:306–308.
+7. Peng PW, et al. The disparity of pharmacokinetics and prolactin study for risperidone long-acting injection. J Clin Psychopharmacol 2008;
+28:726–727.
+8. Gharabawi GM, et al. An assessment of emergent tardive dyskinesia and existing dyskinesia in patients receiving long-acting, injectable risperidone: results from a long-term study. Schizophr Res 2005; 77:129–139.
+9. Covell NH, et al. Effectiveness of switching from long-acting injectable fluphenazine or haloperidol decanoate to long-acting injectable risperidone microspheres: an open-label, randomized controlled trial. J Clin Psychiatry 2012; 73:669–675.
+10. Suzuki H, et al. Comparison of treatment retention between risperidone long-acting injection and first-generation long-acting injections in
+patients with schizophrenia for 5 years. J Clin Psychopharmacol 2016; 36:405–406.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  89
+
+
+
+
+<<<PAGE 111>>>
+
+CHAPTER 1
+
+90  The Maudsley® Prescribing Guidelines in Psychiatry
+
+11. Kane JM, et al. Long-acting injectable risperidone: efficacy and safety of the first long-acting atypical antipsychotic. Am J Psychiatry 2003;
+160:1125–1132.
+12. Simpson GM, et al. A 1-year double-blind study of 2 doses of long-acting risperidone in stable patients with schizophrenia or schizoaffective
+disorder. J Clin Psychiatry 2006; 67:1194–1203.
+13. Turner M, et al. Long-acting injectable risperidone: safety and efficacy in stable patients switched from conventional depot antipsychotics.
+Int Clin Psychopharmacol 2004; 19:241–249.
+14. Taylor DM, et al. Early clinical experience with risperidone long-acting injection: a prospective, 6-month follow-up of 100 patients. J Clin
+Psychiatry 2004; 65:1076–1083.
+15. Taylor DM, et al. Prospective 6-month follow-up of patients prescribed risperidone long-acting injection: factors predicting favourable outcome. Int J Neuropsychopharmacol 2006; 9:685–694.
+16. Taylor DM, et al. Risperidone long-acting injection: a prospective 3-year analysis of its use in clinical practice. J Clin Psychiatry 2009;
+70:196–200.
+17. Nesvag R, et al. Serum concentrations of risperidone and 9-OH risperidone following intramuscular injection of long-acting risperidone
+compared with oral risperidone medication. Acta Psychiatr Scand 2006; 114:21–26.
+18. Castberg I, et al. Serum concentrations of risperidone and 9-hydroxyrisperidone after administration of the long-acting injectable form of
+risperidone: evidence from a routine therapeutic drug monitoring service. Ther Drug Monit 2005; 27:103–106.
+19. Bowskill SV, et al. Risperidone and total 9-hydroxyrisperidone in relation to prescribed dose and other factors: data from a therapeutic drug
+monitoring service, 2002–2010. Ther Drug Monit 2012; 34:349–355.
+20. Gefvert O, et al. Pharmacokinetics and D2 receptor occupancy of long-acting injectable risperidone (Risperdal ConstaTM) in patients with
+schizophrenia. Int J Neuropsychopharmacol 2005; 8:27–36.
+21. Remington G, et al. A PET study evaluating dopamine D2 receptor occupancy for long-acting injectable risperidone. Am J Psychiatry 2006;
+163:396–401.
+22. Lasser RA, et al. Clinical improvement in 336 stable chronically psychotic patients changed from oral to long-acting risperidone: a 12-month
+open trial. Int J Neuropsychopharmacol 2005; 8:427–438.
+23. Lauriello J, et al. Long-acting risperidone vs. placebo in the treatment of hospital inpatients with schizophrenia. Schizophr Res 2005;
+72:249–258.
+24. Bai YM, et al. Equivalent switching dose from oral risperidone to risperidone long-acting injection: a 48-week randomized, prospective,
+single-blind pharmacokinetic study. J Clin Psychiatry 2007; 68:1218–1225.
+25. Fernandez-Miranda JJ, et al. Effectiveness, good tolerability, and high compliance of doses of risperidone long-acting injectable higher than
+75 mg in people with severe schizophrenia: a 3-year follow-up. J Clin Psychopharmacol 2015; 35:630–634.
+26. Uchida H, et al. Monthly administration of long-acting injectable risperidone and striatal dopamine D2 receptor occupancy for the management of schizophrenia. J Clin Psychiatry 2008; 69:1281–1286.
+27. Meltzer HY, et al. A six month randomized controlled trial of long acting injectable risperidone 50 and 100mg in treatment resistant schizophrenia. Schizophr Res 2014; 154:14–22.
+28. Kimura H, et al. Risperidone long-acting injectable in the treatment of treatment-resistant schizophrenia with dopamine supersensitivity
+psychosis: results of a 2-year prospective study, including an additional 1-year follow-up. J Psychopharmacology 2016; 30:795–802.
+
+
+
+
+<<<PAGE 112>>>
+
+Risperidone subcutaneous long-acting injection
+RBP-7000 or Perseris is a monthly subcutaneous LAI that is available in 90mg and 120mg
+dosage forms. The lower dose is equivalent to 3mg day oral risperidone and the higher dose
+4mg a day.1
+The injection is acutely effective at both licensed doses, without the need for oral pretreatment or oral supplementation.2,3 The 120mg dose was numerically more effective
+than 90mg at all time points. In the longer term, monthly doses of 120mg are effective
+in maintaining or improving symptom scale scores.4 It has clear theoretical advantages
+over Risperdal Consta, being rapidly active, not requiring oral supplementation and, as
+a subcutaneous injection, being more acceptable to patients5 with a low risk of painful
+injection.6 One disadvantage is that the injection procedure has several steps and both
+the complexity of preparation and subcutaneous administration are new to psychiatry.6
+A second potential disadvantage is that doses above the equivalent of 4mg a day may
+not be given, a fact that may limit clinical utility.7 (In respect to Cmax, Cmin and Cave 3mg/
+day = 90mg/28 days; and 4mg/day = 120mg/28 days1,8). Nonetheless, dopamine receptor occupancies are broadly consistent with clinical efficacy: at steady state, 90mg gives
+occupancies ranging from approximately 40–80%; 120mg, 60–85%.9
+
+Approximate equivalent doses (mg)10
+Risperidone oral (daily)
+
+Risperdal Consta (2-weekly)
+
+Paliperidone
+palmitate (monthly)
+
+RBP-7000 (monthly)
+
+2
+
+25
+
+50
+
+Not available*
+
+3
+
+37.5
+
+75
+
+90
+
+4
+
+50
+
+100
+
+120
+
+6
+
+Not available
+
+150
+
+Not available
+
+*Laffont et al.11 suggest 90mg is equivalent to 25mg/2-weekly Risperdal Consta
+
+References
+1. US Food and Drug Administration. Cross-discipline team leader review. RBP-7000 (risperidone-ATRIGEL) 2018; https://www.accessdata.
+fda.gov/drugsatfda_docs/nda/2018/210655Orig1s000SumR.pdf.
+2. Nasser AF, et al. Efficacy, safety, and tolerability of RBP-7000 once-monthly risperidone for the treatment of acute schizophrenia: an 8-week,
+randomized, double-blind, placebo-controlled, multicenter phase 3 study. J Clin Psychopharmacol 2016; 36:130–140.
+3. Le Moigne A, et al. Reanalysis of a phase 3 trial of a monthly extended-release risperidone injection for the treatment of acute schizophrenia.
+J Clin Psychopharmacol 2021; 41:76–77.
+4. Andorn A, et al. Monthly extended-release risperidone (RBP-7000) in the treatment of schizophrenia: results from the phase 3 program. J
+Clin Psychopharmacol 2019; 39:428–433.
+5. Tchobaniouk LV, et al. Once-monthly subcutaneously administered risperidone in the treatment of schizophrenia: patient considerations.
+Patient Prefer Adherence 2019; 13:2233–2241.
+6. Citrome L. Sustained-release risperidone via subcutaneous injection: a systematic review of RBP-7000 (PERSERIS(™)) for the treatment of
+schizophrenia. Clin Schizophr Relat Psychoses 2018; 12:130–141.
+7. Clark I, et al. Newer formulations of risperidone: role in the management of psychotic disorders. CNS Drugs 2020; 34:841–852.
+8. US Food and Drug Administration. Clinical pharmacology and biopharmaceutics review(s). Perseris 2018; https://www.accessdata.fda.gov/
+drugsatfda_docs/nda/2018/210655Orig1s000ClinPharmR.pdf.
+9. Laffont CM, et al. Population pharmacokinetics and prediction of dopamine D2 receptor occupancy after multiple doses of RBP-7000, a new
+sustained-release formulation of risperidone, in schizophrenia patients on stable oral risperidone treatment. Clin Pharmacokinet 2014;
+53:533–543.
+10. Karas A, et al. Perseris(TM): a new and long-acting, atypical antipsychotic drug-delivery system. P & T 2019; 44:460–466.
+11. Laffont CM, et al. Population pharmacokinetic modeling and simulation to guide dose selection for RBP-7000, a new sustained-release formulation of risperidone. J Clin Pharmacol 2015; 55:93–103.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  91
+
+
+
+
+<<<PAGE 114>>>
+
+Suspension14
+
+Risperidone
+
+Site(s) of
+administration
+
+1-monthly14
+
+Intra-muscular
+injection into the
+gluteal or deltoid
+muscle15
+
+Sub-cutaneous
+1- and
+2- monthly12 injection
+
+Dosing
+interval
+
+*LAI tested only in the presence of pre/post-treatment with oral therapy
+**Best practice in order to establish efficacy and tolerability
+
+Risperidone
+ISM
+or Doria
+
+Suspension
+
+Trade name Formulation
+
+Risperidone
+N/A
+extended
+release for SC
+injection
+(TV-46000)
+
+Drug
+
+75mg/100mg Yes
+
+2 dose
+No12
+regimens
+(TV-46000-A
+&
+TV-46000-B)
+being
+investigated13
+No16
+
+No13
+
+Yes
+
+Yes13
+
+Phase 3 study
+completed
+Awaiting
+EMA approval
+202017
+
+Phase 3 study
+in progress13
+
+Pre-treatment Pre-treatment
+with oral
+with oral
+therapy
+Regulatory
+Dosing
+Pre-mixing therapy
+desirable**
+status
+essential*
+information required
+
+Does not require loading doses or oral
+supplementation/3-day trial of oral
+risperidone (2mg/day) to check for
+hypersensitivity in risperidone naïve
+patients18
+
+Phase 3 results are awaited in 202012
+
+Additional information
+
+
+
+
+<<<PAGE 175>>>
+
+CHAPTER 1
+
+154  The Maudsley® Prescribing Guidelines in Psychiatry
+
+family history of diabetes,23,32 although these factors greatly increase the risk of developing diabetes on clozapine.33
+Clozapine appears to increase plasma levels of insulin in a clozapine level-dependent
+fashion.34,35 It has been shown to be more likely than FGAs to increase plasma glucose
+and insulin following oral glucose challenge.36 Testing for diabetes is essential given the
+high prevalence of diabetes in people receiving clozapine.37
+Olanzapine
+As with clozapine, olanzapine has been strongly linked to impaired glucose tolerance,
+diabetes and diabetic ketoacidosis.38 Olanzapine and clozapine appear to directly
+induce insulin resistance.39,40 Risk of diabetes has also been reported to be higher with
+olanzapine than with FGA drugs,41 again with a particular risk in younger patients.25
+The time course of development of diabetes has not been established but impaired glucose tolerance seems to occur even in the absence of obesity and family history of diabetes.23,32 Olanzapine is probably more diabetogenic than risperidone.42–46 Olanzapine
+is also associated with plasma levels of glucose and insulin higher than those seen with
+FGAs (after oral glucose load).36,47
+Risperidone
+Risperidone has been linked, mainly in case reports, to impaired glucose tolerance,48
+diabetes49 and ketoacidosis.50 The number of reports of such adverse effects is substantially smaller than with either clozapine or olanzapine.51 At least one study has suggested that changes in fasting glucose are significantly less common with risperidone
+than with olanzapine,42 but other studies have detected no difference.52
+Risperidone seems no more likely than FGA drugs to be associated with diabetes,25,41,43 although there may be an increased risk in patients under 40 years of age.25
+Risperidone has, however, been observed adversely to affect fasting glucose and plasma
+glucose (following glucose challenge) compared with the levels seen in healthy volunteers (but not compared with patients taking FGAs).36
+Quetiapine
+Like risperidone, quetiapine has been linked to cases of new-onset diabetes and ketoacidosis.53–55 Again, the number of reports is much lower than with olanzapine or clozapine. Quetiapine appears to be more likely than FGA medications to be associated with
+diabetes.25,56 Two studies showed quetiapine to be equal to olanzapine in the incidence
+of diabetes.52,57 The risk with quetiapine may be dose-related, with daily doses of 400mg
+or more being clearly linked to changes in HbA1C.58
+
+Other SGAs
+Amisulpride appears not to elevate plasma glucose59 and seems not to be associated
+with diabetes.60 There is one reported case of ketoacidosis occurring in a patient given
+the closely related medication, sulpiride.61 Data for aripiprazole62–65 and ziprasidone66,67
+
+
+
+
+<<<PAGE 226>>>
+
+65. Kelly DL, et al. Adverse effects and laboratory parameters of high-dose olanzapine vs. clozapine in treatment-resistant schizophrenia. Ann
+Clin Psychiatry 2003; 15:181–186.
+66. Zink M, et al. Combination of amisulpride and olanzapine in treatment-resistant schizophrenic psychoses. Eur Psychiatry 2004; 19:56–58.
+67. Duggal HS. Aripirazole-olanzapine combination for treatment of schizophrenia. Can J Psychiatry 2004; 49:151.
+68. Heresco-Levy U, et al. High-dose glycine added to olanzapine and risperidone for the treatment of schizophrenia. Biol Psychiatry 2004;
+55:165–171.
+69. Dursun SM, et al. Augmenting antipsychotic treatment with lamotrigine or topiramate in patients with treatment-resistant schizophrenia: a
+naturalistic case-series outcome study. J Psychopharm 2001; 15:297–301.
+70. Suzuki T, et al. Effectiveness of antipsychotic polypharmacy for patients with treatment refractory schizophrenia: an open-label trial of olanzapine plus risperidone for those who failed to respond to a sequential treatment with olanzapine, quetiapine and risperidone. Human
+Psychopharmacology 2008; 23:455–463.
+71. Kotler M, et al. Sulpiride augmentation of olanzapine in the management of treatment-resistant chronic schizophrenia: evidence for improvement of mood symptomatology. Int Clin Psychopharmacol 2004; 19:23–26.
+72. Mellor JE, et al. Omega-3 fatty acid supplementation in schizophrenic patients. Human Psychopharmacology 1996; 11:39–46.
+73. Puri BK, et al. Sustained remission of positive and negative symptoms of schizophrenia following treatment with eicosapentaenoic acid. Arch
+Gen Psychiatry 1998; 55:188–189.
+74. Zheng W, et al. Adjunctive ondansetron for schizophrenia: a systematic review and meta-analysis of randomized controlled trials. J Psychiatr
+Res 2019; 113:27–33.
+75. Martínez-Andrés JA, et al. Switching from clozapine to paliperidone palmitate-3-monthly improved obesity, hyperglycemia and dyslipidemia
+lowering antipsychotic dose equivalents in a treatment-resistant schizophrenia cohort. Int Clin Psychopharmacol 2020; 35:163–169.
+76. Nasrallah HA, et al. Successful treatment of clozapine-nonresponsive refractory hallucinations and delusions with pimavanserin, a serotonin
+5HT-2A receptor inverse agonist. Schizophr Res 2019; 208:217–220.
+77. Salimi S, et al. A placebo controlled study of the propentofylline added to risperidone in chronic schizophrenia. Prog Neuropsychopharmacol
+Biol Psychiatry 2008; 32:726–732.
+78. Reznik I, et al. Long-term efficacy and safety of quetiapine in treatment-refractory schizophrenia: a case report. Int J Psychiatry Clin Pract
+2000; 4:77–80.
+79. De Nayer A, et al. Efficacy and tolerability of quetiapine in patients with schizophrenia switched from other antipsychotics. Int J Psychiatry
+Clin Pract 2003; 7:59–66.
+80. Larmo I, et al. Efficacy and tolerability of quetiapine in patients with schizophrenia who switched from haloperidol, olanzapine or risperidone. Human Psychopharmacology 2005; 20:573–581.
+81. Boggs DL, et al. Quetiapine at high doses for the treatment of refractory schizophrenia. Schizophr Res 2008; 101:347–348.
+82. Lindenmayer JP, et al. A randomized, double-blind, parallel-group, fixed-dose, clinical trial of quetiapine at 600 versus 1200 mg/d for patients
+with treatment-resistant schizophrenia or schizoaffective disorder. J Clin Psychopharmacol 2011; 31:160–168.
+83. Quintero J, et al. The effectiveness of the combination therapy of amisulpride and quetiapine for managing treatment-resistant schizophrenia:
+a naturalistic study. J Clin Psychopharmacol 2011; 31:240–242.
+84. Aziz MA, et al. Remission of positive and negative symptoms in refractory schizophrenia with a combination of haloperidol and quetiapine:
+two case studies. J Psychiatr Pract 2006; 12:332–336.
+85. Tharoor H, et al. Raloxifene trial in postmenopausal woman with treatment-resistant schizophrenia. Arch Women’s Mental Health 2015;
+18:741–742.
+86. Usall J, et al. Raloxifene as an adjunctive treatment for postmenopausal women with schizophrenia: a 24-week double-blind, randomized,
+parallel, placebo-controlled trial. Schizophr Bull 2016; 42:309–317.
+87. Usall J, et al. Raloxifene as an adjunctive treatment for postmenopausal women with schizophrenia: a double-blind, randomized, placebocontrolled trial. J Clin Psychiatry 2011; 72:1552–1557.
+88. Weiser M, et al. Raloxifene plus antipsychotics versus placebo plus antipsychotics in severely ill decompensated postmenopausal women with
+schizophrenia or schizoaffective disorder: a randomized controlled trial. J Clin Psychiatry 2017; 78:e758–e765.
+89. Kulkarni J, et al. Effect of adjunctive raloxifene therapy on severity of refractory schizophrenia in women: a randomized clinical trial. JAMA
+Psychiatry 2016; 73:947–954.
+90. Farokhnia M, et al. A double-blind, placebo controlled, randomized trial of riluzole as an adjunct to risperidone for treatment of negative
+symptoms in patients with chronic schizophrenia. Psychopharmacology 2014; 231:533–542.
+91. Breier AF, et al. Clozapine and risperidone in chronic schizophrenia: effects on symptoms, parkinsonian side effects, and neuroendocrine
+response. Am J Psychiatry 1999; 156:294–298.
+92. Bondolfi G, et al. Risperidone versus clozapine in treatment-resistant chronic schizophrenia: a randomized double-blind study. The
+Risperidone Study Group. Am J Psychiatry 1998; 155:499–504.
+93. Conley RR, et al. Risperidone, quetiapine, and fluphenazine in the treatment of patients with therapy-refractory schizophrenia. Clin
+Neuropharmacol 2005; 28:163–168.
+94. Lerner V, et al. Combination of ‘atypical’ antipsychotic medication in the management of treatment-resistant schizophrenia and schizoaffective disorder. Prog Neuropsychopharmacol Biol Psychiatry 2004; 28:89–98.
+95. Meltzer HY, et al. A six month randomized controlled trial of long acting injectable risperidone 50 and 100mg in treatment resistant schizophrenia. Schizophr Res 2014; 154:14–22.
+96. Akhondzadeh S, et al. Effect of ritanserin, a 5HT2A/2C antagonist, on negative symptoms of schizophrenia: a double-blind randomized
+placebo-controlled study. Prog Neuropsychopharmacol Biol Psychiatry 2008; 32:1879–1883.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  205
+
+
+
+
+<<<PAGE 295>>>
+
+274  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 2
+
+Antipsychotic long-acting injections in bipolar disorder
+LAIs are widely used in BD although none is formally licensed in the UK for this indication (Abilify Maintena is approved by the FDA in the US1). Support for their use is
+rather limited: there have been dozens of open-label trials or case series published, but
+few included more than a handful of subjects.2–4 Retrospective cohort studies and population level studies do, nonetheless, offer some support for the use of LAIs (mainly
+SGAs) in bipolar maintenance.2 There have also been seven RCTs, only five of which
+were sufficiently powered to produce interpretable results (the remaining two trials
+included only 30 subjects in total5,6). These five RCTs represent the highest level of evidence for LAIs in BD. Their details are set out in Table 2.5.
+Few firm conclusions can be drawn from the controlled trials outlined in the table.
+Risperidone LAI is clearly effective either as the sole treatment or as an adjunct but
+provides protection only against manic, hypomanic and mixed-manic episodes and neither decreases nor increases the risk of depressive relapse. Risperidone LAI may be less
+effective than oral olanzapine. It might be tentatively assumed that paliperidone LAI
+has similar effects to risperidone LAI. Oral paliperidone prevents manic relapse in BD7
+and case reports describe good outcomes with the LAI form.8 Aripiprazole LAI also
+protects against manic relapse and does not appear to affect the risk of depression.
+
+Table 2.5 Randomised controlled trials of long-acting injections in bipolar disorder
+Study
+
+N
+
+LAI
+
+Comparator Duration
+
+Ahlfors et al. 33 (19/14)
+19819
+
+Flupentixol
+decanoate
+
+Lithium
+
+18 months Neither treatment improved main
+outcome (number of mood episodes)
+
+MacFadden
+et al.10*
+
+124 (65/59)
+
+Risperidone
+(adjunct)
+
+Placebo
+(adjunct)
+
+12 months Risperidone LAI reduced rate of relapse
+compared with placebo (relative risk 2.3)
+
+Quiroz
+et al.11*
+
+303 (154/149) Risperidone Placebo
+24 months Overall relapse rate was 30% with
+monotherapy monotherapy
+risperidone, 56% with placebo.
+Risperidone did not protect against
+depressive relapse
+
+Vieta
+et al.12*
+
+18 months
+398
+Risperidone Placebo or
+(132/135/131) monotherapy oral
+olanzapine
+monotherapy
+
+Calabrese
+et al.13*
+
+266 (133/133) Aripiprazole Placebo
+12 months Relapse to any mood episode 26.5% with
+monotherapy monotherapy
+aripiprazole; 51.1% with placebo. No
+clear effect on recurrence of depression.
+An open follow-on study of this RCT (that
+also included patients newly prescribed
+aripiprazole) showed somewhat better
+levels of protection: 87–98% of participants
+remained well over 12 months.14
+
+*Trial sponsored by the manufacturer.
+
+Outcome
+
+Recurrence of any mood episode: oral
+olanzapine 23.8%; risperidone LAI
+38.9%; placebo 56.4%. Olanzapine and
+risperidone reduced the risk of elevated
+mood episode but only olanzapine
+reduced the risk of depression
+
+
+
+
+<<<PAGE 570>>>
+
+Children and adolescents  549
+
+Table 5.1 Summary of RCT evidence on medication used in youth with bipolar mania
+Medication
+
+Comments
+
+Lithium
+
+Lithium is cleared relatively quickly in children so twice daily dosing will be required,
+especially when using liquid or non-modified release preparations.20 One double-blind
+placebo-controlled randomised trial21 showed significant reductions in substance use and
+clinical ratings after 6 weeks, in 25 adolescents with BD and comorbid substance misuse. In
+a double-blind placebo-controlled discontinuation trial (N = 40) over 2 weeks, no significant
+difference in relapse rates were found between lithium and placebo22
+A later double-blind placebo-controlled study (N = 81), over 8 weeks, demonstrated a
+significantly larger change in YMRS score in lithium-treated youth, but with a differentiation
+from the placebo group only appearing after 6 weeks of treatment. There was a significant
+increase in thyrotropin with lithium, but no difference in weight gain23
+Lithium and divalproex did not differ in an 18-month maintenance trial in youths (N = 60),
+who initially stabilised on the combination pharmacotherapy of lithium and divalproex.24
+However, given the compelling evidence for lithium maintenance and prophylaxis in adults,
+we recommend that clinicians consider its use in adolescents in preference to valproate
+
+Valproate
+
+In an RCT (N = 150)28 divalproex ER (titrated to clinical response or 80–125mg/L) did not
+lead to significant differences in mean YMRS compared with placebo at 4 weeks (also see
+risperidone and quetiapine sections below)
+
+Oxcarbazepine
+
+A double-blind placebo-controlled study (N = 116) did not show significant differences
+between placebo and oxcarbazepine (mean dose 1,515mg/day) in reducing mania rating at
+7 weeks29
+
+Olanzapine
+
+A double-blind, placebo-controlled study (N = 161)30 showed olanzapine (5–20mg/day) to
+be significantly more effective than placebo in YMRS mean score reduction over a period of
+3 weeks. Note the higher weight gain in the treatment group (weight gain was 3.7kg for
+olanzapine versus 0.3kg for placebo) and the associated significantly increased fasting
+glucose, total cholesterol, AST, ALT and uric acid
+
+Risperidone
+
+A double-blind, placebo-controlled study (N = 169) showed risperidone (at doses 0.5–2.5 or
+3–6mg) to be significantly more effective than placebo in YMRS mean score reduction in a
+3-week follow up.31 The lower dose seems to lead to same benefits at a lower risk of side
+effects. Sleepiness and fatigue were common in the treatment arms. Note, mean weight
+increase in treatment groups (0.7kg versus 1.7kg for the low and 1.4 for the high dose arm)
+In the Treatment of Early Age Mania (TEAM) study, higher response rates (and metabolic side
+effects) occurred with risperidone (mean dose of 2.57mg) versus lithium (mean level of
+1.09mmol/L) and divalproex sodium (mean level of 113.6mg/L).32 A randomised follow-up of
+this study, showed again the superiority of risperidone as an alternative treatment for
+non-responders to lithium and divalproex sodium, and as an add-on treatment to partially
+responders to the two MS.33 However, these results need to be interpreted with caution as the
+definition of mania was broad and different to how bipolar disorder is defined by most UK
+clinicians. Similar reasons provoke caution when considering another placebo-controlled
+double-blind trial showing significantly better results for risperidone (mean dose 0.5mg) versus
+valproic acid (mean level 81mg/L) in 3–7 years old children supposedly diagnosed with mania34
+(Continued)
+
+CHAPTER 5
+
+A meta analysis25 found lithium to be ‘clearly inferior’ to risperidone in mania. One small
+6-month study found higher relapse rates in those who discontinued lithium compared
+with those who continued.26 Another naturalistic 8-month study showed lithium to be
+effective and well tolerated27
+
+
+
+
+<<<PAGE 857>>>
+
+836  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 11.1 (Continued)
+Sample
+timing
+
+Time to steady
+state
+
+0.6–1.0mmol/L
+(0.4mmol may be
+sufficient for some
+patients/
+indications;
+>1.0mmol/L
+required for mania)
+
+12 hours
+
+5 days
+Post-dose
+
+Well-established target range,
+albeit derived from ancient data
+sources. A fairly recent study17
+suggested 0.6mmol/L was the
+minimum level for a prophylactic
+effect.
+
+Olanzapine
+
+20–40µg/L
+
+12 hours
+
+1 week
+
+See text.
+
+Paliperidone18
+
+20–60µg/L
+(9-OH risperidone)
+
+Trough
+
+2–3 days oral
+2 months depot
+
+Target range is the same as that
+established for risperidone.19 As
+with risperidone, routine plasma
+level monitoring is not
+recommended.
+
+Phenytoin5
+
+10–20mg/L
+
+Trough
+
+Variable
+
+Follows zero-order kinetics.
+Free levels may be useful in some
+circumstances.
+
+Quetiapine
+
+Around
+50–100µg/L?
+
+Trough?
+
+2–3 days oral
+
+Target range poorly defined.
+Plasma level monitoring not
+recommended. See text.
+
+Risperidone
+
+20–60µg/L
+(active moiety –
+risperidone + 9-OH
+risperidone)
+
+Trough
+
+2–3 days oral
+6–8 weeks
+injection
+
+Routine plasma level monitoring is
+not recommended.
+See text.
+
+Tricyclics20
+
+Nortriptyline
+50–150µg/L
+
+Trough
+
+2–3 days
+
+Rarely used and of dubious benefit.
+Use ECG to assess toxicity.
+
+Trough
+
+2–3 days
+
+Some doubt over value of levels in
+epilepsy and in bipolar disorder.
+Some evidence that, in mania,
+levels up to 125mg/L are tolerated
+and more effective than lower
+concentrations. Valproate plasma
+levels are linearly related to plasma
+ammonia.24
+
+Target range
+
+Lithium12–16
+
+CHAPTER 11
+
+Drug
+
+Comments
+
+Amitriptyline
+100–200µg/L
+
+Valproate4,5,21–23
+
+50–100mg/L
+Epilepsy and
+bipolar
+
+
+
+
+<<<PAGE 861>>>
+
+CHAPTER 11
+
+840  The Maudsley® Prescribing Guidelines in Psychiatry
+
+have major therapeutic effects and their concentrations are only loosely associated with
+parent drug levels.106
+Most current reports of quetiapine concentration associations are derived from analysis of trough samples. Because of the short half-life of quetiapine, trough levels tend to
+drop to within a relatively small range regardless of dose and previous peak level. Thus
+peak plasma levels may be more closely related to dose and clinical response,97 although
+monitoring of such is not currently justified in the absence of an established peak
+plasma target range. Interestingly, a study of quetiapine in patients with borderline
+personality disorder or drug-induced psychosis showed a linear relationship between
+response and 12-hour plasma level.104 Peak to trough variation is greater for IR formulations (roughly a maximum of 4000µg/L to zero) than for slow release preparations
+(roughly a maximum of 3000µg/L to around 100µg/L).43
+Quetiapine has an established dose–response relationship, and appears to be well
+tolerated at doses well beyond the licensed dose range.107 In practice, dose adjustment
+should be based on patient response and tolerability.
+
+Risperidone
+The therapeutic range for risperidone is generally agreed to be 20–60µg/L of the active
+moiety (risperidone + 9-OH-risperidone)91,108,109 although other ranges (25–150µg/L
+and 25–80µg/L) have been proposed.110 Plasma levels of 20–60µg/L are usually afforded
+by oral doses of between 3mg and 6mg a day.108,111–113 Occupancy of striatal dopamine
+D2 receptors has been shown to be around 65% (the minimum required for acute therapeutic effect) at plasma levels of approximately 20µg/L.109,114
+Risperidone long-acting injection (25mg/2 weeks) appears to afford plasma levels
+averaging between 4.4µg/L and 22.7µg/L.112 Dopamine D2 occupancies at this dose
+have been variously estimated at between 25% and 71%.109,115,116 There is considerable inter-individual variation around these mean values with a substantial minority
+of patients with plasma levels above those shown. Nonetheless, these data do cast
+doubt on the efficacy of a dose of 25mg/2 weeks,112 although it is noteworthy that
+there is some evidence that long-acting antipsychotic preparations are effective
+despite apparently sub-therapeutic plasma levels and dopamine occupancies.117
+Indeed, evidence continues to grow that sustained high dopamine occupancy is not
+necessary to prevent recurrence in longer term treatment118–120 (as opposed to providing acute effects).
+Disturbingly, however, a report of assay results for patients receiving RLAI121 found
+50% of patients with levels below 20µg/L and for 10% no risperidone/9-hydroxyrisperidone was detected. Thus therapeutic drug monitoring might be clinically helpful for
+those on RLAI but this rather defeats the object of a long-acting injection.
+Limited data for paliperidone palmitate 1-monthly LAI suggest that standard loading
+doses give plasma levels of 25–45µg/L; while at steady state, plasma levels ranged from
+10–25µg/L for 100mg/month to 15–35µg/L for 150mg/month.122 Plasma concentrations may gradually rise in the first year of treatment to around 35µg/L (mean dose
+138mg/month)123 and remain stable thereafter.124 For the 3-monthly injection, steady
+state plasma concentrations range from 30–55µg/L for 525mg every 3 months,
+25–55µg/L for 350mg every 3 months and 20–35µg/L for 263mg every 3 months.125
+
+

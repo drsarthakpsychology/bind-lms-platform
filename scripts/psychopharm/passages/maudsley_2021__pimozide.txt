@@ -1,0 +1,1180 @@
+<<<PAGE 24>>>
+
+Chapter 1
+
+Schizophrenia and related
+psychoses
+
+ANTIPSYCHOTIC DRUGS
+General introduction
+Classification of antipsychotics
+Before the 1990s, antipsychotics (or major tranquillisers as they were then known)
+were classified according to their chemistry. The first antipsychotic, chlorpromazine,
+was a phenothiazine compound – a tricyclic structure incorporating a nitrogen and a
+sulphur atom. Further phenothiazines were generated and marketed, as were chemically similar thioxanthenes, such as flupentixol. Later entirely different chemical structures were developed according to pharmacological paradigms. These included
+butyrophenones (haloperidol), diphenylbutylpiperidines (pimozide) and substituted
+benzamides (sulpiride and amisulpride).
+Chemical classification remains useful but is rendered somewhat redundant by the
+broad range of chemical entities now available and by the absence of any clear structure-activity relationships for newer drugs. The chemistry of some older drugs does
+relate to their propensity to cause movement disorders. Piperazine phenothiazines (e.g.
+fluphenazine, trifluoperazine), butyrophenones and thioxanthenes are most likely to
+cause extrapyramidal effects, while piperidine phenothiazines (e.g. pipotiazine) and
+benzamides are the least likely. Aliphatic phenothiazines (e.g. chlorpromazine) and
+diphenylbutylpiperidines (pimozide) are perhaps somewhere in-between.
+Relative liability for inducing extrapyramidal symptoms (EPS) was originally the primary factor behind the typical/atypical classification. Clozapine had long been known
+as an atypical antipsychotic on the basis of its low liability to cause EPS and its failure
+in animal-based antipsychotic screening tests. Its re-marketing in 1990 signalled the
+beginning of a series of new medications, all of which were introduced with claims (of
+varying degrees of accuracy) of ‘atypicality’. Of these medications, perhaps only clozapine and, possibly, quetiapine are completely atypical, seemingly having a very low
+The Maudsley® Prescribing Guidelines in Psychiatry, Fourteenth Edition. David M. Taylor,
+Thomas R. E. Barnes and Allan H. Young.
+© 2021 David M. Taylor. Published 2021 by John Wiley & Sons Ltd.
+
+
+
+
+<<<PAGE 33>>>
+
+CHAPTER 1
+
+12  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Licensed maximum doses
+The following table lists the licensed maximum doses of antipsychotics according to the
+EMA labelling as of February 2021.
+Drug
+
+Maximum dose
+
+FGAs – oral
+Chlorpromazine
+
+1000mg/day
+
+Flupentixol
+
+18mg/day
+
+Haloperidol
+
+20mg/day
+
+Levomepromazine
+
+1200mg/day
+
+Pericyazine
+
+300mg/day
+
+Perphenazine
+
+24mg/day (64mg/day hospitalised patients)
+
+Pimozide
+
+20mg/day
+
+Sulpiride
+
+2400mg/day
+
+Trifluoperazine
+
+20mg/day
+
+Zuclopenthixol
+
+150mg/day
+
+SGAs – oral
+Amisulpride
+
+1200mg/day
+
+Aripiprazole
+
+30mg/day
+
+Asenapine
+
+20mg/day (sublingual)
+
+Cariprazine
+
+6mg/day
+
+Clozapine
+
+900mg/day
+
+Lurasidone
+
+160mg (HCl)/148mg (base)/day
+
+Olanzapine
+
+20mg/day
+
+Paliperidone
+
+12mg/day
+
+Quetiapine
+
+750mg/day schizophrenia (800mg/day for MR preparation)
+800mg/day bipolar disorder
+
+Risperidone
+
+16mg/day
+
+Sertindole
+
+24mg/day
+
+Long-acting injections
+Aripiprazole depot
+
+400mg/month
+
+Flupentixol depot
+
+400mg/week
+
+Fluphenazine depot
+
+100mg every 14–35 days
+
+Haloperidol depot
+
+300mg every 4 weeks
+
+Paliperidone depot
+1-monthly
+
+150mg/month
+
+
+
+
+<<<PAGE 35>>>
+
+CHAPTER 1
+
+14  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Equivalent doses
+Knowledge of equivalent dosages is useful when switching between FGAs. Estimates of
+‘neuroleptic’ or ‘chlorpromazine’ equivalence, in milligrams a day, between these medications are based on clinical experience, expert panel opinion (using various methods)
+and any dopamine binding studies available.
+Table 1.2 provides approximate equivalent doses for FGAs.1–4 The values given should
+be seen as a rough guide when switching from one FGA to another and are no substitute
+for clinical titration of the new medication dose against adverse effects and response.
+Equivalent doses of SGAs may be less clinically relevant as these medications tend to
+have better defined, evidence-based licensed dose ranges. There are several different
+ways of calculating equivalence based on, for example, defined daily dose,5 minimum
+effective dose6,7 and average dose.8 These methods give different estimates of equivalence. A very rough guide to equivalent SGA daily dosages is given in the Table 1.3.3,4,7–9
+There is considerable disagreement about exact equivalencies, even amongst the references cited here. Clozapine is not included because this has a distinct initial titration
+schedule and a high dose-plasma level variability and because it probably has a different mechanism of action.
+Comparing potencies of FGAs with SGAs introduces yet more uncertainty with
+respect to dose equivalence. Very approximately, 100mg chlorpromazine is equivalent
+to 1.5mg risperidone.3
+
+Table 1.2 Equivalent doses of first generation antipsychotics
+Drug
+
+Equivalent dose (consensus)
+
+Range of values in literature
+
+Chlorpromazine
+
+100mg/day
+
+Reference
+
+Flupentixol
+
+3mg/day
+
+2–3mg/day
+
+Flupentixol depot
+
+10mg/week
+
+10–20mg/week
+
+Fluphenazine
+
+2mg/day
+
+1–5mg/day
+
+Fluphenazine depot
+
+5mg/week
+
+1–12.5mg/week
+
+Haloperidol
+
+2mg/day
+
+1.5–5mg/day
+
+Haloperidol depot
+
+15mg/week
+
+5–25mg/week
+
+Pericyazine
+
+10mg/day
+
+10mg/day
+
+Perphenazine
+
+10mg/day
+
+5–10mg/day
+
+Pimozide
+
+2mg/day
+
+1.33–2mg/day
+
+Pipotiazine depot
+
+10mg/week
+
+10–12.5mg/week
+
+Sulpiride
+
+200mg/day
+
+133–300mg/day
+
+Trifluoperazine
+
+5mg/day
+
+2.5–5mg/day
+
+Zuclopenthixol
+
+25mg/day
+
+25–60mg/day
+
+Zuclopenthixol depot
+
+100mg/week
+
+40–100mg/week
+
+
+
+
+<<<PAGE 60>>>
+
+Action to be taken if
+results outside
+reference range
+
+Parameter/
+test
+
+Suggested
+frequency
+
+ECG19,20
+
+Baseline and when Discuss with/refer to
+cardiologist if
+target dose is
+abnormality detected
+reached (ECG
+changes rare in
+practice21) on
+admission to
+hospital and before
+discharge if
+medication regimen
+changed.
+
+Blood
+pressure
+
+Baseline; frequently
+during dose
+titration and dosage
+changes to detect
+antipsychoticinduced changes,
+and generally
+monitor physical
+health
+
+Prolactin
+
+Liver
+function
+tests
+(LFTs)23–25
+
+Medications with
+special precautions
+
+Medications for which
+monitoring is not
+required
+
+Haloperidol, pimozide,
+sertindole – ECG
+mandatory;
+ziprasidone – ECG
+mandatory in some
+situations
+
+Risk of sudden cardiac
+death increased with
+most antipsychotic
+medications.22 Ideally, all
+patients should be
+offered an ECG at least
+yearly
+
+If severe hypotension or
+hypertension (clozapine)
+observed, slow rate of
+titration. Consider
+switching to another
+antipsychotic if
+symptomatic postural
+hypotension. Treat
+hypertension in line with
+NICE guidelines
+
+Clozapine,
+chlorpromazine and
+quetiapine most likely
+to be associated with
+postural hypotension
+
+Amisulpride, aripiprazole,
+brexpiprazole,
+cariprazine, lurasidone,
+trifluoperazine, sulpiride
+
+Baseline, then at 6
+months, then yearly
+to detect
+antipsychoticinduced changes
+
+Switch medications if
+hyperprolactinaemia
+confirmed and
+symptomatic. Consider
+tests of bone mineral
+density (e.g. DEXA
+scanning) for those with
+chronically raised
+prolactin.
+
+Amisulpride, sulpiride,
+risperidone and
+paliperidone particularly
+associated with
+hyperprolactinaemia
+
+Asenapine, aripiprazole,
+brexpiprazole,
+cariprazine, clozapine,
+lurasidone, quetiapine,
+olanzapine (<20mg), and
+ziprasidone usually do
+not elevate plasma
+prolactin, but worth
+measuring if symptoms
+arise
+
+Baseline, then yearly
+as part of a routine
+physical health
+check and to detect
+chronic
+antipsychoticinduced changes
+(rare)
+
+Stop suspect medication
+if LFTs indicate hepatitis
+(transaminases × 3
+normal) or functional
+damage (PT/albumin
+change)
+
+Clozapine and
+chlorpromazine
+associated with hepatic
+failure
+
+Amisulpride, sulpiride
+
+Baseline, then if NMS See the section on NMS
+Creatinine
+suspected
+phospho
+kinase (CPK)
+
+None
+NMS more likely with
+high-potency firstgeneration antipsychotic
+medications
+
+Other tests: Patients on clozapine may benefit from an EEG,26,27 as this may help determine the need for anticonvulsant treatment (although interpretation is obviously complex). Those on quetiapine should have thyroid function
+tests yearly, although the risk of abnormality is very small.28,29
+Key: DEXA, dual-energy X-ray absorptiometry; NMS, neuroleptic malignant syndrome; PT, prothrombin time;
+BMI – body mass index; ECG – electrocardiograph; EEG – electroencephalogram; GFR – glomerular filtration rate;
+IFG – impaired fasting glucose.
+Note: This table is a summary – see individual sections for detail and discussion.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  39
+
+
+
+
+<<<PAGE 116>>>
+
+Penfluridol weekly
+Penfluridol is a diphenylbutylpiperidine FGA, which remains available in some countries such as India and can be imported to other countries. It is similar in efficacy and
+tolerability to other FGAs.1
+Penfluridol is unusual in having a very long plasma half-life – at least 60 hours.2 After
+oral administration, peak levels are reached within 12 hours and drug can still be
+detected 168 hours after a single oral dose.3 Its long duration of action seems to be a
+result of rapid distribution into fat tissue, which acts as a drug reservoir.4 This property
+allows penfluridol to be used as a once-weekly oral therapy for supervised ingestion –
+an alternative to long-acting injectable antipsychotics.
+Several trials have examined the use of once-weekly oral penfluridol, usually in doses
+ranging from 5mg to 160mg per week.1 When given in this manner it is at least as effective as depot FGAs5,6 and is better tolerated overall.1 Although dose–response relationships remain unclear, a weekly dose of 30mg is adequately effective7 and a dose of
+120mg a day (i.e. a total of 840mg a week) has been used in at least one trial.8
+Adverse effects include acute EPS, increased prolactin and tardive dyskinesia, as
+might be expected. It is usually not sedative. Like pimozide (another diphenylbutylpiperidine), penfluridol appears to prolong the QT interval.9 Penfluridol is a cytotoxic
+agent which may have anticancer properties.10
+
+Summary
+Penfluridol can be given orally once a week.
+Supervised weekly administration is at least as effective as long-acting injections.
+■■ The usual dose is 20–40mg a week.
+■■ Adverse effects are those common to FGAs and include QT prolongation.
+■■ Sedation is minimal.
+■■
+■■
+
+In practice, penfluridol is usually started at a dose of 20mg, and this dose is increased
+to a maximum of 40mg after assessment. Steady-state levels are effectively reached after
+2–3 weeks. Monitoring includes investigations into renal and hepatic function, changes
+in cardiometabolic parameter such as lipids, blood glucose, echocardiogram, and general adverse effect screening.
+
+References
+1. Soares BG, et al. Penfluridol for schizophrenia. Cochrane Database Syst Rev 2006; CD002923.
+2. Janssen PA, et al. The pharmacology of penfluridol (R 16341) a new potent and orally long-acting neuroleptic drug. Eur J Pharmacol 1970;
+11:139–154.
+3. Cooper SF, et al. Penfluridol steady-state kinetics in psychiatric patients. Clin Pharmacol Ther 1975; 18:325–329.
+4. Migdalof BH, et al. Penfluridol: a neuroleptic drug designed for long duration of action. Drug Metab Rev 1979; 9:281–299.
+5. Iqbal MJ, et al. A long term comparative trial of penfluridol and fluphenazine decanoate in schizophrenic outpatients. J Clin Psychiatry 1978;
+39:375–379.
+6. Quitkin F, et al. Long-acting oral vs injectable antipsychotic drugs in schizophrenics: a one-year double-blind comparison in multiple episode
+schizophrenics. Arch Gen Psychiatry 1978; 35:889–892.
+7. Van Praag HM, et al. Controlled trial of penfluridol in acute psychosis. Br Med J 1971; 4:710–713.
+8. Shopsin B, et al. Penfluridol: an open phase III study in acute newly admitted hospitalized schizophrenic patients. Psychopharmacology 1977;
+55:157–164.
+9. Bhattacharyya R, et al. Resurgence of penfluridol: merits and demerits. East J Psychiatry 2015; 18:23–29.
+10. Ashraf-Uz-Zaman M, et al. Analogs of penfluridol as chemotherapeutic agents with reduced central nervous system activity. Bioorg Med
+Chem Lett 2018; 28:3652–3657.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  95
+
+
+
+
+<<<PAGE 164>>>
+
+given the problems associated with QTc measurements. Lastly, keep in mind that differences in the effects of different antipsychotics on the QT interval rarely reach statistical
+significance, even in meta-analyses (Table 1.21).29
+Outside these guidelines, readers are directed to the RISQ-PATH study,30 which provides a scoring system for the prediction of QT prolongation (to above normal ranges)
+in any patient. RISQ-PATH has a 98% negative predictive value, so allowing a reduction in monitoring in low-risk patients. The RISQ-PATH method uses CredibleMeds
+categorisation for drug effects on QT – this, too, is recommeded.31
+Table 1.21 Effects of antipsychotics on QTC13,22,23,32–61.
+No effect
+Brexpiprazole*
+Cariprazine*
+Lurasidone
+Lumateperone*
+Low effect
+Aripiprazole**
+Asenapine
+Clozapine
+Flupentixol
+Fluphenazine
+Perphenazine
+Prochlorperazine
+Olanzapine***
+Paliperidone
+Risperidone
+Sulpiride
+
+Moderate effect
+Amisulpride****
+Chlorpromazine
+Haloperidol
+Iloperidone
+Levomepromazine
+Melperone
+Pimavanserin
+Quetiapine
+Ziprasidone
+High effect
+Any intravenous antipsychotic
+Pimozide
+Sertindole
+Any drug or combination of drugs used in doses exceeding
+recommended maximum
+Unknown effect
+Loxapine
+Pipotiazine
+Trifluoperazine
+Zuclopenthixol
+
+*Limited clinical experience (association with QT prolongation may emerge).
+**One case of torsades de pointes (TDP) reported,62 two cases of QT prolongation63,64 and an association with TDP
+found in database study.65 Healthy volunteer data suggest aripiprazole causes QTc prolongation of around 8ms.66
+Aripiprazole may increase QT dispersion.67
+***Isolated cases of QTc prolongation37,68 and has effects on cardiac ion channel, IKr,69 other data suggest no effect
+on QTC.23,35,36,70
+****TDP common in overdose,25,71 strong association with TDP in clinical doses.65
+
+Aripiprazole remains in the low effect group having previously been firmly placed in
+‘no effect’. Data are rather contradictory, with most studies showing a decrease in QTc
+associated with aripiprazole use52 even in children and adolescents.72 However, later
+data62,63,65,66,73 cast doubt on assumptions of cardiac safety. Interestingly, a 2020 paper
+analysing reports of events in > 400,000 inpatients over 20 years found aripiprazole
+had the lowest rate of cardiac events (0.06%) of all antipsychotics.74
+Lurasidone remains in the ‘no effect’ group,52 although one study mentioned in the
+US labelling75 reports a QT lengthening of 7.5mg in people receiving 120mg (111mg) a
+day. Those receiving 600mg (555mg) daily showed a lower change (+4.6ms). These
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  143
+
+
+
+
+<<<PAGE 215>>>
+
+CHAPTER 1
+
+194  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 1.36 Suggested options for augmenting clozapine
+Option
+
+Comment
+
+Add amisulpride20–25
+(400–800mg/day)
+
+■■
+
+Some evidence and experience suggest amisulpride augmentation may be
+worthwhile. Three small RCTs (the largest of which showed no effect), two of
+which found an increased side effect burden, including cardiac side effects.26,27
+May allow clozapine dose reduction.28
+
+Add aripiprazole18,29–31
+(15–30mg/day)
+
+■■
+
+Very limited evidence of therapeutic benefit, although a meta-analysis suggests some effect.32 Reduces weight and LDL cholesterol.32 Long-acting injection has been used33,34
+
+Add haloperidol31,35,36
+(2–3mg/day)
+
+■■
+
+Modest evidence of benefit
+
+Add lamotrigine37–39
+(25–300mg/day)
+
+■■
+
+May be useful in partial or non-responders. May reduce alcohol consumption.40 Several equivocal reports;41–43 some meta-analyses suggest moderate
+effect size44 but this is largely influenced by two outlying studies45
+
+Add omega-3
+triglycerides46,47
+(2–3g EPA daily)
+
+■■
+
+Modest, and somewhat contested evidence to support efficacy in non- or
+partial responders to antipsychotics, including clozapine
+
+Add risperidone48,49
+(2–6mg/day)
+
+■■
+
+Supported by a randomised, controlled trial but there are also two negative RCTs each with minuscule response rates50,51 Small number of reports of
+increases in clozapine plasma levels. Long acting injection also an option;34,52
+paliperidone long-acting injection has also been used34,53
+
+Add sulpiride54
+(400mg/day)
+
+■■
+
+May be useful in partial or non-responders. Supported by a single randomised
+trial in English and three in Chinese.55 Overall effect modest
+
+Add topiramate56–60
+(50–300mg/day)
+
+■■
+
+Two positive RCTs, two negative. Can worsen psychosis in some.38,61 Two
+meta-analyses including hitherto unknown Chinese data45,62 suggested robust
+effect on positive and negative symptoms, substantial weight loss but often
+with psychomotor slowing and attention difficulties
+
+Add sodium valproate45,63
+(400–800mg/day)
+
+■■
+
+Pooled effects from five Chinese RCTs45 suggest a benefit to positive symptoms, although studies are mostly of poor quality. Cochrane suggests benefit
+to adding valproate to antipsychotics in general, especially for excitement and
+aggression64
+
+Add ziprasidone65–68
+(80–160mg/day)
+
+■■
+
+Supported by three RCTs.68,69 Associated with QTc prolongation. Rarely used
+
+Notes
+Always consider the use of mood stabilisers and/or antidepressants, especially where mood disturbance is
+thought to contribute to symptoms70–72
+■■ Other options include adding pimozide, olanzapine or sertindole. None is recommended: pimozide and
+sertindole have important cardiac toxicity, and the addition of olanzapine is poorly supported73 and likely to
+exacerbate metabolic adverse effects. Studies of pimozide74,75 and sertindole76 have shown no effect. One small
+RCT supports the use of ginkgo biloba,77 another two support the use of memantine.78,79 Another study
+suggests possible benefit of augmentation with acetyl-L-carnitine,80 and a case study reports good outcome
+with thyroxine.81 A single RCT describes successful use of sodium benzoate.82 Minocycline is probably not
+effective.63,83 Glycine may be effective for positive symptoms, but studies are of poor quality.84 A small case series
+(n = 6) found benefit to adding pimavanserin.85
+■■
+
+
+
+
+<<<PAGE 218>>>
+
+70. Citrome L. Schizophrenia and valproate. Psychopharmacol Bull 2003; 37 Suppl 2:74–88.
+71. Tranulis C, et al. Somatic augmentation strategies in clozapine resistance–what facts? Clin Neuropharmacol 2006; 29:34–44.
+72. Suzuki T, et al. Augmentation of atypical antipsychotics with valproic acid. An open-label study for most difficult patients with schizophrenia.
+Human Psychopharmacology 2009; 24:628–638.
+73. Gupta S, et al. Olanzapine augmentation of clozapine. Ann Clin Psychiatry 1998; 10:113–115.
+74. Friedman JI, et al. Pimozide augmentation of clozapine inpatients with schizophrenia and schizoaffective disorder unresponsive to clozapine
+monotherapy. Neuropsychopharmacology 2011; 36:1289–1295.
+75. Gunduz-Bruce H, et al. Efficacy of pimozide augmentation for clozapine partial responders with schizophrenia. Schizophr Res 2013;
+143:344–347.
+76. Nielsen J, et al. Augmenting clozapine with sertindole: a double-blind, randomized, placebo-controlled study. J Clin Psychopharmacol 2012;
+32:173–178.
+77. Doruk A, et al. A placebo-controlled study of extract of ginkgo biloba added to clozapine in patients with treatment-resistant schizophrenia.
+Int Clin Psychopharmacol 2008; 23:223–227.
+78. De Lucena D, et al. Improvement of negative and positive symptoms in treatment-refractory schizophrenia: a double-blind, randomized,
+placebo-controlled trial with memantine as add-on therapy to clozapine. J Clin Psychiatry 2009; 70:1416–1423.
+79. Veerman SR, et al. Adjunctive memantine in clozapine-treated refractory schizophrenia: an open-label 1-year extension study. Psychol Med
+2017; 47:363–375.
+80. Bruno A, et al. Acetyl-L-carnitine augmentation of clozapine in partial-responder schizophrenia: a 12-week, open-label uncontrolled preliminary study. Clin Neuropharmacol 2016; 39:277–280.
+81. Seddigh R, et al. Levothyroxine augmentation in clozapine resistant schizophrenia: a case report and review. Case Rep Psychiatry 2015;
+2015:678040.
+82. Lin CH, et al. Sodium benzoate, a D-Amino acid oxidase inhibitor, added to clozapine for the treatment of schizophrenia: a randomized,
+double-blind, placebo-controlled trial. Biol Psychiatry 2018; 84:422–432.
+83. Kelly DL, et al. Adjunctive minocycline in clozapine-treated schizophrenia patients with persistent symptoms. J Clin Psychopharmacol 2015;
+35:374–381.
+84. Correll CU, et al. Efficacy of 42 pharmacologic cotreatment strategies added to antipsychotic monotherapy in schizophrenia: systematic
+overview and quality appraisal of the meta-analytic evidence. JAMA Psychiatry 2017; 74:675–684.
+85. Nasrallah HA, et al. Successful treatment of clozapine-nonresponsive refractory hallucinations and delusions with pimavanserin, a serotonin
+5HT-2A receptor inverse agonist. Schizophr Res 2019; 208:217–220.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  197
+
+
+
+
+<<<PAGE 609>>>
+
+588  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Adrenergic α2 agonists
+Clonidine has been shown in open studies to reduce the severity and frequency of tics
+but in one study this effect did not seem to be convincingly larger than placebo.10 Other
+studies have shown more substantial reductions in tics.11–14 Therapeutic doses of clonidine are in the order or 3–5µg/kg, and the dose should be built up gradually. A transdermal patch has also shown effectiveness.15 Main side-effects are sedation, postural
+hypotension and depression. Patients and their families should be informed not to stop
+clonidine suddenly because of the risk of rebound hypertension. Guanfacine has also
+been shown to be effective in the treatment of tics16,17 and would merit a therapeutic
+trial in specific individuals (e.g. those with comorbid ADHD).
+
+CHAPTER 5
+
+Antipsychotics
+Adverse effects of antipsychotics may outweigh beneficial effects in the treatment of tics
+and so it is recommended that clonidine or guanfacine are always tried first.
+Antipsychotics may, however, be more effective than adrenergic α2 agonists in alleviating tics in some individuals.
+A number of first-generation antipsychotics have been used in TS.18 In a Cochrane
+review, pimozide demonstrated robust efficacy in a meta-analysis of 6 trials.19 In these
+trials, pimozide was compared with haloperidol (one trial), placebo (one trial), haloperidol and placebo (two trials) and risperidone (two trials) and was found to be more
+effective than placebo, as effective as risperidone and slightly less effective than haloperidol in reducing tics. It was associated with fewer adverse reactions compared with
+haloperidol but did not differ from risperidone in that respect. ECG monitoring is
+essential for pimozide and haloperidol. Haloperidol is often poorly tolerated. Given
+their side effect profile, most authors recommend the use of second-generation rather
+than first-generation antipsychotics in the treatment of TS.18
+More recent studies suggest that aripiprazole is an effective and well-tolerated treatment of children with TS (and also tics20). A 10-week multicentre double-blind randomised placebo-controlled trial (N = 61) demonstrated the efficacy of aripiprazole in tic
+reduction in TS. Treatment was associated with significantly decreased serum prolactin
+concentration, increased mean body weight (by 1.6kg), body mass index, and waist circumference.21 Aripiprazole was also found to be effective in another randomized, double-blind, placebo-controlled trial (N = 133) comparing low-dose aripiprazole (5mg/day
+if <50kg; 10mg/day if ≥50kg), high-dose aripiprazole (10mg/day if <50kg; 20mg/day
+if ≥50kg), or placebo for 8 weeks.22 At week 8, tics as measured by the Yale Global Tic
+Severity Scale Total Tic Score were reduced in both the high dose group (−9.9; 95%
+CI: −13.8 to −5.9) and the low dose group (−6.3; 95% CI: −10.2 to −2.3) with 69%
+(29/42) of patients in the low-dose and 74% (26/35) in the high-dose group being very
+much improved or much improved compared with 38% (16/42) in the placebo group.
+Surprisingly, a higher proportion of children in the low dose group (18.2%) compared to
+the high dose group (9.3%) and placebo group (9.1%) gained clinically significant
+weight (≥7%) which may have been related to a lower average baseline weight in this
+group by >3kg compared to the other two groups. Several case series also support the use
+of aripiprazole.23–26 A study evaluating the metabolic side effects of aripiprazole (N = 25)
+
+
+
+
+<<<PAGE 610>>>
+
+Children and adolescents  589
+
+and pimozide (N = 25) in TS over a 24-month period demonstrated that treatment was
+not associated with significant increase in body mass index. However, pimozide treatment was associated with increases in blood glucose which did not plateau from 12 to
+24 months, aripiprazole treatment was associated with increased cholesterol and both
+medications were associated with increased triglycerides.27 Two meta-analyses support
+the efficacy of aripiprazole.28,29 One study30 suggests twice weekly administration may be
+better tolerated than daily dosing. A small randomised controlled trial (N = 24) comparing aripiprazole with sodium valproate in children with TS demonstrated a statistically
+significant difference in tic reduction favouring aripiprazole.31
+Risperidone has in addition to the studies mentioned above also been shown to be
+more effective than placebo in a small (N = 34), randomised study.32 Fatigue and
+increased appetite were problematic in the risperidone arm and a mean weight gain of
+2.8kg over 8 weeks was reported. One small randomised, controlled trial found risperidone and clonidine to be equally effective.33 A small double-blind crossover study suggested that olanzapine34 may be more effective than pimozide. Sulpiride has been shown
+to be effective and relatively well tolerated,35 as has ziprasidone.36 Open studies support
+the efficacy of quetiapine37 and olanzapine.38,39 One very small crossover study (N = 7)
+found no effect for clozapine.40
+Overall, metabolic side-effects and weight gain are common with second generation
+antipsychotics, even aripiprazole, so benefit/risk ratios need careful discussion.18
+
+A small, double-blind, placebo-controlled, crossover trial of baclofen was suggestive of
+beneficial effects in overall impairment rather than a specific effect on tics.41 The numerical benefits shown in this study did not reach statistical significance. Similarly, a doubleblind, placebo-controlled trial of nicotine augmentation of haloperidol found beneficial
+effects in overall impairment rather than a specific effect on tics.42 These benefits persisted
+for several weeks after nicotine (in the form of patches) was withdrawn. Nicotine patches
+were associated with a high prevalence of nausea and vomiting (71% and 40%, respectively). The authors suggest that PRN use may be appropriate. Pergolide (a D1–D2–D3
+agonist) given in low dose significantly reduced tics in a double-blind, placebo-controlled,
+crossover study in children and adolescents.43 Side-effects included sedation, dizziness,
+nausea and irritability. Pergolide was also evaluated in a randomised trial in children and
+adolescents with chronic tics and TS, and showed significant tic reduction compared with
+placebo.44 Flutamide, an antiandrogen, has been the subject of a small RCT in adults with
+TS. Modest, short-lived effects were seen in motor but not phonic tics.45 A small randomised controlled trial has shown significant advantages for metoclopramide over placebo46 and for topiramate over placebo.47 A meta-analysis identified 14 randomised
+controlled trials (all from China) comparing topiramate with haloperidol or tiapride. It
+concluded that owing to the overall low quality of the study designs, there is not enough
+evidence to support the routine use of topiramate in clinical practice.48 More recently the
+use of the monoamine depleting agent deutetrabenazine has been shown to be effective.49
+Tetrabenazine may also be useful as an add-on treatment.50 Ecopipam, a D1 receptor
+antagonist, was also found to be effective in the treatment of tics in a recent randomised
+placebo-controlled crossover study including children and adolescents with TS.51
+
+CHAPTER 5
+
+Other drugs
+
+
+
+
+<<<PAGE 612>>>
+
+Children and adolescents  591
+
+1. Murphy TK, et al. Practice parameter for the assessment and treatment of children and adolescents with tic disorders. J Am Acad Child
+Adolesc Psychiatry 2013; 52:1341–1359.
+2. Cath DC, et al. European clinical guidelines for Tourette syndrome and other tic disorders. Part I: Assessment. Eur Child Adolesc Psychiatry
+2011; 20:155–171.
+3. Singer HS Treatment of tics and Tourette syndrome. Curr Treat Options Neurol 2010; 12:539–561.
+4. McGuire JF, et al. A meta-analysis of behavior therapy for Tourette syndrome. J Psychiatr Res 2014; 50:106–112.
+5. Rizzo R, et al. A randomized controlled trial comparing behavioral, educational, and pharmacological treatments in youths with chronic tic
+disorder or Tourette syndrome. Frontiers Psychiatry 2018; 9:100.
+6. Fründt O, et al. Behavioral therapy for Tourette syndrome and chronic tic disorders. Neurol Clin Practice 2017; 7:148–156.
+7. Patel H, et al. Use of complementary and alternative medicine in children with Tourette syndrome. J Child Neurol 2020; 35:512–516.
+8. Kumar A, et al. A comprehensive review of Tourette syndrome and complementary alternative medicine. Current Dev Disorders Rep 2018;
+5:95–100.
+9. Cubo E, et al. Impact of placebo assignment in clinical trials of tic disorders. Mov Disord 2013; 28:1288–1292.
+10. Goetz CG, et al. Clonidine and Gilles de la Tourette’s syndrome: double-blind study using objective rating methods. Ann Neurol 1987;
+21:307–310.
+11. Leckman JF, et al. Clonidine treatment of Gilles de la Tourette’s syndrome. Arch Gen Psychiatry 1991; 48:324–328.
+12. Group TsSS. Treatment of ADHD in children with tics: a randomized controlled trial. Neurology 2002; 58:527–536.
+13. Du YS, et al. Randomized double-blind multicentre placebo-controlled clinical trial of the clonidine adhesive patch for the treatment of tic
+disorders. Aust N Z J Psychiatry 2008; 42:807–813.
+14. Hedderick EF, et al. Double-blind, crossover study of clonidine and levetiracetam in Tourette syndrome. Pediatr Neurol 2009; 40:420–425.
+15. Song PP, et al. The efficacy and tolerability of the clonidine transdermal patch in the treatment for children with tic disorders: a prospective,
+open, single-group, self-controlled study. Front Neurol 2017; 8:32.
+16. Scahill L, et al. A placebo-controlled study of guanfacine in the treatment of children with tic disorders and attention deficit hyperactivity
+disorder. Am J Psychiatry 2001; 158:1067–1074.
+17. Cummings DD, et al. Neuropsychiatric effects of guanfacine in children with mild Tourette syndrome: a pilot study. Clin Neuropharmacol
+2002; 25:325–332.
+18. Roessner V, et al. Pharmacological treatment of tic disorders and Tourette syndrome. Neuropharmacology 2013; 68:143–149.
+19. Pringsheim T, et al. Pimozide for tics in Tourette’s syndrome. Cochrane Database Syst Rev 2009:CD006996.
+20. Yoo HK, et al. An open-label study of the efficacy and tolerability of aripiprazole for children and adolescents with tic disorders. J Clin
+Psychiatry 2007; 68:1088–1093.
+21. Yoo HK, et al. A multicenter, randomized, double-blind, placebo-controlled study of aripiprazole in children and adolescents with Tourette’s
+disorder. J Clin Psychiatry 2013; 74:e772–e780.
+22. Sallee F, et al. Randomized, double-blind, placebo-controlled trial demonstrates the efficacy and safety of oral aripiprazole for the treatment
+of Tourette’s disorder in children and adolescents. J Child Adolesc Psychopharmacol 2017; 27:771–781.
+23. Davies L, et al. A case series of patients with Tourette’s syndrome in the United Kingdom treated with aripiprazole. Human Psychopharmacol
+2006; 21:447–453.
+24. Seo WS, et al. Aripiprazole treatment of children and adolescents with Tourette disorder or chronic tic disorder. J Child Adolesc
+Psychopharmacol 2008; 18:197–205.
+25. Murphy TK, et al. Open label aripiprazole in the treatment of youth with tic disorders. J Child Adolesc Psychopharmacol 2009;
+19:441–447.
+26. Wenzel C, et al. Aripiprazole for the treatment of Tourette syndrome: a case series of 100 patients. J Clin Psychopharmacol 2012;
+32:548–550.
+27. Rizzo R, et al. Metabolic effects of aripiprazole and pimozide in children with Tourette syndrome. Pediatr Neurol 2012; 47:419–422.
+28. Liu Y, et al. Effectiveness and tolerability of aripiprazole in children and adolescents with Tourette’s disorder: a meta-Analysis. J Child Adolesc
+Psychopharmacol 2016; 26:436–441.
+29. Wang S, et al. The efficacy and safety of aripiprazole for tic disorders in children and adolescents: a systematic review and meta-analysis.
+Psychiatry Res 2017; 254:24–32.
+30. Ghanizadeh A Twice-weekly aripiprazole for treating children and adolescents with tic disorder, a randomized controlled clinical trial. Ann
+General Psychiatry 2016; 15:21.
+31. Tao D, et al. Randomized controlled clinical trial comparing the efficacy and tolerability of aripiprazole and sodium valproate in the treatment of Tourette syndrome. Ann General Psychiatry 2019; 18:24.
+32. Scahill L, et al. A placebo-controlled trial of risperidone in Tourette syndrome. Neurology 2003; 60:1130–1135.
+33. Gaffney GR, et al. Risperidone versus clonidine in the treatment of children and adolescents with Tourette’s syndrome. J Am Acad Child
+Adolesc Psychiatry 2002; 41:330–336.
+34. Onofrj M, et al. Olanzapine in severe Gilles de la Tourette syndrome: a 52-week double-blind cross-over study vs. low-dose pimozide.
+J Neurol 2000; 247:443–446.
+35. Robertson MM, et al. Management of Gilles de la Tourette syndrome using sulpiride. Clin Neuropharmacol 1990; 13:229–235.
+36. Sallee FR, et al. Ziprasidone treatment of children and adolescents with Tourette’s syndrome: a pilot study. J Am Acad Child Adolesc
+Psychiatry 2000; 39:292–299.
+
+CHAPTER 5
+
+References
+
+
+
+
+<<<PAGE 760>>>
+
+Hepatic and renal impairment  739
+
+Drug
+
+Comments
+
+Flupentixol22,23,25
+
+Negligible renal excretion of unchanged flupentixol. Dosing: GFR 10–50mL/min dose
+as in normal renal function; GFR <10mL/min start with ¼ to ½ of normal dose and
+titrate slowly. May cause hypotension and sedation in renal impairment and can
+accumulate. Manufacturer recommends caution in renal failure. Avoid depot
+preparations in renal impairment.
+
+Haloperidol10,22,23,25,39,40
+
+Less than 1% excreted unchanged in the urine. Manufacturer advises caution in renal
+failure. Dosing: GFR 10–50mL/min, dose as in normal renal function; GFR <10mL/min
+start with a lower dose as can accumulate with repeated dosing. A case report of
+haloperidol use in renal failure suggests starting at a low dose and increasing slowly.
+Has been used to treat uraemia associated nausea in renal failure. Avoid depot
+preparations in renal impairment.
+
+Lumateperone41,42
+
+<1% excreted unchanged in urine. Manufacturer advises no dose adjustment needed
+in renal impairment.
+
+Lurasidone43
+
+9% excreted unchanged in the urine. Manufacturer recommends dose adjustment if
+GFR <50mL/min patients (starting dose is 18.75 (20)mg per day, maximum 74 (80)
+mg/day) and avoiding if GFR <15mL/min. Renal failure has been reported rarely.
+
+Olanzapine9,22,23,25,40,44
+
+57% of olanzapine is excreted mainly as metabolites (7% excreted unchanged) in
+urine. Dosing: GFR <50mL/min initially 5mg daily and titrate as necessary. Avoid
+long-acting preparations in renal impairment unless the oral dose is well tolerated
+and effective. Manufacturer recommends a lower long-acting injection starting dose
+of 150mg, 4-weekly in patients with renal impairment. May cause and aggravate
+diabetes, a common cause of renal disease. Hypothermia has been reported when
+used in renal failure.
+
+Paliperidone22,23,25
+
+Paliperidone is also a metabolite of risperidone. 59% excreted unchanged in urine.
+Dosing: GFR 50–80mL/min, 3mg daily and increase according to response to max of
+6mg daily; GFR 10–50mL/min, 3mg alternate days increasing to 3mg daily according
+to response. Use with caution as clearance is reduced by 71% in severe kidney
+disease. Manufacturer contraindicates oral form if GFR <10mL/min due to lack of
+experience and both monthly and 3-monthly depot preparations if GFR <50mL/min
+(reduced loading and maintenance doses if GFR 50 to <80mL/min). There is a single
+case report of successful paliperidone monthly injection use in a patient with renal
+failure undergoing haemodialysis.45
+
+Pimavanserin41,46
+
+<1% excreted unchanged in urine. Manufacturer states no dose adjustment needed
+in GFR ≥30mL/min but advises to avoid if GFR <30mL/min due to lack of data.
+
+Pimozide22,23,25
+
+Less than 1% of pimozide is excreted unchanged in the urine; dose reductions not
+usually needed in renal impairment. Dosing: GFR 10–50mL/min, dose as in normal
+renal function; GFR <10mL/min start at a low dose and increase according to
+response. Manufacturer cautions in renal failure.
+
+Quetiapine22,23,25,47–49
+
+Less than 5% of quetiapine excreted unchanged in the urine. Plasma clearance reduced
+by an average of 25% in patients with a GFR <30mL/min. In patients with GFR of
+<10–50mL/min start at 25mg/day and increase in daily increments of 25–50mg to an
+effective dose. Case reports (thrombotic thrombocytopenic purpura, DRESS and non-NMS
+rhabdomyolysis) resulting in acute renal failure with quetiapine have been published.
+(Continued)
+
+CHAPTER 8
+
+Table 8.8 (Continued)
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 930>>>
+
+Miscellany  909
+
+Parameter
+
+Reference range10
+
+Agents reported to raise levels
+
+Agents reported to
+lower levels
+
+Bilirubin
+
+≤21μmol/L (total)
+
+Amitriptyline, atomoxetine,
+benzodiazepines, carbamazepine,
+chlordiazepoxide, chlorpromazine,
+citalopram, clomethiazole,
+clozapine, disulfiram, imipramine,
+fluphenazine, lamotrigine,
+meprobamate, milnacipran,
+olanzapine, phenothiazines,
+phenytoin, promethazine,
+sertraline, valbenazine, valproate;
+also associated with agents
+causing cholestasis/hepatic
+damage
+
+Barbiturates
+
+C-reactive protein
+
+<10mg/L
+
+Buprenorphine (rare); also
+associated with agents causing
+myocarditis (clozapine)
+
+None known
+
+Calcium
+
+2.20–2.60mmol/L (total,
+adjusted)
+1.15–1.34mmol/L (ionised)
+
+Lithium (rare)
+
+Barbiturates,
+carbamazepine,
+haloperidol, valproate
+
+Carbohydratedeficient transferrin
+(CDT)
+
+≤1.5%
+
+Alcohol (CDT levels of 1.6–1.9%
+suggest high intake; levels ≥ 2%
+suggest excessive intake)
+
+None known
+
+Chloride
+
+95–108mmol/L
+
+Agents causing hyperchloremic
+metabolic acidosis: topiramate,
+zonisamide
+
+Medications associated
+with SIADH: all
+antidepressants,
+antipsychotics
+(clozapine, haloperidol,
+olanzapine,
+phenothiazines,
+pimozide, risperidone/
+paliperidone,
+quetiapine);
+carbamazepine,
+laxative abuse
+
+Cholesterol (total)
+
+≤5.2mmol/L
+(usually compared to
+recommended action limits
+rather than reference
+ranges)
+
+Antipsychotics, especially those
+implicated in the metabolic
+syndrome (phenothiazines,
+clozapine, olanzapine and
+quetiapine). Rarely: aripiprazole,
+beta-blockers (additive effects with
+clozapine), carbamazepine,
+disulfiram, duloxetine, memantine,
+mirtazapine, modafinil, phenytoin,
+rivastigmine, sertraline, venlafaxine
+
+Prazosin, thyroid
+agents
+
+(Continued)
+
+CHAPTER 14
+
+Table 14.2 (Continued)
+
+

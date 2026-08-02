@@ -1,0 +1,392 @@
+<<<PAGE 776>>>
+
+They may also benefit from assistance in grieving and accepting the extent of
+their disability and from attention to self-esteem issues. We should try to
+maximize any areas of intact functioning by helping patients identify
+activities in which successful functioning is possible. A psychodynamic
+assessment of defective functions and cognitive limitations can also be
+useful. Clinicians can help patients find ways to deal with the defective
+functions, such as keeping calendars for orientation problems, making
+schedules to help structure activities, and taking notes for memory problems.
+Psychodynamic interventions with family members of patients with
+dementia may be of great assistance. Those who take care of a patient
+struggle with feelings of guilt, grief, anger, and exhaustion as they watch a
+family member gradually deteriorate. A common problem that develops
+among caregivers involves their self-sacrifice in caring for a patient. They
+often suppress any developing resentment from this self-sacrifice because of
+the guilt feelings it produces. Clinicians can help caregivers understand the
+complex mixture of feelings associated with seeing a loved one decline and
+can provide understanding as well as permission to express these feelings.
+Clinicians must also be aware of the caregivers’ tendencies to blame
+themselves or others for patients’ illnesses and must appreciate the role that
+patients with dementia play in the lives of family members.
+Pharmacotherapy
+Clinicians may prescribe sedative-hypnotics for insomnia and anxiety,
+antidepressants for depression, and antipsychotic drugs for delusions and
+hallucinations, but they should be aware of the possible adverse drug effects
+that may be worse in older people (e.g., disinhibition, confusion, and
+oversedation). In general, we should avoid drugs with high anticholinergic
+activity.
+Donepezil, rivastigmine, galantamine, and tacrine are cholinesterase
+inhibitors used to treat mild to moderate cognitive impairment in Alzheimer
+disease. They reduce the inactivation of the neurotransmitter acetylcholine
+and thus potentiate the cholinergic neurotransmitter, which in turn produces a
+modest improvement in memory and goal-directed thought. These drugs are
+most useful for persons with mild to moderate memory loss who have
+sufficient preservation of their basal forebrain cholinergic neurons to benefit
+
+
+
+
+<<<PAGE 777>>>
+
+from augmentation of cholinergic neurotransmission.
+Donepezil is well tolerated and widely used. We rarely use tacrine because
+of its potential for hepatotoxicity. Fewer clinical data are available for
+rivastigmine and galantamine, which appear more likely to cause
+gastrointestinal (GI) and neuropsychiatric adverse effects than does
+donepezil. None of these medications prevent the progressive neuronal
+degeneration of the disorder.
+Memantine protects neurons from excessive amounts of glutamate, which
+may be neurotoxic. Sometimes we may combine the drug with donepezil. It
+appears to improve dementia sometimes.
+Other Treatment Approaches. There are many drugs under development
+for cognitive-enhancing activity and this is a very active area of drug
+research. Novel strategies are focusing on the β-amyloid plaques and
+neurofibrillary tangles associated with Alzheimer and some other
+neurodegenerative disorders. In the case of amyloid plaques, attempts to
+reduce their formation, aggregation and to increase their clearance are
+underway, and several monoclonal and polyclonal antibody vaccines are
+being tested.
+Estrogen replacement therapy may reduce the risk of cognitive decline in
+postmenopausal women. However the data is correlational and clinical trials
+to date are largely disappointing. A variety of other interventions have been
+proposed to improve cognitive outcomes in dementia, including cognitive
+stimulation, music therapy, reminiscence therapy, omega 3 fish oil, statins,
+ginkgo biloba, aromatherapy, or nonsteroidal anti-inflammatory drugs;
+however, all lack sufficient evidence to make any recommendation. Exercise
+improves cognition in healthy adults, and there is some evidence of benefit in
+dementia, particularly in the early stages.
+
+EPIDEMIOLOGY
+With the aging population, the prevalence of dementia is rising. The
+prevalence of moderate to severe dementia in different population groups is
+approximately 5 percent in the general population older than 65 years of age,
+20 to 40 percent in the general population older than 85 years of age, 15 to 20
+percent in outpatient general medical practices, and 50 percent in chronic care
+
+
+
+
+<<<PAGE 2196>>>
+
+therapy trial.
+3. In monotherapy trials, clinically relevant improvements were observed
+beginning at doses in the range 0.05 to 0.08 mg/kg once daily. Efficacy
+increased with increasing weight-adjusted dose (mg/kg). If well
+tolerated, doses up to 0.12 mg/kg once daily may provide additional
+benefit. Doses above 4 mg/day have not been systematically studied in
+controlled clinical trials.
+4. In the adjunctive trial, the majority of subjects reached optimal doses in
+the 0.05 to 0.12 mg/kg/day range.
+In clinical trials, there were dose-related and exposure-related risks for
+several clinically significant adverse reactions (e.g., hypotension,
+bradycardia, sedative events). Thus, consideration should be given to dosing
+an extended-release preparation of guanfacine on a milligram-per-kilogram
+basis in order to balance the exposure-related potential benefits and risks of
+treatment.
+
+21.8 Drugs Used for Cognitive
+Enhancement
+CHOLINESTERASE INHIBITORS
+Donepezil (Aricept), rivastigmine (Exelon), and galantamine (Reminyl) are
+cholinesterase inhibitors used to treat mild to moderate cognitive impairment
+in dementia of the Alzheimer type. They reduce the inactivation of the
+neurotransmitter acetylcholine and, thus, potentiate cholinergic
+neurotransmission, which in turn produces a modest improvement in memory
+and goal-directed thought. Memantine (Namenda) is not a cholinesterase
+inhibitor, producing its effects through blockade of NMDA receptors. Unlike
+the cholinesterase inhibitors, which are indicated for the mild to moderate
+stages of Alzheimer disease, memantine is indicated for the moderate to
+severe stages of the disease. Tacrine (Cognex), the first cholinesterase
+inhibitor to be introduced, is no longer used because of its multiple-daily
+dosing regimens, its potential for hepatotoxicity, and the consequent need for
+
+
+
+
+<<<PAGE 2197>>>
+
+frequent laboratory monitoring. Clinicians often combine a cholinesterase
+inhibitor with memantine, as this combination may provide a beneficial
+response compared with only cholinesterase inhibitor pharmacotherapy.
+Pharmacologic Actions
+Donepezil is entirely absorbed from the GI tract. Peak plasma concentrations
+are reached about 3 to 4 hours after oral dosing. The half-life of donepezil is
+70 hours in elderly persons, and it is taken only once daily. Steady-state
+levels are achieved within about 2 weeks. The presence of stable alcoholic
+cirrhosis reduces the clearance of donepezil by 20 percent. Rivastigmine
+(Exelon) is rapidly and completely absorbed from the GI tract and reaches
+peak plasma concentrations in 1 hour, but this is delayed by up to 90 minutes
+if rivastigmine is taken with food. The half-life of rivastigmine is 1 hour, but
+because it remains bound to cholinesterases, a single dose is therapeutically
+active for 10 hours, and it is taken twice daily. Galantamine (Reminyl) is an
+alkaloid similar to codeine and is extracted from daffodils of the plant
+Galanthus nivalis. It is readily absorbed, with maximum concentrations
+reached after 30 minutes to 2 hours. Food decreases the maximum
+concentration by 25 percent. The elimination half-life of galantamine is
+approximately 6 hours.
+Tacrine (Cognex) is absorbed rapidly from the GI tract. Peak plasma
+concentrations are reached about 90 minutes after oral dosing. The half-life of
+tacrine is about 2 to 4 hours, thereby necessitating four-times-daily dosing.
+Cholinesterase inhibitors are reversible, nonacylating inhibitors of either
+acetylcholinesterase or butyrylcholinesterase, the enzymes that catabolize
+choline-based esthers in the CNS. The enzyme inhibition increases synaptic
+concentrations of acetylcholine, especially in the hippocampus and cerebral
+cortex. Unlike tacrine, which is nonselective for all forms of
+acetylcholinesterase, donepezil appears to be selectively active within the
+CNS and has little activity in the periphery. Donepezil’s favorable side effect
+profile appears to correlate with its lack of inhibition of cholinesterases in the
+GI tract. Rivastigmine appears to have somewhat more peripheral activity
+than donepezil and is thus more likely to cause GI adverse effects than is
+donepezil.
+
+
+
+
+<<<PAGE 2198>>>
+
+Therapeutic Indications
+Cholinesterase inhibitors are effective for the treatment of mild to moderate
+cognitive impairment in dementia of the Alzheimer type. In long-term use,
+they slow the progression of memory loss and diminish apathy, depression,
+hallucinations, anxiety, euphoria, and purposeless motor behaviors.
+Functional autonomy is less well preserved. Some persons note an immediate
+improvement in memory, mood, psychotic symptoms, and interpersonal
+skills. Others note little initial benefit but can retain their cognitive and
+adaptive faculties at a relatively stable level for many months. A practical
+benefit of cholinesterase inhibitor use is a delay or reduction of the need for
+nursing home placement.
+Donepezil and rivastigmine may be beneficial for patients with Parkinson
+disease and Lewy body disease and treatment of cognitive deficits caused by
+traumatic brain injury. Donepezil is under study for the treatment of mild
+cognitive impairment that is less severe than that caused by Alzheimer
+disease. People with vascular dementia may respond to acetylcholinesterase
+inhibitors. Occasionally, cholinesterase inhibitors elicit an idiosyncratic
+catastrophic reaction, with signs of grief and agitation, which is self-limited
+after the drug is discontinued. The use of cholinesterase inhibitors to improve
+cognition by nondemented individuals should be discouraged.
+Precautions and Adverse Reactions
+Donepezil. Donepezil is generally well tolerated at recommended dosages.
+Fewer than 3 percent of those taking donepezil experience nausea, diarrhea,
+and vomiting. These mild symptoms are more frequent with a 10-mg dose
+than with a 5-mg dose, and when present, they tend to resolve after 3 weeks
+of continued use. Donepezil may cause weight loss. Donepezil treatment has
+been infrequently associated with bradyarrhythmias, especially in those with
+underlying cardiac disease. A small number of persons experience syncope.
+Rivastigmine. Rivastigmine is generally well tolerated but recommended
+dosages may need to be scaled back in the initial period of treatment to limit
+GI and CNS adverse effects. These mild symptoms are more common at
+dosages above 6 mg a day, and when present, they tend to resolve after the
+dosage is lowered. The most common adverse effects associated with
+
+
+
+
+<<<PAGE 2199>>>
+
+rivastigmine are nausea, vomiting, dizziness, headache, diarrhea, abdominal
+pain, anorexia, fatigue, and somnolence. Rivastigmine may cause weight
+loss, but it does not appear to cause hepatic, renal, hematologic, or electrolyte
+abnormalities.
+Galantamine. The most common side effects of galantamine are dizziness,
+headache, nausea, vomiting, diarrhea, and anorexia. These side effects tend to
+be mild and transient.
+Tacrine. Tacrine is the least used of the cholinesterase inhibitors but
+requires more discussion than the others because it is cumbersome to titrate
+and use, and it poses the risk of potentially significant elevations in hepatic
+transaminase levels. These increases occur in 25 to 30 percent of persons.
+Aside from elevated transaminase levels, the most common specific adverse
+effects associated with tacrine treatment are nausea, vomiting, myalgia,
+anorexia, and rash, but only nausea, vomiting, and anorexia have been found
+to have a clear relation to the dosage. Transaminase elevations
+characteristically develop during the first 6 to 12 weeks of treatment, and
+cholinergically mediated events are dosage related.
+HEPATOTOXICITY. Tacrine is associated with increases in the plasma activities
+
+of alanine aminotransferase (ALT) and aspartate aminotransferase (AST).
+The ALT measurement is the more sensitive indicator of the hepatic effects
+of tacrine. About 95 percent of patients who develop elevated ALT serum
+levels do so in the first 18 weeks of treatment. The average length of time for
+elevated ALT concentrations to return to normal after stopping tacrine
+treatment is 4 weeks.
+For routine monitoring of hepatic enzymes, AST and ALT activities should
+be measured weekly for the first 18 weeks, every month for the second 4
+months, and every 3 months after that. Weekly assessments of AST and ALT
+should be performed for at least 6 weeks after an increase in dosage. Patients
+with mildly elevated ALT activity should be monitored weekly and not be
+rechallenged with tacrine until the ALT activity returns to the normal range.
+For any patient with elevated ALT activity and jaundice, tacrine treatment
+should be stopped, and the patient should not be given the drug again.
+
+
+
+
+<<<PAGE 2200>>>
+
+Table 21-56
+Incidence of Major Adverse
+Cholinesterase Inhibitors (%)
+
+Side
+
+Effects
+
+with
+
+Table 21-56 summarizes the incidence of significant adverse side effects
+associated with each of the cholinesterase inhibitors.
+Drug Interactions. All cholinesterase inhibitors should be used cautiously
+with drugs that also possess cholinomimetic activity. Such drugs include
+succinylcholine (Anectine) and bethanechol (Urecholine). The
+coadministration of cholinesterase inhibitors and drugs that have cholinergic
+antagonist activity (e.g., tricyclic drugs) is probably counterproductive.
+Paroxetine is the most anticholinergic of the SSRIs, and we avoid it in
+patients taking cholinesterase inhibitors.
+Donepezil undergoes extensive metabolism via both CYP2D6 and 3A4
+isozymes. The metabolism of donepezil may be increased by phenytoin
+(Dilantin), carbamazepine (Tegretol), dexamethasone (Decadron), rifampin
+(Rifadin), and phenobarbital (Solfoton). Commonly used agents such as
+paroxetine, ketoconazole (Nizoral), and erythromycin can significantly
+increase donepezil concentrations. Donepezil is highly protein-bound, but it
+does not displace other protein-bound drugs, such as furosemide (Lasix),
+digoxin (Lanoxin), or warfarin (Coumadin). Rivastigmine circulates mostly
+unbound to serum proteins and has no significant drug interactions.
+Similar to donepezil, galantamine is metabolized by both CYP2D6 and
+3A4 isozymes and thus may interact with drugs that inhibit these pathways.
+Paroxetine and ketoconazole should be used with great caution.
+Laboratory Interferences. No laboratory interferences have been
+associated with the use of cholinesterase inhibitors.
+
+
+
+
+<<<PAGE 2201>>>
+
+Dosage and Clinical Guidelines. Before initiation of cholinesterase
+inhibitor therapy, potentially treatable causes of dementia should be ruled
+out, and the diagnosis of dementia of the Alzheimer type established.
+Donepezil is available in 5- and 10-mg tablets. Treatment should be
+initiated at 5 mg each night. If well tolerated and of some discernible benefit
+after 4 weeks, the dosage should be increased to a maintenance dosage of 10mg each night. Donepezil absorption is unaffected by meals.
+Rivastigmine is available in 1.5-, 3-, 4.5-, and 6-mg capsules. The
+recommended initial dosage is 1.5 mg twice daily for a minimum of 2 weeks,
+after which increases of 1.5 mg a day can be made at intervals of at least 2
+weeks to a target dosage of 6 mg a day, taken in two equal dosages. If
+tolerated, the dosage may be further titrated upward to a maximum of 6 mg
+twice daily. The administration of rivastigmine with food can reduce the risk
+of adverse GI events.
+Galantamine is available in 4-, 8-, and 16-mg tablets. The suggested dose
+range is 16 to 32 mg/day given twice a day. The higher dose is better
+tolerated than lower doses. The initial dosage is 8 mg/day, and after a
+minimum of 4 weeks, the dose can be raised. All subsequent dosage increases
+should occur at 4-week intervals and should be based on tolerability.
+Tacrine is available in 10-, 20-, 30-, and 40-mg capsules. Before the
+initiation of tacrine treatment, a complete physical and laboratory
+examination should be conducted, with particular attention to liver function
+tests and baseline hematologic indexes. Treatment should be initiated at 10
+mg four times a day and then raised by increments of 10 mg a dose every 6
+weeks up to 160 mg a day; the person’s tolerance of each dosage is indicated
+by the absence of unacceptable side effects and lack of elevation of ALT
+activity. Tacrine should be given four times daily—ideally 1 hour before
+meals because the absorption of tacrine is reduced by about 25 percent when
+it is taken during the first 2 hours after meals. If tacrine is used, the specific
+guidelines for tacrine-induced ALT listed above should be followed.
+
+MEMANTINE
+Pharmacologic Actions
+Memantine is well absorbed after oral administration. It reaches peak
+
+
+
+
+<<<PAGE 2287>>>
+
+2006;26(Suppl 1):S37.
+Weiss RD, O’malley SS, Hosking JD, Locastro JS, Swift R, COMBINE
+Study Research Group. Do patients with alcohol dependence respond to
+placebo? Results from the COMBINE Study. J Stud Alcohol Drugs.
+2008;69(6):878.
+Zarkin GA, Bray JW, Aldridge A, Mitra D, Mills MJ, Couper DJ, Cisler RA,
+COMBINE Cost-Effectiveness Research Group. Cost and costeffectiveness of the COMBINE study in alcohol-dependent patients. Arch
+Gen Psychiatry. 2008;65(10):1214–1221.
+Drugs Used for Cognitive Enhancement
+Auchus AP, Brasher HR, Salloway S, Korczyn AD, DeDeyn PP.
+Galantamine treatment of vascular dementia: a randomized trial.
+Neurology. 2007;69:448.
+Black SE, Doody R, Li H, McRae T, Jambor KM. Donepezil preserves
+cognition and global function in patients with severe Alzheimer’s disease.
+Neurology. 2007;
+69:459.
+Cummings J, Lefevre G, Small G, Appel-Dingemanse S. Pharmacokinetic
+rationale for rivastigmine patch. Neurology. 2007;69(4 Suppl 1):S10.
+Droogsma E, Veeger N, van Walderveen P, Niemarkt S, van Asselt D. Effect
+of treatment gaps in elderly patients with dementia treated with
+cholinesterase inhibitors. Neurology. 2013;80(17):1622.
+Edwards K, Royall D, Hershey L, Lichter D, Ake A. Efficacy and safety of
+galantamine in patients with dementia with Lewy body: a 24-week openlabel study. Dement Geriatr Cogn Disord. 2007;23:401.
+Jann MW, Small GW. Cholinesterase inhibitors. In: Sadock BJ, Sadock VA,
+Ruiz P, eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry.
+9th ed. Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins;
+2009:3089.
+Porsteinsson AP, Grossberg GT, Mintzer J, Memantine MEM MD 12 Study
+Group. Memantine treatment in patients with mild to moderate
+Alzheimer’s disease already receiving a cholinesterase inhibitor: a
+randomized, double-blind, placebo-controlled trial. Curr Alzheimer Res.
+2008;5:83–89.
+Qassem A, Snow V, Cross JT Jr, Forcicea MA, Hopkins R Jr, Shekelle P,
+
+
+
+
+<<<PAGE 3732>>>
+
+Riluzole, 607
+Rimonabant, 976
+Risperdal. See Risperidone
+Risperidone, 598, 608, 627
+for bipolar disorder, 375t
+in dissociative identity disorder, 448
+dosages, 609–610
+drug interactions, 610
+for early-onset bipolar disorder, 183
+for early-onset schizophrenia, 209–210
+indications, 609
+for irritability in autism spectrum disorder, 128
+pharmacology, 609
+for PTSD, 173
+for schizophrenia, 353t
+side effects, 610
+for tics, 160
+Rivastigmine, 697
+RLS. See Restless legs syndrome (RLS)
+Robidone. See Hydrocodone
+Rogers, Carl, 1087–1088
+Roger v. Oken, 840
+Rohypnol, 303, 304
+Role-playing, 771
+Ropinirole, 598, 705
+for restless legs syndrome, 515
+Rorschach, Herman, 58
+Rorschach test, 58–59, 59f, 59t
+Inkblots, 83t, 84
+Rotigotine, for restless legs syndrome, 515
+Rotter Incomplete Sentences Blank, 83t
+Rouse v. Cameron, 840
+Rozerem. See Ramelteon
+rTMS. See Repetitive transcranial magnetic stimulation (rTMS)
+Rubella, 104
+Rubinstein–Taybi syndrome, 86t
+Rumination disorder, 164–166
+
+

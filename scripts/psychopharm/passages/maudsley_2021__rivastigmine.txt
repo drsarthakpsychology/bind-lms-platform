@@ -1,0 +1,965 @@
+<<<PAGE 626>>>
+
+3–6mg bd (oral) or
+9.5mg/24 hours patch
+2 weeks for oral
+(increase by 1.5mg twice a day)
+4 weeks for patch
+(increase to 9.5mg/24 hours)
+(can consider increase to 13.3mg/24 hours
+after 6 months if tolerated and meaningful
+cognitive/functional decline occurs on
+9.5mg/24 hours)
+
+None
+
+5mg daily
+
+10mg daily
+
+4 weeks (increase by 5mg daily)
+
+Diarrhoea*, nausea*, headache*,
+common cold, anorexia,
+hallucinations, agitation, aggressive
+behaviour, abnormal dreams and
+nightmares, syncope, dizziness,
+insomnia, vomiting, abdominal
+disturbance, rash, pruritus, muscle
+cramps, urinary incontinence,
+fatigue, pain
+
+Other mechanism
+
+Starting dose
+
+Usual treatment dose
+(and max dose)
+
+Recommended
+minimum interval
+between dose
+increases
+
+Adverse effects7–13
+*Very common:
+≥1/10
+and
+common: ≥1/100
+
+Anorexia*, dizziness*, nausea*, vomiting*
+diarrhoea*, decreased appetite,
+nightmares, agitation, confusion, anxiety,
+headache, somnolence, tremor, abdominal
+pain and dyspepsia, sweating, fatigue and
+asthenia, malaise, weight loss (frequency
+of adverse effects with the patch may
+differ from capsules)
+
+1.5mg bd (oral)
+(or 4.6mg/24 hours patch)
+
+BuChE-I
+
+AChE-I
+(reversible, non-competitive inhibitor)
+
+AChE-I (selective + reversible)
+
+Primary mechanism
+
+Rivastigmine
+
+Donepezil
+
+Characteristic
+
+Table 6.1 Characteristics of cognitive enhancers7–14
+
+(Continued )
+
+Drug hypersensitivity,
+somnolence, dizziness,
+balance disorders,
+hypertension,
+dyspnoea,
+constipation, elevated
+liver function test,
+headache
+
+1 week
+(increase by 5mg
+weekly)
+
+4 weeks
+(increase by 8mg XL daily or by
+4mg bd for solution)
+
+Nausea*, vomiting*, decreased
+appetite, hallucination, depression,
+syncope, dizziness; tremor,
+headache, somnolence, lethargy,
+bradycardia, hypertension,
+abdominal pain and discomfort,
+diarrhoea, dyspepsia, muscle
+spasms, fatigue, asthenia, malaise,
+weight loss, fall
+
+20mg daily or
+(10mg bd)
+
+5mg daily
+
+5-HT3 receptor
+antagonist
+
+Glutamate receptor
+antagonist
+
+Memantine
+
+16–24mg XL daily
+(or 8–12mg bd solution)
+
+8mg XL daily
+(or 4mg bd solution)
+(instant release tablets have been
+discontinued in some countries)
+
+Nicotine receptor agonist
+
+AChE-I
+(competitive + reversible)
+
+Galantamine
+
+
+
+
+<<<PAGE 627>>>
+
+None
+Tablets: £8.46
+Orodispersible tablets:
+£49.98
+Oral solution (10mg/
+mL): £61.77
+NB: Bottles supplied
+with a dosing pump
+dispensing 5mg in
+0.5mL per actuation
+
+Delays rate but not extent of
+absorption
+Capsules m/r: £79.80
+Oral solution (4mg/mL): £201.60
+
+Delays rate and extent of absorption
+Capsules: £66.10
+Oral solution (2mg/mL): £135.55
+Patches 9.5mg: £19.97
+4.6mg and 13.3mg: £77.97
+
+Yes (see separate table)
+
+None
+
+Tablets: £1.52
+Orodispersible tablets: £10.43
+Oral solution (1mg/mL):
+£100.22
+
+$
+
+Generics available
+
+Effect of food on
+absorption
+
+Cost of
+preparations7,14
+(for 1-month
+treatment at usual,
+i.e. max dose in the
+UK)
+
+Relative cost
+
+Patent status
+
+Generics available
+
+$$
+
+Interactions unlikely
+
+Generics available
+
+$$
+
+Yes (see separate table)
+
+CYP 3A4
+CYP 2D6
+
+Generics available
+
+$
+
+Yes (see separate
+table)
+
+Primarily non-hepatic
+
+60–100
+
+Drug–drug
+interactions
+
+Minimal involvement of CYP isoenzymes
+
+7–8 (oral solution)
+8–10 (XL capsules)
+
+CYP 3A4
+CYP 2D6 (minor)
+
+~1 (oral)
+3.4 (patch)
+
+Metabolism
+
+Memantine
+
+~70
+
+Galantamine
+
+Half life (hours)
+
+Rivastigmine
+
+Donepezil
+
+Characteristic
+
+Table 6.1 (Continued)
+
+
+
+
+<<<PAGE 629>>>
+
+608  The Maudsley® Prescribing Guidelines in Psychiatry
+
+discontinuation group (46% vs 32%, respectively).25 (For switching to rivastigmine
+patch see under tolerability section)
+Following a systematic review of the literature,26 a practical approach to switching
+between AChE-Is has been proposed: in the case of intolerance, switching to another
+agent should be done only after complete resolution of side effects following discontinuation of the initial agent. In the case of lack of efficacy, switching can be done overnight, with a quicker titration scheme thereafter. Switching to another AChE-I is not
+recommended in individuals who show loss of benefit several years after initiation of
+therapy.
+Other effects
+AChE-Is may also affect non-cognitive aspects of AD and other dementias. Several
+studies have investigated their safety and efficacy in managing the non-cognitive symptoms of dementia. For more information about the management of these symptoms, see
+section ‘Management of behavioural and psychological symptoms of dementia (BPSD)’.
+
+CHAPTER 6
+
+Dosing and formulations
+For dosing information, see Table 6.1.
+Rivastigmine transdermal patch (9.5mg/24 hours) has been shown to be as effective
+as the highest doses of capsules but with a superior tolerability profile in a 6-month
+double-blind, placebo-controlled randomised controlled trial (RCT),27 and confirmed
+in a Chinese study.28 A nasal spray has also been developed.29
+The FDA has approved a higher daily dose of donepezil sustained release (23mg) for
+moderate-to-severe AD on the basis of positive phase III trial results. Donepezil, 23mg/
+day is currently marketed in the USA and parts of Asia. In the global phase III study in
+patients with moderate-to-severe AD, donepezil 23mg/day demonstrated significantly
+greater cognitive benefits than donepezil 10mg/day, with a between-treatment difference in mean change in the Severe Impairment Battery score of 2.2 points in the overall
+study population and 3.1 points in patients with advanced AD. Dose escalation was
+somewhat challenging, given the increased incidence of gastrointestinal (GI) side effects
+observed when increasing the dose of donepezil from 10mg to 23mg daily. These side
+effects seldom persist beyond a 1-month period. Using stepwise titration strategies may
+address these GI side effects and could potentially involve increasing the dose of donepezil from 10 to 23mg over a 1–2-month period by taking one 10mg tablet plus one
+5mg tablet once daily for 1 month followed by a 23mg once daily or a 10mg tablet and
+23mg tablet on alternate days. A study in South Korea has been designed to determine
+the optimal dose escalation strategy for successful titration to 23mg/day.30 Clinical recommendations emphasise the importance of patient selection (AD severity, tolerability
+of lower doses of donepezil and absence of contraindications), a stepwise titration strategy for dose escalation and appropriate monitoring and counselling of patients and
+caregivers in the management of patients with AD.30
+Memantine extended release (ER) 28mg once-daily capsule formulation was approved
+in the USA in 2010 is now fairly widely available. Its efficacy was demonstrated in a
+large, multinational, phase III trial which showed that the addition of memantine ER to
+
+
+
+
+<<<PAGE 630>>>
+
+Prescribing in older people  609
+
+ongoing cholinesterase inhibitors improved key outcomes compared with cholinesterase inhibitor monotherapy, including measures of cognition and global status. The most
+common adverse events were headache, diarrhoea and dizziness.31
+Note that these high doses of donepezil and memantine have not yet been approved
+in the UK and many other countries. In addition, most older people seen in practice
+with AD are likely to be frailer and have more co-morbidities than patients in clinical
+trials and may therefore be less likely to tolerate the higher doses.
+Combination treatment
+Although studies investigating the benefits of combining AChE-Is and memantine have
+found conflicting results, both the European Academy of Neurology (EAN) Guidelines
+and the UK’s National Institute for Health and Care Excellence (NICE)1 recommend
+the use of a combination of AChE-I plus memantine rather than AChE-I alone in
+patients with moderate-to-severe AD. The strength of the evidence supporting this recommendation is rather weak.32 Studies have confirmed that there are no pharmacokinetic or pharmacodynamic interactions between AChE-Is and memantine.33,34
+
+Drug tolerability may differ between AChE-Is, but, again, in the absence of sufficient
+direct comparisons, it is difficult to draw conclusions. Overall tolerability can be
+broadly evaluated by reference to the numbers withdrawing from clinical trials.
+Withdrawal rates in trials of donepezil35,36 ranged from 4% to 16% (placebo 1–7%).
+With rivastigmine,37,38 rates ranged from 7% to 29% (placebo 7%) and with galantamine39–41 from 7% to 23% (placebo 7–9%). These figures relate to withdrawals specifically associated with adverse effects. The number needed to harm (NNH) has been
+reported to be 12.16 A study of the French pharmacovigilance database identified age,
+the use of antipsychotic drugs, antihypertensives and drugs targeting the alimentary
+tract and metabolism as factors associated with serious reactions to AChE-Is.42
+Tolerability seems to be affected by speed of titration and, perhaps less clearly, by
+dose. Most adverse effects occurred in trials during titration, and slower titration schedules are recommended in clinical use. This may mean that these drugs are equally well
+tolerated in practice.
+Rivastigmine patches offer convenience and a superior tolerability profile to rivastigmine capsules.27,28 Data from three trials found that rivastigmine patch was better tolerated than the capsules with fewer GI adverse effects and fewer discontinuations due to
+these adverse effects.43 Data support recommendations for patients on high doses of
+rivastigmine capsules (>6mg/day) to switch directly to the 9.5mg/24 hours patch, while
+those on lower doses (≤6mg/day) should start on 4.6mg/hour patch for 4 weeks before
+increasing to the 9.5mg/hour patch. This latter switch is also recommended for patients
+switching from other oral cholinesterase inhibitors to the rivastigmine patch (with a
+1 week washout period in patients who are sensitive to adverse effects or who have very
+low body weight or a history of bradycardia).44 It is possible to consider increasing the
+dose to 13.3mg/24 hours after 6 months on 9.5mg/24 hours if tolerated, and meaningful cognitive or functional decline occurs. A 48-week RCT found the higher strength
+
+CHAPTER 6
+
+Tolerability
+
+
+
+
+<<<PAGE 631>>>
+
+610  The Maudsley® Prescribing Guidelines in Psychiatry
+
+patch (13.3mg) to significantly reduce deterioration in Instrumental Activities of Daily
+Living (IADL) compared with the 9.5mg/24 hours patch and it was well tolerated.45
+Patients and caregivers should be instructed on important administration details for
+the rivastigmine patch:9
+The transdermal patch should not be applied to the skin that is red, irritated or cut.
+Reapplication to the exact same skin location within 14 days should be avoided to
+minimise the potential risk of skin irritation
+■■ The previous day’s patch must be removed before applying a new one every day.
+■■ Only one patch should be worn at a time.
+■■ The patch should not be cut into pieces.
+■■
+■■
+
+The following cautions exist while using AChE-Is: asthma, chronic obstructive pulmonary
+disease (COPD), sick sinus syndrome, supraventricular conduction abnormalities, susceptibility to peptic ulcers, history of seizures and bladder outflow obstruction; and while using
+rivastigmine patch, there is risk of fatal overdose with patch administration errors.46
+Memantine appears to be well tolerated47,48 and the only conditions associated with
+warnings include severe hepatic impairment and epilepsy/seizures49 (see BNF or equivalent for required dosage adjustments in renal impairment). Isolated cases of international normalised ratio (INR) increases have been reported when memantine is
+co-administered with warfarin.
+Adverse effects
+
+CHAPTER 6
+
+Cholinesterase inhibitors
+
+When adverse effects occur with AChE-Is, they are largely predictable: excess cholinergic stimulation leads to nausea, vomiting, dizziness, insomnia and diarrhoea.50 Such
+effects are most likely to occur at the start of therapy or when the dose is increased.
+They are dose related and tend to be transient. Urinary incontinence has also been
+reported.51 There appear to be no important differences between drugs with respect to
+the type or frequency of adverse events, although clinical trials generally suggest a relatively lower frequency of adverse events for donepezil. This may simply be a reflection
+of the aggressive titration schedules used in trials of other drugs. GI effects appeared to
+be more common with oral rivastigmine in clinical trials than with other cholinesterase
+inhibitors, however slower titration, ensuring oral rivastigmine is taken with food or
+using the patch reduces the risk of GI effects.
+An analysis of 16 years of Individual Case Safety Reports from VigiBase found that
+the most common adverse effects reported with AChE-Is were neuropsychiatric symptoms (31.4%), GI disorders (15.9%) and general disorders and administration site conditions (11.9%). Cardiovascular adverse drug reactions (ADRs) accounted for 11.7%.52
+In view of their pharmacological action, AChE-Is can be expected to have vagotonic
+effects on heart rate (i.e. bradycardia) (See figure 6.1). The potential for this action may
+be of particular importance in patients with ‘sick sinus syndrome’ or other supraventricular cardiac conduction disturbances, such as sinoatrial or atrioventricular block.7–12
+Concerns over the potential cardiac adverse effects associated with AChE-Is were
+raised following findings from controlled trials of galantamine in mild cognitive
+impairment (MCI) in which increased mortality was associated with galantamine
+
+
+
+
+<<<PAGE 634>>>
+
+Prescribing in older people  613
+
+highlighting the care required when treating patients with dementia who have a history
+of bradycardia or epilepsy.65
+
+Potential for interaction may also differentiate currently available cholinesterase inhibitors. Donepezil66 and galantamine67 are metabolised by cytochromes 2D6 and 3A4 and
+so drug levels may be altered by other drugs affecting the function of these enzymes.
+Cholinesterase inhibitors themselves may also interfere with the metabolism of other
+drugs, although this is perhaps a theoretical consideration. Rivastigmine has almost no
+potential for interaction since it is metabolised at the site of action and does not affect
+hepatic cytochromes. A prospective pharmacodynamic analysis of potential drug interactions between rivastigmine and other medications (22 different therapeutic classes)
+commonly prescribed in the elderly population compared adverse effects’ odds ratios
+between rivastigmine and placebo. Rivastigmine was not associated with any significant pattern of increase in adverse effects that would indicate a drug interaction compared with placebo.68 Rivastigmine thus appears to be least likely to cause problematic
+drug interactions, a factor that may be important in an elderly population subject to
+polypharmacy (see Table 6.2).
+Analysis of the French pharmacovigilance database found that the majority of
+reported drug interactions concerning AChE-Is were found to be pharmacodynamic in
+nature and most frequently involved the combination of AChE-I and bradycardic drugs
+(beta blockers, digoxin, amiodarone and calcium channel antagonists). Almost a third
+of these interactions resulted in cardiovascular ADRs such as bradycardia, atrioventricular block and arterial hypotension. The second most frequent drug interaction
+reported was the combination of AChE-I with anticholinergic drugs leading to pharmacological antagonism.69
+The pharmacodynamic, pharmacokinetic and pharmacogenetic aspects of drugs used
+in dementia have recently been summarised in two comprehensive reviews.70,71
+When to stop treatment
+A large multicentre study72 of community-dwelling patients with moderate or severe
+AD investigated the long-term effects of donepezil over 12 months compared with stopping donepezil after 3 months, switching to memantine or combining donepezil with
+memantine. Continued treatment with donepezil was associated with continued cognitive benefits, and patients with a Mini Mental State (MMSE) score as low as 3 also
+benefitted from treatment. This suggests that patients should continue treatment with
+AChE-Is for as long as possible and there should not be a cut-off MMSE score where
+treatment is stopped automatically. Moreover, secondary and post-hoc analyses of this
+study found that withdrawal of donepezil in patients with moderate-to-severe AD
+increased the risk of nursing home placement during 12 months of treatment but made
+no difference during the following 3 years of follow-up. This highlights the point that
+decisions to stop or continue treatment should be informed by potential risks of withdrawal, even if the perceived benefits of continued treatment are not clear.73
+
+CHAPTER 6
+
+Interactions
+
+
+
+
+<<<PAGE 635>>>
+
+Metabolism
+
+Substrate at 3A4
+and 2D6
+
+Non-hepatic
+metabolism
+
+Substrate at 3A4
+and 2D6
+
+Drug
+
+Donepezil
+(Aricept®)
+
+Rivastigmine
+(Exelon®)
+
+Galantamine
+(Reminyl®)
+
+Antagonistic effects with anticholinergic and competitive neuromuscular blockers (e.g.
+tubocurarine). Potential for synergistic activity with cholinomimetics such as depolarising
+neuro-muscular blocking agents (e.g. succinylcholine), cholinergic agonists and
+peripherally acting cholinesterase inhibitors, e.g. neostigmine. Possible interaction with
+agents that significantly reduce heart rate, e.g. digoxin, beta blockers, certain calciumchannel blockers and amiodarone. Caution with concomitant use of drugs known to induce QT
+prolongation and/or torsade de pointes (manufacturer recommends ECG in such cases).
+Movement disorders and neuroleptic malignant syndrome have occurred with concomitant use of
+antipsychotics and cholinesterase inhibitors
+
+None known
+
+Ketoconazole
+Erythromycin
+Ritonavir
+Quinidine
+Paroxetine
+Fluoxetine
+Fluvoxamine
+Amitriptyline
+
+Antagonistic with anticholinergic drugs and competitive neuromuscular blockers (e.g.
+tubocurarine). Potential for synergistic activity with cholinomimetics such as depolarising
+neuro-muscular blocking agents (e.g. succinylcholine), cholinergic agonists and
+peripherally acting cholinesterase inhibitors, e.g. neostigmine. Beta blockers, amiodarone
+or calcium channel blockers may have additive effects on cardiac conduction. Caution with
+concomitant use of drugs known to induce QT prolongation and/or torsade de pointes.
+Movement disorders and neuroleptic malignant syndrome have occurred with concomitant use of
+antipsychotics and cholinesterase inhibitors.
+Concurrent use with seizure lowering agents may result in reduced seizure threshold.
+Antagonistic effects with anticholinergic and competitive neuromuscular blockers (e.g.
+tubocurarine). Potential for synergistic activity with cholinomimetics such as depolarising
+neuro-muscular blocking agents (e.g. succinylcholine) – cholinergic agonists, e.g.
+bethanechol or peripherally acting cholinesterase inhibitors, e.g. neostigmine. Synergistic
+effects on cardiac conduction with beta blockers, amiodarone, calcium channel blockers.
+Caution with concomitant use of drugs known to induce QT prolongation and/or torsade de
+pointes. Movement disorders and neuroleptic malignant syndrome have occurred with
+concomitant use of antipsychotics and cholinesterase inhibitors. Concurrent use with
+metoclopramide may result in increased risk of extrapyramidal symptoms
+
+Rifampicin
+Phenytoin
+Carbamazepine
+Alcohol
+
+Ketoconazole
+Itraconazole
+Erythromycin
+Quinidine
+Fluoxetine
+Paroxetine
+
+Pharmacodynamic interactions
+
+Metabolic interactions appear unlikely.
+Rivastigmine may inhibit the
+butyrylcholinesterase-mediated
+metabolism of other substances, e.g.
+cocaine.
+Smoking tobacco increases the clearance
+of rivastigmine
+
+Plasma levels
+decreased by
+
+Plasma levels
+increased by
+
+Table 6.2 Drug–drug interactions8–12,74,75
+
+
+
+
+<<<PAGE 638>>>
+
+Prescribing in older people  617
+
+NICE recommendations
+NICE Guidance on Dementia78 was last updated in June 2018.
+Summary of NICE guidance for the treatment of Alzheimer’s disease78,79
+The three AChE-Is donepezil, galantamine and rivastigmine are recommended for managing mild-to-moderate AD.
+Memantine is recommended for managing moderate AD for people who are intolerant of or have a contraindication to AChE-Is, or for managing severe AD.
+■■ For people with an established diagnosis of AD who are already taking an AChE-I:
+■■ consider memantine in addition to an AChE-I if they have moderate disease;
+■■ offer memantine in addition to an AChE-I if they have severe disease.
+■■ Treatment should be under the following conditions:
+For people who are not taking an AChE-I or memantine, prescribers should only start treatment with these on the
+advice of a clinician who has the necessary knowledge and skills.
+This could include:
+■■ secondary care medical specialists such as psychiatrists, geriatricians and neurologists; and
+■■ other healthcare professionals (such as GPs, nurse consultants and advanced nurse practitioners), if they
+have specialist expertise in diagnosing and treating AD.
+■■ Once a decision has been made to start an AChE-I or memantine, the first prescription may be made in
+primary care.
+■■ For people with an established diagnosis of AD who are already taking an AChE-I, primary care prescribers may start
+treatment with memantine without taking advice from a specialist clinician.
+■■ Ensure that local arrangements for prescribing, supply and treatment review follow the NICE guideline on
+medicines optimisation.80
+■■ Do not stop AChE-Is in people with AD because of disease severity alone.
+■■ Therapy with AChE-I should be initiated with a drug with the lowest acquisition cost (taking into account
+required daily dose and the price per dose once shared care has started). An alternative may be considered on
+the basis of adverse effects profile, expectations about adherence, medical co-morbidity, possibility of drug
+interactions and dosing profiles.
+■■
+
+■■
+
+Summary of NICE guidance for the treatment of non-AD dementia78,79
+Offer donepezil or rivastigmine to people with mild-to-moderate DLB.
+Only consider galantamine for people with mild-to-moderate DLB if donepezil and rivastigmine are not tolerated.
+■■ Consider donepezil or rivastigmine for people with severe DLB.
+■■ Consider memantine for people with DLB if AChE-Is are not tolerated or are contraindicated.
+■■ Only consider AChE-Is or memantine for people with vascular dementia if they have suspected co-morbid AD,
+Parkinson’s disease dementia or DLB.
+■■ Do not offer AChE-Is or memantine to people with frontotemporal dementia.
+■■ Do not offer AChE-Is or memantine to people with cognitive impairment caused by multiple sclerosis.
+■■ For guidance on pharmacological management of Parkinson’s disease dementia, see Parkinson’s disease
+dementia in the NICE guideline on Parkinson’s disease.
+■■
+
+Medicines that may cause cognitive impairment1
+Be aware that some commonly prescribed medicines are associated with increased anticholinergic burden, and
+therefore cognitive impairment.
+■■ Consider minimising the use of medicines associated with increased anticholinergic burden, and if possible
+look for alternatives:
+■■ when assessing whether to refer a person with suspected dementia for diagnosis
+■■ during medication reviews with people living with dementia.
+■■ Be aware that there are validated tools for assessing anticholinergic burden but there is insufficient evidence to
+recommend one over the others (see section ‘Safer prescribing for physical health conditions in dementia’).
+■■ For guidance on carrying out medication reviews, see medication review in the NICE guideline on medicines
+optimisation.
+NB: The Anticholinergic Effect on Cognition (AEC) scale can be accessed at www.medichec.com
+■■
+
+CHAPTER 6
+
+■■
+
+
+
+
+<<<PAGE 647>>>
+
+626  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 6.3 Summary of BAP recommendations
+First choice
+
+Second choice
+
+Alzheimer’s disease
+
+AChE-Is
+
+Memantine
+
+Vascular dementia
+
+None
+
+None
+
+Mixed dementia
+
+AChE-Is
+
+Memantine
+
+Dementia with Lewy bodies
+
+AChE-Is
+
+Memantine
+
+Mild cognitive impairment
+
+None
+
+None
+
+Dementia with Parkinson’s disease
+
+AChE-Is
+
+Memantine
+
+Frontotemporal dementia
+
+None
+
+None
+
+CHAPTER 6
+
+References
+1. National Institute for Clinical Excellence. Dementia: assessment, management and support for people living with dementia and their carers.
+NICE guideline [NG97] 2018; www.nice.org.uk/guidance/ng97.
+2. Francis PT, et al. The cholinergic hypothesis of Alzheimer’s disease: a review of progress. J Neurol Neurosurg Psychiatry 1999; 66:137–147.
+3. Craig LA, et al. Revisiting the cholinergic hypothesis in the development of Alzheimer’s disease. Neurosci Biobehav Rev 2011;
+35:1397–1409.
+4. Mesulam M, et al. Widely spread butyrylcholinesterase can hydrolyze acetylcholine in the normal and Alzheimer brain. Neurobiol Dis 2002;
+9:88–93.
+5. Weinstock M. Selectivity of cholinesterase inhibition: clinical implications for the treatment of Alzheimer’s disease. CNS Drugs 1999;
+12:307–323.
+6. Matsunaga S, et al. Memantine monotherapy for Alzheimer’s disease: a systematic review and meta-analysis. PLoS One 2015; 10:e0123289.
+7. BNF Online. British National Formulary. 2020; https://www.medicinescomplete.com/mc/bnf/current.
+8. Eisai Ltd. Summary of product characteristics. Aricept tablets (donepezil hydrochloride). 2018; https://www.medicines.org.uk/emc/
+product/3776/smpc.
+9. Novartis Pharmaceuticals UK Limited. Summary of product characteristics. Exelon 4.6 mg/24h, 9.5 mg/24h, 13.3 mg/24h transdermal patch.
+2020; https://www.medicines.org.uk/emc/product/7764/smpc.
+10. Sandoz Limited. Summary of product characteristics. Rivastigmine Sandoz 1.5 mg, 3 mg, 4.5 mg, 6 mg hard capsules. 2016; https://www.
+medicines.org.uk/emc/product/8407/smpc.
+11. Shire Pharmaceuticals Limited. Summary of product characteristics. Reminyl XL 8mg, 16mg and 24mg prolonged release capsules. 2019;
+https://www.medicines.org.uk/emc/product/3934/smpc.
+12. Shire Pharmaceuticals Limited. Summary of product characteristics. Reminyl Oral Solution. 2020; https://www.medicines.org.uk/emc/
+medicine/10337.
+13. Lundbeck Limited. Summary of product characteristics. Ebixa 5mg/pump actuation oral solution, 20mg and 10 mg Tablets and Treatment
+Initiation Pack. 2019; https://www.medicines.org.uk/emc/product/8222/smpc.
+14. NHS Prescription Services. Drug tariff. 2020; http://www.drugtariff.nhsbsa.nhs.uk/#/00791628-DD/DD00791615/Home.
+15. Buckley JS, et al. A risk-benefit assessment of dementia medications: systematic review of the evidence. Drugs Aging 2015; 32:453–467.
+16. Lanctot KL, et al. Efficacy and safety of cholinesterase inhibitors in Alzheimer’s disease: a meta-analysis. CMAJ 2003; 169:557–564.
+17. McShane R, et al. Memantine for dementia. Cochrane Database Syst Rev 2006; CD003154.
+18. Vaci N, et al. Real-world effectiveness, its predictors and onset of action of cholinesterase inhibitors and memantine in dementia: retrospective
+health record study. Br J Psychiatry 2020:1–7. [Epub ahead of print].
+19. Burns A, et al. Efficacy and safety of donepezil over 3 years: an open-label, multicentre study in patients with Alzheimer’s disease. Int J Geriatr
+Psychiatry 2007; 22:806–812.
+20. Doody RS, et al. Open-label, multicenter, phase 3 extension study of the safety and efficacy of donepezil in patients with Alzheimer disease.
+Arch Neurol 2001; 58:427–433.
+21. Farlow MR, et al. Effective pharmacologic management of Alzheimer’s disease. Am J Med 2007; 120:388–397.
+22. O’Brien JT, et al. Clinical practice with anti-dementia drugs: A revised (third) consensus statement from the British Association for
+Psychopharmacology. J Psychopharmacol 2017; 31:147–168.
+23. Singh S, et al. Discontinuation syndrome following donepezil cessation. Int J Geriatr Psychiatry 2003; 18:282–284.
+24. Bidzan L, et al. Withdrawal syndrome after donepezil cessation in a patient with dementia. Neurol Sci 2012; 33:1459–1461.
+25. Waldemar G, et al. Tolerability of switching from donepezil to memantine treatment in patients with moderate to severe Alzheimer’s disease.
+Int J Geriatr Psychiatry 2008; 23:979–981.
+
+
+
+
+<<<PAGE 648>>>
+
+26. Massoud F, et al. Switching cholinesterase inhibitors in older adults with dementia. Int Psychogeriatr 2011; 23:372–378.
+27. Winblad B, et al. A six-month double-blind, randomized, placebo-controlled study of a transdermal patch in Alzheimer’s disease–rivastigmine
+patch versus capsule. Int J Geriatr Psychiatry 2007; 22:456–467.
+28. Zhang ZX, et al. Rivastigmine patch in Chinese Patients with Probable Alzheimer’s disease: A 24-week, randomized, double-blind parallelgroup study comparing rivastigmine patch (9.5 mg/24 h) with Capsule (6 mg Twice Daily). CNS Neurosci Ther 2016; 22:488–496.
+29. Morgan TM, et al. Absolute bioavailability and safety of a novel rivastigmine nasal spray in healthy elderly individuals. Br J Clin Pharmacol
+2017; 83:510–516.
+30. Sabbagh M, et al. Clinical recommendations for the use of donepezil 23 mg in moderate-to-severe Alzheimer’s disease in the Asia-Pacific
+region. Dementia Geriatr Cogn Disord Extra 2016; 6:382–395.
+31. Plosker GL. Memantine extended release (28 mg once daily): a review of its use in Alzheimer’s disease. Drugs 2015; 75:887–897.
+32. Schmidt R, et al. EFNS-ENS/EAN guideline on concomitant use of cholinesterase inhibitors and memantine in moderate to severe Alzheimer’s
+disease. Eur J Neurol 2015; 22:889–898.
+33. Periclou AP, et al. Lack of pharmacokinetic or pharmacodynamic interaction between memantine and donepezil. Ann Pharmacother 2004;
+38:1389–1394.
+34. Grossberg GT, et al. Rationale for combination therapy with galantamine and memantine in Alzheimer’s disease. J Clin Pharmacol 2006;
+46:17S-26S.
+35. Rogers SL, et al. Donepezil improves cognition and global function in Alzheimer disease: a 15-week, double-blind, placebo-controlled study.
+Donepezil Study Group. Arch Intern Med 1998; 158:1021–1031.
+36. Rogers SL, et al. A 24-week, double-blind, placebo-controlled trial of donepezil in patients with Alzheimer’s disease. Donepezil Study Group.
+Neurology 1998; 50:136–145.
+37. Corey-Bloom J, et al. A randomized trial evaluating the efficacy and safety of ENA 713 (rivastigmine tartrate), a new acetylcholinesterase inhibitor, in patients with mild to moderately severe Alzheimer’s disease. International Journal of Geriatric Psychopharmacology 1998; 1:55–64.
+38. Rosler M, et al. Efficacy and safety of rivastigmine in patients with Alzheimer’s disease: international randomised controlled trial. BMJ 1999;
+318:633–638.
+39. Tariot PN, et al. A 5-month, randomized, placebo-controlled trial of galantamine in AD. The Galantamine USA-10 Study Group. Neurology
+2000; 54:2269–2276.
+40. Raskind MA, et al. Galantamine in AD: A 6-month randomized, placebo-controlled trial with a 6-month extension. The Galantamine USA-1
+Study Group. Neurology 2000; 54:2261–2268.
+41. Wilcock GK, et al. Efficacy and safety of galantamine in patients with mild to moderate Alzheimer’s disease: multicentre randomised controlled trial. Galantamine International-1 Study Group. BMJ 2000; 321:1445–1449.
+42. Pariente A, et al. Factors associated with serious adverse reactions to cholinesterase inhibitors: a study of spontaneous reporting. CNS Drugs
+2010; 24:55–63.
+43. Sadowsky CH, et al. Safety and tolerability of rivastigmine transdermal patch compared with rivastigmine capsules in patients switched from
+donepezil: data from three clinical trials. Int J Clin Pract 2010; 64:188–193.
+44. Sadowsky C, et al. Switching from oral cholinesterase inhibitors to the rivastigmine transdermal patch. CNS Neurosci Ther 2010; 16:51–60.
+45. Cummings J, et al. Randomized, double-blind, parallel-group, 48-week study for efficacy and safety of a higher-dose rivastigmine patch (15
+vs. 10 cm(2)) in Alzheimer’s disease. Dement Geriatr Cogn Disord 2012; 33:341–353.
+46. National Institute for Health and Care Excellence. British National Formulary (BNF). 2020; https://bnf.nice.org.uk.
+47. Parsons CG, et al. Memantine is a clinically well tolerated N-methyl-D-aspartate (NMDA) receptor antagonist–a review of preclinical data.
+Neuropharmacology 1999; 38:735–767.
+48. Reisberg B, et al. Memantine in moderate-to-severe Alzheimer’s disease. N Engl J Med 2003; 348:1333–1341.
+49. Jones RW. A review comparing the safety and tolerability of memantine with the acetylcholinesterase inhibitors. Int J Geriatr Psychiatry
+2010; 25:547–553.
+50. Dunn NR, et al. Adverse effects associated with the use of donepezil in general practice in England. J Psychopharmacol 2000; 14:406–408.
+51. Hashimoto M, et al. Urinary incontinence: an unrecognised adverse effect with donepezil. Lancet 2000; 356:568.
+52. Kroger E, et al. Adverse drug reactions reported with cholinesterase inhibitors: an analysis of 16 years of individual case safety reports from
+VigiBase. Ann Pharmacother 2015; 49:1197–1206.
+53. NHS Yorkshire and Humber Clinical Networks. The assessment of cardiac status before prescribing acetyl cholinesterase inhibitors for
+dementia. Version 1. 2016; http://www.yhscn.nhs.uk/media/PDFs/mhdn/Dementia/ECG%20Documents/ACHEIGuidance%20V1_Final.pdf.
+54. Rowland JP, et al. Cardiovascular monitoring with acetylcholinesterase inhibitors: a clinical protocol. Adv Psychiatr Treatment 2007;
+13:178–184.
+55. FDA Alert for Healthcare Professionals. Galantamine hydrobromide (marketed as Razadyne, formerly Reminyl). 2005; https://www.fda.gov/
+Drugs/DrugSafety/ucm109350.htm.
+56. Malone DM, et al. Cholinesterase inhibitors and cardiovascular disease: a survey of old age psychiatrists’ practice. Age Ageing 2007;
+36:331–333.
+57. Park-Wyllie LY, et al. Cholinesterase inhibitors and hospitalization for bradycardia: a population-based study. PLoS Med 2009; 6:e1000157.
+58. Rosenbloom MH, et al. Donepezil-associated bradyarrhythmia in a patient with dementia with Lewy bodies (DLB). Alzheimer Dis Assoc
+Disord 2010; 24:209–211.
+59. Gill SS, et al. Syncope and its consequences in patients with dementia receiving cholinesterase inhibitors: a population-based cohort study.
+Arch Intern Med 2009; 169:867–873.
+
+CHAPTER 6
+
+Prescribing in older people  627
+
+
+
+
+<<<PAGE 770>>>
+
+Hepatic and renal impairment  749
+
+Summary – recommended psychotropics in renal impairment
+Where renal function declines while on existing drug treatment, rule-out existing drugs
+as a cause of reduced function and continue at a dose suggested in Tables 8.8–8.13.
+Where new drug treatment is required follow the suggestions below:
+Drug group
+
+Recommended drugs
+
+Antipsychotics
+
+■■
+
+No agent clearly preferred to another; however, avoid sulpiride and amisulpride
+avoid highly anticholinergic agents because they can contribute to urinary retention
+■■ first generation antipsychotic – suggest haloperidol 2–6mg a day
+■■ second generation antipsychotic – suggest olanzapine 5mg a day
+■■
+
+Antidepressants203
+
+No agent clearly preferred to another; however, reasonable choices are
+Sertraline but poor efficacy data in renal disease
+■■ Citalopram (care QTc prolonging effects and greater risk of sudden death in those
+on haemodialysis vs. other SSRIs)
+■■ Fluoxetine but care long half-life and need for alternate day dosing at lower GFRs
+■■ CBT where available
+■■
+■■
+
+Mood stabilisers
+
+■■
+■■
+
+Anxiolytics and
+hypnotics
+
+■■
+
+Anti-dementia drugs
+
+■■
+
+No agent clearly preferred to another; however, avoid lithium if possible
+suggest start one the following at a low dose and increase slowly, monitor for
+adverse effects: valproate or lamotrigine
+
+No agent clearly preferred to another; however, excessive sedation is more likely to
+occur in patients with renal impairment, so monitor all patients carefully
+■■ lorazepam and zopiclone are suggested as reasonable choices
+No agent clearly preferred to another, however, rivastigmine is a reasonable
+choice
+
+1. National Institute for Clinical Excellence. 4-year surveillance (2017) – Chronic kidney disease in adults (2014) NICE guideline [CG182];
+https://www.nice.org.uk/guidance/cg182/evidence/appendix-a2-cg182-summary-of-new-evidence-from-surveillance-pdf-4429248447.
+2. Levey AS, et al. A new equation to estimate glomerular filtration rate. Ann Intern Med 2009; 150:604–612.
+3. National Institute for Health and Care Excellence. Chronic kidney disease in adults: assessment and management. Clinical Guidance 182
+[CG182] 2015; https://www.nice.org.uk/guidance/cg182.
+4. National Institute for Clinical Excellence. Surveillance report 2017 – Chronic kidney disease (stage 4 or 5): management of ­hyperphosphataemia
+(2013) NICE Guideline CG157. Chronic kidney disease in adults: assessment and management (2014) NICE guideline CG182 and Chronic
+kidney disease: managing anaemia (2015) NICE guideline NG8 2017; https://www.nice.org.uk/guidance/cg182/resources/surveillance-report2017-chronic-kidney-disease-stage-4-or-5-management-of-hyperphosphataemia-2013-nice-guideline-cg157-chronic-kidney-disease-inadults-assessment-and-management-2014-nice-guideline–pdf-5740305984709.
+5. Tangri N, et al. A predictive model for progression of chronic kidney disease to kidney failure. JAMA 2011; 305:1553–1559.
+6. Brater DC. Measurement of renal function during drug development. Br J Clin Pharmacol 2002; 54:87–95.
+7. Chinnadurai R, et al. Impact of chronic kidney disease on the drugs eliminated predominantly through a non-renal route: a proof of concept
+study with Citalopram. Nephrol Dial Transplant 2019; 34:gfz103.SP268.
+8. Toprak O, et al. New-onset type II diabetes mellitus, hyperosmolar non-ketotic coma, rhabdomyolysis and acute renal failure in a patient
+treated with sulpiride. Nephrol Dial Transplant 2005; 20:662–663.
+9. Baumgart U, et al. Olanzapine-induced acute rhabdomyolysis – a case report. Pharmacopsychiatry 2005; 38:36–37.
+10. Marsh SJ, et al. Rhabdomyolysis and acute renal failure during high-dose haloperidol therapy. Ren Fail 1995; 17:475–478.
+11. Smith RP, et al. Quetiapine overdose and severe rhabdomyolysis. J Clin Psychopharmacol 2004; 24:343.
+12. Nagler EV, et al. Antidepressants for depression in stage 3-5 chronic kidney disease: a systematic review of pharmacokinetics, efficacy and
+safety with recommendations by European Renal Best Practice (ERBP). Nephrol Dial Transplant 2012; 27:3736–3745.
+13. Palmer SC, et al. Antidepressants for treating depression in adults with end-stage kidney disease treated with dialysis. The Cochrane Database
+of Systematic Reviews 2016:CD004541.
+14. Dev V, et al. Higher anti-depressant dose and major adverse outcomes in moderate chronic kidney disease: a retrospective population-based
+study. BMC Nephrol 2014; 15:79.
+
+CHAPTER 8
+
+References
+
+
+
+
+<<<PAGE 793>>>
+
+772  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 9.1 (Continued)
+Drug
+
+Dose
+
+Adverse effects
+
+Notes
+
+Donepezil75
+
+Oral 5mg od
+
+Reasonably well
+tolerated compared
+with placebo. Nausea,
+vomiting and
+diarrhoea are the most
+common adverse
+effects reported
+
+Very limited evidence. In the small
+studies where it has been used, clinical
+benefits have not been convincing.
+Not recommended
+
+Rivastigmine76–78
+
+Oral 1.5–6mg
+bd
+
+A study which added
+rivastigmine to usual
+care (haloperidol),
+showed that
+rivastigmine did not
+decrease the duration
+of delirium but in fact
+was associated with a
+more severe type of
+delirium, a longer stay
+in intensive care and
+higher mortality
+compared with placebo
+
+Use of rivastigmine to treat delirium in
+critically ill patients is not
+recommended. May have a place in
+delirium prevention34
+
+Trazodone4,7
+
+25–150mg
+nocte
+
+Over sedation is
+problematic
+
+Limited experience – used only in
+uncontrolled studies. Not
+recommended
+
+Sodium valproate79–82
+
+Oral/IM/IV
+
+Contraindicated in
+active liver disease
+
+Some case reports of use where
+antipsychotics and/or benzodiazepines
+are ineffective; otherwise not
+recommended
+
+Cholinesterase Inhibitors
+
+Other Drugs
+
+250mg bd
+increased to
+around
+1500mg/day, or
+20mg/kg/day
+
+Monitor for
+thrombocytopaenia
+(more common in
+critically ill patients)
+
+CHAPTER 9
+
+Target plasma
+levels have not
+been validated
+for this
+indication. Note
+that physically
+ill patients may
+have altered
+albumin
+binding of
+valproate.
+IV loading
+doses have also
+been used in
+ICU settings
+bd, bis die (twice a day); nocte, at night; od, omne in die (once a day)
+
+

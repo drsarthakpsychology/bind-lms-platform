@@ -1,0 +1,1190 @@
+<<<PAGE 7>>>
+
+Contents
+Introduction
+List of icons
+1 acamprosate
+2 agomelatine
+3 alprazolam
+4 amisulpride
+5 amitriptyline
+6 amoxapine
+7 amphetamine (d)
+8 amphetamine (d,l)
+9 aripiprazole
+10 armodafinil
+11 asenapine
+12 atomoxetine
+13 benztropine
+14 blonanserin
+15 bremelanotide
+16 brexanolone
+17 brexpiprazole
+18 buprenorphine
+19 bupropion
+20 buspirone
+21 caprylidene
+22 carbamazepine
+23 cariprazine
+24 chlordiazepoxide
+25 chlorpromazine
+
+
+
+
+<<<PAGE 435>>>
+
+Chlordiazepoxide
+
+Therapeutics
+Brands
+Limbitrol
+Librium
+Librax
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: GABA positive allosteric
+modulator (GABA-PAM)
+Benzodiazepine (anxiolytic)
+Commonly Prescribed for
+(bold for FDA approved)
+Anxiety disorders
+Symptoms of anxiety
+Preoperative apprehension and anxiety
+
+
+
+
+<<<PAGE 437>>>
+
+For long-term symptoms of anxiety, consider switching to an SSRI
+or SNRI for long-term maintenance
+If long-term maintenance with a benzodiazepine is necessary,
+continue treatment for 6 months after symptoms resolve, and then
+taper dose slowly
+If symptoms reemerge, consider treatment with an SSRI or SNRI, or
+consider restarting the benzodiazepine; sometimes benzodiazepines
+have to be used in combination with SSRIs or SNRIs for best results
+If It Doesn’t Work
+Consider switching to another agent or adding an appropriate
+augmenting agent
+Consider psychotherapy, especially cognitive behavioral
+psychotherapy
+Consider presence of concomitant substance abuse
+Consider presence of chlordiazepoxide abuse
+Consider another diagnosis, such as a comorbid medical condition
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Benzodiazepines are frequently used as augmenting agents for
+antipsychotics and mood stabilizers in the treatment of psychotic
+and bipolar disorders
+
+
+
+
+<<<PAGE 442>>>
+
+Risk of dependence, particularly for treatment periods longer than
+12 weeks, and especially in patients with past or current
+polysubstance abuse
+Habit Forming
+Chlordiazepoxide is a Schedule IV drug
+Patients may develop dependence and/or tolerance with long-term
+use
+How to Stop
+Patients with history of seizure may seize upon withdrawal,
+especially if withdrawal is abrupt
+Taper by 10 mg every 3 days to reduce chances of withdrawal
+effects
+For difficult-to-taper patients, consider reducing dose much more
+slowly after reaching 20 mg/day, perhaps by as little as 5 mg per
+week or less
+For other patients with severe problems discontinuing a
+benzodiazepine, dosing may need to be tapered over many months
+(i.e., reduce dose by 1% every 3 days by crushing tablet and
+suspending or dissolving in 100 mL of fruit juice and then disposing
+of 1 mL and drinking the rest; 3–7 days later, dispose of 2 mL, and
+so on). This is both a form of very slow biological tapering and a
+form of behavioral desensitization
+
+
+
+
+<<<PAGE 444>>>
+
+Patients and their caregivers should be warned to seek medical
+attention if unusual dizziness, lightheadedness, sedation, slowed or
+difficulty breathing, or unresponsiveness occur
+Dosage changes should be made in collaboration with prescriber
+Use with caution in patients with pulmonary disease; rare reports of
+death after initiation of benzodiazepines in patients with severe
+pulmonary impairment
+History of drug or alcohol abuse often creates greater risk for
+dependency
+Some depressed patients may experience a worsening of suicidal
+ideation
+Some patients may exhibit abnormal thinking or behavioral changes
+similar to those caused by other CNS depressants (i.e., either
+depressant actions or disinhibiting actions)
+Do Not Use
+If patient has angle-closure glaucoma
+If there is a proven allergy to chlordiazepoxide or any
+benzodiazepine
+
+Special Populations
+Renal Impairment
+Initial 10–20 mg/day in 2–4 doses; increase as needed
+
+
+
+
+<<<PAGE 445>>>
+
+Hepatic Impairment
+Initial 10–20 mg/day in 2–4 doses; increase as needed
+Cardiac Impairment
+Benzodiazepines have been used to treat anxiety associated with
+acute myocardial infarction
+Elderly
+Initial 10–20 mg/day in 2–4 doses; increase as needed
+Elderly patients may be more sensitive to sedative effects
+Children and Adolescents
+Not recommended for use in children under age 6
+Initial 10–20 mg/day in 2–4 doses; may increase to 20–30 mg/day in
+2–3 doses if ineffective
+Hyperactive children should be monitored for paradoxical effects
+Long-term effects of chlordiazepoxide in children/adolescents are
+unknown
+Should generally receive lower doses and be more closely
+monitored
+Pregnancy
+
+
+
+
+<<<PAGE 446>>>
+
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Possible increased risk of birth defects when benzodiazepines are
+taken during pregnancy
+Because of the potential risks, chlordiazepoxide is not generally
+recommended as treatment for anxiety during pregnancy, especially
+during first trimester
+Drug should be tapered if discontinued
+Infants whose mothers received a benzodiazepine late in pregnancy
+may experience withdrawal effects
+Neonatal flaccidity has been reported in infants whose mothers took
+a benzodiazepine during pregnancy
+Seizures, even mild seizures, may cause harm to the embryo/fetus
+Breast Feeding
+Unknown if chlordiazepoxide is secreted in human breast milk, but
+all psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+
+Effects of benzodiazepines on nursing infants have been reported
+and include feeding difficulties, sedation, and weight loss
+
+
+
+
+<<<PAGE 448>>>
+
+evaluation for comorbid psychiatric and/or medical conditions
+
+✽ Remains a viable treatment option for alcohol withdrawal
+
+Though not systematically studied, benzodiazepines have been used
+effectively to treat catatonia and are the initial recommended
+treatment
+
+Suggested Reading
+Baskin SI , Esdale A. Is chlordiazepoxide the rational choice among
+benzodiazepines ? Pharmacotherapy 1982 ;2 :110–19 .
+Erstad BL , Cotugno CL. Management of alcohol withdrawal . Am J Health
+Syst Pharm 1995 ;52 :697 –709 .
+Fraser AD. Use and abuse of the benzodiazepines . Ther Drug Monit 1998
+;20 :481–9 .
+Murray JB. Effects of valium and librium on human psychomotor and
+cognitive functions . Genet Psychol Monogr 1984 ;109 (2D Half):167–97 .
+
+
+
+
+<<<PAGE 2577>>>
+
+Carbapin (carbamazepine), 131
+Carbatrol (carbamazepine), 131
+Carbium (carbamazepine), 131
+Carbolith (lithium), 415
+Carbolithium (lithium), 415
+Carbymal (carbamazepine), 131
+Cardilac (fluphenazine), 313
+cariprazine, 137
+Carpaz (carbamazepine), 131
+Cassadan (alprazolam), 11
+Cassipa (buprenorphine with naloxone), 111
+Catanidin (clonidine), 179
+Catapres (clonidine), 179
+Catapres-TTS (clonidine), 179
+Cedrol (zolpidem), 871
+Celexa (citalopram), 159
+Cenilene (fluphenazine), 313
+Centedrin (d,l-methylphenidate), 487
+Cereen (haloperidol), 347
+Championyl (sulpiride), 741
+Champix (varenicline), 837
+Chantix (varenicline), 837
+Chemmart (escitalopram), 269
+Chlorazin (chlorpromazine), 153
+chlordiazepoxide, 147
+Chlorpromazin (chlorpromazine), 153
+Chlorpromazina HCl (chlorpromazine), 153
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2580>>>
+
+Decanoate (haloperidol), 347
+Decazate (fluphenazine), 313
+Decentan (fluphenazine), 313
+Decentan (perphenazine), 607
+Decentan-Depot (perphenazine), 607
+Defanyl (amoxapine), 33
+Defobin (chlordiazepoxide), 147
+Deftan (lofepramine), 421
+Degranol (carbamazepine), 131
+Delepsine (valproate), 829
+Delgian (maprotiline), 465
+Delsym (dextromethorphan), 225
+Demolox (amoxapine), 33
+Deniban (amisulpride), 17
+Denion (diazepam), 229
+Depacon (valproate), 829
+Depakene (valproate), 829
+Depakine (LA) (valproate), 829
+Depakine Chrono (valproate), 829
+Depakine Zuur (valproate), 829
+Depakote (valproate), 829
+Depakote ER (valproate), 829
+Depakote sprinkle (valproate), 829
+Depamide (valproate), 829
+Deparkin (valproate), 829
+Depex (sulpiride), 741
+Depixol (flupenthixol), 307
+Depixol-Conc (flupenthixol), 307
+
+
+
+
+<<<PAGE 2585>>>
+
+Effexor (venlafaxine), 841
+Effexor XR (venlafaxine), 841
+Effiplen (buspirone), 123
+Egibren (selegiline), 705
+Eglonyl (sulpiride), 741
+Elavil (amitriptyline), 25
+Elavil Plus (amitriptyline), 25
+Eldepryl (selegiline), 705
+Elenium (chlordiazepoxide), 147
+Elepsia XR (levetiracetam), 399
+Eliwel (amitriptyline), 25
+Ellefore (desvenlafaxine), 215
+Elmendos (lamotrigine), 387
+Elopram (citalopram), 159
+Elperil (thioridazine), 759
+Elroquil N (hydroxyzine), 355
+Elvanse (lisdexamfetamine), 409
+Emdalen (lofepramine), 421
+Emsam (selegiline), 705
+EnBrace HR (l-methylfolate), 477
+Endep (amitriptyline), 25
+Enimon (sulpiride), 741
+Enlyte (l-methylfolate), 477
+Epial (carbamazepine), 131
+Epilim (valproate), 829
+Epitol (carbamazepine), 131
+Epitomax (topiramate), 781
+Equetro (carbamazepine), 131
+
+
+
+
+<<<PAGE 2587>>>
+
+Everiden (valproate), 829
+Exan (buspirone), 123
+Excegran (zonisamide), 875
+Exelon (rivastigmine), 699
+Exogran (zonisamide), 875
+Exostrept (fluoxetine), 301
+Fanapt (iloperidone), 359
+Fardalan (sulpiride), 741
+Fargenor (chlordiazepoxide), 147
+Faustan (diazepam), 229
+Faverin (fluvoxamine), 325
+Fazaclo ODT (clozapine), 191
+Felicium (fluoxetine), 301
+Felison (flurazepam), 321
+Fenactil (chlorpromazine), 153
+Fentazin (perphenazine), 607
+Fetzima (levomilnacipran), 403
+Fevarin (fluvoxamine), 325
+Fidelan (sulpiride), 741
+Finlepsin (carbamazepine), 131
+Flaracantyl (thioridazine), 759
+flibanserin, 289
+Flonital (fluoxetine), 301
+Floxyfral (fluvoxamine), 325
+Fluanxol (flupenthixol), 307
+Fluanxol Depot (flupenthixol), 307
+Fluanxol Depot 10% (flupenthixol), 307
+Fluanxol Depot 2% (flupenthixol), 307
+
+
+
+
+<<<PAGE 2590>>>
+
+Gen-Valproic (valproate), 829
+Geodon (ziprasidone), 863
+Gewakalm (diazepam), 229
+Gladem (sertraline), 721
+Gnostorid (oxazepam), 569
+Gobanal (diazepam), 229
+guanfacine, 343
+Haemiton (clonidine), 179
+Halcion (triazolam), 799
+Haldol (haloperidol), 347
+Haldol decanoas (haloperidol), 347
+Haldol Decanoat (haloperidol), 347
+Haldol Decanoate (haloperidol), 347
+Haldol Decanoato (haloperidol), 347
+Haldol Depot (haloperidol), 347
+Haldol L.A. (haloperidol), 347
+Haloneural (haloperidol), 347
+Haloper (haloperidol), 347
+haloperidol, 347
+Haloperidol Decanoat (haloperidol), 347
+Haloperidol Decanoato (haloperidol), 347
+Haloperin (haloperidol), 347
+Haloperin depotinjektio (haloperidol), 347
+Harmomed (dothiepin), 249
+Harmoned (diazepam), 229
+Helex (alprazolam), 11
+Helogaphen (chlordiazepoxide), 147
+Hermolepsin (carbamazepine), 131
+
+
+
+
+<<<PAGE 2591>>>
+
+Herphonal (trimipramine), 817
+Hetlioz (tasimelteon), 751
+Hexafene (hydroxyzine), 355
+Hexalid (diazepam), 229
+Hibanil (chlorpromazine), 153
+Hibernal (chlorpromazine), 153
+Hipnodane (quazepam), 663
+Hipnosedon (flunitrazepam), 297
+Histilos (hydroxyzine), 355
+Hopacem (mianserin), 495
+Horizant (gabapentin), 331
+Huberplex (chlordiazepoxide), 147
+Hydoic acid (valproate), 829
+Hydophen (clomipramine), 165
+Hydramine (diphenhydramine), 235
+Hydroxyzin (hydroxyzine), 355
+hydroxyzine, 355
+Hydroxyzinum (hydroxyzine), 355
+Hypam (triazolam), 799
+Hypnocalm (flunitrazepam), 297
+Hypnodorm (flunitrazepam), 297
+Hypnor (flunitrazepam), 297
+Hypnorex Retard (lithium), 415
+Hypnovel (midazolam), 499
+Idom (dothiepin), 249
+Iktoviril (clonazepam), 173
+Ilman (flunitrazepam), 297
+iloperidone, 359
+
+
+
+
+<<<PAGE 2593>>>
+
+Jatrosom N (trifluoperazine), 803
+Jornay PM (d, l-methylphenidate), 487
+Julap (selegiline), 705
+Jumex (selegiline), 705
+Jumexal (selegiline), 705
+Kai (lofexidine), 427
+Kainever (estazolam), 281
+Kalma (alprazolam), 11
+Kanopan 75 (maprotiline), 465
+Kapvay (clonidine), 179
+Karbazin (carbamazepine), 131
+Kataved (esketamine), 275
+Keppra (levetiracetam), 399
+Ketalar (ketamine), 383
+ketamine, 383
+Ketanest (esketamine), 275
+Ketanest S (esketamine), 275
+Kinabide (selegiline), 705
+Klarium (diazepam), 229
+Klofelins (clonidine), 179
+Klonopin (clonazepam), 173
+Klopoxid (chlordiazepoxide), 147
+Kloproman (chlorpromazine), 153
+Klorproman (chlorpromazine), 153
+Klotriptyl (chlordiazepoxide), 147
+Klozapol (clozapine), 191
+Labileno (lamotrigine), 387
+
+
+
+
+<<<PAGE 2594>>>
+
+Ladose (fluoxetine), 301
+Lambipol (lamotrigine), 387
+Lamictal (lamotrigine), 387
+Lamictin (lamotrigine), 387
+lamotrigine, 387
+Lamra (diazepam), 229
+Lanexat (flumazenil), 293
+Lantanon (mianserin), 495
+Largactil (chlorpromazine), 153
+Largatrex (chlorpromazine), 153
+Laroxyl (amitriptyline), 25
+Latuda (lurasidone), 457
+Laubeel (lorazepam), 437
+Lauracalm (lorazepam), 437
+Lebopride (sulpiride), 741
+Lelptilan (valproate), 829
+Lelptilanil (valproate), 829
+lemborexant, 395
+Lentizol (amitriptyline), 25
+Lentolith (lithium), 415
+Lentotran (chlordiazepoxide), 147
+Leponex (clozapine), 191
+Leptilin (valproate), 829
+Lerivon (mianserin), 495
+Leukominerase (lithium), 415
+Levanxol (temazepam), 755
+levetiracetam, 399
+levomilnacipran, 403
+
+
+
+
+<<<PAGE 2595>>>
+
+Lexapro (escitalopram), 269
+Li-450 (lithium), 415
+Librax (chlordiazepoxide), 147
+Libraxin (chlordiazepoxide), 147
+Librium (chlordiazepoxide), 147
+Lidone (molindone), 527
+Li-Liquid (lithium), 415
+Lilly Fluoxetine (fluoxetine), 301
+Limbatril (chlordiazepoxide), 147
+Limbatril F (chlordiazepoxide), 147
+Limbitrol (chlordiazepoxide), 147
+Limbitrol F (chlordiazepoxide), 147
+Limbitryl (chlordiazepoxide), 147
+Limbitryl Plus (chlordiazepoxide), 147
+lisdexamfetamine, 409
+Liskonum (lithium), 415
+Litarex (lithium), 415
+Lithane (lithium), 415
+Lithiofor (lithium), 415
+Lithionit (lithium), 415
+Lithiucarb (lithium), 415
+lithium, 415
+Lithium-aspartat (lithium), 415
+Lithium carbonate tablets (lithium), 415
+Lithium carbonicum (lithium), 415
+Lithium citrate syrup (lithium), 415
+Lithium-Duriles (lithium), 415
+Lithiumkarbonat (lithium), 415
+
+
+
+
+<<<PAGE 2599>>>
+
+Meilax (loflazepate), 431
+Meleril (thioridazine), 759
+Melipramin (imipramine), 367
+Melipramine (imipramine), 367
+Mellaril (thioridazine), 759
+Melleretten (thioridazine), 759
+Melleril (thioridazine), 759
+Melzine (thioridazine), 759
+Memac (donepezil), 243
+memantine, 473
+memantine/donepezil combination, 243 , 473
+memantine XR, 473
+Menfazona (nefazodone), 545
+Menrium (chlordiazepoxide), 147
+Mepizin (oxazepam), 569
+Meresa (sulpiride), 741
+Merlit (lorazepam), 437
+Metadate CD (d,l-methylphenidate), 487
+Metadate ER (d,l-methylphenidate), 487
+Metafolin (l-methylfolate), 477
+Metamidol (diazepam), 229
+methyfolate (l), 477
+Methylin (d,l-methylphenidate), 487
+Methylin ER (d,l-methylphenidate), 487
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Metylyl (desipramine), 207
+Miabene (mianserin), 495
+
+
+
+
+<<<PAGE 2601>>>
+
+Moditen Depot (fluphenazine), 313
+Moditen Enanthate (fluphenazine), 313
+Modium (lorazepam), 437
+molindone, 527
+Molipaxin (trazodone), 793
+Motipress (nortriptyline), 551
+Motival (nortriptyline), 551
+Motivan (paroxetine), 593
+Movergan (selegiline), 705
+Moverin (selegiline), 705
+Moxadil (amoxapine), 33
+Multipax (hydroxyzine), 355
+Multum (chlordiazepoxide), 147
+Murelax (oxazepam), 569
+Mutan (fluoxetine), 301
+Mydayis (amphetamine d, l), 45
+Mylproin (valproate), 829
+Mysimba (naltrexone/bupropion), 541
+Nailin (nortriptyline), 551
+Nalin (nortriptyline), 551
+nalmefene, 533
+naloxone with buprenorphine, 111
+naltrexone, 537
+naltrexone/bupropion, 541
+Namenda (memantine), 473
+Namenda XR (memantine XR), 473
+Namzaric (memantine/donepezil combination), 243 , 473
+Nansius (clorazepate), 185
+
+
+
+
+<<<PAGE 2602>>>
+
+Napoton (chlordiazepoxide), 147
+Narcozep (flunitrazepam), 297
+Nardelzine (phenelzine), 613
+Nardil (phenelzine), 613
+Narol (buspirone), 123
+Navane (thiothixene), 765
+Navicalm (hydroxyzine), 355
+Nefadar (nefazodone), 545
+nefazodone, 545
+Nefirel (nefazodone), 545
+Neo Gnostoride (chlordiazepoxide), 147
+Neodorm SP (temazepam), 755
+Neoride (sulpiride), 741
+Neurol (alprazolam), 11
+Neurolepsin (lithium), 415
+Neurolithium (lithium), 415
+Neurolytril (diazepam), 229
+Neurontin (gabapentin), 331
+Neurotol (carbamazepine), 131
+Neurotop (carbamazepine), 131
+Nevropromazine (chlorpromazine), 153
+Nicoflox (fluoxetine), 301
+Nifalin (lorazepam), 437
+Nilium (flunitrazepam), 297
+Niotal (zolpidem), 871
+Nipolept (zotepine), 883
+Nivalin (galantamine), 337
+Noam (diazepam), 229
+
+
+
+
+<<<PAGE 2603>>>
+
+Noan-Gap (lorazepam), 437
+Noctazepam (oxazepam), 569
+Noctran (clorazepate), 185
+Nocturne (temazepam), 755
+Nomapam (temazepam), 755
+Noneston (sulpiride), 741
+Nopress (nortriptyline), 551
+Nordotol (carbamazepine), 131
+Norebox (reboxetine), 681
+Norestran (sulpiride), 741
+Norfenazin (nortriptyline), 551
+Noriel (flunitrazepam), 297
+Noriline (nortriptyline), 551
+Noripam (oxazepam), 569
+Noritren (nortriptyline), 551
+Norkotral N (oxazepam), 569
+Norkotral Tema (temazepam), 755
+Normison (temazepam), 755
+Normum (sulpiride), 741
+Norpramin (desipramine), 207
+Northiaden (dothiepin), 249
+Nortimil (desipramine), 207
+Nortix (nortriptyline), 551
+Nortrilen (nortriptyline), 551
+Nortriptilin (nortriptyline), 551
+nortriptyline, 551
+Norval (mianserin), 495
+Nova-Pam (chlordiazepoxide), 147
+
+
+
+
+<<<PAGE 2605>>>
+
+Nu-Loraz (lorazepam), 437
+Nuplazid (pimavanserin), 623
+Nu-Trazodone (trazodone), 793
+Nu-Trimipramine (trimipramine), 817
+Nuvigil (armodafinil), 65
+Nycoflox (fluoxetine), 301
+Nylipark (sulpiride), 741
+Oasil (chlordiazepoxide), 147
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+Olasek (olanzapine), 559
+Oleptro (trazodone XR), 793
+Omaha (sulpiride), 741
+Omca (fluphenazine), 313
+Omiryl (sulpiride), 741
+Omnali Esteve (chlordiazepoxide), 147
+Omnipress (amoxapine), 33
+Oniria (quazepam), 663
+Opamin (oxazepam), 569
+Opamox (oxazepam), 569
+Opiran (pimozide), 627
+Orap (pimozide), 627
+Orfidal (lorazepam), 437
+Orfilept (valproate), 829
+Orfiril (valproate), 829
+Orfiril Retard (valproate), 829
+Ormodon (temazepam), 755
+Orsanil (thioridazine), 759
+
+
+
+
+<<<PAGE 2606>>>
+
+Orthon (fluoxetine), 301
+Oxabenz (oxazepam), 569
+Oxahexal (oxazepam), 569
+Oxaline (oxazepam), 569
+Oxanid (oxazepam), 569
+Oxapam (oxazepam), 569
+Oxapax (oxazepam), 569
+Oxaphar (oxazepam), 569
+Oxa-Puren (oxazepam), 569
+Oxascand (oxazepam), 569
+oxazepam, 569
+oxcarbazepine, 575
+Oxepam (oxazepam), 569
+Oxepam Expidet (oxazepam), 569
+Ox-Pam (oxazepam), 569
+Oxtellar XR (oxcarbazepine), 575
+Oxyperazine (trifluoperazine), 803
+Ozodeprin (sulpiride), 741
+Paceum (diazepam), 229
+Pacinol (fluphenazine), 313
+Pacium (diazepam), 229
+paliperidone, 581
+Pamelor (nortriptyline), 551
+Panix (alprazolam), 11
+Pantrop Retard (chlordiazepoxide), 147
+Paracefan (clonidine), 179
+Paratil (sulpiride), 741
+Parkinyl (selegiline), 705
+
+
+
+
+<<<PAGE 2607>>>
+
+Parmodalin (tranylcypromine), 787
+Parmodalin (trifluoperazine), 803
+Parnate (tranylcypromine), 787
+paroxetine, 593
+paroxetine CR, 593
+Parstelin (tranylcypromine), 787
+Parstelin (trifluoperazine), 803
+Pasrin (buspirone), 123
+Pax (diazepam), 229
+Paxal (alprazolam), 11
+Paxam (clonazepam), 173
+Paxil (paroxetine), 593
+Paxil CR (paroxetine CR), 593
+Paxium (chlordiazepoxide), 147
+Paxtibi (nortriptyline), 551
+Pazolan (alprazolam), 11
+Pefanium/Pefanic (chlordiazepoxide), 147
+Peratsin (perphenazine), 607
+Peratsin Dekanoaatti (perphenazine), 607
+Peratsin Enantaati (perphenazine), 607
+Perfenazin (perphenazine), 607
+Peridol (haloperidol), 347
+Permitil (fluphenazine), 313
+perospirone, 601
+perphenazine, 607
+Perseris (risperidone injection), 687
+Pertofrane (desipramine), 207
+Pertofrin (desipramine), 207
+
+
+
+
+<<<PAGE 2610>>>
+
+Propaphenin (chlorpromazine), 153
+propranolol, 653
+Propymal (valproate), 829
+Prosedar (quazepam), 663
+ProSom (estazolam), 281
+Prosulpin (sulpiride), 741
+Prothiaden (dothiepin), 249
+Protiaden (dothiepin), 249
+protriptyline, 657
+Provigil (modafinil), 521
+Proxam (oxazepam), 569
+Prozac (fluoxetine), 301
+Prozil (chlorpromazine), 153
+Prozin (chlorpromazine), 153
+Prozyn (fluoxetine), 301
+Pryleugan (imipramine), 367
+Psicocen (sulpiride), 741
+Psicofar (chlordiazepoxide), 147
+Psiquiwas (oxazepam), 569
+Psychopax (diazepam), 229
+Psymoin (maprotiline), 465
+PT-141 (bremelanotide), 95
+Punktyl (lorazepam), 437
+Purata (oxazepam), 569
+Q-Med Hydroxyzine (hydroxyzine), 355
+Qsymia (phentermine/topiramate), 619
+Quait (lorazepam), 437
+Quastil (sulpiride), 741
+
+
+
+
+<<<PAGE 2611>>>
+
+quazepam, 663
+Quazium (quazepam), 663
+Qudexy (topiramate), 781
+Qudexy SR (topiramate), 781
+quetiapine, 667
+Quiedorm (quazepam), 663
+Quilibrex (oxazepam), 569
+QuilliChew ER (methylphenidate d,l), 487
+Quillivant XR (methylphenidate d,l), 487
+Quilonum (lithium), 415
+Quilonum Retard (lithium), 415
+Quinolorm (lithium), 415
+Quinolorm Retard (lithium), 415
+Quiridil (sulpiride), 741
+Quitaxon (doxepin), 255
+Radepur (chlordiazepoxide), 147
+ramelteon, 677
+Razadyne (galantamine), 337
+Razadyne ER (galantamine), 337
+Razolam (alprazolam), 11
+Reagila (cariprazine), 137
+reboxetine, 681
+Redomex (amitriptyline), 25
+Redomex Diffucaps (amitriptyline), 25
+Regepar (selegiline), 705
+Rekynda (bremelanotide), 95
+Relanium (diazepam), 229
+Relax Sedans (chlordiazepoxide), 147
+
+
+
+
+<<<PAGE 2612>>>
+
+Relaxedans (chlordiazepoxide), 147
+Reliberan (chlordiazepoxide), 147
+Relistor (naltrexone), 537
+Relprevv (olanzapine), 559
+Remdue (flurazepam), 321
+Remergil (mirtazapine), 509
+Remeron (mirtazapine), 509
+Remestan (temazepam), 755
+Reminyl (galantamine), 337
+Reneuron (fluoxetine), 301
+Repazine (chlorpromazine), 153
+Reposium (temazepam), 755
+Reseril (nefazodone), 545
+Restful (sulpiride), 741
+Restoril (temazepam), 755
+Retinyl (maprotiline), 465
+Reval (diazepam), 229
+Revatio (sildenafil), 729
+Revia (naltrexone), 537
+Rexer (mirtazapine), 509
+Rexulti (brexpiprazole), 103
+Rho-Doxepin (doxepin), 255
+Rho-Fluphenazine Decanoate (fluphenazine), 313
+Rho-Haloperidol (haloperidol), 347
+Rho-Trimine (trimipramine), 817
+Ridazine (thioridazine), 759
+Rilamir (triazolam), 799
+Rimarix (moclobemide), 515
+
+
+
+
+<<<PAGE 2613>>>
+
+Riminyl (galantamine), 337
+Risolid (chlordiazepoxide), 147
+Risperdal (risperidone), 687
+Risperdal Consta (risperidone injectable), 687
+risperidone, 687
+Risperin (risperidone), 687
+Rispolept (risperidone), 687
+Rispolin (risperidone), 687
+Ritalin (d,l-methylphenidate), 487
+Ritalin LA (d, l-methylphenidate), 487
+Ritalin SR (d,l-methylphenidate), 487
+Ritaline (d,l-methylphenidate), 487
+rivastigmine, 699
+Rivatril (clonazepam), 173
+Rivotril (clonazepam), 173
+Robitussin (dextromethorphan), 225
+Rocam (midazolam), 499
+Rohipnol (flunitrazepam), 297
+Rohypnol (flunitrazepam), 297
+Roipnol (flunitrazepam), 297
+Romazicon (flumazenil), 293
+Ronal (flunitrazepam), 297
+Ropan (flunitrazepam), 297
+Rozerem (ramelteon), 677
+Rubifen (d,l-methylphenidate), 487
+Rulivan (nefazodone), 545
+Sanval (zolpidem), 871
+Sanzur (fluoxetine), 301
+
+
+
+
+<<<PAGE 2614>>>
+
+Saphris (asenapine), 71
+Sapilent (trimipramine), 817
+Sarafem (fluoxetine), 301
+Saroten (amitriptyline), 25
+Saroten Retard (amitriptyline), 25
+Sarotex (amitriptyline), 25
+Sartuzin (fluoxetine), 301
+Savella (milnacipran), 503
+Sebor (lorazepam), 437
+Secuado (asenapine), 71
+Securit (lorazepam), 437
+Sedacoroxen (imipramine), 367
+Sedans (chlordiazepoxide), 147
+Sedapon (lorazepam), 437
+Sedazin (lorazepam), 437
+Sedex (flunitrazepam), 297
+Sedizepan (lorazepam), 437
+Seduxen (chlordiazepoxide), 147
+Seduxen (diazepam), 229
+Seledat (selegiline), 705
+Selegam (selegiline), 705
+selegiline, 705
+Selepam (quazepam), 663
+Selepar (selegiline), 705
+Selepark (selegiline), 705
+Seletop 5 (selegiline), 705
+Selgene (selegiline), 705
+Selincro (nalmefene), 533
+
+
+
+
+<<<PAGE 2615>>>
+
+Selpar (selegiline), 705
+Sensaval (nortriptyline), 551
+Sensival (nortriptyline), 551
+Sepatrem (selegiline), 705
+Serad (sertraline), 721
+Seralgan (citalopram), 159
+Serax (oxazepam), 569
+Serdolect (sertindole), 715
+Serelan (mianserin), 495
+Seren (chlordiazepoxide), 147
+Serenace (haloperidol), 347
+Serenase (haloperidol), 347
+Serenase (lorazepam), 437
+Serenase Decanoat (haloperidol), 347
+Serenase Depot (haloperidol), 347
+Serenelfi (haloperidol), 347
+Serepax (oxazepam), 569
+Seresta (oxazepam), 569
+Sereupin (paroxetine), 593
+Serlain (sertraline), 721
+Serlect (sertindole), 715
+Serol (fluoxetine), 301
+Seronil (fluoxetine), 301
+Seropram (citalopram), 159
+Seroquel (quetiapine), 667
+Seroquel XR (quetiapine), 667
+Seroxal (paroxetine), 593
+Seroxat (paroxetine), 593
+
+
+
+
+<<<PAGE 2623>>>
+
+Trilafon decanoaat (perphenazine), 607
+Trilafon dekanoat (perphenazine), 607
+Trilafon Depot (perphenazine), 607
+Trilafon enantat(e) (perphenazine), 607
+Trilafon enantato (perphenazine), 607
+Trilafon enenthaat (perphenazine), 607
+Trileptal (oxcarbazepine), 575
+Trilifan (perphenazine), 607
+Trilifan Retard (perphenazine), 607
+Trimen (trihexyphenidyl), 809
+trimipramine, 817
+Trimonil (carbamazepine), 131
+Trimonil Retard (carbamazepine), 131
+Trintellix (vortioxetine), 853
+Trion (triazolam), 799
+Tripamine Surmontil (trimipramine), 817
+Triptafen (perphenazine), 607
+Triptil (protriptyline), 657
+Triptyl (amitriptyline), 25
+Triptyl Depot (amitriptyline), 25
+Trisedyl (trifluoperazine), 803
+Trittico (trazodone), 793
+Trokendi XR (topiramate), 781
+Tropargal (nortriptyline), 551
+Tropium (chlordiazepoxide), 147
+Trycam (triazolam), 799
+Tryptanol (amitriptyline), 25
+Tryptine (amitriptyline), 25
+
+
+
+
+<<<PAGE 2624>>>
+
+Tryptizol (amitriptyline), 25
+Tydamine (trimipramine), 817
+Tymelyt (lofepramine), 421
+Ucerax (hydroxyzine), 355
+Umbrium (diazepam), 229
+Unilan (alprazolam), 11
+Unisedil (diazepam), 229
+Unitranxene (clorazepate), 185
+U-Pan (lorazepam), 437
+Uskan (oxazepam), 569
+Valaxona (diazepam), 229
+Valclair (chlordiazepoxide), 147
+valbenazine, 825
+Valclair (diazepam), 229
+Valcote 250 (valproate), 829
+Valdorm (flurazepam), 321
+Valdoxan (agomelatine), 5
+Valeans (alprazolam), 11
+Valinil (diazepam), 229
+Valiquid (diazepam), 229
+Valiquid 0.3 (diazepam), 229
+Valirem (sulpiride), 741
+Valium (diazepam), 229
+Valocordin Diazepam (diazepam), 229
+Valparine (valproate), 829
+Valpro (valproate), 829
+valproate, 829
+
+
+
+
+<<<PAGE 2628>>>
+
+Index by Use
+Commonly Prescribed For (bold for FDA approved)
+Aggression
+clozapine, 191
+cyamemazine, 201
+propranolol, 653
+zuclopenthixol, 889
+Alcohol abstinence
+acamprosate , 1
+disulfiram , 239
+Alcohol dependence, 255
+nalmefene, 533
+naltrexone , 537
+Alcohol withdrawal
+chlordiazepoxide , 11
+clonidine, 179
+clorazepate , 185
+diazepam , 229
+lorazepam, 437
+oxazepam , 569
+
+
+
+
+<<<PAGE 2629>>>
+
+Alzheimer disease
+caprylidene , 127
+donepezil , 243
+galantamine , 337
+memantine , 473
+rivastigmine , 699
+selegiline, 705
+Amnesia, Drug-induced
+midazolam , 499
+Anxiety
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone , 123
+chlordiazepoxide , 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate , 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam , 229
+dothiepin, 249
+doxepin , 255
+duloxetine, 263
+
+
+
+
+<<<PAGE 2636>>>
+
+lisdexamfetamine , 409
+topiramate, 781
+zonisamide, 875
+Cataplexy syndrome
+clomipramine, 165
+imipramine, 367
+pitolisant , 639
+sodium oxybate , 733
+Catatonia
+alprazolam, 11
+chlordiazepoxide, 147
+clonazepam, 173
+clorazepate, 185
+diazepam, 229
+estazolam, 281
+flunitrazepam, 297
+flurazepam, 321
+loflazepate, 431
+lorazepam, 437
+midazolam, 499
+oxazepam, 569
+quazepam, 663
+temazepam, 755
+triazolam, 799
+Chorea, Huntington’s disease
+deutetrabenazine , 221
+
+
+
+
+<<<PAGE 2649>>>
+
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+mirtazapine, 509
+nefazodone, 545
+olanzapine, 558
+paliperidone, 580
+paroxetine , 593
+prazosin (nightmares) 643
+propranolol (prophylactic) 653
+quetiapine, 667
+risperidone, 687
+sertraline , 721
+venlafaxine, 841
+ziprasidone, 863
+Premenstrual dysphoric disorder
+alprazolam, 11
+citalopram, 159
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+Preoperative anxiety
+chlordiazepoxide , 147
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+

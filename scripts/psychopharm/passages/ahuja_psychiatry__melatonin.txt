@@ -1,0 +1,176 @@
+<<<PAGE 28>>>
+
+16
+
+A Short Textbook of Psychiatry
+
+Contd...
+Thyroid function tests: Refractory depression, rapid
+cycling mood disorder. Treatment with lithium, carbamazepine.
+Electrocardiogram (ECG): Age>35 years, Treatment with
+lithium, antidepressants, ECT, antipsychotics.
+HIV testing: Intravenous drug users, suggestive sexual
+history, AIDS dementia.
+VDRL: Suggestive sexual history.
+Chest X-ray: Age>35 years, Treatment with ECT.
+Skull X-ray: History of head Injury.
+Serum CK: Neuroleptic malignant syndrome (markedly
+increased levels).
+Toxicology Screen
+Useful when substance use is suspected; for example,
+alcohol, cocaine, opiates, cannabis, phencyclidine,
+benzodiazepines, barbiturates; remember that certain
+medications can cause false positive results (for example,
+quetiapine for methadone).
+Drug Levels
+Drug levels are indicated to test for therapeutic blood
+levels, for toxic blood levels, and for testing drug
+compliance. Examples are lithium (0.6-1.0 meq/L),
+carbamazepine (4-12 mg/ml), valproate (50-100 mg/
+ml), haloperidol (8-18 ng/ml), tricyclic antidepressants
+(nortriptyline 50-150 ng/ml; imipramine 200-250 ng/
+ml), benzodiazepines, barbiturates and clozapine (350500 μg/L).
+Electrophysiological Tests
+EEG (Electroencephalogram): Seizures, dementia, pseudoseizures vs. seizures, episodic abnormal behaviour.
+BEAM (Brain electrical activity mapping): Provides
+topographic imaging of EEG data.
+Video-Telemetry EEG: Pseudoseizures vs. seizures.
+Evoked potentials (e.g. p300): Research tool.
+Polysomnography/Sleep studies: Sleep disorders, seizures (occurring in sleep). The various components in
+sleep studies include EEG, ECG, EOG, EMG, airflow
+measurement, penile tumescence, oxygen saturation,
+body temperature, GSR (Galvanic skin response), and
+body movement.
+Holter ECG: Panic disorder.
+
+Brain Imaging Tests (Cranial)
+Computed Tomography (CT) Scan: Dementia, delirium,
+seizures, first episode psychosis.
+Magnetic Resonance Imaging (MRI) Scan: Dementia.
+Higher resolution than CT scan.
+Positron Emission Tomography (PET) Scan: Research tool
+for study of brain function and physiology.
+Single Photon Emission Computed Tomography (SPECT)
+Scan: Research tool.
+Magnetic Resonance (MR) Angiography: Research tool
+Magnetic Resonance Spectroscopy (MRS): Research tool
+Neuroendocrine Tests
+Dexamethasone Suppression Test (DST): Research tool
+in depression (response to antidepressants or ECT). If
+plasma cortisol is >5 mg/100 ml following administration of dexamethasone (1 mg, given at 11 PM the night
+before and plasma cortisol taken at 4 PM and 11 PM
+the next day), it indicates non-suppression.
+TRH Stimulation Test: Lithium-induced hypothyroidism,
+refractory depression. If the serum TSH is >35 mIU/ml
+(following 500 mg of TRH given IV), the test is positive.
+Serum Prolactin Levels: Seizures vs. pseudoseizures,
+galactorrhoea with antipsychotics.
+Serum 17-hydroxycorticosteroid: Organic mood (depression) disorder.
+Serum Melatonin Levels: Seasonal mood disorders.
+Biochemical Tests
+5-HIAA: Research tool (depression, suicidal and/or
+aggressive behaviour).
+MHPG: Research tool (depression).
+Platelet MAO: Research tool (depression).
+Catecholamine levels: Organic anxiety disorder (e.g.
+pheochromocytoma).
+Genetic Tests
+Cytogenetic work-up is useful in some cases of mental
+retardation.
+Sexual Disorder Investigations
+Papaverine test: Male erectile disorder (intracavernosal
+injection of papaverine is sometimes used to differentiate
+organic from non-organic male erectile disorder).
+Nocturnal penile tumescence: Male erectile disorder.
+Contd...
+
+
+
+
+<<<PAGE 196>>>
+
+184
+
+A Short Textbook of Psychiatry
+
+Contd...
+Drugs
+
+Oral Dose
+Some Common Adverse Effects#
+(mg/d)
+Sedation* Orthostatic Hypotension* Anticholinergic*
+VIII. Noradrenergic Reuptake Inhibitors (NARIs)
+1. Reboxetine
+8-10
+±
+±
+±
+IX. Mono-amine Oxidase Inhibitors (MAOIs)
+A. Irreversible Non-selective and Selective MAOIs
+Not available in India
+B. Reversible Selective MAO-B Inhibitors
+1. Selegiline
+5-10
+Useful in Parkinsonism
+C. Reversible Selective MAO-A Inhibitors (RIMAs)
+1. Moclobemide
+300-600
+Activating 0
+0
+X. Melatonin receptor agonist and 5-HT2C antagonist
+1. Agomelatin
+25-50
++
+0
+0
+# The estimate of common adverse effects in this table is a very rough and empirical guideline to the clinical use of
+antidepressants. The drug dosage in each patient needs to be individualised based on the clinical symptoms, their
+severity, response to treatment and several other clinical factors.
+* 0 = Absent; ± = Probable/Very little; + = Mild; ++ = Moderate; +++ = Severe
+
+nortriptyline respectively) are active antidepressants
+themselves. Fluoxetine is demethylated in liver to
+norfluoxetine.
+With the regular administration of TCAs, a constant blood level is achieved usually by the end of
+two weeks. Although routine monitoring of blood
+levels is not indicated, it may become important in
+cases of toxicity. Also, some antidepressants such
+as nortriptyline and protriptyline have a therapeutic
+window.
+Antidepressants (especially SSRIs, e.g. fluoxetine)
+also cause inhibition of cytochrome P450 enzymes in
+liver (e.g. CYP P450 2D6 and CYP P450 3A4).
+The MAO inhibitors are absorbed well by oral
+route, and are predominantly metabolised in liver by
+acetylation.
+
+Mechanism of Action
+The exact mechanism of action is not clearly known.
+It appears from clinical studies that the predominant
+action of antidepressants is to increase the catecholamine levels in brain (Amine hypothesis).
+Tricyclic antidepressants are also called as Monoamine reuptake inhibitors (MARIs). Their main modes
+of action include:
+
+1. Blocking reuptake of norepinephrine (NE), serotonin (5HT) and/or dopamine (DA) at the nerve
+terminals, thus increasing NE, 5HT and/or DA
+levels at the receptor site.
+2. Down-regulation of the β-adrenergic receptors.
+The Mono-amine oxidase inhibitors (MAOIs)
+instead act on mono-amine oxidase (MAO) which
+is responsible for degradation of catecholamines following their reuptake. The final effect is the same, i.e.
+a functional increase in the NE and/or 5HT levels at
+receptor site.
+Another important clinical point is that it takes
+5-10 days before a MAOI, and 2-3 weeks before a
+non-MAOI antidepressant, has any evident action on
+depression (although sleep, anxiety and agitation may
+respond earlier). The reason for this is not fully clear
+though an increase in brain amine levels is possibly
+responsible for antidepressant action. However, postsynaptic events (such as down-regulation of postsynaptic receptors) are probably more important and they
+take longer than an increase in amine levels. Therefore,
+it is of no benefit to prescribe antidepressants on an
+SOS or PRN (as needed) basis. They must be administered regularly in appropriate doses to achieve the
+desired effect.
+
+

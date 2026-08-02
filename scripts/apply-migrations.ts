@@ -74,11 +74,13 @@ async function main() {
   //  - submissions_bucket.sql  (audio submission bucket)
   //  - materials_assignments_submissions.sql (Phase 6: enrollment + materials
   //    + assignment/submission extensions + submission_files + materials bucket)
+  //  - psychopharm_tools.sql   (psychopharmacology reference tables + RLS)
   const APPROVED = [
     "media_assets.sql",
     "certificates.sql",
     "submissions_bucket.sql",
     "materials_assignments_submissions.sql",
+    "psychopharm_tools.sql",
   ];
   const files = APPROVED.filter((f) => existsSync(join(dir, f)));
   console.log(`Applying ${files.length} approved migrations: ${files.join(", ")}`);

@@ -1,0 +1,154 @@
+<<<PAGE 351>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Arousal Combos
+SNRI + stimulant
+= SNRI
+
+5HT
+
+NE
+
+DA
+
+single boost
+
+double boost
+
+single boost
+
+= stimulant
+
+SERT
+
+NET
+
+SNRI
+
+SNRI
+
+A
+
+DAT
+stimulant
+
+stimulant
+
+SNRI + modafinil
+= SNRI
+
+5HT
+
+NE
+
+DA
+
+single boost
+
+single boost
+
+single boost
+
+= modafinil
+
+SERT
+B
+
+NET
+SNRI
+
+SNRI
+
+DAT
+
+7
+
+modafinil
+
+Figure 7-66 Arousal combo: SNRI plus stimulant/modafinil. (A) Serotonin (5HT) and dopamine (DA) are single-boosted and
+norepinephrine (NE) is double-boosted when a serotonin–norepinephrine reuptake inhibitor (SNRI) is combined with a stimulant. (B)
+Serotonin (5HT) and norepinephrine (NE) are single-boosted by the serotonin–norepinephrine reuptake inhibitor (SNRI) while dopamine
+(DA) is single-boosted by modafinil.
+
+Table 7-2 Some tricyclic antidepressants still in use
+
+Generic name
+
+Trade name
+
+Clomipramine
+
+Anafranil
+
+Imipramine
+
+Tofranil
+
+Amitriptyline
+
+Elavil; Endep; Tryptizol;
+Laroxyl
+
+Nortriptyline
+
+Pamelor; Aventyl
+
+Protriptyline
+
+Vivactil
+
+Maprotiline
+
+Ludiomil
+
+Amoxapine
+
+Asendin
+
+Doxepin
+
+Sinequan; Adapin
+
+Desipramine
+
+Norpramin; Pertofran
+
+Trimipramine
+
+Surmontil
+
+Dothiepin
+
+Prothiaden
+
+Lofepramine
+
+Deprimyl; Gamanil
+
+Tianeptine
+
+Coaxil; Stablon
+
+structure contains three rings. The TCAs were
+synthesized about the same time that other threeringed phenothiazine molecules were shown to be
+effective tranquilizers for schizophrenia (i.e., the early
+D2 antagonist drugs such as chlorpromazine) but were
+a disappointment when tested as drugs for psychosis.
+However, during testing for schizophrenia, they were
+serendipitously discovered to be effective in unipolar
+depression. Tricyclic antidepressants are not merely drugs
+for depression since one of them (clomipramine) has
+anti-obsessive–compulsive disorder; many of them have
+anti-panic effects at antidepressant doses and efficacy for
+neuropathic and low back pain at low doses.
+Long after their antidepressant properties were
+observed, the TCAs were discovered to block the reuptake
+pumps for norepinephrine (i.e., NET), or for both
+norepinephrine and serotonin (i.e., SERT) (see Figure
+7-67A). Some tricyclics have equal or greater potency for
+SERT inhibition (e.g., clomipramine); others are more
+selective for NET inhibition (e.g., desipramine, maprotiline,
+335
+
+

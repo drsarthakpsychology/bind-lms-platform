@@ -1,0 +1,472 @@
+<<<PAGE 552>>>
+
+controlled study of sertraline to prevent PTSD found that children who
+received sertraline, flexibly dosed between 25 and 150 mg/day, had a
+decrease in parent-reported symptoms of PTSD over 8 weeks compared to a
+placebo group. Among the child-reported symptoms, however, there was no
+significant difference between the two groups.
+Psychiatrists sometimes use antiadrenergic agents to treat dysregulation of
+the noradrenergic system in adults and youth with PTSD. α2-Agonists such as
+clonidine and guanfacine, for example, have been used to decrease
+norepinephrine release, whereas centrally acting β-antagonists such as
+propranolol, and α1-antagonists such as prazosin, are hypothesized to
+improve hyperarousal and intrusive thoughts through attenuation of
+norepinephrine postsynaptically. Although there are some data in adults with
+PTSD to support the use of these agents, there are mainly case reports for
+youths. There is a suggestion that guanfacine may reduce nightmares in
+children with PTSD and that clonidine may diminish symptoms of
+reenactment of traumatic events in children. One report of propranolol
+treatment in 11 pediatric patients with PTSD from sexual or physical abuse
+with a mean age of 8.5 years, who exhibited agitation and hyperarousal,
+indicated some decrease in symptoms in 8 of the 11 children studied. Another
+open study of transdermal clonidine treatment of preschoolers with PTSD
+suggests that clonidine may be efficacious in this population in decreasing
+activation and hyperarousal. An additional open trial of oral clonidine with
+dosage ranges of 0.05 to 0.1 mg twice daily similarly suggests that this
+medication may provide some relief for the symptoms of hyperarousal,
+impulsivity, and agitation in young children with PTSD.
+Second-generation antipsychotics such as risperidone, olanzapine,
+quetiapine, ziprasidone, and aripiprazole have been studied in adults with
+PTSD with mixed results. Risperidone and aripiprazole both have FDA
+approval for use in children and adolescents with aggression, severe
+behavioral dyscontrol, and severe psychiatric disorders; however, there are no
+controlled trials with children with PTSD. For example, there is one case
+series of three preschool-age children who exhibited symptoms of acute
+stress disorder and who had severe thermal burns improved after being
+treated with risperidone.
+In children and adolescents with PTSD, there is one open-label trial of
+
+
+
+
+<<<PAGE 1390>>>
+
+stating he could not go on alone. (Courtesy of J. W. Katzman, M.D., and
+C. M. A. Geppert, M.D., Ph.D., M.P.H.)
+
+TREATMENT APPROACH
+Posttraumatic Stress Disorder
+We list some of the most common treatments for PTSD and related disorders
+in Table 10-7.
+Pharmacotherapy. Currently, selective serotonin reuptake inhibitors
+(SSRIs), particularly sertraline and paroxetine, have the most robust evidence
+for efficacy. There are promising initial findings for the noradrenergic and
+serotonergic reuptake inhibitor venlafaxine, the atypical antipsychotic
+risperidone, and the anticonvulsant topiramate. We lack evidence for the
+effectiveness of benzodiazepines, despite their continued use in practice; one
+meta-analysis went so far as to consider benzodiazepines relatively
+contraindicated in this population. Finally, the alpha 1-adrenergic antagonist
+prazosin and the atypical antipsychotics show some efficacy in treatmentresistant PTSD, and prazosin shows effectiveness for treating nightmares.
+Insomnia is prevalent and disabling in chronic PTSD, with low-dose
+trazodone preferable to benzodiazepines. The orexin antagonist suvorexant is
+promising for managing trauma-related insomnia.
+Table 10-7
+Treatments for PTSD
+Pharmacologic
+interventions
+
+Strong evidence
+SSRIs (sertraline, paroxetine)
+Promising initial evidence
+SNRI (venlafaxine)
+Atypical antipsychotic (risperidone)
+Anticonvulsant (topiramate)
+Limited evidence
+Alpha 1-adrenergic antagonist (prazosin)
+
+
+
+
+<<<PAGE 1391>>>
+
+Lack of evidence
+Benzodiazepines
+Symptom-specific
+Prazosin (nightmares)
+Orexin (insomnia)
+Trazodone (insomnia)
+Psychotherapeutic
+interventions
+
+Trauma-focused cognitive-behavioral therapy
+(TFCBT),
+Prolonged exposure (PE) therapy
+Cognitive processing therapy (CPT)
+Eye movement desensitization and
+reprocessing therapy (EMDR)
+Present centered therapy (PCT)
+Cognitive processing therapy (CPT)
+Psychodynamic psychotherapy
+Group and family therapy
+
+Psychotherapy. Several therapies are effective for PTSD and related
+disorders; we list these in Table 10-7. Trauma-focused cognitive-behavioral
+therapy (TFCBT) includes prolonged exposure (PE) therapy, which focuses
+on reexperiencing the traumatic event through repeatedly engaging with the
+memories (imaginal exposure) and everyday reminders (in vivo exposure)
+rather than avoiding triggers. Eye movement desensitization and reprocessing
+therapy (EMDR) involves repeatedly recalling distressing images while
+receiving sensory inputs. Present centered therapy (PCT) focuses on the
+current relationship and work challenges rather than the trauma, and
+cognitive processing therapy (CPT) emphasizes correcting faulty attributions
+including posttraumatic overgeneralizations of the world as dangerous,
+uncontrollable, and unpredictable. Psychodynamic psychotherapy may also
+be useful in the treatment of many patients with PTSD. In some cases,
+reconstruction of the traumatic events with associated abreaction and
+catharsis may be therapeutic. Still, psychotherapy must be tailored to the
+individual, because reexperiencing the trauma overwhelms some patients.
+In addition to individual therapy techniques, group therapy and family
+
+
+
+
+<<<PAGE 1434>>>
+
+medication response is likely to be partial, devising the best “shock-absorber”
+system for the patient at a given time. In general, success is more likely if the
+target symptoms are present across most or all personality states, rather than
+confined to one or a few. Because rapid symptom oscillations are
+characteristic in this population, it is not advisable to chase each symptom
+shift with a medication change.
+The most robust medication treatment effect in this patient population is
+the response of nightmares to the α1-adrenergic antagonist prazosin. If the
+patient tolerates the blood pressure effects, dosages of prazosin as high as 25
+mg daily, in single or twice-daily doses, can be useful. Daytime dosing may
+also be effective for control of flashbacks and intrusive symptoms.
+Doxazosin, a longer-acting α1-adrenergic antagonist, may also help with
+nightmares and intrusive symptoms in PTSD.
+Antidepressant medications can reduce depression and stabilize mood. A
+variety of PTSD symptoms, especially intrusive and hyperarousal symptoms,
+are partially medication responsive. Clinicians report some success with
+SSRI, tricyclic, and monoamine oxidase (MAO) antidepressants, β-blockers,
+clonidine, anticonvulsants, and benzodiazepines in reducing intrusive
+symptoms, hyperarousal, and anxiety in patients with a dissociative identity
+disorder. Patients with obsessive-compulsive symptoms may respond to
+serotonergic antidepressants. Emerging data suggest that naltrexone may help
+ameliorate recurrent self-injurious behaviors in a subset of traumatized
+patients.
+The atypical neuroleptics, such as risperidone, quetiapine, ziprasidone,
+aripiprazole, and olanzapine, may be more effective and better tolerated than
+typical neuroleptics for overwhelming anxiety and intrusive PTSD symptoms
+in patients with dissociative identity disorder. However, weight gain and
+metabolic syndrome may be a particularly problematic side effect for these
+nonpsychotic patients. Occasionally, an extremely disorganized,
+overwhelmed, chronically ill patient with dissociative identity disorder, who
+has not responded to trials of other neuroleptics, responds favorably to a trial
+of clozapine.
+Electroconvulsive Therapy. For some patients, ECT helps to ameliorate
+refractory mood disorders and does not worsen dissociative memory
+
+
+
+
+<<<PAGE 1637>>>
+
+melatonin levels begin to rise at dusk and remain elevated until dawn. Bright
+light suppresses the release of melatonin. Melatonin, in a sense, is the signal
+of darkness in the brain. As such, we can use it clinically to manage sighted
+patients with disturbed sleep–wake cycles. Melatonin is available over the
+counter in the United States. A prescription synthetic melatonin agonist
+(ramelteon) is also available. Ramelteon is FDA approved for treating
+patients with sleep-onset insomnia but is used off label for the entire
+spectrum of circadian rhythm sleep disorders. Outside the United States, a
+sustained-release prescription form of melatonin is available. Of interest, the
+only medication approved for shift work sleep disorder is the wakepromoting compound modafinil. Modafinil treats sleepiness occurring during
+night shift work.
+Chronotherapy. Chronotherapy is one technique used to reset the biologic
+clock. It involves progressively phase delaying a person until synchronizing
+the circadian oscillator with the desired sleep–wake schedule. Most young
+and middle-aged adults have a propensity to phase delay the circadian sleep–
+wake rhythm progressively anyhow. Thus, phase delaying each night by 2 to
+3 hours is simpler than phase advancing because it capitalizes on a natural
+tendency. Halting the phase delay at the appropriate moment and maintaining
+the desired synchrony can be a challenge. The patient also has to cope with
+an odd sleep–wake schedule for the better part of a week during therapy
+(which can interfere with school or work). For these reasons, the
+development of light therapy and pharmacologic interventions has
+overshadowed chronotherapy.
+Parasomnias and Sleep-Related Movement Disorders
+Nightmare Disorder. Treatment using behavioral techniques can be
+helpful. Desensitization and exposure therapy, image rehearsal therapy, lucid
+dream therapy, and cognitive therapy can help address nightmare disorder.
+Additionally, evidence for the use of prazosin, a CNS α-1 receptor antagonist,
+in the treatment of PTSD-related nightmares is growing. Nitrazepam and
+triazolam may also be helpful.
+Recurrent Isolated Sleep Paralysis. Improved sleep hygiene and
+
+
+
+
+<<<PAGE 2149>>>
+
+melatonin may inhibit ovarian function, and for that reason, it has been
+evaluated as a contraceptive, but with inconclusive results.
+Drug Interactions. As a dietary supplement preparation, exogenous
+melatonin is not regulated by the FDA and has not been subjected to the same
+type of drug interaction studies that were performed for ramelteon. Caution is
+suggested in coadministering melatonin with blood thinners (e.g., warfarin
+[Coumadin], aspirin, and heparin), antiseizure medications, and medications
+that lower BP.
+Laboratory Interference. Melatonin is not known to interfere with any
+commonly used clinical laboratory tests.
+Dosage and Administration. Over-the-counter melatonin is available in
+the following formulations: 1-, 2.5-, 3-, and 5-mg capsules; 1-mg/4-mL
+liquid; 0.5- and 3-mg lozenges; 2.5-mg sublingual tablets; and 1-, 2-, and 3mg timed-release tablets.
+Standard recommendations are to take the desired melatonin dose at
+bedtime, but some evidence from clinical trials suggests that dosing up to 2
+hours before habitual bedtime may produce a more significant improvement
+in sleep onset.
+Agomelatine (Valdoxan). Agomelatine is structurally related to melatonin
+and is used in Europe as a treatment for MDD. It acts as an agonist at
+melatonin (MT1 and MT2) receptors. It also acts as a serotonin antagonist.
+Analysis of agomelatine clinical trial data raised serious questions about the
+efficacy and safety of the drug. The drug is not being marketed in the United
+States.
+
+PRAZOSIN
+Prazosin (Minipress) is a quinazoline derivative and one of a new chemical
+class of antihypertensives. It is an α1-adrenergic receptor antagonist as
+opposed to the drugs mentioned above, which are α2-blockers.
+Pharmacologic Actions
+
+
+
+
+<<<PAGE 2150>>>
+
+The exact mechanism of the hypotensive action of prazosin, and how it
+suppresses nightmares, is unknown. Prazosin causes a decrease in total
+peripheral resistance that is related to its action as an α1-adrenergic receptor
+antagonist. BP is lowered in both the supine and standing positions. This
+effect is most pronounced on the diastolic BP. After oral administration,
+human plasma concentrations reach a peak at about 3 hours with a plasma
+half-life of 2 to 3 hours. The drug is highly bound to plasma protein.
+Tolerance has not been observed to develop with long-term therapy.
+Therapeutic Action
+Prazosin is used in psychiatry to suppress nightmares, particularly those
+associated with PTSD.
+Precautions and Adverse Reactions
+During clinical trials and subsequent marketing experience, the most frequent
+reactions were dizziness (10.3 percent); headache (7.8 percent); drowsiness
+(7.6 percent); lack of energy (6.9 percent); weakness (6.5 percent);
+palpitations (5.3 percent); and nausea (4.9 percent). In most instances, side
+effects disappeared with continued therapy or have been tolerated with no
+decrease in the dose of the drug. Prazosin should not be used in nursing
+mothers or during pregnancy.
+Drug Interactions
+No adverse drug interactions have been reported.
+Laboratory Interferences
+No laboratory interferences have been reported.
+Dosage and Clinical Guidelines
+The drug is supplied in 1-, 2-, and 5-mg capsules and a nasal spray. The
+therapeutic dosages most commonly used have ranged from 6 to 15 mg daily
+given in divided doses. Doses higher than 20 mg do not increase efficacy.
+When adding a diuretic or other antihypertensive agent, the dose should be
+reduced to 1 or 2 mg three times a day, and retitration then carried out.
+
+
+
+
+<<<PAGE 2151>>>
+
+Concomitant use with a PDE-5 inhibitor can result in additive BP-lowering
+effects and symptomatic hypotension; therefore, PDE-5 inhibitor therapy
+should be initiated at the lowest dose in patients taking prazosin.
+
+21.6 Stimulants
+STIMULANT DRUGS AND ATOMOXETINE
+Stimulant drugs increase motivation, mood, energy, and wakefulness. They
+are also called sympathomimetics because they mimic the physiologic effects
+of the neurotransmitter epinephrine. Several chemical classes are included in
+this group.
+Currently, these drugs are most commonly used to treat symptoms of poor
+concentration and hyperactivity in children and adults with ADHD.
+Paradoxically, many patients with ADHD find that these drugs can have a
+calming effect. Sympathomimetics are also approved for use in increasing
+alertness in narcolepsy.
+Amphetamines were the first stimulants to be synthesized. They were
+created in the late 19th century and were used by Bavarian soldiers in the
+mid-1880s to maintain wakefulness, alertness, energy, and confidence in
+combat. They have been used similarly in most wars since then. They were
+not widely used clinically until the 1930s when they were marketed as
+Benzedrine inhalers for relief of nasal congestion. When their
+psychostimulant effects were noted, these drugs were used to treat sleepiness
+associated with narcolepsy. They have been classified as controlled drugs
+because of their rapid onset, immediate behavioral effects, and propensity to
+develop tolerance, which leads to the risk of abuse and dependence in
+vulnerable individuals. State and federal agencies regulate their manufacture,
+distribution, and use. In 2005, pemoline was withdrawn from the market
+because of significant risks of treatment-emergent hepatotoxicity.
+Sympathomimetics have been widely used in persons with ADHD and
+narcolepsy because no equally effective agents have been available. They
+have also been found useful in treating certain cognitive disorders that result
+in secondary depression or profound apathy (e.g., AIDS, multiple sclerosis,
+
+
+
+
+<<<PAGE 2153>>>
+
+amphetamine molecule. In most cases, this makes the drug better tolerated,
+but some patients experience a more significant benefit from the mixed
+isomer preparation.
+Methylphenidate, dextroamphetamine, and amphetamine are indirectly
+acting sympathomimetics, with the primary effect causing the release of
+catecholamines from presynaptic neurons. Their clinical effectiveness is
+associated with increased release of both dopamine and norepinephrine.
+Dextroamphetamine and methylphenidate are also weak inhibitors of
+catecholamine reuptake and inhibitors of monoamine oxidase.
+In recent years, there has been an explosion of new brand name stimulants.
+Most of these are variations of the generic methylphenidate or mixed
+amphetamine salts that provide additional options to customize treatment in
+terms of dosing and duration of effect.
+For modafinil, the specific mechanism of action is unknown. Narcolepsy–
+cataplexy results from a deficiency of hypocretin, a hypothalamic
+neuropeptide. Hypocretin-producing neurons are activated after modafinil
+administration. Modafinil does not appear to work through a dopaminergic
+mechanism. It does have α1-adrenergic agonist properties, which may
+account for its alerting effects, because the wakefulness induced by modafinil
+can be attenuated by prazosin, an α1-adrenergic antagonist. Some evidence
+suggests that modafinil has some norepinephrine reuptake blocking effects.
+Armodafinil (Nuvigil) is the R-enantiomer of modafinil. Both drugs have
+similar clinical effects and side effects.
+Therapeutic Indications
+Attention-Deficit/Hyperactivity Disorder (ADHD). Sympathomimetics
+are the first-line drugs for the treatment of ADHD in children and are
+effective about 75 percent of the time. Methylphenidate and
+dextroamphetamine are equally effective and work within 15 to 30 minutes.
+Sympathomimetic drugs decrease hyperactivity, increase attentiveness, and
+reduce impulsivity. They may also reduce comorbid oppositional behaviors
+associated with ADHD. Many persons take these drugs throughout their
+schooling and beyond. In responsive persons, the use of a sympathomimetic
+may be a critical determinant of scholastic success.
+Sympathomimetics improve the core ADHD symptoms of hyperactivity,
+
+
+
+
+<<<PAGE 2278>>>
+
+a major active metabolite of buspirone: assessment of pharmacokinetics
+and 5-hydroxytryptamine 1A receptor occupancy in rats. Drug Metab
+Dispos. 2007;35(8):1387–1392.
+Drugs Used to Treat Sleep Disorders
+Bannan N, Rooney S, O’Connor J. Zopiclone misuse: an update from Dublin.
+Drug Alcohol Rev. 2007;26:83–85.
+Boehlein JK, Kinzie JD. Pharmacologic reduction of CNS noradrenergic
+activity in PTSD: the case for clonidine and prazosin. J Psychiatr Pract.
+2007;13:72–78.
+Calvo JR, Gonzalez-Yanes C, Maldonado M. The role of melatonin in the
+cells of the innate immunity: a review. J Pineal Res. 2013;55(2):103–120.
+DeMicco M, Wang-Weigand S, Zhang J. Long-term therapeutic effects of
+ramelteon treatment in adults with chronic insomnia: a 1-year study. Sleep.
+2006;
+29(Suppl):A234.
+Doghramji K. Melatonin and its receptors: a new class of sleep-promoting
+agents. J Clin Sleep Med. 2007;3(5 Suppl):S17.
+Erman M, Seiden D, Zammit G, Sainati S, Zhang J. An efficacy, safety, and
+dose-response study of ramelteon in patients with chronic primary
+insomnia. Sleep Med. 2006;7(1):17–24.
+Johnson MW, Suess PE, Griffiths RR. Ramelteon: a novel hypnotic lacking
+abuse liability and sedative adverse effects. Arch Gen Psychiatry.
+2006;63(10):
+1149–1157.
+Karim A, Bradford D, Siebert F, Zhao Z. Pharmacokinetic effect of multiple
+oral doses of donepezil on ramelteon, and vice versa, in healthy adults.
+Sleep. 2007;
+30(Suppl):A244.
+Kato K, Hirai K, Nishiyama K, Uchikawa O, Fukatsu K. Neurochemical
+properties of ramelteon (TAK-375), a selective MT1/MT2 receptor agonist.
+Neuropharmacology. 2005;48(2):301–310.
+Lemmer B. The sleep–wake cycle and sleeping pills. Physiol Behav.
+2009;90:285.
+Lieberman JA. Update on the safety considerations in the management of
+insomnia with hypnotics: incorporating modified-release formulations into
+
+
+
+
+<<<PAGE 3690>>>
+
+cognitive continuum, 264, 264f
+course and prognosis, 264–265
+criteria for, 262, 262t
+definition, 262
+epidemiology and etiology, 265, 265f
+historical perspective, 263
+terms related to, 263t
+treatment, 265, 266t
+Milieu therapy, 794
+Military psychiatry, 834
+Miller, Neal, 765
+Million Clinical Multiaxial Inventory (MCMI), 58t
+Millon Adolescent Personality Inventory (MAPI), 83t
+Milnacipran, 635
+Miltown. See Meprobamate
+Mini-Mental Status Examination (MMSE), 9, 45, 52, 89
+Minipress. See Prazosin
+Minnesota model, 214
+Minnesota Multiphasic Personality Inventory (MMPI), 1041
+Minnesota Multiphasic Personality Inventory 2 (MMPI-2), 54t, 55, 56,
+57, 58t
+Minnesota Multiphasic Personality Inventory-Adolescent (MMPI-A),
+83t
+Minocycline, 592
+Mirapex. See Pramipexole
+Mirtazapine
+dosage and administration, 638
+drug interactions, 638
+mechanism of action, 637
+precautions and adverse reactions, 637–638, 637t
+therapeutic indications, 637
+Mixed receptive–expressive language deficits, 112–114. See also
+Language disorders
+MMPI. See Minnesota Multiphasic Personality Inventory (MMPI)
+MMSE. See Mini-Mental Status Examination (MMSE)
+M’Naghten rule, 843
+Mobile or cell phone compulsion, 333
+
+
+
+
+<<<PAGE 3718>>>
+
+diagnosis and clinical features, 171–172
+avoidance, 171
+depressive episodes, 172
+hyperarousal, 171
+negative alterations in cognition, 171
+reexperiencing traumatic event, 171
+differential diagnosis for, 172, 433, 433t
+and dissociative amnesia, 440
+in DSM-5 and ICD-10, 431t
+epidemiology, 173–174, 435
+etiology, 174
+biologic factors, 174
+psychological factors, 174
+social factors, 174
+genetics and risk for, 436
+pathology and laboratory examination, 172
+positive prognostic factors for, 434t
+predisposing vulnerability factors in, 436t
+psychotherapy for, 435
+risk factors, 435, 436
+treatment, 172–173
+CBITS, 172–173
+psychopharmacological, 173
+SPARCS, 173
+TARGET, 173
+trauma-focused CBT, 172
+Potency of drug, 602
+Prader–Willi syndrome, 86t, 95, 101, 102. See also Intellectual disability
+(ID)
+Pragmatics, 107
+Pramipexole, 598, 705
+for restless legs syndrome, 515
+Prazosin, 681–682
+Prazosin, for PTSD-related nightmares, 515
+Preconscious system, 1060
+Prefrontal cortex (PFC), 398, 1037
+mood and, 934, 935
+
+

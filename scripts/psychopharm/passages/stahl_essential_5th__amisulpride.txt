@@ -1,0 +1,504 @@
+<<<PAGE 175>>>
+
+5
+
+Targeting Dopamine and Serotonin
+Receptors for Psychosis, Mood, and
+Beyond: So-Called “Antipsychotics”
+
+Targeting Mesolimbic/Mesostriatal Dopamine D2
+Receptors Causes Antipsychotic Actions 161
+Targeting Dopamine D2 Receptors in Mesolimbic/
+Mesostriatal and Mesocortical Pathways Causes
+Secondary Negative Symptoms 162
+Secondary Negative Symptoms Due to Targeting
+Mesolimbic Dopamine D2 Receptors 162
+Secondary Negative Symptoms Due to Targeting
+Mesocortical Dopamine D2 Receptors 163
+Targeting Tuberoinfundibular Dopamine D2
+Receptors Causes Elevation of Prolactin 164
+Targeting Nigrostriatal Dopamine D2 Receptors
+Causes Motor Side Effects 165
+Drug-Induced Parkinsonism 166
+Drug-Induced Acute Dystonia 169
+Akathisia 169
+Neuroleptic Malignant Syndrome 169
+Tardive Dyskinesia 170
+Drugs Targeting Dopamine D2 Receptors:
+So-Called First Generation or Conventional
+“Antipsychotics” 179
+Drugs Targeting Serotonin 2A Receptors with or
+without Simultaneously Targeting Dopamine D2
+Receptors 183
+5HT2A Receptor Regulation of Dopamine Release in
+Three Downstream Pathways 184
+Drugs Targeting Serotonin 1A Receptors and
+Dopamine D2 Receptors as Partial Agonists 189
+D2 Partial Agonism 189
+How Does D2 Partial Agonism Cause Fewer Motor
+Side Effects than D2 Antagonism? 192
+5HT1A Partial Agonism 193
+Links between Receptor Binding Properties
+of Drugs Used to Treat Psychosis and Other
+Therapeutic Actions and Side Effects 195
+
+This chapter explores drugs that target dopamine
+receptors, serotonin receptors, or both, for the treatment
+of psychosis, mania, and depression. It also explores
+myriad additional neurotransmitter receptors that
+these agents engage. The drugs covered in this chapter
+have classically been called “antipsychotics,” but this
+terminology is now considered out of date and confusing
+since these same agents are used even more frequently for
+
+Mania 195
+Antidepressant Actions in Bipolar and Unipolar
+Depression 195
+Anxiolytic Actions 196
+Agitation in Dementia 197
+Sedative Hypnotic and Sedating Actions 197
+Cardiometabolic Actions 198
+Pharmacological Properties of Selected Individual
+First-Generation D2 Antagonists 201
+Chlorpromazine 201
+Fluphenazine 202
+Haloperidol 202
+Sulpiride 202
+Amisulpride 203
+An Overview of the Pharmacological Properties
+of Individual 5HT2A/ D2 Antagonists and D2/5HT1A
+Partial Agonists: The Pines (Peens), Many Dones
+and a Rone, Two Pips and a Rip 204
+The Pines (Peens) 222
+Many Dones and a Rone 234
+Two Pips and a Rip 239
+Selective 5HT2A Antagonist 240
+The Others 240
+Future Treatments for Schizophrenia 241
+Roluperidone (MIN-101) 241
+D3 Antagonists 241
+Trace Amine Receptor Agonists and SEP363856 241
+Cholinergic Agonists 242
+A Few Other Ideas 242
+Summary 242
+
+mood disorders than for psychosis, yet are not classified
+as “antidepressants.” As mentioned earlier, throughout
+this textbook we strive to utilize modern neurosciencebased nomenclature, where drugs are named for their
+pharmacological mechanism of action and not for
+their clinical indication. Thus, drugs discussed in this
+chapter have “antipsychotic action” but are not called
+“antipsychotics”; they also have “antidepressant action”
+159
+
+
+
+
+<<<PAGE 219>>>
+
+Chapter 5: Targeting for Psychosis
+
+5HT2A
+
+H
+1
+
+α1
+
+α2B
+
+fluphenazine
+
+α2C
+D1
+
+5
+
+T6
+
+5H
+
+5H
+
+T7
+
+D2
+
+D2
+
+D3
+
+5HT7
+
+++++ ++++ +++
+
+α1
+
+D5
+
+D5
+
+5HT2A α2C
+
+D4
+
+H1
+
+5HT6
+
+D3
+
+D4
+
+D1
+
+α2B
+
++++ ++ ++ ++ ++ ++ ++ ++ ++ α2A 5HT1B 5HT1D M5 5HT1E H2 5HT1A 5HT2C
++ + + + + + + +
+
+Figure 5-28 Fluphenazine’s pharmacological and binding profile. This figure portrays a qualitative consensus of current thinking about
+the binding properties of fluphenazine. Along with D2 antagonism, fluphenazine has potent actions at D3, 5HT7, and α1-adrenergic
+receptors, and binds at numerous other receptors as well. As with all agents discussed in this chapter, binding properties vary greatly
+with technique and from one laboratory to another; they are constantly being revised and updated.
+
+and prolactin elevation at usual antipsychotic doses.
+However, particularly at lower doses, it may be a bit
+activating, and have efficacy for negative symptoms of
+schizophrenia and for depression for unclear reasons.
+Dopamine 3 antagonist/partial agonist actions in
+depression are discussed in Chapter 7 on treatments
+for mood disorders, and this is a candidate explanation
+(see Figure 5-30). Sulpiride remains a popular option for
+treating psychosis in countries outside the US such as the
+UK, as it may be better tolerated than some of the other
+original D2 agents.
+Amisulpride
+
+Amisulpride (Figure 5-31) is structurally related to
+sulpiride (Figure 5-30) and was developed and marketed
+
+outside the US. Some early preclinical data suggest that
+it might be more selective for mesolimbic/mesostriatal
+dopamine receptors than for nigrostriatal dopamine
+receptors, and thus might have a lower propensity for
+motor side effects at antipsychotic doses. There are reports
+of amisulpride’s efficacy for the negative symptoms of
+schizophrenia and for depression at doses lower than
+those used to treat positive symptoms of psychosis.
+Amisulpride has some D3 antagonist actions and some
+weak 5HT7 antagonist actions, which may explain some of
+its negative symptom and antidepressant actions (Figure
+5-31). Antidepressant actions of D3 antagonism/partial
+agonism and 5HT7 antagonism are discussed in Chapter 7.
+The active isomer of amisulpride is in early clinical testing
+for possible development in the US.
+
+203
+
+
+
+
+<<<PAGE 221>>>
+
+Figure 5-30 Sulpiride’s pharmacological and
+binding profile. This figure portrays a qualitative
+consensus of current thinking about the binding
+properties of sulpiride. At usual antipsychotic
+doses, sulpiride is a D2 antagonist and also has
+D3 antagonist/partial agonist actions. As with
+all agents discussed in this chapter, binding
+properties vary greatly with technique and from
+one laboratory to another; they are constantly
+being revised and updated.
+
+sulpiride
+
+D2
+
+D3
+
+5
+
+D3
+
+D2
+
+++ ++
+
+Figure 5-31 Amisulpride’s pharmacological and
+binding profile. This figure portrays a qualitative
+consensus of current thinking about the binding
+properties of amisulpride. In addition to its
+actions at D2 receptors, amisulpride has some
+D3 antagonist actions and some weak 5HT7
+antagonist actions. As with all agents discussed in
+this chapter, binding properties vary greatly with
+technique and from one laboratory to another;
+they are constantly being revised and updated.
+
+amisulpride
+
+D2
+
+D3
+
+D2
+
++++
+
+D3
+5HT2B
+
++++ ++ 5HT7
++
+205
+
+
+
+
+<<<PAGE 252>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+TAAR1
+bed nucleus stria terminalis
+
+prefrontal cortex
+
+dorsal raphe nucleus
+
+hypothalamus
+pituitary
+amygdala
+hippocampus
+
+ventral tegmental area
+Figure 5-64 Localization of trace amine-associated receptor type 1 (TAAR1). A new potential mechanism of antipsychotic action
+is agonism of the trace amine-associated receptor type 1 (TAAR1). TAAR1 is widely expressed throughout the brain, including in
+monoamine brainstem centers (dorsal raphe nucleus, ventral tegmental area) and in monoamine projection areas.
+
+formulation. It can be useful to monitor plasma drug levels
+to guide dosing, especially for patients receiving long-term
+depot injections and who are treatment-resistant.
+Ziprasidone
+
+Ziprasidone (Figure 5-51) is a 5HT2A/D2 antagonist with
+the major differentiating feature being that it has little or
+no propensity for weight gain or metabolic disturbances.
+However, it is short acting, requires more than once a day
+dosing, and must be taken with food. Earlier concerns
+about dangerous QTc prolongation by ziprasidone now
+appear to be exaggerated. Unlike iloperidone, zotepine,
+sertindole, and amisulpride, ziprasidone does not cause
+dose-dependent QTc prolongation, and few drugs have
+the potential to increase ziprasidone’s plasma levels.
+Ziprasidone has an intramuscular dosage formulation for
+rapid use in urgent circumstances. Ziprasidone is approved
+in schizophrenia/maintenance and in bipolar mania/
+maintenance.
+Iloperidone
+
+Iloperidone (Figure 5-52) also has 5HT2A/D2 antagonist
+properties. Its most distinguishing clinical properties
+include a very low level of motor side effects, low
+level of dyslipidemia, and moderate level of weight
+gain associated with its use. Its most distinguishing
+pharmacological property is its potent α1 antagonism
+(Figure 5-52). As discussed earlier in this chapter, α1
+antagonism is generally associated with the potential for
+236
+
+orthostatic hypotension and sedation, especially if rapidly
+dosed. Although iloperidone has an 18- to 33-hour
+half-life that theoretically supports once daily dosing, it
+is generally dosed twice daily and titrated over several
+days when initiated in order to avoid both orthostasis and
+sedation. Slow dosing can delay onset of antipsychotic
+effects, so iloperidone is often used as a switch agent
+in non-urgent situations. It is approved in the US for
+schizophrenia/maintenance.
+Lurasidone
+
+Lurasidone is a 5HT2A/D2 antagonist (Figure 5-53)
+approved for use in schizophrenia and much more
+popular for use in bipolar depression. This compound
+exhibits high affinity for both 5HT7 receptors (Figure
+5-39) and 5HT2A receptors (Figure 5-32), moderate
+affinity for 5HT1A (Figure 5-33) and α2 receptors (Figure
+5-35), yet minimal affinity for H1 histamine and M1
+cholinergic receptors (Figure 5-41), properties that may
+explain some of lurasidone’s antidepressant profile, with
+low risk of weight gain or metabolic dysfunction. Risk of
+motor side effects or sedation are reduced if lurasidone
+is dosed at night. Due perhaps to the synergism
+amongst the several potential antidepressant properties
+accompanied by good tolerability, especially lack of
+weight gain, it is a highly effective agent for bipolar
+depression (ages 10 and older) and one of the preferred
+agents for this use in the countries where it is approved
+for this use such as in the US. Lurasidone is approved
+
+
+
+
+<<<PAGE 631>>>
+
+Index
+5HT. See serotonin
+ABC model of apathy, 536
+abstinence, 571–4
+acamprosate, 556
+acetyl coenzyme A, 505
+acetylcholine, 5, 505–10
+dopamine and, 166
+acetylcholinesterase, 505
+acetylcholinesterase inhibition, 509–18
+action potential, 67, 73
+active site, 45, 46
+acute pain, 379, 380
+addiction, 476, 539
+behavioral, 575
+dopamine theory of, 542–3
+substance addictions, 544–75
+adenosine, 440
+ADHD (attention deficit hyperactivity
+disorder), 34, 449, 485, 539
+comorbidities, 466, 480
+neurodevelopment, 463–5
+oppositional symptoms, 484
+prefrontal cortex tuning, 454–63
+symptoms and circuits, 449–53
+treatments, future, 484
+treatments, NET inhibitors, 480–4
+treatments, stimulants, 467–79
+treatments, symptoms and, 466–7
+advanced sleep phase disorder, 435, 437
+affective blunting, 142
+affective disorders, 244
+affective symptoms, 95
+positive and negative, 278, 280, 306
+schizophrenia, 145
+aggression, 145–7, 521, 577–8
+agitation, 145, 521–3
+dementia, 145, 157, 197
+glutamate target, 533
+neuronal networks of, 528–30
+treatment, 523–4
+treatment, multimodal monoamine,
+530–2
+agomelatine, 306–8
+agonist spectrum, 37, 43, 45, 56–62, 184,
+192
+agonists, 57, 58
+full, 37–41, 56, 192
+inverse, 42, 44–5, 61, 62, 240
+no agonist, 37
+partial. See partial agonists
+
+AIMS (Abnormal Involuntary Movement
+scale), 174
+akathisia, 166, 169
+alcohol, 377, 553–6
+abstinence, 573
+co-addictions, 553
+treatment of alcoholism, 556
+alcohol abuse, 378
+allodynia, 380
+allopregnanolone, 320, 322
+allosteric modulation, 64–6, 261, 262
+alogia, 142
+alpha-1 antagonism, 216, 225, 236, 327–8
+alpha-2 adrenergic agonists, 481–4
+alpha-2 antagonism, 309
+alpha-2 autoreceptors, 254, 256, 258
+alpha-2-delta ligands, 366, 377, 380
+pain alleviation, 398
+SNRI combinations, 399
+alpha pore, 69, 70
+alpha-synuclein, 493, 494
+alternative splicing, 26
+Alzheimer disease, 487–90, See also
+dementia
+agitation in, 521–4, 528–33
+delusions in, 157
+dementia stage 3, 502
+early detection, importance of, 497
+impulsivity, 539
+MCI stage 2, 500–2
+memory and cognition treatment,
+509–18
+Parkinson’s disease comorbidity, 494
+pathology, 488
+presymptomatic stage, 499–501
+psychosis in, 521–4
+targeting amyloid, 496–9
+vascular dementia comorbidity, 492
+amantadine, 169
+amisulpride, 205
+amotivational syndrome, 563
+AMPA receptors, 101, 104, 330, 331
+amphetamine, 337, 356, 441–2, 472–6,
+569
+ADHD, 484
+formulations, 475
+isomers, 472
+amygdala, fear and, 364–5, 372, 374
+amyloid cascade hypothesis, 496–9
+amyloid plaques. See beta-amyloid
+amyloid precursor protein, 497–8
+
+amyotrophic lateral sclerosis, 353
+analgesia, 380
+anatomical basis of neurotransmission,
+1–5
+anesthesia, dissociative, 570
+anhedonia, 142, 162
+antagonists, 41–3, 57, 58, 60, 62
+alpha-1, 216, 225, 236, 327–8
+alpha-2, 309
+silent, 41, 42, 45, 192
+anticholinergics, 166, 168, 215, 294
+anticonvulsants
+doubtful efficacy in bipolar disorder,
+352–3
+insomnia treatment, 426
+mood stabilizers, 346
+proven efficacy in bipolar disorder,
+347–51
+antidepressant actions, 195–234, 267, 283
+antihistamines, 161, 215, 295, 425–6
+antipsychotic actions, 161–2, 242
+antipsychotics. See drugs targeting
+serotonin receptors, drugs targeting
+dopamine D2 receptors
+anxiety, 78, 145, 359
+OCD and, 576
+anxiety disorders, 196, 378
+ADHD and, 468
+comorbidity, 360
+core symptoms, 360
+definition, 360
+major depression and, 360–2
+MAOIs, 336
+noradrenergic hyperactivity in, 370–2
+overlapping symptoms of different,
+362–3
+pain disorders and, 387
+psychotherapy, 359
+serotonin and, 368–70
+treatment of, 377–8, 421
+anxiety phenotype, 363
+anxiolytic actions, 196, 366
+apathy, 78, 536–7
+APOE4 gene, 497
+aripiprazole, 192, 229, 239, 326
+armodafinil, 442–4
+arousal, 457, 459
+arousal spectrum, 402
+asenapine, 220, 232
+asociality, 142
+asymptomatic amyloidosis, 499–501
+615
+
+

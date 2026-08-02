@@ -1,0 +1,2104 @@
+<<<PAGE 30>>>
+
+Minimum effective doses
+Table 1.1 suggests the minimum dose of antipsychotic likely to be effective in first- or multiepisode schizophrenia. Most patients will respond to the dose suggested, although others
+may require higher doses. Given the variation in individual response, all doses should be
+considered approximate. Primary references are provided where available, but consensus
+opinion has also been used. Only oral treatment with commonly used drugs is covered.
+Table 1.1 Minimum effective dose/day – antipsychotics
+Drug
+
+First episode
+
+Multi-episode
+
+Chlorpromazine1
+
+200mg*
+
+300mg
+
+Haloperidol
+
+2mg
+
+4mg
+
+Sulpiride8
+
+400mg*
+
+800mg
+
+10mg*
+
+15mg
+
+Amisulpride11–16
+
+300mg*
+
+400mg*
+
+Aripiprazole7,17–22
+
+10mg
+
+10mg
+
+Asenapine
+
+10mg*
+
+10mg
+
+Blonanserin24
+
+Not known
+
+8mg
+
+Brexpiprazole25–27
+
+2mg*
+
+4mg
+
+Cariprazine
+
+1.5mg*
+
+1.5mg
+
+Iloperidone7,21,22,30
+
+4mg*
+
+8mg
+
+Lumateperone
+
+Not known
+
+42mg*
+
+Lurasidone
+
+40mg HCl/37mg base*
+
+40mg HCl/37mg base
+
+Olanzapine4,7,33–35
+
+5mg
+
+7.5mg
+
+Paliperidone
+
+3mg*
+
+3mg
+
+Pimavanserin
+
+Not known
+
+34mg**
+
+Quetiapine39–44
+
+150mg* (but higher doses often used45)
+
+300mg
+
+3,7,46–49
+
+Risperidone
+
+2mg
+
+4mg
+
+7,21,50–52
+
+Ziprasidone
+
+40mg*
+
+80mg
+
+FGAs
+
+2–7
+
+Trifluoperazine
+
+9,10
+
+SGAs
+
+7,22,23
+
+28,29
+
+31
+
+7,32
+
+22
+36–38
+
+*Estimate – too few data available
+**FDA-approved for Parkinson’s disease psychosis; dose in schizophrenia not known
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  9
+
+
+
+
+<<<PAGE 33>>>
+
+CHAPTER 1
+
+12  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Licensed maximum doses
+The following table lists the licensed maximum doses of antipsychotics according to the
+EMA labelling as of February 2021.
+Drug
+
+Maximum dose
+
+FGAs – oral
+Chlorpromazine
+
+1000mg/day
+
+Flupentixol
+
+18mg/day
+
+Haloperidol
+
+20mg/day
+
+Levomepromazine
+
+1200mg/day
+
+Pericyazine
+
+300mg/day
+
+Perphenazine
+
+24mg/day (64mg/day hospitalised patients)
+
+Pimozide
+
+20mg/day
+
+Sulpiride
+
+2400mg/day
+
+Trifluoperazine
+
+20mg/day
+
+Zuclopenthixol
+
+150mg/day
+
+SGAs – oral
+Amisulpride
+
+1200mg/day
+
+Aripiprazole
+
+30mg/day
+
+Asenapine
+
+20mg/day (sublingual)
+
+Cariprazine
+
+6mg/day
+
+Clozapine
+
+900mg/day
+
+Lurasidone
+
+160mg (HCl)/148mg (base)/day
+
+Olanzapine
+
+20mg/day
+
+Paliperidone
+
+12mg/day
+
+Quetiapine
+
+750mg/day schizophrenia (800mg/day for MR preparation)
+800mg/day bipolar disorder
+
+Risperidone
+
+16mg/day
+
+Sertindole
+
+24mg/day
+
+Long-acting injections
+Aripiprazole depot
+
+400mg/month
+
+Flupentixol depot
+
+400mg/week
+
+Fluphenazine depot
+
+100mg every 14–35 days
+
+Haloperidol depot
+
+300mg every 4 weeks
+
+Paliperidone depot
+1-monthly
+
+150mg/month
+
+
+
+
+<<<PAGE 62>>>
+
+Relative adverse effects – a rough guide
+Drug
+
+Sedation
+
+Weight
+gain
+
+Akathisia Parkinsonism
+
+Anticholinergic
+
+Hypotension
+
+Prolactin
+elevation
+
+Amisulpride*
+
+–
+
++
+
++
+
+–
+
+–
+
++++
+
++
+
+Aripiprazole
+
+–
+
+–
+
++
+
+–
+
+–
+
+–
+
+–
+
+Asenapine*
+
++
+
++
+
++
+
+–
+
+–
+
+–
+
++
+
+Benperidol*
+
++
+
++
+
++
+
++++
+
++
+
++
+
++++
+
+Brexpiprazole*
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Cariprazine*
+
+–
+
+–
+
++
+
+–
+
+–
+
+–
+
+–
+
+Chlorpromazine +++
+
+++
+
++
+
+++
+
+++
+
++++
+
++++
+
+Clozapine
+
++++
+
++++
+
+–
+
+–
+
++++
+
++++
+
+–
+
+Flupentixol*
+
++
+
+++
+
+++
+
+++
+
+++
+
++
+
++++
+
+Fluphenazine*
+
++
+
++
+
+++
+
++++
+
++
+
++
+
++++
+
+Haloperidol
+
++
+
++
+
++++
+
++++
+
++
+
++
+
+++
+
+Iloperidone*
+
+–
+
+++
+
++
+
++
+
+–
+
++
+
+–
+
+Lumateperone*
+
+++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Loxapine*
+
+++
+
++
+
++
+
++++
+
++
+
+++
+
++++
+
+Lurasidone
+
++
+
+–
+
++
+
++
+
+–
+
+–
+
+–
+
+Olanzapine
+
+++
+
++++
+
+–
+
+–
+
++
+
++
+
++
+
+Paliperidone
+
++
+
+++
+
++
+
++
+
++
+
+++
+
++++
+
+Perphenazine
+
++
+
++
+
+++
+
++++
+
++
+
++
+
++++
+
+Pimavanserin*
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+Pimozide*
+
++
+
++
+
++
+
++
+
++
+
++
+
++++
+
+Pipothiazine*
+
+++
+
+++
+
++
+
+++
+
+++
+
+++
+
++++
+
+Promazine*
+
++++
+
+++
+
++
+
++
+
+++
+
+++
+
+++
+
+Quetiapine
+
+++
+
+++
+
+–
+
+–
+
++
+
+++
+
+–
+
+Risperidone
+
++
+
+++
+
++
+
++
+
++
+
+++
+
++++
+
+Sertindole*
+
+–
+
++
+
++
+
+–
+
+–
+
++++
+
+–
+
+Sulpiride*
+
+–
+
++
+
++
+
++
+
+–
+
+–
+
++++
+
+Trifluoperazine
+
++
+
++
+
++
+
++++
+
++
+
++
+
++++
+
+Ziprasidone*
+
++
+
+–
+
++
+
+–
+
+–
+
++
+
++
+
+Zuclopenthixol* ++
+
+++
+
+++
+
+++
+
+++
+
++
+
++++
+
+Key: *Availability varies from country to country; +++ High incidence/severity; ++ Moderate; + Low; – Very low.
+Note: The table notes approximate estimates of relative incidence and/or severity, based on clinical experience,
+manufacturers’ literature and published research. This is a very rough guide – see individual sections for more precise
+and referenced information.
+Other adverse effects not mentioned in this table do occur. Please see dedicated sections on other adverse effects
+included in this book for more information.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  41
+
+
+
+
+<<<PAGE 104>>>
+
+Paliperidone palmitate long-acting injection
+Paliperidone (9-hydroxyrisperidone) is the major active metabolite of risperidone.
+Paliperidone palmitate is the ester prodrug of paliperidone available as a monthly and
+a 3-monthly long-acting injection. The ester is hydrolysed by esterases in the muscle to
+paliperidone and which is then absorbed into the systemic circulation.1
+
+Paliperidone LAI 1-monthly
+After the recommended initial loading dose, active paliperidone plasma levels are seen
+within a few days, and so co-administration of oral paliperidone or risperidone during
+initiation is not required from a pharmacokinetic viewpoint.2 Dosing consists of two
+initiation doses (deltoid) followed by monthly maintenance doses (deltoid or gluteal).
+After administration of a single IM dose to the deltoid muscle, on average 28% higher
+peak concentration is observed compared with IM injection to the gluteal muscle.2
+Thus, the two deltoid muscle injections on days 1 and 8 help to quickly attain therapeutic drug concentration (Table 1.6). Improvement in psychotic symptoms has been
+observed as early as day 4.2
+Table 1.6 Paliperidone dose and administration information2
+Dose
+
+Route
+
+Initiation
+Day 1
+
+150mg IM
+
+Deltoid only
+
+Day 8 (± 4 days)
+
+100mg IM
+
+Deltoid only
+
+50–150mg IM*
+
+Deltoid or Gluteal**
+
+Maintenance
+Every month (± 7 days) thereafter
+
+*The maintenance dose is perhaps best judged by consideration of what might be a suitable dose of oral risperidone and then giving paliperidone palmitate in an equivalent dose (see Table 1.7). Pre-treatment with oral
+risperidone is helpful in establishing efficacy and tolerability of a given dose.
+**Continuation with deltoid injections for the first 6 months may be considered in some patients who switch from
+higher doses of oral paliperidone or risperidone.2
+
+The second initiation dose may be given four days before or after day 8 (after the first
+initiation dose on day one).2 The manufacturer recommends that patients may be given
+maintenance doses up to 7 days before or after the monthly time point.2 This flexibility
+should help minimise the number of missed doses. See manufacturer’s information for
+full recommendations regarding missed doses.2
+
+Points to note
+No test dose is required for paliperidone palmitate (but patients should (ideally) be currently stabilised on or have previously responded to oral paliperidone or risperidone).
+■■ The median time to maximum plasma concentrations T
+is 13 days.2
+max
+■■ Patients receiving fewer than 12 injections a year have an increased risk of relapse –
+correct dosing is critical to the effectiveness of paliperidone monthly.3,4
+■■
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  83
+
+
+
+
+<<<PAGE 105>>>
+
+CHAPTER 1
+
+84  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 1.7 Approximate dose equivalence2,5
+Risperidone oral
+(mg/day)
+(bioavailability = 70%)6
+
+Paliperidone oral
+(mg/day)
+(bioavailability = 28%)7
+
+Risperidone LAI
+(Consta)
+(mg/2 week)
+
+Paliperidone palmitate
+(mg/monthly)
+(bioavailability = 100%)2
+
+2
+
+4
+
+25
+
+50
+
+3
+
+6
+
+37.5
+
+75
+
+4
+
+9
+
+50
+
+100
+
+6
+
+12
+
+-
+
+150
+
+Paliperidone LAI has been compared with haloperidol depot given in a loading dose
+schedule matching that of paliperidone.8 The two formulations were equally effective in
+preventing relapse, but paliperidone increased prolactin to a greater extent and caused
+more weight gain. Haloperidol caused more akathisia, more acute movement disorder
+and there was a trend for a higher incidence of tardive dyskinesia. The average dose of
+haloperidol was around 75mg a month; a dose rarely used in practice.
+There are two studies comparing monthly paliperidone LAI with aripiprazole LAI.
+The first was a randomised trial that found aripiprazole monthly injection superior in
+the improvement of quality of life in short term, though the aripiprazole group included
+more younger patients.9 The second study compared the two LAIs in patients with psychosis and comorbid substance use disorder (SUD). Improvement in quality of life and
+reduced substance cravings was seen with both LAIs though aripiprazole fared better.
+However, there was no clear clinically meaningful superiority for aripiprazole over paliperidone in either of these studies.10
+
+Paliperidone LAI 3-monthly
+Paliperidone LAI 3-monthly is indicated for patients who are clinically stable on paliperidone LAI 1-monthly (preferably for four months or more) and do not require dose
+adjustment.11 It is recommended that the last two doses of the monthly paliperidone
+remain unchanged before switching to the 3-monthly in order to be certain of the maintenance dose required.1
+Paliperidone LAI 3-monthly is generally well-tolerated, with a tolerability profile
+similar to the 1-monthly preparation12–14 and is non-inferior to paliperidone 1-monthly
+in terms of relapse rate.14 In an analysis of predictors for remission, global improvement
+in the CG I-S during monthly paliperidone increased likelihood of remission after
+switch to 3-monthly paliperidone.15
+From a patient’s perspective, advantages included less frequent injections and less focus
+on illness with few disadvantages reported in a qualitative study. The switch did not influence the frequency nor the content of their interaction with health care professionals.16
+Contact with patients should not be reduced because there are fewer antipsychotic
+administrations.
+
+
+
+
+<<<PAGE 106>>>
+
+Table 1.8 Switching to paliperidone palmitate 1-monthly LAI
+Switching from
+
+Recommended method of switching
+
+Comments
+
+No treatment
+
+Give the two initiation doses: 150mg IM
+deltoid on day 1 and 100mg IM deltoid on
+day 8
+
+The manufacturer recommends a dose of
+75mg monthly for the general adult
+population.17 This is approximately
+equivalent to 3mg/day oral risperidone. (see
+Table 1.7). In practice, the modal dose is
+100mg/month18
+
+Maintenance dose starts 1 month later
+
+Maintenance dose adjustments should be
+made monthly. However, the full effect of
+the dose adjustment may not be apparent
+for several months2
+Oral paliperidone/
+risperidone
+
+Give the two initiation doses followed by the
+maintenance dose (See Table 1.7 and prescribe
+equivalent dose)
+
+Oral antipsychotics
+
+Reduce the dose of the oral antipsychotic over
+1–2 weeks following the first injection of
+paliperidone. Give the two initiation doses
+followed by the maintenance dose
+
+Depot antipsychotic
+
+Start paliperidone (at the maintenance dose)
+when the next injection is due.
+NB. No initiation doses are required
+
+Oral paliperidone/risperidone
+supplementation during initiation is not
+necessary
+
+Doses of paliperidone palmitate IM are
+difficult to predict from the dose of FGA
+depots. The manufacturer recommends a
+dose of 75mg monthly for the general adult
+population but in practice 100mg and
+150mg are more often prescribed.18 If
+switching from risperidone LAI see Table 1.7
+and prescribe equivalent dose
+Maintenance dose adjustments should be
+made monthly. However, the full effect of
+the dose adjustment may not be apparent
+for several months2
+
+Antipsychotic
+polypharmacy with
+depot
+
+Start paliperidone (at the maintenance dose)
+when the next injection is due.
+NB. No initiation doses are required
+Reduce the dose of the oral antipsychotic over
+1–2 weeks following the first injection of
+paliperidone
+
+Aim to treat the patient with paliperidone
+palmitate IM as the sole antipsychotic.
+The maintenance dose should be governed
+as far as possible by the total dose of oral
+and injectable antipsychotic (see dose
+equivalence table in this chapter)
+
+When initiating paliperidone LAI 3-monthly give the first dose in place of the next
+scheduled dose of paliperidone LAI 1-monthly (±7 days). The dose of paliperidone LAI
+3-monthly should be based on the previous paliperidone LAI 1-monthly dose, see
+Table 1.9. Dose adjustments should not be necessary but may be made at 3-monthly
+intervals thereafter, however, the full response to the new dose may not be apparent for
+several months.11
+The administration process is important for avoiding incomplete administration of
+the suspension. This requires shaking vigorously the prefilled syringe with the cap and
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  85
+
+
+
+
+<<<PAGE 107>>>
+
+CHAPTER 1
+
+86  The Maudsley® Prescribing Guidelines in Psychiatry
+
+a loose wrist, in a vertical motion for at least 15 seconds to ensure an evenly distributed
+suspension.11
+Table 1.9 Dosing of paliperidone LAI 3-monthly
+Dose of paliperidone LAI 1-monthly
+
+Dose of paliperidone LAI 3-monthly
+
+50mg
+
+175mg
+
+75mg
+
+263mg
+
+100mg
+
+350mg
+
+150mg
+
+525mg
+
+See manufacturer’s information for full information in missed doses.
+
+References
+1. Lopez A, et al. Role of paliperidone palmitate 3-monthly in the management of schizophrenia: insights from clinical practice. Neuropsychiatr
+Dis Treat 2019; 15:449–456.
+2. Janssen-Cilag Ltd. Summary of Product Characteristics. Xeplion 25 mg, 50 mg, 75 mg, 100 mg, and 150 mg prolonged-release suspension
+for injection. 2020; https://www.medicines.org.uk/emc/medicine/31329.
+3. Pappa S, et al. Partial compliance with long-acting paliperidone palmitate and impact on hospitalization: a 6-year mirror-image study. Ther
+Adv Psychopharmacol 2020; 10:2045125320924789.
+4. Laing E, et al. Relapse and frequency of injection of monthly paliperidone palmitate-A retrospective case-control study. Eur Psychiatry 2021;
+64:e11.
+5. Russu A, et al. Maintenance dose conversion between oral risperidone and paliperidone palmitate 1 month: practical guidance based on
+pharmacokinetic simulations. Int J Clin Pract 2018; 72:e13089.
+6. Janssen-Cilag Limited. Summary of product characteristics. risperdal 2mg film-coated tablets. 2020; https://www.medicines.org.uk/emc/
+product/6858/smpc.
+7. Janssen-Cilag Limited. Summary of product characteristics. Invega 3 mg prolonged-release tablets. 2020; https://www.medicines.org.uk/emc/
+product/6816.
+8. McEvoy JP, et al. Effectiveness of paliperidone palmitate vs haloperidol decanoate for maintenance treatment of schizophrenia: a randomized
+clinical trial. JAMA 2014; 311:1978–1987.
+9. Naber D, et al. Qualify: a randomized head-to-head study of aripiprazole once-monthly and paliperidone palmitate in the treatment of schizophrenia. Schizophr Res 2015; 168:498–504.
+10. Cuomo I, et al. Head-to-head comparison of 1-year aripiprazole long-acting injectable (LAI) versus paliperidone LAI in comorbid psychosis
+and substance use disorder: impact on clinical status, substance craving, and quality of life. Neuropsychiatr Dis Treat 2018; 14:1645–1656.
+11. Janssen-Cilag Limited. Summary of Product Characteristics. TREVICTA 175mg, 263mg, 350mg, 525mg prolonged release suspension for
+injection. 2021; https://www.medicines.org.uk/emc/medicine/32050.
+12. Lamb YN, et al. Paliperidone palmitate intramuscular 3-monthly formulation: a review in schizophrenia. Drugs 2016; 76:1559–1566.
+13. Ravenstijn P, et al. Pharmacokinetics, safety, and tolerability of paliperidone palmitate 3-month formulation in patients with schizophrenia:
+a phase-1, single-dose, randomized, open-label study. J Clin Pharmacol 2016; 56:330–339.
+14. Mathews M, et al. Clinical relevance of paliperidone palmitate 3-monthly in treating schizophrenia. Neuropsychiatr Dis Treat 2019;
+15:1365–1379.
+15. Nash AI, et al. Predictors of achieving remission in schizophrenia patients treated with paliperidone palmitate 3-month formulation.
+Neuropsychiatr Dis Treat 2019; 15:731–737.
+16. Rise MB, et al. Patients’ perspectives on three-monthly administration of antipsychotic treatment with paliperidone palmitate – a qualitative
+interview study. Nord J Psychiatry 2020: [Epub ahead of print].
+17. Janssen Pharmaceutical Companies. Highlights of Prescribing Information. INVEGA SUSTENNA (paliperidone palmitate) extended-release
+injectable suspension, for intramuscular use. 2017; http://www.janssenlabels.com/package-insert/product-monograph/prescribing-informa​
+tion/INVEGA+SUSTENNA-pi.pdf.
+18. Taylor DM, et al. Paliperidone palmitate: factors predicting continuation with treatment at 2 years. Eur Neuropsychopharmacol 2016;
+26:2011–2017.
+
+
+
+
+<<<PAGE 112>>>
+
+Risperidone subcutaneous long-acting injection
+RBP-7000 or Perseris is a monthly subcutaneous LAI that is available in 90mg and 120mg
+dosage forms. The lower dose is equivalent to 3mg day oral risperidone and the higher dose
+4mg a day.1
+The injection is acutely effective at both licensed doses, without the need for oral pretreatment or oral supplementation.2,3 The 120mg dose was numerically more effective
+than 90mg at all time points. In the longer term, monthly doses of 120mg are effective
+in maintaining or improving symptom scale scores.4 It has clear theoretical advantages
+over Risperdal Consta, being rapidly active, not requiring oral supplementation and, as
+a subcutaneous injection, being more acceptable to patients5 with a low risk of painful
+injection.6 One disadvantage is that the injection procedure has several steps and both
+the complexity of preparation and subcutaneous administration are new to psychiatry.6
+A second potential disadvantage is that doses above the equivalent of 4mg a day may
+not be given, a fact that may limit clinical utility.7 (In respect to Cmax, Cmin and Cave 3mg/
+day = 90mg/28 days; and 4mg/day = 120mg/28 days1,8). Nonetheless, dopamine receptor occupancies are broadly consistent with clinical efficacy: at steady state, 90mg gives
+occupancies ranging from approximately 40–80%; 120mg, 60–85%.9
+
+Approximate equivalent doses (mg)10
+Risperidone oral (daily)
+
+Risperdal Consta (2-weekly)
+
+Paliperidone
+palmitate (monthly)
+
+RBP-7000 (monthly)
+
+2
+
+25
+
+50
+
+Not available*
+
+3
+
+37.5
+
+75
+
+90
+
+4
+
+50
+
+100
+
+120
+
+6
+
+Not available
+
+150
+
+Not available
+
+*Laffont et al.11 suggest 90mg is equivalent to 25mg/2-weekly Risperdal Consta
+
+References
+1. US Food and Drug Administration. Cross-discipline team leader review. RBP-7000 (risperidone-ATRIGEL) 2018; https://www.accessdata.
+fda.gov/drugsatfda_docs/nda/2018/210655Orig1s000SumR.pdf.
+2. Nasser AF, et al. Efficacy, safety, and tolerability of RBP-7000 once-monthly risperidone for the treatment of acute schizophrenia: an 8-week,
+randomized, double-blind, placebo-controlled, multicenter phase 3 study. J Clin Psychopharmacol 2016; 36:130–140.
+3. Le Moigne A, et al. Reanalysis of a phase 3 trial of a monthly extended-release risperidone injection for the treatment of acute schizophrenia.
+J Clin Psychopharmacol 2021; 41:76–77.
+4. Andorn A, et al. Monthly extended-release risperidone (RBP-7000) in the treatment of schizophrenia: results from the phase 3 program. J
+Clin Psychopharmacol 2019; 39:428–433.
+5. Tchobaniouk LV, et al. Once-monthly subcutaneously administered risperidone in the treatment of schizophrenia: patient considerations.
+Patient Prefer Adherence 2019; 13:2233–2241.
+6. Citrome L. Sustained-release risperidone via subcutaneous injection: a systematic review of RBP-7000 (PERSERIS(™)) for the treatment of
+schizophrenia. Clin Schizophr Relat Psychoses 2018; 12:130–141.
+7. Clark I, et al. Newer formulations of risperidone: role in the management of psychotic disorders. CNS Drugs 2020; 34:841–852.
+8. US Food and Drug Administration. Clinical pharmacology and biopharmaceutics review(s). Perseris 2018; https://www.accessdata.fda.gov/
+drugsatfda_docs/nda/2018/210655Orig1s000ClinPharmR.pdf.
+9. Laffont CM, et al. Population pharmacokinetics and prediction of dopamine D2 receptor occupancy after multiple doses of RBP-7000, a new
+sustained-release formulation of risperidone, in schizophrenia patients on stable oral risperidone treatment. Clin Pharmacokinet 2014;
+53:533–543.
+10. Karas A, et al. Perseris(TM): a new and long-acting, atypical antipsychotic drug-delivery system. P & T 2019; 44:460–466.
+11. Laffont CM, et al. Population pharmacokinetic modeling and simulation to guide dose selection for RBP-7000, a new sustained-release formulation of risperidone. J Clin Pharmacol 2015; 55:93–103.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  91
+
+
+
+
+<<<PAGE 113>>>
+
+Aristada
+Initio
+
+N/A
+
+Perseris
+
+Paliperidone
+palmitate
+6-month
+formulation
+
+Risperidone
+for
+subcutaneous
+injection
+(RBP-7000)
+
+Dosing
+interval
+
+Suspension,
+Co-polymer;
+ATRIGEL
+technology3
+
+Microcrystalline
+suspension
+
+1-monthly
+
+6-monthly
+
+Nanocrystalline Single dose
+dispersion;1
+LinkeRx
+technology2
+
+Trade name Formulation
+
+Aripiprazole
+lauroxil
+extendedrelease
+injectable
+
+Drug
+
+Abdominal
+sub-cutaneous
+injection only9
+
+Intra-muscular
+injection
+
+Intra-muscular
+injection into the
+deltoid or gluteal
+muscle
+
+Site(s) of
+administration
+
+No
+
+No
+
+90mg/120mg Yes
+
+700mg/
+1000mg?6
+
+675mg (IM
+dispersion
+= 459mg
+aripiprazole)3
+
+No10
+
+No
+
+Yes – but see
+additional
+information
+
+Yes
+
+No – patients
+will already
+have received
+long-acting
+paliperidone
+
+Yes
+
+Additional information
+
+Designed for patients stabilised on
+PP1M or PP3M8
+
+(Continued)
+
+FDA approved Does not require loading doses or oral
+201811
+supplementation. Prior tolerability
+with oral risperidone should be
+established9
+
+Phase 3 study
+underway7
+
+FDA approved Aristada initio, together with one 30mg
+dose of oral aripiprazole, is designed to
+20184
+only be given to initiate treatment with
+Aristada (see Aripiprazole LAI section in
+Chapter 1) and should not be used for
+repeated dosing.5
+
+Pre-treatment Pre-treatment
+with oral
+with oral
+therapy
+Regulatory
+Dosing
+Pre-mixing therapy
+desirable**
+status
+essential*
+information required
+
+The following table provides brief details of some newer LAI antipsychotic formulations.
+
+Newer long-acting injectable antipsychotic preparations
+
+
+
+
+<<<PAGE 144>>>
+
+Antipsychotic-induced weight gain
+Weight gain, a cardiometabolic risk factor, is a common side effect of antipsychotic
+medication.1 The mechanisms underlying antipsychotic-induced weight gain are not well
+understood,2 although factors such as 5HT2C antagonism, H1 antagonism, D2 antagonism, and increased serum leptin (leading to leptin desensitisation)3–5 are commonly
+implicated. There is no evidence that these medications exert any direct metabolic effect:
+weight gain seems to result from increased food intake and, in some cases, reduced
+energy expenditure.6,7 The risk of weight gain appears to be related to clinical response8,9
+(although the association may be too small to be clinically important10), which may have
+a genetic basis.11 Weight gain may be more pronounced in antipsychotic-naïve patients
+and during the early stages of the treatment of psychotic illness,12–14 and women may be
+at greater risk than men.15,16
+Almost all available antipsychotic medications have been associated with weight
+gain,12 although the mean gain in body weight varies substantially between the medications. There is also marked inter-individual variation among those treated, with some
+losing weight, some gaining no weight and some gaining a great deal of weight. Thus,
+knowledge of the mean increase in weight reported for a particular medication may not
+be a helpful predictor of how much weight an individual might gain. Assessment of the
+relative liability for weight gain of different antipsychotic medications is based largely
+on short term studies. Notwithstanding these limitations, the results of indirect and
+direct meta-analyses suggest that these medications can be clustered into three groups
+based on their relative risk of weight gain17 (see Table 1.17).
+Table 1.17 Antipsychotic-induced weight gain18–25
+Drug
+
+Risk/extent of weight gain
+
+Clozapine
+
+High
+
+Olanzapine
+Chlorpromazine
+
+Moderate
+
+Iloperidone
+Sertindole
+Quetiapine
+Risperidone
+Paliperidone
+Amisulpride
+Asenapine
+Brexpiprazole
+Aripiprazole
+Cariprazine
+Haloperidol
+Lumateperone
+Lurasidone
+Sulpiride
+Trifluoperazine
+Ziprasidone
+
+Low
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  123
+
+
+
+
+<<<PAGE 164>>>
+
+given the problems associated with QTc measurements. Lastly, keep in mind that differences in the effects of different antipsychotics on the QT interval rarely reach statistical
+significance, even in meta-analyses (Table 1.21).29
+Outside these guidelines, readers are directed to the RISQ-PATH study,30 which provides a scoring system for the prediction of QT prolongation (to above normal ranges)
+in any patient. RISQ-PATH has a 98% negative predictive value, so allowing a reduction in monitoring in low-risk patients. The RISQ-PATH method uses CredibleMeds
+categorisation for drug effects on QT – this, too, is recommeded.31
+Table 1.21 Effects of antipsychotics on QTC13,22,23,32–61.
+No effect
+Brexpiprazole*
+Cariprazine*
+Lurasidone
+Lumateperone*
+Low effect
+Aripiprazole**
+Asenapine
+Clozapine
+Flupentixol
+Fluphenazine
+Perphenazine
+Prochlorperazine
+Olanzapine***
+Paliperidone
+Risperidone
+Sulpiride
+
+Moderate effect
+Amisulpride****
+Chlorpromazine
+Haloperidol
+Iloperidone
+Levomepromazine
+Melperone
+Pimavanserin
+Quetiapine
+Ziprasidone
+High effect
+Any intravenous antipsychotic
+Pimozide
+Sertindole
+Any drug or combination of drugs used in doses exceeding
+recommended maximum
+Unknown effect
+Loxapine
+Pipotiazine
+Trifluoperazine
+Zuclopenthixol
+
+*Limited clinical experience (association with QT prolongation may emerge).
+**One case of torsades de pointes (TDP) reported,62 two cases of QT prolongation63,64 and an association with TDP
+found in database study.65 Healthy volunteer data suggest aripiprazole causes QTc prolongation of around 8ms.66
+Aripiprazole may increase QT dispersion.67
+***Isolated cases of QTc prolongation37,68 and has effects on cardiac ion channel, IKr,69 other data suggest no effect
+on QTC.23,35,36,70
+****TDP common in overdose,25,71 strong association with TDP in clinical doses.65
+
+Aripiprazole remains in the low effect group having previously been firmly placed in
+‘no effect’. Data are rather contradictory, with most studies showing a decrease in QTc
+associated with aripiprazole use52 even in children and adolescents.72 However, later
+data62,63,65,66,73 cast doubt on assumptions of cardiac safety. Interestingly, a 2020 paper
+analysing reports of events in > 400,000 inpatients over 20 years found aripiprazole
+had the lowest rate of cardiac events (0.06%) of all antipsychotics.74
+Lurasidone remains in the ‘no effect’ group,52 although one study mentioned in the
+US labelling75 reports a QT lengthening of 7.5mg in people receiving 120mg (111mg) a
+day. Those receiving 600mg (555mg) daily showed a lower change (+4.6ms). These
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  143
+
+
+
+
+<<<PAGE 189>>>
+
+CHAPTER 1
+
+168  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Hyperprolactinaemia
+Dopamine inhibits prolactin release, and so dopamine antagonists can be expected to
+increase prolactin plasma levels. The degree of prolactin elevation is probably doserelated,1 and for most antipsychotic medications the threshold activity (D2 occupancy)
+for increased prolactin is very close to that of therapeutic efficacy.2 Genetic differences
+may also play a part.3 Table 1.29 groups individual antipsychotics according to their
+effect on prolactin concentrations.
+
+Table 1.29 Effects of antipsychotic medication on prolactin concentration4–11
+Prolactin-sparing (prolactin
+increase very rare)
+
+Prolactin–elevating (low risk
+minor changes only)
+
+Prolactin-elevating (high risk;
+major changes)
+
+Aripiprazole
+
+Lurasidone
+
+Amisulpride
+
+Asenapine
+
+Olanzapine
+
+Paliperidone
+
+Brexpiprazole
+
+Ziprasidone
+
+Risperidone
+
+Cariprazine
+
+Sulpiride
+
+Clozapine
+
+FGAs
+
+Iloperidone
+Lumateperone
+Pimavanserin
+Quetiapine
+
+Hyperprolactinaemia is often superficially asymptomatic (i.e. the patient does not
+spontaneously report problems), and there is some evidence that hyperprolactinaemia
+does not affect subjective quality of life.12 Nonetheless, persistent elevation of plasma
+prolactin is associated with suppression of the hypothalamic-pituitary-gonadal axis.13
+Symptoms of this include sexual dysfunction14 (but note that other pharmacological
+activities also give rise to sexual dysfunction15), menstrual disturbances,4,16 breast
+growth and galactorrhoea,16 and may include delusions of pregnancy.17 Long-term
+adverse consequences are reductions in bone mineral density,18,19 and a possible increase
+in the risk of breast cancer.20
+Prolactin can also be raised because of stress, pregnancy and lactation, seizures, renal
+impairment and other medical conditions,7,21,22 including prolactinoma. When measuring prolactin, the sample should be taken early in the morning and stress during
+venepuncture should be minimised.22
+
+
+
+
+<<<PAGE 195>>>
+
+CHAPTER 1
+
+174  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 1.31 Sexual adverse effects of antipsychotics
+Drug
+
+Type of problem
+
+Aripiprazole
+
+■■
+
+No effect on prolactin or α1 receptors. No reported adverse effects on sexual function.
+Improves sexual function in those switched from other antipsychotics.27,29,34,35 Case
+reports of aripiprazole-induced hypersexuality have been published36,37
+
+■■
+
+Does not appear to significantly affect prolactin levels38
+No reported cases of sexual dysfunction
+
+Asenapine
+
+■■
+
+Brexpiprazole
+
+■■
+
+Cariprazine
+
+■■
+
+Clozapine
+
+■■
+
+Similar mechanism of action to aripiprazole (5-HT1A agonist, 5-HT2A antagonist and
+partial D2 agonist)
+■■ Causes negligible increases in prolactin39
+■■ No problems with sexual dysfunction reported in clinical trials40
+Similar mechanism of action to aripiprazole (5-HT1A agonist, 5-HT2A antagonist and
+partial D2 agonist)
+■■ Not associated with hyperprolactinaemia41
+■■ No reported cases of sexual dysfunction
+■■
+
+Haloperidol
+
+■■
+■■
+
+Lurasidone
+
+■■
+■■
+
+Olanzapine
+
+■■
+
+Paliperidone
+
+■■
+
+Similar problems to the phenothiazines45 but anticholinergic effects reduced46
+Prevalence of sexual dysfunction reported to be up to 70%47
+Does not appear to significantly affect prolactin levels48
+No reported cases of sexual dysfunction49
+
+Possibly less sexual dysfunction than drugs such as haloperidol due to relative lack of
+prolactin-related effects45
+■■ Priapism reported rarely50,51
+■■ Prevalence of sexual dysfunction reported to be >50%47
+■■
+
+Phenothiazines
+
+Significant α1 adrenergic blockade and anticholinergic effects.42 No effect on prolactin43
+Probably fewer problems than with typical antipsychotics44
+
+Similar prolactin elevations to risperidone
+One small study52 and one case report53 showing reduction in sexual dysfunction following switching from risperidone oral or depot to paliperidone depot
+
+(e.g. chlorpromazine)
+
+Hyperprolactinaemia and anticholinergic effects. Reports of delayed orgasm at lower
+doses followed by normal orgasm but without ejaculation at higher doses.18
+■■ Priapism has been reported with thioridazine, risperidone and chlorpromazine (probably
+due to α1 blockade)46,54,55
+
+Quetiapine
+
+■■
+
+■■
+
+■■
+
+Risperidone
+
+No effect on serum prolactin56
+Possibly associated with low risk of sexual dysfunction,57–60 but studies are conflicting61,62
+
+Potent elevator of serum prolactin
+Less anticholinergic than some other antipsychotics (olanzapine, quetiapine)
+■■ Specific peripheral α adrenergic blockade leads to a moderately high reported incidence
+1
+of ejaculatory problems such as retrograde ejaculation63,64
+■■ Priapism reported rarely33
+■■ Prevalence of sexual dysfunction reported to be 60–70%47
+■■
+■■
+
+Sulpiride/
+amisulpride
+
+■■
+
+Potent elevators of serum prolactin22 but note that sulpiride (as the main FGA prescribed
+in the study) was not associated with greater sexual dysfunction than SGAs (with variable
+ability to raise prolactin) in the CUtLASS-1 study20
+
+Thioxanthenes
+(e.g. flupentixol)
+
+■■
+
+Arousal problems and anorgasmia65
+
+
+
+
+<<<PAGE 204>>>
+
+Switching antipsychotics
+Summary of recommendations for switching antipsychotics because of poor
+tolerability.
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Acute EPS
+Dystonia, parkinsonism, bradykinesia
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Olanzapine
+Quetiapine
+
+Clozapine
+Lurasidone
+Ziprasidone
+
+Akathisia2,9,10
+
+Olanzapine
+Quetiapine
+
+Clozapine
+Brexpiprazole
+
+Dyslipidaemia7,8,11–16
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Asenapine
+Brexpiprazole
+Cariprazine
+
+Impaired glucose
+tolerance7,8,15,17–21
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Brexpiprazole
+Cariprazine
+Haloperidol
+
+Hyperprolactinaemia7,8,15,22–28
+
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+Olanzapine
+Ziprasidone
+
+Postural hypotension8,15,29
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Haloperidol
+Sulpiride
+Trifluoperazine
+
+QT prolongation27,30–37
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+Paliperidone
+
+Low dose monotherapy of any
+drug not formally contraindicated in QT prolongation
+(with ECG monitoring)
+
+Sedation7,8,27
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Risperidone
+Sulpiride
+
+Haloperidol
+Trifluoperazine
+Ziprasidone
+
+1–8
+
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  183
+
+
+
+
+<<<PAGE 732>>>
+
+Zuclopenthixol = 0.4–0.9%
+Flupentixol = 0.7–1.75%
+
+No published data available
+at the time of writing.
+
+Undetectable
+
+Risperidone undetectable.
+9-hydroxyrisperidone – low
+
+No published data available
+at the time of writing.
+
+Not reported.
+
+Not reported.
+
+Phenothiazines4,14,82,108–110
+
+Pimavanserin
+
+Quetiapine4,95,125,129–138
+
+Risperidone4,111,139–143
+
+Sertindole
+
+Sulpiride4,144–148
+
+4,14,110,149–151
+
+Thioxanthenes
+
+2.7–20.7%
+
+Variable
+
+Paliperidone
+
+9-hydroxyrisperidone =
+3.46–4.7%
+
+Risperidone = 2.8–9.1%
+
+0.09–0.1%
+
+Chlorpromazine = 0.3%
+
+No specific data available.
+See risperidone.
+
+Drug
+
+Estimated daily infant
+dose as proportion of
+maternal dose (RID)
+
+Infant plasma
+concentration
+
+Table 7.4 (Continued)
+
+None reported.
+
+None reported.
+
+One case of hypersomnia, poor
+feeding, and slowing in motor
+movements. Mother was also
+taking haloperidol. The effects
+were noted when haloperidol
+dose was increased.
+
+Excessive sleep. Mother was
+also taking mirtazapine and a
+benzodiazepine.
+
+Lethargy.
+
+Acute adverse effects in
+infant
+
+(Continued)
+
+None reported for flupentixol.
+Not assessed for zuclopenthixol.
+
+None reported but not assessed.
+
+None reported.
+
+In a small study of quetiapine
+augmentation of maternal
+antidepressant there were two
+cases of mild developmental
+delays, thought not to be related
+to quetiapine.
+
+Delayed development in three
+infants exposed to a combination
+of chlorpromazine and haloperidol.
+
+Developmental effects in infant
+
+
+
+
+<<<PAGE 747>>>
+
+726  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+Table 8.1 (Continued )
+Drug
+
+Comments
+
+Olanzapine1,5,6,8
+
+Although extensively hepatically metabolised, the pharmacokinetics of olanzapine seem
+to change little in severe hepatic impairment. It is sedative and anticholinergic (can cause
+constipation), so caution is advised. Start with 5mg/day in moderate or severe impairment
+and consider using plasma levels to guide dosage (aim for 20–40µg/L). Dose-related,
+transient, asymptomatic elevations in ALT and AST are very common in physically healthy
+adults, particularly early in treatment. People with liver disease or those taking other
+hepatotoxic drugs may be at increased risk. Rare cases of hepatitis in the literature.
+
+Paliperidone5,6,8
+
+Mainly excreted unchanged by the kidneys, so no dosage adjustment required for mild to
+moderate impairment. However, no data are available with respect to severe hepatic
+impairment and clinical experience is limited so caution is required. Rises in transaminases and
+gamma GT reported, some cases of jaundice. May be a good choice for patients with
+pre-existing hepatic disease.29–31 One case report of hepatotoxicity with risperidone that did not
+remit on switching to paliperidone – it is possible that paliperidone may cause hepatotoxicity.32
+
+Phenothiazines5,6
+
+All cause sedation and constipation. Transient abnormalities in LFTs reported. Associated
+with cholestasis and some reports of fulminant hepatic cirrhosis. Best avoided
+completely in hepatic impairment, some phenothiazines are actively contraindicated.
+Chlorpromazine is particularly hepatotoxic and is also associated with rare cases of
+immune-mediated obstructive jaundice which may progress to liver disease.
+
+Pimavanserin6
+
+Active metabolite has a very long half-life (200 hours) – use not recommended in
+hepatic impairment. Does not appear to be hepatotoxic.
+
+Quetiapine5,6,8,33
+
+Extensively hepatically metabolised but short half-life. Clearance reduced by a mean of
+30% in hepatic impairment so start at 25mg/day (IR preparation) or 50mg/day (XL
+preparation) and increase in 25–50mg/day increments. Can cause sedation and
+constipation. Transient rises in AST, ALT and GGT reported, rarely jaundice and hepatitis.
+Several cases of fatal hepatic failure and of hepatocellular damage reported in the
+literature. A number of studies describe use in patients with alcohol dependence.34–36
+
+Risperidone1,5,6,8
+
+Extensively hepatically metabolised and highly protein bound. Manufacturers
+recommend a halved starting dose and slower dose titration. Those with severe
+impairment should start at 0.5mg bd, and increase by 0.5mg bd at a maximum rate of
+weekly for doses above 1.5mg bd. Risperidone Consta can be started at 12.5mg
+fortnightly, or 25mg every two weeks if 2mg daily oral dosing has been tolerated.
+Transient, asymptomatic elevations in LFTs, cholestatic hepatitis, jaundice, and rare cases
+of hepatic failure have been reported. Cross-hepatotoxicity with paliperidone has been
+reported.32 Steatohepatitis may arise as a result of weight gain.37
+
+Sulpiride5,6
+
+Almost completely renally excreted with a low potential to cause sedation or
+constipation. Dosage reduction should not be required. Rises in hepatic enzymes are
+common. Isolated case reports of cholestatic jaundice and primary biliary cirrhosis.
+
+ALT, alanine aminotransferase; AST, aspartate aminotransferase, bd, bis die (twice a day); GGT, gamma-glutamyl transferase.
+
+Antidepressant medications in hepatic impairment
+Of those treated with antidepressants, 0.5–3% develop asymptomatic mild elevation of
+hepatic transaminases.38 Onset is normally between several days and six months of
+treatment initiation and the elderly are more vulnerable.38 Frank clinically significant
+liver damage however is rare, mostly idiosyncratic (unpredictable and not related to
+dose). Cross toxicity within class has been described.38
+
+
+
+
+<<<PAGE 927>>>
+
+906  The Maudsley® Prescribing Guidelines in Psychiatry
+
+approximately 14 hours when given with glucuronidation-inducing drugs such as carbamazepine or phenytoin. The half-life is increased to approximately 70 hours when
+given with valproate. This means that the time before complete re-titration is necessary
+therefore varies between 3 and 7 days, depending on the other drugs prescribed.1
+
+Table 14.1 Restarting medication up to two weeks after stopping oral treatment (data obtained from EU
+regulatory documents (SPCs)2)
+
+CHAPTER 14
+
+Drugs that require re-titration
+
+Drug
+
+Time after which
+re-titration must
+be performed
+
+Clozapine
+
+48 hours
+
+See ‘Re-starting
+clozapine after
+after a break in
+treatment’ in
+Chapter 1
+
+Lamotrigine
+
+3–7 days
+
+See discussion in
+the text
+
+3 days
+Methadone
+Buprenorphine 3 days
+
+Further guidance
+
+See ‘Opioid
+dependence’ in
+Chapter 4
+
+Paliperidone
+long-acting
+injection
+
+Depends on
+formulation
+
+See ‘Paliperidone
+palmitate
+long-acting
+injection’ in
+Chapter 1
+
+Aripiprazole
+long-acting
+injection
+
+>5 weeks if 2nd or
+3rd dose missed
+
+See ‘Aripiprazole
+long-acting
+injection’ in
+Chapter 1
+
+Drugs that are
+usually safe for
+restarting at
+the previous
+dose
+Acamprosate
+Asenapine
+Fluoxetine
+Haloperidol
+Isocarboxazid
+Lofepramine
+Methylphenidate
+Phenelzine
+Sulpiride
+Tranylcypromine
+Valproate
+
+Drugs that are probably
+safe for restarting at
+the previous dose
+Antipsychotics (except
+clozapine, quetiapine and
+risperidone)
+Carbamazepine
+Cholinesterase inhibitors
+CNS stimulants
+Disulfiram
+Lithium (titration advised if
+renal function has changed)
+MAOIs
+Memantine
+Naltrexone
+Other antidepressants (but
+beware loss of tolerance to
+sedative effects)
+Pregabalin
+SSRIs
+TCAs (but beware loss of
+tolerance to sedative and
+hypotensive effects)
+
+>6 weeks in
+chronic treatment
+CNS, central nervous system; MAOI, monoamine oxidase inhibitor; SSRI, selective serotonin reuptake inhibitor; TCA,
+tricyclic antidepressant.
+
+References
+1. Aurobindo Pharma – Milpharm Ltd. Summary of Product Characteristics. Lamotrigine 25mg Tablets. 2019; https://www.medicines.org.uk/
+emc/product/4736/smpc.
+2. EMC. https://www.medicines.org.uk/emc/; accessed June 2020.
+
+

@@ -1,0 +1,798 @@
+<<<PAGE 11>>>
+
+110 propranolol
+111 protriptyline
+112 quazepam
+113 quetiapine
+114 ramelteon
+115 reboxetine
+116 risperidone
+117 rivastigmine
+118 selegiline
+119 sertindole
+120 sertraline
+121 sildenafil
+122 sodium oxybate
+123 solriamfetol
+124 sulpiride
+125 suvorexant
+126 tasimelteon
+127 temazepam
+128 thioridazine
+129 thiothixene
+130 tiagabine
+131 tianeptine
+132 topiramate
+133 tranylcypromine
+134 trazodone
+135 triazolam
+136 trifluoperazine
+137 trihexyphenidyl
+
+
+
+
+<<<PAGE 214>>>
+
+Habit Forming
+Schedule IV; may have some potential for abuse but unusual in
+clinical practice
+How to Stop
+Taper not necessary; patients may have sleepiness on
+discontinuation
+Pharmacokinetics
+Metabolized by the liver
+Elimination half-life approximately 15 hours
+Inhibits CYP450 2C19
+Induces CYP450 3A4 (and slightly 1A2)
+Drug Interactions
+May increase plasma levels of drugs metabolized by CYP450 2C19
+(e.g., diazepam, phenytoin, propranolol)
+May decrease plasma levels of CYP450 3A4 substrates such as
+ethinyl estradiol and triazolam
+Due to induction of CYP450 3A4, effectiveness of steroidal
+contraceptives may be reduced by armodafinil, including 1 month
+after discontinuation
+
+
+
+
+<<<PAGE 460>>>
+
+May decrease the effects of levodopa, dopamine agonists
+May increase the effects of antihypertensive drugs except for
+guanethidine, whose antihypertensive actions chlorpromazine may
+antagonize
+Additive effects may occur if used with CNS depressants
+Some pressor agents (e.g., epinephrine) may interact with
+chlorpromazine to lower blood pressure
+Alcohol and diuretics may increase the risk of hypotension
+Reduces effects of anticoagulants
+May reduce phenytoin metabolism and increase phenytoin levels
+Plasma levels of chlorpromazine and propranolol may increase if
+used concomitantly
+Some patients taking a neuroleptic and lithium have developed an
+encephalopathic syndrome similar to neuroleptic malignant
+syndrome
+Other Warnings/Precautions
+If signs of neuroleptic malignant syndrome develop, treatment
+should be immediately discontinued
+Use cautiously in patients with alcohol withdrawal or convulsive
+disorders because of possible lowering of seizure threshold
+Use with caution in patients with respiratory disorders, glaucoma, or
+urinary retention
+
+
+
+
+<<<PAGE 1215>>>
+
+Wait
+Wait
+Lower the dose
+
+✽ Take entire dose at night as long as efficacy persists all day long
+with this administration
+
+✽ Change to a different lithium preparation (e.g., controlled-release)
+✽ Reduce dosing from 3 times/day to 2 times/day
+If signs of lithium toxicity occur, discontinue immediately
+For stomach upset, take with food
+For tremor, avoid caffeine
+Switch to another agent
+Best Augmenting Agents for Side Effects
+
+✽ Propranolol 20–30 mg 2–3 times/day may reduce tremor
+For the expert, cautious addition of a diuretic (e.g., chlorothiazide
+50 mg/day) while reducing lithium dose by 50% and monitoring
+plasma lithium levels may reduce polydipsia and polyuria that does
+not go away with time alone
+Many side effects cannot be improved with an augmenting agent
+
+Dosing and Use
+
+
+
+
+<<<PAGE 1518>>>
+
+Induces CYP450 3A4 (and slightly 1A2 and 2B6)
+Drug Interactions
+May increase plasma levels of drugs metabolized by CYP450 2C19
+(e.g., diazepam, phenytoin, propranolol)
+Modafinil may increase plasma levels of CYP450 2D6 substrates
+such as TCAs and SSRIs, perhaps requiring downward dose
+adjustments of these agents
+Modafinil may decrease plasma levels of CYP450 3A4 substrates
+such as ethinyl estradiol and triazolam
+Due to induction of CYP450 3A4, effectiveness of hormonal
+contraceptives may be reduced by modafinil, including 1 month
+after discontinuation
+Inducers or inhibitors of CYP450 3A4 may affect levels of
+modafinil (e.g., carbamazepine may lower modafinil plasma levels;
+fluvoxamine and fluoxetine may raise modafinil plasma levels)
+Modafinil may slightly reduce its own levels by autoinduction of
+CYP450 3A4
+Modafinil may increase clearance of drugs dependent on CYP450
+1A2 and reduce their plasma levels
+Patients on modafinil and warfarin should have prothrombin times
+monitored
+Methylphenidate may delay absorption of modafinil by an hour
+
+
+
+
+<<<PAGE 1856>>>
+
+How to Stop
+Taper to avoid hypertension
+Pharmacokinetics
+Elimination half-life 2–3 hours
+Drug Interactions
+Concomitant use with a phosphodiesterase-5 (PDE-5) inhibitor can
+have additive effects on blood pressure, potentially leading to
+hypotension; thus, a PDE-5 inhibitor should be initiated at the
+lowest possible dose
+Concomitant use with a beta blocker (e.g., propranolol) can have
+additive effects on blood pressure
+Concomitant use with other alpha 1 blockers, which include many
+psychotropic agents, can have additive effects leading to
+hypotension
+Other Warnings/Precautions
+Prazosin can cause syncope with sudden loss of consciousness, most
+often in association with rapid dose increases or the introduction of
+another antihypertensive drug
+Intraoperative floppy iris syndrome (IFIS) has been observed during
+cataract surgery in some patients treated with alpha 1 adrenergic
+blockers, which may require modifications to the surgical technique;
+
+
+
+
+<<<PAGE 1877>>>
+
+Propranolol
+
+Therapeutics
+Brands
+Inderal
+Inderal LA
+InnoPran XL
+see index for additional brand names
+Generic?
+Yes
+Class
+Beta blocker, antihypertensive
+Commonly Prescribed for
+(bold for FDA approved)
+Migraine prophylaxis
+Essential tremor
+Hypertension
+Angina pectoris due to coronary atherosclerosis
+
+
+
+
+<<<PAGE 1880>>>
+
+For migraine, address other issues such as medication overuse or
+other coexisting medical disorders; consider changing to another
+drug or adding a second drug
+For tremor, coadministration with primidone up to 250 mg/day can
+augment response; second-line medications include
+benzodiazepines, gabapentin, topiramate, methazolamide, nadolol,
+and botulinum toxin (useful for voice and hand tremor); alternative
+treatments include caffeine and hand weights
+For patients with truly refractory tremor, thalamotomy or deep brain
+stimulation of the ventral intermediate nucleus of the thalamus is an
+option
+For PTSD, consider initiating first-line pharmacotherapy (SSRI,
+SNRI) and psychotherapy
+For violence/aggression, switch to another agent, e.g., valproate or
+an antipsychotic
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Migraine: for some patients, low-dose polytherapy with 2 or more
+drugs may be better tolerated and more effective than high-dose
+monotherapy; may use propranolol in combination with
+anticonvulsants, antidepressants, natural products, and nonpharmacologic treatments, such as biofeedback, to improve
+headache control
+For tremor, can combine with primidone or second-line medications
+
+
+
+
+<<<PAGE 1882>>>
+
+Can blunt premonitory symptoms of hypoglycemia in diabetes and
+mask clinical signs of hyperthyroidism
+Nonselective beta blockers such as propranolol can inhibit
+bronchodilation, making them contraindicated in asthma, severe
+COPD
+Do not use in pheochromocytoma unless alpha blockers are already
+being used
+Risk of excessive myocardial depression in general anesthesia
+Weight Gain
+Many experience and/or can be significant in amount
+Sedation
+Many experience and/or can be significant in amount
+What to Do About Side Effects
+Lower dose, change to an extended-release formulation, or switch to
+another agent
+Best Augmenting Agents for Side Effects
+When patients have significant benefit from beta blocker therapy but
+hypotension limits treatment, consider alpha agonists (midodrine) or
+
+
+
+
+<<<PAGE 1885>>>
+
+Should not be discontinued abruptly; instead gradually reduce
+dosage over 1–2 weeks
+May exacerbate angina, and there are reports of tachyarrhythmias or
+myocardial infarction with rapid discontinuation in patients with
+cardiac disease
+Pharmacokinetics
+Half-life 3–5 hours (immediate-release) or 8–11 hours (extendedrelease)
+Drug Interactions
+Cimetidine, oral contraceptives, ciprofloxacin, hydralazine,
+hydroxychloroquine, loop diuretics, certain SSRIs (with CYP 2D6
+metabolism), and phenothiazines can increase levels and/or effects
+of propranolol
+Use with calcium channel blockers can be synergistic or additive,
+use with caution
+Barbiturates, penicillins, rifampin, calcium and aluminum salts,
+thyroid hormones, and cholestyramine can decrease effects of beta
+blockers
+NSAIDs, sulfinpyrazone, and salicyclates inhibit prostaglandin
+synthesis and may inhibit the antihypertensive activity of beta
+blockers
+
+
+
+
+<<<PAGE 1886>>>
+
+Propranolol can increase adverse effects of gabapentin and
+benzodiazapines
+Propranolol can increase levels of lidocaine, resulting in toxicity,
+and increase the anticoagulant effect of warfarin
+Increased postural hypotension with prazosin and peripheral
+ischemia with ergot alkaloids
+Sudden discontinuation of clonidine while on beta blockers or when
+stopping together can cause life-threatening increases in blood
+pressure
+Other Warnings/Precautions
+May elevate blood urea, serum transaminases, alkaline phosphatase,
+and lactate dehydrogenase (LDH)
+Rare development of antinuclear antibodies (ANAs)
+May worsen symptoms of myasthenia gravis
+Can lower intraocular pressure, interfering with glaucoma screening
+test
+Do Not Use
+If patient has bradycardia, greater than first-degree heart block, or
+cardiogenic shock
+If patient has bronchial asthma or severe COPD
+If there is a proven allergy to propranolol
+
+
+
+
+<<<PAGE 1888>>>
+
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+May reduce perfusion of the placenta
+Use only if potential benefits outweigh the potential risks to the
+fetus
+Breast Feeding
+Some drug is found in mother’s breast milk
+Due to high lipid solubility, propranolol is found in breast milk more
+than many other beta blockers
+
+✽ Recommended either to discontinue drug or bottle feed unless the
+potential benefit to the mother justifies the potential risk to the child
+
+The Art of Psychopharmacology
+Potential Advantages
+Patients who do not respond to or tolerate other options
+Patients with autonomic hyperactivity
+
+
+
+
+<<<PAGE 1889>>>
+
+Potential Disadvantages
+Multiple potential undesirable adverse effects, including
+bradycardia, hypotension, and fatigue
+Primary Target Symptoms
+Migraine frequency and severity
+Tremor
+Effects of stress from prior traumatic experience
+Aggression, agitation
+Pearls
+Often used in combination with other drugs in migraine, which may
+allow patients to better tolerate medications that cause tremor, such
+as valproate
+May worsen depression, but helpful for anxiety
+50–70% of patients with essential tremor receive some relief,
+usually with about 50% improvement or greater
+Propranolol may theoretically block the effects of stress from prior
+traumatic experiences, but this is unproven and data thus far are
+mixed
+
+Suggested Reading
+
+
+
+
+<<<PAGE 1890>>>
+
+Brunet A , Poundja J , Tremblay J , et al. Trauma reactivation under the
+influence of propranolol decreases posttraumatic stress symptoms and
+disorders: 3 open-label trials . J Clin Psychopharmacol 2011 ;31 (4 ):547–
+50 .
+Cohen H , Kaplan Z , Koresh O , et al. Early post-stressor intervention with
+propranolol is ineffective in preventing posttraumatic stress responses in an
+animal model for PTSD . Eur Neuropsychopharmacol 2011 ;21 (3 ):230–40
+.
+Fleminger S , Greenwood RJ , Oliver DL . Pharmacological management
+for agitation and aggression in people with acquired brain injury . Cochrane
+Database Syst Rev 2003 ;(1 ):CD003299 .
+Lyons KE , Pahwa R . Pharmacotherapy of essential tremor: an overview of
+existing and upcoming agents . CNS Drugs 2008 ;22 (12 ):1037–45 .
+Silberstein SD . Preventive migraine treatment . Neurol Clin 2009 ;27 (2
+):429–43 .
+
+
+
+
+<<<PAGE 2179>>>
+
+Rapid discontinuation may lead to rebound psychosis and worsening
+of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after thioridazine is discontinued
+Pharmacokinetics
+Metabolized by CYP450 2D6
+Drug Interactions
+May decrease the effects of levodopa, dopamine agonists
+May increase the effects of antihypertensive drugs
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+
+✽ CYP450 2D6 inhibitors including paroxetine, fluoxetine,
+duloxetine, bupropion, sertraline, citalopram, and others can raise
+thioridazine to dangerous levels
+
+✽ Fluvoxamine, propranolol, and pindolol also inhibit thioridazine
+metabolism and can raise thioridazine to dangerous levels
+Respiratory depression/arrest may occur if used with a barbiturate
+Additive effects may occur if used with CNS depressants
+Alcohol and diuretics may increase the risk of hypotension;
+epinephrine may lower blood pressure
+
+
+
+
+<<<PAGE 2305>>>
+
+If antiparkinson agents are being used, they should be continued for
+a few weeks after trifluoperazine is discontinued
+Pharmacokinetics
+Mean elimination half-life approximately 12.5 hours
+Drug Interactions
+May decrease the effects of levodopa, dopamine agonists
+May increase the effects of antihypertensive drugs except for
+guanethidine, whose antihypertensive actions trifluoperazine may
+antagonize
+Additive effects may occur if used with CNS depressants
+Alcohol and diuretics may increase the risk of hypotension;
+epinephrine may lower blood pressure
+Phenothiazines may reduce effects of anticoagulants
+Some patients taking a neuroleptic and lithium have developed an
+encephalopathic syndrome similar to neuroleptic malignant
+syndrome
+If used with propranolol, plasma levels of both drugs may rise
+Other Warnings/Precautions
+If signs of neuroleptic malignant syndrome develop, treatment
+should be immediately discontinued
+
+
+
+
+<<<PAGE 2373>>>
+
+Weight Gain
+Many experience and/or can be significant in amount
+Can become a health problem in some
+Sedation
+Frequent and can be significant in amount
+Some patients may not tolerate it
+Can wear off over time
+Can reemerge as dose increases and then wear off again over time
+What to Do About Side Effects
+Wait
+Wait
+Wait
+Take at night to reduce daytime sedation, especially with divalproex
+ER
+Lower the dose
+Switch to another agent
+Best Augmenting Agents for Side Effects
+
+✽ Propranolol 20–30 mg 2–3 times/day may reduce tremor
+
+
+
+
+<<<PAGE 2592>>>
+
+Imavate (imipramine), 367
+Imipramiin (imipramine), 367
+Imipramin (imipramine), 367
+imipramine, 367
+Imovane (zopiclone), 879
+Inadalprem (lorazepam), 437
+Inderal (propranolol), 653
+Inderal LA (propranolol), 653
+Ingrezza (valbenazine), 825
+InnoPran XL (propranolol), 653
+Insom (flunitrazepam), 297
+Intermezzo (zolpidem), 871
+Intuniv (guanfacine), 343
+Invega (paliperidone), 581
+Invega Sustenna (paliperidone injectable), 581
+Invega Trinza (paliperidone), 581
+Ipnovel (midazolam), 499
+Iremo Sedofren (trifluoperazine), 803
+Iremofar (hydroxyzine), 355
+isocarboxazid, 375
+Ivadal (zolpidem), 871
+Ixel (milnacipran), 503
+Janimine (imipramine), 367
+Januar (oxazepam), 569
+Jardin (dothiepin), 249
+Jatroneural (trifluoperazine), 803
+Jatrosom (tranylcypromine), 787
+Jatrosom N (tranylcypromine), 787
+
+
+
+
+<<<PAGE 2610>>>
+
+Propaphenin (chlorpromazine), 153
+propranolol, 653
+Propymal (valproate), 829
+Prosedar (quazepam), 663
+ProSom (estazolam), 281
+Prosulpin (sulpiride), 741
+Prothiaden (dothiepin), 249
+Protiaden (dothiepin), 249
+protriptyline, 657
+Provigil (modafinil), 521
+Proxam (oxazepam), 569
+Prozac (fluoxetine), 301
+Prozil (chlorpromazine), 153
+Prozin (chlorpromazine), 153
+Prozyn (fluoxetine), 301
+Pryleugan (imipramine), 367
+Psicocen (sulpiride), 741
+Psicofar (chlordiazepoxide), 147
+Psiquiwas (oxazepam), 569
+Psychopax (diazepam), 229
+Psymoin (maprotiline), 465
+PT-141 (bremelanotide), 95
+Punktyl (lorazepam), 437
+Purata (oxazepam), 569
+Q-Med Hydroxyzine (hydroxyzine), 355
+Qsymia (phentermine/topiramate), 619
+Quait (lorazepam), 437
+Quastil (sulpiride), 741
+
+
+
+
+<<<PAGE 2628>>>
+
+Index by Use
+Commonly Prescribed For (bold for FDA approved)
+Aggression
+clozapine, 191
+cyamemazine, 201
+propranolol, 653
+zuclopenthixol, 889
+Alcohol abstinence
+acamprosate , 1
+disulfiram , 239
+Alcohol dependence, 255
+nalmefene, 533
+naltrexone , 537
+Alcohol withdrawal
+chlordiazepoxide , 11
+clonidine, 179
+clorazepate , 185
+diazepam , 229
+lorazepam, 437
+oxazepam , 569
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2641>>>
+
+Generalized anxiety disorder
+agomelatine, 5
+alprazolam , 11
+citalopram, 159
+desvenlafaxine, 215
+duloxetine , 263
+escitalopram , 269
+fluoxetine, 301
+fluvoxamine, 325
+mirtazapine, 509
+paroxetine , 509
+pregabalin, 647
+propranolol, 653
+sertraline, 721
+tiagabine (adjunct), 771
+venlafaxine , 841
+vortioxetine, 853
+Glossopharyngeal neuralgia
+carbamazepine, 131
+Hiccups, intractable
+chlorpromazine , 153
+Hypersalivation
+clonidine, 179
+Hypertension
+clonidine , 179
+guanfacine , 343
+
+
+
+
+<<<PAGE 2642>>>
+
+prazosin , 643
+propranolol , 653
+Hypoactive sexual desire disorder
+bremelanotide , 95
+flibanserin , 289
+Insomnia
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+clomipramine, 165
+clonazepam, 173
+desipramine, 207
+diazepam, 229
+diphenhydramine , 235
+dothiepin, 249
+doxepin , 255
+estazolam , 281
+eszopiclone , 285
+flunitrazepam, 297
+flurazepam , 321
+hydroxyzine, 355
+imipramine, 367
+lemborexant , 395
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+
+
+
+
+<<<PAGE 2644>>>
+
+lorazepam (adjunct), 437
+lurasidone, 457
+olanzapine , 559
+paliperidone, 581
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+valproate (divalproex) , 829
+ziprasidone , 863
+zotepine, 883
+Migraine
+propranolol , 653
+topiramate , 781
+valproate (divalproex) , 829
+zonisamide, 875
+Muscle spasm
+diazepam , 229
+lorazepam, 437
+Narcolepsy
+amphetamine (d) , 39
+amphetamine (d,l) , 45
+armodafinil , 65
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l) , 487
+modafinil, 521
+
+
+
+
+<<<PAGE 2649>>>
+
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+mirtazapine, 509
+nefazodone, 545
+olanzapine, 558
+paliperidone, 580
+paroxetine , 593
+prazosin (nightmares) 643
+propranolol (prophylactic) 653
+quetiapine, 667
+risperidone, 687
+sertraline , 721
+venlafaxine, 841
+ziprasidone, 863
+Premenstrual dysphoric disorder
+alprazolam, 11
+citalopram, 159
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+Preoperative anxiety
+chlordiazepoxide , 147
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2657>>>
+
+Tremor
+propranolol , 653
+Trigeminal neuralgia
+carbamazepine , 131
+Vasomotor symptoms
+clonidine, 179
+desvenlafaxine, 215
+duloxetine, 263
+paroxetine , 593
+Weight management
+amphetamine (d,l), 45
+naltrexone/bupropion , 541
+phentermine/topiramate , 619
+topiramate , 781
+zonisamide, 875
+
+
+
+
+<<<PAGE 2663>>>
+
+oxazepam, 569
+paroxetine, 593
+phenelzine, 613
+prazosin, 643
+pregabalin, 647
+propranolol, 653
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine (adjunct), 771
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+trifluoperazine, 803
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+Attention deficit hyperactivity disorder treatments
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+chlorpromazine, 153
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+lisdexamfetamine, 409
+
+
+
+
+<<<PAGE 2667>>>
+
+zotepine, 883
+zuclopenthixol, 889
+Movement disorder treatments
+benztropine, 85
+deutetrabenazine, 221
+diphenhydramine, 235
+propranolol, 653
+trihexyphenidyl, 809
+valbenazine, 825
+Neuroactive steroid
+brexanolone, 99
+Neuropathic/chronic pain treatments
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+
+

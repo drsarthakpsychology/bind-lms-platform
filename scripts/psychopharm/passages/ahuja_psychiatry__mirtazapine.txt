@@ -1,0 +1,1066 @@
+<<<PAGE 42>>>
+
+30
+
+A Short Textbook of Psychiatry
+
+ORGANIC MOOD (AFFECTIVE)
+DISORDER
+According to ICD-10, presence of prominent and
+persistent mood disturbance caused by an underlying
+organic cause is required for the diagnosis of organic
+mood disorder, in addition to the general guidelines
+for the diagnosis of other organic mental disorders,
+described earlier. It is important to rule out any major
+disturbance of consciousness, orientation, or memory.
+The mood disturbance can be a major depressive
+episode, a manic episode, or a mixed affective episode.
+The severity may vary from mild to severe.
+
+Aetiology
+Some of the causes of organic mood disorder are
+listed below:
+1. Drugs:
+Mania: INH, Levodopa, Bromide, LSD, Corticosteroids (hypomania), Hallucinogens, Tricyclic
+antidepressants, Cocaine, Baclofen, Amphetamines, Bromocriptine, Cimetidine, Procyclidine
+Depression: Reserpine, Ethanol, Clonidine,
+Methyldopa, Propranolol, Corticosteroids, Antipsychotics (particularly typical antipsychotics),
+Cimetidine, Anticancer chemotherapy, Oral contraceptives.
+Any drug a depressed person is taking should be
+considered a potential factor in the causation of
+depressive episode.
+2. Endocrine disorders:
+Mania: Hyperthyroidism
+Depression: Hypothyroidism, Cushing’s syndrome, Addison’s disease, hyper- and hypoparathyroidism.
+3. CNS disorders: Parkinsonism, Huntington’s
+chorea, PSP (progressive supranuclear palsy;
+depression more likely), CVAs (cerebrovascular
+accidents; left-sided anterior lesions and rightsided posterior lesions cause depression in stroke),
+cerebral tumours, epilepsy (com plex partial
+seizures), neurosyphilis (GPI), head injury (mania
+more likely), multiple sclerosis.
+
+4. Post-viral illnesses: Influenza, infectious mononucleosis, viral pneumonia, infectious hepatitis.
+5. Deficiencies: Pellagra, deficiency of thiamine,
+folate, niacin, folate, B12.
+6. Others: Carcinoma pancreas (depression), SLE,
+pernicious anaemia, temporal arteritis (depression), carcinoid syndrome (mania).
+
+Management
+1. Management of the underlying organic cause, if
+treatable.
+2. Symptomatic management, if the episodes are
+severe. For example, for a manic episode, low dose
+antipsychotic medication (such as risperidone,
+haloperidol, olanzapine) and/or a mood stabiliser
+(such as valproate); and for a depressive episode,
+low dose antidepressants (such as sertraline or mirtazapine). Antipsychotics are not recommended
+in patients who have suffered from stroke and/or
+dementia as the risk of mortality is higher.
+Pathological laughter and crying (associated
+with multiple sclerosis or stroke) can similarly
+respond to small dose SSRIs or small dose amitriptyline.
+
+ORGANIC ANXIETY DISORDER
+According to ICD-10, presence of prominent and
+persistent generalised anxiety or panic caused by an
+underlying cause is required for diagnosis of organic
+anxiety disorder, in addition to the general guidelines
+for the diagnosis of other organic mental disorders,
+described earlier. It is important to rule out any major
+disturbance of consciousness, orientation, memory,
+personality, thought, perception, or mood.
+
+Aetiology
+1. Drugs and toxins: Cocaine, caffeine, amphetamines and other sympathomimetics, alcohol and
+drug withdrawal, heavy metals, penicillin.
+2. Endocrine disorders: Thyroid, pituitary, parathyroid, or adrenal dysfunction; pheochromocytoma;
+fasting hypoglycaemia, carcinoid syndrome.
+
+
+
+
+<<<PAGE 88>>>
+
+76
+
+A Short Textbook of Psychiatry
+
+Mania represents a reaction formation (Table 17.1)
+to depression according to the psychodynamic theory.
+
+Table 6.5: Some Commonly used Antidepressants
+Generic Name
+
+Stress
+Increased number of stressful life events before the
+onset or relapse has a formative rather than a precipitating effect in depression though they can serve
+a precipitant role in mania. Increased stressors in
+the early period of development are probably more
+important in depression.
+
+Cognitive and Behavioural Theories
+The mechanisms of causation of depression, according
+to these theories, include depressive negative
+cognition (cognitive theory), learned helplessness
+(animal model), and anger directed inwards. These
+concepts are useful in the psychological treatment of
+mild (to moderate) depression.
+Several other theories have also been propounded
+but are currently considered to be of doubtful value
+as theories of causation of depression.
+
+DIFFERENTIAL DIAGNOSIS
+The first step in the differential diagnosis of any mood
+disorder is to exclude a disorder with known organic
+cause, e.g. organic (especially drug-induced) mood
+disorders and dementia (differential diagnosis from
+depressive pseudodementia).
+The second step is to rule out a possibility of acute
+and transient psychotic disorders, schizo-affective
+disorder, and schizophrenia.
+The third step is to exclude the possibility of other
+non-organic psychoses such as delusional disorders.
+The fourth step is to exclude the possibility of
+adjustment disorder with depressed mood, generalised
+anxiety disorder, normal grief reaction, and obsessive compulsive disorder (with or without secondary
+depression).
+In addition to the main diagnosis, it is also important to look for co-morbid medical (such as diabetes,
+hypertension) and/or psychiatric disorders (such as
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+
+Agomelatin
+Amitriptyline
+Amoxapine
+Bupropion
+Citalopram
+Clomipramine
+Doxepine
+Dosulepin/Dotheipin
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Imipramine
+Lofepramine
+Mianserin
+Mirtazapine
+Moclobemide
+Nortriptyline
+Paroxetine
+Reboxetine
+Sertraline
+Tianeptin
+Trazodone
+Venlafaxine
+
+Usual Therapeutic
+Range (mg/day)
+25-50
+75-300
+150-300
+150-450
+10-40
+75-250
+75-300
+75-150
+30-120
+10-20
+20-60
+50-200
+75-300
+140-210
+30-120
+15-45
+300-600
+150-300
+10-40
+10-12
+50-200
+37.5
+300-600
+75-375
+
+anxiety, panic, alcohol or drug misuse, or personality disorder) on a multi-axial diagnostic system
+(Table 1.4).
+
+MANAGEMENT
+Somatic Treatment
+Antidepressants
+Antidepressants are the treatment of choice for a vast
+majority of depressive episodes. Some of the commonly used antidepressants with their usual range of
+therapeutic dosage are listed in Table 6.5. (Antidepressants are discussed in more detail in Chapter 15).
+
+
+
+
+<<<PAGE 89>>>
+
+Mood Disorders
+
+The usual starting dose is about 75-150 mg of
+imipramine equivalent. The clinical improvement
+is assessed after about two weeks. In case of nonimprovement, the dose can usually be increased up
+to 300 mg of imipramine equivalent.
+It should be remembered that it may take up to
+3 weeks before any appreciable response may be
+noticed. Before stopping or changing a drug, the
+particular drug should be given in a therapeutically
+adequate dose for at least 6 weeks.
+A variety of antidepressants are now available
+in the market. Since almost all antidepressants are
+equal in antidepressant efficacy and there is no single
+antidepressant effective for all depressed patients, the
+choice of antidepressant is often dictated by other factors. These factors include cost and ease of availability
+of the drug, the side-effect profile of the drug, past
+history of response and (any) co-morbid medical or
+psychiatric disorders. An individualised choice has to
+be made in each patient, keeping these various factors in mind.
+Imipramine, amitriptyline and other related drugs
+are called tricyclic antidepressants (TCAs). The
+newer antidepressants such as selective serotonin
+reuptake inhibitors (SSRIs) (e.g. fluoxetine, sertraline,
+citalopram), mirtazapine, and serotonin norepinephrine reuptake inhibitors (SNRIs) (e.g. venlafaxine,
+duloxetine) have very little anti cholinergic side
+effects and, hence, are generally safer drugs to use in
+elderly patients with benign hypertrophy of prostate.
+However, both venlafaxine and duloxetine have been
+associated with hypertension and should be used with
+care in those with a history of cardiac illness.
+The antidepressant dosage is monitored on the
+basis of clinical improvement. Routine monitoring
+of blood levels is not usually indicated.
+For the first, uncomplicated, depressive episode,
+the patient should receive full therapeutic dose of the
+chosen antidepressant for a period of 6-9 months,
+after achieving full remission. It is wise to taper the
+antidepressant medication, when the treatment is to
+be stopped after the continuation phase.
+
+77
+
+There are three main phases of treatment:
+i. Acute treatment (till remission occurs),
+ii. Continuation treatment (from remission till end
+of treatment), and
+iii. Maintenance treatment (to prevent further recurrences).
+Maintenance treatment may be indicated in the
+following patients:
+i. Partial response to acute treatment.
+ii. Poor symptom control during the continuation
+treatment.
+iii. More than 3 episodes (90% chances of recurrence).
+iv. More than 2 episodes with early age of onset,
+or recurrence within 2 years of stopping
+antidepressants, or severe and/or life-threatening
+depression, or family history of mood disorder.
+v. Chronic depression (> 2 years) or double depression.
+About 20-35% of depressed patients are refractory
+to antidepressant medication. The management of a
+treatment refractory depressed patient is best done
+by a psychiatrist, often at a tertiary care centre. These
+patients may require one of the following alternatives:
+i. A change of antidepressant (Switch),
+ii. Combination of two types of antidepressants,
+iii. Augmentation with lithium,
+iv. Augmentation with T3 or T4,
+v. Augmentation with antipsychotics,
+vi. Electroconvulsive therapy, or
+vii. Use of newer and experimental techniques.
+One type of depression, namely delusional depression (depression with psychotic features), is usually
+refractory to antidepressants alone. The treatments of
+choice in this condition include:
+i. An antidepressant with ECT, or
+ii. An antidepressant with antipsychotics, or
+iii. An antidepressant with lithium.
+
+Electroconvulsive Therapy (ECT)
+The indications for ECT in depression include:
+i. Severe depression with suicidal risk.
+
+
+
+
+<<<PAGE 195>>>
+
+Psychopharmacology
+
+183
+
+Table 15.6: Classification and Properties of Antidepressants
+Drugs
+
+Oral Dose
+(mg/d)
+
+Some Common Adverse Effects#
+Sedation* Orthostatic Hypotension* Anticholinergic*
+
+I. Cyclic Antidepressants
+A. Tricyclic Tertiary Amines
+1. Amitriptyline
+75-300
++++
+2. Clomipramine
+75-250
+++
+3. Dosulepin (Dotheipin)
+75-300
++++
+4. Doxepine
+75-300
++++
+5. Imipramine
+75-300
+++
+6. Lofepramine
+70-210
++
+7. Tri-imipramine
+75-300
++++
+B. Tricyclic Secondary Amines
+1. Desipramine
+75-300
+±
+2. Nortriptyline
+75-200
++
+3. Protriptyline
+15-60
+0
+C. Tetracyclic Antidepressants
+1. Amoxapine
+150-400
++
+2. Maprotiline
+75-225
+++
+3. Mianserin
+30-120
++++
+D. Bicyclic Antidepressants
+1. Viloxazine
+100-300
+±
+II. Selective Serotonin Reuptake Inhibitors (SSRIs)
+1. Citalopram
+20-40
+±
+2. Escitalopram
+10-20
+±
+3. Fluoxetine
+20-60
+±
+4. Fluvoxamine
+50-300
+±
+5. Paroxetine
+20-40
++
+6. Sertraline
+50-200
+±
+III. Serotonin Norepinephrine Reuptake Inhibitors (SNRIs)
+1. Duloxetine
+60
+±
+2. Venlafaxine
+75-375
++
+
++++
+++
++++
++++
+++
++
+++
+
++++
+++
+++
++
+++
++
+++
+
++
+++
+++
+
+++
++
+++
+
++
+++
+±
+
+++
+++
+±
+
+±
+
+±
+
+±
+±
+0
+±
+0
+±
+
+0
+0
+0
+±
+±
+0
+
+±
+±
+
+±
+±
+
+IV. Norepinephrine Serotonin Reuptake Enhancers (NSREs)
+1. Tianeptin
+37.5
++
+0
+V. Noradrenergic and Specific Serotonergic Antagonists (NaSSAs)
+1. Mirtazapine
+15-45
++++
++
+VI. Norepinephrine Dopamine Reuptake Inhibitors (NDRIs)
+1. Bupropion
+150-450
+Activating 0
+VII. Serotonin Antagonists and Reuptake Inhibitors (SARIs)
+1. Nefazodone
+200-600
+++
++
+(withdrawn from market)
+2. Trazodone
+150-400
++++
+±
+
+±
+±
+0
+±
+±
+Contd...
+
+
+
+
+<<<PAGE 198>>>
+
+A Short Textbook of Psychiatry
+
+186
+
+Table 15.7: Side Effects of Antidepressants
+Category and
+Side Effect
+
+Probable Cause
+
+Maximum with
+(For example)
+
+Minimum with
+(For example)
+
+Management
+
+Amitriptyline
+
+Fluoxetine
+
+See table for side effects of
+antipsychotics (Table 15.3)
+
+Amitriptyline
+Amitriptyline
+Amitriptyline
+Amitriptyline
+Amitriptyline
+Amitriptyline
+
+Fluoxetine
+Fluoxetine
+Fluoxetine
+Fluoxetine
+Fluoxetine
+Fluoxetine
+
+Amitriptyline
+
+Fluoxetine
+
+Amitriptyline
+Amitriptyline
+Paroxetine
+
+Mirtazapine
+Bupropion
+Mirtazapine
+Bupropion
+
+SSRIs
+TCAs
+Trazodone
+
+Mirtazapine
+Bupropion
+Not known
+
+α Adrenergic
+blockade
+
+Amitriptyline
+
+Protriptyline
+Fluoxetine
+
+2. Tremor and
+Other EPSE
+3. Jitteriness
+syndrome
+
+Serotonergic
+
+Amoxapine
+
+Not known
+
+Adrenergic;
+Serotonergic
+
+Imipramine
+Fluoxetine
+
+MAOI
+
+4. Withdrawal
+syndrome (mild)
+
+Dependence
+
+Imipramine
+Paroxetine
+
+Protriptyline
+Fluoxetine
+
+5. Seizures
+
+Decreased
+threshold
+
+Bupropion
+Amitriptyline
+
+Nomifensine
+Fluoxetine
+
+A. Autonomic Side Effects
+1. Dry mouth
+Muscarinic
+Cholinergic
+blockade
+2. Constipation
+–do–
+3. Cycloplegia
+–do–
+4. Mydriasis
+–do–
+5. Urinary retention –do–
+6. Delirium
+–do–
+–do–
+7. Aggravation of
+narrow angle
+glaucoma
+8. Orthostatic
+α1 Adrenergic
+hypotension
+blockade
+B. Sexual Side Effects
+1. Impotence
+α1 Adrenergic
+blockade
+2. Impaired/
+α1 Adrenergic
+retarded
+blockade
+ejaculation
+3. Anorgasmia
+
+5-HT blockade
+
+4. Priapism
+
+Not known
+
+C. CNS Effects
+1. Sedation
+
+Do not use in elderly and in
+patients with past history.
+Change or stop drug.
+See table for side effects of
+antipsychotics (Table 15.3)
+
+Cyproheptadine given 1 hour
+before, can reverse anorgasmia and retarded ejaculation
+caused by SSRIs.
+
+Stop drug; muscular relaxation; sometimes surgical
+procedure needed
+This side effect may be beneficial; Otherwise decrease
+dose. Change drug. Give
+single dose only at night.
+Decrease dose. Change drug.
+This is very common in
+first week of therapy. Add
+diazepam for first 1-2 weeks.
+Tolerance occurs.
+Slow withdrawal of drug.
+Decrease dose. Change drug.
+Contd...
+
+
+
+
+<<<PAGE 199>>>
+
+Psychopharmacology
+Contd...
+Category and
+Side Effect
+
+Probable Cause
+
+6. Aggravation of
+Sympathomimetic
+psychosis
+7. Precipitation of
+Sympathomimetic
+mania
+D. Cardiac Side Effects
+1. Tachycardia
+Anticholinergic
+2. Quinidine-like
+Cardiotoxic
+action (decreased
+conduction time)
+3. ECG changes
+Cardiotoxic
+4. Arrhythmias
+Cardiotoxic
+(in overdoses)
+5. Direct myocardial Cardiotoxic
+depression
+(in overdoses)
+6. Hypertension
+Noradrenegic
+
+187
+
+Maximum with
+(For example)
+
+Minimum with
+(For example)
+
+Management
+
+Not known
+
+Amoxapine
+
+Stop drug. Re-evaluate.
+
+Tricyclics
+
+Not known
+
+Stop drug. Use mood
+stabilisers.
+
+Amitriptyline
+Amitriptyline
+
+Trazodone
+Fluoxetine
+
+Decrease dosage. Use safer
+drugs in elderly and those
+with past history or co-existing heart disease
+
+Amitriptyline
+Dosulepin
+Amitriptyline
+Amitriptyline
+
+Fluoxetine
+Fluoxetine
+
+Venlafaxine
+Duloxetine
+
+SSRIs
+
+Close monitoring; ECG and
+BP check before start (especially on higher doses); treat
+hypertension
+
+Not known
+
+See table for side effects of
+antipsychotics (Table 15.3)
+
+E. Allergic Side Effects
+1. Agranulocytosis
+Hypersensitivity
+Mianserin
+(very rare)
+Mirtazapine
+Hypersensitivity
+Not known
+2. Cholestatic
+jaundice
+(very rare)
+3. Skin rashes
+Hypersensitivity
+Not known
+4. Systemic vasculitis Not known
+Not known
+F. Metabolic and Endocrine Side Effects
+1. Weight gain
+Not known
+Mirtazapine
+Amitriptyline
+G. Miscellaneous Side Effects
+Tranylcypromine
+1. Hypertensive
+Interaction with
+crises
+tyramine in foods
+(cheese, red wine,
+chicken liver)
+and/or sympathomimetic drugs
+(e.g. amphetamine)
+
+Fluoxetine
+
+Not known
+
+Not known
+Not known
+Bupropion
+Fluoxetine can
+cause weight loss
+
+Change drug. Exercise. Diet
+control.
+
+Non-MAOIs
+
+Prevent use of such agents
+with MAOI. Carry ‘warning
+cards’. When crisis occurs,
+use alpha (α) blockers like
+phentolamine.
+
+Contd...
+
+
+
+
+<<<PAGE 206>>>
+
+194
+
+A Short Textbook of Psychiatry
+
+Cyclic Ethers
+An example is paraldehyde. It is not used commonly
+as it is not very effective and is also dependence
+producing.
+Others
+Antipsychotics (such as thioridazine, flupentixol,
+olanzapine, quetiapine) and antidepressants (such as
+doxepine) have sometimes been used for the treatment
+of severe, intractable anxiety. However, antipsychotics
+are not the drugs of first choice and should be used
+with extreme discretion (with balancing of risks and
+benefits) when all other drugs have failed to benefit.
+Antidepressants (such as SSRIs, SNRIs and Mirtazapine) have recently emerged as treatments of choice
+in several anxiety disorders including generalised
+anxiety disorder, obsessive compulsive disorder, panic
+disorder and obsessive compulsive disorder. There is
+some data to support that smaller starting doses are
+better as anxiety symptoms may worsen initially in
+treatment.
+Beta (β) Blockers
+An example is propranolol which is particularly effective in treatment of peripheral somatic manifestations
+of anxiety. It is also helpful in treatment of anticipatory anxiety and situational anxiety. Propranolol can
+be used either alone or along with benzodiazepines.
+β-blockers are not treatments of first choice in the
+treatment of psychic or psychological manifestations
+of anxiety.
+Propranolol is contraindicated in patients with
+bronchial asthma and cardiac conditions. It should be
+used with caution in patients of age 40 and above. The
+usual dose is 40-240 mg/day, administered in divided
+doses.
+
+Benzodiazepines
+Since the discovery of chlordiazepoxide in 1957 by
+Sternbach, benzodiazepines have replaced other antianxiety drugs and hypnotics though SSRIs are now
+gradually becoming drugs of first choice in management of anxiety disorders.
+The benzodiazepines can be classified according
+to their elimination half-lives (Table 15.9).
+
+Indications
+The indications for use of benzodiazepines include
+the following:
+1. Generalised anxiety disorder; adjustment disorder
+with anxious mood (Short-term use)
+2. Panic disorder, agoraphobia, and school phobia (particularly alprazolam and clonazepam;
+short-term use, along with antidepressants)
+3. Agitated depression (short-term use, along with
+antidepressants, for first 1-2 weeks)
+4. Short-term treatment of insomnia
+5. Stage 4 NREM-sleep disorders such as enuresis,
+somnambulism (diazepam reduces duration of
+Stage 4 NREM-sleep)
+6. Nightmares (diazepam also reduces the REMsleep duration).
+7. Pre-medication in anaesthesia (intravenous
+lorazepam, midazolam, or diazepam)
+8. Anticonvulsant use (drugs of choice for status epilepticus, myoclonic seizures and certain infantile
+spasms)
+9. To produce skeletal muscle relaxation (e.g. in
+tetanus, cerebral palsy)
+10. Treatment of alcohol and other drug withdrawal
+syndromes
+11. For minor surgical, endoscopic or obstetric procedures
+12. Acute mania (lorazepam, usually with lithium or
+atypical antipsychotics).
+13. Antipsychotic-induced akathisia
+14. Emergency management of acute psycho ses
+(IV lorazepam, along with parenteral antipsychotics).
+15. Narcoanalysis or abreaction (IV diazepam)
+Whenever administered, benzodiazepines should
+not be ordinarily used for more than 2-4 weeks at a
+time; otherwise risk of dependence is quite high and
+tolerance occurs.
+Mechanism of Action
+The exact mechanism of action of benzodiazepines is
+not clear. The discovery of the benzodiazepine receptors in 1977 shed some light on the mode of action
+(Fig. 15.1).
+
+
+
+
+<<<PAGE 269>>>
+
+Index
+Kleptomania 119
+Klismaphilia 126
+Koro 110, 111
+Korsakoff’s
+psychosis 38, 39
+syndrome 27
+Kurt Schneider 54
+
+L
+LAAM 44, 45
+La-belle-indifférence 103
+Lack of
+rapport 57
+sexual enjoyment disorder 126
+Lamotrigine 79, 188
+Larks 140
+Latah 110, 111
+Late paraphrenia 61
+Latency phase 212
+Latent schizophrenia 59
+Leaden paralysis 81
+Learned behaviour 214
+Learning disability 155
+Legal and ethical issues in psychiatry 229
+Lethal catatonia 59
+Leucotomy 203
+Lewy body dementia 25
+Licensing authority 232
+Life chart 7
+Limbic system 203
+Lithium 78, 188
+Long-sleepers 134
+Loosening of associations 55, 58, 59, 62
+Lorazepam 26, 29, 87, 149, 228
+Loss of ego boundaries 57, 65
+Loxapine 66
+LSD use disorder 49
+L-thyroxin 227
+L-tryptophan 137
+Lucid intervals 26
+Lunatic 232
+
+M
+Made
+feeling 55, 56
+impulses 55, 56
+volition 55, 56
+Maintenance therapy 44
+Major depression 105
+Male
+anorgasmia 128
+erectile disorder 127
+orgasmic disorder 128
+
+Malignant syndrome 228
+Malingering 119
+Mania 61, 70, 80, 227
+Manic
+depressive psychosis 73
+episode 30, 69
+stupor 70
+Mannerisms 57-59, 164
+MAOIs 81, 82
+Marchiafava-Bignami disease 40
+Marijuana 46
+Marital therapy 217
+Masked depression 80, 105, 106
+MCI code of medical ethics, 2002 234
+McNaughten rule 229
+Medical
+emergency 221
+interview 5
+Medicolegal aspects 224
+Megavitamin therapy 67
+Memantine 25, 26
+Memory disturbances 203
+Menstrual and obstetric history 9
+Mental
+and behavioural disorders in ICD-10
+3
+disorders 19
+Health
+Act, 1987 232, 233
+Authorities 232
+retardation 153, 155, 162, 164
+status examination 10, 11, 222
+Mentally ill
+person 232
+prisoner 232
+Metabolic syndrome 63
+Methadone 44
+maintenance 44
+Methylphenidate 167
+Michigan alcoholism screening test 37
+Migraine 28
+Mild cognitive disorder 32
+Milieu therapy 68
+Mini mental state examination 13
+Minimal brain dysfunction 166
+Minoxidyl 132
+Mirror-gazing 58
+Mirtazapine 30
+Misconceptions about suicide 224
+Mixed
+affective 61, 73
+episode 73
+anxiety depressive disorder 80
+
+257
+Monosymptomatic hypochondriacal
+psychosis 84, 85
+Mood 12, 69
+disorders 69, 76
+stabiliser 30
+stabilising drugs 185
+Morbid grief 151
+Motor activity 11
+Multi-axial classification 4
+Multifocal myoclonus 20
+Multi-infarct dementia 25
+Multiple personality disorder 102
+Munchausen syndrome 119
+Muslim Marriages Act 230
+Mutism 56, 59, 225, 171
+
+N
+Naloxone 44, 227
+challenge test 44
+Naltrexone 42, 44, 132
+Narcolepsy 138
+Narcotic
+anonymous 45
+antagonists 44
+Drugs and Psychotropic Substances
+(Amendment) Act, 2001 233
+Drugs and Psychotropic Substances
+Act (NDPSA), 1985 233
+National
+Crime Records Bureau 222
+Health Policy 235, 237
+Mental Health
+Advisory Group 237
+Programme 235
+Trust Act 161
+NDRI 52
+Necrophilia 126
+Negative
+reinforcement 215
+symptom 57, 58, 60-61
+Neurasthenia 109
+Neuroleptic
+malignant syndrome 228
+sensitivity syndrome 26
+Neurosis 89
+Neurotic
+depression 82
+traits 9
+Nicotine 52
+replacement therapy 52
+Night terrors 140
+Nightmares 140
+Nitrazepam 137
+
+

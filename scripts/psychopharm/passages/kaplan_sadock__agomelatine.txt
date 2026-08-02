@@ -1,0 +1,313 @@
+<<<PAGE 1249>>>
+
+sweating, male
+sexual
+dysfunction
+Desvenlafaxine
+
+50–100
+
+Dry mouth,
+dizziness,
+nausea,
+sweating
+
+None
+
+Duloxetine
+
+30–120
+
+Nausea, dry mouth, None
+constipation,
+insomnia, male
+sexual
+dysfunction
+
+Levomilnacipran
+
+20–80
+
+Nausea, dry mouth, None
+headaches, male
+sexual
+dysfunction
+
+Other Second-Generation and Novel Antidepressants
+Agomelatinea
+
+25–50
+
+None
+
+None
+
+Bupropion
+
+150–450
+
+Insomnia, dry
+mouth, nausea
+
+Headaches
+
+Mirtazapine
+
+15–60
+
+Dry mouth,
+constipation,
+increased
+appetite, weight
+gain
+
+Somnolence
+
+Moclobemidea
+
+300–600
+
+None
+
+None
+
+Vilazodone
+
+10–40
+
+Diarrhea, nausea,
+headaches
+
+None
+
+Vortioxetine
+
+10–20
+
+Nausea
+
+None
+
+aNot routinely available in the United States.
+
+
+
+
+<<<PAGE 1305>>>
+
+of severe anxiety symptoms. In those cases, a short-term benzodiazepine,
+such as lorazepam or alprazolam, is helpful in the short term. Concurrently,
+an SSRI should be started and slowly increased.
+For panic disorder, SSRIs or the serotonin–norepinephrine reuptake
+inhibitor (SNRI) venlafaxine are first-line options. Tricyclic antidepressants
+or MAOIs are effective but less preferably given their side effects. Other
+agents, such as mirtazapine, are other second-line options. As mentioned, the
+benzodiazepines are effective options but mainly used for short-term use or
+exacerbations. Long-term antidepressant therapy is useful for preventing
+relapse, with studies suggesting that the beneficial effects last for up to 1 to 3
+years. When appropriate, maintenance therapy should be discontinued very
+slowly.
+For generalized anxiety disorder, the approach is similar, with SSRIs and
+SNRIs being the first-line treatments. Reasonable alternatives if those are not
+effective include agomelatine, pregabalin, buspirone, and quetiapine.
+For social anxiety disorder, the approach is similar to those already
+described, with SSRIs and SNRIs being the first-line choice. Pregabalin and
+clonazepam also have strong evidence, although the same caveats for other
+benzodiazepines apply to clonazepam. Phenelzine is effective as well but is
+rarely used because of the side effects. Tricyclic antidepressants, buspirone,
+and quetiapine are not recommended owing to their side effects. As noted
+above, β-blockers may be useful for performance anxiety. However, their use
+does not appear to generalize to other types of social anxiety.
+Table 8-6
+Evidence-Based Recommendations for Monotherapy of
+Anxiety Disorders
+Anxiety Disorders
+Classes and
+Agents
+
+GAD
+
+PD
+
+SAD
+
+SSRIs
+
+First line
+
+First line
+
+First line
+
+SNRIs
+
+First line
+
+First line
+
+First line
+
+TCAs
+
+Second line
+
+Second line
+
+Not
+
+
+
+
+<<<PAGE 1306>>>
+
+recommended
+MAOIs
+
+Insufficient
+evidence
+
+Second line
+
+Second line
+
+RIMA-Moclobemide Insufficient
+evidence
+
+Insufficient
+evidence
+
+Second Line
+
+Other Psychotropics Second line
+—Agomelatine,
+Buspirone,
+Mirtazapine
+
+Second line
+
+Second line
+
+Benzodiazepines
+
+Second line
+
+Second line
+
+Second line
+
+Atypical
+Second line
+Antipsychotics—
+Quetiapine
+
+Insufficient
+evidence
+
+Not
+recommended
+
+Anticonvulsant—
+Pregabalin
+
+Insufficient
+evidence
+
+Second line
+
+Second line
+
+Note: Beta-adrenergic blocking agents are recommended only for performance anxiety.
+RIMA, reversible monoamine oxidase inhibitor; GAD, generalized anxiety disorder; PD, panic
+disorder; SAD, social anxiety disorder.
+
+In the case of specific phobia, psychotherapies, particularly behavioral
+therapies, are the first-line choice. SSRIs may be helpful, although there are
+few studies of SSRIs for this disorder.
+For agoraphobia, the main goal of pharmacotherapy is to treat the panic
+attacks that are usually comorbid. Early studies did not support the use of
+medications for “pure” agoraphobia; however, there has been little research
+since.
+Psychosocial Therapies
+There is strong support for a variety of psychosocial therapies for anxiety
+disorders, including cognitive-behavioral therapy (CBT), behavioral
+therapies, and interpersonal therapy. Studies of CBT suggest it has a
+substantial effect on generalized anxiety disorder, panic disorder, and social
+anxiety disorder, although this evidence is tempered by concerns about
+
+
+
+
+<<<PAGE 2149>>>
+
+melatonin may inhibit ovarian function, and for that reason, it has been
+evaluated as a contraceptive, but with inconclusive results.
+Drug Interactions. As a dietary supplement preparation, exogenous
+melatonin is not regulated by the FDA and has not been subjected to the same
+type of drug interaction studies that were performed for ramelteon. Caution is
+suggested in coadministering melatonin with blood thinners (e.g., warfarin
+[Coumadin], aspirin, and heparin), antiseizure medications, and medications
+that lower BP.
+Laboratory Interference. Melatonin is not known to interfere with any
+commonly used clinical laboratory tests.
+Dosage and Administration. Over-the-counter melatonin is available in
+the following formulations: 1-, 2.5-, 3-, and 5-mg capsules; 1-mg/4-mL
+liquid; 0.5- and 3-mg lozenges; 2.5-mg sublingual tablets; and 1-, 2-, and 3mg timed-release tablets.
+Standard recommendations are to take the desired melatonin dose at
+bedtime, but some evidence from clinical trials suggests that dosing up to 2
+hours before habitual bedtime may produce a more significant improvement
+in sleep onset.
+Agomelatine (Valdoxan). Agomelatine is structurally related to melatonin
+and is used in Europe as a treatment for MDD. It acts as an agonist at
+melatonin (MT1 and MT2) receptors. It also acts as a serotonin antagonist.
+Analysis of agomelatine clinical trial data raised serious questions about the
+efficacy and safety of the drug. The drug is not being marketed in the United
+States.
+
+PRAZOSIN
+Prazosin (Minipress) is a quinazoline derivative and one of a new chemical
+class of antihypertensives. It is an α1-adrenergic receptor antagonist as
+opposed to the drugs mentioned above, which are α2-blockers.
+Pharmacologic Actions
+
+
+
+
+<<<PAGE 2259>>>
+
+Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3253.
+Holt A, Berry MD, Boulton AA. On the binding of monoamine oxidase
+inhibitors to some sites distinct from the MAO active site, and effects
+thereby elicited. Neurotoxicology. 2004;25:251–266.
+Hu X-Z, Rush AJ, Charney D, Wilson AF, Sorant AJM. Association between
+a functional serotonin transporter promoter polymorphism and citalopram
+treatment in adult outpatients with major depression. Arch Gen Psychiatry.
+2007;64:783–792.
+Joffe RT. Thyroid hormones. In: Sadock BJ, Sadock VA, Ruiz P, eds. Kaplan
+& Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3248.
+Joffe RT, Sokolov ST, Levitt AJ. Lithium and triiodothyronine augmentation
+of antidepressants. Can J Psychiatry. 2006;51:791–793.
+Johansson P, Almqvist EG, Johansson J-O, Mattsson N, Hansson O, Wallin
+A, Blennow K, Zetterberg H, Svensson J. Reduced cerebrospinal fluid
+level of thyroxine in patients with Alzheimer’s disease.
+Psychoneuroendocrinology. 2013;38(7):
+1058–1066.
+Kasper S, Corruble E, Hale A, Lemoine P, Montgomery SA, Quera-Salva MA. Antidepressant efficacy of agomelatine versus SSRI/SNRI: results from
+a pooled analysis of head-to-head studies without a placebo control. Int
+Clin Psychopharmacol. 2013;28(1):12–19.
+Keller MB, Trivedi MH, Thase ME, Shelton RC, Kornstein SG, Nemeroff
+CB, Friedman ES, Gelenberg AJ, Kocsis JH, Dunner DL, Hirschfeld
+RMA, Rothschild AJ, Ferguson JM, Schatzberg AF, Zajecka JM, Pedersen
+RD, Yan B, Ahmed S, Musgnung J, Ninan PT. The Prevention of
+Recurrent Episodes of Depression with Venlafaxine for Two Years
+(PREVENT) Study: outcomes from the 2-year and combined maintenance
+phases. J Clin Psychiatry. 2007;68:1246–1256.
+Kennedy SH, Holt A, Baker GB. Monoamine oxidase inhibitors. In: Sadock
+BJ, Sadock VA, Ruiz P, eds. Kaplan & Sadock’s Comprehensive Textbook
+of Psychiatry. 9th ed. Vol. 2. Philadelphia, PA: Lippincott Williams &
+Wilkins; 2009:3154.
+Khan AA, Kornstein SG. Nefazodone. In: Sadock BJ, Sadock VA, Ruiz P,
+eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed.
+Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3164.
+
+

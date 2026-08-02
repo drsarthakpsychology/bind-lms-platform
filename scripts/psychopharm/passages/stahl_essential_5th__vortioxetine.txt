@@ -1,0 +1,1290 @@
+<<<PAGE 11>>>
+
+Preface to the Fifth Edition
+
+WHAT’S NEW IN THE FIFTH
+EDITION?
+For this fifth edition of Stahl’s Essential
+Psychopharmacology you will notice that every figure in the
+book has been revised, refreshed, and updated with new
+colors, shading, and outlining. About half the figures are
+entirely new. The number of chapters has decreased by one,
+with merger of mood stabilizers into treatments for mood
+disorders; the text itself and the total number of figures and
+tables are all approximately the same in length and number,
+although all chapters have been edited, most of them
+extensively, with the details of what has changed listed
+below. The number of references has now been doubled.
+Overall, 14 drugs have new uses and indications presented,
+and 18 brand new drugs are introduced and discussed.
+Highlights of what has been added or changed since
+the fourth edition include:
+• New coverage of interference RNA (iRNA) in basic
+neuroscience chapters
+• Restructuring all chapters to reflect neurosciencebased nomenclature, that is, drugs named for their
+mechanism of action rather than use
+• Thus, drugs for depression are not “antidepressants”
+but “monoamine reuptake inhibitors with
+antidepressant action”; drugs for psychosis are not
+“antipsychotics” but “serotonin/dopamine antagonists
+with antipsychotic actions,” etc.
+• The psychosis chapter has:
+• new coverage of the direct and indirect striatal
+dopamine pathways
+• new coverage of trace amines, receptors, and
+pharmacology
+• revision of the classic dopamine theory of psychosis
+• two new theories of psychosis (serotonin and
+glutamate)
+• coverage of dementia-related psychosis and Parkinson
+psychosis in addition to schizophrenia psychosis
+• updated coverage of new indications for drugs
+previously approved, including lurasidone,
+cariprazine, and brexpiprazole
+
+• describes five new drugs for psychosis: lumateperone
+approved, and xanomeline, pimavanserin, trace
+amine-associated receptor type 1 (TAAR1) agonists,
+and roluperidone in development
+• updated receptor binding data for all drugs
+• new coverage of tardive dyskinesia and new drug
+treatments: deutetrabenazine and valbenazine
+• new coverage of uses of serotonin–dopamine
+drugs for psychosis that are now used even more
+frequently for depression
+• The chapters on mood disorders have:
+• new coverage of mixed mood states
+• new coverage of GABAA (γ-aminobutyric acid A)
+receptor subtypes and neurosteroid binding sites
+• new coverage of neurotrophic growth factors and
+neuroplasticity in depression
+• new coverage of inflammation in depression
+• mood stabilizers redefined
+• new/expanded coverage of levomilnacipran,
+vortioxetine
+• new coverage of treating cognition in depression
+• new drugs: neuroactive steroids, ketamine/
+esketamine, dextromethorphan combinations,
+dextromethadone
+• expanded coverage of treatment resistance
+and augmentation treatments for monoamine
+reuptake inhibitors including brexpiprazole,
+ketamine, esketamine, and trials with cariprazine,
+pimavanserin
+• expanded coverage of new hypotheses of
+neuroplastic downstream changes following
+NMDA (N-methyl-D-aspartate) antagonist therapy
+with ketamine, esketamine, and others
+• expanded coverage of treating bipolar depression
+with new indications and new drugs lurasidone,
+cariprazine
+• The anxiety chapter has:
+• removal of obsessive–complusive disorder (OCD)
+to the impulsivity chapter
+• coverage of posttraumatic stress disorder (PTSD) as
+a traumatic disorder rather than anxiety disorder
+ix
+
+
+
+
+<<<PAGE 71>>>
+
+Chapter 3: Ion Channels
+
+Table 3-2 Key ligand-gated ion channels directly targeted by psychotropic drugs
+
+Neurotransmitter
+
+Ligand-gated ion
+channel receptor
+subtype directly
+targeted
+
+Pharmacological
+action
+
+Drug class
+
+Therapeutic
+action
+
+Acetylcholine
+
+Alpha4 Beta2
+nicotinic
+
+Partial agonist
+
+Nicotinic receptor
+partial agonist (NRPA)
+(varenicline)
+
+Smoking cessation
+
+GABAA
+benzodiazepine
+receptors
+
+Full agonist,
+phasic inhibition
+
+Benzodiazepines
+
+Anxiolytic
+
+GABAA nonbenzodiazepine
+PAM sites
+
+Full agonist,
+phasic inhibition
+
+“Z DRUGS”/hypnotics
+(zolpidem, zaleplon,
+zopiclone, eszopiclone)
+
+Improves insomnia
+
+GABAA neurosteroid
+sites
+(benzodiazepine
+insensitive)
+
+Full agonist,
+tonic inhibition
+
+Neuroactive steroids
+(allopregnanolone)
+
+Postpartum depression
+Rapid-acting
+antidepressant
+Anesthetic
+
+NMDA
+NAM channel sites/
+Mg++ sites
+
+Antagonist
+
+NMDA glutamate
+antagonist (memantine)
+
+Pro-cognitive in
+Alzheimer disease
+
+NMDA openchannel sites
+
+Antagonist
+
+PCP/phencyclidine
+Ketamine
+Dextromethorphan
+Dextromethadone
+
+Dissociative
+hallucinogen
+Anesthetic
+Pseudobulbar affect
+Agitation in Alzheimer
+disease
+Rapid-acting
+antidepressant
+Treatment-resistant
+depression
+
+5HT3
+
+Antagonist
+
+Mirtazapine
+Vortioxetine
+
+Pro-cognitive
+Antidepressant
+
+5HT3
+
+Antagonist
+
+Anti-emetic
+
+Reduce
+chemotherapyinduced emesis
+
+GABA
+
+Glutamate
+
+Serotonin
+
+3
+
+PAM, positive allosteric modulator; NAM, negative allosteric modulator; NMDA, N-methyl-D-aspartate; Mg, magnesium.
+
+ion channels (Figure 3-3) are analogous to pentameric
+subtypes of ion channels (Figure 3-2A), but just have four
+subunits rather than five. Receptor sites are in various
+locations on each of the subunits; some binding sites are
+in the channel, but many are present at different locations
+outside the channel.
+This tetrameric structure is typical of the ionotropic
+glutamate receptors known as AMPA (α-amino-3hydroxy-5-methyl-4-isoxazole-propionic acid), kainate,
+
+and NMDA (N-methyl-D-aspartate) subtypes (Table 3-3).
+Drugs that act directly at tetrameric ionotropic glutamate
+receptors are listed in Table 3-2. Receptor subtypes for
+glutamate according to the selective agonist acting at that
+receptor as well as the specific molecular subunits that
+comprise that subtype are listed in Table 3-3. Subtype
+selective drugs for ionotropic glutamate receptors are
+under investigation but not currently used in clinical
+practice.
+
+55
+
+
+
+
+<<<PAGE 299>>>
+
+7
+
+Treatments for Mood Disorders:
+So-Called “Antidepressants” and
+“Mood Stabilizers”
+
+Definitions of Clinical Effects of Treatment in
+Depression 284
+How Well Do Classic Monoamine Reuptake
+Blockers Work in Unipolar Depression? 285
+Redefining “Mood Stabilizers”: A Labile Label 288
+Drugs for Unipolar Depression 289
+Selective Serotonin Reuptake Inhibitors
+(SSRIs) 289
+Serotonin Partial Agonist Reuptake Inhibitors
+(SPARIs) 296
+Serotonin–Norepinephrine Reuptake Inhibitors
+(SNRIs) 298
+Norepinephrine–Dopamine Reuptake Inhibitors
+(NDRIs): Bupropion 303
+Agomelatine 306
+Mirtazapine 308
+Serotonin Antagonist/Reuptake Inhibitors
+(SARIs) 311
+Vortioxetine 315
+Neuroactive Steroids 320
+Treatment Resistance in Unipolar
+Depression 323
+
+In this chapter, we will review pharmacological
+concepts underlying the use of drugs used to treat
+mood disorders, from depression, to mixed states,
+to mania. These agents have classically been called
+“antidepressants” and “mood stabilizers” but this
+terminology is now considered out of date and confusing
+since not all drugs classically called “antidepressants”
+are used to treat all forms of depression – especially
+not bipolar depression or depression with mixed
+features. Furthermore, many of the classic so-called
+“antidepressants” are also used to treat a whole range of
+disorders from anxiety disorders, to eating disorders,
+traumatic disorders, obsessive compulsive and impulsive
+disorders, pain, and beyond. Finally, many of the drugs
+used for psychosis and discussed extensively in Chapter
+5 are used even more commonly to treat depression,
+unipolar, bipolar, and mixed depression, as well as
+mania, yet are not generally classed as “antidepressants”
+
+Choosing Treatment for Treatment Resistance in
+Depression on the Basis of Genetic Testing 323
+Augmenting Strategies for Unipolar
+Depression 325
+Second-Line Monotherapies Used for TreatmentResistant Depression 333
+Drugs for Bipolar Disorder Spectrum 338
+Serotonin/Dopamine Blockers: Not Just for
+Psychosis and Psychotic Mania 338
+Lithium, the Classic “Antimanic” and “Mood
+Stabilizer” 345
+Anticonvulsants as “Mood Stabilizers” 346
+Anticonvulsants with Proven Efficacy in Bipolar
+Disorder 347
+Combinations are the Standard for Treating Bipolar
+Disorder 353
+Future Treatments for Mood Disorders 353
+Dextromethorphan–Bupropion and
+Dextromethorphan–Quinidine 353
+Dextromethadone 355
+Hallucinogen-Assisted Psychotherapy 355
+Summary 358
+
+although they are certainly “drugs for depression.” To
+eliminate confusion about how to discuss categories
+of drugs, throughout this textbook we strive to utilize
+modern neuroscience-based nomenclature, where drugs
+are named for their pharmacological mechanism of
+action and not for their clinical indication.
+Thus, drugs discussed in this chapter have
+“antidepressant action” but are not called
+“antidepressants.” Other drugs have mood-stabilizing and
+antimanic action but are not called “mood stabilizers.”
+What is a “mood stabilizer”? Originally, a mood stabilizer
+was a drug that treated mania and prevented recurrence
+of mania, thus “stabilizing” the manic pole of bipolar
+disorder. Others use this term for a drug that treats
+depression and recurrence of depression in bipolar
+disorder thus stabilizing the depressed pole of bipolar
+disorder. Rather than use the term for stabilizing either
+mania or depression, here we will use terms to describe
+
+283
+
+
+
+
+<<<PAGE 327>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+also those localized in the gastrointestinal tract itself,
+where they mediate nausea, vomiting, and diarrhea/
+bowel motility when stimulated by serotonin, including
+when stimulated by serotonin that is a side effect of
+peripherally increased serotonin by SSRIs/SNRIs.
+Blocking these 5HT3 receptors can therefore protect
+against chemotherapy-induced nausea and vomiting
+as well as against serotonin-induced gastrointestinal
+side effects that can accompany agents that increase
+serotonin.
+More important to the mechanism of action of central
+5HT3 antagonists such as mirtazapine and vortioxetine
+in the treatment of unipolar depression are the 5HT3
+receptors in the brain that regulate the release of
+various neurotransmitters downstream in some brain
+circuits that mediate the symptoms of depression. 5HT3
+receptors in the brain are usually localized on GABA
+(γ-aminobutyric acid) interneurons, and they are always
+excitatory. This means that when serotonin stimulates a
+5HT3 receptor, it causes GABA to inhibit whatever neuron
+is downstream from it. This was shown for 5HT3–GABA
+interactions at glutamate neurons (Figure 4-49) and
+at acetylcholine and norepinephrine neurons (Figure
+4-48). 5HT3 antagonism is a powerful disinhibitor of
+glutamate release (Figure 7-42) and of acetylcholine and
+norepinephrine (Figure 7-43), actions that theoretically
+release neurotransmitters downstream to have
+antidepressant action.
+Serotonin Antagonist/Reuptake Inhibitors (SARIs)
+
+The prototype drug that blocks serotonin 2A and 2C
+receptors as well as serotonin reuptake is trazodone,
+classified as a serotonin antagonist/reuptake inhibitor
+(SARI) (Figure 7-44). Nefazodone is another SARI with
+robust 5HT2A antagonist actions and weaker 5HT2C
+antagonism and SERT inhibition, but is no longer
+commonly used because of rare liver toxicity (Figure
+7-44). Trazodone is a very interesting agent, since it acts
+like two different drugs, depending upon the dose and
+the formulation. We discussed a very similar situation in
+Chapter 5 for quetiapine (Figure 5-46).
+A more complete picture of trazodone’s binding
+properties has emerged from recent studies (Figures 7-44
+and 7-45) and reflects that it is a serotonin antagonist
+not just at 5HT2A and 5HT2C receptors, but also at 5HT1D,
+5HT2B, and 5HT7 receptors. In addition, trazodone has
+potent antagonist properties at α1B, α1A, α2C, and α2B
+receptors, H1 histamine receptors, and agonist actions at
+5HT1A receptors (Figure 7-45). Because of these various
+pharmacological actions occur with varying potencies,
+
+it means that trazodone will act predominantly via its
+highest-affinity receptor interactions at low doses, and
+will recruit its lower-affinity receptor actions at higher
+doses.
+Different Drug at Different Doses and at Different
+Delivery Rates?
+
+Trazodone is famous for its effectiveness and utility at
+low doses as a hypnotic (Figure 7-46). That is, doses of
+trazodone lower than those effective for antidepressant
+action are quite frequently used for insomnia. Hypnotic
+doses engage the receptors for which trazodone has
+the highest affinity and, amongst these, blockade is
+hypothetically linked to hypnotic actions (i.e., 5HT2A,
+α1 subtypes, and H1). Blocking 5HT2A receptors
+enhances slow-wave sleep, and blocking α1 subtypes
+and H1 receptors interferes with monoamine arousal
+mechanisms (discussed in Chapter 5 and illustrated in
+Figures 5-13 and 5-14). The best way to deliver a hypnotic
+is with a standard oral formulation that is immediate in
+onset, peaks quickly, and is out of the system by morning.
+Since insomnia is one of the most frequent residual
+symptoms of depression after treatment with an SSRI/
+SNRI (discussed earlier in this chapter and illustrated in
+Figure 7-5), addition of a hypnotic is often necessary in
+treating patients with a major depressive episode. Not
+only can addition of a hypnotic potentially relieve the
+insomnia itself, it may also increase remission rates due
+to improvement of other symptoms such as loss of energy
+and depressed mood (Figure 7-5). Thus, the ability of low
+doses of trazodone to improve sleep in depressed patients
+has led to its popular use at low doses as an augmenting
+option for residual insomnia that persists after treatment
+with SSRIs/SNRIs.
+The original oral formulation of trazodone used for
+depression was short in duration, required multiple daily
+doses higher than hypnotic doses (Figure 7-47), and was
+associated with peak dose sedation after daytime doses,
+not an ideal profile for a drug for unipolar depression.
+Although trazodone’s antidepressant actions at higher
+doses are undisputed as well as its lack of causing sexual
+dysfunction or weight gain, the presence of daytime
+sedation makes using trazodone at antidepressant doses
+in the standard oral formulation difficult in clinical
+practice. However, a once-daily controlled-release
+formulation with higher doses of trazodone is available
+for use in depression, which blunts peak plasma drug
+levels to reduce daytime sedation. These higher doses
+recruit additional known antidepressant receptor actions,
+including serotonin reuptake inhibition (Figures 7-10
+311
+
+7
+
+
+
+
+<<<PAGE 331>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Trazodone for Depression:
+Serotonin Antagonist/
+Reuptake Inhibitor (SARI)
+α
+1
+
+Trazodone for Insomnia:
+Multifunctional Neurotransmitter
+Antagonist
+
+α
+2
+
+A
+T1
+5H
+
+5H
+
+α1
+
+H
+1
+
+T2
+
+A
+
+5HT1D
+
+trazodone
+mianserin
+
+H1
+
+SERT
+
+5HT2A
+
+B
+HT2
+
+5HT7
+
+5H
+
+T2
+C
+
+5
+
+Figure 7-46 Trazodone at different doses. (Left)
+High doses that recruit saturation of the
+serotonin transporter (i.e., 150–600 mg) are
+required for trazodone to have therapeutic
+actions in depression. At this high dose,
+trazodone is a multifunctional serotonergic
+agent with antagonist actions at 5HT2A and
+5HT2C receptors as well as additional serotonin
+receptors. Trazodone is also an α1 and histamine
+1 (H1) antagonist at these doses. (Right) At lower
+doses of trazodone (i.e., 25–150 mg), it does
+not saturate the serotonin transporter; it does,
+however, retain antagonist actions at 5HT2A, α1,
+and H1 receptors, with corresponding efficacy for
+insomnia.
+
+dose for depression
+(150-600 mg)
+
+dose for insomnia
+(25-150 mg)
+
+Figure 7-47 Trazodone IR versus XR
+given once nightly. Shown here are
+steady-state estimates of the plasma
+trazodone levels from the hypnotic dosing
+of 50, 75, or 100 mg once nightly of
+trazodone immediate release (IR). Peak
+drug concentrations are reached rapidly
+with a similarly rapid fall off overnight.
+The minimum levels estimated for
+antidepressant actions of trazodone are
+reached transiently, if at all, by hypnotic
+dosing. By contrast, 300 mg of trazodone
+extended release (XR) given once
+nightly generates plasma levels that rise
+slowly and never fall below minimum
+antidepressant concentrations. Peak levels
+of trazodone XR at 300 mg are about the
+same as the peak levels of trazodone IR
+at 100 mg.
+
+Trazodone IR vs. XR Given Once Nightly
+2.2
+2
+1.8
+1.6
+1.4
+
+300 mg XR qhs
+
+mg/L
+
+1.2
+1
+
+100 mg IR qhs
+
+minimum
+antidepressant
+concentration
+
+0.8
+0.65
+0.5
+0.3
+
+75 mg IR qhs
+50 mg IR qhs
+
+0.1
+0
+23:30
+
+4:00
+
+8:00
+
+12:00
+
+16:00
+
+20:00
+
+23:30
+
+hours
+
+Vortioxetine
+
+Vortioxetine is a drug approved for treating unipolar
+depression and which causes SERT inhibition as well as
+having antagonist actions at 5HT3 and 5HT7 receptors,
+with agonist actions at 5HT1A receptors and weak
+partial agonist to antagonist actions at 5HT1B/D receptors
+(Figure 7-49). This unique blend of pharmacological
+actions leads to downstream release of many different
+neurotransmitters as will be explained here, and these
+actions hypothetically lead to antidepressant effects
+in unipolar depression, characterized by robust pro-
+
+cognitive actions, especially improving processing speed.
+The importance of cognitive symptoms in unipolar
+depression is discussed in Chapter 6 as the possible
+clinical consequence of loss of neurotrophic factors,
+synapses, and neurons (Figures 6-27 through 6-31).
+What is cognitive processing speed and what could
+be the mechanism by which vortioxetine improves this
+more than other antidepressants? “Cognition” is not a
+single, simple brain function and “cognitive dysfunction”
+is not a single, simple symptom. Cognitive impairment
+that can be measured as part of the symptom profile
+315
+
+7
+
+
+
+
+<<<PAGE 333>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+vortioxetine
+T
+5H
+1A
+
+5H
+
+T1B
+
+5HT1D
+
+SERT
+
+T3
+
+5HT7
+
+5H
+
+Figure 7-49 Vortioxetine. Vortioxetine is a serotonin reuptake
+inhibitor and also has actions at several serotonin receptors,
+including 5HT1A, 5HT1B, 5HT1D, 5HT3, and 5HT7.
+
+somewhat whimsical way to categorize cognitive
+dysfunction and to understand the role of improving
+individual domains of cognition applicable to
+psychopharmacology is illustrated in Figure 7-50 as the
+“Fab Four” of cognition. Remember the original Fab
+Four, the Beatles? Each musician can represent one of the
+Fab Four of cognition as well. John, arguably the leader,
+wanted all the attention, so he represents “attention,”
+which some also refer to as concentration. Paul, perhaps
+the brains of the operation and the writer of many of
+the songs, is “executive function,” also called “problem
+solving.” The quiet culture carrier of the group, George,
+represents memory, of which there are many kinds,
+short-term, long-term, verbal, and more. And finally, the
+drummer, Ringo, represents processing speed, or pace.
+You can imagine if any of these four is out of synch with
+the other three, the music would be a disaster. All four
+can potentially be compromised in psychiatric disorders.
+It turns out that for depression, a test that measures a bit
+of all these dimensions of cognition, but arguably most
+prominently measures processing speed, is the DSST
+(digital symbol substitution test). When processing speed
+is slowed, just like an offbeat drummer in a band, overall
+cognitive functioning can also feel like a disaster for a
+depressed patient, lagging in cognitive performance,
+with mental effort now becoming exhausting and
+work productivity greatly reduced, all causing great
+frustration. This simple, quick DSST can be useful in
+
+7
+Figure 7-50 The “Fab Four” of cognition. Cognition is not
+a single, simple brain function. Rather, there are four major
+cognitive domains, represented here by the four members
+of the Beatles: attention or concentration (John), executive
+function or problem solving (Paul), memory (George), and
+processing speed (Ringo). All four domains work in concert to
+keep cognition playing at its best; if any one of these domains
+dysfunctions, then cognitive impairment can occur.
+
+calibrating the objective decline in cognitive performance
+of patients with subjective cognitive complaints, and in
+tracking their improvement on treatment. Vortioxetine
+improves cognition better than other antidepressants in
+unipolar major depression, as demonstrated by superior
+performance on the DSST measuring processing speed.
+How does vortioxetine work as an antidepressant and
+specifically how does it exert its superior pro-cognitive
+effects?
+SERT Inhibition and 5HT1A Agonism
+
+To begin, vortioxetine is a SERT inhibitor and a 5HT1A
+agonist, thus combining the actions already discussed
+for SSRIs (Figures 7-10 through 7-15) and for combining
+SERT inhibition with 5HT1A agonists (see Chapter 5 and
+Figures 7-23 through 7-27). These mechanisms alone
+are sufficient for antidepressant action since they raise
+both serotonin levels (SERT inhibition) and the pro317
+
+
+
+
+<<<PAGE 334>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+5HT neuron
+
+5HT1B/D
+axon terminal
+autoreceptor
+
+SSRI
+SERT
+5HT1B/D
+antagonist
+
+A
+
+B
+
+C
+
+Figure 7-51 SERT inhibition and 5HT1B/D presynaptic antagonism. (A) 5HT1B/D autoreceptors and serotonin transporters (SERTs) are
+both present on the axon terminal of a serotonin (5HT) neuron. (B) When SERT is inhibited, synaptic availability of serotonin is increased.
+However, serotonin binding at the 5HT1B/D receptor prevents further serotonin release. (C) When both SERTs and the 5HT1B/D receptors
+are blocked, increased synaptic serotonin via SERT inhibition is combined with ongoing serotonin release via 5HT1B/D antagonism,
+further increasing the availability of serotonin in the synapse.
+
+cognitive neurotransmitter dopamine, acetylcholine,
+and norepinephrine levels (5HT1A agonism) (see also
+discussion in Chapter 4, Figure 4-44).
+
+this enhances the release of the antidepressant and procognitive neurotransmitters dopamine, norepinephrine,
+histamine, and acetylcholine (Figure 7-52B).
+
+SERT Inhibition and 5HT1B/D Presynaptic Antagonism
+
+SERT Inhibition and 5HT3 Antagonism
+
+An additional receptor action that theoretically
+raises serotonin levels even further than by SERT
+inhibition alone is inhibition of the 5HT1B/D presynaptic
+autoreceptor (Figure 7-51). That is, when SERT is
+inhibited, the amount of synaptic serotonin that
+accumulates is blunted because the build-up of serotonin
+stimulates presynaptic 5HT1B/D autoreceptors, and this
+turns off further serotonin release (compare Figure
+7-51A and B). However, when 5HT1B/D presynaptic
+autoreceptors are simultaneously inhibited, negative
+feedback to serotonin release cannot occur, so serotonin
+release increases even more (Figure 7-51C).
+
+Another mechanism whereby 5HT3 antagonists enhance
+the release of the pro-cognitive neurotransmitters
+acetylcholine, dopamine, and norepinephrine is
+illustrated in the earlier discussion of 5HT3- antagonism
+(Figure 7-43) and is one of the most potent of
+vortioxetine’s several pharmacological actions.
+
+5HT1B Partial Agonism/Antagonism at
+Heteroreceptors
+
+Another putative mechanism of antidepressant and
+pro-cognitive actions of vortioxetine is antagonist/partial
+agonist actions on 5HT1B receptors located on presynaptic
+nerve terminals of acetylcholine, dopamine, histamine,
+and norepinephrine neurons in the prefrontal cortex.
+These receptors were discussed earlier in Chapter 4 and
+illustrated in Figure 4-45, showing how serotonin acting
+at these receptors inhibits the release of acetylcholine,
+histamine, dopamine, and norepinephrine. These
+receptors are shown again in Figure 7-52A and when
+they are blocked by a 5HT1B partial agonist/antagonist,
+318
+
+SERT Inhibition and 5HT7 Antagonism
+
+Serotonin inhibits its own release by actions at 5HT7
+receptors (compare Figures 7-53A and 7-53B). Thus,
+antagonism at 5HT7 receptors enhances serotonin release,
+especially in the presence of SERT inhibition (Figure
+7-53C). Blocking 5HT7 receptors on GABA neurons in
+the brainstem raphe prevents the downstream inhibition
+of serotonin release by GABA, especially in the presence
+of SERT inhibition, and leads instead to increased
+downstream release of serotonin (Figure 7-53C).
+5HT7 receptors also regulate glutamate release
+downstream in the prefrontal cortex (Figure 7-54A).
+Blocking these 5HT7 receptors on GABA interneurons
+enhances the release of glutamate and of downstream
+monoamine neurotransmitters (compare Figures 7-54A
+and 7-54B), which may have both antidepressant and
+pro-cognitive actions. Indeed, in experimental animals,
+selective 5HT7 antagonists do have pro-cognitive and
+antidepressant actions. Also, numerous agents with
+
+
+
+
+<<<PAGE 335>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+5HT1B Heteroreceptor Regulation of NE, DA, HA,
+and ACh in Prefrontal Cortex
+Baseline Neurotransmitter Release
+
+Prefrontal Cortex
+
+5HT
+1B
+Raphe
+
+Figure 7-52 5HT1B heteroreceptors
+regulate neurotransmitter release. (A)
+5HT1B receptors on the presynaptic
+nerve terminals of norepinephrine
+(NE), dopamine (DA), acetylcholine
+(ACh), and histamine (HA) neurons can
+theoretically regulate the release of these
+neurotransmitters. Serotonin (5HT) acting
+at these receptors would be inhibitory.
+(B) Antagonism or partial agonism of
+5HT1B heteroreceptors on ACh, HA, DA,
+and NE neurons would prevent serotonin
+from exerting its inhibitory effects, thus
+potentially increasing the release of these
+neurotransmitters.
+
+NE
+1B
+DA
+1B
+HA
+
+1B
+ACh
+
+A
+
+ACh
+BF
+
+HA
+TMN
+
+DA
+VTA
+
+NE
+
+7
+
+LC
+
+5HT1B Antagonist/Partial Agonist Enhances Neurotransmitter Release
+Prefrontal Cortex
+
+5HT
+1B
+Raphe
+
+5HT1B
+antagonist/
+partial agonist
+1B
+5HT1B
+antagonist/
+partial agonist
+
+1B
+
+5HT1B
+antagonist/
+partial agonist
+1B
+BF = Basal Forebrain
+TMN = Tuberomammillary Nucleus
+VTA = Ventral Tegmental Area
+LC = Locus Coeruleus
+
+5HT1B
+antagonist/
+partial agonist
+
+ACh
+BF
+
+HA
+TMN
+
+B
+
+5HT7 antagonism are effective drugs for depression and
+possibly for improving cognition, including not only
+vortioxetine, but also trazodone (Figures 7-44 and 7-45),
+quetiapine, brexpiprazole, aripiprazole, and lurasidone
+(see Chapter 5 and Figure 5-39).
+
+DA
+VTA
+
+NE
+LC
+
+Putting it all together, vortioxetine’s pharmacological
+mechanism of action is multimodal, with numerous
+synergistic mechanisms not only leading to the release of
+serotonin and to potentiating the release of serotonin (i.e.,
+via SERT, 5HT1B/D presynaptic, and 5HT7 blockade), but
+319
+
+
+
+
+<<<PAGE 336>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Figure 7-53A 5HT7 receptors regulate
+serotonin release, part 1. 5HT7
+receptors are located on GABA
+interneurons in the raphe nucleus. At
+baseline, when these receptors are not
+bound, serotonin is released into the
+prefrontal cortex.
+
+Baseline Serotonin Release
+
+baseline
+5HT release
+
+PFC
+
+overactivation
+
+5HT7
+receptor
+
+GABA neuron
+
+5HT
+neuron
+
+raphe
+
+also leading to the release of four further antidepressant
+and pro-cognitive neurotransmitters, namely dopamine,
+norepinephrine, acetylcholine, and histamine (i.e., via
+5HT1A agonism, 5HT1B heteroreceptor partial agonism/
+antagonism, and 5HT3 antagonism). This unique
+combination of mechanisms may account for the unique
+pro-cognitive actions of vortioxetine in unipolar major
+depression.
+320
+
+Neuroactive Steroids
+
+Another rapid-onset mood treatment is the neuroactive
+steroid brexanolone, a cyclodextrin-based intravenous
+formulation of the naturally occurring neuroactive
+steroid allopregnanolone (Figure 7-55). Administered
+by a 60-hour intravenous infusion for postpartum
+depression, brexanolone has a rapid-onset and sustained
+antidepressant effect. As briefly mentioned in Chapter 6,
+
+
+
+
+<<<PAGE 349>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+esketamine
+NMDA
+
+known abilities to regulate neuronal organization,
+arborization, and synapse formation may have the
+downstream consequence of boosting monoamine
+neurotransmitters, and this may account for how thyroid
+hormones enhance antidepressant action in some patients.
+Augmentation of treatments for either unipolar or bipolar
+depression with thyroid hormones has also fallen out of
+favor in recent years.
+Triple-Action Combo: SSRI/SNRI + NDRI
+
+σ
+
+S-ketamine
+
+NMDA
+
+σ
+
++
+
++
+
+Figure 7-63 Esketamine. The R and S enantiomers of ketamine
+are mirror images of each other; the exact pharmacology of the
+R and S enantiomers and their active metabolites is still being
+determined. The S enantiomer of ketamine has been developed
+and marketed as esketamine.
+
+Buspirone
+
+Buspirone is a 5HT1A partial agonist, so putting it
+together with an SSRI/SNRI is very much similar to the
+use of vilazodone (Figure 7-22 through Figure 7-27)
+or vortioxetine (Figure 7-49) discussed above. Indeed,
+most of the serotonin/dopamine agents used to augment
+monoamine antidepressants have 5HT1A properties (e.g.,
+quetiapine, aripiprazole, brexpiprazole, and cariprazine).
+Administering drugs that have 5HT1A agonist actions is a
+favored approach for augmenting SSRI/SNRIs, but using
+buspirone for this is less common today than using other
+agents with 5HT1A properties.
+Thyroid Hormones
+
+Thyroid hormones act by binding to nuclear ligand
+receptors to form a nuclear ligand-activated transcription
+factor. Abnormalities in thyroid hormone levels have
+long been associated with depression, and various forms
+and doses of thyroid hormones have for many years been
+utilized as augmenting agents to drugs for depression
+either to boost their efficacy in patients with inadequate
+response or to speed up their onset of action. Thyroid’s
+
+If boosting one neurotransmitter is good, and two is
+better, maybe three boosted neurotransmitters is best
+(Figures 7-64). Triple action (i.e, serotonin, dopamine,
+and norepinephrine) drugs for depression therapy with
+modulation of all three monoamines would be predicted
+to occur by combining either an SSRI with an NDRI or
+combining an SNRI with an NDRI, providing even more
+noradrenergic and dopaminergic action (Figure 7-64).
+These are perhaps some of the most popular combinations
+of two drugs for depression utilized in the US.
+California Rocket Fuel: SNRI plus Mirtazapine
+
+This potentially powerful combination exploits the
+pharmacological synergy attained by adding the enhanced
+serotonin and norepinephrine release from inhibition of both
+serotonin and norepinephrine reuptake by an SNRI to the
+disinhibition of both serotonin and norepinephrine release
+by the α2 antagonist actions of mirtazapine (Figure 7-65). It
+is even possible that additional pro-dopaminergic actions
+result from the combination of norepinephrine reuptake
+blockade in the prefrontal cortex due to SNRIs with 5HT2C
+actions of mirtazapine disinhibiting dopamine release. This
+combination can provide very powerful antidepressant action
+for some patients with unipolar major depressive episodes.
+Arousal Combos
+
+The frequent complaints of residual fatigue; loss of
+energy, motivation, and sex drive; and problems
+concentrating/problems with alertness may be
+approached by combining either a stimulant (dopamine
+transport inhibitor or DAT inhibitor) with an SNRI,
+or modafinil (another DAT inhibitor) with an SNRI
+(Figure 7-66), to recruit triple monoamine action and
+especially enhancement of dopamine.
+Second-Line Monotherapies Used for TreatmentResistant Depression
+Tricyclic Antidepressants
+
+The tricyclic antidepressants (TCAs) (Table 7-2;
+Figure 7-67) were so-named because their chemical
+333
+
+7
+
+
+
+
+<<<PAGE 551>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+inconclusive in terms of their efficacy in treating major
+depressive disorder in dementia; however, SSRIs (e.g.,
+citalopram but has QT prolongation; escitalopram may
+have similar efficacy without QT prolongation) may
+have some additional applicability towards ameliorating
+agitation and inappropriate behaviors in patients with
+dementia. Although considered relatively tolerable, SSRIs
+may be associated with increased falls and osteoporosis,
+and they may have interactions with other medications.
+Additionally, SSRIs may worsen some symptoms of
+Parkinson’s disease such as restless leg syndrome, periodic
+limb movements, and REM sleep behavior disorders.
+Therefore, if a trial of an SSRI (or any other antidepressant
+medication) is deemed necessary, the lowest effective dose
+should be used and continuous monitoring should be
+exercised.
+Another agent for treating depression in dementia
+is trazodone, which blocks the serotonin transporter at
+antidepressant doses (see Chapter 7 and Figures 7-44
+and 7-45). Trazodone also has serotonin 2A and 2C,
+H1 histamine and α1-adrenergic antagonist properties
+(Figures 7-44 and 7-45), which can make it very sedating.
+At low doses, trazodone does not adequately block
+serotonin reuptake but retains its other properties (Figure
+7-46). Because trazodone has a relatively short half-life
+
+Treating Depression
+
+May be ineffective because...
+
+Pharmacological
+Interventions
+
+(6–8 hours), if dosed only once daily at night, particularly
+at low doses, it can improve sleep without having daytime
+effects. The utility of trazodone in treating secondary
+behavioral symptoms in patients with dementia may lie
+more in its ability to improve sleep rather than depression.
+Trazodone may also improve other behavioral symptoms
+of dementia especially in FTD but not particularly in AD.
+Vortioxetine (Chapter 7 and Figure 7-49) in particular
+may improve cognitive function in depression, especially
+processing speed (Figure 7-50) as can some SNRIs like
+duloxetine (Figure 7-29) in the elderly with depression.
+However, these pro-cognitive effects have not been
+demonstrated specifically in dementia patients who have
+depression.
+Pseudobulbar Affect (Pathological Laughing and
+Crying)
+
+Pseudobulbar affect (PBA) is an emotional expression
+disorder, characterized by uncontrolled crying or
+laughing that may be disproportionate or inappropriate
+to the social context. It is often mistaken for a mood
+disorder but is actually a disorder of the expression of
+affect, which is inconsistent or disproportionate to mood.
+PBA can accompany a variety of neurodegenerative
+diseases such as AD and various other dementias,
+
+Figure 12-50 Treating depression in
+patients with dementia. The treatment
+of depression in elderly patients with
+dementia may be complicated by the
+fact that the neural circuits acted on
+by pharmacological interventions for
+depression may have degenerated.
+Although psychosocial interventions
+are an appropriate option, they may be
+difficult to implement for cognitively
+impaired individuals.
+
+acting on neural circuits which
+may be degenerated
+
+12
+
+Psychosocial
+Interventions
+
+striving to change cognitive
+functioning in cognitively
+impaired individual
+
+535
+
+
+
+
+<<<PAGE 603>>>
+
+Suggested Reading and Selected References
+
+BALANCE investigators and collaborators, et al. (2010)
+Lithium plus valproate combination therapy versus
+monotherapy for relapse prevention in bipolar I disorder
+(BALANCE): a randomized open-label trial. Lancet 375:
+385–95.
+Baldessarini RJ, Tondo L, Vazquez GH (2019) Pharmacological
+treatment of adult bipolar disorder. Mol Psychiatry 24:
+198–217.
+Bang-Andersen B, Ruhland T, Jorgensen M, et al. (2011)
+Discovery of 1-[2-(2,4-dimethylphenylsulfanyl)phenyl]
+piperazine (LuAA21004): a novel multimodal compound
+for the treatment of major depressive disorder. J Med Chem
+54: 3206–21.
+Carhart-Harris RL, Bolstridge M, Day CMG, et al.
+(2018) Psilocybin with psychological support for
+treatment-resistant depression: six month follow up.
+Psychopharmacology 235: 399–408.
+Carhart-Harris RL, Bolstridge M, Rucker J, et al. (2016)
+Psilocybin with psychological support for treatment
+resistant depression: an open label feasibility study. Lancet
+Psychiatry 3: 619–27.
+Carhart-Harris RL, Goodwin GM (2017) The therapeutic
+potential of psychedelic drugs: past, present and future,
+Neuropsychopharmacology 42: 2105–13.
+Carhart-Harris RL, Leech R, Williams TM, et al. (2012)
+Implications for psychedelic assisted psychotherapy:
+a functional magnetic resonance imaging study
+with psilocybin. Br J Psychiatry: doi:10.1192/bjp.
+bp.111.103309.
+Chiu CT, Chuan DM (2010) Molecular actions and therapeutic
+potential of lithium in preclinical and clinical studies of
+CNS disorders. Pharmacol Ther 128: 281–304.
+Cipriani A, Pretty H, Hawton K, Geddes JR (2005) Lithium in
+the prevention of suicidal behavior and all-cause mortality
+in patients with mood disorders: a systematic review of
+randomized trials. Am J Psychiatry 162: 1805–19.
+Frye MA, Grunze H, Suppes T, et al. (2007) A placebocontrolled evaluation of adjunctive modafinil in the
+treatment of bipolar depression. Am J Psychiatry 164:
+1242–9.
+Grady M, Stahl SM (2012) Practical guide for prescribing
+MAOI: Debunking myths and removing barriers. CNS
+Spectrums 17: 2–10.
+Mork A, Pehrson A, Brennum LT, et al. (2012)
+Pharmacological effects of Lu AA21004: a novel
+multimodal compound for the treatment of major
+depressive disorder. J Pharmacol Exp Ther 340: 666–75.
+Pasquali L, Busceti CL, Fulceri F, Paparelli A, Fornai F (2010)
+Intracellular pathways underlying the effects of lithium.
+Behav Pharmacol 21: 473–92.
+
+Perlis RH, Ostacher MJ, Goldberg JF, et al. (2010) Transition
+to mania during treatment of bipolar depression.
+Neuropsychopharmacology 35: 2545–52.
+Pompili M, Vazquez GH, Forte A, Morrissette DA, Stahl
+SM (2020) Pharmacological treatment of mixed
+states. Psychiatr Clin N Am 43: 157–86. doi:10.1016/j.
+psc.2019.10.015
+Schwartz TL, Siddiqui US, Stahl SM (2011) Vilazodone: a
+brief pharmacologic and clinical review of the novel SPARI
+(serotonin partial agonist and reuptake inhibitor). Ther
+Adv Psychopharmacol 1: 81–7.
+Settimo L, Taylor D (2018) Evaluating the dose-dependent
+mechanism of action of trazodone by estimation of
+occupancies for different brain neurotransmitter targets. J
+Psychopharmacol 32: 960104.
+Stahl SM (2009) Mechanism of action of trazodone: a
+multifunctional drug. CNS Spectrums 14: 536–46.
+Stahl SM (2012) Psychotherapy as an epigenetic “drug”:
+psychiatric therapeutics target symptoms linked to
+malfunctioning brain circuits with psychotherapy as well
+as with drugs. J Clin Pharm Ther 37: 249–53.
+Stahl SM (2014) Mechanism of action of the SPARI
+vilazodone: (serotonin partial agonist reuptake inhibitor).
+CNS Spectrums 19: 105–9.
+Stahl SM (2014) Mechanism of action of agomelatine:
+a novel antidepressant exploiting synergy between
+monoaminergic and melatonergic properties. CNS
+Spectrums 19: 207–12.
+Stahl SM (2015) Modes and nodes explain the mechanism
+of action of vortioxetine, a multimodal agent (MMA):
+enhancing serotonin release by combining serotonin
+(5HT) transporter inhibition with actions at 5HT receptors
+(5HT1A, 5HT1B, 5HT1D, 5HT7 receptors). CNS Spectrums
+20: 93–7.
+Stahl SM (2015) Modes and nodes explain the mechanism of
+action of vortioxetine, multimodal agent (MMA): actions
+at serotonin receptors may enhance downstream release of
+four pro-cognitive neurotransmitters. CNS Spectrums 20:
+515–19.
+Stahl SM, Fava M, Trivedi M (2010) Agomelatine in the
+treatment of major depressive disorder: an 8 week,
+multicenter, randomized, placebo-controlled trial. J Clin
+Psychiatry 71: 616–26.
+Undurraga J, Baldessarini RJ, Valenti M, et al. (2012) Bipolar
+depression: clinical correlates of receiving antidepressants.
+J Affect Disord 139: 89–93.
+Zajecka J, Schatzberg A, Stahl SM, et al. (2010) Efficacy and
+safety of agomelatine in the treatment of major depressive
+disorder: a multicenter, randomized, double-blind, placebocontrolled trial. J Clin Psychopharmacol 30: 135–44.
+
+587
+
+

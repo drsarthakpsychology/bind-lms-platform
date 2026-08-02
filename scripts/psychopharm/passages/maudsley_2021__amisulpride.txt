@@ -1,0 +1,1236 @@
+<<<PAGE 33>>>
+
+CHAPTER 1
+
+12  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Licensed maximum doses
+The following table lists the licensed maximum doses of antipsychotics according to the
+EMA labelling as of February 2021.
+Drug
+
+Maximum dose
+
+FGAs – oral
+Chlorpromazine
+
+1000mg/day
+
+Flupentixol
+
+18mg/day
+
+Haloperidol
+
+20mg/day
+
+Levomepromazine
+
+1200mg/day
+
+Pericyazine
+
+300mg/day
+
+Perphenazine
+
+24mg/day (64mg/day hospitalised patients)
+
+Pimozide
+
+20mg/day
+
+Sulpiride
+
+2400mg/day
+
+Trifluoperazine
+
+20mg/day
+
+Zuclopenthixol
+
+150mg/day
+
+SGAs – oral
+Amisulpride
+
+1200mg/day
+
+Aripiprazole
+
+30mg/day
+
+Asenapine
+
+20mg/day (sublingual)
+
+Cariprazine
+
+6mg/day
+
+Clozapine
+
+900mg/day
+
+Lurasidone
+
+160mg (HCl)/148mg (base)/day
+
+Olanzapine
+
+20mg/day
+
+Paliperidone
+
+12mg/day
+
+Quetiapine
+
+750mg/day schizophrenia (800mg/day for MR preparation)
+800mg/day bipolar disorder
+
+Risperidone
+
+16mg/day
+
+Sertindole
+
+24mg/day
+
+Long-acting injections
+Aripiprazole depot
+
+400mg/month
+
+Flupentixol depot
+
+400mg/week
+
+Fluphenazine depot
+
+100mg every 14–35 days
+
+Haloperidol depot
+
+300mg every 4 weeks
+
+Paliperidone depot
+1-monthly
+
+150mg/month
+
+
+
+
+<<<PAGE 36>>>
+
+Table 1.3 Second-generation antipsychotics – approximate equivalent doses3–10
+Drug
+
+Approximate equivalent dose
+
+Amisulpride
+
+400mg
+
+Aripiprazole
+
+15mg
+
+Asenapine
+
+10mg
+
+Blonanserin
+
+~
+
+Brexpiprazole
+
+2mg
+
+Cariprazine
+
+1.5mg
+
+Clotiapine
+
+100mg
+
+Iloperidone
+
+12mg
+
+Lumateperone
+
+~
+
+Lurasidone
+
+80mg (74mg base)
+
+Melperone
+
+300mg
+
+Molindone
+
+50mg
+
+Olanzapine
+
+10mg
+
+Paliperidone LAI
+
+100mg/month
+
+Pimavanserin
+
+~
+
+Quetiapine
+
+400mg
+
+Risperidone oral
+
+4mg
+
+Risperidone LAI
+
+50mg/2 weeks
+
+Risperidone RBP-7000
+
+120mg/month
+
+Ziprasidone
+
+80mg
+
+~Unknown equivalence at time of writing.
+
+References
+1. Foster P. Neuroleptic equivalence. Pharm J 1989; 243:431–432.
+2. Atkins M, et al. Chlorpromazine equivalents: a consensus of opinion for both clinical and research implications. Psychiatric Bull 1997;
+21:224–226.
+3. Patel MX, et al. How to compare doses of different antipsychotics: a systematic review of methods. Schizophr Res 2013; 149:141–148.
+4. Gardner DM, et al. International consensus study of antipsychotic dosing. Am J Psychiatry 2010; 167:686–693.
+5. Leucht S, et al. Dose equivalents for antipsychotic drugs: the ddd method. Schizophr Bull 2016; 42 Suppl 1:S90–S94.
+6. Rothe PH, et al. Dose equivalents for second generation long-acting injectable antipsychotics: the minimum effective dose method. Schizophr
+Res 2018; 193:23–28.
+7. Leucht S, et al. Dose equivalents for second-generation antipsychotics: the minimum effective dose method. Schizophr Bull 2014;
+40:314–326.
+8. Leucht S, et al. Dose equivalents for second-generation antipsychotic drugs: the classical mean dose method. Schizophr Bull 2015;
+41:1397–1402.
+9. Woods SW. Chlorpromazine equivalent doses for the newer atypical antipsychotics. J Clin Psychiatry 2003; 64:663–667.
+10. Leucht S, et al. Dose-response meta-analysis of antipsychotic drugs for acute schizophrenia. Am J Psychiatry 2020; 177:342–353.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  15
+
+
+
+
+<<<PAGE 144>>>
+
+Antipsychotic-induced weight gain
+Weight gain, a cardiometabolic risk factor, is a common side effect of antipsychotic
+medication.1 The mechanisms underlying antipsychotic-induced weight gain are not well
+understood,2 although factors such as 5HT2C antagonism, H1 antagonism, D2 antagonism, and increased serum leptin (leading to leptin desensitisation)3–5 are commonly
+implicated. There is no evidence that these medications exert any direct metabolic effect:
+weight gain seems to result from increased food intake and, in some cases, reduced
+energy expenditure.6,7 The risk of weight gain appears to be related to clinical response8,9
+(although the association may be too small to be clinically important10), which may have
+a genetic basis.11 Weight gain may be more pronounced in antipsychotic-naïve patients
+and during the early stages of the treatment of psychotic illness,12–14 and women may be
+at greater risk than men.15,16
+Almost all available antipsychotic medications have been associated with weight
+gain,12 although the mean gain in body weight varies substantially between the medications. There is also marked inter-individual variation among those treated, with some
+losing weight, some gaining no weight and some gaining a great deal of weight. Thus,
+knowledge of the mean increase in weight reported for a particular medication may not
+be a helpful predictor of how much weight an individual might gain. Assessment of the
+relative liability for weight gain of different antipsychotic medications is based largely
+on short term studies. Notwithstanding these limitations, the results of indirect and
+direct meta-analyses suggest that these medications can be clustered into three groups
+based on their relative risk of weight gain17 (see Table 1.17).
+Table 1.17 Antipsychotic-induced weight gain18–25
+Drug
+
+Risk/extent of weight gain
+
+Clozapine
+
+High
+
+Olanzapine
+Chlorpromazine
+
+Moderate
+
+Iloperidone
+Sertindole
+Quetiapine
+Risperidone
+Paliperidone
+Amisulpride
+Asenapine
+Brexpiprazole
+Aripiprazole
+Cariprazine
+Haloperidol
+Lumateperone
+Lurasidone
+Sulpiride
+Trifluoperazine
+Ziprasidone
+
+Low
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  123
+
+
+
+
+<<<PAGE 189>>>
+
+CHAPTER 1
+
+168  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Hyperprolactinaemia
+Dopamine inhibits prolactin release, and so dopamine antagonists can be expected to
+increase prolactin plasma levels. The degree of prolactin elevation is probably doserelated,1 and for most antipsychotic medications the threshold activity (D2 occupancy)
+for increased prolactin is very close to that of therapeutic efficacy.2 Genetic differences
+may also play a part.3 Table 1.29 groups individual antipsychotics according to their
+effect on prolactin concentrations.
+
+Table 1.29 Effects of antipsychotic medication on prolactin concentration4–11
+Prolactin-sparing (prolactin
+increase very rare)
+
+Prolactin–elevating (low risk
+minor changes only)
+
+Prolactin-elevating (high risk;
+major changes)
+
+Aripiprazole
+
+Lurasidone
+
+Amisulpride
+
+Asenapine
+
+Olanzapine
+
+Paliperidone
+
+Brexpiprazole
+
+Ziprasidone
+
+Risperidone
+
+Cariprazine
+
+Sulpiride
+
+Clozapine
+
+FGAs
+
+Iloperidone
+Lumateperone
+Pimavanserin
+Quetiapine
+
+Hyperprolactinaemia is often superficially asymptomatic (i.e. the patient does not
+spontaneously report problems), and there is some evidence that hyperprolactinaemia
+does not affect subjective quality of life.12 Nonetheless, persistent elevation of plasma
+prolactin is associated with suppression of the hypothalamic-pituitary-gonadal axis.13
+Symptoms of this include sexual dysfunction14 (but note that other pharmacological
+activities also give rise to sexual dysfunction15), menstrual disturbances,4,16 breast
+growth and galactorrhoea,16 and may include delusions of pregnancy.17 Long-term
+adverse consequences are reductions in bone mineral density,18,19 and a possible increase
+in the risk of breast cancer.20
+Prolactin can also be raised because of stress, pregnancy and lactation, seizures, renal
+impairment and other medical conditions,7,21,22 including prolactinoma. When measuring prolactin, the sample should be taken early in the morning and stress during
+venepuncture should be minimised.22
+
+
+
+
+<<<PAGE 195>>>
+
+CHAPTER 1
+
+174  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 1.31 Sexual adverse effects of antipsychotics
+Drug
+
+Type of problem
+
+Aripiprazole
+
+■■
+
+No effect on prolactin or α1 receptors. No reported adverse effects on sexual function.
+Improves sexual function in those switched from other antipsychotics.27,29,34,35 Case
+reports of aripiprazole-induced hypersexuality have been published36,37
+
+■■
+
+Does not appear to significantly affect prolactin levels38
+No reported cases of sexual dysfunction
+
+Asenapine
+
+■■
+
+Brexpiprazole
+
+■■
+
+Cariprazine
+
+■■
+
+Clozapine
+
+■■
+
+Similar mechanism of action to aripiprazole (5-HT1A agonist, 5-HT2A antagonist and
+partial D2 agonist)
+■■ Causes negligible increases in prolactin39
+■■ No problems with sexual dysfunction reported in clinical trials40
+Similar mechanism of action to aripiprazole (5-HT1A agonist, 5-HT2A antagonist and
+partial D2 agonist)
+■■ Not associated with hyperprolactinaemia41
+■■ No reported cases of sexual dysfunction
+■■
+
+Haloperidol
+
+■■
+■■
+
+Lurasidone
+
+■■
+■■
+
+Olanzapine
+
+■■
+
+Paliperidone
+
+■■
+
+Similar problems to the phenothiazines45 but anticholinergic effects reduced46
+Prevalence of sexual dysfunction reported to be up to 70%47
+Does not appear to significantly affect prolactin levels48
+No reported cases of sexual dysfunction49
+
+Possibly less sexual dysfunction than drugs such as haloperidol due to relative lack of
+prolactin-related effects45
+■■ Priapism reported rarely50,51
+■■ Prevalence of sexual dysfunction reported to be >50%47
+■■
+
+Phenothiazines
+
+Significant α1 adrenergic blockade and anticholinergic effects.42 No effect on prolactin43
+Probably fewer problems than with typical antipsychotics44
+
+Similar prolactin elevations to risperidone
+One small study52 and one case report53 showing reduction in sexual dysfunction following switching from risperidone oral or depot to paliperidone depot
+
+(e.g. chlorpromazine)
+
+Hyperprolactinaemia and anticholinergic effects. Reports of delayed orgasm at lower
+doses followed by normal orgasm but without ejaculation at higher doses.18
+■■ Priapism has been reported with thioridazine, risperidone and chlorpromazine (probably
+due to α1 blockade)46,54,55
+
+Quetiapine
+
+■■
+
+■■
+
+■■
+
+Risperidone
+
+No effect on serum prolactin56
+Possibly associated with low risk of sexual dysfunction,57–60 but studies are conflicting61,62
+
+Potent elevator of serum prolactin
+Less anticholinergic than some other antipsychotics (olanzapine, quetiapine)
+■■ Specific peripheral α adrenergic blockade leads to a moderately high reported incidence
+1
+of ejaculatory problems such as retrograde ejaculation63,64
+■■ Priapism reported rarely33
+■■ Prevalence of sexual dysfunction reported to be 60–70%47
+■■
+■■
+
+Sulpiride/
+amisulpride
+
+■■
+
+Potent elevators of serum prolactin22 but note that sulpiride (as the main FGA prescribed
+in the study) was not associated with greater sexual dysfunction than SGAs (with variable
+ability to raise prolactin) in the CUtLASS-1 study20
+
+Thioxanthenes
+(e.g. flupentixol)
+
+■■
+
+Arousal problems and anorgasmia65
+
+
+
+
+<<<PAGE 204>>>
+
+Switching antipsychotics
+Summary of recommendations for switching antipsychotics because of poor
+tolerability.
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Acute EPS
+Dystonia, parkinsonism, bradykinesia
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Olanzapine
+Quetiapine
+
+Clozapine
+Lurasidone
+Ziprasidone
+
+Akathisia2,9,10
+
+Olanzapine
+Quetiapine
+
+Clozapine
+Brexpiprazole
+
+Dyslipidaemia7,8,11–16
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Asenapine
+Brexpiprazole
+Cariprazine
+
+Impaired glucose
+tolerance7,8,15,17–21
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Brexpiprazole
+Cariprazine
+Haloperidol
+
+Hyperprolactinaemia7,8,15,22–28
+
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+Olanzapine
+Ziprasidone
+
+Postural hypotension8,15,29
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Haloperidol
+Sulpiride
+Trifluoperazine
+
+QT prolongation27,30–37
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+Paliperidone
+
+Low dose monotherapy of any
+drug not formally contraindicated in QT prolongation
+(with ECG monitoring)
+
+Sedation7,8,27
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Risperidone
+Sulpiride
+
+Haloperidol
+Trifluoperazine
+Ziprasidone
+
+1–8
+
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  183
+
+
+
+
+<<<PAGE 205>>>
+
+CHAPTER 1
+
+184  The Maudsley® Prescribing Guidelines in Psychiatry
+
+(Continued )
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Sexual dysfuction8,38–44
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+
+Tardive dyskinesia45–49
+
+Clozapine
+
+Aripiprazole
+Olanzapine
+Quetiapine
+
+Weight gain16,35,37,50–57
+
+Amisulpride
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Haloperidol
+Lurasidone
+Ziprasidone
+
+Asenapine
+Haloperidol
+Trifluoperazine
+
+§There is evidence that both switching to and co-prescription of aripiprazole can be associated with reductions in
+body weight and plasma prolactin levels, better lipid profiles, and a decrease in plasma glucose levels.58–61
+
+Lumateperone and pimavanserin are not listed in the table because of their limited
+availability. Both drugs cause little or no EPSE or akathisia, have no effect on prolactin
+or blood pressure and cause minimal weight gain and metabolic disturbance.62,63
+Pimvanserin prolongs QT,64 whereas lumateperone seems to have no effect on the
+ECG.65
+
+References
+1. Stanniland C, et al. Tolerability of atypical antipsychotics. Drug Saf 2000; 22:195–214.
+2. Tarsy D, et al. Effects of newer antipsychotics on extrapyramidal function. CNS Drugs 2002; 16:23–45.
+3. Caroff SN, et al. Movement disorders associated with atypical antipsychotic drugs. J Clin Psychiatry 2002; 63 Suppl 4:12–19.
+4. Lemmens P, et al. A combined analysis of double-blind studies with risperidone vs. placebo and other antipsychotic agents: factors associated
+with extrapyramidal symptoms. Acta Psychiatr Scand 1999; 99:160–170.
+5. Taylor DM. Aripiprazole: a review of its pharmacology and clinical use. Int J Clin Pract 2003; 57:49–54.
+6. Meltzer HY, et al. Lurasidone in the treatment of schizophrenia: a randomized, double-blind, placebo- and olanzapine-controlled study. Am
+J Psychiatry 2011; 168:957–967.
+7. Garnock-Jones KP. Cariprazine: a review in schizophrenia. CNS Drugs 2017; 31:513–525.
+8. Garnock-Jones KP. Brexpiprazole: a review in schizophrenia. CNS Drugs 2016; 30:335–342.
+9. Buckley PF. Efficacy of quetiapine for the treatment of schizophrenia: a combined analysis of three placebo-controlled trials. Curr Med Res
+Opin 2004; 20:1357–1363.
+10. Pringsheim T, et al. The assessment and treatment of antipsychotic-induced akathisia. Can J Psychiatry 2018; 63:719–729.
+11. Rettenbacher MA, et al. Early changes of plasma lipids during treatment with atypical antipsychotics. Int Clin Psychopharmacol 2006;
+21:369–372.
+12. Ball MP, et al. Clozapine-induced hyperlipidemia resolved after switch to aripiprazole therapy. Ann Pharmacother 2005; 39:1570–1572.
+13. Chrzanowski WK, et al. Effectiveness of long-term aripiprazole therapy in patients with acutely relapsing or chronic, stable schizophrenia: a
+52-week, open-label comparison with olanzapine. Psychopharmacology 2006; 189:259–266.
+14. De Hert M, et al. A case series: evaluation of the metabolic safety of aripiprazole. Schizophr Bull 2007; 33:823–830.
+15. Citrome L, et al. Long-term safety and tolerability of lurasidone in schizophrenia: a 12-month, double-blind, active-controlled study. Int Clin
+Psychopharmacol 2012; 27:165–176.
+16. Kemp DE, et al. Weight change and metabolic effects of asenapine in patients with schizophrenia and bipolar disorder. J Clin Psychiatry 2014;
+75:238–245.
+
+
+
+
+<<<PAGE 216>>>
+
+Schizophrenia and related psychoses  195
+
+1. Taylor D, et al. A prescription survey of the use of atypical antipsychotics for hospital inpatients in the United Kingdom. Int J Psychiatry Clin
+Pract 2000; 4:41–46.
+2. Murphy B, et al. Maintenance doses for clozapine. Psychiatric Bull 1998; 22:12–14.
+3. Taylor D. Pharmacokinetic interactions involving clozapine. Br J Psychiatry 1997; 171:109–112.
+4. Lane HY, et al. Effects of gender and age on plasma levels of clozapine and its metabolites: analyzed by critical statistics. J Clin Psychiatry
+1999; 60:36–40.
+5. Taylor D, et al. The use of clozapine plasma levels in optimising therapy. Psychiatric Bull 1995; 19:753–755.
+6. Spina E, et al. Relationship between plasma concentrations of clozapine and norclozapine and therapeutic response in patients with schizophrenia resistant to conventional neuroleptics. Psychopharmacology 2000; 148:83–89.
+7. Perry PJ. Therapeutic drug monitoring of antipsychotics. Psychopharmacol Bull 2001; 35:19–29.
+8. Polcwiartek C, et al. The clinical potentials of adjunctive fluvoxamine to clozapine treatment: a systematic review. Psychopharmacology
+2016; 233:741–750.
+9. Watras M, et al. A therapeutic interaction between cimetidine and clozapine: case study and review of the literature. Ther Adv Psychopharmacol
+2013; 3:294–297.
+10. Gee S, et al. Optimising treatment of schizophrenia: the role of adjunctive fluvoxamine. Psychopharmacology 2016; 233:739–740.
+11. Barbui C, et al. Does the addition of a second antipsychotic drug improve clozapine treatment? Schizophr Bull 2009; 35:458–468.
+12. Paton C, et al. Augmentation with a second antipsychotic in patients with schizophrenia who partially respond to clozapine: a meta-analysis.
+J Clin Psychopharmacol 2007; 27:198–204.
+13. Taylor D, et al. Augmentation of clozapine with a second antipsychotic. A meta analysis. Acta Psychiatr Scand 2012; 125:15–24.
+14. Bartoli F, et al. Adjunctive second-generation antipsychotics for specific symptom domains of schizophrenia resistant to clozapine: a metaanalysis. J Psychiatr Res 2019; 108:24–33.
+15. Wagner E, et al. Clozapine combination and augmentation strategies in patients with schizophrenia –recommendations from an international
+expert survey among the Treatment Response and Resistance in Psychosis (TRRIP) working group. Schizophr Bull 2020; 46:1459–1470.
+16. Demjaha A, et al. Dopamine synthesis capacity in patients with treatment-resistant schizophrenia. Am J Psychiatry 2012; 169:1203–1210.
+17. Demjaha A, et al. Antipsychotic treatment resistance in schizophrenia associated with elevated glutamate levels but normal dopamine function. Biol Psychiatry 2014; 75:e11–e13.
+18. Fleischhacker WW, et al. Effects of adjunctive treatment with aripiprazole on body weight and clinical efficacy in schizophrenia patients
+treated with clozapine: a randomized, double-blind, placebo-controlled trial. Int J Neuropsychopharmacol 2010; 13:1115–1125.
+19. Correll CU, et al. Selective effects of individual antipsychotic cotreatments on cardiometabolic and hormonal risk status: results from a systematic review and meta-analysis. Schizophr Bull 2013; 39 (Suppl 1):S29–S30.
+20. Matthiasson P, et al. Relationship between dopamine D2 receptor occupancy and clinical response in amisulpride augmentation of clozapine
+non-response. J Psychopharm 2001; 15:S41.
+21. Munro J, et al. Amisulpride augmentation of clozapine: an open non-randomized study in patients with schizophrenia partially responsive to
+clozapine. Acta Psychiatr Scand 2004; 110:292–298.
+22. Zink M, et al. Combination of clozapine and amisulpride in treatment-resistant schizophrenia–case reports and review of the literature.
+Pharmacopsychiatry 2004; 37:26–31.
+23. Ziegenbein M, et al. Augmentation of clozapine with amisulpride in patients with treatment-resistant schizophrenia: an open clinical study.
+German J Psychiatry 2006; 9:17–21.
+24. Kampf P, et al. Augmentation of clozapine with amisulpride: a promising therapeutic approach to refractory schizophrenic symptoms.
+Pharmacopsychiatry 2005; 38:39–40.
+25. Assion HJ, et al. Amisulpride augmentation in patients with schizophrenia partially responsive or unresponsive to clozapine. A randomized,
+double-blind, placebo-controlled trial. Pharmacopsychiatry 2008; 41:24–28.
+26. Barnes TR, et al. Amisulpride augmentation in clozapine-unresponsive schizophrenia (AMICUS): a double-blind, placebo-controlled, randomised trial of clinical effectiveness and cost-effectiveness. Health Technol Assess 2017; 21:1–56.
+27. Barnes TRE, et al. Amisulpride augmentation of clozapine for treatment-refractory schizophrenia: a double-blind, placebo-controlled trial.
+Ther Adv Psychopharmacol 2018; 8:185–197.
+28. Croissant B, et al. Reduction of side effects by combining clozapine with amisulpride: case report and short review of clozapine-induced
+hypersalivation-a case report. Pharmacopsychiatry 2005; 38:38–39.
+29. Chang JS, et al. Aripiprazole augmentation in clozapine-treated patients with refractory schizophrenia: an 8-week, randomized, double-blind,
+placebo-controlled trial. J Clin Psychiatry 2008; 69:720–731.
+30. Muscatello MR, et al. Effect of aripiprazole augmentation of clozapine in schizophrenia: a double-blind, placebo-controlled study. Schizophr
+Res 2011; 127:93–99.
+31. Cipriani A, et al. Aripiprazole versus haloperidol in combination with clozapine for treatment-resistant schizophrenia: a 12-month, randomized, naturalistic trial. J Clin Psychopharmacol 2013; 33:533–537.
+32. Srisurapanont M, et al. Efficacy and safety of aripiprazole augmentation of clozapine in schizophrenia: a systematic review and meta-analysis
+of randomized-controlled trials. J Psychiatr Res 2015; 62:38–47.
+33. Balcioglu YH, et al. One plus one sometimes equals more than two: long-acting injectable aripiprazole adjunction in clozapine-resistant
+schizophrenia. Clin Neuropharmacol 2020; 43:166–168.
+34. Grimminck R, et al. Combination of clozapine with long-acting injectable antipsychotics in treatment-resistant schizophrenia: preliminary
+evidence from health care utilization indices. Prim Care Companion CNS Disord 2020; 22:19m02560.
+35. Rajarethinam R, et al. Augmentation of clozapine partial responders with conventional antipsychotics. Schizophr Res 2003; 60:97–98.
+
+CHAPTER 1
+
+References
+
+
+
+
+<<<PAGE 248>>>
+
+Clozapine-induced hypersalivation
+Clozapine is well known to be causally associated with hypersalivation (sialorrhoea)1
+with excess salivary pooling in the mouth and drooling, particularly at night. The problem tends to occur in the early stages of treatment and is probably dose-related.
+Hypersalivation has been found to be more common in those prescribed standard doses
+of clozapine rather than low dosage2 and to be associated with elevated plasma clozapine concentrations.3 Clinical observation suggests that hypersalivation reduces somewhat in severity over time (usually several months) but may persist. Clozapine-induced
+hypersalivation is socially embarrassing, has a negative impact on quality of life1 and,
+given that it has been implicated as a contributory factor in the development of aspiration pneumonia, could be potentially life-threatening.4–7 So treatment is a matter of
+some urgency.
+The pharmacological basis of clozapine-related hypersalivation remains unclear.8
+Suggested mechanisms include muscarinic M4 agonism, adrenergic α2 antagonism, and
+inhibition of the swallowing reflex.9,10 The last of these is supported by trials which
+suggest that saliva production is not increased in clozapine-treated patients,11,12 although
+at least one study has observed marked increases in salivary flow in the first three weeks
+of treatment.13
+Whatever the mechanism, medications that reduce saliva production might be
+expected to diminish the severity of clozapine-induced sialorrhoea. However, there are
+no medications licensed for this condition, and many of the relevant published studies
+have limitations that preclude any confident treatment recommendations.14 The evidence, such as it is, tends to favour anti-muscarinic agents, such as propantheline and
+diphenhydramine.15,16 Use of antimuscarinic agents should take account of the risk of
+compounding clozapine’s liability for serious, potentially life-threatening, gastrointestinal hypomotility.17,18 Table 1.40 describes putative pharmacological treatments that
+have been examined. Non-drug treatments may be used if appropriate – these include
+chewing gum during the day, elevating pillows and placing a towel on the pillow to
+prevent soaking.8
+
+Table 1.40 Clozapine-related hypersalivation – summary
+Treatment
+
+Comments
+
+Amisulpride
+100–400mg/day16,19,20
+
+Supported by a positive RCT compared with placebo, one other in
+which it was compared with moclobemide and numerous case
+studies.21–25 May allow dose reduction of clozapine
+
+Amitriptyline
+25–100mg/day26–28
+
+Limited literature support. Adverse effects may be troublesome.
+Worsens constipation
+
+Atropine
+given sublingually29–33
+or as solution (1mg/10ml) used as a
+mouthwash
+
+Limited literature support and benefit-risk uncertain. Rarely used.
+Problems with administration have been reported34
+
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  227
+
+
+
+
+<<<PAGE 669>>>
+
+648  The Maudsley® Prescribing Guidelines in Psychiatry
+
+It is recommended that all patients prescribed antipsychotics should have the following
+tests at baseline, at 3 months and annually:
+1. Blood pressure and pulse
+2. Weight (ideally also monitor monthly for the first 3 months)
+3. Blood tests
+a. fasting glucose or HbA1c
+b. urea and electrolytes (U&Es), including eGFR
+c. full blood count (FBC)
+d. lipids (if possible fasting)
+e. liver function tests (LFTs)
+f. prolactin levels
+4. ECG (repeat at between 4 weeks and 3 months or when clinically indicated)
+In-patients or physically frail patients may need more frequent physical health
+monitoring.
+■■ Review of the antipsychotic drug needs to be done at 4–6 weeks (maybe earlier for inpatients), then at 3 months and then every 6 months if physically stable and there are no
+adverse effects. Consider stopping the antipsychotic at each review, where appropriate.
+■■ It may sometimes be difficult to get the recommended investigations, for example due
+to high levels of patient agitation and resistance, or due to the urgency of the situation.
+In these cases, a risk benefit analysis should again be carried out, recognising that by not
+having the investigations, the risk of prescribing an antipsychotic is even higher and an
+antipsychotic should only be prescribed if the risks of not giving it are even higher still.
+■■
+
+CHAPTER 6
+
+Table 6.7 Reduction or discontinuation regimen for antipsychotic drugs in BPSD – a guide53
+Antipsychotic
+
+Usual dose range
+in dementia
+
+Suggested regimen for reduction/discontinuation
+(generally reduce over 2–4 weeks, ideally over 4 weeks if possible)
+
+Amisulpride
+
+25–50mg/day
+
+Reduce by 12.5–25mg every 1–2 weeks (depending on dose), then stop
+
+Aripiprazole
+
+5–15mg/day
+
+Reduce by 5mg every 1–2 weeks (depending on dose), then stop
+(if patient is on 5mg daily, reduce to 2.5mg for 2 weeks; however, note
+that tablets are not scored and liquid is expensive – contact local
+pharmacist for advice)
+
+Haloperidol
+
+Not recommended in older people with dementia (except in delirium)
+Reduce by 0.25–0.5mg every 1–2 weeks (depending on the dose), then stop
+
+Olanzapine
+
+2.5–10mg/day
+
+Reduce by 2.5mg every 1–2 weeks (depending on dose), then stop
+
+Quetiapine
+
+12.5–300mg/day
+
+For doses 12.5–100mg/day: reduce by 12.5–25mg every 1–2 weeks
+(depending on the dose) and then stop
+For doses >100mg to 300mg/day: reduce by 25–50mg every 1–2 weeks
+(depending on the dose), then stop
+If dose is 300mg/day, reduce to 150–200mg/day for 1 week, then by
+50mg per week
+
+Risperidone
+
+0.25–2mg/day
+
+Reduce by 0.25–0.5mg every 1–2 weeks (depending on dose), then stop
+
+For higher doses, reduce gradually over 4 weeks.
+NB: If serious adverse effects occur, stop antipsychotic drug immediately.
+
+
+
+
+<<<PAGE 680>>>
+
+Iloperidone
+
+No formal recommendations are available for dosing in older adults
+(Continued)
+
+The oral bioavailability of clozapine is about half that of the intramuscular injection
+E.g. 50mg daily of the IM injection is roughly equivalent to 100mg daily of the tablets/oral solution. After
+each injection has been given, the patient must be observed every 15 minutes for the first 2 hours to
+check for excess sedation
+NB: If IM lorazepam is required, leave at least ONE HOUR between administration of IM clozapine and IM
+lorazepam
+
+50mg daily13
+
+IM injection
+
+25–37.5mg daily13
+
+6.25mg daily13
+
+Parkinson’s related psychosis
+
+100mg daily11,12
+
+6.25–12.5mg daily11,12 increased
+by not more than 6.25–12.5mg
+once or twice a week11
+
+Schizophrenia
+
+Clozapine
+
+50–100mg daily11,12
+
+Dosage not established in older adults10
+
+15mg daily* (combined oral + IM)
+
+20mg mane*
+
+50mg daily8
+
+200mg daily7 (caution > 100mg
+daily)*
+
+400mg daily6 (caution > 200mg
+daily)*
+
+Cariprazine
+
+5.25–9.75mg*
+
+5–15mg daily*
+
+25–50mg daily8
+
+50–100mg daily* (increase in
+25mg steps)
+
+100–200mg daily*
+
+Dosage not established in older adults9
+
+5.25mg*
+
+Control of agitation (IM
+injection)
+
+25mg nocte8
+
+Agitation/psychosis in dementia
+Caution: QTc prolongation
+5mg mane*
+
+25–50mg daily*
+
+Late life psychosis
+
+Schizophrenia, mania (oral)
+
+50mg daily*
+
+Chronic schizophrenia
+
+Brexpiprazole
+
+Aripiprazole
+
+Amisulpride
+
+Antipsychotics
+
+
+
+
+<<<PAGE 856>>>
+
+Pharmacokinetics  835
+
+of sampling is known. Many anomalous results are the consequence of changes in
+sample timing.
+
+In psychiatry, target ranges for psychotropic drug concentrations should be treated
+with some caution. Establishing a range of concentrations associated with response is
+made difficult by the presence in trials of non-responders (who show no response whatever the blood concentration) and by the presence of placebo responders and spontaneous remitters (who respond at any blood concentration). Establishing a target range
+based on adverse effects is made difficult by the development of tolerance over time.
+Thus, most studies aimed at determining target ranges have as much ‘noise’ as ‘signal’
+and results ultimately represent broad approximations.
+Interestingly, drug concentrations associated with response in clinical practice
+show a fairly close correlation to published target ranges.3 The lower quartile (25th
+percentile) of drug concentrations is usually close to the lower end of the target
+range and the upper quartile (75th percentile) is around the value of, but usually
+less than, the upper limit. Broadly speaking, this means that around 25% of patients
+respond below the target range and up to 25% tolerate blood concentrations above
+the target range (Table 11.1).
+
+Table 11.1 Interpreting sample results for drugs with established target ranges
+Sample
+timing
+
+Time to steady
+state
+
+Comments
+
+200–320µg/L
+20–60µg/L (elderly)
+
+Trough
+
+3 days
+
+See text.
+
+Aripiprazole
+
+150–210µg/L
+
+Trough
+
+15–16 days
+
+See text.
+
+Carbamazepine4–6
+
+>7mg/L
+Bipolar disorder
+
+Trough
+
+2 weeks
+
+Carbamazepine induces its own
+metabolism. Time to steady state
+dependent on auto-induction.
+
+Clozapine
+
+350–600µg/L
+
+Trough
+
+2–3 days
+
+See text.
+
+Lamotrigine7–9
+
+Not established but
+suggest
+2.5–15mg/L
+
+Trough
+
+5 days
+Auto-induction
+is thought to
+occur, so time
+to steady state
+may be longer
+
+Some debate over utility of
+lamotrigine levels, especially in
+bipolar disorder. In treatment
+resistant unipolar depression,
+plasma levels of above 12.7µmol/L
+(3.3mg/L) are associated with
+response.10,11 Toxicity may be
+increased above 15mg/L but
+normally well tolerated.
+
+Drug
+
+Target range
+
+Amisulpride
+
+(Continued)
+
+CHAPTER 11
+
+A word about target ranges
+
+
+
+
+<<<PAGE 858>>>
+
+Pharmacokinetics  837
+
+Amisulpride plasma levels are closely related to dose with insufficient variation to make
+routine plasma level monitoring prudent. Higher levels observed in women25–27 seem to
+have little significant clinical implication for either therapeutic response or adverse
+effects. A (trough) threshold for clinical response has been suggested to be approximately 100µg/L28 and mean levels of 367µg/L27 have been noted in responders in individual studies. Adverse effects (notably EPS) have been observed at mean levels of
+336µg/L,25 377µg/L28 and 395µg/L.26 A plasma level threshold of below 320µg/L has
+been found to predict avoidance of EPS.28 One review29 has suggested an approximate
+range of 200–320µg/L for optimal clinical response and avoidance of adverse effects
+but a more recent consensus statement30 suggested a target range of 100–320µg/L.
+A dose of 200mg a day is sufficient to give a blood level of 100µg/L31 so this lower
+threshold is probably too low for a reliable therapeutic effect. In older patients with
+psychosis, studies suggest plasma concentrations of 20–60µg/L may give optimal D2
+occupancy and clinical response.32,33
+In practice, only a minority of treated patients have ‘therapeutic’ plasma levels (probably because of poor adherence34) so plasma monitoring may be of some benefit.
+However, amisulpride plasma level monitoring is rarely undertaken and few laboratories offer amisulpride assays. The dose–response relationship is sufficiently robust (in
+trials, at least) to obviate the need for plasma sampling within the licensed dose range
+(although note that in older patients doses of 50–100mg a day may be sufficient) and
+adverse effects are usually well managed by dose adjustment alone. Plasma level monitoring is best reserved for those in whom clinical response is poor, adherence is questioned or in whom drug interactions or physical illness may make adverse effect more
+likely.
+
+Aripiprazole
+Plasma level monitoring of aripiprazole is sometimes undertaken in practice. The dose–
+response relationship for aripiprazole is well established with a plateau in clinical
+response and D2 dopamine occupancy seen in doses above approximately 10mg/day.35
+Plasma levels of aripiprazole, its metabolite, and the total moiety (parent plus metabolite) strongly relate linearly to dose, making it possible to predict, with some certainty,
+an approximate plasma level for a given dose.36 Target plasma level ranges for optimal
+clinical response have been suggested as 146–254µg/L37 and 150–300µg/L,38 with
+adverse effects observed above 210µg/L.38 Inter-individual variation in aripiprazole
+plasma levels has been observed but not fully investigated, although gender appears to
+have little influence.39,40 Age, metabolic enzyme genotype and interacting medications
+seem likely causes of variation.38–41 A putative range between 150µg/L and 210µg/L36
+has been suggested as a target for patients taking aripiprazole and these are broadly the
+concentrations seen in patients receiving depot aripiprazole at 300mg and 400mg
+monthly.42 Some authorities suggest a lower threshold for clinical effect of 100µg/L30 –
+a plasma level usually afforded by an oral dose of 10mg a day.31,43
+
+CHAPTER 11
+
+Amisulpride
+
+
+
+
+<<<PAGE 864>>>
+
+21. Perucca E. Pharmacological and therapeutic properties of valproate. CNS Drugs 2002; 16: 695–714.
+22. Allen MH, et al. Linear relationship of valproate serum concentration to response and optimal serum levels for acute mania. Am J Psychiatry
+2006; 163:272–275.
+23. Bowden CL, et al. Relation of serum valproate concentration to response in mania. Am J Psychiatry 1996; 153:765–770.
+24. Vazquez M, et al. Hyperammonemia associated with valproic acid concentrations. BioMed Research International 2014; 2014:217–269.
+25. Muller MJ, et al. Amisulpride doses and plasma levels in different age groups of patients with schizophrenia or schizoaffective disorder.
+Journal of Psychopharmacology 2008; 23:278–286.
+26. Muller MJ, et al. Gender aspects in the clinical treatment of schizophrenic inpatients with amisulpride: a therapeutic drug monitoring study.
+Pharmacopsychiatry 2006; 39:41–46.
+27. Bergemann N, et al. Plasma amisulpride levels in schizophrenia or schizoaffective disorder. Eur Neuropsychopharmacol 2004;
+14:245–250.
+28. Muller MJ, et al. Therapeutic drug monitoring for optimizing amisulpride therapy in patients with schizophrenia. J Psychiatr Res 2007;
+41:673–679.
+29. Sparshatt A, et al. Amisulpride - dose, plasma concentration, occupancy and response: implications for therapeutic drug monitoring. Acta
+Psychiatr Scand 2009; 120:416–428.
+30. Schoretsanitis G, et al. TDM in psychiatry and neurology: A comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+31. Jönsson AK, et al. A compilation of serum concentrations of 12 antipsychotic drugs in a therapeutic drug monitoring setting. Ther Drug
+Monit 2019; 41:348–356.
+32. Reeves S, et al. Therapeutic window of dopamine D2/3 receptor occupancy to treat psychosis in Alzheimer’s disease. Brain 2017;
+140:1117–1127.
+33. Reeves S, et al. Therapeutic D2/3 receptor occupancies and response with low amisulpride blood concentrations in very late-onset schizophrenia-like psychosis (VLOSLP). Int J Geriatr Psychiatry 2018; 33:396–404.
+34. Bowskill SV, et al. Plasma amisulpride in relation to prescribed dose, clozapine augmentation, and other factors: data from a therapeutic
+drug monitoring service, 2002–2010. Hum Psychopharmacol 2012; 27:507–513.
+35. Mace S, et al. Aripiprazole: dose–response relationship in schizophrenia and schizoaffective disorder. CNS Drugs 2008; 23:773–780.
+36. Sparshatt A, et al. A systematic review of aripiprazole – dose, plasma concentration, receptor occupancy and response: implications for
+therapeutic drug monitoring. J Clin Psychiatry 2010; 71:1447–1456.
+37. Kirschbaum KM, et al. Therapeutic monitoring of aripiprazole by HPLC with column-switching and spectrophotometric detection. Clin
+Chem 2005; 51:1718–1721.
+38. Kirschbaum KM, et al. Serum levels of aripiprazole and dehydroaripiprazole, clinical response and side effects. World J Biol Psychiatry
+2008; 9:212–218.
+39. Molden E, et al. Pharmacokinetic variability of aripiprazole and the active metabolite dehydroaripiprazole in psychiatric patients. Ther
+Drug Monit 2006; 28:744–749.
+40. Bachmann CJ, et al. Large variability of aripiprazole and dehydroaripiprazole serum concentrations in adolescent patients with schizophrenia. Ther Drug Monit 2008; 30:462–466.
+41. Hendset M, et al. Impact of the CYP2D6 genotype on steady-state serum concentrations of aripiprazole and dehydroaripiprazole. Eur J Clin
+Pharmacol 2007; 63:1147–1151.
+42. Mallikaarjun S, et al. Pharmacokinetics, tolerability and safety of aripiprazole once-monthly in adult schizophrenia: an open-label, parallelarm, multiple-dose study. Schizophr Res 2013; 150:281–288.
+43. Korell J, et al. Determination of plasma concentration reference ranges for oral aripiprazole, olanzapine, and quetiapine. Eur J Clin
+Pharmacol 2018; 74:593–599.
+44. Haring C, et al. Influence of patient-related variables on clozapine plasma levels. Am J Psychiatry 1990; 147:1471–1475.
+45. Haring C, et al. Dose-related plasma levels of clozapine: influence of smoking behaviour, sex and age. Psychopharmacology 1989; 99
+Suppl:S38–S40.
+46. Taylor D. Pharmacokinetic interactions involving clozapine. Br J Psychiatry 1997; 171: 109–112.
+47. Ng CH, et al. An inter-ethnic comparison study of clozapine dosage, clinical response and plasma levels. Int Clin Psychopharmacol 2005;
+20:163–168.
+48. Ruan CJ, et al. Clozapine metabolism in East Asians and Caucasians: a pilot exploration of the prevalence of poor metabolizers and a systematic review. J Clin Psychopharmacol 2019; 39:135–144.
+49. de Leon J, et al. Do Asian patients require only half of the clozapine dose prescribed for Caucasians? A critical overview. Indian J Psychol
+Med 2020; 42:4–10.
+50. Suhas S, et al. Do Indian patients with schizophrenia need half the recommended clozapine dose to achieve therapeutic serum level? An
+exploratory study. Schizophr Res 2020; 222:195-201.
+51. Bhattacharya R, et al. Clozapine prescribing: comparison of clozapine dosage and plasma levels between White British and Bangladeshi
+patients. BJPsych Bulletin 2021; 45:22–27.
+52. Ruan CJ, et al. Exploring the prevalence of clozapine phenotypic poor metabolizers in 4 Asian samples: they ranged between 2% and 13. J
+Clin Psychopharmacol 2019; 39:644–648.
+53. de Leon J, et al. Using therapeutic drug monitoring to personalize clozapine dosing in Asians. Asia-Pacific Psychiatry 2020; 12:e12384.
+54. Rostami-Hodjegan A, et al. Influence of dose, cigarette smoking, age, sex, and metabolic activity on plasma clozapine concentrations: a
+predictive model and nomograms to aid clozapine dose adjustment and to assess compliance in individual patients. J Clin Psychopharmacol
+2004; 24:70–78.
+
+CHAPTER 11
+
+Pharmacokinetics  843
+
+

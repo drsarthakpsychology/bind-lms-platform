@@ -1,0 +1,1286 @@
+<<<PAGE 312>>>
+
+Bipolar disorder  291
+
+Drug/regime
+
+Comments
+
+Aripiprazole96–99
+
+Limited support from open studies as add-on treatment. RCT negative. Possibly not
+effective.95
+
+Carbamazepine1,13,100
+
+Occasionally recommended but database is poor and effect modest. May have
+useful activity when added to other mood stabilisers.
+
+Gabapentin1,101,102
+
+Open studies suggest modest effect when added to mood stabilisers or
+antipsychotics. Doses average around 1750mg/day. Anxiolytic effect may account
+for apparent effect in bipolar depression
+
+Inositol103
+
+Small, randomised, pilot study suggests that 12g/day inositol is effective in bipolar
+depression
+
+Mifepristone104,105
+
+Some evidence of mood-elevating properties in bipolar depression although this
+was not replicated in a larger trial. Improved cognitive function in both trials. Dose
+used was 600mg/day.
+
+Modafinil106
+
+Meta-analysis of five studies of modafinil/armodafinil suggests robust benefit on
+response and remission with good tolerability and no evidence of increased risk of
+switching.
+
+Omega-3 fatty acids107,108
+
+One positive RCT (1g/2g a day) and one negative (6g a day)
+
+statistical significance.98 Another analysis of trials not involving antidepressants109
+(7307 participants) found a statistical advantage over placebo for olanzapine + fluoxetine, valproate, quetiapine, lurasidone, olanzapine, aripiprazole and carbamazepine (in
+order of effect size, highest first).
+A 2014 network meta-analysis of 29 studies included 8331 subjects.110 Overall olanzapine + fluoxetine, lurasidone, olanzapine, valproate, SSRIs and quetiapine were ranked highest in terms of effect size and response with olanzapine + fluoxetine ranked first for both.
+The most recent network meta-analysis included 11,448 participants in 50 studies.111 Drugs
+found to be more effective than placebo were olanzapine + fluoxetine, olanzapine, valproate, cariprazine, lamotrigine, lurasidone and quetiapine. Interestingly, imipramine and
+fluoxetine were also more effective than placebo (but with wide confidence intervals).
+
+Summary of drug choice
+The combination of olanzapine + fluoxetine is probably the most effective treatment
+available for bipolar depression but its use is constrained by the well known adverse
+effect profile of olanzapine. SSRIs other than fluoxetine may be effective but should
+probably be avoided unless clear individual benefit is obvious.53 Alternative first-line
+choices are quetiapine, olanzapine, lurasidone, lamotrigine and valproate. These drugs
+differ substantially in adverse effect profile, tolerability and cost, each of which needs
+to be considered when prescribing for an individual. Lithium is also effective but supporting evidence is relatively weak. Second-line drugs include ketamine and, increasingly, modafinil. Aripiprazole, risperidone, ziprasidone, tricyclics (with the exception of
+imipramine) and MAOIs (with the exception of tranylcypromine) are probably not
+effective and should not be used routinely.110
+
+CHAPTER 2
+
+Table 2.11 Other possible treatments – seek specialist advice before using
+
+
+
+
+<<<PAGE 346>>>
+
+Depression and anxiety disorders  325
+
+1. Stryjer R, et al. Amantadine as augmentation therapy in the management of treatment-resistant depression. Int Clin Psychopharmacol 2003;
+18:93–96.
+2. Santos RGD, et al. Long-term effects of ayahuasca in patients with recurrent depression: a 5-year qualitative follow-up. Arch Clin Psychiatry
+2018; 45:22–24.
+3. Palhano-Fontes F, et al. Rapid antidepressant effects of the psychedelic ayahuasca in treatment-resistant depression: a randomized placebocontrolled trial. Psychol Med 2019; 49:655–663.
+4. Stanciu CN, et al. Use of buprenorphine in treatment of refractory depression-A review of current literature. Asian J Psychiatr 2017;
+26:94–98.
+5. Takahashi H, et al. Addition of a dopamine agonist, cabergoline, to a serotonin-noradrenalin reuptake inhibitor, milnacipran as a therapeutic
+option in the treatment of refractory depression: two case reports. Clin Neuropharmacol 2003; 26:230–232.
+6. Heresco-Levy U, et al. A randomized add-on trial of high-dose D-cycloserine for treatment-resistant depression. Int J Neuropsychopharmacol
+2013; 16:501–506.
+7. Dinan TG, et al. Dexamethasone augmentation in treatment-resistant depression. Acta Psychiatr Scand 1997; 95:58–61.
+8. Bodani M, et al. The use of dexamethasone in elderly patients with antidepressant-resistant depressive illness. J Psychopharmacology 1999;
+13:196–197.
+9. Murrough JW, et al. Dextromethorphan/quinidine pharmacotherapy in patients with treatment resistant depression: a proof of concept clinical trial. J Affect Disord 2017; 218:277–283.
+10. Kelly TF, et al. The utility of the combination of dextromethorphan and quinidine in the treatment of bipolar II and bipolar NOS. J Affect
+Disord 2014; 167:333–335.
+11. Nofziger JL, et al. Evaluation of dextromethorphan with select antidepressant therapy for the treatment of depression in the acute care psychiatric setting. Ment Health Clin 2019; 9:76–81.
+12. Firth J, et al. The efficacy and safety of nutrient supplements in the treatment of mental disorders: a meta-review of meta-analyses of randomized controlled trials. World Psychiatry 2019; 18:308–324.
+13. Roberts E, et al. Caveat emptor: folate in unipolar depressive illness, a systematic review and meta-analysis. J Psychopharmacology 2018;
+32:377–384.
+14. Abou-Saleh MT, et al. Folic acid and the treatment of depression. J Psychosom Res 2006; 61:285–287.
+15. Drevets WC, et al. Antidepressant effects of the muscarinic cholinergic receptor antagonist scopolamine: a review. Biol Psychiatry 2013;
+73:1156–1163.
+16. Wolkowitz OM, et al. Antiglucocorticoid treatment of depression: double-blind ketoconazole. Biol Psychiatry 1999; 45:1070–1074.
+17. White K, et al. The combined use of MAOIs and tricyclics. J Clin Psychiatry 1984; 45:67–69.
+18. Kennedy N, et al. Treatment and response in refractory depression: results from a specialist affective disorders service. J Affect Disord 2004;
+81:49–53.
+19. Connolly KR, et al. If at first you don’t succeed: a review of the evidence for antidepressant augmentation, combination and switching strategies. Drugs 2011; 71:43–64.
+20. George TP, et al. Nicotinic antagonist augmentation of selective serotonin reuptake inhibitor-refractory major depressive disorder: a preliminary study. J Clin Psychopharmacol 2008; 28:340–344.
+21. Bacher I, et al. Mecamylamine – a nicotinic acetylcholine receptor antagonist with potential for the treatment of neuropsychiatric disorders.
+Expert Opin Pharmacother 2009; 10:2709–2721.
+22. Reis DJ, et al. The antidepressant impact of minocycline in rodents: a systematic review and meta-analysis. Sci Rep 2019; 9:261.
+23. Zazula R, et al. Minocycline as adjunctive treatment for major depressive disorder: pooled data from two randomized controlled trials. Aust
+N Z J Psychiatry 2020; 4867420965697.
+24. Strawbridge R, et al. Augmentation therapies for treatment-resistant depression: systematic review and meta-analysis. Br J Psychiatry 2019;
+214:42–51.
+25. Husain MI, et al. Minocycline and celecoxib as adjunctive treatments for bipolar depression: a multicentre, factorial design randomised
+controlled trial. Lancet Psychiatry 2020; 7:515–527.
+26. DeBattista C, et al. A prospective trial of modafinil as an adjunctive treatment of major depression. J Clin Psychopharmacol 2004;
+24:87–90.
+27. Ninan PT, et al. Adjunctive modafinil at initiation of treatment with a selective serotonin reuptake inhibitor enhances the degree and onset of
+therapeutic effects in patients with major depressive disorder and fatigue. J Clin Psychiatry 2004; 65:414–420.
+28. Menza MA, et al. Modafinil augmentation of antidepressant treatment in depression. J Clin Psychiatry 2000; 61:378–381.
+29. Taneja I, et al. A randomized, double-blind, crossover trial of modafinil on mood. J Clin Psychopharmacol 2007; 27:76–78.
+30. Kleeblatt J, et al. Efficacy of off-label augmentation in unipolar depression: a systematic review of the evidence. Eur Neuropsychopharmacol
+2017; 27:423–441.
+31. Pettinati HM, Ph.D., et al. A double-blind, placebo-controlled trial combining sertraline and naltrexone for treating co-occurring depression
+and alcohol dependence. Am J Psychiatry 2010; 167:668–675.
+32. Browne CA, et al. Novel targets to treat depression: opioid-based therapeutics. Harv Rev Psychiatry 2020; 28:40–59.
+33. Feighner JP, et al. Clinical effect of nemifitide, a novel pentapeptide antidepressant, in the treatment of severely depressed refractory patients.
+Int Clin Psychopharmacol 2008; 23:29–35.
+34. Nierenberg AA, et al. Nortriptyline for treatment-resistant depression. J Clin Psychiatry 2003; 64:35–39.
+
+CHAPTER 3
+
+References
+
+
+
+
+<<<PAGE 378>>>
+
+Depression and anxiety disorders  357
+
+Psychostimulants reduce fatigue, promote wakefulness and are mood-elevating (as distinct from antidepressant). Amfetamines have been used as treatments for depression
+since the 1930s,1 and more recently modafinil has been evaluated as an adjunct to
+standard antidepressants.2 Amfetamines are now rarely used in depression because of
+their propensity for the development of tolerance and dependence. Prolonged use of
+high doses is associated with paranoid psychosis.3 Methylphenidate is now more widely
+used but may have similar shortcomings. Modafinil seems not to induce tolerance,
+dependence or psychosis but lacks the marked euphoric effects of amfetamines.
+Armodafinil, the longer acting isomer of modafinil, is available in some countries.
+Psychostimulants differ importantly from standard antidepressants in that their
+mood-elevating effects are usually seen within a few hours, but their antidepressant
+action may be short-lived. Amfetamines and methylphenidate may thus be useful where
+a prompt effect is required and where dependence would not be problematic (e.g. in
+depression associated with terminal illness), although ketamine might also be considered (if available). Their use might also be justified in severe, prolonged depression
+unresponsive to standard treatments (e.g. in those considered for psychosurgery).
+Modafinil might justifiably be used as an adjunct to antidepressants in a wider range of
+patients and as a specific treatment for hypersomnia and fatigue.4
+Table 3.12 outlines support (or the absence of it) for the use of psychostimulants in
+various clinical situations. Generally speaking, data relating to stimulants in depression
+are rather poor and inconclusive.5–7 Careful consideration should be given to any use of
+any psychostimulant in depression since their short- and long-term safety have not been
+clearly established. Inclusion of individual drugs in Table 3.11 should not in itself be
+considered a recommendation for their use.
+Table 3.12 Stimulants in depression
+Clinical use
+
+Regimens evaluated
+
+Comments
+
+Recommendations
+
+Monotherapy in
+uncomplicated
+depression
+
+Modafinil 100–200mg a day8,9
+
+Case reports only –
+efficacy unproven
+
+Methylphenidate 20–40mg a
+day11,12
+
+Minimal efficacy
+
+Dexamphetamine 20mg a day11
+
+Minimal efficacy
+
+Standard antidepressants
+preferred. Avoid psychostimulants
+as monotherapy in uncomplicated
+depression.10 Meta-analysis found
+adjunctive therapy but not
+monotherapy to be associated
+with clinically significant
+improvements.7
+
+SSRI + methylphenidate
+10–20mg a day13,14
+
+No clear effect on
+time to response
+
+SSRI + modafinil 400mg/day15
+
+Improved response
+over SSRI alone
+
+Tricyclic + methylphenidate
+5–15mg a day16
+
+Single open-label trial
+suggests faster
+response
+
+SSRI or SNRI + lisdexamfetamine
+20–70mg/day17
+
+No superiority over
+placebo
+
+Adjunctive
+therapy to
+accelerate or
+improve
+response
+
+Psychostimulants in general not
+recommended, but modafinil may
+be useful.
+
+(Continued)
+
+CHAPTER 3
+
+Psychostimulants in depression
+
+
+
+
+<<<PAGE 379>>>
+
+358  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Table 3.12 (Continued)
+Clinical use
+
+Regimens evaluated
+
+Adjunctive
+treatment of
+depression with
+fatigue and
+hypersomnia
+
+Adjunctive
+therapy in
+treatment
+resistant
+depression
+
+Adjunctive
+treatment in
+bipolar
+depression34,35
+
+Comments
+
+Recommendations
+
+SSRI + modafinil 200mg/day
+
+Beneficial effect only
+on hypersomnia.
+Modafinil may induce
+suicidal ideation
+
+Possible effect on fatigue, but
+weak evidence base. An option
+where fatigue is prominent and
+otherwise unresponsive.
+
+SSRI + methylphenidate
+10–40mg/day20
+
+Clear effect on fatigue
+in hospice patients
+
+SSRI + modafinil 100–400mg a
+day7,21–26
+
+Effect mainly on
+Data limited. Modafinil may be
+fatigue and daytime
+useful for fatigue27 and
+sleepiness.
+cognition.28
+Meta-analysis of 10
+trials suggested
+clinically significant
+improvement in
+depressive symptoms7
+
+MAOI + dexamfetamine
+7.5–40mg a day29 or
+lisdexamfetamine 50mg/day30
+
+Support from single
+case series and one
+case report
+
+Methylphenidate or
+dexamfetamine ±
+antidepressant32
+
+Large case series
+(n = 50) suggests
+benefit in the
+majority
+
+Lisdexamfetamine 20–70mg/
+day + antidepressant7,17,33
+
+Two meta-analyses
+found a small,
+non-significant effect
+on depressive
+symptoms compared
+to placebo
+
+Mood stabiliser and/or
+antidepressants + modafinil
+100–200mg/day36
+
+Significantly superior
+to placebo
+
+Mood stabiliser + armodafinil
+150–200mg/day38
+
+Superior to placebo
+on some measures
+
+Mood
+stabiliser + methylphenidate
+10–40mgday39
+
+Mixed results, mainly
+positive
+
+Mood stabiliser and/or
+antipsychotic + lisdexamfetamine
+20–70mg/day40
+
+Greater rates of
+improvement
+compared to placebo
+on patient-rated
+measures
+
+18,19
+
+Stimulants an option in refractory
+illness but other options better
+supported.
+One naturalistic study suggests
+methylphenidate may reduce
+self-harm or suicide attempts.31
+
+Possible treatment option where
+other standard treatments fail.
+Meta-analysis of trials referenced
+here found stimulants well
+tolerated and an overall benefit
+versus placebo.37
+No evidence of treatmentemergent mania.34,37,38
+
+
+
+
+<<<PAGE 380>>>
+
+Depression and anxiety disorders  359
+
+Table 3.12 (Continued)
+Regimens evaluated
+
+Comments
+
+Recommendations
+
+Monotherapy or
+add-on
+treatment in
+late-stage
+terminal cancer
+
+Methylphenidate 5–30mg a
+day41–45
+
+Case series and open
+prospective studies
+
+Dexamfetamine 2.5–20mg a
+day46,47
+
+Beneficial effects
+seen on mood,
+fatigue and pain
+
+Useful treatment options in those
+expected to live only for a few
+weeks.
+
+Methylphenidate 20mg/
+day + mirtazapine 30mg/day48
+
+RCT shows benefit
+for combination from
+third day of treatment
+
+Methylphenidate 20mg/
+day + SSRI49
+
+RCT failed to show
+benefit for
+combination
+
+Modafinil 200mg/day50
+
+Benefit to depression
+scores only in those
+also experiencing
+severe cancer-related
+fatigue
+
+Methylphenidate 1.25–20mg a
+day51–53
+
+Use supported by
+three placebocontrolled studies.
+Rapid effect observed
+on mood and activity
+
+Methylphenidate
+5–40mg + citalopram
+20–60mg/day54
+
+Monitor for increased heart rate
+One placebo– significant increase seen in one
+controlled study.
+Faster rate of response trial.54
+with combination
+compared to
+monotherapy with
+either drug
+
+Methylphenidate 5–40mg a
+day55–58
+
+Variable support but
+including two
+placebo-controlled
+trials.55,58 Effect on
+mood evident after a
+few days
+
+Monotherapy
+or add-on
+treatment for
+depression in
+the elderly
+
+Monotherapy in
+post-stroke
+depression
+
+Modafinil 100mg/day59
+
+CHAPTER 3
+
+Clinical use
+
+Recommended only where
+patients fail to tolerate standard
+antidepressants or where
+contra-indications apply.
+
+Standard antidepressants
+preferred. Further investigation
+required: stimulants may improve
+cognition and motor function.
+
+Single case report
+
+Monotherapy in
+depression
+secondary to
+medical illness
+
+Methylphenidate 5–20mg/day
+
+Monotherapy in
+depression and
+fatigue
+associated with
+HIV
+Monotherapy in
+depression in
+traumatic brain
+injury
+
+Limited data
+
+Psychostimulants not appropriate
+therapy. Standard antidepressant
+preferred.
+
+Dexamfetamine 2.5–40mg/
+day63,64
+
+Supported by one
+good, controlled
+study64
+Beneficial effect on
+mood and fatigue
+
+Possible treatment option where
+fatigue is not responsive to
+standard antidepressants.
+
+Methylphenidate 5–20mg/
+day65,66
+
+Improves depressive
+symptoms, daytime
+sleepiness and
+cognitive function
+
+Appears to outperform
+antidepressants for this indication,
+but data are limited to two studies.
+
+60
+
+Dexamfetamine 2.5–30mg/
+day61,62
+
+
+
+
+<<<PAGE 381>>>
+
+360  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+References
+1. Satel SL, et al. Stimulants in the treatment of depression: a critical overview. J Clin Psychiatry 1989; 50:241–249.
+2. Menza MA, et al. Modafinil augmentation of antidepressant treatment in depression. J Clin Psychiatry 2000; 61:378–381.
+3. Warneke L. Psychostimulants in psychiatry. Canadian J Psychiatry 1990; 35:3–10.
+4. Goss AJ, et al. Modafinil augmentation therapy in unipolar and bipolar depression: a systematic review and meta-analysis of randomized
+controlled trials. J Clin Psychiatry 2013; 74:1101–1107.
+5. Candy M, et al. Psychostimulants for depression. Cochrane Database Syst Rev 2008; CD006722.
+6. Hardy SE. Methylphenidate for the treatment of depressive symptoms, including fatigue and apathy, in medically ill older adults and terminally ill adults. Am J Geriatr Pharmacother 2009; 7:34–59.
+7. McIntyre RS, et al. The efficacy of psychostimulants in major depressive episodes: a systematic review and meta-analysis. J Clin
+Psychopharmacol 2017; 37:412–418.
+8. Lundt L. Modafinil treatment in patients with seasonal affective disorder/winter depression: an open-label pilot study. J Affect Disord 2004;
+81:173–178.
+9. Kaufman KR, et al. Modafinil monotherapy in depression. Eur Psychiatry 2002; 17:167–169.
+10. Hegerl U, et al. Why do stimulants not work in typical depression? Aust N Z J Psychiatry 2017; 51:20–22.
+11. Little KY. d-Amphetamine versus methylphenidate effects in depressed inpatients. J Clin Psychiatry 1993; 54:349–355.
+12. Robin AA, et al. A controlled trial of methylphenidate (ritalin) in the treatment of depressive states. J Neurol Neurosurg Psychiatry 1958;
+21:55–57.
+13. Lavretsky H, et al. Combined treatment with methylphenidate and citalopram for accelerated response in the elderly: an open trial. J Clin
+Psychiatry 2003; 64:1410–1414.
+14. Postolache TT, et al. Early augmentation of sertraline with methylphenidate. J Clin Psychiatry 1999; 60:123–124.
+15. Abolfazli R, et al. Double-blind randomized parallel-group clinical trial of efficacy of the combination fluoxetine plus modafinil versus
+fluoxetine plus placebo in the treatment of major depression. Depress Anxiety 2011; 28:297–302.
+16. Gwirtsman HE, et al. The antidepressant response to tricyclics in major depressives is accelerated with adjunctive use of methylphenidate.
+Psychopharmacol Bull 1994; 30:157–164.
+17. Giacobbe P, et al. Efficacy and tolerability of lisdexamfetamine as an antidepressant augmentation strategy: a meta-analysis of randomized
+controlled trials. J Affect Disord 2018; 226:294–300.
+18. Dunlop BW, et al. Coadministration of modafinil and a selective serotonin reuptake inhibitor from the initiation of treatment of major
+depressive disorder with fatigue and sleepiness: a double-blind, placebo-controlled study. J Clin Psychopharmacol 2007; 27:614–619.
+19. Fava M, et al. Modafinil augmentation of selective serotonin reuptake inhibitor therapy in MDD partial responders with persistent fatigue
+and sleepiness. Ann Clin Psychiatry 2007; 19:153–159.
+20. Kerr CW, et al. Effects of methylphenidate on fatigue and depression: a randomized, double-blind, placebo-controlled trial. J Pain Symptom
+Manage 2012; 43:68–77.
+21. DeBattista C, et al. Adjunct modafinil for the short-term treatment of fatigue and sleepiness in patients with major depressive disorder: a
+preliminary double-blind, placebo-controlled study. J Clin Psychiatry 2003; 64:1057–1064.
+22. Fava M, et al. A multicenter, placebo-controlled study of modafinil augmentation in partial responders to selective serotonin reuptake inhibitors with persistent fatigue and sleepiness. J Clin Psychiatry 2005; 66:85–93.
+23. Rasmussen NA, et al. Modafinil augmentation in depressed patients with partial response to antidepressants: a pilot study on self-reported
+symptoms covered by the major depression inventory (MDI) and the symptom checklist (SCL-92). Nordic J Psychiatry 2005; 59:173–178.
+24. DeBattista C, et al. A prospective trial of modafinil as an adjunctive treatment of major depression. J Clin Psychopharmacol 2004;
+24:87–90.
+25. Markovitz PJ, et al. An open-label trial of modafinil augmentation in patients with partial response to antidepressant therapy. J Clin
+Psychopharmacol 2003; 23:207–209.
+26. Ravindran AV, et al. Osmotic-release oral system methylphenidate augmentation of antidepressant monotherapy in major depressive disorder: results of a double-blind, randomized, placebo-controlled trial. J Clin Psychiatry 2008; 69:87–94.
+27. Ghanean H, et al. Fatigue in patients with major depressive disorder: prevalence, burden and pharmacological approaches to management.
+CNS Drugs 2018; 32:65–74.
+28. Vaccarino SR, et al. The potential procognitive effects of modafinil in major depressive disorder: a systematic review. J Clin Psychiatry 2019;
+80:19r12767.
+29. Fawcett J, et al. CNS stimulant potentiation of monoamine oxidase inhibitors in treatment refractory depression. J Clin Psychopharmacol
+1991; 11:127–132.
+30. Israel JA. Combining stimulants and monoamine oxidase inhibitors: a reexamination of the literature and a report of a new treatment combination. Prim Care Companion CNS Disord 2015; 17:10.4088/PCC.15br01836.
+31. Rohde C, et al. The use of stimulants in depression: results from a self-controlled register study. Aust N Z J Psychiatry 2020; 54:808–817.
+32. Parker G, et al. Do the old psychostimulant drugs have a role in managing treatment-resistant depression? Acta Psychiatr Scand 2010;
+121:308–314.
+33. Richards C, et al. A randomized, double-blind, placebo-controlled, dose-ranging study of lisdexamfetamine dimesylate augmentation for
+major depressive disorder in adults with inadequate response to antidepressant therapy. J Psychopharmacology 2017; 31:1190–1203.
+34. Szmulewicz AG, et al. Dopaminergic agents in the treatment of bipolar depression: a systematic review and meta-analysis. Acta Psychiatr
+Scand 2017; 135:527–538.
+
+
+
+
+<<<PAGE 382>>>
+
+35. Perugi G, et al. Use of stimulants in bipolar disorder. Curr Psychiatry Rep 2017; 19:7.
+36. Frye MA, et al. A placebo-controlled evaluation of adjunctive modafinil in the treatment of bipolar depression. Am J Psychiatry 2007;
+164:1242–1249.
+37. Tsapakis EM, et al. Adjunctive treatment with psychostimulants and stimulant-like drugs for resistant bipolar depression: a systematic review
+and meta-analysis. CNS Spectr 2020: 1–12. [Epub ahead of print].
+38. Nunez NA, et al. Efficacy and tolerability of adjunctive modafinil/armodafinil in bipolar depression: a meta-analysis of randomized controlled trials. Bipolar Disord 2020; 22:109–120.
+39. Dell’Osso B, et al. Assessing the roles of stimulants/stimulant-like drugs and dopamine-agonists in the treatment of bipolar depression. Curr
+Psychiatry Rep 2013; 15:378.
+40. McElroy SL, et al. Adjunctive lisdexamfetamine in bipolar depression: a preliminary randomized, placebo-controlled trial. Int Clin
+Psychopharmacol 2015; 30:6–13.
+41. Fernandez F, et al. Methylphenidate for depressive disorders in cancer patients. Psychosomatics 1987; 28:455–461.
+42. Macleod AD. Methylphenidate in terminal depression. J Pain Symptom Manage 1998; 16:193–198.
+43. Homsi J, et al. Methylphenidate for depression in hospice practice. Am J Hosp Palliat Care 2000; 17:393–398.
+44. Sarhill N, et al. Methylphenidate for fatigue in advanced cancer: a prospective open-label pilot study. Am J Hosp Palliat Care 2001;
+18:187–192.
+45. Homsi J, et al. A phase II study of methylphenidate for depression in advanced cancer. Am J Hosp Palliat Care 2001; 18:403–407.
+46. Burns MM, et al. Dextroamphetamine treatment for depression in terminally ill patients. Psychosomatics 1994; 35:80–83.
+47. Olin J, et al. Psychostimulants for depression in hospitalized cancer patients. Psychosomatics 1996; 37:57–62.
+48. Ng CG, et al. Rapid response to methylphenidate as an add-on therapy to mirtazapine in the treatment of major depressive disorder in terminally ill cancer patients: a four-week, randomized, double-blinded, placebo-controlled study. Eur Neuropsychopharmacol 2014;
+24:491–498.
+49. Sullivan DR, et al. Randomized, double-blind, placebo-controlled study of methylphenidate for the treatment of depression in SSRI-treated
+cancer patients receiving palliative care. Psychooncology 2017; 26:1763–1769.
+50. Conley CC, et al. Modafinil moderates the relationship between cancer-related fatigue and depression in 541 patients receiving chemotherapy. J Clin Psychopharmacol 2016; 36:82–85.
+51. Padala PR, et al. Methylphenidate for apathy in community-dwelling older veterans with mild Alzheimer’s disease: a double-blind, randomized, placebo-controlled trial. Am J Psychiatry 2018; 175:159–168.
+52. Kaplitz SE. Withdrawn, apathetic geriatric patients responsive to methylphenidate. J Am Geriatr Soc 1975; 23:271–276.
+53. Wallace AE, et al. Double-blind, placebo-controlled trial of methylphenidate in older, depressed, medically ill patients. Am J Psychiatry 1995;
+152:929–931.
+54. Lavretsky H, et al. Citalopram, methylphenidate, or their combination in geriatric depression: a randomized, double-blind, placebo-controlled trial. Am J Psychiatry 2015; 172:561–569.
+55. Grade C, et al. Methylphenidate in early poststroke recovery: a double-blind, placebo-controlled study. Arch Phys Med Rehabil 1998;
+79:1047–1050.
+56. Lazarus LW, et al. Efficacy and side effects of methylphenidate for poststroke depression. J Clin Psychiatry 1992; 53:447–449.
+57. Lingam VR, et al. Methylphenidate in treating poststroke depression. J Clin Psychiatry 1988; 49:151–153.
+58. Delbari A, et al. Effect of methylphenidate and/or levodopa combined with physiotherapy on mood and cognition after stroke: a randomized,
+double-blind, placebo-controlled trial. Eur Neurol 2011; 66:7–13.
+59. Sugden SG, et al. Modafinil monotherapy in poststroke depression. Psychosomatics 2004; 45:80–81.
+60. Rosenberg PB, et al. Methylphenidate in depressed medically ill patients. J Clin Psychiatry 1991; 52:263–267.
+61. Woods SW, et al. Psychostimulant treatment of depressive disorders secondary to medical illness. J Clin Psychiatry 1986; 47:12–15.
+62. Kaufmann MW, et al. The use of d-amphetamine in medically ill depressed patients. J Clin Psychiatry 1982; 43:463–464.
+63. Wagner GJ, et al. Dexamphetamine as a treatment for depression and low energy in AIDS patients: a pilot study. J Psychosom Res 1997;
+42:407–411.
+64. Wagner GJ, et al. Effects of dextroamphetamine on depression and fatigue in men with HIV: a double-blind, placebo-controlled trial. J Clin
+Psychiatry 2000; 61:436–440.
+65. Zhang WT, et al. Efficacy of methylphenidate for the treatment of mental sequelae after traumatic brain injury. Medicine (Baltimore) 2017;
+96:e6960.
+66. Lee H, et al. Comparing effects of methylphenidate, sertraline and placebo on neuropsychiatric sequelae in patients with traumatic brain
+injury. Human Psychopharmacology 2005; 20:97–104.
+
+CHAPTER 3
+
+Depression and anxiety disorders  361
+
+
+
+
+<<<PAGE 402>>>
+
+Depression and anxiety disorders  381
+
+CYP1A2
+
+CYP2B6
+
+CYP2C9
+
+CYP2C19
+
+CYP2D6
+
+CYP3A4/5/7
+
+Genetic
+polymorphism
+Ultra-rapid
+metabolisers
+possible
+
+2–10% of total
+hepatic CYP
+content16
+
+5–10% of
+Caucasians
+poor
+metabolisers
+
+~20% of Asians
+and 3–5%
+Caucasians are
+poor metabolisers
+
+3–5% of
+Caucasians poor
+metabolisers
+
+60% p450
+content
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Carbamazepine
+Charcoal cooking
+Tobacco smoke
+Omeprazole
+Phenobarbital
+Phenytoin
+
+Carbamazepine
+Efavirenz
+Lopinavir
+Rifampicin
+Ritonavir
+
+Phenytoin
+Rifampicin
+
+Apalutamide
+Rifampicin
+Enzalutamide
+Artemisinin
+Efavirenz
+
+Carbamazepine
+Phenytoin
+
+Carbamazepine
+Phenytoin
+Prednisolone
+Rifampicin
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Cimetidine
+Ciprofloxacin
+Erythromycin
+Fluvoxamine
+
+Clopidogrel
+Ticlopidine
+Voriconazole
+
+Cimetidine
+Fluoxetine
+Fluvoxamine
+Moclobemide
+Sertraline
+
+Fluconazole
+Fluoxetine
+Fluvoxamine
+Esomeprazole
+Moclobemide
+Omeprazole
+Voriconazole
+Armodafinil
+Etravirine
+Isoniazid
+Modafinil
+Cimetidine
+
+Chlorpromazine
+Bupropion
+Duloxetine
+Fluoxetine
+Fluphenazine
+Haloperidol
+Paroxetine
+Sertraline
+Tricyclics
+
+Erythromycin
+Fluoxetine
+Fluvoxamine
+Grapefruit Juice
+Ketoconazole
+Norfluoxetine
+Paroxetine
+Sertraline
+Tricyclics
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Agomelatine
+Benzodiazepines
+Caffeine
+Clozapine
+Duloxetine
+Haloperidol
+Mirtazapine
+Olanzapine
+Ramelteon
+Theophylline
+Tizanidine
+Tricyclics
+Warfarin
+
+Bupropion
+Methadone
+Tramadol
+
+Agomelatine
+Bupropion
+Citalopram
+Diazepam
+Omeprazole
+Phenytoin
+Tricyclics
+Warfarin
+
+Citalopram
+Diazepam
+Moclobemide
+
+Clozapine
+Codeine
+Donepezil
+Duloxetine
+Haloperidol
+Phenothiazines
+Risperidone
+Tamoxifen
+Tricyclics
+Tramadol
+Trazodone
+Venlafaxine
+Vortioxetine
+
+Calcium
+Blockers
+Carbamazepine
+Clozapine
+Donepezil
+Erythromycin
+Galantamine
+Methadone
+Levomilnacipran
+Mirtazapine
+Reboxetine
+Risperidone
+Statins
+Tricyclics
+Valproate
+Venlafaxine
+Vilazodone
+Vortioxetine
+Z-hypnotics
+
+CHAPTER 3
+
+Table 3.15 Pharmacokinetic interactions – a brief summary of important interactions3,15
+
+
+
+
+<<<PAGE 714>>>
+
+Pregnancy and breastfeeding  693
+
+during pregnancy) did not confirm these associations, nor suggest others.225 Note that
+data on elective terminations were not available.
+■■ Benzodiazepine use in pregnancy, has been associated with caesarean delivery, spontaneous abortion, neonatal intensive care admission, neonatal ventilatory support,
+low birth weight, preterm delivery small head circumference, and small for gestational age babies.224,229–233
+■■ Third-trimester use is commonly associated with neonatal difficulties (floppy baby
+syndrome).234
+■■ Promethazine has been used in hyperemesis gravidarum and appears not to be teratogenic, although data are limited.
+■■ Data on Z drugs are limited. However, available data suggest that Z drugs are not
+associated with an increased risk of congenital malformations.235
+■■ Zolpidem may be associated with an increased risk of preterm delivery, low birthweight, increased likelihood of caesarean section.236
+
+Rapid tranquillisation
+There is almost no published information on the use of rapid tranquillisation in pregnant women. The acute use of short-acting benzodiazepines such as lorazepam and
+of the sedative antihistamine promethazine is unlikely to be harmful. Presumably, the
+use of either drug will be problematic immediately before birth. NICE also recommends the use of an antipsychotic but do not specify a particular drug.16 Involvement
+of an anaesthetist if rapid tranquillisation is needed during labour is strongly advised.
+Note that antipsychotics are not generally recommended as a first line treatment for
+managing acute behavioural disturbance (see section on acute behavioural disturbance). Where sedative drugs have been given during labour an anaesthetist and
+neonatologist should be present for resuscitation of the baby in cases of respiratory
+depression.
+
+Limited data suggest that methylphenidate is not a major teratogen.237 A small increased
+risk of cardiac malformations has been reported. The risk was not reported with
+amphetamines.238 Modafinil may be associated with an increased risk of congenital
+malformations (including congenital heart defects, hypospadias and orofacial clefts).239,
+240
+Modafinil should not be initiated in pregnancy.239 Women of childbearing age must
+understand the risk of taking modafinil in pregnancy and should be advised to use
+effective contraception during treatment with modafinil and for 2 months after discontinuing treatment.239
+Table 7.1 ­outlines recommendations for the treatment of psychotropics in pregnancy.
+
+CHAPTER 7
+
+ADHD
+
+
+
+
+<<<PAGE 722>>>
+
+Pregnancy and breastfeeding  701
+
+222. Ross LE, et al. Anxiety disorders during pregnancy and the postpartum period: a systematic review. J Clin Psychiatry 2006;
+67:1285–1298.
+223. Dolovich LR, et al. Benzodiazepine use in pregnancy and major malformations or oral cleft: meta-analysis of cohort and case-control studies. BMJ 1998; 317:839–843.
+224. Wikner BN, et al. Use of benzodiazepines and benzodiazepine receptor agonists during pregnancy: neonatal outcome and congenital malformations. Pharmacoepidemiol Drug Saf 2007; 16:1203–1210.
+225. Reis M, et al. Combined use of selective serotonin reuptake inhibitors and sedatives/hypnotics during pregnancy: risk of relatively severe
+congenital malformations or cardiac defects. A Register Study. BMJ Open 2013; 3:e002166.
+226. Tinker SC, et al. Use of benzodiazepine medications during pregnancy and potential risk for birth defects, National Birth Defects Prevention
+Study, 1997–2011. Birth Defects Res 2019; 111:613–620.
+227. Grigoriadis S, et al. Benzodiazepine use during pregnancy alone or in combination with an antidepressant and congenital malformations:
+systematic review and meta-analysis. J Clin Psychiatry 2019; 80:18r12412.
+228. Andrade C. Gestational Exposure to Benzodiazepines, 2: The Risk of Congenital Malformations Examined Through the Prism of
+Compatibility Intervals. J Clin Psychiatry 2019; 80:19f13081.
+229. Calderon-Margalit R, et al. Risk of preterm delivery and other adverse perinatal outcomes in relation to maternal use of psychotropic medications during pregnancy. Am J Obstet Gynecol 2009; 201:579–578.
+230. Okun ML, et al. A review of sleep-promoting medications used in pregnancy. Am J Obstet Gynecol 2015; 212:428–441.
+231. Yonkers KA, et al. Maternal antidepressant use and pregnancy outcomes. JAMA 2017; 318:665–666.
+232. Freeman MP, et al. Obstetrical and neonatal outcomes after benzodiazepine exposure during pregnancy: results from a prospective registry
+of women with psychiatric disorders. Gen Hosp Psychiatry 2018; 53:73–79.
+233. Sheehy O, et al. Association between incident exposure to benzodiazepines in early pregnancy and risk of spontaneous abortion. JAMA
+Psychiatry 2019; 76:948–957.
+234. McElhatton PR. The effects of benzodiazepine use during pregnancy and lactation. Reprod Toxicol 1994; 8:461–475.
+235. Wikner BN, et al. Are hypnotic benzodiazepine receptor agonists teratogenic in humans? J Clin Psychopharmacol 2011; 31:356–359.
+236. Wang LH, et al. Increased risk of adverse pregnancy outcomes in women receiving zolpidem during pregnancy. Clin Pharmacol Ther 2010;
+88:369–374.
+237. Pottegard A, et al. First-trimester exposure to methylphenidate: a population-based cohort study. J Clin Psychiatry 2014; 75:e88–e93.
+238. Huybrechts KF, et al. Association between methylphenidate and amphetamine use in pregnancy and risk of congenital malformations: a
+cohort study from the international pregnancy safety study consortium. JAMA Psychiatry 2018; 75:167–175.
+239. Gov.UK. Modafinil (Provigil): increased risk of congenital malformations if used during pregnancy. 2020; https://www.gov.uk/drug-safetyupdate/modafinil-provigil-increased-risk-of-congenital-malformations-if-used-during-pregnancy?utm_source=e-shot&utm_medium=
+email&utm_campaign=DSU_November2020split1.
+240. Damkier P, et al. First-Trimester Pregnancy Exposure to Modafinil and Risk of Congenital Malformations. JAMA 2020; 323:374-376.
+
+Further reading
+National Institute for Health Care and Excellence. Antenatal and postnatal mental health: clinical management and service guidance. Clinical
+guideline [CG192] 2014 (Last updated February 2020); https://www.nice.org.uk/guidance/cg192
+
+Other sources of information
+
+CHAPTER 7
+
+National Teratology Information Service. http://www.hpa.org.uk
+
+
+
+
+<<<PAGE 737>>>
+
+716  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 7.7 Stimulants in breastfeeding
+
+Infant plasma
+concentration
+
+Drug
+
+Estimated daily
+infant dose as
+proportion of
+maternal dose
+(RID)
+
+Acute adverse
+effects in infant
+
+Developmental
+effects in infant
+
+2.4–10.6%
+
+None reported
+
+None reported but
+not assessed
+
+Atomoxetine
+
+No published data
+available at the
+time of writing
+
+Dexamfetamine193
+
+Undetectable to
+14% of maternal
+plasma level
+
+Lisdexamfetamine
+
+No published data
+available at the
+time of writing
+
+Methylphenidate27,194–196
+
+Undetectable
+
+0.16–0.7%
+
+None reported
+
+None reported
+
+Modafinil
+
+Not reported
+
+5.3%
+
+None reported
+
+None reported but
+not assessed
+
+197,198
+
+Report for individual drugs. Table 7.7 does not include this advice (which is often uninformative), but instead uses primary reference sources. It is usually advisable to continue the drug prescribed during pregnancy. Switching drugs postpartum for the purpose
+of breastfeeding is usually not sensible. Table 7.7 should be used as a guide when initiating treatment postpartum. In each case the previous response (and lack of response) to
+treatment must be considered.
+
+CHAPTER 7
+
+References
+1. Schoretsanitis G, et al. Excretion of antipsychotics into the amniotic fluid, umbilical cord blood, and breast milk: a systematic critical review
+and combined analysis. Ther Drug Monit 2020; 42:245–254.
+2. Weissman AM, et al. Pooled analysis of antidepressant levels in lactating mothers, breast milk, and nursing infants. Am J Psychiatry 2004;
+161:1066–1078.
+3. Schmidt FM, et al. Agomelatine in breast milk. Int J Neuropsychopharmacol 2013; 16:497–499.
+4. Hale TW, et al. Medications and mothers’ milk – 18th edition. New York, USA: Springer Publishing Company; 2019.
+5. Hoffmann E, et al. Brexanolone injection administration to lactating women: breast milk allopregnanolone levels [30J]. Obstet Gynecol
+2019; 133:115S.
+6. Briggs GG, et al. Excretion of bupropion in breast milk. Ann Pharmacother 1993; 27:431–433.
+7. Chaudron LH, et al. Bupropion and breastfeeding: a case of a possible infant seizure. J Clin Psychiatry 2004; 65:881–882.
+8. Nonacs RM, et al. Bupropion SR for the treatment of postpartum depression: a pilot study. Int J Neuropsychopharmacol 2005;
+8:445–449.
+9. Haas JS, et al. Bupropion in breast milk: an exposure assessment for potential treatment to prevent post-partum tobacco use. Tob Control
+2004; 13:52–56.
+10. Baab SW, et al. Serum bupropion levels in 2 breastfeeding mother-infant pairs. J Clin Psychiatry 2002; 63:910–911.
+11. Berle JO, et al. Antidepressant use during breastfeeding. Curr Womens Health Rev 2011; 7:28–34.
+12. Davis MF, et al. Bupropion levels in breast milk for 4 mother-infant pairs: more answers to lingering questions. J Clin Psychiatry 2009;
+70:297–298.
+13. Neuman G, et al. Bupropion and escitalopram during lactation. Ann Pharmacother 2014; 48:928–931.
+14. Burt VK, et al. The use of psychotropic medications during breast-feeding. Am J Psychiatry 2001; 158:1001–1009.
+
+
+
+
+<<<PAGE 874>>>
+
+Pharmacokinetics  853
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Zopiclone*
+
+Not known
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Bupropion*
+Fluoxetine*
+Lamotrigine
+Phenobarbital
+Phenytoin
+Sertraline*
+Valproate
+
+Fluoxetine*
+Fluvoxamine
+Modafinil
+Valproate
+
+Carbamazepine
+SJW
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Carbamazepine*
+Citalopram
+Clomipramine*
+Diazepam
+Escitalopram
+Fluoxetine*
+Imipramine*
+?Melatonin
+?Methadone
+Moclobemide
+Phenytoin
+Sertraline*
+Suvorexant
+Trimipramine*
+
+Escitalopram*
+Fluvoxamine
+Moclobemide
+Modafinil
+Topiramate
+
+Carbamazepine
+SJW
+
+CPY2C9
+
+CPY2C19
+
+CHAPTER 11
+
+CPY2C8
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 903>>>
+
+882  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 13
+
+105. Caplehorn JR, et al. Fatal methadone toxicity: signs and circumstances, and the role of benzodiazepines. Aust N Z J Public Health 2002;
+26:358–362.
+106. Spiller HA, et al. Toxicity from modafinil ingestion. Clin Toxicol (Phila) 2009; 47:153–156.
+107. Carstairs SD, et al. A retrospective review of supratherapeutic modafinil exposures. J Med Toxicol 2010; 6:307–310.
+108. 
+Russell J, et al. Retrospective assessment of toxicity following exposure to Orexin pathway modulators modafinil and suvorexant.
+Toxicology Communications 2019; 3:33–36.
+109. Miljevic C, et al. A case of pregabalin intoxication. Psychiatrike = Psychiatriki 2012; 23:162–165.
+110. Wood DM, et al. Significant pregabalin toxicity managed with supportive care alone. J Med Toxicol 2010; 6:435–437.
+111. Gock SB, et al. Acute zolpidem overdose–report of two cases. J Anal Toxicol 1999; 23:559–562.
+112. Garnier R, et al. Acute zolpidem poisoning–analysis of 344 cases. J Toxicol Clin Toxicol 1994; 32:391–404.
+113. Pounder D, et al. Zopiclone poisoning. J Anal Toxicol 1996; 20:273–274.
+114. Bramness JG, et al. Fatal overdose of zopiclone in an elderly woman with bronchogenic carcinoma. J Forensic Sci 2001; 46:1247–1249.
+
+

@@ -1,0 +1,1015 @@
+<<<PAGE 567>>>
+
+depression severity pretreatment and posttreatment using parent ratings on
+the Preschool Reelings Checklist-Scale Version (PFC-S), a 20-item checklist.
+Results revealed that both groups showed significant improvement, with
+particular improvement in the PCIT-ED group concerning emotion
+recognition, child executive functioning, and parenting stress. This pilot
+study indicates that PCIT-ED is a promising novel intervention for preschool
+depression that deserves further investigation.
+Pharmacotherapy
+Fluoxetine and escitalopram have FDA approval in the treatment of major
+depression in adolescents. Three RCTs of fluoxetine in depressed children
+and adolescents demonstrate its efficacy. The common side effects are similar
+as for adults: headache, gastrointestinal symptoms, sedation, and insomnia.
+Short-term randomized clinical trials have demonstrated the efficacy of
+citalopram and sertraline compared with placebo in the treatment of major
+depression in children and adolescents. Sertraline was efficacious in two
+multicenter, double-blind, placebo-controlled trials of 376 children and
+adolescents. The doses of sertraline ranged from 50 to 200 mg a day or
+placebo. Nearly 70 percent of the subjects had a greater than 40 percent
+decrease in depression rating scale scores (compared with 56 percent in the
+placebo group). The most common side effects are anorexia, vomiting,
+diarrhea, and agitation.
+Citalopram has been demonstrated in one RCT in the United States to be
+efficacious in 174 children and adolescents treated with citalopram at doses
+of 20 to 40 mg a day or placebo for 8 weeks. Significantly more of the group
+on citalopram showed improvement compared with placebo on the
+depression rating scale (CDRS-R). A significantly increased response rate
+(response defined as less than 28 on CDRS-R) of 35 percent occurred in the
+citalopram group, compared with 24 percent of the placebo group. Common
+side effects that emerged included headache, nausea, insomnia, rhinitis,
+abdominal pain, dizziness, fatigue, and flu-like symptoms.
+RCTs to date that have not shown efficacy on primary outcome measures
+include those using mirtazapine and tricyclic antidepressants. A metaanalysis of SSRI trials in depressed children and adolescents found the
+efficacy of SSRIs compared to placebo with an average response rate of 60
+
+
+
+
+<<<PAGE 1144>>>
+
+raising the dose may be helpful. If the level is relatively high, clinicians
+should consider whether side effects may be interfering with therapeutic
+response.
+If the patient is responding poorly, one may increase the dose above the
+usual therapeutic level; however, higher than recommended doses usually do
+not improve response. Changing to another drug is preferable.
+As discussed earlier, clozapine is useful for patients who respond poorly to
+other antipsychotics. Double-blind studies comparing clozapine with other
+antipsychotics indicated that clozapine had the most evident advantage over
+conventional drugs in patients with the most severe psychotic symptoms, as
+well as in those who had previously responded poorly to other antipsychotics.
+Researchers and clinicians have tried several adjunctive medications, most
+with mixed success. These include lamotrigine, mirtazapine, donepezil, Dalanine, D-serine, estradiol, memantine, and allopurinol.
+Other Somatic Treatments
+Researchers have studied electroconvulsive therapy (ECT) in both acute and
+chronic schizophrenia. Studies in recent-onset patients indicate that ECT is
+about as effective as antipsychotic medications and more effective than
+psychotherapy. Other studies suggest that supplementing antipsychotic
+medications with ECT is more effective than antipsychotic medications
+alone. Antipsychotic medications should be administered during and after
+ECT treatment.
+Some initial studies have suggested neuromodulation, using transcranial
+magnetic stimulation (TMS) or transcranial direct current stimulation (tDCS),
+may be useful for treating hallucinations or negative symptoms.
+Although we no longer consider psychosurgery to be appropriate
+treatment, some research centers practice it on a limited experimental basis
+for severe, intractable cases.
+Psychosocial Therapy
+Psychotherapy is considered an essential part of treatment for schizophrenia,
+and patients who receive psychotherapy along with medications tend to have
+better adherence to therapy, less negative symptoms, and better overall
+functioning.
+
+
+
+
+<<<PAGE 1249>>>
+
+sweating, male
+sexual
+dysfunction
+Desvenlafaxine
+
+50–100
+
+Dry mouth,
+dizziness,
+nausea,
+sweating
+
+None
+
+Duloxetine
+
+30–120
+
+Nausea, dry mouth, None
+constipation,
+insomnia, male
+sexual
+dysfunction
+
+Levomilnacipran
+
+20–80
+
+Nausea, dry mouth, None
+headaches, male
+sexual
+dysfunction
+
+Other Second-Generation and Novel Antidepressants
+Agomelatinea
+
+25–50
+
+None
+
+None
+
+Bupropion
+
+150–450
+
+Insomnia, dry
+mouth, nausea
+
+Headaches
+
+Mirtazapine
+
+15–60
+
+Dry mouth,
+constipation,
+increased
+appetite, weight
+gain
+
+Somnolence
+
+Moclobemidea
+
+300–600
+
+None
+
+None
+
+Vilazodone
+
+10–40
+
+Diarrhea, nausea,
+headaches
+
+None
+
+Vortioxetine
+
+10–20
+
+Nausea
+
+None
+
+aNot routinely available in the United States.
+
+
+
+
+<<<PAGE 1252>>>
+
+require a combination of an antidepressant and an atypical antipsychotic.
+Several studies have also shown that ECT is useful for this indication—
+perhaps more effective than pharmacotherapy.
+For those with atypical symptom features, strong evidence exists for the
+effectiveness of MAOIs. SSRIs and bupropion are also of use in atypical
+depression.
+COMORBID DISORDERS. The simultaneous presence of another disorder can
+
+affect initial treatment selection. For example, the successful treatment of an
+OCD associated with depressive symptoms usually results in remission of the
+depression. Similarly, when panic disorder occurs with major depression,
+medications with demonstrated efficacy in both conditions are preferred (e.g.,
+tricyclics and SSRIs). In general, the nonmood disorder dictates the choice of
+treatment in comorbid states.
+Concurrent substance abuse raises the possibility of a substance-induced
+mood disorder, which must be evaluated by history or by requiring
+abstinence for several weeks. Abstinence often results in remission of
+depressive symptoms in substance-induced mood disorders. For those with
+continuing significant depressive symptoms, even with abstinence, an
+independent mood disorder is diagnosed and treated.
+General medical conditions are established risk factors in the development
+of depression. The presence of a major depressive episode is associated with
+increased morbidity or mortality of many general medical conditions (e.g.,
+cardiovascular disease, diabetes, cerebrovascular disease, and cancer).
+THERAPEUTIC USE OF SIDE EFFECTS. Choosing more sedating antidepressants
+
+(such as mirtazapine or paroxetine) for more anxious, depressed patients or
+more activating agents (bupropion) for more psychomotor-retarded patients is
+not as helpful as one might think. For example, any short-term benefits with
+paroxetine or mirtazapine on symptoms of anxiety or insomnia may become
+liabilities over time. These drugs often continue to be sedating in the longer
+run, which can lead to patients prematurely discontinuing medication and
+increase the risk of relapse or recurrence. Some practitioners use adjunctive
+medications, such as hypnotics or anxiolytics, combined with antidepressants
+to provide more immediate symptom relief or to cover those side effects to
+which most patients ultimately adapt.
+
+
+
+
+<<<PAGE 1306>>>
+
+recommended
+MAOIs
+
+Insufficient
+evidence
+
+Second line
+
+Second line
+
+RIMA-Moclobemide Insufficient
+evidence
+
+Insufficient
+evidence
+
+Second Line
+
+Other Psychotropics Second line
+—Agomelatine,
+Buspirone,
+Mirtazapine
+
+Second line
+
+Second line
+
+Benzodiazepines
+
+Second line
+
+Second line
+
+Second line
+
+Atypical
+Second line
+Antipsychotics—
+Quetiapine
+
+Insufficient
+evidence
+
+Not
+recommended
+
+Anticonvulsant—
+Pregabalin
+
+Insufficient
+evidence
+
+Second line
+
+Second line
+
+Note: Beta-adrenergic blocking agents are recommended only for performance anxiety.
+RIMA, reversible monoamine oxidase inhibitor; GAD, generalized anxiety disorder; PD, panic
+disorder; SAD, social anxiety disorder.
+
+In the case of specific phobia, psychotherapies, particularly behavioral
+therapies, are the first-line choice. SSRIs may be helpful, although there are
+few studies of SSRIs for this disorder.
+For agoraphobia, the main goal of pharmacotherapy is to treat the panic
+attacks that are usually comorbid. Early studies did not support the use of
+medications for “pure” agoraphobia; however, there has been little research
+since.
+Psychosocial Therapies
+There is strong support for a variety of psychosocial therapies for anxiety
+disorders, including cognitive-behavioral therapy (CBT), behavioral
+therapies, and interpersonal therapy. Studies of CBT suggest it has a
+substantial effect on generalized anxiety disorder, panic disorder, and social
+anxiety disorder, although this evidence is tempered by concerns about
+
+
+
+
+<<<PAGE 1436>>>
+
+Electroconvulsive therapy (for refractory depression with persistent
+melancholic features across all dissociative identity disorder
+alters)
+Mood stabilizers (more useful for PTSD and anxiety than mood
+swings)
+Divalproex
+Lamotrigine
+Oral or intramuscular benzodiazepines
+Medications for sleep problems
+Low-dose trazodone
+Low-dose mirtazapine
+Low-dose tricyclic antidepressants
+Low-dose neuroleptics
+Benzodiazepines (often less helpful for sleep problems in this
+population)
+Zolpidem
+Anticholinergic agents (diphenhydramine, hydroxyzine)
+Medications for self-injury, addictions
+Naltrexone
+Brainwashing
+There are no empirical treatment studies of individuals subjected to extreme
+coercion applied in the service of indoctrination into a belief system or an
+attempt at identity alteration. The basic principles of phased trauma treatment
+would seem to provide an organizing framework for their care, as for victims
+of other forms of torture. Family and social interventions may be necessary
+because of the duress and disruption accompanying the precipitating events
+and the social effects of the profound changes in the patient’s attitudes,
+behaviors, and beliefs, as well as sequestration from everyday events during
+the period of captivity.
+Ganser Syndrome
+No systematic treatment studies have been conducted, given the rarity of this
+condition. In most case reports, the patient has been hospitalized and
+provided with a protective and supportive environment. In some instances,
+
+
+
+
+<<<PAGE 1816>>>
+
+(riluzole,
+memantine)
+Acute and severe
+
+Mirtazapine, Novel
+Psychotropics
+(quetiapine,
+aripiprazole,
+clozapine), TCAs,
+clonazepam,
+valproates, lithium
+
+Depression
+Atypical
+MAOIs, SSRIs,
+depression/dysphoria
+SNRIs,
+Classical depression
+Aripiprazole,
+Lurasidone,
+ziprasidone,
+quetiapine,
+Atypical
+antipsychotics (as
+monotherapy or
+augmentation)
+
+TCAs
+
+Emotional lability/rapid Lithium, Lamotrigine,
+cycling
+Valproate, Lowerdose
+antipsychotics
+(olanzapine,
+aripiprazole,
+clozapine,
+ziprasidone)
+
+TCAs
+(“catecholamine
+stress”),
+Standard
+antidepressants
+(risk of switching
+to mania)
+
+II. Behavior Dyscontrol
+Aggression/impulsivity
+Affective aggression
+Lithium, SSRIs,
+“Hot temper” with normal
+Anticonvulsants,
+
+Benzodiazepines
+(disinhibition)
+
+
+
+
+<<<PAGE 1880>>>
+
+Thus, blockade of serotonin reuptake by SSRIs can cause nausea and sexual
+dysfunction. The D2 blockade of drugs used to treat psychosis can cause
+extrapyramidal side effects. Agonist action of benzodiazepine receptors can
+cause ataxia and daytime sleepiness. In these cases, additional medications
+are frequently used to make the primary agent better tolerated.
+Time Course
+Adverse effects differ in terms of their onset and duration. Some side effects
+appear at the outset of treatment and then rapidly diminish. Nausea occurring
+with SSRIs or venlafaxine (Effexor) and sedation occurring with mirtazapine
+(Remeron) are good examples of early, time-limited side effects. Early-onset,
+but persistent, side effects include a dry mouth that is associated with
+noradrenergic reuptake inhibition or antimuscarinic activity. Some side
+effects appear later in treatment (late-appearing side effects) and, sometimes
+may be just the opposite of adverse events early in treatment. For example,
+patients may typically lose weight during early treatment with SSRIs, only to
+find, over time, a reversal occurs, so that they gain weight.
+Similarly, early activation or agitation may be followed by constant fatigue
+or apathy. Because most data about new drugs come from short-term studies,
+generally 8 weeks in duration, early-onset side effects are overrepresented in
+product information and descriptions of newly marketed information.
+Clinicians must follow the letters to the editor sections of journals and other
+sources of information to update their understanding of the real side effect
+profile of a drug.
+Adverse effects differ in their impact on compliance and the potential to
+cause harm. Depending on a patient’s threshold of tolerance for a side effect
+and the impact on the quality of life, side effects can lead to drug
+discontinuation. Examples of serious side effects include agranulocytosis
+(clozapine), Stevens–Johnson syndrome (lamotrigine [Lamictal]), hepatic
+failure (nefazodone [Serzone]), stroke (phenelzine [Nardil]), and heart block
+(thioridazine [Mellaril]). Overall, the risk of life-threatening side effects with
+psychotropics is low. Drugs that carry such a risk should be monitored more
+closely, and the prescribing physician should take into account whether the
+potential clinical benefits justify the additional risk. Any drug with a serious
+risk, as reflected in a black box warning, is generally used less extensively
+
+
+
+
+<<<PAGE 1978>>>
+
+have found that antidepressants with serotonin-norepinephrine activity—
+drugs such as the MAOIs, TCAs, venlafaxine (Effexor), and mirtazapine
+(Remeron)—may produce higher rates of remission than SSRIs in head-tohead studies. The continued role of SSRIs as first-line treatment thus reflects
+their simplicity of use, safety, and a broad spectrum of action.
+Direct comparisons of individual SSRIs have not revealed any to be
+consistently superior to another. There nevertheless can be considerable
+diversity in response to the various SSRIs among individuals. For example,
+more than 50 percent of people who respond poorly to one SSRI will respond
+favorably to another. Thus, before shifting to non-SSRI antidepressants, it is
+most reasonable to try other agents in the SSRI class for persons who did not
+respond to the first SSRI.
+Some clinicians have attempted to select a particular SSRI for a specific
+person based on the drug’s unique adverse effect profile. For example,
+thinking that fluoxetine is an activating and stimulating SSRI, they may
+assume it is a better choice for an abulic person than paroxetine, which is
+presumed to be a sedating SSRI. These differences, however, usually vary
+from person to person. Analyses of clinical trial data show that SSRIs are
+more effective in patients with more severe symptoms of major depression
+than those with milder symptoms.
+SUICIDE. The FDA has issued a black box warning for antidepressants and
+
+suicidal thoughts and behavior in children and young adults. This warning is
+based on a decade-old analysis of clinical trial data. More recent,
+comprehensive reanalysis of data has shown that suicidal thoughts and
+behavior decreased over time for adult and geriatric patients treated with
+antidepressants as compared with placebo. No differences were found for
+youths. In adults, reduction in suicide ideation and attempts occurred through
+a reduction in depressive symptoms. In all age groups, the severity of
+depression improved with medication and was significantly related to suicide
+ideation or behavior. It appears that SSRIs, as well as serotoninnorepinephrine reuptake inhibitors (SNRIs), have a protective effect against
+suicide that is mediated by decreases in depressive symptoms with treatment.
+For youths, no significant effects of treatment on suicidal thoughts and
+behavior were found, although depression responded to treatment. No
+evidence of increased suicide risk was observed in youths receiving active
+
+
+
+
+<<<PAGE 1985>>>
+
+spectrum disorders. Fluoxetine has been reported to be useful for features of
+autism in children, adolescents, and adults.
+Precautions and Adverse Reactions. SSRI side effects need to be
+considered in terms of their onset, duration, and severity. For example,
+nausea and jitteriness are early, generally mild, and time-limited side effects.
+Although SSRIs share similar side effect profiles, individual drugs in this
+class may cause a higher rate or carry a more severe risk of specific side
+effects depending on the patient.
+Sexual Dysfunction. All SSRIs cause sexual dysfunction, and it is the
+most common adverse effect of SSRIs associated with long-term treatment. It
+has an estimated incidence of between 50 and 80 percent. The most common
+complaints are anorgasmia, inhibited orgasm, and decreased libido. Some
+studies suggest that sexual dysfunction is dose-related, but this has not been
+established. Unlike most of the other adverse effects of SSRIs, sexual
+inhibition rarely resolves in the first few weeks of use but usually continues
+as long as the drug is taken. In some cases, there may be an improvement
+over time.
+Strategies to counteract SSRI-induced sexual dysfunction are numerous,
+and none has been proven to be very useful. Some reports suggest decreasing
+the dosage or adding bupropion (Wellbutrin) or amphetamine. Reports have
+described successful treatment of SSRI-induced sexual dysfunction with
+agents such as sildenafil (Viagra), which are used to treat erectile
+dysfunction. Ultimately, patients may need to be switched to antidepressants
+that do not interfere with sexual functioning, drugs such as mirtazapine or
+bupropion.
+Gastrointestinal Adverse Effects. GI side effects are widespread and
+are mediated mainly through effects on the serotonin 5-HT3 receptor. The
+most frequent GI complaints are nausea, diarrhea, anorexia, vomiting,
+flatulence, and dyspepsia. Sertraline and fluvoxamine produce the most
+intense GI symptoms. Delayed-release paroxetine, compared with the
+immediate-release preparation of paroxetine, has less intense GI side effects
+during the first week of treatment. However, paroxetine, because of its
+anticholinergic activity, frequently causes constipation. Nausea and loose
+
+
+
+
+<<<PAGE 2000>>>
+
+venlafaxine may be beneficial in the treatment of obsessive-compulsive
+disorder, panic disorder, agoraphobia, social phobia, ADHD, and patients
+with a dual diagnosis of depression and cocaine dependence. It has also been
+used in chronic pain syndromes with good effect.
+Precautions and Adverse Reactions. Venlafaxine has a safety and
+tolerability profile similar to that of the more widely prescribed SSRI class.
+Nausea is the most frequently reported treatment-emergent adverse effect
+associated with venlafaxine and DVS therapy. Initiating therapy at lower
+dosages may also attenuate nausea. When extremely problematic, treatmentinduced nausea can be controlled by prescribing a selective 5-HT3 antagonist
+or mirtazapine (Remeron).
+Venlafaxine and DVS therapy is associated with sexual side effects,
+predominantly decreased libido and a delay to orgasm or ejaculation. The
+incidence of these side effects may exceed 30 to 40 percent when there is a
+direct, detailed assessment of sexual function.
+Other common side effects include headache, insomnia, somnolence, dry
+mouth, dizziness, constipation, asthenia, sweating, and nervousness.
+Although several side effects are suggestive of anticholinergic effects, these
+drugs have no affinity for muscarinic or nicotinic receptors. Thus,
+noradrenergic agonism is likely to be the culprit.
+Higher-dose venlafaxine therapy is associated with an increased risk of
+sustained elevations of BP. Experience with the instant-release (IR)
+formulation in studies of depressed patients indicated that sustained
+hypertension was dose-related, increasing from 3 to 7 percent at doses of 100
+to 300 mg/day and 13 percent at doses greater than 300 mg/day. In this
+dataset, venlafaxine therapy did not adversely affect BP control of patients
+taking antihypertensives and lowered the mean values of patients with
+elevated BP readings before therapy. In controlled studies of the extendedrelease formulation, venlafaxine therapy resulted in only approximately 1
+percent greater risk of high BP when compared with the placebo. Arbitrarily
+capping the upper dose of venlafaxine used in these studies, thus,
+significantly attenuated concerns about elevated BP. When higher doses of
+the extended-release formulation are used, however, monitoring of BP is
+recommended.
+Venlafaxine and DVS are commonly associated with discontinuation
+
+
+
+
+<<<PAGE 2011>>>
+
+increases in dose should never exceed 100 mg in 3 days; a single dose of
+immediate-release bupropion should never exceed 150 mg, and the total daily
+dosage should not exceed 450 mg. The maximum of 400 mg of the sustainedrelease version should be used as a twice-a-day regimen of either 200 mg
+twice daily or 300 mg in the morning and 100 mg in the afternoon. A starting
+dosage of the sustained-release version, 100 mg once a day, can be increased
+to 100 mg twice a day after 4 days. Then 150 mg twice a day may be used. A
+single dose of sustained-release bupropion should never exceed 300 mg. The
+maximum dosage is 200 mg twice a day of the immediate-release or
+extended-release formulations. An advantage of the extended-release
+preparation is that the patient can take a single daily dose of 450 mg after
+proper titration.
+For smoking cessation, the patient should start taking 150 mg a day of
+sustained-release bupropion 10 to 14 days before quitting smoking. On the
+fourth day, the dosage should be increased to 150 mg twice daily. Treatment
+generally lasts 7 to 12 weeks.
+
+MIRTAZAPINE
+Mirtazapine (Remeron) is unique among drugs used to treat major depression
+in that it increases both norepinephrine and serotonin through a mechanism
+other than reuptake blockade (as in the case of tricyclic agents or SSRIs) or
+monoamine oxidase inhibition (as in the case of phenelzine or
+tranylcypromine). Mirtazapine is also more likely to reduce rather than cause
+nausea and diarrhea, the result of its effects on serotonin 5-HT3 receptors.
+Characteristic side effects include increased appetite and sedation.
+Pharmacologic Actions
+Mirtazapine is administered orally and is rapidly and completely absorbed. It
+has a half-life of about 30 hours. Peak concentration is achieved within 2
+hours of ingestion, and steady state is reached after 6 days. Plasma clearance
+may be slowed up to 30 percent in persons with impaired hepatic function, up
+to 50 percent in those with impaired renal function, up to 40 percent slower in
+older men, and up to 10 percent slower in older women.
+The mechanism of action of mirtazapine is the antagonism of central
+
+
+
+
+<<<PAGE 2012>>>
+
+presynaptic α2-adrenergic receptors and blockade of postsynaptic serotonin 5HT2 and 5-HT3 receptors. The α2-adrenergic receptor antagonism causes the
+increased firing of norepinephrine and serotonin neurons. The potent
+antagonist of serotonin 5-HT2 and 5-HT3 receptors serves to decrease
+anxiety, relieve insomnia, and stimulate the appetite. Mirtazapine is a potent
+antagonist of histamine H1 receptors and is a moderately potent antagonist at
+α1-adrenergic and muscarinic-cholinergic receptors.
+Therapeutic Indications
+Mirtazapine is effective for the treatment of depression. It is highly sedating,
+making it a reasonable choice for use in depressed patients with severe or
+long-standing insomnia. Some patients find the residual daytime sedation
+associated with the initiation of treatment to be quite pronounced. However,
+the more extreme sedating properties of the drug generally lessen over the
+first week of treatment. Combined with the tendency to sometimes cause a
+ravenous appetite, mirtazapine is well suited for depressed patients with
+melancholic features such as insomnia, weight loss, and agitation. Elderly
+depressed patients, in particular, are good candidates for mirtazapine; young
+adults are more likely to object to this side effect profile.
+Mirtazapine’s blockade of 5-HT3 receptors, a mechanism associated with
+medications used to combat the severe GI side effects of cancer
+chemotherapy agents, has led to the use of the drug in a similar role. In this
+population, sedation and stimulation of appetite clearly could be seen as
+being beneficial instead of unwelcome side effects.
+Mirtazapine is often combined with SSRIs or venlafaxine to augment
+antidepressant response or counteract serotonergic side effects of those drugs,
+particularly nausea, agitation, and insomnia. Mirtazapine has no significant
+pharmacokinetic interactions with other antidepressants.
+Precautions and Adverse Reactions
+Somnolence, the most common adverse effect of mirtazapine, occurs in more
+than 50 percent of persons (Table 21-18). Persons starting mirtazapine should
+thus exercise caution when driving or operating dangerous machinery and
+even when getting out of bed at night. This adverse effect is why mirtazapine
+
+
+
+
+<<<PAGE 2013>>>
+
+is almost always given before sleep. Mirtazapine potentiates the sedative
+effects of other CNS depressants, so potentially sedating prescription or overthe-counter drugs and alcohol should be avoided during the use of
+mirtazapine. Mirtazapine also causes dizziness in 7 percent of persons. It
+does not appear to increase the risk of seizures. Mania or hypomania occurred
+in clinical trials at a rate similar to that of other antidepressant drugs.
+Mirtazapine increases appetite in about one-third of patients. Mirtazapine
+may also increase serum cholesterol concentration to 20 percent or more
+above the upper limit of normal in 15 percent of persons and increase
+triglycerides to 500 mg/dL or more in 6 percent of persons. Elevations of
+alanine transaminase levels to more than three times the upper limit of normal
+were seen in 2 percent of mirtazapine-treated persons as opposed to 0.3
+percent of placebo control subjects.
+In limited premarketing experience, the absolute neutrophil count dropped
+to 500/mm3 or less within 2 months of the onset of use in 0.3 percent of
+persons, some of whom developed symptomatic infections. This hematologic
+condition was reversible in all cases and was more likely to occur when other
+risk factors for neutropenia were present. Increases in the frequency of
+neutropenia have not, however, been reported during the extensive
+postmarketing period. Persons who develop fever, chills, sore throat, mucous
+membrane ulceration, or other signs of infection should nevertheless be
+evaluated medically. If a low WBC count is found, mirtazapine should be
+immediately discontinued, and the infectious disease status should be
+followed closely.
+Table 21-18
+Adverse Reactions Reported with Mirtazapine
+Event
+
+Patients (%)
+
+Somnolence
+
+54
+
+Dry mouth
+
+25
+
+Increased appetite
+
+17
+
+Constipation
+
+13
+
+
+
+
+<<<PAGE 2014>>>
+
+Weight gain
+
+12
+
+Dizziness
+
+7
+
+Myalgias
+
+5
+
+Disturbing dreams
+
+4
+
+A small number of persons experience orthostatic hypotension while
+taking mirtazapine. Although no data exist regarding the effects on fetal
+development, mirtazapine should be used with caution during pregnancy.
+Mirtazapine use by pregnant women has not been studied, but because the
+drug may be excreted in breast milk, it should not be taken by nursing
+mothers. Because of the risk of agranulocytosis associated with mirtazapine
+use, persons should be attuned to signs of infection. Because of the sedating
+effects of mirtazapine, persons should determine the degree to which they are
+affected before engaging in driving or other potentially dangerous activities.
+Drug Interactions
+Mirtazapine can potentiate the sedation of alcohol and benzodiazepines.
+Mirtazapine should not be used within 14 days of use of an MAOI.
+Laboratory Interferences
+No laboratory interferences have yet been described for mirtazapine.
+Dosage and Administration
+Mirtazapine is available in 15-, 30-, and 45-mg scored tablets. Mirtazapine is
+also available in 15-, 30-, and 45-mg orally disintegrating tablets for persons
+who have difficulty swallowing pills. If persons fail to respond to the initial
+dose of 15 mg of mirtazapine before sleep, the dose may be increased in 15mg increments every 5 days to a maximum of 45 mg before sleep. Lower
+dosages may be necessary for elderly persons or persons with renal or hepatic
+insufficiency.
+
+NEFAZODONE AND TRAZODONE
+Nefazodone (Serzone) and Trazodone (Desyrel) are mechanistically and
+
+
+
+
+<<<PAGE 2249>>>
+
+movement disorders as a predictor for neuroleptic-induced extrapyramidal
+symptoms. Br J Psychiatry. 2004;185:465–471.
+Lieberman JA, Stroup TS, McEvoy JP, Swartz MS, Rosenheck RA. Clinical
+Antipsychotic Trials of Intervention Effectiveness (CATIE) investigators.
+N Engl J Med. 2005;353:1209–1223.
+Liguori A. Psychopharmacology of attention: the impact of drugs in an age of
+increased distractions. Exp Clin Psychopharmacol. 2013;21(5):343–344.
+Lyons KE, Pahwa R. Efficacy and tolerability of levetiracetam in Parkinson
+disease patients with levodopa-induced dyskinesia. Clin Neuropharmacol.
+2006;29(3):
+148–153.
+Malizia AL. The role of emission tomography in pharmacokinetic and
+pharmacodynamic studies in clinical psychopharmacology. J
+Psychopharmacol. 2006;20(Suppl 4):100–107.
+McGrath PJ, Stewart JW, Quitkin FM, Chen Y, Alpert JE. Predictors of
+relapse in a prospective study of fluoxetine treatment of major depression.
+Am J Psychiatry. 2006;163(9):1542–1548.
+Meco G, Fabrizio E, Epifanio A, Morgante F, Valente M. Levetiracetam in
+tardive dyskinesia. Clin Neuropharmacol. 2006;29:265.
+Meyer JH, Ginovart N, Boovariwala A, Sagrati S, Hussey D. Elevated
+monoamine oxidase a levels in the brain: an explanation for the
+monoamine imbalance of major depression. Arch Gen Psychiatry.
+2006;63:1209–1216.
+Miller del D, Caroff SN, Davis SM, Rosenheck RA, McEvoy JP. Clinical
+Antipsychotic Trials of Intervention Effectiveness (CATIE) investigators:
+extrapyramidal side-effects of antipsychotics in a randomised trial. Br J
+Psychiatry. 2008;193:279.
+Moncrieff J. Magic bullets for mental disorders: the emergence of the concept
+of an “antipsychotic” drug. J Hist Neurosci. 2013;22(1):30–46.
+Pappa S, Dazzan P. Spontaneous movement disorders in antipsychotic-naive
+patients with first-episode psychoses: a systematic review. Psychol Med.
+2009;39:
+1065–1076.
+Poyurovsky M, Pashinian A, Weizman R, Fuchs C, Weizman A. Low-dose
+mirtazapine: a new option in the treatment of antipsychotic-induced
+akathisia. A randomized, double-blind, placebo- and propranolol-
+
+
+
+
+<<<PAGE 2260>>>
+
+Kim SW, Shin IS, Kim JM, Park KH, Youn T, Yoon JS. Factors potentiating
+the risk of mirtazapine-associated restless legs syndrome. Hum
+Psychopharmocol. 2008;(7):615–620.
+Kocsis JH, Leon AC, Markowitz JC, Manber R, Arnow B, Klein DN, Thase
+ME. Patient preference as a moderator of outcome for chronic forms of
+major depressive disorder treated with nefazodone, cognitive behavioral
+analysis system of psychotherapy, or their combination. J Clin Psychiatry.
+2009;70(3):354–361.
+Koibuchi N. The role of thyroid hormone on functional organization in the
+cerebellum. Cerebellum. 2013;12(3):304–306.
+Kostrubsky SE, Strom SC, Kalgutkar AS, Kulkarni S, Atherton J. Inhibition
+of hepatobiliary transport as a predictive method for clinical hepatotoxicity
+of nefazodone. Toxicol Sci. 2006;90(2):451–459.
+Lai MW, Klein-Schwartz W, Rodgers GC, Abrams JY, Haber DA. 2005
+Annual report of the American Association of Poison Control Centers’
+national poisoning and exposure database. Clin Toxicol. 2006;44:803–932.
+Lam RW, Andersen HF, Wade AG. Escitalopram and duloxetine in the
+treatment of major depressive disorder: a pooled analysis of two trials. Int
+Clin Psychopharmacol. 2008;23(4):181.
+Lapierre YD. A review of trimipramine: 30 years of clinical use. Drugs.
+1989;38(Suppl 1):
+17–24.
+Lieberman DZ, Montgomery SA, Tourian KA, Brisard C, Rosas G. A pooled
+analysis of two placebo-controlled trials of desvenlafaxine in major
+depressive disorder. Int Clin Psychopharmacol. 2008;23:188–197.
+Liebowitz MR, Manley AL, Padmanabhan SK, Ganguly R, Tummala R.
+Efficacy, safety, and tolerability of desvenlafaxine 50 mg/day and 100
+mg/day in outpatients with major depressive disorder. Curr Med Res Opin.
+2008;24:1877–1890.
+Liebowitz MR, Quitkin FM, Stewart JW. Antidepressant specificity in
+atypical depression. Arch Gen Psychiatry. 1988;45:129–137.
+Lojko D, Rybakowski JK. L-Thyroxine augmentation of serotonergic
+antidepressants in female patients with refractory depression. J Affect
+Disord. 2007;103(1–3):
+253–256.
+Looper KL. Potential medical and surgical complications of serotonergic
+
+
+
+
+<<<PAGE 2263>>>
+
+double-blind comparison of duloxetine and venlafaxine in the treatment of
+patients with major depressive disorder. J Psychiatr Res. 2008;42:22–34.
+Perkins KA, Karelitz JL, Jao NC, Stratton E. Possible reinforcement
+enhancing effects of bupropion during initial smoking abstinence. Nicotine
+Tob Res. 2013;15(6):
+1141–1145.
+Posternak M, Novak S, Stern A, Hennessey J, Joffe A. A pilot effectiveness
+study: placebo-controlled trial of adjunctive L-triiodothyronine (T3) used
+to accelerate and potentiate the antidepressant response. Int J
+Neuropsychopharmacol. 2008;11(1):15–25.
+Reeves RR, Ladner ME. Additional evidence of the abuse potential of
+bupropion. J Clin Pharmacol. 2013;33(4):584–585.
+Roose S, Laghrissi-Thode F, Kennedy JS, Nelson JC, Bigger JT. A
+comparison of paroxetine and nortriptyline in depressed patients with
+ischemic heart disease. JAMA. 1998;279:287–91.
+Rynn M, Russell J, Erickson J, Detke MJ, Ball S. Efficacy and safety of
+duloxetine in the treatment of generalized anxiety disorder: a flexible-dose,
+progressive-titration, placebo-controlled trial. Depress
+Anxiety.
+2008;25:182–189.
+Salahudeen MS, Wright C M, Peterson GM. “Esketamine: new hope for the
+treatment of treatment-resistant depression? A narrative review.” Ther Adv
+Drug
+Saf.
+2020;11:
+2042098620937899.
+https://doi.org/10.1177/2042098620937899.
+Salsali M, Holt A, Baker GB. Inhibitory effects of the monoamine oxidase
+inhibitor tranylcypromine on the cytochrome P450 enzymes CYP2C19,
+CYP2C6, and CYP2D6. Cell Mol Neurobiol. 2004;24:63–76.
+Sasada K, Iwamoto K, Kawano N, Kohmura K, Yamamoto M, Aleksic B,
+Ebe K, Noda Y, Ozaki N. Effects of repeated dosing with mirtazapine,
+trazodone, or placebo on driving performance and cognitive function in
+healthy volunteers. Hum Psychopharmacol. 2013;28(3):281–286.
+Scarff JR. “Use of Brexanolone for Postpartum Depression.” Innov Clin
+Neurosci. 2019;16(11–12):32–35.
+Schatzberg AF, Kremer C, Rodrigues HE, Murphy GM Jr. Double-blind,
+randomized comparison of mirtazapine and paroxetine in elderly depressed
+patients. Am J Geriatr Psychiatry. 2002;10:541–550.
+
+
+
+
+<<<PAGE 2264>>>
+
+Schatzberg AF, Prather MR, Keller MB, Rush AJ, Laird LK. Clinical use of
+nefazodone in major depression: a 6-year perspective. J Clin Psychiatry.
+2002;63(1):18–31.
+Schatzberg AF, Rush AJ, Arnow BA, Banks PL, Blalock JA. Chronic
+depression: medication (nefazodone) or psychotherapy (CBASP) is
+effective when the other is not. Arch Gen Psychiatry. 2005;62(5):513–520.
+Schittecatte M, Dumont F, Machowski R, Fontaine E, Cornil C, Mendlewicz
+J, Wilmotte J. Mirtazapine, but not fluvoxamine, normalizes the blunted
+REM sleep response to clonidine in depressed patients: implications for
+subsensitivity of alpha(2)-adrenergic receptors in depression. Psychiatry
+Res. 2002;109:1–8.
+Shenouda R, Desan PH. Abuse of tricyclic antidepressant drugs: a case
+series. J Clin Psychopharmcol. 2013;33(3):440–442.
+Smith T, Nicholson RA. Review of duloxetine in the management of diabetic
+peripheral neuropathic pain. Vasc Health Risk Manag. 2007;3:833–844.
+Stahl SM, Felker A. Monoamine oxidase inhibitors: a modern guide to an
+unrequited class of antidepressants. CNS Spectr. 2008;13:855–870.
+Stenberg JH, Terevnikov V, Joffe M, Tiihonen J, Chukhin E, Burkin M, Joffe
+G. Predictors and mediators of add-on mirtazapine-induced cognitive
+enhancement in schizophrenia—a path model investigation.
+Neuropharmacology. 2013;64:248–253.
+Sussman N. Selective serotonin reuptake inhibitors. In: Sadock BJ, Sadock
+VA, Ruiz P, eds. Kaplan & Sadock’s Comprehensive Textbook of
+Psychiatry. 9th ed. Vol. 2. Philadelphia, PA: Lippincott Williams &
+Wilkins; 2009:3190.
+Sylven SM, Elenis E, Michelakos T, Larsson A, Olovsson M, Poromaa IS,
+Skalkidou A. Thyroid function tests at delivery and risk for postpartum
+depressive symptoms. Psychoneuroendocrinology. 2013;38(7):1007–1013.
+Tanimukai H, Murai T, Okazaki N, Matsuda Y, Okamoto Y, Kabeshita Y,
+Ohno Y, Tsuneto S. An observational study of insomnia and nightmare
+treated with trazodone in patients with advanced cancer. Am J Hosp Palliat
+Care. 2013;30(4):359–362.
+Thase ME. Mirtazapine. In: Sadock BJ, Sadock VA, Ruiz P, eds. Kaplan &
+Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins: 2009:3152.
+Thase ME. Selective serotonin-norepinephrine reuptake inhibitors. In:
+
+
+
+
+<<<PAGE 2691>>>
+
+experience with medically ill patients show that the pharmacologic treatment
+of depression can be useful even when definable medical causes exist and
+even in the last days of life.
+A patient with diabetes and end-stage renal disease who had been on
+dialysis for 2 years was diagnosed with depression with marked insomnia
+and was started on 15 mg by mouth every day of mirtazapine, which
+helped her sleep immediately and showed an antidepressant effect within
+3 weeks. Four weeks later, she was admitted to the hospital in congestive
+heart failure for what was to be her terminal admission. She did not wish
+to give up the antidepressant but now felt oversedated and wished that
+she could be more alert during the day to interact with her loved ones.
+She was started on methylphenidate 5 mg by mouth twice daily, after
+which she was more alert, engaged, and communicative with her family.
+On her death, her family was grateful to have been able to connect with
+her until the end.
+
+CONFUSIONAL STATES IN PATIENTS WITH ADVANCED
+DISEASE
+The prevalence of delirium rises to 85 percent in patients with advanced
+disease. If one includes the last hours of life, it nears 100 percent unless the
+patient lapses rapidly into a coma or dies of an acute event, such as
+pulmonary embolus. Acute events are always unexpected and traumatize the
+survivors even though they knew full well that the patient was near the end of
+life. Some patients slip into an irreversible coma, leaving families in a
+bedside vigil, which may give them a period of adaptation before the final
+instant of death. However, for some 75 to 85 percent of patients, death is
+associated with a period of delirium.
+Patients frequently experience some disorientation, impaired memory,
+concentration, and altered arousal as they become increasingly ill. These
+symptoms may remain mild or may be the harbingers of full delirium.
+Clinicians should be aware that mild and early signs of delirium are often
+mistaken for depression, anxiety, and poor coping.
+
+
+
+
+<<<PAGE 3690>>>
+
+cognitive continuum, 264, 264f
+course and prognosis, 264–265
+criteria for, 262, 262t
+definition, 262
+epidemiology and etiology, 265, 265f
+historical perspective, 263
+terms related to, 263t
+treatment, 265, 266t
+Milieu therapy, 794
+Military psychiatry, 834
+Miller, Neal, 765
+Million Clinical Multiaxial Inventory (MCMI), 58t
+Millon Adolescent Personality Inventory (MAPI), 83t
+Milnacipran, 635
+Miltown. See Meprobamate
+Mini-Mental Status Examination (MMSE), 9, 45, 52, 89
+Minipress. See Prazosin
+Minnesota model, 214
+Minnesota Multiphasic Personality Inventory (MMPI), 1041
+Minnesota Multiphasic Personality Inventory 2 (MMPI-2), 54t, 55, 56,
+57, 58t
+Minnesota Multiphasic Personality Inventory-Adolescent (MMPI-A),
+83t
+Minocycline, 592
+Mirapex. See Pramipexole
+Mirtazapine
+dosage and administration, 638
+drug interactions, 638
+mechanism of action, 637
+precautions and adverse reactions, 637–638, 637t
+therapeutic indications, 637
+Mixed receptive–expressive language deficits, 112–114. See also
+Language disorders
+MMPI. See Minnesota Multiphasic Personality Inventory (MMPI)
+MMSE. See Mini-Mental Status Examination (MMSE)
+M’Naghten rule, 843
+Mobile or cell phone compulsion, 333
+
+
+
+
+<<<PAGE 3730>>>
+
+related to mental disorder/general medical condition, 588
+sibling, 590
+Relaxation response, 772
+Relaxation therapy, 766, 771
+breathing exercises, 766
+for insomnia, 511–512
+progressive relaxation, 766–767, 766t, 771
+Reliability, 30, 57
+internal consistency, 30
+interrater, 30
+issues in interpreting data, 31
+test–retest, 30
+Religious/spiritual problem, 586
+RELN gene, 995
+Remeron. See Mirtazapine
+Remission, 603
+Remote memory, 932, 1032
+REM sleep behavior disorder (RBD), 488, 500, 501t
+REM sleep–suppressing drugs, 513
+Renal function, tests of, 66
+Repetition compulsion, 1061
+Repetition process, 745
+Repetitive self-mutilation, 333
+Repetitive TMS (rTMS), 736, 737
+Repetitive transcranial magnetic stimulation (rTMS), 446
+Report of the Committee on Physician-Assisted Suicide and Euthanasia,
+865
+Repression, 3
+Reprocessing, 775
+Requip. See Ropinirole
+Research Units in Pediatric Psychopharmacology (RUPP), 203
+Reserpine, 605, 732, 959
+Residential care, 827
+Resilience and mental health, 1039–1040
+Resistances, 3
+Resource holding potential, 1040
+Respiratory system, examination of, 19
+
+

@@ -1,0 +1,686 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 709>>>
+
+Donepezil
+
+Therapeutics
+Brands
+Aricept
+Memac
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: acetylcholine enzyme inhibitor
+(ACh-EI)
+Cholinesterase inhibitor (selective acetylcholinesterase inhibitor);
+cognitive enhancer
+Commonly Prescribed for
+(bold for FDA approved)
+Alzheimer disease (mild, moderate, and severe)
+Memory disorders in other conditions
+Mild cognitive impairment
+
+
+
+
+<<<PAGE 713>>>
+
+Consider lowering dose, switching to a different agent, or adding an
+appropriate augmenting agent
+Best Augmenting Agents for Side Effects
+Hypnotics or trazodone may improve insomnia
+Many side effects cannot be improved with an augmenting agent
+
+Dosing and use
+Usual Dosage Range
+5–10 mg at night
+Dosage Forms
+Tablet 5 mg, 10 mg, 23 mg
+Orally disintegrating tablet 5 mg, 10 mg
+Namzaric extended-release (combination memantine/donepezil) 7
+mg/10 mg, 14 mg/10 mg, 21 mg/10 mg, 28 mg/10 mg
+How to Dose
+Initial 5 mg/day; may increase to 10 mg/day after 4–6 weeks
+Namzaric, for patients already on donepezil 10 mg once daily: initial
+dose 7 mg/10 mg once daily in the evening; increase weekly in 7 mg
+increments; maximum dose 28 mg/10 mg
+
+
+
+
+<<<PAGE 714>>>
+
+Namzaric, for patients already on memantine (10 mg twice per day
+or 28 mg extended-release once per day) and donepezil 10 mg once
+daily: can switch to 28 mg/10 mg once daily in the evening
+Dosing Tips
+Side effects occur more frequently at higher doses than at lower
+doses
+Slower titration (e.g., 6 weeks to 10 mg/day) may reduce the risk of
+side effects
+Food does not affect the absorption of donepezil
+Probably best to utilize highest tolerated dose within the usual
+dosage range
+Some off-label uses for cognitive disturbances other than Alzheimer
+disease have anecdotally utilized doses higher than 10 mg/day
+
+✽ When switching to another cholinesterase inhibitor, probably best
+to cross-titrate from one to the other to prevent precipitous decline in
+function if the patient washes out of one drug entirely
+Namzaric can be taken with or without food, whole or sprinkled on
+applesauce; do not divide, chew, or crush
+Overdose
+Can be lethal; nausea, vomiting, excess salivation, sweating,
+hypotension, bradycardia, collapse, convulsions, muscle weakness
+(weakness of respiratory muscles can lead to death)
+
+
+
+
+<<<PAGE 715>>>
+
+Long-Term Use
+Drug may lose effectiveness in slowing degenerative course of
+Alzheimer disease after 6 months
+Can be effective in some patients for several years
+Habit Forming
+No
+How to Stop
+Taper to avoid withdrawal effects
+Discontinuation may lead to notable deterioration in memory and
+behavior, which may not be restored when drug is restarted or
+another cholinesterase inhibitor is initiated
+Pharmacokinetics
+Metabolized by CYP450 2D6 and CYP450 3A4
+Elimination half-life approximately 70 hours
+Drug Interactions
+Donepezil may increase the effects of anesthetics and should be
+discontinued prior to surgery
+Inhibitors of CYP450 2D6 and CYP450 3A4 may inhibit donepezil
+metabolism and increase its plasma levels
+
+
+
+
+<<<PAGE 716>>>
+
+Inducers of CYP450 2D6 and CYP450 3A4 may increase clearance
+of donepezil and decrease its plasma levels
+Donepezil may interact with anticholinergic agents and the
+combination may decrease the efficacy of both
+May have synergistic effect if administered with cholinomimetics
+(e.g., bethanechol)
+Bradycardia may occur if combined with beta blockers
+Theoretically, could reduce the efficacy of levodopa in Parkinson’s
+disease
+Not rational to combine with another cholinesterase inhibitor
+Other Warnings/Precautions
+May exacerbate asthma or other pulmonary disease
+Increased gastric acid secretion may increase the risk of ulcers
+Bradycardia or heart block may occur in patients with or without
+cardiac impairment
+Do Not Use
+If there is a proven allergy to donepezil
+
+Special populations
+Renal Impairment
+
+
+
+
+<<<PAGE 717>>>
+
+Few data available but dose adjustment is most likely unnecessary
+Severe renal impairment: the recommended maintenance dose for
+Namzaric is 14 mg/10 mg once daily in the evening
+Hepatic Impairment
+Few data available; may need to lower dose
+Cardiac Impairment
+Should be used with caution
+Syncopal episodes have been reported with the use of donepezil
+Elderly
+Some patients may tolerate lower doses better
+Use of cholinesterase inhibitors may be associated with increased
+rates of syncope, bradycardia, pacemaker insertion, and hip fracture
+in older adults with dementia
+Children and Adolescents
+Safety and efficacy have not been established
+Preliminary reports of efficacy as an adjunct in attention deficit
+hyperactivity disorder (ADHD) (ages 8–17)
+Pregnancy
+
+
+
+
+<<<PAGE 718>>>
+
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+
+✽ Not recommended for use in pregnant women or women of
+childbearing potential
+Breast Feeding
+
+Unknown if donepezil is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+Donepezil is not recommended for use in nursing women
+
+The art of psychopharmacology
+Potential Advantages
+Once a day dosing
+May be used in vascular dementia
+May work in some patients who do not respond to other
+cholinesterase inhibitors
+
+
+
+
+<<<PAGE 719>>>
+
+May work in some patients who do not tolerate other cholinesterase
+inhibitors
+Potential Disadvantages
+Patients with insomnia
+Primary Target Symptoms
+Memory loss in Alzheimer disease
+Behavioral symptoms in Alzheimer disease
+Memory loss in other dementias
+Pearls
+A fixed-dose combination of memantine extended-release and
+donepezil (Namzaric) has been approved for the treatment of
+moderate to severe Alzheimer dementia in patients stabilized on
+memantine and donepezil
+Dramatic reversal of symptoms of Alzheimer disease is not
+generally seen with cholinesterase inhibitors
+Can lead to therapeutic nihilism among prescribers and lack of an
+appropriate trial of a cholinesterase inhibitor
+
+✽ Perhaps only 50% of Alzheimer patients are diagnosed, and only
+50% of those diagnosed are treated, and only 50% of those treated are
+given a cholinesterase inhibitor, and then only for 200 days in a disease
+that lasts 7–10 years
+
+
+
+
+<<<PAGE 720>>>
+
+Must evaluate lack of efficacy and loss of efficacy over months, not
+weeks
+
+✽ Treats behavioral and psychological symptoms of Alzheimer
+dementia as well as cognitive symptoms (i.e., especially apathy,
+disinhibition, delusions, anxiety, cooperation, pacing)
+Patients who complain themselves of memory problems may have
+depression, whereas patients whose spouses or children complain of
+the patient’s memory problems may have Alzheimer disease
+Treat the patient but ask the caregiver about efficacy
+What you see may depend upon how early you treat
+The first symptoms of Alzheimer disease are generally mood
+changes; thus, Alzheimer disease may initially be diagnosed as
+depression
+Women may experience cognitive symptoms in perimenopause as a
+result of hormonal changes that are not a sign of dementia or
+Alzheimer disease
+Aggressively treat concomitant symptoms with augmentation (e.g.,
+atypical antipsychotics for agitation, antidepressants for depression)
+If treatment with antidepressants fails to improve apathy and
+depressed mood in the elderly, it is possible that this represents early
+Alzheimer disease and a cholinesterase inhibitor like donepezil may
+be helpful
+What to expect from a cholinesterase inhibitor:
+
+
+
+
+<<<PAGE 721>>>
+
+Patients do not generally improve dramatically although this
+can be observed in a significant minority of patients
+Onset of behavioral problems and nursing home placement can
+be delayed
+Functional outcomes, including activities of daily living, can be
+preserved
+Caregiver burden and stress can be reduced
+Delay in progression in Alzheimer disease is not evidence of
+disease-modifying actions of cholinesterase inhibition
+Cholinesterase inhibitors like donepezil depend upon the presence
+of intact targets for acetylcholine for maximum effectiveness and
+thus may be most effective in the early stages of Alzheimer disease
+The most prominent side effects of donepezil are gastrointestinal
+effects, which are usually mild and transient
+
+✽ May cause more sleep disturbances than some other cholinesterase
+inhibitors
+For patients with intolerable side effects, generally allow a washout
+period with resolution of side effects prior to switching to another
+cholinesterase inhibitor
+Weight loss can be a problem in Alzheimer patients with debilitation
+and muscle wasting
+Women over 85, particularly with low body weights, may
+experience more adverse effects
+
+
+
+
+<<<PAGE 722>>>
+
+Use with caution in underweight or frail patients
+Cognitive improvement may be linked to substantial (>65%)
+inhibition of acetylcholinesterase
+Donepezil has greater action on CNS acetylcholinesterase than on
+peripheral acetylcholinesterase
+Some Alzheimer patients who fail to respond to donepezil may
+respond to another cholinesterase inhibitor
+Some Alzheimer patients who fail to respond to another
+cholinesterase inhibitor may respond when switched to donepezil
+To prevent potential clinical deterioration, generally switch from
+long-term treatment with one cholinesterase inhibitor to another
+without a washout period
+
+✽ Donepezil may slow the progression of mild cognitive impairment
+to Alzheimer disease
+
+✽ May be useful for dementia with Lewy bodies (DLB, constituted by
+early loss of attentiveness and visual perception with possible
+hallucinations, Parkinson-like movement problems, fluctuating
+cognition such as daytime drowsiness and lethargy, staring into space
+for long periods, episodes of disorganized speech)
+May decrease delusions, apathy, agitation, and hallucinations in
+dementia with Lewy bodies
+
+✽ May be useful for vascular dementia (e.g., acute onset with slow
+stepwise progression that has plateaus, often with gait abnormalities,
+focal signs, imbalance, and urinary incontinence)
+
+
+
+
+<<<PAGE 723>>>
+
+May be helpful for dementia in Down’s syndrome
+Suggestions of utility in some cases of treatment-resistant bipolar
+disorder
+Theoretically, may be useful for ADHD, but not yet proven
+Theoretically, could be useful in any memory condition
+characterized by cholinergic deficiency (e.g., some cases of brain
+injury, cancer chemotherapy-induced cognitive changes, etc.)
+
+Suggested Reading
+Bentue-Ferrer D , Tribut O , Polard E , Allain H . Clinically significant drug
+interactions with cholinesterase inhibitors: a guide for neurologists . CNS
+Drugs 2003 ;17 :947–63 .
+Birks JS , Harvey R . Donepezil for dementia due to Alzheimer’s disease .
+Cochrane Database Syst Rev 2003 ;(1):CD001190 .
+Bonner LT , Peskind ER . Pharmacologic treatments of dementia . Med Clin
+North Am 2002 ;86 :657–74 .
+Jones RW . Have cholinergic therapies reached their clinical boundary in
+Alzheimer’s disease ? Int J Geriatr Psychiatry 2003 ;18 (Suppl 1):S7 –13.
+Seltzer B . Donepezil: an update . Expert Opin Pharmacother 2007 ;8 (7
+):1011 –23.
+
+
+
+
+<<<PAGE 1379>>>
+
+Namzaric extended-release (combination memantine/donepezil) 7
+mg/10 mg, 14 mg/10 mg, 21 mg/10 mg, 28 mg/10 mg
+Dosage Forms
+Tablet 5 mg, 10 mg
+Oral solution 2 mg/mL
+Extended-release capsule 7 mg, 14 mg, 21 mg, 28 mg
+How to Dose
+Initial 5 mg/day; can increase by 5 mg each week; doses over 5 mg
+should be divided; maximum dose 10 mg twice daily
+Extended-release: initial 7 mg once daily; can increase by 7 mg each
+week; maximum dose 28 mg once daily
+Namzaric, for patients already on donepezil 10 mg once daily: initial
+dose 7 mg/10 mg once daily in the evening; increase weekly in 7 mg
+increments; maximum dose 28 mg/10 mg
+Namzaric, for patients already on memantine (10 mg twice per day
+or 28 mg extended-release once per day) and donepezil 10 mg once
+daily: can switch to 28 mg/10 mg once daily in the evening
+Dosing Tips
+
+✽ Despite very long half-life, is generally dosed twice daily, although
+some data suggest once daily is safe and tolerable
+
+
+
+
+<<<PAGE 1384>>>
+
+Memory loss in other dementias
+Pearls
+
+✽ Memantine’s actions are somewhat like the natural inhibition of
+NMDA receptors by magnesium, and thus memantine is a sort of
+“artificial magnesium”
+Theoretically, NMDA antagonism of memantine is strong enough to
+block chronic low-level overexcitation of glutamate receptors
+associated with Alzheimer disease, but not strong enough to
+interfere with periodic high level utilization of glutamate for
+plasticity, learning, and memory
+Structurally related to the antiparkinsonian and anti-influenza agent
+amantadine, which is also a weak NMDA antagonist
+
+✽ Memantine is well tolerated with a low incidence of adverse effects
+Antagonist actions at 5HT3 receptors have unknown clinical
+consequences but may contribute to low incidence of
+gastrointestinal side effects
+A fixed-dose combination of memantine extended-release and
+donepezil has been approved for the treatment of moderate to severe
+Alzheimer dementia in patients stabilized on memantine and
+donepezil
+Treat the patient but ask the caregiver about efficacy
+Delay in progression of Alzheimer disease is not evidence of
+disease-modifying actions of NMDA antagonism
+
+
+
+
+<<<PAGE 2573>>>
+
+Apo-Selegiline (selegiline), 705
+Apo-Thioridazine (thioridazine), 759
+Apo-Trazodone (trazodone), 793
+Apo-Triazo (triazolam), 799
+Apo-Trifluoperazine (trifluoperazine), 803
+Apo-Trimip (trimipramine), 817
+Apozepam (diazepam), 229
+Apo-Zopiclone (zopiclone), 879
+Aptensio XR (methylphenidate d,l), 487
+Aremis (sertraline), 721
+Aricept (donepezil), 243
+Arima (moclobemide), 515
+Aripax (lorazepam), 437
+aripiprazole, 53
+Aristada (aripiprazole), 53
+Aristada Initio (aripiprazole injection), 53
+Arminol (sulpiride), 741
+armodafinil, 65
+Arol (moclobemide), 515
+Aropax (paroxetine), 593
+Artane (trihexyphenidyl), 809
+asenapine, 71
+Asendin (amoxapine), 33
+Asendis (amoxapine), 33
+Asepin (triazolam), 799
+Aspam (diazepam), 229
+Atarax (hydroxyzine), 355
+Atarviton (diazepam), 229
+
+
+
+
+<<<PAGE 2583>>>
+
+Dixibon (sulpiride), 741
+Dizac (diazepam), 229
+DM (dextromethorphan), 225
+d-methylphenidate, 481
+Dobren (sulpiride), 741
+Dobupal (venlafaxine), 841
+Dogmatil (sulpiride), 741
+Dogmatyl (sulpiride), 741
+Dolmatil (sulpiride), 741
+Domical (amitriptyline), 25
+Dominans (nortriptyline), 551
+Domnamid (estazolam), 281
+DOM-trazodone (trazodone), 793
+donepezil, 243
+donepezil/memantine combination, 243 , 473
+Doneurin (doxepin), 255
+Donix (lorazepam), 437
+Dopress (dothiepin), 249
+Doral (quazepam), 663
+Dorken (clorazepate), 185
+Dorm (lorazepam), 437
+Dormalin (quazepam), 663
+Dormapam (temazepam), 755
+Dorme (quazepam), 663
+Dormicum (midazolam), 499
+Dormodor (flurazepam), 321
+Dothep (dothiepin), 249
+dothiepin, 249
+
+
+
+
+<<<PAGE 2599>>>
+
+Meilax (loflazepate), 431
+Meleril (thioridazine), 759
+Melipramin (imipramine), 367
+Melipramine (imipramine), 367
+Mellaril (thioridazine), 759
+Melleretten (thioridazine), 759
+Melleril (thioridazine), 759
+Melzine (thioridazine), 759
+Memac (donepezil), 243
+memantine, 473
+memantine/donepezil combination, 243 , 473
+memantine XR, 473
+Menfazona (nefazodone), 545
+Menrium (chlordiazepoxide), 147
+Mepizin (oxazepam), 569
+Meresa (sulpiride), 741
+Merlit (lorazepam), 437
+Metadate CD (d,l-methylphenidate), 487
+Metadate ER (d,l-methylphenidate), 487
+Metafolin (l-methylfolate), 477
+Metamidol (diazepam), 229
+methyfolate (l), 477
+Methylin (d,l-methylphenidate), 487
+Methylin ER (d,l-methylphenidate), 487
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Metylyl (desipramine), 207
+Miabene (mianserin), 495
+
+
+
+
+<<<PAGE 2601>>>
+
+Moditen Depot (fluphenazine), 313
+Moditen Enanthate (fluphenazine), 313
+Modium (lorazepam), 437
+molindone, 527
+Molipaxin (trazodone), 793
+Motipress (nortriptyline), 551
+Motival (nortriptyline), 551
+Motivan (paroxetine), 593
+Movergan (selegiline), 705
+Moverin (selegiline), 705
+Moxadil (amoxapine), 33
+Multipax (hydroxyzine), 355
+Multum (chlordiazepoxide), 147
+Murelax (oxazepam), 569
+Mutan (fluoxetine), 301
+Mydayis (amphetamine d, l), 45
+Mylproin (valproate), 829
+Mysimba (naltrexone/bupropion), 541
+Nailin (nortriptyline), 551
+Nalin (nortriptyline), 551
+nalmefene, 533
+naloxone with buprenorphine, 111
+naltrexone, 537
+naltrexone/bupropion, 541
+Namenda (memantine), 473
+Namenda XR (memantine XR), 473
+Namzaric (memantine/donepezil combination), 243 , 473
+Nansius (clorazepate), 185
+
+
+
+
+<<<PAGE 2629>>>
+
+Alzheimer disease
+caprylidene , 127
+donepezil , 243
+galantamine , 337
+memantine , 473
+rivastigmine , 699
+selegiline, 705
+Amnesia, Drug-induced
+midazolam , 499
+Anxiety
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone , 123
+chlordiazepoxide , 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate , 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam , 229
+dothiepin, 249
+doxepin , 255
+duloxetine, 263
+
+
+
+
+<<<PAGE 2637>>>
+
+Delirium
+haloperidol (adjunct), 347
+lorazepam (adjunct), 437
+Dementia
+donepezil, 243
+galantamine, 337
+memantine, 473
+rivastigmine, 699
+selegiline, 705
+Dementia-related psychosis
+pimavanserin, 623
+Depression
+agomelatine, 5
+amisulpride, 17
+amitriptyline , 25
+amoxapine , 33
+amphetamine (d), 39
+amphetamine (d,l), 45
+aripiprazole (adjunct) , 53
+asenapine, 71
+atomoxetine, 79
+blonanserin, 89
+brexanolone , 99
+brexpiprazole (adjunct) , 103
+bupropion , 117
+buspirone (adjunct), 123
+
+
+
+
+<<<PAGE 2664>>>
+
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+reboxetine, 681
+Benzodiazepine antagonist
+flumazenil, 293
+Cognitive enhancers
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+caprylidene, 127
+clonidine, 179
+donepezil, 243
+galantamine, 337
+memantine, 473
+memantine/donepezil combination, 243 , 473
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+reboxetine, 681
+rivastigmine, 699
+Dementia treatments
+caprylidene, 127
+donepezil, 243
+
+
+
+
+<<<PAGE 2665>>>
+
+galantamine, 337
+memantine, 473
+memantine/donepezil combination, 243 , 473
+rivastigmine, 699
+selegiline, 705
+Libido enhancers
+bremelanotide, 95
+flibanserin, 289
+Medical food
+caprylidene, 127
+l-methylfolate, 477
+Mood stabilizers
+alprazolam (adjunct), 11
+amoxapine, 33
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+bupropion, 117
+carbamazepine, 131
+cariprazine, 137
+chlorpromazine, 153
+clonazepam (adjunct), 173
+clozapine, 191
+doxepin, 255
+fluoxetine, 301
+flupenthixol, 307
+
+

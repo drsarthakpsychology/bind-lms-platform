@@ -1,0 +1,798 @@
+<<<PAGE 9>>>
+
+73.
+74.
+75.
+76.
+77.
+78.
+79.
+80.
+81.
+82.
+83.
+84.
+85.
+86.
+87.
+88.
+89.
+90.
+91.
+92.
+93.
+94.
+95.
+96.
+97.
+98.
+99.
+100.
+101.
+102.
+103.
+104.
+105.
+106.
+107.
+108.
+109.
+110.
+111.
+
+lithium
+429
+lofepramine435
+lofexidine441
+loflazepate
+445
+lorazepam
+451
+loxapine
+457
+lumateperone
+465
+lurasidone
+473
+maprotiline
+481
+memantine489
+methylfolate (l)
+493
+methylphenidate (d)
+497
+methylphenidate (d,l)
+503
+mianserin
+511
+midazolam515
+milnacipran
+519
+mirtazapine
+525
+moclobemide
+531
+modafinil
+537
+molindone
+543
+nalmefene549
+naltrexone
+553
+naltrexone–bupropion
+557
+nefazodone563
+nortriptyline
+569
+olanzapine
+577
+olanzapine–samidorphan
+587
+oxazepam
+595
+oxcarbazepine
+601
+paliperidone
+607
+paroxetine
+619
+perospirone627
+perphenazine
+633
+phenelzine
+639
+phentermine–topiramate
+645
+pimavanserin
+651
+pimozide
+655
+pipothiazine
+661
+pitolisant
+667
+vii
+
+
+
+
+<<<PAGE 10>>>
+
+112.
+113.
+114.
+115.
+116.
+117.
+118.
+119.
+120.
+121.
+122.
+123.
+124.
+125.
+126.
+127.
+128.
+129.
+130.
+131.
+132.
+133.
+134.
+135.
+136.
+137.
+138.
+139.
+140.
+141.
+142.
+143.
+144.
+145.
+146.
+147.
+148.
+149.
+150.
+viii
+
+prazosin
+671
+pregabalin
+675
+propranolol681
+protriptyline
+685
+quazepam
+691
+quetiapine
+695
+ramelteon
+703
+reboxetine
+707
+risperidone
+713
+rivastigmine725
+selegiline731
+serdexmethylphenidate
+741
+sertindole
+747
+sertraline
+753
+sildenafil
+761
+sodium oxybate
+765
+solriamfetol
+769
+sulpiride
+773
+suvorexant779
+tasimelteon783
+temazepam787
+thioridazine791
+thiothixene797
+tiagabine803
+tianeptine809
+topiramate813
+tranylcypromine819
+trazodone825
+triazolam831
+trifluoperazine835
+trihexyphenidyl841
+triiodothyronine845
+trimipramine849
+valbenazine857
+valproate861
+varenicline869
+venlafaxine873
+vilazodone879
+viloxazine885
+
+
+
+
+<<<PAGE 38>>>
+
+AMISULPRIDE (continued)
+• Amisulpride may accumulate in patients
+with renal insufficiency, requiring
+lower dosing or switching to another
+antipsychotic to avoid QTc prolongation in
+these patients
+• Rather than raise the dose above normal
+dosing in acutely agitated patients requiring
+acute antipsychotic actions, consider shortterm (one dose or more) augmentation
+with a benzodiazepine or another
+antipsychotic, especially intramuscularly
+• Rather than raise the dose above normal
+dosing in partial responders, consider
+augmentation with a mood-stabilizing
+anticonvulsant, such as valproate,
+topiramate, or lamotrigine
+• Children and elderly should generally be dosed
+at the lower end of the dosage spectrum
+• Treatment should be suspended if absolute
+neutrophil count falls below 1000/mm3
+
+Overdose
+• Sedation, coma, hypotension,
+drug-induced parkinsonism
+
+Long-Term Use
+• Amisulpride is used for both acute and
+chronic schizophrenia treatment
+• Should periodically reevaluate long-term
+usefulness in individual patients, but
+treat­ment may need to continue for many
+years
+
+Habit Forming?
+• No
+
+How to Stop
+• See Art of Switching section of individual
+agents for how to stop amisulpride
+• Rapid discontinuation may lead to rebound
+psychosis and worsening of symptoms
+
+Pharmacokinetics
+• Elimination half-life approximately 12 hours
+• Excreted largely unchanged
+
+Drug Interactions
+• Can decrease the effects of levodopa,
+dopamine agonists
+• Can increase the effects of antihypertensive
+drugs
+• CNS effects may be increased if used with
+a CNS depressant
+
+20
+
+• May enhance QTc prolongation of other
+drugs capable of prolonging QTc interval
+• Since amisulpride is only weakly
+metabolized, few drug interactions that could
+raise amisulpride plasma levels are expected
+
+ Other Warnings/
+Precautions
+• Use cautiously in patients with alcohol
+withdrawal or convulsive disorders because
+of possible lowering of seizure threshold
+• If signs of neuroleptic malignant syndrome
+develop, treatment should be immediately
+discontinued
+• Because amisulpride may dose-dependently
+prolong QTc interval, use with caution in
+patients who have bradycardia or who are
+taking drugs that can induce bradycardia
+(e.g., beta blockers, calcium channel
+blockers, clonidine, digitalis)
+• Because amisulpride may dose-dependently
+prolong QTc interval, use with caution
+in patients who have hypokalemia and/
+or hypomagnesemia or who are taking
+drugs that can induce hypokalemia and/
+or magnesemia (e.g., diuretics, stimulant
+laxatives, intravenous amphotericin B,
+glucocorticoids, tetracosactide)
+• Use only with caution if at all in Parkinson’s
+disease or Lewy body dementia, especially
+at high doses
+• Atypical antipsychotics have the potential
+for cognitive and motor impairment,
+especially related to sedation
+• Atypical antipsychotics can cause body
+temperature dysregulation; use with caution in
+patients who may experience conditions that
+increase body temperature (e.g., strenuous
+exercise, saunas, extreme heat, dehydration,
+or concomitant anticholinergic medication)
+• Antipsychotics may cause somnolence,
+postural hypotension, motor and sensory
+instability, which may lead to falls; for patients
+with diseases, conditions, or medications
+that could exacerbate these effects, complete
+fall risk assessments when initiating
+antipsychotic treatment, and recurrently for
+patients on long-term antipsychotic therapy
+• As with any antipsychotic, use with caution
+in patients with history of seizures
+
+Do Not Use
+• If patient has pheochromocytoma
+• If patient has prolactin-dependent tumor
+
+
+
+
+<<<PAGE 74>>>
+
+ARIPIPRAZOLE (continued)
+• Most schizophrenia patients do not have
+a total remission of symptoms but rather
+a reduction of symptoms by about a
+third
+• Perhaps 5–15% of schizophrenia patients
+can experience an overall improvement
+of greater than 50–60%, especially when
+receiving stable treatment for more than a
+year
+• Such patients are considered
+superresponders or “awakeners” since
+they may be well enough to be employed,
+live independently, and sustain long-term
+relationships
+• Many bipolar patients may experience a
+reduction of symptoms by half or more
+• Treatment may not only reduce mania
+but also prevent recurrences of mania in
+bipolar disorder
+• Continue treatment until reaching a plateau
+of improvement
+• After reaching a satisfactory plateau,
+continue treatment for at least a year after
+first episode of psychosis
+• For second and subsequent episodes
+of psychosis, treatment may need to be
+indefinite
+• Even for first episodes of psychosis, it
+may be preferable to continue treatment
+indefinitely to avoid subsequent episodes
+
+• If no first-line atypical antipsychotic
+is effective, consider higher doses or
+augmentation with valproate or lamotrigine
+• Consider noncompliance and switch to
+another antipsychotic with fewer side
+effects
+• Consider initiating rehabilitation and
+psychotherapy such as cognitive
+remediation
+• Consider presence of concomitant drug
+abuse
+
+If It Works (Depression)
+
+• For depression, aripiprazole is itself an
+augmenting agent
+• Valproic acid (valproate, divalproex,
+divalproex ER)
+• Other mood-stabilizing anticonvulsants
+(carbamazepine, oxcarbazepine,
+lamotrigine)
+• Topiramate
+• Lithium
+• Benzodiazepines
+
+• The goal of treatment is complete remission
+of current symptoms as well as prevention
+of future relapses
+• Treatment most often reduces or even
+eliminates symptoms, but is not a cure
+since symptoms can recur after medicine
+is stopped
+• Continue treatment until all symptoms are
+gone (remission) or significantly reduced
+• Once symptoms are gone, continue treating
+for 1 year for the first episode of depression
+• For second and subsequent episodes of
+depression, treatment may need to be
+indefinite
+
+If It Doesn’t Work (Schizophrenia)
+• Try one of the other atypical antipsychotics
+• If 2 or more antipsychotic monotherapies
+do not work, consider clozapine
+• Some patients may require treatment with a
+conventional antipsychotic
+
+56
+
+If It Doesn’t Work (Depression)
+• Some patients may be nonresponders,
+sometimes called treatment-resistant or
+treatment-refractory
+• Some patients who have an initial response
+may relapse even though they continue
+treatment, sometimes called “poop-out”
+• Consider psychotherapy
+• Consider evaluation for another diagnosis
+or for a comorbid condition (e.g., medical
+illness, substance abuse, etc.)
+• Some patients may experience apparent
+lack of consistent efficacy due to activation
+of latent or underlying bipolar disorder
+
+ Best Augmenting Combos
+for Partial Response or
+Treatment Resistance
+
+Tests
+Before Starting an Atypical Antipsychotic
+• Weigh all patients and track BMI during
+treatment
+• Get baseline personal and family history
+of diabetes, obesity, dyslipidemia,
+hypertension, and cardiovascular disease
+• Get waist circumference (at umbilicus),
+blood pressure, fasting plasma glucose,
+and fasting lipid profile
+• Determine if the patient is
+• overweight (BMI 25.0–29.9)
+
+
+
+
+<<<PAGE 77>>>
+
+(continued) ARIPIPRAZOLE
+
+Dosing Tips – Oral
+• For some, less may be more: frequently,
+patients not acutely psychotic may need to
+be dosed lower (e.g., 2.5–10 mg/day) in
+order to avoid akathisia and activation and
+for maximum tolerability
+• For others, more may be more: rarely,
+patients may need to be dosed higher than
+30 mg/day for optimum efficacy
+• Consider administering 1–5 mg as the oral
+solution for children and adolescents, as well
+as for adults very sensitive to side effects
+• Although studies suggest patients switching
+to aripiprazole from another antipsychotic
+can do well with rapid switch or with
+cross-titration, clinical experience suggests
+many patients may do best by adding either
+an intermediate or full dose of aripiprazole
+to the maintenance dose of the first
+antipsychotic for at least several days and
+possibly as long as 3 or 4 weeks prior to
+slow down-titration of the first antipsychotic
+• Rather than raise the dose above normal
+dosing in acutely agitated patients requiring
+acute antipsychotic actions, consider shortterm (one dose or more) augmentation with
+a benzodiazepine or another antipsychotic,
+especially intramuscularly
+• Rather than raise the dose above normal
+dosing in partial responders, consider
+augmentation with a mood-stabilizing
+anticonvulsant, such as valproate,
+topiramate, or lamotrigine
+• Children and elderly should generally
+be dosed at the lower end of the dosage
+spectrum
+• Due to its very long half-life, aripiprazole
+will take longer to reach steady state when
+initiating dosing, and longer to wash out
+when stopping dosing, than other atypical
+antipsychotics
+• Treatment should be suspended if absolute
+neutrophil count falls below 1000/mm3
+
+Overdose
+• No fatalities have been reported; sedation,
+vomiting
+
+Long-Term Use
+• Approved to delay relapse in long-term
+treatment of schizophrenia
+• Approved for long-term maintenance in
+bipolar disorder
+
+• Often used for long-term maintenance in
+various behavioral disorders
+• Should periodically reevaluate long-term
+usefulness in individual patients, but
+treatment may need to continue for many
+years
+
+Habit Forming?
+• No
+
+How to Stop
+• The method for stopping aripiprazole can
+vary depending on which agent is being
+switched to; see The Art of Switching
+section for how to stop aripiprazole
+• Rapid discontinuation could theoretically
+lead to rebound psychosis and worsening
+of symptoms, but less likely with
+aripiprazole due to its long half-life
+
+Pharmacokinetics
+• Metabolized primarily by CYP2D6 and
+CYP3A4
+• Mean elimination half-life 75 hours
+(aripiprazole) and 94 hours (major
+metabolite dehydroaripiprazole)
+• Food does not affect absorption
+
+Drug Interactions
+• Ketoconazole and possibly other CYP3A4
+inhibitors such as nefazodone, fluvoxamine,
+and fluoxetine may increase plasma levels
+of aripiprazole
+• Carbamazepine and possibly other inducers
+of CYP3A4 may decrease plasma levels of
+aripiprazole
+• Quinidine and possibly other inhibitors of
+CYP2D6 such as paroxetine, fluoxetine, and
+duloxetine may increase plasma levels of
+aripiprazole
+• Aripiprazole may enhance the effects of
+antihypertensive drugs
+• Aripiprazole may antagonize levodopa,
+dopamine agonists
+
+ Other Warnings/
+Precautions
+• There have been reports of problems
+with impulse control in patients taking
+aripiprazole, including compulsive
+gambling, shopping, binge eating,
+and sexual activity; use caution when
+prescribing to patients at high risk for
+59
+
+
+
+
+<<<PAGE 92>>>
+
+ASENAPINE (continued)
+• If no first-line atypical antipsychotic
+is effective, consider higher doses or
+augmentation with valproate or lamotrigine
+• Consider noncompliance and switch to
+another antipsychotic with fewer side
+effects or to an antipsychotic that can be
+given by depot injection
+• Consider initiating rehabilitation and
+psychotherapy such as cognitive
+remediation
+• Consider presence of concomitant drug
+abuse
+
+Best Augmenting Combos for
+Partial Response or
+Treatment Resistance
+• Valproic acid (valproate, divalproex,
+divalproex ER)
+• Other mood-stabilizing anticonvulsants
+(carbamazepine, oxcarbazepine,
+lamotrigine)
+• Topiramate
+• Lithium
+• Benzodiazepines
+
+Tests
+Before Starting an Atypical Antipsychotic
+• Weigh all patients and track BMI during
+treatment
+• Get baseline personal and family history
+of diabetes, obesity, dyslipidemia,
+hypertension, and cardiovascular disease
+• Get waist circumference (at umbilicus),
+blood pressure, fasting plasma glucose, and
+fasting lipid profile
+• Determine if the patient is
+• overweight (BMI 25.0–29.9)
+• obese (BMI ≥30)
+• has pre-diabetes (fasting plasma glucose
+100–125 mg/dL)
+• has diabetes (fasting plasma glucose
+>126 mg/dL)
+• has hypertension (BP >140/90 mmHg)
+• has dyslipidemia (increased total
+cholesterol, LDL cholesterol, and
+triglycerides; decreased HDL cholesterol)
+• Treat or refer such patients for treatment,
+including nutrition and weight management,
+physical activity counseling, smoking
+cessation, and medical management
+After Starting an Atypical Antipsychotic
+• BMI monthly for 3 months, then quarterly
+• Consider monitoring fasting triglycerides
+monthly for several months in patients at
+74
+
+high risk for metabolic complications and
+when initiating or switching antipsychotics
+• Blood pressure, fasting plasma glucose,
+fasting lipids within 3 months and then
+annually, but earlier and more frequently for
+patients with diabetes or who have gained
+>5% of initial weight
+• Treat or refer for treatment and consider
+switching to another atypical antipsychotic
+for patients who become overweight,
+obese, pre-diabetic, diabetic, hypertensive,
+or dyslipidemic while receiving an atypical
+antipsychotic
+• Even in patients without known diabetes,
+be vigilant for the rare but life-threatening
+onset of diabetic ketoacidosis, which
+always requires immediate treatment, by
+monitoring for the rapid onset of polyuria,
+polydipsia, weight loss, nausea, vomiting,
+dehydration, rapid respiration, weakness
+and clouding of sensorium, even coma
+• Patients with low white blood cell count
+or history of drug-induced leucopenia/
+neutropenia should have complete blood
+count monitored frequently during the first
+few months and aripiprazole should be
+discontinued at the first sign of decline of
+white blood cells in the absence of other
+causative factors
+• Patients should be monitored periodically
+for the development of abnormal
+movements of tardive dyskinesia using
+neurological exam and the Abnormal
+Involuntary Movement Scale (AIMS)
+
+SAFETY AND TOLERABILITY
+How Drug Causes Side Effects
+• Acute blockade of dopamine 2 receptors
+in the striatum can cause drug-induced
+parkinsonism, dystonia, or akathisia
+• Chronic blockade of dopamine 2 receptors
+in the striatum can cause tardive dyskinesia
+• By blocking dopamine 2 receptors in the
+pituitary, it can cause elevations in prolactin
+• Blocking alpha 1 adrenergic receptors can
+cause dizziness, hypotension, and syncope
+• Mechanism of weight gain and increased
+incidence of diabetes and dyslipidemia with
+atypical antipsychotics is unknown, and
+risks vary based on the particular agent
+
+Notable Side Effects
+• Sedation, dizziness
+• Oral hypoesthesia
+
+
+
+
+<<<PAGE 94>>>
+
+ASENAPINE (continued)
+• Bipolar mania (children, monotherapy):
+initial 5 mg/day in 2 divided doses; after
+3 days can increase to 10 mg/day in 2
+divided doses; after 3 more days can
+increase to 20 mg/day in 2 divided doses
+• Pediatric patients may be more sensitive
+to dystonia with initial dosing if the
+recommended titration schedule is not
+followed
+
+How to Dose (Transdermal)
+• Apply one SEQUADO transdermal system
+every 24 hours to one of the following sites:
+the hip, abdomen, upper arm, or lower back
+area
+• Recommended starting dose:
+3.8 mg/24 hours
+• After 1 week, may increase to
+5.7 mg/24 hours or 7.6 mg/24 hours
+
+Dosing Tips – Sublingual
+• Asenapine is not absorbed after swallowing
+(less than 2% bioavailable orally) and thus
+must be administered sublingually (35%
+bioavailable), as swallowing would render
+asenapine inactive
+• Patients should be instructed to place
+the tablet under the tongue and allow it
+to dissolve completely, which will occur
+in seconds; tablet should not be divided,
+crushed, chewed, or swallowed
+• Patients may not eat or drink for 10 minutes
+following sublingual administration so that
+the drug in the oral cavity can be absorbed
+locally and not washed into the stomach
+(where it would not be absorbed)
+• Once daily use seems theoretically possible
+because the half-life of asenapine is 13–
+39 hours, but this has not been extensively
+studied and may be limited by the need to
+expose the limited sublingual surface area
+to a limited amount of sublingual drug
+dosage
+• Some patients may respond to doses
+greater than 20 mg/day but no single
+administration should be greater than
+10 mg, thus necessitating 3 or 4 separate
+daily doses
+• Due to rapid onset of action, can be
+used as a rapid-acting prn (as needed) dose
+for agitation or transient worsening
+of psychosis or mania instead of an
+injection
+
+76
+
+• Rather than raise the dose above normal
+dosing in acutely agitated patients requiring
+acute antipsychotic actions, consider shortterm (one dose or more) augmentation with
+a benzodiazepine or another antipsychotic,
+especially intramuscularly
+• Rather than raise the dose above normal
+dosing in partial responders, consider
+augmentation with a mood-stabilizing
+anticonvulsant, such as valproate,
+topiramate, or lamotrigine
+• Children and elderly should generally
+be dosed at the lower end of the dosage
+spectrum
+• Treatment should be suspended if absolute
+neutrophil count falls below 1000/mm3
+
+Dosing Tips – Transdermal
+• Based on the average exposure (AUC) of
+asenapine, SECUADO 3.8 mg/24 hours
+corresponds to 5 mg twice daily of
+sublingual asenapine and SECUADO
+7.6 mg/24 hours corresponds to 10 mg
+twice daily of sublingual asenapine
+• Instruct patient to select a different
+transdermal system application site each
+day to limit the occurrence of skin reactions
+• Do not cut SECUADO; the whole
+transdermal system should be applied
+• Discard SECUADO by folding the used
+transdermal system so that the adhesive
+side sticks to itself and safely discard
+• If irritation or a burning sensation occurs
+while wearing SECUADO, remove the
+system and apply a new transdermal
+system to a new application site
+• Showering is permitted, but the use of
+SECUADO during swimming or taking a
+bath has not been evaluated
+• Treatment should be suspended if absolute
+neutrophil count falls below 1000/mm3
+
+Overdose
+• Agitation, confusion
+
+Long-Term Use
+• Should periodically reevaluate long-term
+usefulness in individual patients, but
+treatment may need to continue for many
+years
+
+Habit Forming?
+• No
+
+

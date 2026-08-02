@@ -1,0 +1,1399 @@
+<<<PAGE 30>>>
+
+Minimum effective doses
+Table 1.1 suggests the minimum dose of antipsychotic likely to be effective in first- or multiepisode schizophrenia. Most patients will respond to the dose suggested, although others
+may require higher doses. Given the variation in individual response, all doses should be
+considered approximate. Primary references are provided where available, but consensus
+opinion has also been used. Only oral treatment with commonly used drugs is covered.
+Table 1.1 Minimum effective dose/day – antipsychotics
+Drug
+
+First episode
+
+Multi-episode
+
+Chlorpromazine1
+
+200mg*
+
+300mg
+
+Haloperidol
+
+2mg
+
+4mg
+
+Sulpiride8
+
+400mg*
+
+800mg
+
+10mg*
+
+15mg
+
+Amisulpride11–16
+
+300mg*
+
+400mg*
+
+Aripiprazole7,17–22
+
+10mg
+
+10mg
+
+Asenapine
+
+10mg*
+
+10mg
+
+Blonanserin24
+
+Not known
+
+8mg
+
+Brexpiprazole25–27
+
+2mg*
+
+4mg
+
+Cariprazine
+
+1.5mg*
+
+1.5mg
+
+Iloperidone7,21,22,30
+
+4mg*
+
+8mg
+
+Lumateperone
+
+Not known
+
+42mg*
+
+Lurasidone
+
+40mg HCl/37mg base*
+
+40mg HCl/37mg base
+
+Olanzapine4,7,33–35
+
+5mg
+
+7.5mg
+
+Paliperidone
+
+3mg*
+
+3mg
+
+Pimavanserin
+
+Not known
+
+34mg**
+
+Quetiapine39–44
+
+150mg* (but higher doses often used45)
+
+300mg
+
+3,7,46–49
+
+Risperidone
+
+2mg
+
+4mg
+
+7,21,50–52
+
+Ziprasidone
+
+40mg*
+
+80mg
+
+FGAs
+
+2–7
+
+Trifluoperazine
+
+9,10
+
+SGAs
+
+7,22,23
+
+28,29
+
+31
+
+7,32
+
+22
+36–38
+
+*Estimate – too few data available
+**FDA-approved for Parkinson’s disease psychosis; dose in schizophrenia not known
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  9
+
+
+
+
+<<<PAGE 34>>>
+
+Drug
+
+Maximum dose
+
+Paliperidone depot
+3-monthly
+
+525mg every 3 months
+
+Pipotiazine depot
+
+200mg every 4 weeks
+
+Risperidone (Janssen)
+
+50mg every 2 weeks
+
+Zuclopenthixol depot
+
+600mg/week
+
+The following table lists the licensed maximum doses of antipsychotics available outside the EU, according to FDA labelling (as of February 2021)
+Drug
+
+Maximum dose
+
+SGAs – oral
+Blonanserin*
+
+24mg/day oral1 (80mg/day patch2)
+
+Brexpiprazole
+
+4mg/day
+
+Iloperidone
+
+24mg/day
+
+Lumateperone
+
+42mg/day
+
+Molindone
+
+225mg/day
+
+Pimavanserin
+
+34mg/day
+
+RBP-7000 (risperidone 1-monthly)
+
+120mg/month
+
+Ziprasidone
+
+160mg/day
+
+*Available only in China, Japan and South Korea at the time of writing.
+
+References
+1. Inoue Y, et al. Safety and effectiveness of oral blonanserin for schizophrenia: a review of Japanese post-marketing surveillances. J Pharmacol
+Sci 2021; 145:42–51.
+2. Nishibe H, et al. Striatal dopamine D2 receptor occupancy induced by daily application of blonanserin transdermal patches: phase 2 study
+in Japanese patients with schizophrenia. Int J Neuropsychopharmacol 2020; 24:108–117.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  13
+
+
+
+
+<<<PAGE 36>>>
+
+Table 1.3 Second-generation antipsychotics – approximate equivalent doses3–10
+Drug
+
+Approximate equivalent dose
+
+Amisulpride
+
+400mg
+
+Aripiprazole
+
+15mg
+
+Asenapine
+
+10mg
+
+Blonanserin
+
+~
+
+Brexpiprazole
+
+2mg
+
+Cariprazine
+
+1.5mg
+
+Clotiapine
+
+100mg
+
+Iloperidone
+
+12mg
+
+Lumateperone
+
+~
+
+Lurasidone
+
+80mg (74mg base)
+
+Melperone
+
+300mg
+
+Molindone
+
+50mg
+
+Olanzapine
+
+10mg
+
+Paliperidone LAI
+
+100mg/month
+
+Pimavanserin
+
+~
+
+Quetiapine
+
+400mg
+
+Risperidone oral
+
+4mg
+
+Risperidone LAI
+
+50mg/2 weeks
+
+Risperidone RBP-7000
+
+120mg/month
+
+Ziprasidone
+
+80mg
+
+~Unknown equivalence at time of writing.
+
+References
+1. Foster P. Neuroleptic equivalence. Pharm J 1989; 243:431–432.
+2. Atkins M, et al. Chlorpromazine equivalents: a consensus of opinion for both clinical and research implications. Psychiatric Bull 1997;
+21:224–226.
+3. Patel MX, et al. How to compare doses of different antipsychotics: a systematic review of methods. Schizophr Res 2013; 149:141–148.
+4. Gardner DM, et al. International consensus study of antipsychotic dosing. Am J Psychiatry 2010; 167:686–693.
+5. Leucht S, et al. Dose equivalents for antipsychotic drugs: the ddd method. Schizophr Bull 2016; 42 Suppl 1:S90–S94.
+6. Rothe PH, et al. Dose equivalents for second generation long-acting injectable antipsychotics: the minimum effective dose method. Schizophr
+Res 2018; 193:23–28.
+7. Leucht S, et al. Dose equivalents for second-generation antipsychotics: the minimum effective dose method. Schizophr Bull 2014;
+40:314–326.
+8. Leucht S, et al. Dose equivalents for second-generation antipsychotic drugs: the classical mean dose method. Schizophr Bull 2015;
+41:1397–1402.
+9. Woods SW. Chlorpromazine equivalent doses for the newer atypical antipsychotics. J Clin Psychiatry 2003; 64:663–667.
+10. Leucht S, et al. Dose-response meta-analysis of antipsychotic drugs for acute schizophrenia. Am J Psychiatry 2020; 177:342–353.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  15
+
+
+
+
+<<<PAGE 144>>>
+
+Antipsychotic-induced weight gain
+Weight gain, a cardiometabolic risk factor, is a common side effect of antipsychotic
+medication.1 The mechanisms underlying antipsychotic-induced weight gain are not well
+understood,2 although factors such as 5HT2C antagonism, H1 antagonism, D2 antagonism, and increased serum leptin (leading to leptin desensitisation)3–5 are commonly
+implicated. There is no evidence that these medications exert any direct metabolic effect:
+weight gain seems to result from increased food intake and, in some cases, reduced
+energy expenditure.6,7 The risk of weight gain appears to be related to clinical response8,9
+(although the association may be too small to be clinically important10), which may have
+a genetic basis.11 Weight gain may be more pronounced in antipsychotic-naïve patients
+and during the early stages of the treatment of psychotic illness,12–14 and women may be
+at greater risk than men.15,16
+Almost all available antipsychotic medications have been associated with weight
+gain,12 although the mean gain in body weight varies substantially between the medications. There is also marked inter-individual variation among those treated, with some
+losing weight, some gaining no weight and some gaining a great deal of weight. Thus,
+knowledge of the mean increase in weight reported for a particular medication may not
+be a helpful predictor of how much weight an individual might gain. Assessment of the
+relative liability for weight gain of different antipsychotic medications is based largely
+on short term studies. Notwithstanding these limitations, the results of indirect and
+direct meta-analyses suggest that these medications can be clustered into three groups
+based on their relative risk of weight gain17 (see Table 1.17).
+Table 1.17 Antipsychotic-induced weight gain18–25
+Drug
+
+Risk/extent of weight gain
+
+Clozapine
+
+High
+
+Olanzapine
+Chlorpromazine
+
+Moderate
+
+Iloperidone
+Sertindole
+Quetiapine
+Risperidone
+Paliperidone
+Amisulpride
+Asenapine
+Brexpiprazole
+Aripiprazole
+Cariprazine
+Haloperidol
+Lumateperone
+Lurasidone
+Sulpiride
+Trifluoperazine
+Ziprasidone
+
+Low
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  123
+
+
+
+
+<<<PAGE 164>>>
+
+given the problems associated with QTc measurements. Lastly, keep in mind that differences in the effects of different antipsychotics on the QT interval rarely reach statistical
+significance, even in meta-analyses (Table 1.21).29
+Outside these guidelines, readers are directed to the RISQ-PATH study,30 which provides a scoring system for the prediction of QT prolongation (to above normal ranges)
+in any patient. RISQ-PATH has a 98% negative predictive value, so allowing a reduction in monitoring in low-risk patients. The RISQ-PATH method uses CredibleMeds
+categorisation for drug effects on QT – this, too, is recommeded.31
+Table 1.21 Effects of antipsychotics on QTC13,22,23,32–61.
+No effect
+Brexpiprazole*
+Cariprazine*
+Lurasidone
+Lumateperone*
+Low effect
+Aripiprazole**
+Asenapine
+Clozapine
+Flupentixol
+Fluphenazine
+Perphenazine
+Prochlorperazine
+Olanzapine***
+Paliperidone
+Risperidone
+Sulpiride
+
+Moderate effect
+Amisulpride****
+Chlorpromazine
+Haloperidol
+Iloperidone
+Levomepromazine
+Melperone
+Pimavanserin
+Quetiapine
+Ziprasidone
+High effect
+Any intravenous antipsychotic
+Pimozide
+Sertindole
+Any drug or combination of drugs used in doses exceeding
+recommended maximum
+Unknown effect
+Loxapine
+Pipotiazine
+Trifluoperazine
+Zuclopenthixol
+
+*Limited clinical experience (association with QT prolongation may emerge).
+**One case of torsades de pointes (TDP) reported,62 two cases of QT prolongation63,64 and an association with TDP
+found in database study.65 Healthy volunteer data suggest aripiprazole causes QTc prolongation of around 8ms.66
+Aripiprazole may increase QT dispersion.67
+***Isolated cases of QTc prolongation37,68 and has effects on cardiac ion channel, IKr,69 other data suggest no effect
+on QTC.23,35,36,70
+****TDP common in overdose,25,71 strong association with TDP in clinical doses.65
+
+Aripiprazole remains in the low effect group having previously been firmly placed in
+‘no effect’. Data are rather contradictory, with most studies showing a decrease in QTc
+associated with aripiprazole use52 even in children and adolescents.72 However, later
+data62,63,65,66,73 cast doubt on assumptions of cardiac safety. Interestingly, a 2020 paper
+analysing reports of events in > 400,000 inpatients over 20 years found aripiprazole
+had the lowest rate of cardiac events (0.06%) of all antipsychotics.74
+Lurasidone remains in the ‘no effect’ group,52 although one study mentioned in the
+US labelling75 reports a QT lengthening of 7.5mg in people receiving 120mg (111mg) a
+day. Those receiving 600mg (555mg) daily showed a lower change (+4.6ms). These
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  143
+
+
+
+
+<<<PAGE 189>>>
+
+CHAPTER 1
+
+168  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Hyperprolactinaemia
+Dopamine inhibits prolactin release, and so dopamine antagonists can be expected to
+increase prolactin plasma levels. The degree of prolactin elevation is probably doserelated,1 and for most antipsychotic medications the threshold activity (D2 occupancy)
+for increased prolactin is very close to that of therapeutic efficacy.2 Genetic differences
+may also play a part.3 Table 1.29 groups individual antipsychotics according to their
+effect on prolactin concentrations.
+
+Table 1.29 Effects of antipsychotic medication on prolactin concentration4–11
+Prolactin-sparing (prolactin
+increase very rare)
+
+Prolactin–elevating (low risk
+minor changes only)
+
+Prolactin-elevating (high risk;
+major changes)
+
+Aripiprazole
+
+Lurasidone
+
+Amisulpride
+
+Asenapine
+
+Olanzapine
+
+Paliperidone
+
+Brexpiprazole
+
+Ziprasidone
+
+Risperidone
+
+Cariprazine
+
+Sulpiride
+
+Clozapine
+
+FGAs
+
+Iloperidone
+Lumateperone
+Pimavanserin
+Quetiapine
+
+Hyperprolactinaemia is often superficially asymptomatic (i.e. the patient does not
+spontaneously report problems), and there is some evidence that hyperprolactinaemia
+does not affect subjective quality of life.12 Nonetheless, persistent elevation of plasma
+prolactin is associated with suppression of the hypothalamic-pituitary-gonadal axis.13
+Symptoms of this include sexual dysfunction14 (but note that other pharmacological
+activities also give rise to sexual dysfunction15), menstrual disturbances,4,16 breast
+growth and galactorrhoea,16 and may include delusions of pregnancy.17 Long-term
+adverse consequences are reductions in bone mineral density,18,19 and a possible increase
+in the risk of breast cancer.20
+Prolactin can also be raised because of stress, pregnancy and lactation, seizures, renal
+impairment and other medical conditions,7,21,22 including prolactinoma. When measuring prolactin, the sample should be taken early in the morning and stress during
+venepuncture should be minimised.22
+
+
+
+
+<<<PAGE 204>>>
+
+Switching antipsychotics
+Summary of recommendations for switching antipsychotics because of poor
+tolerability.
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Acute EPS
+Dystonia, parkinsonism, bradykinesia
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Olanzapine
+Quetiapine
+
+Clozapine
+Lurasidone
+Ziprasidone
+
+Akathisia2,9,10
+
+Olanzapine
+Quetiapine
+
+Clozapine
+Brexpiprazole
+
+Dyslipidaemia7,8,11–16
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Asenapine
+Brexpiprazole
+Cariprazine
+
+Impaired glucose
+tolerance7,8,15,17–21
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Brexpiprazole
+Cariprazine
+Haloperidol
+
+Hyperprolactinaemia7,8,15,22–28
+
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+Olanzapine
+Ziprasidone
+
+Postural hypotension8,15,29
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Haloperidol
+Sulpiride
+Trifluoperazine
+
+QT prolongation27,30–37
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+Paliperidone
+
+Low dose monotherapy of any
+drug not formally contraindicated in QT prolongation
+(with ECG monitoring)
+
+Sedation7,8,27
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Risperidone
+Sulpiride
+
+Haloperidol
+Trifluoperazine
+Ziprasidone
+
+1–8
+
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  183
+
+
+
+
+<<<PAGE 205>>>
+
+CHAPTER 1
+
+184  The Maudsley® Prescribing Guidelines in Psychiatry
+
+(Continued )
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Sexual dysfuction8,38–44
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+
+Tardive dyskinesia45–49
+
+Clozapine
+
+Aripiprazole
+Olanzapine
+Quetiapine
+
+Weight gain16,35,37,50–57
+
+Amisulpride
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Haloperidol
+Lurasidone
+Ziprasidone
+
+Asenapine
+Haloperidol
+Trifluoperazine
+
+§There is evidence that both switching to and co-prescription of aripiprazole can be associated with reductions in
+body weight and plasma prolactin levels, better lipid profiles, and a decrease in plasma glucose levels.58–61
+
+Lumateperone and pimavanserin are not listed in the table because of their limited
+availability. Both drugs cause little or no EPSE or akathisia, have no effect on prolactin
+or blood pressure and cause minimal weight gain and metabolic disturbance.62,63
+Pimvanserin prolongs QT,64 whereas lumateperone seems to have no effect on the
+ECG.65
+
+References
+1. Stanniland C, et al. Tolerability of atypical antipsychotics. Drug Saf 2000; 22:195–214.
+2. Tarsy D, et al. Effects of newer antipsychotics on extrapyramidal function. CNS Drugs 2002; 16:23–45.
+3. Caroff SN, et al. Movement disorders associated with atypical antipsychotic drugs. J Clin Psychiatry 2002; 63 Suppl 4:12–19.
+4. Lemmens P, et al. A combined analysis of double-blind studies with risperidone vs. placebo and other antipsychotic agents: factors associated
+with extrapyramidal symptoms. Acta Psychiatr Scand 1999; 99:160–170.
+5. Taylor DM. Aripiprazole: a review of its pharmacology and clinical use. Int J Clin Pract 2003; 57:49–54.
+6. Meltzer HY, et al. Lurasidone in the treatment of schizophrenia: a randomized, double-blind, placebo- and olanzapine-controlled study. Am
+J Psychiatry 2011; 168:957–967.
+7. Garnock-Jones KP. Cariprazine: a review in schizophrenia. CNS Drugs 2017; 31:513–525.
+8. Garnock-Jones KP. Brexpiprazole: a review in schizophrenia. CNS Drugs 2016; 30:335–342.
+9. Buckley PF. Efficacy of quetiapine for the treatment of schizophrenia: a combined analysis of three placebo-controlled trials. Curr Med Res
+Opin 2004; 20:1357–1363.
+10. Pringsheim T, et al. The assessment and treatment of antipsychotic-induced akathisia. Can J Psychiatry 2018; 63:719–729.
+11. Rettenbacher MA, et al. Early changes of plasma lipids during treatment with atypical antipsychotics. Int Clin Psychopharmacol 2006;
+21:369–372.
+12. Ball MP, et al. Clozapine-induced hyperlipidemia resolved after switch to aripiprazole therapy. Ann Pharmacother 2005; 39:1570–1572.
+13. Chrzanowski WK, et al. Effectiveness of long-term aripiprazole therapy in patients with acutely relapsing or chronic, stable schizophrenia: a
+52-week, open-label comparison with olanzapine. Psychopharmacology 2006; 189:259–266.
+14. De Hert M, et al. A case series: evaluation of the metabolic safety of aripiprazole. Schizophr Bull 2007; 33:823–830.
+15. Citrome L, et al. Long-term safety and tolerability of lurasidone in schizophrenia: a 12-month, double-blind, active-controlled study. Int Clin
+Psychopharmacol 2012; 27:165–176.
+16. Kemp DE, et al. Weight change and metabolic effects of asenapine in patients with schizophrenia and bipolar disorder. J Clin Psychiatry 2014;
+75:238–245.
+
+
+
+
+<<<PAGE 302>>>
+
+Bipolar disorder  281
+
+Treatment
+
+Comments
+
+Allopurinol
+(300–600mg/day)
+
+A meta-analysis of five studies of adjunct allopurinol found an effect size of just
+less than 0.346
+
+Celecoxib
+(400mg/day)47
+
+Small RCT (n = 46) suggests benefit when used as adjunct to valproate
+
+Clozapine48–50
+
+Established treatment option for refractory mania/bipolar disorder. Rapid titration
+has been reported51
+
+Ebselen52
+
+Inhibits inositol monophosphatase (similar to lithium). Preliminary evidence of benefit
+
+Gabapentin
+(up to 2.4g/day)
+
+Probably only effective by virtue of an anxiolytic effect. Rarely used. Possibly
+useful as prophylaxis56
+
+Levetiracetam57,58
+(up to 4000mg/day)
+
+Possibly effective but controlled studies required. One case of levetiracetam
+causing mania59
+
+Memantine60
+(10–30mg/day)
+
+Conflicting evidence61–63
+
+Melatonin 6mg/day64
+
+Preliminary evidence of benefit as an adjunct to standard treatment. One small
+negative study65
+
+Oxcarbazepine66–72
+(around 300–3000mg/day)
+
+Probably effective acutely and as prophylaxis although one controlled study
+conducted (in youths) was negative73
+
+Phenytoin74
+(300–400mg/day)
+
+Rarely used. Limited data
+Complex kinetics with narrow therapeutic range
+
+Ritanserin75
+(10mg/day)
+
+Supported by a single RCT. Well tolerated. May protect against
+extrapyramidal symptoms (EPS)
+
+Tamoxifen76
+(20–140mg/day)
+
+Possibly effective. Five small RCTs. Dose–response relationship is unclear. Good
+evidence for efficacy as adjunct and as monotherapy, with large effect size
+
+Topiramate77
+(up to 300mg/day)
+
+Probably not effective. Less effective than lithium.2
+
+Tryptophan depletion78
+
+Supported by a small RCT
+
+Ziprasidone
+
+Supported by three RCTs. Widely used outside the UK
+
+53–55
+
+79–81
+
+References
+1. Cipriani A, et al. Comparative efficacy and acceptability of antimanic drugs in acute mania: a multiple-treatments meta-analysis. Lancet
+2011; 378:1306–1315.
+2. McKnight RF, et al. Lithium for acute mania. Cochrane Database Syst Rev 2019; 6:Cd004048.
+3. Jochim J, et al. Valproate for acute mania. Cochrane Database Syst Rev 2019; 10:Cd004052.
+4. Mahajan V, et al. Efficacy and safety of asenapine versus olanzapine in combination with divalproex for acute mania: a randomized controlled trial. J Clin Psychopharmacol 2019; 39:305–311.
+5. Smith LA, et al. Acute bipolar mania: a systematic review and meta-analysis of co-therapy vs. monotherapy. Acta Psychiatr Scand 2007;
+115:12–20.
+
+CHAPTER 2
+
+Table 2.7 Mania – other possible treatments
+Alphabetical order – no preference implied by order in the table. Consult specialist and primary literature before
+using any treatment listed.
+
+
+
+
+<<<PAGE 571>>>
+
+550  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 5.1 (Continued)
+Medication
+
+Comments
+
+Quetiapine
+
+A double-blind, placebo-controlled study (N = 277)35 showed quetiapine (at doses of
+400mg/day or 600mg/day) to be significantly better than placebo in reducing mean YMRS
+scores at 3 weeks. The most common side effects included somnolence and sedation.
+Weight gain was 1.7kg in the quetiapine group versus 0.4kg for placebo
+
+CHAPTER 5
+
+Quetiapine is effective as an adjunct to valproate compared with valproate alone (N = 30,
+6 weeks)36 and was as effective as valproate in a double-blind trial (N = 50, 4 weeks)37
+Aripiprazole
+
+A double-blind placebo-controlled study38,39 showed aripiprazole (at doses 10mg/day or
+30mg/day) to be significantly better than placebo in reducing mean YMRS scores at both
+4 weeks (N = 296)38 and 30 weeks (N = 210).39 Note the significantly higher incidence of
+extrapyramidal side effects in the treatment groups (especially the higher dose). Weight
+gain was significantly higher in the treatment groups compared to placebo (3.0kg versus
+6.5kg for the low and 6.6kg for the high dose arm) at week 30 but not at week 4
+
+Ziprasidone
+
+A double-blind, placebo-controlled trial (N = 237)40 showed ziprasidone (at flexible doses
+40–160mg) to be significantly more effective than placebo in reducing mean YMRS scores
+at 4 weeks. Sedation and somnolence were the most common side effects, while it
+demonstrated a neutral metabolic profile and no QTc prolongation
+
+Asenapine
+
+A 3 weeks double-blind, placebo-controlled study (N = 350) demonstrated statistical
+superiority of asenapine over placebo for each of the doses used (2.5, 5 or 10mg b.i.d.),
+with significant difference as early as day 4. However, many side effects were reported,
+including weight gain of more than 7% from baseline (8–12% incidence in asenapine
+group vs 1.1% in placebo group), metabolic changes (increase in fasting insulin, lipids,
+glucose), as well as somnolence, sedation, oral hypoaesthesia and paraesthesia41
+
+ALT, alanine transaminase; AST, aspartate aminotransferase; ER, extended release; MS, mood stabilisers; RCT,
+randomised controlled trial; YMRS, Young Mania Rating Scale.
+
+Table 5.2 Summary of RCT evidence on medication used in youth with bipolar depression
+Medication
+
+Comments
+
+Quetiapine
+
+In adults, there is considerably better evidence for efficacious treatments (see the
+section on bipolar depression), such as quetiapine.42,43 Surprisingly, however, a
+small study in 32 adolescents,44 followed by a larger RCT (N = 193)45 failed to
+show effectiveness. This latest study had a high placebo response, which is not
+present in adult quetiapine studies46 and which may reflect issues that have been
+noted before about phenotyping of mood disorders and multi-site studies47
+
+Olanzapine/fluoxetine
+combination
+
+The only double-blind randomised placebo-controlled trial with positive results for the
+treatment of bipolar depression in youth is a large study (N = 255) of the olanzapine/
+fluoxetine combination (either 6/25mg or 12/50mg daily) for 8 weeks.48 Between-group
+differences were significant at week 1 and all subsequent visits. Most frequent side
+effects were weight gain (4.4kg for the olanzapine/fluoxetine combination vs 0.5kg for
+placebo), somnolence and hyperlipidaemia. The olanzapine/fluoxetine combination is
+recommended by NICE guidelines,5 along with quetiapine, as first-line treatment for
+bipolar depression in youth, as in adults. Although the olanzapine/fluoxetine
+combination is not currently available as a single preparation in the UK, its effects can
+be achieved by combining olanzapine and fluoxetine (e.g. 5/20mg or 10/40mg)
+
+
+
+
+<<<PAGE 772>>>
+
+55. Aweeka F, et al. The pharmacokinetics of ziprasidone in subjects with normal and impaired renal function. Br J Clin Pharmacol 2000;
+49:27S-33S.
+56. Roerig. Highlights of Prescribing Information: GEODON® (ziprasidone HCl) capsules; GEODON® (ziprasidone mesylate) injection for
+intramuscular use 2020; http://labeling.pfizer.com/ShowLabeling.aspx?id=584.
+57. Iskandar JW, et al. Transient agranulocytosis associated with ziprasidone in a 45-year-old man on hemodialysis. J Clin Psychopharmacol
+2015; 35:347–348.
+58. Basol N, et al. Beneficial effects of agomelatine in experimental model of sepsis-related acute kidney injury. Ulus Travma Acil Cerrahi Derg
+2016; 22:121–126.
+59. Karaman A, et al. A novel approach to contrast-induced nephrotoxicity: the melatonergic agent agomelatine. Br J Radiol 2016; 89:20150716.
+60. Lieberman JA, et al. Tricyclic antidepressant and metabolite levels in chronic renal failure. Clin Pharmacol Ther 1985; 37:301–307.
+61. Mitas JA, et al. Diabetic neuropathic pain: control by amitriptyline and fluphenazine in renal insufficiency. South Med J 1983; 76:462–463,
+467.
+62. Murphy EJ. Acute pain management pharmacology for the patient with concurrent renal or hepatic disease. Anaesth Intensive Care 2005;
+33:311–322.
+63. Constantino JL, et al. Pharmacokinetics of antidepressants in patients undergoing hemodialysis: a narrative literature review. Braz J Psychiatry
+2019; 41:441–446.
+64. Chen TY, et al. Amitriptyline-induced acute kidney injury and acute hepatitis: a case report. Am J Ther 2021; 28:e256-e258
+65. Sage Therapeutics Inc. Highlights of Prescribing Information. Zulresso (brexanolone) injection for intravenous use [controlled substance
+schedule pending] 2019; https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/211371lbl.pdf.
+66. Turpeinen M, et al. Effect of renal impairment on the pharmacokinetics of bupropion and its metabolites. Br J Clin Pharmacol 2007;
+64:165–173.
+67. Worrall SP, et al. Pharmacokinetics of bupropion and its metabolites in haemodialysis patients who smoke. A single dose study. Nephron Clin
+Pract 2004; 97:c83–c89.
+68. Ghoreishi A, et al. Bupropion as a treatment for sexual dysfunction among chronic kidney disease patients Acta Med Iran 2019;
+57:320–327.
+69. Joffe P, et al. Single-dose pharmacokinetics of citalopram in patients with moderate renal insufficiency or hepatic cirrhosis compared with
+healthy subjects. Eur J Clin Pharmacol 1998; 54:237–242.
+70. Kalender B, et al. Antidepressant treatment increases quality of life in patients with chronic renal failure. Ren Fail 2007; 29:817–822.
+71. Kelly CA, et al. Adult respiratory distress syndrome and renal failure associated with citalopram overdose. Hum Exp Toxicol 2003;
+22:103–105.
+72. Spigset O, et al. Citalopram pharmacokinetics in patients with chronic renal failure and the effect of haemodialysis. Eur J Clin Pharmacol
+2000; 56:699–703.
+73. Hosseini SH, et al. Citalopram versus psychological training for depression and anxiety symptoms in hemodialysis patients. Iran J Kidney Dis
+2012; 6:446–451.
+74. Sran H, et al. Confusion after starting citalopram in a renal transplant patient. BMJ Case Rep 2013; 2013:bcr2013010511.
+75. Assimon MM, et al. Comparative cardiac safety of selective serotonin reuptake inhibitors among individuals receiving maintenance hemodialysis. J Am Soc Nephrol 2019; 30:611–623.
+76. Onishi A, et al. Reversible acute renal failure associated with clomipramine-induced interstitial nephritis. Clin Exp Nephrol 2007;
+11:241–243.
+77. Wyeth Pharmaceuticals Inc. Highlights of Prescribing Information. PRISTIQ® (desvenlafaxine) Extended-Release Tablets, for oral use 2020;
+http://labeling.pfizer.com/showlabeling.aspx?id=497%20.
+78. Nichols AI, et al. The pharmacokinetics and safety of desvenlafaxine in subjects with chronic renal impairment. Int J Clin Pharmacol Ther
+2011; 49:3–13.
+79. Rees JA. Clinical interpretation of pharmacokinetic data on dothiepin hydrochloride (Dosulepin, Prothiaden). J Int Med Res 1981;
+9:98–102.
+80. Swarna SS, et al. Pruritus associated with chronic kidney disease: a comprehensive literature review. Cureus 2019; 11:e5256.
+81. Lobo ED, et al. Effects of varying degrees of renal impairment on the pharmacokinetics of duloxetine: analysis of a single-dose phase I study
+and pooled steady-state data from phase II/III trials. Clin Pharmacokinet 2010; 49:311–321.
+82. Ho NV, et al. Duloxetine-induced multi-system organ failure: a case report. Poster presented at American Geriatrics Society Annual Meeting,
+May 11–15, 2011: National Harbor, Maryland; 2011.
+83. Nguyen T, et al. Duloxetine uses in patients with kidney disease: different recommendations from the United States versus Europe and
+Canada. Am J Ther 2019; 26:e516-e519.
+84. Uong C, et al. Poster 91 serotonin syndrome in chronic kidney disease patient after given a dose of duloxetine while on trazodone: a case
+report. PM&R 2014; 6 (Suppl): S214–S215.
+85. Miriyala K, et al. Renal failure in a depressed adolescent on escitalopram. J Child Adolesc Psychopharmacol 2008; 18:405–408.
+86. Adiga GU, et al. Renal tubular defects from antidepressant use in an older adult: an uncommon but reversible adverse drug effect. Clin Drug
+Invest 2006; 26:607–610.
+87. Yazici AE, et al. Efficacy and tolerability of escitalopram in depressed patients with end stage renal disease: an open placebo-controlled study.
+Bull Clin Psychopharmacol 2012; 22:23–30.
+88. Bergstrom RF, et al. The effects of renal and hepatic disease on the pharmacokinetics, renal tolerance, and risk-benefit profile of fluoxetine.
+Int Clin Psychopharmacol 1993; 8:261–266.
+89. Blumenfield M, et al. Fluoxetine in depressed patients on dialysis. Int J Psychiatry Med 1997; 27:71–80.
+90. Levy NB, et al. Fluoxetine in depressed patients with renal failure and in depressed patients with normal kidney function. Gen Hosp
+Psychiatry 1996; 18:8–13.
+
+CHAPTER 8
+
+Hepatic and renal impairment  751
+
+
+
+
+<<<PAGE 811>>>
+
+CHAPTER 10
+
+790  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 10.5 (Continued)
+Safety in
+epilepsy
+
+Drug
+
+Comments
+
+Antipsychotics
+Low risk
+– good
+choices
+
+Amisulpride/
+sulpiride
+
+Considered to be safe in PWE.43 Renally excreted, so low risk of
+pharmacokinetic interactions with antiseizure medications. Seizures
+uncommon in overdose44
+
+Aripiprazole
+
+Rarely lowers seizure threshold.5 Incidence of seizures similar to placebo in
+RCTs24
+
+Ziprasidone
+
+Probably low
+risk – use
+with caution
+(limited
+evidence)
+
+High potency
+FGAs
+
+For example, fluphenazine, haloperidol, trifluoperazine, flupentixol. Low risk
+of lowering the seizure threshold5
+
+Risperidone
+
+Unlikely to lower the seizure threshold.5 Incidence of seizures similar to
+placebo in RCTs.24 Has been recommended for PWE.32,45 Evidence of safety in
+a case series of adolescents with epilepsy46
+
+Asenapine
+
+Seizure rate similar to placebo in RCTs.47 Data and clinical experience of use
+in PWE is extremely limited
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Moderate
+risk – care
+required
+
+Olanzapine
+Quetiapine
+
+Olanzapine and quetiapine both associated with seizures in RCTs.24 However,
+olanzapine causes more EEG abnormalities.44 Overall risk of reducing the
+seizure threshold is considered to be low5 and olanzapine has been
+recommended by some for PWE.32 Data relating to olanzapine are difficult to
+interpret. EEG changes are seen in some but not all studies48 and it has been
+reported to be both anticonvulsant49 and proconvulsant.50 Quetiapine has a
+high risk of drug interaction in PWE45
+
+Higher risk
+– care
+required
+
+Clozapine
+
+Most epileptogenic antipsychotic.32 However, has been used successfully in
+PWE stable on antiseizure medications without worsening seizures51 and
+even in treatment-resistant epilepsy.52 Note, should not be used with
+carbamazepine (risk of blood dyscrasias and reduced clozapine levels).
+Valproate or lamotrigine are the antiseizure medications of choice
+
+Higher risk
+– avoid
+
+Low potency FGAs
+(e.g.
+chlorpromazine)
+
+Best avoided in PWE.31 Doses of chlorpromazine above 1g/day have a 9%
+incidence of seizures
+
+Loxapine
+
+Highest rate of seizures amongst the FGAs53
+
+Depot
+antipsychotics
+
+None of the depot preparations currently available are thought to be
+epileptogenic, however:
+■■ The kinetics of depots are complex (seizures may be delayed)
+■■ If seizures do occur, the offending drug may not be easily withdrawn.
+Depots should be used with extreme care
+
+Zotepine
+
+Has established dose-related pro-convulsive effect44
+(Continued)
+
+
+
+
+<<<PAGE 862>>>
+
+Pharmacokinetics  841
+
+The target ranges listed in Table 11.2 have somewhat dubious usefulness and, in
+some cases, merely represent the range of values seen in clinical use. Assays for these
+drugs are likely to be available only in specialist units.
+
+Antipsychotics
+
+Target range (µg/L)
+
+Asenapine
+
+1–5
+
+Brexpiprazole
+
+40–140
+
+Cariprazine
+
+10–20
+
+Chlorpromazine
+
+30–300
+
+Flupentixol
+
+0.5–5 (cis-isomer)
+
+Fluphenazine
+
+1–10
+
+Haloperidol
+
+1–10
+
+Iloperidone
+
+5–10
+
+Lurasidone
+
+15–40
+
+Melperone
+
+30–100
+
+Sulpiride
+
+200–1000
+
+Ziprasidone
+
+50–200
+
+Zuclopenthixol
+
+4–50
+
+Antidepressants
+
+Target range (µg/L)
+
+Agomelatine
+
+7–300
+
+Citalopram
+
+50–110
+
+Desvenlafaxine
+
+100–400
+
+Dosulepin
+
+45–100
+
+Duloxetine
+
+30–120
+
+Escitalopram
+
+15–80
+
+Fluoxetine (+norfluoxetine)
+
+120–500
+
+Fluvoxamine
+
+60–230
+
+Levomilnacipran
+
+80–120
+
+Mianserin
+
+15–70
+
+CHAPTER 11
+
+Table 11.2 Target ranges for other psychotropics30,91
+
+(Continued)
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 902>>>
+
+63. Vigneault P, et al. Iloperidone (Fanapt(R)), a novel atypical antipsychotic, is a potent HERG blocker and delays cardiac ventricular repolarization at clinically relevant concentration. Pharmacol Res 2012; 66:60–65.
+64. Vanda Pharmaceuticals Inc. Highlights of prescribing information: FANAPT® (iloperidone) tablets. 2020; https://www.fanapt.com/product/
+pi/pdf/fanapt.pdf.
+65. Amon J, et al. A case of iloperidone overdose in a 27-year-old man with cocaine abuse. SAGE Open Medical Case Reports 2016;
+4:2050313x16660485.
+66. Vyas P, et al. An evaluation of lumateperone tosylate for the treatment of schizophrenia. Expert Opin Pharmacother 2020; 21:139–145.
+67. Sunovion Pharmaceuticals Europe Ltd. Summary of Product Characteristics. Latuda 18.5mg, 37mg and 74mg film-coated tablets 2020;
+https://www.medicines.org.uk/emc/medicine/29125.
+68. Molnar GP, et al. Acute lurasidone overdose. J Clin Psychopharmacol 2014; 34:768–770.
+69. Chue P, et al. A review of olanzapine-associated toxicity and fatality in overdose. J Psychiatry Neurosci 2003; 28:253–261.
+70. Waring WS, et al. Olanzapine overdose is associated with acute muscle toxicity. Hum Exp Toxicol 2006; 25:735–740.
+71. Morissette P, et al. Olanzapine prolongs cardiac repolarization by blocking the rapid component of the delayed rectifier potassium current.
+Journal of Psychopharmacology (Oxford, England) 2007; 21:735–741.
+72. Buckley NA, et al. Cardiotoxicity more common in thioridazine overdose than with other neuroleptics. J Toxicol Clin Toxicol 1995;
+33:199–204.
+73. Li C, et al. Acute pulmonary edema induced by overdosage of phenothiazines. Chest 1992; 101:102–104.
+74. Flanagan RJ. Fatal toxicity of drugs used in psychiatry. Human Psychopharmacology 2008; 23 Suppl 1:43–51.
+75. Sahli ZT, et al. Pimavanserin: novel pharmacotherapy for Parkinson’s disease psychosis. Expert Opinion on Drug Discovery 2018;
+13:103–110.
+76. Vanover KE, et al. Pharmacokinetics, tolerability, and safety of ACP-103 following single or multiple oral dose administration in healthy
+volunteers. J Clin Pharmacol 2007; 47:704–714.
+77. Langman LJ, et al. Fatal overdoses associated with quetiapine. J Anal Toxicol 2004; 28:520–525.
+78. Hunfeld NG, et al. Quetiapine in overdosage: a clinical and pharmacokinetic analysis of 14 cases. Ther Drug Monit 2006; 28:185–189.
+79. Strachan PM, et al. Mental status change, myoclonus, electrocardiographic changes, and acute respiratory distress syndrome induced by
+quetiapine overdose. Pharmacotherapy 2006; 26:578–582.
+80. Ngo A, et al. Acute quetiapine overdose in adults: a 5-Year retrospective case series. Ann Emerg Med 2008; 52:541–547.
+81. Liang CS, et al. Acute renal failure after paliperidone overdose: a case report. J Clin Psychopharmacol 2012; 32:128.
+82. Lapid MI, et al. Acute dystonia associated with paliperidone overdose. Psychosomatics 2011; 52:291–294.
+83. Gomez-Criado MS, et al. Ziprasidone overdose: cases recorded in the database of Pfizer-Spain and literature review. Pharmacotherapy 2005;
+25:1660–1665.
+84. Arbuck DM. 12,800-mg ziprasidone overdose without significant ECG changes. Gen Hosp Psychiatry 2005; 27:222–223.
+85. Insa Gomez FJ, et al. Ziprasidone overdose: cardiac safety. Actas Esp Psiquiatr 2005; 33:398–400.
+86. Klein-Schwartz W, et al. Prospective observational multi-poison center study of ziprasidone exposures. Clin Toxicol (Phila) 2007;
+45:782–786.
+87. Tan HH, et al. A systematic review of cardiovascular effects after atypical antipsychotic medication overdose. Am J Emerg Med 2009;
+27:607–616.
+88. Alipour A, et al. Torsade de pointes after ziprasidone overdose with coingestants. J Clin Psychopharmacol 2010; 30:76–77.
+89. Spiller HA. Management of carbamazepine overdose. Pediatr Emerg Care 2001; 17:452–456.
+90. Schmidt S, et al. Signs and symptoms of carbamazepine overdose. J Neurol 1995; 242:169–173.
+91. Alabi A, et al. Safety profile of lamotrigine in overdose. Ther Adv Psychopharmacol 2016; 6:369–381.
+92. Alyahya B, et al. Acute lamotrigine overdose: a systematic review of published adult and pediatric cases. Clin Toxicol (Phila) 2018;
+56:81–89.
+93. Tuohy K, et al. Acute lithium intoxication. Dial Transplant 2003; 32:478–481.
+94. Chen KP, et al. Implication of serum concentration monitoring in patients with lithium intoxication. Psychiatry Clin Neurosci 2004;
+58:25–29.
+95. Offerman SR, et al. Hospitalized lithium overdose cases reported to the California poison control system. Clin Toxicol (Phila) 2010;
+48:443–448.
+96. Ferrey AE, et al. Relative toxicity of mood stabilisers and antipsychotics: case fatality and fatal toxicity associated with self-poisoning. BMC
+Psychiatry 2018; 18:399.
+97. Isbister GK, et al. Valproate overdose: a comparative cohort study of self poisonings. Br J Clin Pharmacol 2003; 55:398–404.
+98. Spiller HA, et al. Multicenter case series of valproic acid ingestion: serum concentrations and toxicity. J Toxicol Clin Toxicol 2000;
+38:755–760.
+99. Sztajnkrycer MD. Valproic acid toxicity: overview and management. J Toxicol Clin Toxicol 2002; 40:789–801.
+100. Eyer F, et al. Acute valproate poisoning: pharmacokinetics, alteration in fatty acid metabolism, and changes during therapy. J Clin
+Psychopharmacol 2005; 25:376–380.
+101. Robinson P, et al. Severe hypothermia in association with sodium valproate overdose. N Z Med J 2005; 118:U1681.
+102. Reith DM, et al. Comparison of the fatal toxicity index of zopiclone with benzodiazepines. J Toxicol Clin Toxicol 2003; 41:975–980.
+103. Isbister GK, et al. Alprazolam is relatively more toxic than other benzodiazepines in overdose. Br J Clin Pharmacol 2004; 58:88–95.
+104. Gable RS. Comparison of acute lethal toxicity of commonly abused psychoactive substances. Addiction 2004; 99:686–696.
+
+CHAPTER 13
+
+Psychotropic drugs in special conditions  881
+
+

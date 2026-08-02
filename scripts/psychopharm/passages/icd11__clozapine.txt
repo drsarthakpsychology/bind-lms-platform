@@ -1,0 +1,112 @@
+<<<PAGE 264>>>
+
+Example Criterion Detail
+
+9
+
+10
+
+11
+
+Harm
+
+Fracture of neck of femur, unspecified (NC72.2Z; Laterality (use
+additional code, if desired) - Left (XK8G)
+
+Cause
+
+Other health care related causes of injury or harm (PL10)
+
+Mode
+
+Fall in health care (PL14.E)
+
+Cluster
+
+NC72.2Z & XK8G/PL10/PL14.E
+
+Case
+
+Patient received an infusion of red blood cells and develops severe
+rigors that subside after an hour. It was discovered that there was a
+blood mismatch (not ABO or Rh incompatibility).
+
+Harm
+
+Other serum reactions (NE80.3)
+
+Cause
+
+Other health care related causes of injury or harm (PL10)
+
+Mode
+
+Mismatched blood used in transfusion (PL14.3)
+
+Cluster
+
+NE80.3/PL10/PL14.3
+
+Case
+
+Right sided pneumothorax caused by mechanical ventilation in an
+intensive case setting
+
+Harm
+
+Pneumothorax, unspecified (CB21.Z); Laterality (use additional
+code, if desired) - Right (XK9K)
+
+Cause
+
+Ventilation associated with injury or harm in therapeutic use
+(PK81.0)
+
+Mode
+
+Unspecified mode of injury or harm associated with a surgical or
+other medical procedure (PL11.Z)
+
+Cluster
+
+CB21.Z&XK9K/PK81.0/PL11.Z
+
+Case
+
+Patient with neutropenia due to chronic therapy with clozapine.
+
+Harm
+
+Acquired neutropenia (4B00.01)
+
+Cause
+
+Drugs, medicaments or biological substances associated with injury
+or harm in therapeutic use (PL00); Medication (use additional code,
+if desired) - XM8UG6)]
+
+Mode
+
+Drug-related injury or harm in the context of correct administration
+or dosage, as mode of injury or harm (PL13.2)])
+
+Cluster
+
+4B00.01/PL00&XM8UG6/PL13.2
+
+Note that in each of these examples, a mode/mechanism of harm is coded alongside the
+cause of harm code for all cases. This is true, even when a mode of harm is not apparent. In
+the latter situations, a code for ‘mode or mechanism of injury unspecified’ should be
+selected, for any of substance-related harm, procedure-related harm, or device-related
+harm. For the ‘other health care related causes’ the harm should be coded (from anywhere
+in the classification) followed by code PL10 Other health care related causes of injury or
+harm followed by the appropriate code from category PL14 Mode of injury or harm
+associated with other health care related causes (where there are several mode options).
+Considerations around distinguishing poisoning versus overdose of drugs, medicaments or
+biologic substances in the clinical context
+
+262
+
+ICD-11 MMS
+
+

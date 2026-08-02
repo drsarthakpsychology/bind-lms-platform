@@ -1,0 +1,1697 @@
+<<<PAGE 8>>>
+
+0521011698pre.qxd
+
+9/13/04
+
+10:34 AM
+
+Page vii
+
+Table of contents
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+25.
+26.
+27.
+28.
+29.
+30.
+31.
+32.
+33.
+
+Introduction
+
+xi
+
+List of icons
+
+xiii
+
+alprazolam
+amisulpride
+amitriptyline
+amoxapine
+aripiprazole
+atomoxetine
+bupropion
+buspirone
+carbamazepine
+chlordiazepoxide
+chlorpromazine
+citalopram
+clomipramine
+clonazepam
+clonidine
+clorazepate
+clozapine
+d-amphetamine
+desipramine
+diazepam
+d,l-amphetamine
+d,l-methylphenidate
+d-methylphenidate
+donepezil
+dothiepin
+doxepin
+duloxetine
+escitalopram
+estazolam
+flumazenil
+flunitrazepam
+fluoxetine
+flupenthixol
+
+1
+7
+13
+19
+25
+31
+37
+43
+47
+53
+57
+63
+69
+75
+81
+87
+91
+97
+103
+109
+115
+121
+127
+133
+139
+145
+151
+157
+163
+167
+171
+175
+181
+vii
+
+
+
+
+<<<PAGE 42>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 25
+
+ARIPIPRAZOLE
+THERAPEUTICS
+Brands • Abilify
+see index for additional brand names
+Generic? Not in U.S., Europe, or Japan
+Class
+• Dopamine partial agonist (dopamine
+stabilizer, atypical antipsychotic, third
+generation antipsychotic; sometimes
+included as a second generation
+antipsychotic; also a mood stabilizer)
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Schizophrenia
+• Maintaining stability in schizophrenia
+• Other psychotic disorders
+• Acute mania
+• Bipolar maintenance
+• Bipolar depression
+• Behavioral disturbances in dementias
+• Behavioral disturbances in children and
+adolescents
+• Disorders associated with problems with
+impulse control
+
+How The Drug Works
+
+✽ Partial agonism at dopamine 2 receptors
+
+• Theoretically reduces dopamine output
+when dopamine concentrations are high,
+thus improving positive symptoms and
+mediating antipsychotic actions
+• Theoretically increases dopamine output
+when dopamine concentrations are low,
+thus improving cognitive, negative, and
+mood symptoms
+• Actions at dopamine 3 receptors could
+theoretically contribute to aripiprazole’s
+efficacy
+• Partial agonism at 5HT1A receptors may be
+relevant at clinical doses
+• Blockade of serotonin type 2A receptors
+may contribute at clinical doses to cause
+enhancement of dopamine release in
+certain brain regions, thus reducing motor
+side effects and possibly improving
+cognitive and affective symptoms
+
+How Long Until It Works
+• Psychotic symptoms can improve within
+1 week, but it may take several weeks for
+
+full effect on behavior as well as on
+cognition and affective stabilization
+• Classically recommended to wait at least
+4–6 weeks to determine efficacy of drug,
+but in practice some patients require up to
+16–20 weeks to show a good response,
+especially on cognitive symptoms
+
+If It Works
+• Most often reduces positive symptoms in
+schizophrenia but does not eliminate them
+• Can improve negative symptoms, as well
+as aggressive, cognitive, and affective
+symptoms in schizophrenia
+• Most schizophrenic patients do not have a
+total remission of symptoms but rather a
+reduction of symptoms by about a third
+• Perhaps 5–15% of schizophrenic patients
+can experience an overall improvement of
+greater than 50–60%, especially when
+receiving stable treatment for more than a
+year
+• Such patients are considered superresponders or “awakeners” since they may
+be well enough to be employed, live
+independently, and sustain long-term
+relationships
+• Many bipolar patients may experience a
+reduction of symptoms by half or more
+• Continue treatment until reaching a plateau
+of improvement
+• After reaching a satisfactory plateau,
+continue treatment for at least a year after
+first episode of psychosis
+• For second and subsequent episodes of
+psychosis, treatment may need to be
+indefinite
+• Even for first episodes of psychosis, it may
+be preferable to continue treatment
+indefinitely to avoid subsequent episodes
+• Treatment may not only reduce mania but
+also prevent recurrences of mania in
+bipolar disorder
+
+If It Doesn’t Work
+• Try one of the other atypical antipsychotics
+(risperidone, olanzapine, quetiapine,
+ziprasidone, amisulpride)
+• If two or more antipsychotic
+monotherapies do not work, consider
+clozapine
+• If no first-line atypical antipsychotic is
+effective, consider higher doses or
+augmentation with valproate or lamotrigine
+
+25
+
+
+
+
+<<<PAGE 43>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 26
+
+ARIPIPRAZOLE (continued)
+• Some patients may require treatment with
+a conventional antipsychotic
+• Consider noncompliance and switch to
+another antipsychotic with fewer side
+effects or to an antipsychotic that can be
+given by depot injection
+• Consider initiating rehabilitation and
+psychotherapy
+• Consider presence of concomitant drug
+abuse
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+• Valproic acid (valproate, divalproex,
+divalproex ER)
+• Other mood stabilizing anticonvulsants
+(carbamazepine, oxcarbazepine,
+lamotrigine)
+• Lithium
+• Benzodiazepines
+
+Tests
+Before starting an atypical antipsychotic
+✽ Weigh all patients and track BMI during
+treatment
+• Get baseline personal and family history of
+obesity, dyslipidemia, hypertension, and
+cardiovascular disease
+✽ Get waist circumference (at umbilicus),
+blood pressure, fasting plasma glucose,
+and fasting lipid profile
+• Determine if the patient is
+• overweight (BMI 25.0–29.9)
+• obese (BMI ≥30)
+• has pre-diabetes (fasting plasma glucose
+100–125 mg/dl)
+• has diabetes (fasting plasma glucose
+>126 mg/dl)
+• has hypertension (BP >140/90 mm Hg)
+• has dyslipidemia (increased total
+cholesterol, LDL cholesterol, and
+triglycerides; decreased HDL cholesterol)
+• Treat or refer such patients for treatment,
+including nutrition and weight
+management, physical activity counseling,
+smoking cessation, and medical
+management
+Monitoring after starting an atypical
+antipsychotic
+✽ BMI monthly for 3 months, then quarterly
+✽ Blood pressure, fasting plasma glucose,
+fasting lipids within 3 months and then
+annually, but earlier and more frequently
+26
+
+for patients with diabetes or who have
+gained >5% of initial weight
+• Treat or refer for treatment and consider
+switching to another atypical antipsychotic
+for patients who become overweight,
+obese, pre-diabetic, diabetic, hypertensive,
+or dyslipidemic while receiving an atypical
+antipsychotic
+✽ Even in patients without known diabetes,
+be vigilant for the rare but life threatening
+onset of diabetic ketoacidosis, which
+always requires immediate treatment, by
+monitoring for the rapid onset of polyuria,
+polydipsia, weight loss, nausea, vomiting,
+dehydration, rapid respiration, weakness
+and clouding of sensorium, even coma
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• By blocking alpha 1 adrenergic receptors, it
+can cause dizziness, sedation, and
+hypotension
+• Partial agonist actions at dopamine 2
+receptors in the striatum can cause motor
+side effects, such as akathisia
+(occasionally)
+• Partial agonist actions at dopamine 2
+receptors can also cause nausea,
+occasional vomiting, and activating side
+effects
+✽ Mechanism of any possible weight gain is
+unknown; weight gain is not common with
+aripiprazole and may thus have a different
+mechanism from atypical antipsychotics
+for which weight gain is common or
+problematic
+✽ Mechanism of any possible increased
+incidence of diabetes or dyslipidemia is
+unknown; early experience suggests these
+complications are not clearly associated
+with aripiprazole and if present may
+therefore have a different mechanism from
+that of atypical antipsychotics associated
+with an increased incidence of diabetes and
+dyslipidemia
+
+Notable Side Effects
+
+✽ Dizziness, insomnia, akathisia, activation
+✽ Nausea, vomiting
+
+• Orthostatic hypotension, occasionally
+during initial dosing
+• Constipation
+
+
+
+
+<<<PAGE 44>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 27
+
+(continued) ARIPIPRAZOLE
+
+• Headache, asthenia, sedation
+• Theoretical risk of tardive dyskinesia
+
+DOSING AND USE
+Usual Dosage Range
+• 15–30 mg/day
+
+Life Threatening or
+Dangerous Side Effects
+• Rare neuroleptic malignant syndrome
+(much reduced risk compared to
+conventional antipsychotics)
+• Rare seizures
+
+Weight Gain
+
+• Reported in a few patients, especially those
+with low BMIs, but not expected
+• Less frequent and less severe than for
+most other antipsychotics
+
+Sedation
+
+• Reported in a few patients but not expected
+• May be less than for some other
+antipsychotics, but never say never
+• Can be activating at moderate to high
+doses
+
+What To Do About Side Effects
+• Wait
+• Wait
+• Wait
+• Reduce the dose
+• Anticholinergics may reduce akathisia
+when present
+• Weight loss, exercise programs, and
+medical management for high BMIs,
+diabetes, dyslipidemia
+• Switch to another atypical antipsychotic
+
+Best Augmenting Agents for Side
+Effects
+• Benztropine or trihexyphenidyl for motor
+side effects and akathisia
+• Many side effects cannot be improved with
+an augmenting agent
+
+Dosage Forms
+• Tablet 5 mg, 10 mg, 15 mg, 20 mg, 30 mg
+
+How to Dose
+• Initial approved recommendation is
+15 mg/day; maximum approved dose
+30 mg/day
+
+Dosing Tips
+
+✽ For some, less may be more: frequently,
+
+patients not acutely psychotic may need to
+be dosed lower (e.g., 5–10 mg/day) in
+order to avoid akathisia and activation and
+for maximum tolerability
+• For others, more may be more: rarely,
+patients may need to be dosed higher than
+30 mg/day for optimum efficacy
+• Consider cutting 5 mg tablet in half (tablets
+not scored) for children and adolescents,
+as well as for adults very sensitive to side
+effects
+✽ Although studies suggest patients
+switching to aripiprazole from another
+antipsychotic can do well with rapid switch
+or with cross-titration, clinical experience
+suggests many patients may do best by
+adding a full dose of aripiprazole to the
+maintenance dose of the first antipsychotic
+for several days prior to slow downtitration of the first antipsychotic
+• Rather than raise the dose above these
+levels in acutely agitated patients requiring
+acute antipsychotic actions, consider
+augmentation with a benzodiazepine or
+conventional antipsychotic, either orally or
+intramuscularly
+• Rather than raise the dose above these
+levels in partial responders, consider
+augmentation with a mood stabilizing
+anticonvulsant, such as valproate or
+lamotrigine
+• Children and elderly should generally be
+dosed at the lower end of the dosage
+spectrum
+• Less expensive than some antipsychotics,
+more expensive than others depending on
+dose administered
+• Due to its very long half-life, aripiprazole
+will take longer to reach steady state when
+27
+
+
+
+
+<<<PAGE 45>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 28
+
+ARIPIPRAZOLE (continued)
+initiating dosing, and longer to wash out
+when stopping dosing, than other atypical
+antipsychotics
+
+Overdose
+• No fatalities have been reported; sedation,
+vomiting
+
+Long-Term Use
+• Approved to delay relapse in long-term
+treatment of schizophrenia
+• Often used for long-term maintenance in
+bipolar disorder and various behavioral
+disorders
+
+Habit Forming
+
+Other Warnings/
+Precautions
+• Use with caution in patients with
+conditions that predispose to hypotension
+(dehydration, overheating)
+• Dysphagia has been associated with
+antipsychotic use, and aripiprazole should
+be used cautiously in patients at risk for
+aspiration pneumonia
+
+Do Not Use
+• If there is a proven allergy to aripiprazole
+
+SPECIAL POPULATIONS
+
+• No
+
+How to Stop
+• Slow down-titration (over 6 to 8 weeks),
+especially when simultaneously beginning
+a new antipsychotic while switching (i.e.,
+cross-titration)
+• Rapid discontinuation could theoretically
+lead to rebound psychosis and worsening
+of symptoms
+
+Pharmacokinetics
+• Metabolized primarily by CYP450 2D6 and
+CYP450 3A4
+• Mean elimination half-life 75 hours
+(aripiprazole) and 94 hours (major
+metabolite dehydro-aripiprazole)
+
+Renal Impairment
+• Dose adjustment not necessary
+
+Hepatic Impairment
+• Dose adjustment not necessary
+
+Cardiac Impairment
+• Use in patients with cardiac impairment
+has not been studied, so use with caution
+because of risk of orthostatic hypotension
+
+Elderly
+• Dose adjustment generally not necessary,
+but some elderly patients may tolerate
+lower doses better
+
+Children and Adolescents
+Drug Interactions
+• Ketaconazole and possibly other CYP450
+3A4 inhibitors such as nefazodone,
+fluvoxamine, and fluoxetine may increase
+plasma levels of aripiprazole
+• Carbamazepine and possibly other inducers
+of CYP450 3A4 may decrease plasma
+levels of aripiprazole
+• Quinidine and possibly other inhibitors of
+CYP450 2D6 such as paroxetine,
+fluoxetine, and duloxetine may increase
+plasma levels of aripiprazole
+• Aripiprazole may enhance the effects of
+antihypertensive drugs
+• Aripiprazole may antagonize levodopa,
+dopamine agonists
+
+28
+
+• Not officially recommended for patients
+under age 18
+• Clinical experience and early data suggest
+aripiprazole may be safe and effective for
+behavioral disturbances in children and
+adolescents, especially at lower doses
+• Children and adolescents using aripiprazole
+may need to be monitored more often than
+adults and may tolerate lower doses better
+
+Pregnancy
+• Risk Category C [some animal studies
+show adverse effects, no controlled studies
+in humans]
+• Psychotic symptoms may worsen during
+pregnancy and some form of treatment
+may be necessary
+
+
+
+
+<<<PAGE 46>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 29
+
+(continued) ARIPIPRAZOLE
+
+• Aripiprazole may be preferable to
+anticonvulsant mood stabilizers if
+treatment is required during pregnancy
+
+• Cognitive symptoms
+• Unstable mood
+• Aggressive symptoms
+
+Breast Feeding
+• Unknown if aripiprazole is secreted in
+human breast milk, but all psychotropics
+assumed to be secreted in breast milk
+✽ Recommended either to discontinue drug
+or bottle feed
+• Infants of women who choose to breast
+feed while on aripiprazole should be
+monitored for possible adverse effects
+
+THE ART OF PSYCHOPHARMACOLOGY
+Potential Advantages
+• Some cases of psychosis and bipolar
+disorder refractory to treatment with other
+antipsychotics
+✽ Patients concerned about gaining weight
+✽ Patients with diabetes
+• Patients requiring rapid onset of
+antipsychotic action without dosage
+titration
+
+Potential Disadvantages
+• Patients in whom sedation is desired
+• May be more difficult to dose for children,
+elderly, or “off label” uses
+
+Pearls
+
+✽ Well accepted in clinical practice when
+
+wanting to avoid weight gain because less
+weight gain than most other antipsychotics
+✽ Well accepted in clinical practice when
+wanting to avoid sedation because less
+sedation than most other antipsychotics at
+all doses
+✽ Can even be activating, which can be
+reduced by lowering the dose or starting at
+a lower dose
+• A moderately priced atypical antipsychotic
+within the therapeutic dosing range
+✽ May not have diabetes or dyslipidemia
+risk, but monitoring is still indicated
+• Anecdotal reports of utility in treatmentresistant cases
+• Has a very favorable tolerability profile in
+clinical practice
+• Favorable tolerability profile leading to “offlabel” uses for many indications other than
+schizophrenia (e.g., acute bipolar mania;
+bipolar II disorder, including hypomanic,
+mixed, rapid cycling, and depressed
+phases; treatment-resistant depression;
+anxiety disorders)
+
+Primary Target Symptoms
+• Positive symptoms of psychosis
+• Negative symptoms of psychosis
+
+Suggested Reading
+Marder SR, McQuade RD, Stock E, Kaplita S,
+Marcus R, Safferman AZ, Saha A, Ali M,
+Iwamoto T. Aripiprazole in the treatment of
+schizophrenia: safety and tolerability in shortterm, placebo-controlled trials. Schizophr Res
+2003;61(2–3):123–36.
+Sajatovic M. Treatment for mood and anxiety
+disorders: quetiapine and aripiprazole. Curr
+Psychiatry Rep 2003;5:320–6.
+Shapiro DA, Renock S, Arrington E, Chiodo
+LA, Liu LX, Sibley DR, Roth BL, Mailman R.
+Aripiprazole, a novel atypical antipsychotic
+
+drug with a unique and robust pharmacology.
+Neuropsychopharmacology 2003;28:1400–11.
+Stahl SM. Dopamine system stabilizers,
+aripiprazole, and the next generation of
+antipsychotics, part 1: “Goldilocks” actions at
+dopamine receptors. J Clin Psychiatry
+2001;62:841–2.
+Stahl SM. Dopamine system stabilizers,
+aripiprazole, and the next generation of
+antipsychotics, part 2: illustrating their
+mechanism of action. J Clin Psychiatry
+2001;62 (12):923–4.
+29
+
+
+
+
+<<<PAGE 198>>>
+
+0521011698s04.qxd
+
+9/2/04
+
+2:34 PM
+
+Page 181
+
+FLUPENTHIXOL
+THERAPEUTICS
+Brands • Depixol
+see index for additional brand names
+
+Generic? No
+Class
+• Conventional antipsychotic (neuroleptic,
+thioxanthene, dopamine 2 antagonist)
+
+If It Doesn’t Work
+• Consider trying one of the first-line atypical
+antipsychotics (risperidone, olanzapine,
+quetiapine, ziprasidone, aripiprazole,
+amisulpride)
+• Consider trying another conventional
+antipsychotic
+• If 2 or more antipsychotic monotherapies
+do not work, consider clozapine
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Schizophrenia
+• Depression (low dose)
+• Other psychotic disorders
+• Bipolar disorder
+
+How The Drug Works
+• Blocks dopamine 2 receptors, reducing
+positive symptoms of psychosis
+
+How Long Until It Works
+• With injection, psychotic symptoms can
+improve within a few days, but it may take
+1–2 weeks for notable improvement
+• With oral formulation, psychotic symptoms
+can improve within 1 week, but it may take
+several weeks for full effect on behavior
+
+If It Works
+• Most often reduces positive symptoms in
+schizophrenia but does not eliminate them
+• Most schizophrenic patients do not have a
+total remission of symptoms but rather a
+reduction of symptoms by about a third
+• Continue treatment in schizophrenia until
+reaching a plateau of improvement
+• After reaching a satisfactory plateau,
+continue treatment for at least a year after
+first episode of psychosis in schizophrenia
+• For second and subsequent episodes of
+psychosis in schizophrenia, treatment may
+need to be indefinite
+• Reduces symptoms of acute psychotic
+mania but not proven as a mood stabilizer
+or as an effective maintenance treatment in
+bipolar disorder
+• After reducing acute psychotic symptoms
+in mania, switch to a mood stabilizer
+and/or an atypical antipsychotic for mood
+stabilization and maintenance
+
+• Augmentation of conventional
+antipsychotics has not been systematically
+studied
+• Addition of a mood stabilizing
+anticonvulsant such as valproate,
+carbamazepine, or lamotrigine may be
+helpful in both schizophrenia and bipolar
+mania
+• Augmentation with lithium in bipolar mania
+may be helpful
+• Addition of a benzodiazepine, especially
+short-term for agitation
+
+Tests
+
+✽ Since conventional antipsychotics are
+
+frequently associated with weight gain,
+before starting treatment, weigh all patients
+and determine if the patient is already
+overweight (BMI 25.0–29.9) or obese
+(BMI ≥30)
+• Before giving a drug that can cause weight
+gain to an overweight or obese patient,
+consider determining whether the patient
+already has pre-diabetes (fasting plasma
+glucose 100–125 mg/dl), diabetes (fasting
+plasma glucose >126 mg/dl), or
+dyslipidemia (increased total cholesterol,
+LDL cholesterol and triglycerides;
+decreased HDL cholesterol), and treat or
+refer such patients for treatment, including
+nutrition and weight management, physical
+activity counseling, smoking cessation, and
+medical management
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has
+gained >5% of initial weight, consider
+evaluating for the presence of pre-diabetes,
+diabetes, or dyslipidemia, or consider
+switching to a different antipsychotic
+• Monitoring elevated prolactin levels of
+dubious clinical benefit
+
+181
+
+
+
+
+<<<PAGE 202>>>
+
+0521011698s04.qxd
+
+9/2/04
+
+2:34 PM
+
+Page 185
+
+FLUPHENAZINE
+THERAPEUTICS
+Brands • Prolixin
+see index for additional brand names
+
+• Consider trying another conventional
+antipsychotic
+• If 2 or more antipsychotic monotherapies
+do not work, consider clozapine
+
+Generic? Yes
+Class
+• Conventional antipsychotic (neuroleptic,
+phenothiazine, dopamine 2 antagonist)
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Psychotic disorders
+• Bipolar disorder
+
+How The Drug Works
+• Blocks dopamine 2 receptors, reducing
+positive symptoms of psychosis
+
+How Long Until It Works
+• Psychotic symptoms can improve within
+1 week, but it may take several weeks for
+full effect on behavior
+
+If It Works
+• Most often reduces positive symptoms in
+schizophrenia but does not eliminate them
+• Most schizophrenic patients do not have a
+total remission of symptoms but rather a
+reduction of symptoms by about a third
+• Continue treatment in schizophrenia until
+reaching a plateau of improvement
+• After reaching a satisfactory plateau,
+continue treatment for at least a year after
+first episode of psychosis in schizophrenia
+• For second and subsequent episodes of
+psychosis in schizophrenia, treatment may
+need to be indefinite
+• Reduces symptoms of acute psychotic
+mania but not proven as a mood stabilizer
+or as an effective maintenance treatment in
+bipolar disorder
+• After reducing acute psychotic symptoms
+in mania, switch to a mood stabilizer
+and/or an atypical antipsychotic for mood
+stabilization and maintenance
+
+If It Doesn’t Work
+• Consider trying one of the first-line atypical
+antipsychotics (risperidone, olanzapine,
+quetiapine, ziprasidone, aripiprazole,
+amisulpride)
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+• Augmentation of conventional
+antipsychotics has not been systematically
+studied
+• Addition of a mood stabilizing
+anticonvulsant such as valproate,
+carbamazepine, or lamotrigine may be
+helpful in both schizophrenia and bipolar
+mania
+• Augmentation with lithium in bipolar mania
+may be helpful
+• Addition of a benzodiazepine, especially
+short-term for agitation
+
+Tests
+
+✽ Since conventional antipsychotics are
+
+frequently associated with weight gain,
+before starting treatment, weigh all patients
+and determine if the patient is already
+overweight (BMI 25.0–29.9) or obese
+(BMI ≥30)
+• Before giving a drug that can cause weight
+gain to an overweight or obese patient,
+consider determining whether the patient
+already has pre-diabetes (fasting plasma
+glucose 100–125 mg/dl), diabetes (fasting
+plasma glucose >126 mg/dl), or
+dyslipidemia (increased total cholesterol,
+LDL cholesterol and triglycerides;
+decreased HDL cholesterol), and treat or
+refer such patients for treatment, including
+nutrition and weight management, physical
+activity counseling, smoking cessation, and
+medical management
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has
+gained >5% of initial weight, consider
+evaluating for the presence of pre-diabetes,
+diabetes, or dyslipidemia, or consider
+switching to a different antipsychotic
+• Should check blood pressure in the elderly
+before starting and for the first few weeks
+of treatment
+• Monitoring elevated prolactin levels of
+dubious clinical benefit
+• Phenothiazines may cause false-positive
+phenylketonuria results
+
+185
+
+
+
+
+<<<PAGE 288>>>
+
+0521011698s05.qxd
+
+9/2/04
+
+2:35 PM
+
+Page 271
+
+LOXAPINE
+THERAPEUTICS
+Brands • Loxitane
+see index for additional brand names
+Generic? Yes
+Class
+• Conventional antipsychotic (neuroleptic,
+dopamine 2 antagonist, serotonin
+dopamine antagonist)
+
+and/or an atypical antipsychotic for mood
+stabilization and maintenance
+
+If It Doesn’t Work
+• Consider trying one of the first-line atypical
+antipsychotics (risperidone, olanzapine,
+quetiapine, ziprasidone, aripiprazole,
+amisulpride)
+• Consider trying another conventional
+antipsychotic
+• If 2 or more antipsychotic monotherapies
+do not work, consider clozapine
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Schizophrenia
+• Other psychotic disorders
+• Bipolar disorder
+
+How The Drug Works
+• Blocks dopamine 2 receptors, reducing
+positive symptoms of psychosis
+✽ Although classified as a conventional
+antipsychotic, loxapine is a potent
+serotonin 2A antagonist
+• Serotonin 2A antagonist properties might
+be relevant at low doses, but generally are
+overwhelmed by high dosing
+
+How Long Until It Works
+• Psychotic symptoms can improve within
+1 week, but it may take several weeks for
+full effect on behavior
+
+If It Works
+• Most often reduces positive symptoms in
+schizophrenia but does not eliminate them
+• Most schizophrenic patients do not have a
+total remission of symptoms but rather a
+reduction of symptoms by about a third
+• Continue treatment in schizophrenia until
+reaching a plateau of improvement
+• After reaching a satisfactory plateau,
+continue treatment for at least a year after
+first episode of psychosis in schizophrenia
+• For second and subsequent episodes of
+psychosis in schizophrenia, treatment may
+need to be indefinite
+• Reduces symptoms of acute psychotic
+mania but not proven as a mood stabilizer
+or as an effective maintenance treatment in
+bipolar disorder
+• After reducing acute psychotic symptoms
+in mania, switch to a mood stabilizer
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+• Augmentation of conventional
+antipsychotics has not been systematically
+studied
+• Addition of a mood stabilizing
+anticonvulsant such as valproate,
+carbamazepine, or lamotrigine may be
+helpful in both schizophrenia and bipolar
+mania
+• Augmentation with lithium in bipolar mania
+may be helpful
+• Addition of a benzodiazepine, especially
+short-term for agitation
+
+Tests
+
+✽ Since conventional antipsychotics are
+
+frequently associated with weight gain,
+before starting treatment, weigh all patients
+and determine if the patient is already
+overweight (BMI 25.0–29.9) or obese
+(BMI ≥30)
+• Before giving a drug that can cause weight
+gain to an overweight or obese patient,
+consider determining whether the patient
+already has pre-diabetes (fasting plasma
+glucose 100–125 mg/dl), diabetes (fasting
+plasma glucose >126 mg/dl), or
+dyslipidemia (increased total cholesterol,
+LDL cholesterol and triglycerides;
+decreased HDL cholesterol), and treat or
+refer such patients for treatment, including
+nutrition and weight management, physical
+activity counseling, smoking cessation, and
+medical management
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has
+gained >5% of initial weight, consider
+evaluating for the presence of pre-diabetes,
+diabetes, or dyslipidemia, or consider
+switching to a different antipsychotic
+271
+
+
+
+
+<<<PAGE 304>>>
+
+0521011698s06.qxd
+
+9/2/04
+
+2:42 PM
+
+Page 287
+
+MESORIDAZINE
+THERAPEUTICS
+
+Tests
+
+Brands • Serentil
+
+✽ Baseline ECG and serum potassium levels
+
+• Lidanil
+see index for additional brand names
+
+✽ Periodic evaluation of ECG and serum
+
+Generic? Yes
+Class
+• Conventional antipsychotic (neuroleptic,
+phenothiazine, dopamine 2 antagonist)
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Management of schizophrenic patients
+who fail to respond adequately to
+treatment with other antipsychotic drugs
+
+How The Drug Works
+• Blocks dopamine 2 receptors, reducing
+positive symptoms of psychosis
+
+How Long Until It Works
+• Psychotic symptoms can improve within 1
+week, but it may take several weeks for full
+effect on behavior
+
+If It Works
+• Is a second-line treatment option
+✽ Should evaluate for switching to an
+antipsychotic with a better risk/benefit ratio
+
+If It Doesn’t Work
+• Consider trying one of the first-line atypical
+antipsychotics (risperidone, olanzapine,
+quetiapine, ziprasidone, aripiprazole,
+amisulpride)
+• Consider trying another conventional
+antipsychotic
+• If 2 or more antipsychotic monotherapies
+do not work, consider clozapine
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+• Augmentation of mesoridazine has not
+been systematically studied and can be
+dangerous, especially with drugs that can
+prolong QTc interval
+
+should be determined
+
+potassium levels
+• Serum magnesium levels may also need to
+be monitored
+✽ Since conventional antipsychotics are
+frequently associated with weight gain,
+before starting treatment, weigh all patients
+and determine if the patient is already
+overweight (BMI 25.0–29.9) or obese
+(BMI ≥30)
+• Before giving a drug that can cause weight
+gain to an overweight or obese patient,
+consider determining whether the patient
+already has pre-diabetes (fasting plasma
+glucose 100–125 mg/dl), diabetes (fasting
+plasma glucose >126 mg/dl), or
+dyslipidemia (increased total cholesterol,
+LDL cholesterol and triglycerides;
+decreased HDL cholesterol), and treat or
+refer such patients for treatment, including
+nutrition and weight management, physical
+activity counseling, smoking cessation, and
+medical management
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has
+gained >5% of initial weight, consider
+evaluating for the presence of pre-diabetes,
+diabetes, or dyslipidemia, or consider
+switching to a different antipsychotic
+• Should check blood pressure in the elderly
+before starting and for the first few weeks
+of treatment
+• Monitoring elevated prolactin levels of
+dubious clinical benefit
+• Phenothiazines may cause false-positive
+phenylketonuria results
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• By blocking dopamine 2 receptors in the
+striatum, it can cause motor side effects
+• By blocking dopamine 2 receptors in the
+pituitary, it can cause elevations in
+prolactin
+• By blocking dopamine 2 receptors
+excessively in the mesocortical and
+mesolimbic dopamine pathways, especially
+at high doses, it can cause worsening of
+
+287
+
+
+
+
+<<<PAGE 353>>>
+
+0521011698s07.qxd
+
+9/2/04
+
+2:44 PM
+
+Page 336
+
+OLANZAPINE (continued)
+If It Doesn’t Work
+• Try one of the other atypical antipsychotics
+(risperidone, quetiapine, ziprasidone,
+aripiprazole, amisulpride)
+• If 2 or more antipsychotic monotherapies
+do not work, consider clozapine
+• If no first-line atypical antipsychotic is
+effective, consider higher doses or
+augmentation with valproate or lamotrigine
+• Some patients may require treatment with
+a conventional antipsychotic
+• Consider noncompliance and switch to
+another antipsychotic with fewer side
+effects or to an antipsychotic that can be
+given by depot injection
+• Consider initiating rehabilitation and
+psychotherapy
+• Consider presence of concomitant drug
+abuse
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+• Valproic acid (valproate, divalproex,
+divalproex ER)
+• Other mood stabilizing anticonvulsants
+(carbamazepine, oxcarbazepine,
+lamotrigine)
+• Lithium
+• Benzodiazepines
+• Fluoxetine and other antidepressants may
+be effective augmenting agents to
+olanzapine for bipolar depression,
+psychotic depression, and for unipolar
+depression not responsive to
+antidepressants alone (e.g., olanzapinefluoxetine combination)
+
+Tests
+Before starting an atypical antipsychotic
+✽ Weigh all patients and track BMI during
+treatment
+• Get baseline personal and family history of
+obesity, dyslipidemia, hypertension, and
+cardiovascular disease
+✽ Get waist circumference (at umbilicus),
+blood pressure, fasting plasma glucose,
+and fasting lipid profile
+• Determine if the patient is
+• overweight (BMI 25.0–29.9)
+• obese (BMI ≥30)
+• has pre-diabetes (fasting plasma glucose
+100–125 mg/dl)
+
+336
+
+• has diabetes (fasting plasma glucose
+>126 mg/dl)
+• has hypertension (BP >140/90 mm Hg)
+• has dyslipidemia (increased total
+cholesterol, LDL cholesterol, and
+triglycerides; decreased HDL cholesterol)
+• Treat or refer such patients for treatment,
+including nutrition and weight
+management, physical activity counseling,
+smoking cessation, and medical
+management
+Monitoring after starting an atypical
+antipsychotic
+✽ BMI monthly for 3 months, then quarterly
+✽ Blood pressure, fasting plasma glucose,
+fasting lipids within 3 months and then
+annually, but earlier and more frequently
+for patients with diabetes or who have
+gained >5% of initial weight
+• Treat or refer for treatment and consider
+switching to another atypical antipsychotic
+for patients who become overweight,
+obese, pre-diabetic, diabetic, hypertensive,
+or dyslipidemic while receiving an atypical
+antipsychotic
+✽ Even in patients without known diabetes,
+be vigilant for the rare but life threatening
+onset of diabetic ketoacidosis, which
+always requires immediate treatment, by
+monitoring for the rapid onset of polyuria,
+polydipsia, weight loss, nausea, vomiting,
+dehydration, rapid respiration, weakness
+and clouding of sensorium, even coma
+• Patients with liver disease should have
+blood tests a few times a year
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• By blocking histamine 1 receptors in the
+brain, it can cause sedation and possibly
+weight gain
+• By blocking alpha 1 adrenergic receptors, it
+can cause dizziness, sedation, and
+hypotension
+• By blocking muscarinic 1 receptors, it can
+cause dry mouth, constipation, and
+sedation
+• By blocking dopamine 2 receptors in the
+striatum, it can cause motor side effects
+(unusual)
+
+
+
+
+<<<PAGE 394>>>
+
+0521011698s07.qxd
+
+9/2/04
+
+2:44 PM
+
+Page 377
+
+PIMOZIDE
+THERAPEUTICS
+Brands • Orap
+see index for additional brand names
+
+• Consider trying another conventional
+antipsychotic
+• If 2 or more antipsychotic monotherapies
+do not work, consider clozapine
+
+Generic? Not in U.S.
+Class
+• Tourette’s syndrome/tic suppressant;
+conventional antipsychotic (neuroleptic,
+dopamine 2 antagonist)
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Suppression of motor and phonic tics in
+patients with Tourette Disorder who have
+failed to respond satisfactorily to
+standard treatment
+• Psychotic disorders in patients who have
+failed to respond satisfactorily to standard
+treatment
+
+How The Drug Works
+• Blocks dopamine 2 receptors in the
+nigrostriatal dopamine pathway, reducing
+tics in Tourette’s syndrome
+• When used for psychosis, can block
+dopamine 2 receptors in the mesolimbic
+dopamine pathway, reducing positive
+symptoms of psychosis
+
+How Long Until It Works
+• Relief from tics may occur more rapidly
+than antipsychotic actions
+• Psychotic symptoms can improve within
+1 week, but it may take several weeks for
+full effect on behavior
+
+If It Works
+
+✽ Is a second-line treatment option for
+Tourette’s syndrome
+
+✽ Is a secondary or tertiary treatment
+
+option for psychosis or other behavioral
+disorders
+• Should evaluate for switching to an
+antipsychotic with a better/risk benefit ratio
+
+If It Doesn’t Work
+• Consider trying one of the first-line atypical
+antipsychotics (risperidone, olanzapine,
+quetiapine, ziprasidone, aripiprazole,
+amisulpride)
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+
+✽ Augmentation of pimozide has not been
+
+systematically studied and can be
+dangerous, especially with drugs that can
+either prolong QTc interval or raise
+pimozide plasma levels
+
+Tests
+
+✽ Baseline ECG and serum potassium levels
+should be determined
+
+✽ Periodic evaluation of ECG and serum
+
+potassium levels, especially during dose
+titration
+• Serum magnesium levels may also need to
+be monitored
+✽ Since conventional antipsychotics are
+frequently associated with weight gain,
+before starting treatment, weigh all patients
+and determine if the patient is already
+overweight (BMI 25.0–29.9) or obese
+(BMI ≥30)
+• Before giving a drug that can cause weight
+gain to an overweight or obese patient,
+consider determining whether the patient
+already has pre-diabetes (fasting plasma
+glucose 100–125 mg/dl), diabetes (fasting
+plasma glucose >126 mg/dl), or
+dyslipidemia (increased total cholesterol,
+LDL cholesterol and triglycerides;
+decreased HDL cholesterol), and treat or
+refer such patients for treatment, including
+nutrition and weight management, physical
+activity counseling, smoking cessation, and
+medical management
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has
+gained >5% of initial weight, consider
+evaluating for the presence of pre-diabetes,
+diabetes, or dyslipidemia, or consider
+switching to a different antipsychotic
+• Should check blood pressure in the elderly
+before starting and for the first few weeks
+of treatment
+• Monitoring elevated prolactin levels of
+dubious clinical benefit
+
+377
+
+
+
+
+<<<PAGE 452>>>
+
+0521011698s08.qxd
+
+9/2/04
+
+2:46 PM
+
+Page 435
+
+SULPIRIDE
+THERAPEUTICS
+Brands • Dolmatil
+see index for additional brand names
+
+• Consider trying another conventional
+antipsychotic
+• If 2 or more antipsychotic monotherapies
+do not work, consider clozapine
+
+Generic? Yes
+Class
+• Conventional antipsychotic (neuroleptic,
+benzamide, dopamine 2 antagonist)
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Schizophrenia
+• Depression
+
+How The Drug Works
+• Blocks dopamine 2 receptors, reducing
+positive symptoms of psychosis
+• Blocks dopamine 3 and 4 receptors, which
+may contribute to sulpiride’s actions
+✽ Possibly blocks presynaptic dopamine 2
+autoreceptors more potently at low doses,
+which could theoretically contribute to
+improving negative symptoms of
+schizophrenia as well as depression
+
+How Long Until It Works
+• Psychotic symptoms can improve within 1
+week, but it may take several weeks for full
+effect on behavior
+
+If It Works
+• Most often reduces positive symptoms in
+schizophrenia but does not eliminate them
+• Most schizophrenic patients do not have a
+total remission of symptoms but rather a
+reduction of symptoms by about a third
+• Continue treatment in schizophrenia until
+reaching a plateau of improvement
+• After reaching a satisfactory plateau,
+continue treatment for at least a year after
+first episode of psychosis in schizophrenia
+• For second and subsequent episodes of
+psychosis in schizophrenia, treatment may
+need to be indefinite
+
+If It Doesn’t Work
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+• Augmentation of conventional
+antipsychotics has not been systematically
+studied
+• Addition of a mood stabilizing
+anticonvulsant such as valproate,
+carbamazepine, or lamotrigine may be
+helpful in both schizophrenia and bipolar
+mania
+• Augmentation with lithium in bipolar mania
+may be helpful
+• Addition of a benzodiazepine, especially
+short-term for agitation
+
+Tests
+
+✽ Since conventional antipsychotics are
+
+frequently associated with weight gain,
+before starting treatment, weigh all patients
+and determine if the patient is already
+overweight (BMI 25.0–29.9) or obese
+(BMI ≥30)
+• Before giving a drug that can cause weight
+gain to an overweight or obese patient,
+consider determining whether the patient
+already has pre-diabetes (fasting plasma
+glucose 100–125 mg/dl), diabetes (fasting
+plasma glucose >126 mg/dl), or
+dyslipidemia (increased total cholesterol,
+LDL cholesterol and triglycerides;
+decreased HDL cholesterol), and treat or
+refer such patients for treatment, including
+nutrition and weight management, physical
+activity counseling, smoking cessation, and
+medical management
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has
+gained >5% of initial weight, consider
+evaluating for the presence of pre-diabetes,
+diabetes, or dyslipidemia, or consider
+switching to a different antipsychotic
+• Monitoring elevated prolactin levels of
+dubious clinical benefit
+
+• Consider trying one of the first-line atypical
+antipsychotics (risperidone, olanzapine,
+quetiapine, ziprasidone, aripiprazole,
+amisulpride)
+
+435
+
+
+
+
+<<<PAGE 464>>>
+
+0521011698s09.qxd
+
+9/2/04
+
+2:48 PM
+
+Page 447
+
+THIORIDAZINE
+THERAPEUTICS
+Brands • Mellaril
+see index for additional brand names
+
+Generic? Yes
+Class
+• Conventional antipsychotic (neuroleptic,
+phenothiazine, dopamine 2 antagonist)
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Schizophrenic patients who fail to
+respond to treatment with other
+antipsychotic drugs
+
+How The Drug Works
+• Blocks dopamine 2 receptors, reducing
+positive symptoms of psychosis
+
+How Long Until It Works
+• Psychotic symptoms can improve within
+1 week, but it may take several weeks for
+full effect on behavior
+
+If It Works
+• Is a second-line treatment option
+✽ Should evaluate for switching to an
+antipsychotic with a better risk/benefit ratio
+
+If It Doesn’t Work
+• Consider trying one of the first-line atypical
+antipsychotics (risperidone, olanzapine,
+quetiapine, ziprasidone, aripiprazole,
+amisulpride)
+• Consider trying another conventional
+antipsychotic
+• If 2 or more antipsychotic monotherapies
+do not work, consider clozapine
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+
+✽ Augmentation of thioridazine has not
+
+been systematically studied and can be
+dangerous, especially with drugs that can
+either prolong QTc interval or raise
+thioridazine plasma levels
+
+Tests
+
+✽ Baseline ECG and serum potassium levels
+should be determined
+
+✽ Periodic evaluation of ECG and serum
+
+potassium levels
+• Serum magnesium levels may also need to
+be monitored
+✽ Since conventional antipsychotics are
+frequently associated with weight gain,
+before starting treatment, weigh all patients
+and determine if the patient is already
+overweight (BMI 25.0–29.9) or obese
+(BMI ≥30)
+• Before giving a drug that can cause weight
+gain to an overweight or obese patient,
+consider determining whether the patient
+already has pre-diabetes (fasting plasma
+glucose 100–125 mg/dl), diabetes (fasting
+plasma glucose >126 mg/dl), or
+dyslipidemia (increased total cholesterol,
+LDL cholesterol and triglycerides;
+decreased HDL cholesterol), and treat or
+refer such patients for treatment, including
+nutrition and weight management, physical
+activity counseling, smoking cessation, and
+medical management
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has
+gained >5% of initial weight, consider
+evaluating for the presence of pre-diabetes,
+diabetes, or dyslipidemia, or consider
+switching to a different antipsychotic
+• Should check blood pressure in the elderly
+before starting and for the first few weeks
+of treatment
+• Monitoring elevated prolactin levels of
+dubious clinical benefit
+• Phenothiazines may cause false-positive
+phenylketonuria results
+
+SIDE EFFECTS
+How Drug Causes Side Effects
+• By blocking dopamine 2 receptors in the
+striatum, it can cause motor side effects
+• By blocking dopamine 2 receptors in the
+pituitary, it can cause elevations in
+prolactin
+• By blocking dopamine 2 receptors
+excessively in the mesocortical and
+mesolimbic dopamine pathways, especially
+at high doses, it can cause worsening of
+
+447
+
+

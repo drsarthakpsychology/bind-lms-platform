@@ -1,0 +1,840 @@
+<<<PAGE 11>>>
+
+110 propranolol
+111 protriptyline
+112 quazepam
+113 quetiapine
+114 ramelteon
+115 reboxetine
+116 risperidone
+117 rivastigmine
+118 selegiline
+119 sertindole
+120 sertraline
+121 sildenafil
+122 sodium oxybate
+123 solriamfetol
+124 sulpiride
+125 suvorexant
+126 tasimelteon
+127 temazepam
+128 thioridazine
+129 thiothixene
+130 tiagabine
+131 tianeptine
+132 topiramate
+133 tranylcypromine
+134 trazodone
+135 triazolam
+136 trifluoperazine
+137 trihexyphenidyl
+
+
+
+
+<<<PAGE 2158>>>
+
+Temazepam
+
+Therapeutics
+Brands
+Restoril
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: GABA positive allosteric
+modulator (GABA-PAM)
+Benzodiazepine (hypnotic)
+Commonly Prescribed for
+(bold for FDA approved)
+Short-term treatment of insomnia
+Catatonia
+How the Drug Works
+
+
+
+
+<<<PAGE 2162>>>
+
+Wait
+To avoid problems with memory, only take temazepam if planning
+to have a full night’s sleep
+Lower the dose
+Switch to a shorter-acting sedative hypnotic
+Switch to a non-benzodiazepine hypnotic
+Administer flumazenil if side effects are severe or life-threatening
+Best Augmenting Agents for Side Effects
+Many side effects cannot be improved with an augmenting agent
+
+Dosing and use
+Usual Dosage Range
+15 mg/day at bedtime
+Dosage Forms
+Capsule 7.5 mg, 15 mg, 22 mg, 30 mg
+How to Dose
+15 mg/day at bedtime; may increase to 30 mg/day at bedtime if
+ineffective
+
+
+
+
+<<<PAGE 2163>>>
+
+Dosing Tips
+Use lowest possible effective dose and assess need for continued
+treatment regularly
+Temazepam should generally not be prescribed in quantities greater
+than a 1-month supply
+Patients with lower body weights may require lower doses
+
+✽ Because temazepam is slowly absorbed, administering the dose 1–2
+hours before bedtime may improve onset of action and shorter sleep
+latency
+Risk of dependence may increase with dose and duration of
+treatment
+Overdose
+Can be fatal in monotherapy; slurred speech, poor coordination,
+respiratory depression, sedation, confusion, coma
+Long-Term Use
+Not generally intended for long-term use
+Habit Forming
+Temazepam is a Schedule IV drug
+Some patients may develop dependence and/or tolerance; risk may
+be greater with higher doses
+
+
+
+
+<<<PAGE 2164>>>
+
+History of drug addiction may increase risk of dependence
+How to Stop
+If taken for more than a few weeks, taper to reduce chances of
+withdrawal effects
+Patients with history of seizure may seize upon sudden withdrawal
+Rebound insomnia may occur the first 1–2 nights after stopping
+For patients with severe problems discontinuing a benzodiazepine,
+dosing may need to be tapered over many months (i.e., reduce dose
+by 1% every 3 days by crushing tablet and suspending or dissolving
+in 100 mL of fruit juice and then disposing of 1 mL and drinking the
+rest; 3–7 days later, dispose of 2 mL, and so on). This is both a form
+of very slow biological tapering and a form of behavioral
+desensitization
+Pharmacokinetics
+No active metabolites
+Half-life approximately 8–15 hours
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+(see Warnings below)
+If temazepam is used with kava, clearance of either drug may be
+affected
+
+
+
+
+<<<PAGE 2165>>>
+
+Other Warnings/Precautions
+Boxed warning regarding the increased risk of CNS depressant
+effects when benzodiazepines and opioid medications are used
+together, including specifically the risk of slowed or difficulty
+breathing and death
+If alternatives to the combined use of benzodiazepines and opioids
+are not available, clinicians should limit the dosage and duration of
+each drug to the minimum possible while still achieving therapeutic
+efficacy
+Patients and their caregivers should be warned to seek medical
+attention if unusual dizziness, lightheadedness, sedation, slowed or
+difficulty breathing, or unresponsiveness occur
+Insomnia may be a symptom of a primary disorder, rather than a
+primary disorder itself
+Some patients may exhibit abnormal thinking or behavioral changes
+similar to those caused by other CNS depressants (i.e., either
+depressant actions or disinhibiting actions)
+Some depressed patients may experience a worsening of suicidal
+ideation
+Use only with extreme caution in patients with impaired respiratory
+function or obstructive sleep apnea
+Temazepam should only be administered at bedtime
+Do Not Use
+
+
+
+
+<<<PAGE 2166>>>
+
+If patient is pregnant
+If patient has angle-closure glaucoma
+If there is a proven allergy to temazepam or any benzodiazepine
+
+Special populations
+Renal Impairment
+Recommended dose: 7.5 mg/day
+Hepatic Impairment
+Recommended dose: 7.5 mg/day
+Cardiac Impairment
+Dosage adjustment may not be necessary
+Benzodiazepines have been used to treat insomnia associated with
+acute myocardial infarction
+Elderly
+Recommended dose: 7.5 mg/day
+Children and Adolescents
+Safety and efficacy have not been established
+
+
+
+
+<<<PAGE 2167>>>
+
+Long-term effects of temazepam in children/adolescents are
+unknown
+Should generally receive lower doses and be more closely
+monitored
+Pregnancy
+Contraindicated for use in pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Infants whose mothers received a benzodiazepine late in pregnancy
+may experience withdrawal effects
+Neonatal flaccidity has been reported in infants whose mothers took
+a benzodiazepine during pregnancy
+Breast Feeding
+Unknown if temazepam is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+Effects on infant have been observed and include feeding
+difficulties, sedation, and weight loss
+
+
+
+
+<<<PAGE 2169>>>
+
+Suggested Reading
+Ashton H . Guidelines for the rational use of benzodiazepines . When and
+what to use. Drugs 1994 ;48 :25 –40 .
+Fraschini F , Stankov B . Temazepam: pharmacological profile of a
+benzodiazepine and new trends in its clinical application . Pharmacol Res
+1993 ;27 :97 –113.
+Heel RC , Brogden RN , Speight TM , Avery GS . Temazepam: a review of
+its pharmacological properties and therapeutic efficacy as an hypnotic .
+Drugs 1981 ;21 :321–40 .
+McElnay JC , Jones ME , Alexander B . Temazepam (Restoril, Sandoz
+Pharmaceuticals) . Drug Intell Clin Pharm 1982 ;16 :650 –6 .
+
+
+
+
+<<<PAGE 2583>>>
+
+Dixibon (sulpiride), 741
+Dizac (diazepam), 229
+DM (dextromethorphan), 225
+d-methylphenidate, 481
+Dobren (sulpiride), 741
+Dobupal (venlafaxine), 841
+Dogmatil (sulpiride), 741
+Dogmatyl (sulpiride), 741
+Dolmatil (sulpiride), 741
+Domical (amitriptyline), 25
+Dominans (nortriptyline), 551
+Domnamid (estazolam), 281
+DOM-trazodone (trazodone), 793
+donepezil, 243
+donepezil/memantine combination, 243 , 473
+Doneurin (doxepin), 255
+Donix (lorazepam), 437
+Dopress (dothiepin), 249
+Doral (quazepam), 663
+Dorken (clorazepate), 185
+Dorm (lorazepam), 437
+Dormalin (quazepam), 663
+Dormapam (temazepam), 755
+Dorme (quazepam), 663
+Dormicum (midazolam), 499
+Dormodor (flurazepam), 321
+Dothep (dothiepin), 249
+dothiepin, 249
+
+
+
+
+<<<PAGE 2586>>>
+
+Equilid (sulpiride), 741
+Equitam (lorazepam), 437
+Er Ding (lofexidine), 427
+Ergenyl (valproate), 829
+Ergocalm (lorazepam), 437
+Eridan (diazepam), 229
+Erocap (fluoxetine), 301
+escitalopram, 269
+Esculid (diazepam), 229
+Esilgan (estazolam), 281
+Esipride (sulpiride), 741
+Eskalith (lithium), 415
+Eskalith CR (lithium), 415
+Eskazine (trifluoperazine), 803
+esketamine, 275
+Esparon (alprazolam), 11
+estazolam, 281
+Estorra (eszopiclone), 285
+eszopiclone, 285
+Ethipam (diazepam), 229
+Ethipramine (imipramine), 367
+Euhypnos (temazepam), 755
+Euipnos (temazepam), 755
+Eurosan (diazepam), 229
+Eutimil (paroxetine), 593
+Eutimox (fluphenazine), 313
+Evacalm (diazepam), 229
+Evekeo (amphetamine d,l), 45
+
+
+
+
+<<<PAGE 2594>>>
+
+Ladose (fluoxetine), 301
+Lambipol (lamotrigine), 387
+Lamictal (lamotrigine), 387
+Lamictin (lamotrigine), 387
+lamotrigine, 387
+Lamra (diazepam), 229
+Lanexat (flumazenil), 293
+Lantanon (mianserin), 495
+Largactil (chlorpromazine), 153
+Largatrex (chlorpromazine), 153
+Laroxyl (amitriptyline), 25
+Latuda (lurasidone), 457
+Laubeel (lorazepam), 437
+Lauracalm (lorazepam), 437
+Lebopride (sulpiride), 741
+Lelptilan (valproate), 829
+Lelptilanil (valproate), 829
+lemborexant, 395
+Lentizol (amitriptyline), 25
+Lentolith (lithium), 415
+Lentotran (chlordiazepoxide), 147
+Leponex (clozapine), 191
+Leptilin (valproate), 829
+Lerivon (mianserin), 495
+Leukominerase (lithium), 415
+Levanxol (temazepam), 755
+levetiracetam, 399
+levomilnacipran, 403
+
+
+
+
+<<<PAGE 2602>>>
+
+Napoton (chlordiazepoxide), 147
+Narcozep (flunitrazepam), 297
+Nardelzine (phenelzine), 613
+Nardil (phenelzine), 613
+Narol (buspirone), 123
+Navane (thiothixene), 765
+Navicalm (hydroxyzine), 355
+Nefadar (nefazodone), 545
+nefazodone, 545
+Nefirel (nefazodone), 545
+Neo Gnostoride (chlordiazepoxide), 147
+Neodorm SP (temazepam), 755
+Neoride (sulpiride), 741
+Neurol (alprazolam), 11
+Neurolepsin (lithium), 415
+Neurolithium (lithium), 415
+Neurolytril (diazepam), 229
+Neurontin (gabapentin), 331
+Neurotol (carbamazepine), 131
+Neurotop (carbamazepine), 131
+Nevropromazine (chlorpromazine), 153
+Nicoflox (fluoxetine), 301
+Nifalin (lorazepam), 437
+Nilium (flunitrazepam), 297
+Niotal (zolpidem), 871
+Nipolept (zotepine), 883
+Nivalin (galantamine), 337
+Noam (diazepam), 229
+
+
+
+
+<<<PAGE 2603>>>
+
+Noan-Gap (lorazepam), 437
+Noctazepam (oxazepam), 569
+Noctran (clorazepate), 185
+Nocturne (temazepam), 755
+Nomapam (temazepam), 755
+Noneston (sulpiride), 741
+Nopress (nortriptyline), 551
+Nordotol (carbamazepine), 131
+Norebox (reboxetine), 681
+Norestran (sulpiride), 741
+Norfenazin (nortriptyline), 551
+Noriel (flunitrazepam), 297
+Noriline (nortriptyline), 551
+Noripam (oxazepam), 569
+Noritren (nortriptyline), 551
+Norkotral N (oxazepam), 569
+Norkotral Tema (temazepam), 755
+Normison (temazepam), 755
+Normum (sulpiride), 741
+Norpramin (desipramine), 207
+Northiaden (dothiepin), 249
+Nortimil (desipramine), 207
+Nortix (nortriptyline), 551
+Nortrilen (nortriptyline), 551
+Nortriptilin (nortriptyline), 551
+nortriptyline, 551
+Norval (mianserin), 495
+Nova-Pam (chlordiazepoxide), 147
+
+
+
+
+<<<PAGE 2605>>>
+
+Nu-Loraz (lorazepam), 437
+Nuplazid (pimavanserin), 623
+Nu-Trazodone (trazodone), 793
+Nu-Trimipramine (trimipramine), 817
+Nuvigil (armodafinil), 65
+Nycoflox (fluoxetine), 301
+Nylipark (sulpiride), 741
+Oasil (chlordiazepoxide), 147
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+Olasek (olanzapine), 559
+Oleptro (trazodone XR), 793
+Omaha (sulpiride), 741
+Omca (fluphenazine), 313
+Omiryl (sulpiride), 741
+Omnali Esteve (chlordiazepoxide), 147
+Omnipress (amoxapine), 33
+Oniria (quazepam), 663
+Opamin (oxazepam), 569
+Opamox (oxazepam), 569
+Opiran (pimozide), 627
+Orap (pimozide), 627
+Orfidal (lorazepam), 437
+Orfilept (valproate), 829
+Orfiril (valproate), 829
+Orfiril Retard (valproate), 829
+Ormodon (temazepam), 755
+Orsanil (thioridazine), 759
+
+
+
+
+<<<PAGE 2608>>>
+
+Phasal (lithium), 415
+phenelzine, 613
+phentermine/topiramate, 619
+Piefol (trifluoperazine), 803
+pimavanserin, 623
+pimozide, 627
+Piportil (pipothiazine), 633
+Piportil Depot (pipothiazine), 633
+Piportil L4 (pipothiazine), 633
+Piportil Longum-4 (pipothiazine), 633
+Piportil palmitate (pipothiazine), 633
+Piportyl palmitat (pipothiazine), 633
+pipothiazine, 633
+Pipotiazine (pipothiazine), 633
+Pirium (pimozide), 627
+pitolisant, 639
+Placidia (lorazepam), 437
+Placil (clomipramine), 165
+Placinoral (lorazepam), 437
+Planum (temazepam), 755
+Plegomazin (chlorpromazine), 153
+Plenur (lithium), 415
+Plurimen (selegiline), 705
+PMS-carbamazepine (carbamazepine), 131
+PMS-Clonazepam (clonazepam), 173
+PMS-Desipramine (desipramine), 207
+PMS-Fluoxetine (fluoxetine), 301
+PMS-Fluphenazine (fluphenazine), 313
+
+
+
+
+<<<PAGE 2609>>>
+
+PMS-Fluphenazine Decanoate (fluphenazine), 313
+PMS-Haloperidol (haloperidol), 347
+PMS-Hydroxyzine (hydroxyzine), 355
+PMS-Lithium (lithium), 415
+PMS-Methylphenidate (d,l-methylphenidate), 487
+PMS-Trazodone (trazodone), 793
+Podium (diazepam), 229
+Poldoxin (doxepin), 255
+Polysal (amitriptyline), 25
+Portal (fluoxetine), 301
+Pragmarel (trazodone), 793
+Praxiten (oxazepam), 569
+prazosin, 643
+pregabalin, 647
+Priadel (lithium), 415
+Prisdal (citalopram), 159
+Prisma (mianserin), 495
+Pristiq (desvenlafaxine), 215
+Probuphine (buprenorphine), 111
+ProCentra (amphetamine d), 39
+Pro Dorm (lorazepam), 437
+Procythol (selegiline), 705
+Prolixin (fluphenazine), 313
+Prolixin Decanoate (fluphenazine), 313
+Prolixin Enanthate (fluphenazine), 313
+Prolongatum (fluphenazine), 313
+Pronervon T (temazepam), 755
+Propam (diazepam), 229
+
+
+
+
+<<<PAGE 2612>>>
+
+Relaxedans (chlordiazepoxide), 147
+Reliberan (chlordiazepoxide), 147
+Relistor (naltrexone), 537
+Relprevv (olanzapine), 559
+Remdue (flurazepam), 321
+Remergil (mirtazapine), 509
+Remeron (mirtazapine), 509
+Remestan (temazepam), 755
+Reminyl (galantamine), 337
+Reneuron (fluoxetine), 301
+Repazine (chlorpromazine), 153
+Reposium (temazepam), 755
+Reseril (nefazodone), 545
+Restful (sulpiride), 741
+Restoril (temazepam), 755
+Retinyl (maprotiline), 465
+Reval (diazepam), 229
+Revatio (sildenafil), 729
+Revia (naltrexone), 537
+Rexer (mirtazapine), 509
+Rexulti (brexpiprazole), 103
+Rho-Doxepin (doxepin), 255
+Rho-Fluphenazine Decanoate (fluphenazine), 313
+Rho-Haloperidol (haloperidol), 347
+Rho-Trimine (trimipramine), 817
+Ridazine (thioridazine), 759
+Rilamir (triazolam), 799
+Rimarix (moclobemide), 515
+
+
+
+
+<<<PAGE 2616>>>
+
+Serpax (oxazepam), 569
+sertindole, 715
+Sertofren (desipramine), 207
+sertraline, 721
+Serzone (nefazodone), 545
+Setous (zotepine), 883
+Sevinol (fluphenazine), 313
+Sevium (haloperidol), 347
+Sibason (diazepam), 229
+Sicorelax (diazepam), 229
+Sigacalm (oxazepam), 569
+Sigaperidol (haloperidol), 347
+Signopam (temazepam), 755
+sildenafil, 729
+Silenor (doxepin), 255
+Silphen (diphenhydramine), 235
+Sinequan (doxepin), 255
+Sinquan (doxepin), 255
+Sinquane (doxepin), 255
+Siqualone (fluphenazine), 313
+Siqualone Decanoat (fluphenazine), 313
+Siqualone Enantat (fluphenazine), 313
+Sirtal (carbamazepine), 131
+S-ketamine (esketamine), 275
+SK-Pramine (imipramine), 367
+Sobile (oxazepam), 569
+Sobril (oxazepam), 569
+Socian (amisulpride), 17
+
+
+
+
+<<<PAGE 2617>>>
+
+sodium oxybate, 733
+Softramal (clorazepate), 185
+Solarix (moclobemide), 515
+Solian (amisulpride), 17
+Solidon (chlorpromazine), 153
+Solis (diazepam), 229
+solriamfetol, 737
+Somagerol (lorazepam), 437
+Somapam (temazepam), 755
+Somatarax (hydroxyzine), 355
+Sominex (diphenhydramine), 235
+Somniton (triazolam), 799
+Somnium (lorazepam), 437
+Somnol (flurazepam), 321
+Somnubene (flunitrazepam), 297
+Sonata (zaleplon), 859
+Songar (triazolam), 799
+Sovigen (zolpidem), 871
+Spasmilan (buspirone), 123
+Spasmo Praxiten (oxazepam), 569
+Sporalon (trifluoperazine), 803
+Spravato (esketamine), 275
+Spritam (levetiracetam), 399
+Stablon (tianeptine), 777
+Stalleril (thioridazine), 759
+Stamoneurol (sulpiride), 741
+Staurodorm (flurazepam), 321
+Staurodorm Neu (flurazepam), 321
+
+
+
+
+<<<PAGE 2619>>>
+
+Sulpivert (sulpiride), 741
+Sulpril (sulpiride), 741
+Sunosi (solriamfetol), 737
+Suprium (sulpiride), 741
+Surmontil (trimipramine), 817
+suvorexant, 747
+Suxidina (oxazepam), 569
+Sylador (haloperidol), 347
+Symbyax (olanzapine/fluoxetine combination), 301 , 559
+Synedil (sulpiride), 741
+Synedil Fort (sulpiride), 741
+Syneudon 50 (amitriptyline), 25
+Tafil (alprazolam), 11
+Tagonis (paroxetine), 593
+Tardotol (carbamazepine), 131
+Taro-Carbamazepine (carbamazepine), 131
+tasimelteon, 751
+Tatanka (alprazolam), 11
+Tatig (sertraline), 721
+Tatinol (tianeptine), 777
+Tavor (lorazepam), 437
+Tazepam (oxazepam), 569
+Tegretal (carbamazepine), 131
+Tegretol (carbamazepine), 131
+Tegretol LP (carbamazepine), 131
+Teledomin (milnacipran), 503
+Temador (temazepam), 755
+Temaze (temazepam), 755
+
+
+
+
+<<<PAGE 2620>>>
+
+temazepam, 755
+Temesta (lorazepam), 437
+Temodal (quazepam), 663
+Temporal Slow (carbamazepine), 131
+Temporol (carbamazepine), 131
+Temtabs (temazepam), 755
+Tenex (guanfacine), 343
+Tenox (temazepam), 755
+Tensispes (buspirone), 123
+Tensium (diazepam), 229
+Tensopam (diazepam), 229
+Tenso-Timelets (clonidine), 179
+Tepavil (sulpiride), 741
+Tepazepam (diazepam), 229
+Tepazepam (sulpiride), 741
+Teperin (amitriptyline), 25
+Teralithe (lithium), 415
+Tercian (cyamemazine), 201
+Terfluoperazine (perphenazine), 607
+Terflurazine (trifluoperazine), 803
+Terfluzin (trifluoperazine), 803
+Teril (carbamazepine), 131
+Tetrabenazine D6 (deutetrabenazine), 221
+Texapam (temazepam), 755
+Thaden (dothiepin), 249
+thioridazine, 759
+thiothixene, 765
+Thombran (trazodone), 793
+
+
+
+
+<<<PAGE 2621>>>
+
+Thorazine (chlorpromazine), 153
+Thymal (lorazepam), 437
+tiagabine, 771
+tianeptine, 777
+Timelit (lofepramine), 421
+Timonil (carbamazepine), 131
+Tingus (fluoxetine), 301
+Tiprolisant (pitolisant), 639
+Tirodil (thioridazine), 759
+Titus (lorazepam), 437
+Tofranil (imipramine), 367
+Tofranil pamoata (imipramine), 367
+Tofranil-PM (imipramine), 367
+Tolid (lorazepam), 437
+Tolmin (mianserin), 495
+Tolvin (mianserin), 495
+Tolvon (mianserin), 495
+Tonirem (temazepam), 755
+Topamac (topiramate), 781
+Topamax (topiramate), 781
+Topimax (topiramate), 781
+topiramate, 781
+T-Pam (temazepam), 755
+Tramensan (trazodone), 793
+Trankilium (lorazepam), 437
+Trankimazin (alprazolam), 11
+Tranquase (diazepam), 229
+Tran-Quil (lorazepam), 437
+
+
+
+
+<<<PAGE 2627>>>
+
+Zenzedi (amphetamine d), 39
+Zeptol (carbamazepine), 131
+Zerenal (dothiepin), 249
+ziprasidone, 863
+Ziprexa (olanzapine), 559
+Zispin (mirtazapine), 509
+Zoleptil (zotepine), 883
+Zoloft (sertraline), 721
+zolpidem, 871
+Zolpimist (zolpidem), 871
+Zonalon (doxepin), 255
+Zonegran (zonisamide), 875
+zonisamide, 875
+Zopax (alprazolam), 11
+zopiclone, 879
+Zopite (zotepine), 883
+zotepine, 883
+Z-Pam (temazepam), 755
+Zubsolv (buprenorphine with naloxone), 111
+zuclopenthixol, 889
+Zuledin (chlorpromazine), 153
+Zulex (acamprosate), 1
+Zulresso (brexanolone), 99
+Zyban (bupropion), 117
+Zymocomb (sulpiride), 741
+Zyprexa (olanzapine), 559
+Zyprexa Relprevv (olanzapine), 559
+Zyprexa Zydis (olanzapine), 559
+
+
+
+
+<<<PAGE 2636>>>
+
+lisdexamfetamine , 409
+topiramate, 781
+zonisamide, 875
+Cataplexy syndrome
+clomipramine, 165
+imipramine, 367
+pitolisant , 639
+sodium oxybate , 733
+Catatonia
+alprazolam, 11
+chlordiazepoxide, 147
+clonazepam, 173
+clorazepate, 185
+diazepam, 229
+estazolam, 281
+flunitrazepam, 297
+flurazepam, 321
+loflazepate, 431
+lorazepam, 437
+midazolam, 499
+oxazepam, 569
+quazepam, 663
+temazepam, 755
+triazolam, 799
+Chorea, Huntington’s disease
+deutetrabenazine , 221
+
+
+
+
+<<<PAGE 2643>>>
+
+maprotiline, 465
+mianserin, 495
+nortriptyline, 551
+quazepam , 663
+ramelteon , 677
+suvorexant , 747
+tasimelteon, 751
+temazepam , 755
+trazodone, 793
+triazolam , 799
+trimipramine, 817
+zaleplon , 859
+zolpidem , 871
+zopiclone, 879
+Mania
+alprazolam (adjunct), 11
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine , 131
+cariprazine , 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium , 415
+
+
+
+
+<<<PAGE 2669>>>
+
+midazolam, 499
+quazepam, 663
+ramelteon, 677
+suvorexant, 747
+tasimelteon, 751
+temazepam, 755
+trazodone, 793
+triazolam, 799
+zaleplon, 859
+zolpidem, 871
+zopiclone, 879
+Stimulants
+amphetamine (d), 39
+amphetamine (d,l), 45
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Substance use disorder treatments
+acamprosate, 1
+buprenorphine, 111
+bupropion, 117
+clonidine, 179
+cyamemazine, 201
+disulfiram, 239
+lofexidine, 427
+lorazepam, 437
+nalmefene, 533
+
+

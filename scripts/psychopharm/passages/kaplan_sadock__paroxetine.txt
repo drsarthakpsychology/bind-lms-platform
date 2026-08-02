@@ -1,0 +1,782 @@
+<<<PAGE 439>>>
+
+Nonstimulant Medications. Atomoxetine HCl is a norepinephrine uptake
+inhibitor approved by the FDA for the treatment of ADHD in children age 6
+years and older. The mechanism of action is not well understood, but likely
+involves selective inhibition of the presynaptic norepinephrine transporter.
+Atomoxetine absorbs well in the gastrointestinal tract, and it reaches maximal
+plasma levels in 1 to 2 hours after ingestion. It is useful for inattention as well
+as impulsivity in children and adults with ADHD. Its half-life is
+approximately 5 hours and is given twice daily in most cases. The most
+common side effects include diminished appetite, abdominal discomfort,
+dizziness, and irritability. In some cases, there were increases in blood
+pressure and heart rate. Atomoxetine is metabolized by the cytochrome P450
+(CYP) 2D6 hepatic enzyme system. A small fraction of the population are
+poor metabolizers of CYP 2D6–metabolized drugs, and, for those
+individuals, plasma concentrations of the drug may increase as much as
+fivefold for a given dose of medication. Drugs that inhibit CYP 2D6,
+including fluoxetine, paroxetine, and quinidine, may lead to increased plasma
+levels of this medication. Despite its short half-life, research suggests that
+atomoxetine can reduce symptoms of ADHD in children during the school
+day when administered once daily. Another recent study of a combination of
+atomoxetine alone and combined with fluoxetine in the treatment of 127
+children with ADHD and symptoms of anxiety or depression suggested that
+atomoxetine alone can lead to improvements in mood and anxiety. Children
+who received combined atomoxetine and fluoxetine experienced more
+significant increases in blood pressure and pulse than those taking
+atomoxetine only.
+α-Agonists, both short-acting and the extended-release forms of clonidine
+hydrochloride and guanfacine, are FDA approved for the treatment of ADHD
+in children and adolescents from 6 to 7 years of age. Clonidine, a centrally
+acting α2-adrenergic receptor agonist, likely exerts its effect on the prefrontal
+cortex, although the mechanism of action is unknown. It is available in 0.1mg and 0.2-mg tablets, and is generally used twice daily, once in the morning
+and once at night, to provide an around-the-clock effect. Clonidine is initiated
+at 0.1 mg at bedtime, with incremental weekly increases of 0.1 mg. The
+maximum dose recommended is 0.2 mg twice daily. The extended-release
+formulation is not interchangeable with the short-acting clonidine. Because it
+
+
+
+
+<<<PAGE 564>>>
+
+Psychiatric Hospitalization
+We should assess for suicidal thoughts, behaviors, and a history of suicidal
+behavior in every child or adolescent with major depression. Safety is the
+most immediate consideration in assessing depression in youth, that is, a
+determination as to whether immediate psychiatric hospitalization is
+necessary. Depressed children and adolescents who express suicidal thoughts
+or behaviors most often require some extended evaluation in the safety of the
+psychiatric hospital to provide maximal protection from self-destructive
+impulses and behaviors.
+Evidence-Based Treatment Studies
+The Treatment for Adolescents with Depression Study (TADS) divided 439
+adolescents between 12 and 17 years of age into three treatment groups of 12
+weeks, composed of either fluoxetine alone (10 to 40 mg/day), fluoxetine
+with the same dose range in combination with CBT, or CBT alone. Based on
+ratings of the Children’s Depression Rating Scale-Revised (CDRS-R),
+combination treatment had significantly superior response rates compared
+with either treatment alone. Based on CGI scores at 12 weeks, rates of much
+or very much improved were 71 percent for the combined treatment group,
+60.6 percent for the fluoxetine group, 43.2 percent for the CBT alone group,
+and 34.4 percent for the placebo group. At 12 weeks, combination treatment
+was the optimal strategy in the treatment of adolescent depression. By the end
+of 9 months of treatment, however, response rates for each group had
+converged, so that response for the combination group was 86 percent,
+fluoxetine group response was about 81 percent, and CBT-alone group
+response rate was 81 percent. The long-term effectiveness of treatments for
+adolescent depression demonstrates that for moderately ill adolescents,
+fluoxetine, CBT, or the combination is efficacious. However, the addition of
+CBT to fluoxetine decreased persistent suicidal ideation and potential
+treatment-related emergence of suicidal ideation.
+A second large multicenter randomized placebo-controlled trial, Treatment
+of SSRI-Resistant Depression in Adolescents (TORDIA), included
+adolescents with major depression who had not responded to a 2-month trial
+with an SSRI antidepressant. The investigators in this study randomly
+assigned 334 adolescents between 12 and 18 years of age to a different SSRI
+
+
+
+
+<<<PAGE 633>>>
+
+the treatment of anxiety disorders in children and adolescents.
+A large, multisite investigation by the NIMH (Research Units in Pediatric
+Psychopharmacology [RUPP]) confirmed the safety and efficacy of
+fluvoxamine in the treatment of childhood separation anxiety disorder,
+generalized anxiety disorder, and social anxiety disorder. This double-blind,
+placebo-controlled study of 128 children and adolescents revealed that 76
+percent of children in the group treated with fluvoxamine showed significant
+improvement compared with 29 percent of those in the placebo group.
+Response to medication was noticeable after only 2 weeks of treatment.
+Fluvoxamine dosages ranged from 50 to 250 mg/day in children and up to
+300 mg/day in adolescents. Children and adolescents with less comorbid
+depressive symptoms had the best response. Youths who responded
+continued fluvoxamine for 6 months, and almost all of them continued to be
+responders at the 6-month mark.
+Several other randomized clinical trials have also supported the efficacy of
+SSRIs in the treatment of child and adolescent anxiety disorders. A
+randomized, controlled trial found fluoxetine, at a dose of 20 mg/day, to be
+safe and effective for children with these disorders, with minor side effects
+including gastrointestinal distress, headache, and drowsiness. Also, a
+randomized clinical trial for the treatment of generalized anxiety disorder in
+children lends support for the efficacy of sertraline. Finally, a large industry
+randomized clinical trial of paroxetine in the treatment of children with social
+anxiety disorder found that paroxetine was associated with a response in 78
+percent of children treated. The dose of paroxetine was 10 to 50 mg/day.
+The FDA has placed a “black box” warning on antidepressants, including
+all of the SSRI agents, used in the treatment of any childhood disorder,
+because of concerns about increased suicidality; however, no individual
+childhood anxiety study has found a statistically significant increase in
+suicidal thoughts or behaviors.
+Currently, we do not recommend using tricyclic drugs due to their
+potentially serious cardiac adverse effects. Other agents, including buspirone
+and β-adrenergic receptor antagonists such as propranolol, have been used
+clinically in children with anxiety disorders, but currently, no data support
+their efficacy. Diphenhydramine may be used in the short term to control
+sleep disturbances in children with anxiety disorders. Open trials and one
+double-blind, placebo-controlled study suggested that alprazolam, a
+
+
+
+
+<<<PAGE 1248>>>
+
+headaches,
+somnolence,
+agitation,
+insomnia,
+sweating, tremor,
+anorexia,
+dizziness,
+constipation
+Paroxetine
+
+20–60
+
+Nausea, diarrhea,
+dry mouth,
+headaches,
+somnolence,
+insomnia,
+sweating,
+asthenia, male
+sexual
+dysfunction,
+dizziness
+
+None
+
+Sertraline
+
+50–200
+
+Nausea, diarrhea,
+dry mouth,
+headaches,
+somnolence,
+insomnia,
+fatigue, tremor,
+male sexual
+dysfunction,
+dizziness
+
+None
+
+75–375
+
+Headaches,
+Nausea
+somnolence, dry
+mouth,
+dizziness,
+nervousness,
+insomnia,
+
+SNRI
+Venlafaxine
+
+
+
+
+<<<PAGE 1975>>>
+
+treating depression. However, some are approved by the U.S. FDA for
+multiple indications, such as major depression, OCD, PTSD, PMDD, panic
+disorder, and social phobia (social anxiety disorder) (Table 21-15). Note that
+fluvoxamine is not FDA approved as an antidepressant, a fact that is due to a
+marketing decision. It is considered an antidepressant in other countries.
+Although all SSRIs are equally effective, there are meaningful differences
+in pharmacodynamics, pharmacokinetics, and side effects, differences that
+might affect clinical responses among individual patients. This would explain
+why some patients have better clinical responses to a particular SSRI than
+another. The SSRIs have proven more problematic in terms of some side
+effects than the original clinical trials suggested. Quality-of-life–associated
+adverse effects such as nausea, sexual dysfunction, and weight gain
+sometimes mitigate the therapeutic benefits of the SSRIs. There can also be
+distressing withdrawal symptoms when SSRIs are stopped abruptly. This
+withdrawal is especially true with paroxetine but also occurs when other
+SSRIs with short half-lives are stopped.
+Pharmacologic Actions
+Pharmacokinetics. A significant difference among the SSRIs is their
+broad range of serum half-lives. Fluoxetine has the most prolonged half-life:
+4 to 6 days; its active metabolite has a half-life of 7 to 9 days. The half-life of
+sertraline is 26 hours, and its less active metabolite has a half-life of 3 to 5
+days. The half-lives of the other three, which do not have metabolites with
+significant pharmacologic activity, are 35 hours for citalopram, 27 to 32
+hours for escitalopram, 21 hours for paroxetine, and 15 hours for
+fluvoxamine. As a rule, the SSRIs are well absorbed after oral administration
+and have their peak effects in the range of 3 to 8 hours. Absorption of
+sertraline may be slightly enhanced by food.
+There are also differences in plasma protein–binding percentages among
+the SSRIs, with sertraline, fluoxetine, and paroxetine being the most highly
+bound and escitalopram being the least bound.
+All SSRIs are metabolized in the liver by the CYP450 enzymes. Because
+the SSRIs have such a broad therapeutic index, other drugs rarely produce
+problematic increases in SSRI concentrations. The most critical drug–drug
+interactions involving the SSRIs occur as a result of the SSRIs inhibiting the
+
+
+
+
+<<<PAGE 1976>>>
+
+metabolism of the coadministered medication. Each of the SSRIs possesses a
+potential for slowing or blocking the metabolism of many drugs (Table 2116). Fluvoxamine is the most problematic of the drugs in this respect. It has a
+marked effect on several of the CYP enzymes. Examples of clinically
+significant interactions include fluvoxamine and theophylline (Slo-Bid, TheoDur) through CYP1A2 interaction, fluvoxamine and clozapine (Clozaril)
+through CYP1A2 inhibition; and fluvoxamine with alprazolam (Xanax) or
+clonazepam (Klonopin) through CYP3A4 inhibition. Fluoxetine and
+paroxetine also possess significant effects on the CYP2D6 isozyme, which
+may interfere with the efficacy of opiate analogs, such as codeine and
+hydrocodone, by blocking the conversion of these agents to their active form.
+Thus, coadministration of fluoxetine and paroxetine with an opiate interferes
+with its analgesic effects. Sertraline, citalopram, and escitalopram are least
+likely to complicate treatment because of interactions.
+The pharmacokinetics of vilazodone (5 to 80 mg) is dose-proportional.
+Steady-state plasma levels are achieved in about 3 days. The elimination of
+vilazodone is primarily by hepatic metabolism with a terminal half-life of
+approximately 25 hours.
+Pharmacodynamics. The SSRIs are believed to exert their therapeutic
+effects through serotonin reuptake inhibition. They derive their name because
+they have little effect on the reuptake of norepinephrine or dopamine. Often,
+adequate clinical activity and saturation of the 5-HT transporters are achieved
+at starting dosages. As a rule, higher dosages do not increase antidepressant
+efficacy but may increase the risk of adverse effects.
+Table 21-16
+CYP450 Inhibitory Potential of Commonly Prescribed
+Antidepressants
+
+
+
+
+<<<PAGE 1980>>>
+
+may be at a slight risk of developing pulmonary hypertension. Data about the
+risk of this side effect are inconclusive, but it is estimated to involve 1 to 2
+babies for 1,000 births. Paroxetine should be avoided during pregnancy.
+The FDA classified paroxetine as a pregnancy Category D medication in
+the former FDA classification system. In 2005, the FDA issued an alert that
+paroxetine increases the risk of congenital disabilities, particularly heart
+defects, when women take it during the first 3 months of pregnancy.
+Paroxetine should usually not be taken during pregnancy, but for some
+women who have already been taking paroxetine, the benefits of continuing
+paroxetine may be greater than the potential risk to the baby. Women taking
+paroxetine who are pregnant, think they may be pregnant, or plan to become
+pregnant should talk to their physicians about the potential risks of taking
+paroxetine during pregnancy.
+The FDA alert was based on the findings of studies that showed that
+women who took paroxetine during the first 3 months of pregnancy were
+about one-and-a-half to two times as likely to have a baby with a heart defect
+as women who received other antidepressants or women in the general
+population. Most of the heart defects in these studies were not lifethreatening and happened mainly in the inside walls of the heart muscle,
+where repairs can be made if needed (atrial and ventricular septal defects).
+Sometimes these septal defects resolve without treatment. In one of the
+studies, the risk of heart defects in babies whose mothers had taken
+paroxetine early in pregnancy was 2 percent, compared with a 1 percent risk
+in the whole population. In the other study, the risk of heart defects in babies
+whose mothers had taken paroxetine in the first 3 months of pregnancy was
+1.5 percent, compared with 1 percent in babies whose mothers had taken
+other antidepressants in the first 3 months of pregnancy. This study also
+showed that women who took paroxetine in the first 3 months of pregnancy
+were about twice as likely to have a baby with any congenital disability as
+women who took other antidepressants.
+Minimal amounts of SSRIs are found in breast milk, and no harmful
+effects have been found in breastfed babies. Concentrations of sertraline and
+escitalopram are exceptionally low in breast milk. However, in some cases,
+reported concentrations might be higher than average. No decision regarding
+the use of an SSRI is risk-free. It is thus essential to document that
+communication of potential risks to the patient has taken place.
+
+
+
+
+<<<PAGE 1983>>>
+
+POSTTRAUMATIC STRESS DISORDER. Pharmacotherapy for PTSD must target
+
+specific symptoms in four clusters: reexperiencing, avoidance, negative
+changes in mood and thinking, and arousal. For long-term treatment, SSRIs
+appear to have a broader spectrum of therapeutic effects on specific PTSD
+symptom clusters than do TCAs and MAOIs. Benzodiazepine augmentation
+is useful in the acute symptomatic state. The SSRIs are associated with
+marked improvement of both intrusive and avoidant symptoms.
+GENERALIZED ANXIETY DISORDER. The SSRIs may be useful for the treatment
+
+of specific phobias, generalized anxiety disorder (GAD), and separation
+anxiety disorder. A thorough, individualized evaluation is the first approach,
+with particular attention to identifying conditions amenable to drug therapy.
+Also, cognitive-behavioral or other psychotherapies can be added for greater
+efficacy.
+Bulimia Nervosa and Other Eating Disorders. Fluoxetine is indicated
+for the treatment of bulimia, which is best done in the context of
+psychotherapy. Dosages of 60 mg a day are significantly more effective than
+20 mg a day. In several well-controlled studies, fluoxetine in dosages of 60
+mg a day was superior to placebo in reducing binge eating and induced
+vomiting. Some experts recommend an initial course of cognitive-behavioral
+therapy alone. If there is no response in 3 to 6 weeks, then fluoxetine
+administration is added. The appropriate duration of treatment with fluoxetine
+and psychotherapy has not been determined.
+Fluvoxamine was not effective at a statistically significant level in one
+double-blind, placebo-controlled trial for inpatients with bulimia.
+Fluoxetine has been used in inpatient treatment of
+anorexia nervosa to attempt to control comorbid mood disturbances and
+obsessive-compulsive symptoms. However, at least two careful studies, one
+of 7 months’ and one of 24 months’ duration, failed to find that fluoxetine
+affected the overall outcome and the maintenance of weight. Effective
+treatments for anorexia include cognitive-behavioral, interpersonal,
+psychodynamic, and family therapies in addition to a trial with SSRIs.
+ANOREXIA NERVOSA.
+
+OBESITY.
+
+Fluoxetine, in combination with a behavioral program, is only
+
+
+
+
+<<<PAGE 1985>>>
+
+spectrum disorders. Fluoxetine has been reported to be useful for features of
+autism in children, adolescents, and adults.
+Precautions and Adverse Reactions. SSRI side effects need to be
+considered in terms of their onset, duration, and severity. For example,
+nausea and jitteriness are early, generally mild, and time-limited side effects.
+Although SSRIs share similar side effect profiles, individual drugs in this
+class may cause a higher rate or carry a more severe risk of specific side
+effects depending on the patient.
+Sexual Dysfunction. All SSRIs cause sexual dysfunction, and it is the
+most common adverse effect of SSRIs associated with long-term treatment. It
+has an estimated incidence of between 50 and 80 percent. The most common
+complaints are anorgasmia, inhibited orgasm, and decreased libido. Some
+studies suggest that sexual dysfunction is dose-related, but this has not been
+established. Unlike most of the other adverse effects of SSRIs, sexual
+inhibition rarely resolves in the first few weeks of use but usually continues
+as long as the drug is taken. In some cases, there may be an improvement
+over time.
+Strategies to counteract SSRI-induced sexual dysfunction are numerous,
+and none has been proven to be very useful. Some reports suggest decreasing
+the dosage or adding bupropion (Wellbutrin) or amphetamine. Reports have
+described successful treatment of SSRI-induced sexual dysfunction with
+agents such as sildenafil (Viagra), which are used to treat erectile
+dysfunction. Ultimately, patients may need to be switched to antidepressants
+that do not interfere with sexual functioning, drugs such as mirtazapine or
+bupropion.
+Gastrointestinal Adverse Effects. GI side effects are widespread and
+are mediated mainly through effects on the serotonin 5-HT3 receptor. The
+most frequent GI complaints are nausea, diarrhea, anorexia, vomiting,
+flatulence, and dyspepsia. Sertraline and fluvoxamine produce the most
+intense GI symptoms. Delayed-release paroxetine, compared with the
+immediate-release preparation of paroxetine, has less intense GI side effects
+during the first week of treatment. However, paroxetine, because of its
+anticholinergic activity, frequently causes constipation. Nausea and loose
+
+
+
+
+<<<PAGE 1988>>>
+
+only one percentage point higher than the placebo rate. Fluoxetine is the most
+likely to cause headaches. On the other hand, all SSRIs are effective
+prophylaxis against both migraine and tension-type headaches in many
+persons.
+Central Nervous System Adverse Effects
+ANXIETY. Fluoxetine may cause anxiety, particularly in the first few weeks of
+treatment. However, these initial effects usually give way to an overall
+reduction in anxiety after a few weeks. Increased anxiety is caused
+considerably less frequently by paroxetine and escitalopram, which may be
+better choices if sedation is desired, as in mixed anxiety and depressive
+disorders.
+The primary effect SSRIs exert in the area of
+insomnia and sedation is improved sleep resulting from the treatment of
+depression and anxiety. However, as many as 25 percent of persons taking
+SSRIs note trouble sleeping, excessive somnolence, or overwhelming fatigue.
+Fluoxetine is the most likely to cause insomnia, for which reason it is often
+taken in the morning. Sertraline and fluvoxamine are about equally likely to
+cause insomnia as somnolence, and citalopram and especially paroxetine
+often cause somnolence. Escitalopram is more likely to interfere with sleep
+than its isomer, citalopram. Some persons benefit from taking their SSRI
+dose before going to bed, but others prefer to take it the morning. SSRIinduced insomnia can be treated with benzodiazepines, trazodone (Desyrel)
+(clinicians must explain the risk of priapism), or other sedating medicines.
+Significant SSRI-induced somnolence often requires switching to the use of
+another SSRI or bupropion.
+INSOMNIA AND SEDATION.
+
+OTHER SLEEP EFFECTS. Many persons taking SSRIs report recalling extremely
+
+vivid dreams or nightmares. They describe sleep as “busy.” Other sleep
+effects of the SSRIs include bruxism, restless legs, nocturnal myoclonus, and
+sweating.
+Emotional blunting is a largely overlooked but
+frequent side effect associated with chronic SSRI use. Patients report an
+EMOTIONAL BLUNTING.
+
+
+
+
+<<<PAGE 1991>>>
+
+Sweating. Some patients experience sweating while being treated with
+SSRIs. This sweating is independent of the temperature in the environment.
+Nocturnal sweating may drench bed sheets and require a change of
+nightclothes. Terazosin (Hytrin), 1 or 2 mg/day, is often dramatically
+effective in counteracting sweating.
+Overdose. The adverse reactions associated with overdose of vilazodone at
+doses of 200 to 280 mg, as observed in clinical trials, included serotonin
+syndrome, lethargy, restlessness, hallucinations, and disorientation.
+Selective Serotonin Reuptake Inhibitor Withdrawal. The abrupt
+discontinuance of SSRI use, especially one with a shorter half-life such as
+paroxetine or fluvoxamine, has been associated with a withdrawal syndrome
+that may include dizziness, weakness, nausea, headache, rebound depression,
+anxiety, insomnia, poor concentration, upper respiratory symptoms,
+paresthesias, and migraine-like symptoms. It usually does not appear until
+after at least 6 weeks of treatment and usually resolves spontaneously in 3
+weeks. Persons who experienced transient adverse effects in the first weeks
+of taking an SSRI are more likely to experience discontinuation symptoms.
+Fluoxetine is the SSRI least likely to be associated with this syndrome
+because the half-life of its metabolite is more than 1 week, and it effectively
+tapers itself. Fluoxetine has therefore been used in some cases to treat the
+discontinuation syndrome caused by the termination of other SSRIs.
+Nevertheless, a delayed and attenuated withdrawal syndrome occurs with
+fluoxetine as well.
+Drug Interactions
+The SSRIs do not interfere with most other drugs. A serotonin syndrome
+(Table 21-17) can develop with concurrent administration of MAOIs, Ltryptophan, lithium, or other antidepressants that inhibit the reuptake of
+serotonin. Fluoxetine, sertraline, and paroxetine can raise plasma
+concentrations of TCAs, which can cause clinical toxicity. Several potential
+pharmacokinetic interactions have been described based on in vitro analyses
+of the CYP enzymes, but clinically relevant interactions are rare. SSRIs that
+inhibit CYP2D6 may interfere with the analgesic effects of hydrocodone and
+oxycodone. These drugs can also reduce the effectiveness of tamoxifen
+
+
+
+
+<<<PAGE 1992>>>
+
+(Nolvadex, Soltamox). The combined use of SSRIs and NSAIDs increases
+the risk of gastric bleeding.
+Table 21-17
+Serotonin Syndrome Symptoms
+Diarrhea
+
+Myoclonus
+
+Diaphoresis
+
+Hyperactive reflexes
+
+Tremor
+
+Disorientation
+
+Ataxia
+
+Lability of mood
+
+The SSRIs, particularly fluvoxamine, should not be used with clozapine
+because it raises clozapine concentrations, increasing the risk of seizure. The
+SSRIs may increase the duration and severity of zolpidem (Ambien)-induced
+side effects, including hallucinations.
+Fluoxetine. Fluoxetine can be administered with tricyclic drugs, but the
+clinician should use low dosages of the tricyclic drug. Because the hepatic
+enzyme CYP2D6 metabolizes it, fluoxetine may interfere with the
+metabolism of other drugs in the 7 percent of the population who have an
+inefficient isoform of this enzyme, the so-called poor metabolizers.
+Fluoxetine may slow down the metabolism of carbamazepine (Tegretol),
+antineoplastic agents, diazepam (Valium), and phenytoin (Dilantin). Drug
+interactions have been described for fluoxetine that may affect the plasma
+levels of benzodiazepines, antipsychotics, and lithium. Fluoxetine and other
+SSRIs may interact with warfarin (Coumadin), increasing the risk of bleeding
+and bruising.
+Sertraline. Sertraline may displace warfarin from plasma proteins and may
+increase the prothrombin time. The drug interaction data on sertraline support
+a generally similar profile to that of fluoxetine, although sertraline does not
+interact as strongly with the CYP2D6 enzyme.
+Paroxetine. Paroxetine has a higher risk for drug interactions than does
+either fluoxetine or sertraline because it is a more potent inhibitor of the
+
+
+
+
+<<<PAGE 1993>>>
+
+CYP2D6 enzyme. Cimetidine can increase the concentration of sertraline and
+paroxetine, and phenobarbital (Luminal) and phenytoin can decrease the
+concentration of paroxetine. Because of the potential for interference with the
+CYP2D6 enzyme, the coadministration of paroxetine with other
+antidepressants, phenothiazines, and antiarrhythmic drugs should be
+undertaken with caution. Paroxetine may increase the anticoagulant effect of
+warfarin. Coadministration of paroxetine and tramadol may precipitate
+serotonin syndrome in elderly persons.
+Fluvoxamine. Among the SSRIs, fluvoxamine appears to present the most
+risk for drug–drug interactions. Fluvoxamine is metabolized by the enzyme
+CYP3A4, which may be inhibited by ketoconazole (Nizoral). Fluvoxamine
+may increase the half-life of alprazolam, triazolam (Halcion), and diazepam,
+and it should not be coadministered with these agents. Fluvoxamine may
+increase theophylline levels threefold and warfarin levels twofold, with
+significant clinical consequences; thus, the serum levels of the latter drugs
+should be closely monitored, and the doses adjusted accordingly.
+Fluvoxamine raises concentrations and may increase the activity of clozapine,
+carbamazepine, methadone (Dolophine, Methadose), propranolol (Inderal),
+and diltiazem (Cardizem). Fluvoxamine has no significant interactions with
+lorazepam (Ativan) or digoxin (Lanoxin).
+Citalopram. Citalopram is not a potent inhibitor of any CYP enzymes.
+Concurrent administration of cimetidine increases concentrations of
+citalopram by about 40 percent. Citalopram does not significantly affect the
+metabolism of, nor is its metabolism significantly affected by, digoxin,
+lithium, warfarin, carbamazepine, or imipramine (Tofranil). Citalopram
+increases the plasma concentrations of metoprolol (Lopressor) twofold, but
+this usually does not affect BP or heart rate. Data on coadministration of
+citalopram and potent inhibitors of CYP3A4 or CYP2D6 are not available.
+Escitalopram. Escitalopram is a moderate inhibitor of CYP2D6 and has
+been shown to raise desipramine (Norpramin) and metoprolol concentrations
+significantly.
+Vilazodone. Vilazodone dose should be reduced to 20 mg when
+
+
+
+
+<<<PAGE 1994>>>
+
+coadministered with CYP3A4 potent inhibitors. Concomitant use with
+inducers of CYP3A4 can result in inadequate drug concentrations and may
+diminish effectiveness. The effect of CYP3A4 inducers on the systemic
+exposure of vilazodone has not been evaluated.
+Laboratory Interferences
+In general, the SSRIs do not interfere with any laboratory tests. There have
+been some reports of false-positive urine toxicology for benzodiazepines in
+patients taking sertraline; if this is suspected, additional confirmation can be
+sought via gas chromatography-mass spectrometry.
+Dosage and Clinical Guidelines
+Fluoxetine. Fluoxetine is available in 10- and 20-mg capsules, in a scored
+10-mg tablet, as a 90-mg enteric-coated capsule for once-weekly
+administration, and as an oral concentrate (20 mg/5 mL). Fluoxetine is also
+marketed as Sarafem for PMDD. For depression, the initial dosage is usually
+10 or 20 mg orally each day, usually given in the morning, because insomnia
+is a potential adverse effect of the drug. Fluoxetine should be taken with food
+to minimize possible nausea. The long half-lives of the drug and its
+metabolite contribute to 4 weeks to reach steady-state concentrations. Twenty
+milligrams is often as effective as higher doses for treating depression. The
+maximum dosage recommended by the manufacturer is 80 mg a day. To
+minimize the early side effects of anxiety and restlessness, some clinicians
+initiate fluoxetine use at 5 to 10 mg a day, either with the scored 10-mg tablet
+or by using the liquid preparation. Alternatively, because of the long half-life
+of fluoxetine, its use can be initiated with an every-other-day administration
+schedule. The dosage of fluoxetine (and other SSRIs) that is effective in other
+indications may differ from the dosage generally used for depression.
+Sertraline. Sertraline is available in scored 25-, 50-, and 100-mg tablets. For
+the initial treatment of depression, sertraline use should be initiated with a
+dosage of 50 mg once daily. To limit the GI effects, some clinicians begin at
+25 mg a day and increase to 50 mg a day after 3 weeks. Patients who do not
+respond after 1 to 3 weeks may benefit from dosage increases of 50 mg every
+week up to a maximum of 200 mg given once daily. Sertraline can be
+
+
+
+
+<<<PAGE 1995>>>
+
+administered in the morning or in the evening. Administration after eating
+may reduce the GI adverse effects. Sertraline oral concentrate (1 mL = 20
+mg) has 12 percent alcohol content and must be diluted before use. When
+used to treat panic disorder, sertraline should be initiated at 25 mg to reduce
+the risk of provoking a panic attack.
+Paroxetine. Immediate-release paroxetine is available in scored 20-mg
+tablets; in unscored 10-, 30-, and 40-mg tablets; and as an orange-flavored
+10-mg/5-mL oral suspension. Paroxetine use for the treatment of depression
+is usually initiated at a dosage of 10 or 20 mg a day. An increase in the
+dosage should be considered when an adequate response is not seen in 1 to 3
+weeks. At that point, the clinician can initiate upward dose titration in 10-mg
+increments at weekly intervals to a maximum of 50 mg a day. Persons who
+experience GI upset may benefit from taking the drug with food. Paroxetine
+can be taken initially as a single daily dose in the evening; higher dosages
+may be divided into two doses per day.
+A delayed-release formulation of paroxetine, paroxetine CR, is available in
+12.5-, 25-, and 37.5-mg tablets. The starting dosages of paroxetine CR are 25
+mg/day for depression and 12.5 mg/day for panic disorder.
+Paroxetine is the SSRI most likely to produce a discontinuation syndrome,
+because plasma concentrations decrease rapidly in the absence of continuous
+dosing. Paroxetine use should be tapered gradually to limit the symptoms of
+abrupt discontinuation, with dosage reductions every 2 to 3 weeks.
+Fluvoxamine. Fluvoxamine is the only SSRI not approved by the FDA as
+an antidepressant. It is indicated for OCD. It is available in unscored 25-mg
+tablets and scored 50- and 100-mg tablets. The effective daily dosage range is
+50 to 300 mg a day. A usual starting dosage is 50 mg once a day at bedtime
+for the first week, after which the dosage can be adjusted according to the
+adverse effects and clinical response. Dosages above 100 mg a day may be
+divided into twice-daily dosing. A temporary dosage reduction or slower
+upward titration may be necessary if nausea develops over the first 2 weeks
+of therapy. Although fluvoxamine can also be administered as a single
+evening dose to minimize its adverse effects, its short half-life may lead to
+interdose withdrawal. An extended-release formulation is available in 100and 150-mg dose strengths. All fluvoxamine formulations should be
+
+
+
+
+<<<PAGE 1997>>>
+
+Loss of Efficacy. Some patients report a diminished response or total loss
+of response to SSRIs with recurrence of depressive symptoms while
+remaining on a full dose of medication. The exact mechanism of this socalled “poop-out” is unknown, but the phenomenon is genuine. Potential
+remedies for the attenuation of the response to SSRIs include increasing or
+decreasing the dosage, tapering drug use, and then rechallenging with the
+same medication, switching to another SSRI or non-SSRI antidepressant, and
+augmenting with bupropion or another augmentation agent.
+Vortioxetine (Trintellix). Vortioxetine works mainly as an inhibitor of
+serotonin (5-HT) reuptake, but it has a more complex pharmacologic profile
+than other SSRIs. It also acts as an agonist at 5-HT1A receptors, a partial
+agonist at 5-HT1B receptors, and an antagonist at 5-HT3, 5-HT1D, and 5-HT7
+receptors. The contribution of each of these activities to the drug’s
+antidepressant effect has not been established, but it is the only compound
+with this combination of pharmacodynamic actions.
+Side effects seen during the trials include, but are not limited to, nausea,
+constipation, and vomiting.
+The recommended starting dose is 10 mg administered orally once daily
+without regard to meals. The dose should then be increased to 20 mg/day, as
+tolerated. A dose of 5 mg/day should be considered for patients who do not
+tolerate higher doses.
+The maximum recommended dose of vortioxetine is 10 mg/day in known
+CYP2D6 poor metabolizers. Reduction of the dose of vortioxetine by onehalf is suggested when patients are receiving a CYP2D6 potent inhibitor
+(e.g., bupropion, fluoxetine, paroxetine, or quinidine) concomitantly. The
+dose should be increased to the original dose of vortioxetine in patients who
+stop taking CYP inducers (e.g., rifampin, carbamazepine, or phenytoin). This
+adjustment is especially essential when a potent CYP inducer is
+coadministered for greater than 14 days. The maximum recommended dose
+should not exceed three times the original dose. The dose of vortioxetine
+should be reduced to the original level within 14 days when the inducer is
+discontinued.
+Although vortioxetine can be abruptly discontinued, in placebo-controlled
+trials, patients experienced transient adverse reactions such as headache and
+
+
+
+
+<<<PAGE 2003>>>
+
+Pharmacologic Actions. Duloxetine is formulated as a delayed-release
+capsule to reduce the risk of severe nausea associated with the drug. It is well
+absorbed, but there is a 2-hour delay before absorption begins. Peak plasma
+concentrations occur 6 hours after ingestion. Food delays the time to achieve
+maximum concentrations from 6 to 10 hours and reduces the extent of
+absorption by about 10 percent. Duloxetine has an elimination half-life of
+about 12 hours (range, 8 to 17 hours). Steady-state plasma concentrations
+occur after 3 days. Duloxetine’s elimination is mainly through the isozymes
+CYP2D6 and CYP1A2. Duloxetine undergoes extensive hepatic metabolism
+to numerous metabolites. About 70 percent of the drug appears in the urine as
+metabolites, and about 20 percent is excreted in the feces. Duloxetine is 90
+percent protein-bound.
+Therapeutic Indications
+DEPRESSION. In contrast to venlafaxine, a small number of studies have
+compared duloxetine with the SSRIs. Although these studies are suggestive
+of some advantage in efficacy, their findings are limited by the use of fixed,
+low starting doses of paroxetine and fluoxetine, but dosages of duloxetine in
+some studies were as high as 120 mg/day. Any inferences on whether
+duloxetine is superior to the SSRIs in any aspect of treatment for depression
+thus await more evidence from adequately designed trials.
+NEUROPATHIC PAIN
+
+ASSOCIATED
+
+WITH
+
+DIABETES
+
+AND
+
+STRESS
+
+URINARY
+
+INCONTINENCE. Duloxetine is the first drug to be approved by the FDA as a
+
+treatment for neuropathic pain associated with diabetes. Its pain effects have
+not been compared with other agents, such as venlafaxine and the TCAs.
+Duloxetine is currently awaiting approval as a treatment for stress urinary
+incontinence, the inability to voluntarily control bladder voiding, which is the
+most frequent type of incontinence in women. The action of duloxetine in the
+treatment of stress urinary incontinence is associated with its effects in the
+sacral spinal cord, which in turn increases the activity of the striated urethral
+sphincter. Duloxetine is marketed under the name Yentreve for this indication
+which has not been approved for this indication in the United States but is
+available in the European Union and other countries.
+
+
+
+
+<<<PAGE 2004>>>
+
+PRECAUTIONS AND ADVERSE REACTIONS. The most common adverse reactions
+
+are nausea, dry mouth, dizziness, constipation, fatigue, decreased appetite,
+anorexia, somnolence, and increased sweating. Nausea was the most common
+side effect that led to treatment discontinuation in clinical trials. The true
+incidence of sexual dysfunction is unknown; the long-term effects on body
+weight are also unknown. In clinical trials, treatment with duloxetine was
+associated with mean increases in BP averaging 2 mm Hg systolic and 0.5
+mm Hg diastolic versus placebo. No studies have compared the BP effects of
+venlafaxine and duloxetine at equivalent therapeutic doses.
+Close monitoring is suggested when using duloxetine in patients who have
+or are at risk for diabetes. Duloxetine has been shown to increase blood sugar
+and hemoglobin A1C levels during long-term treatment.
+Patients with substantial alcohol use should not be treated with duloxetine
+because of possible hepatic effects. It also should not be prescribed for
+patients with hepatic insufficiency and end-stage renal disease or patients
+with uncontrolled narrow-angle glaucoma.
+Abrupt discontinuation of duloxetine should be avoided because it may
+produce a discontinuation syndrome similar to that of venlafaxine. A gradual
+dose reduction is recommended.
+Clinicians should avoid the use of duloxetine by pregnant and nursing
+women unless the potential benefits justify the potential risks.
+Drug Interactions. Duloxetine is a moderate inhibitor of CYP450
+enzymes.
+Laboratory Interferences. Data are not currently available on laboratory
+interferences with duloxetine.
+Dosage and Administration. Duloxetine is available in 20-, 30-, and 60mg tablets. The recommended therapeutic and maximum dosage is 60
+mg/day. The 20- and 30-mg doses are useful for either initial therapy or for
+twice-daily use as strategies to reduce side effects. In clinical trials, dosages
+of up to 120 mg/day were studied, but no consistent advantage in efficacy
+was noted at doses higher than 60 mg/day. Duloxetine thus does not appear to
+demonstrate a dosage–response curve. However, there were difficulties in
+tolerability with single doses above 60 mg. Accordingly, when dosages of 80
+
+
+
+
+<<<PAGE 2163>>>
+
+inhibition of the presynaptic norepinephrine transporter. It is well absorbed
+after oral administration and is minimally affected by food. High-fat meals
+may decrease the rate but not the extent of absorption. Maximum plasma
+concentrations are reached after approximately 1 to 2 hours. At therapeutic
+concentrations, 98 percent of atomoxetine in plasma is bound to protein,
+mainly albumin. Atomoxetine has a half-life of approximately 5 hours and is
+metabolized principally by the CYP2D6 pathway. Poor metabolizers of this
+compound reach a fivefold higher area under the curve and fivefold higher
+peak plasma concentration than normal or extensive metabolizers. This
+variation is critical to consider in patients receiving medications that inhibit
+the CYP2D6 enzyme. For example, the antidepressant-like pharmacology of
+atomoxetine has led to its use as an add-on to SSRIs or other antidepressants.
+Drugs such as fluoxetine (Prozac), paroxetine (Paxil), and bupropion
+(Wellbutrin) are CYP2D6 inhibitors and may raise atomoxetine levels.
+Therapeutic Indications
+Atomoxetine is used for the treatment of ADHD. It should be considered for
+use in patients who find stimulants too activating or who experience other
+intolerable side effects. Because atomoxetine has no abuse potential, it is a
+reasonable choice in the treatment of patients with both ADHD and substance
+abuse, patients who complain of ADHD symptoms but are suspected of
+seeking stimulant drugs, and patients who are in recovery.
+Atomoxetine may enhance cognition when used to treat patients with
+schizophrenia. It may also be used as an alternative or add-on to
+antidepressants in patients who fail to respond to standard therapies.
+Precautions and Adverse Reactions
+Common side effects of atomoxetine include abdominal discomfort,
+decreased appetite with resulting weight loss, sexual dysfunction, dizziness,
+vertigo, irritability, and mood swings. Minor increases in BP and heart rate
+have also been observed. There have been cases of severe liver injury in a
+small number of patients taking atomoxetine. The drug should be
+discontinued in patients with jaundice (yellowing of the skin or whites of the
+eyes, itching) or laboratory evidence of liver injury. Atomoxetine should not
+be taken at the same time as, or within 2 weeks of taking, an MAOI or by
+
+

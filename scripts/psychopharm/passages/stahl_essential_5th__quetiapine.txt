@@ -1,0 +1,2253 @@
+<<<PAGE 222>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Figure 5-32 5HT2A binding
+by drugs used to treat
+psychosis. Shown here is a visual
+depiction of the binding profiles of
+drugs used to treat psychosis. Each
+colored box represents a different
+binding property, with the size and
+positioning of the box reflecting
+the binding potency of the property
+(i.e., size indicates potency relative
+to a standard Ki scale, while position
+reflects potency relative to the
+other binding properties of that
+drug). The vertical dotted line cuts
+through the D2 receptor binding
+box, with binding properties that
+are more potent than D2 on the
+left and those that are less potent
+than D2 on the right. Interestingly,
+D2 binding is not the most potent
+property for any of the agents
+shown here. (A) The “pines” (i.e.,
+clozapine, olanzapine, quetiapine,
+asenapine, and zotepine) all bind
+much more potently to the 5HT2A
+receptor than they do to the D2
+receptor. (B) The “dones” and “rone”
+(i.e., risperidone, paliperidone,
+ziprasidone, iloperidone, lurasidone,
+and lumateperone) also bind more
+or as potently to the 5HT2A receptor
+as they do to the D2 receptor.
+(C) Aripiprazole and cariprazine
+both bind more potently to the D2
+receptor than to the 5HT2A receptor,
+while brexpiprazole has similar
+potency at both receptors.
+
+5HT2A binding by pines
+5HT2A
+
+clozapine
+
+5HT2A
+
+olanzapine
+5HT2A
+
+quetiapine
+
+5HT2A
+
+asenapine
+5HT2A
+
+A
+
+zotepine
+
+5HT2A binding by dones and a rone
+5HT2A
+
+5HT2A
+
+paliperidone
+
+risperidone
+
+5HT2A
+
+ziprasidone
+5HT2A
+
+iloperidone
+
+lurasidone
+
+B
+
+5HT2A
+
+5HT2A
+
+lumateperone
+
+5HT2A binding by two pips and a rip
+5HT2A
+
+aripiprazole
+5HT2A
+
+brexpiprazole
+5HT2A
+
+cariprazine
+
+C
+
+206
+
+more potent than D2
+
+less potent than D2
+
+
+
+
+<<<PAGE 223>>>
+
+Chapter 5: Targeting for Psychosis
+
+5HT1A binding by pines
+5HT1A
+
+clozapine
+olanzapine
+5HT1A
+
+quetiapine
+5HT1A
+
+asenapine
+5HT1A
+
+A
+
+zotepine
+
+5HT1A binding by dones and a rone
+5HT1A
+
+risperidone
+
+5HT1A
+
+paliperidone
+5HT1A
+
+ziprasidone
+5HT1A
+
+iloperidone
+5HT1A
+
+Figure 5-33 5HT1A binding
+by drugs used to treat
+psychosis. Shown here is a visual
+depiction of the binding profiles
+of drugs used to treat psychosis.
+(A) Clozapine and quetiapine both
+bind more potently to the 5HT1A
+receptor than they do to the D2
+receptor, while asenapine and
+zotepine bind less potently to the
+5HT1A receptor and olanzapine
+does not bind to it at all. (B) All
+of the “dones” (i.e., risperidone,
+paliperidone, ziprasidone,
+iloperidone, and lurasidone) bind to
+the 5HT1A receptor with less potency
+than they do to the D2 receptor;
+lumateperone does not bind the
+5HT1A receptor. (C) Aripiprazole,
+brexpiprazole, and cariprazine
+each have similar relative potency
+for the D2 and 5HT1A receptors.
+5HT1A binding is actually the most
+potent property of brexpiprazole.
+Description of graphic: Each
+colored box represents a different
+binding property, with the size and
+positioning of the box reflecting
+the binding potency of the property
+(i.e., size indicates potency relative
+to a standard Ki scale, while position
+reflects potency relative to the other
+binding properties of that drug).
+The vertical dotted line cuts through
+the D2 receptor binding box, with
+binding properties that are more
+potent than D2 on the left and those
+that are less potent than D2 on the
+right. Binding at 5HT2A (see Figure
+5-32) is indicated by an orange
+outline around the box.
+
+lurasidone
+
+B
+
+lumateperone
+
+5HT1A binding by two pips and a rip
+5HT1A
+
+aripiprazole
+5HT1A
+
+brexpiprazole
+5HT1A
+
+cariprazine
+
+C
+
+more potent than D2
+
+less potent than D2
+
+207
+
+5
+
+
+
+
+<<<PAGE 224>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Monoamine reuptake inhibition by pines
+
+clozapine
+olanzapine
+NET
+
+quetiapine
+
+asenapine
+NET
+
+A
+
+SERT
+
+zotepine
+
+Monoamine reuptake inhibition by dones and a rone
+
+risperidone
+
+paliperidone
+NET
+
+ziprasidone
+
+iloperidone
+
+lurasidone
+SERT
+
+B
+
+lumateperone
+
+Monoamine reuptake inhibition by two pips and a rip
+
+aripiprazole
+
+brexpiprazole
+
+cariprazine
+
+C
+
+208
+
+more potent than D2
+
+less potent than D2
+
+SERT
+
+Figure 5-34 Monoamine
+transporter binding by drugs
+used to treat psychosis. Shown
+here is a visual depiction of the
+binding profiles of drugs used to
+treat psychosis. (A) Of the “pines,”
+quetiapine is the only one with
+any relevant monoamine reuptake
+inhibition. Specifically, it binds to
+the norepinephrine transporter
+(NET) with similar potency as it does
+to the 5HT2A receptor, and greater
+potency than to the D2 receptor.
+(B) Ziprasidone binds to NET and
+the serotonin transporter (SERT),
+though with less potency than to the
+D2 receptor. Lumateperone binds
+to SERT with similar potency as to
+the D2 receptor. (C) Aripiprazole,
+brexpiprazole, and cariprazine do
+not bind to any of the monoamine
+transporters. Description of graphic:
+Each colored box represents a
+different binding property, with
+the size and positioning of the box
+reflecting the binding potency of the
+property (i.e., size indicates potency
+relative to a standard Ki scale, while
+position reflects potency relative
+to the other binding properties of
+that drug). The vertical dotted line
+cuts through the dopamine 2 (D2)
+receptor binding box, with binding
+properties that are more potent
+than D2 on the left and those that
+are less potent than D2 on the right.
+Binding at 5HT2A (see Figure 5-32)
+is indicated by an orange outline
+around the box.
+
+
+
+
+<<<PAGE 225>>>
+
+Chapter 5: Targeting for Psychosis
+
+Alpha2 binding by pines
+α2C α2B
+
+α2A
+
+clozapine
+
+α2C
+
+α2B
+
+α2A
+
+olanzapine
+α2C
+
+α2A
+
+α2B
+
+quetiapine
+α2B
+
+α2A
+
+α2C
+
+asenapine
+α2
+
+A
+
+zotepine
+
+Alpha2 binding by dones and a rone
+α2C
+
+risperidone
+
+α2B
+
+α2C α2A
+
+α2A
+
+α2B
+
+paliperidone
+α2B
+
+ziprasidone
+α2C
+
+α2A
+
+α2B
+
+iloperidone
+α2C
+
+α2A
+
+α2C
+
+α2A
+
+Figure 5-35 Alpha-2 binding
+by drugs used to treat
+psychosis. Shown here is a visual
+depiction of the binding profiles of
+drugs used to treat psychosis. (A)
+All of the “pines” (i.e., clozapine,
+olanzapine, quetiapine, asenapine,
+zotepine) bind to α2 receptors to
+varying degrees. Clozapine and
+quetiapine in particular bind to
+some α2 receptor subtypes with
+greater potency than they do to the
+D2 receptor. (B) All of the “dones”
+(i.e., risperidone, paliperidone,
+ziprasidone, iloperidone,
+lurasidone) bind to α2 receptors
+to varying degrees. Risperidone
+and paliperidone bind to the α2C
+receptor with similar potency as to
+the D2 receptor. Lumateperone does
+not bind to any α2 receptors. (C)
+Aripiprazole binds to α2 receptors
+with less potency than it does to the
+D2 receptor. Brexpiprazole binds
+to α2C receptors, and cariprazine
+has some affinity for α2A receptors.
+Description of graphic: Each
+colored box represents a different
+binding property, with the size and
+positioning of the box reflecting
+the binding potency of the property
+(i.e., size indicates potency relative
+to a standard Ki scale, while position
+reflects potency relative to the other
+binding properties of that drug). The
+vertical dotted line cuts through the
+dopamine 2 (D2) receptor binding
+box, with binding properties that
+are more potent than D2 on the left
+and those that are less potent than
+D2 on the right. Binding at 5HT2A
+(see Figure 5-32) is indicated by an
+orange outline around the box.
+
+lurasidone
+
+B
+
+lumateperone
+
+Alpha2 binding by two pips and a rip
+α2C
+
+α2A α2B
+
+aripiprazole
+α2C
+
+brexpiprazole
+α2A
+
+cariprazine
+
+C
+
+more potent than D2
+
+less potent than D2
+
+209
+
+5
+
+
+
+
+<<<PAGE 226>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+D3 binding by pines
+D3
+
+clozapine
+
+D3
+
+olanzapine
+D3
+
+quetiapine
+D3
+
+asenapine
+D3
+
+A
+
+zotepine
+
+D3 binding by dones and a rone
+D3
+
+D3
+
+risperidone
+
+paliperidone
+D3
+
+ziprasidone
+D3
+
+iloperidone
+D3
+
+lurasidone
+
+B
+
+lumateperone
+
+D3 binding by two pips and a rip
+D3
+
+aripiprazole
+D3
+
+brexpiprazole
+D3
+
+cariprazine
+
+C
+
+210
+
+more potent than D2
+
+less potent than D2
+
+Figure 5-36 D3 binding by drugs
+used to treat psychosis. Shown here
+is a visual depiction of the binding
+profiles of drugs used to treat
+psychosis. (A) All of the “pines” bind
+to D3 receptors, but with varying
+degrees of potency. (B) Likewise, all
+of the “dones” bind to D3 receptors,
+again with varying degrees of
+potency. Lumateperone, however,
+does not bind to D3 receptors at
+all. (C) D3 receptor partial agonism
+is actually the most potent binding
+property of cariprazine. Aripiprazole
+and brexpiprazole also bind to D3
+receptors, less potently than they
+do to D2 receptors. Description
+of graphic: Each colored box
+represents a different binding
+property, with the size and
+positioning of the box reflecting
+the binding potency of the property
+(i.e., size indicates potency relative
+to a standard Ki scale, while position
+reflects potency relative to the other
+binding properties of that drug). The
+vertical dotted line cuts through the
+dopamine 2 (D2) receptor binding
+box, with binding properties that
+are more potent than D2 on the left
+and those that are less potent than
+D2 on the right. Binding at 5HT2A
+(see Figure 5-32) is indicated by an
+orange outline around the box.
+
+
+
+
+<<<PAGE 227>>>
+
+Chapter 5: Targeting for Psychosis
+
+Figure 5-37 5HT2C binding
+by drugs used to treat
+psychosis. Shown here is a visual
+depiction of the binding profiles of
+drugs used to treat psychosis. (A)
+All of the “pines” (i.e., clozapine,
+olanzapine, quetiapine, asenapine,
+zotepine) bind more potently to the
+5HT2C receptor than they do to the
+D2 receptor. (B) All of the “dones”
+(i.e., risperidone, paliperidone,
+ziprasidone, iloperidone, lurasidone)
+as well as lumateperone have some
+affinity for the 5HT2C receptor,
+although only ziprasidone binds
+with comparable potency as at
+the D2 receptor. (C) Aripiprazole,
+brexpiprazole, and cariprazine all
+have relatively weak affinity for
+the 5HT2C receptor. Description
+of graphic: Each colored box
+represents a different binding
+property, with the size and
+positioning of the box reflecting
+the binding potency of the property
+(i.e., size indicates potency relative
+to a standard Ki scale, while position
+reflects potency relative to the other
+binding properties of that drug). The
+vertical dotted line cuts through the
+dopamine 2 (D2) receptor binding
+box, with binding properties that
+are more potent than D2 on the left
+and those that are less potent than
+D2 on the right. Binding at 5HT2A
+(see Figure 5-32) is indicated by an
+orange outline around the box.
+
+5HT2C binding by pines
+5HT2C
+
+clozapine
+
+5HT2C
+
+olanzapine
+5HT2C
+
+quetiapine
+
+5HT2C
+
+asenapine
+5HT2C
+
+A
+
+zotepine
+
+5HT2C binding by dones and a rone
+5HT2C
+
+risperidone
+
+paliperidone
+
+5HT2C
+
+5HT2C
+
+ziprasidone
+5HT2C
+
+iloperidone
+5HT2C
+
+lurasidone
+5HT2C
+
+B
+
+lumateperone
+
+5HT2C binding by two pips and a rip
+5HT2C
+
+aripiprazole
+5HT2C
+
+brexpiprazole
+5HT2C
+
+cariprazine
+
+C
+
+more potent than D2
+
+less potent than D2
+
+211
+
+5
+
+
+
+
+<<<PAGE 228>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+5HT3 binding by pines
+5HT3
+
+clozapine
+
+5HT3
+
+olanzapine
+5HT3
+
+quetiapine
+5HT3
+
+asenapine
+5HT3
+
+A
+
+zotepine
+
+5HT3 binding by dones and a rone
+
+risperidone
+
+paliperidone
+
+ziprasidone
+
+iloperidone
+
+lurasidone
+
+B
+
+lumateperone
+
+5HT3 binding by two pips and a rip
+5HT3
+
+aripiprazole
+
+brexpiprazole
+
+cariprazine
+
+C
+
+212
+
+more potent than D2
+
+less potent than D2
+
+Figure 5-38 5HT3 binding by drugs
+used to treat psychosis. Shown
+here is a visual depiction of the
+binding profiles of drugs used
+to treat psychosis. (A) All of the
+“pines” bind to 5HT3 with less
+affinity than they have for the D2
+receptor. (B) None of the “dones”
+or “rone” have any binding activity
+at 5HT3 receptors. (C) Aripiprazole
+binds weakly to 5HT3 receptors.
+Description of graphic: Each
+colored box represents a different
+binding property, with the size and
+positioning of the box reflecting
+the binding potency of the property
+(i.e., size indicates potency relative
+to a standard Ki scale, while position
+reflects potency relative to the other
+binding properties of that drug). The
+vertical dotted line cuts through the
+dopamine 2 (D2) receptor binding
+box, with binding properties that
+are more potent than D2 on the left
+and those that are less potent than
+D2 on the right. Binding at 5HT2A
+(see Figure 5-32) is indicated by an
+orange outline around the box.
+
+
+
+
+<<<PAGE 229>>>
+
+Chapter 5: Targeting for Psychosis
+
+Figure 5-39 5HT6 and 5HT7
+binding by drugs used to treat
+psychosis. Shown here is a visual
+depiction of the binding profiles
+of drugs used to treat psychosis.
+(A) Clozapine, quetiapine,
+asenapine, and zotepine each
+have greater or similar potency for
+the 5HT7 receptor compared to
+the D2 receptor, while clozapine,
+olanzapine, asenapine, and zotepine
+each have greater or similar potency
+for the 5HT6 receptor compared to
+the D2 receptor. (B) Risperidone,
+paliperidone, ziprasidone, and
+lurasidone all bind potently to the
+5HT7 receptor. In fact, lurasidone has
+greater affinity for the 5HT7 receptor
+than for the D2 receptor. Ziprasidone
+and iloperidone also bind to the
+5HT6 receptor. (C) Aripiprazole,
+brexpiprazole, and cariprazine all
+bind to the 5HT7 receptor, though
+none with more potency than for the
+D2 receptor. Description of graphic:
+Each colored box represents a
+different binding property, with
+the size and positioning of the box
+reflecting the binding potency of the
+property (i.e., size indicates potency
+relative to a standard Ki scale, while
+position reflects potency relative
+to the other binding properties of
+that drug). The vertical dotted line
+cuts through the dopamine 2 (D2)
+receptor binding box, with binding
+properties that are more potent
+than D2 on the left and those that
+are less potent than D2 on the right.
+Binding at 5HT2A (see Figure 5-32)
+is indicated by an orange outline
+around the box.
+
+5HT6 and 5HT7 binding by pines
+5HT6
+
+5HT7
+
+clozapine
+
+5HT6
+
+5HT7
+
+olanzapine
+5HT7
+
+quetiapine
+
+5HT6
+
+5HT7 5HT6
+
+asenapine
+5HT6
+
+A
+
+5HT7
+
+zotepine
+
+5HT6 and 5HT7 binding by dones and a rone
+5HT7
+
+5HT7
+
+risperidone
+
+paliperidone
+5HT7
+
+5HT6
+
+ziprasidone
+5HT6
+
+5HT7
+
+iloperidone
+5HT7
+
+lurasidone
+
+B
+
+lumateperone
+
+5HT6 and 5HT7 binding by two pips and a rip
+5HT7
+
+5HT6
+
+aripiprazole
+5HT7
+
+5HT6
+
+brexpiprazole
+5HT7
+
+cariprazine
+
+C
+
+more potent than D2
+
+less potent than D2
+
+213
+
+5
+
+
+
+
+<<<PAGE 230>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+5HT1B/D binding by pines
+5HT1B 5HT1D
+
+clozapine
+5HT1B 5HT1D
+
+olanzapine
+5HT1D
+
+quetiapine
+5HT1B
+
+5HT1D
+
+asenapine
+5HT1B
+
+A
+
+5HT1D
+
+zotepine
+
+5HT1B/D binding by dones and a rone
+5HT1B 5HT1D
+
+risperidone
+
+5HT1B
+
+5HT1D
+
+paliperidone
+5HT1B
+
+5HT1D
+
+ziprasidone
+5HT1D
+
+5HT1B
+
+iloperidone
+
+lurasidone
+
+B
+
+lumateperone
+
+5HT1 B/D binding by two pips and a rip
+5HT1D
+
+5HT1B
+
+aripiprazole
+5HT1B
+
+brexpiprazole
+
+cariprazine
+
+C
+
+214
+
+more potent than D2
+
+less potent than D2
+
+Figure 5-40 5HT1B/D binding
+by drugs used to treat
+psychosis. Shown here is a visual
+depiction of the binding profiles of
+drugs used to treat psychosis. (A)
+Clozapine, olanzapine, asenapine,
+and zotepine all bind relatively
+weakly to the 5HT1B and 5HT1D
+receptors, while quetiapine binds
+relatively weakly only to the
+5HT1D receptor. (B) Risperidone,
+paliperidone, ziprasidone, and
+iloperidone all have some affinity
+for the 5HT1B and 5HT1D receptors.
+In particular, ziprasidone binds
+with similar potency to these
+two receptors as it does to the
+D2 receptor. Lurasidone and
+lumateperone do not bind to
+5HT1B/D receptors. (C) Aripiprazole
+and brexpiprazole each bind weakly
+to the 5HT1B receptor; aripiprazole
+also binds to the 5HT1D receptor.
+Cariprazine does not bind to 5HT1B/D
+receptors. Description of graphic:
+Each colored box represents a
+different binding property, with
+the size and positioning of the box
+reflecting the binding potency of the
+property (i.e., size indicates potency
+relative to a standard Ki scale, while
+position reflects potency relative
+to the other binding properties of
+that drug). The vertical dotted line
+cuts through the dopamine 2 (D2)
+receptor binding box, with binding
+properties that are more potent
+than D2 on the left and those that
+are less potent than D2 on the right.
+Binding at 5HT2A (see Figure 5-32)
+is indicated by an orange outline
+around the box.
+
+
+
+
+<<<PAGE 231>>>
+
+Chapter 5: Targeting for Psychosis
+
+Antihistamine/Anticholinergic binding by pines
+M1 H1
+
+M4
+
+M3
+
+clozapine
+
+M2
+
+H1
+
+M1
+
+M3
+
+M2 M4
+
+olanzapine
+H1
+
+M3
+
+M1
+
+M2
+
+M4
+
+quetiapine
+H1
+M1 M2
+
+asenapine
+H1
+
+A
+
+M1
+
+M2
+
+H2
+
+zotepine
+
+Antihistamine/Anticholinergic binding by dones and a rone
+H1
+
+risperidone
+
+H1
+
+paliperidone
+H1
+
+ziprasidone
+H1
+
+iloperidone
+
+Figure 5-41 Antihistamine/
+anticholinergic binding by drugs
+used to treat psychosis. Shown here
+is a visual depiction of the binding
+profiles of drugs used to treat
+psychosis. (A) Clozapine, olanzapine,
+quetiapine, and zotepine all have
+strong potency for histamine 1
+receptors; clozapine, olanzapine,
+and quetiapine also have strong
+potency for muscarinic receptors.
+Asenapine has some affinity for
+histamine H1 receptors and weak
+affinity for muscarinic receptors.
+(B) None of the “dones” or “rones”
+have anticholinergic properties.
+Risperidone, paliperidone,
+ziprasidone, and iloperidone all
+have some potency for H1 receptors.
+(C) Aripiprazole, brexpiprazole,
+and cariprazine all bind at the H1
+receptor with less potency than
+they do to the D2 receptor, and do
+not bind to muscarinic receptors.
+Description of graphic: Each
+colored box represents a different
+binding property, with the size and
+positioning of the box reflecting
+the binding potency of the property
+(i.e., size indicates potency relative
+to a standard Ki scale, while position
+reflects potency relative to the other
+binding properties of that drug). The
+vertical dotted line cuts through the
+dopamine 2 (D2) receptor binding
+box, with binding properties that
+are more potent than D2 on the left
+and those that are less potent than
+D2 on the right. Binding at 5HT2A
+(see Figure 5-32) is indicated by an
+orange outline around the box.
+
+lurasidone
+
+B
+
+lumateperone
+
+Antihistamine/Anticholinergic binding by two pips and a rip
+H1
+
+aripiprazole
+H1
+
+brexpiprazole
+H1
+
+cariprazine
+
+C
+
+more potent than D2
+
+less potent than D2
+
+215
+
+5
+
+
+
+
+<<<PAGE 232>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Alpha1 binding by pines
+α1A α1B
+
+clozapine
+α1B
+
+α1A
+
+olanzapine
+α1A
+
+α1B
+
+quetiapine
+α1B
+
+α1A
+
+asenapine
+α1
+
+A
+
+zotepine
+
+Alpha1 binding by dones and a rone
+α1B
+
+α1A
+
+α1B
+
+α1A
+
+risperidone
+
+paliperidone
+α1B α1A
+
+ziprasidone
+α1
+
+iloperidone
+α1
+
+lurasidone
+α1
+
+B
+
+lumateperone
+
+Alpha1 binding by two pips and a rip
+α1A
+
+α1B
+
+aripiprazole
+α1B
+
+α1D
+
+brexpiprazole
+α1B
+
+α1D α1A
+
+cariprazine
+
+C
+
+216
+
+more potent than D2
+
+less potent than D2
+
+α1A
+
+Figure 5-42 Alpha-1 binding
+by drugs used to treat
+psychosis. Shown here is a visual
+depiction of the binding profiles
+of drugs used to treat psychosis.
+(A) Clozapine, quetiapine, and
+zotepine each have greater potency
+for α1 receptors than for the D2
+receptor, while asenapine binds with
+similar potency to the α2 and the
+D2 receptors. (B) All of the “dones”
+(i.e., risperidone, paliperidone,
+ziprasidone, iloperidone, lurasidone)
+as well as lumateperone bind
+to the α1 receptor. In particular,
+paliperidone and iloperidone bind
+with greater potency than they do
+to the D2 receptor. (C) Aripiprazole,
+brexpiprazole, and cariprazine each
+have some binding potency at α1
+receptors. Description of graphic:
+Each colored box represents a
+different binding property, with
+the size and positioning of the box
+reflecting the binding potency of the
+property (i.e., size indicates potency
+relative to a standard Ki scale, while
+position reflects potency relative
+to the other binding properties of
+that drug). The vertical dotted line
+cuts through the dopamine 2 (D2)
+receptor binding box, with binding
+properties that are more potent
+than D2 on the left and those that
+are less potent than D2 on the right.
+Binding at 5HT2A (see Figure 5-32)
+is indicated by an orange outline
+around the box.
+
+
+
+
+<<<PAGE 235>>>
+
+Chapter 5: Targeting for Psychosis
+
+M1
+1A
+
+T
+5H
+5HT2A
+
+M3
+
+M4
+H
+1
+
+α
+1A
+α
+1B
+
+quetiapine
+
+α
+2A
+
+5HT2B
+
+α
+2C
+
+5HT2C
+
+NET
+
+1E
+
+5HT
+
+5
+D1
+
+5HT7
+
+D2
+
+H1*
+
+5HT2B*
+
+M3*
+
+α1A
+
+M1*
+
+α1B
+
+5HT2A*
+
+NET* 5HT7*
+
+5HT1E* 5HT2C* D1* M4* 5HT1A* α2C α2A*
++++ ++
+++ ++ ++ ++ ++ ++ ++
++ + + + + + +
+
+D2* 5HT1D* α2B*
+
+5HT3* 5HT6*
+
+M2*
+
+D3*
+
+5HT5*
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+* Binding primarily due to norquetiapine (a metabolite of quetiapine)
+
+Figure 5-45 Quetiapine’s pharmacological and binding profile. This figure portrays a qualitative consensus of current thinking about
+the binding properties of quetiapine. Quetiapine does not actually have particularly potent binding at D2 receptors. Quetiapine’s
+prominent H1 antagonist properties probably contribute to its ability to enhance sleep, and this may contribute as well to its ability to
+improve sleep disturbances in bipolar and unipolar depression as well as in anxiety disorders. However, this property can also contribute
+to daytime sedation, especially combined with M1 antimuscarinic and α1-adrenergic antagonist properties. A potentially important active
+metabolite of quetiapine, norquetiapine, may contribute additional actions at receptors, as noted in the binding profile with an asterisk.
+5HT1A partial agonist actions, norepinephrine transporter (NET) inhibition, and 5HT2C, α2, and 5HT7 antagonist actions may all contribute
+to mood-improving properties of quetiapine. However, 5HT2C antagonist actions combined with H1 antagonist actions may contribute
+to weight gain. As with all agents discussed in this chapter, binding properties vary greatly with technique and from one laboratory to
+another; they are constantly being revised and updated.
+
+needed for an antipsychotic effect, explaining why studies
+show that those with the widest separation (namely,
+lumateperone, quetiapine, and clozapine) also have the
+lowest D2 occupancy at antipsychotic doses, in fact lower
+than 60%. Perhaps all this discussion is just a fancy way
+of saying that the drugs to treat psychosis are all the same
+but their similarities are different.
+If what is the same about these drugs is D2 binding
+and some degree of binding to either 5HT2A or 5HT1A
+receptors, that is where the similarities stop. These
+
+various agents have many, many pharmacological
+properties other than just dopamine and serotonin
+receptor binding, and these additional pharmacological
+properties are shown in the next nine figures (Figures
+5-34 through 5-42). The first seven of these allow visual
+comparisons of putative antidepressant mechanisms
+mentioned above and that will be discussed in detail in
+Chapter 7. For example, the various receptor properties
+linked to postulated antidepressant actions are shown in
+the following figures:
+219
+
+
+
+
+<<<PAGE 236>>>
+
+Papa Bear
+Mama Bear
+
+M1
+T
+5H
+
+M3
+
+1A
+
+M4
+
+5HT2A
+
+Baby Bear
+
+H
+1
+
+M1
+
+M3
+
+A
+T1
+5H
+
+α
+1A
+α
+1B
+
+M4
+
+5HT2A
+
+H
+1
+
+α
+1A
+
+α
+2A
+
+5HT2B
+
+α
+1B
+
+α
+2C
+
+5HT2C
+
+NET
+
+1E
+
+α
+2A
+
+5HT2B
+
+NET
+
+E
+
+D1
+
+H1
+
+α
+2C
+
+5HT2C
+
+5HT
+
+5HT1
+
+D1
+
+D2
+
+5HT7
+
+5HT7
+
+D2
+
+800 mg
+
+300 mg
+
+50 mg
+
+antipsychotic
+
+antidepressant
+
+hypnotic
+
+Figure 5-46 Binding profile of quetiapine at different doses. The binding properties of quetiapine vary depending on the dose used.
+At antipsychotic doses (i.e., up to 800 mg/day), quetiapine has a relatively wide binding profile, with actions at multiple serotonergic,
+muscarinic, and α-adrenergic receptors. Histamine 1 receptor blockade is also present. At antidepressant doses (i.e., approximately
+300 mg/day), the binding profile of quetiapine is more selective and includes norepinephrine reuptake inhibition, 5HT1A partial
+agonism, and 5HT2A, α2, 5HT2C, and 5HT7 antagonism. At sedative hypnotic doses (i.e., 50 mg/day), the most prominent pharmacological
+property of quetiapine is H1 antagonism.
+
+5HT2A
+5HT
+
+H
+1
+
+1B
+
+α
+1A
+
+α
+1B
+
+5HT
+
+1D
+
+α
+2A
+
+5HT2B
+
+α
+2B
+
+asenapine
+5HT2C
+
+5H
+T5
+
+D1
+
+5HT2C
+
+5HT2A
+
+5HT7
+
+5HT6
+
+++++ ++++ ++++ +++
+
+D2
+
+D3
+
+D4
+
++++ +++ +++
+
+D1
+
+α1B
+
+5HT5
+
+5HT7
+
+5H
+
+T6
+
+D2
+D3
+
+α1A
+
++++ +++ +++ +++
+
+5HT1B
+
+D4
+
+H1
+
+5HT2B
+
+α2B
+
+α2A
+
+5HT1D
+
++++ +++ +++ +++ +++ +++
+
+α2C 5HT1E 5HT1A
+
+++ ++ ++
+
+5HT3 M1
+
+M2
+
++
+
++
+
++
+
+Figure 5-47 Asenapine’s pharmacological and binding profile. This figure portrays a qualitative consensus of current thinking about
+the binding properties of asenapine. Asenapine has a complex binding profile, with potent binding at multiple serotonergic and
+dopaminergic receptors, α1 and α2 receptors, and H1 histamine receptors. In particular, 5HT2C antagonist properties may contribute to
+its efficacy for mood and cognitive symptoms, while 5HT7 antagonist properties may contribute to its efficacy for mood, cognitive, and
+sleep symptoms. As with all agents discussed in this chapter, binding properties vary greatly with technique and from one laboratory to
+another; they are constantly being revised and updated.
+
+
+
+
+<<<PAGE 243>>>
+
+Chapter 5: Targeting for Psychosis
+
+Figure 5-54 Lumateperone’s
+pharmacological and binding
+profile. This figure portrays a qualitative
+consensus of current thinking about the
+binding properties of lumateperone.
+Lumateperone has very high affinity
+for the 5HT2A receptor and moderate
+affinity for the D2, D1, and α1 receptor.
+It also has moderate affinity for the
+serotonin transporter. As with all agents
+discussed in this chapter, binding
+properties vary greatly with technique
+and from one laboratory to another;
+they are constantly being revised and
+updated.
+
+α1
+5HT2A
+
+lumateperone
+SERT
+
+D1
+
+5
+
+D2
+
+5HT2A
+
+++++
+
+D2
+
+D1
+
+SERT
+
+α1
+
+++ ++ ++ ++
+
+Quetiapine
+
+Quetiapine (Figure 5-45) is an antagonist at both
+serotonin 5HT2A and dopamine D2 receptors, but has
+several differentiating pharmacological properties,
+especially at different doses. The net pharmacological
+actions of quetiapine are actually due to the combined
+pharmacological actions not only of quetiapine
+itself, but also of its active metabolite, norquetiapine
+(Figure 5-45 adds together the net actions of quetiapine
+and norquetiapine). Norquetiapine has unique
+pharmacological properties compared to quetiapine,
+especially norepinephrine transporter (NET) inhibition
+(i.e., norepinephrine reuptake inhibition) (Figure 5-34),
+but also, combined with the parent drug quetiapine,
+it has 5HT7 (Figure 5-39), 5HT2C (Figure 5-37), and α2
+antagonism (Figure 5-35), and 5HT1A partial agonist
+actions (Figure 5-33), all of which may contribute
+to quetiapine’s overall clinical profile, especially its
+robust antidepressant effects. Thus, quetiapine has an
+overall very complex set of binding properties to many
+neurotransmitter receptors, many of which have higher
+potency than to the D2 receptor, and this may account
+for why this drug appears to be far more than simply a
+
+5HT2C
+
++
+
+drug for psychosis. In fact, like the others in this class,
+quetiapine is far more often prescribed for indications
+other than psychosis, including frequently as a hypnotic
+for insomnia, a drug for depression, for anxiety, for
+Parkinson’s disease psychosis, or as an adjunct for
+psychosis with other 5HT2A/5HT1A/D2 drugs.
+Different Drug at Different Doses?
+
+The story of quetiapine dosing can be told as
+Goldilocks and the three bears (Figure 5-46).
+For psychosis, quetiapine is an 800 mg Papa Bear. For
+depression, quetiapine is a 300 mg Mama Bear. For
+insomnia, quetiapine is a 50 mg Baby Bear. Starting with
+Baby Bear, only the most potent binding properties of
+quetiapine to the far left in the strip at the bottom of
+Figure 5-45 are relevant, especially H1 antihistamine
+properties (see also Figure 5-41). Baby Bear doses are not
+approved for use as a hypnotic, and this can be an option
+with metabolic risks, so is not considered a first-line
+option for sleep. At this dose, hypothetically there are
+insufficient numbers of 5HT2C receptors or NETs blocked
+for antidepressant efficacy; also, there is insufficient
+occupancy of D2 receptors for antipsychotic efficacy.
+227
+
+
+
+
+<<<PAGE 246>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+5HT1A
+
+5HT2A
+
+α
+1B
+
+α
+2C
+
+brexpiprazole
+
+D2
+
+5HT1A
+
+α1B
+
+D2
+
+5HT2A
+
+α2C
+
+++++ ++++ ++++ ++++ ++++
+
+D3
+
+5HT2B
+
+α1D
+
+5HT7
+
+α1A
+
++++
+
++++
+
++++
+
++++
+
++++ +++ ++ ++ ++ ++ D1
++
+
+D4
+
+5HT2C H1
+
+5HT1B 5HT6
+
+Figure 5-57 Brexpiprazole’s pharmacological and binding profile. This figure portrays a qualitative consensus of current thinking
+about the binding properties of brexpiprazole. Brexpiprazole is a partial agonist at D2 receptors rather than an antagonist, and
+also binds potently to 5HT2A, 5HT1A, and α1 receptors. Brexpiprazole also seems to lack actions at receptors usually associated with
+significant sedation, weight gain, and increased cardiometabolic risk, although it is too early to evaluate the clinical profile of this
+medication. As with all agents discussed in this chapter, binding properties vary greatly with technique and from one laboratory to
+another; they are constantly being revised and updated.
+
+norepinephrine reuptake inhibitors (SNRIs) there
+would be triple monoamine actions of increasing
+serotonin as well as norepinephrine and dopamine
+while simultaneously treating symptoms of insomnia
+and anxiety by antihistaminic action (Figure 5-45).
+Quetiapine is approved both for bipolar depression and
+as an augmenting agent to SSRIs/SNRIs in unipolar
+depression that fails to respond sufficiently to those
+agents (in the US).
+230
+
+Finally, Papa Bear is 800 mg quetiapine, which
+completely saturates both H1 histamine and 5HT2A receptors
+continuously in both cases, but has more inconsistent
+occupancy above 60% for D2 receptors, especially between
+doses. Quetiapine is approved both for schizophrenia/
+schizophrenia maintenance (ages 13 and above) and
+for mania/mixed mania and maintenance (ages 10 and
+above). The pharmacology of quetiapine suggests why it
+is used more often in depression and insomnia than in
+
+
+
+
+<<<PAGE 342>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+or more trials of the various first-line monoamine agents
+discussed so far in this chapter.
+Olanzapine–Fluoxetine Combination
+
+Dopamine 2 (D2) antagonist actions likely account for
+olanzapine’s approval in schizophrenia, bipolar mania,
+and bipolar maintenance. 5HT2A antagonist actions
+likely account for some of olanzapine’s ability to improve
+symptoms of depression (5HT2A actions on mood are
+discussed in Chapter 5 and illustrated in Figure 5-17C).
+However, the fact that olanzapine works much better for
+unipolar (or bipolar) depression when combined with
+fluoxetine suggests that not only are serotonin reuptake
+blocking properties a component of the antidepressant
+effect of olanzapine–fluoxetine combination therapy,
+but also 5HT2C antagonist actions (Figure 7-38). Both
+olanzapine and fluoxetine are 5HT2C antagonists, and, in
+combination, the net 5HT2C antagonism is greater than
+with either drug alone. So, this olanzapine–fluoxetine
+combination for depression could be considered a potent
+SERT/5HT2C inhibitor. Although highly efficacious for
+treatment-resistant unipolar depression (Table 7-1),
+the combination of olanzapine with fluoxetine is often
+associated with unacceptable weight gain and metabolic
+disturbances. Olanzapine–fluoxetine combination is also
+approved for bipolar depression and is discussed in the
+section on bipolar depression below.
+Quetiapine
+
+Quetiapine (see Chapter 5 and Figure 5-45) is approved
+for schizophrenia, acute bipolar mania, and bipolar
+maintenance, likely due to its D2 antagonist actions.
+
+Its efficacy as an augmenting agent to SSRIs/SNRIs for
+depression is likely linked to the combined actions of
+quetiapine and its active metabolite norquetiapine at both
+5HT2C receptors (Figure 7-38) and at the norepinephrine
+transporter (NET) (Figure 5-34; also described in Chapter
+5 and illustrated in Figure 5-45). In addition, quetiapine
+acts at other candidate receptors for antidepressant
+efficacy including as an antagonist at 5HT2A (Chapter 5
+and Figure 5-17C), 5HT7 (Figure 7-53C) and α2A receptors
+(Figure 5-35), as well as an agonist at 5HT1A receptors
+(Chapter 5 and Figure 5-22). All of these receptor actions
+are hypothetically associated with antidepressant efficacy
+and, added together, could make a theoretically powerful
+synergy of antidepressant mechanisms (Table 7-1).
+However, quetiapine can cause a great deal of sedation
+and moderate weight gain and metabolic disturbance due
+to its other receptor actions. Quetiapine is also approved
+for bipolar depression and discussed in the section on
+bipolar depression below.
+Aripiprazole
+
+This D2/5HT1A partial agonist (Chapter 5 and Figure
+5-56) is approved for schizophrenia, acute bipolar
+mania, and bipolar maintenance and is one of the most
+extensively prescribed augmenting agents to SSRIs/
+SNRIs in unipolar major depression (in the US) (Table
+7-1). It likely acts in schizophrenia and bipolar mania
+as a D2 partial agonist, whereas its prominent 5HT1A
+partial agonist actions (Chapter 5 and Figure 5-22)
+likely contribute to its antidepressant actions. Secondary
+properties with potential antidepressant action may
+also be contributory including D3, 5HT7, 5HT2C, and α2
+
+Table 7-1 Serotonin/dopamine blockers for bipolar spectrum
+
+Evidence of
+efficacy in
+mixed features
+
+FDA-approved for
+bipolar depression
+
+Aripiprazole
+Asenapine
+
+Yes, MMX
+
+FDA-approved
+for bipolar
+mania
+
+FDA-approved
+for bipolar
+maintenance
+
+FDA-approved for
+major depressive
+disorder
+
+Yes
+
+Yes
+
+Yes (adjunct)
+
+Yes
+
+Yes
+
+Brexpiprazole
+
+Yes (adjunct)
+
+Cariprazine
+
+Yes, MMX, DMX
+
+Yes
+
+Lurasidone
+
+Yes, DMX*
+
+Yes
+
+Olanzapine
+
+Yes, MMX
+
+Yes (with fluoxetine)
+
+Yes
+
+Yes
+
+Yes (with fluoxetine)
+
+Quetiapine
+
+Yes, MMX
+
+Yes
+
+Yes
+
+Yes
+
+Yes (adjunct)
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Risperidone
+Ziprasidone
+
+Yes, MMX
+
+MMX, mania with mixed features; DMX, depression with mixed features.
+*unipolar and bipolar depression.
+
+326
+
+Yes
+
+
+
+
+<<<PAGE 359>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+some benefits of monoamine reuptake blockers in
+bipolar depression, and in fact fluoxetine combined with
+olanzapine is approved for bipolar depression (Table
+7-1). However, no agent at all is approved for depression
+with mixed features. The studies that do exist suggest
+poor responses of mixed features to the well-known
+monoamine reuptake inhibitors and an expanding
+evidence base for the use of certain serotonin/dopamine
+blockers, particularly those already approved for bipolar
+depression, as the preferred treatment for mixed features
+as well (see Table 7-1).
+We do not know whether any and all drugs with
+serotonin/dopamine blocking properties that are
+normally used to treat psychosis would be effective
+for bipolar depression, as some have not been
+studied and others have failed in clinical trials; nor
+are we certain of the antidepressant mechanism of
+action of those that are approved. However, each of
+the serotonin/dopamine agents now approved to
+treat bipolar depression was originally developed to
+treat psychosis, and their proposed mechanism of
+antidepressant therapeutic action in bipolar depression
+and depression with mixed features is presented in the
+following sections.
+Olanzapine–Fluoxetine
+
+As previously mentioned, olanzapine–fluoxetine
+combination (Figures 5-44 and 7-16) is approved for
+schizophrenia, bipolar mania, treatment-resistant
+unipolar depression, and bipolar depression. Post hoc
+analyses of mania with mixed features of depression
+also suggest efficacy of olanzapine for mania with mixed
+features of depression, although the counterpart to this
+condition at the other end of the spectrum, depression
+with mixed features of mania (Figures 6-3 through 6-7),
+has not been studied (Table 7-1).
+5HT2A antagonist actions combined with 5HT2C
+antagonism are likely candidates to be linked to
+antidepressant action in bipolar depression (“treatment
+from below”; see Figure 7-8). D2 antagonism could
+theoretically help keep the lid on treatment from below so
+it doesn’t spill over into activation and mania.
+Quetiapine
+
+As previously mentioned, quetiapine (Figure 5-45) is
+approved for schizophrenia, bipolar mania, and for
+augmentation of SSRIs/SNRIs in treatment-resistant
+unipolar depression. It is also approved in bipolar
+depression. Like olanzapine, post hoc analyses of
+
+quetiapine treatment of mania with mixed features of
+depression also suggest efficacy, although depression with
+mixed features of mania has not been studied (Table 7-1).
+5HT2A antagonist actions combined with 5HT2C and α2
+antagonism, as well as agonist actions at 5HT1A receptors,
+are likely candidates to be linked to antidepressant
+action in bipolar depression (treatment from below).
+Like olanzapine, D2 antagonism by quetiapine could
+theoretically help keep the lid on treatment from below so
+it doesn’t spill over into activation and mania.
+Lurasidone
+
+Although approved for the treatment of schizophrenia,
+lurasidone (Figure 5-53) was never tested nor approved
+for the treatment of mania (Table 7-1). Lurasidone has
+several hypothetical antidepressant receptor binding
+properties: blockade of 5HT2A (Figure 5-17C), 5HT7
+(7-53C), and α2 receptors (Figure 7-41), with agonist
+actions at 5HT1A receptors (Figure 5-22). It is one of
+the only agents to show on post hoc analysis of bipolar
+depression that those with bipolar depression and mixed
+features respond as well to lurasidone as patients with
+bipolar depression without mixed features. Perhaps more
+importantly, lurasidone is the only agent to be studied
+in a large, randomized multicenter trial of unipolar
+depression with mixed features and to demonstrate
+robust antidepressant efficacy in this group without
+induction of mania. Lurasidone is prescribed for bipolar
+depression and for mixed features at doses lower than
+those generally used for the treatment of psychosis in
+schizophrenia, and is generally well tolerated with little
+propensity for weight gain or metabolic disturbances and
+is one of the most widely prescribed agents for bipolar
+depression.
+Cariprazine
+
+Cariprazine (Figure 5-58) is a D3/D2/5HT1A partial
+agonist approved for the treatment of acute bipolar mania
+and for bipolar depression, with ongoing trials as an
+adjunct to SSRI/SNRIs in unipolar depression (Table 7-1).
+Cariprazine has 5HT1A partial agonist actions as well as
+α1 (Figure 7-58) and α2 (Figure 7-41) antagonist actions,
+each with potential antidepressant mechanisms. What
+sets cariprazine apart from other agents in this group of
+serotonin/dopamine antagonists/partial agonists is its
+unique highly potent action at D3 dopamine receptors as
+a partial agonist. Cariprazine is the most potent of any
+available agent and much more potent than dopamine
+itself for the D3 receptor. How is D3 antagonism/partial
+
+343
+
+7
+
+
+
+
+<<<PAGE 360>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Three orders of
+magnitude higher
+affinity than DA
+
+Two orders of
+magnitude higher
+affinity than DA
+
+One order of
+magnitude higher
+affinity than DA
+
+One order of
+Two orders of
+magnitude lower magnitude lower
+affinity than DA
+affinity than DA
+
+Three orders of
+magnitude lower
+affinity than DA
+
+DA
+binding
+affinity for D3
+(Ki=60nm)
+
+Cariprazine
+binding affinity
+for D3
+(0.09nM)
+
+Blonanserin
+binding affinity
+for D3
+(0.28nM)
+
+Brexpiprazole
+binding affinity
+for D3
+(1.1nM)
+
+Iloperidone
+binding affinity
+for D3
+(10.5nM)
+
+Clozapine
+binding affinity
+for D3
+(304.6nM)
+
+Asenapine
+binding affinity
+for D3
+(1.8nM)
+
+Lurasidone
+binding affinity
+for D3
+(15.7nM)
+
+Quetiapine
+binding affinity
+for D3
+(800nM)
+
+Paliperidone
+binding affinity
+for D3
+(2.6nM)
+
+Aripiprazole
+binding affinity
+for D3
+(17.7nM)
+
+Ziprasidone
+binding affinity
+for D3
+(7.3nM)
+
+Olanzapine
+binding affinity
+for D3
+(39.5nM)
+
+Risperidone
+binding affinity
+for D3
+(8.0nM)
+
+Figure 7-72 Dopamine 3 binding affinity: dopamine versus serotonin/dopamine antagonists/partial agonists. Dopamine 3
+antagonism/partial agonism may confer therapeutic benefit in bipolar depression with or without mixed features. Although many
+agents may bind to the D3 receptor, only two – cariprazine and blonanserin – have multiple orders of magnitude higher affinity for the D3
+receptor than does dopamine (DA) itself, thus allowing them to compete successfully with dopamine for receptor occupancy.
+
+agonism linked to therapeutic efficacy in bipolar
+depression with or without mixed features?
+We extensively discussed drugs that are antagonists
+or partial agonists at D2 receptors in Chapter 5 and how
+they are used for psychotic illnesses. The same agents
+also act at D3 receptors, but at clinical doses only two of
+them – cariprazine and blonanserin (Chapter 5, Figure
+5-62) – can highly successfully compete with dopamine
+itself for the D3 receptor (Figure 7-72). That is, in the
+brain, drugs compete with dopamine itself for the D3
+receptor and only those drugs with an affinity for the D3
+receptor significantly higher than dopamine’s affinity
+for the D3 receptor will actually block the D3 receptor.
+Several agents have somewhat higher affinity for the D3
+receptor than dopamine, and may have some net effect
+blocking the D3 receptor, but cariprazine clearly has
+the most potent action at the D3 receptor and would be
+expected to block D3 receptors substantially at clinical
+dosing (Figure 7-72).
+344
+
+What happens when you block a D3 receptor? Recall
+that dopamine has five receptor subtypes (see discussion
+in Chapter 4 and Figure 4-5) in two different groups
+(Figure 4-4). D3 receptors can be presynaptic and
+postsynaptic (Figures 4-4 through 4-9). Postsynaptic
+blockade of D3 receptors in limbic regions may contribute
+to antipsychotic actions but it is the presynaptic actions of
+D3 antagonism/partial agonism in the ventral tegmental
+area (VTA) that are of most interest for explaining
+cariprazine’s antidepressant actions (Figure 7-73).
+So, what is the consequence of blocking D3 receptors in
+the VTA and why might this contribute to antidepressant
+actions of cariprazine? Recall also that dopamine
+input to the cortex is thought to be deficient in mood,
+motivation, and cognitive symptoms of depression and
+also in the negative symptoms of schizophrenia, due
+in part to hypothetically deficient dopamine release
+from mesocortical dopamine neurons. These neurons
+are depicted in Figure 7-73A and show D3 presynaptic
+
+

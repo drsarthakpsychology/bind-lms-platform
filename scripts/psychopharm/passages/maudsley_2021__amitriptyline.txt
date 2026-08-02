@@ -1,0 +1,1835 @@
+<<<PAGE 159>>>
+
+138  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+Table 1.20 Medications other than
+benzodiazepines reported as treatments for
+catatonia/stupor
+Listed in alphabetical order – no ranking or
+judgement is implied by the order
+Antipsychotic medications64–69,77–80
+Aripiprazole
+Clozapine
+■■ Olanzapine
+■■ Risperidone
+■■ Ziprasidone
+■■
+■■
+
+Experimental treatments* 6,7,31,32,53,81–86
+Amantadine
+Amitriptyline
+■■ Carbamazepine
+■■ Fluoxetine
+■■ Fluvoxamine
+■■ Lithium
+■■ Memantine
+■■ Methylphenidate
+■■ Mirtazapine
+■■ Tramadol
+■■ Valproate
+■■ Zolpidem
+■■
+■■
+
+*Always read the primary literature before
+using any of the medications listed in this
+section.
+
+References
+1. Morrison JR. Catatonia. Retarded and excited types. Arch Gen Psychiatry 1973; 28:39–41.
+2. Walther S, et al. Structure and neural mechanisms of catatonia. Lancet Psychiatry 2019; 6:610–619.
+3. Takacs R, et al. Catatonia in affective disorders. Curr Psychiatry Rev 2013; 9:101–105.
+4. Mangas MCC, et al. P-167 – catatonia in bipolar disorder. Eur Psychiatry 2012; 27 Suppl 1:1.
+5. Huang YC, et al. Rapid relief of catatonia in mood disorder by lorazepam and diazepam. Biomed J 2013; 36:35–39.
+6. Vasudev K, et al. What works for delirious catatonic mania? BMJ Case Rep 2010; 2010.
+7. Neuhut R, et al. Resolution of catatonia after treatment with stimulant medication in a patient with bipolar disorder. Psychosomatics 2012;
+53:482–484.
+8. Ghaffarinejad AR, et al. Periodic catatonia. Challenging diagnosis for psychiatrists. Neurosciences 2012; 17:156–158.
+9. Oldham MA, et al. Alcohol and sedative-hypnotic withdrawal catatonia: two case reports, systematic literature review, and suggestion of a
+potential relationship with alcohol withdrawal delirium. Psychosomatics 2016; 57:246–255.
+10. Banerjee D. Etizolam withdrawal catatonia: the first case report. Asian J Psychiatr 2018; 37:32–33.
+11. Fink M. Rediscovering catatonia: the biography of a treatable syndrome. Acta Psychiatr Scand Suppl 2013; 1–47.
+12. Bartolommei N, et al. Catatonia: a critical review and therapeutic recommendation. J Psychopathology 2012; 18:234–246.
+13. Lee J. Dissociative catatonia: dissociative-catatonic reactions, clinical presentations and responses to benzodiazepines. Aust N Z J Psychiatry
+2011; 45:A42.
+14. Suzuki K, et al. Hysteria presenting as a prodrome to catatonic stupor in a depressive patient resolved with electroconvulsive therapy. J ECT
+2006; 22:276.
+15. Alwaki A, et al. Catatonia: an elusive diagnosis. Neurology 2013; 80 Suppl 1:P05.127.
+16. Dhadphale M. Eye gaze diagnostic sign in hysterical stupor. Lancet 1980; 2:374–375.
+17. Gomez J. Hysterical stupor and death. Br J Psychiatry 1980; 136:105–106.
+18. Petrides G, et al. Synergism of lorazepam and electroconvulsive therapy in the treatment of catatonia. Biol Psychiatry 1997; 42:375–381.
+19. Mazzone L, et al. Catatonia in patients with autism: prevalence and management. CNS Drugs 2014; 28:205–215.
+
+
+
+
+<<<PAGE 248>>>
+
+Clozapine-induced hypersalivation
+Clozapine is well known to be causally associated with hypersalivation (sialorrhoea)1
+with excess salivary pooling in the mouth and drooling, particularly at night. The problem tends to occur in the early stages of treatment and is probably dose-related.
+Hypersalivation has been found to be more common in those prescribed standard doses
+of clozapine rather than low dosage2 and to be associated with elevated plasma clozapine concentrations.3 Clinical observation suggests that hypersalivation reduces somewhat in severity over time (usually several months) but may persist. Clozapine-induced
+hypersalivation is socially embarrassing, has a negative impact on quality of life1 and,
+given that it has been implicated as a contributory factor in the development of aspiration pneumonia, could be potentially life-threatening.4–7 So treatment is a matter of
+some urgency.
+The pharmacological basis of clozapine-related hypersalivation remains unclear.8
+Suggested mechanisms include muscarinic M4 agonism, adrenergic α2 antagonism, and
+inhibition of the swallowing reflex.9,10 The last of these is supported by trials which
+suggest that saliva production is not increased in clozapine-treated patients,11,12 although
+at least one study has observed marked increases in salivary flow in the first three weeks
+of treatment.13
+Whatever the mechanism, medications that reduce saliva production might be
+expected to diminish the severity of clozapine-induced sialorrhoea. However, there are
+no medications licensed for this condition, and many of the relevant published studies
+have limitations that preclude any confident treatment recommendations.14 The evidence, such as it is, tends to favour anti-muscarinic agents, such as propantheline and
+diphenhydramine.15,16 Use of antimuscarinic agents should take account of the risk of
+compounding clozapine’s liability for serious, potentially life-threatening, gastrointestinal hypomotility.17,18 Table 1.40 describes putative pharmacological treatments that
+have been examined. Non-drug treatments may be used if appropriate – these include
+chewing gum during the day, elevating pillows and placing a towel on the pillow to
+prevent soaking.8
+
+Table 1.40 Clozapine-related hypersalivation – summary
+Treatment
+
+Comments
+
+Amisulpride
+100–400mg/day16,19,20
+
+Supported by a positive RCT compared with placebo, one other in
+which it was compared with moclobemide and numerous case
+studies.21–25 May allow dose reduction of clozapine
+
+Amitriptyline
+25–100mg/day26–28
+
+Limited literature support. Adverse effects may be troublesome.
+Worsens constipation
+
+Atropine
+given sublingually29–33
+or as solution (1mg/10ml) used as a
+mouthwash
+
+Limited literature support and benefit-risk uncertain. Rarely used.
+Problems with administration have been reported34
+
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  227
+
+
+
+
+<<<PAGE 388>>>
+
+Depression and anxiety disorders  367
+
+buccal administration of amitriptyline tablets8 achieving therapeutic plasma levels.
+Another case used orodispersible mirtazapine, assuming buccal absorption,9 although
+no plasma levels were reported, and no information is available to suggest that orodispersible mirtazapine is actually absorbed through the buccal mucosa (as opposed to
+dispersing in saliva that is then swallowed).
+
+Intravenous formulations avoid the first-pass effect, leading to somewhat higher drug
+plasma levels10,11 and perhaps greater response11,12 but not necessarily faster onset of
+action.12–14 The placebo effect associated with IV administration is known to be large.15
+Note that calculating the correct parenteral dose of antidepressants is difficult given the
+variable first-pass effect to which oral drugs are usually subject. Parenteral doses can be
+expected to be much lower than oral doses and give the same effect.
+Intravenous citalopram followed by maintenance oral citalopram may be a clinically
+useful treatment strategy for severely depressed, hospitalised patients.13 Better efficacy
+and faster response (compared with oral doses) have also been demonstrated when
+using IV citalopram in treating symptoms of obsessive compulsive disorder.16 The IV
+preparation appears to be well-tolerated, with the most common adverse events being
+nausea, headache, tremor and somnolence – similar to oral administration.17,18 A case
+report of a 65-year-old man describes acute hyperkinetic delirium associated with IV
+citalopram.19 Intravenous escitalopram also exists although studies reported to date are
+pharmacokinetic analyses.20 Note that oral citalopram is associated with a higher risk
+of QTc prolongation than other SSRIs. If used IV in a medically compromised patient,
+ECG monitoring is recommended.
+Mirtazapine is also available as an intravenous preparation. It has been administered
+by slow infusion at a dose of 15mg a day for 14 days in two studies and was well tolerated in depressed patients.21,22 There are reports of IV mirtazapine 6–30mg/day being
+used to treat hyperemesis gravidarum.23,24
+Amitriptyline was available as both an IV and IM injection (IM injection has been
+given IV), and both routes have been used in the treatment of post-operative pain and
+depression.25 The concentration of the IM preparation (10mg/mL) may mean that a
+high volume injection is needed to achieve antidepressant doses, and this clearly militates against its use intramuscularly.26 It is no longer available in most parts of the
+world. Clomipramine is probably the most widely studied IV antidepressant. Pulse
+loading doses of intravenous clomipramine have been shown to produce a larger more
+rapid decrease in obsessive compulsive disorder symptoms compared with oral
+doses.10,27 The potential for serious cardiac side effects when using any tricyclic antidepressant intravenously necessitates monitoring of pulse, blood pressure and ECG.
+Allopregnanolone (marketed as brexanolone) is an endogenous progesterone metabolite licensed in the USA for intravenous treatment of postpartum depression. Given the
+unique mechanism of action, it is not suitable for treatment of other types of
+depression.
+Intravenous vortioxetine has been used to accelerate response to the oral formulation,28 but this is not a commercially available preparation.
+
+CHAPTER 3
+
+Intravenous and intramuscular injections
+
+
+
+
+<<<PAGE 390>>>
+
+Depression and anxiety disorders  369
+
+range.51 Similarly, it has been reported that extemporaneously manufactured imipramine and clomipramine suppositories produced plasma levels comparable with the oral
+route of administration.52 Trazodone has also been successfully administered in a suppository formulation post-operatively for a patient who was stable on the oral formulation prior to surgery.50,51 Sertraline tablets administered rectally have also been used
+with success in a critically ill patient with bowel compromise.53
+
+Esketamine is available as a nasal spray (Spravato) and was licensed in the United
+Kingdom in 2019 and in the United States of America in 2020 for treatment-resistant
+major depressive disorder. It requires specific administration practices (tilting of the
+head), which may not be possible to adhere to in medically unwell patients. At the time
+of writing, the UK National Institute of Health and Care Excellence had not recommended intranasal esketamine for use in treatment-resistant depression due to concerns
+over clinical and cost-effectiveness (in long-term use). This may make it difficult to
+obtain in UK hospitals where ketamine (in other formulations) is cheap and readily
+available (see Table 3.13).
+
+Table 3.13 Alternative formulations and routes of administration of antidepressants
+Drug name and
+route
+
+Dosing information
+
+Manufacturer
+
+Notes
+
+Sublingual
+fluoxetine
+
+Doses up to 60mg a
+day
+
+Use liquid fluoxetine
+preparation
+
+Plasma levels may be slightly lower
+compared with oral dosing
+
+Buccal selegiline
+(oral lyophilisate)
+
+10mg (8 × 1.25mg
+lyophilisates) daily
+
+Cephalon UK Limited
+
+Orally disintegrating freeze-dried
+formulation (Zelapar®) is licensed for
+treatment of Parkinson’s disease. Trial
+data showed that 10mg of the
+lyophilizate formulation was required
+for MAO-A inhibition5 – this may be
+practically difficult to administer
+
+Buccal
+amitriptyline
+
+Initiated at 25mg nocte
+and titrated up to
+125mg daily
+
+Generic amitriptyline
+
+Tablets were crushed and allowed to
+dissolve in patient’s mouth to promote
+buccal absorption. Authors report a
+decrease in the patient’s depression8
+
+Intravenous
+amitriptyline
+
+25–100mg given in
+250mL NaCl 0.9% by
+slow infusion over 120
+minutes
+
+Contact local importer
+
+Adverse effects tend to be dose-related
+and are largely similar to the oral
+formulation. At higher doses
+drowsiness and dizziness occur.
+Bradycardia may occur with doses
+around 100mg. ECG monitoring is
+recommended
+(Continued)
+
+CHAPTER 3
+
+Intranasal
+
+
+
+
+<<<PAGE 392>>>
+
+Depression and anxiety disorders  371
+
+Drug name and
+route
+
+Dosing information
+
+Manufacturer
+
+Notes
+
+Transdermal
+selegiline
+
+6mg/24 hours, 9mg/24
+hours, 12mg/24 hours
+Starting dose is 6mg/24
+hours. Titration to
+higher doses in
+3mg/24 hours
+increments at ≥2-week
+intervals, up to a
+maximum dose of
+12mg/24 hours59
+
+Bristol Myers Squib,
+available via Alliance
+Wholesaler
+
+The 6mg/24 hours dose does not
+require a tyramine restricted diet
+At higher doses, although no
+hypertensive crisis reactions have been
+reported, the manufacturer
+recommends avoiding high tyramine
+content food substances
+Application site reactions and insomnia
+are the most common reported side
+effects
+
+Rectal
+amitriptyline
+
+Doses up to 50mg bd
+
+Case reports only
+
+Rectal
+clomipramine
+
+No detailed information
+available
+
+Suppositories have
+been manufactured by
+pharmacies
+
+Rectal
+imipramine
+
+No detailed information
+available
+
+Rectal doxepin
+
+No detailed information
+available
+
+Capsules have been
+used rectally
+
+Rectal sertraline
+
+Starting dose: a 25mg
+tablet was placed inside
+the rectal chamber
+daily. This was titrated
+up at 3-day intervals to
+a maximal dose of
+100mg on day 10
+
+Tablets have been used
+rectally
+
+Levels at the 100mg steady-state dose
+revealed detectable serum levels of
+sertraline, but not the metabolite. The
+levels fell within the reported range of
+levels for orally administered sertraline.
+No adverse effects were recorded
+
+Rectal trazodone
+
+No detailed information
+available
+
+Suppositories have
+been manufactured by
+pharmacies
+
+Trazodone in the rectal formulation has
+been used for post-operative or cancer
+pain control rather than antidepressant
+activity
+
+Ketamine
+
+IV: 0.5mg/kg over 40
+minutes
+SC: first dose 0.25mg/
+kg bolus (range
+12.5–25mg), standard
+treatment dose 0.5mg/
+kg bolus (range
+25–50mg)
+SL: 1.5mg/kg
+
+IV preparation is widely
+available
+
+SC ketamine is less likely to cause side
+effects (dissociative symptoms or blood
+pressure changes) compared to IV. SL
+apparently also well tolerated.
+Experience is increasing with ketamine,
+but expert advice before commencing
+is recommended
+
+Note: Availability of all preparations listed varies over time and from country to country.
+bd, bis die (twice a day).
+
+CHAPTER 3
+
+Table 3.13 (Continued)
+
+
+
+
+<<<PAGE 393>>>
+
+372  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+References
+1. Cipriani A, et al. Metareview on short-term effectiveness and safety of antidepressants for depression: an evidence-based approach to inform
+clinical practice. Can J Psychiatry 2007; 52:553–562.
+2. Pakyurek M, et al. Sublingually administered fluoxetine for major depression in medically compromised patients. Am J Psychiatry 1999;
+156:1833–1834.
+3. Swainson J, et al. Sublingual ketamine: an option for increasing accessibility of ketamine treatments for depression? J Clin Psychiatry 2020;
+81:19lr13146.
+4. Morgan PT. Treatment-resistant depression: response to low-dose transdermal but not oral selegiline. J Clin Psychopharmacol 2007;
+27:313–314.
+5. Fowler JS, et al. Evidence that formulations of the selective MAO-B inhibitor, selegiline, which bypass first-pass metabolism, also inhibit
+MAO-A in the human brain. Neuropsychopharmacology 2015; 40:650–657.
+6. Laffleur F, et al. Modified biomolecule as potential vehicle for buccal delivery of doxepin. Ther Deliv 2016; 7:683–689.
+7. Sanz R, et al. Development of a buccal doxepin platform for pain in oral mucositis derived from head and neck cancer treatment. Eur J Pharm
+Biopharm 2017; 117:203–211.
+8. Robbins B, et al. Amitriptyline absorption in a patient with short bowel syndrome. Am J Gastroenterol 1999; 94:2302–2304.
+9. Das A, et al. Options when anti-depressants cannot be used in conventional ways. Clinical case and review of literature. Personal Med
+Psychiatry 2019; 15–16:22–27.
+10. Deisenhammer EA, et al. Intravenous versus oral administration of amitriptyline in patients with major depression. J Clin Psychopharmacol
+2000; 20:417–422.
+11. Koran LM, et al. Rapid benefit of intravenous pulse loading of clomipramine in obsessive-compulsive disorder. Am J Psychiatry 1997;
+154:396–401.
+12. Svestka J, et al. [Citalopram (Seropram) in tablet and infusion forms in the treatment of major depression]. Cesk Psychiatr 1993;
+89:331–339.
+13. Baumann P, et al. A double-blind double-dummy study of citalopram comparing infusion versus oral administration. J Affect Disord 1998;
+49:203–210.
+14. Pollock BG, et al. Acute antidepressant effect following pulse loading with intravenous and oral clomipramine. Arch Gen Psychiatry 1989;
+46:29–35.
+15. Sallee FR, et al. Pulse intravenous clomipramine for depressed adolescents: double-blind, controlled trial. Am J Psychiatry 1997;
+154:668–673.
+16. Bhikram TP, et al. The effect of intravenous citalopram on the neural substrates of obsessive-compulsive disorder. J Neuropsychiatry Clin
+Neurosci 2016; 28:243–247.
+17. Guelfi JD, et al. Efficacy of intravenous citalopram compared with oral citalopram for severe depression. Safety and efficacy data from a
+double-blind, double-dummy trial. J Affect Disord 2000; 58:201–209.
+18. Kasper S, et al. Intravenous antidepressant treatment: focus on citalopram. Eur Arch Psychiatry Clin Neurosci 2002; 252:105–109.
+19. Delic M, et al. Delirium during i. v. citalopram treatment: a case report. Pharmacopsychiatry 2013; 46:37–38.
+20. Sogaard B, et al. The pharmacokinetics of escitalopram after oral and intravenous administration of single and multiple doses to healthy
+subjects. J Clin Pharmacol 2005; 45:1400–1406.
+21. Konstantinidis A, et al. Intravenous mirtazapine in the treatment of depressed inpatients. Eur Neuropsychopharmacol 2002; 12:57–60.
+22. Muhlbacher M, et al. Intravenous mirtazapine is safe and effective in the treatment of depressed inpatients. Neuropsychobiology 2006;
+53:83–87.
+23. Guclu S, et al. Mirtazapine use in resistant hyperemesis gravidarum: report of three cases and review of the literature. ArchGynecolObstet
+2005; 272:298–300.
+24. Schwarzer V, et al. Treatment resistant hyperemesis gravidarum in a patient with type 1 diabetes mellitus: neonatal withdrawal symptoms
+after successful antiemetic therapy with mirtazapine. Arch Gynecol Obstet 2008; 277:67–69.
+25. Collins JJ, et al. Intravenous amitriptyline in pediatrics. J Pain SymptomManage 1995; 10:471–475.
+26. RX List. Elavil. 2021; http://www.rxlist.com.
+27. Koran LM, et al. Pulse loading versus gradual dosing of intravenous clomipramine in obsessive-compulsive disorder. Eur Neuropsychopharmacol
+1998; 8:121–126.
+28. Vieta E, et al. Intravenous vortioxetine to accelerate onset of effect in major depressive disorder: a 2-week, randomized, double-blind, placebo-controlled study. Int Clin Psychopharmacol 2019; 34:153–160.
+29. Moukaddam NJ, et al. Intravenous antidepressants: a review. Depress Anxiety 2004; 19:1–9.
+30. Murrough JW, et al. Antidepressant efficacy of ketamine in treatment-resistant major depression: a two-site randomized controlled trial. Am
+J Psychiatry 2013; 170:1134–1142.
+31. Lapidus KA, et al. A randomized controlled trial of intranasal ketamine in major depressive disorder. Biol Psychiatry 2014; 76:970–976.
+32. Loo CK, et al. Placebo-controlled pilot trial testing dose titration and intravenous, intramuscular and subcutaneous routes for ketamine in
+depression. Acta Psychiatr Scand 2016; 134:48–56.
+33. George D, et al. Pilot randomized controlled trial of titrated subcutaneous ketamine in older patients with treatment-resistant depression. Am
+J Geriatr Psychiatry 2017; 25:1199–1209.
+34. Lara DR, et al. Antidepressant, mood stabilizing and procognitive effects of very low dose sublingual ketamine in refractory unipolar and
+bipolar depression. Int J Neuropsychopharmacol 2013; 16:2111–2117.
+
+
+
+
+<<<PAGE 394>>>
+
+35. Nguyen L, et al. Off-label use of transmucosal ketamine as a rapid-acting antidepressant: a retrospective chart review. Neuropsychiatr Dis
+Treat 2015; 11:2667–2673.
+36. Jaffe RJ, et al. Scopolamine as an antidepressant: a systematic review. Clin Neuropharmacol 2013; 36:24–26.
+37. Furey ML, et al. Pulsed intravenous administration of scopolamine produces rapid antidepressant effects and modest side effects. J Clin
+Psychiatry 2013; 74:850–851.
+38. Drevets WC, et al. Replication of scopolamine’s antidepressant efficacy in major depressive disorder: a randomized, placebo-controlled clinical trial. Biol Psychiatry 2010; 67:432–438.
+39. Gerner P, et al. Topical amitriptyline in healthy volunteers. Reg Anesth Pain Med 2003; 28:289–293.
+40. Ho KY, et al. Topical amitriptyline versus lidocaine in the treatment of neuropathic pain. Clin J Pain 2008; 24:51–55.
+41. Melero A, et al. Nortriptyline for smoking cessation: release and human skin diffusion from patches. Int J Pharm 2009; 378:101–107.
+42. Sandig AG, et al. Transdermal delivery of imipramine and doxepin from newly oil-in-water nanoemulsions for an analgesic and anti-allodynic
+activity: development, characterization and in vivo evaluation. Colloids SurfB Biointerfaces 2013; 103:558–565.
+43. Sunderland T, et al. High-dose selegiline in treatment-resistant older depressive patients. Arch Gen Psychiatry 1994; 51:607–615.
+44. Mann JJ, et al. A controlled study of the antidepressant efficacy and side effects of (-)-deprenyl. A selective monoamine oxidase inhibitor. Arch
+Gen Psychiatry 1989; 46:45–50.
+45. Viatris. EMSAM®* (selegiline transdermal system). 2021; https://www.viatris.com/en-us/lm/countryhome/us-products/productcatalog/
+productdetails?id=bcd487dc-1180-48d3-a0ca-4ac8927c6980.
+46. Wecker L, et al. Transdermal selegiline: targeted effects on monoamine oxidases in the brain. Biol Psychiatry 2003; 54:1099–1104.
+47. Azzaro AJ, et al. Pharmacokinetics and absolute bioavailability of selegiline following treatment of healthy subjects with the selegiline transdermal system (6 mg/24 h): a comparison with oral selegiline capsules. J Clin Pharmacol 2007; 47:1256–1267.
+48. Amsterdam JD, et al. Selegiline transdermal system in the prevention of relapse of major depressive disorder: a 52-week, double-blind, placebo-substitution, parallel-group clinical trial. J Clin Psychopharmacol 2006; 26:579–586.
+49. Adams S. Amitriptyline suppositories. N Engl J Med 1982; 306:996.
+50. Mirassou MM. Rectal antidepressant medication in the treatment of depression. J Clin Psychiatry 1998; 59:29.
+51. Storey P, et al. Rectal doxepin and carbamazepine therapy in patients with cancer. N Engl J Med 1992; 327:1318–1319.
+52. Chaumeil JC, et al. Formulation of suppositories containing imipramine and clomipramine chlorhydrates. Drug Dev Ind Pharm 1988;
+15–17:2225–2239.
+53. Leung JG, et al. Rectal bioavailability of sertraline tablets in a critically ill patient with bowel compromise. J Clin Psychopharmacol 2017;
+37:372–373.
+54. Lopes R, et al. The utility of intravenous clomipramine in a case of Cotard’s syndrome. Rev Bras Psiquiatr 2013; 35:212–213.
+55. Fallon BA, et al. Intravenous clomipramine for obsessive-compulsive disorder refractory to oral clomipramine: a placebo-controlled study.
+Arch Gen Psychiatry 1998; 55:918–924.
+56. Karameh WK, et al. Intravenous clomipramine for treatment-resistant obsessive-compulsive disorder. Int J Neuropsychopharmacol 2015;
+19:pyv084.
+57. Buoli M, et al. Is trazodone more effective than clomipramine in major depressed outpatients? A single-blind study with intravenous and oral
+administration. CNS Spectr 2019; 24:258–264.
+58. Maragakis BP. A double-blind comparison of oral amitriptyline and low-dose intramuscular flupenthixol decanoate in depressive illness. Curr
+Med Res Opin 1990; 12:51–57.
+59. Nandagopal JJ, et al. Selegiline transdermal system: a novel treatment option for major depressive disorder. Exp Opin Pharmacother 2009;
+10:1665–1673.
+
+CHAPTER 3
+
+Depression and anxiety disorders  373
+
+
+
+
+<<<PAGE 400>>>
+
+Depression and anxiety disorders  379
+
+Table 3.14 (Continued)
+Antidepressant
+
+Substrate for
+
+Inhibits
+
+TCAs
+Amitriptyline
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Desipramine
+
+CYP2D6
+
+Dosulepin
+
+CYP2D6 and possibly other pathways
+
+Doxepin
+
+CYP2D6, CYP1A2 (minor), CYP3A4
+(minor)
+
+Imipramine
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Nortriptyline
+
+CYP2D6
+
+Trimipramine
+
+CYP2D6
+
+Agomelatine
+
+CYP1A2
+
+Bupropion
+
+CYP2B6
+
+Esketamine
+
+CYP3A4, CYP2B6
+
+Mianserin
+
+CYP2D6
+
+Mirtazapine
+
+CYP1A2, CYP2D6, CYP3A4
+
+Reboxetine
+
+CYP3A4
+
+Trazodone
+
+CYP3A4
+
+Vortioxetine
+
+CYP2D6, CYP2A6, CYP2B6, CYP2C8,
+CYP2C9, CYP2C19, CYP3A4
+
+Vilazodone
+
+CYP3A4
+
+CHAPTER 3
+
+Clomipramine
+
+Others
+
+CYP2D6 (potent)
+
+CYP2D6 (weak)
+
+CYP2C8
+
+CYP enzymes highlighted in bold indicate:
+predominant metabolic enzyme pathway or
+■■ predominant enzyme activity.
+■■
+
+■■
+
+Pharmacodynamic interactions where the effects of one drug are altered by another
+drug via physiological mechanisms such as direct competition at receptor sites (e.g.
+dopamine agonists with dopamine blockers may negate any therapeutic effect), augmentation of the same neurotransmitter pathway (e.g. fluoxetine with tramadol or a
+triptan can lead to serotonin syndrome) or an effect on the physiological functioning
+of an organ/organ system in different ways (e.g. SSRIs impair clotting and NSAIDs
+irritate the gastric mucosa so when these drugs are used together, the risk of GI bleeds
+is increased). Up-to-date interaction tables are readily available online and most
+known interactions are described in an individual product’s literature.
+
+Pharmacodynamic interactions
+Tricyclic antidepressants7–10
+■■
+
+are H1 blockers (sedative). This effect can be exacerbated by other sedative drugs or
+alcohol. Beware respiratory depression
+
+
+
+
+<<<PAGE 442>>>
+
+Depression and anxiety disorders  421
+
+Antidepressants: relative adverse effects – a rough guide
+Table 3.26 gives a very approximate, unreferenced view of the absolute and relative risk
+of a small range of adverse effects associated with standard antidepressants.
+
+Table 3.26 Common adverse effects of antidepressants
+
+Sedation
+
+Postural
+hypotension§
+
+Cardiac
+conduction
+disturbance§
+
+Anticholinergic Nausea/
+effects
+Vomiting
+
+Sexual
+dysfunction§
+
+Amitriptyline
+
++++
+
++++
+
++++
+
++++
+
++
+
++++
+
+Clomipramine
+
+++
+
++++
+
++++
+
+++
+
+++
+
++++
+
+Dosulepin
+
++++
+
++++
+
++++
+
+++
+
++
+
++
+
+Doxepin
+
++++
+
+++
+
++++
+
++++
+
++
+
++
+
+Imipramine
+
+++
+
++++
+
++++
+
++++
+
++
+
++
+
+Lofepramine
+
++
+
++
+
++
+
+++
+
++
+
++
+
+Nortriptyline
+
++
+
+++
+
+++
+
++
+
++
+
++
+
+Trimipramine
+
++++
+
++++
+
+++
+
+++
+
++
+
++
+
+Agomelatine
+
++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Duloxetine (SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Levomilnacipran
+(SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Mianserin
+
+++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Mirtazapine
+
++++
+
++
+
+–
+
++
+
++
+
+–
+
+Reboxetine
+
++
+
+–*
+
+–
+
++
+
++
+
++
+
+Trazodone
+
++++
+
++
+
++
+
++
+
++
+
++
+
+Venlafaxine (SNRI)
+
+–
+
+–*
+
++
+
+–
+
++++
+
++++
+
+Citalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Escitalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Fluoxetine
+
+–
+
+–
+
+–
+
+–
+
+++
+
++++
+
+Fluvoxamine
+
++
+
+–
+
+–
+
+–
+
++++
+
++++
+
+Paroxetine
+
++
+
+–
+
+–
+
++
+
+++
+
++++
+
+Drug
+
+Other
+antidepressants
+
+Selective
+serotonin
+reuptake
+inhibitors (SSRIs)
+
+(Continued)
+
+CHAPTER 3
+
+Tricyclics
+
+
+
+
+<<<PAGE 449>>>
+
+428  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Box 3.6 Post-traumatic stress disorder (PTSD)
+First-line drug treatment
+(In order of preference)
+(NB psychological approaches should be used before drug treatments79,80)
+SSRIs
+(Up to maximum licensed doses)
+
+Paroxetine, sertraline or fluoxetine are the preferred SSRIs81,82
+Recommended by NICE79
+
+Venlafaxine modified release
+37.5mg–300mg83
+
+Recommended by NICE79
+
+CHAPTER 3
+
+Second-line treatment (Less well tolerated or weak evidence base, no order of preference)
+Antipsychotics
+Olanzapine
+5–20mg
+Risperidone
+0.5–6mg
+
+Antipsychotics may be effective for the intrusion symptoms (flashbacks
+and nightmares) but not the avoidance and hyperarousal symptoms of
+PTSD. Studies done as monotherapy or as adjunctive treatment84
+Risperidone specifically mentioned by NICE79
+
+Quetiapine
+50–800mg85
+Mirtazapine
+15–45mg/day86
+
+Recommended by NICE79
+Second most effective drug in a network meta-analysis87
+
+MAOI
+Phenelzine
+15–75mg/day88
+
+Recommended by NICE79
+Most effective drug in a network meta-analysis87
+
+Prazosin
+2–15mg nocte89
+
+For nightmares and sleep disturbances. Initiate at 1mg nocte and
+titrate dose gradually to reduce the risk of hypotension
+Supported by a systematic review90
+
+Tricyclic antidepressants
+Amitriptyline
+50–300mg/day91
+Imipramine
+50–300mg/day
+
+Amitriptyline is recommended by NICE79
+For all TCAs start at a low dose and increase dose according to
+tolerability
+Best supporting evidence is for desipramine but this drug is not widely
+available87
+
+IV Ketamine92,93
+
+Rapid reduction in symptom severity suggested. Good RCT showing
+acute and chronic efficacy94
+
+Experimental
+Duloxetine
+60–120mg
+
+Two small open studies suggest efficacy. Start at 30mg for one
+week95,96
+
+Lamotrigine
+up to 500mg/day
+
+Small double-blind study in 15 patients97
+
+Phenytoin
+plasma concentration 10–20ng/ml98
+
+Open-label study in 12 patients
+
+Valproate
+up to 2.5g99
+
+Probably not effective87
+
+nocte, at night
+
+
+
+
+<<<PAGE 635>>>
+
+Metabolism
+
+Substrate at 3A4
+and 2D6
+
+Non-hepatic
+metabolism
+
+Substrate at 3A4
+and 2D6
+
+Drug
+
+Donepezil
+(Aricept®)
+
+Rivastigmine
+(Exelon®)
+
+Galantamine
+(Reminyl®)
+
+Antagonistic effects with anticholinergic and competitive neuromuscular blockers (e.g.
+tubocurarine). Potential for synergistic activity with cholinomimetics such as depolarising
+neuro-muscular blocking agents (e.g. succinylcholine), cholinergic agonists and
+peripherally acting cholinesterase inhibitors, e.g. neostigmine. Possible interaction with
+agents that significantly reduce heart rate, e.g. digoxin, beta blockers, certain calciumchannel blockers and amiodarone. Caution with concomitant use of drugs known to induce QT
+prolongation and/or torsade de pointes (manufacturer recommends ECG in such cases).
+Movement disorders and neuroleptic malignant syndrome have occurred with concomitant use of
+antipsychotics and cholinesterase inhibitors
+
+None known
+
+Ketoconazole
+Erythromycin
+Ritonavir
+Quinidine
+Paroxetine
+Fluoxetine
+Fluvoxamine
+Amitriptyline
+
+Antagonistic with anticholinergic drugs and competitive neuromuscular blockers (e.g.
+tubocurarine). Potential for synergistic activity with cholinomimetics such as depolarising
+neuro-muscular blocking agents (e.g. succinylcholine), cholinergic agonists and
+peripherally acting cholinesterase inhibitors, e.g. neostigmine. Beta blockers, amiodarone
+or calcium channel blockers may have additive effects on cardiac conduction. Caution with
+concomitant use of drugs known to induce QT prolongation and/or torsade de pointes.
+Movement disorders and neuroleptic malignant syndrome have occurred with concomitant use of
+antipsychotics and cholinesterase inhibitors.
+Concurrent use with seizure lowering agents may result in reduced seizure threshold.
+Antagonistic effects with anticholinergic and competitive neuromuscular blockers (e.g.
+tubocurarine). Potential for synergistic activity with cholinomimetics such as depolarising
+neuro-muscular blocking agents (e.g. succinylcholine) – cholinergic agonists, e.g.
+bethanechol or peripherally acting cholinesterase inhibitors, e.g. neostigmine. Synergistic
+effects on cardiac conduction with beta blockers, amiodarone, calcium channel blockers.
+Caution with concomitant use of drugs known to induce QT prolongation and/or torsade de
+pointes. Movement disorders and neuroleptic malignant syndrome have occurred with
+concomitant use of antipsychotics and cholinesterase inhibitors. Concurrent use with
+metoclopramide may result in increased risk of extrapyramidal symptoms
+
+Rifampicin
+Phenytoin
+Carbamazepine
+Alcohol
+
+Ketoconazole
+Itraconazole
+Erythromycin
+Quinidine
+Fluoxetine
+Paroxetine
+
+Pharmacodynamic interactions
+
+Metabolic interactions appear unlikely.
+Rivastigmine may inhibit the
+butyrylcholinesterase-mediated
+metabolism of other substances, e.g.
+cocaine.
+Smoking tobacco increases the clearance
+of rivastigmine
+
+Plasma levels
+decreased by
+
+Plasma levels
+increased by
+
+Table 6.2 Drug–drug interactions8–12,74,75
+
+
+
+
+<<<PAGE 695>>>
+
+Lofepramine
+
+Older
+tricyclics20
+
+Moderate,
+although
+constipation/
+sweating can be
+severe
+
+All can also cause
+central
+anticholinergic
+effects (confusion)
+
+Marked with
+others
+
+Variable: moderate
+with nortriptyline,
+imipramine and
+dosulepin
+(dothiepin)
+
+Anticholinergic
+side effects
+(urinary retention,
+dry mouth,
+blurred vision,
+constipation)
+
+Can be a
+problem but
+generally
+better
+tolerated
+than the
+older tricyclics
+
+All can cause
+postural
+hypotension
+Dosage
+titration is
+required
+
+Postural
+hypotension
+
+Table 6.8 Antidepressants and older people
+
+Minimal
+
+Variable:
+from
+minimal
+with
+imipramine
+to profound
+with
+trimipramine
+
+Sedation
+
+Few data, but
+lack of
+spontaneous
+reports may
+indicate less
+potential than
+the older
+tricyclics
+
+All tricyclics
+can cause
+weight gain
+
+Weight
+gain
+
+Relatively safe
+
+Dothiepin and
+amitriptyline
+are the most
+toxic (seizures
+and cardiac
+arrhythmia)
+
+Safety in
+overdose
+
+Less likely to cause
+hyponatraemia than other
+TCAs and SSRIs
+
+Raised LFTs
+
+Increased risk of bleeds with
+serotonergic drugs
+
+Seizures, anticholinergicinduced cognitive
+impairment
+
+Other side effects
+
+Mainly pharmacodynamic:
+increased sedation with
+benzodiazepines, increased
+hypotension with diuretics,
+increased constipation with
+other anticholinergic drugs,
+etc.
+
+Drug interactions
+
+
+
+
+<<<PAGE 850>>>
+
+Prescribing in patients with psychiatric illness at the end of life
+Generally, prescribing in patients with psychiatric illness who are approaching end of
+life should follow the principles of good prescribing practice in palliative care.1 This
+includes reviewing the appropriateness of a drug, its dose and potential for its discontinuation. Furthermore, if swallowing becomes impaired, it includes making adjustments, such as the use of liquid preparations or parenteral administration.
+There is a lack of specific guidance around long-term psychiatric medications in this
+setting to support clinicians. This adds to reluctance, particularly by generalists, to
+adjust or stop such drugs.2,3 This suggests there is scope for improved liaison between
+non-psychiatry and psychiatry services.
+Physical deterioration may impact on factors (e.g. reducing smoking, drinking less
+fluid) which in turn alter a drug’s pharmacokinetics and/or pharmacodynamics, making
+ongoing review important. Furthermore, polypharmacy is common, increasing the risk
+of drug–drug interaction and toxicity, for example, tramadol and SSRI antidepressants
+leading to serotonin toxicity.
+Depression is common4 but often not recognised at the end of life.5 This is important,
+given that antidepressants may be beneficial even when prognosis is short.6 Mirtazapine
+and citalopram are most strongly supported for use in this population.7 Psychostimulants
+such as modafinil may reduce symptoms of depression in the short term, but there is
+less evidence for sustained effectiveness.8
+There is a lack of evidence to guide drug management of anxiety at the end of life.9,10
+Non-drug approaches have a stronger evidence base for effectiveness.11
+Though commonly used for management of delirium, evidence of effectiveness of
+antipsychotics is mixed. Nonetheless, national guidelines support their use for very
+distressed patients or those for whom other approaches have been unsuccessful.12
+Table 10.14 Examples of drugs prescribed in psychiatry which are also used for symptom management in
+palliative care1
+Symptom
+
+Example drugs
+
+Neuropathic pain
+
+Amitriptyline
+Imipramine
+Duloxetine
+Gabapentin/pregabalin
+Clonazepam
+
+Nausea and vomiting
+
+Haloperidol
+Olanzapine
+Lorazepam
+
+Anorexia
+
+Mirtazapine
+
+Skeletal muscle spasm
+
+Diazepam
+(Continued)
+
+CHAPTER 10
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  829
+
+
+
+
+<<<PAGE 851>>>
+
+CHAPTER 10
+
+830  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 10.14 (Continued)
+Symptom
+
+Example drugs
+
+Terminal agitation
+
+Benzodiazepines, for example, midazolam
+Antipsychotics, for example, haloperidol
+
+Overactive bladder symptoms
+
+Amitriptyline
+Duloxetine
+
+Drooling
+
+Amitriptyline
+
+Intractable hiccups
+
+Haloperidol
+
+Pathological laughter or crying
+
+Citalopram
+Sertraline
+
+Sweating
+
+Amitriptyline
+
+References
+1. Wilcock A, et al. PCF7 Palliative Care Formulary. 7th Edition. Nottingham Palliativedrugs.com Ltd; 2020.
+2. Anderson K, et al. Prescriber barriers and enablers to minimising potentially inappropriate medications in adults: a systematic review and
+thematic synthesis. BMJ Open 2014; 4:e006544.
+3. Garfinkel D, et al. Inappropriate medication use and polypharmacy in end-stage cancer patients: isn’t it the family doctor’s role to de-prescribe much earlier? Int J Clin Pract 2018; 72:e13061.
+4. Rayner L, et al. The clinical epidemiology of depression in palliative care and the predictive value of somatic symptoms: cross-sectional survey
+with four-week follow-up. Palliat Med 2011; 25:229–241.
+5. Stiefel F, et al. Depression in palliative care: a pragmatic report from the Expert Working Group of the European Association for Palliative
+Care. Support Care Cancer 2001; 9:477–488.
+6. Rayner L, et al. Antidepressants for the treatment of depression in palliative care: systematic review and meta-analysis. Palliat Med 2011;
+25:36–51.
+7. Rayner L, et al. Expert opinion on detecting and treating depression in palliative care: A Delphi study. BMC Palliat Care 2011; 10:10.
+8. Candy M, et al. Psychostimulants for depression. Cochrane Database Syst Rev 2008:Cd006722.
+9. Salt S, et al. Drug therapy for symptoms associated with anxiety in adult palliative care patients. Cochrane Database Syst Rev 2017;
+5:Cd004596.
+10. Atkin N, et al. ‘Worried to death’: the assessment and management of anxiety in patients with advanced life-limiting disease, a national survey
+of palliative medicine physicians. BMC Palliat Care 2017; 16:69.
+11. Moorey S, et al. A cluster randomized controlled trial of cognitive behaviour therapy for common mental disorders in patients with advanced
+cancer. Psychol Med 2009; 39:713–723.
+12. National Institute for Clinical Excellence. NG31: care of dying adults in the last days of life. 2015; https://www.nice.org.uk/guidance/NG31.
+
+
+
+
+<<<PAGE 857>>>
+
+836  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 11.1 (Continued)
+Sample
+timing
+
+Time to steady
+state
+
+0.6–1.0mmol/L
+(0.4mmol may be
+sufficient for some
+patients/
+indications;
+>1.0mmol/L
+required for mania)
+
+12 hours
+
+5 days
+Post-dose
+
+Well-established target range,
+albeit derived from ancient data
+sources. A fairly recent study17
+suggested 0.6mmol/L was the
+minimum level for a prophylactic
+effect.
+
+Olanzapine
+
+20–40µg/L
+
+12 hours
+
+1 week
+
+See text.
+
+Paliperidone18
+
+20–60µg/L
+(9-OH risperidone)
+
+Trough
+
+2–3 days oral
+2 months depot
+
+Target range is the same as that
+established for risperidone.19 As
+with risperidone, routine plasma
+level monitoring is not
+recommended.
+
+Phenytoin5
+
+10–20mg/L
+
+Trough
+
+Variable
+
+Follows zero-order kinetics.
+Free levels may be useful in some
+circumstances.
+
+Quetiapine
+
+Around
+50–100µg/L?
+
+Trough?
+
+2–3 days oral
+
+Target range poorly defined.
+Plasma level monitoring not
+recommended. See text.
+
+Risperidone
+
+20–60µg/L
+(active moiety –
+risperidone + 9-OH
+risperidone)
+
+Trough
+
+2–3 days oral
+6–8 weeks
+injection
+
+Routine plasma level monitoring is
+not recommended.
+See text.
+
+Tricyclics20
+
+Nortriptyline
+50–150µg/L
+
+Trough
+
+2–3 days
+
+Rarely used and of dubious benefit.
+Use ECG to assess toxicity.
+
+Trough
+
+2–3 days
+
+Some doubt over value of levels in
+epilepsy and in bipolar disorder.
+Some evidence that, in mania,
+levels up to 125mg/L are tolerated
+and more effective than lower
+concentrations. Valproate plasma
+levels are linearly related to plasma
+ammonia.24
+
+Target range
+
+Lithium12–16
+
+CHAPTER 11
+
+Drug
+
+Comments
+
+Amitriptyline
+100–200µg/L
+
+Valproate4,5,21–23
+
+50–100mg/L
+Epilepsy and
+bipolar
+
+
+
+
+<<<PAGE 874>>>
+
+Pharmacokinetics  853
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Zopiclone*
+
+Not known
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Bupropion*
+Fluoxetine*
+Lamotrigine
+Phenobarbital
+Phenytoin
+Sertraline*
+Valproate
+
+Fluoxetine*
+Fluvoxamine
+Modafinil
+Valproate
+
+Carbamazepine
+SJW
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Carbamazepine*
+Citalopram
+Clomipramine*
+Diazepam
+Escitalopram
+Fluoxetine*
+Imipramine*
+?Melatonin
+?Methadone
+Moclobemide
+Phenytoin
+Sertraline*
+Suvorexant
+Trimipramine*
+
+Escitalopram*
+Fluvoxamine
+Moclobemide
+Modafinil
+Topiramate
+
+Carbamazepine
+SJW
+
+CPY2C9
+
+CPY2C19
+
+CHAPTER 11
+
+CPY2C8
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+

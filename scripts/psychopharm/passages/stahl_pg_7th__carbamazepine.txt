@@ -1,0 +1,1329 @@
+<<<PAGE 391>>>
+
+Carbamazepine
+
+Therapeutics
+Brands
+Tegretol
+Carbatrol
+Equetro
+see index for additional brand names
+Generic?
+Yes (not for extended-release formulation)
+Class
+Neuroscience-based Nomenclature: glutamate, voltage-gated
+sodium and calcium channel blocker (Glu-CB)
+Anticonvulsant, antineuralgic for chronic pain, voltage-sensitive
+sodium channel antagonist
+Commonly Prescribed for
+(bold for FDA approved)
+Partial seizures with complex symptomatology
+Generalized tonic–clonic seizures (grand mal)
+
+
+
+
+<<<PAGE 394>>>
+
+Switch to another mood stabilizer with fewer side effects or to
+extended-release carbamazepine
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Lithium
+Atypical antipsychotics (especially risperidone, olanzapine,
+quetiapine, ziprasidone, and aripiprazole)
+Valproate (carbamazepine can decrease valproate levels)
+Lamotrigine (carbamazepine can decrease lamotrigine levels)
+
+✽ Antidepressants (with caution because antidepressants can
+
+destabilize mood in some patients, including induction of rapid cycling
+or suicidal ideation; in particular consider bupropion; also SSRIs,
+SNRIs, others; generally avoid TCAs, MAOIs)
+Tests
+
+✽ Before starting: blood count, liver, kidney, and thyroid function
+tests
+During treatment: blood count every 2–4 weeks for 2 months, then
+every 3–6 months throughout treatment
+During treatment: liver, kidney, and thyroid function tests every 6–
+12 months
+
+
+
+
+<<<PAGE 395>>>
+
+Consider monitoring sodium levels because of possibility of
+hyponatremia
+
+✽ Before starting: individuals with ancestry across broad areas of
+Asia should consider screening for the presence of the HLA-B* 1502
+allele; those with HLA-B*1502 should not be treated with
+carbamazepine
+
+Side Effects
+How Drug Causes Side Effects
+CNS side effects theoretically due to excessive actions at voltagesensitive sodium channels
+Major metabolite (carbamazepine-10, 11 epoxide) may be the cause
+of many side effects
+Mild anticholinergic effects may contribute to sedation, blurred
+vision
+Notable Side Effects
+
+✽ Sedation, dizziness, confusion, unsteadiness, headache
+✽ Nausea, vomiting, diarrhea
+Blurred vision
+
+✽ Benign leukopenia (transient; in up to 10%)
+✽ Rash
+
+
+
+
+<<<PAGE 397>>>
+
+Can wear off with time, but commonly does not wear off at high
+doses
+CNS side effects significantly lower with controlled-release
+formulation (e.g., Equetro, Carbatrol)
+What to Do About Side Effects
+Wait
+Wait
+Wait
+Take with food or split dose to avoid gastrointestinal effects
+Extended-release carbamazepine can be sprinkled on soft food
+Take at night to reduce daytime sedation
+Switch to another agent or to extended-release carbamazepine
+Best Augmenting Agents for Side Effects
+Many side effects cannot be improved with an augmenting agent
+
+Dosing and Use
+Usual Dosage Range
+400–1200 mg/day
+Under age 6: 10–20 mg/kg per day
+
+
+
+
+<<<PAGE 398>>>
+
+Dosage Forms
+Tablet 100 mg, 200 mg
+Tablet 100 mg chewable, 200 mg chewable
+Extended-release tablet 100 mg, 200 mg, 400 mg
+Extended-release capsule 100 mg, 200 mg, 300 mg
+Oral suspension 100 mg/5mL (450 mL)
+How to Dose
+For bipolar disorder and seizures (ages 13 and older): initial 200 mg
+twice daily (tablet) or 1 teaspoon (100 mg) 4 times a day
+(suspension); each week increase by up to 200 mg/day in divided
+doses (2 doses for extended-release formulation, 3–4 doses for other
+tablets); maximum dose generally 1200 mg/day for adults and 1000
+mg/day for children under age 15; maintenance dose generally 800–
+1200 mg/day for adults; some patients may require up to 1600
+mg/day
+Seizures (under age 13): see Children and Adolescents
+Trigeminal neuralgia: initial 100 mg twice daily (tablet) or 0.5
+teaspoon (50 mg) 4 times a day; each week increase by up to 200
+mg/day in divided doses (100 mg every 12 hours for tablet
+formulations, 50 mg 4 times a day for suspension formulation);
+maximum dose generally 1200 mg/day
+Lower initial dose and slower titration should be used for
+carbamazepine suspension
+
+
+
+
+<<<PAGE 399>>>
+
+Dosing Tips
+Higher peak levels occur with the suspension formulation than with
+the same dose of the tablet formulation, so suspension should
+generally be started at a lower dose and titrated slowly
+Take carbamazepine with food to avoid gastrointestinal effects
+
+✽ Slow dose titration may delay onset of therapeutic action but
+enhance tolerability to sedating side effects
+
+Controlled-release formulations (e.g., Equetro, Carbatrol) can
+significantly reduce sedation and other CNS side effects
+Should titrate slowly in the presence of other sedating agents, such
+as other anticonvulsants, in order to best tolerate additive sedative
+side effects
+
+✽ Can sometimes minimize the impact of carbamazepine upon the
+bone marrow by dosing slowly and monitoring closely when initiating
+treatment; initial trend to leukopenia/neutropenia may reverse with
+continued conservative dosing over time and allow subsequent dosage
+increases with careful monitoring
+
+✽ Carbamazepine often requires a dosage adjustment upward with
+time, as the drug induces its own metabolism, thus lowering its own
+plasma levels over the first several weeks to months of treatment
+Do not break or chew carbamazepine extended-release tablets as this
+will alter controlled-release properties
+Overdose
+
+
+
+
+<<<PAGE 401>>>
+
+Renally excreted
+Active metabolite (carbamazepine-10,11 epoxide)
+Initial half-life 26–65 hours (35–40 hours for extended-release
+formulation); half-life 12–17 hours with repeated doses
+Half-life of active metabolite is approximately 34 hours
+
+✽ Is not only a substrate for CYP450 3A4, but also an inducer of
+CYP450 3A4
+
+✽ Thus, carbamazepine induces its own metabolism, often requiring
+an upward dosage adjustment
+Is also an inducer of CYP450 2C9 and weakly of 1A2 and 2C19
+Food does not affect absorption
+Drug Interactions
+Enzyme-inducing antiepileptic drugs (carbamazepine itself as well
+as phenobarbital, phenytoin, and primidone) may increase the
+clearance of carbamazepine and lower its plasma levels
+CYP450 3A4 inducers, such as carbamazepine itself, can lower the
+plasma levels of carbamazepine
+CYP450 3A4 inhibitors, such as nefazodone, fluvoxamine, and
+fluoxetine, can increase plasma levels of carbamazepine
+Carbamazepine can increase plasma levels of clomipramine,
+phenytoin, primidone
+
+
+
+
+<<<PAGE 402>>>
+
+Carbamazepine can decrease plasma levels of acetaminophen,
+clozapine, benzodiazepines, dicumarol, doxycycline, theophylline,
+warfarin, rivaroxaban, apixaban, dabigatran, edoxaban, and
+haloperidol as well as other anticonvulsants such as phensuximide,
+methsuximide, ethosuximide, phenytoin, tiagabine, topiramate,
+lamotrigine, and valproate
+Carbamazepine can decrease plasma levels of hormonal
+contraceptives and adversely affect their efficacy
+Combined use of carbamazepine with other anticonvulsants may
+lead to altered thyroid function
+Combined use of carbamazepine and lithium may increase risk of
+neurotoxic effects
+Depressive effects are increased by other CNS depressants (alcohol,
+MAOIs, other anticonvulsants, etc.)
+Combined use of carbamazepine suspension with liquid
+formulations of chlorpromazine has been shown to result in
+excretion of an orange rubbery precipitate; because of this,
+combined use of carbamazepine suspension with any liquid
+medicine is not recommended
+Other Warnings/Precautions
+
+✽ Patients should be monitored carefully for signs of unusual
+bleeding or bruising, mouth sores, infections, fever, or sore throat, as
+the risk of aplastic anemia and agranulocytosis with carbamazepine
+use is 5–8 times greater than in the general population (risk in the
+
+
+
+
+<<<PAGE 403>>>
+
+untreated general population is 6 patients per 1 million per year for
+agranulocytosis and 2 patients per 1 million per year for aplastic
+anemia)
+Because carbamazepine has a tricyclic chemical structure, use with
+caution with MAOIs, including 14 days after MAOIs are stopped
+(for the expert)
+May exacerbate angle-closure glaucoma
+Because carbamazepine can lower plasma levels of hormonal
+contraceptives, it may also reduce their effectiveness
+May need to restrict fluid intake because of risk of developing
+syndrome of inappropriate antidiuretic hormone secretion,
+hyponatremia and its complications
+Use with caution in patients with mixed seizure disorders that
+include atypical absence seizures because carbamazepine has been
+associated with increased frequency of generalized convulsions in
+such patients
+Individuals with the HLA-B*1502 allele are at increased risk of
+developing Stevens-Johnson syndrome and toxic epidermal
+necrolysis
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+side effects immediately
+Do Not Use
+
+
+
+
+<<<PAGE 404>>>
+
+If patient has history of bone marrow suppression
+If patient tests positive for the HLA-B*1502 allele
+If there is a proven allergy to any tricyclic compound
+If there is a proven allergy to carbamazepine
+Suspension: in patients with hereditary problems with fructose
+intolerance
+
+Special Populations
+Renal Impairment
+Carbamazepine is renally secreted, so the dose may need to be
+lowered
+Hepatic Impairment
+Drug should be used with caution
+Rare cases of hepatic failure have occurred
+Cardiac Impairment
+Drug should be used with caution
+Elderly
+Some patients may tolerate lower doses better
+Elderly patients may be more susceptible to adverse effects
+
+
+
+
+<<<PAGE 405>>>
+
+Children and Adolescents
+Approved use for epilepsy; therapeutic range of total carbamazepine
+in plasma is considered the same for children and adults
+Ages 6–12: initial dose 100 mg twice daily (tablets) or 0.5 teaspoon
+(50 mg) 4 times a day (suspension); each week increase by up to
+100 mg/day in divided doses (2 doses for extended-release
+formulation, 3–4 doses for all other formulations); maximum dose
+generally 1000 mg/day; maintenance dose generally 400–800
+mg/day
+Ages 5 and younger: initial 10–20 mg/kg per day in divided doses
+(2–3 doses for tablet formulations, 4 doses for suspension); increase
+weekly as needed; maximum dose generally 35 mg/kg/day
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+
+✽ Use during first trimester may raise risk of neural tube defects (e.g.,
+spina bifida) or other congenital anomalies
+Use in women of childbearing potential requires weighing potential
+benefits to the mother against the risks to the fetus
+
+
+
+
+<<<PAGE 406>>>
+
+✽ If drug is continued, perform tests to detect birth defects
+✽ If drug is continued, start on folate 1 mg/day early in pregnancy to
+reduce risk of neural tube defects
+Antiepileptic Drug Pregnancy Registry: 1-888-233-2334,
+www.aedpregnancyregistry.org
+Use of anticonvulsants in combination may cause a higher
+prevalence of teratogenic effects than anticonvulsant monotherapy
+Taper drug if discontinuing
+Seizures, even mild seizures, may cause harm to the embryo/fetus
+
+✽ For bipolar patients, carbamazepine should generally be
+discontinued before anticipated pregnancies
+
+Recurrent bipolar illness during pregnancy can be quite disruptive
+For bipolar patients, given the risk of relapse in the postpartum
+period, some form of mood stabilizer treatment may need to be
+restarted immediately after delivery if patient is unmedicated during
+pregnancy
+
+✽ Atypical antipsychotics may be preferable to lithium or
+anticonvulsants such as carbamazepine if treatment of bipolar disorder
+is required during pregnancy
+Bipolar symptoms may recur or worsen during pregnancy and some
+form of treatment may be necessary
+Breast Feeding
+
+
+
+
+<<<PAGE 407>>>
+
+Some drug is found in mother’s breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+If drug is continued while breast feeding, infant should be monitored
+for possible adverse effects, including hematological effects
+If infant shows signs of irritability or sedation, drug may need to be
+discontinued
+Some cases of neonatal seizures, respiratory depression, vomiting,
+and diarrhea have been reported in infants whose mothers received
+carbamazepine during pregnancy
+
+✽ Bipolar disorder may recur during the postpartum period,
+particularly if there is a history of prior postpartum episodes of either
+depression or psychosis
+Relapse rates may be lower in women who receive prophylactic
+treatment for postpartum episodes of bipolar disorder
+Atypical antipsychotics and anticonvulsants such as valproate may
+be safer than carbamazepine during the postpartum period when
+breast feeding
+
+The Art of Psychopharmacology
+Potential Advantages
+Treatment-resistant bipolar and psychotic disorders
+Potential Disadvantages
+
+
+
+
+<<<PAGE 408>>>
+
+Patients who do not wish to or cannot comply with blood testing and
+close monitoring
+Patients who cannot tolerate sedation
+Pregnant patients
+Primary Target Symptoms
+Incidence of seizures
+Unstable mood, especially mania
+Pain
+Pearls
+Carbamazepine was the first anticonvulsant widely used for the
+treatment of bipolar disorder and is now formally approved for acute
+mania and mixed mania
+
+✽ An extended-release formulation has better evidence of efficacy
+and improved tolerability in bipolar disorder than does immediaterelease carbamazepine
+Dosage frequency as well as sedation, diplopia, confusion, and
+ataxia may be reduced with extended-release carbamazepine
+Risk of serious side effects is greatest in the first few months of
+treatment
+Common side effects such as sedation often abate after a few
+months
+
+
+
+
+<<<PAGE 409>>>
+
+✽ May be effective in patients who fail to respond to lithium or other
+mood stabilizers
+May be effective for the depressed phase of bipolar disorder and for
+maintenance in bipolar disorder
+Can be complicated to use with concomitant medications
+
+Suggested Reading
+Leucht S , McGrath J , White P , Kissling W . Carbamazepine for
+schizophrenia and schizoaffective psychoses . Cochrane Database Syst Rev
+2002 ;(3 ):CD001258 .
+Marson AG , Williamson PR , Hutton JL , Clough HE , Chadwick DW .
+Carbamazepine versus valproate monotherapy for epilepsy . Cochrane
+Database Syst Rev 2000 ;(3 ):CD001030 .
+Smith LA , Cornelius V , Warnock A , Tacchi MJ , Taylor D .
+Pharmacological interventions for acute bipolar mania: a systematic review
+of randomized placebo-controlled trials . Bipolar Disord 2007 ;9 (6 ):551–
+60 .
+Weisler RH , Kalali AH , Ketter TA . A multicenter, randomized, doubleblind, placebo-controlled trial of extended-release carbamazepine capsules
+as monotherapy for bipolar disorder patients with manic or mixed episodes .
+J Clin Psychiatry 2004 ;65 :478–84 .
+
+
+
+
+<<<PAGE 569>>>
+
+Valproate for myoclonic or generalized seizures
+Avoid phenytoin and carbamazepine because of kinetic
+interactions
+Best Augmenting Agents for Side Effects
+Beta blockers, benzodiazepines, or 5HT2A antagonists (e.g.,
+mirtazapine, cyproheptadine) for akathisia
+Valbenazine or deutetrabenazine for tardive dyskinesia
+Many side effects cannot be improved with an augmenting agent
+
+Dosing and use
+Usual Dosage Range
+Depends on plasma levels; threshold for response is trough plasma
+level of 350 ng/mL
+Dosage Forms
+Tablet 12.5 mg, 25 mg scored, 50 mg, 100 mg scored, 200 mg
+Orally disintegrating tablet 12.5 mg, 25 mg, 100 mg, 150 mg, 200
+mg
+Oral suspension 50 mg/mL
+How to Dose
+
+
+
+
+<<<PAGE 1132>>>
+
+Monitor and investigate organ involvement (hepatic, renal,
+hematologic)
+Patient may require hospitalization
+Monitor patient very closely
+Best Augmenting Agents for Side Effects
+Antihistamines and/or topical corticosteroid for rash, pruritis
+Many side effects cannot be improved with an augmenting agent
+
+Dosing and Use
+Usual Dosage Range
+Monotherapy for bipolar disorder: 100–200 mg/day
+Adjunctive treatment for bipolar disorder: 100 mg/day in
+combination with valproate; 400 mg/day in combination with
+enzyme-inducing antiepileptic drugs such as carbamazepine,
+phenobarbital, phenytoin, and primidone
+Monotherapy for seizures in patients over age 12: 300–500 mg/day
+in 2 doses
+Adjunctive treatment for seizures in patients over age 12: 100–400
+mg/day for regimens containing valproate; 100–200 mg/day for
+valproate alone; 300–500 mg/day in 2 doses for regimens not
+containing valproate
+
+
+
+
+<<<PAGE 1134>>>
+
+When lamotrigine is added to epilepsy treatment that includes
+valproate (ages 12 and older): for the first 2 weeks administer 25 mg
+every other day; at week 3 increase to 25 mg/day; every 1–2 weeks
+can increase by 25–50 mg/day; usual maintenance dose 100–400
+mg/day in 1–2 doses or 100–200 mg/day if lamotrigine is added to
+valproate alone
+When lamotrigine is added to epilepsy treatment that includes
+carbamazepine, phenytoin, phenobarbital, or primidone (without
+valproate) (ages 12 and older): for the first 2 weeks administer 50
+mg/day; at week 3 increase to 100 mg/day in 2 doses; every 1–2
+weeks can increase by 100 mg/day; usual maintenance dose 300–
+500 mg/day in 2 doses
+
+When converting from a single enzyme-inducing antiepileptic drug
+to lamotrigine monotherapy for epilepsy: titrate as described above
+to 500 mg/day in 2 doses while maintaining dose of previous
+medication; decrease first drug in 20% decrements each week over
+the next 4 weeks
+When converting from valproate to lamotrigine monotherapy for
+epilepsy: titrate as described above to 200 mg/day while maintaining
+
+
+
+
+<<<PAGE 1142>>>
+
+whole tablet; every 1–2 weeks can increase by 0.3 mg/kg per day
+rounded down to the nearest whole tablet; usual maintenance dose
+1–5 mg/kg per day in 1–2 doses (maximum generally 200 mg/day)
+or 1–3 mg/kg per day in 1–2 doses if lamotrigine is added to
+valproate alone
+When lamotrigine is added to treatment with carbamazepine,
+phenytoin, phenobarbital, or primidone (without valproate) (ages 2–
+12): for the first 2 weeks administer 0.6 mg/kg per day in 2 doses
+rounded down to the nearest whole tablet; at week 3 increase to 1.2
+mg/kg per day in 2 doses rounded down to the nearest whole tablet;
+every 1–2 weeks can increase by 1.2 mg/kg per day rounded down
+to the nearest whole tablet; usual maintenance dose 5–15 mg/kg per
+day in 2 doses (maximum dose generally 400 mg per day)
+Clearance of lamotrigine may be influenced by weight, such that
+patients weighing less than 30 kg may require an increase of up to
+50% for maintenance doses
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+
+
+
+
+<<<PAGE 1666>>>
+
+✽ Doses of oxcarbazepine need to be about one-third higher than
+those of carbamazepine for similar results
+Usually administered as adjunctive medication to other
+anticonvulsants, lithium, or atypical antipsychotics for bipolar
+disorder
+Side effects may increase with dose
+Although increased efficacy for seizures is seen at 2400 mg/day
+compared to 1200 mg/day, CNS side effects may be intolerable at
+the higher dose
+Liquid formulation can be administered mixed in a glass of water or
+directly from the oral dosing syringe supplied
+Slow dose titration may delay onset of therapeutic action but
+enhance tolerability to sedating side effects
+Should titrate slowly in the presence of other sedating agents, such
+as other anticonvulsants, in order to best tolerate additive sedative
+side effects
+When converting from immediate-release to extended-release,
+higher doses may be necessary
+Overdose
+No fatalities reported
+Long-Term Use
+Safe
+
+
+
+
+<<<PAGE 1668>>>
+
+rapidly converted to its MHD, licarbazepine
+A mild inducer of CYP450 3A4
+Food does not affect absorption
+Drug Interactions
+Depressive effects may be increased by other CNS depressants
+(alcohol, MAOIs, other anticonvulsants, etc.)
+Strong inducers of CYP450 cytochromes (e.g., carbamazepine,
+phenobarbital, phenytoin, and primidone) can decrease plasma
+levels of the active metabolite MHD
+Verapamil may decrease plasma levels of the active metabolite
+MHD
+Oxcarbazepine can decrease plasma levels of hormonal
+contraceptives and dihydropyridine calcium antagonists
+Oxcarbazepine at doses greater than 1200 mg/day may increase
+plasma levels of phenytoin, possibly requiring dose reduction of
+phenytoin
+Other Warnings/Precautions
+Because oxcarbazepine has a tricyclic chemical structure, it is not
+recommended to be taken with MAOIs, including 14 days after
+MAOIs are stopped; do not start an MAOI until 2 weeks after
+discontinuing oxcarbazepine
+
+
+
+
+<<<PAGE 1672>>>
+
+Controlled studies have not been conducted in pregnant women
+
+✽ Oxcarbazepine is structurally similar to carbamazepine, which is
+thought to be teratogenic in humans
+
+✽ Use during first trimester may raise risk of neural tube defects (e.g.,
+spina bifida) or other congenital anomalies
+Use in women of childbearing potential requires weighing potential
+benefits to the mother against the risks to the fetus
+
+✽ If drug is continued, perform tests to detect birth defects
+✽ If drug is continued, start on folate 1 mg/day to reduce risk of
+neural tube defects
+Antiepileptic Drug Pregnancy Registry: 1-888-233-2334,
+www.aedpregnancyregistry.org
+Taper drug if discontinuing
+
+✽ For bipolar patients, oxcarbazepine should generally be
+discontinued before anticipated pregnancies
+Seizures, even mild seizures, may cause harm to the embryo/fetus
+Recurrent bipolar illness during pregnancy can be quite disruptive
+
+✽ For bipolar patients, given the risk of relapse in the postpartum
+period, some form of mood stabilizer treatment may need to be
+
+restarted immediately after delivery if patient is unmedicated during
+pregnancy
+
+✽ Atypical antipsychotics may be preferable to lithium or
+anticonvulsants such as oxcarbazepine if treatment of bipolar disorder
+
+
+
+
+<<<PAGE 1674>>>
+
+Treatment-resistant bipolar and psychotic disorders
+Those unable to tolerate carbamazepine but who respond to
+carbamazepine
+Potential Disadvantages
+Patients at risk for hyponatremia
+Primary Target Symptoms
+Incidence of seizures
+Severity of seizures
+Unstable mood, especially mania
+Pearls
+
+✽ Some evidence of effectiveness in treating acute mania; included in
+American Psychiatric Association’s bipolar treatment guidelines as an
+option for acute treatment and maintenance treatment of bipolar
+disorder
+Some evidence of effectiveness as adjunctive treatment in
+schizophrenia and schizoaffective disorders
+Oxcarbazepine is the 10-keto analog of carbamazepine, but not a
+metabolite of carbamazepine
+Less well investigated in bipolar disorder than carbamazepine
+
+
+
+
+<<<PAGE 1675>>>
+
+✽ Oxcarbazepine seems to have the same mechanism of therapeutic
+action as carbamazepine but with fewer side effects
+
+✽ Specifically, risk of leukopenia, aplastic anemia, agranulocytosis,
+elevated liver enzymes, or Stevens-Johnson syndrome and serious rash
+associated with carbamazepine does not seem to be associated with
+oxcarbazepine
+Skin rash reactions to carbamazepine may resolve in 75% of
+patients with epilepsy when switched to oxcarbazepine; thus, 25%
+of patients who experience rash with carbamazepine may also
+experience it with oxcarbazepine
+Oxcarbazepine has much less prominent actions on CYP 450
+enzyme systems than carbamazepine, and thus fewer drug-drug
+interactions
+Specifically, oxcarbazepine and its active metabolite, the
+monohydroxy derivative (MHD), cause less enzyme induction of
+CYP450 3A4 than the structurally related carbamazepine
+The active metabolite MHD, also called licarbazepine, is a racemic
+mixture of 80% S-MHD (active) and 20% R-MHD (inactive)
+A related compound, APTIOM, is a dibenz[b,f]azepine-5carboxamide derivative of eslicarbazepine and is also extensively
+converted to eslicarbazepine
+APTIOM is now approved as an anticonvulsant, but adequate
+studies have not been conducted on its potential use as a mood
+stabilizer
+
+
+
+
+<<<PAGE 1676>>>
+
+✽ Most significant risk of oxcarbazepine may be clinically significant
+hyponatremia (sodium level <125 m mol/L), most likely occurring
+within the first 3 months of treatment, and occurring in 2–3% of
+patients
+Unknown if this risk is higher than for carbamazepine
+
+✽ Since SSRIs can sometimes also reduce sodium due to SIADH
+(syndrome of inappropriate antidiuretic hormone production), patients
+treated with combinations of oxcarbazepine and SSRIs should be
+carefully monitored, especially in the early stages of treatment
+By analogy with carbamazepine, could theoretically be useful in
+chronic neuropathic pain
+
+Suggested Reading
+Beydoun A . Safety and efficacy of oxcarbazepine: results of randomized,
+double-blind trials . Pharmacotherapy 2000 ;20 (8 Pt 2):152S –158S.
+Centorrino F , Albert MJ , Berry JM , et al. Oxcarbazepine: clinical
+experience with hospitalized psychiatric patients . Bipolar Disord 2003 ;5
+:370 –4 .
+Dietrich DE , Kropp S , Emrich HM . Oxcarbazepine in affective and
+schizoaffective disorders . Pharmacopsychiatry 2001 ;34 :242–50 .
+Glauser TA . Oxcarbazepine in the treatment of epilepsy . Pharmacotherapy
+2001 ;21 :904–19 .
+
+
+
+
+<<<PAGE 1801>>>
+
+Metabolized primarily by CYP450 3A4 and CYP450 3A5
+Drug Interactions
+In the presence of strong/moderate CYP450 3A4 inhibitors (e.g.,
+ketaconazole), recommended dose of pimavanserin is 10 mg once
+daily
+Avoid concomitant use with moderate or strong CYP450 3A4
+inducers (e.g., carbamazepine)
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+Other Warnings/Precautions
+Pimavanserin can cause prolongation of the QTc interval
+Do Not Use
+If there is a proven allergy to pimavanserin
+
+Special Populations
+Renal Impairment
+Dose adjustment not necessary
+Use with caution in patients with severe impairment or end-stage
+renal disease
+
+
+
+
+<<<PAGE 2036>>>
+
+and warfarin
+Tramadol (a serotonin reuptake inhibitor) may increase the risk of
+seizures in patients taking an MAOI
+Hypertensive crisis with headache, intracranial bleeding, and death
+may result from combining nonselective MAOIs with
+sympathomimetic drugs (e.g., amphetamines, methylphenidate,
+cocaine, dopamine, epinephrine, norepinephrine)
+Do not combine with another MAOI, alcohol, or guanethidine
+Adverse drug reactions can result from combining MAOIs with
+tricyclic/tetracyclic antidepressants and related compounds, including
+carbamazepine, cyclobenzaprine, and mirtazapine, and should be
+avoided except by experts
+Carbamazepine increases plasma levels of selegiline
+MAOIs in combination with spinal anesthesia may cause combined
+hypotensive effects
+Combination of MAOIs and CNS depressants may enhance sedation
+and hypotension
+Table 1. Drugs contraindicated due to risk of serotonin syndrome/toxicity
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+SSRIs
+
+MDMA (ecstasy)
+
+Meperidine
+
+Non-subcutaneous
+sumatriptan
+
+SNRIs
+
+Cocaine
+
+Tramadol
+
+Chlorpheniramine
+
+
+
+
+<<<PAGE 2212>>>
+
+Drug Interactions
+Clearance of tiagabine may be reduced and thus plasma levels
+increased if taken with a non-enzyme-inducing antiepileptic drug
+(e.g., valproate, gabapentin, lamotrigine), so tiagabine dose may
+need to be reduced
+CYP450 3A4 inducers such as carbamazepine can lower the plasma
+levels of tiagabine
+CYP450 3A4 inhibitors such as nefazodone, fluvoxamine, and
+fluoxetine could theoretically increase the plasma levels of tiagabine
+Clearance of tiagabine is increased if taken with an enzymeinducing antiepileptic drug (e.g., carbamazepine, phenobarbital,
+phenytoin, primidone) and thus plasma levels are reduced ; however,
+no dose adjustments are necessary for treatment of epilepsy as the
+dosing recommendations for epilepsy are based on adjunctive
+treatment with an enzyme-inducing antiepileptic drug
+Despite common actions upon GABA, no pharmacodynamic or
+pharmacokinetic interactions have been shown when tiagabine is
+combined with the benzodiazepine triazolam or with alcohol
+However, sedating actions of any two sedative drugs given in
+combination can be additive
+Other Warnings/Precautions
+Seizures have occurred in individuals without epilepsy who took
+tiagabine
+
+
+
+
+<<<PAGE 2362>>>
+
+Valbenazine is extensively metabolized by hydrolysis of the valine
+ester to form the active metabolite ([+]-Î± -HTBZ) and by oxidative
+metabolism, primarily by CYP450 3A4/5, to form monooxidized
+valbenazine and other minor metabolites
+[+]-Î± -HTBZ is further metabolized in part by CYP450 2D6
+Valbenazine and [+]-Î± -HTBZ have half-lives of 15–22 hours
+Very little of the parent drug, valbenazine, is present in the blood
+due to rapid conversion to its metabolites
+Drug Interactions
+Strong CYP450 3A4 inducers (e.g., carbamazepine) may reduce
+exposure to valbenazine; use with strong CYP3A4 inducers is not
+recommended
+Strong CYP450 3A4 inhibitors (e.g., ketoconazole) may increase
+exposure to valbenazine; reduce dose to 40 mg in patients taking a
+strong CYP3A4 inhibitor
+Strong CYP450 2D6 inhibitors (e.g., paroxetine, fluoxetine) may
+increase exposure to valbenazine’s active metabolite; consider
+reducing dose based on tolerability in patients taking a strong CYP450
+2D6 inhibitor or who are known CYP2D6 poor metabolizers
+Not recommended for use with monoamine oxidase inhibitors
+(MAOIs)
+Valbenazine may increase concentrations of digoxin, so monitor
+digoxin concentrations in patients taking concomitant digoxin; dose
+
+
+
+
+<<<PAGE 2387>>>
+
+the plasma levels of carbamazepine-10,11-epoxide (the active
+metabolite of carbamazepine)
+
+Suggested Reading
+Bowden CL . Valproate . Bipolar Disorders 2003 ;5 :189–202 .
+Gill D , Derry S , Wiffen PJ , Moore RA . Valproic acid and sodium
+valproate for neuropathic pain and fibromyalgia in adults . Cochrane
+Database Syst Rev 2011 ;(10 ):CD009183.
+Landy SH , McGinnis J . Divalproex sodium –review of prophylactic
+migraine efficacy, safety and dosage, with recommendations . Tenn Med
+1999 ;92 :135–6 .
+Macritchie KA , Geddes JR , Scott J , Haslam DR , Goodwin GM . Valproic
+acid, valproate and divalproex in the maintenance treatment of bipolar
+disorder . Cochrane Database Syst Rev 2001 ;(3 ):CD003196 .
+Smith LA , Cornelius V , Warnock A , Tacchi MJ , Taylor D .
+Pharmacological interventions for acute bipolar mania: a systematic review
+of randomized placebo-controlled trials . Bipolar Disord 2007 ;9 (6 ):551–
+60 .
+
+
+
+
+<<<PAGE 2429>>>
+
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Mean terminal half-life 25 hours
+Metabolized by CYP450 3A4
+Absorption and bioavailability are reduced by half when taken on an
+empty stomach
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOI or for at least 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing vilazodone
+Inhibitors of CYP450 3A4, such as nefazodone, fluoxetine,
+fluvoxamine, and even grapefruit juice, may decrease the clearance
+of vilazodone and thereby raise its plasma levels, so dose should be
+reduced to 20 mg when coadminstered with strong CYP3A4
+inhibitors
+Inducers of CYP450 3A4, such as carbamazepine, may increase
+clearance of vilazodone and thus lower its plasma levels and
+
+
+
+
+<<<PAGE 2462>>>
+
+If taken for more than a few weeks, taper to reduce chances of
+withdrawal effects
+Pharmacokinetics
+Terminal phase elimination half-life approximately 1 hour (ultrashort half-life)
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+Cimetidine may increase plasma concentrations of zaleplon,
+requiring a lower initial dose of zaleplon (5 mg/day)
+CYP450 3A4 inducers such as carbamazepine may reduce the
+effectiveness of zaleplon
+Other Warnings/Precautions
+Insomnia may be a symptom of a primary disorder, rather than a
+primary disorder itself
+Some patients may exhibit abnormal thinking or behavioral changes
+similar to those caused by other CNS depressants (i.e., either
+depressant actions or disinhibiting actions)
+Some depressed patients may experience a worsening of suicidal
+ideation
+Use only with extreme caution in patients with impaired respiratory
+function or obstructive sleep apnea
+
+
+
+
+<<<PAGE 2572>>>
+
+Anxidin (clorazepate), 185
+Anxiolit (oxazepam), 569
+Anxiolit Plus (oxazepam), 569
+Anxiron (buspirone), 123
+Apaurin (diazepam), 229
+Apilepsin (valproate), 829
+Aplenzin (bupropion), 117
+Apo-Alprax (alprazolam), 11
+Apo-Amitriptyline (amitriptyline), 25
+Apo-Buspirone (buspirone), 123
+Apo-Carbamazepine (carbamazepine), 131
+Apo-Clomipramine (clomipramine), 165
+Apo-Clonazepam (clonazepam), 173
+Apo-Clonidine (clonidine), 179
+Apo-Clorazepate (clorazepate), 185
+Apo-Desipramine (desipramine), 207
+Apo-Diazepam (diazepam), 229
+Apo-Doxepin (doxepin), 255
+Apo-Fluoxetine (fluoxetine), 301
+Apo-Fluphenazine (fluphenazine), 313
+Apo-Haloperidol (haloperidol), 347
+Apoh-Hydroxyzine (hydroxyzine), 355
+Apo-Imipramine (imipramine), 367
+Apollonset (diazepam), 229
+Apo-Lorazem (lorazepam), 437
+Aponal (doxepin), 255
+Apo-Oxepam (oxazepam), 569
+Apo-Perphenazine (perphenazine), 607
+
+
+
+
+<<<PAGE 2574>>>
+
+Atensine (diazepam), 229
+Aterax (hydroxyzine), 355
+Athymil (mianserin), 495
+Ativan (lorazepam), 437
+atomoxetine, 79
+Atretol (carbamazepine), 131
+Audilex (clorazepate), 185
+Audium (diazepam), 229
+Aurorix (moclobemide), 515
+Austedo (deutetrabenazine), 221
+Autal (acamprosate), 1
+Avant (haloperidol), 347
+Aventyl (nortriptyline), 551
+Avoxin (fluvoxamine), 325
+Axona (caprylidene), 127
+Axoren (buspirone), 123
+Azene (clorazepate), 185
+Azepa (carbamazepine), 131
+Azepal (carbamazepine), 131
+Azona (trazodone), 793
+Azor (alprazolam), 11
+Azutranquil (oxazepam), 569
+Barclyd (clonidine), 179
+Barhemsys (amisulpride), 17
+Beconerv neu (flurazepam), 321
+Belbuca (buprenorphine), 111
+Beldin (diphenhydramine), 235
+Belivon (risperidone), 687
+
+
+
+
+<<<PAGE 2576>>>
+
+brexanolone, 99
+brexpiprazole, 103
+Brisdelle (paroxetine), 593
+Brintellix (vortioxetine), 853
+BritLofex (lofexidine), 427
+Buprenex (buprenorphine), 111
+buprenorphine, 111
+buprenorphine with naloxone, 111
+bupropion, 117
+bupropion SR, 117
+bupropion XL, 117
+Buscalm (buspirone), 123
+Buspar (buspirone), 123
+BuSpar (buspirone), 123
+Buspimen (buspirone), 123
+buspirone, 123
+Buspisal (buspirone), 123
+Buteridol (haloperidol), 347
+Butrans (buprenorphine), 111
+Calmoflorine (sulpiride), 741
+Camcolit (lithium), 415
+Campral (acamprosate), 1
+Caplyta (lumateperone), 451
+caprylidene, 127
+Caprysin (clonidine), 179
+Carbabeta (carbamazepine), 131
+Carbagamma (carbamazepine), 131
+carbamazepine, 131
+
+
+
+
+<<<PAGE 2577>>>
+
+Carbapin (carbamazepine), 131
+Carbatrol (carbamazepine), 131
+Carbium (carbamazepine), 131
+Carbolith (lithium), 415
+Carbolithium (lithium), 415
+Carbymal (carbamazepine), 131
+Cardilac (fluphenazine), 313
+cariprazine, 137
+Carpaz (carbamazepine), 131
+Cassadan (alprazolam), 11
+Cassipa (buprenorphine with naloxone), 111
+Catanidin (clonidine), 179
+Catapres (clonidine), 179
+Catapres-TTS (clonidine), 179
+Cedrol (zolpidem), 871
+Celexa (citalopram), 159
+Cenilene (fluphenazine), 313
+Centedrin (d,l-methylphenidate), 487
+Cereen (haloperidol), 347
+Championyl (sulpiride), 741
+Champix (varenicline), 837
+Chantix (varenicline), 837
+Chemmart (escitalopram), 269
+Chlorazin (chlorpromazine), 153
+chlordiazepoxide, 147
+Chlorpromazin (chlorpromazine), 153
+Chlorpromazina HCl (chlorpromazine), 153
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2585>>>
+
+Effexor (venlafaxine), 841
+Effexor XR (venlafaxine), 841
+Effiplen (buspirone), 123
+Egibren (selegiline), 705
+Eglonyl (sulpiride), 741
+Elavil (amitriptyline), 25
+Elavil Plus (amitriptyline), 25
+Eldepryl (selegiline), 705
+Elenium (chlordiazepoxide), 147
+Elepsia XR (levetiracetam), 399
+Eliwel (amitriptyline), 25
+Ellefore (desvenlafaxine), 215
+Elmendos (lamotrigine), 387
+Elopram (citalopram), 159
+Elperil (thioridazine), 759
+Elroquil N (hydroxyzine), 355
+Elvanse (lisdexamfetamine), 409
+Emdalen (lofepramine), 421
+Emsam (selegiline), 705
+EnBrace HR (l-methylfolate), 477
+Endep (amitriptyline), 25
+Enimon (sulpiride), 741
+Enlyte (l-methylfolate), 477
+Epial (carbamazepine), 131
+Epilim (valproate), 829
+Epitol (carbamazepine), 131
+Epitomax (topiramate), 781
+Equetro (carbamazepine), 131
+
+
+
+
+<<<PAGE 2602>>>
+
+Napoton (chlordiazepoxide), 147
+Narcozep (flunitrazepam), 297
+Nardelzine (phenelzine), 613
+Nardil (phenelzine), 613
+Narol (buspirone), 123
+Navane (thiothixene), 765
+Navicalm (hydroxyzine), 355
+Nefadar (nefazodone), 545
+nefazodone, 545
+Nefirel (nefazodone), 545
+Neo Gnostoride (chlordiazepoxide), 147
+Neodorm SP (temazepam), 755
+Neoride (sulpiride), 741
+Neurol (alprazolam), 11
+Neurolepsin (lithium), 415
+Neurolithium (lithium), 415
+Neurolytril (diazepam), 229
+Neurontin (gabapentin), 331
+Neurotol (carbamazepine), 131
+Neurotop (carbamazepine), 131
+Nevropromazine (chlorpromazine), 153
+Nicoflox (fluoxetine), 301
+Nifalin (lorazepam), 437
+Nilium (flunitrazepam), 297
+Niotal (zolpidem), 871
+Nipolept (zotepine), 883
+Nivalin (galantamine), 337
+Noam (diazepam), 229
+
+
+
+
+<<<PAGE 2604>>>
+
+Novazam (diazepam), 229
+Novhepar (lorazepam), 437
+Novo-Alprazol (alprazolam), 11
+Novo-Carbamaz (carbamazepine), 131
+Novo-Clonidine (clonodine), 179
+Novo-Clopamine (clomipramine), 165
+Novo-Clopate (clorazepate), 185
+Novodorm (triazolam), 799
+Novo-Doxepin (doxepin), 255
+Novo-fluoxetine (fluoxetine), 301
+Novo-Hydroxyzine (hydroxyzine), 355
+Novo-Lorazem (lorazepam), 437
+Novo-Maprotiline (maprotiline), 465
+Novo-Peridol (haloperidol), 347
+Novoprotect (amitriptyline), 25
+Novo-Selegine (selegiline), 705
+Novo-Trazodone (trazodone), 793
+Novo-Trimipramine (trimipramine), 817
+Novo-Triolam (triazolam), 799
+Novo-Valproic (valproate), 829
+Nozepams (oxazepam), 569
+Nu-Alpraz (alprazolam), 11
+Nu-Carbamazepine (carbamazepine), 131
+Nu-Clonidine (clonidine), 179
+Nuctalon (estazolam), 281
+Nuedexta (dextromethorphan with quinidine), 225
+Nufarol (sulpiride), 741
+Nulans (lorazepam), 437
+
+
+
+
+<<<PAGE 2608>>>
+
+Phasal (lithium), 415
+phenelzine, 613
+phentermine/topiramate, 619
+Piefol (trifluoperazine), 803
+pimavanserin, 623
+pimozide, 627
+Piportil (pipothiazine), 633
+Piportil Depot (pipothiazine), 633
+Piportil L4 (pipothiazine), 633
+Piportil Longum-4 (pipothiazine), 633
+Piportil palmitate (pipothiazine), 633
+Piportyl palmitat (pipothiazine), 633
+pipothiazine, 633
+Pipotiazine (pipothiazine), 633
+Pirium (pimozide), 627
+pitolisant, 639
+Placidia (lorazepam), 437
+Placil (clomipramine), 165
+Placinoral (lorazepam), 437
+Planum (temazepam), 755
+Plegomazin (chlorpromazine), 153
+Plenur (lithium), 415
+Plurimen (selegiline), 705
+PMS-carbamazepine (carbamazepine), 131
+PMS-Clonazepam (clonazepam), 173
+PMS-Desipramine (desipramine), 207
+PMS-Fluoxetine (fluoxetine), 301
+PMS-Fluphenazine (fluphenazine), 313
+
+
+
+
+<<<PAGE 2619>>>
+
+Sulpivert (sulpiride), 741
+Sulpril (sulpiride), 741
+Sunosi (solriamfetol), 737
+Suprium (sulpiride), 741
+Surmontil (trimipramine), 817
+suvorexant, 747
+Suxidina (oxazepam), 569
+Sylador (haloperidol), 347
+Symbyax (olanzapine/fluoxetine combination), 301 , 559
+Synedil (sulpiride), 741
+Synedil Fort (sulpiride), 741
+Syneudon 50 (amitriptyline), 25
+Tafil (alprazolam), 11
+Tagonis (paroxetine), 593
+Tardotol (carbamazepine), 131
+Taro-Carbamazepine (carbamazepine), 131
+tasimelteon, 751
+Tatanka (alprazolam), 11
+Tatig (sertraline), 721
+Tatinol (tianeptine), 777
+Tavor (lorazepam), 437
+Tazepam (oxazepam), 569
+Tegretal (carbamazepine), 131
+Tegretol (carbamazepine), 131
+Tegretol LP (carbamazepine), 131
+Teledomin (milnacipran), 503
+Temador (temazepam), 755
+Temaze (temazepam), 755
+
+
+
+
+<<<PAGE 2620>>>
+
+temazepam, 755
+Temesta (lorazepam), 437
+Temodal (quazepam), 663
+Temporal Slow (carbamazepine), 131
+Temporol (carbamazepine), 131
+Temtabs (temazepam), 755
+Tenex (guanfacine), 343
+Tenox (temazepam), 755
+Tensispes (buspirone), 123
+Tensium (diazepam), 229
+Tensopam (diazepam), 229
+Tenso-Timelets (clonidine), 179
+Tepavil (sulpiride), 741
+Tepazepam (diazepam), 229
+Tepazepam (sulpiride), 741
+Teperin (amitriptyline), 25
+Teralithe (lithium), 415
+Tercian (cyamemazine), 201
+Terfluoperazine (perphenazine), 607
+Terflurazine (trifluoperazine), 803
+Terfluzin (trifluoperazine), 803
+Teril (carbamazepine), 131
+Tetrabenazine D6 (deutetrabenazine), 221
+Texapam (temazepam), 755
+Thaden (dothiepin), 249
+thioridazine, 759
+thiothixene, 765
+Thombran (trazodone), 793
+
+
+
+
+<<<PAGE 2623>>>
+
+Trilafon decanoaat (perphenazine), 607
+Trilafon dekanoat (perphenazine), 607
+Trilafon Depot (perphenazine), 607
+Trilafon enantat(e) (perphenazine), 607
+Trilafon enantato (perphenazine), 607
+Trilafon enenthaat (perphenazine), 607
+Trileptal (oxcarbazepine), 575
+Trilifan (perphenazine), 607
+Trilifan Retard (perphenazine), 607
+Trimen (trihexyphenidyl), 809
+trimipramine, 817
+Trimonil (carbamazepine), 131
+Trimonil Retard (carbamazepine), 131
+Trintellix (vortioxetine), 853
+Trion (triazolam), 799
+Tripamine Surmontil (trimipramine), 817
+Triptafen (perphenazine), 607
+Triptil (protriptyline), 657
+Triptyl (amitriptyline), 25
+Triptyl Depot (amitriptyline), 25
+Trisedyl (trifluoperazine), 803
+Trittico (trazodone), 793
+Trokendi XR (topiramate), 781
+Tropargal (nortriptyline), 551
+Tropium (chlordiazepoxide), 147
+Trycam (triazolam), 799
+Tryptanol (amitriptyline), 25
+Tryptine (amitriptyline), 25
+
+
+
+
+<<<PAGE 2633>>>
+
+bupropion, 117
+carbamazepine, 131
+cariprazine , 137
+fluoxetine, 301
+iloperidone, 359
+lamotrigine, 387
+lithium, 415
+lumateperone, 451
+lurasidone , 457
+modafinil, 521
+olanzapine/fluoxetine combination , 301 , 559
+quetiapine , 667
+risperidone, 687
+sertindole, 715
+valproate (divalproex), 829
+ziprasidone, 863
+Bipolar disorder
+amoxapine, 33
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+bupropion, 117
+carbamazepine, 131
+cariprazine , 137
+chlorpromazine, 153
+clonazepam (adjunct), 173
+clozapine, 191
+
+

@@ -1,0 +1,1021 @@
+<<<PAGE 213>>>
+
+Chapter 5: Targeting for Psychosis
+
+Insulin Resistance / Elevated Triglycerides and Drugs for Psychosis:
+Caused by Tissue Actions at an Unknown Receptor?
+
+X
+
+serotonindopamine
+blocker
+
+X
+
+X
+
+5
+A
+
+insulin
+adipose
+liver
+skeletal
+muscle
+
+X
+
+receptor X
+
+X
+
+X
+
+B
+
+Figure 5-24 Insulin resistance and elevated triglycerides: caused by tissue actions at an unknown receptor? Some drugs used to treat
+psychosis may lead to insulin resistance and elevated triglycerides, independently of weight gain, although the mechanism is not yet
+established. This figure depicts a hypothesized mechanism in which an agent binds to receptor X at adipose tissue, liver, and skeletal
+muscle to cause insulin resistance.
+
+positive and negative studies of efficacy for anxiety and
+PTSD indications; also, given the side effects of many
+agents used to treat psychosis, the risk:benefit ratio is not
+necessarily favorable compared to alternative treatments
+for anxiety and PTSD. A promising exception may be a
+positive study of one of these agents (brexpiprazole) in
+combination with a selective serotonin reuptake inhibitor
+(SSRI), specifically sertraline. This is also mentioned in
+Chapter 8 on anxiety and traumatic disorders.
+Agitation in Dementia
+
+Treating a problematic condition known as agitation in
+patients with dementia is another controversial use of
+drugs for psychosis because there is no clear efficacy
+
+signal in most studies, and also because there is a
+safety warning for cardiovascular complications and
+deaths in elderly dementia patients taking these drugs.
+Although there is promise for drugs acting by different
+mechanisms and currently in testing (see Chapter 12 on
+dementia), there are also positive results for agitation in
+dementia for one agent that is in the class of drugs for
+psychosis, namely brexpiprazole, and it may be that it
+has a satisfactory risk:benefit profile. This is discussed in
+further detail in Chapter 12 on dementia.
+Sedative Hypnotic and Sedating Actions
+
+A long debate exists as to whether sedation is a good or a
+bad property for antipsychotic action. The answer seems
+197
+
+
+
+
+<<<PAGE 256>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+it has more potent 5HT2A antagonism (Figure 5-32),
+5HT1A partial agonism (Figure 5-33), and α1 antagonism
+(Figure 5-42) relative to its D2 partial agonism (Figure
+5-57) than aripiprazole (Figure 5-56), which should
+theoretically reduce its propensity to cause motor side
+effects and akathisia. There is some indication that
+there may be reduced akathisia with brexpiprazole
+compared to aripiprazole, but this has not been proven
+in head-to-head trials. Like aripiprazole, brexpiprazole is
+approved for the treatment of schizophrenia, but unlike
+aripiprazole, is not indicated for the treatment of acute
+bipolar mania.
+Brexpiprazole (Figure 5-57) has 5HT1A partial
+agonist (Figure 5-33) and relatively higher potency
+for α1 (Figure 5-42) and α2 (Figure 5-35) binding than
+aripiprazole. These properties could theoretically
+contribute to antidepressant actions (mechanisms further
+explained and illustrated in Chapter 7 on treatments for
+mood disorders). Alpha-1 actions in particular could
+theoretically help explain the efficacy brexpiprazole has
+demonstrated in some of its potential novel indications.
+Specifically, brexpiprazole is in late-stage clinical
+development with positive studies for the treatment of
+agitation in dementia (discussed further in Chapter 12 on
+dementia). There are also promising preliminary data for
+brexpiprazole when combined with the SSRI sertraline
+for the treatment of PTSD.
+Cariprazine
+
+Cariprazine (Figure 5-58) is the “rip” of this group
+and is another D2/5HT1A partial agonist approved
+for schizophrenia and also for acute bipolar mania.
+Cariprazine with its potent 5HT1A partial agonist
+actions (Figure 5-33) despite lesser 5HT2A antagonism
+(Figure 5-32) exhibits low incidence of drug-induced
+parkinsonism, but some akathisia, which can be much
+reduced by slow-dose titration. Cariprazine has two longto very long-lasting active metabolites with the novel
+and interesting potential for development as a weekly
+or biweekly or even monthly “oral depot,” which takes
+longer to reach steady state but has less reduction in
+plasma drug levels as a dose is skipped.
+Cariprazine has proven to be a highly effective
+and well-tolerated agent for the treatment of bipolar
+depression in lower doses. Like lurasidone, which
+is also approved for bipolar depression, cariprazine
+has a very low propensity for weight gain or
+metabolic disturbance. Like other drugs in this class,
+cariprazine has both 5HT1A and α1 and α2 actions,
+suggesting antidepressant efficacy, but it is the very
+240
+
+potent D3 partial agonist actions that are perhaps
+the most distinguishing and novel pharmacological
+characteristics. The role of D3 receptors is just now
+being clarified in humans since preclinical studies
+suggest therapeutic potential of D3 partial agonism
+for cognition, mood, emotions, and reward/substance
+abuse, as well as negative symptoms. In fact,
+cariprazine has been shown to be superior to D2/5HT2A
+antagonist treatment for the improvement of negative
+symptoms in schizophrenia.
+The mechanism of action of D3 partial agonism will be
+illustrated and explained in further detail in Chapter 7 on
+treatments for mood disorders. In brief, D3 antagonist/
+partial agonist action may block key postsynaptic D3
+receptors in limbic areas to reduce dopamine overactivity
+in emotional striatum and key somatodendritic
+presynaptic D3 receptors in the ventral tegmental area/
+mesostriatal/integrative hub to increase dopamine release
+in the prefrontal cortex and improve negative, affective,
+and cognitive symptoms. For this reason, clinical
+trials and clinical experience suggest robust efficacy of
+cariprazine across the mood-disorder spectrum for all
+mixtures of mania and depression, as will be illustrated
+and described in Chapter 7.
+Selective 5HT2A Antagonist
+Pimavanserin
+
+Pimavanserin (Figure 5-59) is the only known drug
+with proven antipsychotic efficacy that does not have D2
+antagonist/partial agonist actions. This agent has potent
+5HT2A antagonist with lesser 5HT2C antagonist actions,
+sometimes called inverse agonism, as explained earlier in
+this chapter and as illustrated in Figure 5-15. The role if
+any of 5HT2C antagonism in the treatment of psychosis is
+not clear but 5HT2C antagonist actions would theoretically
+improve dopamine release in both depression and
+in the negative symptoms of schizophrenia. Indeed,
+pimavanserin is in testing as an augmenting agent to
+SSRIs/SNRIs, with some positive preliminary results in
+major depressive disorder, and as an augmenting agent
+to D2/5HT2A/5HT1A agents in negative symptoms of
+schizophrenia, also with positive results from early trials.
+It is approved for the treatment of psychosis in Parkinson’s
+disease and in late-stage testing for psychosis in dementia.
+The Others
+Sertindole
+
+Sertindole (Figure 5-60) is a 5HT2A/D2 receptor
+antagonist originally approved in some European
+countries, then withdrawn for further testing of its
+
+
+
+
+<<<PAGE 310>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+metabolite after discontinuing fluoxetine, and prior
+to starting other agents such as a monoamine oxidase
+(MAO) inhibitor. Fluoxetine is not only available as a
+once-daily formulation, but also as a once-weekly oral
+dosage formulation.
+Sertraline: An SSRI with Dopamine Transporter (DAT)
+Inhibition and σ1 Binding
+
+This SSRI has two candidate mechanisms that
+distinguish it: dopamine transporter (DAT) inhibition
+and σ1 receptor binding (Figure 7-17). The DAT
+inhibitory actions are controversial since they are
+weaker than the SERT inhibitory actions, thus leading
+some experts to suggest that there is not sufficient
+DAT occupancy by sertraline to be clinically relevant.
+However, as will be discussed later in the section on
+norepinephrine–dopamine reuptake inhibitors (NDRIs),
+it is not clear that high degrees of DAT occupancy
+are necessary or even desirable in order to contribute
+to antidepressant actions. That is, perhaps only a
+small amount of DAT inhibition is sufficient to cause
+improvement in energy, motivation, and concentration,
+especially when added to another action such as SERT
+inhibition. In fact, high-impact DAT inhibition is the
+property of reinforcing stimulants, including cocaine
+and methamphetamine, and would not generally be
+desired in a drug for depression (see discussion of DAT
+inhibitors in Chapter 11 on ADHD and Chapter 13 on
+impulsivity, compulsivity, and addiction).
+
+sertraline
+
+Anecdotally, clinicians have observed the mild and
+desirable activating actions of sertraline in some patients
+with “atypical depression,” improving symptoms of
+hypersomnia, low energy, and mood reactivity. A favorite
+combination of some clinicians for depressed patients is
+to add bupropion to sertraline (i.e., Wellbutrin to Zoloft,
+sometimes called “Well-oft”), adding together the weak
+DAT inhibitory properties of each agent. Clinicians have
+also observed the overactivation of some patients with
+panic disorder by sertraline, thus requiring slower dose
+titration in some patients with anxiety symptoms. All of
+these actions of sertraline are consistent with weak DAT
+inhibitory actions contributing to its clinical portfolio of
+actions.
+The σ1 actions of sertraline are not well understood,
+but might contribute to its anxiolytic effects and
+especially to its effects in psychotic and delusional
+depression, where sertraline may have advantageous
+therapeutic effects compared to some other SSRIs.
+Paroxetine: An SSRI with Muscarinic Anticholinergic and
+Norepinephrine Transporter (NET) Inhibitory Actions
+
+This SSRI tends to be more calming, even sedating, early
+in treatment compared to the more activating actions of
+both fluoxetine and sertraline discussed above. Perhaps
+the mild anticholinergic actions of paroxetine contribute
+to this clinical profile (Figure 7-18). Paroxetine also
+has weak norepinephrine transporter (NET) inhibitory
+properties, which could contribute to its efficacy in
+depression, especially at high doses. The advantages of
+
+paroxetine
+DAT
+
+M1
+
+NET
+
+SERT
+SERT
+
+SERT
+SERT
+
+NOS
+
+Figure 7-17 Sertraline. Sertraline has dopamine transporter
+(DAT) inhibition and σ1 receptor binding in addition to serotonin
+reuptake inhibition (SRI). The clinical relevance of sertraline’s
+DAT inhibition is unknown, although it may improve energy,
+motivation, and concentration. Its sigma properties may
+contribute to anxiolytic actions and may also be helpful in
+patients with psychotic depression.
+
+294
+
+Figure 7-18 Paroxetine. In addition to serotonin reuptake
+inhibition, paroxetine has mild anticholinergic actions
+(M1), which can be calming or possibly sedating; weak
+norepinephrine transporter (NET) inhibition, which may
+contribute to further antidepressant actions; and inhibition of
+the enzyme nitric oxide synthase (NOS), which may contribute to
+sexual dysfunction.
+
+
+
+
+<<<PAGE 311>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+dual serotonin plus norepinephrine reuptake inhibiting
+properties, or SNRI actions, are discussed below in the
+section on SNRIs. It is possible that weak to moderate
+NET inhibition of paroxetine may contribute importantly
+to its antidepressant actions.
+Paroxetine also inhibits the enzyme nitric oxide
+synthase, which could theoretically contribute to
+sexual dysfunction, especially in men. Paroxetine
+is also notorious for causing withdrawal reactions
+upon sudden discontinuation, with symptoms such
+as akathisia, restlessness, gastrointestinal symptoms,
+dizziness, and tingling, especially when suddenly
+discontinued from long-term high-dose treatment. This
+is possibly due not only to SERT inhibition properties,
+since all SSRIs can cause discontinuation reactions,
+but also to anticholinergic rebound when paroxetine
+is rapidly discontinued. Paroxetine is available in a
+controlled-release formulation, which may mitigate
+some of its side effects, including discontinuation
+reactions.
+Fluvoxamine: An SSRI with σ1 Receptor Binding
+Properties
+
+This SSRI was among the first to be launched for the
+treatment of depression worldwide, but was never
+officially approved for depression in the US, so it has been
+considered more of an agent for the treatment of OCD
+in the US. Like sertraline, fluvoxamine binds at σ1 sites,
+but this action is more potent for fluvoxamine than for
+sertraline (Figure 7-19). The physiological function of
+σ1 sites is still a mystery, and thus sometimes called the
+“sigma enigma,” but has been linked both to anxiety and
+psychosis. Preclinical studies suggest that fluvoxamine
+
+may be an agonist at σ1 receptors, and that this property
+may contribute an additional pharmacological action
+to help explain fluvoxamine’s well-known anxiolytic
+properties. Fluvoxamine also has shown therapeutic
+activity in both psychotic and delusional depression,
+where it, like sertraline, may have advantages over other
+SSRIs.
+Fluvoxamine is now available as a controlled-release
+formulation, which makes once-daily administration
+possible, unlike immediate-release fluvoxamine, whose
+shorter half-life often requires twice-daily administration.
+In addition, recent trials of controlled-release
+fluvoxamine show impressive remission rates in both
+OCD and social anxiety disorder, as well as possibly less
+peak-dose sedation.
+Citalopram: An SSRI with a “Good” and a “Bad”
+Enantiomer
+
+This SSRI is comprised of two enantiomers, R and S,
+which are mirror images of each other (Figure 7-20).
+The mixture of these enantiomers is known as racemic
+citalopram, or commonly just as citalopram, and has
+mild antihistamine properties that reside in the R
+enantiomer. Racemic citalopram is generally one of
+the better-tolerated SSRIs, and has favorable findings
+in the treatment of depression in the elderly, but has a
+somewhat inconsistent therapeutic action at the lowest
+dose, often requiring dose increase to optimize treatment.
+citalopram: R+S citalopram
+
+fluvoxamine
+S
+ram
+lop
+
+cita
+
+1H
+
+R
+rpo
+lat
+i
+
+ma
+
+c
+
+SERT
+
+Figure 7-19 Fluvoxamine. Fluvoxamine’s secondary properties
+include actions at σ1 receptors, which may be anxiolytic as well
+as beneficial for psychotic depression.
+
+Figure 7-20 Citalopram. Citalopram consists of two
+enantiomers, R and S. Some pharmacological evidence suggests
+that the R enantiomer may be pharmacologically active at SERTs
+in a manner that does not inhibit SERTs but actually interferes
+with the ability of the active S enantiomer to inhibit SERTs. The R
+enantiomer also has weak antihistamine properties.
+
+295
+
+7
+
+
+
+
+<<<PAGE 344>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+without simultaneous muscarinic and histaminic
+antagonism, α1 antagonist action in the prefrontal cortex
+could hypothetically also contribute both to the reduced
+motor side effects and to the known antidepressant
+effects seen with potent α1 antagonists, particularly those
+with simultaneous 5HT2A antagonist properties. Alpha-1
+antagonist actions of brexpiprazole could also potentially
+contribute to its evidence of efficacy for agitation in
+Alzheimer disease and in PTSD (as augmentation of
+sertraline).
+How does this happen and what circuits regulate
+α1 antagonist action? The answer is that the reader is
+already familiar with the circuitry to explain the actions
+of α1 antagonists, since it is the same circuitry already
+discussed for 5HT2A receptors and illustrated in Chapter
+5 in Figures 5-16 and 5-17. It is now known that α1
+receptors (illustrated here in Figure 7-58) are colocalized
+on the same pyramidal neurons with 5HT2A receptors
+(discussed in Chapter 5 and illustrated in Figures 5-16
+and 5-17). Since both α1 receptors and 5HT2A receptors
+are excitatory and postsynaptic, norepinephrine
+and serotonin acting together exert a more powerful
+excitatory control of prefrontal cortex function through
+their simultaneous action than either neurotransmitter
+acting alone.
+Furthermore, the actions of an α1 antagonist would
+be expected to have the same functional effects as a
+5HT2A antagonist, the two actions acting together to have
+a more powerful downstream inhibitory control of the
+prefrontal cortex output than blockade of either receptor
+alone. Figure 7-58A shows the α1 receptors on those
+specific pyramidal neurons projecting to the substantia
+nigra (same pyramidal neurons and circuitry as shown
+in Chapter 5, Figure 5-17B). When this glutamatergic
+neuron is inhibited by an α1 antagonist, its innervation of
+the substantia nigra reduces GABA tone there, allowing
+disinhibition of dopamine release into the motor striatum
+and reduction of drug-induced parkinsonism (Figure
+7-58A; just as shown in Chapter 5 and Figure 5-17B).
+Thus, drug-induced parkinsonism caused by D2 blockers
+will be maximally reduced by those D2 blockers that have
+both 5HT2A and α1 antagonist actions. Indeed, the lowest
+frequency and severity of drug-induced parkinsonism
+induced by dopamine blockers is for those that also
+have robust α1 and 5HT2A antagonist actions, namely,
+brexpiprazole, quetiapine, clozapine, and iloperidone.
+Synergy of α1 antagonism with 5HT2A antagonism
+can theoretically also enhance antidepressant action, this
+time in the circuit of pyramidal neurons innervating the
+ventral tegmental area dopamine neurons that project
+328
+
+to the prefrontal cortex (Figure 7-58B and Chapter 5,
+Figure 5-17C). What this means is that α1 antagonists
+would theoretically have the same effect as 5HT2A
+antagonists in this circuit, and the two working together
+would exert a more powerful control of the prefrontal
+cortex and its downstream projections, to further
+facilitate dopamine release in the prefrontal cortex and
+to cause antidepressant action. In fact, this synergy is
+likely to be an important component of the mechanism
+of antidepressant action for those agents that are both
+α1 and 5HT2A antagonists, including brexpiprazole,
+quetiapine, and trazodone. The enhancement
+of dopamine release in the prefrontal cortex by
+simultaneous α1 and 5HT2A blockade may theoretically
+contribute as well to improving “top-down” control of
+agitation in Alzheimer disease and PTSD symptoms,
+which are seen in ongoing studies of brexpiprazole.
+Cariprazine
+
+Carpirazine (Chapter 5 and Figure 5-58) is a D3/D2/5HT1A
+partial agonist as well as a 5HT2A/α1/α2 antagonist,
+approved for the treatment of acute bipolar mania and
+bipolar depression; it also has evidence of efficacy as
+an adjunct to SSRI/SNRIs in unipolar depression (Table
+7-1). Cariprazine’s antidepressant mechanism of action
+is discussed below in the section on treating bipolar
+depression.
+Ketamine
+
+Observations that the intravenous infusion of
+subanesthetic doses of ketamine could rapidly improve
+depression in patients inadequately responsive to
+monoamine-targeting drugs has set forth a bit of a
+revolution in the treatment of depression. Ketamine is
+an approved anesthetic but used off-label for treatmentresistant depression. Whereas serotonin/dopamine
+blockers tend to be used after just one or two failures of
+an SSRI/SNRI, ketamine tends to be given to patients
+with multiple failures on various drugs for depression.
+Intravenous ketamine is a racemic mixture of R- and
+S-ketamine, each with overlapping binding properties
+at the NMDA subtype of glutamate receptor, its putative
+mechanism of antidepressant action, and at the σ1
+receptor (Figure 7-59). Actions at other sites, including
+μ-opioid and other neurotransmitter sites, are proposed
+but disputed, especially the possibility that ketamine’s
+antidepressant actions may be linked in some way to
+μ-opioid as well as NMDA action. Thus, a debate exists
+as to how ketamine exerts its rapid-onset antidepressant
+effects, but NMDA antagonism – specifically at the
+
+
+
+
+<<<PAGE 394>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+depression, insomnia, substance abuse, and pain, than
+at core symptoms of PTSD. SSRIs often leave the patient
+with residual symptoms, including sleep problems. Thus,
+most patients with PTSD do not take monotherapy.
+Benzodiazepines are to be used with caution, not only
+because of limited evidence from clinical trials for
+efficacy in PTSD, but also because many PTSD patients
+abuse alcohol and other substances. A unique treatment
+for PTSD is the administration of α1 antagonists at night
+to prevent nightmares. Much more effective medication
+treatments for PTSD are greatly needed. Much of the
+advance in treatment of PTSD has been in using drugs
+to treat comorbidities and psychotherapies to treat core
+symptoms. Exposure therapy is perhaps most effective
+among psychotherapies, but many forms of cognitive
+behavioral therapy are being investigated and used in
+clinical practice, depending upon the training of the
+therapist and the specific needs of the individual. Use
+of techniques to block reconsolidation of emotional
+memories with the combination of psychotherapy and
+drugs (especially MDMA) are in testing now for PTSD.
+Brexpiprazole, discussed in Chapter 5 as a drug for
+psychosis, is in testing along with the SSRI sertraline for
+PTSD, with promising initial findings.
+
+378
+
+SUMMARY
+Anxiety/trauma disorders have core features of fear and
+worry that cut across the entire spectrum of anxiety
+disorder subtypes, from generalized anxiety disorder to
+panic disorder, social anxiety disorder, and posttraumatic
+stress disorder. The amygdala hypothetically plays a
+central role in the fear response in these conditions,
+and cortico-striato-thalamo-cortical (CSTC) circuits are
+thought to play a key role in mediating the symptom
+of worry. Numerous neurotransmitters are involved in
+regulating the circuits that underlie the anxiety disorders.
+Serotonin, norepinephrine, α2δ ligands and GABA are
+all key modulators of the hypothetical fear and worry
+circuits. Known effective drug treatments all target these
+neurotransmitters. The concept of opposing actions of
+fear conditioning versus fear extinction within amygdala
+circuits hypothetically is linked to the production and
+maintenance of symptoms in anxiety disorder and
+provides a substrate for potential novel therapeutics
+combining psychotherapy and drugs. The concept of
+disruption of the reconsolidation of fear memories is
+undergoing testing at this time as a novel therapeutic
+approach to anxiety symptoms.
+
+
+
+
+<<<PAGE 550>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Dextromethorphan combined with quinidine is
+approved for the treatment of pseudobulbar affect,
+and dextromethorphan and derivates combined with
+either bupropion or quinidine are in late-stage testing
+for major depressive disorder, for treatment-resistant
+depression, and for agitation in AD.
+Treating Depression in Dementia
+
+A well-established association exists between depression
+and dementia; however, the exact nature of this
+intricate relationship is not fully understood (Figure
+12-49). Individuals with major depressive disorder
+often complain of memory problems (so-called
+pseudodementia when it occurs in the elderly), which can
+sometimes be reversed with antidepressant treatment,
+but depression may also be an untreatable prodromal
+symptom of, or risk factor for, inevitable dementia
+(Figure 12-49). In fact, a history of major depressive
+disorder is associated with a twofold increase in the risk
+for developing dementia, particularly vascular dementia,
+whereas major depressive disorder with an onset in later
+life may signify a prodromal sign of AD. Additionally,
+symptoms of depression are seen in at least 50% of
+individuals diagnosed with dementia, and should be
+addressed whenever feasible.
+
+Depression as a risk
+factor for dementia?
+
+Depression
+
+Dementia
+
+Depression as a prodromal
+symptom of dementia?
+
+Depression Dementia
+
+Dementia
+
+Depression and dementia
+sharing common risk factors/
+neurobiological bases?
+
+534
+
+Dementia
+
+Depression
+
+Cognitive impairment as
+a feature of depression?
+
+Depression as a reaction
+to cognitive decline?
+
+Given that symptoms of depression can significantly
+impact quality of life for patients with dementia and
+may actually exacerbate cognitive decline, addressing
+depressive symptoms using non-pharmacological (Table
+12-9) and/or pharmacological means (Figure 12-50)
+should be a priority. Psychosocial interventions are always
+worth trying as treatments for depression in dementia,
+but the usual drugs for depression discussed in Chapter
+7 are often not effective in depression associated with
+dementia, perhaps because the neural circuits these drugs
+act upon may have degenerated. Further complicating
+the treatment of depression in dementia are the potential
+depression-exacerbating effects of medications for somatic
+ailments common in the elderly population, as well as the
+potential interactions of such medications with standard
+antidepressants. In terms of pharmacological management
+of major depressive disorder in patients with dementia,
+SSRIs including sertraline, citalopram, escitalopram,
+and fluoxetine have shown some limited efficacy (see
+Chapter 7 for discussion of these and other drugs for
+depression). In general, long-term antidepressant
+treatment has been associated with a lower risk of
+dementia, improved cognition, and a slower rate of decline
+in elderly patients with dementia. Data are somewhat
+
+Depression
+
+Depression
+Risk
+factors
+
+Dementia
+
+Figure 12-49 Hypothetical associations
+between depression and dementia. It
+is well established that an association
+exists between depression and
+dementia; however, the exact nature
+of this intricate relationship is not fully
+understood.
+
+
+
+
+<<<PAGE 632>>>
+
+Index
+
+atomoxetine, 480–1
+auditory hallucinations, 113
+autoreceptors
+alpha-2, 254, 256, 258
+monoamine, 8
+avolition, 142
+axoaxonic synapses, 1, 3
+axodendritic synapses, 1, 3
+axosomatic synapses, 1, 3
+barbiturates, 556
+bath salts, 546
+BDNF (brain-derived neurotrophic
+factor), 266, 268, 329
+behavioral addictions, 575
+behavioral variant FTD, 494
+benzodiazepine-insensitive GABAA
+receptors, 263–4
+benzodiazepines, 321, 366, 377
+caution with, 378
+insomnia treatment, 421–2
+benzodiazepine-sensitive GABAA
+receptors, 259–62
+beta-amyloid, 488, 496–8, 502
+detection, 499, 501
+beta blockers, 375, 376
+beta subunits, 68
+bifeprunox, 192
+binge-eating disorder, 575
+bipolar depression, 244
+drug treatment, 236, 240
+family history of, 250
+first-line treatment, 342
+identifying, 250
+missed or delayed diagnosis, 250
+schizophrenia and, 249
+suicide rates, 251
+versus unipolar, 249–51
+bipolar disorder
+anticonvulsants with proven efficacy,
+347–51
+anticonvulsants with uncertain
+efficacy, 352–3
+bipolar I, 247
+bipolar II, 244, 247
+combination treatments, 353
+drug treatment, 338–58
+blocking fear conditioning, 375–7
+blonanserin, 234, 241
+brexanolone, 320
+brexpiprazole, 192, 197, 230, 239, 327–8,
+378, 530–2
+bright light therapy, 438, 440, 444
+buprenorphine, 560, 561, 562
+bupropion, 306–8, 353–4, 480, 533
+nicotine addiction, 551
+sertraline combination, 294
+
+616
+
+buspirone, 333, 370
+butyrylcholinesterase, 505, 510
+caffeine, 440–1
+calcium channel blockers (L-type), 352
+cannabidiol (CBD), 563, 565, 567
+cannabis, 150, 563–7
+benefits and risks, 564
+side effects, 563
+therapeutic uses, 564
+carbamazepine, 350, 530
+cardiometabolic risk, 196, 224
+cardiometabolism, 198–201, 415
+cardiovascular disease, 156, 415, 432,
+492, 524
+carfentanil, 560
+cariprazine, 192, 231, 240, 328, 343–5
+cataplexy, 434, 435, 446
+catechol-O-methyltransferase, 253
+central disorders of hypersomnolence, 432
+central pain, 379
+central sensitization, 395
+chemical neurotransmission, 1, 28
+anatomical versus, 1–5
+epigenetics, 23–6
+ion channels and, 73–6
+mood disorders, 252–64
+principles of, 5–9
+signal transduction cascades, 9–23,
+28, 53
+triggering gene expression, 18
+ultradian sleep cycle, 414–16
+chemotherapy, side effects, 309
+child abuse, 370
+chlorpromazine, 161, 181, 201, 202
+choline, 505
+cholinergic agonists, 242
+cholinergic pathways, 509
+chromatin, 23
+chronic back pain, 388
+chronic pain, 379–400
+decreased gray matter, 387–90
+duloxetine treatment, 302–3
+milnacipran treatment, 303
+targeting sensitized circuits, 395–9
+treatment, 390–400
+circadian rhythm disorders, 430, 435–8
+depression, 271–5
+circadian rhythms, 307, 308
+setting of, 275
+circadian treatments, 438–40
+circadian wake drive, 409, 412
+citalopram, 295–6
+classic neurotransmission, 6
+clock genes, 271
+clomipramine, 335
+clonidine, 390, 482–3, 561
+
+closed state, 63
+clozapine, 217, 222–5
+cocaine, 544, 545
+codeine, 559
+cognition, Fab Four of, 317
+cognitive behavioral therapy, 374, 377, 576
+cognitive dysfunction
+ADHD, 455, 456, 458
+Alzheimer disease, 509–18
+chronic pain, 388
+depression, 273
+fibromyalgia, 390, 400
+Parkinson’s disease, 493
+sleep disorders, 402
+sleep disturbance and, 414, 417
+vortioxetine treatment, 315–17
+cognitive symptoms, schizophrenia, 95,
+144, 157
+competitive elimination, 151, 154
+compulsivity, 538–9, 571, 578
+impulsive–compulsive disorders,
+539–43, 575
+OCD, 295, 360, 576–7
+conceptual disorganization, 78
+conditioned responses, 539
+conditioned stimuli, 539, 544
+consolidation, 375
+constitutive activity, 37, 57
+continuous positive airway pressure, 443
+controlled substance, 447
+cortico-brainstem glutamate pathways, 102
+cortico-cortical glutamate pathways, 105
+cortico-striatal glutamate pathways, 104
+cortico-striato-thalamo-cortical (CSTC)
+loops, 87, 362, 365–9
+cortico-thalamic glutamate pathway, 105
+CREB system, 15
+criminogenic behavior, 146, 147
+cytochrome P450 (CYP450), 49–50, 323
+daridorexant, 424
+DAT transporter. See dopamine
+transporters (DATs)
+date rape drugs, 447, 559
+delayed sleep phase disorder, 435, 437
+delirium, 569
+delusions, 77, 141, 524
+Alzheimer disease, 157
+dementia, 521
+Parkinson’s disease psychosis, 157
+dementia, 486, 537, See also Alzheimer
+disease
+agitation in, 145, 157, 197
+apathy in, 536–7
+behavioral symptoms of, 521, 537
+definition, 487
+depression in, 534–5
+
+
+
+
+<<<PAGE 638>>>
+
+Index
+
+sertraline, 294, 378
+setiptiline, 309
+shift work disorder, 435, 436, 444
+sigma-1 binding, 294, 295
+signal propagation, 74
+signal transduction cascades, 9–23, 28,
+53
+four important types of, 11, 12
+second messenger, forming, 11–14
+second messenger, to phosphoprotein
+cascades, 15–18
+second messenger, to phosphoprotein
+messenger, 13–15
+time course, 11
+silent antagonists, 41, 42, 45, 192
+Sinclair method, 573
+SLC1 gene family, 31, 35
+SLC17 gene family, 31, 35
+SLC18 gene family, 31, 35
+SLC32 gene family, 31, 35
+SLC6 gene family, 30, 31–5
+sleep
+neurobiology of, 402–15
+purpose of, 414–15
+REM and non-REM, 413, 414, 435
+sleepiness, 430–4
+sleep/wake cycle, 412–13
+disturbance of, 414, 416
+small interfering RNA (siRNA), 27
+small nuclear RNA (snRNA), 27
+smoking, 476, See also nicotine
+cessation, 306, 573
+snare proteins, 73
+SNRIs (serotonin–norepinephrine
+reuptake inhibitors), 298–303
+α2δ ligand combinations, 399
+anxiety disorders, 368
+arousal combo, 333
+mirtazapine combination, 333
+pain treatment, 380
+triple action combo, 333
+social anxiety disorder, 362, 372, 377
+sodium oxybate, 446–8
+sodium potassium ATPase (sodium
+pump), 32, 33
+sodium valproate, 347–50
+solriamfetol, 444
+soma, 2
+somatic pain, 302
+somatosensory cortex, 380
+specific neutral amino acid transporters
+(SNATs), 96
+spinobulbar tracts, 380
+spinothalamic tract, 380
+SSRIs (selective serotonin reuptake
+inhibitors), 289–96
+anxiety disorders, 368
+
+622
+
+clinical uses of, 289
+common features of six drugs, 289–92
+depression in dementia, 534
+OCD, 577
+triple-action combo, 333
+unique properties of six drugs, 292–3
+stabilizers. See partial agonists
+steroids, neuroactive, 320–5
+Stevens Johnson syndrome, 352
+stigma, 145
+stimulants, 467–79, 544–7
+atypical, 546
+slow release vs. fast release, 478–9
+targeting DATs, 473–8
+treatment of addiction, 547
+stimulus-response conditioning, 571
+strengthening, synapse, 151, 154
+stress, ADHD, 467, 469, 480
+stroke, 492, 524
+Stroop test, 450, 451
+subjective memory complaints, 487, 488
+sublingual formulation, 232
+substance addictions, 544–75
+substrates, 45, 46
+suicide, 145, 156
+clozapine treatment, 223
+depressed patients, 251
+mixed feature patients, 251
+prevention, 346
+suicide inhibitors, 46
+sulpiride, 202, 205
+supersensitivity, 170, 171
+suprachiasmatic nucleus, 275, 307
+suprasegmental central sensitization,
+384, 390
+suvorexant, 423
+synapses, 1, 3
+enlarged, 5
+synaptic neurotransmission, 4
+synaptogenesis, 151, 154
+tardive dyskinesia (TD), 166
+pathophysiology, 170–4
+treatment, 174–81
+tasimelteon, 439
+tau protein, 488, 494, 502, 503
+tetrabenazine, 175–6
+tetrahydrocannabinol (THC), 563, 565,
+567
+tetrameric ligand-gated ion channels,
+54–5
+thalamic dopamine pathway, 85
+thalamo-cortical glutamate pathway, 104
+third-messenger kinase, 14, 16
+third-messenger phosphatase, 15, 16
+thyroid, 333
+tonic inhibition, 259, 263
+
+topiramate, 201, 352, 556, 575
+trace amines, 241–38
+tradozone, 311–15, 424–5
+transduction, 381
+transfer RNA (tRNA), 27
+transporters, 29–35, 50
+classification and structure, 29–31
+histamine and neuropeptides, 35
+monoamine, 30, 31–4, 208
+SLC1 gene family, 31
+vesicular, 32, 35
+tranylcypromine, 337
+traumatic memories, 356, 366, 375, 574
+trazodone, 535
+treatment responsiveness, 155
+tricyclic antidepressants (TCAs), 333–7
+triglyceride levels, 197, 198, 199
+tryptophan, 114
+tuberoinfundibular dopamine pathway,
+85
+tuberomammillary nucleus, 406, 408
+type 2 diabetes, 415
+tyramine, 338
+tyrosine, 80, 252
+tyrosine hydroxylase, 253
+ultradian sleep cycle, 413–16
+unipolar depression, 34, 244
+augmenting strategies for, 325–35
+drugs for, 289–325
+monoamine reuptake blockers, 285–8
+or bipolar, 249–51
+second-line monotherapies, 333–8
+treatment resistance in, 323–38
+valbenazine, 177
+valproic acid (valproate), 347–50
+varenicline, 551, 552, 573
+vascular dementia, 491–2, 534
+VEGF (vascular endothelial growth
+factor), 329
+venlafaxine, 299, 302
+ventromedial prefrontal cortex, 372, 374
+vesicular transporter for glutamate, 99
+vesicular transporters, 31, 32, 35
+VIAATs (vesicular inhibitory amino acid
+transporters), 255
+vilazodone, 296–9
+viloxazine, 485
+violence, 145–7, 575, 577–8
+visual hallucinations, 113, 524
+vital sign, 381, 399, 401
+VMAT1, 174
+VMAT2 inhibition, 174–81
+VMAT2 transporter, 31, 81, 254
+VMATs (vesicular monoamine
+transporters), 35
+
+

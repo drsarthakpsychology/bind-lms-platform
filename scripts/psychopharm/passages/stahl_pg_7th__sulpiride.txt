@@ -1,0 +1,1730 @@
+<<<PAGE 11>>>
+
+110 propranolol
+111 protriptyline
+112 quazepam
+113 quetiapine
+114 ramelteon
+115 reboxetine
+116 risperidone
+117 rivastigmine
+118 selegiline
+119 sertindole
+120 sertraline
+121 sildenafil
+122 sodium oxybate
+123 solriamfetol
+124 sulpiride
+125 suvorexant
+126 tasimelteon
+127 temazepam
+128 thioridazine
+129 thiothixene
+130 tiagabine
+131 tianeptine
+132 topiramate
+133 tranylcypromine
+134 trazodone
+135 triazolam
+136 trifluoperazine
+137 trihexyphenidyl
+
+
+
+
+<<<PAGE 85>>>
+
+For treatment-resistant patients with inadequate responses to
+clozapine, amisulpride may be a preferred augmentation option
+Risks of diabetes and dyslipidemia not well studied, but does not
+seem to cause as much weight gain as some other atypical
+antipsychotics
+Has atypical antipsychotic properties (i.e., antipsychotic action
+without a high incidence of drug-induced parkinsonism), especially
+at low doses, but not a serotonin dopamine antagonist
+Mediates its atypical antipsychotic properties via novel actions on
+dopamine receptors, perhaps dopamine stabilizing partial agonist
+actions on dopamine 2 receptors
+May be more of a dopamine 2 antagonist than aripiprazole, but less
+of a dopamine 2 antagonist than other atypical or conventional
+antipsychotics
+Low-dose activating actions may be beneficial for negative
+symptoms in schizophrenia
+Very low doses may be useful in dysthymia
+Compared to sulpiride, amisulpride has better oral bioavailability
+and more potency, thus allowing lower dosing, less weight gain, and
+a lower risk of drug-induced parkinsonism
+Compared to other atypical antipsychotics with potent serotonin 2A
+antagonism, amisulpride may have more drug-induced parkinsonism
+and prolactin elevation, but may still be classified as an atypical
+antipsychotic, particularly at low doses
+
+
+
+
+<<<PAGE 592>>>
+
+For treatment of psychotic symptoms, consider trying one of the
+first-line atypical antipsychotics (risperidone, olanzapine,
+quetiapine, ziprasidone, aripiprazole, paliperidone, amisulpiride)
+Consider trying another conventional antipsychotic
+If 2 or more antipsychotic monotherapies do not work, consider
+clozapine
+For treatment of anxiety symptoms, consider adding a
+benzodiazepine or switching to a benzodiazepine
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Augmentation of conventional antipsychotics has not been
+systematically studied
+Addition of a mood-stabilizing anticonvulsant such as valproate,
+carbamazepine, or lamotrigine may be helpful in both schizophrenia
+and bipolar mania
+Augmentation with lithium in bipolar mania may be helpful
+Addition of a benzodiazepine, especially for short-term agitation
+Addition of antidepressants for severe depression
+Tests
+
+
+
+
+<<<PAGE 2121>>>
+
+Sulpiride
+
+Therapeutics
+Brands
+Dolmatil
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: dopamine receptor antagonist
+(D-RAn)
+Conventional antipsychotic (neuroleptic, benzamide, dopamine 2
+antagonist)
+Commonly Prescribed for
+(bold for FDA approved)
+Schizophrenia
+Depression
+How the Drug Works
+
+
+
+
+<<<PAGE 2122>>>
+
+Blocks dopamine 2 receptors, reducing positive symptoms of
+psychosis
+Blocks dopamine 3 and 4 receptors, which may contribute to
+sulpiride’s actions
+
+✽ Possibly blocks presynaptic dopamine 2 autoreceptors more
+potently at low doses, which could theoretically contribute to
+improving negative symptoms of schizophrenia as well as depression
+How Long Until It Works
+Psychotic symptoms can improve within 1 week, but it may take
+several weeks for full effect on behavior
+If It Works
+Most often reduces positive symptoms in schizophrenia but does not
+eliminate them
+Most schizophrenic patients do not have a total remission of
+symptoms but rather a reduction of symptoms by about a third
+Continue treatment in schizophrenia until reaching a plateau of
+improvement
+After reaching a satisfactory plateau, continue treatment for at least
+a year after first episode of psychosis in schizophrenia
+For second and subsequent episodes of psychosis in schizophrenia,
+treatment may need to be indefinite
+
+
+
+
+<<<PAGE 2124>>>
+
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Consider monitoring fasting triglycerides monthly for several
+months in patients at high risk for metabolic complications and when
+initiating or switching antipsychotics
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antipsychotic
+Monitoring elevated prolactin levels of dubious clinical benefit
+Patients with low white blood cell count (WBC) or history of druginduced leukopenia/neutropenia should have complete blood count
+(CBC) monitored frequently during the first few months and
+sulpiride should be discontinued at the first sign of decline of WBC
+in the absence of other causative factors
+Patients should be monitored periodically for the development of
+abnormal movements of tardive dyskinesia, using neurological
+exam and the AIMS (Abnormal Involuntary Movement Scale)
+
+Side Effects
+
+
+
+
+<<<PAGE 2129>>>
+
+Dosing Tips
+
+✽ Low doses of sulpiride may be more effective at reducing negative
+symptoms than positive symptoms in schizophrenia; high doses may
+be equally effective at reducing both symptom dimensions
+
+✽ Lower doses are more likely to be activating; higher doses are more
+likely to be sedating
+Some patients receive more than 2400 mg/day
+Rather than raise the dose above normal dosing in acutely agitated
+patients requiring acute antipsychotic actions, consider short-term
+(one dose or more) augmentation with a benzodiazepine or another
+antipsychotic, especially intramuscularly
+Rather than raise the dose above normal dosing in partial
+responders, consider augmentation with a mood-stabilizing
+anticonvulsant, such as valproate, topiramate, or lamotrigine
+Children and elderly should generally be dosed at the lower end of
+the dosage spectrum
+Treatment should be suspended if absolute neutrophil count falls
+below 1000/mm3
+Overdose
+Can be fatal; vomiting, agitation, hypotension, hallucinations, CNS
+depression, sinus tachycardia, arrhythmia, dystonia, dysarthria,
+hyperreflexia
+
+
+
+
+<<<PAGE 2130>>>
+
+Long-Term Use
+Should periodically reevaluate long-term usefulness in individual
+patients, but treatment may need to continue for many years
+Habit Forming
+No
+How to Stop
+Recommended to reduce dose over a week
+Slow down-titration (over 6–8 weeks), especially when
+simultaneously beginning a new antipsychotic while switching (i.e.,
+cross-titration)
+Rapid discontinuation may lead to rebound psychosis and worsening
+of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after sulpiride is discontinued
+Pharmacokinetics
+Elimination half-life approximately 6–8 hours
+Excreted largely unchanged
+Drug Interactions
+Sulpiride may increase the effects of antihypertensive drugs
+
+
+
+
+<<<PAGE 2131>>>
+
+CNS effects may be increased if sulpiride is used with other CNS
+depressants
+May decrease the effects of levodopa, dopamine agonists
+Antacids or sucralfate may reduce the absorption of sulpiride
+Other Warnings/Precautions
+If signs of neuroleptic malignant syndrome develop, treatment
+should be immediately discontinued
+Use cautiously in patients with alcohol withdrawal or convulsive
+disorders because of possible lowering of seizure threshold
+Antiemetic effect of sulpiride may mask signs of other disorders or
+overdose; suppression of cough reflex may cause asphyxia
+Use with caution in patients with hypertension, cardiovascular
+disease, pulmonary disease, hyperthyroidism, urinary retention,
+glaucoma
+May exacerbate symptoms of mania or hypomania
+Use only with caution if at all in Parkinson’s disease or Lewy body
+dementia
+Antipsychotics may cause somnolence, postural hypotension, motor
+and sensory instability, which may lead to falls; for patients with
+diseases, conditions, or medications that could exacerbate these
+effects, complete fall risk assessments when initiating antipsychotic
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+
+
+
+
+<<<PAGE 2132>>>
+
+Do Not Use
+If patient has pheochromocytoma
+If patient has prolactin-dependent tumor
+If patient is pregnant or nursing
+In children under age 15
+If there is a proven allergy to sulpiride
+
+Special Populations
+Renal Impairment
+Use with caution; drug may accumulate
+Sulpiride is eliminated by the renal route; in cases of severe renal
+insufficiency, the dose should be decreased and intermittent
+treatment or switching to another antipsychotic should be
+considered
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Use with caution
+Elderly
+
+
+
+
+<<<PAGE 2133>>>
+
+Some patients may tolerate lower doses better
+Although conventional antipsychotics are commonly used for
+behavioral disturbances in dementia, no agent has been approved for
+treatment of elderly patients with behavioral symptoms of dementia
+such as agitation
+Elderly patients with dementia-related psychosis treated with
+antipsychotics are at an increased risk of death compared to placebo,
+and also have an increased risk of cerebrovascular events
+Children and Adolescents
+Not recommended for use in children under age 15
+14 and older: recommended 3–5 mg/kg per day
+Pregnancy
+There is a risk of abnormal muscle movements and withdrawal
+symptoms in newborns whose mothers took an antipsychotic during
+the third trimester; symptoms may include agitation, abnormally
+increased or decreased muscle tone, tremor, sleepiness, severe
+difficulty breathing, and difficulty feeding
+Potential risks should be weighed against the potential benefits, and
+sulpiride should be used only if deemed necessary
+Psychotic symptoms may worsen during pregnancy and some form
+of treatment may be necessary
+
+
+
+
+<<<PAGE 2135>>>
+
+Depressive symptoms
+Aggressive symptoms
+Pearls
+
+✽ There is some controversy over whether sulpiride is more effective
+than older conventionals at treating negative symptoms
+Sulpiride has been used to treat migraine associated with hormonal
+changes
+
+✽ Some patients with inadequate response to clozapine may benefit
+from augmentation with sulpiride
+Sulpiride is poorly absorbed from the gastrointestinal tract and
+penetrates the blood–brain barrier poorly, which can lead to highly
+variable clinical responses, especially at lower doses
+Small studies and clinical anecdotes suggest efficacy in depression
+and anxiety disorders (“neuroses” ) at low doses
+Patients have very similar antipsychotic responses to any
+conventional antipsychotic, which is different from atypical
+antipsychotics where antipsychotic responses of individual patients
+can occasionally vary greatly from one atypical antipsychotic to
+another
+Patients with inadequate responses to atypical antipsychotics may
+benefit from a trial of augmentation with a conventional
+antipsychotic such as sulpiride or from switching to a conventional
+antipsychotic such as sulpiride
+
+
+
+
+<<<PAGE 2136>>>
+
+However, long-term polypharmacy with a combination of a
+conventional antipsychotic with an atypical antipsychotic may
+combine their side effects without clearly augmenting the efficacy
+of either
+For treatment-resistant patients, especially those with impulsivity,
+aggression, violence, and self-harm, long-term polypharmacy with 2
+atypical antipsychotics or with 1 atypical antipsychotic and 1
+conventional antipsychotic may be useful or even necessary while
+closely monitoring
+In such cases, it may be beneficial to combine 1 depot antipsychotic
+with 1 oral antipsychotic
+Although a frequent practice by some prescribers, adding 2
+conventional antipsychotics together has little rationale and may
+reduce tolerability without clearly enhancing efficacy
+
+Suggested Reading
+Caley CF , Weber SS . Sulpiride: an antipsychotic with selective
+dopaminergic antagonist properties . Ann Pharmacother 1995 ;29 (2 ):152–
+60 .
+Huhn M , Nikolakopoulou A , Schneider-Thoma J , et al. Comparative
+efficacy and tolerabilityof 32 oral antipsychotics for the acute treatment of
+adults with multi-episode schizophrenia: a systematic review and network
+meta-analysis . Lancet 2019 ;394 :939–51 .
+
+
+
+
+<<<PAGE 2137>>>
+
+Omori IM , Wang J. Sulpiride versus placebo for schizophrenia . Cochrane
+Database Syst Rev 2009 ;15 (2 ):CD007811 .
+Wang J , Omori IM , Fenton M , Soares B. Sulpiride augmentation for
+schizophrenia . Cochrane Database Syst Rev 2010 ;20 (1 ):CD008125 .
+
+
+
+
+<<<PAGE 2569>>>
+
+Adzenys ER (amphetamine d,l), 45
+Adzenys XR-ODT (amphetamine d,l), 45
+agomelatine, 5
+AH3 N (hydroxyzine), 355
+Aiglonyl (sulpiride), 741
+Alased (haloperidol), 347
+Albium (lorazepam), 437
+Aldazine (thioridazine), 759
+Alemoxan (clozapine), 191
+Alepam (oxazepam), 569
+Alertec (modafinil), 521
+Aleviatin (zonisamide), 875
+Alimoral (sulpiride), 741
+Aliseum (diazepam), 229
+Allegron (nortriptyline), 551
+allopregnanolone (brexanolone), 99
+Almazine (lorazepam), 437
+Aloperidin (haloperidol), 347
+Aloperidin Decanoate (haloperidol), 347
+Alpralid (alprazolam), 11
+Alpraz (alprazolam), 11
+alprazolam, 11
+alprazolam XR, 11
+Alprox (alprazolam), 11
+Alti-Alprazolam (alprazolam), 11
+Alti-Clonazepam (clonazepam), 173
+Alti-Desipramine (desipramine), 207
+Alti-Doxepin (doxepin), 255
+
+
+
+
+<<<PAGE 2571>>>
+
+amphetamine (d), 39
+amphetamine (d,l), 45
+Anafranil (clomipramine), 165
+Anafranil 75 (clomipramine), 165
+Anafranil Retard (clomipramine), 165
+Anatensoi Decanoaat (fluphenazine), 313
+Anatensol (fluphenazine), 313
+Anatensol Concentraat (fluphenazine), 313
+Anatensol Decanoate (fluphenazine), 313
+Ancholactil (chlorpromazine), 153
+Aneural (maprotiline), 465
+Aneurol (diazepam), 229
+Anexate (flumazenil), 293
+Ansilor (lorazepam), 437
+Ansiolin (diazepam), 229
+Ansised (buspirone), 123
+Ansium (diazepam), 229
+Ansium (sulpiride), 741
+Antabuse (disulfiram), 239
+Antalon (pimozide), 627
+Antelepsin (clonazepam), 173
+Anten (doxepin), 255
+Antenex (diazepam), 229
+Antideprin (imipramine), 367
+Antiparkin (selegiline), 705
+Antitussive (diphenhydramine), 235
+Antoderin (oxazepam), 569
+Anxial (buspirone), 123
+
+
+
+
+<<<PAGE 2573>>>
+
+Apo-Selegiline (selegiline), 705
+Apo-Thioridazine (thioridazine), 759
+Apo-Trazodone (trazodone), 793
+Apo-Triazo (triazolam), 799
+Apo-Trifluoperazine (trifluoperazine), 803
+Apo-Trimip (trimipramine), 817
+Apozepam (diazepam), 229
+Apo-Zopiclone (zopiclone), 879
+Aptensio XR (methylphenidate d,l), 487
+Aremis (sertraline), 721
+Aricept (donepezil), 243
+Arima (moclobemide), 515
+Aripax (lorazepam), 437
+aripiprazole, 53
+Aristada (aripiprazole), 53
+Aristada Initio (aripiprazole injection), 53
+Arminol (sulpiride), 741
+armodafinil, 65
+Arol (moclobemide), 515
+Aropax (paroxetine), 593
+Artane (trihexyphenidyl), 809
+asenapine, 71
+Asendin (amoxapine), 33
+Asendis (amoxapine), 33
+Asepin (triazolam), 799
+Aspam (diazepam), 229
+Atarax (hydroxyzine), 355
+Atarviton (diazepam), 229
+
+
+
+
+<<<PAGE 2575>>>
+
+Belix (diphenhydramine), 235
+Belpax (amitriptyline), 25
+Belseren (clorazepate), 185
+Belsomra (suvorexant), 747
+Benadryl (diphenhydramine), 235
+Benpon (nortriptyline), 551
+Bentapam (diazepam), 229
+Benylin (diphenhydramine), 235
+Benzopin (diazepam), 229
+Benzotran (oxazepam), 569
+benztropine, 85
+Berk-Dothiepin (dothiepin), 249
+Besitran (sertraline), 721
+Bespar (buspirone), 123
+Betamaks (sulpiride), 741
+Betamed (diazepam), 229
+Betapam (diazepam), 229
+Bialzepam (diazepam), 229
+Bikalm (zolpidem), 871
+Bioperidolo (haloperidol), 347
+Bioxetin (fluoxetine), 301
+Biron (buspirone), 123
+Biscasil (chlorpromazine), 153
+Biston (carbamazepine), 131
+blonanserin, 89
+Bolvidon (mianserin), 495
+Bortalium (diazepam), 229
+bremelanotide, 95
+
+
+
+
+<<<PAGE 2576>>>
+
+brexanolone, 99
+brexpiprazole, 103
+Brisdelle (paroxetine), 593
+Brintellix (vortioxetine), 853
+BritLofex (lofexidine), 427
+Buprenex (buprenorphine), 111
+buprenorphine, 111
+buprenorphine with naloxone, 111
+bupropion, 117
+bupropion SR, 117
+bupropion XL, 117
+Buscalm (buspirone), 123
+Buspar (buspirone), 123
+BuSpar (buspirone), 123
+Buspimen (buspirone), 123
+buspirone, 123
+Buspisal (buspirone), 123
+Buteridol (haloperidol), 347
+Butrans (buprenorphine), 111
+Calmoflorine (sulpiride), 741
+Camcolit (lithium), 415
+Campral (acamprosate), 1
+Caplyta (lumateperone), 451
+caprylidene, 127
+Caprysin (clonidine), 179
+Carbabeta (carbamazepine), 131
+Carbagamma (carbamazepine), 131
+carbamazepine, 131
+
+
+
+
+<<<PAGE 2577>>>
+
+Carbapin (carbamazepine), 131
+Carbatrol (carbamazepine), 131
+Carbium (carbamazepine), 131
+Carbolith (lithium), 415
+Carbolithium (lithium), 415
+Carbymal (carbamazepine), 131
+Cardilac (fluphenazine), 313
+cariprazine, 137
+Carpaz (carbamazepine), 131
+Cassadan (alprazolam), 11
+Cassipa (buprenorphine with naloxone), 111
+Catanidin (clonidine), 179
+Catapres (clonidine), 179
+Catapres-TTS (clonidine), 179
+Cedrol (zolpidem), 871
+Celexa (citalopram), 159
+Cenilene (fluphenazine), 313
+Centedrin (d,l-methylphenidate), 487
+Cereen (haloperidol), 347
+Championyl (sulpiride), 741
+Champix (varenicline), 837
+Chantix (varenicline), 837
+Chemmart (escitalopram), 269
+Chlorazin (chlorpromazine), 153
+chlordiazepoxide, 147
+Chlorpromazin (chlorpromazine), 153
+Chlorpromazina HCl (chlorpromazine), 153
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2579>>>
+
+Concerta (d,l-methylphenidate), 487
+Concordin (protriptyline), 657
+Concordine (protriptyline), 657
+Consta (risperidone), 687
+Contemnol (lithium), 415
+Contrave (naltrexone/bupropion), 541
+Control (lorazepam), 437
+Convulex (valproate), 829
+Convulsofin (valproate), 829
+Cosmopril (selegiline), 705
+Cotempla XR-ODT (d, l-methylphenidate), 487
+cyamemazine, 201
+Cymbalta (duloxetine), 263
+Cytomel (triiodothyronine), 813
+Dalcipran (milnacipran), 503
+Dalmadorm (flurazepam), 321
+Dalmane (flurazepam), 321
+Dalparan (zolpidem), 871
+Dapotum (fluphenazine), 313
+Dapotum Acutum (fluphenazine), 313
+Dapotum D (fluphenazine), 313
+Dapotum Depot (fluphenazine), 313
+Daprimen (amitriptyline), 25
+Darkene (flunitrazepam), 297
+Darleton (sulpiride), 741
+Daytrana (d, l-methylphenidate), 487
+Dayvigo (lemborexant), 395
+Decafen (fluphenazine), 313
+
+
+
+
+<<<PAGE 2580>>>
+
+Decanoate (haloperidol), 347
+Decazate (fluphenazine), 313
+Decentan (fluphenazine), 313
+Decentan (perphenazine), 607
+Decentan-Depot (perphenazine), 607
+Defanyl (amoxapine), 33
+Defobin (chlordiazepoxide), 147
+Deftan (lofepramine), 421
+Degranol (carbamazepine), 131
+Delepsine (valproate), 829
+Delgian (maprotiline), 465
+Delsym (dextromethorphan), 225
+Demolox (amoxapine), 33
+Deniban (amisulpride), 17
+Denion (diazepam), 229
+Depacon (valproate), 829
+Depakene (valproate), 829
+Depakine (LA) (valproate), 829
+Depakine Chrono (valproate), 829
+Depakine Zuur (valproate), 829
+Depakote (valproate), 829
+Depakote ER (valproate), 829
+Depakote sprinkle (valproate), 829
+Depamide (valproate), 829
+Deparkin (valproate), 829
+Depex (sulpiride), 741
+Depixol (flupenthixol), 307
+Depixol-Conc (flupenthixol), 307
+
+
+
+
+<<<PAGE 2581>>>
+
+Deplin (l-methylfolate), 477
+Deprakine (valproate), 829
+Depral (sulpiride), 741
+Depramine (imipramine), 367
+Deprax (trazodone), 793
+Deprenon (fluoxetine), 301
+Deprenyl (selegiline), 705
+Depressase (maprotiline), 465
+Deprex (fluoxetine), 301
+Deprilan (selegiline), 705
+Deprilept (maprotiline), 465
+Deprimyl (lofepramine), 421
+Deprinocte (estazolam), 281
+Deprinol (imipramine), 367
+Depsin (mianserin), 495
+Deptran (doxepin), 255
+Deroxat (paroxetine), 593
+Desconex (loxapine), 443
+Desfax (desvenlafaxine), 215
+Desidox (doxepin), 255
+desipramine, 207
+Desisulpid (sulpiride), 741
+Desitriptylin (amitriptyline), 25
+desvenlafaxine, 215
+Desyrel (trazodone), 793
+deutetrabenazine, 221
+Devidon (trazodone), 793
+DexAlone (dextromethorphan), 225
+
+
+
+
+<<<PAGE 2582>>>
+
+Dexamphetamine (d-amphetamine), 39
+Dexamphetamine sulfate (d-amphetamine), 39
+Dexedrine (d-amphetamine), 39
+Dexedrine Spansules (d-amphetamine), 39
+Dexmethylphenidate (d-methylphenidate), 481
+dextromethorphan, 221
+Dextro Stat (d-amphetamine), 39
+Diaceplex (diazepam), 229
+Diaceplex simple (diazepam), 229
+Diapam (diazepam), 229
+Diaquel (diazepam), 229
+Diastat (diazepam), 229
+Diazemuls (diazepam), 229
+diazepam, 229
+Dibenil (diphenhydramine), 235
+Dicepin B6 (diazepam), 229
+Digton (sulpiride), 741
+Diligan (hydroxyzine), 355
+Dinalexin (fluoxetine), 301
+Diphen (diphenhydramine), 235
+diphenhydramine, 235
+Dipromal (valproate), 829
+Discimer (trifluoperazine), 803
+Distedon (diazepam), 229
+disulfiram, 239
+divalproex (valproate), 829
+Divial (lorazepam), 437
+Dixarit (clonidine), 179
+
+
+
+
+<<<PAGE 2583>>>
+
+Dixibon (sulpiride), 741
+Dizac (diazepam), 229
+DM (dextromethorphan), 225
+d-methylphenidate, 481
+Dobren (sulpiride), 741
+Dobupal (venlafaxine), 841
+Dogmatil (sulpiride), 741
+Dogmatyl (sulpiride), 741
+Dolmatil (sulpiride), 741
+Domical (amitriptyline), 25
+Dominans (nortriptyline), 551
+Domnamid (estazolam), 281
+DOM-trazodone (trazodone), 793
+donepezil, 243
+donepezil/memantine combination, 243 , 473
+Doneurin (doxepin), 255
+Donix (lorazepam), 437
+Dopress (dothiepin), 249
+Doral (quazepam), 663
+Dorken (clorazepate), 185
+Dorm (lorazepam), 437
+Dormalin (quazepam), 663
+Dormapam (temazepam), 755
+Dorme (quazepam), 663
+Dormicum (midazolam), 499
+Dormodor (flurazepam), 321
+Dothep (dothiepin), 249
+dothiepin, 249
+
+
+
+
+<<<PAGE 2584>>>
+
+Doxal (doxepin), 255
+Doxedyn (doxepin), 255
+doxepin, 255
+Dozic (haloperidol), 347
+D-Pam (diazepam), 229
+Drenian (diazepam), 229
+Dresent (sulpiride), 741
+Ducene (diazepam), 229
+duloxetine, 263
+Dumirox (fluvoxamine), 325
+Dumozolam (triazolam), 799
+Dumyrox (fluvoxamine), 325
+Duraclon (clonidine), 179
+Duract (dextromethorphan), 225
+Duradiazepam (diazepam), 229
+Duralith (lithium), 415
+Duraperidol (haloperidol), 347
+Durazepam (oxazepam), 569
+Durazolam (lorazepam), 437
+Dutonin (nefazodone), 545
+Dyanavel XR (amphetamine d,l), 45
+Eclorion (sulpiride), 741
+Edluar (zolpidem), 871
+Edronax (reboxetine), 681
+Efectin (venlafaxine), 841
+Efexir (venlafaxine), 841
+Efexor (venlafaxine), 841
+Efexor XL (venlafaxine), 841
+
+
+
+
+<<<PAGE 2585>>>
+
+Effexor (venlafaxine), 841
+Effexor XR (venlafaxine), 841
+Effiplen (buspirone), 123
+Egibren (selegiline), 705
+Eglonyl (sulpiride), 741
+Elavil (amitriptyline), 25
+Elavil Plus (amitriptyline), 25
+Eldepryl (selegiline), 705
+Elenium (chlordiazepoxide), 147
+Elepsia XR (levetiracetam), 399
+Eliwel (amitriptyline), 25
+Ellefore (desvenlafaxine), 215
+Elmendos (lamotrigine), 387
+Elopram (citalopram), 159
+Elperil (thioridazine), 759
+Elroquil N (hydroxyzine), 355
+Elvanse (lisdexamfetamine), 409
+Emdalen (lofepramine), 421
+Emsam (selegiline), 705
+EnBrace HR (l-methylfolate), 477
+Endep (amitriptyline), 25
+Enimon (sulpiride), 741
+Enlyte (l-methylfolate), 477
+Epial (carbamazepine), 131
+Epilim (valproate), 829
+Epitol (carbamazepine), 131
+Epitomax (topiramate), 781
+Equetro (carbamazepine), 131
+
+
+
+
+<<<PAGE 2586>>>
+
+Equilid (sulpiride), 741
+Equitam (lorazepam), 437
+Er Ding (lofexidine), 427
+Ergenyl (valproate), 829
+Ergocalm (lorazepam), 437
+Eridan (diazepam), 229
+Erocap (fluoxetine), 301
+escitalopram, 269
+Esculid (diazepam), 229
+Esilgan (estazolam), 281
+Esipride (sulpiride), 741
+Eskalith (lithium), 415
+Eskalith CR (lithium), 415
+Eskazine (trifluoperazine), 803
+esketamine, 275
+Esparon (alprazolam), 11
+estazolam, 281
+Estorra (eszopiclone), 285
+eszopiclone, 285
+Ethipam (diazepam), 229
+Ethipramine (imipramine), 367
+Euhypnos (temazepam), 755
+Euipnos (temazepam), 755
+Eurosan (diazepam), 229
+Eutimil (paroxetine), 593
+Eutimox (fluphenazine), 313
+Evacalm (diazepam), 229
+Evekeo (amphetamine d,l), 45
+
+
+
+
+<<<PAGE 2587>>>
+
+Everiden (valproate), 829
+Exan (buspirone), 123
+Excegran (zonisamide), 875
+Exelon (rivastigmine), 699
+Exogran (zonisamide), 875
+Exostrept (fluoxetine), 301
+Fanapt (iloperidone), 359
+Fardalan (sulpiride), 741
+Fargenor (chlordiazepoxide), 147
+Faustan (diazepam), 229
+Faverin (fluvoxamine), 325
+Fazaclo ODT (clozapine), 191
+Felicium (fluoxetine), 301
+Felison (flurazepam), 321
+Fenactil (chlorpromazine), 153
+Fentazin (perphenazine), 607
+Fetzima (levomilnacipran), 403
+Fevarin (fluvoxamine), 325
+Fidelan (sulpiride), 741
+Finlepsin (carbamazepine), 131
+Flaracantyl (thioridazine), 759
+flibanserin, 289
+Flonital (fluoxetine), 301
+Floxyfral (fluvoxamine), 325
+Fluanxol (flupenthixol), 307
+Fluanxol Depot (flupenthixol), 307
+Fluanxol Depot 10% (flupenthixol), 307
+Fluanxol Depot 2% (flupenthixol), 307
+
+
+
+
+<<<PAGE 2594>>>
+
+Ladose (fluoxetine), 301
+Lambipol (lamotrigine), 387
+Lamictal (lamotrigine), 387
+Lamictin (lamotrigine), 387
+lamotrigine, 387
+Lamra (diazepam), 229
+Lanexat (flumazenil), 293
+Lantanon (mianserin), 495
+Largactil (chlorpromazine), 153
+Largatrex (chlorpromazine), 153
+Laroxyl (amitriptyline), 25
+Latuda (lurasidone), 457
+Laubeel (lorazepam), 437
+Lauracalm (lorazepam), 437
+Lebopride (sulpiride), 741
+Lelptilan (valproate), 829
+Lelptilanil (valproate), 829
+lemborexant, 395
+Lentizol (amitriptyline), 25
+Lentolith (lithium), 415
+Lentotran (chlordiazepoxide), 147
+Leponex (clozapine), 191
+Leptilin (valproate), 829
+Lerivon (mianserin), 495
+Leukominerase (lithium), 415
+Levanxol (temazepam), 755
+levetiracetam, 399
+levomilnacipran, 403
+
+
+
+
+<<<PAGE 2598>>>
+
+Majorpin (zotepine), 883
+Mallorol (thioridazine), 759
+Maludil (maprotiline), 465
+Mandro-Zep (diazepam), 229
+Manerix (moclobemide), 515
+Maniprex (lithium), 415
+Mapro Gry (maprotiline), 465
+Mapro Tablinen (maprotiline), 465
+Maprolu (maprotiline), 465
+Maprolu-50 (maprotiline), 465
+Maprostad (maprotiline), 465
+Maprotibene (maprotiline), 465
+Maprotilin (maprotiline), 465
+maprotiline, 465
+Marax (hyroxyzine), 355
+Mareen 50 (doxepin), 255
+Mariastel (sulpiride), 741
+Marplan (isocarboxazid), 375
+Martimil (nortriptyline), 551
+Masmoran (hydroxyzine), 355
+Maveral (fluvoxamine), 325
+Maximed (protriptyline), 657
+Maxivalet (amitriptyline), 25
+Mazepine (carbamazepine), 131
+Medipam (diazepam), 229
+Medopam (oxazepam), 569
+Mefurine (thioridazine), 759
+Megaphen (chlorpromazine), 153
+
+
+
+
+<<<PAGE 2599>>>
+
+Meilax (loflazepate), 431
+Meleril (thioridazine), 759
+Melipramin (imipramine), 367
+Melipramine (imipramine), 367
+Mellaril (thioridazine), 759
+Melleretten (thioridazine), 759
+Melleril (thioridazine), 759
+Melzine (thioridazine), 759
+Memac (donepezil), 243
+memantine, 473
+memantine/donepezil combination, 243 , 473
+memantine XR, 473
+Menfazona (nefazodone), 545
+Menrium (chlordiazepoxide), 147
+Mepizin (oxazepam), 569
+Meresa (sulpiride), 741
+Merlit (lorazepam), 437
+Metadate CD (d,l-methylphenidate), 487
+Metadate ER (d,l-methylphenidate), 487
+Metafolin (l-methylfolate), 477
+Metamidol (diazepam), 229
+methyfolate (l), 477
+Methylin (d,l-methylphenidate), 487
+Methylin ER (d,l-methylphenidate), 487
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Metylyl (desipramine), 207
+Miabene (mianserin), 495
+
+
+
+
+<<<PAGE 2600>>>
+
+Mialin (alprazolam), 11
+Mianeurin (mianserin), 495
+Miansan (mianserin), 495
+mianserin, 495
+Miansin (mianserin), 495
+Miaxan (mianserin), 495
+midazolam, 499
+Milithin (lithium), 415
+milnacipran, 503
+Minipress (prazosin), 643
+Minizide (prazosin), 643
+Mipralin (imipramine), 367
+Mirbanil (sulpiride), 741
+Mirenil (fluphenazine), 313
+Mirenil Prolongatum (fluphenazine), 313
+Mirfat (clonidine), 179
+Mirfudorm (oxazepam), 569
+Mirpan (maprotiline), 465
+mirtazapine, 509
+Moban (molindone), 527
+Mocloamine (moclobemide), 515
+moclobemide, 515
+modafinil, 521
+Modalina (trifluoperazine), 803
+Modecate (fluphenazine), 313
+Modiodal (modafinil), 521
+Moditen (fluphenazine), 313
+Moditen Action Prolongee (fluphenazine), 313
+
+
+
+
+<<<PAGE 2602>>>
+
+Napoton (chlordiazepoxide), 147
+Narcozep (flunitrazepam), 297
+Nardelzine (phenelzine), 613
+Nardil (phenelzine), 613
+Narol (buspirone), 123
+Navane (thiothixene), 765
+Navicalm (hydroxyzine), 355
+Nefadar (nefazodone), 545
+nefazodone, 545
+Nefirel (nefazodone), 545
+Neo Gnostoride (chlordiazepoxide), 147
+Neodorm SP (temazepam), 755
+Neoride (sulpiride), 741
+Neurol (alprazolam), 11
+Neurolepsin (lithium), 415
+Neurolithium (lithium), 415
+Neurolytril (diazepam), 229
+Neurontin (gabapentin), 331
+Neurotol (carbamazepine), 131
+Neurotop (carbamazepine), 131
+Nevropromazine (chlorpromazine), 153
+Nicoflox (fluoxetine), 301
+Nifalin (lorazepam), 437
+Nilium (flunitrazepam), 297
+Niotal (zolpidem), 871
+Nipolept (zotepine), 883
+Nivalin (galantamine), 337
+Noam (diazepam), 229
+
+
+
+
+<<<PAGE 2603>>>
+
+Noan-Gap (lorazepam), 437
+Noctazepam (oxazepam), 569
+Noctran (clorazepate), 185
+Nocturne (temazepam), 755
+Nomapam (temazepam), 755
+Noneston (sulpiride), 741
+Nopress (nortriptyline), 551
+Nordotol (carbamazepine), 131
+Norebox (reboxetine), 681
+Norestran (sulpiride), 741
+Norfenazin (nortriptyline), 551
+Noriel (flunitrazepam), 297
+Noriline (nortriptyline), 551
+Noripam (oxazepam), 569
+Noritren (nortriptyline), 551
+Norkotral N (oxazepam), 569
+Norkotral Tema (temazepam), 755
+Normison (temazepam), 755
+Normum (sulpiride), 741
+Norpramin (desipramine), 207
+Northiaden (dothiepin), 249
+Nortimil (desipramine), 207
+Nortix (nortriptyline), 551
+Nortrilen (nortriptyline), 551
+Nortriptilin (nortriptyline), 551
+nortriptyline, 551
+Norval (mianserin), 495
+Nova-Pam (chlordiazepoxide), 147
+
+
+
+
+<<<PAGE 2604>>>
+
+Novazam (diazepam), 229
+Novhepar (lorazepam), 437
+Novo-Alprazol (alprazolam), 11
+Novo-Carbamaz (carbamazepine), 131
+Novo-Clonidine (clonodine), 179
+Novo-Clopamine (clomipramine), 165
+Novo-Clopate (clorazepate), 185
+Novodorm (triazolam), 799
+Novo-Doxepin (doxepin), 255
+Novo-fluoxetine (fluoxetine), 301
+Novo-Hydroxyzine (hydroxyzine), 355
+Novo-Lorazem (lorazepam), 437
+Novo-Maprotiline (maprotiline), 465
+Novo-Peridol (haloperidol), 347
+Novoprotect (amitriptyline), 25
+Novo-Selegine (selegiline), 705
+Novo-Trazodone (trazodone), 793
+Novo-Trimipramine (trimipramine), 817
+Novo-Triolam (triazolam), 799
+Novo-Valproic (valproate), 829
+Nozepams (oxazepam), 569
+Nu-Alpraz (alprazolam), 11
+Nu-Carbamazepine (carbamazepine), 131
+Nu-Clonidine (clonidine), 179
+Nuctalon (estazolam), 281
+Nuedexta (dextromethorphan with quinidine), 225
+Nufarol (sulpiride), 741
+Nulans (lorazepam), 437
+
+
+
+
+<<<PAGE 2605>>>
+
+Nu-Loraz (lorazepam), 437
+Nuplazid (pimavanserin), 623
+Nu-Trazodone (trazodone), 793
+Nu-Trimipramine (trimipramine), 817
+Nuvigil (armodafinil), 65
+Nycoflox (fluoxetine), 301
+Nylipark (sulpiride), 741
+Oasil (chlordiazepoxide), 147
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+Olasek (olanzapine), 559
+Oleptro (trazodone XR), 793
+Omaha (sulpiride), 741
+Omca (fluphenazine), 313
+Omiryl (sulpiride), 741
+Omnali Esteve (chlordiazepoxide), 147
+Omnipress (amoxapine), 33
+Oniria (quazepam), 663
+Opamin (oxazepam), 569
+Opamox (oxazepam), 569
+Opiran (pimozide), 627
+Orap (pimozide), 627
+Orfidal (lorazepam), 437
+Orfilept (valproate), 829
+Orfiril (valproate), 829
+Orfiril Retard (valproate), 829
+Ormodon (temazepam), 755
+Orsanil (thioridazine), 759
+
+
+
+
+<<<PAGE 2606>>>
+
+Orthon (fluoxetine), 301
+Oxabenz (oxazepam), 569
+Oxahexal (oxazepam), 569
+Oxaline (oxazepam), 569
+Oxanid (oxazepam), 569
+Oxapam (oxazepam), 569
+Oxapax (oxazepam), 569
+Oxaphar (oxazepam), 569
+Oxa-Puren (oxazepam), 569
+Oxascand (oxazepam), 569
+oxazepam, 569
+oxcarbazepine, 575
+Oxepam (oxazepam), 569
+Oxepam Expidet (oxazepam), 569
+Ox-Pam (oxazepam), 569
+Oxtellar XR (oxcarbazepine), 575
+Oxyperazine (trifluoperazine), 803
+Ozodeprin (sulpiride), 741
+Paceum (diazepam), 229
+Pacinol (fluphenazine), 313
+Pacium (diazepam), 229
+paliperidone, 581
+Pamelor (nortriptyline), 551
+Panix (alprazolam), 11
+Pantrop Retard (chlordiazepoxide), 147
+Paracefan (clonidine), 179
+Paratil (sulpiride), 741
+Parkinyl (selegiline), 705
+
+
+
+
+<<<PAGE 2610>>>
+
+Propaphenin (chlorpromazine), 153
+propranolol, 653
+Propymal (valproate), 829
+Prosedar (quazepam), 663
+ProSom (estazolam), 281
+Prosulpin (sulpiride), 741
+Prothiaden (dothiepin), 249
+Protiaden (dothiepin), 249
+protriptyline, 657
+Provigil (modafinil), 521
+Proxam (oxazepam), 569
+Prozac (fluoxetine), 301
+Prozil (chlorpromazine), 153
+Prozin (chlorpromazine), 153
+Prozyn (fluoxetine), 301
+Pryleugan (imipramine), 367
+Psicocen (sulpiride), 741
+Psicofar (chlordiazepoxide), 147
+Psiquiwas (oxazepam), 569
+Psychopax (diazepam), 229
+Psymoin (maprotiline), 465
+PT-141 (bremelanotide), 95
+Punktyl (lorazepam), 437
+Purata (oxazepam), 569
+Q-Med Hydroxyzine (hydroxyzine), 355
+Qsymia (phentermine/topiramate), 619
+Quait (lorazepam), 437
+Quastil (sulpiride), 741
+
+
+
+
+<<<PAGE 2611>>>
+
+quazepam, 663
+Quazium (quazepam), 663
+Qudexy (topiramate), 781
+Qudexy SR (topiramate), 781
+quetiapine, 667
+Quiedorm (quazepam), 663
+Quilibrex (oxazepam), 569
+QuilliChew ER (methylphenidate d,l), 487
+Quillivant XR (methylphenidate d,l), 487
+Quilonum (lithium), 415
+Quilonum Retard (lithium), 415
+Quinolorm (lithium), 415
+Quinolorm Retard (lithium), 415
+Quiridil (sulpiride), 741
+Quitaxon (doxepin), 255
+Radepur (chlordiazepoxide), 147
+ramelteon, 677
+Razadyne (galantamine), 337
+Razadyne ER (galantamine), 337
+Razolam (alprazolam), 11
+Reagila (cariprazine), 137
+reboxetine, 681
+Redomex (amitriptyline), 25
+Redomex Diffucaps (amitriptyline), 25
+Regepar (selegiline), 705
+Rekynda (bremelanotide), 95
+Relanium (diazepam), 229
+Relax Sedans (chlordiazepoxide), 147
+
+
+
+
+<<<PAGE 2612>>>
+
+Relaxedans (chlordiazepoxide), 147
+Reliberan (chlordiazepoxide), 147
+Relistor (naltrexone), 537
+Relprevv (olanzapine), 559
+Remdue (flurazepam), 321
+Remergil (mirtazapine), 509
+Remeron (mirtazapine), 509
+Remestan (temazepam), 755
+Reminyl (galantamine), 337
+Reneuron (fluoxetine), 301
+Repazine (chlorpromazine), 153
+Reposium (temazepam), 755
+Reseril (nefazodone), 545
+Restful (sulpiride), 741
+Restoril (temazepam), 755
+Retinyl (maprotiline), 465
+Reval (diazepam), 229
+Revatio (sildenafil), 729
+Revia (naltrexone), 537
+Rexer (mirtazapine), 509
+Rexulti (brexpiprazole), 103
+Rho-Doxepin (doxepin), 255
+Rho-Fluphenazine Decanoate (fluphenazine), 313
+Rho-Haloperidol (haloperidol), 347
+Rho-Trimine (trimipramine), 817
+Ridazine (thioridazine), 759
+Rilamir (triazolam), 799
+Rimarix (moclobemide), 515
+
+
+
+
+<<<PAGE 2617>>>
+
+sodium oxybate, 733
+Softramal (clorazepate), 185
+Solarix (moclobemide), 515
+Solian (amisulpride), 17
+Solidon (chlorpromazine), 153
+Solis (diazepam), 229
+solriamfetol, 737
+Somagerol (lorazepam), 437
+Somapam (temazepam), 755
+Somatarax (hydroxyzine), 355
+Sominex (diphenhydramine), 235
+Somniton (triazolam), 799
+Somnium (lorazepam), 437
+Somnol (flurazepam), 321
+Somnubene (flunitrazepam), 297
+Sonata (zaleplon), 859
+Songar (triazolam), 799
+Sovigen (zolpidem), 871
+Spasmilan (buspirone), 123
+Spasmo Praxiten (oxazepam), 569
+Sporalon (trifluoperazine), 803
+Spravato (esketamine), 275
+Spritam (levetiracetam), 399
+Stablon (tianeptine), 777
+Stalleril (thioridazine), 759
+Stamoneurol (sulpiride), 741
+Staurodorm (flurazepam), 321
+Staurodorm Neu (flurazepam), 321
+
+
+
+
+<<<PAGE 2618>>>
+
+Stavzor (valproate), 829
+Stazepine (carbamazepine), 131
+Stedon (diazepam), 229
+Stelabid (trifluoperazine), 803
+Stelabid forte (trifluoperazine), 803
+Stelabid mite (trifluoperazine), 803
+Stelazine (trifluoperazine), 803
+Stelbid (trifluoperazine), 803
+Stelbid forte (trifluoperazine), 803
+Stelium (trifluoperazine), 803
+Stelminal (amitriptyline), 25
+Stephadilat (fluoxetine), 301
+Stesolid (diazepam), 229
+Stilnoct (zolpidem), 871
+Stilnox (zolpidem), 871
+Strattera (atomoxetine), 79
+Stressigal (buspirone), 123
+Sublocade (buprenorphine injection), 111
+Suboxone (buprenorphine with naloxone), 111
+Subutex (buprenorphine), 111
+Sulamid (amisulpride), 17
+Sulp (sulpiride), 741
+Sulparex (sulpiride), 741
+Sulpiphar (sulpiride), 741
+Sulpirid (sulpiride), 741
+sulpiride, 741
+Sulpiryd (sulpiride), 741
+Sulpitil (sulpiride), 741
+
+
+
+
+<<<PAGE 2619>>>
+
+Sulpivert (sulpiride), 741
+Sulpril (sulpiride), 741
+Sunosi (solriamfetol), 737
+Suprium (sulpiride), 741
+Surmontil (trimipramine), 817
+suvorexant, 747
+Suxidina (oxazepam), 569
+Sylador (haloperidol), 347
+Symbyax (olanzapine/fluoxetine combination), 301 , 559
+Synedil (sulpiride), 741
+Synedil Fort (sulpiride), 741
+Syneudon 50 (amitriptyline), 25
+Tafil (alprazolam), 11
+Tagonis (paroxetine), 593
+Tardotol (carbamazepine), 131
+Taro-Carbamazepine (carbamazepine), 131
+tasimelteon, 751
+Tatanka (alprazolam), 11
+Tatig (sertraline), 721
+Tatinol (tianeptine), 777
+Tavor (lorazepam), 437
+Tazepam (oxazepam), 569
+Tegretal (carbamazepine), 131
+Tegretol (carbamazepine), 131
+Tegretol LP (carbamazepine), 131
+Teledomin (milnacipran), 503
+Temador (temazepam), 755
+Temaze (temazepam), 755
+
+
+
+
+<<<PAGE 2620>>>
+
+temazepam, 755
+Temesta (lorazepam), 437
+Temodal (quazepam), 663
+Temporal Slow (carbamazepine), 131
+Temporol (carbamazepine), 131
+Temtabs (temazepam), 755
+Tenex (guanfacine), 343
+Tenox (temazepam), 755
+Tensispes (buspirone), 123
+Tensium (diazepam), 229
+Tensopam (diazepam), 229
+Tenso-Timelets (clonidine), 179
+Tepavil (sulpiride), 741
+Tepazepam (diazepam), 229
+Tepazepam (sulpiride), 741
+Teperin (amitriptyline), 25
+Teralithe (lithium), 415
+Tercian (cyamemazine), 201
+Terfluoperazine (perphenazine), 607
+Terflurazine (trifluoperazine), 803
+Terfluzin (trifluoperazine), 803
+Teril (carbamazepine), 131
+Tetrabenazine D6 (deutetrabenazine), 221
+Texapam (temazepam), 755
+Thaden (dothiepin), 249
+thioridazine, 759
+thiothixene, 765
+Thombran (trazodone), 793
+
+
+
+
+<<<PAGE 2624>>>
+
+Tryptizol (amitriptyline), 25
+Tydamine (trimipramine), 817
+Tymelyt (lofepramine), 421
+Ucerax (hydroxyzine), 355
+Umbrium (diazepam), 229
+Unilan (alprazolam), 11
+Unisedil (diazepam), 229
+Unitranxene (clorazepate), 185
+U-Pan (lorazepam), 437
+Uskan (oxazepam), 569
+Valaxona (diazepam), 229
+Valclair (chlordiazepoxide), 147
+valbenazine, 825
+Valclair (diazepam), 229
+Valcote 250 (valproate), 829
+Valdorm (flurazepam), 321
+Valdoxan (agomelatine), 5
+Valeans (alprazolam), 11
+Valinil (diazepam), 229
+Valiquid (diazepam), 229
+Valiquid 0.3 (diazepam), 229
+Valirem (sulpiride), 741
+Valium (diazepam), 229
+Valocordin Diazepam (diazepam), 229
+Valparine (valproate), 829
+Valpro (valproate), 829
+valproate, 829
+
+
+
+
+<<<PAGE 2625>>>
+
+valproic acid (valproate), 829
+valpromide (valproate), 829
+Valsera (flunitrazepam), 297
+Vandral (venlafaxine), 841
+varenicline, 837
+Vatran (diazepam), 229
+Venefon (imipramine), 367
+venlafaxine, 841
+venlafaxine XR, 841
+Versacloz (clozapine), 191
+Versed (midazolam), 499
+Vertigo (sulpiride), 741
+Vesadol (haloperidol), 347
+Vesalium (haloperidol), 347
+Vesparax (hydroxyzine), 355
+Vesparax mite (hydroxyzine), 355
+Vesparax Novum (hydroxyzine), 355
+Viagra (sildenafil), 729
+Vicks Formula 44 (diphenhydramine), 235
+Vigiten (lorazepam), 437
+Viibryd (vilazodone), 847
+vilazodone, 847
+Vincosedan (diazepam), 229
+Visergil (thioridazine), 759
+Vistaril (hydroxyzine), 355
+Vivactil (protriptyline), 657
+Vival (diazepam), 229
+Vivapryl (selegiline), 705
+
+
+
+
+<<<PAGE 2626>>>
+
+Vividyl (nortriptyline), 551
+Vivitrol (naltrexone), 537
+Vivol (diazepam), 229
+vortioxetine, 853
+Vraylar (cariprazine), 137
+Vulbegal (flunitrazepam), 297
+Vulpral (valproate), 829
+Vyleesi (bremelanotide), 95
+Vyvanse (lisdexamfetamine), 409
+Wakix (pitolisant), 639
+Wellbatrin (bupropion), 117
+Wellbutrin (bupropion), 117
+Wellbutrin SR (bupropion SR), 117
+Wellbutrin XL (bupropion XL), 117
+Xanax (alprazolam), 11
+Xanax XR (alprazolam XR), 11
+Xanor (alprazolam), 11
+Xepin (doxepin), 255
+Xeplion (paliperidone), 581
+Xyrem (sodium oxybate), 733
+Zactin (fluoxetine), 301
+Zafrionil (haloperidol), 347
+zaleplon, 859
+Zelapon (selegiline), 705
+Zemorcon (sulpiride), 741
+Zentiva (aripiprazole), 53
+
+
+
+
+<<<PAGE 2627>>>
+
+Zenzedi (amphetamine d), 39
+Zeptol (carbamazepine), 131
+Zerenal (dothiepin), 249
+ziprasidone, 863
+Ziprexa (olanzapine), 559
+Zispin (mirtazapine), 509
+Zoleptil (zotepine), 883
+Zoloft (sertraline), 721
+zolpidem, 871
+Zolpimist (zolpidem), 871
+Zonalon (doxepin), 255
+Zonegran (zonisamide), 875
+zonisamide, 875
+Zopax (alprazolam), 11
+zopiclone, 879
+Zopite (zotepine), 883
+zotepine, 883
+Z-Pam (temazepam), 755
+Zubsolv (buprenorphine with naloxone), 111
+zuclopenthixol, 889
+Zuledin (chlorpromazine), 153
+Zulex (acamprosate), 1
+Zulresso (brexanolone), 99
+Zyban (bupropion), 117
+Zymocomb (sulpiride), 741
+Zyprexa (olanzapine), 559
+Zyprexa Relprevv (olanzapine), 559
+Zyprexa Zydis (olanzapine), 559
+
+
+
+
+<<<PAGE 2639>>>
+
+maprotiline , 465
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+mianserin, 495
+milnacipran, 503
+mirtazapine , 509
+moclobemide, 515
+modafinil (adjunct), 521
+nefazodone , 545
+nortriptyline , 551
+olanzapine, 559
+paliperidone, 581
+paroxetine , 593
+phenelzine , 613
+protriptyline , 657
+quetiapine (adjunct) , 667
+reboxetine, 681
+risperidone, 687
+selegiline , 705
+sertindole, 715
+sertraline , 721
+sulpiride, 741
+tianeptine, 777
+tranylcypromine , 787
+trazodone , 793
+triiodothyronine, 813
+trimipramine , 817
+venlafaxine , 841
+
+
+
+
+<<<PAGE 2651>>>
+
+lamotrigine (adjunct), 387
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin , 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+valproate (divalproex) (adjunct), 829
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Restless leg syndrome
+gabapentin ER , 331
+Schizoaffective disorder
+
+
+
+
+<<<PAGE 2652>>>
+
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine, 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol, 347
+iloperidone, 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct), 477
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone , 581
+perospirone, 601
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+
+
+
+
+<<<PAGE 2654>>>
+
+paliperidone , 581
+perospirone, 601
+perphenazine , 607
+pipothiazine, 633
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine , 759
+thiothixene , 765
+trifluoperazine , 803
+valproate (divalproex) (adjunct), 829
+ziprasidone , 863
+zotepine, 883
+zuclopenthixol, 889
+Seasonal affective disorder
+bupropion , 117
+Sedation-induction
+hydroxyzine , 355
+ketamine, 383
+midazolam , 499
+Seizure disorders
+carbamazepine , 131
+clonazepam , 173
+clorazepate (adjunct), 185
+diazepam , 229
+
+
+
+
+<<<PAGE 2661>>>
+
+iloperidone, 359
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin, 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Anxiolytics
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone, 123
+
+

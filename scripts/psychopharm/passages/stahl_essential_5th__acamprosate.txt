@@ -1,0 +1,437 @@
+<<<PAGE 572>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+(N-methyl-D-aspartate) receptors and at postsynaptic
+mGluR receptors (Figure 13-15).
+Alcohol’s reinforcing effects are theoretically mediated
+not only by its effects at GABA and glutamate synapses,
+causing downstream dopamine release in the mesolimbic
+pathway, but also by actions at opioid synapses within
+mesolimbic reward circuitry (Figure 13-15). Opioid
+neurons arise in the arcuate nucleus and project to the
+VTA, synapsing on both glutamate and GABA neurons.
+The net result of alcohol actions on opioid synapses is
+thought to be the release of dopamine in the nucleus
+acccumbens (Figure 13-15). Alcohol may do this by either
+directly acting upon μ-opioid receptors or by releasing
+endogenous opioids such as β-endorphin.
+Treatment of Alcoholism
+
+The actions of alcohol on opioid synapses create the
+rationale for blocking μ-opioid receptors with antagonists
+such as naltrexone or nalmefene (Figure 13-16).
+Naltrexone and nalmefene (approved outside the US)
+are μ-opioid antagonists that hypothetically block the
+euphoria and “high” of heavy drinking. This theory is
+supported by clinical trials that show that naltrexone
+given either orally or by a 30-day-long acting injection
+reduces days of heavy drinking (defined as five or more
+drinks per day for a man and four or more for a woman)
+and also increases the chances of attaining complete
+abstinence from alcohol. If you drink when you take an
+opioid antagonist, the opioids released by alcohol do not
+lead to pleasure, so why bother drinking? Some patients
+may also say, why bother taking the opioid antagonist,
+of course, and relapse back into drinking alcohol.
+Thus, a long-acting injection may be preferable but,
+unfortunately, hardly any of this is prescribed.
+Acamprosate is a derivative of the amino acid
+taurine and interacts with both the glutamate system
+to inhibit it, and with the GABA system to enhance it,
+a bit like a form of “artificial alcohol” (compare Figure
+13-15 with Figure 13-17). Thus, when alcohol is taken
+chronically and then withdrawn, the adaptive changes
+that it hypothetically causes in both the glutamate
+system and the GABA system create a state of glutamate
+overexcitement and even excitotoxicity as well as GABA
+deficiency. To the extent that acamprosate can substitute
+for alcohol in patients during withdrawal, the actions of
+acamprosate mitigate the glutamate hyperactivity and
+the GABA deficiency (Figure 13-17). This occurs because
+acamprosate appears to have direct blocking actions on
+certain glutamate receptors, particularly mGluR receptors
+
+556
+
+(specifically mGlu5 and perhaps mGlu2). One way or
+another, acamprosate apparently reduces the glutamate
+release associated with alcohol withdrawal (Figure 1317). Actions, if any, at NMDA receptors may be indirect,
+as are actions at GABA systems, both of which may be
+secondary downstream effects from acamprosate’s actions
+on mGluR receptors (Figure 13-17). Although approved,
+acamprosate is not prescribed very often.
+Disulfiram is the classic drug for treating alcoholism.
+It is an irreversible inhibitor of the liver enzyme aldehyde
+dehydrogenase that normally metabolizes alcohol.
+When alcohol is ingested in the presence of disulfiram,
+alcohol’s metabolism is inhibited and the result is the
+build-up of toxic levels of acetaldehyde. This creates an
+aversive experience with flushing, nausea, vomiting,
+and hypotension, hopefully conditioning the patient to
+a negative rather than positive response to drinking.
+Obviously, compliance is a problem with this agent, and
+its aversive reactions are occasionally dangerous. Use of
+disulfiram was greater in the past and is not prescribed
+very often today.
+Unapproved agents that may be effective in treating
+alcoholism include the anticonvulsant topiramate and
+the 5HT3 antagonist ondansetron. Several other agents
+are used “off-label,” especially in Europe. The subject of
+how to treat alcohol abuse and dependence is obviously
+complex, and any psychopharmacological treatment
+for alcoholism is more effective when integrated with
+appropriate psychopharmacological treatment of
+comorbid psychiatric disorders, as well as with structured
+therapies such as 12-step programs, a topic which is
+beyond the scope of this text.
+Sedative Hypnotics
+
+Sedative hypnotics include barbiturates and related agents
+such as ethchlorvynol and ethinamate, chloral hydrate
+and derivatives, and piperidinedione derivatives such as
+glutethimide and methyprylon. Experts often include
+alcohol, benzodiazepines, (discussed in Chapter 8), and
+Z-drug hypnotics (discussed in Chapter 10) in this class
+as well. The mechanism of action of sedative hypnotics
+is basically thought to be the same as those described in
+Chapter 7 (on drugs for depression), Chapter 8 (on drugs
+for anxiety), and Chapter 10 (on drugs for insomnia) and
+illustrated in Figure 13-14, namely as positive allosteric
+modulators (PAMs) of either benzodiazepine-sensitive
+(Figure 13-14A) or benzodiazepine-insensitive (Figure
+13-14B) GABAA receptors, or both. Barbiturates are
+much less safe in overdose than benzodiazepines, cause
+
+
+
+
+<<<PAGE 574>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Actions of Acamprosate: Reducing Excessive Glutamate Release
+to Relieve Alcohol Withdrawal
+arcuate
+nucleus
+opioid
+neuron
+
+PFC
+Glu neuron
+
+VTA
+
+acamprosate
+VTA
+DA neuron
+
+GABA
+interneuron
+
+ß endorphin
+
+GABA A receptor
+
+Glu
+
+GABA B receptor
+
+GABA
+
+NMDA receptor
+
+DA
+
+mGluR receptor
+
+μ -opioid receptor
+VSCC
+acamprosate
+
+Figure 13-17 Actions of acamprosate in the ventral tegmental area (VTA). When alcohol is taken chronically and then withdrawn, the
+adaptive changes that it causes in both the glutamate system and the GABA system create a state of glutamate overexcitation as well
+as GABA deficiency. Acamprosate seems to reduce the glutamate release associated with alcohol withdrawal, presumably by blocking
+metabotropic glutamate receptors (mGluRs).
+
+558
+
+
+
+
+<<<PAGE 625>>>
+
+Suggested Reading and Selected References
+
+Koob GF, Le Moal M (2008) Addiction and the brain
+antireward system. Ann Rev Psychol 59: 29–53.
+Koob GF, Volkow ND (2010) Neurocircuitry of addiction.
+Neuropsychopharmacology 35: 217–38.
+Mandyam CD, Koob GF (2012) The addicted brain craves
+new neurons: putative role for adult-born progenitors in
+promoting recovery. Trends Neurosci 35: 250–60.
+Nestler EJ (2005) Is there a common molecular pathway for
+addiction? Nat Neurosci 11: 1445–9.
+Nutt DJ, Hughes AL, Erritzoe D, et al. (2015) The dopamine
+theory of addiction: 40 years of highs and lows. Nat Rev
+Neurosci 16: 305–22.
+Schneider S, Peters J, Bromberg U, et al. (2012) Risk taking
+and the adolescent reward system: a potential common
+link to substance abuse. Am J Psychiatry 169: 39–46.
+Solway A, Gu X, Montague PR (2017) Forgetting to be
+addicted: reconsolidation and the disconnection of things
+past. Biol Psychiatry 82: 774–5
+
+DeWitte P, Littleton J, Parot P, Koob G (2005) Neuroprotective
+and abstinence-promoting effects of acamprosate.
+Elucidating the mechanism of action. CNS Drugs 6:
+517–37.
+Garbutt JC, Kranzler HR, O’Malley SS, et al. (2005) Efficacy
+and tolerability of long-acting injectable naltrexone for
+alcohol dependence. A randomized controlled trial. JAMA
+293: 1617–25.
+Kiefer F, Wiedemann K (2004) Combined therapy: what does
+acamprosate and naltrexone combination tell us? Alcohol
+Alcohol 39: 542–7.
+Kiefer F, Jahn H, Tarnaske T, et al. (2003) Comparing and
+combining naltrexone and acamprosate in relapse
+prevention of alcoholism. Arch Gen Psychiatry 60: 92–9.
+Mann K, Bladstrom A, Torup T, et al. (2013) Extending the
+treatment options in alcohol dependence: a randomized
+controlled study of as-needed nalmefene. Biol Psychiatry
+73: 706–13.
+
+Volkow ND, Wang GJ, Fowler JS, Tomasi D, Telang F (2011)
+Addiction: beyond dopamine reward circuitry. Proc Natl
+Acad Sci USA 108: 15037–42.
+
+Martinez D, Gil R, Slifstein M, et al. (2005) Alcohol
+dependence is associated with blunted dopamine
+transmission in the ventral striatum. Biol Psychiatry 58:
+779–86.
+
+Substance Abuse: Alcohol
+
+Mason BJ (2003) Acamprosate and naltrexone treatment
+for alcohol dependence: an evidence-based risk-benefits
+assessment. Eur Neuropsychopharmacol 13: 469–75.
+
+Anton RF, O’Malley SS, Ciraulo DA, et al. (2006) Combined
+pharmacotherapies and behavioral interventions for
+alcohol dependence. The combine study: a randomized
+controlled trial. JAMA 295: 2003–17.
+Anton RF, Pettinati H, Zweben A, et al. (2004) A multi site
+dose ranging study of nalmefene in the treatment of
+alcohol dependence. J Clin Psychopharmacol 24: 421–8.
+Braus DH, Schumann G, Machulla HJ, Bares R, Mann K (2005)
+Correlation of stable elevations in striatal μ-opioid receptor
+availability in detoxified alcoholic patients with alcohol
+craving. A positron emission tomography study using carbon
+11-labeled carfentanil. Arch Gen Psychiatry 62: 57–64.
+Crevecoeur D, Cousins SJ, Denering L, et al. (2018)
+Effectiveness of extended release naltrexone to reduce
+alcohol cravings and use behaviors during treatment and at
+follow-up. J Subst Abuse Treat 85: 105–8.
+Dahchour A, DeWitte P (2003) Effects of acamprosate on
+excitatory amino acids during multiple ethanol withdrawal
+periods. Alcohol Clin Exp Res 3: 465–70.
+Dakwar E, Levin F, Hart CL, et al. (2020) A single ketamine
+infusion combined with motivational enhancement
+therapy for alcohol use disorder: a randomized
+midazolam controlled pilot study. Am J Psychiatry 172:
+125–33.
+DeWitte P (2004) Imbalance between neuroexcitatory and
+neuroinhibitory amino acids causes craving for ethanol.
+Addict Behav 29: 1325–39.
+
+Mason BJ (2005) Acamprosate in the treatment of alcohol
+dependence. Expert Opin Pharmacother 6: 2103–15.
+Mason BJ, Goodman AM, Chabac S, Lehert P (2006) Effect of
+oral acamprosate on abstinence in patients with alcohol
+dependence in a double-blind, placebo-controlled trial: the
+role of patient motivation. J Psychiatr Res 40: 382–92.
+Netzeband JG, Gruol DL (1995) Modulatory effects of acute
+ethanol on metabotropic glutamate responses in cultured
+Purkinje neurons. Brain Res 688: 105–13.
+O’Brien CO (2015) In treating alcohol use disorders, why
+not use evidence-based treatment? Am J Psychiatry 172:
+305–7.
+Palpacuer C, Duprez R, Huneau A, et al. (2017)
+Pharmacologically controlled drinking in the treatment
+of alcohol dependence or alcohol use disorders: a
+systematic review with direct and network meta analyses
+on nalmefene, naltrexone, acamprosate, baclofen and
+topiramate. Addiction 113: 220–37.
+Petrakis IL, Poling J, Levinson C (2005) Naltrexone and
+disulfiram in patients with alcohol dependence and
+comorbid psychiatric disorders. Biol Psychiatry 57:
+1128–37.
+Pettinati HM, O’Brien CP, Rabinowitz AR (2006) The status
+of naltrexone in the treatment of alcohol dependence.
+Specific effects on heavy drinking. J Clin Psychopharmacol
+26: 610–25.
+609
+
+
+
+
+<<<PAGE 631>>>
+
+Index
+5HT. See serotonin
+ABC model of apathy, 536
+abstinence, 571–4
+acamprosate, 556
+acetyl coenzyme A, 505
+acetylcholine, 5, 505–10
+dopamine and, 166
+acetylcholinesterase, 505
+acetylcholinesterase inhibition, 509–18
+action potential, 67, 73
+active site, 45, 46
+acute pain, 379, 380
+addiction, 476, 539
+behavioral, 575
+dopamine theory of, 542–3
+substance addictions, 544–75
+adenosine, 440
+ADHD (attention deficit hyperactivity
+disorder), 34, 449, 485, 539
+comorbidities, 466, 480
+neurodevelopment, 463–5
+oppositional symptoms, 484
+prefrontal cortex tuning, 454–63
+symptoms and circuits, 449–53
+treatments, future, 484
+treatments, NET inhibitors, 480–4
+treatments, stimulants, 467–79
+treatments, symptoms and, 466–7
+advanced sleep phase disorder, 435, 437
+affective blunting, 142
+affective disorders, 244
+affective symptoms, 95
+positive and negative, 278, 280, 306
+schizophrenia, 145
+aggression, 145–7, 521, 577–8
+agitation, 145, 521–3
+dementia, 145, 157, 197
+glutamate target, 533
+neuronal networks of, 528–30
+treatment, 523–4
+treatment, multimodal monoamine,
+530–2
+agomelatine, 306–8
+agonist spectrum, 37, 43, 45, 56–62, 184,
+192
+agonists, 57, 58
+full, 37–41, 56, 192
+inverse, 42, 44–5, 61, 62, 240
+no agonist, 37
+partial. See partial agonists
+
+AIMS (Abnormal Involuntary Movement
+scale), 174
+akathisia, 166, 169
+alcohol, 377, 553–6
+abstinence, 573
+co-addictions, 553
+treatment of alcoholism, 556
+alcohol abuse, 378
+allodynia, 380
+allopregnanolone, 320, 322
+allosteric modulation, 64–6, 261, 262
+alogia, 142
+alpha-1 antagonism, 216, 225, 236, 327–8
+alpha-2 adrenergic agonists, 481–4
+alpha-2 antagonism, 309
+alpha-2 autoreceptors, 254, 256, 258
+alpha-2-delta ligands, 366, 377, 380
+pain alleviation, 398
+SNRI combinations, 399
+alpha pore, 69, 70
+alpha-synuclein, 493, 494
+alternative splicing, 26
+Alzheimer disease, 487–90, See also
+dementia
+agitation in, 521–4, 528–33
+delusions in, 157
+dementia stage 3, 502
+early detection, importance of, 497
+impulsivity, 539
+MCI stage 2, 500–2
+memory and cognition treatment,
+509–18
+Parkinson’s disease comorbidity, 494
+pathology, 488
+presymptomatic stage, 499–501
+psychosis in, 521–4
+targeting amyloid, 496–9
+vascular dementia comorbidity, 492
+amantadine, 169
+amisulpride, 205
+amotivational syndrome, 563
+AMPA receptors, 101, 104, 330, 331
+amphetamine, 337, 356, 441–2, 472–6,
+569
+ADHD, 484
+formulations, 475
+isomers, 472
+amygdala, fear and, 364–5, 372, 374
+amyloid cascade hypothesis, 496–9
+amyloid plaques. See beta-amyloid
+amyloid precursor protein, 497–8
+
+amyotrophic lateral sclerosis, 353
+analgesia, 380
+anatomical basis of neurotransmission,
+1–5
+anesthesia, dissociative, 570
+anhedonia, 142, 162
+antagonists, 41–3, 57, 58, 60, 62
+alpha-1, 216, 225, 236, 327–8
+alpha-2, 309
+silent, 41, 42, 45, 192
+anticholinergics, 166, 168, 215, 294
+anticonvulsants
+doubtful efficacy in bipolar disorder,
+352–3
+insomnia treatment, 426
+mood stabilizers, 346
+proven efficacy in bipolar disorder,
+347–51
+antidepressant actions, 195–234, 267, 283
+antihistamines, 161, 215, 295, 425–6
+antipsychotic actions, 161–2, 242
+antipsychotics. See drugs targeting
+serotonin receptors, drugs targeting
+dopamine D2 receptors
+anxiety, 78, 145, 359
+OCD and, 576
+anxiety disorders, 196, 378
+ADHD and, 468
+comorbidity, 360
+core symptoms, 360
+definition, 360
+major depression and, 360–2
+MAOIs, 336
+noradrenergic hyperactivity in, 370–2
+overlapping symptoms of different,
+362–3
+pain disorders and, 387
+psychotherapy, 359
+serotonin and, 368–70
+treatment of, 377–8, 421
+anxiety phenotype, 363
+anxiolytic actions, 196, 366
+apathy, 78, 536–7
+APOE4 gene, 497
+aripiprazole, 192, 229, 239, 326
+armodafinil, 442–4
+arousal, 457, 459
+arousal spectrum, 402
+asenapine, 220, 232
+asociality, 142
+asymptomatic amyloidosis, 499–501
+615
+
+

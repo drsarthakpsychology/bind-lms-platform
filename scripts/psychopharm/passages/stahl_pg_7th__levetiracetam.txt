@@ -1,0 +1,604 @@
+<<<PAGE 9>>>
+
+54 flurazepam
+55 fluvoxamine
+56 gabapentin
+57 galantamine
+58 guanfacine
+59 haloperidol
+60 hydroxyzine
+61 iloperidone
+62 imipramine
+63 isocarboxazid
+64 ketamine
+65 lamotrigine
+66 lemborexant
+67 levetiracetam
+68 levomilnacipran
+69 lisdexamfetamine
+70 lithium
+71 lofepramine
+72 lofexidine
+73 loflazepate
+74 lorazepam
+75 loxapine
+76 lumateperone
+77 lurasidone
+78 maprotiline
+79 memantine
+80 methylfolate (l)
+81 methylphenidate (d)
+
+
+
+
+<<<PAGE 1160>>>
+
+Levetiracetam
+
+Therapeutics
+Brands
+Keppra
+Keppra XR
+see index for additional brand names
+Generic?
+Yes
+Class
+Anticonvulsant, synaptic vesicle protein SV2A modulator
+Commonly Prescribed for
+(bold for FDA approved)
+Adjunct therapy for partial seizures in patients with epilepsy
+(>16 years of age for extended-release, >4 years of age for
+immediate-release)
+Adjunct therapy for myoclonic seizures in juvenile myoclonic
+epilepsy (ages 12 and older)
+
+
+
+
+<<<PAGE 1163>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Levetiracetam is itself a second-line augmenting agent to numerous
+other anticonvulsants, lithium, and atypical antipsychotics for
+bipolar disorder and to gabapentin, tiagabine, other anticonvulsants,
+SNRIs, and TCAs for neuropathic pain
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+CNS side effects may be due to excessive actions on SV2A synaptic
+vesicle proteins or to actions on various voltage-sensitive ion
+channels
+Notable Side Effects
+
+✽ Sedation, dizziness, ataxia, asthenia
+
+Hematologic abnormalities (decrease in red blood cell count and
+hemoglobin)
+Life-Threatening or Dangerous Side Effects
+Rare severe dermatologic reactions [Stevens-Johnson syndrome
+(SJS), toxic epidermal necrolysis (TEN)]
+
+
+
+
+<<<PAGE 1165>>>
+
+Dosing and Use
+Usual Dosage Range
+1000–3000 mg/day in 2 doses
+Dosage Forms
+Tablet 250 mg, 500 mg, 750 mg, 1000 mg
+Extended-release tablet 500 mg, 750 mg, 1000 mg, 1500 mg
+Tablet for suspension 250 mg, 500 mg, 750 mg, 1000 mg
+Oral solution 100 mg/mL
+Intravenous injection 500 mg/5 mL
+Intravenous injection (levetiracetam in sodium chloride) 500
+mg/100 mL, 1000 mg/100 mL, 1500 mg/100 mL
+How to Dose
+Initial 1000 mg/day in 1 (extended-release) or 2 (immediate-release)
+doses; after 2 weeks can increase by 1000 mg/day every 2 weeks;
+maximum dose generally 3000 mg/day
+Dosing Tips
+For intolerable sedation, can give most of the dose at night and less
+during the day
+Some patients may tolerate and respond to doses greater than 3000
+mg/day
+
+
+
+
+<<<PAGE 1167>>>
+
+Renally excreted
+Drug Interactions
+Because levetiracetam is not metabolized by CYP450 enzymes and
+does not inhibit or induce CYP450 enzymes, it is unlikely to have
+significant pharmacokinetic drug interactions
+Other Warnings/Precautions
+Depressive effects may be increased by other CNS depressants
+(alcohol, MAOIs, other anticonvulsants, etc.)
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+side effects immediately
+Monitor patients for behavioral symptoms (aggression, agitation,
+anger, anxiety, apathy, depression, hostility, irritability) as well as
+for possible psychotic symptoms or suicidality
+Do Not Use
+If there is a proven allergy to levetiracetam
+
+Special Populations
+Renal Impairment
+
+
+
+
+<<<PAGE 1169>>>
+
+Children may require higher doses than adults; dosing should be
+adjusted according to weight
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+Use in women of childbearing potential requires weighing potential
+benefits to the mother against the risks to the fetus
+Antiepileptic Drug Pregnancy Registry: 1-888-233-2334,
+www.aedpregnancyregistry.org
+Taper drug if discontinuing
+Seizures, even mild seizures, may cause harm to the embryo/fetus
+Lack of convincing efficacy for treatment of bipolar disorder or
+chronic neuropathic pain suggests risk/benefit ratio is in favor of
+discontinuing levetiracetam during pregnancy for these indications
+
+✽ For bipolar patients, given the risk of relapse in the postpartum
+
+period, mood-stabilizer treatment, especially with agents with better
+evidence of efficacy than levetiracetam, should generally be restarted
+immediately after delivery if patient is unmedicated during pregnancy
+
+
+
+
+<<<PAGE 1170>>>
+
+✽ For bipolar patients, levetiracetam should generally be discontinued
+before anticipated pregnancies
+
+✽ Atypical antipsychotics may be preferable to levetiracetam if
+treatment of bipolar disorder is required during pregnancy
+Bipolar symptoms may recur or worsen during pregnancy and some
+form of treatment may be necessary
+Breast Feeding
+Some drug is found in mother’s breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+If drug is continued while breast feeding, infant should be monitored
+for possible adverse effects
+If infant becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+
+✽ Bipolar disorder may recur during the postpartum period,
+particularly if there is a history of prior postpartum episodes of either
+depression or psychosis
+
+✽ Relapse rates may be lower in women who receive prophylactic
+treatment for postpartum episodes of bipolar disorder
+Atypical antipsychotics and anticonvulsants such as valproate may
+be safer than levetiracetam during the postpartum period when
+breast feeding
+
+
+
+
+<<<PAGE 1172>>>
+
+✽ Unique mechanism of action suggests utility where other
+anticonvulsants fail to work
+
+✽ Unique mechanism of action as modulator of synaptic vesicle
+release suggests theoretical utility for clinical conditions that are
+hypothetically linked to excessively activated neuronal circuits, such
+as anxiety disorders and neuropathic pain as well as epilepsy
+
+Suggested Reading
+Ben-Menachem E . Levetiracetam: treatment in epilepsy . Expert Opin
+Pharmacother 2003 ;4 (11 ):2079 –88.
+French J . Use of levetiracetam in special populations . Epilepsia 2001 ;42
+(Suppl 4):S40 –3.
+Leppik IE . Three new drugs for epilepsy: levetiracetam, oxcarbazepine,
+and zonisamide . J Child Neurol 2002 ;17 (Suppl 1):S53 –7.
+Lynch BA , Lambeng N , Nocka K , et al. The synaptic vesicle protein
+SV2A is the binding site for the antiepileptic drug levetiracetam . Proc Natl
+Acad Sci USA 2004 ;101 :9861 –6.
+Pinto A , Sander JW . Levetiracetam: a new therapeutic option for
+refractory epilepsy . Int J Clin Pract 2003 ;57 (7 ):616–21 .
+
+
+
+
+<<<PAGE 2518>>>
+
+Phase 2 trials for the combination of zonisamide and bupropion as a
+treatment for obesity have been completed
+
+Suggested Reading
+Chadwick DW , Marson AG . Zonisamide add-on for drug-resistant partial
+epilepsy . Cochrane Database Syst Rev 2002 ;(2):CD001416 .
+Glauser TA , Pellock JM . Zonisamide in pediatric epilepsy: review of the
+Japanese experience . J Child Neurol 2002 ;17 :87 –96 .
+Jain KK . An assessment of zonisamide as an anti-epileptic drug . Expert
+Opin Pharmacother 2000 ;1 :1245 –60.
+Leppik IE . Three new drugs for epilepsy: levetiracetam, oxcarbazepine,
+and zonisamide . J Child Neurol 2002 ;17 (Suppl 1):S53 –7.
+
+
+
+
+<<<PAGE 2585>>>
+
+Effexor (venlafaxine), 841
+Effexor XR (venlafaxine), 841
+Effiplen (buspirone), 123
+Egibren (selegiline), 705
+Eglonyl (sulpiride), 741
+Elavil (amitriptyline), 25
+Elavil Plus (amitriptyline), 25
+Eldepryl (selegiline), 705
+Elenium (chlordiazepoxide), 147
+Elepsia XR (levetiracetam), 399
+Eliwel (amitriptyline), 25
+Ellefore (desvenlafaxine), 215
+Elmendos (lamotrigine), 387
+Elopram (citalopram), 159
+Elperil (thioridazine), 759
+Elroquil N (hydroxyzine), 355
+Elvanse (lisdexamfetamine), 409
+Emdalen (lofepramine), 421
+Emsam (selegiline), 705
+EnBrace HR (l-methylfolate), 477
+Endep (amitriptyline), 25
+Enimon (sulpiride), 741
+Enlyte (l-methylfolate), 477
+Epial (carbamazepine), 131
+Epilim (valproate), 829
+Epitol (carbamazepine), 131
+Epitomax (topiramate), 781
+Equetro (carbamazepine), 131
+
+
+
+
+<<<PAGE 2593>>>
+
+Jatrosom N (trifluoperazine), 803
+Jornay PM (d, l-methylphenidate), 487
+Julap (selegiline), 705
+Jumex (selegiline), 705
+Jumexal (selegiline), 705
+Kai (lofexidine), 427
+Kainever (estazolam), 281
+Kalma (alprazolam), 11
+Kanopan 75 (maprotiline), 465
+Kapvay (clonidine), 179
+Karbazin (carbamazepine), 131
+Kataved (esketamine), 275
+Keppra (levetiracetam), 399
+Ketalar (ketamine), 383
+ketamine, 383
+Ketanest (esketamine), 275
+Ketanest S (esketamine), 275
+Kinabide (selegiline), 705
+Klarium (diazepam), 229
+Klofelins (clonidine), 179
+Klonopin (clonazepam), 173
+Klopoxid (chlordiazepoxide), 147
+Kloproman (chlorpromazine), 153
+Klorproman (chlorpromazine), 153
+Klotriptyl (chlordiazepoxide), 147
+Klozapol (clozapine), 191
+Labileno (lamotrigine), 387
+
+
+
+
+<<<PAGE 2594>>>
+
+Ladose (fluoxetine), 301
+Lambipol (lamotrigine), 387
+Lamictal (lamotrigine), 387
+Lamictin (lamotrigine), 387
+lamotrigine, 387
+Lamra (diazepam), 229
+Lanexat (flumazenil), 293
+Lantanon (mianserin), 495
+Largactil (chlorpromazine), 153
+Largatrex (chlorpromazine), 153
+Laroxyl (amitriptyline), 25
+Latuda (lurasidone), 457
+Laubeel (lorazepam), 437
+Lauracalm (lorazepam), 437
+Lebopride (sulpiride), 741
+Lelptilan (valproate), 829
+Lelptilanil (valproate), 829
+lemborexant, 395
+Lentizol (amitriptyline), 25
+Lentolith (lithium), 415
+Lentotran (chlordiazepoxide), 147
+Leponex (clozapine), 191
+Leptilin (valproate), 829
+Lerivon (mianserin), 495
+Leukominerase (lithium), 415
+Levanxol (temazepam), 755
+levetiracetam, 399
+levomilnacipran, 403
+
+
+
+
+<<<PAGE 2617>>>
+
+sodium oxybate, 733
+Softramal (clorazepate), 185
+Solarix (moclobemide), 515
+Solian (amisulpride), 17
+Solidon (chlorpromazine), 153
+Solis (diazepam), 229
+solriamfetol, 737
+Somagerol (lorazepam), 437
+Somapam (temazepam), 755
+Somatarax (hydroxyzine), 355
+Sominex (diphenhydramine), 235
+Somniton (triazolam), 799
+Somnium (lorazepam), 437
+Somnol (flurazepam), 321
+Somnubene (flunitrazepam), 297
+Sonata (zaleplon), 859
+Songar (triazolam), 799
+Sovigen (zolpidem), 871
+Spasmilan (buspirone), 123
+Spasmo Praxiten (oxazepam), 569
+Sporalon (trifluoperazine), 803
+Spravato (esketamine), 275
+Spritam (levetiracetam), 399
+Stablon (tianeptine), 777
+Stalleril (thioridazine), 759
+Stamoneurol (sulpiride), 741
+Staurodorm (flurazepam), 321
+Staurodorm Neu (flurazepam), 321
+
+
+
+
+<<<PAGE 2634>>>
+
+cyamemazine, 201
+doxepin , 255
+fluoxetine, 301
+flupenthixol, 307
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+
+
+
+
+<<<PAGE 2643>>>
+
+maprotiline, 465
+mianserin, 495
+nortriptyline, 551
+quazepam , 663
+ramelteon , 677
+suvorexant , 747
+tasimelteon, 751
+temazepam , 755
+trazodone, 793
+triazolam , 799
+trimipramine, 817
+zaleplon , 859
+zolpidem , 871
+zopiclone, 879
+Mania
+alprazolam (adjunct), 11
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine , 131
+cariprazine , 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium , 415
+
+
+
+
+<<<PAGE 2645>>>
+
+sodium oxybate, 853
+Nausea/vomiting
+chlorpromazine , 153
+hydroxyzine , 355
+perphenazine , 607
+Neuropathic pain/chronic pain
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin, 255
+duloxetine , 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+
+
+
+
+<<<PAGE 2655>>>
+
+gabapentin (adjunct) , 331
+lamotrigine , 387
+levetiracetam , 399
+lorazepam , 437
+oxcarbazepine , 575
+pregabalin (adjunct) , 647
+tiagabine (adjunct) , 771
+topiramate , 781
+valproate (divalproex) , 829
+zonisamide , 875
+Sexual dysfunction
+bremelanotide , 95
+bupropion, 117
+flibanserin , 289
+sildenafil , 729
+Sleepiness, excessive
+armodafinil , 65
+modafinil , 521
+pitolisant , 639
+sodium oxybate , 733
+solriamfetol , 737
+tasimelteon, 751
+Social anxiety disorder
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+
+
+
+
+<<<PAGE 2658>>>
+
+Index by Class
+Anticholinergics
+benztropine, 85
+diphenhydramine, 235
+trihexyphenidyl, 809
+Anticonvulsants
+carbamazepine, 131
+clonazepam, 173
+clorazepate (adjunct), 185
+diazepam, 229
+gabapentin, 331
+lamotrigine, 387
+levetiracetam, 399
+lorazepam, 437
+oxcarbazepine, 575
+pregabalin, 647
+tiagabine, 771
+topiramate, 781
+valproate (divalproex), 829
+zonisamide (adjunct), 875
+Antidepressants
+agomelatine, 5
+
+
+
+
+<<<PAGE 2666>>>
+
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam (adjunct), 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+pregabalin (adjunct), 647
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+valproate (divalproex), 829
+ziprasidone, 863
+zonisamide, 875
+
+
+
+
+<<<PAGE 2667>>>
+
+zotepine, 883
+zuclopenthixol, 889
+Movement disorder treatments
+benztropine, 85
+deutetrabenazine, 221
+diphenhydramine, 235
+propranolol, 653
+trihexyphenidyl, 809
+valbenazine, 825
+Neuroactive steroid
+brexanolone, 99
+Neuropathic/chronic pain treatments
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+
+

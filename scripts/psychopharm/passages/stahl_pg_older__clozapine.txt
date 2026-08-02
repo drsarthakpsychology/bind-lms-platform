@@ -1,0 +1,1711 @@
+<<<PAGE 8>>>
+
+0521011698pre.qxd
+
+9/13/04
+
+10:34 AM
+
+Page vii
+
+Table of contents
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+25.
+26.
+27.
+28.
+29.
+30.
+31.
+32.
+33.
+
+Introduction
+
+xi
+
+List of icons
+
+xiii
+
+alprazolam
+amisulpride
+amitriptyline
+amoxapine
+aripiprazole
+atomoxetine
+bupropion
+buspirone
+carbamazepine
+chlordiazepoxide
+chlorpromazine
+citalopram
+clomipramine
+clonazepam
+clonidine
+clorazepate
+clozapine
+d-amphetamine
+desipramine
+diazepam
+d,l-amphetamine
+d,l-methylphenidate
+d-methylphenidate
+donepezil
+dothiepin
+doxepin
+duloxetine
+escitalopram
+estazolam
+flumazenil
+flunitrazepam
+fluoxetine
+flupenthixol
+
+1
+7
+13
+19
+25
+31
+37
+43
+47
+53
+57
+63
+69
+75
+81
+87
+91
+97
+103
+109
+115
+121
+127
+133
+139
+145
+151
+157
+163
+167
+171
+175
+181
+vii
+
+
+
+
+<<<PAGE 24>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 7
+
+AMISULPRIDE
+THERAPEUTICS
+Brands • Solian
+see index for additional brand names
+Generic? No
+Class
+• Atypical antipsychotic (benzamide; possibly
+a dopamine stabilizer and dopamine partial
+agonist)
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Schizophrenia, acute and chronic (outside
+of U.S., especially Europe)
+• Dysthymia
+
+How The Drug Works
+• Theoretically blocks presynaptic dopamine
+2 receptors at low doses
+• Theoretically blocks postsynaptic dopamine
+2 receptors at higher doses
+✽ May be a partial agonist at dopamine 2
+receptors, which would theoretically reduce
+dopamine output when dopamine
+concentrations are high and increase
+dopamine output when dopamine
+concentrations are low
+• Blocks dopamine 3 receptors, which may
+contribute to its clinical actions
+✽ Unlike other atypical antipsychotics,
+amisulpride does not have potent actions
+at serotonin receptors
+
+How Long Until It Works
+• Psychotic symptoms can improve within
+1 week, but it may take several weeks for
+full effect on behavior as well as on
+cognition and affective stabilization
+• Classically recommended to wait at least
+4–6 weeks to determine efficacy of drug,
+but in practice some patients require up to
+16–20 weeks to show a good response,
+especially on cognitive symptoms
+
+If It Works
+• Most often reduces positive symptoms in
+schizophrenia but does not eliminate them
+• Can improve negative symptoms, as well
+as aggressive, cognitive, and affective
+symptoms in schizophrenia
+
+• Most schizophrenic patients do not have a
+total remission of symptoms but rather a
+reduction of symptoms by about a third
+• Perhaps 5–15% of schizophrenic patients
+can experience an overall improvement of
+greater than 50–60%, especially when
+receiving stable treatment for more than a
+year
+• Such patients are considered superresponders or “awakeners” since they may
+be well enough to be employed, live
+independently, and sustain long-term
+relationships
+• Continue treatment until reaching a plateau
+of improvement
+• After reaching a satisfactory plateau,
+continue treatment for at least a year after
+first episode of psychosis
+• For second and subsequent episodes of
+psychosis, treatment may need to be
+indefinite
+• Even for first episodes of psychosis, it may
+be preferable to continue treatment
+indefinitely to avoid subsequent episodes
+
+If It Doesn’t Work
+• Try one of the other first-line atypical
+antipsychotics (risperidone, olanzapine,
+quetiapine, ziprasidone, aripiprazole)
+• If two or more antipsychotic
+monotherapies do not work, consider
+clozapine
+• If no atypical antipsychotic is effective,
+consider higher doses or augmentation
+with valproate or lamotrigine
+• Some patients may require treatment with
+a conventional antipsychotic
+• Consider noncompliance and switch to
+another antipsychotic with fewer side
+effects or to an antipsychotic that can be
+given by depot injection
+• Consider initiating rehabilitation and
+psychotherapy
+• Consider presence of concomitant drug
+abuse
+
+Best Augmenting Combos
+for Partial Response or
+Treatment-Resistance
+• Valproic acid (valproate, divalproex,
+divalproex ER)
+• Augmentation of amisulpride has not been
+systematically studied
+
+7
+
+
+
+
+<<<PAGE 28>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 11
+
+(continued) AMISULPRIDE
+
+Breast Feeding
+• Unknown if amisulpride is secreted in
+human breast milk, but all psychotropics
+assumed to be secreted in breast milk
+✽ Recommended either to discontinue drug
+or bottle feed
+
+THE ART OF PSYCHOPHARMACOLOGY
+Potential Advantages
+• Not as clearly associated with weight gain
+as some other atypical antipsychotics
+• For patients who are responsive to low
+dose activation effects that reduce negative
+symptoms and depression
+
+Potential Disadvantages
+• Patients who have difficulty being
+compliant with twice daily dosing
+• Patients for whom elevated prolactin may
+not be desired (e.g., possibly pregnant
+patients; pubescent girls with amenorrhea;
+postmenopausal women with low estrogen
+who do not take estrogen replacement
+therapy)
+• Patients with severe renal impairment
+
+Primary Target Symptoms
+• Positive symptoms of psychosis
+• Negative symptoms of psychosis
+• Depressive symptoms
+
+Pearls
+
+✽ Efficacy has been particularly well
+
+demonstrated in patients with
+predominantly negative symptoms
+✽ The increase in prolactin caused by
+amisulpride may cause menstruation to
+stop
+• Some treatment-resistant patients with
+inadequate responses to clozapine may
+benefit from amisulpride augmentation of
+clozapine
+• Risks of diabetes and dyslipidemia not well
+studied, but does not seem to cause as
+much weight gain as some other atypical
+antipsychotics
+• Has atypical antipsychotic properties (i.e.,
+antipsychotic action without a high
+incidence of extrapyramidal symptoms),
+especially at low doses, but not a serotonin
+dopamine antagonist
+
+• Mediates its atypical antipsychotic
+properties via novel actions on dopamine
+receptors, perhaps dopamine stabilizing
+partial agonist actions on dopamine 2
+receptors
+• May be more of a dopamine 2 antagonist
+than aripiprazole, but less of a dopamine 2
+antagonist than other atypical or
+conventional antipsychotics
+• Low dose activating actions may be
+beneficial for negative symptoms in
+schizophrenia
+• Very low doses may be useful in dysthymia
+• Compared to sulpiride, amisulpride has
+better oral bioavailability and more potency,
+thus allowing lower dosing, less weight
+gain, and fewer extrapyramidal symptoms
+• Compared to other atypical antipsychotics
+with potent serotonin 2A antagonism,
+amisulpride may have more extrapyramidal
+symptoms and prolactin elevation, but may
+still be classified as an atypical
+antipsychotic, particularly at low doses
+• Patients have very similar antipsychotic
+responses to any conventional
+antipsychotic, which is different from
+atypical antipsychotics where antipsychotic
+responses of individual patients can
+occasionally vary greatly from one atypical
+antipsychotic to another
+• Patients with inadequate responses to
+atypical antipsychotics may benefit from a
+trial of augmentation with a conventional
+antipsychotic or switching to a
+conventional antipsychotic
+• However, long-term polypharmacy with a
+combination of a conventional
+antipsychotic with an atypical antipsychotic
+may combine their side effects without
+clearly augmenting the efficacy of either
+• Although a frequent practice by some
+prescribers, adding two conventional
+antipsychotics together has little rationale
+and may reduce tolerability without clearly
+enhancing efficacy
+
+11
+
+
+
+
+<<<PAGE 42>>>
+
+0521011698s01.qxd
+
+9/2/04
+
+2:26 PM
+
+Page 25
+
+ARIPIPRAZOLE
+THERAPEUTICS
+Brands • Abilify
+see index for additional brand names
+Generic? Not in U.S., Europe, or Japan
+Class
+• Dopamine partial agonist (dopamine
+stabilizer, atypical antipsychotic, third
+generation antipsychotic; sometimes
+included as a second generation
+antipsychotic; also a mood stabilizer)
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Schizophrenia
+• Maintaining stability in schizophrenia
+• Other psychotic disorders
+• Acute mania
+• Bipolar maintenance
+• Bipolar depression
+• Behavioral disturbances in dementias
+• Behavioral disturbances in children and
+adolescents
+• Disorders associated with problems with
+impulse control
+
+How The Drug Works
+
+✽ Partial agonism at dopamine 2 receptors
+
+• Theoretically reduces dopamine output
+when dopamine concentrations are high,
+thus improving positive symptoms and
+mediating antipsychotic actions
+• Theoretically increases dopamine output
+when dopamine concentrations are low,
+thus improving cognitive, negative, and
+mood symptoms
+• Actions at dopamine 3 receptors could
+theoretically contribute to aripiprazole’s
+efficacy
+• Partial agonism at 5HT1A receptors may be
+relevant at clinical doses
+• Blockade of serotonin type 2A receptors
+may contribute at clinical doses to cause
+enhancement of dopamine release in
+certain brain regions, thus reducing motor
+side effects and possibly improving
+cognitive and affective symptoms
+
+How Long Until It Works
+• Psychotic symptoms can improve within
+1 week, but it may take several weeks for
+
+full effect on behavior as well as on
+cognition and affective stabilization
+• Classically recommended to wait at least
+4–6 weeks to determine efficacy of drug,
+but in practice some patients require up to
+16–20 weeks to show a good response,
+especially on cognitive symptoms
+
+If It Works
+• Most often reduces positive symptoms in
+schizophrenia but does not eliminate them
+• Can improve negative symptoms, as well
+as aggressive, cognitive, and affective
+symptoms in schizophrenia
+• Most schizophrenic patients do not have a
+total remission of symptoms but rather a
+reduction of symptoms by about a third
+• Perhaps 5–15% of schizophrenic patients
+can experience an overall improvement of
+greater than 50–60%, especially when
+receiving stable treatment for more than a
+year
+• Such patients are considered superresponders or “awakeners” since they may
+be well enough to be employed, live
+independently, and sustain long-term
+relationships
+• Many bipolar patients may experience a
+reduction of symptoms by half or more
+• Continue treatment until reaching a plateau
+of improvement
+• After reaching a satisfactory plateau,
+continue treatment for at least a year after
+first episode of psychosis
+• For second and subsequent episodes of
+psychosis, treatment may need to be
+indefinite
+• Even for first episodes of psychosis, it may
+be preferable to continue treatment
+indefinitely to avoid subsequent episodes
+• Treatment may not only reduce mania but
+also prevent recurrences of mania in
+bipolar disorder
+
+If It Doesn’t Work
+• Try one of the other atypical antipsychotics
+(risperidone, olanzapine, quetiapine,
+ziprasidone, amisulpride)
+• If two or more antipsychotic
+monotherapies do not work, consider
+clozapine
+• If no first-line atypical antipsychotic is
+effective, consider higher doses or
+augmentation with valproate or lamotrigine
+
+25
+
+
+
+
+<<<PAGE 108>>>
+
+0521011698s02.qxd
+
+9/2/04
+
+2:30 PM
+
+Page 91
+
+CLOZAPINE
+THERAPEUTICS
+Brands • Clozaril
+• Leponex
+see index for additional brand names
+
+Generic? Yes
+Class
+• Atypical antipsychotic (serotonin-dopamine
+antagonist; second generation
+antipsychotic; also a mood stabilizer)
+
+Commonly Prescribed For
+(bold for FDA approved)
+• Treatment-resistant schizophrenia
+• Reduction in risk of recurrent suicidal
+behavior in patients with schizophrenia or
+schizoaffective disorder
+• Treatment-resistant bipolar disorder
+• Violent aggressive patients with psychosis
+and other brain disorders not responsive to
+other treatments
+
+How The Drug Works
+• Blocks dopamine 2 receptors, reducing
+positive symptoms of psychosis and
+stabilizing affective symptoms
+• Blocks serotonin 2A receptors, causing
+enhancement of dopamine release in
+certain brain regions and thus reducing
+motor side effects and possibly improving
+cognitive and affective symptoms
+• Interactions at a myriad of other
+neurotransmitter receptors may contribute
+to clozapine’s efficacy
+✽ Specifically, interactions at 5HT2C and
+5HT1A receptors may contribute to efficacy
+for cognitive and affective symptoms in
+some patients
+• Mechanism of efficacy for psychotic
+patients who do not respond to
+conventional antipsychotics is unknown
+
+How Long Until It Works
+• Psychotic symptoms can improve within
+1 week, especially with first-line use, but
+often takes several weeks for full effect on
+behavior as well as on cognition and
+affective stabilization, especially in
+treatment-resistant cases
+• Classically recommended to wait at least
+4–6 weeks to determine efficacy of drug,
+
+but in practice patients often require up to
+16–20 weeks to show a good response,
+especially in treatment-resistant cases
+
+If It Works
+• As for other antipsychotics, most often
+reduces positive symptoms in
+schizophrenia but does not eliminate them
+✽ However, clozapine may reduce positive
+symptoms in patients who do not respond
+to other antipsychotics, especially other
+conventional antipsychotics
+• Can improve negative symptoms, as well
+as aggressive, cognitive, and affective
+symptoms in schizophrenia
+• Most schizophrenic patients do not have a
+total remission of symptoms but rather a
+reduction of symptoms by about a third
+• Many patients with bipolar disorder and
+other disorders with psychotic, aggressive,
+violent, impulsive, and other types of
+behavioral disturbances may respond to
+clozapine when other agents have failed
+• Perhaps 5–15% of schizophrenic patients
+can experience an overall improvement of
+greater than 50–60%, especially when
+receiving stable treatment for more than a
+year
+✽ Such patients are considered superresponders or “awakeners” since they may
+be well enough to be employed, live
+independently, and sustain long-term
+relationships; super-responders are
+anecdotally reported more often with
+clozapine than with some other
+antipsychotics
+• Continue treatment until reaching a plateau
+of improvement
+• After reaching a satisfactory plateau,
+continue treatment for at least a year after
+first episode of psychosis
+• For second and subsequent episodes of
+psychosis, treatment may need to be
+indefinite
+• Even for first episodes of psychosis, it may
+be preferable to continue treatment
+indefinitely to avoid subsequent episodes
+• Treatment may not only reduce mania but
+also prevent recurrences of mania in
+bipolar disorder
+
+If It Doesn’t Work
+• Some patients may respond better if
+switched to a conventional antipsychotic
+
+91
+
+
+
+
+<<<PAGE 110>>>
+
+0521011698s02.qxd
+
+9/2/04
+
+2:30 PM
+
+Page 93
+
+(continued) CLOZAPINE
+
+• By blocking dopamine 2 receptors in the
+striatum, it can cause motor side effects
+(very rare)
+• Mechanism of weight gain and increased
+incidence of diabetes and dyslipidemia with
+atypical antipsychotics is unknown
+
+• More than for some other antipsychotics,
+but never say always as not a problem in
+everyone
+• Can wear off over time
+• Can reemerge as dose increases and then
+wear off again over time
+
+Notable Side Effects
+
+What To Do About Side Effects
+
+✽ Probably increases risk for diabetes and
+
+dyslipidemia
+✽ Increased salivation (can be severe)
+✽ Sweating
+• Dizziness, sedation, headache, tachycardia,
+hypotension
+• Nausea, constipation, dry mouth, weight
+gain
+• Rare tardive dyskinesia (no reports have
+directly implicated clozapine in the
+development of tardive dyskinesia)
+
+Life Threatening or
+Dangerous Side Effects
+• Hyperglycemia, in some cases extreme and
+associated with ketoacidosis or
+hyperosmolar coma or death, has been
+reported in patients taking atypical
+antipsychotics
+• Agranulocytosis (includes flu-like
+symptoms or signs of infection)
+• Seizures (risk increases with dose)
+• Neuroleptic malignant syndrome (more
+likely when clozapine is used with another
+agent)
+• Pulmonary embolism (may include deep
+vein thrombosis or respiratory symptoms)
+• Myocarditis
+
+Weight Gain
+
+• Frequent and can be significant in amount
+• Can become a health problem in some
+• More than for some other antipsychotics,
+but never say always as not a problem in
+everyone
+
+Sedation
+
+• Frequent and can be significant in amount
+• Some patients may not tolerate it
+
+• Patients must inform prescriber
+immediately of any flu-like symptoms,
+muscle rigidity, altered mental status,
+irregular pulse or blood pressure
+• Take at bedtime to help reduce daytime
+sedation
+• Sedation may wear off with time
+• Start dosing low and increase slowly as
+side effects wear off at each dosing
+increment
+• Weight loss, exercise programs, and
+medical management for high BMIs,
+diabetes, dyslipidemia
+• Switch to another agent
+
+Best Augmenting Agents for Side
+Effects
+• Many side effects cannot be improved with
+an augmenting agent
+
+DOSING AND USE
+Usual Dosage Range
+• 300–450 mg/day
+
+Dosage Forms
+• Tablet 25 mg scored, 100 mg scored
+
+How to Dose
+• Initial 25 mg in 2 divided doses; increase
+by 25–50 mg/day each day until desired
+efficacy is reached; maintenance dose
+300–450 mg/day; doses above 300 mg/day
+should be divided; increases in doses
+above 450 mg/day should be made weekly;
+maximum dose generally 900 mg/day
+
+Dosing Tips
+• Prescriptions are generally given 1 week at
+a time for the first 6 months of treatment
+because of the risk of agranulocytosis;
+after 6 months prescriptions can generally
+be given 2 weeks at a time
+
+93
+
+
+
+
+<<<PAGE 111>>>
+
+0521011698s02.qxd
+
+9/2/04
+
+2:30 PM
+
+Page 94
+
+CLOZAPINE (continued)
+
+✽ Treatment should be suspended if
+
+absolute neutrophil count falls below
+1,000/mm3
+• Treatment should be suspended if white
+blood cell count falls below 2,000/mm3
+• Treatment should be suspended if
+eosinophil count rises above 4,000/mm3,
+and continued once it falls below
+3,000/mm3
+• If treatment is discontinued for more than
+2 days, it may need to be reinitiated at a
+lower dose and slowly increased in order
+to maximize tolerability
+• Plasma half-life suggests twice daily
+administration, but in practice it may be
+given once a day at night
+• Doses over 550 mg/day may require
+concomitant anticonvulsant administration
+to reduce the chances of a seizure
+✽ Rebound psychosis may occur unless
+dose is very slowly tapered, by
+100 mg/week or less
+
+Overdose
+• Sometimes lethal; changes in heart rhythm,
+excess salivation, respiratory depression,
+altered state of consciousness
+
+Long-Term Use
+• Treatment to reduce risk of suicidal
+behavior should be continued for at least
+2 years
+• Often used for long-term maintenance in
+treatment-resistant schizophrenia
+
+Habit Forming
+• No
+
+How to Stop
+• Slow down-titration (over 6 to 8 weeks),
+especially when simultaneously beginning
+a new antipsychotic while switching (i.e.,
+cross-titration)
+✽ Rapid discontinuation may lead to
+rebound psychosis and worsening of
+symptoms
+
+Drug Interactions
+• Dose may need to be reduced if given in
+conjunction with CYP450 1A2 inhibitors
+(e.g., fluvoxamine)
+• Dose may need to be raised if given in
+conjunction with CYP450 1A2 inducers
+(e.g., cigarette smoke)
+• CYP450 2D6 inhibitors (e.g., paroxetine,
+fluoxetine, duloxetine) can raise clozapine
+levels, but dosage adjustment usually not
+necessary
+• CYP450 3A4 inhibitors (e.g., nefazodone,
+fluvoxamine, fluoxetine) can raise clozapine
+levels, but dosage adjustment usually not
+necessary
+• Clozapine may enhance effects of
+antihypertensive drugs
+
+Other Warnings/
+Precautions
+• Possible association between myocarditis
+and cardiomyopathy and clozapine use,
+even in physically healthy individuals
+• Should not be used in conjunction with
+agents that are known to cause
+agranulocytosis
+• Use with caution in patients with glaucoma
+• Use with caution in patients with enlarged
+prostate
+
+Do Not Use
+• In patients with myeloproliferative disorder
+• In patients with uncontrolled epilepsy
+• In patients with granulocytopenia
+• In patients with CNS depression
+• If there is a proven allergy to clozapine
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Should be used with caution
+
+Hepatic Impairment
+
+Pharmacokinetics
+
+• Should be used with caution
+
+• Half-life 5–16 hours
+• Metabolized by multiple CYP450 enzymes,
+including 1A2, 2D6, and 3A4
+
+Cardiac Impairment
+
+94
+
+• Should be used with caution, particularly if
+patient is taking concomitant medication
+
+
+
+
+<<<PAGE 112>>>
+
+0521011698s02.qxd
+
+9/2/04
+
+2:30 PM
+
+Page 95
+
+(continued) CLOZAPINE
+
+Elderly
+• Some patients may tolerate lower doses
+better
+
+Children and Adolescents
+• Safety and efficacy have not been
+established
+• Preliminary research has suggested
+efficacy in early-onset treatment-resistant
+schizophrenia
+• Children and adolescents taking clozapine
+should be monitored more often than
+adults
+
+Pregnancy
+• Risk Category B [animal studies do not
+show adverse effects, no controlled studies
+in humans]
+• Psychotic symptoms may worsen during
+pregnancy and some form of treatment
+may be necessary
+• Clozapine should be used only when the
+potential benefits outweigh potential risks
+to the fetus
+
+• Affective symptoms
+• Suicidal behavior
+• Violence and aggression
+
+Pearls
+
+✽ Not a first-line treatment choice in most
+countries
+
+✽ Most efficacious but most dangerous
+✽ Documented efficacy in treatment-
+
+refractory schizophrenia
+• May reduce violence and aggression in
+difficult cases, including forensic cases
+✽ Reduces suicide in schizophrenia
+• May reduce substance abuse
+• May improve tardive dyskinesia
+• Little or no prolactin elevation, motor side
+effects, or tardive dyskinesia
+• Clinical improvements often continue
+slowly over several years
+• Cigarette smoke can decrease clozapine
+levels and patients may be at risk for
+relapse if they begin or increase smoking
+
+Breast Feeding
+• Unknown if clozapine is secreted in human
+breast milk, but all psychotropics assumed
+to be secreted in breast milk
+✽ Recommended either to discontinue drug
+or bottle feed
+• Infants of women who choose to breast
+feed while on clozapine should be
+monitored for possible adverse effects
+
+THE ART OF PSYCHOPHARMACOLOGY
+Potential Advantages
+
+✽ Treatment-resistant schizophrenia
+✽ Violent, aggressive patients
+✽ Patients with tardive dyskinesia
+✽ Patients with suicidal behavior
+Potential Disadvantages
+
+✽ Patients with diabetes, obesity
+• Patients with cardiac impairment
+Primary Target Symptoms
+• Positive symptoms of psychosis
+• Negative symptoms of psychosis
+• Cognitive symptoms
+95
+
+
+
+
+<<<PAGE 113>>>
+
+0521011698s02.qxd
+
+9/2/04
+
+2:30 PM
+
+Page 96
+
+CLOZAPINE (continued)
+
+Suggested Reading
+Iqbal MM, Rahman A, Husain Z, Mahmud SZ,
+Ryan WG, Feldman JM. Clozapine: a clinical
+review of adverse effects and management.
+Ann Clin Psychiatry 2003;15:33–48.
+
+Wagstaff A, Perry C. Clozapine: in prevention
+of suicide in patients with schizophrenia or
+schizoaffective disorder. CNS Drugs
+2003;17:273–80
+
+Lieberman JA. Maximizing clozapine therapy:
+managing side effects. J Clin Psychiatry
+1998;59 (suppl 3):38–43.
+
+Wahlbeck K, Cheine M, Essali A, Adams C.
+Evidence of clozapine’s effectiveness in
+schizophrenia: a systematic review and metaanalysis of randomized trials. Am J Psychiatry
+1999;156:990–999.
+
+Schulte P. What is an adequate trial with
+clozapine?: therapeutic drug monitoring and
+time to response in treatment-refractory
+schizophrenia. Clin Pharmacokinet
+2003;42:607–18.
+
+96
+
+
+
+
+<<<PAGE 215>>>
+
+0521011698s04.qxd
+
+9/2/04
+
+2:34 PM
+
+Page 198
+
+FLUVOXAMINE (continued)
+• May displace highly protein bound drugs
+(e.g., warfarin)
+• Can rarely cause weakness, hyperreflexia,
+and incoordination when combined with
+sumatriptan or possibly with other triptans,
+requiring careful monitoring of patient
+• Via CYP450 1A2 inhibition, fluvoxamine
+may reduce clearance of theophylline and
+clozapine, thus raising their levels and
+requiring their dosing to be lowered
+• Fluvoxamine administered with either
+caffeine or theophylline can thus cause
+jitteriness, excessive stimulation, or rarely
+seizures, so concomitant use should
+proceed cautiously
+• Metabolism of fluvoxamine may be
+enhanced in smokers and thus its levels
+lowered, requiring higher dosing
+• Via CYP450 3A4 inhibition, fluvoxamine
+may reduce clearance of carbamazepine
+and benzodiazepines such as alprazolam
+and triazolam, and thus require dosage
+reduction
+• Via CYP450 3A4 inhibition, fluvoxamine
+could theoretically increase concentrations
+of certain cholesterol lowering HMG CoA
+reductase inhibitors, especially simvastatin,
+atorvastatin, and lovastatin, but not
+pravastatin or fluvastatin, which would
+increase the risk of rhabdomyolysis; thus,
+coadministration of fluvoxamine with
+certain HMG CoA reductase inhibitors
+should proceed with caution
+• Via CYP450 3A4 inhibition, fluvoxamine
+could theoretically increase the
+concentrations of pimozide, and cause QTc
+prolongation and dangerous cardiac
+arrhythmias
+
+Other Warnings/
+Precautions
+• Add or initiate other antidepressants with
+caution for up to two weeks after
+discontinuing fluvoxamine
+• Use with caution in patients with history of
+seizure
+• Use with caution in patients with bipolar
+disorder unless treated with concomitant
+mood stabilizing agent
+• May cause photosensitivity
+• Monitor patients for activation of suicidal
+ideation, especially children and
+adolescents
+
+198
+
+Do Not Use
+• If patient is taking an MAO inhibitor
+• If patient is taking thioridazine or pimozide
+• If there is a proven allergy to fluvoxamine
+
+SPECIAL POPULATIONS
+Renal Impairment
+• No dose adjustment
+
+Hepatic Impairment
+• Lower dose or give less frequently, perhaps
+by half; use slower titration
+
+Cardiac Impairment
+• Preliminary research suggests that
+fluvoxamine is safe in these patients
+• Treating depression with SSRIs in patients
+with acute angina or following myocardial
+infarction may reduce cardiac events and
+improve survival as well as mood
+
+Elderly
+• May require lower initial dose and slower
+titration
+
+Children and Adolescents
+• Approved for ages 8–17 for OCD
+• 8–17: initial 25 mg/day at bedtime;
+increase by 25 mg/day every 4–7 days;
+maximum 200 mg/day; doses above
+50 mg/day should be divided into 2 doses
+with the larger dose administered at
+bedtime
+• Preliminary evidence suggests efficacy for
+other anxiety disorders and depression in
+children and adolescents
+• Use with caution, observing for activation
+of known or unknown bipolar disorder
+and/or suicidal ideation, and strongly
+consider informing parents or guardian of
+this risk so they can help observe child or
+adolescent patients
+
+Pregnancy
+• Risk Category C [some animal studies
+show adverse effects, no controlled studies
+in humans]
+• Not generally recommended for use during
+pregnancy, especially during first trimester
+
+
+
+
+<<<PAGE 292>>>
+
+0521011698s05.qxd
+
+9/2/04
+
+2:35 PM
+
+Page 275
+
+(continued) LOXAPINE
+
+✽ Enhances efficacy in clozapine partial
+Pearls
+
+✽ Recently discovered to be a serotonin
+
+dopamine antagonist (binding studies and
+PET scans)
+✽ Active metabolites are also serotonin
+dopamine antagonists with longer half-lives
+than parent drug, thus possibly allowing
+once-daily treatment
+✽ One active metabolite is an
+antidepressant (amoxapine, also known as
+N-desmethyl-loxapine)
+• Theoretically, loxapine should have
+antidepressant actions, especially at high
+doses, but no controlled studies
+• Theoretically, loxapine may have
+advantages for short-term use in some
+patients with psychotic depression
+• Developed as a conventional antipsychotic;
+i.e., reduces positive symptoms, but
+causes extrapyramidal symptoms and
+prolactin elevations
+• Lower extrapyramidal symptoms than
+haloperidol in some studies, but not fixed
+dose studies and no low dose studies
+✽ Causes less weight gain than other
+antipsychotics, both atypical and
+conventional, and may even be associated
+with weight loss
+• No formal studies of negative symptoms,
+but some studies show superiority to
+conventional antipsychotics for emotional
+withdrawal and social competence
+• Best use may be as low-cost augmentation
+agent to atypical antipsychotics
+
+responders when given concomitantly with
+clozapine
+• For previously stabilized patients with
+“breakthrough” agitation or incipient
+decompensation, “top-up” the atypical
+antipsychotic with as-needed intramuscular
+or oral single doses of loxapine
+• Patients have very similar antipsychotic
+responses to any conventional
+antipsychotic, which is different from
+atypical antipsychotics where antipsychotic
+responses of individual patients can
+occasionally vary greatly from one atypical
+antipsychotic to another
+• Patients with inadequate responses to
+atypical antipsychotics may benefit from a
+trial of augmentation with a conventional
+antipsychotic such as loxapine or from
+switching to a conventional antipsychotic
+such as loxapine
+• However, long-term polypharmacy with a
+combination of a conventional
+antipsychotic such as loxapine with an
+atypical antipsychotic may combine their
+side effects without clearly augmenting the
+efficacy of either
+• Although a frequent practice by some
+prescribers, adding 2 conventional
+antipsychotics together has little rationale
+and may reduce tolerability without clearly
+enhancing efficacy
+
+Suggested Reading
+Fenton M, Murphy B, Wood J, Bagnall A, Chue
+P, Leitner M. Loxapine for schizophrenia.
+Cochrane Database Syst Rev 2000; (2):
+CD001943.
+
+Zisook S, Click MA Jr. Evaluations of loxapine
+succinate in the ambulatory treatment of acute
+schizophrenic episodes. Int
+Pharmacopsychiatry 1980; 15 (6): 365–78.
+
+Heel RC, Brogden RN, Speight TM, Avery GS.
+Loxapine: a review of its pharmacological
+properties and therapeutic efficacy as an
+antipsychotic agent. Drugs 1978; 15 (3):
+198–217.
+275
+
+
+
+
+<<<PAGE 431>>>
+
+0521011698s08.qxd
+
+9/2/04
+
+2:46 PM
+
+Page 414
+
+RISPERIDONE (continued)
+or bipolar disorder may be 2–6 mg/day
+(average 4.5 mg/day) orally
+• Patients who respond to these doses may
+have one of the lowest drug costs among
+the atypical antipsychotics
+• Low doses may not be adequate in difficult
+patients
+• Rather than raise the dose above these
+levels in acutely agitated patients requiring
+acute antipsychotic actions, consider
+augmentation with a benzodiazepine or
+conventional antipsychotic, either orally or
+intramuscularly
+• Rather than raise the dose above these levels
+in partial responders, consider augmentation
+with a mood stabilizing anticonvulsant,
+such as valproate or lamotrigine
+• Approved for use up to 16 mg/day orally,
+but data suggest that risk of extrapyramidal
+symptoms is increased above 6 mg/day
+• Risperidone oral solution is not compatible
+with cola or tea
+• Children and elderly may need to have oral
+twice daily dosing during initiation and
+titration of drug dosing and then can
+switch to oral once daily when
+maintenance dose is reached
+• Children and elderly should generally be
+dosed at the lower end of the dosage
+spectrum
+
+Dosing Tips –
+Long-Acting Microsphere
+Depot Formulation
+
+✽ When initiating long-acting risperidone
+
+formulation by intramuscular injection,
+onset of action can be delayed for 2 weeks
+while microspheres are being absorbed
+✽ For antipsychotic coverage during
+initiation of long-acting risperidone,
+continue ongoing treatment with an oral
+antipsychotic or initiate treatment with
+some oral antipsychotic for 3 weeks
+• Steady-state plasma concentrations are
+reached after 4 injections of long-acting
+risperidone and maintained for 4–6 weeks
+after the last injection
+• For missed long-acting risperidone
+injections 2 or more weeks late (i.e., 28 or
+more days following last injection), may
+need to provide antipsychotic coverage
+with oral administration for 3 weeks while
+reinitiating injections
+
+414
+
+• For missed long-acting risperidone
+injections up to 2 weeks late (i.e., within
+28 days of last injection), may not need to
+provide oral coverage
+• Long-acting risperidone must be kept
+refrigerated
+• Must deliver each syringe in full since drug
+is not in a solution (i.e., half a syringe is
+not necessarily half the drug dose)
+
+Overdose
+• Rarely lethal in monotherapy overdose;
+sedation, rapid heartbeat, convulsions, low
+blood pressure, difficulty breathing
+
+Long-Term Use
+• Approved to delay relapse in long-term
+treatment of schizophrenia
+• Often used for long-term maintenance in
+bipolar disorder and various behavioral
+disorders
+
+Habit Forming
+• No
+
+How to Stop
+• Slow down-titration of oral formulation
+(over 6 to 8 weeks), especially when
+simultaneously beginning a new antipsychotic
+while switching (i.e., cross-titration)
+• Rapid oral discontinuation may lead to
+rebound psychosis and worsening of
+symptoms
+
+Pharmacokinetics
+• Metabolites are active
+• Metabolized by CYP450 2D6
+• Parent drug of oral formulation has
+20–24 hour half-life
+• Long-acting risperidone has 3–6 day halflife
+• Long-acting risperidone has elimination
+phase of approximately 7–8 weeks after
+last injection
+
+Drug Interactions
+• May increase effect of anti-hypertensive
+agents
+• May antagonize levodopa, dopamine
+agonists
+• Clearance of risperidone may be reduced
+and thus plasma levels increased by
+clozapine; dosing adjustment usually not
+necessary
+
+
+
+
+<<<PAGE 559>>>
+
+0521011698s10.qxd
+
+9/2/04
+
+2:49 PM
+
+Page 542
+
+ZUCLOPENTHIXOL (continued)
+• Some patients taking a neuroleptic and
+lithium have developed an encephalopathic
+syndrome similar to neuroleptic malignant
+syndrome
+
+Hepatic Impairment
+• Use with caution
+
+Cardiac Impairment
+• Use with caution
+
+Other Warnings/
+Precautions
+• If signs of neuroleptic malignant syndrome
+develop, treatment should be immediately
+discontinued
+• Use with caution in patients with epilepsy,
+glaucoma, urinary retention
+• Decanoate should not be used with
+clozapine because it cannot be withdrawn
+quickly in the event of serious adverse
+effects such as neutropenia
+• Possible antiemetic effect of zuclopenthixol
+may mask signs of other disorders or
+overdose; suppression of cough reflex may
+cause asphyxia
+• Use only with great caution if at all in
+Parkinson’s disease or Lewy Body
+dementia
+• Observe for signs of ocular toxicity
+(pigmentary retinopathy and lenticular and
+corneal deposits)
+• Avoid undue exposure to sunlight
+• Avoid extreme heat exposure
+• Do not use epinephrine in event of
+overdose as interaction with some pressor
+agents may lower blood pressure
+
+Do Not Use
+• If patient is taking a large concomitant
+dose of a sedative hypnotic
+• If patient is taking guanethidine or a similar
+acting compound
+• If patient has CNS depression, is
+comatose, or has subcortical brain damage
+• If patient has acute alcohol, barbiturate, or
+opiate intoxication
+• If patient has narrow angle-closure
+glaucoma
+• If patient has phaeochromocytoma,
+circulatory collapse, or blood dyscrasias
+• In case of pregnancy
+• If there is a proven allergy to
+zuclopenthixol
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Use with caution
+542
+
+Elderly
+• Some patients may tolerate lower doses
+better
+• Maximum acetate dose 100 mg
+
+Children and Adolescents
+• Safety and efficacy have not been
+established in children under age 18
+• Preliminary open-label data show that oral
+zuclopenthixol may be effective in reducing
+aggression in mentally impaired children
+
+Pregnancy
+• Not recommended for use during
+pregnancy
+• Psychotic symptoms may worsen during
+pregnancy and some form of treatment
+may be necessary
+• Atypical antipsychotics may be preferable
+to conventional antipsychotics or
+anticonvulsant mood stabilizers if
+treatment is required during pregnancy
+
+Breast Feeding
+• Some drug is found in mother’s breast milk
+✽ Recommended either to discontinue drug
+or bottle feed
+• Infants of women who choose to breast
+feed should be monitored for possible
+adverse effects
+
+THE ART OF PSYCHOPHARMACOLOGY
+Potential Advantages
+• Non-compliant patients (decanoate)
+• Emergency use (acute injection)
+
+Potential Disadvantages
+• Children
+• Elderly
+• Patients with tardive dyskinesia
+
+Primary Target Symptoms
+• Positive symptoms of psychosis
+• Negative symptoms of psychosis
+
+
+
+
+<<<PAGE 564>>>
+
+0521011698emt.qxd
+
+9/2/04
+
+2:51 PM
+
+Cipramil (citalopram), 63
+Cisordinol (zuclopenthixol), 539
+citalopram, 63
+clomipramine, 69
+clonazepam, 75
+Clonazepamum (clonazepam), 75
+clonidine, 81
+Clonisin (clonidine), 81
+Clonistada (clonidine), 81
+Clopixol (zuclopenthixol), 539
+Clopixol Acuphase (zuclopenthixol), 539
+Clopixol Conc (zuclopenthixol), 539
+Clopress (clomipramine), 69
+clorazepate, 87
+Clordezalin (chlorpromazine), 57
+Clorpres (clonidine), 81
+clozapine, 91
+Clozaril (clozapine), 91
+Coaxil (tianeptine), 461
+Cognex (tacrine), 439
+Cognitiv (selegiline), 423
+Combipres (clonidine), 81
+Complutine (diazepam), 109
+Concerta (d,l-methylphenidate), 121
+Concordin (protriptyline), 391
+Concordine (protriptyline), 391
+Consta (risperidone), 411
+Contemnol (lithium), 247
+Control (lorazepam), 265
+Convulex (valproate), 499
+Convulsofin (valproate), 499
+Cosmopril (selegiline), 423
+Cylert (pemoline), 357
+Cymbalta (duloxetine), 151
+d-amphetamine, 97
+d,l-amphetamine, 115
+d-methylphenidate, 127
+d,l-methylphenidate, 121
+Dalcipran (milnacipran), 295
+Dalmane (flurazepam), 191
+Dalmadorm (flurazepam), 191
+Dalparan (zolpidem), 521
+Dapotum (fluphenazine), 185
+Dapotum Acutum (fluphenazine), 185
+Dapotum D (fluphenazine), 185
+Dapotum Depot (fluphenazine), 185
+Daprimen (amitriptyline), 13
+Darkene (flunitrazepam), 171
+Darleton (sulpiride), 435
+Deadyn (pemoline), 357
+Decafen (fluphenazine), 185
+Decanoate (haloperidol), 213
+Decazate (fluphenazine), 185
+Decentan (perphenazine), 365
+Decentan (fluphenazine), 185
+Decentan-Depot (perphenazine), 365
+Defanyl (amoxapine), 19
+
+Page 547
+
+Defobin (chlordiazepoxide), 53
+Deftan (lofepramine), 253
+Degranol (carbamazepine), 47
+Delepsine (valproate), 499
+Delgian (maprotiline), 277
+Demolox (amoxapine), 19
+Deniban (amisulpride), 7
+Depacon (valproate), 499
+Depakene (valproate), 499
+Depakine Chrono (valproate), 499
+Depakine (LA) (valproate), 499
+Depakine Zuur (valproate), 499
+Depakote (valproate), 499
+Depakote ER (valproate), 499
+Depakote sprinkle (valproate), 499
+Deparkin (valproate), 499
+Depex (sulpiride), 435
+Depixol (flupenthixol), 181
+Depixol-Conc (flupenthixol), 181
+Deprakine (valproate), 499
+Depral (sulpiride), 435
+Depramine (imipramine), 223
+Deprax (trazodone), 477
+Deprenon (fluoxetine), 175
+Deprenyl (selegiline), 423
+Depressase (maprotiline), 277
+Deprex (fluoxetine), 175
+Deprilan (selegiline), 423
+Deprilept (maprotiline), 277
+Deprimyl (lofepramine), 253
+Deprinocte (estazolam), 163
+Deprinol (imipramine), 223
+Deptran (doxepin), 145
+Deroxat (paroxetine), 351
+Desconex (loxapine), 271
+Desidox (doxepin), 145
+desipramine, 103
+Desisulpid (sulpiride), 435
+Desitriptylin (amitriptyline), 13
+Desyrel (trazodone), 477
+Devidon (trazodone), 477
+Dexamphetamine (d-amphetamine), 97
+Dexamphetamine sulfate (d-amphetamine), 97
+Dexedrine (d-amphetamine), 97
+Dexedrine Spansuler (d-amphetamine), 97
+Dexmethylphenidate (d-methylphenidate), 127
+Dextro Stat ( d-amphetamine), 97
+D-Pam (diazepam), 109
+Denion (diazepam), 109
+Diaceplex (diazepam), 109
+Diaceplex simple (diazepam), 109
+Diapam (diazepam), 109
+Diaquel (diazepam), 109
+Diastat (diazepam), 109
+Diazemuls (diazepam), 109
+diazepam, 109
+Dicepin B6 (diazepam), 109
+547
+
+
+
+
+<<<PAGE 567>>>
+
+0521011698emt.qxd
+
+9/2/04
+
+2:51 PM
+
+Idom (dothiepine), 139
+Iktoviril (clonazepam), 75
+Ilman (flunitrazepam), 171
+Imavate (imipramine), 223
+Imipramin (imipramine), 223
+imipramine, 223
+Imipramiin (imipramine), 223
+Imovane (zopiclone), 529
+Inadalprem (lorazepam), 265
+Insom (flunitrazepam), 171
+Ipnovel (midazolam), 291
+Iremofar (hydroxyzine), 219
+Iremo Sedofren (trifluoperazine), 487
+isocarboxazid, 229
+Ivadal (zolpidem), 521
+Ixel (milnacipran), 295
+Janimine (imipramine), 223
+Januar (oxazepam), 341
+Jardin (dothiepin), 139
+Jatroneural (trifluoperazine), 487
+Jatrosom (tranylcypromine), 471
+Jatrosom N (tranylcypromine), 471
+Jatrosom N (trifluoperazine), 487
+Julap (selegiline), 423
+Jumex (selegiline), 423
+Jumexal (selegiline), 423
+Kainever (estazolam), 163
+Kalma (alprazolam), 1
+Kanopan 75 (maprotiline), 277
+Karbazin (carbamazepine), 47
+Keppra (levetiracetam), 243
+Kinabide (selegiline), 423
+Klarium (diazepam), 109
+Klofelins (clonidine), 81
+Klonipin (clonazepam), 75
+Klopoxid (chlordiazepoxide), 53
+Kloproman (chlorpromazine), 57
+Klorproman (chlorpromazine), 57
+Klotriptyl (chlordiazepoxide), 53
+Klozapol (clozapine), 91
+Labileno (lamotrigine, 235
+Ladose (fluoxetine), 175
+Lamictal (lamotrigine), 235
+Lamictin (lamotrigine), 235
+lamotrigine, 235
+Lamra (diazepam), 109
+Lanexat (flumazenil), 167
+Largactil (chlorpromazine), 57
+Largatrex (chlorpromazine), 57
+Laroxyl (amitriptyline), 13
+Laubeel (lorazepam), 265
+Lauracalm (lorazepam), 265
+Lebopride (sulpiride), 435
+Lelptilan (valproate), 499
+Lelptilanil (valproate), 499
+Lentizol (amitriptyline), 13
+Lentolith (lithium), 247
+550
+
+Page 550
+
+Lentotran (chlordiazepoxide), 53
+Leponex (clozapine), 91
+Leptilin (valproate), 499
+Leukominerase (lithium), 247
+Levanxol (temazepam), 443
+levetiracetam, 243
+Lexapro (escitalopram), 157
+Li-450 (lithium), 247
+Librax (chlordiazepoxide), 53
+Libraxin (chlordiazepoxide), 53
+Librium (chlordiazepoxide), 53
+Lidanil (mesoridazine), 287
+Lidone (molindone), 319
+Li-Liquid (lithium), 247
+Lilly Fluoxetine (fluoxetine), 175
+Limbatril (chlordiazepoxide), 53
+Limbatril F (chlordiazepoxide), 53
+Limbitrol (chlordiazepoxide), 53
+Limbitrol F (chlordiazepoxide), 53
+Limbitryl (chlordiazepoxide), 53
+Limbitryl Plus (chlordiazepoxide), 53
+Liskonum (lithium), 247
+Litarex (lithium), 247
+Lithane (lithium), 247
+Lithiofor (lithium), 247
+Lithionit (lithium), 247
+Lithiucarb (lithium), 247
+lithium, 247
+Lithium carbonicum (lithium), 247
+Lithium-aspartat (lithium), 247
+Lithium citrate syrup (lithium), 247
+Lithium-Duriles (lithium), 247
+Lithiumkarbonat (lithium), 247
+Lithiumorotat (lithium), 247
+Lithizine (lithium), 247
+Lithobid (lithium), 247
+Lithonate (lithium), 247
+Lithostat (lithium), 247
+Lito (lithium), 247
+Litoduron (lithium), 247
+Lodopin (zotepine), 533
+lofepramine, 253
+loflazepate, 259
+Lomesta (lorazepam), 265
+Lonseren (pipothiazine), 383
+Lorabenz (lorazepam), 265
+Lorafen (lorazepam), 265
+Loram (lorazepam), 265
+Lorans (lorazepam), 265
+Lorapam (lorazepam), 265
+lorazepam, 265
+Lorenin (lorazepam), 265
+Loridem (lorazepam), 265
+Lorien (fluoxetine), 175
+Lorivan (lorazepam), 265
+Lorsedal (lorazepam), 265
+Lorsifar (lorazepam), 265
+
+

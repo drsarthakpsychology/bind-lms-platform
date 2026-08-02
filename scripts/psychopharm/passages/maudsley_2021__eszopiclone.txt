@@ -1,0 +1,152 @@
+<<<PAGE 767>>>
+
+746  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+Table 8.11 (Continued )
+Drug
+
+Comments
+
+Diazepam22,25,32,155
+
+Less than 0.5% is excreted unchanged. Dosing: GFR 20–50mL/min, dose as in
+normal renal function; GFR <20mL/min, use small doses and titrate to response.
+Long-acting, active metabolites accumulate in renal impairment; monitor patients for
+excessive sedation and encephalopathy. One case of interstitial nephritis with
+diazepam has been reported in a patient with chronic renal failure.
+
+Eszopiclone156
+
+Less than 10% excreted unchanged in the urine. No dose adjustment is needed in
+renal impairment.
+
+Gabapentin
+
+100% excreted unchanged in urine, clearance is reduced in renal impairment
+resulting in higher plasma concentrations and longer elimination half-lives.157 As
+expected this may result in toxicity in renal impairment if doses are not reduced.158
+Acute renal failure has been reported;159 myoclonus;160 altered mental status, fall and
+fracture when used in patients on haemodialysis for restless legs, itch and
+neuropathic pain.161,162 Has been used to treat pruritis, muscle cramps and restless
+legs syndrome in haemodialysis patients in RCTs.163–165 Dosing advice differs; GFR
+15–60mL/min start low and increase according to response; GFR <15mL/min, 300mg
+alternate days32,159 or 100mg at night then increase according to tolerability25,166 but
+care toxicity as described above. Manufacturer has table of very specific dosing in
+renal impairment in SMPC.159
+
+Lemborexant41,167
+
+<1% excreted unchanged in urine. Manufacturer states no dose adjustment needed
+in renal impairment but exposure increases during severe renal impairment with a
+potential increased risk of somnolence.
+
+Lorazepam22,23,25,32,168–173
+
+<1% excreted unchanged in urine, dose as in normal renal function but carefully
+according to response as some may need lower doses. Monitor for excessive
+sedation. Impaired elimination reported in two patients with severe renal impairment
+and also reports of propylene glycol in lorazepam injection causing renal impairment
+and acute tubular necrosis. However, lorazepam injection has been successfully used
+to treat catatonia in two patients with renal failure.
+
+Nitrazepam23,25
+
+Less than 5% excreted unchanged in the urine. Dosing GFR 10–50mL/min as per
+normal renal function; GFR <10mL/min start with small dose and increase slowly.
+Manufacturer advises reducing dose in renal impairment. Monitor patient for
+sedation and unsteadiness.
+
+Pregabalin
+
+Up to 99% excreted unchanged in urine. Acute renal failure reported.174 Associated
+with altered mental status and falls when used in patients on haemodialysis,161 and
+myoclonus.175 Case report of seizure on abrupt cessation in patient with CKD.176 Used
+to treat uraemic pruritis and neuropathic pain in patients on haemodialysis.177,178
+Dosing advice differs; titrate dosing by tolerability and response for all GFRs; GFR
+30–60mL/min, 75mg daily; GFR 15–30mL/min, 25–50mg daily; GFR <15mL/min,
+25mg daily. Manufacturer has table of very specific dosing in renal impairment in
+SMPC.174
+
+Oxazepam22,25,32,179
+
+Less than 1% excreted unchanged in the urine. Dose adjustment needed in severe
+renal impairment. Oxazepam may take longer to reach steady state in patients with
+renal impairment. Dosing: GFR 10–50mL/min, dose as in normal renal function; GFR
+<10mL/min, start at a low dose and increase according to response. Monitor for
+excessive sedation.
+
+
+
+
+<<<PAGE 774>>>
+
+131. Fillastre JP, et al. Pharmacokinetics of lamotrigine in patients with renal impairment: influence of haemodialysis. Drugs Exp Clin Res 1993;
+19:25–32.
+132. Schaub JE, et al. Multisystem adverse reaction to lamotrigine. Lancet 1994; 344:481.
+133. Wootton R, et al. Comparison of the pharmacokinetics of lamotrigine in patients with chronic renal failure and healthy volunteers. Br J
+Clin Pharmacol 1997; 43:23–27.
+134. Bansal AD, et al. Use of antiepileptic drugs in patients with chronic kidney disease and end stage renal disease. Seminars in Dialysis 2015;
+28:404–412.
+135. Gitlin M. Lithium and the kidney: an updated review. Drug Saf 1999; 20:231–243.
+136. Lepkifker E, et al. Renal insufficiency in long-term lithium treatment. J Clin Psychiatry 2004; 65:850–856.
+137. McKnight RF, et al. Lithium toxicity profile: a systematic review and meta-analysis. Lancet 2012; 379:721–728.
+138. Shine B, et al. Long-term effects of lithium on renal, thyroid, and parathyroid function: a retrospective analysis of laboratory data. Lancet
+2015; 386:461–468.
+139. Clos S, et al. Long-term effect of lithium maintenance therapy on estimated glomerular filtration rate in patients with affective disorders: a
+population-based cohort study. Lancet Psychiatry 2015; 2:1075–1083.
+140. Schoot TS, et al. Systematic review and practical guideline for the prevention and management of the renal side effects of lithium therapy.
+Eur Neuropsychopharmacol 2020; 31:16–32.
+141. Davis J, et al. Lithium and nephrotoxicity: a literature review of approaches to clinical management and risk stratification. BMC Nephrol
+2018; 19:305.
+142. Engels N, et al. Successful lithium treatment in a patient on hemodialysis. Bipolar Disorders 2019; 21:285–287.
+143. Smith GC, et al. Anticonvulsants as a cause of Fanconi syndrome. Nephrol Dial Transplant 1995; 10:543–545.
+144. Fukuda Y, et al. Immunologically mediated chronic tubulo-interstitial nephritis caused by valproate therapy. Nephron 1996; 72:328–329.
+145. Watanabe T, et al. Secondary renal Fanconi syndrome caused by valproate therapy. Pediatr Nephrol 2005; 20:814-817.
+146. Zaki EL, et al. Renal injury from valproic acid: case report and literature review. Pediatr Neurol 2002; 27:318–319.
+147. Tanaka H, et al. Distal type of renal tubular acidosis after anti-epileptic therapy in a girl with infantile spasms. Clin Exp Nephrol 1999;
+3:311–313.
+148. Knorr M, et al. Fanconi syndrome caused by antiepileptic therapy with valproic acid. Epilepsia 2004; 45:868–871.
+149. Rahman MH, et al. Acute hemolysis with acute renal failure in a patient with valproic acid poisoning treated with charcoal hemoperfusion.
+Hemodial Int 2006; 10:256–259.
+150. Koga S, et al. Risk factors for sodium valproate-induced renal tubular dysfunction. Clin Exp Nephrol 2018; 22:420–425.
+151. Hayes JF, et al. Adverse renal, endocrine, hepatic, and metabolic events during maintenance mood stabilizer treatment for bipolar disorder:
+a population-based cohort study. PLoS Med 2016; 13:e1002058.
+152. Kessing LV, et al. Continuation of lithium after a diagnosis of chronic kidney disease. Acta Psychiatr Scand 2017; 136:615–622.
+153. Pentikainen PJ, et al. Pharmacokinetics of chlormethiazole in healthy volunteers and patients with cirrhosis of the liver. Eur J Clin
+Pharmacol 1980; 17:275–284.
+154. Dashti-Khavidaki S, et al. Comparing effects of clonazepam and zolpidem on sleep quality of patients on maintenance hemodialysis. Iran J
+Kidney Dis 2011; 5:404–409.
+155. Sadjadi SA, et al. Allergic interstitial nephritis due to diazepam. Arch Intern Med 1987; 147:579.
+156. Sunovion Pharmaceuticals Inc. Highlights of Prescribing Information. LUNESTA® (eszopiclone) tablets, for oral use 2020; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2014/021476s030lbl.pdf.
+157. Blum RA, et al. Pharmacokinetics of gabapentin in subjects with various degrees of renal function. Clin Pharmacol Ther 1994;
+56:154–159.
+158. Miller A, et al. Gabapentin toxicity in renal failure: the importance of dose adjustment. Pain Med 2009; 10:190–192.
+159. Upjohn UK Limited. Summary of product characteristics. Neurontin 600mg film-coated tablets 2020; https://www.medicines.org.uk/emc/
+product/3197/smpc.
+160. Yeddi A, et al. Myoclonus and altered mental status induced by single dose of gabapentin in a patient with end-stage renal disease: a case
+report and literature review. Am J Ther 2019; 26:e768–e770.
+161. Ishida JH, et al. Gabapentin and pregabalin use and association with adverse outcomes among hemodialysis patients. J Am Soc Nephrol
+2018; 29:1970–1978.
+162. Gobo-Oliveira M, et al. Gabapentin versus dexchlorpheniramine as treatment for uremic pruritus: a randomised controlled trial. Eur J
+Dermatol 2018; 28:488–495.
+163. Gunal AI, et al. Gabapentin therapy for pruritus in haemodialysis patients: a randomized, placebo-controlled, double-blind trial. Nephrol
+Dial Transplant 2004; 19:3137–3139.
+164. Beladi Mousavi SS, et al. The effect of gabapentin on muscle cramps during hemodialysis: a double-blind clinical trial. Saudi J Kidney Dis
+Transpl 2015; 26:1142–1148.
+165. Razazian N, et al. Gabapentin versus levodopa-c for the treatment of restless legs syndrome in hemodialysis patients: a randomized clinical
+trial. Saudi J Kidney Dis Transpl 2015; 26:271–278.
+166. Rossi GM, et al. Randomized trial of two after-dialysis gabapentin regimens for severe uremic pruritus in hemodialysis patients. Intern
+Emerg Med 2019; 14:1341–1346.
+167. Eisai Inc. Highlights of Prescribing Information. Dayvigo (lemborexant) tablets for oral use [controlled substance schedule pending] 2019;
+https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/212028s000lbl.pdf.
+168. Huang CE, et al. Intramuscular lorazepam in catatonia in patients with acute renal failure: a report of two cases. Chang Gung Med J 2010;
+33:106–109.
+
+CHAPTER 8
+
+Hepatic and renal impairment  753
+
+

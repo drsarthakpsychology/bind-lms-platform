@@ -1,0 +1,1097 @@
+<<<PAGE 33>>>
+
+Organic (Including Symptomatic) Mental Disorders
+
+brain sufficiently can cause delirium. The aetiology of
+delirium demonstrates a threshold phenomenon, with
+a combination of factors adding up to cross a threshold
+for causing delirium, which appears to be different
+for each individual.
+Table 3.1: Predisposing Factors in Delirium
+1. Pre-existing brain damage or dementia
+2. Extremes of age (very old or very young)
+3. Previous history of delirium
+4. Alcohol or drug dependence
+5. Generalised or focal cerebral lesion
+6. Chronic medical illness
+7. Surgical procedure and postoperative period
+8. Severe psychological symptoms (such as fear)
+9. Treatment with psychotropic medicines
+10. Present or past history of head injury
+11. Individual susceptibility to delirium
+
+21
+
+One of the important causes of delirium, namely
+post-cardiac surgery delirium, is discussed in Chapter
+12. The most common causes are listed in Table 3.2.
+
+Management
+1. In cases where a cause is not obvious (or other
+contributory causes are suspected), a battery of
+investigations should be done which can include
+complete blood count, urinalysis, blood glucose,
+blood urea, serum electrolytes, liver and renal
+function tests, thyroid function tests, serum B12 and
+folate levels, X-ray chest, ECG, CSF examination,
+urine for porphyrins, drug screens, VDRL, HIV
+testing, arterial pO2 and pCO2, EEG, and brain
+imaging (such as cranial CT scan or MRI scan).
+2. Identification of the cause and its immediate
+correction, e.g. 50 mg of 50% dextrose IV for
+hypoglycaemia, O2 for hypoxia, 100 mg of B1 IV
+
+Table 3.2: Delirium: Some Important Causes
+Metabolic Causes
+i. Hypoxia, Carbon dioxide narcosis
+ii. Hypoglycaemia
+iii. Hepatic encephalopathy, Uremic encephalopathy
+iv. Cardiac failure, Cardiac arrhythmias, Cardiac
+arrest
+v. Water and electrolyte imbalance (Water, Na+,
+K+, Mg++, Ca++)
+vi. Metabolic acidosis or alkalosis
+vii. Fever, Anaemia, Hypovolemic shock
+viii. Carcinoid syndrome, Porphyria
+Endocrine Causes
+i. Hypo- and Hyperpituitarism
+ii. Hypo- and Hyperthyroidism
+iii. Hypo- and Hyperparathyroidism
+iv. Hypo- and Hyperadrenalism
+Drugs (Both ingestion and withdrawal can cause
+delirium) and Poisons
+i. Digitalis, Quinidine, Antihypertensives
+ii. Alcohol, Sedatives, Hypnotics (especially barbiturates)
+iii. Tricyclic antidepressants, Antipsychotics, Anticholinergics, Disulfiram
+
+iv. Anticonvulsants, L-dopa, Opiates
+v. Salicylates, Steroids, Penicillin, Insulin
+vi. Methyl alcohol, heavy metals, biocides.
+Nutritional Deficiencies
+i. Thiamine, Niacin, Pyridoxine, Folic acid, B12
+ii. Proteins
+Systemic Infections
+i. Acute and Chronic, e.g. Septicaemia, Pneumonia, Endocarditis
+Intracranial Causes
+i. Epilepsy (including post-ictal states)
+ii. Head injury, Subarachnoid haemorrhage, Subdural haematoma
+iii. Intracranial infections, e.g. Meningitis, Encephalitis, Cerebral malaria
+iv. Migraine
+v. Stroke (acute phase), Hypertensive encephalopathy
+vi. Focal lesions, e.g. right parietal lesions (such
+as abscess, neoplasm)
+Miscellaneous
+i. Postoperative states (including ICU delirium)
+ii. Sleep deprivation
+iii. Heat, Electricity, Radiation
+
+
+
+
+<<<PAGE 41>>>
+
+Organic (Including Symptomatic) Mental Disorders
+
+ORGANIC CATATONIC DISORDER
+According to the ICD-10, the following features
+are required for the diagnosis of organic catatonic
+disorder, in addition to the general guidelines for the
+diagnosis of other organic mental disorders, described
+earlier:
+1. Stupor (diminution or complete absence of spontaneous movement with partial or complete mutism,
+negativism, and rigid posturing);
+2. Excitement (gross hypermotility with or without
+a tendency to assaultiveness);
+3. Mixed (shifting rapidly and unpredictably from
+hypo- to hyperactivity).
+The presence of other catatonic symptoms and
+signs increases the confidence in the diagnosis. The
+catatonic symptoms and signs are described in detail
+in Chapter 5.
+
+29
+
+earlier. It is important to rule out any major disturbance
+of consciousness, orientation, memory, or mood.
+The delusions are variable and the type depends on
+the underlying aetiology. The most common delusions
+are persecutory in nature. Hallucinations (visual more
+often than auditory) may accompany the delusions.
+Schneiderian first rank symptoms (SFRS) are usually
+not seen the organic delusional disorder (in contrast
+to schizophrenia).
+
+Diagnosis
+Organic delusional disorder secondary to amphetamine use may be difficult to differentiate from paranoid schizophrenia. The differentiating points are an
+acute onset, history of amphetamine use prior to the
+onset, predominant visual hallucinations which may
+be fleeting, absence of formal thought disorder and a
+more ‘appropriate’ affect.
+
+Aetiology
+
+Aetiology
+
+The aetiology and management of organic catatonic
+disorder is described in detail in Chapter 19.
+
+1. Drugs: Amphetamines, hallucinogens, cannabis,
+disulfiram
+2. Complex partial seizures (e.g. temporal lobe
+epilepsy)
+3. Huntington’s chorea (initial stages), Parkinson’s
+disease, Wilson’s disease, and idiopathic basal
+ganglia calcification
+4. Right parietal lobe lesions, especially vascular
+lesions
+5. Lesions involving limbic system (e.g. tumours)
+6. Spinocerebellar degeneration
+7. Cerebral malaria
+8. Herpes simplex encephalitis
+9. Nutritional deficiencies (Vitamin B12, iron)
+10. Demyelinating disorders (such as multiple sclerosis, metachromatic leukodystrophy)
+
+Management
+1. Treatment of the underlying cause, if amenable to
+treatment.
+2. Symptomatic treatment with low dose of a shortacting benzodiazepine (e.g. Lorazepam), or electroconvulsive therapy (if needed). Antipsychotics
+should usually be avoided as they can make
+catatonic features worse; however small doses
+of atypical antipsychotics such as Risperidone,
+Olanzapine, Aripiprazole or Quetiapine can be
+used with care.
+
+ORGANIC DELUSIONAL
+(SCHIZOPHRENIA-LIKE) DISORDER
+According to ICD-10, presence of predominant
+delusions caused by an underlying organic cause is
+required for the diagnosis of organic delusional disorder, in addition to the general guidelines for the
+diagnosis of other organic mental disorders, described
+
+Management
+1. Treatment of the underlying cause such as removal
+of toxic agent in amphetamine psychosis.
+2. Symptomatic management with a low dose of an
+antipsychotic medication (such as Risperidone, Haloperidol, Olanzapine, or Quetiapine) may be needed.
+
+
+
+
+<<<PAGE 46>>>
+
+34
+
+A Short Textbook of Psychiatry
+
+The withdrawal state is further classified as:
+i. uncomplicated;
+ii. with convulsions; and
+iii. with delirium.
+
+Dependence Syndrome
+According to the ICD-10, the dependence syndrome is
+a cluster of physiological, behavioural, and cognitive
+phenomena in which the use of a substance or a class
+of substances takes on a much higher priority for a
+given individual than other behaviours that once had
+greater value.
+A central descriptive characteristic of the dependence syndrome is the desire (often strong and
+sometimes overpowering) to take psycho active
+substances (which may or may not have been medically prescribed), alcohol, or tobacco. There may be
+evidence that return to substance use after a period
+of abstinence leads to a more rapid reappearance of
+other features of the syndrome than occurs with nondependent individuals.
+A definite diagnosis of dependence should usually
+be made only if at least three of the following have
+been experienced or exhibited at sometime during the
+previous year:
+1. A strong desire or sense of compulsion to take the
+substance.
+2. Difficulties in controlling the substance-taking
+behaviour in terms of its onset, termination, or
+levels of use.
+3. A physiological withdrawal state when the substance use has ceased or reduced, as evidenced
+by the characteristic withdrawal syndrome for
+the substance; or use of the same (or a closely
+related) substance with the intention of relieving
+or avoiding withdrawal symptoms.
+4. Evidence of tolerance, such that increased doses of
+the psychoactive substance are required in order to
+achieve effects originally produced by lower doses
+(clear examples of this are found in the alcoholand opiate-dependent individuals who may take
+daily doses that are sufficient to incapacitate or
+kill non-tolerant users).
+
+5. Progressive neglect of alternative pleasures or
+interests because of psychoactive substance use,
+increased amount of time necessary to obtain or
+take the substance or to recover from its effects.
+6. Persisting with substance use despite clear evidence of overtly harmful consequences, such as
+harm to the liver through excessive drinking,
+depressive mood states consequent to periods of
+heavy substance use, or drug-related impairment
+of cognitive functioning; efforts should be made
+to determine that the user was actually, or could
+be expected to be, aware of the nature and extent
+of the harm.
+A narrowing of personal repertoire of patterns of
+psychoactive substance use has also been described as
+a characteristic feature of the dependence syndrome
+(e.g. a tendency to drink in the same way on weekdays
+and weekends, regardless of the social constraints that
+determine appropriate drinking behaviour).
+The dependence syndrome can be further coded
+as (ICD-10):
+i. currently abstinent;
+ii. currently abstinent, but in a protected environment
+(e.g. in hospital, in a therapeutic community, in
+prison, etc.);
+iii. currently on a clinically supervised maintenance
+or replacement regime (controlled dependence,
+e.g. with methadone; nicotine gum or nicotine
+patch);
+iv. currently abstinent, but receiving treatment with
+aversive or blocking drugs (e.g. naltrexone or
+disulfiram);
+v. currently using the substance (active dependence);
+vi. continuous use; and
+vii. episodic use (dipsomania).
+The dependence can be either psychic, or physical,
+or both.
+
+Harmful Use
+Harmful use is characterised by:
+1. Continued drug use, despite the awareness of
+harmful medical and/or social effect of the drug
+being used, and/or
+
+
+
+
+<<<PAGE 53>>>
+
+Psychoactive Substance Use Disorders
+
+Although detoxification can be achieved on an
+outpatient (OPD) basis, some patients do require
+hospitalisation. These patients may present with:
+i. Signs of impending delirium tremens (tremor,
+autonomic hyperactivity, disorientation, or perceptual abnormalities), or
+ii. Psychiatric symptoms (psychotic disorder, mood
+disorder, suicidal ideation or attempts, alcoholinduced neuropsychiatric disorders), or
+iii. Physical illness (caused by chronic alcohol use or
+incidentally present), or
+iv. Inability to stop alcohol in the home setting.
+Detoxification is the first step in the treatment of
+alcohol dependence.
+
+Treatment of Alcohol Dependence
+After the step of detoxification is over, there are several methods to choose from, for further management.
+Some of these important methods include:
+i. Behaviour therapy
+The most commonly used behaviour therapy in the
+past has been aversion therapy, using either a subthreshold electric shock or an emetic such as apomorphine. Many other methods (covert sensitisation,
+relaxation techniques, assertiveness training, selfcontrol skills, and positive reinforcement) have been
+used alone or in combination with aversion therapy.
+Currently, in most settings, it is considered unethical
+to use aversion therapy for the treatment of alcohol
+dependence.
+ii. Psychotherapy
+Both group and individual psychotherapy have been
+used. The patient should be educated about the risks
+of continuing alcohol use, asked to resume personal
+responsibility for change and be given a choice of
+options for change. Motivational enhancement therapy
+with or without cognitive behaviour therapy and lifestyle modification is often useful, if available.
+iii. Group therapy
+Of particular importance is the voluntary self-help
+group known as AA (Alcoholics Anonymous), with
+branches all over the world and a membership in hundreds of thousands. Although the approach is partly
+
+41
+
+religious in nature, many patients derive benefits
+from the group meetings which are non-professional
+in nature.
+iv. Deterrent agents
+The deterrent agents are also known as alcohol sensitising drugs.
+Disulfiram (tetraethyl thiuram disulfide) was discovered in 1930s, when it was observed that workers
+in the rubber industry developed unpleasant reactions
+to alcohol intake, due to accidental absorption of
+antioxidant disulfiram. The mechanism of action of
+disulfiram is summarised in Figure 4.1.
+When alcohol is ingested by a person who is on
+disulfiram, alcohol-derived acetaldehyde cannot be
+oxidised to acetate and this leads to an accumulation
+of acetaldehyde in blood. This causes the important
+disulfiram-ethanol reaction (DER) characterised
+by flushing, tachycardia, hypotension, tachypnoea,
+palpitations, headache, sweating, nausea, vomiting,
+giddiness and a sense of impending doom associated
+with severe anxiety.
+The onset of the reaction occurs within 30 minutes,
+becomes full blown within 1 hour, and subsides usually within 2 hours of ingestion of alcohol. In sensitive
+patients or in those who have ingested a large amount
+of alcohol, DER can be very severe and life threatening
+due to one or more of the following: shock, myocardial
+infarction, convulsions, hypoxia, confusion and coma.
+Therefore, treatment with disulfiram is usually
+begun in an inpatient hospital setting, usually after
+a challenge test with alcohol to demonstrate that
+unpleasant and dangerous side-effects occur, if either
+alcohol or alcohol-containing eatable/drink is consumed whilst treatment is continued with disulfiram.
+The usual dose of disulfiram is 250-500 mg/day
+(taken before bedtime to avoid drowsiness in daytime)
+in the first week and 250 mg/day subsequently for
+the maintenance treatment. The effect begins within
+12 hours of first dose and remains for 7-10 days after
+the last dose. The patient should carry a warning card
+detailing the forbidden alcohol-containing articles, the
+possible effects and their emergency treatment, along
+with patient identification details.
+
+
+
+
+<<<PAGE 54>>>
+
+42
+
+A Short Textbook of Psychiatry
+
+Fig. 4.1: Disulfiram: Mode of Action
+
+The contraindications of disulfiram use are first
+trimester of pregnancy, coronary artery disease, liver
+failure, chronic renal failure, peripheral neuropathy,
+muscle disease and psychotic symptoms presently or
+in the past.
+In selected patients (such as an older age group,
+good motivation, good social support, absent underlying psychopathology and good treatment concordance), the response can be dramatic. In addition to
+oral preparations, subcutaneous disulfiram implants
+are also now available. However, they provide unpredictable blood levels of disulfiram.
+Other deterrent agents
+1. Citrated calcium carbimide (CCC): The mechanism of action is similar to disulfiram but onset of
+action occurs within 1 hour and is reversible. The
+usual dosage is 100 mg/d in two divided doses.
+2. Metronidazole.
+3. Animal charcoal, a fungus (Coprinus atramentarius), sulfonylureas and certain cephalosporins
+also cause a disulfiram like action.
+v. Anti-craving agents
+Acamprosate, naltrexone and SSRIs (such as fluoxetine) are among the medications tried as anti-craving
+agents in alcohol dependence.
+
+Acamprosate (the Ca++ salt of N-acetyl-homotaurinate)
+interacts with NMDA receptor-mediated glutamatergic neurotransmission in the various brain regions
+and reduces Ca++ fluxes through voltage-operated
+channels.
+Naltrexone (oral opioid receptor antagonist) probably interferes with alcohol-induced reinforcement
+by blocking opioid receptors. Fluoxetine (and other
+SSRIs) have been occasionally used as anti-craving
+agents in their usual antidepressant doses.
+vi. Other medications
+A variety of other medicines such as benzodiazepines, antidepressants, antipsychotics, lithium,
+carbamazepine, and even narcotics have been tried.
+These should be used only if there is a special indication for their use (for example, antidepressants for
+underlying depression).
+vii. Psychosocial rehabilitation
+Rehabilitation is an integral part of the multi-modal
+treatment of alcohol dependence.
+
+OPIOID USE DISORDERS
+Dried exudate obtained from unripe seed capsules of
+Papaver somniferum has been used and abused for
+
+
+
+
+<<<PAGE 141>>>
+
+Sexual Disorders
+
+129
+
+Table 10.3: Sexual Dysfunctions Caused by Drugs
+Drugs
+I.
+
+Effect on
+Sexual Desire
+
+Effect on
+Effect on
+Erectile Function Ejaculation
+
+Antihypertensives
+1. Methyldopa
+2. Clonidine
+3. Propranolol
+4. Thiazide diuretics
+5. Spironolactone
+6. Guanethidine
+
+Inhibited
+—
+Inhibited
+—
+Inhibited
+—
+
+Impaired
+Impaired
+Impaired
+Impaired
+Impaired
+Impaired
+
+7. Hexamethonium
+
+—
+
+Impaired
+
+Inhibited
+Inhibited (in males)
+Increased (in both sexes)
+
+Impaired
+Impaired
+
+Impaired
+Impaired
+
++/–
+
+Impaired
+
+Impaired
+
++/–
+
+Impaired
+
+Delayed ejaculation
+
+Inhibited
+
+Impaired
+
+Inhibited
+—
+—
+Increased (with low dose,
+due to decrease in anxiety)
+Decreased (with high dose)
+—
+—
+
+Impaired
+Impaired
+Priapism
+Impaired (with
+high dose)
+
+Retrograde and
+Delayed ejaculation
+—
+—
+—
+Impaired (with high
+dose)
+
+Impaired
+—
+
+—
+Delayed ejaculation
+
+Increased (with low dose)
+Inhibited
+
+Impaired
+Impaired (with
+high dose)
+
+Impaired
+Impaired
+
+Inhibited
+
+Impaired
+
+—
+
+Inhibited
+—
+
+—
+Impaired
+
+—
+Impaired
+
+II. Hormonal Preparations
+1. Corticosteroids
+2. Oestrogens
+3. Androgens
+III. Psychotropic Medications
+1. Tricyclic antidepressants
+and MAO inhibitors
+2. SSRI antidepressants
+(e.g. paroxetine, fluoxetine)
+3. Thioridazine
+4.
+5.
+6.
+7.
+
+Chlorpromazine
+Haloperidol
+Trazodone
+Barbiturates and
+benzodiazepines
+
+8. Lithium
+9. Disulfiram
+IV. Psychoactive Substance Use
+1. Alcohol
+2. Opiates and cocaine
+V. Others
+1. Anti-inflammatory drugs
+(e.g. indomethacin)
+2. L-dopa
+3. Anticholinergic drugs
+(e.g. trihexiphenidyl)
+
+Impaired
+Impaired
+—
+—
+Impaired
+Impaired; Retrograde
+ejaculation
+Impaired; Retrograde
+ejaculation
+
+
+
+
+<<<PAGE 227>>>
+
+Psychological Treatments
+
+a hierarchy of anxiety-producing stimuli is
+prepared.
+iii. Systematic desensitisation proper: This can
+be done either in imagery (SD-I) or in reality/in vivo (SD-R). At first, the lowest item in
+hierarchy is confronted (in reality or in imagery). The patient is advised to signal whenever
+anxiety occurs. With each signal, he is asked
+to relax (Step-I). After a few trials, patient is
+able to control his anxiety. Thus, gradually the
+hierarchy is climbed till the maximum anxietyprovoking stimulus can be faced in the absence
+of anxiety.
+SD is a treatment of choice in phobias and obsessive-compulsive disorders.
+
+Aversion Therapy
+Aversion therapy is used for the treatment of conditions which are pleasant but felt undesirable by the
+patient, e.g. alcohol dependence, transvestism, ego
+dystonic homosexuality, other sexual deviations.
+The underlying principle is pairing of the pleasant
+stimulus (such as alcohol) with an unpleasant response
+(such as brief electrical stimulus), so that even in
+absence of unpleasant response (after the therapy is
+over), the pleasant stimulus becomes unpleasant by
+association. The unpleasant aversion can be produced
+by electric stimulus (low voltage), drugs (such as apomorphine and disulfiram) or even by fantasy (when it
+is called as covert sensitisation).
+Typically, 20-40 sessions are needed, with each
+session lasting about 1 hour. After completion of treatment, booster sessions may be given. The current use
+of aversion therapy has declined sharply in the Western
+world (and also elsewhere) as it is felt by many that it
+may violate the human rights of the patient.
+
+Operant Conditioning Procedures for
+Increasing Behaviour
+The common methods for augmenting an adaptive
+behaviour include:
+i. Positive reinforcement: Here, the desirable
+behaviour is reinforced by a reward, either
+material or symbolic.
+
+215
+
+ii. Negative reinforcement: Here, on performance
+of the desirable behaviour, punishment can be
+avoided.
+iii. Modelling: The person is exposed to ‘model’
+behaviour and is induced to copy it. This can
+also be used to avoid certain behaviours.
+
+Flooding
+This is usually the method used in the treatment of
+phobias. Here, the person is directly exposed to the
+phobic stimulus, but escape is made impossible. By
+prolonged contact with the phobic stimulus, therapist’s
+guidance and encouragement, and therapist’s modelling behaviour, anxiety decreases and the phobic
+behaviour diminishes.
+
+Operant Conditioning Procedures for
+Decreasing Behaviour
+These methods include:
+i. Time-out: Here, the reinforcement is withdrawn
+for some time, contingent upon the undesired
+response. Time-out is often used in therapy with
+children.
+ii. Punishment: Aversive stimulus is here
+presented, contingent upon undesired response
+(i.e. whenever undesired response occurs, punishment is given).
+iii. Satiation: The undesired response is positively
+reinforced, so that tiring occurs. A similar technique is negative practice procedure.
+
+Other Behavioural Techniques
+Many other techniques such as token economy (for
+hospitalised patients), social-skills training (for
+patients with social difficulties), family therapy,
+marital therapy, and cognitive behavioural therapy
+are available. The interested reader is referred to the
+Reading List.
+
+Cognitive Therapy or Cognitive
+Behaviour Therapy
+Cognitive behaviour therapy (CBT) is a type of psychotherapy which aims at correcting the maladaptive
+methods of thinking, thus providing relief from con-
+
+
+
+
+<<<PAGE 237>>>
+
+Emergency Psychiatry
+
+with psychotic disorders. Follow-up care is very
+important to prevent future suicidal attempts or
+suicide.
+
+Stupor and Catatonic Syndrome
+Stupor is a common condition which presents at
+the emergency services. It is defined as a clinical
+syndrome of akinesis and mutism but with relative
+preservation of conscious awareness.
+The term stupor, traditionally, has a psychiatric
+connotation, but a careful analysis of the stuporous
+patients shows that a large majority of them have
+an underlying organic cerebral cause. Stupor is
+often associated with catatonic signs and symptoms
+(catatonic withdrawal or catatonic stupor). Catatonic
+syndrome is any disorder which presents with at least
+two catatonic signs. Catatonia can be either excited
+or withdrawn (or mixed). Only catatonic withdrawal
+is associated with stupor.
+The various catatonic signs include mutism, negativism, stupor, ambitendency, echolalia, echopraxia,
+automatic obedience, posturing, mannerisms, stereotypies, excitement (not goal-directed), impulsiveness,
+combativeness or nudism.
+
+Aetiology
+A wide variety of disorders can cause catatonic stupor.
+Some of the important causes are listed in Table 19.5.
+
+Differential Diagnosis
+It is of foremost importance to differentiate between
+organic stupor and psychogenic (or so called ‘functional’) stupor. This can be done on the basis of antecedent medical and psychiatric history, mode of onset,
+and detailed physical and neurological examination.
+The important differentiating points between an
+organic and a psychogenic stupor are tabulated in
+Table 19.6. If a diagnosis of organic catatonic stupor
+is made, a search for underlying cause should be made.
+On the other hand, if the pentothal/amytal/diazepam
+interview reveals psycho pathology, appropriate
+treatment can be instituted.
+
+225
+
+Table 19.5: Some Causes of Catatonic Stupor
+1. Neurological Disorders
+i. Post-encephalitic parkinsonism
+ii. Limbic encephalitis
+iii. Surgical procedures on basal ganglia
+iv. Neoplasms in diencephalon, frontal lobe and
+limbic system
+v. Subacute sclerosing panencephalitis (SSPE)
+vi. General paresis of insane (GPI)
+vii. Petit mal status
+viii. Post-ictal phase of epilepsy
+ix. Subdural haematoma
+x. Cerebral malaria
+xi. Cortical venous thrombosis
+2. Systemic and Metabolic Disorders
+i. Diabetic ketoacidosis
+ii. Acute intermittent porphyria
+iii. Hyperparathyroidism causing hypercalcaemia
+iv. Pellagra
+v. Hepatic encephalopathy
+vi. Systemic lupus erythematosis
+vii. Homocystinuria
+viii. Membranous glomerulonephritis
+3. Drugs and Poisoning
+i. Organic alkaloids
+ii. Antipsychotics
+iii. ACTH (therapeutic doses)
+iv. Aspirin
+v. Illuminating gas
+vi. Ethyl alcohol (large doses)
+vii. Levodopa
+viii. Disulfiram
+ix. CO poisoning
+x. Lithium toxicity
+xi. Methylphenidate
+xii. Phencyclidine (large doses)
+xiii. Mescaline
+4. Psychiatric Disorders
+i. Catatonic schizophrenia
+ii. Depressive stupor
+iii. Manic stupor
+iv. Periodic catatonia
+v. Conversion and dissociative disorder
+vi. Reactive psychosis
+vii. During hypnosis.
+
+
+
+
+<<<PAGE 266>>>
+
+254
+
+A Short Textbook of Psychiatry
+
+Blackouts 37
+Bladder training 169
+Blocking 12
+Blood
+alcohol concentration 39
+lithium levels 190
+Blunted affect 58
+Borderline personality disorder 60,
+117, 228
+Brain imaging 64, 75
+Brief
+dissociative stupor 100
+history of psychopharmacology 173
+pulse ECT 202
+Bromocriptine 48, 132
+Bruxism 140
+Bulimia nervosa 144
+Buprenorphine 44, 45
+Bupropion 52
+Buspirone 92, 98, 197
+
+Childhood
+history 9
+psychosis 165
+Chlordiazepoxide 40, 51
+Chlorpromazine 66
+Cholinesterase inhibitors 25, 26
+Chromatography 157
+Chronic
+depression 74, 77
+fatigue syndrome 109
+Circumscribed amnesia 101
+Citalopram 26
+Citrated calcium carbimide 42
+Civil responsibility 229
+Classical
+conditioning model 214
+psychoanalysis 213
+psychosomatic disorders 147
+Classification in
+child psychiatry 162
+psychiatry 2
+Classification of
+alcoholism 37
+benzodiazepines 196
+mental retardation 156
+psychotropic drugs 172
+Claustrophobia 93
+Clerambault’s syndrome 84
+Clomipramine 98, 131
+Clonazepam 94, 98
+Clonidine 44, 167, 169
+Clozapine 52, 53, 66
+Cocaine 47
+overdose 48
+preparations 47
+use disorder 46
+withdrawal syndrome 48
+Code of ethics for psychiatrists 234
+Cognitive
+behaviour therapy 68, 79, 94, 98,
+112, 215, 216
+behavioural theory 91
+therapy 215
+Combativeness 225
+Command hallucinations 57
+Common
+examples of psychosomatic disorders
+148
+psychiatric emergencies 222
+themes in suicide 222
+Community
+mental health 235
+psychiatry 235
+
+C
+Caffeine 52, 53
+CAGE questionnaire 37, 39
+Cannabis
+preparations 45
+use disorder 45
+Capgras’ syndrome 87
+Carbamazepine 79, 192
+Carphologia 20
+Castration anxiety 211
+Cataplexy 138
+Catastrophic reaction 22
+Catatonia 59
+Catatonic
+behaviour 58
+features 57
+schizophrenia 59
+signs 11, 225
+stupor 67, 225
+syndrome 225
+withdrawal 225
+Causes of
+catatonic stupor 225
+hypersomnia 138
+mental retardation 157
+Censor 206
+Central mental health authority 233, 237
+Cerebral palsy 159
+Chasing the dragon 43
+Child
+abuse 228
+psychiatry 162
+
+Comparison of delirium and dementia 22
+Complex partial seizures 29, 31, 61, 227
+Complicated grief reaction 152
+Complications of
+alcohol dependence 39
+chronic alcohol use 38
+Conceptual thinking stage 153
+Concrete thinking stage 153
+Conditioning devices 169
+Conduct disorders 167
+Conjugal paranoia 84
+Consultation-liaison psychiatry 149
+Continuous amnesia 101
+Contraindications of disulfiram 42
+Conversion
+disorder 99
+release symptoms 102
+Coping
+mechanisms 207
+skills training 112
+Coprolalia 168
+Cortical dementia 24
+Counselling 110
+Counter
+phobic defense 210
+thoughts 96
+Covert sensitisation 41, 215
+CPAP 139
+Crack 47
+Cretinism 159
+Criminal lunatic 232
+Crisis 221
+intervention 112
+centre 228
+Critical
+comments 64
+remarks 68
+Cross-gender homosexuality 122
+Culture bound syndromes 110
+Cyclothymia 73
+Cyproheptadine 144
+
+D
+Dangerous Drug Act of 1930 233
+Deep brain stimulation 199
+Defense mechanism 90
+Definition of psychiatric disorder 1
+Deliberate self-harm 222
+Delirium 19, 21, 23
+tremens 38, 41
+Delusion of doubles 87
+Delusional
+depression 77, 78
+
+
+
+
+<<<PAGE 267>>>
+
+Index
+disorder 58, 61, 76, 83, 84
+dysmorphophobia 84
+halitosis 84
+parasitosis 84
+Delusions 58, 60, 62, 71
+Delusions of
+control 56
+grandeur 56, 70, 83
+jealousy 83
+nihilism 71
+persecution 56, 61, 70, 83
+reference 56
+Demence precoce 54
+Dementia 22, 23, 76
+praecox 54, 61
+Denial 65, 207
+Dependence syndrome 34
+Dependent personality disorder 118
+Depersonalisation 13, 46, 109
+derealisation syndrome 109
+disorder 109
+Depot antipsychotic 67
+Depressed mood 71
+Depression 61, 80, 95, 227
+with psychotic features 77
+Depressive
+episode 30, 71
+equivalent 81, 106
+ideation/cognition 71
+pseudodementia 23
+stupor 71
+Derealisation 13, 46, 109
+Desmopressin 169
+Deterrent agents 41
+Detoxification 40, 41, 44
+Developmental
+milestones 154
+reading disorder 162
+Dexamphetamine 167
+Dhat syndrome 110
+Diagnostic formulation 17
+Diazepam 40, 67, 87, 94, 112, 137, 149,
+218, 228
+Digit
+backwards 14
+span test 14
+Dipsomania 34, 36
+Disaster management 112
+Disintegrative psychosis 165
+Disorders of
+adult personality and behaviour 113
+affect 56
+excessive somnolence 137
+
+perception 56
+sexual preference 124
+Disorganised
+behaviour 62
+schizophrenia 58
+symptoms 62
+Dissocial personality disorder 115
+Dissociative
+amnesia 100, 101
+anaesthesia and sensory loss 100
+and conversion disorders 99
+convulsions 100, 101
+disorder 100
+fugue 101
+identity disorder 102
+motor disorders 99
+Distortion 207
+District mental health programme 237
+Disulfiram 41, 42
+ethanol reaction 41
+Divalproex 191
+Donepezil 25, 26
+Dopamine 75
+agonists 132
+Double depression 81
+Down’s syndrome 158
+Dream anxiety disorder 140
+Drug 33, 228
+and alcohol dependence 227
+induced psychoses 61
+Dual-role transvestism 122
+Duration of
+therapy 202
+untreated psychosis 63
+Dyslalia 163
+Dyssomnias 136
+Dysthymia 73, 82
+Dysthymic disorder 80, 82
+
+E
+Eating disorders 142
+Echolalia 56, 59, 168, 225
+Echopraxia 59, 225
+Ecstasy 70
+Educational history 9
+Ego 206
+defense mechanisms 206, 207
+ideal 206
+Egodystonic sexual orientation 123
+Ego-structure 214
+Ekbom syndrome 136, 137
+Elation 70
+Elective mutism 171
+
+255
+Electra complex 211
+Electroconvulsive therapy 29, 67, 77,
+98, 199, 228
+Electroshock therapy 199
+Elementary auditory hallucinations 56
+Elevated mood 70
+Emergency psychiatry 221
+Emil Kraepelin 54
+Emotional
+blunting 56
+lability 22, 25
+over-involvement 64
+shallowness 56
+Emotionally unstable personality disorder 116
+Emotions 69
+Encopresis 170
+English Lunacy Act of 1890 231
+Enuresis 169
+Environmental manipulation 26
+Epidemiology 55, 222
+Epilepsy 28
+Epileptic seizures 101
+Epiloia 159
+Erectile dysfunction 127
+Erotomania 84
+Erotomanic delusions 83
+Erythrophobia 93
+Eugen Bleuler 54, 55
+Euphoria 70
+Exaltation 70
+Excessive sexual drive 127
+Excited
+behaviour 227
+catatonia 59
+Expressed emotions 64, 65, 68
+Expressive language disorder 163
+
+F
+Factitious disorder 119
+Family
+and marital therapy 80
+history 7
+structure 7
+theories 64
+therapy 68, 144, 217
+tree 7
+Fantasy life 10
+Fatigability 72
+Female
+anorgasmia 130
+orgasmic disorder 130
+sexual arousal disorder 128
+
+

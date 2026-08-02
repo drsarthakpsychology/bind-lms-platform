@@ -1,0 +1,2040 @@
+<<<PAGE 249>>>
+
+CHAPTER 1
+
+228  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 1.40 (Continued)
+Treatment
+
+Comments
+
+Benzhexol (trihexyphenidyl)
+5–15mg/day35
+
+Small, open study suggests useful activity. Used in some centres but
+may impair cognitive function. Lower doses (2mg) may be
+effective36
+
+Benzatropine 2mg/day
++ terazosin 2mg/day37
+
+Combination shown to be better than either drug alone. Terazosin
+is an α1 antagonist so it may cause hypotension.
+
+Botulinum toxin38–41
+(Botox) Bilateral parotid gland injections (150
+IU into each gland)
+
+Effective in treating sialorrhoea associated with neurological
+disorders. Six cases of successful treatment of clozapine-related
+hypersalivation in the literature
+
+Bupropion
+100–150mg/day42
+
+Single case report. May lower seizure threshold
+
+Chlorphenamine16
+
+Antihistamine and relatively weak antimuscarinic. One high-quality
+study
+
+Clonidine
+0.1–0.2mg patch weekly
+or 0.1mg orally at night43,44
+
+α2 partial agonist. Limited literature support. May exacerbate
+psychosis, depression and cause hypotension
+
+Diphenhydramine15,16
+
+Antihistamine and potent antimuscarinic. Few high-quality studies
+
+Glycopyrrolate
+0.5mg to 4mg BD45–49
+
+One RCT showed glycopyrrolate to be more effective than
+biperiden without worsening cognitive function while another
+found significant clinical improvement of ‘nocturnal sialorrhoea’
+with 2mg a day compared with placebo
+
+Guanfacine
+1mg daily50
+
+α2 agonist. Single case report. May cause hypotension
+
+Hyoscine
+0.3mg tablet sucked or chewed up to 3
+times daily or 1.5mg/72 hours patch51–54
+
+Peripheral and central anticholinergic. Very widely used but only
+one double-blind RCT. May cause cognitive impairment, drowsiness
+and worsen constipation
+
+Ipratropium Nasal spray
+(0.03% or 0.06%) – given sublingually up to
+2 sprays three times a day of the 0.06% or
+intranasally, 1 spray into each nostril daily of
+the 0.03%55,56
+
+Limited literature support. The only placebo-controlled RCT
+conducted was negative57
+
+Lofexidine
+0.2mg twice daily58
+
+α2 agonist. Very few data. May exacerbate psychosis, depression
+and cause hypotension
+
+Metoclopramide
+Starting dose of 10mg a day16,59,60
+
+Double-blind, placebo-controlled trial found metoclopramide was
+associated with a significant reduction in nocturnal hypersalivation
+and drooling.
+
+Moclobemide
+150–300mg/day45
+
+Effective in 9 of 14 patients treated in one open study. Appears to
+be as effective as amisulpride (see above)
+
+N-Acetylcysteine61
+
+An antioxidant that also modulates glutamatergic, neurotrophic
+and inflammatory pathways. Small case series reported with
+significant decrease in sialorrhea.
+
+
+
+
+<<<PAGE 333>>>
+
+312  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Recognised minimum effective doses of antidepressants
+The recommended minimum effective doses of antidepressants are summarised in Table 3.2.
+Table 3.2 The recommended minimum effective doses of antidepressants
+Antidepressant
+
+Dose
+
+Tricyclics
+
+Unclear; at least 75–100mg/day,1 possibly 125mg/day2
+
+Lofepramine
+
+140mg/day3
+
+CHAPTER 3
+
+SSRIs
+Citalopram
+
+20mg/day4
+
+Escitalopram
+
+10mg/day5
+
+Fluoxetine
+
+20mg/day6
+
+Fluvoxamine
+
+50mg/day7
+
+Paroxetine
+
+20mg/day8
+
+Sertraline
+
+50mg/day9
+
+Others
+Agomelatine
+
+25mg/day10
+
+Bupropion
+
+150mg/day11
+
+Desvenlafaxine
+
+50mg/day12
+
+Duloxetine
+
+60mg/day13,14
+
+Levomilnacipran
+
+40mg/day15
+
+Mirtazapine
+
+30mg/day (15mg?16)
+
+Moclobemide
+
+300mg/17
+
+Reboxetine
+
+8mg/day18
+
+Trazodone
+
+150mg/day19
+
+Venlafaxine
+
+75mg/day20
+
+Vilazodone
+
+20mg/day15
+
+Vortioxetine
+
+10mg/day15
+
+
+
+
+<<<PAGE 338>>>
+
+Depression and anxiety disorders  317
+
+Resistant depression is difficult to treat successfully, and outcomes are often poor,1–3
+especially if evidence-based protocols are not followed.4 Treatment-resistant depression
+is not a uniform entity but a complex spectrum of severity which can be graded5 and in
+which outcome is closely linked to grading.6 A significant minority of apparently resistant unipolar depression may in fact be bipolar depression7,8 which is often unresponsive
+to standard antidepressants9,10 (see section on ‘Bipolar depression’ in Chapter 2).
+Recently there has been a move to characterise treatment-resistant depression as ‘difficult-to-treat’ depression on the basis that the former description implies that depression
+treatments are normally effective and that non-response is therefore somehow abnormal.11 Others suggest abandoning treatment-resistant depression as a diagnosis (again
+proposing ‘difficult-to-treat’ depression) because it propels clinicians to try more and
+more drugs in increasingly complex regimens rather than managing expectations of
+recovery to a more realistic level.12
+Management of treatment-resistant depression has been informed by the STAR*D
+programme (Sequenced Treatment Alternatives to Relieve Depression). This was a
+pragmatic effectiveness study which used remission of symptoms as its main outcome.
+At stage 1,13 2,786 subjects received citalopram (mean dose 41.8mg/day) for 14 weeks;
+
+n = 2,876
+Out-patients with major depression
+Citalopram
+28%
+Switch
+n = 727
+
+Bupropion
+21.3%
+
+vs
+
+Venlafaxine
+24.8%
+
+vs
+
+Sertraline
+17.6%
+
+Switch
+n = 235
+
+Mirtazapine
+12.3%
+
+vs
+
+Augment
+n = 565
+
+Failed
+
+Add bupropion
+29.7%
+
+Failed
+
+Add lithium
+15.9%
+
+Nortriptyline
+19.8%
+
+n = 51
+
+Tranylcypromine
+6.9%
+Figure 3.2 Remission rates in STAR*D
+
+Failed
+
+vs
+
+vs
+
+Add buspirone
+30.1%
+
+Augment
+n = 142
+
+vs
+
+n = 58
+
+Mirtazapine + venlafaxine
+13.7%
+
+Add T3
+24.7%
+
+CHAPTER 3
+
+Management of treatment-resistant depression – first choice
+
+
+
+
+<<<PAGE 359>>>
+
+338  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 3.7 Antidepressants – swapping and stopping*
+
+To
+From
+
+Agomelatine Bupropion Clomipramine Fluoxetine
+
+CHAPTER 3
+
+Agomelatinea
+
+Stop
+Stop
+agomelatine agomelatine
+then start
+then start
+bupropion clomipramine
+
+Stop
+agomelatine
+then start
+fluoxetine
+
+Stop
+agomelatine
+then start
+fluvoxamine
+
+Stop agomelatine
+then start MAOIs
+
+Cross-taper
+cautiously with
+low dose
+clomipramine
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for 2
+weeks then start
+MAOIs
+
+Taper and
+stop then
+start
+fluoxetine at
+10mg/day
+
+Taper and stop Taper and stop
+then start low then wait for 3
+weeks then start
+dose
+MAOIs
+fluvoxamine
+
+Bupropionb
+
+Cross-taper
+cautiously
+
+Clomipramine
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Fluoxetinec
+
+Cross-taper
+cautiously
+
+Stop
+fluoxetine.
+Wait
+4–7 days
+then start
+bupropion
+
+Fluvoxamined
+
+Taper and stop Cross-taper Taper and stop
+then start low
+then wait for cautiously
+dose
+4 days
+clomipramine
+
+Cross-taper
+MAOIs
+cautiously
+Phenelzine
+Tranylcypromine
+Selegiline
+
+MAOIs
+Phenelzine
+Tranylcypromine
+Fluvoxamine Selegiline
+
+Stop
+fluoxetine.
+Wait 4–7 days
+then start
+fluvoxamine
+
+Stop fluoxetine.
+Wait 2 weeks
+then start low
+dose
+clomipramine
+Direct switch
+possible
+
+Stop fluoxetine
+then wait for 5–6
+weeks then start
+MAOIs
+
+Taper and stop
+then wait for
+1 week then start
+MAOIs
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and stop
+then wait for
+3 weeks
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and stop Taper and stop
+then wait for then wait for
+2 weeks
+2 weeks
+
+Moclobemide
+
+Taper and stop Taper and
+stop then
+then wait 24
+wait 24
+hours
+hours
+
+Taper and stop
+then wait 24
+hours
+
+Taper and
+stop then
+wait 24
+hours
+
+Taper and stop Taper and stop,
+then wait 24 wait 24 hours
+then start MAOIs
+hours
+
+Mirtazapine
+
+Cross-taper
+cautiously
+
+Cross-taper Cross-taper
+cautiously
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for 2
+weeks
+
+Reboxetinee
+
+Cross-taper
+cautiously
+
+Crosstaper
+cautiously
+
+Cross-taper
+cautiously
+
+Crosstaper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for
+1 week then
+start MAOIs
+
+
+
+
+<<<PAGE 361>>>
+
+340  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 3.7 (Continued)
+
+CHAPTER 3
+
+To
+
+MAOIs
+Phenelzine
+Tranylcypromine
+Fluvoxamine Selegiline
+
+From
+
+Agomelatine Bupropion Clomipramine Fluoxetine
+
+Trazodone
+
+Cross-taper
+cautiously
+
+Cross-taper Cross-taper
+cautiously
+cautiously
+with low
+dose
+clomipramine
+
+Crosstaper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for
+1 week
+
+Other SSRIsf,
+Vortioxetineg
+
+Cross-taper
+cautiously
+
+Cross-taper Taper and
+cautiously
+stop then
+start low
+dose
+clomipramine
+
+Direct
+switch
+possible
+
+Direct
+switch
+possible
+
+Taper and stop
+then wait for
+1 weekh
+
+SNRI
+Duloxetinei
+Venlafaxine
+Desvenlaxine
+
+Cross-taper
+cautiously
+
+Cross-taper Taper and
+cautiously
+stop then
+start low
+dose
+clomipramine
+
+Direct
+switch
+possible
+
+Direct
+switch
+possible
+
+Taper and stop
+then wait for
+1 week
+
+Tricyclics
+
+Cross-taper
+cautiously
+
+Halve dose
+and add
+bupropion
+and then
+slow
+withdrawal
+
+Halve dose
+and add
+fluoxetine
+and then
+slow
+withdrawal
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for 2
+weeksj
+
+Direct switch
+possible
+
+
+
+
+<<<PAGE 365>>>
+
+344  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Table 3.8 Factors influencing the incidence and severity of antidepressant withdrawal symptoms
+Pharmacological factors
+– Pharmacokinetics
+– Drug half life
+– Pharmacodynamics
+– Receptor affinities
+Treatment factors
+– Duration of treatment
+– Dose
+– Method of tapering
+Patient specific factors
+– Prior experience and
+anticipation effects
+
+■■
+
+Drug half-lives – correlate with the severity and onset of symptoms. Symptoms
+typically more severe with shorter half-life drugs (e.g. venlafaxine, paroxetine)
+
+■■
+
+Other pharmacokinetic factors: non-linear pharmacokinetics
+
+■■
+
+Receptor affinities: higher affinity for the serotonin transporter may confer
+higher risk of withdrawal symptoms
+
+Incidence and severity
+Antidepressant discontinuation symptoms occur in many patients: incidence rates from
+14 studies that examined antidepressant withdrawal ranged from 27% to 86%, with a
+weighted average of 56%.5 Though reported incidence rates vary widely between studies of differing drugs and methodologies (9% to 77% for fluoxetine, and from 42% to
+100% with paroxetine5), symptoms are seen to some extent with all antidepressants,
+with the possible exception of agomelatine.4
+
+Time Course
+The onset and severity of symptoms are related to the half-life of the antidepressant.
+Short half-life antidepressants like paroxetine and venlafaxine produce symptoms
+within a day or two, whereas symptoms with fluoxetine can be delayed by 2–6 weeks.1
+Symptoms can vary in duration, form and intensity and occur in any combination.
+Whilst they can be mild and self-limiting, there is substantial variation in between individuals, and for some symptoms can last much longer than previously reported.6 The
+perception of symptom severity is probably made worse by the absence of forewarnings.
+Some symptoms are more likely with individual drugs (see Table 3.9). Symptoms can be
+quantified using the Discontinuation–Emergent Signs and Symptoms (DESS) scale.7
+Table 3.9 Symptoms reported with other (non-SSRI) antidepressants
+Antidepressant type
+
+Symptoms
+
+Agomelatine
+
+Seems to be associated with a very low, if any, risk of discontinuation symptoms4
+
+Bupropion
+
+Uncommon, but case reports have described anxiety, headache, insomnia,
+irritability, and myalgias;8,9 single case report of acute dystonia10
+
+MAOIs*
+
+Common: agitation, irritability, ataxia, movement disorders, insomnia, somnolence,
+vivid dreams, cognitive impairment, slowed speech, pressured speech;
+Occasionally: Hallucinations, paranoid delusions
+RIMAs: Flu like symptoms reported with moclobemide11
+(Continued)
+
+
+
+
+<<<PAGE 400>>>
+
+Depression and anxiety disorders  379
+
+Table 3.14 (Continued)
+Antidepressant
+
+Substrate for
+
+Inhibits
+
+TCAs
+Amitriptyline
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Desipramine
+
+CYP2D6
+
+Dosulepin
+
+CYP2D6 and possibly other pathways
+
+Doxepin
+
+CYP2D6, CYP1A2 (minor), CYP3A4
+(minor)
+
+Imipramine
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Nortriptyline
+
+CYP2D6
+
+Trimipramine
+
+CYP2D6
+
+Agomelatine
+
+CYP1A2
+
+Bupropion
+
+CYP2B6
+
+Esketamine
+
+CYP3A4, CYP2B6
+
+Mianserin
+
+CYP2D6
+
+Mirtazapine
+
+CYP1A2, CYP2D6, CYP3A4
+
+Reboxetine
+
+CYP3A4
+
+Trazodone
+
+CYP3A4
+
+Vortioxetine
+
+CYP2D6, CYP2A6, CYP2B6, CYP2C8,
+CYP2C9, CYP2C19, CYP3A4
+
+Vilazodone
+
+CYP3A4
+
+CHAPTER 3
+
+Clomipramine
+
+Others
+
+CYP2D6 (potent)
+
+CYP2D6 (weak)
+
+CYP2C8
+
+CYP enzymes highlighted in bold indicate:
+predominant metabolic enzyme pathway or
+■■ predominant enzyme activity.
+■■
+
+■■
+
+Pharmacodynamic interactions where the effects of one drug are altered by another
+drug via physiological mechanisms such as direct competition at receptor sites (e.g.
+dopamine agonists with dopamine blockers may negate any therapeutic effect), augmentation of the same neurotransmitter pathway (e.g. fluoxetine with tramadol or a
+triptan can lead to serotonin syndrome) or an effect on the physiological functioning
+of an organ/organ system in different ways (e.g. SSRIs impair clotting and NSAIDs
+irritate the gastric mucosa so when these drugs are used together, the risk of GI bleeds
+is increased). Up-to-date interaction tables are readily available online and most
+known interactions are described in an individual product’s literature.
+
+Pharmacodynamic interactions
+Tricyclic antidepressants7–10
+■■
+
+are H1 blockers (sedative). This effect can be exacerbated by other sedative drugs or
+alcohol. Beware respiratory depression
+
+
+
+
+<<<PAGE 402>>>
+
+Depression and anxiety disorders  381
+
+CYP1A2
+
+CYP2B6
+
+CYP2C9
+
+CYP2C19
+
+CYP2D6
+
+CYP3A4/5/7
+
+Genetic
+polymorphism
+Ultra-rapid
+metabolisers
+possible
+
+2–10% of total
+hepatic CYP
+content16
+
+5–10% of
+Caucasians
+poor
+metabolisers
+
+~20% of Asians
+and 3–5%
+Caucasians are
+poor metabolisers
+
+3–5% of
+Caucasians poor
+metabolisers
+
+60% p450
+content
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Carbamazepine
+Charcoal cooking
+Tobacco smoke
+Omeprazole
+Phenobarbital
+Phenytoin
+
+Carbamazepine
+Efavirenz
+Lopinavir
+Rifampicin
+Ritonavir
+
+Phenytoin
+Rifampicin
+
+Apalutamide
+Rifampicin
+Enzalutamide
+Artemisinin
+Efavirenz
+
+Carbamazepine
+Phenytoin
+
+Carbamazepine
+Phenytoin
+Prednisolone
+Rifampicin
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Cimetidine
+Ciprofloxacin
+Erythromycin
+Fluvoxamine
+
+Clopidogrel
+Ticlopidine
+Voriconazole
+
+Cimetidine
+Fluoxetine
+Fluvoxamine
+Moclobemide
+Sertraline
+
+Fluconazole
+Fluoxetine
+Fluvoxamine
+Esomeprazole
+Moclobemide
+Omeprazole
+Voriconazole
+Armodafinil
+Etravirine
+Isoniazid
+Modafinil
+Cimetidine
+
+Chlorpromazine
+Bupropion
+Duloxetine
+Fluoxetine
+Fluphenazine
+Haloperidol
+Paroxetine
+Sertraline
+Tricyclics
+
+Erythromycin
+Fluoxetine
+Fluvoxamine
+Grapefruit Juice
+Ketoconazole
+Norfluoxetine
+Paroxetine
+Sertraline
+Tricyclics
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Agomelatine
+Benzodiazepines
+Caffeine
+Clozapine
+Duloxetine
+Haloperidol
+Mirtazapine
+Olanzapine
+Ramelteon
+Theophylline
+Tizanidine
+Tricyclics
+Warfarin
+
+Bupropion
+Methadone
+Tramadol
+
+Agomelatine
+Bupropion
+Citalopram
+Diazepam
+Omeprazole
+Phenytoin
+Tricyclics
+Warfarin
+
+Citalopram
+Diazepam
+Moclobemide
+
+Clozapine
+Codeine
+Donepezil
+Duloxetine
+Haloperidol
+Phenothiazines
+Risperidone
+Tamoxifen
+Tricyclics
+Tramadol
+Trazodone
+Venlafaxine
+Vortioxetine
+
+Calcium
+Blockers
+Carbamazepine
+Clozapine
+Donepezil
+Erythromycin
+Galantamine
+Methadone
+Levomilnacipran
+Mirtazapine
+Reboxetine
+Risperidone
+Statins
+Tricyclics
+Valproate
+Venlafaxine
+Vilazodone
+Vortioxetine
+Z-hypnotics
+
+CHAPTER 3
+
+Table 3.15 Pharmacokinetic interactions – a brief summary of important interactions3,15
+
+
+
+
+<<<PAGE 415>>>
+
+394  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Table 3.17 Summary of risk of hyponatraemia with antidepressants7,14,46–48
+Drug/drug group
+
+Risk of Na
+
+Level of supporting evidence
+
+SSRIs
+
+High
+
+Strong
+
+SNRIs
+
+High
+
+Strong
+
+Tricyclics
+
+Moderate
+
+Strong
+
+MAOIs
+
+Low
+
+Weak
+
+NaSSas (mirtazapine, mianserin)
+
+Low
+
+Strong
+
+Bupropion
+
+Low
+
+Moderate
+
+Agomelatine
+
+Low
+
+Weak
+
+Monitoring1,14,15,49–53
+All patients taking antidepressants should be informed of and observed for signs of
+hyponatraemia (dizziness, nausea, lethargy, confusion, cramps, seizures). The risk is
+highest in the first 2–4 weeks of starting antidepressants and diminishes over time until
+by 3–6 months the risk is the same as for patients who do not take antidepressants.47,48
+Serum sodium should be determined (at baseline and 2 and 4 weeks, and then
+3-monthly54) for those at high risk of drug-induced hyponatraemia. High-risk factors
+are as follows:
+Older age
+Female sex
+■■ Major surgery
+■■ History of hyponatraemia or a low baseline sodium concentration
+■■ Co-therapy with other drugs known to be associated with hyponatraemia (e.g. diuretics, NSAIDs, antipsychotics, carbamazepine, cancer chemotherapy, calcium antagonists, ACE inhibitors and laxatives)
+■■ Reduced renal function (GFR < 50mL/min)
+■■ Medical co-morbidity (e.g. hypothyroidism, diabetes, COPD, hypertension, head
+injury, CCF, CVA, various cancers)
+■■ Low body weight
+■■
+■■
+
+Age is perhaps the most important risk factor, so for older people (especially women)
+monitoring is essential.15,47,55,56
+Treatment56
+It may be possible to manage mild hyponatraemia with fluid restriction.50 Some suggest
+increasing sodium intake,4 although this is likely to be impractical. If symptoms persist,
+the antidepressant should be discontinued.
+■■
+■■
+
+The normal range for serum sodium is 136–145mmol/L.
+If serum sodium is >125mmol/L – monitor sodium daily until normal. Symptoms
+include headache, nausea, vomiting, muscle cramps, restlessness, lethargy, confusion
+and disorientation. Consider withdrawing the offending antidepressant.
+
+
+
+
+<<<PAGE 419>>>
+
+398  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Antidepressants and hyperprolactinaemia
+Prolactin release is controlled by endogenous dopamine but is also indirectly modulated by serotonin via stimulation of 5HT1C and 5HT2 receptors.1,2 Long-standing
+increased plasma prolactin (with or without symptoms) is very occasionally seen with
+antidepressant use.3 Where antidepressant-induced hyperprolactinaemia does occur,
+rises in prolactin are usually small and short-lived4 and so symptoms are very rare.
+There is no association between SSRI use and breast cancer.5
+Routine monitoring of prolactin is not recommended, but where symptoms suggest
+the possibility of hyperprolactinaemia, then measurement of plasma prolactin is essential. Where symptomatic hyperprolactinaemia is confirmed, a switch to mirtazapine is
+recommended (see below), although there is also evidence that switching to an alternative SSRI can resolve symptoms.6,7
+Some details of associations between antidepressants and increased prolactin are
+given in Table 3.18.
+
+Table 3.18 Reported associations between antidepressants and increased prolactin
+Drug/group
+
+Prospective studies
+
+Case reports/series
+
+Agomelatine
+
+No mention of prolactin changes in clinical
+trials8
+Melatonin itself may inhibit prolactin
+production9
+
+None
+
+Bupropion
+
+Single doses of up to 100mg seem not to affect None
+prolactin10
+May decrease prolactin11
+
+MAOIs
+
+Small mean changes observed with phenelzine11 Very occasional reports of increased prolactin11
+and tranylcypromine12
+
+Mirtazapine
+
+Strong evidence that mirtazapine has no effect
+on prolactin13–15
+
+SNRIs
+
+Clear association observed between venlafaxine Galactorrhoea reported with venlafaxine21,22 and
+and duloxetine and prolactin elevation18–20
+duloxetine.23,24 Duloxetine-linked
+hyperprolactinaemia has been treated with
+aripiprazole18
+
+SSRIs
+
+Prospective studies generally show no change in
+prolactin.25–27 Some evidence from prescription
+event monitoring that SSRIs are associated with
+higher risk of non-puerperal lactation.28 In a
+French study, 1.6% of adverse event reports for
+SSRIs were of hyperprolactinaemia3
+
+Occasional reports of galactorrhoea16
+and gynaecomastia17
+
+Galactorrhoea reported with fluoxetine6,29 and
+paroxetine30,31
+Euprolactinaemic galactorrhoea and
+amenorrhoea32 reported with escitalopram33 and
+fluvoxamine34
+Hyperprolactinaemia reported with sertraline7,35
+(Continued)
+
+
+
+
+<<<PAGE 426>>>
+
+Not all of the sexual side effects of antidepressants are undesirable: serotonergic
+antidepressants including clomipramine are effective in the treatment of premature
+ejaculation6 and may also be beneficial in paraphilias. The short-acting SSRI dapoxetine is an effective treatment for premature ejaculation and is licensed for this indication in many countries.6,15 A systematic review of RCTs with trazodone showed benefit
+for reducing ‘psychogenic erectile dysfunction’.6
+Sexual side effects can be minimised by careful selection of the antidepressant drug.
+Note that the assessment of sexual side-effects in clinical trials is generally inadequate,
+often relying on spontaneous reports rather than using validated questionnaires and
+lacking positive controls.16 Where possible, information has been obtained from studies
+where sexual side effects are purposefully and directly investigated. Management strategies for people who do develop sexual dysfunction on antidepressants are summarised
+in Table 3.21. No single approach can be considered ‘ideal’,6 so individual assessment
+case-by-case is recommended.
+
+Table 3.20 Relative frequency sexual dysfunction (SD) with antidepressants10,12,17–19.
+Impact on sexual response
+
+Antidepressant
+
+Sexual desire*
+
+Sexual
+arousal†
+
+Orgasm‡ Comments12
+
+Agomelatine
+
+–
+
+–
+
+–
+
+Rates of SD may be similar to placebo.6
+
+Bupropion
+
+–
+
++/–
+
+–
+
+Low rates of SD compared to some other
+antidepressants.20 Overall, considerable evidence
+that SD occurs at or below the rate of placebo.
+
+Duloxetine
+
+++
+
++
+
+++
+
+Rate of SD similar to some SSRIs and venlafaxine in
+one meta-analysis.20
+
+Levomilnacipran
+
+?
+
+++
+
+++
+
+Limited comparative studies with other
+antidepressants21 so relative frequency of SD is
+uncertain. Erectile dysfunction and disorders of
+ejaculation shown in RCTs against placebo.
+
+MAOIs
+
+++
+
+++
+
+++
+
+Limited evidence though reported incidence of SD
+ranges from 20% to 42%. Rates of SD with
+transdermal selegiline are comparable to placebo.
+
+Mirtazapine
+
++
+
+–
+
+–
+
+Causes less SD than SSRIs.22
+
+Moclobemide
+
+–
+
+–
+
+–
+
+Consistently shown to have a low risk of SD.
+
+Reboxetine
+
+–
+
++
+
+–
+
+Probably causes less SD than SSRIs/SNRIs though
+efficacy has been questioned.23
+
+SSRIs
+
+++
+
+++
+
+++
+
+Overall evidence suggests relatively high rates of
+SD across all the SSRIs (although reported
+incidence varies widely).12 Rates of anorgasmia
+may be lower with fluvoxamine.24
+
+Trazodone
+
+–
+
++
+
++
+
+Priapism reported in case studies; however, overall
+reports of SD seem to be low. Earlier case reports
+document increased sexual desire.
+(Continued)
+
+CHAPTER 3
+
+Depression and anxiety disorders  405
+
+
+
+
+<<<PAGE 527>>>
+
+506  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Up until 2016, varenicline carried a black triangle symbol in the UK, indicating additional safety monitoring was required for people with a mental health condition.
+However, this was removed by the European Medicines Agency following the publication of the Evaluating Adverse Events in a Global Smoking Cessation Study (EAGLES)
+study; this found that neither varenicline nor bupropion significantly increased the risk
+of neuropsychiatric adverse events (including anxiety, depression, aggression, psychosis
+and suicidal behaviour) when compared with placebo or nicotine patch in patients with
+or without a history of psychiatric disorders.16
+
+Bupropion
+Bupropion is an antidepressant with dopaminergic and adrenergic actions and is additionally an antagonist at the nicotinic acetylcholine receptor. It is indicated for smokers
+over the age of 18 who are motivated to stop smoking.
+
+CHAPTER 4
+
+Clinical effectiveness
+In the most recent Cochrane review, the RR of abstinence for bupropion compared with
+placebo was 1.64.12 Bupropion was of similar efficacy to single-product NRT (RR 0.99),
+and less effective for quitting compared with varenicline (although one trial suggested
+broad equality in outcome17), and combination NRT.7 In smokers with serious mental illness, bupropion improved the odds of stopping by 3–4 times compared with placebo.13,14
+Preparations and dose
+People who smoke should set a target ‘quit date’ in the first 2 weeks of starting bupropion treatment. Dosage regimens can be found in the treatment algorithm for those
+people making an attempt to stop smoking at the end of this chapter.
+Adverse effects
+Bupropion is contraindicated in those with seizure disorders, eating disorders and alcohol dependence. Clinicians should be cautious of the potential for manic switch in
+patients with bipolar affective disorder (very low risk but can occur18). Common side
+effects include dizziness, taste changes, GI disturbance and insomnia, which can be
+reduced by avoiding a dose close to bedtime. Unlike NRT and varenicline, bupropion
+is known to interact with psychotropic medicines. It is metabolised by the cytochrome
+CYP2B6. Caution is advised when bupropion is co-administered with medicines known
+to induce (e.g. carbamazepine, phenytoin) or inhibit (e.g. valproate) cytochrome metabolism as clinical efficacy may be affected. Bupropion also inhibits the CYP2B6 pathway
+and therefore co-administration with medicines metabolised by this enzyme (e.g. risperidone and haloperidol) should be avoided.
+
+Electronic cigarettes and vaping
+E-cigarettes are nicotine delivery devices that do not contain tobacco and do not produce
+smoke. They are regulated under the European Union Tobacco Products Directive (i.e.
+there are controls on ingredients, packaging and advertising). E-cigarette manufacturers
+
+
+
+
+<<<PAGE 529>>>
+
+508  The Maudsley® Prescribing Guidelines in Psychiatry
+
+from long-term vapour inhalation from e-cigarettes is unlikely to exceed 5% of the
+harm from smoking tobacco. Concurrent smoking and vaping (dual use) may not
+reduce the risk of adverse health effects, and people who vape should be encouraged to
+stop smoking completely, whereas people who have never smoked should be encouraged not to smoke and not to vape.24,26
+
+Table 4.16 Treatment algorithm for those people making an attempt to stop smoking
+First-line quit attempt pharmacological treatment is combination NRT or varenicline.
+All quit attempts should be supported at least weekly by a trained tobacco dependence treatment advisor.
+Combination NRT quit attempt
+
+Varenicline quit attempt
+
+CHAPTER 4
+
+For people who smoke more than 20 cigarettes/day or
+who smoke within 30 minutes of waking up:
+Start 21mg (24 hours) or 25mg (16 hours) patch and an
+oral/nasal NRT product of the person’s choice
+
+Set target ‘stopping date’ between 1 and 2 weeks of
+varenicline treatment
+
+Continue patch use for up to 12 weeks, aiming to
+reduce patch dosage every 4 weeks
+
+Start 0.5mg PO varenicline once daily on days 1–3
+
+Continue oral/nasal product use whilst experiencing craving
+For people who smoke less than 20 cigarettes/day and
+do not smoke within 30 minutes of waking up:
+Start 14mg (24 hours) or 15mg (16 hours) patch and/or
+an oral/nasal NRT product of the person’s choice
+Continue patch use for up to 12 weeks, aiming to
+reduce patch dosage every 4 weeks
+
+Increase to 0.5mg PO varenicline twice daily on days
+4–7
+Increase to 1mg PO varenicline twice daily on days 8–84
+Consider 1mg varenicline PO twice daily for an
+additional 12 weeks for the maintenance of abstinence
+in people who have successfully stopped smoking at the
+end of the initial 12 weeks course of varenicline
+
+Continue oral/nasal product use whilst experiencing
+craving
+Bupropion could be considered second line or where people who smoke express a preference for bupropion
+therapy.
+Bupropion quit attempt
+Set target ‘stopping date’ between 1 and 2 weeks of bupropion treatment
+Start 150mg PO bupropion daily on days 1–6
+Increase to 150mg PO bupropion twice daily on days 7–49 (with an interval of at least 8 hours between doses)
+Maintain dose at 150mg PO bupropion on days 50–63 (otherwise, discontinue if person has not quit)
+In patients with serious mental illness, both varenicline and bupropion have been shown to increase the odds of
+stopping smoking by greater than 4 times compared to placebo. In patients with stable psychiatric co-morbidity,
+an NRT patch was also found to double the abstinence rates compared to placebo. Both varenicline and
+bupropion did not significantly increase the risk of neuropsychiatric adverse events (including anxiety, depression,
+aggression, psychosis, and suicidal behaviour) when compared with placebo or NRT in patients with or without a
+history of psychiatric disorders
+It is always advisable to monitor patient’s mental health when undergoing a quit attempt
+People who smoke wishing to use an e-cigarette to quit should generally set a quit date and use the e-cigarette to
+stop in one go by replacing all their tobacco cigarettes with an e-cigarette as soon as possible. Alternatively, they can
+gradually reduce the amount they smoke over several weeks and increase the use of the e-cigarette until they have
+completely switched. Similar to the use of NRT, advise the service user to start with a higher strength of nicotine
+po, per os (by mouth)
+
+
+
+
+<<<PAGE 737>>>
+
+716  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 7.7 Stimulants in breastfeeding
+
+Infant plasma
+concentration
+
+Drug
+
+Estimated daily
+infant dose as
+proportion of
+maternal dose
+(RID)
+
+Acute adverse
+effects in infant
+
+Developmental
+effects in infant
+
+2.4–10.6%
+
+None reported
+
+None reported but
+not assessed
+
+Atomoxetine
+
+No published data
+available at the
+time of writing
+
+Dexamfetamine193
+
+Undetectable to
+14% of maternal
+plasma level
+
+Lisdexamfetamine
+
+No published data
+available at the
+time of writing
+
+Methylphenidate27,194–196
+
+Undetectable
+
+0.16–0.7%
+
+None reported
+
+None reported
+
+Modafinil
+
+Not reported
+
+5.3%
+
+None reported
+
+None reported but
+not assessed
+
+197,198
+
+Report for individual drugs. Table 7.7 does not include this advice (which is often uninformative), but instead uses primary reference sources. It is usually advisable to continue the drug prescribed during pregnancy. Switching drugs postpartum for the purpose
+of breastfeeding is usually not sensible. Table 7.7 should be used as a guide when initiating treatment postpartum. In each case the previous response (and lack of response) to
+treatment must be considered.
+
+CHAPTER 7
+
+References
+1. Schoretsanitis G, et al. Excretion of antipsychotics into the amniotic fluid, umbilical cord blood, and breast milk: a systematic critical review
+and combined analysis. Ther Drug Monit 2020; 42:245–254.
+2. Weissman AM, et al. Pooled analysis of antidepressant levels in lactating mothers, breast milk, and nursing infants. Am J Psychiatry 2004;
+161:1066–1078.
+3. Schmidt FM, et al. Agomelatine in breast milk. Int J Neuropsychopharmacol 2013; 16:497–499.
+4. Hale TW, et al. Medications and mothers’ milk – 18th edition. New York, USA: Springer Publishing Company; 2019.
+5. Hoffmann E, et al. Brexanolone injection administration to lactating women: breast milk allopregnanolone levels [30J]. Obstet Gynecol
+2019; 133:115S.
+6. Briggs GG, et al. Excretion of bupropion in breast milk. Ann Pharmacother 1993; 27:431–433.
+7. Chaudron LH, et al. Bupropion and breastfeeding: a case of a possible infant seizure. J Clin Psychiatry 2004; 65:881–882.
+8. Nonacs RM, et al. Bupropion SR for the treatment of postpartum depression: a pilot study. Int J Neuropsychopharmacol 2005;
+8:445–449.
+9. Haas JS, et al. Bupropion in breast milk: an exposure assessment for potential treatment to prevent post-partum tobacco use. Tob Control
+2004; 13:52–56.
+10. Baab SW, et al. Serum bupropion levels in 2 breastfeeding mother-infant pairs. J Clin Psychiatry 2002; 63:910–911.
+11. Berle JO, et al. Antidepressant use during breastfeeding. Curr Womens Health Rev 2011; 7:28–34.
+12. Davis MF, et al. Bupropion levels in breast milk for 4 mother-infant pairs: more answers to lingering questions. J Clin Psychiatry 2009;
+70:297–298.
+13. Neuman G, et al. Bupropion and escitalopram during lactation. Ann Pharmacother 2014; 48:928–931.
+14. Burt VK, et al. The use of psychotropic medications during breast-feeding. Am J Psychiatry 2001; 158:1001–1009.
+
+
+
+
+<<<PAGE 810>>>
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  789
+
+Safety in
+epilepsy
+
+Drug
+
+CHAPTER 10
+
+Table 10.5 Psychotropics in epilepsy
+
+Comments
+
+Antidepressants
+Low risk
+– good
+choices
+
+Probably low
+risk – use
+with caution
+(limited
+evidence)
+
+Moderate
+risk – care
+required
+
+Higher risk
+– avoid
+(proconvulsive at
+therapeutic
+doses13)
+
+SSRIs
+
+Recommended in PWE.14,18 SSRIs may be anticonvulsant at therapeutic
+doses13 but pro-convulsant in overdose.31 SSRIs with the lowest risk of
+interactions with antiseizure medications are generally preferred (citalopram/
+escitalopram, followed by sertraline).14,18,32,33 Escitalopram is preferred over
+citalopram in PWE (lower risk of seizures in overdose).34 Others have low risk
+of seizures (e.g. fluoxetine34) but drug interactions with antiseizure
+medications should be considered.14,18 Fluoxetine may be less likely to
+provoke seizures in older people than escitalopram or citalopram.35 Some
+evidence that sertraline is safe and effective in PWE36
+
+Mirtazapine
+
+Recommended in PWE.18,37 Not known to be proconvulsive24
+
+Duloxetine
+
+Recommended for PWE.11,18 Risk of seizures is probably negligible34,35
+
+Agomelatine
+
+Not known to be proconvulsive.38 Anticonvulsant in animal models34
+
+MAOIs
+
+Not known to be pro-convulsive at therapeutic doses.34 Low risk of seizures
+in overdose17
+
+Moclobemide
+
+Not known to be proconvulsive.34 Anticonvulsant in animal models34
+
+Reboxetine
+
+Small open label study suggests no problems in PWE39
+
+Vortioxetine
+
+Not known to be proconvulsive34,40 but no experience in PWE34
+
+Lithium
+
+Low risk of seizures.34 Anticonvulsant in animal models.34 However, limited
+data showing increases or decreases in seizures frequency in PWE.34 For
+bipolar, consider anticonvulsant mood stabilisers41
+
+Trazodone
+
+Limited data suggest some risk of seizures34,42
+
+Venlafaxine
+
+Effective in PWE11 and has been recommended18 but mixed evidence on
+seizure risk34
+
+Vilazodone
+
+Limited data. Seizure exacerbation in a patient with epilepsy has been
+reported34
+
+Amoxapine
+
+Several reports of seizures at therapeutic doses42
+
+Bupropion
+
+Dose-related risk of seizures (particularly with instant-release formulations).34
+Risk is less with slow-release formulations at doses under 300mg/day34
+
+Maprotiline
+
+Several reports of seizures at therapeutic doses42
+
+TCAs
+
+Most TCAs are epileptogenic at higher doses (particularly clomipramine and
+amitriptyline10,24,42). Doxepin possibly lower risk (one small study in PWE).34
+SNRIs are preferred over TCAs in PWE17
+(Continued)
+
+
+
+
+<<<PAGE 873>>>
+
+852  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY1A2
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine
+Amitriptyline*
+Asenapine
+Bupropion*
+Caffeine
+Chlorpromazine
+Clomipramine*
+Clozapine
+Duloxetine
+Fluphenazine
+Fluvoxamine
+Imipramine*
+Melatonin
+Mirtazapine*
+Olanzapine
+Perphenazine
+?Pimozide*
+Ramelteon
+Zolpidem*
+
+Fluvoxamine
+Moclobemide
+Perphenazine
+
+‘Barbiturates’
+Carbamazepine
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion*
+Caffeine
+Nicotine
+
+Tranylcypromine
+
+Phenobarbital
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Methadone*
+Nicotine
+Sertraline*
+
+Fluoxetine*
+Fluvoxamine
+Memantine
+Paroxetine*
+Sertraline*
+
+Carbamazepine*
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Buprenorphine*
+
+Not known
+
+Not known
+
+CYP2A6
+
+CPY2B6
+
+CYP2B7
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+
+
+
+<<<PAGE 900>>>
+
+Psychotropic drugs in special conditions  879
+
+Table 13.1 (Continued)
+
+Drug or drug group
+
+Toxicity in
+overdose
+
+Smallest dose likely
+to cause death
+
+Methadone104,105
+
+High
+
+20–50mg may be fatal in
+non-users. Co-ingestion of
+benzodiazepines increases
+toxicity.
+
+Drowsiness, nausea, hypotension,
+respiratory depression, coma,
+rhabdomyolysis.
+
+Modafinil106–108
+
+Low
+
+Unclear, but no fatalities
+reported.
+Overdoses of >6g have not
+caused death.
+
+Tachycardia, insomnia, agitation, anxiety,
+nausea, hypertension, dystonia.
+
+Pregabalin109,110
+
+Low
+
+No deaths reported.One
+overdose of 8.4g caused
+unconsciousness and coma.
+
+May be asymptomatic.
+Sedation and coma may occur.
+
+Suvorexant108
+
+Low
+
+Unclear. No deaths reported.
+
+Sedation, vomiting.
+
+Zolpidem111,112
+
+Low
+
+Unclear. Probably >200mg.
+Fatality rare in those taking
+zolpidem alone.
+
+Drowsiness, agitation, respiratory
+depression, tachycardia, coma.
+
+Zopiclone102,113,114
+
+Low
+
+Unclear. Probably >100mg.
+Fatality rare in those taking
+zopiclone alone.
+
+Ataxia, nausea, diplopia, drowsiness,
+coma.
+
+ECG, electrocardiogram; GI, gastrointestinal; MAOI, monoamine oxidase inhibitor; MI, myocardial infarction; NMS,
+neuroleptic malignant syndrome; SPC, summary of product characteristics; SSRI, selective serotonin reuptake
+inhibitor.
+High = Less than 1 week’s supply likely to cause serious toxicity or death.
+Moderate = 1–4 weeks’ supply likely to cause serious toxicity or death.
+Low = Death or serious toxicity unlikely even if more than 1 month’s supply taken.
+
+References
+1. Howland RH Critical appraisal and update on the clinical utility of agomelatine, a melatonergic agonist, for the treatment of major depressive disease in adults. Neuropsychiatr Dis Treat 2009; 5:563–576.
+2. Wong A, et al. Agomelatine overdose and related toxicity. Toxicology Communications 2018; 2:62–65.
+3. Buckley NA, et al. ‘Atypical’ antidepressants in overdose: clinical considerations with respect to safety. Drug Saf 2003; 26:539–551.
+4. Mercerolle M, et al. A fatal case of bupropion (Zyban) overdose. J Anal Toxicol 2008; 32:192–196.
+5. Murray B, et al. Single-agent bupropion exposures: clinical characteristics and an atypical cause of serotonin toxicity. J Med Toxicol 2020;
+16:12–16.
+6. Overberg A, et al. Toxicity of bupropion overdose compared with selective serotonin reuptake inhibitors. Pediatrics 2019; 144:e20183295.
+7. Zhu Y, et al. Atypical findings in massive bupropion overdose: a case report and discussion of psychopharmacologic issues. J Psychiatr Pract
+2016; 22:405–409.
+8. Alibegovic A, et al. Fatal overdose with a combination of SNRIs venlafaxine and duloxetine. Forensic Sci Med Pathol 2019; 15:258–261.
+9. Menchetti M, et al. Non-fatal overdose of duloxetine in combination with other antidepressants and benzodiazepines. World J Biol Psychiatry
+2009; 10:385–389.
+10. White N, et al. Suicidal antidepressant overdoses: a comparative analysis by antidepressant type. J Med Toxicol 2008; 4:238–250.
+11. Darracq MA, et al. A retrospective review of isolated duloxetine-exposure cases. ClinToxicol(Phila) 2013; 51:106–110.
+12. Scanlon KA, et al. Comprehensive duloxetine analysis in a fatal overdose. J Anal Toxicol 2016; 40:167–170.
+13. Cassidy S, et al. Fatal toxicity of antidepressant drugs in overdose. Br Med J 1987; 295:1021–1024.
+14. Henry JA, et al. Relative mortality from overdose of antidepressants. BMJ 1995; 310:221–224.
+15. Crome P. Antidepressant overdosage. Drugs 1982; 23:431–461.
+16. Henry JA. Epidemiology and relative toxicity of antidepressant drugs in overdose. Drug Saf 1997; 16:374–390.
+
+CHAPTER 13
+
+Signs and symptoms of overdose
+
+

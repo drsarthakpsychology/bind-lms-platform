@@ -1,0 +1,1478 @@
+<<<PAGE 27>>>
+
+Psychiatric History and Examination
+
+The answers may be overly concrete or abstract.
+The appropriateness of answers is judged. Concretisation of responses or inappropriate answers may occur
+in schizophrenia.
+
+Insight
+Insight is the degree of awareness and understanding
+that the patient has regarding his illness.
+Ask the patient’s attitude towards his present state;
+whether there is an illness or not; if yes, which kind of
+illness (physical, psychiatric or both); is any treatment
+needed; is there hope for recovery; what is the cause of
+illness. Depending on the patient’s responses, insight
+can be graded on a six-point scale (Table 2.3).
+
+Judgement
+Judgement is the ability to assess a situation correctly
+and act appropriately within that situation. Both social
+and test judgement are assessed.
+i. Social judgement is observed during the hospital
+stay and during the interview session. It includes
+an evaluation of ‘personal judgement’.
+ii. Test judgement is assessed by asking the patient
+what he would do in certain test situations, such
+as ‘a house on fire’, or ‘a man lying on the road’,
+or ‘a sealed, stamped, addressed envelope lying
+on a street’.
+Judgement is rated as Good/Intact/Normal or Poor/
+Impaired/Abnormal.
+
+INVESTIGATIONS
+After a detailed history and examination, investigations (laboratory tests, diagnostic standardised
+interviews, family interviews, and/or psychological
+tests) are carried out based on the diagnostic and
+aetiological possibilities. Some of these investigations
+are described briefly in Table 2.4.
+
+FORMULATION
+After a comprehensive psychiatric assessment, a
+diagnostic formulation summarises the detailed posi-
+
+15
+
+Table 2.3: Clinical Rating of Insight
+Insight is rated on a 6-point scale from one to six.
+1. Complete denial of illness.
+2. Slight awareness of being sick and needing help, but
+denying it at the same time.
+3. Awareness of being sick, but it is attributed to external or physical factors.
+4. Awareness of being sick, due to something unknown
+in self.
+5. Intellectual Insight: Awareness of being ill and that
+the symptoms/failures in social adjustment are due
+to own particular irrational feelings/thoughts; yet
+does not apply this knowledge to the current/future
+experiences.
+6. True Emotional Insight: It is different from intellectual insight in that the awareness leads to significant
+basic changes in the future behaviour.
+
+Table 2.4: Some Investigations in Psychiatry
+I. Biological Investigations
+Medical Screen
+Some of the following tests may be useful in screening for the medical disorders causing the psychiatric
+symptoms. Some examples of indications are stated in
+front of the tests (these examples are not intended to be
+comprehensive).
+Haemoglobin: Routine screen.
+Total and differential leucocyte counts: Routine screen,
+Treatment with antipsychotics (e.g. clozapine), lithium,
+carbamazepine.
+Mean Corpuscular Volume (MCV): Alcohol dependence
+(increased).
+Urinalysis: Routine screen; Drug screening.
+Peripheral smear: Anaemia.
+Renal function tests: Treatment with lithium.
+Liver function tests: Treatment with carbamazepine,
+valproate, benzodiazepines. Alcohol dependence.
+Serum electrolytes: Dehydration, SIADH, Treatment with
+carbamazepine, antipsychotics, lithium.
+Blood glucose: Routine screen (age>35 years), treatment
+with antipsychotics
+Contd...
+
+
+
+
+<<<PAGE 28>>>
+
+16
+
+A Short Textbook of Psychiatry
+
+Contd...
+Thyroid function tests: Refractory depression, rapid
+cycling mood disorder. Treatment with lithium, carbamazepine.
+Electrocardiogram (ECG): Age>35 years, Treatment with
+lithium, antidepressants, ECT, antipsychotics.
+HIV testing: Intravenous drug users, suggestive sexual
+history, AIDS dementia.
+VDRL: Suggestive sexual history.
+Chest X-ray: Age>35 years, Treatment with ECT.
+Skull X-ray: History of head Injury.
+Serum CK: Neuroleptic malignant syndrome (markedly
+increased levels).
+Toxicology Screen
+Useful when substance use is suspected; for example,
+alcohol, cocaine, opiates, cannabis, phencyclidine,
+benzodiazepines, barbiturates; remember that certain
+medications can cause false positive results (for example,
+quetiapine for methadone).
+Drug Levels
+Drug levels are indicated to test for therapeutic blood
+levels, for toxic blood levels, and for testing drug
+compliance. Examples are lithium (0.6-1.0 meq/L),
+carbamazepine (4-12 mg/ml), valproate (50-100 mg/
+ml), haloperidol (8-18 ng/ml), tricyclic antidepressants
+(nortriptyline 50-150 ng/ml; imipramine 200-250 ng/
+ml), benzodiazepines, barbiturates and clozapine (350500 μg/L).
+Electrophysiological Tests
+EEG (Electroencephalogram): Seizures, dementia, pseudoseizures vs. seizures, episodic abnormal behaviour.
+BEAM (Brain electrical activity mapping): Provides
+topographic imaging of EEG data.
+Video-Telemetry EEG: Pseudoseizures vs. seizures.
+Evoked potentials (e.g. p300): Research tool.
+Polysomnography/Sleep studies: Sleep disorders, seizures (occurring in sleep). The various components in
+sleep studies include EEG, ECG, EOG, EMG, airflow
+measurement, penile tumescence, oxygen saturation,
+body temperature, GSR (Galvanic skin response), and
+body movement.
+Holter ECG: Panic disorder.
+
+Brain Imaging Tests (Cranial)
+Computed Tomography (CT) Scan: Dementia, delirium,
+seizures, first episode psychosis.
+Magnetic Resonance Imaging (MRI) Scan: Dementia.
+Higher resolution than CT scan.
+Positron Emission Tomography (PET) Scan: Research tool
+for study of brain function and physiology.
+Single Photon Emission Computed Tomography (SPECT)
+Scan: Research tool.
+Magnetic Resonance (MR) Angiography: Research tool
+Magnetic Resonance Spectroscopy (MRS): Research tool
+Neuroendocrine Tests
+Dexamethasone Suppression Test (DST): Research tool
+in depression (response to antidepressants or ECT). If
+plasma cortisol is >5 mg/100 ml following administration of dexamethasone (1 mg, given at 11 PM the night
+before and plasma cortisol taken at 4 PM and 11 PM
+the next day), it indicates non-suppression.
+TRH Stimulation Test: Lithium-induced hypothyroidism,
+refractory depression. If the serum TSH is >35 mIU/ml
+(following 500 mg of TRH given IV), the test is positive.
+Serum Prolactin Levels: Seizures vs. pseudoseizures,
+galactorrhoea with antipsychotics.
+Serum 17-hydroxycorticosteroid: Organic mood (depression) disorder.
+Serum Melatonin Levels: Seasonal mood disorders.
+Biochemical Tests
+5-HIAA: Research tool (depression, suicidal and/or
+aggressive behaviour).
+MHPG: Research tool (depression).
+Platelet MAO: Research tool (depression).
+Catecholamine levels: Organic anxiety disorder (e.g.
+pheochromocytoma).
+Genetic Tests
+Cytogenetic work-up is useful in some cases of mental
+retardation.
+Sexual Disorder Investigations
+Papaverine test: Male erectile disorder (intracavernosal
+injection of papaverine is sometimes used to differentiate
+organic from non-organic male erectile disorder).
+Nocturnal penile tumescence: Male erectile disorder.
+Contd...
+
+
+
+
+<<<PAGE 64>>>
+
+52
+
+A Short Textbook of Psychiatry
+
+apathy, impaired judgement, and neurological signs
+(such as decreased reflexes, ataxia, nystagmus, incoordination and coma). Death can occur due to respiratory
+depression, cardiac arrhythmias, or asphyxia.
+The complications include irreversible damage to
+liver and kidneys, peripheral neuropathy, perceptual
+disturbances and brain damage.
+There appears to be no specific treatment of the
+inhalant use disorder. There is often an associated psychiatric disorder (usually schizophrenia or personality
+disorder, particularly in solitary sniffers), or there is
+a history of criminal background. The prognosis is
+usually guarded.
+
+PHENCYCLIDINE USE DISORDER
+Phencyclidine (PCP) was introduced as a dissociative
+anaesthetic agent (similar to ketamine) in 1950s.
+However, its use was soon restricted to veterinary
+anaesthesia as some human subjects developed
+delirium while emerging from anaesthesia. Classified
+as an atypical hallucinogen (street names: Peace pill;
+angel dust), PCP selectively antagonises the neuronal
+action of NMDA (N-methyl-D-aspartate).
+PCP is usually taken either occasionally or in
+binges (called as runs); however, some individuals do
+take PCP in a regular manner. It can be administered
+orally, intravenously or by snorting.
+
+Intoxication and Complications
+Acute PCP intoxication produces euphoria in small
+doses; higher doses produce dysphoria. Other features
+may include impulsiveness, agitation, impaired social
+judgement, assaultativeness, feeling of numbness
+and inability to move. PCP intoxication can sometimes present with psychiatric syndromes (catatonic
+syndrome, delirium, stupor, paranoid hallucinatory
+psychosis, mania or depression) and/or neurological
+symptoms (nystagmus, ataxia, dysarthria, rigidity,
+seizures or coma).
+
+Withdrawal Syndrome
+Although no clear-cut withdrawal syndrome has
+been described, craving, social withdrawal, anxiety,
+
+depression and impairment in cognitive functions
+have been reported.
+
+Treatment
+The treatment of PCP intoxication is symptomatic and
+usually involves gastric lavage, isolation, and use of
+anticonvulsants (for seizures) and antipsychotics (for
+PCP induced psychosis).
+There is no specific treatment for phencyclidine
+withdrawal syndrome.
+
+OTHER USE DISORDERS
+Caffeine and nicotine are among the most widely used
+substances, as they are both legally available. Both of
+these can cause intoxication, dependence, tolerance,
+and withdrawal syndrome.
+Nicotine use (often in the form of smoking) is more
+common in schizophrenia and depression. Smoking
+predisposes to increased risk of cardiovascular disease, respiratory disease and cancer, and can affect
+metabolism of several psychotropic drugs. Smoking
+also decreases serum levels of clozapine (and other
+drugs such as olanzapine, duloxetine, fluphenazine)
+by up to 50%. Clozapine levels can therefore rise
+significantly after smoking cessation even whilst the
+patient is on nicotine replacement therapy. This is due
+to induction of liver enzymes CYP1A2 (cytochrome
+P450 1A2) by hydrocarbons in tobacco smoke rather
+than nicotine.
+Nicotine withdrawal can occur 12-14 hours after
+last smoke and can present with anxiety, restlessness, poor concentration, decreased sleep, increased
+appetite and exacerbation of psychiatric symptoms in
+those with pre-existing psychiatric disorder(s).
+Nicotine replacement therapy is widely used
+despite equivocal evidence, delivered in a variety
+of preparations such as a sublingual tablet (2 mg),
+lozenge (1, 2 or 4 mg), chewing gum (2 or 4 mg),
+nasal spray (0.5 mg), inhalator (10 mg), and patches
+(7, 14 or 21 mg).
+In addition, bupropion (also called as amfebutamone; a norepinephrine and dopamine reuptake
+inhibitor – NDRI antidepressant) and varenicline
+
+
+
+
+<<<PAGE 65>>>
+
+Psychoactive Substance Use Disorders
+
+(a partial α4β2 nicotinic acetylcholine receptor partial
+agonist) are pharmacological agents recently used in
+promoting smoking cessation as adjuncts to behavioural or cognitive behavioural treatment(s). These
+should only be initiated after a discussion of possible
+adverse effects with the patient.
+Similarly, caffeine is widely used in general
+population as well as in patients with psychiatric
+disorders. DSM-IV-TR defines caffeinism (caffeine
+intoxication) as a recent consumption of caffeine,
+usually in excess of 250 mg per day, along with five
+or more of the following: restlessness, nervousness,
+excitement, insomnia, flushed face, diuresis, GI (gastrointestinal) disturbance, muscle twitching, rambling
+flow of thought and speech, tachycardia or cardiac
+
+53
+
+arrhythmia, periods of inexhaustibility and psychomotor agitation.
+These symptoms should be accompanied by
+clinically significant distress or impairment in social,
+occupational or other areas of functioning, and the
+symptoms should not be better accounted by a general
+medical condition or another mental disorder.
+The typical content of caffeine in the commonly
+used drinks is usually as follows: tea (45 mg/cup),
+instant coffee (60 mg/cup), brewed coffee (100 mg/
+cup), and cola drinks (25-50 mg/can). Caffeine is also
+present in chocolate. Caffeine can affect metabolism
+of several psychotropic drugs, most importantly
+clozapine. It can elevate the levels of clozapine (and
+other drugs) by inhibiting CYP1A2.
+
+
+
+
+<<<PAGE 78>>>
+
+66
+
+A Short Textbook of Psychiatry
+Table 5.7: Antipsychotic Dose in Schizophrenia
+
+Drug
+
+Oral Dose Range
+(mg/day)
+
+Parenteral Dose
+(mg/day)
+
+Equivalent Oral Dose*
+(Equal to 100 mg CPZ)
+
+A. Typical/Traditional/First Generation Antipsychotics
+1. Chlorpromazine (CPZ)
+300-1000
+50-100 IM
+100
+2. Flupentixol
+3-18
+—
+2
+3. Haloperidol
+5-30
+5-10 IM
+2-3
+4. Loxapine
+25-250
+—
+10
+5. Pimozide
+4-12
+—
+2
+6. Prochlorperazine
+45-150
+40-80 IM
+15
+7. Sulpiride
+400-2400
+—
+200
+8. Thioridazine
+300-600
+—
+100
+9. Trifluoperazine
+15-50
+1-5 IM
+5
+10. Triflupromazine
+100-400
+30-60 IM
+25
+11. Zuclopenthixol
+25-150
+50-100 IM
+25
+B. Atypical/Second Generation Antipsychotics
+12. Amisulpride
+400-1200
+—
+—
+13. Aripiprazole
+5-30
+5.25-15 IM
+—
+14. Clozapine
+50-900
+—
+50
+15. Olanzapine
+5-20
+2.5-10 IM
+2-3
+16. Paliperidone
+3-12
+—
+—
+17. Quetiapine
+150-800
+—
+50-100
+18. Risperidone
+2-16
+—
+0.5-1.0
+19. Ziprasidone
+40-160
+—
+20
+20. Zotepine
+75-300
+—
+—
+*Equivalent doses are at best approximations only. The dose in a particular patient should be chosen on an individualised basis by the treating professional.
+
+aripiprazole, and ziprasidone, are more commonly
+used than the older typical (or first generation) antipsychotics such as trifluoperazine and haloperidol, in
+acute stages. Atypical antipsychotics are also more
+useful when negative symptoms are prominent, e.g.
+in chronic schizophrenia.
+Clozapine, another atypical antipsychotic, is
+available in the Indian market. The clinical trials have
+shown that clozapine is effective in about 30% of
+patients who had no beneficial response to traditional
+(typical and atypical) antipsychotics. It is an effective
+drug; however, as it can cause agranulocytosis and
+seizures as side-effects, it should be used with caution,
+with regular WBC and neutrophil counts as advised
+by the Summary of Product Characteristics (SPC).
+
+Drug treatment is usually administered in the
+outpatient setting as:
+1. There are very few number of psychiatric beds in
+India,
+2. Majorities of families are willing to care for the
+patients at home, and
+3. Majority of patients do not require hospitalisation.
+However, hospitalisation is indicated if there is:
+1. Neglect of food and water intake,
+2. Danger to self or others,
+3. Poor treatment adherence,
+4. Significant neglect of self-care, or
+5. Lack of social support with evidence of abovementioned risks.
+
+
+
+
+<<<PAGE 185>>>
+
+Psychopharmacology
+
+173
+
+Table 15.1: A Brief History of Psychopharmacology
+<4000 BC Ayurveda describes treatment of psychiatric patients with sympathy and kindness. The methods of
+treatment included dhatura and roots of serpentina plant mixed with oil (ghee).
+1853
+Bromide used as a sedative-hypnotic.
+1869
+Chloral hydrate used in the treatment of melancholia and mania.
+1882
+Paraldehyde used as a hypnotic.
+1883
+Phenothiazines synthesised during synthesis of methylene blue (Bernthsen).
+1903
+Barbiturates (barbital) used for sedation in 1903; phenobarbital introduced in 1912.
+1917
+Malarial treatment for General Paralysis of Insane (GPI) received a Nobel prize (Julius von Wagner
+Jauregg).
+1922
+Barbiturate-induced coma introduced for the treatment of psychoses (Jacob Klaesi).
+1927
+Insulin-shock treatment introduced for schizophrenia (Manfred Sakel).
+1931
+First report of successful treatment of psychoses (Ganesh Sen and Kartik Bose from India); using
+Rauwolfia serpentina extract (reserpine). Report ignored till Nathan Kline (1958) confirmed the finding.
+1934
+Metrazol-induced convulsions used for the treatment of psychoses (Laszlo von Meduna).
+1936
+Frontal lobotomy advocated for treatment of psychiatric disorders (Egas Moniz and Almenda Lima).
+1937
+Amphetamines used in the treatment of behaviour disorders of children (C Bradley).
+1938
+Electroconvulsive therapy used for the treatment of psychoses (Ugo Cerletti and Lucio Bini).
+1940
+Phenytoin used as an anticonvulsant (Tracy Putnam).
+1943
+LSD synthesised (Albert Hofmann).
+1949
+Lithium used in mania (John F Cade); did not receive much attention even in Australia.
+1950
+Chlorpromazine synthesised while making a better antihistaminic than promethazine (Charpentier).
+1950
+Methylphenidate used in treatment of ADHD, then known as Minimal Brain Dysfunction (MBD).
+1951
+Lytic cocktail used (Laborit); Chlorpromazine earlier used (as ‘456 ORP’) in artificial hibernation.
+1951
+Isoniazid (INH) found to have mood elevating properties in patients with tuberculosis. Iproniazid, a
+MAOI and a derivative of INH, was later (1958) introduced for treatment of depression.
+1952
+The revolution in psychopharmacology came with introduction of chlorpromazine (Jean Delay and
+Pierre Deniker). The number of admissions in mental hospitals show a sudden decrease after introduction of chlorpromazine.
+1955
+Meprobamate was introduced as an anti-anxiety agent.
+1958
+Imipramine, a tricyclic antidepressant (TCA) synthesised by Haflinger and Schindler in the late 1940’s,
+was introduced for treatment of depression in 1958 (Thomas Kuhn).
+1958
+MAOIs (e.g. iproniazid) introduced for treatment of depression (Nathan Kline).
+1958
+Haloperidol synthesised in Belgium (Janssen).
+1960
+Chlordiazepoxide used as an anti-anxiety agent in 1960-1961 (Sternbach; Synthesised in 1957).
+1966
+Valpromide (Valproate) used in bipolar disorder (Lambert).
+1968
+Pimozide used for treatment of schizophrenia (Janssen).
+1967
+Clomipramine used in OCD (Fernandez and Lopez-Ibor).
+1971
+Carbamazepine used in bipolar disorder (Takezaki and Hanoaka) (Synthesized in 1953 by Schindler).
+1986
+Buspirone introduced in US market as a non-benzodiazepine anti-anxiety agent.
+1988
+Clozapine re-discovered in US as an effective treatment for refractory schizophrenia (Kane et al)
+(Synthesised in 1959). Approved by US FDA in 1990 and introduced in Indian market in 1995.
+1990s
+Second Generation Antipsychotics introduced in market starting with Risperidone.
+
+
+
+
+<<<PAGE 187>>>
+
+Psychopharmacology
+
+Steady state plasma levels are usually reached in
+5-10 days. Once the drug is withdrawn, it may remain
+in body for many days to many months. The main metabolic pathway is through liver (hepatic microsomal
+enzymes). Oxidation and conjugation are the most
+important methods of metabolism for phenothiazines.
+Many of the metabolites, such as mesoridazine (for
+thioridazine), reduced haloperidol (for haloperidol)
+and 9-hydroxy-risperidone (for risperidone), are also
+active compounds. Chlorpromazine has more than 150
+metabolites, some of which are active. The excretion
+of the metabolites is through kidneys and liver (enterohepatic circulation).
+Most of the antipsychotics tend to have a therapeutic window. If the blood level is below this ‘window’,
+the drug is ineffective. If the blood level is higher than
+the upper limit of the ‘window’, there is toxicity or
+the drug is again ineffective.
+
+Classification
+A classification of currently available antipsychotic
+drugs is presented in Table 15.2.
+
+Mechanism of Action
+The exact mechanism of action of antipsychotics is
+unknown. However, one of the major mechanisms
+appears to be antidopaminergic activity of these drugs.
+Antipsychotic drugs block D2-receptors, which are
+mainly present in mesolimbic-mesocortical system
+(mesolimbic system is concerned with emotional reactions), nigro-striatal system and tubero-infundibular
+system. The relative potencies of these drugs in competing for D2-receptors parallel quite closely their
+clinical potencies.
+It is currently believed that antipsychotic drugs
+are effective in treating psychosis due to their action on the D2-receptors located in the mesolimbic
+system whilst extrapyramidal side-effects (EPSE)
+are caused by blockade of D2-receptors situated in
+nigro-striatal system and hyperprolactinaemia is
+caused by D2-blockade in tubero-infundibular system.
+However, other neurotransmitters (such as 5-HT, acetylcholine) are clearly implicated (see below; atypical
+antipsychotics). Sedation is caused by histaminergic
+
+175
+
+blockade which is usually highest for drugs such as
+chlorpromazine and thioridazine.
+
+Second Generation Antipsychotics
+A search for an antipsychotic drug which acts only
+on the mesolimbic system but has no effect on nigrostriatal or tubero-infundibular systems, has led to the
+development of a heterogeneous group of drugs collectively known as atypical or newer antipsychotics.
+These are also known as second generation antipsychotics (SGAs) or serotonin-dopamine antagonists
+or (SDAs). These include risperidone, quetiapine,
+olanzapine, amisulpride, paliperidone, zotepine,
+ziprasidone and aripiprazole.
+By definition these drugs are effective antipsychotics without theoretically producing undesirable
+extrapyramidal side-effects (i.e. antipsychotics without neuroleptic effect), or causing elevation of serum
+prolactin levels. These are characterised by a selective
+limbic dopamine blockade, D4-receptor blockade, or
+a combination of potent 5-HT2 and weak D2 antagonism. These drugs should theoretically be safer with
+lesser incidence of serious side-effects such as tardive
+dyskinesia and neuroleptic malignant syndrome.
+Clozapine is one such drug but it can cause
+agranulocytosis and seizures. Risperidone, olanzapine,
+quetiapine, aripiprazole, amisulpride and ziprasidone
+are currently being used widely as atypical antipsychotics, while paliperidone and zotepine are also
+available in the international market.
+Atypical antipsychotics, in addition to their effect
+on positive symptoms, are believed to be effective
+in treatment of negative symptoms (such as apathy,
+decreased sociality, anhedonia) of chronic schizophrenia. Clozapine in particular is effective in management
+of treatment-resistant schizophrenia. However, there
+is need for close haematological monitoring for
+neutropenia or agranulocytosis as suggested in SPC
+of the drug.
+
+Side Effects
+The antipsychotics are safe drugs with a high therapeutic index and wide margin of safety in routine
+clinical dosages. In spite of this safety, a wide range
+
+
+
+
+<<<PAGE 188>>>
+
+A Short Textbook of Psychiatry
+
+176
+
+Table 15.2: Classification and Properties of Antipsychotics
+Drugs
+
+Oral Dose
+(mg/d)
+
+Parenteral
+Dose (mg)
+
+I. Phenothiazines
+A. Aliphatics
+1. Chlorpromazine
+300-1000 50-100 IM
+(CPZ)
+2. Triflupromazine
+100-400
+30-60 IM
+B. Piperidines
+____
+1. Mesoridazine
+100-400
+____
+2. Thioridazine
+300-600
+C. Piperazines
+____
+1. Fluphenazine
+2-20
+2. Prochlorperazine
+45-150
+40-80 IM
+3. Trifluoperazine
+15-50
+1-5 IM
+II. Thioxanthenes
+A. Aliphatics
+1. Chlorprothixene
+75-600
+25-75 IM
+B. Piperazines
+____
+1. Flupentixol
+3-18
+2. Thiothixene
+6-60
+2-6 IM
+3. Zuclopenthixol
+25-150
+50-100 IM
+III. Butyrophenones
+1. Haloperidol
+5-30
+5-10 IM
+2. Trifluperidol
+0.5-8.0
+2.5-5.0 IM
+IV. Diphenylbutylpiperidines
+____
+1. Penfluridol
+20-60 mg
+weekly
+____
+2. Pimozide
+4-20
+V. Indolic Derivatives (Dihydroindolones)
+____
+1. Molindone
+50-225
+
+#
+
+Sedation
+
+Some Common Adverse Effects**
+Hypotension
+EPSE* Weight
+Gain
+
+Increased
+Prolactin
+
++++
+
++++
+
++
+
+++
+
+++
+
+++
+
+++
+
+++
+
+++
+
+++
+
+++
++++
+
++
+++
+
++
++
+
+++
+++
+
++
++
+
++
++
++
+
++
++
++
+
++++
++++
++++
+
++
++
++
+
++++
++++
++++
+
++++
+
+++
+
+++
+
+++
+
+++
+
++
++
+++
+
++
+++
+++
+
+++
+++
+++
+
+++
+++
+++
+
+++
+++
++++
+
++
+±
+
++
+±
+
++++
++++
+
++
++
+
++++
+++
+
++
+
++
+
+++
+
++
+
+++
+
++
+
++
+
+++
+
++
+
++++
+
+++
+
+0
+
++
+
+±
+
+±
+
+++
+
+++
+
++
+
++++
+
++++
+
+0
+
++++
+
+0
+
++
++
+
++
++
+
++
++
+
++++
++++
+
+VI. Dibenzoxapines
+____
+1. Loxapine
+25-250
+++
+VII. Atypical or Second Generation Antipsychotics
+A. Dibenzodiazepines
+____
+1. Clozapine
+50-900
++++
+B. Substituted Benzamides
+1. Amisulpride
+400-1200 ____
+±
+2. Sulpiride (not
+400-2400 ____
+±
+called atypical
+usually)
+
+Contd...
+
+
+
+
+<<<PAGE 190>>>
+
+A Short Textbook of Psychiatry
+
+178
+
+Table 15.3: Side Effects of Antipsychotics
+Category and
+Probable Cause
+Maximum with
+Side Effect
+(For example)
+A. Autonomic Side Effects
+1. Dry mouth
+Muscarinic Choliner- Chlorpromazine
+gic blockade
+
+Minimum with
+(For example)
+
+Management
+
+Haloperidol
+Risperidone
+
+2. Constipation
+
+–do–
+
+Chlorpromazine
+
+Haloperidol
+Risperidone
+
+3. Cycloplegia
+
+–do–
+
+Chlorpromazine
+
+Haloperidol
+Risperidone
+
+4. Mydriasis
+
+–do–
+
+Haloperidol
+Risperidone
+
+5. Urinary
+Retention
+
+–do–
+
+Thioridazine;
+miosis with
+Chlorpromazine)
+Chlorpromazine
+
+Usually none; Tolerance
+develops; Occasionally
+Pilocarpine 2%
+Usually none; Tolerance
+develops; Bulk (or sometimes other) laxatives
+Usually none; Tolerance
+develops; Occasionally
+Pilocarpine 2%
+Usually none; Tolerance
+develops; Occasionally
+Pilocarpine 2%
+Usually none if only hesitancy occurs. Tolerance
+develops; Rule out BHP;
+Bethanethol or catheterisation for retention
+Physostigmine (neostigmine does not enter
+CNS); Diazepam sometimes supportive care
+Usually none; Tolerance
+develops; change in posture slowly. When severe,
+use plasma expanders,
+raise leg, supportive
+measures.
+Decrease dose. If severe,
+change medication.
+Decrease dose. If severe,
+change medication.
+
+6. Delirium (central –do–
+anticholinergic
+syndrome)
+
+Haloperidol
+Risperidone
+
+Chlorpromazine
+
+Haloperidol
+Risperidone
+
+7. Orthostatic
+hypotension
+
+α1 Adrenergic
+blockade
+
+Chlorpromazine
+
+Haloperidol
+Aripiprazole
+
+8. Impotence
+
+–do–
+
+Chlorpromazine
+
+Haloperidol
+
+9. Impaired
+–do–
+Thioridazine
+ejaculation
+B. Extra-pyramidal Side Effects (EPSE)
+1. Parkinsonian
+Dopaminergic (D2) Haloperidol
+syndrome
+receptor blockade in
+(esp. tremor)
+striatal areas
+2. Akathisia (motor –do–
+–do–
+restlessness)
+
+Haloperidol
+
+Clozapine
+Quetiapine
+Aripiprazole
+Clozapine
+Quetiapine
+
+Antiparkisonian medication for treatment; also
+for prevention if needed.
+Change of medication or
+reduction; Beta-blockers
+such as Propranolol; Benzodiazepines
+Contd...
+
+
+
+
+<<<PAGE 191>>>
+
+Psychopharmacology
+
+179
+
+Contd...
+Category and
+Side Effect
+3. Acute Dystonia
+
+Probable Cause
+—do—
+
+Maximum with
+(For example)
+—do—
+
+4. Rabbit Syndrome —do—
+—do—
+(Peri-oral tremor)
+Dopaminergic (D2) Not known
+5. Tardive
+Dyskinesia (late receptor
+onset oro-facial
+super-sensitivity
+dyskinesia)
+Not known
+Probably
+6. Neuroleptic
+haloperidol
+Malignant
+Syndrome
+(Fever, EPS,
+High CPK,
+catatonic
+symptoms and
+autonomic
+dysfunction)
+C. Other Central Nervous System Effects
+1. Seizures
+Decreased seizure
+Clozapine
+threshold
+Chlorpromazine
+(High doses)
+2. Sedation
+Histaminergic
+—do—
+blockade
+
+3. Depression or
+Decreased catecho- Not known
+Pseudolamine levels in
+depression
+brain
+D. Metabolic and Endocrine Side Effects
+1. Weight gain
+H1 blockade
+Almost all
+antipsychotics esp.
+Clozapine and
+Olanzapine
+2. Diabetes
+Not known
+Clozapine
+Olanzapine
+3. Galactorrhoea
+Increased Prolactin Haloperidol
+Risperidone
+with/without
+released due to
+amenorrhoea
+dopaminergic blockade in hypothalamus
+
+Minimum with
+(For example)
+—do—
+
+—do—
+Clozapine
+
+Not known
+
+Management
+Antiparkinsonian
+medication; Rule out
+hypercalcaemia
+Antiparkinsonian
+medication
+Treatment unsatisfactory,
+though several drugs are
+available. Prevention
+best.
+Bromocriptine, Dantrolene, Baclofen, General
+supportive care. Add-on
+lorazepam, Occasionally
+ECT
+
+Trifluoperazine
+
+Decrease dose. Change
+to a safer antipsychotic
+
+Haloperidol
+Aripiprazole
+
+This side effect may be
+beneficial. Otherwise
+decrease dose. Change
+drug. Give single dose
+only at night
+Decrease dose. Change
+drug. Occasionally antidepressants or ECT.
+
+SDAs
+(e.g. Ziprasidone)
+
+Aripiprazole
+Haloperidol
+
+Change drug. Dietary
+control. Exercises.
+
+Ziprasidone
+Aripiprazole
+Aripiprazole
+Quetiapine
+
+Change drug. Dietary
+control.
+None. Change drug.
+
+Contd...
+
+
+
+
+<<<PAGE 192>>>
+
+180
+
+A Short Textbook of Psychiatry
+
+Contd...
+Category and
+Probable Cause
+Side Effect
+E. Allergic Side Effects
+1. Cholestatic
+Hypersensitivity
+Jaundice
+reaction
+2. Agranulocytosis —do—
+(very rare)
+
+F. Cardiac Side Effects
+1. ECG Changes
+Anticholinergic
+(e.g. QTc
+effect
+prolongation)
+Calcium channel
+blocking effect
+2. Sudden Death
+Probably ventricular
+(very rare)
+fibrillation
+G. Ocular Side Effects
+1. Granular
+Not known
+deposits in
+(Probably
+cornea and lens photosensitivity
+Not known
+2. Pigmentary
+retinopathy
+resembling
+retinitis
+pigmentosa
+H. Dermatological Side Effects
+1. Contact
+Allergic
+dermatitis
+2. Photosensitive
+Probably
+reaction
+photosensitive
+3. Blue-gray
+—do—
+metallic
+discolouration
+
+Maximum with
+(For example)
+
+Minimum with
+(For example)
+
+Management
+
+Chlorpromazine
+
+Haloperidol
+
+Clozapine
+
+—do—
+
+Change drug. Benign
+course. Supportive care.
+Stop drug immediately.
+Treat infection. Isolation.
+General supportive care.
+Figastrim may be useful
+
+Thioridazine
+Pimozide
+
+Aripiprazole
+
+Change drug, if severe.
+
+Not known
+
+Not known
+
+None
+
+Chlorpromazine
+(High doses for
+long duration)
+Thioridazine only
+(Dose-related)
+
+Haloperidol
+
+Change drug.
+
+All other antipsychotics
+
+Never give more than
+800 mg/day of thioridazine. Prevention only
+
+Chlorpromazine
+(By handling)
+—do— (High doses)
+
+—do—
+
+Avoid handling.
+Symptomatic treatment
+Avoid sunlight.
+Use sunscreen.
+Change drug.
+
+—do— (High doses
+for long duration)
+
+such as quinidine, anti-malarials such as quinine,
+and antibiotics such as erythromycin) and/or medical
+conditions (such as ischaemic heart disease, extremes
+of ages).
+This list of side-effects is necessarily incomplete
+and it is important to read the SPC of any drug before
+prescribing it in a patient.
+
+—do—
+—do—
+
+Treatment Adherence
+Many patients with schizophrenia can be uncooperative, with a poor treatment adherence (see
+Table 15.4). Therefore, it may at times be difficult to
+ensure adequate administration of antipsychotics on
+an outpatient basis.
+
+
+
+
+<<<PAGE 266>>>
+
+254
+
+A Short Textbook of Psychiatry
+
+Blackouts 37
+Bladder training 169
+Blocking 12
+Blood
+alcohol concentration 39
+lithium levels 190
+Blunted affect 58
+Borderline personality disorder 60,
+117, 228
+Brain imaging 64, 75
+Brief
+dissociative stupor 100
+history of psychopharmacology 173
+pulse ECT 202
+Bromocriptine 48, 132
+Bruxism 140
+Bulimia nervosa 144
+Buprenorphine 44, 45
+Bupropion 52
+Buspirone 92, 98, 197
+
+Childhood
+history 9
+psychosis 165
+Chlordiazepoxide 40, 51
+Chlorpromazine 66
+Cholinesterase inhibitors 25, 26
+Chromatography 157
+Chronic
+depression 74, 77
+fatigue syndrome 109
+Circumscribed amnesia 101
+Citalopram 26
+Citrated calcium carbimide 42
+Civil responsibility 229
+Classical
+conditioning model 214
+psychoanalysis 213
+psychosomatic disorders 147
+Classification in
+child psychiatry 162
+psychiatry 2
+Classification of
+alcoholism 37
+benzodiazepines 196
+mental retardation 156
+psychotropic drugs 172
+Claustrophobia 93
+Clerambault’s syndrome 84
+Clomipramine 98, 131
+Clonazepam 94, 98
+Clonidine 44, 167, 169
+Clozapine 52, 53, 66
+Cocaine 47
+overdose 48
+preparations 47
+use disorder 46
+withdrawal syndrome 48
+Code of ethics for psychiatrists 234
+Cognitive
+behaviour therapy 68, 79, 94, 98,
+112, 215, 216
+behavioural theory 91
+therapy 215
+Combativeness 225
+Command hallucinations 57
+Common
+examples of psychosomatic disorders
+148
+psychiatric emergencies 222
+themes in suicide 222
+Community
+mental health 235
+psychiatry 235
+
+C
+Caffeine 52, 53
+CAGE questionnaire 37, 39
+Cannabis
+preparations 45
+use disorder 45
+Capgras’ syndrome 87
+Carbamazepine 79, 192
+Carphologia 20
+Castration anxiety 211
+Cataplexy 138
+Catastrophic reaction 22
+Catatonia 59
+Catatonic
+behaviour 58
+features 57
+schizophrenia 59
+signs 11, 225
+stupor 67, 225
+syndrome 225
+withdrawal 225
+Causes of
+catatonic stupor 225
+hypersomnia 138
+mental retardation 157
+Censor 206
+Central mental health authority 233, 237
+Cerebral palsy 159
+Chasing the dragon 43
+Child
+abuse 228
+psychiatry 162
+
+Comparison of delirium and dementia 22
+Complex partial seizures 29, 31, 61, 227
+Complicated grief reaction 152
+Complications of
+alcohol dependence 39
+chronic alcohol use 38
+Conceptual thinking stage 153
+Concrete thinking stage 153
+Conditioning devices 169
+Conduct disorders 167
+Conjugal paranoia 84
+Consultation-liaison psychiatry 149
+Continuous amnesia 101
+Contraindications of disulfiram 42
+Conversion
+disorder 99
+release symptoms 102
+Coping
+mechanisms 207
+skills training 112
+Coprolalia 168
+Cortical dementia 24
+Counselling 110
+Counter
+phobic defense 210
+thoughts 96
+Covert sensitisation 41, 215
+CPAP 139
+Crack 47
+Cretinism 159
+Criminal lunatic 232
+Crisis 221
+intervention 112
+centre 228
+Critical
+comments 64
+remarks 68
+Cross-gender homosexuality 122
+Culture bound syndromes 110
+Cyclothymia 73
+Cyproheptadine 144
+
+D
+Dangerous Drug Act of 1930 233
+Deep brain stimulation 199
+Defense mechanism 90
+Definition of psychiatric disorder 1
+Deliberate self-harm 222
+Delirium 19, 21, 23
+tremens 38, 41
+Delusion of doubles 87
+Delusional
+depression 77, 78
+
+

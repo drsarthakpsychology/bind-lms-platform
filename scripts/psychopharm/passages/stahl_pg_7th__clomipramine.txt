@@ -1,0 +1,1330 @@
+<<<PAGE 107>>>
+
+✽ Preference of some prescribers for amitriptyline over other
+tricyclic/tetracyclic antidepressants for the treatment of chronic pain
+syndromes is based more upon art and anecdote rather than controlled
+clinical trials, since many TCAs/tetracylics may be effective for
+chronic pain syndromes
+TCAs are no longer generally considered a first-line treatment
+option for depression because of their side effect profile
+
+✽ Amitriptyline has been shown to be effective in primary insomnia
+TCAs may aggravate psychotic symptoms
+Alcohol should be avoided because of additive CNS effects
+Underweight patients may be more susceptible to adverse
+cardiovascular effects
+Children, patients with inadequate hydration, and patients with
+cardiac disease may be more susceptible to TCA-induced
+cardiotoxicity than healthy adults
+For the expert only: although generally prohibited, a heroic but
+potentially dangerous treatment for severely treatment-resistant
+patients is to give a tricyclic/tetracyclic antidepressant other than
+clomipramine simultaneously with an MAOI for patients who fail to
+respond to numerous other antidepressants
+If this option is elected, start the MAOI with the tricyclic/tetracyclic
+antidepressant simultaneously at low doses after appropriate drug
+washout, then alternately increase doses of these agents every few
+days to a week as tolerated
+
+
+
+
+<<<PAGE 127>>>
+
+their side effect profile
+Tricyclic/tetracyclic antidepressants continue to be useful for severe
+or treatment-resistant depression
+
+✽ Because of potential drug-induced parkinsonism, akathisia, and
+theoretical risk of tardive dyskinesia, first consider other
+TCAs/tetracyclics for long-term use in general and for treatment of
+chronic patients
+TCAs may aggravate psychotic symptoms
+Alcohol should be avoided because of additive CNS effects
+Underweight patients may be more susceptible to adverse
+cardiovascular effects
+Children, patients with inadequate hydration, and patients with
+cardiac disease may be more susceptible to TCA-induced
+cardiotoxicity than healthy adults
+For the expert only: although generally prohibited, a heroic but
+potentially dangerous treatment for severely treatment-resistant
+patients is to give a tricyclic/tetracyclic antidepressant other than
+clomipramine simultaneously with an MAOI for patients who fail to
+respond to numerous other antidepressants
+Use of MAOIs with clomipramine is always prohibited because of
+the risk of serotonin syndrome and death
+Amoxapine may be the preferred trycyclic/tetracyclic antidepressant
+to combine with an MAOI in heroic cases due to its theoretically
+protective 5HT2A antagonist properties
+
+
+
+
+<<<PAGE 401>>>
+
+Renally excreted
+Active metabolite (carbamazepine-10,11 epoxide)
+Initial half-life 26–65 hours (35–40 hours for extended-release
+formulation); half-life 12–17 hours with repeated doses
+Half-life of active metabolite is approximately 34 hours
+
+✽ Is not only a substrate for CYP450 3A4, but also an inducer of
+CYP450 3A4
+
+✽ Thus, carbamazepine induces its own metabolism, often requiring
+an upward dosage adjustment
+Is also an inducer of CYP450 2C9 and weakly of 1A2 and 2C19
+Food does not affect absorption
+Drug Interactions
+Enzyme-inducing antiepileptic drugs (carbamazepine itself as well
+as phenobarbital, phenytoin, and primidone) may increase the
+clearance of carbamazepine and lower its plasma levels
+CYP450 3A4 inducers, such as carbamazepine itself, can lower the
+plasma levels of carbamazepine
+CYP450 3A4 inhibitors, such as nefazodone, fluvoxamine, and
+fluoxetine, can increase plasma levels of carbamazepine
+Carbamazepine can increase plasma levels of clomipramine,
+phenytoin, primidone
+
+
+
+
+<<<PAGE 486>>>
+
+Clomipramine
+
+Therapeutics
+Brands
+Anafranil
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin reuptake inhibitor
+(SRI)
+Tricyclic antidepressant (TCA)
+Parent drug is a potent serotonin reuptake inhibitor
+Active metabolite is a potent norepinephrine/noradrenaline reuptake
+inhibitor
+Commonly Prescribed for
+(bold for FDA approved)
+
+✽ Obsessive-compulsive disorder
+Depression
+
+
+
+
+<<<PAGE 487>>>
+
+✽ Severe and treatment-resistant depression
+✽ Cataplexy syndrome
+Anxiety
+Insomnia
+Neuropathic pain/chronic pain
+How the Drug Works
+Boosts neurotransmitters serotonin and
+norepinephrine/noradrenaline
+Blocks serotonin reuptake pump (serotonin transporter), presumably
+increasing serotonergic neurotransmission
+Blocks norepinephrine reuptake pump (norepinephrine transporter),
+presumably increasing noradrenergic neurotransmission
+Presumably desensitizes both serotonin 1A receptors and beta
+adrenergic receptors
+Since dopamine is inactivated by norepinephrine reuptake in frontal
+cortex, which largely lacks dopamine transporters, clomipramine
+can increase dopamine neurotransmission in this part of the brain
+How Long Until It Works
+May have immediate effects in treating insomnia or anxiety
+Onset of therapeutic actions in depression usually not immediate,
+but often delayed 2 to 4 weeks
+
+
+
+
+<<<PAGE 494>>>
+
+How to Dose
+Initial 25 mg/day; increase over 2 weeks to 100 mg/day; maximum
+dose generally 250 mg/day
+Dosing Tips
+If given in a single dose, should generally be administered at
+bedtime because of its sedative properties
+If given in split doses, largest dose should generally be given at
+bedtime because of its sedative properties
+If patients experience nightmares, split dose and do not give large
+dose at bedtime
+Patients treated for chronic pain may only require lower doses
+
+✽ Patients treated for OCD may often require doses at the high end of
+the range (e.g., 200–250 mg/day)
+Risk of seizure increases with dose, especially with clomipramine at
+doses above 250 mg/day
+
+✽ Dose of 300 mg may be associated with up to 7/1000 incidence of
+seizures, a generally unacceptable risk
+If intolerable anxiety, insomnia, agitation, akathisia, or activation
+occur upon either dosing initiation or discontinuation, consider the
+possibility of activated bipolar disorder, and switch to a mood
+stabilizer or an atypical antipsychotic
+Overdose
+
+
+
+
+<<<PAGE 495>>>
+
+Death may occur; convulsions, cardiac dysrhythmias, severe
+hypotension, CNS depression, coma, changes in ECG
+Long-Term Use
+Limited data but appears to be efficacious and safe long-term
+Habit Forming
+No
+How to Stop
+Taper to avoid withdrawal effects
+Even with gradual dose reduction some withdrawal symptoms may
+appear within the first 2 weeks
+Many patients tolerate 50% dose reduction for 3 days, then another
+50% reduction for 3 days, then discontinuation
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Substrate for CYP450 2D6 and 1A2
+Metabolized to an active metabolite, desmethyl-clomipramine, a
+predominantly norepinephrine reuptake inhibitor, by demethylation
+via CYP450 1A2
+
+
+
+
+<<<PAGE 496>>>
+
+Inhibits CYP450 2D6
+Half-life approximately 17–28 hours
+Food does not affect absorption
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking TCAs
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or at least for 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing clomipramine
+Use of TCAs with anticholinergic drugs may result in paralytic ileus
+or hyperthermia
+Fluoxetine, paroxetine, bupropion, duloxetine, and other CYP450
+2D6 inhibitors may increase TCA concentrations
+Fluvoxamine, a CYP450 1A2 inhibitor, can decrease the conversion
+of clomipramine to desmethyl-clomipramine, and increase
+clomipramine plasma concentrations
+Cimetidine may increase plasma concentrations of TCAs and cause
+anticholinergic symptoms
+Phenothiazines or haloperidol may raise TCA blood concentrations
+May alter effects of antihypertensive drugs
+
+
+
+
+<<<PAGE 497>>>
+
+Use of TCAs with sympathomimetic agents may increase
+sympathetic activity
+TCAs may inhibit hypotensive effects of clonidine
+Methylphenidate may inhibit metabolism of TCAs
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of clomipramine
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing clomipramine
+Use with caution in patients with history of seizures, urinary
+retention, angle-closure glaucoma, hyperthyroidism
+TCAs can increase QTc interval, especially at toxic doses, which
+can be attained not only by overdose but also by combining with
+drugs that inhibit TCA metabolism via CYP450 2D6, potentially
+causing torsade de pointes-type arrhythmia or sudden death
+Because TCAs can prolong QTc interval, use with caution in
+patients who have bradycardia or who are taking drugs that can
+induce bradycardia (e.g., beta blockers, calcium channel blockers,
+clonidine, digitalis)
+
+
+
+
+<<<PAGE 499>>>
+
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to clomipramine
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Baseline ECG is recommended
+TCAs have been reported to cause arrhythmias, prolongation of
+conduction time, orthostatic hypotension, sinus tachycardia, and
+heart failure, especially in the diseased heart
+Myocardial infarction and stroke have been reported with TCAs
+
+
+
+
+<<<PAGE 500>>>
+
+TCAs produce QTc prolongation, which may be enhanced by the
+existence of bradycardia, hypokalemia, congenital or acquired long
+QTc interval, which should be evaluated prior to administering
+clomipramine
+Use with caution if treating concomitantly with a medication likely
+to produce prolonged bradycardia, hypokalemia, slowing of
+intracardiac conduction, or prolongation of the QTc interval
+Avoid TCAs in patients with a known history of QTc prolongation,
+recent acute myocardial infarction, and uncompensated heart failure
+TCAs may cause a sustained increase in heart rate in patients with
+ischemic heart disease and may worsen (decrease) heart rate
+variability, an independent risk of mortality in cardiac populations
+Since SSRIs may improve (increase) heart rate variability in patients
+following a myocardial infarct and may improve survival as well as
+mood in patients with acute angina or following a myocardial
+infarction, these are more appropriate agents for cardiac population
+than tricyclic/tetracyclic antidepressants
+
+✽ Risk/benefit ratio may not justify use of TCAs in cardiac
+impairment
+Elderly
+Baseline ECG is recommended for patients over age 50
+May be more sensitive to anticholinergic, cardiovascular,
+hypotensive, and sedative effects
+
+
+
+
+<<<PAGE 502>>>
+
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+Clomipramine crosses the placenta
+Adverse effects have been reported in infants whose mothers took a
+TCA (lethargy, withdrawal symptoms, fetal malformations)
+Must weigh the risk of treatment (first trimester fetal development,
+third trimester newborn delivery) to the child against the risk of no
+treatment (recurrence of depression, worsening of OCD, maternal
+health, infant bonding) to the mother and child
+For many patients this may mean continuing treatment during
+pregnancy
+National Pregnancy Registry for Antidepressants: 1-866-961-2388,
+https://womensmentalhealth.org/research/pregnancyregistry/antidepr
+essants
+Breast Feeding
+Some drug is found in mother’s breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+
+
+
+
+<<<PAGE 504>>>
+
+Patients with seizure disorders
+Primary Target Symptoms
+Depressed mood
+Obsessive thoughts
+Compulsive behaviors
+Pearls
+
+✽ The only TCA with proven efficacy in OCD
+Normally, clomipramine (CMI), a potent serotonin reuptake blocker,
+at steady state is metabolized extensively to its active metabolite
+desmethyl-clomipramine (de-CMI), a potent nonadrenaline reuptake
+blocker, by the enzyme CYP450 1A2
+Thus, at steady state, plasma drug activity is generally more
+noradrenergic (with higher de-CMI levels) than serotonergic (with
+lower parent CMI levels)
+Addition of the SSRI and CYP450 1A2 inhibitor fluvoxamine
+blocks this conversion and results in higher CMI levels than de-CMI
+levels
+For the expert only: addition of the SSRI fluvoxamine to CMI in
+treatment-resistant OCD can powerfully enhance serotonergic
+activity, not only due to the inherent additive pharmacodynamic
+serotonergic activity of fluvoxamine added to CMI, but also due to a
+favorable pharmacokinetic interaction inhibiting CYP450 1A2 and
+
+
+
+
+<<<PAGE 505>>>
+
+thus converting CMI’s metabolism to a more powerful serotonergic
+portfolio of parent drug
+
+✽ One of the most favored TCAs for treating severe depression
+TCAs are no longer generally considered a first-line treatment
+option for depression because of their side effect profile
+TCAs continue to be useful for severe or treatment-resistant
+depression
+TCAs are often a first-line treatment option for chronic pain
+
+✽ Unique among TCAs, clomipramine has a potentially fatal
+
+interaction with MAOIs in addition to the danger of hypertension
+characteristic of all MAOI-TCA combinations
+
+✽ A potentially fatal serotonin syndrome with high fever, seizures,
+and coma, analogous to that caused by SSRIs and MAOIs, can occur
+with clomipramine and SSRIs, presumably due to clomipramine’s
+potent serotonin reuptake blocking properties
+TCAs may aggravate psychotic symptoms
+Alcohol should be avoided because of additive CNS effects
+Underweight patients may be more susceptible to adverse
+cardiovascular effects
+Children, patients with inadequate hydration, and patients with
+cardiac disease may be more susceptible to TCA-induced
+cardiotoxicity than healthy adults
+
+
+
+
+<<<PAGE 507>>>
+
+Anderson IM . Meta-analytical studies on new antidepressants . Br Med
+Bull 2001 ;57 :161–78 .
+Cox BJ , Swinson RP , Morrison B , Lee PS . Clomipramine, fluoxetine,
+and behavior therapy in the treatment of obsessive-compulsive disorder: a
+meta-analysis . J Behav Ther Exp Psychiatry 1993 ;24 :149–53 .
+Feinberg M . Clomipramine for obsessive-compulsive disorder . Am Fam
+Physician 1991 ; 43 :1735–8 .
+
+
+
+
+<<<PAGE 626>>>
+
+TCAs continue to be useful for severe or treatment-resistant
+depression
+Noradrenergic reuptake inhibitors such as desipramine can be used
+as a second-line treatment for smoking cessation, cocaine
+dependence, and attention deficit disorder
+TCAs may aggravate psychotic symptoms
+Alcohol should be avoided because of additive CNS effects
+Underweight patients may be more susceptible to adverse
+cardiovascular effects
+Children, patients with inadequate hydration, and patients with
+cardiac disease may be more susceptible to TCA-induced
+cardiotoxicity than healthy adults
+For the expert only: although generally prohibited, a heroic but
+potentially dangerous treatment for severely treatment-resistant
+patients is to give a tricyclic/tetracyclic antidepressant other than
+clomipramine simultaneously with an MAOI for patients who fail to
+respond to numerous other antidepressants
+If this option is elected, start the MAOI with the tricyclic/tetracyclic
+antidepressant simultaneously at low doses after appropriate drug
+washout, then alternately increase doses of these agents every few
+days to a week as tolerated
+Although very strict dietary and concomitant drug restrictions must
+be observed to prevent hypertensive crises and serotonin syndrome,
+
+
+
+
+<<<PAGE 765>>>
+
+Alcohol should be avoided because of additive CNS effects
+Underweight patients may be more susceptible to adverse
+cardiovascular effects
+Children, patients with inadequate hydration, and patients with
+cardiac disease may be more susceptible to TCA-induced
+cardiotoxicity than healthy adults
+For the expert only: although generally prohibited, a heroic but
+potentially dangerous treatment for severely treatment-resistant
+patients is to give a tricyclic/tetracyclic antidepressant other than
+clomipramine simultaneously with an MAOI for patients who fail to
+respond to numerous other antidepressants
+If this option is elected, start the MAOI with the tricyclic/tetracyclic
+antidepressant simultaneously at low doses after appropriate drug
+washout, then alternately increase doses of these agents every few
+days to a week as tolerated
+Although very strict dietary and concomitant drug restrictions must
+be observed to prevent hypertensive crises and serotonin syndrome,
+the most common side effects of MAOI/tricyclic or tetracyclic
+combinations may be weight gain and orthostatic hypotension
+Patients on TCAs should be aware that they may experience
+symptoms such as photosensitivity or blue-green urine
+SSRIs may be more effective than TCAs in women, and TCAs may
+be more effective than SSRIs in men
+
+
+
+
+<<<PAGE 960>>>
+
+In Europe and Japan, augmentation is more commonly administered
+for the treatment of depression and anxiety disorders, especially
+with benzodiazepines and lithium
+In the USA, augmentation is more commonly administered for the
+treatment of OCD, especially with atypical antipsychotics,
+buspirone, or even clomipramine; clomipramine should be added
+with caution and at low doses as fluvoxamine can alter
+clomipramine metabolism and raise its levels
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin concentrations at
+serotonin receptors in parts of the brain and body other than those
+that cause therapeutic actions (e.g., unwanted actions of serotonin in
+sleep centers causing insomnia, unwanted actions of serotonin in the
+gut causing diarrhea, etc.)
+Increasing serotonin can cause diminished dopamine release and
+might contribute to emotional flattening, cognitive slowing, and
+apathy in some patients
+Most side effects are immediate but often go away with time, in
+contrast to most therapeutic effects which are delayed and are
+
+
+
+
+<<<PAGE 974>>>
+
+Not FDA approved for depression, but used widely for depression in
+many countries
+CR formulation may be better tolerated than immediate-release
+formulation, particularly with less sedation
+SSRIs may be less effective in women over 50, especially if they are
+not taking estrogen
+SSRIs may be useful for hot flushes in perimenopausal women
+
+✽ Actions at sigma 1 receptors may explain in part fluvoxamine’s
+sometimes rapid onset effects in anxiety disorders and insomnia
+
+✽ Actions at sigma 1 receptors may explain potential advantages of
+fluvoxamine for psychotic depression and delusional depression
+
+✽ For treatment-resistant OCD, consider cautious combination of
+fluvoxamine and clomipramine by an expert
+Normally, clomipramine (CMI), a potent serotonin reuptake blocker,
+at steady state is metabolized extensively to its active metabolite
+desmethyl-clomipramine (de-CMI), a potent noradrenergic reuptake
+blocker
+Thus, at steady state, plasma drug activity is generally more
+noradrenergic (with higher de-CMI levels) than serotonergic (with
+lower parent CMI levels)
+Addition of a CYP450 1A2 inhibitor, fluvoxamine, blocks this
+conversion and results in higher CMI levels than de-CMI levels
+
+
+
+
+<<<PAGE 1099>>>
+
+Children, patients with inadequate hydration, and patients with
+cardiac disease may be more susceptible to TCA-induced
+cardiotoxicity than healthy adults
+For the expert only: although generally prohibited, a heroic but
+potentially dangerous treatment for severely treatment-resistant
+patients is to give a tricyclic/tetracyclic antidepressant other than
+clomipramine simultaneously with an MAOI for patients who fail to
+respond to numerous other antidepressants
+If this option is elected, start the MAOI with the tricyclic/tetracyclic
+antidepressant simultaneously at low doses after appropriate drug
+washout, then alternately increase doses of these agents every few
+days to a week as tolerated
+Although very strict dietary and concomitant drug restrictions must
+be observed to prevent hypertensive crises and serotonin syndrome,
+the most common side effects of MAOI/tricyclic or tetracyclic
+combinations may be weight gain and orthostatic hypotension
+Patients on TCAs should be aware that they may experience
+symptoms such as photosensitivity or blue-green urine
+SSRIs may be more effective than TCAs in women, and TCAs may
+be more effective than SSRIs in men
+Since tricyclic/tetracyclic antidepressants are substrates for CYP450
+2D6, and 7% of the population (especially Caucasians) may have a
+genetic variant leading to reduced activity of 2D6, such patients may
+not safely tolerate normal doses of tricyclic/tetracyclic
+antidepressants and may require dose reduction
+
+
+
+
+<<<PAGE 1106>>>
+
+Over-the-counter medications to avoid include cough and cold preparations, including those containing
+dextromethorphan (serotonin reuptake inhibitor), nasal decongestants (tablets, drops, or spray), hay-fever
+medications, sinus medications, asthma inhalant medications, anti-appetite medications, weight reducing
+preparations, “pep” pills (see Table 3 after Pearls)
+Hypoglycemia may occur in diabetic patients receiving insulin or oral antidiabetic agents (hydrazine effect)
+Binds and inactivates vitamin B6 (hydrazine effect); reversible with high-dose B6 administration
+Use cautiously in patients receiving reserpine, anesthetics, disulfiram, metrizamide, anticholinergic agents
+Isocarboxazid is not recommended for use in patients who cannot be monitored closely
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is taking dextromethorphan, a serotonin reuptake inhibitor
+If patient is taking diuretics or other antihypertensives without careful monitoring of blood pressure
+If patient has pheochromocytoma
+If patient has cardiovascular or cerebrovascular disease, until cleared by the patient’s medical doctor
+If patient is taking a prohibited drug
+If patient is not compliant with a low-tyramine diet
+If there is a proven allergy to isocarboxazid
+
+Special Populations
+Renal Impairment
+Use with caution –drug may accumulate in plasma
+May require lower than usual adult dose
+Hepatic Impairment
+Use cautiously in hepatic impairment
+Cardiac Impairment
+
+
+
+
+<<<PAGE 1109>>>
+
+✽ MAOIs should be for the expert, especially if combining with agents of potential risk (e.g., stimulants,
+trazodone, TCAs)
+
+✽ MAOIs should not be neglected as therapeutic agents for the treatment-resistant
+For treatment-resistant patients, experts can give a tricyclic/tetracyclic antidepressant other than
+clomipramine or imipramine simultaneously with an MAOI for patients who fail to respond to numerous
+other antidepressants
+Use of MAOIs with clomipramine is always prohibited because of the risk of serotonin syndrome and
+death due to serotonin reuptake inhibition
+Amoxapine may be the preferred trycyclic/tetracyclic antidepressant to combine with an MAOI in heroic
+cases due to its theoretically protective 5HT2A antagonist properties
+If this option is elected, start the MAOI with the tricyclic/tetracyclic antidepressant simultaneously at low
+doses after appropriate drug washout, then alternately increase doses of these agents every few days to a
+week as tolerated
+Although very strict dietary and concomitant drug restrictions must be observed to prevent hypertensive
+crises and serotonin syndrome, the most common side effects of MAOI and tricyclic/tetracyclic
+combinations may be weight gain and orthostatic hypotension
+Table 1. Drugs contraindicated due to risk of serotonin syndrome/toxicity
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+SSRIs
+
+MDMA (ecstasy)
+
+Meperidine
+
+Non-subcutaneous sumatriptan
+
+SNRIs
+
+Cocaine
+
+Tramadol
+
+Chlorpheniramine
+
+Clomipramine
+
+Methamphetamine
+
+Methadone
+
+Brompheniramine
+
+Imipramine
+
+St. John’s wort
+
+High-dose or
+injected
+amphetamine
+
+DextromethorphanLumateperoneZiprasidone
+
+Table 2. Dietary guidelines for patients taking MAOIs*
+Foods to avoid**
+
+Foods allowed
+
+Dried, aged, smoked, fermented, spoiled, or
+improperly stored meat, poultry, and fish
+
+Fresh or processed meat, poultry, and fish; properly
+stored pickled or smoked fish
+
+Broad bean pods
+
+All other vegetables
+
+Aged cheeses
+
+Processed cheese slices, cottage cheese, ricotta cheese,
+yogurt, cream cheese
+
+
+
+
+<<<PAGE 1504>>>
+
+Elimination half-life approximately 1–4 hours
+Clinical duration of action at least 24 hours
+Drug Interactions
+Tramadol (serotonin reuptake inhibitor) may increase the risk of seizures in patients taking an MAOI
+Can cause a fatal “serotonin syndrome” when combined with drugs that block serotonin reuptake, so do not
+use with a serotonin reuptake inhibitor or for 5 half-lives after stopping the serotonin reuptake inhibitor
+(see Table 1 after Pearls)
+Hypertensive crisis with headache, intracranial bleeding, and death may result from combining MAOIs
+with sympathomimetic drugs (e.g., amphetamines, methylphenidate, cocaine, dopamine, epinephrine,
+norepinephrine)
+Do not combine with another MAOI, alcohol, or guanethidine
+Adverse drug reactions can result from combining MAOIs with tricyclic/tetracyclic antidepressants and
+related compounds, including carbamazepine, cyclobenzaprine, and mirtazapine, and should be avoided
+except by experts
+MAOIs in combination with spinal anesthesia may cause combined hypotensive effects
+Combination of MAOIs and CNS depressants may enhance sedation and hypotension
+Cimetidine may increase plasma concentrations of moclobemide
+Moclobemide may enhance the effects of NSAIDs such as ibuprofen
+Risk of hypertensive crisis may be increased if moclobemide is used concurrently with levodopa or other
+dopaminergic agents
+Table 1. Drugs contraindicated due to risk of serotonin syndrome/toxicity
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+SSRIs
+
+MDMA (ecstasy)
+
+Meperidine
+
+Non-subcutaneous
+sumatriptan
+
+SNRIs
+
+Cocaine
+
+Tramadol
+
+Chlorpheniramine
+
+Clomipramine
+
+Methamphetamine
+
+Methadone
+
+Brompheniramine
+
+Imipramine
+
+St. John’s wort
+
+High-dose or injected
+.amphetamine
+
+Dextromethorphan
+Lumateperone
+Ziprasidone
+
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 1506>>>
+
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phente
+
+Pseudoephedrine
+
+MethylphenidateCocaineMethamphetamineModafinilArmodafinil
+
+NRIsNDRIs
+
+Local a
+contain
+vasoco
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g., SSRIs, tramadol, milnacipran,
+duloxetine, venlafaxine, clomipramine, imipramine, etc.)
+If patient is in an acute confusional state
+If patient has pheochromocytoma or thyrotoxicosis
+If there is a proven allergy to moclobemide
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Plasma concentrations are increased
+May require one-half to one-third of usual adult dose
+Cardiac Impairment
+Cardiac impairment may require lower than usual adult dose
+Patients with angina pectoris or coronary artery disease should limit their exertion
+Elderly
+Elderly patients may have greater sensitivity to adverse effects, but many tolerate MAOIs
+
+
+
+
+<<<PAGE 1508>>>
+
+Pearls
+MAOIs are generally reserved for third- or fourth-line use after SSRIs, SNRIs, and combinations of newer
+antidepressants have failed
+Patient should be advised not to take any prescription or over-the-counter drugs without consulting his/her
+doctor because of possible drug interactions with the MAOI
+Headache is often the first symptom of hypertensive crisis
+Moclobemide has a much reduced risk of interactions with tyramine than nonselective MAOIs
+Especially at higher doses of moclobemide, foods with high tyramine need to be avoided (see Table 2 )
+The rigid dietary restrictions may reduce compliance
+
+✽ May be a safer alternative to classical irreversible nonselective MAO-A and MAO-B inhibitors with less
+propensity for tyramine and drug interactions and hepatotoxicity (although not entirely free of interactions)
+May not be as effective at low doses, and may have more side effects at higher doses
+Moclobemide’s profile at higher doses may be more similar to classical MAOIs
+
+✽ Myths about the danger of dietary tyramine can be exaggerated, but prohibitions against concomitant
+drugs often not followed closely enough
+Orthostatic hypotension, insomnia, and sexual dysfunction are often the most troublesome common side
+effects
+
+✽ MAOIs should be for the expert, especially if combining with agents of potential risk (e.g., stimulants,
+trazodone, TCAs)
+
+✽ MAOIs should not be neglected as therapeutic agents for the treatment-resistant
+For treatment-resistant patients, experts can give a tricyclic/tetracyclic antidepressant other than
+clomipramine or imipramine simultaneously with an MAOI for patients who fail to respond to numerous
+other antidepressants
+Use of MAOIs with clomipramine is always prohibited because of the risk of serotonin syndrome and
+death due to serotonin reuptake inhibition
+Amoxapine may be a preferred trycyclic/tetracyclic antidepressant to combine with an MAOI in heroic
+cases due to its theoretically protective 5HT2A antagonist properties
+If this option is elected, start the MAOI with the tricyclic/tetracyclic antidepressant simultaneously at low
+doses after appropriate drug washout, then alternately increase doses of these agents every few days to a
+week as tolerated
+Although very strict dietary and concomitant drug restrictions must be observed to prevent hypertensive
+crises and serotonin syndrome, the most common side effects of MAOI and tricyclic/tetracyclic
+combinations may be weight gain and orthostatic hypotension
+
+
+
+
+<<<PAGE 1613>>>
+
+TCAs may aggravate psychotic symptoms
+Alcohol should be avoided because of additive CNS effects
+Underweight patients may be more susceptible to adverse
+cardiovascular effects
+Children, patients with inadequate hydration, and patients with
+cardiac disease may be more susceptible to TCA-induced
+cardiotoxicity than healthy adults
+For the expert only: although generally prohibited, a heroic but
+potentially dangerous treatment for severely treatment-resistant
+patients is for an expert to give a tricyclic/tetracyclic antidepressant
+other than clomipramine simultaneously with an MAOI for patients
+who fail to respond to numerous other antidepressants
+If this option is elected, start the MAOI with the tricyclic/tetracyclic
+antidepressant simultaneously at low doses after appropriate drug
+washout, then alternately increase doses of these agents every few
+days to a week as tolerated
+Although very strict dietary and concomitant drug restrictions must
+be observed to prevent hypertensive crises and serotonin syndrome,
+the most common side effects of MAOI and tricyclic/tetracyclic
+antidepressant combinations may be weight gain and orthostatic
+hypotension
+Patients on TCAs should be aware that they may experience
+symptoms such as photosensitivity or blue-green urine
+
+
+
+
+<<<PAGE 1772>>>
+
+inhibitor or for 5 half-lives after stopping the serotonin reuptake
+inhibitor (see Table 1 after Pearls)
+Hypertensive crisis with headache, intracranial bleeding, and death
+may result from combining MAOIs with sympathomimetic drugs (e.g.,
+amphetamines, methylphenidate, cocaine, dopamine, epinephrine,
+norepinephrine)
+Do not combine with another MAOI, alcohol, or guanethidine
+Adverse drug reactions can result from combining MAOI with
+tricyclic/tetracyclic antidepressants and related compounds, including
+carbamazepine, cyclobenzaprine, and mirtazapine, and should be
+avoided except by experts
+MAOIs in combination with spinal anesthesia may cause combined
+hypotensive effects
+Combination of MAOIs and CNS depressants may enhance sedation
+and hypotension
+Table 1. Drugs contraindicated due to risk of serotonin syndrome/toxicity
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+SSRIs
+
+MDMA (ecstasy)
+
+Meperidine
+
+Non-subcutaneous
+sumatriptan
+
+SNRIs
+
+Cocaine
+
+Tramadol
+
+Chlorpheniramine
+
+Clomipramine
+
+Methamphetamine
+
+Methadone
+
+Brompheniramine
+
+
+
+
+<<<PAGE 1775>>>
+
+** Not necessary for 6 mg transdermal or low-dose oral selegiline
+Table 3. Drugs that boost norepinephrine: should only be used with caution
+with MAOIs
+Use With Caution:
+Decongestants
+
+Stimulants
+
+Antidepressants
+with
+norepinephrine
+reuptake
+inhibition
+
+Other
+
+Phenylephrine
+
+Amphetamines
+
+Most tricyclics
+
+Phentermine
+
+Pseudoephedrine
+
+Methylphenidate
+Cocaine
+Methamphetamine
+Modafinil
+Armodafinil
+
+NRIs NDRIs
+
+Local
+anesthetics
+containing
+vasoconstrictors
+Tapentadol
+
+Do Not Use
+If patient is taking meperidine (pethidine) (serotonin reuptake
+inhibitor)
+If patient is taking a sympathomimetic agent or taking guanethidine
+If patient is taking another MAOI
+If patient is taking any agent that can inhibit serotonin reuptake (e.g.,
+SSRIs, tramadol, milnacipran, duloxetine, venlafaxine, clomipramine,
+imipramine, etc.)
+
+
+
+
+<<<PAGE 2037>>>
+
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+Clomipramine
+
+Methamphetamine
+
+Methadone
+
+Brompheniramine
+
+Imipramine
+
+High-dose or
+injected
+amphetamine
+
+St. John’s wort
+
+Dextromethorphan
+
+Lumateperone
+Ziprasidone
+
+Other Warnings/Precautions
+Ingestion of a “high-tyramine meal” is generally defined as 40 mg or
+more of tyramine in the fasted state
+Studies show that 200–400 mg of tyramine in the fasted state (and
+even more ingestion of tyramine in the fed state) may be required for a
+hypertensive response with administration of the low-dose transdermal
+patch (6 mg/24 hours); thus, no dietary precautions are required at this
+dose
+Tyramine sensitivity of the low-dose transdermal patch (6 mg/24
+hours) may be comparable to that of low-dose oral selegiline (10 mg)
+with neither causing a hypertensive reaction to high-tyramine meals
+Tyramine sensitivity and hypertensive responses to the high-dose
+transdermal patch (12 mg/24 hours) may occur with administration of
+70–100 mg of tyramine in the fasted state, so dietary restrictions may
+
+
+
+
+<<<PAGE 2256>>>
+
+carbamazepine, cyclobenzaprine, and mirtazapine, and should be
+avoided except by experts
+MAOIs in combination with spinal anesthesia may cause combined
+hypotensive effects
+Combination of MAOIs and CNS depressants may enhance sedation
+and hypotension
+Table 1. Drugs contraindicated due to risk of serotonin syndrome/toxicity
+Do Not Use:
+Antidepressants
+
+Drugs of Abuse
+
+Opioids
+
+Other
+
+SSRIs
+
+MDMA (ecstasy)
+
+Meperidine
+
+Non-subcutaneous
+sumatriptan
+
+SNRIs
+
+Cocaine
+
+Tramadol
+
+Chlorpheniramine
+
+Clomipramine
+
+Methamphetamine
+
+Methadone
+
+Brompheniramine
+
+Imipramine
+
+High-dose or
+injected
+amphetamine
+
+St. John’s wort
+
+Dextromethorphan
+
+Lumateperone
+Ziprasidone
+
+Other Warnings/Precautions
+Use requires strict adherence to low-tyramine diet (see Table 2 after
+Pearls)
+
+
+
+
+<<<PAGE 2264>>>
+
+The rigid dietary restrictions may reduce compliance (see Table 2 after
+Pearls)
+Mood disorders can be associated with eating disorders (especially in
+adolescent females), and tranylcypromine can be used to treat both
+depression and bulimia
+
+✽ Myths about the danger of dietary tyramine can be exaggerated, but
+prohibitions against concomitant drugs often not followed closely
+enough
+Orthostatic hypotension, insomnia, and sexual dysfunction are often
+the most troublesome common side effects
+
+✽ MAOIs should be for the expert, especially if combining with agents
+of potential risk (e.g., stimulants, trazodone, TCAs)
+
+✽ MAOIs should not be neglected as therapeutic agents for the
+treatment-resistant
+For treatment-resistant patients, experts can give a tricyclic/tetracyclic
+antidepressant other than clomipramine or imipramine simultaneously
+with an MAOI for patients who fail to respond to numerous other
+antidepressants
+Use of MAOIs with clomipramine is always prohibited because of the
+risk of serotonin syndrome and death due to serotonin reuptake
+inhibition
+Amoxapine may be the preferred trycyclic/tetracyclic antidepressant to
+combine with an MAOI in heroic cases due to its theoretically
+protective 5HT2A antagonist properties
+
+
+
+
+<<<PAGE 2354>>>
+
+TCAs are no longer generally considered a first-line option for
+depression because of their side effect profile
+TCAs continue to be useful for severe or treatment-resistant
+depression
+TCAs may aggravate psychotic symptoms
+Alcohol should be avoided because of additive CNS effects
+Underweight patients may be more susceptible to adverse
+cardiovascular effects
+Children, patients with inadequate hydration, and patients with
+cardiac disease may be more susceptible to TCA-induced
+cardiotoxicity than healthy adults
+For the expert only: although generally prohibited, a heroic but
+potentially dangerous treatment for severely treatment-resistant
+patients is for an expert to give a tricyclic/tetracyclic antidepressant
+other than clomipramine simultaneously with an MAOI for patients
+who fail to respond to numerous other antidepressants
+If this option is elected, start the MAOI with the tricyclic/tetracyclic
+antidepressant simultaneously at low doses after appropriate drug
+washout, then alternately increase doses of these agents every few
+days to a week as tolerated
+Although very strict dietary and concomitant drug restrictions must
+be observed to prevent hypertensive crises and serotonin syndrome,
+the most common side effects of MAOI and tricyclic/tetracyclic
+
+
+
+
+<<<PAGE 2571>>>
+
+amphetamine (d), 39
+amphetamine (d,l), 45
+Anafranil (clomipramine), 165
+Anafranil 75 (clomipramine), 165
+Anafranil Retard (clomipramine), 165
+Anatensoi Decanoaat (fluphenazine), 313
+Anatensol (fluphenazine), 313
+Anatensol Concentraat (fluphenazine), 313
+Anatensol Decanoate (fluphenazine), 313
+Ancholactil (chlorpromazine), 153
+Aneural (maprotiline), 465
+Aneurol (diazepam), 229
+Anexate (flumazenil), 293
+Ansilor (lorazepam), 437
+Ansiolin (diazepam), 229
+Ansised (buspirone), 123
+Ansium (diazepam), 229
+Ansium (sulpiride), 741
+Antabuse (disulfiram), 239
+Antalon (pimozide), 627
+Antelepsin (clonazepam), 173
+Anten (doxepin), 255
+Antenex (diazepam), 229
+Antideprin (imipramine), 367
+Antiparkin (selegiline), 705
+Antitussive (diphenhydramine), 235
+Antoderin (oxazepam), 569
+Anxial (buspirone), 123
+
+
+
+
+<<<PAGE 2572>>>
+
+Anxidin (clorazepate), 185
+Anxiolit (oxazepam), 569
+Anxiolit Plus (oxazepam), 569
+Anxiron (buspirone), 123
+Apaurin (diazepam), 229
+Apilepsin (valproate), 829
+Aplenzin (bupropion), 117
+Apo-Alprax (alprazolam), 11
+Apo-Amitriptyline (amitriptyline), 25
+Apo-Buspirone (buspirone), 123
+Apo-Carbamazepine (carbamazepine), 131
+Apo-Clomipramine (clomipramine), 165
+Apo-Clonazepam (clonazepam), 173
+Apo-Clonidine (clonidine), 179
+Apo-Clorazepate (clorazepate), 185
+Apo-Desipramine (desipramine), 207
+Apo-Diazepam (diazepam), 229
+Apo-Doxepin (doxepin), 255
+Apo-Fluoxetine (fluoxetine), 301
+Apo-Fluphenazine (fluphenazine), 313
+Apo-Haloperidol (haloperidol), 347
+Apoh-Hydroxyzine (hydroxyzine), 355
+Apo-Imipramine (imipramine), 367
+Apollonset (diazepam), 229
+Apo-Lorazem (lorazepam), 437
+Aponal (doxepin), 255
+Apo-Oxepam (oxazepam), 569
+Apo-Perphenazine (perphenazine), 607
+
+
+
+
+<<<PAGE 2578>>>
+
+Cibalith S-Lithonate (lithium), 415
+Cidoxepin (doxepin), 255
+Cipram (citalopram), 159
+Cipramil (citalopram), 159
+Ciprilex (escitalopram), 269
+Ciproxidine (pitolisant), 639
+Cisordinol (zuclopenthixol), 889
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+Clonazepamum (clonazepam), 173
+clonidine, 179
+Clonisin (clonidine), 179
+Clonistada (clonidine), 179
+Clopixol (zuclopenthixol), 889
+Clopixol Acuphase (zuclopenthixol), 889
+Clopixol Conc (zuclopenthixol), 889
+Clopress (clomipramine), 165
+clorazepate, 185
+Clordezalin (chlorpromazine), 153
+Clorpres (clonidine), 179
+clozapine, 191
+Clozaril (clozapine), 191
+Coaxil (tianeptine), 777
+Cogentin (benztropine), 85
+Cognitiv (selegiline), 705
+Combipres (clonidine), 179
+Complutine (diazepam), 229
+
+
+
+
+<<<PAGE 2589>>>
+
+Flutepam (flurazepam), 321
+Flutin (fluoxetine), 301
+Flutraz (flunitrazepam), 297
+Fluval (fluoxetine), 301
+fluvoxamine, 325
+Fluxadir (fluoxetine), 301
+Fluxonil (fluoxetine), 301
+Focalin (d-methylphenidate), 481
+Focalin XR (d-methylphenidate), 481
+Foille (trifluoperazine), 803
+Fokalepsin (carbamazepine), 131
+Fondur (fluoxetine), 301
+Fontex (fluoxetine), 301
+Fonzac (fluoxetine), 301
+Forfivo (bupropion), 117
+Fortunan (haloperidol), 347
+Frontal (alprazolam), 11
+Frosinor (paroxetine), 593
+Frosnor (paroxetine), 593
+gabapentin, 331
+Gabitril (tiagabine), 771
+galantamine, 337
+Gamanil (lofepramine), 421
+Gamibetal Plus (diazepam), 229
+Gamonil (lofepramine), 421
+Gen-Alprazolam (alprazolam), 11
+Gen-Clomipramine (clomipramine), 165
+Gen-Triazolam (triazolam), 799
+
+
+
+
+<<<PAGE 2673>>>
+
+twice a day
+BMI
+body mass index
+BP
+blood pressure
+BuChE
+butyrylcholinesterase
+CBC
+complete blood count
+Cmax
+maximum concentration
+CR
+controlled-release
+CRP
+C-reactive protein
+CSF
+cerebrospinal fluid
+CMI
+clomipramine
+CNS
+
+

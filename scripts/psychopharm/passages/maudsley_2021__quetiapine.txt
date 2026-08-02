@@ -1,0 +1,963 @@
+<<<PAGE 175>>>
+
+CHAPTER 1
+
+154  The Maudsley® Prescribing Guidelines in Psychiatry
+
+family history of diabetes,23,32 although these factors greatly increase the risk of developing diabetes on clozapine.33
+Clozapine appears to increase plasma levels of insulin in a clozapine level-dependent
+fashion.34,35 It has been shown to be more likely than FGAs to increase plasma glucose
+and insulin following oral glucose challenge.36 Testing for diabetes is essential given the
+high prevalence of diabetes in people receiving clozapine.37
+Olanzapine
+As with clozapine, olanzapine has been strongly linked to impaired glucose tolerance,
+diabetes and diabetic ketoacidosis.38 Olanzapine and clozapine appear to directly
+induce insulin resistance.39,40 Risk of diabetes has also been reported to be higher with
+olanzapine than with FGA drugs,41 again with a particular risk in younger patients.25
+The time course of development of diabetes has not been established but impaired glucose tolerance seems to occur even in the absence of obesity and family history of diabetes.23,32 Olanzapine is probably more diabetogenic than risperidone.42–46 Olanzapine
+is also associated with plasma levels of glucose and insulin higher than those seen with
+FGAs (after oral glucose load).36,47
+Risperidone
+Risperidone has been linked, mainly in case reports, to impaired glucose tolerance,48
+diabetes49 and ketoacidosis.50 The number of reports of such adverse effects is substantially smaller than with either clozapine or olanzapine.51 At least one study has suggested that changes in fasting glucose are significantly less common with risperidone
+than with olanzapine,42 but other studies have detected no difference.52
+Risperidone seems no more likely than FGA drugs to be associated with diabetes,25,41,43 although there may be an increased risk in patients under 40 years of age.25
+Risperidone has, however, been observed adversely to affect fasting glucose and plasma
+glucose (following glucose challenge) compared with the levels seen in healthy volunteers (but not compared with patients taking FGAs).36
+Quetiapine
+Like risperidone, quetiapine has been linked to cases of new-onset diabetes and ketoacidosis.53–55 Again, the number of reports is much lower than with olanzapine or clozapine. Quetiapine appears to be more likely than FGA medications to be associated with
+diabetes.25,56 Two studies showed quetiapine to be equal to olanzapine in the incidence
+of diabetes.52,57 The risk with quetiapine may be dose-related, with daily doses of 400mg
+or more being clearly linked to changes in HbA1C.58
+
+Other SGAs
+Amisulpride appears not to elevate plasma glucose59 and seems not to be associated
+with diabetes.60 There is one reported case of ketoacidosis occurring in a patient given
+the closely related medication, sulpiride.61 Data for aripiprazole62–65 and ziprasidone66,67
+
+
+
+
+<<<PAGE 204>>>
+
+Switching antipsychotics
+Summary of recommendations for switching antipsychotics because of poor
+tolerability.
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Acute EPS
+Dystonia, parkinsonism, bradykinesia
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Olanzapine
+Quetiapine
+
+Clozapine
+Lurasidone
+Ziprasidone
+
+Akathisia2,9,10
+
+Olanzapine
+Quetiapine
+
+Clozapine
+Brexpiprazole
+
+Dyslipidaemia7,8,11–16
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Asenapine
+Brexpiprazole
+Cariprazine
+
+Impaired glucose
+tolerance7,8,15,17–21
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Brexpiprazole
+Cariprazine
+Haloperidol
+
+Hyperprolactinaemia7,8,15,22–28
+
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+Olanzapine
+Ziprasidone
+
+Postural hypotension8,15,29
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Haloperidol
+Sulpiride
+Trifluoperazine
+
+QT prolongation27,30–37
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+Paliperidone
+
+Low dose monotherapy of any
+drug not formally contraindicated in QT prolongation
+(with ECG monitoring)
+
+Sedation7,8,27
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Risperidone
+Sulpiride
+
+Haloperidol
+Trifluoperazine
+Ziprasidone
+
+1–8
+
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  183
+
+
+
+
+<<<PAGE 205>>>
+
+CHAPTER 1
+
+184  The Maudsley® Prescribing Guidelines in Psychiatry
+
+(Continued )
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Sexual dysfuction8,38–44
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+
+Tardive dyskinesia45–49
+
+Clozapine
+
+Aripiprazole
+Olanzapine
+Quetiapine
+
+Weight gain16,35,37,50–57
+
+Amisulpride
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Haloperidol
+Lurasidone
+Ziprasidone
+
+Asenapine
+Haloperidol
+Trifluoperazine
+
+§There is evidence that both switching to and co-prescription of aripiprazole can be associated with reductions in
+body weight and plasma prolactin levels, better lipid profiles, and a decrease in plasma glucose levels.58–61
+
+Lumateperone and pimavanserin are not listed in the table because of their limited
+availability. Both drugs cause little or no EPSE or akathisia, have no effect on prolactin
+or blood pressure and cause minimal weight gain and metabolic disturbance.62,63
+Pimvanserin prolongs QT,64 whereas lumateperone seems to have no effect on the
+ECG.65
+
+References
+1. Stanniland C, et al. Tolerability of atypical antipsychotics. Drug Saf 2000; 22:195–214.
+2. Tarsy D, et al. Effects of newer antipsychotics on extrapyramidal function. CNS Drugs 2002; 16:23–45.
+3. Caroff SN, et al. Movement disorders associated with atypical antipsychotic drugs. J Clin Psychiatry 2002; 63 Suppl 4:12–19.
+4. Lemmens P, et al. A combined analysis of double-blind studies with risperidone vs. placebo and other antipsychotic agents: factors associated
+with extrapyramidal symptoms. Acta Psychiatr Scand 1999; 99:160–170.
+5. Taylor DM. Aripiprazole: a review of its pharmacology and clinical use. Int J Clin Pract 2003; 57:49–54.
+6. Meltzer HY, et al. Lurasidone in the treatment of schizophrenia: a randomized, double-blind, placebo- and olanzapine-controlled study. Am
+J Psychiatry 2011; 168:957–967.
+7. Garnock-Jones KP. Cariprazine: a review in schizophrenia. CNS Drugs 2017; 31:513–525.
+8. Garnock-Jones KP. Brexpiprazole: a review in schizophrenia. CNS Drugs 2016; 30:335–342.
+9. Buckley PF. Efficacy of quetiapine for the treatment of schizophrenia: a combined analysis of three placebo-controlled trials. Curr Med Res
+Opin 2004; 20:1357–1363.
+10. Pringsheim T, et al. The assessment and treatment of antipsychotic-induced akathisia. Can J Psychiatry 2018; 63:719–729.
+11. Rettenbacher MA, et al. Early changes of plasma lipids during treatment with atypical antipsychotics. Int Clin Psychopharmacol 2006;
+21:369–372.
+12. Ball MP, et al. Clozapine-induced hyperlipidemia resolved after switch to aripiprazole therapy. Ann Pharmacother 2005; 39:1570–1572.
+13. Chrzanowski WK, et al. Effectiveness of long-term aripiprazole therapy in patients with acutely relapsing or chronic, stable schizophrenia: a
+52-week, open-label comparison with olanzapine. Psychopharmacology 2006; 189:259–266.
+14. De Hert M, et al. A case series: evaluation of the metabolic safety of aripiprazole. Schizophr Bull 2007; 33:823–830.
+15. Citrome L, et al. Long-term safety and tolerability of lurasidone in schizophrenia: a 12-month, double-blind, active-controlled study. Int Clin
+Psychopharmacol 2012; 27:165–176.
+16. Kemp DE, et al. Weight change and metabolic effects of asenapine in patients with schizophrenia and bipolar disorder. J Clin Psychiatry 2014;
+75:238–245.
+
+
+
+
+<<<PAGE 226>>>
+
+65. Kelly DL, et al. Adverse effects and laboratory parameters of high-dose olanzapine vs. clozapine in treatment-resistant schizophrenia. Ann
+Clin Psychiatry 2003; 15:181–186.
+66. Zink M, et al. Combination of amisulpride and olanzapine in treatment-resistant schizophrenic psychoses. Eur Psychiatry 2004; 19:56–58.
+67. Duggal HS. Aripirazole-olanzapine combination for treatment of schizophrenia. Can J Psychiatry 2004; 49:151.
+68. Heresco-Levy U, et al. High-dose glycine added to olanzapine and risperidone for the treatment of schizophrenia. Biol Psychiatry 2004;
+55:165–171.
+69. Dursun SM, et al. Augmenting antipsychotic treatment with lamotrigine or topiramate in patients with treatment-resistant schizophrenia: a
+naturalistic case-series outcome study. J Psychopharm 2001; 15:297–301.
+70. Suzuki T, et al. Effectiveness of antipsychotic polypharmacy for patients with treatment refractory schizophrenia: an open-label trial of olanzapine plus risperidone for those who failed to respond to a sequential treatment with olanzapine, quetiapine and risperidone. Human
+Psychopharmacology 2008; 23:455–463.
+71. Kotler M, et al. Sulpiride augmentation of olanzapine in the management of treatment-resistant chronic schizophrenia: evidence for improvement of mood symptomatology. Int Clin Psychopharmacol 2004; 19:23–26.
+72. Mellor JE, et al. Omega-3 fatty acid supplementation in schizophrenic patients. Human Psychopharmacology 1996; 11:39–46.
+73. Puri BK, et al. Sustained remission of positive and negative symptoms of schizophrenia following treatment with eicosapentaenoic acid. Arch
+Gen Psychiatry 1998; 55:188–189.
+74. Zheng W, et al. Adjunctive ondansetron for schizophrenia: a systematic review and meta-analysis of randomized controlled trials. J Psychiatr
+Res 2019; 113:27–33.
+75. Martínez-Andrés JA, et al. Switching from clozapine to paliperidone palmitate-3-monthly improved obesity, hyperglycemia and dyslipidemia
+lowering antipsychotic dose equivalents in a treatment-resistant schizophrenia cohort. Int Clin Psychopharmacol 2020; 35:163–169.
+76. Nasrallah HA, et al. Successful treatment of clozapine-nonresponsive refractory hallucinations and delusions with pimavanserin, a serotonin
+5HT-2A receptor inverse agonist. Schizophr Res 2019; 208:217–220.
+77. Salimi S, et al. A placebo controlled study of the propentofylline added to risperidone in chronic schizophrenia. Prog Neuropsychopharmacol
+Biol Psychiatry 2008; 32:726–732.
+78. Reznik I, et al. Long-term efficacy and safety of quetiapine in treatment-refractory schizophrenia: a case report. Int J Psychiatry Clin Pract
+2000; 4:77–80.
+79. De Nayer A, et al. Efficacy and tolerability of quetiapine in patients with schizophrenia switched from other antipsychotics. Int J Psychiatry
+Clin Pract 2003; 7:59–66.
+80. Larmo I, et al. Efficacy and tolerability of quetiapine in patients with schizophrenia who switched from haloperidol, olanzapine or risperidone. Human Psychopharmacology 2005; 20:573–581.
+81. Boggs DL, et al. Quetiapine at high doses for the treatment of refractory schizophrenia. Schizophr Res 2008; 101:347–348.
+82. Lindenmayer JP, et al. A randomized, double-blind, parallel-group, fixed-dose, clinical trial of quetiapine at 600 versus 1200 mg/d for patients
+with treatment-resistant schizophrenia or schizoaffective disorder. J Clin Psychopharmacol 2011; 31:160–168.
+83. Quintero J, et al. The effectiveness of the combination therapy of amisulpride and quetiapine for managing treatment-resistant schizophrenia:
+a naturalistic study. J Clin Psychopharmacol 2011; 31:240–242.
+84. Aziz MA, et al. Remission of positive and negative symptoms in refractory schizophrenia with a combination of haloperidol and quetiapine:
+two case studies. J Psychiatr Pract 2006; 12:332–336.
+85. Tharoor H, et al. Raloxifene trial in postmenopausal woman with treatment-resistant schizophrenia. Arch Women’s Mental Health 2015;
+18:741–742.
+86. Usall J, et al. Raloxifene as an adjunctive treatment for postmenopausal women with schizophrenia: a 24-week double-blind, randomized,
+parallel, placebo-controlled trial. Schizophr Bull 2016; 42:309–317.
+87. Usall J, et al. Raloxifene as an adjunctive treatment for postmenopausal women with schizophrenia: a double-blind, randomized, placebocontrolled trial. J Clin Psychiatry 2011; 72:1552–1557.
+88. Weiser M, et al. Raloxifene plus antipsychotics versus placebo plus antipsychotics in severely ill decompensated postmenopausal women with
+schizophrenia or schizoaffective disorder: a randomized controlled trial. J Clin Psychiatry 2017; 78:e758–e765.
+89. Kulkarni J, et al. Effect of adjunctive raloxifene therapy on severity of refractory schizophrenia in women: a randomized clinical trial. JAMA
+Psychiatry 2016; 73:947–954.
+90. Farokhnia M, et al. A double-blind, placebo controlled, randomized trial of riluzole as an adjunct to risperidone for treatment of negative
+symptoms in patients with chronic schizophrenia. Psychopharmacology 2014; 231:533–542.
+91. Breier AF, et al. Clozapine and risperidone in chronic schizophrenia: effects on symptoms, parkinsonian side effects, and neuroendocrine
+response. Am J Psychiatry 1999; 156:294–298.
+92. Bondolfi G, et al. Risperidone versus clozapine in treatment-resistant chronic schizophrenia: a randomized double-blind study. The
+Risperidone Study Group. Am J Psychiatry 1998; 155:499–504.
+93. Conley RR, et al. Risperidone, quetiapine, and fluphenazine in the treatment of patients with therapy-refractory schizophrenia. Clin
+Neuropharmacol 2005; 28:163–168.
+94. Lerner V, et al. Combination of ‘atypical’ antipsychotic medication in the management of treatment-resistant schizophrenia and schizoaffective disorder. Prog Neuropsychopharmacol Biol Psychiatry 2004; 28:89–98.
+95. Meltzer HY, et al. A six month randomized controlled trial of long acting injectable risperidone 50 and 100mg in treatment resistant schizophrenia. Schizophr Res 2014; 154:14–22.
+96. Akhondzadeh S, et al. Effect of ritanserin, a 5HT2A/2C antagonist, on negative symptoms of schizophrenia: a double-blind randomized
+placebo-controlled study. Prog Neuropsychopharmacol Biol Psychiatry 2008; 32:1879–1883.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  205
+
+
+
+
+<<<PAGE 301>>>
+
+CHAPTER 2
+
+280  The Maudsley® Prescribing Guidelines in Psychiatry
+
+available29 suggest combination treatments ‘tend to work faster’ and that ‘20% more
+patients will respond to combination therapy’ (compared with monotherapy).
+Conversely, guidelines from Australia and New Zealand suggest trying an antipsychotic
+first and only adding a mood stabiliser ‘if monotherapy does not suffice’.30 In practice,
+there is often a strong tendency to use combination therapy from the outset.
+The diagram outlines a treatment strategy for mania and hypomania. These recommendations are based on the UK NICE guidelines,6 BAP guidelines31 and individual
+references cited. Where an antipsychotic is recommended, choose from those licensed
+for mania/BD, that is, most conventional drugs including aripiprazole, asenapine, olanzapine, risperidone and quetiapine. Suggested doses and alternative treatments are outlined in the tables that follow.
+
+Table 2.6 Drug treatment of mania - suggested doses
+Drug
+
+Dose
+
+Lithium
+
+400mg/day, increasing every 3–4 days according to plasma levels. At least one study has used
+800mg as a starting dose32
+
+Valproate
+
+As semi-sodium – 250mg three times daily increasing according to tolerability and plasma levels.
+Slow release semi-sodium valproate may also be effective (at 15–30mg/kg)33 but there is one
+failed study34
+As sodium valproate slow release – 500mg/day increasing as above
+Higher, ‘loading doses’ have been used, both oral35–37 and intravenous (IV).38,39 Dose is 20–30mg/
+kg/day
+A review of 13 studies suggested ‘IV valproate as a loading therapy is an efficacious, safe and
+well-tolerated treatment’40
+
+Aripiprazole
+
+15mg/day increasing up to 30mg/day as required.41 Doses lower than 15mg may not be effective42
+
+Asenapine
+
+5mg bd increasing to 10mg bd as required
+
+Cariprazine
+
+3mg/day increasing up to 12mg a day as required43
+
+Olanzapine
+
+10mg/day increasing to 15mg or 20mg as required
+
+Risperidone
+
+2mg or 3mg/day increased to 6mg/day as required
+The use of paliperidone in mania is not well supported44
+
+Quetiapine
+
+IR – 100mg/day increasing to 800mg as required. Higher starting doses have been used45
+XL – 300/day increasing to 600mg/day on day 2
+
+Haloperidol
+
+5–10mg/day increasing to 15mg if required
+
+Lorazepam
+
+Up to 4mg/day (some centres use higher doses)
+
+22,23
+
+Clonzapam
+
+21,23
+
+Up to 8mg/day
+
+bd, bis die (twice a day), IR, immediate release, XL, extended release
+
+
+
+
+<<<PAGE 571>>>
+
+550  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 5.1 (Continued)
+Medication
+
+Comments
+
+Quetiapine
+
+A double-blind, placebo-controlled study (N = 277)35 showed quetiapine (at doses of
+400mg/day or 600mg/day) to be significantly better than placebo in reducing mean YMRS
+scores at 3 weeks. The most common side effects included somnolence and sedation.
+Weight gain was 1.7kg in the quetiapine group versus 0.4kg for placebo
+
+CHAPTER 5
+
+Quetiapine is effective as an adjunct to valproate compared with valproate alone (N = 30,
+6 weeks)36 and was as effective as valproate in a double-blind trial (N = 50, 4 weeks)37
+Aripiprazole
+
+A double-blind placebo-controlled study38,39 showed aripiprazole (at doses 10mg/day or
+30mg/day) to be significantly better than placebo in reducing mean YMRS scores at both
+4 weeks (N = 296)38 and 30 weeks (N = 210).39 Note the significantly higher incidence of
+extrapyramidal side effects in the treatment groups (especially the higher dose). Weight
+gain was significantly higher in the treatment groups compared to placebo (3.0kg versus
+6.5kg for the low and 6.6kg for the high dose arm) at week 30 but not at week 4
+
+Ziprasidone
+
+A double-blind, placebo-controlled trial (N = 237)40 showed ziprasidone (at flexible doses
+40–160mg) to be significantly more effective than placebo in reducing mean YMRS scores
+at 4 weeks. Sedation and somnolence were the most common side effects, while it
+demonstrated a neutral metabolic profile and no QTc prolongation
+
+Asenapine
+
+A 3 weeks double-blind, placebo-controlled study (N = 350) demonstrated statistical
+superiority of asenapine over placebo for each of the doses used (2.5, 5 or 10mg b.i.d.),
+with significant difference as early as day 4. However, many side effects were reported,
+including weight gain of more than 7% from baseline (8–12% incidence in asenapine
+group vs 1.1% in placebo group), metabolic changes (increase in fasting insulin, lipids,
+glucose), as well as somnolence, sedation, oral hypoaesthesia and paraesthesia41
+
+ALT, alanine transaminase; AST, aspartate aminotransferase; ER, extended release; MS, mood stabilisers; RCT,
+randomised controlled trial; YMRS, Young Mania Rating Scale.
+
+Table 5.2 Summary of RCT evidence on medication used in youth with bipolar depression
+Medication
+
+Comments
+
+Quetiapine
+
+In adults, there is considerably better evidence for efficacious treatments (see the
+section on bipolar depression), such as quetiapine.42,43 Surprisingly, however, a
+small study in 32 adolescents,44 followed by a larger RCT (N = 193)45 failed to
+show effectiveness. This latest study had a high placebo response, which is not
+present in adult quetiapine studies46 and which may reflect issues that have been
+noted before about phenotyping of mood disorders and multi-site studies47
+
+Olanzapine/fluoxetine
+combination
+
+The only double-blind randomised placebo-controlled trial with positive results for the
+treatment of bipolar depression in youth is a large study (N = 255) of the olanzapine/
+fluoxetine combination (either 6/25mg or 12/50mg daily) for 8 weeks.48 Between-group
+differences were significant at week 1 and all subsequent visits. Most frequent side
+effects were weight gain (4.4kg for the olanzapine/fluoxetine combination vs 0.5kg for
+placebo), somnolence and hyperlipidaemia. The olanzapine/fluoxetine combination is
+recommended by NICE guidelines,5 along with quetiapine, as first-line treatment for
+bipolar depression in youth, as in adults. Although the olanzapine/fluoxetine
+combination is not currently available as a single preparation in the UK, its effects can
+be achieved by combining olanzapine and fluoxetine (e.g. 5/20mg or 10/40mg)
+
+
+
+
+<<<PAGE 572>>>
+
+Children and adolescents  551
+
+Table 5.2 (Continued)
+Medication
+
+Comments
+
+Lurasidone
+
+Lurasidone has been shown to be effective in bipolar depression in adults49–51 and it
+does not seem to cause weight gain and other metabolic disturbances. It is safe and
+effective in treating schizophrenia in adolescents52 and has been shown to be
+effective in children (10–17 years) both acutely10 and in a 2-year follow-up.12 Dose
+ranged from 18.5(20)mg to 74(80)mg but a small majority received the lowest dose.
+Lurasidone may be the preferred antipsychotic in children on account of its good
+tolerability53
+
+Lamotrigine
+
+Lamotrigine has only modest, if any, effects in adult bipolar depression;54 it has not
+been studied in RCTs for the treatment of acute bipolar depression in children and
+adolescents and is, therefore, not recommended as a first line. Moreover, a
+placebo-controlled randomised withdrawal study of adjunctive lamotrigine for bipolar
+disorder in youth, lasting over 36 weeks, failed to show any benefit in preventing
+time to occurrence of a bipolar event55
+
+RCT, randomised controlled trial.
+
+Aripiprazole
+
+10mg daily
+
+Risperidone
+
+0.5–2.5mg daily
+
+Olanzapine
+
+5–20mg daily
+
+Quetiapine
+
+Up to 400mg daily
+
+Asenapine
+
+2.5–10mg twice daily
+
+Continue acutely effective dosing regimen as prophylaxis, and
+consider need for lithium.
+
+*
+
+Table 5.4 Recommended first-line treatments for bipolar depression*
+Lurasidone
+
+18.5(20)mg–74(80)mg a day
+
+Olanzapine/fluoxetine
+
+6/25–12/50mg daily
+
+Quetiapine
+
+Up to 300mg daily
+
+Continue acutely effective dosing regimen as prophylaxis, and
+consider need for lithium.
+
+*
+
+CHAPTER 5
+
+Table 5.3 Recommended first-line treatments for acute mania*
+
+
+
+
+<<<PAGE 620>>>
+
+Children and adolescents  599
+
+Doses of commonly used psychotropic drugs in children and
+adolescents
+The doses of commonly used drugs are presented in Table 5.8.
+Table 5.8 Starting doses of commonly used psychotropic drugs in children and adolescents1,2 *
+Drug
+
+Starting dose**
+
+Comment
+
+Aripiprazole
+
+2mg
+
+Adjust dose according to response and
+adverse effects
+
+Clozapine
+
+6.25–12.5mg
+
+Use plasma levels to determine
+maintenance dose
+
+Olanzapine
+
+2.5–5mg
+
+Adjust dose according to response and
+adverse effects
+
+Quetiapine
+
+25mg
+
+Effective dose usually in the range
+150–200mg daily
+
+Risperidone
+
+0.25–2mg
+
+Adjust dose according to response and
+adverse effects
+
+Fluoxetine
+
+5–10mg/day
+
+Adjust dose according to response and
+adverse effects
+
+Sertraline
+
+25–50mg daily
+
+Effective dose usually in the range
+50–100mg daily
+
+Citalopram
+
+10mg daily
+
+Effective dose 10–40mg (note QT effects)
+
+Lithium
+
+100–200mg/day
+lithium carbonate
+
+Use plasma levels to determine
+maintenance dose
+
+Valproate
+
+10–20mg/kg/day in divided
+doses
+
+Use plasma levels to determine
+maintenance dose. Do not offer valproate
+to girls or young women of child bearing
+potential unless there is a pregnancy
+prevention programme (PPP) in place3
+
+Melatonin
+
+2mg at night
+
+Effective dose 2–10mg
+
+Antipsychotics
+
+Other Drugs
+
+We have removed haloperidol, amitriptyline, escitalopram and carbamazepine from this table as none of these are
+recommended in children.
+**
+Suggested approximate oral starting doses (see primary literature for doses in individual indications). Lower dose in
+suggested range is for children weighing less than 25kg.
+*
+
+References
+1. BNF Online. British National Formulary 2020; https://www.medicinescomplete.com/mc/bnf/current.
+2. BNFC Online. British National Formulary for Children 2020; https://www.medicinescomplete.com/#/browse/bnfc.
+3. GOV.UK Guidance. Valproate use by women and girls 2020; https://www.gov.uk/guidance/valproate-use-by-women-and-girls.
+
+CHAPTER 5
+
+Antidepressants
+
+
+
+
+<<<PAGE 740>>>
+
+102. Schlotterbeck P, et al. Aripiprazole in human milk. Int J Neuropsychopharmacol 2007; 10:433.
+103. Lutz UC, et al. Aripiprazole in pregnancy and lactation: a case report. J Clin Psychopharmacol 2010; 30:204–205.
+104. Watanabe N, et al. Perinatal use of aripiprazole: a case report. J Clin Psychopharmacol 2011; 31:377–379.
+105. Mendhekar DN, et al. Aripiprazole use in a pregnant schizoaffective woman. Bipolar Disorders 2006; 8:299–300.
+106. Nordeng H, et al. Transfer of aripiprazole to breast milk: a case report. J Clin Psychopharmacol 2014; 34:272–275.
+107. Frew JR. Psychopharmacology of bipolar I disorder during lactation: a case report of the use of lithium and aripiprazole in a nursing mother.
+Arch Women’s Mental Health 2015; 18:135–136.
+108. Yoshida K, et al. Breast-feeding and psychotropic drugs. Int Rev Psychiatry (Abingdon, England) 1996; 8:117–124.
+109. Patton SW, et al. Antipsychotic medication during pregnancy and lactation in women with schizophrenia: evaluating the risk. Can J
+Psychiatry 2002; 47:959–965.
+110. Klinger G, et al. Antipsychotic drugs and breastfeeding. Pediatr Endocrinol Rev 2013; 10:308–317.
+111. Uguz F. Adverse events in a breastfed infant exposed to risperidone and haloperidol. Breastfeed Med 2019; 14:683–684.
+112. Mendhekar DN. Possible delayed speech acquisition with clozapine therapy during pregnancy and lactation. J Neuropsychiatry Clin
+Neurosci 2007; 19:196–197.
+113. Barnas C, et al. Clozapine concentrations in maternal and fetal plasma, amniotic fluid, and breast milk. Am J Psychiatry 1994; 151:945.
+114. Shao P, et al. Effects of clozapine and other atypical antipsychotics on infants development who were exposed to as fetus: a post-hoc analysis. PLoS One 2015; 10:e0123373.
+115. Imaz ML, et al. Clozapine use during pregnancy and lactation: a case-series report. Front Pharmacol 2018; 9:264.
+116. Goldstein DJ, et al. Olanzapine-exposed pregnancies and lactation: early experience. J Clin Psychopharmacol 2000; 20:399–403.
+117. Croke S, et al. Olanzapine excretion in human breast milk: estimation of infant exposure. Int J Neuropsychopharmacol 2002; 5:243–247.
+118. Gardiner SJ, et al. Transfer of olanzapine into breast milk, calculation of infant drug dose, and effect on breast-fed infants. Am J Psychiatry
+2003; 160:1428–1431.
+119. Ambresin G, et al. Olanzapine excretion into breast milk: a case report. J Clin Psychopharmacol 2004; 24:93–95.
+120. Lutz UC, et al. Olanzapine treatment during breast feeding: a case report. Ther Drug Monit 2008; 30:399–401.
+121. Whitworth A, et al. Olanzapine and breast-feeding: changes of plasma concentrations of olanzapine in a breast-fed infant over a period of
+5 months. J Psychopharmacol 2010; 24:121–123.
+122. Eli Lilly and Company Limited. Personal correspondence – olanzapine – use in pregnant or nursing women. 2011.
+123. Gilad O, et al. Outcome of infants exposed to olanzapine during breastfeeding. Breastfeed Med 2010; 6:55–58.
+124. Goldstein DJ, et al. Olanzapine use during breast-feeding. Schizophr Res 2002; 53 (Suppl 1):185.
+125. Aydin B, et al. Olanzapine and quetiapine use during breastfeeding: excretion into breast milk and safe breastfeeding strategy. J Clin
+Psychopharmacol 2015; 35:206–208.
+126. Stiegler A, et al. Olanzapine treatment during pregnancy and breastfeeding: a chance for women with psychotic illness? Psychopharmacology
+(Berl) 2014; 231:3067–3069.
+127. Var L, et al. Management of postpartum manic episode without cessation of breastfeeding: a longitudinal follow up of drug excretion into
+breast milk. Eur Neuropsychopharmacol 2013; 23 (Suppl 1):S382.
+128. Manouilenko I, et al. Long-acting olanzapine injection during pregnancy and breastfeeding: a case report. Arch Women’s Mental Health
+2018; 21:587–589.
+129. Lee A, et al. Excretion of quetiapine in breast milk. Am J Psychiatry 2004; 161:1715–1716.
+130. Gentile S. Quetiapine-fluvoxamine combination during pregnancy and while breastfeeding (Letter). Arch Women’s Mental Health 2006;
+9:158–159.
+131. Seppala J. Quetiapine (Seroquel) is effective and well tolerated in the treatment of psychotic depression during breast feeding. Eur
+Neuropsychopharmacol 2004; (7 Suppl 1): S245.
+132. Kruninger U, et al. Pregnancy and lactation under treatment with quetiapine. Psychiatr Prax 2007; 34 Suppl 1:S75–S76.
+133. Ritz S. Quetiapine monotherapy in post-partum onset bipolar disorder with a mixed affective state. Eur Neuropsychopharmacol 2005; 15
+Suppl 3:S407.
+134. Rampono J, et al. Quetiapine and breast feeding. Ann Pharmacother 2007; 41:711–714.
+135. Tanoshima R, et al. Quetiapine in human breast milk – population PK analysis of milk levels and simulated infant exposure. J Popul Ther
+Clin Pharmacol 2012; 19:e259–e298.
+136. Yazdani-Brojeni P, et al. Quetiapine in human milk and simulation-based assessment of infant exposure. Clin Pharmacol Ther 2010; 87
+Suppl 1:S3–S4.
+137. Var L, et al. Management of postpartum manic episode without cessation of breastfeeding: A longitudinal follow up of drug excretion into
+breast milk. Eur Neuropsychopharmacol 2013; 23 Suppl 2:S382.
+138. Van Boekholt AA, et al. Quetiapine concentrations during exclusive breastfeeding and maternal quetiapine use. Ann Pharmacother 2015;
+49:743–744.
+139. Hill RC, et al. Risperidone distribution and excretion into human milk: case report and estimated infant exposure during breast-feeding.
+J Clin Psychopharmacol 2000; 20:285–286.
+140. Aichhorn W, et al. Risperidone and breast-feeding. J Psychopharmacol 2005; 19:211–213.
+141. Ilett KF, et al. Transfer of risperidone and 9-hydroxyrisperidone into human milk. Ann Pharmacother 2004; 38:273–276.
+142. Ratnayake T, et al. No complications with risperidone treatment before and throughout pregnancy and during the nursing period. J Clin
+Psychiatry 2002; 63:76–77.
+143. Weggelaar NM, et al. A case report of risperidone distribution and excretion into human milk: how to give good advice if you have not
+enough data available. J Clin Psychopharmacol 2011; 31:129–131.
+
+CHAPTER 7
+
+Pregnancy and breastfeeding  719
+
+
+
+
+<<<PAGE 811>>>
+
+CHAPTER 10
+
+790  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 10.5 (Continued)
+Safety in
+epilepsy
+
+Drug
+
+Comments
+
+Antipsychotics
+Low risk
+– good
+choices
+
+Amisulpride/
+sulpiride
+
+Considered to be safe in PWE.43 Renally excreted, so low risk of
+pharmacokinetic interactions with antiseizure medications. Seizures
+uncommon in overdose44
+
+Aripiprazole
+
+Rarely lowers seizure threshold.5 Incidence of seizures similar to placebo in
+RCTs24
+
+Ziprasidone
+
+Probably low
+risk – use
+with caution
+(limited
+evidence)
+
+High potency
+FGAs
+
+For example, fluphenazine, haloperidol, trifluoperazine, flupentixol. Low risk
+of lowering the seizure threshold5
+
+Risperidone
+
+Unlikely to lower the seizure threshold.5 Incidence of seizures similar to
+placebo in RCTs.24 Has been recommended for PWE.32,45 Evidence of safety in
+a case series of adolescents with epilepsy46
+
+Asenapine
+
+Seizure rate similar to placebo in RCTs.47 Data and clinical experience of use
+in PWE is extremely limited
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Moderate
+risk – care
+required
+
+Olanzapine
+Quetiapine
+
+Olanzapine and quetiapine both associated with seizures in RCTs.24 However,
+olanzapine causes more EEG abnormalities.44 Overall risk of reducing the
+seizure threshold is considered to be low5 and olanzapine has been
+recommended by some for PWE.32 Data relating to olanzapine are difficult to
+interpret. EEG changes are seen in some but not all studies48 and it has been
+reported to be both anticonvulsant49 and proconvulsant.50 Quetiapine has a
+high risk of drug interaction in PWE45
+
+Higher risk
+– care
+required
+
+Clozapine
+
+Most epileptogenic antipsychotic.32 However, has been used successfully in
+PWE stable on antiseizure medications without worsening seizures51 and
+even in treatment-resistant epilepsy.52 Note, should not be used with
+carbamazepine (risk of blood dyscrasias and reduced clozapine levels).
+Valproate or lamotrigine are the antiseizure medications of choice
+
+Higher risk
+– avoid
+
+Low potency FGAs
+(e.g.
+chlorpromazine)
+
+Best avoided in PWE.31 Doses of chlorpromazine above 1g/day have a 9%
+incidence of seizures
+
+Loxapine
+
+Highest rate of seizures amongst the FGAs53
+
+Depot
+antipsychotics
+
+None of the depot preparations currently available are thought to be
+epileptogenic, however:
+■■ The kinetics of depots are complex (seizures may be delayed)
+■■ If seizures do occur, the offending drug may not be easily withdrawn.
+Depots should be used with extreme care
+
+Zotepine
+
+Has established dose-related pro-convulsive effect44
+(Continued)
+
+
+
+
+<<<PAGE 860>>>
+
+Pharmacokinetics  839
+
+saturation.76–78 The effect of fluvoxamine also suggests that metabolism via CYP1A2 to
+norclozapine can be overwhelmed.79 A recent systematic review concluded that knowledge of clozapine/norclozapine ratio had no clinical utility.80
+
+Plasma levels of olanzapine are linearly related to daily dose,81 but there is substantial
+variation,82 with higher levels seen in women,64 non-smokers83 and those on enzyme
+inhibiting drugs.83,84 With once-daily dosing, the threshold level for response in schizophrenia has been suggested to be 9.3µg/L (trough sample),85 23.2µg/L (12-hour postdose sample)64 and 23µg/L at a mean of 13.5 hours post-dose.86 There is evidence to
+suggest that levels greater than around 40µg/L (12-hour sampling) produce no further
+therapeutic benefit than lower levels.87 Severe toxicity is uncommon but may be associated with levels above 100µg/L, and death is occasionally seen at levels above 160µg/
+L88 (albeit when other drugs or physical factors are relevant). A target range for
+t­herapeutic use of 20–40µg/L (12-hour post-dose sample) has been proposed89 for
+schizophrenia; the range for mania is probably similar.90 This target range has recently
+been widened to 20–80µg/L91,92 but the reasons for this are not clear.
+Notably, significant weight gain seems most likely to occur in those with plasma
+levels above 20µg/L.93 Constipation, dry mouth and tachycardia also seem to be plasma
+level-related.94
+In practice, the dose of olanzapine should be largely governed by response and tolerability. However, a survey of UK sample assay results suggested that around 20% of
+patients on 20mg a day will have sub-therapeutic plasma levels and more than 40%
+have levels above 40µg/L.95 Plasma level determinations might then be useful for those
+suspected of non-adherence, those showing poor tolerability or those not responding to
+the maximum licensed dose. Where there is poor response and plasma levels are below
+20µg/L, dose may then be adjusted to give 12-hour plasma levels of 20–40µg/L, where
+there is good response and poor tolerability, the dose should be tentatively reduced to
+give plasma levels below 40µg/L. Changes in dose give proportionate changes in plasma
+levels.96 A case might be made to increase the dose to give blood levels in the range
+40–80µg/L but only where no other options remain.
+
+Quetiapine
+Dose of quetiapine is weakly related to trough plasma samples.97 Mean levels reported
+within the dose range 150–800mg/day range from 27µg/L to 387µg/L,98–103 although
+the highest and lowest levels are not necessarily found at the lowest and highest doses.
+Age, gender and co-medication may contribute to the significant inter-individual variance observed in TDM studies, with female gender,103,104 older age102,103 and CYP3A4
+inhibiting drugs98,102,103 likely to increase quetiapine concentration. Reports of these
+effects are conflicting104 and not sufficient to support the routine use of plasma level
+monitoring based on these factors alone. Despite the substantial variation in plasma
+levels at each dose, there is insufficient evidence to suggest a target therapeutic range to
+aim for (although a target range of 100–500µg/L has been proposed105) thus plasma
+level monitoring is likely to have little value. Moreover, the metabolites of quetiapine
+
+CHAPTER 11
+
+Olanzapine
+
+
+
+
+<<<PAGE 866>>>
+
+87. Mauri MC, et al. Clinical outcome and olanzapine plasma levels in acute schizophrenia. Eur Psychiatry 2005; 20:55–60.
+88. Rao ML, et al. Olanzapine: pharmacology, pharmacokinetics and therapeutic drug monitoring. Fortschr Neurol Psychiatr 2001;
+69:510–517.
+89. Robertson MD, et al. Olanzapine concentrations in clinical serum and postmortem blood specimens–when does therapeutic become toxic?
+J Forensic Sci 2000; 45:418–421.
+90. Bech P, et al. Olanzapine plasma level in relation to antimanic effect in the acute therapy of manic states. Nord J Psychiatry 2006;
+60:181–182.
+91. Schoretsanitis G, et al. Blood levels to optimize antipsychotic treatment in clinical practice: a Joint Consensus Statement of the American
+Society of Clinical Psychopharmacology and the Therapeutic Drug Monitoring Task Force of the Arbeitsgemeinschaft für
+Neuropsychopharmakologie und Pharmakopsychiatrie. J Clin Psychiatry 2020; 81:19cs13169.
+92. Noel C. A review of a recently published guidelines’ “strong recommendation” for therapeutic drug monitoring of olanzapine, haloperidol,
+perphenazine, and fluphenazine. Ment Health Clin 2019; 9:287–293.
+93. Perry PJ, et al. The association of weight gain and olanzapine plasma concentrations. J Clin Psychopharmacol 2005; 25:250–254.
+94. Kelly DL, et al. Plasma concentrations of high-dose olanzapine in a double-blind crossover study. Human Psychopharmacol 2006;
+21:393–398.
+95. Patel MX, et al. Plasma olanzapine in relation to prescribed dose and other factors: data from a therapeutic drug monitoring service,
+1999–2009. J Clin Psychopharmacol 2011; 31:411–417.
+96. Tsuboi T, et al. Predicting plasma olanzapine concentration following a change in dosage: a population pharmacokinetic study.
+Pharmacopsychiatry 2015; 48:286–291.
+97. Sparshatt A, et al. Relationship between daily dose, plasma concentrations, dopamine receptor occupancy, and clinical response to quetiapine: a review. J Clin Psychiatry 2011; 72:1108–1123.
+98. Hasselstrom J, et al. Quetiapine serum concentrations in psychiatric patients: the influence of comedication. Ther Drug Monit 2004;
+26:486–491.
+99. Winter HR, et al. Steady-state pharmacokinetic, safety, and tolerability profiles of quetiapine, norquetiapine, and other quetiapine metabolites in pediatric and adult patients with psychotic disorders. J Child Adolesc Psychopharmacol 2008; 18:81–98.
+100. Li KY, et al. Multiple dose pharmacokinetics of quetiapine and some of its metabolites in Chinese suffering from schizophrenia. Acta
+Pharmacol Sin 2004; 25:390–394.
+101. McConville BJ, et al. Pharmacokinetics, tolerability, and clinical effectiveness of quetiapine fumarate: an open-label trial in adolescents with
+psychotic disorders. J Clin Psychiatry 2000; 61:252–260.
+102. Castberg I, et al. Quetiapine and drug interactions: evidence from a routine therapeutic drug monitoring service. J Clin Psychiatry 2007;
+68:1540–1545.
+103. Aichhorn W, et al. Influence of age, gender, body weight and valproate comedication on quetiapine plasma concentrations. Int Clin
+Psychopharmacol 2006; 21:81–85.
+104. Mauri MC, et al. Two weeks’ quetiapine treatment for schizophrenia, drug-induced psychosis and borderline personality disorder: a naturalistic study with drug plasma levels. Expert Opin Pharmacother 2007; 8:2207–2213.
+105. Patteet L, et al. Therapeutic drug monitoring of common antipsychotics. Ther Drug Monit 2012; 34:629–651.
+106. Fisher DS, et al. Plasma concentrations of quetiapine, N-desalkylquetiapine, o-desalkylquetiapine, 7-hydroxyquetiapine, and quetiapine
+sulfoxide in relation to quetiapine dose, formulation, and other factors. Ther Drug Monit 2012; 34:415–421.
+107. Sparshatt A, et al. Quetiapine: dose-response relationship in schizophrenia. CNS Drugs 2008; 22:49–68.
+108. Olesen OV, et al. Serum concentrations and side effects in psychiatric patients during risperidone therapy. Ther Drug Monit 1998;
+20:380–384.
+109. Remington G, et al. A PET study evaluating dopamine D2 receptor occupancy for long-acting injectable risperidone. Am J Psychiatry 2006;
+163:396–401.
+110. Seto K, et al. Risperidone in schizophrenia: is there a role for therapeutic drug monitoring? Ther Drug Monit 2011; 33:275–283.
+111. Lane HY, et al. Risperidone in acutely exacerbated schizophrenia: dosing strategies and plasma levels. J Clin Psychiatry 2000;
+61:209–214.
+112. Taylor D. Risperidone long-acting injection in practice - more questions than answers? Acta Psychiatr Scand 2006; 114:1–2.
+113. Nyberg S, et al. Suggested minimal effective dose of risperidone based on PET-measured D2 and 5-HT2A receptor occupancy in schizophrenic patients. Am J Psychiatry 1999; 156:869–875.
+114. Uchida H, et al. Predicting dopamine D receptor occupancy from plasma levels of antipsychotic drugs: a systematic review and pooled
+analysis. J Clin Psychopharmacol 2011; 31:318–325.
+115. Medori R, et al. Plasma antipsychotic concentration and receptor occupancy, with special focus on risperidone long-acting injectable. Eur
+Neuropsychopharmacol 2006; 16:233–240.
+116. Gefvert O, et al. Pharmacokinetics and D2 receptor occupancy of long-acting injectable risperidone (Risperdal ConstaTM) in patients with
+schizophrenia. Int J Neuropsychopharmacol 2005; 8:27–36.
+117. Nyberg S, et al. D2 dopamine receptor occupancy during low-dose treatment with haloperidol decanoate. Am J Psychiatry 1995;
+152:173–178.
+118. Moriguchi S, et al. Estimated dopamine D(2) receptor occupancy and remission in schizophrenia: analysis of the CATIE data. J Clin
+Psychopharmacol 2013; 33:682–685.
+119. Tsuboi T, et al. Challenging the need for sustained blockade of dopamine D(2) receptor estimated from antipsychotic plasma levels in the
+maintenance treatment of schizophrenia: a single-blind, randomized, controlled study. Schizophr Res 2015; 164:149–154.
+
+CHAPTER 11
+
+Pharmacokinetics  845
+
+

@@ -1,0 +1,345 @@
+<<<PAGE 38>>>
+
+AMISULPRIDE (continued)
+• Amisulpride may accumulate in patients
+with renal insufficiency, requiring
+lower dosing or switching to another
+antipsychotic to avoid QTc prolongation in
+these patients
+• Rather than raise the dose above normal
+dosing in acutely agitated patients requiring
+acute antipsychotic actions, consider shortterm (one dose or more) augmentation
+with a benzodiazepine or another
+antipsychotic, especially intramuscularly
+• Rather than raise the dose above normal
+dosing in partial responders, consider
+augmentation with a mood-stabilizing
+anticonvulsant, such as valproate,
+topiramate, or lamotrigine
+• Children and elderly should generally be dosed
+at the lower end of the dosage spectrum
+• Treatment should be suspended if absolute
+neutrophil count falls below 1000/mm3
+
+Overdose
+• Sedation, coma, hypotension,
+drug-induced parkinsonism
+
+Long-Term Use
+• Amisulpride is used for both acute and
+chronic schizophrenia treatment
+• Should periodically reevaluate long-term
+usefulness in individual patients, but
+treat­ment may need to continue for many
+years
+
+Habit Forming?
+• No
+
+How to Stop
+• See Art of Switching section of individual
+agents for how to stop amisulpride
+• Rapid discontinuation may lead to rebound
+psychosis and worsening of symptoms
+
+Pharmacokinetics
+• Elimination half-life approximately 12 hours
+• Excreted largely unchanged
+
+Drug Interactions
+• Can decrease the effects of levodopa,
+dopamine agonists
+• Can increase the effects of antihypertensive
+drugs
+• CNS effects may be increased if used with
+a CNS depressant
+
+20
+
+• May enhance QTc prolongation of other
+drugs capable of prolonging QTc interval
+• Since amisulpride is only weakly
+metabolized, few drug interactions that could
+raise amisulpride plasma levels are expected
+
+ Other Warnings/
+Precautions
+• Use cautiously in patients with alcohol
+withdrawal or convulsive disorders because
+of possible lowering of seizure threshold
+• If signs of neuroleptic malignant syndrome
+develop, treatment should be immediately
+discontinued
+• Because amisulpride may dose-dependently
+prolong QTc interval, use with caution in
+patients who have bradycardia or who are
+taking drugs that can induce bradycardia
+(e.g., beta blockers, calcium channel
+blockers, clonidine, digitalis)
+• Because amisulpride may dose-dependently
+prolong QTc interval, use with caution
+in patients who have hypokalemia and/
+or hypomagnesemia or who are taking
+drugs that can induce hypokalemia and/
+or magnesemia (e.g., diuretics, stimulant
+laxatives, intravenous amphotericin B,
+glucocorticoids, tetracosactide)
+• Use only with caution if at all in Parkinson’s
+disease or Lewy body dementia, especially
+at high doses
+• Atypical antipsychotics have the potential
+for cognitive and motor impairment,
+especially related to sedation
+• Atypical antipsychotics can cause body
+temperature dysregulation; use with caution in
+patients who may experience conditions that
+increase body temperature (e.g., strenuous
+exercise, saunas, extreme heat, dehydration,
+or concomitant anticholinergic medication)
+• Antipsychotics may cause somnolence,
+postural hypotension, motor and sensory
+instability, which may lead to falls; for patients
+with diseases, conditions, or medications
+that could exacerbate these effects, complete
+fall risk assessments when initiating
+antipsychotic treatment, and recurrently for
+patients on long-term antipsychotic therapy
+• As with any antipsychotic, use with caution
+in patients with history of seizures
+
+Do Not Use
+• If patient has pheochromocytoma
+• If patient has prolactin-dependent tumor
+
+
+
+
+<<<PAGE 77>>>
+
+(continued) ARIPIPRAZOLE
+
+Dosing Tips – Oral
+• For some, less may be more: frequently,
+patients not acutely psychotic may need to
+be dosed lower (e.g., 2.5–10 mg/day) in
+order to avoid akathisia and activation and
+for maximum tolerability
+• For others, more may be more: rarely,
+patients may need to be dosed higher than
+30 mg/day for optimum efficacy
+• Consider administering 1–5 mg as the oral
+solution for children and adolescents, as well
+as for adults very sensitive to side effects
+• Although studies suggest patients switching
+to aripiprazole from another antipsychotic
+can do well with rapid switch or with
+cross-titration, clinical experience suggests
+many patients may do best by adding either
+an intermediate or full dose of aripiprazole
+to the maintenance dose of the first
+antipsychotic for at least several days and
+possibly as long as 3 or 4 weeks prior to
+slow down-titration of the first antipsychotic
+• Rather than raise the dose above normal
+dosing in acutely agitated patients requiring
+acute antipsychotic actions, consider shortterm (one dose or more) augmentation with
+a benzodiazepine or another antipsychotic,
+especially intramuscularly
+• Rather than raise the dose above normal
+dosing in partial responders, consider
+augmentation with a mood-stabilizing
+anticonvulsant, such as valproate,
+topiramate, or lamotrigine
+• Children and elderly should generally
+be dosed at the lower end of the dosage
+spectrum
+• Due to its very long half-life, aripiprazole
+will take longer to reach steady state when
+initiating dosing, and longer to wash out
+when stopping dosing, than other atypical
+antipsychotics
+• Treatment should be suspended if absolute
+neutrophil count falls below 1000/mm3
+
+Overdose
+• No fatalities have been reported; sedation,
+vomiting
+
+Long-Term Use
+• Approved to delay relapse in long-term
+treatment of schizophrenia
+• Approved for long-term maintenance in
+bipolar disorder
+
+• Often used for long-term maintenance in
+various behavioral disorders
+• Should periodically reevaluate long-term
+usefulness in individual patients, but
+treatment may need to continue for many
+years
+
+Habit Forming?
+• No
+
+How to Stop
+• The method for stopping aripiprazole can
+vary depending on which agent is being
+switched to; see The Art of Switching
+section for how to stop aripiprazole
+• Rapid discontinuation could theoretically
+lead to rebound psychosis and worsening
+of symptoms, but less likely with
+aripiprazole due to its long half-life
+
+Pharmacokinetics
+• Metabolized primarily by CYP2D6 and
+CYP3A4
+• Mean elimination half-life 75 hours
+(aripiprazole) and 94 hours (major
+metabolite dehydroaripiprazole)
+• Food does not affect absorption
+
+Drug Interactions
+• Ketoconazole and possibly other CYP3A4
+inhibitors such as nefazodone, fluvoxamine,
+and fluoxetine may increase plasma levels
+of aripiprazole
+• Carbamazepine and possibly other inducers
+of CYP3A4 may decrease plasma levels of
+aripiprazole
+• Quinidine and possibly other inhibitors of
+CYP2D6 such as paroxetine, fluoxetine, and
+duloxetine may increase plasma levels of
+aripiprazole
+• Aripiprazole may enhance the effects of
+antihypertensive drugs
+• Aripiprazole may antagonize levodopa,
+dopamine agonists
+
+ Other Warnings/
+Precautions
+• There have been reports of problems
+with impulse control in patients taking
+aripiprazole, including compulsive
+gambling, shopping, binge eating,
+and sexual activity; use caution when
+prescribing to patients at high risk for
+59
+
+
+
+
+<<<PAGE 95>>>
+
+(continued) ASENAPINE
+
+How to Stop
+• The method for stopping asenapine can
+vary depending on which agent is being
+switched to; see The Art of Switching
+section for how to stop asenapine
+• Rapid discontinuation could theoretically
+lead to rebound psychosis and worsening
+of symptoms
+
+Pharmacokinetics
+• Inhibits CYP2D6
+• Substrate for CYP1A2
+• Sublingual: half-life 13–39 hours;
+optimal bioavailability is with sublingual
+administration (~35%); if food or liquid
+is consumed within 10 minutes of
+administration bioavailability decreases
+to 28%; bioavailability decreases to 2% if
+swallowed
+• Transdermal: maximum asenapine
+concentrations are typically reached
+between 12 and 24 hours, with sustained
+concentrations during wear time (24 hours);
+following removal, elimination half-life is
+approximately 30 hours
+
+Drug Interactions
+• May increase effects of antihypertensive
+agents
+• May antagonize levodopa, dopamine
+agonists
+• CYP1A2 inhibitors (e.g., fluvoxamine) can
+raise asenapine levels
+• Via CYP2D6 inhibition, asenapine could
+theoretically interfere with the analgesic
+effects of codeine, and increase the
+plasma levels of some beta blockers and of
+atomoxetine
+• Via CYP2D6 inhibition, asenapine could
+theoretically increase concentrations of
+thioridazine and cause dangerous cardiac
+arrhythmias
+
+ Other Warnings/
+Precautions
+• Use with caution in patients with
+conditions that predispose to hypotension
+(dehydration, overheating)
+• Atypical antipsychotics have the potential
+for cognitive and motor impairment,
+especially related to sedation
+• Atypical antipsychotics can cause body
+temperature dysregulation; use with caution
+
+in patients who may experience conditions
+that increase body temperature (e.g.,
+strenuous exercise, saunas, extreme heat,
+dehydration, or concomitant anticholinergic
+medication)
+• Dysphagia has been associated with
+antipsychotic use, and asenapine should
+be used cautiously in patients at risk for
+aspiration pneumonia
+• As with any antipsychotic, use with caution
+in patients with history of seizures
+• Antipsychotics may cause somnolence,
+postural hypotension, motor and sensory
+instability, which may lead to falls; for
+patients with diseases, conditions, or
+medications that could exacerbate these
+effects, complete fall risk assessments
+when initiating antipsychotic treatment
+and recurrently for patients on long-term
+antipsychotic therapy
+• Avoid exposing transdermal system to
+external heat sources (e.g., heating pad)
+during wear because both the rate and
+extent of absorption are increased
+• During wear time or immediately after
+removal of transdermal system, local skin
+reactions may occur
+
+Do Not Use
+• In patients with severe hepatic impairment
+• If there is a proven allergy to asenapine
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Dose adjustment not generally necessary
+
+Hepatic Impairment
+• No dose adjustment necessary for mild to
+moderate impairment
+• Contraindicated in patients with severe
+hepatic impairment
+
+Cardiac Impairment
+• Use in patients with cardiac impairment
+has not been studied, so use with caution
+because of risk of orthostatic hypotension
+• Use with caution if patient is taking
+concomitant antihypertensive or alpha 1
+antagonist
+
+Elderly
+• Some patients may tolerate lower doses
+better
+77
+
+

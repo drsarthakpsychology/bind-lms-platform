@@ -1,0 +1,1402 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 468>>>
+
+Citalopram
+
+Therapeutics
+Brands
+Celexa
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin reuptake inhibitor (SRI)
+SSRI (selective serotonin reuptake inhibitor); often classified as an
+antidepressant, but it is not just an antidepressant
+Commonly Prescribed for
+(bold for FDA approved)
+Depression
+Premenstrual dysphoric disorder (PMDD)
+Obsessive-compulsive disorder (OCD)
+Panic disorder
+
+
+
+
+<<<PAGE 469>>>
+
+Generalized anxiety disorder (GAD)
+Posttraumatic stress disorder (PTSD)
+Social anxiety disorder (social phobia)
+How the Drug Works
+Boosts neurotransmitter serotonin
+Blocks serotonin reuptake pump (serotonin transporter)
+Desensitizes serotonin receptors, especially serotonin 1A
+autoreceptors
+Presumably increases serotonergic neurotransmission
+
+✽ Citalopram also has mild antagonist actions at H1 histamine
+receptors
+
+✽ Citalopram’s inactive R enantiomer may interfere with the
+therapeutic actions of the active S enantiomer at serotonin reuptake
+pumps
+How Long Until It Works
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks
+If it is not working within 6–8 weeks, it may require a dosage
+increase or it may not work at all
+May continue to work for many years to prevent relapse of
+symptoms
+
+
+
+
+<<<PAGE 471>>>
+
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Trazodone, especially for insomnia
+Bupropion, mirtazapine, reboxetine, or atomoxetine (add with
+caution and at lower doses since citalopram could theoretically raise
+atomoxetine levels); use combinations of antidepressants with
+caution as this may activate bipolar disorder and suicidal ideation
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin or
+tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+
+
+
+
+<<<PAGE 472>>>
+
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin concentrations at
+serotonin receptors in parts of the brain and body other than those
+that cause therapeutic actions (e.g., unwanted actions of serotonin in
+sleep centers causing insomnia, unwanted actions of serotonin in the
+gut causing diarrhea, etc.)
+Increasing serotonin can cause diminished dopamine release and
+might contribute to emotional flattening, cognitive slowing, and
+apathy in some patients
+Most side effects are immediate but often go away with time, in
+contrast to most therapeutic effects which are delayed and are
+enhanced over time
+
+✽ Citalopram’s unique mild antihistamine properties may contribute
+to sedation and fatigue in some patients
+Notable Side Effects
+Sexual dysfunction (dose-dependent; men: delayed ejaculation,
+erectile dysfunction; men and women: decreased sexual desire,
+anorgasmia)
+
+
+
+
+<<<PAGE 473>>>
+
+Gastrointestinal (decreased appetite, nausea, diarrhea, constipation,
+dry mouth)
+Mostly CNS (dose-dependent insomnia but also sedation, agitation,
+tremors, headache, dizziness)
+Activation (short-term; patients with diagnosed or undiagnosed
+bipolar or psychotic disorders may be more vulnerable to CNSactivating actions of SSRIs)
+Sweating (dose-dependent)
+Bruising and rare bleeding
+Rare hyponatremia (mostly in elderly patients and generally
+reversible on discontinuation of citalopram)
+SIADH (syndrome of inappropriate antidiuretic hormone secretion)
+Life-Threatening or Dangerous Side Effects
+Rare seizures
+Rare induction of mania
+Rare activation of suicidal ideation and behavior (suicidality) (shortterm studies did not show an increase in the risk of suicidality with
+antidepressants compared to placebo beyond age 24)
+Weight Gain
+Reported but not expected
+
+
+
+
+<<<PAGE 474>>>
+
+Citalopram has been associated with both weight gain and weight
+loss in various studies, but is relatively weight neutral overall
+Sedation
+Occurs in significant minority
+What to Do About Side Effects
+Wait
+Wait
+Wait
+Take in the morning if nighttime insomnia
+Take at night if daytime sedation
+In a few weeks, switch to another agent or add other drugs
+Best Augmenting Agents for Side Effects
+Often best to try another SSRI or another antidepressant
+monotherapy prior to resorting to augmentation strategies to treat
+side effects
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, or apathy
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+
+
+
+
+<<<PAGE 475>>>
+
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of citalopram
+
+Dosing and Use
+Usual Dosage Range
+20–40 mg/day
+Dosage Forms
+Tablet 10 mg, 20 mg scored, 40 mg scored
+Solution 10 mg/5 mL
+How to Dose
+Initial 20 mg/day; increase by 20 mg/day after 1 or more weeks;
+maximum 40 mg/day; single-dose administration, morning or
+
+
+
+
+<<<PAGE 476>>>
+
+evening
+Dosing Tips
+Citalopram should no longer be prescribed at doses greater than 40
+mg/day because if can cause abnormal changes in the electrical
+activity of the heart
+Some controversy with FDA dosage limit of 40 mg/day, and higher
+doses may be prescribed by experts
+Tablets are scored, so to save costs, give 10 mg as half of 20 mg
+tablet or 20 mg as half of 40 mg tablet, since the tablets cost about
+the same in many markets
+Many patients respond better to 40 mg than to 20 mg
+Given once daily, any time of day when best tolerated by the
+individual
+If intolerable anxiety, insomnia, agitation, akathisia, or activation
+occur upon either dosing initiation or discontinuation, consider the
+possibility of activated bipolar disorder and switch to a mood
+stabilizer or an atypical antipsychotic
+Overdose
+Rare fatalities have been reported with citalopram overdose, both
+alone and in combination with other drugs
+Vomiting, sedation, heart rhythm disturbances, dizziness, sweating,
+nausea, tremor
+
+
+
+
+<<<PAGE 478>>>
+
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can increase TCA levels; use with caution with TCAs
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or at least for 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing citalopram
+May displace highly protein-bound drugs (e.g., warfarin)
+Can rarely cause weakness, hyperreflexia, and incoordination when
+combined with sumatriptan or possibly other triptans, requiring
+careful monitoring of patient
+Possible increased risk of bleeding especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+NSAIDs may impair effectiveness of SSRIs
+Should not be dosed above 20 mg/day in patients taking a CYP450
+2C19 inhibitor (e.g., cimetidine) due to risk of QT prolongation
+Via CYP450 2D6 inhibition, citalopram could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine
+Via CYP450 2D6 inhibition, citalopram could theoretically increase
+concentrations of thioridazine and cause dangerous cardiac
+arrhythmias
+
+
+
+
+<<<PAGE 479>>>
+
+Other Warnings/Precautions
+Use with caution in patients with history of seizures
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is taking an MAOI
+If patient is taking thioridazine or pimozide
+If there is a proven allergy to citalopram or escitalopram
+
+Special Populations
+Renal Impairment
+
+
+
+
+<<<PAGE 480>>>
+
+No dose adjustment for mild to moderate impairment
+Use cautiously in patients with severe impairment
+Hepatic Impairment
+Should not be used at doses greater than 20 mg/day
+May need to dose cautiously at the lower end of the dose range in
+some patients for maximal tolerability
+Cardiac Impairment
+May cause abnormal changes in the electrical activity of the heart at
+doses greater than 40 mg/day
+Treating depression with SSRIs in patients with acute angina or
+following myocardial infarction may reduce cardiac events and
+improve survival as well as mood
+Elderly
+Doses greater than 20 mg/day should not be used in patients over
+age 60 years
+May need to dose at the lower end of the dose range in some
+patients for maximal tolerability
+Risk of SIADH with SSRIs is higher in the elderly
+Citalopram may be an especially well-tolerated SSRI in the elderly
+
+
+
+
+<<<PAGE 481>>>
+
+Reduction in the risk of suicidality with antidepressants compared to
+placebo in adults age 65 and older
+Children and Adolescents
+Carefully weigh the risks and benefits of pharmacological treatment
+against the risks and benefits of nontreatment with antidepressants
+and make sure to document this in the patient’s chart
+Monitor patients face-to-face regularly, particularly during the first
+several weeks of treatment
+Use with caution, observing for activation of known or unknown
+bipolar disorder and/or suicidal ideation, and inform parents or
+guardians of this risk so they can help observe child or adolescent
+patients
+Not specifically approved, but preliminary data suggest citalopram
+is safe and effective in children and adolescents with OCD and with
+depression
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+
+
+
+
+<<<PAGE 483>>>
+
+distress, cyanosis, apnea, seizures, temperature instability, feeding
+difficulty, vomiting, hypoglycemia, hypotonia, hypertonia,
+hyperreflexia, tremor, jitteriness, irritability, and constant crying
+National Pregnancy Registry for Antidepressants: 1-866-961-2388,
+https://womensmentalhealth.org/research/pregnancyregistry/antidepr
+essants
+Breast Feeding
+Some drug is found in mother’s breast milk
+Trace amounts may be present in nursing children whose mothers
+are on citalopram
+If child becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+Immediate postpartum period is a high-risk time for depression,
+especially in women who have had prior depressive episodes, so
+drug may need to be reinstituted late in the third trimester or shortly
+after childbirth to prevent a recurrence during the postpartum period
+Must weigh benefits of breast feeding with risks and benefits of
+antidepressant treatment versus nontreatment to both the infant and
+the mother
+For many patients, this may mean continuing treatment during
+breast feeding
+
+
+
+
+<<<PAGE 484>>>
+
+The Art of Psychopharmacology
+Potential Advantages
+Elderly patients
+Patients excessively activated or sedated by other SSRIs
+Potential Disadvantages
+May require dosage titration to attain optimal efficacy
+Can be sedating in some patients
+Primary Target Symptoms
+Depressed mood
+Anxiety
+Panic attacks, avoidant behavior, reexperiencing, hyperarousal
+Sleep disturbance, both insomnia and hypersomnia
+Pearls
+
+✽ May be more tolerable than some other antidepressants
+May have less sexual dysfunction than some other SSRIs
+May be especially well tolerated in the elderly
+
+✽ May be less well tolerated than escitalopram
+
+Documentation of efficacy in anxiety disorders is less
+comprehensive than for escitalopram and other SSRIs
+
+
+
+
+<<<PAGE 485>>>
+
+Can cause cognitive and affective “flattening”
+Some evidence suggests that citalopram treatment during only the
+luteal phase may be more effective than continuous treatment for
+patients with PMDD
+SSRIs may be less effective in women over 50, especially if they are
+not taking estrogen
+SSRIs may be useful for hot flushes in perimenopausal women
+Nonresponse to citalopram in elderly may require consideration of
+mild cognitive impairment or Alzheimer disease
+
+Suggested Reading
+Cipriani A , Purgato M , Furukawa TA , et al. Citalopram versus other antidepressive agents for depression . Cochrane Database Syst Rev 2012 ;11 (7
+):CD006534 .
+Rush AJ , Trivedi MH , Wisniewski SR . Acute and longer-term outcomes
+in depressed outpatients requiring one or several treatment steps: a
+STAR*D report . Am J Psychiatry 2006 ;163 (11 ):1905 –17.
+Vieweg WV , Hasnain M , Howland RH , et al. Citalopram, QTc interval
+prolongation, and torsade de pointes. How should we apply the recent FDA
+ruling? Am J Med 2012 ;125 (9 ):859–68 .
+
+
+
+
+<<<PAGE 789>>>
+
+Escitalopram
+
+Therapeutics
+Brands
+Lexapro
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin reuptake inhibitor (SRI)
+SSRI (selective serotonin reuptake inhibitor); often classified as an
+antidepressant, but it is not just an antidepressant
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive disorder (ages 12 and older)
+Generalized anxiety disorder (GAD)
+Panic disorder
+Obsessive-compulsive disorder (OCD)
+
+
+
+
+<<<PAGE 793>>>
+
+Side effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin concentrations at
+serotonin receptors in parts of the brain and body other than those
+that cause therapeutic actions (e.g., unwanted actions of serotonin in
+sleep centers causing insomnia, unwanted actions of serotonin in the
+gut causing diarrhea, etc.)
+Increasing serotonin can cause diminished dopamine release and
+might contribute to emotional flattening, cognitive slowing, and
+apathy in some patients
+Most side effects are immediate but often go away with time, in
+contrast to most therapeutic effects which are delayed and are
+enhanced over time
+
+✽ As escitalopram has no known important secondary pharmacologic
+properties, its side effects are presumably all mediated by its serotonin
+reuptake blockade
+Notable Side Effects
+Sexual dysfunction (men: delayed ejaculation, erectile dysfunction;
+men and women: decreased sexual desire, anorgasmia)
+Gastrointestinal (decreased appetite, nausea, diarrhea, constipation,
+dry mouth)
+Mostly central nervous system (insomnia but also sedation,
+agitation, tremors, headache, dizziness)
+
+
+
+
+<<<PAGE 794>>>
+
+Note: patients with diagnosed or undiagnosed bipolar or psychotic
+disorders may be more vulnerable to CNS-activating actions of
+SSRIs
+Autonomic (sweating)
+Bruising and rare bleeding
+Rare hyponatremia (mostly in elderly patients and generally
+reversible on discontinuation of escitalopram
+SIADH (syndrome of inappropriate antidiuretic hormone secretion)
+Life-Threatening or Dangerous Side Effects
+Rare seizures
+Rare induction of mania
+Rare activation of suicidal ideation and behavior (suicidality) (shortterm studies did not show an increase in the risk of suicidality with
+antidepressants compared to placebo beyond age 24)
+Weight Gain
+Reported but not expected
+Sedation
+Reported but not expected
+
+
+
+
+<<<PAGE 796>>>
+
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of escitalopram
+
+Dosing and use
+Usual Dosage Range
+10–20 mg/day
+Dosage Forms
+Tablet 5 mg, 10 mg (scored), 20 mg (scored)
+Oral solution 5 mg/5 mL
+How to Dose
+Initial 10 mg/day; increase to 20 mg/day if necessary; single-dose
+administration, morning or evening
+Dosing Tips
+Given once daily, any time of day tolerated
+
+✽ 10 mg of escitalopram may be comparable in efficacy to 40 mg of
+citalopram with fewer side effects
+Thus, give an adequate trial of 10 mg prior to giving 20 mg
+Some patients require dosing with 30 or 40 mg
+
+
+
+
+<<<PAGE 798>>>
+
+Pharmacokinetics
+Mean terminal half-life 27–32 hours
+Steady-state plasma concentrations achieved within 1 week
+Substrate for CYP450 2C19 and 3A4
+No significant actions on CYP450 enzymes
+Food does not affect absorption
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or for at least 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing escitalopram
+Could theoretically cause weakness, hyperreflexia, and
+incoordination when combined with sumatriptan or possibly other
+triptans, requiring careful monitoring of patient
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+NSAIDs may impair effectiveness of SSRIs
+Few known adverse drug interactions
+
+
+
+
+<<<PAGE 799>>>
+
+Other Warnings/Precautions
+Use with caution in patients with history of seizures
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is taking an MAOI
+If patient is taking pimozide
+If there is a proven allergy to escitalopram or citalopram
+
+Special populations
+Renal Impairment
+
+
+
+
+<<<PAGE 800>>>
+
+No dose adjustment for mild to moderate impairment
+Use cautiously in patients with severe impairment
+Hepatic Impairment
+Recommended dose 10 mg/day
+Cardiac Impairment
+Not systematically evaluated in patients with cardiac impairment
+Preliminary data suggest that citalopram is safe in patients with
+cardiac impairment, suggesting that escitalopram is also safe
+Treating depression with SSRIs in patients with acute angina or
+following myocardial infarction may reduce cardiac events and
+improve survival as well as mood
+Elderly
+Recommended dose 10 mg/day
+Risk of SIADH with SSRIs is higher in the elderly
+Reduction in the risk of suicidality with antidepressants compared to
+placebo in adults age 65 and older
+Children and Adolescents
+Approved for depression in adolescents ages 12–17
+
+
+
+
+<<<PAGE 803>>>
+
+Breast Feeding
+Some drug is found in mother’s breast milk
+Trace amounts may be present in nursing children whose mothers
+are on escitalopram
+If child becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+Immediate postpartum period is a high-risk time for depression,
+especially in women who have had prior depressive episodes, so
+drug may need to be reinstituted late in the third trimester or shortly
+after childbirth to prevent a recurrence during the postpartum period
+Must weigh benefits of breast feeding with risks and benefits of
+antidepressant treatment versus nontreatment to both the infant and
+the mother
+For many patients, this may mean continuing treatment during
+breast feeding
+
+The art of psychopharmacology
+Potential Advantages
+Patients taking concomitant medications (few drug interactions and
+fewer even than with citalopram)
+Patients requiring faster onset of action
+Potential Disadvantages
+
+
+
+
+<<<PAGE 804>>>
+
+More expensive than citalopram in markets where citalopram is
+generic
+Primary Target Symptoms
+Depressed mood
+Anxiety
+Panic attacks, avoidant behavior, reexperiencing, hyperarousal
+Sleep disturbance, both insomnia and hypersomnia
+Pearls
+
+✽ May be among the best-tolerated antidepressants
+May have less sexual dysfunction than some other SSRIs
+May be better tolerated than citalopram
+Can cause cognitive and affective “flattening”
+
+✽ R-citalopram may interfere with the binding of S-citalopram at the
+serotonin transporter
+
+✽ For this reason, S-citalopram may be more than twice as potent as
+R,S-citalopram (i.e., citalopram)
+Thus, 10 mg starting dose of S-citalopram may have the therapeutic
+efficacy of 40 mg of R,S-citalopram
+Thus, escitalopram may have faster onset and better efficacy with
+reduced side effects compared to R,S-citalopram
+
+
+
+
+<<<PAGE 805>>>
+
+Some data may actually suggest remission rates comparable to
+SNRIs, but this is not proven
+
+✽ Escitalopram is commonly used with augmenting agents, as it is the
+SSRI with the least interaction at either CYP450 2D6 or 3A4,
+therefore causing fewer pharmacokinetically mediated drug
+interactions with augmenting agents than other SSRIs
+SSRIs may be less effective in women over 50, especially if they are
+not taking estrogen
+SSRIs may be useful for hot flushes in perimenopausal women
+Some postmenopausal women’s depression will respond better to
+escitalopram plus estrogen augmentation than to escitalopram alone
+Nonresponse to escitalopram in elderly may require consideration of
+mild cognitive impairment or Alzheimer disease
+
+Suggested Reading
+Baldwin DS , Reines EH , Guiton C , Weiller E. Escitalopram therapy for
+major depression and anxiety disorders . Ann Pharmacother 2007 ;41 (10
+):1583 –92.
+Bareggi SR , Mundo E , Dell’Osso B , Altamura AC . The use of
+escitalopram beyond major depression: pharmacological aspects, efficacy
+and tolerability in anxiety disorders . Expert Opin Drug Metab Toxicol 2007
+;3 (5 ):741–53 .
+
+
+
+
+<<<PAGE 806>>>
+
+Burke WJ . Escitalopram . Expert Opin Investig Drugs 2002 ;11 (10 ):1477
+–86.
+
+
+
+
+<<<PAGE 1581>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Venlafaxine and escitalopram may be the best tolerated when
+
+switching or augmenting with a serotonin reuptake inhibitor, as neither
+is a potent CYP450 2D6 inhibitor (use combinations of antidepressants
+with caution as this may activate bipolar disorder and suicidal
+ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines for anxiety, but give alprazolam cautiously with
+nefazodone as alprazolam levels can be much higher in the presence
+of nefazodone
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+
+✽ Liver function testing is not required but is often prudent given the
+small but finite risk of serious hepatoxicity
+
+✽ However, to date no clinical strategy, including routine liver
+function tests, has been identified to reduce the risk of irreversible
+liver failure
+
+Side Effects
+
+
+
+
+<<<PAGE 2179>>>
+
+Rapid discontinuation may lead to rebound psychosis and worsening
+of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after thioridazine is discontinued
+Pharmacokinetics
+Metabolized by CYP450 2D6
+Drug Interactions
+May decrease the effects of levodopa, dopamine agonists
+May increase the effects of antihypertensive drugs
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+
+✽ CYP450 2D6 inhibitors including paroxetine, fluoxetine,
+duloxetine, bupropion, sertraline, citalopram, and others can raise
+thioridazine to dangerous levels
+
+✽ Fluvoxamine, propranolol, and pindolol also inhibit thioridazine
+metabolism and can raise thioridazine to dangerous levels
+Respiratory depression/arrest may occur if used with a barbiturate
+Additive effects may occur if used with CNS depressants
+Alcohol and diuretics may increase the risk of hypotension;
+epinephrine may lower blood pressure
+
+
+
+
+<<<PAGE 2577>>>
+
+Carbapin (carbamazepine), 131
+Carbatrol (carbamazepine), 131
+Carbium (carbamazepine), 131
+Carbolith (lithium), 415
+Carbolithium (lithium), 415
+Carbymal (carbamazepine), 131
+Cardilac (fluphenazine), 313
+cariprazine, 137
+Carpaz (carbamazepine), 131
+Cassadan (alprazolam), 11
+Cassipa (buprenorphine with naloxone), 111
+Catanidin (clonidine), 179
+Catapres (clonidine), 179
+Catapres-TTS (clonidine), 179
+Cedrol (zolpidem), 871
+Celexa (citalopram), 159
+Cenilene (fluphenazine), 313
+Centedrin (d,l-methylphenidate), 487
+Cereen (haloperidol), 347
+Championyl (sulpiride), 741
+Champix (varenicline), 837
+Chantix (varenicline), 837
+Chemmart (escitalopram), 269
+Chlorazin (chlorpromazine), 153
+chlordiazepoxide, 147
+Chlorpromazin (chlorpromazine), 153
+Chlorpromazina HCl (chlorpromazine), 153
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2578>>>
+
+Cibalith S-Lithonate (lithium), 415
+Cidoxepin (doxepin), 255
+Cipram (citalopram), 159
+Cipramil (citalopram), 159
+Ciprilex (escitalopram), 269
+Ciproxidine (pitolisant), 639
+Cisordinol (zuclopenthixol), 889
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+Clonazepamum (clonazepam), 173
+clonidine, 179
+Clonisin (clonidine), 179
+Clonistada (clonidine), 179
+Clopixol (zuclopenthixol), 889
+Clopixol Acuphase (zuclopenthixol), 889
+Clopixol Conc (zuclopenthixol), 889
+Clopress (clomipramine), 165
+clorazepate, 185
+Clordezalin (chlorpromazine), 153
+Clorpres (clonidine), 179
+clozapine, 191
+Clozaril (clozapine), 191
+Coaxil (tianeptine), 777
+Cogentin (benztropine), 85
+Cognitiv (selegiline), 705
+Combipres (clonidine), 179
+Complutine (diazepam), 229
+
+
+
+
+<<<PAGE 2585>>>
+
+Effexor (venlafaxine), 841
+Effexor XR (venlafaxine), 841
+Effiplen (buspirone), 123
+Egibren (selegiline), 705
+Eglonyl (sulpiride), 741
+Elavil (amitriptyline), 25
+Elavil Plus (amitriptyline), 25
+Eldepryl (selegiline), 705
+Elenium (chlordiazepoxide), 147
+Elepsia XR (levetiracetam), 399
+Eliwel (amitriptyline), 25
+Ellefore (desvenlafaxine), 215
+Elmendos (lamotrigine), 387
+Elopram (citalopram), 159
+Elperil (thioridazine), 759
+Elroquil N (hydroxyzine), 355
+Elvanse (lisdexamfetamine), 409
+Emdalen (lofepramine), 421
+Emsam (selegiline), 705
+EnBrace HR (l-methylfolate), 477
+Endep (amitriptyline), 25
+Enimon (sulpiride), 741
+Enlyte (l-methylfolate), 477
+Epial (carbamazepine), 131
+Epilim (valproate), 829
+Epitol (carbamazepine), 131
+Epitomax (topiramate), 781
+Equetro (carbamazepine), 131
+
+
+
+
+<<<PAGE 2586>>>
+
+Equilid (sulpiride), 741
+Equitam (lorazepam), 437
+Er Ding (lofexidine), 427
+Ergenyl (valproate), 829
+Ergocalm (lorazepam), 437
+Eridan (diazepam), 229
+Erocap (fluoxetine), 301
+escitalopram, 269
+Esculid (diazepam), 229
+Esilgan (estazolam), 281
+Esipride (sulpiride), 741
+Eskalith (lithium), 415
+Eskalith CR (lithium), 415
+Eskazine (trifluoperazine), 803
+esketamine, 275
+Esparon (alprazolam), 11
+estazolam, 281
+Estorra (eszopiclone), 285
+eszopiclone, 285
+Ethipam (diazepam), 229
+Ethipramine (imipramine), 367
+Euhypnos (temazepam), 755
+Euipnos (temazepam), 755
+Eurosan (diazepam), 229
+Eutimil (paroxetine), 593
+Eutimox (fluphenazine), 313
+Evacalm (diazepam), 229
+Evekeo (amphetamine d,l), 45
+
+
+
+
+<<<PAGE 2595>>>
+
+Lexapro (escitalopram), 269
+Li-450 (lithium), 415
+Librax (chlordiazepoxide), 147
+Libraxin (chlordiazepoxide), 147
+Librium (chlordiazepoxide), 147
+Lidone (molindone), 527
+Li-Liquid (lithium), 415
+Lilly Fluoxetine (fluoxetine), 301
+Limbatril (chlordiazepoxide), 147
+Limbatril F (chlordiazepoxide), 147
+Limbitrol (chlordiazepoxide), 147
+Limbitrol F (chlordiazepoxide), 147
+Limbitryl (chlordiazepoxide), 147
+Limbitryl Plus (chlordiazepoxide), 147
+lisdexamfetamine, 409
+Liskonum (lithium), 415
+Litarex (lithium), 415
+Lithane (lithium), 415
+Lithiofor (lithium), 415
+Lithionit (lithium), 415
+Lithiucarb (lithium), 415
+lithium, 415
+Lithium-aspartat (lithium), 415
+Lithium carbonate tablets (lithium), 415
+Lithium carbonicum (lithium), 415
+Lithium citrate syrup (lithium), 415
+Lithium-Duriles (lithium), 415
+Lithiumkarbonat (lithium), 415
+
+
+
+
+<<<PAGE 2609>>>
+
+PMS-Fluphenazine Decanoate (fluphenazine), 313
+PMS-Haloperidol (haloperidol), 347
+PMS-Hydroxyzine (hydroxyzine), 355
+PMS-Lithium (lithium), 415
+PMS-Methylphenidate (d,l-methylphenidate), 487
+PMS-Trazodone (trazodone), 793
+Podium (diazepam), 229
+Poldoxin (doxepin), 255
+Polysal (amitriptyline), 25
+Portal (fluoxetine), 301
+Pragmarel (trazodone), 793
+Praxiten (oxazepam), 569
+prazosin, 643
+pregabalin, 647
+Priadel (lithium), 415
+Prisdal (citalopram), 159
+Prisma (mianserin), 495
+Pristiq (desvenlafaxine), 215
+Probuphine (buprenorphine), 111
+ProCentra (amphetamine d), 39
+Pro Dorm (lorazepam), 437
+Procythol (selegiline), 705
+Prolixin (fluphenazine), 313
+Prolixin Decanoate (fluphenazine), 313
+Prolixin Enanthate (fluphenazine), 313
+Prolongatum (fluphenazine), 313
+Pronervon T (temazepam), 755
+Propam (diazepam), 229
+
+
+
+
+<<<PAGE 2615>>>
+
+Selpar (selegiline), 705
+Sensaval (nortriptyline), 551
+Sensival (nortriptyline), 551
+Sepatrem (selegiline), 705
+Serad (sertraline), 721
+Seralgan (citalopram), 159
+Serax (oxazepam), 569
+Serdolect (sertindole), 715
+Serelan (mianserin), 495
+Seren (chlordiazepoxide), 147
+Serenace (haloperidol), 347
+Serenase (haloperidol), 347
+Serenase (lorazepam), 437
+Serenase Decanoat (haloperidol), 347
+Serenase Depot (haloperidol), 347
+Serenelfi (haloperidol), 347
+Serepax (oxazepam), 569
+Seresta (oxazepam), 569
+Sereupin (paroxetine), 593
+Serlain (sertraline), 721
+Serlect (sertindole), 715
+Serol (fluoxetine), 301
+Seronil (fluoxetine), 301
+Seropram (citalopram), 159
+Seroquel (quetiapine), 667
+Seroquel XR (quetiapine), 667
+Seroxal (paroxetine), 593
+Seroxat (paroxetine), 593
+
+
+
+
+<<<PAGE 2629>>>
+
+Alzheimer disease
+caprylidene , 127
+donepezil , 243
+galantamine , 337
+memantine , 473
+rivastigmine , 699
+selegiline, 705
+Amnesia, Drug-induced
+midazolam , 499
+Anxiety
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone , 123
+chlordiazepoxide , 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate , 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam , 229
+dothiepin, 249
+doxepin , 255
+duloxetine, 263
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2638>>>
+
+cariprazine, 137
+citalopram , 159
+clomipramine, 165
+cyamemazine, 201
+desipramine , 207
+desvenlafaxine , 215
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin , 255
+duloxetine , 263
+escitalopram , 269
+esketamine , 275
+fluoxetine , 301
+fluoxetine/olanzapine combination , 301 , 559
+flupenthixol, 307
+fluvoxamine, 325
+iloperidone, 359
+imipramine , 367
+isocarboxazid , 375
+ketamine, 383
+lamotrigine (adjunct), 387
+levomilnacipran , 403
+lisdexamfetamine, 409
+lithium (adjunct), 415
+l-methylfolate (adjunct) , 477
+lofepramine, 421
+lumateperone, 451
+lurasidone, 457
+
+
+
+
+<<<PAGE 2641>>>
+
+Generalized anxiety disorder
+agomelatine, 5
+alprazolam , 11
+citalopram, 159
+desvenlafaxine, 215
+duloxetine , 263
+escitalopram , 269
+fluoxetine, 301
+fluvoxamine, 325
+mirtazapine, 509
+paroxetine , 509
+pregabalin, 647
+propranolol, 653
+sertraline, 721
+tiagabine (adjunct), 771
+venlafaxine , 841
+vortioxetine, 853
+Glossopharyngeal neuralgia
+carbamazepine, 131
+Hiccups, intractable
+chlorpromazine , 153
+Hypersalivation
+clonidine, 179
+Hypertension
+clonidine , 179
+guanfacine , 343
+
+
+
+
+<<<PAGE 2646>>>
+
+pregabalin , 647
+sodium oxybate, 733
+tiagabine, 771
+topiramate, 781
+trimipramine, 817
+valproate (divalproex), 829
+zonisamide, 875
+Nicotine addiction
+bupropion , 117
+varenicline , 837
+Non-24-hour sleep-wake disorder
+tasimelteon , 751
+Obsessive-compulsive disorder
+aripiprazole (adjunct), 53
+citalopram, 159
+clomipramine , 165
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine , 325
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+vilazodone, 847
+Opioid dependence
+buprenorphine , 111
+clonidine, 179
+
+
+
+
+<<<PAGE 2647>>>
+
+lofexidine , 427
+naltrexone , 537
+Panic disorder
+alprazolam , 11
+citalopram, 159
+clonazepam , 173
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine, 325
+isocarboxazid, 375
+lorazepam, 437
+mirtazapine, 509
+nefazodone, 545
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+reboxetine, 681
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Parkinson’s disease
+selegiline , 705
+zonisamide, 875
+Parkinson’s disease dementia
+
+
+
+
+<<<PAGE 2648>>>
+
+rivastigmine , 699
+Parkinson’s disease psychosis
+pimavanserin , 623
+Pervasive developmental disorders
+guanfacine, 343
+Porphyria
+chlorpromazine , 153
+Postherpetic neuralgia
+gabapentin , 331
+pregabalin , 647
+Postpartum depression
+brexanolone , 99
+Posttraumatic stress disorder
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+cariprazine, 137
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+dextromethorphan (with quinidine), 225
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+
+
+
+
+<<<PAGE 2649>>>
+
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+mirtazapine, 509
+nefazodone, 545
+olanzapine, 558
+paliperidone, 580
+paroxetine , 593
+prazosin (nightmares) 643
+propranolol (prophylactic) 653
+quetiapine, 667
+risperidone, 687
+sertraline , 721
+venlafaxine, 841
+ziprasidone, 863
+Premenstrual dysphoric disorder
+alprazolam, 11
+citalopram, 159
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+Preoperative anxiety
+chlordiazepoxide , 147
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2655>>>
+
+gabapentin (adjunct) , 331
+lamotrigine , 387
+levetiracetam , 399
+lorazepam , 437
+oxcarbazepine , 575
+pregabalin (adjunct) , 647
+tiagabine (adjunct) , 771
+topiramate , 781
+valproate (divalproex) , 829
+zonisamide , 875
+Sexual dysfunction
+bremelanotide , 95
+bupropion, 117
+flibanserin , 289
+sildenafil , 729
+Sleepiness, excessive
+armodafinil , 65
+modafinil , 521
+pitolisant , 639
+sodium oxybate , 733
+solriamfetol , 737
+tasimelteon, 751
+Social anxiety disorder
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+
+
+
+
+<<<PAGE 2656>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine , 325
+isocarboxazid, 375
+moclobemide, 515
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Stress urinary incontinence
+duloxetine, 263
+Tardive dyskinesia
+deutetrabenazine , 221
+valbenazine , 825
+Tetanus
+chlorpromazine , 153
+Tourette’s syndrome/tic disorders
+aripiprazole , 53
+clonidine, 179
+guanfacine, 343
+haloperidol , 347
+pimozide , 627
+
+
+
+
+<<<PAGE 2659>>>
+
+amitriptyline, 25
+amoxapine, 33
+atomoxetine, 79
+brexanolone, 99
+bupropion, 117
+citalopram, 159
+clomipramine, 165
+desipramine, 207
+desvenlafaxine, 215
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+esketamine, 275
+fluoxetine, 301
+fluvoxamine, 325
+imipramine, 367
+isocarboxazid, 375
+ketamine, 383
+levomilnacipran, 403
+l-methylfolate (adjunct), 477
+lofepramine, 421
+maprotiline, 465
+mianserin, 495
+milnacipran, 503
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+

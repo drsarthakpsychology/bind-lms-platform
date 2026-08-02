@@ -1,0 +1,700 @@
+<<<PAGE 7>>>
+
+Contents
+Introductionxi
+
+  1.
+  2.
+  3.
+  4.
+  5.
+  6.
+  7.
+  8.
+  9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+25.
+26.
+27.
+28.
+29.
+30.
+31.
+32.
+33.
+
+List of icons
+
+xv
+
+acamprosate
+agomelatine
+alprazolam
+amisulpride
+amitriptyline
+amoxapine
+amphetamine (d)
+amphetamine (d,l)
+aripiprazole
+armodafinil
+asenapine
+atomoxetine
+benztropine
+blonanserin
+bremelanotide
+brexanolone
+brexpiprazole
+buprenorphine
+bupropion
+buspirone
+caprylidene
+carbamazepine
+cariprazine
+chlordiazepoxide
+chlorpromazine
+citalopram
+clomipramine
+clonazepam
+clonidine
+clorazepate
+clozapine
+cyamemazine
+daridorexant
+
+1
+5
+11
+17
+25
+33
+39
+47
+55
+67
+73
+81
+87
+91
+97
+101
+105
+113
+119
+125
+129
+133
+139
+147
+153
+159
+165
+173
+179
+185
+191
+201
+207
+v
+
+
+
+
+<<<PAGE 8>>>
+
+34.
+35.
+36.
+37.
+38.
+39.
+40.
+41.
+42.
+43.
+44.
+45.
+46.
+47.
+48.
+49.
+50.
+51.
+52.
+53.
+54.
+55.
+56.
+57.
+58.
+59.
+60.
+61.
+62.
+63.
+64.
+65.
+66.
+67.
+68.
+69.
+70.
+71.
+72.
+vi
+
+desipramine
+211
+desvenlafaxine219
+deutetrabenazine
+225
+dexmedetomidine
+229
+dextromethorphan–bupropion
+233
+dextromethorphan–quinidine
+239
+diazepam
+243
+diphenhydramine
+249
+disulfiram
+253
+donepezil
+257
+dothiepin263
+doxepin269
+duloxetine
+277
+escitalopram
+283
+esketamine
+289
+estazolam
+295
+eszopiclone
+299
+flibanserin
+303
+flumazenil
+307
+flunitrazepam
+311
+fluoxetine
+315
+flupenthixol
+321
+fluphenazine
+327
+flurazepam
+335
+fluvoxamine
+339
+gabapentin
+345
+galantamine351
+guanfacine
+357
+haloperidol
+361
+hydroxyzine
+369
+iloperidone
+373
+imipramine381
+isocarboxazid
+389
+ketamine397
+lamotrigine
+401
+lemborexant
+409
+levetiracetam
+413
+levomilnacipran
+417
+lisdexamfetamine
+423
+
+
+
+
+<<<PAGE 9>>>
+
+73.
+74.
+75.
+76.
+77.
+78.
+79.
+80.
+81.
+82.
+83.
+84.
+85.
+86.
+87.
+88.
+89.
+90.
+91.
+92.
+93.
+94.
+95.
+96.
+97.
+98.
+99.
+100.
+101.
+102.
+103.
+104.
+105.
+106.
+107.
+108.
+109.
+110.
+111.
+
+lithium
+429
+lofepramine435
+lofexidine441
+loflazepate
+445
+lorazepam
+451
+loxapine
+457
+lumateperone
+465
+lurasidone
+473
+maprotiline
+481
+memantine489
+methylfolate (l)
+493
+methylphenidate (d)
+497
+methylphenidate (d,l)
+503
+mianserin
+511
+midazolam515
+milnacipran
+519
+mirtazapine
+525
+moclobemide
+531
+modafinil
+537
+molindone
+543
+nalmefene549
+naltrexone
+553
+naltrexone–bupropion
+557
+nefazodone563
+nortriptyline
+569
+olanzapine
+577
+olanzapine–samidorphan
+587
+oxazepam
+595
+oxcarbazepine
+601
+paliperidone
+607
+paroxetine
+619
+perospirone627
+perphenazine
+633
+phenelzine
+639
+phentermine–topiramate
+645
+pimavanserin
+651
+pimozide
+655
+pipothiazine
+661
+pitolisant
+667
+vii
+
+
+
+
+<<<PAGE 23>>>
+
+AGOMELATINE
+THERAPEUTICS
+Brands
+
+• Valdoxan
+
+Generic? No
+Class
+• Neuroscience-based Nomenclature:
+melatonin multimodal (Mel-MM)
+• Agonist at melatonergic 1 and melatonergic
+2 receptors
+• Antagonist at serotonin 2C receptors
+
+Commonly Prescribed for
+(bold for FDA approved)
+• Depression
+• Generalized anxiety disorder
+
+How the Drug Works
+• Actions at both melatonergic and serotonin
+2C receptors may be synergistic and
+increase norepinephrine and dopamine
+neurotransmission in the prefrontal cortex;
+may resynchronize circadian rhythms that
+are disturbed in depression
+• No influence on extracellular levels of
+serotonin
+
+If It Doesn’t Work
+• Many patients have only a partial response
+where some symptoms are improved but
+others persist (especially insomnia, fatigue,
+and problems concentrating)
+• Other patients may be nonresponders,
+sometimes called treatment-resistant or
+treatment-refractory
+• Consider increasing dose as early as 2
+weeks after initiating treatment if response
+is insufficient (decision on dose increase
+has to be balanced with a higher risk of
+transaminase elevation; any dose increase
+should be made on an individual patient
+benefit/risk basis and with strict respect of
+liver function tests monitoring)
+• Consider switching to another agent or
+adding an appropriate augmenting agent
+• Consider psychotherapy
+• Consider evaluation for another diagnosis
+or for a comorbid condition (e.g., medical
+illness, substance abuse, etc.)
+• Some patients may experience apparent
+lack of consistent efficacy due to activation
+of latent or underlying bipolar disorder, and
+require antidepressant discontinuation and
+a switch to a mood stabilizer
+
+ Best Augmenting Combos
+for Partial Response or
+Treatment Resistance
+
+How Long Until It Works
+• Daytime functioning, anhedonia, and sleep
+can improve from the first week of treatment
+• Onset of full therapeutic actions in
+depression is usually not immediate, but
+often delayed 2–4 weeks
+• May continue to work for many years to
+prevent relapse of symptoms
+
+If It Works
+• The goal of treatment is complete
+remission of current symptoms as well as
+prevention of future relapses
+• Treatment most often reduces or even
+eliminates symptoms, but not a cure since
+symptoms can recur after medicine is
+stopped
+• Continue treatment until all symptoms are
+gone (remission)
+• Once symptoms are gone, continue treating
+for 1 year for the first episode of depression
+• For second and subsequent episodes of
+depression, treatment may need to be
+indefinite
+
+• SSRIs (excluding fluvoxamine), SNRIs,
+bupropion, reboxetine, atomoxetine
+(use combinations of antidepressant
+with caution as this may activate bipolar
+disorder and suicidal ideation)
+• Modafinil, especially for fatigue, sleepiness,
+and lack of concentration
+• Mood stabilizers or atypical antipsychotics
+for bipolar depression, psychotic depression,
+or treatment-resistant depression
+• Benzodiazepines
+
+Tests
+• Liver function tests before initiation of
+treatment and then at 3 weeks, 6 weeks,
+12 weeks, 24 weeks, and thereafter when
+clinically indicated
+• When increasing the dose, liver function
+tests should be performed at the same
+frequency as when initiating treatment
+• Liver function tests should be repeated
+within 48 hours in any patient who
+develops raised transaminases
+5
+
+
+
+
+<<<PAGE 45>>>
+
+(continued) AMITRIPTYLINE
+
+Sedation
+
+Overdose
+
+• Many experience and/or can be significant
+in amount
+• Tolerance to sedative effects may develop
+with long-term use
+
+• Death may occur; CNS depression,
+convulsions, cardiac dysrhythmias, severe
+hypotension, ECG changes, coma
+
+Long-Term Use
+• Safe
+
+What to Do About Side Effects
+
+Habit Forming?
+
+• Wait
+• Wait
+• Wait
+• Lower the dose
+• Switch to an SSRI or newer antidepressant
+
+How to Stop
+
+Best Augmenting Agents for Side
+Effects
+• Many side effects cannot be improved with
+an augmenting agent
+
+DOSING AND USE
+Usual Dosage Range
+• 50–150 mg/day
+
+Dosage Forms
+• Tablet 10 mg, 25 mg, 50 mg, 75 mg, 100
+mg, 150 mg
+
+How to Dose
+• Initial 25 mg/day at bedtime; increase by
+25 mg every 3–7 days
+• 75 mg/day in divided doses; increase to
+150 mg/day; maximum 300 mg/day
+
+Dosing Tips
+• If given in a single dose, should generally
+be administered at bedtime because of its
+sedative properties
+• If given in split doses, largest dose should
+generally be given at bedtime because of its
+sedative properties
+• If patients experience nightmares, split
+dose and do not give large dose at bedtime
+• Patients treated for chronic pain may only
+require lower doses
+• If intolerable anxiety, insomnia, agitation,
+akathisia, or activation occur upon either
+dosing initiation or discontinuation,
+consider the possibility of activated bipolar
+disorder, and switch to a mood stabilizer or
+an atypical antipsychotic
+
+• No
+• Taper to avoid withdrawal effects
+• Even with gradual dose reduction, some
+withdrawal symptoms may appear within
+the first 2 weeks
+• Many patients tolerate 50% dose reduction
+for 3 days, then another 50% reduction for
+3 days, then discontinuation
+• If withdrawal symptoms emerge during
+discontinuation, raise dose to stop
+symptoms and then restart withdrawal
+much more slowly
+
+Pharmacokinetics
+• Substrate for CYP2D6 and CYP1A2
+• Plasma half-life 10–28 hours
+• Metabolized to an active metabolite,
+nortriptyline, which is predominantly a
+norepinephrine reuptake inhibitor, by
+demethylation via CYP1A2
+• Food does not affect absorption
+
+Drug Interactions
+• Tramadol increases the risk of seizures in
+patients taking TCAs
+• Use of TCAs with anticholinergic drugs may
+result in paralytic ileus or hyperthermia
+• Fluoxetine, paroxetine, bupropion,
+duloxetine, and other CYP2D6 inhibitors
+may increase TCA concentrations
+• Fluvoxamine, a CYP1A2 inhibitor, can
+decrease the conversion of amitriptyline
+to nortriptyline and increase amitriptyline
+plasma concentrations
+• Cimetidine may increase plasma
+concentrations of TCAs and cause
+anticholinergic symptoms
+• Phenothiazines or haloperidol may raise
+TCA blood concentrations
+• May alter effects of antihypertensive drugs;
+may inhibit hypotensive effects of clonidine
+• Use of TCAs with sympathomimetic agents
+may increase sympathetic activity
+27
+
+
+
+
+<<<PAGE 53>>>
+
+(continued) AMOXAPINE
+
+Best Augmenting Agents for Side
+Effects
+• Many side effects cannot be improved with
+an augmenting agent
+• May use anticholinergics for drug-induced
+parkinsonism, or switch to another
+antidepressant
+
+DOSING AND USE
+Usual Dosage Range
+
+How to Stop
+• Taper to avoid withdrawal effects
+• Even with gradual dose reduction some
+withdrawal symptoms may appear within
+the first 2 weeks
+• Many patients tolerate 50% dose reduction
+for 3 days, then another 50% reduction for
+3 days, then discontinuation
+• If withdrawal symptoms emerge during
+discontinuation, raise dose to stop
+symptoms and then restart withdrawal
+much more slowly
+
+• 200–300 mg/day
+
+Pharmacokinetics
+
+Dosage Forms
+
+• Substrate for CYP2D6
+• Half-life of parent drug approximately 8 hours
+• 7- and 8-hydroxymetabolites are active
+and possess serotonin 2A and dopamine
+2 antagonist properties, similar to atypical
+antipsychotics
+• Amoxapine is the N-desmethyl metabolite
+of the conventional antipsychotic loxapine
+• Half-life of the active metabolites
+approximately 24 hours
+
+• Tablet 25 mg, 50 mg, 100 mg, 150 mg
+
+How to Dose
+• Initial 25 mg 2–3 times/day; increase
+gradually to 100 mg 2–3 times/day or a
+single dose at bedtime; maximum 400
+mg/day (may dose up to 600 mg/day in
+inpatients)
+
+Dosing Tips
+• If given in a single dose, should generally
+be administered at bedtime because of its
+sedative properties
+• If given in split doses, largest dose should
+generally be given at bedtime because of its
+sedative properties
+• If patients experience nightmares, split
+dose and do not give large dose at bedtime
+• If intolerable anxiety, insomnia, agitation,
+akathisia, or activation occur upon either
+dosing initiation or discontinuation,
+consider the possibility of activated bipolar
+disorder, and switch to a mood stabilizer or
+an atypical antipsychotic
+
+Overdose
+• Death may occur; convulsions, cardiac
+dysrhythmias, severe hypotension, CNS
+depression, coma, changes in ECG
+
+Long-Term Use
+• Generally safe
+• Some patients may develop withdrawal
+dyskinesias when discontinuing amoxapine
+after long-term use
+
+Habit Forming?
+• Some patients may develop tolerance
+
+Drug Interactions
+• Tramadol increases the risk of seizures in
+patients taking TCAs
+• Use of TCAs/tetracyclics with
+anticholinergic drugs may result in
+paralytic ileus or hyperthermia
+• Fluoxetine, paroxetine, bupropion,
+duloxetine, and other CYP2D6
+inhibitors may increase TCA/tetracyclic
+concentrations
+• Cimetidine may increase plasma
+concentrations of TCAs/tetracyclics and
+cause anticholinergic symptoms
+• Phenothiazines or haloperidol may raise
+TCA/tetracyclic blood concentrations
+• May alter effects of antihypertensive drugs;
+may inhibit hypotensive effects of clonidine
+• Use of TCAs/tetracyclics with
+sympathomimetic agents may increase
+sympathetic activity
+• Methylphenidate may inhibit metabolism of
+TCAs/tetracyclics
+• Activation and agitation, especially
+following switching or adding
+antidepressants, may represent the
+induction of a bipolar state, especially
+a mixed dysphoric bipolar II condition
+sometimes associated with suicidal
+35
+
+

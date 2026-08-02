@@ -1,0 +1,566 @@
+<<<PAGE 259>>>
+
+CHAPTER 1
+
+238  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Distinguishing between true clozapine toxicity and neutropenia unrelated to clozapine is not possible with certainty but some factors are important. Consultation with a
+haematologist is advisable regarding BEN and to exclude any other co-prescribed medication that may be responsible. The use of iatrogenic agents to elevate WCC in patients
+with clear prior clozapine-induced neutropenia (i.e. certainty that clozapine was the
+cause) is not recommended. Lithium or other medicines should only be used to elevate
+WCC where it is strongly felt that prior neutropenic episodes were unrelated to clozapine. Patients who have had a previous episode of agranulocytosis that is attributable to
+clozapine should not be re-challenged.
+
+Lithium
+Lithium increases the neutrophil count and total WCC both acutely and chronically.
+The magnitude of this effect is poorly quantified, but a mean neutrophil count of 11.9 ×
+109/L has been reported in lithium-treated patients and a mean rise in neutrophil count
+of 2 × 109/L was seen in clozapine-treated patients after the addition of lithium. This
+effect does not seem to be clearly dose-related, although a minimum lithium serum level
+of 0.4mmol/L may be required. The mechanism is not completely understood.20
+Lithium has been used to increase the WCC in patients who have developed neutropenia whilst taking clozapine, allowing clozapine treatment to continue. Several case
+reports in adults21–25 and in children26,27 have been published. Almost all patients had
+serum lithium levels of > 0.6mmol/L. In a case series (n = 25) of patients who had
+stopped clozapine because of a blood dyscrasia and were rechallenged in the presence
+of lithium, only one developed a subsequent dyscrasia.28 If considering lithium, discuss
+with the medical advisor at the relevant monitoring service to determine the optimum
+pharmacological strategy for the particular patient.
+Lithium does not seem to protect against true clozapine-induced agranulocytosis:
+One case of fatal agranulocytosis has occurred with this combination25 and a second
+case of agranulocytosis has been reported where the bone marrow was resistant to
+treatment with granulocyte colony stimulating factor (G-CSF).29
+
+Granulocyte-colony stimulating factor (G-CSF)
+The use of G-CSF to facilitate uninterrupted clozapine therapy in patients with previous neutropenia is a strategy that is attracting increasing interest, but is somewhat
+controversial. There are both successful30–32 and unsuccessful32,33 case reports of patients
+receiving regular long-term G-CSF to enable clozapine therapy. As well as the commonly reported side effects of bone pain34 and neutrophil dysplasia,35 the administration of G-CSF in the face of a low or declining neutrophil count may mask an impending
+neutropenia or agranulocytosis, leading to dire consequences. The long term safety of
+G-CSF has not been determined; bone density and spleen size should probably be
+monitored.
+‘When required’ G-CSF, to be administered if neutrophils drop below a defined
+threshold, may allow rechallenge with clozapine of patients in whom lithium is
+
+
+
+
+<<<PAGE 268>>>
+
+Chapter 2
+
+Bipolar disorder
+
+Lithium
+Mechanism of action
+Lithium is the third element of the periodic table, in the same column as hydrogen and
+sodium. Potentially implicated in a wide range of biological processes and with a
+­multiplicity of other effects, it has proven very difficult to ascertain the key mechanism(s)
+of action of lithium in regulating mood and behaviour. For example, there is some older
+evidence that people with bipolar illness have higher intracellular concentrations of
+sodium and calcium than controls and that lithium can reduce these. Interestingly,
+­calcium-related genes have been implicated by genetic studies in bipolar disorder (BD).1
+Glycogen synthase kinase 3 (GSK3), cAMP response element-binding protein (CREB)
+and Na(+)/K(+) ATPase-related mechanisms may be important for lithium’s effects. For
+a review of lithium’s potential mechanism(s) of action, see Alda.2 Lithium may have
+neuroprotective effects that preserve the function of neurones and neuronal ­circuits.3
+Lithium also promotes the creation of new neurones (neurogenesis) in the ­hippocampus,
+which is potentially important for learning, memory and stress responses.4 Although
+the older literature pertaining to the possible neuroprotective effect of lithium consisted
+largely on either in vitro or animal studies, a meta-analysis suggests that lithium may
+prevent transition to dementia.5 Notably, however, both reversible and irreversible
+­neurotoxicities related to lithium are recognised as adverse effects.6,7 Lithium is present
+in low levels in the environment (e.g. in drinking water), and environmental lithium has
+been reported to be inversely related to suicide and dementia at population levels.8,9
+
+Clinical indications
+Acute treatment of mania
+Lithium is effective for the treatment of mania, at a plasma level of 0.8–1.0mmol/L.10 If
+a faster action is needed, an adjunctive or single-agent antipsychotic with an evidence
+base for treating mania is recommended.10 It can be difficult to achieve therapeutic
+The Maudsley® Prescribing Guidelines in Psychiatry, Fourteenth Edition. David M. Taylor,
+Thomas R. E. Barnes and Allan H. Young.
+© 2021 David M. Taylor. Published 2021 by John Wiley & Sons Ltd.
+
+
+
+
+<<<PAGE 269>>>
+
+248  The Maudsley® Prescribing Guidelines in Psychiatry
+
+plasma lithium levels rapidly, and monitoring may be problematic if the patient is uncooperative. Treatment may be most successful in those without psychotic symptoms or
+evidence of rapid cycling.11
+
+CHAPTER 2
+
+Treatment of acute mania in patients already on long-term lithium
+BAP guidelines10 suggest that in the event of relapse, an urgent plasma lithium level
+should be obtained to indicate the level of compliance with lithium therapy and inform
+possible dose adjustment. If lithium level measurement indicates non-compliance, the
+reason should be ascertained. If the lithium level is confirmed to be optimal, but the
+control of mania is inadequate, then adding a dopamine antagonist, dopamine partial
+agonist or valproate is recommended.10
+
+Bipolar depression
+Lithium is widely used in bipolar depression but evidence supporting robust efficacy is
+lacking.12,13 Evidence for prevention of depressive episodes is more compelling.
+Maintenance treatment of bipolar disorder
+Aim for the highest tolerable lithium plasma level in the range of 0.6–0.8mmol/L10,14
+with the option to reduce it to 0.40–0.60mmol/L in case of good response but poor
+tolerance or to increase it to 0.80–1.00mmol/L in case of insufficient response and good
+tolerance. The aim of treatment is complete remission of both manic and depressive
+episodes.15 Lithium may be the best performing medicine for BD in practice: Hayes et
+al.16 prospectively analysed the progress of 5089 bipolar patients prescribed monotherapy maintenance treatment: lithium (n = 1505), olanzapine (n = 1366), valproate
+(n = 1173) and quetiapine (n = 1075). It was found that monotherapy failure in 75%
+of each cohort occurred by 2.05 years for lithium monotherapy, 1.13 years for olanzapine monotherapy, 0.98 years for valproate monotherapy and 0.76 years for quetiapine
+monotherapy.16
+Augmentation of antidepressants in unipolar depression
+Approximately 30–50% of patients fail to respond to trials of first- or second-line antidepressants, and outcomes from ‘treatment-resistant depression’ are poor.17 Evidencebased guidelines for treating depressive orders with antidepressants, e.g. Cleare et al.,18
+suggest that either lithium or quetiapine are agents of first choice for augmenting the
+existing antidepressant and that lithium augmentation of selective serotonin reuptake
+inhibitors (SSRIs) or venlafaxine is most effective at a lithium plasma level of
+0.6–1.0mmol/L. To help determine which, if either, is the better of these two augmenting agents over a follow-up period of 1 year, a head-to-head, parallel group, open-label,
+multi-site randomised pragmatic trial of lithium versus quetiapine augmentation in
+treatment-resistant depression is underway and should report in 2021.19 Clinical predictors associated with a better outcome in lithium augmentation for treatment-resistant depression include more severe depressive symptomatology, psychomotor
+
+
+
+
+<<<PAGE 271>>>
+
+250  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Formulations
+
+CHAPTER 2
+
+There is no clinically significant difference in the pharmacokinetics of the two most
+widely prescribed brands of lithium in the UK: Priadel and Camcolit. The UK manufacturers of Priadel attempted to withdraw the formulation but this is currently under
+review.33 Other preparations should not be assumed to be bioequivalent and should be
+prescribed by brand.
+■■
+■■
+
+Each of the lithium carbonate 400mg tablets contains 10.8mmol/lithium.
+Lithium citrate liquid is available in two strengths and should be administered twice daily:
+■■ 5.4mmol/5mL is equivalent to 200mg lithium carbonate.
+■■ 10.8mmol/5mL is equivalent to 400mg lithium carbonate.
+
+Lack of clarity over which liquid preparation is intended when prescribing can lead to
+the patient receiving a sub-therapeutic or toxic dose.
+
+Adverse effects
+Most side effects are dose and plasma level related. These include mild gastrointestinal
+upset, fine tremor, polyuria and polydipsia. Polyuria may occur more frequently with
+twice daily dosing.34,35 Propranolol can be useful in lithium-induced tremor. Some skin
+conditions such as psoriasis and acne can be aggravated by lithium therapy. Lithium
+can also cause a metallic taste in the mouth, ankle oedema and weight gain.
+Lithium can cause a reduction in urinary concentrating capacity – nephrogenic
+diabetes insipidus – hence the occurrence of thirst and polyuria. This effect is usually
+reversible in the short to medium term but renal effects may be irreversible after longterm treatment (>15 years).36 Lithium treatment can also lead to a reduction in the
+glomerular filtration rate (GFR) although the magnitude of the risk is uncertain.36
+Lithium levels of >0.8mmol/L are associated with a higher risk of renal toxicity, and
+prolonged lithium treatment requires regular monitoring of kidney function.37
+In the longer term, lithium increases the risk of hypothyroidism;38 in middle-aged
+women, the risk may be up to 20%.39 A case has been made for testing thyroid autoantibodies in this group before starting lithium (to better estimate risk) and for measuring
+thyroid function tests (TFTs) more frequently in the first year of treatment.40
+Hypothyroidism is easily treated with thyroxine. TFTs usually return to normal when
+lithium is discontinued. Lithium also more rarely increases the risk of hyperthyroidism
+and hyperparathyroidism, and some recommend that calcium levels should be monitored in patients on long-term treatment.41,42 Clinical consequences of chronically
+increased serum calcium include renal stones, osteoporosis, dyspepsia, hypertension and
+renal impairment. For a review of the toxicity profile of lithium, see McKnight et al.41
+
+Lithium toxicity
+Toxic effects reliably occur at levels >1.5mmol/L and usually consist of gastrointestinal
+effects (increasing anorexia, nausea and diarrhoea) and CNS effects (muscle weakness,
+drowsiness, confusion, ataxia, course tremor and muscle twitching).43 Above 2mmol/L,
+increased disorientation and seizures usually occur, which can progress to coma, and
+
+
+
+
+<<<PAGE 273>>>
+
+CHAPTER 2
+
+252  The Maudsley® Prescribing Guidelines in Psychiatry
+
+In contrast with these recommendations, a naturalistic study found that, in patients
+who had been in remission for at least 2 years and had discontinued lithium very slowly,
+the recurrence rate was at least 3 times greater than in patients who continued lithium;
+significant survival differences persisted for many years. Patients maintained on high
+lithium levels prior to discontinuation were particularly prone to relapse.56
+A large US study based on prescription records found that half of those prescribed
+lithium took almost all of their prescribed doses, a quarter took between 50% and
+80%, and the remaining quarter took less than 50%; in addition, a third of patients
+took lithium for less than 6 months in total.57 A large audit found that one in ten
+patients prescribed long-term lithium treatment had a plasma level below the therapeutic range.58 It is clear that suboptimal adherence limits the effectiveness of lithium in
+clinical practice. A database study suggested the extent to which lithium taken was
+directly related to the risk of suicide (more prescriptions = lower suicide rate).59
+Less convincing data support the emergence of depressive symptoms in bipolar
+patients after lithium discontinuation.52 There are few data relating to patients with
+unipolar depression.
+Table 2.1 Lithium – prescribing and monitoring
+Indications
+
+Mania, hypomania, prophylaxis of bipolar affective disorder and recurrent depression.
+Reduces aggression and suicidality.
+
+Pre-lithium workup
+
+eGFR and TFTs. ECG recommended in patients who have risk factors for, or existing
+cardiovascular disease. Baseline measure of weight desirable.
+
+Prescribing
+
+Start at 400mg at night (200mg in the elderly). Plasma level after 7 days, then 7 days after
+every dose change until the desired level is reached (0.4mmol/L may be effective in unipolar
+depression, 0.6–1.0mmol/L in bipolar illness and slightly higher levels in difficult-to-treat
+mania). Blood should be taken 12 hours after the last dose. Take care when prescribing liquid
+preparations to clearly specify the strength required.
+
+Monitoring
+
+Plasma lithium every 6 months (more frequent monitoring is necessary in those prescribed
+interacting drugs, the elderly and those with established renal impairment or other relevant
+physical illness). eGFR and TFTs every 6 months. Weight (or BMI) should also be monitored.
+
+Stopping
+
+Reduce slowly over at least 1 month and preferably 3 months.
+Avoid reductions in plasma levels of >0.2mmol/L.
+
+Interactions with other drugs60–62
+Because of lithium’s relatively narrow therapeutic index, pharmacokinetic interactions
+with other drugs can precipitate lithium toxicity. Most clinically significant interactions
+are with drugs that alter renal sodium handling.
+ACE inhibitors
+Angiotensin-converting enzyme (ACE) inhibitors can (1) reduce thirst leading to mild
+dehydration and (2) increase renal sodium loss leading to increased Na re-absorption
+by the kidney, resulting in an increase in lithium plasma levels. The magnitude of this
+
+
+
+
+<<<PAGE 276>>>
+
+14. Nolen WA, et al. What is the optimal serum level for lithium in the maintenance treatment of bipolar disorder? A systematic review and
+recommendations from the ISBD/IGSLI Task Force on treatment with lithium. Bipolar Disord 2019; 21:394–409.
+15. Severus E, et al. Lithium for prevention of mood episodes in bipolar disorders: systematic review and meta-analysis. Int J Bipolar Disord
+2014; 2:15.
+16. Hayes JF, et al. Lithium vs. valproate vs. olanzapine vs. quetiapine as maintenance monotherapy for bipolar disorder: a population-based UK
+cohort study using electronic health records. World Psychiatry 2016; 15:53–58.
+17. Dunner DL, et al. Prospective, long-term, multicenter study of the naturalistic outcomes of patients with treatment-resistant depression. J Clin
+Psychiatry 2006; 67:688–695.
+18. Cleare A, et al. Evidence-based guidelines for treating depressive disorders with antidepressants: A revision of the 2008 British Association
+for Psychopharmacology guidelines. J Psychopharmacol 2015; 29:459–525.
+19. Marwood L, et al. Study protocol for a randomised pragmatic trial comparing the clinical and cost effectiveness of lithium and quetiapine
+augmentation in treatment resistant depression (the LQD study). BMC Psychiatry 2017; 17:231.
+20. Bauer M, et al. Role of lithium augmentation in the management of major depressive disorder. CNS Drugs 2014; 28:331–342.
+21. Young AH. Lithium for long-term treatment of unipolar depression. Lancet Psychiatry 2017; 4:511–512.
+22. Cipriani A, et al. Lithium versus antidepressants in the long-term treatment of unipolar affective disorder. Cochrane Database Syst Rev 2006;
+CD003492.
+23. Abou-Saleh MT, et al. Lithium in the episode and suicide prophylaxis and in augmenting strategies in patients with unipolar depression. Int
+J Bipolar Disord 2017; 5:11.
+24. Correll CU, et al. Biological treatment of acute agitation or aggression with schizophrenia or bipolar disorder in the inpatient setting. Ann
+Clin Psychiatry 2017; 29:92–107.
+25. Sirois F. Steroid psychosis: a review. Gen Hosp Psychiatry 2003; 25:27–33.
+26. Aydin M, et al. Continuing clozapine treatment with lithium in schizophrenic patients with neutropenia or leukopenia: brief review of literature with case reports. Ther Adv Psychopharmacol 2016; 6:33–38.
+27. Harris EC, et al. Excess mortality of mental disorder. Br J Psychiatry 1998; 173:11–53.
+28. Cipriani A, et al. Lithium in the prevention of suicide in mood disorders: updated systematic review and meta-analysis. BMJ 2013; 346:f3646.
+29. Hayes JF, et al. Self-harm, unintentional injury, and suicide in bipolar disorder during maintenance mood stabilizer treatment: a UK population-based electronic health records study. JAMA Psychiatry 2016; 73:630–637.
+30. Nolen WA, et al. The association of the effect of lithium in the maintenance treatment of bipolar disorder with lithium plasma levels: a post
+hoc analysis of a double-blind study comparing switching to lithium or placebo in patients who responded to quetiapine (Trial 144). Bipolar
+Disord 2013; 15:100–109.
+31. Severus WE, et al. What is the optimal serum lithium level in the long-term treatment of bipolar disorder–a review? Bipolar Disord 2008;
+10:231–237.
+32. Moore CM, et al. Brain-to-serum lithium ratio and age: an in vivo magnetic resonance spectroscopy study. Am J Psychiatry 2002;
+159:1240–1242.
+33. Gov.UK Guidance. CMA to investigate the supply of bipolar drug. Press release. 2020; https://www.gov.uk/government/news/
+cma-to-investigate-the-supply-of-bipolar-drug.
+34. Bowen RC, et al. Less frequent lithium administration and lower urine volume. Am J Psychiatry 1991; 148:189–192.
+35. Ljubicic D, et al. Lithium treatments: single and multiple daily dosing. Can J Psychiatry 2008; 53:323–331.
+36. Gong R, et al. What we need to know about the effect of lithium on the kidney. Am J Physiol Renal Physiol 2016; 311:F1168–F1171.
+37. Aiff H, et al. Effects of 10 to 30 years of lithium treatment on kidney function. J Psychopharmacol 2015; 29:608–614.
+38. Frye MA, et al. Depressive relapse during lithium treatment associated with increased serum thyroid-stimulating hormone: results from two
+placebo-controlled bipolar I maintenance studies. Acta Psychiatr Scand 2009; 120:10–13.
+39. Johnston AM, et al. Lithium-associated clinical hypothyroidism. Prevalence and risk factors. Br J Psychiatry 1999; 175:336–339.
+40. Livingstone C, et al. Lithium: a review of its metabolic adverse effects. J Psychopharmacol 2006; 20:347–355.
+41. McKnight RF, et al. Lithium toxicity profile: a systematic review and meta-analysis. Lancet 2012; 379:721–728.
+42. Czarnywojtek A, et al. Effect of lithium carbonate on the function of the thyroid gland: mechanism of action and clinical implications. J
+Physiol Pharmacol 2020; 71: [Epub ahead of print].
+43. Ott M, et al. Lithium intoxication: incidence, clinical course and renal function – a population-based retrospective cohort study. J
+Psychopharmacol 2016; 30:1008–1019.
+44. Bell AJ, et al. Lithium neurotoxicity at normal therapeutic levels. Br J Psychiatry 1993; 162:689–692.
+45. Smith FE, et al. 3D (7)Li magnetic resonance imaging of brain lithium distribution in bipolar disorder. Mol Psychiatry 2018;
+23:2184–2191.
+46. Gerrett D, et al. Prescribing and monitoring lithium therapy: summary of a safety report from the National Patient Safety Agency. BMJ 2010;
+341:c6258.
+47. Morriss R, et al. Lithium and eGFR: a new routinely available tool for the prevention of chronic kidney disease. Br J Psychiatry 2008;
+193:93–95.
+48. National Patient Safety Agency. Safer lithium therapy. NPSA/2009/PSA005. 2009 (Last updated August 2018); https://www.sps.nhs.uk/arti
+cles/npsa-alert-safer-lithium-therapy-2009.
+49. Collins N, et al. Standards of lithium monitoring in mental health trusts in the UK. BMC Psychiatry 2010; 10:80.
+50. Paton C, et al. Monitoring lithium therapy: the impact of a quality improvement programme in the UK. Bipolar Disord 2013; 15:865–875.
+51. Kirkham E, et al. Impact of active monitoring on lithium management in Norfolk. Ther Adv Psychopharmacol 2013; 3:260–265.
+
+CHAPTER 2
+
+Bipolar disorder  255
+
+
+
+
+<<<PAGE 320>>>
+
+13. Cipriani A, et al. Valproic acid, valproate and divalproex in the maintenance treatment of bipolar disorder. Cochrane Database Syst Rev 2013;
+10:CD003196.
+14. Geddes JR, et al. Lithium plus valproate combination therapy versus monotherapy for relapse prevention in bipolar I disorder (BALANCE):
+a randomised open-label trial. Lancet 2010; 375:385–395.
+15. Kemp DE, et al. A 6-month, double-blind, maintenance trial of lithium monotherapy versus the combination of lithium and divalproex for
+rapid-cycling bipolar disorder and Co-occurring substance abuse or dependence. J Clin Psychiatry 2009; 70:113–121.
+16. Smith LA, et al. Effectiveness of mood stabilizers and antipsychotics in the maintenance phase of bipolar disorder: a systematic review of
+randomized controlled trials. Bipolar Disorders 2007; 9:394–412.
+17. Cipriani A, et al. Lithium in the prevention of suicidal behavior and all-cause mortality in patients with mood disorders: a systematic review
+of randomized trials. Am J Psychiatry 2005; 162:1805–1819.
+18. Kessing LV, et al. Suicide risk in patients treated with lithium. Arch Gen Psychiatry 2005; 62:860–866.
+19. Young AH, et al. Lithium in maintenance therapy for bipolar disorder. J Psychopharmacol 2006; 20:17–22.
+20. Song J, et al. Suicidal behavior during lithium and valproate treatment: a within-individual 8-year prospective study of 50,000 patients with
+bipolar disorder. Am J Psychiatry 2017; 174:795–802.
+21. Mander AJ, et al. Rapid recurrence of mania following abrupt discontinuation of lithium. Lancet 1988; 2:15–17.
+22. Faedda GL, et al. Outcome after rapid vs gradual discontinuation of lithium treatment in bipolar disorders. Arch Gen Psychiatry 1993;
+50:448–455.
+23. Macritchie KA, et al. Does ‘rebound mania’ occur after stopping carbamazepine? A pilot study. J Psychopharmacol 2000; 14:266–268.
+24. Franks MA, et al. Bouncing back: is the bipolar rebound phenomenon peculiar to lithium? A retrospective naturalistic study. J Psychopharmacol
+2008; 22:452–456.
+25. Kessing LV, et al. Starting lithium prophylaxis early v. late in bipolar disorder. Br J Psychiatry 2014; 205:214–20.
+26. Kessing LV, et al. Valproate v. lithium in the treatment of bipolar disorder in clinical practice: observational nationwide register-based cohort
+study. Brit J Psychiatry 2011; 199:57–63.
+27. Gao K, et al. Typical and atypical antipsychotics in bipolar depression. J Clin Psychiatry 2005; 66:1376–1385.
+28. Hellewell JS. A review of the evidence for the use of antipsychotics in the maintenance treatment of bipolar disorders. J Psychopharmacol
+2006; 20:39–45.
+29. Gigante AD, et al. Long-acting injectable antipsychotics for the maintenance treatment of bipolar disorder. CNS Drugs 2012; 26:403–420.
+30. National Institute for Health and Care Excellence. Bipolar disorder: assessment and management. Clinical Guidance [CG185]. 2014 (Last
+updated February 2020); https://www.nice.org.uk/guidance/cg185.
+31. Vieta E, et al. Efficacy and safety of quetiapine in combination with lithium or divalproex for maintenance of patients with bipolar I disorder
+(international trial 126). J Affect Disord 2008; 109:251–263.
+32. McIntyre RS. Aripiprazole for the maintenance treatment of bipolar I disorder: A review. Clin Ther 2010; 32 Suppl 1:S32–S38.
+33. Ghaemi SN, et al. Long-term risperidone treatment in bipolar disorder: 6-month follow up. Int Clin Psychopharmacol 1997; 12:333–338.
+34. Lindstrom L, et al. Maintenance therapy with second generation antipsychotics for bipolar disorder – A systematic review and meta-analysis.
+J Affect Disord 2017; 213:138–150.
+35. Szegedi A, et al. Randomized, double-blind, placebo-controlled trial of asenapine maintenance therapy in adults with an acute manic or mixed
+episode associated with bipolar I disorder. Am J Psychiatry 2017; 175:71–79.
+36. Bowden CL, et al. Efficacy of valproate versus lithium in mania or mixed mania: a randomized, open 12-week trial. Int Clin Psychopharmacol
+2010; 25:60–67.
+37. Kishi T, et al. Mood stabilizers and/or antipsychotics for bipolar disorder in the maintenance phase: a systematic review and network metaanalysis of randomized controlled trials. Mol Psychiatry 2020. [Epub ahead of print].
+38. Escudero MAG, et al. Second generation antipsychotics monotherapy as maintenance treatment for bipolar disorder: a systematic review of
+long-term studies. Psychiatr Q 2020; 91:1047–1060.
+39. Calabrese JR, et al. Efficacy and safety of aripiprazole once-monthly in the maintenance treatment of bipolar i disorder: a double-blind,
+placebo-controlled, 52-week randomized withdrawal study. J Clin Psychiatry 2017; 78:324–331.
+40. Kishi T, et al. Long-acting injectable antipsychotics for prevention of relapse in bipolar disorder: a systematic review and meta-analyses of
+randomized controlled trials. Int J Neuropsychopharmacol 2016; 19.
+41. Hsieh MH, et al. Bipolar patients treated with long-acting injectable risperidone in Taiwan: A 1-year mirror-image study using a national
+claims database. J Affect Disord 2017; 218:327–334.
+42. Nolen WA, et al. What is the optimal serum level for lithium in the maintenance treatment of bipolar disorder? A systematic review and
+recommendations from the ISBD/IGSLI Task Force on treatment with lithium. Bipolar Disord 2019; 21:394–409.
+43. Freeman MP, et al. Mood stabilizer combinations: a review of safety and efficacy. Am J Psychiatry 1998; 155:12–21.
+44. Muzina DJ, et al. Maintenance therapies in bipolar disorder: focus on randomized controlled trials. Aust N Z J Psychiatry 2005;
+39:652–661.
+45. Tohen M, et al. Relapse prevention in bipolar I disorder: 18-month comparison of olanzapine plus mood stabiliser v. mood stabiliser alone.
+Br J Psychiatry 2004; 184:337–345.
+46. Paton C, et al. Lithium in bipolar and other affective disorders: prescribing practice in the UK. J Psychopharmacol 2010; 24:1739–1746.
+47. Marcus R, et al. Efficacy of aripiprazole adjunctive to lithium or valproate in the long-term treatment of patients with bipolar I disorder with
+an inadequate response to lithium or valproate monotherapy: a multicenter, double-blind, randomized study. Bipolar Disord 2011;
+13:133–144.
+
+CHAPTER 2
+
+Bipolar disorder  299
+
+
+
+
+<<<PAGE 324>>>
+
+dose should be offered, with withdrawal symptoms (Table 2.12) and symptoms monitored for 2–4 weeks to ensure stability.
+■■ Further reductions should be titrated against the tolerability of this dose decrease.
+Reductions should probably be made according to an exponentially reducing pattern,
+whereby each reduction is calculated as a fixed proportion (e.g. 10–25%) of the most
+recent dose (effectively becoming smaller and smaller as the total dose becomes
+lower) each month or so, or until stability is assured.
+■■ Occasionally, the final dose before completely stopping may be very small, because
+small doses have relatively large effects on target receptors. To achieve small doses,
+liquid preparations (lithium) or tablet cutters (valproate and carbamazepine) will be
+required.
+■■ As the process of reducing lithium or mood stabilisers might be destabilising, it may
+be wise to pursue other strategies during the tapering period.20 Ongoing monitoring
+may be necessary for a number of months after complete cessation to ensure
+stability.
+■■ If withdrawal symptoms or symptoms of relapse emerge at any point, pausing the
+reduction, a small increase in dose or returning to a previously effective dose are all
+possible responses. Difficulty reducing medication does not preclude a further attempt
+at reduction, but might indicate the need for a more gradual reduction regimen.
+■■ Other modalities for people with BD, including family therapy, interpersonal therapy,
+cognitive behavioural therapy, psychoeducation and social rhythm therapy, may be
+considered as well as more individualised, idiosyncratic medication strategies.21–23
+
+References
+1. Öhlund L, et al. Correction to: reasons for lithium discontinuation in men and women with bipolar disorder: a retrospective cohort study.
+BMC Psychiatry 2018; 18:322.
+2. Suppes T, et al. Risk of recurrence following discontinuation of lithium treatment in bipolar disorder. Arch Gen Psychiatry 1991;
+48:1082–1088.
+3. Franks MA, et al. Bouncing back: is the bipolar rebound phenomenon peculiar to lithium? A retrospective naturalistic study. J Psychopharmacol
+2008; 22:452–456.
+4. Ferrie L, et al. Effect of chronic lithium and withdrawal from chronic lithium on presynaptic dopamine function in the rat. J Psychopharmacol
+2005; 19:229–234.
+5. Balon R, et al. Lithium discontinuation: withdrawal or relapse? Compr Psychiatry 1988; 29:330–334.
+6. Vernachio K, et al. A review of withdraw strategies for discontinuing antiepileptic therapy in epilepsy and pain management. Pharm
+Pharmacol Int J 2015; 3:232–235.
+7. Baastrup PC, et al. Prophylactic lithium: double blind discontinuation in manic-depressive and recurrent-depressive disorders. Lancet 1970;
+2:326–330.
+8. Klein E, et al. Discontinuation of lithium treatment in remitted bipolar patients: relationship between clinical outcome and changes in sleepwake cycles. J Nerv Ment Dis 1991; 179:499–501.
+9. Nolen WA, et al. What is the optimal serum level for lithium in the maintenance treatment of bipolar disorder? A systematic review and
+recommendations from the ISBD/IGSLI Task Force on treatment with lithium. Bipolar Disord 2019; 21:394–409.
+10. Geddes JR, et al. Long-term lithium therapy for bipolar disorder: systematic review and meta-analysis of randomized controlled trials. Am J
+Psychiatry 2004; 161:217–222.
+11. Moncrieff J. Lithium: evidence reconsidered. Br J Psychiatry 1997; 171:113–119
+12. Faedda GL, et al. Lithium discontinuation: uncovering latent bipolar disorder? Am J Psychiatry 2001; 158:1337–1339.
+13. Goodwin GM. Recurrence of mania after lithium withdrawal. Implications for the use of lithium in the treatment of bipolar affective disorder. Br J Psychiatry 1994; 164:149–152.
+14. Kessing LV, et al. Effectiveness of maintenance therapy of lithium vs other mood stabilizers in monotherapy and in combinations: a systematic
+review of evidence from observational studies. Bipolar Disord 2018; 20:419–431
+15. Faedda GL, et al. Outcome after rapid vs gradual discontinuation of lithium treatment in bipolar disorders. Arch Gen Psychiatry 1993;
+50:448–455.
+
+CHAPTER 2
+
+Bipolar disorder  303
+
+
+
+
+<<<PAGE 570>>>
+
+Children and adolescents  549
+
+Table 5.1 Summary of RCT evidence on medication used in youth with bipolar mania
+Medication
+
+Comments
+
+Lithium
+
+Lithium is cleared relatively quickly in children so twice daily dosing will be required,
+especially when using liquid or non-modified release preparations.20 One double-blind
+placebo-controlled randomised trial21 showed significant reductions in substance use and
+clinical ratings after 6 weeks, in 25 adolescents with BD and comorbid substance misuse. In
+a double-blind placebo-controlled discontinuation trial (N = 40) over 2 weeks, no significant
+difference in relapse rates were found between lithium and placebo22
+A later double-blind placebo-controlled study (N = 81), over 8 weeks, demonstrated a
+significantly larger change in YMRS score in lithium-treated youth, but with a differentiation
+from the placebo group only appearing after 6 weeks of treatment. There was a significant
+increase in thyrotropin with lithium, but no difference in weight gain23
+Lithium and divalproex did not differ in an 18-month maintenance trial in youths (N = 60),
+who initially stabilised on the combination pharmacotherapy of lithium and divalproex.24
+However, given the compelling evidence for lithium maintenance and prophylaxis in adults,
+we recommend that clinicians consider its use in adolescents in preference to valproate
+
+Valproate
+
+In an RCT (N = 150)28 divalproex ER (titrated to clinical response or 80–125mg/L) did not
+lead to significant differences in mean YMRS compared with placebo at 4 weeks (also see
+risperidone and quetiapine sections below)
+
+Oxcarbazepine
+
+A double-blind placebo-controlled study (N = 116) did not show significant differences
+between placebo and oxcarbazepine (mean dose 1,515mg/day) in reducing mania rating at
+7 weeks29
+
+Olanzapine
+
+A double-blind, placebo-controlled study (N = 161)30 showed olanzapine (5–20mg/day) to
+be significantly more effective than placebo in YMRS mean score reduction over a period of
+3 weeks. Note the higher weight gain in the treatment group (weight gain was 3.7kg for
+olanzapine versus 0.3kg for placebo) and the associated significantly increased fasting
+glucose, total cholesterol, AST, ALT and uric acid
+
+Risperidone
+
+A double-blind, placebo-controlled study (N = 169) showed risperidone (at doses 0.5–2.5 or
+3–6mg) to be significantly more effective than placebo in YMRS mean score reduction in a
+3-week follow up.31 The lower dose seems to lead to same benefits at a lower risk of side
+effects. Sleepiness and fatigue were common in the treatment arms. Note, mean weight
+increase in treatment groups (0.7kg versus 1.7kg for the low and 1.4 for the high dose arm)
+In the Treatment of Early Age Mania (TEAM) study, higher response rates (and metabolic side
+effects) occurred with risperidone (mean dose of 2.57mg) versus lithium (mean level of
+1.09mmol/L) and divalproex sodium (mean level of 113.6mg/L).32 A randomised follow-up of
+this study, showed again the superiority of risperidone as an alternative treatment for
+non-responders to lithium and divalproex sodium, and as an add-on treatment to partially
+responders to the two MS.33 However, these results need to be interpreted with caution as the
+definition of mania was broad and different to how bipolar disorder is defined by most UK
+clinicians. Similar reasons provoke caution when considering another placebo-controlled
+double-blind trial showing significantly better results for risperidone (mean dose 0.5mg) versus
+valproic acid (mean level 81mg/L) in 3–7 years old children supposedly diagnosed with mania34
+(Continued)
+
+CHAPTER 5
+
+A meta analysis25 found lithium to be ‘clearly inferior’ to risperidone in mania. One small
+6-month study found higher relapse rates in those who discontinued lithium compared
+with those who continued.26 Another naturalistic 8-month study showed lithium to be
+effective and well tolerated27
+
+
+
+
+<<<PAGE 711>>>
+
+690  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Treatment with mood stabilisers
+Lithium completely equilibrates across the placenta.183
+Lithium exposure during pregnancy has been associated with an increased risk of
+congenital anomalies.184 The risk is higher in the first trimester185 and maybe be higher
+at higher doses.184 Although the overall risk of major malformations in infants
+exposed in utero has probably been overestimated in the past lithium should be
+avoided in pregnancy if possible. However, if lithium is the best drug for the woman
+and the drug most likely to keep her well the woman should be advised of the
+increased risk but supported to stay on lithium.
+■■ If discontinuation is planned slow discontinuation before conception is the preferred
+course of action34,186 because abrupt discontinuation is suspected of worsening the
+risk of relapse. The relapse rate postpartum may be as high as 70% in women who
+discontinued lithium before conception.187 If discontinuation is unsuccessful during
+pregnancy restart and continue.
+■■ Lithium use during pregnancy has a well-known association with the cardiac malformation Ebstein’s anomaly. However, more recent data suggest that the magnitude of
+the effect is much smaller than previously estimated.188,189 Furthermore, a large surveillance study of 5.6 million births found an association with maternal mental health
+problems generally rather than specifically with lithium.190
+■■ The period of maximum risk to the foetus is 2–6 weeks after conception,191 before
+many women know that they are pregnant. The risk of atrial and ventricular septal
+defects may also be increased.31
+■■ If lithium is continued during pregnancy, high-resolution ultrasound and echocardiography should be performed in liaison with foetal medicine obstetric services.
+■■ In the third trimester, the use of lithium may be problematic because of changing
+pharmacokinetics: an increasing dose of lithium is required to maintain the lithium
+level during pregnancy as total body water increases, but the requirements return
+abruptly to pre-pregnancy levels immediately after delivery.192 NICE recommends
+lithium plasma be adjusted to maintain the plasma level within the woman’s therapeutic range and that lithium should be stopped during active labour and the plasma
+level checked 12 hours after her last dose.16,193 Women taking lithium should deliver
+in hospital where fluid balance can be monitored and maintained.
+■■ A large cohort study reported that lithium was not associated with placenta-mediated
+complications or preterm birth.194
+■■ Lithium use may increase the risk of neonatal readmission within 4 weeks
+postpartum.185
+■■ Neonatal goitre, hypotonia, lethargy and cardiac arrhythmia can occur.
+■■ Most data relating to carbamazepine, valproate and lamotrigine come from studies
+in epilepsy, a condition associated with increased neonatal malformation. These data
+may not be precisely relevant to use in mental illness.
+■■ Both carbamazepine and valproate have a clear causal link with increased risk of a
+variety of foetal abnormalities, particularly neural tube defects including spina
+bifida.195 Both drugs should be avoided, if possible, and an antipsychotic prescribed
+instead. Valproate confers a higher risk (around 10% for major malformations) than
+carbamazapine196–198 and should not be used in women of child-bearing age except
+■■
+
+CHAPTER 7
+
+■■
+
+

@@ -1,0 +1,543 @@
+<<<PAGE 11>>>
+
+110 propranolol
+111 protriptyline
+112 quazepam
+113 quetiapine
+114 ramelteon
+115 reboxetine
+116 risperidone
+117 rivastigmine
+118 selegiline
+119 sertindole
+120 sertraline
+121 sildenafil
+122 sodium oxybate
+123 solriamfetol
+124 sulpiride
+125 suvorexant
+126 tasimelteon
+127 temazepam
+128 thioridazine
+129 thiothixene
+130 tiagabine
+131 tianeptine
+132 topiramate
+133 tranylcypromine
+134 trazodone
+135 triazolam
+136 trifluoperazine
+137 trihexyphenidyl
+
+
+
+
+<<<PAGE 1780>>>
+
+Generally more weight gain and sexual dysfunction than with
+tranylcypromine
+MAOIs are generally reserved for third- or fourth-line use after SSRIs,
+SNRIs, and combinations of newer antidepressants have failed
+Patient should be advised not to take any prescription or over-thecounter drugs without consulting their doctor because of possible drug
+interactions with the MAOI
+Headache is often the first symptom of hypertensive crisis
+The rigid dietary restrictions may reduce compliance (see Table 2 after
+Pearls)
+Mood disorders can be associated with eating disorders (especially in
+adolescent females), and phenelzine can be used to treat both
+depression and bulimia
+
+✽ Myths about the danger of dietary tyramine can be exaggerated, but
+prohibitions against concomitant drugs often not followed closely
+enough
+Orthostatic hypotension, insomnia, and sexual dysfunction are often
+the most troublesome common side effects
+
+✽ MAOIs should be for the expert, especially if combining with agents
+of potential risk (e.g., stimulants, trazodone, TCAs)
+
+✽ MAOIs should not be neglected as therapeutic agents for the
+treatment-resistant
+For treatment-resistant patients, experts can give a tricyclic/tetracyclic
+antidepressant other than clomipramine or imipramine simultaneously
+
+
+
+
+<<<PAGE 2033>>>
+
+Although there is theoretically a 3-day reservoir of drug in each patch,
+multiday administration from a single patch is generally not
+recommended and has not been tested; because of residual drug in the
+patch after 24 hours of administration, discard used patches in a
+manner that prevents accidental application or ingestion by children,
+pets, or others
+For Parkinson’s disease, oral dosage above 10 mg/day generally not
+recommended
+Dosage of carbidopa-levodopa can at times be reduced by 10–30%
+after 2–3 days of administering oral selegiline 5–10 mg/day in
+Parkinson’s disease
+At doses above 10 mg/day (oral), selegiline may become nonselective
+and inhibit both MAO-A and MAO-B
+At doses above 30 mg/day (oral), selegiline may have antidepressant
+properties
+Patients receiving high oral doses may need to be evaluated
+periodically for effects on the liver
+Doses above 10 mg/day (oral) may increase the risk of hypertensive
+crisis, tyramine interactions, and drug interactions similar to those of
+phenelzine and tranylcypromine
+Overdose
+Overdose with the transdermal formulation is likely to produce
+substantial amounts of MAO-A inhibition as well as MAO-B
+
+
+
+
+<<<PAGE 2248>>>
+
+Tranylcypromine
+
+Therapeutics
+Brands
+Parnate
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin, norepinephrine,
+dopamine multimodal enzyme inhibitor (SN-MM)
+Monoamine oxidase inhibitor (MAOI)
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive episode without melancholia
+Treatment-resistant depression
+Treatment-resistant panic disorder
+Treatment-resistant social anxiety disorder
+How the Drug Works
+
+
+
+
+<<<PAGE 2257>>>
+
+Patient and prescriber must be vigilant to potential interactions with
+any drug, including antihypertensives and over-the-counter cough/cold
+preparations
+Over-the-counter medications to avoid include cough and cold
+preparations, including those containing dextromethorphan (serotonin
+reuptake inhibitor), nasal decongestants (tablets, drops, or spray), hayfever medications, sinus medications, asthma inhalant medications,
+anti-appetite medications, weight reducing preparations, “pep” pills
+(see Table 3 after Pearls)
+Hypoglycemia may occur in diabetic patients receiving insulin or oral
+antidiabetic agents, although more so with hydrazine MAOIs than
+with tranylcypromine
+Use cautiously in patients receiving reserpine, anesthetics, disulfiram,
+metrizamide, anticholinergic agents
+Tranylcypromine is not recommended for use in patients who cannot
+be monitored closely
+Table 2. Dietary guidelines for patients taking MAOIs*
+Foods to avoid**
+
+Foods allowed
+
+Dried, aged, smoked, fermented,
+spoiled, or improperly stored meat,
+poultry, and fish
+
+Fresh or processed meat, poultry,
+and fish; properly stored pickled or
+smoked fish
+
+Broad bean pods
+
+All other vegetables
+
+
+
+
+<<<PAGE 2260>>>
+
+If patient has cardiovascular or cerebrovascular disease until cleared
+by the patient’s medical doctor
+If patient is taking a prohibited drug
+If patient is not compliant with a low-tyramine diet
+If there is a proven allergy to tranylcypromine
+
+Special Populations
+Renal Impairment
+Use with caution –drug may accumulate in plasma
+May require lower than usual adult dose
+Hepatic Impairment
+Tranylcypromine should be used cautiously in patients with history of
+hepatic impairment or in patients with abnormal liver function tests
+Cardiac Impairment
+Contraindicated in patients with cardiac impairment unless cleared by
+the patient’s medical doctor
+Elderly
+Initial dose often lower than usual adult dose
+Elderly patients may have greater sensitivity to adverse effects, but
+many tolerate MAOIs
+
+
+
+
+<<<PAGE 2264>>>
+
+The rigid dietary restrictions may reduce compliance (see Table 2 after
+Pearls)
+Mood disorders can be associated with eating disorders (especially in
+adolescent females), and tranylcypromine can be used to treat both
+depression and bulimia
+
+✽ Myths about the danger of dietary tyramine can be exaggerated, but
+prohibitions against concomitant drugs often not followed closely
+enough
+Orthostatic hypotension, insomnia, and sexual dysfunction are often
+the most troublesome common side effects
+
+✽ MAOIs should be for the expert, especially if combining with agents
+of potential risk (e.g., stimulants, trazodone, TCAs)
+
+✽ MAOIs should not be neglected as therapeutic agents for the
+treatment-resistant
+For treatment-resistant patients, experts can give a tricyclic/tetracyclic
+antidepressant other than clomipramine or imipramine simultaneously
+with an MAOI for patients who fail to respond to numerous other
+antidepressants
+Use of MAOIs with clomipramine is always prohibited because of the
+risk of serotonin syndrome and death due to serotonin reuptake
+inhibition
+Amoxapine may be the preferred trycyclic/tetracyclic antidepressant to
+combine with an MAOI in heroic cases due to its theoretically
+protective 5HT2A antagonist properties
+
+
+
+
+<<<PAGE 2265>>>
+
+If this option is elected, start the MAOI with the tricyclic/tetracyclic
+antidepressant simultaneously at low doses after appropriate drug
+washout, then alternately increase doses of these agents every few
+days to a week as tolerated
+Although very strict dietary and concomitant drug restrictions must be
+observed to prevent hypertensive crises and serotonin syndrome, the
+most common side effects of MAOI and tricyclic/tetracyclic
+combinations may be weight gain and orthostatic hypotension
+
+Suggested Reading
+Gillman K. PsychoTropical Research (PTR). http://psychotropical.com .
+Gillman PK . A reassessment of the safety profile of monoamine oxidase
+inhibitors: elucidating tired old tyramine myths . J Neural Transm (Vienna)
+2018 ;125 (11 ):1707 –17 .
+Ricken R , Ulrich S , Schlattmann P , Adli M . Tranylcypromine in mind (part
+II): review of clinical pharmacology and meta-analysis of controlled studies in
+depression . Eur Neuropsychopharmacol 2017 ;27 (8 ):714 –31
+Ulrich S , Ricken R , Adli M . Tranylcypromine in mind (part I): review of
+pharmacology . Eur Neuropsychopharmacol 2017 ;27 (8 ):697 –13 .
+Ulrich S , Ricken R , Buspavanich P , Schlattmann P , Adli M . Efficacy and
+adverse effects of tranylcypromine and tricyclic antidepressants in the
+treatment of depression: a systematic review and comprehensive metaanalysis . J Clin Psychopharmacol 2020 ;40 (1 ):63 –74 .
+
+
+
+
+<<<PAGE 2592>>>
+
+Imavate (imipramine), 367
+Imipramiin (imipramine), 367
+Imipramin (imipramine), 367
+imipramine, 367
+Imovane (zopiclone), 879
+Inadalprem (lorazepam), 437
+Inderal (propranolol), 653
+Inderal LA (propranolol), 653
+Ingrezza (valbenazine), 825
+InnoPran XL (propranolol), 653
+Insom (flunitrazepam), 297
+Intermezzo (zolpidem), 871
+Intuniv (guanfacine), 343
+Invega (paliperidone), 581
+Invega Sustenna (paliperidone injectable), 581
+Invega Trinza (paliperidone), 581
+Ipnovel (midazolam), 499
+Iremo Sedofren (trifluoperazine), 803
+Iremofar (hydroxyzine), 355
+isocarboxazid, 375
+Ivadal (zolpidem), 871
+Ixel (milnacipran), 503
+Janimine (imipramine), 367
+Januar (oxazepam), 569
+Jardin (dothiepin), 249
+Jatroneural (trifluoperazine), 803
+Jatrosom (tranylcypromine), 787
+Jatrosom N (tranylcypromine), 787
+
+
+
+
+<<<PAGE 2607>>>
+
+Parmodalin (tranylcypromine), 787
+Parmodalin (trifluoperazine), 803
+Parnate (tranylcypromine), 787
+paroxetine, 593
+paroxetine CR, 593
+Parstelin (tranylcypromine), 787
+Parstelin (trifluoperazine), 803
+Pasrin (buspirone), 123
+Pax (diazepam), 229
+Paxal (alprazolam), 11
+Paxam (clonazepam), 173
+Paxil (paroxetine), 593
+Paxil CR (paroxetine CR), 593
+Paxium (chlordiazepoxide), 147
+Paxtibi (nortriptyline), 551
+Pazolan (alprazolam), 11
+Pefanium/Pefanic (chlordiazepoxide), 147
+Peratsin (perphenazine), 607
+Peratsin Dekanoaatti (perphenazine), 607
+Peratsin Enantaati (perphenazine), 607
+Perfenazin (perphenazine), 607
+Peridol (haloperidol), 347
+Permitil (fluphenazine), 313
+perospirone, 601
+perphenazine, 607
+Perseris (risperidone injection), 687
+Pertofrane (desipramine), 207
+Pertofrin (desipramine), 207
+
+
+
+
+<<<PAGE 2622>>>
+
+Tranquipam (lorazepam), 437
+Tranquirit (diazepam), 229
+Tranquo (oxazepam), 569
+Tranquo/Tablinen (diazepam), 229
+Transene (clorazepate), 185
+Tranxene (clorazepate), 185
+Tranxilen (clorazepate), 185
+Tranxilium (clorazepate), 185
+tranylcypromine, 787
+Tranzen (clorazepate), 185
+Travin (buspirone), 123
+Trazepam (oxazepam), 569
+trazodone, 793
+trazodone XR, 793
+Trazolan (trazodone), 793
+Tremorex (selegiline), 705
+Trepiline (amitriptyline), 25
+Tresleen (sertraline), 721
+Trevicta (paliperidone), 581
+Trevilor (venlafaxine), 841
+Trewilor (venlafaxine), 841
+triazolam, 799
+Triazoral (triazolam), 799
+Trifluo perazin (trifluoperazine), 803
+trifluoperazine, 803
+trihexyphenidyl, 809
+triiodothyronine, 813
+Trilafon (perphenazine), 607
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2639>>>
+
+maprotiline , 465
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+mianserin, 495
+milnacipran, 503
+mirtazapine , 509
+moclobemide, 515
+modafinil (adjunct), 521
+nefazodone , 545
+nortriptyline , 551
+olanzapine, 559
+paliperidone, 581
+paroxetine , 593
+phenelzine , 613
+protriptyline , 657
+quetiapine (adjunct) , 667
+reboxetine, 681
+risperidone, 687
+selegiline , 705
+sertindole, 715
+sertraline , 721
+sulpiride, 741
+tianeptine, 777
+tranylcypromine , 787
+trazodone , 793
+triiodothyronine, 813
+trimipramine , 817
+venlafaxine , 841
+
+
+
+
+<<<PAGE 2647>>>
+
+lofexidine , 427
+naltrexone , 537
+Panic disorder
+alprazolam , 11
+citalopram, 159
+clonazepam , 173
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine, 325
+isocarboxazid, 375
+lorazepam, 437
+mirtazapine, 509
+nefazodone, 545
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+reboxetine, 681
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Parkinson’s disease
+selegiline , 705
+zonisamide, 875
+Parkinson’s disease dementia
+
+
+
+
+<<<PAGE 2656>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine , 325
+isocarboxazid, 375
+moclobemide, 515
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Stress urinary incontinence
+duloxetine, 263
+Tardive dyskinesia
+deutetrabenazine , 221
+valbenazine , 825
+Tetanus
+chlorpromazine , 153
+Tourette’s syndrome/tic disorders
+aripiprazole , 53
+clonidine, 179
+guanfacine, 343
+haloperidol , 347
+pimozide , 627
+
+
+
+
+<<<PAGE 2660>>>
+
+nortriptyline, 551
+paroxetine, 593
+phenelzine, 613
+protriptyline, 657
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+triiodothyronine, 813
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Antipsychotics
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine, 153
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine, 313
+haloperidol, 347
+
+
+
+
+<<<PAGE 2663>>>
+
+oxazepam, 569
+paroxetine, 593
+phenelzine, 613
+prazosin, 643
+pregabalin, 647
+propranolol, 653
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine (adjunct), 771
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+trifluoperazine, 803
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+Attention deficit hyperactivity disorder treatments
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+chlorpromazine, 153
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+lisdexamfetamine, 409
+
+

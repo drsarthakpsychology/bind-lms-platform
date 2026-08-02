@@ -1,0 +1,531 @@
+<<<PAGE 10>>>
+
+82 methylphenidate (d,l)
+83 mianserin
+84 midazolam
+85 milnacipran
+86 mirtazapine
+87 moclobemide
+88 modafinil
+89 molindone
+90 nalmefene
+91 naltrexone
+92 naltrexone/bupropion
+93 nefazodone
+94 nortriptyline
+95 olanzapine
+96 oxazepam
+97 oxcarbazepine
+98 paliperidone
+99 paroxetine
+100 perospirone
+101 perphenazine
+102 phenelzine
+103 phentermine/topiramate
+104 pimavanserin
+105 pimozide
+106 pipothiazine
+107 pitolisant
+108 prazosin
+109 pregabalin
+
+
+
+
+<<<PAGE 220>>>
+
+Alpha 1 antagonists such as prazosin may block the therapeutic
+actions of armodafinil
+Some controlled trials suggest efficacy in bipolar depression as an
+adjunct to atypical antipsychotics
+
+Suggested Reading
+Darwish M , Kirby M , Hellriegel ET , Robertson P Jr . Interaction profile
+of armodafinil with medications metabolized by cytochrome P450 enzymes
+1A2, 3A4, and 2C19 in healthy subjects . Clin Pharmacokinet 2008 ;47 (1
+):61 –74 .
+Darwish M , Kirby M , Hellriegel ET , Robertson P Jr. Armodafinil and
+modafinil have substantially different pharmacokinetic profiles despite
+having the same terminal half-lives: analysis of data from three randomized,
+single-dose, pharmacokinetic studies . Clin Drug Investig 2009 ;29 (9
+):613–23 .
+Garnock-Jones KP , Dhillon S , Scott LJ . Armodafinil . CNS Drugs 2009
+;23 (9 ):793 –803 .
+
+
+
+
+<<<PAGE 1077>>>
+
+Aggressive symptoms
+Pearls
+Not approved for mania, but all atypical antipsychotics approved for
+acute treatment of schizophrenia have proven effective in the acute
+treatment of mania as well
+Seems to have placebo-level drug-induced parkinsonism, including
+little or no akathisia
+Potent alpha 1 blocking properties suggest potential utility in PTSD
+(e.g., nightmares, as for prazosin)
+Binding properties suggest theoretical efficacy in depression, but
+studies and clinical experience are required to confirm this
+QTc warning similar to that for ziprasidone, where this has not
+materialized into a significant clinical problem
+A 4-week depot preparation is in clinical testing
+Early studies indicate iloperidone’s efficacy may be linked to
+pharmacogenomic markers such as ciliary neurotrophic factor
+(CNTF), and others
+Patients with inadequate responses to atypical antipsychotics may
+benefit from determination of plasma drug levels and, if low, a
+dosage increase even beyond the usual prescribing limits
+For treatment-resistant patients, especially those with impulsivity,
+aggression, violence, and self-harm, long-term polypharmacy with 2
+atypical antipsychotics or with 1 atypical antipsychotic and 1
+
+
+
+
+<<<PAGE 1524>>>
+
+after a drug holiday; such wearing off is less likely with intermittent
+dosing
+
+✽ Compared to stimulants, modafinil has a novel mechanism of
+action, novel therapeutic uses, and less abuse potential, but is often
+inaccurately classified as a stimulant
+Alpha 1 antagonists such as prazosin may block the therapeutic
+actions of modafinil
+The active R enantiomer of modafinil, called armodafinil, is also
+available
+
+Suggested Reading
+Batejat DM , Lagarde DP . Naps and modafinil as countermeasures for the
+effects of sleep deprivation on cognitive performance . Aviat Space Environ
+Med 1999 ;70 :493–8 .
+Bourdon L , Jacobs I , Bateman WA , Vallerand AL . Effect of modafinil on
+heat production and regulation of body temperatures in cold-exposed
+humans . Aviat Space Environ Med 1994 ;65 :999 –1004 .
+Cox JM , Pappagallo M . Modafinil: a gift to portmanteau . Am J Hosp
+Palliat Care 2001 ;18 :408–10 .
+Jasinski DR , Koyacevic-Ristanovic. Evaluation of the abuse liability of
+modafinil and other drugs for excessive daytime sleepiness associated with
+narcolepsy . Clin Neuropharmacol 2000 ;23 :149–56 .
+
+
+
+
+<<<PAGE 1851>>>
+
+Prazosin
+
+Therapeutics
+Brands
+Minipress
+see index for additional brand names
+Generic?
+Yes
+Class
+Alpha 1 adrenergic blocker
+Commonly Prescribed for
+(bold for FDA approved)
+Hypertension
+Nightmares associated with PTSD
+Blood circulation disorders
+Problems urinating due to enlarged prostate
+Passing of kidney stones
+How the Drug Works
+
+
+
+
+<<<PAGE 1852>>>
+
+Blocks alpha 1 adrenergic receptors to reduce noradrenergic
+hyperactivation
+Stimulation of central noradrenergic receptors during sleep may
+activate traumatic memories, so blocking this activation may reduce
+nightmares
+How Long Until It Works
+Within a few days to a few weeks
+If It Works
+Reduces the severity and frequency of nightmares associated with
+PTSD
+If It Doesn’t Work
+Increase dose
+Switch to another agent
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Prazosin is itself an adjunct agent for the treatment of nightmares
+associated with PTSD
+Tests
+None for healthy individuals
+
+
+
+
+<<<PAGE 1853>>>
+
+False-positive results may occur in screening tests for
+pheochromocytoma in patients who are being treated with prazosin;
+if an elevated urinary VMA is found, prazosin should be
+discontinued and the patient retested after a month
+
+Side Effects
+How Drug Causes Side Effects
+Excessive blockade of alpha 1 peripheral noradrenergic receptors
+Notable Side Effects
+Dizziness, lightheadedness, headache, fatigue, blurred vision
+Nausea
+Life-Threatening or Dangerous Side Effects
+Syncope with sudden loss of consciousness
+Weight Gain
+Reported but not expected
+Sedation
+Occurs in significant minority
+
+
+
+
+<<<PAGE 1855>>>
+
+Initial 1 mg at bedtime; increase dose (divided) until the nightmares
+resolve or an intolerable side effect occurs
+Dosing Tips
+Dosing may be extremely individualized, with as little as 2 mg/day
+helpful for some patients and as much as 40 mg/day necessary for
+other patients
+Therapeutic dose does not correlate with blood levels
+Divided dosing may be preferable; in particular, giving a smaller
+dose during the day may be beneficial if the patient has persistent
+hyperarousal and re-experiencing symptoms during the day
+Risk of syncope can be decreased by limiting the initial dose to 1
+mg and using slow dose titration
+Overdose
+No fatalities have been reported; sedation, depressive reflexes,
+hypotension
+Long-Term Use
+Has not been evaluated in controlled studies
+Nightmares may return if prazosin is stopped
+Habit Forming
+No
+
+
+
+
+<<<PAGE 1856>>>
+
+How to Stop
+Taper to avoid hypertension
+Pharmacokinetics
+Elimination half-life 2–3 hours
+Drug Interactions
+Concomitant use with a phosphodiesterase-5 (PDE-5) inhibitor can
+have additive effects on blood pressure, potentially leading to
+hypotension; thus, a PDE-5 inhibitor should be initiated at the
+lowest possible dose
+Concomitant use with a beta blocker (e.g., propranolol) can have
+additive effects on blood pressure
+Concomitant use with other alpha 1 blockers, which include many
+psychotropic agents, can have additive effects leading to
+hypotension
+Other Warnings/Precautions
+Prazosin can cause syncope with sudden loss of consciousness, most
+often in association with rapid dose increases or the introduction of
+another antihypertensive drug
+Intraoperative floppy iris syndrome (IFIS) has been observed during
+cataract surgery in some patients treated with alpha 1 adrenergic
+blockers, which may require modifications to the surgical technique;
+
+
+
+
+<<<PAGE 1857>>>
+
+however, there does not appear to be a benefit of stopping the alpha
+1 adrenergic blocker prior to cataract surgery
+Avoid situations that can cause orthostatic hypotension, such as
+extensive periods of standing, prolonged or intense exercise, and
+exposure to heat
+Do Not Use
+If there is a proven allergy to quinazolines or prazosin
+
+Special Populations
+Renal Impairment
+Use with caution in patients with severe impairment
+May require lower dose
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Use with caution in patients who are predisposed to hypotensive or
+syncopal episodes
+Elderly
+Some patients may tolerate lower doses better
+
+
+
+
+<<<PAGE 1858>>>
+
+Higher risk of orthostatic hypotension and syncope
+Children and Adolescents
+Safety and efficacy have not been established
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+Prazosin has been used alone or in combination with other
+hypotensive agents in severe hypertension of pregnancy, with no
+fetal or neonatal abnormalities reported
+Prazosin should be used during pregnancy only if the potential
+benefits justify the potential risks to the mother and fetus
+Breast Feeding
+Some drug is present in breast milk
+If child becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+
+
+
+
+<<<PAGE 1859>>>
+
+Must weigh benefits of breast feeding with risks and benefits of
+treatment versus nontreatment to both the infant and the mother
+
+The Art of Psychopharmacology
+Potential Advantages
+For patients with PTSD who do not respond to SSRIs/SNRIs or
+exposure therapy
+Specifically for nightmares and other symptoms of autonomic
+arousal
+Potential Disadvantages
+Patients with cardiovascular disease
+Patients taking concomitant psychotropic drugs with alpha 1
+antagonist properties
+Primary Target Symptoms
+Nightmares
+Pearls
+The evidence base for using prazosin to treat nightmares associated
+with PTSD is limited but positive, and prazosin is recommended by
+the Department of Veterans Affairs as an adjunct treatment for this
+purpose
+
+
+
+
+<<<PAGE 1860>>>
+
+Initiate treatment early in the onset of nightmares following
+exposure to trauma
+May also be useful for nightmares and symptoms of autonomic
+arousal in other trauma and stress-related disorders in addition to
+PTSD
+
+Suggested Reading
+Kung S , Espinel Z , Lapid MI . Treatment of nightmares with prazosin: a
+systematic review . Mayo Clin Proc 2012 ;87 (9 ):890 –900 .
+Schoenfeld FB , Deviva JC , Manber R . Treatment of sleep disturbances in
+posttraumatic stress disorder: a review . J Rehabil Res Dev 2012 ;49 (5
+):729–52 .
+Van Berkel VM , Bevelander SE , Mommersteeg PM . Placebo-controlled
+comparison of prazosin and cognitive-behavioral treatments for sleep
+disturbances in US Military Veterans . J Psychosom Res 2012 ;73 (2 ):153 .
+
+
+
+
+<<<PAGE 1886>>>
+
+Propranolol can increase adverse effects of gabapentin and
+benzodiazapines
+Propranolol can increase levels of lidocaine, resulting in toxicity,
+and increase the anticoagulant effect of warfarin
+Increased postural hypotension with prazosin and peripheral
+ischemia with ergot alkaloids
+Sudden discontinuation of clonidine while on beta blockers or when
+stopping together can cause life-threatening increases in blood
+pressure
+Other Warnings/Precautions
+May elevate blood urea, serum transaminases, alkaline phosphatase,
+and lactate dehydrogenase (LDH)
+Rare development of antinuclear antibodies (ANAs)
+May worsen symptoms of myasthenia gravis
+Can lower intraocular pressure, interfering with glaucoma screening
+test
+Do Not Use
+If patient has bradycardia, greater than first-degree heart block, or
+cardiogenic shock
+If patient has bronchial asthma or severe COPD
+If there is a proven allergy to propranolol
+
+
+
+
+<<<PAGE 2600>>>
+
+Mialin (alprazolam), 11
+Mianeurin (mianserin), 495
+Miansan (mianserin), 495
+mianserin, 495
+Miansin (mianserin), 495
+Miaxan (mianserin), 495
+midazolam, 499
+Milithin (lithium), 415
+milnacipran, 503
+Minipress (prazosin), 643
+Minizide (prazosin), 643
+Mipralin (imipramine), 367
+Mirbanil (sulpiride), 741
+Mirenil (fluphenazine), 313
+Mirenil Prolongatum (fluphenazine), 313
+Mirfat (clonidine), 179
+Mirfudorm (oxazepam), 569
+Mirpan (maprotiline), 465
+mirtazapine, 509
+Moban (molindone), 527
+Mocloamine (moclobemide), 515
+moclobemide, 515
+modafinil, 521
+Modalina (trifluoperazine), 803
+Modecate (fluphenazine), 313
+Modiodal (modafinil), 521
+Moditen (fluphenazine), 313
+Moditen Action Prolongee (fluphenazine), 313
+
+
+
+
+<<<PAGE 2609>>>
+
+PMS-Fluphenazine Decanoate (fluphenazine), 313
+PMS-Haloperidol (haloperidol), 347
+PMS-Hydroxyzine (hydroxyzine), 355
+PMS-Lithium (lithium), 415
+PMS-Methylphenidate (d,l-methylphenidate), 487
+PMS-Trazodone (trazodone), 793
+Podium (diazepam), 229
+Poldoxin (doxepin), 255
+Polysal (amitriptyline), 25
+Portal (fluoxetine), 301
+Pragmarel (trazodone), 793
+Praxiten (oxazepam), 569
+prazosin, 643
+pregabalin, 647
+Priadel (lithium), 415
+Prisdal (citalopram), 159
+Prisma (mianserin), 495
+Pristiq (desvenlafaxine), 215
+Probuphine (buprenorphine), 111
+ProCentra (amphetamine d), 39
+Pro Dorm (lorazepam), 437
+Procythol (selegiline), 705
+Prolixin (fluphenazine), 313
+Prolixin Decanoate (fluphenazine), 313
+Prolixin Enanthate (fluphenazine), 313
+Prolongatum (fluphenazine), 313
+Pronervon T (temazepam), 755
+Propam (diazepam), 229
+
+
+
+
+<<<PAGE 2642>>>
+
+prazosin , 643
+propranolol , 653
+Hypoactive sexual desire disorder
+bremelanotide , 95
+flibanserin , 289
+Insomnia
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+clomipramine, 165
+clonazepam, 173
+desipramine, 207
+diazepam, 229
+diphenhydramine , 235
+dothiepin, 249
+doxepin , 255
+estazolam , 281
+eszopiclone , 285
+flunitrazepam, 297
+flurazepam , 321
+hydroxyzine, 355
+imipramine, 367
+lemborexant , 395
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+
+
+
+
+<<<PAGE 2649>>>
+
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+mirtazapine, 509
+nefazodone, 545
+olanzapine, 558
+paliperidone, 580
+paroxetine , 593
+prazosin (nightmares) 643
+propranolol (prophylactic) 653
+quetiapine, 667
+risperidone, 687
+sertraline , 721
+venlafaxine, 841
+ziprasidone, 863
+Premenstrual dysphoric disorder
+alprazolam, 11
+citalopram, 159
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+Preoperative anxiety
+chlordiazepoxide , 147
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2663>>>
+
+oxazepam, 569
+paroxetine, 593
+phenelzine, 613
+prazosin, 643
+pregabalin, 647
+propranolol, 653
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine (adjunct), 771
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+trifluoperazine, 803
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+Attention deficit hyperactivity disorder treatments
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+chlorpromazine, 153
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+lisdexamfetamine, 409
+
+

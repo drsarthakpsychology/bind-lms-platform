@@ -1,0 +1,701 @@
+<<<PAGE 284>>>
+
+Recording Procedures
+The name of the substance/medication-induced bipolar and related disorder begins with the
+specific substance (e.g., cocaine, dexamethasone) that is presumed to be causing the bipolar
+mood symptoms. The diagnostic code is selected from the table included in the criteria set,
+which is based on the drug class and presence or absence of a comorbid substance use disorder.
+For substances that do not fit into any of the classes (e.g., dexamethasone), the code for “other
+(or unknown) substance” should be used; and in cases in which a substance is judged to be an
+etiological factor but the specific class of substance is unknown, the same code should also be
+used.
+When recording the name of the disorder, the comorbid substance use disorder (if any) is
+listed first, followed by the word “with,” followed by the name of the substance-induced bipolar
+and related disorder, followed by the specification of onset (i.e., onset during intoxication, onset
+during withdrawal). For example, in the case of irritable symptoms occurring during intoxication
+in a man with a severe cocaine use disorder, the diagnosis is F14.24 severe cocaine use disorder
+with cocaine-induced bipolar and related disorder, with onset during intoxication. A separate
+diagnosis of the comorbid severe cocaine use disorder is not given. If the substance-induced
+bipolar and related disorder occurs without a comorbid substance use disorder (e.g., after a onetime heavy use of the substance), no accompanying substance use disorder is noted (e.g., F15.94
+amphetamine-induced bipolar and related disorder, with onset during intoxication). When more
+than one substance is judged to play a significant role in the development of bipolar mood
+symptoms, each should be listed separately (e.g., F15.24 severe methylphenidate use disorder
+with methylphenidate-induced bipolar and related disorder, with onset during intoxication;
+F19.94 dexamethasone-induced bipolar and related disorder, with onset during intoxication).
+164
+
+Diagnostic Features
+The essential feature of substance/medication-induced bipolar and related disorder is a prominent
+and persistent disturbance in mood that predominates in the clinical picture and is characterized
+by abnormally elevated, expansive, or irritable mood and abnormally increased activity or energy
+(Criterion A); these symptoms are judged to be attributable to the effects of a substance (e.g., a
+drug of abuse, a medication, or a toxin exposure) (Criterion B).
+To meet criteria for the diagnosis, the abnormally elevated, expansive, or irritable mood and
+increased activity or energy must have developed during or soon after substance intoxication or
+withdrawal or after exposure to or withdrawal from a medication, as evidenced by clinical
+history, physical examination, or laboratory findings (Criterion B1), and the involved
+substance/medication must be capable of producing the abnormally elevated, expansive, or
+irritable mood and increased activity or energy (Criterion B2). In addition, the abnormally
+elevated, expansive, or irritable mood and increased activity or energy are not better explained
+by a non-substance/medication-induced bipolar and related disorder.
+Evidence of an independent bipolar and related disorder includes the observation that the
+abnormally elevated, expansive, or irritable mood and increased activity or energy preceded the
+onset of substance/medication use, the symptoms persist beyond a substantial period of time after
+the cessation of acute withdrawal or severe intoxication (i.e., usually longer than 1 month), or
+
+
+
+
+<<<PAGE 332>>>
+
+medication.
+
+Recording Procedures
+The name of the substance/medication-induced depressive disorder begins with the specific
+substance (e.g., cocaine, dexamethasone) that is presumed to be causing the depressive
+symptoms. The diagnostic code is selected from the table included in the criteria set, which is
+based on the drug class and presence or absence of a comorbid substance use disorder. For
+substances that do not fit into any of the classes (e.g., dexamethasone), the code for “other (or
+unknown) substance” should be used; and in cases in which a substance is judged to be an
+etiological factor but the specific class of substance is unknown, the same code should also be
+used.
+When recording the name of the disorder, the comorbid substance use disorder (if any) is
+listed first, followed by the word “with,” followed by the name of the substance-induced
+depressive disorder, followed by the specification of onset (i.e., onset during intoxication, onset
+during withdrawal). For example, in the case of depressive symptoms occurring during
+withdrawal in a man with a severe cocaine use disorder, the diagnosis is F14.24 severe cocaine
+use disorder with cocaine-induced depressive disorder, with onset during withdrawal. A separate
+diagnosis of the comorbid severe cocaine use disorder is not given. If the substance-induced
+depressive disorder occurs without a comorbid substance use disorder (e.g., after a one-time
+heavy use of the substance), no accompanying substance use disorder is noted (e.g., F16.94
+phencyclidine-induced depressive disorder, with onset during intoxication). When more than one
+substance is judged to play a significant role in the development of depressive
+203
+mood symptoms, each should be listed separately (e.g., F15.24 severe methylphenidate use
+disorder with methylphenidate-induced depressive disorder, with onset during withdrawal;
+F19.94 dexamethasone-induced depressive disorder, with onset during intoxication).
+
+Diagnostic Features
+The essential feature of substance/medication-induced depressive disorder is a prominent and
+persistent disturbance in mood that predominates in the clinical picture and is characterized by
+depressed mood or markedly diminished interest or pleasure in all, or almost all, activities
+(Criterion A) that is due to the direct physiological effects of a substance (e.g., a drug of abuse, a
+medication, or a toxin exposure) (Criterion B). In order to meet criteria for the diagnosis, the
+depressive symptoms must have developed during or soon after substance intoxication or
+withdrawal or after exposure to or withdrawal from a medication, as evidenced by clinical
+history, physical examination, or laboratory findings (Criterion B1), and the involved
+substance/medication must be capable of producing the depressive symptoms (Criterion B2). In
+addition, the depressed symptoms are not better explained by a non-substance/medicationinduced depressive disorder.
+Evidence of an independent depressive disorder includes the observation that the depressive
+symptoms preceded the onset of substance/medication use, the depressive symptoms persist
+beyond a substantial period of time after the cessation of acute withdrawal or severe intoxication,
+
+
+
+
+<<<PAGE 400>>>
+
+substance and the symptoms develop during intoxication.
+With onset during withdrawal: If criteria are met for withdrawal from the
+substance and the symptoms develop during, or shortly after, withdrawal.
+With onset after medication use: If symptoms developed at initiation of
+medication, with a change in use of medication, or during withdrawal of
+medication.
+
+Recording Procedures
+The name of the substance/medication-induced anxiety disorder begins with the specific
+substance (e.g., cocaine, salbutamol) that is presumed to be causing the anxiety symptoms. The
+diagnostic code is selected from the table included in the criteria set, which is based on the drug
+class and presence or absence of a comorbid substance use disorder. For substances that do not
+fit into any of the classes (e.g., salbutamol), the code for “other (or unknown) substance” should
+be used; and in cases in which a substance is judged to be an etiological factor but the specific
+class of substance is unknown, the same code should also be used.
+To record the name of the disorder, the comorbid substance use disorder (if any) is listed
+first, followed by “with substance/medication-induced anxiety disorder” (incorporating the name
+of the specific etiological substance/medication), followed by the specification of onset (i.e.,
+onset during intoxication, onset during withdrawal, with onset after medication use). For
+example, in the case of anxiety symptoms occurring during withdrawal in a man with a severe
+lorazepam use disorder, the diagnosis is F13.280 severe lorazepam use disorder with lorazepaminduced anxiety disorder, with onset during withdrawal. A separate diagnosis of the comorbid
+severe lorazepam use disorder is not given. If the substance-induced anxiety disorder occurs
+without a comorbid substance use disorder (e.g., after a one-time
+257
+heavy use of the substance), no accompanying substance use disorder is noted (e.g., F16.980
+psilocybin-induced anxiety disorder, with onset during intoxication). When more than one
+substance is judged to play a significant role in the development of anxiety symptoms, each
+should be listed separately (e.g., F15.280 severe methylphenidate use disorder with
+methylphenidate-induced anxiety disorder, with onset during intoxication; F19.980 salbutamolinduced anxiety disorder, with onset after medication use).
+
+Diagnostic Features
+The essential features of substance/medication-induced anxiety disorder are prominent
+symptoms of panic or anxiety (Criterion A) that are judged to be due to the effects of a substance
+(e.g., a drug of abuse, a medication, or a toxin exposure). The panic or anxiety symptoms must
+have developed during or soon after substance intoxication or withdrawal or after exposure to or
+withdrawal from a medication, and the substances or medications must be capable of producing
+the symptoms (Criterion B2). Substance/medication-induced anxiety disorder due to a prescribed
+treatment for a mental disorder or another medical condition must have its onset while the
+individual is receiving the medication (or during withdrawal, if a withdrawal is associated with
+
+
+
+
+<<<PAGE 865>>>
+
+Diagnostic Features
+Stimulants are a type of psychoactive substance that increases activity in the brain and can
+temporarily elevate alertness, mood, and awareness. Stimulants covered in this chapter include
+amphetamine and prescription stimulants with similar effects (e.g., methylphenidate) and
+cocaine. Substance-related disorders involving certain other substances with stimulant properties
+are classified in other sections of this chapter. These include caffeine (in caffeine-related
+disorders),
+nicotine
+(in
+tobacco-related
+disorders),
+and
+MDMA
+(3,4methylenedioxymethamphetamine; in other hallucinogen-related disorders), which has both
+stimulant and hallucinogenic effects.
+Given that the effects of amphetamine-type substances are similar to those of cocaine,
+amphetamine-related disorders and cocaine-related disorders are grouped under the single rubric
+“stimulant-related disorders.” Amphetamine-type substances (and other or unspecified
+stimulants) and cocaine have different ICD-10-CM codes (e.g., F15.10 mild amphetamine-type
+substance use disorder, F14.10 mild cocaine use disorder). The particular stimulant used by the
+individual is recorded in the diagnosis (e.g., “methamphetamine withdrawal,” “methylphenidate
+use disorder,” “cocaine intoxication”).
+The amphetamine-type substances include stimulants with a substituted phenylethylamine
+structure, such as amphetamine, dextroamphetamine, and methamphetamine. Also included are
+substances that are structurally different but have similar effects, such as methylphenidate,
+modafinil, and armodafinil. These amphetamine-type substances are usually taken orally or
+intravenously, although methamphetamine is also taken by the nasal route. In addition to the
+synthetic amphetamine-type compounds, there are naturally occurring, plant-derived stimulants
+such as khât, as well as synthetic chemical khât analogs, called cathinones.
+Amphetamines and other stimulants may be obtained by prescription for the treatment of
+obesity, attention-deficit/hyperactivity disorder, and narcolepsy. Consequently, prescribed
+stimulants may be diverted into the illegal market.
+Cocaine, a naturally occurring substance produced by the coca plant, is consumed in several
+preparations (e.g., coca leaves, coca paste, cocaine hydrochloride, and cocaine alkaloids such as
+freebase and crack) that differ in potency because of varying levels of purity and speed of onset.
+However, in all of the forms, cocaine is the active ingredient. Cocaine hydrochloride powder is
+usually “snorted” through the nostrils or dissolved in water and injected intravenously. Crack and
+other cocaine alkaloids are easily vaporized and inhaled, and thus their effects have an extremely
+rapid onset.
+Individuals exposed to amphetamine-type substances or cocaine can develop stimulant use
+disorder as rapidly as 1 week, although the onset is not always this rapid. Regardless of the route
+of administration, tolerance occurs with repeated use. Withdrawal symptoms, particularly
+hypersomnia, increased appetite, and dysphoria, can occur and can enhance craving. Most
+individuals with stimulant use disorder have experienced tolerance or withdrawal.
+Use patterns and course are similar for disorders involving amphetamine-type substances and
+cocaine, as both are potent central nervous system stimulants with similar psychoactive and
+sympathomimetic effects. Amphetamine-type substances are longer acting than cocaine and thus
+are used fewer times per day. Usage may be chronic or episodic, with binges punctuated by brief
+non-use periods. Aggressive or violent behavior is common when high doses are smoked,
+ingested, or administered intravenously. Intense temporary anxiety resembling panic disorder or
+
+
+
+
+<<<PAGE 867>>>
+
+Indians/Alaskan Natives.
+Among U.S. adults, 6.6% (annual average) used prescription stimulants overall; 4.5% used
+without misuse, 1.9% misused without use disorders, and 0.2% had use disorders. While nonHispanic Whites are more likely to use prescription stimulants nonmedically, Hispanics tend to
+use them more frequently and have higher rates of prescription stimulant use disorder.
+Stimulant use disorder: cocaine. Estimated 12-month prevalence of cocaine use disorder in the
+United States is 0.4% among individuals 12 years and older. Rates are 0.1% among individuals
+ages 12–17 years, 0.7% among those ages 18–25 years, and 0.3% among those age 26 and older.
+Rates are 0.5% for men and 0.2% for women, overall. Rates are 0.4% among African Americans
+and non-Hispanic Whites, 0.3% in Hispanics, and < 0.1% among Asian Americans.
+637
+
+Development and Course
+In the United States, stimulant use disorder occurs throughout all levels of society and is more
+common among individuals ages 18–25 years compared with individuals ages 12–17 or 26 years
+and older. On average, first regular use among individuals in treatment occurs at approximately
+age 23 years. For primary methamphetamine treatment admissions, the average age is 34 years,
+and for primary cocaine treatment admissions, the average age is 44 years for smoked cocaine
+and 37 years for other routes.
+Some persons begin stimulant use to control weight or to improve performance in school,
+work, or athletics. Initial use may include obtaining medications such as methylphenidate or
+amphetamine salts prescribed to others for the treatment of attention-deficit/hyperactivity
+disorder. Among primary treatment admissions for amphetamine-type substance use in the
+United States, 61% reported smoking, 26% reported injecting, and 9% reported snorting,
+suggesting that stimulant use disorder can develop from multiple modes of administration.
+Patterns of stimulant administration include episodic or daily (or almost daily) use. Episodic
+use (e.g., intense use over a weekend or on one or more weekdays) tends to be separated by 2 or
+more days of nonuse. “Binges” involve continuous high-dose use over hours or days and are
+often associated with physical dependence. Binges usually terminate only when stimulant
+supplies are depleted or exhaustion ensues. Chronic daily use may involve high or low doses,
+often with an increase in dose over time.
+Stimulant smoking and intravenous use are associated with rapid progression to severe-level
+stimulant use disorder, often occurring over weeks to months. Intranasal use of cocaine and oral
+use of amphetamine-type substances result in more gradual progression occurring over months to
+years. With continued use, there is a diminution of pleasurable effects because of tolerance and
+an increase in dysphoric effects.
+
+Risk and Prognostic Factors
+Temperamental.
+
+Comorbid bipolar disorder, schizophrenia, antisocial personality disorder, and
+other substance use disorders are risk factors for developing stimulant use disorder and for
+relapse to cocaine use in treatment samples. Higher stress reactivity has been correlated with
+frequency of cocaine use in some U.S. treatment samples. Conduct disorder in childhood and
+antisocial personality disorder are associated with the development of stimulant-related
+
+
+
+
+<<<PAGE 1075>>>
+
+contractions (increased muscle tone) and postures that develop in association with use of a
+medication known to cause acute dystonia. Any medication that blocks dopamine D2-like
+receptors can induce an acute dystonic reaction (ADR). Most commonly, ADRs occur after
+exposure to antipsychotics and antiemetic and promotility agents. A variety of other medication
+classes are also reported to have induced ADRs, including selective serotonin reuptake
+inhibitors, cholinesterase inhibitors, opioids, and methylphenidate.
+Dystonic reactions vary greatly in severity and location and can be focal, segmented, or
+generalized. They most often affect head and neck muscles, but can extend to upper and lower
+limbs or trunk. A common presentation is acute oro-mandibular (jaw) dystonia involving the
+tongue and mouth with tongue protrusion, or gaping or grimacing postures that can impair
+speech (dysarthria) and swallowing (dysphagia) and may evolve into frank trismus (lockjaw).
+Involvement of ocular muscles (oculogyric crisis) manifests as involuntary forced and sustained
+conjugate deviations of eyes upward, downward, or sideways that can last minutes to hours.
+Blepharospasm can also occur. Cervical (neck) dystonia presents as abnormal forward,
+backward, lateral, or twisting positions of the head and neck in relation to the body (e.g.,
+antecollis, retrocollis, laterocollis, and torticollis). Focal limb dystonia, generally more distal
+than proximal, Pisa syndrome (lateral bending of the trunk with a tendency to lean to one side),
+and back arching that may evolve into opisthotonos (backward arching of head, neck, and spine)
+can also occur. Acute laryngeal dystonia is life-threatening, causing airway obstruction, and
+manifests as a “clutching of the throat,” stridor, dysphonia, dysphagia, dyspnea, and respiratory
+distress from the medication effects on vocal cords and laryngeal muscles.
+At least 50% of individuals develop ADR signs or symptoms within 24–48 hours of starting
+or rapidly raising the dose of antipsychotic medication or other dopamine receptor blocking
+agent or of reducing a medication being used to treat or prevent acute extrapyramidal symptoms
+(e.g., anticholinergic agents). Approximately 90% of affected individuals have onset of ADRs
+within 5 days. The symptoms must not be better accounted for by a mental disorder (e.g.,
+catatonia) and must not be due to a primary neurological or other medical condition, or a tardive
+medication-induced movement disorder.
+Fear and anxiety often accompany ADRs given their intense nature, inability of the
+individual to control or stop the movements, and, when present, difficulty breathing, speaking, or
+swallowing. Some individuals experience pain or cramps in affected muscles. Individuals who
+are unaware of the possibility of developing a medication-induced dystonia can be especially
+distressed, increasing the likelihood of subsequent medication nonadherence. Thought disorder,
+delusions, or mannerisms in an individual with psychosis may cause the affected individual or
+others to mistakenly regard his or her dystonic symptoms as a feature of the psychiatric
+condition, which could lead to increased doses of the causative medication. The risk of
+developing ADRs is greatest in children and in adults younger than age 40 with psychosis, with a
+greater incidence in males than females in both children and adults. Other risk factors for
+developing ADRs include prior dystonic reactions to antipsychotic medications or other
+dopamine receptor blocking agents and use of high-potency typical antipsychotic medications.
+
+Differential Diagnosis
+It is important to distinguish between medication-induced ADRs and other causes of dystonia,
+especially in individuals being treated with antipsychotic or other dopamine receptor blocking
+
+
+
+
+<<<PAGE 1115>>>
+
+13. Feeling that someone could hear
+your thoughts, or that you
+could hear what another
+person was thinking?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+VIII.
+
+14. Problems with sleep that
+affected your sleep quality
+overall?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+IX.
+
+15. Problems with memory (e.g.,
+learning new information) or
+with location (e.g., finding
+your way home)?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+X.
+
+16. Unpleasant thoughts, urges, or
+images that repeatedly enter
+your mind?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+17. Feeling driven to perform
+certain behaviors or mental
+acts over and over again?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+XI.
+
+18. Feeling detached or distant from
+yourself, your body, your
+physical surroundings, or
+your memories?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+XII.
+
+19. Not knowing who you really are
+or what you want out of life?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+20. Not feeling close to other
+people or enjoying your
+relationships with them?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+21. Drink at least 4 drinks of any
+kind of alcohol in a single
+day?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+22. Smoke any cigarettes, a cigar,
+or pipe, or use snuff or
+chewing tobacco?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+23. Use any of the following
+medicines ON YOUR OWN,
+that is, without a doctor’s
+prescription, in greater
+amounts or longer than
+prescribed [e.g., painkillers
+(like Vicodin), stimulants
+(like Ritalin or Adderall),
+sedatives or tranquilizers
+(like sleeping pills or
+Valium), or drugs like
+marijuana, cocaine or crack,
+club drugs (like ecstasy),
+hallucinogens (like LSD),
+heroin, inhalants or solvents
+(like glue), or
+methamphetamine (like
+speed)]?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+XIII.
+
+849
+
+Parent/Guardian-Rated DSM-5 Level 1 Cross-Cutting Symptom
+Measure—Child Age 6–17
+
+
+
+
+<<<PAGE 1117>>>
+
+—that is, saw something or
+someone that no one else could
+see?
+X.
+
+16. Said that he/she had thoughts that
+kept coming into his/her mind
+that he/she would do something
+bad or that something bad
+would happen to him/her or to
+someone else?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+17. Said he/she felt the need to check
+on certain things over and over
+again, like whether a door was
+locked or whether the stove
+was turned off?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+18. Seemed to worry a lot about
+things he/she touched being
+dirty or having germs or being
+poisoned?
+
+0
+
+1
+
+2
+
+3
+
+4
+
+1
+
+2
+
+3
+
+4
+
+19. Said that he/she had to do things
+0
+in a certain way, like counting
+or saying special things out
+loud, in order to keep
+something bad from
+happening?
+In the past TWO (2) WEEKS, has your child …
+XI.
+
+XII.
+
+20. Had an alcoholic beverage (beer,
+wine, liquor, etc.)?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+21. Smoked a cigarette, a cigar, or
+pipe, or used snuff or chewing
+tobacco?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+22. Used drugs like marijuana,
+cocaine or crack, club drugs
+(like ecstasy), hallucinogens
+(like LSD), heroin, inhalants or
+solvents (like glue), or
+methamphetamine (like speed)?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+23. Used any medicine without a
+doctor’s prescription (e.g.,
+painkillers [like Vicodin],
+stimulants [like Ritalin or
+Adderall], sedatives or
+tranquilizers [like sleeping pills
+or Valium], or steroids)?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+24. In the past TWO (2) WEEKS,
+has he/she talked about wanting
+to kill himself/herself or about
+wanting to commit suicide?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+25. Has he/she EVER tried to kill
+himself/herself?
+
+❑ Yes
+
+❑ No
+
+❑ Don’t Know
+
+851
+
+Clinician-Rated Dimensions of Psychosis Symptom Severity
+As described in the chapter “Schizophrenia Spectrum and Other Psychotic Disorders,” psychotic
+disorders are heterogeneous, and symptom severity can predict important aspects of the illness,
+
+
+
+
+<<<PAGE 1348>>>
+
+Meditation, and depersonalization/derealization, 345
+Melancholic features, as specifier, 171–172, 211–212
+Memory. See also Cognitive deficits
+dissociative amnesia and, 329, 338, 339, 342–343
+major depressive disorder and, 186
+neurocognitive disorders and, 670, 685
+PTSD and loss of, 307
+sedative, hypnotic, or anxiolytic intoxication and, 627
+traumatic brain injury and, 313
+Menopause
+genito-pelvic pain/penetration disorder and, 497
+insomnia disorder and, 413
+obstructive sleep apnea and, 432
+schizophrenia and, 119
+Mental disorder(s). See also specific disorders definition of, 13–14, 29
+regrouping of in revision of DSM-5, 11–12
+Mental disorder due to another medical condition, 366
+Metabolic disorders, 132, 391
+Methadone, and methadone maintenance therapy, 436, 508, 612
+Methamphetamine (MDMA), 472, 508, 592, 594, 597, 635, 642, 714–715
+Methamphetamine use disorder, 547, 550
+Methylphenidate, and substance/medication-induced anxiety disorder, 257
+Mexican Americans. See also Hispanic Americans; Latinx
+binge-eating disorder in, 394
+vascular dementia in, 705
+Mexico, and religious or spiritual use of hallucinogens, 593
+Meyer, Adolf, 5
+Microaggressions, and racism, 17
+Mild neurocognitive disorder. See Major or mild neurocognitive disorders; Neurocognitive disorders
+Military deployment, and codes, 830–831. See also Veterans
+Mineral deficiencies, and pica, 372. See also Iron deficiency
+Minoritization. See Discrimination; Ethnicity; Oppression
+Misdiagnosis. See also Overdiagnosis; Underdiagnosis
+of ADHD as bipolar II disorder, 158
+of antisocial personality disorder, 751
+of autism spectrum disorder, 63, 65
+of bipolar disorders, 148, 150, 335
+of conduct disorder, 535
+cultural concepts of distress and, 873
+of intermittent explosive disorder, 528
+of major depressive disorder, 190
+of oppositional defiant disorder, 525
+of schizophrenia, 18, 116, 119, 147
+Mistrust. See also Distrust
+Cultural Formulation Interview and, 863
+paranoid personality disorder and, 740
+Mixed features, as specifier, 170–171, 211
+Monoamine oxidase inhibitors, and substance/medication-induced sexual dysfunction, 507
+Mood. See also Mood disorders
+bipolar disorders compared to disruptive mood dysregulation disorder, 181
+bulimia nervosa and, 392
+Clinician-Rated Dimensions of Psychosis Symptom Severity scale, 851
+insomnia disorder and, 412
+manic episodes and, 143–144
+neurocognitive disorders and, 684
+PTSD and negative alterations in, 306–307, 311
+
+1032
+
+

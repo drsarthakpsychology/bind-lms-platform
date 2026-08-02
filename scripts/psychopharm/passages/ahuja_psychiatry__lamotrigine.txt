@@ -1,0 +1,545 @@
+<<<PAGE 91>>>
+
+Mood Disorders
+
+iii. Bipolar depression
+There is recent evidence that quetiapine has antidepressant efficacy in bipolar depression.
+iv. Maintenance or prophylactic treatment in bipolar
+disorder
+Recent evidence shows that several atypical antipsychotics such as olanzapine, quetiapine and aripiprazole
+can be successfully used in the maintenance treatment
+of bipolar disorder.
+
+Other Mood Stabilisers
+The other mood stabilisers which are used in the treatment of bipolar mood disorders include:
+1. Sodium valproate
+• For acute treatment of mania and prevention of
+bipolar mood disorder.
+• Particularly useful in those patients who are refractory to lithium.
+• The dose range is usually 1000-3000 mg/day (the
+therapeutic blood levels are 50-125 mg/ml).
+• It has a faster onset of action than lithium, therefore, it can be used in acute treatment of mania
+effectively.
+2. Carbamazepine and Oxcarbazepine
+• For acute treatment of mania and prevention of
+bipolar mood disorder.
+• Particularly useful in those patients who are refractory to lithium and valproate.
+• Particularly effective when EEG is abnormal
+(although this is not necessary for the use of carbamazepine).
+• The dose range of carbamazepine is 600-1600 mg/
+day (the therapeutic blood levels are 4-12 mg/ml).
+• The use of carbamazepine in treatment of bipolar
+disorder has recently declined, partly due to its
+potential for drug interactions.
+• Oxcarbazepine has a narrow evidence base and its
+use in bipolar disorder is quite recent.
+3. Benzodiazepines
+Lorazepam (IV and orally) and clonazepam are used
+for the treatment of manic episode alone rarely; however, they have been used more often as adjuvants to
+antipsychotics.
+
+79
+
+4. Lamotrigine is particularly effective for bipolar
+depression and is recommended by several guidelines.
+5. T3 and T4 as adjuncts for the treatment of rapid cycling mood disorder and resistant depression.
+
+Other Treatments
+Psychosurgery is an extremely rarely used method
+of treatment and is resorted to only in exceptional
+circumstances.
+In depressive episode, which is either chronic or
+persistently recurrent with a limited or absent response
+to other modes of treatment, one of the following
+procedures may very rarely be performed:
+i. Stereotactic subcaudate tractotomy, or
+ii. Stereotactic limbic leucotomy.
+In carefully selected patients, the results are
+reported to be satisfactory. However, in the current
+day and age, psychosurgery is hardly ever considered
+in routine clinical practice.
+
+Psychosocial Treatment
+Although somatic treatment appears to be the primary
+mode of management in major mood disorders, psychosocial treatment is often helpful. These indications
+include:
+i. As an adjunct to somatic treatment.
+ii. In mild to moderate cases of depression.
+iii. Certain selected cases.
+These methods include (see Chapter 18 for details):
+
+Cognitive Behaviour Therapy
+Cognitive behaviour therapy (CBT) aims at correcting depressive negative cognitions (ideations) such
+as hopelessness, worthlessness, helplessness and pessimistic ideas, and replacing them by new cognitive
+and behavioural responses.
+CBT is useful in mild to moderate, non-bipolar
+depression and can be used with or without somatic
+treatment.
+
+Interpersonal Therapy
+Interpersonal therapy (IPT) attempts to recognise
+and explore interpersonal stressors, role disputes and
+
+
+
+
+<<<PAGE 197>>>
+
+Psychopharmacology
+
+It is essential to continue the antidepressant for a
+period of further 6 months after reaching remission, in
+the first episode of depressive disorder (and for longer
+duration in subsequent episodes) to prevent recurrence of symptoms. It is important to prescribe the
+antidepressant in the same dose as used for treatment
+unless there are adverse effects requiring a decrease
+in dose.
+Only when adequate doses (150-300 mg
+imipramine equivalent) have been administered for
+an adequate period (at least 6 weeks) without a clinical response then the drug can be called ineffective
+for that patient. Another drug, usually from a different
+class or group, or ECT may then be used.
+
+Side Effects and Toxicity
+The common side effects of antidepressants with their
+management are summarised in Table 15.7.
+TCAs are dangerous in overdose; amitriptyline
+and dosulepin (dotheipin) are particularly cardiotoxic
+whilst lofepramine is the safest amongst TCAs. Clinical features of overdose include agitation, delirium,
+paralytic ileus, urinary retention, coma, respiratory
+depression, seizures, hyperpyrexia, cardiac arrhythmias, conduction defects, mydriasis, and death. The
+lethal dose of imipramine is 1-2 g. (40-80 tabs. of
+25 mg imipramine equivalence).
+The treatment options in overdose include gastric
+lavage/induction of vomiting, activated charcoal for
+adsorption, cardio-respiratory resuscitation, treatment
+of seizures (if they occur), general supportive care
+and symptomatic management. Quinidine-like drugs
+are contraindicated whilst antiarrhythmics such as
+lignocaine can be helpful. Physostigmine 0.5 mg
+IV/IM bolus repeated to a total of 3-4 mg/day may
+be used under careful supervision. Coma often reverts
+in less than 24 hours, although toxicity lasts for
+5-6 days.
+Co-prescription of serotonergic drugs (such as
+SSRIs) with other serotonergic agents and especially
+MAOIs can lead to serotonin syndrome. It is characterised by a classic triad of mental status changes,
+neuromuscular abnormalities and autonomic hyper-
+
+185
+
+activity. These include anxiety, agitation, confusion,
+clonus (e.g. ankle clonus, ocular clonus), hyperreflexia, myoclonus, rigidity, increased heart rate, tremor,
+flushing, hyperthermia and excessive sweating. Death
+can occur in severe serotonin syndrome.
+Treatment includes discontinuation of the offending drug(s), supportive management and (sometimes)
+use of serotonin and histamine antagonist cyproheptadine.
+
+Refractory Depression
+About 20-35% of patients do not respond to the
+antidepressant therapy. The chief reasons for this
+non-response include:
+1. Poor drug concordance.
+2. Inadequate dosage.
+3. Insufficient treatment duration.
+4. Low plasma antidepressant levels.
+5. Incorrect diagnosis.
+Even when these important reasons are excluded,
+there still remains a group (15-20%) of depressed
+patients who are non-responders or poor-responders.
+Such patients should receive a trial of another antidepressant preferably from a different group (e.g. SNRI)
+for adequate duration. In case the patient still does not
+respond, the treatment of choice of refractory depression is electroconvulsive therapy (ECT), though other
+treatment choices (such as lithium augmentation) are
+also available.
+
+MOOD STABILISING DRUGS
+(DRUGS USED IN PROPHYLAXIS
+OF BIPOLAR DISORDER)
+These drugs are usually effective in treatment of mania and therefore the word antimanic is often used to
+describe them. But as they are effective in preventing
+mood swings in bipolar disorder, the better term is
+mood-stabilising agent or a prophylactic agent. The
+most commonly used mood-stabilising agents include
+lithium, valproate, carbamazepine, and lamotrigine,
+though there are several other experimental mood
+stabilisers such as oxcarbazepine.
+
+
+
+
+<<<PAGE 200>>>
+
+A Short Textbook of Psychiatry
+
+188
+Contd...
+Category and
+Side Effect
+2. Severe hepatic
+necrosis (rare)
+3. Hyperpyrexia
+
+4. Bleeding
+
+5. Hyponatraemia
+
+Probable Cause
+
+Maximum with
+(For example)
+
+Minimum with
+(For example)
+
+Management
+
+Toxic or
+Hypersensitive
+Interaction with
+tricyclics or
+meperidine
+Decreased
+platelet serotonin
+
+Iproniazid
+
+Tranylcypromine
+
+Not known
+
+Not known
+
+SSRIs
+
+Not known
+
+SSRIs
+SNRIs
+
+Not known;
+Probably MAOIs
+
+Stop/change drug. Supportive
+care; Death rate high.
+Stop drug. Keep a gap of
+1 week between imipramine
+and MAOI. Supportive care.
+Change drug. Do not coprescribe other drugs that
+increase risk of bleeding;
+Gastro-protective drugs such
+as PPIs can decrease risk
+to some extent in high-risk
+patients
+Risk higher in elderly; Avoid
+co-prescribing other drugs
+that cause hyponatraemia
+(such as diuretics); monitor
+closely
+
+Probably SIADH
+
+Recently, several atypical antipsychotics such as
+olanzapine, quetiapine and aripiprazole have been
+added to list of drugs used in maintenance treatment
+of bipolar disorder. In addition, other antipsychotics
+such as risperidone (and the others mentioned above)
+are also used as antimanic agents.
+Lamotrigine and Quetiapine (and its metabolite
+norquetiapine) appear to have particular efficacy for
+treatment of bipolar depression. There is a risk of skin
+rash with lamotrigine particularly early in treatment
+and the risk appears higher with faster escalation of
+dose as well as with co-prescription of valproate. It is
+therefore important to increase the dose of lamotrigine
+very gradually as suggested in the summary of product
+characteristics (SPC) and the dose prescribed depends
+on other co-prescribed drugs (such as carbamazepine
+and valproate).
+
+LITHIUM
+Lithium (Li) is an element (Atomic number 3 and
+Atomic weight 7) which is the smallest alkali ion.
+
+The element was discovered in 1817 by Arfuedson.
+Since then, it has been used for treatment of gout and
+for salt replacement in cardiac disease, but its use was
+restricted due to fatal toxicity.
+It was rediscovered in 1949 by John Cade, for use
+in treatment of mania but its potential went unrecognised as it was discovered in Australia. Mogen Schou
+in 1957, had to rediscover it yet again before it became
+popular as a treatment of mania.
+
+Indications
+Although lithium salts are used in treatment of a
+myriad of psychiatric and non-psychiatric disorders,
+the established indications are only the following
+ones:
+1. Treatment of acute mania
+2. Prophylaxis of bipolar mood disorder.
+In addition, the following may also constitute
+possible clinical indications of lithium use:
+3. Treatment of schizo-affective disorder
+4. Prophylaxis of unipolar mood disorder
+5. Treatment of cyclothymia
+
+
+
+
+<<<PAGE 204>>>
+
+192
+
+A Short Textbook of Psychiatry
+
+Rapid cycling bipolar disorder and mixed (or dysphoric) mania: The patients with rapid cycling, mixed
+affective episodes, or dysphoric mania are often
+resistant to lithium treatment and respond better to
+valproate. Valproate is also effective in management
+of ultra-rapid cycling mood disorders.
+Bipolar depression: Valproate appears to be generally
+more effective in the treatment of acute mania than in
+bipolar depression.
+
+The use of valproate in pregnancy and lactation
+should be best avoided. The NICE guidelines for treatment of bipolar disorder recommend that valproate is
+best avoided in women of childbearing potential (see
+Further Reading List).
+In overdose, the amount of drug, that is not protein
+bound, is high. Therefore, dialysis is useful in the
+management of an overdose with valproate.
+
+Neurological Disorders
+
+Certain drug may increase (such as aspirin, cimetidine,
+ibuprofen, erythromycin, fluoxetine, fluvoxamine,
+phenothiazines) or decrease (such as carbamazepine,
+phenytoin, phenobarbital, ethosuximide, rifampicin,
+mefloquine) the serum levels of valproate.
+In addition, valproate increases serum levels of
+other drugs (such as lamotrigine, tricyclic antidepressants, zidovudine, tolbutamide).
+
+Migraine and Pain syndromes: Valproate has been
+used for prophylaxis of migraine headaches, as well
+as for aborting an acute attack (IV route). Valproate
+has also been used in treatment of trigeminal neuralgia
+and neuropathic pain.
+Seizure disorders: Valproate is primarily indicated for
+treatment of absence seizures (both simple and complex), complex partial seizures, myoclonic seizures,
+and generalised tonic-clonic seizures, as monotherapy
+as well as adjunct therapy.
+
+Other Disorders
+Valproate has also been used at times in several other
+conditions, including behavioural agitation in dementia, severe behavioural symptoms in mental retardation, ADHD and conduct disorder, schizoaffective
+disorder (bipolar type), alcohol withdrawal, tardive
+dyskinesia, impulse control disorder, panic disorder
+and borderline personality disorder.
+
+Side Effects
+Adverse effects are more common with valproate
+concentrations above 100 mg/ml.
+The common side effects are nausea, sedation, tremor, flushing, weight gain, thrombocytopenia, menstrual disturbances (in women) and hair
+loss. There are some reports of polycystic ovaries
+and hyperandrogenism in young women with
+epilepsy.
+The most serious, though relatively uncommon,
+side effects include hepatic toxicity (especially in
+young children), acute haemorrhagic pancreatitis, and
+Steven-Johnson syndrome.
+
+Drug Interactions
+
+CARBAMAZEPINE
+Like lithium and valproate, carbamazepine too has
+been used as an antimanic and for prophylaxis of bipolar disorder. It is a tricyclic compound synthesised
+in 1953 by Schindler. It has a structure similar to
+TCAs. The onset of action can be faster as compared
+to lithium, but slower compared to valproate.
+The usual dose is 600-1600 mg/day orally, in
+divided doses. The treatment is best monitored with
+repeated blood levels. The therapeutic blood levels
+are 4-12 μg/ml and the toxic blood levels are usually
+reached at >15 μg/ml.
+
+Indications
+The indications for use of carbamazepine include:
+1. Seizures
+i. Complex partial seizures (CPS)
+ii. Generalised tonic clonic seizures
+iii. Alcohol withdrawal seizures (rum fits), if persistent (also used sometimes for treatment of
+simple alcohol withdrawal syndrome)
+2. Psychiatric disorders
+i. Bipolar mood disorder (especially for rapid
+cyclers; lithium-refractory patients; lithium-
+
+
+
+
+<<<PAGE 269>>>
+
+Index
+Kleptomania 119
+Klismaphilia 126
+Koro 110, 111
+Korsakoff’s
+psychosis 38, 39
+syndrome 27
+Kurt Schneider 54
+
+L
+LAAM 44, 45
+La-belle-indifférence 103
+Lack of
+rapport 57
+sexual enjoyment disorder 126
+Lamotrigine 79, 188
+Larks 140
+Latah 110, 111
+Late paraphrenia 61
+Latency phase 212
+Latent schizophrenia 59
+Leaden paralysis 81
+Learned behaviour 214
+Learning disability 155
+Legal and ethical issues in psychiatry 229
+Lethal catatonia 59
+Leucotomy 203
+Lewy body dementia 25
+Licensing authority 232
+Life chart 7
+Limbic system 203
+Lithium 78, 188
+Long-sleepers 134
+Loosening of associations 55, 58, 59, 62
+Lorazepam 26, 29, 87, 149, 228
+Loss of ego boundaries 57, 65
+Loxapine 66
+LSD use disorder 49
+L-thyroxin 227
+L-tryptophan 137
+Lucid intervals 26
+Lunatic 232
+
+M
+Made
+feeling 55, 56
+impulses 55, 56
+volition 55, 56
+Maintenance therapy 44
+Major depression 105
+Male
+anorgasmia 128
+erectile disorder 127
+orgasmic disorder 128
+
+Malignant syndrome 228
+Malingering 119
+Mania 61, 70, 80, 227
+Manic
+depressive psychosis 73
+episode 30, 69
+stupor 70
+Mannerisms 57-59, 164
+MAOIs 81, 82
+Marchiafava-Bignami disease 40
+Marijuana 46
+Marital therapy 217
+Masked depression 80, 105, 106
+MCI code of medical ethics, 2002 234
+McNaughten rule 229
+Medical
+emergency 221
+interview 5
+Medicolegal aspects 224
+Megavitamin therapy 67
+Memantine 25, 26
+Memory disturbances 203
+Menstrual and obstetric history 9
+Mental
+and behavioural disorders in ICD-10
+3
+disorders 19
+Health
+Act, 1987 232, 233
+Authorities 232
+retardation 153, 155, 162, 164
+status examination 10, 11, 222
+Mentally ill
+person 232
+prisoner 232
+Metabolic syndrome 63
+Methadone 44
+maintenance 44
+Methylphenidate 167
+Michigan alcoholism screening test 37
+Migraine 28
+Mild cognitive disorder 32
+Milieu therapy 68
+Mini mental state examination 13
+Minimal brain dysfunction 166
+Minoxidyl 132
+Mirror-gazing 58
+Mirtazapine 30
+Misconceptions about suicide 224
+Mixed
+affective 61, 73
+episode 73
+anxiety depressive disorder 80
+
+257
+Monosymptomatic hypochondriacal
+psychosis 84, 85
+Mood 12, 69
+disorders 69, 76
+stabiliser 30
+stabilising drugs 185
+Morbid grief 151
+Motor activity 11
+Multi-axial classification 4
+Multifocal myoclonus 20
+Multi-infarct dementia 25
+Multiple personality disorder 102
+Munchausen syndrome 119
+Muslim Marriages Act 230
+Mutism 56, 59, 225, 171
+
+N
+Naloxone 44, 227
+challenge test 44
+Naltrexone 42, 44, 132
+Narcolepsy 138
+Narcotic
+anonymous 45
+antagonists 44
+Drugs and Psychotropic Substances
+(Amendment) Act, 2001 233
+Drugs and Psychotropic Substances
+Act (NDPSA), 1985 233
+National
+Crime Records Bureau 222
+Health Policy 235, 237
+Mental Health
+Advisory Group 237
+Programme 235
+Trust Act 161
+NDRI 52
+Necrophilia 126
+Negative
+reinforcement 215
+symptom 57, 58, 60-61
+Neurasthenia 109
+Neuroleptic
+malignant syndrome 228
+sensitivity syndrome 26
+Neurosis 89
+Neurotic
+depression 82
+traits 9
+Nicotine 52
+replacement therapy 52
+Night terrors 140
+Nightmares 140
+Nitrazepam 137
+
+

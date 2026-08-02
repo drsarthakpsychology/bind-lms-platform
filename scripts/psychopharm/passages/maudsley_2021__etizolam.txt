@@ -1,0 +1,115 @@
+<<<PAGE 159>>>
+
+138  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+Table 1.20 Medications other than
+benzodiazepines reported as treatments for
+catatonia/stupor
+Listed in alphabetical order – no ranking or
+judgement is implied by the order
+Antipsychotic medications64–69,77–80
+Aripiprazole
+Clozapine
+■■ Olanzapine
+■■ Risperidone
+■■ Ziprasidone
+■■
+■■
+
+Experimental treatments* 6,7,31,32,53,81–86
+Amantadine
+Amitriptyline
+■■ Carbamazepine
+■■ Fluoxetine
+■■ Fluvoxamine
+■■ Lithium
+■■ Memantine
+■■ Methylphenidate
+■■ Mirtazapine
+■■ Tramadol
+■■ Valproate
+■■ Zolpidem
+■■
+■■
+
+*Always read the primary literature before
+using any of the medications listed in this
+section.
+
+References
+1. Morrison JR. Catatonia. Retarded and excited types. Arch Gen Psychiatry 1973; 28:39–41.
+2. Walther S, et al. Structure and neural mechanisms of catatonia. Lancet Psychiatry 2019; 6:610–619.
+3. Takacs R, et al. Catatonia in affective disorders. Curr Psychiatry Rev 2013; 9:101–105.
+4. Mangas MCC, et al. P-167 – catatonia in bipolar disorder. Eur Psychiatry 2012; 27 Suppl 1:1.
+5. Huang YC, et al. Rapid relief of catatonia in mood disorder by lorazepam and diazepam. Biomed J 2013; 36:35–39.
+6. Vasudev K, et al. What works for delirious catatonic mania? BMJ Case Rep 2010; 2010.
+7. Neuhut R, et al. Resolution of catatonia after treatment with stimulant medication in a patient with bipolar disorder. Psychosomatics 2012;
+53:482–484.
+8. Ghaffarinejad AR, et al. Periodic catatonia. Challenging diagnosis for psychiatrists. Neurosciences 2012; 17:156–158.
+9. Oldham MA, et al. Alcohol and sedative-hypnotic withdrawal catatonia: two case reports, systematic literature review, and suggestion of a
+potential relationship with alcohol withdrawal delirium. Psychosomatics 2016; 57:246–255.
+10. Banerjee D. Etizolam withdrawal catatonia: the first case report. Asian J Psychiatr 2018; 37:32–33.
+11. Fink M. Rediscovering catatonia: the biography of a treatable syndrome. Acta Psychiatr Scand Suppl 2013; 1–47.
+12. Bartolommei N, et al. Catatonia: a critical review and therapeutic recommendation. J Psychopathology 2012; 18:234–246.
+13. Lee J. Dissociative catatonia: dissociative-catatonic reactions, clinical presentations and responses to benzodiazepines. Aust N Z J Psychiatry
+2011; 45:A42.
+14. Suzuki K, et al. Hysteria presenting as a prodrome to catatonic stupor in a depressive patient resolved with electroconvulsive therapy. J ECT
+2006; 22:276.
+15. Alwaki A, et al. Catatonia: an elusive diagnosis. Neurology 2013; 80 Suppl 1:P05.127.
+16. Dhadphale M. Eye gaze diagnostic sign in hysterical stupor. Lancet 1980; 2:374–375.
+17. Gomez J. Hysterical stupor and death. Br J Psychiatry 1980; 136:105–106.
+18. Petrides G, et al. Synergism of lorazepam and electroconvulsive therapy in the treatment of catatonia. Biol Psychiatry 1997; 42:375–381.
+19. Mazzone L, et al. Catatonia in patients with autism: prevalence and management. CNS Drugs 2014; 28:205–215.
+
+
+
+
+<<<PAGE 538>>>
+
+Addictions and substance misuse  517
+
+Benzodiazepine prescribing increased during the 1960s and 1970s, mainly because of
+their improved safety profile relative to barbiturates. However, it was soon noted that
+benzodiazepines have a high potential for causing dependence. Prescriptions originally
+started for other disorders were often continued long term and led to the development of
+dependence. This was and is particularly common in older patients and those with anxiety
+spectrum disorders or depression. In England, the prescribing of benzodiazepines has
+fallen to 14.9 million prescription items in 2018–2019, from 16.3 million in 2015–2016.
+There are a number of novel or ‘designer’ benzodiazepines (e.g. etizolam, flualprazolam, flunitrazolam and norfludiazepam). There is limited information available about
+the health and social harms of these substances, but they are likely to be similar to or
+worse than the established benzodiazepines.1 Some of these benzodiazepines (flualprazolam, flunitrazolam and norfludiazepam) are classified in Schedule 1 in the UK – pharmaceutical benzodiazepines are in Schedule 3 or 4. Outside being prescribed,
+benzodiazepines can be acquired via the illicit market, diversion of scripts and Internet
+purchasing (thought to be a rising trend).2
+Benzodiazepine dependence can be thought of as either iatrogenic (low daily doses
+prescribed over many years) or non-iatrogenic (high doses, illicitly obtained, consumed
+intermittently).
+
+Discontinuation
+A previously published (now withdrawn) Cochrane review evaluated the evidence for
+pharmacological interventions for benzodiazepine mono-dependence, and concluded
+that a gradual reduction of benzodiazepine dose was preferable to an abrupt discontinuation.3 A more recent review confirmed that withdrawal over a period of less than
+6 months is appropriate for most patients4 and the UK drug misuse and dependence
+guidelines suggest a reduction of about one-eighth of the daily dose every 2 weeks.5 The
+Australian GP guidelines comment that the evidence for the ‘optimal rate of tapering is
+lacking’ and ‘the exact rate of reduction should be individualised according to the drug,
+dose and duration of treatment’.6
+A meta-analysis supports the effectiveness of multi-faceted prescribing interventions
+(usually including psychological interventions/support) in reducing benzodiazepine use
+in older patients,7 and one RCT has demonstrated that a simple educational approach
+based on self-efficacy theory resulted in about a quarter of long-term elderly benzodiazepine users engaging voluntarily in reducing and discontinuing use.8 A 2018 Cochrane
+review could find no pharmaceutical add-on that could help facilitate the withdrawal
+process. Some drugs seemed to be associated with some beneficial effects, but the evidence quality was too low for any clinical recommendations to be made.9
+A large number of patients presenting to addiction services may be using illicit benzodiazepines in addition to their primary substance of abuse. People with non-iatrogenic
+benzodiazepine dependence often consume doses greater than 100mg diazepam a day.
+Although some services provide prescriptions for benzodiazepines, there is no evidence
+that substitute prescribing of benzodiazepines ultimately reduces benzodiazepine misuse.
+If benzodiazepines are prescribed, this should ideally be for a short-term, time-limited
+(2–3 weeks) prescription and with a view to detoxification.
+
+CHAPTER 4
+
+Benzodiazepine misuse
+
+

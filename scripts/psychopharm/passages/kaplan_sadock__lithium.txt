@@ -1,0 +1,828 @@
+<<<PAGE 583>>>
+
+of its effect. In another trial comparing risperidone and sodium valproate
+treatment for bipolar disorder in youth, risperidone had more rapid
+improvement and a higher final reduction in manic symptoms compared to
+sodium valproate.
+Mood-stabilizing agents have been used in open trials and anecdotally with
+early-onset bipolar illness with little evidence of efficacy at this time. In trials
+using lithium or sodium valproate for the treatment of early-onset bipolar
+disorder, responses were less robust compared to results with atypical
+antipsychotics. Controlled trials have provided some evidence suggesting that
+lithium is efficacious in the management of aggression behavior disorders.
+Although lithium is approved for adolescent mania, more research is needed
+to know if lithium is useful for more classic forms of mania in adolescents.
+The Collaborative Lithium Trials (CoLT) established a set of protocols to
+establish the safety and potential efficacy of lithium in youth, and to develop
+studies to provide evidence-based dosing of lithium for youth. A group of
+researchers studied the first-dose pharmacokinetics of lithium carbonate in
+youth and found that clearance and volume correlate with total body weight
+in youth, and particularly with fat-free mass. The difference in body size was
+consistent with the pharmacokinetics of lithium metabolism in children and
+adults. An open-label trial of lamotrigine in the treatment of bipolar
+depression among youth provides possible support for its use in children and
+adolescents.
+Current evidence suggests a faster response and a more robust effect with
+atypical antipsychotics compared to mood-stabilizing agents in the treatment
+of early-onset bipolar disorder. However, given the severity and impairment
+of bipolar disorder in youth, when there is only partial recovery, we should
+consider adding another agent.
+Psychosocial Treatment
+Psychosocial treatment interventions for early-onset bipolar illness have
+included a family-focused treatment. This treatment consists of several
+sessions of psychoeducation, then sessions focusing on current stressors and a
+mood management plan, and then several sessions of communication
+enhancement training and problem-solving skills training. The use of this
+type of intervention for youths diagnosed with bipolar disorder or at risk (by
+
+
+
+
+<<<PAGE 1199>>>
+
+Combination therapy: lithium or divalproex +
+haloperidol, lithium + carbamazepine,
+adjunctive tamoxifen
+Not
+Monotherapy: gabapentin, topiramate, lamotrigine,
+recommended
+verapamil, tiagabine
+Combination therapy: risperidone +
+carbamazepine, olanzapine + carbamazepine
+ECT, electroconvulsive therapy; XR or ER, extended release.
+Modified from CANMAT/ISBD Guidelines.
+
+Table 6-6 lists some recommended medications for treating acute mania.
+Adherence to treatment, however, is often a problem because patients with
+mania frequently lack insight into their illness and refuse to take medication.
+Because impaired judgment, impulsivity, and aggressiveness combine to put
+the patient or others at risk, we must medicate patients when we need to
+protect themselves and others from harm.
+INITIAL MEDICATION SELECTION. Figure 6-2 diagrams a strategy for selecting
+
+and preparing a bipolar patient for pharmacotherapy.
+Acute Mania. The treatment of acute mania, or hypomania, usually is the
+most straightforward phase to treat. We can use agents alone or in
+combination to bring the patient down from a high.
+Lithium Carbonate. Lithium carbonate is considered the prototypical mood
+stabilizer. However, because the onset of antimanic action with lithium can
+be slow, we often supplement it in the early phases of treatment by atypical
+antipsychotics, mood-stabilizing anticonvulsants, or high-potency
+benzodiazepines. Therapeutic lithium levels are between 0.6 and 1.2 mEq/L.
+The acute use of lithium has been limited in recent years by its unpredictable
+efficacy, problematic side effects, and the need for frequent laboratory tests.
+The introduction of newer drugs with more favorable side effects, lower
+toxicity, and less need for frequent laboratory testing has resulted in a decline
+in lithium use. For many patients, however, its clinical benefits can be
+remarkable.
+
+
+
+
+<<<PAGE 1200>>>
+
+Anticonvulsants. Valproate (valproic acid or divalproex sodium) has
+surpassed lithium in use for acute mania. Unlike lithium, valproate is only
+indicated for acute mania, although most experts agree it also has
+prophylactic effects. Normal dose levels of valproic acid are 750 to 2,500
+mg/day, achieving blood levels between 50 and 120 µg/mL. Rapid oral
+loading with 15 to 20 mg/kg of divalproex sodium from day 1 of treatment
+has been well tolerated and associated with a rapid onset of response. Some
+laboratory testing is required during valproate treatment.
+Carbamazepine has been used worldwide for decades as a first-line
+treatment for acute mania. The FDA approved it for acute mania in the
+United States in 2004. Typical doses of carbamazepine to treat acute mania
+range between 600 and 1,800 mg/day associated with blood levels of between
+4 and 12 µg/mL. The keto congener of carbamazepine, oxcarbazepine, is
+better tolerated than carbamazepine, but the data for its efficacy are
+conflicting. A Cochrane review concluded there is insufficient evidence for
+this medication in acute mania.
+Antipsychotics. The FDA approved many of the atypical antipsychotics for
+use in bipolar disorder. We list them in Table 6-7. Compared with older
+agents, such as haloperidol and chlorpromazine, atypical antipsychotics have
+a lesser liability for excitatory postsynaptic potential and tardive dyskinesia;
+many do not increase prolactin. However, many of them have the risk of
+weight gain with its associated medical problems. Some patients, however,
+require maintenance treatment with antipsychotic medication.
+Acute Bipolar Depression
+Lithium. There is limited evidence for lithium in bipolar depression. Early
+studies were promising, but later placebo-controlled studies did not confirm
+lithium’s efficacy. More extensive studies that included lithium did suggest
+that lithium was at least as useful as other mood stabilizers for bipolar
+depression.
+Anticonvulsants. The most promising anticonvulsant has been lamotrigine,
+which has several reasonable studies showing efficacy for bipolar depression.
+Its major limitation is that it must be titrated gradually to prevent a severe
+
+
+
+
+<<<PAGE 2047>>>
+
+the nicotinic acetylcholine receptor and may have action on serotonin HT3 as
+well. The mechanism of its antidepressant effect is not clear, as other positive
+allosteric modulators of GABAA, such as benzodiazepines, do not have a
+significant antidepressant effect. However, like ketamine, it provides a rapid
+response in patients who respond to the drug, usually within 2 to 3 days. We
+know little about the long term efficacy of the drug.
+The drug is marketed under the brand name Zulresso and is a Schedule IV
+controlled substance. It is only available through a national registry and has
+several other drawbacks limiting its widespread acceptance. One is its long
+administration time, as the drug must be given by continuous IV infusion
+over 60 hours, during which the dose is slowly increased. This extended
+hospitalization is to prevent excess sedation or syncope.
+Perhaps the most significant drawback of the medication is its cost.
+Currently, the drug costs about $34,000 for a single dose, as well as the price
+of remaining in a medical facility for 60 hours, and is not currently covered
+by most insurance companies.
+
+21.3 Mood Stabilizers
+LITHIUM
+The effectiveness of lithium for mania and the prophylactic treatment of
+manic–depressive disorder was established in the early 1950s as a result of
+research done by John F.J. Cade, an Australian psychiatrist. Concerns about
+toxicity limited initial acceptance of lithium use in the United States, but its
+use increased gradually in the late 1960s. It was not until 1970 that the FDA
+approved its labeling for the treatment of mania. The only other approved
+FDA indication came in 1974 when it was accepted as maintenance therapy
+in patients with a history of mania. For several decades, lithium was the only
+drug approved for both acute and maintenance treatment. It is also used as an
+adjunctive medication in the treatment of MDD.
+Lithium (Li), a monovalent ion, is a member of the group IA alkali metals
+on the periodic table, a group that also includes sodium, potassium, rubidium,
+cesium, and francium. Lithium exists in nature as both 6Li (7.42 percent) and
+
+
+
+
+<<<PAGE 2048>>>
+
+7Li (92.58 percent). The latter isotope allows the imaging of lithium by
+
+magnetic resonance spectroscopy. Some 300 mg of lithium is contained in
+1,597 mg of lithium carbonate (Li2CO3). Most lithium used in the United
+States is obtained from dry lake mining in Chile and Argentina.
+Pharmacologic Actions
+Lithium is rapidly and completely absorbed after oral administration, with
+peak serum concentrations occurring in 1 to 1.5 hours with standard
+preparations and in 4 to 4.5 hours with slow-release and controlled-release
+preparations. Lithium does not bind to plasma proteins, is not metabolized,
+and is excreted through the kidneys. The plasma half-life is initially 1.3 days
+and is 2.4 days after administration for more than 1 year. The blood–brain
+barrier permits only the slow passage of lithium, which is why a single
+overdose does not necessarily cause toxicity and why long-term lithium
+intoxication is slow to resolve. The elimination half-life of lithium is 18 to 24
+hours in young adults but is shorter in children and more prolonged in elderly
+persons. Renal clearance of lithium is decreased with renal insufficiency.
+Equilibrium is reached after 5 to 7 days of regular intake. Obesity is
+associated with higher rates of lithium clearance. The excretion of lithium is
+complex during pregnancy; excretion increases during pregnancy but
+decreases after delivery. Lithium is excreted in breast milk and insignificant
+amounts in the feces and sweat. Thyroid and renal concentrations of lithium
+are higher than serum levels.
+An explanation for the mood-stabilizing effects of lithium remains elusive.
+Theories include alterations of ion transport and effects on neurotransmitters
+and neuropeptides, signal transduction pathways, and second messenger
+systems.
+Therapeutic Indications
+Bipolar I Disorder
+MANIC EPISODES. Lithium controls acute mania and prevents relapse in about
+80 percent of persons with bipolar I disorder and in a somewhat smaller
+percentage of persons with mixed (mania and depression) episodes, rapidcycling bipolar disorder, or mood changes in encephalopathy. Lithium has a
+
+
+
+
+<<<PAGE 2049>>>
+
+relatively slow onset of action when used and exerts its antimanic effects over
+1 to 3 weeks. Thus, a benzodiazepine, DRA, SDA, or valproic acid is usually
+administered for the first few weeks. Patients with mixed or dysphoric mania,
+rapid cycling, comorbid substance abuse, or organicity respond less well to
+lithium than those with classic mania.
+BIPOLAR DEPRESSION. Lithium is effective in the treatment of depression
+
+associated with bipolar I disorder, as well as in the role of add-on therapy for
+patients with severe MDD. Augmentation of lithium therapy with valproic
+acid (Depakene) or carbamazepine (Tegretol) is usually well tolerated, with
+little risk of precipitation of mania.
+When a depressive episode occurs in a person taking maintenance lithium,
+the differential diagnosis should include lithium-induced hypothyroidism,
+substance abuse, and lack of compliance with lithium therapy. One approach
+is to increase the lithium concentration (up to 1 to 1.2 mEq/L). Alternately we
+may augment with valproate or carbamazepine. It may also help to add
+supplemental thyroid hormone (e.g., 25 µg a day of liothyronine [Cytomel]),
+even in the presence of normal findings on thyroid function tests.
+Antidepressants or ECT are sometimes added judiciously. After the acute
+depressive episode resolves, other therapies should be tapered in favor of
+lithium monotherapy, if clinically tolerated.
+MAINTENANCE. Maintenance treatment with lithium markedly decreases the
+
+frequency, severity, and duration of manic and depressive episodes in persons
+with bipolar I disorder. Lithium provides relatively more effective
+prophylaxis for mania than for depression, and supplemental antidepressant
+strategies may be necessary either intermittently or continuously. Lithium
+maintenance is almost always indicated after the first episode of bipolar I
+disorder, depression or mania, and should be considered after the first episode
+for adolescents or for persons who have a family history of bipolar I disorder.
+Others who benefit from lithium maintenance are those who have poor
+support systems, had no precipitating factors for the first episode, have a high
+suicide risk, had a sudden onset of the first episode, or had a first episode of
+mania. Clinical studies have shown that lithium reduces the incidence of
+suicide in bipolar I disorder patients six- or sevenfold. Lithium is also an
+effective treatment for persons with severe cyclothymic disorder.
+
+
+
+
+<<<PAGE 2050>>>
+
+It is wise to initiate maintenance therapy after the first manic episode,
+based on several observations. First, each episode of mania increases the risk
+of subsequent episodes. Second, among people responsive to lithium,
+relapses are 28 times more likely after lithium use is discontinued. Third, case
+reports describe persons who initially responded to lithium, discontinued
+taking it, and then had a relapse but no longer responded to lithium in
+subsequent episodes. Continued maintenance treatment with lithium is often
+associated with increased efficacy and reduced mortality. Therefore, an
+episode of depression or mania that occurs after a relatively short time on
+lithium maintenance does not necessarily represent treatment failure.
+However, lithium treatment alone may begin to lose its effectiveness after
+several years of successful use. If this occurs, then supplemental treatment
+with carbamazepine or valproate may be useful.
+Maintenance lithium dosages can often be adjusted to achieve plasma
+concentration somewhat lower than that needed for the treatment of acute
+mania. If lithium use is to be discontinued, then the dosage should be slowly
+tapered. Abrupt discontinuation of lithium therapy is associated with an
+increased risk of recurrence of manic and depressive episodes.
+Major Depressive Disorder. Lithium is effective in the long-term
+treatment of major depression, but it is not more effective than antidepressant
+drugs. The most common role for lithium in MDD is as an adjuvant to
+antidepressant use in persons who have failed to respond to the
+antidepressants alone. About 50 to 60 percent of antidepressant
+nonresponders do respond when lithium, 300 mg three times daily, is added
+to the antidepressant regimen. In some cases, a response may be seen within
+days, but most often, several weeks are required to see the efficacy of the
+regimen. Lithium alone may effectively treat depressed persons who have
+bipolar I disorder but have not yet had their first manic episode. Lithium has
+been reported to be effective in persons with MDD whose disorder has
+marked cyclicity.
+Schizoaffective Disorder and Schizophrenia. Persons with prominent
+mood symptoms—either bipolar type or depressive type—with
+schizoaffective disorder are more likely to respond to lithium than those with
+predominant psychotic symptoms. Although SDAs and DRAs are the
+
+
+
+
+<<<PAGE 2056>>>
+
+abnormal heartbeat and other symptoms (such as severe dizziness, fainting,
+shortness of breath) that need medical attention right away. Before starting
+lithium treatment, clinicians should ask about known heart conditions,
+unexplained fainting, and family history of problems or sudden unexplained
+death before age 45.
+Gastrointestinal Effects. GI symptoms—which include nausea,
+decreased appetite, vomiting, and diarrhea—can be diminished by dividing
+the dosage, administering the lithium with food, or switching to another
+lithium preparation. The lithium preparation least likely to cause diarrhea is
+lithium citrate. Some lithium preparations contain lactose, which can cause
+diarrhea in lactose-intolerant persons. Persons taking slow-release
+formulations of lithium who experience diarrhea caused by unabsorbed
+medication in the lower part of the GI tract may experience less diarrhea than
+with standard-release preparations. Diarrhea may also respond to
+antidiarrheal preparations such as loperamide (Imodium, Kaopectate),
+bismuth subsalicylate (Pepto-Bismol), or diphenoxylate with atropine
+(Lomotil).
+Weight Gain. Weight gain results from a poorly understood effect of
+lithium on carbohydrate metabolism. Weight gain can also result from
+lithium-induced hypothyroidism, lithium-induced edema, or excessive
+consumption of soft drinks and juices to quench lithium-induced thirst.
+Neurologic Effects
+TREMOR. A lithium-induced postural tremor may occur that is usually 8 to 12
+Hz and is most notable in outstretched hands, especially in the fingers, and
+during tasks involving fine manipulations. The tremor can be reduced by
+dividing the daily dosage, using a sustained-release formulation, reducing
+caffeine intake, reassessing the concomitant use of other medicines, and
+treating comorbid anxiety. β-Adrenergic receptor antagonists, such as
+propranolol, 30 to 120 mg a day in divided doses, and primidone (Mysoline),
+50 to 250 mg a day, are usually effective in reducing the tremor. In persons
+with hypokalemia, potassium supplementation may improve the tremor.
+When a person taking lithium has a severe tremor, the possibility of lithium
+toxicity should be suspected and evaluated.
+
+
+
+
+<<<PAGE 2057>>>
+
+COGNITIVE EFFECTS. Lithium use has been associated with dysphoria, lack of
+
+spontaneity, slowed reaction times, and impaired memory. We should note
+these symptoms carefully because they are a frequent cause of
+noncompliance. The differential diagnosis for such symptoms should include
+depressive disorders, hypothyroidism, hypercalcemia, other illnesses, and
+other drugs. Some, but not all, persons have reported that fatigue and mild
+cognitive impairment decrease with time.
+OTHER NEUROLOGIC EFFECTS. Uncommon neurologic adverse effects include
+
+symptoms of mild parkinsonism, ataxia, and dysarthria, although the last two
+symptoms may also be attributable to lithium intoxication. Lithium is rarely
+associated with the development of peripheral neuropathy, benign intracranial
+hypertension (pseudotumor cerebri), findings resembling myasthenia gravis,
+and increased risk of seizures.
+Renal Effect. The most common adverse renal effect of lithium is polyuria
+with secondary polydipsia. The symptom is particularly a problem in 25 to 35
+percent of persons taking lithium who may have a urine output of more than
+3 L a day (reference range: 1 to 2 L a day). The polyuria primarily results
+from lithium antagonism to the effects of antidiuretic hormone, which thus
+causes diuresis. When polyuria is a significant problem, the person’s renal
+function should be evaluated and followed up with 24-hour urine collections
+for creatinine clearance determinations. Treatment consists of fluid
+replacement, the use of the lowest effective dosage of lithium, and single
+daily dosing of lithium. Treatment can also involve the use of a thiazide or
+potassium-sparing diuretic. For example, amiloride (Midamor),
+spironolactone (Aldactone), triamterene (Dyrenium), or amiloride–
+hydrochlorothiazide (Moduretic) may help. If treatment with a diuretic is
+initiated, the lithium dosage should be halved, and the diuretic should not be
+started for 5 days, because the diuretic is likely to increase lithium retention.
+The most severe renal adverse effects, which are rare and associated with
+continuous lithium administration for 10 years or more, involve the
+appearance of nonspecific interstitial fibrosis, associated with gradual
+decreases in glomerular filtration rate and increases in serum creatinine
+concentrations, and rarely with renal failure. Lithium is occasionally
+
+
+
+
+<<<PAGE 2058>>>
+
+associated with nephrotic syndrome and features of distal renal tubular
+acidosis. Another pathologic finding in patients with lithium nephropathy is
+the presence of microcysts. Magnetic resonance imaging (MRI) can be used
+to demonstrate renal microcysts secondary to chronic lithium nephropathy
+and therefore avoid renal biopsy. It is prudent for persons taking lithium to
+check their serum creatinine concentration, urine chemistries, and 24-hour
+urine volume at 6-month intervals. If creatinine levels do rise, then more
+frequent monitoring and MRI might be considered.
+Thyroid Effects. Lithium causes a generally benign and often transient
+diminution in the concentrations of circulating thyroid hormones. Reports
+have attributed goiter (5 percent of persons), benign reversible exophthalmos,
+hyperthyroidism, and hypothyroidism (7 to 10 percent of persons) to lithium
+treatment. Lithium-induced hypothyroidism is more common in women (14
+percent) than in men (4.5 percent). Women are at the highest risk during the
+first 2 years of treatment. Persons taking lithium to treat bipolar disorder are
+twice as likely to develop hypothyroidism if they develop rapid cycling.
+About 50 percent of persons receiving long-term lithium treatment have
+laboratory abnormalities, such as an abnormal TRH response, and about 30
+percent have elevated concentrations of TSH. If symptoms of hypothyroidism
+are present, replacement with levothyroxine (Synthroid) is indicated. Even in
+the absence of hypothyroid symptoms, some clinicians treat persons with
+significantly elevated TSH concentrations with levothyroxine. In lithiumtreated persons, TSH concentrations should be measured every 6 to 12
+months. Lithium-induced hypothyroidism should be considered when
+evaluating depressive episodes that emerge during lithium therapy.
+Cardiac Effects. The cardiac effects of lithium resemble those of
+hypokalemia on ECG. The displacement of intracellular potassium by the
+lithium ion causes this. The most common changes on the ECG are T-wave
+flattening or inversion. The changes are benign and disappear after lithium is
+excreted from the body.
+Lithium depresses the pacemaking activity of the sinus node, sometimes
+resulting in sinus dysrhythmias, heart block, and episodes of syncope.
+Lithium treatment, therefore, is contraindicated in persons with sick sinus
+syndrome. In rare cases, ventricular arrhythmias and congestive heart failure
+
+
+
+
+<<<PAGE 2059>>>
+
+have been associated with lithium therapy. Lithium cardiotoxicity is prevalent
+in persons on a low-salt diet, those taking certain diuretics or ACEIs, and
+those with fluid–electrolyte imbalances or any renal insufficiency.
+Dermatologic Effects. Dermatologic effects may be dose-dependent. They
+include acneiform, follicular, and maculopapular eruptions; pretibial
+ulcerations; and worsening of psoriasis. Occasionally, aggravated psoriasis or
+acneiform eruptions may force the discontinuation of lithium treatment.
+Alopecia has also been reported. Persons with many of those conditions
+respond favorably to changing to another lithium preparation and the usual
+dermatologic measures. Lithium concentrations should be monitored if
+tetracycline is used for the treatment of acne because it can increase the
+retention of lithium.
+Lithium Toxicity and Overdoses. The early signs and symptoms of
+lithium toxicity include neurologic symptoms, such as coarse tremor,
+dysarthria, and ataxia; GI symptoms; cardiovascular changes; and renal
+dysfunction. The later signs and symptoms include impaired consciousness,
+muscular fasciculations, myoclonus, seizures, and coma. Signs and symptoms
+of lithium toxicity are outlined in Table 21-28. Risk factors include
+exceeding the recommended dosage, renal impairment, low-sodium diet, drug
+interaction, and dehydration. Elderly persons are more vulnerable to the
+effects of increased serum lithium concentrations. The greater the degree and
+duration of elevated lithium concentrations, the worse are the symptoms of
+lithium toxicity.
+Table 21-28
+Signs and Symptoms of Lithium Toxicity
+1. Mild to moderate intoxication (lithium level, 1.5–2.0 mEq/L)
+GI
+
+Vomiting
+Abdominal pain
+Dryness of mouth
+
+Neurologic Ataxia
+Dizziness
+
+
+
+
+<<<PAGE 2061>>>
+
+value of forced diuresis is still debated. In severe cases, hemodialysis rapidly
+removes excessive amounts of serum lithium. Postdialysis serum lithium
+concentrations may increase as lithium is redistributed from tissues to the
+blood, so repeat dialysis may be needed. Neurologic improvement may lag
+behind the clearance of serum lithium by several days because lithium
+crosses the blood–brain barrier slowly.
+Table 21-29
+Management of Lithium Toxicity
+1. Contact personal physician or go to a hospital emergency
+department
+2. Lithium should be discontinued
+3. Vital signs and a neurologic examination with complete formal
+mental status examination
+4. Lithium level, serum electrolytes, renal function tests, and ECG
+5. Emesis, gastric lavage, and absorption with Kayexalate or
+GoLYTELY
+6. For any patient with a serum lithium level greater than 4.0 mEq/L,
+hemodialysis
+ECG, electrocardiography.
+
+Adolescents. The serum lithium concentrations for adolescents are similar
+to those for adults. Weight gain and acne associated with lithium use can be
+particularly troublesome to adolescents.
+Elderly Persons. Lithium is a safe and effective drug for elderly persons.
+However, the treatment of elderly persons taking lithium may be complicated
+by the presence of other medical illnesses, decreased renal function, special
+diets that affect lithium clearance, and generally increased sensitivity to
+lithium. Elderly persons should initially be given low dosages, their dosages
+should be switched less frequently than those of younger persons, and a
+longer time must be allowed for renal excretion to equilibrate with absorption
+before lithium can be assumed to have reached its steady-state
+concentrations.
+
+
+
+
+<<<PAGE 2062>>>
+
+Pregnant Women. Lithium should not be administered to pregnant women
+in the first trimester because of the risk of congenital disabilities. The most
+common malformations involve the cardiovascular system, most commonly
+Ebstein anomaly of the tricuspid valves. The risk of Ebstein malformation in
+lithium-exposed fetuses is 1 in 1,000, which is 20 times the risk in the general
+population. The possibility of fetal cardiac anomalies can be evaluated with
+fetal echocardiography. The teratogenic risk of lithium (4 to 12 percent) is
+higher than that for the general population (2 to 3 percent) but appears to be
+lower than that associated with the use of valproate or carbamazepine. A
+woman who continues to take lithium during pregnancy should use the lowest
+effective dosage. The maternal lithium concentration must be monitored
+closely during pregnancy, and especially after pregnancy, because of the
+significant decrease in renal lithium excretion as the renal function returns to
+normal in the first few days after delivery. Adequate hydration can reduce the
+risk of lithium toxicity during labor. Lithium prophylaxis is recommended for
+all women with bipolar disorder as they enter the postpartum period. Lithium
+is excreted into breast milk and should be taken by a nursing mother only
+after careful evaluation of potential risks and benefits. Signs of lithium
+toxicity in infants include lethargy, cyanosis, abnormal reflexes, and
+sometimes hepatomegaly.
+Miscellaneous Effects. Lithium should be used with caution in diabetic
+persons, who should monitor their blood glucose concentrations carefully to
+avoid diabetic ketoacidosis. Benign, reversible leukocytosis is commonly
+associated with lithium treatment. Dehydrated, debilitated, and medically ill
+persons are most susceptible to adverse effects and toxicity.
+Drug Interactions
+Lithium drug interactions are summarized in Table 21-30.
+Lithium is commonly used in conjunction with DRAs. This combination is
+typically sufficient and safe. However, coadministration of higher dosages of
+a DRA and lithium may result in a synergistic increase in the symptoms of
+lithium-induced neurologic side effects and neuroleptic extrapyramidal
+symptoms. In rare instances, encephalopathy has been reported with this
+combination.
+
+
+
+
+<<<PAGE 2063>>>
+
+The coadministration of lithium and carbamazepine, lamotrigine,
+valproate, and clonazepam may increase lithium concentrations and
+aggravate lithium-induced neurologic adverse effects. Treatment with the
+combination should be initiated at slightly lower dosages than usual, and the
+dosages should be increased gradually. Changes from one to another
+treatment for mania should be made carefully, with as little temporal overlap
+between the drugs as possible.
+Most diuretics (e.g., thiazide and potassium-sparing) can increase lithium
+concentrations; when treatment with such a diuretic is stopped, the clinician
+may need to increase the person’s daily lithium dosage. Osmotic and loop
+diuretics, carbonic anhydrase inhibitors, and xanthines (including caffeine)
+may reduce lithium concentrations to below therapeutic concentrations.
+Whereas ACEIs may cause an increase in lithium concentrations, the AT1
+angiotensin II receptor inhibitors losartan (Cozaar) and irbesartan (Avapro)
+do not alter lithium concentrations. A wide range of NSAIDs can decrease
+lithium clearance, thereby increasing lithium concentrations. These drugs
+include indomethacin (Indocin), phenylbutazone (Azolid), diclofenac
+(Voltaren), ketoprofen (Orudis), oxyphenbutazone (Oxalid), ibuprofen
+(Motrin, Advil), piroxicam (Feldene), and naproxen (Naprosyn). Aspirin and
+sulindac (Clinoril) do not affect lithium concentrations.
+The coadministration of lithium and quetiapine (Seroquel) may cause
+somnolence but is otherwise well tolerated. The coadministration of lithium
+and ziprasidone (Geodon) may modestly increase the incidence of tremors.
+The coadministration of lithium and calcium channel inhibitors should be
+avoided because of potentially fatal neurotoxicity.
+A person taking lithium who is about to undergo ECT should discontinue
+taking lithium 2 days before beginning ECT to reduce the risk of delirium.
+Laboratory Interferences
+Lithium does not interfere with any laboratory tests, but lithium-induced
+alterations include an increased WBC count, decreased serum thyroxine, and
+increased serum calcium. Blood collected in a lithium–heparin anticoagulant
+tube will produce falsely elevated lithium concentrations.
+Dosage and Clinical Guidelines
+
+
+
+
+<<<PAGE 2064>>>
+
+Initial Medical Workup. All patients should have a routine laboratory
+workup and physical examination before being started on lithium. The
+laboratory tests should include serum creatinine concentration (or a 24-hour
+urine creatinine if the clinician has any reason to be concerned about renal
+function), electrolytes, thyroid function (TSH, T3 [triiodothyronine], and T4
+[thyroxine]), a CBC, ECG, and a pregnancy test in women of childbearing
+age.
+Dosage Recommendations. Lithium formulations include immediaterelease 150-, 300-, and 600-mg lithium carbonate capsules (Eskalith and
+generic), 300 mg lithium carbonate tablets (Lithotabs), 450-mg controlledrelease lithium carbonate capsules (Eskalith CR and Lithonate), and 8 mEq/5
+mL of lithium citrate syrup.
+The starting dosage for most adults is 300 mg of the regular-release
+formulation three times daily. The starting dosage for elderly persons or
+persons with renal impairment should be 300 mg once or twice daily. After
+stabilization, dosages between 900 and 1,200 mg a day usually produce a
+therapeutic plasma concentration of 0.6 to 1 mEq/L, and a daily dose of 1,200
+to 1,800 mg usually produces a therapeutic concentration of 0.8 to 1.2
+mEq/L. Maintenance dosing can be given either in two or three divided doses
+of the regular-release formulation or in a single dosage of the sustainedrelease formulation equivalent to the combined daily dosage of the regularrelease formulation. The use of divided doses reduces gastric upset and
+avoids single high-peak lithium concentrations. Discontinuation of lithium
+should be gradual to minimize the risk of early recurrence of mania and to
+permit recognition of early signs of recurrence.
+Table 21-30
+Drug Interactions with Lithium
+Drug Class
+
+Reaction
+
+Antipsychotics
+
+Case reports of encephalopathy, worsening of
+extrapyramidal adverse effects, and neuroleptic
+malignant syndrome; inconsistent reports of
+altered red blood cell and plasma
+
+
+
+
+<<<PAGE 2065>>>
+
+concentrations of lithium, antipsychotic drug, or
+both
+Antidepressants
+
+Occasional reports of a serotonin-like syndrome
+with potent serotonin reuptake inhibitors
+
+Anticonvulsants
+
+No significant pharmacokinetic interactions with
+carbamazepine or valproate; reports of
+neurotoxicity with carbamazepine;
+combinations helpful for treatment resistance
+
+NSAIDs
+
+May reduce renal lithium clearance and increase
+serum concentration; toxicity reported
+(exception is aspirin)
+
+Diuretics
+Thiazides
+
+Well-documented reduced renal lithium clearance
+and increased serum concentration; toxicity
+reported
+
+Potassium
+sparing
+
+Limited data; may increase lithium concentration
+
+Loop
+
+Lithium clearance unchanged (some case reports
+of increased lithium concentration)
+
+Osmotic
+Increase renal lithium clearance and decrease
+(mannitol, urea)
+lithium concentration
+Xanthine
+Increase renal lithium clearance and decrease
+(aminophylline,
+lithium concentration
+caffeine,
+theophylline)
+Carbonic
+Increase renal lithium clearance
+anhydrase
+inhibitors
+(acetazolamide)
+ACEIs
+
+Reports of reduced lithium clearance, increased
+
+
+
+
+<<<PAGE 2066>>>
+
+concentrations, and toxicity
+Calcium channel
+inhibitors
+
+Case reports of neurotoxicity; no consistent
+pharmacokinetic interactions
+
+Miscellaneous
+Succinylcholine,
+pancuronium
+
+Reports of prolonged neuromuscular blockade
+
+Metronidazole
+
+Increased lithium concentration
+
+Methyldopa
+
+Few reports of neurotoxicity
+
+Sodium
+bicarbonate
+
+Increased renal lithium clearance
+
+Iodides
+
+Additive antithyroid effects
+
+Propranolol
+
+Used for lithium tremor; possible slight increase
+in lithium concentration
+
+NSAID, nonsteroidal anti-inflammatory drug; ACEI, angiotensin-converting enzyme inhibitor.
+
+Laboratory Monitoring. The periodic measurement of serum lithium
+concentration is an essential aspect of patient care, but it should always be
+combined with sound clinical judgment. A laboratory report listing the
+therapeutic range as 0.5 to 1.2 mEq/L may lull a clinician into disregarding
+early signs of lithium intoxication in patients whose levels are around 1.2
+mEq/L. Clinical toxicity, especially in elderly persons, has been well
+documented at or slightly above the upper limit of the therapeutic range.
+Regular monitoring of serum lithium concentrations is essential. Lithium
+levels should be obtained every 2 to 6 months except when there are signs of
+toxicity, during dosage adjustments, and in persons suspected to be
+noncompliant with the prescribed dosages. Under these circumstances, levels
+may be done weekly. Baseline ECG studies are essential and should be
+repeated annually.
+When obtaining blood for lithium levels, patients should be at steady-state
+lithium dosing (usually after 5 days of constant dosing), preferably using a
+twice-daily or thrice-daily dosing regimen, and the blood sample must be
+drawn 12 hours (±30 minutes) after a given dose. Lithium concentrations 12
+
+
+
+
+<<<PAGE 2067>>>
+
+hours postdose in persons treated with sustained-release preparations are
+generally about 30 percent higher than the corresponding concentrations
+obtained from those taking the regular-release preparations. Because
+available data are based on a sample population following a multiple-dosage
+regimen, regular-release formulations given at least twice daily should be
+used for the initial determination of the appropriate dosages. Factors that may
+cause fluctuations in lithium measurements include dietary sodium intake,
+mood state, activity level, body position, and use of an improper blood
+sample tube.
+Laboratory values that do not seem to correspond to clinical status may
+result from the collection of blood in a tube with a lithium–heparin
+anticoagulant (which can give results falsely elevated by as much as 1
+mEq/L) or aging of the lithium ion-selective electrode (which can cause
+inaccuracies of up to 0.5 mEq/L). After the daily dose has been set, it is
+reasonable to change to the sustained-release formulation given once daily.
+Effective serum concentrations for mania are 1.0 to 1.2 mEq/L, a level
+associated with 1,800 mg a day. The recommended range for maintenance
+treatment is 0.4 to 0.8 mEq/L, which is usually achieved with a daily dose of
+900 to 1,200 mg. A small number of persons will not achieve therapeutic
+benefit with a lithium concentration of 1.2 mEq/L, yet will have no signs of
+toxicity. For such persons, titration of the lithium dosage to achieve a
+concentration above 1.2 mEq/L may be warranted. Some patients can be
+maintained at concentrations below 0.4 mEq/L. There may be considerable
+variation from patient to patient, so it is best to follow the maxim, “treat the
+patient, not the laboratory results.” The only way to establish an optimal dose
+for a patient may be through trial and error.
+Package inserts (US) for lithium products list effective serum
+concentrations for mania between 1.0 and 1.2 mEq/L (usually achieved with
+1,800 mg of lithium carbonate daily) and for long-term maintenance between
+0.6 and 1.2 mEq/L (usually achieved with 900 to 1,200 mg of lithium
+carbonate daily). The dose–blood level relationship may vary considerably
+from patient to patient. The likelihood of achieving a response at levels above
+1.2 mEq/L is usually significantly outweighed by the increased risk of
+toxicity, although rarely a patient may both require and tolerate a higher-thanusual blood concentration.
+What constitutes the lower end of the therapeutic range remains a matter of
+
+
+
+
+<<<PAGE 2068>>>
+
+debate. A prospective 3-year study found patients who maintained a
+concentration between 0.4 and 0.6 mEq/L (mean 0.54) were 2.6 times more
+likely to relapse than those who maintained between 0.8 and 1.0 mEq/L
+(mean 0.83). However, higher blood concentrations produced more adverse
+effects and were less well tolerated.
+If there is no response after 2 weeks at a concentration that is beginning to
+cause adverse effects, then the person should taper off lithium over 1 to 2
+weeks, and other mood-stabilizing drugs should be tried.
+Patient Education. Lithium has a narrow therapeutic index, and many
+factors can upset the balance between lithium concentrations that are well
+tolerated and therapeutic, and those that produce side effects or toxicity. It is
+thus imperative that persons taking lithium be educated about signs and
+symptoms of toxicity, factors that affect lithium levels, how and when to
+obtain laboratory testing, and the importance of regular communication with
+the prescribing physician. Lithium concentrations can be disrupted by
+common factors such as excessive sweating from ambient heat or exercise or
+the use of widely prescribed agents such as ACEIs or NSAIDs. Patients may
+stop taking their lithium because they are feeling well or because they are
+experiencing side effects. They should be advised against discontinuing or
+modifying their lithium regimen. Table 21-31 lists some essential instructions
+for patients.
+
+VALPROATE
+Valproate (Depakene, Depakote), or valproic acid, is approved for the
+treatment of manic episodes associated with bipolar I disorder and is one of
+the most widely prescribed mood stabilizers in psychiatry. It has a rapid onset
+of action and is well-tolerated, and numerous studies suggest that it reduces
+the frequency and intensity of recurrent manic episodes over extended
+periods.
+Chemistry
+Valproate is a simple-chain branch carboxylic acid. It is called valproic acid
+because it is rapidly converted to the acid form in the stomach. Multiple
+formulations of valproic acid are marketed. These include valproic acid
+
+
+
+
+<<<PAGE 2069>>>
+
+(Depakene), divalproex sodium (Depakote), an enteric-coated delayed-release
+1:1 mixture of valproic acid and sodium valproate available in tablet and
+sprinkle formulation (can be opened and spread on food); and sodium
+valproate injection (Depacon). Extended-release preparation is also available.
+Each of these is therapeutically equivalent because, at physiologic pH,
+valproic acid dissociates into valproate ion.
+Table 21-31
+Instructions to Patients Taking Lithium
+Lithium can be remarkably effective in treating your disorder. If not
+used appropriately and not monitored closely, it can be ineffective
+and potentially harmful. It is important to keep the following
+instructions in mind.
+Dosing
+Take lithium exactly as directed by your doctor—never take more or
+less than the prescribed dose.
+Do not stop taking without speaking to your doctor.
+If you miss a dose, take it as soon as possible. If it is within 4 hr of
+the next dose, skip the missed dose (about 6 hr in the case of
+extended-release or slow-release preparations). Never double up
+doses.
+Blood Tests
+Comply with the schedule of recommended regular blood tests.
+Despite their inconvenience and discomfort, your lithium blood levels,
+thyroid function, and kidney status need to be monitored as long as
+you take lithium.
+When going to have lithium levels checked, you should have taken
+your last lithium dose 12 hr earlier.
+Use of Other Medications
+Do not start any prescription or over-the-counter medications without
+telling your doctor.
+Even drugs such as ibuprofen (Advil, Motrin) and naproxen (Aleve)
+can significantly increase lithium levels.
+
+

@@ -1,0 +1,769 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 629>>>
+
+Desvenlafaxine
+
+Therapeutics
+Brands
+Pristiq
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin norepinephrine
+reuptake inhibitor (SN-RI)
+SNRI (dual serotonin and norepinephrine reuptake inhibitor); often
+classified as an antidepressant, but it is not just an antidepressant
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive disorder
+Vasomotor symptoms
+Fibromyalgia
+Generalized anxiety disorder (GAD)
+
+
+
+
+<<<PAGE 630>>>
+
+Social anxiety disorder (social phobia)
+Panic disorder
+Posttraumatic stress disorder (PTSD)
+Premenstrual dysphoric disorder (PMDD)
+How the Drug Works
+Boosts neurotransmitters serotonin, norepinephrine/noradrenaline,
+and dopamine
+Blocks serotonin reuptake pump (serotonin transporter), presumably
+increasing serotonergic neurotransmission
+Blocks norepinephrine reuptake pump (norepinephrine transporter),
+presumably increasing noradrenergic neurotransmission
+Desensitizes both serotonin 1A receptors and beta adrenergic
+receptors
+Since dopamine is inactivated by norepinephrine reuptake in frontal
+cortex, which largely lacks dopamine transporters, desvenlafaxine
+can increase dopamine neurotransmission in this part of the brain
+How Long Until It Works
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks
+If it is not working within 6 or 8 weeks for depression, it may
+require a dosage increase or it may not work at all
+
+
+
+
+<<<PAGE 636>>>
+
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of desvenlafaxine
+
+Dosing and use
+Usual Dosage Range
+Depression: 50 mg once daily
+Dosage Forms
+Tablet (extended-release) 25 mg, 50 mg, 100 mg
+How to Dose
+Initial dose 50 mg once daily; maximum recommended dose
+generally 100 mg once daily; doses up to 400 mg once daily have
+been shown to be effective but higher doses are associated with
+increased side effects
+Dosing Tips
+Desvenlafaxine is the active metabolite O-desmethylvenlafaxine
+(ODV) of venlafaxine, and is formed as the result of CYP450 2D6
+More potent at the serotonin transporter (SERT) than at the
+norepinephrine transporter (NET), but has greater inhibition of NET
+relative to SERT compared to venlafaxine
+
+
+
+
+<<<PAGE 637>>>
+
+Nonresponders at lower doses may try higher doses to be assured of
+the benefits of dual SNRI action
+For vasomotor symptoms, current data suggest that a dose of 100
+mg/day is effective
+Do not break or chew tablets, as this will alter controlled-release
+properties
+For some patients with severe problems discontinuing
+desvenlafaxine, it may be useful to add an SSRI with a long halflife, especially fluoxetine, prior to taper of desvenlafaxine. While
+maintaining fluoxetine dosing, first slowly taper desvenlafaxine and
+then taper fluoxetine
+Be sure to differentiate between reemergence of symptoms requiring
+reinstitution of treatment and withdrawal symptoms
+May dose up to 400 mg/day in patients who do not respond to lower
+doses, if tolerated
+Overdose
+No fatalities have been reported as monotherapy; headache,
+vomiting, agitation, dizziness, nausea, constipation, diarrhea, dry
+mouth, paresthesia, tachycardia
+Desvenlafaxine is the active metabolite of venlafaxine; fatal toxicity
+index data from the UK suggest a higher rate of deaths from
+overdose with venlafaxine than with SSRIs; it is unknown whether
+
+
+
+
+<<<PAGE 639>>>
+
+Drug Interactions
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or for at least 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing desvenlafaxine
+Can rarely cause weakness, hyperreflexia, and incoordination when
+combined with sumatriptan or possibly other triptans, requiring
+careful monitoring of patient
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+NSAIDs may impair effectiveness of SSRIs
+Potent inhibitors of CYP450 3A4 may increase plasma levels of
+desvenlafaxine, but the clinical significance of this is unknown
+Few known adverse drug interactions
+False-positive urine immunoassay screening tests for phencyclidine
+(PCP) and amphetamine have been reported in patients taking
+desvenlafaxine, due to a lack of specificity of the screening tests.
+False-positive test results may be expected for several days
+following discontinuation of desvenlafaxine
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 640>>>
+
+Use with caution in patients with history of seizure
+Use with caution in patients with heart disease
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient has uncontrolled angle-closure glaucoma
+If patient is taking an MAOI
+If there is a proven allergy to desvenlafaxine or venlafaxine
+
+Special populations
+
+
+
+
+<<<PAGE 641>>>
+
+Renal Impairment
+For moderate impairment, recommended dose is 50 mg/day
+For severe impairment, recommended dose is 50 mg every other day
+Patients on dialysis should not receive subsequent dose until dialysis
+is completed
+Hepatic Impairment
+Doses greater than 100 mg/day not recommended
+Cardiac Impairment
+Drug should be used with caution
+Hypertension should be controlled prior to initiation of
+desvenlafaxine and should be monitored regularly during treatment
+Desvenlafaxine has a dose-dependent effect on increasing blood
+pressure
+Desvenlafaxine is the active metabolite of venlafaxine, which is
+contraindicated in patients with heart disease in the UK
+Venlafaxine can block cardiac ion channels in vitro and worsens
+(i.e., reduces) heart rate variability in depression, perhaps due to
+norepinephrine reuptake inhibition
+Elderly
+Some patients may tolerate lower doses better
+
+
+
+
+<<<PAGE 644>>>
+
+National Pregnancy Registry for Antidepressants: 1-866-961-2388,
+https://womensmentalhealth.org/research/pregnancyregistry/antidepr
+essants
+Breast Feeding
+Some drug is found in mother’s breast milk
+Trace amounts may be present in nursing children whose mothers
+are on desvenlafaxine
+If child becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+Immediate postpartum period is a high-risk time for depression,
+especially in women who have had prior depressive episodes, so
+drug may need to be reinstituted late in the third trimester or shortly
+after childbirth to prevent a recurrence during the postpartum period
+Must weigh benefits of breast feeding with risks and benefits of
+antidepressant treatment versus nontreatment to both the infant and
+the mother
+For many patients, this may mean continuing treatment during
+breast feeding
+
+The art of psychopharmacology
+Potential Advantages
+Patients with retarded depression
+
+
+
+
+<<<PAGE 645>>>
+
+Patients with atypical depression
+Patients with depression may have higher remission rates on SNRIs
+than on SSRIs
+Depressed patients with somatic symptoms, fatigue, and pain
+Depressed patients with vasomotor symptoms
+Patients who do not respond or remit on treatment with SSRIs
+Potential Disadvantages
+Patients sensitive to nausea
+Patients with borderline or uncontrolled hypertension
+Patients with cardiac disease
+Primary Target Symptoms
+Depressed mood
+Energy, motivation, and interest
+Sleep disturbance
+Physical symptoms
+Pain
+Pearls
+Because desvenlafaxine is only minimally metabolized by CYP450
+3A4 and is not metabolized at all by CYP450 2D6, as venlafaxine
+
+
+
+
+<<<PAGE 646>>>
+
+is, it should have more consistent plasma levels than venlafaxine
+In addition, although desvenlafaxine, like venlafaxine, is more
+potent at the serotonin transporter (SERT) than the norepinephrine
+transporter (NET), it has relatively greater actions on NET versus
+SERT than venlafaxine does at comparable doses
+The greater potency for NET may make it a preferable agent for
+conditions theoretically associated with targeting norepinephrine
+actions, such as vasomotor symptoms and fibromyalgia
+May be particularly helpful for hot flushes in perimenopausal
+women
+May be effective in patients who fail to respond to SSRIs
+May be used in combination with other antidepressants for
+treatment-refractory cases
+May be effective in a broad array of anxiety disorders and possibly
+adult ADHD, although it has not been studied in these conditions
+May be associated with higher depression remission rates than
+SSRIs
+Because of recent studies from the UK that suggest a higher rate of
+deaths from overdose with venlafaxine than with SSRIs, and
+because of its potential to affect heart function, venlafaxine can only
+be prescribed in the UK by specialist doctors and is contraindicated
+there in patients with heart disease
+Overdose data are from fatal toxicity index studies, which do not
+take into account patient characteristics or whether drug use was
+
+
+
+
+<<<PAGE 647>>>
+
+first- or second-line
+Venlafaxine’s toxicity in overdose is less than that for TCAs
+
+Suggested Reading
+Deecher DC , Beyer CE , Johnston G , et al. Desvenlafaxine succinate: a
+new serotonin and norepinephrine reuptake inhibitor . J Pharmacol Exp
+Ther 2006 ;318 (2 ):657–65 .
+Lieberman DZ , Montgomery SA , Tourian KA , et al. A pooled analysis of
+two placebo-controlled trials of desvenlafaxine in major depressive disorder
+. Int Clin Psychopharmacol 2008 ;23 (4 ):188–97 .
+Speroff L , Gass M , Constantine G . Efficacy and tolerability of
+desvenlafaxine succinate treatment for menopausal vasomotor symptoms: a
+randomized controlled trial . Obstet Gynecol 2008 ;111 (1 ):77 –87 .
+
+
+
+
+<<<PAGE 2581>>>
+
+Deplin (l-methylfolate), 477
+Deprakine (valproate), 829
+Depral (sulpiride), 741
+Depramine (imipramine), 367
+Deprax (trazodone), 793
+Deprenon (fluoxetine), 301
+Deprenyl (selegiline), 705
+Depressase (maprotiline), 465
+Deprex (fluoxetine), 301
+Deprilan (selegiline), 705
+Deprilept (maprotiline), 465
+Deprimyl (lofepramine), 421
+Deprinocte (estazolam), 281
+Deprinol (imipramine), 367
+Depsin (mianserin), 495
+Deptran (doxepin), 255
+Deroxat (paroxetine), 593
+Desconex (loxapine), 443
+Desfax (desvenlafaxine), 215
+Desidox (doxepin), 255
+desipramine, 207
+Desisulpid (sulpiride), 741
+Desitriptylin (amitriptyline), 25
+desvenlafaxine, 215
+Desyrel (trazodone), 793
+deutetrabenazine, 221
+Devidon (trazodone), 793
+DexAlone (dextromethorphan), 225
+
+
+
+
+<<<PAGE 2585>>>
+
+Effexor (venlafaxine), 841
+Effexor XR (venlafaxine), 841
+Effiplen (buspirone), 123
+Egibren (selegiline), 705
+Eglonyl (sulpiride), 741
+Elavil (amitriptyline), 25
+Elavil Plus (amitriptyline), 25
+Eldepryl (selegiline), 705
+Elenium (chlordiazepoxide), 147
+Elepsia XR (levetiracetam), 399
+Eliwel (amitriptyline), 25
+Ellefore (desvenlafaxine), 215
+Elmendos (lamotrigine), 387
+Elopram (citalopram), 159
+Elperil (thioridazine), 759
+Elroquil N (hydroxyzine), 355
+Elvanse (lisdexamfetamine), 409
+Emdalen (lofepramine), 421
+Emsam (selegiline), 705
+EnBrace HR (l-methylfolate), 477
+Endep (amitriptyline), 25
+Enimon (sulpiride), 741
+Enlyte (l-methylfolate), 477
+Epial (carbamazepine), 131
+Epilim (valproate), 829
+Epitol (carbamazepine), 131
+Epitomax (topiramate), 781
+Equetro (carbamazepine), 131
+
+
+
+
+<<<PAGE 2609>>>
+
+PMS-Fluphenazine Decanoate (fluphenazine), 313
+PMS-Haloperidol (haloperidol), 347
+PMS-Hydroxyzine (hydroxyzine), 355
+PMS-Lithium (lithium), 415
+PMS-Methylphenidate (d,l-methylphenidate), 487
+PMS-Trazodone (trazodone), 793
+Podium (diazepam), 229
+Poldoxin (doxepin), 255
+Polysal (amitriptyline), 25
+Portal (fluoxetine), 301
+Pragmarel (trazodone), 793
+Praxiten (oxazepam), 569
+prazosin, 643
+pregabalin, 647
+Priadel (lithium), 415
+Prisdal (citalopram), 159
+Prisma (mianserin), 495
+Pristiq (desvenlafaxine), 215
+Probuphine (buprenorphine), 111
+ProCentra (amphetamine d), 39
+Pro Dorm (lorazepam), 437
+Procythol (selegiline), 705
+Prolixin (fluphenazine), 313
+Prolixin Decanoate (fluphenazine), 313
+Prolixin Enanthate (fluphenazine), 313
+Prolongatum (fluphenazine), 313
+Pronervon T (temazepam), 755
+Propam (diazepam), 229
+
+
+
+
+<<<PAGE 2629>>>
+
+Alzheimer disease
+caprylidene , 127
+donepezil , 243
+galantamine , 337
+memantine , 473
+rivastigmine , 699
+selegiline, 705
+Amnesia, Drug-induced
+midazolam , 499
+Anxiety
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone , 123
+chlordiazepoxide , 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate , 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam , 229
+dothiepin, 249
+doxepin , 255
+duloxetine, 263
+
+
+
+
+<<<PAGE 2638>>>
+
+cariprazine, 137
+citalopram , 159
+clomipramine, 165
+cyamemazine, 201
+desipramine , 207
+desvenlafaxine , 215
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin , 255
+duloxetine , 263
+escitalopram , 269
+esketamine , 275
+fluoxetine , 301
+fluoxetine/olanzapine combination , 301 , 559
+flupenthixol, 307
+fluvoxamine, 325
+iloperidone, 359
+imipramine , 367
+isocarboxazid , 375
+ketamine, 383
+lamotrigine (adjunct), 387
+levomilnacipran , 403
+lisdexamfetamine, 409
+lithium (adjunct), 415
+l-methylfolate (adjunct) , 477
+lofepramine, 421
+lumateperone, 451
+lurasidone, 457
+
+
+
+
+<<<PAGE 2640>>>
+
+vilazodone , 847
+vortioxetine , 853
+Drug-induced parkinsonism
+benztropine , 85
+diphenhydramine, 235
+trihexyphenidyl , 809
+Erectile dysfunction
+sildenafil , 729
+Excessive sleepiness
+armodafinil , 65
+modafinil , 521
+pitolisant , 639
+sodium oxybate , 733
+solriamfetol , 737
+tasimelteon, 751
+Fatigue
+armodafinil, 65
+modafinil, 521
+Fibromyalgia
+amitriptyline, 25
+desvenlafaxine, 215
+duloxetine , 263
+levomilnacipran, 403
+milnacipran , 503
+pregabalin , 647
+sodium oxybate, 733
+
+
+
+
+<<<PAGE 2641>>>
+
+Generalized anxiety disorder
+agomelatine, 5
+alprazolam , 11
+citalopram, 159
+desvenlafaxine, 215
+duloxetine , 263
+escitalopram , 269
+fluoxetine, 301
+fluvoxamine, 325
+mirtazapine, 509
+paroxetine , 509
+pregabalin, 647
+propranolol, 653
+sertraline, 721
+tiagabine (adjunct), 771
+venlafaxine , 841
+vortioxetine, 853
+Glossopharyngeal neuralgia
+carbamazepine, 131
+Hiccups, intractable
+chlorpromazine , 153
+Hypersalivation
+clonidine, 179
+Hypertension
+clonidine , 179
+guanfacine , 343
+
+
+
+
+<<<PAGE 2647>>>
+
+lofexidine , 427
+naltrexone , 537
+Panic disorder
+alprazolam , 11
+citalopram, 159
+clonazepam , 173
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine, 325
+isocarboxazid, 375
+lorazepam, 437
+mirtazapine, 509
+nefazodone, 545
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+reboxetine, 681
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Parkinson’s disease
+selegiline , 705
+zonisamide, 875
+Parkinson’s disease dementia
+
+
+
+
+<<<PAGE 2648>>>
+
+rivastigmine , 699
+Parkinson’s disease psychosis
+pimavanserin , 623
+Pervasive developmental disorders
+guanfacine, 343
+Porphyria
+chlorpromazine , 153
+Postherpetic neuralgia
+gabapentin , 331
+pregabalin , 647
+Postpartum depression
+brexanolone , 99
+Posttraumatic stress disorder
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+cariprazine, 137
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+dextromethorphan (with quinidine), 225
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+
+
+
+
+<<<PAGE 2649>>>
+
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+mirtazapine, 509
+nefazodone, 545
+olanzapine, 558
+paliperidone, 580
+paroxetine , 593
+prazosin (nightmares) 643
+propranolol (prophylactic) 653
+quetiapine, 667
+risperidone, 687
+sertraline , 721
+venlafaxine, 841
+ziprasidone, 863
+Premenstrual dysphoric disorder
+alprazolam, 11
+citalopram, 159
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+Preoperative anxiety
+chlordiazepoxide , 147
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2655>>>
+
+gabapentin (adjunct) , 331
+lamotrigine , 387
+levetiracetam , 399
+lorazepam , 437
+oxcarbazepine , 575
+pregabalin (adjunct) , 647
+tiagabine (adjunct) , 771
+topiramate , 781
+valproate (divalproex) , 829
+zonisamide , 875
+Sexual dysfunction
+bremelanotide , 95
+bupropion, 117
+flibanserin , 289
+sildenafil , 729
+Sleepiness, excessive
+armodafinil , 65
+modafinil , 521
+pitolisant , 639
+sodium oxybate , 733
+solriamfetol , 737
+tasimelteon, 751
+Social anxiety disorder
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+
+
+
+
+<<<PAGE 2657>>>
+
+Tremor
+propranolol , 653
+Trigeminal neuralgia
+carbamazepine , 131
+Vasomotor symptoms
+clonidine, 179
+desvenlafaxine, 215
+duloxetine, 263
+paroxetine , 593
+Weight management
+amphetamine (d,l), 45
+naltrexone/bupropion , 541
+phentermine/topiramate , 619
+topiramate , 781
+zonisamide, 875
+
+
+
+
+<<<PAGE 2659>>>
+
+amitriptyline, 25
+amoxapine, 33
+atomoxetine, 79
+brexanolone, 99
+bupropion, 117
+citalopram, 159
+clomipramine, 165
+desipramine, 207
+desvenlafaxine, 215
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+esketamine, 275
+fluoxetine, 301
+fluvoxamine, 325
+imipramine, 367
+isocarboxazid, 375
+ketamine, 383
+levomilnacipran, 403
+l-methylfolate (adjunct), 477
+lofepramine, 421
+maprotiline, 465
+mianserin, 495
+milnacipran, 503
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+

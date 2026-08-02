@@ -1,0 +1,1134 @@
+<<<PAGE 16>>>
+
+Certain drugs may be for experts only, and these might include
+clozapine, thioridazine, pimozide, nefazodone, and monoamine oxidase
+(MAO) inhibitors, among others. Off-label uses not approved by the FDA
+and inadequately studied doses or combinations of drugs may also be for
+the expert only, who can weigh risks and benefits in the presence of
+sometimes vague and conflicting evidence. Pregnant or nursing women, or
+people with two or more psychiatric illnesses, substance abuse, and/or a
+concomitant medical illness may be suitable patients for the expert only.
+Controlled substances also require expertise. Use your best judgment as to
+your level of expertise and realize that we are all learning in this rapidly
+advancing field. The practice of medicine is often not so much a science as
+it is an art. It is important to stay within the standards of medical care for
+the field, and also within your personal comfort zone, while trying to help
+extremely ill and often difficult patients with medicines that can relieve
+their suffering and sometimes transform their lives.
+Finally, this book is intended to be genuinely helpful for practitioners
+of psychopharmacology by providing them with the mixture of facts and
+opinions selected by the author. Ultimately, prescribing choices are the
+reader’s responsibility. Every effort has been made in preparing this book to
+provide accurate and up-to-date information in accord with accepted
+standards and practice at the time of publication. Nevertheless, the
+psychopharmacology field is evolving rapidly and the author and publisher
+make no warranties that the information contained herein is totally free
+from error, not least because clinical standards are constantly changing
+through research and regulation. Furthermore, the author and publisher
+disclaim any responsibility for the continued currency of this information
+and disclaim all liability for any and all damages, including direct or
+
+
+
+
+<<<PAGE 81>>>
+
+If patient has pheochromocytoma
+If patient has prolactin-dependent tumor
+If patient is pregnant or nursing
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide; thioridazine; selected antiarrhythmics such
+as quinidine, disopyramide, amiodarone, and sotalol; selected
+antibiotics such as moxifloxacin and sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking cisapride, intravenous erythromycin, or
+pentamidine
+In children
+If there is a proven allergy to amisulpride
+
+Special Populations
+Renal Impairment
+Use with caution; drug may accumulate
+Amisulpride is eliminated by the renal route; in cases of severe renal
+insufficiency, the dose should be decreased and intermittent
+treatment or switching to another antipsychotic should be
+considered
+
+
+
+
+<<<PAGE 94>>>
+
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+
+Side Effects
+How Drug Causes Side Effects
+Anticholinergic activity may explain sedative effects, dry mouth,
+constipation, and blurred vision
+Sedative effects and weight gain may be due to antihistamine
+properties
+Blockade of alpha adrenergic 1 receptors may explain dizziness,
+sedation, and hypotension
+Cardiac arrhythmias and seizures, especially in overdose, may be
+caused by blockade of ion channels
+Notable Side Effects
+Blurred vision, constipation, urinary retention, increased appetite,
+dry mouth, nausea, diarrhea, heartburn, unusual taste in mouth,
+
+
+
+
+<<<PAGE 101>>>
+
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is recovering from myocardial infarction
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to amitriptyline or nortriptyline
+
+Special Populations
+Renal Impairment
+
+
+
+
+<<<PAGE 114>>>
+
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antidepressant
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+
+Side Effects
+How Drug Causes Side Effects
+Anticholinergic activity may explain sedative effects, dry mouth,
+constipation, and blurred vision
+
+
+
+
+<<<PAGE 122>>>
+
+If patient is recovering from myocardial infarction
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA/tetracyclic metabolism,
+including CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to amoxapine or loxapine
+
+Special Populations
+Renal Impairment
+Use with caution –may require lower than usual adult dose
+Hepatic Impairment
+Use with caution –may require lower than usual adult dose
+Cardiac Impairment
+Baseline ECG is recommended
+
+
+
+
+<<<PAGE 491>>>
+
+or dyslipidemia, or consider switching to a different antidepressant
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+
+Side Effects
+How Drug Causes Side Effects
+Anticholinergic activity may explain sedative effects, dry mouth,
+constipation, and blurred vision
+Sedative effects and weight gain may be due to antihistamine
+properties
+Blockade of alpha adrenergic 1 receptors may explain dizziness,
+sedation, and hypotension
+Cardiac arrhythmias and seizures, especially in overdose, may be
+caused by blockade of ion channels
+Notable Side Effects
+
+
+
+
+<<<PAGE 612>>>
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antidepressant
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+
+
+
+
+<<<PAGE 668>>>
+
+If patient has complete atrioventricular (AV) block without
+implanted pacemaker, or patients at high risk of complete AV block
+If patient is taking a drug that prolongs QT interval and is
+metabolized by CYP450 2D6 (e.g., thioridazine, pimozide)
+If there is a proven allergy to dextromethorphan or quinidine
+
+Special populations
+Renal Impairment
+Dose adjustment not necessary in patients with mild to moderate
+impairment
+Hepatic Impairment
+Dose adjustment not necessary in patients with mild to moderate
+impairment
+Cardiac Impairment
+Contraindicated in patients with prolonged QT interval, congenital
+long QT syndrome, history suggestive of torsade de pointes, and
+heart failure
+Monitor ECG in patients with left ventricular hypertrophy or left
+ventricular dysfunction
+Elderly
+
+
+
+
+<<<PAGE 728>>>
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antidepressant
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+
+
+
+
+<<<PAGE 750>>>
+
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+
+Side effects
+How Drug Causes Side Effects
+At antidepressant doses, anticholinergic activity may explain
+sedative effects, dry mouth, constipation, and blurred vision
+Sedative effects and weight gain may be due to antihistamine
+properties
+At antidepressant doses, blockade of alpha adrenergic 1 receptors
+may explain dizziness, sedation, and hypotension
+Cardiac arrhythmias and seizures, especially in overdose, may be
+caused by blockade of ion channels
+Notable Side Effects
+Antidepressant Doses
+Blurred vision, constipation, urinary retention, increased appetite,
+dry mouth, nausea, diarrhea, heartburn, unusual taste in mouth,
+weight gain
+
+
+
+
+<<<PAGE 897>>>
+
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is taking an MAOI
+If patient is taking thioridazine
+If patient is taking pimozide
+If patient is taking tamoxifen
+If there is a proven allergy to fluoxetine
+
+Special Populations
+Renal Impairment
+No dose adjustment
+Not removed by hemodialysis
+Hepatic Impairment
+Lower dose or give less frequently, perhaps by half
+Cardiac Impairment
+
+
+
+
+<<<PAGE 1085>>>
+
+pain)
+Tests
+Baseline ECG is recommended for patients over age 50
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antidepressant
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+
+
+
+
+<<<PAGE 1093>>>
+
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is recovering from myocardial infarction
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to imipramine, desipramine, or
+lofepramine
+
+Special Populations
+Renal Impairment
+Cautious use; may need lower dose
+
+
+
+
+<<<PAGE 1232>>>
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antidepressant
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+
+
+
+
+<<<PAGE 1240>>>
+
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to lofepramine, desipramine, or
+imipramine
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Baseline ECG is recommended
+TCAs have been reported to cause arrhythmias, prolongation of
+conduction time, orthostatic hypotension, sinus tachycardia, and
+
+
+
+
+<<<PAGE 1359>>>
+
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antidepressant
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+
+Side Effects
+
+
+
+
+<<<PAGE 1367>>>
+
+If patient is recovering from myocardial infarction
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA/tetracyclic metabolism,
+including CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to maprotiline
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Baseline ECG is recommended
+
+
+
+
+<<<PAGE 1587>>>
+
+by half or more
+Via CYP450 3A4, nefazodone may increase plasma concentrations
+of buspirone, so buspirone dose may need to be reduced
+Via CYP450 3A4 inhibition, nefazodone could theoretically
+increase concentrations of certain cholesterol lowering HMG CoA
+reductase inhibitors, especially simvastatin, atorvastatin, and
+lovastatin, but not pravastatin or fluvastatin, which would increase
+the risk of rhabdomyolysis; thus, coadministration of nefazodone
+with certain HMG CoA reductase inhibitors should proceed with
+caution
+Via CYP450 3A4 inhibition, nefazodone could theoretically
+increase the concentrations of pimozide, and cause QTc
+prolongation and dangerous cardiac arrhythmias
+Nefazodone may reduce clearance of haloperidol, so haloperidol
+dose may need to be reduced
+It is recommended to discontinue nefazodone prior to elective
+surgery because of the potential for interaction with general
+anesthetics
+Other Warnings/Precautions
+
+✽ Hepatotoxicity, sometimes requiring liver transplant and/or fatal,
+has occurred with nefazodone use. Risk may be one in every 250,000
+to 300,000 patient years. Patients should be advised to report
+symptoms such as jaundice, dark urine, loss of appetite, nausea, and
+abdominal pain to prescriber immediately. If patient develops signs of
+
+
+
+
+<<<PAGE 1589>>>
+
+If patient has acute hepatic impairment or elevated baseline serum
+transaminases
+If patient was previously withdrawn from nefazodone treatment due
+to hepatic injury
+If patient is taking pimozide, as nefazodone could raise pimozide
+levels and increase QTc interval, perhaps causing dangerous
+arrhythmia
+If patient is taking carbamazepine, as this agent can dramatically
+reduce nefazodone levels and thus interfere with its antidepressant
+actions
+If there is a proven allergy to nefazodone
+
+Special Populations
+Renal Impairment
+No dose adjustment necessary
+Hepatic Impairment
+Contraindicated in patients with known hepatic impairment
+Cardiac Impairment
+Use in patients with cardiac impairment has not been studied, so use
+with caution because of risk of orthostatic hypotension
+
+
+
+
+<<<PAGE 1599>>>
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antidepressant
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+
+
+
+
+<<<PAGE 1692>>>
+
+Priapism has been reported with other antipsychotics, including
+risperidone
+Antipsychotics may cause somnolence, postural hypotension, motor
+and sensory instability, which may lead to falls; for patients with
+diseases, conditions, or medications that could exacerbate these
+effects, complete fall risk assessments when initiating antipsychotic
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+As with any antipsychotic, use with caution in patients with history
+of seizures
+Do Not Use
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient has a preexisting severe gastrointestinal narrowing
+If there is a proven allergy to paliperidone or risperidone
+
+Special Populations
+Renal Impairment
+For mild impairment, maximum recommended dose 6 mg/day
+
+
+
+
+<<<PAGE 1721>>>
+
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing paroxetine
+May displace highly protein-bound drugs (e.g., warfarin)
+There are reports of elevated theophylline levels associated with
+paroxetine treatment, so it is recommended that theophylline levels
+be monitored when these drugs are administered together
+May increase anticholinergic effects of procyclidine and other drugs
+with anticholinergic properties
+Can rarely cause weakness, hyperreflexia, and incoordination when
+combined with sumatriptan or possibly with other triptans, requiring
+careful monitoring of patient
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+NSAIDs may impair effectiveness of SSRIs
+Via CYP450 2D6 inhibition, paroxetine could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine
+Via CYP450 2D6 inhibition, paroxetine could theoretically increase
+concentrations of thioridazine and cause dangerous cardiac
+arrhythmias
+Paroxetine increases pimozide levels, and pimozide prolongs QT
+interval, so concomitant use of pimozide and paroxetine is
+contraindicated
+
+
+
+
+<<<PAGE 1806>>>
+
+Pimozide
+
+Therapeutics
+Brands
+Orap
+see index for additional brand names
+Generic?
+Not in USA
+Class
+Neuroscience-based Nomenclature: dopamine receptor antagonist
+(D-RAn)
+Tourette’s syndrome/tic suppressant; conventional antipsychotic
+(neuroleptic, dopamine 2 antagonist)
+Commonly Prescribed for
+(bold for FDA approved)
+Suppression of motor and phonic tics in patients with Tourette’s
+syndrome who have failed to respond satisfactorily to standard
+treatment
+Psychotic disorders in patients who have failed to respond
+satisfactorily to standard treatment
+
+
+
+
+<<<PAGE 1808>>>
+
+If 2 or more antipsychotic monotherapies do not work, consider
+clozapine
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Augmentation of pimozide has not been systematically studied and
+can be dangerous, especially with drugs that can either prolong QTc
+interval or raise pimozide plasma levels
+Tests
+
+✽ Baseline ECG and serum potassium levels should be determined
+✽ Periodic evaluation of ECG and serum potassium levels, especially
+during dose titration
+Serum magnesium levels may also need to be monitored
+
+✽ Since conventional antipsychotics are frequently associated with
+weight gain, before starting treatment, weigh all patients and determine
+if the patient is already overweight (BMI 25.0–29.9) or obese (BMI
+>30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+
+
+
+
+<<<PAGE 1812>>>
+
+Occurs in significant minority
+Sedation
+Occurs in significant minority
+What to Do About Side Effects
+Wait
+Wait
+Wait
+Anticholinergics may reduce drug-induced parkinsonism when
+present
+Reduce the dose
+For sedation, give at night
+Switch to an atypical antipsychotic
+Weight loss, exercise programs, and medical management for high
+BMIs, diabetes, dyslipidemia
+Best Augmenting Agents for Side Effects
+
+✽ Augmentation of pimozide has not been systematically studied and
+can be dangerous, especially with drugs that can either prolong QTc
+interval or raise pimozide plasma levels
+
+
+
+
+<<<PAGE 1813>>>
+
+Dosing and Use
+Usual Dosage Range
+Less than 10 mg/day
+Dosage Forms
+Tablet 1 mg scored, 2 mg scored
+How to Dose
+Initial 1–2 mg/day in divided doses; can increase dose every other
+day; maximum 10 mg/day or 0.2 mg/kg per day
+Children: initial 0.05 mg/kg per day at night; can increase every 3
+days; maximum 10 mg/day or 0.2 mg/kg per day
+Dosing Tips
+
+✽ The effects of pimozide on the QTc interval are dose-dependent, so
+start low and go slow while carefully monitoring QTc interval
+
+✽ Sudden, unexpected deaths have occurred in patients taking high
+doses of pimozide for conditions other than Tourette’s disorder;
+therefore, patients should be instructed not to exceed the prescribed
+dose of pimozide
+Rather than raise the dose above normal dosing in acutely agitated
+patients requiring acute antipsychotic actions, consider short-term
+(one dose or more) augmentation with a benzodiazepine or another
+antipsychotic, especially intramuscularly
+
+
+
+
+<<<PAGE 1815>>>
+
+Rapid discontinuation may lead to rebound psychosis and worsening
+of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after pimozide is discontinued
+Pharmacokinetics
+Metabolized by CYP450 3A and to a lesser extent by CYP450 1A2
+Mean elimination half-life approximately 55 hours
+Drug Interactions
+May decrease the effects of levodopa, dopamine agonists
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+May increase the effects of antihypertensive drugs
+
+✽ Use with CYP450 3A4 inhibitors (e.g., drugs such as fluoxetine,
+sertraline, fluvoxamine, and nefazodone; foods such as grapefruit
+juice) can raise pimozide levels and increase the risks of dangerous
+arrhythmias
+Use of pimozide and fluoxetine may lead to bradycardia
+Additive effects may occur if used with CNS depressants
+Some patients taking a neuroleptic and lithium have developed an
+encephalopathic syndrome similar to neuroleptic malignant
+syndrome
+
+
+
+
+<<<PAGE 1816>>>
+
+Combined use with epinephrine may lower blood pressure
+Other Warnings/Precautions
+If signs of neuroleptic malignant syndrome develop, treatment
+should be immediately discontinued
+Use cautiously in patients with alcohol withdrawal or convulsive
+disorders because of possible lowering of seizure threshold
+Antiemetic effect can mask signs of other disorders or overdose
+Do not use epinephrine in event of overdose as interaction with
+some pressor agents may lower blood pressure
+Use only with caution if at all in Parkinson’s disease or Lewy body
+dementia
+Because pimozide may dose-dependently prolong QTc interval, use
+with caution in patients who have bradycardia or who are taking
+drugs that can induce bradycardia (e.g., beta blockers, calcium
+channel blockers, clonidine, digitalis)
+Because pimozide may dose-dependently prolong QTc interval, use
+with caution in patients who have hypokalemia and/or
+hypomagnesemia or who are taking drugs that can induce
+hypokalemia and/or magnesemia (e.g., diuretics, stimulant laxatives,
+intravenous amphotericin B, glucocorticoids, tetracosactide)
+Pimozide can increase tumors in mice (dose-related effect)
+
+✽ Pimozide can increase the QTc interval and potentially cause
+arrhythmia or sudden death, especially in combination with drugs that
+
+
+
+
+<<<PAGE 1817>>>
+
+raise its levels
+Antipsychotics may cause somnolence, postural hypotension, motor
+and sensory instability, which may lead to falls; for patients with
+diseases, conditions, or medications that could exacerbate these
+effects, complete fall risk assessments when initiating antipsychotic
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+As with any antipsychotic, use with caution in patients with history
+of seizures
+Do Not Use
+If patient is in a comatose state or has CNS depression
+
+✽ If patient is taking an agent capable of significanty prolonging QTc
+interval (e.g., thioridazine, selected antiarrhythmics, moxifoxacin, and
+sparfloxacin)
+
+✽ If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that can cause tics
+
+✽ If patient is taking drugs that inhibit pimozide metabolism, such as
+macrolide antibiotics, azole antifungal agents (ketoconazole,
+itraconazole), protease inhibitors, nefazodone, fluvoxamine,
+fluoxetine, sertaline, etc.
+If there is a proven allergy to pimozide
+If there is a known sensitivity to other antipsychotics
+
+
+
+
+<<<PAGE 1818>>>
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Pimozide produces a dose-dependent prolongation of QTc interval,
+which may be enhanced by the existence of bradycardia,
+hypokalemia, congenital or acquired long QTc interval, which
+should be evaluated prior to administering pimozide
+Use with caution if treating concomitantly with a medication likely
+to produce prolonged bradycardia, hypokalemia, slowing of
+intracardiac conduction, or prolongation of the QTc interval
+Avoid pimozide in patients with a known history of QTc
+prolongation, recent acute myocardial infarction, and
+uncompensated heart failure
+Elderly
+Some patients may tolerate lower doses better
+Although conventional antipsychotics are commonly used for
+behavioral disturbances in dementia, no agent has been approved for
+
+
+
+
+<<<PAGE 1821>>>
+
+Only for patients who respond to this agent and not to other
+antipsychotics
+Potential Disadvantages
+Vulnerable populations such as children and elderly
+Patients on other drugs
+Primary Target Symptoms
+Vocal and motor tics in patients who fail to respond to treatment
+with other antipsychotics
+Psychotic symptoms in patients who fail to respond to treatment
+with other antipsychotics
+Pearls
+
+✽ In the past, pimozide was a first-line choice for Tourette’s
+syndrome and for certain behavioral disorders, including
+monosymptomatic hypochondriasis; however, it is now recognized that
+the benefits of pimozide generally do not outweigh its risks in most
+patients
+
+✽ Because of its effects on the QTc interval, pimozide is not intended
+for use unless other options for tic disorders (or psychotic disorders)
+have failed
+
+Suggested Reading
+
+
+
+
+<<<PAGE 1822>>>
+
+Huhn M , Nikolakopoulou A , Schneider-Thoma J , et al. Comparative
+efficacy and tolerability of 32 oral antipsychotics for the acute treatment of
+adults with multi-episode schizophrenia: a systematic review and network
+meta-analysis . Lancet 2019 ;394 :939–51 .
+Pringsheim T , Marras C . Pimozide for tics in Tourette’s syndrome .
+Cochrane Database Syst Rev 2009 ;15 (2 ):CD006996 .
+Rathbone J , McMonagle T . Pimozide for schizophrenia or related
+psychoses . Cochrane Database Syst Rev 2007 ;18 (3 ):CD001949 .
+
+
+
+
+<<<PAGE 2060>>>
+
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a personal or family history of QTc prolongation
+If there is a history of significant cardiovascular illness, including
+congestive heart failure, cardiac hypertrophy, arrhythmia,
+bradycardia, or congential prolonged QT syndrome
+If patient has hypokalemia, hypomagnesemia, or QTc greater than
+450 msec (males) or 470 msec (females)
+If patient is taking a CYP450 3A inhibitor
+If patient has severe hepatic impairment
+If patient has galactose intolerance, Lapp lactase deficiency, or
+glucose-galactose malabsorption
+If there is a proven allergy to sertindole
+
+Special Populations
+Renal Impairment
+Dose adjustment not generally necessary
+Hepatic Impairment
+For mild to moderate impairment, use slower titration and lower
+maintenance dose
+
+
+
+
+<<<PAGE 2077>>>
+
+Via CYP450 3A4 inhibition, sertraline could theoretically increase
+concentrations of certain cholesterol lowering HMG CoA reductase
+inhibitors, especially simvastatin, atorvastatin, and lovastatin, but
+not pravastatin or fluvastatin, which would increase the risk of
+rhabdomyolysis; thus, coadministration of sertraline with certain
+HMG CoA reductase inhibitors should proceed with caution
+Via CYP450 3A4 inhibition, sertraline could theoretically increase
+the concentrations of pimozide, and cause QTc prolongation and
+dangerous cardiac arrhythmias
+Via CYP450 3A4 inhibition, sertraline could theoretically increase
+the concentrations of pimozide, and cause QTc prolongation and
+dangerous cardiac arrhythmias
+False-positive urine immunoassay screening tests for
+benzodiazepine have been reported in patients taking sertraline due
+to a lack of specificity of the screening tests. False-positive results
+may be expected for several days following discontinuation of
+sertraline
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing sertraline
+Use with caution in patients with history of seizures
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+
+
+
+
+<<<PAGE 2341>>>
+
+✽ Since tricyclic and tetracyclic antidepressants are frequently
+associated with weight gain, before starting treatment, weigh all
+patients and determine if the patient is already overweight (BMI 25.0–
+29.9) or obese (BMI >30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antipsychotic
+ECGs may be useful for selected patients (e.g., those with personal
+or family history of QTc prolongation; cardiac arrhythmia; recent
+myocardial infarction; uncompensated heart failure; or taking agents
+that prolong QTc interval such as pimozide, thioridazine, selected
+antiarrhythmics, moxifloxacin, sparfloxacin, etc.)
+Patients at risk for electrolyte disturbances (e.g., patients on diuretic
+therapy) should have baseline and periodic serum potassium and
+magnesium measurements
+
+
+
+
+<<<PAGE 2484>>>
+
+diseases, conditions, or medications that could exacerbate these
+effects, complete fall risk assessments when initiating antipsychotic
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+As with any antipsychotic, use with caution in patients with history
+of seizures
+Do Not Use
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If there is a proven allergy to ziprasidone
+
+Special Populations
+Renal Impairment
+No dose adjustment necessary
+Not removed by hemodialysis
+Intramuscular formulation should be used with caution
+Hepatic Impairment
+No dose adjustment necessary
+
+
+
+
+<<<PAGE 2544>>>
+
+Do Not Use
+If patient has epilepsy or family history of epilepsy
+If patient has gout or history of nephrolithiasis
+If patient is taking other CNS depressants
+If patient is taking high doses of other antipsychotics
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide; thioridazine; selected antiarrhythmics such
+as quinidine, disopyramide, amiodarone, and sotalol; selected
+antibiotics such as moxifloxacin and sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is pregnant or breast feeding
+If there is a proven allergy to zotepine
+
+Special Populations
+Renal Impairment
+Recommended starting dose 25 mg twice a day; recommended
+maximum dose generally 75 mg twice a day
+Hepatic Impairment
+Recommended starting dose 25 mg twice a day; recommended
+maximum dose generally 75 mg twice a day
+
+
+
+
+<<<PAGE 2605>>>
+
+Nu-Loraz (lorazepam), 437
+Nuplazid (pimavanserin), 623
+Nu-Trazodone (trazodone), 793
+Nu-Trimipramine (trimipramine), 817
+Nuvigil (armodafinil), 65
+Nycoflox (fluoxetine), 301
+Nylipark (sulpiride), 741
+Oasil (chlordiazepoxide), 147
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+Olasek (olanzapine), 559
+Oleptro (trazodone XR), 793
+Omaha (sulpiride), 741
+Omca (fluphenazine), 313
+Omiryl (sulpiride), 741
+Omnali Esteve (chlordiazepoxide), 147
+Omnipress (amoxapine), 33
+Oniria (quazepam), 663
+Opamin (oxazepam), 569
+Opamox (oxazepam), 569
+Opiran (pimozide), 627
+Orap (pimozide), 627
+Orfidal (lorazepam), 437
+Orfilept (valproate), 829
+Orfiril (valproate), 829
+Orfiril Retard (valproate), 829
+Ormodon (temazepam), 755
+Orsanil (thioridazine), 759
+
+
+
+
+<<<PAGE 2608>>>
+
+Phasal (lithium), 415
+phenelzine, 613
+phentermine/topiramate, 619
+Piefol (trifluoperazine), 803
+pimavanserin, 623
+pimozide, 627
+Piportil (pipothiazine), 633
+Piportil Depot (pipothiazine), 633
+Piportil L4 (pipothiazine), 633
+Piportil Longum-4 (pipothiazine), 633
+Piportil palmitate (pipothiazine), 633
+Piportyl palmitat (pipothiazine), 633
+pipothiazine, 633
+Pipotiazine (pipothiazine), 633
+Pirium (pimozide), 627
+pitolisant, 639
+Placidia (lorazepam), 437
+Placil (clomipramine), 165
+Placinoral (lorazepam), 437
+Planum (temazepam), 755
+Plegomazin (chlorpromazine), 153
+Plenur (lithium), 415
+Plurimen (selegiline), 705
+PMS-carbamazepine (carbamazepine), 131
+PMS-Clonazepam (clonazepam), 173
+PMS-Desipramine (desipramine), 207
+PMS-Fluoxetine (fluoxetine), 301
+PMS-Fluphenazine (fluphenazine), 313
+
+

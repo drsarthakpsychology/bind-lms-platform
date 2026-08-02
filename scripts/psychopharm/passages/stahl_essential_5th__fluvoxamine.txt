@@ -1,0 +1,285 @@
+<<<PAGE 311>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+dual serotonin plus norepinephrine reuptake inhibiting
+properties, or SNRI actions, are discussed below in the
+section on SNRIs. It is possible that weak to moderate
+NET inhibition of paroxetine may contribute importantly
+to its antidepressant actions.
+Paroxetine also inhibits the enzyme nitric oxide
+synthase, which could theoretically contribute to
+sexual dysfunction, especially in men. Paroxetine
+is also notorious for causing withdrawal reactions
+upon sudden discontinuation, with symptoms such
+as akathisia, restlessness, gastrointestinal symptoms,
+dizziness, and tingling, especially when suddenly
+discontinued from long-term high-dose treatment. This
+is possibly due not only to SERT inhibition properties,
+since all SSRIs can cause discontinuation reactions,
+but also to anticholinergic rebound when paroxetine
+is rapidly discontinued. Paroxetine is available in a
+controlled-release formulation, which may mitigate
+some of its side effects, including discontinuation
+reactions.
+Fluvoxamine: An SSRI with σ1 Receptor Binding
+Properties
+
+This SSRI was among the first to be launched for the
+treatment of depression worldwide, but was never
+officially approved for depression in the US, so it has been
+considered more of an agent for the treatment of OCD
+in the US. Like sertraline, fluvoxamine binds at σ1 sites,
+but this action is more potent for fluvoxamine than for
+sertraline (Figure 7-19). The physiological function of
+σ1 sites is still a mystery, and thus sometimes called the
+“sigma enigma,” but has been linked both to anxiety and
+psychosis. Preclinical studies suggest that fluvoxamine
+
+may be an agonist at σ1 receptors, and that this property
+may contribute an additional pharmacological action
+to help explain fluvoxamine’s well-known anxiolytic
+properties. Fluvoxamine also has shown therapeutic
+activity in both psychotic and delusional depression,
+where it, like sertraline, may have advantages over other
+SSRIs.
+Fluvoxamine is now available as a controlled-release
+formulation, which makes once-daily administration
+possible, unlike immediate-release fluvoxamine, whose
+shorter half-life often requires twice-daily administration.
+In addition, recent trials of controlled-release
+fluvoxamine show impressive remission rates in both
+OCD and social anxiety disorder, as well as possibly less
+peak-dose sedation.
+Citalopram: An SSRI with a “Good” and a “Bad”
+Enantiomer
+
+This SSRI is comprised of two enantiomers, R and S,
+which are mirror images of each other (Figure 7-20).
+The mixture of these enantiomers is known as racemic
+citalopram, or commonly just as citalopram, and has
+mild antihistamine properties that reside in the R
+enantiomer. Racemic citalopram is generally one of
+the better-tolerated SSRIs, and has favorable findings
+in the treatment of depression in the elderly, but has a
+somewhat inconsistent therapeutic action at the lowest
+dose, often requiring dose increase to optimize treatment.
+citalopram: R+S citalopram
+
+fluvoxamine
+S
+ram
+lop
+
+cita
+
+1H
+
+R
+rpo
+lat
+i
+
+ma
+
+c
+
+SERT
+
+Figure 7-19 Fluvoxamine. Fluvoxamine’s secondary properties
+include actions at σ1 receptors, which may be anxiolytic as well
+as beneficial for psychotic depression.
+
+Figure 7-20 Citalopram. Citalopram consists of two
+enantiomers, R and S. Some pharmacological evidence suggests
+that the R enantiomer may be pharmacologically active at SERTs
+in a manner that does not inhibit SERTs but actually interferes
+with the ability of the active S enantiomer to inhibit SERTs. The R
+enantiomer also has weak antihistamine properties.
+
+295
+
+7
+
+
+
+
+<<<PAGE 634>>>
+
+Index
+
+excitatory amino acid transporter, 96, 99
+excitement, 78
+executive dysfunction, 144, 449–50
+exposure therapy, 374, 378, 574, 576, 577
+extinction
+fear, 373, 374–5, 574
+pharmacological, 573
+extrapyramidal symptoms, 166
+F17464, 241
+FDG PET, 490, 492, 502
+fear, 363–6
+neurobiology of, 364–5
+noradrenergic hyperactivity, 371
+fear conditioning, 370–4
+blocking, 375–7
+fear extinction, 373, 374–5, 574
+fentanyl, 559
+fibro-fog, 390, 400
+fibromyalgia, 303, 387–9
+cognitive dysfunction, 388, 400
+targeting ancillary symptoms,
+399–400
+treatment, 448
+fight or flight response, 359, 364
+first messengers, 11, 13
+flashbacks, 568
+flumazenil, 263
+fluoxetine, 293–4
+olanzapine combination, 293, 326,
+343
+fluphenazine, 202, 203
+fluvoxamine, 295
+forensic hospitals, 146, 147, 156
+frontotemporal dementias, 494–6
+frontotemporal lobar degeneration, 494
+full agonists, 37–41, 56, 192
+G protein, 14
+G-protein-linked receptors, 36–45, 50
+agonist spectrum, 37, 43, 45
+agonists, 37–41
+antagonists, 41–3
+inverse agonists, 42, 44–5
+no agonist, 37
+partial agonists, 41, 43–4
+structure and function, 36
+G-protein-linked systems, 11, 12, 13
+GABA (γ-aminobutyric acid), 5, 257–64,
+349
+action termination, 258
+synthesis, 255
+GABA interneurons
+5HT receptors on, 121, 125, 130
+prefrontal cortex, 105–10
+GABA receptors, 258–64
+GABAA, 321, 366, 421–3
+GABAA receptor subtypes, 258–61
+618
+
+GABAA, benzodiazepine-insensitive,
+263–4
+GABAA, benzodiazepine-sensitive,
+259–62
+GABA transaminase (GABA-T), 258
+GABA transporter (GAT), 34, 258
+GABAergic drugs, 276
+gabapentin, 352, 366, 395, 426
+galanthamine, 514
+gambling disorder, 575
+gamma-hydroxybutyrate (GHB), 400,
+446–8, 559
+gene activation, 18, 19, 24, 25
+gene expression
+epigenetics, 23–6
+molecular mechanism, 18–23
+neurotransmission triggering, 18
+phosphoprotein triggering cascades,
+15–18
+gene silencing, 24, 25
+generalized anxiety disorder, 361, 377
+genetic testing, 323–5
+genetics
+ADHD, 463
+schizophrenia, 148–50
+genotyping, 50
+ghrelin, 415
+glucose metabolism, 490
+glutamate, 5, 96
+agitation in Alzheimer disease, 533
+Alzheimer disease target, 515–18
+key pathways in the brain, 102
+synthesis, 96–7
+synthesis of GABA from, 255
+glutamate hypothesis of psychosis,
+95–114
+glutamate neurotransmitter network,
+96–106
+glutamate receptors, 99–105
+ionotropic, 54
+metabotropic, 100, 103
+NMDA. See NMDA glutamate
+receptors
+glutamate transporters, 34
+glutamic acid decarboxylase, 255
+glycine transporters, 34
+glycine, synthesis, 97–9
+Goldilocks solution, 43, 60, 191, 227,
+428
+grandiose expansiveness, 78
+gray matter, chronic pain, 387–90
+GSK-3 (glycogen synthase kinase), 48
+guanfacine, 482–3
+habit circuit, 544, 561, 571, 572
+habits, 538, 539, 576
+hallucinations, 77, 113, 141, 435, 568
+dementia, 521
+
+Parkinson’s disease psychosis, 157
+visual, 113, 524
+hallucinogen-assisted psychotherapy,
+355–8, 376
+hallucinogens, 135, 138, 567–9
+haloperidol, 181, 202, 204
+heroin, 559, 561, 573
+heteroreceptors, 125
+hippocampal-accumbens glutamate
+pathway, 104
+hippocampus, 372, 374
+histamine, 35, 402–6, 409
+histamine 1 antagonism, 425–6, 427
+histamine receptors, 406
+histones, methylation, 23
+homeostatic sleep drive, 408, 412
+hormone-linked systems, 11, 12
+hostile belligerence, 78
+HPA (hypothalamic-pituitary-adrenal)
+axis, 266, 270
+human genome, 18
+Huntington’s disease, 28, 175
+hydrocodone (Vicodin), 559
+hyperactivity, 452, 454, 463
+hyperalgesia, 380
+hyperarousal, 418
+hyperdopaminergia, 90, 92, 93
+hyperglycemic hyperosmolar syndrome,
+199, 200
+hyperprolactinemia, 165, 187, 192
+hypersomnia, 402, 430–40
+causes of, 431–5
+treatment of, 440–8
+hypervigilance, 402
+hypnotic actions, 311
+insomnia treatment, 421–30
+hypnotics, sedative, 556
+hypocretins, 406–11
+hypodopaminergia, 95
+hypomania, 248
+hypothalamic neurons, 407
+idiopathic hypersomnia, 432, 433
+illusions, 568
+iloperidone, 225, 236
+immediate early genes, 19, 20
+impulse control disorders, 577–8
+impulsive–compulsive disorders, 539
+binge eating, 575
+neurocircuitry of, 539–43
+impulsive violence, 147, 577
+impulsivity, 452, 454, 463, 538–9, 571, 578
+inactivation state, 61, 63
+inattention, 449, 450, 451, 463
+indirect (stop) dopamine pathway, 89, 90
+inhalants, 547
+inherited disease, classic theory of, 148
+insomnia, 311, 402, 418–20
+
+

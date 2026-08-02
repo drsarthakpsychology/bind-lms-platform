@@ -1,0 +1,1207 @@
+<<<PAGE 9>>>
+
+54 flurazepam
+55 fluvoxamine
+56 gabapentin
+57 galantamine
+58 guanfacine
+59 haloperidol
+60 hydroxyzine
+61 iloperidone
+62 imipramine
+63 isocarboxazid
+64 ketamine
+65 lamotrigine
+66 lemborexant
+67 levetiracetam
+68 levomilnacipran
+69 lisdexamfetamine
+70 lithium
+71 lofepramine
+72 lofexidine
+73 loflazepate
+74 lorazepam
+75 loxapine
+76 lumateperone
+77 lurasidone
+78 maprotiline
+79 memantine
+80 methylfolate (l)
+81 methylphenidate (d)
+
+
+
+
+<<<PAGE 203>>>
+
+Discontinuation of oral antipsychotic can begin following oral
+coverage of 14 days (Maintena) or 21 days (Aristada)
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone
+3–4-week down-titration is required for: asenapine, olanzapine,
+quetiapine
+4+-week down-titration is required for: clozapine
+
+
+
+
+<<<PAGE 244>>>
+
+Shahid M , Walker GB , Zorn SH , Wong EH . Asenapine: a novel
+psychopharmacologic agent with a unique human receptor signature . J
+Psychopharmacol 2009 ;23 (1 ):65 –73 .
+Tarazi F , Stahl SM . Iloperidone, asenapine and lurasidone: a primer on
+their current status . Exp Opin Pharmacother 2012 ;13 (13 ):1911–22 .
+
+
+
+
+<<<PAGE 429>>>
+
+✽ Recommended either to discontinue drug or bottle feed unless the
+potential benefit to the mother justifies the potential risk to the child
+Infants of women who choose to breast feed while on cariprazine
+should be monitored for possible adverse effects
+
+The Art of Psychopharmacology
+Potential Advantages
+For patients who do not tolerate aripiprazole or brexpiprazole for
+schizophrenia
+For patients who do not tolerate quetiapine, lurasidone, or
+olanzapine for bipolar depression
+Possibly negative symptoms in schizophrenia
+Possibly mixed mood states such as depression or mania with mixed
+features
+Potential Disadvantages
+Expensive
+Primary Target Symptoms
+Positive symptoms of psychosis
+Negative symptoms of psychosis
+Symptoms of acute mania/mixed mania
+
+
+
+
+<<<PAGE 586>>>
+
+required to be certified in the Clozapine REMS program. Visit the
+Clozapine REMS program homepage for more information.
+
+The Art of Switching
+Switching from Oral Antipsychotics to Clozapine
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin clozapine at middle dose
+With risperidone, ziprasidone, iloperidone, and lurasidone, begin
+clozapine gradually, titrating over at least 2 weeks to allow patients
+to become tolerant to the sedating effect
+* Benzodiazepine or anticholinergic medication can be administered
+during cross-titration to help alleviate side effects such as insomnia,
+agitation, and/or psychosis. However, use with caution in combination
+with clozapine as this can increase the risk of circulatory collapse
+
+
+
+
+<<<PAGE 941>>>
+
+Response threshold is 0.81 ng/mL; plasma levels greater than 2–3
+ng/mL are generally not well tolerated, although treatment-resistant
+cases might tolerate and respond to plasma levels up to 4 ng/mL,
+which is the point of futility if no response and even if tolerated
+The Art Of Switching
+Switching from Oral Antipsychotics to Fluphenazine Decanoate
+
+Discontinuation of oral antipsychotic can begin immediately if
+adequate loading is pursued; otherwise, supplement with oral
+formulation at half-dose for at least 2 weeks
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone
+
+
+
+
+<<<PAGE 1046>>>
+
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone
+3–4-week down-titration is required for: asenapine, olanzapine,
+quetiapine
+4+-week down-titration is required for: clozapine
+For patients taking benzodiazepine or anticholinergic
+medication, this can be continued during cross-titration to help
+alleviate side effects such as insomnia, agitation, and/or
+psychosis. Once the patient is stable on LAI, these can be
+tapered one at a time as appropriate.
+
+Suggested Reading
+Cipriani A , Rendell JM , Geddes JR. Haloperidol alone or in combination
+for acute mania . Cochrane Database Syst Rev 2006 ;19 (3 ):CD004362 .
+Huf G , Alexander J , Allen MH , Raveendran NS. Haloperidol plus
+promethazine for psychosis-induced aggression . Cochrane Database Syst
+Rev 2009 ;8 (3 ):CD005146 .
+Huhn M , Nikolakopoulou A , Schneider-Thoma J , et al. Comparative
+efficacy and tolerability of 32 oral antipsychotics for the acute treatment of
+adults with multi-episode schizophrenia: a systematic review and network
+meta-analysis . Lancet 2019 ;394 :939–51 .
+
+
+
+
+<<<PAGE 1080>>>
+
+Tarazi F , Stahl SM . Iloperidone, asenapine and lurasidone: a primer on
+their current status . Exp Opin Pharmacother 2012 ;13 (13 ):1911–22 .
+Volpi S , Potkin SG , Malhotra AK , Licamele L , Lavedan C . Applicability
+of a genetic signature for enhanced iloperidone efficacy in the treatment of
+schizophrenia . J Clin Psychiatry 2009 ;70 :801–9 .
+
+
+
+
+<<<PAGE 1330>>>
+
+Lurasidone
+
+Therapeutics
+Brands
+Latuda
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: dopamine, serotonin receptor
+antagonist (DS-RAn)
+Atypical antipsychotic (serotonin-dopamine antagonist; secondgeneration antipsychotic; also a potential mood stabilizer)
+Commonly Prescribed for
+(bold for FDA approved)
+Schizophrenia (ages 13 and older)
+Bipolar depression (monotherapy, ages 10 and older)
+Bipolar depression (adjunct, adults)
+Acute mania/mixed mania
+
+
+
+
+<<<PAGE 1331>>>
+
+Other psychotic disorders
+Bipolar maintenance
+Treatment-resistant depression
+Behavioral disturbances in dementia
+Behavioral disturbances in children and adolescents
+Disorders associated with problems with impulse control
+Posttraumatic stress disorder
+How the Drug Works
+Blocks dopamine 2 receptors, reducing positive symptoms of
+psychosis and stabilizing affective symptoms
+Blocks serotonin 2A receptors, causing enhancement of dopamine
+release in certain brain regions and thus reducing motor side effects
+and possibly improving cognition and affective symptoms
+Interactions at a myriad of other neurotransmitter receptors may
+contribute to lurasidone’s efficacy
+Potently blocks serotonin 7 receptors, which may be beneficial for
+mood, sleep, cognitive impairment, and negative symptoms in
+schizophrenia, and also in bipolar disorder and major depressive
+disorder
+Partial agonist at 5HT1A receptors, and antagonist actions at
+serotonin 7 and alpha 2A and alpha 2C receptors, which may be
+beneficial for mood, anxiety, and cognition in a number of disorders
+
+
+
+
+<<<PAGE 1337>>>
+
+Patients with low white blood cell count (WBC) or history of druginduced leukopenia/neutropenia should have complete blood count
+(CBC) monitored frequently during the first few months and
+lurasidone should be discontinued at the first sign of decline in
+WBC in the absence of other causative factors (class warning)
+Patients should be monitored periodically for the development of
+abnormal movements of tardive dyskinesia, using neurological
+exam and the AIMS (Abnormal Involuntary Movement Scale)
+
+Side Effects
+How Drug Causes Side Effects
+Acute blockade of dopamine 2 receptors in the striatum can cause
+drug-induced parkinsonism, dystonia, or akathisia
+Chronic blockade of dopamine 2 receptors in the striatum can cause
+tardive dyskinesia
+By blocking dopamine 2 receptors in the pituitary, it can cause
+elevations in prolactin
+Mechanism of weight gain and increased incidence of diabetes and
+dyslipidemia with atypical antipsychotics is unknown, and risks
+vary based on the particular agent
+Notable Side Effects
+Dose-dependent sedation
+
+
+
+
+<<<PAGE 1339>>>
+
+Weight Gain
+Many experience about one- to two-pound weight gain greater than
+placebo in short-term 6-week trials
+Patients in long-term 52-week trials actually lost 1.5 pounds on
+average
+Clinical experience, however, is still limited
+Appears to be less weight gain than observed with some
+antipsychotics
+Many patients lost weight in long-term trials when switching from
+olanzapine to lurasidone
+Sedation
+May be higher in short-term trials than in long-term use
+What to Do About Side Effects
+Wait
+Wait
+Wait
+Anticholinergics may reduce drug-induced parkinsonism when
+present
+Dose reduction may reduce akathisia when present
+
+
+
+
+<<<PAGE 1341>>>
+
+20–60 mg/day for bipolar depression
+Some patients with bipolar depression may benefit from doses up to
+120 mg/day
+Dosage Forms
+Tablet 20 mg, 40 mg, 60 mg, 80 mg, 120 mg
+How to Dose
+Initial 40–80 mg once daily with food for schizophrenia
+Dose titration to initial dose of 40 mg/day is not required for
+schizophrenia
+Consider dose increases from 40 mg/day up to 160 mg/day as
+necessary and as tolerated for schizophrenia
+Initial 20 mg once daily with food for bipolar depression
+Can titrate to 120 mg/day in bipolar depression if necessary and
+tolerated
+Dosing Tips
+Lurasidone should be taken with food (i.e., at least a small meal of a
+minimum of 350 calories)
+Lurasidone absorption can be decreased by up to 50% on an empty
+stomach and more consistent efficacy will be seen if dosing is done
+regularly withfood
+
+
+
+
+<<<PAGE 1342>>>
+
+Once daily dosing
+Giving lurasidone at bedtime can greatly reduce daytime sedation,
+akathisia, and drug-induced parkinsonism
+Starting dose for schizophrenia is 40 mg/day, which may be an
+adequate dose for early-onset psychosis cases
+40–80 mg per day was suggested by controlled clinical trials as
+adequate for many patients with schizophrenia
+Some patients with schizophrenia benefit from higher dosing, with
+controlled clinical trials up to 160 mg/day
+Higher doses than 160 mg/day may benefit more difficult patients
+with schizophrenia with treatment nonresponsiveness to other agents
+Higher dosing, however, may cause more side effects
+Rather than raise the dose above normal dosing in acutely agitated
+patients requiring acute antipsychotic actions, consider short-term
+(one dose or more) augmentation with a benzodiazepine or another
+antipsychotic, especially intramuscularly
+Rather than raise the dose above normal dosing in partial
+responders, consider augmentation with a mood-stabilizing
+anticonvulsant, such as valproate, topiramate, or lamotrigine
+Dosing for bipolar depression or major depressive episodes with
+mixed features is generally lower than for schizophrenia, with a 20
+mg starting dose; 20 mg/day may be an adequate dose for some
+patients
+
+
+
+
+<<<PAGE 1344>>>
+
+Down-titration, especially when simultaneously beginning a new
+antipsychotic while switching (i.e., cross-titration)
+Rapid discontinuation could theoretically lead to rebound psychosis
+and worsening of symptoms
+Pharmacokinetics
+Half-life 18–31 hours (shorter half-life better documented at the 40
+mg dose)
+Metabolized by CYP450 3A4
+Cmax and bioavailability are reduced if taken without food
+Drug Interactions
+Inhibitors of CYP450 3A4 (e.g., nefazodone, fluvoxamine,
+fluoxetine, ketoconazole) may increase plasma levels of lurasidone
+Coadministration of lurasidone with a strong CYP450 3A4 inhibitor
+(e.g., ketoconazole) or with a strong CYP450 3A4 inducer (e.g.,
+rifampin) is contraindicated
+Coadministration of lurasidone with moderate CYP450 3A4
+inhibitors can be considered; recommended starting dose is 20
+mg/day; recommended maximum dose is 80 mg/day
+Moderate inducers of CYP450 3A4 may decrease plasma levels of
+lurasidone
+May enhance the effects of antihypertensive drugs
+
+
+
+
+<<<PAGE 1345>>>
+
+May antagonize levodopa, dopamine agonists
+Other Warnings/Precautions
+Use with caution in patients with conditions that predispose to
+hypotension (dehydration, overheating)
+Atypical antipsychotics have the potential for cognitive and motor
+impairment, especially related to sedation
+Atypical antipsychotics can cause body temperature dysregulation;
+use caution in patients who may experience conditions that increase
+body temperature (e.g., strenuous exercise, saunas, extreme heat,
+dehydration, or concomitant anticholinergic medication)
+Dysphagia has been associated with antipsychotic use, and
+lurasidone should be used cautiously in patients at risk for aspiration
+pneumonia
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Antipsychotics may cause somnolence, postural hypotension, motor
+and sensory instability, which may lead to falls; for patients with
+diseases, conditions, or medications that could exacerbate these
+effects, complete fall risk assessments when initiating antipsychotic
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+As with any antipsychotic, use with caution in patients with history
+of seizures
+
+
+
+
+<<<PAGE 1346>>>
+
+Do Not Use
+If patient is taking a strong CYP 3A4 inhibitor (e.g., ketoconazole)
+or inducer (e.g., rifampin)
+In patients with a history of angioedema
+If there is a proven allergy to lurasidone
+
+Special Populations
+Renal Impairment
+Moderate and severe impairment: initial 20 mg/day; maximum dose
+80 mg/day
+Hepatic Impairment
+Moderate impairment: initial 20 mg/day; maximum dose 80 mg/day
+Severe impairment: initial 20 mg/day; maximum dose 40 mg/day
+Cardiac Impairment
+Use in patients with cardiac impairment has not been studied, so use
+with caution because of risk of orthostatic hypotension, although
+low potency at alpha 1 receptors suggests this risk may be less than
+for some other antipsychotics
+Use with caution if patient is taking concomitant antihypertensive or
+alpha 1 antagonist
+Lurasidone does not have a warning for QTc prolongation
+
+
+
+
+<<<PAGE 1347>>>
+
+Elderly
+In general, no dose adjustment is necessary for elderly patients
+However, some elderly patients may tolerate lower doses better
+Although atypical antipsychotics are commonly used for behavioral
+disturbances in dementia, no agent has been approved for treatment
+of elderly patients with behavioral symptoms of dementia such as
+agitation
+Elderly patients with dementia-related psychosis treated with
+atypical antipsychotics are at an increased risk of death compared to
+placebo, and also have an increased risk of cerebrovascular events
+Consider pimavanserin for dementia-related psychosis or
+Parkinson’s disease psychosis instead of an atypical antipsychotic
+Children and Adolescents
+Approved for schizophrenia in adolescents ages 13 and older
+Although lurasidone can be initiated at 40 mg/day, often a good idea
+to initiate at 20 mg to test for tolerability before raising dose to 40
+mg, especially in children and in small body weight adolescents
+Approved for bipolar depression in bipolar I disorder in adolescents
+ages 10 and older
+Little or no weight gain documented in long-term studies up to 2
+years
+Children and adolescents using lurasidone may need to be
+monitored more often than adults and may tolerate lower doses
+
+
+
+
+<<<PAGE 1348>>>
+
+better
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+Animal studies do not show adverse effects; not teratogenic in rats
+and rabbits at doses up to 1.5–6 times the maximum recommended
+human dose
+There is a risk of abnormal muscle movements and withdrawal
+symptoms in newborns whose mothers took an antipsychotic during
+the third trimester; symptoms may include agitation, abnormally
+increased or decreased muscle tone, tremor, sleepiness, severe
+difficulty breathing, and difficulty feeding
+Psychotic symptoms may worsen during pregnancy and some form
+of treatment may be necessary
+Lurasidone may be preferable to anticonvulsant mood stabilizers if
+treatment is required during pregnancy
+National Pregnancy Registry for Atypical Antipsychotics: 1-866961-2388,
+
+
+
+
+<<<PAGE 1349>>>
+
+https://womensmentalhealth.org/research/pregnancyregistry/atypical
+antipsychotic
+Breast Feeding
+Unknown if lurasidone is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed unless the
+potential benefit to the mother justifies the potential risk to the child
+Infants of women who choose to breast feed while on lurasidone
+should be monitored for possible adverse effects
+
+The Art of Psychopharmacology
+Potential Advantages
+Patients requiring rapid onset of antipsychotic action without dosage
+titration
+Patients who wish to take an antipsychotic once a day
+Patients experiencing weight gain from other antipsychotics or who
+wish to avoid weight gain
+Children with schizophrenia or bipolar disorder, as excellent
+tolerability in long-term studies documented
+Potential Disadvantages
+Patients who cannot take a medication consistently with food
+
+
+
+
+<<<PAGE 1350>>>
+
+Primary Target Symptoms
+Positive symptoms of psychosis
+Negative symptoms of psychosis
+Cognitive symptoms
+Unstable mood (both depression and mania)
+Aggressive symptoms
+Pearls
+Clinical trials suggest that lurasidone is well tolerated with a
+favorable balance of efficacy and safety
+One of the few “metabolically friendly” antipsychotics
+Neutral for weight gain (1–2 pounds weight gain in short-term
+studies, with 1–2 pounds weight loss in long-term studies)
+Neutral for lipids (triglycerides and cholesterol)
+Neutral for glucose
+Only atypical antipsychotic documented not to cause QTc
+prolongation, and one of the few atypical antipsychotics without a
+QTc warning
+Seems to have low-level drug-induced parkinsonism, especially
+when dosed at bedtime
+Somnolence and akathisia are the most common side effects in
+short-term clinical trials of schizophrenia that dosed lurasidone in
+
+
+
+
+<<<PAGE 1351>>>
+
+the daytime, but these adverse effects were reduced in a controlled
+study of lurasidone administered at night with food
+Nausea and occasional vomiting occurred in bipolar depression
+studies especially at higher doses
+Nausea and vomiting generally rapidly abates within a few days or
+can be avoided by slow dose titration and giving lower doses
+Prolactin elevations low and generally transient
+Agitation experienced by some patients
+Receptor binding profile suggests favorable potential as an
+antidepressant
+5HT7 antagonism is antidepressant in animal models and has
+pro-cognitive actions in animal models
+5HT7 antagonism and 5HT1A partial agonism enhance
+serotonin levels in animals treated with SSRIs/SNRIs,
+suggesting use for lurasidone as an augmenting agent to
+SSRIs/SNRIs in depression
+5HT7 antagonism plus the absence of D1, H1, and M1
+antagonism suggest potential for cognitive improvement
+Lack of D1 antagonist, anticholinergic, and antihistamine
+properties may explain relative lack of cognitive side effects in
+most patients
+One of the best studied agents for depression with mixed
+features, showing efficacy in a large randomized controlled
+
+
+
+
+<<<PAGE 1353>>>
+
+Switching from Oral Antipsychotics to Lurasidone
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin lurasidone at an intermediate dose
+Clinical experience has shown that quetiapine, olanzapine, and
+asenapine should be tapered off slowly over a period of 3–4 weeks,
+to allow patients to readapt to the withdrawal of blocking
+cholinergic, histaminergic, and alpha 1 receptors
+Clozapine should always be tapered off slowly, over a period of 4
+weeks or more
+* Benzodiazepine or anticholinergic medication can be administered
+during cross-titration to help alleviate side effects such as insomnia,
+agitation, and/or psychosis
+
+
+
+
+<<<PAGE 1354>>>
+
+Suggested Reading
+Arango C , Ng-Mak D , Finn E , Byrne A , Loebel A . Lurasidone
+compared to other atypical antipsychotic monotherapies for adolescent
+schizophrenia: a systematic literature review and network meta-analysis.
+Eur Child Adolesc Psychiatry 2019 . doi: 10.1007/s00787-019-01425-2 .
+Huhn M , Nikolakopoulou A , Schneider-Thoma J , et al. Comparative
+efficacy and tolerability of 32 oral antipsychotics for the acute treatment of
+adults with multi-episode schizophrenia: a systematic review and network
+meta-analysis . Lancet 2019 ;394 :939–51 .
+Ostacher M , Ng-Mak D , Patel P , et al. Lurasidone compared to other
+atypical antipsychotic monotherapies for bipolar depression: a systematic
+review and network meta-analysis . World J Biol Psychiatry 2018 ;19 (8
+):586 –601 .
+Suppes T , Silva R , Cucchiaro J , et al. Lurasidone for the treatment of
+major depressive disorder with mixed features: a randomized, double-blind,
+placebo-controlled study . Am J Psychiatry 2016 ;173 (4 ):400–7 .
+Wang H , Xiao L , Wang HL , Wang GH . Efficacy and safety of lurasidone
+versus placebo as adjunctive to mood stabilizers in bipolar I depression: a
+meta-analysis . J Affect Disord 2020 ;264 :227–33 .
+
+
+
+
+<<<PAGE 1643>>>
+
+Discontinuation of oral antipsychotic can begin immediately if
+adequate loading is pursued
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, olanzapine, paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone, asenapine, quetiapine
+4+-week down-titration may be required for: clozapine
+
+The Art of Switching
+Switching from Oral Antipsychotics to Oral Olanzapine
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin olanzapine at middle dose
+
+
+
+
+<<<PAGE 1704>>>
+
+The Art of Switching
+Switching from Oral Antipsychotics to Paliperidone Palmitate
+(1-Month)
+
+Discontinuation of oral antipsychotic can begin immediately if
+adequate loading is pursued
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, lumateperone, or paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone
+3–4-week down-titration is required for: asenapine, olanzapine,
+quetiapine
+4+-week down-titration is required for: clozapine
+
+
+
+
+<<<PAGE 1705>>>
+
+For patients taking benzodiazepine or anticholinergic
+medication, this can be continued during cross-titration to help
+alleviate side effects such as insomnia, agitation, and/or
+psychosis. Once the patient is stable on LAI, these can be
+tapered one at a time as appropriate.
+The Art of Switching
+
+Switching from Oral Antipsychotics to
+Paliperidone ER
+
+Due to OROS technology, paliperidone ER can be initiated at full
+desired dose; however, titration over 1–2 weeks may be appropriate
+for some patients
+With amisulpride, aripiprazole, brexpiprazole, cariprazine, and
+lumateperone, immediate stop is possible; begin paliperidone ER at
+an intermediate, or if needed, effective dose
+Risperidone, ziprasidone, iloperidone, and lurasidone can be tapered
+off over a period of 1 week due to the risk of withdrawal symptoms
+such as insomnia
+Clinical experience has shown that quetiapine, olanzapine, and
+asenapine should be tapered off slowly over a period of 3–4 weeks,
+to allow patients to readapt to the withdrawal of blocking
+cholinergic, histaminergic, and alpha 1 receptors
+Clozapine should always be tapered off slowly, over a period of 4
+weeks or more
+* Benzodiazepine or anticholinergic medication can be administered
+during cross-titration to help alleviate side effects such as insomnia,
+
+
+
+
+<<<PAGE 1825>>>
+
+stabilization and maintenance
+If It Doesn’t Work
+Consider trying one of the first-line atypical antipsychotics
+(risperidone, olanzapine, quetiapine, ziprasidone, aripiprazole,
+paliperidone, amisulpride, asenapine, iloperidone, lurasidone)
+Consider trying another conventional antipsychotic
+If 2 or more antipsychotic monotherapies do not work, consider
+clozapine
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Augmentation of conventional antipsychotics has not been
+systematically studied
+Addition of a mood-stabilizing anticonvulsant such as valproate,
+carbamazepine, or lamotrigine may be helpful in both schizophrenia
+and bipolar mania
+Augmentation with lithium in bipolar mania may be helpful
+Addition of a benzodiazepine, especially short-term for agitation
+Tests
+
+✽ Since conventional antipsychotics are frequently associated with
+weight gain, before starting treatment, weigh all patients and determine
+
+
+
+
+<<<PAGE 1946>>>
+
+Patients with inadequate responses to atypical antipsychotics may
+benefit from determination of plasma drug levels and, if low, a
+dosage increase even beyond the usual prescribing limits
+For treatment-resistant patients, especially those with impulsivity,
+aggression, violence, and self-harm, long-term polypharmacy with 2
+atypical antipsychotics or with 1 atypical antipsychotic and 1
+conventional antipsychotic may be useful or even necessary while
+closely monitoring
+In such cases, it may be beneficial to combine 1 depot antipsychotic
+with 1 oral antipsychotic
+
+The Art of Switching
+Switching from Oral Antipsychotics to Quetiapine
+With amisulpride, aripiprazole, brexpiprazole, cariprazine,
+lumateperone, and paliperidone ER, immediate stop is possible;
+begin quetiapine at middle dose
+With risperidone, ziprasidone, iloperidone, and lurasidone, it is
+generally advisable to begin quetiapine gradually, titrating over at
+least 2 weeks to allow patients to become tolerant to the sedating
+effect
+For more convenient dosing, patients who are currently being
+treated with divided doses of immediate-release tablets may be
+switched to extended-release quetiapine at the equivalent total daily
+dose taken once daily
+
+
+
+
+<<<PAGE 2003>>>
+
+injection, with similar magnitude and at levels that approach steady
+state; thus, no oral supplementation or loading is necessary
+90 mg and 120 mg doses correspond to 3 and 4 mg doses of oral
+risperidone, respectively
+Switching from Oral Antipsychotics to Risperidone Microspheres
+
+Discontinuation of oral antipsychotic can begin following a 3–4
+week oral coverage period
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone
+3–4-week down-titration is required for: asenapine, olanzapine,
+quetiapine
+4+-week down-titration is required for: clozapine
+
+
+
+
+<<<PAGE 2594>>>
+
+Ladose (fluoxetine), 301
+Lambipol (lamotrigine), 387
+Lamictal (lamotrigine), 387
+Lamictin (lamotrigine), 387
+lamotrigine, 387
+Lamra (diazepam), 229
+Lanexat (flumazenil), 293
+Lantanon (mianserin), 495
+Largactil (chlorpromazine), 153
+Largatrex (chlorpromazine), 153
+Laroxyl (amitriptyline), 25
+Latuda (lurasidone), 457
+Laubeel (lorazepam), 437
+Lauracalm (lorazepam), 437
+Lebopride (sulpiride), 741
+Lelptilan (valproate), 829
+Lelptilanil (valproate), 829
+lemborexant, 395
+Lentizol (amitriptyline), 25
+Lentolith (lithium), 415
+Lentotran (chlordiazepoxide), 147
+Leponex (clozapine), 191
+Leptilin (valproate), 829
+Lerivon (mianserin), 495
+Leukominerase (lithium), 415
+Levanxol (temazepam), 755
+levetiracetam, 399
+levomilnacipran, 403
+
+
+
+
+<<<PAGE 2597>>>
+
+Lorsilan (lorazepam), 437
+Lorzem (lorazepam), 437
+Lovan (fluoxetine), 301
+Loxapac (loxapine), 443
+loxapine, 443
+Loxitane (loxapine), 443
+Lucemyra (lofexidine), 427
+Ludiomil (maprotiline), 465
+Lullan (perospirone), 601
+lumateperone, 451
+Lumin (mianserin), 495
+Lunesta (eszopiclone), 285
+lurasidone, 457
+Lustral (sertraline), 721
+Luvox (fluvoxamine), 325
+Luvox SR (fluvoxamine), 325
+Lyogen (fluphenazine), 313
+Lyogen Depot (fluphenazine), 313
+Lyoridin Depot (fluphenazine), 313
+Lyorodin (fluphenazine), 313
+Lyrica (pregabalin), 647
+Lyrica CR (pregabalin), 647
+
+
+
+
+<<<PAGE 2632>>>
+
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine , 153
+guanfacine, 343
+haloperidol , 347
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+olanzapine, 559
+paliperidone, 581
+quetiapine, 667
+risperidone, 687
+ziprasidone, 863
+Benzodiazepine reversal
+flumazenil , 293
+Benzodiazepine withdrawal
+cyamemazine, 201
+Bipolar depression
+amoxapine, 33
+aripiprazole, 53
+armodafinil, 65
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+
+
+
+
+<<<PAGE 2633>>>
+
+bupropion, 117
+carbamazepine, 131
+cariprazine , 137
+fluoxetine, 301
+iloperidone, 359
+lamotrigine, 387
+lithium, 415
+lumateperone, 451
+lurasidone , 457
+modafinil, 521
+olanzapine/fluoxetine combination , 301 , 559
+quetiapine , 667
+risperidone, 687
+sertindole, 715
+valproate (divalproex), 829
+ziprasidone, 863
+Bipolar disorder
+amoxapine, 33
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+bupropion, 117
+carbamazepine, 131
+cariprazine , 137
+chlorpromazine, 153
+clonazepam (adjunct), 173
+clozapine, 191
+
+
+
+
+<<<PAGE 2634>>>
+
+cyamemazine, 201
+doxepin , 255
+fluoxetine, 301
+flupenthixol, 307
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+
+
+
+
+<<<PAGE 2635>>>
+
+valproate (divalproex), 829
+ziprasidone, 863
+zonisamide, 875
+zotepine, 883
+zuclopenthixol, 889
+Bipolar maintenance
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine, 131
+cariprazine, 137
+iloperidone, 359
+lamotrigine , 387
+lithium, 415
+lumateperone, 451
+lurasidone, 457
+olanzapine , 559
+olanzapine/fluoxetine combination, 301 , 559
+paliperidone, 581
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+valproate (divalproex), 829
+ziprasidone , 863
+Bulimia nervosa/binge eating
+fluoxetine , 301
+
+
+
+
+<<<PAGE 2638>>>
+
+cariprazine, 137
+citalopram , 159
+clomipramine, 165
+cyamemazine, 201
+desipramine , 207
+desvenlafaxine , 215
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin , 255
+duloxetine , 263
+escitalopram , 269
+esketamine , 275
+fluoxetine , 301
+fluoxetine/olanzapine combination , 301 , 559
+flupenthixol, 307
+fluvoxamine, 325
+iloperidone, 359
+imipramine , 367
+isocarboxazid , 375
+ketamine, 383
+lamotrigine (adjunct), 387
+levomilnacipran , 403
+lisdexamfetamine, 409
+lithium (adjunct), 415
+l-methylfolate (adjunct) , 477
+lofepramine, 421
+lumateperone, 451
+lurasidone, 457
+
+
+
+
+<<<PAGE 2644>>>
+
+lorazepam (adjunct), 437
+lurasidone, 457
+olanzapine , 559
+paliperidone, 581
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+valproate (divalproex) , 829
+ziprasidone , 863
+zotepine, 883
+Migraine
+propranolol , 653
+topiramate , 781
+valproate (divalproex) , 829
+zonisamide, 875
+Muscle spasm
+diazepam , 229
+lorazepam, 437
+Narcolepsy
+amphetamine (d) , 39
+amphetamine (d,l) , 45
+armodafinil , 65
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l) , 487
+modafinil, 521
+
+
+
+
+<<<PAGE 2649>>>
+
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+mirtazapine, 509
+nefazodone, 545
+olanzapine, 558
+paliperidone, 580
+paroxetine , 593
+prazosin (nightmares) 643
+propranolol (prophylactic) 653
+quetiapine, 667
+risperidone, 687
+sertraline , 721
+venlafaxine, 841
+ziprasidone, 863
+Premenstrual dysphoric disorder
+alprazolam, 11
+citalopram, 159
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+Preoperative anxiety
+chlordiazepoxide , 147
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2651>>>
+
+lamotrigine (adjunct), 387
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin , 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+valproate (divalproex) (adjunct), 829
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Restless leg syndrome
+gabapentin ER , 331
+Schizoaffective disorder
+
+
+
+
+<<<PAGE 2652>>>
+
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine, 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol, 347
+iloperidone, 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct), 477
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone , 581
+perospirone, 601
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+
+
+
+
+<<<PAGE 2653>>>
+
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+valproate (divalproex) (adjunct), 829
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Schizophrenia
+amisulpride, 17
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole , 103
+carbamazepine (adjunct), 131
+cariprazine , 137
+chlorpromazine , 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol , 347
+iloperidone , 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct) , 477
+loxapine , 443
+lumateperone , 451
+lurasidone , 457
+molindone , 527
+olanzapine , 558
+
+
+
+
+<<<PAGE 2661>>>
+
+iloperidone, 359
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin, 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Anxiolytics
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone, 123
+
+
+
+
+<<<PAGE 2666>>>
+
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam (adjunct), 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+pregabalin (adjunct), 647
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+valproate (divalproex), 829
+ziprasidone, 863
+zonisamide, 875
+
+

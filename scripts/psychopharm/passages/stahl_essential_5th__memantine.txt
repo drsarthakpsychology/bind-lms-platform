@@ -1,0 +1,1322 @@
+<<<PAGE 71>>>
+
+Chapter 3: Ion Channels
+
+Table 3-2 Key ligand-gated ion channels directly targeted by psychotropic drugs
+
+Neurotransmitter
+
+Ligand-gated ion
+channel receptor
+subtype directly
+targeted
+
+Pharmacological
+action
+
+Drug class
+
+Therapeutic
+action
+
+Acetylcholine
+
+Alpha4 Beta2
+nicotinic
+
+Partial agonist
+
+Nicotinic receptor
+partial agonist (NRPA)
+(varenicline)
+
+Smoking cessation
+
+GABAA
+benzodiazepine
+receptors
+
+Full agonist,
+phasic inhibition
+
+Benzodiazepines
+
+Anxiolytic
+
+GABAA nonbenzodiazepine
+PAM sites
+
+Full agonist,
+phasic inhibition
+
+“Z DRUGS”/hypnotics
+(zolpidem, zaleplon,
+zopiclone, eszopiclone)
+
+Improves insomnia
+
+GABAA neurosteroid
+sites
+(benzodiazepine
+insensitive)
+
+Full agonist,
+tonic inhibition
+
+Neuroactive steroids
+(allopregnanolone)
+
+Postpartum depression
+Rapid-acting
+antidepressant
+Anesthetic
+
+NMDA
+NAM channel sites/
+Mg++ sites
+
+Antagonist
+
+NMDA glutamate
+antagonist (memantine)
+
+Pro-cognitive in
+Alzheimer disease
+
+NMDA openchannel sites
+
+Antagonist
+
+PCP/phencyclidine
+Ketamine
+Dextromethorphan
+Dextromethadone
+
+Dissociative
+hallucinogen
+Anesthetic
+Pseudobulbar affect
+Agitation in Alzheimer
+disease
+Rapid-acting
+antidepressant
+Treatment-resistant
+depression
+
+5HT3
+
+Antagonist
+
+Mirtazapine
+Vortioxetine
+
+Pro-cognitive
+Antidepressant
+
+5HT3
+
+Antagonist
+
+Anti-emetic
+
+Reduce
+chemotherapyinduced emesis
+
+GABA
+
+Glutamate
+
+Serotonin
+
+3
+
+PAM, positive allosteric modulator; NAM, negative allosteric modulator; NMDA, N-methyl-D-aspartate; Mg, magnesium.
+
+ion channels (Figure 3-3) are analogous to pentameric
+subtypes of ion channels (Figure 3-2A), but just have four
+subunits rather than five. Receptor sites are in various
+locations on each of the subunits; some binding sites are
+in the channel, but many are present at different locations
+outside the channel.
+This tetrameric structure is typical of the ionotropic
+glutamate receptors known as AMPA (α-amino-3hydroxy-5-methyl-4-isoxazole-propionic acid), kainate,
+
+and NMDA (N-methyl-D-aspartate) subtypes (Table 3-3).
+Drugs that act directly at tetrameric ionotropic glutamate
+receptors are listed in Table 3-2. Receptor subtypes for
+glutamate according to the selective agonist acting at that
+receptor as well as the specific molecular subunits that
+comprise that subtype are listed in Table 3-3. Subtype
+selective drugs for ionotropic glutamate receptors are
+under investigation but not currently used in clinical
+practice.
+
+55
+
+
+
+
+<<<PAGE 502>>>
+
+12
+
+Dementia: Causes,
+Symptomatic Treatments,
+and the Neurotransmitter
+Network Acetylcholine
+
+Dementia: Diagnosis and Causes 487
+What Is Dementia? 487
+What Is Mild Cognitive Impairment (MCI)? 487
+Four Major Causes of Dementia 488
+Pursuit of Disease-Modifying Therapies by Targeting
+Aβ in Alzheimer Disease 496
+The Amyloid Cascade Hypothesis 496
+Current Status of the Amyloid Cascade Hypothesis
+and Treatments Targeting Aβ 499
+Diagnosing Alzheimer Disease Before It Is Too
+Late 499
+Presymptomatic Stage 1 499
+MCI Stage 2 500
+Dementia Stage 3 502
+Overview of Symptomatic Treatments for
+Dementia 503
+Targeting Acetylcholine for the Symptomatic
+Treatment of Memory and Cognition in Alzheimer
+Disease 505
+Acetylcholine: Synthesis, Metabolism, Receptors, and
+Pathways 505
+Symptomatic Treatment of Memory and
+Cognition in Alzheimer Disease by Inhibiting
+Acetylcholinesterase 509
+
+This chapter will provide a brief overview of the various
+causes of dementia and their pathologies, including the
+most recent diagnostic criteria, and how biomarkers are
+beginning to be integrated into clinical practice, especially
+for Alzheimer disease (AD). Full clinical and pathological
+descriptions and formal criteria for how to diagnose
+the numerous known dementias should be obtained by
+consulting standard reference sources. The discussion
+here will emphasize how various pathological mechanisms
+in different dementias disrupt brain circuits and their
+neurotransmitters. We will also show how disruption
+of these brain circuits is linked to various symptoms of
+dementia, and how drugs targeting these brain circuits
+and their neurotransmitters lead to symptomatic
+improvement, emphasizing memory, psychosis, and
+agitation. The goal of this chapter is to acquaint the
+486
+
+Targeting Glutamate for the Symptomatic Treatment
+of Memory and Cognition in Alzheimer Disease 515
+Memantine 516
+Targeting the Behavioral Symptoms of Dementia 521
+Defining Agitation and Psychosis in Alzheimer
+Disease 521
+Pharmacological Treatment of Psychosis and Agitation
+in Dementia 523
+Targeting Serotonin for the Symptomatic Treatment
+of Dementia-Related Psychosis 524
+Neuronal Networks of Agitation in Alzheimer
+Disease 528
+Targeting Multimodal Neurotransmitters
+(Norepinephrine, Serotonin, and Dopamine) for the
+Symptomatic Treatment of Agitation in Alzheimer
+Disease 530
+Targeting Glutamate for the Symptomatic Treatment
+of Agitation in Alzheimer Disease 533
+Treating Depression in Dementia 534
+Pseudobulbar Affect (Pathological Laughing and
+Crying) 535
+Apathy 536
+Other Treatments for the Behavioral Symptoms of
+Dementia 537
+Summary 537
+
+reader with ideas about the clinical and biological aspects
+of dementia and its current management with various
+approved drugs as well as novel agents on the horizon.
+Although hopes have faded for the early development of
+disease-modifying treatments that could slow, halt, or
+reverse the pathological processes underlying dementia,
+several new treatments improve behavioral symptoms
+of dementia such as psychosis and agitation, which are
+becoming more problematic as the number of patients
+with dementia explodes. Thus, the emphasis here is on
+the biological basis of symptoms of dementia and of their
+relief by psychopharmacological agents, as well as the
+mechanism of action of drugs that treat these symptoms.
+For details of doses, side effects, drug interactions,
+and other issues relevant to the prescribing of these
+drugs in clinical practice, the reader should consult
+
+
+
+
+<<<PAGE 520>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Circuits of Treatable Symptoms in Dementia
+memory network
+
+psychosis network
+
+agitation network
+
+dextromethorphan+
+bupropion
+pimavanserin
+
+AChE
+
+cortex
+
+cortex
+
+cortex
+
+brexpiprazole
+
+memantine
+
+memory output
+A
+
+agitation output
+
+psychosis output
+B
+
+C
+
+Acetylcholinesterase inhibitors
+and NMDA antagonist
+memantine for
+memory
+
+5HT2A antagonist
+pimavanserin for
+psychosis
+
+plaque
+
+tangle
+
+NMDA antagonist DXM
+and multifunctional
+1, 2, D2, 5HT1A, 5HT2A
+brexpiprazole for
+agitation
+
+stroke
+
+Figure 12-23 Circuits of treatable symptoms in dementia. Treatment of dementia is currently symptomatic rather than disease-modifying.
+There are three main treatable symptoms in dementia: memory problems, psychosis, and agitation. Treatment strategies for each of these
+symptoms arise from the notion that each symptom is hypothetically regulated by a unique network or circuit of neurons. Each network
+connects specific glutamate, GABA (γ-aminobutyric acid), serotonin, and dopamine neurons at nodes (synapses) between these different
+neurons that can influence not only the neuron being directly innervated but the entire network, via downstream effects set in motion at the
+node. (A) Acetylcholine and glutamate can be targeted by acetylcholinesterase (AChE) inhibitors and the NMDA (N-methyl-D-aspartate)
+antagonist memantine, respectively, to improve cognition in the memory network. (B) Psychosis can be targeted at the serotonin node
+as well as the dopamine node of the psychosis network. In particular, the 5HT2A antagonist pimavanserin is approved to treat psychosis
+in Parkinson’s disease. (C) Multimodal neurotransmitters (norepinephrine, serotonin, dopamine, and glutamate) can be targeted in the
+agitation network to improve the symptom of agitation in dementia. The NMDA antagonist dextromethorphan (DXM) in combination with
+bupropion and the multimodal agent brexpiprazole are both being studied for their use in agitation associated with dementia.
+
+different neurons that can influence not only the neuron
+being directly innervated but the entire network, via
+downstream effects set in motion at the node. Nodes are
+the sites of potential therapeutic action by targeting them
+with drugs acting on the neurotransmitters normally
+working at that node. Thus, acetylcholine and glutamate
+504
+
+can be targeted at different nodes to improve cognition
+in the memory network (Figure 12-23A). Similarly,
+we now know that psychosis can be therapeutically
+targeted at the serotonin node as well as the dopamine
+node of the psychosis network, since both are mutually
+
+
+
+
+<<<PAGE 532>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Rivastigmine Actions: Peripheral
+peripheral
+acetylcholine
+neuron
+
+R
+R
+
+AChE rivastigmine
+
+R
+
+R
+
+R
+
+ACh
+
+R
+
+BuChE
+R
+
+R
+
+gut
+
+AChE
+
+R
+
+R
+
+Figure 12-35C Rivastigmine actions, part three. Rivastigmine
+inhibits the enzymes acetylcholinesterase (AChE) and
+butyrylcholinesterase (BuChE), which are present both in the
+central nervous system (CNS) and peripherally. Peripheral
+cholinergic neurons in the gut are involved in gastrointestinal
+effects; thus the boost in peripheral acetylcholine caused by
+AChE and BuChE blockade may contribute to gastrointestinal
+side effects.
+
+of nearby AMPA (α-amino-3-hydroxy-5-methyl4-isoxazole-propionic acid) receptors; glutamate
+occupying its binding site on the NMDA receptor;
+and the cotransmitter glycine occupying its site on the
+NMDA receptor (Figure 12-37B). If plaques and tangles
+cause a steady “leak” of glutamate (see Chapter 4 and
+Figure 4-52D), this would theoretically interfere with
+the fine-tuning of glutamate neurotransmission, and
+possibly interfere with memory and learning, but not
+necessarily be damaging to neurons (Figure 12-37C).
+Hypothetically, as AD progresses, glutamate release
+could be increased to a level that is tonically bombarding
+the postsynaptic receptor, eventually killing off dendrites
+and then killing off full neurons due to excitotoxic cell
+death (Figure 12-23A and Figure 12-37C).
+Memantine
+
+The rationale for the use of memantine (Figure 12-38),
+a type of NMDA antagonist, is to reduce abnormal
+516
+
+activation of glutamate neurotransmission and thus
+interfere with the pathophysiology of AD, improve
+cognitive function, and slow the rate of decline over
+time (Figure 12-23A and Figure 12-37D). Blocking
+NMDA receptors chronically would hypothetically
+interfere with memory formation and neuroplasticity.
+So what do you do to decrease the excessive and
+sustained but low level of excitotoxic activation of
+NMDA receptors, yet not interfere with learning,
+memory, and neuroplasticity, and without inducing a
+schizophrenia-like state?
+The answer seems to be that you interfere with
+NMDA-mediated glutamatergic neurotransmission with
+a weak (low-affinity) NMDA antagonist that works at the
+same site, plugging the ion channel where the magnesium
+ion normally blocks this channel at rest (Figure 12-37D).
+That is, memantine is an uncompetitive open-channel
+NMDA receptor antagonist with low to moderate affinity,
+voltage dependence, and fast blocking and unblocking
+kinetics. That is a fancy way of saying that it only blocks
+the ion channel of the NMDA receptor when it is open.
+This is why it is called an open-channel antagonist and
+why it is dependent upon voltage: namely, to open the
+channel. It is also a fancy way of saying that memantine
+blocks the open channel quickly, but is readily and
+quickly reversible if a barrage of glutamate comes along
+from normal neurotransmission (Figure 12-37E).
+This concept is illustrated in Figures 12-37C, 12-37D,
+and 12-37E. First, the hypothetical state of the glutamate
+neuron during Alzheimer excitotoxicity is illustrated
+in Figure 12-37C. Here, steady, tonic, and excessive
+amounts of glutamate are continuously released in a
+manner that interferes with the normal resting state of
+the glutamate neuron (Figure 12-37C), and in a manner
+that interferes with established memory functions,
+new learning, and normal neuronal plasticity in AD.
+Eventually, this leads to the activation of intracellular
+enzymes that produce toxic free radicals that damage
+the membranes of the postsynaptic dendrite and
+eventually destroy the entire neuron (Figure 12-37C).
+When memantine is given, it blocks this tonic glutamate
+release from having downstream effects, hypothetically
+returning the glutamate neuron to a new resting state,
+despite the continuous release of glutamate (Figure 1237D). Theoretically, this stops the excessive glutamate
+from interfering with the resting glutamate neuron’s
+physiological activity, therefore improving memory; it
+also theoretically stops the excessive glutamate from
+causing neurotoxicity, therefore slowing the rate of
+
+
+
+
+<<<PAGE 533>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+Figure 12-36A Galantamine actions,
+part one. Galantamine is an inhibitor
+of the enzyme acetylcholinesterase
+(AChE). Central cholinergic neurons are
+important for regulation of memory,
+and thus, in the central nervous system,
+the boost of acetylcholine caused by
+AChE blockade contributes to improved
+cognitive functioning.
+
+Galantamine Actions
+central
+acetylcholine
+neuron
+glial cell
+
+G
+AChE
+
+galantamine
+BuChE
+
+Ca++
+ACh
+
+G
+AChE
+
+galantamine
+
+!
+12
+
+neuronal death and also the associated cognitive decline
+that causes the progression in AD (Figure 12-37D).
+However, at the same time, memantine is not so
+powerful a blocker of NMDA receptors that it stops
+all neurotransmission at glutamate synapses (Figure
+
+12-37E). That is, when a phasic burst of glutamate
+is transiently released during normal glutamatergic
+neurotransmission, this causes a depolarization that
+is capable of reversing the memantine block, until the
+depolarization goes away (Figure 12-37E). For this
+517
+
+
+
+
+<<<PAGE 534>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Galantamine Actions:
+Nicotinic Allosteric Modulation
+central
+acetylcholine
+neuron
+glial cell
+
+G
+AChE
+
+Figure 12-36B Galantamine actions,
+part two. Galantamine is unique among
+cholinesterase inhibitors in that it is
+also a positive allosteric modulator
+(PAM) at nicotinic cholinergic receptors,
+which means it can boost the effects
+of acetylcholine at these receptors.
+Galantamine’s second action as a PAM
+at nicotinic receptors could theoretically
+enhance its primary action as a
+cholinesterase inhibitor.
+
+galantamine
+
+G
+
+BuChE
+
+Ca++
+ACh
+
+positive allosteric
+modulation
+
+G
+AChE
+
+galantamine
+
+G
+
+!
+reason, memantine does not have the psychotomimetic
+actions of other more powerful NMDA antagonists
+such as phencyclidine (PCP) and ketamine, and does
+not shut down new learning or the ability of normal
+neurotransmission to occur when necessary (Figure
+12-37E). The blockade of NMDA receptors by memantine
+can be seen as a kind of “artificial magnesium,” more
+effective than physiological blockade by magnesium,
+which is overwhelmed by excitotoxic glutamate release,
+but less effective than PCP or ketamine so that the
+518
+
+glutamate system is not entirely shut down. Sort of like
+having your cake and eating it, too.
+Memantine also has σ binding properties and weak
+5HT3 antagonist properties (Figure 12-38), but it is not
+clear what these contribute to the actions of this agent in
+AD. Since its mechanism of action in AD is so different
+from cholinesterase inhibition, memantine is usually
+given concomitantly with a cholinesterase inhibitor to
+exploit the potential of both of these approaches and to
+get additive results in patients.
+
+
+
+
+<<<PAGE 536>>>
+
+Glutamatergic Neurotransmission in AD:
+Part 3 - Alzheimer Excitotoxicity
+
+glutamate
+neuron
+
+Figure 12-37C Glutamatergic
+neurotransmission in Alzheimer disease,
+part 3. Neurodegeneration caused
+by plaques and tangles could cause a
+steady leak of glutamate and result in
+excessive calcium influx in postsynaptic
+neurons, which in the short term may
+cause memory problems and in the long
+term may cause accumulation of free
+radicals and thus destruction of neurons.
+
+memory problems
+
+free radical
+
+Glutamatergic Neurotransmission in AD:
+Part 4 - Memantine and New Resting State in
+Alzheimer Disease
+glutamate
+neuron
+
+memantine
+
+memory problems
+
+520
+
+free radical
+
+Figure 12-37D Glutamatergic
+neurotransmission in Alzheimer disease,
+part 4. Memantine is a noncompetitive,
+low-affinity NMDA (N-methyl-Daspartate) receptor antagonist that
+binds to the magnesium site when the
+channel is open. Memantine thus blocks
+the downstream effects of excessive
+tonic glutamate release by “plugging”
+the NMDA ion channel, which may
+improve memory and prevent neuronal
+death due to glutamate excitotoxicity.
+
+
+
+
+<<<PAGE 537>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+Glutamatergic Neurotransmission in AD: neurotransmission in Alzheimer disease,
+part 5. Because memantine has low
+affinity, when there is a phasic burst of
+Part 5 - Normal Neurotransmission
+glutamate and depolarization occurs,
+Figure 12-37E Glutamatergic
+
+this is enough to remove memantine
+from the ion channel and thus allow
+normal neurotransmission. This
+means that memantine does not have
+psychotomimetic effects or interfere with
+normal new learning.
+
+glutamate
+neuron
+
+long-term potentiation
+neuroplasticity
+learning
+memory
+
+TARGETING THE BEHAVIORAL
+SYMPTOMS OF DEMENTIA
+Dementia is often seen as fundamentally a disorder of
+memory and cognition, but there are many important
+behavioral symptoms associated with dementia as well
+(Figure 12-39), each potentially regulated by separate
+neuronal networks (Figure 12-23). The prevalence of
+specific behavioral symptoms of dementia pooled from
+a large number of studies in AD is shown in Table 12-7.
+Treatment of dementia-related psychosis, agitation,
+depression, and apathy are all discussed here.
+
+Defining Agitation and Psychosis in Alzheimer Disease
+
+Perhaps no symptom of dementia raises alarm as much as
+agitation, especially when it turns into physical aggression
+with behaviors such as slamming doors, throwing
+objects, kicking, screaming, pushing, scratching, biting,
+wandering, intruding upon others, fidgeting, restlessness,
+pacing, refusing medications, refusing help with activities
+of daily living, and sexually inappropriate behavior
+(Table 12-8).
+
+521
+
+12
+
+
+
+
+<<<PAGE 538>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Table 12-7 Prevalence of specific behavioral and
+psychological symptoms of dementia (BPSD)
+
+memantine
+
+Mg++
+T3
+
+5H
+
+Figure 12-38 Memantine. Memantine is a noncompetitive, lowaffinity NMDA (N-methyl-D-aspartate) receptor antagonist that
+binds to the magnesium site when the channel is open. It also
+has σ binding properties and weak 5HT3 antagonist properties.
+(SIGH)
+
+apathy
+
+#*@!
+
+disinhibition
+
+anxiety
+
+sleep
+
+depression
+psychosis
+agitation/
+aggression
+Figure 12-39 Behavioral symptoms in dementia. Patients with
+dementia can exhibit many symptoms in addition to cognitive
+and memory impairment, each of which is potentially regulated
+by separate neuronal networks.
+
+Agitation is defined for clinical and research
+purposes by the Agitation Definition Work Group of the
+International Psychogeriatric Association as:
+• occurring in patients with a cognitive impairment or
+dementia syndrome
+• exhibiting behavior consistent with emotional distress
+522
+
+Symptom
+
+Percentage
+
+Apathy
+
+49
+
+Depression
+
+42
+
+Aggression
+
+40
+
+Sleep disorder
+
+39
+
+Anxiety
+
+39
+
+Irritability
+
+36
+
+Appetite disorder
+
+34
+
+Aberrant motor behavior
+
+32
+
+Delusions
+
+31
+
+Disinhibition
+
+17
+
+Hallucinations
+
+16
+
+Euphoria
+
+7
+
+Estimates of prevalence are pooled from 48 studies of BPSD in Alzheimer
+disease, using the Neuropsychiatric Inventory.
+Data are from Zhao et al. 2016.
+
+• manifesting excessive motor activity, verbal
+aggression, or physical aggression
+• evidencing behaviors that cause excess disability and
+are not solely attributable to another disorder
+In contrast, dementia-related psychosis as discussed
+above is defined by
+• delusions or hallucinations occurring after the onset
+of cognitive decline
+• persisting for at least one month
+• not better explained by delirium or some other mental
+illness
+Whereas psychosis and agitation can be rather readily
+distinguished from memory decline in AD, agitation
+and psychosis can easily be confused with each other.
+However, these two symptom domains of agitation and
+psychosis hypothetically arise from entirely separate
+malfunctioning neuronal networks in dementia (compare
+Figure 12-23B, C) and are giving rise to entirely separate
+treatments. Given that the new treatments on the horizon
+for psychosis and for agitation have distinct mechanisms
+that target these neuronal networks individually and
+differently, it is more important than ever to be able
+to distinguish agitation from psychosis in dementia.
+Furthermore, psychotic symptoms such as intrusive
+hallucinations and/or paranoid delusions can precipitate
+agitation or lead to aggressive behavior. Thus, some
+dementia patients will have both agitation and psychosis
+and require treatment for both.
+
+
+
+
+<<<PAGE 549>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+activation by norepinephrine from locus coeruleus
+output at α2c and α1 postsynaptic receptors on dendrites
+of pyramidal neurons should reduce arousal and
+emotional responses (Figure 12-47); blocking normal
+serotonin excitation by antagonist actions at 5HT2A
+receptors and enhancing normal serotonin inhibition
+by partial agonist actions at 5HT1A receptors should also
+combine to reduce limbic drives to motor and emotional
+outputs of agitation (Figure 12-47). Brexpiprazole is
+approved for use in schizophrenia and depression, and is
+in late-stage clinical testing for agitation in AD.
+Targeting Glutamate for the Symptomatic Treatment
+of Agitation in Alzheimer Disease
+
+Excessive glutamate output in memory circuits has
+already been discussed (Figures 12-37A, 12-37B, and 1237C; see also Figure 4-52D and discussion in Chapter 4).
+Although the NMDA glutamate antagonist memantine
+has proven effective in symptomatic treatment of
+cognition/memory in AD, it has not been systematically
+tested in agitation of AD. Furthermore, the widespread
+use of memantine does not suggest any anecdotal
+evidence for efficacy in agitation, perhaps because it is
+a relatively weak blocker of NMDA receptors, with low
+potency.
+
+More robust blockade of NMDA receptors is
+attained by dextromethorphan, discussed in Chapter
+7 on drugs for depression and illustrated in Figure
+7-84. As mentioned in Chapter 7 there are multiple
+forms of dextromethorphan in testing, including
+a deuterated derivative as well as combinations of
+dextromethorphan with one or another of two different
+CYP450 2D6 inhibitors, either bupropion or quinidine.
+The formulation of dextromethorphan with the CYP450
+2D6 inhibitor and norepinephrine–dopamine reuptake
+inhibitor (NDRI) bupropion (also known as AXS-05;
+Figure 7-84) has promising results in major depressive
+disorder and treatment-resistant depression (discussed
+in Chapter 7 on treatment of mood disorders) and in
+agitation of AD (mentioned here and illustrated in
+Figure 12-48). Although there are several potential
+therapeutic mechanisms of dextromethorphan
+combinations, it is likely that NMDA antagonist
+action is how this drug works to quell agitation in AD.
+Hypothetically dextromethorphan–bupropion blocks
+the excessive excitatory glutamate output from the
+agitation network that leads to motor (Figure 12-45B)
+and emotional agitation (Figure 12-46B) by blocking
+NMDA receptors in cortex, thalamus, amygdala, ventral
+tegmental area, and locus coeruleus (Figure 12-48).
+
+NMDA Antagonism Reduces Agitation in Alzheimer Disease
+
+top-down inhibition
+
+agitation
+
+Figure 12-48 NMDA antagonist
+treatment for agitation. The NMDA
+antagonist dextromethorphan (DXM), in
+combination with the norepinephrine–
+dopamine reuptake inhibitor
+(NDRI) bupropion, is in testing as a
+treatment for agitation. Hypothetically,
+dextromethorphan–bupropion blocks
+the excessive excitatory glutamate
+output from the agitation network
+that leads to motor and emotional
+agitation by blocking NMDA receptors
+in the cortex, thalamus, amygdala,
+ventral tegmental area (VTA), and locus
+coeruleus (LC).
+
+cortex
+
+12
+
+LC
+
+VTA
+striatum
+
+amygdala
+
+DXM
+
+=
+
+NMDA antagonism
+NDRI
+
+thalamus
+
+sensory and
+emotional
+input
+
+533
+
+
+
+
+<<<PAGE 553>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+These various descriptions all integrate the notion
+of lack of spontaneous behaviors and emotions with
+diminished reactivity to the environment, often the
+opposite to what is observed in agitation (see Table 12-8).
+The clinical presentation of apathy often differs
+among various types of dementias; for instance, affective
+apathy is more common in the behavioral variant of FTD
+compared to AD. Both dopaminergic and cholinergic
+neurotransmitter systems seem to be involved in the
+various types of apathy; potential treatments, therefore,
+include dopamine agonists such as bupropion, levodopa,
+and stimulants, as well as cholinesterase inhibitors, but
+none is approved for this use and none is particularly
+robust in efficacy.
+A primary reason why drugs used for depression
+do not work well in apathy of dementia is that apathy
+is not depression. That is, guilt, worthlessness, and
+hopelessness, the symptom hallmarks of depression
+(see Chapter 6 and Figure 6-1), are typically not
+present in patients with apathy in dementia. When
+use of medications for apathy in dementia is needed,
+cholinesterase inhibitors may be effective in some
+patients and are a first-line consideration in AD, but
+might work better for prevention of these symptoms than
+for their treatment once they have emerged. Also, FTD
+patients may be more likely to benefit from SSRIs (e.g.,
+citalopram or escitalopram) or SNRIs.
+Other Treatments for the Behavioral Symptoms of
+Dementia
+
+As mentioned earlier and shown in Table 12-9,
+there are several non-pharmacological options for
+treating neuropsychiatric symptoms in patients with
+dementia, and given the risks associated with many
+pharmacological treatments, the lack of approval of
+many agents, and their relative lack of efficacy, nonpharmacological interventions should always be
+considered first-line. This will also be the case even
+if pimavanserin is approved for psychosis in all-cause
+dementia and if brexpiprazole and dextromethorphan–
+bupropion are approved for agitation in AD.
+It is particularly important to keep in mind that
+physical pain, infection, or local irritation can be
+
+the underlying cause for many secondary behavioral
+symptoms in patients with dementia. Just as with
+household pets or small children, a patient with dementia
+may not be able to express or describe the physical pain
+they are experiencing; thus it is up to astute clinicians and
+caregivers to identify and treat causes of pain that may be
+leading to neuropsychiatric symptoms, such as agitation
+and depression, in patients with dementia. If pain is
+contributing to behavioral symptoms, psychotropic
+medications may have little effect whereas alleviating the
+source of the pain may be quite effective. For instance,
+treatment with simple acetaminophen (paracetamol)
+can sometimes ameliorate agitation. Similarly, other
+modifiable sources of behavioral symptoms (e.g.,
+boredom, excess stimulation, etc.) should be recognized
+and addressed.
+
+SUMMARY
+The most common dementia is Alzheimer disease (AD),
+and the leading theory for its etiology is the amyloid
+cascade hypothesis. Other dementias including vascular
+dementia, dementia with Lewy bodies, Parkinson’s
+disease dementia, and frontotemporal dementia are
+also discussed as well, as are their differing pathologies,
+clinical presentations, and neuroimaging findings.
+New diagnostic criteria define three stages of AD:
+asymptomatic, mild cognitive impairment, and
+dementia. Major research efforts have recently pivoted
+away from attempting to find disease-modifying
+treatments that could halt or even reverse the course
+of this illness by interfering with Aβ accumulation in
+the brain because many such treatments have failed
+over the past 30 years. Leading treatments for AD
+today include symptomatic treatment of memory and
+cognition with the cholinesterase inhibitors, based upon
+the cholinergic hypothesis of amnesia, and memantine,
+an NMDA antagonist, based upon the glutamate
+hypothesis of cognitive decline. Novel treatments
+on the threshold of approval include the 5HT2A
+antagonist pimavanserin for symptomatic treatment
+of dementia-related psychosis, and both brexpiprazole
+and dextromethorphan–bupropion for symptomatic
+treatment of agitation in AD.
+
+537
+
+12
+
+
+
+
+<<<PAGE 620>>>
+
+Suggested Reading and Selected References
+
+Gehres SW, Rocha A, Leuzy A, et al. (2016) Cognitive
+intervention as an early nonpharmacological strategy in
+Alzheimer’s disease: a translational perspective. Front
+Aging Neurosci 8: 1–4.
+Gitlin LN, Hodgson NA (2016) Who should assess the needs
+of and care for a dementia patient’s caregiver? AMA J Ethics
+18: 1171–81.
+Godyn J, Jonczyk J, Panek D, et al. (2016) Therapeutic
+strategies for Alzheimer’s disease in clinical trials.
+Pharmacol Rep 68: 127–38.
+Gomar JJ, Bobes-Bascaran MT, Conejero-Goldberg C, et al.
+(2011) Utility of combinations of biomarkers, cognitive
+markers, and risk factors to predict conversion from mild
+cognitive impairment to Alzheimer disease in patients in
+the Alzheimer’s Disease Neuroimaging Initiative. Arch Gen
+Psychiatry 68: 961–9.
+Grimmer T, Tholen S, Yousefi BH, et al (2010) Progression of
+cerebral amyloid load is associated with the apolipoprotein E
+ε4 genotype in Alzheimer’s disease. Biol Psychiatry 68: 879–84.
+Gurnani AS, Gavett BE (2017) The differential effects of
+Alzheimer’s disease and Lewy body pathology on cognitive
+performance: a meta-analysis. Neuropsychol Rev 27: 1–17.
+Harrison JR, Owen MJ (2016) Alzheimer’s disease: the amyloid
+hypothesis on trial. Br J Psychiatry 208: 1–3.
+Herukka SK, Simonsen AH, Andreasen N, et al. (2017)
+Recommendations for CSF AD biomarkers in the diagnostic
+evaluation of MCI. Alzheimers Dement 13: 285–95.
+Jack CR Jr., Albsert MS, Knopman DS, et al. (2011)
+Introduction to the recommendations from the National
+Institute on Aging and the Alzheimer’s Association
+Workgroup on diagnostic guidelines for Alzheimer’s
+disease. Alzheimers Dement 7: 257–62.
+Jack CR Jr., Lowe VJ, Weigand SD, et al. (2009) Serial PIB and
+MRI in normal, mild cognitive impairment and Alzheimer’s
+disease: implications for sequence of pathological events in
+Alzheimer’s disease. Brain 132: 1355–65.
+Jonsson T, Atwal JK, Steinberg S, et al. (2012) A mutation in
+APP protects against Alzheimer’s disease and age-related
+cognitive decline. Nature 488: 96–9.
+Kokjohn TA, Maarouf CL, Roher AE (2012) Is Alzheimer’s
+disease amyloidosis a result of a repair mechanism gone
+astray? Alzheimers Dement 8: 574–83.
+Kovari E, Herrmann FR, Hof PR, et al. (2013) The relationship
+between cerebral amyloid angiopathy and cortical
+microinfarcts in brain ageing and Alzheimer’s disease.
+Neuropathol Appl Neurobiol 39: 498–509.
+Li Y, Li Y, Li X, et al. (2017) Head injury as a risk factor for
+dementia and Alzheimer’s disease: a systematic review and
+meta-analysis of 32 observational studies. PLOS ONE 12:
+e0169650.
+
+604
+
+Lieberman A, Deep A, Shi J, et al. (2018) Downward finger
+displacement distinguishes Parkinson disease dementia
+from Alzheimer disease. Int J Neurosci 128: 151–4.
+Lim JK, Li QX, He Z, et al. (2016) The eye as a biomarker for
+Alzheimer’s disease. Front Neurosci 10: 1–14.
+MacLeod R, Hillert EK, Cameron RT, et al. (2015) The role
+and therapeutic targeting of α-, β-, and γ-secretase in
+Alzheimer’s disease. Future Sci OA 1: FS011.
+Mallik A, Drzezga A, Minoshima S (2017) Clinical amyloid
+imaging. Semin Nucl Med 47: 31–43.
+Marciani DJ (2015) Alzheimer’s disease vaccine development:
+a new strategy focusing on immune modulation. J
+Neuroimmunol 287: 54–63.
+McKhann GM, Knopman DS, Chertkow H (2011) The
+diagnosis of dementia due to Alzheimer’s disease:
+recommendations from the National Institute on Aging
+and the Alzheimer’s Association Workgroup. Alzheimers
+Dement 7: 263–9.
+Mendiola-Precoma J, Berumen LC, Padilla K, et al. (2016)
+Therapies for prevention and treatment of Alzheimer’s
+disease. BioMed Res Int 2016: 2589276.
+Panza F, Solfrizzi V, Seripa D, et al. (2016) Tau-centric
+targets and drugs in clinical development for the
+treatment of Alzheimer’s disease. BioMed Res Int 2016:
+3245935.
+Pascoal TA, Mathotaarachchi S, Shin M, et al. (2017)
+Synergistic interaction between amyloid and tau predicts
+the progression to dementia. Alzheimers Dement 13:
+644–53.
+Rabinovici GD, Rosen HJ, Alkalay A, et al. (2011) Amyloid vs.
+FDG-PET in the differential diagnosis of AD and FTLD.
+Neurology 77: 2034–42.
+Rapp MA, Schnaider-Beeri M, Grossman HT, et al. (2006)
+Increased hippocampal plaques and tangles in patients
+with Alzheimer disease with a lifetime history of major
+depression. Arch Gen Psychiatry 63: 161–7.
+Reisberg B, Doody R, Stöffle A, et al. (2003) Memantine in
+moderate-to-severe Alzheimer’s disease. New Engl J Med
+348: 1333–41.
+Ritter AR, Leger GC, Miller JB, et al. (2017)
+Neuropsychological testing in pathologically verified
+Alzheimer’s disease and frontotemporal dementia.
+Alzheimer Dis Assoc Disord 31: 187–91.
+Rodrigue KM, Kennedy KM, Devous MD Sr., et al. (2012)
+Β-Amyloid burden in healthy aging. Regional distribution
+and cognitive consequences. Neurology 78: 387–95.
+Ruthirakuhan M, Herrmann N, Seuridjan I, et al. (2016)
+Beyond immunotherapy: new approaches for disease
+modifying treatments for early Alzheimer’s disease. Expert
+Opin Pharmacother 17: 2417–29.
+
+
+
+
+<<<PAGE 635>>>
+
+Index
+
+behavioral treatments, 430
+diagnosis and comorbidities, 418–20
+treatment, 421–31
+insulin resistance, 197, 198, 200
+internet addiction, 575
+interneurons, 380
+inverse agonists, 42, 44–5, 61, 62, 240
+ion-channel-linked systems, 11, 12
+ion channels, 76
+ligand-gated. See ligand-gated ion
+channels
+neurotransmission and, 73–6
+voltage-sensitive. See voltage-sensitive
+ion channels
+ionotropic glutamate receptors, 54
+iproniazid, 336
+irreversible enzyme inhibitors, 46
+kainate receptors, 101, 104
+ketamine, 106, 328–32, 353, 376, 569–71
+ketamine-assisted psychotherapy, 574
+kinase, third messenger, 14, 16
+lamotrigine, 350–1
+late genes, 20, 22
+lemborexant, 423
+leptin, 415
+leucine zippers, 19, 20, 21
+levodopa, 170
+levomilnacipran, 300, 303
+Lewy bodies, 157
+Lewy body dementias, 492–5
+licarbazepine, 352
+ligand-gated ion channels, 51–66, 76
+agonist spectrum, 56–62
+allosteric modulation, 64–6
+different states of, 61–4
+gatekeeper, 52
+pentameric subtypes, 53
+structure and function, 53
+tetrameric subtypes, 54–5
+lisdexamfetamine, 473, 575
+lithium, 48, 332, 345–6
+local anesthesia, 380
+lofexidine, 561
+long-term potentiation, 151
+LSD, 358, 568
+lumateperone, 227, 237–9
+lurasidone, 226, 236, 343
+magic mushrooms, 358
+magnesium, 104
+magnetic resonance imaging, 491
+major depressive disorder, 246, 252
+anxiety disorder and, 360–2
+core symptoms, 360
+major depressive episode, 248, 277
+symptoms and circuits, 277
+
+mania
+anticonvulsant treatment, 346
+carbamazepine treatment, 350
+drug treatment, 195
+lithium treatment, 345
+mixed features of, 248, 251
+mood stabilizer treatment, 288
+serotonin and dopamine blockers in,
+338, 342
+valproate treatment, 349
+manic episodes, 245, 277, 278
+MAOIs. See monoamine oxidase
+inhibitors
+mazindol, 485
+MDMA, 356, 376, 378, 569–71
+assisted psychotherapy, 574
+MDPV, 546
+medication-assisted therapy, 561
+melatonergic agents, 439, 440
+melatonin, 275, 439, 440
+melatonin receptors, 306
+memantine, 520, 521–4, 533
+memory difficulties, 316
+Alzheimer disease, 509–18
+memory, traumatic, 356, 366, 375,
+574
+mesocortical dopamine pathway, 95
+mesocortical hypodopaminergia, 95
+mesolimbic dopamine pathway, 89,
+542–3
+mesolimbic hyperdopaminergia, 90
+mesostriatal hyperdopaminergia, 93
+messenger RNA (mRNA), 26
+metabolic highway, 198, 199, 201
+metabolic monitoring, 196, 199
+metabolic toolkit, 201
+metabotropic glutamate receptors, 100,
+103
+metformin, 201
+methadone, 355, 559, 560, 561, 562
+methylation, 23, 24
+methylphenidate, 441–2, 469–72, 484
+formulations, 470
+mianserin, 309
+microRNA (miRNA), 27
+migrants, 150
+mild cognitive impairment, 487, 490,
+493, 500–2
+milnacipran, 300, 303
+mirtazapine, 232, 308–13, 333
+mixed dementia, 495
+mixed features, 248, 251–2
+modafinil, 333, 442–4
+Molly, 358, 569
+monoamine autoreceptors, 8
+monoamine hypothesis of depression,
+264–5, 290
+monoamine oxidase (MAO), 253
+
+monoamine oxidase inhibitors (MAOIs),
+336–7, 377
+bipolar depression, 342
+dietary tyramine interaction, 338
+drug–drug interactions, 338
+subtypes, 337–41
+monoamine projections, 279
+monoamine receptor hypothesis of
+depression, 264–6, 267, 290
+monoamine transporters, 30, 31–4, 208
+unipolar depression, 285–8
+mood disorders, 244, 282, See also mania,
+depression
+description of, 244–52
+future treatments for, 353–8
+mixed features of, 248, 251–2
+neurobiology of, 252–76
+pain disorders and, 387
+symptom-based treatments, 279–82
+symptoms and circuits in, 277–82
+mood episodes, 246
+mood related psychosis, 157
+mood spectrum, 244–9
+mood-stabilizers, 288, 345–6
+mood-stabilizing action, 283
+morphine, 559, 561
+motivation, lack of, 536
+motor disturbances, 78
+motor side effects, 165–81
+partial agonists, 192
+mu-opioid receptors, 390, 556
+multimodal monoamines, 530–2
+Multiple Sleep Latency Test, 431
+muscarinic receptors, 506–7
+nalmefene, 556, 573
+naloxone, 560
+naltrexone, 306, 556, 561, 563, 573, 575
+NAMs (negative allosteric modulators),
+64–6
+narcolepsy, 407, 430, 433, 435, 443, 444,
+446
+nausea and vomiting, 309
+n-back test, 449, 451
+nefazodone, 311
+negative affect, 278, 280
+negative feedback regulatory signal, 255
+negative symptoms, 95, 142–4, 156
+secondary, 162–3
+NET transporters. See norepinephrine
+transporters (NETs)
+neuroactive steroids, 320–5
+neurobiology
+mood disorders, 252–76
+sleep and wakefulness, 402–15
+neurodevelopment, 151, 152
+ADHD, 463–5
+schizophrenia, 151–3
+619
+
+

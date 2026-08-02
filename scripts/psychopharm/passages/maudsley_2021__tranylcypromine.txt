@@ -1,0 +1,1630 @@
+<<<PAGE 311>>>
+
+CHAPTER 2
+
+290  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Drug/regime
+
+Comments
+
+Olanzapine ±
+fluoxetine13,29,55–58
+
+This combination (Symbyax®) is more effective than both placebo and
+olanzapine alone in treating bipolar depression. The dose is 6mg/day and 25mg/
+day or 12mg/day and 50mg/day (so presumably 5/20mg and 10/40mg are
+effective). May be more effective than lamotrigine. Reasonable evidence of
+prophylactic effect. Recommended as first-line treatment by NICE.9
+Olanzapine alone is effective when compared with placebo,59 but the
+combination with fluoxetine is more effective. (This is possibly the strongest
+evidence for a beneficial effect for an antidepressant in bipolar depression.)
+
+Quetiapine60–64
+
+Five large RCTs have demonstrated clear efficacy for doses of 300mg and
+600mg daily (as monotherapy) in bipolar I and bipolar II depression. A later
+study in Chinese patients demonstrated the efficacy of 300mg/day65 in bipolar I
+depression. May be superior to both lithium and paroxetine.
+Quetiapine also prevents relapse into depression and mania66,67 and so is one of
+the treatments of choice in bipolar depression. It appears not to be associated
+with switching to mania.
+
+Valproate1,13,68–72
+
+Limited evidence of efficacy as monotherapy but recommended in some
+guidelines. Several very small RCTs but many negative, however, meta-analyses
+do support antidepressant efficacy.71 Probably protects against depressive
+relapse but database is small.
+
+Table 2.10 Alternative treatments – refer to primary literature before using
+Drug/regime
+
+Comments
+
+Antidepressants73–81
+
+‘Unopposed’ antidepressants (i.e. without mood stabiliser protection) are generally to
+be avoided in bipolar depression because of the risk of switching and inducing rapid
+cycling. There is also evidence that they are relatively less effective (perhaps not
+effective at all) in bipolar depression than in unipolar depression although dose may
+be critical.47 Short-term use of fluoxetine, venlafaxine and moclobemide seems
+reasonably effective and safe even as monotherapy. A meta-analysis suggested a
+large effect size for tranylcypromine in the absence of any risk of switching.82 Overall,
+however, unopposed antidepressant treatment should be avoided, especially in
+bipolar I disorder.53
+
+Cariprazine83
+
+One RCT suggests that cariprazine at 1.5mg/day is effective in bipolar I depression. A
+second, larger study showed 1.5mg/day and 3mg/day to be effective.84 The most
+recent study84 found benefit for 1.5mg/day but not 3mg/day.
+
+Ketamine85–88
+
+IV dose of 0.5mg/kg is effective in refractory bipolar depression. Very high response
+rate. Dissociative symptoms common but brief. Now accepted as standard treatment
+for refractory bipolar depression.89,90 IV racemate is possibly more effective than
+intranasal esketamine.91 Switching to mania is a potential problem92 although
+probably a remote risk.
+
+Pramipexole93,94
+
+Two small placebo-controlled trials suggest useful efficacy in bipolar depression.
+Effective dose averages around 1.7mg/day. Both studies used pramipexole as an
+adjunct to the existing mood stabiliser treatment. Neither study detected an increased
+risk of switching to mania/hypomania (a theoretical consideration) but data are
+insufficient to exclude this possibility. A meta-analysis of studies showed a robust
+effect on response but not remission.95
+
+
+
+
+<<<PAGE 312>>>
+
+Bipolar disorder  291
+
+Drug/regime
+
+Comments
+
+Aripiprazole96–99
+
+Limited support from open studies as add-on treatment. RCT negative. Possibly not
+effective.95
+
+Carbamazepine1,13,100
+
+Occasionally recommended but database is poor and effect modest. May have
+useful activity when added to other mood stabilisers.
+
+Gabapentin1,101,102
+
+Open studies suggest modest effect when added to mood stabilisers or
+antipsychotics. Doses average around 1750mg/day. Anxiolytic effect may account
+for apparent effect in bipolar depression
+
+Inositol103
+
+Small, randomised, pilot study suggests that 12g/day inositol is effective in bipolar
+depression
+
+Mifepristone104,105
+
+Some evidence of mood-elevating properties in bipolar depression although this
+was not replicated in a larger trial. Improved cognitive function in both trials. Dose
+used was 600mg/day.
+
+Modafinil106
+
+Meta-analysis of five studies of modafinil/armodafinil suggests robust benefit on
+response and remission with good tolerability and no evidence of increased risk of
+switching.
+
+Omega-3 fatty acids107,108
+
+One positive RCT (1g/2g a day) and one negative (6g a day)
+
+statistical significance.98 Another analysis of trials not involving antidepressants109
+(7307 participants) found a statistical advantage over placebo for olanzapine + fluoxetine, valproate, quetiapine, lurasidone, olanzapine, aripiprazole and carbamazepine (in
+order of effect size, highest first).
+A 2014 network meta-analysis of 29 studies included 8331 subjects.110 Overall olanzapine + fluoxetine, lurasidone, olanzapine, valproate, SSRIs and quetiapine were ranked highest in terms of effect size and response with olanzapine + fluoxetine ranked first for both.
+The most recent network meta-analysis included 11,448 participants in 50 studies.111 Drugs
+found to be more effective than placebo were olanzapine + fluoxetine, olanzapine, valproate, cariprazine, lamotrigine, lurasidone and quetiapine. Interestingly, imipramine and
+fluoxetine were also more effective than placebo (but with wide confidence intervals).
+
+Summary of drug choice
+The combination of olanzapine + fluoxetine is probably the most effective treatment
+available for bipolar depression but its use is constrained by the well known adverse
+effect profile of olanzapine. SSRIs other than fluoxetine may be effective but should
+probably be avoided unless clear individual benefit is obvious.53 Alternative first-line
+choices are quetiapine, olanzapine, lurasidone, lamotrigine and valproate. These drugs
+differ substantially in adverse effect profile, tolerability and cost, each of which needs
+to be considered when prescribing for an individual. Lithium is also effective but supporting evidence is relatively weak. Second-line drugs include ketamine and, increasingly, modafinil. Aripiprazole, risperidone, ziprasidone, tricyclics (with the exception of
+imipramine) and MAOIs (with the exception of tranylcypromine) are probably not
+effective and should not be used routinely.110
+
+CHAPTER 2
+
+Table 2.11 Other possible treatments – seek specialist advice before using
+
+
+
+
+<<<PAGE 338>>>
+
+Depression and anxiety disorders  317
+
+Resistant depression is difficult to treat successfully, and outcomes are often poor,1–3
+especially if evidence-based protocols are not followed.4 Treatment-resistant depression
+is not a uniform entity but a complex spectrum of severity which can be graded5 and in
+which outcome is closely linked to grading.6 A significant minority of apparently resistant unipolar depression may in fact be bipolar depression7,8 which is often unresponsive
+to standard antidepressants9,10 (see section on ‘Bipolar depression’ in Chapter 2).
+Recently there has been a move to characterise treatment-resistant depression as ‘difficult-to-treat’ depression on the basis that the former description implies that depression
+treatments are normally effective and that non-response is therefore somehow abnormal.11 Others suggest abandoning treatment-resistant depression as a diagnosis (again
+proposing ‘difficult-to-treat’ depression) because it propels clinicians to try more and
+more drugs in increasingly complex regimens rather than managing expectations of
+recovery to a more realistic level.12
+Management of treatment-resistant depression has been informed by the STAR*D
+programme (Sequenced Treatment Alternatives to Relieve Depression). This was a
+pragmatic effectiveness study which used remission of symptoms as its main outcome.
+At stage 1,13 2,786 subjects received citalopram (mean dose 41.8mg/day) for 14 weeks;
+
+n = 2,876
+Out-patients with major depression
+Citalopram
+28%
+Switch
+n = 727
+
+Bupropion
+21.3%
+
+vs
+
+Venlafaxine
+24.8%
+
+vs
+
+Sertraline
+17.6%
+
+Switch
+n = 235
+
+Mirtazapine
+12.3%
+
+vs
+
+Augment
+n = 565
+
+Failed
+
+Add bupropion
+29.7%
+
+Failed
+
+Add lithium
+15.9%
+
+Nortriptyline
+19.8%
+
+n = 51
+
+Tranylcypromine
+6.9%
+Figure 3.2 Remission rates in STAR*D
+
+Failed
+
+vs
+
+vs
+
+Add buspirone
+30.1%
+
+Augment
+n = 142
+
+vs
+
+n = 58
+
+Mirtazapine + venlafaxine
+13.7%
+
+Add T3
+24.7%
+
+CHAPTER 3
+
+Management of treatment-resistant depression – first choice
+
+
+
+
+<<<PAGE 339>>>
+
+CHAPTER 3
+
+318  The Maudsley® Prescribing Guidelines in Psychiatry
+
+remission was seen in 28% (response [50% reduction in symptoms score] in 47%).
+Subjects who failed to remit were entered into the continued study of sequential treatments.14–18 Remission rates are given in Figure 3.2. Very few statistically significant
+differences were noted from this point on. At stage 3,17 T3 was found to be significantly
+better tolerated than lithium. At stage 4,18 tranylcypromine was less effective and less
+well tolerated than the mirtazapine/venlafaxine combination. Overall, remission rates,
+as can be seen, were worryingly low, although it should be noted that the trial consisted
+of participants with long histories of recurrent depression.
+STAR*D demonstrated that the treatment for resistant depression requires a flexible
+approach and that response to a particular treatment option is not readily predicted by
+pharmacology or previous treatments. The programme established bupropion and buspirone augmentation as worthwhile options and resurrected from some obscurity the
+use of T3 augmentation and of nortriptyline. It also, to some extent, confirmed the
+safety and (to a lesser extent) efficacy of the combination of mirtazapine and
+venlafaxine.
+It should be noted that there are numerous valid criticisms of the STAR*D programme. These include: the absence of a placebo group; the open nature of treatment
+and some assessments; the failure to account for patients withdrawing after their first
+visit; the unexplained use of an a priori secondary measure as the main outcome metric;
+payments made to subjects; and the observation that 93% of 1,518 remitted patients
+had relapsed or dropped out of the study at 12 months’ follow-up.19,20 These factors do
+not, perhaps, alter the interpretation of comparative data but do further emphasise the
+low expectations of treatment of long-standing, treatment-resistant depression with the
+antidepressant regimens included in the study.
+Table 3.3 Treatment-resistant depression – first choice: commonly used treatments generally well supported by
+published literature (no preference implied by order)
+Treatment
+
+Advantages
+
+Disadvantages
+
+Add aripiprazole21–27
+(2–20mg/day) to antidepressant
+
+■■
+
+Good evidence base
+Usually well tolerated and safe
+■■ Low doses (2–10mg/day) may
+be effective
+■■ Supported by a recent
+­meta-analysis28
+
+■■
+
+Add lithium29
+Aim for plasma
+level of 0.4–0.8mmol/L initially,
+increasing to up to 1.0mmol/L if
+sub-optimal response
+
+■■
+
+Well established
+Well supported in the literature
+■■ Recommended by NICE30
+■■ Supported by a recent metaanalysis28
+
+■■
+
+Combine olanzapine and
+fluoxetine31
+(6.25–12.5mg + 25–50mg daily
+US licensed dose)*
+
+■■
+
+Well researched
+Usually well tolerated
+■■ Olanzapine + TCA may also
+be effective32
+■■ Olanzapine alone may be
+­effective33,34
+
+■■
+
+■■
+
+■■
+
+■■
+
+■■
+
+Akathisia and restlessness common at
+standard doses (≥10mg/day)
+■■ Insomnia may be problematic
+
+Sometimes poorly tolerated at higher
+plasma levels
+■■ Potentially toxic
+■■ Usually needs a specialist referral
+■■ Plasma level monitoring is essential
+(and TFTs; eGFR)
+■■ May not be effective in patients resistant to multiple treatments
+Risk of weight gain
+Limited clinical experience outside USA
+■■ Most data relate to bipolar depression
+
+(Continued)
+
+
+
+
+<<<PAGE 359>>>
+
+338  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 3.7 Antidepressants – swapping and stopping*
+
+To
+From
+
+Agomelatine Bupropion Clomipramine Fluoxetine
+
+CHAPTER 3
+
+Agomelatinea
+
+Stop
+Stop
+agomelatine agomelatine
+then start
+then start
+bupropion clomipramine
+
+Stop
+agomelatine
+then start
+fluoxetine
+
+Stop
+agomelatine
+then start
+fluvoxamine
+
+Stop agomelatine
+then start MAOIs
+
+Cross-taper
+cautiously with
+low dose
+clomipramine
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for 2
+weeks then start
+MAOIs
+
+Taper and
+stop then
+start
+fluoxetine at
+10mg/day
+
+Taper and stop Taper and stop
+then start low then wait for 3
+weeks then start
+dose
+MAOIs
+fluvoxamine
+
+Bupropionb
+
+Cross-taper
+cautiously
+
+Clomipramine
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Fluoxetinec
+
+Cross-taper
+cautiously
+
+Stop
+fluoxetine.
+Wait
+4–7 days
+then start
+bupropion
+
+Fluvoxamined
+
+Taper and stop Cross-taper Taper and stop
+then start low
+then wait for cautiously
+dose
+4 days
+clomipramine
+
+Cross-taper
+MAOIs
+cautiously
+Phenelzine
+Tranylcypromine
+Selegiline
+
+MAOIs
+Phenelzine
+Tranylcypromine
+Fluvoxamine Selegiline
+
+Stop
+fluoxetine.
+Wait 4–7 days
+then start
+fluvoxamine
+
+Stop fluoxetine.
+Wait 2 weeks
+then start low
+dose
+clomipramine
+Direct switch
+possible
+
+Stop fluoxetine
+then wait for 5–6
+weeks then start
+MAOIs
+
+Taper and stop
+then wait for
+1 week then start
+MAOIs
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and stop
+then wait for
+3 weeks
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and stop Taper and stop
+then wait for then wait for
+2 weeks
+2 weeks
+
+Moclobemide
+
+Taper and stop Taper and
+stop then
+then wait 24
+wait 24
+hours
+hours
+
+Taper and stop
+then wait 24
+hours
+
+Taper and
+stop then
+wait 24
+hours
+
+Taper and stop Taper and stop,
+then wait 24 wait 24 hours
+then start MAOIs
+hours
+
+Mirtazapine
+
+Cross-taper
+cautiously
+
+Cross-taper Cross-taper
+cautiously
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for 2
+weeks
+
+Reboxetinee
+
+Cross-taper
+cautiously
+
+Crosstaper
+cautiously
+
+Cross-taper
+cautiously
+
+Crosstaper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for
+1 week then
+start MAOIs
+
+
+
+
+<<<PAGE 361>>>
+
+340  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 3.7 (Continued)
+
+CHAPTER 3
+
+To
+
+MAOIs
+Phenelzine
+Tranylcypromine
+Fluvoxamine Selegiline
+
+From
+
+Agomelatine Bupropion Clomipramine Fluoxetine
+
+Trazodone
+
+Cross-taper
+cautiously
+
+Cross-taper Cross-taper
+cautiously
+cautiously
+with low
+dose
+clomipramine
+
+Crosstaper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for
+1 week
+
+Other SSRIsf,
+Vortioxetineg
+
+Cross-taper
+cautiously
+
+Cross-taper Taper and
+cautiously
+stop then
+start low
+dose
+clomipramine
+
+Direct
+switch
+possible
+
+Direct
+switch
+possible
+
+Taper and stop
+then wait for
+1 weekh
+
+SNRI
+Duloxetinei
+Venlafaxine
+Desvenlaxine
+
+Cross-taper
+cautiously
+
+Cross-taper Taper and
+cautiously
+stop then
+start low
+dose
+clomipramine
+
+Direct
+switch
+possible
+
+Direct
+switch
+possible
+
+Taper and stop
+then wait for
+1 week
+
+Tricyclics
+
+Cross-taper
+cautiously
+
+Halve dose
+and add
+bupropion
+and then
+slow
+withdrawal
+
+Halve dose
+and add
+fluoxetine
+and then
+slow
+withdrawal
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for 2
+weeksj
+
+Direct switch
+possible
+
+
+
+
+<<<PAGE 366>>>
+
+Antidepressant type
+
+Symptoms
+
+NaSSAs (e.g. mirtazapine)
+
+Panic, anxiety, restlessness, irritability, hypomania, insomnia, dizziness, paresthesia,
+nausea, vomiting10
+
+Serotonin modulators
+(vortioxetine, vilazodone)
+
+None reported,10 though these are relatively new antidepressants with less clinical
+experience. Shared pharmacological actions with other antidepressants (SSRIs) so
+possibility of withdrawal symptoms cannot be discounted10
+
+TCAs
+
+General somatic and GI distress, sleep disturbances characterised by initial and
+middle insomnia or excessively vivid and frightening dreams, akathisia or
+parkinsonism, hypomania or mania, cardiac arrhythmia10
+
+Trazodone
+
+Hypomania, anxiety, restless sleep, nightmares, depersonalisation, formication,
+headache10
+
+*Tranylcypromine may have amfetamine-like properties at higher doses12 and therefore could be associated with a
+true ‘withdrawal syndrome’. Delirium may occur.13
+
+Clinical relevance14,15
+The symptoms of a withdrawal reaction may be mistaken for a relapse of illness or the
+emergence of a new physical illness16 leading to unnecessary investigations or reintroduction of the antidepressant. Symptoms may be severe enough to interfere with daily
+functioning, and those who have experienced discontinuation symptoms may reason
+(perhaps appropriately) that antidepressants are ‘addictive’ and not wish to accept
+treatment. There is also evidence of emergent suicidal thoughts on discontinuation with
+paroxetine.17
+Who is most at risk?10,14–16,18
+Although anyone can experience discontinuation symptoms, the risk is increased in
+those prescribed short half-life drugs7 (e.g. paroxetine, venlafaxine), particularly if they
+do not take them regularly. Two-thirds of patients prescribed antidepressants skip a few
+doses from time to time,19 and many patients stop their antidepressant abruptly.20 The
+risk is also increased in those who have been taking antidepressants for 8 weeks or
+longer,21 those taking antidepressants at higher doses, those who have developed anxiety symptoms at the start of antidepressant therapy (particularly with SSRIs), those
+receiving other centrally acting medication (e.g. antihypertensives, antihistamines,
+antipsychotics), children and adolescents,7 younger patients22 and those who have experienced withdrawal symptoms before.
+Antidepressant withdrawal symptoms are common in neonates born to women taking antidepressants (see section on ‘Pregnancy’ in Chapter 7).
+How to avoid14–16,18
+Generally, antidepressant therapy should be discontinued gradually.6 Readers are
+referred to the section on ‘Stopping antidepressants’ in this chapter for advice on specific antidepressants. The shorter the half-life of the drug, the more important that this
+rule is followed. The end of the taper may need to be slower, as symptoms may not
+
+CHAPTER 3
+
+Depression and anxiety disorders  345
+
+
+
+
+<<<PAGE 368>>>
+
+Depression and anxiety disorders  347
+
+1. Horowitz MA, et al. Tapering of SSRI treatment to mitigate withdrawal symptoms. Lancet Psychiatry 2019; 6:538–546.
+2. Massabki I, et al. Selective serotonin reuptake inhibitor ‘discontinuation syndrome’ or withdrawal. Br J Psychiatry 2020; 6:1–4.
+3. Zabegalov KN, et al. Understanding antidepressant discontinuation syndrome (ADS) through preclinical experimental models. Eur J
+Pharmacol 2018; 829:129–140.
+4. Henssler J, et al. Antidepressant withdrawal and rebound phenomena. Dtsch Arztebl Int 2019; 116:355–361.
+5. Davies J, et al. A systematic review into the incidence, severity and duration of antidepressant withdrawal effects: are guidelines evidencebased? Addict Behav 2019; 97:111–121.
+6. National Institute for Health and Care Excellence. Depression in adults: recognition and management. Clinical guideline [CG90]. 2009 (Last
+updated: December 2013); https://www.nice.org.uk/Guidance/cg90.
+7. Fava GA, et al. Withdrawal symptoms after selective serotonin reuptake inhibitor discontinuation: a systematic review. Psychother Psychosom
+2015; 84:72–81.
+8. Berigan TR. Bupropion-associated withdrawal symptoms revisited: a case report. Prim Care Companion J Clin Psychiatry 2002; 4:78.
+9. Berigan TR, et al. Bupropion-associated withdrawal symptoms: a case report. Prim Care Companion J Clin Psychiatry 1999; 1:50–51.
+10. Cosci F, et al. Acute and persistent withdrawal syndromes following discontinuation of psychotropic medications. Psychother Psychosom
+2020; 89:283–306.
+11. Curtin F, et al. Moclobemide discontinuation syndrome predominantly presenting with influenza-like symptoms. J Psychopharmacology
+2002; 16:271–272.
+12. Ricken R, et al. Tranylcypromine in mind (Part II): review of clinical pharmacology and meta-analysis of controlled studies in depression. Eur
+Neuropsychopharmacol 2017; 27:714–731.
+13. Gahr M, et al. Withdrawal and discontinuation phenomena associated with tranylcypromine: a systematic review. Pharmacopsychiatry 2013;
+46:123–129.
+14. Lejoyeux M, et al. Antidepressant withdrawal syndrome: recognition, prevention and management. CNS Drugs 1996; 5:278–292.
+15. Haddad PM, et al. Recognising and managing antidepressant discontinuation symptoms. Adv Psychiatric Treatment 2007; 13:447–457.
+16. Haddad PM. Antidepressant discontinuation syndromes. Drug Saf 2001; 24:183–197.
+17. Tint A, et al. The effect of rate of antidepressant tapering on the incidence of discontinuation symptoms: a randomised study. J
+Psychopharmacology 2008; 22:330–332.
+18. Ogle NR, et al. Guidance for the discontinuation or switching of antidepressant therapies in adults. J Pharm Pract 2013; 26:389–396.
+19. Meijer WE, et al. Spontaneous lapses in dosing during chronic treatment with selective serotonin reuptake inhibitors. Br J Psychiatry 2001;
+179:519–522.
+20. van Geffen EC, et al. Discontinuation symptoms in users of selective serotonin reuptake inhibitors in clinical practice: tapering versus abrupt
+discontinuation. Eur J Clin Pharmacol 2005; 61:303–307.
+21. Kramer JC, et al. Withdrawal symptoms following discontinuation of imipramine therapy. Am J Psychiatry 1961; 118:549–550.
+22. Read J. How common and severe are six withdrawal effects from, and addiction to, antidepressants? The experiences of a large international
+sample of patients. Addict Behav 2020; 102:106–157.
+23. Wilson E, et al. A review of the management of antidepressant discontinuation symptoms. Ther Adv Psychopharmacol 2015; 5:357–368.
+24. Dilsaver SC, et al. Antidepressant withdrawal symptoms treated with anticholinergic agents. Am J Psychiatry 1983; 140:249–251.
+25. Benazzi F. Re: selective serotonin reuptake inhibitor discontinuation syndrome: putative mechanisms and prevention strategies. Can J
+Psychiatry 1999; 44:95–96.
+26. Benazzi F. Fluoxetine for clomipramine withdrawal symptoms. Am J Psychiatry 1999; 156:661–662.
+27. Giakas WJ, et al. Intractable withdrawal from venlafaxine treated with fluoxetine. Psychiatric Annals 1997; 27:85–93.
+28. Fava GA, et al. Understanding and managing withdrawal syndromes after discontinuation of antidepressant drugs. J Clin Psychiatry 2019; 80.
+29. Gibson K, et al. Patient-centered perspectives on antidepressant use. Int J Mental Health 2014; 43:81–99.
+30. Paykel ES, et al. Changes in public attitudes to depression during the Defeat Depression Campaign. Br J Psychiatry 1998; 173:519–522.
+31. Baldessarini RJ, et al. Illness risk following rapid versus gradual discontinuation of antidepressants. Am J Psychiatry 2010; 167:934–941.
+
+Further Reading
+Fava GA, et al. Withdrawal Symptoms after Selective Serotonin Reuptake Inhibitor Discontinuation: A Systematic Review. Psychother Psychosom
+2015; 84:72–81.
+Haddad PM, et al. Recognising and managing antidepressant discontinuation symptoms. Advances in Psychiatric Treatment 2007; 13:447–457.
+Schatzberg AF, et al. Antidepressant discontinuation syndrome: consensus panel recommendations for clinical management and additional
+research. J Clin Psychiatry 2006; 67 Suppl 4:27–30.
+Shelton RC. The nature of the discontinuation syndrome associated with antidepressant drugs. J Clin Psychiatry 2006; 67 Suppl 4:3–7.
+
+CHAPTER 3
+
+References
+
+
+
+
+<<<PAGE 419>>>
+
+398  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Antidepressants and hyperprolactinaemia
+Prolactin release is controlled by endogenous dopamine but is also indirectly modulated by serotonin via stimulation of 5HT1C and 5HT2 receptors.1,2 Long-standing
+increased plasma prolactin (with or without symptoms) is very occasionally seen with
+antidepressant use.3 Where antidepressant-induced hyperprolactinaemia does occur,
+rises in prolactin are usually small and short-lived4 and so symptoms are very rare.
+There is no association between SSRI use and breast cancer.5
+Routine monitoring of prolactin is not recommended, but where symptoms suggest
+the possibility of hyperprolactinaemia, then measurement of plasma prolactin is essential. Where symptomatic hyperprolactinaemia is confirmed, a switch to mirtazapine is
+recommended (see below), although there is also evidence that switching to an alternative SSRI can resolve symptoms.6,7
+Some details of associations between antidepressants and increased prolactin are
+given in Table 3.18.
+
+Table 3.18 Reported associations between antidepressants and increased prolactin
+Drug/group
+
+Prospective studies
+
+Case reports/series
+
+Agomelatine
+
+No mention of prolactin changes in clinical
+trials8
+Melatonin itself may inhibit prolactin
+production9
+
+None
+
+Bupropion
+
+Single doses of up to 100mg seem not to affect None
+prolactin10
+May decrease prolactin11
+
+MAOIs
+
+Small mean changes observed with phenelzine11 Very occasional reports of increased prolactin11
+and tranylcypromine12
+
+Mirtazapine
+
+Strong evidence that mirtazapine has no effect
+on prolactin13–15
+
+SNRIs
+
+Clear association observed between venlafaxine Galactorrhoea reported with venlafaxine21,22 and
+and duloxetine and prolactin elevation18–20
+duloxetine.23,24 Duloxetine-linked
+hyperprolactinaemia has been treated with
+aripiprazole18
+
+SSRIs
+
+Prospective studies generally show no change in
+prolactin.25–27 Some evidence from prescription
+event monitoring that SSRIs are associated with
+higher risk of non-puerperal lactation.28 In a
+French study, 1.6% of adverse event reports for
+SSRIs were of hyperprolactinaemia3
+
+Occasional reports of galactorrhoea16
+and gynaecomastia17
+
+Galactorrhoea reported with fluoxetine6,29 and
+paroxetine30,31
+Euprolactinaemic galactorrhoea and
+amenorrhoea32 reported with escitalopram33 and
+fluvoxamine34
+Hyperprolactinaemia reported with sertraline7,35
+(Continued)
+
+
+
+
+<<<PAGE 443>>>
+
+422  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Table 3.26 (Continued)
+Cardiac
+conduction
+disturbance§
+
+Anticholinergic Nausea/
+effects
+Vomiting
+
+Sexual
+dysfunction§
+
+Drug
+
+Sedation
+
+Postural
+hypotension§
+
+Sertraline
+
+–
+
+–
+
+–
+
+–
+
+++
+
++++
+
+Vilazodone
+
+–
+
+–
+
+–
+
+–
+
+++
+
+++
+
+Vortioxetine
+
+–
+
++
+
+–
+
+–
+
+++
+
++
+
+Isocarboxazid
+
++
+
+++
+
++
+
+++
+
++
+
++
+
+Phenelzine
+
++
+
++
+
++
+
++
+
++
+
++
+
+Tranylcypromine
+
+–
+
++
+
++
+
++
+
++
+
++
+
+–
+
+–
+
+–
+
+–
+
++
+
++
+
+Monoamine
+oxidase
+inhibitors
+(MAOIs)
+
+Reversible
+inhibitor of
+monoamine
+oxidase A (RIMA)
+Moclobemide
+
+KEY:
++++ High incidence/severity
+++ Moderate
++ Low– Very low/none
+* Hypertension reported.
+§
+In some cases, further details can be found in specific sections in this chapter.
+
+
+
+
+<<<PAGE 748>>>
+
+Hepatic and renal impairment  727
+
+Drug
+
+Comments
+
+Agomelatine5,6,38–40
+
+Liver injury including hepatic failure, liver enzyme increases more than 10× ULN, and
+hepatitis reported, most commonly in first months of treatment and very occasionally
+fatal. Contra-indicated in hepatic impairment, including cirrhosis and liver disease.
+Dose-related increase in transaminases reported; perform LFTs at baseline, 3, 6, 12, 24
+weeks during initiation and at each dose increase, and thereafter where clinically
+indicated. Stop treatment if transaminases rise more than 3× ULN. Use cautiously where
+other risk factors for hepatic disease are present.
+Under current monitoring restrictions, risk of liver injury is no higher than for other
+antidepressants.41,42
+
+Brexanolone6,19
+
+No dose adjustment required in hepatic impairment. Does not appear to be hepatotoxic,
+although experience is limited.
+
+Duloxetine5,6,43–47
+
+Hepatically metabolised. Clearance markedly reduced even in mild impairment. Reports
+of hepatocellular injury (liver enzyme increases more than 10× ULN) and, less commonly,
+jaundice. Hepatic failure, sometimes fatal, has been reported. Contra-indicated in hepatic
+impairment.
+
+Fluoxetine5,6,48–52
+
+Extensively hepatically metabolised with a long half-life (further increased in hepatic
+insufficiency). Kinetic studies demonstrate accumulation in compensated cirrhosis.
+Although dosage reduction (of at least 50%) or alternate day dosing are recommended,
+it would take many weeks to reach steady-state serum levels, making fluoxetine complex
+to use. Asymptomatic increases in LFTs found in 0.5% of healthy adults. Rare cases of
+hepatitis reported.
+
+Levomilnacipran,
+milnacipran6,19
+
+No dose adjustment required in hepatic impairment, although the manufacturers of
+milnacipran recommend avoiding in chronic liver disease, alcohol use or severe
+dysfunction. Increased liver enzymes have been reported, and hepatitis with milnacipran;
+discontinue use if jaundice or liver dysfunction occurs.
+
+MAOIs5,6,53
+
+Rare cases of fatal hepatic necrosis, hepatotoxicity and jaundice with phenelzine, rarely
+hepatitis with tranylcypromine and one isolated case of fatal hepatotoxicity with
+moclobemide. Doses of moclobemide should be reduced to half or one third in hepatic
+impairment, or the dosing interval increased. Transdermal selegiline has not been
+associated with liver injury.54 Non-selective MAOIs are contraindicated in patients with
+hepatic impairment.
+
+Mirtazapine5,6,55
+
+Hepatically metabolised and sedative. 50% dose reduction recommended based on
+kinetic data, Mild, asymptomatic increases in LFTs seen in healthy adults (ALT >3 times
+the upper limit of normal in 2%). Few cases of cholestatic and hepatocellular damage
+reported. Has been used safely in patients with primary biliary cholangitis.56
+
+Other SSRIs5,6,47,52,57–64
+
+All are hepatically metabolised and accumulate on chronic dosing. Dosage reduction
+(including reduction of maximum dose by 50%65 and/or reduced dosing frequency) may
+be required (see individual SPCs for details). Raised LFTs and rare cases of hepatitis,
+including chronic active hepatitis, have been reported with paroxetine. Sertraline and
+fluvoxamine have also been associated with hepatitis. Citalopram, escitalopram and
+paroxetine have minimal effects on hepatic enzymes and may be the SSRIs of choice
+although occasional hepatotoxicity has been reported. Paroxetine is used by some
+specialised liver units with few apparent problems. Sertraline and paroxetine are used in
+the management of cholestatic pruritus.66 Be aware of increased risk of bleeding.
+(Continued)
+
+CHAPTER 8
+
+Table 8.2 Antidepressants in hepatic impairment
+
+
+
+
+<<<PAGE 873>>>
+
+852  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY1A2
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine
+Amitriptyline*
+Asenapine
+Bupropion*
+Caffeine
+Chlorpromazine
+Clomipramine*
+Clozapine
+Duloxetine
+Fluphenazine
+Fluvoxamine
+Imipramine*
+Melatonin
+Mirtazapine*
+Olanzapine
+Perphenazine
+?Pimozide*
+Ramelteon
+Zolpidem*
+
+Fluvoxamine
+Moclobemide
+Perphenazine
+
+‘Barbiturates’
+Carbamazepine
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion*
+Caffeine
+Nicotine
+
+Tranylcypromine
+
+Phenobarbital
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Methadone*
+Nicotine
+Sertraline*
+
+Fluoxetine*
+Fluvoxamine
+Memantine
+Paroxetine*
+Sertraline*
+
+Carbamazepine*
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Buprenorphine*
+
+Not known
+
+Not known
+
+CYP2A6
+
+CPY2B6
+
+CYP2B7
+
+
+
+
+<<<PAGE 897>>>
+
+876  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 13
+
+Table 13.1 (Continued)
+
+Drug or drug group
+
+Toxicity in
+overdose
+
+Smallest dose likely
+to cause death
+
+Bupropion3–6
+
+Moderate
+
+Around 4.5g, although largest
+overdose of 13.5g was not
+fatal.7
+
+Duloxetine9–12
+
+Low
+
+Drowsiness, bradycardia, hypotension.
+Unclear – no deaths from single
+overdose reported but involved in May be asymptomatic.
+numerous mixed overdose deaths.
+
+Lofepramine13,14
+
+Low
+
+Unclear. Fatality unlikely if
+lofepramine taken alone.
+
+Sedation, coma, tachycardia,
+hypotension.
+
+MAOIs13,15–17
+(not moclobemide)
+
+High
+
+Phenelzine – 400mg
+Tranylcypromine – 200mg
+
+Tremor, weakness, confusion, sweating,
+tachycardia, hypertension.
+
+Mianserin18–20
+
+Low
+
+Unclear but probably more than Sedation, coma, hypotension,
+hypertension, tachycardia, possible QT
+1000mg.
+prolongation.
+Fatality unlikely if mianserin
+taken alone.
+
+Mirtazapine3,21–24
+
+Low
+
+Fatality unlikely in overdose of
+mirtazapine alone. One death
+reported following overdose
+with 990mg.25
+
+Sedation; even large overdose may be
+asymptomatic. Tachycardia/hypertension
+sometimes seen. Agitation.
+
+Moclobemide26,27
+
+Low
+
+Unclear, but probably more
+than 8g.
+Fatality unlikely if moclobemide
+taken alone.
+
+Vomiting, sedation, disorientation.
+
+Reboxetine3,28
+
+Low
+
+Not known.
+Fatality unlikely in overdose of
+reboxetine alone.
+
+Sweating, tachycardia, changes in blood
+pressure.
+
+SSRIs14,29–32
+
+Low
+
+Unclear. Probably above 1–2g.
+Fatality unlikely if SSRI taken
+alone.
+
+Vomiting, tremor, drowsiness,
+tachycardia, ST depression. Seizures and
+QT prolongation possible. Citalopram
+most toxic of SSRIs in overdose24,33
+(coma, seizures, arrhythmia); escitalopram
+is less toxic.34,35
+
+Trazodone10,36–39
+
+Low
+
+Unclear but probably more than Drowsiness, nausea, hypotension,
+10g.
+dizziness. Rarely QT prolongation,
+Fatality unlikely in overdose of
+arrhythmia.
+trazodone alone. Mortality rate
+about 1 in 10,000 exposures.24
+
+Tricyclics13,15,16,40
+(not lofepramine)
+
+High
+
+Around 500mg.
+Doses over 50mg/kg usually
+fatal.
+
+Signs and symptoms of overdose
+Tachycardia, seizures, QRS prolongation,
+QT prolongation, arrhythmia. Agitation
+and toxic psychosis also reported. Fatal
+serotonin syndrome may occur if taken
+with venlafaxine.8
+
+Sedation, coma, tachycardia, arrhythmia
+(QRS, QT prolongation), hypotension,
+seizures.
+
+
+
+
+<<<PAGE 927>>>
+
+906  The Maudsley® Prescribing Guidelines in Psychiatry
+
+approximately 14 hours when given with glucuronidation-inducing drugs such as carbamazepine or phenytoin. The half-life is increased to approximately 70 hours when
+given with valproate. This means that the time before complete re-titration is necessary
+therefore varies between 3 and 7 days, depending on the other drugs prescribed.1
+
+Table 14.1 Restarting medication up to two weeks after stopping oral treatment (data obtained from EU
+regulatory documents (SPCs)2)
+
+CHAPTER 14
+
+Drugs that require re-titration
+
+Drug
+
+Time after which
+re-titration must
+be performed
+
+Clozapine
+
+48 hours
+
+See ‘Re-starting
+clozapine after
+after a break in
+treatment’ in
+Chapter 1
+
+Lamotrigine
+
+3–7 days
+
+See discussion in
+the text
+
+3 days
+Methadone
+Buprenorphine 3 days
+
+Further guidance
+
+See ‘Opioid
+dependence’ in
+Chapter 4
+
+Paliperidone
+long-acting
+injection
+
+Depends on
+formulation
+
+See ‘Paliperidone
+palmitate
+long-acting
+injection’ in
+Chapter 1
+
+Aripiprazole
+long-acting
+injection
+
+>5 weeks if 2nd or
+3rd dose missed
+
+See ‘Aripiprazole
+long-acting
+injection’ in
+Chapter 1
+
+Drugs that are
+usually safe for
+restarting at
+the previous
+dose
+Acamprosate
+Asenapine
+Fluoxetine
+Haloperidol
+Isocarboxazid
+Lofepramine
+Methylphenidate
+Phenelzine
+Sulpiride
+Tranylcypromine
+Valproate
+
+Drugs that are probably
+safe for restarting at
+the previous dose
+Antipsychotics (except
+clozapine, quetiapine and
+risperidone)
+Carbamazepine
+Cholinesterase inhibitors
+CNS stimulants
+Disulfiram
+Lithium (titration advised if
+renal function has changed)
+MAOIs
+Memantine
+Naltrexone
+Other antidepressants (but
+beware loss of tolerance to
+sedative effects)
+Pregabalin
+SSRIs
+TCAs (but beware loss of
+tolerance to sedative and
+hypotensive effects)
+
+>6 weeks in
+chronic treatment
+CNS, central nervous system; MAOI, monoamine oxidase inhibitor; SSRI, selective serotonin reuptake inhibitor; TCA,
+tricyclic antidepressant.
+
+References
+1. Aurobindo Pharma – Milpharm Ltd. Summary of Product Characteristics. Lamotrigine 25mg Tablets. 2019; https://www.medicines.org.uk/
+emc/product/4736/smpc.
+2. EMC. https://www.medicines.org.uk/emc/; accessed June 2020.
+
+
+
+
+<<<PAGE 935>>>
+
+914  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 14.3 (Continued)
+Parameter
+
+Reference range
+
+Agents reported to raise
+levels
+
+Agents reported to lower
+levels
+
+Mean cell
+haemoglobin
+
+27–32pg
+
+Medications associated with
+megaloblastic anaemia e.g. all
+antiseizure medications,
+nitrous oxide
+
+None known
+
+Mean cell haemoglobin 320–360g/L
+concentration
+
+Alcohol
+
+Mean cell volume
+
+80–100fL
+
+Monocytes
+
+0.2–0.8 × 10 /L
+
+Haloperidol
+
+None known
+
+Neutrophils
+
+2.0–7.5 × 109/L
+(may be lower in people of
+African descent due to
+benign ethnic neutropenia)
+
+Bupropion, carbamazepine†,
+citalopram, chlorpromazine,
+clozapine†, duloxetine,
+fluoxetine, fluphenazine,
+haloperidol, lamotrigine,
+lithium, maprotiline,
+olanzapine, quetiapine,
+risperidone/paliperidone,
+rivastigmine, tiotixene,
+trazodone, venlafaxine
+
+Agents associated with
+agranulocytosis:
+amoxapine, aripiprazole,
+barbiturates, carbamazepine,
+chlordiazepoxide,
+chlorpromazine, clozapine‡,
+cocaine (adulterated),
+diazepam, fluphenazine,
+haloperidol, meprobamate,
+mianserin, mirtazapine,
+olanzapine, pirenzepine,
+promethazine, risperidone/
+paliperidone, TCAs
+(especially imipramine),
+tranylcypromine, valproate
+
+CHAPTER 14
+
+9
+
+Agents associated with
+leucopoenia: amitriptyline,
+amoxapine, asenapine,
+bupropion, carbamazepine,
+cariprazine, chlorpromazine,
+citalopram, clomipramine,
+clonazepam, clozapine,
+duloxetine, fluoxetine,
+fluphenazine, galantamine,
+haloperidol, lamotrigine,
+lorazepam, lumateperone,
+lurasidone, memantine,
+meprobamate, mianserin,
+mirtazapine, modafinil, nitrous
+oxide, olanzapine, oxazepam,
+phenelzine, pregabalin,
+promethazine, quetiapine,
+tranylcypromine, valproate,
+venlafaxine, ziprasidone
+Agents associated with
+neutropenia: sertraline,
+trazodone, valproate
+Packed cell volume
+
+Females: 0.37–0.47L/L
+Males: 0.40–0.52L/L
+
+Clozapine (rare), testosterone
+
+Benzodiazepines (rare),
+buprenorphine, naltrexone,
+vigabatrin
+
+

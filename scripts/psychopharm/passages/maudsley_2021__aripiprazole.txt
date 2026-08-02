@@ -1,0 +1,1061 @@
+<<<PAGE 93>>>
+
+CHAPTER 1
+
+72  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Depot/LAI antipsychotics – pharmacokinetics
+Drug
+Aripiprazole1
+
+UK Trade Name
+
+Time to peak (days)*
+
+Plasma half-life
+(days)
+
+Time to steady
+state (weeks)**
+
+(Abilify Maintena)
+
+7d
+
+30–46d
+
+~20W
+~16W
+
+Aripiprazole lauroxil
+
+(Aristada (in USA))
+
+44–50d
+
+~54–57d
+
+Aripiprazole lauroxil
+nanocrystal4–6****
+
+(Aristada Initio (in
+USA))
+
+4d
+
+~15–18d
+
+Flupentixol decanoate7,8
+
+(Depixol)
+
+2–4
+
+4–7d
+
+8–17d
+
+~8–12W
+
+Fluphenazine decanoate4,9–11 (Modecate)
+
+8–12d***
+
+7–10d
+
+~8W
+
+Haloperidol decanoate12,13
+
+(Haldol)
+
+7d
+
+21d
+
+~14W
+
+Olanzapine pamoate
+
+(ZypAdhera)
+
+2–3d
+
+30d
+
+~12W
+
+4,16
+
+Paliperidone palmitate
+(monthly)
+
+(Xeplion)
+
+13d
+
+25–49d
+
+~20W
+
+Paliperidone palmitate17,18
+(three monthly)
+
+(Trevicta)
+
+25d
+
+Deltoid: 84–95d
+Gluteal: 118–139d
+
+~52W
+
+Pipotiazine palmitate19,20
+
+(Piportil)
+
+7–14d
+
+15d
+
+~9W
+
+RBP-7000
+(risperidone sc monthly)
+
+(Perseris (in USA))
+
+1st peak ~1d
+2nd peak ~11d
+
+~8–9d
+
+~8W
+
+Risperidone
+microspheres22,23
+
+(Risperidal Consta)
+
+~30d
+
+4d
+
+~8W
+
+Zuclopenthixol
+decanoate7,19,24
+
+(Clopixol)
+
+4–7d
+
+19d
+
+~12W
+
+4,14,15
+
+4,21
+
+*Time to peak is not the same as time to reach therapeutic plasma concentration, but both are dependent on dose.
+For large (loading) doses, therapeutic activity is often seen before attaining peak levels. For low (test) doses, the
+initial peak level may be sub-therapeutic.
+**Attainment of steady state (SS) follows logarithmic, not linear characteristics: around 90% of SS levels are
+achieved in three half-lives. Time to attain steady state is independent of dose and dosing frequency (i.e. you can’t
+hurry it up by giving more, more often). Loading doses can be used to produce prompt therapeutic plasma levels
+but time to SS remains the same.
+***Some estimates suggest peak concentrations after only a few hours.24,25 It is likely that fluphenazine decanoate
+produces two peaks – one on the day of injection and a second slightly higher peak a week or so later.12
+****used to initiate treatment with Aristada, IM injection with one 30 mg oral dose of aripiprazole; not designed
+for repeat dosing.
+
+References
+1. Mallikaarjun S, et al. Pharmacokinetics, tolerability and safety of aripiprazole once-monthly in adult schizophrenia: an open-label, parallelarm, multiple-dose study. Schizophr Res 2013; 150:281–288.
+2. Hard ML, et al. Aripiprazole lauroxil: pharmacokinetic profile of this long-acting injectable antipsychotic in persons with schizophrenia. J
+Clin Psychopharmacol 2017; 37:289–295.
+3. Turncliff R, et al. Relative bioavailability and safety of aripiprazole lauroxil, a novel once-monthly, long-acting injectable atypical antipsychotic, following deltoid and gluteal administration in adult subjects with schizophrenia. Schizophr Res 2014; 159:404–410.
+4. Correll CU, et al. Pharmacokinetic characteristics of long-acting injectable antipsychotics for schizophrenia: an overview. CNS Drugs 2021;
+35:39–59.
+5. Alkermes Inc. Highlights of Prescribing Information. ARISTADA INITIO® (aripiprazole lauroxil) extended-release injectable suspension, for
+intramuscular use. 2020; https://www.aristadahcp.com/downloadables/ARISTADA-INITIO-PI.pdf.
+
+
+
+
+<<<PAGE 98>>>
+
+Aripiprazole long-acting injection
+Abilify brands
+Aripiprazole lacks the prolactin-related and metabolic adverse effects of other SGA
+LAIs and so is a useful alternative to them. Placebo-controlled studies show a good
+acute and longer term effect in the treatment of schizophrenia.1 The FDA has also
+approved Aripiprazole LAI for maintenance monotherapy treatment of bipolar I disorder in adults.2 Oral aripiprazole 10mg/day for 14 days is recommended initially to
+establish tolerability and response. One of two regimens may be followed for administering the starting dose of aripiprazole LAI.3
+
+One-injection start
+On the day of initiation, administer one injection of 400mg aripiprazole LAI and continue treatment with 10mg to 20mg oral aripiprazole per day for 14 consecutive days
+(28 days in total) to maintain therapeutic aripiprazole concentrations during
+initiation.
+Or
+
+Two-injection start
+On the day of initiation, administer two separate injections of 400mg aripiprazole LAI
+at separate injection sites in two different muscles (separate gluteal, separate deltoid or
+gluteal and deltoid injection sites) along with one 20mg dose of oral aripiprazole. Oral
+therapy should not continue after this point.
+One month after the day of initiation, begin a regimen of 400mg each month.
+After the one-injection + oral starting regimen, peak plasma levels are seen 7 days
+after the injection and trough levels at four weeks.4 At steady state, peak plasma levels
+are up to 50% higher than the first dose peak and trough plasma levels only slightly
+below the first dose peak.4 Dose adjustments should take this into account. A population pharmacokinetic modelling study indicated that the two-injection start regimen
+would produce comparable aripiprazole plasma concentrations to the one injection
+start method.5
+A lower dose of 300mg a month can be used in those not tolerating 400mg. A dose
+of 200mg a month may only be used for those patients receiving particular enzyme
+inhibiting drugs. The incidence of akathisia, insomnia, nausea and restlessness is similar
+to that seen with oral aripiprazole6,7
+There are no formal recommendations for switching to aripiprazole, but we present
+next recommendations based on our interpretation of available pharmacokinetic
+data.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  77
+
+
+
+
+<<<PAGE 99>>>
+
+78  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+Switching to aripiprazole LAI
+Switching from
+
+Aripiprazole LAI regimen
+
+Oral antipsychotics
+
+Cross taper antipsychotic with oral aripiprazole* over two weeks
+One-injection start
+Start aripiprazole LAI, continue aripiprazole oral for another two weeks and
+then stop
+Two-injection start
+Start aripiprazole LAI as indicated above after two weeks of oral aripiprazole,
+then stop oral treatment**.
+
+Depot antipsychotics
+(not risperidone LAI)
+
+Start oral aripiprazole* on day the last depot injection was due
+One-injection start
+Start aripiprazole LAI after two weeks and then stop oral aripiprazole two
+weeks later
+Two-injection start
+Start aripiprazole LAI as indicated above after two weeks of oral aripiprazole,
+then stop oral treatment**.
+
+Risperidone LAI
+
+Start oral aripiprazole* 4–6 weeks after the last risperidone injection
+One-injection start
+Start aripiprazole LAI two weeks later; discontinue oral aripiprazole two weeks
+after that
+Two-injection start
+Start aripiprazole LAI as indicated above after two weeks of oral aripiprazole,
+then stop oral treatment**.
+
+*If prior response and tolerability to aripiprazole are known, pre-injection oral aripiprazole may not be strictly
+required. However, attainment of effective aripiprazole plasma levels is dependent upon four weeks of oral
+supplementation for the one-injection start regimen. Similarly, for the two-injection start regimen, the pharmacokinetic modelling study was based on plasma levels from oral aripiprazole being at steady state on the day of
+initiation.
+**If oral aripiprazole cannot be given at all (e.g. patient refusal), always use the two-injection starting regimen. This
+800mg dose is likely to afford therapeutic plasma concentrations even in the absence of prior oral treatment.
+
+Other LAI aripiprazole brands
+Another long-acting formulation of aripiprazole has been approved by the US Food
+and Drug Administration (FDA) for the treatment of schizophrenia. It is rarely used
+outside the United States. Aripiprazole lauroxil is a pro-drug formulated to be administered at monthly, 6-weekly or two-monthly intervals by intramuscular injection into
+the deltoid or gluteal muscle, depending on the dose.8,9 It is available as four strengths:
+441mg, 662mg, 882mg and 1064mg doses to deliver 300mg, 450mg, 600mg and
+724mg of aripiprazole, respectively (see sections on depot pharmacokinetics and new
+long-acting injections in this chapter). There is also a special initiation formulation
+(Aristada Initio), which provides effective blood levels within 4 days of injection without oral supplemention.10
+
+
+
+
+<<<PAGE 100>>>
+
+Schizophrenia and related psychoses  79
+
+1. Shirley M, et al. Aripiprazole (ABILIFY MAINTENA®): a review of its use as maintenance treatment for adult patients with schizophrenia.
+Drugs 2014; 74:1097–1110.
+2. US Food and Drug Administration. Highlights of Prescribing Information. Abilify Maintena (aripiprazole) for extended-release suspension
+for intramuscular use. 2020; https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/202971s013lbl.pdf.
+3. Otsuka Pharmaceuticals (UK) Ltd. Summary of Product Characteristics. Abilify Maintena 400 mg powder and solvent for prolonged-release
+suspension for injection. 2020; https://www.medicines.org.uk/emc/product/7965/smpc.
+4. Mallikaarjun S, et al. Pharmacokinetics, tolerability and safety of aripiprazole once-monthly in adult schizophrenia: an open-label, parallelarm, multiple-dose study. Schizophr Res 2013; 150:281–288.
+5. Wang Y, et al. The two-injection start of aripiprazole once-monthly provides rapid attainment of therapeutic concentration without the need
+for 14 day oral Neuropsychopharmacology (ECNP) Congress, 12–15 September 2020, Virtual.
+6. Kane JM, et al. Aripiprazole intramuscular depot as maintenance treatment in patients with schizophrenia: a 52-week, multicenter, randomized, double-blind, placebo-controlled study. J Clin Psychiatry 2012; 73:617–624.
+7. Potkin SG, et al. Safety and tolerability of once monthly aripiprazole treatment initiation in adults with schizophrenia stabilized on selected
+atypical oral antipsychotics other than aripiprazole. Curr Med Res Opin 2013; 29:1241–1251.
+8. Hard ML, et al. Aripiprazole lauroxil: pharmacokinetic profile of this long-acting injectable antipsychotic in persons with schizophrenia. J
+Clin Psychopharmacol 2017; 37:289–295.
+9. Turncliff R, et al. Relative bioavailability and safety of aripiprazole lauroxil, a novel once-monthly, long-acting injectable atypical antipsychotic, following deltoid and gluteal administration in adult subjects with schizophrenia. Schizophr Res 2014; 159:404–410.
+10. Ehret MJ, et al. Aripiprazole Lauroxil NanoCrystal® Dispersion Technology (Aristada Initio®). Clin Schizophr Relat Psychoses 2018;
+12:92–96.
+
+CHAPTER 1
+
+References
+
+
+
+
+<<<PAGE 113>>>
+
+Aristada
+Initio
+
+N/A
+
+Perseris
+
+Paliperidone
+palmitate
+6-month
+formulation
+
+Risperidone
+for
+subcutaneous
+injection
+(RBP-7000)
+
+Dosing
+interval
+
+Suspension,
+Co-polymer;
+ATRIGEL
+technology3
+
+Microcrystalline
+suspension
+
+1-monthly
+
+6-monthly
+
+Nanocrystalline Single dose
+dispersion;1
+LinkeRx
+technology2
+
+Trade name Formulation
+
+Aripiprazole
+lauroxil
+extendedrelease
+injectable
+
+Drug
+
+Abdominal
+sub-cutaneous
+injection only9
+
+Intra-muscular
+injection
+
+Intra-muscular
+injection into the
+deltoid or gluteal
+muscle
+
+Site(s) of
+administration
+
+No
+
+No
+
+90mg/120mg Yes
+
+700mg/
+1000mg?6
+
+675mg (IM
+dispersion
+= 459mg
+aripiprazole)3
+
+No10
+
+No
+
+Yes – but see
+additional
+information
+
+Yes
+
+No – patients
+will already
+have received
+long-acting
+paliperidone
+
+Yes
+
+Additional information
+
+Designed for patients stabilised on
+PP1M or PP3M8
+
+(Continued)
+
+FDA approved Does not require loading doses or oral
+201811
+supplementation. Prior tolerability
+with oral risperidone should be
+established9
+
+Phase 3 study
+underway7
+
+FDA approved Aristada initio, together with one 30mg
+dose of oral aripiprazole, is designed to
+20184
+only be given to initiate treatment with
+Aristada (see Aripiprazole LAI section in
+Chapter 1) and should not be used for
+repeated dosing.5
+
+Pre-treatment Pre-treatment
+with oral
+with oral
+therapy
+Regulatory
+Dosing
+Pre-mixing therapy
+desirable**
+status
+essential*
+information required
+
+The following table provides brief details of some newer LAI antipsychotic formulations.
+
+Newer long-acting injectable antipsychotic preparations
+
+
+
+
+<<<PAGE 195>>>
+
+CHAPTER 1
+
+174  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 1.31 Sexual adverse effects of antipsychotics
+Drug
+
+Type of problem
+
+Aripiprazole
+
+■■
+
+No effect on prolactin or α1 receptors. No reported adverse effects on sexual function.
+Improves sexual function in those switched from other antipsychotics.27,29,34,35 Case
+reports of aripiprazole-induced hypersexuality have been published36,37
+
+■■
+
+Does not appear to significantly affect prolactin levels38
+No reported cases of sexual dysfunction
+
+Asenapine
+
+■■
+
+Brexpiprazole
+
+■■
+
+Cariprazine
+
+■■
+
+Clozapine
+
+■■
+
+Similar mechanism of action to aripiprazole (5-HT1A agonist, 5-HT2A antagonist and
+partial D2 agonist)
+■■ Causes negligible increases in prolactin39
+■■ No problems with sexual dysfunction reported in clinical trials40
+Similar mechanism of action to aripiprazole (5-HT1A agonist, 5-HT2A antagonist and
+partial D2 agonist)
+■■ Not associated with hyperprolactinaemia41
+■■ No reported cases of sexual dysfunction
+■■
+
+Haloperidol
+
+■■
+■■
+
+Lurasidone
+
+■■
+■■
+
+Olanzapine
+
+■■
+
+Paliperidone
+
+■■
+
+Similar problems to the phenothiazines45 but anticholinergic effects reduced46
+Prevalence of sexual dysfunction reported to be up to 70%47
+Does not appear to significantly affect prolactin levels48
+No reported cases of sexual dysfunction49
+
+Possibly less sexual dysfunction than drugs such as haloperidol due to relative lack of
+prolactin-related effects45
+■■ Priapism reported rarely50,51
+■■ Prevalence of sexual dysfunction reported to be >50%47
+■■
+
+Phenothiazines
+
+Significant α1 adrenergic blockade and anticholinergic effects.42 No effect on prolactin43
+Probably fewer problems than with typical antipsychotics44
+
+Similar prolactin elevations to risperidone
+One small study52 and one case report53 showing reduction in sexual dysfunction following switching from risperidone oral or depot to paliperidone depot
+
+(e.g. chlorpromazine)
+
+Hyperprolactinaemia and anticholinergic effects. Reports of delayed orgasm at lower
+doses followed by normal orgasm but without ejaculation at higher doses.18
+■■ Priapism has been reported with thioridazine, risperidone and chlorpromazine (probably
+due to α1 blockade)46,54,55
+
+Quetiapine
+
+■■
+
+■■
+
+■■
+
+Risperidone
+
+No effect on serum prolactin56
+Possibly associated with low risk of sexual dysfunction,57–60 but studies are conflicting61,62
+
+Potent elevator of serum prolactin
+Less anticholinergic than some other antipsychotics (olanzapine, quetiapine)
+■■ Specific peripheral α adrenergic blockade leads to a moderately high reported incidence
+1
+of ejaculatory problems such as retrograde ejaculation63,64
+■■ Priapism reported rarely33
+■■ Prevalence of sexual dysfunction reported to be 60–70%47
+■■
+■■
+
+Sulpiride/
+amisulpride
+
+■■
+
+Potent elevators of serum prolactin22 but note that sulpiride (as the main FGA prescribed
+in the study) was not associated with greater sexual dysfunction than SGAs (with variable
+ability to raise prolactin) in the CUtLASS-1 study20
+
+Thioxanthenes
+(e.g. flupentixol)
+
+■■
+
+Arousal problems and anorgasmia65
+
+
+
+
+<<<PAGE 204>>>
+
+Switching antipsychotics
+Summary of recommendations for switching antipsychotics because of poor
+tolerability.
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Acute EPS
+Dystonia, parkinsonism, bradykinesia
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Olanzapine
+Quetiapine
+
+Clozapine
+Lurasidone
+Ziprasidone
+
+Akathisia2,9,10
+
+Olanzapine
+Quetiapine
+
+Clozapine
+Brexpiprazole
+
+Dyslipidaemia7,8,11–16
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Asenapine
+Brexpiprazole
+Cariprazine
+
+Impaired glucose
+tolerance7,8,15,17–21
+
+Amisulpride
+Aripiprazole§
+Lurasidone
+Ziprasidone
+
+Brexpiprazole
+Cariprazine
+Haloperidol
+
+Hyperprolactinaemia7,8,15,22–28
+
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+Olanzapine
+Ziprasidone
+
+Postural hypotension8,15,29
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Haloperidol
+Sulpiride
+Trifluoperazine
+
+QT prolongation27,30–37
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+Paliperidone
+
+Low dose monotherapy of any
+drug not formally contraindicated in QT prolongation
+(with ECG monitoring)
+
+Sedation7,8,27
+
+Amisulpride
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Risperidone
+Sulpiride
+
+Haloperidol
+Trifluoperazine
+Ziprasidone
+
+1–8
+
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  183
+
+
+
+
+<<<PAGE 205>>>
+
+CHAPTER 1
+
+184  The Maudsley® Prescribing Guidelines in Psychiatry
+
+(Continued )
+Adverse effect
+
+Suggested drugs
+
+Alternatives
+
+Sexual dysfuction8,38–44
+
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Lurasidone
+Quetiapine
+
+Clozapine
+
+Tardive dyskinesia45–49
+
+Clozapine
+
+Aripiprazole
+Olanzapine
+Quetiapine
+
+Weight gain16,35,37,50–57
+
+Amisulpride
+Aripiprazole§
+Brexpiprazole
+Cariprazine
+Haloperidol
+Lurasidone
+Ziprasidone
+
+Asenapine
+Haloperidol
+Trifluoperazine
+
+§There is evidence that both switching to and co-prescription of aripiprazole can be associated with reductions in
+body weight and plasma prolactin levels, better lipid profiles, and a decrease in plasma glucose levels.58–61
+
+Lumateperone and pimavanserin are not listed in the table because of their limited
+availability. Both drugs cause little or no EPSE or akathisia, have no effect on prolactin
+or blood pressure and cause minimal weight gain and metabolic disturbance.62,63
+Pimvanserin prolongs QT,64 whereas lumateperone seems to have no effect on the
+ECG.65
+
+References
+1. Stanniland C, et al. Tolerability of atypical antipsychotics. Drug Saf 2000; 22:195–214.
+2. Tarsy D, et al. Effects of newer antipsychotics on extrapyramidal function. CNS Drugs 2002; 16:23–45.
+3. Caroff SN, et al. Movement disorders associated with atypical antipsychotic drugs. J Clin Psychiatry 2002; 63 Suppl 4:12–19.
+4. Lemmens P, et al. A combined analysis of double-blind studies with risperidone vs. placebo and other antipsychotic agents: factors associated
+with extrapyramidal symptoms. Acta Psychiatr Scand 1999; 99:160–170.
+5. Taylor DM. Aripiprazole: a review of its pharmacology and clinical use. Int J Clin Pract 2003; 57:49–54.
+6. Meltzer HY, et al. Lurasidone in the treatment of schizophrenia: a randomized, double-blind, placebo- and olanzapine-controlled study. Am
+J Psychiatry 2011; 168:957–967.
+7. Garnock-Jones KP. Cariprazine: a review in schizophrenia. CNS Drugs 2017; 31:513–525.
+8. Garnock-Jones KP. Brexpiprazole: a review in schizophrenia. CNS Drugs 2016; 30:335–342.
+9. Buckley PF. Efficacy of quetiapine for the treatment of schizophrenia: a combined analysis of three placebo-controlled trials. Curr Med Res
+Opin 2004; 20:1357–1363.
+10. Pringsheim T, et al. The assessment and treatment of antipsychotic-induced akathisia. Can J Psychiatry 2018; 63:719–729.
+11. Rettenbacher MA, et al. Early changes of plasma lipids during treatment with atypical antipsychotics. Int Clin Psychopharmacol 2006;
+21:369–372.
+12. Ball MP, et al. Clozapine-induced hyperlipidemia resolved after switch to aripiprazole therapy. Ann Pharmacother 2005; 39:1570–1572.
+13. Chrzanowski WK, et al. Effectiveness of long-term aripiprazole therapy in patients with acutely relapsing or chronic, stable schizophrenia: a
+52-week, open-label comparison with olanzapine. Psychopharmacology 2006; 189:259–266.
+14. De Hert M, et al. A case series: evaluation of the metabolic safety of aripiprazole. Schizophr Bull 2007; 33:823–830.
+15. Citrome L, et al. Long-term safety and tolerability of lurasidone in schizophrenia: a 12-month, double-blind, active-controlled study. Int Clin
+Psychopharmacol 2012; 27:165–176.
+16. Kemp DE, et al. Weight change and metabolic effects of asenapine in patients with schizophrenia and bipolar disorder. J Clin Psychiatry 2014;
+75:238–245.
+
+
+
+
+<<<PAGE 291>>>
+
+270  The Maudsley® Prescribing Guidelines in Psychiatry
+
+outcomes is made difficult by trials including patients whose mania occurred in the
+context of failed mood stabiliser treatment.
+Although mechanism is difficult to discern, converging evidence suggests antimanic
+effects of antipsychotics are related to their effects on the dopamine system.15,16
+
+CHAPTER 2
+
+Depression
+In acute treatment of bipolar depression, antipsychotics that are found to be effective
+include cariprazine, lurasidone, olanzapine (+/- fluoxetine) and quetiapine.13,17 In terms
+of mechanism, this does not appear to be a dopamine-mediated effect, as aripiprazole
+and other dopamine-blocking antipsychotics do not show efficacy in acute bipolar
+depression.17
+Maintenance
+It is striking that compounds which appear to have efficacy in the acute phase of BD,
+whether that be mania or depression, seem to exert effects in maintenance treatment,
+i.e. prophylaxis.18 This is borne out by a network meta-analysis of maintenance treatments in BD, which included aripiprazole, olanzapine, paliperidone, quetiapine and
+risperidone LAI, all of which, with the exception of aripiprazole and paliperidone,
+showed effects against relapse.19 It should be noted that this analysis did not include
+more recent trials of aripiprazole (see further).19
+
+Specific antipsychotics
+Aripiprazole
+Aripiprazole is effective in acute treatment of mania both alone20–22 as an add-on agent23
+and in long-term prophylaxis.24,25 No difference is seen when directly compared with
+lithium or haloperidol although one small RCT suggested that lithium was more effective in mania.26 In trials in mania, it is associated with nausea and movement disorder
+(mainly akathisia).27 Aripiprazole LAI is also effective for prophylaxis in bipolar 1 disorder with the effect predominantly on prevention of manic episodes.28
+Asenapine
+Asenapine is given by the sublingual route and is effective in mania.29,30 Efficacy seems
+to be maintained in the longer term,31 RCT evidence showing efficacy in preventing
+depression and manic episodes, in people with bipolar 1 disorder.32 Asenapine is unlikely
+to cause weight gain and metabolic disturbance33 than other antipsychotics.
+Cariprazine
+Cariprazine is efficacious for treating mania as well as depression symptoms in people
+with mania with mixed features,34 and has a low propensity for weight gain.33
+
+
+
+
+<<<PAGE 602>>>
+
+Children and adolescents  581
+
+There are reports from controlled studies supporting the use of risperidone or aripiprazole for ADHD symptoms. However, these were not primary outcomes of the
+studies and therefore need further investigation.
+
+Aggression towards others and the self, frequently underlined by irritability, are common problems in ASD. Although behavioural and environment approaches should be
+first-line treatments, more severe and dangerous behaviours usually necessitate pharmacotherapy.44 Duration of recommended treatment is difficult to derive from published evidence but treatment appears to be beneficial for up to 6–12 months.45 Efforts
+to reduce and possibly discontinue such treatment at the end of this period should be
+strongly considered.44,45
+Second-generation antipsychotics are the first-line pharmacological treatment for
+children and adolescents with ASD and associated irritability.45–48 Risperidone49,50 and
+aripiprazole51 have been reliably shown to help with irritability and associated disruptive behaviours5 in ASD and have been approved for this use by the US FDA. In a
+meta-analysis of data from 46 RCTs52 comparing efficacy of risperidone, aripiprazole
+and other compounds with placebo, risperidone and aripiprazole were the most effective, with moderate to large effect sizes. Another meta-analysis of short-term (8 weeks)
+aripiprazole in the treatment of irritability in ASD children aged 6–17 years53 found
+similar results when compared with placebo. The most recent Cochrane review54
+which is an update of the previous one55 concluded that aripiprazole may be beneficial in managing irritability, hyperactivity and stereotypes in children with ASD. The
+usual recommended clinical dose of aripiprazole for maintenance is between 5 and
+15mg daily.45 The starting dose of aripiprazole is 2mg/day. The dosing of risperidone
+is rather more complicated; FDA recommended dosages for risperidone are outlined
+in Box 5.3.
+Despite their promising efficacy adverse effects such as weight gain and metabolic
+changes, increased appetite and somnolence (even with aripiprazole) can be problematic.15,56–59 One long-term, placebo discontinuation study found that relapse rates did
+not differ between those who stayed on aripiprazole versus those randomised to switch
+to only placebo, suggesting that re-evaluation of aripiprazole use after a period of stabilisation in irritability symptoms is warranted.54 There is only one study that makes a
+direct head-to-head comparison60 showing similar tolerability and efficacy profiles for
+risperidone and aripiprazole. Risperidone usually causes hyperprolactinaemia which
+although may be asymptomatic, it may have longer term effects therefore necessitating
+close monitoring whereas aripiprazole does not which makes it a preferred option.
+Aripiprazole may on the other hand be ineffective for self-injurious behaviours.6
+The effectiveness of other SGAs, such as olanzapine,61 quetiapine, ziprasidone and
+clozapine, has not been tested in adequately powered RCTs. Whilst controlled studies
+support the use of mood stabilizers, such as lithium62,63 and sodium valproate,64 in the
+treatment of persistent aggression in children they are not as effective as SGAs for the
+treatment of irritability in ASD.65 Limited data support the combination of risperidone
+and topiramate being better than risperidone alone.66 Further RCTs are warranted of
+BDNF stimulators such as loxapine and amitriptyline.67
+
+CHAPTER 5
+
+Irritability (aggression, self-injurious behaviour, severe disruptive behaviours)
+
+
+
+
+<<<PAGE 612>>>
+
+Children and adolescents  591
+
+1. Murphy TK, et al. Practice parameter for the assessment and treatment of children and adolescents with tic disorders. J Am Acad Child
+Adolesc Psychiatry 2013; 52:1341–1359.
+2. Cath DC, et al. European clinical guidelines for Tourette syndrome and other tic disorders. Part I: Assessment. Eur Child Adolesc Psychiatry
+2011; 20:155–171.
+3. Singer HS Treatment of tics and Tourette syndrome. Curr Treat Options Neurol 2010; 12:539–561.
+4. McGuire JF, et al. A meta-analysis of behavior therapy for Tourette syndrome. J Psychiatr Res 2014; 50:106–112.
+5. Rizzo R, et al. A randomized controlled trial comparing behavioral, educational, and pharmacological treatments in youths with chronic tic
+disorder or Tourette syndrome. Frontiers Psychiatry 2018; 9:100.
+6. Fründt O, et al. Behavioral therapy for Tourette syndrome and chronic tic disorders. Neurol Clin Practice 2017; 7:148–156.
+7. Patel H, et al. Use of complementary and alternative medicine in children with Tourette syndrome. J Child Neurol 2020; 35:512–516.
+8. Kumar A, et al. A comprehensive review of Tourette syndrome and complementary alternative medicine. Current Dev Disorders Rep 2018;
+5:95–100.
+9. Cubo E, et al. Impact of placebo assignment in clinical trials of tic disorders. Mov Disord 2013; 28:1288–1292.
+10. Goetz CG, et al. Clonidine and Gilles de la Tourette’s syndrome: double-blind study using objective rating methods. Ann Neurol 1987;
+21:307–310.
+11. Leckman JF, et al. Clonidine treatment of Gilles de la Tourette’s syndrome. Arch Gen Psychiatry 1991; 48:324–328.
+12. Group TsSS. Treatment of ADHD in children with tics: a randomized controlled trial. Neurology 2002; 58:527–536.
+13. Du YS, et al. Randomized double-blind multicentre placebo-controlled clinical trial of the clonidine adhesive patch for the treatment of tic
+disorders. Aust N Z J Psychiatry 2008; 42:807–813.
+14. Hedderick EF, et al. Double-blind, crossover study of clonidine and levetiracetam in Tourette syndrome. Pediatr Neurol 2009; 40:420–425.
+15. Song PP, et al. The efficacy and tolerability of the clonidine transdermal patch in the treatment for children with tic disorders: a prospective,
+open, single-group, self-controlled study. Front Neurol 2017; 8:32.
+16. Scahill L, et al. A placebo-controlled study of guanfacine in the treatment of children with tic disorders and attention deficit hyperactivity
+disorder. Am J Psychiatry 2001; 158:1067–1074.
+17. Cummings DD, et al. Neuropsychiatric effects of guanfacine in children with mild Tourette syndrome: a pilot study. Clin Neuropharmacol
+2002; 25:325–332.
+18. Roessner V, et al. Pharmacological treatment of tic disorders and Tourette syndrome. Neuropharmacology 2013; 68:143–149.
+19. Pringsheim T, et al. Pimozide for tics in Tourette’s syndrome. Cochrane Database Syst Rev 2009:CD006996.
+20. Yoo HK, et al. An open-label study of the efficacy and tolerability of aripiprazole for children and adolescents with tic disorders. J Clin
+Psychiatry 2007; 68:1088–1093.
+21. Yoo HK, et al. A multicenter, randomized, double-blind, placebo-controlled study of aripiprazole in children and adolescents with Tourette’s
+disorder. J Clin Psychiatry 2013; 74:e772–e780.
+22. Sallee F, et al. Randomized, double-blind, placebo-controlled trial demonstrates the efficacy and safety of oral aripiprazole for the treatment
+of Tourette’s disorder in children and adolescents. J Child Adolesc Psychopharmacol 2017; 27:771–781.
+23. Davies L, et al. A case series of patients with Tourette’s syndrome in the United Kingdom treated with aripiprazole. Human Psychopharmacol
+2006; 21:447–453.
+24. Seo WS, et al. Aripiprazole treatment of children and adolescents with Tourette disorder or chronic tic disorder. J Child Adolesc
+Psychopharmacol 2008; 18:197–205.
+25. Murphy TK, et al. Open label aripiprazole in the treatment of youth with tic disorders. J Child Adolesc Psychopharmacol 2009;
+19:441–447.
+26. Wenzel C, et al. Aripiprazole for the treatment of Tourette syndrome: a case series of 100 patients. J Clin Psychopharmacol 2012;
+32:548–550.
+27. Rizzo R, et al. Metabolic effects of aripiprazole and pimozide in children with Tourette syndrome. Pediatr Neurol 2012; 47:419–422.
+28. Liu Y, et al. Effectiveness and tolerability of aripiprazole in children and adolescents with Tourette’s disorder: a meta-Analysis. J Child Adolesc
+Psychopharmacol 2016; 26:436–441.
+29. Wang S, et al. The efficacy and safety of aripiprazole for tic disorders in children and adolescents: a systematic review and meta-analysis.
+Psychiatry Res 2017; 254:24–32.
+30. Ghanizadeh A Twice-weekly aripiprazole for treating children and adolescents with tic disorder, a randomized controlled clinical trial. Ann
+General Psychiatry 2016; 15:21.
+31. Tao D, et al. Randomized controlled clinical trial comparing the efficacy and tolerability of aripiprazole and sodium valproate in the treatment of Tourette syndrome. Ann General Psychiatry 2019; 18:24.
+32. Scahill L, et al. A placebo-controlled trial of risperidone in Tourette syndrome. Neurology 2003; 60:1130–1135.
+33. Gaffney GR, et al. Risperidone versus clonidine in the treatment of children and adolescents with Tourette’s syndrome. J Am Acad Child
+Adolesc Psychiatry 2002; 41:330–336.
+34. Onofrj M, et al. Olanzapine in severe Gilles de la Tourette syndrome: a 52-week double-blind cross-over study vs. low-dose pimozide.
+J Neurol 2000; 247:443–446.
+35. Robertson MM, et al. Management of Gilles de la Tourette syndrome using sulpiride. Clin Neuropharmacol 1990; 13:229–235.
+36. Sallee FR, et al. Ziprasidone treatment of children and adolescents with Tourette’s syndrome: a pilot study. J Am Acad Child Adolesc
+Psychiatry 2000; 39:292–299.
+
+CHAPTER 5
+
+References
+
+
+
+
+<<<PAGE 858>>>
+
+Pharmacokinetics  837
+
+Amisulpride plasma levels are closely related to dose with insufficient variation to make
+routine plasma level monitoring prudent. Higher levels observed in women25–27 seem to
+have little significant clinical implication for either therapeutic response or adverse
+effects. A (trough) threshold for clinical response has been suggested to be approximately 100µg/L28 and mean levels of 367µg/L27 have been noted in responders in individual studies. Adverse effects (notably EPS) have been observed at mean levels of
+336µg/L,25 377µg/L28 and 395µg/L.26 A plasma level threshold of below 320µg/L has
+been found to predict avoidance of EPS.28 One review29 has suggested an approximate
+range of 200–320µg/L for optimal clinical response and avoidance of adverse effects
+but a more recent consensus statement30 suggested a target range of 100–320µg/L.
+A dose of 200mg a day is sufficient to give a blood level of 100µg/L31 so this lower
+threshold is probably too low for a reliable therapeutic effect. In older patients with
+psychosis, studies suggest plasma concentrations of 20–60µg/L may give optimal D2
+occupancy and clinical response.32,33
+In practice, only a minority of treated patients have ‘therapeutic’ plasma levels (probably because of poor adherence34) so plasma monitoring may be of some benefit.
+However, amisulpride plasma level monitoring is rarely undertaken and few laboratories offer amisulpride assays. The dose–response relationship is sufficiently robust (in
+trials, at least) to obviate the need for plasma sampling within the licensed dose range
+(although note that in older patients doses of 50–100mg a day may be sufficient) and
+adverse effects are usually well managed by dose adjustment alone. Plasma level monitoring is best reserved for those in whom clinical response is poor, adherence is questioned or in whom drug interactions or physical illness may make adverse effect more
+likely.
+
+Aripiprazole
+Plasma level monitoring of aripiprazole is sometimes undertaken in practice. The dose–
+response relationship for aripiprazole is well established with a plateau in clinical
+response and D2 dopamine occupancy seen in doses above approximately 10mg/day.35
+Plasma levels of aripiprazole, its metabolite, and the total moiety (parent plus metabolite) strongly relate linearly to dose, making it possible to predict, with some certainty,
+an approximate plasma level for a given dose.36 Target plasma level ranges for optimal
+clinical response have been suggested as 146–254µg/L37 and 150–300µg/L,38 with
+adverse effects observed above 210µg/L.38 Inter-individual variation in aripiprazole
+plasma levels has been observed but not fully investigated, although gender appears to
+have little influence.39,40 Age, metabolic enzyme genotype and interacting medications
+seem likely causes of variation.38–41 A putative range between 150µg/L and 210µg/L36
+has been suggested as a target for patients taking aripiprazole and these are broadly the
+concentrations seen in patients receiving depot aripiprazole at 300mg and 400mg
+monthly.42 Some authorities suggest a lower threshold for clinical effect of 100µg/L30 –
+a plasma level usually afforded by an oral dose of 10mg a day.31,43
+
+CHAPTER 11
+
+Amisulpride
+
+
+
+
+<<<PAGE 864>>>
+
+21. Perucca E. Pharmacological and therapeutic properties of valproate. CNS Drugs 2002; 16: 695–714.
+22. Allen MH, et al. Linear relationship of valproate serum concentration to response and optimal serum levels for acute mania. Am J Psychiatry
+2006; 163:272–275.
+23. Bowden CL, et al. Relation of serum valproate concentration to response in mania. Am J Psychiatry 1996; 153:765–770.
+24. Vazquez M, et al. Hyperammonemia associated with valproic acid concentrations. BioMed Research International 2014; 2014:217–269.
+25. Muller MJ, et al. Amisulpride doses and plasma levels in different age groups of patients with schizophrenia or schizoaffective disorder.
+Journal of Psychopharmacology 2008; 23:278–286.
+26. Muller MJ, et al. Gender aspects in the clinical treatment of schizophrenic inpatients with amisulpride: a therapeutic drug monitoring study.
+Pharmacopsychiatry 2006; 39:41–46.
+27. Bergemann N, et al. Plasma amisulpride levels in schizophrenia or schizoaffective disorder. Eur Neuropsychopharmacol 2004;
+14:245–250.
+28. Muller MJ, et al. Therapeutic drug monitoring for optimizing amisulpride therapy in patients with schizophrenia. J Psychiatr Res 2007;
+41:673–679.
+29. Sparshatt A, et al. Amisulpride - dose, plasma concentration, occupancy and response: implications for therapeutic drug monitoring. Acta
+Psychiatr Scand 2009; 120:416–428.
+30. Schoretsanitis G, et al. TDM in psychiatry and neurology: A comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+31. Jönsson AK, et al. A compilation of serum concentrations of 12 antipsychotic drugs in a therapeutic drug monitoring setting. Ther Drug
+Monit 2019; 41:348–356.
+32. Reeves S, et al. Therapeutic window of dopamine D2/3 receptor occupancy to treat psychosis in Alzheimer’s disease. Brain 2017;
+140:1117–1127.
+33. Reeves S, et al. Therapeutic D2/3 receptor occupancies and response with low amisulpride blood concentrations in very late-onset schizophrenia-like psychosis (VLOSLP). Int J Geriatr Psychiatry 2018; 33:396–404.
+34. Bowskill SV, et al. Plasma amisulpride in relation to prescribed dose, clozapine augmentation, and other factors: data from a therapeutic
+drug monitoring service, 2002–2010. Hum Psychopharmacol 2012; 27:507–513.
+35. Mace S, et al. Aripiprazole: dose–response relationship in schizophrenia and schizoaffective disorder. CNS Drugs 2008; 23:773–780.
+36. Sparshatt A, et al. A systematic review of aripiprazole – dose, plasma concentration, receptor occupancy and response: implications for
+therapeutic drug monitoring. J Clin Psychiatry 2010; 71:1447–1456.
+37. Kirschbaum KM, et al. Therapeutic monitoring of aripiprazole by HPLC with column-switching and spectrophotometric detection. Clin
+Chem 2005; 51:1718–1721.
+38. Kirschbaum KM, et al. Serum levels of aripiprazole and dehydroaripiprazole, clinical response and side effects. World J Biol Psychiatry
+2008; 9:212–218.
+39. Molden E, et al. Pharmacokinetic variability of aripiprazole and the active metabolite dehydroaripiprazole in psychiatric patients. Ther
+Drug Monit 2006; 28:744–749.
+40. Bachmann CJ, et al. Large variability of aripiprazole and dehydroaripiprazole serum concentrations in adolescent patients with schizophrenia. Ther Drug Monit 2008; 30:462–466.
+41. Hendset M, et al. Impact of the CYP2D6 genotype on steady-state serum concentrations of aripiprazole and dehydroaripiprazole. Eur J Clin
+Pharmacol 2007; 63:1147–1151.
+42. Mallikaarjun S, et al. Pharmacokinetics, tolerability and safety of aripiprazole once-monthly in adult schizophrenia: an open-label, parallelarm, multiple-dose study. Schizophr Res 2013; 150:281–288.
+43. Korell J, et al. Determination of plasma concentration reference ranges for oral aripiprazole, olanzapine, and quetiapine. Eur J Clin
+Pharmacol 2018; 74:593–599.
+44. Haring C, et al. Influence of patient-related variables on clozapine plasma levels. Am J Psychiatry 1990; 147:1471–1475.
+45. Haring C, et al. Dose-related plasma levels of clozapine: influence of smoking behaviour, sex and age. Psychopharmacology 1989; 99
+Suppl:S38–S40.
+46. Taylor D. Pharmacokinetic interactions involving clozapine. Br J Psychiatry 1997; 171: 109–112.
+47. Ng CH, et al. An inter-ethnic comparison study of clozapine dosage, clinical response and plasma levels. Int Clin Psychopharmacol 2005;
+20:163–168.
+48. Ruan CJ, et al. Clozapine metabolism in East Asians and Caucasians: a pilot exploration of the prevalence of poor metabolizers and a systematic review. J Clin Psychopharmacol 2019; 39:135–144.
+49. de Leon J, et al. Do Asian patients require only half of the clozapine dose prescribed for Caucasians? A critical overview. Indian J Psychol
+Med 2020; 42:4–10.
+50. Suhas S, et al. Do Indian patients with schizophrenia need half the recommended clozapine dose to achieve therapeutic serum level? An
+exploratory study. Schizophr Res 2020; 222:195-201.
+51. Bhattacharya R, et al. Clozapine prescribing: comparison of clozapine dosage and plasma levels between White British and Bangladeshi
+patients. BJPsych Bulletin 2021; 45:22–27.
+52. Ruan CJ, et al. Exploring the prevalence of clozapine phenotypic poor metabolizers in 4 Asian samples: they ranged between 2% and 13. J
+Clin Psychopharmacol 2019; 39:644–648.
+53. de Leon J, et al. Using therapeutic drug monitoring to personalize clozapine dosing in Asians. Asia-Pacific Psychiatry 2020; 12:e12384.
+54. Rostami-Hodjegan A, et al. Influence of dose, cigarette smoking, age, sex, and metabolic activity on plasma clozapine concentrations: a
+predictive model and nomograms to aid clozapine dose adjustment and to assess compliance in individual patients. J Clin Psychopharmacol
+2004; 24:70–78.
+
+CHAPTER 11
+
+Pharmacokinetics  843
+
+

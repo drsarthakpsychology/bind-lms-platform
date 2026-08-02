@@ -1,0 +1,316 @@
+<<<PAGE 88>>>
+
+76
+
+A Short Textbook of Psychiatry
+
+Mania represents a reaction formation (Table 17.1)
+to depression according to the psychodynamic theory.
+
+Table 6.5: Some Commonly used Antidepressants
+Generic Name
+
+Stress
+Increased number of stressful life events before the
+onset or relapse has a formative rather than a precipitating effect in depression though they can serve
+a precipitant role in mania. Increased stressors in
+the early period of development are probably more
+important in depression.
+
+Cognitive and Behavioural Theories
+The mechanisms of causation of depression, according
+to these theories, include depressive negative
+cognition (cognitive theory), learned helplessness
+(animal model), and anger directed inwards. These
+concepts are useful in the psychological treatment of
+mild (to moderate) depression.
+Several other theories have also been propounded
+but are currently considered to be of doubtful value
+as theories of causation of depression.
+
+DIFFERENTIAL DIAGNOSIS
+The first step in the differential diagnosis of any mood
+disorder is to exclude a disorder with known organic
+cause, e.g. organic (especially drug-induced) mood
+disorders and dementia (differential diagnosis from
+depressive pseudodementia).
+The second step is to rule out a possibility of acute
+and transient psychotic disorders, schizo-affective
+disorder, and schizophrenia.
+The third step is to exclude the possibility of other
+non-organic psychoses such as delusional disorders.
+The fourth step is to exclude the possibility of
+adjustment disorder with depressed mood, generalised
+anxiety disorder, normal grief reaction, and obsessive compulsive disorder (with or without secondary
+depression).
+In addition to the main diagnosis, it is also important to look for co-morbid medical (such as diabetes,
+hypertension) and/or psychiatric disorders (such as
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+
+Agomelatin
+Amitriptyline
+Amoxapine
+Bupropion
+Citalopram
+Clomipramine
+Doxepine
+Dosulepin/Dotheipin
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Imipramine
+Lofepramine
+Mianserin
+Mirtazapine
+Moclobemide
+Nortriptyline
+Paroxetine
+Reboxetine
+Sertraline
+Tianeptin
+Trazodone
+Venlafaxine
+
+Usual Therapeutic
+Range (mg/day)
+25-50
+75-300
+150-300
+150-450
+10-40
+75-250
+75-300
+75-150
+30-120
+10-20
+20-60
+50-200
+75-300
+140-210
+30-120
+15-45
+300-600
+150-300
+10-40
+10-12
+50-200
+37.5
+300-600
+75-375
+
+anxiety, panic, alcohol or drug misuse, or personality disorder) on a multi-axial diagnostic system
+(Table 1.4).
+
+MANAGEMENT
+Somatic Treatment
+Antidepressants
+Antidepressants are the treatment of choice for a vast
+majority of depressive episodes. Some of the commonly used antidepressants with their usual range of
+therapeutic dosage are listed in Table 6.5. (Antidepressants are discussed in more detail in Chapter 15).
+
+
+
+
+<<<PAGE 195>>>
+
+Psychopharmacology
+
+183
+
+Table 15.6: Classification and Properties of Antidepressants
+Drugs
+
+Oral Dose
+(mg/d)
+
+Some Common Adverse Effects#
+Sedation* Orthostatic Hypotension* Anticholinergic*
+
+I. Cyclic Antidepressants
+A. Tricyclic Tertiary Amines
+1. Amitriptyline
+75-300
++++
+2. Clomipramine
+75-250
+++
+3. Dosulepin (Dotheipin)
+75-300
++++
+4. Doxepine
+75-300
++++
+5. Imipramine
+75-300
+++
+6. Lofepramine
+70-210
++
+7. Tri-imipramine
+75-300
++++
+B. Tricyclic Secondary Amines
+1. Desipramine
+75-300
+±
+2. Nortriptyline
+75-200
++
+3. Protriptyline
+15-60
+0
+C. Tetracyclic Antidepressants
+1. Amoxapine
+150-400
++
+2. Maprotiline
+75-225
+++
+3. Mianserin
+30-120
++++
+D. Bicyclic Antidepressants
+1. Viloxazine
+100-300
+±
+II. Selective Serotonin Reuptake Inhibitors (SSRIs)
+1. Citalopram
+20-40
+±
+2. Escitalopram
+10-20
+±
+3. Fluoxetine
+20-60
+±
+4. Fluvoxamine
+50-300
+±
+5. Paroxetine
+20-40
++
+6. Sertraline
+50-200
+±
+III. Serotonin Norepinephrine Reuptake Inhibitors (SNRIs)
+1. Duloxetine
+60
+±
+2. Venlafaxine
+75-375
++
+
++++
+++
++++
++++
+++
++
+++
+
++++
+++
+++
++
+++
++
+++
+
++
+++
+++
+
+++
++
+++
+
++
+++
+±
+
+++
+++
+±
+
+±
+
+±
+
+±
+±
+0
+±
+0
+±
+
+0
+0
+0
+±
+±
+0
+
+±
+±
+
+±
+±
+
+IV. Norepinephrine Serotonin Reuptake Enhancers (NSREs)
+1. Tianeptin
+37.5
++
+0
+V. Noradrenergic and Specific Serotonergic Antagonists (NaSSAs)
+1. Mirtazapine
+15-45
++++
++
+VI. Norepinephrine Dopamine Reuptake Inhibitors (NDRIs)
+1. Bupropion
+150-450
+Activating 0
+VII. Serotonin Antagonists and Reuptake Inhibitors (SARIs)
+1. Nefazodone
+200-600
+++
++
+(withdrawn from market)
+2. Trazodone
+150-400
++++
+±
+
+±
+±
+0
+±
+±
+Contd...
+
+

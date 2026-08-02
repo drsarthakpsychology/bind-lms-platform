@@ -1,0 +1,1673 @@
+<<<PAGE 265>>>
+
+CHAPTER 1
+
+244  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Clozapine-genetic testing for clozapine treatment
+A great number of studies have sought to detect genetic predictors of clozapine outcomes, both therapeutic and adverse. Generally, only small effects have been uncovered
+and clinical utility is limited unless genetic variant effects are mathematically combined.
+Sensitivity (the likelihood of accurately predicting a specific outcome) is usually low but
+specificity (the likelihood of excluding that outcome) is often very high. Numerical
+values for these categories can be combined with population incidence data to generate
+positive predictive value (PPV – the % of people who will experience the outcome when
+predicted) and negative predictive value (NPV – the % of people who will not experience that outcome when it is not predicted).
+
+Response
+Three variants have been reliably shown to predict therapeutic outcome with
+clozapine1
+HTR2A rs6313C	CC carriers less likely to respond than T carriers
+CC 146/272 response, CT/TT 366/596 response (54% vs 62%)
+HTR2A rs6314
+C allele more likely to respond than T allele
+C allele response 685/1215, T allele 55/127 (56% vs 43%)
+HTR3A rs1062613 C allele less likely to respond than T allele
+C allele response 528/841, T allele 134/185 (63% vs 72%)
+
+Agranulocytosis
+Four genetic variants are reliably associated with altered risk of agranulocytosis. Some
+variants are found only in certain ethnic groups.
+HLA-DQB1	Sequence variant 6672 G > C (REC 21 G) confers 1,175%
+higher risk of agranulocytosis than general population.
+Sensitivity 21.5%, specificity 98.4%.2
+Positive predictive value 5.1%, negative predictive value 99.7%
+HLA-DQB1	
+DQB1*0502 allele associated with agranulocytosis in 5/7
+studies (eg. Dettling et al,3 Yunis et al4). Effect size variable.
+HLA-B*59:01	Presence of allele highly predictive of agranulocytosis but is
+rare in East Asian populations and almost absent in Caucasians.
+Sensitivity 31.8%, specificity 95.3%5
+PPV 6.4%, NPV 99.3%
+HLA DQB1/HLA-B	Single amino acid changes HLA DQB1 126Q and HLA-B 158 T
+	Associated with increased risk of agranulocytosis. Overall 39 of
+95 cases had one or both alleles; 175 of 206 controls had neither
+allele.
+	Sensitivity 41.0%, specificity 85.0%6,7 (36% and 89% figures
+given elsewhere8). PPV/NPV not given but can be calculated
+The HLA-DQB1 variants and the HLA-B variants are in linkage disequilibrium (LD)8
+and are likely to convey the same association signal. Variants in LD are inherited together
+
+
+
+
+<<<PAGE 364>>>
+
+Depression and anxiety disorders  343
+
+Antidepressant withdrawal symptoms
+
+Many medications are associated with withdrawal symptoms on discontinuation, including antidepressants. The term ‘discontinuation symptoms’ (or syndrome), distinct from
+‘withdrawal’, was coined to describe symptoms on stopping experienced on stopping antidepressants.1,2 There is a semantic difference between ‘discontinuation’ and ‘withdrawal’
+symptoms – the latter implies addiction; the former does not. While antidepressants are
+not addictive substances (they do not provoke craving, for example), the categorical and
+semantic differences may be irrelevant to patient experience. Withdrawal symptoms can
+be explained in the context of ‘receptor rebound’3 – for example, an antidepressant with
+potent anticholinergic side effects may be associated with diarrhoea on discontinuation.
+
+Signs and symptoms
+Antidepressant withdrawal symptoms may be entirely new or similar to some of the
+original symptoms of the illness for which the medication was originally given.
+Withdrawal symptoms can be distinguished from a relapse or reoccurrence of the
+underlying disorder by their rapid onset (days, rather than weeks, or within 3–5 halflives of the drug4), the rapid response to reintroduction of the antidepressant (generally
+within hours, certainly within days), and the presence of somatic and psychological
+symptoms distinct from the original illness (e.g. brain zaps, dizziness, nausea).1 The
+wide variety of symptoms reported with SSRI and related drugs (e.g. SNRIs and other
+serotonin reuptake inhibitors) is summarised in Figure 3.3. Symptoms reported with
+other antidepressants are summarised in Table 3.8.
+Sensory symptoms
+Paresthesia
+Numbness
+‘Shock-like’ or ‘electric zap’
+sensations in head or limbs
+Rushing noises
+Palinopsia (visual trails)
+Hyperacusis
+Unusual taste/smell/visual
+sensations
+
+General somatic
+symptoms
+Flu-like symptoms
+Lethargy/fatigue
+Headache
+Tremor
+Sweating
+Anorexia
+Weakness
+Techycardia
+Muscle aches/pains
+Shaking/trembling
+
+Figure 3.3 Common withdrawal symptoms
+
+Affective symptoms
+Irritability
+Anxiety/agitation
+Low mood/depression
+Teafulness
+Dread
+Panic attacks
+
+SSRI
+withdrawal
+syndrome
+
+Sleep Disturbance
+Insomnia
+Nightmares
+Excessive dreaming
+
+Gastrointestinal Symptoms
+Nausea
+Vomiting
+Diarrhoea
+Anorexia
+
+Sexual
+Genital hypersensitivity
+Permature ejaculation
+Disequilibrium
+Dizziness (most common)
+Light-headedness
+Vertigo
+Ataxia
+Gait instability
+
+Cognitive
+Confusion
+Decreased concentration
+Amnesia
+Depersonalisation
+De-realisation
+
+CHAPTER 3
+
+Background
+
+
+
+
+<<<PAGE 463>>>
+
+442  The Maudsley® Prescribing Guidelines in Psychiatry
+
+There has been limited formal study into the duration of withdrawal symptoms, with
+some reports of weeks-long duration, but they can last longer than a year, especially in
+the case of long-term use.20,23 For a minority, withdrawal symptoms can be protracted
+and last years, sometimes called the ‘post-acute withdrawal syndrome’.26
+
+Stopping benzodiazepines
+
+CHAPTER 3
+
+If the patient is in agreement, benzodiazepines should be withdrawn. Tapering can be
+difficult and should not be imposed on a patient against their will. A cluster randomised
+trial supports the effectiveness of a face-to-face educational intervention.27 Continuing
+support can be required to prepare a patient for withdrawal and to support them
+through the process (e.g. psychological therapies or self-help groups).28
+
+Dosage reduction (tapering)
+Gradual reduction of benzodiazepine dose reduces the intensity of withdrawal symptoms by spreading them out over a longer time period (and giving time for neural adaptations to the drug to resolve).22 Meta-analysis has confirmed that gradual dose
+reduction (‘tapering’) improves drug cessation rates compared with routine clinical
+care.29 Most studies find that a gradual withdrawal over at least 10 weeks is most successful in achieving long-term abstinence,30 although many patients will require considerably longer (sometimes several years). Sudden benzodiazepine withdrawal has
+potentially fatal consequences, so tapering is always advisable.
+
+Direct taper or switching to diazepam?
+Patients who take short- or intermediate-acting benzodiazepines can be tapered off
+these drugs directly but more than once a day dosing might be required.
+An alternative approach is to switch to an equivalent dose of diazepam (which has a
+long half-life and therefore might provokes less severe withdrawal),20,24 noting that
+some patients report withdrawal symptoms from abrupt switches to diazepam and so
+a step-wise switch is probably prudent. Cochrane is lukewarm about switching to diazepam.30 Approximate ‘diazepam equivalent’31 doses are shown Table 3.29. Owing to
+Table 3.29 Approximate ‘diazepam equivalent’31 doses
+Chlordiazepoxide
+
+25mg
+
+Clonazepam
+
+0.5mg
+
+Diazepam
+
+10mg
+
+Lorazepam
+
+1mg
+
+Lormetazepam
+
+1–2mg
+
+Nitrazepam
+
+10mg
+
+Oxazepam
+
+20mg
+
+Temazepam
+
+20mg
+
+
+
+
+<<<PAGE 479>>>
+
+458  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 4.2 Short Alcohol Withdrawal Scale (SAWS)13
+None(0)
+
+Mild(1)
+
+Moderate(2)
+
+Severe(3)
+
+Anxious
+Sleep disturbance
+Problems with memory
+Nausea
+Restless
+Tremor (shakes)
+Feeling confused
+Sweating
+Miserable
+
+CHAPTER 4
+
+Heart pounding
+
+Table 4.3 Alcohol withdrawal treatment interventions – summary
+Severity
+
+Supportive/
+medical care
+
+Pharmacotherapy for
+neuro-adaptation
+reversal
+
+Thiamine
+supplementation
+
+Setting
+
+Mild
+CIWA-Ar ≤ 10
+
+Moderate-to-highlevel supportive
+care, little, if any
+medical care
+required
+
+Little to none required
+Simple remedies only
+(see below)
+
+Oral likely to be
+sufficient if patient is
+well nourished
+
+Home
+
+Moderate
+CIWA-Ar ≤ 15
+
+Moderate-to-highlevel supportive
+care, little medical
+care required
+
+Little to none required
+Symptomatic treatment
+only
+
+Intramuscular Pabrinex
+should be offered if the
+patient is malnourished
+followed by oral
+supplementation
+
+Home or
+community
+team
+
+Severe
+CIWA-Ar > 15
+
+High-level
+supportive care
+plus medical
+monitoring
+
+Symptomatic and
+substitution treatment
+(chlordiazepoxide)
+probably required
+
+Intramuscular Pabrinex
+should be offered
+followed by oral
+supplementation
+
+Community
+team or
+hospital
+
+CIWA-Ar > 10 plus
+co-morbid
+alcohol-related
+medical problems
+
+High-level
+supportive care
+plus specialist
+medical care
+
+Symptomatic and
+substitution treatments
+usually required
+
+Intramuscular Pabrinex
+followed by oral
+supplementation
+
+Hospital
+
+Benzodiazepines are the treatment of choice for alcohol withdrawal. They exhibit
+cross-tolerance with alcohol and have anticonvulsant properties. Use is supported by
+NICE guidelines;2,14 a Cochrane systematic review;7 and the BAP guidelines.9 Parenteral
+thiamine (vitamin B1), another vitamin replacement, is an important adjunctive
+
+
+
+
+<<<PAGE 480>>>
+
+Addictions and substance misuse  459
+
+treatment for the prophylaxis and/or treatment of Wernicke–Korsakoff syndrome and
+other vitamin-related neuropsychiatric conditions.
+In the UK, chlordiazepoxide is the benzodiazepine used for most patients in most
+centres as it is considered to have a relatively low dependence-forming potential. Some
+centres use diazepam. A short-acting benzodiazepine such as oxazepam or lorazepam
+may be used in individuals with impaired liver function.
+There are three types of assisted withdrawal regimens: fixed-dose reduction (the
+most common in non-specialist settings), variable-dose reduction (usually results in less
+benzodiazepine being administered but best reserved for settings where staff have specialist skills in managing alcohol withdrawal) and finally front-loading (infrequently
+used, and reserved for severe alcohol withdrawal).2,9 Assisted withdrawal regimens
+should never be started if BAC is very high or is still rising. Monitor patients for oversedation/respiratory depression.
+
+Fixed-dose regimens use can be used in community or non-specialist inpatient/residential settings for uncomplicated patients. Patients should be started on a dose of benzodiazepine selected after an assessment of the severity of alcohol dependence (clinical
+history, number of units per drinking day and score on the SADQ. With respect to
+chlordiazepoxide, a general rule of thumb is that the starting dose can be estimated
+from current alcohol consumption. For example, if 20 units/day are being consumed,
+the starting dose should be 20mg four times a day. The dose is then tapered to zero over
+5–10 days. Alcohol withdrawal symptoms should be monitored using a validated
+instrument such as the CIWA-Ar12 or the SAWS.13
+Mild alcohol dependence usually requires very small doses of chlordiazepoxide or
+else may be managed without medication.
+For moderate alcohol dependence, a typical regime might be 10–20mg chlordiazepoxide 4 times a day, reducing gradually over 5–7 days. Note that 5–7 days’ treatment
+is adequate and longer treatment is rarely helpful or necessary. It is advisable to monitor withdrawal and BAC daily before providing the day’s medication. This may mean
+that community pharmacologically assisted alcohol withdrawals should start on a
+Monday and last for 5 days.
+
+Table 4.4 Moderate alcohol dependence: example of a
+fixed-dose chlordiazepoxide treatment regimen.
+Total daily dose (mg)
+Day 1
+
+20mg qds
+
+80
+
+Day 2
+
+15mg qds
+
+60
+
+Day 3
+
+10mg qds
+
+40
+
+Day 4
+
+5mg qds
+
+20
+
+Day 5
+
+5mg bd
+
+10
+
+bd, bis die (twice a day); qds, quarter die sumendum (four times a day).
+
+CHAPTER 4
+
+Fixed-dose reduction regimen
+
+
+
+
+<<<PAGE 481>>>
+
+460  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Severe alcohol dependence usually requires inpatient treatment for assisted withdrawal because of the significant risk of life-threatening complications. However, there
+are rare occasions where a pragmatic community approach is required. In such situations, the decision to undertake a community-assisted withdrawal must be made clear
+by an experienced clinician, to both patient and carer. Intensive daily monitoring is
+advised for the first 2–3 days. This may require special arrangements over a weekend.
+Prescribing should not start if the patient is intoxicated. In such circumstances, they should
+be reviewed at the earliest opportunity when not intoxicated. The dose of benzodiazepine
+may need to be reduced over a 7–10-day period in this group (occasionally longer if dependence is very severe or there is a history of complications during previous detoxifications).
+
+CHAPTER 4
+
+Symptom-triggered regimen
+This should be reserved for managing assisted withdrawal in specialist alcohol inpatient or residential settings. Regular monitoring is required, e.g. pulse, BP, temperature
+and level of consciousness. Medication is only given when withdrawal symptoms are
+observed as determined using CIWA-Ar, SAWS or alternative validated measure.
+Symptom-triggered therapy is generally used in patients without a history of complications. A typical symptom-triggered regimen would be chlordiazepoxide 20–30mg
+hourly as needed. Note that the total dose given each day would be expected to decrease
+from day 2 onwards. It is common for symptom-triggered treatment to last only 24–48
+hours before switching to an individualised fixed-dose reducing schedule. Occasionally
+(e.g. in DTs), the flexible regime may need to be prolonged beyond the first 24 hours.
+
+Table 4.5 Severe alcohol dependence: example of a fixed-dose chlordiazepoxide regimen
+Total daily dose (mg)
+Day 1 (first 24 hours)
+
+40mg qds + 40mg PRN
+
+200
+
+Day 2
+
+40mg qds
+
+160
+
+Day 3
+
+30mg qds
+
+120
+
+Day 4
+
+25mg qds
+
+100
+
+Day 5
+
+20mg qds
+
+80
+
+Day 6
+
+15mg qds
+
+60
+
+Day 7
+
+10mg qds
+
+40
+
+Day 8
+
+10mg tds
+
+30
+
+Day 9
+
+5mg qds
+
+20
+
+Day 10
+
+10mg nocte
+
+10
+
+nocte, at night; prn, pro re nata (as required); qds, quarter die sumendum (four times a
+day); tds, ter die sumendum (three times a day).
+
+Example of a symptom-triggered chlordiazepoxide regime2
+Days 1–5 : 20–30mg chlordiazepoxide as needed, up to hourly, based on symptoms.
+
+
+
+
+<<<PAGE 487>>>
+
+466  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Disulfiram: NICE Clinical Guideline 115, 20112
+Disulfiram should be considered in combination with a psychological intervention for patients who
+wish to achieve abstinence, but for whom acamprosate or naltrexone is not suitable. Treatment
+should be started at least 24 hours after the last drink and should be overseen by a family member
+or a carer. Monitoring is recommended every 2 weeks for the first 2 months, then monthly for the
+following 4 months. Medical monitoring should be continued at 6 monthly intervals after the first
+6 months. Patients must not consume any alcohol while taking disulfiram.
+
+Baclofen
+
+CHAPTER 4
+
+Baclofen is a GABA-B agonist that does not have a licence for use in alcohol dependence but is nevertheless used by some clinicians. A recent meta-analysis failed to find
+positive effects for baclofen and did not support its use as a first-line treatment for
+alcohol-use disorders.28 Baclofen was associated with higher rates of adverse effects,
+including depression, vertigo, somnolence, numbness and muscle rigidity.
+Antiseizure medications
+There is currently insufficient evidence to support the clinical use of antiseizure medications in the treatment of alcohol dependence, although a significant association has
+been found for fewer drinks per drinking day and lower average heavy drinking compared with placebo.29 Most research has been carried out on topiramate. There have
+been fewer studies on gabapentin30 valproate and levetiracetam.
+
+Pregnancy and alcohol use
+Evidence indicates that alcohol consumption during pregnancy may cause harm to the
+foetus. The DoH advises that women should not drink any alcohol at all during pregnancy.1 Drinking even 1–2 units/day during pregnancy can increase the risk of having a
+pre-term, low birthweight or small for gestational age baby. NICE guidelines changed
+in December 2018 to refer to the CMO guidelines.
+For alcohol-dependent pregnant women who have withdrawal symptoms, pharmacological cover for detoxification should be offered, ideally in an inpatient setting. The timing
+of detoxification in relation to the trimester of pregnancy should be risk assessed against
+continued alcohol consumption and risks to the foetus.9 Chlordiazepoxide has been suggested as being unlikely to pose a substantial risk; however, dose-dependent malformations
+have been observed.9 The UK Teratology Information Service31 provides national advice
+for healthcare professionals and likes to follow up on pregnancies that require alcohol
+detoxification. Specialist advice should always be sought (see also section ‘Pregnancy’ in
+Chapter 7). No relapse prevention medication has been evaluated in pregnancy.9
+
+Children and adolescents
+Children and young people (10–17 years) should be assessed as outlined in NICE
+Clinical Guideline 115, 2011.2
+
+
+
+
+<<<PAGE 488>>>
+
+Addictions and substance misuse  467
+
+The number of young people who are dependent and needing pharmacotherapy is
+likely to be small, but for those who are dependent there should be a lower threshold
+for admission to hospital. Doses of chlordiazepoxide for medically assisted withdrawal
+may need to be adjusted, but the general principles of withdrawal management are the
+same as for adults. All young people should have a full health screen carried out routinely to allow identification of physical and mental health problems. The evidence base
+for acamprosate, naltrexone and disulfiram in 16–19-year-olds is evolving,9 but naltrexone is best supported in this age group.32,33
+
+Older adults
+
+Concurrent alcohol and drug use disorders
+Where alcohol and drug use disorders are co-morbid, treat both conditions actively.2
+Co-existing alcohol and benzodiazepine dependence
+This is best managed with one benzodiazepine, either chlordiazepoxide or diazepam.
+The starting dose should take into account the requirements for medically assisted alcohol withdrawal and the typical daily equivalent dose of the relevant benzodiazepine(s).2
+Inpatient treatment should be carried out over a 2–3-week period, possibly longer.2
+Co-existing alcohol dependence and cocaine use
+In co-morbid cocaine/alcohol dependence, naltrexone 150mg/day resulted in reduced
+cocaine and alcohol use in men but not in women.34
+Co-existing alcohol and opioid dependence
+Both conditions should be treated, and attention paid to the increased mortality of
+individuals withdrawing from both drugs.
+Co-morbid alcohol and nicotine dependence
+Encourage individuals to stop smoking. Refer for smoking cessation in primary care
+and other settings. In inpatient settings, offer nicotine patches/inhalator during assisted
+alcohol withdrawal. Always promote vaping as a safer alternative to tobacco
+smoking.
+
+CHAPTER 4
+
+There should be a lower threshold for inpatient medically assisted alcohol withdrawal
+for older adults.2 While benzodiazepines remain the treatment of choice, they may need
+to be prescribed in lower doses and in some situations shorter acting drugs may be
+preferred.9 All older adults with alcohol-use disorders should have full routine health
+screens to identify physical and mental health problems. The evidence base for pharmacotherapy of alcohol-use disorders in older people is limited.
+
+
+
+
+<<<PAGE 655>>>
+
+Magnesium – 0
+Mebeverine – 0
+
+Ezetimibe – 0
+
+Felodipine – 0
+
+Fentanyl – 1
+
+Ferrous sulphate – 0
+
+Fesoterodine – 0
+
+Fexofenadine – 0
+
+Finasteride – 0
+
+Flavoxate* – NK
+
+Flecainide – 0
+
+Flucloxacillin – 0
+
+Fludrocortisone – NK
+
+Fluoxetine – 1
+
+Flupentixol (flupenthixol) – 1
+
+Fluphenazine – 1
+
+Fluvoxamine – 0
+
+Folic acid – 0
+
+Furosemide – 0
+
+Captopril – NK
+
+Carbachol – 0
+
+Carbamazepine – 1
+
+Carbimazole – NK
+
+Carbocisteine – 0
+
+Carvedilol – NK
+
+Cefalexin (Cephalexin) – 0
+
+Cetirizine – 0
+
+Chloral hydrate – NK
+
+Chlordiazepoxide – 0
+
+Chlorphenamine – 2
+
+Chlorpromazine – 3
+
+Chlortalidone – NK
+
+Cimetidine – 0
+
+Cinnarizine – 1
+
+Ciprofloxacin – 0
+
+Citalopram – 1
+
+Simvastatin – 0
+
+Sildenafil – 0
+
+Sertraline – 1
+
+Sertindole – 1
+
+Senna – 0
+
+Selegiline – 0
+
+Salmeterol (inhaler) – 0
+
+Salbutamol – 0
+
+Rosuvastatin – NK
+
+Rosiglitazone – 0
+
+Ropinirole – 0
+
+Rivastigmine – 0
+
+Rivaroxaban – NK
+
+Risperidone – 0
+
+The AEC scale is available as a regularly updated web-based app. Please visit www.medichec.com. This site has recently been updated to include the identification of
+medications that are reported to cause dizziness and drowsiness since these adverse effects can add to cognitive impairment and confusion in older people and can
+increase the risk of falls.
+
+Morphine – 0
+
+Moclobemide – 0
+
+Mirtazapine – 1
+
+Mirabegron – 0
+
+Minocycline – 0
+
+Midazolam – 1
+
+Metoprolol – 0
+
+Metoclopramide – 0
+
+Methotrexate – NK
+
+Methocarbamol – NK
+
+Metformin – NK
+
+Mesalazine – 0
+
+Memantine – 0
+
+Meloxicam – 0
+
+Melatonin – 0
+
+Risedronate – 0
+
+Reboxetine – 0
+
+Rasagiline – 0
+
+Macrogol – 0
+
+Exanatide – 0
+
+Candersartan – 0
+
+Ranitidine – 0
+
+Ramipril – NK
+
+Lurasidone – 0
+
+Erythromycin – NK
+
+Calcium and Vitamin D – 0
+
+Lovastatin – 0
+
+Entacapone – 0
+
+Calcium – 0
+
+Table 6.4 (Continued )
+
+
+
+
+<<<PAGE 766>>>
+
+Hepatic and renal impairment  745
+
+Table 8.10 (Continued)
+Drug
+
+Comments
+
+Lithium (continued)
+
+the development of end stage renal disease.19 These differences may be due to
+methodology, improved monitoring and targeting recommended maintenance serum
+levels (0.6–0.8mmol/L in BPAD).
+Prevent by using once-daily dosing, recommended plasma levels, avoiding intoxication,
+active monitoring of kidney function and collaboration between psychiatrist,
+nephrologist and patient in decision making on continuation if CKD occurs.140
+Risk factors for lithium-induced nephrotoxicity include, increasing age, duration of
+treatment, cumulative dose, lower initial eGFR, female gender, hypertension and
+diabetes, concomitant nephrotoxic drugs, nephrogenic diabetes insipidus and
+previous lithium toxicity.141
+If lithium is used in renal impairment, toxicity is more likely and lithium toxicity
+increases the risk of renal impairment. Renal damage is more likely with chronic
+toxicity than acute. The manufacturer contraindicates lithium in renal impairment.
+Dosing: GFR 10–50mL/min, avoid or reduce dose (50–75% of normal dose) and
+monitor levels; GFR <10mL/min, avoid if possible, however if used it is essential to
+reduce dose (25–50% of normal dose). There is a case report of successful use in a
+patient on haemodialysis.142
+
+Valproate22,23,25,143–149
+
+Approximately 2% excreted unchanged. Dose adjustment usually not required in
+renal impairment; however, free valproate levels may be increased. Renal impairment,
+interstitial nephritis, Fanconi syndrome, renal tubular acidosis and renal failure have
+been reported. Risk factors for renal tubular dysfunction include being bedbound and
+low serum carnitine and phosphorus levels.150 Dose as in normal renal function;
+however, in severe impairment (GFR <10mL/min) it may be necessary to alter doses
+according to free (unbound) valproate levels. Possibly less likely than lithium to cause
+chronic kidney disease in patients with bipolar disorder151 but data are conflicting.152
+
+Drug
+
+Comments
+
+Buspirone22,23,25,32
+
+Less than 1% is excreted unchanged; however, active metabolite is renally excreted.
+Dosing advice contradictory, suggest: GFR 10–50mL/min start at a low dose and give
+twice daily; GFR <10mL/min avoid if possible due to accumulation of active
+metabolites; if essential, reduce dose by 25–50% if patient is anuric. Manufacturer
+contraindicates in severe renal impairment.
+
+Chlordiazepoxide23,25,32
+
+1–2% excreted unchanged but chlordiazepoxide has a long-acting active metabolite
+that can accumulate. Dosing: GFR 10–50mL/min, dose as normal renal function; GFR
+<10mL/min, reduce dose by 50%. Monitor for excessive sedation. Manufacturer
+cautions in chronic renal disease.
+
+Clomethiazole22,23,25,153
+(chlormethiazole)
+
+0.1–5% of unchanged drug excreted unchanged in urine. Dose as in normal renal function
+but monitor for excessive sedation. Manufacturer recommends caution in renal disease.
+
+Clonazepam22,23,25,154
+
+<0.5% of clonazepam excreted unchanged in urine. Dose adjustment not required in
+impaired renal function; however, with long-term administration, active metabolites
+may accumulate, so start at a low doses and increase according to response. Monitor
+for excessive sedation. Has been used for insomnia in patients on haemodialysis.
+(Continued)
+
+CHAPTER 8
+
+Table 8.11 Anxiolytics and hypnotics in renal impairment
+
+
+
+
+<<<PAGE 930>>>
+
+Miscellany  909
+
+Parameter
+
+Reference range10
+
+Agents reported to raise levels
+
+Agents reported to
+lower levels
+
+Bilirubin
+
+≤21μmol/L (total)
+
+Amitriptyline, atomoxetine,
+benzodiazepines, carbamazepine,
+chlordiazepoxide, chlorpromazine,
+citalopram, clomethiazole,
+clozapine, disulfiram, imipramine,
+fluphenazine, lamotrigine,
+meprobamate, milnacipran,
+olanzapine, phenothiazines,
+phenytoin, promethazine,
+sertraline, valbenazine, valproate;
+also associated with agents
+causing cholestasis/hepatic
+damage
+
+Barbiturates
+
+C-reactive protein
+
+<10mg/L
+
+Buprenorphine (rare); also
+associated with agents causing
+myocarditis (clozapine)
+
+None known
+
+Calcium
+
+2.20–2.60mmol/L (total,
+adjusted)
+1.15–1.34mmol/L (ionised)
+
+Lithium (rare)
+
+Barbiturates,
+carbamazepine,
+haloperidol, valproate
+
+Carbohydratedeficient transferrin
+(CDT)
+
+≤1.5%
+
+Alcohol (CDT levels of 1.6–1.9%
+suggest high intake; levels ≥ 2%
+suggest excessive intake)
+
+None known
+
+Chloride
+
+95–108mmol/L
+
+Agents causing hyperchloremic
+metabolic acidosis: topiramate,
+zonisamide
+
+Medications associated
+with SIADH: all
+antidepressants,
+antipsychotics
+(clozapine, haloperidol,
+olanzapine,
+phenothiazines,
+pimozide, risperidone/
+paliperidone,
+quetiapine);
+carbamazepine,
+laxative abuse
+
+Cholesterol (total)
+
+≤5.2mmol/L
+(usually compared to
+recommended action limits
+rather than reference
+ranges)
+
+Antipsychotics, especially those
+implicated in the metabolic
+syndrome (phenothiazines,
+clozapine, olanzapine and
+quetiapine). Rarely: aripiprazole,
+beta-blockers (additive effects with
+clozapine), carbamazepine,
+disulfiram, duloxetine, memantine,
+mirtazapine, modafinil, phenytoin,
+rivastigmine, sertraline, venlafaxine
+
+Prazosin, thyroid
+agents
+
+(Continued)
+
+CHAPTER 14
+
+Table 14.2 (Continued)
+
+
+
+
+<<<PAGE 934>>>
+
+Miscellany  913
+
+Table 14.3 Summary of haematological changes associated with psychotropics
+Reference range
+
+Agents reported to raise
+levels
+
+Agents reported to lower
+levels
+
+Activated partial
+thromboplastin time
+
+23–33 seconds
+
+Phenothiazines (especially
+chlorpromazine)
+
+Modafinil (rare)
+
+Basophils
+
+0.0–0.1 × 109/L
+
+Clozapine, TCAs (especially
+desipramine)
+
+None known
+
+Eosinophils
+
+0.04–0.40 × 109/L
+
+Amoxapine, beta-blockers,
+bupropion, buspirone,
+carbamazepine, chloral
+hydrate, chlorpromazine,
+clonazepam, clozapine,
+donepezil, fluphenazine,
+haloperidol, loxapine,
+meprobamate, maprotiline,
+methylphenidate (IV abuse
+only), modafinil, naltrexone
+(parenterally administered),
+olanzapine, promethazine,
+quetiapine, risperidone/
+paliperidone, SSRIs, TCAs,
+tetrazepam, tryptophan*,
+valproate, venlafaxine; may
+also be a feature of agents
+causing a hypersensitivity
+syndrome
+
+None known
+
+Erythrocyte
+sedimentation rate
+
+Females: 1–12mm/h
+Males: 1–10mm/h
+(increases with age)
+
+Clozapine, dexamfetamine,
+levomepromazine,
+maprotiline, SSRIs
+
+Buprenorphine
+
+Haemoglobin
+
+Females: 115–165g/L
+Males: 130–180g/L
+
+Clozapine, testosterone,
+tobacco smoking
+
+Aripiprazole, barbiturates,
+buprenorphine, bupropion,
+carbamazepine,
+chlordiazepoxide,
+chlorpromazine, donepezil,
+duloxetine, galantamine,
+MAOIs, memantine,
+meprobamate, mianserin,
+phenytoin, promethazine,
+rivastigmine, tramadol,
+trifluoperazine, vigabatrin
+
+Lymphocytes
+
+1.5–4.5 × 109/L
+
+Naltrexone, opioids, tobacco
+smoking, valproate; may also
+be a feature of drugs causing
+hypersensitivity syndrome
+
+Alcohol (chronic), chloral
+hydrate, clozapine, lithium,
+mirtazapine (rarely)
+
+CHAPTER 14
+
+Parameter
+
+(Continued)
+
+
+
+
+<<<PAGE 936>>>
+
+Miscellany  915
+
+Parameter
+
+Reference range
+
+Agents reported to raise
+levels
+
+Agents reported to lower
+levels
+
+Platelets
+
+150–450 × 109/L
+
+Lamotrigine, lithium†
+
+Alcohol, barbiturates,
+beta-blockers,
+benzodiazepines, bupropion,
+buspirone, carbamazepine,
+chlordiazepoxide,
+chlorpromazine,
+clonazepam, clonidine,
+clozapine†, cocaine,
+diazepam, donepezil,
+duloxetine, fluoxetine,
+fluphenazine, lamotrigine,
+meprobamate, methadone,
+methylphenidate,
+mirtazapine, naltrexone,
+nitrous oxide, olanzapine,
+pirenzepine, promethazine,
+quetiapine, risperidone/
+paliperidone, rivastigmine,
+sertraline, TCAs,
+tranylcypromine, trazodone,
+trifluoperazine, valproate,
+venlafaxine, ziprasidone;
+may also be a feature of
+drugs causing
+hypersensitivity syndrome
+Agents associated with
+impaired platelet
+aggregation:
+chlordiazepoxide,
+citalopram, diazepam,
+fluoxetine, fluvoxamine,
+paroxetine, piracetam,
+sertraline, valproate
+
+Prothrombin time
+(PT)/international
+normalised ratio (INR)
+
+PT: 10–13 seconds
+INR: 0.8–1.2
+
+Chloral hydrate, disulfiram,
+fluoxetine, fluvoxamine,
+mirtazapine, valproate; also
+agents interacting with
+warfarin
+
+Barbiturates,
+carbamazepine, phenytoin,
+tiotixene
+
+Red blood count
+
+Males: 4.5–6.5 × 1012/L
+Females: 3.8–5.8 × 1012/L
+
+Lithium, testosterone
+
+Buprenorphine,
+carbamazepine,
+chlordiazepoxide,
+chlorpromazine, donepezil,
+haloperidol, meprobamate,
+phenytoin, quetiapine,
+trifluoperazine
+(Continued)
+
+CHAPTER 14
+
+Table 14.3 (Continued)
+
+
+
+
+<<<PAGE 937>>>
+
+916  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 14
+
+Table 14.3 (Continued)
+Parameter
+
+Reference range
+
+Agents reported to raise
+levels
+
+Agents reported to lower
+levels
+
+Red cell distribution
+width
+
+11.5–14.5%
+
+Agents associated with
+anaemia e.g.: carbamazepine,
+chlordiazepoxide, citalopram,
+clonazepam, diazepam,
+lamotrigine, memantine,
+mirtazapine, sertraline,
+tranylcypromine, trazodone,
+valproate, venlafaxine
+
+None known
+
+Reticulocyte count
+
+0.5–2.5%
+(or 50–100 × 109/L)
+
+None known
+
+Carbamazepine,
+chlordiazepoxide,
+chlorpromazine,
+meprobamate, phenytoin,
+trifluoperazine
+Agents associated with
+pure red cell aplasia:
+carbamazepine, clozapine,
+valproate
+
+*Previous reports of eosinophilia-myalgia syndrome may have been due to a contaminant from a single
+manufacturer.
+†
+May raise or lower levels.
+‡
+Note that in rare cases clozapine has been associated with a ‘morning pseudo-neutropenia’ with lower levels of
+circulating neutrophil levels. As neutrophil counts may show circadian rhythms, repeating the FBC at a later time of
+day may be instructive.
+
+References
+1. BMJ Group and Pharmaceutical Press. British National Formulary 2020; https://www.medicinescomplete.com.
+2. Aronson J. Meyler Side Effects of Drugs: the International Encyclopedia of Adverse Drug Reactions and Interactions. Elsevier Science; 2015.
+3. Foster R. Clinical Laboratory Investigation and Psychiatry. A Practical Handbook. New York: Informa 2008.
+4. Oyesanmi O, et al. Hematologic side effects of psychotropics. Psychosomatics 1999; 40: 414–421.
+5. Stubner S, et al. Blood dyscrasias induced by psychotropic drugs. Pharmacopsychiatry 2004; 37 Suppl 1:S70-S78.
+6. Pharmaceutical Press. Martindale: the Complete Drug Reference (online) 2020; https://www.medicinescomplete.com.
+7. LiverTox: clinical and Research Information on Drug-Induced Liver Injury. Bethesda (MD): National Institute of Diabetes and Digestive and
+Kidney Diseases 2012; https://www.ncbi.nlm.nih.gov/books/NBK547852.
+8. Medicines Complete. AHFS Drug Information 2020; https://www.medicinescomplete.com/mc/ahfs/current.
+9. U.S. Food & Drug Administration. Drugs@FDA: FDA-Approved Drugs 2020; https://www.accessdata.fda.gov/scripts/cder/daf.
+10. Association for Clinical Biochemistry and Laboratory Medicine. Analyte Monographs Alongside the National Library of Medicine Catalogue
+2020; http://www.acb.org.uk/whatwedo/science/amalc.aspx.
+
+
+
+
+<<<PAGE 968>>>
+
+Index  947
+
+carbamazepine 254, 264, 265–266, 603,
+650, 690, 712t, 713t, 728t, 744t,
+779, 820, 835t, 856t
+adverse effects 265–266
+continued use of 691
+discontinuation 266
+formulations 264
+indications 264–265
+interactions with other drugs 266–267,
+267t
+mechanism of action 264
+on-treatment monitoring 266
+plasma levels 265
+prescribing and monitoring 266–267,
+267t
+pre-treatment tests 266
+use in women of child-bearing age 266
+carbohydrate deficient transferrin
+(CDT) 909t
+cardiomyopathy 222–223
+care environments, assessment of 798
+cariprazine 270, 710t, 725t, 820, 823t
+catatonia 135–137
+algorithm for treating 137
+benzodiazepines reported as
+treatments for 138t
+in schizophrenia 136
+CATIE study 27
+CBT. See cognitive behavioural therapy
+(CBT)
+cephalosporins 917t
+cerebrolysin 620
+Cochrane review assessing 620
+cerebrovascular events (CVAEs) 646
+cetirizine 639
+chemotherapeutic agents 919t
+chemotherapy, clozapine and 242
+childhood and adolescence
+anxiety disorders in
+after prescribing 558–560, 559t
+clinical guidance 556
+diagnostic issues 556
+before prescribing 556–557
+specific issues 560
+what to prescribe 557–558
+attention deficit hyperactivity disorder
+(ADHD) 569–575, 573–575t
+autism spectrum disorder (ASD) 578
+anxiety, OCD and depression 583
+fluoxetine in children and
+adolescents 583
+inattention, overactivity and
+impulsiveness in 580–581
+irritability (aggression, self-injurious
+behaviour, severe disruptive
+behaviours) 581
+pharmacological treatment of 578
+restricted repetitive behaviours and
+interests (RRBI) 579
+sleep disturbance 582–583
+social and communication
+impairment 579
+use of risperidone in 582
+bipolar illness, clinical guidance
+after prescribing 547–548
+other treatments 548–551
+before prescribing 547
+specific issues 548
+
+what to prescribe 547
+depression in
+after prescribing 544–545
+clinical guidance 541
+diagnostic issues 541
+before prescribing 542
+what to prescribe 542–544
+doses of commonly used psychotropic
+drugs in 599t
+melatonin in treatment of insomnia in
+593
+adverse effects 594
+dose 594–595, 595f
+efficacy 593–594
+obsessive compulsive disorder (OCD) and
+body dysmorphic disorder (BDD) in
+561
+CBT and medication in treatment of
+564
+drug treatment 561
+duration of treatment and long-term
+follow-up 565
+initiation of treatment with
+medication 561–562
+NICE guidelines for assessment and
+treatment of 563, 563f
+post-traumatic stress disorder in
+567–568
+prescribing SSRIs in children 562–563
+treatment-refractory 564–565
+principles of prescribing practice in
+539–540
+psychosis in 554
+rapid tranquillisation (RT) in 596–597,
+596–597t
+Tics and Tourette syndrome
+adrenergic α2 agonists 588
+antipsychotics 588–589
+detection and treatment of
+comorbidity 587
+education and behavioural
+treatments 587
+other drugs 589–590, 590f
+pharmacological treatments 587
+chlordiazepoxide 459, 745t
+chloride 909t
+chloroquine 918t
+chlorpheniramine 639
+chlorpromazine 25, 739t, 856t
+chocolate 865
+consumption of 621
+cholesterol 909t
+cholinesterase inhibitors 815, 816
+chorea 804t
+Chronic Kidney Disease Epidemiology
+Collaboration (CKD-EPI)
+formula 736
+chronic obstructive pulmonary disease
+(COPD) 473, 610
+CIGH. See clozapine-induced gastrointestinal
+hypomotility (CIGH)
+cimetidine 640, 919t
+CitAD trial 649–650
+citalopram 367, 389, 423, 649–650, 705t,
+741t, 779, 809, 937t
+Clinical Institute Withdrawal Assessment of
+Alcohol Scale 457
+Clinical Opiate Withdrawal Scale
+
+(COWS) 476, 477t
+clomethiazole 745t
+clomiphene 590
+clomipramine 367, 369, 423, 561, 741t, 937t
+clonazepam 745t
+clonidine 569, 580, 588
+clopentixol decanoate 932t
+clotiapine 935t
+clozapine 25–26, 151, 161, 165t, 181, 271,
+581, 589, 710t, 725t, 739t, 758,
+795t, 799, 816, 823t, 835t, 838–839,
+856t, 925t, 935t
+adverse effects 210–211
+agranulocytosis, thromboembolism,
+cardiomyopathy and
+myocarditis 222
+and chemotherapy 242
+common adverse effects 210–212
+contra-indications to community
+initiation 208
+dosing 209–210, 209–210t
+genetic testing for treatment 244
+agranulocytosis 244–245
+benign ethnic neutropenia 245
+metabolism 245
+response 244
+induced hypersalivation 227–229t
+initial work-up 208
+mandatory blood monitoring and
+registration 208
+myocarditis and
+cardiomyopathy 222–224
+plasma concentration 849–850t
+recommended additional
+monitoring 211
+re-starting after break in treatment 207
+serious cardiac adverse effects 212
+suitability for 208
+summary 224
+switching from other antipsychotics 211
+therapy 238
+thromboembolism 222
+toxicity 238
+uncommon or unusual adverse
+effects 217–218
+use for treatment-resistant schizophrenia
+683, 778
+clozapine-induced gastrointestinal
+hypomotility (CIGH) 232
+management of suspected acute 233
+prevention and simple management
+of 233
+re-challenge following severe
+constipation 233–234
+risk factors for developing 232, 232t
+clozapine initiation schedule 190
+dosing regimen 190–191t
+clozapine, neutropenia and lithium
+benign ethnic neutropenia (BEN) 237
+concurrent medications 237
+granulocyte-colony stimulating factor
+(G-CSF) 239–240
+management options 237–238
+risk of clozapine-induced neutropenia and
+agranulocytosis 236–237
+clozapine treatment 193
+augmentation 193–194, 194t
+CNS penetration effectiveness (CPE) 780
+
+
+
+
+<<<PAGE 970>>>
+
+Index  949
+
+duty of driver 886
+duty of prescriber 886
+dyslipidaemia 149
+clinical management of 150–151
+dystonia 803, 804t
+early-onset schizophrenia-spectrum (EOSS)
+disorder 554
+eating disorders 7
+anorexia nervosa (AN), general
+guidance 7
+physical aspects
+electrolytes 7–8
+osteoporosis 8
+vitamins and minerals 7
+ecopipam 589
+ECT. See electroconvulsive therapy (ECT)
+electroconvulsive therapy (ECT) 688–689,
+788
+augmentation of antipsychotic
+medication 97
+augmentation of clozapine 97
+bilateral 97
+and psychosis 96
+adverse effects 97
+summary 97
+treatment-refractory
+schizophrenia 96–97
+and psychotropics 353
+psychotropic drugs on seizure
+duration in 353–354t
+electrolytes 7–8
+electronic cigarettes 871
+and vaping 506–507
+adverse effects 507–509
+clinical effectiveness 507
+preparations and dose 507
+emotional disturbance 798
+energy drinks 868
+entacapone 918t
+epilepsy
+and driving 791
+pharmacodynamic interactions 788
+pharmacokinetic interactions
+787–788
+psychiatric comorbidities in
+785–786t
+psychiatric side effects of antiseizure
+medications 786, 787t
+psychotropics and risk of seizures in
+people with 788–791, 789–791t
+treatment of 789–791t
+EPSEs. See extrapyramidal side effects
+(EPSEs)
+erythromycin 603
+escitalopram/citalopram 367, 389,
+542–543, 650, 706t, 742t, 778–779,
+857t
+estimated glomerular filtration rate
+(eGFR) 602
+European Academy of Neurology (EAN)
+Guidelines 609
+exercise therapy 645
+extrapyramidal side effects (EPSEs) 109,
+778
+prevalence 110t
+propensity for 5
+rating scales 110t
+
+signs and symptoms 110t
+time taken to develop 111t
+treatment 111t
+fatigue 810–811
+fentanyl patches 638
+ferritin 910t
+fesoterodine 635
+fexofenadine 639
+FGAs. See first-generation antipsychotics
+(FGAs)
+first-episode schizophrenia, studies in 25
+first-generation antipsychotics (FGAs) 554
+equivalent doses for 14
+nomenclature 46
+optimal doses of 51
+role of older antipsychotics 46–47
+fixed-dose chlordiazepoxide regimen 460,
+460t
+fixed-dose reduction 459
+regimen 459–460
+fluid restriction 165t
+fluoxetine/sertraline 542–543, 687, 706t,
+727t, 742t, 758–759, 809, 925t
+in children and adolescents 583
+safety of 541
+flupentixol/zuclopenthixol 3, 725t, 739t,
+932t
+fluphenazine 857t
+fluspirilene 932t
+flutamide 589
+fluvoxamine 561, 707t, 742t, 857t
+folic acid supplementation 618
+foodstuffs, administering medicines in 603
+French Pharmacovigilance Database 612
+front-loading 459
+gabapentin 650, 651
+GAD. See Generalised Anxiety Disorder
+(GAD)
+gait disturbance 803
+galantamine 613
+Cochrane review for 623–624
+controlled trials of 610–611
+galantamine (ReminylR) 614t
+gamma-glutamyl transferase (GGT) 910t
+gastrointestinal bleeding 410–411, 411t
+Generalised Anxiety Disorder (GAD) 423
+General Medical Council 924
+GHB and GBL dependence 514
+management of acute unplanned
+withdrawal 515–516t
+withdrawal management 514–516
+withdrawal syndrome 514
+GI disorders, drugs used in
+antiemetics 635–637
+antispasmodics 637
+laxatives 635
+loperamide 635
+Ginkgo biloba 618
+efficacy of 652
+ginseng 811
+Glasgow Antipsychotic Side-effect Scale
+(GASS) 6
+glucocorticoids 919t
+glucose homeostasis 401t
+gosuranemab 623
+granisetron 637
+
+granulocyte-colony stimulating factor
+(G-CSF) 239–240
+guanfacine 569, 580, 588
+gut motility 602
+haematological monitoring 237
+haloperidol 149, 181, 588, 589, 647, 648t,
+725t, 739t, 769–770t, 799, 823t,
+857t, 934t, 938t
+haloperidol decanoate 932t
+Halting Antipsychotic Use in Long-Term
+Care study 649
+Hamilton Depression Rating Scale
+(HDRS) 307
+H2 antagonists 640
+HbA1c 910t
+HD. See Huntington’s disease (HD)
+Helicobacter pylori 640
+hepatic cytochrome P450 (CYP)
+pathways 308–309
+hepatic impairment 723
+antidepressant medications in 726–728
+antipsychotics in 724–726t
+drug-induced hepatic damage 731
+general principles 723–724
+mood stabilisers in 728–729, 728–729t
+psychotropics in 730, 730t
+sedatives in 729–730, 729–730t
+stimulants in 729, 729t
+hepatic transaminases 726
+high-dose antipsychotics 16
+adverse effects 17
+efficacy 16–17
+recommendations 17
+hirudin 619
+HIV, general principles of prescribing in
+777–778
+adverse psychiatric effects of antiretroviral
+drugs 782, 782t
+anxiety disorders 780
+associated neurocognitive disorders 780
+bipolar affective disorder 779
+delirium 778
+depression 778–779
+epilepsy
+and driving 791
+pharmacodynamic interactions 788
+pharmacokinetic
+interactions 787–788
+psychiatric comorbidities in 785–786t
+psychiatric side effects of antiseizure
+medications 786, 787t
+psychotropics and risk of seizures
+in people with 788–791,
+789–791t
+interactions between antiretroviral drugs
+and psychotropics 780–781, 781t
+interferon-alpha-induced depression in
+779
+psychotropic medications for people with
+learning disabilities
+general considerations 797
+key practice areas 797–798
+medications for behaviour
+disorder 799–800t
+schizophrenia 778
+secondary mania 779–780
+22q11.2 deletion syndrome
+
+

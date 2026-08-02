@@ -1,0 +1,966 @@
+<<<PAGE 285>>>
+
+264  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Carbamazepine
+
+CHAPTER 2
+
+Mechanism of action1
+Carbamazepine blocks voltage-dependent sodium channels thus inhibiting repetitive
+neuronal firing. It reduces glutamate release and decreases the turnover of dopamine
+and nor adrenaline. Carbamazepine has a similar molecular structure to TCAs.
+As well as blocking voltage-dependent sodium channels, oxcarbazepine (a structural
+derivative of carbamazepine) also increases potassium conductance and modulates
+high-voltage activated calcium channels.
+
+Formulations
+Carbamazepine is available as a liquid, chewable, immediate-release and controlledrelease tablets. Conventional formulations generally have to be administered two to three
+times daily. The controlled release preparation can be given once or twice daily, and the
+reduced fluctuation in serum levels usually leads to improved tolerability. This ­preparation
+has a lower bioavailability and an increase in dose of 10–15% may be required.
+
+Indications
+Carbamazepine is primarily used as an antiseizure medication in the treatment of grand mal
+and focal seizures. It is also used in the treatment of trigeminal neuralgia and, in the UK, is
+licensed for the treatment of bipolar illness in patients who do not respond to lithium.
+With respect to the treatment of mania, two placebo-controlled randomised studies
+have found the extended release formulation of carbamazepine to be effective; in both
+studies, the response rate in the carbamazepine arm was twice that in the placebo arm.2,3
+Carbamazepine was not particularly well tolerated; the incidence of dizziness, somnolence and nausea was high. Another study found carbamazepine alone to be as effective
+as carbamazepine plus olanzapine.4 NICE does not recommend carbamazepine as a
+first-line treatment for mania.5 A Cochrane review concluded that there were insufficient trials of adequate methodological quality on oxcarbazepine in the acute treatment
+of BD to inform about on its efficacy and acceptability.6
+Open studies suggest that carbamazepine monotherapy has some efficacy in bipolar
+depression;7 note that the evidence base supporting other strategies is stronger (see
+­section ‘Bipolar depression’). Carbamazepine may also be useful in unipolar depression
+either alone8 or as an augmentation strategy.9
+Carbamazepine is generally considered to be less effective than lithium in the prophylaxis of bipolar illness;10 several published studies report a low response rate and high
+drop-out rate. A meta-analysis (n = 464) failed to find a significant difference in efficacy
+between lithium and carbamazepine, but those who received carbamazepine were more
+likely to drop out of treatment because of side effects.11 Lithium is considered to be
+superior to carbamazepine in reducing suicidal behaviour,12 although data are not consistent13 and carbamazepine may have anti-suicidal properties.14 NICE considers carbamazepine to be a third-line prophylactic agent,5 and data emerging since this guidance
+support this positioning.15 Three small studies suggest that the related oxcarbazepine
+
+
+
+
+<<<PAGE 288>>>
+
+Pharmacodynamic interactions also occur. The anticonvulsant activity of carbamazepine is reduced by drugs that lower the seizure threshold (e.g. antipsychotics and antidepressants), the potential for carbamazepine to cause neutropenia may be increased by
+other drugs that have the potential to depress the bone marrow (e.g. clozapine), and the
+risk of hyponatraemia may be increased by other drugs that have the potential to
+deplete sodium (e.g. diuretics). Neurotoxicity has been reported when carbamazepine is
+used in combination with lithium. This is rare. For a full review of carbamazepine interactions, see chapter 17 of Applied Clinical Pharmacokinetics of Psychopharmacological
+Agents.39
+As carbamazepine is structurally similar to TCAs, in theory it should not be given
+within 14 days of discontinuing a monoamine oxidase inhibitor (MAOI).
+
+Table 2.4 Carbamazepine – prescribing and monitoring
+Indications
+
+Mania (not first line), bipolar depression (evidence weak), unipolar depression
+(evidence weak) and prophylaxis of bipolar disorder (third line after antipsychotics
+and valproate). Alcohol withdrawal (may be poorly tolerated)
+Carbamazepine is licensed for the treatment of bipolar illness in patients who do
+not respond to lithium
+
+Pre-carbamazepine workup
+
+U&Es, FBC and LFTs. Baseline measure of weight desirable
+
+Prescribing
+
+Titrate dose upwards against response and side effects; start with 100–200mg bd
+and aim for 400mg bd (some patients will require higher doses)
+Note that the modified release formulation (Tegretol Retard) can be given once to
+twice daily, is associated with less severe fluctuations in serum levels and is
+generally better tolerated
+Plasma levels can be used to assure adequate dosing and treatment compliance.
+Blood should be taken immediately before the next dose. Carbamazepine induces
+its own metabolism; serum levels (if used) should be re-checked a month after an
+increase in dose
+
+Monitoring
+
+U&Es, FBC and LFTs if clinically indicated
+Weight (or BMI)
+
+Stopping
+
+Reduce slowly over at least 1 month
+
+bd, bis in die (twice a day)
+
+References
+1. Novartis Pharmaceuticals UK Limited. Summary of product characteristics. Tegretol tablets 100mg, 200mg, 400mg. 2020; https://www.medi
+cines.org.uk/emc/medicine/1328.
+2. Weisler RH, et al. A multicenter, randomized, double-blind, placebo-controlled trial of extended-release carbamazepine capsules as monotherapy for bipolar disorder patients with manic or mixed episodes. J Clin Psychiatry 2004; 65:478–484.
+3. Weisler RH, et al. Extended-release carbamazepine capsules as monotherapy for acute mania in bipolar disorder: a multicenter, randomized,
+double-blind, placebo-controlled trial. J Clin Psychiatry 2005; 66:323–330.
+4. Tohen M, et al. Olanzapine plus carbamazepine v. carbamazepine alone in treating manic episodes. Br J Psychiatry 2008; 192:135–143.
+5. National Institute for Health and Care Excellence. Bipolar disorder: assessment and management. Clinical Guidance 185 [CG185]. 2014
+(Last updated February 2020); https://www.nice.org.uk/guidance/cg185.
+6. Vasudev A, et al. Oxcarbazepine for acute affective episodes in bipolar disorder. Cochrane Database Syst Rev 2011; Cd004857.
+7. Dilsaver SC, et al. Treatment of bipolar depression with carbamazepine: results of an open study. Biol Psychiatry 1996; 40:935–937.
+8. Zhang ZJ, et al. The effectiveness of carbamazepine in unipolar depression: a double-blind, randomized, placebo-controlled study. J Affect
+Disord 2008; 109:91–97.
+
+CHAPTER 2
+
+Bipolar disorder  267
+
+
+
+
+<<<PAGE 289>>>
+
+CHAPTER 2
+
+268  The Maudsley® Prescribing Guidelines in Psychiatry
+
+9. Kramlinger KG, et al. The addition of lithium to carbamazepine. Antidepressant efficacy in treatment-resistant depression. Arch Gen
+Psychiatry 1989; 46:794–800.
+10. Nasrallah HA, et al. Carbamazepine and valproate for the treatment of bipolar disorder: a review of the literature. J Affect Disord 2006;
+95:69–78.
+11. Ceron-Litvoc D, et al. Comparison of carbamazepine and lithium in treatment of bipolar disorder: a systematic review of randomized controlled trials. Human Psychopharmacol 2009; 24:19–28.
+12. Kleindienst N, et al. Differential efficacy of lithium and carbamazepine in the prophylaxis of bipolar disorder: results of the MAP study.
+Neuropsychobiology 2000; 42 Suppl 1:2–10.
+13. Yerevanian BI, et al. Bipolar pharmacotherapy and suicidal behavior. Part I: lithium, divalproex and carbamazepine. J Affect Disord 2007;
+103:5–11.
+14. Tsai CJ, et al. The rapid suicide protection of mood stabilizers on patients with bipolar disorder: a nationwide observational cohort study in
+Taiwan. J Affect Disord 2016; 196:71–77.
+15. Peselow ED, et al. Prophylactic efficacy of lithium, valproic acid, and carbamazepine in the maintenance phase of bipolar disorder: a naturalistic study. Int Clin Psychopharmacol 2016; 31:218–223.
+16. Vieta E, et al. A double-blind, randomized, placebo-controlled prophylaxis trial of oxcarbazepine as adjunctive treatment to lithium in the
+long-term treatment of bipolar I and II disorder. Int J Neuropsychopharmacol 2008; 11:445–452.
+17. Conway CR, et al. An open-label trial of adjunctive oxcarbazepine for bipolar disorder. J Clin Psychopharmacol 2006; 26:95–97.
+18. Juruena MF, et al. Bipolar I and II disorder residual symptoms: oxcarbazepine and carbamazepine as add-on treatment to lithium in a doubleblind, randomized trial. Prog Neuropsychopharmacol Biol Psychiatry 2009; 33:94–99.
+19. Malcolm R, et al. The effects of carbamazepine and lorazepam on single versus multiple previous alcohol withdrawals in an outpatient randomized trial. J Gen Intern Med 2002; 17:349–355.
+20. Minozzi S, et al. Anticonvulsants for alcohol withdrawal. Cochrane Database Syst Rev 2010; CD005064.
+21. Brieden T, et al. Psychopharmacological treatment of aggression in schizophrenic patients. Pharmacopsychiatry 2002; 35:83–89.
+22. Taylor D, et al. Doses of carbamazepine and valproate in bipolar affective disorder. Psychiatric Bull 1997; 21:221–223.
+23. Simhandl C, et al. The comparative efficacy of carbamazepine low and high serum level and lithium carbonate in the prophylaxis of affective
+disorders. J Affect Disord 1993; 28:221–231.
+24. Taylor DM, et al. Prescribing and monitoring of carbamazepine and valproate – a case note review. Psychiatric Bull 2000; 24:174–177.
+25. Lossius MI, et al. Reversible effects of antiepileptic drugs on reproductive endocrine function in men and women with epilepsy–a prospective
+randomized double-blind withdrawal study. Epilepsia 2007; 48:1875–1882.
+26. Hung SI, et al. Genetic susceptibility to carbamazepine-induced cutaneous adverse drug reactions. Pharmacogenet Genomics 2006;
+16:297–306.
+27. Kaufman DW, et al. Drugs in the aetiology of agranulocytosis and aplastic anaemia. Eur J Haematol Suppl 1996; 60:23–30.
+28. Bjornsson E. Hepatotoxicity associated with antiepileptic drugs. Acta Neurol Scand 2008; 118:281–290.
+29. Ganeva M, et al. Carbamazepine-induced drug reaction with eosinophilia and systemic symptoms (DRESS) syndrome: report of four cases
+and brief review. Int J Dermatol 2008; 47:853–860.
+30. Patorno E, et al. Anticonvulsant medications and the risk of suicide, attempted suicide, or violent death. JAMA 2010; 303:1401–1409.
+31. Andersohn F, et al. Use of antiepileptic drugs in epilepsy and the risk of self-harm or suicidal behavior. Neurology 2010; 75:335–340.
+32. Gibbons RD, et al. Relationship between antiepileptic drugs and suicide attempts in patients with bipolar disorder. Arch Gen Psychiatry
+2009; 66:1354–1360.
+33. Macritchie KA, et al. Does ‘rebound mania’ occur after stopping carbamazepine? A pilot study. J Psychopharmacol 2000; 14:266–268.
+34. Franks MA, et al. Bouncing back: is the bipolar rebound phenomenon peculiar to lithium? A retrospective naturalistic study. J Psychopharmacol
+2008; 22:452–456.
+35. Spina E, et al. Clinical significance of pharmacokinetic interactions between antiepileptic and psychotropic drugs. Epilepsia 2002; 43 Suppl
+2:37–44.
+36. Patsalos PN, et al. The importance of drug interactions in epilepsy therapy. Epilepsia 2002; 43:365–385.
+37. Crawford P. Interactions between antiepileptic drugs and hormonal contraception. CNS Drugs 2002; 16:263–272.
+38. Citrome L, et al. Pharmacokinetics of aripiprazole and concomitant carbamazepine. J Clin Psychopharmacol 2007; 27:279–283.
+39. Taylor D, et al. Clinically significant interactions with mood stabilisers, inM Jann, S Penzak, L Cohen, eds. Applied clinical pharmacokinetics
+and pharmacodynamics of psychopharmacological agents. Switzerland: ADIS 2016; 423–449.
+
+
+
+
+<<<PAGE 302>>>
+
+Bipolar disorder  281
+
+Treatment
+
+Comments
+
+Allopurinol
+(300–600mg/day)
+
+A meta-analysis of five studies of adjunct allopurinol found an effect size of just
+less than 0.346
+
+Celecoxib
+(400mg/day)47
+
+Small RCT (n = 46) suggests benefit when used as adjunct to valproate
+
+Clozapine48–50
+
+Established treatment option for refractory mania/bipolar disorder. Rapid titration
+has been reported51
+
+Ebselen52
+
+Inhibits inositol monophosphatase (similar to lithium). Preliminary evidence of benefit
+
+Gabapentin
+(up to 2.4g/day)
+
+Probably only effective by virtue of an anxiolytic effect. Rarely used. Possibly
+useful as prophylaxis56
+
+Levetiracetam57,58
+(up to 4000mg/day)
+
+Possibly effective but controlled studies required. One case of levetiracetam
+causing mania59
+
+Memantine60
+(10–30mg/day)
+
+Conflicting evidence61–63
+
+Melatonin 6mg/day64
+
+Preliminary evidence of benefit as an adjunct to standard treatment. One small
+negative study65
+
+Oxcarbazepine66–72
+(around 300–3000mg/day)
+
+Probably effective acutely and as prophylaxis although one controlled study
+conducted (in youths) was negative73
+
+Phenytoin74
+(300–400mg/day)
+
+Rarely used. Limited data
+Complex kinetics with narrow therapeutic range
+
+Ritanserin75
+(10mg/day)
+
+Supported by a single RCT. Well tolerated. May protect against
+extrapyramidal symptoms (EPS)
+
+Tamoxifen76
+(20–140mg/day)
+
+Possibly effective. Five small RCTs. Dose–response relationship is unclear. Good
+evidence for efficacy as adjunct and as monotherapy, with large effect size
+
+Topiramate77
+(up to 300mg/day)
+
+Probably not effective. Less effective than lithium.2
+
+Tryptophan depletion78
+
+Supported by a small RCT
+
+Ziprasidone
+
+Supported by three RCTs. Widely used outside the UK
+
+53–55
+
+79–81
+
+References
+1. Cipriani A, et al. Comparative efficacy and acceptability of antimanic drugs in acute mania: a multiple-treatments meta-analysis. Lancet
+2011; 378:1306–1315.
+2. McKnight RF, et al. Lithium for acute mania. Cochrane Database Syst Rev 2019; 6:Cd004048.
+3. Jochim J, et al. Valproate for acute mania. Cochrane Database Syst Rev 2019; 10:Cd004052.
+4. Mahajan V, et al. Efficacy and safety of asenapine versus olanzapine in combination with divalproex for acute mania: a randomized controlled trial. J Clin Psychopharmacol 2019; 39:305–311.
+5. Smith LA, et al. Acute bipolar mania: a systematic review and meta-analysis of co-therapy vs. monotherapy. Acta Psychiatr Scand 2007;
+115:12–20.
+
+CHAPTER 2
+
+Table 2.7 Mania – other possible treatments
+Alphabetical order – no preference implied by order in the table. Consult specialist and primary literature before
+using any treatment listed.
+
+
+
+
+<<<PAGE 304>>>
+
+39. Sekhar S, et al. Efficacy of sodium valproate and haloperidol in the management of acute mania: a randomized open-label comparative study.
+J Clin Pharmacol 2010; 50:688–692.
+40. Fontana E, et al. Intravenous valproate in the treatment of acute manic episode in bipolar disorder: a review. J Affect Disord 2020;
+260:738–743.
+41. Li DJ, et al. Efficacy, safety and tolerability of aripiprazole in bipolar disorder: an updated systematic review and meta-analysis of randomized
+controlled trials. Prog Neuropsychopharmacol Biol Psychiatry 2017; 79:289–301.
+42. Romeo B, et al. Meta-analysis and review of dopamine agonists in acute episodes of mood disorder: efficacy and safety. J Psychopharmacol
+2018; 32:385–396.
+43. Vieta E, et al. Effect of cariprazine across the symptoms of mania in bipolar I disorder: analyses of pooled data from phase II/III trials. Eur
+Neuropsychopharmacol 2015; 25:1882–1891.
+44. Chang HY, et al. The efficacy and tolerability of paliperidone in mania of bipolar disorder: a preliminary meta-analysis. Exp Clin
+Psychopharmacol 2017; 25:422–433.
+45. Pajonk FG, et al. Rapid dose titration of quetiapine for the treatment of acute schizophrenia and acute mania: a case series. J Psychopharmacol
+2006; 20:119–124.
+46. Chen AT, et al. Allopurinol augmentation in acute mania: a meta-analysis of placebo-controlled trials. J Affect Disord 2018; 226:245–250.
+47. Arabzadeh S, et al. Celecoxib adjunctive therapy for acute bipolar mania: a randomized, double-blind, placebo-controlled trial. Bipolar
+Disord 2015; 17:606–614.
+48. Mahmood T, et al. Clozapine in the management of bipolar and schizoaffective manic episodes resistant to standard treatment. Aust N Z J
+Psychiatry 1997; 31:424–426.
+49. Green AI, et al. Clozapine in the treatment of refractory psychotic mania. Am J Psychiatry 2000; 157:982–986.
+50. Ifteni P, et al. Switching bipolar disorder patients treated with clozapine to another antipsychotic medication: a mirror image study.
+Neuropsychiatr Dis Treat 2017; 13:201–204.
+51. Aksoy Poyraz C, et al. Effectiveness of ultra-rapid dose titration of clozapine for treatment-resistant bipolar mania: case series. Ther Adv
+Psychopharmacol 2015; 5:237–242.
+52. Sharpley AL, et al. A phase 2a randomised, double-blind, placebo-controlled, parallel-group, add-on clinical trial of ebselen (SPI-1005) as a
+novel treatment for mania or hypomania. Psychopharmacology (Berl) 2020; 237:3773–3782.
+53. Macdonald KJ, et al. Newer antiepileptic drugs in bipolar disorder: rationale for use and role in therapy. CNS Drugs 2002; 16:549–562.
+54. Cabras PL, et al. Clinical experience with gabapentin in patients with bipolar or schizoaffective disorder: results of an open-label study. J Clin
+Psychiatry 1999; 60:245–248.
+55. Pande AC, et al. Gabapentin in bipolar disorder: a placebo-controlled trial of adjunctive therapy. Gabapentin Bipolar Disorder Study Group.
+Bipolar Disord 2000; 2 (3 Pt 2):249–255.
+56. Vieta E, et al. A double-blind, randomized, placebo-controlled, prophylaxis study of adjunctive gabapentin for bipolar disorder. J Clin
+Psychiatry 2006; 67:473–477.
+57. Grunze H, et al. Levetiracetam in the treatment of acute mania: an open add-on study with an on-off-on design. J Clin Psychiatry 2003;
+64:781–784.
+58. Goldberg JF, et al. Levetiracetam for acute mania (Letter). Am J Psychiatry 2002; 159:148.
+59. Park EM, et al. Acute mania associated with levetiracetam treatment. Psychosomatics 2014; 55:98–100.
+60. Koukopoulos A, et al. Antimanic and mood-stabilizing effect of memantine as an augmenting agent in treatment-resistant bipolar disorder.
+Bipolar Disord 2010; 12:348–349.
+61. Veronese N, et al. Acetylcholinesterase inhibitors and memantine in bipolar disorder: a systematic review and best evidence synthesis of the
+efficacy and safety for multiple disease dimensions. J Affect Disord 2016; 197:268–280.
+62. Serra G, et al. Three-year, naturalistic, mirror-image assessment of adding memantine to the treatment of 30 treatment-resistant patients with
+bipolar disorder. J Clin Psychiatry 2015; 76:e91–e97.
+63. Omranifard V, et al. Evaluation of the effect of memantine supplementation in the treatment of acute phase of mania in bipolar disorder of
+elderly patients: a double-blind randomized controlled trial. Adv Biomed Res 2018; 7:148.
+64. Moghaddam HS, et al. Efficacy of melatonin as an adjunct in the treatment of acute mania: a double-blind and placebo-controlled trial. Int
+Clin Psychopharmacol 2020; 35:81–88.
+65. Quested DJ, et al. Melatonin in acute mania investigation (MIAMI-UK). A randomized controlled trial of add-on melatonin in bipolar disorder. Bipolar Disord 2021; 23:176–185
+66. Benedetti A, et al. Oxcarbazepine as add-on treatment in patients with bipolar manic, mixed or depressive episode. J Affect Disord 2004;
+79:273–277.
+67. Lande RG. Oxcarbazepine: efficacy, safety, and tolerability in the treatment of mania. Int J Psychiatry Clin Pract 2004; 8:37–40.
+68. Ghaemi SN, et al. Oxcarbazepine treatment of bipolar disorder. J Clin Psychiatry 2003; 64:943–945.
+69. Pratoomsri W, et al. Oxcarbazepine in the treatment of bipolar disorder: a review. Can J Psychiatry 2006; 51:540–545.
+70. Juruena MF, et al. Bipolar I and II disorder residual symptoms: oxcarbazepine and carbamazepine as add-on treatment to lithium in a doubleblind, randomized trial. Prog Neuropsychopharmacol Biol Psychiatry 2009; 33:94–99.
+71. Suppes T, et al. Comparison of two anticonvulsants in a randomized, single-blind treatment of hypomanic symptoms in patients with bipolar
+disorder. Aust N Z J Psychiatry 2007; 41:397–402.
+72. Vieta E, et al. A double-blind, randomized, placebo-controlled prophylaxis trial of oxcarbazepine as adjunctive treatment to lithium in the
+long-term treatment of bipolar I and II disorder. Int J Neuropsychopharmacol 2008; 11:445–452.
+
+CHAPTER 2
+
+Bipolar disorder  283
+
+
+
+
+<<<PAGE 570>>>
+
+Children and adolescents  549
+
+Table 5.1 Summary of RCT evidence on medication used in youth with bipolar mania
+Medication
+
+Comments
+
+Lithium
+
+Lithium is cleared relatively quickly in children so twice daily dosing will be required,
+especially when using liquid or non-modified release preparations.20 One double-blind
+placebo-controlled randomised trial21 showed significant reductions in substance use and
+clinical ratings after 6 weeks, in 25 adolescents with BD and comorbid substance misuse. In
+a double-blind placebo-controlled discontinuation trial (N = 40) over 2 weeks, no significant
+difference in relapse rates were found between lithium and placebo22
+A later double-blind placebo-controlled study (N = 81), over 8 weeks, demonstrated a
+significantly larger change in YMRS score in lithium-treated youth, but with a differentiation
+from the placebo group only appearing after 6 weeks of treatment. There was a significant
+increase in thyrotropin with lithium, but no difference in weight gain23
+Lithium and divalproex did not differ in an 18-month maintenance trial in youths (N = 60),
+who initially stabilised on the combination pharmacotherapy of lithium and divalproex.24
+However, given the compelling evidence for lithium maintenance and prophylaxis in adults,
+we recommend that clinicians consider its use in adolescents in preference to valproate
+
+Valproate
+
+In an RCT (N = 150)28 divalproex ER (titrated to clinical response or 80–125mg/L) did not
+lead to significant differences in mean YMRS compared with placebo at 4 weeks (also see
+risperidone and quetiapine sections below)
+
+Oxcarbazepine
+
+A double-blind placebo-controlled study (N = 116) did not show significant differences
+between placebo and oxcarbazepine (mean dose 1,515mg/day) in reducing mania rating at
+7 weeks29
+
+Olanzapine
+
+A double-blind, placebo-controlled study (N = 161)30 showed olanzapine (5–20mg/day) to
+be significantly more effective than placebo in YMRS mean score reduction over a period of
+3 weeks. Note the higher weight gain in the treatment group (weight gain was 3.7kg for
+olanzapine versus 0.3kg for placebo) and the associated significantly increased fasting
+glucose, total cholesterol, AST, ALT and uric acid
+
+Risperidone
+
+A double-blind, placebo-controlled study (N = 169) showed risperidone (at doses 0.5–2.5 or
+3–6mg) to be significantly more effective than placebo in YMRS mean score reduction in a
+3-week follow up.31 The lower dose seems to lead to same benefits at a lower risk of side
+effects. Sleepiness and fatigue were common in the treatment arms. Note, mean weight
+increase in treatment groups (0.7kg versus 1.7kg for the low and 1.4 for the high dose arm)
+In the Treatment of Early Age Mania (TEAM) study, higher response rates (and metabolic side
+effects) occurred with risperidone (mean dose of 2.57mg) versus lithium (mean level of
+1.09mmol/L) and divalproex sodium (mean level of 113.6mg/L).32 A randomised follow-up of
+this study, showed again the superiority of risperidone as an alternative treatment for
+non-responders to lithium and divalproex sodium, and as an add-on treatment to partially
+responders to the two MS.33 However, these results need to be interpreted with caution as the
+definition of mania was broad and different to how bipolar disorder is defined by most UK
+clinicians. Similar reasons provoke caution when considering another placebo-controlled
+double-blind trial showing significantly better results for risperidone (mean dose 0.5mg) versus
+valproic acid (mean level 81mg/L) in 3–7 years old children supposedly diagnosed with mania34
+(Continued)
+
+CHAPTER 5
+
+A meta analysis25 found lithium to be ‘clearly inferior’ to risperidone in mania. One small
+6-month study found higher relapse rates in those who discontinued lithium compared
+with those who continued.26 Another naturalistic 8-month study showed lithium to be
+effective and well tolerated27
+
+
+
+
+<<<PAGE 671>>>
+
+CHAPTER 6
+
+650  The Maudsley® Prescribing Guidelines in Psychiatry
+
+a positive effect on agitation in dementia; unfortunately, this study also confirmed the
+risk of QT prolongation with citalopram at this dose. The maximum dose of citalopram in older people is 20mg a day because of the drug’s effect on ­cardiac QT interval.
+Although there is less evidence, escitalopram may also be effective in BPSD. The evidence for efficacy of sertraline is mixed, though its cardiac safety is a strong point.26
+Whilst a previous Cochrane review of trazodone for agitation in dementia66 found
+insufficient evidence from RCTs to support its use in dementia, in a recent Cochrane
+review, trazodone 50mg at bedtime was noted to be well tolerated and improved sleep
+for people with dementia and insomnia. Additionally, trazodone 150–300mg/day was
+found to be effective in reducing BPSD in frontotemporal dementia. Although mirtazapine plays an important role in treatment of older adults with depression, a recent
+pilot study showed no significant therapeutic effect of 15mg mirtazapine on Alzheimer’s
+patients with sleep disorders and in fact found worsening of daytime sleep patterns.
+Bupropion has not been studied in controlled trials in dementia.26
+TCAs are best avoided in patients with dementia. They can cause falls, possibly via orthostatic hypotension, and can worsen cognition due to their anticholinergic adverse effect.67
+Findings suggest that in AD patients treated with cholinesterase inhibitors, SSRIs
+may exert some degree of protection against the negative effects of depression on cognition. To date, literature analysis does not clarify if the combined effect of SSRIs and
+AChE-Is is synergistic, additive or independent.64 In addition, it is still unclear whether
+SSRIs have beneficial effects on cognition in AD patients who are not actively manifesting mood or behavioural problems.68
+Whilst some emerging studies have found that antidepressant use in older people
+may be associated with an increased risk of dementia, it is important to keep in mind
+that previous studies have shown that late-life depression is associated with an increased
+risk for dementia. Hence, any comparisons of antidepressant users with non-depressed
+non-users are subject to indication bias as the increased dementia risk could be due to
+depression, and not the medication.
+A Swedish study69 included 20,050 memory clinic patients diagnosed with incident
+dementia and collected data on antidepressant use at the time of dementia diagnosis
+and over the 3-year period before a dementia diagnosis. Use of antidepressant treatment for 3 consecutive years before a dementia diagnosis was associated with a lower
+mortality risk for all dementia disorders and in AD.
+Recommendation: Although evidence is weak, use of antidepressants is justified in
+people with dementia who have clear symptoms of moderate or severe depression,
+especially if non-pharmacological approaches have been ineffective.
+
+Mood stabilisers/antiseizure medications
+
+RCTs of mood stabilisers in non-cognitive symptoms of dementia have been completed for
+oxcarbazepine,70 carbamazepine71 and valproate.72 Gabapentin, lamotrigine and topiramate have also been used.73 Of the mood stabilisers, carbamazepine has the most robust
+evidence of efficacy in non-cognitive symptoms.74 However, its serious adverse effects
+(especially Stevens–Johnson syndrome) and its potential for drug interactions limit its use.
+
+
+
+
+<<<PAGE 672>>>
+
+Prescribing in older people  651
+
+One RCT of valproate that included an open-label extension found it to be ineffective in controlling symptoms. Seven of the 39 patients enrolled died during the 12-week
+extension phase study period, although the deaths could not be attributed to the drug.75
+A study investigating the optimal dose of valproic acid in dementia found that whilst
+serum levels between 40μg/L and 60μg/L and relatively low doses (7–12mg/kg/day) are
+associated with improvements in agitation in some patients, similar levels produced no
+significant improvements in others and led to substantial side effects.76 A 2009 Cochrane
+review of valproate for the treatment of agitation in dementia found no evidence of
+efficacy but advocated the need for further research into its use in dementia.77 Valproate
+does not delay emergence of agitation in dementia.78 Literature reviews of antiseizure
+medication in non-cognitive symptoms of dementia found that valproate, oxcarbazepine and lithium showed low or no evidence of efficacy and that more RCTs are needed
+to strengthen the evidence for gabapentin, topiramate and lamotrigine.74
+Preliminary low-grade evidence based on case series and case reviews suggests a possible beneﬁt of gabapentin and pregabalin in patients with BPSD in AD. Evidence in
+frontotemporal dementia is lacking.79 In a small case series, gabapentin reduced aggression among seven patients with vascular dementia or mixed vascular/AD, using daily
+doses ranging from 200mg to 600mg daily. Three of the seven patients were able to discontinue antipsychotics after gabapentin initiation; thus, it may be useful in patients with
+cardiac conditions where antipsychotics are inappropriate. Caution should be noted
+about the use of gabapentin in Lewy body dementia; dramatic worsening of neuropsychiatric symptoms has been reported after its use to treat behavioural symptoms.80
+Although clearly beneficial in some patients, antiseizure medications/mood stabilisers cannot be recommended for routine use in the treatment of the neuropsychiatric
+symptoms in dementia at present.73
+
+Melatonin and sleep disturbances in AD
+
+Evidence regarding the effectiveness of melatonin supplementation on sleep in patients
+with AD is limited. Six double-blind randomised placebo-controlled trials, mostly of
+limited sample size have been published. Although it is clear that melatonin has no significant side effects, even at high doses, the results of studies have been equivocal. Some
+studies showed beneficial effects, mainly improvement of day/night-time sleep ratio and
+decrease of nocturnal activity whilst other studies failed to demonstrate objective effectiveness.81 Non-pharmacological management of sleep disturbances using established
+sleep hygiene methods should be the first-line treatment for insomnia in dementia.82
+A 2016 Cochrane review83 of pharmacotherapies for sleep disturbances in dementia
+found no RCTs of many drugs that are widely prescribed for sleep problems in dementia,
+including the benzodiazepine and non-benzodiazepine hypnotics, although there is considerable uncertainty about the balance of benefits and risks associated with these common
+treatments. From the studies identified, there was no evidence that melatonin (up to 10mg)
+helped sleep problems in patients with moderate-to-severe dementia due to AD. There was
+
+CHAPTER 6
+
+Recommendation: Limited evidence to support its use – use may be justified where other
+treatments are contraindicated or ineffective. Valproate is best avoided.
+
+
+
+
+<<<PAGE 808>>>
+
+Table 10.4 Adverse and beneficial psychiatric side effects of antiseizure medications5,19,20
+Antiseizure medications
+
+Adverse psychiatric symptoms
+
+Barbiturates, primidone
+
+■■
+
+Psychiatric benefits
+
+Behavioural disturbance/ADHD symptoms
+Depression, cognitive impairment
+
+■■
+
+Anxiolytic
+
+■■
+
+Carbamazepine,
+oxcarbazepine
+
+■■
+
+Not reported
+
+■■
+
+Mood stabilising,
+anti-manic
+
+Ethosuximide
+
+■■
+
+Behavioural disturbance, depression, psychosis
+
+■■
+
+None reported
+
+Felbamate
+
+■■
+
+Anxiety, depression, psychosis
+
+■■
+
+None reported
+
+Gabapentin, pregabalin
+
+■■
+
+Depression and anxiety on cessation
+
+■■
+
+Anxiolytic
+
+Lacosamide
+
+■■
+
+None reported
+
+■■
+
+None reported
+
+Lamotrigine
+
+■■
+
+Anxiogenic in some
+Behavioural disturbance in cognitive impairment
+
+■■
+
+■■
+
+■■
+
+Antidepressant
+Mood stabilising
+
+Levetiracetam
+
+■■
+
+Anxiety, behavioural disturbance, depression
+
+■■
+
+None confirmed
+
+Perampanel
+
+■■
+
+Behavioural disturbance, depression, psychosis
+
+■■
+
+None reported
+
+Phenytoin
+
+■■
+
+Behavioural disturbance, depression
+
+■■
+
+Anti-manic
+
+Tiagabine
+
+■■
+
+Behavioural disturbance, depression
+
+■■
+
+Anxiolytic
+
+Topiramate
+
+■■
+
+Anxiety, behavioural disturbance, depression
+
+■■
+
+Unclear; possible
+anti-manic/antipsychotic
+
+Valproate
+
+■■
+
+Behavioural disturbance (at high doses in children)
+
+■■
+
+Vigabatrin
+
+■■
+
+Behavioural disturbance/ADHD symptoms
+Depression, psychosis
+
+■■
+
+None reported
+
+■■
+■■
+
+Behavioural disturbance, depression
+
+■■
+
+None confirmed
+
+Benzodiazepines
+
+Zonisamide
+
+Mood stabilising,
+anti-manic
+■■ Anti-panic
+
+Interactions21
+Pharmacokinetic interactions
+Important pharmacokinetic interactions exist in both directions between antiseizure medications and psychotropics, primarily mediated through cytochrome P450 enzymes.8,22
+Psychotropics with enzyme-inhibiting effects (e.g. fluoxetine, fluvoxamine, paroxetine,
+and at higher doses, sertraline) may increase antiseizure medication plasma levels. This is
+especially relevant to antiseizure medications with a narrow therapeutic index (e.g. carbamazepine and phenytoin). Plasma levels should be monitored, and dosage adjustment may
+be required. Citalopram and escitalopram are very weak inhibitors of CYP 1A2 and 2D6.
+Some antiseizure medications are potent enzyme inducers (e.g. phenytoin, carbamazepine, phenobarbital, primidone) and others are weak inducers (e.g. oxcarbazepine at
+
+CHAPTER 10
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  787
+
+
+
+
+<<<PAGE 809>>>
+
+CHAPTER 10
+
+788  The Maudsley® Prescribing Guidelines in Psychiatry
+
+doses ≥900mg/day, topiramate at doses ≥400mg/day). These drugs can lower plasma
+levels of multiple psychotropics, possibly leading to treatment failure.
+
+Pharmacodynamic interactions13
+Adverse effects with antiseizure medications that may overlap with psychotropic
+adverse effects include:
+Weight gain: Caused by some antiseizure medications (e.g. carbamazepine, gabapentin, pregabalin, valproate)
+■■ Sexual adverse effects: With phenobarbital and primidone but possible with all
+enzyme-inducing antiseizure medications
+■■ Hyponatraemia: With carbamazepine, oxcarbazepine (note, if severe, it can provoke
+seizures)
+■■ Osteoporosis and osteopenia: Reported with long-term use of enzyme-inducing
+antiseizure medications
+■■ Blood dyscrasias: Reported with valproate carbamazepine and especially with
+felbamate10
+■■
+
+Psychotropics and the risk of seizures in people with epilepsy
+In the general population, the annual incidence of unprovoked seizures is about 50 per
+100,000 persons.23 It is notable that the incidence of unprovoked seizures in the placebo
+arms of randomised controlled trials of antidepressants and antipsychotics is approximately 15-fold higher, suggesting that both depression and psychosis are risk factors for
+seizures.24 A bidirectional relationship between epilepsy and several psychiatric illnesses
+has been demonstrated, whereby not only do PWE have a higher risk of developing a
+psychiatric illness, but people with psychiatric illness have a higher risk of developing
+epilepsy.5,6 This bidirectional relationship exists for depression, anxiety, psychosis and
+suicidality.3,5,6 Thus, the occurrence of seizures may, in some cases, be the expression of
+the natural progression of a psychiatric illness, unrelated to the use of psychotropics.
+Reports of seizures associated with psychotropics must factor in this bidirectional relationship between psychiatric illness and epilepsy. For example, although observational
+studies have reported an association between antidepressant treatment and seizures,25 a
+similar association is also found with non-drug treatments for depression (counselling, for
+example).26 These findings are consistent with depression itself being the main risk factor
+for seizures. In fact, one analysis of controlled studies with psychotropics showed that the
+incidence of seizures was substantially lower among patients receiving most antidepressants (SSRIs, for example) in comparison with those randomised to placebo.24 Nonetheless,
+definitive data are lacking in PWE27,28 and certain psychotropics have a dose-related risk
+of seizures within usual dose ranges. Most can cause seizures in overdose. Note also that
+almost all antidepressants and antipsychotics have been associated with hyponatraemia
+(see section on hyponatraemia) and seizures may occur if this is severe.17,29 General guidance on the safety of psychotropics in PWE is summarised in Table 10.5.
+Electroconvulsive therapy (ECT) has anticonvulsive properties and is worth considering in the treatment of depression in patients with unstable epilepsy.8,17,22 ECT does
+not appear to cause or worsen epilepsy.17,30
+
+
+
+
+<<<PAGE 973>>>
+
+952  Index
+
+behavioural and psychological symptoms
+of dementia (BPSD) 644
+antidepressants 649–650
+benzodiazepines 649
+cognitive enhancers 649
+electroconvulsive therapy
+(ECT) 652–653
+melatonin and sleep disturbances in
+AD 651–652
+miscellaneous agents 652
+mood stabilisers/anticonvulsants
+650–651
+non-drug measures 644–645
+bronchodilators
+anticholinergic bronchodilators 637
+beta-agonists 637
+hypersalivation 638
+myasthenia gravis (MG) 638
+theophylline 637
+commonly used psychotropics in
+657–665t
+dementia 604
+adverse effects, cholinesterase
+inhibitors 610–611
+Alzheimer’s disease (AD) 604,
+605–606t
+combination treatment 609
+dosing and formulations 608–609
+efficacy of cognitive enhancers used in
+607
+other effects 608
+switching between drugs used in
+607–608
+tolerability 609–610
+dementia with Lewy bodies (DLB) 624
+distribution 602
+drug interactions 602–603
+excretion 602
+H2 antagonists and proton pump
+inhibitors (PPIs) 640
+medication doses of commonly used
+psychotropics in 657–665
+medicines within food and drink 667
+additional information 670–671,
+671f
+assessment of mental capacity 667
+guidance on covert administration
+667–669
+summary of process 669–670
+metabolism 602
+mild cognitive impairment (MCI) 625
+novel treatments 622–623
+omega-3 fatty acids 619–621
+other dementias 625
+pharmacological measures
+analgesics 645
+antipsychotics in 645–646
+clinical information for antipsychotic
+use in 647–649
+increased mortality with
+antipsychotics in 646–647
+sedating antihistamines 652
+safer prescribing for physical conditions in
+dementia
+alpha-blockers for urinary
+retention 635
+anticholinergic drugs used in urinary
+incontinence 631–635, 632–634t
+
+drugs used in GI disorders. See GI
+disorders, drugs used in
+summary of clinical practice guidance
+with anti-dementia drugs from
+BAP 625, 626t
+trazodone and dibenzoylmethane 622
+treatment of depression in 674–675t,
+674–676
+vascular dementia (VaD) 623–624
+omega-3 fatty acids 619–621
+Cochrane review of 619
+in schizophrenia 99
+overall 100
+prevention 99
+summary recommendations 100
+treatment 99
+ondansetron 590
+opioid antagonists, borderline personality
+disorder (BPD) 5
+opioid dependence
+buprenorphine 483–484, 484t
+alternative oral opioid
+preparations 490–491
+brands of oral buprenorphine and
+bioavailability 485–486
+buprenorphine starting dose 486
+less than daily dosing 489–490
+with naloxone (suboxone) 490
+overdose with 490
+patient-controlled analgesia
+(PCA) 488–489, 489t
+prolonged-release buprenorphine
+injection 484–485, 485t
+stabilisation dose of 489
+sublingual buprenorphine 484
+transferring from methadone to
+487–488
+transferring from prescribed opioids to
+488
+detoxification and reduction
+regimes 494
+injectable diamorphine for maintenance
+prescribing 491
+intranasal naloxone 474–475, 475f
+methadone 482
+clinical effectiveness 478–481
+first week 481–482
+induction and stabilisation in
+community 481
+initiation on acute ward 493
+intoxication 482
+overdose 482
+recommended ECG monitoring 483
+and risk of torsades de pointes/QT
+interval prolongation 482
+severe hepatic/renal dysfunction 482
+subsequent period 482
+naltrexone in relapse prevention 496
+dose of 497
+initiating 496
+ongoing prescribing 493
+OST maintenance medication 478
+pain control in patients on OST
+analgesia for methadone-prescribed
+patients 497–498
+breastfeeding 499
+neonatal abstinence syndrome
+(NAS) 499
+
+substitute prescribing during
+pregnancy 499
+prescribing for 474
+OST safely 478
+psychotropic medications in patients
+with 493–494
+substitution treatment 475–478, 477t
+treatment
+of opioid overdose 474–475
+on psychiatric ward 491–492, 492t
+withdrawal in community setting
+buprenorphine 495
+methadone 495
+withdrawal in specialist addiction
+inpatient setting
+buprenorphine 495
+methadone 495
+opioids 601
+overdose, treatment of 474–475
+substitution treatment 475–478, 477t
+withdrawal in community setting
+buprenorphine 495
+methadone 495
+withdrawal in specialist addiction
+inpatient setting
+buprenorphine 495
+methadone 495
+oral buprenorphine and
+bioavailability 485–486
+oral/inhaled treatment 56
+oral opioid preparations 490–491
+orlistat 234
+orthostatic hypotension 160–161,
+646–647
+management of 160–161t
+risk factors for 160t
+osteoporosis 8
+OST maintenance medication 478
+oxcarbazepine 650
+oxybutynin 631
+oxycodone 638–639
+pain control in patients on OST
+analgesia for methadone-prescribed
+patients 497–498
+breastfeeding 499
+neonatal abstinence syndrome 499
+substitute prescribing during
+pregnancy 499
+paliperidone 554, 711t, 726t, 740t, 836t
+paliperidone palmitate 933t, 934t
+approximate dose equivalence 84t
+dose and administration
+information 83t
+dosing of 86t
+monthly 83, 83–86
+points to note 83–85
+switching to 85t
+PANDA trial 2019, 307
+panic disorder 423
+PANSS total score 97
+parenteral thiamine (vitamin B1) 458–459
+Parkinson’s disease (PD) 814, 872
+cholinesterase inhibitors in 816
+depression in 814
+pimavanserin 816
+psychosis in 815–816
+paroxetine 687, 707t, 743t, 820
+
+

@@ -1,0 +1,1042 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 922>>>
+
+Fluphenazine
+
+Therapeutics
+Brands
+Prolixin
+see index for additional brand names
+Generic?
+Yes
+Class
+Conventional antipsychotic (neuroleptic, phenothiazine, dopamine 2
+antagonist)
+Commonly Prescribed for
+(bold for FDA approved)
+Psychotic disorders
+Bipolar disorder
+How the Drug Works
+Blocks dopamine 2 receptors, reducing positive symptoms of
+psychosis
+
+
+
+
+<<<PAGE 925>>>
+
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ Consider monitoring fasting triglycerides monthly for several
+months in patients at high risk for metabolic complications and when
+initiating or switching anitpsychotics
+
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antipsychotic
+Should check blood pressure in the elderly before starting and for
+the first few weeks of treatment
+Monitoring elevated prolactin levels of dubious clinical benefit
+Phenothiazines may cause false-positive phenylketonuria results
+Patients with low white blood cell count (WBC) or history of druginduced leukopenia/neutropenia should have complete blood count
+(CBC) monitored frequently during the first few months and
+fluphenazine should be discontinued at the first sign of decline of
+WBC in the absence of other causative factors
+Patients should be monitored periodically for the development of
+abnormal movements of tardive dyskinesia, using neurological
+exam and the AIMS (Abnormal Involuntary Movement Scale)
+
+
+
+
+<<<PAGE 929>>>
+
+Weight loss, exercise programs, and medical management for high
+BMIs, diabetes, dyslipidemia
+Metformin may help prevent or reverse antipsychotic-induced
+weight gain
+Best Augmenting Agents for Side Effects
+Benztropine, trihexyphenidyl, or amantadine for drug-induced
+parkinsonism
+Beta blockers, benzodiazepines, or 5HT2A antagonists (e.g.,
+mirtazapine, cyproheptadine) for akathisia
+Valbenazine or deutetrabenazine for tardive dyskinesia
+Many side effects cannot be improved with an augmenting agent
+
+Dosing And Use
+Usual Dosage Range
+Oral: 1–20 mg/day maintenance
+Intramuscular: generally 1/3 to 1/2 the oral dose
+Decanoate for intramuscular or subcutaneous administration:12.5–
+100 mg/2 weeks maintenance (see Fluphenazine Decanoate section
+after Pearls for dosing and use)
+Dosage Forms
+
+
+
+
+<<<PAGE 930>>>
+
+Tablet 1 mg, 2.5 mg scored, 5 mg scored, 10 mg scored
+Decanoate for long-acting intramuscular or subcutaneous
+administration 25 mg/mL
+Injection for acute intramuscular administration 2.5 mg/mL
+Elixir 2.5 mg/5 mL
+Concentrate 5 mg/mL
+How to Dose
+Oral: initial 0.5–10 mg/day in divided doses; maximum 40 mg/day
+Intramuscular (short-acting): initial 1.25 mg; 2.5–10 mg/day can be
+given in divided doses every 6–8 hours; maximum dose generally
+10 mg/day
+Dosing Tips –Oral
+Patients receiving atypical antipsychotics may occasionally require a
+“top-up” of a conventional antipsychotic to control aggression or
+violent behavior
+Fluphenazine tablets 2.5 mg, 5 mg, and 10 mg contain tartrazine,
+which can cause allergic reactions, especially in patients sensitive to
+aspirin
+Oral solution should not be mixed with drinks containing caffeine,
+tannic acid (tea), or pectinates (apple juice)
+
+
+
+
+<<<PAGE 932>>>
+
+How to Stop
+Slow down-titration of oral formulation (over 6 to 8 weeks),
+especially when simultaneously beginning a new antipsychotic
+while switching (i.e., cross-titration)
+Rapid oral discontinuation may lead to rebound psychosis and
+worsening of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after fluphenazine is discontinued
+Pharmacokinetics
+Mean half-life of oral formulation approximately 15 hours
+Mean half-life of intramuscular formulation approximately 6.8–9.6
+days
+Drug Interactions
+May decrease the effects of levodopa, dopamine agonists
+May increase the effects of antihypertensive drugs except for
+guanethidine, whose antihypertensive actions fluphenazine may
+antagonize
+Additive effects may occur if used with CNS depressants
+Additive anticholinergic effects may occur if used with atropine or
+related compounds
+Alcohol and diuretics may increase the risk of hypotension
+
+
+
+
+<<<PAGE 934>>>
+
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+As with any antipsychotic, use with caution in patients with history
+of seizures
+Do Not Use
+If patient is in a comatose state or has CNS depression
+If patient is taking cabergoline, pergolide, or metrizamide
+If there is a proven allergy to fluphenazine
+If there is a known sensitivity to any phenothiazine
+Decanoate and enanthate injectable formulations are contraindicated
+in children under age 12
+
+Special Populations
+Renal Impairment
+Use with caution; titration should be slower
+Hepatic Impairment
+Use with caution; titration should be slower
+Cardiac Impairment
+Cardiovascular toxicity can occur, especially orthostatic hypotension
+
+
+
+
+<<<PAGE 936>>>
+
+There is a risk of abnormal muscle movements and withdrawal
+symptoms in newborns whose mothers took an antipsychotic during
+the third trimester; symptoms may include agitation, abnormally
+increased or decreased muscle tone, tremor, sleepiness, severe
+difficulty breathing, and difficulty feeding
+Reports of drug-induced parkinsonism, jaundice, hyperreflexia,
+hyporeflexia in infants whose mothers took a phenothiazine during
+pregnancy
+Fluphenazine should only be used during pregnancy if clearly
+indicated
+Psychotic symptoms may worsen during pregnancy and some form
+of treatment may be necessary
+Atypical antipsychotics may be preferable to conventional
+antipsychotics or anticonvulsant mood stabilizers if treatment is
+required during pregnancy
+Breast Feeding
+Some drug is found in mother’s breast milk
+Effects on infant have been observed (dystonia, tardive dyskinesia,
+sedation)
+
+✽ Recommended either to discontinue drug or bottle feed
+The Art Of Psychopharmacology
+
+
+
+
+<<<PAGE 937>>>
+
+Potential Advantages
+Intramuscular formulation for emergency use
+Relatively rapid onset of LAI (but see fluphenazine decanoate after
+Pearls section)
+Potential Disadvantages
+Patients with tardive dyskinesia
+Children
+Elderly
+Primary Target Symptoms
+Positive symptoms of psychosis
+Motor and autonomic hyperactivity
+Violent or aggressive behavior
+Pearls
+Fluphenazine is a high-potency phenothiazine
+Less risk of sedation and orthostatic hypotension but greater risk of
+drug-induced parkinsonism than with low-potency phenothiazines
+Not shown to be effective for behavioral problems in mental
+retardation
+Patients have very similar antipsychotic responses to any
+conventional antipsychotic, which is different from atypical
+
+
+
+
+<<<PAGE 938>>>
+
+antipsychotics where antipsychotic responses of individual patients
+can occasionally vary greatly from one atypical antipsychotic to
+another
+Patients with inadequate responses to atypical antipsychotics may
+benefit from a trial of augmentation with a conventional
+antipsychotic such as fluphenazine or from switching to a
+conventional antipsychotic such as fluphenazine
+However, long-term polypharmacy with a combination of a
+conventional antipsychotic such as fluphenazine with an atypical
+antipsychotic may combine their side effects without clearly
+augmenting the efficacy of either
+For treatment-resistant patients, especially those with impulsivity,
+aggression, violence, and self-harm, long-term polypharmacy with 2
+atypical antipsychotics or with 1 atypical antipsychotic and 1
+conventional antipsychotic may be useful or even necessary while
+closely monitoring
+In such cases, it may be beneficial to combine 1 depot antipsychotic
+with 1 oral antipsychotic
+Although a frequent practice by some prescribers, adding 2
+conventional antipsychotics together has little rationale and may
+reduce tolerability without clearly enhancing efficacy
+Fluphenazine Decanoate
+Vehicle
+
+Sesame Oil
+
+
+
+
+<<<PAGE 941>>>
+
+Response threshold is 0.81 ng/mL; plasma levels greater than 2–3
+ng/mL are generally not well tolerated, although treatment-resistant
+cases might tolerate and respond to plasma levels up to 4 ng/mL,
+which is the point of futility if no response and even if tolerated
+The Art Of Switching
+Switching from Oral Antipsychotics to Fluphenazine Decanoate
+
+Discontinuation of oral antipsychotic can begin immediately if
+adequate loading is pursued; otherwise, supplement with oral
+formulation at half-dose for at least 2 weeks
+How to discontinue oral formulations
+Down-titration is not required for: amisulpride, aripiprazole,
+brexpiprazole, cariprazine, paliperidone ER
+1-week down-titration is required for: iloperidone, lurasidone,
+risperidone, ziprasidone
+
+
+
+
+<<<PAGE 942>>>
+
+3–4-week down-titration is required for: asenapine, olanzapine,
+quetiapine
+4+-week down-titration is required for: clozapine
+For patients taking benzodiazepine or anticholinergic medication,
+this can be continued during cross-titration to help alleviate side
+effects such as insomnia, agitation, and/or psychosis. Once the
+patient is stable on LAI, these can be tapered one at a time as
+appropriate.
+
+Suggested Reading
+David A , Adams CE , Eisenbruch M , Quraishi S , Rathbone J. Depot
+fluphenazine decanoate and enanthate for schizophrenia . Cochrane
+Database Syst Rev 2005 ;25 (1 ):CD000307 .
+Ereshefsky L , Saklad SR , Jann MW . Future of depot neuroleptic therapy:
+pharmacokinetic and pharmacodynamic approaches . J Clin Psychiatry
+1984 ;45 (Suppl):50 –9.
+Huhn M , Nikolakopoulou A , Schneider-Thoma J , et al. Comparative
+efficacy and tolerability of 32 oral antipsychotics for the acute treatment of
+adults with multi-episode schizophrenia: a systematic review and network
+meta-analysis . Lancet 2019 ;394 :939–51 .
+Matar HE , Almerie MQ. Oral fluphenazine versus placebo for
+schizophrenia . Cochrane Database Syst Rev 2007 ;24 (1 ):CD006352 .
+
+
+
+
+<<<PAGE 1838>>>
+
+Leong OK , Wong KE , Tay WK , Gill RC . A comparative study of
+pipothiazine palmitate and fluphenazine decanoate in the maintenance of
+remission of schizophrenia . Singapore Med J 1989 ;30 (5 ):436–40 .
+Quraishi S , David A . Depot pipothiazine palmitate and undecylenate for
+schizophrenia . Cochrane Database Syst Rev 2001 ;(3 ):CD001720 .
+Schmidt K . Pipothiazine palmitate: a versatile, sustained-action neuroleptic
+in psychiatric practice . Curr Med Res Opin 1986 ;10 (5 ):326–9 .
+
+
+
+
+<<<PAGE 2571>>>
+
+amphetamine (d), 39
+amphetamine (d,l), 45
+Anafranil (clomipramine), 165
+Anafranil 75 (clomipramine), 165
+Anafranil Retard (clomipramine), 165
+Anatensoi Decanoaat (fluphenazine), 313
+Anatensol (fluphenazine), 313
+Anatensol Concentraat (fluphenazine), 313
+Anatensol Decanoate (fluphenazine), 313
+Ancholactil (chlorpromazine), 153
+Aneural (maprotiline), 465
+Aneurol (diazepam), 229
+Anexate (flumazenil), 293
+Ansilor (lorazepam), 437
+Ansiolin (diazepam), 229
+Ansised (buspirone), 123
+Ansium (diazepam), 229
+Ansium (sulpiride), 741
+Antabuse (disulfiram), 239
+Antalon (pimozide), 627
+Antelepsin (clonazepam), 173
+Anten (doxepin), 255
+Antenex (diazepam), 229
+Antideprin (imipramine), 367
+Antiparkin (selegiline), 705
+Antitussive (diphenhydramine), 235
+Antoderin (oxazepam), 569
+Anxial (buspirone), 123
+
+
+
+
+<<<PAGE 2572>>>
+
+Anxidin (clorazepate), 185
+Anxiolit (oxazepam), 569
+Anxiolit Plus (oxazepam), 569
+Anxiron (buspirone), 123
+Apaurin (diazepam), 229
+Apilepsin (valproate), 829
+Aplenzin (bupropion), 117
+Apo-Alprax (alprazolam), 11
+Apo-Amitriptyline (amitriptyline), 25
+Apo-Buspirone (buspirone), 123
+Apo-Carbamazepine (carbamazepine), 131
+Apo-Clomipramine (clomipramine), 165
+Apo-Clonazepam (clonazepam), 173
+Apo-Clonidine (clonidine), 179
+Apo-Clorazepate (clorazepate), 185
+Apo-Desipramine (desipramine), 207
+Apo-Diazepam (diazepam), 229
+Apo-Doxepin (doxepin), 255
+Apo-Fluoxetine (fluoxetine), 301
+Apo-Fluphenazine (fluphenazine), 313
+Apo-Haloperidol (haloperidol), 347
+Apoh-Hydroxyzine (hydroxyzine), 355
+Apo-Imipramine (imipramine), 367
+Apollonset (diazepam), 229
+Apo-Lorazem (lorazepam), 437
+Aponal (doxepin), 255
+Apo-Oxepam (oxazepam), 569
+Apo-Perphenazine (perphenazine), 607
+
+
+
+
+<<<PAGE 2577>>>
+
+Carbapin (carbamazepine), 131
+Carbatrol (carbamazepine), 131
+Carbium (carbamazepine), 131
+Carbolith (lithium), 415
+Carbolithium (lithium), 415
+Carbymal (carbamazepine), 131
+Cardilac (fluphenazine), 313
+cariprazine, 137
+Carpaz (carbamazepine), 131
+Cassadan (alprazolam), 11
+Cassipa (buprenorphine with naloxone), 111
+Catanidin (clonidine), 179
+Catapres (clonidine), 179
+Catapres-TTS (clonidine), 179
+Cedrol (zolpidem), 871
+Celexa (citalopram), 159
+Cenilene (fluphenazine), 313
+Centedrin (d,l-methylphenidate), 487
+Cereen (haloperidol), 347
+Championyl (sulpiride), 741
+Champix (varenicline), 837
+Chantix (varenicline), 837
+Chemmart (escitalopram), 269
+Chlorazin (chlorpromazine), 153
+chlordiazepoxide, 147
+Chlorpromazin (chlorpromazine), 153
+Chlorpromazina HCl (chlorpromazine), 153
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2579>>>
+
+Concerta (d,l-methylphenidate), 487
+Concordin (protriptyline), 657
+Concordine (protriptyline), 657
+Consta (risperidone), 687
+Contemnol (lithium), 415
+Contrave (naltrexone/bupropion), 541
+Control (lorazepam), 437
+Convulex (valproate), 829
+Convulsofin (valproate), 829
+Cosmopril (selegiline), 705
+Cotempla XR-ODT (d, l-methylphenidate), 487
+cyamemazine, 201
+Cymbalta (duloxetine), 263
+Cytomel (triiodothyronine), 813
+Dalcipran (milnacipran), 503
+Dalmadorm (flurazepam), 321
+Dalmane (flurazepam), 321
+Dalparan (zolpidem), 871
+Dapotum (fluphenazine), 313
+Dapotum Acutum (fluphenazine), 313
+Dapotum D (fluphenazine), 313
+Dapotum Depot (fluphenazine), 313
+Daprimen (amitriptyline), 25
+Darkene (flunitrazepam), 297
+Darleton (sulpiride), 741
+Daytrana (d, l-methylphenidate), 487
+Dayvigo (lemborexant), 395
+Decafen (fluphenazine), 313
+
+
+
+
+<<<PAGE 2580>>>
+
+Decanoate (haloperidol), 347
+Decazate (fluphenazine), 313
+Decentan (fluphenazine), 313
+Decentan (perphenazine), 607
+Decentan-Depot (perphenazine), 607
+Defanyl (amoxapine), 33
+Defobin (chlordiazepoxide), 147
+Deftan (lofepramine), 421
+Degranol (carbamazepine), 131
+Delepsine (valproate), 829
+Delgian (maprotiline), 465
+Delsym (dextromethorphan), 225
+Demolox (amoxapine), 33
+Deniban (amisulpride), 17
+Denion (diazepam), 229
+Depacon (valproate), 829
+Depakene (valproate), 829
+Depakine (LA) (valproate), 829
+Depakine Chrono (valproate), 829
+Depakine Zuur (valproate), 829
+Depakote (valproate), 829
+Depakote ER (valproate), 829
+Depakote sprinkle (valproate), 829
+Depamide (valproate), 829
+Deparkin (valproate), 829
+Depex (sulpiride), 741
+Depixol (flupenthixol), 307
+Depixol-Conc (flupenthixol), 307
+
+
+
+
+<<<PAGE 2586>>>
+
+Equilid (sulpiride), 741
+Equitam (lorazepam), 437
+Er Ding (lofexidine), 427
+Ergenyl (valproate), 829
+Ergocalm (lorazepam), 437
+Eridan (diazepam), 229
+Erocap (fluoxetine), 301
+escitalopram, 269
+Esculid (diazepam), 229
+Esilgan (estazolam), 281
+Esipride (sulpiride), 741
+Eskalith (lithium), 415
+Eskalith CR (lithium), 415
+Eskazine (trifluoperazine), 803
+esketamine, 275
+Esparon (alprazolam), 11
+estazolam, 281
+Estorra (eszopiclone), 285
+eszopiclone, 285
+Ethipam (diazepam), 229
+Ethipramine (imipramine), 367
+Euhypnos (temazepam), 755
+Euipnos (temazepam), 755
+Eurosan (diazepam), 229
+Eutimil (paroxetine), 593
+Eutimox (fluphenazine), 313
+Evacalm (diazepam), 229
+Evekeo (amphetamine d,l), 45
+
+
+
+
+<<<PAGE 2588>>>
+
+Fluanxol LP 100 mg/mL (flupenthixol), 307
+Fluanxol LP 20 mg/mL (flupenthixol), 307
+Fluanxol Retard (flupenthixol), 307
+Fluctin (fluoxetine), 301
+Fluctine (fluoxetine), 301
+Fludecate (fluphenazine), 313
+Flufenazin (fluphenazine), 313
+Flufenazin dekanoat (fluphenazine), 313
+Flufenazin Enantat (fluphenazine), 313
+flumazenil, 293
+Fluni OPT (flunitrazepam), 297
+Flunimerck (flunitrazepam), 297
+Fluninoc (flunitrazepam), 297
+Flunipam (flunitrazepam), 297
+Flunitrax (flunitrazepam), 297
+flunitrazepam, 297
+Flunox (flurazepam), 321
+Fluocim (fluoxetine), 301
+Fluoxeren (fluoxetine), 301
+fluoxetine, 301
+fluoxetine/olanzapine combination, 301 , 559
+Fluoxifar (fluoxetine), 301
+Fluoxin (fluoxetine), 301
+Flupam (flunitrazepam), 297
+flupenthixol, 307
+fluphenazine, 313
+flurazepam, 321
+Fluscand (flunitrazepam), 297
+
+
+
+
+<<<PAGE 2597>>>
+
+Lorsilan (lorazepam), 437
+Lorzem (lorazepam), 437
+Lovan (fluoxetine), 301
+Loxapac (loxapine), 443
+loxapine, 443
+Loxitane (loxapine), 443
+Lucemyra (lofexidine), 427
+Ludiomil (maprotiline), 465
+Lullan (perospirone), 601
+lumateperone, 451
+Lumin (mianserin), 495
+Lunesta (eszopiclone), 285
+lurasidone, 457
+Lustral (sertraline), 721
+Luvox (fluvoxamine), 325
+Luvox SR (fluvoxamine), 325
+Lyogen (fluphenazine), 313
+Lyogen Depot (fluphenazine), 313
+Lyoridin Depot (fluphenazine), 313
+Lyorodin (fluphenazine), 313
+Lyrica (pregabalin), 647
+Lyrica CR (pregabalin), 647
+
+
+
+
+<<<PAGE 2600>>>
+
+Mialin (alprazolam), 11
+Mianeurin (mianserin), 495
+Miansan (mianserin), 495
+mianserin, 495
+Miansin (mianserin), 495
+Miaxan (mianserin), 495
+midazolam, 499
+Milithin (lithium), 415
+milnacipran, 503
+Minipress (prazosin), 643
+Minizide (prazosin), 643
+Mipralin (imipramine), 367
+Mirbanil (sulpiride), 741
+Mirenil (fluphenazine), 313
+Mirenil Prolongatum (fluphenazine), 313
+Mirfat (clonidine), 179
+Mirfudorm (oxazepam), 569
+Mirpan (maprotiline), 465
+mirtazapine, 509
+Moban (molindone), 527
+Mocloamine (moclobemide), 515
+moclobemide, 515
+modafinil, 521
+Modalina (trifluoperazine), 803
+Modecate (fluphenazine), 313
+Modiodal (modafinil), 521
+Moditen (fluphenazine), 313
+Moditen Action Prolongee (fluphenazine), 313
+
+
+
+
+<<<PAGE 2601>>>
+
+Moditen Depot (fluphenazine), 313
+Moditen Enanthate (fluphenazine), 313
+Modium (lorazepam), 437
+molindone, 527
+Molipaxin (trazodone), 793
+Motipress (nortriptyline), 551
+Motival (nortriptyline), 551
+Motivan (paroxetine), 593
+Movergan (selegiline), 705
+Moverin (selegiline), 705
+Moxadil (amoxapine), 33
+Multipax (hydroxyzine), 355
+Multum (chlordiazepoxide), 147
+Murelax (oxazepam), 569
+Mutan (fluoxetine), 301
+Mydayis (amphetamine d, l), 45
+Mylproin (valproate), 829
+Mysimba (naltrexone/bupropion), 541
+Nailin (nortriptyline), 551
+Nalin (nortriptyline), 551
+nalmefene, 533
+naloxone with buprenorphine, 111
+naltrexone, 537
+naltrexone/bupropion, 541
+Namenda (memantine), 473
+Namenda XR (memantine XR), 473
+Namzaric (memantine/donepezil combination), 243 , 473
+Nansius (clorazepate), 185
+
+
+
+
+<<<PAGE 2605>>>
+
+Nu-Loraz (lorazepam), 437
+Nuplazid (pimavanserin), 623
+Nu-Trazodone (trazodone), 793
+Nu-Trimipramine (trimipramine), 817
+Nuvigil (armodafinil), 65
+Nycoflox (fluoxetine), 301
+Nylipark (sulpiride), 741
+Oasil (chlordiazepoxide), 147
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+Olasek (olanzapine), 559
+Oleptro (trazodone XR), 793
+Omaha (sulpiride), 741
+Omca (fluphenazine), 313
+Omiryl (sulpiride), 741
+Omnali Esteve (chlordiazepoxide), 147
+Omnipress (amoxapine), 33
+Oniria (quazepam), 663
+Opamin (oxazepam), 569
+Opamox (oxazepam), 569
+Opiran (pimozide), 627
+Orap (pimozide), 627
+Orfidal (lorazepam), 437
+Orfilept (valproate), 829
+Orfiril (valproate), 829
+Orfiril Retard (valproate), 829
+Ormodon (temazepam), 755
+Orsanil (thioridazine), 759
+
+
+
+
+<<<PAGE 2606>>>
+
+Orthon (fluoxetine), 301
+Oxabenz (oxazepam), 569
+Oxahexal (oxazepam), 569
+Oxaline (oxazepam), 569
+Oxanid (oxazepam), 569
+Oxapam (oxazepam), 569
+Oxapax (oxazepam), 569
+Oxaphar (oxazepam), 569
+Oxa-Puren (oxazepam), 569
+Oxascand (oxazepam), 569
+oxazepam, 569
+oxcarbazepine, 575
+Oxepam (oxazepam), 569
+Oxepam Expidet (oxazepam), 569
+Ox-Pam (oxazepam), 569
+Oxtellar XR (oxcarbazepine), 575
+Oxyperazine (trifluoperazine), 803
+Ozodeprin (sulpiride), 741
+Paceum (diazepam), 229
+Pacinol (fluphenazine), 313
+Pacium (diazepam), 229
+paliperidone, 581
+Pamelor (nortriptyline), 551
+Panix (alprazolam), 11
+Pantrop Retard (chlordiazepoxide), 147
+Paracefan (clonidine), 179
+Paratil (sulpiride), 741
+Parkinyl (selegiline), 705
+
+
+
+
+<<<PAGE 2607>>>
+
+Parmodalin (tranylcypromine), 787
+Parmodalin (trifluoperazine), 803
+Parnate (tranylcypromine), 787
+paroxetine, 593
+paroxetine CR, 593
+Parstelin (tranylcypromine), 787
+Parstelin (trifluoperazine), 803
+Pasrin (buspirone), 123
+Pax (diazepam), 229
+Paxal (alprazolam), 11
+Paxam (clonazepam), 173
+Paxil (paroxetine), 593
+Paxil CR (paroxetine CR), 593
+Paxium (chlordiazepoxide), 147
+Paxtibi (nortriptyline), 551
+Pazolan (alprazolam), 11
+Pefanium/Pefanic (chlordiazepoxide), 147
+Peratsin (perphenazine), 607
+Peratsin Dekanoaatti (perphenazine), 607
+Peratsin Enantaati (perphenazine), 607
+Perfenazin (perphenazine), 607
+Peridol (haloperidol), 347
+Permitil (fluphenazine), 313
+perospirone, 601
+perphenazine, 607
+Perseris (risperidone injection), 687
+Pertofrane (desipramine), 207
+Pertofrin (desipramine), 207
+
+
+
+
+<<<PAGE 2608>>>
+
+Phasal (lithium), 415
+phenelzine, 613
+phentermine/topiramate, 619
+Piefol (trifluoperazine), 803
+pimavanserin, 623
+pimozide, 627
+Piportil (pipothiazine), 633
+Piportil Depot (pipothiazine), 633
+Piportil L4 (pipothiazine), 633
+Piportil Longum-4 (pipothiazine), 633
+Piportil palmitate (pipothiazine), 633
+Piportyl palmitat (pipothiazine), 633
+pipothiazine, 633
+Pipotiazine (pipothiazine), 633
+Pirium (pimozide), 627
+pitolisant, 639
+Placidia (lorazepam), 437
+Placil (clomipramine), 165
+Placinoral (lorazepam), 437
+Planum (temazepam), 755
+Plegomazin (chlorpromazine), 153
+Plenur (lithium), 415
+Plurimen (selegiline), 705
+PMS-carbamazepine (carbamazepine), 131
+PMS-Clonazepam (clonazepam), 173
+PMS-Desipramine (desipramine), 207
+PMS-Fluoxetine (fluoxetine), 301
+PMS-Fluphenazine (fluphenazine), 313
+
+
+
+
+<<<PAGE 2609>>>
+
+PMS-Fluphenazine Decanoate (fluphenazine), 313
+PMS-Haloperidol (haloperidol), 347
+PMS-Hydroxyzine (hydroxyzine), 355
+PMS-Lithium (lithium), 415
+PMS-Methylphenidate (d,l-methylphenidate), 487
+PMS-Trazodone (trazodone), 793
+Podium (diazepam), 229
+Poldoxin (doxepin), 255
+Polysal (amitriptyline), 25
+Portal (fluoxetine), 301
+Pragmarel (trazodone), 793
+Praxiten (oxazepam), 569
+prazosin, 643
+pregabalin, 647
+Priadel (lithium), 415
+Prisdal (citalopram), 159
+Prisma (mianserin), 495
+Pristiq (desvenlafaxine), 215
+Probuphine (buprenorphine), 111
+ProCentra (amphetamine d), 39
+Pro Dorm (lorazepam), 437
+Procythol (selegiline), 705
+Prolixin (fluphenazine), 313
+Prolixin Decanoate (fluphenazine), 313
+Prolixin Enanthate (fluphenazine), 313
+Prolongatum (fluphenazine), 313
+Pronervon T (temazepam), 755
+Propam (diazepam), 229
+
+
+
+
+<<<PAGE 2612>>>
+
+Relaxedans (chlordiazepoxide), 147
+Reliberan (chlordiazepoxide), 147
+Relistor (naltrexone), 537
+Relprevv (olanzapine), 559
+Remdue (flurazepam), 321
+Remergil (mirtazapine), 509
+Remeron (mirtazapine), 509
+Remestan (temazepam), 755
+Reminyl (galantamine), 337
+Reneuron (fluoxetine), 301
+Repazine (chlorpromazine), 153
+Reposium (temazepam), 755
+Reseril (nefazodone), 545
+Restful (sulpiride), 741
+Restoril (temazepam), 755
+Retinyl (maprotiline), 465
+Reval (diazepam), 229
+Revatio (sildenafil), 729
+Revia (naltrexone), 537
+Rexer (mirtazapine), 509
+Rexulti (brexpiprazole), 103
+Rho-Doxepin (doxepin), 255
+Rho-Fluphenazine Decanoate (fluphenazine), 313
+Rho-Haloperidol (haloperidol), 347
+Rho-Trimine (trimipramine), 817
+Ridazine (thioridazine), 759
+Rilamir (triazolam), 799
+Rimarix (moclobemide), 515
+
+
+
+
+<<<PAGE 2616>>>
+
+Serpax (oxazepam), 569
+sertindole, 715
+Sertofren (desipramine), 207
+sertraline, 721
+Serzone (nefazodone), 545
+Setous (zotepine), 883
+Sevinol (fluphenazine), 313
+Sevium (haloperidol), 347
+Sibason (diazepam), 229
+Sicorelax (diazepam), 229
+Sigacalm (oxazepam), 569
+Sigaperidol (haloperidol), 347
+Signopam (temazepam), 755
+sildenafil, 729
+Silenor (doxepin), 255
+Silphen (diphenhydramine), 235
+Sinequan (doxepin), 255
+Sinquan (doxepin), 255
+Sinquane (doxepin), 255
+Siqualone (fluphenazine), 313
+Siqualone Decanoat (fluphenazine), 313
+Siqualone Enantat (fluphenazine), 313
+Sirtal (carbamazepine), 131
+S-ketamine (esketamine), 275
+SK-Pramine (imipramine), 367
+Sobile (oxazepam), 569
+Sobril (oxazepam), 569
+Socian (amisulpride), 17
+
+
+
+
+<<<PAGE 2634>>>
+
+cyamemazine, 201
+doxepin , 255
+fluoxetine, 301
+flupenthixol, 307
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+
+
+
+
+<<<PAGE 2650>>>
+
+diazepam , 229
+hydroxyzine , 355
+lorazepam , 437
+midazolam , 499
+Pruritus
+doxepin, 255
+hydroxyzine , 355
+Pseudobulbar affect
+dextromethorphan (with quinidine) , 225
+Psychosis
+alprazolam (adjunct), 11
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine , 313
+haloperidol , 347
+iloperidone, 359
+
+
+
+
+<<<PAGE 2660>>>
+
+nortriptyline, 551
+paroxetine, 593
+phenelzine, 613
+protriptyline, 657
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+triiodothyronine, 813
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Antipsychotics
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine, 153
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine, 313
+haloperidol, 347
+
+
+
+
+<<<PAGE 2666>>>
+
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam (adjunct), 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+pregabalin (adjunct), 647
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+valproate (divalproex), 829
+ziprasidone, 863
+zonisamide, 875
+
+

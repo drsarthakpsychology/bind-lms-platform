@@ -1,0 +1,1223 @@
+<<<PAGE 22>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+practice before the discovery of β-endorphin; marijuana
+was smoked before the discovery of cannabinoid
+receptors and endocannabinoids; the benzodiazepines
+Valium (diazepam) and Xanax (alprazolam) were
+prescribed before the discovery of benzodiazepine
+receptors; and the antidepressants Elavil (amitriptyline)
+and Prozac (fluoxetine) entered clinical practice before
+molecular clarification of the serotonin transporter
+site. This underscores the point that the great majority
+of drugs that act in the central nervous system act
+upon the process of neurotransmission. Indeed, this
+apparently occurs at times in a manner that can mimic
+the actions of the brain itself, when the brain uses its
+own chemicals.
+Input to any neuron can involve many different
+neurotransmitters coming from many different neuronal
+circuits. Understanding these inputs to neurons within
+functioning circuits can provide a rational basis for
+selecting and combining therapeutic agents. This
+theme is discussed extensively in each chapter on the
+various psychiatric disorders. The idea is that for the
+modern psychopharmacologist to influence abnormal
+neurotransmission in patients with psychiatric disorders,
+it may be necessary to target neurons in specific circuits.
+Since these networks of neurons send and receive
+information via a variety of neurotransmitters, it may
+therefore be not only rational but necessary to use
+multiple drugs with multiple neurotransmitter actions
+for patients with psychiatric disorders, especially if single
+agents with single neurotransmitter mechanisms are not
+effective in relieving symptoms.
+Neurotransmission: Classic, Retrograde, and Volume
+
+Classic neurotransmission begins with an electrical
+process by which neurons send electrical impulses from
+one part of the cell to another part of the same cell via
+their axons (see neuron A of Figure 1-3). However,
+these electrical impulses do not jump directly to other
+neurons. Classic neurotransmission between neurons
+involves one neuron hurling a chemical messenger, or
+neurotransmitter, at the receptors of a second neuron
+(see the synapse between neuron A and neuron B in
+Figure 1-3). This happens frequently but not exclusively
+at the sites of synaptic connections. In the human brain,
+a hundred billion neurons each make thousands of
+synapses with other neurons for an estimated trillion
+chemically neurotransmitting synapses.
+Communication between all these neurons at synapses
+is chemical, not electrical. That is, an electrical impulse
+
+6
+
+in the first neuron is converted to a chemical signal at
+the synapse between it and a second neuron, in a process
+known as excitation–secretion coupling, the first stage of
+chemical neurotransmission. This occurs predominantly
+but not exclusively in one direction, from the presynaptic
+axon terminal to a second postsynaptic neuron (Figures
+1-2 and 1-3). Finally, neurotransmission continues in
+the second neuron either by converting the chemical
+information from the first neuron back into an electrical
+impulse in the second neuron, or, perhaps more elegantly,
+by the chemical information from the first neuron
+triggering a cascade of further chemical messages within
+the second neuron to change that neuron’s molecular and
+genetic functioning (Figure 1-3).
+An interesting twist to chemical neurotransmission
+is the discovery that postsynaptic neurons can also
+“talk back” to their presynaptic neurons. They can do
+this via retrograde neurotransmission from the second
+neuron to the first at the synapse between them (Figure
+1-5, right panel). Chemicals produced specifically as
+retrograde neurotransmitters at some synapses include
+the endocannabinoids (EC, also known as “endogenous
+marijuana”), which are synthesized in the postsynaptic
+neuron. They are then released and diffuse to presynaptic
+cannabinoid receptors such as the CB1 or cannabinoid
+1 receptor (Figure 1-5, right panel). Another retrograde
+neurotransmitter is the gaseous neurotransmitter nitric
+oxide (NO), which is synthesized postsynaptically and
+then diffuses out of the postsynaptic membrane and
+into the presynaptic membrane to interact with cyclic
+guanosine monophosphate (cGMP)-sensitive targets
+there (Figure 1-5, right panel). A third type of retrograde
+neurotransmitter are neurotrophic factors such as nerve
+growth factor (NGF), which is released from postsynaptic
+sites, and then diffuses to the presynaptic neuron,
+where it is taken up into vesicles, and transported all
+the way back to the cell nucleus via retrograde transport
+systems to interact with the genome there (Figure 1-5,
+right panel). What these retrograde neurotransmitters
+have to say to the presynaptic neuron and how this
+modifies or regulates the communication between pre
+and postsynaptic neuron are subjects of intense active
+investigation.
+In addition to “reverse” or retrograde
+neurotransmission at synapses, some neurotransmission
+does not need a synapse at all! Neurotransmission
+without a synapse is called volume neurotransmission, or
+nonsynaptic diffusion neurotransmission (examples are
+shown in Figures 1-6 through 1-8). Chemical messengers
+
+
+
+
+<<<PAGE 49>>>
+
+Chapter 2: Transporters, Receptors, and Enzymes
+
+Table 2-3 Vesicular neurotransmitter transporters
+
+Transporter
+
+Common abbreviation
+
+Gene family
+
+Endogenous substrate
+
+Vesicular monoamine
+transporters 1 and 2
+
+VMAT1
+VMAT2
+
+SLC18
+
+Serotonin
+Dopamine
+Histamine
+Norepinephrine
+
+Vesicular acetylcholine transporter
+
+VAChT
+
+SLC18
+
+Acetylcholine
+
+Vesicular inhibitory
+amino acid transporter
+
+VIAAT
+
+SLC32
+
+GABA
+
+Vesicular glutamate
+transporters 1–3
+
+vGluT1–3
+
+SLC17
+
+Glutamate
+
+because it requires energy to concentrate monoamines
+into a presynaptic neuron. That energy is provided
+by transporters in the SLC6 gene family coupling the
+“downhill” transport of sodium (down a concentration
+gradient) with the “uphill” transport of the monoamine
+(up a concentration gradient) (Figure 2-2A). Thus,
+the monoamine transporters are really sodiumdependent cotransporters; in most cases, this involves
+the additional cotransport of chloride, and in some
+cases the countertransport of potassium. All of this is
+made possible by coupling monoamine transport to
+the activity of a sodium–potassium ATPase (adenosine
+triphosphatase), an enzyme sometimes called the
+“sodium pump” that creates the downhill gradient for
+sodium by continuously pumping sodium out of the
+neuron (Figure 2-2A).
+The structure of a monoamine neurotransmitter
+transporter from the SLC6 family has recently been
+proposed to have binding sites not only for the
+monoamine, but also for two sodium ions (Figure 2-2A).
+In addition, these transporters may exist as dimers,
+or two copies working together with each other, but
+the manner in which they cooperate is not yet well
+understood and is not shown in the figures. There
+are other binding sites on this transporter – not well
+defined – for several drugs such as the many selective
+serotonin reuptake inhibitors (known as SSRIs) and
+other related agents used to treat unipolar depression.
+When these drugs bind to the transporter, they inhibit
+reuptake of monoamines. These drugs do not bind to the
+substrate site (where the monoamine itself binds to the
+transporter) and are not transported into the neuron, and
+thus are said to be allosteric (i.e., “other site”).
+In the absence of sodium, there is low affinity of the
+monoamine transporter for its monoamine substrate,
+
+2
+
+and in this case, there is binding of neither sodium
+nor monoamine. An example of this is shown for the
+serotonin transporter SERT in Figure 2-2A where the
+transport “wagon” has flat tires indicating no binding
+of sodium, as well as absence of binding of serotonin
+to its substrate binding site since the transporter has
+low affinity for serotonin in the absence of sodium. The
+allosteric site for a drug that inhibits this transporter is
+also empty (the front seat in Figure 2-2A). However, in
+Figure 2-2A in the presence of sodium ions, the tires are
+now “inflated” by sodium binding and serotonin can
+now also bind to its substrate site on SERT. The situation
+is now primed for serotonin transport back into the
+serotonergic neuron, along with cotransport of sodium
+and chloride down the gradient and into the neuron
+and countertransport of potassium out of the neuron
+(Figure 2-2A). If a drug binds to an inhibitory allosteric
+site, namely the front seat on the SERT transporter wagon
+in Figure 2-2A (i.e., drugs such as the selective serotonin
+reuptake inhibitor fluoxetine [Prozac]), this reduces the
+affinity of the serotonin transporter SERT for its substrate
+serotonin, and serotonin binding is prevented.
+Why does this matter? Blocking the presynaptic
+monoamine transporter has a huge impact on
+neurotransmission at any synapse that utilizes
+that neurotransmitter. The normal recapture of
+neurotransmitter by the presynaptic neurotransmitter
+transporter in Figure 2-2A keeps the levels of this
+neurotransmitter from accumulating in the synapse.
+Normally, following release from the presynaptic
+neuron, neurotransmitters only have time for a brief
+dance on their synaptic receptors, and the party is soon
+over because the monoamines climb back into the
+presynaptic neuron on their transporters (Figure 2-2A).
+If one wants to enhance normal synaptic activity of
+33
+
+
+
+
+<<<PAGE 242>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+5H
+
+Figure 5-53 Lurasidone’s
+pharmacological and binding
+profile. This figure portrays a qualitative
+consensus of current thinking about
+the binding properties of lurasidone.
+Lurasidone has a relatively simple
+pharmacological profile. It binds most
+potently to the D4 receptor, the effects
+of which are not well understood,
+and to the 5HT7 receptor, which
+may contribute to efficacy for mood,
+cognitive, and sleep symptoms. As with
+all agents discussed in this chapter,
+binding properties vary greatly with
+technique and from one laboratory
+to another; they are constantly being
+revised and updated.
+
+T1
+A
+
+5H
+
+T2
+
+A
+
+lurasidone
+
+5H
+
+T7
+
+D2
+D4
+
+D4
+
+5HT7
+
+++++ ++++
+
+D2
+
+5HT2A
+
+5HT1A
+
++++
+
++++
+
++++ ++ ++ ++ ++
+
+α2C D3
+
+clozapine. It also has a higher risk for metabolic side
+effects. Olanzapine tends to be used in higher doses than
+originally studied and approved for marketing, especially
+when guided by plasma drug levels, since clinical use
+suggests that higher doses may have greater efficacy,
+especially in patients who have not responded to other
+drugs for psychosis or to olanzapine at lower doses.
+Olanzapine is approved for schizophrenia and for
+maintaining response in schizophrenia (age 13 or older),
+for agitation associated with schizophrenia or with
+bipolar mania (intramuscular), acute bipolar mania/
+mixed mania and maintenance (age 13 or older), and in
+combination with fluoxetine for both bipolar depression
+and treatment-resistant unipolar depression (in the US).
+226
+
+α2A α1
+
+5HT2C
+
++
+
+Perhaps the 5HT2C antagonist properties, with weaker
+α2 antagonist properties (see Figures 5-35 and 5-37
+and also Figure 5-44), especially when combined with
+the 5HT2C antagonist properties of the antidepressant
+fluoxetine (see Chapter 7 on treatments for mood
+disorders), may explain some aspects of olanzapine’s
+apparent efficacy in unipolar and bipolar depression.
+Olanzapine is available as an oral disintegrating tablet,
+as an acute intramuscular injection, and as a long acting
+4-week intramuscular depot. An inhaled formulation
+for rapid onset use is in late clinical development. As
+mentioned earlier, olanzapine is also in late-stage clinical
+testing with the μ-opioid antagonist samidorphan to
+mitigate weight gain and metabolic disturbances.
+
+
+
+
+<<<PAGE 309>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+If blockade of SERT explains the shared clinical and
+pharmacological actions of SSRIs, what explains their
+differences? Although there is no generally accepted
+explanation that accounts for the commonly observed
+clinical phenomena of different efficacy and tolerability
+of various SSRIs in individual patients, it makes sense to
+consider those unique pharmacological characteristics
+of the six SSRIs that are not shared with each other as
+candidates to explain the broad range of individual
+patient reactions to different SSRIs (Figures 7-16 through
+7-21). Each SSRI has secondary pharmacological actions
+other than SERT blockade, and no two SSRIs have
+identical secondary pharmacological characteristics.
+Whether these secondary binding profiles can account for
+the differences in efficacy and tolerability in individual
+patients remains to be proven. However, it does lead to
+provocative hypothesis generation and gives a rational
+basis for psychopharmacologists trying more than one of
+these agents rather than thinking “they are all the same.”
+Sometimes only an empiric trial of different SSRIs will
+lead to the best match of drug to an individual patient.
+Fluoxetine: An SSRI with 5HT2C Antagonist Properties
+
+In addition to serotonin reuptake inhibition, fluoxetine
+also has 5HT2C antagonist actions that may explain
+many of its unique clinical properties (Figure 7-16).
+5HT2C antagonism may contribute to its antidepressant
+actions and also to its efficacy in other disorders,
+especially in eating disorders. Other drugs for unipolar
+
+fluoxetine
+5HT2C
+
+NET
+
+SERT
+SERT
+
+Figure 7-16 Fluoxetine. In addition to serotonin reuptake
+inhibition, fluoxetine has norepinephrine reuptake inhibition
+(NRI) and serotonin 2C antagonist actions (5HT2C). 5HT2C
+antagonism can lead to disinhibition of norepinephrine and
+dopamine; this action may be responsible for fluoxetine’s
+activating effects. NRI may be clinically relevant only at very high
+doses.
+
+depression with 5HT2C antagonist properties include
+trazodone, mirtazapine, agomelatine, and some tricyclic
+antidepressants, and these will be described below.
+Finally, two serotonin 2A/dopamine 2 antagonists,
+quetiapine (Figure 5-45) and olanzapine (Figure 5-44),
+also have potent 5HT2C antagonist properties. Both
+agents are used to treat psychosis (see Chapter 5) but are
+also approved for augmenting other drugs for unipolar
+depression, treatment-resistant unipolar depression,
+and bipolar depression. Blocking serotonin action at
+5HT2C receptors disinhibits (i.e., enhances) release of
+both norepinephrine and dopamine, actions theoretically
+beneficial for the treatment of depression (see Chapter
+6 and Figure 6-24B and also the discussion below on
+agomelatine).
+The good news about 5HT2C antagonism may be
+that it is generally activating, and the reason why
+many patients, even from the first dose, detect an
+energizing and fatigue-reducing effect of fluoxetine, with
+improvement in concentration and attention as well. This
+mechanism is perhaps best matched to depressed patients
+with reduced positive affect (Figure 6-41), hypersomnia,
+psychomotor retardation, apathy, and fatigue. Fluoxetine
+is also approved in some countries in combination with
+olanzapine for treatment-resistant unipolar depression
+and for bipolar depression. Since olanzapine also has
+5HT2C antagonist actions (Figure 5-44), it may be that
+adding the 5HT2C antagonist actions of olanzapine to
+those of fluoxetine could theoretically lead to further
+enhanced dopamine and norepinephrine release in
+the cortex to mediate the antidepressant actions of this
+combination. 5HT2C antagonism may also contribute
+to the anti-bulimia effect of higher doses of fluoxetine,
+the only SSRI approved for the treatment of this eating
+disorder. The bad news could be that 5HT2C antagonist
+actions of fluoxetine may contribute to this agent being
+sometimes less well matched to patients with agitation,
+insomnia, and anxiety, who may experience unwanted
+activation and even a panic attack if given an agent that
+further activates them.
+Fluoxetine also has weak norepinephrine reuptake
+blocking properties (Figure 7-16), which may become
+clinically relevant at very high doses. Fluoxetine has
+a long half-life (2–3 days), and its active metabolite
+an even longer half-life (2 weeks). The long halflife is advantageous in that it seems to reduce the
+withdrawal reactions that are characteristic of sudden
+discontinuation of some SSRIs, but it also means that
+it takes a long time to clear the drug and its active
+
+293
+
+7
+
+
+
+
+<<<PAGE 310>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+metabolite after discontinuing fluoxetine, and prior
+to starting other agents such as a monoamine oxidase
+(MAO) inhibitor. Fluoxetine is not only available as a
+once-daily formulation, but also as a once-weekly oral
+dosage formulation.
+Sertraline: An SSRI with Dopamine Transporter (DAT)
+Inhibition and σ1 Binding
+
+This SSRI has two candidate mechanisms that
+distinguish it: dopamine transporter (DAT) inhibition
+and σ1 receptor binding (Figure 7-17). The DAT
+inhibitory actions are controversial since they are
+weaker than the SERT inhibitory actions, thus leading
+some experts to suggest that there is not sufficient
+DAT occupancy by sertraline to be clinically relevant.
+However, as will be discussed later in the section on
+norepinephrine–dopamine reuptake inhibitors (NDRIs),
+it is not clear that high degrees of DAT occupancy
+are necessary or even desirable in order to contribute
+to antidepressant actions. That is, perhaps only a
+small amount of DAT inhibition is sufficient to cause
+improvement in energy, motivation, and concentration,
+especially when added to another action such as SERT
+inhibition. In fact, high-impact DAT inhibition is the
+property of reinforcing stimulants, including cocaine
+and methamphetamine, and would not generally be
+desired in a drug for depression (see discussion of DAT
+inhibitors in Chapter 11 on ADHD and Chapter 13 on
+impulsivity, compulsivity, and addiction).
+
+sertraline
+
+Anecdotally, clinicians have observed the mild and
+desirable activating actions of sertraline in some patients
+with “atypical depression,” improving symptoms of
+hypersomnia, low energy, and mood reactivity. A favorite
+combination of some clinicians for depressed patients is
+to add bupropion to sertraline (i.e., Wellbutrin to Zoloft,
+sometimes called “Well-oft”), adding together the weak
+DAT inhibitory properties of each agent. Clinicians have
+also observed the overactivation of some patients with
+panic disorder by sertraline, thus requiring slower dose
+titration in some patients with anxiety symptoms. All of
+these actions of sertraline are consistent with weak DAT
+inhibitory actions contributing to its clinical portfolio of
+actions.
+The σ1 actions of sertraline are not well understood,
+but might contribute to its anxiolytic effects and
+especially to its effects in psychotic and delusional
+depression, where sertraline may have advantageous
+therapeutic effects compared to some other SSRIs.
+Paroxetine: An SSRI with Muscarinic Anticholinergic and
+Norepinephrine Transporter (NET) Inhibitory Actions
+
+This SSRI tends to be more calming, even sedating, early
+in treatment compared to the more activating actions of
+both fluoxetine and sertraline discussed above. Perhaps
+the mild anticholinergic actions of paroxetine contribute
+to this clinical profile (Figure 7-18). Paroxetine also
+has weak norepinephrine transporter (NET) inhibitory
+properties, which could contribute to its efficacy in
+depression, especially at high doses. The advantages of
+
+paroxetine
+DAT
+
+M1
+
+NET
+
+SERT
+SERT
+
+SERT
+SERT
+
+NOS
+
+Figure 7-17 Sertraline. Sertraline has dopamine transporter
+(DAT) inhibition and σ1 receptor binding in addition to serotonin
+reuptake inhibition (SRI). The clinical relevance of sertraline’s
+DAT inhibition is unknown, although it may improve energy,
+motivation, and concentration. Its sigma properties may
+contribute to anxiolytic actions and may also be helpful in
+patients with psychotic depression.
+
+294
+
+Figure 7-18 Paroxetine. In addition to serotonin reuptake
+inhibition, paroxetine has mild anticholinergic actions
+(M1), which can be calming or possibly sedating; weak
+norepinephrine transporter (NET) inhibition, which may
+contribute to further antidepressant actions; and inhibition of
+the enzyme nitric oxide synthase (NOS), which may contribute to
+sexual dysfunction.
+
+
+
+
+<<<PAGE 323>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Agomelatine Releases Norepinephrine and Dopamine in the Frontal Cortex
+350
+
+agomelatine
+vehicle
+
+DA change from Basal (%)
+
+NE change from Basal (%)
+
+250
+
+200
+
+150
+100
+
+300
+250
+200
+150
+100
+
+0
+
+60
+
+120
+
+180
+
+0
+
+time (min)
+
+60
+
+120
+
+180
+
+time (min)
+
+DA release
+
+NE release
+
+prefrontal cortex
+overactivation
+
+NE
+neuron
+
+locus coeruleus
+
+VTA
+
+DA
+neuron
+
+7
+
+GABA
+interneurons
+5HT2C
+
+agomelatine
+
+agomelatine
+
+5HT
+neuron
+
+raphe
+
+brainstem neurotransmitter centers
+Figure 7-38 Agomelatine releases norepinephrine and dopamine in the prefrontal cortex. Normally, serotonin binding at 5HT2C
+receptors on γ-aminobutyric acid (GABA) interneurons in the brainstem inhibits norepinephrine (NE) and dopamine (DA) release in the
+prefrontal cortex. When a 5HT2C antagonist such as agomelatine binds to 5HT2C receptors on GABA interneurons (bottom red circle), it
+prevents serotonin (5HT) from binding there and thus prevents inhibition of NE and DA release in the prefrontal cortex; in other words, it
+disinhibits their release (top red circles).
+
+on fluoxetine, 5HT2C antagonist actions are a property
+of several drugs used to treat unipolar depression
+(agomelatine, fluoxetine, trazodone, mirtazapine,
+some tricyclic antidepressants) and bipolar depression
+(olanzapine and quetiapine). 5HT2C receptors are
+located in the midbrain raphe and prefrontal cortex
+where they regulate the release of dopamine and
+norepinephrine, an action thought to improve depressive
+symptoms (see Figure 7-38). 5HT2C receptors are also
+
+localized in the suprachiasmatic nucleus (SCN) of the
+hypothalamus, the brain’s “pacemaker,” where they
+interact with melatonin receptors also located there
+(Figure 7-39). Light is detected by the retina during
+the day, and this information travels to the SCN via the
+retinohypothalamic tract (Figure 7-39; see also Chapter
+6 and Figures 6-36A and 6-36B), which normally
+synchronizes many circadian rhythms downstream from
+the SCN. For example, both melatonin receptors and
+307
+
+
+
+
+<<<PAGE 342>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+or more trials of the various first-line monoamine agents
+discussed so far in this chapter.
+Olanzapine–Fluoxetine Combination
+
+Dopamine 2 (D2) antagonist actions likely account for
+olanzapine’s approval in schizophrenia, bipolar mania,
+and bipolar maintenance. 5HT2A antagonist actions
+likely account for some of olanzapine’s ability to improve
+symptoms of depression (5HT2A actions on mood are
+discussed in Chapter 5 and illustrated in Figure 5-17C).
+However, the fact that olanzapine works much better for
+unipolar (or bipolar) depression when combined with
+fluoxetine suggests that not only are serotonin reuptake
+blocking properties a component of the antidepressant
+effect of olanzapine–fluoxetine combination therapy,
+but also 5HT2C antagonist actions (Figure 7-38). Both
+olanzapine and fluoxetine are 5HT2C antagonists, and, in
+combination, the net 5HT2C antagonism is greater than
+with either drug alone. So, this olanzapine–fluoxetine
+combination for depression could be considered a potent
+SERT/5HT2C inhibitor. Although highly efficacious for
+treatment-resistant unipolar depression (Table 7-1),
+the combination of olanzapine with fluoxetine is often
+associated with unacceptable weight gain and metabolic
+disturbances. Olanzapine–fluoxetine combination is also
+approved for bipolar depression and is discussed in the
+section on bipolar depression below.
+Quetiapine
+
+Quetiapine (see Chapter 5 and Figure 5-45) is approved
+for schizophrenia, acute bipolar mania, and bipolar
+maintenance, likely due to its D2 antagonist actions.
+
+Its efficacy as an augmenting agent to SSRIs/SNRIs for
+depression is likely linked to the combined actions of
+quetiapine and its active metabolite norquetiapine at both
+5HT2C receptors (Figure 7-38) and at the norepinephrine
+transporter (NET) (Figure 5-34; also described in Chapter
+5 and illustrated in Figure 5-45). In addition, quetiapine
+acts at other candidate receptors for antidepressant
+efficacy including as an antagonist at 5HT2A (Chapter 5
+and Figure 5-17C), 5HT7 (Figure 7-53C) and α2A receptors
+(Figure 5-35), as well as an agonist at 5HT1A receptors
+(Chapter 5 and Figure 5-22). All of these receptor actions
+are hypothetically associated with antidepressant efficacy
+and, added together, could make a theoretically powerful
+synergy of antidepressant mechanisms (Table 7-1).
+However, quetiapine can cause a great deal of sedation
+and moderate weight gain and metabolic disturbance due
+to its other receptor actions. Quetiapine is also approved
+for bipolar depression and discussed in the section on
+bipolar depression below.
+Aripiprazole
+
+This D2/5HT1A partial agonist (Chapter 5 and Figure
+5-56) is approved for schizophrenia, acute bipolar
+mania, and bipolar maintenance and is one of the most
+extensively prescribed augmenting agents to SSRIs/
+SNRIs in unipolar major depression (in the US) (Table
+7-1). It likely acts in schizophrenia and bipolar mania
+as a D2 partial agonist, whereas its prominent 5HT1A
+partial agonist actions (Chapter 5 and Figure 5-22)
+likely contribute to its antidepressant actions. Secondary
+properties with potential antidepressant action may
+also be contributory including D3, 5HT7, 5HT2C, and α2
+
+Table 7-1 Serotonin/dopamine blockers for bipolar spectrum
+
+Evidence of
+efficacy in
+mixed features
+
+FDA-approved for
+bipolar depression
+
+Aripiprazole
+Asenapine
+
+Yes, MMX
+
+FDA-approved
+for bipolar
+mania
+
+FDA-approved
+for bipolar
+maintenance
+
+FDA-approved for
+major depressive
+disorder
+
+Yes
+
+Yes
+
+Yes (adjunct)
+
+Yes
+
+Yes
+
+Brexpiprazole
+
+Yes (adjunct)
+
+Cariprazine
+
+Yes, MMX, DMX
+
+Yes
+
+Lurasidone
+
+Yes, DMX*
+
+Yes
+
+Olanzapine
+
+Yes, MMX
+
+Yes (with fluoxetine)
+
+Yes
+
+Yes
+
+Yes (with fluoxetine)
+
+Quetiapine
+
+Yes, MMX
+
+Yes
+
+Yes
+
+Yes
+
+Yes (adjunct)
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Risperidone
+Ziprasidone
+
+Yes, MMX
+
+MMX, mania with mixed features; DMX, depression with mixed features.
+*unipolar and bipolar depression.
+
+326
+
+Yes
+
+
+
+
+<<<PAGE 359>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+some benefits of monoamine reuptake blockers in
+bipolar depression, and in fact fluoxetine combined with
+olanzapine is approved for bipolar depression (Table
+7-1). However, no agent at all is approved for depression
+with mixed features. The studies that do exist suggest
+poor responses of mixed features to the well-known
+monoamine reuptake inhibitors and an expanding
+evidence base for the use of certain serotonin/dopamine
+blockers, particularly those already approved for bipolar
+depression, as the preferred treatment for mixed features
+as well (see Table 7-1).
+We do not know whether any and all drugs with
+serotonin/dopamine blocking properties that are
+normally used to treat psychosis would be effective
+for bipolar depression, as some have not been
+studied and others have failed in clinical trials; nor
+are we certain of the antidepressant mechanism of
+action of those that are approved. However, each of
+the serotonin/dopamine agents now approved to
+treat bipolar depression was originally developed to
+treat psychosis, and their proposed mechanism of
+antidepressant therapeutic action in bipolar depression
+and depression with mixed features is presented in the
+following sections.
+Olanzapine–Fluoxetine
+
+As previously mentioned, olanzapine–fluoxetine
+combination (Figures 5-44 and 7-16) is approved for
+schizophrenia, bipolar mania, treatment-resistant
+unipolar depression, and bipolar depression. Post hoc
+analyses of mania with mixed features of depression
+also suggest efficacy of olanzapine for mania with mixed
+features of depression, although the counterpart to this
+condition at the other end of the spectrum, depression
+with mixed features of mania (Figures 6-3 through 6-7),
+has not been studied (Table 7-1).
+5HT2A antagonist actions combined with 5HT2C
+antagonism are likely candidates to be linked to
+antidepressant action in bipolar depression (“treatment
+from below”; see Figure 7-8). D2 antagonism could
+theoretically help keep the lid on treatment from below so
+it doesn’t spill over into activation and mania.
+Quetiapine
+
+As previously mentioned, quetiapine (Figure 5-45) is
+approved for schizophrenia, bipolar mania, and for
+augmentation of SSRIs/SNRIs in treatment-resistant
+unipolar depression. It is also approved in bipolar
+depression. Like olanzapine, post hoc analyses of
+
+quetiapine treatment of mania with mixed features of
+depression also suggest efficacy, although depression with
+mixed features of mania has not been studied (Table 7-1).
+5HT2A antagonist actions combined with 5HT2C and α2
+antagonism, as well as agonist actions at 5HT1A receptors,
+are likely candidates to be linked to antidepressant
+action in bipolar depression (treatment from below).
+Like olanzapine, D2 antagonism by quetiapine could
+theoretically help keep the lid on treatment from below so
+it doesn’t spill over into activation and mania.
+Lurasidone
+
+Although approved for the treatment of schizophrenia,
+lurasidone (Figure 5-53) was never tested nor approved
+for the treatment of mania (Table 7-1). Lurasidone has
+several hypothetical antidepressant receptor binding
+properties: blockade of 5HT2A (Figure 5-17C), 5HT7
+(7-53C), and α2 receptors (Figure 7-41), with agonist
+actions at 5HT1A receptors (Figure 5-22). It is one of
+the only agents to show on post hoc analysis of bipolar
+depression that those with bipolar depression and mixed
+features respond as well to lurasidone as patients with
+bipolar depression without mixed features. Perhaps more
+importantly, lurasidone is the only agent to be studied
+in a large, randomized multicenter trial of unipolar
+depression with mixed features and to demonstrate
+robust antidepressant efficacy in this group without
+induction of mania. Lurasidone is prescribed for bipolar
+depression and for mixed features at doses lower than
+those generally used for the treatment of psychosis in
+schizophrenia, and is generally well tolerated with little
+propensity for weight gain or metabolic disturbances and
+is one of the most widely prescribed agents for bipolar
+depression.
+Cariprazine
+
+Cariprazine (Figure 5-58) is a D3/D2/5HT1A partial
+agonist approved for the treatment of acute bipolar mania
+and for bipolar depression, with ongoing trials as an
+adjunct to SSRI/SNRIs in unipolar depression (Table 7-1).
+Cariprazine has 5HT1A partial agonist actions as well as
+α1 (Figure 7-58) and α2 (Figure 7-41) antagonist actions,
+each with potential antidepressant mechanisms. What
+sets cariprazine apart from other agents in this group of
+serotonin/dopamine antagonists/partial agonists is its
+unique highly potent action at D3 dopamine receptors as
+a partial agonist. Cariprazine is the most potent of any
+available agent and much more potent than dopamine
+itself for the D3 receptor. How is D3 antagonism/partial
+
+343
+
+7
+
+
+
+
+<<<PAGE 550>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Dextromethorphan combined with quinidine is
+approved for the treatment of pseudobulbar affect,
+and dextromethorphan and derivates combined with
+either bupropion or quinidine are in late-stage testing
+for major depressive disorder, for treatment-resistant
+depression, and for agitation in AD.
+Treating Depression in Dementia
+
+A well-established association exists between depression
+and dementia; however, the exact nature of this
+intricate relationship is not fully understood (Figure
+12-49). Individuals with major depressive disorder
+often complain of memory problems (so-called
+pseudodementia when it occurs in the elderly), which can
+sometimes be reversed with antidepressant treatment,
+but depression may also be an untreatable prodromal
+symptom of, or risk factor for, inevitable dementia
+(Figure 12-49). In fact, a history of major depressive
+disorder is associated with a twofold increase in the risk
+for developing dementia, particularly vascular dementia,
+whereas major depressive disorder with an onset in later
+life may signify a prodromal sign of AD. Additionally,
+symptoms of depression are seen in at least 50% of
+individuals diagnosed with dementia, and should be
+addressed whenever feasible.
+
+Depression as a risk
+factor for dementia?
+
+Depression
+
+Dementia
+
+Depression as a prodromal
+symptom of dementia?
+
+Depression Dementia
+
+Dementia
+
+Depression and dementia
+sharing common risk factors/
+neurobiological bases?
+
+534
+
+Dementia
+
+Depression
+
+Cognitive impairment as
+a feature of depression?
+
+Depression as a reaction
+to cognitive decline?
+
+Given that symptoms of depression can significantly
+impact quality of life for patients with dementia and
+may actually exacerbate cognitive decline, addressing
+depressive symptoms using non-pharmacological (Table
+12-9) and/or pharmacological means (Figure 12-50)
+should be a priority. Psychosocial interventions are always
+worth trying as treatments for depression in dementia,
+but the usual drugs for depression discussed in Chapter
+7 are often not effective in depression associated with
+dementia, perhaps because the neural circuits these drugs
+act upon may have degenerated. Further complicating
+the treatment of depression in dementia are the potential
+depression-exacerbating effects of medications for somatic
+ailments common in the elderly population, as well as the
+potential interactions of such medications with standard
+antidepressants. In terms of pharmacological management
+of major depressive disorder in patients with dementia,
+SSRIs including sertraline, citalopram, escitalopram,
+and fluoxetine have shown some limited efficacy (see
+Chapter 7 for discussion of these and other drugs for
+depression). In general, long-term antidepressant
+treatment has been associated with a lower risk of
+dementia, improved cognition, and a slower rate of decline
+in elderly patients with dementia. Data are somewhat
+
+Depression
+
+Depression
+Risk
+factors
+
+Dementia
+
+Figure 12-49 Hypothetical associations
+between depression and dementia. It
+is well established that an association
+exists between depression and
+dementia; however, the exact nature
+of this intricate relationship is not fully
+understood.
+
+
+
+
+<<<PAGE 634>>>
+
+Index
+
+excitatory amino acid transporter, 96, 99
+excitement, 78
+executive dysfunction, 144, 449–50
+exposure therapy, 374, 378, 574, 576, 577
+extinction
+fear, 373, 374–5, 574
+pharmacological, 573
+extrapyramidal symptoms, 166
+F17464, 241
+FDG PET, 490, 492, 502
+fear, 363–6
+neurobiology of, 364–5
+noradrenergic hyperactivity, 371
+fear conditioning, 370–4
+blocking, 375–7
+fear extinction, 373, 374–5, 574
+fentanyl, 559
+fibro-fog, 390, 400
+fibromyalgia, 303, 387–9
+cognitive dysfunction, 388, 400
+targeting ancillary symptoms,
+399–400
+treatment, 448
+fight or flight response, 359, 364
+first messengers, 11, 13
+flashbacks, 568
+flumazenil, 263
+fluoxetine, 293–4
+olanzapine combination, 293, 326,
+343
+fluphenazine, 202, 203
+fluvoxamine, 295
+forensic hospitals, 146, 147, 156
+frontotemporal dementias, 494–6
+frontotemporal lobar degeneration, 494
+full agonists, 37–41, 56, 192
+G protein, 14
+G-protein-linked receptors, 36–45, 50
+agonist spectrum, 37, 43, 45
+agonists, 37–41
+antagonists, 41–3
+inverse agonists, 42, 44–5
+no agonist, 37
+partial agonists, 41, 43–4
+structure and function, 36
+G-protein-linked systems, 11, 12, 13
+GABA (γ-aminobutyric acid), 5, 257–64,
+349
+action termination, 258
+synthesis, 255
+GABA interneurons
+5HT receptors on, 121, 125, 130
+prefrontal cortex, 105–10
+GABA receptors, 258–64
+GABAA, 321, 366, 421–3
+GABAA receptor subtypes, 258–61
+618
+
+GABAA, benzodiazepine-insensitive,
+263–4
+GABAA, benzodiazepine-sensitive,
+259–62
+GABA transaminase (GABA-T), 258
+GABA transporter (GAT), 34, 258
+GABAergic drugs, 276
+gabapentin, 352, 366, 395, 426
+galanthamine, 514
+gambling disorder, 575
+gamma-hydroxybutyrate (GHB), 400,
+446–8, 559
+gene activation, 18, 19, 24, 25
+gene expression
+epigenetics, 23–6
+molecular mechanism, 18–23
+neurotransmission triggering, 18
+phosphoprotein triggering cascades,
+15–18
+gene silencing, 24, 25
+generalized anxiety disorder, 361, 377
+genetic testing, 323–5
+genetics
+ADHD, 463
+schizophrenia, 148–50
+genotyping, 50
+ghrelin, 415
+glucose metabolism, 490
+glutamate, 5, 96
+agitation in Alzheimer disease, 533
+Alzheimer disease target, 515–18
+key pathways in the brain, 102
+synthesis, 96–7
+synthesis of GABA from, 255
+glutamate hypothesis of psychosis,
+95–114
+glutamate neurotransmitter network,
+96–106
+glutamate receptors, 99–105
+ionotropic, 54
+metabotropic, 100, 103
+NMDA. See NMDA glutamate
+receptors
+glutamate transporters, 34
+glutamic acid decarboxylase, 255
+glycine transporters, 34
+glycine, synthesis, 97–9
+Goldilocks solution, 43, 60, 191, 227,
+428
+grandiose expansiveness, 78
+gray matter, chronic pain, 387–90
+GSK-3 (glycogen synthase kinase), 48
+guanfacine, 482–3
+habit circuit, 544, 561, 571, 572
+habits, 538, 539, 576
+hallucinations, 77, 113, 141, 435, 568
+dementia, 521
+
+Parkinson’s disease psychosis, 157
+visual, 113, 524
+hallucinogen-assisted psychotherapy,
+355–8, 376
+hallucinogens, 135, 138, 567–9
+haloperidol, 181, 202, 204
+heroin, 559, 561, 573
+heteroreceptors, 125
+hippocampal-accumbens glutamate
+pathway, 104
+hippocampus, 372, 374
+histamine, 35, 402–6, 409
+histamine 1 antagonism, 425–6, 427
+histamine receptors, 406
+histones, methylation, 23
+homeostatic sleep drive, 408, 412
+hormone-linked systems, 11, 12
+hostile belligerence, 78
+HPA (hypothalamic-pituitary-adrenal)
+axis, 266, 270
+human genome, 18
+Huntington’s disease, 28, 175
+hydrocodone (Vicodin), 559
+hyperactivity, 452, 454, 463
+hyperalgesia, 380
+hyperarousal, 418
+hyperdopaminergia, 90, 92, 93
+hyperglycemic hyperosmolar syndrome,
+199, 200
+hyperprolactinemia, 165, 187, 192
+hypersomnia, 402, 430–40
+causes of, 431–5
+treatment of, 440–8
+hypervigilance, 402
+hypnotic actions, 311
+insomnia treatment, 421–30
+hypnotics, sedative, 556
+hypocretins, 406–11
+hypodopaminergia, 95
+hypomania, 248
+hypothalamic neurons, 407
+idiopathic hypersomnia, 432, 433
+illusions, 568
+iloperidone, 225, 236
+immediate early genes, 19, 20
+impulse control disorders, 577–8
+impulsive–compulsive disorders, 539
+binge eating, 575
+neurocircuitry of, 539–43
+impulsive violence, 147, 577
+impulsivity, 452, 454, 463, 538–9, 571, 578
+inactivation state, 61, 63
+inattention, 449, 450, 451, 463
+indirect (stop) dopamine pathway, 89, 90
+inhalants, 547
+inherited disease, classic theory of, 148
+insomnia, 311, 402, 418–20
+
+

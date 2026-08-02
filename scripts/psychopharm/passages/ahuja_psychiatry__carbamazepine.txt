@@ -1,0 +1,1164 @@
+<<<PAGE 27>>>
+
+Psychiatric History and Examination
+
+The answers may be overly concrete or abstract.
+The appropriateness of answers is judged. Concretisation of responses or inappropriate answers may occur
+in schizophrenia.
+
+Insight
+Insight is the degree of awareness and understanding
+that the patient has regarding his illness.
+Ask the patient’s attitude towards his present state;
+whether there is an illness or not; if yes, which kind of
+illness (physical, psychiatric or both); is any treatment
+needed; is there hope for recovery; what is the cause of
+illness. Depending on the patient’s responses, insight
+can be graded on a six-point scale (Table 2.3).
+
+Judgement
+Judgement is the ability to assess a situation correctly
+and act appropriately within that situation. Both social
+and test judgement are assessed.
+i. Social judgement is observed during the hospital
+stay and during the interview session. It includes
+an evaluation of ‘personal judgement’.
+ii. Test judgement is assessed by asking the patient
+what he would do in certain test situations, such
+as ‘a house on fire’, or ‘a man lying on the road’,
+or ‘a sealed, stamped, addressed envelope lying
+on a street’.
+Judgement is rated as Good/Intact/Normal or Poor/
+Impaired/Abnormal.
+
+INVESTIGATIONS
+After a detailed history and examination, investigations (laboratory tests, diagnostic standardised
+interviews, family interviews, and/or psychological
+tests) are carried out based on the diagnostic and
+aetiological possibilities. Some of these investigations
+are described briefly in Table 2.4.
+
+FORMULATION
+After a comprehensive psychiatric assessment, a
+diagnostic formulation summarises the detailed posi-
+
+15
+
+Table 2.3: Clinical Rating of Insight
+Insight is rated on a 6-point scale from one to six.
+1. Complete denial of illness.
+2. Slight awareness of being sick and needing help, but
+denying it at the same time.
+3. Awareness of being sick, but it is attributed to external or physical factors.
+4. Awareness of being sick, due to something unknown
+in self.
+5. Intellectual Insight: Awareness of being ill and that
+the symptoms/failures in social adjustment are due
+to own particular irrational feelings/thoughts; yet
+does not apply this knowledge to the current/future
+experiences.
+6. True Emotional Insight: It is different from intellectual insight in that the awareness leads to significant
+basic changes in the future behaviour.
+
+Table 2.4: Some Investigations in Psychiatry
+I. Biological Investigations
+Medical Screen
+Some of the following tests may be useful in screening for the medical disorders causing the psychiatric
+symptoms. Some examples of indications are stated in
+front of the tests (these examples are not intended to be
+comprehensive).
+Haemoglobin: Routine screen.
+Total and differential leucocyte counts: Routine screen,
+Treatment with antipsychotics (e.g. clozapine), lithium,
+carbamazepine.
+Mean Corpuscular Volume (MCV): Alcohol dependence
+(increased).
+Urinalysis: Routine screen; Drug screening.
+Peripheral smear: Anaemia.
+Renal function tests: Treatment with lithium.
+Liver function tests: Treatment with carbamazepine,
+valproate, benzodiazepines. Alcohol dependence.
+Serum electrolytes: Dehydration, SIADH, Treatment with
+carbamazepine, antipsychotics, lithium.
+Blood glucose: Routine screen (age>35 years), treatment
+with antipsychotics
+Contd...
+
+
+
+
+<<<PAGE 28>>>
+
+16
+
+A Short Textbook of Psychiatry
+
+Contd...
+Thyroid function tests: Refractory depression, rapid
+cycling mood disorder. Treatment with lithium, carbamazepine.
+Electrocardiogram (ECG): Age>35 years, Treatment with
+lithium, antidepressants, ECT, antipsychotics.
+HIV testing: Intravenous drug users, suggestive sexual
+history, AIDS dementia.
+VDRL: Suggestive sexual history.
+Chest X-ray: Age>35 years, Treatment with ECT.
+Skull X-ray: History of head Injury.
+Serum CK: Neuroleptic malignant syndrome (markedly
+increased levels).
+Toxicology Screen
+Useful when substance use is suspected; for example,
+alcohol, cocaine, opiates, cannabis, phencyclidine,
+benzodiazepines, barbiturates; remember that certain
+medications can cause false positive results (for example,
+quetiapine for methadone).
+Drug Levels
+Drug levels are indicated to test for therapeutic blood
+levels, for toxic blood levels, and for testing drug
+compliance. Examples are lithium (0.6-1.0 meq/L),
+carbamazepine (4-12 mg/ml), valproate (50-100 mg/
+ml), haloperidol (8-18 ng/ml), tricyclic antidepressants
+(nortriptyline 50-150 ng/ml; imipramine 200-250 ng/
+ml), benzodiazepines, barbiturates and clozapine (350500 μg/L).
+Electrophysiological Tests
+EEG (Electroencephalogram): Seizures, dementia, pseudoseizures vs. seizures, episodic abnormal behaviour.
+BEAM (Brain electrical activity mapping): Provides
+topographic imaging of EEG data.
+Video-Telemetry EEG: Pseudoseizures vs. seizures.
+Evoked potentials (e.g. p300): Research tool.
+Polysomnography/Sleep studies: Sleep disorders, seizures (occurring in sleep). The various components in
+sleep studies include EEG, ECG, EOG, EMG, airflow
+measurement, penile tumescence, oxygen saturation,
+body temperature, GSR (Galvanic skin response), and
+body movement.
+Holter ECG: Panic disorder.
+
+Brain Imaging Tests (Cranial)
+Computed Tomography (CT) Scan: Dementia, delirium,
+seizures, first episode psychosis.
+Magnetic Resonance Imaging (MRI) Scan: Dementia.
+Higher resolution than CT scan.
+Positron Emission Tomography (PET) Scan: Research tool
+for study of brain function and physiology.
+Single Photon Emission Computed Tomography (SPECT)
+Scan: Research tool.
+Magnetic Resonance (MR) Angiography: Research tool
+Magnetic Resonance Spectroscopy (MRS): Research tool
+Neuroendocrine Tests
+Dexamethasone Suppression Test (DST): Research tool
+in depression (response to antidepressants or ECT). If
+plasma cortisol is >5 mg/100 ml following administration of dexamethasone (1 mg, given at 11 PM the night
+before and plasma cortisol taken at 4 PM and 11 PM
+the next day), it indicates non-suppression.
+TRH Stimulation Test: Lithium-induced hypothyroidism,
+refractory depression. If the serum TSH is >35 mIU/ml
+(following 500 mg of TRH given IV), the test is positive.
+Serum Prolactin Levels: Seizures vs. pseudoseizures,
+galactorrhoea with antipsychotics.
+Serum 17-hydroxycorticosteroid: Organic mood (depression) disorder.
+Serum Melatonin Levels: Seasonal mood disorders.
+Biochemical Tests
+5-HIAA: Research tool (depression, suicidal and/or
+aggressive behaviour).
+MHPG: Research tool (depression).
+Platelet MAO: Research tool (depression).
+Catecholamine levels: Organic anxiety disorder (e.g.
+pheochromocytoma).
+Genetic Tests
+Cytogenetic work-up is useful in some cases of mental
+retardation.
+Sexual Disorder Investigations
+Papaverine test: Male erectile disorder (intracavernosal
+injection of papaverine is sometimes used to differentiate
+organic from non-organic male erectile disorder).
+Nocturnal penile tumescence: Male erectile disorder.
+Contd...
+
+
+
+
+<<<PAGE 44>>>
+
+32
+
+A Short Textbook of Psychiatry
+
+5. Cerebral neoplasms, especially in frontal lobe (frontal lobe syndromes) and parietal lobe (see Table 3.7).
+6. Cerebrovascular disease.
+7. Psychoactive drugs (rarely).
+
+Management
+1. Treatment of the underlying cause, if treatable.
+2. Symptomatic treatment, with lithium or carbamazepine for aggressive behaviour and impulse
+
+dyscontrol, and/or antipsychotics (occasionally)
+for violent behaviour may be needed.
+
+MISCELLANEOUS ORGANIC
+MENTAL DISORDERS
+Other organic mental disorders described in ICD-10
+include organic dissociative disorder, organic emotionally labile (asthenic) disorder, and mild cognitive
+disorder.
+
+
+
+
+<<<PAGE 52>>>
+
+40
+
+A Short Textbook of Psychiatry
+
+and mammillary bodies. The changes are also seen
+in periventricular and periaqueductal grey matter,
+cerebellum and parts of brain stem.
+The underlying cause is believed to be usually
+severe untreated thiamine deficiency secondary to
+chronic alcohol use.
+Marchiafava-Bignami disease
+This is a rare disorder characterised by disorientation,
+epilepsy, ataxia, dysarthria, hallucinations, spastic
+limb paralysis, and deterioration of personality and
+intellectual functioning. There is a widespread demyelination of corpus callosum, optic tracts and cerebellar peduncles. The cause is probably an alcohol-related
+nutritional deficiency.
+
+Other Complications
+These include:
+i. Alcoholic dementia.
+ii. Cerebellar degeneration.
+iii. Peripheral neuropathy.
+iv. Central pontine myelinosis.
+
+Treatment
+Before starting any treatment, it is important to follow
+these steps:
+i. Ruling out (or diagnosing) any physical disorder.
+ii. Ruling out (or diagnosing) any psychiatric disorder
+and/or co-morbid substance use disorder.
+iii. Assessment of motivation for treatment.
+iv. Assessment of social support system.
+v. Assessment of personality characteristics of the
+patient.
+vi. Assessment of current and past social, interpersonal and occupational functioning.
+The treatment can be broadly divided into two
+categories which are often interlinked. These are
+detoxification and treatment of alcohol dependence.
+
+Detoxification
+Detoxification is the treatment of alcohol withdrawal
+symptoms, i.e. symptoms produced by the removal of
+the ‘toxin’ (alcohol). The best way to stop alcohol (or
+any other drug of dependence) is to stop it suddenly
+
+unless the risks of acute discontinuation are felt to be
+high by the treating team. This decision is often based
+on several factors including chronicity of alcohol
+dependence, daily amount consumed, past history of
+alcohol withdrawal complications, level of general
+health and the patient’s wishes.
+The usual duration of uncomplicated withdrawal
+syndrome is 7-14 days. The aim of detoxification is
+symptomatic management of emergent withdrawal
+symptoms.
+The drugs of choice for detoxification are usually
+benzodiazepines. Chlordiazepoxide (80-200 mg/day in
+divided doses) and diazepam (40-80 mg/day in divided
+doses) are the most frequently used benzodiazepines.
+The higher limit of the normal dose range is used in
+delirium tremens.
+A typical dose of Chlordiazepoxide in moderate
+alcohol dependence is 20 mg QID (four times a day)
+on day 1, 15 mg QID on day 2, 10 mg QID on day 3,
+5 mg QID on day 4, 5 mg BD on day 5 and none on
+day 6. However, in more severe dependence, higher
+doses are needed for longer periods (up to 10 days).
+These drugs are used in a standardised protocol, with
+the dosage steadily decreasing everyday before being
+stopped, usually on the tenth day. Clormethiazole (1-2
+g/day) and carbamazepine (600-1600 mg/day) are
+experimental drugs and should not be used routinely
+for detoxification.
+In addition, vitamins should also be administered.
+In patients suffering from (or likely to suffer from)
+delirium tremens, peripheral neuropathy, WernickeKorsakoff syndrome, and/or with other signs of vitamin B deficiency (especially thiamine and nicotinic
+acid), a preparation of vitamin B containing 100 mg
+of thiamine (vitamin B1) should be administered
+parenterally, twice everyday for 3-5 days. This should
+be followed by oral administration of vitamin B1 for
+at least 6 months.
+Care of hydration is another important step; it is
+extremely important not to administer 5% dextrose
+(or any carbohydrate) in delirium tremens (or even in
+uncomplicated alcohol withdrawal syndrome) without
+thiamine.
+
+
+
+
+<<<PAGE 54>>>
+
+42
+
+A Short Textbook of Psychiatry
+
+Fig. 4.1: Disulfiram: Mode of Action
+
+The contraindications of disulfiram use are first
+trimester of pregnancy, coronary artery disease, liver
+failure, chronic renal failure, peripheral neuropathy,
+muscle disease and psychotic symptoms presently or
+in the past.
+In selected patients (such as an older age group,
+good motivation, good social support, absent underlying psychopathology and good treatment concordance), the response can be dramatic. In addition to
+oral preparations, subcutaneous disulfiram implants
+are also now available. However, they provide unpredictable blood levels of disulfiram.
+Other deterrent agents
+1. Citrated calcium carbimide (CCC): The mechanism of action is similar to disulfiram but onset of
+action occurs within 1 hour and is reversible. The
+usual dosage is 100 mg/d in two divided doses.
+2. Metronidazole.
+3. Animal charcoal, a fungus (Coprinus atramentarius), sulfonylureas and certain cephalosporins
+also cause a disulfiram like action.
+v. Anti-craving agents
+Acamprosate, naltrexone and SSRIs (such as fluoxetine) are among the medications tried as anti-craving
+agents in alcohol dependence.
+
+Acamprosate (the Ca++ salt of N-acetyl-homotaurinate)
+interacts with NMDA receptor-mediated glutamatergic neurotransmission in the various brain regions
+and reduces Ca++ fluxes through voltage-operated
+channels.
+Naltrexone (oral opioid receptor antagonist) probably interferes with alcohol-induced reinforcement
+by blocking opioid receptors. Fluoxetine (and other
+SSRIs) have been occasionally used as anti-craving
+agents in their usual antidepressant doses.
+vi. Other medications
+A variety of other medicines such as benzodiazepines, antidepressants, antipsychotics, lithium,
+carbamazepine, and even narcotics have been tried.
+These should be used only if there is a special indication for their use (for example, antidepressants for
+underlying depression).
+vii. Psychosocial rehabilitation
+Rehabilitation is an integral part of the multi-modal
+treatment of alcohol dependence.
+
+OPIOID USE DISORDERS
+Dried exudate obtained from unripe seed capsules of
+Papaver somniferum has been used and abused for
+
+
+
+
+<<<PAGE 91>>>
+
+Mood Disorders
+
+iii. Bipolar depression
+There is recent evidence that quetiapine has antidepressant efficacy in bipolar depression.
+iv. Maintenance or prophylactic treatment in bipolar
+disorder
+Recent evidence shows that several atypical antipsychotics such as olanzapine, quetiapine and aripiprazole
+can be successfully used in the maintenance treatment
+of bipolar disorder.
+
+Other Mood Stabilisers
+The other mood stabilisers which are used in the treatment of bipolar mood disorders include:
+1. Sodium valproate
+• For acute treatment of mania and prevention of
+bipolar mood disorder.
+• Particularly useful in those patients who are refractory to lithium.
+• The dose range is usually 1000-3000 mg/day (the
+therapeutic blood levels are 50-125 mg/ml).
+• It has a faster onset of action than lithium, therefore, it can be used in acute treatment of mania
+effectively.
+2. Carbamazepine and Oxcarbazepine
+• For acute treatment of mania and prevention of
+bipolar mood disorder.
+• Particularly useful in those patients who are refractory to lithium and valproate.
+• Particularly effective when EEG is abnormal
+(although this is not necessary for the use of carbamazepine).
+• The dose range of carbamazepine is 600-1600 mg/
+day (the therapeutic blood levels are 4-12 mg/ml).
+• The use of carbamazepine in treatment of bipolar
+disorder has recently declined, partly due to its
+potential for drug interactions.
+• Oxcarbazepine has a narrow evidence base and its
+use in bipolar disorder is quite recent.
+3. Benzodiazepines
+Lorazepam (IV and orally) and clonazepam are used
+for the treatment of manic episode alone rarely; however, they have been used more often as adjuvants to
+antipsychotics.
+
+79
+
+4. Lamotrigine is particularly effective for bipolar
+depression and is recommended by several guidelines.
+5. T3 and T4 as adjuncts for the treatment of rapid cycling mood disorder and resistant depression.
+
+Other Treatments
+Psychosurgery is an extremely rarely used method
+of treatment and is resorted to only in exceptional
+circumstances.
+In depressive episode, which is either chronic or
+persistently recurrent with a limited or absent response
+to other modes of treatment, one of the following
+procedures may very rarely be performed:
+i. Stereotactic subcaudate tractotomy, or
+ii. Stereotactic limbic leucotomy.
+In carefully selected patients, the results are
+reported to be satisfactory. However, in the current
+day and age, psychosurgery is hardly ever considered
+in routine clinical practice.
+
+Psychosocial Treatment
+Although somatic treatment appears to be the primary
+mode of management in major mood disorders, psychosocial treatment is often helpful. These indications
+include:
+i. As an adjunct to somatic treatment.
+ii. In mild to moderate cases of depression.
+iii. Certain selected cases.
+These methods include (see Chapter 18 for details):
+
+Cognitive Behaviour Therapy
+Cognitive behaviour therapy (CBT) aims at correcting depressive negative cognitions (ideations) such
+as hopelessness, worthlessness, helplessness and pessimistic ideas, and replacing them by new cognitive
+and behavioural responses.
+CBT is useful in mild to moderate, non-bipolar
+depression and can be used with or without somatic
+treatment.
+
+Interpersonal Therapy
+Interpersonal therapy (IPT) attempts to recognise
+and explore interpersonal stressors, role disputes and
+
+
+
+
+<<<PAGE 180>>>
+
+168
+
+A Short Textbook of Psychiatry
+
+The treatment of conduct disorder is usually difficult. The most frequent mode of management is
+placement in a corrective institution, often after the
+child has had legal difficulties. Behavioural, educational and psychotherapeutic measures are usually
+employed for the behaviour modification.
+Drug treatment may be needed in presence of
+epilepsy (anticonvulsants), hyperactivity (stimulant
+medication), impulse control disorder and episodic
+aggressive behaviour (lithium, carbamazepine), and
+psychotic symptoms (antipsychotics).
+
+i. Simple motor tics: These may include eyeblinking, grimacing, shrugging of shoulders,
+tongue protrusion.
+ii. Complex motor tics: These are facial gestures,
+stamping, jumping, hitting self, squatting, twirling, echokinesis (repetition of observed acts),
+copropraxia (obscene acts).
+Motor tics are often the earliest to appear, beginning in the head region and then progressing downwards. These are later followed by the vocal tics.
+
+TIC DISORDERS
+
+The vocal tics in Tourette’s disorder can also be simple
+or complex.
+i. Simple vocal tics: Simple vocal tics include
+coughing, barking, throat-clearing, sniffing, and
+clicking.
+ii. Complex vocal tics: These include some very
+characteristic, though not always present,
+symptoms of Tourette syndrome; for example,
+echolalia (repetition of heard phrases), palilalia
+(repetition of heard words), coprolalia (use of
+obscene words), and mental coprolalia (thinking
+of obscene words).
+Obsessions and Compulsions are often the associated symptoms. These are usually the last symptoms
+to appear.
+
+Tic disorders are characterised by the presence of
+tics. Tic is an abnormal involuntary movement (AIM)
+which occurs suddenly, repetitively, rapidly and is
+purposeless in nature. It is of two types:
+1. Motor tic, characterised by repetitive motor movements.
+2. Vocal tic, characterised by repetitive vocalisations.
+Tic disorders can be either transient or chronic.
+Transient tic disorders are more common in boys
+and can occur in 5-20% of children. Tics are easily
+worsened by stressful life situations, fatigue and/or
+use stimulants such as caffeine and nicotine. A vast
+majority of these disappear by adulthood.
+A special type of chronic tic disorder is Gilles de
+la Tourette’s syndrome or Tourette’s disorder.
+
+Tourette’s Disorder
+Tourette’s disorder is typically characterised by:
+1. Multiple motor tics.
+2. Multiple vocal tics.
+3. Duration of more than 1 year.
+4. Onset usually before 11 years of age and almost
+always before 21 years of age.
+The disorder is usually more common (about three
+times) in males and has a prevalence rate of about 0.5
+per 1000 people.
+
+Motor Tics
+The motor tics in Tourette’s disorder can be simple
+or complex.
+
+Vocal Tics
+
+Aetiology
+The aetiology of Tourette syndrome is not known but
+the presence of learning difficulties, neurological soft
+signs, hyperactivity, abnormal EEG record, abnormal
+evoked potentials, and abnormal CT Brain findings in
+some patients, point towards a biological basis.
+There is some evidence to suggest that Tourette
+syndrome may be inherited as autosomal dominant
+disorder with variable penetrance.
+
+Treatment
+Pharmacotherapy is usually the preferred mode of
+treatment though there is lack of clear evidence of
+efficacy. Antipsychotics are often helpful in small
+doses and several drugs have been tried including
+haloperidol, risperidone, olanzapine, aripiprazole,
+
+
+
+
+<<<PAGE 197>>>
+
+Psychopharmacology
+
+It is essential to continue the antidepressant for a
+period of further 6 months after reaching remission, in
+the first episode of depressive disorder (and for longer
+duration in subsequent episodes) to prevent recurrence of symptoms. It is important to prescribe the
+antidepressant in the same dose as used for treatment
+unless there are adverse effects requiring a decrease
+in dose.
+Only when adequate doses (150-300 mg
+imipramine equivalent) have been administered for
+an adequate period (at least 6 weeks) without a clinical response then the drug can be called ineffective
+for that patient. Another drug, usually from a different
+class or group, or ECT may then be used.
+
+Side Effects and Toxicity
+The common side effects of antidepressants with their
+management are summarised in Table 15.7.
+TCAs are dangerous in overdose; amitriptyline
+and dosulepin (dotheipin) are particularly cardiotoxic
+whilst lofepramine is the safest amongst TCAs. Clinical features of overdose include agitation, delirium,
+paralytic ileus, urinary retention, coma, respiratory
+depression, seizures, hyperpyrexia, cardiac arrhythmias, conduction defects, mydriasis, and death. The
+lethal dose of imipramine is 1-2 g. (40-80 tabs. of
+25 mg imipramine equivalence).
+The treatment options in overdose include gastric
+lavage/induction of vomiting, activated charcoal for
+adsorption, cardio-respiratory resuscitation, treatment
+of seizures (if they occur), general supportive care
+and symptomatic management. Quinidine-like drugs
+are contraindicated whilst antiarrhythmics such as
+lignocaine can be helpful. Physostigmine 0.5 mg
+IV/IM bolus repeated to a total of 3-4 mg/day may
+be used under careful supervision. Coma often reverts
+in less than 24 hours, although toxicity lasts for
+5-6 days.
+Co-prescription of serotonergic drugs (such as
+SSRIs) with other serotonergic agents and especially
+MAOIs can lead to serotonin syndrome. It is characterised by a classic triad of mental status changes,
+neuromuscular abnormalities and autonomic hyper-
+
+185
+
+activity. These include anxiety, agitation, confusion,
+clonus (e.g. ankle clonus, ocular clonus), hyperreflexia, myoclonus, rigidity, increased heart rate, tremor,
+flushing, hyperthermia and excessive sweating. Death
+can occur in severe serotonin syndrome.
+Treatment includes discontinuation of the offending drug(s), supportive management and (sometimes)
+use of serotonin and histamine antagonist cyproheptadine.
+
+Refractory Depression
+About 20-35% of patients do not respond to the
+antidepressant therapy. The chief reasons for this
+non-response include:
+1. Poor drug concordance.
+2. Inadequate dosage.
+3. Insufficient treatment duration.
+4. Low plasma antidepressant levels.
+5. Incorrect diagnosis.
+Even when these important reasons are excluded,
+there still remains a group (15-20%) of depressed
+patients who are non-responders or poor-responders.
+Such patients should receive a trial of another antidepressant preferably from a different group (e.g. SNRI)
+for adequate duration. In case the patient still does not
+respond, the treatment of choice of refractory depression is electroconvulsive therapy (ECT), though other
+treatment choices (such as lithium augmentation) are
+also available.
+
+MOOD STABILISING DRUGS
+(DRUGS USED IN PROPHYLAXIS
+OF BIPOLAR DISORDER)
+These drugs are usually effective in treatment of mania and therefore the word antimanic is often used to
+describe them. But as they are effective in preventing
+mood swings in bipolar disorder, the better term is
+mood-stabilising agent or a prophylactic agent. The
+most commonly used mood-stabilising agents include
+lithium, valproate, carbamazepine, and lamotrigine,
+though there are several other experimental mood
+stabilisers such as oxcarbazepine.
+
+
+
+
+<<<PAGE 200>>>
+
+A Short Textbook of Psychiatry
+
+188
+Contd...
+Category and
+Side Effect
+2. Severe hepatic
+necrosis (rare)
+3. Hyperpyrexia
+
+4. Bleeding
+
+5. Hyponatraemia
+
+Probable Cause
+
+Maximum with
+(For example)
+
+Minimum with
+(For example)
+
+Management
+
+Toxic or
+Hypersensitive
+Interaction with
+tricyclics or
+meperidine
+Decreased
+platelet serotonin
+
+Iproniazid
+
+Tranylcypromine
+
+Not known
+
+Not known
+
+SSRIs
+
+Not known
+
+SSRIs
+SNRIs
+
+Not known;
+Probably MAOIs
+
+Stop/change drug. Supportive
+care; Death rate high.
+Stop drug. Keep a gap of
+1 week between imipramine
+and MAOI. Supportive care.
+Change drug. Do not coprescribe other drugs that
+increase risk of bleeding;
+Gastro-protective drugs such
+as PPIs can decrease risk
+to some extent in high-risk
+patients
+Risk higher in elderly; Avoid
+co-prescribing other drugs
+that cause hyponatraemia
+(such as diuretics); monitor
+closely
+
+Probably SIADH
+
+Recently, several atypical antipsychotics such as
+olanzapine, quetiapine and aripiprazole have been
+added to list of drugs used in maintenance treatment
+of bipolar disorder. In addition, other antipsychotics
+such as risperidone (and the others mentioned above)
+are also used as antimanic agents.
+Lamotrigine and Quetiapine (and its metabolite
+norquetiapine) appear to have particular efficacy for
+treatment of bipolar depression. There is a risk of skin
+rash with lamotrigine particularly early in treatment
+and the risk appears higher with faster escalation of
+dose as well as with co-prescription of valproate. It is
+therefore important to increase the dose of lamotrigine
+very gradually as suggested in the summary of product
+characteristics (SPC) and the dose prescribed depends
+on other co-prescribed drugs (such as carbamazepine
+and valproate).
+
+LITHIUM
+Lithium (Li) is an element (Atomic number 3 and
+Atomic weight 7) which is the smallest alkali ion.
+
+The element was discovered in 1817 by Arfuedson.
+Since then, it has been used for treatment of gout and
+for salt replacement in cardiac disease, but its use was
+restricted due to fatal toxicity.
+It was rediscovered in 1949 by John Cade, for use
+in treatment of mania but its potential went unrecognised as it was discovered in Australia. Mogen Schou
+in 1957, had to rediscover it yet again before it became
+popular as a treatment of mania.
+
+Indications
+Although lithium salts are used in treatment of a
+myriad of psychiatric and non-psychiatric disorders,
+the established indications are only the following
+ones:
+1. Treatment of acute mania
+2. Prophylaxis of bipolar mood disorder.
+In addition, the following may also constitute
+possible clinical indications of lithium use:
+3. Treatment of schizo-affective disorder
+4. Prophylaxis of unipolar mood disorder
+5. Treatment of cyclothymia
+
+
+
+
+<<<PAGE 203>>>
+
+Psychopharmacology
+
+Contraindications of Lithium Use
+1. Presence of clear evidence of cardiac, renal, thyroid or neurological dysfunction
+2. Presence of blood dyscrasia
+3. During pregnancy and lactation
+4. Concomitant administration of thiazide diuretics,
+tetracyclines or anaesthetics
+ACE inhibitors (such as captopril), Angiotensin
+II receptor antagonists (such as losartan), NSAIDs
+(nonsteroidal anti-inflammatory drugs) and COX-2
+inhibitors (such as celecoxib) can increase the risk of
+lithium toxicity in an unpredictable manner, especially
+in elderly.
+
+VALPROATE
+Valproate and lithium have been widely used as
+first line drugs for treatment of mania as well as for
+prophylaxis of bipolar mood disorder.
+Valproic acid was first synthesised by Burton
+and used as an organic solvent. In 1963, Meunier
+serendipitously discovered the antiepileptic properties of valproic acid, while Lambert reported in 1966
+that valpromide (a valproic acid analogue) might be
+effective as an antimanic. It was approved by the US
+FDA as an antiepileptic drug for absence seizures in
+1978 and for the treatment of acute mania (and for
+migraine headache prophylaxis) in 1996.
+Although its mechanism of action is not clearly
+understood, it increases GABA though other nonGABAergic mechanisms have been proposed.
+The term valproate is often used to denote all
+commercial preparations, since the common entity
+in blood is valproic acid. The following preparations
+of valproate are available in India:
+i. Valproate sodium
+ii. Divalproex (Enteric-coated stable coordination
+compound composed of sodium valproate and
+valproic acid in a 1:1 molar relationship)
+iii. Chrono preparations (Enteric-coated compound
+composed of sodium valproate and valproic acid
+in a 3:2 ratio).
+
+191
+
+It is rapidly and completely absorbed after oral
+administration. The peak plasma levels are reached
+at 1-4 hours after a single oral dose. The half-life of
+valproate is 8-17 hours.
+The usual dose of valproate is 1000-3000 mg/day
+orally in divided doses. The therapeutic blood level is
+50-125 mg/ml. Oral loading strategies (20-30 mg/kg/
+day) are rapidly effective in the management of acute
+mania.
+
+Indications
+In addition to its primary indication as an anticonvulsant, Valproate has several other indications in
+various psychiatric and neuropsychiatric disorders.
+
+Bipolar Disorders
+Acute Mania (as a first-line agent for the treatment
+of acute mania in oral and IV forms): Several factors
+associated with a favourable antimanic response to
+valproate (as well as carbamazepine) include:
+a. Co-morbid substance abuse or other psychiatric
+disorders
+b. Later age at onset and/or shorter duration of illness
+c. History of poor response to lithium
+d. Dysphoric mania, mixed affective episodes, or
+rapid cycling
+e. Organic/complicated mania associated with seizure disorder, history of head trauma, or EEG
+abnormalities
+f. D-M-I (Depression-Mania-Well Interval) pattern
+of illness, as opposed to the M-D-I pattern
+There is some suggestion that patients nonresponsive to valproate may respond well to
+carbamazepine.
+Prophylaxis: Valproate is probably less effective in
+maintenance treatment of bipolar disorder than in
+treatment of acute mania. It has been used alone, as
+well as along with lithium and other mood stabilisers
+in the maintenance treatment.
+The addition of valproate to lithium has been
+recognised as a useful treatment for mania refractory
+to lithium monotherapy.
+
+
+
+
+<<<PAGE 204>>>
+
+192
+
+A Short Textbook of Psychiatry
+
+Rapid cycling bipolar disorder and mixed (or dysphoric) mania: The patients with rapid cycling, mixed
+affective episodes, or dysphoric mania are often
+resistant to lithium treatment and respond better to
+valproate. Valproate is also effective in management
+of ultra-rapid cycling mood disorders.
+Bipolar depression: Valproate appears to be generally
+more effective in the treatment of acute mania than in
+bipolar depression.
+
+The use of valproate in pregnancy and lactation
+should be best avoided. The NICE guidelines for treatment of bipolar disorder recommend that valproate is
+best avoided in women of childbearing potential (see
+Further Reading List).
+In overdose, the amount of drug, that is not protein
+bound, is high. Therefore, dialysis is useful in the
+management of an overdose with valproate.
+
+Neurological Disorders
+
+Certain drug may increase (such as aspirin, cimetidine,
+ibuprofen, erythromycin, fluoxetine, fluvoxamine,
+phenothiazines) or decrease (such as carbamazepine,
+phenytoin, phenobarbital, ethosuximide, rifampicin,
+mefloquine) the serum levels of valproate.
+In addition, valproate increases serum levels of
+other drugs (such as lamotrigine, tricyclic antidepressants, zidovudine, tolbutamide).
+
+Migraine and Pain syndromes: Valproate has been
+used for prophylaxis of migraine headaches, as well
+as for aborting an acute attack (IV route). Valproate
+has also been used in treatment of trigeminal neuralgia
+and neuropathic pain.
+Seizure disorders: Valproate is primarily indicated for
+treatment of absence seizures (both simple and complex), complex partial seizures, myoclonic seizures,
+and generalised tonic-clonic seizures, as monotherapy
+as well as adjunct therapy.
+
+Other Disorders
+Valproate has also been used at times in several other
+conditions, including behavioural agitation in dementia, severe behavioural symptoms in mental retardation, ADHD and conduct disorder, schizoaffective
+disorder (bipolar type), alcohol withdrawal, tardive
+dyskinesia, impulse control disorder, panic disorder
+and borderline personality disorder.
+
+Side Effects
+Adverse effects are more common with valproate
+concentrations above 100 mg/ml.
+The common side effects are nausea, sedation, tremor, flushing, weight gain, thrombocytopenia, menstrual disturbances (in women) and hair
+loss. There are some reports of polycystic ovaries
+and hyperandrogenism in young women with
+epilepsy.
+The most serious, though relatively uncommon,
+side effects include hepatic toxicity (especially in
+young children), acute haemorrhagic pancreatitis, and
+Steven-Johnson syndrome.
+
+Drug Interactions
+
+CARBAMAZEPINE
+Like lithium and valproate, carbamazepine too has
+been used as an antimanic and for prophylaxis of bipolar disorder. It is a tricyclic compound synthesised
+in 1953 by Schindler. It has a structure similar to
+TCAs. The onset of action can be faster as compared
+to lithium, but slower compared to valproate.
+The usual dose is 600-1600 mg/day orally, in
+divided doses. The treatment is best monitored with
+repeated blood levels. The therapeutic blood levels
+are 4-12 μg/ml and the toxic blood levels are usually
+reached at >15 μg/ml.
+
+Indications
+The indications for use of carbamazepine include:
+1. Seizures
+i. Complex partial seizures (CPS)
+ii. Generalised tonic clonic seizures
+iii. Alcohol withdrawal seizures (rum fits), if persistent (also used sometimes for treatment of
+simple alcohol withdrawal syndrome)
+2. Psychiatric disorders
+i. Bipolar mood disorder (especially for rapid
+cyclers; lithium-refractory patients; lithium-
+
+
+
+
+<<<PAGE 205>>>
+
+Psychopharmacology
+
+intolerant patients; for prophylaxis in some
+patients; for treatment of acute mania, especially
+severe and dysphoric mania)
+ii. Impulse control disorder and aggression (in
+some cases)
+iii. Psychosis (especially mania) with epilepsy
+iv. Borderline personality disorder (for treatment
+of mood swings)
+v. Cocaine withdrawal syndrome
+3. Paroxysmal pain syndromes
+i. Trigeminal neuralgia
+ii. Phantom limb pain
+iii. Other paroxysmal pain syndromes (neuralgias).
+
+Side Effects
+The major side effects include diplopia, drowsiness, dizziness, nausea, vomiting, ataxia, skin rash,
+Steven-Johnson syndrome (erythema multiforme
+major), photosensitivity, cholestatic jaundice, acute
+oliguria with hypertension, leucopenia and thrombocytopenic purpura. The most dangerous side effects
+include bone marrow depression (causing aplastic anaemia), agranulocytosis and cardiovascular
+collapse.
+Therefore, it is essential to monitor cardiac, renal,
+hepatic and bone-marrow functions during carbamazepine treatment. The use of carbamazepine in
+pregnancy and lactation should be best avoided.
+The use of carbamazepine in management of
+bipolar disorder appears to be recently declining.
+
+ANTI-ANXIETY DRUGS
+Anti-anxiety drugs, also known as minor tranquilisers
+and anxiolytics, can be classified as follows:
+
+Classification
+Barbiturates
+Barbiturates can be divided into four main types:
+Long Acting
+The duration of action is more than 8 hours. Examples
+include phenobarbital.
+
+193
+
+Intermediate Acting
+The duration of action is 5-8 hours. Examples include
+amobarbital and pentobarbital.
+Short Acting
+The duration of action is 1-5 hours. Examples include
+secobarbital.
+Ultra-Short Acting
+The duration of action is less than 1 hour. Examples
+include thiopentone and methohexital.
+Barbiturates are no longer used or recommended as
+anti-anxiety agents. They produce multiple side effects
+such as excessive sedation, respiratory and circulatory
+depression, hepatic enzyme induction, dependence,
+withdrawal symptoms, rebound increase in REM-sleep
+on withdrawal, and potential for use in suicide.
+
+Non-barbiturate, Non-benzodiazepine
+Anti-anxiety Agents
+These can be further divided into the following categories:
+Carbamates
+The common examples are meprobamate, tybamate
+and carisoprodol. These are not used commonly due
+to the potential for abuse and dependence.
+Piperidinediones
+An example is glutethimide. This drug too is not used
+now-a-days due to its dependence potential.
+Alcohols
+The examples include ethanol, chloral hydrate and
+ethchlorvynol. These drugs are highly dependence
+producing and clearly not recommended.
+Quinazoline Derivatives
+An example is methaqualone. Methaqualone had
+become a street drug (i.e. a drug of abuse) and its
+use was discontinued as an anti-anxiety agent and a
+hypnotic.
+Anti-histaminics
+The common examples include diphenhydramine,
+hydroxyzine and promethazine. In past, diphenhydramine was usually combined with methaqualone or
+diazepam. They may be used as hypnotic-sedatives,
+but their use as anti-anxiety agents is minimal and
+probably not safe.
+
+
+
+
+<<<PAGE 266>>>
+
+254
+
+A Short Textbook of Psychiatry
+
+Blackouts 37
+Bladder training 169
+Blocking 12
+Blood
+alcohol concentration 39
+lithium levels 190
+Blunted affect 58
+Borderline personality disorder 60,
+117, 228
+Brain imaging 64, 75
+Brief
+dissociative stupor 100
+history of psychopharmacology 173
+pulse ECT 202
+Bromocriptine 48, 132
+Bruxism 140
+Bulimia nervosa 144
+Buprenorphine 44, 45
+Bupropion 52
+Buspirone 92, 98, 197
+
+Childhood
+history 9
+psychosis 165
+Chlordiazepoxide 40, 51
+Chlorpromazine 66
+Cholinesterase inhibitors 25, 26
+Chromatography 157
+Chronic
+depression 74, 77
+fatigue syndrome 109
+Circumscribed amnesia 101
+Citalopram 26
+Citrated calcium carbimide 42
+Civil responsibility 229
+Classical
+conditioning model 214
+psychoanalysis 213
+psychosomatic disorders 147
+Classification in
+child psychiatry 162
+psychiatry 2
+Classification of
+alcoholism 37
+benzodiazepines 196
+mental retardation 156
+psychotropic drugs 172
+Claustrophobia 93
+Clerambault’s syndrome 84
+Clomipramine 98, 131
+Clonazepam 94, 98
+Clonidine 44, 167, 169
+Clozapine 52, 53, 66
+Cocaine 47
+overdose 48
+preparations 47
+use disorder 46
+withdrawal syndrome 48
+Code of ethics for psychiatrists 234
+Cognitive
+behaviour therapy 68, 79, 94, 98,
+112, 215, 216
+behavioural theory 91
+therapy 215
+Combativeness 225
+Command hallucinations 57
+Common
+examples of psychosomatic disorders
+148
+psychiatric emergencies 222
+themes in suicide 222
+Community
+mental health 235
+psychiatry 235
+
+C
+Caffeine 52, 53
+CAGE questionnaire 37, 39
+Cannabis
+preparations 45
+use disorder 45
+Capgras’ syndrome 87
+Carbamazepine 79, 192
+Carphologia 20
+Castration anxiety 211
+Cataplexy 138
+Catastrophic reaction 22
+Catatonia 59
+Catatonic
+behaviour 58
+features 57
+schizophrenia 59
+signs 11, 225
+stupor 67, 225
+syndrome 225
+withdrawal 225
+Causes of
+catatonic stupor 225
+hypersomnia 138
+mental retardation 157
+Censor 206
+Central mental health authority 233, 237
+Cerebral palsy 159
+Chasing the dragon 43
+Child
+abuse 228
+psychiatry 162
+
+Comparison of delirium and dementia 22
+Complex partial seizures 29, 31, 61, 227
+Complicated grief reaction 152
+Complications of
+alcohol dependence 39
+chronic alcohol use 38
+Conceptual thinking stage 153
+Concrete thinking stage 153
+Conditioning devices 169
+Conduct disorders 167
+Conjugal paranoia 84
+Consultation-liaison psychiatry 149
+Continuous amnesia 101
+Contraindications of disulfiram 42
+Conversion
+disorder 99
+release symptoms 102
+Coping
+mechanisms 207
+skills training 112
+Coprolalia 168
+Cortical dementia 24
+Counselling 110
+Counter
+phobic defense 210
+thoughts 96
+Covert sensitisation 41, 215
+CPAP 139
+Crack 47
+Cretinism 159
+Criminal lunatic 232
+Crisis 221
+intervention 112
+centre 228
+Critical
+comments 64
+remarks 68
+Cross-gender homosexuality 122
+Culture bound syndromes 110
+Cyclothymia 73
+Cyproheptadine 144
+
+D
+Dangerous Drug Act of 1930 233
+Deep brain stimulation 199
+Defense mechanism 90
+Definition of psychiatric disorder 1
+Deliberate self-harm 222
+Delirium 19, 21, 23
+tremens 38, 41
+Delusion of doubles 87
+Delusional
+depression 77, 78
+
+

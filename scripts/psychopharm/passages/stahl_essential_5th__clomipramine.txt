@@ -1,0 +1,444 @@
+<<<PAGE 351>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Arousal Combos
+SNRI + stimulant
+= SNRI
+
+5HT
+
+NE
+
+DA
+
+single boost
+
+double boost
+
+single boost
+
+= stimulant
+
+SERT
+
+NET
+
+SNRI
+
+SNRI
+
+A
+
+DAT
+stimulant
+
+stimulant
+
+SNRI + modafinil
+= SNRI
+
+5HT
+
+NE
+
+DA
+
+single boost
+
+single boost
+
+single boost
+
+= modafinil
+
+SERT
+B
+
+NET
+SNRI
+
+SNRI
+
+DAT
+
+7
+
+modafinil
+
+Figure 7-66 Arousal combo: SNRI plus stimulant/modafinil. (A) Serotonin (5HT) and dopamine (DA) are single-boosted and
+norepinephrine (NE) is double-boosted when a serotonin–norepinephrine reuptake inhibitor (SNRI) is combined with a stimulant. (B)
+Serotonin (5HT) and norepinephrine (NE) are single-boosted by the serotonin–norepinephrine reuptake inhibitor (SNRI) while dopamine
+(DA) is single-boosted by modafinil.
+
+Table 7-2 Some tricyclic antidepressants still in use
+
+Generic name
+
+Trade name
+
+Clomipramine
+
+Anafranil
+
+Imipramine
+
+Tofranil
+
+Amitriptyline
+
+Elavil; Endep; Tryptizol;
+Laroxyl
+
+Nortriptyline
+
+Pamelor; Aventyl
+
+Protriptyline
+
+Vivactil
+
+Maprotiline
+
+Ludiomil
+
+Amoxapine
+
+Asendin
+
+Doxepin
+
+Sinequan; Adapin
+
+Desipramine
+
+Norpramin; Pertofran
+
+Trimipramine
+
+Surmontil
+
+Dothiepin
+
+Prothiaden
+
+Lofepramine
+
+Deprimyl; Gamanil
+
+Tianeptine
+
+Coaxil; Stablon
+
+structure contains three rings. The TCAs were
+synthesized about the same time that other threeringed phenothiazine molecules were shown to be
+effective tranquilizers for schizophrenia (i.e., the early
+D2 antagonist drugs such as chlorpromazine) but were
+a disappointment when tested as drugs for psychosis.
+However, during testing for schizophrenia, they were
+serendipitously discovered to be effective in unipolar
+depression. Tricyclic antidepressants are not merely drugs
+for depression since one of them (clomipramine) has
+anti-obsessive–compulsive disorder; many of them have
+anti-panic effects at antidepressant doses and efficacy for
+neuropathic and low back pain at low doses.
+Long after their antidepressant properties were
+observed, the TCAs were discovered to block the reuptake
+pumps for norepinephrine (i.e., NET), or for both
+norepinephrine and serotonin (i.e., SERT) (see Figure
+7-67A). Some tricyclics have equal or greater potency for
+SERT inhibition (e.g., clomipramine); others are more
+selective for NET inhibition (e.g., desipramine, maprotiline,
+335
+
+
+
+
+<<<PAGE 593>>>
+
+Chapter 13: Impulsivity, Compulsivity, and Addiction
+
+habits in OCD as it therapeutically helps to migrate the
+neurocircuit of control of OCD behaviors from dorsal
+back to ventral, where it belongs. Some other form of
+doing this same thing may be the key to developing
+robust treatments for addictions, most of which
+have little or no highly effective therapeutic drugs or
+interventions.
+First-line drug treatment of OCD today is one of
+the SSRIs, although their efficacy is modest and half of
+patients treated with these agents show poor responses.
+Behavioral treatments such as exposure therapy with
+response prevention often have greater efficacy than
+serotonergic treatments. It seems as if serotonergic
+therapies suppress abnormal neurocircuitry, whereas
+exposure therapy may actually reverse abnormal
+neurocircuitry because symptoms continue to be
+improved after stopping exposure therapy but not after
+stopping SSRIs. Although second-line treatments with
+one of the tricyclic antidepressants with serotonergic
+properties, clomipramine, with serotonin–norepinephrine
+reuptake inhibitors (SNRIs) or with monoamine oxidase
+inhibitors (MAOIs) are all worthy of consideration,
+the best pharmacological option for a patient who
+has failed several SSRIs is often to consider very high
+doses with an SSRI or augmentation of an SSRI with a
+serotonin–dopamine blocker. The mechanisms of action
+of all of these agents are covered in detail in Chapter 5
+and 7. Augmentation of an SSRI with a benzodiazepine,
+lithium, or buspirone can also be considered. Repetitive
+transcranial magnetic stimulation (rTMS) is an approved
+treatment for OCD. Experimental treatments for OCD
+include deep brain stimulation, or even stereotactic
+ablation of the impulsive–compulsive pathways shown in
+Figures 13-1 and 13-2, for the most resistant of cases.
+Conditions related to OCD may respond somewhat
+to SSRIs, including hoarding, compulsive shopping,
+skin picking, and body dysmorphic disorder, but not
+especially trichotillomania (compulsive hair pulling).
+No agent is officially approved for any of these
+conditions (Table 13-1). Body dysmorphic disorder
+for example is preoccupation with perceived defects or
+flaws in appearance that cause repetitive behavior like
+looking in the mirror, grooming, reassurance seeking.
+Preoccupation with health, body function, and pain exist
+in hypochondriasis and somatization disorders and some
+experts consider these types of obsessions. It is clear that
+more robust treatments with a different mechanism of
+action are needed for the group of obsessive–compulsive
+related disorders.
+
+IMPULSE CONTROL DISORDERS
+A large variety of disorders that have lack of control
+of impulsivity are listed in Table 13-1. How many
+of these disorders can be conceptualized within the
+impulsive–compulsive spectrum, with abnormalities of
+cortico-striatal circuitry, remains to be shown, but the
+descriptive parallels between the impulsive symptoms of
+these various and sundry conditions gives face validity
+to this notion. Since the impulsivity of none of these
+conditions has an approved treatment, we are left with
+the hope that interventions that work in one of the
+impulsive–compulsive disorders may be effective across
+the spectrum of disorders that share this same dimension
+of psychopathology. However, this remains to be proven
+and has the risk of oversimplifying some very complex
+and very different disorders (Table 13-1). One general
+principle being tested and that may apply across the
+waterfront of these many and varied disorders is that
+interventions that can stop the frequent repetition of
+short-term rewarding impulsive behaviors may hopefully
+act to prevent converting them into long-term habits that
+lead to poor functional outcomes.
+Aggression and violence have long been controversial
+issues in psychiatry. Experts categorize violence as
+psychotic, impulsive, or psychopathic, with the most
+common being impulsive (Figure 13-31). Perhaps
+somewhat surprisingly, the least frequent type of
+violent act is one due to cold, calculated psychopathy.
+Psychopathic violence seems to be the most lethal and
+the least responsive to treatment. Approximately 20%
+of violent acts are of the psychotic variety and require
+standard if not aggressive treatment for the underlying
+psychotic illness. The most frequent type of violent
+act is impulsive, especially in institutional settings and
+especially in patients with underlying psychotic illnesses
+(Figure 13-31).
+Each type of aggression may be attributable to
+dysfunction in distinct neural circuits, with impulsive
+violence being linked to the same problems of balancing
+top-down inhibition with bottom-up emotional drives,
+as discussed in Chapter 12 on agitation in dementia
+and illustrated in Figures 12-43 and 12-44. Impulsive
+violence can occur in psychotic disorders of many types,
+including drug-induced psychosis, schizophrenia, and
+bipolar mania, as well as in borderline personality
+disorder and other impulsive–compulsive disorders
+(Table 13-1). Treatment of the underlying condition,
+often with drugs for psychosis (discussed in Chapter 5),
+
+577
+
+13
+
+
+
+
+<<<PAGE 632>>>
+
+Index
+
+atomoxetine, 480–1
+auditory hallucinations, 113
+autoreceptors
+alpha-2, 254, 256, 258
+monoamine, 8
+avolition, 142
+axoaxonic synapses, 1, 3
+axodendritic synapses, 1, 3
+axosomatic synapses, 1, 3
+barbiturates, 556
+bath salts, 546
+BDNF (brain-derived neurotrophic
+factor), 266, 268, 329
+behavioral addictions, 575
+behavioral variant FTD, 494
+benzodiazepine-insensitive GABAA
+receptors, 263–4
+benzodiazepines, 321, 366, 377
+caution with, 378
+insomnia treatment, 421–2
+benzodiazepine-sensitive GABAA
+receptors, 259–62
+beta-amyloid, 488, 496–8, 502
+detection, 499, 501
+beta blockers, 375, 376
+beta subunits, 68
+bifeprunox, 192
+binge-eating disorder, 575
+bipolar depression, 244
+drug treatment, 236, 240
+family history of, 250
+first-line treatment, 342
+identifying, 250
+missed or delayed diagnosis, 250
+schizophrenia and, 249
+suicide rates, 251
+versus unipolar, 249–51
+bipolar disorder
+anticonvulsants with proven efficacy,
+347–51
+anticonvulsants with uncertain
+efficacy, 352–3
+bipolar I, 247
+bipolar II, 244, 247
+combination treatments, 353
+drug treatment, 338–58
+blocking fear conditioning, 375–7
+blonanserin, 234, 241
+brexanolone, 320
+brexpiprazole, 192, 197, 230, 239, 327–8,
+378, 530–2
+bright light therapy, 438, 440, 444
+buprenorphine, 560, 561, 562
+bupropion, 306–8, 353–4, 480, 533
+nicotine addiction, 551
+sertraline combination, 294
+
+616
+
+buspirone, 333, 370
+butyrylcholinesterase, 505, 510
+caffeine, 440–1
+calcium channel blockers (L-type), 352
+cannabidiol (CBD), 563, 565, 567
+cannabis, 150, 563–7
+benefits and risks, 564
+side effects, 563
+therapeutic uses, 564
+carbamazepine, 350, 530
+cardiometabolic risk, 196, 224
+cardiometabolism, 198–201, 415
+cardiovascular disease, 156, 415, 432,
+492, 524
+carfentanil, 560
+cariprazine, 192, 231, 240, 328, 343–5
+cataplexy, 434, 435, 446
+catechol-O-methyltransferase, 253
+central disorders of hypersomnolence, 432
+central pain, 379
+central sensitization, 395
+chemical neurotransmission, 1, 28
+anatomical versus, 1–5
+epigenetics, 23–6
+ion channels and, 73–6
+mood disorders, 252–64
+principles of, 5–9
+signal transduction cascades, 9–23,
+28, 53
+triggering gene expression, 18
+ultradian sleep cycle, 414–16
+chemotherapy, side effects, 309
+child abuse, 370
+chlorpromazine, 161, 181, 201, 202
+choline, 505
+cholinergic agonists, 242
+cholinergic pathways, 509
+chromatin, 23
+chronic back pain, 388
+chronic pain, 379–400
+decreased gray matter, 387–90
+duloxetine treatment, 302–3
+milnacipran treatment, 303
+targeting sensitized circuits, 395–9
+treatment, 390–400
+circadian rhythm disorders, 430, 435–8
+depression, 271–5
+circadian rhythms, 307, 308
+setting of, 275
+circadian treatments, 438–40
+circadian wake drive, 409, 412
+citalopram, 295–6
+classic neurotransmission, 6
+clock genes, 271
+clomipramine, 335
+clonidine, 390, 482–3, 561
+
+closed state, 63
+clozapine, 217, 222–5
+cocaine, 544, 545
+codeine, 559
+cognition, Fab Four of, 317
+cognitive behavioral therapy, 374, 377, 576
+cognitive dysfunction
+ADHD, 455, 456, 458
+Alzheimer disease, 509–18
+chronic pain, 388
+depression, 273
+fibromyalgia, 390, 400
+Parkinson’s disease, 493
+sleep disorders, 402
+sleep disturbance and, 414, 417
+vortioxetine treatment, 315–17
+cognitive symptoms, schizophrenia, 95,
+144, 157
+competitive elimination, 151, 154
+compulsivity, 538–9, 571, 578
+impulsive–compulsive disorders,
+539–43, 575
+OCD, 295, 360, 576–7
+conceptual disorganization, 78
+conditioned responses, 539
+conditioned stimuli, 539, 544
+consolidation, 375
+constitutive activity, 37, 57
+continuous positive airway pressure, 443
+controlled substance, 447
+cortico-brainstem glutamate pathways, 102
+cortico-cortical glutamate pathways, 105
+cortico-striatal glutamate pathways, 104
+cortico-striato-thalamo-cortical (CSTC)
+loops, 87, 362, 365–9
+cortico-thalamic glutamate pathway, 105
+CREB system, 15
+criminogenic behavior, 146, 147
+cytochrome P450 (CYP450), 49–50, 323
+daridorexant, 424
+DAT transporter. See dopamine
+transporters (DATs)
+date rape drugs, 447, 559
+delayed sleep phase disorder, 435, 437
+delirium, 569
+delusions, 77, 141, 524
+Alzheimer disease, 157
+dementia, 521
+Parkinson’s disease psychosis, 157
+dementia, 486, 537, See also Alzheimer
+disease
+agitation in, 145, 157, 197
+apathy in, 536–7
+behavioral symptoms of, 521, 537
+definition, 487
+depression in, 534–5
+
+

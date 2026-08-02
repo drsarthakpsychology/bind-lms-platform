@@ -1,0 +1,1246 @@
+<<<PAGE 47>>>
+
+Chapter 2: Transporters, Receptors, and Enzymes
+
+Table 2-1 Presynaptic monamine transporters
+
+Transporter
+
+Common abbreviation
+
+Gene family
+
+Endogenous substrate
+
+False substrate
+
+Serotonin transporter
+
+SERT
+
+SLC6
+
+Serotonin
+
+Ecstasy (MDMA)
+
+Norepinephrine transporter
+
+NET
+
+SLC6
+
+Norepinephrine
+
+Dopamine
+Epinephrine
+Amphetamine
+
+Dopamine transporter
+
+DAT
+
+SLC6
+
+Dopamine
+
+Norepinephrine
+Epinephrine
+Amphetamine
+
+2
+
+MDMA = 3.4-methylenedioxymethamphetamine
+
+Table 2-2 Neuronal and glial GABA and amino acid transporters
+
+Transporter
+
+Common
+abbreviation
+
+Gene
+family
+
+Endogenous
+substrate
+
+GABA transporter 1 (neuronal and glial)
+
+GAT1
+
+SLC6
+
+GABA
+
+GABA transporter 2 (neuronal and glial)
+
+GAT2
+
+SLC6
+
+GABA beta-alanine
+
+GABA transporter 3 (mostly glial)
+
+GAT3
+
+SLC6
+
+GABA beta-alanine
+
+GABA transporter 4 also called betaine transporter
+(neuronal and glial)
+
+GAT4
+BGT1
+
+SLC6
+
+GABA betaine
+
+Glycine transporter 1 (mostly glial)
+
+GlyT1
+
+SLC6
+
+Glycine
+
+Glycine tranporter 2 (neuronal)
+
+GlyT2
+
+SLC6
+
+Glycine
+
+Excitatory amino acid transporters 1–5
+
+EAAT1–5
+
+SLC1
+
+L-glutamate
+L-aspartate
+
+2-2 and Figure 2-2A). The second subclass is comprised
+of high-affinity glutamate transporters, also called the
+solute carrier SLC1 gene family (Table 2-2 and Figure
+2-2A).
+In addition, there are three subclasses of intracellular
+synaptic vesicle transporters for neurotransmitters:
+the SLC18 gene family comprised both of vesicular
+monoamine transporters (VMATs) for serotonin,
+norepinephrine, dopamine, and histamine and the
+vesicular acetylcholine transporter (VAChT); the SLC32
+gene family and their vesicular inhibitory amino acid
+transporters (VIAATs); and finally the SLC17 gene family
+and their vesicular glutamate transporters, such as
+vGluT1–3 (Table 2-3 and Figure 2-2B).
+Monoamine Transporters (SLC6 Gene Family) as
+Targets of Psychotropic Drugs
+
+Reuptake mechanisms for monoamines utilize unique
+presynaptic transporters (Figure 2-2A) in each different
+monoamine neuron but the same vesicular transporter
+(Figure 2-2B) in the synaptic vesicle membranes of all
+three monoamine neurons plus histamine neurons. That
+
+is, the unique presynaptic transporter for the monoamine
+serotonin is known as SERT, for norepinephrine is
+known as NET, and for dopamine, DAT (Table 2-1 and
+Figure 2-2A). All three of these monoamines are then
+transported into synaptic vesicles of their respective
+neurons by the same vesicular transporter, known
+as VMAT2 (vesicular monoamine transporter 2)
+(Figure 2-2B and Table 2-3).
+Although the presynaptic transporters for these three
+neurotransmitters – SERT, NET, and DAT – are unique
+in their amino acid sequences and binding affinities for
+monoamines, each presynaptic monoamine transporter
+nevertheless has appreciable affinity for amines other
+than the one matched to its own neuron (Table 2-1).
+Thus, if other transportable neurotransmitters or drugs
+are in the vicinity of a given monoamine transporter, they
+may also be transported into the presynaptic neuron by
+hitchhiking a ride on certain transporters that can carry
+them into the neuron.
+For example, the norepinephrine transporter NET
+has high affinity for the transport of dopamine as well as
+for norepinephrine; the dopamine transporter DAT has
+31
+
+
+
+
+<<<PAGE 572>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+(N-methyl-D-aspartate) receptors and at postsynaptic
+mGluR receptors (Figure 13-15).
+Alcohol’s reinforcing effects are theoretically mediated
+not only by its effects at GABA and glutamate synapses,
+causing downstream dopamine release in the mesolimbic
+pathway, but also by actions at opioid synapses within
+mesolimbic reward circuitry (Figure 13-15). Opioid
+neurons arise in the arcuate nucleus and project to the
+VTA, synapsing on both glutamate and GABA neurons.
+The net result of alcohol actions on opioid synapses is
+thought to be the release of dopamine in the nucleus
+acccumbens (Figure 13-15). Alcohol may do this by either
+directly acting upon μ-opioid receptors or by releasing
+endogenous opioids such as β-endorphin.
+Treatment of Alcoholism
+
+The actions of alcohol on opioid synapses create the
+rationale for blocking μ-opioid receptors with antagonists
+such as naltrexone or nalmefene (Figure 13-16).
+Naltrexone and nalmefene (approved outside the US)
+are μ-opioid antagonists that hypothetically block the
+euphoria and “high” of heavy drinking. This theory is
+supported by clinical trials that show that naltrexone
+given either orally or by a 30-day-long acting injection
+reduces days of heavy drinking (defined as five or more
+drinks per day for a man and four or more for a woman)
+and also increases the chances of attaining complete
+abstinence from alcohol. If you drink when you take an
+opioid antagonist, the opioids released by alcohol do not
+lead to pleasure, so why bother drinking? Some patients
+may also say, why bother taking the opioid antagonist,
+of course, and relapse back into drinking alcohol.
+Thus, a long-acting injection may be preferable but,
+unfortunately, hardly any of this is prescribed.
+Acamprosate is a derivative of the amino acid
+taurine and interacts with both the glutamate system
+to inhibit it, and with the GABA system to enhance it,
+a bit like a form of “artificial alcohol” (compare Figure
+13-15 with Figure 13-17). Thus, when alcohol is taken
+chronically and then withdrawn, the adaptive changes
+that it hypothetically causes in both the glutamate
+system and the GABA system create a state of glutamate
+overexcitement and even excitotoxicity as well as GABA
+deficiency. To the extent that acamprosate can substitute
+for alcohol in patients during withdrawal, the actions of
+acamprosate mitigate the glutamate hyperactivity and
+the GABA deficiency (Figure 13-17). This occurs because
+acamprosate appears to have direct blocking actions on
+certain glutamate receptors, particularly mGluR receptors
+
+556
+
+(specifically mGlu5 and perhaps mGlu2). One way or
+another, acamprosate apparently reduces the glutamate
+release associated with alcohol withdrawal (Figure 1317). Actions, if any, at NMDA receptors may be indirect,
+as are actions at GABA systems, both of which may be
+secondary downstream effects from acamprosate’s actions
+on mGluR receptors (Figure 13-17). Although approved,
+acamprosate is not prescribed very often.
+Disulfiram is the classic drug for treating alcoholism.
+It is an irreversible inhibitor of the liver enzyme aldehyde
+dehydrogenase that normally metabolizes alcohol.
+When alcohol is ingested in the presence of disulfiram,
+alcohol’s metabolism is inhibited and the result is the
+build-up of toxic levels of acetaldehyde. This creates an
+aversive experience with flushing, nausea, vomiting,
+and hypotension, hopefully conditioning the patient to
+a negative rather than positive response to drinking.
+Obviously, compliance is a problem with this agent, and
+its aversive reactions are occasionally dangerous. Use of
+disulfiram was greater in the past and is not prescribed
+very often today.
+Unapproved agents that may be effective in treating
+alcoholism include the anticonvulsant topiramate and
+the 5HT3 antagonist ondansetron. Several other agents
+are used “off-label,” especially in Europe. The subject of
+how to treat alcohol abuse and dependence is obviously
+complex, and any psychopharmacological treatment
+for alcoholism is more effective when integrated with
+appropriate psychopharmacological treatment of
+comorbid psychiatric disorders, as well as with structured
+therapies such as 12-step programs, a topic which is
+beyond the scope of this text.
+Sedative Hypnotics
+
+Sedative hypnotics include barbiturates and related agents
+such as ethchlorvynol and ethinamate, chloral hydrate
+and derivatives, and piperidinedione derivatives such as
+glutethimide and methyprylon. Experts often include
+alcohol, benzodiazepines, (discussed in Chapter 8), and
+Z-drug hypnotics (discussed in Chapter 10) in this class
+as well. The mechanism of action of sedative hypnotics
+is basically thought to be the same as those described in
+Chapter 7 (on drugs for depression), Chapter 8 (on drugs
+for anxiety), and Chapter 10 (on drugs for insomnia) and
+illustrated in Figure 13-14, namely as positive allosteric
+modulators (PAMs) of either benzodiazepine-sensitive
+(Figure 13-14A) or benzodiazepine-insensitive (Figure
+13-14B) GABAA receptors, or both. Barbiturates are
+much less safe in overdose than benzodiazepines, cause
+
+
+
+
+<<<PAGE 573>>>
+
+Chapter 13: Impulsivity, Compulsivity, and Addiction
+
+Actions of μ-Opioid Antagonists Reducing
+the Reward of Drinking
+arcuate
+nucleus
+opioid
+neuron
+
+PFC
+Glu neuron
+
+VTA
+
+nalmefene/
+naltrexone
+
+nalmefene/
+naltrexone
+VTA
+DA neuron
+
+GABA
+interneuron
+
+ß endorphin
+
+GABA A receptor
+
+Glu
+
+GABA B receptor
+
+GABA
+
+NMDA receptor
+
+DA
+
+mGluR receptor
+
+μ -opioid receptor
+VSCC
+
+μ -opioid antagonist
+
+Figure 13-16 Actions of μ-opioid antagonists in the ventral tegmental area (VTA). Opioid neurons form synapses in the VTA with
+GABAergic interneurons and with presynaptic nerve terminals of glutamate (Glu) neurons. Alcohol either acts directly upon μ-opioid
+receptors or causes release of endogenous opioids such as enkephalin; in either case, the result is increased dopamine (DA) release
+to the nucleus accumbens. Mu-opioid receptor antagonists such as naltrexone or nalmefene block the pleasurable effects of alcohol
+mediated by μ-opioid receptors.
+
+13
+
+557
+
+
+
+
+<<<PAGE 577>>>
+
+Chapter 13: Impulsivity, Compulsivity, and Addiction
+
+possible, it is rarely successful long term. Of those
+opioid addicts who enter residential rehabilitation and
+treatment for 30–90 days off all drugs, some analyses
+suggest relapse back into opioid abuse as high as
+60–80% within a month and 90–95% by 3 months.
+The drive to reinstitute street opioids coming from the
+addict’s habit circuit – especially if re-exposed to the
+environmental cues linked to previous opioid abuse
+such as the people, places, and paraphernalia associated
+with prior opioid abuse – is akin to putting oneself in
+the situation where bells for Pavlov’s dogs are ringing
+loud and clear. Involuntary, mindless, and powerful
+habit drives then take over reflexively, bypassing
+voluntary will power, no longer able to suppress
+drug seeking and drug taking. This outcome results
+whether the opioid addict is trying to stop methadone,
+buprenorphine, or street opioids.
+How can this dismal outcome be avoided? First of
+all, it is important to recognize that the intensity and
+duration of withdrawal from most drugs including
+opioids are linked to drug half-life, with short-half-life
+full agonists such as morphine or heroin producing
+much more intense and short-lasting withdrawal
+symptoms than either long-acting methadone, which
+has a less intense but much longer duration withdrawal,
+or buprenorphine, the withdrawal of which is both less
+intense and shorter (Figure 13-19). Second of all, the
+
+intensity but not the duration of withdrawal of both
+methadone (Figure 13-20) and buprenorphine (Figure
+13-21) can be reduced by the addition of an α2A agonist.
+Both clonidine and lofexidine are α2-adrenergic agonists
+that reduce signs of autonomic hyperactivity during
+withdrawal and aid in the detoxification process. And
+finally, in an attempt to enhance successful long-term
+abstinence, opioid addicts may be transitioned not
+to abstinence but to maintenance on a long-acting
+injectable opioid antagonist like naltrexone. In the short
+run, naltrexone shortens the withdrawal time of an α2
+agonist administered either with methadone (Figure
+13-20) or with buprenorphine (Figure 13-21). The
+advantages of giving naltrexone long term are having
+the drug present at therapeutic levels all day long, in
+contrast to administering naltrexone orally (Figure 1322). Furthermore, with naltrexone monthly injections
+the opioid-abstinent person now only has to make a
+decision to take medication once every 30 days instead
+of 30 times in 30 days. Even better, an impulsive patient
+cannot readily stop his/her injectable naltrexone in order
+to relapse.
+Agonist substitution treatments like methadone
+or buprenorphine – often called medication-assisted
+therapy (MAT) – are most successful in the setting
+of a structured maintenance treatment program that
+includes random urine drug screening and intensive
+
+Comparative Severity and Duration
+of Opioid Withdrawal
+
+Severity of Withdrawal
+
+morphine
+
+Figure 13-19 Comparative severity
+and duration of opioid withdrawal.
+Following abrupt discontinuation,
+the time to onset of peak withdrawal
+symptoms and the duration of
+symptoms are dependent on the
+half-life of the drug involved. With
+morphine (and heroin) withdrawal,
+symptoms peak within 36–72 hours
+and last for 7–10 days. With methadone
+withdrawal, symptoms are less
+severe and peak at 72–96 hours, but
+can last for 14 days or more. With
+buprenorphine withdrawal, symptoms
+peak after a few days and are less
+severe than with morphine/heroin;
+the duration of symptoms is similar to
+morphine/heroin.
+
+methadone
+
+buprenorphine
+
+0
+
+5
+
+10
+
+13
+
+15
+
+Days since opioid
+
+561
+
+
+
+
+<<<PAGE 578>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Severity of Withdrawal
+
+Severity and Duration of Withdrawal
+After Methadone Discontinuation
+
+abrupt
+discontinuation
+of methadone
+
+Figure 13-20 Severity and duration
+of withdrawal after methadone
+discontinuation. With abrupt
+discontinuation of methadone,
+withdrawal symptoms peak at 72–96
+hours but can last for 14 days or more.
+The intensity, but not the duration,
+of withdrawal symptoms can be
+reduced by adding an α2-adrenergic
+agonist such as lofexidine or clonidine.
+Specifically, these agents can relieve
+autonomic symptoms. Adding both an
+α2-adrenergic agonist and a μ-opioid
+receptor antagonist such as naltrexone
+can reduce the severity as well as the
+duration of withdrawal symptoms.
+
+lofexidine alone
+
+lofexidine+
+naltrexone
+0
+
+5
+
+10
+
+15
+
+Days since last methadone dose
+
+Severity of Withdrawal
+
+Severity and Duration of Withdrawal
+After Buprenorphine Discontinuation
+
+abrupt discontinuation
+of buprenorphine
+
+Figure 13-21 Severity and duration
+of withdrawal after buprenorphine
+discontinuation. With abrupt
+discontinuation of buprenorphine,
+withdrawal symptoms peak at around
+72 hours and last for about a week.
+The intensity, but not the duration,
+of withdrawal symptoms can be
+reduced by adding an α2-adrenergic
+agonist such as lofexidine or clonidine.
+Specifically, these agents can relieve
+autonomic symptoms. Adding both an
+α2-adrenergic agonist and a μ-opioid
+receptor antagonist such as naltrexone
+can reduce the severity as well as the
+duration of withdrawal symptoms.
+
+lofexidine alone
+
+lofexidine+
+naltrexone
+0
+
+3
+
+5
+
+7
+
+Days since last buprenorphine dose
+
+psychological, medical, and vocational services. The
+same is true for those on long-acting naltrexone
+injections. Unfortunately, only a minority of opioid
+addicts enter treatment, only a minority of those in
+treatment receive MAT, and almost none of them
+562
+
+receive injectable naltrexone. Whether this is because of
+philosophical differences of various treatment facilities,
+economic incentives, or therapeutic nihilism is unknown
+but it seems that the currently available best treatments
+are insufficiently prescribed.
+
+
+
+
+<<<PAGE 579>>>
+
+Chapter 13: Impulsivity, Compulsivity, and Addiction
+
+Figure 13-22 Naltrexone formulations.
+The μ-opioid receptor antagonist
+naltrexone is available in both an oral
+formulation and as a once-monthly
+intramuscular (IM) injection. With
+oral naltrexone, one experiences
+fluctuating, dose-dependent plasma
+concentrations. In addition, one must
+decide daily whether or not to continue
+treatment. With the monthly injection,
+one experiences increased and
+consistent plasma concentrations and
+only has to make the decision to take
+medication once every 30 days.
+
+Naltrexone Mean Plasma Levels (ng/mL)
+
+Naltrexone: Oral vs. Long-Acting Injectable
+30
+naltrexone 380 mg
+IM injection
+
+25
+
+oral naltrexone 50 mg
+
+20
+15
+10
+5
+0
+
+0
+
+5
+
+10
+
+15
+
+20
+
+25
+
+30
+
+Time (Days)
+
+Cannabis
+
+You can indeed get stoned without inhaling (see
+endocannabinoids released in Figure 13-5)! The brain
+makes its own cannabis-like neurotransmitters –
+anandamide and 2-arachidonoylglycerol (2-AG)
+(Figures 13-23 and 13-24). So does the body. These
+neurotransmitters and their receptors cannabinoid 1
+and 2 (CB1 and CB2) make up the “endocannabinoid”
+system – the endogenous cannabinoid system (Figure
+13-23). In the brain, release of classic neurotransmitters
+can stimulate the synthesis of endocannabinoids from
+precursors stored in postsynaptic lipid membranes
+(Figure 13-24A). Upon release of these endocannabinoids
+into the synapse, they travel retrograde to presynaptic
+CB1 receptors and “talk back” to the presynaptic
+neuron where they can inhibit the release of the
+classic neurotransmitter (Figure 13-24B). Retrograde
+neurotransmission was introduced in Chapter 1 and
+illustrated in Figure 1-5. Both CB1 receptors and CB2
+receptors are localized in brain, with CB1 receptors
+present in greater density. Both receptors bind both
+endocannabinoids, 2-AG with high efficacy and
+anandamide with low efficacy (Figure 13-23). CB2
+receptors are also in the periphery, mostly on immune
+cells, and also bind the same two endocannabinoids
+(Figure 13-23).
+Cannabis is a mixture of hundreds of chemicals and
+over 100 alkaloid cannabinoids. The most important of
+these are tetrahydrocannabinol (THC) and cannabidiol
+(CBD) (Figure 13-25). THC interacts with CB1 and
+CB2 receptors and has psychoactive properties. CBD
+is an isomer of THC and relatively inactive at CB1
+
+and CB2 receptors (Figure 13-25). CBD does not have
+psychoactive properties and its mechanism of action
+is really unknown (Figure 13-25). Cannabis comes
+in various mixtures of THC and CBD (Figure 13-26).
+Higher CBD content has a lower risk of hallucinations,
+delusions, and memory impairment (Figure 13-26).
+Pure CBD might even be antipsychotic and anxiolytic
+(Figure 13-26). Over time, cannabis has become more
+potent in terms of more THC and less CBD, with
+resultant higher risk of hallucinations, delusions,
+anxiety, and memory impairment (Figure 13-26). It
+is not currently possible to identify in advance those
+vulnerable to psychosis or to the precipitation of
+schizophrenia by cannabis. Nevertheless, an influential
+recent study concluded that if nobody smoked highpotency cannabis, 12% of all cases of first-episode
+psychosis across Europe would be prevented, rising to
+32% in London and 50% in Amsterdam. Cannabis can
+also exacerbate psychosis in patients who already have a
+psychotic illness.
+In usual intoxicating doses for most persons
+without risk for psychosis, cannabis produces a sense
+of well-being, relaxation, a sense of friendliness, a
+loss of temporal awareness, including confusing the
+past with the present, slowing of thought processes,
+impairment of short-term memory, and a feeling of
+achieving special insights. At high doses, cannabis
+can induce panic, toxic delirium as well as psychosis,
+especially in the vulnerable. One complication of longterm cannabis use is the “amotivational syndrome” in
+frequent users. This syndrome is seen predominantly
+in heavy daily cannabis users and is characterized
+563
+
+13
+
+
+
+
+<<<PAGE 588>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Maladaptations of the Reward Pathway Can Shift
+Behavior from Normal to Impulsive to Compulsive
+Normal
+
+Impulsivity
+
+Compulsivity
+
+Salient Stimulus
+
+Salient Stimulus
+
+Stimulus
+
+Favorable
+Outcome
+
+Outcome
+
+Pleasurable Reward
+
+Pleasurable Reward
+
+Knowing &
+Anticipating
+
+Binge
+
+“Liking”
+
+“Wanting”
+
+Absence
+
+Opioids
+
+Dopamine
+
+Learning
+
+Pleasurable Reward
+
+Habits
+
+Anticipation
+
+Figure 13-29A Maladaptations of the reward pathway. Left: Under normal conditions, if a salient stimulus causes a favorable outcome
+this behavior will be encoded as a pleasurable reward. The learning of this pleasurable reward is called “liking” and is an opioiddependent process. The knowledge and anticipation of this pleasurable reward is called “wanting” and is a dopamine-dependent
+process. Center: An increase in “wanting” is thought to underlie impulsivity, such that the drive for the pleasurable reward outweighs the
+outcome and the behavior is repeated without forethought. Repetition of the impulsive behavior doesn’t happen all the time, and the
+absence of the behavior can lead to a stronger desire, or anticipation, for the reward. It is this cycle of binge–abstinence–anticipation that
+can lead to compulsivity. Right: When a behavior becomes compulsive, the reward no longer matters and the behavior is strictly driven
+by the stimulus. It is through this mechanism that habits develop.
+
+Reversing Habit Learning and the Potential of
+Long-Acting Injectable Naltrexone
+Normal
+
+Impulsivity
+
+Compulsivity
+
+Salient Stimulus
+
+Salient Stimulus
+
+Stimulus
+
+Favorable
+Outcome
+
+Outcome
+
+Pleasurable Reward
+
+Pleasurable Reward
+
+Knowing &
+Anticipating
+
+Binge
+
+“Liking”
+
+“Wanting”
+
+Absence
+
+Opioids
+
+Dopamine
+
+Learning
+
+Administration of the long-acting
+injectable naltrexone may in fact
+enhance this process of habit extinction
+
+Habits
+
+Anticipation
+
+Figure 13-29B Reversing habit learning. Since drug abuse is a form of learned behavior, it is theoretically possible to induce
+pharmacological extinction. In the case of alcohol or opioid dependence, this can theoretically be achieved by administering a μ-opioid
+antagonist at the same time that alcohol or opioid use occurs (rather than during abstinence). This prevents any enjoyment or euphoria
+associated with taking the substance. If this approach is successful short term and repeated over and again, it begins the process of
+extinction or habit reversal. Eventually, the conditioned response of consuming alcohol or taking an opioid in response to conditioned
+stimuli (withdrawal and environmental cues) becomes extinguished. Theoretically, the brain is “relearning” to disassociate alcohol or
+opioid use from past triggers and control returns to circuits of voluntary actions and away from involuntary habit circuits.
+
+572
+
+
+
+
+<<<PAGE 589>>>
+
+Chapter 13: Impulsivity, Compulsivity, and Addiction
+
+especially when you are learning. Similarly, the nature of
+recovery is to relapse, and indeed maybe seven times or
+more before becoming truly abstinent. The novel concept
+explained here takes advantage of this inevitability of
+multiple relapses to reverse the habit circuit by learning
+that relapse is no longer rewarding.
+Drink Your Way to Sobriety
+
+This idea uses the brain’s own mechanisms of
+neuroplasticity, learning, and migration of control
+in the impulsive–compulsive circuitry to induce
+pharmacological extinction. Since drug abuse is a form
+of learned behavior, patients with alcoholism experience
+enhanced reinforcement (via the opioid system) when
+they drink (discussed above and illustrated in Figures 1315 and 13-16 ). Contrary to earlier beliefs, detoxification
+and alcohol deprivation do not stop alcohol craving, but
+instead increase subsequent alcohol drinking. Recovered
+alcoholics will often mention that many years following
+their last drink they still get a burst of craving just driving
+past their favorite bar, a vestige of their incompletely
+extinguished alcohol habit.
+So, the idea is to give alcohol to an active alcoholic
+and have the patient experience the lack of enjoyment,
+the lack of euphoria, and the loss of craving that drinking
+normally produces and that heavy drinking in particular
+produces. The program involves taking an oral opioid
+antagonist (e.g., naltrexone or nalmefene) approximately
+1 hour prior to consuming alcohol. When the alcohol
+no longer produces the desired effects because of the
+opioid antagonist, the alcohol is no longer reinforcing.
+If this approach is successful short term, and repeated
+over and again, it begins the process of extinction. The
+patient slowly learns that they cannot “drink over” their
+opioid antagonist and drinking is no longer rewarding.
+Or at least the reward is greatly blunted and the habit of
+alcohol consumption eventually becomes at least partially
+extinguished, making eventual abstinence easier to attain,
+at least in theory. Blocking the reinforcing properties
+of alcohol weakens the mindless automatic responses
+to cues in the environment to drink. The theory goes
+that if drinking is not reinforcing, drinking will abate.
+Rather like the conditioned Pavlovian dog whose mouth
+waters at the sound of the bell, but when food is no longer
+associated with the bell, sooner or later the involuntary
+mouth-watering is extinguished and the bell now causes
+no mouth-watering.
+Sometimes called the Sinclair method and
+championed at first in Scandinavia, this therapeutic
+intervention for alcoholism has been tested in many
+
+clinical studies with good reported success. Interesting
+here is the observation that opioid antagonists are
+particularly effective when paired with drinking, but
+relatively ineffective when given during abstinence.
+This fits with the notion that to reverse the “habit” of
+drinking, extinction learning must take place where the
+reward of abusing alcohol is unpaired with taking alcohol
+(Figure 13-29B). This can also be done when attempting
+(and failing) to “drink over” a long-acting injection of
+naltrexone. Unfortunately, very little opioid antagonist
+therapy is prescribed for alcohol use disorder. One reason
+for this might be that opioid antagonist treatment is most
+effective in reducing heavy drinking, and not necessarily
+as effective in promoting complete abstinence.
+Inject Your Way to Heroin Abstinence
+
+Scandinavian and other investigators have also noted
+that individuals with opioid use disorder act similarly
+to those with alcohol use disorder in response to opioid
+antagonist treatment. That is, individuals dependent
+on opioids who attempt to “inject over” long-acting
+naltrexone with an illicit street opioid find that the opioid
+is no longer reinforcing. The more times one tries but
+fails to get high, the faster they develop extinction of their
+habit, learning that injections are associated with reward
+(Figure 13-29B). The learned behavior of reinforcement
+from opioids is now slowly reversed as the act of injecting
+an opioid is not rewarding. Eventually, the conditioned
+response of taking an opioid in response to conditioned
+stimuli (withdrawal and environmental cues) becomes
+extinguished (Figure 13-29B). Theoretically, the brain is
+“relearning” to disassociate opioid use from past triggers
+and control returns to circuits of voluntary actions and
+away from involuntary habit circuits. Unfortunately, very
+little opioid antagonist treatment is prescribed for opioid
+addicts.
+Smoke Your Way to Quitting
+
+This same phenomenon of “cheating” assisting the
+development of abstinence due to behavioral and
+pharmacological extinction has been seen in smoking
+cessation treatment as well. Many smokers who take
+treatments to stop smoking nevertheless simultaneously
+smoke. Thus, such patients “smoke over” their nicotine
+patch or bupropion and are able to quell craving and
+allow their habit to perpetuate in the face of treatment.
+However, with the nicotinic partial agonist varenicline,
+they cannot “smoke over” this treatment since it has
+higher affinity for nicotinic receptors than nicotine itself
+and the result is a lack of reinforcement from the cheating
+573
+
+13
+
+
+
+
+<<<PAGE 625>>>
+
+Suggested Reading and Selected References
+
+Koob GF, Le Moal M (2008) Addiction and the brain
+antireward system. Ann Rev Psychol 59: 29–53.
+Koob GF, Volkow ND (2010) Neurocircuitry of addiction.
+Neuropsychopharmacology 35: 217–38.
+Mandyam CD, Koob GF (2012) The addicted brain craves
+new neurons: putative role for adult-born progenitors in
+promoting recovery. Trends Neurosci 35: 250–60.
+Nestler EJ (2005) Is there a common molecular pathway for
+addiction? Nat Neurosci 11: 1445–9.
+Nutt DJ, Hughes AL, Erritzoe D, et al. (2015) The dopamine
+theory of addiction: 40 years of highs and lows. Nat Rev
+Neurosci 16: 305–22.
+Schneider S, Peters J, Bromberg U, et al. (2012) Risk taking
+and the adolescent reward system: a potential common
+link to substance abuse. Am J Psychiatry 169: 39–46.
+Solway A, Gu X, Montague PR (2017) Forgetting to be
+addicted: reconsolidation and the disconnection of things
+past. Biol Psychiatry 82: 774–5
+
+DeWitte P, Littleton J, Parot P, Koob G (2005) Neuroprotective
+and abstinence-promoting effects of acamprosate.
+Elucidating the mechanism of action. CNS Drugs 6:
+517–37.
+Garbutt JC, Kranzler HR, O’Malley SS, et al. (2005) Efficacy
+and tolerability of long-acting injectable naltrexone for
+alcohol dependence. A randomized controlled trial. JAMA
+293: 1617–25.
+Kiefer F, Wiedemann K (2004) Combined therapy: what does
+acamprosate and naltrexone combination tell us? Alcohol
+Alcohol 39: 542–7.
+Kiefer F, Jahn H, Tarnaske T, et al. (2003) Comparing and
+combining naltrexone and acamprosate in relapse
+prevention of alcoholism. Arch Gen Psychiatry 60: 92–9.
+Mann K, Bladstrom A, Torup T, et al. (2013) Extending the
+treatment options in alcohol dependence: a randomized
+controlled study of as-needed nalmefene. Biol Psychiatry
+73: 706–13.
+
+Volkow ND, Wang GJ, Fowler JS, Tomasi D, Telang F (2011)
+Addiction: beyond dopamine reward circuitry. Proc Natl
+Acad Sci USA 108: 15037–42.
+
+Martinez D, Gil R, Slifstein M, et al. (2005) Alcohol
+dependence is associated with blunted dopamine
+transmission in the ventral striatum. Biol Psychiatry 58:
+779–86.
+
+Substance Abuse: Alcohol
+
+Mason BJ (2003) Acamprosate and naltrexone treatment
+for alcohol dependence: an evidence-based risk-benefits
+assessment. Eur Neuropsychopharmacol 13: 469–75.
+
+Anton RF, O’Malley SS, Ciraulo DA, et al. (2006) Combined
+pharmacotherapies and behavioral interventions for
+alcohol dependence. The combine study: a randomized
+controlled trial. JAMA 295: 2003–17.
+Anton RF, Pettinati H, Zweben A, et al. (2004) A multi site
+dose ranging study of nalmefene in the treatment of
+alcohol dependence. J Clin Psychopharmacol 24: 421–8.
+Braus DH, Schumann G, Machulla HJ, Bares R, Mann K (2005)
+Correlation of stable elevations in striatal μ-opioid receptor
+availability in detoxified alcoholic patients with alcohol
+craving. A positron emission tomography study using carbon
+11-labeled carfentanil. Arch Gen Psychiatry 62: 57–64.
+Crevecoeur D, Cousins SJ, Denering L, et al. (2018)
+Effectiveness of extended release naltrexone to reduce
+alcohol cravings and use behaviors during treatment and at
+follow-up. J Subst Abuse Treat 85: 105–8.
+Dahchour A, DeWitte P (2003) Effects of acamprosate on
+excitatory amino acids during multiple ethanol withdrawal
+periods. Alcohol Clin Exp Res 3: 465–70.
+Dakwar E, Levin F, Hart CL, et al. (2020) A single ketamine
+infusion combined with motivational enhancement
+therapy for alcohol use disorder: a randomized
+midazolam controlled pilot study. Am J Psychiatry 172:
+125–33.
+DeWitte P (2004) Imbalance between neuroexcitatory and
+neuroinhibitory amino acids causes craving for ethanol.
+Addict Behav 29: 1325–39.
+
+Mason BJ (2005) Acamprosate in the treatment of alcohol
+dependence. Expert Opin Pharmacother 6: 2103–15.
+Mason BJ, Goodman AM, Chabac S, Lehert P (2006) Effect of
+oral acamprosate on abstinence in patients with alcohol
+dependence in a double-blind, placebo-controlled trial: the
+role of patient motivation. J Psychiatr Res 40: 382–92.
+Netzeband JG, Gruol DL (1995) Modulatory effects of acute
+ethanol on metabotropic glutamate responses in cultured
+Purkinje neurons. Brain Res 688: 105–13.
+O’Brien CO (2015) In treating alcohol use disorders, why
+not use evidence-based treatment? Am J Psychiatry 172:
+305–7.
+Palpacuer C, Duprez R, Huneau A, et al. (2017)
+Pharmacologically controlled drinking in the treatment
+of alcohol dependence or alcohol use disorders: a
+systematic review with direct and network meta analyses
+on nalmefene, naltrexone, acamprosate, baclofen and
+topiramate. Addiction 113: 220–37.
+Petrakis IL, Poling J, Levinson C (2005) Naltrexone and
+disulfiram in patients with alcohol dependence and
+comorbid psychiatric disorders. Biol Psychiatry 57:
+1128–37.
+Pettinati HM, O’Brien CP, Rabinowitz AR (2006) The status
+of naltrexone in the treatment of alcohol dependence.
+Specific effects on heavy drinking. J Clin Psychopharmacol
+26: 610–25.
+609
+
+
+
+
+<<<PAGE 626>>>
+
+Suggested Reading and Selected References
+
+Roozen HG, de Waart R, van der Windt DAW, et al. (2005) A
+systematic review of the effectiveness of naltrexone in the
+maintenance treatment of opioid and alcohol dependence.
+Eur Neuropsychopharmacol 16: 311–23.
+Smith-Bernardin S, Rowe C, Behar E, et al. (2018) Low
+threshold extended release naltrexone for high utilizers
+of public services with severe alcohol use disorder: a pilot
+study. J Subst Abuse Treat 85: 109–15.
+Soyka M (2014) Nalmefene for the treatment of alcohol
+dependence: a current update. Int J Neuropsychopharmacol
+17: 675–84.
+Van Amsterdam J, van den Brink W (2013) Reduced risk
+drinking as a viable treatment goal in problematic alcohol
+use and alcohol dependence. J Psychopharmacol 27:
+987–97.
+Wiers CE, Stelzel C, Gladwin TE, et al. (2015) Effects of
+cognitive bias modification training on neural alcohol cue
+reactivity in alcohol dependence. Am J Psychiatry 172:
+334–43.
+
+Substance Abuse: Cannabis
+Black N, Stockings E, Campbell G, et al. (2019) Cannabinoids
+for the treatment of mental disorders and symptoms of
+mental disorders: a systematic review and meta analysis.
+Lancet Psychiatry 6: 995–1010.
+Haney M, Hill MN (2018) Cannabis and cannabinoids:
+from synapse to society. Neuropsychopharm Rev 43:
+1–212.
+Hindley G, Beck K, Borgan B (2020) Psychiatric symptoms
+caused by cannabis constituents: a systematic review and
+meta-analysis. Lancet Psychiatry 7: 344–53.
+Hines LA, Freeman TP, Gage SH, et al. (2020) Association of
+high potency cannabis use with mental and substance use
+in adolescence. JAMA Psychiatry 77: 1044–51.
+Hurd YL, Spriggs S, Alishayev J, et al. (2019) Cannabidiol for
+the reduction of cue-induced craving and anxiety in drug
+abstinent individuals with heroin use disorder: a double
+blind randomized placebo controlled trial. Am J Psychiatry
+176: 911–22.
+James S (2020) A Clinician’s Guide to Cannabinoid Science.
+Cambridge: Cambridge University Press.
+Kovacs FE, Knop T, Urbanski MJ, et al. (2012) Exogenous
+and endogenous cannabinoids suppress inhibitory
+neurotransmission in the human neocortex.
+Neuropsychopharmacology 37: 1104–14.
+Mason BJ, Crean R, Goodell V, et al. (2012) A proof-of-concept
+randomized controlled study of gabapentin: effects on
+cannabis use, withdrawal and executive function deficits
+in cannabis-dependent adults. Neuropsychopharmacology
+37: 1689–98.
+
+610
+
+Nugent SM, Morasco BJ, O’Neil ME, et al. (2017) The effects of
+cannabis among adults with chronic pain and an overview
+of general harms: a systematic review. Ann Intern Med 167:
+319–31.
+
+Substance Abuse: Nicotine
+Akkus F, Ametamey SM, Treyer V, et al. (2013) Market global
+reduction in mGlutR5 receptor binding in smokers and
+ex smokers determined by 11C-ABP688 positron emission
+tomography. Proc Natl Acad Sci USA 10: 737–42.
+Akkus F, Treyer V, Johayem A, et al. (2016) Association of
+long-term nicotine abstinence with normal metabotropic
+glutamate receptor 5 binding. Biol Psychiatry 79: 474–80.
+Crunelle CL, Miller ML, Booij J, van den Rink W (2010) The
+nicotinic acetylcholine receptor partial agonist varenicline
+and the treatment of drug dependence: a review. Eur
+Neuropsychopharmacol 20: 69–79.
+Culbertson CS, Bramen J, Cohen MS (2011) Effect of bupropion
+treatment on brain activation induced by cigarette-related
+cues in smokers. Arch Gen Psychiatry 68: 505–15.
+Evins AE, Culhane MA, Alpert JE, et al. (2008) A controlled
+trial of bupropion added to nicotine patch and behavioral
+therapy for smoking cessation in adults with unipolar
+depressive disorders. J Clin Psychopharmacol 28: 660–6.
+Franklin T, Wang Z, Suh JJ, et al. (2011) Effects of varenicline
+on smoking cue-triggered neural and craving responses.
+Arch Gen Psychiatry 68: 516–26.
+King DP, Paciga S, Pickering E, et al. (2012) Smoking
+cessation pharmacogenetics: analysis of varenicline
+and bupropion in placebo-controlled clinical trials.
+Neuropsychopharmacology 37: 641–50.
+Lotipour S, Mandelkern M, Alvarez-Estrada M, Brody AL
+(2012) A single administration of low-dose varenicline
+saturates α4β2* nicotinic acetylcholine receptors in the
+human brain. Neuropsychopharmacology 37: 1738–48.
+Steinberg MB, Greenhaus S, Schmelzer AC, et al. (2009)
+Triple-combination pharmacotherapy for medically ill
+smokers. A randomized trial. Ann Intern Med 150: 447–54.
+
+Substance Abuse: Opioids
+Bell J, Strang J (2020) Medication treatment of opioid use
+disorder. Biol Psychiatry 87: 82–8.
+Chutuape MA, Jasinski DR, Finerhood MI, Stitzer ML (2001)
+One-, three-, and six-month outcomes after brief inpatient
+opioid detoxification. Am J Drug Alcohol Abuse 27: 19–44.
+Davids E, Gastpar M (2004) Buprenorphine in the treatment of
+opioid dependence. Eur Neuropsychopharmacol 14: 209–16.
+Elkader A, Sproule B (2005) Buprenorphine: clinical
+pharmacokinetics in the treatment of opioid dependence.
+Clin Pharmacokinet 44: 661–80.
+
+
+
+
+<<<PAGE 627>>>
+
+Suggested Reading and Selected References
+
+Han B, Compton WM, Blanco C, et al. (2017) Prescription
+opioid use, misuse and use disorders in US adults: 2015
+national survey on drug use and health. Ann Intern Med
+167: 293–301.
+Johansson J, Hirvonen J, Lovro Z, et al. (2019) Intranasal
+naloxone rapidly occupies brain mu opioid receptors
+in human subjects. Neuropsychopharmacology 44:
+1667–73.
+Kowalczyk WJ, Phillips KA, Jobes ML, et al. (2015) Clonidine
+maintenance prolongs opioid abstinence and decouples
+stress from craving in daily life: a randomized controlled
+trial with ecological momentary assessment. Am J
+Psychiatry 172: 760–7.
+Krupitsky E, Nunes EV, Ling W, et al. (2011) Injectable
+extended-release naltrexone for opioid dependence: a
+double-blind, placebo-controlled, multicenter randomized
+trial. Lancet 377: 1506–13.
+Lee JD, Nunes EV, Novo P, et al. (2018) Comparative
+effectiveness of extended-release naltrexone versus
+buprenorphine–naloxone for opioid relapse prevention
+(X:BOT): a multicentre, open label, randomized controlled
+trial. Lancet 391: 309–18.
+Marquet P (2002) Pharmacology of high-dose
+buprenorphine. In Buprenorphine Therapy of Opiate
+Addiction, Kintz P and Marquet P (eds.), Totawa, NJ:
+Humana Press, 1–11.
+National Institute on Drug Abuse. Drugs, brains, and behavior.
+www.drugabuse.gov/sites/default/files/soa_2014.pdf.
+Accessed January 2018.
+
+Sullivan MA, Bisage A, Bavlicova M, et al. (2019) A
+randomized trial comparing extended release injectable
+suspension and oral naltrexone, both combined with
+behavioral therapy, for the treatment of opioid use
+disorder. Am J Psychiatry 176: 129–37.
+Tanum L, Solli KK, Latif ZE, et al. (2017) Effectiveness
+of injectable extended-release naltrexone vs. daily
+buprenorphine–naloxone for opioid dependence: a
+randomized clinical noninferiority trial. JAMA Psychiatry
+74: 1197–205.
+Tiihonen J, Krupitsky E, Verbitskaya E, et al. (2012)
+Naltrexone implant for the treatment of polydrug
+dependence: a randomized controlled trial. Am J
+Psychiatry 169: 531–6.
+Volkow ND (2014) America’s addiction to opioids: Heroin and
+prescription drug abuse. Presented at the Senate Caucus
+on International Narcotics Control. https://archives.
+drugabuse.gov/testimonies/2014/americas-addiction-toopioids-heroin-prescription-drug-abuse.
+Volkow ND, Frieden TR, Hyde PS, Cha SS (2014) Medicationassisted therapies: tackling the opioid-overdose epidemic.
+N Engl J Med 370: 2063–6.
+World Health Organization (2009) Guidelines for the
+Psychosocially Assisted Pharmacological Treatment of
+Opioid Dependence. Geneva: World Health Organization.
+
+Substance Abuse: Stimulants
+
+Patel B, Koston TR (2019) Keeping up with clinical advances:
+opioid use disorder. CNS Spectrums 24: 17–23.
+
+Bauman MH, Ayestas MA Jr., Partilla JS, et al. (2012) The
+designer methcathinone analogs, mephedrone and
+methylone, are substrates for monoamine transporters in
+brain tissue. Neuropsychopharmacology 37, 1192–203.
+
+Saanijoki T, Tuominen L, Tuulari JJ et al. (2018) Opioid
+release after high intensity interval training in
+healthy human subjects. Neuropsychopharmacology 43:
+246–54.
+
+Bradberry CW (2002) Dose-dependent effect of ethanol
+on extracellular dopamine in mesolimbic striatum of
+awake rhesus monkeys: comparison with cocaine across
+individuals. Psychopharmacology 165: 67–76.
+
+Smyth BP, Barry J, Keenan E, Ducray K (2010) Lapse and
+relapse following inpatient treatment of opiate dependence.
+Ir Med J 103: 176–9.
+
+Collins GT, Narasimhan D, Cunningham AR, et al. (2012)
+Long-lasting effects of a PEGylated mutant cocaine esterase
+(CocE) on the reinforcing and discriminative stimulus
+effects of cocaine in rats. Neuropsychopharmacology 37:
+1092–103.
+
+Spagnolo PA, Kimes A, Schwandt ML, et al. (2019)
+Striatal dopamine release in response to morphine: a
+11C-raclopride positron emission tomography study in
+healthy men. Biol Psychiatry 86: 356–64.
+Stahl SM (2018) Antagonist treatment is just as effective as
+replacement therapy for opioid addition but neither is used
+often enough. CNS Spectrums 23: 113–16.
+Substance Abuse and Mental Health Services Administration.
+Key substance use and mental health indicators in the
+United States: results from the 2016 National Survey
+on Drug Use and Health. www.samhsa.gov/data/sites/
+default/files/NSDUH-FFR1-2016/NSDUH-FFR1-2016.
+htm#opioid1. Accessed January 2018.
+
+Dakwar E, Nunes EV, Hart CL, et al. (2019) A single ketamine
+infusion combined with mindfulness based behavioral
+modification to treat cocaine dependence: a randomized
+clinical trial. Am J Psychiatry 176: 923–30.
+Ersche KD, Bullmore ET, Craig KJ, et al. (2010) Influence of
+compulsivity of drug abuse on dopaminergic modulation
+of attentional bias in stimulant dependence. Arch Gen
+Psychiatry 67: 632–44.
+Ersche KD, Jones PS, Williams GB, et al. (2012) Abnormal
+brain structure implicated in stimulant drug addiction.
+Science 335: 601–4.
+611
+
+

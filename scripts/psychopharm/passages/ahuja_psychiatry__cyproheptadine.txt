@@ -1,0 +1,527 @@
+<<<PAGE 156>>>
+
+144
+
+A Short Textbook of Psychiatry
+
+iii. Cyproheptadine: This is particularly helpful in
+inducing weight gain, decreasing depressive
+symptoms and increasing appetite, if anorexia
+is actually present. The usual dose is 8-32 mg/
+day, in divided doses. However, co-prescription
+with SSRIs can interfere with their effectiveness
+as Cyproheptadine is a serotonin antagonist.
+5. Group therapy and family therapy can be helpful
+in psycho-education for the patient and carers/
+family about nature of anorexia nervosa and its
+treatment. Psycho-education may also include
+discussion of current social norms of slimming
+and fitness, since there is evidence to suggest that
+anorexia nervosa is far more common in countries
+with social pressures for slimming, such as USA
+and UK. India is indeed quite fast catching up with
+similar social pressures.
+The prognosis is generally better if diagnosis
+is made early, absence of previous hospitalisations
+and absence of bulimic episodes. Weight gain and
+improvement in mental outlook often precede return
+of menstrual function.
+
+Bulimia Nervosa
+Bulimia nervosa is an eating disorder characterised
+by the following clinical features:
+1. Bulimia nervosa usually has an onset in early teens
+or adolescence.
+2. There is an intense fear of becoming obese. There
+may be an earlier history of anorexia nervosa.
+3. There is usually body-image disturbance and the
+person is unable to perceive own body size accurately.
+4. There is a persistent preoccupation with eating,
+and an irresistible craving for food. There are
+episodes of overeating in which large amounts of
+food are consumed within short periods of time
+(eating binges).
+5. There are attempts to ‘counteract’ the effects of
+overeating by one or more of the following: selfinduced vomiting, purgative abuse, periods of
+starvation, and/or use of drugs such as appetite
+suppressants.
+
+6. No known medical illness is present which can
+account for the disorder.
+7. Absence of any other primary psychiatric disorder.
+
+Treatment
+The various treatment modalities that can be used
+include:
+1. Behaviour therapy: This is based on providing
+positive reinforcements (and at times negative
+reinforcements) contingent on the control of binge
+eating by the patient. See Chapter 18 for further
+details for BT.
+2. Individual psychotherapy: See Chapters 17 and
+18 for further details.
+3. Antidepressant drugs are an important adjunct
+to other modes of therapy. A Selective serotonin
+uptake inhibitor (SSRI) such as Fluoxetine (in
+doses of 20-60 mg) is particularly useful as it can
+cause loss of appetite at least in the initial phase
+of treatment, along with its antidepressant effect.
+The drugs used in the past have included tricyclic
+antidepressants such as imipramine, though they
+are currently not widely used.
+4. Group therapy and family therapy: These methods
+are used for psycho-education of patient and
+carers/family about nature of bulimia nervosa and
+its treatment.
+
+Obesity (Overeating Associated with Other
+Psychological Disturbances)
+Obesity caused by a reaction to distressing events is
+included here. Obesity caused by drugs or endocrinal
+factors, or due to constitutional factors is not considered a psychiatric disorder.
+Treatment options depend on the underlying cause;
+for example, psychotherapy (for present or past psychological distress), antidepressants (for depression),
+advice from dietician, drug treatment, or even bariatric
+surgery.
+
+Binge Eating Disorders
+In binge eating disorder, large amounts of food are
+consumed in a relatively short period, followed by
+
+
+
+
+<<<PAGE 197>>>
+
+Psychopharmacology
+
+It is essential to continue the antidepressant for a
+period of further 6 months after reaching remission, in
+the first episode of depressive disorder (and for longer
+duration in subsequent episodes) to prevent recurrence of symptoms. It is important to prescribe the
+antidepressant in the same dose as used for treatment
+unless there are adverse effects requiring a decrease
+in dose.
+Only when adequate doses (150-300 mg
+imipramine equivalent) have been administered for
+an adequate period (at least 6 weeks) without a clinical response then the drug can be called ineffective
+for that patient. Another drug, usually from a different
+class or group, or ECT may then be used.
+
+Side Effects and Toxicity
+The common side effects of antidepressants with their
+management are summarised in Table 15.7.
+TCAs are dangerous in overdose; amitriptyline
+and dosulepin (dotheipin) are particularly cardiotoxic
+whilst lofepramine is the safest amongst TCAs. Clinical features of overdose include agitation, delirium,
+paralytic ileus, urinary retention, coma, respiratory
+depression, seizures, hyperpyrexia, cardiac arrhythmias, conduction defects, mydriasis, and death. The
+lethal dose of imipramine is 1-2 g. (40-80 tabs. of
+25 mg imipramine equivalence).
+The treatment options in overdose include gastric
+lavage/induction of vomiting, activated charcoal for
+adsorption, cardio-respiratory resuscitation, treatment
+of seizures (if they occur), general supportive care
+and symptomatic management. Quinidine-like drugs
+are contraindicated whilst antiarrhythmics such as
+lignocaine can be helpful. Physostigmine 0.5 mg
+IV/IM bolus repeated to a total of 3-4 mg/day may
+be used under careful supervision. Coma often reverts
+in less than 24 hours, although toxicity lasts for
+5-6 days.
+Co-prescription of serotonergic drugs (such as
+SSRIs) with other serotonergic agents and especially
+MAOIs can lead to serotonin syndrome. It is characterised by a classic triad of mental status changes,
+neuromuscular abnormalities and autonomic hyper-
+
+185
+
+activity. These include anxiety, agitation, confusion,
+clonus (e.g. ankle clonus, ocular clonus), hyperreflexia, myoclonus, rigidity, increased heart rate, tremor,
+flushing, hyperthermia and excessive sweating. Death
+can occur in severe serotonin syndrome.
+Treatment includes discontinuation of the offending drug(s), supportive management and (sometimes)
+use of serotonin and histamine antagonist cyproheptadine.
+
+Refractory Depression
+About 20-35% of patients do not respond to the
+antidepressant therapy. The chief reasons for this
+non-response include:
+1. Poor drug concordance.
+2. Inadequate dosage.
+3. Insufficient treatment duration.
+4. Low plasma antidepressant levels.
+5. Incorrect diagnosis.
+Even when these important reasons are excluded,
+there still remains a group (15-20%) of depressed
+patients who are non-responders or poor-responders.
+Such patients should receive a trial of another antidepressant preferably from a different group (e.g. SNRI)
+for adequate duration. In case the patient still does not
+respond, the treatment of choice of refractory depression is electroconvulsive therapy (ECT), though other
+treatment choices (such as lithium augmentation) are
+also available.
+
+MOOD STABILISING DRUGS
+(DRUGS USED IN PROPHYLAXIS
+OF BIPOLAR DISORDER)
+These drugs are usually effective in treatment of mania and therefore the word antimanic is often used to
+describe them. But as they are effective in preventing
+mood swings in bipolar disorder, the better term is
+mood-stabilising agent or a prophylactic agent. The
+most commonly used mood-stabilising agents include
+lithium, valproate, carbamazepine, and lamotrigine,
+though there are several other experimental mood
+stabilisers such as oxcarbazepine.
+
+
+
+
+<<<PAGE 198>>>
+
+A Short Textbook of Psychiatry
+
+186
+
+Table 15.7: Side Effects of Antidepressants
+Category and
+Side Effect
+
+Probable Cause
+
+Maximum with
+(For example)
+
+Minimum with
+(For example)
+
+Management
+
+Amitriptyline
+
+Fluoxetine
+
+See table for side effects of
+antipsychotics (Table 15.3)
+
+Amitriptyline
+Amitriptyline
+Amitriptyline
+Amitriptyline
+Amitriptyline
+Amitriptyline
+
+Fluoxetine
+Fluoxetine
+Fluoxetine
+Fluoxetine
+Fluoxetine
+Fluoxetine
+
+Amitriptyline
+
+Fluoxetine
+
+Amitriptyline
+Amitriptyline
+Paroxetine
+
+Mirtazapine
+Bupropion
+Mirtazapine
+Bupropion
+
+SSRIs
+TCAs
+Trazodone
+
+Mirtazapine
+Bupropion
+Not known
+
+α Adrenergic
+blockade
+
+Amitriptyline
+
+Protriptyline
+Fluoxetine
+
+2. Tremor and
+Other EPSE
+3. Jitteriness
+syndrome
+
+Serotonergic
+
+Amoxapine
+
+Not known
+
+Adrenergic;
+Serotonergic
+
+Imipramine
+Fluoxetine
+
+MAOI
+
+4. Withdrawal
+syndrome (mild)
+
+Dependence
+
+Imipramine
+Paroxetine
+
+Protriptyline
+Fluoxetine
+
+5. Seizures
+
+Decreased
+threshold
+
+Bupropion
+Amitriptyline
+
+Nomifensine
+Fluoxetine
+
+A. Autonomic Side Effects
+1. Dry mouth
+Muscarinic
+Cholinergic
+blockade
+2. Constipation
+–do–
+3. Cycloplegia
+–do–
+4. Mydriasis
+–do–
+5. Urinary retention –do–
+6. Delirium
+–do–
+–do–
+7. Aggravation of
+narrow angle
+glaucoma
+8. Orthostatic
+α1 Adrenergic
+hypotension
+blockade
+B. Sexual Side Effects
+1. Impotence
+α1 Adrenergic
+blockade
+2. Impaired/
+α1 Adrenergic
+retarded
+blockade
+ejaculation
+3. Anorgasmia
+
+5-HT blockade
+
+4. Priapism
+
+Not known
+
+C. CNS Effects
+1. Sedation
+
+Do not use in elderly and in
+patients with past history.
+Change or stop drug.
+See table for side effects of
+antipsychotics (Table 15.3)
+
+Cyproheptadine given 1 hour
+before, can reverse anorgasmia and retarded ejaculation
+caused by SSRIs.
+
+Stop drug; muscular relaxation; sometimes surgical
+procedure needed
+This side effect may be beneficial; Otherwise decrease
+dose. Change drug. Give
+single dose only at night.
+Decrease dose. Change drug.
+This is very common in
+first week of therapy. Add
+diazepam for first 1-2 weeks.
+Tolerance occurs.
+Slow withdrawal of drug.
+Decrease dose. Change drug.
+Contd...
+
+
+
+
+<<<PAGE 266>>>
+
+254
+
+A Short Textbook of Psychiatry
+
+Blackouts 37
+Bladder training 169
+Blocking 12
+Blood
+alcohol concentration 39
+lithium levels 190
+Blunted affect 58
+Borderline personality disorder 60,
+117, 228
+Brain imaging 64, 75
+Brief
+dissociative stupor 100
+history of psychopharmacology 173
+pulse ECT 202
+Bromocriptine 48, 132
+Bruxism 140
+Bulimia nervosa 144
+Buprenorphine 44, 45
+Bupropion 52
+Buspirone 92, 98, 197
+
+Childhood
+history 9
+psychosis 165
+Chlordiazepoxide 40, 51
+Chlorpromazine 66
+Cholinesterase inhibitors 25, 26
+Chromatography 157
+Chronic
+depression 74, 77
+fatigue syndrome 109
+Circumscribed amnesia 101
+Citalopram 26
+Citrated calcium carbimide 42
+Civil responsibility 229
+Classical
+conditioning model 214
+psychoanalysis 213
+psychosomatic disorders 147
+Classification in
+child psychiatry 162
+psychiatry 2
+Classification of
+alcoholism 37
+benzodiazepines 196
+mental retardation 156
+psychotropic drugs 172
+Claustrophobia 93
+Clerambault’s syndrome 84
+Clomipramine 98, 131
+Clonazepam 94, 98
+Clonidine 44, 167, 169
+Clozapine 52, 53, 66
+Cocaine 47
+overdose 48
+preparations 47
+use disorder 46
+withdrawal syndrome 48
+Code of ethics for psychiatrists 234
+Cognitive
+behaviour therapy 68, 79, 94, 98,
+112, 215, 216
+behavioural theory 91
+therapy 215
+Combativeness 225
+Command hallucinations 57
+Common
+examples of psychosomatic disorders
+148
+psychiatric emergencies 222
+themes in suicide 222
+Community
+mental health 235
+psychiatry 235
+
+C
+Caffeine 52, 53
+CAGE questionnaire 37, 39
+Cannabis
+preparations 45
+use disorder 45
+Capgras’ syndrome 87
+Carbamazepine 79, 192
+Carphologia 20
+Castration anxiety 211
+Cataplexy 138
+Catastrophic reaction 22
+Catatonia 59
+Catatonic
+behaviour 58
+features 57
+schizophrenia 59
+signs 11, 225
+stupor 67, 225
+syndrome 225
+withdrawal 225
+Causes of
+catatonic stupor 225
+hypersomnia 138
+mental retardation 157
+Censor 206
+Central mental health authority 233, 237
+Cerebral palsy 159
+Chasing the dragon 43
+Child
+abuse 228
+psychiatry 162
+
+Comparison of delirium and dementia 22
+Complex partial seizures 29, 31, 61, 227
+Complicated grief reaction 152
+Complications of
+alcohol dependence 39
+chronic alcohol use 38
+Conceptual thinking stage 153
+Concrete thinking stage 153
+Conditioning devices 169
+Conduct disorders 167
+Conjugal paranoia 84
+Consultation-liaison psychiatry 149
+Continuous amnesia 101
+Contraindications of disulfiram 42
+Conversion
+disorder 99
+release symptoms 102
+Coping
+mechanisms 207
+skills training 112
+Coprolalia 168
+Cortical dementia 24
+Counselling 110
+Counter
+phobic defense 210
+thoughts 96
+Covert sensitisation 41, 215
+CPAP 139
+Crack 47
+Cretinism 159
+Criminal lunatic 232
+Crisis 221
+intervention 112
+centre 228
+Critical
+comments 64
+remarks 68
+Cross-gender homosexuality 122
+Culture bound syndromes 110
+Cyclothymia 73
+Cyproheptadine 144
+
+D
+Dangerous Drug Act of 1930 233
+Deep brain stimulation 199
+Defense mechanism 90
+Definition of psychiatric disorder 1
+Deliberate self-harm 222
+Delirium 19, 21, 23
+tremens 38, 41
+Delusion of doubles 87
+Delusional
+depression 77, 78
+
+

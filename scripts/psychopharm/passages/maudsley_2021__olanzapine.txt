@@ -1,0 +1,945 @@
+<<<PAGE 78>>>
+
+Schizophrenia and related psychoses  57
+
+Compared with IV midazolam alone, a combination of IV olanzapine or IV droperidol with IV midazolam was more rapidly effective and resulted in fewer subsequent
+doses of medication being required.16
+■■ IM midazolam 7.5–15mg was more rapidly sedating than a combination of haloperidol 5–10mg and promethazine 50mg (TREC 1).17
+■■ Olanzapine 10mg was as effective as a combination of haloperidol 10mg and promethazine 25–50mg in the short term, but the effect did not last as long (TREC 4).18
+■■ A combination of haloperidol 5–10mg and promethazine 50mg was more effective
+and better tolerated than haloperidol 5–10mg alone (6% of patients had an acute
+dystonic reaction) (TREC 3).19
+■■ A combination of haloperidol 10mg and promethazine 25–50mg was more effective
+than lorazepam 4mg (TREC 2).20
+■■ A combination of IM chlorpromazine 100mg, haloperidol 5mg and promethazine
+25mg was no better than IM haloperidol 5mg plus promethazine 25mg (TREC
+Lebanon).21
+■■ A combination of IV midazolam and IV droperidol was more rapidly sedating than
+either IV droperidol or IV olanzapine alone. Fewer patients in the midazolam-droperidol group required additional medication doses to achieve sedation.22
+■■ IM olanzapine was more effective than IM aripiprazole in the treatment of agitation
+in schizophrenia in the short term (at 2 hours), but there was no significant difference
+between treatments at 24 hours.23
+■■ IM midazolam 5mg was faster acting and more effective than olanzapine 10mg,
+ziprasidone 20mg and both 5 and 10mg haloperidol in a large (n = 737) Emergency
+Room study.24
+■■ In an open-label study, the combination of IM haloperidol and IM lorazepam was
+found to be similar in efficacy to IM olanzapine.25
+■■ IM droperidol and IM haloperidol were equally effective.26
+Cochrane concluded that haloperidol alone is effective in the management of acute
+behavioural disturbance but poorly tolerated, and that co-administration of promethazine (but not lorazepam) improves tolerability.27,28 However, NICE considers the evidence relating to the use of promethazine for this purpose to be inconclusive.29 When
+assessing haloperidol plus promethazine, Cochrane concluded that the combination is
+effective for use in patients who are aggressive due to psychosis, and its use is based on
+good evidence. The resumption of aggression and need for further injections was more
+likely with olanzapine than with the haloperidol–promethazine combination. The
+authors also stated that ‘haloperidol used on its own without something to offset its
+frequent and serious adverse effects does seem difficult to justify’.30 Cochrane concluded that available data for aripiprazole are rather poor. This evidence suggests that
+aripiprazole is more effective than placebo and haloperidol alone, but not olanzapine.
+However, caution is advised when generalising these results to real-world practice.31
+A systematic review and meta-analysis of IM olanzapine for agitation found IM
+olanzapine and IM haloperidol to be equally effective, but IM olanzapine was associated with a lower incidence of EPSEs.32 Cochrane suggests that droperidol is effective
+and may be used to control people with very disturbed and aggressive behaviours
+caused by psychosis.33 Droperidol is seeing a resurgence in use in some countries having
+
+CHAPTER 1
+
+■■
+
+
+
+
+<<<PAGE 101>>>
+
+CHAPTER 1
+
+80  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Olanzapine long-acting injection
+Like all esters, olanzapine pamoate (embonate, in some countries) is very poorly water
+soluble. An aqueous suspension of olanzapine pamoate, when injected intramuscularly,
+affords both prompt and sustained release of olanzapine. Peak plasma levels are seen
+within a week of injection (in most people within 2–4 days1), and efficacy can be demonstrated after only three days.2 Only gluteal injection is licensed; deltoid injection is
+less effective.3 Olanzapine LAI is effective when given every four weeks, with two
+weekly administration only required when the highest dose is prescribed. Half-life is
+around 30 days.1 It has not been compared with other long-acting injections in RCTs,
+but naturalistic data suggest similar effectiveness to paliperidone LAI.4,5 Loading doses
+are recommended in some dose regimens (see Table 1.5). Formal labelling/SmPC suggests that patients be given oral olanzapine to assess response and tolerability. This
+rarely happens in practice but is strongly recommended. Oral supplementation after the
+first depot injection is not necessary.
+
+Table 1.5 Dosing schedules
+Oral olanzapine
+equivalent
+
+Loading dose
+
+Maintenance dose
+(given 8 weeks after the first dose)
+
+10mg/day
+
+210mg every 2 weeks or 405mg every 4
+weeks
+
+300mg/4 weeks (or 150mg every
+2 weeks)
+
+15mg/day
+
+300mg every 2 weeks
+
+405mg/4 weeks
+(or 210mg every 2 weeks)
+
+20mg/day
+
+None – give 300mg every 2 weeks
+
+300mg every 2 weeks
+
+Switching
+Direct switching to olanzapine LAI, ideally following an oral trial, is usually possible. So,
+when switching from another LAI (but not risperidone), olanzapine oral or LAI can be
+started on the day the last LAI was due. Likewise, for switching from oral treatment – a
+direct switch is possible, but prior antipsychotics are probably best reduced slowly after
+starting olanzapine (either oral or LAI). When switching from risperidone RLAI, olanzapine should be started, we suggest, two weeks after the last injection was due (peak
+risperidone plasma levels can be expected 4–6 weeks after the last injection).
+
+Post-injection syndrome
+Post-injection syndrome occurs when olanzapine pamoate is inadvertently exposed to
+high blood volumes (probably via accidental intravasation6). Olanzapine plasma levels
+may reach 600mcg/L and delirium and somnolence result.7 The incidence of postinjection syndrome is less than 0.1% of injections; almost all reactions (86%) occur
+within one hour of injection.8 One study suggested an incidence of 0.044% of
+
+
+
+
+<<<PAGE 103>>>
+
+82  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+References
+1. Heres S, et al. Pharmacokinetics of olanzapine long-acting injection: the clinical perspective. Int Clin Psychopharmacol 2014; 29:299–312.
+2. Lauriello J, et al. An 8-week, double-blind, randomized, placebo-controlled study of olanzapine long-acting injection in acutely ill patients
+with schizophrenia. J Clin Psychiatry 2008; 69:790–799.
+3. Mitchell M, et al. Single- and multiple-dose pharmacokinetic, safety, and tolerability profiles of olanzapine long-acting injection: an openlabel, multicenter, nonrandomized study in patients with schizophrenia. Clin Ther 2013; 35:1890–1908.
+4. Denee TR, et al. Treatment continuation and treatment characteristics of four long acting antipsychotic medications (Paliperidone Palmitate,
+Risperidone Microspheres, Olanzapine Pamoate and Haloperidol Decanoate) in The Netherlands. Value Health 2015; 18:A407.
+5. Taipale H, et al. Comparative effectiveness of antipsychotic drugs for rehospitalization in schizophrenia-a nationwide study with 20-year
+follow-up. Schizophr Bull 2017; 44:1381–1387.
+6. Luedecke D, et al. Post-injection delirium/sedation syndrome in patients treated with olanzapine pamoate: mechanism, incidence, and management. CNS Drugs 2015; 29:41–46.
+7. McDonnell DP, et al. Post-injection delirium/sedation syndrome in patients with schizophrenia treated with olanzapine long-acting injection,
+II: investigations of mechanism. BMC Psychiatry 2010; 10:45.
+8. Bushes CJ, et al. Olanzapine long-acting injection: review of first experiences of post-injection delirium/sedation syndrome in routine clinical
+practice. BMC Psychiatry 2015; 15:65.
+9. Meyers KJ, et al. Postinjection delirium/sedation syndrome in patients with schizophrenia receiving olanzapine long-acting injection: results
+from a large observational study. B J Psych Open 2017; 3:186–192.
+10. Garg S, et al. Delayed onset postinjection delirium/sedation syndrome associated with olanzapine pamoate: a case report. J Clin
+Psychopharmacol 2019; 39:523–524.
+11. Eli Lilly and Company (NZ) Limited. ZYPREXA RELPREVV® (olanzapine pamoate monohydrate). 2019; https://www.medsafe.govt.nz/
+Consumers/cmi/z/zyprexarelprevvinj.pdf.
+12. Siskind D, et al. Monitoring for post-injection delirium/sedation syndrome with long-acting olanzapine during the COVID-19 pandemic. Aust
+N Z J Psychiatry 2020; 54:759–761.
+13. Venkatesan V, et al. Postinjection delirium/sedation syndrome after 31st long-acting olanzapine depot injection. Clin Neuropharmacol 2019;
+42:64–65.
+14. Eli Lilly and Company Limited. Summary of Product Characteristics. ZYPADHERA 210 mg powder and solvent for prolonged release suspension for injection. 2020; https://www.medicines.org.uk/emc/product/6429.
+15. Anand E, et al. A 6-year open-label study of the efficacy and safety of olanzapine long-acting injection in patients with schizophrenia: a post
+hoc analysis based on the European label recommendation. Neuropsychiatr Dis Treat 2015; 11:1349–1357.
+16. Atkins S, et al. A pooled analysis of injection site-related adverse events in patients with schizophrenia treated with olanzapine long-acting
+injection. BMC Psychiatry 2014; 14:7.
+
+
+
+
+<<<PAGE 128>>>
+
+Table 1.12 Reductions of olanzapine dose by 2.5 percentage points of D2 occupancy at each step.
+Larger reductions that are ‘evenly spaced’ in terms of effect on D2 occupancy could be achieved by
+following every second or third step of this regimen
+
+Period
+1
+
+Olanzapine
+dose (mg)
+20
+
+D2 occupancy (%)
+81.6
+
+Period
+
+Olanzapine
+dose (mg)
+
+D2 occupancy
+(%)
+
+18
+
+2.7
+
+37.5
+
+2
+
+15.5
+
+77.5
+
+19
+
+2.4
+
+35
+
+3
+
+13.5
+
+75
+
+20
+
+2.2
+
+32.5
+
+4
+
+11.9
+
+72.5
+
+21
+
+1.9
+
+30
+
+5
+
+10.5
+
+70
+
+22
+
+1.7
+
+27.5
+
+6
+
+9.3
+
+67.5
+
+23
+
+1.5
+
+25
+
+7
+
+8.4
+
+65
+
+24
+
+1.3
+
+22.5
+
+8
+
+7.5
+
+62.5
+
+25
+
+1.1
+
+20
+
+9
+
+6.8
+
+60
+
+26
+
+0.95
+
+17.5
+
+10
+
+6.1
+
+57.5
+
+27
+
+0.8
+
+15
+
+11
+
+5.5
+
+55
+
+28
+
+0.65
+
+12.5
+
+12
+
+5
+
+52.5
+
+29
+
+0.5
+
+10
+
+13
+
+4.5
+
+50
+
+30
+
+0.37
+
+7.5
+
+14
+
+4.1
+
+47.5
+
+31
+
+0.24
+
+5
+
+15
+
+3.7
+
+45
+
+32
+
+0.1
+
+2.5
+
+16
+
+3.3
+
+42.5
+
+33
+
+0
+
+0
+
+17
+
+3
+
+40
+
+Table 1.13 A summary of potential reduction schedules for olanzapine
+Reduce olanzapine by 5–10mg every 2–3 months until reaching 20mg per day, then
+Reduce dose by 2.5–5mg every 2–3 months until reaching 10mg per day, then
+Reduce dose by 1.25–2.5mg every 2–3 months until reaching 5mg per day, then
+Reduce dose by 0.6–1.25mg every 2–3 months until reaching 2.5mg per day, then
+Reduce dose by 0.3–0.6mg every 2–3 months until reaching 1.25mg per day, then
+Reduce dose by 0.15–0.3mg every 2–3 months until reaching 0.6mg per day, then
+Reduce dose by 0.07–0.15mg every 2–3 months until olanzapine is completely stopped.
+This process should take 12–48 months, depending on how the patient tolerates the reductions.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  107
+
+
+
+
+<<<PAGE 170>>>
+
+Effect of antipsychotic medications on plasma lipids
+Morbidity and mortality from cardiovascular disease are higher in people with schizophrenia than in the general population.1 Dyslipidaemia is an established risk factor for
+cardiovascular disease along with obesity, hypertension, smoking, diabetes and sedentary lifestyle. Specifically, reduced HDL cholesterol and raised triglyceride levels are
+included in the definition of the metabolic syndrome.2 The majority of patients with
+schizophrenia have several of these risk factors and can be considered at ‘high risk’ of
+developing cardiovascular disease. Dyslipidaemia is treatable, and intervention is
+known to reduce morbidity and mortality.3 Aggressive treatment is particularly important in people with diabetes, the prevalence of which is increased 2- to 3-fold over
+population norms in people with schizophrenia (see the section on diabetes).
+
+Effect of antipsychotic drugs on lipids
+Antipsychotic medications show a marked variation in their effects on total cholesterol,
+low-density lipoprotein (LDL) cholesterol, high-density lipoprotein (HDL) cholesterol,
+and triglycerides.4 Regarding FGAs, phenothiazines are known to be associated with
+increases in triglycerides and LDL cholesterol and decreases in HDL5 cholesterol, but
+the magnitude of these effects is poorly quantified.6 Haloperidol seems to have minimal
+effect on lipid profiles.5 Although there are relatively more data pertaining to some
+SGAs, they are derived from a variety of sources and are reported in different ways,
+making it difficult to compare drugs directly. While cholesterol levels can rise, the most
+profound effect of these drugs seems to be on triglycerides. Raised triglycerides are, in
+general, associated with obesity and diabetes. From the available data, clozapine and
+olanzapine4,7 would seem to have the greatest propensity to increase lipids, while quetiapine and risperidone have a moderate propensity.8,9 Aripiprazole, lurasidone and
+ziprasidone appear to have minimal adverse effect on blood lipids4,7,10–15 and may even
+modestly reverse dyslipidaemias associated with previous antipsychotics.14,16,17 For
+cariprazine and brexpiprazole, the effects on plasma lipids would also appear to be
+relatively limited.4,18–21 Iloperidone causes some weight gain but may not have an equivalent impact on cholesterol or triglycerides.4,22,23 Early RCT data suggest that lumateperone is not associated with any significant effects on plasma cholesterol or triglycerides
+in the short term, compared with placebo.24
+Olanzapine
+Olanzapine has been shown to increase triglyceride levels by 40% over the short (12
+weeks) and medium (16 months) term.25,26 Levels may continue to rise for up to a year.27
+Up to two-thirds of olanzapine-treated patients have raised triglycerides28 and just
+under 10% may develop severe hypertriglyceridaemia.29 While weight gain with olanzapine is generally associated with both increases in cholesterol26,30 and triglycerides,29
+severe hypertriglyceridaemia can occur independently of weight gain.29 In one study,
+patients treated with olanzapine or risperidone gained a similar amount of weight, but
+in olanzapine patients serum triglyceride levels increased by four times as much (105mg/
+dl) as in risperidone patients (32mg/dl).31 Quetiapine32 seems to have more modest
+effects than olanzapine, although the data are conflicting.33
+A case–control study conducted in the UK found that patients with schizophrenia
+who were treated with olanzapine were five times more likely to develop
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  149
+
+
+
+
+<<<PAGE 175>>>
+
+CHAPTER 1
+
+154  The Maudsley® Prescribing Guidelines in Psychiatry
+
+family history of diabetes,23,32 although these factors greatly increase the risk of developing diabetes on clozapine.33
+Clozapine appears to increase plasma levels of insulin in a clozapine level-dependent
+fashion.34,35 It has been shown to be more likely than FGAs to increase plasma glucose
+and insulin following oral glucose challenge.36 Testing for diabetes is essential given the
+high prevalence of diabetes in people receiving clozapine.37
+Olanzapine
+As with clozapine, olanzapine has been strongly linked to impaired glucose tolerance,
+diabetes and diabetic ketoacidosis.38 Olanzapine and clozapine appear to directly
+induce insulin resistance.39,40 Risk of diabetes has also been reported to be higher with
+olanzapine than with FGA drugs,41 again with a particular risk in younger patients.25
+The time course of development of diabetes has not been established but impaired glucose tolerance seems to occur even in the absence of obesity and family history of diabetes.23,32 Olanzapine is probably more diabetogenic than risperidone.42–46 Olanzapine
+is also associated with plasma levels of glucose and insulin higher than those seen with
+FGAs (after oral glucose load).36,47
+Risperidone
+Risperidone has been linked, mainly in case reports, to impaired glucose tolerance,48
+diabetes49 and ketoacidosis.50 The number of reports of such adverse effects is substantially smaller than with either clozapine or olanzapine.51 At least one study has suggested that changes in fasting glucose are significantly less common with risperidone
+than with olanzapine,42 but other studies have detected no difference.52
+Risperidone seems no more likely than FGA drugs to be associated with diabetes,25,41,43 although there may be an increased risk in patients under 40 years of age.25
+Risperidone has, however, been observed adversely to affect fasting glucose and plasma
+glucose (following glucose challenge) compared with the levels seen in healthy volunteers (but not compared with patients taking FGAs).36
+Quetiapine
+Like risperidone, quetiapine has been linked to cases of new-onset diabetes and ketoacidosis.53–55 Again, the number of reports is much lower than with olanzapine or clozapine. Quetiapine appears to be more likely than FGA medications to be associated with
+diabetes.25,56 Two studies showed quetiapine to be equal to olanzapine in the incidence
+of diabetes.52,57 The risk with quetiapine may be dose-related, with daily doses of 400mg
+or more being clearly linked to changes in HbA1C.58
+
+Other SGAs
+Amisulpride appears not to elevate plasma glucose59 and seems not to be associated
+with diabetes.60 There is one reported case of ketoacidosis occurring in a patient given
+the closely related medication, sulpiride.61 Data for aripiprazole62–65 and ziprasidone66,67
+
+
+
+
+<<<PAGE 225>>>
+
+CHAPTER 1
+
+204  The Maudsley® Prescribing Guidelines in Psychiatry
+
+32. Ravanic DB, et al. Long-term efficacy of electroconvulsive therapy combined with different antipsychotic drugs in previously resistant schizophrenia. Psychiatr Danub 2009; 21:179–186.
+33. Kulkarni J, et al. Estradiol for treatment-resistant schizophrenia: a large-scale randomized-controlled trial in women of child-bearing age. Mol
+Psychiatry 2015; 20:695–702.
+34. Meskanen K, et al. A randomized clinical trial of histamine 2 receptor antagonism in treatment-resistant schizophrenia. J Clin Psychopharmacol
+2013; 33:472–478.
+35. Meltzer H, et al. W162 – lurasidone is an effective treatment for treatment resistant schizophrenia. Neuropsychopharmacology 2015; 40
+(Suppl 1):S546.
+36. Meltzer HY, et al. Lurasidone improves psychopathology and cognition in treatment-resistant schizophrenia. J Clin Psychopharmacol 2020;
+40:240–249.
+37. Lowe P, et al. When the drugs don’t work: treatment-resistant schizophrenia, serotonin and serendipity. Ther Adv Psychopharmacol 2018;
+8:63–70.
+38. Lieberman JA, et al. A randomized, placebo-controlled study of memantine as adjunctive treatment in patients with schizophrenia.
+Neuropsychopharmacology 2009; 34:1322–1329.
+39. De Lucena D, et al. Improvement of negative and positive symptoms in treatment-refractory schizophrenia: a double-blind, randomized,
+placebo-controlled trial with memantine as add-on therapy to clozapine. J Clin Psychiatry 2009; 70:1416–1423.
+40. Rezaei F, et al. Memantine add-on to risperidone for treatment of negative symptoms in patients with stable schizophrenia: randomized,
+double-blind, placebo-controlled study. J Clin Psychopharmacol 2013; 33:336–342.
+41. Levkovitz Y, et al. A double-blind, randomized study of minocycline for the treatment of negative and cognitive symptoms in early-phase
+schizophrenia. J Clin Psychiatry 2010; 71:138–149.
+42. Miyaoka T, et al. Minocycline as adjunctive therapy for schizophrenia: an open-label study. Clin Neuropharmacol 2008; 31:287–292.
+43. Kelly DL, et al. Adjunctive minocycline in clozapine-treated schizophrenia patients with persistent symptoms. J Clin Psychopharmacol 2015;
+35:374–381.
+44. Chaudhry IB, et al. Minocycline benefits negative symptoms in early schizophrenia: a randomised double-blind placebo-controlled clinical
+trial in patients on standard treatment. J Psychopharmacol 2012; 26:1185–1193.
+45. Joffe G, et al. Add-on mirtazapine enhances antipsychotic effect of first generation antipsychotics in schizophrenia: a double-blind, randomized, placebo-controlled trial. Schizophr Res 2009; 108:245–251.
+46. Berk M, et al. Mirtazapine add-on therapy in the treatment of schizophrenia with atypical antipsychotics: a double-blind, randomised, placebo-controlled clinical trial. Human Psychopharmacology 2009; 24:233–238.
+47. Delle CR, et al. Add-on mirtazapine enhances effects on cognition in schizophrenic patients under stabilized treatment with clozapine. Exp
+Clin Psychopharmacol 2007; 15:563–568.
+48. Sepehrmanesh Z, et al. Therapeutic effect of adjunctive N-acetyl cysteine (NAC) on symptoms of chronic schizophrenia: a double-blind,
+randomized clinical trial. Prog Neuropsychopharmacol Biol Psychiatry 2018; 82:289–296.
+49. Bulut M, et al. Beneficial effects of N-acetylcysteine in treatment resistant schizophrenia. World J Biol Psychiatry 2009; 10:626–628.
+50. Rossell SL, et al. N-acetylcysteine (NAC) in schizophrenia resistant to clozapine: a double blind randomised placebo controlled trial targeting
+negative symptoms. BMC Psychiatry 2016; 16:320.
+51. Breier A, et al. Comparative efficacy of olanzapine and haloperidol for patients with treatment-resistant schizophrenia. Biol Psychiatry 1999;
+45:403–411.
+52. Conley RR, et al. Olanzapine compared with chlorpromazine in treatment-resistant schizophrenia. Am J Psychiatry 1998; 155:914–920.
+53. Sanders RD, et al. An open trial of olanzapine in patients with treatment-refractory psychoses. J Clin Psychopharmacol 1999; 19:62–66.
+54. Taylor D, et al. Olanzapine in practice: a prospective naturalistic study. Psychiatric Bull 1999; 23:178–180.
+55. Bitter I, et al. Olanzapine versus clozapine in treatment-resistant or treatment-intolerant schizophrenia. Prog Neuropsychopharmacol Biol
+Psychiatry 2004; 28:173–180.
+56. Tollefson GD, et al. Double-blind comparison of olanzapine versus clozapine in schizophrenic patients clinically eligible for treatment with
+clozapine. Biol Psychiatry 2001; 49:52–63.
+57. Sheitman BB, et al. High-dose olanzapine for treatment-refractory schizophrenia. Am J Psychiatry 1997; 154:1626.
+58. Fanous A, et al. Schizophrenia and schizoaffective disorder treated with high doses of olanzapine. J Clin Psychopharmacol 1999;
+19:275–276.
+59. Dursun SM, et al. Olanzapine for patients with treatment-resistant schizophrenia: a naturalistic case-series outcome study. Can J Psychiatry
+1999; 44:701–704.
+60. Conley RR, et al. The efficacy of high-dose olanzapine versus clozapine in treatment-resistant schizophrenia: a double-blind crossover study.
+J Clin Psychopharmacol 2003; 23:668–671.
+61. Kumra S, et al. Clozapine and ‘high-dose’ olanzapine in refractory early-onset schizophrenia: a 12-week randomized and double-blind comparison. Biol Psychiatry 2008; 63:524–529.
+62. Kumra S, et al. Clozapine versus ‘high-dose’ olanzapine in refractory early-onset schizophrenia: an open-label extension study. J Child
+Adolesc Psychopharmacol 2008; 18:307–316.
+63. Meltzer HY, et al. A randomized, double-blind comparison of clozapine and high-dose olanzapine in treatment-resistant patients with schizophrenia. J Clin Psychiatry 2008; 69:274–285.
+64. Bronson BD, et al. Adverse effects of high-dose olanzapine in treatment-refractory schizophrenia. J Clin Psychopharmacol 2000;
+20:382–384.
+
+
+
+
+<<<PAGE 292>>>
+
+Bipolar disorder  271
+
+Clozapine
+
+Lurasidone
+Lurasidone is licensed by the FDA as monotherapy and adjunctive treatment to lithium
+and divalproex for acute treatment of bipolar depression, on the basis of RCTs of
+monotherapy versus placebo37 and as adjunct to lithium or valproate.38 Main side
+effects include nausea and akathisia, with minimal effects on weight and metabolic
+parameters.33
+Olanzapine
+Olanzapine is effective in mania.39,40 As with other FGAs, olanzapine is most effective
+when used in combination with a mood stabiliser in acute mania and for symptomatic
+(though not syndromal) relapse prevention41,42 (although in one study, olanzapine + carbamazepine was no better than carbamazepine alone43). Data suggest that olanzapine
+may offer benefits in longer term treatment.44,45 It may be more effective than lithium.46,47 Olanzapine is of course associated with significant metabolic effects, including
+weight gain.
+Quetiapine
+Data relating to quetiapine48–50 suggest robust efficacy in all aspects of BD, including
+prevention of bipolar depression.51 It has low propensity for EPSEs, though significant
+effects on weight and metabolic parameters.
+Risperidone
+Risperidone has shown efficacy in mania,52 particularly in combination with a mood
+stabiliser.53,54 Risperidone LAI is also effective55 (note though that the pharmacokinetics
+of this formulation generally render it an unsuitable choice for the acute treatment of
+mania). The long-acting version is used as prophylaxis (an unlicensed use in most countries). It is effective as prophylaxis against mania in the longer term.18 Paliperidone can
+be assumed to have similar effects.
+Other antipsychotics
+There are few data for amisulpride56 and rather more for ziprasidone,57 which is widely
+used for mania in the US. Iloperidone may be effective in mixed episodes58 but data are
+insufficient to support its use.
+
+CHAPTER 2
+
+The earliest observational study of antipsychotics for maintenance treatment in BD
+examined clozapine in people attending a service for resistant mood disorders.35 There
+is evidence from 15 trials to suggest improvements in treatment-resistant BD (where
+two treatments have failed, despite adequate dose and duration), in depression, mania,
+rapid cycling states and psychotic symptoms.36
+
+
+
+
+<<<PAGE 295>>>
+
+274  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 2
+
+Antipsychotic long-acting injections in bipolar disorder
+LAIs are widely used in BD although none is formally licensed in the UK for this indication (Abilify Maintena is approved by the FDA in the US1). Support for their use is
+rather limited: there have been dozens of open-label trials or case series published, but
+few included more than a handful of subjects.2–4 Retrospective cohort studies and population level studies do, nonetheless, offer some support for the use of LAIs (mainly
+SGAs) in bipolar maintenance.2 There have also been seven RCTs, only five of which
+were sufficiently powered to produce interpretable results (the remaining two trials
+included only 30 subjects in total5,6). These five RCTs represent the highest level of evidence for LAIs in BD. Their details are set out in Table 2.5.
+Few firm conclusions can be drawn from the controlled trials outlined in the table.
+Risperidone LAI is clearly effective either as the sole treatment or as an adjunct but
+provides protection only against manic, hypomanic and mixed-manic episodes and neither decreases nor increases the risk of depressive relapse. Risperidone LAI may be less
+effective than oral olanzapine. It might be tentatively assumed that paliperidone LAI
+has similar effects to risperidone LAI. Oral paliperidone prevents manic relapse in BD7
+and case reports describe good outcomes with the LAI form.8 Aripiprazole LAI also
+protects against manic relapse and does not appear to affect the risk of depression.
+
+Table 2.5 Randomised controlled trials of long-acting injections in bipolar disorder
+Study
+
+N
+
+LAI
+
+Comparator Duration
+
+Ahlfors et al. 33 (19/14)
+19819
+
+Flupentixol
+decanoate
+
+Lithium
+
+18 months Neither treatment improved main
+outcome (number of mood episodes)
+
+MacFadden
+et al.10*
+
+124 (65/59)
+
+Risperidone
+(adjunct)
+
+Placebo
+(adjunct)
+
+12 months Risperidone LAI reduced rate of relapse
+compared with placebo (relative risk 2.3)
+
+Quiroz
+et al.11*
+
+303 (154/149) Risperidone Placebo
+24 months Overall relapse rate was 30% with
+monotherapy monotherapy
+risperidone, 56% with placebo.
+Risperidone did not protect against
+depressive relapse
+
+Vieta
+et al.12*
+
+18 months
+398
+Risperidone Placebo or
+(132/135/131) monotherapy oral
+olanzapine
+monotherapy
+
+Calabrese
+et al.13*
+
+266 (133/133) Aripiprazole Placebo
+12 months Relapse to any mood episode 26.5% with
+monotherapy monotherapy
+aripiprazole; 51.1% with placebo. No
+clear effect on recurrence of depression.
+An open follow-on study of this RCT (that
+also included patients newly prescribed
+aripiprazole) showed somewhat better
+levels of protection: 87–98% of participants
+remained well over 12 months.14
+
+*Trial sponsored by the manufacturer.
+
+Outcome
+
+Recurrence of any mood episode: oral
+olanzapine 23.8%; risperidone LAI
+38.9%; placebo 56.4%. Olanzapine and
+risperidone reduced the risk of elevated
+mood episode but only olanzapine
+reduced the risk of depression
+
+
+
+
+<<<PAGE 312>>>
+
+Bipolar disorder  291
+
+Drug/regime
+
+Comments
+
+Aripiprazole96–99
+
+Limited support from open studies as add-on treatment. RCT negative. Possibly not
+effective.95
+
+Carbamazepine1,13,100
+
+Occasionally recommended but database is poor and effect modest. May have
+useful activity when added to other mood stabilisers.
+
+Gabapentin1,101,102
+
+Open studies suggest modest effect when added to mood stabilisers or
+antipsychotics. Doses average around 1750mg/day. Anxiolytic effect may account
+for apparent effect in bipolar depression
+
+Inositol103
+
+Small, randomised, pilot study suggests that 12g/day inositol is effective in bipolar
+depression
+
+Mifepristone104,105
+
+Some evidence of mood-elevating properties in bipolar depression although this
+was not replicated in a larger trial. Improved cognitive function in both trials. Dose
+used was 600mg/day.
+
+Modafinil106
+
+Meta-analysis of five studies of modafinil/armodafinil suggests robust benefit on
+response and remission with good tolerability and no evidence of increased risk of
+switching.
+
+Omega-3 fatty acids107,108
+
+One positive RCT (1g/2g a day) and one negative (6g a day)
+
+statistical significance.98 Another analysis of trials not involving antidepressants109
+(7307 participants) found a statistical advantage over placebo for olanzapine + fluoxetine, valproate, quetiapine, lurasidone, olanzapine, aripiprazole and carbamazepine (in
+order of effect size, highest first).
+A 2014 network meta-analysis of 29 studies included 8331 subjects.110 Overall olanzapine + fluoxetine, lurasidone, olanzapine, valproate, SSRIs and quetiapine were ranked highest in terms of effect size and response with olanzapine + fluoxetine ranked first for both.
+The most recent network meta-analysis included 11,448 participants in 50 studies.111 Drugs
+found to be more effective than placebo were olanzapine + fluoxetine, olanzapine, valproate, cariprazine, lamotrigine, lurasidone and quetiapine. Interestingly, imipramine and
+fluoxetine were also more effective than placebo (but with wide confidence intervals).
+
+Summary of drug choice
+The combination of olanzapine + fluoxetine is probably the most effective treatment
+available for bipolar depression but its use is constrained by the well known adverse
+effect profile of olanzapine. SSRIs other than fluoxetine may be effective but should
+probably be avoided unless clear individual benefit is obvious.53 Alternative first-line
+choices are quetiapine, olanzapine, lurasidone, lamotrigine and valproate. These drugs
+differ substantially in adverse effect profile, tolerability and cost, each of which needs
+to be considered when prescribing for an individual. Lithium is also effective but supporting evidence is relatively weak. Second-line drugs include ketamine and, increasingly, modafinil. Aripiprazole, risperidone, ziprasidone, tricyclics (with the exception of
+imipramine) and MAOIs (with the exception of tranylcypromine) are probably not
+effective and should not be used routinely.110
+
+CHAPTER 2
+
+Table 2.11 Other possible treatments – seek specialist advice before using
+
+
+
+
+<<<PAGE 740>>>
+
+102. Schlotterbeck P, et al. Aripiprazole in human milk. Int J Neuropsychopharmacol 2007; 10:433.
+103. Lutz UC, et al. Aripiprazole in pregnancy and lactation: a case report. J Clin Psychopharmacol 2010; 30:204–205.
+104. Watanabe N, et al. Perinatal use of aripiprazole: a case report. J Clin Psychopharmacol 2011; 31:377–379.
+105. Mendhekar DN, et al. Aripiprazole use in a pregnant schizoaffective woman. Bipolar Disorders 2006; 8:299–300.
+106. Nordeng H, et al. Transfer of aripiprazole to breast milk: a case report. J Clin Psychopharmacol 2014; 34:272–275.
+107. Frew JR. Psychopharmacology of bipolar I disorder during lactation: a case report of the use of lithium and aripiprazole in a nursing mother.
+Arch Women’s Mental Health 2015; 18:135–136.
+108. Yoshida K, et al. Breast-feeding and psychotropic drugs. Int Rev Psychiatry (Abingdon, England) 1996; 8:117–124.
+109. Patton SW, et al. Antipsychotic medication during pregnancy and lactation in women with schizophrenia: evaluating the risk. Can J
+Psychiatry 2002; 47:959–965.
+110. Klinger G, et al. Antipsychotic drugs and breastfeeding. Pediatr Endocrinol Rev 2013; 10:308–317.
+111. Uguz F. Adverse events in a breastfed infant exposed to risperidone and haloperidol. Breastfeed Med 2019; 14:683–684.
+112. Mendhekar DN. Possible delayed speech acquisition with clozapine therapy during pregnancy and lactation. J Neuropsychiatry Clin
+Neurosci 2007; 19:196–197.
+113. Barnas C, et al. Clozapine concentrations in maternal and fetal plasma, amniotic fluid, and breast milk. Am J Psychiatry 1994; 151:945.
+114. Shao P, et al. Effects of clozapine and other atypical antipsychotics on infants development who were exposed to as fetus: a post-hoc analysis. PLoS One 2015; 10:e0123373.
+115. Imaz ML, et al. Clozapine use during pregnancy and lactation: a case-series report. Front Pharmacol 2018; 9:264.
+116. Goldstein DJ, et al. Olanzapine-exposed pregnancies and lactation: early experience. J Clin Psychopharmacol 2000; 20:399–403.
+117. Croke S, et al. Olanzapine excretion in human breast milk: estimation of infant exposure. Int J Neuropsychopharmacol 2002; 5:243–247.
+118. Gardiner SJ, et al. Transfer of olanzapine into breast milk, calculation of infant drug dose, and effect on breast-fed infants. Am J Psychiatry
+2003; 160:1428–1431.
+119. Ambresin G, et al. Olanzapine excretion into breast milk: a case report. J Clin Psychopharmacol 2004; 24:93–95.
+120. Lutz UC, et al. Olanzapine treatment during breast feeding: a case report. Ther Drug Monit 2008; 30:399–401.
+121. Whitworth A, et al. Olanzapine and breast-feeding: changes of plasma concentrations of olanzapine in a breast-fed infant over a period of
+5 months. J Psychopharmacol 2010; 24:121–123.
+122. Eli Lilly and Company Limited. Personal correspondence – olanzapine – use in pregnant or nursing women. 2011.
+123. Gilad O, et al. Outcome of infants exposed to olanzapine during breastfeeding. Breastfeed Med 2010; 6:55–58.
+124. Goldstein DJ, et al. Olanzapine use during breast-feeding. Schizophr Res 2002; 53 (Suppl 1):185.
+125. Aydin B, et al. Olanzapine and quetiapine use during breastfeeding: excretion into breast milk and safe breastfeeding strategy. J Clin
+Psychopharmacol 2015; 35:206–208.
+126. Stiegler A, et al. Olanzapine treatment during pregnancy and breastfeeding: a chance for women with psychotic illness? Psychopharmacology
+(Berl) 2014; 231:3067–3069.
+127. Var L, et al. Management of postpartum manic episode without cessation of breastfeeding: a longitudinal follow up of drug excretion into
+breast milk. Eur Neuropsychopharmacol 2013; 23 (Suppl 1):S382.
+128. Manouilenko I, et al. Long-acting olanzapine injection during pregnancy and breastfeeding: a case report. Arch Women’s Mental Health
+2018; 21:587–589.
+129. Lee A, et al. Excretion of quetiapine in breast milk. Am J Psychiatry 2004; 161:1715–1716.
+130. Gentile S. Quetiapine-fluvoxamine combination during pregnancy and while breastfeeding (Letter). Arch Women’s Mental Health 2006;
+9:158–159.
+131. Seppala J. Quetiapine (Seroquel) is effective and well tolerated in the treatment of psychotic depression during breast feeding. Eur
+Neuropsychopharmacol 2004; (7 Suppl 1): S245.
+132. Kruninger U, et al. Pregnancy and lactation under treatment with quetiapine. Psychiatr Prax 2007; 34 Suppl 1:S75–S76.
+133. Ritz S. Quetiapine monotherapy in post-partum onset bipolar disorder with a mixed affective state. Eur Neuropsychopharmacol 2005; 15
+Suppl 3:S407.
+134. Rampono J, et al. Quetiapine and breast feeding. Ann Pharmacother 2007; 41:711–714.
+135. Tanoshima R, et al. Quetiapine in human breast milk – population PK analysis of milk levels and simulated infant exposure. J Popul Ther
+Clin Pharmacol 2012; 19:e259–e298.
+136. Yazdani-Brojeni P, et al. Quetiapine in human milk and simulation-based assessment of infant exposure. Clin Pharmacol Ther 2010; 87
+Suppl 1:S3–S4.
+137. Var L, et al. Management of postpartum manic episode without cessation of breastfeeding: A longitudinal follow up of drug excretion into
+breast milk. Eur Neuropsychopharmacol 2013; 23 Suppl 2:S382.
+138. Van Boekholt AA, et al. Quetiapine concentrations during exclusive breastfeeding and maternal quetiapine use. Ann Pharmacother 2015;
+49:743–744.
+139. Hill RC, et al. Risperidone distribution and excretion into human milk: case report and estimated infant exposure during breast-feeding.
+J Clin Psychopharmacol 2000; 20:285–286.
+140. Aichhorn W, et al. Risperidone and breast-feeding. J Psychopharmacol 2005; 19:211–213.
+141. Ilett KF, et al. Transfer of risperidone and 9-hydroxyrisperidone into human milk. Ann Pharmacother 2004; 38:273–276.
+142. Ratnayake T, et al. No complications with risperidone treatment before and throughout pregnancy and during the nursing period. J Clin
+Psychiatry 2002; 63:76–77.
+143. Weggelaar NM, et al. A case report of risperidone distribution and excretion into human milk: how to give good advice if you have not
+enough data available. J Clin Psychopharmacol 2011; 31:129–131.
+
+CHAPTER 7
+
+Pregnancy and breastfeeding  719
+
+
+
+
+<<<PAGE 811>>>
+
+CHAPTER 10
+
+790  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 10.5 (Continued)
+Safety in
+epilepsy
+
+Drug
+
+Comments
+
+Antipsychotics
+Low risk
+– good
+choices
+
+Amisulpride/
+sulpiride
+
+Considered to be safe in PWE.43 Renally excreted, so low risk of
+pharmacokinetic interactions with antiseizure medications. Seizures
+uncommon in overdose44
+
+Aripiprazole
+
+Rarely lowers seizure threshold.5 Incidence of seizures similar to placebo in
+RCTs24
+
+Ziprasidone
+
+Probably low
+risk – use
+with caution
+(limited
+evidence)
+
+High potency
+FGAs
+
+For example, fluphenazine, haloperidol, trifluoperazine, flupentixol. Low risk
+of lowering the seizure threshold5
+
+Risperidone
+
+Unlikely to lower the seizure threshold.5 Incidence of seizures similar to
+placebo in RCTs.24 Has been recommended for PWE.32,45 Evidence of safety in
+a case series of adolescents with epilepsy46
+
+Asenapine
+
+Seizure rate similar to placebo in RCTs.47 Data and clinical experience of use
+in PWE is extremely limited
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Moderate
+risk – care
+required
+
+Olanzapine
+Quetiapine
+
+Olanzapine and quetiapine both associated with seizures in RCTs.24 However,
+olanzapine causes more EEG abnormalities.44 Overall risk of reducing the
+seizure threshold is considered to be low5 and olanzapine has been
+recommended by some for PWE.32 Data relating to olanzapine are difficult to
+interpret. EEG changes are seen in some but not all studies48 and it has been
+reported to be both anticonvulsant49 and proconvulsant.50 Quetiapine has a
+high risk of drug interaction in PWE45
+
+Higher risk
+– care
+required
+
+Clozapine
+
+Most epileptogenic antipsychotic.32 However, has been used successfully in
+PWE stable on antiseizure medications without worsening seizures51 and
+even in treatment-resistant epilepsy.52 Note, should not be used with
+carbamazepine (risk of blood dyscrasias and reduced clozapine levels).
+Valproate or lamotrigine are the antiseizure medications of choice
+
+Higher risk
+– avoid
+
+Low potency FGAs
+(e.g.
+chlorpromazine)
+
+Best avoided in PWE.31 Doses of chlorpromazine above 1g/day have a 9%
+incidence of seizures
+
+Loxapine
+
+Highest rate of seizures amongst the FGAs53
+
+Depot
+antipsychotics
+
+None of the depot preparations currently available are thought to be
+epileptogenic, however:
+■■ The kinetics of depots are complex (seizures may be delayed)
+■■ If seizures do occur, the offending drug may not be easily withdrawn.
+Depots should be used with extreme care
+
+Zotepine
+
+Has established dose-related pro-convulsive effect44
+(Continued)
+
+

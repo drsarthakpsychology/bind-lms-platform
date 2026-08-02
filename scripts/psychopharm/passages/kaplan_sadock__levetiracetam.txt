@@ -1,0 +1,301 @@
+<<<PAGE 1201>>>
+
+skin rash. Evidence for valproate and other anticonvulsants is limited.
+Gabapentin and levetiracetam appear to be ineffective.
+Antipsychotics. Several of the atypical antipsychotics have shown efficacy
+for bipolar depression. Quetiapine has the best evidence. It appears that
+quetiapine, in a modest dose (300 mg/day), is sufficient to improve
+symptoms. Olanzapine, lurasidone, and cariprazine also have positive studies,
+and the FDA approved lurasidone for this indication. Ziprasidone and
+aripiprazole do not appear to be effective.
+Antidepressants. It remains controversial whether antidepressants are useful
+for the depressive phase of bipolar disorder. This is particularly true in
+patients with rapid cycling and mixed states. They seem to be less effective
+than for major depressive disorder and may induce cycling, mania, or
+hypomania. The risk of inducing mania seems highest for tricyclic
+antidepressants, monoamine oxidase inhibitors, and perhaps the serotonin
+norepinephrine reuptake inhibitors such as venlafaxine. Most experts agree
+that antidepressants are not appropriate as monotherapy for patients with
+bipolar disorder.
+Whether we can use them as adjuncts is also controversial. Some
+antidepressants have some evidence of efficacy for adjunctive therapy, such
+as fluoxetine. On the whole, the available evidence suggests they may have
+some usefulness when combined with a mood stabilizer.
+
+
+
+
+<<<PAGE 2097>>>
+
+OTHER ANTICONVULSANTS
+The anticonvulsants described in this section were developed for the
+treatment of epilepsy but were also found to have beneficial effects in
+psychiatric disorders. Also, these agents are used as skeletal muscle relaxants
+and in neurogenic pain. These drugs have a variety of mechanisms, including
+increasing GABAergic function or decreasing glutamatergic function. This
+section includes seven anticonvulsants: gabapentin (Neurontin), levetiracetam
+(Keppra), pregabalin (Lyrica), tiagabine (Gabitril), topiramate (Topamax),
+and zonisamide (Zonegran), as well as one of the first used anticonvulsants,
+phenytoin (Dilantin). Carbamazepine (Tegretol), valproate (Depakene,
+Depakote), lamotrigine (Lamictal), and oxcarbazepine (Trileptal) are
+discussed in separate sections.
+In 2008, the FDA issued a warning that these drugs may increase the risk
+of suicidal ideation or act in some persons compared with placebo; however,
+the relative risk for suicidality was higher in patients with epilepsy compared
+with those with psychiatric disorders. However, some published data
+contradict this warning. These studies suggest that anticonvulsants may have
+a protective effect on suicidal thoughts in bipolar disorder. Considering the
+inherently increased risk of suicide in persons with bipolar disorder,
+clinicians should be aware of these warnings.
+Gabapentin
+Gabapentin was first introduced as an antiepileptic drug and was found to
+have sedative effects that were useful in some psychiatric disorders,
+especially insomnia. It was also found to be beneficial in reducing
+neuropathic pain, including postherpetic neuralgia. It is used in anxiety
+disorders (social phobia and panic disorder), but not as the primary
+intervention in mania or treatment-resistant mood disorders.
+Pharmacologic Actions. Gabapentin circulates in the blood primarily
+unbound and is not appreciably metabolized in humans. It is eliminated
+unchanged by renal excretion and can be removed by hemodialysis. Food
+only moderately affects the rate and extent of absorption. Clearance is
+decreased in elderly persons, requiring dosage adjustments. Gabapentin
+
+
+
+
+<<<PAGE 2102>>>
+
+Stevens–Johnson syndrome.
+Tiagabine was classified as pregnancy category C in the former FDA
+classification system because fetal loss and teratogenicity have been
+demonstrated in animals. It is not known if the drug is excreted in breast
+milk. Pregnant women and nursing mothers should not be given the drug.
+Laboratory Tests. Tiagabine does not interfere with any laboratory tests.
+Dosage and Administration. Tiagabine should not be rapidly loaded or
+rapidly initiated because of the risk of severe adverse effects. In adults and
+adolescents 12 years of age or older with epilepsy who are also taking
+enzyme inducers, tiagabine should be initiated at 4 mg/day and increased
+weekly by 4 mg/day during the first month. The dose should then be
+increased weekly by 4 to 8 mg/day for weeks 5 and 6, yielding 24 to 32
+mg/day administered in two to four divided doses by week 6. In adults (but
+not adolescents), tiagabine doses may be further increased weekly by 4 to 8
+mg/day to as high as 56 mg/day. Plasma concentrations in patients with
+epilepsy commonly range between 20 and 100 ng/mL but do not appear to be
+systematically related to antiseizure effects and thus are not routinely
+monitored.
+Levetiracetam
+Initially developed as a nootropic (memory enhancing) drug, levetiracetam
+proved to be a potent anticonvulsant and marketed as a treatment for partial
+seizures. It has been used to treat acute mania and anxiety and to augment
+antidepressant drug therapy.
+Pharmacologic Actions. The CNS effects are not well understood, but it
+appears to enhance GABA inhibition indirectly. It is wholly and rapidly
+absorbed, and peak concentrations are reached in 1 hour. Food delays the rate
+of absorption and decreases the amount of absorption. Levetiracetam is not
+significantly plasma protein-bound and is not metabolized through the
+hepatic CYP system. Its metabolism involves the hydrolysis of the acetamide
+group. Serum concentrations are not correlated with therapeutic effects.
+Therapeutic Indications. The primary indication is for the treatment of
+
+
+
+
+<<<PAGE 2103>>>
+
+convulsive disorders, including partial-onset seizures, myoclonic seizures,
+and idiopathic generalized epilepsy. In psychiatry, levetiracetam has been
+used off label to treat acute mania, as an add-on treatment for major
+depression, and as an anxiolytic agent.
+Precautions and Adverse Reactions. The most common side effects of
+levetiracetam include drowsiness, dizziness, ataxia, diplopia, memory
+impairment, apathy, and paresthesias. Some patients develop behavioral
+disturbances during treatment, and hallucinations may occur. Suicidal
+patients may become agitated. It should not be used in pregnant or lactating
+women.
+Drug Interactions. There are few if any interactions with other drugs,
+including other anticonvulsants. There is no interaction with lithium.
+Laboratory Interferences. No laboratory interferences have been
+reported.
+Dosages and Clinical Guidelines. The drug is available as 250-, 500-,
+750-, and 1,000-mg tablets; 500-mg extended-release tablets; a 100-mg/mL
+oral solution; and a 100-mg/mL intravenous solution. In epilepsy, the typical
+adult daily dose is 1,000 mg.
+Because of its renal clearance, dosages should be reduced in patients with
+impaired renal function.
+Zonisamide
+Zonisamide, another anticonvulsant, was also found to be useful in bipolar
+disorder, obesity, and binge-eating disorder.
+Pharmacologic Actions. Zonisamide blocks sodium channels and may
+weakly potentiate dopamine and serotonin activity. It also inhibits carbonic
+anhydrase. Some evidence suggests that it may block calcium channels. The
+hepatic CYP3A system metabolizes zonisamide, so enzyme-inducing agents
+such as carbamazepine, alcohol, and phenobarbital increase the clearance and
+reduce the availability of the drug. Zonisamide does not affect the
+metabolism of other drugs. It has a long half-life of 60 hours, so it is
+
+
+
+
+<<<PAGE 2249>>>
+
+movement disorders as a predictor for neuroleptic-induced extrapyramidal
+symptoms. Br J Psychiatry. 2004;185:465–471.
+Lieberman JA, Stroup TS, McEvoy JP, Swartz MS, Rosenheck RA. Clinical
+Antipsychotic Trials of Intervention Effectiveness (CATIE) investigators.
+N Engl J Med. 2005;353:1209–1223.
+Liguori A. Psychopharmacology of attention: the impact of drugs in an age of
+increased distractions. Exp Clin Psychopharmacol. 2013;21(5):343–344.
+Lyons KE, Pahwa R. Efficacy and tolerability of levetiracetam in Parkinson
+disease patients with levodopa-induced dyskinesia. Clin Neuropharmacol.
+2006;29(3):
+148–153.
+Malizia AL. The role of emission tomography in pharmacokinetic and
+pharmacodynamic studies in clinical psychopharmacology. J
+Psychopharmacol. 2006;20(Suppl 4):100–107.
+McGrath PJ, Stewart JW, Quitkin FM, Chen Y, Alpert JE. Predictors of
+relapse in a prospective study of fluoxetine treatment of major depression.
+Am J Psychiatry. 2006;163(9):1542–1548.
+Meco G, Fabrizio E, Epifanio A, Morgante F, Valente M. Levetiracetam in
+tardive dyskinesia. Clin Neuropharmacol. 2006;29:265.
+Meyer JH, Ginovart N, Boovariwala A, Sagrati S, Hussey D. Elevated
+monoamine oxidase a levels in the brain: an explanation for the
+monoamine imbalance of major depression. Arch Gen Psychiatry.
+2006;63:1209–1216.
+Miller del D, Caroff SN, Davis SM, Rosenheck RA, McEvoy JP. Clinical
+Antipsychotic Trials of Intervention Effectiveness (CATIE) investigators:
+extrapyramidal side-effects of antipsychotics in a randomised trial. Br J
+Psychiatry. 2008;193:279.
+Moncrieff J. Magic bullets for mental disorders: the emergence of the concept
+of an “antipsychotic” drug. J Hist Neurosci. 2013;22(1):30–46.
+Pappa S, Dazzan P. Spontaneous movement disorders in antipsychotic-naive
+patients with first-episode psychoses: a systematic review. Psychol Med.
+2009;39:
+1065–1076.
+Poyurovsky M, Pashinian A, Weizman R, Fuchs C, Weizman A. Low-dose
+mirtazapine: a new option in the treatment of antipsychotic-induced
+akathisia. A randomized, double-blind, placebo- and propranolol-
+
+
+
+
+<<<PAGE 2270>>>
+
+Jefferson JW, Greist JH. Lithium. In: Sadock BJ, Sadock VA, Ruiz P, eds.
+Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3132
+Johnson BA, Rosenthal N, Capece JA. Improvement of physical health and
+quality of life of alcohol-dependent individuals with topiramate treatment:
+US multisite randomized controlled trial. Arch Intern Med.
+2008;168:1188–1199.
+Johnson BA, Rosenthal N, Capece JA, Wiegand F, Mao L. Topiramate for
+treating alcohol dependence: a randomized controlled trial. JAMA.
+2007;298(14):1641.
+Kamalinia G, Brand S, Ghaeli P, Abedi N, Bajoghli H, Sharifi V, Zahiroddin
+A, Amini M, Rouini MR, Holsboer-Trachsler E, Mohammadpoor AH.
+Serum levels of sodium valproate in patients suffering from bipolar
+disorders: comparing acute and maintenance phases of mania.
+Pharmacopsychiatry. 2013;46(3):83–87.
+Kato T, Ishiwata M, Mori K, Washizuka S, Tajima O. Mechanisms of altered
+Ca2+ signaling in transformed lymphoblastoid cells from patients with
+bipolar disorder. Int J Neuropsychopharmacol. 2003;6:379–389.
+Ketter TA, Brooks JO, Hoblyn JC. Effectiveness of lamotrigine in bipolar
+disorder in a clinical setting. J Psychiatr Res. 2008;43:13–23.
+Ketter TA, Greist JH, Graham JA, Roberts JN, Thompson TR. The effect of
+dermatologic precautions on the incidence of rash with addition of
+lamotrigine in the treatment of bipolar I disorder: a randomized trial. J Clin
+Psychiatry. 2006;67(3):400–406.
+Ketter TA, Wang PW. Anticonvulsants: Gabapentin, levetiracetam,
+pregabalin, tiagabine, topiramate, zonisamide. In: Sadock BJ, Sadock VA,
+Ruiz P, eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry.
+9th ed. Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins;
+2009:3021.
+Ketter TA, Wang PW. Lamotrigine. In: Sadock BJ, Sadock VA, Ruiz P, eds.
+Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3127.
+Ketter TA, Wang PW, Becker OV, Nowakowska C, Yang YS. The diverse
+roles of anticonvulsants in bipolar disorders. Ann Clin Psychiatry.
+2003;15:95–108.
+Klitgaard H. Epilepsy therapy: anticonvulsants, lessons learned and unmet
+
+
+
+
+<<<PAGE 2273>>>
+
+Lamotrigine in treatment-resistant schizophrenia: a randomized placebocontrolled crossover trial. Biol Psychiatry. 2003;54(11):1241–1248.
+Trankner A, Sander C, Schonknecht P. A critical review of the recent
+literature and selected therapy guidelines since 2006 on the use of
+lamotrigine in bipolar disorder. Neuropsychiatr Dis Treat. 2013;9:101–
+111.
+Triggle DJ. Calcium channel antagonists: clinical uses—past, present and
+future. Biochem Pharmacol. 2007;74:1–9.
+Trinka E, Marson AG, Paesschen WV, Kälviäinen R, Marovac J, Duncan B,
+Buyle S, Hallström Y, Hon P, Muscas GC, Newton M, Meencke HJ, Smith
+PE, Pohlmann-Eden B, KOMET Study Group. KOMET: an unblinded,
+randomised, two parallel group, stratified trial comparing the effectiveness
+of levetiracetam with controlled-release carbamazepine and extendedrelease sodium valproate as monotherapy in patients with newly diagnosed
+epilepsy. J Neurol Neurosurg Psychiatry. 2013;84(10):1138–1147.
+Tritt K, Nickel C, Lahmann C, Leiberich PK, Rother WK. Lamotrigine
+treatment of aggression in female borderline-patients: a randomized,
+double-blind, placebocontrolled study. J Psychopharmacol. 2005;19(3):287–291.
+Viguera AC, Newport DJ, Ritchie J, Stowe Z, Whitfield T. Lithium in breast
+milk and nursing infants: clinical implications. Am J Psychiatry.
+2007;164:342–345.
+Vrielynck P. Current and emerging treatments for absence seizures in young
+patients. Neuropsychiatr Dis Treat. 2013;9:963–975.
+Wagner KD, Kowatch RA, Emslie GJ, Findling RL, Wilens TE, McCague K.
+A doubleblind, randomized, placebo-controlled trial of oxcarbazepine in the
+treatment of bipolar disorder in children and adolescents. Am J Psychiatry.
+2006;163(7):
+1179–1186.
+Walz JC, Frey BN, Andreazza AC, Cereser KM, Cacilhas AA. Effects of
+lithium and valproate on serum and hippocampal neurotrophin-3 levels in
+an animal model of mania. J Psychiatr Res. 2008;42(5):416–421.
+Wang HY, Friedman E. Increased association of brain protein kinase C with
+the receptor for activated C kinase-1 (RACK1) in bipolar affective
+disorder. Biol Psychiatry. 2001;50:364.
+
+
+
+
+<<<PAGE 3679>>>
+
+Learning
+concept, 1014–1015
+defined, 1013
+instrumental learning, 1018–1020
+Pavlovian and operant learning together, 1020–1022, 1021f
+Pavlovian conditioning, 1015–1018
+theory, 1013–1022
+Least restrictive alternative, 841
+Lederberg, Marguerite S., 856
+Legal issues, of psychiatry. See Forensic and legal issues
+Leg cramps, sleep-related, 501
+Lesch–Nyhan syndrome, 87t, 103, 155, 609
+Let’s Face It! program, 128
+Level of care, 825–827, 826t
+Levetiracetam, 665
+Levinson, Daniel, 911, 918t
+Levitra. See Vardenafil
+Levodopa, 598
+Levomilnacipran, 635
+Levorphanol, for pain management in dying patients, 861t
+Levothyroxine, 607
+Levoxyl. See Levothyroxine
+Lewin, Kurt, 1084
+Lewis, Dorothy, 584
+Lewis, N. D. C., 45
+Lewy body disease, 243, 243f, 243t
+Lexical processing, 931
+Lezak, Muriel, 50
+Lhx5 gene, 945
+Lhx transcription factor, 950
+Libido, 1060
+Lidcombe Program, 119
+Lidocaine, 732
+Life and death instincts, 1061
+Light therapy, 514
+Lima, Almeida, 740
+Limb apraxia, 48
+
+

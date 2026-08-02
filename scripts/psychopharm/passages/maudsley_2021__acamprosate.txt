@@ -1,0 +1,773 @@
+<<<PAGE 484>>>
+
+Addictions and substance misuse  463
+
+Relapse prevention
+There is no place for the continued use of benzodiazepines beyond treatment of the
+acute alcohol withdrawal syndrome. Acamprosate and supervised disulfiram are
+licensed for treatment of alcohol dependence in the UK and may be offered in combination with psychosocial treatment.2 Treatment should be initiated by a specialist service.
+After 12 weeks, transfer of the prescribing to the GP may be appropriate, although
+specialist care may continue (shared care). Naltrexone is also recommended as an
+adjunct in the treatment of moderate and severe alcohol dependence.2 As it does not
+have marketing authorisation for the treatment of alcohol dependence in the UK,
+informed consent should be sought and documented prior to commencing treatment.
+
+Acamprosate is a synthetic taurine analogue that acts as a functional glutamatergic
+N-methyl-d-aspartate antagonist and also increases γ-aminobutyric acid (GABA)-ergic
+function. The number needed to treat (NNT) for the maintenance of abstinence has
+been calculated as 9–11.9 The treatment effect is most pronounced at 6 months with the
+risk ratio (compared with placebo) of returning to drinking behaviour dropping to
+0.83, though the effect has been shown to be significant for up to 12 months.2,20,21
+Acamprosate should be initiated as soon as possible after abstinence has been achieved
+(the BAP consensus guidelines9 recommend that acamprosate should be started ‘during
+detoxification’ because of its potential neuroprotective effect). NICE2 recommends that
+acamprosate should be continued for up to 6 months with regular (monthly) supervision. The SPC recommends that it is given for 1 year.
+Acamprosate is relatively well tolerated; side effects include diarrhoea, abdominal
+pain, nausea, vomiting and pruritis.2 It is contraindicated in severe renal or hepatic
+impairment, thus baseline liver and kidney function tests should be performed before
+commencing treatment. Acamprosate should be avoided in individuals who are pregnant or breastfeeding.
+Acamprosate: NICE Clinical Guideline 115, 20112,20
+Acamprosate should be offered for relapse prevention in moderately to severely dependent
+drinkers, in combination with psychosocial treatment. It should be prescribed for up to 6 months,
+or longer for those who perceive benefit and wish to continue taking it. The dose is 1998mg daily
+(666mg three times per day) for individuals over 60kg. For those under 60kg, the dose is 1332mg
+daily. Treatment should be stopped in those who continue to drink for 4–6 weeks after starting
+the drug.
+
+Naltrexone
+Opioid blockade prevents increased dopaminergic activity after the consumption of
+alcohol, thus reducing its rewarding effects. Naltrexone, a non-selective opioid receptor
+antagonist, significantly reduces relapse to heavy drinking.2,22 Although early trials used
+a dose of 50mg/day, more recent US studies have used 100mg/day. In the UK, the usual
+dose is 50mg/day with a trial dose of 25mg for 2 days to check for side effects.
+
+CHAPTER 4
+
+Acamprosate
+
+
+
+
+<<<PAGE 486>>>
+
+Addictions and substance misuse  465
+
+Mild alcohol–disulfiram reaction
+Facial flushing
+■■ Sweating
+■■ Nausea
+■■ Hyperventilation
+■■ Dyspnea
+■■ Tachycardia
+■■ Hypotension
+■■
+
+Contraindications
+Ingestion of alcohol within the previous 24 hours
+■■ Cardiac failure
+■■ Coronary artery disease
+■■ Hypertension
+■■ Cerebrovascular disease
+■■ Pregnancy
+■■ Breastfeeding
+■■ Liver disease
+■■ Peripheral neuropathy
+■■ Severe mental illness
+Severe alcohol–disulfiram reaction
+Acute heart failure
+■■ Myocardial infarction
+■■ Arrhythmias
+■■ Bradycardia
+■■ Respiratory depression
+■■ Severe hypotension
+■■
+
+The therapeutic effect of disulfiram is thus mediated by its incompatibility with alcohol, resulting in alcohol aversion. Supervised medication optimises compliance and
+contributes to effectiveness.
+The intensity of the intolerance reaction is dose dependent, both with regard to the
+amount of alcohol consumed and the dose of disulfiram. However, it is thought that
+much of the therapeutic effect is mediated by the mental anticipation of the aversive
+reaction, rather than the pharmacological action itself. Sudden death is more prevalent
+at doses above 1000mg.27 With this in mind, the value of prescribing higher doses of
+disulfiram must be carefully considered.
+Doses are 800mg for the first dose, reducing to 100–200mg daily for maintenance. In
+co-morbid alcohol and cocaine dependence, doses of 500mg daily have been given.
+Halitosis is a common side effect. If there is a sudden onset of jaundice (the rare complication of hepatotoxicity), the patient should stop the drug and seek urgent medical
+attention.
+The evidence for disulfiram is weaker than for acamprosate and naltrexone.2 In the
+UK, NICE recommends its use ‘as a second-line option for moderate-to-severe alcohol
+dependence for patients who are not suitable for acamprosate or naltrexone or have a
+specified preference for disulfiram and who aim to stay abstinent from alcohol’.2
+
+CHAPTER 4
+
+■■
+
+
+
+
+<<<PAGE 487>>>
+
+466  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Disulfiram: NICE Clinical Guideline 115, 20112
+Disulfiram should be considered in combination with a psychological intervention for patients who
+wish to achieve abstinence, but for whom acamprosate or naltrexone is not suitable. Treatment
+should be started at least 24 hours after the last drink and should be overseen by a family member
+or a carer. Monitoring is recommended every 2 weeks for the first 2 months, then monthly for the
+following 4 months. Medical monitoring should be continued at 6 monthly intervals after the first
+6 months. Patients must not consume any alcohol while taking disulfiram.
+
+Baclofen
+
+CHAPTER 4
+
+Baclofen is a GABA-B agonist that does not have a licence for use in alcohol dependence but is nevertheless used by some clinicians. A recent meta-analysis failed to find
+positive effects for baclofen and did not support its use as a first-line treatment for
+alcohol-use disorders.28 Baclofen was associated with higher rates of adverse effects,
+including depression, vertigo, somnolence, numbness and muscle rigidity.
+Antiseizure medications
+There is currently insufficient evidence to support the clinical use of antiseizure medications in the treatment of alcohol dependence, although a significant association has
+been found for fewer drinks per drinking day and lower average heavy drinking compared with placebo.29 Most research has been carried out on topiramate. There have
+been fewer studies on gabapentin30 valproate and levetiracetam.
+
+Pregnancy and alcohol use
+Evidence indicates that alcohol consumption during pregnancy may cause harm to the
+foetus. The DoH advises that women should not drink any alcohol at all during pregnancy.1 Drinking even 1–2 units/day during pregnancy can increase the risk of having a
+pre-term, low birthweight or small for gestational age baby. NICE guidelines changed
+in December 2018 to refer to the CMO guidelines.
+For alcohol-dependent pregnant women who have withdrawal symptoms, pharmacological cover for detoxification should be offered, ideally in an inpatient setting. The timing
+of detoxification in relation to the trimester of pregnancy should be risk assessed against
+continued alcohol consumption and risks to the foetus.9 Chlordiazepoxide has been suggested as being unlikely to pose a substantial risk; however, dose-dependent malformations
+have been observed.9 The UK Teratology Information Service31 provides national advice
+for healthcare professionals and likes to follow up on pregnancies that require alcohol
+detoxification. Specialist advice should always be sought (see also section ‘Pregnancy’ in
+Chapter 7). No relapse prevention medication has been evaluated in pregnancy.9
+
+Children and adolescents
+Children and young people (10–17 years) should be assessed as outlined in NICE
+Clinical Guideline 115, 2011.2
+
+
+
+
+<<<PAGE 488>>>
+
+Addictions and substance misuse  467
+
+The number of young people who are dependent and needing pharmacotherapy is
+likely to be small, but for those who are dependent there should be a lower threshold
+for admission to hospital. Doses of chlordiazepoxide for medically assisted withdrawal
+may need to be adjusted, but the general principles of withdrawal management are the
+same as for adults. All young people should have a full health screen carried out routinely to allow identification of physical and mental health problems. The evidence base
+for acamprosate, naltrexone and disulfiram in 16–19-year-olds is evolving,9 but naltrexone is best supported in this age group.32,33
+
+Older adults
+
+Concurrent alcohol and drug use disorders
+Where alcohol and drug use disorders are co-morbid, treat both conditions actively.2
+Co-existing alcohol and benzodiazepine dependence
+This is best managed with one benzodiazepine, either chlordiazepoxide or diazepam.
+The starting dose should take into account the requirements for medically assisted alcohol withdrawal and the typical daily equivalent dose of the relevant benzodiazepine(s).2
+Inpatient treatment should be carried out over a 2–3-week period, possibly longer.2
+Co-existing alcohol dependence and cocaine use
+In co-morbid cocaine/alcohol dependence, naltrexone 150mg/day resulted in reduced
+cocaine and alcohol use in men but not in women.34
+Co-existing alcohol and opioid dependence
+Both conditions should be treated, and attention paid to the increased mortality of
+individuals withdrawing from both drugs.
+Co-morbid alcohol and nicotine dependence
+Encourage individuals to stop smoking. Refer for smoking cessation in primary care
+and other settings. In inpatient settings, offer nicotine patches/inhalator during assisted
+alcohol withdrawal. Always promote vaping as a safer alternative to tobacco
+smoking.
+
+CHAPTER 4
+
+There should be a lower threshold for inpatient medically assisted alcohol withdrawal
+for older adults.2 While benzodiazepines remain the treatment of choice, they may need
+to be prescribed in lower doses and in some situations shorter acting drugs may be
+preferred.9 All older adults with alcohol-use disorders should have full routine health
+screens to identify physical and mental health problems. The evidence base for pharmacotherapy of alcohol-use disorders in older people is limited.
+
+
+
+
+<<<PAGE 489>>>
+
+468  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Co-morbid mental health disorders
+People with alcohol-use disorders often present with other mental health disorders,
+particularly anxiety and depression. Public Health England has described it as ‘the
+norm rather than the exception’ and encourage a collaborative, effective and flexible
+approach between frontline services, stating that it is ‘everyone’s job’ and that there is
+‘no wrong door’.35
+Substance-use disorders including alcohol misuse should never be a reason to exclude a
+patient from:
+■■
+■■
+
+Crisis psychiatric services
+Mood/anxiety/personality services after completion of detoxification.
+
+CHAPTER 4
+
+Depression
+Depressive and anxiety symptoms occur commonly during alcohol withdrawal, but usually diminish by the third or fourth week of abstinence. Meta-analyses suggest that antidepressants with mixed pharmacology (the tricyclics imipramine or trimipramine)
+perform better than selective serotonin reuptake inhibitors (SSRIs; fluoxetine or sertraline) in reducing depressive symptoms in individuals with an alcohol-use disorder, but the
+antidepressant effect is modest.2,9,36,37 A greater antidepressant effect was seen if the diagnosis of depression was made after at least 1 week of abstinence, thus excluding those
+with affective symptoms caused by alcohol withdrawal. There is stronger evidence for
+depression categorised as independent, rather than substance induced.36 As treatment
+effects are masked by comparatively large placebo effects, which conceal improvements
+that would otherwise be attributed to medication, there is a need for larger randomised
+placebo-controlled trials. Despite the evidence for tricyclics, they are not recommended
+in clinical practice because of their potential for cardiotoxicity and toxicity in overdose.
+Relapse prevention medication should be considered in combination with antidepressants. Pettinati et al.38 showed that the combination of sertraline (200mg/day) with
+naltrexone (100mg/day) had superior outcomes – improved drinking outcomes and
+better mood – compared with placebo and compared with each drug alone. In contrast,
+citalopram showed no benefit when added to naltrexone.39
+Secondary analyses of acamprosate and naltrexone trials suggest that:
+acamprosate has an indirect modest beneficial effect on depression via increasing
+abstinence and
+■■ in depressed alcohol-dependent patients, the combination of naltrexone and an antidepressant may be better than either drug alone,9 but findings are not consistent.39
+■■
+
+Bipolar affective disorder
+Bipolar patients tend to use alcohol to reduce symptoms of anxiety. Where there is comorbidity, it is important to treat the different phases as recommended in guidelines for
+bipolar disorder. It may be worth adding sodium valproate to lithium as two trials have
+
+
+
+
+<<<PAGE 490>>>
+
+Addictions and substance misuse  469
+
+shown that the combination was associated with better drinking outcomes than lithium
+alone. However, the combination did not confer any extra benefit than lithium alone in
+improving mood (see BAP consensus 2012).9 Note that, in those who continue to drink,
+electrolyte imbalance may precipitate lithium toxicity. Lithium is best avoided completely in binge drinkers.
+Naltrexone should be offered, in the first instance, to help bipolar patients reduce
+their alcohol consumption.9 If naltrexone is not effective, then acamprosate should be
+offered. In the event that both naltrexone and acamprosate fail to promote abstinence,
+disulfiram should be considered, and the risks made known to the patient.
+
+Anxiety is commonly observed in alcohol-dependent individuals during intoxication,
+withdrawal and in the early days of abstinence. Alcohol is typically used to self-medicate anxiety disorders, particularly social anxiety. In alcohol-dependent individuals
+who experience anxiety it is often difficult to determine the extent to which the anxiety
+is a symptom of the alcohol-use disorder or whether it is an independent disorder.
+Medically assisted withdrawal and supported abstinence for up to 8 weeks are required
+before a full assessment can be made. If a medically assisted withdrawal is not possible,
+then treatment of the anxiety disorder should still be attempted, following guidelines
+for the respective anxiety disorder.
+The use of benzodiazepines is controversial9 because of the increased risk of benzodiazepine misuse and dependence. Benzodiazepines should only be considered following assessment in a specialist addiction service.
+One meta-analysis suggests that buspirone is effective in reducing symptoms of anxiety, but not alcohol consumption.9,40 Studies have also shown that paroxetine (up to
+60mg/day) was superior to placebo in reducing social anxiety in co-morbid patients:
+alcohol consumption was not affected.9,40
+Either naltrexone or disulfiram, alone or combined, improved drinking outcomes
+compared with placebo in patients with post-traumatic stress disorder and alcohol
+dependence. Both acamprosate and baclofen have shown benefit in reducing anxiety in
+post hoc analyses of alcohol dependence trials (see BAP consensus for references9). It is
+therefore important to ensure that these patients are enabled to become abstinent and
+are prescribed relapse prevention medication. Anxiety should then be treated according
+to the appropriate NICE guidelines.
+Schizophrenia
+Patients with schizophrenia who also have an alcohol-use disorder should be assessed
+and alcohol-specific relapse prevention treatment considered, either naltrexone or
+acamprosate. Antipsychotic medication should be optimised,9 and clozapine may be
+considered. However, there is insufficient evidence to recommend the use of any one
+antipsychotic medication over another.
+
+CHAPTER 4
+
+Anxiety
+
+
+
+
+<<<PAGE 491>>>
+
+470  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 4
+
+References
+1. Department of Health and Social Care. UK chief medical officers’ guidelines on how to keep health risks from drinking alcohol to a low level.
+2016; https://www.gov.uk/government/publications/alcohol-consumption-advice-on-low-risk-drinking.
+2. National Institute for Health and Clinical Excellence. Alcohol use disorders: diagnosis, assessment and management of harmful drinking and
+alcohol dependence. Clinical Guidance [CG115]. 2011 (last checked July 2019); https://www.nice.org.uk/guidance/cg115.
+3. National Institute for Health and Care Excellence. Alcohol-use disorders: prevention. Public health guideline [PH24]. 2010; (last checked July
+2019). https://www.nice.org.uk/guidance/ph24.
+4. Babor T, et al. AUDIT: the alcohol use disorders identification test guidelines for use in primary care. 2nd edition. 2001; http://whqlibdoc.
+who.int/hq/2001/WHO_MSD_MSB_01.6a.pdf?ua=1.
+5. Stockwell T, et al. The severity of alcohol dependence questionnaire: its use, reliability and validity. Br J Addict 1983; 78:145–155.
+6. Minozzi S, et al. Anticonvulsants for alcohol withdrawal. Cochrane Database Syst Rev 2010; CD005064.
+7. Amato L, et al. Efficacy and safety of pharmacological interventions for the treatment of the Alcohol Withdrawal Syndrome. Cochrane
+Database Syst Rev 2011; CD008537.
+8. Brathen G, et al. EFNS guideline on the diagnosis and management of alcohol-related seizures: report of an EFNS task force. Eur J Neurol
+2005; 12:575–581.
+9. Lingford-Hughes AR, et al. Evidence-based guidelines for the pharmacological management of substance abuse, harmful use, addiction and
+comorbidity: recommendations from BAP. J Psychopharmacol 2012; 26:899–952.
+10. NSW Government. Drug and alcohol withdrawal clinical practice guidelines. 2008; https://www1.health.nsw.gov.au/pds/ActivePDSDocuments/
+GL2008_011.pdf.
+11. Schuckit MA. Recognition and management of withdrawal delirium (delirium tremens). N Engl J Med 2014; 371:2109–2113.
+12. Sullivan JT, et al. Assessment of alcohol withdrawal: the revised clinical institute withdrawal assessment for alcohol scale (CIWA-Ar). Br J
+Addict 1989; 84:1353–1357.
+13. Gossop M, et al. A Short Alcohol Withdrawal Scale (SAWS): development and psychometric properties. Addict Biol 2002; 7:37–43.
+14. National Institute for Health and Clinical Excellence. Alcohol-use disorders: physical complications. Clinical Guidance [CG100] 2010 (last
+updated April 2017); https://www.nice.org.uk/guidance/cg100.
+15. Thomson AD, et al. Time to act on the inadequate management of Wernicke’s encephalopathy in the UK. Alcohol Alcohol 2013; 48:4–8.
+16. Thomson AD, et al. The Royal College of Physicians report on alcohol: guidelines for managing Wernicke’s encephalopathy in the accident
+and Emergency Department. Alcohol Alcohol 2002; 37:513–521.
+17. Day E, et al. Thiamine for prevention and treatment of Wernicke-Korsakoff Syndrome in people who abuse alcohol. Cochrane Database Syst
+Rev 2013; 7:CD004033.
+18. Thomson A, et al. Incidence of adverse reactions to parenteral thiamine in the treatment of Wernicke’s encephalopathy, and recommendations. Alcohol Alcohol 2019; 54:609–614.
+19. BNF Online. British national formulary. 2020; https://www.medicinescomplete.com/mc/bnf/current.
+20. Rösner S, et al. Acamprosate for alcohol dependence. Cochrane Database Syst Rev 2010; Cd004332.
+21. Donoghue K, et al. The efficacy of acamprosate and naltrexone in the treatment of alcohol dependence, Europe versus the rest of the world:
+a meta-analysis. Addiction 2015; 110:920–930.
+22. Rösner S, et al. Opioid antagonists for alcohol dependence. Cochrane Database Syst Rev 2010; Cd001867.
+23. Accord Healthcare Limited. Summary of Product Characteristics. Naltrexone Hydrochloride 50 mg Film-coated Tablets. 2014; https://www.
+medicines.org.uk/emc/medicine/25878.
+24. Krupitsky E, et al. Injectable extended-release naltrexone (XR-NTX) for opioid dependence: long-term safety and effectiveness. Addiction
+2013; 108:1628–1637.
+25. Soyka M, et al. Comparing nalmefene and naltrexone in alcohol dependence: are there any differences? Results from an indirect meta-analysis. Pharmacopsychiatry 2016; 49:66–75.
+26. Palpacuer C, et al. Risks and benefits of nalmefene in the treatment of adult alcohol dependence: a systematic literature review and metaanalysis of published and unpublished double-blind randomized controlled trials. PLoS Med 2015; 12:e1001924.
+27. Mutschler J, et al. Current findings and mechanisms of action of disulfiram in the treatment of alcohol dependence. Pharmacopsychiatry
+2016; 49:137–141.
+28. Minozzi S, et al. Baclofen for alcohol use disorder. Cochrane Database Syst Rev 2018; 11:Cd012557.
+29. Pani PP, et al. Anticonvulsants for alcohol dependence. Cochrane Database Syst Rev 2014; Cd008544.
+30. Kranzler HR, et al. A meta-analysis of the efficacy of gabapentin for treating alcohol use disorder. Addiction 2019; 114:1547–1555.
+31. UK Teratology Information Service (UKTIS). 2020; www.uktis.org.
+32. O’Malley SS, et al. Reduction of alcohol drinking in young adults by naltrexone: a double-blind, placebo-controlled, randomized clinical trial
+of efficacy and safety. J Clin Psychiatry 2015; 76:e207–e213.
+33. Miranda R, et al. Effects of naltrexone on adolescent alcohol cue reactivity and sensitivity: an initial randomized trial. Addict Biol 2014;
+19:941–954.
+34. Pettinati HM, et al. Gender differences with high-dose naltrexone in patients with co-occurring cocaine and alcohol dependence. J Subst
+Abuse Treat 2008; 34:378–390.
+35. Public Health England. Better care for people with co-occurring mental health and alcohol/drug use conditions. A guide for commissioners
+and service providers. 2017; https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/625809/Co-occurring_mental_
+health_and_alcohol_drug_use_conditions.pdf.
+
+
+
+
+<<<PAGE 556>>>
+
+Addictions and substance misuse  535
+
+Substance misuse in pregnancy1
+Substance misuse during pregnancy has numerous adverse effects. These include low
+birthweight and prematurity,2 various neonatal withdrawal syndromes and a range of
+developmental, emotional and behavioural problems in offspring.3
+
+Alcohol
+Consumption of alcohol during pregnancy is well known to have profound consequences on offspring. Pregnant women who misuse alcohol should be encouraged to
+cease alcohol intake and to have withdrawal symptoms managed with benzodiazepines,
+preferably as inpatients.4
+Acamprosate, disulfiram and naltrexone are not proven to be safe in pregnancy but
+their use may be preferred to the higher risk of relapse in untreated individuals (also see
+section ‘Alcohol dependence’ in this chapter).
+
+Patients should be encouraged to cease smoking completely as continuing to smoke
+increases the risk of miscarriage, prematurity and stillbirth.5 Vaping may be preferred
+but its safety is not established. NICE recommends NRT.6 Bupropion and varenicline
+are not recommended.
+Opioids (see longer pregnancy in section ‘Opioid dependence’ in this chapter).
+Use of opioids during pregnancy may not be directly teratogenic but the risk of NAS
+exceeds 70% in regular users.7
+The use of prescribed methadone or buprenorphine is preferred to illicit opioid misuse because it offers the possibility of dose decrease and reduces the harms associated
+with illicit use. Even when dose decreases are not possible the use of these replacements
+reduces the risk of premature birth.
+Methadone requirements may increase in the third trimester, presumably because of
+an increased volume of distribution. There is mounting evidence that buprenorphine
+use produces less severe NAS than methadone.8,9
+Most authorities recommend that withdrawal from opiates should not normally be
+attempted in pregnant women.4,10 Women on stable opioid replacement treatment
+should generally be encouraged to breast feed and to carefully wean off their babies
+after several weeks.
+
+Cannabis and synthetic cannabinoid receptor agonists
+Use of cannabis during pregnancy is linked to a wide range of adverse outcomes in
+pregnancy and in the offspring.11 Abstinence should be encouraged. There are no pharmacological treatments currently available.
+
+Benzodiazepines
+The safety of benzodiazepines in pregnancy is not clearly established (see Chapter 7).
+Third trimester use is well known to cause ‘floppy baby syndrome’.
+
+CHAPTER 4
+
+Tobacco
+
+
+
+
+<<<PAGE 784>>>
+
+Drug treatment of other psychiatric conditions   763
+
+Relapse prevention
+There is evidence from one small trial that fluoxetine may be useful in improving outcome and preventing relapse of patients with anorexia nervosa after weight restoration.30 Other studies have found no benefit.19,31 SSRIs can, albeit very rarely, elevate
+prolactin.
+Co-morbid disorders
+Antidepressants are often used to treat co-morbid major depression and
+obsessive-compulsive disorder. However, caution should be used as these conditions
+may resolve with weight gain alone.4 As weight loss is a frequent side effect of bupropion, this antidepressant is contraindicated for the treatment of co-morbid depression
+in AN.32 Mania and psychosis occurring in the context of AN are probably best treated
+with olanzapine, and bipolar depression with olanzapine + fluoxetine.32
+Bulimia nervosa and binge eating disorder
+Psychological interventions should be considered first line for bulimia.33 Adults with
+bulimia nervosa and binge eating disorder (BED) may be offered a trial of an
+antidepressant. SSRIs (specifically fluoxetine34–36) are the ADs of first choice. The effective dose of fluoxetine is 60mg daily.37 Patients should be informed that this can reduce
+the frequency of binge eating and purging but long-term effects are unknown.4 Early
+response (at 3 weeks) is a strong predictor of response overall.38
+Antidepressants may be used for the treatment of bulimia nervosa in adolescents, but
+they are not licensed for this age group, and there is little evidence for this practice.
+They should not be considered as a first line treatment in adolescent bulimia nervosa.4
+There is some reasonable evidence that topiramate reduces frequency of binge-eating39 (although it is often poorly tolerated) and rather limited evidence for the usefulness of bupropion,40 duloxetine,41 lamotrigine,42,43 zonisamide,44,45 acamprosate46 and
+sodium oxybate.47 Systematic reviews48,49 confirm the modest efficacy of SSRIs and
+also suggest benefit for lisdexamfetamine (based on a high quality RCT50).
+Lisdexamfetamine is approved for BED in USA.51 Some limited evidence supports the
+use of a slow release combination of phentermine and topiramate.52,53 The noradrenaline/dopamine reuptake inhibitor dasotraline may also be effective54 but its development
+ceased in 2020.
+Co-morbid depression
+
+CHAPTER 9
+
+Depression is a frequent co-morbidity in BN and BED. Citalopram has been shown to
+be more effective than fluoxetine for depressive symptoms in BN patients; as weight
+gain is a frequent side effect of mirtazapine, this antidepressant should be avoided or
+used with caution for the treatment of co-morbid depression in BED.32
+
+
+
+
+<<<PAGE 786>>>
+
+14. Wade TD, et al. Comparative efficacy of pharmacological and non-pharmacological interventions for the acute treatment of adult outpatients
+with anorexia nervosa: study protocol for the systematic review and network meta-analysis of individual data. J Eat Disord 2017; 5:24.
+15. Blanchet C, et al. Medication in AN: a multidisciplinary overview of meta-analyses and systematic reviews. J Clin Med 2019; 8
+16. Andries A, et al. Dronabinol in severe, enduring anorexia nervosa: a randomized controlled trial. Int J Eat Disord 2014; 47:18–23.
+17. Gross H, et al. A double-blind trial of delta 9-tetrahydrocannabinol in primary anorexia nervosa. J Clin Psychopharmacol 1983;
+3:165–171.
+18. Connan F, et al. Biochemical and endocrine complications. Eur Eat Disord Rev 2000; 8:144–157.
+19. Claudino AM, et al. Antidepressants for anorexia nervosa. Cochrane Database Syst Rev 2006:CD004365.
+20. Barbarich NC, et al. Use of nutritional supplements to increase the efficacy of fluoxetine in the treatment of anorexia nervosa. Int J Eat
+Disord 2004; 35:10–15.
+21. Rossi G, et al. Pharmacological treatment of anorexia nervosa: a retrospective study in preadolescents and adolescents. Clin Pediatr (Phila)
+2007; 46:806–811.
+22. Malina A, et al. Olanzapine treatment of anorexia nervosa: a retrospective study. Int J Eat Disord 2003; 33:234–237.
+23. La Via MC, et al. Case reports of olanzapine treatment of anorexia nervosa. Int J Eat Disord 2000; 27:363–366.
+24. Su JC, et al. Zinc supplementation in the treatment of anorexia nervosa. Eat Weight Disord 2002; 7:20–22.
+25. Marrazzi MA, et al. Naltrexone use in the treatment of anorexia nervosa and bulimia nervosa. Int Clin Psychopharmacol 1995;
+10:163–172.
+26. Halmi KA, et al. Anorexia nervosa. Treatment efficacy of cyproheptadine and amitriptyline Arch Gen Psychiatry 1986; 43:177–181.
+27. Fazeli PK, et al. Treatment with a ghrelin agonist in outpatient women with anorexia nervosa: a randomized clinical trial. J Clin Psychiatry
+2018; 79.
+28. Russell J, et al. Intranasal oxytocin in the treatment of anorexia nervosa: randomized controlled trial during re-feeding.
+Psychoneuroendocrinology 2018; 87:83–92.
+29. Kimball A, et al. A randomized placebo-controlled trial of low-dose testosterone therapy in women with anorexia nervosa. J Clin Endocrinol
+Metab 2019; 104:4347–4355.
+30. Kaye WH, et al. Double-blind placebo-controlled administration of fluoxetine in restricting- and restricting-purging-type anorexia nervosa.
+Biol Psychiatry 2001; 49:644–652.
+31. Walsh BT, et al. Fluoxetine after weight restoration in anorexia nervosa: a randomized controlled trial. JAMA 2006; 295:2605–2612.
+32. Himmerich H, et al. Pharmacological treatment of eating disorders, comorbid mental health problems, malnutrition and physical health consequences. Pharmacol Ther 2020:107667.
+33. Vocks S, et al. Meta-analysis of the effectiveness of psychological and pharmacological treatments for binge eating disorder. Int J Eat Disord
+2010; 43:205–217.
+34. Fluoxetine Bulimia Nervosa Collaborative Study Group. Fluoxetine in the treatment of bulimia nervosa. A multicenter, placebo-controlled,
+double-blind trial. Arch Gen Psychiatry 1992; 49:139–147.
+35. Goldstein DJ, et al. Long-term fluoxetine treatment of bulimia nervosa. Fluoxetine Bulimia Nervosa Research Group. Br J Psychiatry 1995;
+166:660–666.
+36. Romano SJ, et al. A placebo-controlled study of fluoxetine in continued treatment of bulimia nervosa after successful acute fluoxetine
+treatment. Am J Psychiatry 2002; 159:96–102.
+37. Bacaltchuk J, et al. Antidepressants versus placebo for people with bulimia nervosa. Cochrane Database Syst Rev 2003:CD003391.
+38. Sysko R, et al. Early response to antidepressant treatment in bulimia nervosa. Psychol Med 2010; 40:999–1005.
+39. Nourredine M, et al. Efficacy and safety of topiramate in binge eating disorder: a systematic review and meta-analysis. CNS Spectr
+2020:1–9.
+40. White MA, et al. Bupropion for overweight women with binge-eating disorder: a randomized, double-blind, placebo-controlled trial. J Clin
+Psychiatry 2013; 74:400–406.
+41. Leombruni P, et al. Duloxetine in obese binge eater outpatients: preliminary results from a 12-week open trial. Hum Psychopharmacol 2009;
+24:483–488.
+42. Guerdjikova AI, et al. Lamotrigine in the treatment of binge-eating disorder with obesity: a randomized, placebo-controlled monotherapy
+trial. Int Clin Psychopharmacol 2009; 24:150–158.
+43. Trunko ME, et al. A pilot open series of lamotrigine in DBT-treated eating disorders characterized by significant affective dysregulation and
+poor impulse control. Borderline Personality Disord Emot Dysregul 2017; 4:21.
+44. Ricca V, et al. Zonisamide combined with cognitive behavioral therapy in binge eating disorder: a one-year follow-up study. Psychiatry
+(Edgmont) 2009; 6:23–28.
+45. Guerdjikova AI, et al. Zonisamide in the treatment of bulimia nervosa: an open-label, pilot, prospective study. Int J Eat Disord 2013;
+46:747–750.
+46. McElroy SL, et al. Acamprosate in the treatment of binge eating disorder: a placebo-controlled trial. Int J Eat Disord 2011; 44:81–90.
+47. McElroy SL, et al. Sodium oxybate in the treatment of binge eating disorder: an open-label, prospective study. Int J Eat Disord 2011;
+44:262–268.
+48. Hilbert A, et al. Meta-analysis on the long-term effectiveness of psychological and medical treatments for binge-eating disorder. Int J Eat
+Disord 2020; 53:1353–1376.
+49. Ghaderi A, et al. Psychological, pharmacological, and combined treatments for binge eating disorder: a systematic review and meta-analysis.
+Peer J 2018; 6:e5113.
+
+CHAPTER 9
+
+Drug treatment of other psychiatric conditions   765
+
+
+
+
+<<<PAGE 927>>>
+
+906  The Maudsley® Prescribing Guidelines in Psychiatry
+
+approximately 14 hours when given with glucuronidation-inducing drugs such as carbamazepine or phenytoin. The half-life is increased to approximately 70 hours when
+given with valproate. This means that the time before complete re-titration is necessary
+therefore varies between 3 and 7 days, depending on the other drugs prescribed.1
+
+Table 14.1 Restarting medication up to two weeks after stopping oral treatment (data obtained from EU
+regulatory documents (SPCs)2)
+
+CHAPTER 14
+
+Drugs that require re-titration
+
+Drug
+
+Time after which
+re-titration must
+be performed
+
+Clozapine
+
+48 hours
+
+See ‘Re-starting
+clozapine after
+after a break in
+treatment’ in
+Chapter 1
+
+Lamotrigine
+
+3–7 days
+
+See discussion in
+the text
+
+3 days
+Methadone
+Buprenorphine 3 days
+
+Further guidance
+
+See ‘Opioid
+dependence’ in
+Chapter 4
+
+Paliperidone
+long-acting
+injection
+
+Depends on
+formulation
+
+See ‘Paliperidone
+palmitate
+long-acting
+injection’ in
+Chapter 1
+
+Aripiprazole
+long-acting
+injection
+
+>5 weeks if 2nd or
+3rd dose missed
+
+See ‘Aripiprazole
+long-acting
+injection’ in
+Chapter 1
+
+Drugs that are
+usually safe for
+restarting at
+the previous
+dose
+Acamprosate
+Asenapine
+Fluoxetine
+Haloperidol
+Isocarboxazid
+Lofepramine
+Methylphenidate
+Phenelzine
+Sulpiride
+Tranylcypromine
+Valproate
+
+Drugs that are probably
+safe for restarting at
+the previous dose
+Antipsychotics (except
+clozapine, quetiapine and
+risperidone)
+Carbamazepine
+Cholinesterase inhibitors
+CNS stimulants
+Disulfiram
+Lithium (titration advised if
+renal function has changed)
+MAOIs
+Memantine
+Naltrexone
+Other antidepressants (but
+beware loss of tolerance to
+sedative effects)
+Pregabalin
+SSRIs
+TCAs (but beware loss of
+tolerance to sedative and
+hypotensive effects)
+
+>6 weeks in
+chronic treatment
+CNS, central nervous system; MAOI, monoamine oxidase inhibitor; SSRI, selective serotonin reuptake inhibitor; TCA,
+tricyclic antidepressant.
+
+References
+1. Aurobindo Pharma – Milpharm Ltd. Summary of Product Characteristics. Lamotrigine 25mg Tablets. 2019; https://www.medicines.org.uk/
+emc/product/4736/smpc.
+2. EMC. https://www.medicines.org.uk/emc/; accessed June 2020.
+
+
+
+
+<<<PAGE 964>>>
+
+Index
+
+AACAP. See American Academy of Child
+and Adolescent Psychiatry (AACAP)
+absolute neutrophil count (ANC) 237
+acamprosate 463
+ACE inhibitors. See angiotensin-converting
+enzyme (ACE) inhibitors
+acetylcholine (ACh) 604
+acetylcholinesterase (AChE) inhibitors 604,
+820
+in AD
+interactions 613
+memantine 612–613
+NICE recommendations 617
+other treatments 618
+reasons for stopping treatment 616
+when to stop treatment 613–616,
+614–615t
+benefits of combining 609
+benefits of treatment with 607
+combination of 613
+efficacy of 616, 631
+for rare dementias associated with
+neurological conditions 625
+reactions to 609
+safety and efficacy of 625
+AChE inhibitors. See acetylcholinesterase
+(AChE) inhibitors
+acute behavioural disturbance (ABD) in
+acute admissions
+diagnosis 524
+epidemiology and pathophysiology 524
+outcomes 525
+treatment 524–525
+acute illness 8
+acutely disturbed/violent behaviour 56
+oral/inhaled treatment 56
+parenteral treatment 56–59
+practical measures 59
+zuclopenthixol acetate (ZA) 60–64
+acute mania
+
+first-line treatments for 551t
+physical monitoring for people
+with 279–281, 279f, 280t, 281t
+ADAPT. See Adolescent Depression
+Antidepressants and Psychotherapy
+Trial (ADAPT)
+addictions 451–452. See also alcohol
+ADHD. See attention deficit hyperactivity
+disorder (ADHD)
+adherence, medication 897–898
+assessing 900–901
+Cochrane review of 898
+definition of 897
+depot/long-acting antipsychotics 902
+determinants of 899
+financial incentives 902–903
+impact of non-adherence 898–899
+mapping out interventions 899–901
+monitoring adherence and assessing
+attitudes to 901
+rate of non-adherence to 898
+strategies for improving 899
+taking aids 902
+Adolescent Depression Antidepressants and
+Psychotherapy Trial (ADAPT) 541
+Adrenergic α2 agonists 588
+aducanumab 623
+adverse drug reactions (ADRs) 610
+adverse effect sensitivity 798
+AF. See atrial fibrillation (AF)
+affective illness 679
+ageing body 601
+aggressive behaviours 805t
+agomelatine 337, 389, 705t, 727t, 741t,
+820, 856t, 875t
+agranulocytosis 222, 236–237, 238
+development of 237
+prevalence of 236
+risk factors for 236
+akathisia 114–116
+
+alanine aminotransferase (ALT) 907t
+albumin 908t
+alcohol 860
+acamprosate 463
+advice and recommendations 453
+anticonvulsants 466
+anxiety 469
+assessment and brief structured
+intervention 453–454
+bipolar affective disorder 468–469
+children and adolescents 466–467
+coexisting and benzodiazepine
+dependence 467
+coexisting and opioid dependence 467
+coexisting dependence and cocaine use
+467
+co-morbid and nicotine dependence 467
+co-morbid mental health disorders 468
+concurrent alcohol- and drug-use
+disorders 467
+depression 468
+disulfiram (Antabuse) 464–466
+misusers 861
+nalmefene 464
+naltrexone 463–464
+older adults 467
+pharmacodynamic interactions
+with 862–863t
+pregnancy and alcohol use 466
+relapse prevention 463
+schizophrenia 469
+unit of 453
+Wernicke’s encephalopathy 461
+parenteral B-complex 461–462
+presentation 461
+prophylactic thiamine 461
+withdrawal 454–455, 454–455t
+delirium 472–473, 473t
+fixed-dose reduction
+regimen 459–460
+
+The Maudsley® Prescribing Guidelines in Psychiatry, Fourteenth Edition. David M. Taylor,
+Thomas R. E. Barnes and Allan H. Young.
+© 2021 David M. Taylor. Published 2021 by John Wiley & Sons Ltd.
+
+

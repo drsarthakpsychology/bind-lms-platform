@@ -1,0 +1,1061 @@
+<<<PAGE 415>>>
+
+during clozapine use. Its use is generally limited to treatment-resistant
+psychotic patients.
+Ziprasidone has receptor-blocking properties at the 5-HT2A and D2
+receptor sites and carries little risk of extrapyramidal and antihistaminic
+effects. No guidelines exist for its use in autistic children with aggressive and
+self-injurious behaviors; clinicians sometimes use it to treat these behaviors
+in treatment-resistant children. In studies of its use in adults with
+schizophrenia, dose ranges of 40 to 160 mg were effective. Adverse effects
+include sedation, dizziness, and lightheadedness. Before using this
+medication, the clinician should check an electrocardiogram.
+Lithium is efficacious in children with aggression without autism spectrum
+disorder, and it is used clinically in the treatment of aggressive or selfinjurious behaviors when antipsychotic medications are not helpful.
+Agents Used for Behavioral Impairment in Autism Spectrum
+Disorder without Evidence of Efficacy. A double-blind study
+investigated the efficacy of amantadine, which blocks N-methyl-D-aspartate
+(NMDA) receptors, in the treatment of behavioral disturbance, such as
+irritability, aggression, and hyperactivity, in children with autism. Some
+researchers have suggested that abnormalities of the glutamatergic system
+may contribute to the emergence of autism spectrum disorders. High
+glutamate levels occur in children with the formerly labeled Rett syndrome.
+In the amantadine study, 47 percent of children on amantadine were
+“improved” per their parents, and 37 percent of children on placebo were
+rated “improved” by parents in irritability and hyperactivity, although this
+difference was not statistically significant. Investigators rated the children on
+amantadine “significantly improved” for hyperactivity. A double-blind,
+placebo-controlled study of the efficacy of the anticonvulsant lamotrigine on
+hyperactivity in children with autism showed high rates of placebo
+improvement in ratings of hyperactivity, which were similar to response on
+the medication.
+Clomipramine is sometimes used but lacks RCTs to provide evidence of
+positive results. Fenfluramine, which reduces blood serotonin levels, has also
+been used but appears to be ineffective. Improvement does not seem to be
+associated with a reduction in blood serotonin levels. Naltrexone, an opioid
+
+
+
+
+<<<PAGE 654>>>
+
+nausea, agitation, tremor, and fatigue. Dosage ranges for the various SSRIs
+found to have efficacy in randomized clinical trials are the following:
+fluoxetine (20 to 60 mg), sertraline (50 to 200 mg), fluvoxamine (up to 200
+mg), and paroxetine (up to 50 mg).
+Clomipramine was the first antidepressant studied in the treatment of OCD
+in childhood and the only tricyclic antidepressant that has FDA approval for
+the treatment of anxiety disorders in childhood. Clomipramine was
+efficacious in doses up to 200 mg, or 3 mg/kg, whichever is less.
+Nevertheless, clomipramine is not recommended as a first-line treatment due
+to its higher potential risks compared to other SSRIs, including the
+cardiovascular risk of hypotension and arrhythmia and seizure risk.
+Pediatric patients with OCD who respond only partially to medications
+tend to have at least moderate to severe OCD symptoms, high ratings of
+global impairment, and significant comorbidity even after their partial
+response to an adequate trial of medication. Augmentation strategies with
+medications to enhance serotonergic effects, such as with atypical
+antipsychotics (e.g., risperidone), have demonstrated increased response
+when SSRIs yield a partial response. Aripiprazole augmentation in 39
+adolescents with OCD who did not respond to two trials of monotherapy with
+SSRIs led to 59 percent of patients being rated as improved or very much
+improved. Patients who responded to aripiprazole were less impaired at
+baseline in functional impairment but not in the clinical severity of their
+OCD. Aripiprazole’s final mean dose was 12.2 mg/day. This agent may be
+useful for pediatric OCD and warrants further controlled trials.
+Given the lack of data on discontinuation, recommendations for
+maintaining medication such as stabilization, education about relapse risk,
+and tapering medication during the summer are likely in order to minimize
+academic compromise in case of relapse. For children and adolescents with
+more severe or multiple episodes of significant exacerbation of symptoms,
+treatment for more than a year is recommended. Overall, the efficacy of
+treatment for children and adolescents with OCD is high with choices of
+SSRIs and CBT.
+
+EPIDEMIOLOGY
+OCD is common among children and adolescents, with a point prevalence of
+
+
+
+
+<<<PAGE 1356>>>
+
+TREATMENT
+Obsessive-Compulsive Disorder
+Pharmacotherapy. Effective medications include clomipramine and
+selective serotonin reuptake inhibitors (SSRIs, which, along with
+clomipramine and other serotonergic medications, are sometimes called
+serotonin reuptake inhibitor [SRIs]). Head-to-head comparisons of
+clomipramine and SSRIs show equal efficacy but better tolerability of the
+SSRIs. In general, clinicians must use higher doses to achieve an optimal
+effect. Examples are doses of 80 mg of fluoxetine or 200 mg of sertraline.
+Some patients respond to even higher doses. Exceeding the recommended
+doses is not, however, advisable for clomipramine or citalopram, due to
+safety concerns. There is also some evidence that response to SRIs is slower
+in OCD than in depression; clinicians are therefore encouraged to prescribe
+an SRI for at least 12 weeks before deciding to switch agents or augment
+with another psychotropic. A general rule of thumb is that we should
+continue to use the dose that was required to obtain a response for at least 1
+to 2 years. When discontinuing medication, there is a real risk of relapse, so
+this should be done very gradually, with small adjustments made every few
+months.
+Patients who fail to respond to one SRI may respond to another.
+The most extensive evidence base is for antipsychotics in adult OCD.
+Among those, risperidone and aripiprazole are best supported as adjuncts.
+Some studies have indicated that these are particularly useful in patients with
+tics, but not all data are consistent. When a response to these agents occurs, it
+typically happens relatively quickly (e.g., 4 weeks). When using dopamine
+receptor blockers, it is crucial to monitor adverse events.
+Memantine, riluzole, ketamine, lamotrigine, and N-acetylcysteine (NAC)
+are other promising augmentation agents.
+Psychotherapy. There is a long history of understanding OCD symptoms
+from a psychodynamic perspective, but there is no rigorous evidence that a
+psychodynamic approach is useful in the treatment of OCD. Instead,
+empirical research on the psychotherapy of OCD has emerged from
+behavioral and cognitive perspectives. Exposure and response prevention
+
+
+
+
+<<<PAGE 1359>>>
+
+model that includes training in decision making and categorizing; exposure
+and habituation to discarding; and cognitive restructuring. Treatment includes
+both office and in-home sessions. The role of the therapist in this model is to
+assist in the development of decision-making skills, to provide feedback
+about normal saving behavior, and to identify and challenge the patient’s
+erroneous beliefs about possessions. The goal in treatment is to get rid of a
+significant amount of possessions and make the living space livable. Also,
+treatment can provide the patients with the skills to maintain a positive
+balance between the number of possessions and livable space.
+Evidence for pharmacologic treatment relies on limited and uncontrolled
+data that support the use of SSRIs or venlafaxine.
+Hair-Pulling Disorder
+Early data indicated that hair-pulling disorder, like OCD and BDD,
+responded more robustly to clomipramine than to desipramine.
+Unfortunately, subsequent trials of SSRIs and venlafaxine in hair-pulling
+disorder have not consistently demonstrated efficacy. The most significant
+positive clinical trial to date is with NAC (1200 to 2400 mg/day), a
+nutraceutical that acts on the glutamatergic system. However, a trial of NAC
+in pediatric hair-pulling disorder was negative. There are small controlled
+trials indicating that dopamine receptor blockers may also be useful in these
+conditions. Given their favorable side-effect profile, it may be reasonable to
+use NAC as a first-line agent in adults with hair-pulling disorder, to use
+SSRIs when patients have comorbid conditions for which these agents are
+efficacious, and to consider low-dose dopamine receptor blockers in more
+treatment-refractory cases.
+Habit reversal training (HRT) is a set of cognitive-behavioral techniques
+that have been shown efficacious in the treatment of childhood and adult
+hair-pulling disorder. Components of HRT include awareness training,
+competing for response training, and social support. Also, therapists use
+stimulus control (SC) to change the patient’s environment so that hairpulling
+is more effortful or less reinforcing. Controlled trials of augmentation of
+HRT/SC with acceptance and commitment therapy, dialectical behavior
+therapy, or cognitive therapy, have also suggested efficacy in hair-pulling
+disorder.
+
+
+
+
+<<<PAGE 1674>>>
+
+drugs, and the selective serotonin reuptake inhibitors (SSRIs), among others,
+have been implicated in retarded ejaculation. Also, we should differentiate
+delayed ejaculation from retrograde ejaculation, in which ejaculation occurs
+but the seminal fluid passes back into the bladder. Retrograde ejaculation
+always has an organic cause. It can develop after genitourinary surgery, and it
+is also associated with medications that have anticholinergic adverse effects,
+such as the phenothiazines.
+Other Female Sexual Dysfunction due to a General Medical
+Condition. Some medical conditions—specifically, endocrine diseases such
+as hypothyroidism, diabetes mellitus, and primary hyperprolactinemia—can
+affect a woman’s ability to have orgasms. Several drugs also affect some
+women’s capacity to have orgasms (Table 16-12). Antihypertensive
+medications, CNS stimulants, tricyclic drugs, SSRIs, and, frequently,
+monoamine oxidase inhibitors (MAOIs) have interfered with female
+orgasmic capacity. One study of women taking MAOIs, however, found that
+after 16 to 18 weeks of pharmacotherapy, the adverse effect of the medication
+disappeared, and the women were able to reexperience orgasms, although
+they continued taking an undiminished dose of the drug.
+Table 16-10
+Some Pharmacologic Agents Implicated in Male Sexual
+Dysfunctions
+Drug
+
+Impairs
+Erection
+
+Impairs
+Ejaculation
+
+Imipramine (Tofranil)
+
++
+
++
+
+Protriptyline (Vivactil)
+
++
+
++
+
+Desipramine (Pertofrane)
+
++
+
++
+
+Clomipramine (Anafranil)
+
++
+
++
+
+Amitriptyline (Elavil)
+
++
+
++
+
+Psychiatric drugs
+Cyclic drugsa
+
+
+
+
+<<<PAGE 1678>>>
+
+vaginal lubrication, inhibited or delayed orgasm, and decreased or absent
+vaginal contractions may occur. Drugs may also enhance sexual responses
+and increase the sex drive, but this is less common than adverse effects.
+Most antipsychotic drugs are dopamine receptor
+antagonists that also block adrenergic and cholinergic receptors, thus
+accounting for the adverse sexual effects (Table 16-13). Chlorpromazine and
+trifluoperazine are potent anticholinergics, and they impair erection and
+ejaculation. With some drugs, the seminal fluid backs up into the bladder
+rather than being propelled through the penile urethra. Patients still have a
+pleasurable sensation, but the orgasm is dry. When urinating after orgasm,
+the urine may be milky white because it contains the ejaculate. The condition
+is startling but harmless. Paradoxically, antipsychotics may rarely cause
+priapism.
+ANTIPSYCHOTIC DRUGS.
+
+Table 16-11
+Neurophysiology of Sexual Dysfunction
+
+ANTIDEPRESSANT DRUGS. The tricyclic and tetracyclic antidepressants have
+
+anticholinergic effects that interfere with erection and delay ejaculation.
+Because the anticholinergic effects vary among the cyclic antidepressants,
+those with the fewest effects (e.g., desipramine) produce the fewest sexual
+adverse effects.
+Some men report increased sensitivity of the glans that is pleasurable, and
+that does not interfere with erection, although it delays ejaculation. In some
+cases, however, the tricyclic causes painful ejaculation, perhaps as the result
+of interference with seminal propulsion caused by interference with, in turn,
+urethral, prostatic, vas, and epididymal smooth muscle contractions.
+Clomipramine may increase sex drive in some persons. Selegiline, a selective
+MAO type B (MAOB) inhibitor, and bupropion may also increase sex drive,
+
+
+
+
+<<<PAGE 1679>>>
+
+possibly by dopaminergic activity and increased production of
+norepinephrine.
+Venlafaxine and the SSRIs most often have adverse effects because of the
+rise in serotonin levels. A lowering of the sex drive and difficulty reaching
+orgasm occur in both sexes. Cyproheptadine, an antihistamine with
+antiserotonergic effects, and methylphenidate, with adrenergic effects, may
+reverse those adverse effects. Trazodone is associated with the rare
+occurrence of priapism, the symptom of prolonged erection in the absence of
+sexual stimuli. That symptom appears to result from the α1-adrenergic
+antagonism of trazodone.
+Table 16-12
+Some Pharmacologic Agents Implicated in Inhibited Female
+Orgasma
+Tricyclic antidepressants
+Imipramine (Tofranil)
+Clomipramine (Anafranil)
+Nortriptyline (Aventyl)
+Monoamine oxidase inhibitors
+Tranylcypromine (Parnate)
+Phenelzine (Nardil)
+Isocarboxazid (Marplan)
+Dopamine receptor antagonists
+Thioridazine (Mellaril)
+Trifluoperazine (Stelazine)
+Selective serotonin reuptake inhibitors
+Fluoxetine (Prozac)
+Paroxetine (Paxil)
+Sertraline (Zoloft)
+Fluvoxamine (Luvox)
+Citalopram (Celexa)
+aThe interrelation between female sexual dysfunction and pharmacologic agents has been
+
+less extensively evaluated than male reactions. Oral contraceptives are reported to decrease
+
+
+
+
+<<<PAGE 1815>>>
+
+Table 19-12
+Pharmacotherapy of
+Personality Disorders
+
+Target
+
+Symptom
+
+Domains
+
+of
+
+Choice of Drugs According to Target Symptoms of Personality
+Disorders
+Target Symptom
+
+Drug/Treatment of
+Choice
+
+Not
+Recommended
+
+I. Mood Dysregulation and Anxiety
+Anxiety
+Chronic cognitive
+
+Psychotherapy,
+Benzodiazepines
+SSRIs, SNRIs,
+MAOIs, Low-Dose
+Novel
+Psychotropics
+(aripiprazole,
+quetiapine)
+Valproate and other
+GABA analogs
+(clonazepam and
+buspirone)
+
+Chronic somatic
+
+MAOIs, SNRIs
+(duloxetine,
+milnacipran)
+Pregabalin and other
+GABA analogs,
+TCAs, betablockers
+
+Obsessions
+
+SSRIs, Antipsychotics
+(quetiapine), TCAs
+(clomipramine),
+Mild NMDA
+antagonists
+
+If used—
+benzodiazepines
+with long half-life
+and short trials
+preferred
+
+
+
+
+<<<PAGE 1944>>>
+
+Drug Interactions. Clozapine should not be used with any other drug that
+is associated with the development of agranulocytosis or bone marrow
+suppression. Such drugs include carbamazepine, phenytoin, propylthiouracil,
+sulfonamides, and captopril (Capoten). Lithium combined with clozapine
+may increase the risk of seizures, confusion, and movement disorders.
+Lithium should not be used in combination with clozapine by persons who
+have experienced an episode of neuroleptic malignant syndrome.
+Clomipramine (Anafranil) can increase the risk of seizure by lowering the
+seizure threshold and by increasing clozapine plasma concentrations.
+Risperidone, fluoxetine, paroxetine, and fluvoxamine increase serum
+concentrations of clozapine. The addition of paroxetine may precipitate
+clozapine-associated neutropenia.
+Side Effects. The most common drug-related adverse effects are sedation,
+dizziness, syncope, tachycardia, hypotension, electrocardiography (ECG)
+changes, nausea, and vomiting. Other common adverse effects include
+fatigue, weight gain, various GI symptoms (most commonly constipation),
+anticholinergic effects, and subjective muscle weakness. Sialorrhea, or
+hypersalivation, is a side effect that begins early in treatment and is most
+evident at night. Patients report that their pillows are drenched with saliva.
+This side effect is most likely the result of impairment of swallowing.
+Although there are reports that clonidine or amitriptyline may help reduce
+hypersalivation, the most practical solution is to put a towel over the pillow.
+The risk of seizures is about 4 percent in patients taking dosages greater
+than 600 mg a day. Leukopenia, granulocytopenia, agranulocytosis, and fever
+occur in about 1 percent of patients. During the first year of treatment, there
+is a 0.73 percent risk of clozapineinduced agranulocytosis. The risk during the second year is 0.07 percent. For
+neutropenia, the risk is 2.32 percent and 0.69 percent, respectively, during the
+first and second years of treatment. The only contraindications to the use of
+clozapine are a WBC count below 3,500 cells/mm3; a previous bone marrow
+disorder; a history of agranulocytosis during clozapine treatment; or the use
+of another drug that is known to suppress the bone marrow, such as
+carbamazepine (Tegretol).
+During the first 6 months of treatment, weekly WBC counts are indicated
+to monitor the patient for the development of agranulocytosis. If the WBC
+
+
+
+
+<<<PAGE 1984>>>
+
+modestly beneficial for weight loss. A significant percentage of all persons
+who take SSRIs, including fluoxetine, lose weight initially but later may gain
+weight. However, all SSRIs may cause initial weight gain.
+PREMENSTRUAL DYSPHORIC DISORDER. PMDD is characterized by debilitating
+
+mood and behavioral changes in the week preceding menstruation that
+interferes with normal functioning. Sertraline, paroxetine, fluoxetine, and
+fluvoxamine have been reported to reduce the symptoms of PMDD.
+Controlled trials of fluoxetine and sertraline administered either throughout
+the cycle or only during the luteal phase (the 2 weeks between ovulation and
+menstruation) showed both schedules to be equally effective.
+An additional observation of unclear significance was that fluoxetine was
+associated with changing the duration of the menstrual period by more than 4
+days, either lengthening or shortening it. The effects of SSRIs on menstrual
+cycle length are mostly unknown and may warrant careful monitoring in
+women of reproductive age.
+Off-Label Uses
+The anorgasmic effects of SSRIs make them
+useful as a treatment for men with premature ejaculation. The SSRIs permit
+intercourse for a significantly more extended period and are reported to
+improve sexual satisfaction in couples in which the man has premature
+ejaculation. Fluoxetine and sertraline are useful for this purpose.
+PREMATURE EJACULATION.
+
+The SSRIs may reduce obsessive-compulsive behavior in
+people with paraphilias. The SSRIs diminish the average time per day spent
+in unconventional sexual fantasies, urges, and activities. Evidence suggests a
+more significant response to sexual obsessions than for paraphilic behavior.
+PARAPHILIAS.
+
+Obsessive-compulsive behavior, poor social relatedness, and
+aggression are prominent autistic features that may respond to serotonergic
+agents such as SSRIs and clomipramine (Anafranil). Sertraline and
+fluvoxamine have been shown in controlled and open-label trials to mitigate
+aggressiveness, self-injurious behavior, repetitive behaviors, some degree of
+language delay, and (rarely) lack of social relatedness in adults with autistic
+AUTISM.
+
+
+
+
+<<<PAGE 1998>>>
+
+muscle tension following abrupt discontinuation of vortioxetine 15 or 20
+mg/day. It is recommended that the dose be decreased to 10 mg/day for 1
+week before full discontinuation of vortioxetine 15 or 20 mg/day.
+Vortioxetine is available in 5-, 10-, 15-, and 20-mg tablets.
+
+SELECTIVE SEROTONIN–NOREPINEPHRINE REUPTAKE
+INHIBITORS
+There are currently four SNRIs approved for use in the United States:
+venlafaxine (Effexor and Effexor XR), desvenlafaxine succinate (DVS;
+Pristiq), duloxetine (Cymbalta), and levomilnacipran (Fetzima). A fifth
+SNRI, milnacipran (Savella), available in other countries as an
+antidepressant, has U.S. FDA approval in the United States as a treatment for
+fibromyalgia. The term SNRI reflects the belief that the therapeutic effects of
+these medications are mediated by concomitant blockade of neuronal
+serotonin (5-HT) and norepinephrine uptake transporters. The SNRIs are also
+sometimes referred to as dual reuptake inhibitors, a broader functional class
+of antidepressant medications that include TCAs such as clomipramine
+(Anafranil) and, to a lesser extent, imipramine (Tofranil) and amitriptyline
+(Elavil). What distinguishes the SNRIs from TCAs is their relative lack of
+affinity for other receptors, especially muscarinic, histaminergic, and the
+families of α- and β-adrenergic receptors. This distinction is an important one
+because the SNRIs have a more favorable tolerability profile than the older
+dual reuptake inhibitors.
+Venlafaxine and Desvenlafaxine
+Therapeutic Indications. Venlafaxine is approved for the treatment of
+four disorders: MDD, GAD, social anxiety disorder, and panic disorder.
+MDD is currently the only FDA-approved indication for DVS.
+DEPRESSION. The FDA does not recognize any class of antidepressants as
+
+being more effective than any other. This does not mean that differences do
+not exist, but no study to date has sufficiently demonstrated such superiority.
+It has been argued that direct modulation of serotonin and norepinephrine
+may convey more significant antidepressant effects than are exerted by
+
+
+
+
+<<<PAGE 1999>>>
+
+medications that selectively enhance only noradrenergic or serotoninergic
+neurotransmission. This more significant therapeutic benefit could result
+from an acceleration of postsynaptic adaptation to increased neuronal
+signaling, simultaneous activation of two pathways for intracellular signal
+transduction, additive effects on the activity of relevant genes such as brainderived neurotrophic factor, or, quite simply, broader coverage of depressive
+symptoms. Clinical evidence supporting this hypothesis first emerged in a
+pair of studies conducted by the Danish University Antidepressant Group,
+which found an advantage for the dual reuptake inhibitor clomipramine
+compared with SSRIs citalopram (Celexa) and paroxetine (Paxil). Another
+report, which compared the results of a group of patients prospectively
+treated with the combination of desipramine (Norpramin) and fluoxetine
+(Prozac) with a historical comparison group treated with desipramine alone,
+provided additional support. A meta-analysis of 25 inpatient studies
+comparing the efficacy of TCAs and SSRIs yielded the most substantial
+evidence. Specifically, although the TCAs were found to have a modest
+overall advantage, superiority versus SSRIs was almost entirely explained by
+the studies that used the TCAs that are considered to be dual reuptake
+inhibitors—clomipramine, amitriptyline, and imipramine. Meta-analyses of
+head-to-head studies suggest that venlafaxine has the potential to induce
+higher rates of remission in depressed patients than do the SSRIs. This
+difference in the venlafaxine advantage is about 6 percent. DVS has not been
+extensively compared with other classes of antidepressants concerning
+efficacy.
+The extended-release formulation of
+venlafaxine is approved for the treatment of GAD. In clinical trials lasting 6
+months, dosages of 75 to 225 mg a day were effective in treating insomnia,
+poor concentration, restlessness, irritability, and excessive muscle tension
+related to GAD.
+GENERALIZED ANXIETY DISORDER.
+
+SOCIAL ANXIETY DISORDER. The extended-release formulation of venlafaxine
+
+is approved for the treatment of social anxiety disorder. Its efficacy was
+established in 12-week studies.
+OTHER INDICATIONS. Case reports and uncontrolled studies have indicated that
+
+
+
+
+<<<PAGE 2023>>>
+
+Clinically relevant drug interactions may result from competition for enzyme
+CYP2D6 among TCAs and quinidine, cimetidine (Tagamet), fluoxetine
+(Prozac), sertraline (Zoloft), paroxetine (Paxil), phenothiazines,
+carbamazepine (Tegretol), and the type IC antiarrhythmics propafenone
+(Rythmol) and flecainide (Tambocor). Concomitant administration of TCAs
+and these inhibitors may slow down the metabolism and raise the plasma
+concentrations of TCAs. Additionally, genetic variations in the activity of
+CYP2D6 may account for up to a 40-fold difference in plasma TCA
+concentrations in different persons. The dosage of the TCA may need to be
+adjusted to correct changes in the rate of hepatic TCA metabolism.
+Table 21-20
+Tricyclic and Tetracyclic Drug Preparations
+
+The TCAs block the transporter site for norepinephrine and serotonin, thus
+increasing synaptic concentrations of these neurotransmitters. Each drug
+differs in its affinity for each of these transporters, with clomipramine
+(Anafranil) being the most serotonin selective and desipramine the most
+norepinephrine selective of the TCAs. Secondary effects of the TCAs include
+antagonism at the muscarinic acetylcholine, histamine H1, and α1- and α2adrenergic receptors. The potency of these effects on other receptors largely
+determines the side effect profile of each drug. Amoxapine, nortriptyline,
+desipramine, and maprotiline have the least anticholinergic activity; doxepin
+has the most antihistaminergic activity. Although they are more likely to
+cause constipation, sedation, dry mouth, or lightheadedness than the SSRIs,
+the TCAs are less prone to cause sexual dysfunction, significant long-term
+
+
+
+
+<<<PAGE 2024>>>
+
+weight gain, and sleep disturbances than the SSRIs. The half-lives and
+plasma clearance for most TCAs are very similar.
+Therapeutic Indications
+The indications are similar to those for the SSRIs, which have widely
+replaced the TCAs. However, the TCAs represent a reasonable alternative for
+persons who cannot tolerate the adverse effects of the SSRIs.
+Major Depressive Disorder. The treatment of a major depressive episode
+and the prophylactic treatment of MDD are the principal indications for using
+TCAs. Although the TCAs are effective in the treatment of depression in
+persons with bipolar I disorder, they are more likely to induce mania,
+hypomania, or cycling than the newer antidepressants, most notably the
+SSRIs and bupropion. It is thus not advised that TCAs be routinely used to
+treat depression associated with bipolar I or bipolar II disorder.
+Melancholic features, prior major depressive episodes, and a family history
+of depressive disorders increase the likelihood of therapeutic response. All of
+the available TCAs are equally effective in the treatment of depressive
+disorders. In the case of a person, however, one tricyclic or tetracyclic may be
+useful, and another one may be ineffective. The treatment of a major
+depressive episode with psychotic features almost always requires the
+coadministration of an antipsychotic drug and an antidepressant.
+Although it is used worldwide as an antidepressant, clomipramine is only
+approved in the United States for the treatment of OCD.
+Panic Disorder with Agoraphobia. Imipramine is the TCA most studied
+for panic disorder with agoraphobia, but other TCAs are also useful when
+taken at the usual antidepressant dosages. Because of the potential initial
+anxiogenic effects of the TCAs, starting dosages should be small, and the
+dosage should be titrated upward slowly. Small doses of benzodiazepines
+may be used initially to deal with this side effect.
+Generalized Anxiety Disorder. The FDA approves the use of doxepin for
+the treatment of anxiety disorders. Some research data show that imipramine
+may also be useful. Although rarely used anymore, a chlordiazepoxide–
+amitriptyline combination (Limbitrol) is available for mixed anxiety and
+
+
+
+
+<<<PAGE 2025>>>
+
+depressive disorders.
+Obsessive-Compulsive Disorder. Patients with OCD appear to respond
+specifically to clomipramine, as well as the SSRIs. Some improvement is
+usually seen in 2 to 4 weeks, but a further reduction in symptoms may
+continue for the first 4 to 5 months of treatment. None of the other TCAs
+appears to be nearly as effective as clomipramine for the treatment of this
+disorder. Clomipramine may also be a drug of choice for depressed persons
+with marked obsessive features.
+Pain. The TCAs are widely used to treat chronic neuropathic pain and in the
+prophylaxis of migraine headache. Amitriptyline is the TCA most often used
+in this role. During the treatment of pain, doses are generally lower than those
+used in depression; for example, 75 mg of amitriptyline may be sufficient.
+These effects also appear more rapidly.
+Other Disorders. Childhood enuresis is often treated with imipramine.
+Peptic ulcer disease can be treated with doxepin, which has marked
+antihistaminergic effects. Other indications for the TCAs are narcolepsy,
+nightmare disorder, and PTSD. The drugs are sometimes used for the
+treatment of children and adolescents with ADHD, sleepwalking disorder,
+separation anxiety disorder, and sleep terror disorder. Clomipramine has also
+been used to treat premature ejaculation, movement disorders, and
+compulsive behavior in children with autistic disorders; however, because the
+TCAs have caused sudden death in several children and adolescents, they
+should not be used in children.
+Precautions and Adverse Reactions
+The TCAs are associated with a wide range of problematic side effects and
+can be lethal when taken in overdose.
+Psychiatric Effects. The TCAs can induce a switch to mania or
+hypomania in susceptible individuals. The TCAs may also exacerbate
+psychotic disorders in susceptible persons. At high plasma concentrations
+(levels above 300 ng/mL), the anticholinergic effects of the TCAs can cause
+confusion or delirium. Patients with dementia are particularly vulnerable to
+
+
+
+
+<<<PAGE 2027>>>
+
+are discontinued. It can result in falls and injuries in affected persons.
+Nortriptyline may be the drug least likely to cause this problem. Orthostatic
+hypotension is treated with avoidance of caffeine, intake of at least 2 L of
+fluid per day, and addition of salt to the diet unless the person is being treated
+for hypertension. In persons taking antihypertensive agents, reduction of the
+dosage may reduce the risk of orthostatic hypotension. Other possible
+autonomic effects are profuse sweating, palpitations, and increased BP.
+Although some persons respond to fludrocortisone (Florinef), 0.02 to 0.05 mg
+twice a day, the drug has potential toxicities. It is preferable to substitute an
+SSRI than to use a mineralocorticoid such as fludrocortisone. The TCAs’ use
+should be discontinued several days before elective surgery because of the
+occurrence of hypertensive episodes during surgery in persons receiving
+TCAs.
+Sedation. Sedation is a common effect of the TCAs and may be welcomed
+if sleeplessness has been a problem. The sedative effect of the TCAs is a
+result of anticholinergic and antihistaminergic activities. Amitriptyline,
+trimipramine, and doxepin are the most sedating agents; imipramine,
+amoxapine, nortriptyline, and maprotiline are less sedating; and desipramine
+and protriptyline are the least sedating agents.
+Neurologic Effects. A fine, rapid tremor may occur. Myoclonic twitches
+and tremors of the tongue and the upper extremities are common. Rare effects
+include speech blockage, paresthesia, peroneal palsies, and ataxia.
+Amoxapine is unique in causing parkinsonian symptoms, akathisia, and
+even dyskinesia because of the dopaminergic blocking activity of one of its
+metabolites. Amoxapine may also cause neuroleptic malignant syndrome in
+rare cases. Maprotiline may cause seizures when the dosage is increased too
+quickly or is kept at high levels for too long. Clomipramine and amoxapine
+may lower the seizure threshold more than other drugs in the class. As a
+class, however, the TCAs have a relatively low risk for inducing seizures
+except in persons who are at risk for seizures (e.g., persons with epilepsy and
+those with brain lesions). Although such persons can still use the TCAs, the
+initial dosages should be lower than usual, and subsequent dosage increases
+should be gradual.
+
+
+
+
+<<<PAGE 2032>>>
+
+Imipramine
+
+Tofranil
+
+150–300
+
+150–300a
+
+Desipramine
+
+Norpramin,
+150–300
+Pertofrane
+
+150–300a
+
+Trimipramine Surmontil
+
+150–300
+
+150–300
+
+Amitriptyline
+
+Elavil, Endep 150–300
+
+100–250b
+
+Nortriptyline
+
+Pamelor,
+Aventyl
+
+50–150
+
+50–150a (maximum)
+
+Protriptyline
+
+Vivactil
+
+15–60
+
+75–250
+
+Amoxapine
+
+Asendin
+
+150–400
+
+200–500c
+
+Doxepin
+
+Adapin,
+Sinequan
+
+150–300
+
+100–250a
+
+Maprotiline
+
+Ludiomil
+
+150–230
+
+150–300a
+
+Clomipramine Anafranil
+
+130–250
+
+50 to 250c
+
+aExact range may vary among laboratories.
+bIncludes parent compound and desmethyl metabolite.
+cEstimated from limited studies.
+
+The TCAs should be avoided in children except as a last resort. Dosing
+guidelines in children for imipramine include initiation at 1.5 mg/kg a day.
+The dosage can be titrated to no more than 5 mg/kg a day. In enuresis, the
+dosage is usually 50 to 100 mg a day, taken at bedtime. Clomipramine use
+can be initiated at 50 mg a day and increased to no more than 3 mg/kg per
+day or 200 mg a day.
+When TCA treatment is discontinued, the dosage should first be decreased
+to three-fourths the maximal dosage for a month. At that time, if no
+symptoms are present, drug use can be tapered by 25 mg (5 mg for
+protriptyline) every 4 to 7 days. Slow tapering avoids a cholinergic rebound
+syndrome consisting of nausea, upset stomach, sweating, headache, neck
+pain, and vomiting. This syndrome can be treated by reinstituting a small
+dosage of the drug and tapering more slowly than before. Several case reports
+note the appearance of rebound mania or hypomania after the abrupt
+
+
+
+
+<<<PAGE 2039>>>
+
+dilated pupils, and hyperactive deep tendon reflexes. Involuntary movements
+may be present, particularly in the face and the jaw. Acidification of the urine
+markedly hastens the excretion of MAOIs, and dialysis can be of some use.
+Phentolamine or chlorpromazine may be useful if hypertension is a problem.
+Moclobemide alone in overdosage causes relatively mild and reversible
+symptoms.
+Drug Interactions
+The significant drug–drug interactions involving MAOIs are listed in Table
+21-23. Most antidepressants, as well as precursor agents, should be avoided.
+Persons should be instructed to tell any other physicians or dentists who are
+treating them that they are taking an MAOI. MAOIs may potentiate the
+action of CNS depressants, including alcohol and barbiturates. MAOIs should
+not be coadministered with serotonergic drugs, such as SSRIs and
+clomipramine (Anafranil), because this combination can trigger serotonin
+syndrome. The use of lithium or tryptophan with an irreversible MAOI may
+also induce serotonin syndrome. Initial symptoms of serotonin syndrome can
+include tremor, hypertonicity, myoclonus, and autonomic signs, which can
+then progress to hallucinosis, hyperthermia, and even death. Fatal reactions
+had occurred when MAOIs were combined with meperidine (Demerol) or
+fentanyl (Sublimaze).
+Table 21-23
+Drugs to Be Avoided during Monoamine Oxidase Inhibitor
+Treatment (Partial Listing)
+Never Use
+Antiasthmatics
+Antihypertensives (methyldopa, guanethidine, reserpine)
+Buspirone
+Levodopa
+Opioids (especially meperidine, dextromethorphan,
+propoxyphene, tramadol; morphine or codeine may be less
+dangerous)
+Cold, allergy, or sinus medications containing dextromethorphan
+
+
+
+
+<<<PAGE 2040>>>
+
+or sympathomimetics
+SSRIs, clomipramine, venlafaxine, sibutramine
+Sympathomimetics (amphetamines, cocaine, methylphenidate,
+dopamine, epinephrine, norepinephrine, isoproterenol,
+ephedrine, pseudoephedrine, phenylpropanolamine)
+L-Tryptophan
+Use Carefully
+Anticholinergics
+Antihistamines
+Disulfiram
+Bromocriptine
+Hydralazine
+Sedative-hypnotics
+Terpin hydrate with codeine
+Tricyclics and tetracyclics (avoid clomipramine)
+SSRI, selective serotonin reuptake inhibitor.
+
+When switching from an irreversible MAOI to any other type of
+antidepressant drug, persons should wait at least 14 days after the last dose of
+the MAOI before beginning the use of the next drug to allow replenishment
+of the body’s MAOs. When switching from an antidepressant to an
+irreversible MAOI, persons should wait 10 to 14 days (or 5 weeks for
+fluoxetine [Prozac]) before starting the use of the MAOI to avoid drug–drug
+interactions. In contrast, MAO activity recovers completely 24 to 48 hours
+after the last dose of a RIMA.
+The effects of the MAOIs on hepatic enzymes are poorly studied.
+Tranylcypromine inhibits CYP2C19. Moclobemide inhibits CYP2D6,
+CYP2C19, and CYP1A2 and is a substrate for 2C19.
+Cimetidine (Tagamet) and fluoxetine significantly reduce the elimination
+of moclobemide. Modest doses of fluoxetine and moclobemide administered
+concurrently may be well tolerated, with no significant pharmacodynamic or
+pharmacokinetic interactions.
+Laboratory Interferences
+MAOIs may lower blood glucose concentrations. MAOIs artificially raise
+
+
+
+
+<<<PAGE 2090>>>
+
+consisting of fever, rash, eosinophilia, and possibly fatal myocarditis.
+Cleft palate, fingernail hypoplasia, microcephaly, and spina bifida in
+infants may be associated with the maternal use of carbamazepine during
+pregnancy. Pregnant women should not use carbamazepine unless necessary.
+All women with childbearing potential should take 1 to 4 mg of folic acid
+daily, even if they are not trying to conceive. Carbamazepine is secreted in
+breast milk.
+Drug Interactions. Carbamazepine decreases serum concentrations of
+numerous drugs as a result of the prominent induction of hepatic CYP3A4
+(Table 21-39). Monitoring for a decrease in clinical effects is frequently
+indicated. Carbamazepine can decrease the blood concentrations of oral
+contraceptives, resulting in breakthrough bleeding and uncertain prophylaxis
+against pregnancy. Carbamazepine should not be administered with MAOIs,
+which should be discontinued at least 2 weeks before initiating treatment with
+carbamazepine. Grapefruit juice inhibits the hepatic metabolism of
+carbamazepine. When carbamazepine and valproate are used in combination,
+the dosage of carbamazepine should be decreased because valproate displaces
+carbamazepine binding on proteins, and the dosage of valproate may need to
+be increased.
+Table 21-39
+Carbamazepine: Drug Interactions
+Effect of Carbamazepine on Plasma Agents that May Affect
+Concentrations of Concomitant
+Carbamazepine Plasma
+Agents
+Concentrations
+Carbamazepine may decrease drug Agents that may increase
+plasma concentration of:
+carbamazepine plasma
+Acetaminophen
+concentration:
+Alprazolam
+Allopurinol
+Amitriptyline
+Cimetidine
+Bupropion
+Clarithromycin
+Clomipramine
+Danazol
+Clonazepam
+Diltiazem
+Clozapine
+Erythromycin
+
+
+
+
+<<<PAGE 2091>>>
+
+Cyclosporine
+Desipramine
+Dicumarol
+Doxepin
+Doxycycline
+Ethosuximide
+Felbamate
+Fentanyl
+Fluphenazine
+Haloperidol
+Hormonal contraceptives
+Imipramine
+Lamotrigine
+Methadone
+Methsuximide
+Methylprednisolone
+Nimodipine
+Pancuronium
+Phensuximide
+Phenytoin
+Primidone
+Theophylline
+Valproate
+Warfarin
+Carbamazepine may increase drug
+plasma concentrations of
+Clomipramine
+Phenytoin
+Primidone
+
+Fluoxetine
+Fluvoxamine
+Gemfibrozil
+Itraconazole
+Ketoconazole
+Isoniazida
+Itraconazole
+Lamotrigine
+Loratadine
+Macrolides
+Nefazodone
+Nicotinamide
+Propoxyphene
+Terfenadine
+Troleandomycin
+Valproatea
+Verapamil
+Viloxazine
+Drugs that may decrease
+carbamazepine plasma
+concentrations
+Carbamazepine
+(autoinduction)
+Cisplatin
+Doxorubicin HCl
+Felbamate
+Phenobarbital
+Phenytoin
+Primidone
+Rifampinb
+Theophylline
+Valproate
+
+aIncreased concentrations of the active 10,11-epoxide.
+bDecreased concentrations of carbamazepine and increased concentrations of the 10,11-
+
+epoxide.
+Table by Carlos A. Zarate, Jr., M.D. and Mauricio Tohen, M.D.
+
+
+
+
+<<<PAGE 3598>>>
+
+for ADHD, 135, 136, 136t
+dependence, 304
+indications for, 302t
+neuropharmacology, 307–308
+preparations, 302t
+Amygdala, 398
+function of, 932
+Amylase levels, serum, 65
+β-Amyloid, 962
+Amyloid plaques, 240
+Amyloid precursor protein (APP), 240, 993
+Amylophagia, 163
+Amyotrophic lateral sclerosis (ALS), 255
+Anabolic-androgenic steroids (AAS), 327
+Anabolic-androgenic steroid use, 327–330
+AAS withdrawal, 329
+adverse reactions, 330
+clinical features and diagnosis, 328–329
+epidemiology, 329
+etiology, 330
+examples of anabolic steroids, 328t
+pathology, 330
+treatment, 329
+Anabolic steroid–induced mood disorders, 328–329, 329t
+Anabolic steroid–induced psychotic disorder, 329
+Anabolic steroids, 215
+Anaclitic depression, 1013
+Anafranil. See Clomipramine
+Anal sphincter, relaxation of, 972
+Anandamide
+neuroprotective action of, 978
+neurotransmission of, 975f
+structure of, 975f
+synthesis of, 973
+Anencephaly, neurulation and, 938
+Angelman syndrome, 86t
+Anger Coping Program, 193
+
+
+
+
+<<<PAGE 3624>>>
+
+arithmetic skills, 48
+language disorders, 47–48
+limb apraxia, 48
+memory disorders, 49–50
+motor skills, 50
+neuropsychological deficits with left/right hemisphere damage,
+47, 47t
+spatial disorders, 48–49
+referral issue, 50
+change in functioning over time, 51
+decision-making capacity, assessment of, 51
+differential diagnosis, 50–51
+forensic evaluation, 51
+level of functioning, 50
+Clinical tracking systems, 874
+Clinician-Administered PTSD Scale (CAPS), 41, 44
+Clock drawing, 53t, 54, 55f
+Clock genes, 992
+Clomipramine, 628
+in autism spectrum disorder, 129
+for OCD in childhood, 206
+Clonazepam, 253t, 602
+Clonidine, 607, 608, 683, 694–696, 923, 960
+for ADHD, 137
+dosage and clinical guidelines, 696
+pharmacologic actions, 694
+precautions and adverse reactions, 695–696
+protocols for opioid detoxification, 695t
+for PTSD, 173
+symptoms of overdose, 696
+therapeutic indications, 694–695
+for tic disorder, 160
+Cloninger, C. Robert, 560
+Closed-ended questions, in interview, 15
+Closing of interview, 15–16
+Clozapine, 591, 593, 600, 732
+assessment of serum concentration of, 63
+
+

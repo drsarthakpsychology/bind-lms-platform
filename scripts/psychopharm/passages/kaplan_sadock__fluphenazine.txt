@@ -1,0 +1,562 @@
+<<<PAGE 511>>>
+
+affinity for dopamine D2 and serotonin 5-HT2 receptors, is the most wellstudied atypical antipsychotic in the treatment of tics. There is considerable
+evidence for its efficacy. Multiple randomized, controlled studies in children
+and adolescents have shown favorable results compared to placebo as well as
+in head-to-head studies with the typical antipsychotics haloperidol and
+pimozide. Risperidone was associated with fewer adverse events compared to
+typical antipsychotics; however, it can cause weight gain, metabolic side
+effects, and hyperprolactinemia. In a randomized, double-blind, parallelgroup study of Tourette disorder comparing risperidone to pimozide,
+risperidone showed superiority in reducing comorbid obsessive-compulsive
+symptoms as well as reducing tics. In other randomized clinical trials,
+risperidone reduced tics in children, adolescents, and adults with mean daily
+doses of 2.5 mg with a range of 1 to 6 mg.
+Haloperidol and pimozide are the two most well-investigated and FDAapproved antipsychotic agents in the treatment of Tourette disorder.
+However, atypical antipsychotics such as risperidone are often first-line
+agents due to their safer side-effect profiles. Both haloperidol and pimozide
+are efficacious in multiple randomized clinical trials in the treatment of
+Tourette disorder. Both haloperidol and pimozide present significant risks for
+extrapyramidal side effects; in a long-term naturalistic follow-up study,
+haloperidol produces more significant acute dyskinesia and dystonia
+compared to pimozide.
+A third typical antipsychotic, fluphenazine, has been used in the United
+States for many years in the treatment of tic disorders in the absence of robust
+data supporting its efficacy. A small controlled study of fluphenazine,
+trifluphenazine, and haloperidol found similar reductions in tics; however,
+haloperidol has more extrapyramidal side effects and more sedation. The
+frequency of sedation, dystonia, and akathisia of typical antipsychotics,
+probably due to their predominant dopaminergic blockade in the nigrostriatal
+pathways, limits their use and increases the appeal of the atypical
+antipsychotics. Risperidone and pimozide had equal efficacy in one study of
+children, adolescents, and adults with Tourette disorder.
+Aripiprazole has become a pharmacologic agent of interest in the treatment
+of tic disorders due to its mode of action; in addition to its D2 receptor
+antagonistic actions, aripiprazole is also a partial D2 and 5-HT1A receptor
+
+
+
+
+<<<PAGE 515>>>
+
+in the same families; this lends support to the view that the disorders are part
+of a genetically determined spectrum. The sons of mothers with Tourette
+disorder seem to be at the highest risk for the disorder. Evidence in some
+families suggests an autosomal dominant transmission for Tourette disorder.
+Studies of an extended family pedigree suggest that transmission of Tourette
+disorder is bilinear; that is, Tourette disorder appears to be inherited through
+an autosomal pattern in some families, intermediate between dominant and
+recessive. A study of 174 unrelated probands with Tourette disorder
+identified a higher than chance occurrence of a rare sequence variant in
+SLITRK1, believed to be a candidate gene on chromosome 13q31.
+Up to half of all patients with Tourette disorder also have ADHD, and up
+to 40 percent of those with Tourette disorder also have OCD. These frequent
+comorbidities with Tourette disorder can lead to a plethora of overlapping
+symptoms. Family studies have provided compelling evidence for the
+association between tic disorders and OCD. First-degree relatives of persons
+with Tourette disorder are at high risk for the development of Tourette
+disorder, chronic motor or vocal tic disorder, and OCD. The current
+understanding of the genetic bases of Tourette disorder implicates multiple
+vulnerability genes that may serve to mediate the type and severity of tics.
+Candidate genes associated with Tourette disorder include dopamine receptor
+genes, dopamine transporter genes, several noradrenergic genes, and
+serotonergic genes.
+Neuroimaging Studies. A functional magnetic resonance imaging (fMRI)
+study of brain activity 2 seconds before and after a tic found that paralimbic
+and sensory association areas were involved. Furthermore, evidence suggests
+that voluntary tic suppression involves deactivation of the putamen and
+globus pallidus, along with partial activation of regions of the prefrontal
+cortex and caudate nucleus. Compelling, but indirect, evidence of dopamine
+system involvement in tic disorders includes the observations that
+pharmacologic agents that antagonize dopamine (haloperidol, pimozide, and
+fluphenazine) suppress tics and that agents that increase central dopaminergic
+activity (methylphenidate, amphetamines, and cocaine) tend to exacerbate
+tics. The relation of tics to neurotransmitter systems is complex and not yet
+well understood; for example, in some cases, antipsychotic medications, such
+as haloperidol, are not effective in reducing tics, and the effect of stimulants
+
+
+
+
+<<<PAGE 1137>>>
+
+second-generation and commonly used first generation antipsychotics.
+Most guidelines recommend starting with a second-generation
+antipsychotic. Although they are likely the most effective for patients with
+severe symptoms, and predominantly positive symptoms, they are useful
+across a broad range of symptoms and severity. There is little guidance for
+choosing a specific medication: some studies suggest they have individual
+differences in efficacy. However, the most significant difference between the
+drugs is in their side effects, and we should consider these carefully when
+choosing a treatment.
+Agitation is a typical symptom in the acute phase. Clinicians have several
+options for managing agitation that results from psychosis. Antipsychotics
+and benzodiazepines can result in a relatively rapid calming of patients. With
+highly agitated patients, intramuscular administration of antipsychotics
+produces a more rapid effect. An advantage of an antipsychotic is that a
+single intramuscular injection of a first- or second-generation antipsychotic
+can often calm the patient without excessive sedation. Low-potency
+antipsychotics are often associated with sedation and postural hypotension,
+mainly when administering them intramuscularly. Intramuscular ziprasidone
+and olanzapine are similar to their oral counterparts in not causing substantial
+extrapyramidal side effects during acute treatment. This can be a significant
+advantage over haloperidol or fluphenazine, which can cause frightening
+dystonias or akathisia in some patients. A rapidly dissolving oral formulation
+of olanzapine may also be helpful as an alternative to an intramuscular
+injection.
+Benzodiazepines are also useful for agitation during acute psychosis.
+Lorazepam has the advantage of reliable absorption when administering it
+either orally or intramuscularly. The use of benzodiazepines may also reduce
+the amount of antipsychotic that is needed to control psychotic patients.
+Treating Side Effects. Patients frequently experience the side effects of an
+antipsychotic before they experience clinical improvement. Whereas a
+clinical response may take days or weeks after starting a drug, side effects
+may begin almost immediately. First-generation antipsychotics most
+commonly cause extrapyramidal side effects, and in the case of low potency,
+first-generation antipsychotics, sedation and postural hypotension, whereas
+second-generation antipsychotics cause weight gain and metabolic
+
+
+
+
+<<<PAGE 1142>>>
+
+Duration and Prophylaxis
+In the stable or maintenance phase, the illness is in a relative stage of
+remission. The goals during this phase are to prevent psychotic relapse and to
+assist patients in improving their level of functioning. Newer medications,
+with a substantially reduced risk of tardive dyskinesia, have diminished one
+of the major concerns about long-term treatment. During this phase, patients
+are usually in a relative state of remission with only minimal psychotic
+symptoms. Stable patients who are maintained on an antipsychotic have a
+much lower relapse rate than patients who have their medications
+discontinued. Data suggest that 16 to 23 percent of patients receiving
+treatment will experience a relapse within 1 year, and 53 to 72 percent will
+relapse without medications.
+We should maintain patients experiencing a first episode of psychosis for
+at least a year. However, such patients still have a high chance of relapsing at
+least once over the following 5 years, and some experts believe that 1 year is
+inadequate. This is a particular concern when patients have achieved
+functional employment status or are involved in educational programs
+because they have a lot to lose if they experience another psychotic
+decompensation.
+For patients experiencing two or more episodes, most experts recommend
+that we consider indefinite treatment.
+Acute Treatment Failures
+Addressing Noncompliance. Noncompliance with long-term
+antipsychotic treatment is very high. An estimated 40 to 50 percent of
+patients become noncompliant within 1 or 2 years. Long-acting injectable
+antipsychotics were developed to help improve adherence, particularly in
+patients likely to discontinue daily oral medications. Although there is some
+controversy in the literature, the weight of data suggests that long-term depot
+formulations do help adherence and decrease relapse, mainly when
+considered in real-world settings.
+When beginning long-acting drugs, some oral supplementation is
+necessary while achieving peak plasma levels. Fluphenazine, haloperidol,
+risperidone, paliperidone, aripiprazole, and olanzapine have long-acting
+
+
+
+
+<<<PAGE 1675>>>
+
+Trazodone (Desyrel)b
+
+–
+
+–
+
+Tranylcypromine (Parnate)
+
++
+
++
+
+Phenelzine (Nardil)
+
++
+
++
+
+Pargyline (Eutonyl)
+
+–
+
++
+
+Isocarboxazid (Marplan)
+
+–
+
++
+
+Lithium (Eskalith)
+
++
+
++
+
+Amphetamines
+
++
+
++
+
+Fluoxetine (Prozac)c
+
+–
+
++
+
+Fluphenazine (Prolixin)
+
++
+
++
+
+Thioridazine (Mellaril)
+
++
+
++
+
+Chlorprothixene
+(Taractan)
+
+–
+
++
+
+Mesoridazine (Serentil)
+
+–
+
++
+
+Perphenazine (Trilafon)
+
+–
+
++
+
+Trifluoperazine (Stelazine)
+
+–
+
++
+
+Reserpine (Serpasil)
+
++
+
++
+
+Haloperidol (Haldol)
+
+–
+
++
+
+–
+
++
+
+Monoamine oxidase inhibitors
+
+Other mood-active drugs
+
+Antipsychoticsd
+
+Antianxiety agente
+Chlordiazepoxide
+(Librium)
+Antihypertensive drugs
+
+
+
+
+<<<PAGE 1681>>>
+
+problem
+No obvious nonpharmacologic
+precipitant
+Dissipates with drug
+discontinuation
+Antipsychotic drugs and
+ejaculatory problems
+
+Perphenazine
+Chlorpromazine
+Trifluoperazine
+Haloperidol
+Mesoridazine
+Chlorprothixene
+
+Antipsychotic drugs and priapism
+
+Perphenazine
+Mesoridazine
+Chlorpromazine
+Thioridazine
+Fluphenazine
+Molindone
+Risperidone
+Clozapine
+
+Table by R. T. Seagraves, M.D.
+
+Because depression is associated with decreased libido, varying levels of
+sexual dysfunction and anhedonia are part of the disease process. Some
+patients report improved sexual functioning as their depression improves
+because of antidepressant medication. The phenomenon makes evaluating
+sexual side effects difficult; also, the side effects may disappear with time,
+perhaps because a biogenic amine homeostatic mechanism comes into play.
+
+
+
+
+<<<PAGE 1952>>>
+
+dose if tolerated after the patient is in a stable condition. Most DRAs are
+highly protein-bound. Parenteral formulation of the DRAs results in a more
+rapid and more reliable onset of action. Bioavailability is also up to 10-fold
+higher with parenteral administration. Most DRAs are metabolized by
+cytochrome P450 (CYP) CYP2D6 and 3A isozymes. However, there are
+differences among the specific agents.
+Table 21-10
+Factors
+Influencing
+Antipsychotics
+Age
+
+the
+
+Pharmacokinetics
+
+of
+
+Elderly patients may demonstrate reduced clearance
+rates.
+
+Medical
+Decreased hepatic blood flow can reduce clearance.
+condition
+Hepatic disease can decrease clearance.
+Enzyme
+inducers
+
+Carbamazepine, phenytoin, ethambutol, barbiturates.
+
+Clearance
+Include SSRIs, TCAs, cimetidine, β-blockers, isoniazid,
+inhibitors
+methylphenidate, erythromycin,
+triazolobenzodiazepines, ciprofloxacin, and
+ketoconazole.
+Changes in Hypoalbuminemia can occur with malnutrition or
+binding
+hepatic failure.
+protein
+SSRI, selective serotonin reuptake inhibitor; TCA, tricyclic antidepressant.
+Adapted from Ereshefsky L. Pharmacokinetics and drug interactions: update for new
+antipsychotics. J Clin Psychiatry. 1996;57(Suppl 11):12–25.
+
+Long-acting depot parenteral formulations of haloperidol (Haldol
+Decanoate) and fluphenazine are available in the United States. These agents
+are usually administered once every 1 to 4 weeks, depending on the dose and
+the patient. It can take up to 6 months of treatment with depot formulations to
+reach steady-state plasma levels, indicating that oral therapy should be
+
+
+
+
+<<<PAGE 1953>>>
+
+continued during the first month or so of depot antipsychotic treatment.
+Antipsychotic activity derives from the inhibition of dopaminergic
+neurotransmission. The DRAs are effective when approximately 72 percent
+of dopamine D2 receptors in the brain are occupied. The DRAs also block
+noradrenergic, cholinergic, and histaminergic receptors, with different drugs
+having different effects on these receptor systems.
+Some generalizations can be made about the DRAs based on their potency.
+Potency refers to the amount of drug that is required to achieve therapeutic
+effects. Low-potency drugs such as chlorpromazine and thioridazine
+(Mellaril), given in doses of several 100 mg/day, typically produce more
+weight gain and sedation than high-potency agents such as haloperidol and
+fluphenazine, usually given in doses of less than 10 mg/day. High-potency
+agents are also more likely to cause EPS. Some factors influencing the
+pharmacologic actions of DRAs are listed in Table 21-10.
+Therapeutic Indications
+Many types of psychiatric and neurologic disorders may benefit from
+treatment with DRAs. Some of these indications are shown in Table 21-11.
+Schizophrenia and Schizoaffective Disorder. The DRAs are useful in
+both the short- and long-term management of schizophrenia and
+schizoaffective disorder. They both reduce acute symptoms and prevent
+future exacerbations. These agents produce their most dramatic effects on the
+positive symptoms of schizophrenia (e.g., hallucinations, delusions, and
+agitation). Negative symptoms (e.g., emotional withdrawal and ambivalence)
+are less likely to improve significantly, and they may appear to worsen
+because these drugs produce constriction of facial expression and akinesia,
+side effects that mimic negative symptoms.
+Table 21-11
+Indications for Dopamine Receptor Antagonists
+Acute psychotic episodes in schizophrenia and schizoaffective
+disorder
+Maintenance treatment in schizophrenia and schizoaffective
+
+
+
+
+<<<PAGE 1971>>>
+
+patients and take into account their wishes, the severity of their illnesses, and
+the quality of their support systems. The clinician needs to know enough
+about the patient’s life to try to predict upcoming stressors that might require
+increasing the dosage or closely monitoring compliance.
+Long-Acting Depot Medications. Long-acting depot preparations may
+be needed to overcome problems with compliance. IM preparations are
+typically given once every 1 to 4 weeks.
+Two depot preparations, a decanoate and an enanthate of fluphenazine, and
+a decanoate preparation of haloperidol, are available in the United States. The
+preparations are injected IM into an area of extensive muscle tissue, from
+which they are absorbed slowly into the blood. Decanoate preparations can
+be given less frequently than enanthate preparations because they are
+absorbed more slowly. Although stabilizing a person on the oral preparation
+of the specific drugs is not necessary before initiating the depot form, it is
+good practice to give at least one oral dose of the drug to assess the
+possibility of an adverse effect, such as severe EPS or an allergic reaction.
+It is reasonable to begin with either 12.5 mg (0.5 mL) of fluphenazine
+preparation or 25 mg (0.5 mL) of haloperidol decanoate. If symptoms emerge
+in the next 2 to 4 weeks, the person can be treated temporarily with additional
+oral medications or with additional small depot injections. After 3 to 4 weeks,
+the depot injection can be increased to a single dose equal to the total of the
+doses given during the initial period.
+A good reason to initiate depot treatment with low doses is that the
+absorption of the preparations may be faster than usual at the onset of
+treatment, resulting in frightening episodes of dystonia that eventually
+discourage compliance with the medication. Some clinicians keep patients
+drug free for 3 to 7 days before initiating depot treatment and give small
+doses of the depot preparations (3.125 mg of fluphenazine or 6.25 mg of
+haloperidol) every few days to avoid those initial problems.
+Plasma Concentrations
+Genetic differences among persons and pharmacokinetic interactions with
+other drugs influence the metabolism of the antipsychotics. If a person has
+not improved after 4 to 6 weeks of treatment, the plasma concentration of the
+
+
+
+
+<<<PAGE 2091>>>
+
+Cyclosporine
+Desipramine
+Dicumarol
+Doxepin
+Doxycycline
+Ethosuximide
+Felbamate
+Fentanyl
+Fluphenazine
+Haloperidol
+Hormonal contraceptives
+Imipramine
+Lamotrigine
+Methadone
+Methsuximide
+Methylprednisolone
+Nimodipine
+Pancuronium
+Phensuximide
+Phenytoin
+Primidone
+Theophylline
+Valproate
+Warfarin
+Carbamazepine may increase drug
+plasma concentrations of
+Clomipramine
+Phenytoin
+Primidone
+
+Fluoxetine
+Fluvoxamine
+Gemfibrozil
+Itraconazole
+Ketoconazole
+Isoniazida
+Itraconazole
+Lamotrigine
+Loratadine
+Macrolides
+Nefazodone
+Nicotinamide
+Propoxyphene
+Terfenadine
+Troleandomycin
+Valproatea
+Verapamil
+Viloxazine
+Drugs that may decrease
+carbamazepine plasma
+concentrations
+Carbamazepine
+(autoinduction)
+Cisplatin
+Doxorubicin HCl
+Felbamate
+Phenobarbital
+Phenytoin
+Primidone
+Rifampinb
+Theophylline
+Valproate
+
+aIncreased concentrations of the active 10,11-epoxide.
+bDecreased concentrations of carbamazepine and increased concentrations of the 10,11-
+
+epoxide.
+Table by Carlos A. Zarate, Jr., M.D. and Mauricio Tohen, M.D.
+
+
+
+
+<<<PAGE 3656>>>
+
+Flumazenil, 299, 679
+Flunitrazepam, 215, 298
+Fluorescent in situ hybridization (FISH), 96
+Fluorescent treponemal antibody absorption (FTA-ABS) test, 66
+Fluoxetine, 594, 627–628, 631
+for depression in adolescents, 178
+Fluphenazine
+for schizophrenia, 353t
+for Tourette disorder, 160
+Fluvoxamine, 627, 628, 631, 632
+FMRI gene, 991
+Folate levels, serum, 66
+Folic acid deficiencies, 938
+Follicle-stimulating hormone (FSH), hormone regulation by, 969
+Fölling, Ivar Asbjörn, 102
+Ford v. Wainwright, 843
+Forensic and legal issues, 836–846
+child abuse, 838
+child custody, 842
+civil liability, 845, 846t
+civil rights of patients, 840
+communication rights, 841
+economic rights, 841
+least restrictive alternative, 841
+private rights, 841
+visitation rights, 841
+confidentiality, 837–838
+criminal law, 843–845
+competence to be executed, 843
+competence to stand trial, 843
+criminal responsibility, 843–845
+guilty but mentally ill, 844f, 845
+discussions about patients, 838
+durable power of attorney, 843
+emotional damage and distress, 845
+Health Insurance Portability and Accountability Act, 846
+high-risk clinical situations
+
+

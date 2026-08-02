@@ -1,0 +1,209 @@
+<<<PAGE 51>>>
+
+Chapter 2: Transporters, Receptors, and Enzymes
+
+One difference between transport of neurotransmitters
+by the SLC6 gene family and transport of glutamate
+by the SLC1 gene family is that glutamate does not
+seem to cotransport chloride with sodium when it also
+cotransports glutamate. Also, glutamate transport is
+almost always characterized by the countertransport of
+potassium, whereas this is not always the case with SLC6
+gene family transporters. Glutamate transporters may
+work together as trimers rather than dimers, as the SLC6
+transporters seem to do. The functional significance
+of these differences remains obscure, but may become
+more apparent if clinically useful psychopharmacological
+agents that target glutamate transporters are discovered.
+Since it may often be desirable to diminish rather than
+enhance glutamate neurotransmission, the future utility
+of glutamate transporters as therapeutic targets is also
+unclear.
+Where Are the Transporters for Histamine and
+Neuropeptides?
+
+It is an interesting observation that apparently not all
+neurotransmitters are regulated by reuptake transporters.
+The central neurotransmitter histamine apparently does
+not have a transporter for it presynaptically (although
+it is transported into synaptic vesicles by VMAT2,
+the same transporter used by the monoamines – see
+Figure 2-2B). Histamine’s inactivation is thus thought
+to be entirely enzymatic. The same can be said for
+neuropeptides, since reuptake pumps and presynaptic
+transporters have not been found for them, and are thus
+thought to be lacking for this class of neurotransmitter.
+Inactivation of neuropeptides is apparently by diffusion,
+sequestration, and enzymatic destruction, but not
+by presynaptic transport. It is always possible that a
+transporter will be discovered in the future for some of
+these neurotransmitters, but at the present time there are
+no known presynaptic transporters for either histamine
+or neuropeptides.
+Vesicular Transporters: Subtypes and Function
+
+Vesicular transporters for the monoamines (VMATs)
+are members of the SLC18 gene family and have already
+been discussed above. They are shown in Figure 2-2B
+and listed in Table 2-3. The vesicular transporter for
+acetylcholine – also a member of the SLC18 gene family
+but known as VAChT – is shown in Figure 2-2B and
+listed in Table 2-3. The GABA vesicular transporter is a
+member of the SLC32 gene family and is called VIAAT
+(vesicular inhibitory amino acid transporter; shown in
+
+Figure 2-2B and Table 2-3). Finally, vesicular transporters
+for glutamate, called vGluT1–3 (vesicular glutamate
+transporters 1, 2, and 3), are members of the SLC17 gene
+family and are also shown in Figure 2-2B and listed in
+Table 2-3. A novel 12-transmembrane-region synaptic
+vesicle transporter of uncertain mechanism and with
+unclear substrates, called the SV2A transporter and
+localized within the synaptic vesicle membrane, binds the
+anticonvulsant levetiracetam, perhaps interfering with
+neurotransmitter release and thereby reducing seizures.
+How do neurotransmitters get inside synaptic
+vesicles? In the case of vesicular transporters, storage
+of neurotransmitters is facilitated by a proton ATPase,
+known as the “proton pump” that utilizes energy to
+pump positively charged protons continuously out of the
+synaptic vesicle (Figure 2-2B). The neurotransmitters can
+then be concentrated against a gradient by substituting
+their own positive charge inside the vesicle for the
+positive charge of the proton being pumped out. Thus,
+neurotransmitters are not so much transported as they
+are “antiported” – i.e., they go in while the protons
+are actively transported out, keeping charge inside the
+vesicle constant. This concept is shown in Figure 2-2B
+for the VMAT transporting dopamine, in exchange
+for protons. Contrast this with Figure 2-2A where a
+monoamine transporter on the presynaptic membrane
+is cotransporting a monoamine along with sodium
+and chloride, but with the help of a sodium–potassium
+ATPase (sodium pump) rather than a proton pump.
+Vesicular Transporters (SLC18 Gene Family) as Targets
+of Psychotropic Drugs
+
+Vesicular transporters for acetylcholine (SLC18 gene
+family), GABA (SLC32 gene family), and glutamate
+(SLC17 gene family) are not known to be targeted
+by any drug utilized by humans. However, vesicular
+transporters for monoamines in the SLC18 gene family
+(VMATs), particularly those in dopamine neurons,
+are targeted by several drugs, including amphetamine
+(as a transported substrate) and tetrabenazine and
+its derivatives deutetrabenazine and valbenazine (as
+inhibitors, see Chapter 5) . Amphetamine thus has
+two targets: monoamine transporters discussed above
+as well as VMATs discussed here. In contrast, other
+drugs for ADHD, such as methylphenidate, and the
+so-called “stimulant” drug of abuse cocaine, target
+only the monoamine transporters, and in much the
+same manner as described for SSRIs at the serotonin
+transporter.
+
+35
+
+2
+
+
+
+
+<<<PAGE 88>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Table 3-4 Subtypes of voltage-sensitive calcium channels (VSCCs)
+
+Type
+
+Pore-forming
+
+Location
+
+Function
+
+L
+
+Cav1.2, 1.3
+
+Cell bodies, dendrites
+
+Gene expression, synaptic integration
+
+N
+
+Cav 2.2
+
+Nerve terminals
+Dendrites, cell bodies
+
+Transmitter release
+Synaptic integration
+
+P/Q
+
+Cav, 2.1
+
+Nerve terminals
+
+Transmitter release
+
+Dendrites, cell bodies
+
+Synaptic integration
+
+R
+
+Cav, 2.3
+
+Nerve terminals
+Cell bodies, dendrites
+
+Transmitter release
+Repetitive firing, synaptic integration
+
+T
+
+Cav, 3.1, 3.2, 3.3
+
+Cell bodies, dendrites
+
+Pacemaking, repetitive firing, synaptic
+integration
+
+Docking of Synaptic Vesicle with Presynaptic Membrane,
+VSCC (Voltage-Sensitive Calcium Channel), and Snare Proteins
+VMAT
+
+synaptobrevin
+
+synaptotagmin
+
+SV2A
+
+synaptic vesicle
+membrane
+
+syntaxin
+
+SNAP 25
+
+ß
+
+N
+P/Q
+presynaptic membrane
+2
+++
+
+Ca
+
+Figure 3-24 Snare proteins. Proteins that link the voltage-sensitive calcium channel to the synaptic vesicle, called snare proteins,
+are shown here; they include SNAP 25 (synaptosomal-associated protein 25), synaptobrevin, syntaxin, and synaptotagmin. A VMAT
+(vesicular monoamine transporter) is shown on the left. Another transporter, SV2A, is shown on the right. The mechanism of this
+transporter is not yet clear, but the anticonvulsant levetiracetam is known to bind to this site.
+
+72
+
+

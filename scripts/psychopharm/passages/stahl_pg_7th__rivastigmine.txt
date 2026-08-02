@@ -1,0 +1,557 @@
+<<<PAGE 11>>>
+
+110 propranolol
+111 protriptyline
+112 quazepam
+113 quetiapine
+114 ramelteon
+115 reboxetine
+116 risperidone
+117 rivastigmine
+118 selegiline
+119 sertindole
+120 sertraline
+121 sildenafil
+122 sodium oxybate
+123 solriamfetol
+124 sulpiride
+125 suvorexant
+126 tasimelteon
+127 temazepam
+128 thioridazine
+129 thiothixene
+130 tiagabine
+131 tianeptine
+132 topiramate
+133 tranylcypromine
+134 trazodone
+135 triazolam
+136 trifluoperazine
+137 trihexyphenidyl
+
+
+
+
+<<<PAGE 2007>>>
+
+Rivastigmine
+
+Therapeutics
+Brands
+Exelon
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: acetylcholine enzyme inhibitor
+(ACh-EI)
+Cholinesterase inhibitor (acetylcholinesterase inhibitor and
+butyrylcholinesterase inhibitor); cognitive enhancer
+Commonly Prescribed for
+(bold for FDA approved)
+Alzheimer disease (mild to moderate)
+Parkinson’s disease dementia (mild to moderate)
+Memory disorders in other conditions
+Mild cognitive impairment
+
+
+
+
+<<<PAGE 2012>>>
+
+Incidence of nausea is generally higher during the titration phase
+than during maintenance treatment
+
+✽ If restarting treatment after a lapse of several days or more, dose
+titration should occur as when starting drug for the first time
+Oral doses between 6–12 mg/day have been shown to be more
+effective than doses between 1–4 mg/day
+Recommended to take oral rivastigmine with food
+Rapid dose titration increases the incidence of gastrointestinal side
+effects
+For transdermal formulation, dose increases should occur after a
+minimum of 4 weeks at the previous dose and only if the previous
+dose was well tolerated
+Transdermal patch should only be applied to dry, intact skin on the
+upper torso or another area unlikely to rub against tight clothing
+Plasma exposure with transdermal rivastigmine is 20–30% lower
+when applied to the abdomen or thigh as compared to the upper
+back, chest, or upper arm
+New application site should be selected for each day; patch should
+be applied at approximately the same time every day; only one patch
+should be applied at a time; patches should not be cut; new patch
+should not be applied to the same spot for at least 14 days
+Avoid touching the exposed (sticky) side of the patch, and after
+application, wash hands with soap and water; do not touch eyes until
+after hands have been washed
+
+
+
+
+<<<PAGE 2013>>>
+
+Switching from oral formulation to transdermal formulation:
+patients receiving oral rivastigmine <6 mg/day can switch to 4.6
+mg/24 hours transdermal; patients receiving oral rivastigmine 6–12
+mg/day can switch to 9.5 mg/24 hours transdermal; apply the first
+patch on the day following the last oral dose
+Probably best to utilize highest tolerated dose within the usual
+dosage range
+
+✽ When switching to another cholinesterase inhibitor, probably best
+to cross-titrate from one to the other to prevent precipitous decline in
+function if the patient washes out of one drug entirely
+Overdose
+Can be lethal; nausea, vomiting, excess salivation, sweating,
+hypotension, bradycardia, collapse, convulsions, muscle weakness
+(weakness of respiratory muscles can lead to death)
+Long-Term Use
+Drug may lose effectiveness in slowing degenerative course of
+Alzheimer disease after 6 months
+Can be effective in many patients for several years
+Habit Forming
+No
+
+
+
+
+<<<PAGE 2014>>>
+
+How to Stop
+Taper not necessary
+Discontinuation may lead to notable deterioration in memory and
+behavior, which may not be restored when drug is restarted or
+another cholinesterase inhibitor is initiated
+Pharmacokinetics
+Elimination half-life 1–2 hours
+Not hepatically metabolized; no CYP450-mediated pharmacokinetic
+drug interactions
+Drug Interactions
+Rivastigmine may increase the effects of anesthetics and should be
+discontinued prior to surgery
+Rivastigmine may interact with anticholinergic agents and the
+combination may decrease the efficacy of both
+Clearance of rivastigmine may be increased by nicotine
+May have synergistic effect if administered with cholinomimetics
+(e.g., bethanechol)
+Bradycardia may occur if combined with beta blockers
+Theoretically, could reduce the efficacy of levodopa in Parkinson’s
+disease
+
+
+
+
+<<<PAGE 2015>>>
+
+Not recommended in combination with metoclopramide due to risk
+of drug-induced parkinsonism
+Not rational to combine with another cholinesterase inhibitor
+Other Warnings/Precautions
+May exacerbate asthma or other pulmonary disease
+Increased gastric acid secretion may increase the risk of ulcers
+Bradycardia or heart block may occur in patients with or without
+cardiac impairment
+
+✽ Severe vomiting with esophageal rupture may occur if rivastigmine
+therapy is resumed without retitrating the drug to full dosing
+Individuals with low body weight may be at greater risk for adverse
+effects
+Certain transdermal patches containing even small traces of
+aluminum or other metals in the adhesive backing can cause skin
+burns if worn during MRI, so warn patients taking the transdermal
+formulation about this possibility and advise them to disclose this
+information if they need an MRI
+Do Not Use
+If there is a proven allergy to rivastigmine or other carbamates
+
+Special Populations
+
+
+
+
+<<<PAGE 2016>>>
+
+Renal Impairment
+Dose adjustment not necessary; titrate to point of tolerability
+Hepatic Impairment
+Dose adjustment not necessary; titrate to point of tolerability
+Cardiac Impairment
+Should be used with caution
+Syncopal episodes have been reported with the use of rivastigmine
+Elderly
+Some patients may tolerate lower doses better
+Use of cholinesterase inhibitors may be associated with increased
+rates of syncope, bradycardia, pacemaker insertion, and hip fracture
+in older adults with dementia
+Children and Adolescents
+Safety and efficacy have not been established
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+
+
+
+
+<<<PAGE 2017>>>
+
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+Animal studies do not show adverse effects
+
+✽ Not recommended for use in pregnant women or women of
+childbearing potential
+Breast Feeding
+Unknown if rivastigmine is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+Rivastigmine is not recommended for use in nursing women
+
+The Art of Psychopharmacology
+Potential Advantages
+Theoretically, butyrylcholinesterase inhibition centrally could
+enhance therapeutic efficacy
+May be useful in some patients who do not respond to or do not
+tolerate other cholinesterase inhibitors
+Later stages or rapidly progressive Alzheimer disease
+Potential Disadvantages
+
+
+
+
+<<<PAGE 2019>>>
+
+the patient’s memory problems may have Alzheimer disease
+Treat the patient but ask the caregiver about efficacy
+What you see may depend upon how early you treat
+The first symptoms of Alzheimer disease are generally mood
+changes; thus, Alzheimer disease may initially be diagnosed as
+depression
+Women may experience cognitive symptoms in perimenopause as a
+result of hormonal changes that are not a sign of dementia or
+Alzheimer disease
+Aggressively treat concomitant symptoms with augmentation (e.g.,
+atypical antipsychotics for agitation, antidepressants for depression)
+If treatment with antidepressants fails to improve apathy and
+depressed mood in the elderly, it is possible that this represents early
+Alzheimer disease and a cholinesterase inhibitor like rivastigmine
+may be helpful
+What to expect from a cholinesterase inhibitor:
+Patients do not generally improve dramatically although this
+can be observed in a significant minority of patients
+Onset of behavioral problems and nursing home placement can
+be delayed
+Functional outcomes, including activities of daily living, can be
+preserved
+Caregiver burden and stress can be reduced
+
+
+
+
+<<<PAGE 2020>>>
+
+Delay in progression in Alzheimer disease is not evidence of
+disease-modifying actions of cholinesterase inhibition
+Cholinesterase inhibitors like rivastigmine depend upon the
+presence of intact targets for acetylcholine for maximum
+effectiveness and thus may be most effective in the early stages of
+Alzheimer disease
+The most prominent side effects of rivastigmine are gastrointestinal
+effects, which are usually mild and transient
+
+✽ May cause more gastrointestinal side effects than some other
+cholinesterase inhibitors, especially if not slowly titrated
+At recommended doses, transdermal formulation may have lower
+incidence of gastrointestinal side effects than oral formulation
+Use with caution in underweight or frail patients
+Weight loss can be a problem in Alzheimer patients with debilitation
+and muscle wasting
+Women over 85, particularly with low body weights, may
+experience more adverse effects
+For patients with intolerable side effects, generally allow a washout
+period with resolution of side effects prior to switching to another
+cholinesterase inhibitor
+Cognitive improvement may be linked to substantial (>65%)
+inhibition of acetylcholinesterase
+
+
+
+
+<<<PAGE 2021>>>
+
+Rivastigmine may be more selective for the form of
+acetylcholinesterase in hippocampus (G1)
+
+✽ More potent inhibitor of the G1 form of acetylcholinesterase
+enzyme, found in high concentrations in Alzheimer patient’s brains,
+than the G4 form of the enzyme
+Butyrylcholinesterase action in the brain may not be relevant in
+individuals without Alzheimer disease or in early Alzheimer
+disease; in the later stages of the disease, enzyme actively increases
+as gliosis occurs
+Rivastigmine’s effects on butyrylcholinesterase may be more
+relevant in later stages of Alzheimer disease, when gliosis is
+occurring
+
+✽ May be more useful for later stages or for more rapidly progressive
+forms of Alzheimer disease, when gliosis increases
+butyrylcholinesterase
+
+✽ Butyrylcholinesterase actively could interfere with amyloid plaque
+formation, which contains this enzyme
+Some Alzheimer patients who fail to respond to another
+cholinesterase inhibitor may respond when switched to rivastigmine
+Some Alzheimer patients who fail to respond to rivastigmine may
+respond to another cholinesterase inhibitor
+To prevent potential clinical deterioration, generally switch from
+long-term treatment with one cholinesterase inhibitor to another
+without a washout period
+
+
+
+
+<<<PAGE 2023>>>
+
+Bentue-Ferrer D , Tribut O , Polard E , Allain H . Clinically significant drug
+interactions with cholinesterase inhibitors: a guide for neurologists . CNS
+Drugs 2003 ;17 :947–63 .
+Birks J , Grimley Evans J , Iakovidou V , Tsolaki M , Holt FE.
+Rivastigmine for Alzheimer’s disease . Cochrane Database Syst Rev 2009
+;15 (2 ):CD001191 .
+Dhillon S . Rivastigmine transdermal patch: a review of its use in the
+management of dementia of the Alzheimer’s type . Drugs 2011 ;71 (9
+):1209–31 .
+Jones RW . Have cholinergic therapies reached their clinical boundary in
+Alzheimer’s disease ? Int J Geriatr Psychiatry 2003 ;18 (Suppl 1 ):S7 –13 .
+
+
+
+
+<<<PAGE 2587>>>
+
+Everiden (valproate), 829
+Exan (buspirone), 123
+Excegran (zonisamide), 875
+Exelon (rivastigmine), 699
+Exogran (zonisamide), 875
+Exostrept (fluoxetine), 301
+Fanapt (iloperidone), 359
+Fardalan (sulpiride), 741
+Fargenor (chlordiazepoxide), 147
+Faustan (diazepam), 229
+Faverin (fluvoxamine), 325
+Fazaclo ODT (clozapine), 191
+Felicium (fluoxetine), 301
+Felison (flurazepam), 321
+Fenactil (chlorpromazine), 153
+Fentazin (perphenazine), 607
+Fetzima (levomilnacipran), 403
+Fevarin (fluvoxamine), 325
+Fidelan (sulpiride), 741
+Finlepsin (carbamazepine), 131
+Flaracantyl (thioridazine), 759
+flibanserin, 289
+Flonital (fluoxetine), 301
+Floxyfral (fluvoxamine), 325
+Fluanxol (flupenthixol), 307
+Fluanxol Depot (flupenthixol), 307
+Fluanxol Depot 10% (flupenthixol), 307
+Fluanxol Depot 2% (flupenthixol), 307
+
+
+
+
+<<<PAGE 2613>>>
+
+Riminyl (galantamine), 337
+Risolid (chlordiazepoxide), 147
+Risperdal (risperidone), 687
+Risperdal Consta (risperidone injectable), 687
+risperidone, 687
+Risperin (risperidone), 687
+Rispolept (risperidone), 687
+Rispolin (risperidone), 687
+Ritalin (d,l-methylphenidate), 487
+Ritalin LA (d, l-methylphenidate), 487
+Ritalin SR (d,l-methylphenidate), 487
+Ritaline (d,l-methylphenidate), 487
+rivastigmine, 699
+Rivatril (clonazepam), 173
+Rivotril (clonazepam), 173
+Robitussin (dextromethorphan), 225
+Rocam (midazolam), 499
+Rohipnol (flunitrazepam), 297
+Rohypnol (flunitrazepam), 297
+Roipnol (flunitrazepam), 297
+Romazicon (flumazenil), 293
+Ronal (flunitrazepam), 297
+Ropan (flunitrazepam), 297
+Rozerem (ramelteon), 677
+Rubifen (d,l-methylphenidate), 487
+Rulivan (nefazodone), 545
+Sanval (zolpidem), 871
+Sanzur (fluoxetine), 301
+
+
+
+
+<<<PAGE 2629>>>
+
+Alzheimer disease
+caprylidene , 127
+donepezil , 243
+galantamine , 337
+memantine , 473
+rivastigmine , 699
+selegiline, 705
+Amnesia, Drug-induced
+midazolam , 499
+Anxiety
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone , 123
+chlordiazepoxide , 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate , 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam , 229
+dothiepin, 249
+doxepin , 255
+duloxetine, 263
+
+
+
+
+<<<PAGE 2637>>>
+
+Delirium
+haloperidol (adjunct), 347
+lorazepam (adjunct), 437
+Dementia
+donepezil, 243
+galantamine, 337
+memantine, 473
+rivastigmine, 699
+selegiline, 705
+Dementia-related psychosis
+pimavanserin, 623
+Depression
+agomelatine, 5
+amisulpride, 17
+amitriptyline , 25
+amoxapine , 33
+amphetamine (d), 39
+amphetamine (d,l), 45
+aripiprazole (adjunct) , 53
+asenapine, 71
+atomoxetine, 79
+blonanserin, 89
+brexanolone , 99
+brexpiprazole (adjunct) , 103
+bupropion , 117
+buspirone (adjunct), 123
+
+
+
+
+<<<PAGE 2648>>>
+
+rivastigmine , 699
+Parkinson’s disease psychosis
+pimavanserin , 623
+Pervasive developmental disorders
+guanfacine, 343
+Porphyria
+chlorpromazine , 153
+Postherpetic neuralgia
+gabapentin , 331
+pregabalin , 647
+Postpartum depression
+brexanolone , 99
+Posttraumatic stress disorder
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+cariprazine, 137
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+dextromethorphan (with quinidine), 225
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+
+
+
+
+<<<PAGE 2664>>>
+
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+reboxetine, 681
+Benzodiazepine antagonist
+flumazenil, 293
+Cognitive enhancers
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+caprylidene, 127
+clonidine, 179
+donepezil, 243
+galantamine, 337
+memantine, 473
+memantine/donepezil combination, 243 , 473
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+reboxetine, 681
+rivastigmine, 699
+Dementia treatments
+caprylidene, 127
+donepezil, 243
+
+
+
+
+<<<PAGE 2665>>>
+
+galantamine, 337
+memantine, 473
+memantine/donepezil combination, 243 , 473
+rivastigmine, 699
+selegiline, 705
+Libido enhancers
+bremelanotide, 95
+flibanserin, 289
+Medical food
+caprylidene, 127
+l-methylfolate, 477
+Mood stabilizers
+alprazolam (adjunct), 11
+amoxapine, 33
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+bupropion, 117
+carbamazepine, 131
+cariprazine, 137
+chlorpromazine, 153
+clonazepam (adjunct), 173
+clozapine, 191
+doxepin, 255
+fluoxetine, 301
+flupenthixol, 307
+
+

@@ -1,0 +1,1276 @@
+<<<PAGE 11>>>
+
+110 propranolol
+111 protriptyline
+112 quazepam
+113 quetiapine
+114 ramelteon
+115 reboxetine
+116 risperidone
+117 rivastigmine
+118 selegiline
+119 sertindole
+120 sertraline
+121 sildenafil
+122 sodium oxybate
+123 solriamfetol
+124 sulpiride
+125 suvorexant
+126 tasimelteon
+127 temazepam
+128 thioridazine
+129 thiothixene
+130 tiagabine
+131 tianeptine
+132 topiramate
+133 tranylcypromine
+134 trazodone
+135 triazolam
+136 trifluoperazine
+137 trihexyphenidyl
+
+
+
+
+<<<PAGE 330>>>
+
+Approved as an adjunct treatment for depression
+Animal data suggest that brexpiprazole may improve cognitive
+impairment in schizophrenia
+Brexpiprazole is in late-stage clinical testing for agitation associated
+with Alzheimer dementia
+Brexpiprazole has shown evidence of efficacy especially in
+combination with sertraline for posttraumatic stress disorder
+Not approved for mania, but almost all atypical antipsychotics
+approved for acute treatment of schizophrenia have proven effective
+in the acute treatment of mania as well
+Pharmacological differences from aripiprazole suggest less akathisia
+with brexpiprazole, but no head-to-head trials
+Compared to aripiprazole, brexpiprazole has more potent binding of
+several receptor sites relative to dopamine 2 receptor binding,
+namely 5HT1A, 5HT2A, and alpha 1 receptors; however, the
+clinical significance of these differences is still under investigation
+
+The Art of Switching
+Switching from Oral Antipsychotics to Brexpiprazole
+It is advisable to begin brexpiprazole at an intermediate dose and
+build the dose rapidly over 3–7 days
+Clinical experience has shown that asenapine, quetiapine, and
+olanzapine should be tapered off slowly over a period of 3–4 weeks,
+
+
+
+
+<<<PAGE 705>>>
+
+Other Warnings/Precautions
+Disulfiram should not be given to a patient in a state of alcohol
+intoxication or without the patient’s full knowledge
+Not recommended for patients older than age 60 or for those with
+severe pulmonary disease, chronic renal failure, diabetes, peripheral
+neuropathy, seizures, cirrhosis, or portal hypertension
+Use with extreme caution in patients with hypothyroidism, epilepsy,
+cerebral damage
+Patients taking disulfiram should not be exposed to ethylene
+dibromide or its vapors, as this has resulted in a higher incidence of
+tumors in rats
+Do Not Use
+If the patient is in a state of alcohol intoxication
+Without the patient’s full knowledge
+For at least 12 hours after the patient last drank
+If patient is taking metronidazole, amprenavir, ritonavir, or sertraline
+If patient has psychosis
+If patient has cardiovascular disease
+If there is a proven allergy to disulfiram
+If there is a proven allergy to thiuram derivatives
+
+
+
+
+<<<PAGE 1100>>>
+
+Phenotypic testing may be necessary to detect this genetic variant
+prior to dosing with a tricyclic/tetracyclic antidepressant, especially
+in vulnerable populations such as children, elderly, cardiac
+populations, and those on concomitant medications
+Patients who seem to have extraordinarily severe side effects at
+normal or low doses may have this phenotypic CYP450 2D6 variant
+and require low doses or switching to another antidepressant not
+metabolized by 2D6
+
+Suggested Reading
+Anderson IM . Selective serotonin reuptake inhibitors versus tricyclic
+antidepressants: a meta-analysis of efficacy and tolerability . J Aff Disorders
+2000 ;58 :19 –36 .
+Anderson IM . Meta-analytical studies on new antidepressants . Br Med
+Bull 2001 ;57 :161–78 .
+Preskorn SH . Comparison of the tolerability of bupropion, fluoxetine,
+imipramine, nefazodone, paroxetine, sertraline, and venlafaxine . J Clin
+Psychiatry 1995 ;56 (Suppl 6):S12 –21.
+Workman EA , Short DD . Atypical antidepressants versus imipramine in
+the treatment of major depression: a meta-analysis . J Clin Psychiatry 1993
+;54 :5 –12.
+
+
+
+
+<<<PAGE 1815>>>
+
+Rapid discontinuation may lead to rebound psychosis and worsening
+of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after pimozide is discontinued
+Pharmacokinetics
+Metabolized by CYP450 3A and to a lesser extent by CYP450 1A2
+Mean elimination half-life approximately 55 hours
+Drug Interactions
+May decrease the effects of levodopa, dopamine agonists
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+May increase the effects of antihypertensive drugs
+
+✽ Use with CYP450 3A4 inhibitors (e.g., drugs such as fluoxetine,
+sertraline, fluvoxamine, and nefazodone; foods such as grapefruit
+juice) can raise pimozide levels and increase the risks of dangerous
+arrhythmias
+Use of pimozide and fluoxetine may lead to bradycardia
+Additive effects may occur if used with CNS depressants
+Some patients taking a neuroleptic and lithium have developed an
+encephalopathic syndrome similar to neuroleptic malignant
+syndrome
+
+
+
+
+<<<PAGE 1969>>>
+
+May need to reduce reboxetine dose or avoid concomitant use with
+inhibitors of CYP450 3A4, such as azole and antifungals, macrolide
+antibiotics, fluvoxamine, nefazodone, fluoxetine, sertraline, etc.
+Via CYP450 2D6 inhibition, reboxetine could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine and TCAs
+Via CYP450 2D6 inhibition, reboxetine could theoretically increase
+concentrations of thioridazine and cause dangerous cardiac
+arrhythmias
+Via CYP450 3A4 inhibition, reboxetine may increase the levels of
+alprazolam, buspirone, and triazolam
+Via CYP450 3A4 inhibition, reboxetine could theoretically increase
+concentrations of certain cholesterol lowering HMG CoA reductase
+inhibitors, especially simvastatin, atorvastatin, and lovastatin, but
+not pravastatin or fluvastatin, which would increase the risk of
+rhabdomyolysis; thus, coadministration of reboxetine with certain
+HMG CoA reductase inhibitors should proceed with caution
+Via CYP450 3A4 inhibition, reboxetine could theoretically increase
+the concentrations of pimozide, and cause QTc prolongation and
+dangerous cardiac arrhythmias
+Use with ergotamine may increase blood pressure
+Hypokalemia may occur if reboxetine is used with diuretics
+Use with caution with MAO inhibitors, including 14 days after
+MAOIs are stopped
+
+
+
+
+<<<PAGE 2065>>>
+
+Sertraline
+
+Therapeutics
+Brands
+Zoloft
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin reuptake inhibitor (SRI)
+SSRI (selective serotonin reuptake inhibitor); often classified as an
+antidepressant, but it is not just an antidepressant
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive disorder
+Premenstrual dysphoric disorder (PMDD)
+Panic disorder
+Posttraumatic stress disorder (PTSD)
+
+
+
+
+<<<PAGE 2066>>>
+
+Social anxiety disorder (social phobia)
+Obsessive-compulsive disorder (OCD)
+Generalized anxiety disorder (GAD)
+How the Drug Works
+Boosts neurotransmitter serotonin
+Blocks serotonin reuptake pump (serotonin transporter)
+Desensitizes serotonin receptors, especially serotonin 1A receptors
+Presumably increases serotonergic neurotransmission
+
+✽ Sertraline also has some ability to block dopamine reuptake pump
+(dopamine transporter), which could increase dopamine
+neurotransmission and contribute to its therapeutic actions
+Sertraline also binds at sigma 1 receptors
+How Long Until It Works
+
+✽ Some patients may experience increased energy or activation early
+after initiation of treatment
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks
+If it is not working within 6–8 weeks, it may require a dosage
+increase or it may not work at all
+May continue to work for many years to prevent relapse of
+symptoms
+
+
+
+
+<<<PAGE 2068>>>
+
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Trazodone, especially for insomnia
+In the USA, sertraline (Zoloft) is commonly augmented with
+bupropion (Wellbutrin) with good results in a combination
+anecdotally called “Well-loft” (use combinations of antidepressants
+with caution as this may activate bipolar disorder and suicidal
+ideation)
+Mirtazapine, reboxetine, or atomoxetine (add with caution and at
+lower doses since sertraline could theoretically raise atomoxetine
+levels); use combinations of antidepressants with caution as this
+may activate bipolar disorder and suicidal ideation
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, treatment-resistant depression, or treatmentresistant anxiety disorders
+
+
+
+
+<<<PAGE 2069>>>
+
+Benzodiazepines
+If all else fails for anxiety disorders, consider gabapentin or
+tiagabine
+Hypnotics for insomnia
+Classically, lithium, buspirone, or thyroid hormone
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Theoretically due to increases in serotonin concentrations at
+serotonin receptors in parts of the brain and body other than those
+that cause therapeutic actions (e.g., unwanted actions of serotonin in
+sleep centers causing insomnia, unwanted actions of serotonin in the
+gut causing diarrhea, etc.)
+
+✽ Increasing serotonin can cause diminished dopamine release and
+might contribute to emotional flattening, cognitive slowing, and apathy
+in some patients, although this could theoretically be diminished in
+some patients by sertraline’s dopamine reuptake blocking properties
+Most side effects are immediate but often go away with time, in
+contrast to most therapeutic effects which are delayed and are
+enhanced over time
+
+
+
+
+<<<PAGE 2070>>>
+
+Sertraline’s possible dopamine reuptake blocking properties could
+contribute to agitation, anxiety, and undesirable activation,
+especially early in dosing
+Notable Side Effects
+Sexual dysfunction (dose-dependent; men: delayed ejaculation,
+erectile dysfunction; men and women: decreased sexual desire,
+anorgasmia)
+Gastrointestinal (decreased appetite, nausea, diarrhea, constipation,
+dry mouth)
+Mostly CNS (insomnia but also sedation, agitation, tremors,
+headache, dizziness)
+Note: patients with diagnosed or undiagnosed bipolar or psychotic
+disorders may be more vulnerable to CNS-activating actions of
+SSRIs
+Autonomic (sweating)
+Bruising and rare bleeding
+Rare hyponatremia (mostly in elderly patients and generally
+reversible on discontinuation of sertraline)
+Rare hypotension
+SIADH (syndrome of inappropriate antidiuretic hormone secretion)
+Life-Threatening or Dangerous Side Effects
+
+
+
+
+<<<PAGE 2071>>>
+
+Rare seizures
+Rare induction of mania
+Rare activation of suicidal ideation and behavior (suicidality) (shortterm studies did not show an increase in the risk of suicidality with
+antidepressants compared to placebo beyond age 24)
+Weight Gain
+Reported but not expected
+Some patients may actually experience weight loss
+Sedation
+Reported but not expected
+Possibly activating in some patients
+What to Do About Side Effects
+Wait
+Wait
+Wait
+If sertraline is activating, take in the morning to help reduce
+insomnia
+
+
+
+
+<<<PAGE 2072>>>
+
+Reduce dose to 25 mg or even 12.5 mg until side effects abate, then
+increase dose as tolerated, usually to at least 50 mg/day
+In a few weeks, switch or add other drugs
+Best Augmenting Agents for Side Effects
+Often best to try another SSRI or another antidepressant
+monotherapy prior to resorting to augmentation strategies to treat
+side effects
+Trazodone or a hypnotic for insomnia
+Bupropion, sildenafil, vardenafil, or tadalafil for sexual dysfunction
+Bupropion for emotional flattening, cognitive slowing, or apathy
+Mirtazapine for insomnia, agitation, and gastrointestinal side effects
+Benzodiazepines for jitteriness and anxiety, especially at initiation
+of treatment and especially for anxious patients
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of sertraline
+
+
+
+
+<<<PAGE 2074>>>
+
+All tablets are scored, so to save costs, give 50 mg as half of 100 mg
+tablet, since 100 mg and 50 mg tablets cost about the same in many
+markets
+Give once daily, often in the mornings to reduce chances of
+insomnia
+Many patients ultimately require more than 50 mg dose per day
+Some patients are dosed above 200 mg
+Evidence that some treatment-resistant OCD patients may respond
+safely to doses up to 400 mg/day, but this is for experts and use with
+caution
+The more anxious and agitated the patient, the lower the starting
+dose, the slower the titration, and the more likely the need for a
+concomitant agent such as trazodone or a benzodiazepine
+If intolerable anxiety, insomnia, agitation, akathisia, or activation
+occur upon either dosing initiation or discontinuation, consider the
+possibility of activated bipolar disorder and switch to a mood
+stabilizer or atypical antipsychotic
+Utilize half a 25 mg tablet (12.5 mg) when initiating treatment in
+patients with a history of intolerance to previous antidepressants
+Overdose
+Rarely lethal in monotherapy overdose; vomiting, sedation, heart
+rhythm disturbances, dilated pupils, agitation; fatalities have been
+reported in sertraline overdose combined with other drugs or alcohol
+
+
+
+
+<<<PAGE 2076>>>
+
+Can increase TCA levels; use with caution with TCAs or when
+switching from a TCA to sertraline
+Can cause a fatal “serotonin syndrome” when combined with
+MAOIs, so do not use with MAOIs or for at least 14 days after
+MAOIs are stopped
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing sertraline
+May displace highly protein-bound drugs (e.g., warfarin)
+Can rarely cause weakness, hyperreflexia, and incoordination when
+combined with sumatriptan or possibly with other triptans, requiring
+careful monitoring of patient
+Possible increased risk of bleeding, especially when combined with
+anticoagulants (e.g., warfarin, NSAIDs)
+NSAIDs may impair effectiveness of SSRIs
+Via CYP450 2D6 inhibition, sertraline could theoretically interfere
+with the analgesic actions of codeine, and increase the plasma levels
+of some beta blockers and of atomoxetine
+Via CYP450 2D6 inhibition sertraline could theoretically increase
+concentrations of thioridazine and cause dangerous cardiac
+arrhythmias
+Via CYP450 3A4 inhibition, sertraline may increase the levels of
+alprazolam, buspirone, and triazolam
+
+
+
+
+<<<PAGE 2077>>>
+
+Via CYP450 3A4 inhibition, sertraline could theoretically increase
+concentrations of certain cholesterol lowering HMG CoA reductase
+inhibitors, especially simvastatin, atorvastatin, and lovastatin, but
+not pravastatin or fluvastatin, which would increase the risk of
+rhabdomyolysis; thus, coadministration of sertraline with certain
+HMG CoA reductase inhibitors should proceed with caution
+Via CYP450 3A4 inhibition, sertraline could theoretically increase
+the concentrations of pimozide, and cause QTc prolongation and
+dangerous cardiac arrhythmias
+Via CYP450 3A4 inhibition, sertraline could theoretically increase
+the concentrations of pimozide, and cause QTc prolongation and
+dangerous cardiac arrhythmias
+False-positive urine immunoassay screening tests for
+benzodiazepine have been reported in patients taking sertraline due
+to a lack of specificity of the screening tests. False-positive results
+may be expected for several days following discontinuation of
+sertraline
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing sertraline
+Use with caution in patients with history of seizures
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+
+
+
+
+<<<PAGE 2078>>>
+
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is taking an MAOI
+If patient is taking pimozide
+If patient is taking thioridazine
+Use of sertraline oral concentrate is contraindicated with disulfiram
+due to the alcohol content of the concentrate
+If there is a proven allergy to sertraline
+
+Special Populations
+Renal Impairment
+
+
+
+
+<<<PAGE 2082>>>
+
+difficulty, vomiting, hypoglycemia, hypotonia, hypertonia,
+hyperreflexia, tremor, jitteriness, irritability, and constant crying
+National Pregnancy Registry for Antidepressants: 1-866-961-2388,
+https://womensmentalhealth.org/research/pregnancyregistry/antidepr
+essants
+Breast Feeding
+Some drug is found in mother’s breast milk
+Trace amounts may be present in nursing children whose mothers
+are on sertraline
+Sertraline has shown efficacy in treating postpartum depression
+If child becomes irritable or sedated, breast feeding or drug may
+need to be discontinued
+Immediate postpartum period is a high-risk time for depression,
+especially in women who have had prior depressive episodes, so
+drug may need to be reinstituted late in the third trimester or shortly
+after childbirth to prevent a recurrence during the postpartum period
+Must weigh benefits of breast feeding with risks and benefits of
+antidepressant treatment versus nontreatment to both the infant and
+the mother
+For many patients, this may mean continuing treatment during
+breast feeding
+
+
+
+
+<<<PAGE 2083>>>
+
+The Art of Psychopharmacology
+Potential Advantages
+Patients with atypical depression (hypersomnia, increased appetite)
+Patients with fatigue and low energy
+Patients who wish to avoid hyperprolactinemia (e.g., pubescent
+children, girls and women with galactorrhea, girls and women with
+unexplained amenorrhea, postmenopausal women who are not
+taking estrogen replacement therapy)
+Patients who are sensitive to the prolactin-elevating properties of
+other SSRIs (sertraline is the one SSRI that generally does not
+elevate prolactin)
+Potential Disadvantages
+Initiating treatment in anxious patients with some insomnia
+Patients with comorbid irritable bowel syndrome
+Can require dosage titration
+Primary Target Symptoms
+Depressed mood
+Anxiety
+Obsessions, compulsions
+
+
+
+
+<<<PAGE 2084>>>
+
+Sleep disturbance, both insomnia and hypersomnia (eventually, but
+may actually cause insomnia, especially short-term)
+Panic attacks, avoidant behavior, re-experiencing, hyperarousal
+Pearls
+
+✽ May be a type of “dual action” agent with both potent serotonin
+reuptake inhibition and less potent dopamine reuptake inhibition, but
+the clinical significance of this is unknown
+Cognitive and affective “flattening” may theoretically be diminished
+in some patients by sertraline’s dopamine reuptake blocking
+properties
+
+✽ May be a first-line choice for atypical depression (e.g.,
+hypersomnia, hyperphagia, low energy, mood reactivity)
+Best documented cardiovascular safety of any antidepressant,
+proven safe for depressed patients with recent myocardial infarction
+or angina
+May bind to sigma 1 receptors, enhancing sertraline’s anxiolytic
+actions
+Can have more gastrointestinal effects, particularly diarrhea, than
+some other antidepressants
+May be more effective treatment for women with PTSD or
+depression than for men with PTSD or depression, but the clinical
+significance of this is unknown
+
+
+
+
+<<<PAGE 2085>>>
+
+SSRIs may be less effective in women over 50, especially if they are
+not taking estrogen
+SSRIs may be useful for hot flushes in perimenopausal women
+For sexual dysfunction, can augment with bupropion, sildenafil,
+vardenafil, tadalafil, or switch to a non-SSRI such as bupropion or
+mirtazapine
+Some postmenopausal women’s depression will respond better to
+sertraline plus estrogen augmentation than to sertraline alone
+Nonresponse to sertraline in elderly may require consideration of
+mild cognitive impairment or Alzheimer disease
+Not as well tolerated as some SSRIs for panic, especially when
+dosing is initiated, unless given with co-therapies such as
+benzodiazepines or trazodone
+Relative lack of effect on prolactin may make it a preferred agent for
+some children, adolescents, and women
+Some evidence suggests that sertraline treatment during only the
+luteal phase may be more effective than continuous treatment for
+patients with PMDD
+
+Suggested Reading
+Cipriani A , La Ferla T , Furukawa TA , et al. Sertraline versus other
+antidepressive agents for depression . Cochrane Database Syst Rev 2010
+
+
+
+
+<<<PAGE 2086>>>
+
+;14 (4 ):CD006117 .
+DeVane CL , Liston HL , Markowitz JS . Clinical pharmacokinetics of
+sertraline . Clin Pharmacokinet 2002 ;41 :1247–66 .
+Flament MF , Lane RM , Zhu R , Ying Z . Predictors of an acute
+antidepressant response to fluoxetine and sertraline . Int Clin
+Psychopharmacol 1999 ;14 :259–75 .
+Khouzam HR , Emes R , Gill T , Raroque R . The antidepressant sertraline:
+a review of its uses in a range of psychiatric and medical conditions .
+Compr Ther 2003 ;29 :47 –53 .
+McRae AL , Brady KT . Review of sertraline and its clinical applications in
+psychiatric disorders . Expert Opin Pharmacother 2001 ;2 :883–92 .
+
+
+
+
+<<<PAGE 2179>>>
+
+Rapid discontinuation may lead to rebound psychosis and worsening
+of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after thioridazine is discontinued
+Pharmacokinetics
+Metabolized by CYP450 2D6
+Drug Interactions
+May decrease the effects of levodopa, dopamine agonists
+May increase the effects of antihypertensive drugs
+May enhance QTc prolongation of other drugs capable of
+prolonging QTc interval
+
+✽ CYP450 2D6 inhibitors including paroxetine, fluoxetine,
+duloxetine, bupropion, sertraline, citalopram, and others can raise
+thioridazine to dangerous levels
+
+✽ Fluvoxamine, propranolol, and pindolol also inhibit thioridazine
+metabolism and can raise thioridazine to dangerous levels
+Respiratory depression/arrest may occur if used with a barbiturate
+Additive effects may occur if used with CNS depressants
+Alcohol and diuretics may increase the risk of hypotension;
+epinephrine may lower blood pressure
+
+
+
+
+<<<PAGE 2335>>>
+
+Primary Target Symptoms
+Depressed mood
+Pearls
+Have periodic monitoring by primary care physician, including neck
+examination and thyroid palpation
+Generally well tolerated, especially compared to other augmentation
+options for depression
+May be useful in stabilizing fluctuating mood states as well as
+improving depressed mood
+
+Suggested Reading
+Aronson R , Offman HJ , Joffe RT , et al. Triiodothyronine augmentation in
+the treatment of refractory depression: a meta-analysis . Arch Gen
+Psychiatry 1996 ;53 :842 –8 .
+Connolly KR , Thase ME. If at first you don’t succeed: a review of the
+evidence for antidepressant augmentation, combination and switching
+strategies . Drugs 2011 ;71 (1):43 –64 .
+Garlow SJ , Dunlop BW , Ninan PT , Nemeroff CB. The combination of
+triiodothyronine (T3) and sertraline is not superior to sertraline
+monotherapy in the treatment of major depressive disorder . J Psychiatr Res
+2012 ;46 (11):1406 –13 .
+
+
+
+
+<<<PAGE 2499>>>
+
+Habit Forming
+Zolpidem is a Schedule IV drug
+Some patients may develop dependence and/or tolerance; risk may
+be greater with higher doses
+History of drug addiction may increase risk of dependence
+How to Stop
+Although rebound insomnia could occur, this effect has not
+generally been seen with therapeutic doses of zolpidem or zolpidem
+CR
+If taken for more than a few weeks, taper to reduce chances of
+withdrawal effects
+Pharmacokinetics
+Short elimination half-life (approximately 2.5 hours)
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+Sertraline may increase plasma levels of zolpidem
+Rifampin may decrease plasma levels of zolpidem
+Ketoconazole may increase plasma levels of zolpidem
+Use with imipramine or chlorpromazine may be associated with
+decreased alertness
+
+
+
+
+<<<PAGE 2573>>>
+
+Apo-Selegiline (selegiline), 705
+Apo-Thioridazine (thioridazine), 759
+Apo-Trazodone (trazodone), 793
+Apo-Triazo (triazolam), 799
+Apo-Trifluoperazine (trifluoperazine), 803
+Apo-Trimip (trimipramine), 817
+Apozepam (diazepam), 229
+Apo-Zopiclone (zopiclone), 879
+Aptensio XR (methylphenidate d,l), 487
+Aremis (sertraline), 721
+Aricept (donepezil), 243
+Arima (moclobemide), 515
+Aripax (lorazepam), 437
+aripiprazole, 53
+Aristada (aripiprazole), 53
+Aristada Initio (aripiprazole injection), 53
+Arminol (sulpiride), 741
+armodafinil, 65
+Arol (moclobemide), 515
+Aropax (paroxetine), 593
+Artane (trihexyphenidyl), 809
+asenapine, 71
+Asendin (amoxapine), 33
+Asendis (amoxapine), 33
+Asepin (triazolam), 799
+Aspam (diazepam), 229
+Atarax (hydroxyzine), 355
+Atarviton (diazepam), 229
+
+
+
+
+<<<PAGE 2575>>>
+
+Belix (diphenhydramine), 235
+Belpax (amitriptyline), 25
+Belseren (clorazepate), 185
+Belsomra (suvorexant), 747
+Benadryl (diphenhydramine), 235
+Benpon (nortriptyline), 551
+Bentapam (diazepam), 229
+Benylin (diphenhydramine), 235
+Benzopin (diazepam), 229
+Benzotran (oxazepam), 569
+benztropine, 85
+Berk-Dothiepin (dothiepin), 249
+Besitran (sertraline), 721
+Bespar (buspirone), 123
+Betamaks (sulpiride), 741
+Betamed (diazepam), 229
+Betapam (diazepam), 229
+Bialzepam (diazepam), 229
+Bikalm (zolpidem), 871
+Bioperidolo (haloperidol), 347
+Bioxetin (fluoxetine), 301
+Biron (buspirone), 123
+Biscasil (chlorpromazine), 153
+Biston (carbamazepine), 131
+blonanserin, 89
+Bolvidon (mianserin), 495
+Bortalium (diazepam), 229
+bremelanotide, 95
+
+
+
+
+<<<PAGE 2590>>>
+
+Gen-Valproic (valproate), 829
+Geodon (ziprasidone), 863
+Gewakalm (diazepam), 229
+Gladem (sertraline), 721
+Gnostorid (oxazepam), 569
+Gobanal (diazepam), 229
+guanfacine, 343
+Haemiton (clonidine), 179
+Halcion (triazolam), 799
+Haldol (haloperidol), 347
+Haldol decanoas (haloperidol), 347
+Haldol Decanoat (haloperidol), 347
+Haldol Decanoate (haloperidol), 347
+Haldol Decanoato (haloperidol), 347
+Haldol Depot (haloperidol), 347
+Haldol L.A. (haloperidol), 347
+Haloneural (haloperidol), 347
+Haloper (haloperidol), 347
+haloperidol, 347
+Haloperidol Decanoat (haloperidol), 347
+Haloperidol Decanoato (haloperidol), 347
+Haloperin (haloperidol), 347
+Haloperin depotinjektio (haloperidol), 347
+Harmomed (dothiepin), 249
+Harmoned (diazepam), 229
+Helex (alprazolam), 11
+Helogaphen (chlordiazepoxide), 147
+Hermolepsin (carbamazepine), 131
+
+
+
+
+<<<PAGE 2597>>>
+
+Lorsilan (lorazepam), 437
+Lorzem (lorazepam), 437
+Lovan (fluoxetine), 301
+Loxapac (loxapine), 443
+loxapine, 443
+Loxitane (loxapine), 443
+Lucemyra (lofexidine), 427
+Ludiomil (maprotiline), 465
+Lullan (perospirone), 601
+lumateperone, 451
+Lumin (mianserin), 495
+Lunesta (eszopiclone), 285
+lurasidone, 457
+Lustral (sertraline), 721
+Luvox (fluvoxamine), 325
+Luvox SR (fluvoxamine), 325
+Lyogen (fluphenazine), 313
+Lyogen Depot (fluphenazine), 313
+Lyoridin Depot (fluphenazine), 313
+Lyorodin (fluphenazine), 313
+Lyrica (pregabalin), 647
+Lyrica CR (pregabalin), 647
+
+
+
+
+<<<PAGE 2615>>>
+
+Selpar (selegiline), 705
+Sensaval (nortriptyline), 551
+Sensival (nortriptyline), 551
+Sepatrem (selegiline), 705
+Serad (sertraline), 721
+Seralgan (citalopram), 159
+Serax (oxazepam), 569
+Serdolect (sertindole), 715
+Serelan (mianserin), 495
+Seren (chlordiazepoxide), 147
+Serenace (haloperidol), 347
+Serenase (haloperidol), 347
+Serenase (lorazepam), 437
+Serenase Decanoat (haloperidol), 347
+Serenase Depot (haloperidol), 347
+Serenelfi (haloperidol), 347
+Serepax (oxazepam), 569
+Seresta (oxazepam), 569
+Sereupin (paroxetine), 593
+Serlain (sertraline), 721
+Serlect (sertindole), 715
+Serol (fluoxetine), 301
+Seronil (fluoxetine), 301
+Seropram (citalopram), 159
+Seroquel (quetiapine), 667
+Seroquel XR (quetiapine), 667
+Seroxal (paroxetine), 593
+Seroxat (paroxetine), 593
+
+
+
+
+<<<PAGE 2616>>>
+
+Serpax (oxazepam), 569
+sertindole, 715
+Sertofren (desipramine), 207
+sertraline, 721
+Serzone (nefazodone), 545
+Setous (zotepine), 883
+Sevinol (fluphenazine), 313
+Sevium (haloperidol), 347
+Sibason (diazepam), 229
+Sicorelax (diazepam), 229
+Sigacalm (oxazepam), 569
+Sigaperidol (haloperidol), 347
+Signopam (temazepam), 755
+sildenafil, 729
+Silenor (doxepin), 255
+Silphen (diphenhydramine), 235
+Sinequan (doxepin), 255
+Sinquan (doxepin), 255
+Sinquane (doxepin), 255
+Siqualone (fluphenazine), 313
+Siqualone Decanoat (fluphenazine), 313
+Siqualone Enantat (fluphenazine), 313
+Sirtal (carbamazepine), 131
+S-ketamine (esketamine), 275
+SK-Pramine (imipramine), 367
+Sobile (oxazepam), 569
+Sobril (oxazepam), 569
+Socian (amisulpride), 17
+
+
+
+
+<<<PAGE 2619>>>
+
+Sulpivert (sulpiride), 741
+Sulpril (sulpiride), 741
+Sunosi (solriamfetol), 737
+Suprium (sulpiride), 741
+Surmontil (trimipramine), 817
+suvorexant, 747
+Suxidina (oxazepam), 569
+Sylador (haloperidol), 347
+Symbyax (olanzapine/fluoxetine combination), 301 , 559
+Synedil (sulpiride), 741
+Synedil Fort (sulpiride), 741
+Syneudon 50 (amitriptyline), 25
+Tafil (alprazolam), 11
+Tagonis (paroxetine), 593
+Tardotol (carbamazepine), 131
+Taro-Carbamazepine (carbamazepine), 131
+tasimelteon, 751
+Tatanka (alprazolam), 11
+Tatig (sertraline), 721
+Tatinol (tianeptine), 777
+Tavor (lorazepam), 437
+Tazepam (oxazepam), 569
+Tegretal (carbamazepine), 131
+Tegretol (carbamazepine), 131
+Tegretol LP (carbamazepine), 131
+Teledomin (milnacipran), 503
+Temador (temazepam), 755
+Temaze (temazepam), 755
+
+
+
+
+<<<PAGE 2622>>>
+
+Tranquipam (lorazepam), 437
+Tranquirit (diazepam), 229
+Tranquo (oxazepam), 569
+Tranquo/Tablinen (diazepam), 229
+Transene (clorazepate), 185
+Tranxene (clorazepate), 185
+Tranxilen (clorazepate), 185
+Tranxilium (clorazepate), 185
+tranylcypromine, 787
+Tranzen (clorazepate), 185
+Travin (buspirone), 123
+Trazepam (oxazepam), 569
+trazodone, 793
+trazodone XR, 793
+Trazolan (trazodone), 793
+Tremorex (selegiline), 705
+Trepiline (amitriptyline), 25
+Tresleen (sertraline), 721
+Trevicta (paliperidone), 581
+Trevilor (venlafaxine), 841
+Trewilor (venlafaxine), 841
+triazolam, 799
+Triazoral (triazolam), 799
+Trifluo perazin (trifluoperazine), 803
+trifluoperazine, 803
+trihexyphenidyl, 809
+triiodothyronine, 813
+Trilafon (perphenazine), 607
+
+
+
+
+<<<PAGE 2627>>>
+
+Zenzedi (amphetamine d), 39
+Zeptol (carbamazepine), 131
+Zerenal (dothiepin), 249
+ziprasidone, 863
+Ziprexa (olanzapine), 559
+Zispin (mirtazapine), 509
+Zoleptil (zotepine), 883
+Zoloft (sertraline), 721
+zolpidem, 871
+Zolpimist (zolpidem), 871
+Zonalon (doxepin), 255
+Zonegran (zonisamide), 875
+zonisamide, 875
+Zopax (alprazolam), 11
+zopiclone, 879
+Zopite (zotepine), 883
+zotepine, 883
+Z-Pam (temazepam), 755
+Zubsolv (buprenorphine with naloxone), 111
+zuclopenthixol, 889
+Zuledin (chlorpromazine), 153
+Zulex (acamprosate), 1
+Zulresso (brexanolone), 99
+Zyban (bupropion), 117
+Zymocomb (sulpiride), 741
+Zyprexa (olanzapine), 559
+Zyprexa Relprevv (olanzapine), 559
+Zyprexa Zydis (olanzapine), 559
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2639>>>
+
+maprotiline , 465
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+mianserin, 495
+milnacipran, 503
+mirtazapine , 509
+moclobemide, 515
+modafinil (adjunct), 521
+nefazodone , 545
+nortriptyline , 551
+olanzapine, 559
+paliperidone, 581
+paroxetine , 593
+phenelzine , 613
+protriptyline , 657
+quetiapine (adjunct) , 667
+reboxetine, 681
+risperidone, 687
+selegiline , 705
+sertindole, 715
+sertraline , 721
+sulpiride, 741
+tianeptine, 777
+tranylcypromine , 787
+trazodone , 793
+triiodothyronine, 813
+trimipramine , 817
+venlafaxine , 841
+
+
+
+
+<<<PAGE 2641>>>
+
+Generalized anxiety disorder
+agomelatine, 5
+alprazolam , 11
+citalopram, 159
+desvenlafaxine, 215
+duloxetine , 263
+escitalopram , 269
+fluoxetine, 301
+fluvoxamine, 325
+mirtazapine, 509
+paroxetine , 509
+pregabalin, 647
+propranolol, 653
+sertraline, 721
+tiagabine (adjunct), 771
+venlafaxine , 841
+vortioxetine, 853
+Glossopharyngeal neuralgia
+carbamazepine, 131
+Hiccups, intractable
+chlorpromazine , 153
+Hypersalivation
+clonidine, 179
+Hypertension
+clonidine , 179
+guanfacine , 343
+
+
+
+
+<<<PAGE 2646>>>
+
+pregabalin , 647
+sodium oxybate, 733
+tiagabine, 771
+topiramate, 781
+trimipramine, 817
+valproate (divalproex), 829
+zonisamide, 875
+Nicotine addiction
+bupropion , 117
+varenicline , 837
+Non-24-hour sleep-wake disorder
+tasimelteon , 751
+Obsessive-compulsive disorder
+aripiprazole (adjunct), 53
+citalopram, 159
+clomipramine , 165
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine , 325
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+vilazodone, 847
+Opioid dependence
+buprenorphine , 111
+clonidine, 179
+
+
+
+
+<<<PAGE 2647>>>
+
+lofexidine , 427
+naltrexone , 537
+Panic disorder
+alprazolam , 11
+citalopram, 159
+clonazepam , 173
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine, 325
+isocarboxazid, 375
+lorazepam, 437
+mirtazapine, 509
+nefazodone, 545
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+reboxetine, 681
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Parkinson’s disease
+selegiline , 705
+zonisamide, 875
+Parkinson’s disease dementia
+
+
+
+
+<<<PAGE 2649>>>
+
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+mirtazapine, 509
+nefazodone, 545
+olanzapine, 558
+paliperidone, 580
+paroxetine , 593
+prazosin (nightmares) 643
+propranolol (prophylactic) 653
+quetiapine, 667
+risperidone, 687
+sertraline , 721
+venlafaxine, 841
+ziprasidone, 863
+Premenstrual dysphoric disorder
+alprazolam, 11
+citalopram, 159
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+paroxetine , 593
+sertraline , 721
+venlafaxine, 841
+Preoperative anxiety
+chlordiazepoxide , 147
+chlorpromazine, 153
+
+
+
+
+<<<PAGE 2656>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine , 325
+isocarboxazid, 375
+moclobemide, 515
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Stress urinary incontinence
+duloxetine, 263
+Tardive dyskinesia
+deutetrabenazine , 221
+valbenazine , 825
+Tetanus
+chlorpromazine , 153
+Tourette’s syndrome/tic disorders
+aripiprazole , 53
+clonidine, 179
+guanfacine, 343
+haloperidol , 347
+pimozide , 627
+
+
+
+
+<<<PAGE 2660>>>
+
+nortriptyline, 551
+paroxetine, 593
+phenelzine, 613
+protriptyline, 657
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+triiodothyronine, 813
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Antipsychotics
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine, 153
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine, 313
+haloperidol, 347
+
+
+
+
+<<<PAGE 2663>>>
+
+oxazepam, 569
+paroxetine, 593
+phenelzine, 613
+prazosin, 643
+pregabalin, 647
+propranolol, 653
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine (adjunct), 771
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+trifluoperazine, 803
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+Attention deficit hyperactivity disorder treatments
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+chlorpromazine, 153
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+lisdexamfetamine, 409
+
+

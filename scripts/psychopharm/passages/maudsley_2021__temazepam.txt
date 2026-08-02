@@ -1,0 +1,634 @@
+<<<PAGE 463>>>
+
+442  The Maudsley® Prescribing Guidelines in Psychiatry
+
+There has been limited formal study into the duration of withdrawal symptoms, with
+some reports of weeks-long duration, but they can last longer than a year, especially in
+the case of long-term use.20,23 For a minority, withdrawal symptoms can be protracted
+and last years, sometimes called the ‘post-acute withdrawal syndrome’.26
+
+Stopping benzodiazepines
+
+CHAPTER 3
+
+If the patient is in agreement, benzodiazepines should be withdrawn. Tapering can be
+difficult and should not be imposed on a patient against their will. A cluster randomised
+trial supports the effectiveness of a face-to-face educational intervention.27 Continuing
+support can be required to prepare a patient for withdrawal and to support them
+through the process (e.g. psychological therapies or self-help groups).28
+
+Dosage reduction (tapering)
+Gradual reduction of benzodiazepine dose reduces the intensity of withdrawal symptoms by spreading them out over a longer time period (and giving time for neural adaptations to the drug to resolve).22 Meta-analysis has confirmed that gradual dose
+reduction (‘tapering’) improves drug cessation rates compared with routine clinical
+care.29 Most studies find that a gradual withdrawal over at least 10 weeks is most successful in achieving long-term abstinence,30 although many patients will require considerably longer (sometimes several years). Sudden benzodiazepine withdrawal has
+potentially fatal consequences, so tapering is always advisable.
+
+Direct taper or switching to diazepam?
+Patients who take short- or intermediate-acting benzodiazepines can be tapered off
+these drugs directly but more than once a day dosing might be required.
+An alternative approach is to switch to an equivalent dose of diazepam (which has a
+long half-life and therefore might provokes less severe withdrawal),20,24 noting that
+some patients report withdrawal symptoms from abrupt switches to diazepam and so
+a step-wise switch is probably prudent. Cochrane is lukewarm about switching to diazepam.30 Approximate ‘diazepam equivalent’31 doses are shown Table 3.29. Owing to
+Table 3.29 Approximate ‘diazepam equivalent’31 doses
+Chlordiazepoxide
+
+25mg
+
+Clonazepam
+
+0.5mg
+
+Diazepam
+
+10mg
+
+Lorazepam
+
+1mg
+
+Lormetazepam
+
+1–2mg
+
+Nitrazepam
+
+10mg
+
+Oxazepam
+
+20mg
+
+Temazepam
+
+20mg
+
+
+
+
+<<<PAGE 653>>>
+
+Dexamfetamine
+(dexamphetamine) – 0
+
+Aripiprazole – 1
+
+Ipratropium bromide – 0
+
+Insulin – 0
+
+Indapamide – 0
+
+Imipramine – 3
+
+Peppermint oil – 0
+
+Penicillin – 0
+
+Paroxetine – 2
+
+Paracetamol – 0
+
+Pantoprazole – 0
+
+Dexamethasone – NK
+
+Amlodipine – 0
+
+Oxybutynin – 3
+
+Apomorphine – 0
+
+Cyclizine – 1
+
+Amitriptyline – 3
+
+Hyoscine hydrobromide – 3
+
+Oxcarbazepine – NK
+
+Desipramine – 2
+
+Co-tenidone – 0
+
+Amisulpride – 0
+
+Hydroxyzine – 1
+
+Orphenadrine – 3
+
+Apixaban – NK
+
+Colchicine – NK
+
+Amiodarone – 1
+
+Hydrocortisone – NK
+
+Orlistat – 0
+
+Darifenacin – 0
+
+Codeine – NK
+
+Aminophylline – 0
+
+Hydrocodone – NK
+
+Ondansetron – 0
+
+Anastrozole – NK
+
+Co-careldopa – 0
+
+Amiloride – 0
+
+Hydrochlorothiazide – 0
+
+Omeprazole – 0
+
+Iloperidone – 1
+
+Co-beneldopa – 0
+
+Amantadine – 2
+
+Heparin – 0
+
+Dabigatran – NK
+
+Clozapine – 3
+
+Alverine – 0
+
+Olanzapine – 2
+
+Haloperidol – 0
+
+Amoxicillin – 0
+
+Clopidogrel – 0
+
+Alprazolam – 0
+
+Nortriptyline – 3
+
+Granisetron – 0
+
+Nitrofurantoin – NK
+
+Paliperidone – 1
+
+Clonidine – NK
+
+Allopurinol – NK
+
+Gliclazide – 0
+
+Nimodipine – 0
+
+Ibuprofen – 0
+
+Clonazepam – NK
+
+Alimemazine (trimeprazine) – 3
+
+Gaviscon – 0
+
+Nifedipine – 0
+
+Cyproheptadine – 3
+
+Clomipramine – 3
+
+Alfuzosin – 0
+
+Galantamine – 0
+
+Naproxen – 0
+
+Oxycodone – NK
+
+Clemastine – 3
+
+Alendronic acid
+(Alendronate) – 0
+
+Gabapentin – 0
+
+Hysoscine butylbromide
+(buscopan) – 1
+
+Clarithromycin – NK
+
+Adcal – 0
+
+Table 6.4 Anticholinergic effect on cognition (AEC) scores4 (updated October 2020)
+
+Trazodone – 0
+
+Tramadol – 0
+
+Topiramate – NK
+
+Tolterodine – 2
+
+Tolcapone – 0
+
+Tizanidine – NK
+
+Tiotropium bromide
+(inhalation) – 0
+
+Thiamine – 0
+
+Theophylline – 0
+
+Tetracycline – 0
+
+Temazepam – 1
+
+Tamsulosin – 0
+
+Tamoxifen – NK
+
+Sulpiride – 0
+
+Sulphasalazine – 0
+
+Spironolactone – NK
+
+Sotalol – 0
+
+Solifenacin – 1
+
+Sitagliptin – 0
+
+
+
+
+<<<PAGE 750>>>
+
+Hepatic and renal impairment  729
+
+Table 8.3 (Continued)
+Drug
+
+Comments
+
+Valproate
+
+74
+
+Highly protein bound and hepatically metabolised. Dosage reduction with close
+monitoring of LFTs in moderate hepatic impairment. Use plasma levels (measure free
+levels − total concentrations may appear to be normal) to guide dosage. Caution
+advised. Contraindicated in severe and/or active hepatic impairment, or family history
+of severe impairment; impairment of usual metabolic pathway can lead to generation
+of hepatotoxic metabolites via alternative pathway. Risk of liver toxicity is increased in
+people with hepatic insufficiency if salicylates are used concomitantly. Associated
+with elevated LFTs and serious hepatotoxicity including fulminant hepatic failure
+(sometimes fatal). Mitochondrial disease, learning disability, polypharmacy, metabolic
+disorders and underlying hepatic disease may be risk factors. Particularly hepatotoxic
+in very young children. The greatest risk is in the first three months of treatment.
+
+Stimulants in hepatic impairment5,6,75
+Recommendations for the use of stimulant medications in hepatic impairment are outlined in Table 8.4.
+Table 8.4 Stimulants in hepatic impairment
+Atomoxetine76
+
+Reduce initial and target dose by 50% in moderate impairment, and by 75% in
+severe impairment. Very rare reports of liver toxicity, manifested by elevated hepatic
+enzymes, and raised bilirubin with jaundice. SPC states ‘discontinue in patients with
+jaundice or laboratory evidence of liver injury, and do not restart’.
+
+Methylphenidate77
+
+Rare reports of liver dysfunction and hypersensitivity reactions.
+
+Dexamphetamine/
+lisdexamphetamine78,79
+
+Little experience in liver disease, manufacturers recommend cautious dose titration.
+Very rarely associated with abnormal liver function, two case reports of
+hepatotoxicity.80,81
+
+Sedatives in hepatic impairment
+Table 8.5 summarises recommended sedatives in hepatic impairment.
+
+Benzodiazepines
+
+Extensively hepatically metabolised. Prolonged duration of effect particularly for drugs
+with active metabolites (diazepam, midazolam, clonazepam). Lorazepam, oxazepam and
+temazepam do not have active metabolites and are preferred; lorazepam is considered
+the best tolerated in advanced liver disease19 and is commonly used in alcohol
+withdrawal. Serum enzyme elevations are uncommon and liver injury very rare.19
+
+Promethazine6
+
+Extensive hepatic metabolism. Manufacturers recommend caution in liver
+impairment. Jaundice reported with high doses, no reports of LFT abnormalities or
+toxicity with lower doses.19
+
+Z drugs6,82,83
+
+Hepatically metabolised, but all have a relatively short half-life (1–7 hours). Reduce
+initial doses in mild to moderate impairment (use zopiclone 3.75mg, zolpidem 5mg,
+zaleplon 5mg), avoid in severe impairment. Zaleplon is subject to significant first-pass
+metabolism and zolpidem plasma concentrations and half-life are significantly
+increased in hepatic impairment; these agents should be used with caution.84 Although
+zopiclone has the longer half-life, this may not be clinically relevant except in severe
+disease.83 Zopiclone and zaleplon have not been associated with hepatotoxicity. There
+are rare reports of abnormal LFTs and a single case of liver injury with zolpidem.19
+(Continued)
+
+CHAPTER 8
+
+Table 8.5 Sedatives in hepatic impairment
+
+
+
+
+<<<PAGE 751>>>
+
+730  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 8.5 (Continued)
+Melatonin6,85
+
+Complex handling of melatonin in liver impairment: reduced clearance and
+prolonged half-life contribute to higher circulating levels of endogenous melatonin in
+daytime hours; negative feedback and accumulation of toxic products results in
+reduced endogenous production. Relevance to dosing of exogenous melatonin is
+unclear, although toxicity of melatonin is minimal. Manufacturer recommends
+avoiding in liver disease. Rarely associated with changes in LFTs.
+
+Other psychotropics in hepatic impairment
+Table 8.6 gives a summary of other psychotropics recommended in hepatic impairment.
+Table 8.6 Other psychotropics in hepatic impairment
+Bremelanotide6
+
+No dose adjustment required in mild to moderate hepatic impairment. Use with caution
+in severe impairment; adverse effects more likely.27 One case of acute hepatitis reported.
+
+Deutetrabenazine5,19
+
+Not studied in hepatic impairment, but based on experience with tetrabenazine, use
+is contraindicated. Limited information available but clinically relevant hepatotoxicity
+not reported. Occasional asymptomatic rises in ALT.
+
+Lemborexant6,27
+
+No dose adjustment in mild impairment (risk of increased somnolence), starting and
+maximum dose of 5mg once nightly in moderate impairment, not recommended in
+severe impairment. Little experience but hepatotoxicity not reported.86
+
+Pitolisant5,27
+
+Extensively hepatically metabolised. No dose adjustment in mild impairment. In
+moderate impairment the half-life is doubled; daily dose can be increased two weeks
+after initiation, daily maximum 18mg. Contraindicated in severe impairment. Hepatic
+enzyme increases are uncommon.
+
+Solriamfetol5
+
+Not metabolised. No known problems in liver impairment, no reports of liver injury.
+
+Valbenazine6,19
+
+Hepatically metabolised pro-drug of alpha-dihydrotetrabenazine. Unlike
+deutetrabenazine, not contra-indicated in liver disease, but maximum dose of 40mg
+in moderate to severe impairment. Few data, but no reports of clinically relevant liver
+injury other than a single report of reactivation of pre-existing hepatitis C.
+
+Psychotropics in hepatic impairment
+Table 8.7 gives an outline of recommended psychotropics in hepatic impairment.
+
+CHAPTER 8
+
+Table 8.7 Psychotropics in hepatic impairment
+Drug group
+
+Recommended drugs
+
+Antipsychotics
+
+Sulpiride/amisulpride: no dosage reduction required if renal function is normal
+Paliperidone: if depot required
+
+Antidepressants
+
+Paroxetine, sertraline, citalopram, or vortioxetine: start at low dose. Titrate
+slowly (if required) as above.
+
+Mood-stabilisers
+
+Lithium: use plasma levels to guide dosage. Care needed if ascites status changes.
+
+Sedatives
+
+Lorazepam, oxazepam, temazepam: as short half-life with no active metabolites
+Use low doses with caution, as sedative drugs used in severe disease can precipitate
+hepatic encephalopathy
+Zopiclone: 3.75mg with care in moderate hepatic impairment
+
+
+
+
+<<<PAGE 768>>>
+
+Hepatic and renal impairment  747
+
+Table 8.11 (Continued)
+Drug
+
+Comments
+
+Promethazine22,23,25,32,180
+
+Dose reduction usually not necessary; however, promethazine has a long half-life so
+monitor for excessive sedative effects in patients with renal impairment.
+Manufacturer advises caution in renal impairment. There is a case report of interstitial
+nephritis in a patient who was a poor metaboliser of promethazine.
+
+Temazepam22,23,25,32
+
+<2% excreted unchanged in urine. In renal impairment the inactive metabolite can
+accumulate. Monitor for excessive sedative effects. Dosing: GFR 20–50mL/min, dose
+as normal renal function; GFR <20mL/min, dose as in normal renal function but start
+with 5mg.
+
+Zolpidem22,23,25,154,181
+
+Clearance moderately reduced in renal impairment. No dose adjustment required in
+renal impairment. Zolpidem 1mg has been used to treat insomnia in patients on
+haemodialysis. Ongoing RCT of zolpidem to aid sleep in haemodialysis patients with
+pruritis.182 Associated with acute pyelonephritis in women.183
+
+Zopiclone22,23,25,184,185
+
+Less than 5% excreted unchanged in urine. Manufacturer states no accumulation of
+zopiclone in renal impairment but suggests starting at 3.75mg. Dosing: GFR <10mL/
+min, start with lower dose. Interstitial nephritis reported rarely.
+
+Drug
+
+Comments
+
+Donepezil23,25,186–188
+
+17% excreted unchanged in urine. Dosing is as in normal renal function for GFR
+<10–50mL/min. Manufacturer states that clearance not affected by renal impairment.
+Single dose studies find similar pharmacokinetics in moderate and severe renal
+impairment compared with healthy controls. Has been used at a dose of 3mg/day in
+an elderly patient with Alzheimer’s dementia on dialysis. Single case of
+rhabdomyolysis causing acute renal failure.189
+
+Galantamine23,25
+
+18–22% is excreted unchanged in urine. Dose as in normal renal function for GFR
+10–50mL/min and at GFR <10mL/min start at a low dose and increase slowly.
+Manufacturer contraindicates use in GFR <10mL/min. Plasma levels may be increased
+in patients with moderate and severe renal impairment.
+
+Memantine22,23,190
+
+Manufacturers recommend a 10mg dose if GFR 5–29mL/min; 10mg daily for 7 days
+then increased to 20mg daily if tolerated for GFR >30–49mL/min. Renal tubular
+acidosis, severe urinary tract infections and alkalisation of urine (e.g. by drastic
+dietary changes) can increase plasma levels of memantine. Acute renal failure has
+been reported with memantine.
+
+Rivastigmine23,25
+
+0% excreted unchanged in urine. Dosing advice for GFR <50mL/min start at a low
+dose and gradually increase. Steady state plasma concentrations are not affected by
+renal function.191
+
+CHAPTER 8
+
+Table 8.12 Anti-dementia drugs in renal impairment
+
+
+
+
+<<<PAGE 801>>>
+
+CHAPTER 10
+
+780  The Maudsley® Prescribing Guidelines in Psychiatry
+
+antipsychotics, quetiapine, olanzapine and aripiprazole (as there is lower risk of EPSEs).
+A case report describes successful treatment of ‘HIV mania’ with ziprasidone.30
+
+Anxiety disorders
+Anxiety disorders are highly prevalent in PLWH. Generalised anxiety, panic disorders
+and PTSD are commonly reported. SSRIs are first-line options for anxiety and panic
+disorders treatment in standard guidelines, as well as in PLWH3 (see ‘Depression’ in this
+section for preferred options). Benzodiazepines may have some utility in the acute treatment of anxiety but require caution because of the potential of misuse, possible drug
+interactions and increased risk of neurocognitive impairment in PLWH.31
+Lorazepam, oxazepam and temazepam are metabolised by non-CYP450 pathways,
+hence have lower risk of interactions and may be preferred options for PLWH.32
+Buspirone may also be useful.33
+
+HIV-associated neurocognitive disorders
+In the current era of effective antiretrovirals, the incidence of severe HIV-associated
+cerebral disease has declined dramatically; however, more subtle forms of HIVassociated neurocognitive disorders (HAND) remain prevalent.34,35 Risk factors include
+comorbidities (e.g. HCV coinfection), HIV infection itself and patient genetic factors.
+HAND encompasses three sub-disorders, ranging from more common, asymptomatic
+neurocognitive impairment (ANI), to more severe less common, HIV-associated dementia (HAD) disorders. Screening for cognitive impairment is recommended in PLWH.11
+CogState or the HIV dementia scale have been used though may not identify ANI.35
+Symptoms include apathy, irritability, inertia, lack of spontaneity, social withdrawal,
+psychomotor slowing, complaints of diminished attention and concentration, emotional lability, and occasionally, ‘HIV mania’.29
+The main treatment is antiretroviral therapy with high CNS penetration effectiveness
+(CPE) aiming at reaching good levels in the CNS with minimal drug-related neurotoxicity.
+Further adjunctive treatments have been studied (minocycline, memantine, selegiline, lithium, valproate, lexipafant, nimodipine, psychostimulants, natalizumab interferons, etc.).36
+In a recent study paroxetine was associated with neurocognitive improvements (after
+adjusting for depression),37 while a trial of rivastigmine patch was negative. Further
+studies are needed to confirm the effects of these adjunctive treatments for HAND.
+
+Interactions between antiretroviral drugs and psychotropics
+Pharmacokinetic interactions between antiretroviral drugs and psychotropics occur frequently and can be clinically significant. Potential interactions should be checked for all
+patients receiving antiretrovirals and psychotropics concomitantly. Drug history for
+checking drug interactions should include current prescribed medication, alternative/
+herbal treatments, recreational drugs and other non-prescribed medicines.34
+Readers are directed to regularly updated online resources for information about individual pharmacokinetic interactions:
+■■
+■■
+
+www.hiv-druginteractions.org (also available as an App)
+www.hivinsite.ucsf.edu
+
+
+
+
+<<<PAGE 906>>>
+
+Psychotropic drugs in special conditions  885
+
+Table 13.3 Benzodiazepines concentration in normal dosing and the legal limit
+
+Clonazepam 0.5–6.0mg41,42
+
+5–80µg/L (50)
+
+Diazepam 5–30mg
+
+50–1000µg/L (550)
+
+43
+
+Flunitrazepam 0.5–2.0mg
+
+10–20µg/L (300)
+
+Lorazepam 1–4mg46,47
+
+10–70µg/L (100)
+
+44,45
+
+Oxazepam 15–30mg48
+
+250–600µg/L (300)
+
+Temazepam 10–20mg
+
+200–900µg/L (1000)
+
+49
+
+In regards to methadone, doses of up to 80mg a day generally give plasma levels
+below the UK legal limit.50 The legal limits listed here apply only to those who are lawfully prescribed the drug in question – the driver may be subject to prosecution if it can
+be proved the drugs were taken illicitly.
+
+Other medicines
+Many psychotropics can impair alertness, concentration and driving performance.
+Medicines that block H1, α1-adrenergic or cholinergic receptors may be particularly
+problematic. Effects are particularly marked at the start of treatment and after
+increasing the dose. Drivers must be made aware of any potential for impairment
+and are advised to evaluate their driving performance at these times. They must stop
+driving if adversely affected.51 The use of alcohol will further increase any
+impairment.
+Some antipsychotics and antidepressants lower the seizure threshold. In the UK,
+the DVLA advises this is taken into consideration when prescribing for a driver.
+Further information about the effects of psychotropics on driving can be found in
+Table 13.2.
+Medication-induced sedation
+Many psychotropics are sedating. The more sedating a medicine is, the more likely it is
+to impair driving ability. Other medicines, either prescribed or bought over the counter,
+may also be sedative and/or affect driving ability (e.g. antihistamines5). One study
+found that 89% of patients taking other psychotropics in addition to antidepressants
+failed a battery of ‘fitness to drive’ tests.52 Since the degree of sedation any individual
+will experience is very difficult to predict, patients prescribed sedating medicines should
+be advised not to drive if they feel sedated. In the UK, it is the responsibility of the
+driver to ensure they are fit to drive.
+
+CHAPTER 13
+
+Range of concentrations reported
+(legal limit)
+
+Drug/daily dose
+
+

@@ -1,0 +1,354 @@
+<<<PAGE 4>>>
+
+delimitation of its frontiers or boundaries. Dotted and dashed lines on maps represent
+approximate border lines for which there may not yet be full agreement.
+The mention of specific companies or of certain manufacturers’ products does not imply
+that they are endorsed or recommended by WHO in preference to others of a similar nature
+that are not mentioned. Errors and omissions excepted, the names of proprietary products
+are distinguished by initial capital letters.
+All reasonable precautions have been taken by WHO to verify the information contained in
+this publication. However, the published material is being distributed without warranty of
+any kind, either expressed or implied. The responsibility for the interpretation and use of
+the material lies with the reader. In no event shall WHO be liable for damages arising from
+its use.
+Correct use of ICD-11
+Please refer to the reference guide for the correct use of ICD-11
+(https://icdcdn.who.int/icd11referenceguide/en/html/index.html).
+For coding the API must be used. For use of the API or coding tool, (see https://icd.who.int).
+To prevent the dilution of ICD’s purpose to provide a definitive standard for identifying
+health information, ICD-11 may not be used for the purpose of developing or promoting a
+different standard.
+The use of ICD-11 in software products is subject to the following license:
+https://icd.who.int/en/docs/ICD11-license.pdf. Under the terms of this license, users may
+not:
+•
+
+reproduce ICD-11 in part or whole and distribute it under a different name or without
+attribution;
+
+•
+
+reproduce and distribute ICD-11 in part or whole without the ICD-11 codes;
+
+•
+
+reproduce ICD-11 in part or whole without the ICD-11 URIs (not applicable for print
+publications).
+
+Mappings or crosslinks between other classifications and terminologies and ICD-11 and/or
+translations are not covered by the ICD-11 license and are subject to a separate written
+agreement from WHO.
+Adding data fields to ICD-11 concepts is permitted, provided such additions are clearly
+identified as additions that do not originate from WHO.
+Suggestions for changes to ICD-11 should be submitted as a proposal to the ICD-11
+maintenance platform (https://icd.who.int/en).
+0 ICD-11 Reference Guide
+0.1 Copyright page
+0.2 How to use this Reference Guide
+0.3 Table of Acronyms and Abbreviations
+2
+
+ICD-11 MMS
+
+
+
+
+<<<PAGE 25>>>
+
+0.3 Table of Acronyms and Abbreviations
+Acronym
+
+In Full
+
+AMR
+
+Antimicrobial Resistance
+
+ATC/DDD
+
+The Anatomical Therapeutic Chemical Classification with Defined Daily
+Doses
+
+DRG
+
+Diagnostic Related Group
+
+DSAP
+
+Duration Stated, developed After Procedure
+
+DSM-(5 or
+V)
+
+Diagnostic and Statistical Manual of Mental Disorders (fifth edition)
+
+ICD
+
+The International Classification of Diseases and Related Health Problems
+
+ICD-O
+
+The International Classification of Disease for Oncology
+
+ICECI
+
+The International Classification of External Causes of Injury
+
+ICF
+
+The International Classification of Functioning, Disability, and Health
+
+ICHI
+
+The International Classification of Health Interventions
+
+ICNP
+
+The International Classification of Nursing Practice
+
+ICPC
+
+The International Classification of Primary Care
+
+INN
+
+International Non-proprietary Names
+
+ISO9999
+
+International Standards Organization for Technical aids for persons with
+disabilities
+
+MMS
+
+Mortality and Morbidity Statistics
+
+NEC
+
+in an ICD category, indicates Not Elsewhere Classified
+
+NOS
+
+in an ICD category, indicates Not Otherwise Specified
+
+OCPR
+
+Other Cause of Procedure Required
+
+PCL
+
+Primary Care Low Resources Settings
+
+SMoL
+
+Startup Mortality List
+
+TAG
+
+Topic Advisory Group
+
+TM
+
+Traditional Medicine
+
+URI
+
+Uniform Resource Identifier
+
+WHODAS
+
+The World Health Organization Disability Assessment Scale
+
+WHO-FIC
+
+The World Health Organization - Family of International Classifications
+
+WM
+
+Western Medicine
+
+WONCA
+
+World Organization of National Colleges, Academies, and Academic
+Associations of General Practice/Family Practitioners
+
+0.4 Glossary
+
+ICD-11 Reference Guide
+
+23
+
+
+
+
+<<<PAGE 52>>>
+
+Exclusions serve as a cross reference in ICD and help to delineate the boundaries of a
+category.
+General exclusions for a range of categories or for all subcategories are found in the notes
+heading ‘Excludes’, immediately following a chapter, group or category title.
+Multiple parenting in ICD-11 shows categories in the context of siblings that are placed
+elsewhere in the classification. This is also an indication of an exclusion and means ‘a sibling
+is coded elsewhere’. In the print and the electronic version this is marked with the label
+‘code elsewhere’.
+2.7.2.1 ‘Code also’ and ‘Use additional code, if desired’ instructions
+‘Code also’ instructions inform the user about required additional aetiological information
+which is mandatory to be coded in a cluster with certain categories because that additional
+information is relevant for primary tabulation. The ‘code also’ statement marks the
+categories that must be used in conjunction with the indicated second code(s). However, in
+some instances aetiology may be unknown although the condition requires treatment in its
+own right. In this circumstance, the code may be reported alone.
+For example, the category Diabetic cataract indicates ‘code also’ type of diabetes. This
+means that in conjunction with the code for ‘diabetic cataract’, the code for the type of
+diabetes should be assigned. Both stem codes for the type of diabetes and the diabetic
+cataract are always reported in a cluster.
+‘Use additional code, if desired’ - instructions inform the user about optional additional
+detail that can be coded.
+2.7.3 ‘NEC’ and ‘NOS’
+2.7.3.1 ‘NEC’
+The stem ‘not elsewhere classified’, when used in a category title, serve as a warning that
+certain specified variants of the listed conditions may appear in other parts of the
+classification. For example, NF09 Adverse effects, not elsewhere classified. Codes to which
+the NEC description is appended should only be used if one of the other options available in
+the classification is not suitable.
+2.7.3.2 ‘NOS’
+The letters NOS are an abbreviation for the term ‘not otherwise specified’, implying that the
+documentation that is used for classifying does not provide more detail beyond the term
+provided. It implies ‘unspecified’, ‘incompletely specified’ or ‘unqualified’. Sometimes an
+unqualified term is nevertheless classified to a rubric for a more specific type of the
+condition. This is because, in medical terminology, the most common form of a condition is
+often known by the generic name of the condition itself and only the less common types are
+qualified. For example, ‘pharyngitis’ is commonly used to mean ‘acute pharyngitis’. These
+inbuilt assumptions have been taken into account in order to avoid incorrect classification.
+Careful inspection of inclusion terms will reveal where an assumption of cause has been
+accounted for. Coders should be careful not to code a term as unqualified unless it is quite
+clear that no information is available that would permit a more specific assignment
+50
+
+ICD-11 MMS
+
+
+
+
+<<<PAGE 54>>>
+
+2.7.7 ‘Due to’ and ‘Associated with’
+‘Due to’ is the preferred term for categories where two conditions are mentioned, and a
+causal sequence exists between them. Other terms, such as ‘caused by’ or ‘attributed to’ are
+allowable synonyms. The phrase ‘secondary to’ is equivalent and may also be included as a
+synonym. ‘Associated with’ is the preferred term for categories where two conditions are
+mentioned but there is no causal sequence implied.
+2.7.8 Spelling, parentheses, grammar and other conventions
+Spelling and grammar of ICD-11 follow the British rules with exceptions and amendments
+conforming to WHO spelling rules. The detailed conventions are listed below. The ICD-11
+terminology uses the following conventions:
+•
+
+Terms are listed in their singular form. For example, ‘Superficial injury of scalp’
+instead of ‘Superficial injuries of scalp’. There are exceptions when the singular form
+doesn’t apply, such as ‘Multiple injuries of head’, and when a term describes a group
+of diseases, such as “Benign vascular neoplasms”.
+•
+No use of apostrophes with eponyms. For example, ‘Hodgkin lymphoma’ (instead of
+‘Hodgkin’s lymphoma’)
+•
+Entities are described using natural language. For example, ‘myocardial infarction’
+(instead of ‘infarction, myocardial’).
+•
+Abbreviations are printed using upper case letters and followed by the complete title
+in full. For example, ‘MI – [myocardial infarction]’.
+•
+Parentheses are used in the tabular list to enclose the code to which an exclusion
+term refers. For example, 9A01.3 Infectious blepharitis Exclusions:
+Blepharoconjunctivitis (9A60.4)
+2.7.9 General features
+The main structural innovation of ICD–11 is that it is built on a Foundation component from
+which the tabular lists (such as the classification for morbidity and mortality statistics) is
+derived. See 1.2.5 Foundation Component and Tabular lists of ICD–11.
+Table 1: ICD-11 Terminology
+
+52
+
+ICD-11 MMS
+
+
+
+
+<<<PAGE 372>>>
+
+Part 1 - is used for diseases or conditions that form part of the sequence of events leading
+directly to death. The immediate (direct) cause of death is entered on the first line, 1(a).
+There must always be an entry on line 1(a). The entry on line l(a) may be the only condition
+reported in Part I of the certificate. Where there are two or more conditions that form part
+of the sequence of events leading directly to death, each event in the sequence should be
+recorded on a separate line.
+In any case you must record the disease, injury or external cause that resulted in the death.
+Do not record only the mode of dying, such as cardiac arrest, respiratory failure or heart
+failure.
+Try to be as specific as you can. “Unknown” cause of death should be recorded in cases
+where thorough testing or autopsy examination the cause of death cannot be determined.
+Stating “Unknown” is better than any speculation on the possible cause of death.
+Always fully spell out all terms. Abbreviations can be interpreted in different ways. Terms
+such as “suspected” or “possible” are ignored in evaluation of the entries. For example
+“suspected Diabetes” will be interpreted as “Diabetes”. The four lines may not provide
+enough space for the chain of events. Do not waste space with unnecessary words. Some
+clinical terms are very vague. For example, “tumour” does not specify behaviour (see also
+last page of this flyer).
+Duration - is the time interval between the onset of each condition that is entered on the
+certificate (not the time of diagnosis of the condition), and the date of death. The duration
+information is useful in coding certain diseases and also provides a useful check on the order
+of the reported sequence of conditions.
+Part 2 - is used for conditions that do not belong in Part 1 but their presence contributed to
+death.
+Frame B: Some detail is frequently forgotten in Part 1 and 2 (Frame A). Separate detailed
+questions ask for detail such as previous surgery, mode of death or place of occurrence.
+Frame B is not shown in this information sheet. It is self-explanatory.
+Cause of Death on the certificate - step by step
+•
+
+•
+
+•
+
+370
+
+Start at line 1(a), with the immediate (direct) cause, then go back in time to
+preceding conditions until you get to the one that started the sequence of events.
+You will get very close to the time the patient was healthy.
+Now, you should have reported the underlying or originating cause on the lowest
+used line and a sequence of events leads from the underlying cause up to the
+immediate (direct) cause in the first line 1(a).
+Finally, record the time interval between the onset of each condition entered on the
+certificate and the date of death. Where the time or date of onset is not known you
+
+ICD-11 MMS
+
+
+
+
+<<<PAGE 373>>>
+
+should record a best estimate. Enter the unit of time (minutes, hours, days, weeks,
+months, years).
+
+Example
+•
+•
+•
+•
+•
+
+Write clearly and do not use abbreviations.
+Be sure the information is complete.
+Do not speculate on the cause of death.
+Do not fill in laboratory results or statements like “found by partner” (there may be
+separate fields on the form for this kind of information).
+One condition per line should be sufficient.
+
+Frequently used ill-defined terms
+
+ICD-11 Reference Guide
+
+371
+
+

@@ -1,0 +1,570 @@
+<<<PAGE 312>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+vilazodone
+
+escitalopram
+
+5HT1A
+
+S-citalopram
+
+SERT
+
+SERT
+SERT
+
+Figure 7-21 Escitalopram The R and S enantiomers of
+citalopram are mirror images of each other but have slightly
+different clinical properties. The R enantiomer is the one with
+weak antihistamine properties; the R and S enantiomers may
+also differ in their effects at the serotonin transporter. The S
+enantiomer of citalopram has been developed and marketed as
+escitalopram.
+
+However, dose increase is limited due to the potential
+of QTc prolongation at higher doses. These findings all
+suggest that it is not favorable for citalopram to contain
+the R enantiomer. In fact, some pharmacological evidence
+suggests that the R enantiomer may be pharmacologically
+active at SERTs in a manner that does not inhibit SERTs
+but actually interferes with the ability of the active S
+enantiomer to inhibit SERTs. This could lead to reduced
+SERT inhibition, reduced synaptic 5HT, and possibly
+reduced net therapeutic actions, especially at low doses.
+Escitalopram: The Quintessential SSRI
+
+The solution to improving the properties of racemic
+citalopram is to remove the unwanted R enantiomer.
+The resulting drug is known as escitalopram, as it
+is comprised of only the pure active S enantiomer
+(Figure 7-21). This maneuver appears to remove the
+antihistaminic properties and there are no higher dose
+restrictions to avoid QTc prolongation. In addition,
+removal of the potentially interfering R enantiomer
+makes the lowest dose of escitalopram more predictably
+efficacious. Escitalopram is therefore the SSRI for which
+pure SERT inhibition is most likely to explain almost all
+of its pharmacological actions. Escitalopram is considered
+perhaps the best-tolerated SSRI, with the fewest
+cytochrome P450 (CYP450)-mediated drug interactions.
+Serotonin Partial Agonist Reuptake Inhibitors (SPARIs)
+
+Vilazodone combines SERT inhibition with 5HT1A
+partial agonism. For this reason, vilazodone is called
+296
+
+Figure 7-22 Vilazodone. Vilazodone is a partial agonist at the
+serotonin 1A receptor and also inhibits serotonin reuptake; thus,
+it is referred to as a serotonin partial agonist reuptake inhibitor
+(SPARI).
+
+a SPARI (serotonin partial agonist reuptake inhibitor)
+(Figure 7-22). The combination of serotonin reuptake
+inhibition with 5HT1A partial agonism has long
+been known by clinicians to enhance the unipolar
+antidepressant properties and tolerability of SSRIs/SNRIs
+in some patients (e.g., adding the 5HT1A partial agonist
+buspirone [Chapter 8 on anxiety]; the serotonin 1A/
+dopamine 2 partial agonists aripiprazole, brexpiprazole,
+or cariprazine [Chapter 5]; or the serotonin/dopamine
+antagonist with 5HT1A partial agonist properties,
+quetiapine). With vilazodone this combination
+mechanism is achieved with only one drug, avoiding drug
+interactions and various off-target receptor actions that
+may be undesired with the other drugs listed.
+In animal models, adding 5HT1A partial agonism to
+SSRIs causes more immediate and robust elevations of
+brain 5HT levels than SSRIs do alone. This is thought to
+be due to the fact that 5HT1A partial agonists are a type of
+“artificial serotonin,” selective especially for presynaptic
+somatodendritic 5HT1A autoreceptors, and that 5HT1A
+partial agonist action occurs immediately after the drug
+is given (Figure 7-23). Thus, 5HT1A immediate partial
+agonist actions are theoretically additive or synergistic
+with simultaneous SERT inhibition (Figure 7-23) since
+this leads to faster and more robust actions at 5HT1A
+somatodendritic autoreceptors (Figure 7-24) than with
+SERT inhibition alone (Figure 7-12), including their
+downregulation (Figure 7-25). This hypothetically
+
+
+
+
+<<<PAGE 550>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Dextromethorphan combined with quinidine is
+approved for the treatment of pseudobulbar affect,
+and dextromethorphan and derivates combined with
+either bupropion or quinidine are in late-stage testing
+for major depressive disorder, for treatment-resistant
+depression, and for agitation in AD.
+Treating Depression in Dementia
+
+A well-established association exists between depression
+and dementia; however, the exact nature of this
+intricate relationship is not fully understood (Figure
+12-49). Individuals with major depressive disorder
+often complain of memory problems (so-called
+pseudodementia when it occurs in the elderly), which can
+sometimes be reversed with antidepressant treatment,
+but depression may also be an untreatable prodromal
+symptom of, or risk factor for, inevitable dementia
+(Figure 12-49). In fact, a history of major depressive
+disorder is associated with a twofold increase in the risk
+for developing dementia, particularly vascular dementia,
+whereas major depressive disorder with an onset in later
+life may signify a prodromal sign of AD. Additionally,
+symptoms of depression are seen in at least 50% of
+individuals diagnosed with dementia, and should be
+addressed whenever feasible.
+
+Depression as a risk
+factor for dementia?
+
+Depression
+
+Dementia
+
+Depression as a prodromal
+symptom of dementia?
+
+Depression Dementia
+
+Dementia
+
+Depression and dementia
+sharing common risk factors/
+neurobiological bases?
+
+534
+
+Dementia
+
+Depression
+
+Cognitive impairment as
+a feature of depression?
+
+Depression as a reaction
+to cognitive decline?
+
+Given that symptoms of depression can significantly
+impact quality of life for patients with dementia and
+may actually exacerbate cognitive decline, addressing
+depressive symptoms using non-pharmacological (Table
+12-9) and/or pharmacological means (Figure 12-50)
+should be a priority. Psychosocial interventions are always
+worth trying as treatments for depression in dementia,
+but the usual drugs for depression discussed in Chapter
+7 are often not effective in depression associated with
+dementia, perhaps because the neural circuits these drugs
+act upon may have degenerated. Further complicating
+the treatment of depression in dementia are the potential
+depression-exacerbating effects of medications for somatic
+ailments common in the elderly population, as well as the
+potential interactions of such medications with standard
+antidepressants. In terms of pharmacological management
+of major depressive disorder in patients with dementia,
+SSRIs including sertraline, citalopram, escitalopram,
+and fluoxetine have shown some limited efficacy (see
+Chapter 7 for discussion of these and other drugs for
+depression). In general, long-term antidepressant
+treatment has been associated with a lower risk of
+dementia, improved cognition, and a slower rate of decline
+in elderly patients with dementia. Data are somewhat
+
+Depression
+
+Depression
+Risk
+factors
+
+Dementia
+
+Figure 12-49 Hypothetical associations
+between depression and dementia. It
+is well established that an association
+exists between depression and
+dementia; however, the exact nature
+of this intricate relationship is not fully
+understood.
+
+
+
+
+<<<PAGE 551>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+inconclusive in terms of their efficacy in treating major
+depressive disorder in dementia; however, SSRIs (e.g.,
+citalopram but has QT prolongation; escitalopram may
+have similar efficacy without QT prolongation) may
+have some additional applicability towards ameliorating
+agitation and inappropriate behaviors in patients with
+dementia. Although considered relatively tolerable, SSRIs
+may be associated with increased falls and osteoporosis,
+and they may have interactions with other medications.
+Additionally, SSRIs may worsen some symptoms of
+Parkinson’s disease such as restless leg syndrome, periodic
+limb movements, and REM sleep behavior disorders.
+Therefore, if a trial of an SSRI (or any other antidepressant
+medication) is deemed necessary, the lowest effective dose
+should be used and continuous monitoring should be
+exercised.
+Another agent for treating depression in dementia
+is trazodone, which blocks the serotonin transporter at
+antidepressant doses (see Chapter 7 and Figures 7-44
+and 7-45). Trazodone also has serotonin 2A and 2C,
+H1 histamine and α1-adrenergic antagonist properties
+(Figures 7-44 and 7-45), which can make it very sedating.
+At low doses, trazodone does not adequately block
+serotonin reuptake but retains its other properties (Figure
+7-46). Because trazodone has a relatively short half-life
+
+Treating Depression
+
+May be ineffective because...
+
+Pharmacological
+Interventions
+
+(6–8 hours), if dosed only once daily at night, particularly
+at low doses, it can improve sleep without having daytime
+effects. The utility of trazodone in treating secondary
+behavioral symptoms in patients with dementia may lie
+more in its ability to improve sleep rather than depression.
+Trazodone may also improve other behavioral symptoms
+of dementia especially in FTD but not particularly in AD.
+Vortioxetine (Chapter 7 and Figure 7-49) in particular
+may improve cognitive function in depression, especially
+processing speed (Figure 7-50) as can some SNRIs like
+duloxetine (Figure 7-29) in the elderly with depression.
+However, these pro-cognitive effects have not been
+demonstrated specifically in dementia patients who have
+depression.
+Pseudobulbar Affect (Pathological Laughing and
+Crying)
+
+Pseudobulbar affect (PBA) is an emotional expression
+disorder, characterized by uncontrolled crying or
+laughing that may be disproportionate or inappropriate
+to the social context. It is often mistaken for a mood
+disorder but is actually a disorder of the expression of
+affect, which is inconsistent or disproportionate to mood.
+PBA can accompany a variety of neurodegenerative
+diseases such as AD and various other dementias,
+
+Figure 12-50 Treating depression in
+patients with dementia. The treatment
+of depression in elderly patients with
+dementia may be complicated by the
+fact that the neural circuits acted on
+by pharmacological interventions for
+depression may have degenerated.
+Although psychosocial interventions
+are an appropriate option, they may be
+difficult to implement for cognitively
+impaired individuals.
+
+acting on neural circuits which
+may be degenerated
+
+12
+
+Psychosocial
+Interventions
+
+striving to change cognitive
+functioning in cognitively
+impaired individual
+
+535
+
+
+
+
+<<<PAGE 553>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+These various descriptions all integrate the notion
+of lack of spontaneous behaviors and emotions with
+diminished reactivity to the environment, often the
+opposite to what is observed in agitation (see Table 12-8).
+The clinical presentation of apathy often differs
+among various types of dementias; for instance, affective
+apathy is more common in the behavioral variant of FTD
+compared to AD. Both dopaminergic and cholinergic
+neurotransmitter systems seem to be involved in the
+various types of apathy; potential treatments, therefore,
+include dopamine agonists such as bupropion, levodopa,
+and stimulants, as well as cholinesterase inhibitors, but
+none is approved for this use and none is particularly
+robust in efficacy.
+A primary reason why drugs used for depression
+do not work well in apathy of dementia is that apathy
+is not depression. That is, guilt, worthlessness, and
+hopelessness, the symptom hallmarks of depression
+(see Chapter 6 and Figure 6-1), are typically not
+present in patients with apathy in dementia. When
+use of medications for apathy in dementia is needed,
+cholinesterase inhibitors may be effective in some
+patients and are a first-line consideration in AD, but
+might work better for prevention of these symptoms than
+for their treatment once they have emerged. Also, FTD
+patients may be more likely to benefit from SSRIs (e.g.,
+citalopram or escitalopram) or SNRIs.
+Other Treatments for the Behavioral Symptoms of
+Dementia
+
+As mentioned earlier and shown in Table 12-9,
+there are several non-pharmacological options for
+treating neuropsychiatric symptoms in patients with
+dementia, and given the risks associated with many
+pharmacological treatments, the lack of approval of
+many agents, and their relative lack of efficacy, nonpharmacological interventions should always be
+considered first-line. This will also be the case even
+if pimavanserin is approved for psychosis in all-cause
+dementia and if brexpiprazole and dextromethorphan–
+bupropion are approved for agitation in AD.
+It is particularly important to keep in mind that
+physical pain, infection, or local irritation can be
+
+the underlying cause for many secondary behavioral
+symptoms in patients with dementia. Just as with
+household pets or small children, a patient with dementia
+may not be able to express or describe the physical pain
+they are experiencing; thus it is up to astute clinicians and
+caregivers to identify and treat causes of pain that may be
+leading to neuropsychiatric symptoms, such as agitation
+and depression, in patients with dementia. If pain is
+contributing to behavioral symptoms, psychotropic
+medications may have little effect whereas alleviating the
+source of the pain may be quite effective. For instance,
+treatment with simple acetaminophen (paracetamol)
+can sometimes ameliorate agitation. Similarly, other
+modifiable sources of behavioral symptoms (e.g.,
+boredom, excess stimulation, etc.) should be recognized
+and addressed.
+
+SUMMARY
+The most common dementia is Alzheimer disease (AD),
+and the leading theory for its etiology is the amyloid
+cascade hypothesis. Other dementias including vascular
+dementia, dementia with Lewy bodies, Parkinson’s
+disease dementia, and frontotemporal dementia are
+also discussed as well, as are their differing pathologies,
+clinical presentations, and neuroimaging findings.
+New diagnostic criteria define three stages of AD:
+asymptomatic, mild cognitive impairment, and
+dementia. Major research efforts have recently pivoted
+away from attempting to find disease-modifying
+treatments that could halt or even reverse the course
+of this illness by interfering with Aβ accumulation in
+the brain because many such treatments have failed
+over the past 30 years. Leading treatments for AD
+today include symptomatic treatment of memory and
+cognition with the cholinesterase inhibitors, based upon
+the cholinergic hypothesis of amnesia, and memantine,
+an NMDA antagonist, based upon the glutamate
+hypothesis of cognitive decline. Novel treatments
+on the threshold of approval include the 5HT2A
+antagonist pimavanserin for symptomatic treatment
+of dementia-related psychosis, and both brexpiprazole
+and dextromethorphan–bupropion for symptomatic
+treatment of agitation in AD.
+
+537
+
+12
+
+
+
+
+<<<PAGE 633>>>
+
+Index
+
+major causes of, 488–96
+psychosis in, 110, 134, 157, 521–3
+psychosis in, treatment, 523–7
+symptomatic treatments, 503–5
+dendrites, 2
+depression, 145, See also bipolar
+depression, unipolar depression
+affective symptoms, 278, 280
+circadian rhythm disorder in, 271–5
+clinical effects of treatment, 284–5
+dementia and, 534–5
+drug side effects, 200
+drug treatment, 229, 239
+insomnia and, 418
+major depressive disorder. See major
+depressive disorder
+major depressive episode. See major
+depressive episode
+mixed features of, 251
+monoamine hypothesis of, 264–5, 290
+monoamine receptor hypothesis of,
+264–6, 267, 290
+mood stabilizer treatment, 288
+neuroplasticity and neuroprogression
+hypothesis of, 266–76
+serotonin or dopamine blockers in, 342
+symptom-based algorithm treatment,
+280
+time course of effects of drugs, 266
+depression with mixed features, 248, 342
+depressive psychosis, 78, 157
+descending spinal norepinephrine
+pathway, 390, 392
+descending spinal serotonergic pathway,
+390, 394
+desensitization, 63, 64
+desvenlafaxine, 299, 302
+deuteration, 175, 177, 354
+dextromethadone, 355–8
+dextromethorphan, 306, 353–4, 533, 536
+diabetes, 198, 199, 415
+diabetic ketoacidosis, 199, 200
+Diagnostic and Statistical Manual of
+Mental Disorders (DSM-5)
+ADHD, 463
+insomnia, 420
+major depressive episode, 245
+manic episode, 245
+mixed features, 248
+dietary tyramine interaction, 338
+diphenhydramine, 426
+direct (go) dopamine pathway, 89, 90
+disorganized/excited psychosis, 78
+disorientation, 78
+dissociation-assisted psychotherapy, 574
+dissociative anesthesia, 570
+dissociatives, 569–71
+disulfiram, 556
+
+DNA methylation, 24
+donepezil, 510
+DOPA decarboxylase, 253
+dopamine, 5
+acetylcholine and, 166
+conversion to norepinephrine, 253
+increase in prefrontal cortex, 299–302
+inefficient tuning of PFC by, 454–63
+projections, 279
+release, 5HT2A regulation, 184–8
+synthesis, 79, 80
+volume neurotransmission, 8
+dopamine β-hydroxylase, 253
+dopamine blockers, 468
+adverse effects, 524
+bipolar disorder spectrum, 338–45
+dopamine D1 receptors
+drugs targeting, 204–41
+dopamine D2 receptors. See also drugs
+targeting dopamine D2 receptors
+pre- and postsynaptic, 228
+dopamine D3 receptors, 343–5
+drugs targeting, 210, 240, 241
+dopamine deficiency syndrome, 306
+dopamine hypothesis of psychosis,
+79–95, 110–14, 141
+dopamine neurotransmitter network,
+79–91
+classic pathways and key brain
+regions, 84
+mesolimbic pathway, 89, 542–3
+nigrostriatal pathway, 87–9
+thalamic pathway, 85
+tuberoinfundibular pathway, 85
+dopamine receptors, 81–5
+dopamine theory of addiction, 542–3
+dopamine transporters (DATs), 31, 80
+ADHD treatment, 473–9
+inhibition, 294, 333
+dopaminergic neurons, 79
+dorsal anterior cingulate cortex (dACC),
+450, 451
+dorsal horn neurons, 382–4
+dorsal horn, descending spinal synapses
+in, 390–5
+dorsal root ganglia, 380, 381
+dorsolateral prefrontal cortex, 387, 400,
+449
+doxepin, 425, 427
+drug abuse, 447, 539
+DAT occupancy and, 476, 479
+reversal of habit, 571–4
+stimulants, 544–7
+drug-induced dystonia, 166, 169
+drug-induced parkinsonism, 165, 166–9,
+181
+drugs targeting dopamine D1 receptors,
+204–41
+
+drugs targeting dopamine D2 receptors,
+159, 242
+agitation in dementia, 197
+antidepressant actions, 195–234
+anxiolytic actions, 196
+cardiometabolic actions, 198–201
+first generation, 179–82, 201–3
+individual properties, 204–41
+mesocortical, 163
+mesolimbic/mesostriatal, 161–3
+nigrostriatal, 165–81
+partial agonists, 189–92, 204–41
+serotonin 2A and, 182–8
+tuberoinfundibular, 164
+drugs targeting dopamine D3 receptors,
+210, 240, 241
+drugs targeting serotonin receptors, 159,
+243
+1A receptors, 192–5, 207
+1B and 1D receptors, 214
+2A receptors, 182–8
+2C receptor, 211
+3 receptor, 212
+6 and 7 receptors, 213
+agitation in dementia, 197
+antidepressant actions, 195–234
+anxiolytic actions, 196
+cardiometabolic actions, 198–201
+individual properties, 204–41
+DSST (digital symbol substitution test), 317
+dual orexin receptor antagonists
+(DORAs), 423–4, 430
+duloxetine, 299, 302–3, 535
+dynorphins, 390
+dyslipidemia, 198
+dystonia, drug-induced, 166, 169
+eating disorders, 293, 575
+Ecstasy, 358, 569
+empathogens, 569
+endocannabinoids, 6, 563, 564
+enkephalins, 390
+entactogens, 569
+enzyme inhibitors, 45
+irreversible, 46
+reversible, 47
+enzymes, 45–50
+activity, 45
+epigenetics, 23–6
+Epworth Sleepiness Scale, 430
+escitalopram, 296
+esketamine, 331, 353, 571
+eslicarbazepine, 352
+euphoria, 560
+excessive daytime sleepiness. See
+hypersomnia
+excitation–secretion coupling, 6, 8–9,
+73, 75
+617
+
+

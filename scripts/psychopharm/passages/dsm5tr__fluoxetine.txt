@@ -1,0 +1,179 @@
+<<<PAGE 662>>>
+
+excessive sleepiness/fatigue during waking hours or, less commonly, a long
+sleep period.
+Parasomnia type: Characterized by abnormal behavioral events during sleep.
+Mixed type: Characterized by a substance/medication-induced sleep problem
+characterized by multiple types of sleep symptoms, but no symptom clearly
+predominates.
+Specify (see Table 1 in the chapter “Substance-Related and Addictive Disorders,”
+which indicates whether “with onset during intoxication” and/or “with onset during
+withdrawal” applies to a given substance class; or specify “with onset after
+medication use”):
+With onset during intoxication: If criteria are met for intoxication with the
+substance and the symptoms develop during the intoxication.
+With onset during withdrawal: If criteria are met for withdrawal from the
+substance and the symptoms develop during, or shortly after, withdrawal.
+With onset after medication use: If symptoms developed at initiation of
+medication, with a change in use of medication, or during withdrawal of
+medication.
+
+Recording Procedures
+The name of the substance/medication-induced sleep disorder begins with the specific substance
+(e.g., alcohol) that is presumed to be causing the sleep disturbance. The ICD-10-CM code that
+corresponds to the applicable drug class is selected from the table included in the criteria set. For
+substances that do not fit into any of the classes (e.g., fluoxetine), the ICD-10-CM code for the
+other (or unknown) substance class should be used and the name
+470
+of the specific substance recorded (e.g., F19.982 fluoxetine-induced sleep disorder, insomnia
+type). In cases in which a substance is judged to be an etiological factor but the specific
+substance is unknown, the ICD-10-CM code for the other (or unknown) substance class is used
+and the fact that the substance is unknown is recorded (e.g., F19.982 unknown substanceinduced sleep disorder, hypersomnia type).
+To record the name of the disorder, the comorbid substance use disorder (if any) is listed
+first, followed by “with substance/medication-induced sleep disorder” (incorporating the name of
+the specific etiological substance/medication), followed by the specification of onset (i.e., with
+onset during intoxication, with onset during withdrawal, with onset after medication use),
+followed by the subtype designation (i.e., insomnia type, daytime sleepiness type, parasomnia
+type, mixed type). For example, in the case of insomnia occurring during withdrawal in a man
+with a severe lorazepam use disorder, the diagnosis is F13.282 severe lorazepam use disorder
+with lorazepam-induced sleep disorder, with onset during withdrawal, insomnia type. A separate
+diagnosis of the comorbid severe lorazepam use disorder is not given. If the substance-induced
+sleep disorder occurs without a comorbid substance use disorder (e.g., with medication use as
+
+
+
+
+<<<PAGE 707>>>
+
+Specify current severity:
+Mild: Occurs on 25%–50% of occasions of sexual activity.
+Moderate: Occurs on 50%–75% of occasions of sexual activity.
+Severe: Occurs on 75% or more of occasions of sexual activity.
+
+Recording Procedures
+The name of the substance/medication-induced sexual dysfunction begins with the specific
+substance (e.g., alcohol) that is presumed to be causing the sexual dysfunction. The ICD-10-CM
+code that corresponds to the applicable drug class is selected from the table included in the
+criteria set. For substances that do not fit into any of the classes (e.g., fluoxetine), the ICD-10CM code for the other (or unknown) substance class should be used and the name of the specific
+substance recorded (e.g., F19.981 fluoxetine-induced sexual dysfunction). In cases in which a
+substance is judged to be an etiological factor but the specific substance is unknown, the ICD-10CM code for the other (or unknown) substance class is used and the fact that the substance is
+unknown is recorded (e.g., F19.981 unknown substance-induced sexual dysfunction).
+When recording the name of the disorder, the comorbid substance use disorder (if any) is
+listed first, followed by the word “with,” followed by the name of the substance-induced sexual
+dysfunction, followed by the specification of onset (i.e., onset during intoxication, onset during
+withdrawal, with onset after medication use), followed by the severity specifier (e.g., mild,
+moderate, severe). For example, in the case of erectile dysfunction occurring during intoxication
+in a man with a severe alcohol use disorder, the diagnosis is F10.281 severe alcohol use disorder
+with alcohol-induced sexual dysfunction, with onset during intoxication, moderate. A separate
+diagnosis of the comorbid severe alcohol use disorder is not given. If the substance-induced
+sexual dysfunction occurs without a comorbid substance use disorder (e.g., after a one-time
+heavy use of the substance), no accompanying substance use disorder is noted (e.g., F15.981
+amphetamine-induced sexual dysfunction, with onset during intoxication). When more than one
+substance is judged to play a significant role in the development of the sexual dysfunction, each
+should be listed separately (e.g., F14.181 mild cocaine use disorder with cocaine-induced sexual
+dysfunction, with onset during intoxication, moderate; F19.981 fluoxetine-induced sexual
+dysfunction, with onset after medication use, moderate).
+
+Diagnostic Features
+The essential features of substance/medication-induced sexual dysfunction are clinically
+significant disturbances in sexual function that are predominant in the clinical picture (Criterion
+A) that are judged to be due to the effects of a substance (e.g., a drug of abuse or medication).
+The sexual dysfunction must have developed during or soon after substance intoxication or
+withdrawal or after exposure to or withdrawal from a medication, and the substances or
+medications must be capable of producing the symptoms (Criterion B2). Substance/medicationinduced sexual dysfunction due to a prescribed treatment for a
+507
+mental disorder or another medical condition must have its onset while the individual is
+
+
+
+
+<<<PAGE 709>>>
+
+substance/medication-induced sexual dysfunction typically concern the effects of antidepressant
+drugs. The prevalence of antidepressant-induced sexual dysfunction varies in part depending on
+the specific agent. Approximately 25%–80% of individuals taking monoamine oxidase
+inhibitors, tricyclic antidepressants, serotonergic antidepressants, and combined serotonergicadrenergic antidepressants report sexual side effects. There
+508
+are differences in the incidence of sexual side effects between some serotonergic and combined
+adrenergic-serotonergic antidepressants, with medications such as citalopram, fluoxetine,
+fluvoxamine, paroxetine, sertraline, and venlafaxine having the highest rates of sexual
+dysfunction.
+Approximately 50% of individuals taking antipsychotic medications will experience adverse
+sexual side effects, including problems with sexual desire, erection, lubrication, ejaculation, or
+orgasm. The incidence of these side effects among different antipsychotic agents is unclear.
+Exact prevalence and incidence of sexual dysfunctions among users of nonpsychiatric
+medications such as cardiovascular, cytotoxic, gastrointestinal, and hormonal agents are
+unknown. Elevated rates of sexual dysfunction have been reported high-dose opioid drugs for
+pain. There are increased rates of decreased sexual desire, erectile dysfunction, and difficulty
+reaching orgasm associated with illicit substance use. The prevalence of sexual problems appears
+related to chronic drug abuse and appears higher in individuals who abuse heroin (approximately
+60%–70%) than in individuals who abuse amphetamine-type substances or 3,4methylenedioxymethamphetamine (i.e., MDMA, ecstasy). Elevated rates of sexual dysfunction
+are also seen in individuals receiving methadone but are seldom reported by individuals
+receiving buprenorphine. Chronic alcohol abuse and chronic nicotine abuse are related to higher
+rates of erectile problems.
+
+Development and Course
+The onset of antidepressant-induced sexual dysfunction may be as early as 8 days after the agent
+is first taken. Approximately 30% of individuals with mild to moderate orgasm delay will
+experience spontaneous remission of the dysfunction within 6 months. In some cases, serotonin
+reuptake inhibitor–induced sexual dysfunction may persist after the agent is discontinued. The
+time to onset of sexual dysfunction after initiation of antipsychotic drugs or drugs of abuse is
+unknown. It is probable that the adverse effects of nicotine and alcohol may not appear until after
+years of use. Premature (early) ejaculation can sometimes occur after cessation of opioid use.
+There is some evidence that disturbances in sexual function related to substance/medication use
+increase with age.
+
+Culture-Related Diagnostic Issues
+There may be an interaction among cultural factors, the influence of medications on sexual
+functioning, and the response of the individual to those changes.
+
+Sex- and Gender-Related Diagnostic Issues
+Some gender differences in sexual side effects from substances and medications may exist, such
+
+
+
+
+<<<PAGE 1082>>>
+
+Antidepressant Discontinuation Syndrome
+T43.205A Initial encounter
+T43.205D Subsequent encounter
+T43.205S Sequelae
+Discontinuation symptoms may occur following treatment with all types of antidepressants. The
+incidence of this syndrome depends on the dosage and half-life of the medication being taken, as
+well as the rate at which the medication is tapered. Short half-life medications that are abruptly
+discontinued (or when the dose is significantly reduced) rather than tapered gradually may pose
+the greatest risk. The short-acting antidepressants paroxetine and venlafaxine are the agents most
+commonly associated with discontinuation symptoms. Antidepressant discontinuation syndrome
+may occur in the context of intermittent non-adherence to treatment and therefore may be
+irregularly present in some individuals who have not actually stopped taking the medication.
+This is especially true for very short half-life medications (e.g., venlafaxine). By contrast, long
+half-life medications like fluoxetine seldom produce significant discontinuation effects.
+Unlike withdrawal syndromes associated with opioids, alcohol, and other substances,
+antidepressant discontinuation syndrome has no pathognomonic symptoms. Instead, the
+symptoms tend to be vague and variable. Symptoms typically begin 2–4 days after the last dose
+of the antidepressant. For selective serotonin reuptake inhibitors, symptoms such as dizziness,
+tinnitus, “electric shock”–like sensations, insomnia, and acute anxiety are described. The
+antidepressant use before discontinuation must not have incurred hypomania or mixed state (i.e.,
+there should be confidence that the discontinuation syndrome is not the result of fluctuations in
+mood stability associated with the previous treatment). For the tricyclic antidepressants, sudden
+discontinuation has been associated with gastrointestinal symptoms (cramping—reflecting
+cholinergic overactivity after stopping an anticholinergic tricyclic antidepressant) as well as
+rebound hypomania.
+The antidepressant discontinuation syndrome is based solely on pharmacological factors and
+is not related to the reinforcing effects of an antidepressant. Unlike the discontinuation of
+substances with reinforcing effects like opioids, drug craving does not occur. Also, when a
+stimulant is used to augment an antidepressant, abrupt cessation may result in stimulant
+withdrawal symptoms (see “Stimulant Withdrawal” in the chapter “Substance-Related and
+Addictive Disorders”) rather than the antidepressant discontinuation syndrome described here.
+The prevalence of antidepressant discontinuation syndrome is unknown but is thought to vary
+according to any of the following factors: the dosage before discontinuation, the half-life (i.e.,
+occurring more commonly with short half-life medications) and receptor-binding affinity of the
+medication (e.g., more likely to occur with serotonin reuptake inhibitors), and possibly the
+individual’s genetically influenced rate of metabolism for this
+819
+medication. Therefore, discontinuation reactions occur more frequently with short half-life
+medications, but may also be influenced by rapid or ultrarapid metabolizer status of cytochrome
+enzymes that metabolize the antidepressant.
+
+

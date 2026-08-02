@@ -1,0 +1,664 @@
+<<<PAGE 38>>>
+
+26
+
+A Short Textbook of Psychiatry
+
+i. Fluctuating cognitive impairment over weeks or
+months, with involvement of memory and higher
+cortical functions (such as language, visuo-spatial
+ability, praxis and reasoning). Lucid intervals can
+be present in between fluctuations.
+ii. Recurrent and detailed visual hallucinations.
+iii. Spontaneous extrapyramidal or parkinsonian
+symptoms such as rigidity and tremors.
+iv. Neuroleptic sensitivity syndrome, characterised by
+a marked sensitivity to the effects of typical doses
+of antipsychotic drugs (resulting in severe extrapyramidal side-effects with use of antipsychotics).
+Other clinical features may include repeated falls,
+autonomic dysfunction (e.g. orthostatic hypotension), urinary incontinence, delusions and depressive
+features. Although Lewy bodies (intra-cytoplasmic
+inclusion bodies) are also present in Parkinson’s
+disease, the occurrence of Lewy bodies in Lewy body
+dementia is more widespread. A PET (Positron Emission Tomography) or SPECT (Single Photon Emission
+Computerised Tomography) scan of brain may show
+low dopamine transporter uptake in basal ganglia.
+Antipsychotic medication should be avoided (or
+used with extreme caution and in low doses) in patients
+with Lewy body dementia.
+
+Management
+Basic Investigations
+The diagnostic tests are of great importance in finding the cause, or to exclude all other causes before
+diagnosing Alzheimer’s dementia.
+The list of investigations could include complete
+blood count, urinalysis, blood glucose, serum electrolytes, renal function tests, thyroid function tests, serum
+B12 and folate levels, serological tests for syphilis,
+arterial pO2 and pCO2, X-ray chest, ECG, X-ray skull,
+EEG, lumbar puncture, CT scan/MRI scan of brain,
+neuropsychological tests, and drug screens.
+
+Treatment of the Underlying Cause,
+if Treatable
+Some underlying causes of dementia are treatable
+(reversible dementias), for example, treatment of
+
+hypertension in multi-infarct dementia, thyroxin
+replacement in hypothyroid dementia, shunting in
+hydrocephalic dementia, levodopa in parkinsonism,
+and removal of the toxic agent in toxic dementias.
+Early treatment can prevent further deterioration of
+dementia.
+
+Symptomatic Management
+1. Environmental manipulation and focus on coping
+skills to reduce stress in day-to-day activities.
+2. Treatment of medical complications, if any.
+3. Care of food and hygiene
+4. Supportive care for the patient and family/carers.
+5. Anxiety symptoms can be treated with low dose of
+a short-acting benzodiazepine (such as Lorazepam
+and Oxazepam), though care should be taken to
+prevent benzodiazepine dependence/misuse.
+6. Depression can be treated with low doses of
+SSRIs such as Citalopram or Sertraline as these
+antidepressants have low anticholinergic activity
+and have a safer cardiac profile. Agents with high
+anticholinergic activity can cause confusion or
+even frank delirium.
+7. Psychotic symptoms and disruptive behaviours
+can be treated with low doses of antipsychotics.
+Haloperidol and Risperidone have usually been
+preferred as they are less sedating and have low
+cardiac toxicity, though Risperidone can cause
+postural hypotension. Recently, the use of antipsychotics in treatment of behavioural symptoms
+in dementia has decreased markedly due to
+possible association of antipsychotic use with
+increased mortality. Antipsychotics should
+also be avoided if Lewy body dementia is
+suspected.
+8. Short-term hospitalisation may be needed for
+emergent symptoms whilst a longer term hospitalisation or respite placement may be necessary
+in later stages.
+9. Specific drug treatment such as cholinesterase
+inhibitors (e.g. donepezil, rivastigmine, galantamine) in moderate Alzheimer’s disease, or
+memantine (NMDA antagonist) in moderate to
+severe Alzheimer’s disease, can be helpful.
+
+
+
+
+<<<PAGE 88>>>
+
+76
+
+A Short Textbook of Psychiatry
+
+Mania represents a reaction formation (Table 17.1)
+to depression according to the psychodynamic theory.
+
+Table 6.5: Some Commonly used Antidepressants
+Generic Name
+
+Stress
+Increased number of stressful life events before the
+onset or relapse has a formative rather than a precipitating effect in depression though they can serve
+a precipitant role in mania. Increased stressors in
+the early period of development are probably more
+important in depression.
+
+Cognitive and Behavioural Theories
+The mechanisms of causation of depression, according
+to these theories, include depressive negative
+cognition (cognitive theory), learned helplessness
+(animal model), and anger directed inwards. These
+concepts are useful in the psychological treatment of
+mild (to moderate) depression.
+Several other theories have also been propounded
+but are currently considered to be of doubtful value
+as theories of causation of depression.
+
+DIFFERENTIAL DIAGNOSIS
+The first step in the differential diagnosis of any mood
+disorder is to exclude a disorder with known organic
+cause, e.g. organic (especially drug-induced) mood
+disorders and dementia (differential diagnosis from
+depressive pseudodementia).
+The second step is to rule out a possibility of acute
+and transient psychotic disorders, schizo-affective
+disorder, and schizophrenia.
+The third step is to exclude the possibility of other
+non-organic psychoses such as delusional disorders.
+The fourth step is to exclude the possibility of
+adjustment disorder with depressed mood, generalised
+anxiety disorder, normal grief reaction, and obsessive compulsive disorder (with or without secondary
+depression).
+In addition to the main diagnosis, it is also important to look for co-morbid medical (such as diabetes,
+hypertension) and/or psychiatric disorders (such as
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+
+Agomelatin
+Amitriptyline
+Amoxapine
+Bupropion
+Citalopram
+Clomipramine
+Doxepine
+Dosulepin/Dotheipin
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Imipramine
+Lofepramine
+Mianserin
+Mirtazapine
+Moclobemide
+Nortriptyline
+Paroxetine
+Reboxetine
+Sertraline
+Tianeptin
+Trazodone
+Venlafaxine
+
+Usual Therapeutic
+Range (mg/day)
+25-50
+75-300
+150-300
+150-450
+10-40
+75-250
+75-300
+75-150
+30-120
+10-20
+20-60
+50-200
+75-300
+140-210
+30-120
+15-45
+300-600
+150-300
+10-40
+10-12
+50-200
+37.5
+300-600
+75-375
+
+anxiety, panic, alcohol or drug misuse, or personality disorder) on a multi-axial diagnostic system
+(Table 1.4).
+
+MANAGEMENT
+Somatic Treatment
+Antidepressants
+Antidepressants are the treatment of choice for a vast
+majority of depressive episodes. Some of the commonly used antidepressants with their usual range of
+therapeutic dosage are listed in Table 6.5. (Antidepressants are discussed in more detail in Chapter 15).
+
+
+
+
+<<<PAGE 89>>>
+
+Mood Disorders
+
+The usual starting dose is about 75-150 mg of
+imipramine equivalent. The clinical improvement
+is assessed after about two weeks. In case of nonimprovement, the dose can usually be increased up
+to 300 mg of imipramine equivalent.
+It should be remembered that it may take up to
+3 weeks before any appreciable response may be
+noticed. Before stopping or changing a drug, the
+particular drug should be given in a therapeutically
+adequate dose for at least 6 weeks.
+A variety of antidepressants are now available
+in the market. Since almost all antidepressants are
+equal in antidepressant efficacy and there is no single
+antidepressant effective for all depressed patients, the
+choice of antidepressant is often dictated by other factors. These factors include cost and ease of availability
+of the drug, the side-effect profile of the drug, past
+history of response and (any) co-morbid medical or
+psychiatric disorders. An individualised choice has to
+be made in each patient, keeping these various factors in mind.
+Imipramine, amitriptyline and other related drugs
+are called tricyclic antidepressants (TCAs). The
+newer antidepressants such as selective serotonin
+reuptake inhibitors (SSRIs) (e.g. fluoxetine, sertraline,
+citalopram), mirtazapine, and serotonin norepinephrine reuptake inhibitors (SNRIs) (e.g. venlafaxine,
+duloxetine) have very little anti cholinergic side
+effects and, hence, are generally safer drugs to use in
+elderly patients with benign hypertrophy of prostate.
+However, both venlafaxine and duloxetine have been
+associated with hypertension and should be used with
+care in those with a history of cardiac illness.
+The antidepressant dosage is monitored on the
+basis of clinical improvement. Routine monitoring
+of blood levels is not usually indicated.
+For the first, uncomplicated, depressive episode,
+the patient should receive full therapeutic dose of the
+chosen antidepressant for a period of 6-9 months,
+after achieving full remission. It is wise to taper the
+antidepressant medication, when the treatment is to
+be stopped after the continuation phase.
+
+77
+
+There are three main phases of treatment:
+i. Acute treatment (till remission occurs),
+ii. Continuation treatment (from remission till end
+of treatment), and
+iii. Maintenance treatment (to prevent further recurrences).
+Maintenance treatment may be indicated in the
+following patients:
+i. Partial response to acute treatment.
+ii. Poor symptom control during the continuation
+treatment.
+iii. More than 3 episodes (90% chances of recurrence).
+iv. More than 2 episodes with early age of onset,
+or recurrence within 2 years of stopping
+antidepressants, or severe and/or life-threatening
+depression, or family history of mood disorder.
+v. Chronic depression (> 2 years) or double depression.
+About 20-35% of depressed patients are refractory
+to antidepressant medication. The management of a
+treatment refractory depressed patient is best done
+by a psychiatrist, often at a tertiary care centre. These
+patients may require one of the following alternatives:
+i. A change of antidepressant (Switch),
+ii. Combination of two types of antidepressants,
+iii. Augmentation with lithium,
+iv. Augmentation with T3 or T4,
+v. Augmentation with antipsychotics,
+vi. Electroconvulsive therapy, or
+vii. Use of newer and experimental techniques.
+One type of depression, namely delusional depression (depression with psychotic features), is usually
+refractory to antidepressants alone. The treatments of
+choice in this condition include:
+i. An antidepressant with ECT, or
+ii. An antidepressant with antipsychotics, or
+iii. An antidepressant with lithium.
+
+Electroconvulsive Therapy (ECT)
+The indications for ECT in depression include:
+i. Severe depression with suicidal risk.
+
+
+
+
+<<<PAGE 195>>>
+
+Psychopharmacology
+
+183
+
+Table 15.6: Classification and Properties of Antidepressants
+Drugs
+
+Oral Dose
+(mg/d)
+
+Some Common Adverse Effects#
+Sedation* Orthostatic Hypotension* Anticholinergic*
+
+I. Cyclic Antidepressants
+A. Tricyclic Tertiary Amines
+1. Amitriptyline
+75-300
++++
+2. Clomipramine
+75-250
+++
+3. Dosulepin (Dotheipin)
+75-300
++++
+4. Doxepine
+75-300
++++
+5. Imipramine
+75-300
+++
+6. Lofepramine
+70-210
++
+7. Tri-imipramine
+75-300
++++
+B. Tricyclic Secondary Amines
+1. Desipramine
+75-300
+±
+2. Nortriptyline
+75-200
++
+3. Protriptyline
+15-60
+0
+C. Tetracyclic Antidepressants
+1. Amoxapine
+150-400
++
+2. Maprotiline
+75-225
+++
+3. Mianserin
+30-120
++++
+D. Bicyclic Antidepressants
+1. Viloxazine
+100-300
+±
+II. Selective Serotonin Reuptake Inhibitors (SSRIs)
+1. Citalopram
+20-40
+±
+2. Escitalopram
+10-20
+±
+3. Fluoxetine
+20-60
+±
+4. Fluvoxamine
+50-300
+±
+5. Paroxetine
+20-40
++
+6. Sertraline
+50-200
+±
+III. Serotonin Norepinephrine Reuptake Inhibitors (SNRIs)
+1. Duloxetine
+60
+±
+2. Venlafaxine
+75-375
++
+
++++
+++
++++
++++
+++
++
+++
+
++++
+++
+++
++
+++
++
+++
+
++
+++
+++
+
+++
++
+++
+
++
+++
+±
+
+++
+++
+±
+
+±
+
+±
+
+±
+±
+0
+±
+0
+±
+
+0
+0
+0
+±
+±
+0
+
+±
+±
+
+±
+±
+
+IV. Norepinephrine Serotonin Reuptake Enhancers (NSREs)
+1. Tianeptin
+37.5
++
+0
+V. Noradrenergic and Specific Serotonergic Antagonists (NaSSAs)
+1. Mirtazapine
+15-45
++++
++
+VI. Norepinephrine Dopamine Reuptake Inhibitors (NDRIs)
+1. Bupropion
+150-450
+Activating 0
+VII. Serotonin Antagonists and Reuptake Inhibitors (SARIs)
+1. Nefazodone
+200-600
+++
++
+(withdrawn from market)
+2. Trazodone
+150-400
++++
+±
+
+±
+±
+0
+±
+±
+Contd...
+
+
+
+
+<<<PAGE 266>>>
+
+254
+
+A Short Textbook of Psychiatry
+
+Blackouts 37
+Bladder training 169
+Blocking 12
+Blood
+alcohol concentration 39
+lithium levels 190
+Blunted affect 58
+Borderline personality disorder 60,
+117, 228
+Brain imaging 64, 75
+Brief
+dissociative stupor 100
+history of psychopharmacology 173
+pulse ECT 202
+Bromocriptine 48, 132
+Bruxism 140
+Bulimia nervosa 144
+Buprenorphine 44, 45
+Bupropion 52
+Buspirone 92, 98, 197
+
+Childhood
+history 9
+psychosis 165
+Chlordiazepoxide 40, 51
+Chlorpromazine 66
+Cholinesterase inhibitors 25, 26
+Chromatography 157
+Chronic
+depression 74, 77
+fatigue syndrome 109
+Circumscribed amnesia 101
+Citalopram 26
+Citrated calcium carbimide 42
+Civil responsibility 229
+Classical
+conditioning model 214
+psychoanalysis 213
+psychosomatic disorders 147
+Classification in
+child psychiatry 162
+psychiatry 2
+Classification of
+alcoholism 37
+benzodiazepines 196
+mental retardation 156
+psychotropic drugs 172
+Claustrophobia 93
+Clerambault’s syndrome 84
+Clomipramine 98, 131
+Clonazepam 94, 98
+Clonidine 44, 167, 169
+Clozapine 52, 53, 66
+Cocaine 47
+overdose 48
+preparations 47
+use disorder 46
+withdrawal syndrome 48
+Code of ethics for psychiatrists 234
+Cognitive
+behaviour therapy 68, 79, 94, 98,
+112, 215, 216
+behavioural theory 91
+therapy 215
+Combativeness 225
+Command hallucinations 57
+Common
+examples of psychosomatic disorders
+148
+psychiatric emergencies 222
+themes in suicide 222
+Community
+mental health 235
+psychiatry 235
+
+C
+Caffeine 52, 53
+CAGE questionnaire 37, 39
+Cannabis
+preparations 45
+use disorder 45
+Capgras’ syndrome 87
+Carbamazepine 79, 192
+Carphologia 20
+Castration anxiety 211
+Cataplexy 138
+Catastrophic reaction 22
+Catatonia 59
+Catatonic
+behaviour 58
+features 57
+schizophrenia 59
+signs 11, 225
+stupor 67, 225
+syndrome 225
+withdrawal 225
+Causes of
+catatonic stupor 225
+hypersomnia 138
+mental retardation 157
+Censor 206
+Central mental health authority 233, 237
+Cerebral palsy 159
+Chasing the dragon 43
+Child
+abuse 228
+psychiatry 162
+
+Comparison of delirium and dementia 22
+Complex partial seizures 29, 31, 61, 227
+Complicated grief reaction 152
+Complications of
+alcohol dependence 39
+chronic alcohol use 38
+Conceptual thinking stage 153
+Concrete thinking stage 153
+Conditioning devices 169
+Conduct disorders 167
+Conjugal paranoia 84
+Consultation-liaison psychiatry 149
+Continuous amnesia 101
+Contraindications of disulfiram 42
+Conversion
+disorder 99
+release symptoms 102
+Coping
+mechanisms 207
+skills training 112
+Coprolalia 168
+Cortical dementia 24
+Counselling 110
+Counter
+phobic defense 210
+thoughts 96
+Covert sensitisation 41, 215
+CPAP 139
+Crack 47
+Cretinism 159
+Criminal lunatic 232
+Crisis 221
+intervention 112
+centre 228
+Critical
+comments 64
+remarks 68
+Cross-gender homosexuality 122
+Culture bound syndromes 110
+Cyclothymia 73
+Cyproheptadine 144
+
+D
+Dangerous Drug Act of 1930 233
+Deep brain stimulation 199
+Defense mechanism 90
+Definition of psychiatric disorder 1
+Deliberate self-harm 222
+Delirium 19, 21, 23
+tremens 38, 41
+Delusion of doubles 87
+Delusional
+depression 77, 78
+
+

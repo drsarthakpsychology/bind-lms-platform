@@ -1,0 +1,1049 @@
+<<<PAGE 881>>>
+
+term behavioral change (rehabilitation); whether the program makes
+extensive use of pharmacologic interventions; and whether the program
+mainly uses individual therapy, Alcoholics Anonymous (AA) or other 12step principles, or therapeutic community principles. For example, the
+National Institute on Drug Abuse suggested the following categories of
+treatment: long-term residential treatment, short-term residential treatment,
+outpatient treatment programs, individualized drug counseling, group
+counseling, and treatments for individuals involved in the criminal justice
+system.
+Selecting a Treatment
+Not all interventions apply to all types of substance use disorders, and some
+of the more coercive interventions used for illicit drugs do not apply to legal
+substances, such as tobacco. Addictive behaviors do not change abruptly but
+through a series of stages. Experts propose five stages in this gradual process:
+precontemplation, contemplation, preparation, action, and maintenance. For
+some types of addictions, the therapeutic alliance improves when the
+treatment approach is tailored to the patient’s stage of readiness to change.
+Interventions for some drug use disorders may have a specific pharmacologic
+agent as a critical component; for example, disulfiram, naltrexone, or
+acamprosate for alcoholism; methadone, levomethadyl acetate, or
+buprenorphine for heroin addiction; and nicotine delivery devices,
+varenicline, or bupropion for tobacco dependence.
+In general, brief interventions (e.g., a few weeks of detoxification, whether
+in or out of a hospital) used for persons who are severely dependent on illicit
+opioids have limited effect on outcome measured a few months later.
+Substantial reductions in illicit drug use, antisocial behaviors, and psychiatric
+distress among patients dependent on cocaine or heroin are much more likely
+following treatment lasting at least 3 months. Such a time-in-treatment effect
+occurs across very different modalities, from residential therapeutic
+communities to ambulatory methadone maintenance programs. Although
+some patients appear to benefit from a few days or weeks of treatment, a
+substantial percentage of users of illicit drugs drop out (or are dropped) from
+treatment before they have achieved significant benefits.
+Treatment outcomes vary widely; this is partly due to the great variety of
+
+
+
+
+<<<PAGE 914>>>
+
+Interventions) demonstrated that naltrexone improves clinical outcomes, and
+a Cochrane review of naltrexone concluded that naltrexone was effective in
+reducing heavy drinking days. The typical dose is 50 mg/day, and side effects
+include mild GI upset and lethargy.
+The second medication, acamprosate, antagonizes neuronal overactivity
+related to the excitatory neurotransmitter glutamate, at least in part, by acting
+as an antagonist to N-methyl-D-aspartate (NMDA) receptors. Acamprosate
+may diminish mild anxiety, mood swings, and other sleep difficulties
+associated with the protracted withdrawal syndrome observed after the first 4
+to 5 days of abstinence. The typical dose is about 2,000 mg divided into three
+doses per day and is associated with relatively mild side effects of GI
+problems such as diarrhea.
+A third possible drug of interest is the alcohol-sensitizing agent disulfiram.
+Disulfiram is given in daily doses of 250 mg before discharging the patient
+from the intensive first phase of outpatient rehabilitation or inpatient care.
+The goal is to place the patient in a condition in which drinking alcohol
+precipitates an uncomfortable physical reaction, including nausea, vomiting,
+and a burning sensation in the face and stomach. Few data support
+disulfiram’s effectiveness, most likely because patients stop it when they
+resume drinking. Many clinicians have stopped routinely prescribing the
+agent, partly in recognition of the dangers associated with the drug itself:
+mood swings, rare instances of psychosis, the possibility of increased
+peripheral neuropathies, the relatively rare occurrence of other significant
+neuropathies, and potentially fatal hepatitis. Moreover, we should not give
+disulfiram to patients with preexisting heart disease, cerebral thrombosis,
+diabetes, and some other conditions, because an alcohol reaction to the
+disulfiram could be fatal.
+Table 4-15 gives a summary of medications used for alcohol dependence.
+Two other medications, while not yet approved for the treatment of alcohol
+use disorders, are worth brief mention. Several studies using the
+anticonvulsant topiramate have reported improvement in drinking patterns.
+Additionally, some data suggest that the 5-HT3 ondansetron might be
+beneficial in alcohol use disorder treatment. No evidence exists that
+antidepressant medications, such as selective serotonin reuptake inhibitors
+(SSRIs), lithium, or antipsychotic medications, are significantly effective in
+
+
+
+
+<<<PAGE 916>>>
+
+Medications for Treating Alcohol Dependence
+
+Action
+
+Naltrexone
+
+Acamprosate
+
+Disulfiram
+
+Blocks opioid
+receptors,
+resulting in
+reduced
+craving and
+reduced
+reward in
+response to
+drinking
+
+Not well
+Inhibits
+understood.
+intermediate
+Likely an NMDA
+metabolism of
+receptor
+alcohol,
+antagonist and
+causing a
+positive allosteric
+buildup of
+modulator of
+acetaldehyde
+GABAa receptors
+and a reaction
+of flushing,
+sweating,
+nausea, and
+tachycardia if a
+patient drinks
+alcohol
+
+Contraindications Currently using Severe renal
+Concomitant use
+opioids or in
+impairment (CrCl
+of alcohol or
+acute opioid
+≤30 mL/min)
+alcoholwithdrawal;
+containing
+anticipated
+preparations or
+need for
+metronidazole;
+opioid
+coronary artery
+analgesics;
+disease; severe
+acute
+myocardial
+hepatitis or
+disease
+liver failure
+Precautions
+
+Other hepatic
+disease;
+renal
+impairment;
+history of
+
+Moderate renal
+High impulsivity—
+impairment
+likely to drink
+(dose
+while using it;
+adjustment for
+psychoses
+CrCl between 30
+(current or
+
+
+
+
+<<<PAGE 918>>>
+
+dizziness;
+headache;
+anxiety;
+fatigue
+
+headache; back
+pain; infection;
+flu syndrome;
+chills;
+somnolence;
+decreased libido;
+amnesia;
+confusion
+
+Examples of drug Opioid
+No clinically
+interactions
+analgesics
+relevant
+(blocks
+interactions
+action);
+known
+yohimbine
+(use with
+naltrexone
+increases
+negative drug
+effects)
+
+Usual adult
+dosage
+
+Amitriptyline;
+anticoagulants
+such as
+warfarin;
+diazepam;
+isoniazid;
+metronidazole;
+phenytoin;
+theophylline;
+warfarin; any
+nonprescription
+drug-containing
+alcohol
+
+Oral dose: 50
+Oral dose: 666 mg Oral dose: 250
+mg daily
+(two 333-mg
+mg daily (range
+before
+tablets) three
+125–500 mg)
+prescribing:
+times daily or, for
+before
+evaluate for
+patients with
+prescribing:
+possible
+moderate renal
+warn that the
+current opioid
+impairment (CrCl
+patient should
+use; consider
+30–50 mL/min),
+not take
+a urine
+reduce to 333
+disulfiram for at
+toxicology
+mg (one tablet)
+least 12 hr after
+screen for
+three times daily
+drinking and
+opioids,
+before
+that a
+including
+prescribing:
+disulfiramsynthetic
+establish
+alcohol reaction
+
+
+
+
+<<<PAGE 923>>>
+
+alcohol can remain unabsorbed in the stomach for hours. Furthermore,
+pylorospasm often results in nausea and vomiting.
+Once the bloodstream absorbs the alcohol, it distributes to all body tissues.
+Alcohol uniformly dissolves in the body’s water, so tissues containing a high
+proportion of water receive a high concentration of alcohol. The intoxicating
+effects are more significant for a given blood alcohol concentration when the
+concentration is rising than when it is falling (the Mellanby effect). For this
+reason, the rate of absorption bears directly on the intoxication response.
+Metabolism. Hepatic oxidation accounts for about 90 percent of alcohol
+metabolism. The remaining 10 percent is excreted unchanged by the kidneys
+and lungs. The rate of oxidation by the liver is constant and independent of
+the body’s energy requirements. The body can metabolize about 15 mg/dL
+per hour, with a range of 10 to 34 mg/dL per hour. That is, the average person
+oxidizes three-fourths of an ounce of 40 percent (80 proof) alcohol in an
+hour. In persons with a history of excessive alcohol consumption,
+upregulation of the necessary enzymes results in rapid alcohol metabolism.
+Two enzymes metabolize alcohol: alcohol dehydrogenase (ADH) and
+aldehyde dehydrogenase. ADH catalyzes the conversion of alcohol into
+acetaldehyde, which is a toxic compound; aldehyde dehydrogenase catalyzes
+the conversion of acetaldehyde into acetic acid. Disulfiram inhibits aldehyde
+dehydrogenase. Some studies have shown that women have a lower ADH
+blood content than men; this fact may account for woman’s tendency to
+become more intoxicated than men after drinking the same amount of
+alcohol. The decreased function of alcohol-metabolizing enzymes in some
+Asian persons can also lead to more rapid intoxication and toxic symptoms.
+Alcohol’s Effects on the Brain
+Biochemistry. Alcohol has prominent effects on almost all neurochemical
+systems, with different actions during intoxication versus withdrawal.
+Perhaps the most potent effects are on GABA complexes in the brain,
+especially on the GABA-A receptor (GABAA), contributing to the sedating,
+sleep-inducing, anticonvulsant, and muscle-relaxing properties of alcohol.
+Ethanol also impacts NMDA receptors, with dampened stimulatory effects
+during intoxication and heightened activity during withdrawal. Alcohol
+
+
+
+
+<<<PAGE 989>>>
+
+that chronic cocaine use alters the function of multiple neurotransmitter
+systems, especially the dopaminergic and serotonergic transmitters regulating
+hedonic tone, and that cocaine induces a state of relative dopaminergic
+deficiency. Although the evidence for such alterations in dopaminergic
+function has been growing, it has been challenging to demonstrate that agents
+theoretically capable of modifying dopamine function can alter the course of
+treatment.
+Tricyclic antidepressant drugs yielded some positive results when used
+early in treatment with minimally drug-dependent patients; however, they are
+of little or no use inducing abstinence in moderate or severe cases.
+Also tried but not confirmed effective in controlled studies are other
+antidepressants, such as bupropion, MAOIs, SSRIs, antipsychotics, lithium,
+several different calcium channel inhibitors, and anticonvulsants. Several
+studies have found increased rates of abstinence with the use of topiramate
+for cocaine use disorders; however, there are also negative trials of
+topiramate in this population.
+Disulfiram has demonstrated potential benefits in the pharmacotherapy of
+cocaine use disorder. Disulfiram has long been used in the treatment of
+alcohol use disorder because it inhibits an enzyme involved in the
+metabolism of ethanol. Though disulfiram was initially considered a potential
+treatment option for individuals with both alcohol and cocaine use disorders,
+studies demonstrated that disulfiram appears to have a direct effect on the
+metabolism of dopamine and cocaine itself; it acts as an inhibitor of
+dopamine β-hydroxylase, thereby slowing the breakdown of synaptic
+dopamine and increasing dopamine levels. Individuals who are coadministered cocaine and disulfiram describe more negative responses to
+cocaine, including anxiety, restlessness, and paranoia. These reactions may,
+in part, explain the effects of disulfiram in decreasing cocaine use. Issues
+affecting treatment response to disulfiram include challenges with treatment
+nonadherence, risks of inducing psychotic symptoms with combined cocaine
+and disulfiram use, and risks of serious medical consequences if a patient
+were to consume alcohol, given the frequent co-occurrence of alcohol and
+cocaine use disorders.
+
+EPIDEMIOLOGY
+
+
+
+
+<<<PAGE 1086>>>
+
+2013;309:243.
+Shaffer HJ, Martin R. Disordered gambling: Etiology, trajectory, and clinical
+considerations. Annu Rev Clin Psychol. 2011;7:483.
+Smetaniuk P. A preliminary investigation into the prevalence and prediction
+of problematic cell phone use. J Behav Addict. 2014;3:41–53.
+Smith HS, Kirsh KL, Passik SD. Chronic opioid therapy issues associated
+with opioid abuse potential. J Opioid Manag. 2009;5:287.
+Spiegel D. Trance formations: Hypnosis in brain and body. Depress Anxiety.
+2013;30(4):342–352.
+Stafford LD, Wright C, Yeomans MR. The drink remains the same: Implicit
+positive associations in high but not moderate or non-caffeine users.
+Psychol Addict Behav. 2010;24:274.
+Strain EC. Chapter 11: Substance-related disorders: Introduction. In: Sadock
+BJ, Sadock VA, Ruiz P, eds. Kaplan & Sadock’s Comprehensive Textbook
+of Psychiatry. 10th ed. Philadelphia, PA: Wolters Kluwer; 2017:1262–
+1264.
+Suh JJ, Pettinati HM, Kampman KM, O’Brien CP. The status of disulfiram: a
+half of a century later. J Clin Psychopharmacol. 2006;26:290–302.
+Svrakic DM, Lustman PJ, Mallya A, Lynn TA, Finney R, Svrakic NM.
+Legalization, decriminalization & medicinal use of cannabis: A scientific
+and public health perspective. Mo Med. 2012;109:90.
+Tavares H, Zilberman ML, el-Guebaly N. Are there cognitive and
+behavioural approaches specific to the treatment of pathological gambling?
+Can J Psychiatry. 2003;48:22.
+Testa A, Giannuzzi R, Sollazzo F, Petrongolo L, Bernardini L, Dain S.
+Psychiatric emergencies (part II): psychiatric disorders coexisting with
+organic diseases. Eur Rev Med Pharmacol Sci. 2013;17:65.
+Todd G, Noyes C, Flavel SC, Della Vedova CB, Spyropoulos P, Chatterton
+B, Berg D, White JM. Illicit stimulant use is associated with abnormal
+substantia nigra morphology in humans. PLoS One. 2013;8(2):e56438.
+Toneatto T, Brands B, Selby P. A randomized, double-blind, placebocontrolled trial of naltrexone in the treatment of concurrent alcohol use
+disorder and pathological gambling. Am J Addict. 2009;18:219.
+Unger A, Jung E, Winklbaur B, Fischer G. Gender issues in the
+pharmacotherapy of opioid-addicted women: Buprenorphine. J Addict Dis.
+2010;29:217.
+
+
+
+
+<<<PAGE 1127>>>
+
+or hypothyroidism, panhypopituitarism
+Vitamin deficiencies
+
+Vitamin B12 deficiency, folate deficiency,
+thiamine deficiency, niacin deficiency
+
+Medications
+
+Adrenocorticotropic hormones, anabolic
+steroids, corticosteroids, cimetidine,
+antibiotics (cephalosporins, penicillin),
+disulfiram, anticholinergic agents
+
+Substances
+
+Amphetamines, cocaine, alcohol, cannabis,
+hallucinogens
+
+Toxins
+
+Mercury, arsenic, manganese, thallium
+
+Mood Disorders
+A patient with a major depressive episode may present with delusions and
+hallucinations, as can a patient with bipolar disorder. Delusions seen with
+psychotic depression are typically mood-congruent and involve themes such
+as guilt, self-depreciation, deserved punishment, and incurable illnesses. In
+mood disorders, psychotic symptoms resolve entirely with the resolution of
+depression. A depressive episode that is this severe may also result in loss of
+functioning, a decline in self-care, and social isolation, but these are
+secondary to the depressive symptoms and should not be confused with the
+negative symptoms of schizophrenia.
+A full-blown manic episode often presents with delusions and sometimes
+hallucinations. Delusions in mania are most often mood-congruent and
+typically involve grandiose themes. The flight of ideas seen in mania may, at
+times, be confused with the thought disorder of schizophrenia. Special
+attention during the mental status examination of a patient with a flight of
+ideas is required to note whether the associative links between topics are
+conserved. However, the conversation is awkward for the observer to follow
+because of the patient’s accelerated rate of thinking.
+Personality Disorders
+Various personality disorders may have some features of schizophrenia.
+Schizotypal, schizoid, and borderline personality disorders are personality
+
+
+
+
+<<<PAGE 1966>>>
+
+Bromocriptine
+
+Antipsychotic antagonizes
+dopamine receptor
+stimulation
+
+Increased prolactin
+
+Caffeinated
+beverages
+
+Form precipitate with
+antipsychotic solutions
+
+Possible diminished
+antipsychotic
+effect
+
+Cimetidine
+
+Reduced antipsychotic
+Decreased
+absorption and clearance
+antipsychotic
+effect
+
+Clonidine
+
+Antipsychotic potentiates α- Hypotension or
+adrenergic hypotensive
+hypertension
+effect
+
+Disulfiram
+
+Impairs antipsychotic
+metabolism
+
+Increased
+antipsychotic
+concentrations
+
+Methyldopa
+
+Unknown
+
+BP elevations
+
+Phenytoin
+
+Induction of antipsychotic
+metabolism; decreased
+phenytoin metabolism
+
+Decreased
+antipsychotic
+concentrations:
+increased
+phenytoin levels
+
+SSRIs
+
+Impair antipsychotic
+metabolism;
+pharmacodynamic
+interaction
+
+Sudden onset of
+extrapyramidal
+symptoms
+
+Valproic acid
+
+Antipsychotic inhibits
+Increased valproic
+valproic acid metabolism
+acid half-life and
+levels
+
+ACEI, angiotensin-converting enzyme inhibitor; AD, antidepressant; BP, blood pressure; CNS,
+central nervous system; GI, gastrointestinal; SSRI, selective serotonin reuptake inhibitor.
+From Ereshosky L, Overman GP, Karp JK. Current psychotropic dosing and monitoring
+guidelines. Prim Psychiatry. 1996;3:21, with permission.
+
+
+
+
+<<<PAGE 2040>>>
+
+or sympathomimetics
+SSRIs, clomipramine, venlafaxine, sibutramine
+Sympathomimetics (amphetamines, cocaine, methylphenidate,
+dopamine, epinephrine, norepinephrine, isoproterenol,
+ephedrine, pseudoephedrine, phenylpropanolamine)
+L-Tryptophan
+Use Carefully
+Anticholinergics
+Antihistamines
+Disulfiram
+Bromocriptine
+Hydralazine
+Sedative-hypnotics
+Terpin hydrate with codeine
+Tricyclics and tetracyclics (avoid clomipramine)
+SSRI, selective serotonin reuptake inhibitor.
+
+When switching from an irreversible MAOI to any other type of
+antidepressant drug, persons should wait at least 14 days after the last dose of
+the MAOI before beginning the use of the next drug to allow replenishment
+of the body’s MAOs. When switching from an antidepressant to an
+irreversible MAOI, persons should wait 10 to 14 days (or 5 weeks for
+fluoxetine [Prozac]) before starting the use of the MAOI to avoid drug–drug
+interactions. In contrast, MAO activity recovers completely 24 to 48 hours
+after the last dose of a RIMA.
+The effects of the MAOIs on hepatic enzymes are poorly studied.
+Tranylcypromine inhibits CYP2C19. Moclobemide inhibits CYP2D6,
+CYP2C19, and CYP1A2 and is a substrate for 2C19.
+Cimetidine (Tagamet) and fluoxetine significantly reduce the elimination
+of moclobemide. Modest doses of fluoxetine and moclobemide administered
+concurrently may be well tolerated, with no significant pharmacodynamic or
+pharmacokinetic interactions.
+Laboratory Interferences
+MAOIs may lower blood glucose concentrations. MAOIs artificially raise
+
+
+
+
+<<<PAGE 2107>>>
+
+clonic (grand mal) and complex partial (psychomotor, temporal lobe)
+seizures, phenytoin is also used for the treatment of acute mania in bipolar
+disorder.
+Precautions and Adverse Reactions. The most common adverse
+reactions reported with phenytoin therapy are usually dose-related and
+include nystagmus, ataxia, slurred speech, decreased coordination, and
+mental confusion. Other side effects include dizziness, insomnia, transient
+nervousness, motor twitching, and headaches. There have been rare reports of
+phenytoin induced dyskinesias, similar to those induced by phenothiazine and
+other neuroleptic drugs. More severe side effects include thrombocytopenia,
+leukopenia, agranulocytosis, and pancytopenia, with or without bone marrow
+suppression.
+Several reports have suggested the development of lymphadenopathy
+(local or generalized), including benign lymph node hyperplasia,
+pseudolymphoma, lymphoma, and Hodgkin’s disease. Prenatal exposure to
+phenytoin may increase the risks for congenital malformations, and a
+potentially life-threatening bleeding disorder related to decreased levels of
+vitamin K–dependent clotting factors may occur in newborns exposed to
+phenytoin in utero. Hyperglycemia has been reported with phenytoin use;
+also, the agent may increase the serum glucose level in patients with diabetes.
+Drug Interactions. Acute alcohol intake, amiodarone, chlordiazepoxide,
+cimetidine, diazepam, disulfiram, estrogens, fluoxetine, H2-antagonists,
+isoniazid, methylphenidate, phenothiazines, salicylates, and trazodone may
+increase phenytoin serum levels. Drugs that may lower phenytoin levels
+include carbamazepine, chronic alcohol abuse, and reserpine.
+Laboratory Interferences. Phenytoin may decrease serum concentrations
+of thyroxine. It may cause increased serum levels of glucose, alkaline
+phosphatase, and γ-glutamyl transpeptidase.
+Dosage and Clinical Guidelines. Patients may be started on one 100-mg
+extended oral capsule three times daily, and the dosage then adjusted to suit
+individual requirements. Patients may then be switched to once-a-day dosing,
+which is more convenient. In this case, extended-release capsules may be
+
+
+
+
+<<<PAGE 2122>>>
+
+Hyperacusis
+
+Myoclonus
+
+Nausea
+
+Delirium
+
+Difficulty concentrating
+
+Seizures
+
+Drug Interactions
+The most common and potentially severe benzodiazepine receptor agonist
+interaction is excessive sedation and respiratory depression occurring when
+benzodiazepines are administered concomitantly with other CNS depressants,
+such as alcohol, barbiturates, tricyclic and tetracyclic drugs, DRAs, opioids,
+and antihistamines. Ataxia and dysarthria may be likely to occur when
+lithium, antipsychotics, and clonazepam are combined. The combination of
+benzodiazepines and clozapine (Clozaril) has been reported to cause delirium
+and should be avoided. Cimetidine (Tagamet), disulfiram (Antabuse),
+isoniazid, estrogen, and oral contraceptives increase the plasma concentration
+of diazepam, chlordiazepoxide, clorazepate, and flurazepam. However,
+antacids may reduce the GI absorption of benzodiazepines. The plasma
+concentrations of triazolam and alprazolam are increased to potentially toxic
+concentrations by nefazodone (Serzone) and fluvoxamine (Luvox).
+The manufacturer of nefazodone recommends that the dosage of triazolam
+be lowered by 75 percent, and the dosage of alprazolam be lowered by 50
+percent, when given concomitantly with nefazodone. Over-the-counter
+preparations of the kava plant, advertised as a “natural tranquilizer,” can
+potentiate the action of benzodiazepine receptor agonists through synergistic
+overactivation of GABA receptors. Carbamazepine can lower the plasma
+concentration of alprazolam. Antacids and food may decrease the plasma
+concentrations of benzodiazepines, and smoking may increase the
+metabolism of benzodiazepines. The benzodiazepines may increase the
+plasma concentrations of phenytoin and digoxin (Lanoxin). The SSRIs may
+prolong and exacerbate the severity of zolpidem-induced hallucinations.
+Deaths have been reported when parental lorazepam is given with parental
+olanzapine.
+Dosage and Clinical Guidelines
+
+
+
+
+<<<PAGE 2139>>>
+
+abuse among drug addicts.
+Disulfiram (Antabuse) inhibits acetaldehyde
+dehydrogenase and reduces the metabolism of paraldehyde, leading to a
+possible toxic concentration of paraldehyde. Paraldehyde has additive
+sedating effects in combination with other CNS depressants such as alcohol
+or benzodiazepines.
+DRUG
+
+INTERACTIONS.
+
+LABORATORY INTERFERENCES. Paraldehyde can interfere with the metyra-
+
+pone, phentolamine, and urinary 17-hydroxycorticosteroid tests.
+DOSING AND CLINICAL GUIDELINES. Paraldehyde is available in 30-mL vials for
+
+oral, IV, or rectal use. For seizures in adults, up to 12 mL (diluted to a 10
+percent solution) can be administered by gastric tube every 4 hours. For
+children, the oral dose is 0.3 mg/kg.
+Meprobamate. Meprobamate, a carbamate, was introduced shortly before
+the benzodiazepines, specifically to treat anxiety. It is also used for muscle
+relaxant effects.
+PHARMACOLOGIC ACTIONS. Meprobamate is rapidly absorbed from the GI
+
+tract and IM injections. It is metabolized primarily by the liver, and a small
+portion is excreted unchanged in the urine. The plasma half-life is
+approximately 10 hours.
+Meprobamate is indicated for the short-term
+treatment of anxiety disorders. It has also been used as a hypnotic and is
+prescribed as a muscle relaxant.
+THERAPEUTIC INDICATIONS.
+
+Meprobamate can cause CNS
+depression and death in overdose and carries the risk of abuse by patients
+with drug or alcohol use disorders. Abrupt cessation after long-term use can
+lead to withdrawal syndrome, including seizures and hallucinations.
+Meprobamate can exacerbate acute intermittent porphyria. Other rare side
+effects include hypersensitivity reactions, wheezing, hives, paradoxical
+excitement, and leukopenia. It should not be used in patients with hepatic
+PRECAUTIONS AND ADVERSE REACTIONS.
+
+
+
+
+<<<PAGE 2182>>>
+
+discussed earlier, including those with opioid agonists associated with drug
+abuse as well as those involving antiemetics and antitussives. Because of its
+extensive hepatic metabolism, naltrexone may affect or be affected by other
+drugs that influence hepatic enzyme levels. However, the clinical importance
+of these potential interactions is not known.
+One potentially hepatotoxic drug that has been used in some cases with
+opioid receptor antagonists is disulfiram (Antabuse). Although no adverse
+effects were observed, frequent laboratory monitoring is indicated when such
+combination therapy is contemplated. Opioid receptor antagonists have been
+reported to potentiate the sedation associated with the use of thioridazine
+(Mellaril), an interaction that probably applies equally to all low-potency
+DRAs.
+Intravenous nalmefene has been administered after benzodiazepines,
+inhalational anesthetics, muscle relaxants, and muscle relaxant antagonists
+were administered in conjunction with general anesthetics without any
+adverse reactions. Care should be taken when using flumazenil (Romazicon)
+and nalmefene together because both of these agents have been shown to
+induce seizures in preclinical studies.
+Laboratory Interferences
+The potential for false-positive urine for opiates using less specific urine
+screens such as enzyme-multiplied immunoassay technique (EMIT) may
+exist, given that naltrexone and nalmefene are derivatives of oxymorphone.
+Naltrexone does not interefere with thin-layer, gas-liquid, and high-pressure
+liquid chromatographic methods used for the detection of opiates in the urine.
+Dosage and Clinical Guidelines
+We should take several steps to ensure that the person is opioid-free. These
+steps are meant to avoid the possibility of precipitating an acute opioid
+withdrawal syndrome. Within a supervised detoxification setting, at least 5
+days should elapse after the last dose of short-acting opioids, such as heroin,
+hydromorphone (Dilaudid), meperidine (Demerol), or morphine, and at least
+10 days should elapse after the last dose of longer-acting opioids, such as
+methadone, before opioid antagonists are initiated. Some rapid detoxification
+protocols use shorter abstinence periods, however these require special
+
+
+
+
+<<<PAGE 2184>>>
+
+Rapid Detoxification. Rapid detoxification has been standardized using
+naltrexone, although nalmefene would be expected to be equally effective
+with fewer adverse effects. In rapid detoxification protocols, the addicted
+person stops opioid use abruptly and begins the first opioid-free day by
+taking clonidine 0.2 mg orally every 2 hours for nine doses, to a maximum
+dose of 1.8 mg, during which time the BP is monitored every 30 to 60
+minutes for the first 8 hours. Naltrexone 12.5 mg is administered 1 to 3 hours
+after the first dose of clonidine. To reduce muscle cramps and later insomnia,
+a short-acting benzodiazepine, such as oxazepam 30 to 60 mg, is
+administered simultaneously with the first dose of clonidine, and half of the
+initial dose is readministered every 4 to 6 hours as needed. The maximum
+daily dosage of oxazepam should not exceed 180 mg. The person undergoing
+rapid detoxification should be accompanied home by a reliable escort. On the
+second day, similar doses of clonidine and the benzodiazepine are
+administered but with a single dose of naltrexone 25 mg taken in the
+morning. Relatively asymptomatic persons may return home after 3 to 4
+hours. Administration of the daily maintenance dose of 50 mg of naltrexone
+is begun on the third day, and the dosages of clonidine and the
+benzodiazepine are gradually tapered off over 5 to 10 days.
+
+DISULFIRAM AND ACAMPROSATE
+Disulfiram (Antabuse) and acamprosate (Campral) are drugs used to treat
+alcohol use disorder. Disulfiram has suffered from a reputation as a
+dangerous medication only suitable for highly motivated and strictly
+supervised drinkers because of the severe physical reactions the drug causes
+after drinking. Experience has shown, however, that at recommended doses,
+it is an acceptable and safe medication for dependent drinkers seeking to
+sustain abstinence. The properties that constitute disulfiram’s main
+therapeutic effect (i.e., the ability to produce unpleasant symptoms after
+alcohol intake, also known as disulfiram–alcohol reaction) have created that
+perception of dangerousness.
+In the most severe cases, when disulfiram is combined with alcohol, severe
+clinical conditions can occur. These include respiratory depression,
+cardiovascular collapse, acute heart failure, convulsions, loss of
+consciousness, and death in rare cases. These potential complications, as well
+
+
+
+
+<<<PAGE 2185>>>
+
+as the development of alternative antialcohol medications, have been the
+limiting factors for the broader use of disulfiram. Unlike disulfiram,
+acamprosate, the other drug discussed in this section, does not produce
+aversive side effects. Acamprosate is now prescribed more commonly than
+disulfiram in outpatient settings, but disulfiram is prescribed more often in
+inpatient settings because it helps facilitate initial abstinence.
+Other drugs that are useful in reducing alcohol consumption include
+naltrexone (ReVia, Trexan), nalmefene (Revex), topiramate (Topamax), and
+gabapentin (Neurontin). These agents are discussed in their respective
+sections.
+Disulfiram
+Pharmacologic Actions. Disulfiram is almost completely absorbed from
+the GI tract after oral administration. Its half-life is estimated to be 60 to 120
+hours. Therefore, it may take 1 or 2 weeks to eliminate disulfiram from the
+body after taking the last dose.
+The metabolism of ethanol proceeds through oxidation via alcohol
+dehydrogenase to the formation of acetaldehyde, which is further metabolized
+to acetyl-coenzyme A (acetyl-CoA) by aldehyde dehydrogenase. Disulfiram
+is an aldehyde dehydrogenase inhibitor that interferes with the metabolism of
+alcohol by producing a marked increase in blood acetaldehyde concentration.
+The accumulation of acetaldehyde (to a level up to 10 times higher than
+occurs in the normal metabolism of alcohol) produces a wide array of
+unpleasant reactions, called the disulfiram–alcohol reaction, characterized by
+nausea, throbbing headache, vomiting, hypertension, flushing, sweating,
+thirst, dyspnea, tachycardia, chest pain, vertigo, and blurred vision. The
+reaction occurs almost immediately after the ingestion of one alcoholic drink
+and may last from 30 minutes to 2 hours.
+BLOOD CONCENTRATIONS IN RELATION TO ACTION. Plasma concentrations of
+
+disulfiram vary among individuals because of several factors, most notably
+age and hepatic function. In general, the severity of disulfiram–alcohol
+reaction is proportional to the amount of the ingested disulfiram and alcohol.
+Nevertheless, disulfiram plasma levels are rarely obtained in clinical practice.
+The positive correlation between plasma concentrations of alcohol and the
+
+
+
+
+<<<PAGE 2186>>>
+
+intensity of the reaction is described as follows: in sensitive individuals, as
+little as a 5 to 10 mg/100 mL increase of the plasma alcohol level may
+produce mild symptoms; fully developed symptoms occur at alcohol levels of
+50 mg/100 mL, and levels as high as 125 to 150 mg/100 mL result in loss of
+consciousness and coma.
+Therapeutic Indications. The primary indication for disulfiram use is as
+an aversive conditioning treatment for alcohol use disorder. Either the fear of
+having a disulfiram–alcohol reaction or the memory of having had one is
+meant to condition the person not to use alcohol. Usually, describing the
+severity and the unpleasantness of the disulfiram–alcohol reaction graphically
+enough discourages the person from imbibing alcohol. Disulfiram treatment
+should be combined with such treatments as psychotherapy, group therapy,
+and support groups such as Alcoholics Anonymous (AA). Treatment with
+disulfiram requires careful monitoring because a person can decide not to
+take the medication.
+Precautions and Adverse Reactions
+WITH ALCOHOL CONSUMPTION. The intensity of the disulfiram–alcohol reaction
+varies with each person. In extreme cases, it is marked by respiratory
+depression, cardiovascular collapse, myocardial infarction, convulsions, and
+death. Therefore, disulfiram is contraindicated for persons with significant
+pulmonary or cardiovascular disease. Also, disulfiram should be used with
+caution, if at all, by persons with nephritis, brain damage, hypothyroidism,
+diabetes, hepatic disease, seizures, polydrug dependence, or an abnormal
+electroencephalogram. Most fatal reactions occur in persons who take more
+than 500 mg a day of disulfiram and who consume more than 3 oz of alcohol.
+The treatment of a severe disulfiram–alcohol reaction is primarily supportive
+to prevent shock. The use of oxygen, intravenous vitamin C, ephedrine, and
+antihistamines have been reported to aid in recovery.
+WITHOUT ALCOHOL CONSUMPTION. The adverse effects of disulfiram in the
+
+absence of alcohol consumption include fatigue, dermatitis, impotence, optic
+neuritis, a variety of mental changes, and hepatic damage. A metabolite of
+disulfiram inhibits dopamine-
+
+
+
+
+<<<PAGE 2187>>>
+
+β-hydroxylase, the enzyme that metabolizes dopamine into norepinephrine
+and epinephrine, and thus may exacerbate psychosis in persons with
+psychotic disorders. Catatonic reactions may also occur.
+Drug Interactions. Disulfiram increases the blood concentration of
+diazepam (Valium), paraldehyde, phenytoin (Dilantin), caffeine,
+tetrahydrocannabinol (the active ingredient in marijuana), barbiturates,
+anticoagulants, isoniazid (Nydrazid), and tricyclic drugs. Disulfiram should
+not be administered concomitantly with paraldehyde because paraldehyde is
+metabolized to acetaldehyde in the liver.
+Laboratory Interferences. In rare instances, disulfiram has been reported
+to interfere with the incorporation of iodine-131 into protein-bound iodine.
+Disulfiram may reduce urinary concentrations of homovanillic acid, the
+major metabolite of dopamine, because it inhibits dopamine hydroxylase.
+Dosage and Clinical Guidelines. Disulfiram is supplied in 250- and 500mg tablets. The usual initial dosage is 500 mg a day, taken by mouth for the
+first 1 or 2 weeks, followed by a maintenance dosage of 250 mg a day. The
+dosage should not exceed 500 mg a day. The maintenance dosage range is
+125 to 500 mg a day.
+Persons taking disulfiram must be instructed that the ingestion of even the
+smallest amount of alcohol will bring on a disulfiram–alcohol reaction, with
+all of its unpleasant effects. Also, persons should be warned against ingesting
+any alcohol-containing preparations, such as cough drops, tonics of any kind,
+and alcohol-containing foods and sauces. Some reactions have occurred in
+patients who used alcohol-based lotions, toilet water, colognes, or perfumes
+and inhaled the fumes; therefore, precautions must be explicit and should
+include any topically applied preparations containing alcohol, such as
+perfume.
+Disulfiram should not be administered until the person has abstained from
+alcohol for at least 12 hours. Persons should be warned that the disulfiram–
+alcohol reaction may occur as long as 1 or 2 weeks after the last dose of
+disulfiram. Persons taking disulfiram should carry identification cards
+describing the disulfiram–alcohol reaction and listing the name and telephone
+number of the physician to be called.
+
+
+
+
+<<<PAGE 2188>>>
+
+Acamprosate
+Pharmacologic Actions. Acamprosate’s mechanism of action is not fully
+understood, but it is thought to antagonize neuronal overactivity related to the
+actions of the excitatory neurotransmitter glutamate. In part, this may result
+from antagonism of NMDA receptors.
+Indications. Acamprosate is used for treating alcohol-dependent individuals
+seeking to continue to remain alcohol-free after they have stopped drinking.
+Its efficacy in promoting abstinence has not been demonstrated in persons
+who have not undergone detoxification and who have not achieved alcohol
+abstinence before beginning treatment.
+Precautions and Adverse Effects. Side effects are mostly seen early in
+treatment and are usually mild and transient. The most common side effects
+are headache, diarrhea, flatulence, abdominal pain, paresthesias, and various
+skin reactions. No adverse events occur after abrupt withdrawal of
+acamprosate, even after long-term use. There is no evidence of addiction to
+the drug. Patients with severe renal impairment (creatinine clearance of less
+than 30 mL/min) should not be given acamprosate.
+Drug Interactions. Alcohol and acamprosate do not affect each other’s
+pharmacokinetics. The same is true when adding disulfiram or diazepam to
+acamprosate. Coadministration of naltrexone with acamprosate produces an
+increase in concentrations of acamprosate. No adjustment of dosage is
+recommended in such patients. The pharmacokinetics of naltrexone and its
+major metabolite 6-β-naltrexol were unaffected after coadministration with
+acamprosate. During clinical trials, patients taking acamprosate
+concomitantly with antidepressants more commonly reported both weight
+gain and weight loss compared with patients taking either medication alone.
+Laboratory Interferences. Acamprosate has not been shown to interfere
+with commonly performed laboratory tests.
+Dosage and Clinical Guidelines. It is important to remember that
+acamprosate should not be used to treat alcohol withdrawal symptoms. It
+should only be started after the individual has been successfully weaned off
+
+
+
+
+<<<PAGE 2284>>>
+
+Lippincott Williams & Wilkins; 2009:3004.
+Hser YI, Hoffman V, Grella CE, Anglin MD. A 33-year follow-up of
+narcotics addicts. Arch Gen Psychiatry. 2001;58:503–508.
+Ivanov I. Disulfiram and acamprosate. In: Sadock BJ, Sadock VA, Ruiz P,
+eds. Kaplan & Sadock’s Comprehensive Textbook of Psychiatry. 9th ed.
+Vol. 2. Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3099.
+Johnson BA. Update on neuropharmacological treatments for alcoholism:
+scientific basis and clinical findings. Biochem Pharmacol. 2008;75(1):34.
+Johnson BA, Ait-Daoud N, Prihoda TJ. Combining ondansetron and
+naltrexone effectively treats biologically predisposed alcoholics: from
+hypotheses to preliminary clinical evidence. Alcoholism Clin Exp Res.
+2000;24(5):737–742.
+Karachalios GN, Charalabopoulos A, Papalimneou V, Kiortsis D, Dimicco P.
+Withdrawal syndrome following cessation of antihypertensive drug
+therapy. Int J Clin Pract. 2005;5:562.
+King A, De Wit H, Riley RC, Cao D, Niaura R. Efficacy of naltrexone in
+smoking cessation: a preliminary study and an examination of sex
+differences. Nicotine Tobacco Res. 2006;8(5):671–682.
+Kleber HD. Methadone maintenance 4 decades later: thousands of lives saved
+but still controversial. JAMA. 2008;300:2303.
+Kornfield R, Watson S, Higashi AS, Conti RM, Dusetzina SB, Garfield CF,
+Dorsey ER, Huskamp HA, Alexander GC. Effects of FDA advisories on
+the pharmacologic treatment of ADHD, 2004–2008. Psychiatr Serv.
+2013;64(4):339–346.
+Krishnan-Sarin S, Rounsaville BJ, O’Malley SS. Opioid receptor antagonists:
+naltrexone and nalmefene. In: Sadock BJ, Sadock VA, Ruiz P, eds. Kaplan
+& Sadock’s Comprehensive Textbook of Psychiatry. 9th ed. Vol. 2.
+Philadelphia, PA: Lippincott Williams & Wilkins; 2009:3171.
+Krystal JH, Cramer JA, Kroll WF, Kirk GF, Rosenheck RA. Naltrexone in
+the treatment of alcohol dependence. N Engl J Med. 2001;345(24):1734.
+Laaksonen E, Koski-Jännes A, Salaspuro M, Ahtínen H, Alho H. A
+randomized, multicentre, open-label, comparative trial of disulfiram,
+naltrexone and acamprosate in the treatment of alcohol dependence.
+Alcohol. 2008;43(1):53–61.
+Likar R, Kayser H, Sittl R. Long-term management of chronic pain with
+transdermal buprenorphine: a multicenter, open-label, follow-up study in
+
+
+
+
+<<<PAGE 3599>>>
+
+Angiotensin-converting enzyme (ACE) inhibitors, 19, 601
+Anhedonia, 379
+Anima, 1083
+Animal models, genetic variation studies, 992–993
+Animistic thinking, 1008
+Anna O, Fräulein, 1057–1058
+Anniversary reactions, 850
+Anorexia nervosa, 20, 628
+clinical features, 469
+comorbidity, 475
+course and prognosis, 476
+diagnosis and clinical features, 470–471, 470t
+differential diagnosis, 474
+epidemiology, 478
+etiology, 479
+developmental factors, 479
+environmental and social factors, 479
+genetic and biologic factors, 479
+psychological factors, 479
+pathology and laboratory examination, 473
+subtypes of, 469
+treatment, 476–477
+hospitalization, 476–477
+pharmacotherapy, 477
+psychotherapy, 477
+Anosognosia, 48, 88, 933
+Anoxic amnesia, 439
+Antabuse. See Disulfiram
+Anterior capsulotomy, 741
+Anterior cingulate cortex (ACC), 398
+Anterior cingulotomy, 741
+Anterograde amnesia, 1024
+Anticholinergic adverse effects, 20, 23
+Anticholinergic drugs, 597
+dosage and clinical guidelines, 702–703
+drug interactions, 702
+pharmacologic actions, 701–702
+
+
+
+
+<<<PAGE 3642>>>
+
+dissociative identity disorder, 440–444, 442t. See also Dissociative
+identity disorder
+dissociative trance, 444, 448
+Distortions, 114. See also Speech sound disorder
+Disulfiram, 693–694
+in alcohol use disorder treatment, 283, 284t
+for cocaine use disorder, 307
+Ditropan. See Oxybutynin
+Diupres. See Reserpine
+Divorce, 587, 589, 912
+community, 912
+coparental, 912
+economic, 912
+effects on children, 897, 897t
+legal, 912
+psychic, 912
+reasons for, 912–913
+Dlx genes, 940, 944
+DOB (2,5-dimethoxy-4-bromoamphetamine), 303
+Docosahexaenoic acid (DHA), 977
+Doctrine of parens patriae, 839
+Domestic violence, 584
+Dominic-R, 77, 78
+Donepezil, 697
+Do-not-intubate (DNI) order, 858
+Do-not-resuscitate (DNR) order, 858
+L-Dopa, 705–706
+Dopamine
+function of, 955
+metabolites of, 958
+mood disorders and, 350
+secretion, 955
+sexual behavior and, 567–568
+transporters, 959
+Dopamine agonists, 704–705
+dosage and clinical guidelines, 706, 706t
+drug interactions, 706
+
+

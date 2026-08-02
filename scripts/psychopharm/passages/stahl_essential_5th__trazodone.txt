@@ -1,0 +1,1333 @@
+<<<PAGE 309>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+If blockade of SERT explains the shared clinical and
+pharmacological actions of SSRIs, what explains their
+differences? Although there is no generally accepted
+explanation that accounts for the commonly observed
+clinical phenomena of different efficacy and tolerability
+of various SSRIs in individual patients, it makes sense to
+consider those unique pharmacological characteristics
+of the six SSRIs that are not shared with each other as
+candidates to explain the broad range of individual
+patient reactions to different SSRIs (Figures 7-16 through
+7-21). Each SSRI has secondary pharmacological actions
+other than SERT blockade, and no two SSRIs have
+identical secondary pharmacological characteristics.
+Whether these secondary binding profiles can account for
+the differences in efficacy and tolerability in individual
+patients remains to be proven. However, it does lead to
+provocative hypothesis generation and gives a rational
+basis for psychopharmacologists trying more than one of
+these agents rather than thinking “they are all the same.”
+Sometimes only an empiric trial of different SSRIs will
+lead to the best match of drug to an individual patient.
+Fluoxetine: An SSRI with 5HT2C Antagonist Properties
+
+In addition to serotonin reuptake inhibition, fluoxetine
+also has 5HT2C antagonist actions that may explain
+many of its unique clinical properties (Figure 7-16).
+5HT2C antagonism may contribute to its antidepressant
+actions and also to its efficacy in other disorders,
+especially in eating disorders. Other drugs for unipolar
+
+fluoxetine
+5HT2C
+
+NET
+
+SERT
+SERT
+
+Figure 7-16 Fluoxetine. In addition to serotonin reuptake
+inhibition, fluoxetine has norepinephrine reuptake inhibition
+(NRI) and serotonin 2C antagonist actions (5HT2C). 5HT2C
+antagonism can lead to disinhibition of norepinephrine and
+dopamine; this action may be responsible for fluoxetine’s
+activating effects. NRI may be clinically relevant only at very high
+doses.
+
+depression with 5HT2C antagonist properties include
+trazodone, mirtazapine, agomelatine, and some tricyclic
+antidepressants, and these will be described below.
+Finally, two serotonin 2A/dopamine 2 antagonists,
+quetiapine (Figure 5-45) and olanzapine (Figure 5-44),
+also have potent 5HT2C antagonist properties. Both
+agents are used to treat psychosis (see Chapter 5) but are
+also approved for augmenting other drugs for unipolar
+depression, treatment-resistant unipolar depression,
+and bipolar depression. Blocking serotonin action at
+5HT2C receptors disinhibits (i.e., enhances) release of
+both norepinephrine and dopamine, actions theoretically
+beneficial for the treatment of depression (see Chapter
+6 and Figure 6-24B and also the discussion below on
+agomelatine).
+The good news about 5HT2C antagonism may be
+that it is generally activating, and the reason why
+many patients, even from the first dose, detect an
+energizing and fatigue-reducing effect of fluoxetine, with
+improvement in concentration and attention as well. This
+mechanism is perhaps best matched to depressed patients
+with reduced positive affect (Figure 6-41), hypersomnia,
+psychomotor retardation, apathy, and fatigue. Fluoxetine
+is also approved in some countries in combination with
+olanzapine for treatment-resistant unipolar depression
+and for bipolar depression. Since olanzapine also has
+5HT2C antagonist actions (Figure 5-44), it may be that
+adding the 5HT2C antagonist actions of olanzapine to
+those of fluoxetine could theoretically lead to further
+enhanced dopamine and norepinephrine release in
+the cortex to mediate the antidepressant actions of this
+combination. 5HT2C antagonism may also contribute
+to the anti-bulimia effect of higher doses of fluoxetine,
+the only SSRI approved for the treatment of this eating
+disorder. The bad news could be that 5HT2C antagonist
+actions of fluoxetine may contribute to this agent being
+sometimes less well matched to patients with agitation,
+insomnia, and anxiety, who may experience unwanted
+activation and even a panic attack if given an agent that
+further activates them.
+Fluoxetine also has weak norepinephrine reuptake
+blocking properties (Figure 7-16), which may become
+clinically relevant at very high doses. Fluoxetine has
+a long half-life (2–3 days), and its active metabolite
+an even longer half-life (2 weeks). The long halflife is advantageous in that it seems to reduce the
+withdrawal reactions that are characteristic of sudden
+discontinuation of some SSRIs, but it also means that
+it takes a long time to clear the drug and its active
+
+293
+
+7
+
+
+
+
+<<<PAGE 327>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+also those localized in the gastrointestinal tract itself,
+where they mediate nausea, vomiting, and diarrhea/
+bowel motility when stimulated by serotonin, including
+when stimulated by serotonin that is a side effect of
+peripherally increased serotonin by SSRIs/SNRIs.
+Blocking these 5HT3 receptors can therefore protect
+against chemotherapy-induced nausea and vomiting
+as well as against serotonin-induced gastrointestinal
+side effects that can accompany agents that increase
+serotonin.
+More important to the mechanism of action of central
+5HT3 antagonists such as mirtazapine and vortioxetine
+in the treatment of unipolar depression are the 5HT3
+receptors in the brain that regulate the release of
+various neurotransmitters downstream in some brain
+circuits that mediate the symptoms of depression. 5HT3
+receptors in the brain are usually localized on GABA
+(γ-aminobutyric acid) interneurons, and they are always
+excitatory. This means that when serotonin stimulates a
+5HT3 receptor, it causes GABA to inhibit whatever neuron
+is downstream from it. This was shown for 5HT3–GABA
+interactions at glutamate neurons (Figure 4-49) and
+at acetylcholine and norepinephrine neurons (Figure
+4-48). 5HT3 antagonism is a powerful disinhibitor of
+glutamate release (Figure 7-42) and of acetylcholine and
+norepinephrine (Figure 7-43), actions that theoretically
+release neurotransmitters downstream to have
+antidepressant action.
+Serotonin Antagonist/Reuptake Inhibitors (SARIs)
+
+The prototype drug that blocks serotonin 2A and 2C
+receptors as well as serotonin reuptake is trazodone,
+classified as a serotonin antagonist/reuptake inhibitor
+(SARI) (Figure 7-44). Nefazodone is another SARI with
+robust 5HT2A antagonist actions and weaker 5HT2C
+antagonism and SERT inhibition, but is no longer
+commonly used because of rare liver toxicity (Figure
+7-44). Trazodone is a very interesting agent, since it acts
+like two different drugs, depending upon the dose and
+the formulation. We discussed a very similar situation in
+Chapter 5 for quetiapine (Figure 5-46).
+A more complete picture of trazodone’s binding
+properties has emerged from recent studies (Figures 7-44
+and 7-45) and reflects that it is a serotonin antagonist
+not just at 5HT2A and 5HT2C receptors, but also at 5HT1D,
+5HT2B, and 5HT7 receptors. In addition, trazodone has
+potent antagonist properties at α1B, α1A, α2C, and α2B
+receptors, H1 histamine receptors, and agonist actions at
+5HT1A receptors (Figure 7-45). Because of these various
+pharmacological actions occur with varying potencies,
+
+it means that trazodone will act predominantly via its
+highest-affinity receptor interactions at low doses, and
+will recruit its lower-affinity receptor actions at higher
+doses.
+Different Drug at Different Doses and at Different
+Delivery Rates?
+
+Trazodone is famous for its effectiveness and utility at
+low doses as a hypnotic (Figure 7-46). That is, doses of
+trazodone lower than those effective for antidepressant
+action are quite frequently used for insomnia. Hypnotic
+doses engage the receptors for which trazodone has
+the highest affinity and, amongst these, blockade is
+hypothetically linked to hypnotic actions (i.e., 5HT2A,
+α1 subtypes, and H1). Blocking 5HT2A receptors
+enhances slow-wave sleep, and blocking α1 subtypes
+and H1 receptors interferes with monoamine arousal
+mechanisms (discussed in Chapter 5 and illustrated in
+Figures 5-13 and 5-14). The best way to deliver a hypnotic
+is with a standard oral formulation that is immediate in
+onset, peaks quickly, and is out of the system by morning.
+Since insomnia is one of the most frequent residual
+symptoms of depression after treatment with an SSRI/
+SNRI (discussed earlier in this chapter and illustrated in
+Figure 7-5), addition of a hypnotic is often necessary in
+treating patients with a major depressive episode. Not
+only can addition of a hypnotic potentially relieve the
+insomnia itself, it may also increase remission rates due
+to improvement of other symptoms such as loss of energy
+and depressed mood (Figure 7-5). Thus, the ability of low
+doses of trazodone to improve sleep in depressed patients
+has led to its popular use at low doses as an augmenting
+option for residual insomnia that persists after treatment
+with SSRIs/SNRIs.
+The original oral formulation of trazodone used for
+depression was short in duration, required multiple daily
+doses higher than hypnotic doses (Figure 7-47), and was
+associated with peak dose sedation after daytime doses,
+not an ideal profile for a drug for unipolar depression.
+Although trazodone’s antidepressant actions at higher
+doses are undisputed as well as its lack of causing sexual
+dysfunction or weight gain, the presence of daytime
+sedation makes using trazodone at antidepressant doses
+in the standard oral formulation difficult in clinical
+practice. However, a once-daily controlled-release
+formulation with higher doses of trazodone is available
+for use in depression, which blunts peak plasma drug
+levels to reduce daytime sedation. These higher doses
+recruit additional known antidepressant receptor actions,
+including serotonin reuptake inhibition (Figures 7-10
+311
+
+7
+
+
+
+
+<<<PAGE 330>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+α
+1
+
+α
+2
+
+α
+1
+
+T
+5H
+1A
+
+5H
+
+T
+
+H
+1
+
+T2
+
+A
+
+5HT1D
+
+NE
+
+SERT
+
+trazodone
+mianserin
+
+SERT
+
+mianserin
+nefazodone
+2A
+
+2B
+
+5HT
+
+5HT
+
+C
+
+T2
+
+T2
+
+5HT7
+
+5H
+
+C
+
+5H
+
+Figure 7-44 Serotonin antagonist/reuptake inhibitors (SARIs). Shown here are icons for two serotonin antagonist/reuptake inhibitors
+(SARIs): trazodone and nefazodone. These agents have a dual action, but the two mechanisms are different from the dual action of
+the serotonin–norepinephrine reuptake inhibitors (SNRIs). The SARIs act by potent blockade of serotonin 2A (5HT2A) receptors as well
+as dose-dependent blockade of serotonin 2C (5HT2C) receptors and the serotonin transporter (SERT). SARIs also block α1-adrenergic
+receptors. Trazodone has the unique properties of histamine 1 (H1) receptor antagonism and antagonism at multiple additional
+serotonin receptors.
+
+target affinity Ki (nM)
+
+1000
+
+higher affinity
+
+lower affinity
+
+800
+600
+400
+200
+
+e)
+
+1
+on
+-s
+
+ch
+
+sig
+
+m
+
+a
+
+(n
+
+aN
+
+tiv
+
+D
+
+2
+D
+
+T1
+B
+
+el
+ec
+
+ne
+an
+
+5H
+
+t)
+ra
+
+3
+
+l(
+
+D
+
+2B
+ph
+
+a
+
+T7
+al
+
+5H
+
+RT
+
+2C
+
+T2
+C
+5H
+
+SE
+
+H
+
+1
+
+al
+ph
+a
+
+1A
+
+B
+
+T1
+A
+
+a
+ph
+al
+
+5H
+
+5H
+T2
+
+T1
+D
+
+1B
+
+5H
+
+al
+ph
+a
+
+5H
+
+T2
+A
+
+0
+
+Figure 7-45 Trazodone affinity for different receptors. Trazodone has binding affinity for numerous receptor subtypes, but the potency
+varies. Thus, at low doses, trazodone may act predominantly via its highest-affinity receptor actions, with other properties becoming
+relevant only at higher doses.
+
+through 7-15) and antagonist action at 5HT1D, 5HT2C,
+5HT7, and α2 receptors, as well as 5HT1A agonist actions.
+The bottom line is that there are numerous potential
+mechanisms to cause monoamine neurotransmitter
+release and antidepressant actions at higher doses.
+Furthermore, with first-dose hypnotic actions, trazodone
+can exert its antidepressant actions with rapid onset and
+enhanced tolerability for some side effects compared
+to SSRIs/SNRIs. That is, SSRIs/SNRIs raise serotonin
+314
+
+levels to act at all serotonin receptors, stimulating 5HT1A
+receptors for therapeutic actions while concomitantly
+stimulating 5HT2A receptors and 5HT2C receptors that
+theoretically cause the side effects of SSRIs including
+sexual dysfunction, insomnia, and activation/anxiety
+(Figure 7-48A). However, trazodone blocks the actions of
+serotonin at 5HT2A and 5HT2C receptors, accounting for
+its profile of lack of sexual dysfunction and reduction of
+anxiety and insomnia.
+
+
+
+
+<<<PAGE 331>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Trazodone for Depression:
+Serotonin Antagonist/
+Reuptake Inhibitor (SARI)
+α
+1
+
+Trazodone for Insomnia:
+Multifunctional Neurotransmitter
+Antagonist
+
+α
+2
+
+A
+T1
+5H
+
+5H
+
+α1
+
+H
+1
+
+T2
+
+A
+
+5HT1D
+
+trazodone
+mianserin
+
+H1
+
+SERT
+
+5HT2A
+
+B
+HT2
+
+5HT7
+
+5H
+
+T2
+C
+
+5
+
+Figure 7-46 Trazodone at different doses. (Left)
+High doses that recruit saturation of the
+serotonin transporter (i.e., 150–600 mg) are
+required for trazodone to have therapeutic
+actions in depression. At this high dose,
+trazodone is a multifunctional serotonergic
+agent with antagonist actions at 5HT2A and
+5HT2C receptors as well as additional serotonin
+receptors. Trazodone is also an α1 and histamine
+1 (H1) antagonist at these doses. (Right) At lower
+doses of trazodone (i.e., 25–150 mg), it does
+not saturate the serotonin transporter; it does,
+however, retain antagonist actions at 5HT2A, α1,
+and H1 receptors, with corresponding efficacy for
+insomnia.
+
+dose for depression
+(150-600 mg)
+
+dose for insomnia
+(25-150 mg)
+
+Figure 7-47 Trazodone IR versus XR
+given once nightly. Shown here are
+steady-state estimates of the plasma
+trazodone levels from the hypnotic dosing
+of 50, 75, or 100 mg once nightly of
+trazodone immediate release (IR). Peak
+drug concentrations are reached rapidly
+with a similarly rapid fall off overnight.
+The minimum levels estimated for
+antidepressant actions of trazodone are
+reached transiently, if at all, by hypnotic
+dosing. By contrast, 300 mg of trazodone
+extended release (XR) given once
+nightly generates plasma levels that rise
+slowly and never fall below minimum
+antidepressant concentrations. Peak levels
+of trazodone XR at 300 mg are about the
+same as the peak levels of trazodone IR
+at 100 mg.
+
+Trazodone IR vs. XR Given Once Nightly
+2.2
+2
+1.8
+1.6
+1.4
+
+300 mg XR qhs
+
+mg/L
+
+1.2
+1
+
+100 mg IR qhs
+
+minimum
+antidepressant
+concentration
+
+0.8
+0.65
+0.5
+0.3
+
+75 mg IR qhs
+50 mg IR qhs
+
+0.1
+0
+23:30
+
+4:00
+
+8:00
+
+12:00
+
+16:00
+
+20:00
+
+23:30
+
+hours
+
+Vortioxetine
+
+Vortioxetine is a drug approved for treating unipolar
+depression and which causes SERT inhibition as well as
+having antagonist actions at 5HT3 and 5HT7 receptors,
+with agonist actions at 5HT1A receptors and weak
+partial agonist to antagonist actions at 5HT1B/D receptors
+(Figure 7-49). This unique blend of pharmacological
+actions leads to downstream release of many different
+neurotransmitters as will be explained here, and these
+actions hypothetically lead to antidepressant effects
+in unipolar depression, characterized by robust pro-
+
+cognitive actions, especially improving processing speed.
+The importance of cognitive symptoms in unipolar
+depression is discussed in Chapter 6 as the possible
+clinical consequence of loss of neurotrophic factors,
+synapses, and neurons (Figures 6-27 through 6-31).
+What is cognitive processing speed and what could
+be the mechanism by which vortioxetine improves this
+more than other antidepressants? “Cognition” is not a
+single, simple brain function and “cognitive dysfunction”
+is not a single, simple symptom. Cognitive impairment
+that can be measured as part of the symptom profile
+315
+
+7
+
+
+
+
+<<<PAGE 393>>>
+
+Chapter 8: Anxiety, Trauma, and Treatment
+
+briefly in Chapter 7 and illustrated in Figures 7-87 and
+7-88. Ketamine is more extensively discussed in Chapter
+7 as well. Future research is trying to determine how
+to use psychotherapy to provoke emotional memories
+and reactivate them by producing a state where a
+pharmacological agent such as a hallucinogen producing
+a dissociative state, including ketamine as well as
+psilocybin or MDMA, could be administered to disrupt
+reconsolidation of these emotional memories and thereby
+relieve symptoms of anxiety, trauma, re-experiencing
+and other emotional memories of PTSD and anxiety
+disorders, and existential distress in terminally ill patients.
+These are early days in terms of applying this concept
+in clinical settings, but this notion supports the growing
+idea that psychotherapy and psychopharmacology can be
+synergistic. Much more needs to be learned as to how to
+exploit this theoretical synergy.
+
+TREATMENTS FOR ANXIETY
+DISORDER SUBTYPES
+Generalized Anxiety Disorder
+
+Psychopharmacological treatments for generalized
+anxiety disorder overlap greatly with those for
+other anxiety disorders and depression and include
+SSRIs, SNRIs, benzodiazepines, buspirone, and α2δ
+ligands such as pregabalin and gabapentin. While
+benzodiazepines should not be prescribed to a patient
+with generalized anxiety disorder who is abusing other
+substances, particularly alcohol, benzodiazepines can
+be useful in patients who are not substance abusers
+for short terms when initiating an SSRI or SNRI, since
+these serotonergic agents are often activating, difficult
+to tolerate early in dosing, and have a delayed onset
+of action. In other patients, benzodiazepines can be
+useful to “top up” an SSRI or SNRI for patients who
+have experienced only partial relief of symptoms and
+have stabilized on SSRI/SNRI therapy. Benzodiazepines
+can also be useful for occasional intermittent use when
+symptoms surge and sudden relief is needed. Alpha-2delta ligands are a good alternative to benzodiazepines
+in some patients. These ligands are approved for the
+treatment of anxiety in Europe and other countries
+but not in the US, yet can be useful “off-label” as
+augmenting agents.
+Other “off-label” treatments for anxiety can
+include mirtazapine, trazodone, vilazodone, tricyclic
+antidepressants, or even sedating antihistamines such as
+hydroxyzine.
+
+Panic Disorder
+
+Panic attacks occur in many conditions, not just panic
+disorder, and panic disorder is frequently comorbid with
+the other anxiety disorders and with major depression.
+It is thus not surprising that contemporary treatments
+for panic disorder overlap significantly with those for
+the other anxiety disorders and with those for major
+depression. Treatments include SSRIs and SNRIs, as
+well as benzodiazepines, and α2δ ligands. “Off-label”
+treatments of panic attacks in anxiety disorders can also
+include mirtazapine and trazodone. The monoamine
+oxidase inhibitors (MAOIs), discussed in Chapter 7, are
+much neglected in psychopharmacology in general and
+for the treatment of treatment-resistant panic disorder in
+particular. However, MAOIs can have powerful efficacy
+in panic and should be considered when other agents
+fail. Cognitive behavioral psychotherapy is both an
+alternative or an augmentation to psychopharmacological
+approaches, and can help modify cognitive distortions,
+and, through exposure, diminish phobic avoidance
+behaviors.
+Social Anxiety Disorder
+
+The treatment options for this anxiety disorder are
+very similar to those for panic disorder with a few
+noteworthy differences. The SSRIs and SNRIs and α2δ
+ligands are certainly useful treatments, but the utility
+of benzodiazepine is not as widely accepted as it might
+be for generalized anxiety disorder and panic disorder.
+There is also less evidence for the utility of older drugs for
+depression for use in social anxiety disorder. Beta blockers,
+sometimes with benzodiazepines, can be useful for some
+patients with very discrete types of social anxiety, such
+as performance anxiety. One drug that is (unfortunately)
+quite effective but obviously should not be used is alcohol
+for the treatment of social anxiety symptoms. Many
+patients of course are aware of this and abuse alcohol
+before they seek safer and more effective treatment.
+Cognitive behavioral psychotherapy can be a powerful
+intervention, sometimes better than drugs for certain
+patients, and often helpful in combination with drugs.
+PTSD
+
+Although some treatments such as certain SSRIs are
+approved for PTSD, psychopharmacological treatments
+for PTSD are not as effective as these same treatments are
+in anxiety disorders. Also, PTSD is so highly comorbid
+that many of the psychopharmacological treatments
+are more effectively aimed at comorbidities such as
+
+377
+
+8
+
+
+
+
+<<<PAGE 440>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Figure 10-34 Z drugs: GABAA positive
+allosteric modulators (PAMs). Several
+Z drugs are shown here. These include
+racemic zopiclone (not available
+in the United States), eszopiclone,
+zaleplon, zolpidem, and zolpidem CR.
+Zaleplon, zolpidem, and zolpidem
+CR are selective for GABAA receptors
+that contain the α1 subunit; however,
+it does not appear that zopiclone or
+eszopiclone have this same selectivity.
+
+GABA A PAMs - “Z Drugs”
+
+12
+9
+
+12
+9
+
+3
+6
+
+α1
+
+12
+9
+
+3
+
+α5
+
+α1
+
+α3
+
+α2
+
+6
+
+α5
+α2
+
+α1
+
+α3
+
+R,S-zopiclone
+(Stilnox - not in US)
+
+α5
+α3
+
+α2
+
+eszopiclone
+(Lunesta)
+
+12
+9
+
+12
+9
+
+3
+6
+
+12
+3
+
+9
+
+6
+
+α1
+
+3
+6
+
+α1
+
+α1
+
+zaleplon
+(Sonata)
+
+zolpidem
+(Ambien)
+
+zolpidem CR
+(Ambien CR)
+OX1
+
+OX1
+
+R
+
+R
+
+suvorexant
+
+lemborexant
+
+OX2R
+
+OX2R
+
+Other DORAs (such as daridorexant) and also selective
+orexin 2 and selective orexin 1 antagonists are currently
+in development as well. Competition of endogenous
+neurotransmitter with drug for the same receptor is
+a concept also discussed in Chapter 7 regarding D3
+antagonists/partial agonists and dopamine itself at the D3
+receptor (see Figure 7-72).
+Serotonergic Hypnotics
+
+One of the most popular hypnotics is the 5HT2A/ α1/H1
+antagonist trazodone (Figure 7-46), even though this
+agent is not specifically approved for the treatment of
+424
+
+3
+
+6
+
+Figure 10-35 Orexin receptor antagonists. The
+dual orexin receptor antagonists suvorexant and
+lemborexant are shown here. Suvorexant has
+comparable affinity for orexin 1 (OX1R) and orexin
+2 (OX2R) receptors, while lemborexant has higher
+affinity for OX2R than for OX1R.
+
+insomnia (see Chapter 7 for discussion of trazodone’s use
+in depression and Figures 7-45 through 7-47). Trazodone,
+like the DORAs, is another agent that works to reduce
+arousal in insomnia rather than by enhancing sleep drive.
+Trazodone’s hypnotic mechanism is via blockade of the
+arousal neurotransmitters serotonin, norepinephrine,
+and histamine (Figure 7-46). Blockade of α1-adrenergic
+and H1 histaminergic pathways is discussed as a side
+effect of some drugs for psychosis in Chapter 5 and
+illustrated in Figures 5-13 and 5-14. Indeed, one does
+not want blockade of all these arousal neurotransmitters
+in the daytime. However, when α1 blockade is combined
+
+
+
+
+<<<PAGE 441>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+from hypothalamus
+(LH/PH)
+
+B
+
+B
+B
+
+A
+A
+
+DORA
+
+DORA
+
+G
+
+OX2R
+
+OX1R
+
+GIRK
+
+G
+
+sleep, which can correlate with restorative sleep and even
+improvement in daytime pain and fatigue.
+Trazodone was initially studied for depression at high
+doses that also block serotonin reuptake (Figure 7-45),
+and given in a short-acting immediate-release
+formulation two or three times a day. Although effective
+as an antidepressant, it also caused daytime sedation. It
+was serendipitously discovered that lowering the dose
+of immediate-release trazodone and giving it at night
+made for a very effective hypnotic, which wore off before
+morning, and thus a new hypnotic agent was born and
+has continued to be the most commonly prescribed
+agent for sleep in the world. In order for trazodone to
+have optimum antidepressant actions, the dose has to be
+increased, and for it to be tolerated, it has to be given in a
+once-daily controlled-release formulation that generates
+blood levels above those needed for antidepressant action
+yet below those needed for sedative hypnotic action
+(Figure 7-47). Trazodone has not been associated with
+tolerance, withdrawal, dependence, or rebound.
+Histamine 1 Antagonists as Hypnotics
+
+Ca++
+NMDA
+
+asleep
+Figure 10-36 Blockade of orexin receptors. Orexin
+neurotransmission is mediated by two types of postsynaptic
+G-protein-coupled receptors, orexin 1 (OX1R) and orexin 2
+(OX2R). OX1R are particularly expressed in the noradrenergic
+locus coeruleus whereas OX2R are highly expressed in the
+histaminergic tuberomammillary nucleus (TMN). Blockade of
+orexin receptors by dual orexin receptor antagonists (DORAs)
+prevents the excitatory effects of orexin neurotransmitters. In
+particular, blockade of OX2R leads to decreased expression
+of NMDA (N-methyl-D-aspartate) glutamate receptors and
+prevents inactivation of G-protein-regulated inward rectifying
+potassium channels (GIRK). LH/PH: lateral hypothalamus/
+posterior hypothalamus.
+
+with H1 blockade (described below and illustrated in
+Figures 10-38 through 10-40), and these actions are
+further combined with 5HT2A antagonism, a powerful
+hypnotic effect results. 5HT2A antagonism (Figures 7-45
+and 7-46) specifically enhances slow-wave sleep/deep
+
+It is widely appreciated that antihistamines are sedating.
+Antihistamines are popular as over-the-counter sleep aids
+(especially those containing diphenhydramine/Benadryl
+or doxylamine) (Figure 10-38). Because antihistamines
+have been widely used for many years not only as
+hypnotic agents but also for the treatment of allergies,
+there is the common misperception that the properties
+of classic agents such as diphenhydramine apply to any
+drug with antihistaminic properties. This includes the
+idea that all antihistamines have “anticholinergic” side
+effects such as blurred vision, constipation, memory
+problems, dry mouth; that they cause next-day hangover
+effects when used as hypnotics at night; that tolerance
+develops to their hypnotic actions; and that they cause
+weight gain. It now seems that some of these ideas about
+antihistamines are due to the fact that most agents with
+potent antihistamine properties have anticholinergic
+actions as well (Figures 10-38 and 10-39). This applies
+not only to antihistamines used for allergy, but also to
+drugs approved for use in psychosis (e.g., chlorpromazine
+Figure 5-27 and quetiapine Figure 5-45) and depression
+(such as doxepin Figure 10-39 and other tricyclic
+antidepressants Figure 7-67) but also used at low doses as
+hypnotic agents.
+The tricyclic antidepressant doxepin is an interesting
+case because of its very high affinity for the H1 receptor.
+At low to very low doses, far lower than needed for the
+treatment of depression, it is a relatively selective H1
+425
+
+10
+
+
+
+
+<<<PAGE 444>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+you go to sleep, and as soon as the drug falls below this
+threshold, you awaken. In practice, these effects may not
+be immediate, and being near the threshold may mean
+sleepiness but not sleep. Nevertheless, this is an important
+concept because it is not so much the pharmacokinetic
+half-life that is important for a hypnotic drug (i.e., how
+long until half the drug is gone), it is its duration of time
+above the sleep threshold. These concepts are illustrated
+in Figure 10-41A–D; the ideal profile for a hypnotic is
+shown in Figure 10-41A: neither too short a time above
+the threshold nor too long a time, but “just right”: the
+Goldilocks solution. In Figure 10-41B and 10-41C, the
+
+concept of too long a half-life, but more importantly too
+long above the threshold, is shown: “too hot” and the
+result is next-day residual effects. Finally, the concept
+of too short a half-life, but more importantly not long
+enough above the threshold, is shown (Figure 10-41D):
+“too cold” and the result is early morning awakenings
+before the desired time of rising. These same concepts of
+a drug needing to pierce a threshold, and sustain its level
+above that threshold to be effective, apply to another area
+of psychopharmacology: namely, the use of stimulants for
+the treatment of ADHD (attention deficit hyperactivity
+disorder). This will be discussed in Chapter 11 on ADHD.
+
+The Goldilocks Solution:
+The Ideal Hypnotic Agent
+
+5
+
+4
+
+sleep maintenance
+
+drug
+concentration 3
+
+sleep
+onset
+
+no hangover
+
+2
+
+serotonin histamine antagonist
+threshold (80%)
+
+1
+
+DORA threshold (65%)
+GABAA threshold (25%)
+0
+
+24
+
+48
+
+72
+
+96
+
+120
+
+144
+
+hours (taken nightly)
+duration above threshold: 8 hours
+examples: eszopiclone (Lunesta)
+zolpidem CR (Ambien CR)
+low-dose trazodone (Desyrel)
+low-dose doxepin antihistamines
+survorexant (Belsomra)
+lemborexant (Dayvigo)
+
+A
+
+Way Too Hot:
+
+Ultralong Half-Life Hypnotics Can
+Cause Drug Accumulation (Toxicity)
+night day
+
+toxicity
+
+5
+
+4
+
+drug
+concentration 3
+2
+
+relevant threshold
+
+1
+
+0
+
+24
+
+48
+
+72
+
+96
+
+120
+
+144
+
+hours (taken nightly)
+B
+
+428
+
+duration above threshold: 24-150 hours
+examples: flurazepam (Dalmane)
+quazepam (Doral)
+
+Figure 10-41A, B Pharmacokinetics
+of hypnotics, part 1. (A) For GABAA
+medications, the critical threshold
+of receptor occupancy for onset of
+hypnotic effects is 25–30%, for dual
+orexin receptor antagonists (DORAs)
+it is 65%, and for serotonin and
+histamine antagonists it is thought to
+be 80%. Both the onset to achieving
+the threshold, and the duration of
+time above the sleep threshold,
+are important for efficacy. The ideal
+hypnotic agent would have a duration
+above the threshold of approximately
+8 hours. (B) Hypnotics with ultra-long
+half-lives (greater than 24 hours; for
+example, flurazepam and quazepam)
+can cause drug accumulation with
+chronic use. This can result in too long
+a duration of time above the sleep
+threshold, and can cause impairment
+that has been associated with increased
+risk of falls, particularly in the elderly.
+
+
+
+
+<<<PAGE 551>>>
+
+Chapter 12: Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine
+
+inconclusive in terms of their efficacy in treating major
+depressive disorder in dementia; however, SSRIs (e.g.,
+citalopram but has QT prolongation; escitalopram may
+have similar efficacy without QT prolongation) may
+have some additional applicability towards ameliorating
+agitation and inappropriate behaviors in patients with
+dementia. Although considered relatively tolerable, SSRIs
+may be associated with increased falls and osteoporosis,
+and they may have interactions with other medications.
+Additionally, SSRIs may worsen some symptoms of
+Parkinson’s disease such as restless leg syndrome, periodic
+limb movements, and REM sleep behavior disorders.
+Therefore, if a trial of an SSRI (or any other antidepressant
+medication) is deemed necessary, the lowest effective dose
+should be used and continuous monitoring should be
+exercised.
+Another agent for treating depression in dementia
+is trazodone, which blocks the serotonin transporter at
+antidepressant doses (see Chapter 7 and Figures 7-44
+and 7-45). Trazodone also has serotonin 2A and 2C,
+H1 histamine and α1-adrenergic antagonist properties
+(Figures 7-44 and 7-45), which can make it very sedating.
+At low doses, trazodone does not adequately block
+serotonin reuptake but retains its other properties (Figure
+7-46). Because trazodone has a relatively short half-life
+
+Treating Depression
+
+May be ineffective because...
+
+Pharmacological
+Interventions
+
+(6–8 hours), if dosed only once daily at night, particularly
+at low doses, it can improve sleep without having daytime
+effects. The utility of trazodone in treating secondary
+behavioral symptoms in patients with dementia may lie
+more in its ability to improve sleep rather than depression.
+Trazodone may also improve other behavioral symptoms
+of dementia especially in FTD but not particularly in AD.
+Vortioxetine (Chapter 7 and Figure 7-49) in particular
+may improve cognitive function in depression, especially
+processing speed (Figure 7-50) as can some SNRIs like
+duloxetine (Figure 7-29) in the elderly with depression.
+However, these pro-cognitive effects have not been
+demonstrated specifically in dementia patients who have
+depression.
+Pseudobulbar Affect (Pathological Laughing and
+Crying)
+
+Pseudobulbar affect (PBA) is an emotional expression
+disorder, characterized by uncontrolled crying or
+laughing that may be disproportionate or inappropriate
+to the social context. It is often mistaken for a mood
+disorder but is actually a disorder of the expression of
+affect, which is inconsistent or disproportionate to mood.
+PBA can accompany a variety of neurodegenerative
+diseases such as AD and various other dementias,
+
+Figure 12-50 Treating depression in
+patients with dementia. The treatment
+of depression in elderly patients with
+dementia may be complicated by the
+fact that the neural circuits acted on
+by pharmacological interventions for
+depression may have degenerated.
+Although psychosocial interventions
+are an appropriate option, they may be
+difficult to implement for cognitively
+impaired individuals.
+
+acting on neural circuits which
+may be degenerated
+
+12
+
+Psychosocial
+Interventions
+
+striving to change cognitive
+functioning in cognitively
+impaired individual
+
+535
+
+
+
+
+<<<PAGE 603>>>
+
+Suggested Reading and Selected References
+
+BALANCE investigators and collaborators, et al. (2010)
+Lithium plus valproate combination therapy versus
+monotherapy for relapse prevention in bipolar I disorder
+(BALANCE): a randomized open-label trial. Lancet 375:
+385–95.
+Baldessarini RJ, Tondo L, Vazquez GH (2019) Pharmacological
+treatment of adult bipolar disorder. Mol Psychiatry 24:
+198–217.
+Bang-Andersen B, Ruhland T, Jorgensen M, et al. (2011)
+Discovery of 1-[2-(2,4-dimethylphenylsulfanyl)phenyl]
+piperazine (LuAA21004): a novel multimodal compound
+for the treatment of major depressive disorder. J Med Chem
+54: 3206–21.
+Carhart-Harris RL, Bolstridge M, Day CMG, et al.
+(2018) Psilocybin with psychological support for
+treatment-resistant depression: six month follow up.
+Psychopharmacology 235: 399–408.
+Carhart-Harris RL, Bolstridge M, Rucker J, et al. (2016)
+Psilocybin with psychological support for treatment
+resistant depression: an open label feasibility study. Lancet
+Psychiatry 3: 619–27.
+Carhart-Harris RL, Goodwin GM (2017) The therapeutic
+potential of psychedelic drugs: past, present and future,
+Neuropsychopharmacology 42: 2105–13.
+Carhart-Harris RL, Leech R, Williams TM, et al. (2012)
+Implications for psychedelic assisted psychotherapy:
+a functional magnetic resonance imaging study
+with psilocybin. Br J Psychiatry: doi:10.1192/bjp.
+bp.111.103309.
+Chiu CT, Chuan DM (2010) Molecular actions and therapeutic
+potential of lithium in preclinical and clinical studies of
+CNS disorders. Pharmacol Ther 128: 281–304.
+Cipriani A, Pretty H, Hawton K, Geddes JR (2005) Lithium in
+the prevention of suicidal behavior and all-cause mortality
+in patients with mood disorders: a systematic review of
+randomized trials. Am J Psychiatry 162: 1805–19.
+Frye MA, Grunze H, Suppes T, et al. (2007) A placebocontrolled evaluation of adjunctive modafinil in the
+treatment of bipolar depression. Am J Psychiatry 164:
+1242–9.
+Grady M, Stahl SM (2012) Practical guide for prescribing
+MAOI: Debunking myths and removing barriers. CNS
+Spectrums 17: 2–10.
+Mork A, Pehrson A, Brennum LT, et al. (2012)
+Pharmacological effects of Lu AA21004: a novel
+multimodal compound for the treatment of major
+depressive disorder. J Pharmacol Exp Ther 340: 666–75.
+Pasquali L, Busceti CL, Fulceri F, Paparelli A, Fornai F (2010)
+Intracellular pathways underlying the effects of lithium.
+Behav Pharmacol 21: 473–92.
+
+Perlis RH, Ostacher MJ, Goldberg JF, et al. (2010) Transition
+to mania during treatment of bipolar depression.
+Neuropsychopharmacology 35: 2545–52.
+Pompili M, Vazquez GH, Forte A, Morrissette DA, Stahl
+SM (2020) Pharmacological treatment of mixed
+states. Psychiatr Clin N Am 43: 157–86. doi:10.1016/j.
+psc.2019.10.015
+Schwartz TL, Siddiqui US, Stahl SM (2011) Vilazodone: a
+brief pharmacologic and clinical review of the novel SPARI
+(serotonin partial agonist and reuptake inhibitor). Ther
+Adv Psychopharmacol 1: 81–7.
+Settimo L, Taylor D (2018) Evaluating the dose-dependent
+mechanism of action of trazodone by estimation of
+occupancies for different brain neurotransmitter targets. J
+Psychopharmacol 32: 960104.
+Stahl SM (2009) Mechanism of action of trazodone: a
+multifunctional drug. CNS Spectrums 14: 536–46.
+Stahl SM (2012) Psychotherapy as an epigenetic “drug”:
+psychiatric therapeutics target symptoms linked to
+malfunctioning brain circuits with psychotherapy as well
+as with drugs. J Clin Pharm Ther 37: 249–53.
+Stahl SM (2014) Mechanism of action of the SPARI
+vilazodone: (serotonin partial agonist reuptake inhibitor).
+CNS Spectrums 19: 105–9.
+Stahl SM (2014) Mechanism of action of agomelatine:
+a novel antidepressant exploiting synergy between
+monoaminergic and melatonergic properties. CNS
+Spectrums 19: 207–12.
+Stahl SM (2015) Modes and nodes explain the mechanism
+of action of vortioxetine, a multimodal agent (MMA):
+enhancing serotonin release by combining serotonin
+(5HT) transporter inhibition with actions at 5HT receptors
+(5HT1A, 5HT1B, 5HT1D, 5HT7 receptors). CNS Spectrums
+20: 93–7.
+Stahl SM (2015) Modes and nodes explain the mechanism of
+action of vortioxetine, multimodal agent (MMA): actions
+at serotonin receptors may enhance downstream release of
+four pro-cognitive neurotransmitters. CNS Spectrums 20:
+515–19.
+Stahl SM, Fava M, Trivedi M (2010) Agomelatine in the
+treatment of major depressive disorder: an 8 week,
+multicenter, randomized, placebo-controlled trial. J Clin
+Psychiatry 71: 616–26.
+Undurraga J, Baldessarini RJ, Valenti M, et al. (2012) Bipolar
+depression: clinical correlates of receiving antidepressants.
+J Affect Disord 139: 89–93.
+Zajecka J, Schatzberg A, Stahl SM, et al. (2010) Efficacy and
+safety of agomelatine in the treatment of major depressive
+disorder: a multicenter, randomized, double-blind, placebocontrolled trial. J Clin Psychopharmacol 30: 135–44.
+
+587
+
+

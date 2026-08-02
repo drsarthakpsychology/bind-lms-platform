@@ -1,0 +1,337 @@
+<<<PAGE 91>>>
+
+Mood Disorders
+
+iii. Bipolar depression
+There is recent evidence that quetiapine has antidepressant efficacy in bipolar depression.
+iv. Maintenance or prophylactic treatment in bipolar
+disorder
+Recent evidence shows that several atypical antipsychotics such as olanzapine, quetiapine and aripiprazole
+can be successfully used in the maintenance treatment
+of bipolar disorder.
+
+Other Mood Stabilisers
+The other mood stabilisers which are used in the treatment of bipolar mood disorders include:
+1. Sodium valproate
+• For acute treatment of mania and prevention of
+bipolar mood disorder.
+• Particularly useful in those patients who are refractory to lithium.
+• The dose range is usually 1000-3000 mg/day (the
+therapeutic blood levels are 50-125 mg/ml).
+• It has a faster onset of action than lithium, therefore, it can be used in acute treatment of mania
+effectively.
+2. Carbamazepine and Oxcarbazepine
+• For acute treatment of mania and prevention of
+bipolar mood disorder.
+• Particularly useful in those patients who are refractory to lithium and valproate.
+• Particularly effective when EEG is abnormal
+(although this is not necessary for the use of carbamazepine).
+• The dose range of carbamazepine is 600-1600 mg/
+day (the therapeutic blood levels are 4-12 mg/ml).
+• The use of carbamazepine in treatment of bipolar
+disorder has recently declined, partly due to its
+potential for drug interactions.
+• Oxcarbazepine has a narrow evidence base and its
+use in bipolar disorder is quite recent.
+3. Benzodiazepines
+Lorazepam (IV and orally) and clonazepam are used
+for the treatment of manic episode alone rarely; however, they have been used more often as adjuvants to
+antipsychotics.
+
+79
+
+4. Lamotrigine is particularly effective for bipolar
+depression and is recommended by several guidelines.
+5. T3 and T4 as adjuncts for the treatment of rapid cycling mood disorder and resistant depression.
+
+Other Treatments
+Psychosurgery is an extremely rarely used method
+of treatment and is resorted to only in exceptional
+circumstances.
+In depressive episode, which is either chronic or
+persistently recurrent with a limited or absent response
+to other modes of treatment, one of the following
+procedures may very rarely be performed:
+i. Stereotactic subcaudate tractotomy, or
+ii. Stereotactic limbic leucotomy.
+In carefully selected patients, the results are
+reported to be satisfactory. However, in the current
+day and age, psychosurgery is hardly ever considered
+in routine clinical practice.
+
+Psychosocial Treatment
+Although somatic treatment appears to be the primary
+mode of management in major mood disorders, psychosocial treatment is often helpful. These indications
+include:
+i. As an adjunct to somatic treatment.
+ii. In mild to moderate cases of depression.
+iii. Certain selected cases.
+These methods include (see Chapter 18 for details):
+
+Cognitive Behaviour Therapy
+Cognitive behaviour therapy (CBT) aims at correcting depressive negative cognitions (ideations) such
+as hopelessness, worthlessness, helplessness and pessimistic ideas, and replacing them by new cognitive
+and behavioural responses.
+CBT is useful in mild to moderate, non-bipolar
+depression and can be used with or without somatic
+treatment.
+
+Interpersonal Therapy
+Interpersonal therapy (IPT) attempts to recognise
+and explore interpersonal stressors, role disputes and
+
+
+
+
+<<<PAGE 197>>>
+
+Psychopharmacology
+
+It is essential to continue the antidepressant for a
+period of further 6 months after reaching remission, in
+the first episode of depressive disorder (and for longer
+duration in subsequent episodes) to prevent recurrence of symptoms. It is important to prescribe the
+antidepressant in the same dose as used for treatment
+unless there are adverse effects requiring a decrease
+in dose.
+Only when adequate doses (150-300 mg
+imipramine equivalent) have been administered for
+an adequate period (at least 6 weeks) without a clinical response then the drug can be called ineffective
+for that patient. Another drug, usually from a different
+class or group, or ECT may then be used.
+
+Side Effects and Toxicity
+The common side effects of antidepressants with their
+management are summarised in Table 15.7.
+TCAs are dangerous in overdose; amitriptyline
+and dosulepin (dotheipin) are particularly cardiotoxic
+whilst lofepramine is the safest amongst TCAs. Clinical features of overdose include agitation, delirium,
+paralytic ileus, urinary retention, coma, respiratory
+depression, seizures, hyperpyrexia, cardiac arrhythmias, conduction defects, mydriasis, and death. The
+lethal dose of imipramine is 1-2 g. (40-80 tabs. of
+25 mg imipramine equivalence).
+The treatment options in overdose include gastric
+lavage/induction of vomiting, activated charcoal for
+adsorption, cardio-respiratory resuscitation, treatment
+of seizures (if they occur), general supportive care
+and symptomatic management. Quinidine-like drugs
+are contraindicated whilst antiarrhythmics such as
+lignocaine can be helpful. Physostigmine 0.5 mg
+IV/IM bolus repeated to a total of 3-4 mg/day may
+be used under careful supervision. Coma often reverts
+in less than 24 hours, although toxicity lasts for
+5-6 days.
+Co-prescription of serotonergic drugs (such as
+SSRIs) with other serotonergic agents and especially
+MAOIs can lead to serotonin syndrome. It is characterised by a classic triad of mental status changes,
+neuromuscular abnormalities and autonomic hyper-
+
+185
+
+activity. These include anxiety, agitation, confusion,
+clonus (e.g. ankle clonus, ocular clonus), hyperreflexia, myoclonus, rigidity, increased heart rate, tremor,
+flushing, hyperthermia and excessive sweating. Death
+can occur in severe serotonin syndrome.
+Treatment includes discontinuation of the offending drug(s), supportive management and (sometimes)
+use of serotonin and histamine antagonist cyproheptadine.
+
+Refractory Depression
+About 20-35% of patients do not respond to the
+antidepressant therapy. The chief reasons for this
+non-response include:
+1. Poor drug concordance.
+2. Inadequate dosage.
+3. Insufficient treatment duration.
+4. Low plasma antidepressant levels.
+5. Incorrect diagnosis.
+Even when these important reasons are excluded,
+there still remains a group (15-20%) of depressed
+patients who are non-responders or poor-responders.
+Such patients should receive a trial of another antidepressant preferably from a different group (e.g. SNRI)
+for adequate duration. In case the patient still does not
+respond, the treatment of choice of refractory depression is electroconvulsive therapy (ECT), though other
+treatment choices (such as lithium augmentation) are
+also available.
+
+MOOD STABILISING DRUGS
+(DRUGS USED IN PROPHYLAXIS
+OF BIPOLAR DISORDER)
+These drugs are usually effective in treatment of mania and therefore the word antimanic is often used to
+describe them. But as they are effective in preventing
+mood swings in bipolar disorder, the better term is
+mood-stabilising agent or a prophylactic agent. The
+most commonly used mood-stabilising agents include
+lithium, valproate, carbamazepine, and lamotrigine,
+though there are several other experimental mood
+stabilisers such as oxcarbazepine.
+
+
+
+
+<<<PAGE 270>>>
+
+258
+
+A Short Textbook of Psychiatry
+
+NMDA 52
+antagonist 26
+NMHP 236
+NMS 87
+Nonorganic
+dyspareunia 130
+vaginismus 130
+Non-REM sleep 133
+Norepinephrine 75
+Normal
+aging process 23
+child development 153
+mental health 1
+Nuclear schizophrenia 58
+Nymphomania 127
+
+Orgasmic disorders/dysfunctions 128
+Othello syndrome 84
+Other
+acute predominantly delusional psychotic disorders 86
+biological methods of treatment 199
+organic mental disorders 28
+psychiatric emergencies 228
+Oxazepam 26
+Oxcarbazepine 79
+
+O
+Obesity 144
+Obsessions 12, 95-97, 168
+Obsessive
+compulsive
+disorder 76, 95
+personality disorder 118
+symptoms 169
+rumination 96
+Occupational history 9
+Oculocephalic reflex 226
+Oedipus complex 211
+Olanzapine 28-30, 66, 168
+Oneiroid schizophrenia 60
+Operant conditioning 215
+model 214
+Opiate antagonists 132
+Opioid
+antagonists 45
+derivatives 43
+use disorders 42
+Opium and Revenue Laws Act, 1950 233
+Oppositional defiant disorder 167
+Organic
+amnestic syndrome 27, 39
+anxiety 90
+disorder 30, 91
+catatonic disorder 29
+delusional disorder 29
+dissociative disorder 32
+emotionally labile disorder 32
+hallucinosis 28
+mood disorder 30, 72
+personality disorder 31
+sexual disorder 132
+stupor 225, 226
+
+P
+PAD syndrome 81
+Paedophilia 126
+Palilalia 168
+Paliperidone 66
+Pananxiety 60
+Panic disorder 90, 93, 228
+Pan-neurosis 60
+Pansexuality 60
+Papaverine 132
+Papez circuit 204
+Paranoid
+disorder 83, 84
+personality disorder 58, 84, 114
+schizophrenia 58, 61, 84
+Paraphasias 56
+Paraphilias 124
+Parental counselling 165
+Parkinsonian symptoms 26
+Parsi Marriage and Divorce Act 230
+Passive-aggressive personality disorder
+118
+Pathological
+grief reaction 151
+intoxication 33, 37
+laughter and crying 30
+Pavor nocturnus 140
+Pedigree chart 7
+Peduncular hallucinosis 28
+Penis envy 211
+Pentothal/amytal/diazepam interview 225
+Perinatal history 9
+Periodic limb movement disorder 136
+Pernicious catatonia 59
+Perpetuating and/or relieving factors 6
+Perplexity 56
+Perseveration 56
+Persistent
+delusional disorders 83
+mood disorder 73
+somatoform pain disorder 109
+
+Personality
+disorders 113
+traits 113
+Persons with Disability Act 161
+Pfropf schizophrenia 61
+Phallic phase 211
+Phencyclidine use disorder 52
+Phenelzine 95
+Phenylalanine 158
+Phenylketonuria 157
+Phobia 92
+Phobic
+anxiety-depersonalisation syndrome
+81
+companion 93
+disorder 92
+Phonological disorder 163
+Phototherapy 82
+Physical causes of male erectile disorder/
+impotence 128
+Physiology of hyperventilation syndrome
+107
+Physostigmine 227
+Piblokto 110, 111
+Pickwickian syndrome 139
+Pimozide 66, 85, 169
+Polysomnography 135, 137
+Poor drug concordance 181
+Positive
+reinforcement 215
+symptoms 62
+Possession hysteria 102
+Post-cardiac surgery delirium 149
+Post-natal blues 145
+Postpartum
+psychiatric disorders 145
+psychosis 145
+Post-schizophrenic depression 60
+Post-traumatic stress disorder 112
+Poverty of
+ideation 56
+speech 56, 62
+Pranayama 92, 219
+Predisposing factors 6, 20
+in delirium 21
+Prefrontal lobotomy 203
+Pregabalin 198
+Premature ejaculation 130, 131
+Premenstrual
+syndrome 108
+tension 108
+Premorbid
+histrionic personality traits 103
+personality 10
+
+

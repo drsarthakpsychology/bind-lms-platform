@@ -1,0 +1,275 @@
+<<<PAGE 439>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+Benzo Hypnotics
+2-6
+days
+
+2-5
+days
+α5
+
+α1
+α3
+
+α2
+
+α5
+
+α1
+α3
+
+α2
+
+flurazepam (Dalmane)
+
+Dual Orexin Receptor Antagonists (DORAs)
+
+quazepam (Doral)
+
+1-2
+hours
+α5
+
+α1
+α2
+
+α3
+
+triazolam (Halcion)
+
+12-30
+hours
+
+4-20
+hours
+α5
+
+α1
+α2
+
+α3
+
+estazolam (ProSom)
+
+α5
+
+α1
+α2
+
+patients who have middle insomnia. For zopiclone, there
+is a racemic mixture of both R- and S-zopiclone, available
+outside the US, and the single S enantiomer, eszopiclone,
+available in the US (Figure 10-34). Clinically meaningful
+differences between the active enantiomer and the
+racemic mixture are debated.
+
+α3
+
+temazepam (Restoril)
+
+Figure 10-33 Benzodiazepine hypnotics. Five benzodiazepines
+that are approved in the United States for insomnia are shown
+here. These include flurazepam and quazepam, which have
+ultra-long half-lives; triazolam, which has an ultra-short half-life;
+and estazolam and temazepam, which have moderate half-lives.
+These benzodiazepines are nonselective for GABAA receptors
+with different α subunits.
+
+and Z drugs. The α1 subtype is also linked to daytime
+sedation, anticonvulsant actions, and possibly to amnesia.
+Adaptations of this receptor with chronic hypnotic
+treatments that target it are thought to lead to tolerance
+and withdrawal. The α2 receptor and α3 receptor subtypes
+are linked to anti-anxiety, muscle relaxant, and alcoholpotentiating actions. Finally, the α5 subtype, mostly in
+the hippocampus, may be linked to cognition and other
+functions.
+Multiple versions for two of the Z drugs, zolpidem
+and zopiclone, are available for clinical use. For zolpidem,
+a controlled-release formulation known as zolpidem
+CR (Figure 10-34) extends the duration of action of
+zolpidem immediate release from about 2–4 hours to
+a more optimized duration of 6–8 hours, improving
+sleep maintenance. An alternative dosage formulation of
+zolpidem for sublingual administration with faster onset
+and given at a fraction of the usual nighttime dose is
+also available for middle-of-the-night administration for
+
+Orexins/hypocretins, their receptors, and their pathways
+have been discussed above and are illustrated in Figures
+10-9 through 10-12. Pharmacological blockade of orexin
+receptors has hypnotic actions but not by enhancing
+inhibitory GABA action in the sleep-promoting center
+(VLPO) as do the benzodiazepines and Z drugs (Figure
+10-17). Instead, dual orexin receptor antagonists
+(DORAs) (at both orexin 1 and 2 receptors) block the
+wake-stabilizing effects of the orexins, especially at orexin
+2 receptors (Figures 10-35, 10-36). DORAs inhibit the
+ability of naturally occurring orexins from promoting
+the release of other wake-promoting neurotransmitters
+such as histamine, acetylcholine, norepinephrine,
+dopamine, and serotonin (as shown in Figure 10-37).
+After administration of a DORA, arousal is no longer
+enhanced and wakefulness is no longer stabilized by
+orexins, and the patient goes to sleep. Both suvorexant
+and lemborexant (Figure 10-35) improve not only the
+initiation but also the maintenance of sleep and do so
+without the side effects expected of a benzodiazepine
+or Z-drug hypnotic, namely lacking dependence,
+withdrawal, rebound, unsteady gait, falls, confusion,
+amnesia, or respiratory depression.
+Both suvorexant and lemborexant (Figure 10-35) are
+reversible inhibitors, which means that as endogenous
+orexins build up in the morning, the inhibitory action
+of the DORAs are reversed. Thus, at night, DORAs have
+more effect since there is a higher ratio of drug to orexin.
+As daylight begins, orexin levels rise just as DORA levels
+are falling, and there is less drug relative to the amount
+of orexin present, (i.e., lower ratio of drug to orexin).
+When a threshold of blockade of orexin receptors is
+no longer present, the patient awakens. Suvorexant
+has comparable affinity for orexin 1 and orexin 2
+receptors, and lemborexant has higher affinity for orexin
+2 receptors than orexin 1 receptors (Figure 10-35).
+Lemborexant reportedly exhibits much faster association
+and dissociation kinetics at orexin 2 receptors than
+suvorexant. The clinical significance of this is uncertain
+but may imply a faster reversibility of lemborexant
+than suvorexant in the morning as endogenous orexin
+levels rise to compete for binding at orexin receptors.
+423
+
+10
+
+
+
+
+<<<PAGE 445>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+Figure 10-41C, D Pharmacokinetics
+of hypnotics, part 2. (C) For hypnotics
+with moderately long half-lives (15–30
+hours), receptor occupancies above the
+sleep threshold may not wear off until
+after the individual needs to awaken,
+potentially leading to “hangover”
+effects (sedation, memory problems).
+(D) For hypnotics with ultra-short halflives (1–3 hours), receptor occupancies
+above the sleep threshold may not
+last long enough, causing loss of sleep
+maintenance.
+
+Still Too Hot:
+
+Moderately Long Half-Life Hypnotics
+Do Not Wear Off Until After
+Time to Awaken (Hangover)
+5
+
+4
+
+drug
+concentration 3
+
+hangover, levels high after
+time to awaken
+
+2
+
+relevant threshold
+
+1
+
+0
+
+24
+
+48
+
+hours (taken nightly)
+
+72
+
+96
+
+120
+
+144
+
+duration above threshold: 15-30 hours
+examples: estazolam (ProSom)
+temazepam (Restoril)
+most TCAs
+mirtazapine (Remeron)
+chlorpromazine (Thorazine)
+
+C
+
+Too Cold:
+
+Short Half-Life Hypnotics Wear Off
+Before Time to Awaken
+(Loss of Sleep Maintenance)
+5
+
+4
+
+drug
+concentration 3
+
+loss of sleep maintenance
+low levels before time
+to awaken
+
+2
+
+relevant threshold
+
+1
+
+0
+
+24
+
+48
+
+hours (taken nightly)
+D
+
+72
+
+10
+
+96
+120
+144
+half-lives: 1-3 hours
+examples: triazolam (Halcion)
+zaleplon (Sonata)
+zolpidem (Ambien)
+melatonin
+ramelteon (Rozerem)
+
+The reason these concepts are important to the
+prescriber is not so much the precision of the estimates
+of thresholds, as these may vary from patient to
+patient. Instead, these concepts inform the prescriber
+about what to do to get the Goldilocks solution for
+individual patients. If the patient is not falling asleep
+quickly enough, theoretically the patient does not reach
+threshold fast enough, so either give the drug earlier in
+
+the evening, or don’t take with food (food can delay the
+absorption of some agents), or raise the dose, or change
+the mechanism. If the patient is not sleeping long enough
+(Figure 10-41D), theoretically threshold levels are lost too
+early, so either raise the dose or switch to a drug with a
+longer duration of action above the threshold (generally,
+this would be drugs with a longer pharmacokinetic
+half-life; see Figures 10-41A and 10-41C). If the patient
+429
+
+

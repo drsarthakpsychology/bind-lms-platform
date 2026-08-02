@@ -1,0 +1,816 @@
+<<<PAGE 9>>>
+
+54 flurazepam
+55 fluvoxamine
+56 gabapentin
+57 galantamine
+58 guanfacine
+59 haloperidol
+60 hydroxyzine
+61 iloperidone
+62 imipramine
+63 isocarboxazid
+64 ketamine
+65 lamotrigine
+66 lemborexant
+67 levetiracetam
+68 levomilnacipran
+69 lisdexamfetamine
+70 lithium
+71 lofepramine
+72 lofexidine
+73 loflazepate
+74 lorazepam
+75 loxapine
+76 lumateperone
+77 lurasidone
+78 maprotiline
+79 memantine
+80 methylfolate (l)
+81 methylphenidate (d)
+
+
+
+
+<<<PAGE 383>>>
+
+Induces hyperketonemia and provides an alternative energy
+substrate to glucose in the brain
+Caprylidene is processed in the gut, resulting in medium-chain fatty
+acids that pass to the liver and undergo obligate oxidation,
+ultimately being formed into ketone bodies (acetoacetate and betahydroxybutyric acid (BHB))
+Ketone bodies cross the blood–brain barrier and are taken up by
+neurons and enter the mitochondria, where they increase
+mitochondrial efficiency
+Ketone bodies also generate ATP and increase pools of acetyl-CoA
+and acetylcholine
+How Long Until It Works
+May begin working immediately
+If It Works
+May improve or stabilize memory and cognitive function, but does
+not reverse the degenerative process
+If It Doesn’t Work
+Consider a cholinesterase inhibitor or memantine
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+
+
+
+<<<PAGE 384>>>
+
+Cholinesterase inhibitors or memantine
+Tests
+None for healthy individuals
+Triglyceride levels should be monitored periodically for individuals
+who meet multiple criteria for metabolic syndrome (i.e., elevated
+waist circumference, elevated triglycerides, high blood pressure,
+reduced fasting HDL, and/or elevated fasting glucose)
+
+Side Effects
+How Drug Causes Side Effects
+Caprylidene is processed in the gut, which may contribute to
+gastrointestinal side effects
+Notable Side Effects
+Diarrhea, flatulence, dyspepsia
+Nausea, headache
+Life-Threatening or Dangerous Side Effects
+None reported
+Weight Gain
+
+
+
+
+<<<PAGE 711>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Atypical antipsychotics to reduce behavioral disturbances
+✽ Antidepressants if concomitant depression, apathy, or lack of
+interest
+
+✽ Memantine for moderate to severe Alzheimer disease
+Divalproex, carbamazepine, or oxcarbazepine for behavioral
+disturbances
+Not rational to combine with another cholinesterase inhibitor
+Tests
+None for healthy individuals
+
+Side effects
+How Drug Causes Side Effects
+Peripheral inhibition of acetylcholinesterase can cause
+gastrointestinal side effects
+Central inhibition of acetylcholinesterase may contribute to nausea,
+vomiting, weight loss, and sleep disturbances
+Notable Side Effects
+
+✽ Nausea, diarrhea, vomiting, appetite loss, increased gastric acid
+secretion, weight loss
+
+
+
+
+<<<PAGE 713>>>
+
+Consider lowering dose, switching to a different agent, or adding an
+appropriate augmenting agent
+Best Augmenting Agents for Side Effects
+Hypnotics or trazodone may improve insomnia
+Many side effects cannot be improved with an augmenting agent
+
+Dosing and use
+Usual Dosage Range
+5–10 mg at night
+Dosage Forms
+Tablet 5 mg, 10 mg, 23 mg
+Orally disintegrating tablet 5 mg, 10 mg
+Namzaric extended-release (combination memantine/donepezil) 7
+mg/10 mg, 14 mg/10 mg, 21 mg/10 mg, 28 mg/10 mg
+How to Dose
+Initial 5 mg/day; may increase to 10 mg/day after 4–6 weeks
+Namzaric, for patients already on donepezil 10 mg once daily: initial
+dose 7 mg/10 mg once daily in the evening; increase weekly in 7 mg
+increments; maximum dose 28 mg/10 mg
+
+
+
+
+<<<PAGE 714>>>
+
+Namzaric, for patients already on memantine (10 mg twice per day
+or 28 mg extended-release once per day) and donepezil 10 mg once
+daily: can switch to 28 mg/10 mg once daily in the evening
+Dosing Tips
+Side effects occur more frequently at higher doses than at lower
+doses
+Slower titration (e.g., 6 weeks to 10 mg/day) may reduce the risk of
+side effects
+Food does not affect the absorption of donepezil
+Probably best to utilize highest tolerated dose within the usual
+dosage range
+Some off-label uses for cognitive disturbances other than Alzheimer
+disease have anecdotally utilized doses higher than 10 mg/day
+
+✽ When switching to another cholinesterase inhibitor, probably best
+to cross-titrate from one to the other to prevent precipitous decline in
+function if the patient washes out of one drug entirely
+Namzaric can be taken with or without food, whole or sprinkled on
+applesauce; do not divide, chew, or crush
+Overdose
+Can be lethal; nausea, vomiting, excess salivation, sweating,
+hypotension, bradycardia, collapse, convulsions, muscle weakness
+(weakness of respiratory muscles can lead to death)
+
+
+
+
+<<<PAGE 719>>>
+
+May work in some patients who do not tolerate other cholinesterase
+inhibitors
+Potential Disadvantages
+Patients with insomnia
+Primary Target Symptoms
+Memory loss in Alzheimer disease
+Behavioral symptoms in Alzheimer disease
+Memory loss in other dementias
+Pearls
+A fixed-dose combination of memantine extended-release and
+donepezil (Namzaric) has been approved for the treatment of
+moderate to severe Alzheimer dementia in patients stabilized on
+memantine and donepezil
+Dramatic reversal of symptoms of Alzheimer disease is not
+generally seen with cholinesterase inhibitors
+Can lead to therapeutic nihilism among prescribers and lack of an
+appropriate trial of a cholinesterase inhibitor
+
+✽ Perhaps only 50% of Alzheimer patients are diagnosed, and only
+50% of those diagnosed are treated, and only 50% of those treated are
+given a cholinesterase inhibitor, and then only for 200 days in a disease
+that lasts 7–10 years
+
+
+
+
+<<<PAGE 815>>>
+
+Use with caution with other drugs that are NMDA antagonists
+(amantadine, memantine, dextromethorphan)
+Esketamine may increase the effects of other sedatives, including
+benzodiazepines, barbiturates, opioids, anesthetics, and alcohol
+Concomitant use with stimulants or monoamine oxidase inhibitors
+may increase blood pressure
+Other Warnings/Precautions
+Because of the risks of sedation and dissociation and of abuse and
+misuse, esketamine is only available through a restricted program
+under a REMS; healthcare settings and pharmacies must be certified in
+the REMS program, and pharmacies must only dispense esketamine to
+healthcare settings that are certified in the program
+Esketamine can raise blood pressure; patients with cardiovascular and
+cerebrovascular conditions and risk factors may be at an increased risk
+of associated adverse effects
+Blood pressure should be monitored for at least 2 hours postadministration of esketamine, and prompt medical care should be
+sought if blood pressure remains high; refer patients experiencing
+symptoms of a hypertensive crisis or hypertensive encephalopathy for
+immediate emergency care
+In patients with a history of hypertensive encephalopathy, more
+intensive monitoring, including more frequent blood pressure and
+symptom assessment, is warranted because these patients are at higher
+
+
+
+
+<<<PAGE 997>>>
+
+If It Doesn’t Work
+Consider adjusting dose, switching to a different cholinesterase
+inhibitor or adding an appropriate augmenting agent
+Reconsider diagnosis and rule out other conditions such as
+depression or a dementia other than Alzheimer disease
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Atypical antipsychotics to reduce behavioral disturbances
+✽ Antidepressants if concomitant depression, apathy, or lack of
+interest
+
+✽ Memantine for moderate to severe Alzheimer disease
+Divalproex, carbamazepine, or oxcarbazepine for behavioral
+disturbances
+Not rational to combine with another cholinesterase inhibitor
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Peripheral inhibition of acetylcholinesterase can cause
+gastrointestinal side effects
+
+
+
+
+<<<PAGE 1118>>>
+
+Long-term cognitive and memory impairment have been reported
+with repeated ketamine misuse or abuse
+Habit Forming
+No
+How to Stop
+Taper not necessary
+Pharmacokinetics
+Plasma half-life: alpha: 10–15 minutes; beta: 2.5 hours; 1–3 hours
+IM; 2.5–3 hours orally; 12 hours norketamine
+Metabolized by CYP450 2B6, 2C9, and 3A4
+Drug Interactions
+Use with caution with other drugs that are NMDA antagonists
+(amantadine, memantine, dextromethorphan)
+Ketamine may increase the effects of other sedatives, including
+benzodiazepines, barbiturates, opioids, anesthetics, and alcohol
+CYP450 3A4 inhibitors (e.g., clarithromycin, ketoconazole) can
+increase plasma concentrations of ketamine and reduce those of
+norketamine, but the clinical relevance of this is unclear
+Plasma concentrations of ketamine are increased by diazepam
+
+
+
+
+<<<PAGE 1375>>>
+
+Memantine
+
+Therapeutics
+Brands
+Namenda
+Namenda XR
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: glutamate receptor antagonist
+(Glu-RAn)
+N-methyl-D-aspartate (NMDA) receptor antagonist; NMDA
+subtype of glutamate receptor antagonist; cognitive enhancer
+Commonly Prescribed for
+(bold for FDA approved)
+Alzheimer disease (moderate to severe)
+Alzheimer disease (mild to moderate)
+Memory disorders in other conditions
+
+
+
+
+<<<PAGE 1379>>>
+
+Namzaric extended-release (combination memantine/donepezil) 7
+mg/10 mg, 14 mg/10 mg, 21 mg/10 mg, 28 mg/10 mg
+Dosage Forms
+Tablet 5 mg, 10 mg
+Oral solution 2 mg/mL
+Extended-release capsule 7 mg, 14 mg, 21 mg, 28 mg
+How to Dose
+Initial 5 mg/day; can increase by 5 mg each week; doses over 5 mg
+should be divided; maximum dose 10 mg twice daily
+Extended-release: initial 7 mg once daily; can increase by 7 mg each
+week; maximum dose 28 mg once daily
+Namzaric, for patients already on donepezil 10 mg once daily: initial
+dose 7 mg/10 mg once daily in the evening; increase weekly in 7 mg
+increments; maximum dose 28 mg/10 mg
+Namzaric, for patients already on memantine (10 mg twice per day
+or 28 mg extended-release once per day) and donepezil 10 mg once
+daily: can switch to 28 mg/10 mg once daily in the evening
+Dosing Tips
+
+✽ Despite very long half-life, is generally dosed twice daily, although
+some data suggest once daily is safe and tolerable
+
+
+
+
+<<<PAGE 1380>>>
+
+Both the patient and the patient’s caregiver should be instructed on
+how to dose memantine since patients themselves have moderate to
+severe dementia and may require assistance
+
+✽ Memantine is unlikely to affect pharmacokinetics of
+acetylcholinesterase inhibitors
+Absorption not affected by food
+Namzaric can be taken with or without food, whole or sprinkled on
+applesauce; do not divide, chew, or crush
+Overdose
+No fatalities have been reported; restlessness, psychosis, visual
+hallucinations, sedation, stupor, loss of consciousness
+Long-Term Use
+Drug may lose effectiveness in slowing degenerative course of
+Alzheimer disease after 6 months
+Habit Forming
+No
+How to Stop
+No known withdrawal symptoms
+Theoretically, discontinuation could lead to notable deterioration in
+memory and behavior which may not be restored when drug is
+
+
+
+
+<<<PAGE 1381>>>
+
+restarted or a cholinesterase inhibitor is initiated
+Pharmacokinetics
+Little metabolism; mostly excreted unchanged in the urine
+Terminal elimination half-life approximately 60–80 hours
+Minimal inhibition of CYP450 enzymes
+Drug Interactions
+No interactions with drugs metabolized by CYP450 enzymes
+Drugs that raise the urine pH (e.g., carbonic anhydrase inhibitors,
+sodium bicarbonate) may reduce elimination of memantine and raise
+plasma levels of memantine
+
+✽ No interactions with cholinesterase inhibitors
+Other Warnings/Precautions
+
+✽ Use cautiously if coadministering with other NMDA antagonists
+such as amantadine, ketamine, and dextromethorphan
+Do Not Use
+If there is a proven allergy to memantine
+
+Special Populations
+Renal Impairment
+
+
+
+
+<<<PAGE 1382>>>
+
+No dose adjustment in mild or moderate impairment
+Reduce dose in severe impairment
+Severe renal impairment: the recommended maintenance dose for
+Namzaric is 14 mg/10 mg once daily in the evening
+Hepatic Impairment
+Not likely to require dosage adjustment
+Cardiac Impairment
+Not likely to require dosage adjustment
+Elderly
+Pharmacokinetics similar to younger adults
+Children and Adolescents
+Memantine use has not been studied in children or adolescents
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+
+
+
+
+<<<PAGE 1383>>>
+
+Controlled studies have not been conducted in pregnant women
+Animal studies do not show adverse effects
+
+✽ Not recommended for use in pregnant women or women of
+childbearing potential
+Breast Feeding
+Unknown if memantine is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+Memantine is not recommended for use in nursing women
+
+The Art of Psychopharmacology
+Potential Advantages
+In patients with more advanced Alzheimer disease
+Potential Disadvantages
+Unproven to be effective in mild to moderate Alzheimer disease
+Patients who have difficulty taking a medication twice daily
+Primary Target Symptoms
+Memory loss in Alzheimer disease
+Behavioral symptoms in Alzheimer disease
+
+
+
+
+<<<PAGE 1384>>>
+
+Memory loss in other dementias
+Pearls
+
+✽ Memantine’s actions are somewhat like the natural inhibition of
+NMDA receptors by magnesium, and thus memantine is a sort of
+“artificial magnesium”
+Theoretically, NMDA antagonism of memantine is strong enough to
+block chronic low-level overexcitation of glutamate receptors
+associated with Alzheimer disease, but not strong enough to
+interfere with periodic high level utilization of glutamate for
+plasticity, learning, and memory
+Structurally related to the antiparkinsonian and anti-influenza agent
+amantadine, which is also a weak NMDA antagonist
+
+✽ Memantine is well tolerated with a low incidence of adverse effects
+Antagonist actions at 5HT3 receptors have unknown clinical
+consequences but may contribute to low incidence of
+gastrointestinal side effects
+A fixed-dose combination of memantine extended-release and
+donepezil has been approved for the treatment of moderate to severe
+Alzheimer dementia in patients stabilized on memantine and
+donepezil
+Treat the patient but ask the caregiver about efficacy
+Delay in progression of Alzheimer disease is not evidence of
+disease-modifying actions of NMDA antagonism
+
+
+
+
+<<<PAGE 1385>>>
+
+May or may not be effective in vascular dementia
+Under investigation for dementia associated with HIV/AIDS
+May or may not be effective in chronic neuropathic pain
+
+✽ Theoretically, could be useful for any condition characterized by
+moderate overactivation of NMDA glutamate receptors (possibly
+neurodegenerative conditions or even bipolar disorder, anxiety
+disorders, or chronic neuropathic pain), but this is not proven
+
+Suggested Reading
+Areosa SA , Sherriff F . Memantine for dementia . Cochrane Database Syst
+Rev 2003 ;(3):CD003154 .
+Doggrell S . Is memantine a breakthrough in the treatment of moderate-tosevere Alzheimer’s disease? Expert Opin Pharmacother 2003 ;4 :1857 –60.
+Mobius HJ . Memantine: update on the current evidence . Int J Geriatr
+Psychiatry 2003 ;18 (Suppl 1):S47 –54.
+Sani G , Serra G , Kotzalidis GD , et al. The role of memantine in the
+treatment of psychiatric disorders other than the dementias: a review of
+current preclinical and clinical evidence . CNS Drugs 2012 ;26 (8 ):663–90
+.
+Tariot PN , Federoff HJ . Current treatment for Alzheimer disease and
+future prospects . Alzheimer Dis Assoc Disord 2003 ;17 (Suppl 4):S105 –
+13.
+
+
+
+
+<<<PAGE 2009>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+✽ Atypical antipsychotics to reduce behavioral disturbances
+✽ Antidepressants if concomitant depression, apathy, or lack of
+interest
+
+✽ Memantine for moderate to severe Alzheimer disease
+Divalproex, carbamazepine, or oxcarbazepine for behavioral
+disturbances
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Peripheral inhibition of acetylcholinesterase can cause
+gastrointestinal side effects
+Peripheral inhibition of butyrylcholinesterase can cause
+gastrointestinal side effects
+Central inhibition of acetylcholinesterase may contribute to nausea,
+vomiting, weight loss, and sleep disturbances
+Notable Side Effects
+
+
+
+
+<<<PAGE 2583>>>
+
+Dixibon (sulpiride), 741
+Dizac (diazepam), 229
+DM (dextromethorphan), 225
+d-methylphenidate, 481
+Dobren (sulpiride), 741
+Dobupal (venlafaxine), 841
+Dogmatil (sulpiride), 741
+Dogmatyl (sulpiride), 741
+Dolmatil (sulpiride), 741
+Domical (amitriptyline), 25
+Dominans (nortriptyline), 551
+Domnamid (estazolam), 281
+DOM-trazodone (trazodone), 793
+donepezil, 243
+donepezil/memantine combination, 243 , 473
+Doneurin (doxepin), 255
+Donix (lorazepam), 437
+Dopress (dothiepin), 249
+Doral (quazepam), 663
+Dorken (clorazepate), 185
+Dorm (lorazepam), 437
+Dormalin (quazepam), 663
+Dormapam (temazepam), 755
+Dorme (quazepam), 663
+Dormicum (midazolam), 499
+Dormodor (flurazepam), 321
+Dothep (dothiepin), 249
+dothiepin, 249
+
+
+
+
+<<<PAGE 2599>>>
+
+Meilax (loflazepate), 431
+Meleril (thioridazine), 759
+Melipramin (imipramine), 367
+Melipramine (imipramine), 367
+Mellaril (thioridazine), 759
+Melleretten (thioridazine), 759
+Melleril (thioridazine), 759
+Melzine (thioridazine), 759
+Memac (donepezil), 243
+memantine, 473
+memantine/donepezil combination, 243 , 473
+memantine XR, 473
+Menfazona (nefazodone), 545
+Menrium (chlordiazepoxide), 147
+Mepizin (oxazepam), 569
+Meresa (sulpiride), 741
+Merlit (lorazepam), 437
+Metadate CD (d,l-methylphenidate), 487
+Metadate ER (d,l-methylphenidate), 487
+Metafolin (l-methylfolate), 477
+Metamidol (diazepam), 229
+methyfolate (l), 477
+Methylin (d,l-methylphenidate), 487
+Methylin ER (d,l-methylphenidate), 487
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Metylyl (desipramine), 207
+Miabene (mianserin), 495
+
+
+
+
+<<<PAGE 2601>>>
+
+Moditen Depot (fluphenazine), 313
+Moditen Enanthate (fluphenazine), 313
+Modium (lorazepam), 437
+molindone, 527
+Molipaxin (trazodone), 793
+Motipress (nortriptyline), 551
+Motival (nortriptyline), 551
+Motivan (paroxetine), 593
+Movergan (selegiline), 705
+Moverin (selegiline), 705
+Moxadil (amoxapine), 33
+Multipax (hydroxyzine), 355
+Multum (chlordiazepoxide), 147
+Murelax (oxazepam), 569
+Mutan (fluoxetine), 301
+Mydayis (amphetamine d, l), 45
+Mylproin (valproate), 829
+Mysimba (naltrexone/bupropion), 541
+Nailin (nortriptyline), 551
+Nalin (nortriptyline), 551
+nalmefene, 533
+naloxone with buprenorphine, 111
+naltrexone, 537
+naltrexone/bupropion, 541
+Namenda (memantine), 473
+Namenda XR (memantine XR), 473
+Namzaric (memantine/donepezil combination), 243 , 473
+Nansius (clorazepate), 185
+
+
+
+
+<<<PAGE 2629>>>
+
+Alzheimer disease
+caprylidene , 127
+donepezil , 243
+galantamine , 337
+memantine , 473
+rivastigmine , 699
+selegiline, 705
+Amnesia, Drug-induced
+midazolam , 499
+Anxiety
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone , 123
+chlordiazepoxide , 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate , 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam , 229
+dothiepin, 249
+doxepin , 255
+duloxetine, 263
+
+
+
+
+<<<PAGE 2637>>>
+
+Delirium
+haloperidol (adjunct), 347
+lorazepam (adjunct), 437
+Dementia
+donepezil, 243
+galantamine, 337
+memantine, 473
+rivastigmine, 699
+selegiline, 705
+Dementia-related psychosis
+pimavanserin, 623
+Depression
+agomelatine, 5
+amisulpride, 17
+amitriptyline , 25
+amoxapine , 33
+amphetamine (d), 39
+amphetamine (d,l), 45
+aripiprazole (adjunct) , 53
+asenapine, 71
+atomoxetine, 79
+blonanserin, 89
+brexanolone , 99
+brexpiprazole (adjunct) , 103
+bupropion , 117
+buspirone (adjunct), 123
+
+
+
+
+<<<PAGE 2645>>>
+
+sodium oxybate, 853
+Nausea/vomiting
+chlorpromazine , 153
+hydroxyzine , 355
+perphenazine , 607
+Neuropathic pain/chronic pain
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin, 255
+duloxetine , 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+
+
+
+
+<<<PAGE 2664>>>
+
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+reboxetine, 681
+Benzodiazepine antagonist
+flumazenil, 293
+Cognitive enhancers
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+caprylidene, 127
+clonidine, 179
+donepezil, 243
+galantamine, 337
+memantine, 473
+memantine/donepezil combination, 243 , 473
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+reboxetine, 681
+rivastigmine, 699
+Dementia treatments
+caprylidene, 127
+donepezil, 243
+
+
+
+
+<<<PAGE 2665>>>
+
+galantamine, 337
+memantine, 473
+memantine/donepezil combination, 243 , 473
+rivastigmine, 699
+selegiline, 705
+Libido enhancers
+bremelanotide, 95
+flibanserin, 289
+Medical food
+caprylidene, 127
+l-methylfolate, 477
+Mood stabilizers
+alprazolam (adjunct), 11
+amoxapine, 33
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+bupropion, 117
+carbamazepine, 131
+cariprazine, 137
+chlorpromazine, 153
+clonazepam (adjunct), 173
+clozapine, 191
+doxepin, 255
+fluoxetine, 301
+flupenthixol, 307
+
+
+
+
+<<<PAGE 2668>>>
+
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+pregabalin, 647
+sodium oxybate, 733
+tiagabine, 771
+topiramate, 781
+trimipramine, 817
+zonisamide, 875
+NMDA antagonists
+dextromethorphan, 225
+esketamine, 275
+ketamine, 383
+memantine, 473
+Phosphodiesterase-5 (PDE-5) inhibitor
+sildenafil, 729
+Sedative hypnotics
+agomelatine, 5
+estazolam, 281
+eszopiclone, 285
+flunitrazepam, 297
+flurazepam, 321
+lemborexant, 395
+
+

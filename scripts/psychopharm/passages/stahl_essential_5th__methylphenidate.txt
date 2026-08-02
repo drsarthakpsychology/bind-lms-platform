@@ -1,0 +1,1480 @@
+<<<PAGE 457>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+Mechanism of Action of Caffeine:
+DA Actions at D2 Receptors
+
+Adenosine and Endogenous
+Purines Reduce DA Binding
+
+Figure 10-59 Caffeine. Caffeine is
+an antagonist at purine receptors,
+and in particular adenosine receptors.
+(A) These receptors are functionally
+coupled with certain postsynaptic
+dopamine (DA) receptors, such
+as dopamine D2 receptors, at
+which dopamine binds and has a
+stimulatory effect. (B) When adenosine
+binds to its receptors, this causes
+reduced sensitivity of D2 receptors. (C)
+Antagonism of adenosine receptors
+by caffeine prevents adenosine from
+binding there, and thus can enhance
+dopaminergic actions.
+
+adenosine
+
+purine
+receptor
+
+D2
+receptor
+
++
+
+B
+
+A
+
+Caffeine Antagonizes Adenosine Binding
+and Enhances DA Actions
+
+caffeine
+
+C
+
++
++
+
+10
+
++
+
+in the presence of adenosine (Figure 10-59C). When
+caffeine does this, dopamine action is enhanced and this
+is wake-promoting and reduces fatigue (Figure 10-59C).
+Amphetamine and Methylphenidate
+
+Wake promotion from enhancing the wake-promoting
+neurotransmitters dopamine and norepinephrine is
+classically done with amphetamines and methylphenidate
+(Figure 10-60). Because this is activating, wakepromoting, and fatigue-reducing, the effects of
+amphetamines and methylphenidate are stimulating,
+and these drugs have classically been called stimulants.
+Here we will refer to these agents by their properties as
+
+norepinephrine–dopamine reuptake inhibitors and, in
+the case of the amphetamines, as dopamine releasers and
+competitive VMAT2 inhibitors as well. VMAT2 inhibition
+was discussed in Chapter 5 and illustrated in Figures
+5-10A and 5-10B. Norepinephrine–dopamine reuptake
+inhibition as an antidepressant mechanism was discussed
+in Chapter 7 and illustrated in Figures 7-34 through 7-36.
+D-amphetamine, DL-amphetamine, and methylphenidate
+are all approved for use specifically as wake-promoting
+agents in the treatment of narcolepsy, but not in
+obstructive sleep apnea or shift work disorder, although
+often used “off-label” for these indications. Many
+formulations of both amphetamine and methylphenidate
+441
+
+
+
+
+<<<PAGE 458>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Amphetamine and Methylphenidate
+amphetamine
+methylphenidate
+
+Figure 10-60 Amphetamine and methylphenidate. Amphetamine and methylphenidate are both norepinephrine (left) and dopamine
+(right) reuptake inhibitors; amphetamine has the additional property of inhibition of the vesicular monoamine transporter 2 (VMAT2),
+which can lead to dopamine release. Enhancing these neurotransmitters in sleep/wake circuitry (far right) can be wake-promoting and
+fatigue-reducing; thus, they are both approved for excessive daytime sleepiness in narcolepsy and used off-label in other conditions
+associated with hypersomnia.
+
+are now available for the treatment of ADHD and are
+reviewed in detail in Chapter 11 (see Figures 11-9, 11-10,
+11-33, 11-35, and 11-36) and in Chapter 13 on substance
+abuse (see Figure 13-8).
+Amphetamine and methylphenidate can be dosed to
+treat sleepiness in narcolepsy in order to enhance the
+synaptic availability of the wake-promoting and arousal
+neurotransmitters dopamine and norepinephrine and
+thereby improve wakefulness in narcolepsy without
+causing significant reinforcement (Figure 10-60).
+Nevertheless, amphetamine and methylphenidate
+are controlled substances because of high abuse and
+diversion potential, as well as the possibility of inducing
+psychosis, mania, high blood pressure, and other side
+effects, especially at doses higher than those used to treat
+sleepiness or ADHD (discussed in Chapters 11 and 13).
+However, they are highly effective agents to promote
+wakefulness in narcolepsy.
+Modafinil/Armodafinil
+Mechanism of Action
+
+Racemic modafinil and its R enantiomer armodafinil
+(Figure 10-61) are wake-promoting agents not only
+442
+
+approved for the treatment of narcolepsy, but also as
+adjunctive treatments for obstructive sleep apnea and
+for shift work disorder. These agents are thought to act
+predominantly as inhibitors of the dopamine transporter
+(DAT) or dopamine (DA) reuptake pump (Figure
+10-62). Although modafinil is a weak DAT inhibitor,
+the concentrations of the drug achieved after oral
+dosing are quite high, and sufficient to have substantial
+actions on DATs. In fact, the pharmacokinetics of
+modafinil suggest that this drug acts via a slow rise in
+plasma levels, sustained plasma levels for 6–8 hours,
+and incomplete occupancy of DAT, all properties that
+could be ideal for enhancing tonic dopamine activity
+to promote wakefulness (Figure 10-63) rather than
+phasic dopamine activity to promote reinforcement
+and abuse (see Chapter 11 on ADHD and Figures 11-9,
+11-10, 11-33, 11-35, and 11-36 as well as Chapter 13 on
+substance abuse and Figure 13-8). Once dopamine release
+is activated by modafinil, and the cortex is aroused, this
+can apparently lead to downstream release of histamine
+from the tuberomammillary nucleus (TMN) and then
+further activation of the lateral hypothalamus with
+orexin release to stabilize wakefulness (Figure 10-63).
+
+
+
+
+<<<PAGE 459>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+Figure 10-61 Modafinil and
+armodafinil. Modafinil consists of two
+enantiomers, R and S; the R enantiomer
+has been developed and marketed
+as armodafinil. Both modafinil
+and armodafinil are thought to act
+predominantly as inhibitors of the
+dopamine transporter (DAT).
+
+T
+DA
+
+TA
+D
+
+R modafinil
+
+However, the activation of the lateral hypothalamus
+and release of orexin do not appear to be necessary for
+the action of modafinil, since modafinil still promotes
+wakefulness in patients who have loss of hypothalamic
+orexin neurons in narcolepsy. The activation of TMN
+and lateral hypothalamic neurons may be secondary and
+downstream actions resulting from modafinil’s effects on
+dopamine neurons.
+A related wake-promoting agent is the R enantiomer
+of modafinil, called armodafinil (Figure 10-61).
+Armodafinil has a later time to peak levels, a longer
+half-life, and higher plasma drug levels 6–14 hours
+after oral administration than racemic modafinil.
+The pharmacokinetic properties of armodafinil could
+theoretically improve the clinical profile of modafinil,
+with greater activation of phasic dopamine firing,
+possibly eliminating the need for a second daily dose, as
+is often required with racemic modafinil.
+Narcolepsy
+
+Modafinil/armodafinil are effective treatments of
+sleepiness in narcolepsy, although possibly not as
+powerful as amphetamine and methylphenidate.
+However, head-to-head trials have not been conducted.
+Furthermore, the abuse potential of modafinil/
+armodafinil is much reduced compared to amphetamine
+and methylphenidate, and the side effects are not as
+severe. In addition, both modafinil and armodafinil
+are approved for treatment of two additional disorders
+
+S modafinil
+
+for which amphetamine and methylphenidate are
+not approved, namely, for shift work disorder and as
+adjunctive treatment for obstructive sleep apnea (OSA).
+Obstructive Sleep Apnea
+
+First-line treatment for OSA (Figure 10-49) is continuous
+positive airway pressure (CPAP) (Figure 10-64). Although
+CPAP treatment is quite effective and has been shown
+to reduce hospitalization rates and healthcare costs,
+adherence rates are poor (54%). For patients who find
+CPAP intolerable, there are other treatment options that
+may be considered, including bilevel positive airway
+pressure (BPAP), auto-titrating positive airway pressure
+(APAP), oral appliances designed to stabilize the jaw
+and/or tongue during sleep, and various surgeries aimed
+at correcting physical attributes that may contribute to
+OSA. Additionally, several behavioral interventions may
+be useful for ameliorating OSA; these include weight
+loss (to a BMI <25), exercise, the avoidance of alcohol
+and sedatives at bedtime, and positional therapy (i.e.,
+the use of a backpack or other object that prevents the
+patient from sleeping on their back). Modafinil and
+armodafinil are approved specifically as adjuncts to
+standard treatment of underlying airway obstruction,
+which is frequently inadequate to treat the hypersomnia
+associated with OSA. Given the low adherence rates to
+CPAP, modafinil/armodafinil are sometimes used “offlabel” for OSA as monotherapies for patients who do not
+tolerate CPAP.
+443
+
+10
+
+
+
+
+<<<PAGE 460>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Mechanism of Action of
+Modafinil/Armodafinil
+
+DA reuptake
+pump
+
+modafinil
+
+DA
+
+when needing to function during the daytime when
+sleepy. Exposure to light alters circadian rhythms and
+suppresses melatonin release. Treatment with 10,000
+lux, bright, blue light for 30 minutes a day may be used
+to reset circadian rhythms (Figure 10-56). Importantly,
+the administration of bright light therapy must be
+appropriately timed in accordance with the patient’s
+circadian phase of melatonin secretion, with light
+administration occurring approximately 8 hours after
+evening melatonin secretion (possibly amplified by
+oral dosing with a melatonin agent, Figure 10-57) or
+in accordance with a predetermined bright light phase
+response curve. One form of bright light therapy, dawn
+simulation therapy, applies a slow, incremental light
+signal at the end of the sleep cycle. Data show that
+performance, alertness, and mood during the night shift
+can be improved in shift workers using bright light reentrainment of circadian rhythms.
+Solriamfetol, a Wake-Promoting NDRI
+
++
++
++
++
+increase in tonic firing,
+downstream increase in HA
+and activation of wake-related
+circuits
+Figure 10-62 Mechanism of action of modafinil/
+armodafinil. Modafinil and armodafinil bind with weak affinity
+for the dopamine transporter (DAT); however, their plasma
+levels are high and this compensates for the low binding.
+Increased synaptic dopamine (DA) following blockade of DAT
+leads to increased tonic firing and downstream effects on
+neurotransmitters involved in wakefulness, including histamine
+(HA) and orexin/hypocretin.
+
+Shift Work Disorder
+
+Shift work disorder (Figure 10-51) can be tricky to
+treat, especially if the patient has an ever-evolving and
+unstable shift work schedule. Suffice it to say, shift
+workers are frequently sleepy, but still must work,
+drive, and function. Modafinil/armodafinil can make
+a big difference in an individual’s ability to function
+with alertness when suffering from shift work disorder.
+Supplementing modafinil/armodafinil with circadian
+rhythm adjunctive therapy is often helpful (Figure
+10-55). This includes trying to reset the biological
+clock with morning light (Figure 10-56), especially
+444
+
+Solriamfetol is a recently approved agent for daytime
+sleepiness, both in patients with narcolepsy and as an
+adjunct to mechanical treatments for airway obstruction
+in patients with OSA. It works by norepinephrine and
+dopamine reuptake inhibition (see Chapter 7 and Figures
+7-34 through 7-36), and seems to be more potent than
+bupropion in this aspect, and less potent but more tolerable
+and less abusable than amphetamines or methylphenidate.
+Its short half-life is consistent with morning dosing wearing
+off in time for sleep.
+Pitolisant, H3 Presynaptic Antagonist
+
+Pitolisant (Figure 10-65) is a drug with a novel
+mechanism for improving wakefulness in narcolepsy
+by blocking the normal action of presynaptic H3
+autoreceptors (Figure 10-66A,B) to inhibit histamine
+release. Inhibiting the presynaptic H3 receptor causes
+the disinhibition (that is, the release) of presynaptic
+histamine (Figure 10-66C), and this is wake-promoting.
+Pitolisant, a presynaptic H3 autoreceptor antagonist
+(Figures 10-65 and 10-66C), is approved for the treatment
+of narcolepsy, and there are anecdotal observations that
+it may be effective in cataplexy as well. Pitolisant is not a
+controlled substance and has no known abuse potential
+and is in testing for improving excessive daytime
+sleepiness in OSA. Pitolisant can be overly activating,
+causing anxiety or insomnia. Studies suggest it may
+be about as effective as modafinil but perhaps not as
+effective as amphetamine/methylphenidate for improving
+excessive daytime sleepiness.
+
+
+
+
+<<<PAGE 485>>>
+
+Chapter 11: Attention Deficit Hyperactivity Disorder and Its Treatment
+
+Effects of Chronic Stress in ADHD
+ADHD and Stress: Hypothetically Low
+Signals and/or High Noise in PFC
+
+A
+
+signal
+
+fidget /
+shift attention
+
+NE concentration
+
+PFC strength of output
+
+noise
+
+PFC strength of output
+
+At first, high NE and DA
+PFC
+
+DA concentration
+
+NE high - signal reduced
+DA high - noise increased
+
+sit in seat /
+focus
+
+Chronic Stress
+
+noise
+
+B
+
+signal
+
+fidget /
+shift attention
+
+NE concentration
+
+PFC strength of output
+
+PFC
+
+PFC strength of output
+
+Eventually, NE and DA depletion
+
+Figure 11-27 Chronic stress in
+ADHD. Excessive activation of
+norepinephrine (NE) and dopamine
+(DA) in the prefrontal cortex (PFC) can
+lead to ADHD by increasing the noise
+and decreasing the signal. (A) At first,
+the added stress of suffering from the
+disorder can further dial up the noise
+and reduce the signal (high NE and DA
+concentration leading to decreased
+output). (B) As chronic stress sets in,
+NE and DA levels plummet (low NE
+and DA concentration also leading to
+decreased output), but with no relief in
+terms of signal output. (C) Treatments
+that increase NE and DA concentrations
+may reduce symptoms by increasing
+strength output (noise is reduced and
+signal is increased).
+
+DA concentration
+
+NE low - signal reduced
+DA low - noise increased
+
+sit in seat /
+focus
+
+noise
+
+C
+
+fidget /
+shift attention
+
+signal
+
+sit in seat /
+focus
+
+NE concentration
+
+PFC strength of output
+
+PFC
+
+PFC strength of output
+
+Treatment: Increase NE, Increase DA
+
+DA concentration
+
+NE optimized - signal increased
+DA optimized - noise reduced
+
+order to treat their ADHD. In these cases, augmenting
+antidepressant or anxiolytic therapies with a tonic
+activator of DA and/or NE systems, such as a longlasting norepinephrine transport (NET) inhibitor or an
+α2A-adrenergic agonist, rather than a stimulant, can be
+an effective long-term approach for comorbid anxiety,
+depression, or substance abuse with ADHD. Some
+studies of NET inhibitors report improvement in both
+ADHD and anxiety symptoms, and other studies report
+improvement in both ADHD and heavy drinking.
+Methylphenidate
+
+The mechanism of action of the so-called stimulants
+– perhaps better designated as norepinephrine and
+dopamine reuptake blockers – is shown in Figures 11-28
+through Figure 11-37. Oral administration of clinically
+approved doses of the stimulant methylphenidate blocks
+
+the transporters both for NE and DA (NETs and DATs,
+respectively) (Figures 11-28 and 11-29A–C). Normally,
+DA is released (arrow 1 in Figure 11-29A), and then
+taken back up into the dopaminergic neuron by DATs
+(arrows 2 in Figure 11-29A), and finally stored in the
+synaptic vesicle by VMATs (arrows 3 in Figure 11-29A).
+Methylphenidate blocks DATs and NETs allosterically,
+stopping the reuptake of DA via DATs (Figure 11-29B)
+and NE via NETs (Figure 11-29C), with no actions on
+VMAT2 (Figures 11-29B and 11-29C). Methylphenidate
+blocks NETs and DATs in much the same way as reuptake
+blockers used to treat depression (see discussion in
+Chapter 7 and Figure 7-36), namely by binding to NETs
+and DATs at sites distinct from where monoamines bind
+NETs and DATs, i.e., allosterically. Thus, methylphenidate
+stops the reuptake pumps so that no methylphenidate is
+
+469
+
+11
+
+
+
+
+<<<PAGE 486>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+transported into the presynaptic neuron (Figure 11-29B
+and 11-29C).
+Methylphenidate has a D- and an L-isomer (Figure
+11-28), with the D-isomer being much more potent
+than the L-isomer on both NET and DAT binding.
+
+Methylphenidate is also available as the single enantiomer
+D-methylphenidate, in both immediate-release and
+controlled-release preparations. A listing of the wide range
+of D,L-methylphenidate preparations is shown in Table 111, and those for D-methylphenidate shown in Table 11-2.
+
+Table 11-1 D,L-Methylphenidate formulations
+
+Formulation
+
+Brand names
+
+Duration
+
+Dosing
+
+Approval
+
+Immediate-release
+tablet
+
+Ritalin
+
+Early peak, 3–4-hr
+duration
+
+Second dose at
+lunch
+
+Ages 6 to 12 and
+adults
+
+Immediate-release
+oral solution
+
+Methylin
+
+Early peak, 3–4-hr
+duration
+
+Second dose at
+lunch
+
+Ages 6 to 12
+
+Extended-release
+tablet
+
+Ritalin SR
+Methylin ER
+Metadate ER
+
+Early peak, 3–8-hr
+duration
+
+Lunch dosing
+may be needed
+
+Ages 6 and older
+
+Extended-release
+tablet
+
+Concerta
+
+Small early peak, 12-hr
+duration
+
+Once daily in the
+morning
+
+Ages 6 and older
+
+Extended-release
+chewable tablet
+
+QuilliChew ER
+
+Peak at 5 hr, 8-hr duration
+
+Once daily in the
+morning
+
+Ages 6 and older
+
+Extended-release
+capsule
+
+Metadate CD
+
+Strong early peak,
+8-hr duration
+
+Once daily in the
+morning
+
+Ages 6 to 17
+
+Extended-release
+capsule
+
+Ritalin LA
+
+Two strong peaks (early
+and at 4 hrs), 6–8-hr
+duration
+
+Once daily in the
+morning
+
+Age 6 to 12
+
+Extended-release
+capsule
+
+Aptensio XR
+
+Up to 12-hr duration
+
+Once daily in the
+morning
+
+Ages 6 and older
+
+Extended-release oral
+suspension
+
+Quillivant XR
+
+Peak at 5 hr, 12-hr
+duration
+
+Once daily in the
+morning
+
+Ages 6 and older
+
+Extended-release
+transdermal patch
+
+Daytrana
+
+One peak at 7–10 hrs, 12hr duration
+
+Once daily in the
+morning
+
+Ages 6 to 17
+
+Orally disintegrating
+tablet
+
+Cotempla XR-ODT
+
+12-hr duration
+
+Once daily in the
+morning
+
+Ages 6 to 17
+
+Extended-release
+capsule
+
+Jornay PM
+
+Initial absorption delayed
+by 10 hrs, single peak at
+14 hrs
+
+Once daily in the
+evening
+
+Ages 6 and older
+
+Extended-release
+capsule
+
+Adhansia XR
+
+Two peaks (at 1.5 and 12
+hrs)
+
+Once daily in the
+morning
+
+Ages 6 and older
+
+Table 11-2 D-Methylphenidate formulations
+
+Formulation
+
+Brand Names
+
+Duration
+
+Dosing
+
+Approval
+
+Immediate-release
+tablet
+
+Focalin
+
+Early peak, 4–6-hr
+duration
+
+Second dose at lunch
+
+Ages 6 to 17
+
+Extended-release
+capsule
+
+Focalin XR
+
+Two peaks (after 1.5 and
+6.5 hrs), 8–10-hr duration
+
+Once daily in the
+morning
+
+Ages 6 to 17
+and adults
+
+470
+
+
+
+
+<<<PAGE 487>>>
+
+Chapter 11: Attention Deficit Hyperactivity Disorder and Its Treatment
+
+Figure 11-28 D,L-methylphenidate. Methylphenidate consists
+of two enantiomers, D and L; both racemic D,L-methylphenidate
+and D-methylphenidate are available as therapeutic options.
+D,L-methylphenidate and D-methylphenidate both block the
+norepinephrine transporter (NET) and the dopamine transporter
+(DAT). D-methylphenidate has greater potency for both
+transporters than does the L enantiomer.
+
+D,L-Methylphenidate
+
+NET
+
+TEN
+
+DAT
+
+TAD
+
+L-methylphenidate
+
+D-methylphenidate
+
+Regulation of the Transport and
+Availability of Synaptic DA
+
+3
+
+VMAT
+3
+
+Figure 11-29A Regulation of
+transport and availability of synaptic
+dopamine. The regulation of synaptic
+dopamine (DA) is dependent upon
+proper functioning of two transporters,
+namely the dopamine transporter
+(DAT) and the vesicular monoamine
+transporter (VMAT). After DA is released
+(1) it can act at postsynaptic receptors
+or it can be transported back into the
+terminal via DATs (2). Once inside the
+terminal, DA is “encapsulated” into
+vesicles via VMAT (3). These DAfilled vesicles can then merge with
+the membrane and lead to more DA
+release. This finely tuned machinery
+ensures that DA levels never reach
+toxic levels in the synapse or in the DA
+terminal. By “engulfing” DA into vesicles
+it is possible for the DA neuron to
+ensure the viability of DA.
+
+2
+3
+
+11
+2
+1
+
+dopamine (DA)
+
+A
+
+2
+
+1 = release of DA
+2 = DAT transport of DA
+3 = VMAT transport of DA
+
+471
+
+
+
+
+<<<PAGE 488>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Mechanism of Action of Methylphenidate
+
+Mechanism of Action of Methylphenidate
+
+DA neuron
+
+NE neuron
+
+B
+
+methylphenidate
+
+Figure 11-29B Mechanism of action of methylphenidate at
+dopamine neurons. Methylphenidate blocks the reuptake of
+dopamine (DA) into the terminal by binding at an allosteric
+site (i.e., different than the DA binding site). Methylphenidate
+basically stops the transporter, preventing DA reuptake and thus
+leading to increased synaptic availability of DA.
+
+Amphetamine
+
+Oral administration of clinically approved doses of the
+stimulant amphetamine, like methylphenidate, also
+blocks the transporters both for NE and DA (NETs
+and DATs), but in a different manner (Figures 11-30
+through 11-32). Unlike methylphenidate and reuptake
+blocking drugs used for depression, amphetamine is
+a competitive inhibitor and pseudosubstrate for NETs
+and DATs (Figure 11-32, top left), binding at the same
+site that the monoamines bind to the transporters, thus
+inhibiting NE and DA reuptake (Figure 11-32, top left).
+At the doses of amphetamine used for the treatment of
+ADHD, the clinical differences between the actions of
+amphetamine versus methylphenidate can be relatively
+small. However, at the high doses of amphetamine
+used by stimulant addicts, additional pharmacological
+actions of amphetamine are triggered. Following
+competitive inhibition of DATs (Figure 11-32, top left)
+amphetamine is actually transported as a hitch-hiker
+into the presynaptic DA terminal, an action not shared
+by methylphenidate or reuptake blocking drugs used
+for depression (Figure 11-32, top left). Once there in
+sufficient quantities, such as occurs at doses taken for
+abuse, amphetamine is also a competitive inhibitor of
+
+472
+
+C
+
+methylphenidate
+
+Figure 11-29C Mechanism of action of methylphenidate
+at norepinephrine neurons. Methylphenidate blocks the
+reuptake of norepinephrine (NE) into the terminal by binding
+at an allosteric site (i.e., different than the NE binding site).
+Methylphenidate basically stops the transporter, preventing NE
+reuptake and thus leading to increased synaptic availability of
+NE.
+
+the vesicular transporter (VMAT2) for both DA and NE
+(Figure 11-32, top right). Once amphetamine hitchhikes another ride into synaptic vesicles, it displaces
+DA there, causing a flood of DA release (Figure 11-32,
+bottom left). As DA accumulates in the cytoplasm of
+the presynaptic neuron, it causes the DATs to reverse
+directions, spilling intracellular DA into the synapse,
+and also opening presynaptic channels to further
+release DA in a flood into the synapse (Figure 1132, bottom right). These pharmacological actions of
+high-dose amphetamine are not linked to therapeutic
+action in ADHD but to reinforcement, reward, and
+euphoria in amphetamine abuse. Actions of highdose amphetamine, methamphetamine, and cocaine
+(another inhibitor of DATs), given orally in immediaterelease formulations, or intranasally, intravenously, or
+smoked, are discussed further in Chapter 13 on drug
+abuse.
+Amphetamine has a D- and an L-isomer (Figure
+11-30). The D-isomer of amphetamine is more potent
+than the L-isomer for DAT binding, but D- and Lamphetamine isomers are more equally potent in
+their actions on NET binding. Thus, D-amphetamine
+preparations will have relatively more action on DATs
+
+
+
+
+<<<PAGE 490>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Mechanism of Action of Amphetamine:
+The Yin and the Yang
+
+3
+
+2
+
+VMAT
+
+3
+
+2
+1 = competitive inhibition
+2 = DAT transport of
+amphetamine
+
+4
+
+1
+
+3 = VMAT transport of
+amphetamine
+
+4
+4
+4
+
+6
+4
+
+5
+
+4
+
+4 = amphetamine
+displacement
+of dopamine
+
+5 = high DA opens channel
+and spills out
+6 = high DA reverse
+transports DA out
+
+5
+
+6
+
+Figure 11-32 Mechanism of action of amphetamine at dopamine (DA) neurons. Amphetamine is a competitive inhibitor at the
+dopamine transporter (DAT), thus blocking DA from binding (1). This is unlike methylphenidate’s actions at DATs and NETs, which are
+not competitive. Additionally, since amphetamine is also a competitive inhibitor of VMAT (a property that methylphenidate lacks) it is
+actually taken into the DA terminal via DATs (2), where it can then be packaged into vesicles (3). At high levels, amphetamine will lead to
+the displacement of DA from the vesicles into the terminal (4). Furthermore, once a critical threshold of DA has been reached, DA will be
+expelled from the terminal via two mechanisms: the opening of channels to allow for a massive dumping of DA into the synapse (5) and
+the reversal of DATs (6). This fast release of DA will lead to the euphoric effect experienced after amphetamine use. Amphetamine has
+these same actions at noradrenergic neurons.
+
+offset is also seen in another area of psychopharmacology,
+namely, for treatments of insomnia discussed in Chapter
+10 and illustrated in Figure 10-41A. A similar idea is
+illustrated here, with a minimum threshold for ADHD
+therapeutic action, probably around 50–60% DAT
+occupancy (Figure 11-34).
+This property of DAT targeting for ADHD above a
+critical threshold is so prominent that it has spawned
+an entire industry of technologies in an attempt to
+474
+
+capture the best way to attain, sustain, and drop below
+the threshold in just the exact manner desired. There are
+over two dozen versions of the two stimulant molecules
+methylphenidate and amphetamine now available for
+clinical use (Tables 11-1 through 11-4) and several
+more in development. Each version tries to capture the
+ideal drug delivery for the ideal DAT occupancy for a
+given patient type (e.g., Figure 11-34B). That usually
+takes the form of rapidly getting above threshold levels
+
+
+
+
+<<<PAGE 492>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+“Slow-Dose” Stimulants Amplify Tonic NE and DA Signals
+nucleus accumbens
+
+PFC
+
+NE
+neuron
+
+DA
+neuron
+
+VMAT2
+
+DA
+neuron
+
+VMAT2
+
+VMAT2
+NET
+
+D >> L methylphenidate
+D = L amphetamine
+
+NE
+
+α2A
+
+D1
+
++
+
++
+
++
++
++
+
+DA
+
+DA
+
+DAT
+
+D >> L methylphenidate
+D > L amphetamine
+
+D1 D2
+
++
++
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+slow-dose stimulants
+OROS - methylphenidate, LA - methylphenidate, XR - D-methylphenidate, transdermal methylphenidate
+D-amphetamine spansules, XR - D,L mixed amphetamine salts, prodrug D-amphetamine (lisdexamfetamine)
+Figure 11-33 Slow-dose stimulants amplify tonic norepinephrine (NE) and dopamine (DA) signals. Hypothetically, whether a drug
+has abuse potential depends on how it affects the DA pathway. In other words, the pharmacodynamic and pharmacokinetic properties
+of stimulants affect their therapeutic as well as their potential abuse profiles. Extended-release formulations of oral stimulants, the
+transdermal methylphenidate patch, and the prodrug lisdexamfetamine are all considered “slow-dose” stimulants and may amplify tonic
+NE and DA signals, presumed to be low in ADHD. These agents block the norepinephrine transporters (NETs) in the prefrontal cortex
+and the DA transporters (DATs) in the nucleus accumbens. Hypothetically, the “slow-dose” stimulants occupy NETs in the prefrontal
+cortex (PFC) with slow enough onset, and for long enough duration, that they enhance tonic NE and DA signaling via α2A and D1
+postsynaptic receptors, respectively, but they do not occupy DATs quickly or extensively enough in the nucleus accumbens to increase
+phasic signaling via D2 receptors. The latter hypothetically suggests reduced abuse potential.
+
+in ADHD (and excessive daytime sleepiness). Likely
+these therapeutic actions may be linked to judicious
+and controlled enhancement of phasic dopamine
+neurotransmission, along with a boost in tonic dopamine
+neurotransmission, both of which may be theoretically
+somewhat deficient in ADHD and sleepiness.
+One last piece of the puzzle. How can the DAT target
+that is therapeutic immediately for ADHD and sleepiness
+and with a delay for depression lead to problematic drug
+abuse rather than therapeutic use? This only makes sense
+if you are aware that the DAT functions very differently
+depending upon how fast, how completely, and how long
+you engage it (compare Figures 11-35 pulsatile action
+with Figure 11-33 sustained action). That is, rapid and
+high degrees of DAT occupancy cause euphoria and lead
+to abuse and addiction (Figure 11-35; see also Chapter 13
+476
+
+and Figure 13-7). In fact, the more rapidly and completely
+the DATs are blocked, the more reinforcing and abusable
+a drug will be. This applies not only to methylphenidate,
+modafinil, and amphetamine as DAT blockers, but also
+to methamphetamine and cocaine that are also DAT
+blockers. Oral ingestion can get a DAT inhibitor to the
+brain, but not as fast as snorting nasally, and not as fast as
+intravenously, and certainly not as fast as smoking. High
+dosing especially by these other routes of administration
+provides complete, catastrophic, and sudden blockade
+of DATs. The rapid build-up of synaptic dopamine
+(Figure 11-35) is nothing like what is seen with more
+gradual, sustained, and lower levels of DAT occupancy
+(Figure 11-33). In fact, dopamine levels can build up so
+high that the DATs can actually be reversed to transport
+dopamine out of the presynaptic terminal to add to the
+
+
+
+
+<<<PAGE 494>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Pulsatile Stimulants Amplify Tonic
+and Phasic NE and DA Signals
+nucleus accumbens
+
+PFC
+
+NE
+neuron
+
+DA
+neuron
+
+amphetamine
+
+DA
+neuron
+
+DAT
+
+NET
+
+methylphenidate
+
+NE
+
+α1
+
+α2A α2A α 1
+
+DA
+
+D1 D1
+
+D1
+
+++ ++
+++ ++
+
++
+
++
+
+++
+++
+
++
+
++
+
++
+
++
+
++
+
+++
+++
+
++
+
++
+
++
+
++
+
++
+
++
+
++
+
+++
+++
+
+amphetamine
+
++
+
++
+
++
+
++
+
++
+
++
+
+D1
+
+++ ++
+++ ++
+++ ++
+++ ++
+
+methylphenidate
+
+D1 D2 D1 D2 D1 D2
++ +
++ +
++ +
+
+++ ++ ++ ++
+++ ++ ++ ++
+++ ++ ++ ++
+++ ++ ++ ++
+
+++ ++ ++ ++
++ + ++ ++ ++ ++
+
+pulsatile stimulants
+oral immediate-release, intravenous, intranasal, smoked, D-amphetamine,
+D,L amphetamine salts, methylphenidate, D-methylphenidate, cocaine,
+methamphetamine
+Figure 11-35 Pulsatile stimulants amplify tonic and phasic norepinephrine (NE) and dopamine (DA) signals. Hypothetically, whether
+a drug has abuse potential depends on how it affects the DA pathway. In other words, the pharmacodynamic and pharmacokinetic
+properties of stimulants affect their therapeutic as well as their potential abuse profiles. Immediate-release oral stimulants – similarly to
+intravenous, smoked, or snorted stimulants (which are considered pulsatile stimulants) – lead to a rapid increase in NE and DA levels
+through blockade of the norepinephrine transporters (NETs) in the prefrontal cortex (PFC) and the DA transporters (DATs) in the nucleus
+accumbens. Rapidly amplifying the phasic neuronal firing of DA in the nucleus accumbens is associated with euphoria and abuse. The
+abuse potential of immediate-release formulations of methylphenidate and amphetamine may be due to increased phasic as well as
+tonic DA signaling.
+
+massive release of dopamine from sudden, complete,
+and catastrophic DAT blockade (discussed earlier in this
+chapter and illustrated in Figure 11-32, bottom right).
+So, understanding how a more gentle and prudent
+administration of DAT inhibition can be therapeutic
+whereas the same drug can be disastrous can allow
+the best judicious administration of a DAT inhibitor.
+Be careful, and don’t mess incorrectly with your DAT!
+Mystery solved.
+Slow-Release Versus Fast-Release Stimulants
+
+Based upon now having solved the mystery of the DAT,
+many drug delivery systems are not only designed to
+control how much DAT inhibition there is, and for how
+478
+
+long, but also how quickly the DAT is inhibited, all to
+maximize therapeutic effects in ADHD and minimize
+abuse and side effects (Figure 11-36 and Tables 111 through 11-4). The goal is to enhance phasic DA
+neurotransmission with low to moderate, continuous
+drug delivery (Figure 11-36, top), trying to increase
+mostly tonic DA firing and only judiciously to increase
+phasic DA firing, recognizing that this may be playing
+a bit with fire. In order not to get burned, as happens
+with pulsatile drug delivery in drug abuse situations
+(see Figure 11-36, bottom), to achieve prudent and
+therapeutic improvement of tonic and phasic DA
+neurotransmission without disastrous increases in
+phasic DA neurotransmission, leading to abuse and
+
+
+
+
+<<<PAGE 613>>>
+
+Suggested Reading and Selected References
+
+Thomas RJ, Rosen BR, Stern CE, Weiss JW, Kwong KK (2005)
+Functional imaging of working memory in obstructive
+sleep-disordered breathing. J Appl Physiol 98: 2226–34.
+Thorpy MJ, Dauvilliers Y (2015) Clinical and practical
+consideration in the pharmacologic management of
+narcolepsy. Sleep Med 16: 9–18.
+Trotti LM, Saini P, Bliwise DL, et al. (2015) Clarithromycin in
+gamma-aminobutyric acid-related hypersomnolence: a
+randomized, crossover trial. Ann Neurol 78: 454–65.
+Trotti LM, Saini P, Freeman AA, et al. (2013) Improvement
+in daytime sleepiness with clarithromycin in patients
+with GABA-related hypersomnia: clinical experience. J
+Psychopharmacol 28: 697–702.
+Van Someren EJ, Riemersma-Van Der Lek RF (2007) Live
+to the rhythm, slave to the rhythm. Sleep Med Rev 11:
+465–84.
+Wulff K, Gatti S, Wettstein JG, Foster RG (2010) Sleep
+and circadian rhythm disruption in psychiatric and
+neurodegenerative disease. Nat Rev Neurosci 11: 589–99.
+Zaharna M, Dimitriu A, Guilleminault C (2010) Expert
+opinion on pharmacotherapy of narcolepsy. Expert Opin
+Pharmacother 11: 1633–45.
+Zawilska JB, Skene DJ, Arendt J. (2009) Physiology and
+pharmacology of melatonin in relation to biological
+rhythms. Pharmacol Rep 61: 383–410.
+
+Chapter 11 (Attention Deficit
+Hyperactivity Disorder)
+Arnsten AFT (2006) Fundamentals of attention deficit/
+hyperactivity disorder: circuits and pathways. J Clin
+Psychiatry 67 (Suppl 8): 7–12.
+Arnsten AFT (2006) Stimulants: therapeutic actions in ADHD.
+Neuropsychopharmacology 31: 2376–83.
+Arnsten AFT (2009) Stress signaling pathways that impair
+prefrontal cortex structure and function. Nat Rev Neurosci
+10: 410–22.
+Arnsten AFT, Li BM (2005) Neurobiology of executive
+functions: catecholamine influences on prefrontal cortical
+functions. Biol Psychiatry 57: 1377–84.
+Avery RA, Franowicz JS, Phil M, et al. (2000) The alpha 2a
+adrenoceptor agonist, guanfacine, increases regional
+cerebral blood flow in dorsolateral prefrontal cortex of
+monkeys performing a spatial working memory task.
+Neuropsychopharmacology 23: 240–9.
+Berridge CW, Devilbiss DM, Andrzejewski ME, et al. (2006)
+Methylphenidate preferentially increases catecholamine
+neurotransmission within the prefrontal cortex at low
+doses that enhance cognitive function. Biol Psychiatry 60:
+1111–20.
+
+Berridge CW, Shumsky JS, Andrzejewski ME, et al. (2012)
+Differential sensitivity to psychostimulants across
+prefrontal cognitive tasks: differential involvement of
+noradrenergic α1- and α2-receptors. Biol Psychiatry 71:
+467–73.
+Biederman J (2004) Impact of comorbidity in adults with
+attention deficit/hyperactivity disorder. J Clin Psychiatry 65
+(Suppl 3): 3–7.
+Biederman J, Petty CR, Fried R, et al. (2007) Stability of
+executive function deficits into young adult years: a
+prospective longitudinal follow-up study of grown up
+males with ADHD. Acta Psychiatr Scand 116: 129–36.
+Clerkin SM, Schulz KP, Halperin JM (2009) Guanfacine
+potentiates the activation of prefrontal cortex evoked by
+warning signals. Biol Psychiatry 66: 307–12.
+Cortese S, Adamo N, Del Giovane C, et al. (2018) Comparative
+efficacy and tolerability of medications for attention deficit
+hyperactivity disorder in children, adolescents, and adults:
+a systematic review and network meta-analysis. Lancet
+Psychiatry 5: 727–38.
+Easton N, Shah YB, Marshall FH, Fone KC, Marsden CA
+(2006) Guanfacine produces differential effects in frontal
+cortex compared with striatum: assessed by phMRI BOLD
+contrast. Psychopharmacology 189: 369–85.
+Faraone SV, Biederman J, Spencer T (2006) Diagnosing adult
+attention deficit hyperactivity disorder: are late onset
+and subthreshold diagnoses valid? Am J Psychiatry 163:
+1720–9.
+Franke B, Nucgekubu G, Asherson P, et al. (2018) Live fast,
+die young? A review on the developmental trajectories of
+ADHD across the lifespan. Eur Neuropsychopharmacol 28:
+1059–88.
+Fusar-Poli P, Rubia K, Rossi G, Sartori G, Balottin U (2012)
+Striatal dopamine transporter alterations in ADHD:
+pathophysiology or adaptation to psychostimulants? a
+meta-analysis. Am J Psychiatry 169: 264–72.
+Grady M, Stahl SM (2012) A horse of a different color: how
+formulation influences medication effects. CNS Spectrums
+17: 63–9.
+Hannestad J, Gallezot JD, Planeta-Wilson B, et al. (2010)
+Clinically relevant doses of methylphenidate significantly
+occupy norepinephrine transporters in humans in vivo.
+Biol Psychiatry 68: 854–60.
+Jakala P, Riekkinen M, Sirvio J, et al. (1999) Guanfacine, but
+not clonidine, improves planning and working memory
+performance in humans. Neuropsychopharmacology 20:
+460–70.
+Johnson K, Liranso T, Saylor K, et al. (2020) A phase II double
+blind placebo controlled efficacy and safety study of SPN812 (extended release vilaxazine) in children with ADHD. J
+Atten Disord 24: 348–58.
+597
+
+
+
+
+<<<PAGE 628>>>
+
+Suggested Reading and Selected References
+
+Ferris MJ, Calipari ES, Mateo Y, et al. (2012) Cocaine
+self-administration produces pharmacodynamic
+tolerance: differential effects on the potency of dopamine
+transporter blockers, releasers, and methylphenidate.
+Neuropsychopharmacology 37: 1708–16.
+
+Selzer J (2006) Buprenorphine: reflections of an addictions
+psychiatrist. J Clin Psychiatry 67: 1466–7.
+
+Hart CL, Marvin CB, Silver R, Smith EE (2012) Is cognitive
+functioning impaired in methamphetamine users? A
+critical review. Neuropsychopharmacology 37: 586–608.
+
+Wee S, Hicks MJ, De BP, et al. (2012) Novel cocaine vaccine
+linked to a disrupted adenovirus gene transfer vector
+blocks cocaine psychostimulant and reinforcing effects.
+Neuropsychopharmacology 37: 1083–91.
+
+Heinz A, Reimold M, Wrase J, et al. (2005) Stimulant actions
+in rodents: implications for attention-deficit/hyperactivity
+disorder treatment and potential substance abuse. Biol
+Psychiatry 57: 1391–6.
+Leyton M, Boileau I, Benkelfat C, et al. (2002) Amphetamineinduced increases in extracellular dopamine, drug wanting,
+and novelty seeking: a PET/[11 C]raclopride study in
+healthy men. Neuropsychopharmacology 27: 1027–35.
+Lindsey KP, Wilcox KM, Votaw JR, et al. (2004) Effect
+of dopamine transporter inhibitors on cocaine selfadministration in rhesus monkeys: relationship to
+transporter occupancy determined by positron emission
+tomography neuroimaging. J Pharmacol Exp Ther 309:
+959–69.
+Little KY, Krolewski DM, Zhang L, Cassin BJ (2003) Loss of
+striatal vesicular monoamine transporter protein (VMAT2)
+in human cocaine users. Am J Psychiatry 160: 47–55.
+Livni E, Parasrampuria DA, Fischman AJ (2006) PET study
+examining pharmacokinetics, detection and likeability, and
+dopamine transporter receptor occupancy of short- and
+long-acting oral methylphenidate. Am J Psychiatry 163:
+387–95.
+Martinez D, Narendran R, Foltin RW, et al. (2007)
+Amphetamine-induced dopamine release: markedly
+blunted in cocaine dependence and predictive of the choice
+to self-administer cocaine. Am J Psychiatry 164: 622–9.
+Narendran R, Lopresti BJ, Martinez D, et al. (2012) In vivo
+evidence for low striatal vesicular monoamine transporter
+2 (VMAT2) availability in cocaine abusers. Am J Psychiatry
+169: 55–63.
+Overtoom CCE, Bekker EM, van der Molen MW, et al. (2009)
+Methylphenidate restores link between stop-signal sensory
+impact and successful stopping in adults with attention
+deficit/hyperactivity disorder. Biol Psychiatry 65: 614–19.
+Peng, XO, Xi ZX, Li X, et al. (2010) Is slow-onset long-acting
+monoamine transport blockade to cocaine as methadone
+is to heroin? Implication for anti-addiction medications.
+Neuropsychopharmacology 35: 2564–78.
+Santos MD, Salery M, Forget B, et al. (2017) Rapid
+synaptogenesis in the nucleus accumbens is induced by a
+single cocaine administration and stabilized by mitogenactivated protein kinase interacting kinase-1 activity. Biol
+Psychiatry 82: 806–18.
+
+612
+
+Spencer TJ, Biederman J, Ciccone PE, et al. (2006) Stimulant
+medications: how to minimize their reinforcing effects?
+Am J Psychiatry 163: 359–61.
+
+Substance Abuse: Hallucinogens,
+Entactogens, Dissociatives
+Brawley P, Dufield JC (1972) The pharmacology of
+hallucinogens. Pharmacol Rev 34: 31–66.
+Carhart-Harris RL, Goodwin GM (2017) The therapeutic
+potential of psychedelic drugs: past, present and future.
+Neuropsychopharmacology 42: 2105–13.
+Carhart-Harris RL, Bolstridge M, Day CMG, et al.
+(2018) Psilocybin with psychological support for
+treatment-resistant depression: six month follow up.
+Psychopharmacology 235: 399–408.
+Carhart-Harris RL, Bolstridge M, Rucker J, et al. (2016)
+Psilocybin with psychological support for treatmentresistant depression: an open label feasibility study. Lancet
+Psychiatry 3: 619–27.
+Carhart-Harris RL, Erritzoe D, Williams T, et al. (2012)
+Neural correlates of the psychedelic state as determined
+by fMRI studies with psilocybin. Proc Natl Acad Sci USA
+109: 2138–43.
+Carhart-Harris RL, Leech R, Williams TM, et al. (2012)
+Implications for psychedelic assisted psychotherapy:
+a functional magnetic resonance imaging study with
+psilocybin. Br J Psychiatry 200: 238–44.
+DiIorio CR, Watkins TJ, Dietrich MS (2012) Evidence for
+chronically altered serotonin function in the cerebral
+cortex of female 3,4-methylenedioxymethamphetamine
+polydrug users. Arch Gen Psychiatry 69: 399–409.
+Erritzoe D, Frokjaer VG, Holst KK, et al. (2011) In
+vivo imaging of cerebral serotonin transporter
+and serotonin 2a receptor binding in
+3,4-methylenedioxymethamphetamine (MDMA or
+“Ecstasy”) and hallucinogen users. Arch Gen Psychiatry
+68: 562–76.
+Fantegrossi WE, Murnane KS, Reissig CJ (2008) The
+behavioral pharmacology of hallucinogens. Biochem
+Pharmacol 25: 17–33.
+Feduccia AA, Mithoefer MC (2018) MDMA-assisted
+psychotherapy for PTSD: are memory reconsolidation
+and fear extinction underlying mechanisms. Prog
+Neuropsychopharmacol Biol Psychiatry 84: 221–8.
+
+

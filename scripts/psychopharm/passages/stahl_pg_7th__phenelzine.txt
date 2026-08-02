@@ -1,0 +1,568 @@
+<<<PAGE 10>>>
+
+82 methylphenidate (d,l)
+83 mianserin
+84 midazolam
+85 milnacipran
+86 mirtazapine
+87 moclobemide
+88 modafinil
+89 molindone
+90 nalmefene
+91 naltrexone
+92 naltrexone/bupropion
+93 nefazodone
+94 nortriptyline
+95 olanzapine
+96 oxazepam
+97 oxcarbazepine
+98 paliperidone
+99 paroxetine
+100 perospirone
+101 perphenazine
+102 phenelzine
+103 phentermine/topiramate
+104 pimavanserin
+105 pimozide
+106 pipothiazine
+107 pitolisant
+108 prazosin
+109 pregabalin
+
+
+
+
+<<<PAGE 1764>>>
+
+Phenelzine
+
+Therapeutics
+Brands
+Nardil
+Nardelzine
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin, norepinephrine,
+dopamine enzyme inhibitor (SN-EI)
+Monoamine oxidase inhibitor (MAOI)
+Commonly Prescribed for
+(bold for FDA approved)
+Depressed patients characterized as “atypical,” “nonendogenous,”
+or “neurotic”
+Treatment-resistant depression
+Treatment-resistant panic disorder
+Treatment-resistant social anxiety disorder
+
+
+
+
+<<<PAGE 1770>>>
+
+Benzodiazepines for insomnia
+
+Dosing and Use
+Usual Dosage Range
+45–75 mg/day
+Dosage Forms
+Tablet 15 mg
+How to Dose
+Initial 45 mg/day in 3 divided doses; increase to 60–90 mg/day; after
+desired therapeutic effect is achieved lower dose as far as possible
+Dosing Tips
+Once dosing is stabilized, some patients may tolerate once or twice
+daily dosing rather than 3 times a day dosing
+Orthostatic hypotension, especially at higher doses, may require
+splitting into 4 daily doses, or tincture of time (waiting)
+Patients receiving high doses may need to be evaluated periodically
+for effects on the liver
+Little evidence to support efficacy of phenelzine below doses of 45
+mg/day
+Overdose
+
+
+
+
+<<<PAGE 1774>>>
+
+Use cautiously in patients receiving reserpine, anesthetics, disulfiram,
+metrizamide, anticholinergic agents
+Phenelzine is not recommended for use in patients who cannot be
+monitored closely
+Table 2. Dietary guidelines for patients taking MAOIs*
+Foods to avoid**
+
+Foods allowed
+
+Dried, aged, smoked, fermented,
+spoiled, or improperly stored meat,
+poultry, and fish
+
+Fresh or processed meat, poultry,
+and fish; properly stored pickled or
+smoked fish
+
+Broad bean pods
+
+All other vegetables
+
+Aged cheeses
+
+Processed cheese slices, cottage
+cheese, ricotta cheese, yogurt, cream
+cheese
+
+Tap and unpasteurized beer
+
+Canned or bottled beer and alcohol
+
+Marmite
+
+Brewer’s and baker’s yeast
+
+Banana peel
+
+Bananas, avocados, raspberries
+
+Sauerkraut, kimchee
+
+Peanuts
+
+Soy products/tofu
+Tyramine-containing nutritional
+supplement
+* Consult up-to-date listing of tyramine content, as most foods now have
+low tyramine amounts
+
+
+
+
+<<<PAGE 1776>>>
+
+If patient is taking dextromethorphan (serotonin reuptake inhibitor)
+If patient is taking diuretics or other antihypertensives without careful
+monitoring of blood pressure
+If patient has pheochromocytoma
+If patient has cardiovascular or cerebrovascular disease, unless cleared
+by the patient’s medical doctor
+If patient is taking a prohibited drug
+If patient is not compliant with a low-tyramine diet
+If there is a proven allergy to phenelzine
+
+Special Populations
+Renal Impairment
+Use with caution –drug may accumulate in plasma
+May require lower than usual adult dose
+Hepatic Impairment
+Phenelzine should be used cautiously
+Cardiac Impairment
+Contraindicated in patients with congestive heart failure or
+hypertension, unless cleared by the patient’s medical doctor
+Elderly
+
+
+
+
+<<<PAGE 1778>>>
+
+Controlled studies have not been conducted in pregnant women
+Not generally recommended for use during pregnancy, especially
+during first trimester
+Possible increased incidence of fetal malformations if phenelzine is
+taken during the first trimester
+Should evaluate patient for treatment with an antidepressant with a
+better risk/benefit ratio
+National Pregnancy Registry for Antidepressants: 1-866-961-2388,
+https://womensmentalhealth.org/research/pregnancyregistry/antidepres
+sants
+Breast Feeding
+Some drug is found in mother’s breast milk
+If child becomes irritable or sedated, breast feeding or drug may need
+to be discontinued
+Immediate postpartum period is a high-risk time for depression,
+especially in women who have had prior depressive episodes, so drug
+may need to be reinstituted late in the third trimester or shortly after
+childbirth to prevent a recurrence during the postpartum period
+Should evaluate patient for treatment with an antidepressant with a
+better risk/benefit ratio
+
+The Art of Psychopharmacology
+
+
+
+
+<<<PAGE 1780>>>
+
+Generally more weight gain and sexual dysfunction than with
+tranylcypromine
+MAOIs are generally reserved for third- or fourth-line use after SSRIs,
+SNRIs, and combinations of newer antidepressants have failed
+Patient should be advised not to take any prescription or over-thecounter drugs without consulting their doctor because of possible drug
+interactions with the MAOI
+Headache is often the first symptom of hypertensive crisis
+The rigid dietary restrictions may reduce compliance (see Table 2 after
+Pearls)
+Mood disorders can be associated with eating disorders (especially in
+adolescent females), and phenelzine can be used to treat both
+depression and bulimia
+
+✽ Myths about the danger of dietary tyramine can be exaggerated, but
+prohibitions against concomitant drugs often not followed closely
+enough
+Orthostatic hypotension, insomnia, and sexual dysfunction are often
+the most troublesome common side effects
+
+✽ MAOIs should be for the expert, especially if combining with agents
+of potential risk (e.g., stimulants, trazodone, TCAs)
+
+✽ MAOIs should not be neglected as therapeutic agents for the
+treatment-resistant
+For treatment-resistant patients, experts can give a tricyclic/tetracyclic
+antidepressant other than clomipramine or imipramine simultaneously
+
+
+
+
+<<<PAGE 2033>>>
+
+Although there is theoretically a 3-day reservoir of drug in each patch,
+multiday administration from a single patch is generally not
+recommended and has not been tested; because of residual drug in the
+patch after 24 hours of administration, discard used patches in a
+manner that prevents accidental application or ingestion by children,
+pets, or others
+For Parkinson’s disease, oral dosage above 10 mg/day generally not
+recommended
+Dosage of carbidopa-levodopa can at times be reduced by 10–30%
+after 2–3 days of administering oral selegiline 5–10 mg/day in
+Parkinson’s disease
+At doses above 10 mg/day (oral), selegiline may become nonselective
+and inhibit both MAO-A and MAO-B
+At doses above 30 mg/day (oral), selegiline may have antidepressant
+properties
+Patients receiving high oral doses may need to be evaluated
+periodically for effects on the liver
+Doses above 10 mg/day (oral) may increase the risk of hypertensive
+crisis, tyramine interactions, and drug interactions similar to those of
+phenelzine and tranylcypromine
+Overdose
+Overdose with the transdermal formulation is likely to produce
+substantial amounts of MAO-A inhibition as well as MAO-B
+
+
+
+
+<<<PAGE 2252>>>
+
+Side effects are generally immediate, but immediate side effects often
+disappear in time
+Notable Side Effects
+Agitation, anxiety, insomnia, weakness, sedation, dizziness
+Change in appetite, weight gain
+Sexual dysfunction (less than with other MAOIs such as phenelzine)
+Orthostatic hypotension (dose-related); syncope may develop at high
+doses
+Life-Threatening or Dangerous Side Effects
+Hypertensive crisis (when MAOIs are used with certain tyraminecontaining foods or prohibited drugs)
+Induction of mania in patients with bipolar disorder
+Rare seizures
+Rare hepatotoxicity
+Weight Gain
+Occurs in significant minority
+Sedation
+
+
+
+
+<<<PAGE 2263>>>
+
+Potential Disadvantages
+Requires strict adherence to dietary restrictions, concomitant drug
+restrictions
+Patients with cardiac problems or hypertension unless cleared by their
+medical doctor
+Multiple daily doses unless drug can be converted to once a day
+Primary Target Symptoms
+Depressed mood
+Somatic symptoms
+Sleep and eating disturbances
+Psychomotor retardation
+Morbid preoccupation
+Anxiety
+Pearls
+Generally less weight gain or sexual dysfunction than with phenelzine
+MAOIs are generally reserved for third- or fourth-line use after SSRIs,
+SNRIs, and combinations of newer antidepressants have failed
+Patient should be advised not to take any prescription or over-thecounter drugs without consulting their doctor because of possible drug
+interactions with the MAOI
+Headache is often the first symptom of hypertensive crisis
+
+
+
+
+<<<PAGE 2602>>>
+
+Napoton (chlordiazepoxide), 147
+Narcozep (flunitrazepam), 297
+Nardelzine (phenelzine), 613
+Nardil (phenelzine), 613
+Narol (buspirone), 123
+Navane (thiothixene), 765
+Navicalm (hydroxyzine), 355
+Nefadar (nefazodone), 545
+nefazodone, 545
+Nefirel (nefazodone), 545
+Neo Gnostoride (chlordiazepoxide), 147
+Neodorm SP (temazepam), 755
+Neoride (sulpiride), 741
+Neurol (alprazolam), 11
+Neurolepsin (lithium), 415
+Neurolithium (lithium), 415
+Neurolytril (diazepam), 229
+Neurontin (gabapentin), 331
+Neurotol (carbamazepine), 131
+Neurotop (carbamazepine), 131
+Nevropromazine (chlorpromazine), 153
+Nicoflox (fluoxetine), 301
+Nifalin (lorazepam), 437
+Nilium (flunitrazepam), 297
+Niotal (zolpidem), 871
+Nipolept (zotepine), 883
+Nivalin (galantamine), 337
+Noam (diazepam), 229
+
+
+
+
+<<<PAGE 2608>>>
+
+Phasal (lithium), 415
+phenelzine, 613
+phentermine/topiramate, 619
+Piefol (trifluoperazine), 803
+pimavanserin, 623
+pimozide, 627
+Piportil (pipothiazine), 633
+Piportil Depot (pipothiazine), 633
+Piportil L4 (pipothiazine), 633
+Piportil Longum-4 (pipothiazine), 633
+Piportil palmitate (pipothiazine), 633
+Piportyl palmitat (pipothiazine), 633
+pipothiazine, 633
+Pipotiazine (pipothiazine), 633
+Pirium (pimozide), 627
+pitolisant, 639
+Placidia (lorazepam), 437
+Placil (clomipramine), 165
+Placinoral (lorazepam), 437
+Planum (temazepam), 755
+Plegomazin (chlorpromazine), 153
+Plenur (lithium), 415
+Plurimen (selegiline), 705
+PMS-carbamazepine (carbamazepine), 131
+PMS-Clonazepam (clonazepam), 173
+PMS-Desipramine (desipramine), 207
+PMS-Fluoxetine (fluoxetine), 301
+PMS-Fluphenazine (fluphenazine), 313
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2639>>>
+
+maprotiline , 465
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+mianserin, 495
+milnacipran, 503
+mirtazapine , 509
+moclobemide, 515
+modafinil (adjunct), 521
+nefazodone , 545
+nortriptyline , 551
+olanzapine, 559
+paliperidone, 581
+paroxetine , 593
+phenelzine , 613
+protriptyline , 657
+quetiapine (adjunct) , 667
+reboxetine, 681
+risperidone, 687
+selegiline , 705
+sertindole, 715
+sertraline , 721
+sulpiride, 741
+tianeptine, 777
+tranylcypromine , 787
+trazodone , 793
+triiodothyronine, 813
+trimipramine , 817
+venlafaxine , 841
+
+
+
+
+<<<PAGE 2647>>>
+
+lofexidine , 427
+naltrexone , 537
+Panic disorder
+alprazolam , 11
+citalopram, 159
+clonazepam , 173
+desvenlafaxine, 215
+escitalopram, 269
+fluoxetine , 301
+fluvoxamine, 325
+isocarboxazid, 375
+lorazepam, 437
+mirtazapine, 509
+nefazodone, 545
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+reboxetine, 681
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Parkinson’s disease
+selegiline , 705
+zonisamide, 875
+Parkinson’s disease dementia
+
+
+
+
+<<<PAGE 2656>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine , 325
+isocarboxazid, 375
+moclobemide, 515
+paroxetine , 593
+phenelzine, 613
+pregabalin, 647
+selegiline, 705
+sertraline , 721
+tranylcypromine, 787
+venlafaxine , 841
+Stress urinary incontinence
+duloxetine, 263
+Tardive dyskinesia
+deutetrabenazine , 221
+valbenazine , 825
+Tetanus
+chlorpromazine , 153
+Tourette’s syndrome/tic disorders
+aripiprazole , 53
+clonidine, 179
+guanfacine, 343
+haloperidol , 347
+pimozide , 627
+
+
+
+
+<<<PAGE 2660>>>
+
+nortriptyline, 551
+paroxetine, 593
+phenelzine, 613
+protriptyline, 657
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+triiodothyronine, 813
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Antipsychotics
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine, 153
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine, 313
+haloperidol, 347
+
+
+
+
+<<<PAGE 2663>>>
+
+oxazepam, 569
+paroxetine, 593
+phenelzine, 613
+prazosin, 643
+pregabalin, 647
+propranolol, 653
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine (adjunct), 771
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+trifluoperazine, 803
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+Attention deficit hyperactivity disorder treatments
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+chlorpromazine, 153
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+lisdexamfetamine, 409
+
+

@@ -1,0 +1,1147 @@
+<<<PAGE 351>>>
+
+Chapter 7: Treatments for Mood Disorders
+
+Arousal Combos
+SNRI + stimulant
+= SNRI
+
+5HT
+
+NE
+
+DA
+
+single boost
+
+double boost
+
+single boost
+
+= stimulant
+
+SERT
+
+NET
+
+SNRI
+
+SNRI
+
+A
+
+DAT
+stimulant
+
+stimulant
+
+SNRI + modafinil
+= SNRI
+
+5HT
+
+NE
+
+DA
+
+single boost
+
+single boost
+
+single boost
+
+= modafinil
+
+SERT
+B
+
+NET
+SNRI
+
+SNRI
+
+DAT
+
+7
+
+modafinil
+
+Figure 7-66 Arousal combo: SNRI plus stimulant/modafinil. (A) Serotonin (5HT) and dopamine (DA) are single-boosted and
+norepinephrine (NE) is double-boosted when a serotonin–norepinephrine reuptake inhibitor (SNRI) is combined with a stimulant. (B)
+Serotonin (5HT) and norepinephrine (NE) are single-boosted by the serotonin–norepinephrine reuptake inhibitor (SNRI) while dopamine
+(DA) is single-boosted by modafinil.
+
+Table 7-2 Some tricyclic antidepressants still in use
+
+Generic name
+
+Trade name
+
+Clomipramine
+
+Anafranil
+
+Imipramine
+
+Tofranil
+
+Amitriptyline
+
+Elavil; Endep; Tryptizol;
+Laroxyl
+
+Nortriptyline
+
+Pamelor; Aventyl
+
+Protriptyline
+
+Vivactil
+
+Maprotiline
+
+Ludiomil
+
+Amoxapine
+
+Asendin
+
+Doxepin
+
+Sinequan; Adapin
+
+Desipramine
+
+Norpramin; Pertofran
+
+Trimipramine
+
+Surmontil
+
+Dothiepin
+
+Prothiaden
+
+Lofepramine
+
+Deprimyl; Gamanil
+
+Tianeptine
+
+Coaxil; Stablon
+
+structure contains three rings. The TCAs were
+synthesized about the same time that other threeringed phenothiazine molecules were shown to be
+effective tranquilizers for schizophrenia (i.e., the early
+D2 antagonist drugs such as chlorpromazine) but were
+a disappointment when tested as drugs for psychosis.
+However, during testing for schizophrenia, they were
+serendipitously discovered to be effective in unipolar
+depression. Tricyclic antidepressants are not merely drugs
+for depression since one of them (clomipramine) has
+anti-obsessive–compulsive disorder; many of them have
+anti-panic effects at antidepressant doses and efficacy for
+neuropathic and low back pain at low doses.
+Long after their antidepressant properties were
+observed, the TCAs were discovered to block the reuptake
+pumps for norepinephrine (i.e., NET), or for both
+norepinephrine and serotonin (i.e., SERT) (see Figure
+7-67A). Some tricyclics have equal or greater potency for
+SERT inhibition (e.g., clomipramine); others are more
+selective for NET inhibition (e.g., desipramine, maprotiline,
+335
+
+
+
+
+<<<PAGE 416>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+improvement in relieving pain. Each class of drug may
+also help different ancillary symptoms in fibromyalgia,
+so the combination of α2δ ligands with SNRIs may lead to
+broader symptom relief than using either alone, although
+both are effective for pain in fibromyalgia. That is, α2δ
+ligands may reduce symptoms of anxiety in fibromyalgia
+(see discussion of α2δ ligands in anxiety in Chapter 8 and
+illustrated in Figures 8-17C and 8-18C) and for improving
+the slow-wave sleep disorder of fibromyalgia (sleep
+disorders and their treatment are discussed in further
+detail in Chapter 10). SNRIs can be useful in reducing
+symptoms of depression and anxiety in fibromyalgia
+(see Chapter 7 on treatment for mood disorders) and
+for treating fatigue as well as the cognitive symptoms
+associated with fibromyalgia, sometimes also called fibrofog (see Figures 9-8 and 9-9). Problems with executive
+functioning in a wide variety of clinical conditions are
+generally linked to inefficient information processing
+in the dorsolateral prefrontal cortex (DLPFC) where
+dopamine neurotransmission is important in regulating
+brain circuits (see Chapter 4 on cognition in schizophrenia
+and Figure 4-17). This concept of dopaminergic
+regulation of cognition in the DLPFC and the role of
+boosting dopamine neurotransmission to improve
+executive dysfunction is also discussed in Chapter 11
+on attention deficit hyperactivity disorder. Since SNRIs
+increase dopamine concentrations in the DLPFC (see
+Figure 7-33C), SNRI agents can also potentially improve
+symptoms of fibro-fog in fibromyalgia patients. This
+may be particularly so for the SNRIs milnacipran and
+levomilnacipran, which have potent norepinephrine
+reuptake binding properties at all clinically effective doses
+(Figures 7-30 and 7-31), or for higher doses of the SNRIs
+duloxetine (Figure 7-29), venlafaxine, and desvenlafaxine
+(Figure 7-28), which act to increase norepinephrine
+reuptake blocking properties of these agents and thus act
+to increase concentrations of dopamine in the DLPFC
+(Figure 7-33C). Other strategies for improving fibro-fog
+in fibromyalgia patients include the same ones used to
+treat cognitive dysfunction in depression, and include
+modafinil, armodafinil, selective norepinephrine reuptake
+inhibitors (NRIs) such as atomoxetine, norepinephrine–
+dopamine reuptake inhibitors (NDRIs) such as bupropion,
+and with caution, stimulants. SNRIs, sometimes
+augmented with modafinil, stimulants, or bupropion can
+also be useful for symptoms of physical fatigue as well as
+mental fatigue in fibromyalgia patients.
+Second-line treatments for pain in fibromyalgia
+can include sedating drugs for depression including
+
+400
+
+mirtazapine and tricyclic antidepressants, as well as
+the tricyclic muscle relaxant cyclobenzapine. Other
+sleep aids such as benzodiazepines, hypnotics, and
+trazodone can be helpful in relieving sleep disturbance
+in fibromyalgia. Evidence is also accumulating for the
+efficacy of γ-hydroxybutyrate (GHB or sodium oxybate)
+in fibromyalgia (use with extreme caution because of
+diversion and abuse potential). GHB is approved for
+narcolepsy, enhances slow-wave sleep, and is discussed
+in Chapter 10 on sleep (see Figures 10-67 and 10-68). In
+heroic cases the use of GHB by experts for the treatment
+of severe and treatment-resistant cases of fibromyalgia
+may be justified. A number of anticonvulsants other than
+the α2δ ligands (Figure 9-16) are also used second-line for
+chronic neuropathic pain states, including fibromyalgia.
+These agents are thought to target voltage-gated sodium
+channels rather than voltage-gated calcium channels
+and thus seem to have a different mechanism of action
+than α2δ ligands and may be effective in patients with
+inadequate response to α2δ ligands.
+
+SUMMARY
+This chapter has defined pain, and has explained
+the processing of nociceptive neuronal activity into
+the perception of pain by pathways that lead to the
+spinal cord, and then up the spinal cord to the brain.
+Neuropathic pain is discussed extensively, including
+both peripheral and central mechanisms, and the
+concept of central sensitization. The key role of
+descending inhibitory pathways that reduce the activity
+of nociceptive pain neurons with the release of serotonin
+and norepinephrine is explained, and shown to be
+the basis for the actions of serotonin–norepinephrine
+reuptake inhibitors (SNRIs) as agents that reduce the
+perception of pain in conditions ranging from major
+depression to fibromyalgia to diabetic peripheral
+neuropathic pain, low back pain, osteoarthritis, and
+related conditions. The critical role of voltage-sensitive
+calcium channels (VSCCs) is also explained, providing
+the basis for the actions of α2δ ligands as agents that
+also reduce the perception of pain in diabetic peripheral
+neuropathic pain, fibromyalgia, painful physical
+symptoms of depression and anxiety disorders, shingles,
+and other neuropathic pain conditions. Finally, the
+spectrum of conditions from affective disorders to
+chronic neuropathic pain disorders is introduced, with
+emphasis on the condition of fibromyalgia and its newly
+evolving psychopharmacological treatments.
+
+
+
+
+<<<PAGE 417>>>
+
+10
+
+Disorders of Sleep and
+Wakefulness and Their
+Treatment: Neurotransmitter
+Networks for Histamine
+and Orexin
+
+Neurobiology of Sleep and Wakefulness 402
+The Arousal Spectrum 402
+Histamine 402
+Orexins/Hypocretins 406
+Pathways of Arousal and Sleep for the Sleep/Wake
+Cycle 408
+Ultradian Cycles 413
+Neurotransmitters and the Ultradian Sleep
+Cycle 414
+Why Do We Sleep? Can’t I Sleep When I Die? 414
+Insomnia 418
+What Is Insomnia? 418
+Diagnosis and Comorbidities 418
+Treating Insomnia: Drugs with Hypnotic
+Actions 421
+Benzodiazepines (GABAA Positive Allosteric
+Modulators) 421
+Z Drugs (GABAA Positive Allosteric Modulators) 422
+Dual Orexin Receptor Antagonists (DORAs) 423
+
+This chapter will provide a brief overview of the
+psychopharmacology of disorders of sleep and wakefulness.
+Included here are short discussions of the symptoms,
+diagnostic criteria, and treatments for disorders that cause
+insomnia, excessive daytime sleepiness, or both. Clinical
+descriptions and formal criteria for how to diagnose sleep
+disorders are mentioned here only in passing. The reader
+should consult standard reference sources for this material.
+The discussion here will emphasize the links between
+various brain circuits and their neurotransmitters with
+disorders that cause insomnia or sleepiness. The goal of
+this chapter is to acquaint the reader with ideas about the
+clinical and biological aspects of sleep and wakefulness,
+how various disorders can alter sleep and wakefulness, and
+how many new and evolving treatments can resolve the
+symptoms of insomnia and sleepiness.
+The detection, assessment, and treatment of sleep/
+wake disorders are rapidly becoming standardized parts of
+a psychiatric evaluation. Modern psychopharmacologists
+increasingly consider sleep to be a psychiatric “vital
+
+Serotonergic Hypnotics 424
+Histamine 1 Antagonists as Hypnotics 425
+Anticonvulsants as Hypnotics 426
+Hypnotic Actions and Pharmacokinetics: Your Sleep
+Is at the Mercy of Your Drug Levels! 426
+Behavioral Treatments of Insomnia 430
+Excessive Daytime Sleepiness 430
+What Is Sleepiness? 430
+Causes of Hypersomnia 431
+Circadian Rhythm Disorders 435
+Wake-Promoting Agents and Treatment of
+Excessive Daytime Sleepiness 440
+Caffeine 440
+Amphetamine and Methylphenidate 441
+Modafinil/Armodafinil 442
+Solriamfetol, a Wake-Promoting NDRI 444
+Pitolisant, H3 Presynaptic Antagonist 444
+Sodium Oxybate and Narcolepsy/Cataplexy 446
+Summary 448
+
+sign,” thus requiring routine evaluation and symptomatic
+treatment whenever encountered. This is similar to
+the earlier discussion in Chapter 9, where pain is also
+increasingly being considered as another psychiatric
+“vital sign.” That is, disorders of sleep (and pain) are so
+important, so pervasive, and cut across so many psychiatric
+conditions that the elimination of these symptoms – no
+matter what psychiatric disorder may be present – is
+increasingly recognized as necessary in order to achieve
+full symptomatic and functional remission for the patient.
+Many of the treatments discussed in this chapter
+are covered in previous chapters. For details of
+mechanisms of insomnia treatments that are also used
+for the treatment of depression, the reader is referred
+to Chapter 7; for those insomnia treatments that are
+benzodiazepines, the reader is also referred to Chapter
+7. For various hypersomnia treatments, especially
+stimulants, the reader is referred to Chapter 11 on
+attention deficit hyperactivity disorder (ADHD) and to
+Chapter 13 on impulsivity, compulsivity, and addiction
+401
+
+
+
+
+<<<PAGE 455>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+treatment of mood disorders or adjunctively to modafinil/
+armodafinil for shift work disorder.
+Morning light and evening melatonin can help
+depression, delayed sleep phase disorder, and shift work
+disorder. On the other hand, early evening light and
+early morning melatonin can help advanced sleep phase
+disorder. Non-24-hour sleep–wake disorder benefits from
+synchronization of circadian rhythms by the powerful
+melatonergic agent tasimelteon (Figure 10-57). These
+various circadian treatments can also be beneficial in
+resetting the biological clock in normal elderly people
+(morning melatonin and evening light) and normal teens
+(morning light and evening melatonin). Parents have
+long recognized the benefits of letting in early morning
+sunlight by opening the shades to get hibernating teens
+up and going in time for school.
+Melatonergic Hypnotics
+
+Melatonin is the neurotransmitter secreted by the pineal
+gland, and acts especially in the suprachiasmatic nucleus
+to regulate circadian rhythms (discussed in Chapter 6
+and illustrated in Figures 6-34 to 6-36). Melatonin shifts
+circadian rhythms, especially in those with phase delay
+when taken at the desired appropriate bedtime, not only
+
+for depressed patients, those who have delayed phase sleep
+disorder, and many normal teenagers, but also for many
+experiencing jet lag from travel-induced shifts in circadian
+rhythms. In all cases, melatonin can facilitate sleep onset.
+Melatonin acts at three different sites, not only
+melatonin 1 (MT1) and melatonin 2 (MT2) receptors, but
+also at a third site, sometimes called the melatonin 3 site,
+which is now known to be the enzyme NRH–quinone
+oxidoreductase 2, and which is probably not involved in
+sleep physiology (Figure 10-57). MT1-mediated inhibition
+of neurons in the suprachiasmatic nucleus (SCN) could
+help to promote sleep by decreasing the wake-promoting
+actions of the circadian “clock” or “pacemaker” that
+functions there, perhaps by attenuating the SCN’s alerting
+signals, allowing sleep signals to predominate, and thus
+inducing sleep. Phase shifting and circadian rhythm
+effects of the normal sleep/wake cycle are thought to
+be primarily mediated by MT2 receptors, which entrain
+these signals in the SCN.
+Ramelteon is a MT1/MT2 agonist marketed for
+insomnia, and tasimelteon, another MT1/MT2 agonist,
+is marketed for non-24-hour sleep–wake disorder
+(Figure 10-57). These agents improve sleep onset,
+sometimes better when used for several days in a row.
+
+Melatonergic Agents
+
+ramelteon
+tasimelteon
+
+melatonin
+MT3
+
+MT1
+
+MT2
+
+MT1
+
+5HT2B
+
+5HT2C
+
+agomelatine
+
+MT1
+
+MT2
+
+Figure 10-57 Melatonergic
+agents. Endogenous melatonin is
+secreted by the pineal gland and
+mainly acts in the suprachiasmatic
+nucleus to regulate circadian
+rhythms. There are three types
+of receptors for melatonin: MT1
+and MT2, which are both involved
+in sleep, and MT3, which is
+actually the enzyme NRH–quinine
+oxidoreductase 2 and not thought
+to be involved in sleep physiology.
+There are several different agents
+that act at melatonin receptors.
+Melatonin itself, available over
+the counter, acts at MT1 and MT2
+receptors as well as at the MT3 site.
+Both ramelteon and tasimelteon
+are MT1 and MT2 receptor agonists
+and seem to provide sleep onset
+though not necessarily sleep
+maintenance. Agomelatine is
+not only a MT1 and MT2 receptor
+agonist, but is also a serotonin
+5HT2C and 5HT2B receptor
+antagonist and is available as an
+antidepressant outside the US.
+
+MT2
+
+439
+
+10
+
+
+
+
+<<<PAGE 456>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+They are not known to help sleep maintenance, but will
+induce natural sleep in those subjects who suffer mostly
+from initial insomnia. The actions of tasimelteon at MT2
+receptors are thought to underlie its effectiveness at
+retraining the circadian clock.
+
+WAKE-PROMOTING AGENTS
+AND TREATMENT OF EXCESSIVE
+DAYTIME SLEEPINESS
+Why treat sleepiness? If the most common cause of
+sleepiness is sleep deprivation can’t we treat sleepiness
+with sleep and not with drugs? The short answer is
+unfortunately not. Here we will discuss the treatment
+of excessive daytime sleepiness with various wakepromoting agents such as caffeine, stimulants, modafinil/
+armodafinil, and others, as well as some newer agents,
+including an NDRI (norepinephrine–dopamine reuptake
+inhibitor) and an H3 antagonist. Non-pharmacological
+treatments are also presented.
+If disorders characterized by excessive daytime
+sleepiness can be conceptualized as deficient daytime
+arousal (Figure 10-44), then wake-promoting treatments
+can be seen as agents that increase brain activation and
+arousal (Figure 10-58). There are a number of ways to do
+this, but most involve enhancing the release of wakepromoting neurotransmitters, especially dopamine and
+histamine.
+
+Caffeine
+
+Caffeine is the world’s most widely consumed
+psychoactive drug. How does it work? The answer is that
+it is an antagonist of the neurotransmitter adenosine
+(Figure 10-59). Adenosine was first mentioned in
+this chapter as the chemical known to be linked to
+the homeostatic sleep drive (illustrated in Figure 1018). Since adenosine accumulates as you get tired, it
+essentially is taking account of your homeostatic drive
+and some say that adenosine acts as the “accountant” or
+“bean counter” of fatigue, documenting and quantitating
+the homeostatic drive for sleep. Interestingly, one way
+to make a deposit into this homeostatic account to
+reduce this drive and diminish fatigue is with a coffee
+bean! That is, caffeine, from coffee or other sources, is
+wake-promoting, reduces fatigue, and diminishes the
+homeostatic sleep drive. How does it do this? Caffeine is
+an antagonist of adenosine and thus can block some of
+the effects of adenosine buildup, both molecularly and
+behaviorally (Figure 10-59).
+Native dopamine 2 (D2) receptors bind dopamine
+with high affinity (Figure 10-59A) but in the presence of
+adenosine, D2 receptors can couple (i.e., heterodimerize)
+with adenosine receptors, reducing the affinity of the D2
+receptor for dopamine (Figure 10-59B). However, caffeine
+blocks adenosine binding to the adenosine receptor and
+restores the affinity of the D2 receptor for dopamine even
+
+Promoting Wakefulness
+To Promote Wakefulness
+awake
+alert
+creative
+problem solving
+
+Inhibit
+GABA
+Enhance
+hypocretin/orexin
+acetylcholine
+dopamine
+norepinephrine
+serotonin
+histamine
+
+excessive daytime
+sleepiness
+
+deficient arousal
+
+440
+
+excessive arousal
+
+Figure 10-58 Promoting
+wakefulness. To treat excessive
+daytime sleepiness, one can administer
+medications that promote arousal by
+enhancing neurotransmission involved
+in wakefulness; most notably, by
+enhancing dopamine and histamine
+neurotransmission.
+
+
+
+
+<<<PAGE 458>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Amphetamine and Methylphenidate
+amphetamine
+methylphenidate
+
+Figure 10-60 Amphetamine and methylphenidate. Amphetamine and methylphenidate are both norepinephrine (left) and dopamine
+(right) reuptake inhibitors; amphetamine has the additional property of inhibition of the vesicular monoamine transporter 2 (VMAT2),
+which can lead to dopamine release. Enhancing these neurotransmitters in sleep/wake circuitry (far right) can be wake-promoting and
+fatigue-reducing; thus, they are both approved for excessive daytime sleepiness in narcolepsy and used off-label in other conditions
+associated with hypersomnia.
+
+are now available for the treatment of ADHD and are
+reviewed in detail in Chapter 11 (see Figures 11-9, 11-10,
+11-33, 11-35, and 11-36) and in Chapter 13 on substance
+abuse (see Figure 13-8).
+Amphetamine and methylphenidate can be dosed to
+treat sleepiness in narcolepsy in order to enhance the
+synaptic availability of the wake-promoting and arousal
+neurotransmitters dopamine and norepinephrine and
+thereby improve wakefulness in narcolepsy without
+causing significant reinforcement (Figure 10-60).
+Nevertheless, amphetamine and methylphenidate
+are controlled substances because of high abuse and
+diversion potential, as well as the possibility of inducing
+psychosis, mania, high blood pressure, and other side
+effects, especially at doses higher than those used to treat
+sleepiness or ADHD (discussed in Chapters 11 and 13).
+However, they are highly effective agents to promote
+wakefulness in narcolepsy.
+Modafinil/Armodafinil
+Mechanism of Action
+
+Racemic modafinil and its R enantiomer armodafinil
+(Figure 10-61) are wake-promoting agents not only
+442
+
+approved for the treatment of narcolepsy, but also as
+adjunctive treatments for obstructive sleep apnea and
+for shift work disorder. These agents are thought to act
+predominantly as inhibitors of the dopamine transporter
+(DAT) or dopamine (DA) reuptake pump (Figure
+10-62). Although modafinil is a weak DAT inhibitor,
+the concentrations of the drug achieved after oral
+dosing are quite high, and sufficient to have substantial
+actions on DATs. In fact, the pharmacokinetics of
+modafinil suggest that this drug acts via a slow rise in
+plasma levels, sustained plasma levels for 6–8 hours,
+and incomplete occupancy of DAT, all properties that
+could be ideal for enhancing tonic dopamine activity
+to promote wakefulness (Figure 10-63) rather than
+phasic dopamine activity to promote reinforcement
+and abuse (see Chapter 11 on ADHD and Figures 11-9,
+11-10, 11-33, 11-35, and 11-36 as well as Chapter 13 on
+substance abuse and Figure 13-8). Once dopamine release
+is activated by modafinil, and the cortex is aroused, this
+can apparently lead to downstream release of histamine
+from the tuberomammillary nucleus (TMN) and then
+further activation of the lateral hypothalamus with
+orexin release to stabilize wakefulness (Figure 10-63).
+
+
+
+
+<<<PAGE 459>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+Figure 10-61 Modafinil and
+armodafinil. Modafinil consists of two
+enantiomers, R and S; the R enantiomer
+has been developed and marketed
+as armodafinil. Both modafinil
+and armodafinil are thought to act
+predominantly as inhibitors of the
+dopamine transporter (DAT).
+
+T
+DA
+
+TA
+D
+
+R modafinil
+
+However, the activation of the lateral hypothalamus
+and release of orexin do not appear to be necessary for
+the action of modafinil, since modafinil still promotes
+wakefulness in patients who have loss of hypothalamic
+orexin neurons in narcolepsy. The activation of TMN
+and lateral hypothalamic neurons may be secondary and
+downstream actions resulting from modafinil’s effects on
+dopamine neurons.
+A related wake-promoting agent is the R enantiomer
+of modafinil, called armodafinil (Figure 10-61).
+Armodafinil has a later time to peak levels, a longer
+half-life, and higher plasma drug levels 6–14 hours
+after oral administration than racemic modafinil.
+The pharmacokinetic properties of armodafinil could
+theoretically improve the clinical profile of modafinil,
+with greater activation of phasic dopamine firing,
+possibly eliminating the need for a second daily dose, as
+is often required with racemic modafinil.
+Narcolepsy
+
+Modafinil/armodafinil are effective treatments of
+sleepiness in narcolepsy, although possibly not as
+powerful as amphetamine and methylphenidate.
+However, head-to-head trials have not been conducted.
+Furthermore, the abuse potential of modafinil/
+armodafinil is much reduced compared to amphetamine
+and methylphenidate, and the side effects are not as
+severe. In addition, both modafinil and armodafinil
+are approved for treatment of two additional disorders
+
+S modafinil
+
+for which amphetamine and methylphenidate are
+not approved, namely, for shift work disorder and as
+adjunctive treatment for obstructive sleep apnea (OSA).
+Obstructive Sleep Apnea
+
+First-line treatment for OSA (Figure 10-49) is continuous
+positive airway pressure (CPAP) (Figure 10-64). Although
+CPAP treatment is quite effective and has been shown
+to reduce hospitalization rates and healthcare costs,
+adherence rates are poor (54%). For patients who find
+CPAP intolerable, there are other treatment options that
+may be considered, including bilevel positive airway
+pressure (BPAP), auto-titrating positive airway pressure
+(APAP), oral appliances designed to stabilize the jaw
+and/or tongue during sleep, and various surgeries aimed
+at correcting physical attributes that may contribute to
+OSA. Additionally, several behavioral interventions may
+be useful for ameliorating OSA; these include weight
+loss (to a BMI <25), exercise, the avoidance of alcohol
+and sedatives at bedtime, and positional therapy (i.e.,
+the use of a backpack or other object that prevents the
+patient from sleeping on their back). Modafinil and
+armodafinil are approved specifically as adjuncts to
+standard treatment of underlying airway obstruction,
+which is frequently inadequate to treat the hypersomnia
+associated with OSA. Given the low adherence rates to
+CPAP, modafinil/armodafinil are sometimes used “offlabel” for OSA as monotherapies for patients who do not
+tolerate CPAP.
+443
+
+10
+
+
+
+
+<<<PAGE 460>>>
+
+STAHL’S ESSENTIAL PSYCHOPHARMACOLOGY
+
+Mechanism of Action of
+Modafinil/Armodafinil
+
+DA reuptake
+pump
+
+modafinil
+
+DA
+
+when needing to function during the daytime when
+sleepy. Exposure to light alters circadian rhythms and
+suppresses melatonin release. Treatment with 10,000
+lux, bright, blue light for 30 minutes a day may be used
+to reset circadian rhythms (Figure 10-56). Importantly,
+the administration of bright light therapy must be
+appropriately timed in accordance with the patient’s
+circadian phase of melatonin secretion, with light
+administration occurring approximately 8 hours after
+evening melatonin secretion (possibly amplified by
+oral dosing with a melatonin agent, Figure 10-57) or
+in accordance with a predetermined bright light phase
+response curve. One form of bright light therapy, dawn
+simulation therapy, applies a slow, incremental light
+signal at the end of the sleep cycle. Data show that
+performance, alertness, and mood during the night shift
+can be improved in shift workers using bright light reentrainment of circadian rhythms.
+Solriamfetol, a Wake-Promoting NDRI
+
++
++
++
++
+increase in tonic firing,
+downstream increase in HA
+and activation of wake-related
+circuits
+Figure 10-62 Mechanism of action of modafinil/
+armodafinil. Modafinil and armodafinil bind with weak affinity
+for the dopamine transporter (DAT); however, their plasma
+levels are high and this compensates for the low binding.
+Increased synaptic dopamine (DA) following blockade of DAT
+leads to increased tonic firing and downstream effects on
+neurotransmitters involved in wakefulness, including histamine
+(HA) and orexin/hypocretin.
+
+Shift Work Disorder
+
+Shift work disorder (Figure 10-51) can be tricky to
+treat, especially if the patient has an ever-evolving and
+unstable shift work schedule. Suffice it to say, shift
+workers are frequently sleepy, but still must work,
+drive, and function. Modafinil/armodafinil can make
+a big difference in an individual’s ability to function
+with alertness when suffering from shift work disorder.
+Supplementing modafinil/armodafinil with circadian
+rhythm adjunctive therapy is often helpful (Figure
+10-55). This includes trying to reset the biological
+clock with morning light (Figure 10-56), especially
+444
+
+Solriamfetol is a recently approved agent for daytime
+sleepiness, both in patients with narcolepsy and as an
+adjunct to mechanical treatments for airway obstruction
+in patients with OSA. It works by norepinephrine and
+dopamine reuptake inhibition (see Chapter 7 and Figures
+7-34 through 7-36), and seems to be more potent than
+bupropion in this aspect, and less potent but more tolerable
+and less abusable than amphetamines or methylphenidate.
+Its short half-life is consistent with morning dosing wearing
+off in time for sleep.
+Pitolisant, H3 Presynaptic Antagonist
+
+Pitolisant (Figure 10-65) is a drug with a novel
+mechanism for improving wakefulness in narcolepsy
+by blocking the normal action of presynaptic H3
+autoreceptors (Figure 10-66A,B) to inhibit histamine
+release. Inhibiting the presynaptic H3 receptor causes
+the disinhibition (that is, the release) of presynaptic
+histamine (Figure 10-66C), and this is wake-promoting.
+Pitolisant, a presynaptic H3 autoreceptor antagonist
+(Figures 10-65 and 10-66C), is approved for the treatment
+of narcolepsy, and there are anecdotal observations that
+it may be effective in cataplexy as well. Pitolisant is not a
+controlled substance and has no known abuse potential
+and is in testing for improving excessive daytime
+sleepiness in OSA. Pitolisant can be overly activating,
+causing anxiety or insomnia. Studies suggest it may
+be about as effective as modafinil but perhaps not as
+effective as amphetamine/methylphenidate for improving
+excessive daytime sleepiness.
+
+
+
+
+<<<PAGE 461>>>
+
+Chapter 10: Disorders of Sleep and Wakefulness and Their Treatment
+
+Figure 10-63 Modafinil/armodafinil
+in wake circuits. Blockade of the
+dopamine transporter (DAT) by
+modafinil/armodafinil leads to
+increased tonic dopaminergic
+firing and downstream effects on
+wake-promoting neurotransmitters.
+Specifically, cortical release of
+wake-promoting neurotransmitters is
+increased, which leads to downstream
+release of histamine from the
+tuberomammillary nucleus (TMN)
+and further activation of the lateral
+hypothalamus (LH), with corresponding
+orexin release that stabilizes
+wakefulness.
+
+Modafinil/Armodafinil
+
+thalamus
+basal
+forebrain
+VLPO
+
+LH
+
+PPT/
+LDT
+
+VTA
+
+TMN
+RN
+
+LC
+
+GABA
+hypocretin/orexin
+acetylcholine
+
+modafinil/armodafinil
+
+dopamine
+norepinephrine
+histamine
+
+Treating Obstructive Sleep Apnea
+Oral Appliances
+CPAP
+nosemask
+
+airflow
+
+Figure 10-64 Treating obstructive
+sleep apnea. First-line treatment
+for obstructive sleep apnea (OSA) is
+continuous positive airway pressure
+(CPAP). Other treatment options
+are also available, including oral
+appliances and surgical interventions.
+Medications can be used as adjuncts
+to treat excessive daytime sleepiness
+associated with OSA.
+
+expiratory
+resistance
+
+10
+Surgical Intervention
+
+mouth is
+unobstructed
+
+445
+
+
+
+
+<<<PAGE 610>>>
+
+Suggested Reading and Selected References
+
+Wake Disorders/Sleepiness/OSA/
+Narcolepsy/Circadian/Shift Work
+
+Carocci A, Catalano A, Sinicropi MS (2014) Melatonergic
+drugs in development. Clin Pharmacol Adv Applications 6:
+127–37.
+
+Abad VC, Guilleminault C (2011) Pharmacological treatment
+of obstructive sleep apnea. Curr Pharm Design 17: 1418–25.
+
+Cauter EV, Plat L, Scharf MB, et al. (1997) Simultaneous
+stimulation of slow-wave sleep and growth hormone
+secretion by gamma-hydroxybutyrate in normal young
+men. J Clin Invest 100: 745–53.
+
+Adenuga O, Attarian H (2014) Treatment of disorders of
+hypersomnolence. Curr Treat Options Neurol 16: 302.
+Ahmed I, Thorpy M (2010) Clinical features, diagnosis and
+treatment of narcolepsy. Clin Chest Med 31: 371–81.
+Aloia MS, Arnedt JT, Davis JD, Riggs RL, Byrd D (2004)
+Neuropsychological sequelae of obstructive sleep apnea–
+hypopnea syndrome: a critical review. J Int Neuropsychol
+Soc 10: 772–85.
+Arallanes-Licea E, Caldelas I, De Ita-Perez D, et al. (2014)
+The circadian timing system: a recent addition in the
+physiological mechanisms underlying pathological and
+aging processes. Aging Dis 5: 406–18.
+Artioli P, Lorenzi C, Priovano A, et al. (2007) How do
+genes exert their role? Period 3 gene variants and
+possible influences on mood disorder phenotypes. Eur
+Neuropsychopharmacol 17: 587–94.
+Aurora RN, Chowdhuri S, Ramar K, et al. (2012) The
+treatment of central sleep apnea syndromes in adults:
+practice parameters with an evidence-based literature
+review and meta-analyses. Sleep 35: 17–40.
+Banerjee S, Wang Y, Solt LA, et al. (2014) Pharmacological
+targeting of the mammalian clock regulates sleep
+architecture and emotional behaviour. Nat Commun 5: 5759.
+Barger LK, Ogeil RP, Drake CL, et al. (2012) Validation of a
+questionnaire to screen for shift work disorder. Sleep 35:
+1693–703.
+Benedetti F, Serretti A, Colombo C, et al. (2003) Influence
+of CLOCK gene polymorphisms on circadian mood
+fluctuation and illness recurrence in bipolar depression.
+Am J Med Genet B, Neuropsychiatr Genet 123 : 23–6.
+Black JE, Hull SG, Tiller J, et al. (2010) The long-term
+tolerability and efficacy of armodafinil in patients with
+excessive sleepiness associated with treated obstructive
+sleep apnea, shift work disorder, or narcolepsy: an openlabel extension study. J Clin Sleep Med 6: 458–66.
+Bogan RK (2010) Armodafinil in the treatment of excessive
+sleepiness. Expert Opin Pharmacother 11: 993–1002.
+Bonacci JM, Venci JV, Ghandi MA (2015) Tasimelteon
+(HetliozTM): a new melatonin receptor agonist for the
+treatment of non-24 sleep-wake disorder. J Pharm Pract
+28: 473–8.
+Brancaccio M, Enoki R, Mazuki CN, et al. (2014) Networkmediated encoding of circadian time: the suprachiasmatic
+nucleus (SCN) from genes to neurons to circuits, and back.
+J Neurosci 34: 15192–9.
+
+594
+
+Cermakian N, Lange T, Golombek D, et al. (2013) Crosstalk
+between the circadian clock circuitry and the immune
+system. Chronobiol Int 30: 870–88.
+Cirelli C (2009) The genetic and molecular regulation of sleep:
+from fruit flies to humans. Nat Rev Neurosci 10: 549–60.
+Colwell CS (2011) Linking neural activity and molecular
+oscillators in the SCN. Nat Rev Neurosci 12: 553–69.
+Cook H et al. (2003) A 12-month, open-label, multicenter
+extension trial of orally administered sodium oxybate for
+the treatment of narcolepsy. Sleep 26: 31–5.
+Crowley SJ, Lee C, Tseng CY, et al. (2004) Complete or partial
+circadian re-entrainment improves performance, alertness,
+and mood during night-shift work. Sleep 27: 1077–87.
+Czeisler CA, Walsh JK, Roth T, et al. (2005) Modafinil for
+excessive sleepiness associated with shift-work sleep
+disorder. New Engl J Med 353: 476–86.
+Dallaspezia S, Benedetti F (2011) Chronobiological therapy for
+mood disorders. Expert Rev Neurother 11: 961–70.
+Darwish M, Bond M, Ezzet F (2012) Armodafinil in patients
+with excessive sleepiness associated with shift work
+disorder: a pharmacokinetic/pharmacodynamic model
+for predicting and comparing their concentration-effect
+relationships. J Clin Pharmacol 52: 1328–42.
+Darwish M, Kirby M, D’Andrea DM, et al. (2010)
+Pharmacokinetics of armodafinil and modafinil after
+single and multiple doses in patients with excessive
+sleepiness associated with treated obstructive sleep apnea:
+a randomized, open-label, crossover study. Clin Ther 32:
+2074–87.
+Dauvilliers Y, Tafti M (2006) Molecular genetics and treatment
+of narcolepsy. Ann Med 38: 252–62.
+De la Herran-Arita AK, Garcia-Garcia F (2014) Narcolepsy as
+an immune-mediated disease. Sleep Disord 2014: 792687.
+Dinges DF, Weaver TE (2003) Effects of modafinil on
+sustained attention performance and quality of life in OSA
+patients with residual sleepiness while being treated with
+CPAP. Sleep Med 4: 393–402.
+Dresler M, Spoormaker VI, Beitinger P, et al. (2014)
+Neuroscience-driven discovery and development of sleep
+therapeutics. Pharmacol Ther 141: 300–34.
+Eckel-Mahan KL, Patel VR, de Mateo S, et al. (2013)
+Reprogramming of the circadian clock by nutritional
+challenge. Cell 155: 1464–78.
+
+
+
+
+<<<PAGE 611>>>
+
+Suggested Reading and Selected References
+
+Ellis CM, Monk C, Simmons A, et al. (1999) Functional
+magnetic resonance imaging neuroactivation studies
+in normal subjects and subjects with the narcoleptic
+syndrome. Actions of modafinil. J Sleep Res 8: 85–93.
+
+Krakow B, Ulibarri VA (2013) Prevalence of sleep breathing
+complaints reported by treatment-seeking chronic insomnia
+disorder patients on presentation to a sleep medical center: a
+preliminary report. Sleep Breath 17: 317–22.
+
+Epstein LJ, Kristo D, Strollo PJ, et al. (2009) Clinical guideline
+for the evaluation, management and long-term care of
+obstructive sleep apnea in adults. J Clin Sleep Med 5: 263–76.
+
+Kripke DE, Nievergelt CM, Joo E, et al. (2009) Circadian
+polymorphisms associated with affective disorders. J
+Circadian Rhythms 27: 2.
+
+Erman MK, Seiden DJ, Yang R, et al. (2011) Efficacy and
+tolerability of armodafinil: effect on clinical condition
+late in the shift and overall functioning of patients with
+excessive sleepiness associated with shift work disorder.
+J Occup Environ Med 53: 1460–5.
+
+Krystal AD, Harsh JR, Yang R et al. (2010) A double-blind,
+placebo-controlled study of armodafinil for excessive
+sleepiness in patients with treated obstructive sleep apnea
+and comorbid depression. J Clin Psychiatry 71: 32–40.
+
+Froy O (2010) Metabolism and circadian rhythms:
+implications for obesity. Endocr Rev 31: 1–24.
+
+Lallukka T, Kaikkonen R, Harkanen T, et al. (2014) Sleep and
+sickness absence: a nationally representative register-based
+follow-up study. Sleep 37: 1413–25.
+
+Golombek DA, Casiraghi LP, Agostino PV, et al. (2013) The times
+they are a-changing: effects of circadian desynchronization
+on physiology and disease. J Physiol Paris 107: 310–22.
+
+Landrigan CP, Rothschild JM, Cronin JW, et al. (2004) Effect of
+reducing interns work hours on serious medical errors in
+intensive care units. New Engl J Med 351: 1838–48.
+
+Guo X, Zheng L, Wang J, et al. (2013) Epidemiological
+evidence for the link between sleep duration and high
+blood pressure: a systematic review and meta-analysis.
+Sleep Med 14: 324–32.
+
+Larson-Prior LJ, Ju Y, Galvin JE (2014) Cortical–subcortical
+interactions in hypersomnia disorders: mechanisms
+underlying cognitive and behavioral aspects of the sleep–
+wake cycle. Front Neurol 5: 1–13.
+
+Hampp G, Ripperger JA, Houben T, et al. (2008) Regulation
+of monoamine oxidase A by circadian-clock components
+implies influence on mood. Curr Biol 18: 678–83.
+
+Laudon M, Frydman-Marom A (2014) Therapeutic effects
+of melatonin receptor agonists on sleep and comorbid
+disorders. Int J Mol Sci 15: 15924–50.
+
+Harrison EM, Gorman MR (2012) Changing the waveform
+of circadian rhythms: considerations for shift-work. Front
+Neurol 3: 1–7.
+
+Liira J, Verbeek JH, Costa G, et al. (2014) Pharmacological
+interventions for sleepiness and sleep disturbances caused
+by shift work. Cochrane Database Syst Rev 8: CD009776.
+
+Hart CL, Haney M, Vosburg SK, et al. (2006) Modafinil attentuates
+disruptions in cognitive performance during simulated nightshift work. Neuropsychopharmacology 31: 1526–36.
+
+Lim DC, Veasey SC (2010) Neural injury in sleep apnea. Curr
+Neurol Neurosci Rep 10: 47–52.
+
+He B, Peng H, Zhao Y, et al. (2011) Modafinil treatment
+prevents REM sleep deprivation-induced brain function
+impairment by increasing MMP-9 expression. Brain Res
+1426: 38–42.
+Hirai N, Nishino S (2011) Recent advances in the treatment of
+narcolepsy. Curr Treat Options Neurol 13: 437–57.
+Horne JA, Ostberg O (1976) A self-assessment questionnaire
+to determine morningness–eveningness in human
+circadian rhythms. Int J Chronobiol 4: 97–100.
+Johansson C, Willeit M, Smedh C, et al. (2003) Circadian
+clock-related polymorphisms in seasonal affective
+disorder and their relevance to diurnal preference.
+Neuropsychopharmacology 28: 734–9.
+
+Liu Y, Wheaton AG, Chapman DP, et al. (2013) Sleep duration
+and chronic disease among US adults age 45 years and
+older: evidence from the 2010 behavioral risk factor
+surveillance system. Sleep 36: 1421–7.
+Madras BK, Xie Z, Lin Z, et al. (2006) Modafinil occupies
+dopamine and norepinephrine transporters in vivo and
+modulates the transporters and trace amine activity in
+vitro. J Pharmacol Exp Ther 319: 561–9.
+Makris AP, Rush CR, Frederich RC, Kelly TH (2004) Wakepromoting agents with different mechanisms of action:
+comparison of effects of modafinil and amphetamine
+on food intake and cardiovascular activity. Appetite 42:
+185–95.
+
+Khalsa SB, Jewett ME, Cajochen C, et al. (2003) A phase
+response curve to single bright light pulses in human
+subjects. J Physiol 549(pt 3): 945–52.
+
+Mansour HA, Wood J, Logue T, et al. (2006) Association
+of eight circadian genes with bipolar I disorder,
+schizoaffective disorder and schizophrenia. Genes Brain
+Behav 5: 150–7.
+
+Knudsen S, Biering-Sorensen B, Kornum BR, et al. (2012)
+Early IVIg treatment has no effect on post-H1N1
+narcolepsy phenotype or hypocretin deficiency. Neurology
+79: 102–3.
+
+Masri S, Kinouchi K, Sassone-Corsi P (2015) Circadian clocks,
+epigenetics, and cancer. Curr Opin Oncol 27: 50–6.
+
+Martin JL, Hakim AD (2011) Wrist actigraphy. Chest 139:
+1514–27.
+
+595
+
+

@@ -1,0 +1,542 @@
+<<<PAGE 457>>>
+
+436  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Benzodiazepines in the treatment of psychiatric disorders
+Benzodiazepines have a valid place in the treatment of some forms of epilepsy and
+severe muscle spasm, and as premedication agents in some surgical procedures.
+However, the vast majority of prescriptions are written for their hypnotic and anxiolytic effects. They are also used for rapid tranquillisation and, usually as adjuncts, in the
+treatment of depression and schizophrenia. Benzodiazepines are commonly both prescribed and misused. A European study found that almost 10% of adults had taken a
+benzodiazepine over the previous year1 and a 2019 US study reported past-year usage
+of 12.6% amongst adults.2 Generally speaking, the use of benzodiazepines in psychiatric disorders has gradually become less supportable over the past few decades.3
+Benzodiazepines are sometimes divided into two groups depending on their half-life:
+hypnotics (short half-life) or anxiolytics (long half-life), although there are many exceptions (for example, nitrazepam and alprazolam, respectively).
+
+Anxiolytic effect
+Benzodiazepines reduce pathological anxiety, agitation and tension. Although useful in
+the short-term management of generalised anxiety disorder4 either alone or to augment
+SSRIs, benzodiazepines are clearly addictive; many patients continue to take these drugs
+for years5 with unknown benefits and many likely harms. If a benzodiazepine is prescribed, this should not routinely be for longer than one month.
+NICE recommend that benzodiazepines should not be used in patients with generalised anxiety disorder except as a short-term measure during crisis.6 Evidence is mixed
+in other anxiety disorders, and potential benefits should be viewed in the context of the
+known risks associated with benzodiazepine use. A small number of trials report the
+efficacy of benzodiazepines in social anxiety disorder.7 Benzodiazepines may be useful
+in panic disorders,8 but further studies are needed to draw reliable conclusions about
+their efficacy and safety with long-term use.8,9 Benzodiazepines are ineffective or and
+may be harmful in the treatment of PTSD10 or phobias.11
+Repeat prescriptions should be avoided in those with major personality problems
+whose difficulties are unlikely to resolve, especially in response to drug therapy.
+Benzodiazepines should also be avoided, if possible, in those with a history of substance
+misuse.
+
+Hypnotic effect
+Benzodiazepines inhibit REM sleep and REM rebound is seen when they are discontinued.11 There is a debate over the clinical significance of this property.12
+Benzodiazepines are effective hypnotics, at least in the short term.13 RCTs support the
+effectiveness of Z hypnotics over a period of at least 6 months;13,14 it is unclear if this
+holds true for benzodiazepine hypnotics. Intermittent use probably extends the period
+over which benzodiazepines are effective as hypnotics.
+Physical causes (pain, dyspnoea, etc.) or substance misuse (most commonly high caffeine consumption) should always be excluded before a hypnotic drug is prescribed.
+Where possible, behavioural therapies (e.g. CBT for insomnia) should be offered before
+
+
+
+
+<<<PAGE 463>>>
+
+442  The Maudsley® Prescribing Guidelines in Psychiatry
+
+There has been limited formal study into the duration of withdrawal symptoms, with
+some reports of weeks-long duration, but they can last longer than a year, especially in
+the case of long-term use.20,23 For a minority, withdrawal symptoms can be protracted
+and last years, sometimes called the ‘post-acute withdrawal syndrome’.26
+
+Stopping benzodiazepines
+
+CHAPTER 3
+
+If the patient is in agreement, benzodiazepines should be withdrawn. Tapering can be
+difficult and should not be imposed on a patient against their will. A cluster randomised
+trial supports the effectiveness of a face-to-face educational intervention.27 Continuing
+support can be required to prepare a patient for withdrawal and to support them
+through the process (e.g. psychological therapies or self-help groups).28
+
+Dosage reduction (tapering)
+Gradual reduction of benzodiazepine dose reduces the intensity of withdrawal symptoms by spreading them out over a longer time period (and giving time for neural adaptations to the drug to resolve).22 Meta-analysis has confirmed that gradual dose
+reduction (‘tapering’) improves drug cessation rates compared with routine clinical
+care.29 Most studies find that a gradual withdrawal over at least 10 weeks is most successful in achieving long-term abstinence,30 although many patients will require considerably longer (sometimes several years). Sudden benzodiazepine withdrawal has
+potentially fatal consequences, so tapering is always advisable.
+
+Direct taper or switching to diazepam?
+Patients who take short- or intermediate-acting benzodiazepines can be tapered off
+these drugs directly but more than once a day dosing might be required.
+An alternative approach is to switch to an equivalent dose of diazepam (which has a
+long half-life and therefore might provokes less severe withdrawal),20,24 noting that
+some patients report withdrawal symptoms from abrupt switches to diazepam and so
+a step-wise switch is probably prudent. Cochrane is lukewarm about switching to diazepam.30 Approximate ‘diazepam equivalent’31 doses are shown Table 3.29. Owing to
+Table 3.29 Approximate ‘diazepam equivalent’31 doses
+Chlordiazepoxide
+
+25mg
+
+Clonazepam
+
+0.5mg
+
+Diazepam
+
+10mg
+
+Lorazepam
+
+1mg
+
+Lormetazepam
+
+1–2mg
+
+Nitrazepam
+
+10mg
+
+Oxazepam
+
+20mg
+
+Temazepam
+
+20mg
+
+
+
+
+<<<PAGE 469>>>
+
+448  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Benzodiazepines and disinhibition
+
+CHAPTER 3
+
+Unexpected increases in aggressive or impulsive behaviour secondary to drug treatment
+are usually called disinhibitory or paradoxical reactions. These reactions may include
+acute excitement, hyperactivity, increased anxiety, vivid dreams, sexual disinhibition,
+aggression, hostility and rage. Examples of causative agents include amfetamines methylphenidate, benzodiazepines and alcohol. Paradoxical reactions are an important consideration with benzodiazepines because these drugs are used to sedate and tranquillise – a
+paradoxical reaction is thus the polar opposite of the desired effect. These reactions are
+also a major problem in general medicine where drugs such as midazolam are widely
+used for conscious sedation. In intensive care medicine, benzodiazepine-related disinhibition can be difficult to distinguish from hyperactive delirium.1
+
+How common are disinhibitory reactions with benzodiazepines?
+The incidence of disinhibitory reactions varies widely depending on the population
+studied (see the next section ‘Who is at risk?’). For example, a meta-analysis of benzodiazepine RCTs that included many hundreds of patients with a wide range of diagnoses reported an incidence of less than 1% (the same as placebo).2 Similarly, an analysis
+of behavioural disinhibition frequency in a psychiatric unit found no difference between
+those treated with benzodiazepines and those not.3 However, a Norwegian study that
+reported on 415 cases of ‘driving under the influence’, in which flunitrazepam was the
+sole substance implicated, found that 6% of adverse effects could be described as disinhibitory reactions.4 An RCT that recruited patients with panic disorder reported an
+incidence of disinhibition of 13%.5 Authors of case series (often describing use in highrisk patients) reported rates of 10–20%,2 and an RCT that included patients with borderline personality disorder reported a rate of 58%.6
+Disinhibition is rather problematic to define, and so incident rates are correspondingly difficult to determine. Aggression may be considered to be a disinhibition reaction
+but not defined as disinhibition per se. Aggression is robustly linked to benzodiazepine
+use both in the long term and after exposure to a single dose.7,8
+Other GABA agonists, particularly zolpidem, have also been linked to disinhibition
+associated with somnambulism, automatism, amnesia and mania.9–12
+
+Who is at risk?
+Those who have learning disability, neurological disorder or CNS degenerative disease,13 are young (child or adolescent) or elderly,13–16 or have a history of aggression or
+poor impulse control6,17 are at increased risk of experiencing a disinhibitory reaction.
+The risk is further increased if the benzodiazepine is a high-potency drug, has a short
+half-life, is given in a high dose or is administered intravenously (so provoking high and
+rapidly fluctuating plasma levels).13,18–20 Some people may be genetically predisposed to
+disinhibition reactions.21
+Combinations of risk factors are clearly important: low-risk long-acting benzodiazepines may cause disinhibition in high-risk populations such as children,16 higher risk,
+
+
+
+
+<<<PAGE 471>>>
+
+450  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+References
+1. Schieveld JNM, et al. On benzodiazepines, paradoxical agitation, hyperactive delirium, and chloride homeostasis. Crit Care Med 2018;
+46:1558–1559.
+2. Dietch JT, et al. Aggressive dyscontrol in patients treated with benzodiazepines. J Clin Psychiatry 1988; 49:184–188.
+3. Rothschild AJ, et al. Comparison of the frequency of behavioral disinhibition on alprazolam, clonazepam, or no benzodiazepine in hospitalized psychiatric patients. J Clin Psychopharmacol 2000; 20:7–11.
+4. Bramness JG, et al. Flunitrazepam: psychomotor impairment, agitation and paradoxical reactions. Forensic Sci Int 2006; 159:83–91.
+5. O’Sullivan GH, et al. Safety and side-effects of alprazolam. Controlled study in agoraphobia with panic disorder. Br J Psychiatry 1994;
+165:79–86.
+6. Gardner DL, et al. Alprazolam-induced dyscontrol in borderline personality disorder. Am J Psychiatry 1985; 142:98–100.
+7. Albrecht B, et al. Motivational drive and alprazolam misuse: a recipe for aggression? Psychiatry Res 2016; 240:381–389.
+8. Albrecht B, et al. Benzodiazepine use and aggressive behaviour: a systematic review. Aust N Z J Psychiatry 2014; 48:1096–1114.
+9. Sabe M, et al. Zolpidem stimulant effect: induced mania case report and systematic review of cases. Prog Neuropsychopharmacol Biol
+Psychiatry 2019; 94:109643.
+10. Poceta JS. Zolpidem ingestion, automatisms, and sleep driving: a clinical and legal case series. JClinSleep Med 2011; 7:632–638.
+11. Pressman MR. Sleep driving: sleepwalking variant or misuse of z-drugs? Sleep MedRev 2011; 15:285–292.
+12. Daley C, et al. ‘I did what?’ Zolpidem and the courts. J Am Acad Psychiatry Law 2011; 39:535–542.
+13. Bond AJ. Drug-induced behavioural disinhibition incidence, mechanisms and therapeutic implications. CNS Drugs 1998; 9:41–57.
+14. Hakimi Y, et al. Paradoxical adverse drug reactions: descriptive analysis of French reports. Eur J Clin Pharmacol 2020; 76:1169–1174.
+15. Hawkridge SM, et al. A risk-benefit assessment of pharmacotherapy for anxiety disorders in children and adolescents. Drug Saf 1998;
+19:283–297.
+16. Kandemir H, et al. Behavioral disinhibition, suicidal ideation, and self-mutilation related to clonazepam. J Child Adolesc Psychopharmacol
+2008; 18:409.
+17. Daderman AM, et al. Flunitrazepam (Rohypnol) abuse in combination with alcohol causes premeditated, grievous violence in male juvenile
+offenders. J Am Acad Psychiatry Law 1999; 27:83–99.
+18. van der Bijl P, et al. Disinhibitory reactions to benzodiazepines: a review. J Oral Maxillofac Surg 1991; 49:519–523.
+19. McKenzie WS, et al. Paradoxical reaction following administration of a benzodiazepine. J Oral MaxillofacSurg 2010; 68:3034–3036.
+20. Wilson KE, et al. Complications associated with intravenous midazolam sedation in anxious dental patients. Prim Dent Care 2011;
+18:161–166.
+21. Short TG, et al. Paradoxical reactions to benzodiazepines–a genetically determined phenomenon? Anaesth Intensive Care 1987;
+15:330–331.
+22. Weisman AM, et al. Effects of clorazepate, diazepam, and oxazepam on a laboratory measurement of aggression in men. Int Clin
+Psychopharmacol 1998; 13:183–188.
+23. Blair RJ, et al. Selective impairment in the recognition of anger induced by diazepam. Psychopharmacology (Berl) 1999; 147:335–338.
+24. Wallace PS, et al. Reduction of appeasement-related affect as a concomitant of diazepam-induced aggression: evidence for a link between
+aggression and the expression of self-conscious emotions. Aggress Behav 2009; 35:203–212.
+25. Tae CH, et al. Paradoxical reaction to midazolam in patients undergoing endoscopy under sedation: incidence, risk factors and the effect of
+flumazenil. Dig Liver Dis 2014; 46:710–715.
+26. Bond AJ, et al. Behavioural aggression in panic disorder after 8 weeks’ treatment with alprazolam. J Affect Disord 1995; 35:117–123.
+27. Paton C. Benzodiazepines and disinhibition: a review. Psychiatric Bull 2002; 26:460–462.
+
+
+
+
+<<<PAGE 767>>>
+
+746  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+Table 8.11 (Continued )
+Drug
+
+Comments
+
+Diazepam22,25,32,155
+
+Less than 0.5% is excreted unchanged. Dosing: GFR 20–50mL/min, dose as in
+normal renal function; GFR <20mL/min, use small doses and titrate to response.
+Long-acting, active metabolites accumulate in renal impairment; monitor patients for
+excessive sedation and encephalopathy. One case of interstitial nephritis with
+diazepam has been reported in a patient with chronic renal failure.
+
+Eszopiclone156
+
+Less than 10% excreted unchanged in the urine. No dose adjustment is needed in
+renal impairment.
+
+Gabapentin
+
+100% excreted unchanged in urine, clearance is reduced in renal impairment
+resulting in higher plasma concentrations and longer elimination half-lives.157 As
+expected this may result in toxicity in renal impairment if doses are not reduced.158
+Acute renal failure has been reported;159 myoclonus;160 altered mental status, fall and
+fracture when used in patients on haemodialysis for restless legs, itch and
+neuropathic pain.161,162 Has been used to treat pruritis, muscle cramps and restless
+legs syndrome in haemodialysis patients in RCTs.163–165 Dosing advice differs; GFR
+15–60mL/min start low and increase according to response; GFR <15mL/min, 300mg
+alternate days32,159 or 100mg at night then increase according to tolerability25,166 but
+care toxicity as described above. Manufacturer has table of very specific dosing in
+renal impairment in SMPC.159
+
+Lemborexant41,167
+
+<1% excreted unchanged in urine. Manufacturer states no dose adjustment needed
+in renal impairment but exposure increases during severe renal impairment with a
+potential increased risk of somnolence.
+
+Lorazepam22,23,25,32,168–173
+
+<1% excreted unchanged in urine, dose as in normal renal function but carefully
+according to response as some may need lower doses. Monitor for excessive
+sedation. Impaired elimination reported in two patients with severe renal impairment
+and also reports of propylene glycol in lorazepam injection causing renal impairment
+and acute tubular necrosis. However, lorazepam injection has been successfully used
+to treat catatonia in two patients with renal failure.
+
+Nitrazepam23,25
+
+Less than 5% excreted unchanged in the urine. Dosing GFR 10–50mL/min as per
+normal renal function; GFR <10mL/min start with small dose and increase slowly.
+Manufacturer advises reducing dose in renal impairment. Monitor patient for
+sedation and unsteadiness.
+
+Pregabalin
+
+Up to 99% excreted unchanged in urine. Acute renal failure reported.174 Associated
+with altered mental status and falls when used in patients on haemodialysis,161 and
+myoclonus.175 Case report of seizure on abrupt cessation in patient with CKD.176 Used
+to treat uraemic pruritis and neuropathic pain in patients on haemodialysis.177,178
+Dosing advice differs; titrate dosing by tolerability and response for all GFRs; GFR
+30–60mL/min, 75mg daily; GFR 15–30mL/min, 25–50mg daily; GFR <15mL/min,
+25mg daily. Manufacturer has table of very specific dosing in renal impairment in
+SMPC.174
+
+Oxazepam22,25,32,179
+
+Less than 1% excreted unchanged in the urine. Dose adjustment needed in severe
+renal impairment. Oxazepam may take longer to reach steady state in patients with
+renal impairment. Dosing: GFR 10–50mL/min, dose as in normal renal function; GFR
+<10mL/min, start at a low dose and increase according to response. Monitor for
+excessive sedation.
+
+
+
+
+<<<PAGE 868>>>
+
+Pharmacokinetics  847
+
+Much is known about the distribution of drugs in the body during life but relatively
+little about these same parameters after death. A great many drugs are subject to postmortem distribution changes but, for obvious practical reasons, research into the mechanisms and extent of these effects is very limited. The best that can be said is that a drug
+plasma concentration measured during life may be very different from the concentration measured at some time after death (usually in whole blood from the femoral
+artery).
+A number of processes are responsible for these changes. In life, active mechanisms
+serve to concentrate some drugs in certain organs or tissues. After death, passive diffusion occurs as cell membranes break down and this will mean that postmortem blood
+samples will, for some drugs, show higher concentrations than were seen during life.
+(This is known as post mortem redistribution (PMR) and has been described as a ‘toxicological nightmare’1 because of the number of different processes involved.) In addition, central blood vessels surrounding major organs often demonstrate much higher
+drug concentrations than relatively distant peripheral samples.2 PMR and other processes are temperature- and time-dependent and so time since death and conditions of
+storage are important determinants of blood concentration changes.3 Postmortem
+redistribution tends to be greater with drugs with a large volume of distribution (i.e.
+those for which tissue concentrations in life vastly exceed blood concentrations) especially when given over a long period during life.
+Other processes of importance4 include the postmortem synthesis of certain compounds. For example, the body is able to generate gamma-hydroxy butyrate. Trauma
+may allow the introduction of yeasts that metabolise glucose to alcohol. Another phenomenon is the degradation of drugs by bacteria (e.g. clonazepam and nitrazepam) or
+fungi. Also, the metabolism of some drugs (cocaine, for example) appears to continue
+after death (although this may be simple chemical instability of the parent
+compound).
+Table 11.3 lists some of the factors relevant to drug concentration changes after
+death and the possible consequences of these processes. Generally speaking, an isolated
+postmortem blood concentration cannot be sensibly interpreted. Even where in-life levels are available, experts agree that, for most drugs in most circumstances, interpretation of blood levels after death is near impossible: high concentrations should certainly
+not be taken, in the absence of other evidence, to indicate death by overdose, for example. Two valuable reference sources for interpretation of PM sample analysis are the
+systematic reviews of Ketola and Kriikku5 and Ketola and Ojanpera.6 Expert advice
+should always be sought when considering the role of medication in a death.7
+
+CHAPTER 11
+
+Interpreting postmortem blood concentrations
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 906>>>
+
+Psychotropic drugs in special conditions  885
+
+Table 13.3 Benzodiazepines concentration in normal dosing and the legal limit
+
+Clonazepam 0.5–6.0mg41,42
+
+5–80µg/L (50)
+
+Diazepam 5–30mg
+
+50–1000µg/L (550)
+
+43
+
+Flunitrazepam 0.5–2.0mg
+
+10–20µg/L (300)
+
+Lorazepam 1–4mg46,47
+
+10–70µg/L (100)
+
+44,45
+
+Oxazepam 15–30mg48
+
+250–600µg/L (300)
+
+Temazepam 10–20mg
+
+200–900µg/L (1000)
+
+49
+
+In regards to methadone, doses of up to 80mg a day generally give plasma levels
+below the UK legal limit.50 The legal limits listed here apply only to those who are lawfully prescribed the drug in question – the driver may be subject to prosecution if it can
+be proved the drugs were taken illicitly.
+
+Other medicines
+Many psychotropics can impair alertness, concentration and driving performance.
+Medicines that block H1, α1-adrenergic or cholinergic receptors may be particularly
+problematic. Effects are particularly marked at the start of treatment and after
+increasing the dose. Drivers must be made aware of any potential for impairment
+and are advised to evaluate their driving performance at these times. They must stop
+driving if adversely affected.51 The use of alcohol will further increase any
+impairment.
+Some antipsychotics and antidepressants lower the seizure threshold. In the UK,
+the DVLA advises this is taken into consideration when prescribing for a driver.
+Further information about the effects of psychotropics on driving can be found in
+Table 13.2.
+Medication-induced sedation
+Many psychotropics are sedating. The more sedating a medicine is, the more likely it is
+to impair driving ability. Other medicines, either prescribed or bought over the counter,
+may also be sedative and/or affect driving ability (e.g. antihistamines5). One study
+found that 89% of patients taking other psychotropics in addition to antidepressants
+failed a battery of ‘fitness to drive’ tests.52 Since the degree of sedation any individual
+will experience is very difficult to predict, patients prescribed sedating medicines should
+be advised not to drive if they feel sedated. In the UK, it is the responsibility of the
+driver to ensure they are fit to drive.
+
+CHAPTER 13
+
+Range of concentrations reported
+(legal limit)
+
+Drug/daily dose
+
+
+
+
+<<<PAGE 908>>>
+
+15. Brunnauer A, et al. The effects of most commonly prescribed second generation antidepressants on driving ability: a systematic review : 70th
+Birthday Prof. Riederer. J Neural Transm 2013; 120:225–232.
+16. Bramness JG, et al. Minor increase in risk of road traffic accidents after prescriptions of antidepressants: a study of population registry data
+in Norway. J Clin Psychiatry 2008; 69:1099–1103.
+17. Verster JC, et al. Psychoactive medication and traffic safety. Int J Environ Res Public Health 2009; 6:1041–1054.
+18. Iwamoto K, et al. The effects of acute treatment with paroxetine, amitriptyline, and placebo on driving performance and cognitive function
+in healthy Japanese subjects: a double-blind crossover trial. Human Psychopharmacol 2008; 23:399–407.
+19. Ridout F, et al. A placebo controlled investigation into the effects of paroxetine and mirtazapine on measures related to car driving performance. Human Psychopharmacol 2003; 18:261–269.
+20. Wingen M, et al. Actual driving performance and psychomotor function in healthy subjects after acute and subchronic treatment with escitalopram, mirtazapine, and placebo: a crossover trial. J Clin Psychiatry 2005; 66:436–443.
+21. Miyata A, et al. Driving performance of stable outpatients with depression undergoing real-world treatment. Psychiatry Clin Neurosci 2018;
+72:399–408.
+22. Verster JC, et al. Mirtazapine as positive control drug in studies examining the effects of antidepressants on driving ability. Eur J Pharmacol
+2015; 753:252–256.
+23. Theunissen EL, et al. A randomized trial on the acute and steady-state effects of a new antidepressant, vortioxetine (Lu AA21004), on actual
+driving and cognition. Clin Pharmacol Ther 2013; 93:493–501.
+24. Ip EJ, et al. The effect of trazodone on standardized field sobriety tests. Pharmacotherapy 2013; 33:369–374.
+25. Brunnauer A, et al. Driving performance and psychomotor function in depressed patients treated with agomelatine or venlafaxine.
+Pharmacopsychiatry 2015; 48:65–71.
+26. van de Loo A, et al. The effects of intranasal esketamine (84 mg) and oral mirtazapine (30 mg) on on-road driving performance: a doubleblind, placebo-controlled study. Psychopharmacology (Berl) 2017; 234:3175–3183.
+27. Grabe HJ, et al. The influence of clozapine and typical neuroleptics on information processing of the central nervous system under clinical
+conditions in schizophrenic disorders: implications for fitness to drive. Neuropsychobiology 1999; 40:196–201.
+28. Wylie KR, et al. Effects of depot neuroleptics on driving performance in chronic schizophrenic patients. J Neurol Neurosurg Psychiatry 1993;
+56:910–913.
+29. Brunnauer A, et al. The impact of antipsychotics on psychomotor performance with regards to car driving skills. J Clin Psychopharmacol
+2004; 24:155–160.
+30. Dassanayake T, et al. Effects of benzodiazepines, antidepressants and opioids on driving: a systematic review and meta-analysis of epidemiological and experimental evidence. Drug Saf 2011; 34:125–156.
+31. Rudisill TM, et al. Medication use and the risk of motor vehicle collisions among licensed drivers: a systematic review. Accid Anal Prev 2016;
+96:255–270.
+32. Poceta JS. Zolpidem ingestion, automatisms, and sleep driving: a clinical and legal case series. J Clin Sleep Med 2011; 7:632–638.
+33. Verster JC, et al. Hypnotics and driving safety: meta-analyses of randomized controlled trials applying the on the-road driving test. Current
+Drug Safety 2006; 1:63–71.
+34. Vermeeren A, et al. On-the-road driving performance the morning after bedtime administration of lemborexant in healthy adult and elderly
+volunteers. Sleep 2019; 42:zsy260.
+35. Vermeeren A, et al. On-the-road driving performance the morning after bedtime use of suvorexant 15 and 30 mg in healthy elderly.
+Psychopharmacology (Berl) 2016; 233:3341–3351.
+36. Etminan M, et al. Use of lithium and the risk of injurious motor vehicle crash in elderly adults: case-control study nested within a cohort. BMJ
+2004; 328:558–559.
+37. Hashemian F, et al. A comparison of the effects of reboxetine and placebo on reaction time in adults with Attention Deficit-Hyperactivity
+Disorder (ADHD). Daru 2011; 19:231–235.
+38. Classen S, et al. Evidence-based review on interventions and determinants of driving performance in teens with attention deficit hyperactivity
+disorder or autism spectrum disorder. Traffic Inj Prev 2013; 14:188–193.
+39. Hetland A, et al. Medications and impaired driving. Ann Pharmacother 2014; 48:494–506.
+40. Strand MC, et al. Pharmacokinetics of single doses of methadone and buprenorphine in blood and oral fluid in healthy volunteers and correlation with effects on psychomotor and cognitive functions. J Clin Psychopharmacol 2019; 39:489–493.
+41. Sjo O, et al. Pharmacokinetics and side-effects of clonazepam and its 7-amino-metabolite in man. Eur J Clin Pharmacol 1975; 8:249–254.
+42. Berlin A, et al. Pharmacokinetics of the anticonvulsant drug clonazepam evaluated from single oral and intravenous doses and by repeated
+oral administration. Eur J Clin Pharmacol 1975; 9:155–159.
+43. Rutherford DM, et al. Plasma concentrations of diazepam and desmethyldiazepam during chronic diazepam therapy. Br J Clin Pharmacol
+1978; 6:69–73.
+44. Wickstrom E, et al. Pharmacokinetic and clinical observations on prolonged administration of flunitrazepam. Eur J Clin Pharmacol 1980;
+17:189–196.
+45. Mattila MA, et al. Flunitrazepam: a review of its pharmacological properties and therapeutic use. Drugs 1980; 20:353–374.
+46. Greenblatt DJ, et al. Single- and multiple-dose kinetics of oral lorazepam in humans: the predictability of accumulation. J Pharmacokinet
+Biopharm 1979; 7:159–179.
+47. Greenblatt DJ, et al. Pharmacokinetic comparison of sublingual lorazepam with intravenous, intramuscular, and oral lorazepam. J Pharm Sci
+1982; 71:248–252.
+
+CHAPTER 13
+
+Psychotropic drugs in special conditions  887
+
+

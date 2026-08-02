@@ -1,0 +1,1123 @@
+<<<PAGE 206>>>
+
+LITHIUM. Lithium (Eskalith) has a narrow therapeutic index. Consequently,
+
+blood levels of lithium must be monitored to achieve therapeutic dosing and
+avoid toxicity. Side effects are dose-dependent. Symptoms of toxicity include
+tremors, sedation, and confusion. At higher levels, delirium, seizures, and
+coma may occur. Symptoms of toxicity may begin to manifest with serum
+levels of greater than 1.2 mEq/L and are common with levels greater than 1.4
+mEq/L. Elderly or debilitated patients may show signs of toxicity with levels
+of less than 1.2 mEq/L.
+Because of the risk of hepatotoxicity, ranging from mild
+dysfunction to hepatic necrosis, pretreatment LFTs are usually obtained.
+More commonly valproate (valproic acid [Depakene] and divalproex
+[Depakote]) may cause a sustained elevation in liver transaminase levels of as
+much as three times the upper limit of normal.
+Valproate may increase the risk of congenital disabilities. A pretreatment
+urine pregnancy test is usually obtained in women of childbearing years.
+Women should be cautioned to use adequate contraception.
+Hematologic abnormalities are also possible and include leucopenia and
+thrombocytopenia. Treatment with valproate may increase serum ammonia
+levels. It is prudent to obtain an ammonia level in a patient undergoing
+valproate treatment who presents with altered mental status or lethargy.
+Acute pancreatitis may also occur.
+VALPROATE.
+
+Antidepressants
+Treatment with monoamine oxidase
+inhibitors (MAOIs) can cause orthostasis and, rarely, hypertensive crisis.
+Baseline blood pressure measurement should be obtained before the initiation
+of treatment, and blood pressure should be monitored during treatment.
+There are no meaningful blood levels for MAOIs, and direct monitoring of
+MAOI blood levels is not clinically indicated. Treatment with MAOIs is
+occasionally associated with hepatotoxicity. For this reason, LFTs usually are
+obtained at the initiation of treatment and periodically after.
+MONOAMINE
+
+OXIDASE
+
+INHIBITORS.
+
+TRICYCLIC AND TETRACYCLIC ANTIDEPRESSANTS. Routine laboratory studies
+
+obtained before initiation of tricyclic or tetracyclic antidepressants (TCAs)
+
+
+
+
+<<<PAGE 820>>>
+
+Valproate
+
+Absence, myoclonic, generalized
+tonic–clonic, akinetic, partial
+seizures
+
+750–1,000
+
+Zonisamide
+
+Generalized
+
+400–600
+
+MEMORY. Loss of memory is a frequent symptom of brain tumors. Patients
+
+with brain tumors exhibit an amnestic syndrome and retain no memory of
+events that occurred since the illness began. Events of the immediate past,
+even painful ones, are lost. Patients, however, retain old memories and are
+unaware of their loss of recent memory.
+Prominent perceptual defects are often associated with
+behavioral disorders, mainly because patients must integrate tactile, auditory,
+and visual perceptions to function normally.
+PERCEPTION.
+
+AWARENESS. Alterations of consciousness are common late symptoms of
+
+increased intracranial pressure caused by a brain tumor. Tumors arising in the
+upper part of the brainstem can produce a unique symptom called akinetic
+mutism, or vigilant coma. The patient is immobile and mute yet alert.
+Colloid Cysts. Although they are not brain tumors, colloid cysts located in
+the third ventricle can exert physical pressure on structures within the
+diencephalon and produce such mental symptoms as depression, emotional
+lability, psychotic symptoms, and personality changes. The classic associated
+neurologic symptoms are position-dependent intermittent headaches.
+Head Trauma
+Head trauma can result in an array of mental symptoms and lead to a
+diagnosis of dementia due to head trauma or to mental disorder not otherwise
+specified due to a general medical condition (e.g., postconcussional disorder).
+The postconcussive syndrome remains controversial because it focuses on the
+full range of psychiatric symptoms, some serious, that can follow what seems
+to be minor head trauma.
+Pathophysiology. Head trauma is a common clinical situation; an
+
+
+
+
+<<<PAGE 1198>>>
+
+Medications are the treatments of choice for patients with bipolar disorders.
+However, psychotherapies can offer an essential adjunct to treatment.
+Somatic Treatments
+Pharmacotherapy
+GENERAL CLINICAL GUIDELINES. We can divide the pharmacologic treatment of
+
+bipolar disorders into acute and maintenance phases. Bipolar treatment,
+however, also involves the formulation of different strategies for the patient
+who is experiencing mania or hypomania or depression. Lithium and its
+augmentation by antidepressants, antipsychotics, and benzodiazepines have
+been the principal approach to the illness. However, three anticonvulsant
+mood stabilizers—carbamazepine, valproate, and lamotrigine—are
+commonly used options, as well as a series of atypical antipsychotics. Often,
+it is necessary to try different medications before finding an optimal
+treatment. Furthermore, although one strives for monotherapy, in the case of
+bipolar disorder, polypharmacy is common.
+Table 6-6
+Recommendations for Pharmacologic Treatment of Acute
+Mania
+First line
+
+Monotherapy: lithium, divalproex, divalproex ER,
+olanzapine, risperidone, quetiapine, quetiapine
+XR, aripiprazole, ziprasidone, asenapine,
+paliperidone ER, cariprazine
+Adjunctive therapy with lithium or divalproex:
+risperidone, quetiapine, olanzapine,
+aripiprazole, asenapine
+
+Second line
+
+Monotherapy: carbamazepine, carbamazepine
+ER, ECT, haloperidol
+Combination therapy: lithium + divalproex
+
+Third line
+
+Monotherapy: chlorpromazine, clozapine,
+tamoxifen
+
+
+
+
+<<<PAGE 1200>>>
+
+Anticonvulsants. Valproate (valproic acid or divalproex sodium) has
+surpassed lithium in use for acute mania. Unlike lithium, valproate is only
+indicated for acute mania, although most experts agree it also has
+prophylactic effects. Normal dose levels of valproic acid are 750 to 2,500
+mg/day, achieving blood levels between 50 and 120 µg/mL. Rapid oral
+loading with 15 to 20 mg/kg of divalproex sodium from day 1 of treatment
+has been well tolerated and associated with a rapid onset of response. Some
+laboratory testing is required during valproate treatment.
+Carbamazepine has been used worldwide for decades as a first-line
+treatment for acute mania. The FDA approved it for acute mania in the
+United States in 2004. Typical doses of carbamazepine to treat acute mania
+range between 600 and 1,800 mg/day associated with blood levels of between
+4 and 12 µg/mL. The keto congener of carbamazepine, oxcarbazepine, is
+better tolerated than carbamazepine, but the data for its efficacy are
+conflicting. A Cochrane review concluded there is insufficient evidence for
+this medication in acute mania.
+Antipsychotics. The FDA approved many of the atypical antipsychotics for
+use in bipolar disorder. We list them in Table 6-7. Compared with older
+agents, such as haloperidol and chlorpromazine, atypical antipsychotics have
+a lesser liability for excitatory postsynaptic potential and tardive dyskinesia;
+many do not increase prolactin. However, many of them have the risk of
+weight gain with its associated medical problems. Some patients, however,
+require maintenance treatment with antipsychotic medication.
+Acute Bipolar Depression
+Lithium. There is limited evidence for lithium in bipolar depression. Early
+studies were promising, but later placebo-controlled studies did not confirm
+lithium’s efficacy. More extensive studies that included lithium did suggest
+that lithium was at least as useful as other mood stabilizers for bipolar
+depression.
+Anticonvulsants. The most promising anticonvulsant has been lamotrigine,
+which has several reasonable studies showing efficacy for bipolar depression.
+Its major limitation is that it must be titrated gradually to prevent a severe
+
+
+
+
+<<<PAGE 1436>>>
+
+Electroconvulsive therapy (for refractory depression with persistent
+melancholic features across all dissociative identity disorder
+alters)
+Mood stabilizers (more useful for PTSD and anxiety than mood
+swings)
+Divalproex
+Lamotrigine
+Oral or intramuscular benzodiazepines
+Medications for sleep problems
+Low-dose trazodone
+Low-dose mirtazapine
+Low-dose tricyclic antidepressants
+Low-dose neuroleptics
+Benzodiazepines (often less helpful for sleep problems in this
+population)
+Zolpidem
+Anticholinergic agents (diphenhydramine, hydroxyzine)
+Medications for self-injury, addictions
+Naltrexone
+Brainwashing
+There are no empirical treatment studies of individuals subjected to extreme
+coercion applied in the service of indoctrination into a belief system or an
+attempt at identity alteration. The basic principles of phased trauma treatment
+would seem to provide an organizing framework for their care, as for victims
+of other forms of torture. Family and social interventions may be necessary
+because of the duress and disruption accompanying the precipitating events
+and the social effects of the profound changes in the patient’s attitudes,
+behaviors, and beliefs, as well as sequestration from everyday events during
+the period of captivity.
+Ganser Syndrome
+No systematic treatment studies have been conducted, given the rarity of this
+condition. In most case reports, the patient has been hospitalized and
+provided with a protective and supportive environment. In some instances,
+
+
+
+
+<<<PAGE 1817>>>
+
+EEG
+
+Low-dose
+antipsychotics
+
+Predatory aggression
+(cold blooded
+revenge/cruelty)
+
+No Effective
+Pharmacologic Tx
+
+Benzodiazepines
+(disinhibition)
+
+Organic-like aggression
+(traumatic brain
+injury)
+
+Beta-Blockers,
+Valproates,
+Quetiapine,
+Carbamazepine
+(CBMZ), TCAs,
+cholinesterase
+inhibitors
+(donepezil)
+
+Benzodiazepines
+(disinhibition,
+delirium)
+
+Ictal aggression
+(abnormal EEG)
+
+CBMZ,
+TCAs, Low-potency
+Diphenylhydantoin,
+typical
+Valproate
+antipsychotics
+Benzodiazepines
+(both increase
+(clonazepam)
+risk of seizures)
+
+III. Social and Emotional Detachment
+Chronic asociality and disinterest
+Blunted affect
+
+Low-Dose
+Antipsychotics
+(aripiprazole,
+olanzapine, lowdose clozapine,
+sulpiride)
+
+IV. Cognitive-Perceptual Distortions/Psychotic Symptoms
+Acute and brief
+psychotic episodes
+
+Novel Antipsychotics
+(Risperdal,
+olanzapine)
+Typical neuroleptics
+(for the duration of
+
+
+
+
+<<<PAGE 1966>>>
+
+Bromocriptine
+
+Antipsychotic antagonizes
+dopamine receptor
+stimulation
+
+Increased prolactin
+
+Caffeinated
+beverages
+
+Form precipitate with
+antipsychotic solutions
+
+Possible diminished
+antipsychotic
+effect
+
+Cimetidine
+
+Reduced antipsychotic
+Decreased
+absorption and clearance
+antipsychotic
+effect
+
+Clonidine
+
+Antipsychotic potentiates α- Hypotension or
+adrenergic hypotensive
+hypertension
+effect
+
+Disulfiram
+
+Impairs antipsychotic
+metabolism
+
+Increased
+antipsychotic
+concentrations
+
+Methyldopa
+
+Unknown
+
+BP elevations
+
+Phenytoin
+
+Induction of antipsychotic
+metabolism; decreased
+phenytoin metabolism
+
+Decreased
+antipsychotic
+concentrations:
+increased
+phenytoin levels
+
+SSRIs
+
+Impair antipsychotic
+metabolism;
+pharmacodynamic
+interaction
+
+Sudden onset of
+extrapyramidal
+symptoms
+
+Valproic acid
+
+Antipsychotic inhibits
+Increased valproic
+valproic acid metabolism
+acid half-life and
+levels
+
+ACEI, angiotensin-converting enzyme inhibitor; AD, antidepressant; BP, blood pressure; CNS,
+central nervous system; GI, gastrointestinal; SSRI, selective serotonin reuptake inhibitor.
+From Ereshosky L, Overman GP, Karp JK. Current psychotropic dosing and monitoring
+guidelines. Prim Psychiatry. 1996;3:21, with permission.
+
+
+
+
+<<<PAGE 2068>>>
+
+debate. A prospective 3-year study found patients who maintained a
+concentration between 0.4 and 0.6 mEq/L (mean 0.54) were 2.6 times more
+likely to relapse than those who maintained between 0.8 and 1.0 mEq/L
+(mean 0.83). However, higher blood concentrations produced more adverse
+effects and were less well tolerated.
+If there is no response after 2 weeks at a concentration that is beginning to
+cause adverse effects, then the person should taper off lithium over 1 to 2
+weeks, and other mood-stabilizing drugs should be tried.
+Patient Education. Lithium has a narrow therapeutic index, and many
+factors can upset the balance between lithium concentrations that are well
+tolerated and therapeutic, and those that produce side effects or toxicity. It is
+thus imperative that persons taking lithium be educated about signs and
+symptoms of toxicity, factors that affect lithium levels, how and when to
+obtain laboratory testing, and the importance of regular communication with
+the prescribing physician. Lithium concentrations can be disrupted by
+common factors such as excessive sweating from ambient heat or exercise or
+the use of widely prescribed agents such as ACEIs or NSAIDs. Patients may
+stop taking their lithium because they are feeling well or because they are
+experiencing side effects. They should be advised against discontinuing or
+modifying their lithium regimen. Table 21-31 lists some essential instructions
+for patients.
+
+VALPROATE
+Valproate (Depakene, Depakote), or valproic acid, is approved for the
+treatment of manic episodes associated with bipolar I disorder and is one of
+the most widely prescribed mood stabilizers in psychiatry. It has a rapid onset
+of action and is well-tolerated, and numerous studies suggest that it reduces
+the frequency and intensity of recurrent manic episodes over extended
+periods.
+Chemistry
+Valproate is a simple-chain branch carboxylic acid. It is called valproic acid
+because it is rapidly converted to the acid form in the stomach. Multiple
+formulations of valproic acid are marketed. These include valproic acid
+
+
+
+
+<<<PAGE 2069>>>
+
+(Depakene), divalproex sodium (Depakote), an enteric-coated delayed-release
+1:1 mixture of valproic acid and sodium valproate available in tablet and
+sprinkle formulation (can be opened and spread on food); and sodium
+valproate injection (Depacon). Extended-release preparation is also available.
+Each of these is therapeutically equivalent because, at physiologic pH,
+valproic acid dissociates into valproate ion.
+Table 21-31
+Instructions to Patients Taking Lithium
+Lithium can be remarkably effective in treating your disorder. If not
+used appropriately and not monitored closely, it can be ineffective
+and potentially harmful. It is important to keep the following
+instructions in mind.
+Dosing
+Take lithium exactly as directed by your doctor—never take more or
+less than the prescribed dose.
+Do not stop taking without speaking to your doctor.
+If you miss a dose, take it as soon as possible. If it is within 4 hr of
+the next dose, skip the missed dose (about 6 hr in the case of
+extended-release or slow-release preparations). Never double up
+doses.
+Blood Tests
+Comply with the schedule of recommended regular blood tests.
+Despite their inconvenience and discomfort, your lithium blood levels,
+thyroid function, and kidney status need to be monitored as long as
+you take lithium.
+When going to have lithium levels checked, you should have taken
+your last lithium dose 12 hr earlier.
+Use of Other Medications
+Do not start any prescription or over-the-counter medications without
+telling your doctor.
+Even drugs such as ibuprofen (Advil, Motrin) and naproxen (Aleve)
+can significantly increase lithium levels.
+
+
+
+
+<<<PAGE 2070>>>
+
+Diet and Fluid Intake
+Avoid sudden changes in your diet or fluid intake. If you do go on a
+diet, your doctor may need to increase the frequency of blood
+tests.
+Caffeine and alcohol act as diuretics and can lower your lithium
+concentrations.
+During treatment with lithium, it is recommended that you drink about
+2 or 3 quarts of fluid daily and use normal amounts of salt.
+Inform your doctor if you start or stop a low-salt diet.
+Recognizing Potential Problems
+If you engage in vigorous exercise or have an illness that causes
+sweating, vomiting, or diarrhea, consult your doctor because these
+might affect lithium levels.
+Nausea, constipation, shakiness, increased thirst, frequency of
+urination, weight gain, or swelling of the extremities should be
+reported to your doctor.
+Blurred vision, confusion, loss of appetite, diarrhea, vomiting, muscle
+weakness, lethargy, shakiness, slurred speech, dizziness, loss of
+balance, inability to urinate, or seizures could indicate severe
+toxicity and should prompt immediate medical attention.
+Pharmacologic Actions
+Regardless of how it is formulated, valproate is rapidly and completely
+absorbed 1 to 2 hours after oral administration, with peak concentrations
+occurring 4 to 5 hours after oral administration. The plasma half-life of
+valproate is 10 to 16 hours. Valproate is highly protein-bound. Protein
+binding becomes saturated at higher dosages, and concentrations of
+therapeutically effective free valproate increase at serum concentrations
+above 50 to 100 µg/mL. The unbound portion of valproate is considered to be
+pharmacologically active and can cross the blood–brain barrier. The
+extended-release preparation produces lower peak concentrations and higher
+minimum concentrations and can be given once a day. Valproate is
+metabolized primarily by hepatic glucuronidation and mitochondrial β
+
+
+
+
+<<<PAGE 2071>>>
+
+oxidation.
+The biochemical basis of valproate’s therapeutic effects remains poorly
+understood. Postulated mechanisms include enhancement of GABA activity,
+modulation of voltage-sensitive sodium channels, and action on
+extrahypothalamic neuropeptides.
+Therapeutic Indications
+Valproate is currently approved as monotherapy or adjunctive therapy of
+complex partial seizures, monotherapy and adjunctive therapy of simple and
+complex absence seizures, and adjunctive therapy for patients with multiple
+seizures that include absence seizures. Divalproex has additional indications
+for prophylaxis of migraine.
+Bipolar I Disorder
+ACUTE MANIA. About two-thirds of persons with acute mania respond to
+valproate. The majority of patients with mania usually respond within 1 to 4
+days after achieving valproate serum concentrations above 50 µg/mL. The
+antimanic response is generally associated with levels greater than 50 µg/mL,
+in a range of 50 to 125 µg/mL. This serum concentration may be gradually
+achieved within 1 week of initiation of dosing, but rapid oral loading
+strategies achieve therapeutic serum concentrations in 1 day and can control
+manic symptoms within 5 days. The short-term antimanic effects of valproate
+can be augmented with the addition of lithium, carbamazepine (Tegretol),
+SDAs, or DRAs. Numerous studies have suggested that the irritable manic
+subtype responds significantly better to sodium valproate than lithium or
+placebo. Because of its more favorable profile of cognitive, dermatologic,
+thyroid, and renal adverse effects, valproate is preferred to lithium for the
+treatment of acute mania in children and elderly persons.
+ACUTE BIPOLAR DEPRESSION. Valproate possesses some activity as a short-
+
+term treatment of depressive episodes in bipolar I disorder, but this effect is
+far less pronounced than for the treatment of manic episodes. Among
+depressive symptoms, valproate is more useful for the treatment of agitation
+than dysphoria. In clinical practice, valproate is most often used as add-on
+therapy to an antidepressant to prevent the development of mania or rapid
+
+
+
+
+<<<PAGE 2072>>>
+
+cycling.
+PROPHYLAXIS. Studies suggest that valproate is useful in the prophylactic
+
+treatment of bipolar I disorder, resulting in fewer, less severe, and shorter
+manic episodes. In direct comparison, valproate is at least as effective as
+lithium and is better tolerated than lithium. It may be particularly useful in
+persons with rapid-cycling and ultrarapid-cycling bipolar disorders,
+dysphoric or mixed mania, and mania caused by a general medical condition
+as well as in persons who have comorbid substance use disorders or panic
+attacks and in persons who have not had complete favorable responses to
+lithium treatment.
+Schizophrenia and Schizoaffective Disorder. Valproate may
+accelerate response to antipsychotic therapy in patients with schizophrenia or
+schizoaffective disorder. Valproate alone is generally less effective in
+schizoaffective disorder than in bipolar I disorder. Valproate alone is
+ineffective for the treatment of psychotic symptoms and is typically used in
+combination with other drugs in patients with these symptoms.
+Other Mental Disorders. Valproate has been studied for possible efficacy
+in a broad range of psychiatric disorders. These include alcohol withdrawal
+and relapse prevention, panic disorder, PTSD, impulse control disorder,
+borderline personality disorder, and behavioral agitation and dementia.
+Evidence supporting use in these cases is weak, and any observed therapeutic
+effects may be related to the treatment of a comorbid bipolar disorder.
+Precautions and Adverse Reactions
+Although valproate treatment is generally well tolerated and safe, it carries
+quite a few black box warnings and other warnings (Table 21-32). The two
+most serious adverse effects of valproate treatment affect the pancreas and
+liver. Risk factors for potentially fatal hepatotoxicity include young age
+(younger than 3 years); concurrent use of phenobarbital; and the presence of
+neurologic disorders, especially inborn errors of metabolism. The rate of fatal
+hepatotoxicity in persons who have been treated with valproate alone is 0.85
+per 100,000 persons; no persons older than the age of 10 years have been
+reported to have died from hepatotoxicity. Therefore, the risk of this adverse
+
+
+
+
+<<<PAGE 2074>>>
+
+Thrombocytopenia Decrease dose if clinically symptomatic (i.e.,
+bruising, bleeding gums)
+Thrombocytopenia more likely with valproate
+levels ≥110 µg/mL (women) and ≥135 µg/mL
+(men)
+Nevertheless, if symptoms of lethargy, malaise, anorexia, nausea and
+vomiting, edema, and abdominal pain occur in a person treated with
+valproate, the clinician must consider the possibility of severe hepatotoxicity.
+A modest increase in liver function test results does not correlate with the
+development of severe hepatotoxicity. Rare cases of pancreatitis have been
+reported; they occur most often in the first 6 months of treatment, and the
+condition occasionally results in death. The pancreatic function can be
+assessed and followed by serum amylase concentrations. Other potentially
+severe consequences of treatment include hyperammonemia-induced
+encephalopathy and thrombocytopenia. Thrombocytopenia and platelet
+dysfunction occur most commonly at high dosages and result in the
+prolongation of bleeding times.
+There are multiple concerns regarding the use of valproate during
+pregnancy. Women who require valproate therapy should, therefore, inform
+their physicians if they intend to become pregnant. First-trimester use of
+valproate has been associated with a 3 to 5 percent risk of neural tube defects,
+as well as an increased risk of other malformations affecting the heart and
+other organ systems. Multiple reports have also indicated that in utero
+exposure to valproate may negatively affect cognitive development in
+children of mothers who take valproate during pregnancy. They have lower
+IQ scores at age 6 years compared with those exposed to other antiepileptic
+drugs. Fetal valproate exposure has dose-dependent associations with reduced
+cognitive abilities across a range of domains at 6 years of age. Valproate
+exposure may also increase the risk of autistic spectrum disorder.
+Valproate is also associated with teratogenicity, most notably neural tube
+defects (e.g., spina bifida). The risk is about 1 to 4 percent of all women who
+take valproate during the first trimester of pregnancy. The risk of valproateinduced neural tube defects can be reduced with daily folic acid supplements
+(1 to 4 mg a day). All women with childbearing potential who take the drug
+
+
+
+
+<<<PAGE 2075>>>
+
+should be given folic acid supplements. Infants breastfed by mothers taking
+valproate develop serum valproate concentrations 1 to 10 percent of maternal
+serum concentrations, but no data suggest that this poses a risk to the infant.
+Valproate is not contraindicated in nursing mothers. We should avoid this
+drug in patients with hepatic diseases. Valproate may be especially
+problematic for adolescents and young women. Cases of polycystic ovarian
+disease have been reported in women using valproate. Even when the full
+syndromal criteria for this syndrome are not met, many of these women
+develop menstrual irregularities, hair loss, and hirsutism. These effects are
+thought to result from a metabolic syndrome that is driven by insulin
+resistance and hyperinsulinemia.
+The common adverse effects associated with valproate (Table 21-33) are
+those affecting the GI system, such as nausea, vomiting, dyspepsia, and
+diarrhea. The GI effects are generally most common in the first month of
+treatment, significantly if the dosage is increased rapidly. Unbuffered
+valproic acid (Depakene) is more likely to cause GI symptoms than the
+enteric-coated “sprinkle” or the delayed-release divalproex sodium
+formulations. Other common adverse effects involve the nervous system,
+such as sedation, ataxia, dysarthria, and tremor. Valproate-induced tremor
+may respond well to treatment with β-adrenergic receptor antagonists or
+gabapentin. Treatment of the other neurologic adverse effects usually requires
+lowering the valproate dosage.
+Weight gain is a common adverse effect, especially in long-term treatment,
+and can best be treated by strict limitation of caloric intake. Hair loss may
+occur in 5 to 10 percent of all persons treated, and rare cases of complete loss
+of body hair have been reported. Some clinicians have recommended
+treatment of valproate-associated hair loss with vitamin supplements that
+contain zinc and selenium. About 5 to 40 percent of persons experience a
+persistent but clinically insignificant elevation in liver transaminases up to
+three times the upper limit of normal, which is usually asymptomatic and
+resolves after discontinuation of the drug. High dosages of valproate (above
+1,000 mg a day) may rarely produce mild to moderate hyponatremia, most
+likely because of some degree of the syndrome of secretion of inappropriate
+antidiuretic hormone, which is reversible upon lowering of the dosage.
+Overdoses of valproate can lead to coma and death.
+
+
+
+
+<<<PAGE 2077>>>
+
+depressant (e.g., alcohol), and increased severity of extrapyramidal
+symptoms, which usually responds to treatment with antiparkinsonian drugs.
+Valproate can usually be safely combined with carbamazepine or SDAs.
+Perhaps the most worrisome interaction of valproate and a psychotropic drug
+involves lamotrigine. Since the approval of lamotrigine for the treatment of
+bipolar disorder, it is more likely that patients will be treated with both
+agents. Valproate more than doubles lamotrigine concentrations, increasing
+the risk of a severe rash (Stevens–Johnson syndrome and toxic epidermal
+necrolysis).
+The plasma concentrations of carbamazepine, diazepam (Valium),
+amitriptyline (Elavil), nortriptyline (Pamelor), and phenobarbital (Luminal)
+may also be increased when these drugs are coadministered with valproate.
+Also, the plasma concentrations of phenytoin (Dilantin) and desipramine
+(Norpramin) may be decreased when they are combined with valproate. The
+plasma concentrations of valproate may be decreased when the drug is
+coadministered with carbamazepine and may be increased when
+coadministered with guanfacine (Tenex), amitriptyline, or fluoxetine
+(Prozac). Valproate can be displaced from plasma proteins by carbamazepine,
+diazepam, and aspirin. Persons who are treated with anticoagulants (e.g.,
+aspirin and warfarin [Coumadin]) should also be monitored when valproate
+use is initiated to assess the development of any undesired augmentation of
+the anticoagulation effects. Interactions of valproate with other drugs are
+listed in Table 21-34.
+Table 21-34
+Interactions of Valproate with Other Drugs
+Drug
+
+Interactions Reported with Valproate
+
+Lithium
+
+Increased tremor
+
+Antipsychotics
+
+Increased sedation; increased extrapyramidal
+effects; delirium and stupor (single report)
+
+Clozapine
+
+Increased sedation; confusional syndrome (single
+report)
+
+Carbamazepine Acute psychosis (single report); ataxia, nausea,
+
+
+
+
+<<<PAGE 2078>>>
+
+lethargy (single report); may decrease valproate
+serum concentrations
+Antidepressants Amitriptyline and fluoxetine may increase valproate
+serum concentrations
+Diazepam
+
+Serum concentration increased by valproate
+
+Clonazepam
+
+Absence status (rare; reported only in patients with
+preexisting epilepsy)
+
+Phenytoin
+
+Serum concentration decreased by valproate
+
+Phenobarbital
+
+Serum concentration increased by valproate;
+increased sedation
+
+Other CNS
+depressants
+
+Increased sedation
+
+Anticoagulants
+
+Possible potentiation of effect
+
+CNS, central nervous system.
+
+Laboratory Interferences
+Valproate may cause a laboratory increase of serum-free fatty acids.
+Valproate metabolites may produce a false-positive test result for urinary
+ketones as well as falsely abnormal thyroid function test results.
+Table 21-35
+Recommended Laboratory Tests during Valproate Therapy
+Before Treatment
+Standard chemistry screen with special attention to liver function
+tests
+CBC, including WBC and platelet count
+During Treatment
+Liver function tests at 1 mo; then every 6–24 mo if no
+abnormalities are found.
+Complete blood count with platelet count at 1 mo; then every 6–
+24 mo if findings are normal.
+
+
+
+
+<<<PAGE 2079>>>
+
+If Liver Function Test Results Become Abnormal
+Mild transaminase elevation (less than three times normal):
+monitoring every 1–2 wk; if stable and patient is responding
+to valproate, results are monitored monthly to every 3 mo.
+Pronounced transaminase elevation (more than three times
+normal): dosage reduction or discontinuation of valproate;
+increase dose or rechallenge if transaminases normalize and
+if the patient is a valproate responder.
+CBC, complete blood count; WBC, white blood cell.
+
+Dosage and Clinical Guidelines
+When starting valproate therapy, a baseline hepatic panel, CBC and platelet
+counts, and pregnancy testing should be ordered. Additional testing should
+include amylase and coagulation studies if baseline pancreatic disease or
+coagulopathy is suspected. In addition to baseline laboratory tests, hepatic
+transaminase concentrations should be obtained 1 month after initiation of
+therapy and every 6 to 24 months after that. However, because even frequent
+monitoring may not predict severe organ toxicity, it is more prudent to
+reinforce the need for prompt evaluation of any illnesses when reviewing the
+instructions with patients. Asymptomatic elevation of transaminase
+concentrations up to three times the upper limit of normal are typical and do
+not require any change in dosage. Table 21-35 lists the recommended
+laboratory tests for valproate treatment.
+Valproate is available in several formulations (Table 21-36). For the
+treatment of acute mania, an oral loading strategy of initiation with 20 to 30
+mg/kg a day can be used to accelerate the control of symptoms. This strategy
+is usually well tolerated but can cause excessive sedation and tremor in
+elderly persons. Agitated behavior can be rapidly stabilized with IV infusion
+of valproate. If acute mania is absent, it is best to initiate drug treatment
+gradually to minimize the common adverse effects of nausea, vomiting, and
+sedation. The dose on the first day should be 250 mg administered with a
+meal. The dosage can be raised to 250 mg orally three times daily for over 3
+to 6 days. The plasma concentrations can be assessed in the morning before
+the first daily dose is administered. Therapeutic plasma concentrations for the
+control of seizures range between 50 and 100 µg/mL. It is reasonable to use
+
+
+
+
+<<<PAGE 2080>>>
+
+the same range for the treatment of mental disorders; most of the controlled
+studies have used 50 to 125 µg/mL. Most persons attain therapeutic plasma
+concentrations on a dosage between 1,200 and 1,500 mg a day in divided
+doses. After a person’s symptoms are well controlled, the full daily dose can
+be taken all at once before sleep.
+Table 21-36
+Valproate Preparations Available in the United States
+Generic
+Name
+
+Trade Name, Time to Peak
+Form (Doses)
+
+Valproate
+sodium
+injection
+
+Depacon
+injection
+(100-mg
+valproic
+acid/mL)
+
+Valproic acid Depakene,
+syrup (250
+mg/5 mL)
+Depakene,
+capsules
+(250 mg)
+
+1 hr
+
+1–2 hr
+
+1–2 hr
+
+Divalproex
+sodium
+
+Depakote,
+3–8 hr
+delayedreleased
+tablets (125,
+250, 500
+mg)
+
+Divalproex
+sodiumcoated
+particles
+in
+
+Depakote,
+sprinkle
+capsules
+(125 mg)
+
+Compared with divalproex tablets,
+divalproex sprinkle has earlier onset
+and slower absorption, with slightly
+lower peak plasma concentration
+
+
+
+
+<<<PAGE 2081>>>
+
+capsules
+Divalproex
+Depakote ER
+sodium
+(250, 500
+extendedmg)
+release
+
+4–17 hr
+
+LAMOTRIGINE
+Lamotrigine (Lamictal) was developed as a result of screening folate
+antagonists as anticonvulsants. Lamotrigine proved effective in several
+animal models of epilepsy, was developed as an antiepileptic drug, and was
+marketed for the adjunctive treatment of partial seizures in the United States
+in 1995. Initial, postmarketing, open, clinical experience suggested efficacy
+in a variety of neurologic and psychiatric conditions, coupled with good
+tolerability (aside from the risk of rash). Later, double-blind, placebocontrolled studies revealed that lamotrigine was useful for some, but not all,
+of the neurologic and psychiatric conditions reported in open studies.
+Therefore, lamotrigine appeared effective as a maintenance treatment for
+bipolar disorder and was approved for the maintenance treatment of bipolar I
+disorder in 2003. Lamotrigine also appeared to have potential utility in acute
+bipolar depression. However, the magnitude of the effect was too modest to
+yield consistently superior performance compared with placebo, and hence
+lamotrigine did not receive approval for the treatment of acute bipolar
+depression.
+Similarly, limited data suggested that lamotrigine had potential utility in
+rapid-cycling bipolar disorder. Lamotrigine did not appear to be as effective
+as the primary intervention in acute mania. Thus, lamotrigine has emerged as
+an agent that appears to “stabilize mood from below” in the sense that it may
+maximally impact the depressive component of bipolar disorders.
+Pharmacologic Actions
+Lamotrigine is wholly absorbed, has a bioavailability of 98 percent, and has a
+steady-state plasma half-life of 25 hours. However, the rate of metabolism of
+lamotrigine varies over a sixfold range, depending on which other drugs are
+administered concomitantly. Dosing is escalated slowly to twice-a-day
+
+
+
+
+<<<PAGE 2083>>>
+
+development of a life-threatening rash or permanent disfiguration.
+Estimates of the rate of severe rash vary, depending on the source of the
+data. In some studies, the incidence of severe rashes was 0.08 percent in adult
+patients receiving lamotrigine as initial monotherapy and 0.13 percent in
+adult patients receiving lamotrigine as adjunctive therapy. German registry
+data, based on clinical practice, suggest that the risk of rash may be as low as
+1 in 5,000 patients. The appearance of any rash necessitates immediate
+discontinuation of drug administration.
+It is known that the likelihood of a rash increases if the recommended
+starting dose and speed of dose increase exceed what is recommended.
+Concomitant administration of valproic acid also increases risk and should be
+avoided if possible. If valproate is used, a more conservative dosing regimen
+is followed. Children and adolescents younger than age 16 years appear to be
+more susceptible to rash with lamotrigine. If patients miss more than 4
+consecutive days of lamotrigine treatment, they need to restart therapy at the
+initial starting dose and titrate upward as if they had not already been on the
+medication.
+Laboratory Testing
+There is no proven correlation between lamotrigine blood concentrations and
+either antiseizure effects or efficacy in bipolar disorders. Laboratory tests are
+not useful in predicting the occurrence of adverse events.
+Drug Interactions
+Lamotrigine has significant, well-characterized drug interactions involving
+other anticonvulsants. The most potentially serious lamotrigine drug
+interaction involves concurrent use of valproic acid, which doubles serum
+lamotrigine concentrations. Lamotrigine decreases the plasma concentration
+of valproic acid by 25 percent. Sertraline (Zoloft) also increases plasma
+lamotrigine concentrations, but to a lesser extent than does valproic acid.
+Lamotrigine concentrations are decreased by 40 to 50 percent with
+concomitant administration of carbamazepine, phenytoin, or phenobarbital.
+Combinations of lamotrigine and other anticonvulsants have complex effects
+on the time of peak plasma concentration and the plasma half-life of
+lamotrigine.
+
+
+
+
+<<<PAGE 2085>>>
+
+stabilizer useful in the treatment and prevention of both phases of bipolar
+affective disorder. A long-acting sustained release formulation (Equetro) was
+approved by the U.S. FDA for the treatment of acute mania in 2002.
+Table 21-37
+Lamotrigine Dosing (mg/day)
+Treatment
+
+Weeks 1–2
+
+Weeks
+3–4
+
+Weeks 4–5
+
+Lamotrigine
+monotherapy
+
+25
+
+50
+
+100–200 (200
+maximum)
+
+Lamotrigine +
+carbamazepine
+
+50
+
+100
+
+200–400 (400
+maximum)
+
+Lamotrigine +
+valproate
+
+25 every other 25
+day
+
+50–100 (100
+maximum)
+
+An analog of carbamazepine, oxcarbazepine (Trileptal), was marketed as
+an antiseizure medication in the United States in 2000. Previously it was used
+as a treatment for pediatric epilepsy in Europe since 1990. Because of its
+similarity to carbamazepine, many clinicians began to use it as a treatment for
+patients with bipolar disorder. Despite some reports that oxcarbazepine has
+mood-stabilizing properties, this has not been confirmed in large, placebocontrolled trials.
+Carbamazepine
+Pharmacologic Actions. The absorption of carbamazepine is slow and
+unpredictable. Food enhances absorption. Peak plasma concentrations are
+reached 2 to 8 hours after a single dose, and steady-state levels are reached
+after 2 to 4 days on a steady dosage. It is 70 to 80 percent protein-bound. The
+half-life of carbamazepine ranges from 18 to 54 hours, with an average of 26
+hours. However, with chronic administration, the half-life of carbamazepine
+decreases to an average of 12 hours. This results from the induction of
+hepatic CYP450 enzymes by carbamazepine, specifically the autoinduction
+of carbamazepine metabolism. The induction of hepatic enzymes reaches its
+
+
+
+
+<<<PAGE 2091>>>
+
+Cyclosporine
+Desipramine
+Dicumarol
+Doxepin
+Doxycycline
+Ethosuximide
+Felbamate
+Fentanyl
+Fluphenazine
+Haloperidol
+Hormonal contraceptives
+Imipramine
+Lamotrigine
+Methadone
+Methsuximide
+Methylprednisolone
+Nimodipine
+Pancuronium
+Phensuximide
+Phenytoin
+Primidone
+Theophylline
+Valproate
+Warfarin
+Carbamazepine may increase drug
+plasma concentrations of
+Clomipramine
+Phenytoin
+Primidone
+
+Fluoxetine
+Fluvoxamine
+Gemfibrozil
+Itraconazole
+Ketoconazole
+Isoniazida
+Itraconazole
+Lamotrigine
+Loratadine
+Macrolides
+Nefazodone
+Nicotinamide
+Propoxyphene
+Terfenadine
+Troleandomycin
+Valproatea
+Verapamil
+Viloxazine
+Drugs that may decrease
+carbamazepine plasma
+concentrations
+Carbamazepine
+(autoinduction)
+Cisplatin
+Doxorubicin HCl
+Felbamate
+Phenobarbital
+Phenytoin
+Primidone
+Rifampinb
+Theophylline
+Valproate
+
+aIncreased concentrations of the active 10,11-epoxide.
+bDecreased concentrations of carbamazepine and increased concentrations of the 10,11-
+
+epoxide.
+Table by Carlos A. Zarate, Jr., M.D. and Mauricio Tohen, M.D.
+
+
+
+
+<<<PAGE 2267>>>
+
+Benedetti A, Lattanzi L, Pini S, Musetti L, Dell’Osso L. Oxcarbazepine as
+add-on treatment in patients with bipolar manic, mixed, or depressive
+episode. J Affect Disord. 2004;79:273–277.
+Bialer M. Extended-release formulations for the treatment of epilepsy. CNS
+Drugs. 2007;21:765–774.
+Bowden CL, Swann AC, Calabrese JR, Rubenfaer LM, Wozniak PJ.
+Depakote ER Mania Study Group. A randomized, placebo-controlled,
+multicenter study of divalproex sodium extended release in the treatment
+of acute mania. J Clin Psychiatry. 2006;67:1501.
+Bray GA, Hollander P, Klein S, Kushner R, Levy B. A 6-month randomized,
+placebo-controlled, dose-ranging trial of topiramate for weight loss in
+obesity. Obes Res. 2003;11(6):722–733.
+Calabrese JR, Huffman RF, White RL. Lamotrigine in the acute treatment of
+bipolar depression: results of five double-blind, placebo-controlled clinical
+trials. Bipolar Disord. 2008;10:323–333.
+Chen PS, Wang CC, Bortner CD, Peng GS, Wu X, Pang H. Valproic acid and
+other histone deacetylase inhibitors induce microglial apoptosis and
+attenuate lipopolysaccharide-induced dopaminergic neurotoxicity.
+Neuroscience. 2007;149:203–212.
+Chustecka Z. Hydralazine and valproate appear to overcome resistance to
+chemotherapy. Ann Oncol. 2007;18:1529.
+Cipriani A, Hawton K, Stockton S, Geddes JR. Lithium in the prevention of
+suicide in mood disorders: updated systematic review and meta-analysis.
+BMJ. 2013;346: f3646.
+Cohen LS, Friedman JM, Jefferson JW, Johnson EM, Weiner ML. A
+reevaluation of risk of in utero exposure to lithium. JAMA. 1994;271:146–
+150.
+Collins J, McFarland B. Divalproex, lithium and suicide among medicaid
+patients with bipolar disorder. J Affect Dis. 2008;107:23–28.
+Cousins DA, Aribisala B, Ferrier I, Blamire AM. Lithium, gray matter, and
+magnetic resonance imaging signal. Biol Psychiatry. 2013;73(7):652–657.
+Crofford LJ, Rowbotham MC, Mease PJ, Russell IJ, Dworkin RH. Pregabalin
+for the treatment of fibromyalgia syndrome: results of a randomized,
+double-blind, placebo-controlled trial. Arthritis Rheum. 2005;52(4):1264.
+Delvendahl I, Lindemann H, Heidegger T, Normann C, Ziemann U, Mall V.
+Effects of lamotrigine on human motor cortex plasticity. Clin
+
+

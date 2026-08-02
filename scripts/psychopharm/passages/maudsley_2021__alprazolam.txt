@@ -1,0 +1,887 @@
+<<<PAGE 444>>>
+
+Depression and anxiety disorders  423
+
+Anxiety spectrum disorders
+Anxiety disorders can occur in isolation, be co-morbid with other psychiatric disorders
+(particularly depression), be a consequence of physical illness such as thyrotoxicosis or be
+drug-induced (e.g. by caffeine). Co-morbidity with other psychiatric disorders is very
+common.
+These disorders tend to be chronic and treatment is often only partially successful.
+People with anxiety disorders may be especially prone to adverse effects.1 High initial
+doses of SSRIs in particular may be poorly tolerated, for example.
+
+Benzodiazepines provide rapid symptomatic relief from acute anxiety states.2 All guidelines and consensus statements recommend that this group of drugs should be used only
+to treat anxiety that is severe, disabling, or subjecting the individual to extreme distress.
+Because of their potential to cause physical dependence and withdrawal symptoms,
+these drugs should be used at the lowest effective dose for the shortest period of time
+(maximum 4 weeks), while longer-term treatment strategies are put in place and with
+caution in patients with substance misuse. For the majority of patients these recommendations are sensible and should be followed. A very small number of patients with
+severely disabling anxiety may benefit from long-term treatment with a benzodiazepine,
+and these patients should not be denied treatment. Benzodiazepines are, however,
+known to be over-prescribed in the long-term for both treatment of anxiety3 and depression,4 perhaps especially in the United States where attitudes to benzodiazepines differ
+markedly from other developed countries.5
+NICE recommends that benzodiazepines should not be used to treat panic disorder.6
+In other countries, alprazolam is widely used for this indication. Benzodiazepines
+should be used with extreme care in post-traumatic stress disorder (PTSD).7
+
+SSRIs/SNRIs
+When used to treat Generalised Anxiety Disorder (GAD), SSRIs should initially be prescribed at half the normal starting dose and titrated to the normal antidepressant dosage range as tolerated (initial worsening of anxiety may be seen when treatment is
+started8). The same advice applies to the use of venlafaxine and duloxetine. Modest
+benefit is usually seen within 6 weeks and continues to increase over time.9 The optimal
+duration of treatment has not been determined but should be at least one year.10,11
+Effective treatment of GAD may prevent the development of major depression.10
+An early network meta-analysis suggests fluoxetine is the most effective SSRI in GAD
+and sertraline the best tolerated.12 More recent analyses suggest that bupropion13 or
+agomelatine14 is the most effective drug in GAD. Neither analysis found clear effects
+over placebo for lorazepam or vortioxetine.
+When used to treat panic disorder, the same starting dose and dosage titration as in
+GAD should be used. Doses of clomipramine,15 citalopram16 and sertraline17 towards
+the bottom of the antidepressant range give the best balance between efficacy and sideeffects, whereas higher doses of paroxetine (40mg and above) may be required.18 Higher
+doses of all drugs may be effective when standard doses have failed – efficacy of SSRIs
+(but not SNRIs) increases across the licensed dose range in anxiety disorders.19 Onset
+
+CHAPTER 3
+
+Benzodiazepines
+
+
+
+
+<<<PAGE 465>>>
+
+444  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Patients often report that 10% reductions (calculated on the last dose, so that they
+become increasingly small) every 2–4 weeks are tolerable, although some long-term
+users may need even slower reductions.
+■■ Final doses before complete cessation will need to be very small (often much less than
+1mg of diazepam equivalent)
+■■
+
+Practical application of these principles
+Before tapering
+All patients should be informed of the risk of withdrawal symptoms on stopping any
+benzodiazepine, z-drugs or gabapentinoid (high risk for alprazolam and lorazepam).
+■■ Patient should be warned not to stop benzodiazepines abruptly, because this can
+cause seizures and can be fatal, and may be the method most likely to give rise to
+severe and long-lasting withdrawal symptoms.
+■■ Although stopping benzodiazepines can cause unpleasant symptoms, if tapering is
+gradual and careful the process can be tolerable. Reassurance may be required for
+those that have rapidly tapered in the past.
+■■ Most patients take months or years to taper. However, rate of reduction should be
+determined by what is tolerable for the patient, not externally imposed timetables.
+■■ Past experience of reducing can help predict symptoms that may arise again on
+tapering.
+■■ Preparation for benzodiazepine tapering may be required: e.g. lightening work or
+family duties or bolstering of non-pharmacological coping skills (including acceptance,
+breathing
+exercises,
+exercise,
+hobbies,
+diary
+keeping,
+and
+de-catastrophising).28,34
+■■ People with insomnia may benefit from adjunctive treatment with melatonin, and
+those with panic disorder may benefit from CBT during the taper period.24,35,36
+Gradual dose reduction accompanied by psychological interventions (relaxation,
+CBT) is more likely to be successful than supervised dose reduction alone29 or psychological interventions alone.37
+■■ Familiarity of the patient and the doctor with the wide variety of withdrawal symptoms (above) may help to mitigate unnecessary anxiety when symptoms arise.
+Withdrawal symptoms do not indicate that the drug is needed but that taper rate
+should be slowed.
+
+CHAPTER 3
+
+■■
+
+The process of tapering
+■■
+
+Patients may be broadly risk stratified:
+■■ For low-risk patients (<6 months use, long half-life benzodiazepine, no experience
+of significant withdrawal symptoms in the past), a test reduction could be made
+of 25%.
+■■ For high-risk patients (>6 months use, short half-life benzodiazepine, past history
+of withdrawal symptoms) a test reduction of 5–10% could be recommended.
+
+
+
+
+<<<PAGE 467>>>
+
+446  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Tapering other drug classes
+The same principles apply to tapering z-drugs or gabapentinoids. Gabapentinoids can
+cause severe withdrawal effects, although there is wide inter-individual variation.
+Although z-drugs are used once daily, tolerance and withdrawal are reported, even after
+brief or intermittent use.38,39 Tapering according to a similar exponential scheme (or
+sometimes cross-titration to diazepam) may be required for cessation. The main withdrawal symptoms are insomnia and anxiety. Ideally, they should be tapered at a rate
+that maintains sleep.
+
+CHAPTER 3
+
+References
+1. BNF Online. British national formulary. 2020; https://www.medicinescomplete.com/mc/bnf/current.
+2. National Institute for Clinical Excellence. Guidance on the use of zaleplon, zolpidem and zopiclone for the short-term management of insomnia. Technical Appraisal [TA77]. 2004 (reviewed August 2010); https://www.nice.org.uk/guidance/ta77.
+3. National Institute for Health and Clinical Excellence. Generalised anxiety disorder and panic disorder in adults: management. Clinical
+Guideline [CG113]. 2011 (last updated July 2019); https://www.nice.org.uk/guidance/cg113.
+4. Davies J, et al. Long-term benzodiazepine and Z-drugs use in the UK: a survey of general practice. Br J Gen Pract 2017; 67:e609–e613.
+5. National Institute for Health and Care Excellence. Benzodiazepine and z-drug withdrawal. 2019; https://cks.nice.org.uk/topics/
+benzodiazepine-z-drug-withdrawal/?_escaped_fragment_=topicsummary.
+6. Schifano F, et al. An insight into Z-drug abuse and dependence: an examination of reports to the European Medicines Agency Database of
+Suspected Adverse Drug Reactions. Int J Neuropsychopharmacol 2019; 22:270–277.
+7. Evoy KE, et al. Abuse and misuse of pregabalin and gabapentin. Drugs 2017; 77:403–426.
+8. Public Health England. Advice for prescribers on the risk of the misuse of pregabalin and gabapentin. 2014; https://assets.publishing.service.
+gov.uk/government/uploads/system/uploads/attachment_data/file/385791/PHE-NHS_England_pregabalin_and_gabapentin_advice_
+Dec_2014.pdf.
+9. Marsden J, et al. Medicines associated with dependence or withdrawal: a mixed-methods public health review and national database study
+in England. Lancet Psychiatry 2019; 6:935–950.
+10. Gov.UK. Dependence and withdrawal associated with some prescribed medicines. An evidence review. 2020; https://www.gov.uk/govern​
+ment/publications/prescribed-medicines-review-report.
+11. Crowe SF, et al. The residual medium and long-term cognitive effects of benzodiazepine use: an updated meta-analysis. Arch Clin
+Neuropsychol 2018; 33:901–911.
+12. Brandt J, et al. Benzodiazepines and Z-drugs: an updated review of major adverse outcomes reported on in epidemiologic research. Drugs in
+R&D 2017; 17:493–507.
+13. Donnelly K, et al. Benzodiazepines, Z-drugs and the risk of hip fracture: a systematic review and meta-analysis. PLoS One 2017; 12:e0174730.
+14. Gutierrez MA, et al. Paradoxical reactions to benzodiazepines. Am J Nurs 2001; 101:34–39; quiz 39–40.
+15. Guina J, et al. Benzodiazepines I: upping the care on downers: the evidence of risks, benefits and alternatives. J Clin Med 2018; 7:17.
+16. Golombok S, et al. Cognitive impairment in long-term benzodiazepine users. Psychol Med 1988; 18:365–374.
+17. Finkle WD, et al. Risk of fractures requiring hospitalization after an initial prescription for zolpidem, alprazolam, lorazepam, or diazepam in
+older adults. J Am Geriatr Soc 2011; 59:1883–1890.
+18. Molero Y, et al. Associations between gabapentinoids and suicidal behaviour, unintentional overdoses, injuries, road traffic incidents, and
+violent crime: population based cohort study in Sweden. BMJ 2019; 365:l2147.
+19. Schweizer E, et al. Long-term therapeutic use of benzodiazepines. II. Effects of gradual taper. Arch Gen Psychiatry 1990; 47:908–915.
+20. Schweizer E, et al. Benzodiazepine dependence and withdrawal: a review of the syndrome and its clinical management. Acta Psychiatr Scand
+1998; 98 Suppl 393:95–101.
+21. Uhlenhuth EH, et al. International study of expert judgment on therapeutic use of benzodiazepines and other psychotherapeutic medications:
+IV. Therapeutic dose dependence and abuse liability of benzodiazepines in the long-term treatment of anxiety disorders. J Clin
+Psychopharmacol 1999; 19:23S–29S.
+22. Ashton H. The diagnosis and management of benzodiazepine dependence. Curr Opin Psychiatry 2005; 18:249–255.
+23. Ashton H. Benzodiazepine withdrawal: outcome in 50 patients. Br J Addict 1987; 82:665–671.
+24. Soyka M. Treatment of benzodiazepine dependence. N Engl J Med 2017; 376:1147–1157.
+25. Petursson H. The benzodiazepine withdrawal syndrome. Addiction 1994; 89:1455–1459.
+26. Ashton H. Protracted Withdrawal From Benzodiazepines: The Post-Withdrawal Syndrome.Psychiatr Ann 1995; 1:174–179.
+27. Tannenbaum C, et al. Reduction of inappropriate benzodiazepine prescriptions among older adults through direct patient education: the
+empower cluster randomized trial. JAMA Int Med 2014; 174:890–898.
+28. Guy A, et al. Guidance for psychological therapists: enabling conversations with clients taking or withdrawing from prescribed psychiatric
+drugs. London: APPG for Prescribed Drug Dependence; 2019.
+
+
+
+
+<<<PAGE 471>>>
+
+450  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+References
+1. Schieveld JNM, et al. On benzodiazepines, paradoxical agitation, hyperactive delirium, and chloride homeostasis. Crit Care Med 2018;
+46:1558–1559.
+2. Dietch JT, et al. Aggressive dyscontrol in patients treated with benzodiazepines. J Clin Psychiatry 1988; 49:184–188.
+3. Rothschild AJ, et al. Comparison of the frequency of behavioral disinhibition on alprazolam, clonazepam, or no benzodiazepine in hospitalized psychiatric patients. J Clin Psychopharmacol 2000; 20:7–11.
+4. Bramness JG, et al. Flunitrazepam: psychomotor impairment, agitation and paradoxical reactions. Forensic Sci Int 2006; 159:83–91.
+5. O’Sullivan GH, et al. Safety and side-effects of alprazolam. Controlled study in agoraphobia with panic disorder. Br J Psychiatry 1994;
+165:79–86.
+6. Gardner DL, et al. Alprazolam-induced dyscontrol in borderline personality disorder. Am J Psychiatry 1985; 142:98–100.
+7. Albrecht B, et al. Motivational drive and alprazolam misuse: a recipe for aggression? Psychiatry Res 2016; 240:381–389.
+8. Albrecht B, et al. Benzodiazepine use and aggressive behaviour: a systematic review. Aust N Z J Psychiatry 2014; 48:1096–1114.
+9. Sabe M, et al. Zolpidem stimulant effect: induced mania case report and systematic review of cases. Prog Neuropsychopharmacol Biol
+Psychiatry 2019; 94:109643.
+10. Poceta JS. Zolpidem ingestion, automatisms, and sleep driving: a clinical and legal case series. JClinSleep Med 2011; 7:632–638.
+11. Pressman MR. Sleep driving: sleepwalking variant or misuse of z-drugs? Sleep MedRev 2011; 15:285–292.
+12. Daley C, et al. ‘I did what?’ Zolpidem and the courts. J Am Acad Psychiatry Law 2011; 39:535–542.
+13. Bond AJ. Drug-induced behavioural disinhibition incidence, mechanisms and therapeutic implications. CNS Drugs 1998; 9:41–57.
+14. Hakimi Y, et al. Paradoxical adverse drug reactions: descriptive analysis of French reports. Eur J Clin Pharmacol 2020; 76:1169–1174.
+15. Hawkridge SM, et al. A risk-benefit assessment of pharmacotherapy for anxiety disorders in children and adolescents. Drug Saf 1998;
+19:283–297.
+16. Kandemir H, et al. Behavioral disinhibition, suicidal ideation, and self-mutilation related to clonazepam. J Child Adolesc Psychopharmacol
+2008; 18:409.
+17. Daderman AM, et al. Flunitrazepam (Rohypnol) abuse in combination with alcohol causes premeditated, grievous violence in male juvenile
+offenders. J Am Acad Psychiatry Law 1999; 27:83–99.
+18. van der Bijl P, et al. Disinhibitory reactions to benzodiazepines: a review. J Oral Maxillofac Surg 1991; 49:519–523.
+19. McKenzie WS, et al. Paradoxical reaction following administration of a benzodiazepine. J Oral MaxillofacSurg 2010; 68:3034–3036.
+20. Wilson KE, et al. Complications associated with intravenous midazolam sedation in anxious dental patients. Prim Dent Care 2011;
+18:161–166.
+21. Short TG, et al. Paradoxical reactions to benzodiazepines–a genetically determined phenomenon? Anaesth Intensive Care 1987;
+15:330–331.
+22. Weisman AM, et al. Effects of clorazepate, diazepam, and oxazepam on a laboratory measurement of aggression in men. Int Clin
+Psychopharmacol 1998; 13:183–188.
+23. Blair RJ, et al. Selective impairment in the recognition of anger induced by diazepam. Psychopharmacology (Berl) 1999; 147:335–338.
+24. Wallace PS, et al. Reduction of appeasement-related affect as a concomitant of diazepam-induced aggression: evidence for a link between
+aggression and the expression of self-conscious emotions. Aggress Behav 2009; 35:203–212.
+25. Tae CH, et al. Paradoxical reaction to midazolam in patients undergoing endoscopy under sedation: incidence, risk factors and the effect of
+flumazenil. Dig Liver Dis 2014; 46:710–715.
+26. Bond AJ, et al. Behavioural aggression in panic disorder after 8 weeks’ treatment with alprazolam. J Affect Disord 1995; 35:117–123.
+27. Paton C. Benzodiazepines and disinhibition: a review. Psychiatric Bull 2002; 26:460–462.
+
+
+
+
+<<<PAGE 538>>>
+
+Addictions and substance misuse  517
+
+Benzodiazepine prescribing increased during the 1960s and 1970s, mainly because of
+their improved safety profile relative to barbiturates. However, it was soon noted that
+benzodiazepines have a high potential for causing dependence. Prescriptions originally
+started for other disorders were often continued long term and led to the development of
+dependence. This was and is particularly common in older patients and those with anxiety
+spectrum disorders or depression. In England, the prescribing of benzodiazepines has
+fallen to 14.9 million prescription items in 2018–2019, from 16.3 million in 2015–2016.
+There are a number of novel or ‘designer’ benzodiazepines (e.g. etizolam, flualprazolam, flunitrazolam and norfludiazepam). There is limited information available about
+the health and social harms of these substances, but they are likely to be similar to or
+worse than the established benzodiazepines.1 Some of these benzodiazepines (flualprazolam, flunitrazolam and norfludiazepam) are classified in Schedule 1 in the UK – pharmaceutical benzodiazepines are in Schedule 3 or 4. Outside being prescribed,
+benzodiazepines can be acquired via the illicit market, diversion of scripts and Internet
+purchasing (thought to be a rising trend).2
+Benzodiazepine dependence can be thought of as either iatrogenic (low daily doses
+prescribed over many years) or non-iatrogenic (high doses, illicitly obtained, consumed
+intermittently).
+
+Discontinuation
+A previously published (now withdrawn) Cochrane review evaluated the evidence for
+pharmacological interventions for benzodiazepine mono-dependence, and concluded
+that a gradual reduction of benzodiazepine dose was preferable to an abrupt discontinuation.3 A more recent review confirmed that withdrawal over a period of less than
+6 months is appropriate for most patients4 and the UK drug misuse and dependence
+guidelines suggest a reduction of about one-eighth of the daily dose every 2 weeks.5 The
+Australian GP guidelines comment that the evidence for the ‘optimal rate of tapering is
+lacking’ and ‘the exact rate of reduction should be individualised according to the drug,
+dose and duration of treatment’.6
+A meta-analysis supports the effectiveness of multi-faceted prescribing interventions
+(usually including psychological interventions/support) in reducing benzodiazepine use
+in older patients,7 and one RCT has demonstrated that a simple educational approach
+based on self-efficacy theory resulted in about a quarter of long-term elderly benzodiazepine users engaging voluntarily in reducing and discontinuing use.8 A 2018 Cochrane
+review could find no pharmaceutical add-on that could help facilitate the withdrawal
+process. Some drugs seemed to be associated with some beneficial effects, but the evidence quality was too low for any clinical recommendations to be made.9
+A large number of patients presenting to addiction services may be using illicit benzodiazepines in addition to their primary substance of abuse. People with non-iatrogenic
+benzodiazepine dependence often consume doses greater than 100mg diazepam a day.
+Although some services provide prescriptions for benzodiazepines, there is no evidence
+that substitute prescribing of benzodiazepines ultimately reduces benzodiazepine misuse.
+If benzodiazepines are prescribed, this should ideally be for a short-term, time-limited
+(2–3 weeks) prescription and with a view to detoxification.
+
+CHAPTER 4
+
+Benzodiazepine misuse
+
+
+
+
+<<<PAGE 736>>>
+
+Infant plasma concentration
+
+Not reported
+
+No published data available at
+the time of writing.
+
+Not reported.
+
+Drug
+
+Benzodiazepines4,14,38,182–189
+
+Promethazine
+
+Zopiclone, zolpidem and
+zaleplon4,190–192
+
+Table 7.6 Hypnotics in breast-feeding
+
+Zaleplon = 1.5%
+Zopiclone = 1.5%
+Zolpidem = 0.02–0.18%
+
+Clonazepam – 2.8%
+Diazepam – 0.88–7.1%
+Lorazepam – 2.6–2.9%
+Oxazepam – 0.28–1%
+
+Estimated daily infant dose
+as proportion of maternal
+dose (RID)
+
+None reported.
+
+No adverse effects have been
+reported in others.
+
+In a telephone survey of 124
+women two reported CNS
+depression in their
+breastfeeding neonates. One
+of the children was exposed to
+benzodiazepines in utero.
+
+Restlessness and mild
+drowsiness with alprazolam.
+
+One case of persistent apnoea
+with clonazepam.
+
+Sedation, lethargy, weight loss
+and mild jaundice.
+
+Acute adverse effects in
+infant
+
+None reported but not studied.
+
+Non reported but not studied.
+
+Developmental effects in
+infant
+
+
+
+
+<<<PAGE 781>>>
+
+760  The Maudsley® Prescribing Guidelines in Psychiatry
+
+References
+
+CHAPTER 9
+
+1. Kernberg OF, et al. Borderline personality disorder. Am J Psychiatry 2009; 166:505–508.
+2. Pascual JC, et al. A naturalistic study of changes in pharmacological prescription for borderline personality disorder in clinical practice: from
+APA to NICE guidelines. Int Clin Psychopharmacol 2010; 25:349–355.
+3. Links PS, et al. Prospective follow-up study of borderline personality disorder: prognosis, prediction of outcome, and axis II comorbidity. Can
+J Psychiatry 1998; 43:265–270.
+4. Oldham JM. Guideline watch: practice guideline for the treatment of patients with borderline personality disorder. Focus 2005; 3:396–400.
+5. Baker-Glenn E, et al. Use of psychotropic medication among psychiatric out-patients with personality disorder. Psychiatrist 2010;
+34:83–86.
+6. Paton C. Prescribing for people with emotionally unstable personality disorder under the care of UK mental health services. J Clin Psychiatry
+2015:e512–e518.
+7. Riffer F, et al. Psychopharmacological treatment of patients with borderline personality disorder: comparing data from routine clinical care
+with recommended guidelines. Int J Psychiatry Clin Pract 2019; 23:178–188.
+8. Storebø OJ, et al. Psychological therapies for people with borderline personality disorder. Cochrane Database Syst Rev 2020; 5:Cd012955.
+9. National Institute for Clinical Excellence. Borderline personality disorder: recognition and management. Clinical Guidance 78 [CG78] 2009
+(Last checked July 2018); https://www.nice.org.uk/guidance/CG78
+10. Lieb K, et al. Pharmacotherapy for borderline personality disorder: Cochrane systematic review of randomised trials. Br J Psychiatry 2010;
+196:4–12.
+11. Ingenhoven T, et al. Effectiveness of pharmacotherapy for severe personality disorders: meta-analyses of randomized controlled trials. J Clin
+Psychiatry 2010; 71:14–25.
+12. Hancock-Johnson E, et al. A focused systematic review of pharmacological treatment for borderline personality disorder. CNS Drugs 2017;
+31:345–356.
+13. Stoffers-Winterling J, et al. Pharmacotherapy for borderline personality disorder: an update of published, unpublished and ongoing studies.
+Curr Psychiatry Rep 2020; 22:37.
+14. Zanarini MC, et al. A dose comparison of olanzapine for the treatment of borderline personality disorder: a 12-week randomized, double-blind, placebo-controlled study. J Clin Psychiatry 2011; 72:1353–1362.
+15. Canadian Agency for Drugs and Technologies in Health. Aripiprazole for borderline personality disorder: a review of the clinical effectiveness
+2017. https://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0096409.
+16. Shafti S, et al. A comparative study on olanzapine and aripiprazole for symptom management in female patients with borderline personality
+disorder. Bull Clin Psychopharmacol, 2015; 25:38–43.
+17. Bozzatello P, et al. Efficacy and tolerability of asenapine compared with olanzapine in borderline personality disorder: an open-label
+randomized controlled trial. CNS Drugs 2017; 31:809–819.
+18. Benedetti F, et al. Low-dose clozapine in acute and continuation treatment of severe borderline personality disorder. J Clin Psychiatry 1998;
+59:103–107.
+19. Frogley C, et al. A case series of clozapine for borderline personality disorder. Ann Clin Psychiatry 2013; 25:125–134.
+20. Chengappa KN, et al. Clozapine reduces severe self-mutilation and aggression in psychotic patients with borderline personality disorder. J
+Clin Psychiatry 1999; 60:477–484.
+21. Dickens GL, et al. Experiences of women in secure care who have been prescribed clozapine for borderline personality disorder. Borderline
+Personal Disord and Emot Dysregul 2016; 3:12.
+22. Rohde C, et al. Real-world effectiveness of clozapine for borderline personality disorder: results from a 2-year mirror-image study. J Pers
+Disord 2017:1–15.
+23. Volavka J, et al. Heterogeneity of violence in schizophrenia and implications for long-term treatment. Int J Clin Pract 2008; 62:1237–1245.
+24. ClinicalTrial.gov. Seroquel extended release (XR) for the management of borderline personality disorder (BPD). ClinicalTrials.gov Identifier:
+NCT00880919. 2017. https://clinicaltrials.gov/ct2/show/results/NCT00880919?view=results.
+25. ClinicalTrial.gov. Treating suicidal behavior and self-mutilation in people with borderline personality disorder. ClinicalTrials.gov Identifier:
+NCT00533117. 2017. https://clinicaltrials.gov/ct2/show/results/NCT00533117.
+26. Deltito J, et al. Do patients with borderline personality disorder belong to the bipolar spectrum? J Affect Disord 2001; 67:221–228.
+27. Essential Pharma Ltd. Summary of product characteristics. Camcolit 400mg prolonged release Lithium Carbonate. 2020. https://www.
+medicines.org.uk/emc/product/10829/smpc.
+28. Crawford MJ, et al. No effect of lamotrigine in subgroups of patients with borderline personality disorder: response to Smith. Am J Psychiatry
+2018; 175:1265–1266.
+29. ClinicalTrial.gov. Preliminary trial of the effect of Glucocorticoid Receptor Antagonist on borderline personality disorder (BPD).
+ClinicalTrials.gov Identifier: NCT01212588. 2019. https://clinicaltrials.gov/ct2/show/NCT01212588.
+30. Kulkarni J, et al. Effect of the glutamate NMDA receptor antagonist memantine as adjunctive treatment in borderline personality disorder:
+an exploratory, randomised, double-blind, placebo-controlled trial. CNS Drugs 2018; 32:179–187.
+31. Moghaddas A, et al. The potential role of naltrexone in borderline personality disorder. Iran J Psychiatry 2017; 12:142–146.
+32. Gardner DL, et al. Alprazolam-induced dyscontrol in borderline personality disorder. Am J Psychiatry 1985; 142:98–100.
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 883>>>
+
+862  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 11.6 (Continued)
+Substrates for enzyme
+(note: this is not an
+exhaustive list)
+
+CHAPTER 11
+
+CYP3A4
+
+Alprazolam
+Aripiprazole
+Benzodiazepines
+Carbamazepine
+Clozapine
+Donepezil
+Galantamine
+Haloperidol
+Methadone
+Mirtazapine
+Quetiapine
+Risperidone
+Sildenafil
+Tricyclics
+Valproate
+Venlafaxine
+‘Z’ hypnotics
+
+Effects in an intoxicated
+patient
+
+Effects in a chronic, sober
+drinker
+
+Competition between
+alcohol and drug leading to
+reduced rates of metabolism
+of both compounds.
+Increased plasma levels may
+lead to toxicity
+
+Increased rate of drug
+metabolism potentially leading
+to therapeutic failure
+Enzyme induction can last for
+several weeks after alcohol
+consumption ceases
+
+Interactions of uncertain aetiology include increased blood alcohol concentrations in
+people who take verapamil and decreased metabolism of methylphenidate in people
+who consume alcohol.
+
+Pharmacodynamic interactions2–4
+Alcohol enhances inhibitory neurotransmission at GABAA receptors and reduces excitatory neurotransmission at glutamate NMDA receptors (Table 11.7). It also increases
+dopamine release in the mesolimbic pathway and may have some effects on serotonin
+and opiate pathways. Given these actions, alcohol would be expected to cause sedation,
+amnesia, ataxia and give rise to feelings of pleasure (and/or worsen psychotic symptoms
+in vulnerable individuals).
+Table 11.7 Pharmacodynamic interactions with alcohol
+Effect of
+alcohol
+Sedation
+
+Effect exacerbated by
+
+Potential consequences
+
+Other sedative drugs, e.g.
+Antihistamines
+Antipsychotics
+Baclofen
+Benzodiazepines
+Lofexidine
+Opiates
+Tizanidine
+Tricyclics
+Z-hypnotics
+
+Increased CNS depression ranging from
+increased propensity to be involved in
+accidents through to respiratory depression
+and death
+
+(Continued)
+
+
+
+
+<<<PAGE 885>>>
+
+864  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+Table 11.8 Psychotropic drugs: choice in patients who continue to drink
+Safest choice
+
+Best avoided
+
+Antipsychotics
+
+Sulpiride and amisulpride
+Paliperidone, if depot required
+(non-sedative and renally excreted)
+
+Very sedative antipsychotics such as
+chlorpromazine and clozapine
+
+Antidepressants
+
+SSRI – citalopram, sertraline
+Potent inhibitors of CYP3A4 (fluoxetine,
+paroxetine) may decrease alcohol
+metabolism in chronic drinkers
+
+TCAs, because impairment of metabolism
+by alcohol (while intoxicated) can lead to
+increased plasma levels and consequent
+signs and symptoms of overdose (profound
+hypotension, seizures, arrhythmias and
+coma)
+Cardiac effects can be exacerbated by
+electrolyte disturbances
+Combinations of TCAs and alcohol
+profoundly impair psychomotor skills
+Mirtazapine – often very sedative
+MAOIs as can cause profound hypotension.
+Also potential interaction with tyraminecontaining drinks which can lead to
+hypertensive crisis
+
+Mood stabilisers
+
+Valproate
+Carbamazepine
+Note: higher plasma levels achieved
+during periods of alcohol intoxication may
+be poorly tolerated
+
+Lithium, because it has a narrow
+therapeutic index and alcohol-related
+dehydration and electrolyte disturbance can
+precipitate lithium toxicity
+
+NB. Be aware of the possibility of hepatic failure or reduced hepatic function in chronic alcohol misusers. See section
+on hepatic impairment in Chapter 8.
+Also note risk of hepatic toxicity with some recommended drugs (e.g. valproate).
+
+References
+1. Zakhari S. Overview: how is alcohol metabolized by the body? Alcohol Research & Health: The Journal of the National Institute on Alcohol
+Abuse and Alcoholism 2006; 29:245–254.
+2. Tanaka E. Toxicological interactions involving psychiatric drugs and alcohol: an update. J Clin Pharm Ther 2003; 28:81–95.
+3. Wan Chih T. Alcohol-related drug interactions. Pharmacist’s Letter/Prescriber’s Letter 2008; 24:240106.
+4. Smith RG. An appraisal of potential drug interactions in cigarette smokers and alcohol drinkers. J Am Podiatr Med Assoc 2009; 99:81–88.
+5. Salmela KS, et al. Respective roles of human cytochrome P-4502E1, 1A2, and 3A4 in the hepatic microsomal ethanol oxidizing system.
+Alcohol Clin Exp Res 1998; 22:2125–2132.
+6. Hamitouche S, et al. Ethanol oxidation into acetaldehyde by 16 recombinant human cytochrome P450 isoforms: role of CYP2C isoforms in
+human liver microsomes. Toxicol Lett 2006; 167:221–230.
+7. Koster M, et al. Seizures during antidepressant treatment in psychiatric inpatients–results from the transnational pharmacovigilance project
+“Arzneimittelsicherheit in der Psychiatrie” (AMSP) 1993–2008. Psychopharmacology 2013; 230:191–201.
+8. Cederbaum AI. Alcohol metabolism. Clin Liver Dis 2012; 16:667–685.
+9. Wall TL, et al. Biology, genetics, and environment: underlying factors influencing alcohol metabolism. Alcohol Research: Current Reviews
+2016; 38:59–68.
+10. Williams CS, et al. Do ethanol and metronidazole interact to produce a disulfiram-like reaction? Ann Pharmacother 2000; 34:255–257.
+11. Visapää JP, et al. Lack of disulfiram-like reaction with metronidazole and ethanol. Ann Pharmacother 2002; 36:971–974.
+12. Mergenhagen KA, et al. Fact versus fiction: a review of the evidence behind alcohol and antibiotic interactions. Antimicrob Agents Chemother
+2020; 64:e02167–02119.
+13. Huang Z, et al. Influence of ethanol on the metabolism of alprazolam. Expert Opin Drug Metab Toxicol 2018; 14:551–559.
+
+
+
+
+<<<PAGE 899>>>
+
+878  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 13.1 (Continued)
+Toxicity in
+overdose
+
+Smallest dose likely
+to cause death
+
+Phenothiazines56,72–74
+(e.g. chlorpromazine,
+fluphenazine)
+
+Moderate
+
+Chlorpromazine 5–10g.
+
+Pimavanserin75
+
+Not known No overdoses reported but
+pimavanserin prolongs QT
+interval in clinical doses.
+
+Probably QT prolongation and
+arrhythmia. ? Nausea, vomiting,
+confusion.76
+
+Quetiapine24,60,77–80
+
+Moderate
+
+Unclear. Probably more than 5g.
+Fatalities can occur in single
+substance overdose.
+
+Lethargy, delirium, tachycardia, QT
+prolongation, respiratory depression,
+hypotension, rhabdomyolysis, NMS.
+
+Risperidone60,81,82
+(assume the same for
+paliperidone)
+
+Low
+
+Unclear.
+Fatality rare in those taking
+risperidone or paliperidone
+alone.
+
+Lethargy, dystonia, tachycardia, changes
+in blood pressure, QT prolongation. Renal
+failure with paliperidone.
+
+Ziprasidone83–88
+
+Low
+
+Around 10g. Fatality unlikely
+when taken alone.
+
+Drowsiness, lethargy. QT prolongation,
+torsades de pointes.
+
+Carbamazepine89,90
+
+Moderate
+
+Around 20g, but seizures may
+occur at around 5g.
+
+Somnolence, coma, respiratory
+depression, ataxia, seizures, tachycardia,
+arrhythmia, electrolyte disturbance.
+
+Lamotrigine91,92
+
+Low
+
+Drowsiness, vomiting, ataxia, seizures,
+At least 4g.
+Two deaths reported – one after tachycardia, dyskinesia, QT prolongation.
+4g, the other after 7.5g, but
+overdoses of >40g have not
+proved fatal.
+
+Lithium93–95
+
+Moderate
+
+Chronic toxicity probably more
+dangerous but single overdose
+is occasionally fatal. Six acute
+overdose deaths recorded in UK
+2005–2012.96
+
+Valproate97–101
+
+Moderate
+
+Unclear but probably more than Somnolence, coma, cerebral oedema,
+respiratory depression, blood dyscrasia,
+20g. Doses over 400mg/kg
+hypotension, hypothermia, seizures,
+cause severe toxicity.
+electrolyte disturbance
+(hyperammonaemia).
+
+Benzodiazepines102,103
+
+Low
+
+Probably more than 100mg
+diazepam equivalents.
+Fatality unusual if taken alone.
+Alprazolam is most toxic.
+
+Drowsiness, ataxia, nystagmus,
+respiratory dysarthria, depression, coma.
+
+Buspirone24
+
+Low
+
+Limited data. Deaths not
+reported.
+
+Not known.
+
+CHAPTER 13
+
+Drug or drug group
+
+Signs and symptoms of overdose
+Sedation, coma, tachycardia,
+arrhythmia, pulmonary oedema,
+hypotension, QT prolongation,
+seizures, dystonia, NMS.
+
+Mood stabilisers
+
+Nausea, diarrhoea, tremor, confusion,
+weakness, lethargy, seizures, coma,
+cardiovascular collapse, bradycardia,
+arrhythmia, heart block, renal failure.
+
+Others
+
+
+
+
+<<<PAGE 902>>>
+
+63. Vigneault P, et al. Iloperidone (Fanapt(R)), a novel atypical antipsychotic, is a potent HERG blocker and delays cardiac ventricular repolarization at clinically relevant concentration. Pharmacol Res 2012; 66:60–65.
+64. Vanda Pharmaceuticals Inc. Highlights of prescribing information: FANAPT® (iloperidone) tablets. 2020; https://www.fanapt.com/product/
+pi/pdf/fanapt.pdf.
+65. Amon J, et al. A case of iloperidone overdose in a 27-year-old man with cocaine abuse. SAGE Open Medical Case Reports 2016;
+4:2050313x16660485.
+66. Vyas P, et al. An evaluation of lumateperone tosylate for the treatment of schizophrenia. Expert Opin Pharmacother 2020; 21:139–145.
+67. Sunovion Pharmaceuticals Europe Ltd. Summary of Product Characteristics. Latuda 18.5mg, 37mg and 74mg film-coated tablets 2020;
+https://www.medicines.org.uk/emc/medicine/29125.
+68. Molnar GP, et al. Acute lurasidone overdose. J Clin Psychopharmacol 2014; 34:768–770.
+69. Chue P, et al. A review of olanzapine-associated toxicity and fatality in overdose. J Psychiatry Neurosci 2003; 28:253–261.
+70. Waring WS, et al. Olanzapine overdose is associated with acute muscle toxicity. Hum Exp Toxicol 2006; 25:735–740.
+71. Morissette P, et al. Olanzapine prolongs cardiac repolarization by blocking the rapid component of the delayed rectifier potassium current.
+Journal of Psychopharmacology (Oxford, England) 2007; 21:735–741.
+72. Buckley NA, et al. Cardiotoxicity more common in thioridazine overdose than with other neuroleptics. J Toxicol Clin Toxicol 1995;
+33:199–204.
+73. Li C, et al. Acute pulmonary edema induced by overdosage of phenothiazines. Chest 1992; 101:102–104.
+74. Flanagan RJ. Fatal toxicity of drugs used in psychiatry. Human Psychopharmacology 2008; 23 Suppl 1:43–51.
+75. Sahli ZT, et al. Pimavanserin: novel pharmacotherapy for Parkinson’s disease psychosis. Expert Opinion on Drug Discovery 2018;
+13:103–110.
+76. Vanover KE, et al. Pharmacokinetics, tolerability, and safety of ACP-103 following single or multiple oral dose administration in healthy
+volunteers. J Clin Pharmacol 2007; 47:704–714.
+77. Langman LJ, et al. Fatal overdoses associated with quetiapine. J Anal Toxicol 2004; 28:520–525.
+78. Hunfeld NG, et al. Quetiapine in overdosage: a clinical and pharmacokinetic analysis of 14 cases. Ther Drug Monit 2006; 28:185–189.
+79. Strachan PM, et al. Mental status change, myoclonus, electrocardiographic changes, and acute respiratory distress syndrome induced by
+quetiapine overdose. Pharmacotherapy 2006; 26:578–582.
+80. Ngo A, et al. Acute quetiapine overdose in adults: a 5-Year retrospective case series. Ann Emerg Med 2008; 52:541–547.
+81. Liang CS, et al. Acute renal failure after paliperidone overdose: a case report. J Clin Psychopharmacol 2012; 32:128.
+82. Lapid MI, et al. Acute dystonia associated with paliperidone overdose. Psychosomatics 2011; 52:291–294.
+83. Gomez-Criado MS, et al. Ziprasidone overdose: cases recorded in the database of Pfizer-Spain and literature review. Pharmacotherapy 2005;
+25:1660–1665.
+84. Arbuck DM. 12,800-mg ziprasidone overdose without significant ECG changes. Gen Hosp Psychiatry 2005; 27:222–223.
+85. Insa Gomez FJ, et al. Ziprasidone overdose: cardiac safety. Actas Esp Psiquiatr 2005; 33:398–400.
+86. Klein-Schwartz W, et al. Prospective observational multi-poison center study of ziprasidone exposures. Clin Toxicol (Phila) 2007;
+45:782–786.
+87. Tan HH, et al. A systematic review of cardiovascular effects after atypical antipsychotic medication overdose. Am J Emerg Med 2009;
+27:607–616.
+88. Alipour A, et al. Torsade de pointes after ziprasidone overdose with coingestants. J Clin Psychopharmacol 2010; 30:76–77.
+89. Spiller HA. Management of carbamazepine overdose. Pediatr Emerg Care 2001; 17:452–456.
+90. Schmidt S, et al. Signs and symptoms of carbamazepine overdose. J Neurol 1995; 242:169–173.
+91. Alabi A, et al. Safety profile of lamotrigine in overdose. Ther Adv Psychopharmacol 2016; 6:369–381.
+92. Alyahya B, et al. Acute lamotrigine overdose: a systematic review of published adult and pediatric cases. Clin Toxicol (Phila) 2018;
+56:81–89.
+93. Tuohy K, et al. Acute lithium intoxication. Dial Transplant 2003; 32:478–481.
+94. Chen KP, et al. Implication of serum concentration monitoring in patients with lithium intoxication. Psychiatry Clin Neurosci 2004;
+58:25–29.
+95. Offerman SR, et al. Hospitalized lithium overdose cases reported to the California poison control system. Clin Toxicol (Phila) 2010;
+48:443–448.
+96. Ferrey AE, et al. Relative toxicity of mood stabilisers and antipsychotics: case fatality and fatal toxicity associated with self-poisoning. BMC
+Psychiatry 2018; 18:399.
+97. Isbister GK, et al. Valproate overdose: a comparative cohort study of self poisonings. Br J Clin Pharmacol 2003; 55:398–404.
+98. Spiller HA, et al. Multicenter case series of valproic acid ingestion: serum concentrations and toxicity. J Toxicol Clin Toxicol 2000;
+38:755–760.
+99. Sztajnkrycer MD. Valproic acid toxicity: overview and management. J Toxicol Clin Toxicol 2002; 40:789–801.
+100. Eyer F, et al. Acute valproate poisoning: pharmacokinetics, alteration in fatty acid metabolism, and changes during therapy. J Clin
+Psychopharmacol 2005; 25:376–380.
+101. Robinson P, et al. Severe hypothermia in association with sodium valproate overdose. N Z Med J 2005; 118:U1681.
+102. Reith DM, et al. Comparison of the fatal toxicity index of zopiclone with benzodiazepines. J Toxicol Clin Toxicol 2003; 41:975–980.
+103. Isbister GK, et al. Alprazolam is relatively more toxic than other benzodiazepines in overdose. Br J Clin Pharmacol 2004; 58:88–95.
+104. Gable RS. Comparison of acute lethal toxicity of commonly abused psychoactive substances. Addiction 2004; 99:686–696.
+
+CHAPTER 13
+
+Psychotropic drugs in special conditions  881
+
+

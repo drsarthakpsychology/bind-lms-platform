@@ -1,0 +1,659 @@
+<<<PAGE 88>>>
+
+76
+
+A Short Textbook of Psychiatry
+
+Mania represents a reaction formation (Table 17.1)
+to depression according to the psychodynamic theory.
+
+Table 6.5: Some Commonly used Antidepressants
+Generic Name
+
+Stress
+Increased number of stressful life events before the
+onset or relapse has a formative rather than a precipitating effect in depression though they can serve
+a precipitant role in mania. Increased stressors in
+the early period of development are probably more
+important in depression.
+
+Cognitive and Behavioural Theories
+The mechanisms of causation of depression, according
+to these theories, include depressive negative
+cognition (cognitive theory), learned helplessness
+(animal model), and anger directed inwards. These
+concepts are useful in the psychological treatment of
+mild (to moderate) depression.
+Several other theories have also been propounded
+but are currently considered to be of doubtful value
+as theories of causation of depression.
+
+DIFFERENTIAL DIAGNOSIS
+The first step in the differential diagnosis of any mood
+disorder is to exclude a disorder with known organic
+cause, e.g. organic (especially drug-induced) mood
+disorders and dementia (differential diagnosis from
+depressive pseudodementia).
+The second step is to rule out a possibility of acute
+and transient psychotic disorders, schizo-affective
+disorder, and schizophrenia.
+The third step is to exclude the possibility of other
+non-organic psychoses such as delusional disorders.
+The fourth step is to exclude the possibility of
+adjustment disorder with depressed mood, generalised
+anxiety disorder, normal grief reaction, and obsessive compulsive disorder (with or without secondary
+depression).
+In addition to the main diagnosis, it is also important to look for co-morbid medical (such as diabetes,
+hypertension) and/or psychiatric disorders (such as
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+
+Agomelatin
+Amitriptyline
+Amoxapine
+Bupropion
+Citalopram
+Clomipramine
+Doxepine
+Dosulepin/Dotheipin
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Imipramine
+Lofepramine
+Mianserin
+Mirtazapine
+Moclobemide
+Nortriptyline
+Paroxetine
+Reboxetine
+Sertraline
+Tianeptin
+Trazodone
+Venlafaxine
+
+Usual Therapeutic
+Range (mg/day)
+25-50
+75-300
+150-300
+150-450
+10-40
+75-250
+75-300
+75-150
+30-120
+10-20
+20-60
+50-200
+75-300
+140-210
+30-120
+15-45
+300-600
+150-300
+10-40
+10-12
+50-200
+37.5
+300-600
+75-375
+
+anxiety, panic, alcohol or drug misuse, or personality disorder) on a multi-axial diagnostic system
+(Table 1.4).
+
+MANAGEMENT
+Somatic Treatment
+Antidepressants
+Antidepressants are the treatment of choice for a vast
+majority of depressive episodes. Some of the commonly used antidepressants with their usual range of
+therapeutic dosage are listed in Table 6.5. (Antidepressants are discussed in more detail in Chapter 15).
+
+
+
+
+<<<PAGE 110>>>
+
+98
+
+A Short Textbook of Psychiatry
+
+Treatment
+Psychotherapy
+1. Psychoanalytic psychotherapy is used in certain
+selected patients, who are psychologically oriented.
+2. Supportive psychotherapy is an important adjunct to other modes of treatment. Supportive
+psychotherapy is also needed by the family
+members.
+
+Behaviour Therapy and Cognitive
+Behaviour Therapy
+Behaviour modification is an effective mode of
+therapy, with a success rate as high as 80%, especially
+for the compulsive acts. It is customary these days to
+combine CBT with BT at most centres.
+The techniques used are listed below (They are
+described in Chapter 18):
+i. Thought-stopping (and its modifications).
+ii. Response prevention.
+iii. Systematic desensitisation.
+iv. Modelling.
+
+Drug Treatment
+1. Benzodiazepines (e.g. alprazolam, clonazepam)
+have a limited role in controlling anxiety as
+adjuncts and should be used very sparingly.
+2. Antidepressants: Some patients may improve
+dramatically with specific serotonin reuptake
+inhibitors (SSRIs).
+Clomipramine (75-300 mg/day), a nonspecific
+serotonin reuptake inhibitor (SRI), was the first
+drug used effectively in the treatment of OCD.
+The response is better in the presence of depressive symptoms, but many patients with pure
+OCD also improve substantially.
+Fluoxetine (20-80 mg/day) is a good alternative to clomipramine and often preferred these
+days for its better side-effect profile. Fluvoxamine (50-200 mg/day) is marketed as a specific
+anti-obsessional SSRI drug, whilst paroxetine
+
+(20-40 mg/day) and sertraline (50-200 mg/day)
+are also effective in some patients.
+3. Antipsychotics: These are occasionally used in
+low doses (e.g. haloperidol, risperidone, olanzapine, aripiprazole, pimozide) in the treatment
+of severe, disabling anxiety.
+4. Buspirone has also been used beneficially as
+an adjunct for augmentation of SSRIs, in some
+patients.
+
+Electroconvulsive Therapy
+In presence of severe depression with OCD, ECT may
+be needed. ECT is particularly indicated when there is
+a risk of suicide and/or when there is a poor response
+to the other modes of treatment. However, ECT is not
+the treatment of first choice in OCD.
+
+Psychosurgery
+Psychosurgery can be used in treatment of OCD that
+has become intractable, and is not responding to other
+methods of treatment. It is worth mentioning that
+psychosurgery is only available as a treatment choice
+at a very few centres throughout the world.
+The best responders are usually those who have
+significant associated depression, although pure
+obsessives also do respond. The main benefit is the
+marked reduction in associated distress and severe
+anxiety.
+The procedures which can be employed are:
+i. Stereotactic limbic leucotomy.
+ii. Stereotactic subcaudate tractotomy.
+Psychosurgery is usually followed by intensive
+behaviour therapy aimed at rehabilitation. However,
+with the easy availability of SSRIs, and a good response of OCD symptoms to SSRIs and other pharmacological measures, psychosurgery is very rarely
+used in the treatment of OCD.
+Very often, a comprehensive treatment of OCD
+requires that multiple treatment modalities (e.g. drug
+treatment and BT/CBT) be combined in a specific
+manner, suitable to the particular patient being treated
+at the time.
+
+
+
+
+<<<PAGE 195>>>
+
+Psychopharmacology
+
+183
+
+Table 15.6: Classification and Properties of Antidepressants
+Drugs
+
+Oral Dose
+(mg/d)
+
+Some Common Adverse Effects#
+Sedation* Orthostatic Hypotension* Anticholinergic*
+
+I. Cyclic Antidepressants
+A. Tricyclic Tertiary Amines
+1. Amitriptyline
+75-300
++++
+2. Clomipramine
+75-250
+++
+3. Dosulepin (Dotheipin)
+75-300
++++
+4. Doxepine
+75-300
++++
+5. Imipramine
+75-300
+++
+6. Lofepramine
+70-210
++
+7. Tri-imipramine
+75-300
++++
+B. Tricyclic Secondary Amines
+1. Desipramine
+75-300
+±
+2. Nortriptyline
+75-200
++
+3. Protriptyline
+15-60
+0
+C. Tetracyclic Antidepressants
+1. Amoxapine
+150-400
++
+2. Maprotiline
+75-225
+++
+3. Mianserin
+30-120
++++
+D. Bicyclic Antidepressants
+1. Viloxazine
+100-300
+±
+II. Selective Serotonin Reuptake Inhibitors (SSRIs)
+1. Citalopram
+20-40
+±
+2. Escitalopram
+10-20
+±
+3. Fluoxetine
+20-60
+±
+4. Fluvoxamine
+50-300
+±
+5. Paroxetine
+20-40
++
+6. Sertraline
+50-200
+±
+III. Serotonin Norepinephrine Reuptake Inhibitors (SNRIs)
+1. Duloxetine
+60
+±
+2. Venlafaxine
+75-375
++
+
++++
+++
++++
++++
+++
++
+++
+
++++
+++
+++
++
+++
++
+++
+
++
+++
+++
+
+++
++
+++
+
++
+++
+±
+
+++
+++
+±
+
+±
+
+±
+
+±
+±
+0
+±
+0
+±
+
+0
+0
+0
+±
+±
+0
+
+±
+±
+
+±
+±
+
+IV. Norepinephrine Serotonin Reuptake Enhancers (NSREs)
+1. Tianeptin
+37.5
++
+0
+V. Noradrenergic and Specific Serotonergic Antagonists (NaSSAs)
+1. Mirtazapine
+15-45
++++
++
+VI. Norepinephrine Dopamine Reuptake Inhibitors (NDRIs)
+1. Bupropion
+150-450
+Activating 0
+VII. Serotonin Antagonists and Reuptake Inhibitors (SARIs)
+1. Nefazodone
+200-600
+++
++
+(withdrawn from market)
+2. Trazodone
+150-400
++++
+±
+
+±
+±
+0
+±
+±
+Contd...
+
+
+
+
+<<<PAGE 204>>>
+
+192
+
+A Short Textbook of Psychiatry
+
+Rapid cycling bipolar disorder and mixed (or dysphoric) mania: The patients with rapid cycling, mixed
+affective episodes, or dysphoric mania are often
+resistant to lithium treatment and respond better to
+valproate. Valproate is also effective in management
+of ultra-rapid cycling mood disorders.
+Bipolar depression: Valproate appears to be generally
+more effective in the treatment of acute mania than in
+bipolar depression.
+
+The use of valproate in pregnancy and lactation
+should be best avoided. The NICE guidelines for treatment of bipolar disorder recommend that valproate is
+best avoided in women of childbearing potential (see
+Further Reading List).
+In overdose, the amount of drug, that is not protein
+bound, is high. Therefore, dialysis is useful in the
+management of an overdose with valproate.
+
+Neurological Disorders
+
+Certain drug may increase (such as aspirin, cimetidine,
+ibuprofen, erythromycin, fluoxetine, fluvoxamine,
+phenothiazines) or decrease (such as carbamazepine,
+phenytoin, phenobarbital, ethosuximide, rifampicin,
+mefloquine) the serum levels of valproate.
+In addition, valproate increases serum levels of
+other drugs (such as lamotrigine, tricyclic antidepressants, zidovudine, tolbutamide).
+
+Migraine and Pain syndromes: Valproate has been
+used for prophylaxis of migraine headaches, as well
+as for aborting an acute attack (IV route). Valproate
+has also been used in treatment of trigeminal neuralgia
+and neuropathic pain.
+Seizure disorders: Valproate is primarily indicated for
+treatment of absence seizures (both simple and complex), complex partial seizures, myoclonic seizures,
+and generalised tonic-clonic seizures, as monotherapy
+as well as adjunct therapy.
+
+Other Disorders
+Valproate has also been used at times in several other
+conditions, including behavioural agitation in dementia, severe behavioural symptoms in mental retardation, ADHD and conduct disorder, schizoaffective
+disorder (bipolar type), alcohol withdrawal, tardive
+dyskinesia, impulse control disorder, panic disorder
+and borderline personality disorder.
+
+Side Effects
+Adverse effects are more common with valproate
+concentrations above 100 mg/ml.
+The common side effects are nausea, sedation, tremor, flushing, weight gain, thrombocytopenia, menstrual disturbances (in women) and hair
+loss. There are some reports of polycystic ovaries
+and hyperandrogenism in young women with
+epilepsy.
+The most serious, though relatively uncommon,
+side effects include hepatic toxicity (especially in
+young children), acute haemorrhagic pancreatitis, and
+Steven-Johnson syndrome.
+
+Drug Interactions
+
+CARBAMAZEPINE
+Like lithium and valproate, carbamazepine too has
+been used as an antimanic and for prophylaxis of bipolar disorder. It is a tricyclic compound synthesised
+in 1953 by Schindler. It has a structure similar to
+TCAs. The onset of action can be faster as compared
+to lithium, but slower compared to valproate.
+The usual dose is 600-1600 mg/day orally, in
+divided doses. The treatment is best monitored with
+repeated blood levels. The therapeutic blood levels
+are 4-12 μg/ml and the toxic blood levels are usually
+reached at >15 μg/ml.
+
+Indications
+The indications for use of carbamazepine include:
+1. Seizures
+i. Complex partial seizures (CPS)
+ii. Generalised tonic clonic seizures
+iii. Alcohol withdrawal seizures (rum fits), if persistent (also used sometimes for treatment of
+simple alcohol withdrawal syndrome)
+2. Psychiatric disorders
+i. Bipolar mood disorder (especially for rapid
+cyclers; lithium-refractory patients; lithium-
+
+
+
+
+<<<PAGE 268>>>
+
+256
+
+A Short Textbook of Psychiatry
+
+Ferric chloride test 157
+Fetishism 125
+Fetishistic transvestism 122, 125
+First generation antipsychotics 66
+Flapping tremor 20
+Flashback phenomenon 46
+Flight of ideas 12, 70
+Floccillation 20
+Flooding 94, 215
+Flumazenil 51, 91, 196, 227
+Fluoxetine 42, 85, 95, 98, 131, 144,
+169, 171
+Flupentixol 66
+Flurazepam 137
+Fluvoxamine 98
+Forensic psychiatry 229
+Formal operational stage 155
+Fragile-X syndrome 159
+Free association 214
+Free basing 47
+Frontal lobe syndrome 31
+Frottage 125
+Frotteurism 125
+Functions of sleep 135
+Furore 59
+
+H
+
+G
+GABA 64, 67, 75, 91
+benzodiazepine receptors 91
+Galantamine 25, 26
+Ganser’s syndrome 102
+GCP guidelines 234
+Gender identity disorders 121, 123
+Generalised
+amnesia 101
+anxiety disorder 90
+Genetic hypothesis 63, 75
+Genital phase 212
+GGT 37
+Gilles de la Tourette’s syndrome 168
+Glasgow coma scale 14, 226
+Globus hystericus 109
+Glyceryl trinitrate 132
+Gratification habits 171
+Grid-iron abdomen 120
+Grimacing 57
+Group
+psychotherapy 68, 131
+therapy 41, 80, 144, 217
+Guru-Chela relationship 219
+Guthrie’s test 157
+
+Habit
+and impulse disorders 119
+disorders 170
+Hallucinations 13, 28, 56, 58, 60-62, 71
+Hallucinatory behaviour 12
+Haloperidol 26, 28-30, 66, 149, 165, 228
+Hangover 37
+Hebephrenia 54
+Heller’s syndrome 165
+Hermaphrodite 123
+Hierarchy construction 214
+Higher mental functions 13
+Hindu
+Adoptions and Maintenance Act 230
+Marriage Act 229
+History of
+biological treatments in psychiatry
+200
+present illness 6
+Histrionic personality
+disorder 116
+traits 105
+Homosexuality 123
+Hopelessness 71
+Hostility 64, 68, 148
+Hyperkinesis 164
+Hyperkinetic disorder 166
+Hyperphagia 139
+Hypersexuality 139
+Hypersomnia 137, 139
+Hyperventilation syndrome 106, 228
+Hypnagogic
+hallucinations 138
+phenomena 134
+Hypnosis 131, 217, 219
+Hypnotisability 217
+Hypoactive sexual desire disorder 126
+Hypochondriacal
+disorder 105
+features 60, 72
+paranoia 84
+Hypochondriasis 105, 209
+Hypomania 70
+Hypothyroid dementia 25
+Hysteria 99
+Hysterical pseudodementia 102
+
+I
+ICD-10 2
+Id 206
+Idazoxan 132
+
+Identification
+data 6
+with aggressor 209
+Idiot savant syndrome 164
+Imipramine 95, 167, 169, 182
+Immediate retention and recall 14
+Impaired abstraction 56
+Impairment of memory 27
+Impotence 127, 128
+Indian
+Contract Act 231
+Evidence Act 230
+Lunacy Act, 1912 231, 232
+Lunatic Asylums Act 231
+Succession Act 230
+Induced delusional disorder 85
+Inferiority complex 117
+Informants 6
+Information processing hypothesis 65
+Insomnia 38, 136
+Institutionalisation 161
+Insulin coma therapy 67
+Intellectual development 153
+Intelligence 14
+Intermetamorphosis 87
+International Pilot Study on Schizophrenia 63
+Inter-sexuality 123
+Interview technique 5
+Intracranial space occupying lesions 28
+Introjection 75, 209
+Investigations in psychiatry 15
+Involutional melancholia 80
+Iproniazid 181
+Irritable
+bowel syndrome 107
+mood 70
+Isolation of affect 96, 208
+Isoniazid 181
+
+J
+Jacobson’s progressive 107
+muscular relaxation 92, 131, 219
+Jean Piaget 153
+Jet lag 140
+Judicial inquisition 232
+Juvenile delinquents 167
+
+K
+K-complexes 133
+Ketamine 52, 218
+Kleine-Levin syndrome 139
+
+

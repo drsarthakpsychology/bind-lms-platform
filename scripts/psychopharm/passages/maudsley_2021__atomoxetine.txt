@@ -1,0 +1,783 @@
+<<<PAGE 591>>>
+
+570  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Box 5.2 Summary of NICE guidance for ADHD in children1
+Drug treatment should only be initiated by a specialist and only after a comprehensive
+assessment of mental and physical health and social influences. In children under 5 years,
+medication should be initiated after a second specialist opinion from an ADHD service with
+expertise in managing ADHD in younger children (ideally a tertiary service).
+■■ An ADHD-focused group parent-training programme should be offered for parents or carers
+of children under 5 years with ADHD. Environmental modifications need to be implemented
+in all cases. If ADHD symptoms are still causing a persistent significant impairment in at least
+one domain despite environmental modifications, medication can be offered following a
+baseline assessment.
+■■ Methylphenidate, lisdexamfetamine, dexamfetamine, atomoxetine and guanfacine are
+recommended within their licensed indications.
+■■ Methylphenidate (either short or long acting) is the first choice of medication.
+■■ Consider switching to lisdexamfetamine for children aged 5 years and over and young people
+who have had a 6-week trial of methylphenidate at an adequate dose and not derived
+enough benefit in terms of reduced ADHD symptoms and associated impairment.
+■■ Consider dexamfetamine for children aged 5 years and over and young people whose ADHD
+symptoms are responding to lisdexamfetamine but who cannot tolerate the longer effect
+profile.
+■■ Offer atomoxetine or guanfacine to children aged 5 years and over and young people if they
+cannot tolerate methylphenidate or lisdexamfetamine or their symptoms have not responded
+to separate 6-week trials of lisdexamfetamine and methylphenidate, having considered
+alternative preparations and adequate doses.
+■■ Monitoring should include measurement of height and weight (with entry on growth charts)
+and recording of blood pressure and heart rate. An electrocardiogram (ECG) is not needed
+before starting stimulants, atomoxetine or guanfacine, unless the person has any of the
+following:
+■■ history of congenital heart disease or previous cardiac surgery
+■■ history of sudden death in a first-degree relative under 40 years suggesting a cardiac
+disease
+■■ shortness of breath on exertion compared with peers
+■■ fainting on exertion or in response to fright or noise
+■■ palpitations that are rapid, regular and start and stop suddenly
+■■ chest pain suggesting cardiac origin
+■■ signs of heart failure
+■■ a murmur heard on cardiac examination
+■■ blood pressure that is classified as hypertensive for adults
+■■ a co-existing condition that is being treated with a medicine that may pose an increased
+cardiac risk.
+
+CHAPTER 5
+
+■■
+
+A cardiology opinion should be sought if any of the above apply.
+
+There is some evidence supporting the efficacy of tricyclic antidepressants18,19 but
+these are not recommended in clinical practice.
+■■ Bupropion8,20,21 seems to be efficacious and well-tolerated. Modafinil also appears
+to have useful activity in children but not in adults with ADHD.8,22,23 Evidence supporting the use of these drugs is somewhat limited compared with standard
+treatments.8
+■■
+
+
+
+
+<<<PAGE 592>>>
+
+Children and adolescents  571
+
+The use of second-generation antipsychotics24,25 for ADHD is not recommended.24,25
+These may reduce hyperactivity in ASD26 but should not be prescribed for this
+indication.
+■■ Co-morbid psychiatric illness is common in children with ADHD. Stimulants are
+often helpful overall but are unlikely to be appropriate for children who have a psychotic illness. Problems with substance misuse should be managed in their own right
+alongside ADHD treatment27 and treatments need to be chosen carefully.
+■■ Combinations of stimulants and atomoxetine have been used, but there are few trials
+and no clear evidence for improved efficacy.28
+■■ Once stimulant treatment has been established, it is appropriate for repeat prescriptions to be supplied through general practitioners.1
+
+■■
+
+ADHD in adults
+ADHD first diagnosed in adult life is compatible with both ICD-11 and DSM-5. NICE
+guidance regards the first line of treatment as medication, following the same principles
+as for drug treatment in children (see Table 5.6).
+Around 65% of patients with ADHD continue to meet full criteria or have achieved
+only partial remission by adulthood.29 It is appropriate to continue treatment started
+in childhood in adults whose symptoms remain disabling.
+■■ A first-time diagnosis of ADHD in an adult should only be made after a comprehensive assessment. Whenever possible this should include information from other
+informants and from adults who knew the patient as a child. It is recommended to
+establish the symptoms and impairments of ADHD using a validated diagnostic
+interview assessment such as the Diagnostic Interview for DSM-IV ADHD (DIVA).30
+■■ The prevalence of substance misuse and antisocial personality disorder are high in
+adults whose ADHD was not recognised in childhood.31 Methylphenidate can be
+effective in this population,32 but caution is appropriate in prescribing and
+monitoring.
+■■ For adults with ADHD and drug or alcohol addiction disorders, there should be close
+liaison between the professional treating the ADHD and an addiction specialist.
+■■ Methylphenidate or lisdexamfetamine are considered first-line choices of medication
+in adults.1
+■■ Dexamfetamine can be used for adults whose ADHD symptoms are responding to
+lisdexamfetamine but who cannot tolerate the longer effect profile.
+■■ For atomoxetine, monitoring for symptoms of liver dysfunction and suicidal thinking
+is advised.
+■■ Atomoxetine, lisdexamfetamine and two modified release formulations of methylphenidate (Medikinet XL, Ritalin XL) are licensed for first-time use in adults with
+ADHD. Concerta XL (another modified-release formulation of methylphenidate) is
+licensed for continued treatment when initiated before the age of 18 years.
+
+CHAPTER 5
+
+■■
+
+
+
+
+<<<PAGE 595>>>
+
+Onset: 60 minutes
+Duration: 8–12 hours
+
+Onset: 20–60 minutes
+Duration: 3–6 hours
+
+Onset: 20–60 minutes
+Duration: 13+ hours
+
+Approximately 4–6 weeks
+
+Ritalin XL (refs SPC, public
+assessment report)
+
+Dexamfetamine
+immediate release36,46
+
+Lisdexamfetamine
+(Elvanse)2–4
+
+Atomoxetine48,49
+
+(atomoxetine is a
+noradrenaline reuptake
+inhibitor)
+
+Onset and duration of
+action
+
+Medication
+
+Table 5.6 (Continued)
+
+For children >70kg: Initially 40mg daily for
+7 days, then increase according to response.
+Recommended maintenance dose 80mg
+daily
+
+May be useful where stimulant
+diversion is a problem50
+
+For children <70kg: Initially 0.5mg/kg/day for
+7 days, then increase according to response.
+Recommended maintenance dose 1.2mg/kg/
+day (in single or divided doses) and up to
+1.8mg/kg/day, to a maximum of 120mg daily
+if necessary1
+
+Licensed in adults
+
+Less effective than stimulants (see
+main ADHD text)11,15
+
+Prodrug, gradually hydrolysed to
+dexamfetamine
+Capsules can be opened and
+sprinkled47
+Licensed in adults
+
+Considered to be less well
+tolerated than methylphenidate36
+
+Consists of an immediate-release
+component (50% of the dose)
+and a modified-release
+component (50% of the dose
+
+Notes
+
+When switching from a stimulant, continue
+stimulant for first 4 weeks of therapy
+
+Initially 20 or 30mg in the morning, titrated
+up to a licensed maximum dose of 70mg
+daily
+
+Initially 2.5–10mg daily, titrated up in weekly
+increments of 2.5–5mg, to a maximum of
+20mg daily in divided doses (occasionally up
+to 40mg daily necessary)
+
+Dose as for Equasym XL
+
+Dose
+
+Monitor young people and
+adults with ADHD for sexual
+dysfunction (that is, erectile
+and ejaculatory dysfunction)
+as potential adverse effects
+of atomoxetine.
+Not a Controlled Drug
+
+Monitor for insomnia, mood
+and appetite change and
+the development of tics
+
+Blood pressure51
+Pulse
+Height
+Weight
+
+Recommended
+monitoring/general notes
+
+
+
+
+<<<PAGE 597>>>
+
+576  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 5
+
+References
+1. National Institute for Health and Clinical Excellence. Attention deficit hyperactivity disorder: diagnosis and management. NICE guideline
+[NG87] 2018 (Last updated September 2019); https://www.nice.org.uk/guidance/NG87.
+2. Biederman J, et al. Lisdexamfetamine dimesylate and mixed amphetamine salts extended-release in children with ADHD: a double-blind,
+placebo-controlled, crossover analog classroom study. Biol Psychiatry 2007; 62:970–976.
+3. Coghill D, et al. European, randomized, phase 3 study of lisdexamfetamine dimesylate in children and adolescents with attention-deficit/
+hyperactivity disorder. Eur Neuropsychopharmacol 2013; 23:1208–1218.
+4. Findling RL, et al. Efficacy and safety of lisdexamfetamine dimesylate in adolescents with attention-deficit/hyperactivity disorder. J Am Acad
+Child Adolesc Psychiatry 2011; 50:395–405.
+5. Heal DJ, et al. Amphetamine, past and present – a pharmacological and clinical perspective. J Psychopharmacol 2013; 27:479–496.
+6. Coghill DR, et al. Long-term safety and efficacy of lisdexamfetamine dimesylate in children and adolescents with ADHD: a phase IV, 2-year,
+open-label study in Europe. CNS Drugs 2017; 31:625–638.
+7. Joseph A, et al. Comparative efficacy and safety of attention-deficit/hyperactivity disorder pharmacotherapies, including guanfacine extended
+release: a mixed treatment comparison. Eur Child Adolesc Psychiatry 2017; 26:875–897.
+8. Cortese S, et al. Comparative efficacy and tolerability of medications for attention-deficit hyperactivity disorder in children, adolescents, and
+adults: a systematic review and network meta-analysis. Lancet Psychiatry 2018; 5:727–738.
+9. Findling RL, et al. Long-term effectiveness and safety of lisdexamfetamine dimesylate in school-aged children with attention-deficit/hyperactivity disorder. CNS Spectr 2008; 13:614–620.
+10. Michelson D, et al. Once-daily atomoxetine treatment for children and adolescents with attention deficit hyperactivity disorder: a randomized, placebo-controlled study. Am J Psychiatry 2002; 159:1896–1901.
+11. Kratochvil CJ, et al. Atomoxetine and methylphenidate treatment in children with ADHD: a prospective, randomized, open-label trial. J Am
+Acad Child Adolesc Psychiatry 2002; 41:776–784.
+12. Weiss M, et al. A randomized, placebo-controlled study of once-daily atomoxetine in the school setting in children with ADHD. J Am Acad
+Child Adolesc Psychiatry 2005; 44:647–655.
+13. Kratochvil CJ, et al. A double-blind, placebo-controlled study of atomoxetine in young children with ADHD. Pediatrics 2011; 127:e862–e868.
+14. Catala-Lopez F, et al. The pharmacological and non-pharmacological treatment of attention deficit hyperactivity disorder in children and
+adolescents: a systematic review with network meta-analyses of randomised trials. PLoS One 2017; 12:e0180355.
+15. Liu Q, et al. Comparative efficacy and safety of methylphenidate and atomoxetine for attention-deficit hyperactivity disorder in children and
+adolescents: meta-analysis based on head-to-head trials. J Clin Exp Neuropsychol 2017; 39:854–865.
+16. Connor DF, et al. A meta-analysis of clonidine for symptoms of attention-deficit hyperactivity disorder. J Am Acad Child Adolesc Psychiatry
+1999; 38:1551–1559.
+17. National Institute for Health and Care Excellence. Attention deficit hyperactivity disorder in children and young people: guanfacine prolonged-release. Evidence summary [ESNM70] 2016; https://www.nice.org.uk/advice/esnm70/chapter/Key-points-from-the-evidence.
+18. Hazell P. Tricyclic antidepressants in children: is there a rationale for use? CNS Drugs 1996; 5:233–239.
+19. Otasowie J, et al. Tricyclic antidepressants for attention deficit hyperactivity disorder (ADHD) in children and adolescents. Cochrane
+Database Syst Rev 2014:Cd006997.
+20. Gorman DA, et al. Canadian guidelines on pharmacotherapy for disruptive and aggressive behaviour in children and adolescents with
+attention-deficit hyperactivity disorder, oppositional defiant disorder, or conduct disorder. Can J Psychiatry 2015; 60:62–76.
+21. Ng QX. A systematic review of the use of bupropion for attention-deficit/hyperactivity disorder in children and adolescents. J Child Adolesc
+Psychopharmacol 2017; 27:112–116.
+22. Biederman J, et al. A comparison of once-daily and divided doses of modafinil in children with attention-deficit/hyperactivity disorder: a
+randomized, double-blind, and placebo-controlled study. J Clin Psychiatry 2006; 67:727–735.
+23. Wang SM, et al. Modafinil for the treatment of attention-deficit/hyperactivity disorder: a meta-analysis. J Psychiatr Res 2017; 84:292–300.
+24. Einarson TR, et al. Novel antipsychotics for patients with attention-deficit hyperactivity disorder: a systematic review. Ottawa: Canadian
+Coordinating Office for Health Technology Assessment (CCOHTA) 2001: Technology Report No 17.
+25. Pringsheim T, et al. The pharmacological management of oppositional behaviour, conduct problems, and aggression in children and adolescents with attention-deficit hyperactivity disorder, oppositional defiant disorder, and conduct disorder: a systematic review and meta-analysis.
+Part 2: antipsychotics and traditional mood stabilizers. Can J Psychiatry 2015; 60:52–61.
+26. Ji N, et al. An update on pharmacotherapy for autism spectrum disorder in children and adolescents. Current Opinion Psychiatry 2015;
+28:91–101.
+27. Humphreys KL, et al. Stimulant medication and substance use outcomes: a meta-analysis. JAMA Psychiatry 2013; 70:740–749.
+28. Treuer T, et al. A systematic review of combination therapy with stimulants and atomoxetine for attention-deficit/hyperactivity disorder,
+including patient characteristics, treatment strategies, effectiveness, and tolerability. J Child Adolesc Psychopharmacol 2013; 23:179–193.
+29. Thapar A, et al. Attention deficit hyperactivity disorder. Lancet 2016; 387:1240–1250.
+30. DIVA Foundation. DIVA-5: diagnostic interview for ADHD in adults (DIVA) 2019; https://www.divacenter.eu/DIVA.aspx?id=461.
+31. Cosgrove PVF. Attention deficit hyperactivity disorder. Primary Care Psychiatry 1997; 3:101–114.
+32. Spencer T, et al. A double-blind, crossover comparison of methylphenidate and placebo in adults with childhood-onset attention-deficit
+hyperactivity disorder. Arch Gen Psychiatry 1995; 52:434–443.
+33. Wolraich ML, et al. Pharmacokinetic considerations in the treatment of attention-deficit hyperactivity disorder with methylphenidate. CNS
+Drugs 2004; 18:243–250.
+
+
+
+
+<<<PAGE 598>>>
+
+34. BNF Online. British National Formulary 2020; https://www.medicinescomplete.com/mc/bnf/current.
+35. Janssen-Cilag Ltd. Summary of product characteristics. Concerta XL 18 mg 27 mg 36 mg and 54 mg prolonged-release tablets. 2020; https://
+www.medicines.org.uk/emc/product/6872/smpc.
+36. Efron D, et al. Side effects of methylphenidate and dexamphetamine in children with attention deficit hyperactivity disorder: a double-blind,
+crossover trial. Pediatrics 1997; 100:662–666.
+37. Hennissen L, et al. Cardiovascular effects of stimulant and non-stimulant medication for children and adolescents with ADHD: a systematic
+review and meta-analysis of trials of methylphenidate, amphetamines and atomoxetine. CNS Drugs 2017; 31:199–215.
+38. Gadow KD, et al. Efficacy of methylphenidate for attention-deficit hyperactivity disorder in children with tic disorder. Arch Gen Psychiatry
+1995; 52:444–455.
+39. Cohen SC, et al. Meta-analysis: risk of tics associated with psychostimulant use in randomized, placebo-controlled trials. J Am Acad Child
+Adolesc Psychiatry 2015; 54:728–736.
+40. Hoare P, et al. 12-month efficacy and safety of OROS MPH in children and adolescents with attention-deficit/hyperactivity disorder switched
+from MPH. Eur Child Adolesc Psychiatry 2005; 14:305–309.
+41. Remschmidt H, et al. Symptom control in children and adolescents with attention-deficit/hyperactivity disorder on switching from immediate-release MPH to OROS MPH results of a 3-week open-label study. Eur Child Adolesc Psychiatry 2005; 14:297–304.
+42. Wolraich ML, et al. Randomized, controlled trial of OROS methylphenidate once a day in children with attention-deficit/hyperactivity disorder. Pediatrics 2001; 108:883–892.
+43. Findling RL, et al. Comparison of the clinical efficacy of twice-daily ritalin and once-daily equasym XL with placebo in children with attention deficit/hyperactivity disorder. Eur Child Adolesc Psychiatry 2006; 15:450–459.
+44. Anderson VR, et al. Spotlight on methylphenidate controlled-delivery capsules (equasym XLTM) in the treatment of children and adolescents
+with attention-deficit hyperactivity disorder. CNS Drugs 2007; 21:173–175.
+45. Flynn Pharma Ltd. Summary of Product Characteristics. Medikinet XL 5 mg 10 mg 20 mg 30 mg 40 mg 50 mg 60 mg modified release
+capsules 2019; https://www.medicines.org.uk/emc/product/313/smpc.
+46. Cyr M, et al. Current drug therapy recommendations for the treatment of attention deficit hyperactivity disorder. Drugs 1998; 56:215–223.
+47. Shire Pharmaceuticals Limited. Summary of Product Characteristics. Elvanse 20 mg, 30 mg, 40 mg, 50 mg, 60 mg & 70 mg capsules, hard
+(lisdexamfetamine) 2019; https://www.medicines.org.uk/emc/medicine/27442.
+48. Kelsey DK, et al. Once-daily atomoxetine treatment for children with attention-deficit/hyperactivity disorder, including an assessment of
+evening and morning behavior: a double-blind, placebo-controlled trial. Pediatrics 2004; 114:e1-e8.
+49. Wernicke JF, et al. Cardiovascular effects of atomoxetine in children, adolescents, and adults. Drug Saf 2003; 26:729–740.
+50. Heil SH, et al. Comparison of the subjective, physiological, and psychomotor effects of atomoxetine and methylphenidate in light drug users.
+Drug Alcohol Depend 2002; 67:149–156.
+51. Reed VA, et al. The safety of atomoxetine for the treatment of children and adolescents with attention-deficit/hyperactivity disorder: a comprehensive review of over a decade of research. CNS Drugs 2016; 30:603–628.
+52. Childress A, et al. Evaluation of the current data on guanfacine extended release for the treatment of ADHD in children and adolescents.
+Expert Opin Pharmacother 2020; 21:417–426.
+53. Takeda UK ltd. Guanfacine modified-release. Personal Communication, 2020.
+54. Cortese S, et al. New formulations of methylphenidate for the treatment of attention-deficit/hyperactivity disorder: pharmacokinetics, efficacy, and tolerability. CNS Drugs 2017; 31:149–160.
+
+CHAPTER 5
+
+Children and adolescents  577
+
+
+
+
+<<<PAGE 601>>>
+
+580  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Pharmacological treatment of co-occurring disorders and problem
+behaviours in ASD
+
+CHAPTER 5
+
+Inattention, overactivity and impulsiveness in ASD (symptoms of ADHD)
+Individuals with ASD have high rates of inattention, overactivity and impulsiveness and
+in an around one-third these symptoms merit the diagnosis of ADHD.1,30
+The largest controlled trial to date has been with methylphenidate and conducted by
+the Research Units on Paediatric Psychopharmacology (RUPP) Autism Network.31,32 In
+a previous retrospective and prospective study of children with ASD, Santosh and colleagues33 reported positive benefits of treatment with methylphenidate. In general,
+methylphenidate produces highly variable responses in children with ASD and ADHD
+symptoms, ranging from marked improvement with few adverse effects to poor response
+with or without problematic adverse effects. A large double-blind, placebo-controlled
+trial of methylphenidate in children with intellectual disability and ADHD showed that
+optimal dosing with methylphenidate was effective in some.34 Adverse effects are more
+commonly reported than in children with ADHD alone.35–37 However, where ADHD
+symptoms are severe and/or disabling, it is reasonable to proceed with a treatment trial
+of methylphenidate. It is advisable to warn parents of the lower likelihood of response
+and the potential adverse effects and to proceed with low initial does (around 0.125mg/
+kg three times daily, depending on the preparation) increasing with small increments.
+Treatment should be stopped immediately if behaviour deteriorates or there are unacceptable adverse effects. A recent systematic review6 confirms that although effective,
+the efficacy of methylphenidate for the treatment of ADHD in ASD is less than in
+ADHD alone and that more adverse effects (decreased appetite, sleeping difficulties,
+abdominal discomfort, social withdrawal, irritability and emotional outbursts) should
+be expected in ASD.
+There are no published data on the efficacy of amfetamines in children with ASD
+even though they have been used to treat ADHD in these patients as well as typically developed children. Lisdexamfetamine (pro-drug containing d-amphetamine
+bound to amino acid lysine) has been found to have efficacy and tolerability in
+treating ADHD in children and young people38 but with no specific data about
+those with ASD.
+Atomoxetine is a noradrenergic reuptake inhibitor licensed to treat ADHD with similar efficacy to methylphenidate.6 Preliminary evidence from small open-label trials and
+a handful randomised double-blind trials39,40 that it may be useful in children with ASD,
+with the most common side effects being nausea, fatigue and sleep difficulties were followed by a larger trial which confirmed that atomoxetine (alone and combined with
+parent training) significantly reduced ADHD symptoms.41 At 24-week extension of the
+same study, atomoxetine combined with parent training was superior at reducing
+ADHD symptoms to atomoxetine alone.42
+There is evidence that α2 agonists (clonidine and guanfacine) can be used as alternative treatments. A recent multisite RCT of extended-release guanfacine compared
+with placebo in children with ASD (mean age 8.5 years) over a period of 8 weeks
+showed that it is safe and effective in managing hyperactivity in this group.43 No serious adverse events except for drowsiness, fatigue, and decreased appetite were
+reported.
+
+
+
+
+<<<PAGE 606>>>
+
+36. Siegel M, et al. Psychotropic medications in children with autism spectrum disorders: a systematic review and synthesis for evidence-based
+practice. J Autism Dev Disord 2012; 42:1592–1605.
+37. Williamson ED, et al. Psychotropic medications in autism: practical considerations for parents. J Autism Dev Disord 2012; 42:1249–1255.
+38. Coghill D, et al. European, randomized, phase 3 study of lisdexamfetamine dimesylate in children and adolescents with attention-deficit/
+hyperactivity disorder. Eur Neuropsychopharmacol 2013; 23:1208–1218.
+39. Arnold LE, et al. Atomoxetine for hyperactivity in autism spectrum disorders: placebo-controlled crossover pilot trial. J Am Acad Child
+Adolesc Psychiatry 2006; 45:1196–1205.
+40. Harfterkamp M, et al. A randomized double-blind study of atomoxetine versus placebo for attention-deficit/hyperactivity disorder symptoms
+in children with autism spectrum disorder. J Am Acad Child Adolesc Psychiatry 2012; 51:733–741.
+41. Handen BL, et al. Atomoxetine, parent training, and their combination in children with autism spectrum disorder and attention-deficit/
+hyperactivity disorder. J Am Acad Child Adolesc Psychiatry 2015; 54:905–915.
+42. Smith T, et al. Atomoxetine and parent training for children with autism and attention-deficit/hyperactivity disorder: a 24-week extension
+study. J Am Acad Child Adolesc Psychiatry 2016; 55:868–876.e862.
+43. Scahill L, et al. Extended-release guanfacine for hyperactivity in children with autism spectrum disorder. Am J Psychiatry 2015;
+172:1197–1206.
+44. National Institute for Health and Care Excellence. Autism spectrum disorder in under 19s: support and management. Clinical Guidance 170
+[CG170] 2013 (Reviewed September 2016); https://www.nice.org.uk/Guidance/CG170.
+45. Kaplan G, et al. Psychopharmacology of autism spectrum disorders. Pediatr Clin North Am 2012; 59:175–187, xii.
+46. McDougle CJ, et al. Atypical antipsychotics in children and adolescents with autistic and other pervasive developmental disorders. J Clin
+Psychiatry 2008; 69 Suppl 4:15–20.
+47. Parikh MS, et al. Psychopharmacology of aggression in children and adolescents with autism: a critical review of efficacy and tolerability.
+J Child Adolesc Psychopharmacol 2008; 18:157–178.
+48. DeVane CL, et al. Pharmacotherapy of autism spectrum disorder: results from the randomized BAART clinical trial. Pharmacotherapy 2019;
+39:626–635.
+49. Jesner OS, et al. Risperidone for autism spectrum disorder. Cochrane Database Syst Rev 2007:CD005040.
+50. Scahill L, et al. Risperidone approved for the treatment of serious behavioral problems in children with autism. J Child Adolesc Psychiatr
+Nurs 2007; 20:188–190.
+51. Curran MP. Aripiprazole: in the treatment of irritability associated with autistic disorder in pediatric patients. Paediatr Drugs 2011;
+13:197–204.
+52. Fung LK, et al. Pharmacologic treatment of severe irritability and problem behaviors in autism: a systematic review and meta-analysis.
+Pediatrics 2016; 137 Suppl 2:S124–135.
+53. Douglas-Hall P, et al. Aripiprazole: a review of its use in the treatment of irritability associated with autistic disorder patients aged 6-17.
+J Cent Nerv Syst Dis 2011; 3:1–11.
+54. Hirsch LE, et al. Aripiprazole for autism spectrum disorders (ASD). Cochrane Database Syst Rev 2016:Cd009043.
+55. Ching H, et al. Aripiprazole for autism spectrum disorders (ASD). Cochrane Database Syst Rev 2012; 5:CD009043.
+56. Caccia S. Safety and pharmacokinetics of atypical antipsychotics in children and adolescents. Paediatr Drugs 2013; 15:217–233.
+57. Sharma A, et al. Efficacy of risperidone in managing maladaptive behaviors for children with autistic spectrum disorder: a meta-analysis.
+J Pediatr Health Care 2012; 26:291–299.
+58. Kent JM, et al. Risperidone dosing in children and adolescents with autistic disorder: a double-blind, placebo-controlled study. J Autism Dev
+Disord 2013; 43:1773–1783.
+59. Maayan L, et al. Weight gain and metabolic risks associated with antipsychotic medications in children and adolescents. J Child Adolesc
+Psychopharmacol 2011; 21:517–535.
+60. Ghanizadeh A, et al. A head-to-head comparison of aripiprazole and risperidone for safety and treating autistic disorders, a randomized
+double blind clinical trial. Child Psychiatry Hum Dev 2014; 45:185–192.
+61. Hollander E, et al. A double-blind placebo-controlled pilot study of olanzapine in childhood/adolescent pervasive developmental disorder.
+J Child Adolesc Psychopharmacol 2006; 16:541–548.
+62. Campbell M, et al. Lithium in hospitalized aggressive children with conduct disorder: a double-blind and placebo-controlled study. J Am
+Acad Child Adolesc Psychiatry 1995; 34:445–453.
+63. Malone RP, et al. A double-blind placebo-controlled study of lithium in hospitalized aggressive children and adolescents with conduct disorder. Arch Gen Psychiatry 2000; 57:649–654.
+64. Donovan SJ, et al. Divalproex treatment for youth with explosive temper and mood lability: a double-blind, placebo-controlled crossover
+design. Am J Psychiatry 2000; 157:818–820.
+65. Stigler KA, et al. Pharmacotherapy of irritability in pervasive developmental disorders. Child Adolesc Psychiatr Clin N Am 2008;
+17:739–752.
+66. Rezaei V, et al. Double-blind, placebo-controlled trial of risperidone plus topiramate in children with autistic disorder. Prog
+Neuropsychopharmacol Biol Psychiatry 2010; 34:1269–1272.
+67. Hellings JA, et al. Dopamine antagonists for treatment resistance in autism spectrum disorders: review and focus on BDNF stimulators
+loxapine and amitriptyline. Expert Opin Pharmacother 2017; 18:581–588.
+68. Janssen Pharmaceutical Companies. Highlights of Prescribing Information: RISPERDAL® (risperidone) tablets, RISPERDAL® (risperidone)
+oral solution, RISPERDAL® M-TAB® (risperidone) orally disintegrating tablets 2019; https://www.accessdata.fda.gov/drugsatfda_docs/
+label/2019/020272s082,020588s070,021444s056lbl.pdf.
+
+CHAPTER 5
+
+Children and adolescents  585
+
+
+
+
+<<<PAGE 737>>>
+
+716  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 7.7 Stimulants in breastfeeding
+
+Infant plasma
+concentration
+
+Drug
+
+Estimated daily
+infant dose as
+proportion of
+maternal dose
+(RID)
+
+Acute adverse
+effects in infant
+
+Developmental
+effects in infant
+
+2.4–10.6%
+
+None reported
+
+None reported but
+not assessed
+
+Atomoxetine
+
+No published data
+available at the
+time of writing
+
+Dexamfetamine193
+
+Undetectable to
+14% of maternal
+plasma level
+
+Lisdexamfetamine
+
+No published data
+available at the
+time of writing
+
+Methylphenidate27,194–196
+
+Undetectable
+
+0.16–0.7%
+
+None reported
+
+None reported
+
+Modafinil
+
+Not reported
+
+5.3%
+
+None reported
+
+None reported but
+not assessed
+
+197,198
+
+Report for individual drugs. Table 7.7 does not include this advice (which is often uninformative), but instead uses primary reference sources. It is usually advisable to continue the drug prescribed during pregnancy. Switching drugs postpartum for the purpose
+of breastfeeding is usually not sensible. Table 7.7 should be used as a guide when initiating treatment postpartum. In each case the previous response (and lack of response) to
+treatment must be considered.
+
+CHAPTER 7
+
+References
+1. Schoretsanitis G, et al. Excretion of antipsychotics into the amniotic fluid, umbilical cord blood, and breast milk: a systematic critical review
+and combined analysis. Ther Drug Monit 2020; 42:245–254.
+2. Weissman AM, et al. Pooled analysis of antidepressant levels in lactating mothers, breast milk, and nursing infants. Am J Psychiatry 2004;
+161:1066–1078.
+3. Schmidt FM, et al. Agomelatine in breast milk. Int J Neuropsychopharmacol 2013; 16:497–499.
+4. Hale TW, et al. Medications and mothers’ milk – 18th edition. New York, USA: Springer Publishing Company; 2019.
+5. Hoffmann E, et al. Brexanolone injection administration to lactating women: breast milk allopregnanolone levels [30J]. Obstet Gynecol
+2019; 133:115S.
+6. Briggs GG, et al. Excretion of bupropion in breast milk. Ann Pharmacother 1993; 27:431–433.
+7. Chaudron LH, et al. Bupropion and breastfeeding: a case of a possible infant seizure. J Clin Psychiatry 2004; 65:881–882.
+8. Nonacs RM, et al. Bupropion SR for the treatment of postpartum depression: a pilot study. Int J Neuropsychopharmacol 2005;
+8:445–449.
+9. Haas JS, et al. Bupropion in breast milk: an exposure assessment for potential treatment to prevent post-partum tobacco use. Tob Control
+2004; 13:52–56.
+10. Baab SW, et al. Serum bupropion levels in 2 breastfeeding mother-infant pairs. J Clin Psychiatry 2002; 63:910–911.
+11. Berle JO, et al. Antidepressant use during breastfeeding. Curr Womens Health Rev 2011; 7:28–34.
+12. Davis MF, et al. Bupropion levels in breast milk for 4 mother-infant pairs: more answers to lingering questions. J Clin Psychiatry 2009;
+70:297–298.
+13. Neuman G, et al. Bupropion and escitalopram during lactation. Ann Pharmacother 2014; 48:928–931.
+14. Burt VK, et al. The use of psychotropic medications during breast-feeding. Am J Psychiatry 2001; 158:1001–1009.
+
+
+
+
+<<<PAGE 754>>>
+
+40. Gahr M, et al. Safety and tolerability of agomelatine: focus on hepatotoxicity. Curr Drug Metab 2014; 15:694–702.
+41. Billioti de Gage S, et al. Antidepressants and hepatotoxicity: a cohort study among 5 million individuals registered in the French National
+Health Insurance Database. CNS Drugs 2018; 32:673–684.
+42. Pladevall-Vila M, et al. Risk of acute liver injury in agomelatine and other antidepressant users in four European Countries: a cohort and
+nested case-control study using automated Health Data Sources. CNS Drugs 2019; 33:383–395.
+43. Hanje AJ, et al. Case report: fulminant hepatic failure involving duloxetine hydrochloride. Clin Gastroenterol Hepatol 2006; 4:912–917.
+44. Vuppalanchi R, et al. Duloxetine hepatotoxicity: a case-series from the drug-induced liver injury network. Aliment Pharmacol Ther 2010;
+32:1174–1183.
+45. Lin ND, et al. Hepatic outcomes among adults taking duloxetine: a retrospective cohort study in a US health care claims database. BMC
+Gastroenterol 2015; 15:134.
+46. McIntyre RS, et al. The hepatic safety profile of duloxetine: a review. Expert Opin Drug Metab Toxicol 2008; 4:281–285.
+47. Bunchorntavakul C, et al. Drug hepatotoxicity: newer agents. Clin Liver Dis 2017; 21:115–134.
+48. Schenker S, et al. Fluoxetine disposition and elimination in cirrhosis. Clin Pharmacol Ther 1988; 44:353–359.
+49. Cai Q, et al. Acute hepatitis due to fluoxetine therapy. Mayo Clin Proc 1999; 74:692–694.
+50. Friedenberg FK, et al. Hepatitis secondary to fluoxetine treatment. Am J Psychiatry 1996; 153:580.
+51. Johnston DE, et al. Chronic hepatitis related to use of fluoxetine. Am J Gastroenterol 1997; 92:1225–1226.
+52. Hale AS New antidepressants: use in high-risk patients. J Clin Psychiatry 1993; 54 Suppl:61–70.
+53. Stoeckel K, et al. Absorption and disposition of moclobemide in patients with advanced age or reduced liver or kidney function. Acta
+Psychiatr Scand Suppl 1990; 360:94–97.
+54. Lee KC, et al. Transdermal selegiline for the treatment of major depressive disorder. Neuropsychiatr Dis Treat 2007; 3:527–537.
+55. Thomas E, et al. Mirtazapine-induced steatosis. Int J Clin Pharmacol Ther 2017; 55:630–632.
+56. Shaheen AA, et al. The impact of depression and antidepressant usage on primary biliary cholangitis clinical outcomes. PLoS One 2018;
+13:e0194839.
+57. Benbow SJ, et al. Paroxetine and hepatotoxicity. BMJ 1997; 314:1387.
+58. Kuhs H, et al. A double-blind study of the comparative antidepressant effect of paroxetine and amitriptyline. Acta Psychiatr Scand Suppl
+1989; 350:145–146.
+59. de Bree H, et al. Fluvoxamine maleate: disposition in men. Eur J Drug Metab Pharmacokinet 1983; 8:175–179.
+60. Green BH Fluvoxamine and hepatic function. Br J Psychiatry 1988; 153:130–131.
+61. Milne RJ, et al. Citalopram: a review of its pharmacodynamic and pharmacokinetic properties, and therapeutic potential in depressive illness.
+Drugs 1991; 41:450–477.
+62. Lopez-Torres E, et al. Hepatotoxicity related to citalopram (Letter). Am J Psychiatry 2004; 161:923–924.
+63. Colakoglu O, et al. Toxic hepatitis associated with paroxetine. Int J Clin Pract 2005; 59:861–862.
+64. Rao N The clinical pharmacokinetics of escitalopram. Clin Pharmacokinet 2007; 46:281–290.
+65. Mullish BH, et al. Review article: depression and the use of antidepressants in patients with chronic liver disease or liver transplantation.
+Aliment Pharmacol Ther 2014; 40:880–892.
+66. Düll MM, et al. Treatment of pruritus secondary to liver disease. Current Gastroenterology Reports 2019; 21:48.
+67. A T, et al. Pharmacokinetics of reboxetine in volunteers with hepatic impairment. Clin Drug Investig 2000; 19:473–477.
+68. Medicines C. Lofepramine (Gamanil) and abnormal blood tests of liver function. Current Problems 1988; 23:2.
+69. Archer DF, et al. Cardiovascular, cerebrovascular, and hepatic safety of desvenlafaxine for 1 year in women with vasomotor symptoms associated with menopause. Menopause 2013; 20:47–56.
+70. Baird-Bellaire S, et al. An open-label, single-dose, parallel-group study of the effects of chronic hepatic impairment on the safety and pharmacokinetics of desvenlafaxine. Clin Ther 2013; 35:782–794.
+71. Ryan PB, et al. Atypical antipsychotics and the risks of acute kidney injury and related outcomes among older adults: a replication analysis
+and an evaluation of adapted confounding control strategies. Drugs Aging 2017; 34:211–219.
+72. Chen G, et al. Vortioxetine: clinical pharmacokinetics and drug interactions. Clin Pharmacokinet 2018; 57:673–686.
+73. Bjornsson E Hepatotoxicity associated with antiepileptic drugs. Acta Neurol Scand 2008; 118:281–290.
+74. Guo HL, et al. Valproic acid and the liver injury in patients with epilepsy: an update. Curr Pharm Des 2019; 25:343–351.
+75. Panei P, et al. Safety of psychotropic drug prescribed for attention-deficit/hyperactivity disorder in Italy. Adverse Drug Reaction Bulletin
+2010:999–1002.
+76. Reed VA, et al. The safety of atomoxetine for the treatment of children and adolescents with attention-deficit/hyperactivity disorder: a comprehensive review of over a decade of research. CNS Drugs 2016; 30:603–628.
+77. Tong HY, et al. Liver transplant in a patient under methylphenidate therapy: a case report and review of the literature. Case Rep Pediatr 2015;
+2015:437298.
+78. Shire Pharmaceuticals Limited. Summary of product characteristics. Elvanse 20mg 30mg 40mg 50mg 60mg 70mg Hard Capsules 2019;
+https://www.medicines.org.uk/emc/product/2979/smpc.
+79. Flynn Pharma Ltd. Summary of product characteristics. Amfexa 5mg 10mg 20mg Tablets 2018; https://www.medicines.org.uk/emc/product/7403/smpc.
+80. Vanga RR, et al. Adderall induced acute liver injury: a rare case and review of the literature. Case Rep Gastrointest Med 2013; 2013:902892.
+81. Hood B, et al. Eosinophilic hepatitis in an adolescent during lisdexamfetamine dimesylate treatment for ADHD. Pediatrics 2010;
+125:e1510–1513.
+
+CHAPTER 8
+
+Hepatic and renal impairment  733
+
+
+
+
+<<<PAGE 812>>>
+
+Table 10.5 (Continued)
+Safety in
+epilepsy
+
+Drug
+
+Comments
+
+Drugs for ADHD
+Low risk
+
+Methylphenidate
+
+Three RCTs support safety and efficacy in children with epilepsy at
+therapeutic doses (0.3–1mg/kg/day).10 Two single dose RCTs and one open
+label extension study demonstrated no effect on seizures in adults.54,55 A
+large case control study found an increased rate of seizures after the start of
+methylphenidate but not in the longer term.56 This is difficult to interpret but
+suggests caution would be appropriate
+
+Probably low
+risk57,58 – use
+with caution
+(limited data)
+
+Amfetamines
+
+Data are limited to one small retrospective study in PWE.10 No patients who
+had well controlled epilepsy experienced an increase in seizure frequency.59
+Of note, dexamfetamine was historically used as an adjunctive antiseizure
+agent60
+
+Atomoxetine
+
+Data are limited to one small retrospective study in PWE.10 Discontinuation
+rates were high (though none due to seizure exacerbation61). Seizure rate
+similar to placebo for patients without epilepsy62
+
+This table contains information about the pro-convulsive effects of antidepressants and antipsychotics when used
+in therapeutic doses. See section on psychotropics in overdose for information about supra-therapeutic doses.
+
+Epilepsy and driving
+In the United Kingdom, people with epilepsy may not drive a car if they have had a
+seizure while awake in the previous year. However, they may be eligible to drive if seizures occur only during sleep and this has been an established nocturnal pattern for at
+least 3 years. The consequences of inducing seizure with antidepressants or antipsychotics can therefore be significant. For further information see "http://www.gov.uk/
+epilepsy-and-driving" www.gov.uk/epilepsy-and-driving.
+
+References
+1. Scott AJ, et al. Anxiety and depressive disorders in people with epilepsy: A meta-analysis. Epilepsia 2017; 58:973–982.
+2. Clancy MJ, et al. The prevalence of psychosis in epilepsy; a systematic review and meta-analysis. BMC Psychiatry 2014; 14:75.
+3. Hesdorffer DC, et al. Occurrence and recurrence of attempted suicide among people with epilepsy. JAMA Psychiatry 2016; 73:80–86.
+4. Thurman DJ, et al. The burden of premature mortality of epilepsy in high-income countries: A systematic review from the mortality task force
+of the international league against epilepsy. Epilepsia 2017; 58:17–26.
+5. Kanner AM. Management of psychiatric and neurological comorbidities in epilepsy. Nat Rev Neurol 2016; 12:106–116.
+6. Hesdorffer DC. Comorbidity between neurological illness and psychiatric disorders. CNS Spectr 2016; 21:230–238.
+7. Kanner AM. Can neurochemical changes of mood disorders explain the increase risk of epilepsy or its worse seizure control? Neurochem Res
+2017; 42:2071–2076.
+8. Curran S, et al. Selecting an antidepressant for use in a patient with epilepsy. Safety considerations. Drug Saf 1998; 18:125–133.
+9. Blumer D, et al. Treatment of the interictal psychoses. J Clin Psychiatry 2000; 61:110–122.
+10. Mula M. The pharmacological management of psychiatric comorbidities in patients with epilepsy. Pharmacol Res 2016; 107:147–153.
+11. Elger CE, et al. Diagnosing and treating depression in epilepsy. Seizure 2017; 44:184–193.
+12. Anbarasan D. Psychoactive medications and seizures—challenges and pitfalls. Neurol Rep 2016; 9:24–27.
+
+CHAPTER 10
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  791
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+

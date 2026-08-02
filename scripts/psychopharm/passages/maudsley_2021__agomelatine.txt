@@ -1,0 +1,2734 @@
+<<<PAGE 333>>>
+
+312  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Recognised minimum effective doses of antidepressants
+The recommended minimum effective doses of antidepressants are summarised in Table 3.2.
+Table 3.2 The recommended minimum effective doses of antidepressants
+Antidepressant
+
+Dose
+
+Tricyclics
+
+Unclear; at least 75–100mg/day,1 possibly 125mg/day2
+
+Lofepramine
+
+140mg/day3
+
+CHAPTER 3
+
+SSRIs
+Citalopram
+
+20mg/day4
+
+Escitalopram
+
+10mg/day5
+
+Fluoxetine
+
+20mg/day6
+
+Fluvoxamine
+
+50mg/day7
+
+Paroxetine
+
+20mg/day8
+
+Sertraline
+
+50mg/day9
+
+Others
+Agomelatine
+
+25mg/day10
+
+Bupropion
+
+150mg/day11
+
+Desvenlafaxine
+
+50mg/day12
+
+Duloxetine
+
+60mg/day13,14
+
+Levomilnacipran
+
+40mg/day15
+
+Mirtazapine
+
+30mg/day (15mg?16)
+
+Moclobemide
+
+300mg/17
+
+Reboxetine
+
+8mg/day18
+
+Trazodone
+
+150mg/day19
+
+Venlafaxine
+
+75mg/day20
+
+Vilazodone
+
+20mg/day15
+
+Vortioxetine
+
+10mg/day15
+
+
+
+
+<<<PAGE 358>>>
+
+Depression and anxiety disorders  337
+
+Agomelatine does not seem to be associated with a discontinuation syndrome,6 but
+slow withdrawal when switching is nonetheless recommended. Given agomelatine’s
+mode of action (melatonin agonism; 5HT2C antagonism), it is not expected to mitigate discontinuation reactions of other antidepressants. There is no theoretical basis
+to suggest that pharmacodynamic interactions might occur between agomelatine and
+other co-administered antidepressants, but caution is advised in the absence of useful
+data. Some pharmacokinetic interactions do occur, and agomelatine should not be
+administered with fluvoxamine.
+■■ Serotonin syndrome can occur with a single serotonergic drug at a therapeutic dose
+or more frequently in combination of serotonergic drugs or in overdose. Most severe
+cases of serotonin syndrome involve an MAOI (including moclobemide) plus an
+SSRI.7,8 Caution is advised when switching strategies call for the combining of serotonergic drugs.
+Serotonin syndrome – symptoms11
+Increasing severity
+Severity
+
+Symptoms
+
+Mild
+
+Insomnia, anxiety, nausea, diarrhoea,
+hypertension, tachycardia, hyper-reflexia
+
+Moderate Agitation, myoclonus, tremor, mydriasis,
+flushing, diaphoresis, low fever (<38.5°C)
+Severe
+
+Severe hyperthermia, confusion, rigidity,
+respiratory failure, coma, death
+
+The advice given in Table 3.7 should be treated with caution and patients should be
+very carefully monitored when switching.
+
+CHAPTER 3
+
+■■
+
+
+
+
+<<<PAGE 359>>>
+
+338  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 3.7 Antidepressants – swapping and stopping*
+
+To
+From
+
+Agomelatine Bupropion Clomipramine Fluoxetine
+
+CHAPTER 3
+
+Agomelatinea
+
+Stop
+Stop
+agomelatine agomelatine
+then start
+then start
+bupropion clomipramine
+
+Stop
+agomelatine
+then start
+fluoxetine
+
+Stop
+agomelatine
+then start
+fluvoxamine
+
+Stop agomelatine
+then start MAOIs
+
+Cross-taper
+cautiously with
+low dose
+clomipramine
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for 2
+weeks then start
+MAOIs
+
+Taper and
+stop then
+start
+fluoxetine at
+10mg/day
+
+Taper and stop Taper and stop
+then start low then wait for 3
+weeks then start
+dose
+MAOIs
+fluvoxamine
+
+Bupropionb
+
+Cross-taper
+cautiously
+
+Clomipramine
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Fluoxetinec
+
+Cross-taper
+cautiously
+
+Stop
+fluoxetine.
+Wait
+4–7 days
+then start
+bupropion
+
+Fluvoxamined
+
+Taper and stop Cross-taper Taper and stop
+then start low
+then wait for cautiously
+dose
+4 days
+clomipramine
+
+Cross-taper
+MAOIs
+cautiously
+Phenelzine
+Tranylcypromine
+Selegiline
+
+MAOIs
+Phenelzine
+Tranylcypromine
+Fluvoxamine Selegiline
+
+Stop
+fluoxetine.
+Wait 4–7 days
+then start
+fluvoxamine
+
+Stop fluoxetine.
+Wait 2 weeks
+then start low
+dose
+clomipramine
+Direct switch
+possible
+
+Stop fluoxetine
+then wait for 5–6
+weeks then start
+MAOIs
+
+Taper and stop
+then wait for
+1 week then start
+MAOIs
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and stop
+then wait for
+3 weeks
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and stop Taper and stop
+then wait for then wait for
+2 weeks
+2 weeks
+
+Moclobemide
+
+Taper and stop Taper and
+stop then
+then wait 24
+wait 24
+hours
+hours
+
+Taper and stop
+then wait 24
+hours
+
+Taper and
+stop then
+wait 24
+hours
+
+Taper and stop Taper and stop,
+then wait 24 wait 24 hours
+then start MAOIs
+hours
+
+Mirtazapine
+
+Cross-taper
+cautiously
+
+Cross-taper Cross-taper
+cautiously
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for 2
+weeks
+
+Reboxetinee
+
+Cross-taper
+cautiously
+
+Crosstaper
+cautiously
+
+Cross-taper
+cautiously
+
+Crosstaper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and stop
+then wait for
+1 week then
+start MAOIs
+
+
+
+
+<<<PAGE 360>>>
+
+Moclobemide
+
+Mirtazapine
+
+Reboxetine
+
+Trazodone
+
+Other SSRIs,f
+Vortioxetine
+
+SNRIs
+Duloxetine
+Venlafaxine
+TCAs (except
+Desvenlaxine clomipramine)
+
+Stop
+agomelatine
+then start
+moclobemide
+
+Stop
+agomelatine
+then start
+mirtazapine
+
+Stop
+agomelatine
+then start
+reboxetine
+
+Stop
+agomelatine
+then start
+trazodone
+
+Stop
+agomelatine
+then start
+SSRI
+
+Stop
+agomelatine
+then start
+SNRI
+
+Stop
+agomelatine
+then start TCA
+
+Taper and
+stop then start
+moclobemide
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously with
+low dose TCA
+
+Taper and
+stop then wait
+for 1 week
+then start
+moclobemide
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and
+stop then
+start low
+dose
+
+Taper and
+stop. Start
+low dose
+SNRI
+
+Cross-taper
+cautiously
+
+Stop
+fluoxetine
+then wait for
+5–6 weeks
+then start
+moclobemide
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Stop
+fluoxetine.
+Wait
+4–7 days
+then start
+low dose
+
+Stop
+fluoxetine.
+Wait
+4–7 days
+then start
+SNRI
+
+Stop fluoxetine.
+Wait 4–7 days
+then start low
+dose TCA
+
+Taper and
+stop then wait
+for 1 week
+then start
+moclobemide
+
+Cross-taper
+cautiously.
+Start
+mirtazapine
+at 15mg
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Direct
+switch
+possible
+
+Direct switch
+possible
+
+Cross-taper
+cautiously with
+low dose TCA
+
+Taper and
+stop then wait
+for 2 weeks
+then start
+moclobemide
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and
+stop then
+wait for
+2 weeks
+
+Taper and stop
+then wait for
+2 weeksj
+
+Taper and
+stop then
+wait
+24 hours
+
+Taper and
+stop then
+wait
+24 hours
+
+Taper and
+stop then
+wait
+24 hours
+
+Taper and
+stop then
+wait
+24 hours
+
+Taper and
+stop then
+wait
+24 hours
+
+Taper and stop
+then wait
+24 hours
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and
+stop then wait
+for 1 week
+then start
+moclobemide
+Taper and
+stop then wait
+for 1 week
+then start
+moclobemide
+
+Cross-taper
+cautiously
+
+(Continued)
+
+CHAPTER 3
+
+Depression and anxiety disorders  339
+
+
+
+
+<<<PAGE 362>>>
+
+Other SSRIs,f
+Vortioxetine
+
+SNRIs
+Duloxetine
+Venlafaxine
+TCAs (except
+Desvenlaxine clomipramine)
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously with
+low dose TCA
+
+Cross-taper
+cautiously
+
+Direct
+switch
+possible
+
+Direct switch
+possible
+
+Cross-taper
+cautiously with
+low dose TCA
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Direct
+switch
+possible
+
+Direct switch
+possible
+
+Cross-taper
+cautiously with
+low dose TCA
+
+Cross-taper
+cautiously
+
+Halve dose
+and add
+trazodone
+and then
+slow
+withdrawal
+
+Halve dose
+and add
+SSRI then
+slow
+withdrawal
+
+Cross-taper
+cautiously
+starting with
+low dose
+SNRI
+
+Direct switch
+possible
+
+Moclobemide
+
+Mirtazapine
+
+Reboxetine
+
+Taper and
+stop then wait
+for 1 week
+then start
+moclobemide
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and
+stop then wait
+for 1 week
+then start
+moclobemide
+
+Cross-taper
+cautiously
+
+Cross-taper
+cautiously
+
+Taper and
+stop then wait
+for 1 week
+then start
+moclobemide
+
+Cross-taper
+cautiously
+
+Taper and
+stop then wait
+for 1 week
+then start
+moclobemide
+
+Cross-taper
+cautiously
+
+Trazodone
+
+Notes:
+*Advice given in this table is partly derived from manufacturers’ information and available published data and partly
+theoretical. There are several factors that affect individual drug handling and caution is required in every instance
+Cross taper cautiously – usually over 2–4 weeks as per example
+a
+Agomelatine has no effect on monoamine uptake and no affinity for α, β adrenergic, histaminergic, cholinergic,
+dopaminergic and benzodiazepine receptors. The potential for interactions between agomelatine and other
+antidepressants is low and it is not expected to mitigate discontinuation reactions of other antidepressants. Some
+crossover with other antidepressants might be cautiously attempted when switching from agomelatine.
+b
+Bupropion is licensed for smoking cessation but unlicensed for the treatment of depression in the UK. It is a
+CYP2D6 inhibitor and particular caution required when cross-tapering with drugs metabolised by this enzyme.
+c
+Beware: interactions with fluoxetine may still occur for 5 weeks after stopping fluoxetine because of its metabolite’s
+long half-life.
+d
+Fluvoxamine is a potent inhibitor of CYP1A2, and to a lesser extent of CYP2C and CYP3A4 and has a high
+potential for interactions hence extra precaution is required.
+e
+Switching to reboxetine as antidepressant monotherapy is no longer recommended.
+f
+Citalopram, escitalopram, paroxetine and sertraline.
+g
+Limited experience with vortioxetine and extra precaution required. Particular care when switching to or from
+bupropion and other CYP2D6 inhibitors such as fluoxetine and paroxetine.9
+h
+Wait 3 weeks in the case of vortioxetine.10
+i
+Abrupt switch from SSRIs and venlafaxine to duloxetine is possible starting at 60mg/day.5
+j
+Wait 3 weeks in the case of imipramine.
+
+CHAPTER 3
+
+Depression and anxiety disorders  341
+
+
+
+
+<<<PAGE 365>>>
+
+344  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Table 3.8 Factors influencing the incidence and severity of antidepressant withdrawal symptoms
+Pharmacological factors
+– Pharmacokinetics
+– Drug half life
+– Pharmacodynamics
+– Receptor affinities
+Treatment factors
+– Duration of treatment
+– Dose
+– Method of tapering
+Patient specific factors
+– Prior experience and
+anticipation effects
+
+■■
+
+Drug half-lives – correlate with the severity and onset of symptoms. Symptoms
+typically more severe with shorter half-life drugs (e.g. venlafaxine, paroxetine)
+
+■■
+
+Other pharmacokinetic factors: non-linear pharmacokinetics
+
+■■
+
+Receptor affinities: higher affinity for the serotonin transporter may confer
+higher risk of withdrawal symptoms
+
+Incidence and severity
+Antidepressant discontinuation symptoms occur in many patients: incidence rates from
+14 studies that examined antidepressant withdrawal ranged from 27% to 86%, with a
+weighted average of 56%.5 Though reported incidence rates vary widely between studies of differing drugs and methodologies (9% to 77% for fluoxetine, and from 42% to
+100% with paroxetine5), symptoms are seen to some extent with all antidepressants,
+with the possible exception of agomelatine.4
+
+Time Course
+The onset and severity of symptoms are related to the half-life of the antidepressant.
+Short half-life antidepressants like paroxetine and venlafaxine produce symptoms
+within a day or two, whereas symptoms with fluoxetine can be delayed by 2–6 weeks.1
+Symptoms can vary in duration, form and intensity and occur in any combination.
+Whilst they can be mild and self-limiting, there is substantial variation in between individuals, and for some symptoms can last much longer than previously reported.6 The
+perception of symptom severity is probably made worse by the absence of forewarnings.
+Some symptoms are more likely with individual drugs (see Table 3.9). Symptoms can be
+quantified using the Discontinuation–Emergent Signs and Symptoms (DESS) scale.7
+Table 3.9 Symptoms reported with other (non-SSRI) antidepressants
+Antidepressant type
+
+Symptoms
+
+Agomelatine
+
+Seems to be associated with a very low, if any, risk of discontinuation symptoms4
+
+Bupropion
+
+Uncommon, but case reports have described anxiety, headache, insomnia,
+irritability, and myalgias;8,9 single case report of acute dystonia10
+
+MAOIs*
+
+Common: agitation, irritability, ataxia, movement disorders, insomnia, somnolence,
+vivid dreams, cognitive impairment, slowed speech, pressured speech;
+Occasionally: Hallucinations, paranoid delusions
+RIMAs: Flu like symptoms reported with moclobemide11
+(Continued)
+
+
+
+
+<<<PAGE 400>>>
+
+Depression and anxiety disorders  379
+
+Table 3.14 (Continued)
+Antidepressant
+
+Substrate for
+
+Inhibits
+
+TCAs
+Amitriptyline
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Desipramine
+
+CYP2D6
+
+Dosulepin
+
+CYP2D6 and possibly other pathways
+
+Doxepin
+
+CYP2D6, CYP1A2 (minor), CYP3A4
+(minor)
+
+Imipramine
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Nortriptyline
+
+CYP2D6
+
+Trimipramine
+
+CYP2D6
+
+Agomelatine
+
+CYP1A2
+
+Bupropion
+
+CYP2B6
+
+Esketamine
+
+CYP3A4, CYP2B6
+
+Mianserin
+
+CYP2D6
+
+Mirtazapine
+
+CYP1A2, CYP2D6, CYP3A4
+
+Reboxetine
+
+CYP3A4
+
+Trazodone
+
+CYP3A4
+
+Vortioxetine
+
+CYP2D6, CYP2A6, CYP2B6, CYP2C8,
+CYP2C9, CYP2C19, CYP3A4
+
+Vilazodone
+
+CYP3A4
+
+CHAPTER 3
+
+Clomipramine
+
+Others
+
+CYP2D6 (potent)
+
+CYP2D6 (weak)
+
+CYP2C8
+
+CYP enzymes highlighted in bold indicate:
+predominant metabolic enzyme pathway or
+■■ predominant enzyme activity.
+■■
+
+■■
+
+Pharmacodynamic interactions where the effects of one drug are altered by another
+drug via physiological mechanisms such as direct competition at receptor sites (e.g.
+dopamine agonists with dopamine blockers may negate any therapeutic effect), augmentation of the same neurotransmitter pathway (e.g. fluoxetine with tramadol or a
+triptan can lead to serotonin syndrome) or an effect on the physiological functioning
+of an organ/organ system in different ways (e.g. SSRIs impair clotting and NSAIDs
+irritate the gastric mucosa so when these drugs are used together, the risk of GI bleeds
+is increased). Up-to-date interaction tables are readily available online and most
+known interactions are described in an individual product’s literature.
+
+Pharmacodynamic interactions
+Tricyclic antidepressants7–10
+■■
+
+are H1 blockers (sedative). This effect can be exacerbated by other sedative drugs or
+alcohol. Beware respiratory depression
+
+
+
+
+<<<PAGE 402>>>
+
+Depression and anxiety disorders  381
+
+CYP1A2
+
+CYP2B6
+
+CYP2C9
+
+CYP2C19
+
+CYP2D6
+
+CYP3A4/5/7
+
+Genetic
+polymorphism
+Ultra-rapid
+metabolisers
+possible
+
+2–10% of total
+hepatic CYP
+content16
+
+5–10% of
+Caucasians
+poor
+metabolisers
+
+~20% of Asians
+and 3–5%
+Caucasians are
+poor metabolisers
+
+3–5% of
+Caucasians poor
+metabolisers
+
+60% p450
+content
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Carbamazepine
+Charcoal cooking
+Tobacco smoke
+Omeprazole
+Phenobarbital
+Phenytoin
+
+Carbamazepine
+Efavirenz
+Lopinavir
+Rifampicin
+Ritonavir
+
+Phenytoin
+Rifampicin
+
+Apalutamide
+Rifampicin
+Enzalutamide
+Artemisinin
+Efavirenz
+
+Carbamazepine
+Phenytoin
+
+Carbamazepine
+Phenytoin
+Prednisolone
+Rifampicin
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Cimetidine
+Ciprofloxacin
+Erythromycin
+Fluvoxamine
+
+Clopidogrel
+Ticlopidine
+Voriconazole
+
+Cimetidine
+Fluoxetine
+Fluvoxamine
+Moclobemide
+Sertraline
+
+Fluconazole
+Fluoxetine
+Fluvoxamine
+Esomeprazole
+Moclobemide
+Omeprazole
+Voriconazole
+Armodafinil
+Etravirine
+Isoniazid
+Modafinil
+Cimetidine
+
+Chlorpromazine
+Bupropion
+Duloxetine
+Fluoxetine
+Fluphenazine
+Haloperidol
+Paroxetine
+Sertraline
+Tricyclics
+
+Erythromycin
+Fluoxetine
+Fluvoxamine
+Grapefruit Juice
+Ketoconazole
+Norfluoxetine
+Paroxetine
+Sertraline
+Tricyclics
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Agomelatine
+Benzodiazepines
+Caffeine
+Clozapine
+Duloxetine
+Haloperidol
+Mirtazapine
+Olanzapine
+Ramelteon
+Theophylline
+Tizanidine
+Tricyclics
+Warfarin
+
+Bupropion
+Methadone
+Tramadol
+
+Agomelatine
+Bupropion
+Citalopram
+Diazepam
+Omeprazole
+Phenytoin
+Tricyclics
+Warfarin
+
+Citalopram
+Diazepam
+Moclobemide
+
+Clozapine
+Codeine
+Donepezil
+Duloxetine
+Haloperidol
+Phenothiazines
+Risperidone
+Tamoxifen
+Tricyclics
+Tramadol
+Trazodone
+Venlafaxine
+Vortioxetine
+
+Calcium
+Blockers
+Carbamazepine
+Clozapine
+Donepezil
+Erythromycin
+Galantamine
+Methadone
+Levomilnacipran
+Mirtazapine
+Reboxetine
+Risperidone
+Statins
+Tricyclics
+Valproate
+Venlafaxine
+Vilazodone
+Vortioxetine
+Z-hypnotics
+
+CHAPTER 3
+
+Table 3.15 Pharmacokinetic interactions – a brief summary of important interactions3,15
+
+
+
+
+<<<PAGE 404>>>
+
+Slight increase
+
+Small decrease in Minimal effect on
+mean heart rate blood pressure
+
+Minimal effect
+on heart rate
+
+Duloxetine12–17
+
+Fluoxetine18–21
+
+Fluvoxamine22,23
+Small drop in systolic
+blood pressure
+
+Important effect (see
+SPC) Caution in
+hypertension
+
+Small decrease in Slight drop in systolic
+heart rate
+blood pressure
+
+Citalopram7–11
+(assume same for
+escitalopram)
+
+Slight increases in
+blood pressure but
+can sometimes be
+significant. Rarely
+postural hypotension
+
+No changes reported
+
+No changes
+reported
+
+Slight increase
+
+1,2
+
+Blood pressure
+
+Heart rate
+
+Bupropion*3–6
+
+Agomelatine
+
+Drug
+
+Table 3.16 Cardiac effect of antidepressants
+
+No arrhythmia
+reported
+
+Arrhythmia
+
+No significant
+effect on QTc
+
+No effect on QTc
+interval
+
+Isolated reports of
+QT prolongation
+
+Dose-related
+increase in QTc
+
+None
+
+None
+
+Unclear
+
+Conduction
+disturbance
+
+None
+
+None
+
+None
+
+None
+
+Isolated reports of Isolated reports
+toxicity
+of toxicity
+
+Torsade de
+Pointes reported,
+mainly in
+overdose
+
+QTc shortening, but No effect. Rare
+reports in
+prolongation has
+overdose
+been reported in
+cases of overdose
+
+Single case of QTc
+prolongation
+
+QTc
+
+The cardiac effects of antidepressants are summarised in Table 3.16.
+
+Cardiac effects of antidepressants – summary
+
+Minor metabolite which
+increases QTc interval. No
+clear evidence of increased
+risk of arrhythmia at any
+licensed dose
+
+Be aware of interaction
+potential. Monitor blood
+pressure
+
+Cautiously recommended
+
+Comments
+
+Caution
+
+(Continued)
+
+Limited changes in ECG
+have been observed
+
+Caution in patients with Evidence of safety post MI
+acute MI or
+uncompensated heart
+failure
+
+Caution in patients with Not recommended ion
+‘whose conditions could cardiac disease
+be compromised by an
+increased heart rate or
+by an increase in blood
+pressure’
+
+Caution in patients with
+recent MI or
+uncompensated heart
+failure. But some
+evidence of safety in CVD
+
+Well tolerated for
+smoking cessation in
+post MI patients
+
+No specific
+contra-indication
+
+Licensed
+restrictions post-MI
+
+
+
+
+<<<PAGE 415>>>
+
+394  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Table 3.17 Summary of risk of hyponatraemia with antidepressants7,14,46–48
+Drug/drug group
+
+Risk of Na
+
+Level of supporting evidence
+
+SSRIs
+
+High
+
+Strong
+
+SNRIs
+
+High
+
+Strong
+
+Tricyclics
+
+Moderate
+
+Strong
+
+MAOIs
+
+Low
+
+Weak
+
+NaSSas (mirtazapine, mianserin)
+
+Low
+
+Strong
+
+Bupropion
+
+Low
+
+Moderate
+
+Agomelatine
+
+Low
+
+Weak
+
+Monitoring1,14,15,49–53
+All patients taking antidepressants should be informed of and observed for signs of
+hyponatraemia (dizziness, nausea, lethargy, confusion, cramps, seizures). The risk is
+highest in the first 2–4 weeks of starting antidepressants and diminishes over time until
+by 3–6 months the risk is the same as for patients who do not take antidepressants.47,48
+Serum sodium should be determined (at baseline and 2 and 4 weeks, and then
+3-monthly54) for those at high risk of drug-induced hyponatraemia. High-risk factors
+are as follows:
+Older age
+Female sex
+■■ Major surgery
+■■ History of hyponatraemia or a low baseline sodium concentration
+■■ Co-therapy with other drugs known to be associated with hyponatraemia (e.g. diuretics, NSAIDs, antipsychotics, carbamazepine, cancer chemotherapy, calcium antagonists, ACE inhibitors and laxatives)
+■■ Reduced renal function (GFR < 50mL/min)
+■■ Medical co-morbidity (e.g. hypothyroidism, diabetes, COPD, hypertension, head
+injury, CCF, CVA, various cancers)
+■■ Low body weight
+■■
+■■
+
+Age is perhaps the most important risk factor, so for older people (especially women)
+monitoring is essential.15,47,55,56
+Treatment56
+It may be possible to manage mild hyponatraemia with fluid restriction.50 Some suggest
+increasing sodium intake,4 although this is likely to be impractical. If symptoms persist,
+the antidepressant should be discontinued.
+■■
+■■
+
+The normal range for serum sodium is 136–145mmol/L.
+If serum sodium is >125mmol/L – monitor sodium daily until normal. Symptoms
+include headache, nausea, vomiting, muscle cramps, restlessness, lethargy, confusion
+and disorientation. Consider withdrawing the offending antidepressant.
+
+
+
+
+<<<PAGE 419>>>
+
+398  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Antidepressants and hyperprolactinaemia
+Prolactin release is controlled by endogenous dopamine but is also indirectly modulated by serotonin via stimulation of 5HT1C and 5HT2 receptors.1,2 Long-standing
+increased plasma prolactin (with or without symptoms) is very occasionally seen with
+antidepressant use.3 Where antidepressant-induced hyperprolactinaemia does occur,
+rises in prolactin are usually small and short-lived4 and so symptoms are very rare.
+There is no association between SSRI use and breast cancer.5
+Routine monitoring of prolactin is not recommended, but where symptoms suggest
+the possibility of hyperprolactinaemia, then measurement of plasma prolactin is essential. Where symptomatic hyperprolactinaemia is confirmed, a switch to mirtazapine is
+recommended (see below), although there is also evidence that switching to an alternative SSRI can resolve symptoms.6,7
+Some details of associations between antidepressants and increased prolactin are
+given in Table 3.18.
+
+Table 3.18 Reported associations between antidepressants and increased prolactin
+Drug/group
+
+Prospective studies
+
+Case reports/series
+
+Agomelatine
+
+No mention of prolactin changes in clinical
+trials8
+Melatonin itself may inhibit prolactin
+production9
+
+None
+
+Bupropion
+
+Single doses of up to 100mg seem not to affect None
+prolactin10
+May decrease prolactin11
+
+MAOIs
+
+Small mean changes observed with phenelzine11 Very occasional reports of increased prolactin11
+and tranylcypromine12
+
+Mirtazapine
+
+Strong evidence that mirtazapine has no effect
+on prolactin13–15
+
+SNRIs
+
+Clear association observed between venlafaxine Galactorrhoea reported with venlafaxine21,22 and
+and duloxetine and prolactin elevation18–20
+duloxetine.23,24 Duloxetine-linked
+hyperprolactinaemia has been treated with
+aripiprazole18
+
+SSRIs
+
+Prospective studies generally show no change in
+prolactin.25–27 Some evidence from prescription
+event monitoring that SSRIs are associated with
+higher risk of non-puerperal lactation.28 In a
+French study, 1.6% of adverse event reports for
+SSRIs were of hyperprolactinaemia3
+
+Occasional reports of galactorrhoea16
+and gynaecomastia17
+
+Galactorrhoea reported with fluoxetine6,29 and
+paroxetine30,31
+Euprolactinaemic galactorrhoea and
+amenorrhoea32 reported with escitalopram33 and
+fluvoxamine34
+Hyperprolactinaemia reported with sertraline7,35
+(Continued)
+
+
+
+
+<<<PAGE 426>>>
+
+Not all of the sexual side effects of antidepressants are undesirable: serotonergic
+antidepressants including clomipramine are effective in the treatment of premature
+ejaculation6 and may also be beneficial in paraphilias. The short-acting SSRI dapoxetine is an effective treatment for premature ejaculation and is licensed for this indication in many countries.6,15 A systematic review of RCTs with trazodone showed benefit
+for reducing ‘psychogenic erectile dysfunction’.6
+Sexual side effects can be minimised by careful selection of the antidepressant drug.
+Note that the assessment of sexual side-effects in clinical trials is generally inadequate,
+often relying on spontaneous reports rather than using validated questionnaires and
+lacking positive controls.16 Where possible, information has been obtained from studies
+where sexual side effects are purposefully and directly investigated. Management strategies for people who do develop sexual dysfunction on antidepressants are summarised
+in Table 3.21. No single approach can be considered ‘ideal’,6 so individual assessment
+case-by-case is recommended.
+
+Table 3.20 Relative frequency sexual dysfunction (SD) with antidepressants10,12,17–19.
+Impact on sexual response
+
+Antidepressant
+
+Sexual desire*
+
+Sexual
+arousal†
+
+Orgasm‡ Comments12
+
+Agomelatine
+
+–
+
+–
+
+–
+
+Rates of SD may be similar to placebo.6
+
+Bupropion
+
+–
+
++/–
+
+–
+
+Low rates of SD compared to some other
+antidepressants.20 Overall, considerable evidence
+that SD occurs at or below the rate of placebo.
+
+Duloxetine
+
+++
+
++
+
+++
+
+Rate of SD similar to some SSRIs and venlafaxine in
+one meta-analysis.20
+
+Levomilnacipran
+
+?
+
+++
+
+++
+
+Limited comparative studies with other
+antidepressants21 so relative frequency of SD is
+uncertain. Erectile dysfunction and disorders of
+ejaculation shown in RCTs against placebo.
+
+MAOIs
+
+++
+
+++
+
+++
+
+Limited evidence though reported incidence of SD
+ranges from 20% to 42%. Rates of SD with
+transdermal selegiline are comparable to placebo.
+
+Mirtazapine
+
++
+
+–
+
+–
+
+Causes less SD than SSRIs.22
+
+Moclobemide
+
+–
+
+–
+
+–
+
+Consistently shown to have a low risk of SD.
+
+Reboxetine
+
+–
+
++
+
+–
+
+Probably causes less SD than SSRIs/SNRIs though
+efficacy has been questioned.23
+
+SSRIs
+
+++
+
+++
+
+++
+
+Overall evidence suggests relatively high rates of
+SD across all the SSRIs (although reported
+incidence varies widely).12 Rates of anorgasmia
+may be lower with fluvoxamine.24
+
+Trazodone
+
+–
+
++
+
++
+
+Priapism reported in case studies; however, overall
+reports of SD seem to be low. Earlier case reports
+document increased sexual desire.
+(Continued)
+
+CHAPTER 3
+
+Depression and anxiety disorders  405
+
+
+
+
+<<<PAGE 442>>>
+
+Depression and anxiety disorders  421
+
+Antidepressants: relative adverse effects – a rough guide
+Table 3.26 gives a very approximate, unreferenced view of the absolute and relative risk
+of a small range of adverse effects associated with standard antidepressants.
+
+Table 3.26 Common adverse effects of antidepressants
+
+Sedation
+
+Postural
+hypotension§
+
+Cardiac
+conduction
+disturbance§
+
+Anticholinergic Nausea/
+effects
+Vomiting
+
+Sexual
+dysfunction§
+
+Amitriptyline
+
++++
+
++++
+
++++
+
++++
+
++
+
++++
+
+Clomipramine
+
+++
+
++++
+
++++
+
+++
+
+++
+
++++
+
+Dosulepin
+
++++
+
++++
+
++++
+
+++
+
++
+
++
+
+Doxepin
+
++++
+
+++
+
++++
+
++++
+
++
+
++
+
+Imipramine
+
+++
+
++++
+
++++
+
++++
+
++
+
++
+
+Lofepramine
+
++
+
++
+
++
+
+++
+
++
+
++
+
+Nortriptyline
+
++
+
+++
+
+++
+
++
+
++
+
++
+
+Trimipramine
+
++++
+
++++
+
+++
+
+++
+
++
+
++
+
+Agomelatine
+
++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Duloxetine (SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Levomilnacipran
+(SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Mianserin
+
+++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Mirtazapine
+
++++
+
++
+
+–
+
++
+
++
+
+–
+
+Reboxetine
+
++
+
+–*
+
+–
+
++
+
++
+
++
+
+Trazodone
+
++++
+
++
+
++
+
++
+
++
+
++
+
+Venlafaxine (SNRI)
+
+–
+
+–*
+
++
+
+–
+
++++
+
++++
+
+Citalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Escitalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Fluoxetine
+
+–
+
+–
+
+–
+
+–
+
+++
+
++++
+
+Fluvoxamine
+
++
+
+–
+
+–
+
+–
+
++++
+
++++
+
+Paroxetine
+
++
+
+–
+
+–
+
++
+
+++
+
++++
+
+Drug
+
+Other
+antidepressants
+
+Selective
+serotonin
+reuptake
+inhibitors (SSRIs)
+
+(Continued)
+
+CHAPTER 3
+
+Tricyclics
+
+
+
+
+<<<PAGE 678>>>
+
+No formal recommendations are available for dosing in older adults2
+Reduced doses may be advisable in geriatric patients due to decreased clearance; every other day dosing may
+be considered in geriatric patients with poor tolerability to the drug
+For older adults, possible reduced renal clearance of desvenlafaxine should be considered when determining
+an appropriate dose
+Dosage in renal impairment:
+CrCl 50–80mL/minute: no dosage adjustment needed
+CrCl 30–50mL/minute: 50mg daily is the recommended daily and maximum dose
+CrCl <30mL/minute or end-stage renal disease: 50mg every other day is the recommended daily and
+maximum dose
+Older adults are also at greater risk for developing clinically significant hyponatremia2
+
+Depression/anxiety disorder
+
+Depression/anxiety disorder
+
+Duloxetine
+
+Escitalopram
+
+5mg mane
+
+30mg daily*
+
+5–10mg mane
+
+60mg daily
+
+10mg mane
+(Continued)
+
+120mg daily3
+(caution as limited data in
+elderly for this dose)
+
+400mg daily2
+
+75mg daily1
+
+Desvenlafaxine
+
+10mg nocte (dose increases should be
+cautious)
+
+30–75mg daily1 should be
+reached after about 10 days
+
+Depression/phobic and
+obsessional states
+
+20mg mane
+
+50mg nocte
+
+Maximum dose in
+elderly
+
+10–20mg mane
+
+Clomipramine
+
+10mg mane
+
+Depression/anxiety disorder
+
+25–50mg daily
+
+Usual maintenance dose
+
+Citalopram
+
+25mg nocte
+
+Starting dose
+
+Depression
+Monitor LFTs; data suggest
+that agomelatine is not
+effective in patients >75 years
+
+Specific indication/
+additional notes
+
+Agomelatine
+
+Antidepressants
+
+Drug
+
+A guide to medication doses of commonly used psychotropics in older adults
+
+
+
+
+<<<PAGE 696>>>
+
+Minimal with
+mirtazapine and
+venlafaxine*
+
+Others25,26
+
+Dizziness
+common with
+agomelatine
+
+Venlafaxine
+can cause
+hypotension
+at lower
+doses, but it
+can increase
+BP at higher
+doses, as can
+duloxetine
+
+Much less of
+a problem,
+but an
+increased risk
+of falls is
+documented
+with SSRIs
+
+Agomelatine
+aids sleep
+
+Venlafaxine,
+duloxetine
+– neutral
+effects
+
+Mirtazapine,
+mianserin
+and
+trazodone
+are sedatives
+
+Unlikely
+with the
+other SSRIs
+
+Can be a
+problem
+with
+paroxetine
+and
+fluvoxamine
+
+Low
+incidence
+with
+agomelatine
+
+Greatest
+problem is
+with
+mirtazapine,
+although
+older people
+are not
+particularly
+prone to
+weight gain
+
+Others are
+weight
+neutral
+
+Paroxetine
+and possibly
+citalopram
+may cause
+weight gain
+
+Others are
+relatively safe
+
+Venlafaxine is
+more toxic in
+overdose than
+SSRIs, but safer
+than TCAs
+
+Safe with the
+possible
+exception of
+citalopram; one
+minor metabolite
+can cause QTc
+prolongation.
+Significance
+unknown
+
+*Noradrenergic drugs may produce ‘anticholinergic’ effects via norepinephrine re-uptake inhibition.
+
+Very low incidence
+with agomelatine
+
+Duloxetine* – few
+effects
+
+Can be rarely a
+problem with
+reboxetine*
+
+Dry mouth can be
+a problem with
+paroxetine
+
+SSRIs20,21
+
+Table 6.8 (Continued )
+
+Interstitial lung disease with
+serotonin and
+norepinephrine reuptake
+inhibitors24
+
+Cognitive impairment with
+trazodone22
+
+Monitor LFTs
+
+Possibly hepatotoxicity with
+agomelatine
+
+Weight loss and nausea with
+duloxetine
+
+Nausea with venlafaxine,
+duloxetine
+
+Insomnia and hypokalaemia
+with reboxetine
+
+GI effects and headaches,
+hyponatraemia, increased
+risk of bleeds in the older
+person (add gastroprotection
+if also on an NSAID or
+aspirin), orofacial dyskinesia
+with paroxetine, cognitive
+impairment,22 interstitial
+lung disease23,24
+
+Agomelatine should be
+avoided in patients who
+take potent CYP1A2
+inhibitors
+
+Reboxetine is safe
+
+Moclobemide and
+venlafaxine inhibit CYP450
+enzymes. Check for
+potential interactions
+
+Duloxetine inhibits CYP2D6
+
+Fluvoxamine, fluoxetine
+and paroxetine are potent
+inhibitors of several hepatic
+cytochrome enzymes (see
+section on antidepressant
+drug interactions)
+Sertraline is safer and
+citalopram, escitalopram
+and vortioxetine are safest
+
+
+
+
+<<<PAGE 754>>>
+
+40. Gahr M, et al. Safety and tolerability of agomelatine: focus on hepatotoxicity. Curr Drug Metab 2014; 15:694–702.
+41. Billioti de Gage S, et al. Antidepressants and hepatotoxicity: a cohort study among 5 million individuals registered in the French National
+Health Insurance Database. CNS Drugs 2018; 32:673–684.
+42. Pladevall-Vila M, et al. Risk of acute liver injury in agomelatine and other antidepressant users in four European Countries: a cohort and
+nested case-control study using automated Health Data Sources. CNS Drugs 2019; 33:383–395.
+43. Hanje AJ, et al. Case report: fulminant hepatic failure involving duloxetine hydrochloride. Clin Gastroenterol Hepatol 2006; 4:912–917.
+44. Vuppalanchi R, et al. Duloxetine hepatotoxicity: a case-series from the drug-induced liver injury network. Aliment Pharmacol Ther 2010;
+32:1174–1183.
+45. Lin ND, et al. Hepatic outcomes among adults taking duloxetine: a retrospective cohort study in a US health care claims database. BMC
+Gastroenterol 2015; 15:134.
+46. McIntyre RS, et al. The hepatic safety profile of duloxetine: a review. Expert Opin Drug Metab Toxicol 2008; 4:281–285.
+47. Bunchorntavakul C, et al. Drug hepatotoxicity: newer agents. Clin Liver Dis 2017; 21:115–134.
+48. Schenker S, et al. Fluoxetine disposition and elimination in cirrhosis. Clin Pharmacol Ther 1988; 44:353–359.
+49. Cai Q, et al. Acute hepatitis due to fluoxetine therapy. Mayo Clin Proc 1999; 74:692–694.
+50. Friedenberg FK, et al. Hepatitis secondary to fluoxetine treatment. Am J Psychiatry 1996; 153:580.
+51. Johnston DE, et al. Chronic hepatitis related to use of fluoxetine. Am J Gastroenterol 1997; 92:1225–1226.
+52. Hale AS New antidepressants: use in high-risk patients. J Clin Psychiatry 1993; 54 Suppl:61–70.
+53. Stoeckel K, et al. Absorption and disposition of moclobemide in patients with advanced age or reduced liver or kidney function. Acta
+Psychiatr Scand Suppl 1990; 360:94–97.
+54. Lee KC, et al. Transdermal selegiline for the treatment of major depressive disorder. Neuropsychiatr Dis Treat 2007; 3:527–537.
+55. Thomas E, et al. Mirtazapine-induced steatosis. Int J Clin Pharmacol Ther 2017; 55:630–632.
+56. Shaheen AA, et al. The impact of depression and antidepressant usage on primary biliary cholangitis clinical outcomes. PLoS One 2018;
+13:e0194839.
+57. Benbow SJ, et al. Paroxetine and hepatotoxicity. BMJ 1997; 314:1387.
+58. Kuhs H, et al. A double-blind study of the comparative antidepressant effect of paroxetine and amitriptyline. Acta Psychiatr Scand Suppl
+1989; 350:145–146.
+59. de Bree H, et al. Fluvoxamine maleate: disposition in men. Eur J Drug Metab Pharmacokinet 1983; 8:175–179.
+60. Green BH Fluvoxamine and hepatic function. Br J Psychiatry 1988; 153:130–131.
+61. Milne RJ, et al. Citalopram: a review of its pharmacodynamic and pharmacokinetic properties, and therapeutic potential in depressive illness.
+Drugs 1991; 41:450–477.
+62. Lopez-Torres E, et al. Hepatotoxicity related to citalopram (Letter). Am J Psychiatry 2004; 161:923–924.
+63. Colakoglu O, et al. Toxic hepatitis associated with paroxetine. Int J Clin Pract 2005; 59:861–862.
+64. Rao N The clinical pharmacokinetics of escitalopram. Clin Pharmacokinet 2007; 46:281–290.
+65. Mullish BH, et al. Review article: depression and the use of antidepressants in patients with chronic liver disease or liver transplantation.
+Aliment Pharmacol Ther 2014; 40:880–892.
+66. Düll MM, et al. Treatment of pruritus secondary to liver disease. Current Gastroenterology Reports 2019; 21:48.
+67. A T, et al. Pharmacokinetics of reboxetine in volunteers with hepatic impairment. Clin Drug Investig 2000; 19:473–477.
+68. Medicines C. Lofepramine (Gamanil) and abnormal blood tests of liver function. Current Problems 1988; 23:2.
+69. Archer DF, et al. Cardiovascular, cerebrovascular, and hepatic safety of desvenlafaxine for 1 year in women with vasomotor symptoms associated with menopause. Menopause 2013; 20:47–56.
+70. Baird-Bellaire S, et al. An open-label, single-dose, parallel-group study of the effects of chronic hepatic impairment on the safety and pharmacokinetics of desvenlafaxine. Clin Ther 2013; 35:782–794.
+71. Ryan PB, et al. Atypical antipsychotics and the risks of acute kidney injury and related outcomes among older adults: a replication analysis
+and an evaluation of adapted confounding control strategies. Drugs Aging 2017; 34:211–219.
+72. Chen G, et al. Vortioxetine: clinical pharmacokinetics and drug interactions. Clin Pharmacokinet 2018; 57:673–686.
+73. Bjornsson E Hepatotoxicity associated with antiepileptic drugs. Acta Neurol Scand 2008; 118:281–290.
+74. Guo HL, et al. Valproic acid and the liver injury in patients with epilepsy: an update. Curr Pharm Des 2019; 25:343–351.
+75. Panei P, et al. Safety of psychotropic drug prescribed for attention-deficit/hyperactivity disorder in Italy. Adverse Drug Reaction Bulletin
+2010:999–1002.
+76. Reed VA, et al. The safety of atomoxetine for the treatment of children and adolescents with attention-deficit/hyperactivity disorder: a comprehensive review of over a decade of research. CNS Drugs 2016; 30:603–628.
+77. Tong HY, et al. Liver transplant in a patient under methylphenidate therapy: a case report and review of the literature. Case Rep Pediatr 2015;
+2015:437298.
+78. Shire Pharmaceuticals Limited. Summary of product characteristics. Elvanse 20mg 30mg 40mg 50mg 60mg 70mg Hard Capsules 2019;
+https://www.medicines.org.uk/emc/product/2979/smpc.
+79. Flynn Pharma Ltd. Summary of product characteristics. Amfexa 5mg 10mg 20mg Tablets 2018; https://www.medicines.org.uk/emc/product/7403/smpc.
+80. Vanga RR, et al. Adderall induced acute liver injury: a rare case and review of the literature. Case Rep Gastrointest Med 2013; 2013:902892.
+81. Hood B, et al. Eosinophilic hepatitis in an adolescent during lisdexamfetamine dimesylate treatment for ADHD. Pediatrics 2010;
+125:e1510–1513.
+
+CHAPTER 8
+
+Hepatic and renal impairment  733
+
+
+
+
+<<<PAGE 810>>>
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  789
+
+Safety in
+epilepsy
+
+Drug
+
+CHAPTER 10
+
+Table 10.5 Psychotropics in epilepsy
+
+Comments
+
+Antidepressants
+Low risk
+– good
+choices
+
+Probably low
+risk – use
+with caution
+(limited
+evidence)
+
+Moderate
+risk – care
+required
+
+Higher risk
+– avoid
+(proconvulsive at
+therapeutic
+doses13)
+
+SSRIs
+
+Recommended in PWE.14,18 SSRIs may be anticonvulsant at therapeutic
+doses13 but pro-convulsant in overdose.31 SSRIs with the lowest risk of
+interactions with antiseizure medications are generally preferred (citalopram/
+escitalopram, followed by sertraline).14,18,32,33 Escitalopram is preferred over
+citalopram in PWE (lower risk of seizures in overdose).34 Others have low risk
+of seizures (e.g. fluoxetine34) but drug interactions with antiseizure
+medications should be considered.14,18 Fluoxetine may be less likely to
+provoke seizures in older people than escitalopram or citalopram.35 Some
+evidence that sertraline is safe and effective in PWE36
+
+Mirtazapine
+
+Recommended in PWE.18,37 Not known to be proconvulsive24
+
+Duloxetine
+
+Recommended for PWE.11,18 Risk of seizures is probably negligible34,35
+
+Agomelatine
+
+Not known to be proconvulsive.38 Anticonvulsant in animal models34
+
+MAOIs
+
+Not known to be pro-convulsive at therapeutic doses.34 Low risk of seizures
+in overdose17
+
+Moclobemide
+
+Not known to be proconvulsive.34 Anticonvulsant in animal models34
+
+Reboxetine
+
+Small open label study suggests no problems in PWE39
+
+Vortioxetine
+
+Not known to be proconvulsive34,40 but no experience in PWE34
+
+Lithium
+
+Low risk of seizures.34 Anticonvulsant in animal models.34 However, limited
+data showing increases or decreases in seizures frequency in PWE.34 For
+bipolar, consider anticonvulsant mood stabilisers41
+
+Trazodone
+
+Limited data suggest some risk of seizures34,42
+
+Venlafaxine
+
+Effective in PWE11 and has been recommended18 but mixed evidence on
+seizure risk34
+
+Vilazodone
+
+Limited data. Seizure exacerbation in a patient with epilepsy has been
+reported34
+
+Amoxapine
+
+Several reports of seizures at therapeutic doses42
+
+Bupropion
+
+Dose-related risk of seizures (particularly with instant-release formulations).34
+Risk is less with slow-release formulations at doses under 300mg/day34
+
+Maprotiline
+
+Several reports of seizures at therapeutic doses42
+
+TCAs
+
+Most TCAs are epileptogenic at higher doses (particularly clomipramine and
+amitriptyline10,24,42). Doxepin possibly lower risk (one small study in PWE).34
+SNRIs are preferred over TCAs in PWE17
+(Continued)
+
+
+
+
+<<<PAGE 862>>>
+
+Pharmacokinetics  841
+
+The target ranges listed in Table 11.2 have somewhat dubious usefulness and, in
+some cases, merely represent the range of values seen in clinical use. Assays for these
+drugs are likely to be available only in specialist units.
+
+Antipsychotics
+
+Target range (µg/L)
+
+Asenapine
+
+1–5
+
+Brexpiprazole
+
+40–140
+
+Cariprazine
+
+10–20
+
+Chlorpromazine
+
+30–300
+
+Flupentixol
+
+0.5–5 (cis-isomer)
+
+Fluphenazine
+
+1–10
+
+Haloperidol
+
+1–10
+
+Iloperidone
+
+5–10
+
+Lurasidone
+
+15–40
+
+Melperone
+
+30–100
+
+Sulpiride
+
+200–1000
+
+Ziprasidone
+
+50–200
+
+Zuclopenthixol
+
+4–50
+
+Antidepressants
+
+Target range (µg/L)
+
+Agomelatine
+
+7–300
+
+Citalopram
+
+50–110
+
+Desvenlafaxine
+
+100–400
+
+Dosulepin
+
+45–100
+
+Duloxetine
+
+30–120
+
+Escitalopram
+
+15–80
+
+Fluoxetine (+norfluoxetine)
+
+120–500
+
+Fluvoxamine
+
+60–230
+
+Levomilnacipran
+
+80–120
+
+Mianserin
+
+15–70
+
+CHAPTER 11
+
+Table 11.2 Target ranges for other psychotropics30,91
+
+(Continued)
+
+
+
+
+<<<PAGE 873>>>
+
+852  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY1A2
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine
+Amitriptyline*
+Asenapine
+Bupropion*
+Caffeine
+Chlorpromazine
+Clomipramine*
+Clozapine
+Duloxetine
+Fluphenazine
+Fluvoxamine
+Imipramine*
+Melatonin
+Mirtazapine*
+Olanzapine
+Perphenazine
+?Pimozide*
+Ramelteon
+Zolpidem*
+
+Fluvoxamine
+Moclobemide
+Perphenazine
+
+‘Barbiturates’
+Carbamazepine
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion*
+Caffeine
+Nicotine
+
+Tranylcypromine
+
+Phenobarbital
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Methadone*
+Nicotine
+Sertraline*
+
+Fluoxetine*
+Fluvoxamine
+Memantine
+Paroxetine*
+Sertraline*
+
+Carbamazepine*
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Buprenorphine*
+
+Not known
+
+Not known
+
+CYP2A6
+
+CPY2B6
+
+CYP2B7
+
+

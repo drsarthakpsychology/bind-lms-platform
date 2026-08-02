@@ -1,0 +1,305 @@
+<<<PAGE 960>>>
+
+4.5 Sedative-, Hypnotic-, or AnxiolyticRelated Disorders
+Anxiolytic or sedative–hypnotic drugs are on a continuum with their hypnotic
+or sleep-inducing effects. In addition to their psychiatric indications,
+clinicians also use these drugs as antiepileptics, muscle relaxants, anesthetics,
+and anesthetic adjuvants. Alcohol and all drugs of this class are crosstolerant, and their effects are additive. Physical and psychological
+dependence develops to these drugs, and all are associated with withdrawal
+symptoms. In the practice of psychiatry and addiction medicine, the drug
+class that is most important clinically is the benzodiazepines.
+The three major groups of drugs associated with this class of substancerelated disorders are benzodiazepines, barbiturates, and barbiturate-like
+substances. We discuss each below.
+Clinical Features
+Specific Agents
+BENZODIAZEPINES. Many benzodiazepines, differing primarily in their half-
+
+lives, are available in the United States. Examples of benzodiazepines are
+diazepam, flurazepam, oxazepam, and chlordiazepoxide. Benzodiazepines are
+used primarily as anxiolytics, hypnotics, antiepileptics, and anesthetics, as
+well as for alcohol withdrawal. After their introduction in the United States in
+the 1960s, benzodiazepines rapidly became the most prescribed drugs; about
+15 percent of all persons in the United States have had a benzodiazepine
+prescribed by a physician. Increasing awareness of the risks for dependence
+on benzodiazepines and increased regulatory requirements, however, have
+decreased the number of benzodiazepine prescriptions. The DEA classifies all
+benzodiazepines as Schedule IV controlled substances.
+Flunitrazepam, a benzodiazepine used in Mexico, South America, and
+Europe but not available in the United States, has become a drug of abuse.
+When taken with alcohol, it may lead to promiscuous sexual behavior and
+rape. It is illegal to bring flunitrazepam into the United States. Although
+
+
+
+
+<<<PAGE 963>>>
+
+with the benzodiazepines. Table 4-24 lists the equivalent therapeutic doses of
+benzodiazepines. Even when users take grossly excessive amounts (more
+than 2 g) in suicide attempts, the symptoms include only drowsiness,
+lethargy, ataxia, some confusion, and mild depression of the user’s vital
+signs. The most lethal overdoses occur when the user takes a benzodiazepine
+in combination with other sedatives, such as alcohol. In such cases, small
+doses of benzodiazepines can cause death. The availability of flumazenil, a
+specific benzodiazepine antagonist, has reduced the lethality of the
+benzodiazepines. Flumazenil can be used in emergency departments to
+reverse the effects of benzodiazepines.
+Table 4-24
+Approximate
+Therapeutic
+Benzodiazepines
+
+Equivalent
+
+Doses
+
+Generic Name
+
+Trade Name
+
+Dose (mg)
+
+Alprazolam
+
+Xanax
+
+1
+
+Chlordiazepoxide
+
+Librium
+
+25
+
+Clonazepam
+
+Klonopin
+
+0.5–1.0
+
+Clorazepate
+
+Tranxene
+
+15
+
+Diazepam
+
+Valium
+
+10
+
+Estazolam
+
+Prosom
+
+1
+
+Flurazepam
+
+Dalmane
+
+30
+
+Lorazepam
+
+Ativan
+
+2
+
+Oxazepam
+
+Serax
+
+30
+
+Temazepam
+
+Restoril
+
+20
+
+Triazolam
+
+Halcion
+
+0.25
+
+Quazepam
+
+Doral
+
+15
+
+Zolpidem
+
+Ambien
+
+10
+
+of
+
+
+
+
+<<<PAGE 2115>>>
+
+In contrast, lorazepam, which has a shorter elimination half-life than
+diazepam but is less lipid-soluble, has a slower onset of action after a single
+dose because the drug is absorbed and enters the brain more slowly.
+However, the duration of action after a single dose is longer because it takes
+longer for lorazepam to leave the brain and for brain levels to decrease below
+the concentration that produces an effect. In chronic dosing, some of these
+differences are not as apparent because brain levels are in equilibrium with
+higher and more consistent steady-state blood levels, but additional doses still
+produce a more rapid but briefer action with diazepam than with lorazepam.
+Benzodiazepines are distributed widely in adipose tissue. As a result,
+medications may persist in the body after discontinuation longer than would
+be predicted from their elimination half-lives. Also, the dynamic half-life
+(i.e., duration of action on the receptor) may be longer than the elimination
+half-life.
+The advantages of long–half-life drugs over short–half-life drugs include
+less frequent dosing, less variation in plasma concentration, and less severe
+withdrawal phenomena. The disadvantages include drug accumulation,
+increased risk of daytime psychomotor impairment, and increased daytime
+sedation.
+The half-lives of lorazepam, oxazepam (Serax), temazepam (Restoril), and
+estazolam are between 8 and 30 hours. Alprazolam has a half-life of 10 to 15
+hours, and triazolam has the shortest half-life (2 to 3 hours) of all the orally
+administered benzodiazepines. Rebound insomnia and anterograde amnesia
+are thought to be more of a problem with the short–half-life drugs than with
+the long–half-life drugs.
+Because the administration of medications more frequently than the
+elimination half-life leads to drug accumulation, medications such as
+diazepam and flurazepam accumulate with daily dosing, eventually resulting
+in increased daytime sedation.
+Some benzodiazepines (e.g., oxazepam) are conjugated directly by
+glucuronidation and are excreted. Most benzodiazepines are oxidized first by
+CYP3A4 and CYP2C19, often to active metabolites. These metabolites may
+then be hydroxylated to another active metabolite. For example, diazepam is
+oxidized to desmethyldiazepam, which, in turn, is hydroxylated to produce
+oxazepam. These products undergo glucuronidation to inactive metabolites.
+Several benzodiazepines (e.g., diazepam, chlordiazepoxide) have the same
+
+
+
+
+<<<PAGE 2123>>>
+
+The clinical decision to treat an anxious person with a benzodiazepine should
+be carefully considered. Medical causes of anxiety (e.g., thyroid dysfunction,
+caffeinism, and prescription medications) should be ruled out.
+Benzodiazepine use should be started at a low dosage, and the person should
+be instructed regarding the drug’s sedative properties and abuse potential. An
+estimated length of therapy should be decided at the beginning of therapy,
+and the need for continued therapy should be reevaluated at least monthly
+because of the problems associated with long-term use. However, certain
+persons with anxiety disorders are unresponsive to treatments other than
+benzodiazepines in long-term use.
+Benzodiazepines are available in a wide range of formulations.
+Clonazepam is available in a wafer formulation that facilitates its use in
+patients who have trouble swallowing pills. Alprazolam is available in an
+extended-release form, which reduces the frequency of dosing. Some
+benzodiazepines are more potent than others in that one compound requires a
+relatively smaller dosage than another compound to achieve the same effect.
+For example, clonazepam requires 0.25 mg to achieve the same effect as 5
+mg of diazepam; thus, clonazepam is considered a high-potency
+benzodiazepine. Conversely, oxazepam has an approximate dosage
+equivalence of 15 mg and is a low-potency drug.
+Table 21-43 lists preparations and doses of medications discussed in this
+chapter.
+
+BUSPIRONE
+Buspirone hydrochloride (BuSpar) is classified as an azapirone and is
+chemically distinct from other psychotropic agents. It acts on two types of
+receptors, serotonin (5-HT) and dopamine (D). It has a high affinity for the 5HT1A serotonin receptor, acting as an agonist or partial agonist, and moderate
+affinity for the D2 dopamine receptor, acting as both an agonist and an
+antagonist. The approved indication for this psychotropic drug is for the
+treatment of GAD. It was initially believed to be a better alternative to the
+benzodiazepine drug group because buspirone does not possess
+anticonvulsant and muscle relaxant effects. Reports continue to appear that
+some patients benefit from the addition of buspirone to their antidepressant
+regimen. Its use in this role is more common than its use as an anxiolytic.
+
+
+
+
+<<<PAGE 2179>>>
+
+this, rapid detoxification protocols have been developed. Continuous
+administration of adjunct clonidine—to reduce the adrenergic withdrawal
+symptoms—and adjunct benzodiazepines, such as oxazepam (Serax)—to
+reduce muscle spasms and insomnia—can permit the use of oral opioid
+receptor antagonists on the first day of opioid cessation. Detoxification can
+thus be completed within 48 to 72 hours, at which point opioid receptor
+antagonist maintenance is initiated. Moderately severe withdrawal symptoms
+may be experienced on the first day, but they taper off rapidly after that.
+Because of the potential hypotensive effects of clonidine, the BP of
+persons undergoing rapid detoxification must be closely monitored for the
+first 8 hours. Outpatient rapid detoxification settings must therefore be
+adequately prepared to administer emergency care.
+The main advantage of rapid detoxification is that the transition from
+opioid abuse to maintenance treatment occurs over just 2 or 3 days. The
+completion of detoxification in as little time as possible minimizes the risk
+that the person will relapse into opioid abuse during the detoxification
+protocol.
+Alcohol Use Disorder. Opioid receptor antagonists are also used as
+adjuncts to cognitive-behavioral programs for the treatment of alcohol use
+disorder. Opioid receptor antagonists reduce alcohol craving and alcohol
+consumption, and they ameliorate the severity of relapses. Concomitant
+opioid receptor antagonist treatment added to an effective cognitivebehavioral program may halve the risk of relapse into heavy alcohol
+consumption.
+The newer agent, nalmefene, has several potential pharmacologic and
+clinical advantages over its predecessor, naltrexone, for the treatment of
+alcohol use disorder. Whereas naltrexone may cause reversible transaminase
+elevations in persons who take dosages of 300 mg a day (which is six times
+the recommended dosage for treatment of alcohol and opioid dependence [50
+mg a day]), nalmefene has not been associated with any hepatotoxicity.
+Clinically effective dosages of naltrexone are discontinued by 10 to 15
+percent of persons because of adverse effects, most commonly nausea. In
+contrast, discontinuation of nalmefene because of an adverse event is rare at
+the clinically effective dosage of 20 mg a day and in the range of 10 percent
+at excessive dosages—that is, 80 mg a day. Because of its pharmacokinetic
+
+
+
+
+<<<PAGE 2184>>>
+
+Rapid Detoxification. Rapid detoxification has been standardized using
+naltrexone, although nalmefene would be expected to be equally effective
+with fewer adverse effects. In rapid detoxification protocols, the addicted
+person stops opioid use abruptly and begins the first opioid-free day by
+taking clonidine 0.2 mg orally every 2 hours for nine doses, to a maximum
+dose of 1.8 mg, during which time the BP is monitored every 30 to 60
+minutes for the first 8 hours. Naltrexone 12.5 mg is administered 1 to 3 hours
+after the first dose of clonidine. To reduce muscle cramps and later insomnia,
+a short-acting benzodiazepine, such as oxazepam 30 to 60 mg, is
+administered simultaneously with the first dose of clonidine, and half of the
+initial dose is readministered every 4 to 6 hours as needed. The maximum
+daily dosage of oxazepam should not exceed 180 mg. The person undergoing
+rapid detoxification should be accompanied home by a reliable escort. On the
+second day, similar doses of clonidine and the benzodiazepine are
+administered but with a single dose of naltrexone 25 mg taken in the
+morning. Relatively asymptomatic persons may return home after 3 to 4
+hours. Administration of the daily maintenance dose of 50 mg of naltrexone
+is begun on the third day, and the dosages of clonidine and the
+benzodiazepine are gradually tapered off over 5 to 10 days.
+
+DISULFIRAM AND ACAMPROSATE
+Disulfiram (Antabuse) and acamprosate (Campral) are drugs used to treat
+alcohol use disorder. Disulfiram has suffered from a reputation as a
+dangerous medication only suitable for highly motivated and strictly
+supervised drinkers because of the severe physical reactions the drug causes
+after drinking. Experience has shown, however, that at recommended doses,
+it is an acceptable and safe medication for dependent drinkers seeking to
+sustain abstinence. The properties that constitute disulfiram’s main
+therapeutic effect (i.e., the ability to produce unpleasant symptoms after
+alcohol intake, also known as disulfiram–alcohol reaction) have created that
+perception of dangerousness.
+In the most severe cases, when disulfiram is combined with alcohol, severe
+clinical conditions can occur. These include respiratory depression,
+cardiovascular collapse, acute heart failure, convulsions, loss of
+consciousness, and death in rare cases. These potential complications, as well
+
+

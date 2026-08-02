@@ -1,0 +1,460 @@
+<<<PAGE 236>>>
+
+14. Nilsson BM, et al. Tachycardia in patients treated with clozapine versus antipsychotic long-acting injections. Int Clin Psychopharmacol 2017;
+32:219–224.
+15. Medicines CoSo. Clozapine and cardiac safety: updated advice for prescribers. Curr Prob Pharmacovigilance 2002; 28:8.
+16. Hagg S, et al. Myocarditis related to clozapine treatment. J Clin Psychopharmacol 2001; 21:382–388.
+17. Nilsson BM, et al. Persistent tachycardia in clozapine treated patients: a 24-hour ambulatory electrocardiogram study. Schizophr Res 2018;
+199:403–406.
+18. Stryjer R, et al. Beta-adrenergic antagonists for the treatment of clozapine-induced sinus tachycardia: a retrospective study. Clin
+Neuropharmacol 2009; 32:290–292.
+19. Lally J, et al. Pharmacological interventions for clozapine-induced sinus tachycardia. Cochrane Database Syst Rev 2016; Cd011566.
+20. Yuen JWY, et al. Clozapine-induced cardiovascular side effects and autonomic dysfunction: a systematic review. Front Neurosci 2018;
+12:203.
+21. Lally J, et al. Ivabradine, a novel treatment for clozapine-induced sinus tachycardia: a case series. Ther Adv Psychopharmacol 2014;
+4:117–122.
+22. Shinbane JS, et al. Tachycardia-induced cardiomyopathy: a review of animal models and clinical studies. J Am Coll Cardiol 1997;
+29:709–715.
+23. Allison D, et al. Antipsychotic-induced weight gain: a comprehensive research synthesis. Am J Psychiatry 1999; 156:1686–1696.
+24. Verdoux H, et al. Clinical determinants of fever in clozapine users and implications for treatment management: a narrative review. Schizophr
+Res 2019; 211:1–9.
+25. Hung YP, et al. Role of cytokine changes in clozapine-induced fever: a cohort prospective study. Psychiatry Clin Neurosci 2017;
+71:395–402.
+26. Kohen I, et al. Increases in C-reactive protein may predict recurrence of clozapine-induced fever. Ann Pharmacother 2009; 43:143–146.
+27. Kluge M, et al. Effects of clozapine and olanzapine on cytokine systems are closely linked to weight gain and drug-induced fever.
+Psychoneuroendocrinology 2009; 34:118–128.
+28. Chung JP, et al. The incidence and characteristics of clozapine – induced fever in a local psychiatric unit in Hong Kong. Can J Psychiatry
+2008; 53:857–862.
+29. Tham JC, et al. Clozapine-induced fevers and 1-year clozapine discontinuation rate. J Clin Psychiatry 2002; 63:880–884.
+30. Grover S, et al. Association of clozapine with seizures: a brief report involving 222 patients prescribed clozapine. East Asian Arch Psychiatry
+2015; 25:73–78.
+31. Pacia SV, et al. Clozapine-related seizures: experience with 5,629 patients. Neurology 1994; 44:2247–2249.
+32. Varma S, et al. Clozapine-related EEG changes and seizures: dose and plasma-level relationships. Ther Adv Psychopharmacol 2011;
+1:47–66.
+33. Caetano D. Use of anticonvulsants as prophylaxis for seizures in patients on clozapine. Australas Psychiatry 2014; 22:78–83.
+34. Centorrino F, et al. EEG abnormalities during treatment with typical and atypical antipsychotics. Am J Psychiatry 2002; 159:109–115.
+35. Jackson A, et al. EEG changes in patients on antipsychotic therapy: a systematic review. Epilepsy Behav 2019; 95:1–9.
+36. Van Der Horst MZ, et al. Isolated nausea and vomiting as the cardinal presenting symptoms of clozapine-induced myocarditis: a case report.
+BMC Psychiatry 2020; 20:568.
+37. Warner JP, et al. Clozapine and urinary incontinence. Int Clin Psychopharmacol 1994; 9:207–209.
+38. Jeong SH, et al. A 2-year prospective follow-up study of lower urinary tract symptoms in patients treated with clozapine. J Clin
+Psychopharmacol 2008; 28:618–624.
+39. Harrison-Woolrych M, et al. Nocturnal enuresis in patients taking clozapine, risperidone, olanzapine and quetiapine: comparative cohort
+study. Br J Psychiatry 2011; 199:140–144.
+40. Steingard S. Use of desmopressin to treat clozapine-induced nocturnal enuresis. J Clin Psychiatry 1994; 55:315–316.
+41. Sarma S, et al. Severe hyponatraemia associated with desmopressin nasal spray to treat clozapine-induced nocturnal enuresis. Aust N Z J
+Psychiatry 2005; 39:949.
+42. Praharaj SK, et al. Amitriptyline for clozapine-induced nocturnal enuresis and sialorrhoea. Br J Clin Pharmacol 2007; 63:128–129.
+43. Fuller MA, et al. Clozapine-induced urinary incontinence: incidence and treatment with ephedrine. J Clin Psychiatry 1996; 57:514–518.
+44. Hanes A, et al. Pseudoephedrine for the treatment of clozapine-induced incontinence. Innov Clin Neurosci 2013; 10:33–35.
+45. Palaniappan P. Aripiprazole as a treatment option for clozapine-induced enuresis. Indian J Pharmacol 2015; 47:574–575.
+46. Lee MJ, et al. Use of aripiprazole in clozapine induced enuresis: report of two cases. J Korean Med Sci 2010; 25:333–335.
+47. Taylor D, et al. Use of antacid medication in patients receiving clozapine: a comparison with other second-generation antipsychotics. J Clin
+Psychopharmacol 2010; 30:460–461.
+48. Van Veggel M, et al. Clozapine and gastro-oesophageal reflux disease (GORD) – an investigation of temporal association. Acta Psychiatr
+Scand 2013; 127:69–77.
+49. Wicinski M, et al. Potential mechanisms of hematological adverse drug reactions in patients receiving clozapine in combination with proton
+pump inhibitors. J Psychiatr Pract 2017; 23:114–120.
+50. Shuman MD, et al. Exploring the potential effect of polypharmacy on the hematologic profiles of clozapine patients. J Psychiatr Pract 2014;
+20:50–58.
+51. Humbert-Claude M, et al. Involvement of histamine receptors in the atypical antipsychotic profile of clozapine: a reassessment in vitro and
+in vivo. Psychopharmacology 2011; 220:225–241.
+52. Osborne IJ, et al. Clozapine-induced myoclonus: a case report and review of the literature. Ther Adv Psychopharmacol 2015; 5:351–356.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  215
+
+
+
+
+<<<PAGE 240>>>
+
+6. Panesar N, et al. Late onset neutropenia with clozapine. Aust N Z J Psychiatry 2011; 45:684.
+7. Tourian L, et al. Late-onset agranulocytosis in a patient treated with clozapine and lamotrigine. J Clin Psychopharmacol 2011;
+31:665–667.
+8. Hawe R, et al. Response to clozapine-induced microscopic colitis: a case report and review of the literature. J Clin Psychopharmacol 2008;
+28:454–455.
+9. Shah V, et al. Clozapine-induced ischaemic colitis. BMJ Case Rep 2013; 2013:bcr2012007933.
+10. Linsley KR, et al. Clozapine-associated colitis: case report and review of the literature. J Clin Psychopharmacol 2012; 32:564–566.
+11. Baptista T. A fatal case of ischemic colitis during clozapine administration. Rev Bras Psiquiatr 2014; 36:358.
+12. Rodriguez-Sosa JT, et al. Apropos of a case: relationship of ischemic colitis with clozapine. Actas Esp Psiquiatr 2014; 42:325–326.
+13. Osterman MT, et al. Clozapine-induced acute gastrointestinal necrosis: a case report. J Med Case Rep 2017; 11:270.
+14. Holz K, et al. Clozapine associated with microscopic colitis in the setting of biopsy-proven celiac disease. J Clin Psychopharmacol 2018;
+38:150–152.
+15. Rask SM, et al. Clozapine-related diarrhea and colitis: report of 4 cases. J Clin Psychopharmacol 2020; 40:293–296.
+16. Verdoux H, et al. Clinical determinants of fever in clozapine users and implications for treatment management: a narrative review. Schizophr
+Res 2019; 211:1–9.
+17. Peyriere H, et al. Antipsychotics-induced ischaemic colitis and gastrointestinal necrosis: a review of the French pharmacovigilance database.
+Pharmacoepidemiol Drug Saf 2009; 18:948–955.
+18. Centorrino F, et al. Delirium during clozapine treatment: incidence and associated risk factors. Pharmacopsychiatry 2003; 36:156–160.
+19. Shankar BR. Clozapine-induced delirium. J Neuropsychiatry Clin Neurosci 2008; 20:239–240.
+20. Khanra S, et al. An unusual case of delirium after restarting clozapine. Clin Psychopharmacol Neurosci 2016; 14:107–108.
+21. Gaertner HJ, et al. Side effects of clozapine. Psychopharmacology 1989; 99 Suppl:S97–S100.
+22. Hummer M, et al. Does eosinophilia predict clozapine induced neutropenia? Psychopharmacology 1996; 124:201–204.
+23. Ames D, et al. Predictive value of eosinophilia for neutropenia during clozapine treatment. J Clin Psychiatry 1996; 57:579–581.
+24. Wysokinski A, et al. Rapidly developing and self-limiting eosinophilia associated with clozapine. Psychiatry Clin Neurosci 2015; 69:122.
+25. Aneja J, et al. Eosinophilia induced by clozapine: a report of two cases and review of the literature. J Family Med Primary Care 2015;
+4:127–129.
+26. Lally J, et al. Hepatitis, interstitial nephritis, and pancreatitis in association with clozapine treatment: a systematic review of case series and
+reports. J Clin Psychopharmacol 2018; 38:520–527.
+27. Marchel D, et al. Multiorgan eosinophilic infiltration after initiation of clozapine therapy: a case report. BMC Res Notes 2017; 10:316.
+28. Chatterton R. Eosinophilia after commencement of clozapine treatment. AustNZJPsychiatry 1997; 31:874–876.
+29. Chan SY, et al. Clozapine-induced acute interstitial nephritis. Hong Kong Med J 2015; 21:372–374.
+30. Lally J, et al. Rechallenge following clozapine-associated eosinophilia: a case report and literature review. J Clin Psychopharmacol 2019;
+39:504–506.
+31. Linsley KR, et al. Clozapine-induced eosinophilic colitis (letter). Am J Psychiatry 2005; 162:1386–1387.
+32. De Filippis R, et al. Clozapine-related drug reaction with eosinophilia and systemic symptoms (DRESS) syndrome: a systematic review.
+Expert Rev Clin Pharmacol 2020; 13:875–883.
+33. McArdle PA, et al. Successful rechallenge with clozapine after treatment associated eosinophilia. Aust Psychiatry 2016; 24:365–367.
+34. Fabrazzo M, et al. Clozapine versus other antipsychotics during the first 18 weeks of treatment: a retrospective study on risk factor increase
+of blood dyscrasias. Psychiatry Res 2017; 256:275–282.
+35. Sanader B, et al. Clozapine-induced DRESS syndrome: a case series from the AMSP multicenter drug safety surveillance project.
+Pharmacopsychiatry 2019; 52:156–159.
+36. Kerwin RW, et al. Heat stroke in schizophrenia during clozapine treatment: rapid recognition and management. J Psychopharmacology 2004;
+18:121–123.
+37. Hoffmann MS, et al. Heat stroke during long-term clozapine treatment: should we be concerned about hot weather? Trends in Psychiatry
+and Psychotherapy 2016; 38:56–59.
+38. Erdogan A, et al. Management of marked liver enzyme increase during clozapine treatment: a case report and review of the literature. Int J
+Psychiatry Med 2004; 34:83–89.
+39. Macfarlane B, et al. Fatal acute fulminant liver failure due to clozapine: a case report and review of clozapine-induced hepatotoxicity.
+Gastroenterology 1997; 112:1707–1709.
+40. Chang A, et al. Clozapine-induced fatal fulminant hepatic failure: a case report. Can J Gastroenterol 2009; 23:376–378.
+41. Chaplin AC, et al. Re: recent case report of clozapine-induced acute hepatic failure. Can J Gastroenterol 2010; 24:739–740.
+42. Wu Chou AI, et al. Hepatotoxicity induced by clozapine: a case report and review of literature. Neuropsychiatr Dis Treat 2014; 10:1585–1587.
+43. Kane JP, et al. Clozapine-induced liver injury and pleural effusion. Mental Illness 2014; 6:5403.
+44. Douros A, et al. Drug-induced liver injury: results from the hospital-based Berlin Case-Control Surveillance Study. Br J Clin Pharmacol 2015;
+79:988–999.
+45. Tucker P. Liver toxicity with clozapine. Aust N Z J Psychiatry 2013; 47:975–976.
+46. Fong SY, et al. Clozapine-induced toxic hepatitis with skin rash. J Psychopharmacol 2005; 19:107.
+47. Burk BG, et al. A case report of acute hypothermia during initial inpatient clozapine titration with review of current literature on clozapineinduced temperature dysregulations. BMC Psychiatry 2020; 20:290.
+48. Hunter R, et al. Clozapine-induced interstitial nephritis – a rare but important complication: a case report. J Med Case Rep 2009; 3:8574.
+49. Elias TJ, et al. Clozapine-induced acute interstitial nephritis. Lancet 1999; 354:1180–1181.
+50. Parekh R, et al. Clozapine induced tubulointerstitial nephritis in a patient with paranoid schizophrenia. BMJ Case Rep 2014; bcr2013203502.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  219
+
+
+
+
+<<<PAGE 241>>>
+
+CHAPTER 1
+
+220  The Maudsley® Prescribing Guidelines in Psychiatry
+
+51. An NY, et al. A case of clozapine induced acute renal failure. Psychiatry Investig 2013; 10:92–94.
+52. Kanofsky JD, et al. A case of acute renal failure in a patient recently treated with clozapine and a review of previously reported cases. Prim
+Care Companion CNS Disord 2011; 13:PCC.10br01091.
+53. Au AF, et al. Clozapine-induced acute interstitial nephritis. Am J Psychiatry 2004; 161:1501.
+54. Southall KE. A case of interstitial nephritis on clozapine. Aust N Z J Psychiatry 2000; 34:697–698.
+55. Fraser D, et al. An unexpected and serious complication of treatment with the atypical antipsychotic drug clozapine. Clin Nephrol 2000;
+54:78–80.
+56. McLoughlin C, et al. Clozapine-induced interstitial nephritis in a patient with schizoaffective disorder in the forensic setting: a case report
+and review of the literature. Ir J Psychol Med 2019: [Epub ahead of print].
+57. Mohan T, et al. Clozapine-induced nephritis and monitoring implications. Aust N Z J Psychiatry 2013; 47:586–587.
+58. Can KC, et al. A very rare adverse effect of clozapine, clozapine-induced interstitial lung disease: case report and literature review. Noro
+Psikiyatri Arsivi 2019; 56:313–315.
+59. Torrico T, et al. Clozapine-induced pneumonitis: a case report. Frontiers in Psychiatry 2020; 11:572102.
+60. Borovik AM, et al. Ocular pigmentation associated with clozapine. Med J Aust 2009; 190:210–211.
+61. Huttlin EA, et al. Periorbital edema associated with clozapine and gabapentins: a case report. J Clin Psychopharmacol 2020; 40:198–199.
+62. Ceylan E, et al. The ocular surface side effects of an anti-psychotic drug, clozapine. Cutan Ocul Toxicol 2016; 35:62–66.
+63. Bergemann N, et al. Asymptomatic pancreatitis associated with clozapine. Pharmacopsychiatry 1999; 32:78–80.
+64. Raja M, et al. A case of clozapine-associated pancreatitis. Open Neuropsychopharmacol J 2011; 4:5–7.
+65. Bayard JM, et al. Case report: acute pancreatitis induced by Clozapine. Acta Gastroenterol Belg 2005; 68:92–94.
+66. Sani G, et al. Development of asymptomatic pancreatitis with paradoxically high serum clozapine levels in a patient with schizophrenia and
+the CYP1A2*1F/1F genotype. J Clin Psychopharmacol 2010; 30:737–739.
+67. Wehmeier PM, et al. Pancreatitis followed by pericardial effusion in an adolescent treated with clozapine. J Clin Psychopharmacol 2003;
+23:102–103.
+68. Garlipp P, et al. The development of a clinical syndrome of asymptomatic pancreatitis and eosinophilia after treatment with clozapine in
+schizophrenia: implications for clinical care, recognition and management. J Psychopharmacology 2002; 16:399–400.
+69. Gatto EM, et al. Clozapine and pancreatitis. Clin Neuropharmacol 1998; 21:203.
+70. Martin A. Acute pancreatitis associated with clozapine use. Am J Psychiatry 1992; 149:714.
+71. Cerulli TR. Clozapine-associated pancreatitis. Harv Rev Psychiatry 1999; 7:61–63.
+72. Huang YJ, et al. Recurrent pancreatitis without eosinophilia on clozapine rechallenge. Prog Neuropsychopharmacol Biol Psychiatry 2009;
+33:1561–1562.
+73. Chengappa KN, et al. Recurrent pancreatitis on clozapine re-challenge. J Psychopharmacology 1995; 9:381–382.
+74. Frankenburg FR, et al. Eosinophilia, clozapine, and pancreatitis. Lancet 1992; 340:251.
+75. DeRemer CE, et al. Clozapine drug-induced pancreatitis of intermediate latency of onset confirmed by de-challenge and re-challenge. Int J
+Clin Pharmacol Ther 2019; 57:37–40.
+76. Immadisetty V, et al. A successful treatment strategy for clozapine-induced parotid swelling: a clinical case and systematic review.
+TherAdvPsychopharmacol 2012; 2:235–239.
+77. Gouzien C, et al. [Clozapine-induced parotitis: a case study]. Encephale 2014; 40:81–85.
+78. Saguem BN, et al. Eosinophilia and parotitis occurring early in clozapine treatment. Int J Clin Pharm 2015; 37:992–995.
+79. Vohra A. Clozapine- induced recurrent and transient parotid gland swelling. African Journal of Psychiatry 2013; 16:236, 238.
+80. Acosta-Armas AJ. Two cases of parotid gland swelling in patients taking clozapine. Hosp Med 2001; 62:704–705.
+81. Patkar AA, et al. Parotid gland swelling with clozapine. J Clin Psychiatry 1996; 57:488.
+82. Kathirvel N, et al. Recurrent transient parotid gland swelling with clozapine therapy. Ir J Psychol Med 2014; 25:69–70.
+83. Brodkin ES, et al. Treatment of clozapine-induced parotid gland swelling. Am J Psychiatry 1996; 153:445.
+84. Vasile JS, et al. Clozapine and the development of salivary gland swelling: a case study. J Clin Psychiatry 1995; 56:511–513.
+85. Raju P, et al. Pericardial effusion in patients with schizophrenia: are they on clozapine? Emerg Med J 2008; 25:383–384.
+86. Dauner DG, et al. Clozapine-induced pericardial effusion. J Clin Psychopharmacol 2008; 28:455–456.
+87. Markovic J, et al. Clozapine-induced pericarditis. Afr J Psychiatry 2011; 14:236–238.
+88. Bhatti MA, et al. Clozapine-induced pericarditis, pericardial tamponade, polyserositis, and rash. J Clin Psychiatry 2005; 66:1490–1491.
+89. Boot E, et al. Pericardial and bilateral pleural effusion associated with clozapine treatment. Eur Psychiatry 2004; 19:65.
+90. Murko A, et al. Clozapine and pericarditis with pericardial effusion. Am J Psychiatry 2002; 159:494.
+91. Imon Paul MD, et al. Clozapine induced pericarditis. Clin Schizophr Relat Psychoses 2014: 4;1–6
+92. Bath AS, et al. Pericardial effusion: rare adverse effect of clozapine. Cureus 2019; 11:e4890.
+93. Johal HK, et al. Clozapine-induced pericarditis: an ethical dilemma. BMJ Case Rep 2019; 12:e229872.
+94. Prisco V, et al. Brain natriuretic peptide as a biomarker of asymptomatic clozapine-related heart dysfunction: a criterion for a more cautious
+administration. Clin Schizophr Relat Psychoses 2016; 12:185–188.
+	  95. Prisco V, et al. Brain natriuretic peptide as a biomarker of asymptomatic clozapine-related heart dysfunction: a criterion for a more cautious
+administration. Clin Schizophr Relat Psychoses 2019; 12:185–188.
+	  96. Crews MP, et al. Clozapine rechallenge following clozapine-induced pericarditis. J Clin Psychiatry 2010; 71:959–961.
+	  97. Sarathy K, et al. A successful re-trial after clozapine myopericarditis. J R Coll Physicians Edinb 2017; 47:146–147.
+	  98. Kumar T, et al. Dose dependent stuttering with clozapine: a case report. Asian J Psychiatr 2013; 6:178–179.
+	  99. Grover S, et al. Clozapine-induced stuttering: a case report and analysis of similar case reports in the literature. Gen Hosp Psychiatry 2012;
+34:703–703.
+
+
+
+
+<<<PAGE 242>>>
+
+100. Murphy R, et al. Clozapine-induced stuttering: an estimate of prevalence in the west of Ireland. Ther Adv Psychopharmacol 2015;
+5:232–236.
+101. Rachamallu V, et al. Clozapine-induced microseizures, orofacial dyskinesia, and speech dysfluency in an adolescent with treatment resistant
+early onset schizophrenia on concurrent lithium therapy. Case Rep Psychiatry 2017: 7359095
+102. Bar KJ, et al. Olanzapine- and clozapine-induced stuttering. A case series. Pharmacopsychiatry 2004; 37:131–134.
+103. Chochol MD, et al. Clozapine-associated myoclonus and stuttering secondary to smoking cessation and drug interaction: a case report. J
+Clin Psychopharmacol 2019; 39:275–277.
+104. Gica S, et al. Clozapine-associated stuttering: a case report. Am J Ther 2020; 27:e624–e627.
+105. Das S, et al. Clozapine-induced weight loss and stuttering in a patient with schizophrenia. Indian J Psychol Med 2018; 40:385–387.
+106. Nagendrappa S, et al. ‘I stopped hearing voices, started to stutter’ – a case of clozapine-induced stuttering. Indian J Psychol Med 2019;
+41:97–98.
+107. Duggal HS, et al. Clozapine-induced stuttering and seizures. Am J Psychiatry 2002; 159:315.
+108. Jagadheesan K, et al. Clozapine-induced thrombocytopenia: a pilot study. Hong Kong J Psychiatry 2003; 13:12–15.
+109. Mihaljevic-Peles A, et al. Thrombocytopenia associated with clozapine and fluphenazine. Nord J Psychiatry 2001; 55:449–450.
+110. Rudolf J, et al. Clozapine-induced agranulocytosis and thrombopenia in a patient with dopaminergic psychosis. J Neur Trans 1997;
+104:1305–1311.
+111. Assion HJ, et al. Lymphocytopenia and thrombocytopenia during treatment with risperidone or clozapine. Pharmacopsychiatry 1996;
+29:227–228.
+112. Lee J, et al. The effect of clozapine on hematological indices: a 1-year follow-up study. J Clin Psychopharmacol 2015; 35:510–516.
+113. Grover S, et al. Haematological side effects associated with clozapine: a retrospective study from India. Asian J Psychiatr 2020; 48:101906.
+114. Kate N, et al. Clozapine associated thrombocytopenia. J Pharmacol Pharmacother 2013; 4:149–151.
+115. Gonzales MF, et al. Evidence for immune etiology in clozapine-induced thrombocytopenia of 40 months’ duration: a case report. CNS
+Spectr 2000; 5:17–18.
+116. Hauseux PA, et al. Clozapine rechallenge after thrombocytopenia: a case report. Schizophr Res 2020; 222:477–479.
+117. Hampson ME. Clozapine-induced thrombocytosis. Br J Psychiatry 2000; 176:400.
+118. Warnock JK, et al. Adverse cutaneous reactions to antipsychotics. Am J Clin Dermatol 2002; 3:629–636.
+119. Wu BY, et al. Prevalence and associated factors of comorbid skin diseases in patients with schizophrenia: a clinical survey and national
+health database study. Gen Hosp Psychiatry 2014; 36:415–421.
+120. Voulgari C, et al. Clozapine-induced late agranulocytosis and severe neutropenia complicated with streptococcus pneumonia, venous
+thromboembolism, and allergic vasculitis in treatment-resistant female psychosis. Case Rep Med 2015. http://dx.doi.
+org/10.1155/2015/703218.
+121. Penaskovic K, et al. Clozapine-induced allergic vasculitis (letter). Am J Psychiatry 2005; 162:1543–1542.
+122. Mukherjee S, et al. Leukocytoclastic vasculitis secondary to clozapine. Indian J Psychiatry 2019; 61:94–96.
+123. Fujimoto S, et al. Clozapine-induced antineutrophil cytoplasmic antibody-associated vasculitis: a case report. Mod Rheumatol Case Rep
+2020; 4:70–73.
+124. Wu MK, et al. The severe complication of Stevens-Johnson syndrome induced by long-term clozapine treatment in a male schizophrenia
+patient: a case report. Neuropsychiatr Dis Treat 2015; 11:1039–1041.
+125. Lai YW, et al. Pityriasis rosea-like eruption associated with clozapine: a case report. Gen Hosp Psychiatry 2012; 34:703.e705–707.
+126. Bhatia MS, et al. Clozapine induced pityriasiform eruption. Indian J Dermatol 1997; 42:245–246.
+127. Stanislav SW, et al. Papular rash and bilateral pleural effusion associated with clozapine. Ann Pharmacother 1999; 33:1008–1009.
+128. Bosonnet S, et al. [Acute generalized exanthematic pustulosis after intake of clozapine (leponex) First case]. Ann Dermatol Venereol 1997;
+124:547–548.
+129. Kleinen JM, et al. [Clozapine-induced agranulocytosis and Sweet’s syndrome in a 74-year-old female patient A Case Study]. Tijdschrift Voor
+Psychiatrie 2008; 50:119–123.
+130. Chate S, et al. Pulmonary thromboembolism associated with clozapine. J Neuropsychiatry Clin Neurosci 2013; 25:E3–6.
+131. Srinivasaraju R, et al. Clozapine-associated cerebral venous thrombosis. J Clin Psychopharmacol 2010; 30:335–336.
+132. Werring D, et al. Cerebral venous sinus thrombosis may be associated with clozapine. J Neuropsychiatry Clin Neurosci 2009;
+21:343–345.
+133. Paciullo CA. Evaluating the association between clozapine and venous thromboembolism. Am J Health Syst Pharm 2008; 65:1825–1829.
+134. Yang TY, et al. Massive pulmonary embolism in a young patient on clozapine therapy. J Emerg Med 2004; 27:27–29.
+135. Gami RK, et al. Pulmonary embolism and clozapine use: a case report and literature review. Psychosomatics 2017; 58:203–208.
+136. Hagg S, et al. Risk of venous thromboembolism due to antipsychotic drug therapy. Exp Opin Drug Saf 2009; 8:537–547.
+137. De Fazio P, et al. Rare and very rare adverse effects of clozapine. Neuropsychiatr Dis Treat 2015; 11:1995–2003.
+138. Sarvaiya N, et al. Clozapine-associated pulmonary embolism: a high-mortality, dose-independent and early-onset adverse effect. Am J Ther
+2018; 25:e434–e438.
+139. Goh JG, et al. A case report of clozapine continuation after pulmonary embolism in the context of other risk factors for thromboembolism.
+Aust N Z J Psychiatry 2016; 50:1205–1206.
+140. Munoli RN, et al. Clozapine-induced recurrent pulmonary thromboembolism. J Neuropsychiatry Clin Neurosci 2013; 25:E50–E51.
+141. Selten JP, et al. Clozapine and venous thromboembolism: further evidence. J Clin Psychiatry 2003; 64:609.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  221
+
+
+
+
+<<<PAGE 251>>>
+
+CHAPTER 1
+
+230  The Maudsley® Prescribing Guidelines in Psychiatry
+
+21. Praharaj SK, et al. Amisulpride treatment for clozapine-induced sialorrhea. J Clin Psychopharmacol 2009; 29:189–190.
+22. Aggarwal A, et al. Amisulpride for clozapine induced sialorrhea. Psychopharmacol Bull 2009; 42:69–71.
+23. Croissant B, et al. Reduction of side effects by combining clozapine with amisulpride: case report and short review of clozapine-induced
+hypersalivation-a case report. Pharmacopsychiatry 2005; 38:38–39.
+24. Praharaj SK, et al. Amisulpride improved debilitating clozapine-induced sialorrhea. Am J Ther 2011; 18:e84–e85.
+25. Kulkarni RR. Low-dose amisulpride for debilitating clozapine-induced sialorrhea: case series and review of literature. Indian J Psychol Med
+2015; 37:446–448.
+26. Copp P, et al. Amitriptyline in clozapine-induced sialorrhoea. Br J Psychiatry 1991; 159:166.
+27. Praharaj SK, et al. Amitriptyline for clozapine-induced nocturnal enuresis and sialorrhoea. Br J Clin Pharmacol 2007; 63:128–129.
+28. Sinha S, et al. Very low dose amitriptyline for clozapine-associated sialorrhea. Curr Drug Saf 2016; 11:262–263.
+29. Antonello C, et al. Clozapine and sialorrhea: a new intervention for this bothersome and potentially dangerous side effect. J Psychiatry
+Neurosci 1999; 24:250.
+30. Mustafa FA, et al. Sublingual atropine for the treatment of severe and hyoscine-resistant clozapine-induced sialorrhea. Afr J Psychiatry 2013;
+16:242.
+31. Matos Santana TE, et al. Sublingual atropine in the treatment of clozapine-induced sialorrhea. Schizophr Res 2017; 182:144–145.
+32. Mubaslat O, et al. The effect of sublingual atropine sulfate on clozapine-induced hypersalivation: a multicentre, randomised placebo-controlled trial. Psychopharmacology 2020; 237:2905–2915.
+33. Van Der Poorten T, et al. The sublingual use of atropine in the treatment of clozapine-induced sialorrhea: a systematic review. Clin Case Rep
+2019; 7:2108–2113.
+34. Leung JG, et al. Potential problems surrounding the use of sublingually administered ophthalmic atropine for sialorrhea. Schizophr Res 2017;
+185:202–203.
+35. Spivak B, et al. Trihexyphenidyl treatment of clozapine-induced hypersalivation. Int Clin Psychopharmacol 1997; 12:213–215.
+36. Praharaj SK, et al. Complete resolution of clozapine-induced sialorrhea with low dose trihexyphenidyl. Psychopharmacol Bull 2010;
+43:73–75.
+37. Reinstein M, et al. Comparative efficacy and tolerability of benzatropine and terazosin in the treatment of hypersalivation secondary to
+clozapine. Clin Drug Investig 1999; 17:97–102.
+38. Kahl KG, et al. Botulinum toxin as an effective treatment of clozapine-induced hypersalivation. Psychopharmacology 2004; 173:229–230.
+39. Steinlechner S, et al. Botulinum toxin B as an effective and safe treatment for neuroleptic-induced sialorrhea. Psychopharmacology 2010;
+207:593–597.
+40. Kahl KG, et al. [Pharmacological strategies for clozapine-induced hypersalivation: treatment with botulinum toxin B in one patient and
+review of the literature]. Nervenarzt 2005; 76:205–208.
+41. Verma R, et al. Botulinum toxin: a novel therapy for clozapine-induced sialorrhoea. Psychopharmacology 2018; 235:369–371.
+42. Stern RG, et al. Clozapine-induced sialorrhea alleviated by bupropion–a case report. Prog Neuropsychopharmacol Biol Psychiatry 2009;
+33:1578–1580.
+43. Grabowski J. Clonidine treatment of clozapine-induced hypersalivation. J Clin Psychopharmacol 1992; 12:69–70.
+44. Praharaj SK, et al. Is clonidine useful for treatment of clozapine-induced sialorrhea? Journal of Psychopharmacology 2005; 19:426–428.
+45. Duggal HS. Glycopyrrolate for clozapine-induced sialorrhea. Prog Neuropsychopharmacol Biol Psychiatry 2007; 31:1546–1547.
+46. Robb AS, et al. Glycopyrrolate for treatment of clozapine-induced sialorrhea in three adolescents. J Child Adolesc Psychopharmacol 2008;
+18:99–107.
+47. Liang CS, et al. Comparison of the efficacy and impact on cognition of glycopyrrolate and biperiden for clozapine-induced sialorrhea in
+schizophrenic patients: a randomized, double-blind, crossover study. Schizophr Res 2010; 119:138–144.
+48. Man WH, et al. The effect of glycopyrrolate on nocturnal sialorrhea in patients using clozapine: a randomized, crossover, double-blind, placebo-controlled trial. J Clin Psychopharmacol 2017; 37:155–161.
+49. Praharaj SK, et al. Low-dose glycopyrrolate for clozapine-associated sialorrhea. J Clin Psychopharmacol 2014; 34:392.
+50. Webber MA, et al. Guanfacine treatment of clozapine-induced sialorrhea. J Clin Psychopharmacol 2004; 24:675–676.
+51. McKane JP, et al. Hyoscine patches in clozapine-induced hypersalivation. Psychiatric Bulletin 2001; 25:277.
+52. Gaftanyuk O, et al. Scolpolamine patch for clozapine-induced sialorrhea. Psychiatr Serv 2004; 55:318.
+53. Segev A, et al. Hyoscine for clozapine-induced hypersalivation: a double-blind, randomized, placebo-controlled cross-over trial. Int Clin
+Psychopharmacol 2019; 34:101–107.
+54. Takeuchi I, et al. Effect of scopolamine butylbromide on clozapine-induced hypersalivation in schizophrenic patients: a case series. Clin
+Psychopharmacol Neurosci 2015; 13:109–112.
+55. Calderon J, et al. Potential use of ipatropium bromide for the treatment of clozapine-induced hypersalivation: a preliminary report. Int Clin
+Psychopharmacol 2000; 15:49–52.
+56. Freudenreich O, et al. Clozapine-induced sialorrhea treated with sublingual ipratropium spray: a case series. J Clin Psychopharmacol 2004;
+24:98–100.
+57. Sockalingam S, et al. Treatment of clozapine-induced hypersalivation with ipratropium bromide: a randomized, double-blind, placebo-controlled crossover study. J Clin Psychiatry 2009; 70:1114–1119.
+58. Corrigan FM, et al. Clozapine-induced hypersalivation and the alpha 2 adrenoceptor. Br J Psychiatry 1995; 167:412.
+59. Kreinin A, et al. Double-blind, randomized, placebo-controlled trial of metoclopramide for hypersalivation associated with clozapine. J Clin
+Psychopharmacol 2016; 36:200–205.
+60. Hallahan B. Metoclopramide may be effective for clozapine-induced hypersalivation. Evid Based Ment Health 2016; 19:124.
+
+
+
+
+<<<PAGE 859>>>
+
+838  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+Clozapine
+Clozapine plasma levels are broadly related to daily dose,44 but there is sufficient variation to make impossible any precise prediction of plasma level. Plasma levels are generally lower in younger patients, males,45 and smokers46 and higher in Asians.47 Much
+lower doses of clozapine are required in East Asians,48,49 Indians50 and Bangladeshis.51
+The prevalence of clozapine poor metabolisers is also higher in East Asians.52,53 A series
+of algorithms has been developed for the approximate prediction of clozapine levels
+according to patient factors and these are strongly recommended.54 Algorithms cannot,
+however, account for other influences on clozapine plasma levels, such as changes in
+adherence, inflammation55 and infection.56,57
+The plasma level threshold for acute response to clozapine has been suggested to be
+200µg/L,58 350µg/L,59–61 370µg/L,62 420 µg/L,63 504µg/L64 and 550µg/L.65 Limited data
+suggest a level of at least 200µg/L is required to prevent relapse.66 Substantial variation
+in clozapine plasma level may also predict relapse.67 Changes in an individual’s plasma
+clozapine are common with a tendency for concentrations to slightly decrease over
+time,68 although one study suggests a decrease only in norclozapine concentrations.69
+Despite these somewhat varied estimates of response threshold, plasma levels can be
+useful in optimising treatment. In those not responding to clozapine, dose should be
+adjusted to give plasma levels in the range 350–600µg/L (a range reflecting a consensus
+of the above findings30). Those not tolerating clozapine may benefit from a reduction to
+a dose giving plasma levels in this range. An upper limit to the clozapine target range
+has not been defined. Any upper limit must take into account two components: the level
+above which no therapeutic advantage is gained and the level at which toxicity/tolerability is unacceptable. Plasma levels do seem to predict EEG changes70,71 and seizures
+occur more frequently in patients with levels above 1000µg/L,72 so levels should probably be kept well below this. Other non-neurological clozapine-related adverse effects
+also seem to be plasma-level related73 as might be expected. An upper limit has of concentrations around 600–800µg/L has been proposed.74
+A further consideration is that placing an upper limit on the target range for clozapine levels may discourage potentially worthwhile dose increases within the licensed
+dose range. Before plasma levels were widely used, clozapine was fairly often given in
+doses up to 900mg/day, with valproate being added when the dose reached 600mg/day.
+It remains unclear whether using these high doses can benefit patients with plasma
+levels already above the accepted threshold. Nonetheless, it is prudent to use an anticonvulsant as prophylaxis against seizures and myoclonus when plasma levels are
+above 600µg/L (a level based more on repeated recommendation than on a clear evidence-based threshold74) and certainly when levels approach 1000µg/L.
+Norclozapine is the major metabolite of clozapine. The ratio of clozapine to norclozapine averages 1.25 in populations75 but may differ for individuals. In chronic dosing,
+the ratio should remain the same for a given patient. A decrease in ratio may suggest
+enzyme induction, an increase suggests enzyme inhibition, a non-trough sample or
+recent missed doses. However, the time of sampling radically alters the clozapine/norclozapine ratio as clozapine is relatively high in early samples and norclozapine is high
+in late samples.2 Clozapine metabolism may become saturated at higher doses: the
+ratio of clozapine to norclozapine increases with increasing plasma levels, suggesting
+
+
+
+
+<<<PAGE 865>>>
+
+CHAPTER 11
+
+844  The Maudsley® Prescribing Guidelines in Psychiatry
+
+55. Haack MJ, et al. Toxic rise of clozapine plasma concentrations in relation to inflammation. Eur Neuropsychopharmacol 2003;
+13:381–385.
+56. de Leon J, et al. Serious respiratory infections can increase clozapine levels and contribute to side effects: a case report. Prog
+Neuropsychopharmacol Biol Psychiatry 2003; 27:1059–1063.
+57. Espnes KA, et al. A puzzling case of increased serum clozapine levels in a patient with inflammation and infection. Ther Drug Monit 2012;
+34:489–492.
+58. VanderZwaag C, et al. Response of patients with treatment-refractory schizophrenia to clozapine within three serum level ranges. Am J
+Psychiatry 1996; 153:1579–1584.
+59. Perry PJ, et al. Clozapine and norclozapine plasma concentrations and clinical response of treatment refractory schizophrenic patients. Am
+J Psychiatry 1991; 148:231–235.
+60. Miller DD. Effect of phenytoin on plasma clozapine concentrations in two patients. J Clin Psychiatry 1991; 52:23–25.
+61. Spina E, et al. Relationship between plasma concentrations of clozapine and norclozapine and therapeutic response in patients with schizophrenia resistant to conventional neuroleptics. Psychopharmacology 2000; 148:83–89.
+62. Hasegawa M, et al. Relationship between clinical efficacy and clozapine concentrations in plasma in schizophrenia: effect of smoking. J Clin
+Psychopharmacol 1993; 13:383–390.
+63. Potkin SG, et al. Plasma clozapine concentrations predict clinical response in treatment-resistant schizophrenia. J Clin Psychiatry 1994; 55
+Suppl B:133–136.
+64. Perry PJ. Therapeutic drug monitoring of antipsychotics. Psychopharmacol Bull 2001; 35:19–29.
+65. Llorca PM, et al. Effectiveness of clozapine in neuroleptic-resistant schizophrenia: clinical response and plasma concentrations. J Psychiatry
+Neurosci 2002; 27:30–37.
+66. Xiang YQ, et al. Serum concentrations of clozapine and norclozapine in the prediction of relapse of patients with schizophrenia. Schizophr
+Res 2006; 83:201–210.
+67. Stieffenhofer V, et al. Clozapine plasma level monitoring for prediction of rehospitalization schizophrenic outpatients. Pharmacopsychiatry
+2011; 44:55–59.
+68. Lee J, et al. Quantifying intraindividual variations in plasma clozapine levels: a population pharmacokinetic approach. J Clin Psychiatry
+2016; 77:681–687.
+69. Turrion MC, et al. Intra-individual variation of clozapine and norclozapine plasma levels in clinical practice. Revista De Psiquiatria Y Salud
+Mental 2020; 13:31–35.
+70. Khan AY, et al. Examining concentration-dependent toxicity of clozapine: role of therapeutic drug monitoring. J Psychiatr Pract 2005;
+11:289–301.
+71. Varma S, et al. Clozapine-related EEG changes and seizures: dose and plasma-level relationships. Ther Adv Psychopharmacol 2011;
+1:47–66.
+72. Greenwood-Smith C, et al. Serum clozapine levels: a review of their clinical utility. J Psychopharm 2003; 17:234–238.
+73. Yusufi B, et al. Prevalence and nature of side effects during clozapine maintenance treatment and the relationship with clozapine dose and
+plasma concentration. Int Clin Psychopharmacol 2007; 22:238–243.
+74. Remington G, et al. Clozapine and therapeutic drug monitoring: is there sufficient evidence for an upper threshold? Psychopharmacology
+2013; 225:505–518.
+75. Couchman L, et al. Plasma clozapine, norclozapine, and the clozapine: norclozapineratio in relation to prescribed dose and other factors:
+data from a therapeutic drug monitoring service, 1993–2007. Ther Drug Monit 2010; 32:438–447.
+76. Volpicelli SA, et al. Determination of clozapine, norclozapine, and clozapine-N-oxide in serum by liquid chromatography. Clin Chem 1993;
+39:1656–1659.
+77. Guitton C, et al. Clozapine and metabolite concentrations during treatment of patients with chronic schizophrenia. J Clin Pharmacol 1999;
+39:721–728.
+78. Palego L, et al. Clozapine, norclozapine plasma levels, their sum and ratio in 50 psychotic patients: influence of patient-related variables.
+Prog Neuropsychopharmacol Biol Psychiatry 2002; 26:473–480.
+79. Wang CY, et al. The differential effects of steady-state fluvoxamine on the pharmacokinetics of olanzapine and clozapine in healthy volunteers. J Clin Pharmacol 2004; 44:785–792.
+80. Schoretsanitis G, et al. A comprehensive review of the clinical utility of and a combined analysis of the clozapine/norclozapine ratio in therapeutic drug monitoring for adult patients. Expert Rev Clin Pharmacol 2019; 12:603–621.
+81. Bishara D, et al. Olanzapine: a systematic review and meta-regression of the relationships between dose, plasma concentration, receptor
+occupancy, and response. J Clin Psychopharmacol 2013; 33:329–335.
+82. Aravagiri M, et al. Plasma level monitoring of olanzapine in patients with schizophrenia: determination by high-performance liquid chromatography with electrochemical detection. Ther Drug Monit 1997; 19:307–313.
+83. Gex-Fabry M, et al. Therapeutic drug monitoring of olanzapine: the combined effect of age, gender, smoking, and comedication. Ther Drug
+Monit 2003; 25:46–53.
+84. Bergemann N, et al. Olanzapine plasma concentration, average daily dose, and interaction with co-medication in schizophrenic patients.
+Pharmacopsychiatry 2004; 37:63–68.
+85. Perry PJ, et al. Olanzapine plasma concentrations and clinical response in acutely ill schizophrenic patients. J Clin Psychopharmacol 1997;
+17:472–477.
+86. Fellows L, et al. Investigation of target plasma concentration–effect relationships for olanzapine in schizophrenia. Ther Drug Monit 2003;
+25:682–689.
+
+

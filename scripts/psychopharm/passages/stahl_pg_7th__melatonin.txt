@@ -1,0 +1,295 @@
+<<<PAGE 34>>>
+
+Agomelatine
+
+Therapeutics
+Brands
+Valdoxan
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: melatonin multimodal (MelMM)
+Agonist at melatonergic 1 and melatonergic 2 receptors
+Antagonist at 5HT2C receptors
+Commonly Prescribed for
+(bold for FDA approved)
+Depression
+Generalized anxiety disorder
+How the Drug Works
+
+
+
+
+<<<PAGE 1158>>>
+
+Nighttime awakenings
+Total sleep time
+Pearls
+DORAs are reversible inhibitors of orexin, so their action can
+theoretically be reversed as endogenous orexin is released upon
+awakening, and even to a certain extent in the middle of the night
+This is unlike Z-drug and benzodiazepine hypnotics, which do not
+reverse upon wakening
+DORAs hypothetically switch off alertness-related circuits,
+countering inappropriate wakefulness associated with insomnia,
+whereas Z-drug and benzodiazepine hypnotics and melatonin
+hypothetically switch on sleep-related circuits
+Curbing alertness-related factors in patients with insomnia may have
+some theoretical efficacy and tolerability advantages over enhancing
+sleep drives, sedation, and somnolence
+Targeting insomnia may prevent the onset of major depressive
+disorder (MDD) or generalized anxiety disorder (GAD) and help
+maintain remission after recovery from MDD or GAD
+Rebound insomnia was not observed in clinical trials
+May be effective in patients with insomnia unresponsive to
+medications with other mechanisms of action (e.g., Z-drug
+hypnotics, benzodiazepines)
+
+
+
+
+<<<PAGE 1949>>>
+
+Ramelteon
+
+Therapeutics
+Brands
+Rozerem
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: melatonin receptor agonist
+(Mel-RA)
+Melatonin 1 and 2 receptor agonist
+Commonly Prescribed for
+(bold for FDA approved)
+Insomnia (difficulty with sleep onset)
+Primary insomnia
+Chronic insomnia
+Transient insomnia
+
+
+
+
+<<<PAGE 1950>>>
+
+Insomnia associated with shift work, jet lag, or circadian rhythm
+disturbances
+How the Drug Works
+Binds selectively to melatonin 1 and melatonin 2 receptors as a full
+agonist
+How Long Until It Works
+Generally takes effect in less than an hour
+If It Works
+Reduces time to sleep onset
+Increases total sleep time
+May improve quality of sleep
+If It Doesn’t Work
+If insomnia does not improve after 7–10 days, it may be a
+manifestation of a primary psychiatric or physical illness such as
+obstructive sleep apnea or restless leg syndrome, which requires
+independent evaluation
+Increase the dose
+Improve sleep hygiene
+Switch to another agent
+
+
+
+
+<<<PAGE 1951>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Eszopiclone, zolpidem
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+None for healthy individuals
+For patients presenting with unexplained amenorrhea, galactorrhea,
+decreased libido, or problems with fertility, could consider
+measuring prolactin and testosterone levels
+
+Side Effects
+How Drug Causes Side Effects
+Actions at melatonin receptors that carry over to the next day could
+theoretically cause daytime sedation, fatigue, and sluggishness, but
+this is not common
+
+✽ Sedation
+✽ Dizziness
+
+Notable Side Effects
+
+
+
+
+<<<PAGE 1958>>>
+
+Potential Advantages
+Those who require long-term treatment
+Those who need a hypnotic but have a past history of substance
+abuse
+Possibly for circadian rhythm disturbances
+Potential Disadvantages
+More expensive than some other hypnotics
+For patients who require sedation
+Primary Target Symptoms
+Time to sleep onset
+Pearls
+First in a new class of agents, chronohypnotics, that act upon
+circadian rhythms by stimulating melatonin receptors in the brain’s
+“pacemaker,” namely the suprachiasmatic nucleus
+Theoretically, stimulation of melatonin 1 receptors mediates the
+suppressive effects of melatonin on the suprachiasmatic nucleus
+Theoretically, stimulation of melatonin 2 receptors mediates the
+phase shifting effect of melatonin
+Ramelteon may act by promoting the proper maintenance of
+circadian rhythms underlying a normal sleep-wake cycle
+
+
+
+
+<<<PAGE 1960>>>
+
+McGechan A , Wellington K . Ramelteon . CNS Drugs 2005 ;19 (12
+):1057–65 .
+Pandi-Perumal SR , Zisapel N , Srinivasan V , Cardinali DP . Melatonin
+and sleep in aging population . Exp Gerontol 2005 ;40 (12 ):911–25 .
+
+
+
+
+<<<PAGE 2147>>>
+
+DORAs hypothetically switch off alertness-related circuits,
+countering inappropriate wakefulness associated with insomnia,
+whereas Z-drug and benzodiazepine hypnotics and melatonin
+hypothetically switch on sleep-related circuits
+Curbing alertness-related factors in patients with insomnia may have
+some theoretical efficacy and tolerability advantages over enhancing
+sleep drives, sedation, and somnolence
+Targeting insomnia may prevent the onset of major depressive
+disorder (MDD) or generalized anxiety disorder (GAD) and help
+maintain remission after recovery from MDD or GAD
+Rebound insomnia does not appear to be common
+Suvorexant may be safe for long-term use, with little or no
+suggestion of tolerance, dependence, or abuse
+May even be safe to consider in patients with a past history of
+substance abuse who require treatment with a hypnotic
+May be effective in patients with insomnia unresponsive to
+medications with other mechanisms of action (e.g., Z-drug
+hypnotics, benzodiazepines)
+
+Suggested Reading
+Citrome L. Suvorexant for insomnia: a systematic review of the efficacy
+and safety profile for this newly approved hypnotic –what is the number
+
+
+
+
+<<<PAGE 2149>>>
+
+Tasimelteon
+
+Therapeutics
+Brands
+Hetlioz
+Generic?
+No
+Class
+Melatonin 1 and 2 receptor agonist
+Commonly Prescribed for
+(bold for FDA approved)
+Non-24-Hour Sleep-Wake Disorder (Non-24)
+Insomnia associated with shift work, jet lag, or circadian rhythm
+disturbances
+How the Drug Works
+Binds selectively to melatonin 1 and melatonin 2 receptors as a full
+agonist, with greater affinity for melatonin 2 receptors than for
+melatonin 1 receptors
+How Long Until It Works
+Because of individual differences in circadian rhythms, daily use for
+several weeks or months may be necessary before efficacy is
+
+
+
+
+<<<PAGE 2150>>>
+
+observed
+If It Works
+Causes circadian entrainment
+Increases nighttime sleep time
+Reduces daytime nap time
+If It Doesn’t Work
+Switch to another agent
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+No controlled trials of combinations with other hypnotics or
+psychotropic drugs
+Generally, best to switch to another agent
+Tests
+None for healthy individuals
+
+Side effects
+How Drug Causes Side Effects
+Actions at melatonin receptors that carry over to the next day could
+theoretically cause daytime sedation, fatigue, and sluggishness, but
+this is not common
+
+
+
+
+<<<PAGE 2156>>>
+
+Potential Advantages
+Those who require long-term treatment
+Circadian rhythm disorders
+Potential Disadvantages
+Expensive
+Primary Target Symptoms
+Total nighttime sleep time
+Pearls
+Tasimelteon acts upon circadian rhythms by stimulating melatonin
+receptors in the brain’s “pacemaker,” namely the suprachiasmatic
+nucleus
+Theoretically, stimulation of melatonin 1 receptors mediates the
+suppressive effects of melatonin on the suprachiasmatic nucleus
+Theoretically, stimulation of melatonin 2 receptors mediates the
+phase shifting effect of melatonin
+Tasimelteon may act by promoting the proper entrainment of
+circadian rhythms underlying a normal sleep-wake cycle; this is
+supported by biomarker data involving both melatonin and cortisol
+Thus, tasimelteon may also prove effective for treatment of
+circadian rhythm disturbances such as shift work sleep disorder and
+
+
+
+
+<<<PAGE 2157>>>
+
+jet lag, and studies in jet lag are currently under way; however, this
+would be an expensive alternative
+Theoretically could boost the effects of an antidepressant in blind
+individuals with depression or anxiety, but this has not been
+properly studied and augmentation studies in depression are not
+positive
+Lack of actions on GABA systems, which may be related to lack of
+apparent abuse liability
+
+Suggested Reading
+Leger D , Quera-Salva MA , Vecchierini MF , et al. Safety profile of
+tasimelteon, a melatonin MT1 and MT2 receptor agonist: pooled safety
+analyses from six clinical studies . Expert Opin Drug Saf 2015 ;14
+(11):1673 –85.
+Lockley SW , Dressman MA , Licamele L , et al. Tasimelteon for non-24hour sleep-wake disorder in totally blind people (SET and RESET): two
+multicentre, randomised, double-masked, placebo-controlled phase 3 trials .
+Lancet 2015 ;386 (10005):1754 –64.
+Stahl SM . Mechanism of action of tasimelteon in non-24 sleep-wake
+syndrome: treatment for a circadian rhythm disorder in blind patients . CNS
+Spectr 2014 ;19 (6):475 –8 .
+
+

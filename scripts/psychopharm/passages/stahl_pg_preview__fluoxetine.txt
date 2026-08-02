@@ -1,0 +1,787 @@
+<<<PAGE 8>>>
+
+34.
+35.
+36.
+37.
+38.
+39.
+40.
+41.
+42.
+43.
+44.
+45.
+46.
+47.
+48.
+49.
+50.
+51.
+52.
+53.
+54.
+55.
+56.
+57.
+58.
+59.
+60.
+61.
+62.
+63.
+64.
+65.
+66.
+67.
+68.
+69.
+70.
+71.
+72.
+vi
+
+desipramine
+211
+desvenlafaxine219
+deutetrabenazine
+225
+dexmedetomidine
+229
+dextromethorphan–bupropion
+233
+dextromethorphan–quinidine
+239
+diazepam
+243
+diphenhydramine
+249
+disulfiram
+253
+donepezil
+257
+dothiepin263
+doxepin269
+duloxetine
+277
+escitalopram
+283
+esketamine
+289
+estazolam
+295
+eszopiclone
+299
+flibanserin
+303
+flumazenil
+307
+flunitrazepam
+311
+fluoxetine
+315
+flupenthixol
+321
+fluphenazine
+327
+flurazepam
+335
+fluvoxamine
+339
+gabapentin
+345
+galantamine351
+guanfacine
+357
+haloperidol
+361
+hydroxyzine
+369
+iloperidone
+373
+imipramine381
+isocarboxazid
+389
+ketamine397
+lamotrigine
+401
+lemborexant
+409
+levetiracetam
+413
+levomilnacipran
+417
+lisdexamfetamine
+423
+
+
+
+
+<<<PAGE 31>>>
+
+(continued) ALPRAZOLAM
+
+of dependence may be greater in these
+patients
+• Some severely ill patients may require 8
+mg/day or more
+• Extended-release formulation only needs to
+be taken once or twice daily
+• Do not break or chew XR tablets as this will
+alter controlled-release properties
+• Frequency of dosing in practice is often
+greater than predicted from half-life, as
+duration of biological activity is often shorter
+than pharmacokinetic terminal half-life
+• Alprazolam and alprazolam XR generally
+dosed about one-tenth the dosage of
+diazepam
+• Alprazolam and alprazolam XR generally
+dosed about twice the dosage of
+clonazepam
+
+Overdose
+• Fatalities have been reported both in
+monotherapy and in conjunction with
+alcohol; sedation, confusion, poor
+coordination, diminished reflexes, coma
+
+Long-Term Use
+• Risk of dependence, particularly for
+treatment periods longer than 12 weeks
+and especially in patients with past or
+current polysubstance abuse
+
+Habit Forming?
+• Alprazolam is a Schedule IV drug
+• Patients may develop dependence and/or
+tolerance with long-term use
+
+How to Stop
+• Seizures may rarely occur on withdrawal,
+especially if withdrawal is abrupt; greater
+risk for doses above 4 mg and in those
+with additional risks for seizures, including
+those with a history of seizures
+• Taper by 0.5 mg every 3 days to reduce
+chances of withdrawal effects
+• For difficult-to-taper cases, consider
+reducing dose much more slowly after
+reaching 3 mg/day, perhaps by as little as
+0.25 mg per week or less (not for XR)
+• For other patients with severe problems
+discontinuing a benzodiazepine, dosing
+may need to be tapered over many months
+(i.e., reduce dose by 1% every 3 days
+by crushing tablet and suspending or
+dissolving in 100 mL of fruit juice and
+then disposing of 1 mL and drinking the
+
+rest; 3–7 days later, dispose of 2 mL, and
+so on). This is both a form of very slow
+biological tapering and a form of behavioral
+desensitization. Not for XR
+• Be sure to differentiate reemergence
+of symptoms requiring reinstitution of
+treatment from withdrawal symptoms
+• Benzodiazepine-dependent anxiety patients
+and insulin-dependent diabetics are not
+addicted to their medications. When
+benzodiazepine-dependent patients stop
+their medication, disease symptoms can
+reemerge, disease symptoms can worsen
+(rebound), and/or withdrawal symptoms
+can emerge
+
+Pharmacokinetics
+• Metabolized by CYP3A4
+• Inactive metabolites
+• Elimination half-life 12–15 hours
+• Food does not affect absorption
+
+Drug Interactions
+• Increased depressive effects when taken
+with other CNS depressants (see Warnings
+below)
+• Inhibitors of CYP3A4, such as nefazodone,
+fluvoxamine, fluoxetine, and even
+grapefruit juice, may decrease clearance of
+alprazolam and thereby raise alprazolam
+plasma levels and enhance sedative side
+effects; alprazolam dose may need to be
+lowered
+• Thus, azole antifungal agents (such as
+ketoconazole and itraconazole), macrolide
+antibiotics, and protease inhibitors may
+also raise alprazolam plasma levels
+• Inducers of CYP3A4, such as
+carbamazepine, may increase clearance of
+alprazolam and lower alprazolam plasma
+levels and possibly reduce therapeutic effects
+
+ Other Warnings/
+Precautions
+• Boxed warning regarding the increased
+risk of CNS depressant effects when
+benzodiazepines and opioid medications are
+used together, including specifically the risk
+of slowed or difficulty breathing and death
+• If alternatives to the combined use of
+benzodiazepines and opioids are not
+available, clinicians should limit the dosage
+and duration of each drug to the minimum
+13
+
+
+
+
+<<<PAGE 33>>>
+
+(continued) ALPRAZOLAM
+
+THE ART OF PSYCHOPHARMACOLOGY
+Potential Advantages
+• Rapid onset of action
+• Less sedation than some other
+benzodiazepines
+• Availability of an XR formulation with
+longer duration of action
+
+Potential Disadvantages
+• Euphoria may lead to abuse
+• Abuse especially risky in past or present
+substance abusers
+
+Primary Target Symptoms
+• Panic attacks
+• Anxiety
+
+Pearls
+• One of the most popular benzodiazepines
+for anxiety, especially among primary care
+physicians and psychiatrists
+• Is a very useful adjunct to SSRIs and
+SNRIs in the treatment of numerous
+anxiety disorders
+• Not effective for treating psychosis as
+a monotherapy, but can be used as an
+adjunct to antipsychotics
+• Not effective for treating bipolar disorder
+as a monotherapy, but can be used
+as an adjunct to mood stabilizers and
+antipsychotics
+• May both cause depression and treat
+depression in different patients
+• Risk of seizure is greatest during the first
+3 days after discontinuation of alprazolam,
+especially in those with prior seizures, head
+injuries, or withdrawal from drugs of abuse
+• Clinical duration of action may be shorter
+than plasma half-life, leading to dosing
+more frequently than 2–3 times daily in
+
+some patients, especially for immediaterelease alprazolam
+• Adding fluvoxamine, fluoxetine, or
+nefazodone can increase alprazolam levels
+and make the patient very sleepy unless the
+alprazolam dose is lowered by half or more
+• When using to treat insomnia, remember
+that insomnia may be a symptom of
+some other primary disorder itself, and
+thus warrants evaluation for comorbid
+psychiatric and/or medical conditions
+• Alprazolam XR may be less sedating than
+immediate-release alprazolam
+• Alprazolam XR may be dosed less
+frequently than immediate-release
+alprazolam, and lead to less interdose
+breakthrough symptoms and less “clockwatching” in anxious patients
+• Slower rises in plasma drug levels for
+alprazolam XR have the potential to reduce
+euphoria/abuse liability, but this has not
+been proven
+• Slower falls in plasma drug levels for
+alprazolam XR have the potential to
+facilitate drug discontinuation by reducing
+withdrawal symptoms, but this has not
+been proven
+• Alprazolam XR generally has longer
+biological duration of action than
+clonazepam
+• If clonazepam can be considered a
+“long-acting alprazolam-like anxiolytic,” then
+alprazolam XR can be considered “an even
+longer-acting clonazepam-like anxiolytic”
+with the potential of improved tolerability
+features in terms of less euphoria, abuse,
+dependence, and withdrawal problems, but
+this has not been proven
+• Though not systematically studied,
+benzodiazepines have been used effectively
+to treat catatonia and are the initial
+recommended treatment
+
+15
+
+
+
+
+<<<PAGE 45>>>
+
+(continued) AMITRIPTYLINE
+
+Sedation
+
+Overdose
+
+• Many experience and/or can be significant
+in amount
+• Tolerance to sedative effects may develop
+with long-term use
+
+• Death may occur; CNS depression,
+convulsions, cardiac dysrhythmias, severe
+hypotension, ECG changes, coma
+
+Long-Term Use
+• Safe
+
+What to Do About Side Effects
+
+Habit Forming?
+
+• Wait
+• Wait
+• Wait
+• Lower the dose
+• Switch to an SSRI or newer antidepressant
+
+How to Stop
+
+Best Augmenting Agents for Side
+Effects
+• Many side effects cannot be improved with
+an augmenting agent
+
+DOSING AND USE
+Usual Dosage Range
+• 50–150 mg/day
+
+Dosage Forms
+• Tablet 10 mg, 25 mg, 50 mg, 75 mg, 100
+mg, 150 mg
+
+How to Dose
+• Initial 25 mg/day at bedtime; increase by
+25 mg every 3–7 days
+• 75 mg/day in divided doses; increase to
+150 mg/day; maximum 300 mg/day
+
+Dosing Tips
+• If given in a single dose, should generally
+be administered at bedtime because of its
+sedative properties
+• If given in split doses, largest dose should
+generally be given at bedtime because of its
+sedative properties
+• If patients experience nightmares, split
+dose and do not give large dose at bedtime
+• Patients treated for chronic pain may only
+require lower doses
+• If intolerable anxiety, insomnia, agitation,
+akathisia, or activation occur upon either
+dosing initiation or discontinuation,
+consider the possibility of activated bipolar
+disorder, and switch to a mood stabilizer or
+an atypical antipsychotic
+
+• No
+• Taper to avoid withdrawal effects
+• Even with gradual dose reduction, some
+withdrawal symptoms may appear within
+the first 2 weeks
+• Many patients tolerate 50% dose reduction
+for 3 days, then another 50% reduction for
+3 days, then discontinuation
+• If withdrawal symptoms emerge during
+discontinuation, raise dose to stop
+symptoms and then restart withdrawal
+much more slowly
+
+Pharmacokinetics
+• Substrate for CYP2D6 and CYP1A2
+• Plasma half-life 10–28 hours
+• Metabolized to an active metabolite,
+nortriptyline, which is predominantly a
+norepinephrine reuptake inhibitor, by
+demethylation via CYP1A2
+• Food does not affect absorption
+
+Drug Interactions
+• Tramadol increases the risk of seizures in
+patients taking TCAs
+• Use of TCAs with anticholinergic drugs may
+result in paralytic ileus or hyperthermia
+• Fluoxetine, paroxetine, bupropion,
+duloxetine, and other CYP2D6 inhibitors
+may increase TCA concentrations
+• Fluvoxamine, a CYP1A2 inhibitor, can
+decrease the conversion of amitriptyline
+to nortriptyline and increase amitriptyline
+plasma concentrations
+• Cimetidine may increase plasma
+concentrations of TCAs and cause
+anticholinergic symptoms
+• Phenothiazines or haloperidol may raise
+TCA blood concentrations
+• May alter effects of antihypertensive drugs;
+may inhibit hypotensive effects of clonidine
+• Use of TCAs with sympathomimetic agents
+may increase sympathetic activity
+27
+
+
+
+
+<<<PAGE 53>>>
+
+(continued) AMOXAPINE
+
+Best Augmenting Agents for Side
+Effects
+• Many side effects cannot be improved with
+an augmenting agent
+• May use anticholinergics for drug-induced
+parkinsonism, or switch to another
+antidepressant
+
+DOSING AND USE
+Usual Dosage Range
+
+How to Stop
+• Taper to avoid withdrawal effects
+• Even with gradual dose reduction some
+withdrawal symptoms may appear within
+the first 2 weeks
+• Many patients tolerate 50% dose reduction
+for 3 days, then another 50% reduction for
+3 days, then discontinuation
+• If withdrawal symptoms emerge during
+discontinuation, raise dose to stop
+symptoms and then restart withdrawal
+much more slowly
+
+• 200–300 mg/day
+
+Pharmacokinetics
+
+Dosage Forms
+
+• Substrate for CYP2D6
+• Half-life of parent drug approximately 8 hours
+• 7- and 8-hydroxymetabolites are active
+and possess serotonin 2A and dopamine
+2 antagonist properties, similar to atypical
+antipsychotics
+• Amoxapine is the N-desmethyl metabolite
+of the conventional antipsychotic loxapine
+• Half-life of the active metabolites
+approximately 24 hours
+
+• Tablet 25 mg, 50 mg, 100 mg, 150 mg
+
+How to Dose
+• Initial 25 mg 2–3 times/day; increase
+gradually to 100 mg 2–3 times/day or a
+single dose at bedtime; maximum 400
+mg/day (may dose up to 600 mg/day in
+inpatients)
+
+Dosing Tips
+• If given in a single dose, should generally
+be administered at bedtime because of its
+sedative properties
+• If given in split doses, largest dose should
+generally be given at bedtime because of its
+sedative properties
+• If patients experience nightmares, split
+dose and do not give large dose at bedtime
+• If intolerable anxiety, insomnia, agitation,
+akathisia, or activation occur upon either
+dosing initiation or discontinuation,
+consider the possibility of activated bipolar
+disorder, and switch to a mood stabilizer or
+an atypical antipsychotic
+
+Overdose
+• Death may occur; convulsions, cardiac
+dysrhythmias, severe hypotension, CNS
+depression, coma, changes in ECG
+
+Long-Term Use
+• Generally safe
+• Some patients may develop withdrawal
+dyskinesias when discontinuing amoxapine
+after long-term use
+
+Habit Forming?
+• Some patients may develop tolerance
+
+Drug Interactions
+• Tramadol increases the risk of seizures in
+patients taking TCAs
+• Use of TCAs/tetracyclics with
+anticholinergic drugs may result in
+paralytic ileus or hyperthermia
+• Fluoxetine, paroxetine, bupropion,
+duloxetine, and other CYP2D6
+inhibitors may increase TCA/tetracyclic
+concentrations
+• Cimetidine may increase plasma
+concentrations of TCAs/tetracyclics and
+cause anticholinergic symptoms
+• Phenothiazines or haloperidol may raise
+TCA/tetracyclic blood concentrations
+• May alter effects of antihypertensive drugs;
+may inhibit hypotensive effects of clonidine
+• Use of TCAs/tetracyclics with
+sympathomimetic agents may increase
+sympathetic activity
+• Methylphenidate may inhibit metabolism of
+TCAs/tetracyclics
+• Activation and agitation, especially
+following switching or adding
+antidepressants, may represent the
+induction of a bipolar state, especially
+a mixed dysphoric bipolar II condition
+sometimes associated with suicidal
+35
+
+
+
+
+<<<PAGE 77>>>
+
+(continued) ARIPIPRAZOLE
+
+Dosing Tips – Oral
+• For some, less may be more: frequently,
+patients not acutely psychotic may need to
+be dosed lower (e.g., 2.5–10 mg/day) in
+order to avoid akathisia and activation and
+for maximum tolerability
+• For others, more may be more: rarely,
+patients may need to be dosed higher than
+30 mg/day for optimum efficacy
+• Consider administering 1–5 mg as the oral
+solution for children and adolescents, as well
+as for adults very sensitive to side effects
+• Although studies suggest patients switching
+to aripiprazole from another antipsychotic
+can do well with rapid switch or with
+cross-titration, clinical experience suggests
+many patients may do best by adding either
+an intermediate or full dose of aripiprazole
+to the maintenance dose of the first
+antipsychotic for at least several days and
+possibly as long as 3 or 4 weeks prior to
+slow down-titration of the first antipsychotic
+• Rather than raise the dose above normal
+dosing in acutely agitated patients requiring
+acute antipsychotic actions, consider shortterm (one dose or more) augmentation with
+a benzodiazepine or another antipsychotic,
+especially intramuscularly
+• Rather than raise the dose above normal
+dosing in partial responders, consider
+augmentation with a mood-stabilizing
+anticonvulsant, such as valproate,
+topiramate, or lamotrigine
+• Children and elderly should generally
+be dosed at the lower end of the dosage
+spectrum
+• Due to its very long half-life, aripiprazole
+will take longer to reach steady state when
+initiating dosing, and longer to wash out
+when stopping dosing, than other atypical
+antipsychotics
+• Treatment should be suspended if absolute
+neutrophil count falls below 1000/mm3
+
+Overdose
+• No fatalities have been reported; sedation,
+vomiting
+
+Long-Term Use
+• Approved to delay relapse in long-term
+treatment of schizophrenia
+• Approved for long-term maintenance in
+bipolar disorder
+
+• Often used for long-term maintenance in
+various behavioral disorders
+• Should periodically reevaluate long-term
+usefulness in individual patients, but
+treatment may need to continue for many
+years
+
+Habit Forming?
+• No
+
+How to Stop
+• The method for stopping aripiprazole can
+vary depending on which agent is being
+switched to; see The Art of Switching
+section for how to stop aripiprazole
+• Rapid discontinuation could theoretically
+lead to rebound psychosis and worsening
+of symptoms, but less likely with
+aripiprazole due to its long half-life
+
+Pharmacokinetics
+• Metabolized primarily by CYP2D6 and
+CYP3A4
+• Mean elimination half-life 75 hours
+(aripiprazole) and 94 hours (major
+metabolite dehydroaripiprazole)
+• Food does not affect absorption
+
+Drug Interactions
+• Ketoconazole and possibly other CYP3A4
+inhibitors such as nefazodone, fluvoxamine,
+and fluoxetine may increase plasma levels
+of aripiprazole
+• Carbamazepine and possibly other inducers
+of CYP3A4 may decrease plasma levels of
+aripiprazole
+• Quinidine and possibly other inhibitors of
+CYP2D6 such as paroxetine, fluoxetine, and
+duloxetine may increase plasma levels of
+aripiprazole
+• Aripiprazole may enhance the effects of
+antihypertensive drugs
+• Aripiprazole may antagonize levodopa,
+dopamine agonists
+
+ Other Warnings/
+Precautions
+• There have been reports of problems
+with impulse control in patients taking
+aripiprazole, including compulsive
+gambling, shopping, binge eating,
+and sexual activity; use caution when
+prescribing to patients at high risk for
+59
+
+
+
+
+<<<PAGE 87>>>
+
+(continued) ARMODAFINIL
+
+nausea and diarrhea; and cardiovascular
+changes, such as tachycardia, bradycardia,
+hypertension, and chest pain
+
+Long-Term Use
+• The need for continued treatment should
+be reevaluated periodically
+
+Habit Forming?
+• Schedule IV; may have some potential for
+abuse but unusual in clinical practice
+
+How to Stop
+• Taper not necessary; patients may have
+sleepiness on discontinuation
+
+Pharmacokinetics
+• Metabolized by the liver
+• Elimination half-life approximately 15 hours
+• Inhibits CYP2C19
+• Induces CYP3A4 (and slightly CYP1A2)
+
+Drug Interactions
+• May increase plasma levels of drugs
+metabolized by CYP2C19 (e.g., diazepam,
+phenytoin, propranolol)
+• May decrease plasma levels of CYP3A4
+substrates such as ethinyl estradiol and
+triazolam
+• Due to induction of CYP3A4, effectiveness
+of steroidal contraceptives may be reduced
+by armodafinil, including 1 month after
+discontinuation
+• Inducers or inhibitors of CYP3A4
+may affect levels of armodafinil (e.g.,
+carbamazepine may lower modafinil plasma
+levels; fluvoxamine and fluoxetine may
+raise armodafinil plasma levels)
+• Armodafinil may slightly reduce its own
+levels by autoinduction of CYP3A4
+• Patients on armodafinil and warfarin should
+have prothrombin times monitored
+• Methylphenidate and dextroamphetamine
+may delay absorption of armodafinil by an
+hour
+• However, coadministration with
+methylphenidate or dextroamphetamine
+does not significantly change the
+pharmacokinetics of armodafinil or either
+stimulant
+• Interaction studies with MAOIs have not
+been performed, but MAOIs can be given
+with armodafinil by experts with cautious
+monitoring
+
+ Other Warnings/
+Precautions
+• Patients with history of drug abuse should
+be monitored closely
+• Armodafinil may cause CNS effects similar
+to those caused by other CNS agents
+(e.g., changes in mood and, theoretically,
+activation of psychosis, mania, or suicidal
+ideation)
+• Armodafinil should be used in patients with
+sleep disorders that have been completely
+evaluated for narcolepsy, OSAHS, and shift
+work sleep disorder
+• In OSAHS patients for whom CPAP is
+the treatment of choice, a maximal effort
+to treat first with CPAP should be made
+prior to initiating armodafinil, and then
+CPAP should be continued after initiating
+armodafinil
+• The effectiveness of hormonal
+contraceptives may be reduced when used
+with armodafinil and for 1 month after
+discontinuation of armodafinil
+• Armodafinil is not a replacement for sleep
+
+Do Not Use
+• If there is a proven allergy to armodafinil or
+modafinil
+
+SPECIAL POPULATIONS
+Renal Impairment
+• Use with caution
+
+Hepatic Impairment
+• Reduce dose in severely impaired patients
+
+Cardiac Impairment
+• Use with caution
+• Not recommended for use in patients with
+a history of left ventricular hypertrophy,
+ischemic ECG changes, chest pain,
+arrhythmias, or recent myocardial
+infarction
+
+Elderly
+• Limited experience in patients over 65
+• Clearance of armodafinil may be reduced in
+elderly patients
+69
+
+

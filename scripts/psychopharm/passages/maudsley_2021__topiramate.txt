@@ -1,0 +1,1209 @@
+<<<PAGE 148>>>
+
+Table 1.18 (Continued)
+Drug
+
+Comments
+
+Metformin2,32,53,54
+(500–2000mg/day)
+
+Now a substantial database (in non-diabetic patients) supporting the use of
+metformin in both reducing and reversing weight gain caused by antipsychotics
+(mainly olanzapine). Beneficial effects on other metabolic parameters. Some negative
+studies, but clear and significant effect in meta-analyses. One positive RCT55 and
+extension study56 in children and adolescents with ASD published since then. Ideal for
+those with weight gain and diabetes or polycystic ovary syndrome. Note that
+metformin treatment increases the risk of vitamin B12 deficiency57
+
+Melatonin58–60
+(up to 5mg at night)
+
+One small RCT showing attenuation of olanzapine-induced weight gain. Other
+studies show negative results. Effect, if any, is small
+
+Methylcellulose
+(1,500mg ac)
+
+Old-fashioned and rather unpalatable preparation. No data in drug-induced weight
+gain but once fairly widely used. Also acts as a bulk-forming laxative, so may be
+suitable for clozapine-related weight gain
+
+Modafinil61,62
+(up to 300mg/day)
+
+Limited positive data and one negative RCT for clozapine-induced weight gain. Not
+recommended
+
+Naltrexone63,64
+(25–50mg/day)
+
+Some positive results but evidence is limited to two small pilot RCTs. Not recommended
+
+Orlistat65–70
+(120mg tds ac/pc)
+
+Reliable effect in obesity, especially when combined with calorie restriction. Few
+published data in medication-induced weight gain but widely used in practice with
+some success. In trials for clozapine or olanzapine-induced weight gain effect was only
+seen for men.69,70 When used without calorie restriction in psychiatric patients, the
+effects are very limited. Failure to adhere to a low-fat diet will result in fatty diarrhoea
+and possible malabsorption of orally administered medication. Overall, a good choice
+for clozapine-induced weight gain where it reduces both weight and the incidence of
+constipation71
+
+Reboxetine15
+(4–8mg daily)
+
+Attenuates olanzapine-induced weight gain. Reverses some metabolic changes.72
+Effective when combined with betahistine
+
+Topiramate32,54,73,74
+(Up to 300mg daily)
+
+Reliably reduces weight even when medication-induced. Meta-analyses of RCTs suggest
+a greater effect for prevention rather than treatment. Problems may arise because of
+topiramate’s propensity for causing sedation, confusion and cognitive impairment. May
+have antipsychotic properties
+
+Zonisamide75
+(100–600mg/day)
+
+Antiepileptic drug with weight reducing properties. A RCT of 150mg a day showed
+significant weight reduction in people receiving SGAs. Another RCT (up to 600mg/day)
+shows attenuated olanzapine-induced weight gain. Sedation, diarrhoea and cognitive
+impairment are the most common problems. Not recommended
+
+ac, ante cibum (before meals); ASD, autism spectrum disorders. bd, bis in die (twice a day); pc, post cibum (after
+meals); tds, ter die sumendum (three times a day)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  127
+
+
+
+
+<<<PAGE 217>>>
+
+CHAPTER 1
+
+196  The Maudsley® Prescribing Guidelines in Psychiatry
+
+36. Barbui C, et al. Aripiprazole versus haloperidol in combination with clozapine for treatment-resistant schizophrenia in routine clinical care:
+a randomized, controlled trial. J Clin Psychopharmacol 2011; 31:266–273.
+37. Dursun SM, et al. Clozapine plus lamotrigine in treatment-resistant schizophrenia. Arch Gen Psychiatry 1999; 56:950.
+38. Dursun SM, et al. Augmenting antipsychotic treatment with lamotrigine or topiramate in patients with treatment-resistant schizophrenia: a
+naturalistic case-series outcome study. J Psychopharm 2001; 15:297–301.
+39. Tiihonen J, et al. Lamotrigine in treatment-resistant schizophrenia: a randomized placebo-controlled crossover trial. Biol Psychiatry 2003;
+54:1241–1248.
+40. Kalyoncu A, et al. Use of lamotrigine to augment clozapine in patients with resistant schizophrenia and comorbid alcohol dependence: a
+potent anti-craving effect? J Psychopharmacology 2005; 19:301–305.
+41. Goff DC, et al. Lamotrigine as add-on therapy in schizophrenia: results of 2 placebo-controlled trials. J Clin Psychopharmacol 2007;
+27:582–589.
+42. Heck AH, et al. Addition of lamotrigine to clozapine in inpatients with chronic psychosis. J Clin Psychiatry 2005; 66:1333.
+43. Vayisoglu S, et al. Lamotrigine augmentation in patients with schizophrenia who show partial response to clozapine treatment. Schizophr Res
+2013; 143:207–214.
+44. Tiihonen J, et al. The efficacy of lamotrigine in clozapine-resistant schizophrenia: a systematic review and meta-analysis. Schizophr Res 2009;
+109:10–14.
+45. Zheng W, et al. Clozapine augmentation with antiepileptic drugs for treatment-resistant schizophrenia: a meta-analysis of randomized controlled trials. J Clin Psychiatry 2017; 78:e498–e505.
+46. Peet M, et al. Double-blind placebo controlled trial of N-3 polyunsaturated fatty acids as an adjunct to neuroleptics. Schizophr Res 1998;
+29:160–161.
+47. Puri BK, et al. Sustained remission of positive and negative symptoms of schizophrenia following treatment with eicosapentaenoic acid. Arch
+Gen Psychiatry 1998; 55:188–189.
+48. Josiassen RC, et al. Clozapine augmented with risperidone in the treatment of schizophrenia: a randomized, double-blind, placebo-controlled
+trial. Am J Psychiatry 2005; 162:130–136.
+49. Raskin S, et al. Clozapine and risperidone: combination/augmentation treatment of refractory schizophrenia: a preliminary observation. Acta
+Psychiatr Scand 2000; 101:334–336.
+50. Anil Yagcioglu AE, et al. A double-blind controlled study of adjunctive treatment with risperidone in schizophrenic patients partially responsive to clozapine: efficacy and safety. J Clin Psychiatry 2005; 66:63–72.
+51. Honer WG, et al. Clozapine alone versus clozapine and risperidone with refractory schizophrenia. N Engl J Med 2006; 354:472–482.
+52. Se HK, et al. The combined use of risperidone long-acting injection and clozapine in patients with schizophrenia non-adherent to clozapine:
+a case series. J Psychopharmacology 2010; 24:981–986.
+53. Bioque M, et al. Clozapine and paliperidone palmitate antipsychotic combination in treatment-resistant schizophrenia and other psychotic
+disorders: a retrospective 6-month mirror-image study. Eur Psychiatry 2020; 63:e71.
+54. Shiloh R, et al. Sulpiride augmentation in people with schizophrenia partially responsive to clozapine. A double-blind, placebo-controlled
+study. Br J Psychiatry 1997; 171:569–573.
+55. Wang J, et al. Sulpiride augmentation for schizophrenia. Schizophr Bull 2010; 36:229–230.
+56. Tiihonen J, et al. Topiramate add-on in treatment-resistant schizophrenia: a randomized, double-blind, placebo-controlled, crossover trial. J
+Clin Psychiatry 2005; 66:1012–1015.
+57. Afshar H, et al. Topiramate add-on treatment in schizophrenia: a randomised, double-blind, placebo-controlled clinical trial. J
+Psychopharmacology 2009; 23:157–162.
+58. Muscatello MR, et al. Topiramate augmentation of clozapine in schizophrenia: a double-blind, placebo-controlled study. J Psychopharmacology
+2011; 25:667–674.
+59. Hahn MK, et al. Topiramate augmentation in clozapine-treated patients with schizophrenia: clinical and metabolic effects. J Clin
+Psychopharmacol 2010; 30:706–710.
+60. Behdani F, et al. Effect of topiramate augmentation in chronic schizophrenia: a placebo-controlled trial. Arch Iran Med 2011; 14:270–275.
+61. Millson RC, et al. Topiramate for refractory schizophrenia. Am J Psychiatry 2002; 159:675.
+62. Zheng W, et al. Efficacy and safety of adjunctive topiramate for schizophrenia: a meta-analysis of randomized controlled trials. Acta Psychiatr
+Scand 2016; 134:385–398.
+63. Siskind DJ, et al. Augmentation strategies for clozapine refractory schizophrenia: a systematic review and meta-analysis. Aust N Z J
+Psychiatry 2018; 52:751–767.
+64. Wang Y, et al. Valproate for schizophrenia. Cochrane Database Syst Rev 2016; 11:Cd004028.
+65. Zink M, et al. Combination of ziprasidone and clozapine in treatment-resistant schizophrenia. Human Psychopharmacology 2004;
+19:271–273.
+66. Ziegenbein M, et al. Clozapine and ziprasidone: a useful combination in patients with treatment-resistant schizophrenia. J Neuropsychiatry
+Clin Neurosci 2006; 18:246–247.
+67. Ziegenbein M, et al. Combination of clozapine and ziprasidone in treatment-resistant schizophrenia: an open clinical study. Clin
+Neuropharmacol 2005; 28:220–224.
+68. Zink M, et al. Efficacy and tolerability of ziprasidone versus risperidone as augmentation in patients partially responsive to clozapine: a
+randomised controlled clinical trial. J Psychopharm 2009; 23:305–314.
+69. Muscatello MR, et al. Augmentation of clozapine with ziprasidone in refractory schizophrenia: a double-blind, placebo-controlled study. J
+Clin Psychopharmacol 2014; 34:129–133.
+
+
+
+
+<<<PAGE 306>>>
+
+Bipolar disorder  285
+
+Rapid cycling is usually defined as BD in which four or more episodes of (hypo)mania
+or depression (or four clear switches in polarity) occur in a 12-month period. It is generally held to be less responsive to drug treatment than non-rapid cycling bipolar illness1,2
+and entails considerable depressive morbidity and suicide risk.3 Important clinical differences between bipolar patients with and without a rapid cycling include more depressive morbidity, higher incidence of anxiety disorders, addiction, bulimia and borderline
+personality disorder, as well as atypical features during depression and symptoms such
+as irritability, risky behaviour, impulsivity and agitation. Rapid cycling patients have
+poorer functioning than patients without, more obesity, and have to be treated with
+more drugs.4 Drug doses tend to be somewhat higher in rapid cycling than in other
+bipolar patients.5
+Table 2.8 outlines a treatment strategy for rapid cycling based on rather limited data
+and very few direct comparisons of drugs.6,7 This strategy is broadly in line with the
+findings of published systematic reviews.7,8 NICE concluded in 2016 that there is no
+evidence to support rapid cycling illness being managed any differently from that with
+a more conventional course.9 There is no formal first choice agent or combination –
+prescribing depends partly on what treatments have already been used in an attempt to
+
+Table 2.8 Recommended treatment strategy for rapid-cycling bipolar disorder
+Step
+
+Suggested treatment
+
+Step 1
+
+Withdraw antidepressants in all patients10–14
+(some controversial evidence supports continuation of SSRIs15,16)
+
+Step 2
+
+Evaluate possible precipitants
+(e.g. alcohol, thyroid dysfunction (including antithyroid antibodies17), external stressors)2
+
+Step 3
+
+Optimise mood stabiliser treatment18–21 (using plasma levels), and
+Consider combining mood stabilisers,
+e.g. lithium + valproate; lithium + lamotrigine, valproate + carbamazepine or go to Step 4
+
+Step 4
+
+Consider other (usually adjunct) treatment options:
+(alphabetical order; preferred treatment options in bold)
+Aripiprazole22,23 (15–30mg/day)
+Clozapine24 (usual doses)
+Lamotrigine25–27 (up to 225mg/day)
+Levetiracetam28 (up to 2000mg/day)
+Nimodipine29,30 (180mg/day)
+Olanzapine18 (usual doses)
+Quetiapine31–34 (300–600mg/day)
+Risperidone35–37 (up to 6mg/day)
+Thyroxine38–40 (150–400µg/day)
+Topiramate41 (up to 300mg/day)
+Choice of drug is determined by patient factors – few comparative efficacy data to guide choice at
+the time of writing. Quetiapine probably has best supporting data31–33 but there is no evidence of
+superiority over aripiprazole or olanzapine. Supporting data for levetiracetam, nimodipine, thyroxine
+and topiramate are rather limited.
+Clozapine has a clear role in treatment-resistant bipolar disorder,42 a definition that might include
+rapid cycling in which it shows acute and long-term efficacy.24,43
+
+CHAPTER 2
+
+Rapid cycling bipolar affective disorder
+
+
+
+
+<<<PAGE 450>>>
+
+Depression and anxiety disorders  429
+
+Box 3.7 Obsessive compulsive disorder
+First-line drug treatment (In order of preference)
+Drug
+
+Comments
+
+Any SSRI
+(Up to maximum licensed dose
+
+If the first SSRI is not tolerated or has a poor response an
+alternative SSRI may be tried29
+
+Clomipramine
+(Up to 250mg)
+
+Owing to poorer tolerability, recommended trying at least one SSRI
+first29
+
+39
+
+Add antipsychotic to SSRI
+(Low to moderate doses of
+antipsychotics used in studies)100,101
+
+Most evidence supports the use of aripiprazole or risperidone.100
+Some evidence for haloperidol101
+
+Citalopram
+40mg with clomipramine 150mg
+
+Based on small randomised open label study102 Recommended by
+NICE29
+ECG monitoring required
+
+Acetylcysteine103
+up to 2400mg/day added to SRRI or
+clomipramine
+
+Gastrointestinal adverse effects may be problematic. Two of five
+controlled studies negative. Pooled effect shows benefit104
+
+Lamotrigine
+100mg + added to SSRI105
+
+Lamotrigine dose must be titrated gradually as indicated in the SPC
+May worsen OCD in some106
+
+Topiramate
+up to 400mg added to SSRI107,108
+
+Topiramate is not well tolerated, suggested benefits for compulsion
+but not obsessions.107 Two trials found topiramate ineffective109,110
+
+Experimental
+High dose SSRI:
+Escitalopram
+25–50mg111
+Sertraline
+250–400mg112
+
+Dose titrated gradually according to tolerability. ECG monitoring
+recommended
+
+Memantine
+
+Good evidence for 20mg/day added to SSRIs113
+
+NSAIDS
+Eg celecoxib 400mg/day
+
+Some supporting evidence110
+
+Amantadine
+200mg/day
+
+One positive RCT114
+
+SNRIs
+Venlafaxine
+up to 375mg115
+Duloxetine
+60mg116
+Mirtazapine
+30–60mg117
+
+Small trial in 30 patients
+
+5HT3 antagonists
+Granisetron
+1mg with fluvoxamine 200mg118
+Ondansetron
+4mg with fluoxetine 20mg119
+
+Some evidence for each drug but ondansetron may be the more
+effective120
+
+(Continued)
+
+CHAPTER 3
+
+Second-line drug treatment (Unlicensed or weaker evidence base)
+
+
+
+
+<<<PAGE 452>>>
+
+Depression and anxiety disorders  431
+
+Box 3.8 (Continued)
+Moclobemide
+600mg/day in divided doses
+
+Initiate at 300mg/day in divided doses. Moclobemide has a UK licence for
+Social Phobia. Recommended by NICE128
+
+Phenelzine
+15–90mg/day135
+
+Avoidance of tyramine-rich food important
+Recommended by NICE128
+
+Pregabalin
+150–600mg/day132
+
+600mg/day superior to placebo132
+
+Ketamine
+0.5mg.kg IV
+
+One good RCT136
+
+Topiramate
+25–400mg/day137
+
+Small open label study of 23 patients suggests efficacy but poorly tolerated
+
+Valproate
+500–2500mg/day138
+
+Small open label study of 17 patients suggests efficacy
+
+PRN, pro re nata (as required)
+
+References
+1. Nash JR and Nutt DJ. Pharmacotherapy of anxiety. Handb Exp Pharmacol 2005; 469–501.
+2. Martin JL, et al. Benzodiazepines in generalized anxiety disorder: heterogeneity of outcomes based on a systematic review and meta-analysis
+of clinical trials. J Psychopharmacology 2007; 21:774–782.
+3. Benitez CI, et al. Use of benzodiazepines and selective serotonin reuptake inhibitors in middle-aged and older adults with anxiety disorders:
+a longitudinal and prospective study. Am J Geriatr Psychiatry 2008; 16:5–13.
+4. Demyttenaere K, et al. Clinical factors influencing the prescription of antidepressants and benzodiazepines: results from the European study
+of the epidemiology of mental disorders (ESEMeD). J Affect Disord 2008; 110:84–93.
+5. Hirschtritt ME, et al. Balancing the risks and benefits of benzodiazepines. JAMA 2021; 325:347–348.
+6. National Institute for Health and Clinical Excellence. Generalised anxiety disorder and panic disorder in adults: management. Clinical
+Guideline [CG113]. 2011 (last updated July 2019); http://guidance.nice.org.uk/CG113.
+7. Davidson JR. Use of benzodiazepines in social anxiety disorder, generalized anxiety disorder, and posttraumatic stress disorder. J Clin
+Psychiatry 2004; 65 Suppl 5:29–33.
+8. Scott A, et al. Antidepressant drugs in the treatment of anxiety disorders. Adv Psychiatric Treatment 2001; 7:275–282.
+9. Ballenger JC. Remission rates in patients with anxiety disorders treated with paroxetine. J Clin Psychiatry 2004; 65:1696–1707.
+10. Davidson JR, et al. A psychopharmacological treatment algorithm for generalised anxiety disorder (GAD). J Psychopharmacology 2010;
+24:3–26.
+11. Baldwin DS, et al. Evidence-based pharmacological treatment of anxiety disorders, post-traumatic stress disorder and obsessive-compulsive
+disorder: a revision of the 2005 guidelines from the British Association for Psychopharmacology. J Psychopharmacol 2014; 28:403–439.
+12. Baldwin D, et al. Efficacy of drug treatments for generalised anxiety disorder: systematic review and meta-analysis. BMJ 2011; 342:d1199.
+13. Slee A, et al. Pharmacological treatments for generalised anxiety disorder: a systematic review and network meta-analysis. Lancet 2019;
+393:768–777.
+14. Kong W, et al. Comparative remission rates and tolerability of drugs for generalised anxiety disorder: a systematic review and network metaanalysis of double-blind randomized controlled trials. Front Pharmacol 2020; 11:580858.
+15. Caillard V, et al. Comparative effects of low and high doses of clomipramine and placebo in panic disorder: a double-blind controlled study.
+French University Antidepressant Group. Acta Psychiatr Scand 1999; 99:51–58.
+16. Wade AG, et al. The effect of citalopram in panic disorder. Br J Psychiatry 1997; 170:x549–x553.
+17. Londborg PD, et al. Sertraline in the treatment of panic disorder. A multi-site, double-blind, placebo-controlled, fixed-dose investigation. Br
+J Psychiatry 1998; 173:54–60.
+18. Pollack MH, et al. Combined paroxetine and clonazepam treatment strategies compared to paroxetine monotherapy for panic disorder. J
+Psychopharmacology 2003; 17:276–282.
+19. Jakubovski E, et al. Systematic review and meta-analysis: dose-response curve of SSRIs and SNRIs in anxiety disorders. Depress Anxiety
+2019; 36:198–212.
+20. Clayton AH, et al. Sex differences in clinical presentation and response in panic disorder: pooled data from sertraline treatment studies. Arch
+Women’s Mental Health 2006; 9:151–157.
+21. Rickels K, et al. Panic disorder: long-term pharmacotherapy and discontinuation. J Clin Psychopharmacol 1998; 18:12S-18S.
+
+CHAPTER 3
+
+Experimental
+
+
+
+
+<<<PAGE 455>>>
+
+CHAPTER 3
+
+434  The Maudsley® Prescribing Guidelines in Psychiatry
+
+93. Feder A, et al. Efficacy of intravenous ketamine for treatment of chronic posttraumatic stress disorder: a randomized clinical trial. JAMA
+Psychiatry 2014; 71:681–688.
+94. Feder A, et al. A randomized controlled trial of repeated ketamine administration for chronic posttraumatic stress disorder. Am J Psychiatry
+2021; 178:193–202.
+95. Walderhaug E, et al. Effects of duloxetine in treatment-refractory men with posttraumatic stress disorder. Pharmacopsychiatry 2010;
+43:45–49.
+96. Villarreal G, et al. Duloxetine in military posttraumatic stress disorder. Psychopharmacol Bull 2010; 43:26–34.
+97. Hertzberg MA, et al. A preliminary study of lamotrigine for the treatment of posttraumatic stress disorder. Biol Psychiatry 1999;
+45:1226–1229.
+98. Bremner DJ, et al. Treatment of posttraumatic stress disorder with phenytoin: an open-label pilot study. J Clin Psychiatry 2004;
+65:1559–1564.
+99. Adamou M, et al. Valproate in the treatment of PTSD: systematic review and meta analysis. Curr Med Res Opin 2007; 23:1285–1291.
+100. Veale D, et al. Atypical antipsychotic augmentation in SSRI treatment refractory obsessive-compulsive disorder: a systematic review and
+meta-analysis. BMC Psychiatry 2014; 14:317.
+101. Dold M, et al. Antipsychotic augmentation of serotonin reuptake inhibitors in treatment-resistant obsessive-compulsive disorder: an update
+meta-analysis of double-blind, randomized, placebo-controlled trials. Int J Neuropsychopharmacol 2015; 18.
+102. Pallanti S, et al. Citalopram for treatment-resistant obsessive-compulsive disorder. Eur Psychiatry 1999; 14:101–106.
+103. Costa DLC, et al. Randomized, double-blind, placebo-controlled trial of n-acetylcysteine augmentation for treatment-resistant obsessivecompulsive disorder. J Clin Psychiatry 2017; 78:e766–e773.
+104. Couto JP, et al. Oral N-acetylcysteine in the treatment of obsessive-compulsive disorder: a systematic review of the clinical evidence. Prog
+Neuropsychopharmacol Biol Psychiatry 2018; 86:245–254.
+105. Bruno A, et al. Lamotrigine augmentation of serotonin reuptake inhibitors in treatment-resistant obsessive-compulsive disorder: a doubleblind, placebo-controlled study. J Psychopharmacology 2012; 26:1456–1462.
+106. Sharma V, et al. Lamotrigine-induced obsessive-compulsive disorder in patients with bipolar disorder. CNS Spectr 2019; 24:390–394.
+107. Berlin HA, et al. Double-blind, placebo-controlled trial of topiramate augmentation in treatment-resistant obsessive-compulsive disorder. J
+Clin Psychiatry 2011; 72:716–721.
+108. Mowla A, et al. Topiramate augmentation in resistant OCD: a double-blind placebo-controlled clinical trial. CNS Spectr 2010;
+15:613–617.
+109. Afshar H, et al. Topiramate augmentation in refractory obsessive-compulsive disorder: a randomized, double-blind, placebo-controlled
+trial. J Res Med Sci 2014; 19:976–981.
+110. Grassi G, et al. Investigational and experimental drugs to treat obsessive-compulsive disorder. J Exp Pharmacol 2020; 12:695–706.
+111. Rabinowitz I, et al. High-dose escitalopram for the treatment of obsessive-compulsive disorder. Int Clin Psychopharmacol 2008;
+23:49–53.
+112. Ninan PT, et al. High-dose sertraline strategy for nonresponders to acute treatment for obsessive-compulsive disorder: a multicenter doubleblind trial. J Clin Psychiatry 2006; 67:15–22.
+113. Modarresi A, et al. A systematic review and meta-analysis: memantine augmentation in moderate to severe obsessive-compulsive disorder.
+Psychiatry Res 2019; 282:112602.
+114. Naderi S, et al. Amantadine as adjuvant therapy in the treatment of moderate to severe obsessive-compulsive disorder: a double-blind
+randomized trial with placebo control. Psychiatry Clin Neurosci 2019; 73:169–174.
+115. Dell’Osso B, et al. Serotonin-norepinephrine reuptake inhibitors in the treatment of obsessive-compulsive disorder: a critical review. J Clin
+Psychiatry 2006; 67:600–610.
+116. Mowla A, et al. Duloxetine augmentation in resistant obsessive-compulsive disorder: a double-blind controlled clinical trial. J Clin
+Psychopharmacol 2016; 36:720–723.
+117. Koran LM, et al. Mirtazapine for obsessive-compulsive disorder: an open trial followed by double-blind discontinuation. J Clin Psychiatry
+2005; 66:515–520.
+118. Askari N, et al. Granisetron adjunct to fluvoxamine for moderate to severe obsessive-compulsive disorder: a randomized, double-blind,
+placebo-controlled trial. CNS Drugs 2012; 26:883–892.
+119. Soltani F, et al. A double-blind, placebo-controlled pilot study of ondansetron for patients with obsessive-compulsive disorder. Human
+Psychopharmacology 2010; 25:509–513.
+120. Sharafkhah M, et al. Comparing the efficacy of ondansetron and granisetron augmentation in treatment-resistant obsessive-compulsive
+disorder: a randomized double-blind placebo-controlled study. Int Clin Psychopharmacol 2019; 34:222–233.
+121. Mowla A, et al. Pregabalin augmentation for resistant obsessive-compulsive disorder: a double-blind placebo-controlled clinical trial. CNS
+Spectr 2020; 25:552–556.
+122. Coric V, et al. Riluzole augmentation in treatment-resistant obsessive-compulsive disorder: an open-label trial. Biol Psychiatry 2005;
+58:424–428.
+123. Eriksson T. Anti-androgenic treatment of obsessive-compulsive disorder: an open-label clinical trial of the long-acting gonadotropin-releasing hormone analogue triptorelin. Int Clin Psychopharmacol 2007; 22:57–61.
+124. Fallon BA, et al. Intravenous clomipramine for obsessive-compulsive disorder refractory to oral clomipramine: a placebo-controlled study.
+Arch Gen Psychiatry 1998; 55:918–924.
+125. Rodriguez CI, et al. Randomized controlled crossover trial of ketamine in obsessive-compulsive disorder: proof-of-concept.
+Neuropsychopharmacology 2013; 38:2475–2483.
+
+
+
+
+<<<PAGE 610>>>
+
+Children and adolescents  589
+
+and pimozide (N = 25) in TS over a 24-month period demonstrated that treatment was
+not associated with significant increase in body mass index. However, pimozide treatment was associated with increases in blood glucose which did not plateau from 12 to
+24 months, aripiprazole treatment was associated with increased cholesterol and both
+medications were associated with increased triglycerides.27 Two meta-analyses support
+the efficacy of aripiprazole.28,29 One study30 suggests twice weekly administration may be
+better tolerated than daily dosing. A small randomised controlled trial (N = 24) comparing aripiprazole with sodium valproate in children with TS demonstrated a statistically
+significant difference in tic reduction favouring aripiprazole.31
+Risperidone has in addition to the studies mentioned above also been shown to be
+more effective than placebo in a small (N = 34), randomised study.32 Fatigue and
+increased appetite were problematic in the risperidone arm and a mean weight gain of
+2.8kg over 8 weeks was reported. One small randomised, controlled trial found risperidone and clonidine to be equally effective.33 A small double-blind crossover study suggested that olanzapine34 may be more effective than pimozide. Sulpiride has been shown
+to be effective and relatively well tolerated,35 as has ziprasidone.36 Open studies support
+the efficacy of quetiapine37 and olanzapine.38,39 One very small crossover study (N = 7)
+found no effect for clozapine.40
+Overall, metabolic side-effects and weight gain are common with second generation
+antipsychotics, even aripiprazole, so benefit/risk ratios need careful discussion.18
+
+A small, double-blind, placebo-controlled, crossover trial of baclofen was suggestive of
+beneficial effects in overall impairment rather than a specific effect on tics.41 The numerical benefits shown in this study did not reach statistical significance. Similarly, a doubleblind, placebo-controlled trial of nicotine augmentation of haloperidol found beneficial
+effects in overall impairment rather than a specific effect on tics.42 These benefits persisted
+for several weeks after nicotine (in the form of patches) was withdrawn. Nicotine patches
+were associated with a high prevalence of nausea and vomiting (71% and 40%, respectively). The authors suggest that PRN use may be appropriate. Pergolide (a D1–D2–D3
+agonist) given in low dose significantly reduced tics in a double-blind, placebo-controlled,
+crossover study in children and adolescents.43 Side-effects included sedation, dizziness,
+nausea and irritability. Pergolide was also evaluated in a randomised trial in children and
+adolescents with chronic tics and TS, and showed significant tic reduction compared with
+placebo.44 Flutamide, an antiandrogen, has been the subject of a small RCT in adults with
+TS. Modest, short-lived effects were seen in motor but not phonic tics.45 A small randomised controlled trial has shown significant advantages for metoclopramide over placebo46 and for topiramate over placebo.47 A meta-analysis identified 14 randomised
+controlled trials (all from China) comparing topiramate with haloperidol or tiapride. It
+concluded that owing to the overall low quality of the study designs, there is not enough
+evidence to support the routine use of topiramate in clinical practice.48 More recently the
+use of the monoamine depleting agent deutetrabenazine has been shown to be effective.49
+Tetrabenazine may also be useful as an add-on treatment.50 Ecopipam, a D1 receptor
+antagonist, was also found to be effective in the treatment of tics in a recent randomised
+placebo-controlled crossover study including children and adolescents with TS.51
+
+CHAPTER 5
+
+Other drugs
+
+
+
+
+<<<PAGE 784>>>
+
+Drug treatment of other psychiatric conditions   763
+
+Relapse prevention
+There is evidence from one small trial that fluoxetine may be useful in improving outcome and preventing relapse of patients with anorexia nervosa after weight restoration.30 Other studies have found no benefit.19,31 SSRIs can, albeit very rarely, elevate
+prolactin.
+Co-morbid disorders
+Antidepressants are often used to treat co-morbid major depression and
+obsessive-compulsive disorder. However, caution should be used as these conditions
+may resolve with weight gain alone.4 As weight loss is a frequent side effect of bupropion, this antidepressant is contraindicated for the treatment of co-morbid depression
+in AN.32 Mania and psychosis occurring in the context of AN are probably best treated
+with olanzapine, and bipolar depression with olanzapine + fluoxetine.32
+Bulimia nervosa and binge eating disorder
+Psychological interventions should be considered first line for bulimia.33 Adults with
+bulimia nervosa and binge eating disorder (BED) may be offered a trial of an
+antidepressant. SSRIs (specifically fluoxetine34–36) are the ADs of first choice. The effective dose of fluoxetine is 60mg daily.37 Patients should be informed that this can reduce
+the frequency of binge eating and purging but long-term effects are unknown.4 Early
+response (at 3 weeks) is a strong predictor of response overall.38
+Antidepressants may be used for the treatment of bulimia nervosa in adolescents, but
+they are not licensed for this age group, and there is little evidence for this practice.
+They should not be considered as a first line treatment in adolescent bulimia nervosa.4
+There is some reasonable evidence that topiramate reduces frequency of binge-eating39 (although it is often poorly tolerated) and rather limited evidence for the usefulness of bupropion,40 duloxetine,41 lamotrigine,42,43 zonisamide,44,45 acamprosate46 and
+sodium oxybate.47 Systematic reviews48,49 confirm the modest efficacy of SSRIs and
+also suggest benefit for lisdexamfetamine (based on a high quality RCT50).
+Lisdexamfetamine is approved for BED in USA.51 Some limited evidence supports the
+use of a slow release combination of phentermine and topiramate.52,53 The noradrenaline/dopamine reuptake inhibitor dasotraline may also be effective54 but its development
+ceased in 2020.
+Co-morbid depression
+
+CHAPTER 9
+
+Depression is a frequent co-morbidity in BN and BED. Citalopram has been shown to
+be more effective than fluoxetine for depressive symptoms in BN patients; as weight
+gain is a frequent side effect of mirtazapine, this antidepressant should be avoided or
+used with caution for the treatment of co-morbid depression in BED.32
+
+
+
+
+<<<PAGE 808>>>
+
+Table 10.4 Adverse and beneficial psychiatric side effects of antiseizure medications5,19,20
+Antiseizure medications
+
+Adverse psychiatric symptoms
+
+Barbiturates, primidone
+
+■■
+
+Psychiatric benefits
+
+Behavioural disturbance/ADHD symptoms
+Depression, cognitive impairment
+
+■■
+
+Anxiolytic
+
+■■
+
+Carbamazepine,
+oxcarbazepine
+
+■■
+
+Not reported
+
+■■
+
+Mood stabilising,
+anti-manic
+
+Ethosuximide
+
+■■
+
+Behavioural disturbance, depression, psychosis
+
+■■
+
+None reported
+
+Felbamate
+
+■■
+
+Anxiety, depression, psychosis
+
+■■
+
+None reported
+
+Gabapentin, pregabalin
+
+■■
+
+Depression and anxiety on cessation
+
+■■
+
+Anxiolytic
+
+Lacosamide
+
+■■
+
+None reported
+
+■■
+
+None reported
+
+Lamotrigine
+
+■■
+
+Anxiogenic in some
+Behavioural disturbance in cognitive impairment
+
+■■
+
+■■
+
+■■
+
+Antidepressant
+Mood stabilising
+
+Levetiracetam
+
+■■
+
+Anxiety, behavioural disturbance, depression
+
+■■
+
+None confirmed
+
+Perampanel
+
+■■
+
+Behavioural disturbance, depression, psychosis
+
+■■
+
+None reported
+
+Phenytoin
+
+■■
+
+Behavioural disturbance, depression
+
+■■
+
+Anti-manic
+
+Tiagabine
+
+■■
+
+Behavioural disturbance, depression
+
+■■
+
+Anxiolytic
+
+Topiramate
+
+■■
+
+Anxiety, behavioural disturbance, depression
+
+■■
+
+Unclear; possible
+anti-manic/antipsychotic
+
+Valproate
+
+■■
+
+Behavioural disturbance (at high doses in children)
+
+■■
+
+Vigabatrin
+
+■■
+
+Behavioural disturbance/ADHD symptoms
+Depression, psychosis
+
+■■
+
+None reported
+
+■■
+■■
+
+Behavioural disturbance, depression
+
+■■
+
+None confirmed
+
+Benzodiazepines
+
+Zonisamide
+
+Mood stabilising,
+anti-manic
+■■ Anti-panic
+
+Interactions21
+Pharmacokinetic interactions
+Important pharmacokinetic interactions exist in both directions between antiseizure medications and psychotropics, primarily mediated through cytochrome P450 enzymes.8,22
+Psychotropics with enzyme-inhibiting effects (e.g. fluoxetine, fluvoxamine, paroxetine,
+and at higher doses, sertraline) may increase antiseizure medication plasma levels. This is
+especially relevant to antiseizure medications with a narrow therapeutic index (e.g. carbamazepine and phenytoin). Plasma levels should be monitored, and dosage adjustment may
+be required. Citalopram and escitalopram are very weak inhibitors of CYP 1A2 and 2D6.
+Some antiseizure medications are potent enzyme inducers (e.g. phenytoin, carbamazepine, phenobarbital, primidone) and others are weak inducers (e.g. oxcarbazepine at
+
+CHAPTER 10
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  787
+
+
+
+
+<<<PAGE 809>>>
+
+CHAPTER 10
+
+788  The Maudsley® Prescribing Guidelines in Psychiatry
+
+doses ≥900mg/day, topiramate at doses ≥400mg/day). These drugs can lower plasma
+levels of multiple psychotropics, possibly leading to treatment failure.
+
+Pharmacodynamic interactions13
+Adverse effects with antiseizure medications that may overlap with psychotropic
+adverse effects include:
+Weight gain: Caused by some antiseizure medications (e.g. carbamazepine, gabapentin, pregabalin, valproate)
+■■ Sexual adverse effects: With phenobarbital and primidone but possible with all
+enzyme-inducing antiseizure medications
+■■ Hyponatraemia: With carbamazepine, oxcarbazepine (note, if severe, it can provoke
+seizures)
+■■ Osteoporosis and osteopenia: Reported with long-term use of enzyme-inducing
+antiseizure medications
+■■ Blood dyscrasias: Reported with valproate carbamazepine and especially with
+felbamate10
+■■
+
+Psychotropics and the risk of seizures in people with epilepsy
+In the general population, the annual incidence of unprovoked seizures is about 50 per
+100,000 persons.23 It is notable that the incidence of unprovoked seizures in the placebo
+arms of randomised controlled trials of antidepressants and antipsychotics is approximately 15-fold higher, suggesting that both depression and psychosis are risk factors for
+seizures.24 A bidirectional relationship between epilepsy and several psychiatric illnesses
+has been demonstrated, whereby not only do PWE have a higher risk of developing a
+psychiatric illness, but people with psychiatric illness have a higher risk of developing
+epilepsy.5,6 This bidirectional relationship exists for depression, anxiety, psychosis and
+suicidality.3,5,6 Thus, the occurrence of seizures may, in some cases, be the expression of
+the natural progression of a psychiatric illness, unrelated to the use of psychotropics.
+Reports of seizures associated with psychotropics must factor in this bidirectional relationship between psychiatric illness and epilepsy. For example, although observational
+studies have reported an association between antidepressant treatment and seizures,25 a
+similar association is also found with non-drug treatments for depression (counselling, for
+example).26 These findings are consistent with depression itself being the main risk factor
+for seizures. In fact, one analysis of controlled studies with psychotropics showed that the
+incidence of seizures was substantially lower among patients receiving most antidepressants (SSRIs, for example) in comparison with those randomised to placebo.24 Nonetheless,
+definitive data are lacking in PWE27,28 and certain psychotropics have a dose-related risk
+of seizures within usual dose ranges. Most can cause seizures in overdose. Note also that
+almost all antidepressants and antipsychotics have been associated with hyponatraemia
+(see section on hyponatraemia) and seizures may occur if this is severe.17,29 General guidance on the safety of psychotropics in PWE is summarised in Table 10.5.
+Electroconvulsive therapy (ECT) has anticonvulsive properties and is worth considering in the treatment of depression in patients with unstable epilepsy.8,17,22 ECT does
+not appear to cause or worsen epilepsy.17,30
+
+
+
+
+<<<PAGE 874>>>
+
+Pharmacokinetics  853
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Zopiclone*
+
+Not known
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Bupropion*
+Fluoxetine*
+Lamotrigine
+Phenobarbital
+Phenytoin
+Sertraline*
+Valproate
+
+Fluoxetine*
+Fluvoxamine
+Modafinil
+Valproate
+
+Carbamazepine
+SJW
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine*
+Amitriptyline
+Carbamazepine*
+Citalopram
+Clomipramine*
+Diazepam
+Escitalopram
+Fluoxetine*
+Imipramine*
+?Melatonin
+?Methadone
+Moclobemide
+Phenytoin
+Sertraline*
+Suvorexant
+Trimipramine*
+
+Escitalopram*
+Fluvoxamine
+Moclobemide
+Modafinil
+Topiramate
+
+Carbamazepine
+SJW
+
+CPY2C9
+
+CPY2C19
+
+CHAPTER 11
+
+CPY2C8
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 929>>>
+
+908  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 14.2 (Continued)
+Reference range10
+
+Agents reported to raise levels
+
+Agents reported to
+lower levels
+
+Albumin
+
+35–50g/L (gradually
+decreases after age 40)
+
+Microalbuminuria may be a feature
+of metabolic syndrome secondary
+to psychotropic use (especially
+phenothiazines, clozapine,
+olanzapine and possibly quetiapine)
+
+Chronic use of
+amfetamine or cocaine
+
+Alkaline phosphatase 50–120U/L
+
+Baclofen, beta-blockers,
+benzodiazepines, caffeine (excess/
+chronic use), carbamazepine,
+citalopram, clozapine, disulfiram,
+duloxetine, galantamine, haloperidol,
+loxapine, memantine, modafinil,
+nortriptyline, olanzapine, phenytoin,
+sertraline, topiramate, trazodone,
+valbenazine, valproate; also
+associated with agents causing NMS
+
+Buprenorphine,
+fluoxetine (in children),
+zolpidem (rarely)
+
+Ammonia
+
+11–32μmol/L
+(increased following meals
+and exercise)
+
+Barbiturates, carbamazepine,
+tobacco smoking, topiramate,
+valproate (may present with signs
+of encephalopathy)
+
+None known
+
+Amylase
+
+28–100U/L
+
+Alcohol (acute), donepezil, opioids,
+pregabalin, rivastigmine, SSRIs
+(rarely)
+Agents associated with
+pancreatitis: alcohol,
+carbamazepine, clozapine,
+olanzapine, valproate
+
+None known
+
+Aspartate
+aminotransferase
+(AST)
+
+Females: ≤34U/L
+Males: ≤45U/L
+
+As for Alanine Transferase;
+baclofen. Note: ALT is preferred as
+an indicator of liver damage.
+
+Trifluoperazine,
+vigabatrin
+
+Bicarbonate
+
+22–29mmol/L
+
+Laxative abuse
+
+Agents associated with
+SIADH: all
+antidepressants,
+antipsychotics
+(clozapine, haloperidol,
+olanzapine,
+phenothiazines,
+pimozide, risperidone/
+paliperidone,
+quetiapine);
+carbamazepine; also
+associated with agents
+causing metabolic
+acidosis (alcohol,
+cocaine, topiramate,
+zonisamide)
+
+CHAPTER 14
+
+Parameter
+
+
+
+
+<<<PAGE 932>>>
+
+Miscellany  911
+
+Parameter
+
+Reference range10
+
+Agents reported to raise levels
+
+Agents reported to
+lower levels
+
+Lactate
+dehydrogenase
+
+90–200U/L
+(levels rise gradually with
+age)
+
+Benzodiazepines, clozapine,
+methadone, TCAs (especially
+imipramine), valproate, also
+associated with agents causing NMS
+
+None known
+
+Lipoproteins: HDL
+
+>1.2mmol/L
+
+Carbamazepine, nicotine,
+phenobarbital, phenytoin
+
+Beta-blockers,
+olanzapine,
+phenothiazines,
+valproate
+
+Lipoproteins: LDL
+
+<3.5mmol/L
+
+Prazosin
+Beta-blockers, caffeine (controversial),
+carbamazepine, chlorpromazine,
+clozapine, iloperidone, memantine,
+mirtazapine, modafinil, olanzapine,
+phenothiazines, quetiapine, risperidone/
+paliperidone, rivastigmine, venlafaxine
+
+Phosphate
+
+0.8–1.5mmol/L
+
+Dexamfetamine; also associated with
+agents causing NMS
+
+Carbamazepine,
+lithium, mianserin,
+topiramate
+
+Potassium
+
+3.5–5.3mmol/L
+
+Beta-blockers, lithium
+
+Alcohol, disulfiram,
+caffeine, cocaine,
+haloperidol, lithium,
+mianserin, pregabalin,
+reboxetine,
+rivastigmine, sodium
+oxybate,
+sympathomimetics,
+topiramate,
+zonisamide; may also
+be a feature of
+delirium tremens
+
+Prolactin
+
+Normal: <350mU/L
+Abnormal: >600mU/L
+
+Antidepressants: especially
+Aripiprazole, dopamine
+amoxapine, MAOIs and TCAs; SSRIs
+agonists, pirenzepine
+and venlafaxine also implicated
+Antipsychotics: amisulpride, haloperidol,
+pimozide, risperidone/paliperidone,
+sulpiride and others (aripiprazole†,
+asenapine, brexpiprazole, cariprazine,
+clozapine, lurasidone, olanzapine,
+quetiapine and ziprasidone have
+minimal effects on prolactin levels)
+Other: benzodiazepines, buspirone,
+deutetrabena­zine, opioids, ramelteon,
+tetrabenazine, valbenazine
+
+Protein (total)
+
+60–80g/L
+
+None known
+
+Olanzapine (rarely)
+(Continued)
+
+CHAPTER 14
+
+Table 14.2 (Continued)
+
+

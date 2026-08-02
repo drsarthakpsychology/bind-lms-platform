@@ -1,0 +1,1895 @@
+<<<PAGE 33>>>
+
+CHAPTER 1
+
+12  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Licensed maximum doses
+The following table lists the licensed maximum doses of antipsychotics according to the
+EMA labelling as of February 2021.
+Drug
+
+Maximum dose
+
+FGAs – oral
+Chlorpromazine
+
+1000mg/day
+
+Flupentixol
+
+18mg/day
+
+Haloperidol
+
+20mg/day
+
+Levomepromazine
+
+1200mg/day
+
+Pericyazine
+
+300mg/day
+
+Perphenazine
+
+24mg/day (64mg/day hospitalised patients)
+
+Pimozide
+
+20mg/day
+
+Sulpiride
+
+2400mg/day
+
+Trifluoperazine
+
+20mg/day
+
+Zuclopenthixol
+
+150mg/day
+
+SGAs – oral
+Amisulpride
+
+1200mg/day
+
+Aripiprazole
+
+30mg/day
+
+Asenapine
+
+20mg/day (sublingual)
+
+Cariprazine
+
+6mg/day
+
+Clozapine
+
+900mg/day
+
+Lurasidone
+
+160mg (HCl)/148mg (base)/day
+
+Olanzapine
+
+20mg/day
+
+Paliperidone
+
+12mg/day
+
+Quetiapine
+
+750mg/day schizophrenia (800mg/day for MR preparation)
+800mg/day bipolar disorder
+
+Risperidone
+
+16mg/day
+
+Sertindole
+
+24mg/day
+
+Long-acting injections
+Aripiprazole depot
+
+400mg/month
+
+Flupentixol depot
+
+400mg/week
+
+Fluphenazine depot
+
+100mg every 14–35 days
+
+Haloperidol depot
+
+300mg every 4 weeks
+
+Paliperidone depot
+1-monthly
+
+150mg/month
+
+
+
+
+<<<PAGE 35>>>
+
+CHAPTER 1
+
+14  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Equivalent doses
+Knowledge of equivalent dosages is useful when switching between FGAs. Estimates of
+‘neuroleptic’ or ‘chlorpromazine’ equivalence, in milligrams a day, between these medications are based on clinical experience, expert panel opinion (using various methods)
+and any dopamine binding studies available.
+Table 1.2 provides approximate equivalent doses for FGAs.1–4 The values given should
+be seen as a rough guide when switching from one FGA to another and are no substitute
+for clinical titration of the new medication dose against adverse effects and response.
+Equivalent doses of SGAs may be less clinically relevant as these medications tend to
+have better defined, evidence-based licensed dose ranges. There are several different
+ways of calculating equivalence based on, for example, defined daily dose,5 minimum
+effective dose6,7 and average dose.8 These methods give different estimates of equivalence. A very rough guide to equivalent SGA daily dosages is given in the Table 1.3.3,4,7–9
+There is considerable disagreement about exact equivalencies, even amongst the references cited here. Clozapine is not included because this has a distinct initial titration
+schedule and a high dose-plasma level variability and because it probably has a different mechanism of action.
+Comparing potencies of FGAs with SGAs introduces yet more uncertainty with
+respect to dose equivalence. Very approximately, 100mg chlorpromazine is equivalent
+to 1.5mg risperidone.3
+
+Table 1.2 Equivalent doses of first generation antipsychotics
+Drug
+
+Equivalent dose (consensus)
+
+Range of values in literature
+
+Chlorpromazine
+
+100mg/day
+
+Reference
+
+Flupentixol
+
+3mg/day
+
+2–3mg/day
+
+Flupentixol depot
+
+10mg/week
+
+10–20mg/week
+
+Fluphenazine
+
+2mg/day
+
+1–5mg/day
+
+Fluphenazine depot
+
+5mg/week
+
+1–12.5mg/week
+
+Haloperidol
+
+2mg/day
+
+1.5–5mg/day
+
+Haloperidol depot
+
+15mg/week
+
+5–25mg/week
+
+Pericyazine
+
+10mg/day
+
+10mg/day
+
+Perphenazine
+
+10mg/day
+
+5–10mg/day
+
+Pimozide
+
+2mg/day
+
+1.33–2mg/day
+
+Pipotiazine depot
+
+10mg/week
+
+10–12.5mg/week
+
+Sulpiride
+
+200mg/day
+
+133–300mg/day
+
+Trifluoperazine
+
+5mg/day
+
+2.5–5mg/day
+
+Zuclopenthixol
+
+25mg/day
+
+25–60mg/day
+
+Zuclopenthixol depot
+
+100mg/week
+
+40–100mg/week
+
+
+
+
+<<<PAGE 36>>>
+
+Table 1.3 Second-generation antipsychotics – approximate equivalent doses3–10
+Drug
+
+Approximate equivalent dose
+
+Amisulpride
+
+400mg
+
+Aripiprazole
+
+15mg
+
+Asenapine
+
+10mg
+
+Blonanserin
+
+~
+
+Brexpiprazole
+
+2mg
+
+Cariprazine
+
+1.5mg
+
+Clotiapine
+
+100mg
+
+Iloperidone
+
+12mg
+
+Lumateperone
+
+~
+
+Lurasidone
+
+80mg (74mg base)
+
+Melperone
+
+300mg
+
+Molindone
+
+50mg
+
+Olanzapine
+
+10mg
+
+Paliperidone LAI
+
+100mg/month
+
+Pimavanserin
+
+~
+
+Quetiapine
+
+400mg
+
+Risperidone oral
+
+4mg
+
+Risperidone LAI
+
+50mg/2 weeks
+
+Risperidone RBP-7000
+
+120mg/month
+
+Ziprasidone
+
+80mg
+
+~Unknown equivalence at time of writing.
+
+References
+1. Foster P. Neuroleptic equivalence. Pharm J 1989; 243:431–432.
+2. Atkins M, et al. Chlorpromazine equivalents: a consensus of opinion for both clinical and research implications. Psychiatric Bull 1997;
+21:224–226.
+3. Patel MX, et al. How to compare doses of different antipsychotics: a systematic review of methods. Schizophr Res 2013; 149:141–148.
+4. Gardner DM, et al. International consensus study of antipsychotic dosing. Am J Psychiatry 2010; 167:686–693.
+5. Leucht S, et al. Dose equivalents for antipsychotic drugs: the ddd method. Schizophr Bull 2016; 42 Suppl 1:S90–S94.
+6. Rothe PH, et al. Dose equivalents for second generation long-acting injectable antipsychotics: the minimum effective dose method. Schizophr
+Res 2018; 193:23–28.
+7. Leucht S, et al. Dose equivalents for second-generation antipsychotics: the minimum effective dose method. Schizophr Bull 2014;
+40:314–326.
+8. Leucht S, et al. Dose equivalents for second-generation antipsychotic drugs: the classical mean dose method. Schizophr Bull 2015;
+41:1397–1402.
+9. Woods SW. Chlorpromazine equivalent doses for the newer atypical antipsychotics. J Clin Psychiatry 2003; 64:663–667.
+10. Leucht S, et al. Dose-response meta-analysis of antipsychotic drugs for acute schizophrenia. Am J Psychiatry 2020; 177:342–353.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  15
+
+
+
+
+<<<PAGE 38>>>
+
+In a study of patients with first-episode schizophrenia, increasing the dose of olanzapine up to 30mg/day and the dose of risperidone up to 10mg/day in non-responders to
+standard doses yielded only a 4% absolute increase in overall response rate; switching
+to an alternative antipsychotic, including clozapine, was considerably more successful.20
+One small (n = 12) open study of high-dose quetiapine (up to 1400mg/day) found modest benefits in a third of subjects,21 but other, larger studies of quetiapine have shown no
+benefit for higher doses.8,22,23 A further RCT of high-dose olanzapine (up to 45mg/day)
+versus clozapine for treatment-resistant schizophrenia found similar efficacy for the two
+treatments, but concluded that, given the small sample size, it would be premature to
+conclude that they were equivalent.24 A systematic review of relevant studies comparing
+olanzapine at above standard dosage with clozapine for TRS concluded that while olanzapine, particularly in higher dosage, might be considered as an alternative to clozapine
+in TRS, clozapine still had the most robust evidence for efficacy.25
+The most recent systematic analysis of dose response26 largely confirmed the observation of a flat or horizontal dose–response curve above a certain dose for all antipsychotics, with the possible exceptions of olanzapine and lurasidone (with these two drugs,
+there is evidence that doses at the upper end of the licensed range are somewhat more
+effective than lower doses10,27). This systematic review also suggested that doses above
+which no additional benefit was likely were somewhat higher than those stated above,
+e.g. risperidone 6.3mg/day; quetiapine 482mg/day. Importantly, however, there was no
+evidence to support the use of doses of any drug above its licensed does range.
+
+Adverse effects
+The majority of side effects associated with antipsychotic treatment are dose-related.
+These include EPS, sedation, postural hypotension, anticholinergic effects, QTc prolongation and coronary heart disease mortality.28–31 High-dose antipsychotic treatment is
+clearly associated with a greater side-effect burden.12,23,28,32,33 There is some evidence
+that antipsychotic dose reduction from very high (mean 2253mg chlorpromazine equivalents per day) to high (mean 1315mg chlorpromazine equivalents per day) dose leads
+to improvements in cognition and negative symptoms.34
+
+Recommendations
+The use of high-dose antipsychotic medication should be an exceptional clinical practice and
+only ever employed when adequate trials of standard treatments, including clozapine, have
+failed.
+■■ If high-dose antipsychotic medication is prescribed, it should be standard practice to review and
+document the target symptoms, therapeutic response and side effects, ideally using validated
+rating scales, so that there is ongoing consideration of the risk-benefit ratio for the patient.
+Close physical monitoring (including ECG) is essential.
+■■
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  17
+
+
+
+
+<<<PAGE 60>>>
+
+Action to be taken if
+results outside
+reference range
+
+Parameter/
+test
+
+Suggested
+frequency
+
+ECG19,20
+
+Baseline and when Discuss with/refer to
+cardiologist if
+target dose is
+abnormality detected
+reached (ECG
+changes rare in
+practice21) on
+admission to
+hospital and before
+discharge if
+medication regimen
+changed.
+
+Blood
+pressure
+
+Baseline; frequently
+during dose
+titration and dosage
+changes to detect
+antipsychoticinduced changes,
+and generally
+monitor physical
+health
+
+Prolactin
+
+Liver
+function
+tests
+(LFTs)23–25
+
+Medications with
+special precautions
+
+Medications for which
+monitoring is not
+required
+
+Haloperidol, pimozide,
+sertindole – ECG
+mandatory;
+ziprasidone – ECG
+mandatory in some
+situations
+
+Risk of sudden cardiac
+death increased with
+most antipsychotic
+medications.22 Ideally, all
+patients should be
+offered an ECG at least
+yearly
+
+If severe hypotension or
+hypertension (clozapine)
+observed, slow rate of
+titration. Consider
+switching to another
+antipsychotic if
+symptomatic postural
+hypotension. Treat
+hypertension in line with
+NICE guidelines
+
+Clozapine,
+chlorpromazine and
+quetiapine most likely
+to be associated with
+postural hypotension
+
+Amisulpride, aripiprazole,
+brexpiprazole,
+cariprazine, lurasidone,
+trifluoperazine, sulpiride
+
+Baseline, then at 6
+months, then yearly
+to detect
+antipsychoticinduced changes
+
+Switch medications if
+hyperprolactinaemia
+confirmed and
+symptomatic. Consider
+tests of bone mineral
+density (e.g. DEXA
+scanning) for those with
+chronically raised
+prolactin.
+
+Amisulpride, sulpiride,
+risperidone and
+paliperidone particularly
+associated with
+hyperprolactinaemia
+
+Asenapine, aripiprazole,
+brexpiprazole,
+cariprazine, clozapine,
+lurasidone, quetiapine,
+olanzapine (<20mg), and
+ziprasidone usually do
+not elevate plasma
+prolactin, but worth
+measuring if symptoms
+arise
+
+Baseline, then yearly
+as part of a routine
+physical health
+check and to detect
+chronic
+antipsychoticinduced changes
+(rare)
+
+Stop suspect medication
+if LFTs indicate hepatitis
+(transaminases × 3
+normal) or functional
+damage (PT/albumin
+change)
+
+Clozapine and
+chlorpromazine
+associated with hepatic
+failure
+
+Amisulpride, sulpiride
+
+Baseline, then if NMS See the section on NMS
+Creatinine
+suspected
+phospho
+kinase (CPK)
+
+None
+NMS more likely with
+high-potency firstgeneration antipsychotic
+medications
+
+Other tests: Patients on clozapine may benefit from an EEG,26,27 as this may help determine the need for anticonvulsant treatment (although interpretation is obviously complex). Those on quetiapine should have thyroid function
+tests yearly, although the risk of abnormality is very small.28,29
+Key: DEXA, dual-energy X-ray absorptiometry; NMS, neuroleptic malignant syndrome; PT, prothrombin time;
+BMI – body mass index; ECG – electrocardiograph; EEG – electroencephalogram; GFR – glomerular filtration rate;
+IFG – impaired fasting glucose.
+Note: This table is a summary – see individual sections for detail and discussion.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  39
+
+
+
+
+<<<PAGE 67>>>
+
+CHAPTER 1
+
+46  The Maudsley® Prescribing Guidelines in Psychiatry
+
+First-generation antipsychotics – place in therapy
+Nomenclature
+First-generation (‘typical’) and second-generation (‘atypical’) antipsychotic medications are not categorically differentiated, the medications in both groups being heterogeneous in terms of pharmacological and side-effect profiles. First-generation
+medications were introduced before 1990 and tend to be associated with acute EPS,
+hyperprolactinaemia and, in the longer term, tardive dyskinesia (TD). There are expectations that such adverse effects are less likely or absent with second-generation antipsychotic medications (introduced after 1990), although in practice most show
+dose-related EPS, some induce hyperprolactinaemia (often to a greater extent than with
+FGAs) and all will give rise to TD, albeit at a lower incidence than FGAs. Secondgeneration medications tend to be associated with metabolic and cardiac complications,1–3 although this is not true of all SGAs and it is true of some FGAs. To complicate
+matters further, it has been suggested that the therapeutic and adverse effects of FGAs
+can be separated by careful dosing4 – essentially turning FGAs into SGAs if used in
+small enough doses (although there is much evidence to the contrary5–7).
+Given these observations, it seems unwise and unhelpful to consider so-called FGAs
+and SGAs as distinct groups of drugs. Perhaps the essential difference between the two
+groups is the size of the therapeutic index in relation to acute EPS. For instance, haloperidol has an extremely narrow range of doses at which it is effective but does not cause
+extrapyramidal side effects (EPSE) (perhaps 4.0 to 4.5mg/day), whereas olanzapine has a
+wide range of therapeutic doses (5–40mg/day) at which it does not generally cause EPSE.
+The use of Neuroscience-based Nomenclature (NbN)1,2 (for which there is a free app
+for iPhone and other devices) obviates the need for classification into an FGA or SGA
+and describes individual drug by their pharmacological activity. The wider use of NbN
+will undoubtedly improve understanding of individual drug effects and perhaps forestall future redundant categorisation.
+
+Role of older antipsychotics
+FGAs still play an important role in schizophrenia. For example, chlorpromazine and
+haloperidol are frequent choices for PRN (‘when necessary’) medication and depot preparations of haloperidol, zuclopenthixol and flupentixol are commonly prescribed. FGAs
+can offer a valid alternative to SGAs where SGAs are poorly tolerated (usually because of
+metabolic changes) or where FGAs are preferred by patients themselves. Some FGAs may
+be less effective than some non-clozapine SGAs (amisulpride, olanzapine and risperidone
+may be slightly more efficacious3,4), but any differences in therapeutic efficacy seem to be
+modest. Two large pragmatic studies, CATIE8 and CUtLASS,5 found few important differences between SGAs and FGAs (mainly perphenazine and sulpiride, respectively).
+The main drawbacks of FGAs are, inevitably, acute EPS, hyperprolactinaemia and
+TD. Hyperprolactinaemia is probably unavoidable in practice (the dose that achieves
+efficacy is too close to the dose that causes hyperprolactinaemia) and, even when not
+symptomatic, hyperprolactinaemia may grossly affect hypothalamic function.6 It is also
+associated with sexual dysfunction,7 but be aware that the autonomic effects of some
+
+
+
+
+<<<PAGE 144>>>
+
+Antipsychotic-induced weight gain
+Weight gain, a cardiometabolic risk factor, is a common side effect of antipsychotic
+medication.1 The mechanisms underlying antipsychotic-induced weight gain are not well
+understood,2 although factors such as 5HT2C antagonism, H1 antagonism, D2 antagonism, and increased serum leptin (leading to leptin desensitisation)3–5 are commonly
+implicated. There is no evidence that these medications exert any direct metabolic effect:
+weight gain seems to result from increased food intake and, in some cases, reduced
+energy expenditure.6,7 The risk of weight gain appears to be related to clinical response8,9
+(although the association may be too small to be clinically important10), which may have
+a genetic basis.11 Weight gain may be more pronounced in antipsychotic-naïve patients
+and during the early stages of the treatment of psychotic illness,12–14 and women may be
+at greater risk than men.15,16
+Almost all available antipsychotic medications have been associated with weight
+gain,12 although the mean gain in body weight varies substantially between the medications. There is also marked inter-individual variation among those treated, with some
+losing weight, some gaining no weight and some gaining a great deal of weight. Thus,
+knowledge of the mean increase in weight reported for a particular medication may not
+be a helpful predictor of how much weight an individual might gain. Assessment of the
+relative liability for weight gain of different antipsychotic medications is based largely
+on short term studies. Notwithstanding these limitations, the results of indirect and
+direct meta-analyses suggest that these medications can be clustered into three groups
+based on their relative risk of weight gain17 (see Table 1.17).
+Table 1.17 Antipsychotic-induced weight gain18–25
+Drug
+
+Risk/extent of weight gain
+
+Clozapine
+
+High
+
+Olanzapine
+Chlorpromazine
+
+Moderate
+
+Iloperidone
+Sertindole
+Quetiapine
+Risperidone
+Paliperidone
+Amisulpride
+Asenapine
+Brexpiprazole
+Aripiprazole
+Cariprazine
+Haloperidol
+Lumateperone
+Lurasidone
+Sulpiride
+Trifluoperazine
+Ziprasidone
+
+Low
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  123
+
+
+
+
+<<<PAGE 164>>>
+
+given the problems associated with QTc measurements. Lastly, keep in mind that differences in the effects of different antipsychotics on the QT interval rarely reach statistical
+significance, even in meta-analyses (Table 1.21).29
+Outside these guidelines, readers are directed to the RISQ-PATH study,30 which provides a scoring system for the prediction of QT prolongation (to above normal ranges)
+in any patient. RISQ-PATH has a 98% negative predictive value, so allowing a reduction in monitoring in low-risk patients. The RISQ-PATH method uses CredibleMeds
+categorisation for drug effects on QT – this, too, is recommeded.31
+Table 1.21 Effects of antipsychotics on QTC13,22,23,32–61.
+No effect
+Brexpiprazole*
+Cariprazine*
+Lurasidone
+Lumateperone*
+Low effect
+Aripiprazole**
+Asenapine
+Clozapine
+Flupentixol
+Fluphenazine
+Perphenazine
+Prochlorperazine
+Olanzapine***
+Paliperidone
+Risperidone
+Sulpiride
+
+Moderate effect
+Amisulpride****
+Chlorpromazine
+Haloperidol
+Iloperidone
+Levomepromazine
+Melperone
+Pimavanserin
+Quetiapine
+Ziprasidone
+High effect
+Any intravenous antipsychotic
+Pimozide
+Sertindole
+Any drug or combination of drugs used in doses exceeding
+recommended maximum
+Unknown effect
+Loxapine
+Pipotiazine
+Trifluoperazine
+Zuclopenthixol
+
+*Limited clinical experience (association with QT prolongation may emerge).
+**One case of torsades de pointes (TDP) reported,62 two cases of QT prolongation63,64 and an association with TDP
+found in database study.65 Healthy volunteer data suggest aripiprazole causes QTc prolongation of around 8ms.66
+Aripiprazole may increase QT dispersion.67
+***Isolated cases of QTc prolongation37,68 and has effects on cardiac ion channel, IKr,69 other data suggest no effect
+on QTC.23,35,36,70
+****TDP common in overdose,25,71 strong association with TDP in clinical doses.65
+
+Aripiprazole remains in the low effect group having previously been firmly placed in
+‘no effect’. Data are rather contradictory, with most studies showing a decrease in QTc
+associated with aripiprazole use52 even in children and adolescents.72 However, later
+data62,63,65,66,73 cast doubt on assumptions of cardiac safety. Interestingly, a 2020 paper
+analysing reports of events in > 400,000 inpatients over 20 years found aripiprazole
+had the lowest rate of cardiac events (0.06%) of all antipsychotics.74
+Lurasidone remains in the ‘no effect’ group,52 although one study mentioned in the
+US labelling75 reports a QT lengthening of 7.5mg in people receiving 120mg (111mg) a
+day. Those receiving 600mg (555mg) daily showed a lower change (+4.6ms). These
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  143
+
+
+
+
+<<<PAGE 402>>>
+
+Depression and anxiety disorders  381
+
+CYP1A2
+
+CYP2B6
+
+CYP2C9
+
+CYP2C19
+
+CYP2D6
+
+CYP3A4/5/7
+
+Genetic
+polymorphism
+Ultra-rapid
+metabolisers
+possible
+
+2–10% of total
+hepatic CYP
+content16
+
+5–10% of
+Caucasians
+poor
+metabolisers
+
+~20% of Asians
+and 3–5%
+Caucasians are
+poor metabolisers
+
+3–5% of
+Caucasians poor
+metabolisers
+
+60% p450
+content
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Induced by:
+
+Carbamazepine
+Charcoal cooking
+Tobacco smoke
+Omeprazole
+Phenobarbital
+Phenytoin
+
+Carbamazepine
+Efavirenz
+Lopinavir
+Rifampicin
+Ritonavir
+
+Phenytoin
+Rifampicin
+
+Apalutamide
+Rifampicin
+Enzalutamide
+Artemisinin
+Efavirenz
+
+Carbamazepine
+Phenytoin
+
+Carbamazepine
+Phenytoin
+Prednisolone
+Rifampicin
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Inhibited by:
+
+Cimetidine
+Ciprofloxacin
+Erythromycin
+Fluvoxamine
+
+Clopidogrel
+Ticlopidine
+Voriconazole
+
+Cimetidine
+Fluoxetine
+Fluvoxamine
+Moclobemide
+Sertraline
+
+Fluconazole
+Fluoxetine
+Fluvoxamine
+Esomeprazole
+Moclobemide
+Omeprazole
+Voriconazole
+Armodafinil
+Etravirine
+Isoniazid
+Modafinil
+Cimetidine
+
+Chlorpromazine
+Bupropion
+Duloxetine
+Fluoxetine
+Fluphenazine
+Haloperidol
+Paroxetine
+Sertraline
+Tricyclics
+
+Erythromycin
+Fluoxetine
+Fluvoxamine
+Grapefruit Juice
+Ketoconazole
+Norfluoxetine
+Paroxetine
+Sertraline
+Tricyclics
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Metabolises:
+
+Agomelatine
+Benzodiazepines
+Caffeine
+Clozapine
+Duloxetine
+Haloperidol
+Mirtazapine
+Olanzapine
+Ramelteon
+Theophylline
+Tizanidine
+Tricyclics
+Warfarin
+
+Bupropion
+Methadone
+Tramadol
+
+Agomelatine
+Bupropion
+Citalopram
+Diazepam
+Omeprazole
+Phenytoin
+Tricyclics
+Warfarin
+
+Citalopram
+Diazepam
+Moclobemide
+
+Clozapine
+Codeine
+Donepezil
+Duloxetine
+Haloperidol
+Phenothiazines
+Risperidone
+Tamoxifen
+Tricyclics
+Tramadol
+Trazodone
+Venlafaxine
+Vortioxetine
+
+Calcium
+Blockers
+Carbamazepine
+Clozapine
+Donepezil
+Erythromycin
+Galantamine
+Methadone
+Levomilnacipran
+Mirtazapine
+Reboxetine
+Risperidone
+Statins
+Tricyclics
+Valproate
+Venlafaxine
+Vilazodone
+Vortioxetine
+Z-hypnotics
+
+CHAPTER 3
+
+Table 3.15 Pharmacokinetic interactions – a brief summary of important interactions3,15
+
+
+
+
+<<<PAGE 546>>>
+
+Addictions and substance misuse  525
+
+generation and catecholamine release. There is evidence to support IM use of: benzodiazepines, including diazepam, lorazepam, midazolam;10 antipsychotics, including haloperidol, droperidol, olanzapine and chlorpromazine;10,11, and their combination.12
+Caution is required because of the risk of neuroleptic malignant syndrome.
+Record pulse, blood pressure and temperature, where safe to do so. Urinary drug
+screens typically have limited validity for NPS but many clinical laboratories can identify causative compounds. An ECG is unlikely to be viable until individuals have been
+sedated. Full assessment and treatment requires urgent ambulance transfer to an emergency department (ED).13 Psychiatric nursing might be required to contain and support
+the individual. In the ED, IM ketamine is the preferred sedative, with a predictable
+dose–response effect at 2–4mg/kg.14 Antipyretics are ineffective cooling agents, and
+cooled IV fluids, water sprays and ice to the whole body may be required.
+
+Mortality rates are not known with the only source of data available being non-scientific
+observations15. Physiological deterioration associated with NPS use is sometimes missed
+or not anticipated. Risk of death is related to the duration of hyperthermia and peak
+temperature reached: temperatures over 42°C usually have very poor outcomes. Body
+mass index >25kg/m2 is associated with worse outcomes. In non-fatal instances, most
+cases are brief, and fully resolve within 48 hours, but longer term cardiac, renal and
+hepatic damage can occur.
+
+References
+1. Tracy DK, et al. Acute behavioural disturbance: a physical emergency psychiatrists need to understand. B J Psych Advances 2020:1–10
+2. Kennedy DB, et al. Delayed in-custody death involving excited delirium. J Correct Health Care 2018; 24:43–51.
+3. Bunai Y, et al. Fatal hyperthermia associated with excited delirium during an arrest. Leg Med (Tokyo) 2008; 10:306–309.
+4. Borek HA, et al. Hyperthermia and multiorgan failure after abuse of ‘bath salts’ containing 3,4-methylenedioxypyrovalerone. Ann Emerg
+Med 2012; 60:103–105.
+5. Otahbachi M, et al. Excited delirium, restraints, and unexpected death: a review of pathogenesis. Am J Forensic Med Pathol 2010;
+31:107–112.
+6. Wittstein IS, et al. Neurohumoral features of myocardial stunning due to sudden emotional stress. N Engl J Med 2005; 352:539–548.
+7. Hall CA, et al. Frequency of signs of excited delirium syndrome in subjects undergoing police use of force: descriptive evaluation of a prospective, consecutive cohort. J Forensic Leg Med 2013; 20:102–107.
+8. Baldwin S, et al. Distinguishing features of excited delirium syndrome in non-fatal use of force encounters. J Forensic Leg Med 2016;
+41:21–27.
+9. Stratton SJ, et al. Factors associated with sudden death of individuals requiring restraint for excited delirium. Am J Emerg Med 2001;
+19:187–191.
+10. Isbister GK, et al. Randomized controlled trial of intramuscular droperidol versus midazolam for violence and acute behavioral disturbance:
+the DORM study. Ann Emerg Med 2010; 56:392–401 e391.
+11. Page CB, et al. A prospective study of the safety and effectiveness of droperidol in children for prehospital acute behavioral disturbance.
+Prehosp Emerg Care 2019; 23:519–526.
+12. O’Connor N, et al. Pharmacological management of acute severe behavioural disturbance: a survey of current protocols. Aust Psychiatry
+2017; 25:395–398.
+13. Wetli CV, et al. Cocaine-associated agitated delirium and the neuroleptic malignant syndrome. Am J Emerg Med 1996; 14:425–428.
+14. Li M, et al. Evaluation of ketamine for excited delirium syndrome in the adult emergency department. J Emerg Med 2019.
+15. Baldwin S, et al. Excited delirium syndrome (ExDS): situational factors and risks to officer safety in non-fatal use of force encounters. Int J
+Law Psychiatry 2018; 60:26–34.
+
+CHAPTER 4
+
+Outcomes
+
+
+
+
+<<<PAGE 747>>>
+
+726  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+Table 8.1 (Continued )
+Drug
+
+Comments
+
+Olanzapine1,5,6,8
+
+Although extensively hepatically metabolised, the pharmacokinetics of olanzapine seem
+to change little in severe hepatic impairment. It is sedative and anticholinergic (can cause
+constipation), so caution is advised. Start with 5mg/day in moderate or severe impairment
+and consider using plasma levels to guide dosage (aim for 20–40µg/L). Dose-related,
+transient, asymptomatic elevations in ALT and AST are very common in physically healthy
+adults, particularly early in treatment. People with liver disease or those taking other
+hepatotoxic drugs may be at increased risk. Rare cases of hepatitis in the literature.
+
+Paliperidone5,6,8
+
+Mainly excreted unchanged by the kidneys, so no dosage adjustment required for mild to
+moderate impairment. However, no data are available with respect to severe hepatic
+impairment and clinical experience is limited so caution is required. Rises in transaminases and
+gamma GT reported, some cases of jaundice. May be a good choice for patients with
+pre-existing hepatic disease.29–31 One case report of hepatotoxicity with risperidone that did not
+remit on switching to paliperidone – it is possible that paliperidone may cause hepatotoxicity.32
+
+Phenothiazines5,6
+
+All cause sedation and constipation. Transient abnormalities in LFTs reported. Associated
+with cholestasis and some reports of fulminant hepatic cirrhosis. Best avoided
+completely in hepatic impairment, some phenothiazines are actively contraindicated.
+Chlorpromazine is particularly hepatotoxic and is also associated with rare cases of
+immune-mediated obstructive jaundice which may progress to liver disease.
+
+Pimavanserin6
+
+Active metabolite has a very long half-life (200 hours) – use not recommended in
+hepatic impairment. Does not appear to be hepatotoxic.
+
+Quetiapine5,6,8,33
+
+Extensively hepatically metabolised but short half-life. Clearance reduced by a mean of
+30% in hepatic impairment so start at 25mg/day (IR preparation) or 50mg/day (XL
+preparation) and increase in 25–50mg/day increments. Can cause sedation and
+constipation. Transient rises in AST, ALT and GGT reported, rarely jaundice and hepatitis.
+Several cases of fatal hepatic failure and of hepatocellular damage reported in the
+literature. A number of studies describe use in patients with alcohol dependence.34–36
+
+Risperidone1,5,6,8
+
+Extensively hepatically metabolised and highly protein bound. Manufacturers
+recommend a halved starting dose and slower dose titration. Those with severe
+impairment should start at 0.5mg bd, and increase by 0.5mg bd at a maximum rate of
+weekly for doses above 1.5mg bd. Risperidone Consta can be started at 12.5mg
+fortnightly, or 25mg every two weeks if 2mg daily oral dosing has been tolerated.
+Transient, asymptomatic elevations in LFTs, cholestatic hepatitis, jaundice, and rare cases
+of hepatic failure have been reported. Cross-hepatotoxicity with paliperidone has been
+reported.32 Steatohepatitis may arise as a result of weight gain.37
+
+Sulpiride5,6
+
+Almost completely renally excreted with a low potential to cause sedation or
+constipation. Dosage reduction should not be required. Rises in hepatic enzymes are
+common. Isolated case reports of cholestatic jaundice and primary biliary cirrhosis.
+
+ALT, alanine aminotransferase; AST, aspartate aminotransferase, bd, bis die (twice a day); GGT, gamma-glutamyl transferase.
+
+Antidepressant medications in hepatic impairment
+Of those treated with antidepressants, 0.5–3% develop asymptomatic mild elevation of
+hepatic transaminases.38 Onset is normally between several days and six months of
+treatment initiation and the elderly are more vulnerable.38 Frank clinically significant
+liver damage however is rare, mostly idiosyncratic (unpredictable and not related to
+dose). Cross toxicity within class has been described.38
+
+
+
+
+<<<PAGE 862>>>
+
+Pharmacokinetics  841
+
+The target ranges listed in Table 11.2 have somewhat dubious usefulness and, in
+some cases, merely represent the range of values seen in clinical use. Assays for these
+drugs are likely to be available only in specialist units.
+
+Antipsychotics
+
+Target range (µg/L)
+
+Asenapine
+
+1–5
+
+Brexpiprazole
+
+40–140
+
+Cariprazine
+
+10–20
+
+Chlorpromazine
+
+30–300
+
+Flupentixol
+
+0.5–5 (cis-isomer)
+
+Fluphenazine
+
+1–10
+
+Haloperidol
+
+1–10
+
+Iloperidone
+
+5–10
+
+Lurasidone
+
+15–40
+
+Melperone
+
+30–100
+
+Sulpiride
+
+200–1000
+
+Ziprasidone
+
+50–200
+
+Zuclopenthixol
+
+4–50
+
+Antidepressants
+
+Target range (µg/L)
+
+Agomelatine
+
+7–300
+
+Citalopram
+
+50–110
+
+Desvenlafaxine
+
+100–400
+
+Dosulepin
+
+45–100
+
+Duloxetine
+
+30–120
+
+Escitalopram
+
+15–80
+
+Fluoxetine (+norfluoxetine)
+
+120–500
+
+Fluvoxamine
+
+60–230
+
+Levomilnacipran
+
+80–120
+
+Mianserin
+
+15–70
+
+CHAPTER 11
+
+Table 11.2 Target ranges for other psychotropics30,91
+
+(Continued)
+
+
+
+
+<<<PAGE 873>>>
+
+852  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY1A2
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Agomelatine
+Amitriptyline*
+Asenapine
+Bupropion*
+Caffeine
+Chlorpromazine
+Clomipramine*
+Clozapine
+Duloxetine
+Fluphenazine
+Fluvoxamine
+Imipramine*
+Melatonin
+Mirtazapine*
+Olanzapine
+Perphenazine
+?Pimozide*
+Ramelteon
+Zolpidem*
+
+Fluvoxamine
+Moclobemide
+Perphenazine
+
+‘Barbiturates’
+Carbamazepine
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion*
+Caffeine
+Nicotine
+
+Tranylcypromine
+
+Phenobarbital
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Methadone*
+Nicotine
+Sertraline*
+
+Fluoxetine*
+Fluvoxamine
+Memantine
+Paroxetine*
+Sertraline*
+
+Carbamazepine*
+Modafinil*
+Phenobarbital
+Phenytoin
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Buprenorphine*
+
+Not known
+
+Not known
+
+CYP2A6
+
+CPY2B6
+
+CYP2B7
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 899>>>
+
+878  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 13.1 (Continued)
+Toxicity in
+overdose
+
+Smallest dose likely
+to cause death
+
+Phenothiazines56,72–74
+(e.g. chlorpromazine,
+fluphenazine)
+
+Moderate
+
+Chlorpromazine 5–10g.
+
+Pimavanserin75
+
+Not known No overdoses reported but
+pimavanserin prolongs QT
+interval in clinical doses.
+
+Probably QT prolongation and
+arrhythmia. ? Nausea, vomiting,
+confusion.76
+
+Quetiapine24,60,77–80
+
+Moderate
+
+Unclear. Probably more than 5g.
+Fatalities can occur in single
+substance overdose.
+
+Lethargy, delirium, tachycardia, QT
+prolongation, respiratory depression,
+hypotension, rhabdomyolysis, NMS.
+
+Risperidone60,81,82
+(assume the same for
+paliperidone)
+
+Low
+
+Unclear.
+Fatality rare in those taking
+risperidone or paliperidone
+alone.
+
+Lethargy, dystonia, tachycardia, changes
+in blood pressure, QT prolongation. Renal
+failure with paliperidone.
+
+Ziprasidone83–88
+
+Low
+
+Around 10g. Fatality unlikely
+when taken alone.
+
+Drowsiness, lethargy. QT prolongation,
+torsades de pointes.
+
+Carbamazepine89,90
+
+Moderate
+
+Around 20g, but seizures may
+occur at around 5g.
+
+Somnolence, coma, respiratory
+depression, ataxia, seizures, tachycardia,
+arrhythmia, electrolyte disturbance.
+
+Lamotrigine91,92
+
+Low
+
+Drowsiness, vomiting, ataxia, seizures,
+At least 4g.
+Two deaths reported – one after tachycardia, dyskinesia, QT prolongation.
+4g, the other after 7.5g, but
+overdoses of >40g have not
+proved fatal.
+
+Lithium93–95
+
+Moderate
+
+Chronic toxicity probably more
+dangerous but single overdose
+is occasionally fatal. Six acute
+overdose deaths recorded in UK
+2005–2012.96
+
+Valproate97–101
+
+Moderate
+
+Unclear but probably more than Somnolence, coma, cerebral oedema,
+respiratory depression, blood dyscrasia,
+20g. Doses over 400mg/kg
+hypotension, hypothermia, seizures,
+cause severe toxicity.
+electrolyte disturbance
+(hyperammonaemia).
+
+Benzodiazepines102,103
+
+Low
+
+Probably more than 100mg
+diazepam equivalents.
+Fatality unusual if taken alone.
+Alprazolam is most toxic.
+
+Drowsiness, ataxia, nystagmus,
+respiratory dysarthria, depression, coma.
+
+Buspirone24
+
+Low
+
+Limited data. Deaths not
+reported.
+
+Not known.
+
+CHAPTER 13
+
+Drug or drug group
+
+Signs and symptoms of overdose
+Sedation, coma, tachycardia,
+arrhythmia, pulmonary oedema,
+hypotension, QT prolongation,
+seizures, dystonia, NMS.
+
+Mood stabilisers
+
+Nausea, diarrhoea, tremor, confusion,
+weakness, lethargy, seizures, coma,
+cardiovascular collapse, bradycardia,
+arrhythmia, heart block, renal failure.
+
+Others
+
+
+
+
+<<<PAGE 934>>>
+
+Miscellany  913
+
+Table 14.3 Summary of haematological changes associated with psychotropics
+Reference range
+
+Agents reported to raise
+levels
+
+Agents reported to lower
+levels
+
+Activated partial
+thromboplastin time
+
+23–33 seconds
+
+Phenothiazines (especially
+chlorpromazine)
+
+Modafinil (rare)
+
+Basophils
+
+0.0–0.1 × 109/L
+
+Clozapine, TCAs (especially
+desipramine)
+
+None known
+
+Eosinophils
+
+0.04–0.40 × 109/L
+
+Amoxapine, beta-blockers,
+bupropion, buspirone,
+carbamazepine, chloral
+hydrate, chlorpromazine,
+clonazepam, clozapine,
+donepezil, fluphenazine,
+haloperidol, loxapine,
+meprobamate, maprotiline,
+methylphenidate (IV abuse
+only), modafinil, naltrexone
+(parenterally administered),
+olanzapine, promethazine,
+quetiapine, risperidone/
+paliperidone, SSRIs, TCAs,
+tetrazepam, tryptophan*,
+valproate, venlafaxine; may
+also be a feature of agents
+causing a hypersensitivity
+syndrome
+
+None known
+
+Erythrocyte
+sedimentation rate
+
+Females: 1–12mm/h
+Males: 1–10mm/h
+(increases with age)
+
+Clozapine, dexamfetamine,
+levomepromazine,
+maprotiline, SSRIs
+
+Buprenorphine
+
+Haemoglobin
+
+Females: 115–165g/L
+Males: 130–180g/L
+
+Clozapine, testosterone,
+tobacco smoking
+
+Aripiprazole, barbiturates,
+buprenorphine, bupropion,
+carbamazepine,
+chlordiazepoxide,
+chlorpromazine, donepezil,
+duloxetine, galantamine,
+MAOIs, memantine,
+meprobamate, mianserin,
+phenytoin, promethazine,
+rivastigmine, tramadol,
+trifluoperazine, vigabatrin
+
+Lymphocytes
+
+1.5–4.5 × 109/L
+
+Naltrexone, opioids, tobacco
+smoking, valproate; may also
+be a feature of drugs causing
+hypersensitivity syndrome
+
+Alcohol (chronic), chloral
+hydrate, clozapine, lithium,
+mirtazapine (rarely)
+
+CHAPTER 14
+
+Parameter
+
+(Continued)
+
+
+
+
+<<<PAGE 935>>>
+
+914  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 14.3 (Continued)
+Parameter
+
+Reference range
+
+Agents reported to raise
+levels
+
+Agents reported to lower
+levels
+
+Mean cell
+haemoglobin
+
+27–32pg
+
+Medications associated with
+megaloblastic anaemia e.g. all
+antiseizure medications,
+nitrous oxide
+
+None known
+
+Mean cell haemoglobin 320–360g/L
+concentration
+
+Alcohol
+
+Mean cell volume
+
+80–100fL
+
+Monocytes
+
+0.2–0.8 × 10 /L
+
+Haloperidol
+
+None known
+
+Neutrophils
+
+2.0–7.5 × 109/L
+(may be lower in people of
+African descent due to
+benign ethnic neutropenia)
+
+Bupropion, carbamazepine†,
+citalopram, chlorpromazine,
+clozapine†, duloxetine,
+fluoxetine, fluphenazine,
+haloperidol, lamotrigine,
+lithium, maprotiline,
+olanzapine, quetiapine,
+risperidone/paliperidone,
+rivastigmine, tiotixene,
+trazodone, venlafaxine
+
+Agents associated with
+agranulocytosis:
+amoxapine, aripiprazole,
+barbiturates, carbamazepine,
+chlordiazepoxide,
+chlorpromazine, clozapine‡,
+cocaine (adulterated),
+diazepam, fluphenazine,
+haloperidol, meprobamate,
+mianserin, mirtazapine,
+olanzapine, pirenzepine,
+promethazine, risperidone/
+paliperidone, TCAs
+(especially imipramine),
+tranylcypromine, valproate
+
+CHAPTER 14
+
+9
+
+Agents associated with
+leucopoenia: amitriptyline,
+amoxapine, asenapine,
+bupropion, carbamazepine,
+cariprazine, chlorpromazine,
+citalopram, clomipramine,
+clonazepam, clozapine,
+duloxetine, fluoxetine,
+fluphenazine, galantamine,
+haloperidol, lamotrigine,
+lorazepam, lumateperone,
+lurasidone, memantine,
+meprobamate, mianserin,
+mirtazapine, modafinil, nitrous
+oxide, olanzapine, oxazepam,
+phenelzine, pregabalin,
+promethazine, quetiapine,
+tranylcypromine, valproate,
+venlafaxine, ziprasidone
+Agents associated with
+neutropenia: sertraline,
+trazodone, valproate
+Packed cell volume
+
+Females: 0.37–0.47L/L
+Males: 0.40–0.52L/L
+
+Clozapine (rare), testosterone
+
+Benzodiazepines (rare),
+buprenorphine, naltrexone,
+vigabatrin
+
+
