@@ -543,6 +543,433 @@ export const DRAFT_DRUGS: DrugDraft[] = [
       },
     },
   },
+
+  // ---------------------------------------------------------------------------
+  // RISPERIDONE — the source separates oral adult dosing (2–8 mg) from the
+  // children/elderly range (0.5–2 mg) and from the long-acting injectables.
+  // G2 note: the sources do NOT describe a distinct 0.25 mg band; tablets from
+  // 0.25 mg exist but the clinical bands are adult vs child/elderly, not a
+  // functional low-dose band. We record what the source actually says.
+  // ---------------------------------------------------------------------------
+  {
+    generic_name: "Risperidone",
+    drug_class: "Atypical antipsychotic",
+    subclass: "Dopamine/serotonin antagonist",
+    brand_names: ["Risperdal", "Sizodon", "Rispolept"],
+    aliases: [],
+    mechanism: [
+      {
+        value: "Blocks dopamine D2 receptors (reducing positive symptoms) and serotonin 5-HT2A receptors; 5-HT2A antagonism reduces motor side effects.",
+        source_id: S,
+        page_ref: "p1976",
+        snippet: "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis ... Blocks serotonin 2A receptors ... reducing motor side effects",
+        agreement: "single",
+      },
+    ],
+    receptor_targets: [
+      {
+        value: "D2 antagonist, 5-HT2A antagonist, D3 antagonist",
+        source_id: S,
+        page_ref: "p1976",
+        snippet: "Blocks dopamine 2 receptors ... Blocks serotonin 2A receptors ... Actions at dopamine 3 receptors",
+        agreement: "single",
+      },
+    ],
+    common_uses: [
+      {
+        value: "Schizophrenia (adults and ages 13–17), other psychotic disorders, acute mania, bipolar maintenance; also agitation, tic disorders in some settings.",
+        source_id: S,
+        page_ref: "p1976",
+        snippet: "Schizophrenia; Other psychotic disorders; Acute mania/mixed mania; Bipolar maintenance",
+        agreement: "single",
+      },
+    ],
+    equivalences: [
+      {
+        drug_b: "Olanzapine",
+        note: "risperidone 4 mg ≈ olanzapine 10 mg (SGA equivalence)",
+        caveat: "A rough guide from Maudsley, not a swap instruction. Only a prescriber decides this.",
+        source: {
+          value: "risperidone 4 mg ≈ olanzapine 10 mg (Table 1.3)",
+          source_id: M,
+          page_ref: "p36",
+          snippet: "Olanzapine 10mg; Risperidone oral 4mg",
+          agreement: "full",
+        },
+      },
+    ],
+    bands: [
+      {
+        band_order: 1,
+        range_low: 2,
+        range_high: 8,
+        unit: "mg",
+        frequency: "once daily (or divided)",
+        band_label: "Adult antipsychotic band",
+        primary_purpose: "Acute psychosis and bipolar disorder (adults)",
+        secondary_purposes: ["maintenance", "agitation"],
+        is_typical_starting: false,
+        is_standard_maintenance: true,
+        why_this_dose: "The source gives 2–8 mg/day for acute psychosis and bipolar disorder in adults.",
+        what_changes_going_up: "Above 8 mg/day some sources see little added benefit but more side effects.",
+        source_ref: {
+          value: "Oral: 2–8 mg/day for acute psychosis and bipolar disorder (Stahl).",
+          source_id: S,
+          page_ref: "p1986",
+          snippet: "Oral: 2–8 mg/day for acute psychosis and bipolar disorder",
+          agreement: "full",
+          contrib: [
+            { source_id: S, page_ref: "p1986", snippet: "Oral: 2–8 mg/day for acute psychosis and bipolar disorder" },
+            { source_id: M, page_ref: "p72", snippet: "the usual doses of 2–6mg" },
+          ],
+        },
+        side_effects: [
+          { label: "common", items: ["Dose-dependent parkinsonism", "Prolactin-related (breast tenderness, menstrual changes)", "Sedation", "Dizziness"], source: { value: "as above", source_id: S, page_ref: "p1983", snippet: "Dose-dependent drug-induced parkinsonism; Dose-related hyperprolactinemia; Dose-dependent dizziness, insomnia, anxiety, sedation", agreement: "single" } },
+          { label: "serious_rare", items: ["Diabetes/dyslipidemia risk", "Tardive dyskinesia (long-term)"], source: { value: "as above", source_id: S, page_ref: "p1983", snippet: "May increase risk for diabetes and dyslipidemia", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any stiffness in arms or legs, or moving slower? Any restlessness?", rationale: "Extrapyramidal and akathisia risk rises with dose.", urgency: "mention_to_prescriber", source: { value: "as above", source_id: S, page_ref: "p1983", snippet: "Dose-dependent drug-induced parkinsonism", agreement: "single" } },
+          { prompt: "Any changes in periods, or breast tenderness?", rationale: "Prolactin effects; rarely volunteered.", urgency: "mention_to_prescriber", source: { value: "as above", source_id: S, page_ref: "p1983", snippet: "Dose-related hyperprolactinemia", agreement: "single" } },
+        ],
+      },
+      {
+        band_order: 2,
+        range_low: 0.5,
+        range_high: 2,
+        unit: "mg",
+        band_label: "Lower range (children / elderly)",
+        primary_purpose: "Same antipsychotic work at lower dose in children and the elderly",
+        secondary_purposes: [],
+        is_typical_starting: false,
+        is_standard_maintenance: false,
+        why_this_dose: "The source gives 0.5–2.0 mg/day for children and the elderly.",
+        source_ref: {
+          value: "Oral: 0.5–2.0 mg/day for children and elderly (Stahl).",
+          source_id: S,
+          page_ref: "p1986",
+          snippet: "Oral: 0.5–2.0 mg/day for children and elderly",
+          agreement: "single",
+        },
+        side_effects: [
+          { label: "common", items: ["Similar class effects, often less intense at lower dose"], source: { value: "as above", source_id: S, page_ref: "p1983", snippet: "Dose-dependent side effects", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any stiffness or restlessness at this lower dose?", rationale: "Extrapyramidal effects can still appear, especially in the elderly.", urgency: "mention_to_prescriber", source: { value: "as above", source_id: S, page_ref: "p1983", snippet: "Dose-dependent drug-induced parkinsonism", agreement: "single" } },
+        ],
+      },
+    ],
+    links: [],
+    clinical_presentations: [],
+    student: {
+      plain_language: {
+        text:
+          "Risperidone quiets a noisy brain: it calms racing thoughts and, at higher doses, treats psychosis. It also slows movement as a trade-off, and it can raise prolactin, which may change periods or cause breast tenderness.",
+        kb_parent_field: "mechanism",
+        source: { value: "D2 block + side effects", source_id: S, page_ref: "p1976", snippet: "Blocks dopamine 2 receptors ... Dose-dependent parkinsonism; hyperprolactinemia", agreement: "single" },
+      },
+      session_observations: [
+        {
+          observation: "A client may move or speak more slowly, especially as the dose rises.",
+          confidence: "possible",
+          dose_dependence: "more likely at higher doses",
+          rationale: "Parkinsonism and slowed movement are dose-dependent.",
+          source: { value: "as above", source_id: S, page_ref: "p1983", snippet: "Dose-dependent drug-induced parkinsonism", agreement: "single" },
+        },
+      ],
+    },
+  },
+
+  // ---------------------------------------------------------------------------
+  // FLUOXETINE — source separates 20–80 mg (depression/anxiety) from 60–80 mg
+  // (bulimia). Note bulimia overlaps; the functional job differs.
+  // ---------------------------------------------------------------------------
+  {
+    generic_name: "Fluoxetine",
+    drug_class: "SSRI",
+    subclass: "Selective serotonin reuptake inhibitor",
+    brand_names: ["Prozac", "Fludac"],
+    aliases: [],
+    mechanism: [
+      {
+        value: "Selectively blocks the serotonin transporter, boosting serotonergic transmission; slow accumulation with a long half-life.",
+        source_id: S,
+        page_ref: "p892",
+        snippet: "Boosts neurotransmitter serotonin; Blocks serotonin reuptake pump (serotonin transporter)",
+        agreement: "single",
+      },
+    ],
+    receptor_targets: [
+      { value: "Serotonin transporter (SERT) inhibition", source_id: S, page_ref: "p892", snippet: "Blocks serotonin reuptake pump (serotonin transporter)", agreement: "single" },
+    ],
+    common_uses: [
+      {
+        value: "Major depressive disorder, obsessive-compulsive disorder, panic disorder, bulimia nervosa, premenstrual dysphoric disorder.",
+        source_id: S,
+        page_ref: "p892",
+        snippet: "Major depressive disorder; Bulimia nervosa; OCD; Panic disorder; PMDD",
+        agreement: "single",
+      },
+    ],
+    bands: [
+      {
+        band_order: 1,
+        range_low: 20,
+        range_high: 80,
+        unit: "mg",
+        band_label: "Depression / anxiety band",
+        primary_purpose: "Major depressive disorder and anxiety disorders",
+        secondary_purposes: ["OCD", "panic", "PMDD"],
+        is_typical_starting: true,
+        is_standard_maintenance: true,
+        why_this_dose: "The source gives 20–80 mg for depression and anxiety disorders.",
+        source_ref: {
+          value: "20–80 mg for depression and anxiety disorders (Stahl).",
+          source_id: S,
+          page_ref: "p892",
+          snippet: "20–80 mg for depression and anxiety disorders",
+          agreement: "single",
+        },
+        side_effects: [
+          { label: "common", items: ["Sexual dysfunction", "gastrointestinal (nausea)", "sleep changes"], source: { value: "as above", source_id: S, page_ref: "p890", snippet: "Sexual dysfunction ... decreased appetite, nausea", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any sexual changes, or sleep/appetite shifts?", rationale: "SSRI side effects are common and often unvolunteered.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p890", snippet: "Sexual dysfunction", agreement: "single" } },
+        ],
+      },
+      {
+        band_order: 2,
+        range_low: 60,
+        range_high: 80,
+        unit: "mg",
+        band_label: "Bulimia band",
+        primary_purpose: "Bulimia nervosa",
+        secondary_purposes: [],
+        is_typical_starting: false,
+        is_standard_maintenance: false,
+        why_this_dose: "The source gives 60–80 mg specifically for bulimia.",
+        source_ref: {
+          value: "60–80 mg for bulimia (Stahl).",
+          source_id: S,
+          page_ref: "p892",
+          snippet: "60–80 mg for bulimia",
+          agreement: "single",
+        },
+        side_effects: [
+          { label: "common", items: ["Same SSRI class side effects"], source: { value: "as above", source_id: S, page_ref: "p890", snippet: "Sexual dysfunction ... nausea", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any new changes in appetite or weight talk?", rationale: "Higher fluoxetine doses are watched in eating-disorder contexts.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p892", snippet: "60–80 mg for bulimia", agreement: "single" } },
+        ],
+      },
+    ],
+    equivalences: [],
+    links: [],
+    clinical_presentations: [],
+    student: {
+      plain_language: {
+        text:
+          "Fluoxetine keeps the brain's serotonin available longer, often lifting mood. It is a long-acting SSRI, so changes build slowly and, if stopped, wash out slowly too.",
+        kb_parent_field: "mechanism",
+        source: { value: "SERT inhibition", source_id: S, page_ref: "p892", snippet: "Boosts serotonin ... long half-life", agreement: "single" },
+      },
+    },
+  },
+
+  // ---------------------------------------------------------------------------
+  // VENLAFAXINE — source gives depression 75–225 and GAD 150–225. Both are
+  // SNRIs; the bands overlap but sit at different floors.
+  // ---------------------------------------------------------------------------
+  {
+    generic_name: "Venlafaxine",
+    drug_class: "SNRI",
+    subclass: "Serotonin–norepinephrine reuptake inhibitor",
+    brand_names: ["Effexor", "Veniz"],
+    aliases: [],
+    mechanism: [
+      {
+        value: "Blocks both serotonin and norepinephrine reuptake, raising both neurotransmitter levels.",
+        source_id: S,
+        page_ref: "p2406",
+        snippet: "Blocks serotonin reuptake pump ... and norepinephrine reuptake pump",
+        agreement: "single",
+      },
+    ],
+    receptor_targets: [
+      { value: "SERT and NET (serotonin and norepinephrine transporters)", source_id: S, page_ref: "p2406", snippet: "Blocks serotonin and norepinephrine reuptake pumps", agreement: "single" },
+    ],
+    common_uses: [
+      {
+        value: "Major depressive disorder, generalized anxiety disorder, panic disorder, social anxiety.",
+        source_id: S,
+        page_ref: "p2406",
+        snippet: "Major depressive disorder; Generalized anxiety disorder; Panic disorder",
+        agreement: "single",
+      },
+    ],
+    bands: [
+      {
+        band_order: 1,
+        range_low: 75,
+        range_high: 225,
+        unit: "mg",
+        band_label: "Depression band",
+        primary_purpose: "Major depressive disorder",
+        secondary_purposes: ["panic", "social anxiety"],
+        is_typical_starting: true,
+        is_standard_maintenance: true,
+        why_this_dose: "The source gives 75–225 mg/day (once daily ER or divided IR) for depression.",
+        source_ref: {
+          value: "Depression: 75–225 mg/day (Stahl).",
+          source_id: S,
+          page_ref: "p2406",
+          snippet: "Depression: 75–225 mg/day, once daily (extended-release) or divided into 2–3 doses (immediate-release)",
+          agreement: "full",
+        },
+        side_effects: [
+          { label: "common", items: ["Nausea", "sleep change", "day-night: insomnia, sweating", "blood-pressure raise at higher doses"], source: { value: "as above", source_id: S, page_ref: "p2404", snippet: "Nausea, sweating, insomnia", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any rise in your usual anxiety early on?", rationale: "SNRIs can briefly worsen anxiety before benefit.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p2404", snippet: "activation", agreement: "single" } },
+        ],
+      },
+      {
+        band_order: 2,
+        range_low: 150,
+        range_high: 225,
+        unit: "mg",
+        band_label: "GAD band (higher floor)",
+        primary_purpose: "Generalized anxiety disorder",
+        secondary_purposes: [],
+        is_typical_starting: false,
+        is_standard_maintenance: false,
+        why_this_dose: "The source gives 150–225 mg/day for GAD, a higher floor than the depression range.",
+        source_ref: {
+          value: "GAD: 150–225 mg/day (Stahl).",
+          source_id: S,
+          page_ref: "p2406",
+          snippet: "GAD: 150–225 mg/day",
+          agreement: "single",
+        },
+        side_effects: [
+          { label: "common", items: ["Nausea", "sweating", "blood pressure changes"], source: { value: "as above", source_id: S, page_ref: "p2404", snippet: "Nausea, sweating", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any unusually heavy sweating or palpitations?", rationale: "Higher SNRI doses can raise blood pressure/heart rate.", urgency: "mention_to_prescriber", source: { value: "as above", source_id: S, page_ref: "p2404", snippet: "sweating, increased heart rate", agreement: "single" } },
+        ],
+      },
+    ],
+    // No published dose equivalence is given in our sources for venlafaxine
+    // vs another drug. Per C2, the absence means the tool says so rather than
+    // estimating — handled by the empty equivalences array.
+    equivalences: [],
+    links: [],
+    clinical_presentations: [],
+    student: {
+      plain_language: {
+        text:
+          "Venlafaxine lifts both serotonin and norepinephrine, so it can help mood and energy, and sometimes blood pressure too (which is why it is watched).",
+        kb_parent_field: "mechanism",
+        source: { value: "as above", source_id: S, page_ref: "p2406", snippet: "Blocks serotonin and norepinephrine reuptake", agreement: "single" },
+      },
+    },
+  },
+
+  // ---------------------------------------------------------------------------
+  // LITHIUM — the source's bands are defined by serum level (target range) and
+  // job: mania vs depression vs maintenance. These are genuinely distinct.
+  // ---------------------------------------------------------------------------
+  {
+    generic_name: "Lithium",
+    drug_class: "Mood stabilizer",
+    subclass: "Alkali-metal cation",
+    brand_names: ["Lithosun", "Lithobid"],
+    aliases: [],
+    mechanism: [
+      {
+        value: "Complex mood-stabilising actions: dampens excitatory signalling and protects against mood recurrence; toxicity is dose/level related.",
+        source_id: S,
+        page_ref: "p1216",
+        snippet: "mood-stabilizing",
+        agreement: "single",
+      },
+    ],
+    receptor_targets: [
+      { value: "Not a single receptor; affects several signalling pathways", source_id: S, page_ref: "p1216", snippet: "mood-stabilizing agent", agreement: "single" },
+    ],
+    common_uses: [
+      {
+        value: "Bipolar mania, bipolar depression, maintenance of bipolar disorder.",
+        source_id: S,
+        page_ref: "p1216",
+        snippet: "Mania; Depression; Maintenance (bipolar)",
+        agreement: "single",
+      },
+    ],
+    bands: [
+      {
+        band_order: 1,
+        range_low: 1.0,
+        range_high: 1.5,
+        unit: "mEq/L",
+        band_label: "Acute mania (serum target)",
+        primary_purpose: "Treatment of acute mania",
+        secondary_purposes: [],
+        is_typical_starting: false,
+        is_standard_maintenance: false,
+        why_this_dose: "The source recommends a serum level of 1.0–1.5 mEq/L for mania.",
+        source_ref: {
+          value: "Mania: recommended 1.0–1.5 mEq/L (Stahl).",
+          source_id: S,
+          page_ref: "p1216",
+          snippet: "Mania: recommended 1.0–1.5 mEq/L",
+          agreement: "single",
+        },
+        side_effects: [
+          { label: "common", items: ["hand tremor", "thirst", "weight gain", "at high level: nausea"], source: { value: "as above", source_id: S, page_ref: "p1216", snippet: "tremor, polyuria, thirst, weight gain", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any tremor, nausea, or abnormal tiredness?", rationale: "Higher serum levels risk more side effects; contact the prescriber if there's a new tremor/nausea.", urgency: "mention_to_prescriber", source: { value: "as above", source_id: S, page_ref: "p1216", snippet: "tremor ... nausea", agreement: "single" } },
+        ],
+      },
+      {
+        band_order: 2,
+        range_low: 0.6,
+        range_high: 1.0,
+        unit: "mEq/L",
+        frequency: "maintenance",
+        band_label: "Depression / maintenance serum",
+        primary_purpose: "Bipolar depression (acute) and maintenance",
+        secondary_purposes: [],
+        is_typical_starting: false,
+        is_standard_maintenance: true,
+        why_this_dose: "The source gives 0.6–1.0 for depression and 0.7–1.0 for maintenance.",
+        source_ref: {
+          value: "Depression: 0.6–1.0 mEq/L; Maintenance 0.7–1.0 mEq/L (Stahl).",
+          source_id: S,
+          page_ref: "p1216",
+          snippet: "Depression: recommended 0.6–1.0 mEq/L; Maintenance: recommended 0.7–1.0 mEq/L",
+          agreement: "full",
+        },
+        side_effects: [
+          { label: "common", items: ["Nausea", "tremor", "thirst", "weight gain"], source: { value: "as above", source_id: S, page_ref: "p1216", snippet: "nausea, tremor, thirst", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any tremor or confusion, or excessive thirst?", rationale: "Long-term lithium needs monitoring; any new sign of toxicity should reach the prescriber.", urgency: "mention_to_prescriber", source: { value: "as above", source_id: S, page_ref: "p1216", snippet: "tremor, confusion", agreement: "single" } },
+        ],
+      },
+    ],
+    equivalences: [],
+    links: [],
+    clinical_presentations: [],
+    student: {
+      plain_language: {
+        text:
+          "Lithium steadies the highs and lows of bipolar disorder. It is measured in the blood, and the target range differs whether the job is treating a high or holding mood steady. The prescriber checks the level.",
+        kb_parent_field: "common_uses",
+        source: { value: "as above", source_id: S, page_ref: "p1216", snippet: "Mania; Depression; Maintenance; recommended serum levels", agreement: "single" },
+      },
+    },
+  },
 ];
 
 export const KNOWLEDGE_BASE_NOTES =
