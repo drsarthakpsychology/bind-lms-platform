@@ -68,7 +68,7 @@ for (const drug of DRUG_CATALOG) {
   for (const src of sources) {
     const pages = ps.filter((p: any) => p.source_id === src);
     if (!pages.length) continue;
-    const pageNos = Array.from(new Set(
+    const pageNos: number[] = Array.from(new Set<number>(
       pages.flatMap((p: any) => {
         const out: number[] = [];
         for (let i = p.page_start; i <= p.page_end; i++) out.push(i);

@@ -30,14 +30,14 @@ export interface ObsPrompt {
   prompt_text: string; // client-facing
   rationale: string;
   urgency: "routine" | "mention_to_prescriber" | "refer_promptly";
-  source: Sourced;
+  source: Sourced<string>;
 }
 
 export interface SideEffectBand {
   label: string; // common | less_common | serious_rare
   items: string[];
   time_course?: string; // "often fades by week 2", "may persist", ...
-  source: Sourced;
+  source: Sourced<string>;
 }
 
 export interface DoseBand {
@@ -51,7 +51,7 @@ export interface DoseBand {
   secondary_purposes: string[];
   is_typical_starting: boolean;
   is_standard_maintenance: boolean;
-  why_this_dose?: Sourced<string>;
+  why_this_dose?: string;
   what_changes_going_up?: string;
   what_changes_going_down?: string;
   onset?: Sourced<string>;
@@ -60,7 +60,7 @@ export interface DoseBand {
   side_effects: SideEffectBand[];
   observation_prompts: DoseBandPrompt[];
   population_notes?: string[];
-  source_ref: Sourced; // primary band source
+  source_ref: Sourced<string>; // primary band source
   /** NOTE: any band producing a numeric range must carry its provenance. */
 }
 
@@ -68,7 +68,7 @@ export interface DoseBandPrompt {
   prompt: string;
   rationale: string;
   urgency: "routine" | "mention_to_prescriber" | "refer_promptly";
-  source: Sourced;
+  source: Sourced<string>;
 }
 
 /** A drug's full draft record, grouped by field with provenance. */
@@ -79,16 +79,16 @@ export interface DrugDraft {
   brand_names: string[];
   aliases: string[];
   /** mechanism per source (independent, not merged) */
-  mechanism: Sourced[];
-  receptor_targets: Sourced[];
-  common_uses: Sourced[];
-  onset_time?: Sourced;
-  half_life?: Sourced;
-  side_effects_common?: Sourced;
-  side_effects_serious?: Sourced;
-  discontinuation?: Sourced;
-  interactions?: Sourced[];
-  monitoring?: Sourced[];
+  mechanism: Sourced<string>[];
+  receptor_targets: Sourced<string>[];
+  common_uses: Sourced<string>[];
+  onset_time?: Sourced<string>;
+  half_life?: Sourced<string>;
+  side_effects_common?: Sourced<string>;
+  side_effects_serious?: Sourced<string>;
+  discontinuation?: Sourced<string>;
+  interactions?: Sourced<string>[];
+  monitoring?: Sourced<string>[];
   /** dose bands (drug-at-a-dose is the unit) */
   bands: DoseBand[];
   /** published-only equivalences quoted from sources */
@@ -96,7 +96,7 @@ export interface DrugDraft {
     drug_b: string;
     note: string; // "X mg A ≈ Y mg B"
     caveat: string;
-    source: Sourced;
+    source: Sourced<string>;
   }>;
   /** similarity links (same job / mechanism / class) */
   links: Array<{
@@ -105,10 +105,10 @@ export interface DrugDraft {
     match_tier: "strong" | "moderate" | "related";
     match_reason: string;
     differences: string[];
-    source: Sourced;
+    source: Sourced<string>;
   }>;
   /** clinical psychology sourced presentation / therapist-role facts */
-  clinical_presentations?: Sourced[];
+  clinical_presentations?: Sourced<string>[];
   /**
    * Output B students: plain-language / observed-therapy-channel content,
    * each with a knowledge-base parent link (kb_ref).
@@ -117,25 +117,24 @@ export interface DrugDraft {
 }
 
 export interface StudentLayer {
-  plain_language?: { text: string; kb_parent_field: string; source: Sourced };
+  plain_language?: { text: string; kb_parent_field: string; source: Sourced<string> };
   session_observations?: Array<{
     observation: string; // "may contribute to..."
     confidence: "possible" | "probable" | "reported" | "anecdotal";
     dose_dependence?: string;
     rationale?: string;
-    source: Sourced;
+    source: Sourced<string>;
   }>;
   therapist_questions?: Array<{
     category: string;
     question: string;   // client-facing, open, non-assuming
     explores: string;
-    source: Sourced;
+    source: Sourced<string>;
   }>;
-  clinical_pearls?: Array<{ pearl: string; source: Sourced }>;
-  red_flags?: Array<{ signal: string; guidance: string; source: Sourced }>;
+  clinical_pearls?: Array<{ pearl: string; source: Sourced<string> }>;
+  red_flags?: Array<{ signal: string; guidance: string; source: Sourced<string> }>;
 }
 
-export interface DoseBandPromptAdapted extends DoseBandPrompt {}
 export type TopLevel = {
   drugs: DrugDraft[];
 };

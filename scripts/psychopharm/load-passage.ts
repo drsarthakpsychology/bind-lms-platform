@@ -76,7 +76,7 @@ function main() {
   const passages = (INDEX[drug] ?? INDEX[entry.generic] ?? []).filter(
     (p: any) => p.source_id === sourceArg,
   );
-  const pageNos = Array.from(new Set(
+  const pageNos: number[] = Array.from(new Set<number>(
     passages.flatMap((p: any) => {
       const out: number[] = [];
       for (let i = p.page_start; i <= p.page_end; i++) out.push(i);
