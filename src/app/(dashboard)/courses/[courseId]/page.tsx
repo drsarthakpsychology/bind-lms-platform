@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BookOpen, CheckCircle2, Clock, FileText, Inbox, Paperclip } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, ChevronLeft, Clock, FileText, Inbox, Paperclip } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
@@ -129,6 +129,15 @@ export default async function CourseOverviewPage({
 
   return (
     <div className="space-y-8">
+      {/* Back control — labelled with where it goes. */}
+      <Link
+        href="/dashboard"
+        className="inline-flex items-center gap-1.5 text-small font-medium text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <ChevronLeft className="size-4" aria-hidden />
+        My Courses
+      </Link>
+
       <PageHeader
         eyebrow={course.is_published ? "Published course" : "Draft course"}
         title={course.title}

@@ -11,6 +11,7 @@ import { CompleteButton } from "./complete-button";
 import { AssignmentEditor } from "@/app/(dashboard)/admin/courses/[courseId]/assignment-editor";
 import { SubmissionForm } from "./submission-form";
 import { LessonTabs } from "./lesson-tabs";
+import { LessonPicker } from "./lesson-picker";
 import { MaterialsList } from "./materials-list";
 import { MaterialUploader } from "@/app/(dashboard)/admin/courses/[courseId]/material-uploader";
 
@@ -34,16 +35,17 @@ export default async function LessonPage({
 
   const supabase = await createClient();
 
-  const [{ data: lesson }, { data: courseLessons }, { data: userData }, { data: assignment }, { data: materials }] =
+  const [{ data: lesson }, { data: course }, { data: courseLessons }, { data: userData }, { data: assignment }, { data: materials }, { data: progress }] =
     await Promise.all([
       supabase
         .from("lessons")
         .select("id, title, description, requires_assignment")
         .eq("id", lessonId)
         .single(),
+      supabase.from("courses").select("id, title").eq("id", courseId).single(),
       supabase
         .from("lessons")
-        .select("id, order_index, video_storage_path")
+        .select("id, title, order_index, video_storage_path")
         .eq("course_id", courseId)
         .order("order_index", { ascending: true }),
       supabase.auth.getUser(),
@@ -59,6 +61,10 @@ export default async function LessonPage({
         .select("id, title, kind, format, size_bytes, url, sort_order")
         .eq("lesson_id", lessonId)
         .order("sort_order", { ascending: true }),
+      supabase
+        .from("progress")
+        .select("lesson_id, is_completed")
+        .eq("user_id", profile.id),
     ]);
 
   // Which tab to show. Invalid/absent tab falls back to watch. If a non-watch
@@ -105,17 +111,18 @@ export default async function LessonPage({
   const user = userData?.user;
   const watermarkLabel = `${user?.email ?? "unknown"} · ${user?.id.slice(0, 8) ?? "unknown"} · ${ip}`;
 
-  const position = currentIndex >= 0 ? `${currentIndex + 1} / ${playable.length}` : null;
+  const completedIds = new Set(
+    (progress ?? []).filter((p) => p.is_completed).map((p) => p.lesson_id),
+  );
+  const lessonComplete = completedIds.has(lessonId);
 
-  // Whether THIS lesson is already marked complete — distinguishes
-  // "Finish course" from "Back to my courses" on the final lesson.
-  const { data: ownProgress } = await supabase
-    .from("progress")
-    .select("is_completed")
-    .eq("user_id", profile.id)
-    .eq("lesson_id", lessonId)
-    .maybeSingle();
-  const lessonComplete = Boolean(ownProgress?.is_completed);
+  const pickerLessons = (playable ?? []).map((l) => ({
+    id: l.id,
+    title: l.title,
+    orderIndex: l.order_index,
+    isCompleted: completedIds.has(l.id),
+    hasVideo: Boolean(l.video_storage_path),
+  }));
 
   // One forward action, labelled by where the student is:
   //   mid-course            → Next lesson →
@@ -129,19 +136,25 @@ export default async function LessonPage({
       : "Finish course";
 
   return (
-    <div className="mx-auto max-w-3xl space-y-8">
-      {/* Breadcrumb */}
+    <div className="mx-auto w-full max-w-5xl space-y-8">
+      {/* Back control — labelled with where it goes + compact lesson picker.
+          One navigation surface at a time (no course column). */}
       <div className="flex items-center justify-between gap-3">
         <Link
-          href="/dashboard"
+          href={`/courses/${courseId}`}
           className="inline-flex items-center gap-1.5 text-small font-medium text-muted-foreground transition-colors hover:text-foreground"
         >
           <ChevronLeft className="size-4" aria-hidden />
-          My Courses
+          {course?.title ?? "Course"}
         </Link>
-        {position ? (
-          <span className="text-numeric text-caption text-muted-foreground">{position}</span>
-        ) : null}
+        {pickerLessons.length > 1 && (
+          <LessonPicker
+            courseId={courseId}
+            courseTitle={course?.title ?? "Course"}
+            lessons={pickerLessons}
+            currentId={lessonId}
+          />
+        )}
       </div>
 
       {/* Lesson header */}
