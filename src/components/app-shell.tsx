@@ -35,35 +35,29 @@ export function AppShell({
 
   return (
     <div className="min-h-screen bg-background lg:flex">
-      {/* Desktop sidebar — hidden on inner student pages (drill-down). */}
-      <div className="hidden lg:block">
-        <div className="sticky top-0 h-screen">
-          <SidebarGate
-            role={gateRole}
-            fallback={
-              // Slim branded top bar for inner student pages — one surface, no
-              // nested columns. The page supplies its own labelled back header.
-              // The admin's return-to-admin control stays reachable here too.
-              <div
-                className="flex h-14 items-center justify-between gap-3 border-b-2 border-border bg-card px-4"
-                style={{ paddingTop: "env(safe-area-inset-top)" }}
-              >
-                <Link href="/dashboard" className="flex min-w-0 items-center gap-2 font-bold tracking-tight">
-                  <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary text-sm font-black text-primary-foreground">
-                    {BRAND.shortName.charAt(0)}
-                  </span>
-                  <span className="truncate text-base">{BRAND.shortName}</span>
-                </Link>
-                <div className="flex shrink-0 items-center gap-1.5">
-                  {viewModeSwitch}
-                </div>
-              </div>
-            }
-          >
+      {/* Desktop sidebar. On inner student pages (lesson/material) the ENTIRE
+          column is removed — the page owns the only navigation surface, which
+          is the point of the drill-down. Previously a slim top-bar fallback was
+          rendered into this column, which produced a 56px stub with a border
+          ending in mid-air. The admin's return-to-admin control persists as a
+          small fixed control in the bottom-left, matching where it sits in the
+          sidebar footer. */}
+      <SidebarGate
+        role={gateRole}
+        fallback={
+          viewModeSwitch ? (
+            <div className="fixed bottom-4 left-4 z-40 hidden lg:block">
+              {viewModeSwitch}
+            </div>
+          ) : null
+        }
+      >
+        <div className="hidden lg:block">
+          <div className="sticky top-0 h-screen">
             <AppSidebar role={role} mode={mode} viewModeSwitch={viewModeSwitch} />
-          </SidebarGate>
+          </div>
         </div>
-      </div>
+      </SidebarGate>
 
       {/* Mobile top bar — hidden on inner student pages so there's one header
           row (the page's back control). Round 9 drill-down on mobile. */}
