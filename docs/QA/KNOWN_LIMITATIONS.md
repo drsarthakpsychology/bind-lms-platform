@@ -27,9 +27,11 @@ constraint to revisit.
    still proxy-gated. No storage key or signed URL reaches the browser.
 7. **Native `<video>` controls** are browser-provided; their exact keyboard/ARIA
    behavior is not fully controllable.
-8. **The rate limiter is per-process** (in-memory). Across multiple serverless
-   instances the quota multiplies. Swap for a shared store (Upstash/Redis) at
-   scale.
+8. **The rate limiter is DB-backed** (the `rate_limits` table) for the
+   login/media-token endpoints, so the quota holds across serverless
+   instances. The stream segment hot path uses a per-process fast limiter
+   (generous abuse throttle, not a hard boundary). If DB writes become a
+   bottleneck at scale, a shared store (Upstash/Redis) is the upgrade.
 9. **No token-issuance audit table yet** — round 8's plan included one; it's a
    follow-up, not shipped.
 10. **The stream proxy fetches objects server-side** (R2/S3 or Supabase
