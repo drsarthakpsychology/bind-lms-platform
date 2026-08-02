@@ -115,8 +115,9 @@ export async function GET(
       headers: {
         "Content-Type": "video/mp4",
         "Accept-Ranges": "bytes",
-        "Cache-Control": "private, max-age=60",
+        "Cache-Control": "private, no-store",
         ...(obj.rangeHeader ? { "Content-Range": obj.rangeHeader } : {}),
+        ...(obj.contentLength ? { "Content-Length": obj.contentLength } : {}),
       },
     });
   }

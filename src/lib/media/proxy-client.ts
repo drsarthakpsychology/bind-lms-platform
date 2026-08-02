@@ -129,7 +129,12 @@ export async function authorizeAndResolveLesson(opts: {
 }
 
 type StreamResult =
-  | { stream: ReadableStream; status?: number; rangeHeader?: string }
+  | {
+      stream: ReadableStream;
+      status?: number;
+      rangeHeader?: string;
+      contentLength?: string;
+    }
   | null;
 
 /** Stream an object with optional HTTP Range support. */
@@ -216,7 +221,11 @@ async function r2Stream(
   const body = obj.Body as ReadableStream;
   return {
     stream: body,
+    // Ranged S3 reads return 206; a full read returns 200. Report whatever
+    // upstream actually did so the proxy re-emits the correct status.
+    status: obj.ContentRange ? 206 : 200,
     ...(obj.ContentRange ? { rangeHeader: obj.ContentRange } : {}),
+    ...(obj.ContentLength ? { contentLength: String(obj.ContentLength) } : {}),
   };
 }
 
@@ -228,17 +237,36 @@ async function supabaseStream(
 ): Promise<StreamResult> {
   const { createAdminClient } = await import("@/lib/supabase/server");
   const admin = createAdminClient();
-  const { data, error } = await admin.storage
+
+  // .download() cannot do HTTP ranges, and passing a `transform` option sends
+  // the request to the IMAGE render endpoint — which fails for video. Every
+  // browser <video> element sends a Range header, so the old code hit the
+  // image endpoint on every load and could never play. Mint a short-lived
+  // signed URL server-side and fetch it with the caller's Range header, so we
+  // stream (206 with Content-Range) instead of buffering the whole object.
+  const { data: signed, error: signErr } = await admin.storage
     .from(bucket)
-    .download(key, range ? { transform: { width: 0 } } : undefined);
-  // Supabase's .download() doesn't support Range; fetch the whole object.
-  if (error || !data) throw new Error(error?.message ?? "Supabase download failed");
-  const bytes = await data.arrayBuffer();
-  const stream = new ReadableStream<Uint8Array>({
-    start(controller) {
-      controller.enqueue(new Uint8Array(bytes));
-      controller.close();
-    },
+    .createSignedUrl(key, 60);
+
+  if (signErr || !signed?.signedUrl) {
+    throw new Error(signErr?.message ?? "Could not sign object URL.");
+  }
+
+  const upstream = await fetch(signed.signedUrl, {
+    headers: range ? { Range: range } : {},
+    cache: "no-store",
   });
-  return { stream };
+
+  if (!upstream.ok && upstream.status !== 206) {
+    console.error("supabaseStream upstream failed:", upstream.status, bucket, key);
+    return null;
+  }
+  if (!upstream.body) return null;
+
+  return {
+    stream: upstream.body,
+    status: upstream.status,
+    rangeHeader: upstream.headers.get("content-range") ?? undefined,
+    contentLength: upstream.headers.get("content-length") ?? undefined,
+  };
 }
