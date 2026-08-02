@@ -30,7 +30,23 @@ export default async function CourseLayout({
       .eq("user_id", profile.id),
   ]);
 
-  if (!course || (!course.is_published && profile.role !== "admin")) {
+  // A student must be enrolled AND the course published to see any of it.
+  // Admins (and the admin previewing as student) bypass the enrollment gate.
+  const { data: enrollment } =
+    profile.role === "admin"
+      ? { data: true }
+      : await supabase
+          .from("course_enrollments")
+          .select("course_id")
+          .eq("user_id", profile.id)
+          .eq("course_id", courseId)
+          .maybeSingle();
+
+  if (
+    !course ||
+    (!course.is_published && profile.role !== "admin") ||
+    (profile.role !== "admin" && !enrollment)
+  ) {
     notFound();
   }
 

@@ -13,20 +13,23 @@ export async function getPlaybackUrl(lessonId: string): Promise<PlaybackResult> 
   const profile = await requireSession();
   if (!profile) return { ok: false, error: "Not signed in." };
 
+  // Enrollment + publish re-check at request time (admin bypasses). A
+  // non-enrolled student gets no video URL even with a valid session.
+  const { canAccessLesson } = await import("@/lib/enrollment");
+  const access = await canAccessLesson(lessonId);
+  if (!access.ok) {
+    return { ok: false, error: "This course isn't available to you." };
+  }
+
   const supabase = await createClient();
   const { data: lesson } = await supabase
     .from("lessons")
-    .select("id, video_storage_path, media_assets(master_playlist, key_prefix), courses(is_published)")
+    .select("id, video_storage_path, media_assets(master_playlist, key_prefix)")
     .eq("id", lessonId)
     .single();
 
   if (!lesson) {
     return { ok: false, error: "This lesson has no video yet." };
-  }
-
-  const course = Array.isArray(lesson.courses) ? lesson.courses[0] : lesson.courses;
-  if (!course?.is_published && profile.role !== "admin") {
-    return { ok: false, error: "This course isn't published." };
   }
 
   // Prefer the HLS master playlist (R2 migration done); fall back to the

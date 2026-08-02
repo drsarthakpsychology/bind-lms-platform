@@ -39,6 +39,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Too many requests. Slow down." }, { status: 429 });
   }
 
+  // Enrollment + publish re-check at request time (admin bypasses). A
+  // non-enrolled authenticated user gets nothing, even if they know the lesson
+  // id — this closes the gap where video URLs were gated on publish only.
+  const { canAccessLesson } = await import("@/lib/enrollment");
+  const access = await canAccessLesson(lessonId);
+  if (!access.ok || !access.profile) {
+    return NextResponse.json(
+      { error: access.ok ? "Not authorized." : "This course isn't available to you." },
+      { status: 403 },
+    );
+  }
+
   const supabase = await createClient();
   const { data: lesson } = await supabase
     .from("lessons")
@@ -61,17 +73,6 @@ export async function POST(request: Request) {
 
   if (!key) {
     return NextResponse.json({ error: "This lesson has no media." }, { status: 404 });
-  }
-
-  // Enrollment check: the caller must be able to see the lesson's course.
-  const { data: course } = await supabase
-    .from("lessons")
-    .select("courses(is_published)")
-    .eq("id", lessonId)
-    .single();
-  const c = Array.isArray(course?.courses) ? course!.courses[0] : course?.courses;
-  if (!c?.is_published && profile.role !== "admin") {
-    return NextResponse.json({ error: "This course isn't published." }, { status: 403 });
   }
 
   const provider = getMediaProvider();

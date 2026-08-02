@@ -59,7 +59,23 @@ export default async function CourseOverviewPage({
         .not("lesson_id", "is", null),
     ]);
 
-  if (!course || (!course.is_published && profile.role !== "admin")) {
+  // Enrollment gate: students must be enrolled in a published course to see
+  // it. Admins bypass.
+  const { data: enrollment } =
+    profile.role === "admin"
+      ? { data: true }
+      : await supabase
+          .from("course_enrollments")
+          .select("course_id")
+          .eq("user_id", profile.id)
+          .eq("course_id", courseId)
+          .maybeSingle();
+
+  if (
+    !course ||
+    (!course.is_published && profile.role !== "admin") ||
+    (profile.role !== "admin" && !enrollment)
+  ) {
     notFound();
   }
 
