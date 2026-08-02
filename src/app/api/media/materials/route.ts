@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireSession } from "@/lib/auth/guards";
+import { isSameOrigin } from "@/lib/media/same-origin";
 import { rateLimit } from "@/lib/rate-limit";
 
 /**
@@ -19,11 +20,8 @@ import { rateLimit } from "@/lib/rate-limit";
  *  - Never leaks the raw storage key — returns only a signed URL.
  */
 export async function POST(request: Request) {
-  const origin = request.headers.get("origin");
-  const referer = request.headers.get("referer");
-  const appOrigin = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
-  const requestOrigin = origin ?? (referer ? new URL(referer).origin : null);
-  if (requestOrigin && requestOrigin !== appOrigin) {
+  // Same-origin gate — fail closed (missing or mismatched origin rejects).
+  if (!isSameOrigin(request)) {
     return NextResponse.json({ error: "Forbidden origin." }, { status: 403 });
   }
 

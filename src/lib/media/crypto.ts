@@ -25,7 +25,14 @@ import { createCipheriv, createDecipheriv, createHmac, randomBytes } from "node:
 
 /** Derive a 16-byte AES key from the stream token, bound to a lesson. */
 export function deriveSessionKey(streamToken: string, lessonId: string): Buffer {
-  const baseSecret = process.env.SESSION_SECRET ?? process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+  // Fail closed: never derive from an empty/public value, which would make the
+  // session key derivable by anyone.
+  const baseSecret = process.env.SESSION_SECRET ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!baseSecret) {
+    throw new Error(
+      "No session-key secret configured. Set SESSION_SECRET or SUPABASE_SERVICE_ROLE_KEY.",
+    );
+  }
   const hmac = createHmac("sha256", `plms-session-key-v1:${lessonId}`)
     .update(baseSecret)
     .update(streamToken);

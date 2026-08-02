@@ -1,10 +1,12 @@
 import { Suspense } from "react";
-import { headers } from "next/headers";
+import { cookies, headers } from "next/headers";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { ArrowLeft, ChevronLeft, FileText, Lock, Paperclip } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { VIEW_MODE_COOKIE } from "@/app/(dashboard)/view-mode-constants";
 import { VideoPlayer } from "./video-player";
 import { CompleteButton } from "./complete-button";
 import { AssignmentEditor } from "@/app/(dashboard)/admin/courses/[courseId]/assignment-editor";
@@ -28,9 +30,22 @@ export default async function LessonPage({
 }) {
   const { courseId, lessonId } = await params;
   const { tab: tabParam } = await searchParams;
+  // Validate the URL IDs look like UUIDs before interpolating them into
+  // PostgREST filter syntax — a malformed id with a comma/paren would produce
+  // a PostgREST 400 (availability issue).
+  if (!/^[0-9a-f-]{36}$/i.test(courseId) || !/^[0-9a-f-]{36}$/i.test(lessonId)) {
+    notFound();
+  }
   const session = await getSession();
   if (session.status !== "ok") return null;
   const { profile } = session;
+
+  // View mode: an admin previewing as student (via the view-mode switch) is
+  // still `role === "admin"` but should see the STUDENT experience — the
+  // assignment brief + submit form, not the authoring editor.
+  const cookieStore = await cookies();
+  const viewingAsStudent = cookieStore.get(VIEW_MODE_COOKIE)?.value === "student";
+  const showAdminAssignment = profile.role === "admin" && !viewingAsStudent;
 
   const supabase = await createClient();
 
@@ -38,7 +53,7 @@ export default async function LessonPage({
     await Promise.all([
       supabase
         .from("lessons")
-        .select("id, title, description, requires_assignment")
+        .select("id, title, description, requires_assignment, course_id")
         .eq("id", lessonId)
         .single(),
       supabase.from("courses").select("id, title").eq("id", courseId).single(),
@@ -65,6 +80,13 @@ export default async function LessonPage({
         .select("lesson_id, is_completed")
         .eq("user_id", profile.id),
     ]);
+
+  // Guard: the lesson must belong to the requested course. Without this, a
+  // student enrolled in course A could open a lesson from course B through a
+  // crafted URL (the layout only gates on the URL's courseId).
+  if (!lesson || lesson.course_id !== courseId) {
+    notFound();
+  }
 
   // Which tab to show. Invalid/absent tab falls back to watch. If a non-watch
   // tab is requested but there's no content for it, fall back to watch too.
@@ -190,7 +212,7 @@ export default async function LessonPage({
             Materials
           </h2>
 
-          {profile.role === "admin" && (
+          {showAdminAssignment && (
             <MaterialUploader
               courseId={courseId}
               lessonId={lessonId}
@@ -215,10 +237,10 @@ export default async function LessonPage({
                 sizeBytes: m.size_bytes,
               }))}
               courseId={courseId}
-              isAdmin={profile.role === "admin"}
+              isAdmin={showAdminAssignment}
             />
           ) : (
-            profile.role !== "admin" && (
+            !showAdminAssignment && (
               <EmptyState
                 row
                 icon={<Paperclip className="size-4" aria-hidden />}
@@ -265,7 +287,7 @@ export default async function LessonPage({
       </div>
 
       {/* Assignment tab */}
-      {tab === "assignment" && assignment && profile.role === "admin" && (
+      {tab === "assignment" && assignment && showAdminAssignment && (
         <section aria-label="Assignment" className="space-y-3">
           <h2 className="text-h2 flex items-center gap-2">
             <FileText className="size-4 text-primary" aria-hidden />
@@ -293,7 +315,7 @@ export default async function LessonPage({
       )}
 
       {/* Assignment tab — student view */}
-      {tab === "assignment" && assignment && profile.role !== "admin" && (
+      {tab === "assignment" && assignment && !showAdminAssignment && (
         <section aria-label="Assignment" className="space-y-3">
           <h2 className="text-h2 flex items-center gap-2">
             <FileText className="size-4 text-primary" aria-hidden />
@@ -350,7 +372,7 @@ export default async function LessonPage({
 
       {/* Assignment tab, no assignment exists — admins get the editor to add one */}
       {tab === "assignment" && !assignment && (
-        profile.role === "admin" ? (
+        showAdminAssignment ? (
           <section aria-label="Assignment" className="space-y-3">
             <h2 className="text-h2 flex items-center gap-2">
               <FileText className="size-4 text-primary" aria-hidden />

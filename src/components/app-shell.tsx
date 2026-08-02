@@ -45,16 +45,18 @@ export function AppShell({
               // nested columns. The page supplies its own labelled back header.
               // The admin's return-to-admin control stays reachable here too.
               <div
-                className="flex h-14 items-center justify-between border-b-2 border-border bg-card px-4"
+                className="flex h-14 items-center justify-between gap-3 border-b-2 border-border bg-card px-4"
                 style={{ paddingTop: "env(safe-area-inset-top)" }}
               >
-                <Link href="/dashboard" className="flex items-center gap-2 font-bold tracking-tight">
-                  <span className="flex size-6 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground">
+                <Link href="/dashboard" className="flex min-w-0 items-center gap-2 font-bold tracking-tight">
+                  <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary text-sm font-black text-primary-foreground">
                     {BRAND.shortName.charAt(0)}
                   </span>
-                  <span className="text-base">{BRAND.shortName}</span>
+                  <span className="truncate text-base">{BRAND.shortName}</span>
                 </Link>
-                {viewModeSwitch}
+                <div className="flex shrink-0 items-center gap-1.5">
+                  {viewModeSwitch}
+                </div>
               </div>
             }
           >

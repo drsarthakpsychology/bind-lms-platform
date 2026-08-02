@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
 import { mintStreamToken } from "@/lib/media/stream-token";
+import { isSameOrigin } from "@/lib/media/same-origin";
 import { rateLimit } from "@/lib/rate-limit";
 
 /**
@@ -13,19 +14,14 @@ import { rateLimit } from "@/lib/rate-limit";
  * proxy, which resolves the actual object server-side after re-checking
  * enrolment. This is the round-8 "no downloadable file / no reusable URL"
  * end state:
- *   - Same-origin gate (Origin/Referer vs the app origin).
+ *   - Same-origin gate (Origin/Referer vs the app origin) — fails closed.
  *   - Token bound to (user, lesson, course), HMAC-signed, 5-min TTL.
  *   - Rate-limited per user and per IP.
  *   - The stream proxy serves playlist + segments + AES-128 key.
  */
 export async function POST(request: Request) {
-  // Same-origin gate. Origin is authoritative when present; Referer is a
-  // fallback for clients that don't send Origin (older Safari GETs).
-  const origin = request.headers.get("origin");
-  const referer = request.headers.get("referer");
-  const appOrigin = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
-  const requestOrigin = origin ?? (referer ? new URL(referer).origin : null);
-  if (requestOrigin && requestOrigin !== appOrigin) {
+  // Same-origin gate — fail closed (missing or mismatched origin rejects).
+  if (!isSameOrigin(request)) {
     return NextResponse.json({ error: "Forbidden origin." }, { status: 403 });
   }
 

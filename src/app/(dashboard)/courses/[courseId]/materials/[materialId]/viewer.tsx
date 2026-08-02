@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  ChevronLeft,
+  ChevronRight,
   ExternalLink,
   Loader2,
   Minus,
@@ -265,9 +267,9 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             onClick={() => setPageNum((p) => Math.max(1, p - 1))}
             disabled={pageNum <= 1 || !doc}
             aria-label="Previous page"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
           >
-            <ZoomIn className="size-3.5 -scale-x-100" aria-hidden />
+            <ChevronLeft className="size-4" aria-hidden />
           </button>
           <span className="px-2 text-caption text-muted-foreground">
             {pageCount ? `${pageNum} / ${pageCount}` : "Loading…"}
@@ -277,9 +279,9 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             onClick={() => setPageNum((p) => Math.min(pageCount || 1, p + 1))}
             disabled={!doc || pageNum >= (pageCount || 1)}
             aria-label="Next page"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
           >
-            <ZoomIn className="size-3.5" aria-hidden />
+            <ChevronRight className="size-4" aria-hidden />
           </button>
         </div>
         <div className="flex items-center gap-1">
@@ -287,9 +289,9 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             type="button"
             onClick={() => setZoom((z) => Math.max(0.5, z - 0.25))}
             aria-label="Zoom out"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
           >
-            <ZoomOut className="size-3.5" aria-hidden />
+            <ZoomOut className="size-4" aria-hidden />
           </button>
           <span className="w-10 text-center text-caption text-muted-foreground">
             {Math.round(zoom * 100)}%
@@ -298,9 +300,9 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             type="button"
             onClick={() => setZoom((z) => Math.min(3, z + 0.25))}
             aria-label="Zoom in"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
           >
-            <ZoomIn className="size-3.5" aria-hidden />
+            <ZoomIn className="size-4" aria-hidden />
           </button>
         </div>
       </div>

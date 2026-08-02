@@ -20,6 +20,7 @@ import { haptic } from "@/lib/haptics";
 import {
   prepareMaterialUpload,
   confirmMaterialUpload,
+  confirmMaterialReplace,
   deleteMaterial,
   renameMaterial,
   replaceMaterialFile,
@@ -213,9 +214,18 @@ export function MaterialUploader({
   );
 
   function cancelUpload(clientId: string) {
-    // Best-effort: drop the row. The supabase-js upload has already been
-    // initiated; the prepared materials row is cleaned up if it never confirms.
+    const item = pending.find((p) => p.clientId === clientId);
     setPending((prev) => prev.filter((p) => p.clientId !== clientId));
+    if (!item) return;
+    // Best-effort abort: delete the prepared materials row AND any bytes that
+    // may have already landed, so a cancel doesn't leave a phantom material
+    // that later confirms and appears on refresh. The in-flight SDK upload may
+    // still finish after this, but the row is gone, so no material surfaces.
+    if (item.materialId) {
+      void deleteMaterial(courseId, item.materialId, item.path || null).then(() => {
+        router.refresh();
+      });
+    }
   }
 
   function dismissFailed(clientId: string) {
@@ -280,9 +290,16 @@ export function MaterialUploader({
     }
     const uploadResult = await uploadFileWithProgress(supabase, signed.path, signed.token, file);
     if (uploadResult.error) {
+      // The row now points at the new (empty) path. Roll it back to the old
+      // object so the material isn't left permanently broken.
+      const { restoreMaterialPath } = await import("./materials-actions");
+      await restoreMaterialPath(target.id, target.url ?? null);
       setBanner(uploadResult.error);
       return;
     }
+    // Only now — after the new bytes are in — remove the old object.
+    const confirm = await confirmMaterialReplace(target.id, signed.oldPath ?? null);
+    if (confirm.error) setBanner(confirm.error);
     setReplaceTarget(null);
     router.refresh();
   }

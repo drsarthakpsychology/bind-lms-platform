@@ -41,7 +41,7 @@ export function AppSidebar({
           href={isAdminView ? "/admin" : "/dashboard"}
           className="flex items-center gap-2 font-bold tracking-tight"
         >
-          <span className="flex size-6 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground">
+          <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary text-sm font-black text-primary-foreground">
             {BRAND.shortName.charAt(0)}
           </span>
           <span className="text-base">{BRAND.shortName}</span>

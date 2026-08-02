@@ -112,6 +112,12 @@ export function VideoPlayer({
   const [playerState, setPlayerState] = useState<PlayerState>({ kind: "loading" });
   const [resumeSeconds, setResumeSeconds] = useState(0);
   const [loadKey, setLoadKey] = useState(0);
+  // The resume position for the CURRENT load. Written by the fetch effect,
+  // read by the media-event effect at loadedmetadata time. A ref (not state)
+  // avoids the stale-closure seek when switching lessons: the media-event
+  // effect no longer depends on resumeSeconds, so it can't run with the old
+  // lesson's value before the new token resolves.
+  const resumeRef = useRef(0);
 
   // ---- Token mint + source load. Fetches a short-lived signed URL from the
   // rate-limited, enrollment-re-checked API — never a pre-signed URL in the
@@ -124,6 +130,7 @@ export function VideoPlayer({
     let hls: Hls | null = null;
 
     setPlayerState({ kind: "loading" });
+    resumeRef.current = 0;
     setResumeSeconds(0);
 
     (async () => {
@@ -168,7 +175,10 @@ export function VideoPlayer({
       }
 
       if (cancelled) return;
-      if (resume > 0) setResumeSeconds(resume);
+      if (resume > 0) {
+        resumeRef.current = resume;
+        setResumeSeconds(resume);
+      }
 
       try {
         if (mediaType === "hls") {
@@ -176,11 +186,25 @@ export function VideoPlayer({
             hls = new Hls({ enableWorker: true });
             hls.loadSource(url);
             hls.attachMedia(video);
+            // Bounded HLS error recovery. A stream token lives 5 minutes; when
+            // it expires mid-playback every segment fetch 401s → fatal
+            // NETWORK_ERROR. An unbounded startLoad() would loop forever on a
+            // dead URL. Cap retries, then surface the error + Retry (which
+            // re-mints a fresh token via loadKey).
+            let networkRetries = 0;
             hls.on(Hls.Events.ERROR, (_evt, data) => {
               if (!data.fatal) return;
               switch (data.type) {
                 case Hls.ErrorTypes.NETWORK_ERROR:
-                  hls?.startLoad();
+                  if (networkRetries < 2) {
+                    networkRetries++;
+                    hls?.startLoad();
+                  } else if (!cancelled) {
+                    setPlayerState({
+                      kind: "error",
+                      message: "This video couldn't be loaded. Try again.",
+                    });
+                  }
                   break;
                 case Hls.ErrorTypes.MEDIA_ERROR:
                   hls?.recoverMediaError();
@@ -236,8 +260,9 @@ export function VideoPlayer({
 
     const onLoadedMetadata = () => {
       setDuration(video.duration || 0);
-      if (resumeSeconds > 0 && resumeSeconds < video.duration) {
-        video.currentTime = resumeSeconds;
+      const resume = resumeRef.current;
+      if (resume > 0 && resume < video.duration) {
+        video.currentTime = resume;
       }
       setPlayerState({ kind: "ready" });
     };
@@ -289,7 +314,9 @@ export function VideoPlayer({
       video.removeEventListener("ended", onEnded);
       video.removeEventListener("error", onError);
     };
-  }, [resumeSeconds, lessonId]);
+    // Resume is read from resumeRef at loadedmetadata time, so this effect only
+    // needs to re-wire when the lesson changes (a fresh <video>).
+  }, [lessonId]);
 
   // ---- Ping progress every 10s while playing ----
   useEffect(() => {

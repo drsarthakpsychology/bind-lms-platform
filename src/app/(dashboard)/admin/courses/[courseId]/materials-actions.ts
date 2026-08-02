@@ -149,13 +149,26 @@ export async function reorderMaterials(
   return { error: null };
 }
 
-/** Replace a material's file (new bytes over the same row). */
+export type ReplaceMaterialResult =
+  | ({ ok: true; path: string; token: string; materialId: string } & {
+      /** The OLD object path — the caller deletes it only AFTER the new bytes land. */
+      oldPath: string | null;
+    })
+  | { ok: false; error: string };
+
+/**
+ * Replace a material's file. Prepares the new signed upload and points the row
+ * at the new path, but does NOT delete the old object yet — that's deferred to
+ * `confirmMaterialReplace`, called only after the upload succeeds. If the
+ * upload fails, the row stays pointing at the new (empty) path; the caller can
+ * roll back by restoring the old path.
+ */
 export async function replaceMaterialFile(
   courseId: string,
   materialId: string,
   fileName: string,
   sizeBytes: number,
-): Promise<PrepareMaterialUploadResult> {
+): Promise<ReplaceMaterialResult> {
   if (!(await requireAdmin())) return { ok: false, error: "Not authorized." };
 
   const validation = validateMaterialFile(fileName, sizeBytes);
@@ -178,7 +191,8 @@ export async function replaceMaterialFile(
     return { ok: false, error: error?.message ?? "Could not prepare the upload." };
   }
 
-  // Update the row to point at the new file, and clear the old one.
+  // Update the row to point at the new file (keep the old object around until
+  // the new bytes are confirmed).
   await admin
     .from("materials")
     .update({
@@ -189,11 +203,53 @@ export async function replaceMaterialFile(
     })
     .eq("id", materialId);
 
-  if (existing?.storage_path) {
-    await admin.storage.from("materials").remove([existing.storage_path]);
-  }
+  return { ok: true, path: data.path, token: data.token, materialId, oldPath: existing?.storage_path ?? null };
+}
 
-  return { ok: true, path: data.path, token: data.token, materialId };
+/**
+ * Roll a material's row back to a previous storage path. Used when a
+ * replacement upload fails, so the material isn't left pointing at a path
+ * that never got bytes.
+ */
+export async function restoreMaterialPath(
+  materialId: string,
+  oldPath: string | null,
+): Promise<{ error: string | null }> {
+  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!oldPath) return { error: null };
+
+  const admin = createAdminClient();
+  const { error } = await admin
+    .from("materials")
+    .update({ storage_path: oldPath })
+    .eq("id", materialId);
+  if (error) return { error: "Could not restore the previous file." };
+  return { error: null };
+}
+
+/**
+ * Called after the replacement upload SUCCEEDS. Deletes the old object that
+ * replaceMaterialFile left in place. Safe to call multiple times (no-op if the
+ * object is already gone).
+ */
+export async function confirmMaterialReplace(
+  materialId: string,
+  oldPath: string | null,
+): Promise<{ error: string | null }> {
+  if (!(await requireAdmin())) return { error: "Not authorized." };
+  if (!oldPath) return { error: null };
+
+  const admin = createAdminClient();
+  const { error } = await admin.storage.from("materials").remove([oldPath]);
+  if (error) return { error: "The old file couldn't be removed." };
+
+  // Revalidate the material's course listing.
+  const { data: mat } = await admin.from("materials").select("course_id").eq("id", materialId).single();
+  if (mat?.course_id) {
+    const { revalidatePath } = await import("next/cache");
+    revalidatePath(`/admin/courses/${mat.course_id}`);
+  }
+  return { error: null };
 }
 
 /** Create a link-type material (no upload). */
