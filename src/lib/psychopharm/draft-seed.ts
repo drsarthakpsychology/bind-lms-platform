@@ -1,10 +1,14 @@
 /**
  * Curated draft seed — highest-frequency drugs first.
  *
- * Task bookkeeping:
- *   - clonazepam: passes 8 (002), 9 (b, mono), must reach page "(first dose)"
- *   - Psych 신간 must NOT include a different "schizophrenia dose" per band: the sources
- *     describe a single banded successor range. Spring dependence table C.
+ * Each record is quote-first: every value carries source_id + page_ref + a
+ * verbatim snippet read from the source. Bands come ONLY from what the sources
+ * describe as functionally distinct ranges (by condition/population) —
+ * never invented boundaries (Rule 16/18). Where a source gives one continuous
+ * range with no functional split, the drug is left to the honest-gap fallback
+ * in store.ts, not force-split here.
+ *
+ * Source ids: S = stahl_pg_7th (Prescriber's Guide, 7th ed), M = maudsley_2021.
  */
 
 import { DrugDraft } from "./draft";
@@ -285,6 +289,258 @@ export const DRAFT_DRUGS: DrugDraft[] = [
           source: { value: "as above", source_id: S, page_ref: "p77", snippet: "Sedation. Especially at initiation or when dose increases. Tolerance often develops.", agreement: "single" },
         },
       ],
+    },
+  },
+
+  // ---------------------------------------------------------------------------
+  // ARIPIPRAZOLE — the source gives two clearly different functional bands by
+  // job: low-dose SSRI/SNRI adjunct vs the full antipsychotic/mood-stabilising
+  // dose. Both quoted from the same "Usual Dosage Range" block.
+  // ---------------------------------------------------------------------------
+  {
+    generic_name: "Aripiprazole",
+    drug_class: "Atypical antipsychotic",
+    subclass: "Dopamine-serotonin partial agonist",
+    brand_names: ["Abilify", "Arip MT"],
+    aliases: [],
+    mechanism: [
+      {
+        value: "Partial agonism at dopamine 2 receptors (reduces dopamine output when high, boosts it when low); blocks 5-HT2A; partial agonist at 5-HT1A.",
+        source_id: S,
+        page_ref: "p184",
+        snippet: "Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when dopamine concentrations are high ... Blocks serotonin 2A receptors ... Partial agonism at 5HT1A receptors may be relevant at clinical doses.",
+        agreement: "single",
+      },
+    ],
+    receptor_targets: [
+      {
+        value: "D2 partial agonist, 5-HT2A antagonist, 5-HT1A partial agonist",
+        source_id: S,
+        page_ref: "p184",
+        snippet: "Dopamine partial agonist (dopamine-serotonin partial agonist)",
+        agreement: "single",
+      },
+    ],
+    common_uses: [
+      {
+        value: "Schizophrenia (adults and adolescents), acute mania, bipolar maintenance, depression (adjunct to an antidepressant), autism-related irritability, Tourette's disorder in children.",
+        source_id: S,
+        page_ref: "p184",
+        snippet: "Schizophrenia; Acute mania/mixed mania; Bipolar maintenance; Depression (adjunct); Autism-related irritability in children ages 6 to 17; Tourette's disorder in children ages 6 to 18.",
+        agreement: "single",
+      },
+    ],
+    bands: [
+      {
+        band_order: 1,
+        range_low: 2,
+        range_high: 10,
+        unit: "mg",
+        band_label: "Low / adjunct band",
+        primary_purpose: "Augmentation of SSRIs/SNRIs in depression",
+        secondary_purposes: ["autism-related irritability (5–15 mg)", "Tourette's (5–20 mg)"],
+        is_typical_starting: true,
+        is_standard_maintenance: false,
+        why_this_dose: "The source gives 2–10 mg/day specifically for augmenting SSRIs/SNRIs in depression.",
+        what_changes_going_up: "Above ~15 mg the drug is treating psychosis/mania, not depression augmentation.",
+        source_ref: {
+          value: "2–10 mg/day for augmenting SSRIs/SNRIs in depression (Stahl).",
+          source_id: S,
+          page_ref: "p184",
+          snippet: "2–10 mg/day for augmenting SSRIs/SNRIs in depression",
+          agreement: "partial",
+          contrib: [
+            { source_id: S, page_ref: "p184", snippet: "2–10 mg/day for augmenting SSRIs/SNRIs in depression" },
+            { source_id: S, page_ref: "p184", snippet: "Depression (adjunct) (Abilify)" },
+          ],
+        },
+        side_effects: [
+          {
+            label: "common",
+            items: ["Nausea", "Insomnia", "Akathisia", "Sedation"],
+            source: { value: "as above", source_id: S, page_ref: "p184", snippet: "Dizziness, insomnia, akathisia, activation. Nausea, vomiting.", agreement: "single" },
+          },
+        ],
+        observation_prompts: [
+          {
+            prompt: "Any restlessness, like a need to keep moving?",
+            rationale: "Akathisia often appears with aripiprazole, especially as dose rises; it can read like anxiety.",
+            urgency: "mention_to_prescriber",
+            source: { value: "as above", source_id: S, page_ref: "p184", snippet: "Akathisia, activation", agreement: "single" },
+          },
+        ],
+      },
+      {
+        band_order: 2,
+        range_low: 15,
+        range_high: 30,
+        unit: "mg",
+        band_label: "Full antipsychotic / mood-stabilizer dose",
+        primary_purpose: "Schizophrenia and mania",
+        secondary_purposes: [],
+        is_typical_starting: false,
+        is_standard_maintenance: true,
+        why_this_dose: "15–30 mg/day for schizophrenia and mania.",
+        side_effects: [
+          {
+            label: "common",
+            items: ["Sedation", "weight gain", "akathisia"],
+            source: { value: "as above", source_id: S, page_ref: "p184", snippet: "Akathisia, activation", agreement: "single" },
+          },
+        ],
+        observation_prompts: [
+          {
+            prompt: "Any restlessness, stiffness, or involuntary movements?",
+            rationale: "At antipsychotic doses, akathisia and parkinsonian effects are watched for.",
+            urgency: "mention_to_prescriber",
+            source: { value: "as above", source_id: S, page_ref: "p184", snippet: "Akathisia, activation", agreement: "single" },
+          },
+        ],
+        source_ref: {
+          value: "15–30 mg/day for schizophrenia and mania (Stahl).",
+          source_id: S,
+          page_ref: "p184",
+          snippet: "15–30 mg/day for schizophrenia and mania",
+          agreement: "single",
+        },
+      },
+    ],
+    equivalences: [
+      {
+        drug_b: "Olanzapine",
+        note: "aripiprazole 15 mg ≈ olanzapine 10 mg (SGA equivalence)",
+        caveat: "A rough guide from Maudsley, not a swap instruction. Only a prescriber decides this.",
+        source: {
+          value: "aripiprazole 15 mg ≈ olanzapine 10 mg (Table 1.3 SGA equivalents)",
+          source_id: M,
+          page_ref: "p36",
+          snippet: "Aripiprazole 15mg; Olanzapine 10mg",
+          agreement: "full",
+        },
+      },
+    ],
+    links: [],
+    clinical_presentations: [],
+    student: {
+      plain_language: {
+        text:
+          "Aripiprazole works partly as a volume knob on dopamine: when dopamine is loud it turns it down, and when it is quiet it turns it up. That is why the low dose is used to help depression alongside another medicine, while the higher dose treats psychosis.",
+        kb_parent_field: "mechanism",
+        source: { value: "D2 partial agonism", source_id: S, page_ref: "p184", snippet: "Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when high ... increases dopamine output when low", agreement: "single" },
+      },
+      session_observations: [
+        {
+          observation: "A client may be fidgety or restless, especially as the dose is raised.",
+          confidence: "possible",
+          dose_dependence: "more likely at higher doses",
+          rationale: "Akathisia is common with aripiprazole and can be mistaken for anxiety.",
+          source: { value: "as above", source_id: S, page_ref: "p184", snippet: "Akathisia, activation", agreement: "single" },
+        },
+      ],
+    },
+  },
+
+  // ---------------------------------------------------------------------------
+  // QUETIAPINE — the source gives two clearly different bands: a lower
+  // treatment of bipolar depression (300 mg) vs the higher schizophrenia /
+  // mania range (400–800 mg).
+  // ---------------------------------------------------------------------------
+  {
+    generic_name: "Quetiapine",
+    drug_class: "Atypical antipsychotic",
+    subclass: "Dopamine/serotonin antagonist",
+    brand_names: ["Seroquel", "Seroquel XR", "Oleanz"],
+    aliases: [],
+    mechanism: [
+      {
+        value: "Blocks dopamine D2 and serotonin 5-HT2A receptors; at higher doses full antipsychotic activity, at low doses strong histamine (H1) blockade underlying sedation.",
+        source_id: S,
+        page_ref: "p1934",
+        snippet: "antagonism at serotonin 2A ... and dopamine receptors ... high degree of antihistaminic activity at lower doses",
+        agreement: "single",
+      },
+    ],
+    receptor_targets: [
+      {
+        value: "D2 antagonist, 5-HT2A antagonist, H1 antagonist (H1 prominent at low dose), alpha-1 antagonist",
+        source_id: S,
+        page_ref: "p1934",
+        snippet: "antagonism at ... receptors, antihistaminic activity",
+        agreement: "single",
+      },
+    ],
+    common_uses: [
+      {
+        value: "Schizophrenia, acute mania/mixed mania, bipolar depression, and as an adjunct in major depressive disorder.",
+        source_id: S,
+        page_ref: "p1934",
+        snippet: "Schizophrenia; Bipolar mania; Bipolar depression (300 mg once daily); Major depressive disorder (adjunct)",
+        agreement: "single",
+      },
+    ],
+    bands: [
+      {
+        band_order: 1,
+        range_low: 300,
+        range_high: 300,
+        unit: "mg",
+        band_label: "Bipolar depression band",
+        primary_purpose: "Acute bipolar depression",
+        secondary_purposes: [],
+        is_typical_starting: false,
+        is_standard_maintenance: false,
+        why_this_dose: "The source gives 300 mg once daily specifically for bipolar depression.",
+        source_ref: {
+          value: "300 mg once daily for bipolar depression (Stahl).",
+          source_id: S,
+          page_ref: "p1934",
+          snippet: "300 mg once daily for bipolar depression",
+          agreement: "single",
+        },
+        side_effects: [
+          { label: "common", items: ["Sedation", "Dizziness", "dry mouth"], source: { value: "as above", source_id: S, page_ref: "p1934", snippet: "Sedation, dizziness, dry mouth", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "How sleepy has this dose made you during the day?", rationale: "Sedation is prominent, especially at initiation.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p1934", snippet: "Sedation", agreement: "single" } },
+        ],
+      },
+      {
+        band_order: 2,
+        range_low: 400,
+        range_high: 800,
+        unit: "mg",
+        frequency: "once (XR) or twice (IR) daily",
+        band_label: "Schizophrenia / mania band",
+        primary_purpose: "Schizophrenia and bipolar mania",
+        secondary_purposes: [],
+        is_typical_starting: false,
+        is_standard_maintenance: true,
+        why_this_dose: "The source gives 400–800 mg/day for schizophrenia and for bipolar mania.",
+        source_ref: {
+          value: "400–800 mg/day ... for schizophrenia ... for bipolar mania (Stahl).",
+          source_id: S,
+          page_ref: "p1934",
+          snippet: "400–800 mg/day in 1 (quetiapine XR) or 2 (quetiapine) doses for schizophrenia 400–800 mg/day ... for bipolar mania",
+          agreement: "full",
+        },
+        side_effects: [
+          { label: "common", items: ["Sedation", "weight gain", "metabolic changes"], source: { value: "as above", source_id: S, page_ref: "p1934", snippet: "Sleepiness, weight gain, metabolic", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any increased fatigue or weight change?", rationale: "Sedation and metabolic effects are common at antipsychotic doses.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p1934", snippet: "Sleepiness, weight gain", agreement: "single" } },
+        ],
+      },
+    ],
+    equivalences: [],
+    links: [],
+    clinical_presentations: [],
+    student: {
+      plain_language: {
+        text:
+          "Quetiapine is a different medicine depending on the dose. At higher doses it treats psychosis and mania. At its once-daily lower use it is licensed for bipolar depression — and it is sedating either way.",
+        kb_parent_field: "common_uses",
+        source: { value: "as above", source_id: S, page_ref: "p1934", snippet: "300 mg once daily for bipolar depression; 400–800 mg/day for schizophrenia", agreement: "single" },
+      },
     },
   },
 ];
