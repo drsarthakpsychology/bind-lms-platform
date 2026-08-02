@@ -6,6 +6,7 @@ import { ArrowLeft, ChevronLeft, FileText, Lock, Paperclip } from "lucide-react"
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { DEFAULT_ACCEPTED_FORMATS } from "@/lib/media/registry";
 import { VIEW_MODE_COOKIE } from "@/app/(dashboard)/view-mode-constants";
 import { VideoPlayer } from "./video-player";
 import { CompleteButton } from "./complete-button";
@@ -306,7 +307,7 @@ export default async function LessonPage({
               is_published: assignment.is_published,
               max_files: assignment.max_files,
               max_file_mb: assignment.max_file_mb,
-              accepted_formats: assignment.accepted_formats ?? ["pdf", "docx", "image"],
+              accepted_formats: assignment.accepted_formats ?? DEFAULT_ACCEPTED_FORMATS,
               submissionCount: Array.isArray(assignment.submissions)
                 ? assignment.submissions.length
                 : 0,

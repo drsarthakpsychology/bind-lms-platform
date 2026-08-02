@@ -159,6 +159,12 @@ export const SUBMISSION_TYPE_OPTIONS: Array<{ value: SubmissionType; label: stri
   .filter(([, spec]) => spec.accepted)
   .map(([value, spec]) => ({ value, label: spec.label }));
 
+/** Canonical comma-joined submission_type string (e.g. "text,audio,pdf,docx"). */
+export const SUBMISSION_TYPE_CSV = SUBMISSION_TYPE_OPTIONS.map((o) => o.value).join(",");
+
+/** Canonical accepted_formats default. */
+export const DEFAULT_ACCEPTED_FORMATS = SUBMISSION_TYPE_OPTIONS.map((o) => o.value);
+
 export const MAX_MATERIAL_SIZE_BYTES = 100 * 1024 * 1024;
 export const MAX_MATERIAL_SIZE_MB = 100;
 

@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
+import { DEFAULT_ACCEPTED_FORMATS, SUBMISSION_TYPE_CSV } from "@/lib/media/registry";
 
 export type AssignmentEditorState = { error: string | null; savedAt?: string };
 
@@ -43,8 +44,8 @@ export async function createAssignment(
       is_published: isPublished,
       max_files: maxFiles || 3,
       max_file_mb: maxFileMb || 25,
-      accepted_formats: acceptedFormats.length ? acceptedFormats : ["pdf", "docx", "image"],
-      submission_type: "text,audio,pdf,docx,image",
+      accepted_formats: acceptedFormats.length ? acceptedFormats : DEFAULT_ACCEPTED_FORMATS,
+      submission_type: SUBMISSION_TYPE_CSV,
     })
     .select("id")
     .single();
@@ -94,7 +95,7 @@ export async function saveAssignment(
       is_published: isPublished,
       max_files: maxFiles || 3,
       max_file_mb: maxFileMb || 25,
-      accepted_formats: acceptedFormats.length ? acceptedFormats : ["pdf", "docx", "image"],
+      accepted_formats: acceptedFormats.length ? acceptedFormats : DEFAULT_ACCEPTED_FORMATS,
     })
     .eq("id", assignmentId);
 
@@ -142,7 +143,7 @@ export async function autosaveAssignment(
   if (fields.acceptedFormats !== undefined) {
     patch.accepted_formats = fields.acceptedFormats.length
       ? fields.acceptedFormats
-      : ["pdf", "docx", "image"];
+      : DEFAULT_ACCEPTED_FORMATS;
   }
 
   if (Object.keys(patch).length === 0) return { error: null };
