@@ -33,7 +33,10 @@ export function AppShell({
       </div>
 
       {/* Mobile top bar */}
-      <div className="flex min-h-14 items-center justify-between border-b-2 border-border bg-card px-4 lg:hidden">
+      <div
+        className="flex min-h-14 items-center justify-between border-b-2 border-border bg-card px-4 lg:hidden"
+        style={{ paddingTop: "env(safe-area-inset-top)" }}
+      >
         <Link
           href={mode === "admin" && role === "admin" ? "/admin" : "/dashboard"}
           className="flex items-center gap-2 font-bold tracking-tight"
@@ -47,7 +50,10 @@ export function AppShell({
       </div>
 
       <main className="min-w-0 flex-1">
-        <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-10 lg:py-8">
+        <div
+          className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-10 lg:py-8"
+          style={{ paddingLeft: "max(1rem, env(safe-area-inset-left))", paddingRight: "max(1rem, env(safe-area-inset-right))", paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))" }}
+        >
           {children}
         </div>
       </main>

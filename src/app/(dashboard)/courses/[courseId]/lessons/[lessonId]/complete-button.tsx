@@ -4,6 +4,7 @@ import { useTransition } from "react";
 import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
 import { completeAndAdvance } from "./actions";
+import { haptic } from "@/lib/haptics";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -40,6 +41,7 @@ export function CompleteButton({
 
   function onClick() {
     if (disabled || isPending) return;
+    haptic("success");
     if (isFinalLesson && !alreadyComplete) {
       toast.success("Course complete! 🎉", {
         description: "Great work — you finished the course.",

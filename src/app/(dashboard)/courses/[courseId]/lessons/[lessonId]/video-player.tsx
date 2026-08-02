@@ -92,6 +92,7 @@ export function VideoPlayer({
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const controlsTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastTap = useRef<{ time: number; x: number } | null>(null);
 
   const [tampered, setTampered] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -333,6 +334,30 @@ export function VideoPlayer({
     }
   }
 
+  /**
+   * Tap handling on touch devices: single tap toggles the controls; a double
+   * tap on the left/right half seeks -10s / +10s (mobile double-tap-to-seek).
+   */
+  function handleTap(e: React.TouchEvent) {
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    const x = e.touches[0]?.clientX ?? 0;
+    const now = performance.now();
+    const prev = lastTap.current;
+    lastTap.current = { time: now, x };
+
+    // Double tap within 300ms → seek.
+    if (prev && now - prev.time < 300) {
+      const isLeft = x < rect.left + rect.width / 2;
+      seekTo((videoRef.current?.currentTime ?? 0) + (isLeft ? -10 : 10));
+      setControlsVisible(true);
+      return;
+    }
+
+    // Single tap → toggle controls.
+    setControlsVisible((v) => !v);
+    if (controlsTimeout.current) clearTimeout(controlsTimeout.current);
+  }
+
   function seekTo(seconds: number) {
     const video = videoRef.current;
     if (!video || !video.duration) return;
@@ -445,6 +470,7 @@ export function VideoPlayer({
         controlsList="nodownload noplaybackrate noremoteplayback"
         x-webkit-airplay="deny"
         className="h-full w-full"
+        onTouchEnd={handleTap}
       >
         {/* Caption track — only rendered when the caller provides a captions
             URL (none do today, so the captions toggle stays hidden). */}

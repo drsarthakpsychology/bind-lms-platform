@@ -10,6 +10,7 @@ import {
   X,
 } from "lucide-react";
 import { prepareSubmissionUpload, submitWithFiles, unsubmitAssignment } from "./actions";
+import { haptic } from "@/lib/haptics";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -131,6 +132,7 @@ export function SubmissionForm({
         setSubmitting(false);
         return;
       }
+      haptic("success");
       setPicked([]);
       setNote("");
       router.refresh();

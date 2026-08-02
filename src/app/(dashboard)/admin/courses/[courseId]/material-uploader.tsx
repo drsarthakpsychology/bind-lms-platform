@@ -15,6 +15,7 @@ import {
   X,
 } from "lucide-react";
 import { validateMaterialFile } from "@/lib/materials";
+import { haptic } from "@/lib/haptics";
 import {
   prepareMaterialUpload,
   confirmMaterialUpload,
@@ -209,6 +210,7 @@ export function MaterialUploader({
       }
 
       await confirmMaterialUpload(courseId);
+      haptic("success");
       onUpdate("done", undefined, 100);
     },
     [courseId, lessonId],
