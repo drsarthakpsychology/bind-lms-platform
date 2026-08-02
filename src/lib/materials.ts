@@ -8,11 +8,17 @@
 export const MAX_MATERIAL_SIZE_BYTES = 100 * 1024 * 1024;
 export const MAX_MATERIAL_SIZE_MB = 100;
 
-/** Extension → kind mapping for the format allowlist. */
-export const MATERIAL_EXTENSIONS: Record<string, "document" | "slides" | "audio" | "image"> = {
+/**
+ * Extension → kind mapping for the format allowlist.
+ *
+ * PowerPoint (ppt/pptx) is deliberately absent: there is no trustworthy
+ * browser-side renderer, and LibreOffice (the only reliable converter) can't
+ * run on Vercel's serverless runtime. The student viewer has no way to show a
+ * deck, so we reject it at upload and ask for a PDF export instead. Existing
+ * `slides` rows are legacy — see the viewer's fallback copy.
+ */
+export const MATERIAL_EXTENSIONS: Record<string, "document" | "audio" | "image"> = {
   pdf: "document",
-  ppt: "slides",
-  pptx: "slides",
   mp3: "audio",
   m4a: "audio",
   wav: "audio",
@@ -25,11 +31,6 @@ export const MATERIAL_EXTENSIONS: Record<string, "document" | "slides" | "audio"
 /** Recognised MIME types per extension (used by the server allowlist). */
 export const MATERIAL_MIME_TYPES: Record<string, string[]> = {
   pdf: ["application/pdf"],
-  ppt: ["application/vnd.ms-powerpoint"],
-  pptx: [
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-    "application/zip",
-  ],
   mp3: ["audio/mpeg"],
   m4a: ["audio/mp4", "audio/x-m4a", "audio/mp4a-latm"],
   wav: ["audio/wav", "audio/wave", "audio/x-wav"],
@@ -64,9 +65,12 @@ export function validateMaterialFile(
   const kind = MATERIAL_EXTENSIONS[ext];
 
   if (!kind) {
+    const isDeck = ["ppt", "pptx"].includes(ext);
     return {
       ok: false,
-      error: `"${fileName}" isn't a supported file type. Upload a PDF, slide deck, audio recording, or image.`,
+      error: isDeck
+        ? `PowerPoint files can't be shown to students in the browser. Export the deck to PDF and upload that instead.`
+        : `"${fileName}" isn't a supported file type. Upload a PDF, audio recording, or image.`,
     };
   }
 

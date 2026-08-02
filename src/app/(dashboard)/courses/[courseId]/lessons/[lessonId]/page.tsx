@@ -224,6 +224,7 @@ export default async function LessonPage({
                 sizeBytes: m.size_bytes,
                 url: m.url,
               }))}
+              legacySlidesCount={(materials ?? []).filter((m) => m.kind === "slides").length}
             />
           )}
 

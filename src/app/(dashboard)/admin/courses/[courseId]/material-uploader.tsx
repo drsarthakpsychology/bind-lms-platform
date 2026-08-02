@@ -107,10 +107,14 @@ export function MaterialUploader({
   courseId,
   lessonId,
   materials,
+  legacySlidesCount = 0,
 }: {
   courseId: string;
   lessonId: string | null;
   materials: UploadRow[];
+  /** Number of legacy slide-deck materials (uploaded before ppt/pptx were
+   *  rejected). Shown as a warning — students can't preview these. */
+  legacySlidesCount?: number;
 }) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -335,6 +339,14 @@ export function MaterialUploader({
         </p>
       )}
 
+      {legacySlidesCount > 0 && (
+        <p role="alert" className="rounded-md border-2 border-status-alert-fg/40 bg-status-alert-fg/5 px-3 py-2 text-caption text-status-alert-fg">
+          {legacySlidesCount === 1
+            ? "One PowerPoint material here can't be previewed by students. Replace it with a PDF export."
+            : `${legacySlidesCount} PowerPoint materials here can't be previewed by students. Replace them with PDF exports.`}
+        </p>
+      )}
+
       {/* Full-area drop zone */}
       <div
         role="button"
@@ -363,13 +375,13 @@ export function MaterialUploader({
           Drag files here or <span className="text-primary">browse</span>
         </p>
         <p className="text-caption text-muted-foreground">
-          PDF, PPT, audio (MP3/M4A/WAV), and images. Up to 100 MB each.
+          PDF, audio (MP3/M4A/WAV), and images. Up to 100 MB each. PowerPoint? Export the deck to PDF and upload that.
         </p>
         <input
           ref={inputRef}
           type="file"
           multiple
-          accept=".pdf,.ppt,.pptx,.mp3,.m4a,.wav,.png,.jpg,.jpeg,.webp"
+          accept=".pdf,.mp3,.m4a,.wav,.png,.jpg,.jpeg,.webp"
           className="hidden"
           onChange={(e) => {
             if (e.target.files?.length) void addFiles(e.target.files);

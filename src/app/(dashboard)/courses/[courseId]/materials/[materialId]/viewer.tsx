@@ -144,7 +144,7 @@ export function MaterialViewer({
           <div className="max-w-md rounded-md border-2 border-border bg-card p-6 text-center">
             <p className="text-small font-semibold text-foreground">{title}</p>
             <p className="mt-1 text-caption text-muted-foreground">
-              Slides can&apos;t be previewed in the browser. The file is attached for reference.
+              Slide decks can&apos;t be previewed in the browser. Ask your instructor for a PDF version of this deck.
             </p>
           </div>
         </div>
