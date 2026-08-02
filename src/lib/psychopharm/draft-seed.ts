@@ -970,6 +970,124 @@ export const DRAFT_DRUGS: DrugDraft[] = [
       },
     },
   },
+
+  // ---------------------------------------------------------------------------
+  // PAROXETINE — the source gives three distinct bands: depression, a very low
+  // vasomotor dose, and the anxiety/OCD range.
+  // ---------------------------------------------------------------------------
+  {
+    generic_name: "Paroxetine",
+    drug_class: "SSRI",
+    subclass: "Selective serotonin reuptake inhibitor",
+    brand_names: ["Paxil", "Seroxat", "Xet"],
+    aliases: [],
+    mechanism: [
+      {
+        value: "Selectively blocks the serotonin transporter, raising serotonergic transmission.",
+        source_id: S,
+        page_ref: "p1715",
+        snippet: "Boosts serotonin ... Blocks serotonin reuptake pump (serotonin transporter)",
+        agreement: "single",
+      },
+    ],
+    receptor_targets: [
+      { value: "Serotonin transporter (SERT) inhibition", source_id: S, page_ref: "p1715", snippet: "Blocks serotonin reuptake pump (serotonin transporter)", agreement: "single" },
+    ],
+    common_uses: [
+      {
+        value: "Major depressive disorder, obsessive-compulsive disorder, panic disorder, generalized anxiety, social anxiety, vasomotor symptoms of menopause.",
+        source_id: S,
+        page_ref: "p1715",
+        snippet: "Major depressive disorder; Obsessive-compulsive disorder; Panic disorder; Social anxiety; Vasomotor symptoms",
+        agreement: "single",
+      },
+    ],
+    bands: [
+      {
+        band_order: 1,
+        range_low: 20,
+        range_high: 50,
+        unit: "mg",
+        band_label: "Depression band",
+        primary_purpose: "Major depressive disorder",
+        secondary_purposes: [],
+        is_typical_starting: true,
+        is_standard_maintenance: true,
+        why_this_dose: "The source gives 20–50 mg (25–62.5 mg CR) for depression.",
+        side_effects: [
+          { label: "common", items: ["Sexual dysfunction", "sleep disturbances", "weight change"], source: { value: "as above", source_id: S, page_ref: "p1713", snippet: "Sexual dysfunction ... sleep", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any sexual changes, or sleep shifts?", rationale: "SSRI sexual/weight effects are common and often unvolunteered.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p1713", snippet: "Sexual dysfunction", agreement: "single" } },
+        ],
+        source_ref: {
+          value: "Depression: 20–50 mg (Stahl).",
+          source_id: S,
+          page_ref: "p1715",
+          snippet: "Depression: 20–50 mg (25–62.5 mg CR)",
+          agreement: "single",
+        },
+      },
+      {
+        band_order: 2,
+        range_low: 10,
+        range_high: 60,
+        unit: "mg",
+        band_label: "Anxiety / OCD band",
+        primary_purpose: "Anxiety disorders and OCD",
+        secondary_purposes: ["panic", "generalized anxiety", "social anxiety"],
+        is_typical_starting: false,
+        is_standard_maintenance: false,
+        why_this_dose: "The source gives 10–60 mg/day (12.5–75 mg CR) for anxiety disorders and OCD.",
+        side_effects: [
+          { label: "common", items: ["Sexual dysfunction", "activation early"], source: { value: "as above", source_id: S, page_ref: "p1713", snippet: "Sexual dysfunction", agreement: "single" } },
+        ],
+        observation_prompts: [
+          { prompt: "Any increased anxiety in the first days?", rationale: "SSRIs can transiently worsen anxiety before benefit.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p1713", snippet: "activation", agreement: "single" } },
+        ],
+        source_ref: {
+          value: "Anxiety disorders and OCD: 10–60 mg/day (Stahl).",
+          source_id: S,
+          page_ref: "p1715",
+          snippet: "Anxiety disorders and OCD: 10–60 mg/day (12.5–75 mg CR)",
+          agreement: "single",
+        },
+      },
+      {
+        band_order: 3,
+        range_low: 7.5,
+        range_high: 7.5,
+        unit: "mg",
+        frequency: "at bedtime",
+        band_label: "Vasomotor-symptom low dose",
+        primary_purpose: "Vasomotor symptoms of menopause (hot flashes)",
+        secondary_purposes: [],
+        is_typical_starting: false,
+        is_standard_maintenance: false,
+        why_this_dose: "The source gives 7.5 mg at bedtime specifically for vasomotor symptoms.",
+        side_effects: [],
+        observation_prompts: [],
+        source_ref: {
+          value: "Vasomotor symptoms: 7.5 mg at bedtime (Stahl).",
+          source_id: S,
+          page_ref: "p1715",
+          snippet: "Vasomotor symptoms: 7.5 mg at bedtime",
+          agreement: "single",
+        },
+      },
+    ],
+    equivalences: [],
+    links: [],
+    clinical_presentations: [],
+    student: {
+      plain_language: {
+        text:
+          "Paroxetine is an SSRI; it keeps serotonin around longer. The dose depends entirely on the job: a low bedtime dose for hot flashes, a middle dose for depression, a higher one for anxiety and OCD.",
+        kb_parent_field: "common_uses",
+        source: { value: "as above", source_id: S, page_ref: "p1715", snippet: "Depression; Vasomotor; Anxiety disorders", agreement: "single" },
+      },
+    },
+  },
 ];
 
 export const KNOWLEDGE_BASE_NOTES =
