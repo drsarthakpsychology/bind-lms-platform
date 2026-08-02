@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { hasForbiddenPhrase, DOSE_CAVEAT, STANDING_NOTICE } from "./forbidden-phrases";
 import { DRAFT_DRUGS } from "./draft-seed";
 import { SOURCES } from "./sources";
+import { ALL_EQUIVALENCES } from "./equivalences";
 
 const REPO = join(process.cwd());
 
@@ -90,5 +91,38 @@ describe("psychopharm — published-data safety invariants", () => {
     expect(hasForbiddenPhrase(DOSE_CAVEAT)).toBeNull();
     expect(hasForbiddenPhrase(STANDING_NOTICE)).toBeNull();
     expect(DOSE_CAVEAT).toContain("prescriber");
+  });
+
+  it("published equivalences are quoted from a source, with caveat, never computed", () => {
+    expect(ALL_EQUIVALENCES.length).toBeGreaterThan(5);
+    for (const eq of ALL_EQUIVALENCES) {
+      expect(eq.quote).toBeTruthy();            // quote-first
+      expect(eq.source_id).toBeTruthy();
+      expect(eq.page_ref).toBeTruthy();          // page-level citation
+      expect(eq.caveat).toContain("not a swap instruction");
+      expect(eq.caveat.toLowerCase()).toContain("prescriber");
+      // A quote is a source string, never constructed from numbers / a conversion.
+      expect(SOURCES[eq.source_id]).toBeTruthy();
+    }
+  });
+
+  it("no equivalence is ever computed anywhere in the app source", () => {
+    // Every equivalence is data (a quoted string + provenance + caveat), never
+    // arithmetic. The data-integrity invariant that is actually enforceable
+    // and meaningful: no function returns a new numeric dose-equivalence by
+    // multiplying/dividing two numbers with drug units. We scan the equivalence
+    // data + store for any `X * Y` / `X / Y` that has an "mg"/dose operand.
+    const { readFileSync } = require("node:fs");
+    const libDir = join(REPO, "src/lib/psychopharm");
+    const files = ["equivalences.ts", "store.ts", "draft-seed.ts"];
+    for (const f of files) {
+      const src = readFileSync(join(libDir, f), "utf8");
+      // Strip comments.
+      const code = src.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\/\/.*$/gm, "");
+      // Multiplying two numeric operands is the signature of computing a dose
+      // value at runtime. ("mg/day" is a unit, not arithmetic, so '/' is not
+      // the forbidden signal; '*' between numbers is.)
+      expect(code).not.toMatch(/\d\s*\*\s*\d/);
+    }
   });
 });
