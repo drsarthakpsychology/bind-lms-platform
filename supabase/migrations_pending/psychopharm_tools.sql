@@ -307,8 +307,9 @@ create policy "psych_drugs_admin_all" on psych_drugs
 
 -- drug_fields: students read PUBLISHED rows only, and never the snippet column.
 -- Column-level grant: revoke snippet from anon/authenticated entirely.
-revoke select (snippet) on psych_drug_fields from anon, authenticated;
-revoke select (snippet) on psych_drug_fields from public;
+-- NOTE: use the combined-privilege form — a per-privilege REVOKE does NOT stick
+-- in Supabase once a table-level grant exists (verified 2026-08-03).
+revoke select, insert, update, references (snippet) on psych_drug_fields from anon, authenticated;
 create policy "psych_drug_fields_select_published_or_admin" on psych_drug_fields
   for select to authenticated using (status = 'published' or public.is_admin());
 create policy "psych_drug_fields_admin_all" on psych_drug_fields
@@ -607,6 +608,11 @@ create policy "psych_pearls_admin_all" on psych_clinical_pearls
 
 -- Phase 2 indexes.
 create index if not exists idx_psych_obs_drug on psych_session_observations (drug_id, status);
+
+-- Phase 2 tables that carry a reviewer-only `snippet` column: students never
+-- read it. Combined-privilege revoke (per-privilege form does not stick once a
+-- table-level grant exists in Supabase).
+revoke select, insert, update, references (snippet) on psych_session_observations from anon, authenticated;
 create index if not exists idx_psych_tq_cat on psych_therapist_questions (category, status);
 create index if not exists idx_psych_timeline_drug on psych_med_timeline (drug_id, band_order);
 create index if not exists idx_psych_checklist_drug on psych_observation_checklist (drug_id, status);
