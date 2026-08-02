@@ -110,12 +110,11 @@ export function VideoPlayer({
   const hasCaptions = Boolean(captionsUrl);
   const [captionsOn, setCaptionsOn] = useState(true);
   const [playerState, setPlayerState] = useState<PlayerState>({ kind: "loading" });
-  const [resumeSeconds, setResumeSeconds] = useState(0);
   const [loadKey, setLoadKey] = useState(0);
   // The resume position for the CURRENT load. Written by the fetch effect,
   // read by the media-event effect at loadedmetadata time. A ref (not state)
   // avoids the stale-closure seek when switching lessons: the media-event
-  // effect no longer depends on resumeSeconds, so it can't run with the old
+  // effect no longer depends on the resume value, so it can't run with the old
   // lesson's value before the new token resolves.
   const resumeRef = useRef(0);
 
@@ -131,7 +130,6 @@ export function VideoPlayer({
 
     setPlayerState({ kind: "loading" });
     resumeRef.current = 0;
-    setResumeSeconds(0);
 
     (async () => {
       let url: string;
@@ -177,7 +175,6 @@ export function VideoPlayer({
       if (cancelled) return;
       if (resume > 0) {
         resumeRef.current = resume;
-        setResumeSeconds(resume);
       }
 
       try {
@@ -625,9 +622,24 @@ export function VideoPlayer({
         </div>
       )}
 
-      {!tampered && playerState.kind !== "error" && (
+      {/* Render the watermark ONCE in the DOM. Hide via opacity when the
+          player is in a non-content state (error / tampered). This prevents the
+          removalObserver from seeing the watermark element appear and disappear
+          on every React state transition (loading→ready, ready→error, retry),
+          which previously triggered a false tamper detection on first re-render. */}
+      <div
+        aria-hidden={tampered || playerState.kind === "error"}
+        style={{
+          position: "absolute",
+          inset: 0,
+          pointerEvents: "none",
+          opacity: tampered || playerState.kind === "error" ? 0 : 1,
+          transition: "opacity 0.2s ease",
+          display: playerState.kind === "loading" ? "none" : "block",
+        }}
+      >
         <Watermark label={watermarkLabel} onTamperDetected={handleTamperDetected} />
-      )}
+      </div>
 
       {tampered && (
         <div className="absolute inset-0 flex items-center justify-center bg-black p-6 text-center">
