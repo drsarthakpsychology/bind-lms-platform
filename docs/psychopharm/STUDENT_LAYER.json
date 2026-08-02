@@ -1,0 +1,2267 @@
+[
+  {
+    "drug": "Acamprosate",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Acamprosate",
+    "base_fact": "Theoretically reduces excitatory glutamate neurotransmission and increases inhibitory gamma-aminobutyric acid (GABA) neurotransmission Binds to and blocks certain glutamate receptors, including metabotropic glutamate receptors Because withdrawal of alcohol following chronic administration can lead to excessive glutamate activity and deficient GABA activity, acamprosate can act as “artificial alcohol” to mitigate these effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "24",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Agomelatine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Agomelatine",
+    "base_fact": "Actions at both melatonergic and 5HT2C receptors may be synergistic and increase norepinephrine and dopamine neurotransmission in the prefrontal cortex; may resynchronize circadian rhythms that are disturbed in depression No influence on extracellular levels of serotonin",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "34",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Alprazolam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Alprazolam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibits neuronal activity presumably in amygdala-centered fear circuits to provide therapeutic benefits in anxiety disorders",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "50",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Amisulpride",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Amisulpride",
+    "base_fact": "Theoretically blocks presynaptic dopamine 2 receptors at low doses Theoretically blocks postsynaptic dopamine 2 receptors at higher doses ✽ May be a partial agonist at dopamine 2 receptors, which would theoretically reduce dopamine output when dopamine concentrations are high and increase dopamine output when dopamine concentrations are low Blocks dopamine 3 receptors, which may contribute to its clinical actions ✽ Unlike other atypical antipsychotics, amisulpride does not have potent actions at serotonin 2A or serotonin 1A receptors ✽ Does have antagonist actions at serotonin 7 receptors and serotonin 2B receptors, which may contribute to antidepressant effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "68",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Amitriptyline",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Amitriptyline",
+    "base_fact": "Boosts neurotransmitters serotonin and norepinephrine/noradrenaline Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Presumably desensitizes both serotonin 1A receptors and beta adrenergic receptors Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, amitriptyline can increase dopamine neurotransmission in this part of the brain",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "90",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Amoxapine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Amoxapine",
+    "base_fact": "Boosts neurotransmitter norepinephrine/noradrenaline Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, amoxapine can thus increase dopamine neurotransmission in this part of the brain A more potent inhibitor of norepinephrine reuptake pump than serotonin reuptake pump (serotonin transporter) At high doses may also boost neurotransmitter serotonin and presumably increase serotonergic neurotransmission Blocks dopamine 2 receptors, reducing positive symptoms of psychosis",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "111",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Amphetamine (D)",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Amphetamine (D)",
+    "base_fact": "✽ Increases norepinephrine and especially dopamine actions by blocking their reuptake and facilitating their release Enhancement of dopamine and norepinephrine actions in certain brain regions may improve attention, concentration, executive function, and wakefulness (e.g., dorsolateral prefrontal cortex) Enhancement of dopamine actions in other brain regions (e.g., basal ganglia) may improve hyperactivity Enhancement of dopamine and norepinephrine in yet other brain regions (e.g., medial prefrontal cortex, hypothalamus) may improve depression, fatigue, and sleepiness",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "132",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Amphetamine (D,L)",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Amphetamine (D,L)",
+    "base_fact": "✽ Increases norepinephrine and especially dopamine actions by blocking their reuptake and facilitating their release Enhancement of dopamine and norepinephrine actions in certain brain regions (e.g., dorsolateral prefrontal cortex) may improve attention, concentration, executive function, and wakefulness Enhancement of dopamine actions in other brain regions (e.g., basal ganglia) may improve hyperactivity Enhancement of dopamine and norepinephrine in yet other brain regions (e.g., medial prefrontal cortex, hypothalamus) may improve depression, fatigue, and sleepiness",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "152",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Aripiprazole",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Aripiprazole",
+    "base_fact": "✽ Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when dopamine concentrations are high, thus improving positive symptoms and mediating antipsychotic actions Theoretically increases dopamine output when dopamine concentrations are low, thus improving cognitive, negative, and mood symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to aripiprazole’s efficacy Actions at dopamine 3 receptors could theoretically contribute to aripiprazole’s efficacy Partial agonism at 5HT1A receptors may be relevant at clinical doses Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Blockade of serotonin type 2C and 7 receptors as well as partial agonist actions at 5HT1A receptors may contribute to antidepressant actions",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "175",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Armodafinil",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Armodafinil",
+    "base_fact": "Unknown, but clearly different from classical stimulants such as methylphenidate and amphetamine Binds to and requires the presence of the dopamine transporter; also requires the presence of alpha adrenergic receptors Hypothetically acts as an inhibitor of the dopamine transporter Increases neuronal activity selectively in the hypothalamus ✽ Presumably enhances activity in hypothalamic wakefulness center (TMN, tuberomammillary nucleus) within the hypothalamic sleepwake switch by an unknown mechanism ✽ Activates tuberomammillary nucleus neurons that release histamine ✽ Activates other hypothalamic neurons that release orexin/hypocretin",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "208",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Asenapine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Asenapine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to asenapine’s efficacy Partial agonist at 5HT1A receptors, which may be beneficial for mood, anxiety, and cognition in a number of disorders ✽ Serotonin 2C, serotonin 7, and alpha 2 antagonist properties may contribute to antidepressant actions",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "222",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Atomoxetine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Atomoxetine",
+    "base_fact": "Boosts neurotransmitter norepinephrine/noradrenaline and may also increase dopamine in prefrontal cortex Blocks norepinephrine reuptake pumps, also known as norepinephrine transporters Presumably this increases noradrenergic neurotransmission Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, atomoxetine can also increase dopamine neurotransmission in this part of the brain",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "245",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Benztropine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Benztropine",
+    "base_fact": "Diminishes the excess acetylcholine activity caused by removal of dopamine inhibition when dopamine receptors are blocked May also inhibit the reuptake and storage of dopamine at central dopamine receptors, prolonging dopamine action",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "262",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Blonanserin",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Blonanserin",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognition and affective symptoms Actions at dopamine 3 receptors could theoretically contribute to blonanserin’s efficacy",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "273",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Bremelanotide",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Bremelanotide",
+    "base_fact": "Bremelanotide is a nonselective melanocortin receptor agonist; at therapeutic doses, bremelanotide binding to melanocortin 1 and 4 receptors is most relevant Sexual dysfunction is theoretically linked to an imbalance in central excitatory and inhibitory sexual signals HSDD hypothetically results from excessive inhibitory signals, inadequate excitatory signals, or a combination of the two Melanocortin receptors are located in the medial preoptic area of the hypothalamus, which is implicated in the sexual behavior of both sexes; stimulation of those receptors leads to dopamine release",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "289",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Brexanolone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Brexanolone",
+    "base_fact": "Positive allosteric modulator at neuroactive steroid sites on both gamma-aminobutyric acid (GABA) A benzodiazepine-sensitive and benzodiazepine-insensitive ligand-gated ion channels Benzodiazepine-insensitive GABA-A receptor subtypes (with Î´ subunits and Î± 4 or Î± 6 subunits) are located extrasynaptically, where they capture not only GABA that diffuses away from the synapse, but also neuroactive steroids synthesized and released by glia GABA binding at these receptors hypothetically regulates tonic inhibition Brexanolone binds to the neuroactive steroid site, acting as a positive allosteric modulator to enhance the effects of GABA binding, i.e., to increase tonic GABAergic tone Only known therapeutic agent for depression with positive allosteric modulation of the benzodiazepine-insensitive GABA-A receptor",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "300",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Brexpiprazole",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Brexpiprazole",
+    "base_fact": "✽ Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when dopamine concentrations are high, thus improving positive symptoms and mediating antipsychotic actions Theoretically increases dopamine output when dopamine concentrations are low, thus improving cognitive, negative, and mood symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to brexpiprazole’s efficacy Partial agonist at 5HT1A receptors, which may be beneficial for mood, anxiety, and cognition in a number of disorders Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Blockade of alpha 1B receptors may reduce arousal symptoms in posttraumatic stress disorder and in agitation associated with dementia as well as motor side effects such as akathisia Blockade of alpha 2C receptors may contribute to antidepressant actions Actions at dopamine 3 receptors could theoretically contribute to brexpiprazole’s efficacy Blocks serotonin 7 receptors, which may be beneficial for mood, cognitive impairment, and negative symptoms in schizophrenia, and also in bipolar disorder and major depressive disorder",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "312",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Buprenorphine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Buprenorphine",
+    "base_fact": "Binds with strong affinity to the mu opioid receptor, preventing exogenous opioids from binding there and thus preventing the pleasurable effects of opioid consumption Because buprenorphine is a partial agonist, it can cause immediate withdrawal in a patient currently taking opioids (i.e., reduces receptor stimulation in the presence of a full agonist) but can relieve withdrawal if a patient is already experiencing it (i.e., increases receptor stimulation in the absence of a full agonist) Buprenorphine is also an antagonist at the kappa opioid receptor In combination with naloxone: naloxone is a mu opioid receptor antagonist and can therefore block the effects of buprenorphine; however, because naloxone has poor sublingual bioavailability, it does not interfere with buprenorphine’s effects when used properly. Naloxone does have good parenteral bioavailability; thus, if one tries to administer the buprenorphine/naloxone formulation intravenously, naloxone will prevent any rewarding effects from buprenorphine",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "334",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Bupropion",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Bupropion",
+    "base_fact": "Boosts neurotransmitters norepinephrine/noradrenaline and dopamine Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing norepinephrine neurotransmission Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, bupropion can increase dopamine neurotransmission in this part of the brain Blocks dopamine reuptake pump (dopamine transporter), presumably increasing dopaminergic neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "352",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Buspirone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Buspirone",
+    "base_fact": "Binds to serotonin type 1A receptors Partial agonist actions postsynaptically may theoretically diminish serotonergic activity and contribute to anxiolytic actions Partial agonist actions at presynaptic somatodendritic serotonin autoreceptors may theoretically enhance serotonergic activity and contribute to antidepressant actions",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "373",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Caprylidene",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Caprylidene",
+    "base_fact": "Induces hyperketonemia and provides an alternative energy substrate to glucose in the brain Caprylidene is processed in the gut, resulting in medium-chain fatty acids that pass to the liver and undergo obligate oxidation, ultimately being formed into ketone bodies (acetoacetate and betahydroxybutyric acid (BHB)) Ketone bodies cross the blood–brain barrier and are taken up by neurons and enter the mitochondria, where they increase mitochondrial efficiency Ketone bodies also generate ATP and increase pools of acetyl-CoA and acetylcholine",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "382",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Carbamazepine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Carbamazepine",
+    "base_fact": "✽ Acts as a use-dependent blocker of voltage-sensitive sodium channels ✽ Interacts with the open channel conformation of voltage-sensitive sodium channels ✽ Interacts at a specific site of the alpha pore-forming subunit of voltage-sensitive sodium channels Inhibits release of glutamate",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "392",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Cariprazine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Cariprazine",
+    "base_fact": "✽ Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when dopamine concentrations are high, thus improving positive symptoms and mediating antipsychotic actions Theoretically increases dopamine output when dopamine concentrations are low, thus improving cognitive, negative, and mood symptoms Preferentially binds to dopamine 3 over dopamine 2 receptors at low doses; the clinical significance is unknown but could theoretically contribute to cariprazine’s efficacy for negative symptoms. D3 partial agonism could theoretically be useful for treating cognition, mood, emotions, and reward/substance use Interactions at a myriad of other neurotransmitter receptors may contribute to cariprazine’s efficacy Cariprazine also has high affinity for the serotonin 1A (partial agonist) and 2B (antagonist) receptors Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "411",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Chlordiazepoxide",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Chlordiazepoxide",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibits neuronal activity presumably in amygdala-centered fear circuits to provide therapeutic benefits in anxiety disorders",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "436",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Chlorpromazine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Chlorpromazine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and improving other behaviors Combination of dopamine D2, histamine H1, and cholinergic M1 blockade in the vomiting center may reduce nausea and vomiting",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "450",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Citalopram",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Citalopram",
+    "base_fact": "Boosts neurotransmitter serotonin Blocks serotonin reuptake pump (serotonin transporter) Desensitizes serotonin receptors, especially serotonin 1A autoreceptors Presumably increases serotonergic neurotransmission ✽ Citalopram also has mild antagonist actions at H1 histamine receptors ✽ Citalopram’s inactive R enantiomer may interfere with the therapeutic actions of the active S enantiomer at serotonin reuptake pumps",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "469",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Clomipramine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Clomipramine",
+    "base_fact": "Boosts neurotransmitters serotonin and norepinephrine/noradrenaline Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Presumably desensitizes both serotonin 1A receptors and beta adrenergic receptors Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, clomipramine can increase dopamine neurotransmission in this part of the brain",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "487",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Clonazepam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Clonazepam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibits neuronal activity presumably in amygdala-centered fear circuits to provide therapeutic benefits in anxiety disorders Inhibitory actions in cerebral cortex may provide therapeutic benefits in seizure disorders",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "509",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Clonidine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Clonidine",
+    "base_fact": "For ADHD, theoretically has central actions on postsynaptic alpha 2 receptors in the prefrontal cortex For hypertension, stimulates alpha 2 adrenergic receptors in the brain stem, reducing sympathetic outflow from the CNS and decreasing peripheral resistance, renal vascular resistance, heart rate, and blood pressure An imidazoline, so also interacts at imidazoline receptors",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "526",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Clorazepate",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Clorazepate",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibits neuronal activity presumably in amygdala-centered fear circuits to provide therapeutic benefits in anxiety disorders",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "544",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Clozapine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Clozapine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to clozapine’s efficacy ✽ Specifically, interactions at 5HT2C and 5HT1A receptors may contribute to efficacy for cognitive and affective symptoms in some patients Mechanism of efficacy for psychotic patients who do not respond to other antipsychotics is unknown but is presumed to be a mechanism other than D2 antagonism",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "558",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Cyamemazine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Cyamemazine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis ✽ Although classified as a conventional antipsychotic, cyamemazine is a potent serotonin 2A antagonist Affinity at a myriad of other neurotransmitter receptors may contribute to cyamemazine’s efficacy ✽ Specifically, antagonist actions at 5HT2C receptors may contribute to notable anxiolytic effects in many patients 5HT2C antagonist actions may also contribute to antidepressant actions in severe depression and to improvement of cognitive and negative symptoms of schizophrenia in some patients",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "590",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Desipramine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Desipramine",
+    "base_fact": "Boosts neurotransmitter norepinephrine/noradrenaline Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, desipramine can thus increase dopamine neurotransmission in this part of the brain A more potent inhibitor of norepinephrine reuptake pump than serotonin reuptake pump (serotonin transporter) At high doses may also boost neurotransmitter serotonin and presumably increase serotonergic neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "609",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Desvenlafaxine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Desvenlafaxine",
+    "base_fact": "Boosts neurotransmitters serotonin, norepinephrine/noradrenaline, and dopamine Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Desensitizes both serotonin 1A receptors and beta adrenergic receptors Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, desvenlafaxine can increase dopamine neurotransmission in this part of the brain",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "630",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Deutetrabenazine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Deutetrabenazine",
+    "base_fact": "Deutetrabenazine is a selective and reversible inhibitor of the vesicular monoamine transporter 2 (VMAT2), which packages monoamines, including dopamine, into synaptic vesicles of presynaptic neurons in the central nervous system",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "648",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Dextromethorphan",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Dextromethorphan",
+    "base_fact": "Dextromethorphan reduces glutamate neurotransmission through blocking NMDA receptors and by acting as an agonist at sigma 1 receptors Dextromethorphan also has affinity for the serotonin transporter and may therefore modulate serotonin levels Quinidine increases availability of dextromethorphan by inhibiting its metabolism via CYP450 2D6",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "661",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Diazepam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Diazepam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibits neuronal activity presumably in amygdala-centered fear circuits to provide therapeutic benefits in anxiety disorders Inhibiting actions in cerebral cortex may provide therapeutic benefits in seizure disorders Inhibitory actions in spinal cord may provide therapeutic benefits for muscle spasms",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "673",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Disulfiram",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Disulfiram",
+    "base_fact": "Irreversibly inhibits aldehyde dehydrogenase, the enzyme involved in second-stage metabolism of alcohol Alcohol is metabolized to acetaldehyde, which in turn is metabolized by aldehyde dehydrogenase; thus, disulfiram blocks this second-stage metabolism If alcohol is consumed by a patient taking disulfiram, toxic levels of acetaldehyde build up, causing unpleasant side effects This aversive experience ideally leads to negative conditioning, in which patients abstain from alcohol in order to avoid the unpleasant effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "699",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Donepezil",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Donepezil",
+    "base_fact": "✽ Reversibly but noncompetitively inhibits centrally active acetylcholinesterase (AChE), making more acetylcholine available Increased availability of acetylcholine compensates in part for degenerating cholinergic neurons in neocortex that regulate memory Does not inhibit butyrylcholinesterase May release growth factors or interfere with amyloid deposition",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "710",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Dothiepin",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Dothiepin",
+    "base_fact": "Boosts neurotransmitters serotonin and norepinephrine/noradrenaline Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Presumably desensitizes both serotonin 1A receptors and beta adrenergic receptors Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, dothiepin can increase dopamine neurotransmission in this part of the brain",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "725",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Doxepin",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Doxepin",
+    "base_fact": "At antidepressant doses: Boosts neurotransmitters serotonin and norepinephrine/noradrenaline Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Presumably desensitizes both serotonin 1A receptors and beta adrenergic receptors Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, doxepin can thus increase dopamine neurotransmission in this part of the brain May be effective in treating skin conditions because of its strong antihistamine properties At hypnotic doses (3–6 mg/day): Selectively and potently blocks histamine 1 receptors, presumably decreasing wakefulness and thus promoting sleep",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "745",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Duloxetine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Duloxetine",
+    "base_fact": "Boosts neurotransmitters serotonin, norepinephrine/noradrenaline, and dopamine Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Presumably desensitizes both serotonin 1A receptors and beta adrenergic receptors Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, duloxetine can increase dopamine neurotransmission in this part of the brain Weakly blocks dopamine reuptake pump (dopamine transporter), and may increase dopamine neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "769",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Escitalopram",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Escitalopram",
+    "base_fact": "Boosts neurotransmitter serotonin Blocks serotonin reuptake pump (serotonin transporter) Desensitizes serotonin receptors, especially serotonin 1A autoreceptors Presumably increases serotonergic neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "790",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Esketamine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Esketamine",
+    "base_fact": "Esketamine is a nonselective, noncompetitive open channel inhibitor of the NMDA receptor; specifically, it binds to the phencyclidine site of the NMDA receptor This leads to downstream glutamate release and consequent stimulation of other glutamate receptors, including AMPA receptors Theoretically, esketamine may have antidepressant effects because activation of AMPA receptors leads to activation of signal transduction cascades, including mTORC1, and an increase in growth factors such as BDNF that cause the expression of synaptic proteins and an increase in the density of dendritic spines",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "807",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Estazolam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Estazolam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "823",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Eszopiclone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Eszopiclone",
+    "base_fact": "May bind selectively to a subtype of the benzodiazepine receptor, the alpha 1 isoform May enhance GABA inhibitory actions that provide sedative hypnotic effects more selectively than other actions of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "836",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Flibanserin",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Flibanserin",
+    "base_fact": "Sexual dysfunction is theoretically linked to an imbalance in central excitatory and inhibitory sexual signals HSDD hypothetically results from excessive inhibitory signals, inadequate excitatory signals, or a combination of the two Flibanserin hypothetically counteracts this imbalance in HSDD through its ability to both reduce inhibitory signals and enhance excitatory signals Specifically, flibanserin increases the release of dopamine and norepinephrine, which are excitatory sexual signals, and reduces the release of serotonin, an inhibitory sexual signal",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "848",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Flumazenil",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Flumazenil",
+    "base_fact": "Blocks benzodiazepine receptors at GABA-A ligand-gated chloride channel complex, preventing benzodiazepines from binding there",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "860",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Flunitrazepam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Flunitrazepam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "870",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Fluoxetine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Fluoxetine",
+    "base_fact": "Boosts neurotransmitter serotonin Blocks serotonin reuptake pump (serotonin transporter) Desensitizes serotonin receptors, especially serotonin 1A receptors Presumably increases serotonergic neurotransmission ✽ Fluoxetine also has antagonist properties at 5HT2C receptors, which could increase norepinephrine and dopamine neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "885",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Flupenthixol",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Flupenthixol",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "906",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Fluphenazine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Fluphenazine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "922",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Flurazepam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Flurazepam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "945",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Fluvoxamine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Fluvoxamine",
+    "base_fact": "Boosts neurotransmitter serotonin Blocks serotonin reuptake pump (serotonin transporter) Desensitizes serotonin receptors, especially serotonin 1A receptors Presumably increases serotonergic neurotransmission ✽ Fluvoxamine also binds at sigma 1 receptors",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "957",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Gabapentin",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Gabapentin",
+    "base_fact": "Gabapentin is a leucine analog and is transported both into the blood from the gut and also across the blood–brain barrier into the brain from the blood by the system L transport system ✽ Binds to the alpha 2 delta subunit of voltage-sensitive calcium channels This closes N and P/Q presynaptic calcium channels, diminishing excessive neuronal activity and neurotransmitter release Although structurally related to gamma-aminobutyric acid (GABA), no known direct actions on GABA or its receptors",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "977",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Galantamine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Galantamine",
+    "base_fact": "✽ Reversibly and competitively inhibits centrally active acetylcholinesterase (AChE), making more acetylcholine available Increased availability of acetylcholine compensates in part for degenerating cholinergic neurons in neocortex that regulate memory ✽ Modulates nicotinic receptors, which enhances actions of acetylcholine Nicotinic modulation may also enhance the actions of other neurotransmitters by increasing the release of dopamine, norepinephrine, serotonin, GABA, and glutamate Does not inhibit butyrylcholinesterase May release growth factors or interfere with amyloid deposition",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "996",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Guanfacine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Guanfacine",
+    "base_fact": "For ADHD, theoretically has central actions on postsynaptic alpha 2A receptors in the prefrontal cortex Guanfacine is 15–20 times more selective for alpha 2A receptors than for alpha 2B or alpha 2C receptors The prefrontal cortex is thought to be responsible for modulation of working memory, attention, impulse, control, and planning For hypertension, stimulates alpha 2A adrenergic receptors in the brain stem, reducing sympathetic outflow from the CNS and decreasing peripheral resistance, renal vascular resistance, heart rate, and blood pressure",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1012",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Haloperidol",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Haloperidol",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and possibly combative, explosive, and hyperactive behaviors Blocks dopamine 2 receptors in the nigrostriatal pathway, improving tics and other symptoms in Tourette’s syndrome",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1025",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Hydroxyzine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Hydroxyzine",
+    "base_fact": "Blocks histamine 1 receptors",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1049",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Iloperidone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Iloperidone",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Blockade of central alpha 1 adrenergic receptors may contribute to low potential for drug-induced parkinsonism",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1060",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Imipramine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Imipramine",
+    "base_fact": "Boosts neurotransmitters serotonin and norepinephrine/noradrenaline Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Presumably desensitizes both serotonin 1A receptors and beta adrenergic receptors Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, imipramine can increase dopamine neurotransmission in this part of the brain May be effective in treating enuresis because of its anticholinergic properties",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1082",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Isocarboxazid",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Isocarboxazid",
+    "base_fact": "Irreversibly blocks monoamine oxidase (MAO) from breaking down norepinephrine, serotonin, and dopamine This boosts noradrenergic, serotonergic, and dopaminergic neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1101",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Ketamine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Ketamine",
+    "base_fact": "Ketamine is a noncompetitive open channel inhibitor of the NMDA receptor; specifically, it binds to the phencyclidine site of the NMDA receptor This leads to downstream glutamate release and consequent stimulation of other glutamate receptors, including AMPA receptors Theoretically, ketamine may have antidepressant effects at low (subanesthetic) doses because activation of AMPA receptors leads to activation of signal transduction cascades that cause the expression of synaptic proteins and an increase in the density of dendritic spines Low (subanesthetic) doses also produce analgesia and modulate central sensitization, hyperalgesia, and opioid tolerance",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1111",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Lamotrigine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Lamotrigine",
+    "base_fact": "✽ Acts as a use-dependent blocker of voltage-sensitive sodium channels ✽ Interacts with the open channel conformation of voltage-sensitive sodium channels ✽ Interacts at a specific site of the alpha pore-forming subunit of voltage-sensitive sodium channels Inhibits release of glutamate and asparate",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1126",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Lemborexant",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Lemborexant",
+    "base_fact": "Orexin serves to stabilize and promote wakefulness; lemborexant binds to orexin 1 and orexin 2 receptors, blocking orexin from binding there and thus preventing it from promoting wakefulness",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1149",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Levetiracetam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Levetiracetam",
+    "base_fact": "✽ Binds to synaptic vesicle protein SV2A, which is involved in synaptic vesicle exocytosis Opposes the activity of negative modulators of GABA- and glycinegated currents and partially inhibits N-type calcium currents in neuronal cells",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1161",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Levomilnacipran",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Levomilnacipran",
+    "base_fact": "Boosts neurotransmitters serotonin, norepinephrine/noradrenaline, and dopamine Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Presumably desensitizes both serotonin 1A receptors and beta adrenergic receptors Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, levomilnacipran can increase dopamine neurotransmission in this part of the brain",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1174",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Lisdexamfetamine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Lisdexamfetamine",
+    "base_fact": "✽ Lisdexamfetamine is a prodrug of dextroamphetamine and is thus not active until after it has been absorbed by the intestinal tract and converted to dextroamphetamine (active component) and l-lysine ✽ Once converted to dextroamphetamine, it increases norepinephrine and especially dopamine actions by blocking their reuptake and facilitating their release Enhancement of dopamine and norepinephrine in certain brain regions (e.g., dorsolateral prefrontal cortex) may improve attention, concentration, executive dysfunction, and wakefulness Enhancement of dopamine actions in other brain regions (e.g., basal ganglia) may improve hyperactivity Enhancement of dopamine and norepinephrine in yet other brain regions (e.g., medial prefrontal cortex, hypothalamus) may improve depression, fatigue, and sleepiness",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1190",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Lithium",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Lithium",
+    "base_fact": "Unknown and complex Alters sodium transport across cell membranes in nerve and muscle cells Alters metabolism of neurotransmitters including catecholamines and serotonin ✽ May alter intracellular signaling through actions on second messenger systems Specifically, inhibits inositol monophosphatase, possibly affecting neurotransmission via phosphatidyl inositol second messenger system Also reduces protein kinase C activity, possibly affecting genomic expression associated with neurotransmission Increases cytoprotective proteins, activates signaling cascade utilized by endogenous growth factors, and increases gray matter content, possibly by activating neurogenesis and enhancing trophic actions that maintain synapses",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1209",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Lofepramine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Lofepramine",
+    "base_fact": "Boosts neurotransmitter norepinephrine/noradrenaline Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, lofepramine can increase dopamine neurotransmission in this part of the brain A more potent inhibitor of norepinephrine reuptake pump than serotonin reuptake pump (serotonin transporter) At high doses may also boost neurotransmitter serotonin and presumably increase serotonergic neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1229",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Lofexidine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Lofexidine",
+    "base_fact": "Stimulates alpha 2 adrenergic receptors in the brain stem, reducing sympathetic outflow from the CNS, which in turn results in improvement in withdrawal symptoms",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1248",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Loflazepate",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Loflazepate",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibits neuronal activity presumably in amygdala-centered fear circuits to provide therapeutic benefits in anxiety disorders",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1258",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Lorazepam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Lorazepam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibits neuronal activity presumably in amygdala-centered fear circuits to provide therapeutic benefits in anxiety disorders Inhibitory actions in cerebral cortex may provide therapeutic benefits in seizure disorders",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1274",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Loxapine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Loxapine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis ✽ Although classified as a conventional antipsychotic, loxapine is a potent serotonin 2A antagonist Serotonin 2A antagonist properties might be relevant at low doses, but generally are overwhelmed by high dosing",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1291",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Lumateperone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Lumateperone",
+    "base_fact": "Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Blocks postsynaptic dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Binds as a partial agonist at presynaptic D2 receptors Interactions at a myriad of other neurotransmitter receptors may contribute to lumateperone’s efficacy Binds to D1 receptors, with preclinical data showing D1-dependent activation of AMPA receptors leading to activation of the mTOR pathway, a mechanism that has been associated with antidepressant effects Also has affinity for the serotonin reuptake pump (SERT, serotonin transporter)",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1312",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Lurasidone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Lurasidone",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognition and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to lurasidone’s efficacy Potently blocks serotonin 7 receptors, which may be beneficial for mood, sleep, cognitive impairment, and negative symptoms in schizophrenia, and also in bipolar disorder and major depressive disorder Partial agonist at 5HT1A receptors, and antagonist actions at serotonin 7 and alpha 2A and alpha 2C receptors, which may be beneficial for mood, anxiety, and cognition in a number of disorders Lacks potent actions at dopamine D1, muscarinic M1, and histamine H1 receptors, theoretically suggesting less propensity for inducing cognitive impairment, weight gain, or sedation compared to other agents with these properties",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1331",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Maprotiline",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Maprotiline",
+    "base_fact": "Boosts neurotransmitter norepinephrine/noradrenaline Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, maprotiline can thus increase dopamine neurotransmission in this part of the brain A more potent inhibitor of norepinephrine reuptake pump than serotonin reuptake pump (serotonin transporter) At high doses may also boost neurotransmitter serotonin and presumably increase serotonergic neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1356",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Memantine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Memantine",
+    "base_fact": "✽ Is a low to moderate affinity noncompetitive (open-channel) NMDA receptor antagonist, which binds preferentially to the NMDA receptor-operated cation channels Presumably interferes with the postulated persistent activation of NMDA receptors by excessive glutamate release in Alzheimer disease",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1376",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Methylfolate (L)",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Methylfolate (L)",
+    "base_fact": "Folate is a water-soluble B vitamin (B9) that is essential for cell growth/reproduction, breakdown/utilization of proteins, formation of nucleic acids, and other functions L-methylfolate, or 6-(S)-5-methyl-tetrahydrofolate, is derived from folate and is the form that enters the brain and works directly as a methyl donor and monoamine synthesis modulator That is, it regulates tetrahydrobiopterin (BH4), a critical enzyme cofactor for trimonoamine neurotransmitter synthesis Methyl donor for DNA methylation and thus an epigenetic regulator",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1387",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Methylphenidate (D)",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Methylphenidate (D)",
+    "base_fact": "✽ Increases norepinephrine and especially dopamine actions by blocking their reuptake Enhancement of dopamine and norepinephrine actions in certain brain regions (e.g., dorsolateral prefrontal cortex) may improve attention, concentration, executive function, and wakefulness Enhancement of dopamine actions in other brain regions (e.g., basal ganglia) may improve hyperactivity Enhancement of dopamine and norepinephrine in yet other brain regions (e.g., medial prefrontal cortex, hypothalamus) may improve depression, fatigue, and sleepiness",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1399",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Methylphenidate (D,L)",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Methylphenidate (D,L)",
+    "base_fact": "✽ Increases norepinephrine and especially dopamine actions by blocking their reuptake Enhancement of dopamine and norepinephrine actions in certain brain regions (e.g., dorsolateral prefrontal cortex) may improve attention, concentration, executive function, and wakefulness Enhancement of dopamine actions in other brain regions (e.g., basal ganglia) may improve hyperactivity Enhancement of dopamine and norepinephrine in yet other brain regions (e.g., medial prefrontal cortex, hypothalamus) may improve depression, fatigue, and sleepiness",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1417",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Mianserin",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Mianserin",
+    "base_fact": "Blocks alpha 2 adrenergic presynaptic receptor, thereby increasing norepinephrine neurotransmission This is a novel mechanism independent of norepinephrine reuptake blockade Blocks alpha 2 adrenergic presynaptic receptors but also alpha 1 adrenergic receptors on serotonin neurons, thereby causing little increase in serotonin neurotransmission Blocks 5HT2A, 5HT2C, and 5HT3 serotonin receptors Blocks H1 histamine receptors",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1442",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Midazolam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Midazolam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1456",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Milnacipran",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Milnacipran",
+    "base_fact": "Boosts neurotransmitters serotonin, norepinephrine/noradrenaline, and dopamine Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Presumably desensitizes both serotonin 1A receptors and beta adrenergic receptors ✽ Weak noncompetitive NMDA receptor antagonist (high doses), which may contribute to actions in chronic pain Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, milnacipran can increase dopamine neurotransmission in this part of the brain",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1466",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Mirtazapine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Mirtazapine",
+    "base_fact": "Boosts neurotransmitters serotonin and norepinephrine/noradrenaline Blocks alpha 2 adrenergic presynaptic receptor, thereby increasing norepinephrine neurotransmission Blocks alpha 2 adrenergic presynaptic receptor on serotonin neurons (heteroreceptors), thereby increasing serotonin neurotransmission This is a novel mechanism independent of norepinephrine and serotonin reuptake blockade Blocks 5HT2A, 5HT2C, and 5HT3 serotonin receptors Blocks H1 histamine receptors",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1485",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Moclobemide",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Moclobemide",
+    "base_fact": "Reversibly blocks MAO-A from breaking down norepinephrine, dopamine, and serotonin This boosts noradrenergic and serotonergic neurotransmission MAO-A inhibition predominates unless significant concentrations of monoamines build up (e.g., due to dietary tyramine), in which case MAO-A inhibition is theoretically reversed",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1500",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Modafinil",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Modafinil",
+    "base_fact": "Unknown, but clearly different from classical stimulants such as methylphenidate and amphetamine Binds to and requires the presence of the dopamine transporter; also requires the presence of alpha adrenergic receptors Hypothetically acts as an inhibitor of the dopamine transporter Increases neuronal activity selectively in the hypothalamus ✽ Presumably enhances activity in hypothalamic wakefulness center (TMN, tuberomammillary nucleus) within the hypothalamic sleepwake switch by an unknown mechanism ✽ Activates TMN that release histamine ✽ Activates other hypothalamic neurons that release orexin/hypocretin",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1511",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Molindone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Molindone",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1526",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Nalmefene",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Nalmefene",
+    "base_fact": "Reduces alcohol consumption through modulation of opioid systems, thereby reducing the reinforcing effects of alcohol Blockade of mu opioid receptors prevents the pleasurable effects of alcohol, whereas modulation of the kappa opioid receptors may reduce dysphoria associated with alcohol withdrawal",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1542",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Naltrexone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Naltrexone",
+    "base_fact": "Blocks mu opioid receptors, preventing exogenous opioids from binding there and thus preventing the pleasurable effects of opioid consumption Reduces alcohol consumption through modulation of opioid systems, thereby reducing the reinforcing effects of alcohol",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1554",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Naltrexone/Bupropion",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Naltrexone/Bupropion",
+    "base_fact": "Bupropion increases dopamine and norepinephrine by blocking both the dopamine and the norepinephrine transporters. In the hypothalamus, these 2 neurotransmitters activate POMC neurons, causing the release of proopiomelanocortin (POMC). POMC is then broken down into alpha-melanocyte stimulating hormone, which binds to melanocortin 4 receptors to suppress appetite. However, stimulation of POMC neurons also activates an endogenous opioidmediated negative feedback loop, which mitigates the appetitesuppressing effects. Naltrexone can block mu opioid receptors, thus preventing opioidmediated negative feedback. Such an action would synergize with simultaneous activation of the appetite-suppressing pathway by bupropion. This results in more robust and long-lasting appetite suppression than with either drug alone",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1566",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Nefazodone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Nefazodone",
+    "base_fact": "Blocks serotonin 2A receptors potently Blocks serotonin reuptake pump (serotonin transporter) and norepinephrine reuptake pump (norepinephrine transporter) less potently",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1578",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Nortriptyline",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Nortriptyline",
+    "base_fact": "Boosts neurotransmitter norepinephrine/noradrenaline Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, nortriptyline can increase dopamine neurotransmission in this part of the brain A more potent inhibitor of norepinephrine reuptake pump than serotonin reuptake pump (serotonin transporter) At high doses may also boost neurotransmitter serotonin and presumably increase serotonergic neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1596",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Olanzapine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Olanzapine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to olanzapine’s efficacy ✽ Specifically, antagonist actions at 5HT2C receptors may contribute to efficacy for cognitive and affective symptoms in some patients ✽ 5HT2C antagonist actions plus serotonin reuptake blockade of fluoxetine add to the actions of olanzapine when given as Symbyax (olanzapine/fluoxetine combination)",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1617",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Oxazepam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Oxazepam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibits neuronal activity presumably in amygdala-centered fear circuits to provide therapeutic benefits in anxiety disorders",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1647",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Oxcarbazepine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Oxcarbazepine",
+    "base_fact": "✽ Acts as a use-dependent blocker of voltage-sensitive sodium channels ✽ Interacts with the open channel conformation of voltage-sensitive sodium channels ✽ Interacts at a specific site of the alpha pore-forming subunit of voltage-sensitive sodium channels Inhibits release of glutamate",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1660",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Paliperidone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Paliperidone",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to paliperidone’s efficacy ✽ Serotonin 7 antagonist properties may contribute to antidepressant actions",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1679",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Paroxetine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Paroxetine",
+    "base_fact": "Boosts neurotransmitter serotonin Blocks serotonin reuptake pump (serotonin transporter) Desensitizes serotonin receptors, especially serotonin 1A autoreceptors Presumably increases serotonergic neurotransmission Paroxetine also has mild anticholinergic actions Paroxetine may have mild norepinephrine reuptake blocking actions",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1709",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Perospirone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Perospirone",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms ✽ Interactions at 5HT1A receptors may contribute to efficacy for cognitive and affective symptoms in some patients",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1730",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Perphenazine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Perphenazine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis Combination of dopamine D2, histamine H1, and cholinergic M1 blockade in the vomiting center may reduce nausea and vomiting",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1747",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Phenelzine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Phenelzine",
+    "base_fact": "Irreversibly blocks monoamine oxidase (MAO) from breaking down norepinephrine, serotonin, and dopamine This boosts noradrenergic, serotonergic, and dopaminergic neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1765",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Phentermine/topiramate",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Phentermine/topiramate",
+    "base_fact": "Phentermine increases dopamine and norepinephrine by blocking both the dopamine and the norepinephrine transporters. In the hypothalamus, these 2 neurotransmitters activate POMC neurons, causing the release of POMC. POMC is then broken down into Î± melanocyte-stimulating hormone, which binds to melanocortin 4 receptors to suppress appetite. However, stimulation of POMC neurons also activates an endogenous opioid-mediated negative feedback loop, which mitigates the appetite-suppressing effects Theoretically, through modulation of voltage-sensitive sodium channels topiramate may reduce glutamatergic stimulation and increase GABAergic inhibition in the appetite-stimulating pathway, resulting in net inhibition of this pathway. Such an action would synergize with simultaneous activation of the appetite-suppressing pathway by phentermine. This results in more robust and longlasting appetite suppression than with either drug alone",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1783",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Pimavanserin",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Pimavanserin",
+    "base_fact": "✽ Antagonism/inverse agonism at 5HT2A receptors Pimavanserin is also an antagonist/inverse agonist at 5HT2C receptors (activity is very low compared to that at 5HT2A receptors)",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1796",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Pimozide",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Pimozide",
+    "base_fact": "Blocks dopamine 2 receptors in the nigrostriatal dopamine pathway, reducing tics in Tourette’s syndrome When used for psychosis, can block dopamine 2 receptors in the mesolimbic dopamine pathway, reducing positive symptoms of psychosis",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1807",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Pipothiazine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Pipothiazine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1824",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Pitolisant",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Pitolisant",
+    "base_fact": "Histamine is a wake-promoting neurotransmitter released from the tuberomammillary nucleus in the hypothalamus Histamine 3 receptors are presynaptic autoreceptors; thus, when histamine binds to these receptors it shuts down further histamine release Antagonism/inverse agonism of histamine 3 receptors by pitolisant therefore disinhibits histamine release, boosting histamine levels in the brain and enhancing wakefulness",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1839",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Prazosin",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Prazosin",
+    "base_fact": "Blocks alpha 1 adrenergic receptors to reduce noradrenergic hyperactivation Stimulation of central noradrenergic receptors during sleep may activate traumatic memories, so blocking this activation may reduce nightmares",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1851",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Pregabalin",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Pregabalin",
+    "base_fact": "Pregabalin is a leucine analog and is transported both into the blood from the gut and also across the blood–brain barrier into the brain by the system L transport system (a sodium-independent transporter) as well as by additional sodium-dependent amino acid transporter systems ✽ Binds to the alpha 2 delta subunit of voltage-sensitive calcium channels This closes N and P/Q presynaptic calcium channels, diminishing excessive neuronal activity and neurotransmitter release Although structurally related to gamma-aminobutyric acid (GABA), no known direct actions on GABA or its receptors",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1862",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Propranolol",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Propranolol",
+    "base_fact": "For migraine, proposed mechanisms include inhibition of the adrenergic pathway, interaction with the serotonin system and receptors, inhibition of nitric oxide synthesis, and normalization of contingent negative variation For tremor, antagonism of peripheral beta 2 receptors is the proposed mechanism For PTSD, blockade of beta 1 adrenergic receptors may theoretically prevent fear conditioning and reconsolidation of fear For violence/aggression, the mechanism is poorly established; presumed to be related to central actions at beta adrenergic and serotonin receptors",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1878",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Protriptyline",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Protriptyline",
+    "base_fact": "Boosts neurotransmitter norepinephrine/noradrenaline Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, protriptyline can increase dopamine neurotransmission in this part of the brain A more potent inhibitor of norepinephrine reuptake pump than serotonin reuptake pump (serotonin transporter) At high doses may also boost neurotransmitter serotonin and presumably increase serotonergic neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1892",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Quazepam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Quazepam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1911",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Quetiapine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Quetiapine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms ✽ Interactions at a myriad of other neurotransmitter receptors may contribute to quetiapine’s efficacy in treatment-resistant depression or bipolar depression, especially 5HT1A partial agonist action, norepinephrine reuptake blockade and 5HT2C antagonist and 5HT7 antagonist properties ✽ Specifically, actions at 5HT1A receptors may contribute to efficacy for cognitive and affective symptoms in some patients, especially at moderate to high doses",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1924",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Ramelteon",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Ramelteon",
+    "base_fact": "Binds selectively to melatonin 1 and melatonin 2 receptors as a full agonist",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1950",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Reboxetine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Reboxetine",
+    "base_fact": "Boosts neurotransmitter norepinephrine/noradrenaline and may also increase dopamine in prefrontal cortex Blocks norepinephrine reuptake pump (norepinephrine transporter) Presumably, this increases noradrenergic neurotransmission Since dopamine is inactivated by norepinephrine reuptake in frontal cortex which largely lacks dopamine transporters, reboxetine can increase dopamine neurotransmission in this part of the brain",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1962",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Risperidone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Risperidone",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to risperidone’s efficacy ✽ Specifically, 5HT7 antagonist properties may contribute to antidepressant actions",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "1977",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Rivastigmine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Rivastigmine",
+    "base_fact": "✽ Pseudoirreversibly inhibits centrally active acetylcholinesterase (AChE), making more acetylcholine available Increased availability of acetylcholine compensates in part for degenerating cholinergic neurons in neocortex that regulate memory ✽ Inhibits butyrylcholinesterase (BuChE) May release growth factors or interfere with amyloid deposition",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2008",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Selegiline",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Selegiline",
+    "base_fact": "Transdermal selegiline (recommended doses): in the brain , irreversibly inhibits both MAO-A and MAO-B from breaking down norepinephrine, serotonin, and dopamine, which boosts noradrenergic, serotonergic, and dopaminergic neurotransmission Transdermal selegiline (recommended doses): in the gut , is a relatively selective irreversible inhibitor of MAO-B (intestine and liver), reducing the chances of dietary interactions Oral: at recommended doses, selectively and irreversibly blocks MAO-B, which presumably boosts dopaminergic neurotransmission Oral: above recommended doses, irreversibly blocks both MAO-A and MAO-B from breaking down norepinephrine, serotonin, and dopamine while simultaneously blocking metabolism of tyramine in the gut Thus, high-dose oral administration is not tissue selective and is not MAO-A sparing in the gut, and may interact with tyramine-containing foods to cause hypertension",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2025",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Sertindole",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Sertindole",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms ✽ Serotonin 2C properties may contribute to antidepressant actions",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2049",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Sertraline",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Sertraline",
+    "base_fact": "Boosts neurotransmitter serotonin Blocks serotonin reuptake pump (serotonin transporter) Desensitizes serotonin receptors, especially serotonin 1A receptors Presumably increases serotonergic neurotransmission ✽ Sertraline also has some ability to block dopamine reuptake pump (dopamine transporter), which could increase dopamine neurotransmission and contribute to its therapeutic actions Sertraline also binds at sigma 1 receptors",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2066",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Sildenafil",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Sildenafil",
+    "base_fact": "PDE-5 is responsible for degradation of cyclic guanosine monophosphate (cGMP); cGMP produces smooth muscle relaxation in the corpus cavernosum and allows inflow of blood Inhibition of PDE-5 causes increased levels of cGMP in the corpus cavernosum, resulting in smooth muscle relaxation and inflow of blood to the corpus cavernosum Sildenafil has no direct relaxant effects on isolated human corpus carvernosum, and at recommended doses has no effect in the absence of sexual stimulation",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2087",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Sodium oxybate",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Sodium oxybate",
+    "base_fact": "Gamma hydroxybutyrate (GHB) is an endogenous putative neurotransmitter synthesized from its parent compound, GABA; sodium oxybate is the sodium salt of GHB and is administered exogenously Has agonist actions at GHB receptors and partial agonist actions at GABA-B receptors Improves slow-wave sleep at night, presumably leaving patients better rested and more alert during the day",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2098",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "solriamfetol",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "solriamfetol",
+    "base_fact": "Boosts neurotransmitters dopamine and norepinephrine/noradrenaline Blocks dopamine reuptake pump (dopamine transporter), presumably increasing dopaminergic neurotransmission in brain regions where the dopamine transporter is present (e.g., striatum) Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing norepinephrine neurotransmission in the prefrontal cortex and throughout the brain Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, solriamfetol can increase dopamine neurotransmission in this part of the brain via its actions on the norepinephrine transporter",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2110",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Sulpiride",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Sulpiride",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis Blocks dopamine 3 and 4 receptors, which may contribute to sulpiride’s actions ✽ Possibly blocks presynaptic dopamine 2 autoreceptors more potently at low doses, which could theoretically contribute to improving negative symptoms of schizophrenia as well as depression",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2121",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Suvorexant",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Suvorexant",
+    "base_fact": "Orexin serves to stabilize and promote wakefulness; suvorexant binds to orexin 1 and orexin 2 receptors, blocking orexin from binding there and thus preventing it from promoting wakefulness",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2138",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Tasimelteon",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Tasimelteon",
+    "base_fact": "Binds selectively to melatonin 1 and melatonin 2 receptors as a full agonist, with greater affinity for melatonin 2 receptors than for melatonin 1 receptors",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2149",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Temazepam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Temazepam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2158",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Thioridazine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Thioridazine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2170",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Thiothixene",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Thiothixene",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2188",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Tiagabine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Tiagabine",
+    "base_fact": "Selectively blocks reuptake of gamma-aminobutyric acid (GABA) by presynaptic and glial GABA transporters",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2204",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Tianeptine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Tianeptine",
+    "base_fact": "✽ Modulates glutamatergic neurotransmission, perhaps through potentiation of AMPA (alpha-amino-3- hydroxy-5-methyl-4isoxazolepropionic acid) receptor function Full agonist at mu opioid receptors; animal studies suggest that this may contribute to its antidepressant effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2219",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Topiramate",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Topiramate",
+    "base_fact": "✽ Blocks voltage-sensitive sodium channels by an unknown mechanism Inhibits release of glutamate Potentiates activity of gamma-aminobutyric acid (GABA) Carbonic anhydrase inhibitor",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2231",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Tranylcypromine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Tranylcypromine",
+    "base_fact": "Irreversibly blocks monoamine oxidase (MAO) from breaking down norepinephrine, serotonin, and dopamine This boosts noradrenergic, serotonergic, and dopaminergic neurotransmission ✽ As the drug is structurally related to amphetamine, it may have some stimulant-like actions due to monoamine release and reuptake inhibition",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2248",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Trazodone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Trazodone",
+    "base_fact": "Blocks serotonin 2A receptors potently Blocks serotonin reuptake pump (serotonin transporter) less potently",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2267",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Triazolam",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Triazolam",
+    "base_fact": "Binds to benzodiazepine receptors at the GABA-A ligand-gated chloride channel complex Enhances the inhibitory effects of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2282",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Trifluoperazine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Trifluoperazine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2296",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Trihexyphenidyl",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Trihexyphenidyl",
+    "base_fact": "Diminishes the excess acetylcholine activity caused by removal of dopamine inhibition when dopamine receptors are blocked May also inhibit the reuptake and storage of dopamine at central dopamine receptors, prolonging dopamine action",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2313",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Triiodothyronine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Triiodothyronine",
+    "base_fact": "Hypothetically boosts monoamine actions in the CNS May work synergistically with traditional antidepressants How Long Until It Works (for Depression) Can work within days, but therapeutic effects may be delayed for up to 8 weeks If It Works (for Depression) The goal of treatment is complete remission of current symptoms as well as prevention of future relapses Treatment most often reduces or even eliminates symptoms, but not a cure since symptoms can recur after medicine stopped Continue treatment until all symptoms are gone (remission) or significantly reduced Once symptoms are gone, continue treating for 1 year for the first episode of depression For second and subsequent episodes of depression, treatment may need to be indefinite If It Doesn’t Work (for Depression) Many patients only have a partial response where some symptoms are improved but others persist (especially insomnia, fatigue, and problems concentrating) Other patients may be nonresponders, sometimes called treatmentresistant or treatment-refractory Some patients who have an initial response may relapse even though they continue treatment, sometimes called “poop-out” Consider switching to another antidepressant or adding a different augmenting agent Consider psychotherapy Consider evaluation for another diagnosis or for a comorbid condition (e.g., medical illness, substance abuse, etc.) Some patients may experience apparent lack of consistent efficacy due to activation of latent or underlying bipolar disorder, and require antidepressant discontinuation and switch to a mood stabilizer Best Augmenting Combos for Partial Response or Treatment Resistance Triiodothyronine is itself an augmenting agent for partial response in depression Tests Periodic assessment of thyroid status Administration of triiodothyronine may lead to mild hyperthyroidism with reduced levels of TSH Side Effects How Drug Causes Side Effects Increases in thyroid hormone concentrations",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2325",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Trimipramine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Trimipramine",
+    "base_fact": "Boosts neurotransmitters serotonin and norepinephrine/noradrenaline Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Presumably desensitizes both serotonin 1A receptors and beta adrenergic receptors Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, trimipramine can increase dopamine neurotransmission in this part of the brain",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2338",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Valbenazine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Valbenazine",
+    "base_fact": "Valbenazine is a selective and reversible inhibitor of the vesicular monoamine transporter 2 (VMAT2), which packages monoamines, including dopamine, into synaptic vesicles of presynaptic neurons in the central nervous system",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2357",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Valproate",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Valproate",
+    "base_fact": "✽ Blocks voltage-sensitive sodium channels by an unknown mechanism Increases brain concentrations of gamma-aminobutyric acid (GABA) by an unknown mechanism",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2368",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Varenicline",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Varenicline",
+    "base_fact": "Causes sustained but small amounts of dopamine release (less than with nicotine) Specifically, as a partial agonist at alpha 4 beta 2 nicotinic acetylcholine receptors, varenicline activates these receptors to a lesser extent than the full agonist nicotine and also prevents nicotine from binding to these receptors Most prominent actions are on mesolimbic dopaminergic neurons in the ventral tegmental area",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2388",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Venlafaxine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Venlafaxine",
+    "base_fact": "Boosts neurotransmitters serotonin, norepinephrine/noradrenaline, and dopamine Blocks serotonin reuptake pump (serotonin transporter), presumably increasing serotonergic neurotransmission Blocks norepinephrine reuptake pump (norepinephrine transporter), presumably increasing noradrenergic neurotransmission Presumably desensitizes both serotonin 1A receptors and beta adrenergic receptors Since dopamine is inactivated by norepinephrine reuptake in frontal cortex, which largely lacks dopamine transporters, venlafaxine can increase dopamine neurotransmission in this part of the brain Weakly blocks dopamine reuptake pump (dopamine transporter), and may increase dopamine neurotransmission",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2400",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Vilazodone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Vilazodone",
+    "base_fact": "Boosts neurotransmitter serotonin Blocks serotonin reuptake pump (serotonin transporter) Desensitizes serotonin receptors, especially serotonin 1A autoreceptors Presumably increases serotonergic neurotransmission Partial agonist actions at presynaptic somatodendritic serotonin 1A autoreceptors may theoretically enhance serotonergic activity and contribute to antidepressant actions Partial agonist actions at postsynaptic serotonin 1A receptors may theoretically diminish sexual dysfunction caused by serotonin reuptake inhibition",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2420",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Vortioxetine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Vortioxetine",
+    "base_fact": "Increases release of several different neurotransmitters (serotonin, norepinephrine, dopamine, glutamate, acetylcholine, and histamine) and reduces the release of GABA through 3 different modes of action Mode 1: blocks serotonin reuptake pump (serotonin transporter) Mode 2: binds to G protein-linked receptors (full agonist at serotonin 1A receptors, partial agonist at serotonin 1B receptors, antagonist at serotonin 1D and serotonin 7 receptors) Mode 3: binds to ion channel-linked receptors (antagonist at serotonin 3 receptors) Full agonist actions at presynaptic somatodendritic serotonin 1A autoreceptors may theoretically enhance serotonergic activity and contribute to antidepressant actions Full agonist actions at postsynaptic serotonin 1A receptors may theoretically diminish sexual dysfunction caused by serotonin reuptake inhibition Antagonist actions at serotonin 3 receptors may theoretically enhance noradrenergic, acetylcholinergic, and glutamatergic activity and contribute to antidepressant and pro-cognitive actions Antagonist actions at serotonin 3 receptors may theoretically reduce nausea and vomiting caused by serotonin reuptake inhibition Antagonist actions at serotonin 7 receptors may theoretically contribute to antidepressant and pro-cognitive actions as well as reduce insomnia caused by serotonin reuptake inhibition Partial agonist actions at serotonin 1B receptors may enhance not only serotonin release, but also acetylcholine and histamine release Antagonist actions at serotonin 1D receptors may enhance serotonin release and may also theoretically enhance the release of procognitive neurotransmitters and thereby enhance pro-cognitive actions",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2438",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Zaleplon",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Zaleplon",
+    "base_fact": "Binds selectively to a subtype of the benzodiazepine receptor, the alpha 1 isoform May enhance GABA inhibitory actions that provide sedative hypnotic effects more selectively than other actions of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2456",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Ziprasidone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Ziprasidone",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to ziprasidone’s efficacy ✽ Specifically, interactions at 5HT2C and 5HT1A receptors may contribute to efficacy for cognitive and affective symptoms in some patients ✽ Specifically, interactions at 5HT1D and 5HT7 receptors and at serotonin and norepinephrine transporters (especially at high doses) may contribute to efficacy for affective symptoms in some patients",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2469",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Zolpidem",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Zolpidem",
+    "base_fact": "Binds selectively to a subtype of the benzodiazepine receptor, the alpha 1 isoform May enhance GABA inhibitory actions that provide sedative hypnotic effects more selectively than other actions of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects CR formulation may allow sufficient drug to persist at receptors to improve total sleep time and to prevent early morning awakenings that can be associated with the immediate-release formulation of zolpidem",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2493",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Zonisamide",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Zonisamide",
+    "base_fact": "Unknown Modulates voltage-sensitive sodium channels by an unknown mechanism Also modulates T-type calcium channels Facilitates dopamine and serotonin release Inhibits carbonic anhydrase",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2507",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Zopiclone",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Zopiclone",
+    "base_fact": "May bind selectively to a subtype of the benzodiazepine receptor, the alpha 1 isoform May enhance GABA inhibitory actions that provide sedative hypnotic effects more selectively than other actions of GABA Boosts chloride conductance through GABA-regulated channels Inhibitory actions in sleep centers may provide sedative hypnotic effects",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2519",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Zotepine",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Zotepine",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to zotepine’s efficacy ✽ Specifically inhibits norepinephrine uptake",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2531",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  },
+  {
+    "drug": "Zuclopenthixol",
+    "field": "what_it_does",
+    "kb_parent_field": "mechanism",
+    "kb_parent_drug": "Zuclopenthixol",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis",
+    "source": {
+      "source_id": "stahl_pg_7th",
+      "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
+    },
+    "page_ref": "2550",
+    "draft": {
+      "plain": "This medicine acts on signalling in the brain. The exact words of the source are kept here so the plain line can be written against them, never instead of them."
+    }
+  }
+]

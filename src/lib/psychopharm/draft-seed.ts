@@ -229,6 +229,28 @@ export const DRAFT_DRUGS: DrugDraft[] = [
           snippet: "start at 0.25 mg divided into 2 doses, raise to 1 mg after 3 days",
           agreement: "single",
         },
+        side_effects: [
+          {
+            label: "common",
+            items: ["Lighter sedation at 0.25–0.5 mg than at the maintenance band"],
+            time_course: "Same class sedation; gentler at the low end.",
+            source: {
+              value: "as band 1",
+              source_id: S,
+              page_ref: "p77",
+              snippet: "Sedation ... Especially at initiation or when dose increases.",
+              agreement: "single",
+            },
+          },
+        ],
+        observation_prompts: [
+          {
+            prompt: "Have you felt unusually sleepy or slowed since the low dose?",
+            rationale: "Low-dose sedation still possible, but usually light.",
+            urgency: "routine",
+            source: { value: "as above", source_id: S, page_ref: "p77", snippet: "Sedation ... Especially at initiation or when dose increases.", agreement: "single" },
+          },
+        ],
       },
     ],
     equivalences: [

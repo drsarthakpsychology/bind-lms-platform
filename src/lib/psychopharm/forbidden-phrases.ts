@@ -80,13 +80,28 @@ export const FORBIDDEN_PHRASES: string[] = [
  * Whether a piece of student-visible content contains any forbidden phrase.
  * Case-insensitive, word-boundary-ish.
  */
+/**
+ * Directives that are VALID when the reader is told NOT to do them, or when
+ * they describe the prescriber's role, but INVALID when aimed at the reader as
+ * an instruction. E.g. "do not prescribe" / "people who do not prescribe" are
+ * the mandated framing; "prescribe X" is forbidden. If a match is immediately
+ * preceded by "do not"/"not"/"never", it is the compliant form and passes.
+ */
+const NEGATION_TOKENS = ["do not", "don't", "not", "never", "must not", "should not", "does not", "shouldn't", "won't"];
+
 export function hasForbiddenPhrase(content: string): string | null {
   const lower = content.toLowerCase();
   for (const phrase of FORBIDDEN_PHRASES) {
-    // Word-boundary check for single verbs like "increase" to avoid
-    // false-positives inside normal prose ("the dose increases the risk...").
     const re = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
-    if (re.test(lower)) return phrase;
+    const match = re.exec(lower);
+    if (!match) continue;
+    // If the token immediately preceding the match is negating, it is the
+    // compliant (education) form. Tolerate trailing whitespace before the match.
+    const before = lower.slice(Math.max(0, match.index - 16), match.index);
+    const trimmedBefore = before.trimEnd();
+    const negated = NEGATION_TOKENS.some((t) => trimmedBefore.endsWith(t));
+    if (negated) continue;
+    return phrase;
   }
   return null;
 }
