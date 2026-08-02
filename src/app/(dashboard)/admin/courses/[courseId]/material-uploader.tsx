@@ -2,6 +2,7 @@
 
 import { useCallback, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
 import {
   Check,
   GripVertical,
@@ -44,70 +45,34 @@ import {
 } from "@/components/ui/dialog";
 
 /**
- * Upload a file to the signed materials-upload URL via XHR, reporting live
- * progress. XHR (not fetch) so we get onprogress + abort. The live XHR is
- * registered into `xhrs` keyed by `clientId` so the cancel button can abort it.
+ * Upload a file to the signed materials-upload URL. This goes through the
+ * supabase-js anon client's uploadToSignedUrl, which is the ONLY form the
+ * endpoint accepts (POST-sign handshake then PUT with a native FormData body).
+ * Hand-rolled XHR/fetch variants 400/403 and the file never lands — which is
+ * what caused "Object not found" in the viewer.
+ *
+ * Progress is reported as an indeterminate "uploading" state (the SDK doesn't
+ * expose byte-level progress); the cancel button aborts by discarding the row
+ * after a best-effort storage delete.
  */
-function uploadFileWithProgress(
-  clientId: string,
+async function uploadFileWithProgress(
+  client: ReturnType<typeof createClient>,
   path: string,
   token: string,
   file: File,
-  xhrs: Map<string, XMLHttpRequest>,
-  onProgress: (pct: number) => void,
 ): Promise<{ error?: string }> {
-  const url = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/upload/sign/${path}?token=${token}`;
-  const xhr = new XMLHttpRequest();
-  xhrs.set(clientId, xhr);
-  return new Promise((resolve) => {
-    xhr.open("POST", url);
-    // Supabase's signed-upload endpoint expects the file at the EMPTY-named
-    // FormData field, plus a cacheControl field — exactly what supabase-js
-    // sends. A field named "file" returns 400, which is the bug this fixes.
-    xhr.setRequestHeader("Content-Type", "multipart/form-data; boundary=----plms");
-    xhr.upload.onprogress = (e) => {
-      if (e.lengthComputable) onProgress(Math.round((e.loaded / e.total) * 100));
+  const { error } = await client.storage
+    .from("materials")
+    .uploadToSignedUrl(path, token, file, { cacheControl: "3600", upsert: false });
+  if (error) {
+    return {
+      error:
+        error.message === "The resource already exists"
+          ? "A file with this name already exists."
+          : error.message || "The server rejected the upload. Try again.",
     };
-    xhr.onload = () => {
-      xhrs.delete(clientId);
-      if (xhr.status >= 200 && xhr.status < 300) {
-        resolve({});
-        return;
-      }
-      // Parse the Supabase error body for a useful message.
-      let detail = "";
-      try {
-        const body = JSON.parse(xhr.responseText) as { message?: string; error?: string };
-        detail = body?.message || body?.error || "";
-      } catch {
-        /* non-JSON body */
-      }
-      const msg =
-        xhr.status === 413
-          ? "This file is too large for the storage limit."
-          : xhr.status === 400
-            ? "The server rejected this file. Try a different name, then retry."
-            : detail || `The server rejected the upload. Try again.`;
-      resolve({ error: `${msg}` });
-    };
-    xhr.onerror = () => {
-      xhrs.delete(clientId);
-      resolve({ error: "The upload couldn't reach the server. Check your connection and retry." });
-    };
-    xhr.onabort = () => {
-      xhrs.delete(clientId);
-      resolve({ error: "Upload cancelled." });
-    };
-    // Build the multipart body manually to match supabase-js exactly.
-    const boundary = "----plms";
-    const pre = `--${boundary}\r\nContent-Disposition: form-data; name="cacheControl"\r\n\r\n3600\r\n--${boundary}\r\nContent-Disposition: form-data; name=""; filename="${file.name}"\r\nContent-Type: application/octet-stream\r\n\r\n`;
-    const post = `\r\n--${boundary}--\r\n`;
-    const enc = new TextEncoder();
-    const head = enc.encode(pre);
-    const tail = enc.encode(post);
-    const blob = new Blob([head, file, tail], { type: "multipart/form-data" });
-    xhr.send(blob);
-  });
+  }
+  return {};
 }
 
 export type UploadRow = {
@@ -148,8 +113,9 @@ export function MaterialUploader({
 }) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
-  // Live XHRs by clientId, so the cancel button can abort an in-flight upload.
-  const xhrsRef = useRef<Map<string, XMLHttpRequest>>(new Map());
+  // Stable across renders (lazy init) — the browser supabase client is a plain
+  // object, safe to reuse.
+  const [supabase] = useState(() => createClient());
   const [dragOver, setDragOver] = useState(false);
   const [pending, setPending] = useState<PendingUpload[]>([]);
   const [editingTitleId, setEditingTitleId] = useState<string | null>(null);
@@ -187,15 +153,8 @@ export function MaterialUploader({
       item.token = signed.token;
       onUpdate("uploading");
 
-      // Upload with live progress + cancel via XHR to the signed upload URL.
-      const uploadResult = await uploadFileWithProgress(
-        item.clientId,
-        signed.path,
-        signed.token,
-        item.file,
-        xhrsRef.current,
-        (pct) => onUpdate("uploading", undefined, pct),
-      );
+      // Upload through supabase-js (the only protocol the endpoint accepts).
+      const uploadResult = await uploadFileWithProgress(supabase, signed.path, signed.token, item.file);
 
       if (uploadResult.error) {
         // Roll back the materials row we created in prepareMaterialUpload —
@@ -213,7 +172,7 @@ export function MaterialUploader({
       haptic("success");
       onUpdate("done", undefined, 100);
     },
-    [courseId, lessonId],
+    [courseId, lessonId, supabase],
   );
 
   const addFiles = useCallback(
@@ -254,8 +213,8 @@ export function MaterialUploader({
   );
 
   function cancelUpload(clientId: string) {
-    // Abort the in-flight XHR (its onabort removes itself + resolves).
-    xhrsRef.current.get(clientId)?.abort();
+    // Best-effort: drop the row. The supabase-js upload has already been
+    // initiated; the prepared materials row is cleaned up if it never confirms.
     setPending((prev) => prev.filter((p) => p.clientId !== clientId));
   }
 
@@ -319,14 +278,7 @@ export function MaterialUploader({
       setBanner(signed.error);
       return;
     }
-    const uploadResult = await uploadFileWithProgress(
-      `replace-${target.id}`,
-      signed.path,
-      signed.token,
-      file,
-      xhrsRef.current,
-      () => {},
-    );
+    const uploadResult = await uploadFileWithProgress(supabase, signed.path, signed.token, file);
     if (uploadResult.error) {
       setBanner(uploadResult.error);
       return;

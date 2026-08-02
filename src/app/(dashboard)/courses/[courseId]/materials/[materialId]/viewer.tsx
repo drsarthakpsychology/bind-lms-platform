@@ -8,6 +8,7 @@ import {
   Pause,
   Play,
   Plus,
+  RotateCcw,
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
@@ -52,6 +53,7 @@ export function MaterialViewer({
 }) {
   const [signedUrl, setSignedUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loadKey, setLoadKey] = useState(0);
 
   // Fetch a signed URL on mount (enrolment re-checked at request time).
   useEffect(() => {
@@ -65,26 +67,45 @@ export function MaterialViewer({
         });
         if (!res.ok) {
           const body = await res.json().catch(() => null);
+          // Raw storage error goes to logs, not the student.
+          console.error("material load failed:", body?.error ?? `HTTP ${res.status}`);
           if (!cancelled) setError(body?.error ?? "Couldn't open this material.");
           return;
         }
         const data = await res.json();
         if (!cancelled) setSignedUrl(data.url);
-      } catch {
+      } catch (e) {
+        console.error("material load failed:", e);
         if (!cancelled) setError("Couldn't open this material.");
       }
     })();
     return () => {
       cancelled = true;
     };
-  }, [materialId]);
+  }, [materialId, loadKey]);
 
   if (error) {
     return (
       <div className="flex h-full items-center justify-center p-8">
-        <div className="max-w-md rounded-md border-2 border-border bg-card p-6 text-center">
-          <p className="text-small font-semibold text-foreground">Couldn&apos;t open this material</p>
-          <p className="mt-1 text-caption text-muted-foreground">{error}</p>
+        <div className="max-w-md space-y-4 rounded-md border-2 border-border bg-card p-6 text-center">
+          <div>
+            <p className="text-small font-semibold text-foreground">Couldn&apos;t open this material</p>
+            <p className="mt-1 text-caption text-muted-foreground">
+              Couldn&apos;t load this file. Retry, or tell your instructor if it keeps failing.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              setError(null);
+              setSignedUrl(null);
+              setLoadKey((k) => k + 1);
+            }}
+            className="inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-medium text-primary-foreground transition-[transform,box-shadow] hover:bg-primary/90 active:translate-y-0.5"
+          >
+            <RotateCcw className="size-4" aria-hidden />
+            Retry
+          </button>
         </div>
       </div>
     );
