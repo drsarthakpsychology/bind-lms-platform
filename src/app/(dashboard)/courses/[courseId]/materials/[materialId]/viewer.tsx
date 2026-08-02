@@ -15,8 +15,6 @@ import {
   ZoomOut,
 } from "lucide-react";
 import { getDocument, GlobalWorkerOptions, type PDFDocumentProxy } from "pdfjs-dist";
-import { init as initPptxPreview } from "pptx-preview";
-import JSZip from "jszip";
 
 // pdf.js worker — pinned to the installed version. Loaded from the same bundle,
 // never from a CDN.
@@ -61,22 +59,25 @@ export function MaterialViewer({
   const [error, setError] = useState<string | null>(null);
   const [loadKey, setLoadKey] = useState(0);
 
-  // Materials proxy-stream through the authenticated route (same transport as
-  // video). The viewer points directly at the proxy URL — enrolment is
-  // re-checked on every request, and no storage URL ever reaches the client.
+  // Fetch a signed URL on mount (enrolment re-checked at request time).
   useEffect(() => {
     let cancelled = false;
-    // HEAD to verify access + get the stream URL. pdf.js/audio/img fetch the
-    // same URL, which streams Range-capable bytes.
     (async () => {
       try {
-        const proxyUrl = `/api/media/materials/${materialId}`;
-        const res = await fetch(proxyUrl, { method: "HEAD" });
+        const res = await fetch("/api/media/materials", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ materialId }),
+        });
         if (!res.ok) {
-          if (!cancelled) setError("Couldn't open this material.");
+          const body = await res.json().catch(() => null);
+          // Raw storage error goes to logs, not the student.
+          console.error("material load failed:", body?.error ?? `HTTP ${res.status}`);
+          if (!cancelled) setError(body?.error ?? "Couldn't open this material.");
           return;
         }
-        if (!cancelled) setSignedUrl(proxyUrl);
+        const data = await res.json();
+        if (!cancelled) setSignedUrl(data.url);
       } catch (e) {
         console.error("material load failed:", e);
         if (!cancelled) setError("Couldn't open this material.");
@@ -138,7 +139,16 @@ export function MaterialViewer({
     case "image":
       return <ImageViewer signedUrl={signedUrl!} title={title} watermarkLabel={watermarkLabel} />;
     case "slides":
-      return <SlidesViewer signedUrl={signedUrl!} title={title} watermarkLabel={watermarkLabel} />;
+      return (
+        <div className="flex h-full items-center justify-center p-8">
+          <div className="max-w-md rounded-md border-2 border-border bg-card p-6 text-center">
+            <p className="text-small font-semibold text-foreground">{title}</p>
+            <p className="mt-1 text-caption text-muted-foreground">
+              Slide decks can&apos;t be previewed in the browser. Ask your instructor for a PDF version of this deck.
+            </p>
+          </div>
+        </div>
+      );
     case "link":
       return (
         <div className="flex h-full items-center justify-center p-8">
@@ -310,185 +320,6 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
       </div>
     </div>
   );
-}
-
-/* ------------------------------------------------------------------ */
-/* Slides — in-browser PPTX render (pptx-preview), no download.        */
-/* Falls back to slide-by-slide TEXT extraction (jszip) if the visual  */
-/* renderer can't handle a deck — every deck still shows content.      */
-/* ------------------------------------------------------------------ */
-function SlidesViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; title: string; watermarkLabel: string }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const previewerRef = useRef<ReturnType<typeof initPptxPreview> | null>(null);
-  const [state, setState] = useState<"loading" | "ready" | "text" | "error">("loading");
-  const [error, setError] = useState<string | null>(null);
-  const [slideCount, setSlideCount] = useState(0);
-  const [current, setCurrent] = useState(1);
-  const [textSlides, setTextSlides] = useState<string[][]>([]);
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    let cancelled = false;
-
-    (async () => {
-      try {
-        // Fetch the deck through the authenticated proxy — the same
-        // download-blocked transport as video/PDF. The ArrayBuffer is what the
-        // renderer needs to draw slides; it never reaches a download path.
-        const res = await fetch(signedUrl);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const buf = await res.arrayBuffer();
-        if (cancelled) return;
-
-        try {
-          const previewer = initPptxPreview(el, { mode: "slide", width: 960, height: 540 });
-          previewerRef.current = previewer;
-          await previewer.preview(buf);
-          if (cancelled) return;
-          setSlideCount(previewer.slideCount || 1);
-          setCurrent(1);
-          setState("ready");
-        } catch (renderErr) {
-          console.warn("pptx visual render failed, falling back to text:", renderErr);
-          // Some decks trip the visual renderer (e.g. unusual shapes). Parse
-          // the PPTX ZIP and show each slide's text so content is never lost.
-          const slides = await extractPptxText(buf);
-          if (cancelled) return;
-          if (slides.length) {
-            setTextSlides(slides);
-            setSlideCount(slides.length);
-            setCurrent(1);
-            setState("text");
-          } else {
-            setError("This slide deck couldn't be rendered.");
-            setState("error");
-          }
-        }
-      } catch (e) {
-        console.error("slides load failed:", e);
-        if (!cancelled) {
-          setError("This slide deck couldn't be loaded.");
-          setState("error");
-        }
-      }
-    })();
-
-    return () => {
-      cancelled = true;
-      previewerRef.current?.destroy();
-      previewerRef.current = null;
-    };
-  }, [signedUrl]);
-
-  const go = (dir: 1 | -1) => {
-    const next = current + dir;
-    if (next < 1 || next > slideCount) return;
-    if (state === "ready") {
-      if (dir === 1) previewerRef.current?.renderNextSlide();
-      else previewerRef.current?.renderPreSlide();
-    }
-    setCurrent(next);
-  };
-
-  if (state === "error") {
-    return (
-      <div className="flex h-full items-center justify-center p-8">
-        <div className="max-w-md rounded-md border-2 border-border bg-card p-6 text-center">
-          <p className="text-small font-semibold text-foreground">{title}</p>
-          <p className="mt-1 text-caption text-muted-foreground">{error}</p>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative flex h-full flex-col">
-      <MaterialWatermark label={watermarkLabel} />
-      <div className="flex items-center justify-between gap-2 border-b-2 border-border bg-card px-3 py-2">
-        <div className="flex items-center gap-1">
-          <button
-            type="button"
-            onClick={() => go(-1)}
-            disabled={current <= 1}
-            aria-label="Previous slide"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
-          >
-            <ChevronLeft className="size-4" aria-hidden />
-          </button>
-          <span className="px-2 text-caption text-muted-foreground">
-            {state === "ready" || state === "text" ? `${current} / ${slideCount}` : "Loading…"}
-          </span>
-          <button
-            type="button"
-            onClick={() => go(1)}
-            disabled={current >= slideCount || (state !== "ready" && state !== "text")}
-            aria-label="Next slide"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
-          >
-            <ChevronRight className="size-4" aria-hidden />
-          </button>
-        </div>
-      </div>
-      <div className="min-h-0 flex-1 overflow-y-auto bg-muted/30">
-        {state === "text" ? (
-          <div className="mx-auto w-full max-w-3xl space-y-4 p-4">
-            {textSlides[current - 1]?.map((line, i) => (
-              <p
-                key={i}
-                className={line.startsWith("@@HEAD@@") ? "text-base font-semibold text-foreground" : "text-sm text-foreground/90"}
-              >
-                {line.startsWith("@@HEAD@@") ? line.slice(8) : line || " "}
-              </p>
-            ))}
-            {state === "text" && slideCount > 1 && (
-              <p className="pt-2 text-caption text-muted-foreground">
-                Text view of this deck (the visual renderer couldn&apos;t display it).
-              </p>
-            )}
-          </div>
-        ) : (
-          <div ref={containerRef} className="mx-auto w-fit p-4" />
-        )}
-        {state === "loading" && (
-          <div className="flex justify-center py-8">
-            <Loader2 className="size-5 animate-spin text-muted-foreground" aria-hidden />
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-/**
- * Extract slide-by-slide text from a PPTX (a ZIP of slide XML). Used as a
- * fallback when the visual renderer can't handle a deck. Returns an array of
- * lines per slide; lines starting with @@HEAD@@ render as headings.
- */
-async function extractPptxText(buf: ArrayBuffer): Promise<string[][]> {
-  const zip = await JSZip.loadAsync(buf);
-  const slides: string[][] = [];
-  let i = 1;
-  for (;;) {
-    const file = zip.file(`ppt/slides/slide${i}.xml`);
-    if (!file) break;
-    const xml = await file.async("string");
-    const lines: string[] = [];
-    // Every <a:t> is a text run. Wrap each paragraph's runs together.
-    const paragraphs = xml.split(/<\/a:p>/g);
-    for (const para of paragraphs) {
-      const runs = [...para.matchAll(/<a:t[^>]*>([\s\S]*?)<\/a:t>/g)].map((m) =>
-        m[1].replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;/g, "'"),
-      );
-      const text = runs.join("").trim();
-      if (text) lines.push(text);
-    }
-    // First non-empty line is a likely heading.
-    if (lines.length && lines[0].length < 80) lines[0] = `@@HEAD@@${lines[0]}`;
-    slides.push(lines);
-    i++;
-  }
-  return slides;
 }
 
 /* ------------------------------------------------------------------ */

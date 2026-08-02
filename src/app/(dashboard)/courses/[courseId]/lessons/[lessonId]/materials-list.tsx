@@ -6,7 +6,6 @@ import {
   FileAudio,
   FileImage,
   FileText,
-  FileType2,
   Link2,
 } from "lucide-react";
 
@@ -15,7 +14,7 @@ import { Button } from "@/components/ui/button";
 export type MaterialItem = {
   id: string;
   title: string;
-  kind: "document" | "slides" | "audio" | "image" | "link";
+  kind: "document" | "audio" | "image" | "link";
   format?: string | null;
   sizeBytes?: number | null;
   url?: string | null;
@@ -23,7 +22,6 @@ export type MaterialItem = {
 
 const KIND_ICONS = {
   document: FileText,
-  slides: FileType2,
   audio: FileAudio,
   image: FileImage,
   link: Link2,

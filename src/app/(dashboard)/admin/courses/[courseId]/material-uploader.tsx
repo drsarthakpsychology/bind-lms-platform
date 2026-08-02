@@ -368,13 +368,13 @@ export function MaterialUploader({
           Drag files here or <span className="text-primary">browse</span>
         </p>
         <p className="text-caption text-muted-foreground">
-          PDF, PPTX, audio (MP3/M4A/WAV), and images. Up to 100 MB each.
+          PDF, audio (MP3/M4A/WAV), and images. Up to 100 MB each.
         </p>
         <input
           ref={inputRef}
           type="file"
           multiple
-          accept=".pdf,.pptx,.mp3,.m4a,.wav,.png,.jpg,.jpeg,.webp"
+          accept=".pdf,.mp3,.m4a,.wav,.png,.jpg,.jpeg,.webp"
           className="hidden"
           onChange={(e) => {
             if (e.target.files?.length) void addFiles(e.target.files);
@@ -588,7 +588,7 @@ export function MaterialUploader({
                 <input
                   key={replaceTarget.id}
                   type="file"
-                  accept=".pdf,.pptx,.mp3,.m4a,.wav,.png,.jpg,.jpeg,.webp"
+                  accept=".pdf,.mp3,.m4a,.wav,.png,.jpg,.jpeg,.webp"
                   className="hidden"
                   onChange={(e) => handleReplace(e, m)}
                 />

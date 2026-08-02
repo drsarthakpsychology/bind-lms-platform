@@ -83,9 +83,8 @@ export const MATERIAL_FORMATS: Record<string, MaterialFormatSpec> = {
     maxBytes: 100 * 1024 * 1024,
     accepted: true,
   },
-  // In-browser PPTX renderer (pptx-preview) added in round 14 — decks now
-  // preview through the same download-blocked proxy as everything else.
-  // Note: the old `.ppt` binary format has no browser renderer; only .pptx.
+  // PowerPoint is intentionally NOT supported — no browser renderer for it.
+  // Students use PDF instead. Both .ppt and .pptx are rejected at upload.
   ppt: {
     ext: "ppt",
     mimeTypes: ["application/vnd.ms-powerpoint"],
@@ -93,7 +92,7 @@ export const MATERIAL_FORMATS: Record<string, MaterialFormatSpec> = {
     maxBytes: 100 * 1024 * 1024,
     accepted: false,
     rejectionReason:
-      "Legacy .ppt files can't be previewed in the browser. Save the deck as .pptx (or PDF) and upload that instead.",
+      "PowerPoint isn't supported. Export the deck as a PDF and upload that instead.",
   },
   pptx: {
     ext: "pptx",
@@ -103,7 +102,9 @@ export const MATERIAL_FORMATS: Record<string, MaterialFormatSpec> = {
     ],
     kind: "document",
     maxBytes: 100 * 1024 * 1024,
-    accepted: true,
+    accepted: false,
+    rejectionReason:
+      "PowerPoint isn't supported. Export the deck as a PDF and upload that instead.",
   },
 };
 
