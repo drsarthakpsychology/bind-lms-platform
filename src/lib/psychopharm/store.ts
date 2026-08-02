@@ -117,7 +117,7 @@ export function drugDetail(drug: string): DrugDetail | null {
   const asRow = (k: string) => kb.find((r) => r.field_key === k)?.value;
   const curated = DRAFT_DRUGS.find((d) => d.generic_name === drug);
 
-  const bands: BandView[] = (curated?.bands ?? []).map((b) => ({
+  const curatedBands: BandView[] = (curated?.bands ?? []).map((b) => ({
     low: b.range_low ?? null,
     high: b.range_high ?? null,
     unit: b.unit,
@@ -126,6 +126,23 @@ export function drugDetail(drug: string): DrugDetail | null {
     is_typical_starting: b.is_typical_starting,
     is_standard_maintenance: b.is_standard_maintenance,
   }));
+
+  // Honest fallback (G2/G3): when the sources give a dose range but the
+  // curator had not split it into functional bands, render the sourced range as
+  // a single rung labelled as "typical ranges in our sources". We never invent
+  // band boundaries the sources don't draw (Rule 16/18).
+  let bands = curatedBands;
+  if (!bands.length && asRow("dose_range")) {
+    bands = [
+      {
+        low: null,
+        high: null,
+        unit: "mg",
+        band_label: "Typical ranges in our sources (not yet split into dose bands)",
+        primary_purpose: undefined,
+      },
+    ];
+  }
 
   const srcId = curated ? curated.bands[0]?.source_ref.source_id ?? "stahl_pg_7th" : "stahl_pg_7th";
   return {
