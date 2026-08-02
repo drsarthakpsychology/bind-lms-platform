@@ -71,5 +71,42 @@ export class R2MediaProvider implements MediaProvider {
   }
 }
 
+/** Fetch an R2 object's full text (used by the stream proxy for playlists). */
+export async function getObjectTextR2(
+  bucket: string,
+  key: string,
+): Promise<string | null> {
+  const client = makeR2Client();
+  const obj = await client.send(new GetObjectCommand({ Bucket: bucket, Key: key }));
+  if (!obj.Body) return null;
+  return await obj.Body.transformToString();
+}
+
+/** Fetch an R2 object's full bytes (used by the stream proxy to encrypt segments). */
+export async function getObjectBufferR2(
+  bucket: string,
+  key: string,
+): Promise<Buffer | null> {
+  const client = makeR2Client();
+  const obj = await client.send(new GetObjectCommand({ Bucket: bucket, Key: key }));
+  if (!obj.Body) return null;
+  const bytes = await obj.Body.transformToByteArray();
+  return Buffer.from(bytes);
+}
+
+function makeR2Client(): S3Client {
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const accessKeyId = process.env.R2_ACCESS_KEY_ID;
+  const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
+  if (!accountId || !accessKeyId || !secretAccessKey) {
+    throw new Error("R2 env vars not set.");
+  }
+  return new S3Client({
+    region: "auto",
+    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
+    credentials: { accessKeyId, secretAccessKey },
+  });
+}
+
 // Re-exported for the publish/upload scripts.
 export { S3Client, GetObjectCommand, PutObjectCommand, DeleteObjectCommand };

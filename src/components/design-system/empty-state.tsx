@@ -40,7 +40,7 @@ export function EmptyState({
         <div className="min-w-0 flex-1">
           <h3 className="text-small font-semibold text-foreground">{title}</h3>
           {description ? (
-            <p className="truncate text-caption text-muted-foreground">{description}</p>
+            <p className="text-caption text-muted-foreground">{description}</p>
           ) : null}
         </div>
         {action ? <div className="shrink-0">{action}</div> : null}

@@ -113,7 +113,11 @@ export function probeVideo(src: string): { duration: number; width: number; heig
   return { duration, width: s.width, height: s.height };
 }
 
-function encodeRung(src: string, rung: (typeof LADDER)[number], dir: string): Promise<void> {
+function encodeRung(
+  src: string,
+  rung: (typeof LADDER)[number],
+  dir: string,
+): Promise<void> {
   return new Promise((resolvePromise, reject) => {
     mkdirSync(dir, { recursive: true });
     const args = [
@@ -161,8 +165,19 @@ export function writeMaster(workdir: string) {
   return master;
 }
 
-export async function encodeHls(src: string, workdir: string): Promise<{ files: string[]; totalBytes: number }> {
-  // One ffmpeg pass per rung (reliable, inspectable), then a master playlist.
+/**
+ * Encode the HLS ladder. Segments are stored PLAINTEXT in R2 — the stream
+ * proxy re-encrypts each segment per-session on delivery (AES-128-CBC with a
+ * key derived from the stream token). So at-rest, R2 holds individual 6s .ts
+ * fragments (not a complete file), and the only key in the system is served
+ * to an authorized session.
+ *
+ * Returns the generated files and total bytes.
+ */
+export async function encodeHls(
+  src: string,
+  workdir: string,
+): Promise<{ files: string[]; totalBytes: number }> {
   for (const rung of LADDER) {
     await encodeRung(src, rung, join(workdir, `hls_${rung.height}`));
   }
@@ -286,11 +301,13 @@ async function main() {
 
   if (dryRun) {
     console.log(`\n✅ DRY RUN — nothing uploaded. Encoded size: ${(totalBytes / 1e6).toFixed(1)} MB`);
-    console.log("   (a 2-hour lecture at this ladder is typically 2.5–4 GB)");
+    console.log("   (Segments are encrypted per-session at delivery by the stream proxy)");
     process.exit(0);
   }
 
-  // Upload to R2.
+  // Upload to R2. Segments are stored plaintext — the stream proxy re-encrypts
+  // each per-session on delivery. At-rest, R2 holds individual .ts fragments,
+  // not a complete file.
   const { client, bucket } = makeS3();
   const keyPrefix = `lessons/${lesson}/hls`;
   console.log(`⬆️  Uploading to R2: ${bucket}/${keyPrefix}/ …`);
@@ -303,7 +320,8 @@ async function main() {
   }
   console.log(`  uploaded ${uploaded} new objects`);
 
-  // master.m3u8 references the rung subdirs; the API returns a signed URL to it.
+  // master.m3u8 references the rung subdirs; the proxy serves it through the
+  // stream session token.
   const masterPlaylist = `${keyPrefix}/master.m3u8`;
 
   console.log("💾 Recording media_assets row …");

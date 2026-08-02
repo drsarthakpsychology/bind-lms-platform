@@ -1,8 +1,5 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element -- material images are signed,
-   per-request URLs that can't be routed through next/image's optimizer. */
-
 import Link from "next/link";
 import {
   ExternalLink,

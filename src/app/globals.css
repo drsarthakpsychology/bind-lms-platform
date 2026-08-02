@@ -219,13 +219,24 @@
   position: absolute;
   z-index: 2147483000;
   width: max-content;
-  max-width: calc(100% - 1.5rem);
+  max-width: calc(100% - 1rem);
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
   will-change: top, left, opacity, transform;
   transition: top 3s linear, left 3s linear, opacity 2s ease, font-size 2s ease,
     transform 3s linear;
+}
+
+/* One line, always. Font scales to the frame; the trailing IP truncates with
+   an ellipsis rather than wrapping onto a second line. */
+.plms-watermark-label {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(9px, 2.8vw, 14px);
+  line-height: 1.2;
 }
 
 @media (prefers-reduced-motion: reduce) {

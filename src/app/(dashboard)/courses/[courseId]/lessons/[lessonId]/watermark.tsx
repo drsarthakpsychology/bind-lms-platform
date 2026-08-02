@@ -120,7 +120,7 @@ export function Watermark({
       ref={nodeRef}
       aria-hidden="true"
       data-testid="plms-watermark"
-      className="plms-watermark font-medium text-white"
+      className="plms-watermark plms-watermark-label font-medium text-white"
       style={{
         top: "6%",
         left: "4%",

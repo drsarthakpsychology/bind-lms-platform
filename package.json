@@ -11,6 +11,7 @@
     "migrate-supabase-to-r2": "tsx scripts/migrate-supabase-to-r2.ts",
     "restore": "tsx scripts/restore.ts",
     "verify-backup": "tsx scripts/verify-backup.ts",
+    "verify-r2": "tsx scripts/verify-r2.ts",
     "setup": "tsx scripts/setup.ts",
     "doctor": "tsx scripts/doctor.ts",
     "test": "vitest run",

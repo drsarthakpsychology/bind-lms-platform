@@ -53,3 +53,26 @@ export class SupabaseMediaProvider implements MediaProvider {
     }
   }
 }
+
+/** Fetch a Supabase Storage object's full text (used by the stream proxy for playlists). */
+export async function getObjectTextSupabase(
+  bucket: string,
+  key: string,
+): Promise<string | null> {
+  const admin = createAdminClient();
+  const { data, error } = await admin.storage.from(bucket).download(key);
+  if (error || !data) throw new Error(error?.message ?? "Supabase download failed");
+  return await data.text();
+}
+
+/** Fetch a Supabase Storage object's full bytes (used by the stream proxy to encrypt segments). */
+export async function getObjectBufferSupabase(
+  bucket: string,
+  key: string,
+): Promise<Buffer | null> {
+  const admin = createAdminClient();
+  const { data, error } = await admin.storage.from(bucket).download(key);
+  if (error || !data) throw new Error(error?.message ?? "Supabase download failed");
+  const bytes = await data.arrayBuffer();
+  return Buffer.from(bytes);
+}

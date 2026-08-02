@@ -14,14 +14,28 @@ constraint to revisit.
 4. **No pagination** on lists — fine at small scale, needed before growth.
 
 ## Media / DRM
-5. **Browser content cannot be made impossible to capture.** Signed URLs,
-   no-download controls, PiP disable, and the dynamic watermark are practical
-   deterrents, not DRM. A determined user can screen-record.
-6. **Signed video URL window is 30 minutes** — long enough to be shared if a
-   student extracts it mid-session. Per-user-bound short URLs or HLS tokens are
-   a future hardening step.
+5. **Browser content cannot be made impossible to capture.** Segment proxy,
+   AES-128 encryption, no-download controls, PiP disable, and the dynamic
+   watermark are practical deterrents, not DRM. A determined technical user can
+   still fetch the decryption key and reassemble the segments. DRM (Widevine/
+   FairPlay) is the only real answer and is not enabled.
+6. **Video now streams through an authenticated proxy, not a direct file.**
+   R2 delivers segmented HLS; the stream proxy (`/api/media/stream/:lesson`)
+   re-checks a 5-minute viewer-bound HMAC token + enrolment on every request,
+   rewrites playlists to proxy URLs, and serves the AES-128 key only to
+   authorized viewers. Existing assets without `--encrypt` are unencrypted but
+   still proxy-gated. No storage key or signed URL reaches the browser.
 7. **Native `<video>` controls** are browser-provided; their exact keyboard/ARIA
    behavior is not fully controllable.
+8. **The rate limiter is per-process** (in-memory). Across multiple serverless
+   instances the quota multiplies. Swap for a shared store (Upstash/Redis) at
+   scale.
+9. **No token-issuance audit table yet** — round 8's plan included one; it's a
+   follow-up, not shipped.
+10. **The stream proxy fetches objects server-side** (R2/S3 or Supabase
+    Storage) and streams them back — this adds a hop versus a CDN edge. At
+    large scale, a Cloudflare Worker or `R2_PUBLIC_URL` cache in front would
+    reduce origin load.
 
 ## Infrastructure
 8. **Supabase pending migrations** (`assignment_multi_submission_types.sql`,

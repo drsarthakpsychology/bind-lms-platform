@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { AppSidebar, type SidebarMode } from "@/components/navigation/app-sidebar";
 import { MobileNav } from "@/components/navigation/mobile-nav";
+import { MobileBarVisibility } from "@/components/navigation/mobile-bar-visibility";
 import { SidebarGate } from "@/components/navigation/sidebar-gate";
 import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
 import { BRAND } from "@/lib/brand";
@@ -62,22 +63,25 @@ export function AppShell({
         </div>
       </div>
 
-      {/* Mobile top bar */}
-      <div
-        className="flex min-h-14 items-center justify-between border-b-2 border-border bg-card px-4 lg:hidden"
-        style={{ paddingTop: "env(safe-area-inset-top)" }}
-      >
-        <Link
-          href={mode === "admin" && role === "admin" ? "/admin" : "/dashboard"}
-          className="flex items-center gap-2 font-bold tracking-tight"
+      {/* Mobile top bar — hidden on inner student pages so there's one header
+          row (the page's back control). Round 9 drill-down on mobile. */}
+      <MobileBarVisibility role={role} mode={mode}>
+        <div
+          className="flex min-h-14 items-center justify-between border-b-2 border-border bg-card px-4 lg:hidden"
+          style={{ paddingTop: "env(safe-area-inset-top)" }}
         >
-          <span className="flex size-6 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground">
-            {BRAND.shortName.charAt(0)}
-          </span>
-          <span className="text-base">{BRAND.shortName}</span>
-        </Link>
-        <MobileNav items={items} viewModeSwitch={viewModeSwitch} />
-      </div>
+          <Link
+            href={mode === "admin" && role === "admin" ? "/admin" : "/dashboard"}
+            className="flex items-center gap-2 font-bold tracking-tight"
+          >
+            <span className="flex size-6 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground">
+              {BRAND.shortName.charAt(0)}
+            </span>
+            <span className="text-base">{BRAND.shortName}</span>
+          </Link>
+          <MobileNav items={items} viewModeSwitch={viewModeSwitch} />
+        </div>
+      </MobileBarVisibility>
 
       <main className="min-w-0 flex-1">
         <div

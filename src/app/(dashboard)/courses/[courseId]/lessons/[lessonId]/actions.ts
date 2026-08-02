@@ -3,62 +3,10 @@
 import { redirect } from "next/navigation";
 import { requireSession } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { getMediaProvider } from "@/lib/media/provider";
 
 export type PlaybackResult =
   | { ok: true; url: string; resumeSeconds: number }
   | { ok: false; error: string };
-
-export async function getPlaybackUrl(lessonId: string): Promise<PlaybackResult> {
-  const profile = await requireSession();
-  if (!profile) return { ok: false, error: "Not signed in." };
-
-  // Enrollment + publish re-check at request time (admin bypasses). A
-  // non-enrolled student gets no video URL even with a valid session.
-  const { canAccessLesson } = await import("@/lib/enrollment");
-  const access = await canAccessLesson(lessonId);
-  if (!access.ok) {
-    return { ok: false, error: "This course isn't available to you." };
-  }
-
-  const supabase = await createClient();
-  const { data: lesson } = await supabase
-    .from("lessons")
-    .select("id, video_storage_path, media_assets(master_playlist, key_prefix)")
-    .eq("id", lessonId)
-    .single();
-
-  if (!lesson) {
-    return { ok: false, error: "This lesson has no video yet." };
-  }
-
-  // Prefer the HLS master playlist (R2 migration done); fall back to the
-  // legacy raw video path (still on Supabase Storage).
-  const media = Array.isArray(lesson.media_assets)
-    ? lesson.media_assets[0]
-    : lesson.media_assets;
-  const key = media?.master_playlist ?? media?.key_prefix ?? lesson.video_storage_path;
-
-  if (!key) {
-    return { ok: false, error: "This lesson has no video yet." };
-  }
-
-  const provider = getMediaProvider();
-  const result = await provider.getPlaybackUrl(key, 60 * 60); // 60 minutes
-
-  if (!result.ok) {
-    return { ok: false, error: result.error };
-  }
-
-  const { data: progress } = await supabase
-    .from("progress")
-    .select("watched_seconds")
-    .eq("user_id", profile.id)
-    .eq("lesson_id", lessonId)
-    .maybeSingle();
-
-  return { ok: true, url: result.url, resumeSeconds: progress?.watched_seconds ?? 0 };
-}
 
 /**
  * Called every 10 seconds during playback, so this stays as light as

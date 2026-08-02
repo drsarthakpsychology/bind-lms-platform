@@ -1,22 +1,34 @@
 import { NextResponse } from "next/server";
 import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
-import { getMediaProvider } from "@/lib/media/provider";
+import { mintStreamToken } from "@/lib/media/stream-token";
 import { rateLimit } from "@/lib/rate-limit";
 
 /**
  * POST /api/media/playback
  * Body: { lessonId: string }
  *
- * Mints a short-lived (60 min) signed URL for a lesson's master HLS playlist,
- * after checking the caller is a signed-in user who can see that course
- * (published, or an admin previewing). The provider is selected by config
- * (Supabase Storage today, Cloudflare R2 after migration).
- *
- * This endpoint is rate-limited at the proxy/edge layer (see C4) and must
- * never leak raw storage keys — it returns only a signed URL.
+ * Returns a short-lived STREAM SESSION TOKEN plus the stream-proxy base. The
+ * player never receives a raw storage URL — it passes the token to the stream
+ * proxy, which resolves the actual object server-side after re-checking
+ * enrolment. This is the round-8 "no downloadable file / no reusable URL"
+ * end state:
+ *   - Same-origin gate (Origin/Referer vs the app origin).
+ *   - Token bound to (user, lesson, course), HMAC-signed, 5-min TTL.
+ *   - Rate-limited per user and per IP.
+ *   - The stream proxy serves playlist + segments + AES-128 key.
  */
 export async function POST(request: Request) {
+  // Same-origin gate. Origin is authoritative when present; Referer is a
+  // fallback for clients that don't send Origin (older Safari GETs).
+  const origin = request.headers.get("origin");
+  const referer = request.headers.get("referer");
+  const appOrigin = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+  const requestOrigin = origin ?? (referer ? new URL(referer).origin : null);
+  if (requestOrigin && requestOrigin !== appOrigin) {
+    return NextResponse.json({ error: "Forbidden origin." }, { status: 403 });
+  }
+
   let lessonId: string;
   try {
     const body = (await request.json()) as { lessonId?: string };
@@ -62,7 +74,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Lesson not found." }, { status: 404 });
   }
 
-  // Determine the storage key to sign:
+  // Determine the storage key to serve:
   //  - If a media_assets row exists (R2 migration done), use its master playlist.
   //  - Otherwise fall back to the legacy raw video path.
   const media = Array.isArray(lesson.media_assets)
@@ -75,12 +87,34 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "This lesson has no media." }, { status: 404 });
   }
 
-  const provider = getMediaProvider();
-  const result = await provider.getPlaybackUrl(key, 60 * 60); // 60 minutes
+  // Resume position for this viewer (may be 0). Read alongside minting so the
+  // player gets everything from one request.
+  const { data: progress } = await supabase
+    .from("progress")
+    .select("watched_seconds")
+    .eq("user_id", profile.id)
+    .eq("lesson_id", lessonId)
+    .maybeSingle();
 
-  if (!result.ok) {
-    return NextResponse.json({ error: result.error }, { status: 500 });
+  const courseId = access.courseId;
+  if (!courseId) {
+    return NextResponse.json({ error: "Not authorized." }, { status: 403 });
   }
 
-  return NextResponse.json({ url: result.url, expiresIn: 3600, key: key.split("/").pop() });
+  // Mint the viewer-bound stream token. No storage key, no signed URL — the
+  // proxy resolves the object server-side.
+  const token = mintStreamToken({
+    userId: profile.id,
+    lessonId,
+    courseId,
+  });
+
+  return NextResponse.json({
+    token,
+    // The player asks for a lesson's stream by id + token; the proxy resolves
+    // the object path server-side, so no storage key ever reaches the client.
+    streamUrl: `/api/media/stream/${lessonId}`,
+    expiresIn: 300,
+    resumeSeconds: progress?.watched_seconds ?? 0,
+  });
 }

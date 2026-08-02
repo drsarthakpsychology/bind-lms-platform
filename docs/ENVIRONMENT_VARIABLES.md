@@ -44,14 +44,40 @@ The placeholder template is in **`.env.example`**.
 | **⚠️ Important** | This key **bypasses all security**. Never put it in a file that reaches the browser, never prefix it with `NEXT_PUBLIC_`, never paste it into GitHub issues or chat. It goes only in `.env.local` and Vercel's secret settings |
 | **Where used** | `src/lib/supabase/server.ts` (`createAdminClient`) |
 
+### 4. Cloudflare R2 — video delivery
+
+| | |
+| --- | --- |
+| **What they are** | Credentials for the R2 bucket that stores lesson HLS |
+| **Why they exist** | R2 is the video delivery backend (segmented + optionally AES-128 encrypted HLS) |
+| **Required?** | **Yes** once a lesson has a `media_assets` row with `provider = 'r2'` |
+| **Where to get them** | Cloudflare dashboard → R2 → Manage R2 API Tokens |
+
+| Variable | Format | Used for |
+| --- | --- | --- |
+| `CLOUDFLARE_ACCOUNT_ID` | hex string (dashboard sidebar) | R2 S3 endpoint |
+| `R2_ACCESS_KEY_ID` | long hex | R2 auth |
+| `R2_SECRET_ACCESS_KEY` | long hex, shown once | R2 auth (secret) |
+| `R2_BUCKET_NAME` | e.g. `plms-videos` | object bucket |
+| `R2_BACKUP_BUCKET` | e.g. `plms-backups` | nightly DB dumps |
+
+### 5. `NEXT_PUBLIC_APP_URL`
+
+| | |
+| --- | --- |
+| **What it is** | The canonical origin of the deployed app (scheme + host, no trailing slash) |
+| **Why it exists** | The same-origin gate on the media-token endpoints. Only requests whose `Origin`/`Referer` matches this are accepted |
+| **Required?** | **Yes** for media playback to work |
+| **Where to get it** | Your production domain, e.g. `https://bind-lms-platform.vercel.app` |
+
 ---
 
 ## Where each environment variable must be configured
 
 | Location | Which variables |
 | --- | --- |
-| **`.env.local`** (local development) | All three |
-| **Vercel → Project → Settings → Environment Variables** (when deploying) | All three |
+| **`.env.local`** (local development) | All (Supabase + R2 + `NEXT_PUBLIC_APP_URL`) |
+| **Vercel → Project → Settings → Environment Variables** (when deploying) | All |
 | **Supabase dashboard** | Not configured there — you *copy from* there |
 
 ---
@@ -61,8 +87,8 @@ The placeholder template is in **`.env.example`**.
 - Starts with `NEXT_PUBLIC_` → it's public, safe anywhere.
 - Does **not** start with `NEXT_PUBLIC_` → it's a secret, **server-only**.
 
-The service role key is the only secret in this project. Treat it like a
-password.
+The service-role key and the R2 secret are the secrets in this project. Treat
+them like passwords.
 
 ---
 
@@ -72,8 +98,10 @@ password.
 - [ ] `NEXT_PUBLIC_SUPABASE_URL` is your project URL (real value, not `your-project-ref`)
 - [ ] `NEXT_PUBLIC_SUPABASE_ANON_KEY` is a real key (long string)
 - [ ] `SUPABASE_SERVICE_ROLE_KEY` is a real key (long string)
+- [ ] `CLOUDFLARE_ACCOUNT_ID` / `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` / `R2_BUCKET_NAME` are set
+- [ ] `NEXT_PUBLIC_APP_URL` is your deployed origin
 - [ ] You have **not** committed `.env.local` (it's gitignored — check with `git status`)
-- [ ] When deploying, you've added all three to Vercel too
+- [ ] When deploying, you've added them to Vercel too
 
 ---
 

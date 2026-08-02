@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { getMediaProvider } from "@/lib/media/provider";
+import { requireSession } from "@/lib/auth/guards";
+import { rateLimit } from "@/lib/rate-limit";
 
 /**
  * POST /api/media/materials
@@ -11,9 +12,31 @@ import { getMediaProvider } from "@/lib/media/provider";
  * "every file request re-checks enrolment at request time" rule — the bucket
  * itself is private and admin-only, so there is no URL a student can guess.
  *
- * Never leaks the raw storage key — returns only a signed URL.
+ * Hardening (round 8):
+ *  - Same-origin gate (Origin/Referer vs the app origin).
+ *  - Rate-limited per user and per IP, matching the playback endpoint.
+ *  - Short TTL: 10 minutes.
+ *  - Never leaks the raw storage key — returns only a signed URL.
  */
 export async function POST(request: Request) {
+  const origin = request.headers.get("origin");
+  const referer = request.headers.get("referer");
+  const appOrigin = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+  const requestOrigin = origin ?? (referer ? new URL(referer).origin : null);
+  if (requestOrigin && requestOrigin !== appOrigin) {
+    return NextResponse.json({ error: "Forbidden origin." }, { status: 403 });
+  }
+
+  const profile = await requireSession();
+  if (!profile) {
+    return NextResponse.json({ error: "Not signed in." }, { status: 401 });
+  }
+
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  if (!rateLimit(`material:${profile.id}`, 60) || !rateLimit(`material:ip:${ip}`, 120)) {
+    return NextResponse.json({ error: "Too many requests. Slow down." }, { status: 429 });
+  }
+
   let materialId: string;
   try {
     const body = (await request.json()) as { materialId?: string };
@@ -39,13 +62,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "This material has no file." }, { status: 404 });
   }
 
-  // Mint a signed URL from the private materials bucket. Admin client — the
-  // bucket has no student read policy, so only a per-request signed URL works.
-  const provider = getMediaProvider();
-  const result = await provider.getPlaybackUrlFromBucket("materials", path, 60 * 15);
+  // Mint a signed URL from the private materials bucket. Materials ALWAYS live
+  // in Supabase Storage (the video provider setting does not apply to them), so
+  // use the Supabase provider explicitly — even when NEXT_PUBLIC_MEDIA_PROVIDER
+  // is r2 for videos. The bucket has no student read policy, so only a
+  // per-request signed URL works.
+  const { SupabaseMediaProvider } = await import("@/lib/media/supabase");
+  const provider = new SupabaseMediaProvider();
+  const result = await provider.getPlaybackUrlFromBucket("materials", path, 60 * 10);
   if (!result.ok) {
     return NextResponse.json({ error: result.error }, { status: 500 });
   }
 
-  return NextResponse.json({ url: result.url, expiresIn: 60 * 15 });
+  return NextResponse.json({ url: result.url, expiresIn: 60 * 10 });
 }

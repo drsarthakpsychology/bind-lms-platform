@@ -71,12 +71,13 @@ export default async function MaterialViewerPage({
         <div className="flex min-w-0 items-center gap-2">
           <Link
             href={backHref}
-            className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            aria-label={`Back to ${backLabel}`}
+            className="inline-flex h-9 shrink-0 items-center gap-1.5 rounded-md border-2 border-border bg-background px-2 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px sm:px-2.5"
           >
-            <ChevronLeft className="size-4" aria-hidden />
-            {backLabel}
+            <ChevronLeft className="size-4 shrink-0" aria-hidden />
+            <span className="hidden sm:inline">{backLabel}</span>
           </Link>
-          <span className="min-w-0 truncate text-small font-semibold text-foreground">
+          <span className="min-w-0 flex-1 truncate text-small font-semibold text-foreground">
             {material.title}
           </span>
         </div>
@@ -108,6 +109,7 @@ export default async function MaterialViewerPage({
       <div className="min-h-0 flex-1 overflow-y-auto">
         <MaterialViewer
           materialId={material.id}
+          courseId={courseId}
           kind={material.kind}
           url={material.url}
           title={material.title}

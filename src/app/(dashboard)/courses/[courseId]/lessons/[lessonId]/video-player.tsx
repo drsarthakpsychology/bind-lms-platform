@@ -8,8 +8,10 @@ import {
   Loader2,
   Maximize,
   Minimize,
+  MoreHorizontal,
   Pause,
   Play,
+  RotateCcw,
   Volume2,
   VolumeX,
 } from "lucide-react";
@@ -77,14 +79,10 @@ type PlayerState =
  */
 export function VideoPlayer({
   lessonId,
-  src,
-  resumeSeconds,
   watermarkLabel,
   captionsUrl,
 }: {
   lessonId: string;
-  src: string;
-  resumeSeconds: number;
   watermarkLabel: string;
   /** Optional WebVTT caption track. Omit to hide the captions toggle. */
   captionsUrl?: string;
@@ -93,6 +91,7 @@ export function VideoPlayer({
   const containerRef = useRef<HTMLDivElement>(null);
   const controlsTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastTap = useRef<{ time: number; x: number } | null>(null);
+  const hlsRef = useRef<Hls | null>(null);
 
   const [tampered, setTampered] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -107,40 +106,127 @@ export function VideoPlayer({
   const [muted, setMuted] = useState(false);
   const [rate, setRate] = useState(1);
   const [rateMenuOpen, setRateMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const hasCaptions = Boolean(captionsUrl);
   const [captionsOn, setCaptionsOn] = useState(true);
   const [playerState, setPlayerState] = useState<PlayerState>({ kind: "loading" });
+  const [resumeSeconds, setResumeSeconds] = useState(0);
+  const [loadKey, setLoadKey] = useState(0);
 
-  // ---- HLS playback + lifecycle: single instance, torn down cleanly ----
+  // ---- Token mint + source load. Fetches a short-lived signed URL from the
+  // rate-limited, enrollment-re-checked API — never a pre-signed URL in the
+  // page source. Retry bumps loadKey to re-mint. ----
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
+    let cancelled = false;
     let hls: Hls | null = null;
 
     setPlayerState({ kind: "loading" });
+    setResumeSeconds(0);
 
-    if (src.endsWith(".m3u8")) {
-      if (Hls.isSupported()) {
-        hls = new Hls({ enableWorker: true });
-        hls.loadSource(src);
-        hls.attachMedia(video);
-      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-        video.src = src;
+    (async () => {
+      let url: string;
+      let resume: number;
+      let isHls = true;
+      try {
+        const res = await fetch("/api/media/playback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ lessonId }),
+        });
+        if (!res.ok) {
+          const body = await res.json().catch(() => null);
+          const message =
+            res.status === 401 || res.status === 403
+              ? "You don't have access to this video."
+              : body?.error ?? "This video couldn't be loaded. Try again.";
+          if (!cancelled) setPlayerState({ kind: "error", message });
+          return;
+        }
+        const data = (await res.json()) as {
+          token: string;
+          streamUrl: string;
+          resumeSeconds?: number;
+        };
+        // The stream proxy serves both HLS playlists and legacy MP4s. The
+        // playback route returns the lesson stream base; the token authorises
+        // it. hls.js resolves relative segment URLs against this absolute URL.
+        url = `${data.streamUrl}?st=${encodeURIComponent(data.token)}`;
+        resume = data.resumeSeconds ?? 0;
+        isHls = true; // stream proxy path is always HLS-shaped (or a single file)
+      } catch (e) {
+        console.error("playback token fetch failed:", e);
+        if (!cancelled) {
+          setPlayerState({
+            kind: "error",
+            message: "This video couldn't be loaded. Check your connection and try again.",
+          });
+        }
+        return;
       }
-    } else {
-      video.src = src;
-    }
+
+      if (cancelled) return;
+      if (resume > 0) setResumeSeconds(resume);
+
+      try {
+        // Detect HLS by URL pathname — the stream proxy serves a master
+        // playlist at the stream base, and hls.js resolves relative segments.
+        if (isHls && Hls.isSupported()) {
+          hls = new Hls({ enableWorker: true });
+          hls.loadSource(url);
+          hls.attachMedia(video);
+          hls.on(Hls.Events.ERROR, (_evt, data) => {
+            if (!data.fatal) return;
+            switch (data.type) {
+              case Hls.ErrorTypes.NETWORK_ERROR:
+                hls?.startLoad();
+                break;
+              case Hls.ErrorTypes.MEDIA_ERROR:
+                hls?.recoverMediaError();
+                break;
+              default:
+                if (!cancelled) {
+                  setPlayerState({
+                    kind: "error",
+                    message: "This video couldn't be loaded. Try again.",
+                  });
+                }
+                break;
+            }
+          });
+        } else if (isHls && video.canPlayType("application/vnd.apple.mpegurl")) {
+          video.src = url;
+        } else if (!isHls) {
+          video.src = url;
+        } else {
+          if (!cancelled) {
+            setPlayerState({
+              kind: "error",
+              message: "Your browser doesn't support this video format.",
+            });
+          }
+          return;
+        }
+        hlsRef.current = hls;
+      } catch (e) {
+        console.error("video source setup failed:", e);
+        if (!cancelled) {
+          setPlayerState({ kind: "error", message: "This video couldn't be loaded. Try again." });
+        }
+      }
+    })();
 
     return () => {
-      // Tear down completely: destroy HLS, stop any timers, drop the source so
-      // no audio bleeds into the next lesson or an unmounted page.
+      cancelled = true;
       if (hls) hls.destroy();
+      if (hlsRef.current === hls) hlsRef.current = null;
       video.pause();
       video.removeAttribute("src");
       video.load();
     };
-  }, [src]);
+  }, [lessonId, loadKey]);
 
   // ---- Media event wiring ----
   useEffect(() => {
@@ -493,12 +579,20 @@ export function VideoPlayer({
         </div>
       )}
 
-      {/* Error state — a clear message, not a dead frame */}
+      {/* Error state — a clear message + retry, not a dead frame */}
       {playerState.kind === "error" && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/70 p-6">
           <div className="max-w-md rounded-md border-2 border-white/30 bg-black/70 p-6 text-center">
             <p className="font-semibold text-white">Video unavailable</p>
             <p className="mt-2 text-sm text-white/80">{playerState.message}</p>
+            <button
+              type="button"
+              onClick={() => setLoadKey((k) => k + 1)}
+              className="mt-4 inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-white/40 bg-white/10 px-4 text-sm font-medium text-white transition-colors hover:bg-white/20"
+            >
+              <RotateCcw className="size-4" aria-hidden />
+              Retry
+            </button>
           </div>
         </div>
       )}
@@ -539,7 +633,7 @@ export function VideoPlayer({
             )}
           </button>
 
-          <span className="text-numeric text-xs text-white/90">
+          <span className="text-numeric min-w-[4.5rem] shrink-0 text-xs whitespace-nowrap text-white/90 sm:min-w-0">
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
 
@@ -587,82 +681,149 @@ export function VideoPlayer({
             </div>
           </div>
 
-          {/* Speed */}
-          <div className="relative shrink-0">
-            <button
-              type="button"
-              onClick={() => setRateMenuOpen((open) => !open)}
-              aria-label="Playback speed"
-              aria-expanded={rateMenuOpen}
-              className="inline-flex h-8 items-center gap-1 rounded-md px-2 text-xs font-semibold text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              <Gauge className="size-4" aria-hidden />
-              {rate}×
-            </button>
-            {rateMenuOpen && (
-              <div
-                role="menu"
-                className="absolute right-0 bottom-full mb-1 min-w-24 rounded-md border-2 border-white/30 bg-black/90 p-1 shadow-lg"
+          {/* Secondary controls (speed, volume, captions) — stay on one row at
+              sm+; collapse into an overflow menu below 400px so play/time/scrub/
+              fullscreen always fit. */}
+          <div className="flex shrink-0 items-center gap-1 max-sm:hidden">
+            {/* Speed */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setRateMenuOpen((open) => !open)}
+                aria-label="Playback speed"
+                aria-expanded={rateMenuOpen}
+                className="inline-flex h-8 items-center gap-1 rounded-md px-2 text-xs font-semibold text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
-                {PLAYBACK_RATES.map((r) => (
-                  <button
-                    key={r}
-                    type="button"
-                    role="menuitemradio"
-                    aria-checked={rate === r}
-                    onClick={() => {
-                      setRate(r);
-                      if (videoRef.current) videoRef.current.playbackRate = r;
-                      setRateMenuOpen(false);
-                    }}
-                    className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  >
-                    {r}×
-                    {rate === r && <span className="text-primary">●</span>}
-                  </button>
-                ))}
-              </div>
+                <Gauge className="size-4" aria-hidden />
+                {rate}×
+              </button>
+              {rateMenuOpen && (
+                <div
+                  role="menu"
+                  className="absolute right-0 bottom-full mb-1 min-w-24 rounded-md border-2 border-white/30 bg-black/90 p-1 shadow-lg"
+                >
+                  {PLAYBACK_RATES.map((r) => (
+                    <button
+                      key={r}
+                      type="button"
+                      role="menuitemradio"
+                      aria-checked={rate === r}
+                      onClick={() => {
+                        setRate(r);
+                        if (videoRef.current) videoRef.current.playbackRate = r;
+                        setRateMenuOpen(false);
+                      }}
+                      className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      {r}×
+                      {rate === r && <span className="text-primary">●</span>}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Volume */}
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                onClick={toggleMute}
+                aria-label={muted ? "Unmute" : "Mute"}
+                className="inline-flex size-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                {muted || volume === 0 ? (
+                  <VolumeX className="size-5" aria-hidden />
+                ) : (
+                  <Volume2 className="size-5" aria-hidden />
+                )}
+              </button>
+              <input
+                type="range"
+                min={0}
+                max={1}
+                step={0.05}
+                value={muted ? 0 : volume}
+                onChange={(e) => changeVolume(Number(e.target.value))}
+                aria-label="Volume"
+                className="h-1.5 w-16 cursor-pointer accent-primary"
+              />
+            </div>
+
+            {/* Captions toggle — only if a track exists */}
+            {hasCaptions && (
+              <button
+                type="button"
+                onClick={toggleCaptions}
+                aria-label="Toggle captions"
+                aria-pressed={captionsOn}
+                className="inline-flex size-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <Captions className="size-5" aria-hidden />
+              </button>
             )}
           </div>
 
-          {/* Volume */}
-          <div className="group flex shrink-0 items-center gap-1">
+          {/* Mobile overflow menu — everything collapsed below 400px */}
+          <div className="relative shrink-0 sm:hidden">
             <button
               type="button"
-              onClick={toggleMute}
-              aria-label={muted ? "Unmute" : "Mute"}
+              onClick={() => setMoreOpen((open) => !open)}
+              aria-label="More options"
+              aria-expanded={moreOpen}
               className="inline-flex size-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              {muted || volume === 0 ? (
-                <VolumeX className="size-5" aria-hidden />
-              ) : (
-                <Volume2 className="size-5" aria-hidden />
-              )}
+              <MoreHorizontal className="size-5" aria-hidden />
             </button>
-            <input
-              type="range"
-              min={0}
-              max={1}
-              step={0.05}
-              value={muted ? 0 : volume}
-              onChange={(e) => changeVolume(Number(e.target.value))}
-              aria-label="Volume"
-              className="h-1.5 w-16 cursor-pointer accent-primary"
-            />
+            {moreOpen && (
+              <div
+                role="menu"
+                className="absolute right-0 bottom-full mb-1 min-w-40 rounded-md border-2 border-white/30 bg-black/90 p-1 shadow-lg"
+              >
+                <div className="flex items-center gap-2 px-2 py-1.5">
+                  <button
+                    type="button"
+                    onClick={toggleMute}
+                    aria-label={muted ? "Unmute" : "Mute"}
+                    className="inline-flex size-8 items-center justify-center rounded-md text-white hover:bg-white/15"
+                  >
+                    {muted || volume === 0 ? (
+                      <VolumeX className="size-4" aria-hidden />
+                    ) : (
+                      <Volume2 className="size-4" aria-hidden />
+                    )}
+                  </button>
+                  <input
+                    type="range"
+                    min={0}
+                    max={1}
+                    step={0.05}
+                    value={muted ? 0 : volume}
+                    onChange={(e) => changeVolume(Number(e.target.value))}
+                    aria-label="Volume"
+                    className="h-1.5 flex-1 cursor-pointer accent-primary"
+                  />
+                </div>
+                <div className="border-t border-white/15 py-1">
+                  {PLAYBACK_RATES.map((r) => (
+                    <button
+                      key={r}
+                      type="button"
+                      role="menuitemradio"
+                      aria-checked={rate === r}
+                      onClick={() => {
+                        setRate(r);
+                        if (videoRef.current) videoRef.current.playbackRate = r;
+                      }}
+                      className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15"
+                    >
+                      {r}×
+                      {rate === r && <span className="text-primary">●</span>}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
-
-          {/* Captions toggle — only if a track exists */}
-          {hasCaptions && (
-            <button
-              type="button"
-              onClick={toggleCaptions}
-              aria-label="Toggle captions"
-              aria-pressed={captionsOn}
-              className="inline-flex size-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              <Captions className="size-5" aria-hidden />
-            </button>
-          )}
 
           {/* Fullscreen — promotes the wrapper (video + watermark). */}
           <button

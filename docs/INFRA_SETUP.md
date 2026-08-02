@@ -79,7 +79,20 @@ chunks.
    ```
 3. Upload the resulting `index.m3u8` + `.ts` chunks to `plms-videos/<course>/<lesson>/`.
 
-**Honest note:** this is manual work per lecture. If it becomes tedious,
+**Live today — use the publish script, not hand-rolled ffmpeg.** The repo ships
+`scripts/publish-lecture.ts` which does the whole ladder + upload + media_assets
+record in one command:
+
+```
+npm run publish-lecture -- ./raw/lecture.mp4 --lesson <lessonId> --encrypt
+```
+
+`--encrypt` enables **AES-128** encryption: each rendition references a random
+per-video key, the key file is uploaded alongside the segments, and the stream
+proxy serves it through an authenticated endpoint — never embedded in the
+playlist, never handed to the browser. Skip `--encrypt` for unencrypted HLS.
+
+**Honest note:** encoding is manual per lecture. If it becomes tedious,
 Cloudflare Stream (paid) does it automatically — a reasonable upgrade later.
 
 ---
@@ -114,8 +127,11 @@ upgrade to Pro ($25/mo) once Cohort One is live.
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase → Settings → API → Project URL | DB connection |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase → Settings → API → anon key | App ↔ DB |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Settings → API → service_role (secret) | Admin actions |
-| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare dashboard sidebar | R2 (future) |
-| `R2_ACCESS_KEY_ID` | R2 → Manage API Tokens | R2 (future) |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare dashboard sidebar | R2 video delivery |
+| `R2_ACCESS_KEY_ID` | R2 → Manage API Tokens | R2 video delivery |
+| `R2_SECRET_ACCESS_KEY` | R2 → Manage API Tokens (shown once) | R2 video delivery |
+| `R2_BUCKET_NAME` | your R2 bucket (e.g. `plms-videos`) | R2 video delivery |
+| `NEXT_PUBLIC_APP_URL` | your deployed origin (e.g. `https://bind-lms-platform.vercel.app`) | same-origin gate on media endpoints |
 | `R2_SECRET_ACCESS_KEY` | R2 → Manage API Tokens | R2 (future) |
 | `R2_BUCKET_NAME` | the bucket you created | R2 (future) |
 

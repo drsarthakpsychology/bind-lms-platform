@@ -40,12 +40,14 @@ const AUDIO_RATES = [1, 1.25, 1.5, 2, 0.75] as const;
  */
 export function MaterialViewer({
   materialId,
+  courseId,
   kind,
   url,
   title,
   watermarkLabel,
 }: {
   materialId: string;
+  courseId: string;
   kind: "document" | "slides" | "audio" | "image" | "link";
   url?: string | null;
   title: string;
@@ -94,18 +96,26 @@ export function MaterialViewer({
               Couldn&apos;t load this file. Retry, or tell your instructor if it keeps failing.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={() => {
-              setError(null);
-              setSignedUrl(null);
-              setLoadKey((k) => k + 1);
-            }}
-            className="inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-medium text-primary-foreground transition-[transform,box-shadow] hover:bg-primary/90 active:translate-y-0.5"
-          >
-            <RotateCcw className="size-4" aria-hidden />
-            Retry
-          </button>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                setError(null);
+                setSignedUrl(null);
+                setLoadKey((k) => k + 1);
+              }}
+              className="inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-medium text-primary-foreground transition-[transform,box-shadow] hover:bg-primary/90 active:translate-y-0.5"
+            >
+              <RotateCcw className="size-4" aria-hidden />
+              Retry
+            </button>
+            <a
+              href={courseId ? `/courses/${courseId}` : "#"}
+              className="inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-border bg-background px-4 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            >
+              Back to course
+            </a>
+          </div>
         </div>
       </div>
     );

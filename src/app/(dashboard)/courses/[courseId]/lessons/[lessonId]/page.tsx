@@ -5,7 +5,6 @@ import { ArrowLeft, ChevronLeft, FileText, Lock, Paperclip } from "lucide-react"
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
-import { getPlaybackUrl } from "./actions";
 import { VideoPlayer } from "./video-player";
 import { CompleteButton } from "./complete-button";
 import { AssignmentEditor } from "@/app/(dashboard)/admin/courses/[courseId]/assignment-editor";
@@ -59,7 +58,7 @@ export default async function LessonPage({
       supabase
         .from("materials")
         .select("id, title, kind, format, size_bytes, url, sort_order")
-        .eq("lesson_id", lessonId)
+        .or(`lesson_id.eq.${lessonId},course_id.eq.${courseId}`)
         .order("sort_order", { ascending: true }),
       supabase
         .from("progress")
@@ -103,8 +102,6 @@ export default async function LessonPage({
   const continueTarget = nextLesson
     ? `/courses/${courseId}/lessons/${nextLesson.id}`
     : "/dashboard";
-
-  const playback = await getPlaybackUrl(lessonId);
 
   const hdrs = await headers();
   const ip = hdrs.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
@@ -177,25 +174,11 @@ export default async function LessonPage({
         />
       </Suspense>
 
-      {/* Watch tab — the video. */}
+      {/* Watch tab — the video. Tight on mobile so the frame is the content;
+          a little breathing room at sm+. */}
       {tab === "watch" && (
-        <div className="rounded-lg border-2 border-foreground bg-card p-2 hard-shadow-sm sm:p-3">
-          {playback.ok ? (
-            <VideoPlayer
-              lessonId={lessonId}
-              src={playback.url}
-              resumeSeconds={playback.resumeSeconds}
-              watermarkLabel={watermarkLabel}
-            />
-          ) : (
-            <div className="flex aspect-video items-center justify-center rounded-md bg-muted p-6 text-center">
-              <Alert variant="warning" className="max-w-md">
-                <FileText className="size-4" aria-hidden />
-                <AlertTitle>Video unavailable</AlertTitle>
-                <AlertDescription>{playback.error}</AlertDescription>
-              </Alert>
-            </div>
-          )}
+        <div className="rounded-lg border-2 border-foreground bg-card p-0 hard-shadow-sm sm:p-2">
+          <VideoPlayer lessonId={lessonId} watermarkLabel={watermarkLabel} />
         </div>
       )}
 
