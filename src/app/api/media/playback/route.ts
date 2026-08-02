@@ -47,7 +47,7 @@ export async function POST(request: Request) {
 
   // Rate limit the media-token minting per user (and per IP as a fallback key).
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  if (!rateLimit(`media:${profile.id}`, 60) || !rateLimit(`media:ip:${ip}`, 120)) {
+  if (!(await rateLimit(`media:${profile.id}`, 60)) || !(await rateLimit(`media:ip:${ip}`, 120))) {
     return NextResponse.json({ error: "Too many requests. Slow down." }, { status: 429 });
   }
 
@@ -74,9 +74,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Lesson not found." }, { status: 404 });
   }
 
-  // Determine the storage key to serve:
-  //  - If a media_assets row exists (R2 migration done), use its master playlist.
-  //  - Otherwise fall back to the legacy raw video path.
+  // Determine the media shape:
+  //  - A media_assets row (R2 migration done) → HLS master playlist.
+  //  - Otherwise → legacy raw video (single MP4).
   const media = Array.isArray(lesson.media_assets)
     ? lesson.media_assets[0]
     : lesson.media_assets;
@@ -86,6 +86,7 @@ export async function POST(request: Request) {
   if (!key) {
     return NextResponse.json({ error: "This lesson has no media." }, { status: 404 });
   }
+  const mediaType = masterKey ? "hls" : "mp4";
 
   // Resume position for this viewer (may be 0). Read alongside minting so the
   // player gets everything from one request.
@@ -114,6 +115,7 @@ export async function POST(request: Request) {
     // The player asks for a lesson's stream by id + token; the proxy resolves
     // the object path server-side, so no storage key ever reaches the client.
     streamUrl: `/api/media/stream/${lessonId}`,
+    mediaType,
     expiresIn: 300,
     resumeSeconds: progress?.watched_seconds ?? 0,
   });

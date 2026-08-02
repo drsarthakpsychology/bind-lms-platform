@@ -20,7 +20,7 @@ export async function login(
   }
 
   // Rate limit login attempts per email (brute-force protection).
-  if (!rateLimit(`login:${email}`, 10)) {
+  if (!(await rateLimit(`login:${email}`, 10))) {
     return { error: "Too many attempts. Try again in a minute." };
   }
 

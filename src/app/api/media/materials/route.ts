@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   }
 
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  if (!rateLimit(`material:${profile.id}`, 60) || !rateLimit(`material:ip:${ip}`, 120)) {
+  if (!(await rateLimit(`material:${profile.id}`, 60)) || !(await rateLimit(`material:ip:${ip}`, 120))) {
     return NextResponse.json({ error: "Too many requests. Slow down." }, { status: 429 });
   }
 

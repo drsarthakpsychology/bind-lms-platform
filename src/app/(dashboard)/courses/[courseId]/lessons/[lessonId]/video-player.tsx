@@ -129,7 +129,7 @@ export function VideoPlayer({
     (async () => {
       let url: string;
       let resume: number;
-      let isHls = true;
+      let mediaType: "hls" | "mp4" = "hls";
       try {
         const res = await fetch("/api/media/playback", {
           method: "POST",
@@ -148,14 +148,14 @@ export function VideoPlayer({
         const data = (await res.json()) as {
           token: string;
           streamUrl: string;
+          mediaType?: "hls" | "mp4";
           resumeSeconds?: number;
         };
-        // The stream proxy serves both HLS playlists and legacy MP4s. The
-        // playback route returns the lesson stream base; the token authorises
-        // it. hls.js resolves relative segment URLs against this absolute URL.
+        // The server tells us the media shape (HLS master vs single MP4); the
+        // player branches on that rather than guessing from the URL.
         url = `${data.streamUrl}?st=${encodeURIComponent(data.token)}`;
         resume = data.resumeSeconds ?? 0;
-        isHls = true; // stream proxy path is always HLS-shaped (or a single file)
+        mediaType = data.mediaType ?? "hls";
       } catch (e) {
         console.error("playback token fetch failed:", e);
         if (!cancelled) {
@@ -171,43 +171,44 @@ export function VideoPlayer({
       if (resume > 0) setResumeSeconds(resume);
 
       try {
-        // Detect HLS by URL pathname — the stream proxy serves a master
-        // playlist at the stream base, and hls.js resolves relative segments.
-        if (isHls && Hls.isSupported()) {
-          hls = new Hls({ enableWorker: true });
-          hls.loadSource(url);
-          hls.attachMedia(video);
-          hls.on(Hls.Events.ERROR, (_evt, data) => {
-            if (!data.fatal) return;
-            switch (data.type) {
-              case Hls.ErrorTypes.NETWORK_ERROR:
-                hls?.startLoad();
-                break;
-              case Hls.ErrorTypes.MEDIA_ERROR:
-                hls?.recoverMediaError();
-                break;
-              default:
-                if (!cancelled) {
-                  setPlayerState({
-                    kind: "error",
-                    message: "This video couldn't be loaded. Try again.",
-                  });
-                }
-                break;
-            }
-          });
-        } else if (isHls && video.canPlayType("application/vnd.apple.mpegurl")) {
-          video.src = url;
-        } else if (!isHls) {
-          video.src = url;
-        } else {
-          if (!cancelled) {
-            setPlayerState({
-              kind: "error",
-              message: "Your browser doesn't support this video format.",
+        if (mediaType === "hls") {
+          if (Hls.isSupported()) {
+            hls = new Hls({ enableWorker: true });
+            hls.loadSource(url);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.ERROR, (_evt, data) => {
+              if (!data.fatal) return;
+              switch (data.type) {
+                case Hls.ErrorTypes.NETWORK_ERROR:
+                  hls?.startLoad();
+                  break;
+                case Hls.ErrorTypes.MEDIA_ERROR:
+                  hls?.recoverMediaError();
+                  break;
+                default:
+                  if (!cancelled) {
+                    setPlayerState({
+                      kind: "error",
+                      message: "This video couldn't be loaded. Try again.",
+                    });
+                  }
+                  break;
+              }
             });
+          } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+            video.src = url;
+          } else {
+            if (!cancelled) {
+              setPlayerState({
+                kind: "error",
+                message: "Your browser doesn't support this video format.",
+              });
+            }
+            return;
           }
-          return;
+        } else {
+          // Single-file MP4 — native playback.
+          video.src = url;
         }
         hlsRef.current = hls;
       } catch (e) {

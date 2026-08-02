@@ -3,7 +3,7 @@ import { requireSession } from "@/lib/auth/guards";
 import { verifyStreamToken } from "@/lib/media/stream-token";
 import { getObjectBuffer, getObjectStream, getObjectText } from "@/lib/media/proxy-client";
 import { aesEncrypt, deriveSessionKey } from "@/lib/media/crypto";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitFast } from "@/lib/rate-limit-fast";
 
 /**
  * GET /api/media/stream/:lessonId(/*rest)
@@ -55,18 +55,30 @@ export async function GET(
   }
 
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  if (!rateLimit(`stream:${profile.id}`, 900) || !rateLimit(`stream:ip:${ip}`, 1800)) {
+  if (!rateLimitFast(`stream:${profile.id}`, 900) || !rateLimitFast(`stream:ip:${ip}`, 1800)) {
     return NextResponse.json({ error: "Too many requests. Slow down." }, { status: 429 });
   }
 
-  const { canAccessLesson } = await import("@/lib/enrollment");
-  const access = await canAccessLesson(lessonId);
-  if (!access.ok) {
-    return NextResponse.json({ error: "Not authorized." }, { status: 403 });
+  // Hot path: cache the (enrollment + stream resolution) verdict per
+  // (uid, lessonId) for the token's 5-min life. One DB query + zero repeats
+  // for the ~600 segments per hour of playback.
+  const { getStreamVerdict, setStreamVerdict } = await import("@/lib/media/stream-cache");
+  let verdict = getStreamVerdict(profile.id, lessonId);
+  if (!verdict) {
+    const { authorizeAndResolveLesson } = await import("@/lib/media/proxy-client");
+    const fresh = await authorizeAndResolveLesson({
+      userId: profile.id,
+      role: profile.role,
+      lessonId,
+    });
+    verdict = { ...fresh, ok: fresh.authorized && Boolean(fresh.resolved) };
+    setStreamVerdict(profile.id, lessonId, verdict);
   }
 
-  const { resolveLessonStream } = await import("@/lib/media/proxy-client");
-  const resolved = await resolveLessonStream(lessonId);
+  if (!verdict.authorized) {
+    return NextResponse.json({ error: "Not authorized." }, { status: 403 });
+  }
+  const resolved = verdict.resolved;
   if (!resolved) {
     return NextResponse.json({ error: "This lesson has no media." }, { status: 404 });
   }
@@ -120,7 +132,7 @@ export async function GET(
     // A master playlist references variant .m3u8s; a variant playlist references
     // .ts segments. Only variant playlists get the #EXT-X-KEY line (segments).
     const isMaster = rest === "" || !text.includes(".ts");
-    const rewritten = rewritePlaylist(text, lessonId, token, resolved.keyPrefix, dir, isMaster);
+    const rewritten = rewritePlaylist(text, lessonId, token, dir, isMaster);
     return new NextResponse(rewritten, {
       status: 200,
       headers: {
@@ -174,12 +186,10 @@ function rewritePlaylist(
   text: string,
   lessonId: string,
   token: string,
-  keyPrefix: string,
   dir: string,
   isMaster: boolean,
 ): string {
   const base = `/api/media/stream/${lessonId}`;
-  const resolvedPrefix = dir ? `${keyPrefix}/${dir}` : keyPrefix;
   const keyUri = `${base}/__key__?st=${encodeURIComponent(token)}`;
   const keyLine = `#EXT-X-KEY:METHOD=AES-128,URI="${keyUri}"`;
 
@@ -196,8 +206,11 @@ function rewritePlaylist(
       continue;
     }
     if (t.length > 0 && !t.startsWith("#")) {
-      const segPath = `${resolvedPrefix}/${t}`;
-      const enc = segPath.split("/").map(encodeURIComponent).join("/");
+      // Emit the DIR-RELATIVE path only — the route prepends keyPrefix when it
+      // resolves the object (targetKey = `${keyPrefix}/${rest}`). Baking the
+      // full prefix here would double-prefix and 404 every segment.
+      const relPath = dir ? `${dir}/${t}` : t;
+      const enc = relPath.split("/").map(encodeURIComponent).join("/");
       if (!isMaster && !keyInserted) {
         out.push(keyLine);
         keyInserted = true;

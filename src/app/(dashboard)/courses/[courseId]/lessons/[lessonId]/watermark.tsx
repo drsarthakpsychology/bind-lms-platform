@@ -77,23 +77,41 @@ export function Watermark({
     return () => clearTimeout(timeout);
   }, [reduce]);
 
-  // Tamper-proofing: removal, hidden, or zeroed opacity → pause playback.
+  // Tamper-proofing: removal or hard-hide (display:none / visibility:hidden) →
+  // pause playback. A genuine tamper removes the element or sets one of these;
+  // the DRIFT effect legitimately changes `opacity` and `font-size`, so those
+  // are deliberately NOT triggers — an opacity read (or a React re-render that
+  // momentarily recomputes it during the CSS transition) would otherwise pause
+  // honest playback. A debounce also absorbs transient states during re-render.
   useEffect(() => {
     const node = nodeRef.current;
     const parent = node?.parentElement;
     if (!node || !parent) return;
     const el: Element = node;
 
-    function checkHidden() {
-      if (detectedRef.current) return;
+    let pending: ReturnType<typeof setTimeout> | null = null;
+
+    function checkHardHidden() {
       const style = window.getComputedStyle(el);
-      if (
-        style.display === "none" ||
-        style.visibility === "hidden" ||
-        parseFloat(style.opacity) === 0
-      ) {
-        detect();
+      return style.display === "none" || style.visibility === "hidden";
+    }
+
+    // Only pause when the watermark is genuinely gone/hard-hidden for a
+    // sustained period — never on a transient read.
+    function armIfHidden() {
+      if (detectedRef.current) return;
+      if (!checkHardHidden()) {
+        // Reappeared — cancel any pending pause.
+        if (pending) {
+          clearTimeout(pending);
+          pending = null;
+        }
+        return;
       }
+      if (pending) return; // already armed
+      pending = setTimeout(() => {
+        if (checkHardHidden()) detect();
+      }, 1000);
     }
 
     const removalObserver = new MutationObserver((mutations) => {
@@ -106,12 +124,16 @@ export function Watermark({
     });
     removalObserver.observe(parent, { childList: true });
 
-    const attributeObserver = new MutationObserver(checkHidden);
-    attributeObserver.observe(el, { attributes: true, attributeFilter: ["style", "class"] });
+    const attributeObserver = new MutationObserver(armIfHidden);
+    attributeObserver.observe(el, {
+      attributes: true,
+      attributeFilter: ["style", "class"],
+    });
 
     return () => {
       removalObserver.disconnect();
       attributeObserver.disconnect();
+      if (pending) clearTimeout(pending);
     };
   }, [detect]);
 

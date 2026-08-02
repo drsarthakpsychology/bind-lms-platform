@@ -29,17 +29,14 @@ export type ResolvedStream =
       key: string;
     };
 
-/** Resolve a lesson's media object(s) server-side. Null if the lesson has none. */
-export async function resolveLessonStream(lessonId: string): Promise<ResolvedStream | null> {
-  const supabase = await createClient();
-  const { data: lesson } = await supabase
-    .from("lessons")
-    .select("video_storage_path, media_assets(master_playlist, key_prefix, provider)")
-    .eq("id", lessonId)
-    .single();
-
-  if (!lesson) return null;
-
+/**
+ * Resolve a lesson's media object(s) server-side from an already-fetched
+ * lesson row. Null if the lesson has none.
+ */
+export function resolveLessonStreamFromRow(lesson: {
+  video_storage_path: string | null;
+  media_assets?: Array<{ master_playlist: string | null; key_prefix: string | null; provider: string | null }> | null;
+}): ResolvedStream | null {
   const media = Array.isArray(lesson.media_assets)
     ? lesson.media_assets[0]
     : lesson.media_assets;
@@ -54,8 +51,6 @@ export async function resolveLessonStream(lessonId: string): Promise<ResolvedStr
 
   // Legacy single-file video.
   if (lesson.video_storage_path) {
-    // Detect the configured provider via env (per-asset media_assets.provider
-    // governs HLS; legacy MP4s use the global setting).
     const configured = process.env.NEXT_PUBLIC_MEDIA_PROVIDER ?? "supabase";
     return {
       isHls: false,
@@ -66,6 +61,71 @@ export async function resolveLessonStream(lessonId: string): Promise<ResolvedStr
   }
 
   return null;
+}
+
+/**
+ * Resolve a lesson's media object(s) server-side. Null if the lesson has none.
+ * (Fetches the lesson row; prefer resolveLessonStreamFromRow when the row is
+ * already in hand.)
+ */
+export async function resolveLessonStream(lessonId: string): Promise<ResolvedStream | null> {
+  const supabase = await createClient();
+  const { data: lesson } = await supabase
+    .from("lessons")
+    .select("video_storage_path, media_assets(master_playlist, key_prefix, provider)")
+    .eq("id", lessonId)
+    .single();
+
+  if (!lesson) return null;
+  return resolveLessonStreamFromRow(lesson);
+}
+
+/**
+ * Authorize + resolve a lesson in ONE database query, for the stream proxy
+ * hot path. Returns the enrollment verdict AND the resolved stream from a
+ * single lessons row (with course + media embed). Callers cache this per
+ * (uid, lessonId).
+ *
+ * `isAdmin`/enrollment logic mirrors canAccessLesson but avoids the second
+ * round-trip by folding the enrollment check into the same query's result.
+ */
+export async function authorizeAndResolveLesson(opts: {
+  userId: string;
+  role: "admin" | "student";
+  lessonId: string;
+}): Promise<{ authorized: boolean; resolved: ResolvedStream | null }> {
+  const supabase = await createClient();
+  const { data: lesson } = await supabase
+    .from("lessons")
+    .select(
+      "course_id, video_storage_path, media_assets(master_playlist, key_prefix, provider), courses(is_published)",
+    )
+    .eq("id", opts.lessonId)
+    .single();
+
+  if (!lesson) {
+    return { authorized: false, resolved: null };
+  }
+
+  const resolved = resolveLessonStreamFromRow(lesson);
+  if (opts.role === "admin") {
+    return { authorized: true, resolved };
+  }
+
+  // Student: course must be published AND enrolled.
+  const course = Array.isArray(lesson.courses) ? lesson.courses[0] : lesson.courses;
+  if (!course?.is_published) {
+    return { authorized: false, resolved };
+  }
+
+  const { data: enrollment } = await supabase
+    .from("course_enrollments")
+    .select("course_id")
+    .eq("user_id", opts.userId)
+    .eq("course_id", lesson.course_id)
+    .maybeSingle();
+
+  return { authorized: Boolean(enrollment), resolved };
 }
 
 type StreamResult =

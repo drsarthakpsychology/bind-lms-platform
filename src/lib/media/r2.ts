@@ -94,18 +94,24 @@ export async function getObjectBufferR2(
   return Buffer.from(bytes);
 }
 
+// Module-level singleton so the stream hot path (one segment fetch per 6s)
+// reuses a single client instead of allocating a new S3Client per request.
+let r2Client: S3Client | null = null;
+
 function makeR2Client(): S3Client {
+  if (r2Client) return r2Client;
   const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
   const accessKeyId = process.env.R2_ACCESS_KEY_ID;
   const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
   if (!accountId || !accessKeyId || !secretAccessKey) {
     throw new Error("R2 env vars not set.");
   }
-  return new S3Client({
+  r2Client = new S3Client({
     region: "auto",
     endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
     credentials: { accessKeyId, secretAccessKey },
   });
+  return r2Client;
 }
 
 // Re-exported for the publish/upload scripts.
