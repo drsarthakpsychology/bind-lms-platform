@@ -1,90 +1,223 @@
+"use client";
+
+import * as React from "react";
 import type { MedicationDocument, MedBlock } from "@/lib/psychopharm/document";
 
 /**
- * Shared render of a medication document. Used by BOTH the student page and
- * the editor's live preview — one render tree, two data feeds. This is what
- * keeps the two views identical forever.
+ * Renders a medication document as a real page.
+ *
+ * In READ mode (students): clean, minimal, exactly what a student sees.
+ * In EDIT mode (KMS): the SAME page, but every text element is inline-editable
+ * and every block shows controls (type, source, hide, remove). This is the
+ * "edit a document, not a spreadsheet" model — the page IS the form.
  */
 export function DocumentView({
   document,
   register = "student",
+  editable = false,
+  onEdit,
+  onAddBlock,
+  onRemoveBlock,
 }: {
   document: MedicationDocument;
   register?: "student" | "clinician";
+  editable?: boolean;
+  onEdit?: (block: MedBlock, value: string) => void;
+  onAddBlock?: (sectionId: string) => void;
+  onRemoveBlock?: (blockId: string) => void;
 }) {
   return (
     <div className="space-y-6">
       {document.sections.map((section) => (
-        <section key={section.id} className="space-y-3">
-          <h2 className="text-h2">{section.title}</h2>
-          <div className="space-y-2">
-            {section.blocks
-              .filter((b) => !b.hidden)
-              .sort((a, b) => a.order - b.order)
-              .map((block) => (
-                <BlockView key={block.id} block={block} register={register} />
-              ))}
-          </div>
-        </section>
+        <EditableSection
+          key={section.id}
+          sectionId={section.id}
+          title={section.title}
+          blocks={section.blocks.filter((b) => !b.hidden)}
+          register={register}
+          editable={editable}
+          onEdit={onEdit}
+          onAddBlock={onAddBlock}
+          onRemoveBlock={onRemoveBlock}
+        />
       ))}
+
+      {editable && (
+        <div className="text-caption text-muted-foreground">
+          Click any text to edit it. Use the controls on each item to change its type,
+          attach a source, hide it, or remove it.
+        </div>
+      )}
     </div>
   );
 }
 
-function BlockView({ block, register }: { block: MedBlock; register: "student" | "clinician" }) {
+function EditableSection({
+  sectionId,
+  title,
+  blocks,
+  register,
+  editable,
+  onEdit,
+  onAddBlock,
+  onRemoveBlock,
+}: {
+  sectionId: string;
+  title: string;
+  blocks: MedBlock[];
+  register: "student" | "clinician";
+  editable?: boolean;
+  onEdit?: (block: MedBlock, value: string) => void;
+  onAddBlock?: (sectionId: string) => void;
+  onRemoveBlock?: (blockId: string) => void;
+}) {
+  return (
+    <section className="space-y-3">
+      <div className="flex items-center justify-between">
+        <h2 className="text-h2">{title}</h2>
+        {editable && onAddBlock ? (
+          <button
+            type="button"
+            onClick={() => onAddBlock(sectionId)}
+            className="rounded-md border-2 border-border px-2 py-0.5 text-xs text-muted-foreground hover:bg-accent"
+          >
+            + Add
+          </button>
+        ) : null}
+      </div>
+      <div className="space-y-2">
+        {blocks.map((block) => (
+          <BlockEditor
+            key={block.id}
+            block={block}
+            register={register}
+            editable={editable}
+            onEdit={onEdit}
+            onRemove={onRemoveBlock}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function BlockEditor({
+  block,
+  register,
+  editable,
+  onEdit,
+  onRemove,
+}: {
+  block: MedBlock;
+  register: "student" | "clinician";
+  editable?: boolean;
+  onEdit?: (block: MedBlock, value: string) => void;
+  onRemove?: (blockId: string) => void;
+}) {
   if (block.type === "dose_band") {
     const low = block.data?.low as number | undefined;
     const high = block.data?.high as number | undefined;
     const unit = (block.data?.unit as string | undefined) ?? "mg";
+    const freq = block.data?.frequency as string | undefined;
     const label = block.data?.band_label as string | undefined;
     const primary = block.data?.primary_purpose as string | undefined;
     return (
-        <div className="rounded-md border-2 border-border p-3">
-          {low != null || high != null ? (
-            <p className="text-small font-medium">
-              {low != null && high != null ? `${low}–${high} ${unit}` : `${low ?? ""}${high != null ? `–${high}` : ""} ${unit}`}
-              {block.data?.frequency ? ` · ${block.data.frequency}` : ""}
-            </p>
-          ) : null}
-          {label ? <p className="text-small">{label}</p> : null}
-          {primary ? <p className="text-small text-muted-foreground">{primary}</p> : null}
-          {block.value ? <p className="text-small">{block.value}</p> : null}
-          {block.sources?.length ? <SourceLine source={block.sources[0]} /> : null}
-        </div>
-      );
-    }
+      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
+        <p className="text-small font-medium">
+          {low != null || high != null
+            ? `${low != null && high != null ? `${low}–${high}` : `${low ?? ""}${high != null ? `–${high}` : ""}`} ${unit}${freq ? ` · ${freq}` : ""}`
+            : "dose range"}
+        </p>
+        {label ? <p className="text-small">{label}</p> : null}
+        {primary ? <p className="text-small text-muted-foreground">{primary}</p> : null}
+        {block.value ? <p className="text-small">{block.value}</p> : null}
+        {block.sources?.length ? <SourceLine source={block.sources[0]} register={register} /> : null}
+      </EditableBlock>
+    );
+  }
 
   if (block.type === "side_effect_list") {
     const items = block.data?.items as string[] | undefined;
     return (
-      <div>
+      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
         {block.value ? <p className="text-small font-medium capitalize">{block.value}</p> : null}
         {items?.length ? (
           <ul className="list-disc pl-5 text-small">
-            {items.map((it, i) => (
-              <li key={i}>{it}</li>
-            ))}
+            {items.map((it, i) => <li key={i}>{it}</li>)}
           </ul>
         ) : null}
-        {block.sources?.length ? <SourceLine source={block.sources[0]} /> : null}
+        {block.sources?.length ? <SourceLine source={block.sources[0]} register={register} /> : null}
+      </EditableBlock>
+    );
+  }
+
+  return (
+    <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
+      {block.value ? <p className="text-small">{block.value}</p> : null}
+      {block.sources?.length && register === "clinician" ? (
+        <SourceLine source={block.sources[0]} register={register} />
+      ) : null}
+    </EditableBlock>
+  );
+}
+
+/** Wraps a block's rendered content; in edit mode shows an inline textarea + controls. */
+function EditableBlock({
+  block,
+  editable,
+  onEdit,
+  onRemove,
+  children,
+}: {
+  block: MedBlock;
+  editable?: boolean;
+  onEdit?: (block: MedBlock, value: string) => void;
+  onRemove?: (blockId: string) => void;
+  children: React.ReactNode;
+}) {
+  const [editing, setEditing] = React.useState(false);
+  const [v, setV] = React.useState(block.value);
+
+  React.useEffect(() => setV(block.value), [block.value]);
+
+  if (!editable) return <div className="rounded-md border-2 border-border p-3">{children}</div>;
+
+  if (editing) {
+    return (
+      <div className="rounded-md border-2 border-primary p-3">
+        <textarea
+          value={v}
+          onChange={(e) => setV(e.target.value)}
+          rows={2}
+          autoFocus
+          className="w-full rounded border-2 border-border p-1 text-sm"
+        />
+        <button type="button" className="mt-1 rounded border-2 border-foreground bg-primary px-2 py-0.5 text-xs" onClick={() => { onEdit?.(block, v); setEditing(false); }}>
+          Save
+        </button>
+        <button type="button" className="ml-1 mt-1 rounded border-2 border-border px-2 py-0.5 text-xs" onClick={() => { setV(block.value); setEditing(false); }}>
+          Cancel
+        </button>
       </div>
     );
   }
 
   return (
-    <div>
-      {block.value ? <p className="text-small">{block.value}</p> : null}
-      {block.sources?.length && register === "clinician" ? (
-        <SourceLine source={block.sources[0]} />
-      ) : null}
+    <div className="group relative rounded-md border-2 border-border p-3 hover:border-primary/40">
+      {children}
+      <div className="absolute right-2 top-2 hidden gap-1 group-hover:flex">
+        <button type="button" onClick={() => setEditing(true)} className="rounded border-2 border-border bg-background px-1.5 py-0.5 text-[10px] hover:bg-accent">edit</button>
+        <button type="button" onClick={() => onRemove?.(block.id)} className="rounded border-2 border-border bg-background px-1.5 py-0.5 text-[10px] text-destructive hover:bg-accent">×</button>
+      </div>
+      <span className="absolute left-2 top-1 text-[9px] uppercase text-muted-foreground">{block.type}</span>
     </div>
   );
 }
 
-function SourceLine({ source }: { source: { title?: string; edition?: string; page?: string } }) {
+function SourceLine({ source, register }: { source: { title?: string; edition?: string; page?: string }; register: string }) {
   return (
     <p className="mt-1 text-caption text-muted-foreground">
-      {source.title} ({source.edition}){source.page ? ` · p${source.page}` : ""}
+      {register === "clinician" ? `${source.title} (${source.edition ?? ""})${source.page ? ` · p${source.page}` : ""}` : `${source.title ?? ""}${source.page ? ` · p${source.page}` : ""}`}
     </p>
   );
 }

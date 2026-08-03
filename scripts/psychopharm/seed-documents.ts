@@ -110,6 +110,106 @@ function buildDocument(rec: (typeof ALL)[number]): MedicationDocument {
   }
   if (onsetBlocks.length) sections.push({ id: crypto.randomUUID(), title: "When it starts working", blocks: onsetBlocks });
 
+  // Common uses
+  const usesBlocks = (rec.common_uses ?? []).map((u, i) => ({
+    id: crypto.randomUUID(),
+    type: "common_uses" as const,
+    value: u.value,
+    order: i + 1,
+    sources: [sourceRef(u.source_id, u.page_ref, u.snippet)],
+  }));
+  if (usesBlocks.length) sections.push({ id: crypto.randomUUID(), title: "Commonly used in", blocks: usesBlocks });
+
+  // Plain-language overview (student layer)
+  const plain = rec.student?.plain_language;
+  if (plain?.text) {
+    sections.push({
+      id: crypto.randomUUID(),
+      title: "In plain words",
+      blocks: [
+        {
+          id: crypto.randomUUID(),
+          type: "plain_language" as const,
+          value: plain.text,
+          order: 1,
+          sources: plain.source ? [sourceRef(plain.source.source_id, plain.source.page_ref, plain.source.snippet)] : [],
+        },
+      ],
+    });
+  }
+
+  // Side effects (common / serious from the draft record)
+  const seBlocks = [];
+  if (rec.side_effects_common) {
+    seBlocks.push({
+      id: crypto.randomUUID(),
+      type: "side_effect_list" as const,
+      value: "Common",
+      data: { items: rec.side_effects_common.value.split(";").map((s) => s.trim()) },
+      order: 1,
+      sources: [sourceRef(rec.side_effects_common.source_id, rec.side_effects_common.page_ref, rec.side_effects_common.snippet)],
+    });
+  }
+  if (rec.side_effects_serious) {
+    seBlocks.push({
+      id: crypto.randomUUID(),
+      type: "side_effect_list" as const,
+      value: "Serious (rare)",
+      data: { items: rec.side_effects_serious.value.split(";").map((s) => s.trim()) },
+      order: 2,
+      sources: [sourceRef(rec.side_effects_serious.source_id, rec.side_effects_serious.page_ref, rec.side_effects_serious.snippet)],
+    });
+  }
+  if (seBlocks.length) sections.push({ id: crypto.randomUUID(), title: "Side effects", blocks: seBlocks });
+
+  // Observation layer — therapist questions, pearls, red flags, session observations
+  const obsBlocks: Record<string, MedicationDocument["sections"][number]["blocks"]> = {};
+  for (const q of rec.student?.therapist_questions ?? []) {
+    (obsBlocks["therapist_question_list"] ??= []).push({
+      id: crypto.randomUUID(),
+      type: "therapist_question_list" as const,
+      value: q.question,
+      order: (obsBlocks["therapist_question_list"] ?? []).length + 1,
+      sources: q.source ? [sourceRef(q.source.source_id, q.source.page_ref, q.source.snippet)] : [],
+    });
+  }
+  for (const p of rec.student?.clinical_pearls ?? []) {
+    (obsBlocks["clinical_pearl_list"] ??= []).push({
+      id: crypto.randomUUID(),
+      type: "clinical_pearl_list" as const,
+      value: p.pearl,
+      order: (obsBlocks["clinical_pearl_list"] ?? []).length + 1,
+      sources: p.source ? [sourceRef(p.source.source_id, p.source.page_ref, p.source.snippet)] : [],
+    });
+  }
+  for (const r of rec.student?.red_flags ?? []) {
+    (obsBlocks["red_flag_list"] ??= []).push({
+      id: crypto.randomUUID(),
+      type: "red_flag_list" as const,
+      value: r.signal,
+      order: (obsBlocks["red_flag_list"] ?? []).length + 1,
+      sources: r.source ? [sourceRef(r.source.source_id, r.source.page_ref, r.source.snippet)] : [],
+    });
+  }
+  for (const s of rec.student?.session_observations ?? []) {
+    (obsBlocks["observation_prompt_list"] ??= []).push({
+      id: crypto.randomUUID(),
+      type: "observation_prompt_list" as const,
+      value: s.observation,
+      order: (obsBlocks["observation_prompt_list"] ?? []).length + 1,
+      sources: s.source ? [sourceRef(s.source.source_id, s.source.page_ref, s.source.snippet)] : [],
+    });
+  }
+  const obsSections: Array<[string, string]> = [
+    ["therapist_question_list", "Questions to ask"],
+    ["clinical_pearl_list", "Clinical pearls"],
+    ["red_flag_list", "When to contact the prescriber"],
+    ["observation_prompt_list", "Observations to notice"],
+  ];
+  for (const [type, title] of obsSections) {
+    if (obsBlocks[type]?.length) sections.push({ id: crypto.randomUUID(), title, blocks: obsBlocks[type] });
+  }
+
   return { generic_name: rec.generic_name, sections };
 }
 

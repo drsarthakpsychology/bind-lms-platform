@@ -39,7 +39,7 @@ export default async function DrugEditorPage({ params }: { params: Promise<{ dru
       <div className="flex items-center justify-between border-b-2 border-border px-4 py-2">
         <div className="flex items-center gap-3">
           <Link href="/admin/psychopharm-review" className="text-caption text-muted-foreground hover:underline">
-            ← Review
+            ← Library
           </Link>
           <h1 className="text-h1 text-lg">{generic}</h1>
           <span className="text-caption text-muted-foreground">
