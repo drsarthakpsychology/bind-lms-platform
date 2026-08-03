@@ -29,7 +29,8 @@
     "psych:all-passages": "tsx scripts/psychopharm/build-all-passages.ts",
     "psych:monographs": "tsx scripts/psychopharm/extract-monographs.ts",
     "psych:kb": "tsx scripts/psychopharm/build-knowledge-base.ts",
-    "psych:seed": "tsx scripts/psychopharm/seed-db.ts"
+    "psych:seed": "tsx scripts/psychopharm/seed-db.ts",
+    "psych:seed-p3": "tsx scripts/psychopharm/seed-p3.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1101.0",
