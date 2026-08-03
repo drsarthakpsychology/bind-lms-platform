@@ -4,6 +4,7 @@ import { drugFromSlug, drugDetail } from "@/lib/psychopharm/store";
 import { DOSE_CAVEAT, STANDING_NOTICE } from "@/lib/psychopharm/forbidden-phrases";
 import { DoseLadder } from "@/components/psychopharm/dose-ladder";
 import { ObserverNotes } from "@/components/psychopharm/observer-notes";
+import { RegisterView } from "@/components/psychopharm/register-view";
 import { Badge } from "@/components/ui/badge";
 
 /** Drug + band page. Bands are first-class; the ladder ties them together. */
@@ -43,15 +44,15 @@ export default async function DrugPage({ params }: { params: { drug: string } })
       {/* Dose ladder — the signature component (D3). One rung per band. */}
       <DoseLadder drug={detail.generic} bands={detail.bands} />
 
-      {/* Sections ordered by the question being asked (D4). */}
-      <section className="space-y-4 pb-4">
-        <h2 className="text-h2">What it does in the brain</h2>
-        {detail.mechanism ? (
-          <p className="text-small">{detail.mechanism}</p>
-        ) : (
-          <p className="text-small text-muted-foreground">Not covered in our sources.</p>
-        )}
-      </section>
+      {/* Dual register — Student vs Clinician, same verified data. */}
+      <RegisterView
+        generic={detail.generic}
+        plain={detail.plain}
+        mechanism={detail.mechanism}
+        bands={detail.bands}
+        source_id={detail.source_id}
+        source_title={detail.source_title}
+      />
 
       <section className="space-y-4 pb-4">
         <h2 className="text-h2">Commonly used in</h2>
@@ -62,17 +63,7 @@ export default async function DrugPage({ params }: { params: { drug: string } })
         )}
       </section>
 
-      <section className="space-y-4 pb-4">
-        <h2 className="text-h2">Typical ranges described in our sources</h2>
-        {detail.dose_range ? (
-          <>
-            <p className="text-small">{detail.dose_range}</p>
-            <DoseCaveat />
-          </>
-        ) : (
-          <p className="text-small text-muted-foreground">Not covered in our sources.</p>
-        )}
-      </section>
+      {detail.dose_range ? <DoseCaveat /> : null}
 
       {detail.side_effects_common ? (
         <section className="space-y-4 pb-4">

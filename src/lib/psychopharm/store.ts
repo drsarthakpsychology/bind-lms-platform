@@ -95,8 +95,8 @@ function hasVerified(drug: string): boolean {
 export interface DrugDetail {
   generic: string;
   class?: string;
-  plain?: string;      // Output B
-  mechanism?: string;  // Output A (clinical)
+  plain?: string;      // Output B — student register
+  mechanism?: string;  // Output A (clinical register, technical)
   common_uses?: string;
   dose_range?: string;
   side_effects_common?: string;
@@ -112,8 +112,18 @@ export interface BandView {
   unit: string;
   band_label: string;
   primary_purpose?: string;
+  band_type?: string;
   is_typical_starting?: boolean;
   is_standard_maintenance?: boolean;
+  /** clinician-register provenance for this band. */
+  evidence?: {
+    strength?: string;
+    confidence?: string;
+    guideline?: string;
+    source_id?: string;
+    page_ref?: string;
+    quote?: string;
+  };
 }
 
 export function drugDetail(drug: string): DrugDetail | null {
@@ -128,8 +138,17 @@ export function drugDetail(drug: string): DrugDetail | null {
     unit: b.unit,
     band_label: b.band_label,
     primary_purpose: b.primary_purpose,
+    band_type: b.band_type,
     is_typical_starting: b.is_typical_starting,
     is_standard_maintenance: b.is_standard_maintenance,
+    evidence: {
+      strength: b.evidence?.strength,
+      confidence: b.evidence?.confidence,
+      guideline: b.evidence?.guideline,
+      source_id: b.source_ref?.source_id,
+      page_ref: b.source_ref?.page_ref,
+      quote: b.source_ref?.snippet,
+    },
   }));
 
   // Honest fallback (G2/G3): when the sources give a dose range but the
