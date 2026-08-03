@@ -6,6 +6,7 @@ import {
   TIMELINE_STAGES,
   OBSERVER_NOTE,
 } from "@/lib/psychopharm/observer-seed";
+import { OBSERVATION_CHECKLIST, VIGNETTES } from "@/lib/psychopharm/p3-seed";
 
 /**
  * Phase 2 observer layer (Parts 1, 2, 3, 4, 9, 11) rendered on a drug page.
@@ -27,6 +28,8 @@ export function ObserverNotes({
   const classObs = CLASS_OBSERVATIONS.filter(matchesClass);
   const classPearls = CLINICAL_PEARLS.filter(matchesClass);
   const allPearls = classPearls.length ? classPearls : CLINICAL_PEARLS;
+  const classVignettes = VIGNETTES.filter((v) => cls.includes(v.drug_class.toLowerCase()));
+  const allVignettes = classVignettes.length ? classVignettes : VIGNETTES.slice(0, 1);
 
   return (
     <section className="space-y-4 pb-4">
@@ -110,6 +113,41 @@ export function ObserverNotes({
           <ul className="mt-2 list-disc space-y-1 pl-5 text-small">
             {allPearls.flatMap((c) => c.pearls.map((p, i) => <li key={i}>{p}</li>))}
           </ul>
+        </div>
+      ) : null}
+
+      {/* Part 4 — in-session observation checklist */}
+      <div className="mt-4">
+        <h3 className="text-caption font-semibold uppercase text-muted-foreground">
+          During today&apos;s session, observe
+        </h3>
+        <ul className="mt-2 grid gap-1 pl-0 text-small sm:grid-cols-2">
+          {OBSERVATION_CHECKLIST.slice(0, 10).map((c, i) => (
+            <li key={i} className="flex gap-2 rounded border-2 border-border px-2 py-1">
+              <span className="mt-0.5 size-3 shrink-0 rounded-sm border border-border" aria-hidden />
+              <span title={c.explanation}>{c.item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Part 10 — illustrative vignette */}
+      {allVignettes.length ? (
+        <div className="mt-4">
+          <h3 className="text-caption font-semibold uppercase text-muted-foreground">
+            An illustrative scenario
+          </h3>
+          <div className="mt-2 space-y-2 text-small">
+            {allVignettes.map((v, i) => (
+              <div key={i} className="rounded border-2 border-dashed border-border p-3">
+                <p className="mb-1">{v.scenario}</p>
+                <p className="text-caption text-muted-foreground">
+                  <span className="font-medium">What to look for:</span> {v.expected.join(" · ")}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-1 text-caption text-muted-foreground">Illustrative scenario — not a sourced clinical claim.</p>
         </div>
       ) : null}
     </section>
