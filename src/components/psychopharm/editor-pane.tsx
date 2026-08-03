@@ -2,9 +2,16 @@
 
 import * as React from "react";
 import { DocumentView } from "./document-view";
-import type { MedicationDocument, MedBlock, MedSection, SourceRef } from "@/lib/psychopharm/document";
+import type { MedicationDocument, MedBlock, BlockType, SourceRef } from "@/lib/psychopharm/document";
 
-type BlockPatch = Partial<Pick<MedBlock, "value" | "hidden" | "sources" | "data">>;
+type BlockPatch = Partial<Pick<MedBlock, "value" | "hidden" | "sources" | "data" | "type">>;
+
+const BLOCK_TYPES: BlockType[] = [
+  "mechanism", "common_uses", "dose_band", "onset", "half_life",
+  "side_effect_list", "observation_prompt_list", "therapist_question_list",
+  "clinical_pearl_list", "red_flag_list", "plain_language", "reference",
+  "timeline", "note",
+];
 
 /**
  * The two-pane medication editor. Left: live student preview. Right: editable
@@ -23,12 +30,79 @@ export function EditorPane({
   initialStatus: string;
 }) {
   const [document, setDocument] = React.useState<MedicationDocument>(initialDocument);
+  // Undo/redo stack.
+  const [past, setPast] = React.useState<MedicationDocument[]>([]);
+  const [future, setFuture] = React.useState<MedicationDocument[]>([]);
   const [busy, setBusy] = React.useState<string | null>(null);
   const [notice, setNotice] = React.useState<string | null>(null);
   const [errors, setErrors] = React.useState<string[]>([]);
   const [activeBlock, setActiveBlock] = React.useState<string | null>(null);
   const [reason, setReason] = React.useState("");
   const [showHistory, setShowHistory] = React.useState(false);
+
+  /** Mutate document, recording the previous state for undo. */
+  const setDoc = React.useCallback((fn: (d: MedicationDocument) => MedicationDocument) => {
+    setDocument((d) => {
+      setPast((p) => [...p.slice(-49), d]);
+      setFuture([]);
+      return fn(d);
+    });
+  }, []);
+
+  const undo = React.useCallback(() => {
+    setPast((p) => {
+      if (!p.length) return p;
+      const prev = p[p.length - 1];
+      setDocument((d) => {
+        setFuture((f) => [...f, d]);
+        return prev;
+      });
+      return p.slice(0, -1);
+    });
+  }, []);
+
+  const redo = React.useCallback(() => {
+    setFuture((f) => {
+      if (!f.length) return f;
+      const next = f[f.length - 1];
+      setDocument((d) => {
+        setPast((p) => [...p, d]);
+        return next;
+      });
+      return f.slice(0, -1);
+    });
+  }, []);
+
+  // Keyboard shortcuts: Ctrl/Cmd+S save, Ctrl/Cmd+Z undo, Shift+Cmd/Ctrl+Z redo.
+  React.useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const mod = e.metaKey || e.ctrlKey;
+      if (mod && e.key.toLowerCase() === "s") { e.preventDefault(); saveRef.current(); }
+      else if (mod && e.key.toLowerCase() === "z" && e.shiftKey) { e.preventDefault(); redo(); }
+      else if (mod && e.key.toLowerCase() === "z") { e.preventDefault(); undo(); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [undo, redo]);
+
+  const saveRef = React.useRef<() => void>(() => {});
+  const saveCallback = React.useCallback(async () => {
+    setBusy("save");
+    setNotice(null);
+    try {
+      const res = await fetch("/api/psychopharm/document", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ drug, document, reason }),
+      });
+      const data = await res.json();
+      if (!res.ok) { setNotice(`Save failed: ${data.error ?? "error"}`); return; }
+      setReason("");
+      setNotice(`Saved as v${data.version} (${data.status}).`);
+    } finally { setBusy(null); }
+  }, [drug, document, reason]);
+  saveRef.current = saveCallback; // keep ref fresh
+
   const [versions, setVersions] = React.useState<
     Array<{ version: number; reason?: string | null; created_at: string; changed_fields: string[] }>
   >([]);
@@ -59,7 +133,7 @@ export function EditorPane({
   }
 
   function addBlock(sectionIdx: number) {
-    setDocument((d) => {
+    setDoc((d) => {
       const sections = [...d.sections];
       const section = { ...sections[sectionIdx] };
       section.blocks = [
@@ -72,14 +146,14 @@ export function EditorPane({
   }
 
   function addSection() {
-    setDocument((d) => ({
+    setDoc((d) => ({
       ...d,
       sections: [...d.sections, { id: crypto.randomUUID(), title: "New section", blocks: [] }],
     }));
   }
 
   function updateBlock(sectionIdx: number, blockId: string, patch: BlockPatch) {
-    setDocument((d) => ({
+    setDoc((d) => ({
       ...d,
       sections: d.sections.map((s, si) =>
         si === sectionIdx
@@ -90,28 +164,10 @@ export function EditorPane({
   }
 
   function updateSectionTitle(sectionIdx: number, title: string) {
-    setDocument((d) => ({
+    setDoc((d) => ({
       ...d,
       sections: d.sections.map((s, si) => (si === sectionIdx ? { ...s, title } : s)),
     }));
-  }
-
-  async function save() {
-    setBusy("save");
-    setNotice(null);
-    try {
-      const res = await fetch("/api/psychopharm/document", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ drug, document, reason }),
-      });
-      const data = await res.json();
-      if (!res.ok) { setNotice(`Save failed: ${data.error ?? "error"}`); return; }
-      setReason("");
-      setNotice(`Saved as v${data.version} (${data.status}).`);
-    } finally {
-      setBusy(null);
-    }
   }
 
   async function publish() {
@@ -211,7 +267,7 @@ export function EditorPane({
           <div className="flex gap-2">
             <button
               type="button"
-              onClick={save}
+              onClick={saveCallback}
               disabled={busy !== null}
               className="rounded-md border-2 border-foreground bg-primary px-3 py-1.5 text-sm text-primary-foreground"
             >
@@ -291,8 +347,17 @@ function BlockRow({
   const [v, setV] = React.useState(block.value);
   return (
     <div className={`rounded-md border-2 p-2 ${active ? "border-primary" : "border-border"}`}>
-      <div className="flex items-center justify-between">
-        <span className="text-caption uppercase text-muted-foreground">{block.type}</span>
+      <div className="flex items-center justify-between gap-2">
+        <select
+          value={block.type}
+          onChange={(e) => onChange({ type: e.target.value as MedBlock["type"] })}
+          className="rounded border-2 border-border bg-transparent px-1 py-0.5 text-caption text-muted-foreground"
+          aria-label="Block type"
+        >
+          {BLOCK_TYPES.map((t) => (
+            <option key={t} value={t}>{t}</option>
+          ))}
+        </select>
         <button type="button" onClick={onSelect} className="text-caption text-muted-foreground hover:text-foreground">
           source {block.sources?.length ? `(${block.sources.length})` : ""}
         </button>
