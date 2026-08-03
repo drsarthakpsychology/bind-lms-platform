@@ -16,6 +16,7 @@ export function RegisterView({
   bands,
   source_id,
   source_title,
+  activeBand,
 }: {
   generic: string;
   plain?: string;
@@ -23,6 +24,7 @@ export function RegisterView({
   bands: BandView[];
   source_id: string;
   source_title: string;
+  activeBand?: number;
 }) {
   const [mode, setMode] = React.useState<"student" | "clinician">("student");
 
@@ -74,10 +76,18 @@ export function RegisterView({
         <h2 className="text-h2">Dose bands</h2>
         <div className="space-y-2">
           {bands.map((b, i) => (
-            <div key={i} className="rounded-md border-2 border-border p-3">
+            <div
+              key={i}
+              className={`rounded-md border-2 p-3 ${
+                activeBand && i + 1 === activeBand ? "border-primary bg-primary/5" : "border-border"
+              }`}
+            >
               <p className="text-small font-medium">
                 {b.low != null || b.high != null ? `${b.low ?? "–"}–${b.high ?? "–"} ${b.unit}` : b.band_label}
                 {b.band_type ? <span className="ml-2 text-caption uppercase text-muted-foreground">{b.band_type}</span> : null}
+                {activeBand && i + 1 === activeBand ? (
+                  <span className="ml-2 text-caption font-semibold text-primary">● selected</span>
+                ) : null}
               </p>
               <p className="text-small">{b.band_label}</p>
               {mode === "clinician" && b.evidence ? (
