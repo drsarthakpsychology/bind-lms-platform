@@ -24,11 +24,25 @@ function loadPages(): Map<number, string> {
   return pages;
 }
 
-/** Monograph section headers, in the order they appear. */
+/**
+ * Monograph section headers, in the order they appear.
+ *
+ * "If It Works", "If It Doesn't Work", "Best Augmenting Combos for Partial
+ * Response or Treatment Resistance", "Tests", and "Pharmacokinetics" were
+ * previously missing here. Without them, "How Long Until It Works" (and other
+ * sections) swallowed everything up to the next KNOWN header — for most
+ * monographs that meant onset text absorbed several thousand characters of
+ * prescriber-directed content ("consider increasing dose", "switching to
+ * another agent") that must never reach a student.
+ */
 const SECTIONS = [
   "Commonly Prescribed for",
   "How the Drug Works",
   "How Long Until It Works",
+  "If It Works",
+  "If It Doesn't Work",
+  "Best Augmenting Combos for Partial Response or Treatment Resistance",
+  "Tests",
   "Usual Dosage Range",
   "Dosage Forms",
   "How to Dose",
@@ -36,12 +50,30 @@ const SECTIONS = [
   "Notable Side Effects",
   "Life-Threatening or Dangerous Side Effects",
   "What to Do About Side Effects",
+  "Pharmacokinetics",
   "Special Populations",
   "The Art of Psychopharmacology",
   "Potential Advantages",
   "Potential Disadvantages",
   "Pearls",
 ];
+
+/**
+ * Normalise curly apostrophes (U+2019) to straight ones so the source text's
+ * "Doesn’t" matches our SECTIONS entry "Doesn't" without pasting the Unicode
+ * character into the array.
+ */
+function straightenApostrophes(s: string): string {
+  return s.replace(/’/g, "'");
+}
+
+/**
+ * "Best Augmenting Combos for Partial Response or Treatment Resistance" wraps
+ * across two source lines ("...Treatment" / "Resistance"). We match it by
+ * prefix against the normalised line pair rather than requiring the full
+ * heading on one line.
+ */
+const BEST_AUGMENTING_PREFIX = "Best Augmenting Combos for Partial Response or Treatment";
 
 /**
  * For a single assembled monograph text, return fresh data: map of header -> {
@@ -57,8 +89,18 @@ function extractMonograph(assembled: Array<{ page: number; text: string }>): {
   const generic = firstLines[0] || "unknown";
 
   const sections: Record<string, { page: number; text: string }> = {};
-  // Walk pages; when we see a known header as a line, start capturing until we
-  // hit the next known header (broadening capture across page boundaries).
+
+  // Flatten to a single (page, line) list so a header wrapping across two
+  // source lines (e.g. "Best Augmenting Combos ... Treatment" / "Resistance")
+  // can be detected with one line of lookahead.
+  const flat: Array<{ page: number; line: string }> = [];
+  for (const { page, text } of assembled) {
+    for (const rawLine of text.split("\n")) {
+      const t = straightenApostrophes(rawLine.trim());
+      if (t) flat.push({ page, line: t });
+    }
+  }
+
   let current: string | null = null;
   let buffer: string[] = [];
   let currentPage = 0;
@@ -70,19 +112,30 @@ function extractMonograph(assembled: Array<{ page: number; text: string }>): {
     buffer = [];
   };
 
-  for (const { page, text } of assembled) {
-    for (const line of text.split("\n")) {
-      const t = line.trim();
-      if (!t) continue;
-      const headerIdx = SECTIONS.indexOf(t);
-      if (headerIdx >= 0) {
-        flush();
-        current = t;
-        currentPage = page;
-        continue;
-      }
-      if (current) buffer.push(t);
+  for (let i = 0; i < flat.length; i++) {
+    const { page, line } = flat[i];
+
+    // Wrapped header: "Best Augmenting Combos ... Treatment" on this line,
+    // "Resistance" on the next.
+    if (
+      line.startsWith(BEST_AUGMENTING_PREFIX) &&
+      flat[i + 1]?.line === "Resistance"
+    ) {
+      flush();
+      current = "Best Augmenting Combos for Partial Response or Treatment Resistance";
+      currentPage = page;
+      i++; // consume the "Resistance" continuation line
+      continue;
     }
+
+    const headerIdx = SECTIONS.indexOf(line);
+    if (headerIdx >= 0) {
+      flush();
+      current = line;
+      currentPage = page;
+      continue;
+    }
+    if (current) buffer.push(line);
   }
   flush();
   return { generic, sections };
