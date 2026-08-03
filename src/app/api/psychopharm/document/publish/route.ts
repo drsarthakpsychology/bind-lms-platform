@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import type { MedicationDocument, MedBlock } from "@/lib/psychopharm/document";
+import type { MedicationDocument } from "@/lib/psychopharm/document";
 
 /**
  * Publish a medication document.
@@ -34,32 +34,19 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, errors: problems }, { status: 422 });
   }
 
-  const nextVersion = doc.version + 1;
-  const { data: published, error } = await supabase
-    .from("medication_documents")
-    .update({
-      status: "published",
-      version: nextVersion,
-      published_version: nextVersion,
-      reviewer: user.id,
-      verified_at: new Date().toISOString(),
-    })
-    .eq("id", doc.id)
-    .select("*")
-    .single();
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-
-  await supabase.from("medication_document_versions").insert({
-    document_id: doc.id,
-    version: nextVersion,
-    content: d,
-    delta: {},
-    editor: user.id,
-    reason: body.reason ?? "publish",
-    changed_fields: [],
+  // Publish via the SECURITY DEFINER function, which enforces that only
+  // reviewer/admin can flip status → published (F1 / BFLA fix). The function
+  // raises if app_role() is not in (admin, reviewer); a plain UPDATE would be
+  // blocked by the med_docs_block_editor_publish trigger anyway.
+  const { data: published, error } = await supabase.rpc("publish_medication_document", {
+    p_drug_id: doc.drug_id,
+    p_reason: body.reason ?? "publish",
   });
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 403 });
+  }
 
-  return NextResponse.json({ ok: true, document: published });
+  return NextResponse.json({ ok: true, result: published });
 }
 
 /** Publish validation — every medication must be source-backed and internally valid. */
