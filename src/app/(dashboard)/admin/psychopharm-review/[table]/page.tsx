@@ -23,17 +23,19 @@ export default async function ReviewTablePage({
   params,
   searchParams,
 }: {
-  params: { table: string };
-  searchParams: { drug?: string };
+  params: Promise<{ table: string }>;
+  searchParams: Promise<{ drug?: string }>;
 }) {
-  const table = TABLE_ALIASES[params.table];
+  const { table: tableParam } = await params;
+  const { drug: drugFilter } = await searchParams;
+  const table = TABLE_ALIASES[tableParam];
   if (!table) notFound();
 
   const supabase = await createClient();
   let query = supabase.from(table).select("*").order("created_at", { ascending: true });
-  if (searchParams.drug) {
+  if (drugFilter) {
     // filter by drug name via the drug join
-    const { data: drug } = await supabase.from("psych_drugs").select("id").eq("generic_name", searchParams.drug).maybeSingle();
+    const { data: drug } = await supabase.from("psych_drugs").select("id").eq("generic_name", drugFilter).maybeSingle();
     if (drug) query = supabase.from(table).select("*").eq("drug_id", drug.id).order("created_at", { ascending: true });
   }
   const { data: rows } = await query;

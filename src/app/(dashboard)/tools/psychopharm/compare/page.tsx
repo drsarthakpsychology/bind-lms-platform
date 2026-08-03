@@ -10,9 +10,10 @@ import Link from "next/link";
 export default async function ComparePage({
   searchParams,
 }: {
-  searchParams: { a?: string; b?: string; c?: string; d?: string; e?: string };
+  searchParams: Promise<{ a?: string; b?: string; c?: string; d?: string; e?: string }>;
 }) {
-  const slugs = [searchParams.a, searchParams.b, searchParams.c, searchParams.d, searchParams.e].filter(Boolean) as string[];
+  const sp = await searchParams;
+  const slugs = [sp.a, sp.b, sp.c, sp.d, sp.e].filter(Boolean) as string[];
   if (slugs.length < 2) {
     return (
       <div className="mx-auto max-w-3xl space-y-4 py-8">

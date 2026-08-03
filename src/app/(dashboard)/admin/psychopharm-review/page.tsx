@@ -13,8 +13,9 @@ import { ReviewFilter } from "./review-filter";
 export default async function PsychReviewPage({
   searchParams,
 }: {
-  searchParams: { q?: string };
+  searchParams: Promise<{ q?: string }>;
 }) {
+  const sp = await searchParams;
   const supabase = await createClient();
 
   // All drugs with a per-drug status summary (any field/band still draft).
@@ -35,7 +36,7 @@ export default async function PsychReviewPage({
     fieldStatus.set(f.drug_id, arr);
   }
 
-  const q = (searchParams.q ?? "").trim().toLowerCase();
+  const q = (sp.q ?? "").trim().toLowerCase();
   const filtered = (drugs ?? []).filter(
     (d) => !q || d.generic_name.toLowerCase().includes(q) || (d.drug_class ?? "").toLowerCase().includes(q),
   );
@@ -57,7 +58,7 @@ export default async function PsychReviewPage({
 
       <div className="space-y-3">
         {filtered.length === 0 ? (
-          <p className="text-small text-muted-foreground">No medications match “{searchParams.q}”.</p>
+          <p className="text-small text-muted-foreground">No medications match “{sp.q}”.</p>
         ) : (
           filtered.map((drug) => {
             const b = bandStatus.get(drug.id) ?? [];

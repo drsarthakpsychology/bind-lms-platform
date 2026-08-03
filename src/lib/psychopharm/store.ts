@@ -72,8 +72,12 @@ export function searchDrugs(query: string, limit = 12): DrugSummary[] {
   if (!q) return [];
   const out: DrugSummary[] = [];
   const seen = new Set<string>();
+  // Only surface drugs that resolve to a real detail page — a search hit with
+  // no drugDetail would otherwise 404 on the drug page (e.g. a plain name that
+  // exists in the ladder but not the KB).
+  const resolvable = (name: string) => Boolean(drugDetail(name));
   for (const drug of drugList()) {
-    if (drug.toLowerCase().includes(q)) {
+    if (drug.toLowerCase().includes(q) && resolvable(drug)) {
       out.push({ generic: drug, verified: hasVerified(drug) });
       seen.add(drug);
     }
@@ -82,7 +86,7 @@ export function searchDrugs(query: string, limit = 12): DrugSummary[] {
   for (const d of ALL_DRAFT) {
     const names = [d.generic_name, ...d.brand_names, ...d.aliases];
     for (const n of names) {
-      if (!seen.has(d.generic_name) && n.toLowerCase().includes(q)) {
+      if (!seen.has(d.generic_name) && n.toLowerCase().includes(q) && resolvable(d.generic_name)) {
         out.push({ generic: d.generic_name, verified: hasVerified(d.generic_name) });
         seen.add(d.generic_name);
       }
@@ -140,9 +144,12 @@ export interface BandView {
 
 export function drugDetail(drug: string): DrugDetail | null {
   const kb = loadJSON<KbRow>("KNOWLEDGE_BASE.json").filter((r) => r.drug === drug);
-  if (!kb.length) return null;
-  const asRow = (k: string) => kb.find((r) => r.field_key === k)?.value;
   const curated = ALL_DRAFT.find((d) => d.generic_name === drug);
+  // A drug is renderable if it has a KB row OR a curated record (bands +
+  // mechanism). Curated-only drugs (some FDA-sourced) have no KB row but must
+  // still resolve to a detail page.
+  if (!kb.length && !curated) return null;
+  const asRow = (k: string) => kb.find((r) => r.field_key === k)?.value;
 
   const curatedBands: BandView[] = (curated?.bands ?? []).map((b) => ({
     low: b.range_low ?? null,
@@ -190,8 +197,8 @@ export function drugDetail(drug: string): DrugDetail | null {
     generic: drug,
     class: curated?.drug_class,
     plain: curated?.student.plain_language?.text,
-    mechanism: asRow("mechanism"),
-    common_uses: asRow("common_uses"),
+    mechanism: asRow("mechanism") ?? curated?.mechanism[0]?.value,
+    common_uses: asRow("common_uses") ?? curated?.common_uses?.[0]?.value,
     dose_range: asRow("dose_range"),
     side_effects_common: asRow("side_effects_common"),
     side_effects_serious: asRow("side_effects_serious"),

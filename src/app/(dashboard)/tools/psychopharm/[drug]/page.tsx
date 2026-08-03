@@ -8,8 +8,9 @@ import { DrugBandView } from "@/components/psychopharm/drug-band-view";
 import { Badge } from "@/components/ui/badge";
 
 /** Drug + band page. Bands are first-class; the ladder ties them together. */
-export default async function DrugPage({ params }: { params: { drug: string } }) {
-  const generic = drugFromSlug(params.drug);
+export default async function DrugPage({ params }: { params: Promise<{ drug: string }> }) {
+  const { drug } = await params;
+  const generic = drugFromSlug(drug);
   if (!generic) notFound();
   const detail = drugDetail(generic);
   if (!detail) notFound();
@@ -21,7 +22,7 @@ export default async function DrugPage({ params }: { params: { drug: string } })
           ← Search
         </Link>
         <Link
-          href={`/tools/psychopharm/compare?a=${params.drug}&b=`}
+          href={`/tools/psychopharm/compare?a=${drug}&b=`}
           className="text-caption font-medium text-primary hover:underline"
         >
           Compare →
