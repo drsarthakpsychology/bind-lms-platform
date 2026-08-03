@@ -54,6 +54,8 @@ export type BandType =
   | "pediatric"
   | "renal"
   | "hepatic"
+  | "population"
+  | "adult"
   | "discontinuation_taper";
 
 export interface DoseBand {

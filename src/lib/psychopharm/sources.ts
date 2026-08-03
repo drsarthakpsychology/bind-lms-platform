@@ -108,6 +108,16 @@ export const SOURCES: Record<string, SourceMeta> = {
     type: "icd",
     authority_scope: ["condition_naming", "classification"],
   },
+  fda_label: {
+    id: "fda_label",
+    title: "FDA Prescribing Information (DailyMed / Drugs@FDA)",
+    authors: "US Food and Drug Administration",
+    edition: "current label",
+    year: 2025,
+    publisher: "US FDA",
+    type: "pharmacology",
+    authority_scope: ["dose_range", "dose_bands", "interactions", "side_effects", "special_populations"],
+  },
   icd11: {
     id: "icd11",
     title: "ICD-11 Reference Guide",

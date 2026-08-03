@@ -75,7 +75,7 @@ export default async function PsychReviewPage({
                 <div className="flex items-center gap-2">
                   <Badge variant={allPublished ? "secondary" : "outline"}>{status}</Badge>
                   <Link
-                    href={`/admin/psychopharm-review/dose_bands?drug=${encodeURIComponent(drug.generic_name)}`}
+                    href={`/admin/psychopharm-review/psych_dose_bands?drug=${encodeURIComponent(drug.generic_name)}`}
                     className="rounded-md border-2 border-foreground bg-primary px-3 py-1.5 text-sm text-primary-foreground"
                   >
                     Review
