@@ -48,6 +48,8 @@ for (const [drug, rec] of Object.entries<any>(monographs as any)) {
   const range = sections["Usual Dosage Range"]?.text;
   const side = sections["Notable Side Effects"]?.text;
   const serious = sections["Life-Threatening or Dangerous Side Effects"]?.text;
+  const onset = sections["How Long Until It Works"]?.text;
+  const pk = sections["Pharmacokinetics"]?.text;
 
   if (mechanism) {
     KB_ROWS.push({
@@ -96,6 +98,29 @@ for (const [drug, rec] of Object.entries<any>(monographs as any)) {
       field_key: "side_effects_serious",
       value: serious,
       page_ref: String(sections["Life-Threatening or Dangerous Side Effects"]?.page ?? start),
+      source_id: "stahl_pg_7th",
+    });
+  }
+  if (onset) {
+    KB_ROWS.push({
+      drug,
+      kind: "field",
+      field_key: "onset",
+      value: onset,
+      page_ref: String(sections["How Long Until It Works"].page),
+      source_id: "stahl_pg_7th",
+    });
+  }
+  if (pk) {
+    // The whole Pharmacokinetics block is stored verbatim; the half-life is
+    // extracted at render/display time. Keeping the full block preserves
+    // provenance and avoids inventing a parsed value here.
+    KB_ROWS.push({
+      drug,
+      kind: "field",
+      field_key: "half_life",
+      value: pk,
+      page_ref: String(sections["Pharmacokinetics"].page),
       source_id: "stahl_pg_7th",
     });
   }
