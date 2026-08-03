@@ -18,10 +18,8 @@ import { OBSERVATION_CHECKLIST, VIGNETTES } from "@/lib/psychopharm/p3-seed";
  */
 export function ObserverNotes({
   drugClass,
-  bandPrompts,
 }: {
   drugClass?: string;
-  bandPrompts?: Array<{ prompt: string; rationale?: string; urgency?: string }>;
 }) {
   const cls = drugClass?.toLowerCase() ?? "";
   const matchesClass = (c: { class: string }) => cls.includes(c.class.toLowerCase());
@@ -52,23 +50,6 @@ export function ObserverNotes({
           Not yet written for this class in our sources.
         </p>
       )}
-
-      {/* Band-specific observations (P3) — differ by dose band */}
-      {bandPrompts && bandPrompts.length ? (
-        <div className="mt-3">
-          <h3 className="text-caption font-semibold uppercase text-muted-foreground">
-            At this dose, ask specifically about
-          </h3>
-          <ul className="mt-1 list-disc space-y-1 pl-5 text-small">
-            {bandPrompts.map((p, i) => (
-              <li key={i}>
-                <span className="font-medium">{p.prompt}</span>
-                {p.rationale ? <span className="text-muted-foreground"> — {p.rationale}</span> : null}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
 
       {/* Part 3 — timeline */}
       <div className="mt-4 space-y-2">

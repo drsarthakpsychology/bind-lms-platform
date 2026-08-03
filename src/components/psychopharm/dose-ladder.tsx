@@ -3,6 +3,7 @@
 import * as React from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { formatBand } from "@/lib/psychopharm/format";
 import type { BandView } from "@/lib/psychopharm/store";
 
 /**
@@ -10,8 +11,9 @@ import type { BandView } from "@/lib/psychopharm/store";
  *
  * One rung per band, real values from the data. Tapping a rung switches the
  * page to that band; the URL changes so it's shareable and survives refresh.
- * Bands the sources don't describe would render as gaps (honest, G3).
- * Vertical on mobile, horizontal on desktop.
+ * Bands are rendered sorted ascending by range_low (nulls last) for display,
+ * but the ?band= URL param keeps the ORIGINAL band_order so it stays stable
+ * and shareable. Vertical on mobile, horizontal on desktop.
  */
 export function DoseLadder({ drug, bands }: { drug: string; bands: BandView[] }) {
   const router = useRouter();
@@ -19,11 +21,10 @@ export function DoseLadder({ drug, bands }: { drug: string; bands: BandView[] })
   const searchParams = useSearchParams();
   const active = Number(searchParams?.get("band") ?? (bands.length ? 1 : 0));
 
-  function select(band: BandView) {
-    // band_order is 1-indexed in the data; URL band= matches it.
+  function select(originalOrder: number) {
     const params = new URLSearchParams(searchParams ?? new URLSearchParams());
-    params.set("band", String(bandOrderOf(band, bands)));
-    router.push(`${pathname}?${params.toString()}`);
+    params.set("band", String(originalOrder));
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   }
 
   if (!bands.length) {
@@ -34,30 +35,34 @@ export function DoseLadder({ drug, bands }: { drug: string; bands: BandView[] })
     );
   }
 
+  // Sort a COPY ascending by range_low (nulls last); the original array keeps
+  // band_order identity for the URL and observation-prompt linkage.
+  const sorted = [...bands].sort((a, b) => {
+    const al = a.low ?? Number.POSITIVE_INFINITY;
+    const bl = b.low ?? Number.POSITIVE_INFINITY;
+    return al - bl;
+  });
+
   return (
     <div className="space-y-3">
       <p className="text-eyebrow text-muted-foreground">Tap a dose to see what it does</p>
       <div className="grid gap-2">
-        {bands.map((band, idx) => {
-          const order = idx + 1;
-          const isActive = order === active;
+        {sorted.map((band, idx) => {
+          const originalOrder = bands.indexOf(band) + 1;
+          const isActive = originalOrder === active;
           const label = band.band_label || "band";
           return (
             <button
-              key={idx}
+              key={originalOrder}
               type="button"
-              onClick={() => select(band)}
+              onClick={() => select(originalOrder)}
               aria-pressed={isActive}
               className={cn(
                 "flex w-full items-center justify-between gap-2 rounded-md border-2 border-border px-4 py-3 text-left transition",
                 isActive ? "bg-primary/10 hard-shadow-sm" : "bg-card hover:bg-accent",
               )}
             >
-              <span className="font-semibold">
-                {band.low != null || band.high != null
-                  ? `${band.low ?? "–"}–${band.high ?? "–"} ${band.unit}`
-                  : "not specified"}
-              </span>
+              <span className="font-semibold">{formatBand(band)}</span>
               <span className="text-small text-muted-foreground">{label}</span>
             </button>
           );
@@ -68,9 +73,4 @@ export function DoseLadder({ drug, bands }: { drug: string; bands: BandView[] })
       </p>
     </div>
   );
-}
-
-function bandOrderOf(band: BandView, all: BandView[]): number {
-  // order = index+1, matching the band_order in the data.
-  return all.indexOf(band) + 1;
 }

@@ -4,6 +4,7 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { formatBand } from "@/lib/psychopharm/format";
 
 /**
  * Dr. Sarthak reviewed the data; this component only navigates to static,
@@ -154,7 +155,7 @@ export function PsychSearch({ className }: { className?: string }) {
           <p className="text-caption text-muted-foreground">Pick a dose for {selected}:</p>
           <div className="flex flex-wrap gap-2">
             {bands.map((b, i) => {
-              const range = b.low != null || b.high != null ? `${b.low ?? "–"}–${b.high ?? "–"} ${b.unit ?? "mg"}` : b.band_label;
+              const range = b.band_label || formatBand(b);
               return (
                 <button
                   key={i}

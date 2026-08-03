@@ -139,8 +139,22 @@ export interface BandView {
   band_label: string;
   primary_purpose?: string;
   band_type?: string;
+  frequency?: string;
+  secondary_purposes?: string[];
   is_typical_starting?: boolean;
   is_standard_maintenance?: boolean;
+  why_this_dose?: string;
+  what_changes_going_up?: string;
+  what_changes_going_down?: string;
+  plain_explanation?: string;
+  technical_explanation?: string;
+  population_notes?: string[];
+  onset?: { value: string; page_ref?: string };
+  side_effects?: Array<{
+    label: string;
+    items: string[];
+    time_course?: string;
+  }>;
   /** clinician-register provenance for this band. */
   evidence?: {
     strength?: string;
@@ -170,8 +184,22 @@ export function drugDetail(drug: string): DrugDetail | null {
     band_label: b.band_label,
     primary_purpose: b.primary_purpose,
     band_type: b.band_type,
+    frequency: b.frequency,
+    secondary_purposes: b.secondary_purposes ?? [],
     is_typical_starting: b.is_typical_starting,
     is_standard_maintenance: b.is_standard_maintenance,
+    why_this_dose: b.why_this_dose,
+    what_changes_going_up: b.what_changes_going_up,
+    what_changes_going_down: b.what_changes_going_down,
+    plain_explanation: b.plain_explanation,
+    technical_explanation: b.technical_explanation,
+    population_notes: b.population_notes ?? [],
+    onset: b.onset ? { value: b.onset.value, page_ref: b.onset.page_ref } : undefined,
+    side_effects: (b.side_effects ?? []).map((s) => ({
+      label: s.label,
+      items: s.items,
+      time_course: s.time_course,
+    })),
     evidence: {
       strength: b.evidence?.strength,
       confidence: b.evidence?.confidence,

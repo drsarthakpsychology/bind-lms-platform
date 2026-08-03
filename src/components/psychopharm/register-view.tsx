@@ -1,52 +1,43 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/lib/utils";
-import type { BandView } from "@/lib/psychopharm/store";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 
 /**
- * Dual-register toggle (part of a page directive): Student View (plain,
- * beginner) vs Clinician View (technical + evidence). Both read the SAME
- * underlying record — only presentation changes, never the evidence.
+ * Dual-register view: Student (plain) vs Clinician (technical + evidence).
+ * Both read the SAME underlying record — only presentation changes. The
+ * register mode is lifted up (controlled by the parent) so the band detail
+ * panel can show the clinician evidence block when in clinician mode.
+ *
+ * The dose list itself lives in the DoseLadder (single source of truth); this
+ * component renders the mechanism in two registers only.
  */
 export function RegisterView({
-  generic,
   plain,
   mechanism,
-  bands,
   source_id,
   source_title,
-  activeBand,
+  mode,
+  onModeChange,
 }: {
-  generic: string;
   plain?: string;
   mechanism?: string;
-  bands: BandView[];
   source_id: string;
   source_title: string;
-  activeBand?: number;
+  mode: "student" | "clinician";
+  onModeChange: (m: "student" | "clinician") => void;
 }) {
-  const [mode, setMode] = React.useState<"student" | "clinician">("student");
-
   return (
     <div className="space-y-4">
-      {/* Register switch */}
-      <div className="inline-flex rounded-md border-2 border-border p-0.5">
-        {(["student", "clinician"] as const).map((m) => (
-          <button
-            key={m}
-            type="button"
-            onClick={() => setMode(m)}
-            aria-pressed={mode === m}
-            className={cn(
-              "rounded px-3 py-1 text-sm",
-              mode === m ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground",
-            )}
-          >
-            {m === "student" ? "Student view" : "Clinician view"}
-          </button>
-        ))}
-      </div>
+      <SegmentedControl
+        value={mode}
+        onValueChange={onModeChange}
+        label="Viewing register"
+        options={[
+          { value: "student", label: "Student view" },
+          { value: "clinician", label: "Clinician view" },
+        ]}
+      />
 
       <p className="text-caption text-muted-foreground">
         {mode === "student"
@@ -69,41 +60,6 @@ export function RegisterView({
             <p className="text-small text-muted-foreground">Not covered in our sources.</p>
           )
         )}
-      </section>
-
-      {/* Dose ladder — same bands, clinician adds evidence */}
-      <section>
-        <h2 className="text-h2">Dose bands</h2>
-        <div className="space-y-2">
-          {bands.map((b, i) => (
-            <div
-              key={i}
-              className={`rounded-md border-2 p-3 ${
-                activeBand && i + 1 === activeBand ? "border-primary bg-primary/5" : "border-border"
-              }`}
-            >
-              <p className="text-small font-medium">
-                {b.low != null || b.high != null ? `${b.low ?? "–"}–${b.high ?? "–"} ${b.unit}` : b.band_label}
-                {b.band_type ? <span className="ml-2 text-caption uppercase text-muted-foreground">{b.band_type}</span> : null}
-                {activeBand && i + 1 === activeBand ? (
-                  <span className="ml-2 text-caption font-semibold text-primary">● selected</span>
-                ) : null}
-              </p>
-              <p className="text-small">{b.band_label}</p>
-              {mode === "clinician" && b.evidence ? (
-                <div className="mt-1 text-caption text-muted-foreground">
-                  <p className="italic">“{b.evidence.quote?.slice(0, 110)}…”</p>
-                  <p>
-                    {b.evidence.strength && `Strength ${b.evidence.strength} · `}
-                    {b.evidence.confidence && `Confidence ${b.evidence.confidence}`}
-                    {b.evidence.guideline && ` · ${b.evidence.guideline}`}
-                    {b.evidence.source_id && ` · ${b.evidence.source_id} p${b.evidence.page_ref}`}
-                  </p>
-                </div>
-              ) : null}
-            </div>
-          ))}
-        </div>
       </section>
     </div>
   );

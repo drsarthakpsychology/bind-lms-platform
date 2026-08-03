@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useSearchParams } from "next/navigation";
+import { BandDetail } from "./band-detail";
 import { RegisterView } from "./register-view";
 import { ObserverNotes } from "./observer-notes";
 import type { BandView } from "@/lib/psychopharm/store";
@@ -10,6 +11,9 @@ import type { BandView } from "@/lib/psychopharm/store";
  * The drug page's dynamic body. Reads ?band= so tapping a dose-ladder rung
  * actually switches the page to that band's specific content (D3). Wrapped in
  * Suspense by the server page because useSearchParams requires it.
+ *
+ * Register mode (student|clinician) is lifted here so both the band detail
+ * (clinician evidence) and the mechanism register share one toggle.
  */
 export function DrugBandView({
   generic,
@@ -35,17 +39,20 @@ export function DrugBandView({
   const searchParams = useSearchParams();
   const activeBand = Number(searchParams?.get("band") ?? (bands.length ? 1 : 0));
   const current = bands[activeBand - 1];
+  const [mode, setMode] = React.useState<"student" | "clinician">("student");
 
   return (
     <div className="space-y-6">
+      {/* The selected band, first below the ladder. */}
+      <BandDetail band={current} register={mode} />
+
       <RegisterView
-        generic={generic}
         plain={plain}
         mechanism={mechanism}
-        bands={bands}
         source_id=""
         source_title=""
-        activeBand={activeBand}
+        mode={mode}
+        onModeChange={setMode}
       />
 
       <section className="space-y-4 pb-4">
@@ -74,11 +81,8 @@ export function DrugBandView({
         </section>
       ) : null}
 
-      {/* Phase 2 observer layer — band-specific when a band is selected */}
-      <ObserverNotes
-        drugClass={drugClass}
-        bandPrompts={current?.observation_prompts ?? bands.flatMap((b) => b.observation_prompts ?? [])}
-      />
+      {/* Phase 2 observer layer */}
+      <ObserverNotes drugClass={drugClass} />
     </div>
   );
 }
