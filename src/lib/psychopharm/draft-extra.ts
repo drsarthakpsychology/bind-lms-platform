@@ -327,4 +327,80 @@ export const DRAFT_DRUGS_EXTRA: DrugDraft[] = [
     equivalences: [], links: [], clinical_presentations: [],
     student: { plain_language: { text: "Hydroxyzine is an antihistamine used as a gentle sedative for anxiety and for itching.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p1052", snippet: "Anxiety; Pruritus", agreement: "single" } } },
   },
+
+  // CARIPRAZINE — schizophrenia, bipolar mania, bipolar depression, each its own band.
+  {
+    generic_name: "Cariprazine", drug_class: "Atypical antipsychotic", subclass: "D2/D3 partial agonist",
+    brand_names: ["Vraylar"], aliases: [],
+    mechanism: [ { value: "Partial agonist at D2 and D3 receptors (D3-preferring), with antipsychotic and mood-stabilising actions.", source_id: S, page_ref: "p420", snippet: "partial agonist at dopamine 2 and 3 receptors", agreement: "single" } ],
+    receptor_targets: [ { value: "D2/D3 partial agonist", source_id: S, page_ref: "p420", snippet: "dopamine 2 and 3 receptors", agreement: "single" } ],
+    common_uses: [ { value: "Schizophrenia, bipolar mania, bipolar depression.", source_id: S, page_ref: "p420", snippet: "Schizophrenia; Bipolar mania; Bipolar depression", agreement: "single" } ],
+    bands: [
+      { band_order: 1, range_low: 1.5, range_high: 3, unit: "mg", band_label: "Bipolar depression band",
+        primary_purpose: "Bipolar depression", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "Bipolar depression: 1.5–3 mg once daily", source_id: S, page_ref: "p420", snippet: "Bipolar depression: 1.5–3 mg once daily", agreement: "single" }, side_effects: [], observation_prompts: [] },
+      { band_order: 2, range_low: 3, range_high: 6, unit: "mg", band_label: "Mania / schizophrenia band",
+        primary_purpose: "Schizophrenia and bipolar mania", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
+        source_ref: { value: "Schizophrenia: 1.5–6 mg once daily; Bipolar mania: 3–6 mg", source_id: S, page_ref: "p420", snippet: "Schizophrenia: 1.5–6 mg once daily; Bipolar mania: 3–6 mg", agreement: "full" }, side_effects: [], observation_prompts: [] },
+    ],
+    equivalences: [], links: [], clinical_presentations: [],
+    student: { plain_language: { text: "Cariprazine's dose sits lower for bipolar depression and goes higher for mania and psychosis.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p420", snippet: "Schizophrenia; Bipolar mania; Bipolar depression", agreement: "single" } } },
+  },
+
+  // BREXPIPRAZOLE — schizophrenia 2-4 vs depression 2.
+  {
+    generic_name: "Brexpiprazole", drug_class: "Atypical antipsychotic", subclass: "D2 partial agonist / 5-HT modulator",
+    brand_names: ["Rexulti"], aliases: [],
+    mechanism: [ { value: "Partial agonist at D2 and 5-HT1A, antagonist at 5-HT2A; used in schizophrenia and as an adjunct in depression.", source_id: S, page_ref: "p321", snippet: "partial agonist; adjunct antidepressant", agreement: "single" } ],
+    receptor_targets: [ { value: "D2 partial agonist, 5-HT1A partial agonist, 5-HT2A antagonist", source_id: S, page_ref: "p321", snippet: "D2, 5-HT1A partial agonist; 5-HT2A antagonist", agreement: "single" } ],
+    common_uses: [ { value: "Schizophrenia, and major depressive disorder (adjunct to an antidepressant).", source_id: S, page_ref: "p321", snippet: "Schizophrenia; Depression (adjunct)", agreement: "single" } ],
+    bands: [
+      { band_order: 1, range_low: 2, range_high: 2, unit: "mg", band_label: "Depression adjunct band",
+        primary_purpose: "Major depressive disorder (adjunct)", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "Depression: 2 mg once daily", source_id: S, page_ref: "p321", snippet: "Depression: 2 mg once daily", agreement: "single" }, side_effects: [], observation_prompts: [] },
+      { band_order: 2, range_low: 2, range_high: 4, unit: "mg", band_label: "Schizophrenia band",
+        primary_purpose: "Schizophrenia", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
+        source_ref: { value: "Schizophrenia: 2–4 mg once daily", source_id: S, page_ref: "p321", snippet: "Schizophrenia: 2–4 mg once daily", agreement: "single" }, side_effects: [], observation_prompts: [] },
+    ],
+    equivalences: [], links: [], clinical_presentations: [],
+    student: { plain_language: { text: "Brexpiprazole is a partial-dopamine drug: a small 2 mg dose as an add-on for depression, up to 4 mg treating schizophrenia.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p321", snippet: "Schizophrenia; Depression adjunct", agreement: "single" } } },
+  },
+
+  // PERPHENAZINE — psychosis vs nausea/vomiting, distinct bands.
+  {
+    generic_name: "Perphenazine", drug_class: "Dopamine antagonist (antipsychotic)", subclass: "Phenothiazine (piperazine)",
+    brand_names: ["Trilafon"], aliases: [],
+    mechanism: [ { value: "Blocks dopamine D2 receptors; antipsychotic and antiemetic.", source_id: S, page_ref: "p1753", snippet: "dopamine antagonism", agreement: "single" } ],
+    receptor_targets: [ { value: "D2 antagonist", source_id: S, page_ref: "p1753", snippet: "dopamine receptor antagonist", agreement: "single" } ],
+    common_uses: [ { value: "Psychosis, and nausea/vomiting.", source_id: S, page_ref: "p1753", snippet: "Psychosis; Nausea/vomiting", agreement: "single" } ],
+    bands: [
+      { band_order: 1, range_low: 8, range_high: 16, unit: "mg", band_label: "Antiemetic band",
+        primary_purpose: "Nausea and vomiting", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "Nausea/vomiting: 8–16 mg/day oral, 5 mg intramuscular", source_id: S, page_ref: "p1753", snippet: "Nausea/vomiting: 8–16 mg/day oral, 5 mg intramuscular", agreement: "single" }, side_effects: [], observation_prompts: [] },
+      { band_order: 2, range_low: 12, range_high: 64, unit: "mg", band_label: "Psychosis band",
+        primary_purpose: "Psychosis", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
+        source_ref: { value: "Psychosis: 12–24 mg/day oral; 16–64 mg/day hospitalized", source_id: S, page_ref: "p1753", snippet: "Psychosis: oral: 12–24 mg/day; 16–64 mg/day in hospitalized patients", agreement: "full" }, side_effects: [], observation_prompts: [] },
+    ],
+    equivalences: [], links: [], clinical_presentations: [],
+    student: { plain_language: { text: "Perphenazine is used at very different doses: low doses calm nausea, higher doses treat psychosis.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p1753", snippet: "Psychosis; Nausea", agreement: "single" } } },
+  },
+
+  // BENZTROPINE — drug-induced parkinsonism vs parkinsonism.
+  {
+    generic_name: "Benztropine", drug_class: "Anticholinergic", subclass: "Antimuscarinic",
+    brand_names: ["Cogentin"], aliases: [],
+    mechanism: [ { value: "Antimuscarinic anticholinergic; used to treat drug-induced parkinsonism and dystonia.", source_id: S, page_ref: "p265", snippet: "anticholinergic", agreement: "single" } ],
+    receptor_targets: [ { value: "Muscarinic (M1) antagonist", source_id: S, page_ref: "p265", snippet: "antimuscarinic", agreement: "single" } ],
+    common_uses: [ { value: "Drug-induced parkinsonism (from antipsychotics), and parkinsonism.", source_id: S, page_ref: "p265", snippet: "Drug-induced parkinsonism; Parkinsonism", agreement: "single" } ],
+    bands: [
+      { band_order: 1, range_low: 0.5, range_high: 6, unit: "mg", band_label: "Parkinsonism band",
+        primary_purpose: "Parkinsonism", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "Parkinsonism: 0.5–6 mg/day", source_id: S, page_ref: "p265", snippet: "Parkinsonism: 0.5–6 mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+      { band_order: 2, range_low: 2, range_high: 8, unit: "mg", band_label: "Drug-induced parkinsonism band",
+        primary_purpose: "Drug-induced parkinsonism", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "Drug-induced parkinsonism: 2–8 mg/day", source_id: S, page_ref: "p265", snippet: "Drug-induced parkinsonism: 2–8 mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+    ],
+    equivalences: [], links: [], clinical_presentations: [],
+    student: { plain_language: { text: "Benztropine is an anticholinergic that eases the stiffness some antipsychotics cause.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p265", snippet: "Drug-induced parkinsonism", agreement: "single" } } },
+  },
 ];
