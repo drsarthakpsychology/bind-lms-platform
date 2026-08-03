@@ -270,4 +270,61 @@ export const DRAFT_DRUGS_EXTRA: DrugDraft[] = [
     equivalences: [], links: [], clinical_presentations: [],
     student: { plain_language: { text: "Lamotrigine holds bipolar mood steady. The maintenance dose is lower on its own and depends heavily on what other medicines a person takes, because those change the level.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p1132", snippet: "Bipolar disorder", agreement: "single" } } },
   },
+
+  // DULOXETINE — depression (40–60) vs a fixed 60 mg for neuropathic pain / GAD.
+  {
+    generic_name: "Duloxetine", drug_class: "SNRI", subclass: "Serotonin–norepinephrine reuptake inhibitor",
+    brand_names: ["Cymbalta", "Duzela"], aliases: [],
+    mechanism: [ { value: "Blocks both serotonin and norepinephrine reuptake; also used for chronic pain.", source_id: S, page_ref: "p776", snippet: "blocks serotonin and norepinephrine reuptake pumps", agreement: "single" } ],
+    receptor_targets: [ { value: "SERT and NET inhibition", source_id: S, page_ref: "p776", snippet: "serotonin and norepinephrine reuptake", agreement: "single" } ],
+    common_uses: [ { value: "Major depressive disorder, generalized anxiety, diabetic neuropathic pain, fibromyalgia.", source_id: S, page_ref: "p776", snippet: "Depression; GAD; pain", agreement: "single" } ],
+    bands: [
+      { band_order: 1, range_low: 40, range_high: 60, unit: "mg", band_label: "Depression band",
+        primary_purpose: "Major depressive disorder", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: true,
+        source_ref: { value: "40–60 mg/day in 1–2 doses for depression", source_id: S, page_ref: "p776", snippet: "40–60 mg/day in 1–2 doses for depression", agreement: "single" }, side_effects: [], observation_prompts: [] },
+      { band_order: 2, range_low: 60, range_high: 60, unit: "mg", band_label: "Pain / GAD band",
+        primary_purpose: "Diabetic neuropathic pain, fibromyalgia, and generalized anxiety", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "60 mg once daily for neuropathic pain, fibromyalgia, and GAD", source_id: S, page_ref: "p776", snippet: "60 mg once daily for diabetic peripheral neuropathic pain and fibromyalgia ... 60 mg once daily for generalized anxiety disorder", agreement: "full" }, side_effects: [], observation_prompts: [] },
+    ],
+    equivalences: [], links: [], clinical_presentations: [],
+    student: { plain_language: { text: "Duloxetine lifts serotonin and norepinephrine, helping mood, anxiety, and some chronic pain — the fixed 60 mg is its pain/anxiety dose.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p776", snippet: "Depression; GAD; pain", agreement: "single" } } },
+  },
+
+  // TOPIRAMATE — epilepsy (200-400) vs bipolar adjunct (50-300).
+  {
+    generic_name: "Topiramate", drug_class: "Anticonvulsant / mood stabilizer", subclass: "Sulfamate-substituted monosaccharide",
+    brand_names: ["Topamax"], aliases: [],
+    mechanism: [ { value: "Blocks voltage-sensitive sodium channels and enhances GABA-A activity; also carbonic-anhydrase inhibition.", source_id: S, page_ref: "p2235", snippet: "anticonvulsant", agreement: "single" } ],
+    receptor_targets: [ { value: "Voltage-gated sodium channels, GABA-A, AMPA/kainate", source_id: S, page_ref: "p2235", snippet: "sodium channels, GABA", agreement: "single" } ],
+    common_uses: [ { value: "Epilepsy (partial-onset, primary generalized), adjunct in bipolar disorder, migraine prophylaxis.", source_id: S, page_ref: "p2235", snippet: "epilepsy; bipolar", agreement: "single" } ],
+    bands: [
+      { band_order: 1, range_low: 200, range_high: 400, unit: "mg", frequency: "divided", band_label: "Epilepsy band",
+        primary_purpose: "Epilepsy (adjunct or monotherapy)", secondary_purposes: ["migraine prophylaxis"], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "200–400 mg/day in 2 divided doses for epilepsy", source_id: S, page_ref: "p2235", snippet: "200–400 mg/day in 2 divided doses for epilepsy", agreement: "single" }, side_effects: [], observation_prompts: [] },
+      { band_order: 2, range_low: 50, range_high: 300, unit: "mg", band_label: "Bipolar adjunct band",
+        primary_purpose: "Adjunctive treatment of bipolar disorder", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "50–300 mg/day for adjunctive treatment of bipolar disorder", source_id: S, page_ref: "p2235", snippet: "50–300 mg/day for adjunctive treatment of bipolar disorder", agreement: "single" }, side_effects: [], observation_prompts: [] },
+    ],
+    equivalences: [], links: [], clinical_presentations: [],
+    student: { plain_language: { text: "Topiramate's dose depends on the job: higher for epilepsy, lower as an add-on in bipolar disorder.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p2235", snippet: "epilepsy; bipolar", agreement: "single" } } },
+  },
+
+  // HYDROXYZINE — anxiety vs pruritus (antihistamine anxiolytic).
+  {
+    generic_name: "Hydroxyzine", drug_class: "Sedative antihistamine (anxiolytic)", subclass: "H1 antagonist",
+    brand_names: ["Atarax", "Vistaril"], aliases: [],
+    mechanism: [ { value: "Blocks H1 histamine receptors; sedative and anxiolytic, no GABA potentiation of benzodiazepine type.", source_id: S, page_ref: "p1052", snippet: "antihistamine", agreement: "single" } ],
+    receptor_targets: [ { value: "H1 histamine antagonist", source_id: S, page_ref: "p1052", snippet: "histamine", agreement: "single" } ],
+    common_uses: [ { value: "Anxiety, sedation, and pruritus (itching).", source_id: S, page_ref: "p1052", snippet: "Anxiety; Sedative; Pruritus", agreement: "single" } ],
+    bands: [
+      { band_order: 1, range_low: 50, range_high: 100, unit: "mg", frequency: "4×/day", band_label: "Anxiety band",
+        primary_purpose: "Anxiety", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "Anxiety: 50–100 mg 4 times a day", source_id: S, page_ref: "p1052", snippet: "Anxiety: 50–100 mg 4 times a day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+      { band_order: 2, range_low: 75, range_high: 75, unit: "mg", frequency: "3–4 divided doses", band_label: "Pruritus band",
+        primary_purpose: "Pruritus (itching)", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "Pruritus: 75 mg/day divided into 3–4 doses", source_id: S, page_ref: "p1052", snippet: "Pruritus: 75 mg/day divided into 3–4 doses", agreement: "single" }, side_effects: [], observation_prompts: [] },
+    ],
+    equivalences: [], links: [], clinical_presentations: [],
+    student: { plain_language: { text: "Hydroxyzine is an antihistamine used as a gentle sedative for anxiety and for itching.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p1052", snippet: "Anxiety; Pruritus", agreement: "single" } } },
+  },
 ];
