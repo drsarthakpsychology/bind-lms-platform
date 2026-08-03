@@ -150,3 +150,60 @@ export const OBSERVER_NOTE =
 export function citesFor(source: string) {
   return `${sourceTitle(source)} (see psych_sources)`;
 }
+
+/**
+ * Red flags (Part 9) — "encourage the client to discuss with their prescribing
+ * clinician". NOT emergency advice. Source-anchored per class.
+ */
+export const RED_FLAGS = [
+  {
+    class: "All classes",
+    flags: [
+      { signal: "Sudden severe restlessness (unable to sit still)", guidance: "Encourage the client to discuss with their prescriber — akathisia can be mistaken for agitation." },
+      { signal: "New involuntary movements (facial, tongue, limbs)", guidance: "Encourage discussion with the prescriber; longer-term movement effects are watched for." },
+      { signal: "Rapid or unusual mood change", guidance: "Encourage discussion; mood shifts with a new or changed medication should be reviewed." },
+      { signal: "Confusion or marked disorientation", guidance: "Encourage the client to raise it promptly with the prescriber." },
+      { signal: "New falls or unsteadiness", guidance: "Sedation/coordination effects can raise fall risk, especially in older adults — discuss." },
+    ],
+    source: "stahl_pg_7th",
+  },
+  {
+    class: "Benzodiazepine",
+    flags: [
+      { signal: "Persistent excessive sedation or slowed breathing", guidance: "This combination warrants prompt discussion with the prescriber." },
+    ],
+    source: "stahl_pg_7th",
+  },
+];
+
+/** Clinical pearls (Part 11) — from the sources. */
+export const CLINICAL_PEARLS = [
+  {
+    class: "SSRI",
+    pearls: [
+      "Patients may describe sexual side effects in everyday language rather than medical terms — ask directly.",
+      "The benefits of an antidepressant are often not obvious to the client early on; several weeks is normal.",
+      "Clients sometimes confuse the medicine's effects (early activation, drowsiness) with worsening of their symptoms.",
+    ],
+    source: "stahl_pg_7th",
+  },
+  {
+    class: "Antipsychotic",
+    pearls: [
+      "Restlessness (akathisia) from antipsychotics is frequently mistaken for anxiety — the distinction matters.",
+      "Prolactin-related changes, e.g. menstrual or breast changes, are rarely volunteered unless asked.",
+    ],
+    source: "stahl_pg_7th",
+  },
+];
+
+/**
+ * Medication timeline (Part 3) — educational stages, no treatment instructions.
+ */
+export const TIMELINE_STAGES = [
+  { stage_type: "start", label: "Medication started", note: "The onset of effect and of early side effects varies by drug and dose." },
+  { stage_type: "early", label: "Possible early changes", note: "Early sedation or activation can appear in the first days; some effects take weeks." },
+  { stage_type: "adaptation", label: "Expected adaptation period", note: "The body typically adapts over the first weeks; early side effects often ease." },
+  { stage_type: "long_term", label: "Long-term observations", note: "Stable effects, and any watch-items, are observed over months." },
+  { stage_type: "common_observations", label: "Things psychology students commonly notice", note: "Affect, energy, sleep, restlessness, and reported appetite." },
+];

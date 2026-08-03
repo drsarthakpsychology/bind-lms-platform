@@ -3,6 +3,7 @@ import Link from "next/link";
 import { drugFromSlug, drugDetail } from "@/lib/psychopharm/store";
 import { DOSE_CAVEAT, STANDING_NOTICE } from "@/lib/psychopharm/forbidden-phrases";
 import { DoseLadder } from "@/components/psychopharm/dose-ladder";
+import { ObserverNotes } from "@/components/psychopharm/observer-notes";
 import { Badge } from "@/components/ui/badge";
 
 /** Drug + band page. Bands are first-class; the ladder ties them together. */
@@ -14,9 +15,17 @@ export default async function DrugPage({ params }: { params: { drug: string } })
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 py-6">
-      <Link href="/tools/psychopharm" className="text-caption text-muted-foreground hover:underline">
-        ← Search
-      </Link>
+      <div className="flex items-center justify-between gap-2">
+        <Link href="/tools/psychopharm" className="text-caption text-muted-foreground hover:underline">
+          ← Search
+        </Link>
+        <Link
+          href={`/tools/psychopharm/compare?a=${params.drug}&b=`}
+          className="text-caption font-medium text-primary hover:underline"
+        >
+          Compare →
+        </Link>
+      </div>
 
       <header className="space-y-1">
         <div className="flex flex-wrap items-center gap-3">
@@ -77,6 +86,9 @@ export default async function DrugPage({ params }: { params: { drug: string } })
           ) : null}
         </section>
       ) : null}
+
+      {/* Phase 2 observer layer: session observations + therapist questions */}
+      <ObserverNotes drugClass={detail.class} />
 
       <section className="space-y-4 pb-4">
         <h2 className="text-h2">Source</h2>
