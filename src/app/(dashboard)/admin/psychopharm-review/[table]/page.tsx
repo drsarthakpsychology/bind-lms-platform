@@ -6,11 +6,18 @@ import { ReviewActions } from "@/components/psychopharm/review-actions";
 
 /**
  * DB-backed review queue for one table (drug_fields | dose_bands | dose_ranges).
- * Reads live rows (draft/in_review/verified/published — RLS shows the admin
- * everything). Each row renders the wired ReviewActions, so approve/edit/
- * merge/reject/publish actually write the audit log.
+ * Accepts both the full table name ("psych_dose_bands") and the shorthand
+ * used in some URLs ("dose_bands") — both resolve. Unknown tables redirect to
+ * the review overview rather than crashing.
  */
-const TABLES = ["psych_drug_fields", "psych_dose_bands", "psych_dose_ranges"] as const;
+const TABLE_ALIASES: Record<string, string> = {
+  "psych_drug_fields": "psych_drug_fields",
+  "psych_dose_bands": "psych_dose_bands",
+  "psych_dose_ranges": "psych_dose_ranges",
+  drug_fields: "psych_drug_fields",
+  dose_bands: "psych_dose_bands",
+  dose_ranges: "psych_dose_ranges",
+};
 
 export default async function ReviewTablePage({
   params,
@@ -19,8 +26,8 @@ export default async function ReviewTablePage({
   params: { table: string };
   searchParams: { drug?: string };
 }) {
-  const table = (params.table as (typeof TABLES)[number]);
-  if (!TABLES.includes(table)) notFound();
+  const table = TABLE_ALIASES[params.table];
+  if (!table) notFound();
 
   const supabase = await createClient();
   let query = supabase.from(table).select("*").order("created_at", { ascending: true });
