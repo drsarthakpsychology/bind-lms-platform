@@ -3,15 +3,16 @@
 Generated 2026-08-03. Honest accounting of what is extracted and what is not.
 
 - Drugs in generated knowledge base: **152** (of 73 catalogued; extras included)
-- Curated draft records (band-level, reviewer-ready): **20**
+- Curated draft records (band-level, reviewer-ready): **26**
 - Total field rows: **759** (mechanism, common_uses, dose_range, side_effects)
 - Drugs with a dose range extracted: **152**
 - Student-layer rows: **151**
-- Drugs with source-drawn functional dose bands (curated): **20** —
-  Alprazolam, Amisulpride, Aripiprazole, Chlordiazepoxide, Clonazepam,
-  Duloxetine, Fluoxetine, Hydroxyzine, Lamotrigine, Lithium, Lorazepam,
-  Oxazepam, Paroxetine, Quetiapine, Risperidone, Sulpiride, Topiramate,
-  Valproate, Venlafaxine, Ziprasidone.
+- Drugs with source-drawn functional dose bands (curated): **26** —
+  Alprazolam, Amisulpride, Aripiprazole, Benztropine, Brexpiprazole,
+  Cariprazine, Chlordiazepoxide, Clonazepam, Clorazepate, Duloxetine,
+  Fluoxetine, Hydroxyzine, Lamotrigine, Lisdexamfetamine, Lithium, Lorazepam,
+  Oxazepam, Paroxetine, Perphenazine, Quetiapine, Risperidone, Sulpiride,
+  Topiramate, Valproate, Venlafaxine, Ziprasidone.
 - Single-range drugs render the honest gap ("Typical ranges in our sources,
   not yet split into dose bands") with their real sourced range — band
   boundaries are never invented where the source gives one continuous range.

@@ -227,16 +227,16 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         what_changes_going_up: "Return to band 1.",
         what_changes_going_down: "",
         source_ref: {
-          value: "0.25 mg appears as the panic start dose in Stahl 7th dosing instructions.",
+          value: "0.25 mg is an available clonazepam dose and the panic start dose in Stahl 7th dosing instructions (dose forms: wafer 0.125/0.25 mg; panic starts at 0.25 mg, raise to 1 mg).",
           source_id: S,
-          page_ref: "p77",
-          snippet: "start at 0.25 mg divided into 2 doses, raise to 1 mg after 3 days",
+          page_ref: "p77 (PDF 514)",
+          snippet: "Disintegrating (wafer) 0.125 mg, 0.25 mg, 0.5 mg, 1 mg, 2 mg. Panic -1 mg/day; start at 0.25 mg divided into 2 doses, raise to 1 mg after 3 days",
           agreement: "single",
         },
         side_effects: [
           {
             label: "common",
-            items: ["Lighter sedation at 0.25–0.5 mg than at the maintenance band"],
+            items: ["Lighter sedation at 0.25–0.5 mg than a mild maintenance band"],
             time_course: "Same class sedation; gentler at the low end.",
             source: {
               value: "as band 1",
