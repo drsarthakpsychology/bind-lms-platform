@@ -15,10 +15,11 @@ import { join } from "node:path";
 import { DRAFT_DRUGS } from "./draft-seed";
 import { DRAFT_DRUGS_EXTRA } from "./draft-extra";
 import { DRAFT_LADDERS } from "./draft-ladder";
+import { DRAFT_LADDERS_2 } from "./draft-ladder2";
 import { SOURCES } from "./sources";
 
 /** All curated draft records (core + extended band sets + rich ladders). */
-const ALL_DRAFT = [...DRAFT_DRUGS, ...DRAFT_DRUGS_EXTRA, ...DRAFT_LADDERS];
+const ALL_DRAFT = [...DRAFT_DRUGS, ...DRAFT_DRUGS_EXTRA, ...DRAFT_LADDERS, ...DRAFT_LADDERS_2];
 
 const REPO = join(process.cwd(), "docs/psychopharm");
 
