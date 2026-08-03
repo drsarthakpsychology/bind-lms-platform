@@ -5,7 +5,18 @@
       "Read", "Grep", "Glob", "Edit", "Write", "NotebookEdit", "TodoWrite",
       "Task", "Bash", "WebSearch", "WebFetch"
     ],
-    "deny": []
+    "deny": [
+      "Bash(git push:*)",
+      "Bash(vercel:*)",
+      "Bash(npx vercel:*)",
+      "Bash(supabase db push:*)",
+      "Bash(psql:*)",
+      "Edit(supabase/**)",
+      "Edit(src/lib/auth/**)",
+      "Edit(src/lib/media/**)",
+      "Edit(src/proxy.ts)",
+      "Edit(.github/workflows/**)"
+    ]
   },
   "hooks": {
     "PreToolUse": [
