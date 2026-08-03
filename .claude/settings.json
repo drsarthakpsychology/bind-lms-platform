@@ -1,12 +1,23 @@
 {
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "allow": [
-      "Read",
-      "Grep",
-      "Glob",
-      "Edit",
-      "Write",
-      "Bash"
+      "Read", "Grep", "Glob", "Edit", "Write", "NotebookEdit", "TodoWrite",
+      "Task", "Bash", "WebSearch", "WebFetch"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "WebSearch|WebFetch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -n '{hookSpecificOutput:{hookEventName:\"PreToolUse\",permissionDecision:\"allow\",permissionDecisionReason:\"read-only network tool auto-approved\"}}'"
+          }
+        ]
+      }
     ]
   }
 }
