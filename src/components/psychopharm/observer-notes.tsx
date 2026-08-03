@@ -25,9 +25,13 @@ export function ObserverNotes({
 }) {
   const cls = drugClass?.toLowerCase() ?? "";
   const matchesClass = (c: { class: string }) => cls.includes(c.class.toLowerCase());
+  const matchesFlag = (f: { class: string }) =>
+    f.class === "All classes" || cls.includes(f.class.toLowerCase());
   const classObs = CLASS_OBSERVATIONS.filter(matchesClass);
   const classPearls = CLINICAL_PEARLS.filter(matchesClass);
   const allPearls = classPearls.length ? classPearls : CLINICAL_PEARLS;
+  const classFlags = RED_FLAGS.filter(matchesFlag);
+  const allFlags = classFlags.length ? classFlags : RED_FLAGS;
   const classVignettes = VIGNETTES.filter((v) => cls.includes(v.drug_class.toLowerCase()));
   const allVignettes = classVignettes.length ? classVignettes : VIGNETTES.slice(0, 1);
 
@@ -96,7 +100,7 @@ export function ObserverNotes({
           When to encourage the client to contact their prescriber
         </h3>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-small">
-          {(RED_FLAGS[0]?.flags ?? []).map((f, i) => (
+          {allFlags.flatMap((c) => c.flags).map((f, i) => (
             <li key={i}>
               <span className="font-medium">{f.signal}.</span> {f.guidance}
             </li>

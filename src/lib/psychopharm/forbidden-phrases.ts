@@ -95,25 +95,32 @@ const NEGATION_TOKENS = ["do not", "don't", "not", "never", "must not", "should 
  * "the dose increases", "can cause" describe what a medicine does; they are the
  * required register. Only a direct reader-addressed imperative is forbidden.
  */
-const MODAL_TOKENS = ["may", "can", "could", "might", "will", "would", "the dose", "doses", "drug", "medicine"];
+const MODAL_TOKENS = ["may", "can", "could", "might", "the dose", "doses", "drug", "medicine"];
 
 export function hasForbiddenPhrase(content: string): string | null {
   const lower = content.toLowerCase();
   for (const phrase of FORBIDDEN_PHRASES) {
-    const re = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
-    const match = re.exec(lower);
-    if (!match) continue;
-    // If the token immediately preceding the match is negating, it is the
-    // compliant (education) form. Tolerate trailing whitespace before the match.
-    const before = lower.slice(Math.max(0, match.index - 18), match.index);
-    const trimmedBefore = before.trimEnd();
-    const negated = NEGATION_TOKENS.some((t) => trimmedBefore.endsWith(t));
-    if (negated) continue;
-    // Observational/descriptive phrasing ("may increase", "the dose increases")
-    // describes the medicine's effect — not a reader instruction — so it passes.
-    const modal = MODAL_TOKENS.some((t) => trimmedBefore.endsWith(t));
-    if (modal) continue;
-    return phrase;
+    const re = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "ig");
+    let match: RegExpExecArray | null;
+    // Scan EVERY occurrence — a negated/modally-hedged first occurrence must not
+    // mask a real directive later in the string (e.g. "Do not stop taking X
+    // suddenly. Stop taking X over 3 weeks." — the second is an instruction).
+    while ((match = re.exec(lower)) !== null) {
+      const before = lower.slice(Math.max(0, match.index - 18), match.index);
+      const trimmedBefore = before.trimEnd();
+      const after = lower.slice(match.index + match[0].length, match.index + match[0].length + 34);
+      const negated = NEGATION_TOKENS.some((t) => trimmedBefore.endsWith(t));
+      if (negated) continue;
+      // Compliant framing describing the prescriber's role passes — education,
+      // not an instruction to the reader. "adjusted by your doctor" / "chosen
+      // by the prescriber" either precede or follow the directive phrase.
+      const byPrescriber =
+        /(by your (doctor|prescriber|clinician)|by the (prescriber|doctor|clinician))/.test(trimmedBefore + " " + after);
+      if (byPrescriber) continue;
+      const modal = MODAL_TOKENS.some((t) => trimmedBefore.endsWith(t));
+      if (modal) continue;
+      return phrase;
+    }
   }
   return null;
 }

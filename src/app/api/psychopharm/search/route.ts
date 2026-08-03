@@ -9,7 +9,7 @@ import { getSession } from "@/lib/auth/session";
  */
 export async function GET(req: Request) {
   const session = await getSession();
-  if (session.status === "unauthenticated" || session.status === "expired") {
+  if (session.status === "unauthenticated" || session.status === "expired" || session.status === "session_replaced") {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
   const { searchParams } = new URL(req.url);

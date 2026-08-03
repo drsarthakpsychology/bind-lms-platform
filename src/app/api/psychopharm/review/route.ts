@@ -1,16 +1,27 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 
-/** Parse "0.5–2 mg" (or "0.5-2") into a band's low/high/unit columns. */
+/** Parse "0.5–2 mg", "0.5-2", or a single "12.5 mg" into band columns. */
 function applyBandEdit(after: Record<string, unknown>, raw: string) {
-  const m = raw.trim().match(/^([\d.]+)\s*[–-]\s*([\d.]+)\s*([a-zA-Z/]+)?/);
-  if (m) {
-    after.range_low = Number(m[1]);
-    after.range_high = Number(m[2]);
-    if (m[3]) after.unit = m[3];
-  } else {
-    after.band_label = raw;
+  const trimmed = raw.trim();
+  // Range: "0.5–2 mg" or "0.5-2"
+  const range = trimmed.match(/^([\d.]+)\s*[–-]\s*([\d.]+)\s*([a-zA-Z/]+)?/);
+  if (range) {
+    after.range_low = Number(range[1]);
+    after.range_high = Number(range[2]);
+    if (range[3]) after.unit = range[3];
+    return;
   }
+  // Single value: "12.5 mg" → both low and high set to the same value.
+  const single = trimmed.match(/^([\d.]+)\s*([a-zA-Z/]+)?$/);
+  if (single) {
+    after.range_low = Number(single[1]);
+    after.range_high = Number(single[1]);
+    if (single[2]) after.unit = single[2];
+    return;
+  }
+  // Otherwise treat as a label edit.
+  after.band_label = trimmed;
 }
 
 /**
