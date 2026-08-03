@@ -22,10 +22,14 @@ import { DRAFT_FDA_3 } from "./draft-fda3";
 import { DRAFT_FDA_4 } from "./draft-fda4";
 import { DRAFT_FDA_5 } from "./draft-fda5";
 import { DRAFT_FDA_6 } from "./draft-fda6";
+import { ONSET_PATCHES } from "./draft-onset";
 import { SOURCES } from "./sources";
 
 /** All curated draft records (core + extended band sets + rich ladders + FDA). */
 const ALL_DRAFT = [...DRAFT_DRUGS, ...DRAFT_DRUGS_EXTRA, ...DRAFT_LADDERS, ...DRAFT_LADDERS_2, ...DRAFT_FDA, ...DRAFT_FDA_2, ...DRAFT_FDA_3, ...DRAFT_FDA_4, ...DRAFT_FDA_5, ...DRAFT_FDA_6];
+
+/** Onset values merged onto the curated records (student register). */
+const ONSET_BY_DRUG = new Map(ONSET_PATCHES.map((p) => [p.generic_name, p.onset_time]));
 
 const REPO = join(process.cwd(), "docs/psychopharm");
 
@@ -119,6 +123,14 @@ export interface DrugDetail {
   source_id: string;
   source_title: string;
   verified: boolean;
+  /** Student register onset, quote-first (curated). */
+  onset_time?: { value: string; source_id: string; page_ref: string; snippet: string; agreement: string };
+  /** Clinician-register onset (verbatim KB row). */
+  onset_kb?: string;
+  onset_kb_page?: string;
+  /** Half-life (verbatim KB Pharmacokinetics block). */
+  half_life?: string;
+  half_life_page?: string;
 }
 export interface BandView {
   low?: number | null;
@@ -193,6 +205,10 @@ export function drugDetail(drug: string): DrugDetail | null {
   }
 
   const srcId = curated ? curated.bands[0]?.source_ref.source_id ?? "stahl_pg_7th" : "stahl_pg_7th";
+  // Onset: curated student register (patched) > curated record > KB row.
+  const onsetPatch = ONSET_BY_DRUG.get(drug) ?? curated?.onset_time;
+  const onsetKb = kb.find((r) => r.field_key === "onset");
+  const halfLifeKb = kb.find((r) => r.field_key === "half_life");
   return {
     generic: drug,
     class: curated?.drug_class,
@@ -206,6 +222,19 @@ export function drugDetail(drug: string): DrugDetail | null {
     source_id: srcId,
     source_title: SOURCES[srcId]?.title ?? srcId,
     verified: hasVerified(drug),
+    onset_time: onsetPatch
+      ? {
+          value: onsetPatch.value,
+          source_id: onsetPatch.source_id,
+          page_ref: onsetPatch.page_ref,
+          snippet: onsetPatch.snippet,
+          agreement: onsetPatch.agreement,
+        }
+      : undefined,
+    onset_kb: onsetKb?.value,
+    onset_kb_page: onsetKb?.page_ref,
+    half_life: halfLifeKb?.value,
+    half_life_page: halfLifeKb?.page_ref,
   };
 }
 
