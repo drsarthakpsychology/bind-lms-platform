@@ -13,7 +13,11 @@
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { DRAFT_DRUGS } from "./draft-seed";
+import { DRAFT_DRUGS_EXTRA } from "./draft-extra";
 import { SOURCES } from "./sources";
+
+/** All curated draft records (core + extended band sets). */
+const ALL_DRAFT = [...DRAFT_DRUGS, ...DRAFT_DRUGS_EXTRA];
 
 const REPO = join(process.cwd(), "docs/psychopharm");
 
@@ -67,7 +71,7 @@ export function searchDrugs(query: string, limit = 12): DrugSummary[] {
     }
   }
   // brand / alias matches from curated seed
-  for (const d of DRAFT_DRUGS) {
+  for (const d of ALL_DRAFT) {
     const names = [d.generic_name, ...d.brand_names, ...d.aliases];
     for (const n of names) {
       if (!seen.has(d.generic_name) && n.toLowerCase().includes(q)) {
@@ -83,7 +87,7 @@ function hasVerified(drug: string): boolean {
   // Draft seed records are the verified core; generated KB rows are source-read.
   // A drug is "verified" if it has KB rows AND (curated draft OR multiple fields).
   const kb = loadJSON<KbRow>("KNOWLEDGE_BASE.json").filter((r) => r.drug === drug);
-  const curated = DRAFT_DRUGS.some((d) => d.generic_name === drug);
+  const curated = ALL_DRAFT.some((d) => d.generic_name === drug);
   return curated || kb.length >= 3;
 }
 
@@ -115,7 +119,7 @@ export function drugDetail(drug: string): DrugDetail | null {
   const kb = loadJSON<KbRow>("KNOWLEDGE_BASE.json").filter((r) => r.drug === drug);
   if (!kb.length) return null;
   const asRow = (k: string) => kb.find((r) => r.field_key === k)?.value;
-  const curated = DRAFT_DRUGS.find((d) => d.generic_name === drug);
+  const curated = ALL_DRAFT.find((d) => d.generic_name === drug);
 
   const curatedBands: BandView[] = (curated?.bands ?? []).map((b) => ({
     low: b.range_low ?? null,
