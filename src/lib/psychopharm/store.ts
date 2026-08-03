@@ -165,4 +165,50 @@ export function drugDetail(drug: string): DrugDetail | null {
   };
 }
 
+/** One drug's row in the comparison view (D5). */
+export interface CompareRow {
+  drug: string;
+  class?: string;
+  purpose?: string;
+  mechanism?: string;
+  dose_range?: string;
+  side_effects?: string;
+  band_label?: string;
+  published_equivalence?: string;
+}
+
+/**
+ * Comparison (D5): 2–3 drugs side by side at their chosen band. Rows:
+ * what it's for at this dose, mechanism, dose range, side effects, and any
+ * published equivalence. Never treats a drug as one undifferentiated thing.
+ */
+export function compareDrugs(drugs: string[]): CompareRow[] {
+  return drugs
+    .map((d): CompareRow | null => {
+      const detail = drugDetail(d);
+      if (!detail) return null;
+      const firstBand = detail.bands[0];
+      return {
+        drug: detail.generic,
+        class: detail.class,
+        band_label: firstBand?.band_label,
+        purpose: firstBand?.primary_purpose,
+        mechanism: detail.mechanism,
+        dose_range: detail.dose_range,
+        side_effects: detail.side_effects_common,
+        published_equivalence: equivalenceFor(detail.generic),
+      };
+    })
+    .filter((r): r is CompareRow => r !== null);
+}
+
+function equivalenceFor(drug: string): string | undefined {
+  for (const d of ALL_DRAFT) {
+    if (d.generic_name === drug && d.equivalences?.[0]) {
+      return d.equivalences[0].note;
+    }
+  }
+  return undefined;
+}
+
 export { SOURCES };
