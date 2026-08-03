@@ -3,11 +3,21 @@
 Generated 2026-08-03. Honest accounting of what is extracted and what is not.
 
 - Drugs in generated knowledge base: **152** (of 73 catalogued; extras included)
-- Curated draft records (band-level, reviewer-ready): **30** (26 functional-band + 4 rich SSRI ladders)
+- Curated draft records (band-level, reviewer-ready): **67** (138 dose bands)
 - Total field rows: **759** (mechanism, common_uses, dose_range, side_effects)
 - Drugs with a dose range extracted: **152**
 - Student-layer rows: **151**
-- Drugs with source-drawn functional dose bands (curated): **26** —
+- Drugs with source-drawn / FDA-label dose bands (curated): **67** —
+  functional job splits, evidence-driven ladders (starting → therapeutic →
+  maximum → population), and regulatory (FDA label) bands.
+- Evidence sources now include **FDA Prescribing Information** (DailyMed,
+  35 labels fetched via script, logged in WEB_ACCESS_LOG) alongside Stahl and
+  Maudsley. Band types cover starting / titration / therapeutic / maintenance /
+  maximum / indication / formulation / geriatric / pediatric / renal /
+  population bands.
+- Learning layer: browse drugs by shared receptor mechanism (Part 10).
+- Remaining single-range drugs (TCAs, buspirone, agomelatine, etc.) render the
+  honest gap — their sources give one continuous range, so no band is invented.
   Alprazolam, Amisulpride, Aripiprazole, Benztropine, Brexpiprazole,
   Cariprazine, Chlordiazepoxide, Clonazepam, Clorazepate, Duloxetine,
   Fluoxetine, Hydroxyzine, Lamotrigine, Lisdexamfetamine, Lithium, Lorazepam,
