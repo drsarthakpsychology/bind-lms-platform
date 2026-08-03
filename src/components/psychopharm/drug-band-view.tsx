@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { BandDetail } from "./band-detail";
 import { RegisterView } from "./register-view";
 import { ObserverNotes } from "./observer-notes";
+import { OnsetTimeline } from "./onset-timeline";
 import type { BandView } from "@/lib/psychopharm/store";
 
 /**
@@ -12,8 +13,8 @@ import type { BandView } from "@/lib/psychopharm/store";
  * actually switches the page to that band's specific content (D3). Wrapped in
  * Suspense by the server page because useSearchParams requires it.
  *
- * Register mode (student|clinician) is lifted here so both the band detail
- * (clinician evidence) and the mechanism register share one toggle.
+ * Register mode (student|clinician) is lifted here so the band detail, onset
+ * timeline, and mechanism register share one toggle.
  */
 export function DrugBandView({
   generic,
@@ -25,6 +26,12 @@ export function DrugBandView({
   side_effects_common,
   side_effects_serious,
   bands,
+  onsetTime,
+  onsetKb,
+  onsetKbPage,
+  halfLife,
+  halfLifePage,
+  sourceTitle,
 }: {
   generic: string;
   class?: string;
@@ -35,6 +42,12 @@ export function DrugBandView({
   side_effects_common?: string;
   side_effects_serious?: string;
   bands: BandView[];
+  onsetTime?: { value: string; source_id: string; page_ref: string };
+  onsetKb?: string;
+  onsetKbPage?: string;
+  halfLife?: string;
+  halfLifePage?: string;
+  sourceTitle?: string;
 }) {
   const searchParams = useSearchParams();
   const activeBand = Number(searchParams?.get("band") ?? (bands.length ? 1 : 0));
@@ -46,11 +59,23 @@ export function DrugBandView({
       {/* The selected band, first below the ladder. */}
       <BandDetail band={current} register={mode} />
 
+      {/* Onset + half-life — second question anyone asks. */}
+      <OnsetTimeline
+        onsetTime={onsetTime}
+        onsetKb={onsetKb}
+        onsetKbPage={onsetKbPage}
+        halfLife={halfLife}
+        halfLifePage={halfLifePage}
+        bandOnset={current?.onset}
+        register={mode}
+        sourceTitle={sourceTitle ?? ""}
+      />
+
       <RegisterView
         plain={plain}
         mechanism={mechanism}
         source_id=""
-        source_title=""
+        source_title={sourceTitle ?? ""}
         mode={mode}
         onModeChange={setMode}
       />

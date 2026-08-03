@@ -70,7 +70,30 @@ export function drugFromSlug(slug: string): string | undefined {
   return drugList().find((d) => slugFor(d) === s);
 }
 
-/** Search by generic name OR alias. Returns up to `limit` candidates. */
+/** Levenshtein distance (≤2 useful for "Did you mean…" typo recovery). */
+function editDistance(a: string, b: string): number {
+  const m = a.length;
+  const n = b.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+  const prev = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i++) {
+    const cur = [i];
+    for (let j = 1; j <= n; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost);
+    }
+    for (let j = 0; j <= n; j++) prev[j] = cur[j];
+  }
+  return prev[n];
+}
+
+/**
+ * Search by generic name, brand name, or alias across ALL KB drugs (plus
+ * curated aliases). If a query returns zero exact/prefix hits, falls back to
+ * an edit-distance (≤2) "Did you mean…" set. Deterministic and local — no
+ * model calls at request time.
+ */
 export function searchDrugs(query: string, limit = 12): DrugSummary[] {
   const q = query.trim().toLowerCase();
   if (!q) return [];
@@ -80,22 +103,30 @@ export function searchDrugs(query: string, limit = 12): DrugSummary[] {
   // no drugDetail would otherwise 404 on the drug page (e.g. a plain name that
   // exists in the ladder but not the KB).
   const resolvable = (name: string) => Boolean(drugDetail(name));
-  for (const drug of drugList()) {
-    if (drug.toLowerCase().includes(q) && resolvable(drug)) {
-      out.push({ generic: drug, verified: hasVerified(drug) });
-      seen.add(drug);
+  const add = (name: string) => {
+    if (!seen.has(name) && resolvable(name)) {
+      out.push({ generic: name, verified: hasVerified(name) });
+      seen.add(name);
     }
+  };
+
+  const catalog = drugList();
+  // (a) generic + all-brand/alias matching across curated + KB drugs.
+  const brandByGeneric = new Map<string, string[]>();
+  for (const d of ALL_DRAFT) brandByGeneric.set(d.generic_name, [d.generic_name, ...d.brand_names, ...d.aliases]);
+  for (const drug of catalog) {
+    const names = brandByGeneric.get(drug) ?? [drug];
+    if (names.some((n) => n.toLowerCase().includes(q))) add(drug);
   }
-  // brand / alias matches from curated seed
-  for (const d of ALL_DRAFT) {
-    const names = [d.generic_name, ...d.brand_names, ...d.aliases];
-    for (const n of names) {
-      if (!seen.has(d.generic_name) && n.toLowerCase().includes(q) && resolvable(d.generic_name)) {
-        out.push({ generic: d.generic_name, verified: hasVerified(d.generic_name) });
-        seen.add(d.generic_name);
-      }
-    }
-  }
+  if (seen.size) return out.slice(0, limit);
+
+  // (b) zero exact hits → "Did you mean…" via edit distance ≤2 on generic names.
+  const fuzzy = catalog
+    .map((drug) => ({ drug, dist: editDistance(drug.toLowerCase(), q) }))
+    .filter((x) => x.dist <= 2)
+    .sort((a, b) => a.dist - b.dist)
+    .map((x) => x.drug);
+  for (const f of fuzzy) add(f);
   return out.slice(0, limit);
 }
 
@@ -276,6 +307,8 @@ export interface CompareRow {
   side_effects?: string;
   band_label?: string;
   published_equivalence?: string;
+  onset?: string;      // student register onset
+  half_life?: string;
 }
 
 /**
@@ -299,6 +332,8 @@ export function compareDrugs(drugs: string[]): CompareRow[] {
         dose_range: detail.dose_range,
         side_effects: detail.side_effects_common,
         published_equivalence: equivalenceFor(detail.generic),
+        onset: detail.onset_time?.value ?? detail.onset_kb,
+        half_life: detail.half_life,
       };
     })
     .filter((r): r is CompareRow => r !== null);

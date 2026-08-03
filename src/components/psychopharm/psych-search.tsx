@@ -25,6 +25,7 @@ export function PsychSearch({ className }: { className?: string }) {
   const router = useRouter();
   const [q, setQ] = React.useState("");
   const [list, setList] = React.useState<string[]>([]);
+  const [fuzzy, setFuzzy] = React.useState(false);
   const [highlight, setHighlight] = React.useState(0);
   const [selected, setSelected] = React.useState<string | null>(null);
   const [bands, setBands] = React.useState<BandChip[]>([]);
@@ -43,7 +44,10 @@ export function PsychSearch({ className }: { className?: string }) {
       .then((r) => r.json())
       .then((d) => {
         if (!cancelled) {
-          setList(Array.isArray(d) ? d : []);
+          // Backwards-compatible: the API now returns { matches, fuzzy }.
+          const matches = Array.isArray(d) ? d : d?.matches ?? [];
+          setList(matches);
+          setFuzzy(Array.isArray(d) ? false : Boolean(d?.fuzzy));
           setHighlight(0);
         }
       })
@@ -122,12 +126,16 @@ export function PsychSearch({ className }: { className?: string }) {
       </div>
 
       {list.length > 0 ? (
-        <ul
-          id="psych-suggestions"
-          role="listbox"
-          aria-label="Search suggestions"
-          className="absolute z-20 mt-1 w-full overflow-hidden rounded-md border-2 border-border bg-card hard-shadow-sm"
-        >
+        <>
+          {fuzzy ? (
+            <p className="mt-1 text-caption text-muted-foreground">Did you mean…</p>
+          ) : null}
+          <ul
+            id="psych-suggestions"
+            role="listbox"
+            aria-label="Search suggestions"
+            className="absolute z-20 mt-1 w-full overflow-hidden rounded-md border-2 border-border bg-card hard-shadow-sm"
+          >
           {list.map((item, i) => (
             <li
               key={item}
@@ -146,7 +154,8 @@ export function PsychSearch({ className }: { className?: string }) {
               {item}
             </li>
           ))}
-        </ul>
+          </ul>
+        </>
       ) : null}
 
       {/* Dose chips (D2 step 2): after a drug is picked, offer its bands. */}

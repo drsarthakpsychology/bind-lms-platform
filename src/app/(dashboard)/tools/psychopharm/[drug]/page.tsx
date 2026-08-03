@@ -59,13 +59,19 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
           side_effects_common={detail.side_effects_common}
           side_effects_serious={detail.side_effects_serious}
           bands={detail.bands}
+          onsetTime={detail.onset_time}
+          onsetKb={detail.onset_kb}
+          onsetKbPage={detail.onset_kb_page}
+          halfLife={detail.half_life}
+          halfLifePage={detail.half_life_page}
+          sourceTitle={detail.source_title}
         />
       </Suspense>
 
       <section className="space-y-4 pb-4">
         <h2 className="text-h2">Source</h2>
         <p className="text-small text-muted-foreground">
-          <Link href="" className="pointer-events-none">{detail.source_title}</Link>
+          <cite className="not-italic">{detail.source_title}</cite>
         </p>
       </section>
 

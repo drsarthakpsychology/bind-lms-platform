@@ -57,6 +57,8 @@ function CompareGrid({ rows }: { rows: CompareRow[] }) {
     { label: "Purpose at this dose", key: "purpose" },
     { label: "Mechanism", key: "mechanism" },
     { label: "Dose range", key: "dose_range" },
+    { label: "How quickly it starts working", key: "onset" },
+    { label: "Half-life (how long it stays)", key: "half_life" },
     { label: "Main side effects / watch", key: "side_effects" },
     { label: "Published equivalence", key: "published_equivalence" },
   ];

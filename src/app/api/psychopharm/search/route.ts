@@ -14,7 +14,11 @@ export async function GET(req: Request) {
   }
   const { searchParams } = new URL(req.url);
   const q = searchParams.get("q") ?? "";
-  if (!q.trim()) return NextResponse.json([]);
-  const results = searchDrugs(q, 12).map((d) => d.generic);
-  return NextResponse.json(results);
+  if (!q.trim()) return NextResponse.json({ matches: [], fuzzy: false });
+  const ql = q.trim().toLowerCase();
+  // Exact/prefix hits exist? If none, searchDrugs fell back to edit-distance —
+  // surface a gentle "Did you mean…" hint.
+  const hasDirectPrefix = searchDrugs(ql, 12).some((d) => d.generic.toLowerCase().includes(ql));
+  const matches = searchDrugs(ql, 12).map((d) => d.generic);
+  return NextResponse.json({ matches, fuzzy: !hasDirectPrefix });
 }
