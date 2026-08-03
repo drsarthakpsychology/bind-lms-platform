@@ -31,7 +31,6 @@ export interface ReviewBand {
   quote: string;
   agreement: string;
 }
-export interface DraftBand extends ReviewBand {}
 
 /** A non-band field (mechanism, uses, side effects) for review. */
 export interface ReviewField {
@@ -53,7 +52,7 @@ export interface ReviewDecision {
 export interface DosaReviewView {
   drug: string;
   drug_class: string;
-  bands: DraftBand[];
+  bands: ReviewBand[];
   fields: ReviewField[];
   conflicts: Array<{ note: string; source_a: string; source_b: string }>;
   decisions: ReviewDecision[];
@@ -63,7 +62,7 @@ export interface DosaReviewView {
 export function doseReviewFor(drug: string): DosaReviewView | null {
   const draft = ALL.find((d) => d.generic_name === drug);
   if (!draft) return null;
-  const bands: DraftBand[] = draft.bands.map((b) => ({
+  const bands: ReviewBand[] = draft.bands.map((b) => ({
     bandId: `${draft.generic_name}:band:${b.band_order}`,
     band: `${b.range_low ?? "?"}–${b.range_high ?? "?"} ${b.unit}`,
     purpose: b.primary_purpose,

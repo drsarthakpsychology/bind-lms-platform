@@ -17,7 +17,6 @@ import type { BandView } from "@/lib/psychopharm/store";
  * timeline, and mechanism register share one toggle.
  */
 export function DrugBandView({
-  generic,
   class: drugClass,
   plain,
   mechanism,
@@ -33,7 +32,6 @@ export function DrugBandView({
   halfLifePage,
   sourceTitle,
 }: {
-  generic: string;
   class?: string;
   plain?: string;
   mechanism?: string;

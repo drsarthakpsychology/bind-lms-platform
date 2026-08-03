@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { formatBand, formatDoseAndFrequency } from "@/lib/psychopharm/format";
+import { formatDoseAndFrequency } from "@/lib/psychopharm/format";
 import type { BandView } from "@/lib/psychopharm/store";
 
 /**

@@ -50,7 +50,6 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
       {/* Band-aware body: tapping a dose-ladder rung switches this content. */}
       <Suspense fallback={<p className="text-small text-muted-foreground">Loading…</p>}>
         <DrugBandView
-          generic={detail.generic}
           class={detail.class}
           plain={detail.plain}
           mechanism={detail.mechanism}

@@ -124,7 +124,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Aripiprazole",
-    "base_fact": "✽ Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when dopamine concentrations are high, thus improving positive symptoms and mediating antipsychotic actions Theoretically increases dopamine output when dopamine concentrations are low, thus improving cognitive, negative, and mood symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to aripiprazole’s efficacy Actions at dopamine 3 receptors could theoretically contribute to aripiprazole’s efficacy Partial agonism at 5HT1A receptors may be relevant at clinical doses Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Blockade of serotonin type 2C and 7 receptors as well as partial agonist actions at 5HT1A receptors may contribute to antidepressant actions",
+    "base_fact": "✽ Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when dopamine concentrations are high, thus improving positive symptoms and mediating antipsychotic actions Theoretically increases dopamine output when dopamine concentrations are low, thus improving cognitive, negative, and mood symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to aripiprazole's efficacy Actions at dopamine 3 receptors could theoretically contribute to aripiprazole's efficacy Partial agonism at 5HT1A receptors may be relevant at clinical doses Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Blockade of serotonin type 2C and 7 receptors as well as partial agonist actions at 5HT1A receptors may contribute to antidepressant actions",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -154,7 +154,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Asenapine",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to asenapine’s efficacy Partial agonist at 5HT1A receptors, which may be beneficial for mood, anxiety, and cognition in a number of disorders ✽ Serotonin 2C, serotonin 7, and alpha 2 antagonist properties may contribute to antidepressant actions",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to asenapine's efficacy Partial agonist at 5HT1A receptors, which may be beneficial for mood, anxiety, and cognition in a number of disorders ✽ Serotonin 2C, serotonin 7, and alpha 2 antagonist properties may contribute to antidepressant actions",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -199,7 +199,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Blonanserin",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognition and affective symptoms Actions at dopamine 3 receptors could theoretically contribute to blonanserin’s efficacy",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognition and affective symptoms Actions at dopamine 3 receptors could theoretically contribute to blonanserin's efficacy",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -244,7 +244,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Brexpiprazole",
-    "base_fact": "✽ Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when dopamine concentrations are high, thus improving positive symptoms and mediating antipsychotic actions Theoretically increases dopamine output when dopamine concentrations are low, thus improving cognitive, negative, and mood symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to brexpiprazole’s efficacy Partial agonist at 5HT1A receptors, which may be beneficial for mood, anxiety, and cognition in a number of disorders Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Blockade of alpha 1B receptors may reduce arousal symptoms in posttraumatic stress disorder and in agitation associated with dementia as well as motor side effects such as akathisia Blockade of alpha 2C receptors may contribute to antidepressant actions Actions at dopamine 3 receptors could theoretically contribute to brexpiprazole’s efficacy Blocks serotonin 7 receptors, which may be beneficial for mood, cognitive impairment, and negative symptoms in schizophrenia, and also in bipolar disorder and major depressive disorder",
+    "base_fact": "✽ Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when dopamine concentrations are high, thus improving positive symptoms and mediating antipsychotic actions Theoretically increases dopamine output when dopamine concentrations are low, thus improving cognitive, negative, and mood symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to brexpiprazole's efficacy Partial agonist at 5HT1A receptors, which may be beneficial for mood, anxiety, and cognition in a number of disorders Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Blockade of alpha 1B receptors may reduce arousal symptoms in posttraumatic stress disorder and in agitation associated with dementia as well as motor side effects such as akathisia Blockade of alpha 2C receptors may contribute to antidepressant actions Actions at dopamine 3 receptors could theoretically contribute to brexpiprazole's efficacy Blocks serotonin 7 receptors, which may be beneficial for mood, cognitive impairment, and negative symptoms in schizophrenia, and also in bipolar disorder and major depressive disorder",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -259,7 +259,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Buprenorphine",
-    "base_fact": "Binds with strong affinity to the mu opioid receptor, preventing exogenous opioids from binding there and thus preventing the pleasurable effects of opioid consumption Because buprenorphine is a partial agonist, it can cause immediate withdrawal in a patient currently taking opioids (i.e., reduces receptor stimulation in the presence of a full agonist) but can relieve withdrawal if a patient is already experiencing it (i.e., increases receptor stimulation in the absence of a full agonist) Buprenorphine is also an antagonist at the kappa opioid receptor In combination with naloxone: naloxone is a mu opioid receptor antagonist and can therefore block the effects of buprenorphine; however, because naloxone has poor sublingual bioavailability, it does not interfere with buprenorphine’s effects when used properly. Naloxone does have good parenteral bioavailability; thus, if one tries to administer the buprenorphine/naloxone formulation intravenously, naloxone will prevent any rewarding effects from buprenorphine",
+    "base_fact": "Binds with strong affinity to the mu opioid receptor, preventing exogenous opioids from binding there and thus preventing the pleasurable effects of opioid consumption Because buprenorphine is a partial agonist, it can cause immediate withdrawal in a patient currently taking opioids (i.e., reduces receptor stimulation in the presence of a full agonist) but can relieve withdrawal if a patient is already experiencing it (i.e., increases receptor stimulation in the absence of a full agonist) Buprenorphine is also an antagonist at the kappa opioid receptor In combination with naloxone: naloxone is a mu opioid receptor antagonist and can therefore block the effects of buprenorphine; however, because naloxone has poor sublingual bioavailability, it does not interfere with buprenorphine's effects when used properly. Naloxone does have good parenteral bioavailability; thus, if one tries to administer the buprenorphine/naloxone formulation intravenously, naloxone will prevent any rewarding effects from buprenorphine",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -334,7 +334,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Cariprazine",
-    "base_fact": "✽ Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when dopamine concentrations are high, thus improving positive symptoms and mediating antipsychotic actions Theoretically increases dopamine output when dopamine concentrations are low, thus improving cognitive, negative, and mood symptoms Preferentially binds to dopamine 3 over dopamine 2 receptors at low doses; the clinical significance is unknown but could theoretically contribute to cariprazine’s efficacy for negative symptoms. D3 partial agonism could theoretically be useful for treating cognition, mood, emotions, and reward/substance use Interactions at a myriad of other neurotransmitter receptors may contribute to cariprazine’s efficacy Cariprazine also has high affinity for the serotonin 1A (partial agonist) and 2B (antagonist) receptors Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms",
+    "base_fact": "✽ Partial agonism at dopamine 2 receptors Theoretically reduces dopamine output when dopamine concentrations are high, thus improving positive symptoms and mediating antipsychotic actions Theoretically increases dopamine output when dopamine concentrations are low, thus improving cognitive, negative, and mood symptoms Preferentially binds to dopamine 3 over dopamine 2 receptors at low doses; the clinical significance is unknown but could theoretically contribute to cariprazine's efficacy for negative symptoms. D3 partial agonism could theoretically be useful for treating cognition, mood, emotions, and reward/substance use Interactions at a myriad of other neurotransmitter receptors may contribute to cariprazine's efficacy Cariprazine also has high affinity for the serotonin 1A (partial agonist) and 2B (antagonist) receptors Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -379,7 +379,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Citalopram",
-    "base_fact": "Boosts neurotransmitter serotonin Blocks serotonin reuptake pump (serotonin transporter) Desensitizes serotonin receptors, especially serotonin 1A autoreceptors Presumably increases serotonergic neurotransmission ✽ Citalopram also has mild antagonist actions at H1 histamine receptors ✽ Citalopram’s inactive R enantiomer may interfere with the therapeutic actions of the active S enantiomer at serotonin reuptake pumps",
+    "base_fact": "Boosts neurotransmitter serotonin Blocks serotonin reuptake pump (serotonin transporter) Desensitizes serotonin receptors, especially serotonin 1A autoreceptors Presumably increases serotonergic neurotransmission ✽ Citalopram also has mild antagonist actions at H1 histamine receptors ✽ Citalopram's inactive R enantiomer may interfere with the therapeutic actions of the active S enantiomer at serotonin reuptake pumps",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -454,7 +454,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Clozapine",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to clozapine’s efficacy ✽ Specifically, interactions at 5HT2C and 5HT1A receptors may contribute to efficacy for cognitive and affective symptoms in some patients Mechanism of efficacy for psychotic patients who do not respond to other antipsychotics is unknown but is presumed to be a mechanism other than D2 antagonism",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to clozapine's efficacy ✽ Specifically, interactions at 5HT2C and 5HT1A receptors may contribute to efficacy for cognitive and affective symptoms in some patients Mechanism of efficacy for psychotic patients who do not respond to other antipsychotics is unknown but is presumed to be a mechanism other than D2 antagonism",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -469,7 +469,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Cyamemazine",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis ✽ Although classified as a conventional antipsychotic, cyamemazine is a potent serotonin 2A antagonist Affinity at a myriad of other neurotransmitter receptors may contribute to cyamemazine’s efficacy ✽ Specifically, antagonist actions at 5HT2C receptors may contribute to notable anxiolytic effects in many patients 5HT2C antagonist actions may also contribute to antidepressant actions in severe depression and to improvement of cognitive and negative symptoms of schizophrenia in some patients",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis ✽ Although classified as a conventional antipsychotic, cyamemazine is a potent serotonin 2A antagonist Affinity at a myriad of other neurotransmitter receptors may contribute to cyamemazine's efficacy ✽ Specifically, antagonist actions at 5HT2C receptors may contribute to notable anxiolytic effects in many patients 5HT2C antagonist actions may also contribute to antidepressant actions in severe depression and to improvement of cognitive and negative symptoms of schizophrenia in some patients",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -859,7 +859,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Haloperidol",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and possibly combative, explosive, and hyperactive behaviors Blocks dopamine 2 receptors in the nigrostriatal pathway, improving tics and other symptoms in Tourette’s syndrome",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and possibly combative, explosive, and hyperactive behaviors Blocks dopamine 2 receptors in the nigrostriatal pathway, improving tics and other symptoms in Tourette's syndrome",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -1114,7 +1114,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Lumateperone",
-    "base_fact": "Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Blocks postsynaptic dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Binds as a partial agonist at presynaptic D2 receptors Interactions at a myriad of other neurotransmitter receptors may contribute to lumateperone’s efficacy Binds to D1 receptors, with preclinical data showing D1-dependent activation of AMPA receptors leading to activation of the mTOR pathway, a mechanism that has been associated with antidepressant effects Also has affinity for the serotonin reuptake pump (SERT, serotonin transporter)",
+    "base_fact": "Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Blocks postsynaptic dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Binds as a partial agonist at presynaptic D2 receptors Interactions at a myriad of other neurotransmitter receptors may contribute to lumateperone's efficacy Binds to D1 receptors, with preclinical data showing D1-dependent activation of AMPA receptors leading to activation of the mTOR pathway, a mechanism that has been associated with antidepressant effects Also has affinity for the serotonin reuptake pump (SERT, serotonin transporter)",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -1129,7 +1129,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Lurasidone",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognition and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to lurasidone’s efficacy Potently blocks serotonin 7 receptors, which may be beneficial for mood, sleep, cognitive impairment, and negative symptoms in schizophrenia, and also in bipolar disorder and major depressive disorder Partial agonist at 5HT1A receptors, and antagonist actions at serotonin 7 and alpha 2A and alpha 2C receptors, which may be beneficial for mood, anxiety, and cognition in a number of disorders Lacks potent actions at dopamine D1, muscarinic M1, and histamine H1 receptors, theoretically suggesting less propensity for inducing cognitive impairment, weight gain, or sedation compared to other agents with these properties",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognition and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to lurasidone's efficacy Potently blocks serotonin 7 receptors, which may be beneficial for mood, sleep, cognitive impairment, and negative symptoms in schizophrenia, and also in bipolar disorder and major depressive disorder Partial agonist at 5HT1A receptors, and antagonist actions at serotonin 7 and alpha 2A and alpha 2C receptors, which may be beneficial for mood, anxiety, and cognition in a number of disorders Lacks potent actions at dopamine D1, muscarinic M1, and histamine H1 receptors, theoretically suggesting less propensity for inducing cognitive impairment, weight gain, or sedation compared to other agents with these properties",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -1399,7 +1399,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Olanzapine",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to olanzapine’s efficacy ✽ Specifically, antagonist actions at 5HT2C receptors may contribute to efficacy for cognitive and affective symptoms in some patients ✽ 5HT2C antagonist actions plus serotonin reuptake blockade of fluoxetine add to the actions of olanzapine when given as Symbyax (olanzapine/fluoxetine combination)",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to olanzapine's efficacy ✽ Specifically, antagonist actions at 5HT2C receptors may contribute to efficacy for cognitive and affective symptoms in some patients ✽ 5HT2C antagonist actions plus serotonin reuptake blockade of fluoxetine add to the actions of olanzapine when given as Symbyax (olanzapine/fluoxetine combination)",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -1444,7 +1444,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Paliperidone",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to paliperidone’s efficacy ✽ Serotonin 7 antagonist properties may contribute to antidepressant actions",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to paliperidone's efficacy ✽ Serotonin 7 antagonist properties may contribute to antidepressant actions",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -1549,7 +1549,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Pimozide",
-    "base_fact": "Blocks dopamine 2 receptors in the nigrostriatal dopamine pathway, reducing tics in Tourette’s syndrome When used for psychosis, can block dopamine 2 receptors in the mesolimbic dopamine pathway, reducing positive symptoms of psychosis",
+    "base_fact": "Blocks dopamine 2 receptors in the nigrostriatal dopamine pathway, reducing tics in Tourette's syndrome When used for psychosis, can block dopamine 2 receptors in the mesolimbic dopamine pathway, reducing positive symptoms of psychosis",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -1669,7 +1669,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Quetiapine",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms ✽ Interactions at a myriad of other neurotransmitter receptors may contribute to quetiapine’s efficacy in treatment-resistant depression or bipolar depression, especially 5HT1A partial agonist action, norepinephrine reuptake blockade and 5HT2C antagonist and 5HT7 antagonist properties ✽ Specifically, actions at 5HT1A receptors may contribute to efficacy for cognitive and affective symptoms in some patients, especially at moderate to high doses",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms ✽ Interactions at a myriad of other neurotransmitter receptors may contribute to quetiapine's efficacy in treatment-resistant depression or bipolar depression, especially 5HT1A partial agonist action, norepinephrine reuptake blockade and 5HT2C antagonist and 5HT7 antagonist properties ✽ Specifically, actions at 5HT1A receptors may contribute to efficacy for cognitive and affective symptoms in some patients, especially at moderate to high doses",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -1714,7 +1714,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Risperidone",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to risperidone’s efficacy ✽ Specifically, 5HT7 antagonist properties may contribute to antidepressant actions",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to risperidone's efficacy ✽ Specifically, 5HT7 antagonist properties may contribute to antidepressant actions",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -1834,7 +1834,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Sulpiride",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis Blocks dopamine 3 and 4 receptors, which may contribute to sulpiride’s actions ✽ Possibly blocks presynaptic dopamine 2 autoreceptors more potently at low doses, which could theoretically contribute to improving negative symptoms of schizophrenia as well as depression",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis Blocks dopamine 3 and 4 receptors, which may contribute to sulpiride's actions ✽ Possibly blocks presynaptic dopamine 2 autoreceptors more potently at low doses, which could theoretically contribute to improving negative symptoms of schizophrenia as well as depression",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -2044,7 +2044,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Triiodothyronine",
-    "base_fact": "Hypothetically boosts monoamine actions in the CNS May work synergistically with traditional antidepressants How Long Until It Works (for Depression) Can work within days, but therapeutic effects may be delayed for up to 8 weeks If It Works (for Depression) The goal of treatment is complete remission of current symptoms as well as prevention of future relapses Treatment most often reduces or even eliminates symptoms, but not a cure since symptoms can recur after medicine stopped Continue treatment until all symptoms are gone (remission) or significantly reduced Once symptoms are gone, continue treating for 1 year for the first episode of depression For second and subsequent episodes of depression, treatment may need to be indefinite If It Doesn’t Work (for Depression) Many patients only have a partial response where some symptoms are improved but others persist (especially insomnia, fatigue, and problems concentrating) Other patients may be nonresponders, sometimes called treatmentresistant or treatment-refractory Some patients who have an initial response may relapse even though they continue treatment, sometimes called “poop-out” Consider switching to another antidepressant or adding a different augmenting agent Consider psychotherapy Consider evaluation for another diagnosis or for a comorbid condition (e.g., medical illness, substance abuse, etc.) Some patients may experience apparent lack of consistent efficacy due to activation of latent or underlying bipolar disorder, and require antidepressant discontinuation and switch to a mood stabilizer Best Augmenting Combos for Partial Response or Treatment Resistance Triiodothyronine is itself an augmenting agent for partial response in depression Tests Periodic assessment of thyroid status Administration of triiodothyronine may lead to mild hyperthyroidism with reduced levels of TSH Side Effects How Drug Causes Side Effects Increases in thyroid hormone concentrations",
+    "base_fact": "Hypothetically boosts monoamine actions in the CNS May work synergistically with traditional antidepressants How Long Until It Works (for Depression) Can work within days, but therapeutic effects may be delayed for up to 8 weeks If It Works (for Depression) The goal of treatment is complete remission of current symptoms as well as prevention of future relapses Treatment most often reduces or even eliminates symptoms, but not a cure since symptoms can recur after medicine stopped Continue treatment until all symptoms are gone (remission) or significantly reduced Once symptoms are gone, continue treating for 1 year for the first episode of depression For second and subsequent episodes of depression, treatment may need to be indefinite If It Doesn't Work (for Depression) Many patients only have a partial response where some symptoms are improved but others persist (especially insomnia, fatigue, and problems concentrating) Other patients may be nonresponders, sometimes called treatmentresistant or treatment-refractory Some patients who have an initial response may relapse even though they continue treatment, sometimes called “poop-out” Consider switching to another antidepressant or adding a different augmenting agent Consider psychotherapy Consider evaluation for another diagnosis or for a comorbid condition (e.g., medical illness, substance abuse, etc.) Some patients may experience apparent lack of consistent efficacy due to activation of latent or underlying bipolar disorder, and require antidepressant discontinuation and switch to a mood stabilizer",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -2179,7 +2179,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Ziprasidone",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to ziprasidone’s efficacy ✽ Specifically, interactions at 5HT2C and 5HT1A receptors may contribute to efficacy for cognitive and affective symptoms in some patients ✽ Specifically, interactions at 5HT1D and 5HT7 receptors and at serotonin and norepinephrine transporters (especially at high doses) may contribute to efficacy for affective symptoms in some patients",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis and stabilizing affective symptoms Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to ziprasidone's efficacy ✽ Specifically, interactions at 5HT2C and 5HT1A receptors may contribute to efficacy for cognitive and affective symptoms in some patients ✽ Specifically, interactions at 5HT1D and 5HT7 receptors and at serotonin and norepinephrine transporters (especially at high doses) may contribute to efficacy for affective symptoms in some patients",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"
@@ -2239,7 +2239,7 @@
     "field": "what_it_does",
     "kb_parent_field": "mechanism",
     "kb_parent_drug": "Zotepine",
-    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to zotepine’s efficacy ✽ Specifically inhibits norepinephrine uptake",
+    "base_fact": "Blocks dopamine 2 receptors, reducing positive symptoms of psychosis Blocks serotonin 2A receptors, causing enhancement of dopamine release in certain brain regions and thus reducing motor side effects and possibly improving cognitive and affective symptoms Interactions at a myriad of other neurotransmitter receptors may contribute to zotepine's efficacy ✽ Specifically inhibits norepinephrine uptake",
     "source": {
       "source_id": "stahl_pg_7th",
       "title": "Prescriber's Guide (Stahl's Essential Psychopharmacology)"

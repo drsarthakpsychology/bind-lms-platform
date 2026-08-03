@@ -38,7 +38,9 @@ type Row = {
 const KB_ROWS: Row[] = [];
 const STUDENT_ROWS: Array<Record<string, unknown>> = [];
 
-for (const [drug, rec] of Object.entries<any>(monographs as any)) {
+for (const [drug, rec] of Object.entries(
+  monographs as Record<string, { sections?: Record<string, { page: number; text: string }>; monograph_start_page: number }>,
+)) {
   const sections = rec.sections ?? {};
   const start = rec.monograph_start_page;
 

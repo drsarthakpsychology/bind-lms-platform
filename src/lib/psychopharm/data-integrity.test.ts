@@ -112,7 +112,6 @@ describe("psychopharm — published-data safety invariants", () => {
     // and meaningful: no function returns a new numeric dose-equivalence by
     // multiplying/dividing two numbers with drug units. We scan the equivalence
     // data + store for any `X * Y` / `X / Y` that has an "mg"/dose operand.
-    const { readFileSync } = require("node:fs");
     const libDir = join(REPO, "src/lib/psychopharm");
     const files = ["equivalences.ts", "store.ts", "draft-seed.ts"];
     for (const f of files) {

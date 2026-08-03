@@ -47,7 +47,7 @@ export function DoseLadder({ drug, bands }: { drug: string; bands: BandView[] })
     <div className="space-y-3">
       <p className="text-eyebrow text-muted-foreground">Tap a dose to see what it does</p>
       <div className="grid gap-2">
-        {sorted.map((band, idx) => {
+        {sorted.map((band) => {
           const originalOrder = bands.indexOf(band) + 1;
           const isActive = originalOrder === active;
           const label = band.band_label || "band";

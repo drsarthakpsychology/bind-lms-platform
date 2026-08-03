@@ -155,7 +155,7 @@ function main() {
     if (non.length >= 2 && non[1] === "Therapeutics") starts.push({ page: p });
   }
 
-  const out: Record<string, any> = {};
+  const out: Record<string, unknown> = {};
   for (let k = 0; k < starts.length; k++) {
     const start = starts[k].page;
     const end = k + 1 < starts.length ? starts[k + 1].page : start + 60; // last monograph: assume length caps
