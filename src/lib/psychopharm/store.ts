@@ -185,7 +185,7 @@ export function drugDetail(drug: string): DrugDetail | null {
   };
 }
 
-/** One drug's row in the comparison view (D5). */
+/** One drug's row in the comparison view (D5 / P4). */
 export interface CompareRow {
   drug: string;
   class?: string;
@@ -198,9 +198,10 @@ export interface CompareRow {
 }
 
 /**
- * Comparison (D5): 2–3 drugs side by side at their chosen band. Rows:
- * what it's for at this dose, mechanism, dose range, side effects, and any
- * published equivalence. Never treats a drug as one undifferentiated thing.
+ * Comparison (D5/P4): 2–5 drugs side by side at their chosen band. Rows:
+ * what it's for at this dose, mechanism, dose range, side effects, class,
+ * and any published equivalence. Never treats a drug as one undifferentiated
+ * thing; each column is the drug at its band, not the whole drug.
  */
 export function compareDrugs(drugs: string[]): CompareRow[] {
   return drugs

@@ -10,19 +10,19 @@ import Link from "next/link";
 export default async function ComparePage({
   searchParams,
 }: {
-  searchParams: { a?: string; b?: string; c?: string };
+  searchParams: { a?: string; b?: string; c?: string; d?: string; e?: string };
 }) {
-  const slugs = [searchParams.a, searchParams.b, searchParams.c].filter(Boolean) as string[];
+  const slugs = [searchParams.a, searchParams.b, searchParams.c, searchParams.d, searchParams.e].filter(Boolean) as string[];
   if (slugs.length < 2) {
     return (
       <div className="mx-auto max-w-3xl space-y-4 py-8">
         <h1 className="text-h1">Compare medications</h1>
         <p className="text-small text-muted-foreground">
-          Compare 2–3 drugs at their dose, e.g.{" "}
+          Compare 2–5 drugs at their dose, e.g.{" "}
           <Link href="/tools/psychopharm/compare?a=risperidone&b=olanzapine" className="underline">
             risperidone vs olanzapine
           </Link>
-          . Pick two names from the URL.
+          . Add up to five names to the URL (<code>&amp;a=…&amp;b=…&amp;c=…</code>).
         </p>
       </div>
     );
