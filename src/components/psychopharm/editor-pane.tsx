@@ -28,6 +28,35 @@ export function EditorPane({
   const [errors, setErrors] = React.useState<string[]>([]);
   const [activeBlock, setActiveBlock] = React.useState<string | null>(null);
   const [reason, setReason] = React.useState("");
+  const [showHistory, setShowHistory] = React.useState(false);
+  const [versions, setVersions] = React.useState<
+    Array<{ version: number; reason?: string | null; created_at: string; changed_fields: string[] }>
+  >([]);
+
+  async function loadHistory() {
+    const res = await fetch(`/api/psychopharm/document/history?drug=${encodeURIComponent(drug)}`);
+    const data = await res.json();
+    setVersions(Array.isArray(data) ? data : []);
+    setShowHistory((v) => !v);
+  }
+
+  async function rollback(version: number) {
+    setBusy("rollback");
+    setNotice(null);
+    try {
+      const res = await fetch("/api/psychopharm/document/history/rollback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ drug_id: drugId, version }),
+      });
+      const data = await res.json();
+      if (!res.ok) { setNotice(data.error ?? "rollback failed"); return; }
+      setDocument(data.document.document);
+      setNotice(`Rolled back to v${version}.`);
+    } finally {
+      setBusy(null);
+    }
+  }
 
   function addBlock(sectionIdx: number) {
     setDocument((d) => {
@@ -202,6 +231,31 @@ export function EditorPane({
             <ul className="mt-2 list-disc pl-5 text-caption text-destructive">
               {errors.map((e, i) => (
                 <li key={i}>{e}</li>
+              ))}
+            </ul>
+          ) : null}
+
+          <button type="button" onClick={loadHistory} className="mt-2 text-caption text-muted-foreground hover:text-foreground">
+            {showHistory ? "Hide history" : "Version history"}
+          </button>
+          {showHistory ? (
+            <ul className="mt-2 space-y-1">
+              {versions.length === 0 ? <li className="text-caption text-muted-foreground">No versions yet.</li> : null}
+              {versions.map((v) => (
+                <li key={v.version} className="flex items-center justify-between gap-2 rounded border-2 border-border px-2 py-1 text-caption">
+                  <span>
+                    <span className="font-semibold">v{v.version}</span>
+                    {v.reason ? ` · ${v.reason}` : ""} · {new Date(v.created_at).toLocaleString()}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => rollback(v.version)}
+                    disabled={busy !== null}
+                    className="text-caption text-muted-foreground hover:text-foreground"
+                  >
+                    rollback
+                  </button>
+                </li>
               ))}
             </ul>
           ) : null}
