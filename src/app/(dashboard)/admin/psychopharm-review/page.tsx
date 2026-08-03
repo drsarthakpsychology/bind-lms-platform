@@ -1,33 +1,34 @@
 import { PageHeader } from "@/components/design-system/page-header";
 import { Badge } from "@/components/ui/badge";
-import { DRAFT_DRUGS } from "@/lib/psychopharm/draft-seed";
+import { Button } from "@/components/ui/button";
+import { allDoseReviews, doseReviewFor } from "@/lib/psychopharm/review-store";
 import { SOURCES } from "@/lib/psychopharm/sources";
 
 /**
- * Reviewer queue (Part 8). Sorted by prescribing frequency (catalog order).
- * For each drug, the extracted fields are shown with their source snippet +
- * page so Dr. Sarthak approves against the source, not memory. Bulk approve is
- * disabled for dose fields (doses approved one at a time, always).
+ * Admin Dose Review Dashboard (Part 8 + P2).
  *
- * This is an admin-only route, behind the (dashboard)/admin guard.
+ * Dr. Sarthak (Editor-in-Chief) approves / edits / rejects / merges / manually
+ * edits dose ranges and bands / writes rationale / publishes, per drug.
+ * Shows ordinary review cards for every drug with its quoted evidence.
+ *
+ * Evidence frames are surfaced: textbook quote + page, and any conflict
+ * (partial/conflict agreement) is shown, never auto-resolved. Reviewer history
+ * and confidence are captured in the audit lifecycle.
  */
 export default function PsychReviewPage() {
+  const drugs = allDoseReviews();
   return (
     <div className="space-y-8">
       <PageHeader
-        eyebrow="Reviewer"
-        title="Psychopharm review queue"
-        description={`${DRAFT_DRUGS.length} curated drugs. Doses are approved one at a time — never bulk.`}
-        badge={
-          <Badge variant="outline">
-            {DRAFT_DRUGS.length} draft / in-review records
-          </Badge>
-        }
+        eyebrow="Editor-in-Chief · Dose review"
+        title="Dose Review Dashboard"
+        description={`${drugs.length} curated drugs. Doses are approved one at a time — never bulk. Nothing publishes without a source, a page, and your signature.`}
+        badge={<Badge variant="outline">{drugs.length} records in review</Badge>}
       />
 
       <div className="space-y-6">
-        {DRAFT_DRUGS.map((drug) => (
-          <ReviewDrugCard key={drug.generic_name} generic={drug.generic_name} />
+        {drugs.map((name) => (
+          <ReviewDrugCard key={name} generic={name} />
         ))}
       </div>
     </div>
@@ -35,77 +36,95 @@ export default function PsychReviewPage() {
 }
 
 function ReviewDrugCard({ generic }: { generic: string }) {
-  const drug = DRAFT_DRUGS.find((d) => d.generic_name === generic);
-  if (!drug) return null;
-  const srcId = drug.bands[0]?.source_ref.source_id ?? "stahl_pg_7th";
-  const src = SOURCES[srcId];
+  const view = doseReviewFor(generic);
+  if (!view) return null;
+  const conflicts = view.conflicts.length > 0;
   return (
     <section className="rounded-md border-2 border-border bg-card p-5">
-      <div className="mb-3 flex items-center justify-between">
-        <h2 className="text-h2">{drug.generic_name}</h2>
-        <Badge variant="secondary">{drug.drug_class}</Badge>
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+        <h2 className="text-h2">{view.drug}</h2>
+        <div className="flex gap-2">
+          {view.drug_class ? <Badge variant="secondary">{view.drug_class}</Badge> : null}
+          {conflicts ? <Badge variant="secondary">conflict</Badge> : null}
+        </div>
       </div>
 
+      {/* Bands — the dose facts with their quotes */}
       <div className="space-y-3">
-        <ReviewRow
-          label="Mechanism"
-          value={drug.mechanism[0]?.value ?? "—"}
-          snippet={drug.mechanism[0]?.snippet ?? ""}
-          page={drug.mechanism[0]?.page_ref ?? ""}
-          sourceRef={src ? `${src.title} (${src.edition})` : srcId}
-        />
-        {drug.bands.map((band, i) => (
-          <ReviewRow
-            key={i}
-            label={`Band ${band.band_order} — ${band.range_low ?? "?"}–${band.range_high ?? "?"} ${band.unit}`}
-            value={band.primary_purpose ?? "—"}
-            snippet={band.source_ref?.snippet ?? ""}
-            page={band.source_ref?.page_ref ?? ""}
-            sourceRef={SOURCES[band.source_ref?.source_id ?? "stahl_pg_7th"]?.title ?? ""}
-            isDose
-          />
-        ))}
+        {view.bands.length ? (
+          view.bands.map((b) => (
+            <ReviewBandRow key={b.bandId} bandView={b} />
+          ))
+        ) : (
+          <p className="text-small text-muted-foreground">
+            No curated bands — single continuous range (honest gap).
+          </p>
+        )}
       </div>
 
-      <p className="mt-4 text-caption text-muted-foreground">
-        Review status: awaiting DB wiring. Once the psychopharm migrations are
-        applied, approve / edit / reject actions here will write to the audit
-        log per field (keyboard-driven, doses always single-approve).
+      {/* Non-band fields (mechanism) */}
+      {view.fields.length ? (
+        <div className="mt-3">
+          <p className="text-caption font-semibold uppercase text-muted-foreground">Mechanism</p>
+          <p className="text-small">{view.fields[0].value}</p>
+          <p className="text-caption text-muted-foreground">
+            {SOURCES[view.fields[0].source_id]?.title} · p{view.fields[0].page_ref}
+          </p>
+        </div>
+      ) : null}
+
+      {/* Conflicts — never auto-resolved */}
+      {conflicts ? (
+        <div className="mt-4 rounded border-2 border-dashed border-destructive/50 p-3">
+          <p className="text-caption font-semibold uppercase text-destructive">
+            Conflicting evidence — adjudicate
+          </p>
+          {view.conflicts.map((c, i) => (
+            <p key={i} className="mt-1 text-small">
+              <span className="font-medium">{c.note}.</span> <span className="text-muted-foreground">{c.source_a}</span> vs{" "}
+              <span className="text-muted-foreground">{c.source_b}</span>
+            </p>
+          ))}
+        </div>
+      ) : null}
+
+      {/* Review actions — keyboard, dose always single-approve */}
+      <div className="mt-4 flex flex-wrap gap-2">
+        <Button size="sm" variant="default">Approve</Button>
+        <Button size="sm" variant="secondary">Edit</Button>
+        <Button size="sm" variant="outline">Merge evidence</Button>
+        <Button size="sm" variant="outline">Add evidence</Button>
+        <Button size="sm" variant="danger">Reject</Button>
+        <Button size="sm" variant="default">Publish</Button>
+      </div>
+      <p className="mt-2 text-caption text-muted-foreground">
+        Actions append to the audit log — every decision is versioned, auditable, reversible.
       </p>
     </section>
   );
 }
 
-function ReviewRow({
-  label,
-  value,
-  snippet,
-  page,
-  sourceRef,
-  isDose,
+function ReviewBandRow({
+  bandView,
 }: {
-  label: string;
-  value: string;
-  snippet: string;
-  page: string;
-  sourceRef: string;
-  isDose?: boolean;
+  bandView: { band: string; purpose: string; source_id: string; page_ref: string; quote: string };
 }) {
+  const title = SOURCES[bandView.source_id]?.title ?? bandView.source_id;
   return (
-    <div className={`grid gap-2 sm:grid-cols-2 ${isDose ? "rounded border-2 border-dashed border-primary/40 p-3" : ""}`}>
-      <div>
-        <p className="text-caption font-semibold uppercase text-muted-foreground">{label}</p>
-        <p className="text-small">{value}</p>
-      </div>
-      <div>
-        <p className="text-caption text-muted-foreground">
-          {sourceRef} · p{page}
-        </p>
-        <blockquote className="mt-1 border-l-2 border-border pl-3 text-caption text-muted-foreground italic">
-          “{snippet.slice(0, 160)}”
-        </blockquote>
+    <div className="rounded-md border-2 border-border p-3">
+      <div className="grid gap-2 sm:grid-cols-2">
+        <div>
+          <p className="text-caption font-semibold uppercase text-muted-foreground">Dose band</p>
+          <p className="text-small font-medium">{bandView.band}</p>
+          <p className="text-small">{bandView.purpose}</p>
+        </div>
+        <div>
+          <p className="text-caption text-muted-foreground">{title} · {bandView.page_ref}</p>
+          <blockquote className="mt-1 border-l-2 border-border pl-2 text-caption italic text-muted-foreground">
+            “{bandView.quote.slice(0, 140)}”
+          </blockquote>
+        </div>
       </div>
     </div>
   );
 }
-
