@@ -20,6 +20,12 @@ export interface ReviewBand {
   bandId: string;
   band: string;
   purpose: string;
+  band_type?: string;
+  evidence?: {
+    strength?: string;
+    confidence?: string;
+    guideline?: string;
+  };
   source_id: string;
   page_ref: string;
   quote: string;
@@ -61,6 +67,10 @@ export function doseReviewFor(drug: string): DosaReviewView | null {
     bandId: `${draft.generic_name}:band:${b.band_order}`,
     band: `${b.range_low ?? "?"}–${b.range_high ?? "?"} ${b.unit}`,
     purpose: b.primary_purpose,
+    band_type: b.band_type,
+    evidence: b.evidence
+      ? { strength: b.evidence.strength, confidence: b.evidence.confidence, guideline: b.evidence.guideline }
+      : undefined,
     source_id: b.source_ref?.source_id ?? "stahl_pg_7th",
     page_ref: b.source_ref?.page_ref ?? "",
     quote: b.source_ref?.snippet ?? "",

@@ -1,7 +1,7 @@
 import { PageHeader } from "@/components/design-system/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { allDoseReviews, doseReviewFor } from "@/lib/psychopharm/review-store";
+import { allDoseReviews, doseReviewFor, type ReviewBand } from "@/lib/psychopharm/review-store";
 import { SOURCES } from "@/lib/psychopharm/sources";
 
 /**
@@ -107,7 +107,7 @@ function ReviewDrugCard({ generic }: { generic: string }) {
 function ReviewBandRow({
   bandView,
 }: {
-  bandView: { band: string; purpose: string; source_id: string; page_ref: string; quote: string };
+  bandView: ReviewBand;
 }) {
   const title = SOURCES[bandView.source_id]?.title ?? bandView.source_id;
   return (
@@ -116,6 +116,9 @@ function ReviewBandRow({
         <div>
           <p className="text-caption font-semibold uppercase text-muted-foreground">Dose band</p>
           <p className="text-small font-medium">{bandView.band}</p>
+          {bandView.band_type ? (
+            <p className="text-caption uppercase text-muted-foreground">{bandView.band_type}</p>
+          ) : null}
           <p className="text-small">{bandView.purpose}</p>
         </div>
         <div>
@@ -123,6 +126,14 @@ function ReviewBandRow({
           <blockquote className="mt-1 border-l-2 border-border pl-2 text-caption italic text-muted-foreground">
             “{bandView.quote.slice(0, 140)}”
           </blockquote>
+          {bandView.evidence ? (
+            <p className="mt-1 text-caption text-muted-foreground">
+              {bandView.evidence.strength ? `Strength ${bandView.evidence.strength}` : ""}
+              {bandView.evidence.strength && bandView.evidence.confidence ? " · " : ""}
+              {bandView.evidence.confidence ? `Confidence ${bandView.evidence.confidence}` : ""}
+              {bandView.evidence.guideline ? ` · ${bandView.evidence.guideline}` : ""}
+            </p>
+          ) : null}
         </div>
       </div>
     </div>
