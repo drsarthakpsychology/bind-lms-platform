@@ -1,12 +1,20 @@
 # Coverage Report — psychopharm knowledge base
 
-Generated 2026-08-02. Honest accounting of what is extracted and what is not.
+Generated 2026-08-03. Honest accounting of what is extracted and what is not.
 
-- Drugs in generated knowledge base: **152** (of 73 catalogued)
-- Curated draft records (band-level, reviewer-ready): **1**
+- Drugs in generated knowledge base: **152** (of 73 catalogued; extras included)
+- Curated draft records (band-level, reviewer-ready): **20**
 - Total field rows: **759** (mechanism, common_uses, dose_range, side_effects)
 - Drugs with a dose range extracted: **152**
 - Student-layer rows: **151**
+- Drugs with source-drawn functional dose bands (curated): **20** —
+  Alprazolam, Amisulpride, Aripiprazole, Chlordiazepoxide, Clonazepam,
+  Duloxetine, Fluoxetine, Hydroxyzine, Lamotrigine, Lithium, Lorazepam,
+  Oxazepam, Paroxetine, Quetiapine, Risperidone, Sulpiride, Topiramate,
+  Valproate, Venlafaxine, Ziprasidone.
+- Single-range drugs render the honest gap ("Typical ranges in our sources,
+  not yet split into dose bands") with their real sourced range — band
+  boundaries are never invented where the source gives one continuous range.
 
 ## Source coverage
 
