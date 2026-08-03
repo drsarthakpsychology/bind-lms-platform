@@ -79,7 +79,10 @@ export default async function DrugPage({ params }: { params: { drug: string } })
       ) : null}
 
       {/* Phase 2 observer layer: session observations + therapist questions */}
-      <ObserverNotes drugClass={detail.class} />
+      <ObserverNotes
+        drugClass={detail.class}
+        bandPrompts={detail.bands.flatMap((b) => b.observation_prompts ?? [])}
+      />
 
       <section className="space-y-4 pb-4">
         <h2 className="text-h2">Source</h2>

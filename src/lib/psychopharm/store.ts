@@ -124,6 +124,8 @@ export interface BandView {
     page_ref?: string;
     quote?: string;
   };
+  /** band-specific observation prompts (P3). */
+  observation_prompts?: Array<{ prompt: string; rationale?: string; urgency?: string }>;
 }
 
 export function drugDetail(drug: string): DrugDetail | null {
@@ -149,6 +151,11 @@ export function drugDetail(drug: string): DrugDetail | null {
       page_ref: b.source_ref?.page_ref,
       quote: b.source_ref?.snippet,
     },
+    observation_prompts: (b.observation_prompts ?? []).map((p) => ({
+      prompt: p.prompt,
+      rationale: p.rationale,
+      urgency: p.urgency,
+    })),
   }));
 
   // Honest fallback (G2/G3): when the sources give a dose range but the
