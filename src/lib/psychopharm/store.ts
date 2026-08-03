@@ -316,23 +316,70 @@ function equivalenceFor(drug: string): string | undefined {
 /** Learning layer: drugs grouped by shared receptor tag (Part 10). */
 export interface MechanismGroup {
   tag: string;
-  drugs: string[];
+  drugs: Array<{ name: string; qualifier?: string }>;
+}
+
+/**
+ * Normalise a free-text receptor target into a stable group tag.
+ *
+ *   "GABAA benzodiazepine site (positive allosteric modulator)"
+ *     → head "GABAA benzodiazepine site", qualifier "positive allosteric modulator"
+ *   "D2 antagonist, 5-HT2A antagonist" → head "D2", qualifier "antagonist"
+ *   "SERT inhibition (and some DAT at higher doses)" → head "SERT", qualifier "inhibition"
+ *
+ * Strips trailing action words so "D2 antagonist", "D2, 5-HT2A antagonist",
+ * and "D2/D3 partial agonist" all group under "D2" with the action kept as a
+ * per-drug annotation. Case/whitespace normalised.
+ */
+export function normaliseReceptorTag(raw: string): { tag: string; qualifier?: string } {
+  // Take the first comma-separated head.
+  let head = raw.split(",")[0].trim();
+  // Capture and strip a trailing parenthetical qualifier.
+  let qualifier: string | undefined;
+  const paren = head.match(/^(.*?)\s*\((.*)\)\s*$/);
+  if (paren) {
+    head = paren[1].trim();
+    qualifier = paren[2].trim();
+  }
+  // Normalise D2/D3 → D2 (split multi-receptor heads on the dominant one).
+  head = head.replace(/\/D\d+/, "").trim();
+  // Capture a trailing action word and strip it from the tag head.
+  const actionMatch = head.match(
+    /^(.*?)\s+((?:partial\s+)?(?:reuptake\s+)?(?:antagonist|agonist|blockade|inhibition|inhibitor|modulator|binding))$/i,
+  );
+  if (actionMatch) {
+    head = actionMatch[1].trim();
+    qualifier = qualifier ?? actionMatch[2].toLowerCase();
+  }
+  // Normalise case/whitespace.
+  head = head.replace(/\s+/g, " ").trim();
+  return { tag: head, qualifier: qualifier ? qualifier.toLowerCase() : undefined };
 }
 
 export function mechanismIndex(): MechanismGroup[] {
-  const map = new Map<string, string[]>();
+  const map = new Map<string, Array<{ name: string; qualifier?: string }>>();
   for (const d of ALL_DRAFT) {
     for (const rt of d.receptor_targets ?? []) {
-      const tag = rt.value.split(",")[0].trim();
-      if (!tag) continue;
+      const { tag, qualifier } = normaliseReceptorTag(rt.value);
+      if (!tag || /^(not|no|affects)/i.test(tag)) continue; // skip non-specific rows
       const arr = map.get(tag) ?? [];
-      if (!arr.includes(d.generic_name)) arr.push(d.generic_name);
+      arr.push({ name: d.generic_name, qualifier });
       map.set(tag, arr);
     }
   }
+  // Sort groups by tag name; dedupe drugs within a group.
   return Array.from(map.entries())
-    .map(([tag, drugs]) => ({ tag, drugs: drugs.sort() }))
-    .sort((a, b) => b.drugs.length - a.drugs.length);
+    .map(([tag, drugs]) => {
+      const seen = new Map<string, string | undefined>();
+      for (const d of drugs) if (!seen.has(d.name)) seen.set(d.name, d.qualifier);
+      return {
+        tag,
+        drugs: Array.from(seen.entries())
+          .map(([name, qualifier]) => ({ name, qualifier }))
+          .sort((a, b) => a.name.localeCompare(b.name)),
+      };
+    })
+    .sort((a, b) => a.tag.localeCompare(b.tag));
 }
 
 export { SOURCES };

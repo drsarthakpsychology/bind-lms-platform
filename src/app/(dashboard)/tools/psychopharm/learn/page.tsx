@@ -12,6 +12,10 @@ export default function LearnPage() {
   const groups = mechanismIndex();
   return (
     <div className="mx-auto max-w-4xl space-y-8 py-6">
+      <Link href="/tools/psychopharm" className="text-caption text-muted-foreground hover:underline">
+        ← Search
+      </Link>
+
       <PageHeader
         eyebrow="Learning"
         title="Browse by mechanism"
@@ -21,15 +25,21 @@ export default function LearnPage() {
       <div className="space-y-6">
         {groups.map((g) => (
           <section key={g.tag} className="rounded-md border-2 border-border bg-card p-4">
-            <h2 className="text-h2">{g.tag}</h2>
+            <div className="flex items-center justify-between gap-2">
+              <h2 className="text-h2">{g.tag}</h2>
+              <Badge variant="secondary">{g.drugs.length} drug{g.drugs.length === 1 ? "" : "s"}</Badge>
+            </div>
             <div className="mt-2 flex flex-wrap gap-2">
-              {g.drugs.map((drug) => (
+              {g.drugs.map((d) => (
                 <Link
-                  key={drug}
-                  href={`/tools/psychopharm/${drug.toLowerCase().replace(/\s+/g, "-")}`}
+                  key={d.name}
+                  href={`/tools/psychopharm/${d.name.toLowerCase().replace(/\s+/g, "-")}`}
                   className="rounded-full border-2 border-border px-3 py-1 text-sm hover:bg-accent"
                 >
-                  {drug}
+                  {d.name}
+                  {d.qualifier ? (
+                    <span className="ml-1 text-caption text-muted-foreground">({d.qualifier})</span>
+                  ) : null}
                 </Link>
               ))}
             </div>
