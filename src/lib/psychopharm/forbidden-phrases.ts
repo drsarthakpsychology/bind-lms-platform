@@ -89,6 +89,14 @@ export const FORBIDDEN_PHRASES: string[] = [
  */
 const NEGATION_TOKENS = ["do not", "don't", "not", "never", "must not", "should not", "does not", "shouldn't", "won't"];
 
+/**
+ * Modal / descriptive hedges that mark a verb as OBSERVATIONAL (about the drug
+ * or its effects) rather than an instruction to a reader. "may increase",
+ * "the dose increases", "can cause" describe what a medicine does; they are the
+ * required register. Only a direct reader-addressed imperative is forbidden.
+ */
+const MODAL_TOKENS = ["may", "can", "could", "might", "will", "would", "the dose", "doses", "drug", "medicine"];
+
 export function hasForbiddenPhrase(content: string): string | null {
   const lower = content.toLowerCase();
   for (const phrase of FORBIDDEN_PHRASES) {
@@ -97,10 +105,14 @@ export function hasForbiddenPhrase(content: string): string | null {
     if (!match) continue;
     // If the token immediately preceding the match is negating, it is the
     // compliant (education) form. Tolerate trailing whitespace before the match.
-    const before = lower.slice(Math.max(0, match.index - 16), match.index);
+    const before = lower.slice(Math.max(0, match.index - 18), match.index);
     const trimmedBefore = before.trimEnd();
     const negated = NEGATION_TOKENS.some((t) => trimmedBefore.endsWith(t));
     if (negated) continue;
+    // Observational/descriptive phrasing ("may increase", "the dose increases")
+    // describes the medicine's effect — not a reader instruction — so it passes.
+    const modal = MODAL_TOKENS.some((t) => trimmedBefore.endsWith(t));
+    if (modal) continue;
     return phrase;
   }
   return null;
