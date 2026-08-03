@@ -26,21 +26,24 @@ export function ReviewActions({
   const [busy, setBusy] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
   const [note, setNote] = React.useState("");
+  const [editing, setEditing] = React.useState(false);
+  const [editValue, setEditValue] = React.useState("");
 
-  async function run(action: Action) {
+  async function run(action: Action, extra?: Record<string, unknown>) {
     setBusy(action);
     setError(null);
     try {
       const res = await fetch("/api/psychopharm/review", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action, table, id, note: note || undefined }),
+        body: JSON.stringify({ action, table, id, note: note || undefined, ...extra }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         setError(data.error ?? "request failed");
         return;
       }
+      setEditing(false);
       router.refresh();
     } catch {
       setError("network error");
@@ -56,8 +59,13 @@ export function ReviewActions({
         <button type="button" className={btn} disabled={busy !== null} onClick={() => run("approve")}>
           {busy === "approve" ? "…" : "Approve"}
         </button>
-        <button type="button" className={btn} disabled={busy !== null} onClick={() => run("edit")}>
-          {busy === "edit" ? "…" : "Edit"}
+        <button
+          type="button"
+          className={btn}
+          disabled={busy !== null}
+          onClick={() => setEditing((v) => !v)}
+        >
+          {busy === "edit" ? "…" : editing ? "Cancel" : "Edit"}
         </button>
         <button type="button" className={btn} disabled={busy !== null} onClick={() => run("merge")}>
           {busy === "merge" ? "…" : "Merge evidence"}
@@ -85,6 +93,24 @@ export function ReviewActions({
           className="w-full rounded-md border-2 border-border px-2 py-1 text-sm"
         />
       </div>
+      {editing ? (
+        <div className="flex gap-2">
+          <input
+            value={editValue}
+            onChange={(e) => setEditValue(e.target.value)}
+            placeholder="New value (dose range / band label / mechanism)…"
+            className="w-full rounded-md border-2 border-border px-2 py-1 text-sm"
+          />
+          <button
+            type="button"
+            className="rounded-md border-2 border-foreground bg-primary px-3 py-1.5 text-sm text-primary-foreground"
+            disabled={!editValue.trim() || busy !== null}
+            onClick={() => run("edit", { value: editValue.trim() })}
+          >
+            Save edit
+          </button>
+        </div>
+      ) : null}
       {error ? <p className="text-caption text-destructive">{error}</p> : null}
       <p className="text-caption text-muted-foreground">
         Status: {status} · {isDose ? "doses approve one at a time" : "versioned + auditable"}

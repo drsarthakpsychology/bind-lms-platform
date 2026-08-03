@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import Link from "next/link";
 import { drugFromSlug, drugDetail } from "@/lib/psychopharm/store";
 import { DOSE_CAVEAT, STANDING_NOTICE } from "@/lib/psychopharm/forbidden-phrases";
@@ -42,7 +43,9 @@ export default async function DrugPage({ params }: { params: { drug: string } })
       </header>
 
       {/* Dose ladder — the signature component (D3). One rung per band. */}
-      <DoseLadder drug={detail.generic} bands={detail.bands} />
+      <Suspense fallback={<p className="text-small text-muted-foreground">Loading dose bands…</p>}>
+        <DoseLadder drug={detail.generic} bands={detail.bands} />
+      </Suspense>
 
       {/* Dual register — Student vs Clinician, same verified data. */}
       <RegisterView

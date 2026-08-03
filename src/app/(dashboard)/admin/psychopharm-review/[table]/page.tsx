@@ -12,12 +12,24 @@ import { ReviewActions } from "@/components/psychopharm/review-actions";
  */
 const TABLES = ["psych_drug_fields", "psych_dose_bands", "psych_dose_ranges"] as const;
 
-export default async function ReviewTablePage({ params }: { params: { table: string } }) {
+export default async function ReviewTablePage({
+  params,
+  searchParams,
+}: {
+  params: { table: string };
+  searchParams: { drug?: string };
+}) {
   const table = (params.table as (typeof TABLES)[number]);
   if (!TABLES.includes(table)) notFound();
 
   const supabase = await createClient();
-  const { data: rows } = await supabase.from(table).select("*").order("created_at", { ascending: true });
+  let query = supabase.from(table).select("*").order("created_at", { ascending: true });
+  if (searchParams.drug) {
+    // filter by drug name via the drug join
+    const { data: drug } = await supabase.from("psych_drugs").select("id").eq("generic_name", searchParams.drug).maybeSingle();
+    if (drug) query = supabase.from(table).select("*").eq("drug_id", drug.id).order("created_at", { ascending: true });
+  }
+  const { data: rows } = await query;
 
   return (
     <div className="space-y-6">

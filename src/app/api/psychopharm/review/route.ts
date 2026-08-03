@@ -1,6 +1,18 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 
+/** Parse "0.5–2 mg" (or "0.5-2") into a band's low/high/unit columns. */
+function applyBandEdit(after: Record<string, unknown>, raw: string) {
+  const m = raw.trim().match(/^([\d.]+)\s*[–-]\s*([\d.]+)\s*([a-zA-Z/]+)?/);
+  if (m) {
+    after.range_low = Number(m[1]);
+    after.range_high = Number(m[2]);
+    if (m[3]) after.unit = m[3];
+  } else {
+    after.band_label = raw;
+  }
+}
+
 /**
  * Admin dose-review actions (P2 workflow).
  *
@@ -74,7 +86,13 @@ export async function POST(req: Request) {
       break;
     case "edit":
       // edited value keeps its source + page; published → in_review.
-      if (value !== undefined) after.value = value;
+      if (value !== undefined) {
+        if (table === "psych_dose_bands" && typeof value === "string") {
+          applyBandEdit(after, value as string);
+        } else {
+          after.value = value;
+        }
+      }
       if (note !== undefined) after.reviewer_note = note;
       status = row.status === "published" ? "in_review" : "draft";
       after.status = status;

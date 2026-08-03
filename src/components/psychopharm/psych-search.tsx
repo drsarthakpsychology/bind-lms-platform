@@ -12,11 +12,21 @@ import { cn } from "@/lib/utils";
  * Step 1 of the three-tap flow: name → dose chips → band view.
  * Autofocuses on load; type → arrow → enter. No submit button.
  */
+interface BandChip {
+  low?: number | null;
+  high?: number | null;
+  unit?: string;
+  band_label?: string;
+  band_type?: string;
+}
+
 export function PsychSearch({ className }: { className?: string }) {
   const router = useRouter();
   const [q, setQ] = React.useState("");
   const [list, setList] = React.useState<string[]>([]);
   const [highlight, setHighlight] = React.useState(0);
+  const [selected, setSelected] = React.useState<string | null>(null);
+  const [bands, setBands] = React.useState<BandChip[]>([]);
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
@@ -44,8 +54,22 @@ export function PsychSearch({ className }: { className?: string }) {
     };
   }, [q]);
 
-  function go(slug: string) {
+  function pick(name: string) {
+    const slug = slugFor(name);
+    setSelected(name);
+    setList([]);
+    setQ(name);
+    // fetch that drug's dose bands for the chip step
+    fetch(`/api/psychopharm/bands?drug=${encodeURIComponent(name)}`)
+      .then((r) => r.json())
+      .then((d) => setBands(Array.isArray(d) ? d : []))
+      .catch(() => setBands([]));
     router.push(`/tools/psychopharm/${slug}`);
+  }
+
+  function go(slug: string, band?: number) {
+    const base = `/tools/psychopharm/${slug}`;
+    router.push(band != null ? `${base}?band=${band}` : base);
   }
 
   const onKey = (e: React.KeyboardEvent) => {
@@ -58,10 +82,12 @@ export function PsychSearch({ className }: { className?: string }) {
     } else if (e.key === "Enter") {
       e.preventDefault();
       const target = list[highlight] ?? list[0];
-      if (target) go(slugFor(target));
+      if (target) pick(target);
     } else if (e.key === "Escape") {
       setList([]);
       setQ("");
+      setSelected(null);
+      setBands([]);
     }
   };
 
@@ -109,7 +135,7 @@ export function PsychSearch({ className }: { className?: string }) {
               onMouseEnter={() => setHighlight(i)}
               onMouseDown={(e) => {
                 e.preventDefault();
-                go(slugFor(item));
+                pick(item);
               }}
               className={cn(
                 "flex flex-col px-3 py-2.5 text-sm",
@@ -120,6 +146,36 @@ export function PsychSearch({ className }: { className?: string }) {
             </li>
           ))}
         </ul>
+      ) : null}
+
+      {/* Dose chips (D2 step 2): after a drug is picked, offer its bands. */}
+      {selected && bands.length > 0 ? (
+        <div className="mt-2 space-y-1.5">
+          <p className="text-caption text-muted-foreground">Pick a dose for {selected}:</p>
+          <div className="flex flex-wrap gap-2">
+            {bands.map((b, i) => {
+              const range = b.low != null || b.high != null ? `${b.low ?? "–"}–${b.high ?? "–"} ${b.unit ?? "mg"}` : b.band_label;
+              return (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => go(slugFor(selected), i + 1)}
+                  className="rounded-full border-2 border-border px-3 py-1.5 text-sm hover:bg-accent"
+                >
+                  {range}
+                  {b.band_type ? <span className="ml-1 text-caption text-muted-foreground">({b.band_type})</span> : null}
+                </button>
+              );
+            })}
+            <button
+              type="button"
+              onClick={() => go(slugFor(selected))}
+              className="rounded-full border-2 border-dashed border-border px-3 py-1.5 text-sm text-muted-foreground hover:bg-accent"
+            >
+              Show all doses
+            </button>
+          </div>
+        </div>
       ) : null}
     </div>
   );
