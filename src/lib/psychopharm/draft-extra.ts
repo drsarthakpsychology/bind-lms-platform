@@ -403,4 +403,42 @@ export const DRAFT_DRUGS_EXTRA: DrugDraft[] = [
     equivalences: [], links: [], clinical_presentations: [],
     student: { plain_language: { text: "Benztropine is an anticholinergic that eases the stiffness some antipsychotics cause.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p265", snippet: "Drug-induced parkinsonism", agreement: "single" } } },
   },
+
+  // CLORAZEPATE — anxiety vs alcohol withdrawal.
+  {
+    generic_name: "Clorazepate", drug_class: "Benzodiazepine", subclass: "GABA-A PAM (long-acting)",
+    brand_names: ["Tranxene"], aliases: [],
+    mechanism: [ { value: "Enhances GABA-mediated inhibition; prodrug to the active nordiazepam.", source_id: S, page_ref: "p548", snippet: "benzodiazepine ... GABA", agreement: "single" } ],
+    receptor_targets: [ { value: "GABAA benzodiazepine site", source_id: S, page_ref: "p548", snippet: "benzodiazepine", agreement: "single" } ],
+    common_uses: [ { value: "Anxiety, alcohol withdrawal.", source_id: S, page_ref: "p548", snippet: "Anxiety; Alcohol withdrawal", agreement: "single" } ],
+    bands: [
+      { band_order: 1, range_low: 15, range_high: 60, unit: "mg", frequency: "divided", band_label: "Anxiety band",
+        primary_purpose: "Anxiety", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "Anxiety: 15–60 mg/day in divided doses", source_id: S, page_ref: "p548", snippet: "Anxiety: 15–60 mg/day in divided doses", agreement: "single" }, side_effects: [], observation_prompts: [] },
+      { band_order: 2, range_low: 30, range_high: 60, unit: "mg", frequency: "divided", band_label: "Alcohol-withdrawal band",
+        primary_purpose: "Alcohol withdrawal", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "Alcohol withdrawal: 30–60 mg/day in divided doses", source_id: S, page_ref: "p548", snippet: "Alcohol withdrawal: 30–60 mg/day in divided doses", agreement: "single" }, side_effects: [], observation_prompts: [] },
+    ],
+    equivalences: [], links: [], clinical_presentations: [],
+    student: { plain_language: { text: "Clorazepate is a long-acting benzodiazepine for anxiety, and is used to help alcohol withdrawal.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p548", snippet: "Anxiety; Alcohol withdrawal", agreement: "single" } } },
+  },
+
+  // LISDEXAMFETAMINE — ADHD vs binge-eating disorder.
+  {
+    generic_name: "Lisdexamfetamine", drug_class: "Stimulant", subclass: "Prodrug amphetamine",
+    brand_names: ["Vyvanse"], aliases: [],
+    mechanism: [ { value: "Prodrug converted to dextroamphetamine; increases dopamine and norepinephrine in synaptic space.", source_id: S, page_ref: "p1194", snippet: "amphetamine prodrug; dopamine and norepinephrine", agreement: "single" } ],
+    receptor_targets: [ { value: "DA/NE release (via VMAT/TAAR), not direct receptor agonism", source_id: S, page_ref: "p1194", snippet: "dopamine and norepinephrine", agreement: "single" } ],
+    common_uses: [ { value: "ADHD, moderate-to-severe binge-eating disorder.", source_id: S, page_ref: "p1194", snippet: "ADHD; Binge eating disorder", agreement: "single" } ],
+    bands: [
+      { band_order: 1, range_low: 30, range_high: 70, unit: "mg", band_label: "ADHD band",
+        primary_purpose: "Attention-deficit/hyperactivity disorder", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "ADHD: 30–70 mg/day", source_id: S, page_ref: "p1194", snippet: "ADHD: 30–70 mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+      { band_order: 2, range_low: 50, range_high: 70, unit: "mg", band_label: "Binge-eating disorder band",
+        primary_purpose: "Moderate-to-severe binge-eating disorder", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
+        source_ref: { value: "Binge eating disorder: 50–70 mg/day", source_id: S, page_ref: "p1194", snippet: "Binge eating disorder: 50–70 mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+    ],
+    equivalences: [], links: [], clinical_presentations: [],
+    student: { plain_language: { text: "Lisdexamfetamine is a long-acting amphetamine: one range for ADHD, a slightly higher one for binge-eating disorder.", kb_parent_field: "common_uses", source: { value: "as above", source_id: S, page_ref: "p1194", snippet: "ADHD; Binge eating disorder", agreement: "single" } } },
+  },
 ];
