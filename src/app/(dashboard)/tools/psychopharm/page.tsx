@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PsychSearch } from "@/components/psychopharm/psych-search";
 import { STANDING_NOTICE } from "@/lib/psychopharm/forbidden-phrases";
 
@@ -17,6 +18,13 @@ export default function PsychSearchPage() {
       </div>
 
       <PsychSearch className="w-full max-w-2xl" />
+
+      <Link
+        href="/tools/psychopharm/learn"
+        className="text-caption font-medium text-primary hover:underline"
+      >
+        Browse by mechanism →
+      </Link>
 
       <p className="max-w-md text-center text-caption text-muted-foreground">
         {STANDING_NOTICE}

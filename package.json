@@ -32,7 +32,8 @@
     "psych:seed": "tsx scripts/psychopharm/seed-db.ts",
     "psych:seed-p3": "tsx scripts/psychopharm/seed-p3.ts",
     "psych:fda": "tsx scripts/psychopharm/fetch-fda.ts",
-    "psych:fda-batch": "tsx scripts/psychopharm/fetch-fda-batch.ts"
+    "psych:fda-batch": "tsx scripts/psychopharm/fetch-fda-batch.ts",
+    "psych:seed-bands": "tsx scripts/psychopharm/seed-bands-fast.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1101.0",

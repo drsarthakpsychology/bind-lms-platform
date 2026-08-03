@@ -249,4 +249,26 @@ function equivalenceFor(drug: string): string | undefined {
   return undefined;
 }
 
+/** Learning layer: drugs grouped by shared receptor tag (Part 10). */
+export interface MechanismGroup {
+  tag: string;
+  drugs: string[];
+}
+
+export function mechanismIndex(): MechanismGroup[] {
+  const map = new Map<string, string[]>();
+  for (const d of ALL_DRAFT) {
+    for (const rt of d.receptor_targets ?? []) {
+      const tag = rt.value.split(",")[0].trim();
+      if (!tag) continue;
+      const arr = map.get(tag) ?? [];
+      if (!arr.includes(d.generic_name)) arr.push(d.generic_name);
+      map.set(tag, arr);
+    }
+  }
+  return Array.from(map.entries())
+    .map(([tag, drugs]) => ({ tag, drugs: drugs.sort() }))
+    .sort((a, b) => b.drugs.length - a.drugs.length);
+}
+
 export { SOURCES };
