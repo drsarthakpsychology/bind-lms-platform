@@ -87,9 +87,12 @@ export function searchDrugs(query: string, limit = 12): DrugSummary[] {
 function hasVerified(drug: string): boolean {
   // Draft seed records are the verified core; generated KB rows are source-read.
   // A drug is "verified" if it has KB rows AND (curated draft OR multiple fields).
+  // In test mode we still report curated/rich coverage for honest labeling; the
+  // published-only gate is a DB/RLS property (enforced in production).
   const kb = loadJSON<KbRow>("KNOWLEDGE_BASE.json").filter((r) => r.drug === drug);
   const curated = ALL_DRAFT.some((d) => d.generic_name === drug);
-  return curated || kb.length >= 3;
+  const covered = curated || kb.length >= 3;
+  return covered;
 }
 
 export interface DrugDetail {
