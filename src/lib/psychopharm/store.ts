@@ -14,10 +14,11 @@ import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { DRAFT_DRUGS } from "./draft-seed";
 import { DRAFT_DRUGS_EXTRA } from "./draft-extra";
+import { DRAFT_LADDERS } from "./draft-ladder";
 import { SOURCES } from "./sources";
 
-/** All curated draft records (core + extended band sets). */
-const ALL_DRAFT = [...DRAFT_DRUGS, ...DRAFT_DRUGS_EXTRA];
+/** All curated draft records (core + extended band sets + rich ladders). */
+const ALL_DRAFT = [...DRAFT_DRUGS, ...DRAFT_DRUGS_EXTRA, ...DRAFT_LADDERS];
 
 const REPO = join(process.cwd(), "docs/psychopharm");
 

@@ -40,8 +40,25 @@ export interface SideEffectBand {
   source: Sourced<string>;
 }
 
+export type BandType =
+  | "functional" // distinct clinical job (e.g. adjunct vs full antipsychotic)
+  | "starting"
+  | "titration"
+  | "therapeutic" // usual therapeutic range
+  | "maintenance"
+  | "high_response"
+  | "maximum"
+  | "indication" // indication-specific dose
+  | "formulation"
+  | "geriatric"
+  | "pediatric"
+  | "renal"
+  | "hepatic"
+  | "discontinuation_taper";
+
 export interface DoseBand {
   band_order: number;
+  band_type?: BandType; // which slot on the dose ladder this occupies
   range_low?: number | null;
   range_high?: number | null;
   unit: string;
@@ -60,8 +77,16 @@ export interface DoseBand {
   side_effects: SideEffectBand[];
   observation_prompts: DoseBandPrompt[];
   population_notes?: string[];
+  /** Reviewer/jury fields (P2): evidence strength, confidence, guideline. */
+  evidence?: {
+    strength?: "high" | "moderate" | "limited";
+    confidence?: "high" | "moderate" | "low";
+    guideline?: string; // supporting guideline, e.g. "NICE CG113", "FDA label"
+    rationale?: string;
+    source_url?: string;
+  };
   source_ref: Sourced<string>; // primary band source
-  /** NOTE: any band producing a numeric range must carry its provenance. */
+  /* NOTE: any band producing a numeric range must carry its provenance. */
 }
 
 export interface DoseBandPrompt {
