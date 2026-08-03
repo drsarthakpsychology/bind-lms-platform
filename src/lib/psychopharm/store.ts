@@ -20,10 +20,12 @@ import { DRAFT_FDA } from "./draft-fda";
 import { DRAFT_FDA_2 } from "./draft-fda2";
 import { DRAFT_FDA_3 } from "./draft-fda3";
 import { DRAFT_FDA_4 } from "./draft-fda4";
+import { DRAFT_FDA_5 } from "./draft-fda5";
+import { DRAFT_FDA_6 } from "./draft-fda6";
 import { SOURCES } from "./sources";
 
 /** All curated draft records (core + extended band sets + rich ladders + FDA). */
-const ALL_DRAFT = [...DRAFT_DRUGS, ...DRAFT_DRUGS_EXTRA, ...DRAFT_LADDERS, ...DRAFT_LADDERS_2, ...DRAFT_FDA, ...DRAFT_FDA_2, ...DRAFT_FDA_3, ...DRAFT_FDA_4];
+const ALL_DRAFT = [...DRAFT_DRUGS, ...DRAFT_DRUGS_EXTRA, ...DRAFT_LADDERS, ...DRAFT_LADDERS_2, ...DRAFT_FDA, ...DRAFT_FDA_2, ...DRAFT_FDA_3, ...DRAFT_FDA_4, ...DRAFT_FDA_5, ...DRAFT_FDA_6];
 
 const REPO = join(process.cwd(), "docs/psychopharm");
 
