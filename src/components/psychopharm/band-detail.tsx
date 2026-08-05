@@ -30,7 +30,7 @@ export function BandDetail({
   return (
     <section className="space-y-4 rounded-md border-2 border-border p-4">
       <header>
-        <h2 className="text-h1 text-base">{formatDoseAndFrequency(band)}</h2>
+        <h2 className="text-h3">{formatDoseAndFrequency(band)}</h2>
         <p className="text-caption uppercase text-muted-foreground">{band.band_label}</p>
         {band.band_type ? (
           <p className="text-caption text-muted-foreground">{band.band_type}</p>

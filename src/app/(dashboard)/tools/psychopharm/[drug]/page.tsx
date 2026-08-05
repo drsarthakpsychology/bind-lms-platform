@@ -10,12 +10,15 @@ import { DoseLadder } from "@/components/psychopharm/dose-ladder";
 import { DrugBandView } from "@/components/psychopharm/drug-band-view";
 import { Badge } from "@/components/ui/badge";
 
-/** Drug + band detail: KMS published document if present, else the curated view. */
+/**
+ * Drug + band detail: KMS published document if present, else the curated view.
+ */
 export default async function DrugPage({ params }: { params: Promise<{ drug: string }> }) {
   const { drug } = await params;
   const generic = drugFromSlug(drug);
   if (!generic) notFound();
   const detail = drugDetail(generic);
+  if (!detail) notFound();
 
   // Prefer a published KMS document when one exists (RLS: students see published only).
   const supabase = await createClient();
@@ -30,8 +33,6 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
       .maybeSingle();
     publishedDoc = (data as { document: (typeof publishedDoc) } | null)?.document ?? null;
   }
-
-  if (!detail) notFound();
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 py-6">
@@ -72,42 +73,45 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
           <p className="text-caption text-muted-foreground">{STANDING_NOTICE}</p>
         </>
       ) : (
-      <>
-      {/* Dose ladder — the signature component (D3). One rung per band. */}
-      <Suspense fallback={<p className="text-small text-muted-foreground">Loading dose bands…</p>}>
-        <DoseLadder drug={detail.generic} bands={detail.bands} />
-      </Suspense>
+        <>
+          {/* Dose ladder — the signature component (D3). One rung per band. */}
+          <Suspense fallback={<p className="text-small text-muted-foreground">Loading dose bands…</p>}>
+            <DoseLadder drug={detail.generic} bands={detail.bands} />
+          </Suspense>
 
-      {/* Band-aware body: tapping a dose-ladder rung switches this content. */}
-      <Suspense fallback={<p className="text-small text-muted-foreground">Loading…</p>}>
-        <DrugBandView
-          class={detail.class}
-          plain={detail.plain}
-          mechanism={detail.mechanism}
-          common_uses={detail.common_uses}
-          dose_range={detail.dose_range}
-          side_effects_common={detail.side_effects_common}
-          side_effects_serious={detail.side_effects_serious}
-          bands={detail.bands}
-          onsetTime={detail.onset_time}
-          onsetKb={detail.onset_kb}
-          onsetKbPage={detail.onset_kb_page}
-          halfLife={detail.half_life}
-          halfLifePage={detail.half_life_page}
-          sourceTitle={detail.source_title}
-        />
-      </Suspense>
-
-      <section className="space-y-4 pb-4">
-        <h2 className="text-h2">Source</h2>
-        <p className="text-small text-muted-foreground">
-          <cite className="not-italic">{detail.source_title}</cite>
-        </p>
-      </section>
-
-      <p className="text-caption text-muted-foreground">{STANDING_NOTICE}</p>
-      </>
+          {/* Band-aware body: tapping a dose-ladder rung switches this content. */}
+          <Suspense fallback={<p className="text-small text-muted-foreground">Loading…</p>}>
+            <DrugBandView
+              class={detail.class}
+              plain={detail.plain}
+              mechanism={detail.mechanism}
+              common_uses={detail.common_uses}
+              dose_range={detail.dose_range}
+              side_effects_common={detail.side_effects_common}
+              side_effects_serious={detail.side_effects_serious}
+              bands={detail.bands}
+              onsetTime={detail.onset_time}
+              onsetKb={detail.onset_kb}
+              onsetKbPage={detail.onset_kb_page}
+              halfLife={detail.half_life}
+              halfLifePage={detail.half_life_page}
+              sourceTitle={detail.source_title}
+            />
+          </Suspense>
+        </>
       )}
+
+      {!publishedDoc ? (
+        <>
+          <section className="space-y-4 pb-4">
+            <h2 className="text-h2">Source</h2>
+            <p className="text-small text-muted-foreground">
+              <cite className="not-italic">{detail.source_title}</cite>
+            </p>
+          </section>
+          <p className="text-caption text-muted-foreground">{STANDING_NOTICE}</p>
+        </>
+      ) : null}
     </div>
   );
 }
