@@ -61,7 +61,7 @@ export function OnsetTimeline({
 
           {/* Compact phase timeline — only phases the source names. */}
           {reached.length ? (
-            <div className="flex items-center gap-1" aria-hidden>
+            <div className="flex items-center gap-1" role="img" aria-label={`Onset timeline: ${reached.map(p => p.label).join(", ")}`}>
               {phases.map((p, i) => {
                 const active = reached.includes(p);
                 return (

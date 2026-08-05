@@ -204,9 +204,11 @@ export default async function DashboardPage() {
                   </span>
                   {/* One status badge, top-right: the course's publish state. */}
                   {course.is_published ? (
-                    <Badge variant="published">Published</Badge>
+                    <Badge variant={!viewingAsStudent ? "published" : "outline"}>
+                      Published
+                    </Badge>
                   ) : (
-                    <Badge variant="draft">Draft</Badge>
+                    <Badge variant="outline">Draft</Badge>
                   )}
                 </div>
 

@@ -259,19 +259,7 @@ export default async function LessonPage({
               Previous lesson
             </Link>
           </Button>
-        ) : (
-          <Button
-            type="button"
-            variant="ghost"
-            size="sm"
-            disabled
-            aria-disabled="true"
-            title="You're on the first lesson"
-          >
-            <ArrowLeft className="size-4" aria-hidden />
-            Previous lesson
-          </Button>
-        )}
+        ) : null}
 
         <ContinueControl
           lessonId={lessonId}
