@@ -13,6 +13,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install Postgres (pg_restore/initdb/pg_ctl)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends postgresql postgresql-client
+
       - name: Run verify-backup
         env:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}

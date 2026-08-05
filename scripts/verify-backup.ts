@@ -4,15 +4,17 @@
  *
  *   npm run verify-backup
  *
- * Downloads the newest db/*.dump from the R2 backups bucket, starts a
- * throwaway Postgres in docker, restores the dump into it, runs sanity
- * queries (row counts on key tables), reports pass/fail, and tears down.
+ * Downloads the newest db/*.dump from the R2 backups bucket, spins up a
+ * throwaway local Postgres (initdb/pg_ctl — no Docker, runners no longer
+ * ship it), restores the dump into it, runs sanity queries (row counts on
+ * key tables), reports pass/fail, and tears down.
  *
- * Requires: docker, R2 credentials, and the R2 backups bucket.
+ * Requires: postgresql (pg_restore, initdb, pg_ctl), R2 credentials, and
+ * the R2 backups bucket.
  */
 
 import { spawnSync } from "node:child_process";
-import { mkdirSync } from "node:fs";
+import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { S3Client, ListObjectsV2Command, GetObjectCommand } from "@aws-sdk/client-s3";
@@ -35,12 +37,18 @@ function makeS3() {
   });
 }
 
+/** Run a command, returning {status, stdout, stderr}. */
+function run(cmd: string, args: string[], opts: { input?: string } = {}): { status: number; stdout: string; stderr: string } {
+  const r = spawnSync(cmd, args, { encoding: "utf8", ...opts });
+  return { status: r.status ?? -1, stdout: r.stdout ?? "", stderr: r.stderr ?? "" };
+}
+
 async function main() {
-  // Docker check.
-  const d = spawnSync("docker", ["--version"], { encoding: "utf8" });
-  if (d.status !== 0) {
-    console.error("Docker is required for verify-backup (throwaway Postgres).");
-    process.exit(1);
+  for (const bin of ["pg_restore", "initdb", "pg_ctl"]) {
+    if (spawnSync(bin, ["--version"]).status !== 0) {
+      console.error(`${bin} not found — install postgresql (sudo apt-get install -y postgresql postgresql-client).`);
+      process.exit(1);
+    }
   }
 
   const bucket = requireEnv("R2_BACKUP_BUCKET");
@@ -64,34 +72,31 @@ async function main() {
   const workdir = join(tmpdir(), `plms-verify-${Date.now()}`);
   mkdirSync(workdir, { recursive: true });
   const dumpFile = join(workdir, "db.dump");
-  const { writeFileSync } = await import("node:fs");
   const buf = Buffer.from(await dl.Body!.transformToByteArray());
   writeFileSync(dumpFile, buf);
   console.log(`Downloaded ${(buf.length / 1e6).toFixed(1)} MB`);
 
-  // Throwaway Postgres container.
-  const container = `plms-verify-${Date.now()}`;
-  console.log(`Starting throwaway Postgres: ${container}`);
-  const up = spawnSync("docker", ["run", "-d", "--name", container, "-e", "POSTGRES_PASSWORD=verify", "-p", "54329:5432", "postgres:16-alpine"], { encoding: "utf8" });
-  if (up.status !== 0) {
-    console.error("Could not start Postgres:", up.stderr);
+  // Throwaway local Postgres cluster (initdb + pg_ctl), trust auth on local.
+  const pgdata = join(workdir, "pgdata");
+  const port = 54329;
+  mkdirSync(pgdata, { recursive: true });
+  console.log("Initialising throwaway Postgres …");
+  const init = run("initdb", ["-D", pgdata, "-U", "postgres", "-A", "trust", "--no-sync"]);
+  if (init.status !== 0) {
+    console.error("initdb failed:", init.stderr.slice(-400));
+    process.exit(1);
+  }
+  console.log("Starting Postgres …");
+  const started = run("pg_ctl", ["-D", pgdata, "-o", `-p ${port} -c listen_addresses='127.0.0.1'`, "-w", "start"]);
+  if (started.status !== 0) {
+    console.error("pg_ctl start failed:", started.stderr.slice(-400));
     process.exit(1);
   }
 
   try {
-    // Wait for readiness.
-    for (let i = 0; i < 30; i++) {
-      const ok = spawnSync("docker", ["exec", container, "pg_isready", "-U", "postgres"], { encoding: "utf8" });
-      if (ok.status === 0) break;
-      await new Promise((r) => setTimeout(r, 1000));
-    }
-
-    // Restore.
+    // Restore (custom-format dump → pg_restore).
     console.log("Restoring dump …");
-    const rest = spawnSync(
-      "docker", ["exec", "-i", container, "pg_restore", "-U", "postgres", "-d", "postgres", "--no-owner", "--no-acl", "-"],
-      { input: buf, encoding: "utf8" },
-    );
+    const rest = run("pg_restore", ["-h", "127.0.0.1", "-p", String(port), "-U", "postgres", "-d", "postgres", "--no-owner", "--no-acl", dumpFile]);
     if (rest.status !== 0) {
       console.error("Restore failed:", rest.stderr?.slice(-400));
       process.exit(1);
@@ -101,7 +106,7 @@ async function main() {
     const tables = ["profiles", "courses", "lessons", "assignments", "submissions", "progress"];
     let pass = true;
     for (const t of tables) {
-      const r = spawnSync("docker", ["exec", container, "psql", "-U", "postgres", "-t", "-A", "-c", `select count(*) from ${t};`], { encoding: "utf8" });
+      const r = run("psql", ["-h", "127.0.0.1", "-p", String(port), "-U", "postgres", "-t", "-A", "-c", `select count(*) from ${t};`]);
       const count = r.stdout?.trim();
       console.log(`  ${t}: ${count} rows ${r.status === 0 ? "✅" : "❌"}`);
       if (r.status !== 0) pass = false;
@@ -112,8 +117,9 @@ async function main() {
     process.exit(pass ? 0 : 1);
   } finally {
     // Tear down.
-    spawnSync("docker", ["rm", "-f", container]);
-    console.log(`Tore down ${container}.`);
+    run("pg_ctl", ["-D", pgdata, "-m", "immediate", "stop"]);
+    rmSync(workdir, { recursive: true, force: true });
+    console.log("Tore down throwaway Postgres.");
   }
 }
 
