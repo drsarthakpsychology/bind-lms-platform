@@ -178,7 +178,14 @@ function EditableBlock({
   const [editing, setEditing] = React.useState(false);
   const [v, setV] = React.useState(block.value);
 
-  React.useEffect(() => setV(block.value), [block.value]);
+  // Keep the local edit buffer in sync with an externally-changed block value
+  // (undo/redo, rollback) without a setState-in-effect: adjust state during
+  // render, per the React docs.
+  const [prevValue, setPrevValue] = React.useState(block.value);
+  if (prevValue !== block.value) {
+    setPrevValue(block.value);
+    setV(block.value);
+  }
 
   if (!editable) return <div className="rounded-md border-2 border-border p-3">{children}</div>;
 

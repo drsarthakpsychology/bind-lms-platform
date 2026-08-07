@@ -5,8 +5,6 @@ import { DocumentView } from "./document-view";
 import { SourcePanel } from "./source-panel";
 import type { MedicationDocument, MedBlock } from "@/lib/psychopharm/document";
 
-type BlockPatch = Partial<Pick<MedBlock, "value" | "hidden" | "sources" | "data" | "type">>;
-
 /**
  * The medication editor — the page IS the form.
  *
@@ -35,15 +33,8 @@ export function EditorPane({
   const [activeBlock, setActiveBlock] = React.useState<MedBlock | null>(null);
   const [savedAt, setSavedAt] = React.useState<number | null>(null);
 
-  const [past, setPast] = React.useState<MedicationDocument[]>([]);
-  const [future, setFuture] = React.useState<MedicationDocument[]>([]);
-
   const setDoc = React.useCallback((fn: (d: MedicationDocument) => MedicationDocument) => {
-    setDocument((d) => {
-      setPast((p) => [...p.slice(-49), d]);
-      setFuture([]);
-      return fn(d);
-    });
+    setDocument(fn);
   }, []);
 
   function editBlock(block: MedBlock, value: string) {
@@ -82,15 +73,7 @@ export function EditorPane({
   }
 
   // Autosave: every document change writes a draft (no separate "save" step).
-  const firstRender = React.useRef(true);
-  React.useEffect(() => {
-    if (firstRender.current) { firstRender.current = false; return; }
-    const t = setTimeout(() => saveDraft(), 800);
-    return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [document]);
-
-  async function saveDraft() {
+  const saveDraft = React.useCallback(async () => {
     setBusy("save");
     setNotice(null);
     try {
@@ -104,7 +87,14 @@ export function EditorPane({
       setStatus(data.status);
       setSavedAt(Date.now());
     } finally { setBusy(null); }
-  }
+  }, [drug, document, reason]);
+
+  const firstRender = React.useRef(true);
+  React.useEffect(() => {
+    if (firstRender.current) { firstRender.current = false; return; }
+    const t = setTimeout(() => saveDraft(), 800);
+    return () => clearTimeout(t);
+  }, [document, saveDraft]);
 
   async function publish() {
     setBusy("publish");
