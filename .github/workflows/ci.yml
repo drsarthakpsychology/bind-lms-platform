@@ -37,10 +37,17 @@ jobs:
   e2e:
     name: Playwright (critical paths)
     runs-on: ubuntu-latest
-    # E2E needs credentials; only run on scheduled/on-demand or when secrets exist.
-    if: ${{ secrets.E2E_BASE_URL != '' }}
+    # E2E needs credentials. Job-level `if` can't reference `secrets` (GitHub
+    # rejects the whole workflow at validation), so gate inside the job instead:
+    # if E2E_BASE_URL is unset, bail out of this job without failing the run.
     needs: quality
     steps:
+      - name: Skip unless E2E credentials exist
+        if: ${{ secrets.E2E_BASE_URL == '' }}
+        run: |
+          echo "::notice::E2E_BASE_URL not set — skipping Playwright."
+          exit 0
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
