@@ -37,17 +37,12 @@ jobs:
   e2e:
     name: Playwright (critical paths)
     runs-on: ubuntu-latest
-    # E2E needs credentials. Job-level `if` can't reference `secrets` (GitHub
-    # rejects the whole workflow at validation), so gate inside the job instead:
-    # if E2E_BASE_URL is unset, bail out of this job without failing the run.
+    # E2E needs credentials. `secrets` is not a valid context in any `if:`
+    # expression on `workflow_dispatch`/`push` (GitHub rejects the whole file at
+    # validation), so the gate happens in shell where env vars carry the secret.
+    # If E2E_BASE_URL is unset we skip the run without failing the job.
     needs: quality
     steps:
-      - name: Skip unless E2E credentials exist
-        if: ${{ secrets.E2E_BASE_URL == '' }}
-        run: |
-          echo "::notice::E2E_BASE_URL not set — skipping Playwright."
-          exit 0
-
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
@@ -67,4 +62,9 @@ jobs:
           E2E_ADMIN_PASSWORD: ${{ secrets.E2E_ADMIN_PASSWORD }}
           E2E_LESSON_URL: ${{ secrets.E2E_LESSON_URL }}
           E2E_ASSIGNMENT_URL: ${{ secrets.E2E_ASSIGNMENT_URL }}
-        run: npx playwright test
+        run: |
+          if [ -z "$E2E_BASE_URL" ]; then
+            echo "::notice::E2E_BASE_URL not set — skipping Playwright."
+            exit 0
+          fi
+          npx playwright test
