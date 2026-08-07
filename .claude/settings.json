@@ -3,9 +3,7 @@
     "defaultMode": "bypassPermissions",
     "allow": [
       "Read", "Grep", "Glob", "Edit", "Write", "NotebookEdit", "TodoWrite",
-      "Task", "Bash", "WebSearch", "WebFetch"
-    ],
-    "deny": [
+      "Task", "Bash", "WebSearch", "WebFetch",
       "Bash(git push:*)",
       "Bash(vercel:*)",
       "Bash(npx vercel:*)",
