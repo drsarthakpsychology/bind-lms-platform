@@ -3,7 +3,26 @@
 Reverse-chron. One entry per slice: what shipped, decisions, commit hash.
 Protocol: never stop, never ask, keep the branch buildable.
 
-## 2026-08-10
+## 2026-08-10 (v3 build)
+
+### Slice A4 — Sim review closure (v3)
+- /admin/sim-review comments now persist: POST /api/admin/sim-corrections (requireAdmin) → scoring_corrections (admin-only RLS)
+- Faculty can correct the overall score (0–5); score-changing rows inject as few-shot "lessons" into future debriefs (the Part 3.4 feedback loop)
+- Note-only reviews stored but filtered out of the scoring prompt (debrief route now filters via shouldInjectCorrection) — a pure note would render as `"{}" should be scored as: {}`
+- Existing corrections pre-fill the comment + corrected-score on page load; edits accumulate
+- Corpus: 41 psych-focused PMC queries run (suicide/self-harm/ED/ADHD/autism/personality/dissociative/somatic/delirium/substance/psychotropics/cultural), paginated to 3 pages, re-run dedup from disk; 139 reports fetched, normalise → 129 docs in pmc.json
+- 103 tests (+5 sim-review), lint clean, build green
+
+### Slice A3 — Infra discipline (v3)
+- src/lib/ai/embed.ts: halfvec(384) embedding entry point, Matryoshka truncate + L2-renorm, fixture path, 6 tests
+- Migrated corpus_chunks + transcript_chunks to halfvec(384) + halfvec_cosine_ops HNSW
+- /admin/infra + infra_metrics() RPC (service_role only), 70% red banner, warning strip on /admin
+- GitHub Actions crons (keepalive, infra-check, reminders) → /api/internal/cron with CRON_SECRET; prune-logs retention, infra-snapshot, send-reminders stub
+- infra_snapshots table + size caps on text columns
+- migrate-submissions-to-r2.ts for audio/PDF → R2
+- Security audit ran clean (all tables RLS'd, anon blocked on sensitive tables)
+- docs: INFRA_SETUP (upgrade triggers), DATA_POLICY, AI_ARCHITECTURE
+- 98 tests, lint clean, build green
 
 ### Slice G — Rest (commit 41afdcc)
 - /reflect: owner-only journal (no admin read path), "help me think" → no-train provider only, honest 503 if none.

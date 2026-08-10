@@ -3,6 +3,7 @@ import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { scoreTranscript } from "@/lib/ai/scoring";
+import { shouldInjectCorrection } from "@/lib/practice/sim-review";
 import { guardStudentCall } from "@/lib/ai/guards";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -76,17 +77,21 @@ export async function POST(req: Request) {
     .maybeSingle();
   const rubricTargets = (caseRow?.case_data as { rubric_targets?: string[] })?.rubric_targets ?? [];
 
-  // Load prior faculty corrections for few-shot (the feedback loop).
+  // Load prior faculty corrections for few-shot (the feedback loop). Only
+  // rows that actually changed a score are lessons — a pure note would render
+  // as garbage (`"{}" should be scored as: {}`) inside the prompt.
   const { data: corrections } = await admin
     .from("scoring_corrections")
     .select("original, corrected, note")
     .order("created_at", { ascending: false })
     .limit(10);
-  const priorCorrections = (corrections ?? []).map((c) => ({
-    original: c.original as unknown as string,
-    corrected: c.corrected as unknown as string,
-    note: c.note as string | undefined,
-  }));
+  const priorCorrections = (corrections ?? [])
+    .filter((c) => shouldInjectCorrection(c))
+    .map((c) => ({
+      original: String(c.original),
+      corrected: String(c.corrected),
+      note: c.note as string | undefined,
+    }));
 
   try {
     guardStudentCall("debrief_scoring", { enabled: process.env.AI_ENABLED !== "false" });
