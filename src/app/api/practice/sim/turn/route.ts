@@ -3,8 +3,11 @@ import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { SEED_CASES } from "@/lib/psychopharm/sim/cases";
-import { buildPatientSystemPrompt, buildSessionStateBlock } from "@/lib/ai/prompts/patient";
-import { aiChat } from "@/lib/ai/client";
+import { runPatientTurn } from "@/lib/sim/engine";
+import { initialState, type PatientState } from "@/lib/sim/types";
+import { drawVariant } from "@/lib/sim/variation";
+import type { DepthCase } from "@/lib/sim/types";
+import type { Gate } from "@/lib/sim/gates";
 import { guardStudentCall } from "@/lib/ai/guards";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -18,12 +21,13 @@ const turnSchema = z.object({
 /**
  * POST /api/practice/sim/turn
  *
- * Student sends one message in a sim session; the patient responds.
- * - Streaming is handled client-side via the same route; here we return the
- *   full reply (simple path). A streaming variant can be added without
- *   changing the interface.
- * - STUDENT INPUT IS UNTRUSTED. It goes in a user turn, never a system prompt.
- * - Safety: rate limit per user per minute; token ceiling per session.
+ * The v5 patient engine: one turn = Director (decides) → Actor (writes).
+ * PatientState mutates every turn and is persisted on the patient turn's
+ * `state` column so the next turn resumes exactly where this one ended (and
+ * the debrief/retry can rewind to it).
+ *
+ * STUDENT INPUT IS UNTRUSTED — it goes to the Director as data, never into a
+ * system prompt.
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
@@ -32,7 +36,6 @@ export async function POST(req: Request) {
   } = await supabase.auth.getUser();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
-  // rate limit: 15 turns/min per user
   const allowed = await rateLimit(`sim:${user.id}`, 15);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });
 
@@ -41,65 +44,65 @@ export async function POST(req: Request) {
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
   const { sessionId, message } = parsed.data;
 
-  // Load the session + case via admin client (service role; RLS on tables).
   const admin = createAdminClient();
   const { data: session } = await admin
     .from("sim_sessions")
-    .select("id, case_id, user_id, status, difficulty")
+    .select("id, case_id, user_id, status, difficulty, seed")
     .eq("id", sessionId)
     .maybeSingle();
-  if (!session || session.user_id !== user.id) {
-    return NextResponse.json({ error: "not found" }, { status: 404 });
-  }
-  if (session.status !== "active") {
-    return NextResponse.json({ error: "session not active" }, { status: 409 });
-  }
+  if (!session || session.user_id !== user.id) return NextResponse.json({ error: "not found" }, { status: 404 });
+  if (session.status !== "active") return NextResponse.json({ error: "session not active" }, { status: 409 });
 
-  // Load the case.
+  // Load the case (seed or DB).
   const { data: caseRow } = await admin
     .from("sim_cases")
-    .select("case_data")
+    .select("case_data, title")
     .eq("id", session.case_id)
     .maybeSingle();
-  const caseData = caseRow?.case_data as Record<string, unknown> | undefined;
-  // Fall back to seed cases for hand-built ones.
-  const seedCase = SEED_CASES.find((c) => c.title === (caseData?.title ?? ""));
-  const simCase = seedCase ?? (caseData as unknown as import("@/lib/psychopharm/sim/types").SimCase | undefined);
-  if (!simCase) {
-    return NextResponse.json({ error: "case not found" }, { status: 404 });
-  }
+  const seedCase = SEED_CASES.find((c) => c.title === (caseRow?.title ?? ""));
+  const caseData = (caseRow?.case_data as Record<string, unknown> | undefined) ?? {};
+  // Build a DepthCase (the v5 model) from the seed or DB data.
+  const base = (seedCase ?? caseData) as unknown as DepthCase;
+  const simCase: DepthCase = {
+    ...base,
+    case_id: session.case_id,
+    variation: (caseData.variation as DepthCase["variation"]) ?? base.variation,
+    traps: (caseData.traps as DepthCase["traps"]) ?? base.traps ?? [],
+    moves: {},
+  };
 
-  // Token ceiling per session (approx 4 chars/token).
-  const { count } = await admin
-    .from("sim_turns")
-    .select("id", { count: "exact", head: true })
-    .eq("session_id", sessionId);
-  if ((count ?? 0) > 120) {
-    return NextResponse.json({ error: "session turn limit reached" }, { status: 429 });
-  }
+  // Token ceiling.
+  const { count } = await admin.from("sim_turns").select("id", { count: "exact", head: true }).eq("session_id", sessionId);
+  if ((count ?? 0) > 120) return NextResponse.json({ error: "session turn limit reached" }, { status: 429 });
 
-  // Guard: student-data workload requires a no-train provider.
   try {
     guardStudentCall("sim_patient_turn", { enabled: process.env.AI_ENABLED !== "false" });
   } catch (e) {
-    return NextResponse.json(
-      { error: "AI unavailable", detail: (e as Error).message },
-      { status: 503 },
-    );
+    return NextResponse.json({ error: "AI unavailable", detail: (e as Error).message }, { status: 503 });
   }
 
-  // Build the patient prompt with the case model + rolling state.
-  const system = buildPatientSystemPrompt(simCase);
-  const sessionState = {
-    turn_count: count ?? 0,
-    unlocked_disclosures: [],
-    reflective_statements: 0,
-    open_questions_asked: 0,
-    premature_reassurance_count: 0,
-    time_elapsed_seconds: 0,
-  };
+  // Resume state: the last patient turn's `state` column, or a fresh state
+  // from the session seed.
+  const { data: lastPatientTurn } = await admin
+    .from("sim_turns")
+    .select("state")
+    .eq("session_id", sessionId)
+    .eq("role", "patient")
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
 
-  // Persist the student turn immediately (drop-safe).
+  const variant = session.seed
+    ? (JSON.parse(String(session.seed)) as ReturnType<typeof drawVariant>)
+    : drawVariant(simCase.variation ?? { mood_today: ["flat"], recent_event: ["a long day"], most_defended_topic: ["the family"], opening_posture: ["came willingly"], somatic_focus: ["head"], trust_start: [3], language_mix: ["Hinglish"] }, session.case_id, 1);
+
+  const state: PatientState = (lastPatientTurn?.state as PatientState | null) ?? initialState(session.case_id, variant);
+  // Persist the seed on the session so a rewind/debrief is reproducible.
+  if (!session.seed) {
+    await admin.from("sim_sessions").update({ seed: JSON.stringify(variant) }).eq("id", sessionId);
+  }
+
+  // Persist the student turn (drop-safe).
   await admin.from("sim_turns").insert({
     session_id: sessionId,
     user_id: user.id,
@@ -108,30 +111,24 @@ export async function POST(req: Request) {
     content_type: "text",
   });
 
-  // Call the AI — student message is a USER turn (untrusted).
-  let reply: string;
-  try {
-    const res = await aiChat(
-      [
-        { role: "system", content: system },
-        { role: "user", content: message },
-        { role: "user", content: `(Internal state: ${buildSessionStateBlock(sessionState)})` },
-      ],
-      { workload: "sim_patient_turn", maxTokens: 512, temperature: 0.7 },
-    );
-    reply = res.text;
-  } catch {
-    // Persist a graceful failure marker and return an error the UI can show.
-    return NextResponse.json({ error: "patient unavailable" }, { status: 503 });
-  }
+  // Build the fact rules from the case's disclosure data.
+  const facts = (simCase.disclosure_rules ?? []).map((r) => ({
+    fact_id: r.fact,
+    gate: { kind: "explicit_phrase", patterns: [/./] } as Gate,
+    sensitive: true,
+  }));
 
-  // Persist the patient turn.
+  // Run the patient engine (Director → hard rules → Actor → fallback).
+  const result = await runPatientTurn(simCase, state, message, [], facts);
+
+  // Persist the patient turn WITH the new state (the rewind point).
   await admin.from("sim_turns").insert({
     session_id: sessionId,
     user_id: user.id,
     role: "patient",
-    content: reply,
+    content: result.reply,
     content_type: "text",
+    state: result.state,
   });
 
   // Log usage.
@@ -139,9 +136,9 @@ export async function POST(req: Request) {
     user_id: user.id,
     workload: "sim_patient_turn",
     provider: "unknown",
-    tokens_in: Math.round((system.length + message.length) / 4),
-    tokens_out: Math.round(reply.length / 4),
+    tokens_in: Math.round((message.length + result.reply.length) / 4),
+    tokens_out: Math.round(result.reply.length / 4),
   });
 
-  return NextResponse.json({ reply, sessionId });
+  return NextResponse.json({ reply: result.reply, sessionId, move: result.move });
 }
