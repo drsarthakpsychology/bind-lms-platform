@@ -2,6 +2,7 @@ import { IDIOMS } from "@/lib/decode/idioms";
 import { DecodeArena } from "./decode-arena";
 import { FunnelDrill } from "./funnel-drill";
 import { SevenReadings } from "./seven-readings";
+import { CfiDrill } from "./cfi-drill";
 
 export const dynamic = "force-dynamic";
 
@@ -46,6 +47,17 @@ export default function DecodePage() {
         </p>
         <div className="mt-3">
           <SevenReadings entry={set[2]} />
+        </div>
+      </div>
+
+      <div className="mt-10">
+        <h2 className="text-base font-semibold">CFI Practice — the Cultural Formulation Interview</h2>
+        <p className="mt-1 text-small text-muted-foreground">
+          Elicit the patient&apos;s explanatory model without dismissing it. The failure mode is
+          correcting the belief instead of understanding it.
+        </p>
+        <div className="mt-3">
+          <CfiDrill />
         </div>
       </div>
     </div>
