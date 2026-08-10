@@ -1,6 +1,7 @@
 import { IDIOMS } from "@/lib/decode/idioms";
 import { DecodeArena } from "./decode-arena";
 import { FunnelDrill } from "./funnel-drill";
+import { SevenReadings } from "./seven-readings";
 
 export const dynamic = "force-dynamic";
 
@@ -34,6 +35,17 @@ export default function DecodePage() {
         </p>
         <div className="mt-3">
           <FunnelDrill entry={set[1]} />
+        </div>
+      </div>
+
+      <div className="mt-10">
+        <h2 className="text-base font-semibold">Seven Readings — Kirmayer &amp; Young applied</h2>
+        <p className="mt-1 text-small text-muted-foreground">
+          A somatic complaint can mean a disease, an intrapsychic conflict, psychopathology,
+          a cultural idiom, a metaphor, social positioning, or protest. Assign them all.
+        </p>
+        <div className="mt-3">
+          <SevenReadings entry={set[2]} />
         </div>
       </div>
     </div>
