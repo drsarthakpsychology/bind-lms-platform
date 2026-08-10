@@ -3,21 +3,27 @@
 Specific, actionable. One line each. NOT a stop sign.
 
 ## API keys (free tiers, no card)
-- Paste `GEMINI_API_KEY` (aistudio.google.com, free) → enables content generation + corpus
-- Paste `GROQ_API_KEY` (console.groq.com, free) → enables voice-mode speed
-- Paste `CEREBRAS_API_KEY` (cloud.cerebras.ai, free) → bulk corpus processing
-- Paste `OPENROUTER_API_KEY` (openrouter.ai, free) → overflow lane
-- OPTIONAL: `ANTHROPIC_API_KEY` (paid) → routes student-session + journal calls to a no-train provider. Until then those features show the honest "needs a no-train provider" message.
+- Paste `NVIDIA_API_KEY` (build.nvidia.com, free, no card) → the strongest free tier for the Director/Actor + TTS. Add to `.env.local` as `NVIDIA_API_KEY`.
+- Paste `GEMINI_API_KEY` (aistudio.google.com, free) → content generation + embeddings
+- Paste `GROQ_API_KEY` (console.groq.com, free) → Director speed + Whisper STT
+- OPTIONAL: `ANTHROPIC_API_KEY` (paid) → no-train provider for live student sessions + journal
+- OPTIONAL: `ELEVENLABS` / `COSYVOICE` (free tier) → the v5 voice upgrade (currently on browser TTS)
 
-## Content review (all seeded `approved: true` for the base set)
-- Record 20 anonymised composite cases from your practice → `/admin/corpus/dictate` (highest-value corpus source)
-- Review the 40 AI-drafted cases in the admin queue (they land `approved: false`)
+## Content review
+- Record 20 anonymised composite cases from your practice → `/admin/corpus/dictate` (the highest-value corpus source, still #1)
+- Flip feature flags at `/admin/flags` to reveal the 9 built-but-off tools for the cohort when ready (live: Consulting Room, Decoder, MSE, Judgment, Rounds, Journal)
+- Review the 60 authored cases in the admin queue (`approved: false`)
+
+## Calibration
+- Score transcripts at `/admin/calibration` — your blind scores train the AI scorer and give the "calibrated against a practising psychiatrist" line for the St. Xavier's MOU
 
 ## Infra
-- Enable the commented Firecrawl/Playwright MCP entry in `.mcp.json` for future corpus runs
-- Migrations ARE applied to the main DB (2026-08-10). For future schema work, use a Supabase dev branch.
+- Migrations applied to the main DB (modules, feature_flags, sim_branches, cohort_ended_at, supervision transfer). For future schema work use a Supabase dev branch.
+- Enable the Firecrawl/Playwright MCP entry in `.mcp.json` for future corpus runs
 
 ## Live product to verify
-- `/practice` → Consulting Room, Judgment, Rounds, MSE, OSCE, Formulation, Two-Minute Clinic
-- `/reflect` (owner-only journal), `/wall` (cohort wall)
-- `/admin/corpus/dictate` (faculty case dictation)
+- `/today` → the new front door (recommended card, quick/deep chips)
+- `/practice` → the redesigned browse view (verb labels, state chips)
+- `/practice/decode` → the flagship Presenting Complaint Decoder
+- `/practice/consulting-room` → Director/Actor engine + retry from a debrief moment
+- `/admin/calibration`, `/admin/flags`, `/admin/modules`, `/admin/pulse` → the four admin tools
