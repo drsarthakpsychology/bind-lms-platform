@@ -112,3 +112,23 @@ deployed production site.
 - **No RLS / cross-role regression tests** in CI. The skill's own guidance: add
   pgTAP + cross-role (SupaShield) tests; make an RLS-disabled public table a
   merge blocker. This is the single highest-leverage testing gap for this stack.
+
+## Practice layer audit (2026-08-10, v3)
+
+Ran the auditing-app-security skill after the practice-layer migrations.
+
+- **Secrets scan**: clean. No client-exposed service_role; only the intended
+  public anon + Turnstile site keys (client-safe). `is_admin()` is server-
+  executable by `authenticated`; anon cannot (correct — app is auth-gated).
+- **RLS**: every public table has RLS enabled (0 unprotected). All practice
+  tables have policies. `checkins_aggregate` is postgres+service_role only
+  (students blocked, verified via 401 on anon replay).
+- **Anon replay**: sensitive practice tables (journal, sim_sessions, sim_turns,
+  sct_expert_responses, sim_cases, wall) all deny anon (401/0-rows). Published
+  sim_cases/sct_items/cards are readable by authenticated students (correct —
+  they're the course content).
+- **SECURITY DEFINER**: only pre-existing helpers (is_admin, app_role,
+  media/psychopharm touch fns). No practice-layer definer functions.
+- **Pre-existing (not practice-layer)**: `media/crypto.ts` falls back to
+  SUPABASE_SERVICE_ROLE_KEY as the session secret — flagged in the earlier
+  audit (finding #5), still open, not part of this slice.
