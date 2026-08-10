@@ -10,6 +10,7 @@ import { VIEW_MODE_COOKIE } from "../view-mode-constants";
 import { Reveal } from "@/components/motion/reveal";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
+import { DashboardPracticeSection } from "@/components/practice/dashboard-practice-section";
 import { cardVariants } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -167,6 +168,10 @@ export default async function DashboardPage() {
           </div>
         </Link>
       )}
+      </Reveal>
+
+      <Reveal delay={0.15}>
+        <DashboardPracticeSection />
       </Reveal>
 
       <section aria-label="Your courses" className="space-y-3">
