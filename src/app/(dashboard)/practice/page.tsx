@@ -48,6 +48,8 @@ const PRACTICE_TOOLS: PracticeTool[] = [
   { href: "/practice/check-in", title: "Weekly Check-in", verb: "ONE TAP", description: "30 seconds, aggregate-only for faculty.", icon: CircleCheck, time: "<1 min", state: "done_today", flag: "checkin" },
   { href: "/practice/wall", title: "Cohort Wall", verb: "ASK", description: "Threaded, anonymous-post toggle.", icon: MessageSquare, time: "3 min", state: "new", flag: "journal" },
 
+  { href: "/practice/out-of-depth", title: "Out of Depth", verb: "REFER", description: "Know when to refer, escalate, or stop.", icon: FlaskConical, time: "5 min", state: "new", flag: "ethics" },
+
   // Your record
   { href: "/practice/passport", title: "Skills Passport", verb: "WATCH", description: "Your competencies, evidenced.", icon: Radar, time: "read", state: "new", flag: "skills_passport", progress: "2 / 11 competencies" },
   { href: "/practice/supervision", title: "Supervision Log", verb: "RECORD", description: "Log contact hours, tag competencies.", icon: NotebookPen, time: "1 min", state: "new", flag: "supervision" },
