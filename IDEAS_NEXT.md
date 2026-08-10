@@ -6,13 +6,14 @@
 - **Supervision log** — /practice/supervision: log contact hours, tag competencies → competency_events
 - **Check-in** (non-clinical weekly) — /practice/check-in: 30-sec, aggregate-only for admin
 - **Skills Passport** (progress view) — /practice/passport: competency tracker fed by competency_events
+- **Ask the Syllabus** — ⌘K command palette in the AppShell (opens via ⌘K/Ctrl+K or sidebar trigger), lexical search over tools, courses, competencies, admin surfaces + case-library docs
+- **Check-in aggregate admin view** — /admin/checkins reads checkins_aggregate ONLY (no identifiers)
+- **Two-Minute Clinic on the hub** — was dashboard-only; now on /practice too
 
 ## Deferred this session (have migrations, no UI)
-- **Ask the Syllabus** — ⌘K grounded Q&A; transcript_chunks + pgvector migration exists, no retrieval/UI (needs an embedding provider; embed.ts is fixture-stubbed)
 - **Peer role-play rooms** — pair_sessions table exists, no UI (needs a messages table + matching flow)
 - **Skills Passport PDF** — certificate evidence appendix (pdf-lib + generateCertificatePdf exist; needs the admin sign-off flow driving it)
 - **Corpus fetchers for ICD-11 / mhGAP / NMHS / MHA 2017** — scaffolds written, not run (PMC + Gutenberg done)
-- **Check-in aggregate admin view** — checkins_aggregate view exists, no admin UI reading it yet
 
 ## New ideas
 - Deepgram streaming STT with built-in turn-taking + medical vocabulary for voice

@@ -111,6 +111,13 @@ const PRACTICE_TOOLS: PracticeTool[] = [
     icon: Timer,
     eyebrow: "Daily · 2 minutes",
   },
+  {
+    href: "/practice/role-play",
+    title: "Peer Role-Play",
+    description: "Pair up with a classmate. One plays the patient, one the clinician.",
+    icon: ListChecks,
+    eyebrow: "With a peer",
+  },
 ];
 
 export default function PracticeHubPage() {

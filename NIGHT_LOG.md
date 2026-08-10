@@ -5,6 +5,14 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10 (v3 build)
 
+### Slice A10 — Peer role-play rooms (v3)
+- /practice/role-play: pair up with a classmate by email; one plays patient, one clinician. Message thread persists in pair_messages (new table, RLS participant-only). Polling every 2s; no AI.
+- Fixed a real RLS bug: the session route couldn't look up a peer because profiles RLS is owner-or-admin only — peer discovery now uses the admin client (service role) while the pair_sessions insert stays on the user's RLS-enforcing client.
+- Roles verified correct (creator's choice vs peer's opposite); 2-message thread round-tripped in the DB.
+- Migration in src/migrations_pending/practice_layer_pair.sql.
+- Fixed a time-bomb test: streaks "alive yesterday" hard-coded 2026-08-09 broke on date rollover → now computes yesterday from istToday().
+- 119 unit tests, 24 e2e specs pass, lint clean, build green.
+
 ### Slice A9 — Ask the Syllabus (⌘K) + hub completeness (v3)
 - **Ask the Syllabus** — global ⌘K command palette in the AppShell. Opens via ⌘K/Ctrl+K or the sidebar trigger. Lexical search over the REAL content in this install: 13 practice tools (by label/alias/hint), courses, competencies, admin surfaces, and the 40 most-recent case-library docs (server-read). Keyboard nav (↑/↓/Enter/Esc), honest empty state. No embeddings needed, works fully offline.
 - **Hub completeness** — added Two-Minute Clinic to the practice hub (it was built but only reachable via the dashboard).

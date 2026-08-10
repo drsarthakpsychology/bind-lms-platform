@@ -88,8 +88,13 @@ describe("streaks — IST rollover + freezes", () => {
   });
 
   it("a streak alive yesterday is still alive today", () => {
-    const yesterday = recordActivity(base, "2026-08-09");
-    // istToday() is 2026-08-10 in real time; the state's last_active is 08-09.
-    expect(streakAlive(yesterday)).toBe(true);
+    // Date-agnostic: yesterday relative to real IST today, so the test never
+    // rots when the calendar rolls over.
+    const todayIso = istToday();
+    const yesterday = new Date(`${todayIso}T00:00:00Z`);
+    yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+    const yesterdayIso = yesterday.toISOString().slice(0, 10);
+    const y = recordActivity(base, yesterdayIso);
+    expect(streakAlive(y)).toBe(true);
   });
 });
