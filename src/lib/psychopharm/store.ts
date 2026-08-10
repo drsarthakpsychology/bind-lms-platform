@@ -162,6 +162,13 @@ export interface DrugDetail {
   /** Half-life (verbatim KB Pharmacokinetics block). */
   half_life?: string;
   half_life_page?: string;
+  /** FDA-label fields (verbatim sections), when present. */
+  contraindications?: string;
+  interactions?: string;
+  monitoring?: string;
+  overdose?: string;
+  special_populations?: string;
+  patient_counseling?: string;
 }
 export interface BandView {
   low?: number | null;
@@ -294,6 +301,14 @@ export function drugDetail(drug: string): DrugDetail | null {
     onset_kb_page: onsetKb?.page_ref,
     half_life: halfLifeKb?.value,
     half_life_page: halfLifeKb?.page_ref,
+    // FDA full-label sections (verbatim). Only populated when the label has
+    // been fetched and parsed; absent → "Not covered in our sources".
+    contraindications: asRow("contraindications"),
+    interactions: asRow("interactions"),
+    monitoring: asRow("monitoring"),
+    overdose: asRow("overdose"),
+    special_populations: asRow("special_populations"),
+    patient_counseling: asRow("patient_counseling"),
   };
 }
 

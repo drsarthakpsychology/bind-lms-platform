@@ -27,10 +27,13 @@ describe("psychopharm — safety invariants", () => {
   });
 
   it("no equivalence is computed anywhere in the codebase", async () => {
-    // Grep the app source for any arithmetic that could derive an equivalence.
+    // Grep the app source AND the extraction/seed scripts (i.e. code that could
+    // compute an equivalence). Raw fetched data (fda/*.json, text caches) is
+    // excluded — verbatim label prose legitimately contains the word
+    // "equivalence" next to dose ratios and must not be flagged.
     const { execSync } = await import("node:child_process");
     const out = execSync(
-      'grep -rn "equivalence" src/ scripts/ 2>/dev/null || true',
+      'grep -rn "equivalence" src/ scripts/ --include="*.ts" 2>/dev/null || true',
       { encoding: "utf8" },
     );
     // Equivalence may appear in the schema/data model as a stored field, but

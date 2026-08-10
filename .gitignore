@@ -7,3 +7,7 @@ next-env.d.ts
 .DS_Store
 .vercel
 .claude/worktrees/
+
+# Corpus raw fetched data (regenerable via npm run corpus:*)
+scripts/corpus/raw/
+scripts/corpus/drafted-cases.json

@@ -32,9 +32,20 @@
     "psych:seed": "tsx scripts/psychopharm/seed-db.ts",
     "psych:seed-p3": "tsx scripts/psychopharm/seed-p3.ts",
     "psych:fda": "tsx scripts/psychopharm/fetch-fda.ts",
+    "psych:fda-full": "tsx scripts/psychopharm/fetch-fda-full.ts",
+    "psych:enrich-fda": "tsx scripts/psychopharm/enrich-fda-fields.ts",
+    "psych:seed-fda": "tsx scripts/psychopharm/seed-fda-fields.ts",
+    "psych:seed-book": "tsx scripts/psychopharm/seed-book-fields.ts",
+    "psych:seed-bands-uncurated": "tsx scripts/psychopharm/seed-uncurated-bands.ts",
     "psych:fda-batch": "tsx scripts/psychopharm/fetch-fda-batch.ts",
     "psych:seed-bands": "tsx scripts/psychopharm/seed-bands-fast.ts",
-    "psych:seed-docs": "tsx scripts/psychopharm/seed-documents.ts"
+    "psych:seed-docs": "tsx scripts/psychopharm/seed-documents.ts",
+    "psych:populate-obs": "tsx scripts/psychopharm/populate-observation-tables.ts",
+    "corpus:gutenberg": "tsx scripts/corpus/fetch-gutenberg.ts",
+    "corpus:style-bank": "tsx scripts/corpus/build-style-bank.ts",
+    "corpus:pmc": "tsx scripts/corpus/fetch-pmc.ts",
+    "corpus:normalise": "tsx scripts/corpus/normalise.ts",
+    "corpus:draft-cases": "tsx scripts/corpus/draft-cases.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1101.0",
