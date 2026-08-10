@@ -9,10 +9,10 @@
 - **Ask the Syllabus** — ⌘K command palette in the AppShell (opens via ⌘K/Ctrl+K or sidebar trigger), lexical search over tools, courses, competencies, admin surfaces + case-library docs
 - **Check-in aggregate admin view** — /admin/checkins reads checkins_aggregate ONLY (no identifiers)
 - **Two-Minute Clinic on the hub** — was dashboard-only; now on /practice too
+- **Peer role-play rooms** — /practice/role-play: pair by email, patient/clinician roles, persistent message thread (pair_messages, participant-only RLS)
+- **Skills Passport PDF** — /practice/passport "Download passport PDF"; supervision sign-off flow (student requests, /admin/supervision signs/rejects)
 
 ## Deferred this session (have migrations, no UI)
-- **Peer role-play rooms** — pair_sessions table exists, no UI (needs a messages table + matching flow)
-- **Skills Passport PDF** — certificate evidence appendix (pdf-lib + generateCertificatePdf exist; needs the admin sign-off flow driving it)
 - **Corpus fetchers for ICD-11 / mhGAP / NMHS / MHA 2017** — scaffolds written, not run (PMC + Gutenberg done)
 
 ## New ideas
