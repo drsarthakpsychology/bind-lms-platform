@@ -27,11 +27,19 @@ type PracticeTool = {
 
 const PRACTICE_TOOLS: PracticeTool[] = [
   {
+    href: "/practice/decode",
+    title: "Presenting Complaint Decoder",
+    description: "“I’m not feeling fresh.” Six things could be true. Find out which.",
+    icon: Brain,
+    eyebrow: "DECODE",
+    accent: true,
+  },
+  {
     href: "/practice/consulting-room",
     title: "Consulting Room",
     description: "Interview a simulated patient. The debrief shows you what you missed.",
     icon: Stethoscope,
-    eyebrow: "AI simulated patient",
+    eyebrow: "TALK",
     accent: true,
   },
   {
