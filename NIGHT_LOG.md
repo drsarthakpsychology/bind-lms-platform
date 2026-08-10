@@ -5,6 +5,10 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10 (v3 build)
 
+### Slice A7 — Check-in admin aggregate view (v3)
+- /admin/checkins: weekly cohort workload/energy/preparedness from checkins_aggregate view ONLY (no identifiers; privacy-test enforced). Completes the check-in story end-to-end.
+- 112 tests, lint clean, build green.
+
 ### Slice A6 — Skills Passport progress view (v3)
 - /practice/passport — 11 competencies, evidence from competency_events (fed by supervision tagging today). Per-competency evidence list, logged-hours summary. The PDF certificate appendix stays the deferred big item.
 - 112 tests, lint clean, build green.
