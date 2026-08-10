@@ -5,6 +5,14 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10 (v3 build)
 
+### Slice A8 — Live app audit + e2e harness (v3)
+- Ran the app (dev server) and browser-tested EVERY page: new (ethics, check-in, supervision, library, passport, admin/checkins) + old (dashboard, psychopharm tools/drug/compare/learn, courses, reflect, wall) + all practice tools (judgment, MSE, OSCE, rounds, two-minute clinic, formulation, consulting room).
+- Consulting Room verified end-to-end with fixtures: start session → patient replies → multi-turn → debrief scored (overall 2.5, quotes, missed disclosures) → row lands in sim_scores for /admin/sim-review.
+- Security boundary verified: student redirected away from all 7 admin routes; admin layout gate works.
+- Found no app bugs — the only issues were test assertions (wrong h1 regexes) and harness timing. Login rate-limit (10/email) + single-active-session check confirmed working (they caused naive per-spec logins to fail).
+- New e2e harness: global-setup logs in once → storageState reused by all 20 specs (no rate-limit hammering). 20 specs pass, 4 CI-only critical-paths skip cleanly.
+- 112 unit tests, lint clean, build green.
+
 ### Slice A7 — Check-in admin aggregate view (v3)
 - /admin/checkins: weekly cohort workload/energy/preparedness from checkins_aggregate view ONLY (no identifiers; privacy-test enforced). Completes the check-in story end-to-end.
 - 112 tests, lint clean, build green.
