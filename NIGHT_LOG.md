@@ -3,6 +3,17 @@
 Reverse-chron. One entry per slice: what shipped, decisions, commit hash.
 Protocol: never stop, never ask, keep the branch buildable.
 
+## 2026-08-11 (v5 depth build)
+
+### Slice B1 — Patient engine rebuild: Director/Actor (v5 Part 3)
+- Two-call architecture: **Director** (structured JSON decision, never writes dialogue) → **Actor** (writes 1-3 sentences of dialogue only). The v1 engine's prose-in-prompt gates are replaced by deterministic code.
+- `PatientState` (trust/guardedness/irritation/fatigue 0-10, disclosed[], topics[], gates_met[], phase, last_moves[], hollow_compliance) — mutates every turn.
+- Gates-as-code (`src/lib/sim/gates.ts`): `move_used`, `topic_opened`, `trust_at_least`, `turn_after`, `explicit_phrase`, `all_of`/`any_of`. **The code is the final arbiter — a fact the Director tries to leak that isn't permitted is dropped, never recorded.** Unit tests prove a sensitive fact never leaks at trust < 3.
+- 24-move library (`src/lib/sim/moves.ts`) with scripted fallback renderings + register awareness. Never-silent guarantee: Actor fails twice → scripted fallback, auto-logged.
+- Hard rules: irritation > 7 narrows moves; **3 consecutive premature_advice → permanent hollow_compliance** (tested). Anti-repetition via text-similarity check vs last 8 utterances + regenerate.
+- Seeded variation (`src/lib/sim/variation.ts`): deterministic per-session seed; same seed ⇒ same variant; variation touches surface only, never clinical facts (tested).
+- 143 tests (+11 engine), lint clean, typecheck clean, build green.
+
 ## 2026-08-10 (v3 build)
 
 ### Slice A14 — Sim debrief → Skills Passport (v3)
