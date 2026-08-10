@@ -1,6 +1,6 @@
-import { BookOpen, CircleAlert, GraduationCap, Inbox, Users } from "lucide-react";
+import { BookOpen, CircleAlert, Database, GraduationCap, Inbox, Users } from "lucide-react";
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, createAdminClient } from "@/lib/supabase/server";
 
 import { PageHeader } from "@/components/design-system/page-header";
 import { StatCard } from "@/components/design-system/stat-card";
@@ -50,12 +50,29 @@ export default async function AdminOverviewPage() {
     { label: "Pending reviews", value: pendingResult.count ?? 0, href: "/admin/submissions", icon: <Inbox className="size-4" /> },
   ];
 
+  // Infra warning strip — the free-tier headroom is the one silent failure
+  // mode that takes the whole cohort down. Surfaced here so it can't be missed.
+  const adminClient = createAdminClient();
+  const { data: infraData } = await adminClient.rpc("infra_metrics");
+  const dbSize = (infraData as { db_size_bytes?: number } | null)?.db_size_bytes ?? 0;
+  const DB_LIMIT = 500 * 1024 * 1024;
+  const dbPct = dbSize ? Math.round((dbSize / DB_LIMIT) * 100) : 0;
+
   return (
     <div className="space-y-8">
       <PageHeader
         title="Overview"
         description="A snapshot of your platform at a glance."
       />
+
+      {dbPct >= 70 ? (
+        <Link href="/admin/infra" className="flex items-center gap-3 rounded-md border-2 border-red-500 bg-red-50 p-3">
+          <Database className="size-4 shrink-0 text-red-600" aria-hidden />
+          <span className="text-small font-medium text-red-800">
+            Free-tier database at {dbPct}% of 500 MB — check infrastructure headroom.
+          </span>
+        </Link>
+      ) : null}
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (
