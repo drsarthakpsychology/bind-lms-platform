@@ -192,4 +192,12 @@ export interface DepthCase extends V1Case {
   traps: TrapId[];
   variation: VariationSchema;
   moves: Partial<Record<PatientMoveId, MoveRendering>>;
+  /** The module (condition/section) this case belongs to. */
+  module_id?: string;
+  /** The patient's opening line is an idiom from the bank, never a clean symptom. */
+  opening_idiom?: string;
+  /** Distinct-voice key for module organisation: register@city. */
+  voice_key?: string;
+  /** Authoring bookkeeping (compat with the V1 traps field if renamed later). */
+  traps_authored?: TrapId[];
 }
