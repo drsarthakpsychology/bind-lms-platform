@@ -5,6 +5,11 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-11 (v5 depth build)
 
+### Session final slices
+- CFI Practice (Decoder Mode 4) — completes all four Decoder modes
+- **Patient engine wired into the live turn route** — the Director/Actor engine now powers the Consulting Room: state persists per turn (the A1 Retry rewind point), student input stays untrusted data, never-silent fallback live
+- 184 tests, lint clean, build green. 41 commits on feat/v5-depth.
+
 ### Session continuation — the surviving-admin tools + friction audit
 - A9 Transfer loop (supervision transfer_note + consent)
 - A10 Alumni mode (role, no-expiry, cohort_ended_at + cron)
