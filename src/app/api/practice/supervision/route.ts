@@ -12,6 +12,9 @@ const entrySchema = z.object({
   supervisorName: z.string().max(120).optional(),
   supervisorEmail: z.string().email().optional().or(z.literal("")),
   competencyKey: z.string().optional(),
+  // A9 transfer loop — the only evidence platform practice changes real behaviour.
+  transferNote: z.string().max(2000).optional(),
+  consentPromo: z.boolean().optional(),
 });
 
 /**
@@ -54,6 +57,8 @@ export async function POST(req: Request) {
       supervisor_name: parsed.data.supervisorName || null,
       supervisor_email: parsed.data.supervisorEmail || null,
       competency_id: competencyId,
+      transfer_note: parsed.data.transferNote ?? null,
+      consent_promo: parsed.data.consentPromo ?? false,
     })
     .select("id")
     .single();
