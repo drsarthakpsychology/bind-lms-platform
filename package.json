@@ -21,6 +21,7 @@
     "set-r2-cors": "tsx scripts/set-r2-cors.ts",
     "apply-migrations": "tsx scripts/apply-migrations.ts",
     "seed-test": "tsx scripts/seed-test-account.ts",
+    "seed-peer": "tsx scripts/seed-peer.ts",
     "psych:text": "tsx scripts/psychopharm/extract-text.ts",
     "psych:locator": "tsx scripts/psychopharm/locator-index.ts",
     "media-doctor": "tsx scripts/media-doctor.ts",
@@ -32,9 +33,22 @@
     "psych:seed": "tsx scripts/psychopharm/seed-db.ts",
     "psych:seed-p3": "tsx scripts/psychopharm/seed-p3.ts",
     "psych:fda": "tsx scripts/psychopharm/fetch-fda.ts",
+    "psych:fda-full": "tsx scripts/psychopharm/fetch-fda-full.ts",
+    "psych:enrich-fda": "tsx scripts/psychopharm/enrich-fda-fields.ts",
+    "psych:seed-fda": "tsx scripts/psychopharm/seed-fda-fields.ts",
+    "psych:seed-book": "tsx scripts/psychopharm/seed-book-fields.ts",
+    "psych:seed-bands-uncurated": "tsx scripts/psychopharm/seed-uncurated-bands.ts",
     "psych:fda-batch": "tsx scripts/psychopharm/fetch-fda-batch.ts",
     "psych:seed-bands": "tsx scripts/psychopharm/seed-bands-fast.ts",
-    "psych:seed-docs": "tsx scripts/psychopharm/seed-documents.ts"
+    "psych:seed-docs": "tsx scripts/psychopharm/seed-documents.ts",
+    "psych:populate-obs": "tsx scripts/psychopharm/populate-observation-tables.ts",
+    "psych:seed-practice": "tsx scripts/psychopharm/seed-practice-data.ts",
+    "migrate-submissions-r2": "tsx scripts/migrate-submissions-to-r2.ts",
+    "corpus:gutenberg": "tsx scripts/corpus/fetch-gutenberg.ts",
+    "corpus:style-bank": "tsx scripts/corpus/build-style-bank.ts",
+    "corpus:pmc": "tsx scripts/corpus/fetch-pmc.ts",
+    "corpus:normalise": "tsx scripts/corpus/normalise.ts",
+    "corpus:draft-cases": "tsx scripts/corpus/draft-cases.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1101.0",
@@ -63,6 +77,7 @@
     "server-only": "^0.0.1",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.6.0",
+    "ts-fsrs": "^5.4.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {

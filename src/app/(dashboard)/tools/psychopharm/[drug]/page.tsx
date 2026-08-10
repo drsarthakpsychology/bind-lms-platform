@@ -96,6 +96,12 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
               halfLife={detail.half_life}
               halfLifePage={detail.half_life_page}
               sourceTitle={detail.source_title}
+              contraindications={detail.contraindications}
+              interactions={detail.interactions}
+              monitoring={detail.monitoring}
+              overdose={detail.overdose}
+              special_populations={detail.special_populations}
+              patient_counseling={detail.patient_counseling}
             />
           </Suspense>
         </>

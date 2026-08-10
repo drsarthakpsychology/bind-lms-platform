@@ -1,0 +1,20 @@
+name: Infra Check
+
+on:
+  schedule:
+    # 00:12 UTC daily — off the :00 mark, before the Indian morning.
+    - cron: "12 0 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  infra-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hit the infra snapshot endpoint
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          curl -fsS -H "Authorization: Bearer ${CRON_SECRET}" \
+            "${APP_URL}/api/internal/cron?task=infra-snapshot" \
+            || echo "::warning::infra snapshot endpoint failed — check CRON_SECRET / APP_URL"

@@ -31,6 +31,12 @@ export function DrugBandView({
   halfLife,
   halfLifePage,
   sourceTitle,
+  contraindications,
+  interactions,
+  monitoring,
+  overdose,
+  special_populations,
+  patient_counseling,
 }: {
   class?: string;
   plain?: string;
@@ -46,6 +52,12 @@ export function DrugBandView({
   halfLife?: string;
   halfLifePage?: string;
   sourceTitle?: string;
+  contraindications?: string;
+  interactions?: string;
+  monitoring?: string;
+  overdose?: string;
+  special_populations?: string;
+  patient_counseling?: string;
 }) {
   const searchParams = useSearchParams();
   const activeBand = Number(searchParams?.get("band") ?? (bands.length ? 1 : 0));
@@ -103,6 +115,24 @@ export function DrugBandView({
           ) : null}
         </section>
       ) : null}
+
+      {/* FDA full-label sections (verbatim). Shown only when the label has
+          been fetched and parsed; otherwise the honest "not covered" line. */}
+      {[
+        { label: "Contraindications", value: contraindications },
+        { label: "Interactions", value: interactions },
+        { label: "Monitoring", value: monitoring },
+        { label: "Overdose", value: overdose },
+        { label: "Special populations", value: special_populations },
+        { label: "Patient counseling", value: patient_counseling },
+      ].map(({ label, value }) =>
+        value ? (
+          <section key={label} className="space-y-4 pb-4">
+            <h2 className="text-h2">{label}</h2>
+            <p className="text-small">{value}</p>
+          </section>
+        ) : null,
+      )}
 
       {/* Phase 2 observer layer */}
       <ObserverNotes drugClass={drugClass} />

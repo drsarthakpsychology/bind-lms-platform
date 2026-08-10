@@ -3,6 +3,7 @@ import Link from "next/link";
 import { LogOut } from "lucide-react";
 
 import { NavItems } from "@/components/navigation/nav-items";
+import { PaletteTrigger } from "@/components/search/palette-trigger";
 import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -46,6 +47,8 @@ export function AppSidebar({
           </span>
           <span className="text-base">{BRAND.shortName}</span>
         </Link>
+        {/* Ask the Syllabus trigger — the palette also opens via ⌘K. */}
+        <PaletteTrigger />
       </div>
 
       <div className="flex-1 overflow-y-auto px-3 py-4">

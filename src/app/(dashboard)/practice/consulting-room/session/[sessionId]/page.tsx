@@ -1,0 +1,86 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/server";
+import { SimSessionView } from "./session-view";
+import { SimulationBadge } from "../../simulation-badge";
+
+export const dynamic = "force-dynamic";
+
+/**
+ * /practice/consulting-room/session/[sessionId]
+ * The live simulated-patient session. Server page loads the session + turns,
+ * then hands off to the interactive client view.
+ */
+export default async function SimSessionPage({
+  params,
+}: {
+  params: Promise<{ sessionId: string }>;
+}) {
+  const { sessionId } = await params;
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) notFound();
+
+  const admin = createAdminClient();
+  const { data: session } = await admin
+    .from("sim_sessions")
+    .select("id, case_id, difficulty, status, started_at, user_id")
+    .eq("id", sessionId)
+    .maybeSingle();
+
+  if (!session || session.user_id !== user.id) notFound();
+
+  const { data: caseRow } = await admin
+    .from("sim_cases")
+    .select("title, case_data")
+    .eq("id", session.case_id)
+    .maybeSingle();
+  const caseData = (caseRow?.case_data ?? {}) as Record<string, unknown>;
+  const patientName = (caseData.identity as { name?: string })?.name ?? "the patient";
+  const affectRules = (caseData.affect_rules as { tts_rate?: number; tts_pitch?: number }) ?? {};
+  const patientGender = (caseData.identity as { gender?: "male" | "female" | "other" })?.gender;
+  const voicePrefs = {
+    rate: affectRules.tts_rate ?? 1,
+    pitch: affectRules.tts_pitch ?? 1,
+    lang: "en-IN",
+    gender: patientGender === "male" || patientGender === "female" ? patientGender : undefined,
+  };
+
+  const { data: turns } = await admin
+    .from("sim_turns")
+    .select("id, role, content, content_type, created_at")
+    .eq("session_id", sessionId)
+    .order("created_at", { ascending: true });
+
+  return (
+    <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <Link
+            href="/practice/consulting-room"
+            className="text-caption text-muted-foreground hover:underline"
+          >
+            ← Cases
+          </Link>
+          <span className="text-muted-foreground">/</span>
+          <h1 className="text-base font-semibold">{patientName}</h1>
+        </div>
+        <SimulationBadge />
+      </div>
+
+      <SimSessionView
+        sessionId={sessionId}
+        patientName={patientName}
+        difficulty={session.difficulty}
+        voicePrefs={voicePrefs}
+        initialTurns={(turns ?? []).map((t) => ({
+          role: t.role as "student" | "patient",
+          content: String(t.content),
+        }))}
+      />
+    </div>
+  );
+}
