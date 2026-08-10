@@ -5,6 +5,31 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10
 
+### Slice G — Rest (commit 41afdcc)
+- /reflect: owner-only journal (no admin read path), "help me think" → no-train provider only, honest 503 if none.
+- /wall: cohort wall, anonymous toggle, author_id never leaves server for students.
+- Privacy tests (5): journal owner-only, sct admin-only, checkins aggregate-only, wall anonymous hidden, RLS enabled.
+- Nav: Journal + Wall.
+- 92 tests (+5), lint clean, build green.
+
+### Slice F — Depth (commit 16cb463)
+- MSE Trainer: 11 domains, controlled vocab, mood-vs-affect drill, describe-don't-diagnose (flags diagnostic terms).
+- OSCE stations: 3 timed stations (risk, SSRI psychoeducation, breaking bad news), checklist + global rating.
+- Formulation Forge: 5P grid sort with tap-to-select mobile fallback, narrative, diff-against-model.
+- Skills Passport deferred to IDEAS_NEXT (biggest remaining F item; PDF export on certificate).
+- 87 tests (+11), lint clean, build green.
+- SCT Arena: 62+ items, panel scoring (modal=1.0, partial credit), distribution bar chart, "5 Judgment Calls" daily screen. sct_expert_responses admin-only RLS.
+- Rounds: ts-fsrs v5.4.1 wrapper, daily queue capped 25, review UI.
+- Streaks: IST rollover, 2 freezes/month + 1 manual grace, idempotent, no guilt notifications.
+- Two-Minute Clinic: 120s one-liner micro-drill with expert comparison.
+- 76 tests (+23), lint clean, build green.
+
+### Slice D — Corpus engine (commit f2bdab3)
+- scripts/corpus/: Europe PMC fetcher (98 OA case reports, provenance-logged), normaliser, case drafter (40 cases → admin queue, approved:false), Gutenberg fetcher (10 novels).
+- STYLE BANK (220 conversational patterns from fiction) — the "learn how to talk" feature. Isolated: style_pattern='style', never served for clinical queries (enforced + 5 tests).
+- /admin/corpus/dictate + API for Dr. Sarthak's composite cases.
+- 53 tests, lint clean, build green.
+
 ### Slice C — Voice mode (commit 57b524b)
 - src/lib/voice/: Web Speech STT (en-IN, editable interim, Safari permission notice, Firefox fallback) + speechSynthesis TTS (voice-by-demographic, affect-driven rate/pitch).
 - useVoiceSession: push-to-talk, silence meter, iOS gesture requirement.
