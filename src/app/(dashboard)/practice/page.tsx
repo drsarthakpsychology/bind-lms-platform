@@ -4,13 +4,14 @@ import {
   NotebookPen, Users, Radar, CircleCheck, Gauge, Search, MessageSquare,
   type LucideIcon,
 } from "lucide-react";
+import { readFlags, type FeatureKey } from "@/lib/flags";
 
 /**
  * /practice — the deliberate browse view (v5.1 Part B).
  * Grouped by time + mode, not category. Every card shows a state chip, a time
- * badge and a progress line. Eyebrow labels are one-word interaction verbs —
- * one taxonomy, and it teaches that these are genuinely different activities.
- * No two features share an icon.
+ * badge and a progress line. Eyebrow labels are one-word interaction verbs.
+ * No two features share an icon. Cards are gated by feature flags (A2 scope
+ * cut): off-flag tools are hidden from students, shown in admin.
  */
 
 type PracticeTool = {
@@ -22,34 +23,34 @@ type PracticeTool = {
   time: string;
   state: "new" | "in_progress" | "done_today" | "due";
   progress?: string;
-  reason?: string;
+  flag: FeatureKey;
 };
 
 const PRACTICE_TOOLS: PracticeTool[] = [
   // Under 5 minutes
-  { href: "/practice/judgment", title: "5 Judgment Calls", verb: "SLIDE", description: "New information changes the probability.", icon: Gauge, time: "2 min", state: "due", progress: "day 4" },
-  { href: "/practice/two-minute-clinic", title: "Two-Minute Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: CircleCheck, time: "2 min", state: "new" },
-  { href: "/practice/rounds", title: "Rounds", verb: "RATE", description: "Spaced-repetition cards, capped at 25/day.", icon: Layers, time: "3 min", state: "done_today" },
-  { href: "/practice/decode", title: "Presenting Complaint Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: Search, time: "4 min", state: "new", reason: "The flagship drill." },
+  { href: "/practice/judgment", title: "5 Judgment Calls", verb: "SLIDE", description: "New information changes the probability.", icon: Gauge, time: "2 min", state: "due", flag: "judgment", progress: "day 4" },
+  { href: "/practice/two-minute-clinic", title: "Two-Minute Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: CircleCheck, time: "2 min", state: "new", flag: "two_minute_clinic" },
+  { href: "/practice/rounds", title: "Rounds", verb: "RATE", description: "Spaced-repetition cards, capped at 25/day.", icon: Layers, time: "3 min", state: "done_today", flag: "rounds" },
+  { href: "/practice/decode", title: "Presenting Complaint Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: Search, time: "4 min", state: "new", flag: "decoder" },
 
   // A proper session
-  { href: "/practice/consulting-room", title: "Consulting Room", verb: "TALK", description: "Interview a simulated patient; the debrief shows what you missed.", icon: Stethoscope, time: "12 min", state: "in_progress", progress: "case 3 / 60" },
-  { href: "/practice/mse", title: "MSE Trainer", verb: "TAG", description: "Describe before you label. 11 domains.", icon: Brain, time: "10 min", state: "new" },
-  { href: "/practice/osce", title: "OSCE Stations", verb: "PERFORM", description: "Seven minutes, one task, voice-first.", icon: Timer, time: "7 min", state: "new" },
-  { href: "/practice/formulation", title: "Formulation Forge", verb: "SORT", description: "5P factors, narrative, diff against the model.", icon: Layers, time: "8 min", state: "new" },
+  { href: "/practice/consulting-room", title: "Consulting Room", verb: "TALK", description: "Interview a simulated patient; the debrief shows what you missed.", icon: Stethoscope, time: "12 min", state: "in_progress", flag: "consulting_room", progress: "case 3 / 60" },
+  { href: "/practice/mse", title: "MSE Trainer", verb: "TAG", description: "Describe before you label. 11 domains.", icon: Brain, time: "10 min", state: "new", flag: "mse" },
+  { href: "/practice/osce", title: "OSCE Stations", verb: "PERFORM", description: "Seven minutes, one task, voice-first.", icon: Timer, time: "7 min", state: "new", flag: "osce" },
+  { href: "/practice/formulation", title: "Formulation Forge", verb: "SORT", description: "5P factors, narrative, diff against the model.", icon: Layers, time: "8 min", state: "new", flag: "formulation" },
 
   // With someone else
-  { href: "/practice/role-play", title: "Peer Role-Play", verb: "PAIR", description: "One of you the patient, one the clinician.", icon: Users, time: "15 min", state: "new" },
-  { href: "/practice/ethics", title: "Ethics & Law", verb: "CHOOSE", description: "Consequence first, then the statute.", icon: FlaskConical, time: "5 min", state: "new" },
+  { href: "/practice/role-play", title: "Peer Role-Play", verb: "PAIR", description: "One of you the patient, one the clinician.", icon: Users, time: "15 min", state: "new", flag: "peer_roleplay" },
+  { href: "/practice/ethics", title: "Ethics & Law", verb: "CHOOSE", description: "Consequence first, then the statute.", icon: FlaskConical, time: "5 min", state: "new", flag: "ethics" },
 
   // Read and reflect
-  { href: "/practice/library", title: "Case Library", verb: "ANNOTATE", description: "Highlight + note; peers' notes unlock after yours.", icon: BookOpen, time: "varies", state: "new", progress: "129 reports" },
-  { href: "/practice/check-in", title: "Weekly Check-in", verb: "ONE TAP", description: "30 seconds, aggregate-only for faculty.", icon: CircleCheck, time: "<1 min", state: "done_today" },
-  { href: "/practice/wall", title: "Cohort Wall", verb: "ASK", description: "Threaded, anonymous-post toggle.", icon: MessageSquare, time: "3 min", state: "new" },
+  { href: "/practice/library", title: "Case Library", verb: "ANNOTATE", description: "Highlight + note; peers' notes unlock after yours.", icon: BookOpen, time: "varies", state: "new", flag: "case_library", progress: "129 reports" },
+  { href: "/practice/check-in", title: "Weekly Check-in", verb: "ONE TAP", description: "30 seconds, aggregate-only for faculty.", icon: CircleCheck, time: "<1 min", state: "done_today", flag: "checkin" },
+  { href: "/practice/wall", title: "Cohort Wall", verb: "ASK", description: "Threaded, anonymous-post toggle.", icon: MessageSquare, time: "3 min", state: "new", flag: "journal" },
 
   // Your record
-  { href: "/practice/passport", title: "Skills Passport", verb: "WATCH", description: "Your competencies, evidenced.", icon: Radar, time: "read", state: "new", progress: "2 / 11 competencies" },
-  { href: "/practice/supervision", title: "Supervision Log", verb: "RECORD", description: "Log contact hours, tag competencies.", icon: NotebookPen, time: "1 min", state: "new" },
+  { href: "/practice/passport", title: "Skills Passport", verb: "WATCH", description: "Your competencies, evidenced.", icon: Radar, time: "read", state: "new", flag: "skills_passport", progress: "2 / 11 competencies" },
+  { href: "/practice/supervision", title: "Supervision Log", verb: "RECORD", description: "Log contact hours, tag competencies.", icon: NotebookPen, time: "1 min", state: "new", flag: "supervision" },
 ];
 
 // Weak Spots is a dismissible banner above the grid, not a card.
@@ -62,7 +63,10 @@ const STATE_STYLE: Record<PracticeTool["state"], { label: string; className: str
   due: { label: "Due", className: "bg-amber-100 text-amber-800" },
 };
 
-export default function PracticeHubPage() {
+export default async function PracticeHubPage() {
+  const flags = await readFlags();
+  const visible = PRACTICE_TOOLS.filter((t) => flags[t.flag] === true);
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <header className="mb-6">
@@ -86,7 +90,7 @@ export default function PracticeHubPage() {
       </Link>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {PRACTICE_TOOLS.map((tool) => {
+        {visible.map((tool) => {
           const Icon = tool.icon;
           const state = STATE_STYLE[tool.state];
           const dimmed = tool.state === "done_today";
