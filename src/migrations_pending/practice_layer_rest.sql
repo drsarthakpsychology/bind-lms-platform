@@ -169,7 +169,7 @@ create table if not exists public.corpus_chunks (
   organization_id uuid,
   document_id uuid not null references public.corpus_documents (id) on delete cascade,
   chunk_text text not null,
-  embedding vector(768),
+  embedding halfvec(384),
   style_pattern text not null default 'clinical'
     check (style_pattern in ('clinical','style')),
   created_at timestamptz not null default now()
@@ -243,7 +243,7 @@ create table if not exists public.transcript_chunks (
   transcript_id uuid not null references public.lesson_transcripts (id) on delete cascade,
   chunk_text text not null,
   start_seconds numeric,
-  embedding vector(768),
+  embedding halfvec(384),
   created_at timestamptz not null default now()
 );
 
@@ -369,6 +369,6 @@ create index if not exists idx_competency_events_user on public.competency_event
 
 -- HNSW indexes on embeddings (vector 768).
 create index if not exists idx_corpus_chunks_embedding on public.corpus_chunks
-  using hnsw (embedding vector_cosine_ops);
+  using hnsw (embedding halfvec_cosine_ops);
 create index if not exists idx_transcript_chunks_embedding on public.transcript_chunks
-  using hnsw (embedding vector_cosine_ops);
+  using hnsw (embedding halfvec_cosine_ops);
