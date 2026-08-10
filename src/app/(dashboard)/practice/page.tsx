@@ -104,6 +104,13 @@ const PRACTICE_TOOLS: PracticeTool[] = [
     icon: ListChecks,
     eyebrow: "Competencies",
   },
+  {
+    href: "/practice/two-minute-clinic",
+    title: "Two-Minute Clinic",
+    description: "120 seconds, one-liner micro-drill, instant expert comparison.",
+    icon: Timer,
+    eyebrow: "Daily · 2 minutes",
+  },
 ];
 
 export default function PracticeHubPage() {

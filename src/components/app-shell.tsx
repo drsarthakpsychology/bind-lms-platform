@@ -6,6 +6,7 @@ import { MobileNav } from "@/components/navigation/mobile-nav";
 import { MobileBarVisibility } from "@/components/navigation/mobile-bar-visibility";
 import { SidebarGate } from "@/components/navigation/sidebar-gate";
 import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
+import { PaletteHost } from "@/components/search/palette-host";
 import { BRAND } from "@/lib/brand";
 
 /**
@@ -35,6 +36,9 @@ export function AppShell({
 
   return (
     <div className="min-h-screen bg-background lg:flex">
+      {/* Ask the Syllabus — ⌘K command palette, available across the shell. */}
+      <PaletteHost />
+
       {/* Desktop sidebar. On inner student pages (lesson/material) the ENTIRE
           column is removed — the page owns the only navigation surface, which
           is the point of the drill-down. Previously a slim top-bar fallback was

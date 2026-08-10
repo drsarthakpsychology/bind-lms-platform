@@ -5,6 +5,12 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10 (v3 build)
 
+### Slice A9 — Ask the Syllabus (⌘K) + hub completeness (v3)
+- **Ask the Syllabus** — global ⌘K command palette in the AppShell. Opens via ⌘K/Ctrl+K or the sidebar trigger. Lexical search over the REAL content in this install: 13 practice tools (by label/alias/hint), courses, competencies, admin surfaces, and the 40 most-recent case-library docs (server-read). Keyboard nav (↑/↓/Enter/Esc), honest empty state. No embeddings needed, works fully offline.
+- **Hub completeness** — added Two-Minute Clinic to the practice hub (it was built but only reachable via the dashboard).
+- Fixed a real bug surfaced by the audit: an inline onClick in the server-rendered AppSidebar threw "Event handlers cannot be passed to Client Component props" — extracted a client PaletteTrigger island.
+- 119 unit tests (+7 palette), 23 e2e specs pass, lint clean, build green.
+
 ### Slice A8 — Live app audit + e2e harness (v3)
 - Ran the app (dev server) and browser-tested EVERY page: new (ethics, check-in, supervision, library, passport, admin/checkins) + old (dashboard, psychopharm tools/drug/compare/learn, courses, reflect, wall) + all practice tools (judgment, MSE, OSCE, rounds, two-minute clinic, formulation, consulting room).
 - Consulting Room verified end-to-end with fixtures: start session → patient replies → multi-turn → debrief scored (overall 2.5, quotes, missed disclosures) → row lands in sim_scores for /admin/sim-review.
