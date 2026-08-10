@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { CheckCircle2, AlertTriangle, RefreshCw, Mic2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { CheckCircle2, AlertTriangle, RefreshCw, Mic2, RotateCcw } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import type { VoiceMetrics } from "@/lib/voice/use-voice-metrics";
 
@@ -25,25 +26,62 @@ interface DebriefData {
  * The debrief — the actual product of the Consulting Room.
  * Shows the score, then quotes with better alternatives, then the
  * missed-disclosures reveal ("the patient would have told you…").
+ *
+ * A1 Retry: every flagged moment gets a "Try this again" — rewinds to that
+ * turn (same case, same seed, same state) so the student can watch the
+ * patient respond differently.
  */
 export function DebriefView({
   data,
   difficulty,
   onExit,
   voice,
+  sessionId,
+  totalTurns,
 }: {
   data: DebriefData;
   difficulty: string;
   onExit: () => void;
   voice?: VoiceMetrics;
+  sessionId?: string;
+  totalTurns?: number;
 }) {
+  const router = useRouter();
   const [revealMissed, setRevealMissed] = React.useState(false);
+  const [retrying, setRetrying] = React.useState(false);
+  const [retryError, setRetryError] = React.useState<string | null>(null);
   const score = data.score ?? {};
   const quotes = data.quotes ?? score.quotes ?? [];
   const missed = data.missed_disclosures ?? score.missed_disclosures ?? [];
   const overall = score.score ?? 0;
 
   const premature = score.premature_reassurance ?? 0;
+
+  async function retryAt(turnNumber: number) {
+    if (!sessionId || retrying) return;
+    setRetrying(true);
+    setRetryError(null);
+    haptic("tap");
+    try {
+      const res = await fetch("/api/practice/sim/rewind", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId, turnNumber }),
+      });
+      if (!res.ok) {
+        const j = (await res.json().catch(() => null)) as { error?: string } | null;
+        setRetryError(j?.error ?? "Could not rewind.");
+        return;
+      }
+      const j = (await res.json()) as { sessionId: string };
+      haptic("success");
+      router.push(`/practice/consulting-room/session/${j.sessionId}`);
+    } catch {
+      setRetryError("Network error.");
+    } finally {
+      setRetrying(false);
+    }
+  }
 
   return (
     <div className="space-y-6">
@@ -129,9 +167,21 @@ export function DebriefView({
                 <span className="font-semibold text-primary">Better: </span>
                 {q.better}
               </p>
+              {sessionId && totalTurns ? (
+                <button
+                  type="button"
+                  onClick={() => void retryAt(Math.max(1, totalTurns - quotes.length + i + 1))}
+                  disabled={retrying}
+                  className="mt-2 inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:opacity-50"
+                >
+                  <RotateCcw className="size-3" aria-hidden />
+                  {retrying ? "Rewinding…" : "Try this again"}
+                </button>
+              ) : null}
             </li>
           ))}
         </ul>
+        {retryError ? <p className="mt-2 text-small text-red-600" role="alert">{retryError}</p> : null}
       </div>
 
       {/* Missed disclosures reveal */}

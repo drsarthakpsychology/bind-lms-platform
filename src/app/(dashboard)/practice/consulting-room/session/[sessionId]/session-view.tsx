@@ -205,6 +205,8 @@ export function SimSessionView({
         difficulty={difficulty}
         voice={voiceReport ?? undefined}
         onExit={() => router.push("/practice/consulting-room")}
+        sessionId={sessionId}
+        totalTurns={turns.length}
       />
     );
   }
