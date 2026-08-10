@@ -1,14 +1,18 @@
 # IDEAS NEXT — things thought of but not built
 
+## Built (2026-08-10 sweep)
+- **Ethics & Law dilemmas** — /practice/ethics: 6 consequence-first dilemmas (MHA 2017, POCSO, RCI scope)
+- **Case Library** — /practice/library: browse + search the 129 normalised PMC docs
+- **Supervision log** — /practice/supervision: log contact hours, tag competencies → competency_events
+- **Check-in** (non-clinical weekly) — /practice/check-in: 30-sec, aggregate-only for admin
+- **Skills Passport** (progress view) — /practice/passport: competency tracker fed by competency_events
+
 ## Deferred this session (have migrations, no UI)
-- **Ask the Syllabus** — ⌘K grounded Q&A; transcript_chunks + pgvector migration exists, no retrieval/UI
-- **Ethics & Law dilemmas** — table exists, no content seeded
-- **Peer role-play rooms** — pair_sessions table exists, no UI
-- **Case Library** — corpus docs browsable; drafted-cases exist, no `/library` page
-- **Supervision log** — table exists, no UI
-- **Skills Passport** — competency_events table exists; PDF evidence appendix on certificate (pdf-lib already a dependency) is the big one
-- **Check-in** (non-clinical weekly) — checkins table + aggregate view exist, no UI
+- **Ask the Syllabus** — ⌘K grounded Q&A; transcript_chunks + pgvector migration exists, no retrieval/UI (needs an embedding provider; embed.ts is fixture-stubbed)
+- **Peer role-play rooms** — pair_sessions table exists, no UI (needs a messages table + matching flow)
+- **Skills Passport PDF** — certificate evidence appendix (pdf-lib + generateCertificatePdf exist; needs the admin sign-off flow driving it)
 - **Corpus fetchers for ICD-11 / mhGAP / NMHS / MHA 2017** — scaffolds written, not run (PMC + Gutenberg done)
+- **Check-in aggregate admin view** — checkins_aggregate view exists, no admin UI reading it yet
 
 ## New ideas
 - Deepgram streaming STT with built-in turn-taking + medical vocabulary for voice

@@ -4,9 +4,9 @@ import { JournalView } from "./journal-view";
 export const dynamic = "force-dynamic";
 
 /**
- * /reflect — Reflective Journal + Check-in (Part 6.10).
+ * /reflect — Reflective Journal (Part 6.10).
  * OWNER-ONLY RLS. No admin read path. Per-entry sharing, revocable.
- * Check-in is non-clinical: 30 seconds, aggregate-only for admin.
+ * The weekly Check-in now lives at /practice/check-in.
  */
 export default async function ReflectPage() {
   const supabase = await createClient();

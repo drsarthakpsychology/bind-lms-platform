@@ -19,12 +19,15 @@ All 7 slices built, tested, and committed on `feat/practice-layer`. Everything i
 - Enable the Firecrawl/Playwright MCP entry in `.mcp.json` for future corpus runs
 
 ## Half-built
-- **Skills Passport** (PDF evidence appendix on certificate) — in IDEAS_NEXT, not built
-- **Ask the Syllabus** (⌘K grounded Q&A) — chunk/embed pipeline exists in migrations, no UI yet
-- **Ethics & Law dilemmas** — table exists, content not seeded
-- **Peer role-play rooms, Case Library, Supervision log** — migrations only
+- **Skills Passport** — progress view built (/practice/passport); PDF certificate appendix still deferred
+- **Ask the Syllabus** (⌘K grounded Q&A) — chunk/embed pipeline exists in migrations, no retrieval/UI yet (needs an embedding provider)
+- **Ethics & Law dilemmas** — built (/practice/ethics), 6 consequence-first dilemmas
+- **Peer role-play rooms** — migrations only
+- **Check-in** (weekly) — built (/practice/check-in)
+- **Case Library** — built (/practice/library)
+- **Supervision log** — built (/practice/supervision)
 - Voice: browser STT/TTS works; Deepgram/ElevenLabs upgrades are stubbed interfaces
-- Corpus: 98 PMC case reports fetched + 220-pattern style bank; ICD-11/mhGAP/NMHS/MHA fetchers are scaffolds (written, not run)
+- Corpus: 139 PMC case reports fetched (psych-focused queries added) + 129 normalised + 220-pattern style bank; ICD-11/mhGAP/NMHS/MHA fetchers are scaffolds (written, not run)
 
 ## Corpus
 - **PMC / Europe PMC:** 98 open-access psychiatric case reports fetched + normalised (provenance-logged)
@@ -46,8 +49,7 @@ Projected at 30 students with keys: low tens of $/month (free tiers for content-
 - Skills Passport PDF export on the certificate (already a dependency: pdf-lib)
 
 ## Numbers
-- Commits: **7** (A→G slices)
-- Files changed: **91**, lines: **19,096**
-- Tests: **38 → 92** (+54 across data-policy, safety, style-bank, SCT, rounds, streaks, MSE, formulation, privacy)
+- Commits: **11** (A→G slices + sim-review closure + deferred sweep + passport)
+- Tests: **38 → 112** (+74)
 - Build time: ~9s, lint clean, typecheck clean
 - Branch: `feat/practice-layer` — buildable, all green
