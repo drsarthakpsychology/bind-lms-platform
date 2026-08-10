@@ -36,9 +36,33 @@ export function SupervisionLog({
   const [competency, setCompetency] = React.useState("");
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const [requestingId, setRequestingId] = React.useState<string | null>(null);
 
   const totalHours = entries.reduce((a, e) => a + (e.signoffStatus === "rejected" ? 0 : e.hours), 0);
   const signedHours = entries.filter((e) => e.signoffStatus === "signed").reduce((a, e) => a + e.hours, 0);
+
+  async function requestSignoff(id: string) {
+    setRequestingId(id);
+    setError(null);
+    try {
+      const res = await fetch("/api/practice/supervision/signoff", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ entryId: id }),
+      });
+      if (!res.ok) {
+        const j = (await res.json().catch(() => null)) as { error?: string } | null;
+        setError(j?.error ?? "Could not request sign-off.");
+        return;
+      }
+      haptic("success");
+      window.location.reload();
+    } catch {
+      setError("Network error.");
+    } finally {
+      setRequestingId(null);
+    }
+  }
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -183,7 +207,19 @@ export function SupervisionLog({
                     {e.competencyName ? ` · ${e.competencyName}` : ""}
                   </p>
                 </div>
-                <span className={`shrink-0 rounded-full px-2 py-0.5 text-caption font-medium ${so.className}`}>{so.label}</span>
+                <div className="flex shrink-0 items-center gap-2">
+                  <span className={`rounded-full px-2 py-0.5 text-caption font-medium ${so.className}`}>{so.label}</span>
+                  {e.signoffStatus === "pending" ? (
+                    <button
+                      type="button"
+                      disabled={requestingId === e.id}
+                      onClick={() => void requestSignoff(e.id)}
+                      className="rounded-md border border-border px-2 py-1 text-caption font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:opacity-50"
+                    >
+                      {requestingId === e.id ? "Requesting…" : "Request sign-off"}
+                    </button>
+                  ) : null}
+                </div>
               </li>
             );
           })}

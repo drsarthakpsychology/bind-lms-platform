@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { Download } from "lucide-react";
 import { Passport, type PassportRow } from "./passport";
 
 export const dynamic = "force-dynamic";
@@ -52,6 +53,16 @@ export default async function PassportPage() {
         Eleven competencies across the RCI-track framework. Every tagged supervision hour and
         practice tool adds evidence. Signed-off hours here underpin your certificate.
       </p>
+
+      <div className="mt-4">
+        <a
+          href="/api/practice/passport/pdf"
+          className="inline-flex items-center gap-2 rounded-md border-2 border-border bg-card px-4 py-2 text-small font-semibold hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+        >
+          <Download className="size-4" aria-hidden />
+          Download passport PDF
+        </a>
+      </div>
 
       <div className="mt-6">
         <Passport rows={rows} />

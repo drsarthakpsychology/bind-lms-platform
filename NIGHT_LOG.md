@@ -5,6 +5,13 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10 (v3 build)
 
+### Slice A11 — Skills Passport PDF + sign-off flow (v3)
+- /practice/passport now has a "Download passport PDF" — a real A4 PDF (pdf-lib) of the competency record: evidenced status + logged hours per competency.
+- Supervision sign-off flow: student requests sign-off (pending → requested) on the supervision log; admin reviews at /admin/supervision and signs or rejects (requested → signed/rejected). New admin nav entry.
+- Fixed a real RLS gap: supervision_entries had INSERT + SELECT policies but no UPDATE — the sign-off request was silently blocked (route returned 200, 0 rows updated). Added owner + admin UPDATE policies.
+- Migration in supabase DB (add_supervision_update_policy).
+- 119 unit tests, 25 e2e specs pass, lint clean, build green.
+
 ### Slice A10 — Peer role-play rooms (v3)
 - /practice/role-play: pair up with a classmate by email; one plays patient, one clinician. Message thread persists in pair_messages (new table, RLS participant-only). Polling every 2s; no AI.
 - Fixed a real RLS bug: the session route couldn't look up a peer because profiles RLS is owner-or-admin only — peer discovery now uses the admin client (service role) while the pair_sessions insert stays on the user's RLS-enforcing client.

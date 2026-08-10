@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Users, BookOpen, Inbox, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, type LucideIcon } from "lucide-react";
+import { LayoutDashboard, Users, BookOpen, Inbox, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -25,6 +25,7 @@ export const NAV_ICONS: Record<string, LucideIcon> = {
   wall: MessageSquare,
   gauge: Gauge,
   heartPulse: HeartPulse,
+  clipboardCheck: ClipboardCheck,
 };
 
 export type NavItem = {

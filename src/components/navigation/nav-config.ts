@@ -24,5 +24,6 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/corpus/dictate", label: "Dictate case", icon: "mic" },
   { href: "/admin/sim-review", label: "Sim sessions", icon: "stethoscope" },
   { href: "/admin/checkins", label: "Check-ins", icon: "heartPulse" },
+  { href: "/admin/supervision", label: "Sign-offs", icon: "clipboardCheck" },
   { href: "/admin/infra", label: "Infrastructure", icon: "gauge" },
 ];
