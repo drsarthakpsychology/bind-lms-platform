@@ -9,6 +9,7 @@ import type { NavItem } from "@/components/navigation/nav-items";
 export const STUDENT_ITEMS: NavItem[] = [
   { href: "/dashboard", label: "My Courses", icon: "layoutDashboard", exact: true },
   { href: "/tools/psychopharm", label: "Tools", icon: "pill", exact: true },
+  { href: "/practice", label: "Practice", icon: "stethoscope", exact: true },
 ];
 
 export const ADMIN_ITEMS: NavItem[] = [
