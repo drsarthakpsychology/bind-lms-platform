@@ -76,6 +76,27 @@ const PRACTICE_TOOLS: PracticeTool[] = [
     icon: FlaskConical,
     eyebrow: "Dilemmas",
   },
+  {
+    href: "/practice/supervision",
+    title: "Supervision log",
+    description: "Log RCI-track contact hours, tag competencies, build your passport.",
+    icon: ListChecks,
+    eyebrow: "Contact hours",
+  },
+  {
+    href: "/practice/check-in",
+    title: "Weekly check-in",
+    description: "Thirty seconds, aggregate-only for faculty. How's the week, really?",
+    icon: Timer,
+    eyebrow: "Non-clinical",
+  },
+  {
+    href: "/practice/library",
+    title: "Case Library",
+    description: "Browse open-access case reports from the corpus. Search, expand, read.",
+    icon: BookOpen,
+    eyebrow: "Corpus",
+  },
 ];
 
 export default function PracticeHubPage() {

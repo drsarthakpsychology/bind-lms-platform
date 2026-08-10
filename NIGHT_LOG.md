@@ -5,6 +5,13 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10 (v3 build)
 
+### Slice A5 — Deferred-build sweep (v3)
+- **Ethics & Law dilemmas** (/practice/ethics): 6 grounded dilemmas (MHA 2017 advance directives + nominated representative, POCSO mandatory reporting, RCI scope, confidentiality, mature-minor consent). Consequence-first: commit to an action, then reveal the law. Fixed a dead hub link (card existed, no route). Deterministic daily set; no answer-position bias.
+- **Weekly Check-in** (/practice/check-in): 30-sec non-clinical workload/energy/preparedness + free line; owner-write RLS, admin reads aggregate view only. One per week.
+- **Supervision log** (/practice/supervision): log RCI-track contact hours (activity/hours/date/supervisor), tag a competency → also records a competency_event (source 'supervision') feeding the Skills Passport. Sign-off status tracker.
+- **Case Library** (/practice/library): read-only browse of the 129 normalised PMC docs; title/content search, expand abstract, link out to PMC. No AI, no schema changes.
+- 112 tests (+9: 5 ethics, 4 library), lint clean, build green.
+
 ### Slice A4 — Sim review closure (v3)
 - /admin/sim-review comments now persist: POST /api/admin/sim-corrections (requireAdmin) → scoring_corrections (admin-only RLS)
 - Faculty can correct the overall score (0–5); score-changing rows inject as few-shot "lessons" into future debriefs (the Part 3.4 feedback loop)
