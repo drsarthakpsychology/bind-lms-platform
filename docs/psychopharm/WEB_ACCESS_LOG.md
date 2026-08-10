@@ -458,3 +458,14 @@ date, retrieval date, tier, and snippet.| 2026-08-03 | dailymed.nlm.nih.gov seti
 | 2026-08-10 | europepmc.org PMC/PMC11664322 | Europe PMC OA | fetch case report "Annual Sickle Cell & Thalassaemia Conference (ASCAT) ‐ Octob" | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/pmc/PMC11664322.xml |
 | 2026-08-10 | europepmc.org PMC/PMC11258891 | Europe PMC OA | fetch case report "Abstracts from the 6th International Scientific Conference o" | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/pmc/PMC11258891.xml |
 | 2026-08-10 | europepmc.org PMC/PMC8022310 | Europe PMC OA | fetch case report "From missed opportunities to future possibilities: Towards a" | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/pmc/PMC8022310.xml |
+| 2026-08-10 | gutenberg.org pg57333 | Project Gutenberg | fetch style-layer source Short Stories by Chekhov (Anton Chekhov) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/57333.txt |
+| 2026-08-10 | gutenberg.org pg2542 | Project Gutenberg | fetch style-layer source A Doll's House (Henrik Ibsen) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/2542.txt |
+| 2026-08-10 | gutenberg.org pg768 | Project Gutenberg | fetch style-layer source Wuthering Heights (Emily Brontë) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/768.txt |
+| 2026-08-10 | gutenberg.org pg600 | Project Gutenberg | fetch style-layer source Notes from the Underground (Fyodor Dostoevsky) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/600.txt |
+| 2026-08-10 | gutenberg.org pg1952 | Project Gutenberg | fetch style-layer source The Yellow Wallpaper (Charlotte Perkins Gilman) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/1952.txt |
+| 2026-08-10 | gutenberg.org pg5365 | Project Gutenberg | fetch style-layer source Mrs Dalloway (Virginia Woolf) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/5365.txt |
+| 2026-08-10 | gutenberg.org pg5417 | Project Gutenberg | fetch style-layer source Ethan Frome (Edith Wharton) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/5417.txt |
+| 2026-08-10 | gutenberg.org pg160 | Project Gutenberg | fetch style-layer source The Awakening (Kate Chopin) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/160.txt |
+| 2026-08-10 | gutenberg.org pg15492 | Project Gutenberg | fetch style-layer source Hedda Gabler (Henrik Ibsen) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/15492.txt |
+| 2026-08-10 | gutenberg.org pg2554 | Project Gutenberg | fetch style-layer source The Turn of the Screw (Henry James) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/2554.txt |
+| 2026-08-10 | gutenberg.org pg219 | Project Gutenberg | fetch style-layer source Heart of Darkness (Joseph Conrad) | /Users/kavyabothra/Downloads/plms (1)/scripts/corpus/raw/gutenberg/219.txt |
