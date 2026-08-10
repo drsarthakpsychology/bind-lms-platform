@@ -61,11 +61,20 @@ export function SimSessionView({
   const [debrief, setDebrief] = React.useState<DebriefData | null>(null);
   const [ending, setEnding] = React.useState(false);
   const [voiceMode, setVoiceMode] = React.useState(false);
+  // Side rail — blank MSE scratchpad + hypotheses (never autofilled: what the
+  // student wrote is half the assessment).
+  const [mseNotes, setMseNotes] = React.useState("");
+  const [hypotheses, setHypotheses] = React.useState("");
+  const [sideRailOpen, setSideRailOpen] = React.useState(false);
+  const [typing, setTyping] = React.useState(false);
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
   const voiceMetrics = useVoiceMetrics();
 
-  // Timer.
+  const SESSION_LIMIT_S = 12 * 60; // 12-minute timer (v3 Part 6.1)
+  const typingTimer = React.useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Timer; auto-finish at 12 minutes.
   React.useEffect(() => {
     const id = setInterval(() => setSeconds((s) => s + 1), 1000);
     return () => clearInterval(id);
@@ -76,8 +85,22 @@ export function SimSessionView({
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [turns.length, debrief]);
 
+  // Clear the typing interval on unmount.
+  React.useEffect(() => () => { if (typingTimer.current) clearInterval(typingTimer.current); }, []);
+
+  // Auto-finish at the 12-minute mark.
+  const didAutoFinish = React.useRef(false);
+  React.useEffect(() => {
+    if (seconds >= SESSION_LIMIT_S && !didAutoFinish.current && !debrief) {
+      didAutoFinish.current = true;
+      void finishAndDebrief();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [seconds]);
+
   const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
   const ss = String(seconds % 60).padStart(2, "0");
+  const overTime = seconds >= SESSION_LIMIT_S;
 
   async function send(textParam?: string) {
     const text = (textParam ?? input).trim();
@@ -106,7 +129,32 @@ export function SimSessionView({
         return;
       }
       const j = (await res.json()) as { reply: string };
-      setTurns((t) => [...t, { role: "patient", content: j.reply }]);
+      // Human-realistic typing delay: reveal the reply progressively so it
+      // doesn't appear instantly and shatter the illusion (v3 Part 6.1).
+      setTyping(true);
+      const full = j.reply;
+      const charsPerTick = 4;
+      const ticks = Math.max(6, Math.ceil(full.length / charsPerTick));
+      let shown = 0;
+      typingTimer.current = setInterval(() => {
+        shown += charsPerTick;
+        const slice = full.slice(0, shown);
+        // Keep the patient turn at index len-1 but reveal progressively by
+        // replacing the last turn.
+        setTurns((t) => {
+          const next = t.slice();
+          if (next[next.length - 1]?.role === "patient") {
+            next[next.length - 1] = { role: "patient", content: slice };
+          } else {
+            next.push({ role: "patient", content: slice });
+          }
+          return next;
+        });
+        if (shown >= full.length) {
+          if (typingTimer.current) clearInterval(typingTimer.current);
+          setTyping(false);
+        }
+      }, Math.max(40, Math.min(90, Math.round(1200 / ticks))));
       haptic("tap");
     } catch {
       setError("Network error. Your message may not have reached the patient.");
@@ -168,18 +216,41 @@ export function SimSessionView({
         <span className="text-small font-medium text-muted-foreground">
           {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} patient
         </span>
-        <span className="text-numeric text-small" aria-live="polite">
-          {mm}:{ss}
-        </span>
+        <div className="flex items-center gap-3">
+          {/* timer */}
+          <span
+            className={`text-numeric text-small ${overTime ? "font-bold text-red-600" : seconds >= SESSION_LIMIT_S - 60 ? "text-amber-600" : ""}`}
+            aria-live="polite"
+          >
+            {mm}:{ss}
+          </span>
+          {/* side-rail toggle */}
+          <button
+            type="button"
+            onClick={() => { setSideRailOpen((o) => !o); haptic("tap"); }}
+            aria-pressed={sideRailOpen}
+            className="rounded-md border-2 border-border px-2 py-1 text-caption font-medium text-muted-foreground transition-transform active:translate-y-px"
+          >
+            {sideRailOpen ? "Hide notes" : "Notes"}
+          </button>
+        </div>
       </div>
 
       {/* hint */}
       <div className="border-b border-border bg-secondary/50 px-4 py-2 text-caption text-muted-foreground">
-        {DIFFICULTY_HINT[difficulty] ?? "Interview the patient."}
+        {overTime ? (
+          <span className="font-semibold text-red-600">Time&apos;s up — finishing your debrief.</span>
+        ) : seconds >= SESSION_LIMIT_S - 60 ? (
+          <span className="text-amber-600">One minute left.</span>
+        ) : (
+          DIFFICULTY_HINT[difficulty] ?? "Interview the patient."
+        )}
       </div>
 
-      {/* transcript */}
-      <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
+      <div className="flex min-h-0 flex-1">
+        {/* transcript column */}
+        <div className="flex min-w-0 flex-1 flex-col">
+          <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
         {turns.length === 0 ? (
           <div className="py-8 text-center">
             <p className="text-base font-medium">
@@ -212,6 +283,46 @@ export function SimSessionView({
               {patientName} is thinking…
             </div>
           </div>
+        ) : null}
+        {typing ? (
+          <div className="flex justify-start">
+            <div className="rounded-md border-2 border-border bg-secondary px-3 py-2 text-small italic text-muted-foreground">
+              {patientName} is answering…
+            </div>
+          </div>
+        ) : null}
+          </div>
+        </div>
+
+        {/* side rail — blank MSE scratchpad + hypotheses (never autofilled) */}
+        {sideRailOpen ? (
+          <aside className="w-72 shrink-0 space-y-3 overflow-y-auto border-l-2 border-border bg-background/60 p-3">
+            <div>
+              <p className="text-eyebrow text-muted-foreground">MSE scratchpad</p>
+              <textarea
+                value={mseNotes}
+                onChange={(e) => setMseNotes(e.target.value)}
+                rows={7}
+                placeholder="Appearance, speech, mood, affect, thought…"
+                aria-label="MSE scratchpad"
+                className="mt-1 w-full resize-none rounded-md border-2 border-border bg-card px-2 py-2 text-caption focus:outline-none focus:ring-2 focus:ring-ring"
+              />
+            </div>
+            <div>
+              <p className="text-eyebrow text-muted-foreground">Hypotheses</p>
+              <textarea
+                value={hypotheses}
+                onChange={(e) => setHypotheses(e.target.value)}
+                rows={5}
+                placeholder="What do you think is going on?"
+                aria-label="Hypotheses"
+                className="mt-1 w-full resize-none rounded-md border-2 border-border bg-card px-2 py-2 text-caption focus:outline-none focus:ring-2 focus:ring-ring"
+              />
+            </div>
+            <p className="text-caption text-muted-foreground">
+              This is your working record — the debrief doesn&apos;t read it. What you wrote is half the assessment.
+            </p>
+          </aside>
         ) : null}
       </div>
 
