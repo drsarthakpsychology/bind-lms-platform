@@ -10,6 +10,8 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/dashboard", label: "My Courses", icon: "layoutDashboard", exact: true },
   { href: "/tools/psychopharm", label: "Tools", icon: "pill", exact: true },
   { href: "/practice", label: "Practice", icon: "stethoscope", exact: true },
+  { href: "/reflect", label: "Journal", icon: "notebook", exact: true },
+  { href: "/wall", label: "Wall", icon: "wall", exact: true },
 ];
 
 export const ADMIN_ITEMS: NavItem[] = [
