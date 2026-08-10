@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Mic, Timer } from "lucide-react";
 import { haptic } from "@/lib/haptics";
-import { SEED_OSCE_STATIONS, scoreOsce } from "@/lib/practice/osce";
+import { SEED_OSCE_STATIONS, scoreOsce, seededRotate } from "@/lib/practice/osce";
 
 export function OsceStationView() {
   const [stationIdx, setStationIdx] = React.useState(0);
@@ -13,7 +13,15 @@ export function OsceStationView() {
   const [checked, setChecked] = React.useState<Record<string, boolean>>({});
   const [selfGlobal, setSelfGlobal] = React.useState(0);
 
-  const station = SEED_OSCE_STATIONS[stationIdx];
+  // Daily rotation so the station order isn't fixed — everyone still practises
+  // all stations, just not always #1 first. Seed is the day of month.
+  const ordered = React.useMemo(() => {
+    const day = new Date().getDate();
+    return seededRotate(SEED_OSCE_STATIONS, (day % SEED_OSCE_STATIONS.length) / SEED_OSCE_STATIONS.length);
+  }, []);
+
+  const station = ordered[stationIdx];
+  const stationNumber = SEED_OSCE_STATIONS.indexOf(station) + 1;
 
   React.useEffect(() => {
     if (phase !== "active") return;
@@ -55,14 +63,17 @@ export function OsceStationView() {
   if (phase === "choose") {
     return (
       <div className="space-y-3">
-        {SEED_OSCE_STATIONS.map((s, i) => (
+        {ordered.map((s, i) => (
           <button
             key={s.id}
             type="button"
             onClick={() => { setStationIdx(i); setPhase("active"); start(); haptic("tap"); }}
             className="w-full rounded-md border-2 border-border bg-card p-5 text-left hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
-            <span className="text-eyebrow text-muted-foreground">Station {i + 1}</span>
+            <span className="text-eyebrow text-muted-foreground">
+              Station {SEED_OSCE_STATIONS.indexOf(s) + 1}
+              {i === 0 ? " · today's first" : ""}
+            </span>
             <span className="block text-base font-semibold">{s.title}</span>
             <span className="mt-1 block text-small text-muted-foreground">{s.task}</span>
             <span className="mt-2 inline-flex items-center gap-1 text-caption text-muted-foreground">
@@ -70,6 +81,19 @@ export function OsceStationView() {
             </span>
           </button>
         ))}
+        <button
+          type="button"
+          onClick={() => {
+            const i = Math.floor(Math.random() * ordered.length);
+            setStationIdx(i);
+            setPhase("active");
+            start();
+            haptic("tap");
+          }}
+          className="w-full rounded-md border-2 border-dashed border-border bg-card p-4 text-center text-small font-medium text-muted-foreground transition-transform active:translate-y-px active:hard-shadow-none"
+        >
+          🎲 Pick a random station
+        </button>
       </div>
     );
   }
@@ -79,7 +103,7 @@ export function OsceStationView() {
       <div className="space-y-4">
         <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
           <div className="flex items-center justify-between">
-            <span className="text-eyebrow text-muted-foreground">{station.title}</span>
+            <span className="text-eyebrow text-muted-foreground">Station {stationNumber} · {station.title}</span>
             <span className="text-numeric text-h3" aria-live="polite">{mm}:{ss}</span>
           </div>
           <p className="mt-3 text-base font-medium">{station.task}</p>

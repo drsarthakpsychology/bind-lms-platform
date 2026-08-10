@@ -5,6 +5,10 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10 (v3 build)
 
+### Slice A12 — OSCE station randomisation (v3)
+- /practice/osce station order now rotates daily (deterministic seeded rotation) so students practise all stations, not always #1 first. "today's first" marker + a "Pick a random station" option.
+- Pure UI + a testable seededRotate util. 123 unit tests (+4), 26 e2e specs, lint clean, build green.
+
 ### Slice A11 — Skills Passport PDF + sign-off flow (v3)
 - /practice/passport now has a "Download passport PDF" — a real A4 PDF (pdf-lib) of the competency record: evidenced status + logged hours per competency.
 - Supervision sign-off flow: student requests sign-off (pending → requested) on the supervision log; admin reviews at /admin/supervision and signs or rejects (requested → signed/rejected). New admin nav entry.

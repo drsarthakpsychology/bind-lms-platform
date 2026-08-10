@@ -69,3 +69,15 @@ export function scoreOsce(checked: Array<{ item: string; done: boolean }>): numb
   const total = checked.reduce((a, c) => a + (c.done ? 1 : 0), 0);
   return checked.length ? total / checked.length : 0;
 }
+
+/**
+ * Deterministic shuffle from a numeric seed (0..1). Returns a new array with
+ * the same items in a rotated order, so a given day's seed yields a stable
+ * station order (all stations still appear, just not always #1 first).
+ */
+export function seededRotate<T>(items: T[], seed: number): T[] {
+  const n = items.length;
+  if (n === 0) return [...items];
+  const offset = Math.floor(Math.abs(seed) * n) % n;
+  return [...items.slice(offset), ...items.slice(0, offset)];
+}
