@@ -5,6 +5,14 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-11 (v5 depth build)
 
+### Session continuation — the surviving-admin tools + friction audit
+- A9 Transfer loop (supervision transfer_note + consent)
+- A10 Alumni mode (role, no-expiry, cohort_ended_at + cron)
+- A5 Review triage (/admin/triage, ≤10 queue + auto-release)
+- Friction audit: 5/6 core flows at ≤2 taps from /today (the only 3-tap flow is the deliberate /practice browse view, by design)
+- Docs: NEEDS_KAVYA, MORNING_REPORT, IDEAS_NEXT updated for the morning
+- 180 tests, lint clean, build green
+
 ### Session summary — 30 commits, v5.1 build order
 Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 1. Patient engine: Director/Actor, gates-as-code, 24 moves, seeded variation, never-silent

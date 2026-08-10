@@ -1,55 +1,49 @@
-# Morning Report — 2026-08-10
+# Morning Report — 2026-08-11
 
 ## Ship it
-All 7 slices built, tested, and committed on `feat/practice-layer`. Everything is `draft`/`in_review` — nothing auto-published.
+The v5 depth build is complete on `feat/v5-depth` — 35 commits, 180 tests, lint clean, typecheck clean, build green. Demo after `npm run dev`:
 
-**Demo URL (after `npm run dev`):** `/practice`
+- **`/today`** — the new front door (recommended card, quick/deep chips, streak)
+- **`/practice/decode`** — the flagship: Presenting Complaint Decoder (33 idioms, Decode + Funnel + Seven Readings modes)
+- **`/practice/consulting-room`** — the rebuilt patient engine (Director/Actor, gates-as-code, 24 moves, seeded variation) with **retry from any debrief moment**
+- **`/practice`** — the redesigned browse view (verb labels, state chips, unique icons)
+- **`/admin/calibration`**, **`/admin/flags`**, **`/admin/modules`**, **`/admin/pulse`**, **`/admin/triage`** — the five admin tools
 
 ## Try this first
-1. `/practice/consulting-room` → pick "Ravi, 34 — 'the heaviness'" → Start session. Talk to a simulated patient (works with `AI_ENABLED=false` via fixtures — the patient gives in-character replies). Finish → the debrief shows your missed disclosures. That screen is the product.
-2. `/practice/two-minute-clinic` → 120-second micro-drill with instant expert comparison. The retention feature.
-3. `/practice/judgment` → "5 Judgment Calls" — the daily habit anchor. Panel distribution bar chart.
+1. `/practice/decode` — "I'm not feeling fresh." Six things could be true. This is the most defensible thing Lumen owns.
+2. `/practice/consulting-room` — run a session, finish, then hit "Try this again" on a debrief quote. Same patient, same moment, two futures.
+3. `/today` — the two-tap front door that replaced the fourteen-card wall.
 
 ## Needs you (from NEEDS_KAVYA.md)
-- Paste `GEMINI_API_KEY` + `GROQ_API_KEY` (free) → real patient conversations + voice speed
-- Paste `ANTHROPIC_API_KEY` (paid) → student-session + journal "help me think" route to a no-train provider. Until then those show the honest "needs a paid key" message.
-- Apply `src/migrations_pending/practice_layer_*.sql` to a dev branch (the MCP branch-create needs a cost-confirmation ID I couldn't mint — migrations are written + reviewable)
-- Record 20 composite cases at `/admin/corpus/dictate` (the highest-value corpus source)
-- Approve the 40 drafted cases + 62 SCT items in the review queues (all `approved: false`)
-- Enable the Firecrawl/Playwright MCP entry in `.mcp.json` for future corpus runs
+- Paste `NVIDIA_API_KEY` (free, no card) → the strongest free tier for Director/Actor/TTS
+- Flip feature flags at `/admin/flags` to reveal the 9 built-but-off tools when the cohort is ready
+- Score transcripts at `/admin/calibration` → trains the AI scorer + gives the MOU line
+- Record 20 composite cases at `/admin/corpus/dictate` (still the #1 source)
 
-## Half-built
-- **Skills Passport** — progress view built (/practice/passport); PDF certificate appendix still deferred
-- **Ask the Syllabus** (⌘K grounded Q&A) — chunk/embed pipeline exists in migrations, no retrieval/UI yet (needs an embedding provider)
-- **Ethics & Law dilemmas** — built (/practice/ethics), 6 consequence-first dilemmas
-- **Peer role-play rooms** — migrations only
-- **Check-in** (weekly) — built (/practice/check-in)
-- **Case Library** — built (/practice/library)
-- **Supervision log** — built (/practice/supervision)
-- Voice: browser STT/TTS works; Deepgram/ElevenLabs upgrades are stubbed interfaces
-- Corpus: 139 PMC case reports fetched (psych-focused queries added) + 129 normalised + 220-pattern style bank; ICD-11/mhGAP/NMHS/MHA fetchers are scaffolds (written, not run)
+## Decoder
+Idioms seeded: 33/60 (compulsory set covered) · modes live: 3/4 (Decode, Funnel, Seven Readings; CFI Practice next) · wired into: sim opening_idiom, MSE, Rounds
 
-## Corpus
-- **PMC / Europe PMC:** 98 open-access psychiatric case reports fetched + normalised (provenance-logged)
-- **Project Gutenberg:** 10 public-domain novels → **220-pattern style bank** (the "train on fiction to learn how to talk" feature, isolated from clinical retrieval with tests)
-- **Drafted cases:** 40 in `scripts/corpus/drafted-cases.json`, `approved: false`
-- **Licence:** Europe PMC OA (CC-BY etc), Gutenberg public domain
+## Patient engine
+Moves: 24/24 · never-silent fallback · gates-as-code (leak tests pass)
+Gate-leak tests: 3 passed / 0 failed · seeded variation (determinism tested)
+
+## MSE
+Confusable-pairs drill live (mood vs affect, thought form vs content, akathisia vs anxiety, etc.)
+
+## Voice
+Browser TTS/STT live · CosyVoice mapping planned (needs NVIDIA key)
+
+## Content
+Cases: 60/60 · trap coverage: 16/16 · style patterns: 450 (Gutenberg, firewall-tested) · landmark cases: 7 · quiz items: sourced rationale engine
+
+## Friction
+Flows at ≤2 taps: 5/6 · over: only "All practice → browse → tool" (3 taps — the deliberate browse view, by design)
+
+## Admin
+Flags (scope cut to 6) · Calibration (blind scoring) · Modules (bulk publish/grant) · Pulse (drifting/flying) · Triage (≤10 queue)
 
 ## Bugs
-Fixed: 0 logged this session (no bugs surfaced in the green slices)  ·  Open: 0 → BUGS.md
-
-## Cost
-Free-tier router wired; no keys set so **$0 spend** tonight. All AI features ran on fixtures.
-Projected at 30 students with keys: low tens of $/month (free tiers for content-gen + corpus, paid key only for student-data calls).
-
-## Ideas I had
-- Deepgram streaming STT with turn-taking + medical vocab for voice
-- ElevenLabs pre-generated patient lines cached in R2
-- Weak-spots heatmap drilling into the lesson for each weak topic
-- Skills Passport PDF export on the certificate (already a dependency: pdf-lib)
+Fixed: 0 this session · Open: 0 → BUGS.md
 
 ## Numbers
-- Commits: **11** (A→G slices + sim-review closure + deferred sweep + passport)
-- Tests: **38 → 112** (+74)
-- Build time: ~9s, lint clean, typecheck clean
-- Branch: `feat/practice-layer` — buildable, all green
+Commits: 35 · tests: 159 → 180 (+21) · build ~6.5s · branch `feat/v5-depth`

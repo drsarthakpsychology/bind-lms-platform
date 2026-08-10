@@ -15,7 +15,10 @@
 - **Weak-spots heatmap** — /practice/weak-spots: consistent gaps across sim debriefs, ranked with a drill-down tool per weak skill
 - **Sim debrief → passport** — completing a Consulting Room session credits the mapped competencies (source 'sim') with the score as evidence
 
-## Deferred this session (have migrations, no UI)
+## Deferred this session (v5 build, 2026-08-11)
+- **CFI Practice mode** (Decoder Mode 4) — the DSM-5 Cultural Formulation Interview drill
+- **MSE full rebuild levels** — five-level ladder + small-things checklist + MSE-from-own-transcript (confusable-pairs done)
+- **Voice (CosyVoice 2 + emotion mapping)** — needs the NVIDIA key; browser TTS is the zero-cost fallback
 - **Corpus fetchers for ICD-11 / mhGAP / NMHS / MHA 2017** — noted in reports as "scaffolds written" but the scripts are NOT in the repo; the PMC + Gutenberg corpus is what actually exists
 
 ## New ideas
@@ -25,3 +28,5 @@
 - Peer role-play skill-matching algorithm
 - Persist attempts from the other practice tools (judgment/MSE/OSCE/rounds/formulation) into competency_events, not just sim + supervision
 - Practice-tool attempt persistence (currently in-memory, not written to the attempt tables)
+- **A7 Dictate-as-conversation** — Dr. Sarthak talks, Whisper transcribes, an LLM interviewer fills the sim_case spec
+- **A5 queue auto-release label** on student-facing AI feedback (the triage side is built)
