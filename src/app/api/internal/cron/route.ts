@@ -51,6 +51,20 @@ export async function GET(req: Request) {
       if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
       return NextResponse.json({ ok: true, task, written: true });
     }
+    case "alumni-transition": {
+      // A10: on cohort end, flip students to alumni for permanent read-only
+      // access. Idempotent — only touches rows with cohort_ended_at <= now.
+      const { createAdminClient } = await import("@/lib/supabase/server");
+      const admin = createAdminClient();
+      const now = new Date().toISOString();
+      const { data, error } = await admin
+        .from("profiles")
+        .update({ role: "alumni" })
+        .eq("role", "student")
+        .lte("cohort_ended_at", now);
+      if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
+      return NextResponse.json({ ok: true, task, transitioned: (data ?? []).length });
+    }
     case "send-reminders": {
       // TODO(provider): daily digest via Resend when a template + key exist.
       // Honest stub — the cron fires, records that it isn't configured, and

@@ -20,3 +20,8 @@ export async function requireAdmin(): Promise<Profile | null> {
   const profile = await requireSession();
   return profile?.role === "admin" ? profile : null;
 }
+
+/** Alumni keep permanent read-only access to their own record (A10). */
+export function isAlumni(profile: Profile | null): boolean {
+  return profile?.role === "alumni";
+}

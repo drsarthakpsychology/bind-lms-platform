@@ -104,7 +104,7 @@ export async function resolveLessonStream(lessonId: string): Promise<ResolvedStr
  */
 export async function authorizeAndResolveLesson(opts: {
   userId: string;
-  role: "admin" | "student";
+  role: "admin" | "student" | "alumni";
   lessonId: string;
 }): Promise<{ authorized: boolean; resolved: ResolvedStream | null }> {
   const supabase = await createClient();
