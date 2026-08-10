@@ -11,15 +11,17 @@
 - **Two-Minute Clinic on the hub** — was dashboard-only; now on /practice too
 - **Peer role-play rooms** — /practice/role-play: pair by email, patient/clinician roles, persistent message thread (pair_messages, participant-only RLS)
 - **Skills Passport PDF** — /practice/passport "Download passport PDF"; supervision sign-off flow (student requests, /admin/supervision signs/rejects)
+- **OSCE station randomisation** — /practice/osce rotates station order daily + "Pick a random station"
+- **Weak-spots heatmap** — /practice/weak-spots: consistent gaps across sim debriefs, ranked with a drill-down tool per weak skill
+- **Sim debrief → passport** — completing a Consulting Room session credits the mapped competencies (source 'sim') with the score as evidence
 
 ## Deferred this session (have migrations, no UI)
-- **Corpus fetchers for ICD-11 / mhGAP / NMHS / MHA 2017** — scaffolds written, not run (PMC + Gutenberg done)
+- **Corpus fetchers for ICD-11 / mhGAP / NMHS / MHA 2017** — noted in reports as "scaffolds written" but the scripts are NOT in the repo; the PMC + Gutenberg corpus is what actually exists
 
 ## New ideas
 - Deepgram streaming STT with built-in turn-taking + medical vocabulary for voice
 - ElevenLabs pre-generated patient lines cached in R2 (Kavya has an account, voice "Rudra")
-- Weak-spots heatmap drilling into the lesson for each weak topic
 - Formulation Wall for anonymised peer critique
-- OSCE station randomisation for timed exam practice
 - Peer role-play skill-matching algorithm
-- Retroactive competency-event import from psychopharm tool usage
+- Persist attempts from the other practice tools (judgment/MSE/OSCE/rounds/formulation) into competency_events, not just sim + supervision
+- Practice-tool attempt persistence (currently in-memory, not written to the attempt tables)
