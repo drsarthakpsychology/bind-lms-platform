@@ -118,6 +118,13 @@ const PRACTICE_TOOLS: PracticeTool[] = [
     icon: ListChecks,
     eyebrow: "With a peer",
   },
+  {
+    href: "/practice/weak-spots",
+    title: "Weak Spots",
+    description: "Your consistent gaps across sim debriefs, with the fix for each.",
+    icon: Brain,
+    eyebrow: "Insights",
+  },
 ];
 
 export default function PracticeHubPage() {

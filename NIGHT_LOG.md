@@ -5,6 +5,10 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10 (v3 build)
 
+### Slice A13 — Weak-spots heatmap (v3)
+- /practice/weak-spots: the student's consistent gaps across sim debriefs, ranked by severity with a concrete drill-down tool per weak skill. Built on analyzeWeakSpots (pure, 5 tests) reading sim_scores rubric JSONB. Verified against a real scored session (risk_timing=late, open_closed_ratio=0.6 → surfaced correctly).
+- 128 unit tests (+5), 27 e2e specs, lint clean, build green.
+
 ### Slice A12 — OSCE station randomisation (v3)
 - /practice/osce station order now rotates daily (deterministic seeded rotation) so students practise all stations, not always #1 first. "today's first" marker + a "Pick a random station" option.
 - Pure UI + a testable seededRotate util. 123 unit tests (+4), 26 e2e specs, lint clean, build green.
