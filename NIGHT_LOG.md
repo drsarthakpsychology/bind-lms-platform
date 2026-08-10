@@ -5,6 +5,10 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10 (v3 build)
 
+### Slice A14 — Sim debrief → Skills Passport (v3)
+- Completing a Consulting Room session now credits the mapped competencies in competency_events (source 'sim') with the score as evidence. rubricToCompetencyKeys maps each case's free-text rubric targets to the competency framework (risk→risk_assessment, psychoeducat→psychoeducation, etc.). Verified: a real debrief wrote 4 competency_events.
+- 132 unit tests (+4), 27 e2e specs, lint clean, build green.
+
 ### Slice A13 — Weak-spots heatmap (v3)
 - /practice/weak-spots: the student's consistent gaps across sim debriefs, ranked by severity with a concrete drill-down tool per weak skill. Built on analyzeWeakSpots (pure, 5 tests) reading sim_scores rubric JSONB. Verified against a real scored session (risk_timing=late, open_closed_ratio=0.6 → surfaced correctly).
 - 128 unit tests (+5), 27 e2e specs, lint clean, build green.

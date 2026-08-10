@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { scoreTranscript } from "@/lib/ai/scoring";
 import { shouldInjectCorrection } from "@/lib/practice/sim-review";
+import { rubricToCompetencyKeys } from "@/lib/practice/competency-map";
 import { guardStudentCall } from "@/lib/ai/guards";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -126,6 +127,24 @@ export async function POST(req: Request) {
 
   // Mark the session complete.
   await admin.from("sim_sessions").update({ status: "complete", ended_at: new Date().toISOString() }).eq("id", session.id);
+
+  // Credit the Skills Passport: the competencies this case exercised, with
+  // the score as evidence (source 'sim'). Resolve competency key → id.
+  const compKeys = rubricToCompetencyKeys(rubricTargets);
+  if (compKeys.length > 0) {
+    const { data: comps } = await admin
+      .from("competencies")
+      .select("id, key")
+      .in("key", compKeys);
+    const events = (comps ?? []).map((c) => ({
+      user_id: user.id,
+      competency_id: c.id,
+      source: "sim" as const,
+      source_ref: session.id,
+      evidence: { overall: result.score, case_id: session.case_id, date: new Date().toISOString() },
+    }));
+    if (events.length > 0) await admin.from("competency_events").insert(events);
+  }
 
   return NextResponse.json({
     score: result,
