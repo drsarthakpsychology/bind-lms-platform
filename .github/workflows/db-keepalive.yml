@@ -1,0 +1,21 @@
+name: DB Keepalive
+
+on:
+  schedule:
+    # Weekly ping to prevent the Supabase Free-tier 7-day pause between cohorts.
+    # 03:22 UTC Mondays — off the :00/:30 marks.
+    - cron: "22 3 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the keepalive endpoint
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          curl -fsS -H "Authorization: Bearer ${CRON_SECRET}" \
+            "${APP_URL}/api/internal/cron?task=keepalive" \
+            || echo "::warning::keepalive failed — check CRON_SECRET / APP_URL"

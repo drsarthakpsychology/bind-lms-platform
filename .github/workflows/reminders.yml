@@ -1,0 +1,20 @@
+name: Daily Reminders
+
+on:
+  schedule:
+    # 16:37 UTC = 22:07 IST — the daily digest, after the evening's study window.
+    - cron: "37 16 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  reminders:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger daily digest
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          curl -fsS -H "Authorization: Bearer ${CRON_SECRET}" \
+            "${APP_URL}/api/internal/cron?task=send-reminders" \
+            || echo "::warning::reminders endpoint failed — check CRON_SECRET / APP_URL"
