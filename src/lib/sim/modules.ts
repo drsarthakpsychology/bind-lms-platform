@@ -10,6 +10,14 @@
 
 import type { DepthCase } from "./types";
 import { DEPRESSION_CASES } from "./cases/depression";
+import { ANXIETY_CASES } from "./cases/anxiety";
+import { PSYCHOSIS_CASES } from "./cases/psychosis";
+import { BIPOLAR_CASES } from "./cases/bipolar";
+import { SUBSTANCE_CASES } from "./cases/substance";
+import { SOMATIC_CASES } from "./cases/somatic";
+import { TRAUMA_CASES } from "./cases/trauma";
+import { ADOLESCENT_CASES } from "./cases/adolescent";
+import { ETHICS_CASES } from "./cases/ethics";
 
 export type ModuleState = "draft" | "scheduled" | "published" | "archived";
 
@@ -45,7 +53,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 2,
     state: "draft",
     focus: "Generalised anxiety, panic disorder, and the somatic-first presentations",
-    cases: [],
+    cases: ANXIETY_CASES,
   },
   {
     id: "mod-psychosis",
@@ -53,7 +61,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 3,
     state: "draft",
     focus: "Schizophrenia-spectrum — and the traps that hide it (misattributed diagnosis, provenance)",
-    cases: [],
+    cases: PSYCHOSIS_CASES,
   },
   {
     id: "mod-bipolar",
@@ -61,7 +69,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 4,
     state: "draft",
     focus: "Bipolar spectrum — hypomania missed, SSRI activation, iatrogenic traps",
-    cases: [],
+    cases: BIPOLAR_CASES,
   },
   {
     id: "mod-substance",
@@ -69,7 +77,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 5,
     state: "draft",
     focus: "Alcohol, cannabis, opioids — substance-induced presentations vs primary",
-    cases: [],
+    cases: SUBSTANCE_CASES,
   },
   {
     id: "mod-somatic",
@@ -77,7 +85,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 6,
     state: "draft",
     focus: "The presenting-complaint decoder — 'not feeling fresh' through Kirmayer's seven readings",
-    cases: [],
+    cases: SOMATIC_CASES,
   },
   {
     id: "mod-trauma",
@@ -85,7 +93,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 7,
     state: "draft",
     focus: "PTSD, dissociation, and late risk reveal",
-    cases: [],
+    cases: TRAUMA_CASES,
   },
   {
     id: "mod-adolescent",
@@ -93,7 +101,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 8,
     state: "draft",
     focus: "Adolescent depression, POCSO, family dynamics, engaging the young person directly",
-    cases: [],
+    cases: ADOLESCENT_CASES,
   },
   {
     id: "mod-ethics",
@@ -101,7 +109,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 9,
     state: "draft",
     focus: "MHA 2017, RCI scope, POCSO — the consequence-first dilemmas",
-    cases: [],
+    cases: ETHICS_CASES,
   },
 ];
 
