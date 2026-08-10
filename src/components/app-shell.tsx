@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AppSidebar, type SidebarMode } from "@/components/navigation/app-sidebar";
 import { MobileNav } from "@/components/navigation/mobile-nav";
 import { MobileBarVisibility } from "@/components/navigation/mobile-bar-visibility";
+import { BottomTabBar } from "@/components/navigation/bottom-tab-bar";
 import { SidebarGate } from "@/components/navigation/sidebar-gate";
 import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
 import { PaletteHost } from "@/components/search/palette-host";
@@ -86,11 +87,14 @@ export function AppShell({
       <main className="min-w-0 flex-1">
         <div
           className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-10 lg:py-8"
-          style={{ paddingLeft: "max(1rem, env(safe-area-inset-left))", paddingRight: "max(1rem, env(safe-area-inset-right))", paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))" }}
+          style={{ paddingLeft: "max(1rem, env(safe-area-inset-left))", paddingRight: "max(1rem, env(safe-area-inset-right))", paddingBottom: "max(5rem, env(safe-area-inset-bottom))" }}
         >
           {children}
         </div>
       </main>
+
+      {/* Mobile bottom tab bar (student chrome) — thumb reach. */}
+      {mode === "student" ? <BottomTabBar /> : null}
     </div>
   );
 }
