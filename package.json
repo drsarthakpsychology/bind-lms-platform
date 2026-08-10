@@ -42,6 +42,7 @@
     "psych:seed-docs": "tsx scripts/psychopharm/seed-documents.ts",
     "psych:populate-obs": "tsx scripts/psychopharm/populate-observation-tables.ts",
     "psych:seed-practice": "tsx scripts/psychopharm/seed-practice-data.ts",
+    "migrate-submissions-r2": "tsx scripts/migrate-submissions-to-r2.ts",
     "corpus:gutenberg": "tsx scripts/corpus/fetch-gutenberg.ts",
     "corpus:style-bank": "tsx scripts/corpus/build-style-bank.ts",
     "corpus:pmc": "tsx scripts/corpus/fetch-pmc.ts",

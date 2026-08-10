@@ -139,3 +139,42 @@ upgrade to Pro ($25/mo) once Cohort One is live.
 project → Settings → Environment Variables for the live site. Never put the
 `SUPABASE_SERVICE_ROLE_KEY` or `R2_SECRET_ACCESS_KEY` anywhere a browser can
 see them.
+
+## 7. Free-tier discipline (v3, 2026-08-10)
+
+The practice layer must run on Supabase Free (500 MB DB, 1 GB file storage,
+5 GB egress) and Vercel Hobby (100 GB transfer, 1M invocations, 4 CPU-hours,
+60s functions). Exceeding a limit doesn't bill — **it takes the feature or the
+app offline until the cycle resets, with one grace period.**
+
+Rules:
+- **Postgres is the scarcest resource.** Route everything possible to R2
+  (free egress).
+- **Embeddings are halfvec(384), never vector(1536).** `src/lib/ai/embed.ts`
+  is the only embedding entry point. Matryoshka truncate to 384 + L2-renorm.
+- **Full corpus text lives in R2** (`corpus/{hash}.txt`); Postgres stores keys
+  + retrieval snippets.
+- **Audio submissions + PDF materials migrate to R2** (`npm run
+  migrate-submissions-r2`). New uploads write straight to R2.
+- **Long jobs are `scripts/`, not Vercel functions.** Corpus ingestion, batch
+  embedding, bulk generation.
+- **Crons are GitHub Actions** (`.github/workflows/`), hitting
+  `/api/internal/cron` with `CRON_SECRET` bearer. Never leave a cron endpoint
+  open.
+- **Log tables get 30-day retention** (prune-logs cron task).
+
+### Upgrade triggers (upgrade only the one service that trips)
+
+| Trigger | Action |
+|---|---|
+| Supabase DB > 400 MB, or egress > 4 GB/mo | Supabase Pro $25/mo, or split corpus into a 2nd free project |
+| Vercel Active CPU > 3 hrs/mo, or payments start | Vercel Pro $20/mo |
+| Free AI tiers 429ing during class hours | add paid credit to OpenRouter ($10 once) |
+
+Expected spend: ~$1/mo R2 + one-time $10 OpenRouter credit.
+
+### /admin/infra
+
+Live headroom dashboard: DB size vs 500 MB, top 10 tables, 7d AI usage,
+provider health. Red banner at 70%. A warning strip appears on /admin too.
+Fed by `infra_metrics()` RPC (service_role only).
