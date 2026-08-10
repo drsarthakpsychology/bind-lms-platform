@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { CheckCircle2, AlertTriangle, RefreshCw } from "lucide-react";
+import { CheckCircle2, AlertTriangle, RefreshCw, Mic2 } from "lucide-react";
 import { haptic } from "@/lib/haptics";
+import type { VoiceMetrics } from "@/lib/voice/use-voice-metrics";
 
 interface DebriefData {
   score?: {
@@ -29,10 +30,12 @@ export function DebriefView({
   data,
   difficulty,
   onExit,
+  voice,
 }: {
   data: DebriefData;
   difficulty: string;
   onExit: () => void;
+  voice?: VoiceMetrics;
 }) {
   const [revealMissed, setRevealMissed] = React.useState(false);
   const score = data.score ?? {};
@@ -66,6 +69,48 @@ export function DebriefView({
           </p>
         ) : null}
       </div>
+
+      {/* Voice delivery panel */}
+      {voice ? (
+        <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
+          <h2 className="flex items-center gap-2 text-base font-semibold">
+            <Mic2 className="size-4" aria-hidden />
+            Delivery
+          </h2>
+          <p className="mt-1 text-small text-muted-foreground">
+            Compared against your own past sessions, not other students.
+          </p>
+          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <Stat
+              label="Silence tolerance"
+              value={`${voice.mean_silence_tolerance_s}s`}
+              hint={voice.mean_silence_tolerance_s < 3 ? "Try sitting with silence longer." : "Good — you let them speak."}
+            />
+            <Stat
+              label="Interruptions"
+              value={String(voice.interruption_count)}
+              warn={voice.interruption_count > 0}
+              hint={voice.interruption_count > 0 ? "Let the patient finish their sentence." : "No interruptions."}
+            />
+            <Stat
+              label="Questions / min"
+              value={String(voice.questions_per_minute)}
+              hint={voice.questions_per_minute > 8 ? "You're machine-gunning. Slow down." : undefined}
+            />
+            <Stat
+              label="Filler words"
+              value={String(voice.filler_word_rate)}
+              hint={voice.filler_word_rate > 0.2 ? "Fewer 'um's and 'like's sharpen your question." : undefined}
+            />
+            <Stat
+              label="Longest patient stretch"
+              value={`${voice.longest_patient_stretch_s}s`}
+              hint={voice.longest_patient_stretch_s < 5 ? "You're cutting the patient off." : "You let them talk."}
+            />
+            <Stat label="Session length" value={`${voice.session_duration_s}s`} />
+          </div>
+        </div>
+      ) : null}
 
       {/* Quotes */}
       <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
@@ -144,11 +189,12 @@ export function DebriefView({
   );
 }
 
-function Stat({ label, value, warn }: { label: string; value: string; warn?: boolean }) {
+function Stat({ label, value, warn, hint }: { label: string; value: string; warn?: boolean; hint?: string }) {
   return (
     <div className={`rounded-md border-2 border-border p-3 ${warn ? "bg-amber-50" : "bg-background"}`}>
       <p className="text-caption text-muted-foreground">{label}</p>
       <p className="mt-0.5 text-base font-semibold text-numeric">{value}</p>
+      {hint ? <p className="mt-1 text-caption text-muted-foreground">{hint}</p> : null}
     </div>
   );
 }

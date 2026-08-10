@@ -2,7 +2,10 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
+import { Mic } from "lucide-react";
 import { haptic } from "@/lib/haptics";
+import { VoiceInput } from "@/components/practice/voice-input";
+import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
 import { DebriefView } from "./debrief-view";
 
 interface Turn {
@@ -41,11 +44,13 @@ export function SimSessionView({
   patientName,
   difficulty,
   initialTurns,
+  voicePrefs,
 }: {
   sessionId: string;
   patientName: string;
   difficulty: string;
   initialTurns: Turn[];
+  voicePrefs?: { rate: number; pitch: number; lang?: string; gender?: "male" | "female" };
 }) {
   const router = useRouter();
   const [turns, setTurns] = React.useState<Turn[]>(initialTurns);
@@ -55,8 +60,10 @@ export function SimSessionView({
   const [seconds, setSeconds] = React.useState(0);
   const [debrief, setDebrief] = React.useState<DebriefData | null>(null);
   const [ending, setEnding] = React.useState(false);
+  const [voiceMode, setVoiceMode] = React.useState(false);
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+  const voiceMetrics = useVoiceMetrics();
 
   // Timer.
   React.useEffect(() => {
@@ -72,8 +79,8 @@ export function SimSessionView({
   const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
   const ss = String(seconds % 60).padStart(2, "0");
 
-  async function send() {
-    const text = input.trim();
+  async function send(textParam?: string) {
+    const text = (textParam ?? input).trim();
     if (!text || busy) return;
     setInput("");
     setTurns((t) => [...t, { role: "student", content: text }]);
@@ -109,6 +116,8 @@ export function SimSessionView({
     }
   }
 
+  const [voiceReport, setVoiceReport] = React.useState<ReturnType<typeof voiceMetrics.report> | null>(null);
+
   async function finishAndDebrief() {
     if (ending) return;
     setEnding(true);
@@ -132,6 +141,7 @@ export function SimSessionView({
       }
       const j = (await res.json()) as DebriefData;
       setDebrief(j);
+      setVoiceReport(voiceMetrics.report());
       haptic("success");
     } catch {
       setError("Network error during debrief.");
@@ -145,6 +155,7 @@ export function SimSessionView({
       <DebriefView
         data={debrief}
         difficulty={difficulty}
+        voice={voiceReport ?? undefined}
         onExit={() => router.push("/practice/consulting-room")}
       />
     );
@@ -213,34 +224,73 @@ export function SimSessionView({
 
       {/* input */}
       <div className="border-t-2 border-border p-3">
-        <div className="flex items-end gap-2">
-          <textarea
-            ref={textareaRef}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                void send();
-              }
-            }}
-            placeholder={`Say something to ${patientName}…`}
-            rows={2}
-            className="flex-1 resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
-            aria-label="Your message to the patient"
-          />
+        {/* voice/text toggle */}
+        <div className="mb-2 flex items-center gap-2">
           <button
             type="button"
-            onClick={() => void send()}
-            disabled={busy || !input.trim()}
-            className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+            onClick={() => setVoiceMode((v) => !v)}
+            aria-pressed={voiceMode}
+            className={`inline-flex items-center gap-1.5 rounded-md border-2 border-border px-3 py-1.5 text-caption font-medium transition-transform active:translate-y-px ${
+              voiceMode ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground"
+            }`}
           >
-            Send
+            <Mic className="size-3.5" aria-hidden />
+            {voiceMode ? "Voice on" : "Voice"}
           </button>
+          <span className="text-caption text-muted-foreground">
+            {voiceMode
+              ? "Hold the mic to talk, release to send. Edit the transcript before sending."
+              : "Type your question. Enter to send."}
+          </span>
         </div>
+
+        {voiceMode && voicePrefs ? (
+          <VoiceInput
+            onSend={(t) => {
+              voiceMetrics.recordStudentSpeech(t);
+              void send(t);
+            }}
+            onPatientSpeak={() => {
+              // The last patient line, spoken via the case's affect-driven prefs.
+              // The actual TTS lives inside VoiceInput's hook; this callback
+              // lets the parent supply the text to speak.
+              const lastPatient = [...turns].reverse().find((t) => t.role === "patient");
+              return lastPatient?.content ?? "";
+            }}
+            patientVoicePrefs={voicePrefs}
+            disabled={busy}
+          />
+        ) : (
+          <div className="flex items-end gap-2">
+            <textarea
+              ref={textareaRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  void send();
+                }
+              }}
+              placeholder={`Say something to ${patientName}…`}
+              rows={2}
+              className="flex-1 resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+              aria-label="Your message to the patient"
+            />
+            <button
+              type="button"
+              onClick={() => void send()}
+              disabled={busy || !input.trim()}
+              className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+            >
+              Send
+            </button>
+          </div>
+        )}
+
         <div className="mt-2 flex items-center justify-between">
           <p className="text-caption text-muted-foreground">
-            Enter to send · Shift+Enter for a new line
+            {voiceMode ? "Voice sends as text — the patient hears via your browser." : "Enter to send · Shift+Enter for a new line"}
           </p>
           <button
             type="button"
