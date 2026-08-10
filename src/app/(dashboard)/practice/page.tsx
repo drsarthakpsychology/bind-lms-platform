@@ -97,6 +97,13 @@ const PRACTICE_TOOLS: PracticeTool[] = [
     icon: BookOpen,
     eyebrow: "Corpus",
   },
+  {
+    href: "/practice/passport",
+    title: "Skills Passport",
+    description: "Your competencies, evidenced. Tagged hours build your certificate appendix.",
+    icon: ListChecks,
+    eyebrow: "Competencies",
+  },
 ];
 
 export default function PracticeHubPage() {

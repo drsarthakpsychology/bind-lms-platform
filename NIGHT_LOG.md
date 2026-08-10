@@ -5,6 +5,10 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-10 (v3 build)
 
+### Slice A6 — Skills Passport progress view (v3)
+- /practice/passport — 11 competencies, evidence from competency_events (fed by supervision tagging today). Per-competency evidence list, logged-hours summary. The PDF certificate appendix stays the deferred big item.
+- 112 tests, lint clean, build green.
+
 ### Slice A5 — Deferred-build sweep (v3)
 - **Ethics & Law dilemmas** (/practice/ethics): 6 grounded dilemmas (MHA 2017 advance directives + nominated representative, POCSO mandatory reporting, RCI scope, confidentiality, mature-minor consent). Consequence-first: commit to an action, then reveal the law. Fixed a dead hub link (card existed, no route). Deterministic daily set; no answer-position bias.
 - **Weekly Check-in** (/practice/check-in): 30-sec non-clinical workload/energy/preparedness + free line; owner-write RLS, admin reads aggregate view only. One per week.
