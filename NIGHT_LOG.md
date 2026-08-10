@@ -5,6 +5,22 @@ Protocol: never stop, never ask, keep the branch buildable.
 
 ## 2026-08-11 (v5 depth build)
 
+### Session summary — 30 commits, v5.1 build order
+Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
+1. Patient engine: Director/Actor, gates-as-code, 24 moves, seeded variation, never-silent
+2. Module-based case organisation (9 condition modules)
+3. 60 cases across all 16 traps (incl. no-disorder principle)
+4. Idiom Bank (33 entries) + Decoder (Decode, Funnel, Seven Readings modes)
+5. A1 Retry from turn N (rewind + sim_branches)
+6. A3 Scorer calibration harness (/admin/calibration)
+7. A2 Feature flags + scope cut (/admin/flags, 6 live)
+8. Practice redesign + /today front door
+9. A4 Out of Depth drill (10 refer/escalate scenarios)
+10. Modules admin UI (bulk publish/grant)
+11. Gutenberg expansion (21 books) + 450-pattern style bank with firewall test
+12. Landmark cases module (ethics-failure framing)
+- 168 tests, lint clean, build green. Branch: feat/v5-depth.
+
 ### Slice B1 — Patient engine rebuild: Director/Actor (v5 Part 3)
 - Two-call architecture: **Director** (structured JSON decision, never writes dialogue) → **Actor** (writes 1-3 sentences of dialogue only). The v1 engine's prose-in-prompt gates are replaced by deterministic code.
 - `PatientState` (trust/guardedness/irritation/fatigue 0-10, disclosed[], topics[], gates_met[], phase, last_moves[], hollow_compliance) — mutates every turn.
