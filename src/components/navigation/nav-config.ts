@@ -28,5 +28,6 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/supervision", label: "Sign-offs", icon: "clipboardCheck" },
   { href: "/admin/flags", label: "Feature flags", icon: "toggle" },
   { href: "/admin/calibration", label: "Calibration", icon: "target" },
+  { href: "/admin/modules", label: "Modules", icon: "layers" },
   { href: "/admin/infra", label: "Infrastructure", icon: "gauge" },
 ];
