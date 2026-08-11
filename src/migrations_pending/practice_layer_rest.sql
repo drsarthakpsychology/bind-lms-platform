@@ -438,3 +438,30 @@ create index if not exists idx_corpus_chunks_embedding on public.corpus_chunks
   using hnsw (embedding halfvec_cosine_ops);
 create index if not exists idx_transcript_chunks_embedding on public.transcript_chunks
   using hnsw (embedding halfvec_cosine_ops);
+
+-- ---------------------------------------------------------------------------
+-- Case Library annotations (v5 §4 — annotate; your notes unlock peers').
+-- A private note per (user, doc). When a student has their own note on a
+-- doc, the OTHER students' notes on that doc become readable (peers-unlock-
+-- after-yours). author_id of a note is visible to those who can read it.
+-- ---------------------------------------------------------------------------
+create table if not exists public.library_notes (
+  id uuid primary key default gen_random_uuid(),
+  organization_id uuid,
+  user_id uuid not null references public.profiles (id) on delete cascade,
+  document_id uuid not null references public.corpus_documents (id) on delete cascade,
+  note text not null,
+  created_at timestamptz not null default now(),
+  unique (user_id, document_id)
+);
+
+alter table public.library_notes enable row level security;
+create policy "library_notes_select_own" on public.library_notes
+  for select using (auth.uid() = user_id);
+create policy "library_notes_insert_own" on public.library_notes
+  for insert with check (auth.uid() = user_id);
+create policy "library_notes_update_own" on public.library_notes
+  for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
+create policy "library_notes_admin_all" on public.library_notes
+  for all using (public.is_admin()) with check (public.is_admin());
+create index if not exists idx_library_notes_doc on public.library_notes (document_id);
