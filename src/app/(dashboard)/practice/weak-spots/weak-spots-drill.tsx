@@ -4,6 +4,7 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { Target, Zap } from "lucide-react";
+import Link from "next/link";
 import type { DrillItem } from "@/lib/practice/weak-spots";
 
 /**
@@ -57,6 +58,12 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
               ? "Improving. Re-run the drill or take it into the Consulting Room today."
               : "These are exactly the misses your debriefs flag. Try the drill again, then run a session."}
         </p>
+        <Link
+          href="/practice/consulting-room"
+          className="mt-4 inline-flex items-center gap-2 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+        >
+          Run a case — prove it live →
+        </Link>
       </div>
     );
   }
