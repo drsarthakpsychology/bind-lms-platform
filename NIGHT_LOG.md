@@ -3,6 +3,21 @@
 Reverse-chron. One entry per slice: what shipped, decisions, commit hash.
 Protocol: never stop, never ask, keep the branch buildable.
 
+## 2026-08-12 (round 7 — content volume + polish + governance docs)
+
+### Shipped
+- Idioms 95 → **110** (Kashmiri/Konkani/Bhojpuri/Sindhi/Nepali)
+- SCT 154 → **197** (personality differentials + medication-adverse-effect recognition)
+- Quiz bank 51 → **66** (MHA amendments + POCSO procedures)
+- Out of Depth 50 → **60** (disaster triage, vicarious trauma, faith crisis)
+- Weak Spots: post-drill **'Run a case — prove it live'** remedy CTA
+- Rounds: **idiom/confusable card-type chips** (distinct visuals)
+- Wall e2e (post → report), MSE arrow-key navigation, wall haptics audit (11/11)
+- Docs: INFRA_SETUP + PRACTICE_LAYER (scheduled release, wall-reports admin, refreshed counts)
+
+### State
+96 commits on feat/v5-depth · 268 tests · lint clean (4 pre-existing warnings) · tsc clean · build green · QUEUE emptied round 8 next
+
 ## 2026-08-12 (round 6 — content volume continues + wall governance)
 
 ### Shipped
