@@ -140,5 +140,14 @@ export async function POST(req: Request) {
     tokens_out: Math.round(result.reply.length / 4),
   });
 
-  return NextResponse.json({ reply: result.reply, sessionId, move: result.move });
+  // The Director's affect + fatigue ride along so the voice layer can map
+  // them onto delivery (v5 §6: affect → rate/pitch/emotion tag).
+  return NextResponse.json({
+    reply: result.reply,
+    sessionId,
+    move: result.move,
+    affect: result.decision.affect,
+    fatigue: result.state.fatigue,
+    mood: result.state.mood_today,
+  });
 }

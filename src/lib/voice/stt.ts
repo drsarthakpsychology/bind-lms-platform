@@ -114,3 +114,56 @@ export function sttStatus(): { supported: boolean; reason?: string } {
   }
   return { supported: true };
 }
+
+/**
+ * Server Whisper STT (v5 §6) — used when the browser engine is unavailable
+ * (Firefox behind a flag) or the student opts in for better accent accuracy.
+ * The server route tries Groq → NVIDIA; the interim transcript is surfaced
+ * live and editable (the edit-before-send flow lives in the voice UI).
+ */
+export interface ServerSttEngine extends SttEngine {
+  type: "server";
+}
+
+export function createServerStt(): ServerSttEngine | null {
+  if (typeof window === "undefined") return null;
+  return {
+    type: "server",
+    supported: () => true,
+    start() {
+      // Recording is handled by the parent (MediaRecorder); start() here
+      // only signals readiness. The parent finalises and POSTs the blob.
+      this.onResult?.({
+        transcript: "",
+        confidence: 1,
+        isFinal: false,
+      });
+    },
+    stop() {
+      /* the parent finalises the recording */
+    },
+    abort() {
+      /* no-op */
+    },
+  };
+}
+
+/** Transcribe an audio blob via the server route (Groq → NVIDIA → 503). */
+export async function serverTranscribe(blob: Blob): Promise<{ transcript: string } | { error: string }> {
+  const buf = await blob.arrayBuffer();
+  const b64 = btoa(String.fromCharCode(...new Uint8Array(buf)));
+  try {
+    const res = await fetch("/api/practice/voice/stt", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ audioBase64: b64, mime: blob.type }),
+    });
+    if (!res.ok) {
+      const j = (await res.json().catch(() => null)) as { error?: string } | null;
+      return { error: j?.error ?? "STT failed" };
+    }
+    return (await res.json()) as { transcript: string };
+  } catch {
+    return { error: "Network error" };
+  }
+}

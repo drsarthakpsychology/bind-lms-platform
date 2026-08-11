@@ -23,6 +23,7 @@
     "seed-test": "tsx scripts/seed-test-account.ts",
     "seed-peer": "tsx scripts/seed-peer.ts",
     "seed-calibration": "tsx scripts/seed-calibration.ts",
+    "pregen-voice": "tsx scripts/pregen-voice.ts",
     "draft-cards": "tsx scripts/draft-cards-from-lessons.ts",
     "psych:text": "tsx scripts/psychopharm/extract-text.ts",
     "psych:locator": "tsx scripts/psychopharm/locator-index.ts",

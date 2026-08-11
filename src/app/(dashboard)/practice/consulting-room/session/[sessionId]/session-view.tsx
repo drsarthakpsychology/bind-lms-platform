@@ -6,6 +6,7 @@ import { Mic } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { VoiceInput } from "@/components/practice/voice-input";
 import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
+import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
 import { DebriefView } from "./debrief-view";
 
 interface Turn {
@@ -74,6 +75,9 @@ export function SimSessionView({
   const [debrief, setDebrief] = React.useState<DebriefData | null>(null);
   const [ending, setEnding] = React.useState(false);
   const [voiceMode, setVoiceMode] = React.useState(false);
+  // v5 §6 — the Director's affect + fatigue drive delivery line by line.
+  const [patientAffect, setPatientAffect] = React.useState<Affect | null>(null);
+  const [patientFatigue, setPatientFatigue] = React.useState(0);
   // Side rail — blank MSE scratchpad + hypotheses (never autofilled: what the
   // student wrote is half the assessment).
   const [mseNotes, setMseNotes] = React.useState("");
@@ -141,7 +145,12 @@ export function SimSessionView({
         setInput(text);
         return;
       }
-      const j = (await res.json()) as { reply: string };
+      const j = (await res.json()) as { reply: string; affect?: Affect; fatigue?: number; mood?: string };
+      // v5 §6 — the Director's affect drives this line's delivery.
+      if (j.affect) {
+        setPatientAffect(j.affect);
+        setPatientFatigue(Number(j.fatigue ?? 0));
+      }
       // Human-realistic typing delay: reveal the reply progressively so it
       // doesn't appear instantly and shatter the illusion (v3 Part 6.1).
       setTyping(true);
@@ -385,7 +394,24 @@ export function SimSessionView({
               const lastPatient = [...turns].reverse().find((t) => t.role === "patient");
               return lastPatient?.content ?? "";
             }}
-            patientVoicePrefs={voicePrefs}
+            patientVoicePrefs={
+              patientAffect
+                ? {
+                    rate: affectToVoice(patientAffect, {
+                      fatigue: patientFatigue,
+                      baseRate: voicePrefs?.rate ?? 1,
+                      basePitch: voicePrefs?.pitch ?? 1,
+                    }).rate,
+                    pitch: affectToVoice(patientAffect, {
+                      fatigue: patientFatigue,
+                      baseRate: voicePrefs?.rate ?? 1,
+                      basePitch: voicePrefs?.pitch ?? 1,
+                    }).pitch,
+                    lang: voicePrefs?.lang ?? "en-IN",
+                    gender: voicePrefs?.gender,
+                  }
+                : voicePrefs
+            }
             disabled={busy}
           />
         ) : (
