@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { CONFUSABLE_PAIRS, scoreConfusable } from "./confusable";
+import { CONFUSABLE_PAIRS, MULTI_TERM_DRILLS, scoreConfusable, scoreMultiTerm } from "./confusable";
 
 describe("MSE confusable pairs", () => {
   it("covers the key pairs", () => {
@@ -30,5 +30,34 @@ describe("MSE confusable pairs", () => {
   it("akathisia-vs-anxiety is the trap pair (drug-induced restlessness)", () => {
     const pair = CONFUSABLE_PAIRS.find((p) => p.id === "akathisia-vs-anxiety")!;
     expect(pair.rule.toLowerCase()).toContain("drug");
+  });
+});
+
+describe("MSE multi-term set drills (v5 §3 L3)", () => {
+  it("covers the required set distinctions", () => {
+    const ids = MULTI_TERM_DRILLS.map((d) => d.id);
+    expect(ids).toContain("affect-qualities"); // blunted/flat/restricted/labile
+    expect(ids).toContain("poverty-speech-vs-content");
+    expect(ids).toContain("psychomotor-retardation-sedation-motivation");
+    expect(ids).toContain("insight-graded"); // graded, not binary
+    expect(ids).toContain("thought-form-set"); // flight/tangential/circumstantial/loosening
+  });
+
+  it("every drill has a rule, >= 3 items, and every correct answer is a term", () => {
+    for (const d of MULTI_TERM_DRILLS) {
+      expect(d.rule.length).toBeGreaterThan(15);
+      expect(d.items.length).toBeGreaterThanOrEqual(3);
+      for (const i of d.items) {
+        expect(d.terms).toContain(i.correct);
+      }
+    }
+  });
+
+  it("scoreMultiTerm counts exact label matches", () => {
+    const drill = MULTI_TERM_DRILLS[0];
+    const allCorrect: Record<string, string> = {};
+    for (const i of drill.items) allCorrect[i.prompt] = i.correct;
+    expect(scoreMultiTerm(drill.items, allCorrect)).toBe(drill.items.length);
+    expect(scoreMultiTerm(drill.items, {})).toBe(0);
   });
 });

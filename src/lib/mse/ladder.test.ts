@@ -99,8 +99,8 @@ describe("MSE expert codes", () => {
 });
 
 describe("MSE small things checklist", () => {
-  it("covers the novice-never-notice observations", () => {
-    expect(SMALL_THINGS.length).toBeGreaterThanOrEqual(10);
+  it("covers the novice-never-notice observations — at least 20 items (v5 §3.1)", () => {
+    expect(SMALL_THINGS.length).toBeGreaterThanOrEqual(20);
     for (const s of SMALL_THINGS) {
       expect(s.moment.length).toBeGreaterThan(20);
       expect(s.read.length).toBeGreaterThan(10);
