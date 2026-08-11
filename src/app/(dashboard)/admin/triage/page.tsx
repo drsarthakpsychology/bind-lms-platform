@@ -19,6 +19,25 @@ export default async function AdminTriagePage() {
     .order("created_at", { ascending: false })
     .limit(50);
 
+  // Quiz-attempt signal: items answered correctly by < 50% of attempts.
+  // Low-confidence quiz areas surface alongside sim scores for review.
+  const { data: quizAttempts } = await admin
+    .from("quiz_attempts")
+    .select("item_id, correct")
+    .limit(500);
+  const quizByItem = new Map<string, { total: number; correct: number }>();
+  for (const a of quizAttempts ?? []) {
+    const row = quizByItem.get(a.item_id) ?? { total: 0, correct: 0 };
+    row.total++;
+    if (a.correct) row.correct++;
+    quizByItem.set(a.item_id, row);
+  }
+  const weakQuizItems = [...quizByItem.entries()]
+    .filter(([, v]) => v.total >= 3 && v.correct / v.total < 0.5)
+    .map(([itemId, v]) => ({ itemId, correctPct: Math.round((v.correct / v.total) * 100), attempts: v.total }))
+    .sort((a, b) => a.correctPct - b.correctPct)
+    .slice(0, 10);
+
   // Count sessions per student (first-session detection) + count per student.
   const { data: allSessions } = await admin.from("sim_sessions").select("user_id, status");
 
@@ -57,7 +76,7 @@ export default async function AdminTriagePage() {
         description="Only what needs your eyes. The queue never shows more than 10 — the rest auto-releases with a label."
       />
       <div className="mt-6">
-        <TriageView needs={needs.slice(0, 10)} autoReleased={auto.length} />
+        <TriageView needs={needs.slice(0, 10)} autoReleased={auto.length} weakQuizItems={weakQuizItems} />
       </div>
     </div>
   );

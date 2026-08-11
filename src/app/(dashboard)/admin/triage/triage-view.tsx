@@ -11,12 +11,33 @@ import { AlertTriangle, CheckCircle2, ChevronRight } from "lucide-react";
 export function TriageView({
   needs,
   autoReleased,
+  weakQuizItems = [],
 }: {
   needs: Array<{ id: string; sessionId: string; overall: number; priority: number; premature: number }>;
   autoReleased: number;
+  /** quiz items answered correctly by < 50% of attempts (low-confidence areas). */
+  weakQuizItems?: Array<{ itemId: string; correctPct: number; attempts: number }>;
 }) {
   return (
     <div className="space-y-4">
+      {/* low-confidence quiz areas — the curriculum signal */}
+      {weakQuizItems.length > 0 ? (
+        <div className="rounded-md border-2 border-amber-400 bg-amber-50 p-3">
+          <p className="flex items-center gap-1.5 text-small font-semibold text-amber-800">
+            <AlertTriangle className="size-4" aria-hidden />
+            {weakQuizItems.length} quiz items answered correctly less than half the time
+          </p>
+          <ul className="mt-2 space-y-1">
+            {weakQuizItems.map((q) => (
+              <li key={q.itemId} className="flex items-center gap-2 text-caption text-amber-800">
+                <span className="font-medium">{q.itemId}</span>
+                <span className="text-muted-foreground">· {q.correctPct}% correct across {q.attempts} attempts</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
       <div className="flex items-center gap-2 rounded-md border-2 border-border bg-card p-3 text-small">
         <span className="flex items-center gap-1 font-medium">
           <AlertTriangle className="size-4 text-amber-600" aria-hidden />
