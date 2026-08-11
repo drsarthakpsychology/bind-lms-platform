@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { analyzeWeakSpots, type Rubric } from "./weak-spots";
+import { analyzeWeakSpots, generateDrill, type Rubric } from "./weak-spots";
 
 const GOOD: Rubric = {
   open_closed_ratio: 4.5,
@@ -52,5 +52,32 @@ describe("weak-spots analysis", () => {
       expect(s.severity).toBeGreaterThanOrEqual(0);
       expect(s.severity).toBeLessThanOrEqual(1);
     }
+  });
+});
+
+describe("weak-spots drill generation (v5 §4)", () => {
+  it("generates a 10-item drill from ranked weak spots", () => {
+    const spots = analyzeWeakSpots([PREMATURE, CLOSED, CLOSED]);
+    const drill = generateDrill(spots, 10);
+    expect(drill.length).toBe(10);
+    for (const item of drill) {
+      expect(item.weakLine.length).toBeGreaterThan(10);
+      expect(item.strongLine.length).toBeGreaterThan(10);
+      expect(item.why.length).toBeGreaterThan(20);
+    }
+  });
+
+  it("targets the top weak skills (round-robin, no repeats)", () => {
+    const spots = analyzeWeakSpots([PREMATURE, CLOSED]);
+    const drill = generateDrill(spots, 10);
+    const ids = new Set(drill.map((d) => d.id));
+    expect(ids.size).toBe(drill.length); // no duplicate items
+    const skills = new Set(drill.map((d) => d.skill));
+    expect(skills.has("Premature reassurance")).toBe(true);
+    expect(skills.has("Closed questions")).toBe(true);
+  });
+
+  it("returns empty for no weak spots", () => {
+    expect(generateDrill([])).toEqual([]);
   });
 });
