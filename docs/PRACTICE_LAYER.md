@@ -81,6 +81,16 @@ Every tool completion credits competencies: MSE levels, OSCE stations, Judgment 
 - `/admin/modules` bulk publish/schedule/grant; scheduled modules flip to published via the GitHub Actions cron (`release-scheduled`), never Vercel cron.
 - Students see locked modules greyed with the honest reason.
 
+## Wall governance
+
+- Students can **report** any post (5-second flag, no abuse surface).
+- Faculty resolve reports at **`/admin/wall-reports`** (open → resolved);
+  the queue shows the content + reason. Resolving keeps the content unless
+  faculty removes it separately.
+- Reactions (heart/insight/question/applause/worry) on posts AND replies —
+  signal without ranking; author_id is structurally nulled for anonymous
+  content on the `*_visible` views.
+
 ## Admin surfaces
 
 `/admin` · students · courses · submissions · tools · psychopharm-review · corpus/dictate · sim-review · triage · checkins · supervision · flags · calibration · modules · pulse · infra.

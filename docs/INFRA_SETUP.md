@@ -178,3 +178,12 @@ Expected spend: ~$1/mo R2 + one-time $10 OpenRouter credit.
 Live headroom dashboard: DB size vs 500 MB, top 10 tables, 7d AI usage,
 provider health. Red banner at 70%. A warning strip appears on /admin too.
 Fed by `infra_metrics()` RPC (service_role only).
+
+
+## Scheduled releases + admin tools (A2 / round-6 additions)
+
+- **Scheduled module release**: GitHub Actions cron runs
+  `/api/internal/cron?task=release-scheduled` daily, flipping modules whose
+  `release_at` has arrived to published. Never Vercel cron.
+- **Wall reports**: students flag posts/replies; faculty resolve them at
+  `/admin/wall-reports` (wall_reports table, open → resolved).
