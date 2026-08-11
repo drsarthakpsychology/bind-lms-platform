@@ -108,6 +108,20 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
   }
 
   /** Faculty pin/unpin — the Case of the Week. Admin-only route enforces it. */
+  async function reportPost(postId: string) {
+    haptic("tap");
+    try {
+      const res = await fetch("/api/practice/wall/report", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ postId, reason: "flagged by a cohort member" }),
+      });
+      if (res.ok) haptic("success");
+    } catch {
+      /* ignore */
+    }
+  }
+
   async function togglePin(postId: string, currentlyPinned: boolean) {
     haptic("tap");
     try {
@@ -246,6 +260,15 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                     className="rounded-full border border-border px-2 py-0.5 text-caption text-muted-foreground hover:bg-secondary"
                   >
                     Reply
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => void reportPost(p.id)}
+                    title="Report this post to faculty"
+                    aria-label="Report this post to faculty"
+                    className="rounded-full border border-border px-2 py-0.5 text-caption text-muted-foreground hover:bg-secondary"
+                  >
+                    Report
                   </button>
                 </div>
 

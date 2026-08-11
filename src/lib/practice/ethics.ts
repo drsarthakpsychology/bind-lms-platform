@@ -572,13 +572,7 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     ],
     law: "RCI code of ethics — termination of services requires proper notice and continuity planning; abandonment is a disciplinary offence.",
   },
-];
-
-/** Randomised daily set, seeded deterministically so the day's set is stable. */
-export function todaysDilemmas(daySeed: number, count = 3): EthicDilemma[] {
-  const day = Math.max(1, Math.floor(daySeed / 86400000));
-  const start = day % ETHICS_DILEMMAS.length;
-  const out: EthicDilemma[] = [  {
+  {
     id: "tech-video-session",
     tag: "Confidentiality",
     setting: "Video sessions",
@@ -699,6 +693,12 @@ export function todaysDilemmas(daySeed: number, count = 3): EthicDilemma[] {
     law: "Confidentiality generally survives death; records release only under legal authority.",
   },
 ];
+
+/** Randomised daily set, seeded deterministically so the day's set is stable. */
+export function todaysDilemmas(daySeed: number, count = 3): EthicDilemma[] {
+  const day = Math.max(1, Math.floor(daySeed / 86400000));
+  const start = day % ETHICS_DILEMMAS.length;
+  const out: EthicDilemma[] = [];
   for (let i = 0; i < count && out.length < ETHICS_DILEMMAS.length; i++) {
     out.push(ETHICS_DILEMMAS[(start + i) % ETHICS_DILEMMAS.length]);
   }
