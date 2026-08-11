@@ -221,3 +221,34 @@ create index if not exists idx_sct_attempts_user on public.sct_attempts (user_id
 create index if not exists idx_formulation_attempts_user on public.formulation_attempts (user_id);
 create index if not exists idx_mse_attempts_user on public.mse_attempts (user_id);
 create index if not exists idx_osce_attempts_user on public.osce_attempts (user_id);
+
+-- ---------------------------------------------------------------------------
+-- Formulation peer-critique wall (IDEAS: Formulation Wall) — anonymised
+-- narratives from Formulation Forge stage 4, visible to the cohort with
+-- reactions. author_id is stored but the SELECT policy nulls it for
+-- non-admins (same pattern as the wall's anonymity views).
+-- ---------------------------------------------------------------------------
+create table if not exists public.formulation_wall_posts (
+  id uuid primary key default gen_random_uuid(),
+  organization_id uuid,
+  author_id uuid not null references public.profiles (id) on delete cascade,
+  narrative text not null,
+  case_title text not null default 'Sim session',
+  created_at timestamptz not null default now()
+);
+
+alter table public.formulation_wall_posts enable row level security;
+create policy "formulation_wall_select_visible" on public.formulation_wall_posts
+  for select using (true);
+create policy "formulation_wall_insert_own" on public.formulation_wall_posts
+  for insert with check (auth.uid() = author_id);
+create policy "formulation_wall_admin_manage" on public.formulation_wall_posts
+  for all using (public.is_admin()) with check (public.is_admin());
+
+-- Anonymous view: author_id nulled for everyone (the wall is anonymous by
+-- design — the critique, not the author, is the content).
+create or replace view public.formulation_wall_visible as
+select
+  id, organization_id, narrative, case_title, created_at,
+  null::uuid as author_id
+from public.formulation_wall_posts;

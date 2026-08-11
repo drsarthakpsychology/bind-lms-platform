@@ -1,4 +1,5 @@
 import { FormulationForge } from "./forge";
+import { PeerWall } from "./peer-wall";
 import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
@@ -7,6 +8,7 @@ export const dynamic = "force-dynamic";
  * /practice/formulation — Formulation Forge (Part 6.2).
  * Stage 1: sort factor cards into the 5P grid (with distractors).
  * Stage 2: write the narrative. Stage 3: diff against the model — a diff, not a grade.
+ * Plus the anonymised peer-critique wall (IDEAS: Formulation Wall).
  */
 export default async function FormulationPage() {
   await requireFeature("formulation");
@@ -21,6 +23,17 @@ export default async function FormulationPage() {
 
       <div className="mt-6">
         <FormulationForge />
+      </div>
+
+      <div className="mt-10">
+        <h2 className="text-base font-semibold">The peer wall — anonymised critiques</h2>
+        <p className="mt-1 text-small text-muted-foreground">
+          Formulations the cohort has shared. The structure is the lesson; nobody&apos;s name
+          is attached.
+        </p>
+        <div className="mt-3">
+          <PeerWall />
+        </div>
       </div>
     </div>
   );
