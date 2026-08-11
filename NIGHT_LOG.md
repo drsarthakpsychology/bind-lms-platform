@@ -3,6 +3,23 @@
 Reverse-chron. One entry per slice: what shipped, decisions, commit hash.
 Protocol: never stop, never ask, keep the branch buildable.
 
+## 2026-08-12 (round 5 — content volume + wall governance + polish)
+
+### Shipped
+- Two-Minute Clinic 81 → **101** (paeds/geriatrics/perinatal)
+- Out of Depth 30 → **40** (supervision/countertransference)
+- Ethics 30 → **40** (technology boundaries; fixed a structural splice that had orphaned the first batch)
+- Quiz bank 21 → **36** (decode-themed)
+- Wall: **reported-content admin queue** (/admin/wall-reports) + student Report button + flag nav icon
+- Journal: one-tap **Share with faculty** (role-resolved, no email lookup)
+- **Weak-spots banner on /today** — server-computed real gaps above the primary card
+- Case Library: **B5 filter row** (10 disorder/trap chips over the corpus)
+- /today skeleton loading
+- e2e: no-disorder debrief renders (A8 restraint path)
+
+### State
+68 commits on feat/v5-depth · 268 tests · lint clean (3 pre-existing) · tsc clean · build green · QUEUE emptied round 6 next
+
 ## 2026-08-12 (rounds 4 — content volume: the moat)
 
 ### Shipped
