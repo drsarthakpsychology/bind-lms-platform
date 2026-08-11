@@ -11,6 +11,7 @@ interface WallReply {
   isAnonymous: boolean;
   isFaculty: boolean;
   createdAt: string;
+  reactions?: Record<string, number>;
 }
 
 interface WallPost {
@@ -79,20 +80,33 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
     }
   }
 
-  async function toggleReaction(postId: string, reaction: string) {
+  async function toggleReaction(target: { postId?: string; replyId?: string }, reaction: string) {
     haptic("tap");
-    const mine = myReactions[postId] ?? new Set();
+    const key = target.replyId ?? target.postId ?? "";
+    const mine = myReactions[key] ?? new Set();
     const had = mine.has(reaction);
     try {
       const res = await fetch("/api/practice/wall/reaction", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ postId, reaction }),
+        body: JSON.stringify({ postId: target.postId, replyId: target.replyId, reaction }),
       });
       if (!res.ok) return;
       // Optimistic update.
       setPosts((prev) => prev.map((p) => {
-        if (p.id !== postId) return p;
+        if (target.postId && p.id !== target.postId) return p;
+        if (target.replyId) {
+          return {
+            ...p,
+            replies: (p.replies ?? []).map((r) => {
+              if (r.id !== target.replyId) return r;
+              const counts = { ...(r.reactions ?? {}) };
+              counts[reaction] = Math.max(0, (counts[reaction] ?? 0) + (had ? -1 : 1));
+              if (counts[reaction] === 0) delete counts[reaction];
+              return { ...r, reactions: counts };
+            }),
+          };
+        }
         const counts = { ...(p.reactions ?? {}) };
         counts[reaction] = Math.max(0, (counts[reaction] ?? 0) + (had ? -1 : 1));
         if (counts[reaction] === 0) delete counts[reaction];
@@ -101,7 +115,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
       const next = new Set(mine);
       if (had) next.delete(reaction);
       else next.add(reaction);
-      setMyReactions((m) => ({ ...m, [postId]: next }));
+      setMyReactions((m) => ({ ...m, [key]: next }));
     } catch {
       /* optimistic rollback is acceptable — refresh next load */
     }
@@ -244,7 +258,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                       <button
                         key={r.key}
                         type="button"
-                        onClick={() => void toggleReaction(p.id, r.key)}
+                        onClick={() => void toggleReaction({ postId: p.id }, r.key)}
                         aria-pressed={mine}
                         aria-label={`${r.label} reaction, ${count}`}
                         className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground hover:bg-secondary"}`}
@@ -283,6 +297,27 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                           <span>· {new Date(r.createdAt).toLocaleDateString()}</span>
                         </div>
                         <p className="mt-1 whitespace-pre-wrap text-small">{r.content}</p>
+                        <div className="mt-1.5 flex flex-wrap items-center gap-1">
+                          {REACTIONS.map((rr) => {
+                            const Icon = rr.icon;
+                            const count = r.reactions?.[rr.key] ?? 0;
+                            const mine = myReactions[r.id]?.has(rr.key) ?? false;
+                            if (count === 0 && !mine) return null;
+                            return (
+                              <button
+                                key={rr.key}
+                                type="button"
+                                onClick={() => void toggleReaction({ replyId: r.id }, rr.key)}
+                                aria-pressed={mine}
+                                aria-label={`${rr.label} reaction, ${count}`}
+                                className={`inline-flex items-center gap-1 rounded-full border px-1.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                              >
+                                <Icon className="size-3" aria-hidden />
+                                {count}
+                              </button>
+                            );
+                          })}
+                        </div>
                       </li>
                     ))}
                   </ul>

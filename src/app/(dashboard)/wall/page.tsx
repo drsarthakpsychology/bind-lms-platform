@@ -29,16 +29,28 @@ export default async function WallPage() {
     .order("created_at", { ascending: false })
     .limit(50);
 
-  // Replies + reactions per post (reactions-not-upvotes: they signal, never rank).
+  // Replies + reactions per post AND per reply (reactions-not-upvotes).
   const postIds = (posts ?? []).map((p) => p.id);
-  const [{ data: replies }, { data: reactions }] = await Promise.all([
+  const [{ data: replies }, { data: reactions }, { data: replyReactions }] = await Promise.all([
     postIds.length
       ? supabase.from("wall_replies_visible").select("id, post_id, content, is_anonymous, is_faculty, created_at, author_id").in("post_id", postIds).order("created_at", { ascending: true })
       : Promise.resolve({ data: [] }),
     postIds.length
       ? supabase.from("wall_reactions").select("post_id, reaction").in("post_id", postIds)
       : Promise.resolve({ data: [] }),
+    postIds.length
+      ? supabase.from("wall_reactions").select("reply_id, reaction").not("reply_id", "is", null).in("post_id", postIds)
+      : Promise.resolve({ data: [] }),
   ]);
+
+  const reactionsByReply = new Map<string, Record<string, number>>();
+  for (const r of replyReactions ?? []) {
+    const key = String(r.reply_id);
+    const counts = reactionsByReply.get(key) ?? {};
+    const rk = String(r.reaction);
+    counts[rk] = (counts[rk] ?? 0) + 1;
+    reactionsByReply.set(key, counts);
+  }
 
   const repliesByPost = new Map<string, Array<Record<string, unknown>>>();
   for (const r of replies ?? []) {
@@ -82,6 +94,7 @@ export default async function WallPage() {
               isAnonymous: Boolean(r.is_anonymous),
               isFaculty: Boolean(r.is_faculty),
               createdAt: r.created_at as string,
+              reactions: reactionsByReply.get(String(r.id)) ?? {},
             })),
             reactions: reactionsByPost.get(p.id) ?? {},
           }))}
