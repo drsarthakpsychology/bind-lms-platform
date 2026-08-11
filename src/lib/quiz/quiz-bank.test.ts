@@ -4,7 +4,7 @@ import { scoreQuiz } from "./quiz";
 
 describe("quiz bank (brief §11.3 content volume)", () => {
   it("has at least 20 sourced items", () => {
-    expect(QUIZ_BANK.length).toBeGreaterThanOrEqual(50);
+    expect(QUIZ_BANK.length).toBeGreaterThanOrEqual(65);
   });
 
   it("every item carries a source citation and a rationale", () => {
