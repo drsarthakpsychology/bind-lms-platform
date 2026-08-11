@@ -95,3 +95,16 @@
 - [x] Case Library: filter row (disorder, trap, age, setting, idiom) on src/app/(dashboard)/practice/library/library-list.tsx (brief §B5 filter row)
 - [x] Skeleton loading for /today (matches the primary-card shape)
 - [x] e2e for the No-Disorder debrief: assert the restraint-praise path renders on a no-disorder case
+
+## ROUND 6 — infinite backlog (next content + governance + polish)
+
+- [ ] SCT items: 20 more templates in src/lib/practice/sct.ts (94 → 154; perinatal + geriatric + substance-withdrawal focus)
+- [ ] Idiom bank: 15 more entries (Punjabi + Malayalam + Odia + Assamese) in src/lib/decode/idioms.ts (80 → 95)
+- [ ] Quiz bank: 15 more items (spot-the-error + order-steps focus on MSE documentation) in src/lib/quiz/quiz-bank.ts (36 → 51)
+- [ ] Landmark cases: 3 more (David Rosenhan reread, the Tuskegee-style psychiatric parallel — choose Indian-context: the 'Jail of Erwadi' companion, Satyendra Nath Bose-era asylums, the Ranchi Indian Mental Hospital history) in src/lib/landmark/cases.ts (19 → 22)
+- [ ] Out of Depth: 10 more (crisis-line caller with no referral pathway, court-appointed client, mandated reporting in a school) (40 → 50)
+- [ ] Admin triage: surface low-confidence quiz areas (from quiz_attempts) alongside sim scores in src/app/(dashboard)/admin/triage/page.tsx
+- [ ] Wall: reactions on replies (the same 5-reaction set on reply rows)
+- [ ] Weak Spots: add 'trend' (improving/declining over sessions) to analyzeWeakSpots output + a one-line trend arrow on the page
+- [ ] e2e: journal share-to-faculty flow (share → revoke) with the test account
+- [ ] Docs: update MORNING_REPORT.md + NEEDS_KAVYA.md with the round-5 state (content counts, wall governance, filters)
