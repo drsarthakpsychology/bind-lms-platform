@@ -3,6 +3,23 @@
 Reverse-chron. One entry per slice: what shipped, decisions, commit hash.
 Protocol: never stop, never ask, keep the branch buildable.
 
+## 2026-08-12 (round 6 — content volume continues + wall governance)
+
+### Shipped
+- SCT 94 → **154** (20 templates: perinatal, geriatric, withdrawal, OCD, stroke)
+- Idioms 80 → **95** (Punjabi/Malayalam/Odia/Assamese batch)
+- Quiz bank 36 → **51** (MSE documentation spot-the-error/order-steps)
+- Landmark 19 → **22** (Ranchi asylum, beriberi 'insanity', 1918 influenza psychosis)
+- Out of Depth 40 → **50** (crisis line, court, school-mandated, grooming)
+- **Triage surfaces low-confidence quiz areas** (quiz_attempts aggregate, amber panel)
+- **Wall reactions on replies** (same 5-reaction set, aria-labelled)
+- **Weak Spots trend** — ▲ improving / ▼ worsening / — flat per spot
+- e2e: journal share-to-faculty + revoke (fixed missing go import)
+- MORNING_REPORT + NEEDS_KAVYA refreshed with the round-5/6 state
+
+### State
+82 commits on feat/v5-depth · 268 tests · lint clean (3 pre-existing) · tsc clean · build green · QUEUE emptied round 7 next
+
 ## 2026-08-12 (round 5 — content volume + wall governance + polish)
 
 ### Shipped
