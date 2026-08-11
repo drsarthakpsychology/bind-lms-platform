@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest";
 import { OUT_OF_DEPTH_SCENARIOS, scoreReferralDecision } from "./scenarios";
 
 describe("out-of-depth", () => {
-  it("has at least 10 scenarios", () => {
-    expect(OUT_OF_DEPTH_SCENARIOS.length).toBeGreaterThanOrEqual(10);
+  it("has 30 scenarios (A4 DONE MEANS)", () => {
+    expect(OUT_OF_DEPTH_SCENARIOS.length).toBeGreaterThanOrEqual(30);
   });
 
   it("every scenario has the refer/continue/medical option set + reasoning", () => {
