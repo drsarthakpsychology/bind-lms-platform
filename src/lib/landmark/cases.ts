@@ -270,4 +270,40 @@ export const LANDMARK_CASES: LandmarkCase[] = [
       { question: "What ethical question does H.M. raise?", options: ["None", "Consent for irreversible surgery and testing a man who cannot remember agreeing", "That research is always harmful", "That amnesia is fake"], correct: 1, rationale: "His incapacity to remember consent frames the modern informed-consent debate." },
     ],
   },
+  {
+    id: "landmark-ranki",
+    title: "The Ranchi European Lunatic Asylum — Indian asylum history",
+    domain: "indian",
+    story: "From 1918, the Ranchi European Lunatic Asylum (later the Ranchi Indian Mental Hospital) was among India's first modern psychiatric institutions — built on colonial lines that separated 'European' and 'native' patients, with occupational therapy and moral treatment rhetoric that masked the segregation at its core.",
+    believedThen: "That colonial-era psychiatry was benevolent science — humane care for the mentally ill regardless of who they were.",
+    understandNow: "The asylum's history is a lesson in how institutions encode the hierarchies of their era: separate wards, separate standards, and a 'lunacy' law built to manage empire as much as illness. The Indian Mental Health Act 1987 and the MHA 2017 are, in part, the long correction of that inheritance.",
+    quiz: [
+      { question: "What does the Ranchi asylum history teach?", options: ["Colonial asylums were perfectly humane", "Institutions encode their era's hierarchies — race, class and power shaped 'care'", "Indian psychiatry began in 1947", "Asylums never existed in India"], correct: 1, rationale: "The segregated wards show how social hierarchy shaped psychiatric practice." },
+      { question: "How does the MHA 2017 respond to that history?", options: ["It continues segregation", "It centres rights, dignity and equality of treatment", "It ignores the past", "It only governs asylums"], correct: 1, rationale: "The 2017 Act's rights-based framing is the correction of the institutional inheritance." },
+    ],
+  },
+  {
+    id: "landmark-beri-beri",
+    title: "The beriberi 'insanity' — the medical-mimic history",
+    domain: "indian",
+    story: "In colonial Indian hospitals, patients presenting with confusion, apathy and memory loss were routinely diagnosed as 'insane' — until the post-mortems and later clinical work revealed that a large share had beriberi and other deficiency states that had never been examined for. The label came first; the body was never asked.",
+    believedThen: "That unexplained behavioural change in Indian patients was 'hysteria' or 'insanity' — a characterological or racial explanation sufficed.",
+    understandNow: "The case is the historical ancestor of today's medical-mimic trap: the psychiatric label that precedes the physical examination. Every modern 'B12 depression' and 'thyroid anxiety' is the descendant of this pattern — the lesson is that the workup precedes the label.",
+    quiz: [
+      { question: "What does the beriberi history teach?", options: ["Colonial doctors were always right", "The psychiatric label can precede and suppress the physical workup — a pattern that survives today", "Deficiency states never mimic psychosis", "Behavioural change is never medical"], correct: 1, rationale: "The label-first pattern is the ancestor of the modern medical-mimic trap." },
+      { question: "Why does this matter for a counselling student?", options: ["It doesn't — counselling never touches medicine", "It teaches that 'unexplained' change deserves the medical screen before the psychological label", "It proves all Indian patients were misdiagnosed", "It only matters historically"], correct: 1, rationale: "The workup-before-label discipline is directly transferable to modern practice." },
+    ],
+  },
+  {
+    id: "landmark-morselli",
+    title: "The 'influenza psychosis' of 1918 — pandemic psychiatry in India",
+    domain: "indian",
+    story: "During the 1918 influenza pandemic (which killed millions in India), asylums reported a striking rise in admissions for 'influenza psychosis' — confusional states, delirium-like pictures, and prolonged behavioural changes attributed to the infection itself. Doctors argued about whether the virus caused 'insanity' directly or through fever, drugs and social collapse.",
+    believedThen: "That a single infectious agent directly produced a specific 'psychosis' — a clean cause-and-effect story.",
+    understandNow: "The episode teaches the modern lesson of post-infectious and post-ICU neuropsychiatric presentations: the delirium, the encephalitis-adjacent pictures, and the distinction between the infection's direct effects and the trauma of the illness. Pandemic psychiatry is not new — and neither is the error of collapsing a complex presentation into one agent.",
+    quiz: [
+      { question: "What survives from the 1918 'influenza psychosis' episode?", options: ["The virus directly caused one specific psychosis", "The complexity — delirium, post-infectious change, and the social collapse all interacted", "Pandemics never affect mental health", "It was all hysteria"], correct: 1, rationale: "The episode prefigures modern post-infectious neuropsychiatric presentations." },
+      { question: "Why does pandemic psychiatry history matter now?", options: ["It doesn't", "Post-infectious and post-ICU neuropsychiatric presentations have a long documented ancestry", "COVID invented these presentations", "Only virologists should study it"], correct: 1, rationale: "Understanding the 1918 pattern sharpens modern assessment of post-infectious change." },
+    ],
+  },
 ];
