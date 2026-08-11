@@ -74,6 +74,7 @@ export const FIXTURE_DEBRIEF = {
   quotes: [
     { quote: "patient: I'm fine.", better: "I hear you're fine. What's it been like since the last time we spoke?" },
     { quote: "student: You're not going to hurt yourself, right?", better: "Have you had thoughts of ending your life?" },
+    { quote: "student: Don't worry, you'll be fine.", better: "That sounds frightening — tell me more before we decide anything." },
   ],
   missed_disclosures: ["the patient would have told you about the debt if you'd asked openly about home"],
 };
