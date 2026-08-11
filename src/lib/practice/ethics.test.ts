@@ -3,7 +3,7 @@ import { ETHICS_DILEMMAS, todaysDilemmas } from "./ethics";
 
 describe("ethics & law dilemmas", () => {
   it("has 30 dilemmas (v5 §4 target) and every dilemma has exactly one correct option", () => {
-    expect(ETHICS_DILEMMAS.length).toBeGreaterThanOrEqual(30);
+    expect(ETHICS_DILEMMAS.length).toBeGreaterThanOrEqual(40);
     for (const d of ETHICS_DILEMMAS) {
       const correct = d.options.filter((o) => o.correct);
       expect(correct.length).toBe(1);

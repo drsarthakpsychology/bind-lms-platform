@@ -578,7 +578,127 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
 export function todaysDilemmas(daySeed: number, count = 3): EthicDilemma[] {
   const day = Math.max(1, Math.floor(daySeed / 86400000));
   const start = day % ETHICS_DILEMMAS.length;
-  const out: EthicDilemma[] = [];
+  const out: EthicDilemma[] = [  {
+    id: "tech-video-session",
+    tag: "Confidentiality",
+    setting: "Video sessions",
+    vignette: "A client who does video sessions from home says their family often walks in mid-session, and once their mother sat behind the camera 'listening to make sure I'm okay'. The client asks if they can continue anyway.",
+    options: [
+      { label: "Continue — the client chose to share the room.", consequence: "The client's consent is undermined by family surveillance; the sessions are not private, and the therapy is compromised without them knowing it.", correct: false },
+      { label: "Continue, but with a written agreement: a private space, headphones, and a signal to pause when interrupted.", consequence: "Correct. Video therapy needs a negotiated privacy frame — the agreement makes privacy real instead of assumed.", correct: true },
+      { label: "Refuse video entirely — only in-person sessions from now on.", consequence: "Refusing the medium abandons a working therapy over an environmental issue that a clear agreement can fix.", correct: false },
+    ],
+    law: "Confidentiality applies to the medium, not just the room — a documented privacy agreement is the standard for telehealth.",
+  },
+  {
+    id: "tech-social-stalking",
+    tag: "Confidentiality",
+    setting: "Social media",
+    vignette: "A client in distress tells you they found your Instagram and have been reading your posts 'to feel closer to you'. They mention details from your holiday photos.",
+    options: [
+      { label: "Ignore it — it's harmless curiosity.", consequence: "You've let the client's digital surveillance of you continue unaddressed, which distorts the therapeutic frame and can escalate.", correct: false },
+      { label: "Name it directly: the boundary, what you share publicly, and what the therapy relationship is and isn't.", consequence: "Correct. The boundary is yours to hold and explain — a warm, clear conversation restores the frame.", correct: true },
+      { label: "Block them on every platform silently.", consequence: "Blocking without naming the issue leaves the client confused and shamed — the conversation must come first.", correct: false },
+    ],
+    law: "Dual-relationship and boundary standards apply to digital contact; the clinician holds the frame.",
+  },
+  {
+    id: "tech-online-review",
+    tag: "Confidentiality",
+    setting: "Online reviews",
+    vignette: "A former client leaves a 1-star public review naming you and describing details of your sessions together ('she kept asking about my childhood').",
+    options: [
+      { label: "Reply publicly, correcting the inaccuracies — your reputation matters.", consequence: "Replying publicly confirms the therapeutic relationship and breaches the client's confidentiality in the most public way possible.", correct: false },
+      { label: "Report the review to the platform for the confidentiality breach, and respond privately to the former client about the boundary.", consequence: "Correct. Platforms remove identifying clinical reviews; the professional response is private, not public.", correct: true },
+      { label: "Ignore it completely.", consequence: "Ignoring leaves identifying clinical content public and teaches nothing about the boundary — action is owed.", correct: false },
+    ],
+    law: "Confidentiality survives the end of therapy; public responses that confirm the relationship breach it.",
+  },
+  {
+    id: "tech-whatsapp-hours",
+    tag: "Confidentiality",
+    setting: "Messaging hours",
+    vignette: "A client starts messaging you detailed session content at 11pm and expects replies 'like we do in sessions'. You've replied twice this week to 'not let them down'.",
+    options: [
+      { label: "Keep replying — abandoning a distressed client at night is worse.", consequence: "You've trained an expectation that 11pm text-therapy is available, and the actual therapy becomes the gaps between messages.", correct: false },
+      { label: "Set the communication boundary in session: what's urgent, what isn't, and when you respond.", consequence: "Correct. A documented response-window boundary protects both of you and teaches the client a sustainable care model.", correct: true },
+      { label: "Stop replying entirely without explanation.", consequence: "Silence without a frame is a rupture — the boundary must be named, not enacted silently.", correct: false },
+    ],
+    law: "RCI code of ethics — professional boundaries apply to all communication channels.",
+  },
+  {
+    id: "tech-recording-consent",
+    tag: "Consent",
+    setting: "Client records sessions",
+    vignette: "A client tells you they've been recording your sessions on their phone 'to remember what you said' — they've recorded four sessions without mentioning it until now.",
+    options: [
+      { label: "Allow it — the client owns their own life.", consequence: "Unconsented recording by the client still changes the record (and future legal exposure) without an agreed frame.", correct: false },
+      { label: "Set the frame: no recording without mutual agreement, and discuss what they're trying to hold onto by recording.", consequence: "Correct. The recording is a clinical event — what they're capturing with it matters as much as the consent question.", correct: true },
+      { label: "Demand they delete everything immediately and never record again.", consequence: "The demand without the conversation misses the clinical meaning of the recording and escalates the rupture.", correct: false },
+    ],
+    law: "Recording consent runs both ways; the frame is negotiated, not assumed.",
+  },
+  {
+    id: "tech-emergency-text",
+    tag: "Confidentiality",
+    setting: "Crisis messaging",
+    vignette: "A client texts 'I can't do this anymore' at 2am with no other context. You see it at 8am.",
+    options: [
+      { label: "Reply at 8am asking what happened — better late than never.", consequence: "An unread 2am risk message is a foreseeable gap you didn't plan for — the response-window frame should already exist, and the delay itself is the lesson.", correct: false },
+      { label: "Establish (now) a documented crisis protocol: what counts as urgent, who to contact, and a response-window promise.", consequence: "Correct. The 2am message exposes the missing protocol — building it now, with the client, is the ethical repair.", correct: true },
+      { label: "Tell them to call emergency services for anything after hours.", consequence: "A blanket 'call 999' deflects rather than plans — the protocol must be co-built with the client's actual support system.", correct: false },
+    ],
+    law: "Duty of care includes planning for out-of-hours risk; an honest protocol is the standard.",
+  },
+  {
+    id: "tech-family-group",
+    tag: "Confidentiality",
+    setting: "Family group chats",
+    vignette: "Your client's mother adds you to the family WhatsApp group 'so you can see what we're dealing with'. The client hasn't consented to any family contact.",
+    options: [
+      { label: "Stay in the group — you learn a lot about the family system.", consequence: "You've accepted a surveillance channel the client never consented to, and the family now has a direct line into the therapy's edges.", correct: false },
+      { label: "Leave the group and clarify with the client what family contact, if any, they want.", consequence: "Correct. The client's consent governs all family contact — leaving the group and asking is the frame.", correct: true },
+      { label: "Reply occasionally to 'keep the peace'.", consequence: "Occasional replies legitimise the channel — the boundary is all-or-nothing until the client decides otherwise.", correct: false },
+    ],
+    law: "Family contact flows through the client's consent, not the family's initiative.",
+  },
+  {
+    id: "tech-clone-app",
+    tag: "RCI scope",
+    setting: "AI tools",
+    vignette: "A colleague suggests you 'save time' by having an AI chatbot draft your session notes, including verbatim client disclosures.",
+    options: [
+      { label: "Use it — it saves hours and nobody will know.", consequence: "Verbatim clinical disclosures in an unvetted AI tool is a confidentiality breach with unknown storage and training implications.", correct: false },
+      { label: "Draft notes yourself; AI can help only with anonymised, non-identifying structure.", consequence: "Correct. Clinical notes stay human and identifying data never enters third-party tools — the anonymised-structure path is the ethical one.", correct: true },
+      { label: "Use it but delete the chats afterwards.", consequence: "Deletion doesn't un-train or un-store — the disclosure already left your control.", correct: false },
+    ],
+    law: "Confidentiality applies to AI tools; identifying data must never reach third-party processing.",
+  },
+  {
+    id: "tech-remote-border",
+    tag: "RCI scope",
+    setting: "Cross-state practice",
+    vignette: "A client who began in-person sessions has moved to another state and asks to continue via video. You're not registered in their new state.",
+    options: [
+      { label: "Continue — the relationship is what matters.", consequence: "Practising across a regulatory border without the new state's registration is a scope and legal exposure issue.", correct: false },
+      { label: "Clarify the regulatory position, and continue with the client's informed consent while you sort the registration, or refer locally if needed.", consequence: "Correct. The client's continuity matters, but the regulatory gap must be named and resolved — informed choice either way.", correct: true },
+      { label: "End the therapy immediately.", consequence: "Ending without a handover over a resolvable registration issue abandons the client — the middle path exists.", correct: false },
+    ],
+    law: "RCI registration is jurisdictional; cross-state telehealth needs the new state's position clarified.",
+  },
+  {
+    id: "tech-death-account",
+    tag: "Confidentiality",
+    setting: "After death",
+    vignette: "A client dies suddenly. Their sibling finds therapy-related notes on the client's phone and emails you asking for 'the whole story' of the therapy.",
+    options: [
+      { label: "Share what you can — the family needs closure.", consequence: "Confidentiality survives death; the sibling's grief doesn't create a right to the therapy record.", correct: false },
+      { label: "Offer a compassionate, non-clinical summary of the client's care, and suggest bereavement support.", consequence: "Correct. The family gets understanding, not records — a synthesis that serves grief without breaching the dead client.", correct: true },
+      { label: "Share the notes with the client's doctor only if asked.", consequence: "Even the doctor path needs a legal basis — a casual share is still a breach.", correct: false },
+    ],
+    law: "Confidentiality generally survives death; records release only under legal authority.",
+  },
+];
   for (let i = 0; i < count && out.length < ETHICS_DILEMMAS.length; i++) {
     out.push(ETHICS_DILEMMAS[(start + i) % ETHICS_DILEMMAS.length]);
   }
