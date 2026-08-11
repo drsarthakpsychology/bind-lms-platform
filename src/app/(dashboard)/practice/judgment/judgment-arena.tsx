@@ -3,6 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { panelDistribution, scoreSctResponse, type SctItem, type SctResponse } from "@/lib/practice/sct";
+import { JUDGMENT_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
 const RESPONSE_LABELS: Record<SctResponse, string> = {
   [-2]: "Much less likely",
@@ -31,11 +32,23 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
   const [answered, setAnswered] = React.useState<Array<{ response: SctResponse; score: number }>>([]);
   const [showPanel, setShowPanel] = React.useState(false);
   const [seconds, setSeconds] = React.useState(0);
+  const creditedRef = React.useRef(false);
 
   React.useEffect(() => {
     const id = setInterval(() => setSeconds((s) => s + 1), 1000);
     return () => clearInterval(id);
   }, []);
+
+  // Credit the completed daily set into the Skills Passport exactly once.
+  React.useEffect(() => {
+    if (idx >= items.length && answered.length > 0 && !creditedRef.current) {
+      creditedRef.current = true;
+      const avg = answered.reduce((a, b) => a + b.score, 0) / answered.length;
+      void recordCompetencyEvent("judgment", JUDGMENT_COMPETENCY_KEYS, avg * 5, `${answered.length} judgment calls`).catch(() => {
+        creditedRef.current = false; // allow retry next visit
+      });
+    }
+  }, [idx, items.length, answered]);
 
   const item = items[idx];
   const panel = simulatedPanel(item.id);

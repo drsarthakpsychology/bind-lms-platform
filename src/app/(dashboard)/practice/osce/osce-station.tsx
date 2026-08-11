@@ -4,6 +4,7 @@ import * as React from "react";
 import { Mic, Timer } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { SEED_OSCE_STATIONS, scoreOsce, seededRotate } from "@/lib/practice/osce";
+import { OSCE_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
 export function OsceStationView() {
   const [stationIdx, setStationIdx] = React.useState(0);
@@ -171,7 +172,16 @@ export function OsceStationView() {
 
       <button
         type="button"
-        onClick={() => { setDone(true); setPhase("choose"); haptic("success"); }}
+        onClick={() => {
+          if (!done) {
+            // Credit the station's competencies into the Skills Passport once.
+            const keys = OSCE_COMPETENCY_KEYS[station.id] ?? ["clinical_interviewing"];
+            void recordCompetencyEvent("osce", keys, selfGlobal || Math.round(frac * 5), `OSCE: ${station.title}`).catch(() => {});
+          }
+          setDone(true);
+          setPhase("choose");
+          haptic("success");
+        }}
         className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
       >
         {done ? "Practise another station" : "Save & pick another"}

@@ -3,6 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP } from "@/lib/practice/formulation";
+import { FORMULATION_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
 /**
  * Stage 1: sort factor cards. Mobile: tap a card to select, tap a bucket to
@@ -246,6 +247,8 @@ function OwnTranscriptForge() {
 
   function diffIt() {
     setDiff(diffNarratives(narrative, modelNarrative || SEED_FORMULATION.modelNarrative));
+    // Credit the formulation competencies into the Skills Passport.
+    void recordCompetencyEvent("formulation", FORMULATION_COMPETENCY_KEYS, narrative.trim().length >= 120 ? 4 : 3, "Formulation from own transcript").catch(() => {});
     haptic("tap");
   }
 

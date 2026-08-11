@@ -3,6 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { dailyQueue, newCardState, reviewCard, type CardRating, type CardState } from "@/lib/practice/rounds";
+import { ROUNDS_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
 /** Seed cards for the slice (real cards come from lesson transcripts → admin queue). */
 const SEED_CARDS = [
@@ -38,6 +39,8 @@ export function RoundsDeck() {
     setShowBack(false);
     if (idx + 1 >= queue.length) {
       setDone(true);
+      // Credit the completed daily session into the Skills Passport.
+      void recordCompetencyEvent("rounds", ROUNDS_COMPETENCY_KEYS, 4, `${queue.length} cards reviewed`).catch(() => {});
       haptic("success");
     } else {
       setIdx(idx + 1);

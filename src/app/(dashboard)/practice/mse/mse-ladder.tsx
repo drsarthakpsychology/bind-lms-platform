@@ -4,6 +4,7 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { MSE_LEVEL_META, MSE_LEVELS, type MseLevel } from "@/lib/mse/ladder";
+import { MSE_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { ConfusableDrill } from "./confusable-drill";
 import { ObserveLevel } from "./level-observe";
 import { DomainLevel } from "./level-domain";
@@ -23,10 +24,27 @@ export function MseLadder() {
     "4": false,
     "5": false,
   });
+  const [credited, setCredited] = React.useState<Record<MseLevel, boolean>>({
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": false,
+    "5": false,
+  });
 
   function markDone(level: MseLevel) {
     setDone((d) => ({ ...d, [level]: true }));
     haptic("success");
+    // Credit the level's competencies into the Skills Passport (once).
+    if (!credited[level]) {
+      const keys = MSE_COMPETENCY_KEYS[level] ?? [];
+      if (keys.length > 0) {
+        setCredited((c) => ({ ...c, [level]: true }));
+        recordCompetencyEvent("mse", keys, 5, `MSE level ${level} completed`).catch(() => {
+          setCredited((c) => ({ ...c, [level]: false })); // retry on next completion
+        });
+      }
+    }
     if (level !== "5") setActive(level === "1" ? "2" : level === "2" ? "3" : level === "3" ? "4" : "5");
   }
 
