@@ -2089,7 +2089,267 @@ const REGIONAL3: IdiomEntry[] = [
   },
 ];
 
-export const IDIOMS: IdiomEntry[] = [...ALL_SOMATIC, ...CULTURE_BOUND, ...BORROWED, ...EXTRA, ...REGIONAL, ...REGIONAL2, ...REGIONAL3];
+
+/** Regional batch 4 (round 8) — Tulu, Dogri, Maithili, Rajasthani, Chattisgarhi. */
+const REGIONAL4: IdiomEntry[] = [
+  {
+    id: "idiom-tulu-mana",
+    phrase: "mana pooji (Tulu) / mind is disturbed",
+    register: ["Tulu", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Mental distress — 'the mind is disturbed'", likelihood: "high" },
+      { reading: "Worry/rumination", likelihood: "medium" },
+      { reading: "Physical malaise", likelihood: "low", clue: "fever, body ache", physical: true },
+    ],
+    disambiguating_questions: [
+      "Pooji about what, since when, and what does it change?",
+      "Is it the feelings, the thoughts, or the body?",
+    ],
+    trap: "Mana pooji is the Tulu default — the what/since-when/function questions decide.",
+    sources: ["Tulu clinical encounters"],
+  },
+  {
+    id: "idiom-tulu-kaile",
+    phrase: "kaile ijji (Tulu) / no energy",
+    register: ["Tulu", "adult"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Anaemia / nutritional deficiency", likelihood: "high", clue: "pallor, exertion fatigue", physical: true },
+      { reading: "Depressive anergia", likelihood: "medium", clue: "morning worst, anhedonia" },
+      { reading: "Chronic illness fatigue", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "No energy in the body, or no energy for anything?",
+      "What does a day look like?",
+    ],
+    trap: "Kaile ijji is the Tulu kamzori — the physical triad and the mood screen, both.",
+    sources: ["Tulu somatic idioms"],
+  },
+  {
+    id: "idiom-dogri-jee",
+    phrase: "jee ghatda (Dogri) / the heart shrinks",
+    register: ["Dogri", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Fear/dread — 'the heart shrinks'", likelihood: "high" },
+      { reading: "Anxiety with physical symptoms", likelihood: "medium" },
+      { reading: "Depressive heaviness", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Heart shrinks from what — a situation, a thought, or a memory?",
+      "What happens in the body when it shrinks?",
+    ],
+    trap: "'The heart shrinks' is the Dogri fear idiom — the trigger and the physical correlate are the clinical data.",
+    sources: ["Dogri idioms of distress"],
+  },
+  {
+    id: "idiom-dogri-khoj",
+    phrase: "khoj khoj ke thak geya (Dogri) / tired of searching and searching",
+    register: ["Dogri", "adult"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Chronic worry — 'searching for answers'", likelihood: "high" },
+      { reading: "Rumination with exhaustion", likelihood: "medium" },
+      { reading: "Health anxiety (searching for the cause)", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What are you searching for — a cause, a cure, a reassurance?",
+      "Has the searching changed what you do?",
+    ],
+    trap: "'Tired of searching' is the Dogri rumination frame — the content of the search and the exhaustion are the clinical weight.",
+    sources: ["Dogri help-seeking literature"],
+  },
+  {
+    id: "idiom-maithili-man",
+    phrase: "man bekar (Maithili) / mind is wasted",
+    register: ["Maithili", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Despair — 'the mind is wasted'", likelihood: "high" },
+      { reading: "Depression if persistent", likelihood: "medium" },
+      { reading: "Cognitive fatigue", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Wasted by what, since when, and what does it stop you doing?",
+      "Have you had thoughts of ending your life?",
+    ],
+    trap: "The dramatic 'mind is wasted' can mask risk — the will-to-live question is non-negotiable.",
+    sources: ["Maithili risk-screening literature"],
+  },
+  {
+    id: "idiom-maithili-jor",
+    phrase: "jor ghatal (Maithili) / strength has fallen",
+    register: ["Maithili", "adult"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Physical weakness — anaemia, deficiency", likelihood: "high", clue: "pallor, exertion", physical: true },
+      { reading: "Depressive fatigue", likelihood: "medium", clue: "morning worst" },
+      { reading: "Post-illness debility", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Strength fallen in the body or the spirit?",
+      "What used to be easy that isn't?",
+    ],
+    trap: "Jor ghatal is the Maithili kamzori — the physical triad and the mood screen, both.",
+    sources: ["Maithili clinical practice"],
+  },
+  {
+    id: "idiom-rajasthani-dil",
+    phrase: "dil bhaari (Rajasthani) / heavy heart",
+    register: ["Rajasthani", "all ages"],
+    readings: ["psychopathology", "cultural_idiom", "disease"],
+    possible_meanings: [
+      { reading: "Sadness/grief — the heavy heart", likelihood: "high" },
+      { reading: "Depression if persistent", likelihood: "medium" },
+      { reading: "Chest heaviness (cardiac workup)", likelihood: "low", clue: "exertional, pressure", physical: true },
+    ],
+    disambiguating_questions: [
+      "Heavy with grief or heavy in the chest?",
+      "Does it lift with good news?",
+    ],
+    trap: "Dil bhaari is the Rajasthani heart-idiom — the grief question and the cardiac question, both.",
+    sources: ["Rajasthani idioms; cardiac-mimic literature"],
+  },
+  {
+    id: "idiom-rajasthani-taap",
+    phrase: "taap chadhe (Rajasthani) / the heat rises",
+    register: ["Rajasthani", "adult"],
+    readings: ["cultural_idiom", "disease"],
+    possible_meanings: [
+      { reading: "Anger — 'the heat rises in me'", likelihood: "high" },
+      { reading: "Fever (literal)", likelihood: "medium", clue: "measured temperature", physical: true },
+      { reading: "Somatic anxiety (hot flushes)", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Heat like anger or like fever?",
+      "When does it rise — with provocation or with the body?",
+    ],
+    trap: "Taap straddles anger and fever in Rajasthani — the measured-temperature question decides.",
+    sources: ["Rajasthani humoral idioms"],
+  },
+  {
+    id: "idiom-chhattisgarhi-jee",
+    phrase: "jee dukhe (Chhattisgarhi) / the soul aches",
+    register: ["Chhattisgarhi", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Emotional pain — 'the soul aches'", likelihood: "high" },
+      { reading: "Grief/loss", likelihood: "medium", clue: "bereavement" },
+      { reading: "Depression if persistent", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What is the jee aching about?",
+      "How long, and what does it stop you doing?",
+    ],
+    trap: "Jee dukhe is the Chhattisgarhi heart-soul — the what/since-when/function questions decide.",
+    sources: ["Chhattisgarhi idioms of distress"],
+  },
+  {
+    id: "idiom-chhattisgarhi-bhut",
+    phrase: "bhut lagat hai (Chhattisgarhi) / a spirit has caught me",
+    register: ["Chhattisgarhi", "adult"],
+    readings: ["cultural_idiom", "psychopathology"],
+    possible_meanings: [
+      { reading: "Possession/spirit attribution — culturally sanctioned distress expression", likelihood: "high", clue: "episodes, intact between" },
+      { reading: "Dissociative episode", likelihood: "medium" },
+      { reading: "First-episode psychosis if persistent with fixed beliefs", likelihood: "low" },
+    ],
+    disambiguating_questions: [
+      "What happens between the episodes — is she fully herself?",
+      "What does she make of it herself?",
+    ],
+    trap: "The bhut frame is the Chhattisgarhi possession idiom — function between episodes is the discriminator.",
+    sources: ["Possession-trance literature; Chhattisgarhi clinical vignettes"],
+  },
+  {
+    id: "idiom-chhattisgarhi-kamzori",
+    phrase: "kamzori aawe (Chhattisgarhi) / weakness comes",
+    register: ["Chhattisgarhi", "adult"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Anaemia / nutritional deficiency", likelihood: "high", clue: "pallor, diet, heavy periods", physical: true },
+      { reading: "Depressive fatigue", likelihood: "medium" },
+      { reading: "Malaria-endemic post-fever debility", likelihood: "medium", clue: "recent fever", physical: true },
+    ],
+    disambiguating_questions: [
+      "Weakness in the body or the spirit?",
+      "Any recent fever, weight loss, or pallor?",
+    ],
+    trap: "Kamzori aawe is the Chhattisgarhi carrier — the malaria/fever history and the mood screen, both.",
+    sources: ["Chhattisgarhi clinical practice; malaria-endemic region awareness"],
+  },
+  {
+    id: "idiom-maithili-chinta",
+    phrase: "chinta laagal (Maithili) / worry has stuck",
+    register: ["Maithili", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Worry/rumination — 'chinta has stuck'", likelihood: "high" },
+      { reading: "Anxiety disorder if persistent and impairing", likelihood: "medium" },
+      { reading: "Somatic anxiety", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Chinta about what, since when, and what does it stop you doing?",
+      "What happens in the body when chinta comes?",
+    ],
+    trap: "'Chinta has stuck' is the Maithili tension — the specify question is the same as everywhere.",
+    sources: ["Maithili 'chinta' literature"],
+  },
+  {
+    id: "idiom-dogri-soch",
+    phrase: "soch bahut aawe (Dogri) / too much thinking comes",
+    register: ["Dogri", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Overthinking/rumination", likelihood: "high" },
+      { reading: "Insomnia with racing thoughts", likelihood: "medium" },
+      { reading: "Anxiety", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What does the thinking run toward?",
+      "Does it stop you sleeping or working?",
+    ],
+    trap: "Dogri 'too much thinking' is rumination — the content and the function cost are the data.",
+    sources: ["Dogri anxiety idioms"],
+  },
+  {
+    id: "idiom-tulu-bayike",
+    phrase: "bayike undu (Tulu) / there is fear",
+    register: ["Tulu", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Anxiety/fear", likelihood: "high" },
+      { reading: "Panic episodes (palpitations, breathlessness)", likelihood: "medium" },
+      { reading: "Trauma-related fear", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Fear of what, and what happens in the body at the peak?",
+      "Does it come with a situation or out of nowhere?",
+    ],
+    trap: "Bayike is the Tulu fear frame — the spontaneous-vs-situational question is the diagnosis.",
+    sources: ["Tulu idioms; panic-spectrum literature"],
+  },
+  {
+    id: "idiom-rajasthani-soya",
+    phrase: "soya soya rehna (Rajasthani) / keep lying down",
+    register: ["Rajasthani", "adult"],
+    readings: ["psychopathology", "disease"],
+    possible_meanings: [
+      { reading: "Depressive inertia — 'I can only lie down'", likelihood: "high" },
+      { reading: "Physical exhaustion (anaemia, chronic illness)", likelihood: "medium", clue: "pallor, known disease", physical: true },
+      { reading: "Avoidance behaviour", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Lying down from exhaustion or from 'no point'?",
+      "Have you had thoughts of ending your life?",
+    ],
+    trap: "'Keep lying down' is the Rajasthani inertia idiom — the exhaustion/despair question and the risk screen, both.",
+    sources: ["Rajasthani risk-screening literature"],
+  },
+];
+
+export const IDIOMS: IdiomEntry[] = [...ALL_SOMATIC, ...CULTURE_BOUND, ...BORROWED, ...EXTRA, ...REGIONAL, ...REGIONAL2, ...REGIONAL3, ...REGIONAL4];
 
 /** Score a multi-select decode attempt: physical readings weigh more. */
 export function scoreDecode(entry: IdiomEntry, selected: string[]): { score: number; max: number; missedPhysical: string[] } {
