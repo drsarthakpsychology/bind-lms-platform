@@ -41,6 +41,23 @@ export default async function AdminPulsePage() {
   const drifting = rows.filter((r) => r.daysSilent >= 7).sort((a, b) => b.daysSilent - a.daysSilent);
   const flying = rows.filter((r) => r.daysSilent < 2);
 
+  // Check-in × activity cross-reference (A6): activity dropping WHILE load
+  // scores spike = a curriculum problem, not a motivation problem. Read via
+  // the aggregate view only — no user identifiers, ever.
+  const { data: checkinsAgg } = await admin.from("checkins_aggregate").select("*").order("week_label", { ascending: false }).limit(4);
+  const weeks = (checkinsAgg ?? []).map((w) => ({
+    week: String(w.week_label),
+    n: Number(w.n_responses ?? 0),
+    workload: Number(w.avg_workload ?? 0),
+    energy: Number(w.avg_energy ?? 0),
+    preparedness: Number(w.avg_preparedness ?? 0),
+  }));
+  const recentWeeks = weeks.slice(0, 2);
+  const curriculumFlag =
+    recentWeeks.length === 2 &&
+    recentWeeks[0].workload > recentWeeks[1].workload &&
+    recentWeeks[0].n < recentWeeks[1].n;
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <PageHeader
@@ -48,7 +65,14 @@ export default async function AdminPulsePage() {
         description="Who's drifting, who's stuck, who's flying. The metric that determines whether Cohort One succeeds."
       />
       <div className="mt-6">
-        <PulseView drifting={drifting.map((d) => ({ email: d.email, daysSilent: d.daysSilent }))} flying={flying.map((f) => f.email)} total={rows.length} active={rows.filter((r) => r.daysSilent < 7).length} />
+        <PulseView
+          drifting={drifting.map((d) => ({ email: d.email, daysSilent: d.daysSilent }))}
+          flying={flying.map((f) => f.email)}
+          total={rows.length}
+          active={rows.filter((r) => r.daysSilent < 7).length}
+          weeks={weeks}
+          curriculumFlag={curriculumFlag}
+        />
       </div>
     </div>
   );

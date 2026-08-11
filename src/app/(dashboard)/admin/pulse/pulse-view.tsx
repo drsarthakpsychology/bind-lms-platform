@@ -13,11 +13,17 @@ export function PulseView({
   flying,
   total,
   active,
+  weeks = [],
+  curriculumFlag = false,
 }: {
   drifting: Array<{ email: string; daysSilent: number }>;
   flying: string[];
   total: number;
   active: number;
+  /** checkins_aggregate weeks (no identifiers) — the load/energy curve. */
+  weeks?: Array<{ week: string; n: number; workload: number; energy: number; preparedness: number }>;
+  /** activity dropping + load spiking = curriculum problem, not motivation. */
+  curriculumFlag?: boolean;
 }) {
   const [nudged, setNudged] = React.useState<Record<string, boolean>>({});
 
@@ -45,6 +51,40 @@ export function PulseView({
           <p className="text-numeric text-h3 font-semibold text-green-700">{flying.length}</p>
         </div>
       </div>
+
+      {/* curriculum flag — activity dropping while load spikes */}
+      {curriculumFlag ? (
+        <div className="rounded-md border-2 border-primary bg-primary/5 p-4">
+          <p className="flex items-center gap-2 text-base font-semibold">
+            <AlertTriangle className="size-4 text-primary" aria-hidden />
+            Curriculum problem, not a motivation problem
+          </p>
+          <p className="mt-1 text-small text-muted-foreground">
+            Check-in responses are dropping while average workload is rising.
+            Fix the load before blaming the students.
+          </p>
+        </div>
+      ) : null}
+
+      {/* cohort curve — aggregate weeks, no identifiers */}
+      {weeks.length > 0 ? (
+        <div className="rounded-md border-2 border-border bg-card p-4">
+          <p className="flex items-center gap-2 text-base font-semibold">
+            <Radar className="size-4 text-muted-foreground" aria-hidden /> Cohort curve (aggregate)
+          </p>
+          <ul className="mt-2 space-y-1">
+            {weeks.map((w) => (
+              <li key={w.week} className="flex items-center gap-3 text-small">
+                <span className="w-24 shrink-0 font-medium">{w.week}</span>
+                <span className="text-caption text-muted-foreground">{w.n} responses</span>
+                <span className="text-caption">workload {w.workload.toFixed(1)}</span>
+                <span className="text-caption">energy {w.energy.toFixed(1)}</span>
+                <span className="text-caption">preparedness {w.preparedness.toFixed(1)}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
 
       {/* drifting */}
       <div className="rounded-md border-2 border-border bg-card p-4">
