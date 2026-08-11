@@ -3,7 +3,7 @@ import { IDIOMS, scoreDecode } from "./idioms";
 
 describe("idiom bank", () => {
   it("has the expanded idiom bank (60+ entries)", () => {
-    expect(IDIOMS.length).toBeGreaterThanOrEqual(90);
+    expect(IDIOMS.length).toBeGreaterThanOrEqual(105);
   });
 
   it("every idiom id is unique and kebab-case", () => {

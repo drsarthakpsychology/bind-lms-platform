@@ -1829,7 +1829,267 @@ const REGIONAL2: IdiomEntry[] = [
   },
 ];
 
-export const IDIOMS: IdiomEntry[] = [...ALL_SOMATIC, ...CULTURE_BOUND, ...BORROWED, ...EXTRA, ...REGIONAL, ...REGIONAL2];
+
+/** Regional batch 3 (round 7) — Kashmiri, Konkani, Bhojpuri, Sindhi, Nepali. */
+const REGIONAL3: IdiomEntry[] = [
+  {
+    id: "idiom-kashmiri-traash",
+    phrase: "traash / terror (Kashmiri)",
+    register: ["Kashmiri", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Anxiety/fear in a conflict-affected context — the word carries the lived reality", likelihood: "high" },
+      { reading: "PTSD-related fear (startle, avoidance, re-experiencing)", likelihood: "medium", clue: "trauma history" },
+      { reading: "Situational worry", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What does the traash attach to — a situation, a memory, or your own body?",
+      "What happens in the body when traash comes?",
+    ],
+    trap: "In conflict-affected Kashmir, traash is both a word and a context — the trauma screen matters as much as the anxiety label.",
+    sources: ["Kashmir mental-health literature; PTSD screening"],
+  },
+  {
+    id: "idiom-kashmiri-walus",
+    phrase: "walus / heart-liver (Kashmiri)",
+    register: ["Kashmiri", "adult"],
+    readings: ["cultural_idiom", "psychopathology"],
+    possible_meanings: [
+      { reading: "Emotional suffering — the heart-liver as the feeling-seat", likelihood: "high" },
+      { reading: "Grief/loss", likelihood: "medium", clue: "recent bereavement" },
+      { reading: "Depression if persistent with functional decline", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What is the walus suffering from?",
+      "How long, and what does it stop you doing?",
+    ],
+    trap: "Walus is the Kashmiri feeling-organ — the what/since-when/function questions decide.",
+    sources: ["Kashmiri idioms of distress"],
+  },
+  {
+    id: "idiom-konkani-man",
+    phrase: "man dukhchem (Konkani) / mind is sorrowful",
+    register: ["Konkani", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Sadness — the everyday heart-mind", likelihood: "high" },
+      { reading: "Depression if persistent", likelihood: "medium" },
+      { reading: "Physical malaise", likelihood: "low", clue: "fever, body ache", physical: true },
+    ],
+    disambiguating_questions: [
+      "Dukhi about what, since when, and what does it change?",
+      "Is it the feelings or the body?",
+    ],
+    trap: "Man dukhchem is the Konkani default sadness — persistence and function decide.",
+    sources: ["Konkani clinical encounters"],
+  },
+  {
+    id: "idiom-konkani-kalp",
+    phrase: "kalpanam vaddi (Konkani) / too much imagination",
+    register: ["Konkani", "adult"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Worry/rumination — 'the imagination runs'", likelihood: "high" },
+      { reading: "Somatic anxiety (the imagined illness)", likelihood: "medium" },
+      { reading: "Overvalued fears", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What does the imagination run toward — illness, loss, danger?",
+      "What happens in the body when it runs?",
+    ],
+    trap: "'Too much imagination' is how Konkani-speakers name rumination — the content and the physical correlate are the clinical data.",
+    sources: ["Konkani anxiety literature"],
+  },
+  {
+    id: "idiom-bhojpuri-tan",
+    phrase: "tan jalat ba (Bhojpuri) / the body burns",
+    register: ["Bhojpuri", "adult"],
+    readings: ["disease", "psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Burning body sensations — neuropathy, gastritis, fever", likelihood: "high", clue: "burning on touch, epigastric", physical: true },
+      { reading: "Anger/agitation — 'burning inside'", likelihood: "medium" },
+      { reading: "Somatic anxiety", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Burning in the body, or burning in the temper?",
+      "When does it rise — with food, with anger, or both?",
+    ],
+    trap: "'The body burns' straddles physical burning and inner rage — the quality question decides.",
+    sources: ["Bhojpuri humoral idioms"],
+  },
+  {
+    id: "idiom-bhojpuri-man-bhari",
+    phrase: "man bhaar bhaar (Bhojpuri) / the mind is heavy",
+    register: ["Bhojpuri", "all ages"],
+    readings: ["psychopathology", "disease"],
+    possible_meanings: [
+      { reading: "Depressive heaviness", likelihood: "high" },
+      { reading: "Head fullness (sinus, tension)", likelihood: "medium", clue: "headache, congestion", physical: true },
+      { reading: "Caregiver burden", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Heavy like a weight on the heart, or like a full head?",
+      "What lifts it, even briefly?",
+    ],
+    trap: "Man bhaar is the Bhojpuri heaviness idiom — the quality question and the physical screen, both.",
+    sources: ["Bhojpuri somatic idioms"],
+  },
+  {
+    id: "idiom-sindhi-dil",
+    phrase: "dil mein vichara (Sindhi) / thinking in the heart",
+    register: ["Sindhi", "all ages"],
+    readings: ["cultural_idiom", "psychopathology"],
+    possible_meanings: [
+      { reading: "Rumination — 'the heart thinks'", likelihood: "high" },
+      { reading: "Worry about a specific matter", likelihood: "medium" },
+      { reading: "Anxiety with somatic symptoms", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What does the heart keep thinking about?",
+      "Does it stop you sleeping, eating, working?",
+    ],
+    trap: "Sindhi places thought in the heart — 'heart-thinking' is rumination, and the function cost is the clinical weight.",
+    sources: ["Sindhi idioms of distress"],
+  },
+  {
+    id: "idiom-sindhi-soch",
+    phrase: "soch soch ke thak gayo (Sindhi) / tired of thinking and thinking",
+    register: ["Sindhi", "adult"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Chronic rumination with exhaustion", likelihood: "high" },
+      { reading: "Depression with anxious features", likelihood: "medium" },
+      { reading: "Burnout", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What is the thinking about, and when does it exhaust you most?",
+      "Any hopelessness or thoughts of ending your life?",
+    ],
+    trap: "'Tired of thinking' is rumination-fatigue — the risk screen is still owed.",
+    sources: ["Sindhi help-seeking literature; risk screening"],
+  },
+  {
+    id: "idiom-nepali-man",
+    phrase: "man dukhi (Nepali) / mind is sad",
+    register: ["Nepali", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Sadness — the everyday man dukhi", likelihood: "high" },
+      { reading: "Depression if persistent with function loss", likelihood: "medium" },
+      { reading: "Migration-related distress (families split across the border)", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Dukhi about what — home, work, someone?",
+      "How long, and what does it stop you doing?",
+    ],
+    trap: "Nepali man dukhi is the border-region default — the migration/family-separation context is often the real content.",
+    sources: ["Nepali idioms; migration mental-health literature"],
+  },
+  {
+    id: "idiom-nepali-jhyal",
+    phrase: "jhyal khula (Nepali) / the window is open",
+    register: ["Nepali", "adult"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Feeling exposed/vulnerable — 'my window is open to harm'", likelihood: "high" },
+      { reading: "Persecutory worry ('someone can reach me')", likelihood: "medium" },
+      { reading: "Anxiety with hypervigilance", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Open to what — people, spirits, or the world?",
+      "Does it keep you from sleeping or leaving the house?",
+    ],
+    trap: "The 'open window' is a vulnerability idiom — the persecutory question and the hypervigilance screen, both.",
+    sources: ["Nepali anxiety idioms"],
+  },
+  {
+    id: "idiom-kashmiri-gabrun",
+    phrase: "gabrun / fluster (Kashmiri)",
+    register: ["Kashmiri", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Panic/anxiety — the fluster", likelihood: "high" },
+      { reading: "Situational overwhelm", likelihood: "medium" },
+      { reading: "Panic attacks (palpitations, breathlessness)", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What flusters you, and what happens in the body at the peak?",
+      "Does it come with a situation or out of nowhere?",
+    ],
+    trap: "Gabrun is the Kashmiri panic cousin — the spontaneous-vs-situational question is the diagnosis.",
+    sources: ["Kashmiri idioms; panic-spectrum literature"],
+  },
+  {
+    id: "idiom-bhojpuri-sans",
+    phrase: "sans phoolat ba (Bhojpuri) / the breath swells",
+    register: ["Bhojpuri", "adult"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Breathlessness — cardiac or respiratory workup", likelihood: "high", clue: "exertional, orthopnea", physical: true },
+      { reading: "Panic with hyperventilation", likelihood: "medium" },
+      { reading: "Anxiety with chest tightness", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Breathless with effort or with fear?",
+      "What were you doing when it first happened?",
+    ],
+    trap: "'The breath swells' demands the cardiac/respiratory workup before the anxiety label — the mimic is real.",
+    sources: ["Bhojpuri somatic idioms; cardiac-mimic literature"],
+  },
+  {
+    id: "idiom-konkani-bhuv",
+    phrase: "bhuv bhulo (Konkani) / forgetting the world",
+    register: ["Konkani", "adult"],
+    readings: ["psychopathology", "disease"],
+    possible_meanings: [
+      { reading: "Dissociative detachment — 'the world recedes'", likelihood: "high" },
+      { reading: "Depersonalisation/derealisation in anxiety", likelihood: "medium" },
+      { reading: "Confusion (delirium, dementia) in the elderly", likelihood: "low", clue: "age, acute onset", physical: true },
+    ],
+    disambiguating_questions: [
+      "Forgetting the world like drifting away, or like losing track of reality?",
+      "When does it happen — in crowds, in stress, or always?",
+    ],
+    trap: "'Forgetting the world' is the Konkani detachment idiom — the anxiety/dissociation screen and the organic check, both.",
+    sources: ["Konkani dissociative idioms"],
+  },
+  {
+    id: "idiom-sindhi-sukh",
+    phrase: "sukh nathi (Sindhi) / there is no peace",
+    register: ["Sindhi", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Chronic dissatisfaction/restlessness", likelihood: "high" },
+      { reading: "Anxiety — the mind won't settle", likelihood: "medium" },
+      { reading: "Depression with anhedonia", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Peace missing from the mind, the home, or the body?",
+      "What did peace look like when it was there?",
+    ],
+    trap: "'There is no sukh' is the Sindhi restlessness frame — the what-is-missing question finds the clinical content.",
+    sources: ["Sindhi idioms of distress"],
+  },
+  {
+    id: "idiom-nepali-chinta",
+    phrase: "chinta lagyo (Nepali) / worry has caught me",
+    register: ["Nepali", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Worry/rumination — 'chinta has caught me'", likelihood: "high" },
+      { reading: "Anxiety disorder if persistent and impairing", likelihood: "medium" },
+      { reading: "Somatic anxiety (head, chest, sleep)", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Chinta about what, since when, and what does it stop you doing?",
+      "What happens in the body when chinta comes?",
+    ],
+    trap: "'Chinta has caught me' is the Nepali tension — the specify question is the same as everywhere.",
+    sources: ["Nepali 'chinta' literature"],
+  },
+];
+
+export const IDIOMS: IdiomEntry[] = [...ALL_SOMATIC, ...CULTURE_BOUND, ...BORROWED, ...EXTRA, ...REGIONAL, ...REGIONAL2, ...REGIONAL3];
 
 /** Score a multi-select decode attempt: physical readings weigh more. */
 export function scoreDecode(entry: IdiomEntry, selected: string[]): { score: number; max: number; missedPhysical: string[] } {
