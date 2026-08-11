@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 import { ArrowRight, Zap, Mic2, Flame } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -68,6 +69,11 @@ export default async function TodayPage() {
           ? `${currentStreak} days in a row — the practice is compounding.`
           : "Every day you practise, a future client is better served."}
       </p>
+
+      {/* weak-spots banner — real gaps above the primary card */}
+      <div className="mt-6">
+        <WeakSpotsBanner />
+      </div>
 
       {/* primary card */}
       <Link

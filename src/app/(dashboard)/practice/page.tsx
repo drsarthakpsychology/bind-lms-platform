@@ -8,6 +8,7 @@ import {
 import { readFlags, type FeatureKey } from "@/lib/flags";
 import { createClient } from "@/lib/supabase/server";
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
+import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 
 /**
  * /practice — the deliberate browse view (v5.1 Part B).
@@ -60,8 +61,6 @@ const PRACTICE_TOOLS: PracticeTool[] = [
   { href: "/practice/modules", title: "Modules", verb: "BROWSE", description: "Your course's modules, in order — locked ones state why.", icon: Layers, time: "1 min", state: "new", flag: "modules" },
 ];
 
-// Weak Spots is a dismissible banner above the grid, not a card.
-const WEAK_SPOTS = { href: "/practice/weak-spots", title: "Weak spots", description: "3 domains weak this week: thought form, risk timing, mood vs affect" };
 
 const STATE_STYLE: Record<PracticeTool["state"], { label: string; className: string }> = {
   new: { label: "New", className: "bg-secondary text-muted-foreground" },
@@ -175,17 +174,8 @@ export default async function PracticeHubPage() {
         </Link>
       ) : null}
 
-      {/* weak-spots banner */}
-      <Link
-        href={WEAK_SPOTS.href}
-        className="mb-6 flex items-center justify-between gap-3 rounded-md border-2 border-border bg-amber-50 p-3 text-small transition-transform active:translate-y-px"
-      >
-        <span className="flex items-center gap-2">
-          <Radar className="size-4 shrink-0 text-amber-700" aria-hidden />
-          <span>{WEAK_SPOTS.description}</span>
-        </span>
-        <span className="shrink-0 font-medium text-primary">Generate drill →</span>
-      </Link>
+      {/* weak-spots banner — real gaps, server-computed */}
+      <WeakSpotsBanner />
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((tool) => {
