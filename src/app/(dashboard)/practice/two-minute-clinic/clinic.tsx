@@ -75,7 +75,12 @@ export function TwoMinuteClinic() {
           </div>
           <button
             type="button"
-            onClick={() => { setPhase("compare"); haptic("success"); }}
+            onClick={() => {
+              setPhase("compare");
+              haptic("success");
+              // Retention loop: completing the daily drill keeps the streak alive.
+              fetch("/api/practice/clinic/complete", { method: "POST" }).catch(() => {});
+            }}
             className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
             Compare with the expert
