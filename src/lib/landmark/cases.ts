@@ -306,4 +306,40 @@ export const LANDMARK_CASES: LandmarkCase[] = [
       { question: "Why does pandemic psychiatry history matter now?", options: ["It doesn't", "Post-infectious and post-ICU neuropsychiatric presentations have a long documented ancestry", "COVID invented these presentations", "Only virologists should study it"], correct: 1, rationale: "Understanding the 1918 pattern sharpens modern assessment of post-infectious change." },
     ],
   },
+  {
+    id: "landmark-bhopal",
+    title: "The Bhopal gas tragedy — disaster mental-health sequelae",
+    domain: "indian",
+    story: "In 1984, a gas leak in Bhopal killed thousands and exposed hundreds of thousands more. Years later, survivors showed elevated rates of anxiety, depression, PTSD-like syndromes, and somatic complaints that the official medical response — focused on lungs and eyes — barely measured. The disaster became one of India's first mass trauma-and-mental-health case studies.",
+    believedThen: "That the disaster's health legacy was purely physical — lungs, eyes, the acute exposures.",
+    understandNow: "The Bhopal legacy demonstrates the long arc of mass-trauma mental health: somatic complaint carriers, unmeasured anxiety in compensation processes that retraumatised claimants, and the intergenerational transmission of fear. It is taught as the reason disaster mental-health planning belongs in every emergency response.",
+    quiz: [
+      { question: "What does Bhopal teach about disaster mental health?", options: ["Disasters are purely physical events", "Mental-health sequelae are long, somatic-heavy, and easily missed when the medical lens dominates", "Survivors recover within a year", "Anxiety never follows disasters"], correct: 1, rationale: "Bhopal's unmeasured trauma legacy is the canonical Indian lesson in disaster mental-health planning." },
+      { question: "Why does compensation process matter to mental health?", options: ["It doesn't", "Retraumatising claim processes worsen the trauma — how survivors are treated heals or harms", "Compensation is purely financial", "Claims never affect wellbeing"], correct: 1, rationale: "The process itself became a source of renewed distress — a clinical lesson about systems." },
+    ],
+  },
+  {
+    id: "landmark-jallianwala",
+    title: "Jallianwala Bagh — the trauma that a nation carried",
+    domain: "indian",
+    story: "In 1919, troops fired on an unarmed gathering in Amritsar, killing hundreds. Beyond the deaths, the massacre's survivors and witnesses carried acute and chronic trauma — the unspoken psychological legacy of colonial violence that Indian psychiatry would later have to reckon with in partition and beyond.",
+    believedThen: "That the political event was everything — the psychological aftermath was invisible to the colonial record.",
+    understandNow: "The case is taught as the origin of a pattern: collective violence creates collective trauma that hides in silence and somatic complaint for generations. It frames the later work on partition displacement and the Erwadi-era reckoning — trauma is not a footnote to history, it is the history's unexamined residue.",
+    quiz: [
+      { question: "Why teach Jallianwala Bagh in a psychology course?", options: ["It's a political topic only", "Collective violence creates collective trauma that surfaces in silence and somatic complaint for generations", "Trauma is always individual", "The massacre had no psychological effects"], correct: 1, rationale: "The unrecorded psychological aftermath is the lesson — collective trauma has a long clinical tail." },
+      { question: "How does the massacre connect to later Indian psychiatric history?", options: ["It doesn't", "The pattern of collective-violence trauma recurs in partition and the asylum era", "Psychiatry began after 1947", "No connection exists"], correct: 1, rationale: "The same dynamics — silence, somatic presentation, unrecorded distress — recur across Indian trauma history." },
+    ],
+  },
+  {
+    id: "landmark-partition",
+    title: "Partition displacement — the largest unrecorded trauma",
+    domain: "indian",
+    story: "In 1947, partition uprooted millions across the new borders. Families were separated, homes lost, violence witnessed — and for decades the psychological toll went largely unmeasured in official records. Clinicians and writers recorded what the state did not: the survivors' insomnia, the sudden rage, the silences.",
+    believedThen: "That partition was a migration problem — logistics, registries, rehabilitation; the 'insanity' admissions it caused were noted but never studied as trauma.",
+    understandNow: "Partition is the paradigm of unmeasured mass trauma: the clinical presentations (dissociation, somatic distress, intergenerational silence) are reconstructable only from literature, family memory and scattered asylum records. It teaches that absence of diagnosis is not absence of distress — and that rehabilitation without psychological care repairs the surface only.",
+    quiz: [
+      { question: "What is the partition lesson for assessment?", options: ["Unrecorded distress isn't real", "Absence of diagnosis is not absence of distress — trauma can go unmeasured for decades", "Migrants never suffer trauma", "Official records are always complete"], correct: 1, rationale: "The unmeasured psychological toll is the lesson — assessment gaps are historical, not natural." },
+      { question: "Why does intergenerational silence matter clinically?", options: ["It doesn't", "Unspoken family trauma surfaces in later generations' symptoms", "Silence always heals", "Only direct survivors are affected"], correct: 1, rationale: "Intergenerational transmission of unspoken trauma is a core modern framework — partition is its Indian paradigm." },
+    ],
+  },
 ];
