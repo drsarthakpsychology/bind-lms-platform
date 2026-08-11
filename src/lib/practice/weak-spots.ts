@@ -25,6 +25,8 @@ export interface WeakSpot {
   /** Concrete next step (which tool to use). */
   remedyHref: string;
   remedyLabel: string;
+  /** The Rounds card that teaches this skill (the heatmap → lesson link). */
+  teachCard: string;
 }
 
 /** Interpret one rubric field as a 0..1 "miss" score. */
@@ -60,12 +62,12 @@ function missScore(key: keyof Rubric, r: Rubric): number | null {
   }
 }
 
-const DEFINITIONS: Array<{ key: keyof Rubric; label: string; remedyHref: string; remedyLabel: string }> = [
-  { key: "open_closed_ratio", label: "Closed questions", remedyHref: "/practice/consulting-room", remedyLabel: "Consulting Room — aim for open questions" },
-  { key: "reflective_statements", label: "Reflective listening", remedyHref: "/practice/two-minute-clinic", remedyLabel: "Two-Minute Clinic — practise reflections" },
-  { key: "premature_reassurance", label: "Premature reassurance", remedyHref: "/practice/consulting-room", remedyLabel: "Consulting Room — explore before reassuring" },
-  { key: "domain_coverage", label: "Domain coverage", remedyHref: "/practice/mse", remedyLabel: "MSE Trainer — cover the full picture" },
-  { key: "risk_timing", label: "Risk assessment timing", remedyHref: "/practice/osce", remedyLabel: "OSCE — run the risk station" },
+const DEFINITIONS: Array<{ key: keyof Rubric; label: string; remedyHref: string; remedyLabel: string; teachCard: string }> = [
+  { key: "open_closed_ratio", label: "Closed questions", remedyHref: "/practice/consulting-room", remedyLabel: "Consulting Room — aim for open questions", teachCard: "The single best open question ('What does a bad night look like for you?')" },
+  { key: "reflective_statements", label: "Reflective listening", remedyHref: "/practice/two-minute-clinic", remedyLabel: "Two-Minute Clinic — practise reflections", teachCard: "Reflection vs reassurance — the card that names the difference" },
+  { key: "premature_reassurance", label: "Premature reassurance", remedyHref: "/practice/consulting-room", remedyLabel: "Consulting Room — explore before reassuring", teachCard: "Why premature reassurance is the #1 novice error" },
+  { key: "domain_coverage", label: "Domain coverage", remedyHref: "/practice/mse", remedyLabel: "MSE Trainer — cover the full picture", teachCard: "The 11-domain MSE structure card" },
+  { key: "risk_timing", label: "Risk assessment timing", remedyHref: "/practice/osce", remedyLabel: "OSCE — run the risk station", teachCard: "When confidentiality is absolute, and when it is breached" },
 ];
 
 /**
@@ -90,6 +92,7 @@ export function analyzeWeakSpots(rubrics: Rubric[]): WeakSpot[] {
         sessions: scores.length,
         remedyHref: def.remedyHref,
         remedyLabel: def.remedyLabel,
+        teachCard: def.teachCard,
       });
     }
   }
