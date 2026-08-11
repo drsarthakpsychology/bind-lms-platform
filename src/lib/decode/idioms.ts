@@ -1307,7 +1307,269 @@ const EXTRA: IdiomEntry[] = [
   },
 ];
 
-export const IDIOMS: IdiomEntry[] = [...ALL_SOMATIC, ...CULTURE_BOUND, ...BORROWED, ...EXTRA];
+
+/** Regional idioms (round 4 content volume) — Bengali, Tamil, Telugu,
+ *  Kannada, Marathi, Gujarati. The moat is content; these are the phrases a
+ *  student will hear in a Kolkata or Chennai or Bengaluru clinic. */
+const REGIONAL: IdiomEntry[] = [
+  {
+    id: "idiom-bengali-mon-kharap",
+    phrase: "mon kharap (Bengali) / মন খারাপ",
+    register: ["Bengali", "all ages", "very common"],
+    readings: ["psychopathology", "disease", "metaphor"],
+    possible_meanings: [
+      { reading: "Colloquial sadness — the everyday 'heart is bad'", likelihood: "high" },
+      { reading: "Depression when persistent with functional decline", likelihood: "medium" },
+      { reading: "Physical malaise (fever prodrome, gastritis)", likelihood: "medium", clue: "onset with fever or eating pattern", physical: true },
+    ],
+    disambiguating_questions: [
+      "When you say mon kharap — how long has it been bad, and what does it stop you doing?",
+      "Is the bad feeling inside the chest, the head, or the whole body?",
+    ],
+    trap: "Mon kharap is the default Bengali complaint — everyone has it sometimes; the question is persistence and function, not the phrase.",
+    sources: ["Bengali idiom-of-distress literature"],
+  },
+  {
+    id: "idiom-bengali-sondhe",
+    phrase: "sondhe holo, kichhu bhalo lagche na (Bengali)",
+    register: ["Bengali", "adult"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Anhedonia — nothing feels good anymore", likelihood: "high" },
+      { reading: "Situational demoralisation", likelihood: "medium" },
+      { reading: "Grief-related numbness", likelihood: "medium", clue: "loss within the year" },
+    ],
+    disambiguating_questions: [
+      "What used to feel good that no longer does?",
+      "When did 'nothing feels good' start?",
+    ],
+    trap: "'Nothing feels good' is anhedonia in plain language — screen the mood and risk, don't file it as vague negativity.",
+    sources: ["Depression screening literature (PHQ-2 translated forms)"],
+  },
+  {
+    id: "idiom-tamil-manasula",
+    phrase: "manasula enna problem (Tamil) / what's wrong in my mind",
+    register: ["Tamil", "all ages"],
+    readings: ["psychopathology", "disease", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Self-referral for mental distress — 'something in my mind'", likelihood: "high" },
+      { reading: "Somatic-first presentation of depression", likelihood: "medium", clue: "head or body complaints alongside" },
+      { reading: "Epilepsy / neurological concern ('mind' = brain)", likelihood: "low", clue: "blackouts, staring spells", physical: true },
+    ],
+    disambiguating_questions: [
+      "What makes you think the problem is in the mind?",
+      "Any episodes where you lose time or stare?",
+    ],
+    trap: "In Tamil, 'mind' can mean emotion or brain — clarify which before assuming psychopathology.",
+    sources: ["Tamil clinical-encounter literature"],
+  },
+  {
+    id: "idiom-tamil-sarivu",
+    phrase: "sarivu / weakness (Tamil)",
+    register: ["Tamil", "adult"],
+    readings: ["disease", "psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Anaemia / nutritional deficiency", likelihood: "high", clue: "pallor, fatigue on exertion", physical: true },
+      { reading: "Depressive anergia", likelihood: "medium", clue: "worse in morning, loss of interest" },
+      { reading: "Dhat-style concern in young men", likelihood: "low", clue: "perceived semen loss", physical: true },
+    ],
+    disambiguating_questions: [
+      "Walk me through a normal day — where does the weakness bite?",
+      "Any weight loss, pallor, or breathlessness?",
+    ],
+    trap: "Sarivu is the Tamil kamzori — the workup comes first, the mood screen second.",
+    sources: ["Nichter idioms of distress; Tamil clinical practice"],
+  },
+  {
+    id: "idiom-telugu-manasu",
+    phrase: "manasu bagaledu (Telugu) / heart-mind not well",
+    register: ["Telugu", "all ages"],
+    readings: ["psychopathology", "cultural_idiom", "disease"],
+    possible_meanings: [
+      { reading: "Low mood — the 'heart-mind' is the seat of feeling", likelihood: "high" },
+      { reading: "Worry / rumination about a specific problem", likelihood: "medium" },
+      { reading: "Cardiac concern ('heart' literally)", likelihood: "low", clue: "chest pain, palpitations", physical: true },
+    ],
+    disambiguating_questions: [
+      "When you say manasu — the feeling heart or the beating heart?",
+      "What would a well manasu feel like?",
+    ],
+    trap: "Manasu is both heart and mind in Telugu — disambiguate the organ before the metaphor.",
+    sources: ["Telugu cultural idioms of distress"],
+  },
+  {
+    id: "idiom-telugu-talupu",
+    phrase: "talupu leka / no strength to open the door (Telugu)",
+    register: ["Telugu", "adult"],
+    readings: ["psychopathology", "disease"],
+    possible_meanings: [
+      { reading: "Depressive anergia with avoidant behaviour", likelihood: "high", clue: "worse mornings, loss of interest" },
+      { reading: "Severe anaemia / B12", likelihood: "medium", clue: "pallor, tingling, diet history", physical: true },
+      { reading: "Agrophobia (can't face outside)", likelihood: "medium", clue: "panic in public" },
+    ],
+    disambiguating_questions: [
+      "Is it physical exhaustion or a wall you can't face?",
+      "What happens if someone walks with you?",
+    ],
+    trap: "The door metaphor is anergia or agoraphobia — the function question decides.",
+    sources: ["Telugu clinical vignettes"],
+  },
+  {
+    id: "idiom-kannada-manasige",
+    phrase: "manasige nimmadi illa (Kannada) / no peace of mind",
+    register: ["Kannada", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Generalised anxiety — the mind won't settle", likelihood: "high" },
+      { reading: "Insomnia with rumination", likelihood: "medium", clue: "lying awake at night" },
+      { reading: "Depression with agitation", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "When is the mind most un-peaceful — day or night?",
+      "What does the mind do when it won't settle?",
+    ],
+    trap: "'No peace of mind' is anxiety's most common Kannada frame — treat the rumination, not the phrase.",
+    sources: ["Kannada clinical encounter literature"],
+  },
+  {
+    id: "idiom-marathi-kasa",
+    phrase: "man kasa karaychay / what should I do with my mind (Marathi)",
+    register: ["Marathi", "all ages"],
+    readings: ["psychopathology", "protest"],
+    possible_meanings: [
+      { reading: "Helplessness — the mind is a burden to manage", likelihood: "high" },
+      { reading: "Plea for guidance about an unmanageable situation", likelihood: "medium" },
+      { reading: "Masked suicidality ('what to do with the mind')", likelihood: "low", clue: "withdrawal, giving things away" },
+    ],
+    disambiguating_questions: [
+      "What is the mind doing that feels unmanageable?",
+      "Have you had thoughts of ending your life?",
+    ],
+    trap: "The rhetorical 'what do I do with my mind' can mask risk — ask directly, always.",
+    sources: ["Marathi help-seeking literature; mhGAP risk screening"],
+  },
+  {
+    id: "idiom-gujarati-dil",
+    phrase: "dil maan dukh (Gujarati) / pain in the heart",
+    register: ["Gujarati", "all ages"],
+    readings: ["cultural_idiom", "psychopathology", "disease"],
+    possible_meanings: [
+      { reading: "Emotional pain — the heart as feeling-seat", likelihood: "high" },
+      { reading: "Grief or loss reaction", likelihood: "medium", clue: "recent bereavement" },
+      { reading: "Cardiac symptom (literal)", likelihood: "low", clue: "exertion-related chest pain", physical: true },
+    ],
+    disambiguating_questions: [
+      "Heart pain like grief, or heart pain like pressure?",
+      "Does it come with activity or with memories?",
+    ],
+    trap: "The Gujarati 'dil' is emotion-first, but the cardiac differential is one question away — ask it.",
+    sources: ["Gujarati idioms of distress; cardiac-mimic literature"],
+  },
+  {
+    id: "idiom-bengali-matha-bhara",
+    phrase: "matha bhara (Bengali) / head full",
+    register: ["Bengali", "adult"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Head heaviness — tension-type or sinus", likelihood: "high", clue: "worse evenings, forehead band", physical: true },
+      { reading: "Cognitive overwhelm — 'too much in the head'", likelihood: "medium" },
+      { reading: "Depressive heaviness", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Full like a headache, or full like too many thoughts?",
+      "When did the fullness start?",
+    ],
+    trap: "Matha bhara straddles sinus and psyche — the quality question decides.",
+    sources: ["Bengali somatic-idiom literature"],
+  },
+  {
+    id: "idiom-tamil-uyir",
+    phrase: "uyir vanthu pochu / life is going (Tamil)",
+    register: ["Tamil", "adult"],
+    readings: ["psychopathology", "protest", "disease"],
+    possible_meanings: [
+      { reading: "Existential despair — 'life is draining away'", likelihood: "high" },
+      { reading: "Masked suicidality", likelihood: "medium", clue: "giving things away, withdrawal" },
+      { reading: "Chronic illness fatigue", likelihood: "medium", clue: "known medical disease", physical: true },
+    ],
+    disambiguating_questions: [
+      "When you say life is going — what do you mean is leaving?",
+      "Have you had thoughts of ending your life?",
+    ],
+    trap: "The dramatic 'life is going' demands a direct risk screen — the metaphor can be the only window.",
+    sources: ["Tamil clinical risk-screening literature"],
+  },
+  {
+    id: "idiom-telugu-gunde",
+    phrase: "gunde bharamga undi (Telugu) / heavy in the chest",
+    register: ["Telugu", "adult"],
+    readings: ["disease", "psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Somatic anxiety — chest heaviness", likelihood: "high", clue: "with palpitations, shortness of breath", physical: true },
+      { reading: "Depression with somatic focus", likelihood: "medium" },
+      { reading: "Cardiac concern (workup first)", likelihood: "medium", clue: "exertion-related", physical: true },
+    ],
+    disambiguating_questions: [
+      "Heaviness with effort, or heaviness with worry?",
+      "Any heart check done recently?",
+    ],
+    trap: "Chest heaviness in Telugu is the somatic idiom for both anxiety and cardiac disease — the workup precedes the label.",
+    sources: ["Telugu somatic idioms; cardiac-anxiety differential"],
+  },
+  {
+    id: "idiom-kannada-tumba",
+    phrase: "tumba aayasa (Kannada) / too much tiredness",
+    register: ["Kannada", "adult"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Anaemia / nutritional", likelihood: "high", clue: "pallor, diet, heavy periods", physical: true },
+      { reading: "Depressive fatigue", likelihood: "medium", clue: "morning worst, anhedonia" },
+      { reading: "Post-illness fatigue", likelihood: "medium", clue: "recent fever or infection" },
+    ],
+    disambiguating_questions: [
+      "Tired in the body or tired in the spirit?",
+      "What does a day look like?",
+    ],
+    trap: "Aayasa is the Kannada fatigue carrier — the physical triad and the mood screen, both.",
+    sources: ["Kannada clinical practice"],
+  },
+  {
+    id: "idiom-marathi-jiv",
+    phrase: "jiv dushtay / the soul is being bitten (Marathi)",
+    register: ["Marathi", "adult"],
+    readings: ["psychopathology", "cultural_idiom", "protest"],
+    possible_meanings: [
+      { reading: "Anxiety — the inner self under attack", likelihood: "high" },
+      { reading: "Persecutory worry ('someone is doing this to me')", likelihood: "medium" },
+      { reading: "Grief with somatic symptoms", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What is biting the jiv — a person, a situation, or something else?",
+      "Does it happen at certain times?",
+    ],
+    trap: "'The soul is being bitten' can be anxiety or persecution — the agency question (who/what) decides.",
+    sources: ["Marathi cultural idioms of distress"],
+  },
+  {
+    id: "idiom-gujarati-tension",
+    phrase: "tension maan chu (Gujarati) / I am in tension",
+    register: ["Gujarati", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Stress-related worry (the everyday 'tension')", likelihood: "high" },
+      { reading: "Generalised anxiety", likelihood: "medium", clue: "persistent, impairing" },
+      { reading: "Somatic anxiety — headaches, sleep loss", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Tension about what, since when, and what does it stop you doing?",
+      "What happens in your body when the tension comes?",
+    ],
+    trap: "'Tension' is the pan-Indian generic — always specify the what, since-when, and function cost.",
+    sources: ["Pan-Indian 'tension' literature"],
+  },
+];
+
+export const IDIOMS: IdiomEntry[] = [...ALL_SOMATIC, ...CULTURE_BOUND, ...BORROWED, ...EXTRA, ...REGIONAL];
 
 /** Score a multi-select decode attempt: physical readings weigh more. */
 export function scoreDecode(entry: IdiomEntry, selected: string[]): { score: number; max: number; missedPhysical: string[] } {
