@@ -124,12 +124,12 @@
 
 ## ROUND 8 — infinite backlog (content → polish → proposals)
 
-- [ ] Idiom bank: 15 more entries (Tulu, Dogri, Maithili, Rajasthani, Chattisgarhi) in src/lib/decode/idioms.ts (110 → 125)
-- [ ] Clinic prompts: 15 more (workplace + couple + caregiver focus) in src/lib/practice/clinic.ts (101 → 116)
-- [ ] Quiz bank: 15 more (decode-session follow-up + out-of-depth decision audits) in src/lib/quiz/quiz-bank.ts (66 → 81)
-- [ ] Landmark: 3 more (the Bhopal gas tragedy mental-health sequelae, the Jallianwala Bagh trauma history, a partition-displacement mental-health case) in src/lib/landmark/cases.ts (22 → 25)
-- [ ] Ethics: 10 more (fee-negotiation ethics, gifts from clients, self-disclosure boundaries) in src/lib/practice/ethics.ts (40 → 50)
-- [ ] Journal: 'help me think' response templates for the fixture path (deterministic reflective prompts instead of a single canned line)
+- [x] Idiom bank: 15 more entries (Tulu, Dogri, Maithili, Rajasthani, Chattisgarhi) in src/lib/decode/idioms.ts (110 → 125)
+- [x] Clinic prompts: 15 more (workplace + couple + caregiver focus) in src/lib/practice/clinic.ts (101 → 116)
+- [x] Quiz bank: 15 more (decode-session follow-up + out-of-depth decision audits) in src/lib/quiz/quiz-bank.ts (66 → 81)
+- [x] Landmark: 3 more (the Bhopal gas tragedy mental-health sequelae, the Jallianwala Bagh trauma history, a partition-displacement mental-health case) in src/lib/landmark/cases.ts (22 → 25)
+- [x] Ethics: 10 more (fee-negotiation ethics, gifts from clients, self-disclosure boundaries) in src/lib/practice/ethics.ts (40 → 50)
+- [x] Journal: 'help me think' response templates for the fixture path (deterministic reflective prompts instead of a single canned line)
 - [ ] e2e: weak-spots drill flow (page loads → drill renders → complete → remedy CTA)
 - [ ] a11y: aria-live on the weak-spots drill score + out-of-depth consequence reveal
 - [ ] Perf: add `export const dynamic` audit — confirm no page accidentally pre-renders stale student data
