@@ -56,3 +56,16 @@
 - [x] Wire AI_STUDENT_TIER into src/lib/ai/guards.ts (honor no_train_only as a hard cap) or drop it from .env.example [RESUME finding]
 - [x] Raise coverage on scoring logic: add fixture-driven tests for debriefSchema against every rubric edge (empty transcript, all-closed questions, premature-reassurance x3) in src/lib/ai/scoring.test.ts [brief §11.2]
 - [x] Content volume: add 20 quiz items (order-the-steps + would-you-report types) to src/lib/quiz/, each with a source citation, wired into MSE + OSECE completion [brief §11.3]
+
+## ROUND 3 — infinite backlog (brief §11: polish → performance → docs → proposals)
+
+- [ ] Keyboard shortcuts on /practice: j/k between cards, Enter to open, / to search (B5 micro-details — an afternoon's work, makes desktop feel like a tool)
+- [ ] Skeleton loaders matching card shape on /practice + /today (brief §B5 — never a spinner)
+- [ ] Haptics audit: every card tap, state change, and correct answer uses src/lib/haptics.ts — grep for missing ones
+- [ ] Empty-state pass: zero cards, no sessions, streak 0, first visit — the ugly screens day-one students see (brief §10.15)
+- [ ] Performance: dashboard LCP + N+1 query audit on /admin pages (brief §11.7)
+- [ ] Docs: write PRACTICE_LAYER.md + IDIOMS.md (brief §11.6 — the two remaining docs)
+- [ ] Free-tier optimisation: retention job on ai_usage_log (30-day, already in cron) + verify infra_snapshots rows are pruned
+- [ ] Formulation peer-critique wall: anonymised formulations from stage 4, visible to the cohort with reactions (IDEAS: Formulation Wall)
+- [ ] Deepgram streaming STT: provider-shaped drop-in for stt.ts when a key exists (IDEAS: Deepgram)
+- [ ] Two-Minute Clinic: persist the daily best time + streak into the streaks table (retention loop)
