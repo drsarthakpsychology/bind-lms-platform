@@ -44,3 +44,18 @@ export async function isFeatureEnabled(key: FeatureKey): Promise<boolean> {
   const flags = await readFlags();
   return flags[key] === true;
 }
+
+/**
+ * A2 — server-side feature gate. Pages call this in their server component;
+ * when the flag is off it returns a "not yet available" page instead of
+ * rendering the tool. This is the route-group-level enforcement the brief
+ * requires (flag checked server-side, not just hidden in the UI).
+ */
+import { redirect } from "next/navigation";
+
+export async function requireFeature(key: FeatureKey): Promise<boolean> {
+  const flags = await readFlags();
+  if (flags[key] === true) return true;
+  // Honest gate: a proper "not yet available" experience, not a 404.
+  redirect(`/practice/not-available?feature=${encodeURIComponent(key)}`);
+}

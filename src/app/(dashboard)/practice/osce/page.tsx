@@ -1,4 +1,5 @@
 import { OsceStationView } from "./osce-station";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -7,7 +8,8 @@ export const dynamic = "force-dynamic";
  * Timed single-station assessment, 7 minutes, one task. Voice strongly
  * preferred (the delivery matters as much as the content).
  */
-export default function OscePage() {
+export default async function OscePage() {
+  await requireFeature("osce");
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <p className="text-eyebrow text-muted-foreground">OSCE stations</p>

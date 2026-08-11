@@ -2,6 +2,7 @@ import { ETHICS_DILEMMAS, todaysDilemmas } from "@/lib/practice/ethics";
 import { DilemmaFlow } from "./dilemmas";
 import { QuizCheck } from "@/components/practice/quiz-check";
 import type { QuizItem } from "@/lib/quiz/quiz";
+import { requireFeature } from "@/lib/flags";
 
 /** Quiz-after-ethics (v5 §4.1) — checks, not tests. Every item sourced. */
 const ETHICS_QUIZ: QuizItem[] = [
@@ -55,7 +56,8 @@ const ETHICS_QUIZ: QuizItem[] = [
  * Consequence-first: commit to an action, then see what the law (MHA 2017,
  * POCSO, RCI scope) and best practice require. The consequence comes first.
  */
-export default function EthicsPage() {
+export default async function EthicsPage() {
+  await requireFeature("ethics");
   // Deterministic daily set — the day's three dilemmas are stable for everyone.
   const daySeed = new Date().getTime();
   const dilemmas = todaysDilemmas(daySeed, 3);

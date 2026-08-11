@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { RolePlayLobby } from "./role-play-lobby";
 import { RolePlayRoom } from "./role-play-room";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +14,7 @@ export const dynamic = "force-dynamic";
 export default async function RolePlayPage(props: {
   searchParams: Promise<{ session?: string }>;
 }) {
+  await requireFeature("peer_roleplay");
   const sp = await props.searchParams;
   const supabase = await createClient();
   const {

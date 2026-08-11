@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { Download } from "lucide-react";
 import { Passport, type PassportRow } from "./passport";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -11,7 +12,8 @@ export const dynamic = "force-dynamic";
  * to come). The PDF certificate appendix is the deferred big item.
  */
 export default async function PassportPage() {
-  const supabase = await createClient();
+
+  await requireFeature("skills_passport");  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();

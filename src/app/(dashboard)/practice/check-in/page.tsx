@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { CheckinForm } from "./checkin-form";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -8,7 +9,8 @@ export const dynamic = "force-dynamic";
  * Aggregate-only for admin (checkins_aggregate view, no identifiers).
  */
 export default async function CheckinPage() {
-  const supabase = await createClient();
+
+  await requireFeature("checkin");  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();

@@ -1,4 +1,5 @@
 import { FormulationForge } from "./forge";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -7,7 +8,8 @@ export const dynamic = "force-dynamic";
  * Stage 1: sort factor cards into the 5P grid (with distractors).
  * Stage 2: write the narrative. Stage 3: diff against the model — a diff, not a grade.
  */
-export default function FormulationPage() {
+export default async function FormulationPage() {
+  await requireFeature("formulation");
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <p className="text-eyebrow text-muted-foreground">Formulation Forge</p>

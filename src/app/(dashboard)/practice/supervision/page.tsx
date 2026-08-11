@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { SupervisionLog, type SupervisionEntry } from "./supervision-log";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -8,7 +9,8 @@ export const dynamic = "force-dynamic";
  * Owner + admin RLS. Tagged hours feed the Skills Passport (competency_events).
  */
 export default async function SupervisionPage() {
-  const supabase = await createClient();
+
+  await requireFeature("supervision");  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();

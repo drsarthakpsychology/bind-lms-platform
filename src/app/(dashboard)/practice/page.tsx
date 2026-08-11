@@ -1,10 +1,12 @@
 import Link from "next/link";
 import {
-  Stethoscope, Brain, Layers, Timer, BookOpen, FlaskConical,
+  Stethoscope, Brain, Layers, Timer, BookOpen, Scale,
   NotebookPen, Users, Radar, CircleCheck, Gauge, Search, MessageSquare,
+  Siren, GraduationCap, HeartPulse, ClipboardCheck, Wand2,
   type LucideIcon,
 } from "lucide-react";
 import { readFlags, type FeatureKey } from "@/lib/flags";
+import { createClient } from "@/lib/supabase/server";
 
 /**
  * /practice — the deliberate browse view (v5.1 Part B).
@@ -37,23 +39,23 @@ const PRACTICE_TOOLS: PracticeTool[] = [
   { href: "/practice/consulting-room", title: "Consulting Room", verb: "TALK", description: "Interview a simulated patient; the debrief shows what you missed.", icon: Stethoscope, time: "12 min", state: "in_progress", flag: "consulting_room", progress: "case 3 / 60" },
   { href: "/practice/mse", title: "MSE Trainer", verb: "TAG", description: "Describe before you label. 11 domains.", icon: Brain, time: "10 min", state: "new", flag: "mse" },
   { href: "/practice/osce", title: "OSCE Stations", verb: "PERFORM", description: "Seven minutes, one task, voice-first.", icon: Timer, time: "7 min", state: "new", flag: "osce" },
-  { href: "/practice/formulation", title: "Formulation Forge", verb: "SORT", description: "5P factors, narrative, diff against the model.", icon: Layers, time: "8 min", state: "new", flag: "formulation" },
+  { href: "/practice/formulation", title: "Formulation Forge", verb: "SORT", description: "5P factors, narrative, diff against the model.", icon: Wand2, time: "8 min", state: "new", flag: "formulation" },
 
   // With someone else
   { href: "/practice/role-play", title: "Peer Role-Play", verb: "PAIR", description: "One of you the patient, one the clinician.", icon: Users, time: "15 min", state: "new", flag: "peer_roleplay" },
-  { href: "/practice/ethics", title: "Ethics & Law", verb: "CHOOSE", description: "Consequence first, then the statute.", icon: FlaskConical, time: "5 min", state: "new", flag: "ethics" },
+  { href: "/practice/ethics", title: "Ethics & Law", verb: "CHOOSE", description: "Consequence first, then the statute.", icon: Scale, time: "5 min", state: "new", flag: "ethics" },
+  { href: "/wall", title: "Cohort Wall", verb: "ASK", description: "Threaded, anonymous-post toggle.", icon: MessageSquare, time: "3 min", state: "new", flag: "journal" },
 
   // Read and reflect
   { href: "/practice/library", title: "Case Library", verb: "ANNOTATE", description: "Highlight + note; peers' notes unlock after yours.", icon: BookOpen, time: "varies", state: "new", flag: "case_library", progress: "129 reports" },
-  { href: "/practice/check-in", title: "Weekly Check-in", verb: "ONE TAP", description: "30 seconds, aggregate-only for faculty.", icon: CircleCheck, time: "<1 min", state: "done_today", flag: "checkin" },
-  { href: "/practice/wall", title: "Cohort Wall", verb: "ASK", description: "Threaded, anonymous-post toggle.", icon: MessageSquare, time: "3 min", state: "new", flag: "journal" },
-
-  { href: "/practice/landmark", title: "Landmark Cases", verb: "READ", description: "What was believed, what held up.", icon: BookOpen, time: "5 min", state: "new", flag: "landmark" },
-  { href: "/practice/out-of-depth", title: "Out of Depth", verb: "REFER", description: "Know when to refer, escalate, or stop.", icon: FlaskConical, time: "5 min", state: "new", flag: "ethics" },
+  { href: "/practice/check-in", title: "Weekly Check-in", verb: "TAP", description: "30 seconds, aggregate-only for faculty.", icon: HeartPulse, time: "<1 min", state: "done_today", flag: "checkin" },
+  { href: "/practice/landmark", title: "Landmark Cases", verb: "READ", description: "What was believed, what held up.", icon: GraduationCap, time: "5 min", state: "new", flag: "landmark" },
+  { href: "/practice/out-of-depth", title: "Out of Depth", verb: "REFER", description: "Know when to refer, escalate, or stop.", icon: Siren, time: "5 min", state: "new", flag: "ethics" },
 
   // Your record
-  { href: "/practice/passport", title: "Skills Passport", verb: "WATCH", description: "Your competencies, evidenced.", icon: Radar, time: "read", state: "new", flag: "skills_passport", progress: "2 / 11 competencies" },
+  { href: "/practice/passport", title: "Skills Passport", verb: "VIEW", description: "Your competencies, evidenced.", icon: Radar, time: "read", state: "new", flag: "skills_passport", progress: "2 / 11 competencies" },
   { href: "/practice/supervision", title: "Supervision Log", verb: "RECORD", description: "Log contact hours, tag competencies.", icon: NotebookPen, time: "1 min", state: "new", flag: "supervision" },
+  { href: "/practice/weak-spots", title: "Weak Spots", verb: "DRILL", description: "Your gaps, and a 10-item drill on the spot.", icon: ClipboardCheck, time: "5 min", state: "new", flag: "weak_spots" },
 ];
 
 // Weak Spots is a dismissible banner above the grid, not a card.
@@ -70,6 +72,78 @@ export default async function PracticeHubPage() {
   const flags = await readFlags();
   const visible = PRACTICE_TOOLS.filter((t) => flags[t.flag] === true);
 
+  // The recommended card — ALWAYS states why (B2: reason beats recommendation).
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let recommendation: { href: string; title: string; reason: string; cta: string; time: string } | null = null;
+  if (user) {
+    // 1) In-progress sim session → resume it (the patient is waiting).
+    const { data: active } = await supabase
+      .from("sim_sessions")
+      .select("id, case_id")
+      .eq("user_id", user.id)
+      .eq("status", "active")
+      .limit(1)
+      .maybeSingle();
+    if (active) {
+      recommendation = {
+        href: `/practice/consulting-room/session/${active.id}`,
+        title: "Resume your consultation",
+        reason: "A patient is waiting mid-session — finishing it banks the debrief and your score.",
+        cta: "Resume",
+        time: "12 min",
+      };
+    } else {
+      // 2) Risk-timing missed in recent debriefs → the consulting room.
+      const { data: scores } = await supabase
+        .from("sim_scores")
+        .select("rubric")
+        .eq("user_id", user.id)
+        .order("created_at", { ascending: false })
+        .limit(4);
+      const riskLate = (scores ?? []).filter((s) => {
+        const r = (s.rubric as Record<string, unknown> | null) ?? {};
+        return r.risk_timing === "late" || r.risk_timing === "absent";
+      }).length;
+      if (riskLate >= 2) {
+        recommendation = {
+          href: "/practice/consulting-room",
+          title: "Consulting Room — risk assessment",
+          reason: `You've missed the risk-assessment moment in ${riskLate} of your last ${(scores ?? []).length || 4} sessions. Run a case and front-load it.`,
+          cta: "Run a case",
+          time: "12 min",
+        };
+      } else if ((scores ?? []).length >= 3) {
+        const unsMse = (scores ?? []).filter((s) => {
+          const r = (s.rubric as Record<string, unknown> | null) ?? {};
+          return r.idiom_decoding === false;
+        }).length;
+        if (unsMse > 0) {
+          recommendation = {
+            href: "/practice/decode",
+            title: "Presenting Complaint Decoder",
+            reason: `The opening idiom went undecoded in ${unsMse} of your recent sessions. Five minutes here fixes your ears.`,
+            cta: "Decode",
+            time: "4 min",
+          };
+        }
+      }
+    }
+    // 3) Fallback: the daily drill.
+    if (!recommendation) {
+      recommendation = {
+        href: "/practice/decode",
+        title: "Presenting Complaint Decoder",
+        reason: "The daily habit that changes how you hear patients — today's set is fresh.",
+        cta: "Decode",
+        time: "4 min",
+      };
+    }
+  }
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <header className="mb-6">
@@ -79,6 +153,25 @@ export default async function PracticeHubPage() {
           Everything here is private to you and your faculty. Pick by how long you have.
         </p>
       </header>
+
+      {/* recommended card — one tap, always with a reason */}
+      {recommendation ? (
+        <Link
+          href={recommendation.href}
+          className="mb-6 block rounded-md border-2 border-primary bg-primary/5 p-4 hard-shadow-sm transition-transform hover:-translate-y-0.5 active:translate-y-px"
+        >
+          <p className="text-caption font-semibold text-primary">Recommended for you</p>
+          <div className="mt-1 flex items-center justify-between gap-3">
+            <div>
+              <p className="text-base font-semibold">{recommendation.title}</p>
+              <p className="mt-1 text-small text-muted-foreground">{recommendation.reason}</p>
+            </div>
+            <span className="shrink-0 rounded-md border-2 border-primary bg-primary px-3 py-1.5 text-caption font-semibold text-primary-foreground">
+              {recommendation.cta} · {recommendation.time}
+            </span>
+          </div>
+        </Link>
+      ) : null}
 
       {/* weak-spots banner */}
       <Link

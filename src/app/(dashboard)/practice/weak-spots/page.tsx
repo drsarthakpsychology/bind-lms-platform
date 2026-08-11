@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { analyzeWeakSpots, generateDrill } from "@/lib/practice/weak-spots";
 import { WeakSpotsView } from "./weak-spots-view";
 import { WeakSpotsDrill } from "./weak-spots-drill";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -11,7 +12,8 @@ export const dynamic = "force-dynamic";
  * (v5 §4: "Weak Spots must GENERATE a drill, not just report").
  */
 export default async function WeakSpotsPage() {
-  const supabase = await createClient();
+
+  await requireFeature("weak_spots");  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();

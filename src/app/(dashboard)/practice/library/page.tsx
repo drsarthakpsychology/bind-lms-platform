@@ -1,5 +1,6 @@
 import { getLibraryDocs, filterLibrary } from "@/lib/corpus/library";
 import { LibraryList } from "./library-list";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +12,7 @@ export const dynamic = "force-dynamic";
 export default async function LibraryPage(props: {
   searchParams: Promise<{ q?: string }>;
 }) {
+  await requireFeature("case_library");
   const sp = await props.searchParams;
   const query = sp.q ?? "";
   const all = getLibraryDocs();
