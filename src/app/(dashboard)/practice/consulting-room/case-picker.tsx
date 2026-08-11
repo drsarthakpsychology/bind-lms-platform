@@ -64,6 +64,15 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
           {error}
         </div>
       ) : null}
+      {cases.length === 0 ? (
+        <div className="rounded-md border-2 border-dashed border-border bg-card p-8 text-center">
+          <p className="text-base font-medium">No patients are ready yet</p>
+          <p className="mt-1 text-small text-muted-foreground">
+            Your faculty is finalising the case list. Check back soon — the first
+            patient will be waiting here.
+          </p>
+        </div>
+      ) : null}
       <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {cases.map((c) => (
           <li key={c.title} className="flex flex-col rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
