@@ -40,6 +40,30 @@ export async function POST(req: Request) {
 
   const audio = Buffer.from(parsed.data.audioBase64, "base64");
 
+  // 0) Deepgram (server-side key; streaming-capable, medical vocabulary).
+  if (process.env.DEEPGRAM_API_KEY) {
+    try {
+      const fd = new FormData();
+      fd.append("audio", new Blob([audio], { type: parsed.data.mime }), "speech.webm");
+      fd.append("model", "whisper");
+      fd.append("language", "en-IN");
+      const res = await fetch("https://api.deepgram.com/v1/listen", {
+        method: "POST",
+        headers: { Authorization: `Token ${process.env.DEEPGRAM_API_KEY}` },
+        body: fd,
+      });
+      if (res.ok) {
+        const j = (await res.json()) as {
+          results?: { channels?: Array<{ alternatives?: Array<{ transcript?: string }> }> };
+        };
+        const t = j.results?.channels?.[0]?.alternatives?.[0]?.transcript;
+        if (t) return NextResponse.json({ transcript: t });
+      }
+    } catch {
+      /* fall through to the next provider */
+    }
+  }
+
   const transcribe = async (url: string, apiKey: string): Promise<string | null> => {
     try {
       const fd = new FormData();

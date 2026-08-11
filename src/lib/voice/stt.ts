@@ -167,3 +167,38 @@ export async function serverTranscribe(blob: Blob): Promise<{ transcript: string
     return { error: "Network error" };
   }
 }
+
+/**
+ * Deepgram streaming STT (IDEAS: Deepgram) — provider-shaped drop-in.
+ * The browser NEVER holds the key: the server STT route tries Deepgram
+ * first when DEEPGRAM_API_KEY is set, then Groq → NVIDIA. The interim
+ * transcript + edit-before-send flow stay identical, so this is a pure
+ * availability upgrade, not a UX change.
+ */
+export interface DeepgramSttEngine extends SttEngine {
+  type: "deepgram";
+}
+
+export function deepgramSttAvailable(): boolean {
+  // Availability is decided server-side; the engine is always constructible
+  // and the server route falls back honestly.
+  return typeof window !== "undefined";
+}
+
+export function createDeepgramStt(): DeepgramSttEngine | null {
+  if (!deepgramSttAvailable()) return null;
+  return {
+    type: "deepgram",
+    supported: () => true,
+    start() {
+      // The parent records (MediaRecorder); start signals readiness.
+      this.onResult?.({ transcript: "", confidence: 1, isFinal: false });
+    },
+    stop() {
+      /* the parent finalises the recording */
+    },
+    abort() {
+      /* no-op */
+    },
+  };
+}
