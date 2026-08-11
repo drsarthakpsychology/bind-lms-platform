@@ -3,6 +3,34 @@
 Reverse-chron. One entry per slice: what shipped, decisions, commit hash.
 Protocol: never stop, never ask, keep the branch buildable.
 
+## 2026-08-12 (rounds 2 + 3 — the queue regenerated and emptied twice)
+
+### Round 2 (10 items, committed)
+- Two-Minute Clinic 4 → **81 prompts** (all 16 traps, 19 idiom variants) in a pure module
+- Every practice tool now credits competencies → Skills Passport (shared /api/practice/competency)
+- feature_flags migration file (18 rows, 6 enabled — reproducible on a fresh project)
+- Scheduled module release cron (release-scheduled, GitHub Actions)
+- Wall Case of the Week — faculty pin/unpin
+- Check-in × pulse curriculum-problem flag (aggregate-only)
+- AI_STUDENT_TIER wired (no_train_only default, "any" dev-only) + 3 tests
+- Scoring-logic coverage: 11 tests — **found + fixed a real bug** (FIXTURE_DEBRIEF had 2 quotes vs schema's ≥3)
+- 21-item sourced quiz bank wired into MSE + OSCE
+
+### Round 3 (10 items, committed)
+- Keyboard nav (j/k/Enter//) on /practice
+- Card-shaped skeleton loading for /practice
+- Haptics audit — every practice onClick now haptics
+- Empty-state pass — Consulting Room case picker
+- Formulation peer-critique wall (anonymised, author_id structurally nulled)
+- Two-Minute Clinic daily completion → streaks table (retention loop)
+- Deepgram STT drop-in — server-side key, first in the provider chain
+- Docs: PRACTICE_LAYER.md + IDIOMS.md
+- Free-tier: infra-snapshot prunes to 90 rows
+- Perf: /today queries parallelized
+
+### State
+44 commits on feat/v5-depth · 267 tests (+56 from the original 211) · lint clean (3 pre-existing warnings) · tsc clean · build green · QUEUE empty (generated round 4 next)
+
 ## 2026-08-11 (overnight completion run — 20 commits, queue emptied)
 
 ### What shipped (beast-mode completion run)

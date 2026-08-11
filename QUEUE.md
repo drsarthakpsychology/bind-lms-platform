@@ -69,3 +69,16 @@
 - [x] Formulation peer-critique wall: anonymised formulations from stage 4, visible to the cohort with reactions (IDEAS: Formulation Wall)
 - [x] Deepgram streaming STT: provider-shaped drop-in for stt.ts when a key exists (IDEAS: Deepgram)
 - [x] Two-Minute Clinic: persist the daily best time + streak into the streaks table (retention loop)
+
+## ROUND 4 — infinite backlog (content volume → polish → proposals)
+
+- [ ] SCT item volume: expand src/lib/practice/sct.ts beyond 64 with 20 more panel-scored items (never auto-publish; admin review queue)
+- [ ] MSE stimuli volume: add 10 more expert-coded stimuli to src/lib/mse/mse4-stimuli.ts with expert MSE codes for L4/L5
+- [ ] Idiom bank: add 15 more entries to src/lib/decode/idioms.ts (regional: Bengali, Tamil, Telugu, Kannada idioms) — the moat is content
+- [ ] Weak-spots → Rounds heatmap link: in src/app/(dashboard)/practice/weak-spots/, add a per-spot link to the teaching lesson in Rounds cards (the card that teaches it)
+- [ ] Case Library annotation: highlight + note on src/app/(dashboard)/practice/library/library-list.tsx with peers-unlock-after-yours (currently read-only)
+- [ ] Quiz persistence: write quiz attempts to a quiz_attempts table so /admin/triage can surface low-confidence quiz areas
+- [ ] Focus management: after each tool action, move focus to the next logical control (brief §11.5 polish)
+- [ ] Reduced-motion pass: respect prefers-reduced-motion on the remaining animations (brief §10.18)
+- [ ] Screen-reader labels audit on the practice tools (aria-live on scores, labels on icon buttons) (brief §10.18)
+- [ ] e2e for the new A1 retry flow: extend e2e/consulting-session.spec.ts to click "Try this again" and assert the branch session loads with the comparison strip
