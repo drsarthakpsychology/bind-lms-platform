@@ -45,7 +45,13 @@ export function WeakSpotsView({ spots, sessions }: { spots: WeakSpot[]; sessions
         <div key={s.key} className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
           <div className="flex items-center justify-between gap-3">
             <p className="text-small font-semibold">{s.label}</p>
-            <span className="text-caption text-muted-foreground">
+            <span className="flex items-center gap-2 text-caption text-muted-foreground">
+              <span
+                className={s.trend === 1 ? "text-green-700" : s.trend === -1 ? "text-red-600" : ""}
+                title={s.trend === 1 ? "Improving" : s.trend === -1 ? "Worsening" : "Flat"}
+              >
+                {s.trend === 1 ? "▲ improving" : s.trend === -1 ? "▼ worsening" : "— flat"}
+              </span>
               {s.sessions} session{s.sessions === 1 ? "" : "s"}
             </span>
           </div>

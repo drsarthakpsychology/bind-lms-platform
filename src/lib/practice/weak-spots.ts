@@ -27,6 +27,8 @@ export interface WeakSpot {
   remedyLabel: string;
   /** The Rounds card that teaches this skill (the heatmap → lesson link). */
   teachCard: string;
+  /** trend over sessions: -1 declining (worse), 0 flat, +1 improving. */
+  trend: -1 | 0 | 1;
 }
 
 /** Interpret one rubric field as a 0..1 "miss" score. */
@@ -85,6 +87,11 @@ export function analyzeWeakSpots(rubrics: Rubric[]): WeakSpot[] {
     const avg = scores.reduce((a, s) => a + s, 0) / scores.length;
     const severe = scores.some((s) => s > 0.5);
     if (severe || avg > 0.35) {
+      const firstHalf = scores.slice(0, Math.ceil(scores.length / 2));
+      const secondHalf = scores.slice(Math.ceil(scores.length / 2));
+      const fhAvg = firstHalf.length ? firstHalf.reduce((a, s) => a + s, 0) / firstHalf.length : avg;
+      const shAvg = secondHalf.length ? secondHalf.reduce((a, s) => a + s, 0) / secondHalf.length : avg;
+      const trend: -1 | 0 | 1 = scores.length < 4 ? 0 : shAvg < fhAvg - 0.08 ? 1 : shAvg > fhAvg + 0.08 ? -1 : 0;
       out.push({
         key: def.key,
         label: def.label,
@@ -93,6 +100,7 @@ export function analyzeWeakSpots(rubrics: Rubric[]): WeakSpot[] {
         remedyHref: def.remedyHref,
         remedyLabel: def.remedyLabel,
         teachCard: def.teachCard,
+        trend,
       });
     }
   }
