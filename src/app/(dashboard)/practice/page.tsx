@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { readFlags, type FeatureKey } from "@/lib/flags";
 import { createClient } from "@/lib/supabase/server";
+import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
 
 /**
  * /practice — the deliberate browse view (v5.1 Part B).
@@ -225,7 +226,10 @@ export default async function PracticeHubPage() {
 
       <p className="mt-8 text-caption text-muted-foreground">
         Voice mode is available in the Consulting Room and OSCE stations. Everything stays on the server.
+        <span className="ml-2 hidden sm:inline">Keyboard: j/k to move · Enter to open · / for help.</span>
       </p>
+
+      <PracticeKeyboardNav links={visible.map((t) => ({ href: t.href, title: t.title }))} />
     </div>
   );
 }
