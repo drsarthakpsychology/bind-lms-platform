@@ -25,6 +25,7 @@ import { VOLUME_4_CASES } from "./cases/volume-4";
 import { VOLUME_5_CASES } from "./cases/volume-5";
 import { VOLUME_6_CASES } from "./cases/volume-6";
 import { VOLUME_7_CASES, VOLUME_7B_CASES } from "./cases/volume-7";
+import { VOLUME_8_CASES } from "./cases/volume-8";
 
 export type ModuleState = "draft" | "scheduled" | "published" | "archived";
 
@@ -60,7 +61,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 2,
     state: "draft",
     focus: "Generalised anxiety, panic disorder, and the somatic-first presentations",
-    cases: [...ANXIETY_CASES, ...VOLUME_1_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_6_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_7_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_7B_CASES.filter(c => c.module_id === "mod-anxiety")],
+    cases: [...ANXIETY_CASES, ...VOLUME_1_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_6_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_7_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_7B_CASES.filter(c => c.module_id === "mod-anxiety"), ...VOLUME_8_CASES.filter(c => c.module_id === "mod-anxiety")],
   },
   {
     id: "mod-psychosis",
@@ -108,7 +109,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 8,
     state: "draft",
     focus: "Adolescent depression, POCSO, family dynamics, engaging the young person directly",
-    cases: [...ADOLESCENT_CASES, ...VOLUME_2_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_3_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_7_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_7B_CASES.filter(c => c.module_id === "mod-adolescent")],
+    cases: [...ADOLESCENT_CASES, ...VOLUME_2_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_3_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_7_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_7B_CASES.filter(c => c.module_id === "mod-adolescent"), ...VOLUME_8_CASES.filter(c => c.module_id === "mod-adolescent")],
   },
   {
     id: "mod-ethics",
@@ -116,7 +117,7 @@ export const MODULES: PracticeModule[] = [
     order_index: 9,
     state: "draft",
     focus: "MHA 2017, RCI scope, POCSO — the consequence-first dilemmas",
-    cases: [...ETHICS_CASES, ...VOLUME_2_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_3_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_7_CASES.filter(c => c.module_id === "mod-ethics")],
+    cases: [...ETHICS_CASES, ...VOLUME_2_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_3_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_4_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_5_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_7_CASES.filter(c => c.module_id === "mod-ethics"), ...VOLUME_8_CASES.filter(c => c.module_id === "mod-ethics")],
   },
 ];
 

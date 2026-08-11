@@ -68,3 +68,34 @@ describe("simulated-patient safety rails", () => {
     }
   });
 });
+
+describe("A8 — restraint praised in no-disorder scoring", () => {
+  it("the scoring prompt explicitly praises restraint on a no-disorder case", () => {
+    const prompt = buildScoringPrompt({
+      caseTitle: "Raj, 38 — the father who lost his son four weeks ago",
+      caseDifficulty: "cooperative",
+      rubricTargets: ["risk assessment", "validation", "cultural attunement"],
+      transcript: [
+        { role: "student", content: "How have you been sleeping since the funeral?" },
+        { role: "patient", content: "Not well. But that's expected, isn't it? I lost my son." },
+      ],
+      isNoDisorder: true,
+    });
+    expect(prompt).toMatch(/NO-DISORDER CASE/i);
+    expect(prompt).toMatch(/RESTRAINT/i);
+    expect(prompt).toMatch(/PRAISE line/i);
+  });
+
+  it("a normal case does not carry the no-disorder restraint note", () => {
+    const prompt = buildScoringPrompt({
+      caseTitle: "Ravi, 34 — 'the heaviness'",
+      caseDifficulty: "cooperative",
+      rubricTargets: ["risk assessment", "validation"],
+      transcript: [
+        { role: "student", content: "How are you?" },
+        { role: "patient", content: "Heavy." },
+      ],
+    });
+    expect(prompt).not.toMatch(/NO-DISORDER CASE/);
+  });
+});

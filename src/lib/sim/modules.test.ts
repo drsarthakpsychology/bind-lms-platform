@@ -54,3 +54,30 @@ describe("module organisation — cases grouped by condition, distinct voices", 
     expect(new Set(ids).size).toBe(ids.length);
   });
 });
+
+describe("A8 — no-disorder principle (9 cases, restraint praised)", () => {
+  it("the nine no-disorder presentations all exist (A8 list)", () => {
+    const all = MODULES.flatMap((m) => m.cases);
+    const ids = new Set(all.map((c) => c.case_id));
+    const required = [
+      "dep-grief-raj",          // 1. normal grief within weeks of a death
+      "ado-normal-teen",        // 2. normal adolescent withdrawal
+      "anx-exam",               // 3. exam anxiety within range
+      "no-disorder-sunita",     // 4. situational stress with intact function
+      "no-disorder-rohit-parent", // 5. a worried parent with a typical child
+      "no-disorder-neelam-sent",  // 6. sent by a family member, no complaint
+      "psy-mahesh",             // 7. culturally normative possession, no impairment
+      "anx-kavya",              // 8. one-off panic after a medical scare, non-recurrent
+      "soma-b12-pramod",        // 9. low mood fully explained by a treatable medical cause
+    ];
+    for (const id of required) {
+      expect(ids.has(id), `missing no-disorder case ${id}`).toBe(true);
+    }
+    // Each teaches restraint: tagged with a trap that rewards NOT diagnosing
+    // (over-diagnosis, or medical-mimic where the 'depression' is a disease).
+    for (const id of required) {
+      const c = all.find((x) => x.case_id === id)!;
+      expect(c.traps.length).toBeGreaterThan(0);
+    }
+  });
+});
