@@ -16,21 +16,21 @@ export default async function TodayPage() {
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  // Streak (simplified: from the streaks table, else 0).
-  const { data: streak } = await supabase
-    .from("streaks")
-    .select("current_streak")
-    .eq("user_id", user.id)
-    .maybeSingle();
-
-  // An unfinished sim session → the recommended thing.
-  const { data: activeSession } = await supabase
-    .from("sim_sessions")
-    .select("id")
-    .eq("user_id", user.id)
-    .eq("status", "active")
-    .limit(1)
-    .maybeSingle();
+  // Streak + unfinished session in parallel (LCP — both are independent).
+  const [{ data: streak }, { data: activeSession }] = await Promise.all([
+    supabase
+      .from("streaks")
+      .select("current_streak")
+      .eq("user_id", user.id)
+      .maybeSingle(),
+    supabase
+      .from("sim_sessions")
+      .select("id")
+      .eq("user_id", user.id)
+      .eq("status", "active")
+      .limit(1)
+      .maybeSingle(),
+  ]);
 
   const currentStreak = Number(streak?.current_streak ?? 0);
 
