@@ -2,34 +2,7 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
-
-const CLINICS = [
-  {
-    line: "A 34-year-old man, 8 months of body ache, 'heaviness', broken sleep, 6kg weight loss. Three GP visits for 'gas' and 'weakness'.",
-    expertDifferential: ["Major depressive disorder (somatic presentation)", "Adjustment disorder", "Chronic medical illness"],
-    expertNext: "Ask about sleep, appetite, anhedonia — then screen for suicidal ideation directly.",
-    lesson: "Somatic-first depression is the most common missed presentation in Indian primary care. Never accept 'gas' without asking about sleep and mood.",
-  },
-  {
-    line: "A 28-year-old woman, 4 months of palpitations and fear of dying on the metro. 3 ER visits, all cardiac workups normal.",
-    expertDifferential: ["Panic disorder", "Panic disorder with agoraphobia", "Cardiac (reconsider if atypical)"],
-    expertNext: "Ask about anticipatory anxiety and avoidance — has she stopped doing things to avoid the sensation?",
-    lesson: "Normal cardiac workup + fear of dying + avoidance = panic until proven otherwise.",
-  },
-  {
-    line: "A 60-year-old retired teacher, 8 months after his wife died, talks to her chair and sorts her clothes one drawer a week. Daughter worried he's 'not moving on'.",
-    expertDifferential: ["Normal grief", "Complicated grief", "Major depressive disorder"],
-    expertNext: "Check for preserved pleasure (grandchildren?), sleep, appetite, and whether the grief has 'waves'.",
-    lesson: "Preserved pleasure with waves of grief = normal grief. Over-diagnosing this is the error.",
-  },
-  // --- v5 Part 1: Idiom-of-distress variant ---
-  {
-    line: "Patient: \"I'm not feeling fresh.\" (Could be constipation, non-restorative sleep, depressive fatigue, medication sedation, anaemia/thyroid, anxiety — what would you ask first?)",
-    expertDifferential: ["Constipation / incomplete evacuation", "Non-restorative sleep / sleep apnoea", "Depressive anergia", "Medication sedation", "Anaemia / hypothyroid / B12", "Anxiety somatic tension"],
-    expertNext: "\"When you say fresh — what would feeling fresh look like? Walk me through yesterday morning from waking up.\"",
-    lesson: "\"Not feeling fresh\" is the classic idiom of distress — in Indian English it often means constipation. The word is doing work you can't see. The funnel's instantiate step (\"Walk me through yesterday morning\") is the single highest-yield question to disambiguate it.",
-  },
-];
+import { CLINICS } from "@/lib/practice/clinic";
 
 export function TwoMinuteClinic() {
   const [itemIdx, setItemIdx] = React.useState(0);
