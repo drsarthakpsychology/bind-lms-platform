@@ -112,7 +112,7 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
             Reveal answers & rationale
           </button>
         ) : (
-          <p className="mt-3 text-small text-muted-foreground">
+          <p className="mt-3 text-small text-muted-foreground" aria-live="polite">
             {correctCount} / {c.quiz.length} correct
           </p>
         )}

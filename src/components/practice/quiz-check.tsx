@@ -95,7 +95,7 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
           Check answers
         </button>
       ) : (
-        <p className="text-small text-muted-foreground">
+        <p className="text-small text-muted-foreground" aria-live="polite">
           {result ? `${result.correct} / ${result.total} correct. A check, not a test — the rationale is the lesson.` : ""}
         </p>
       )}

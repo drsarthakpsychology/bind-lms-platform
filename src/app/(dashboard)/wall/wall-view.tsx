@@ -232,6 +232,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                         type="button"
                         onClick={() => void toggleReaction(p.id, r.key)}
                         aria-pressed={mine}
+                        aria-label={`${r.label} reaction, ${count}`}
                         className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground hover:bg-secondary"}`}
                       >
                         <Icon className="size-3" aria-hidden />
