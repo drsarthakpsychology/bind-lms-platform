@@ -692,6 +692,127 @@ export const ETHICS_DILEMMAS: EthicDilemma[] = [
     ],
     law: "Confidentiality generally survives death; records release only under legal authority.",
   },
+
+  {
+    id: "boundary-gift",
+    tag: "Confidentiality",
+    setting: "Gifts from clients",
+    vignette: "A client who runs a bakery brings you a box of sweets every session 'as thanks'. You've accepted three times. Today they added a ₹2000 gift card.",
+    options: [
+      { label: "Accept — it's hospitality, rejecting would offend.", consequence: "You've let the gift escalate from sweets to a gift card — the boundary is moving and the client is testing it.", correct: false },
+      { label: "Accept small symbolic gifts with a clear frame, and decline anything of monetary weight, exploring what the giving means.", consequence: "Correct. The frame (small, symbolic, named) is the ethics — and the exploration of what the giving does is therapy.", correct: true },
+      { label: "Refuse everything including the sweets from now on.", consequence: "The hard refusal after accepting three times is confusing for the client — the frame should have been set at the first sweet.", correct: false },
+    ],
+    law: "RCI code — gifts that create obligation or weight breach boundaries; the frame is named, not assumed.",
+  },
+  {
+    id: "boundary-self-disclosure",
+    tag: "Consent",
+    setting: "Self-disclosure",
+    vignette: "A client asks 'have you ever been through depression yourself?' You have, and you believe answering will build trust. The session is going well.",
+    options: [
+      { label: "Answer fully — trust requires reciprocity.", consequence: "The disclosure reframes the therapy toward you, and the client's need gets buried under your story.", correct: false },
+      { label: "Answer briefly and honestly, then return the focus: 'a little — but tell me what made you ask' — with the disclosure serving the client, not the alliance.", consequence: "Correct. A short honest answer that returns the focus is defensible; the 'what made you ask' is the clinical material.", correct: true },
+      { label: "Refuse to answer and change topic.", consequence: "The refusal without acknowledgment can feel shaming — the question deserves a real, brief, focused response.", correct: false },
+    ],
+    law: "Self-disclosure is clinical technique, not personal sharing — the client's need frames the answer.",
+  },
+  {
+    id: "boundary-fee-negotiation",
+    tag: "Consent",
+    setting: "Fee negotiation",
+    vignette: "A client loses their job mid-therapy and can no longer afford the fee. They ask for a reduction but won't discuss it 'out of shame'. You feel for them and want to help.",
+    options: [
+      { label: "Reduce the fee silently — no need to make them discuss it.", consequence: "The unspoken fee change is a hidden transaction — the client feels rescued but the frame (what the reduction means) goes unexplored and unowned.", correct: false },
+      { label: "Name the fee conversation directly: explore the shame, agree a sustainable rate, and review it together in a set time.", consequence: "Correct. The fee is clinical material — the shame about money is exactly the content worth exploring, and the plan is co-owned.", correct: true },
+      { label: "Keep the full fee — fairness is fairness.", consequence: "The rigid fee is a barrier the therapy can't cross — the sliding-scale conversation is the standard, not the exception.", correct: false },
+    ],
+    law: "Fees must not exploit vulnerability; the sliding-scale conversation is a documented ethical practice.",
+  },
+  {
+    id: "boundary-extra-session",
+    tag: "Consent",
+    setting: "Extra sessions",
+    vignette: "A client in crisis asks for a session every day this week. You have space. They say 'only you can help me right now'.",
+    options: [
+      { label: "Give them the daily sessions — crisis needs intensity.", consequence: "Daily sessions train dependence and the 'only you' frame — the crisis plan, not the frequency, is the intervention.", correct: false },
+      { label: "Offer one extra session + a concrete crisis plan + scheduled next regular session, and name the 'only you' frame directly.", consequence: "Correct. The frame ('only you') is a dependency signal worth naming; the plan and the boundary protect both.", correct: true },
+      { label: "Refuse extra sessions entirely.", consequence: "Refusing all extra support in a crisis is the other extreme — one focused addition + a plan is the standard.", correct: false },
+    ],
+    law: "Boundary standards — the crisis plan replaces the crisis frequency.",
+  },
+  {
+    id: "boundary-home-visit",
+    tag: "Confidentiality",
+    setting: "Home visit request",
+    vignette: "A client who is housebound with severe agoraphobia asks you to do sessions at their home, 'just this once'. You've never done home visits.",
+    options: [
+      { label: "Do it — they can't come to you.", consequence: "The home visit shifts the frame without policy, safety planning, or a documented rationale — a boundary you can't hold later.", correct: false },
+      { label: "Consider it with a defined frame: documented clinical rationale, a co-present arrangement, safety planning, and supervision sign-off.", consequence: "Correct. Home visits are legitimate with the frame — the decision belongs to policy + supervision, not to the request.", correct: true },
+      { label: "Refuse and keep the door closed.", consequence: "The refusal without exploring the access barrier abandons a housebound client — the assessment of need comes first.", correct: false },
+    ],
+    law: "Practice-location boundaries are policy decisions, not client requests — with documented clinical justification they're defensible.",
+  },
+  {
+    id: "boundary-social-media-friend",
+    tag: "Confidentiality",
+    setting: "Social media friend request",
+    vignette: "A current client sends you a friend request on Instagram. You've seen their profile and know they post a lot about their personal life.",
+    options: [
+      { label: "Accept — you'll understand them better.", consequence: "You've opened a surveillance channel that distorts the therapy and leaks the boundary to their social world.", correct: false },
+      { label: "Decline, and in session name the boundary: what you share publicly and what stays in the room.", consequence: "Correct. The decline is named in the session, and the 'what stays in the room' frame is explicit.", correct: true },
+      { label: "Accept but never look at their posts.", consequence: "The request itself is the boundary question — accepting silently, even without looking, is a frame you don't control.", correct: false },
+    ],
+    law: "Dual-relationship and digital-boundary standards — the frame is named, not assumed.",
+  },
+  {
+    id: "boundary-touching",
+    tag: "Consent",
+    setting: "Physical contact",
+    vignette: "A grieving client asks, mid-session, 'can I just have a hug? I haven't been touched in months.' You are not trained in touch-based modalities.",
+    options: [
+      { label: "Hug them — they're suffering and asked.", consequence: "You've accepted physical contact without a frame, training, or policy — a boundary that can't be defended if questioned.", correct: false },
+      { label: "Decline warmly, name the impulse ('you want to be held'), and explore what the touch would have meant — with supervision on the touch policy.", consequence: "Correct. The desire is clinical material; the touch is a policy question — naming the want is the therapeutic act.", correct: true },
+      { label: "Hug them but never again.", consequence: "The one-off hug without a frame is exactly the boundary leak — consistency after the exception is the problem.", correct: false },
+    ],
+    law: "Touch in therapy is a modality with its own training and policy — unscripted contact breaches the frame.",
+  },
+  {
+    id: "boundary-client-workplace",
+    tag: "Confidentiality",
+    setting: "Client workplace",
+    vignette: "You run an EAP (employee assistance) service. A client at a client-company is being performance-managed, and their manager — who commissions your service — asks how the employee is 'doing'.",
+    options: [
+      { label: "Share a status — the manager commissions the service.", consequence: "EAP confidentiality is absolute — commissioning creates access rights to the SERVICE, not the clinical content.", correct: false },
+      { label: "Refuse clinical content, confirm only attendance-with-consent framing, and explain the confidentiality wall to the manager.", consequence: "Correct. The EAP wall is the product's value — the manager learns the boundary and the employee stays protected.", correct: true },
+      { label: "Share 'general progress' without details.", consequence: "'General progress' is still clinical content — the wall is binary.", correct: false },
+    ],
+    law: "EAP confidentiality is absolute for content; the commissioning relationship covers access to the service, not the session.",
+  },
+  {
+    id: "boundary-billing-anonymous",
+    tag: "Consent",
+    setting: "Anonymous billing",
+    vignette: "A client whose family would find a therapy charge on the shared card asks you to bill under a vague description so 'nobody asks questions'.",
+    options: [
+      { label: "Bill vaguely — it protects them.", consequence: "You've created a billing record designed to deceive, which erodes the very confidentiality it pretends to serve when audited.", correct: false },
+      { label: "Use an accurate-but-non-identifying billing label, and explore the family surveillance that makes the charge dangerous.", consequence: "Correct. Non-identifying billing (without deception) plus the exploration of the surveillance is the honest frame.", correct: true },
+      { label: "Refuse and require their real name on the receipt.", consequence: "The refusal without exploring the surveillance barrier abandons a real access problem — the label fix plus the conversation is the standard.", correct: false },
+    ],
+    law: "Billing integrity — non-identifying labels are defensible; deceptive records are not.",
+  },
+  {
+    id: "boundary-supervisor-relative",
+    tag: "Confidentiality",
+    setting: "Supervisor overlap",
+    vignette: "You discover your supervisor is the aunt of your current client, and has been hearing case material that could identify them. Neither knows of the relationship.",
+    options: [
+      { label: "Keep it quiet — the supervisor would withdraw and you'd lose guidance.", consequence: "You've let identifying material reach a relative — a confidentiality breach the client never consented to.", correct: false },
+      { label: "Disclose the overlap to your supervisor immediately, stop identifying details in supervision, and agree the path (alternate supervisor or client referral).", consequence: "Correct. The overlap is a hard stop on identifying material — the disclosure and the alternative supervisor are the fix.", correct: true },
+      { label: "Continue but anonymise the case in supervision.", consequence: "Anonymising after discovery doesn't undo the material already shared — the disclosure is owed first.", correct: false },
+    ],
+    law: "Supervision confidentiality has the same limits as therapy confidentiality — relatives are a hard stop.",
+  },
 ];
 
 /** Randomised daily set, seeded deterministically so the day's set is stable. */
