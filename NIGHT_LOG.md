@@ -3,6 +3,22 @@
 Reverse-chron. One entry per slice: what shipped, decisions, commit hash.
 Protocol: never stop, never ask, keep the branch buildable.
 
+## 2026-08-12 (rounds 4 — content volume: the moat)
+
+### Shipped
+- SCT 64 → **94** items (10 new templates ×3 variants)
+- MSE L4 stimuli 5 → **10** (expert-coded, all 11 domains + small-things)
+- Idiom bank 65 → **80** (15 regional: Bengali/Tamil/Telugu/Kannada/Marathi/Gujarati)
+- Weak-spots → Rounds **teachCard** link per spot
+- **Case Library annotations**: your note unlocks peers' (library_notes, server-enforced)
+- **Quiz attempts persisted** → /admin/triage low-confidence signals
+- a11y: aria-live on scores, reaction aria-labels, **focus management** on the MSE drill
+- e2e: A1 retry flow spec
+- Verified: global reduced-motion kill switch covers all CSS animations (no JS bypass)
+
+### State
+52 commits on feat/v5-depth · 268 tests · lint clean (3 pre-existing) · tsc clean · build green · QUEUE emptied round 5 next
+
 ## 2026-08-12 (rounds 2 + 3 — the queue regenerated and emptied twice)
 
 ### Round 2 (10 items, committed)
