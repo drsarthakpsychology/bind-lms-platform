@@ -3,7 +3,7 @@ import { SEED_OSCE_STATIONS, scoreOsce, seededRotate } from "./osce";
 
 describe("OSCE stations", () => {
   it("has more than one station (randomisation is meaningful)", () => {
-    expect(SEED_OSCE_STATIONS.length).toBeGreaterThan(1);
+    expect(SEED_OSCE_STATIONS.length).toBeGreaterThanOrEqual(12);
   });
 
   it("seededRotate keeps all items and changes the start", () => {
