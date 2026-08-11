@@ -3,7 +3,7 @@ import { CLINICS } from "./clinic";
 
 describe("two-minute clinic prompts (v5 §4 — the retention feature)", () => {
   it("has 60+ prompts", () => {
-    expect(CLINICS.length).toBeGreaterThanOrEqual(60);
+    expect(CLINICS.length).toBeGreaterThanOrEqual(100);
   });
 
   it("every prompt has a differential, next question, and lesson", () => {
