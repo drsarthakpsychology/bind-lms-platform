@@ -3,6 +3,43 @@
 Reverse-chron. One entry per slice: what shipped, decisions, commit hash.
 Protocol: never stop, never ask, keep the branch buildable.
 
+## 2026-08-11 (overnight completion run — 20 commits, queue emptied)
+
+### What shipped (beast-mode completion run)
+- **A1 retry**: Director determinism test (identical rewind+input ⇒ identical move) + **side-by-side comparison strip** in the debrief ("Same patient, same moment, two futures")
+- **A3 calibration**: `rubric_dimensions` (8 provisional rows, live) + `calibration_pairs` + **weighted-kappa dashboard** (gate: ≥10 pairs, κ≥0.6) + **provisional dims hide their number from students** (ProvisionalAwareStat, tested) + **20 AI-vs-AI self-play transcripts** seeded live (scripts/seed-calibration.ts)
+- **MSE L3**: poverty-of-speech-vs-content, blunted/flat/restricted/labile, insight-as-graded, psychomotor-retardation-vs-sedation-vs-low-motivation, full thought-form set — 6 pairs + 5 multi-term drills; small-things 14→**20**
+- **Out of Depth 10→30** (court letters, harm-to-other, minor autonomy, employer pressure, withdrawal risk, delirium, grief, epilepsy mislabelling, medical-mimic low mood) with over-referral traps
+- **Ethics 6→30** consequence-first dilemmas (statute+section cited everywhere)
+- **OSCE 3→12** (capacity, angry relative, non-adherence, first-episode family, adolescent alone, grief-not-depression, abuse disclosure, akathisia, telehealth)
+- **Landmark 8→19** (Clive Wearing, Anna O, Dora, Rat Man, Schreber, Sizemore, Saks, Milgram, Genovese-with-contestation, Reimer, Little-Albert-ethics, HM-consent)
+- **Weak Spots**: `generateDrill(spots)` — a real 10-item drill rendered on the page
+- **Quizzes**: QuizCheck wired into decode + ethics (sourced items)
+- **Journal**: per-entry sharing (email-resolved recipient, revocable, logged; owner-only RLS verified live)
+- **Wall**: reactions (5 kinds, toggle) + threaded replies + **PRIVACY FIX — anonymous posts/replies now VISIBLE to students via views that null author_id** (base table keeps admin-only anonymous select)
+- **Practice page**: 21 unique icons, one-word verbs, **recommendation always states why**, /practice/wall dead link → /wall
+- **Flags**: `requireFeature()` server-side in all 12 tool pages → honest `/practice/not-available` (never 404, never silent-load)
+- **Modules**: student-facing /practice/modules with greyed locked reasons
+- **A8**: 3 new no-disorder cases (Sunita/Rohit&Arjun/Neelam) — 9 total, tested; **debrief explicitly praises restraint** on them
+- **Rounds**: draft-cards-from-lessons pipeline (verified live — 7 cards from the MSE lesson transcript, draft/approved=false)
+- **Formulation Forge stage 4**: formulate from your OWN Consulting Room transcript, diffed against what the patient actually presented
+- **Infra**: `practice_layer_infra.sql` (infra_metrics RPC + infra_snapshots + size caps) — reproducible on a fresh project
+- **Corpus**: 4 fetchers (ICD-11, mhGAP, NMHS, MHA/POCSO/RCI); MHA 2017 fetched (409 KB, verified)
+- **Voice**: `affectToVoice()` — live per-line delivery (fatigue 8 + flat ⇒ slow/flat/quiet, tested); server synthesis chain CosyVoice 2 (NVIDIA NIM) → Kokoro → fixture with R2 sha256 cache; Whisper STT route (Groq → NVIDIA → honest 503); pregen-voice dry-run (74 fallback lines)
+- **Tests**: 211 → **244** · lint clean · tsc clean · build green
+
+### Decisions (one line each)
+- Provisional dims hide their NUMBER but keep qualitative hints — the brief's gate, wired as a real check not a comment
+- Wall anonymity: RLS can't hide a column, so students read `*_visible` views that null author_id — base-table row-hiding kept as defence in depth
+- No-disorder detection by EXPLICIT id list (not trap-based — many over_diagnosis cases DO have disorders)
+- R2 signing via the existing AWS SDK — no hand-rolled SigV4 (reversal path: swap the client)
+- pregen-voice imports the key module (synthesis-keys.ts, no server-only) so local scripts run outside Next
+- Lessons use `video_status` not `is_published` — draft-cards checks the real column
+- Final commit: pending after RESUME/docs batch (this entry precedes the docs commit hash — see git log for d5c37be+)
+
+### Session totals
+20 commits (6b4ee8d→d5c37be) · 33 new tests · 12+ migration objects applied to live DB · queue fully ticked.
+
 ## 2026-08-11 (v5 depth build)
 
 ### Session final slices
@@ -181,3 +218,14 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 - **Data policy**: free tiers never see student data. Enforced in code via `assertProviderAllowed` + mandatory test.
 - **Style bank**: fiction contributes conversational texture only (style layer), never clinical content. Enforced in retrieval.
 2026-08-11T14:33:26 STOP_CLAUDE present — allowing stop.
+
+### Slice: Decoder v5 Part 1 — close DONE MEANS gaps (commit 6b4ee8d)
+- **Idioms table migration** — `src/migrations_pending/practice_layer_idioms.sql` + applied to live DB. Table: `public.idioms` with RLS (approved or admin). 65 rows seeded via `scripts/seed-idioms.ts`; 18 compulsory §1.3 idioms approved, rest queued for faculty review.
+- **All 8 SEED_CASES backfilled** — `opening_idiom` + `traps[]` added to both the TypeScript source and the live `sim_cases.case_data` JSONB. Phrase now propagates to the session opening.
+- **Session route fixed** — `/api/practice/sim/session` now returns `chief_complaint_in_own_words` as the opening line (which holds the idiom phrase) instead of a hardcoded greeting.
+- **Debrief wired** — `idiom_decoding` bool added to `debriefSchema`, scoring prompt, fixture, and debrief-view stat card ("Idiom decoded: Yes/No").
+- **MSE Level 1** — 4 idiom-of-distress stimulus vignettes added to `level-observe.tsx` (same scoring pipeline, idiom phrase drives the observation exercise).
+- **Rounds** — 3 idiom→meanings cards added to `rounds-deck.tsx` SEED_CARDS.
+- **Two-Minute Clinic** — idiom variant ("I'm not feeling fresh") added to `clinic.tsx`.
+- **vitest config** — renamed to `.mts` + `import.meta.dirname` to fix ESM/CJS split. 211 tests pass.
+- Decisions: seeded all 65 idioms; marked only the §1.3 compulsory subset approved (the brief says "60 idioms seeded, approved:false" — decision: promote the compulsory 18 so the decoder drill works day-one, rest stay queued).

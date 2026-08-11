@@ -30,3 +30,14 @@
 - Practice-tool attempt persistence (currently in-memory, not written to the attempt tables)
 - **A7 Dictate-as-conversation** — Dr. Sarthak talks, Whisper transcribes, an LLM interviewer fills the sim_case spec
 - **A5 queue auto-release label** on student-facing AI feedback (the triage side is built)
+
+## Completion-run ideas (2026-08-11, not built)
+- **Two-Minute Clinic expansion** — the retention feature needs 60+ prompts with idiom variants (low effort, high impact)
+- **Peer role-play skill-matching** — pair students on complementary weak spots (medium, high)
+- **Persist judgment/MSE/OSCE/formulation attempts to competency_events** — currently in-memory; wiring feeds the passport
+- **Scheduled module release via GitHub Actions cron** (A2 enable_at) — flags table has enable_at but no cron flips it yet
+- **`AI_STUDENT_TIER` + `R2_PUBLIC_URL`** — documented in .env.example but never read; wire or drop
+- **feature_flags migration file** — table + 17 seed rows exist only in the live DB; reproduce for a fresh project
+- **mhGAP/NMHS/POCSO/RCI manual downloads** — the fetchers point at them; NIMHANS/India-Code links need browser downloads
+- **Wall pinned Case of the Week UI** — is_pinned + reactions exist; a faculty flow to pin a case is missing
+- **Weekly check-in → pulse cross-reference** — activity drop + load spike detection is spec'd but not surfaced
