@@ -65,6 +65,20 @@ export async function GET(req: Request) {
       if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
       return NextResponse.json({ ok: true, task, transitioned: (data ?? []).length });
     }
+        case "release-scheduled": {
+      // A2 scheduled release: flip any scheduled module whose release_at has
+      // arrived to published (the GitHub Actions cron runs this daily).
+      const { createAdminClient } = await import("@/lib/supabase/server");
+      const admin = createAdminClient();
+      const now = new Date().toISOString();
+      const { data, error } = await admin
+        .from("modules")
+        .update({ state: "published", release_at: null })
+        .eq("state", "scheduled")
+        .lte("release_at", now);
+      if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
+      return NextResponse.json({ ok: true, task, released: (data ?? []).length });
+    }
     case "send-reminders": {
       // TODO(provider): daily digest via Resend when a template + key exist.
       // Honest stub — the cron fires, records that it isn't configured, and
