@@ -1569,7 +1569,267 @@ const REGIONAL: IdiomEntry[] = [
   },
 ];
 
-export const IDIOMS: IdiomEntry[] = [...ALL_SOMATIC, ...CULTURE_BOUND, ...BORROWED, ...EXTRA, ...REGIONAL];
+
+/** Regional batch 2 (round 6) — Punjabi, Malayalam, Odia, Assamese. */
+const REGIONAL2: IdiomEntry[] = [
+  {
+    id: "idiom-punjabi-dil",
+    phrase: "dil toota hoya (Punjabi) / heart is broken",
+    register: ["Punjabi", "all ages"],
+    readings: ["cultural_idiom", "psychopathology"],
+    possible_meanings: [
+      { reading: "Romantic or family loss — the heart idiom of grief", likelihood: "high" },
+      { reading: "Depression if persistent with functional decline", likelihood: "medium" },
+      { reading: "Chest pain (literal) — workup first", likelihood: "low", clue: "exertion-related", physical: true },
+    ],
+    disambiguating_questions: [
+      "Broken by what — a person, a loss, or something in the chest?",
+      "How long has it been broken, and what does it stop you doing?",
+    ],
+    trap: "'Dil toota' is the Punjabi emotional heart — the chest workup is one question away, the mood screen is the second.",
+    sources: ["Punjabi idioms of distress"],
+  },
+  {
+    id: "idiom-punjabi-tension",
+    phrase: "tension bahut aa rahi hai (Punjabi) / lots of tension coming",
+    register: ["Punjabi", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Situational stress — the daily 'tension'", likelihood: "high" },
+      { reading: "Anxiety disorder if persistent and impairing", likelihood: "medium" },
+      { reading: "Somatic anxiety — head, chest, sleep", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Tension about what, since when, and what does it stop you doing?",
+      "What happens in the body when the tension comes?",
+    ],
+    trap: "Punjabi 'tension' is the pan-Indian generic — specify the what, since-when, and function cost.",
+    sources: ["Pan-Indian 'tension' literature"],
+  },
+  {
+    id: "idiom-punjabi-thakaan",
+    phrase: "thakaan (Punjabi) / exhaustion",
+    register: ["Punjabi", "adult"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Anaemia / nutritional deficiency", likelihood: "high", clue: "pallor, exertion fatigue", physical: true },
+      { reading: "Depressive fatigue", likelihood: "medium", clue: "morning worst, anhedonia" },
+      { reading: "Sleep disorder", likelihood: "medium", clue: "snoring, unrefreshing sleep" },
+    ],
+    disambiguating_questions: [
+      "Tired in the body or tired in the spirit?",
+      "What does a normal day look like?",
+    ],
+    trap: "Thakaan is the Punjabi kamzori — the physical triad and the mood screen, both.",
+    sources: ["Punjabi clinical practice"],
+  },
+  {
+    id: "idiom-odia-mana",
+    phrase: "mana kharap (Odia) / mind is bad",
+    register: ["Odia", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Low mood — the everyday 'mind is bad'", likelihood: "high" },
+      { reading: "Physical malaise (fever, gastritis)", likelihood: "medium", clue: "onset with fever or eating", physical: true },
+      { reading: "Worry about a specific problem", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Bad since when, and what does it change about your day?",
+      "Is it the head, the stomach, or the feelings?",
+    ],
+    trap: "Mana kharap is the Odia default — persistence and function decide, not the phrase.",
+    sources: ["Odia help-seeking literature"],
+  },
+  {
+    id: "idiom-odia-dharan",
+    phrase: "dharana pakila (Odia) / being possessed",
+    register: ["Odia", "adult"],
+    readings: ["cultural_idiom", "psychopathology"],
+    possible_meanings: [
+      { reading: "Possession state — culturally sanctioned distress expression", likelihood: "high", clue: "episodes with intact function between" },
+      { reading: "Dissociative episode", likelihood: "medium" },
+      { reading: "First-episode psychosis if persistent with fixed beliefs", likelihood: "low" },
+    ],
+    disambiguating_questions: [
+      "What happens between the episodes — is she fully herself?",
+      "What does she make of it herself?",
+    ],
+    trap: "Odia 'dharana' is the possession idiom — function between episodes is the discriminator, never assume psychosis.",
+    sources: ["Possession-trance literature; Odia clinical vignettes"],
+  },
+  {
+    id: "idiom-odia-jadibuti",
+    phrase: "jadibuti lage (Odia) / needs herbal remedy",
+    register: ["Odia", "adult"],
+    readings: ["cultural_idiom", "metaphor"],
+    possible_meanings: [
+      { reading: "Conventional 'root-medicine' reference — the family's framework", likelihood: "high" },
+      { reading: "Concern that the problem is 'witchcraft' needing herbal counter-measure", likelihood: "medium" },
+      { reading: "Metaphor for 'needs fixing'", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "What kind of remedy are they thinking of — roots, rituals, or doctors?",
+      "Who suggested it?",
+    ],
+    trap: "The jadibuti frame tells you the family's help-seeking map — explore it respectfully rather than correcting it.",
+    sources: ["Odia traditional-medicine literature"],
+  },
+  {
+    id: "idiom-malayalam-manam",
+    phrase: "manasil samasya (Malayalam) / problem in the mind",
+    register: ["Malayalam", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Self-referral for mental distress", likelihood: "high" },
+      { reading: "Somatic-first presentation (head, chest)", likelihood: "medium", clue: "physical complaints alongside" },
+      { reading: "Neurological concern ('mind' = brain)", likelihood: "low", clue: "blackouts, staring", physical: true },
+    ],
+    disambiguating_questions: [
+      "What makes you think the problem is in the mind?",
+      "Any episodes where you lose time?",
+    ],
+    trap: "'Mind' in Malayalam can mean emotion or brain — clarify before assuming psychopathology.",
+    sources: ["Malayalam clinical encounters"],
+  },
+  {
+    id: "idiom-malayalam-kunjunni",
+    phrase: "vayarukkulla feel illa (Malayalam) / no feeling for food",
+    register: ["Malayalam", "adult"],
+    readings: ["psychopathology", "disease"],
+    possible_meanings: [
+      { reading: "Anhedonia / appetite loss in depression", likelihood: "high" },
+      { reading: "GI cause (gastritis, liver)", likelihood: "medium", clue: "nausea, pain, jaundice", physical: true },
+      { reading: "Grief-related loss of appetite", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "No feeling for food, or no appetite in the body?",
+      "What used to taste good that doesn't now?",
+    ],
+    trap: "'No feeling for food' straddles anhedonia and GI disease — the pleasure question and the physical screen, both.",
+    sources: ["Malayalam somatic idioms"],
+  },
+  {
+    id: "idiom-malayalam-padam",
+    phrase: "visham thattunnila (Malayalam) / can't bear the poison",
+    register: ["Malayalam", "adult"],
+    readings: ["psychopathology", "protest", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Overwhelm — 'the situation is poisonous'", likelihood: "high" },
+      { reading: "Persecutory worry ('someone is poisoning things')", likelihood: "medium" },
+      { reading: "Masked suicidality ('can't bear it')", likelihood: "low", clue: "withdrawal, giving things away" },
+    ],
+    disambiguating_questions: [
+      "What is the poison — a situation, a person, or something else?",
+      "Have you had thoughts of ending your life?",
+    ],
+    trap: "The dramatic 'can't bear the poison' demands the direct risk screen — the metaphor can be the only window.",
+    sources: ["Kerala risk-screening literature"],
+  },
+  {
+    id: "idiom-assamese-mathu",
+    phrase: "mathu bhal nai (Assamese) / head is not well",
+    register: ["Assamese", "all ages"],
+    readings: ["psychopathology", "disease"],
+    possible_meanings: [
+      { reading: "Mental distress — 'head not well' = mind disturbed", likelihood: "high" },
+      { reading: "Headache / sinus", likelihood: "medium", clue: "localised pain, congestion", physical: true },
+      { reading: "Cognitive concern", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Head not well like pain, or like thoughts disturbing you?",
+      "When did it start and what changes with it?",
+    ],
+    trap: "'Mathu bhal nai' is the Assamese mind-head idiom — the quality question decides psyche from sinus.",
+    sources: ["Assamese idioms of distress"],
+  },
+  {
+    id: "idiom-assamese-mon",
+    phrase: "mon kosto (Assamese) / heart-mind suffering",
+    register: ["Assamese", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Emotional pain — grief, worry, sadness", likelihood: "high" },
+      { reading: "Depression if persistent with functional decline", likelihood: "medium" },
+      { reading: "Physical malaise", likelihood: "low", clue: "fever, body ache", physical: true },
+    ],
+    disambiguating_questions: [
+      "What is the mon suffering about?",
+      "How long, and what does it stop you doing?",
+    ],
+    trap: "Mon kosto is the Assamese heart-mind — the what, since-when, and function questions decide.",
+    sources: ["Assamese clinical literature"],
+  },
+  {
+    id: "idiom-punjabi-ghabrao",
+    phrase: "ghabrai jaandi hai (Punjabi) / it frightens me",
+    register: ["Punjabi", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Anxiety — situational fear", likelihood: "high" },
+      { reading: "Panic episodes (palpitations, breathlessness)", likelihood: "medium" },
+      { reading: "Startle from trauma", likelihood: "medium", clue: "post-event onset" },
+    ],
+    disambiguating_questions: [
+      "What frightens — a situation, your own sensations, or memories?",
+      "What happens in the body when it comes?",
+    ],
+    trap: "Ghabrai is the Punjabi cousin of ghabrahat — the physical picture and the trigger, both.",
+    sources: ["Punjabi idioms; panic-spectrum literature"],
+  },
+  {
+    id: "idiom-malayalam-veppam",
+    phrase: "ulle veppam (Malayalam) / inner heat",
+    register: ["Malayalam", "adult"],
+    readings: ["cultural_idiom", "disease"],
+    possible_meanings: [
+      { reading: "Anger/irritability — the 'inner heat' of emotion", likelihood: "high" },
+      { reading: "Burning sensations — neuropathy, gastritis", likelihood: "medium", clue: "burning on touch, epigastric", physical: true },
+      { reading: "Menopausal hot flashes", likelihood: "medium", clue: "age, night sweats" },
+    ],
+    disambiguating_questions: [
+      "Inner heat like anger, or like burning in the body?",
+      "When does it rise — with emotions or with food?",
+    ],
+    trap: "'Inner heat' is the Malayalam anger idiom with real physical mimics — the quality question decides.",
+    sources: ["Malayalam humoral idioms"],
+  },
+  {
+    id: "idiom-odia-bhitar",
+    phrase: "bhitara sadhona nahin (Odia) / no inner strength",
+    register: ["Odia", "adult"],
+    readings: ["psychopathology", "disease"],
+    possible_meanings: [
+      { reading: "Depressive anergia — 'the inner strength is gone'", likelihood: "high" },
+      { reading: "Physical exhaustion (anaemia, chronic illness)", likelihood: "medium", clue: "pallor, known disease", physical: true },
+      { reading: "Existential despair", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Inner strength gone like tiredness, or like the will to live?",
+      "Have you had thoughts of ending your life?",
+    ],
+    trap: "The 'no inner strength' idiom can mask risk — the will-to-live question is non-negotiable.",
+    sources: ["Odia risk-screening literature"],
+  },
+  {
+    id: "idiom-assamese-thoka",
+    phrase: "hridayot thoka (Assamese) / a knock in the heart",
+    register: ["Assamese", "adult"],
+    readings: ["cultural_idiom", "psychopathology", "disease"],
+    possible_meanings: [
+      { reading: "Grief/loss — the heart knocked by life", likelihood: "high" },
+      { reading: "Palpitations (literal)", likelihood: "medium", clue: "irregular, exertional", physical: true },
+      { reading: "Anxiety presenting as chest sensation", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "The knock — from a loss, from worry, or from the heart itself?",
+      "Does it come with activity or with memories?",
+    ],
+    trap: "Hridayot thoka straddles the grief heart and the cardiac heart — both questions are owed.",
+    sources: ["Assamese idioms; cardiac-mimic literature"],
+  },
+];
+
+export const IDIOMS: IdiomEntry[] = [...ALL_SOMATIC, ...CULTURE_BOUND, ...BORROWED, ...EXTRA, ...REGIONAL, ...REGIONAL2];
 
 /** Score a multi-select decode attempt: physical readings weigh more. */
 export function scoreDecode(entry: IdiomEntry, selected: string[]): { score: number; max: number; missedPhysical: string[] } {
