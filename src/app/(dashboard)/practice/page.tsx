@@ -2,7 +2,7 @@ import Link from "next/link";
 import {
   Stethoscope, Brain, Layers, Timer, BookOpen, Scale,
   NotebookPen, Users, Radar, CircleCheck, Gauge, Search, MessageSquare,
-  Siren, GraduationCap, HeartPulse, ClipboardCheck, Wand2,
+  Siren, GraduationCap, HeartPulse, ClipboardCheck, Wand2, Repeat,
   type LucideIcon,
 } from "lucide-react";
 import { readFlags, type FeatureKey } from "@/lib/flags";
@@ -32,7 +32,7 @@ const PRACTICE_TOOLS: PracticeTool[] = [
   // Under 5 minutes
   { href: "/practice/judgment", title: "5 Judgment Calls", verb: "SLIDE", description: "New information changes the probability.", icon: Gauge, time: "2 min", state: "due", flag: "judgment", progress: "day 4" },
   { href: "/practice/two-minute-clinic", title: "Two-Minute Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: CircleCheck, time: "2 min", state: "new", flag: "two_minute_clinic" },
-  { href: "/practice/rounds", title: "Rounds", verb: "RATE", description: "Spaced-repetition cards, capped at 25/day.", icon: Layers, time: "3 min", state: "done_today", flag: "rounds" },
+  { href: "/practice/rounds", title: "Rounds", verb: "RATE", description: "Spaced-repetition cards, capped at 25/day.", icon: Repeat, time: "3 min", state: "done_today", flag: "rounds" },
   { href: "/practice/decode", title: "Presenting Complaint Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: Search, time: "4 min", state: "new", flag: "decoder" },
 
   // A proper session
@@ -56,6 +56,7 @@ const PRACTICE_TOOLS: PracticeTool[] = [
   { href: "/practice/passport", title: "Skills Passport", verb: "VIEW", description: "Your competencies, evidenced.", icon: Radar, time: "read", state: "new", flag: "skills_passport", progress: "2 / 11 competencies" },
   { href: "/practice/supervision", title: "Supervision Log", verb: "RECORD", description: "Log contact hours, tag competencies.", icon: NotebookPen, time: "1 min", state: "new", flag: "supervision" },
   { href: "/practice/weak-spots", title: "Weak Spots", verb: "DRILL", description: "Your gaps, and a 10-item drill on the spot.", icon: ClipboardCheck, time: "5 min", state: "new", flag: "weak_spots" },
+  { href: "/practice/modules", title: "Modules", verb: "BROWSE", description: "Your course's modules, in order — locked ones state why.", icon: Layers, time: "1 min", state: "new", flag: "modules" },
 ];
 
 // Weak Spots is a dismissible banner above the grid, not a card.

@@ -21,6 +21,7 @@ const LABELS: Record<string, string> = {
   supervision: "Supervision Log",
   skills_passport: "Skills Passport",
   weak_spots: "Weak Spots",
+  modules: "Modules",
   checkin: "Weekly Check-in",
 };
 
