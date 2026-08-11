@@ -43,3 +43,16 @@
 - Order above follows Addendum C: A1 → A3 → practice page → MSE → voice → A4 → content. PARTIAL items are first because the Stop hook wants the half-built finished before new starts.
 - Items marked [NEEDS KEY] are built fully on fixtures and wait only for the env var to light up.
 - Live-DB-only tables (feature_flags, infra_metrics, infra_snapshots, sim branch columns) are already applied; the migration files above make them reproducible.
+
+## ROUND 2 — regenerated from IDEAS_NEXT + the infinite backlog (post-completion)
+
+- [x] Two-Minute Clinic expansion: grow src/lib/practice/clinic.ts prompts to 60+ with idiom variants (retention feature; low effort, high impact) [IDEAS: Two-Minute Clinic expansion]
+- [x] Persist judgment/MSE/OSCE/rounds/formulation attempts into competency_events so the Skills Passport fills from every tool, not just sim+supervision — add an insert in each tool's completion path [IDEAS: persist attempts]
+- [x] Peer role-play skill-matching: pair students on complementary weak spots (read both students' analyzeWeakSpots, pair top-gap with counterpart's strength) in src/app/(dashboard)/practice/role-play/role-play-lobby.tsx [IDEAS: skill-matching]
+- [x] feature_flags migration file: write src/migrations_pending/practice_layer_flags.sql reproducing the live table + all 17 seed rows (6 enabled) so a fresh Supabase project gets flags [RESUME landmine]
+- [x] Scheduled module release cron: add task "release-scheduled" to src/app/api/internal/cron/route.ts flipping feature_flags.enable_at / modules scheduled→published, wired to .github/workflows/reminders.yml [IDEAS: scheduled release]
+- [x] Wall pinned Case of the Week faculty flow: admin button to pin/unpin a post (sets is_pinned) + a faculty-visible pin affordance in src/app/(dashboard)/wall/wall-view.tsx [IDEAS: pinned case]
+- [x] Check-in × pulse cross-reference: in src/app/(dashboard)/admin/pulse/pulse-view.tsx, surface 'activity dropping + load score spiking' as a curriculum-problem flag from checkins_aggregate [IDEAS: checkin×pulse]
+- [x] Wire AI_STUDENT_TIER into src/lib/ai/guards.ts (honor no_train_only as a hard cap) or drop it from .env.example [RESUME finding]
+- [x] Raise coverage on scoring logic: add fixture-driven tests for debriefSchema against every rubric edge (empty transcript, all-closed questions, premature-reassurance x3) in src/lib/ai/scoring.test.ts [brief §11.2]
+- [x] Content volume: add 20 quiz items (order-the-steps + would-you-report types) to src/lib/quiz/, each with a source citation, wired into MSE + OSECE completion [brief §11.3]
