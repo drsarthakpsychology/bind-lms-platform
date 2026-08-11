@@ -30,6 +30,14 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
   const [multiPicked, setMultiPicked] = React.useState<string | null>(null);
   const [multiDoneAll, setMultiDoneAll] = React.useState(false);
 
+  // Focus management (brief §11.5): after advancing, move focus to the next
+  // item's first answer button so keyboard users never lose their place.
+  const answerRef = React.useRef<HTMLButtonElement | null>(null);
+
+  React.useEffect(() => {
+    if (!revealed) answerRef.current?.focus();
+  }, [pairIdx, itemIdx, drillIdx, multiIdx, revealed, phase]);
+
   const pair = CONFUSABLE_PAIRS[pairIdx];
   const item = pair.items[itemIdx];
   const key = `${pair.id}:${itemIdx}`;
@@ -99,13 +107,14 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
           <p className="text-small">{item.prompt}</p>
           <p className="mt-3 text-caption font-semibold text-muted-foreground">Which is it?</p>
           <div className="mt-2 grid grid-cols-2 gap-2">
-            {(["a", "b"] as const).map((which) => {
+            {(["a", "b"] as const).map((which, wi) => {
               const label = which === "a" ? pair.a : pair.b;
               const picked = answers[key] === which;
               const correct = item.correct === which;
               return (
                 <button
                   key={which}
+                  ref={wi === 0 ? answerRef : undefined}
                   type="button"
                   onClick={() => pick(which)}
                   disabled={revealed}
