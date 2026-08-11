@@ -71,3 +71,5 @@ Every item: paste → something switches on → verify with one command. Free fi
 ## Reminder (already done this session)
 - MHA 2017 full text: fetched 409 KB into `scripts/corpus/raw/statutes/` (gitignored).
 - 65 idioms seeded (18 compulsory approved); 20 calibration transcripts; wall reactions/replies live; journal sharing live.
+- Content volume rounds: idioms bank 95, SCT 154, quiz bank 51, out-of-depth 50, ethics 40, landmark 22, clinic 101.
+- **Review the 7 drafted flashcards + 20 calibration transcripts + the new content batches** in the admin queues — approval is the human step the build cannot do.

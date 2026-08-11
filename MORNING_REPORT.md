@@ -7,16 +7,16 @@ All routes below work with `AI_ENABLED=false` (fixtures) and upgrade instantly w
 | What | URL | Notes |
 |---|---|---|
 | Consulting Room (Director/Actor patient engine) | `/practice/consulting-room` | 63 cases, 16 traps, debrief with quotes + missed-disclosures reveal + **retry-from-turn-N with side-by-side comparison strip** |
-| Presenting Complaint Decoder | `/practice/decode` | 4 modes (Decode/Funnel/Seven Readings/CFI), 66 idioms, physical-miss 1.5× |
+| Presenting Complaint Decoder | `/practice/decode` | 4 modes (Decode/Funnel/Seven Readings/CFI), 95-idiom bank, physical-miss 1.5× |
 | MSE ladder | `/practice/mse` | 5 levels gated, 6 pairs + 5 set drills, 20 small-things, L5 from own transcript |
-| Out of Depth | `/practice/out-of-depth` | 30 scenarios, over- AND under-referral tracked |
-| Ethics & Law | `/practice/ethics` | 30 consequence-first dilemmas, statute + section cited |
+| Out of Depth | `/practice/out-of-depth` | 50 scenarios, over- AND under-referral tracked |
+| Ethics & Law | `/practice/ethics` | 40 consequence-first dilemmas (incl. technology boundaries), statute + section cited |
 | OSCE | `/practice/osce` | 12 timed stations |
-| Landmark cases | `/practice/landmark` | 19 cases, contestation taught (Rosenhan/Genovese/Stanford) |
+| Landmark cases | `/practice/landmark` | 22 cases incl. Indian psychiatric history, contestation taught |
 | Weak Spots | `/practice/weak-spots` | analysis + **10-item drill generated on the spot** |
 | Practice page | `/practice` | unique icons, reason-stated recommendation, server-side flag gates, honest "not yet available" |
 | Journal | `/reflect` | owner-only, **per-entry sharing now live (revocable, logged)** |
-| Wall | `/wall` | threaded replies + **reactions (not upvotes)**, anonymous never leaks author_id |
+| Wall | `/wall` | threaded replies + **reactions on posts AND replies**, report-to-faculty, anonymity views |
 | Modules | `/practice/modules` | locked modules visible with honest reasons |
 | Calibration | `/admin/calibration` | **kappa dashboard + provisional-dimension hiding** + 20 seeded self-play transcripts |
 | Infra | `/admin/infra` | live headroom (RPC now reproducible in migrations) |
@@ -36,14 +36,14 @@ See `NEEDS_KAVYA.md` (single-sitting checklist). Free first: **NVIDIA_API_KEY** 
 - **Server TTS/STT** (CosyVoice 2, Whisper) — fully built (`/api/practice/voice/{synthesis,stt}`, R2 sha256 cache, pregen-voice dry-run verified); browser speech + affect mapping works today.
 - **Live patient engine + debrief scoring** — fixture mode demoable; NVIDIA key flips to real models. **Data-policy guard is on**: student-data workloads refuse free tiers that train on data until a no-train key (ANTHROPIC) exists.
 
-## Content numbers
+## Content numbers (updated after the content-volume rounds)
 
 - Cases **63** (all 16 traps; **9 no-disorder** per A8, restraint now praised in debriefs)
-- Idioms **66** (65 in DB, 18 compulsory approved)
-- Confusable pairs **6 pairs + 5 set drills** (all 10 required distinctions) · small-things **20**
-- Out-of-depth **30** · ethics **30** · OSCE **12** · landmark **19** · SCT items **64**
-- Quiz items: decode 3 + ethics 3 + per-case landmark quizzes (sourced rationales)
-- Calibration transcripts **20** · drafted flashcards **7** (MSE lesson, awaiting review)
+- Idioms **95** (65 seeded + 30 regional in the bank; 18 compulsory approved in the DB)
+- Confusable pairs **6 pairs + 5 set drills** · small-things **20**
+- Out-of-depth **50** · ethics **40** (incl. technology boundaries) · OSCE **12** · landmark **22** (incl. Indian psychiatric history) · SCT items **154**
+- Quiz bank **51** sourced items (decode + MSE documentation + risk/report) wired into MSE, OSCE, decode, ethics, landmark
+- Two-Minute Clinic **101** prompts · calibration transcripts **20** · drafted flashcards **7**
 
 ## Friction (tap count from /today)
 
@@ -70,7 +70,7 @@ Open: **0** in BUGS.md (all 9 logged are fixed; no new opens). See BUGS.md.
 
 ## Numbers
 
-- **20 commits** this session (6b4ee8d → d5c37be on `feat/v5-depth`)
-- Tests: **244** (+33 this session) · lint clean · tsc clean · build ~7s
+- **75+ commits** this session (6b4ee8d → HEAD on `feat/v5-depth`) — rounds 1-6 of the completion run
+- Tests: **268** (+57 from the original 211) · lint clean (3 pre-existing warnings) · tsc clean · build ~7s
 - Migration files: practice_layer_infra.sql added (infra RPC reproducible); rubric_dimensions + calibration_pairs + wall_reactions + 2 anonymity views applied live
 - e2e: 34 specs (browser-dependent; run `npm run test:e2e` locally with the app up)
