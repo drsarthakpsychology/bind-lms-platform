@@ -114,3 +114,16 @@ describe("MSE small things checklist", () => {
     expect(all).toContain("pause");
   });
 });
+
+describe("MSE L4 stimulus bank volume (brief §11.3)", () => {
+  it("has at least 10 expert-coded stimuli, each covering every domain", () => {
+    expect(FULL_MSE_STIMULI.length).toBeGreaterThanOrEqual(10);
+    for (const s of FULL_MSE_STIMULI) {
+      expect(s.expert.caseKey).toBeTruthy();
+      expect(s.expert.appearance.length).toBeGreaterThan(0);
+      expect(s.expert.mood.length).toBeGreaterThan(0);
+      expect(s.expert.insight.length).toBeGreaterThan(0);
+      expect(s.expert.small_things.length).toBeGreaterThanOrEqual(2);
+    }
+  });
+});
