@@ -3,7 +3,7 @@ import { OUT_OF_DEPTH_SCENARIOS, scoreReferralDecision } from "./scenarios";
 
 describe("out-of-depth", () => {
   it("has 30 scenarios (A4 DONE MEANS)", () => {
-    expect(OUT_OF_DEPTH_SCENARIOS.length).toBeGreaterThanOrEqual(40);
+    expect(OUT_OF_DEPTH_SCENARIOS.length).toBeGreaterThanOrEqual(50);
   });
 
   it("every scenario has the refer/continue/medical option set + reasoning", () => {
