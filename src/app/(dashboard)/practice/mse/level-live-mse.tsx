@@ -257,7 +257,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
                 {onComplete && filled >= 9 ? (
                   <button
                     type="button"
-                    onClick={onComplete}
+                    onClick={() => { haptic("success"); onComplete?.(); }}
                     className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
                   >
                     Mark Level 5 complete

@@ -139,7 +139,7 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
           {revealed && pairDone ? (
             <button
               type="button"
-              onClick={() => { setPhase(1); setMultiIdx(0); setRevealed(false); }}
+              onClick={() => { setPhase(1); setMultiIdx(0); setRevealed(false); haptic("tap"); }}
               className="mt-3 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
             >
               Now the set distinctions →
@@ -164,7 +164,7 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
           {onComplete ? (
             <button
               type="button"
-              onClick={onComplete}
+              onClick={() => { haptic("success"); onComplete?.(); }}
               className="mt-3 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
             >
               Mark Level 3 complete
