@@ -49,6 +49,10 @@
     "corpus:gutenberg": "tsx scripts/corpus/fetch-gutenberg.ts",
     "corpus:style-bank": "tsx scripts/corpus/build-style-bank.ts",
     "corpus:pmc": "tsx scripts/corpus/fetch-pmc.ts",
+    "corpus:icd11": "tsx scripts/corpus/fetch-icd11.ts",
+    "corpus:mhgap": "tsx scripts/corpus/fetch-mhgap.ts",
+    "corpus:nmhs": "tsx scripts/corpus/fetch-nmhs.ts",
+    "corpus:mha": "tsx scripts/corpus/fetch-mha2017.ts",
     "corpus:normalise": "tsx scripts/corpus/normalise.ts",
     "corpus:draft-cases": "tsx scripts/corpus/draft-cases.ts"
   },
