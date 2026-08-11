@@ -172,3 +172,69 @@ describe("seeded variation", () => {
     expect(b.mood_today).not.toBeUndefined();
   });
 });
+
+describe("A1 retry — Director determinism (identical rewind + identical input ⇒ identical move)", () => {
+  /** Build a director stub whose decision depends ONLY on the prompt text,
+   *  so two identical rewinds get identical decisions. */
+  function deterministicDirector() {
+    return async (prompt: string): Promise<DirectorDecision> => {
+      const lower = prompt.toLowerCase();
+      const move: DirectorDecision["patient_move"] = lower.includes("you're the director") ? "partial_disclose" : "minimise";
+      // The decision is a pure function of the prompt — no randomness, no time.
+      return mkDecision({
+        patient_move: move,
+        student_move: lower.includes("think positive") ? "premature_advice" : "open_question",
+        disclose: lower.includes("debt") ? ["debt"] : [],
+      });
+    };
+  }
+
+  it("two rewinds from the same turn with the same input produce the same patient move", async () => {
+    // Same seed ⇒ same variant ⇒ same initial state (the rewind contract).
+    const v1 = drawVariant(FIXTURE_CASE.variation, FIXTURE_CASE.case_id, 7);
+    const v2 = drawVariant(FIXTURE_CASE.variation, FIXTURE_CASE.case_id, 7);
+    const s1 = initialState(FIXTURE_CASE.case_id, v1);
+    const s2 = initialState(FIXTURE_CASE.case_id, v2);
+
+    const input = "Tell me about the money problems at home.";
+    const r1 = await runPatientTurn(FIXTURE_CASE, s1, input, [], FACTS, {
+      director: deterministicDirector(),
+      actor: async () => "It's the debt. I haven't told anyone.",
+    });
+    const r2 = await runPatientTurn(FIXTURE_CASE, s2, input, [], FACTS, {
+      director: deterministicDirector(),
+      actor: async () => "It's the debt. I haven't told anyone.",
+    });
+    // Same seed + same state + same input ⇒ the Director must choose the same
+    // move and the same disclose set. This is the A1 rewind determinism contract.
+    expect(r1.move).toBe(r2.move);
+    expect(r1.decision.disclose).toEqual(r2.decision.disclose);
+    expect(r1.decision.affect).toBe(r2.decision.affect);
+    expect(r1.state.trust).toBe(r2.state.trust);
+  });
+
+  it("the same rewind with DIFFERENT input diverges", async () => {
+    const v = drawVariant(FIXTURE_CASE.variation, FIXTURE_CASE.case_id, 7);
+    const s1 = initialState(FIXTURE_CASE.case_id, v);
+    const s2 = initialState(FIXTURE_CASE.case_id, v);
+    const a = await runPatientTurn(FIXTURE_CASE, s1, "Just think positive, it'll be fine.", [], FACTS, {
+      director: deterministicDirector(),
+      actor: async () => "Okay.",
+    });
+    const b = await runPatientTurn(FIXTURE_CASE, s2, "Tell me what a bad day looks like.", [], FACTS, {
+      director: deterministicDirector(),
+      actor: async () => "I can't get out of bed.",
+    });
+    // Different input must produce a different classification, hence a
+    // different patient move — divergence, not identical repetition.
+    expect(a.decision.student_move).not.toBe(b.decision.student_move);
+  });
+
+  it("rewind state is a faithful snapshot: same seed reproduces the same variant fingerprint", () => {
+    const a = drawVariant(FIXTURE_CASE.variation, FIXTURE_CASE.case_id, 42);
+    const b = drawVariant(FIXTURE_CASE.variation, FIXTURE_CASE.case_id, 42);
+    expect(variantFingerprint(a)).toBe(variantFingerprint(b));
+    expect(a.trust_start).toBe(b.trust_start);
+    expect(a.mood_today).toBe(b.mood_today);
+  });
+});

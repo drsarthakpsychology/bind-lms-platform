@@ -55,6 +55,52 @@ export default async function SimSessionPage({
     .eq("session_id", sessionId)
     .order("created_at", { ascending: true });
 
+  // A1 retry — comparison strip data. If this session is a branch (created by
+  // "Try this again"), load the parent's turns at the branch point + the
+  // parent's debrief so the student sees attempt 1 vs attempt 2 side by side.
+  const { data: branch } = await admin
+    .from("sim_branches")
+    .select("parent_session_id, branched_from_turn")
+    .eq("new_session_id", sessionId)
+    .maybeSingle();
+
+  let branchInfo:
+    | {
+        parentSessionId: string;
+        branchedFromTurn: number;
+        parentTurns: Array<{ role: "student" | "patient"; content: string }>;
+        parentScore?: { overall: number; quotes: Array<{ quote: string; better: string }> };
+      }
+    | undefined;
+
+  if (branch && session.status !== "active") {
+    const { data: parentTurns } = await admin
+      .from("sim_turns")
+      .select("role, content")
+      .eq("session_id", branch.parent_session_id)
+      .order("created_at", { ascending: true })
+      .limit(branch.branched_from_turn * 2);
+    const { data: parentScore } = await admin
+      .from("sim_scores")
+      .select("overall, quotes")
+      .eq("session_id", branch.parent_session_id)
+      .maybeSingle();
+    branchInfo = {
+      parentSessionId: branch.parent_session_id,
+      branchedFromTurn: branch.branched_from_turn,
+      parentTurns: (parentTurns ?? []).map((t) => ({
+        role: t.role as "student" | "patient",
+        content: String(t.content),
+      })),
+      parentScore: parentScore
+        ? {
+            overall: Number(parentScore.overall),
+            quotes: (parentScore.quotes as Array<{ quote: string; better: string }>) ?? [],
+          }
+        : undefined,
+    };
+  }
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
       <div className="mb-4 flex items-center justify-between gap-3">
@@ -80,6 +126,7 @@ export default async function SimSessionPage({
           role: t.role as "student" | "patient",
           content: String(t.content),
         }))}
+        branchInfo={branchInfo}
       />
     </div>
   );

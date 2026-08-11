@@ -32,6 +32,13 @@ interface DebriefData {
  * turn (same case, same seed, same state) so the student can watch the
  * patient respond differently.
  */
+interface BranchInfo {
+  parentSessionId: string;
+  branchedFromTurn: number;
+  parentTurns: Array<{ role: "student" | "patient"; content: string }>;
+  parentScore?: { overall: number; quotes: Array<{ quote: string; better: string }> };
+}
+
 export function DebriefView({
   data,
   difficulty,
@@ -39,6 +46,7 @@ export function DebriefView({
   voice,
   sessionId,
   totalTurns,
+  branchInfo,
 }: {
   data: DebriefData;
   difficulty: string;
@@ -46,6 +54,8 @@ export function DebriefView({
   voice?: VoiceMetrics;
   sessionId?: string;
   totalTurns?: number;
+  /** A1 retry: the comparison strip data when this session is a rewind branch. */
+  branchInfo?: BranchInfo;
 }) {
   const router = useRouter();
   const [revealMissed, setRevealMissed] = React.useState(false);
@@ -114,6 +124,11 @@ export function DebriefView({
           </p>
         ) : null}
       </div>
+
+      {/* A1 retry — comparison strip: attempt 1 vs attempt 2, same patient, same moment */}
+      {branchInfo ? (
+        <ComparisonStrip branch={branchInfo} currentOverall={overall} />
+      ) : null}
 
       {/* Voice delivery panel */}
       {voice ? (
@@ -252,6 +267,80 @@ function Stat({ label, value, warn, hint }: { label: string; value: string; warn
       <p className="text-caption text-muted-foreground">{label}</p>
       <p className="mt-0.5 text-base font-semibold text-numeric">{value}</p>
       {hint ? <p className="mt-1 text-caption text-muted-foreground">{hint}</p> : null}
+    </div>
+  );
+}
+
+/**
+ * A1 — the comparison strip. Same patient, same moment, two futures.
+ * Attempt 1: the flagged student turn + how the patient responded (from the
+ * parent session). Attempt 2: the student's re-attempt + the branch session's
+ * patient response. The score delta makes the lesson land.
+ */
+function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; currentOverall?: number }) {
+  const { parentTurns, branchedFromTurn, parentScore } = branch;
+  // The parent's turns around the flagged moment: [.., studentTurn, patientReply].
+  // branchedFromTurn is the 1-indexed flagged student turn; the student turn at
+  // that index is the flagged one, followed by the patient's reply.
+  const attempt1Student = parentTurns[branchedFromTurn * 2 - 2] ?? null;
+  const attempt1Patient = parentTurns[branchedFromTurn * 2 - 1] ?? null;
+
+  const delta =
+    parentScore && currentOverall != null
+      ? Number((currentOverall - parentScore.overall).toFixed(1))
+      : null;
+
+  return (
+    <div className="rounded-md border-2 border-primary bg-card p-6 hard-shadow-sm">
+      <h2 className="text-base font-semibold">Same patient, same moment, two futures</h2>
+      <p className="mt-1 text-small text-muted-foreground">
+        You rewound to turn {branchedFromTurn} and tried again. Here&apos;s how the first
+        attempt went, and how this re-attempt ended.
+      </p>
+
+      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        {/* attempt 1 */}
+        <div className="rounded-md border-2 border-border bg-background p-4">
+          <p className="text-caption font-semibold text-muted-foreground">Attempt 1 · turn {branchedFromTurn}</p>
+          {attempt1Student ? (
+            <p className="mt-2 text-small italic">
+              <span className="font-semibold not-italic text-muted-foreground">You said: </span>
+              &quot;{attempt1Student.content}&quot;
+            </p>
+          ) : null}
+          {attempt1Patient ? (
+            <p className="mt-2 text-small italic">
+              <span className="font-semibold not-italic text-muted-foreground">Patient: </span>
+              &quot;{attempt1Patient.content}&quot;
+            </p>
+          ) : null}
+          <p className="mt-3 text-caption text-amber-700">
+            {parentScore ? `Debrief score: ${parentScore.overall.toFixed(1)} / 5` : "The flagged moment"}
+          </p>
+        </div>
+
+        {/* attempt 2 */}
+        <div className="rounded-md border-2 border-primary bg-primary/5 p-4">
+          <p className="text-caption font-semibold text-primary">Attempt 2 · your rewind</p>
+          <p className="mt-2 text-small text-muted-foreground">
+            This session is your re-attempt from the same point. The patient you just
+            interviewed is the same person, in the same state — the difference in how
+            they responded is entirely down to how you asked.
+          </p>
+          <p className="mt-3 text-caption font-medium text-green-700">
+            {currentOverall != null ? `This attempt: ${currentOverall.toFixed(1)} / 5` : null}
+            {delta != null ? (
+              <span className={delta >= 0 ? "ml-2 text-green-700" : "ml-2 text-red-600"}>
+                {delta >= 0 ? "▲" : "▼"} {Math.abs(delta).toFixed(1)} vs attempt 1
+              </span>
+            ) : null}
+          </p>
+        </div>
+      </div>
+
+      <p className="mt-4 text-small text-muted-foreground">
+        Same patient. Same moment. Two futures — that comparison is the whole lesson.
+      </p>
     </div>
   );
 }

@@ -45,12 +45,21 @@ export function SimSessionView({
   difficulty,
   initialTurns,
   voicePrefs,
+  branchInfo,
 }: {
   sessionId: string;
   patientName: string;
   difficulty: string;
   initialTurns: Turn[];
   voicePrefs?: { rate: number; pitch: number; lang?: string; gender?: "male" | "female" };
+  /** A1 retry: this session is a branch — parent turns + score for the
+   *  attempt-1 vs attempt-2 comparison strip in the debrief. */
+  branchInfo?: {
+    parentSessionId: string;
+    branchedFromTurn: number;
+    parentTurns: Turn[];
+    parentScore?: { overall: number; quotes: Array<{ quote: string; better: string }> };
+  };
 }) {
   const router = useRouter();
   const [turns, setTurns] = React.useState<Turn[]>(initialTurns);
@@ -207,6 +216,7 @@ export function SimSessionView({
         onExit={() => router.push("/practice/consulting-room")}
         sessionId={sessionId}
         totalTurns={turns.length}
+        branchInfo={branchInfo}
       />
     );
   }
