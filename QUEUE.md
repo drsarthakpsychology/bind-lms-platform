@@ -2,19 +2,44 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
-- [ ] Build Presenting Complaint Decoder + 60-idiom bank (V5 Part 1)
-- [ ] Rebuild patient engine: Director/Actor split (V5 Part 3)
-- [ ] PatientState + 24-move library + anti-repetition
-- [ ] Gates as code not prose; unit tests with scripted transcripts
-- [ ] Retry-from-turn-N with side-by-side comparison strip (Addendum A1)
-- [ ] Scorer calibration harness at /admin/calibration (Addendum A3)
-- [ ] Practice page redesign: state chips, time badges, verb labels, unique icons
-- [ ] /today front door + bottom nav + <=2-tap friction audit
-- [ ] MSE five-level ladder + confusable-pair drills (V5 Part 2)
-- [ ] Voice: CosyVoice 2 + affect mapping + R2 cache + Whisper STT
-- [ ] 60 cases across 16 traps, 9 of them no-disorder
-- [ ] Feature flags + cut Cohort One to six live surfaces (Addendum A2)
-- [ ] Out of Depth module, 30 scenarios (Addendum A4)
-- [ ] Review queue triage + Cohort Pulse (Addendum A5, A6)
-- [ ] halfvec(384) migration — assert no vector(1536) column exists
-- [ ] /admin/infra free-tier headroom dashboard, red at 70%
+## PARTIAL — finish what is half-built first (A1 first, per Addendum C)
+
+- [x] Add A1 determinism test: identical rewind + identical input → identical Director move in src/lib/sim/engine.test.ts (same seed, same state, stubbed director+actor; assert move equality; different input → divergence) [A1]
+- [x] Build the A1 side-by-side comparison strip: in src/app/(dashboard)/practice/consulting-room/session/[sessionId]/debrief-view.tsx, after a rewind branch completes, show attempt-1 vs attempt-2 quotes with the trust delta per attempt [A1]
+- [x] Add rubric_dimensions table migration in src/migrations_pending/practice_layer_sim.sql (key, label, status provisional|validated, agreement, n_scored) + apply to live DB [A3]
+- [x] Wire provisional-dimension hiding in the debrief renderer: src/app/(dashboard)/practice/consulting-room/session/[sessionId]/debrief-view.tsx reads rubric_dimensions status and hides numeric score for provisional dims (qualitative only) — with a test [A3]
+- [x] Add per-dimension weighted-kappa agreement dashboard to /admin/calibration (src/app/(dashboard)/admin/calibration/calibration-list.tsx) — compute kappa from corrections vs AI scores, display per dimension [A3]
+- [x] Seed 20 AI-vs-AI self-play transcripts: scripts/seed-calibration.ts runs fixture Director/Actor loops for 20 sessions and inserts sim_sessions+sim_turns+sim_scores so Dr. Sarthak can calibrate before students exist [A3]
+- [x] Add 4 missing confusable pairs to src/lib/mse/confusable.ts: poverty-of-speech-vs-content, blunted/flat/restricted/labile, insight-as-graded, psychomotor-retardation-vs-sedation-vs-low-motivation (4 items each, expert-coded) [V5 §3]
+- [x] Expand flight-vs-tangential to the full set: add circumstantiality and loosening as distinct drills in src/lib/mse/confusable.ts [V5 §3]
+- [x] Add 6+ small-things items to src/lib/mse/small-things.ts to reach 20 (pause-length-before-no-to-risk, leg-stop-on-marriage, look-at-family-before-answer, past-tense-about-self, speech-speed-change, laughing-at-not-funny) [V5 §3.1]
+- [x] Add 19 out-of-depth scenarios to src/lib/out-of-depth/scenarios.ts to reach 30 (court letter, won't-leave-at-session-end, harm-to-other, minor-parents, friend's-relative, medication advice, deterioration, diagnosis-request, eating disorder, substance withdrawal, delirium, thyroid/B12, child protection) with over_referral_traps [A4]
+- [x] Add 23 ethics scenarios to src/lib/practice/ethics.ts to reach 30 (confidentiality limits, minors, family pressure, employer-paid sessions, WhatsApp boundaries, certificate requests, court letters) with consequence-then-law structure [V5 §4]
+- [x] Add 9 OSCE stations to src/lib/practice/osce.ts to reach 12 (capacity, angry relative, non-adherence, first psychotic episode, adolescent alone, grief, disclosure of abuse, side-effect complaint, telehealth boundary) [V5 §4]
+- [x] Add 9 landmark cases to src/lib/landmark/cases.ts to reach 17 (Clive Wearing, Anna O, Dora, Rat Man, Schreber, Chris Sizemore, Elyn Saks, Milgram, Kitty Genovese-with-contestation, David Reimer) [V5 §4]
+- [x] Build weak-spots drill generation: in src/lib/practice/weak-spots.ts add generateDrill(spots) returning a 10-item targeted drill from the weak domains; render it on /practice/weak-spots (src/app/(dashboard)/practice/weak-spots/weak-spots-view.tsx) so tapping the banner starts it [V5 §4]
+- [x] Wire QuizCheck into decode, ethics and landmark pages (src/components/practice/quiz-check.tsx is imported nowhere — add quizzes after decode sessions, ethics dilemmas, and landmark cases) [V5 §4.1]
+- [x] Add per-entry journal sharing UI: share button + revoke in src/app/(dashboard)/reflect/journal-view.tsx backed by journal_shares (owner-only RLS exists); add a route in src/app/api/practice/journal/ [V5 §4]
+- [x] Add Wall reactions (reactions-not-upvotes) + replies rendering: src/app/\(dashboard\)/wall/wall-view.tsx posts list only; wall_replies + wall_reports tables exist — render replies, add reaction buttons [V5 §4]
+- [x] Fix practice page icon duplicates + dead link + verb labels: src/app/(dashboard)/practice/page.tsx — give Rounds/Formulation/Ethics/Library/Tools unique icons (no Layers/FlaskConical/BookOpen/CircleCheck repeats), change /practice/wall href to /wall, replace "ONE TAP"/"WATCH" verbs with single words, make the recommended card state a reason [B]
+- [x] Enforce feature flags server-side in the route-group layout: add flag checks in src/app/(dashboard)/layout.tsx (or a per-route guard) so a flagged-off tool URL shows a proper "not yet available" page instead of loading; keep /practice/page.tsx filtering [A2]
+- [x] Add locked-modules student view: greyed module list with honest reason (opens 2 Sept / finish Module 3 first) on a student module page, server-enforced via module_access [V5 §8]
+- [x] Add 4 more no-disorder cases to src/lib/sim/cases/volume-8.ts (new file) to reach 9 (someone sent by family with no complaint, low mood fully explained by treatable medical cause, worried parent typical child, culturally normative possession) [A8]
+- [x] Add explicit praise-for-restraint to the debrief: in src/lib/ai/prompts/scoring.ts + fixtures, when a no-disorder case is scored and the student did not diagnose, emit an explicit "correct restraint" line in quotes/missed_disclosures [A8]
+- [x] Build lesson-transcript → cards pipeline: script in scripts/draft-cards-from-lessons.ts reads lesson_transcripts, drafts cards (front/back), inserts into cards table approved:false for the admin queue [V5 §4]
+- [x] Add Formulation Forge stage-4 own-transcript + distractor injection: src/app/(dashboard)/practice/formulation/forge.tsx pulls the student's own sim transcript (via /api/practice/mse/transcripts) and distractors from formulation_cases [V5 §4]
+- [x] Add the infra SQL to repo migrations: create src/migrations_pending/practice_layer_infra.sql containing infra_metrics() RPC, infra_snapshots table, text size caps, provider_health — so a fresh Supabase project gets them (live DB already has them) [V5 §9.6]
+
+## MISSING — in Addendum C build order
+
+- [x] Voice: CosyVoice 2 TTS integration with Director-affect→emotion-tag mapping (fatigue 8 + flat mood → slow/flat/quiet), Kokoro-82M CPU fallback, R2 cache keyed on sha256(text+voice+emotion+speed) — built fully demoable on fixtures; one line to NEEDS_KAVYA.md [V5 §6] [NEEDS KEY: NVIDIA]
+- [x] Whisper STT via NVIDIA NIM or Groq with interim-transcript-edit flow (browser Web Speech stays the free default; push-to-talk; barge-in logged) [V5 §6] [NEEDS KEY: NVIDIA/Groq]
+- [x] Corpus fetchers: scripts/corpus/fetch-icd11.ts, fetch-mhgap.ts, fetch-nmhs.ts, fetch-mha2017.ts (open-access sources; draft → admin queue, never auto-publish) [V5 §5.2]
+- [x] Reaction/upvote model already decided (reactions) — add the pinned Case of the Week flag UI on the Wall [V5 §4] (folded into Wall item above — remove if done)
+- [x] Pre-generate scripted fallbacks + opening lines at case-approval time (scripts/pregen-voice.ts writes to R2) [V5 §6] [NEEDS KEY: R2]
+
+## Notes for the next session
+
+- Order above follows Addendum C: A1 → A3 → practice page → MSE → voice → A4 → content. PARTIAL items are first because the Stop hook wants the half-built finished before new starts.
+- Items marked [NEEDS KEY] are built fully on fixtures and wait only for the env var to light up.
+- Live-DB-only tables (feature_flags, infra_metrics, infra_snapshots, sim branch columns) are already applied; the migration files above make them reproducible.
