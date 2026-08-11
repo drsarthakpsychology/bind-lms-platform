@@ -59,13 +59,13 @@
 
 ## ROUND 3 — infinite backlog (brief §11: polish → performance → docs → proposals)
 
-- [ ] Keyboard shortcuts on /practice: j/k between cards, Enter to open, / to search (B5 micro-details — an afternoon's work, makes desktop feel like a tool)
-- [ ] Skeleton loaders matching card shape on /practice + /today (brief §B5 — never a spinner)
-- [ ] Haptics audit: every card tap, state change, and correct answer uses src/lib/haptics.ts — grep for missing ones
-- [ ] Empty-state pass: zero cards, no sessions, streak 0, first visit — the ugly screens day-one students see (brief §10.15)
-- [ ] Performance: dashboard LCP + N+1 query audit on /admin pages (brief §11.7)
-- [ ] Docs: write PRACTICE_LAYER.md + IDIOMS.md (brief §11.6 — the two remaining docs)
-- [ ] Free-tier optimisation: retention job on ai_usage_log (30-day, already in cron) + verify infra_snapshots rows are pruned
-- [ ] Formulation peer-critique wall: anonymised formulations from stage 4, visible to the cohort with reactions (IDEAS: Formulation Wall)
-- [ ] Deepgram streaming STT: provider-shaped drop-in for stt.ts when a key exists (IDEAS: Deepgram)
-- [ ] Two-Minute Clinic: persist the daily best time + streak into the streaks table (retention loop)
+- [x] Keyboard shortcuts on /practice: j/k between cards, Enter to open, / to search (B5 micro-details — an afternoon's work, makes desktop feel like a tool)
+- [x] Skeleton loaders matching card shape on /practice + /today (brief §B5 — never a spinner)
+- [x] Haptics audit: every card tap, state change, and correct answer uses src/lib/haptics.ts — grep for missing ones
+- [x] Empty-state pass: zero cards, no sessions, streak 0, first visit — the ugly screens day-one students see (brief §10.15)
+- [x] Performance: dashboard LCP + N+1 query audit on /admin pages (brief §11.7)
+- [x] Docs: write PRACTICE_LAYER.md + IDIOMS.md (brief §11.6 — the two remaining docs)
+- [x] Free-tier optimisation: retention job on ai_usage_log (30-day, already in cron) + verify infra_snapshots rows are pruned
+- [x] Formulation peer-critique wall: anonymised formulations from stage 4, visible to the cohort with reactions (IDEAS: Formulation Wall)
+- [x] Deepgram streaming STT: provider-shaped drop-in for stt.ts when a key exists (IDEAS: Deepgram)
+- [x] Two-Minute Clinic: persist the daily best time + streak into the streaks table (retention loop)
