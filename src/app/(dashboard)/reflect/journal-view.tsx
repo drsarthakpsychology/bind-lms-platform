@@ -62,16 +62,21 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
     }
   }
 
-  async function shareEntry(entry: JournalEntry) {
-    const email = shareEmail.trim().toLowerCase();
-    if (!email || sharing) return;
+  async function shareEntry(entry: JournalEntry, toFaculty = false) {
+    const email = toFaculty ? "" : shareEmail.trim().toLowerCase();
+    if (!toFaculty && !email) return;
+    if (sharing) return;
     setSharing(entry.id);
     haptic("tap");
     try {
       const res = await fetch("/api/practice/journal/share", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ entryId: entry.id, sharedToEmail: email }),
+        body: JSON.stringify(
+          toFaculty
+            ? { entryId: entry.id, sharedToRole: "faculty" }
+            : { entryId: entry.id, sharedToEmail: email },
+        ),
       });
       if (!res.ok) {
         const j = (await res.json().catch(() => null)) as { error?: string } | null;
@@ -80,7 +85,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       }
       const j = (await res.json()) as { shareId: string };
       setShareIds((s) => ({ ...s, [entry.id]: j.shareId }));
-      setShareMsg((m) => ({ ...m, [entry.id]: `Shared with ${email}.` }));
+      setShareMsg((m) => ({ ...m, [entry.id]: toFaculty ? "Shared with your faculty." : `Shared with ${email}.` }));
       setShareEmail("");
       haptic("success");
     } catch {
@@ -223,18 +228,29 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
                         Revoke
                       </button>
                     ) : (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setShareEntryId(shareEntryId === e.id ? null : e.id);
-                          setShareMsg((m) => ({ ...m, [e.id]: "" }));
-                          haptic("tap");
-                        }}
-                        className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px"
-                      >
-                        <Share2 className="size-3" aria-hidden />
-                        Share
-                      </button>
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => void shareEntry(e, true)}
+                          disabled={sharing === e.id}
+                          className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px disabled:opacity-50"
+                        >
+                          <Share2 className="size-3" aria-hidden />
+                          Share with faculty
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShareEntryId(shareEntryId === e.id ? null : e.id);
+                            setShareMsg((m) => ({ ...m, [e.id]: "" }));
+                            haptic("tap");
+                          }}
+                          className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px"
+                        >
+                          <Share2 className="size-3" aria-hidden />
+                          Share
+                        </button>
+                      </>
                     )}
                   </span>
                 </div>

@@ -9,7 +9,11 @@ const shareSchema = z.object({
   entryId: z.string().uuid(),
   /** The recipient's email (resolved to a profile server-side — the caller
    *  never sees another user's id, consistent with the privacy model). */
-  sharedToEmail: z.string().email(),
+  sharedToEmail: z.string().email().optional(),
+  /** Share to faculty: resolve the first admin profile server-side. */
+  sharedToRole: z.enum(["faculty"]).optional(),
+}).refine((v) => (v.sharedToEmail && !v.sharedToRole) || (!v.sharedToEmail && v.sharedToRole), {
+  message: "exactly one of sharedToEmail or sharedToRole",
 });
 
 const revokeSchema = z.object({
@@ -37,7 +41,7 @@ export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
   const parsed = shareSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
-  const { entryId, sharedToEmail } = parsed.data;
+  const { entryId, sharedToEmail, sharedToRole } = parsed.data;
 
   // Ownership: the entry must be the caller's own.
   const { data: entry } = await supabase
@@ -48,19 +52,34 @@ export async function POST(req: Request) {
     .maybeSingle();
   if (!entry) return NextResponse.json({ error: "entry not found" }, { status: 404 });
 
-  // Resolve the recipient by email (admin client — the caller must never see
-  // another user's id; only the share row records it).
+  // Resolve the recipient (admin client — the caller must never see another
+  // user's id; only the share row records it). Faculty preset resolves the
+  // first admin profile.
   const admin = createAdminClient();
-  const { data: recipient } = await admin
-    .from("profiles")
-    .select("id")
-    .eq("email", sharedToEmail.toLowerCase())
-    .maybeSingle();
-  if (!recipient) return NextResponse.json({ error: "No person with that email." }, { status: 404 });
+  let recipientId: string | null = null;
+  if (sharedToRole === "faculty") {
+    const { data: faculty } = await admin
+      .from("profiles")
+      .select("id")
+      .eq("role", "admin")
+      .limit(1)
+      .maybeSingle();
+    recipientId = faculty?.id ?? null;
+    if (!recipientId) return NextResponse.json({ error: "No faculty account configured." }, { status: 404 });
+  } else if (sharedToEmail) {
+    const { data: recipient } = await admin
+      .from("profiles")
+      .select("id")
+      .eq("email", sharedToEmail.toLowerCase())
+      .maybeSingle();
+    recipientId = recipient?.id ?? null;
+    if (!recipientId) return NextResponse.json({ error: "No person with that email." }, { status: 404 });
+  }
+  if (!recipientId) return NextResponse.json({ error: "No recipient." }, { status: 400 });
 
   const { data: shared, error } = await supabase
     .from("journal_shares")
-    .insert({ entry_id: entryId, shared_by: user.id, shared_to: recipient.id })
+    .insert({ entry_id: entryId, shared_by: user.id, shared_to: recipientId })
     .select("id")
     .single();
   if (error) return NextResponse.json({ error: "share failed" }, { status: 500 });
