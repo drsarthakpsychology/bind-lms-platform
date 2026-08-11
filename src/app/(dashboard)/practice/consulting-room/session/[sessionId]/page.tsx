@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
+import { provisionalKeys } from "@/lib/practice/rubric";
 import { SimSessionView } from "./session-view";
 import { SimulationBadge } from "../../simulation-badge";
 
@@ -54,6 +55,21 @@ export default async function SimSessionPage({
     .select("id, role, content, content_type, created_at")
     .eq("session_id", sessionId)
     .order("created_at", { ascending: true });
+
+  // A3 — provisional scoring dimensions hide their NUMBER from students
+  // (qualitative feedback only) until calibrated against faculty scores.
+  const { data: rubricDims } = await admin
+    .from("rubric_dimensions")
+    .select("key, status");
+  const provisionalDims = provisionalKeys(
+    (rubricDims ?? []).map((d) => ({
+      key: String(d.key),
+      label: "",
+      status: d.status as "provisional" | "validated",
+      agreement: null,
+      n_scored: 0,
+    })),
+  );
 
   // A1 retry — comparison strip data. If this session is a branch (created by
   // "Try this again"), load the parent's turns at the branch point + the
@@ -127,6 +143,7 @@ export default async function SimSessionPage({
           content: String(t.content),
         }))}
         branchInfo={branchInfo}
+        provisionalDims={provisionalDims}
       />
     </div>
   );

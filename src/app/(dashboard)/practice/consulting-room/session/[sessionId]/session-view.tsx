@@ -46,6 +46,7 @@ export function SimSessionView({
   initialTurns,
   voicePrefs,
   branchInfo,
+  provisionalDims,
 }: {
   sessionId: string;
   patientName: string;
@@ -60,6 +61,9 @@ export function SimSessionView({
     parentTurns: Turn[];
     parentScore?: { overall: number; quotes: Array<{ quote: string; better: string }> };
   };
+  /** A3: rubric dimensions still provisional — their numeric scores are hidden
+   *  from students (qualitative feedback only). */
+  provisionalDims?: string[];
 }) {
   const router = useRouter();
   const [turns, setTurns] = React.useState<Turn[]>(initialTurns);
@@ -217,6 +221,7 @@ export function SimSessionView({
         sessionId={sessionId}
         totalTurns={turns.length}
         branchInfo={branchInfo}
+        provisionalDims={provisionalDims}
       />
     );
   }

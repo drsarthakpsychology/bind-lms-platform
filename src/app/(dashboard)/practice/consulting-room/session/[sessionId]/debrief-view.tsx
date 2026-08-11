@@ -47,6 +47,7 @@ export function DebriefView({
   sessionId,
   totalTurns,
   branchInfo,
+  provisionalDims,
 }: {
   data: DebriefData;
   difficulty: string;
@@ -56,6 +57,8 @@ export function DebriefView({
   totalTurns?: number;
   /** A1 retry: the comparison strip data when this session is a rewind branch. */
   branchInfo?: BranchInfo;
+  /** A3: rubric dimensions still provisional — hide their numeric score. */
+  provisionalDims?: string[];
 }) {
   const router = useRouter();
   const [revealMissed, setRevealMissed] = React.useState(false);
@@ -104,10 +107,35 @@ export function DebriefView({
           <span className="text-small text-muted-foreground">/ 5.0 overall</span>
         </div>
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-5">
-          <Stat label="Open:closed" value={String(score.open_closed_ratio ?? "—")} />
-          <Stat label="Reflective" value={String(score.reflective_statements ?? "—")} />
-          <Stat label="Premature reassurance" value={String(premature)} warn={premature > 0} />
-          <Stat label="Risk timing" value={score.risk_timing ?? "—"} />
+          <ProvisionalAwareStat
+            dim="open_closed_ratio"
+            provisional={provisionalDims}
+            label="Open:closed"
+            value={String(score.open_closed_ratio ?? "—")}
+            hint="Your questions leaned open this session — keep that up."
+          />
+          <ProvisionalAwareStat
+            dim="reflective_statements"
+            provisional={provisionalDims}
+            label="Reflective"
+            value={String(score.reflective_statements ?? "—")}
+            hint="Reflections heard: the debrief quotes below show what worked."
+          />
+          <ProvisionalAwareStat
+            dim="premature_reassurance"
+            provisional={provisionalDims}
+            label="Premature reassurance"
+            value={String(premature)}
+            warn={premature > 0}
+            hint={premature > 0 ? "You reassured before exploring — the quotes below name it." : "No premature reassurance detected."}
+          />
+          <ProvisionalAwareStat
+            dim="risk_timing"
+            provisional={provisionalDims}
+            label="Risk timing"
+            value={score.risk_timing ?? "—"}
+            hint="When you asked about risk matters as much as whether you did."
+          />
           <Stat
             label="Idiom decoded"
             value={score.idiom_decoding ? "Yes" : "No"}
@@ -269,6 +297,40 @@ function Stat({ label, value, warn, hint }: { label: string; value: string; warn
       {hint ? <p className="mt-1 text-caption text-muted-foreground">{hint}</p> : null}
     </div>
   );
+}
+
+/**
+ * A3 — a stat that hides its NUMBER while the dimension is still provisional.
+ * The student still gets the qualitative hint (the quotes in the debrief),
+ * just not a number we haven't calibrated yet. Once Dr. Sarthak's scores
+ * validate the dimension, the admin flips status → validated and the number
+ * appears.
+ */
+function ProvisionalAwareStat({
+  dim,
+  provisional,
+  label,
+  value,
+  warn,
+  hint,
+}: {
+  dim: string;
+  provisional?: string[];
+  label: string;
+  value: string;
+  warn?: boolean;
+  hint: string;
+}) {
+  if (provisional?.includes(dim)) {
+    return (
+      <div className="rounded-md border-2 border-dashed border-border bg-background p-3">
+        <p className="text-caption text-muted-foreground">{label}</p>
+        <p className="mt-0.5 text-base font-semibold">Being calibrated</p>
+        <p className="mt-1 text-caption text-muted-foreground">{hint}</p>
+      </div>
+    );
+  }
+  return <Stat label={label} value={value} warn={warn} hint={hint} />;
 }
 
 /**

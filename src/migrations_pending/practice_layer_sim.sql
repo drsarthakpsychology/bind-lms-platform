@@ -188,3 +188,52 @@ create index if not exists idx_sim_sessions_user on public.sim_sessions (user_id
 create index if not exists idx_sim_sessions_case on public.sim_sessions (case_id);
 create index if not exists idx_sim_turns_session on public.sim_turns (session_id);
 create index if not exists idx_sim_scores_session on public.sim_scores (session_id);
+
+-- ---------------------------------------------------------------------------
+-- A3 — rubric_dimensions: provisional dims hide their NUMBER from students
+-- (qualitative feedback only until a dimension is validated against Dr.
+-- Sarthak's calibration scores). Admin-managed.
+-- ---------------------------------------------------------------------------
+create table if not exists public.rubric_dimensions (
+  key text primary key,
+  label text not null,
+  status text not null default 'provisional'
+    check (status in ('provisional','validated')),
+  agreement numeric,
+  n_scored integer not null default 0
+);
+
+alter table public.rubric_dimensions enable row level security;
+create policy "rubric_dimensions_admin_all" on public.rubric_dimensions
+  for all using (public.is_admin()) with check (public.is_admin());
+
+-- Seed the eight scoring dimensions, all provisional until calibrated.
+insert into public.rubric_dimensions (key, label, status) values
+  ('open_closed_ratio', 'Question quality (open vs closed)', 'provisional'),
+  ('leading_questions', 'Leading questions', 'provisional'),
+  ('double_barrelled', 'Double-barrelled questions', 'provisional'),
+  ('reflective_statements', 'Reflective statements', 'provisional'),
+  ('premature_reassurance', 'Premature reassurance', 'provisional'),
+  ('domain_coverage', 'Domain coverage', 'provisional'),
+  ('risk_timing', 'Risk assessment timing', 'provisional'),
+  ('disclosure_unlock_rate', 'Disclosure unlock rate', 'provisional')
+on conflict (key) do nothing;
+
+-- ---------------------------------------------------------------------------
+-- A3 — calibration_pairs: one row per paired AI-vs-faculty blind score, per
+-- dimension. Drives the weighted-kappa agreement dashboard; the running
+-- kappa + count live on rubric_dimensions.
+-- ---------------------------------------------------------------------------
+create table if not exists public.calibration_pairs (
+  id uuid primary key default gen_random_uuid(),
+  organization_id uuid,
+  dimension_key text not null references public.rubric_dimensions (key) on delete cascade,
+  ai numeric not null,
+  human numeric not null,
+  created_at timestamptz not null default now()
+);
+
+alter table public.calibration_pairs enable row level security;
+create policy "calibration_pairs_admin_all" on public.calibration_pairs
+  for all using (public.is_admin()) with check (public.is_admin());
+create index if not exists idx_calibration_pairs_dim on public.calibration_pairs (dimension_key);
