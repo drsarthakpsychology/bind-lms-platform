@@ -111,13 +111,13 @@
 
 ## ROUND 7 — infinite backlog (further content + polish + new proposals)
 
-- [ ] Idiom bank: 15 more entries (Kashmiri, Konkani, Bhojpuri, Sindhi, Nepali border idioms) in src/lib/decode/idioms.ts (95 → 110)
-- [ ] SCT items: 15 more templates (personality-disorder differentials + medication-adverse-effect focus) in src/lib/practice/sct.ts (154 → 199)
-- [ ] Quiz bank: 15 more items (would-you-report MHA 2021 amendments + standard-vs-common POCSO procedures) in src/lib/quiz/quiz-bank.ts (51 → 66)
-- [ ] Out of Depth: 10 more (disaster/emergency setting, hostage-adjacent vicarious trauma, crisis of faith in therapy) (50 → 60)
-- [ ] Weak Spots: 'remedy session' — after the drill, offer to re-run the specific Consulting Room case that produced the gap (remedyHref → case deep-link)
-- [ ] Rounds: show the idiom→meanings card type in the deck with a distinct visual (tag the card type in rounds-deck.tsx SEED_CARDS)
-- [ ] e2e: wall report flow (post → report → admin resolves)
-- [ ] a11y: keyboard nav on the MSE ladder (arrow keys between levels, Enter to open)
-- [ ] Polish: haptics on the wall reaction toggles + composer submit (audit the wall)
-- [ ] Docs: write DEPLOYMENT additions — the scheduled-release cron + wall-reports admin in INFRA_SETUP / PRACTICE_LAYER
+- [x] Idiom bank: 15 more entries (Kashmiri, Konkani, Bhojpuri, Sindhi, Nepali border idioms) in src/lib/decode/idioms.ts (95 → 110)
+- [x] SCT items: 15 more templates (personality-disorder differentials + medication-adverse-effect focus) in src/lib/practice/sct.ts (154 → 199)
+- [x] Quiz bank: 15 more items (would-you-report MHA 2021 amendments + standard-vs-common POCSO procedures) in src/lib/quiz/quiz-bank.ts (51 → 66)
+- [x] Out of Depth: 10 more (disaster/emergency setting, hostage-adjacent vicarious trauma, crisis of faith in therapy) (50 → 60)
+- [x] Weak Spots: 'remedy session' — after the drill, offer to re-run the specific Consulting Room case that produced the gap (remedyHref → case deep-link)
+- [x] Rounds: show the idiom→meanings card type in the deck with a distinct visual (tag the card type in rounds-deck.tsx SEED_CARDS)
+- [x] e2e: wall report flow (post → report → admin resolves)
+- [x] a11y: keyboard nav on the MSE ladder (arrow keys between levels, Enter to open)
+- [x] Polish: haptics on the wall reaction toggles + composer submit (audit the wall) — verified: all 11 wall interactions haptic (post/reply/reactions/pin/report)
+- [x] Docs: write DEPLOYMENT additions — the scheduled-release cron + wall-reports admin in INFRA_SETUP / PRACTICE_LAYER
