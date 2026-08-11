@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { go } from "./helpers";
 
 /**
  * Skills Passport — download the PDF and request a supervision sign-off.
