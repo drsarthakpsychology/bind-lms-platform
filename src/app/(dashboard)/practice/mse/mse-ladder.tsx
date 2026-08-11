@@ -52,6 +52,25 @@ export function MseLadder() {
 
   const ordered = MSE_LEVELS;
 
+  // Keyboard: arrow keys move between unlocked levels, Enter opens.
+  React.useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      const t = e.target as HTMLElement | null;
+      if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+      const idx = ordered.indexOf(active);
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        for (let i = idx + 1; i < ordered.length; i++) {
+          if (done[ordered[i - 1]] || i === 0) { setActive(ordered[i]); haptic("tap"); return; }
+        }
+      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        if (idx > 0) { setActive(ordered[idx - 1]); haptic("tap"); }
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [active, done, ordered]);
+
   return (
     <div className="space-y-6">
       {/* Ladder header */}
