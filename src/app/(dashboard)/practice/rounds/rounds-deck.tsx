@@ -78,6 +78,11 @@ export function RoundsDeck() {
       </div>
 
       <div className="min-h-[200px] rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
+        {seed.type ? (
+          <p className="mb-2 inline-block rounded-full border border-border px-2 py-0.5 text-caption font-semibold text-muted-foreground">
+            {seed.type === "idiom" ? "🔤 Idiom of distress" : seed.type === "confusable" ? "⚖️ Confusable pair" : "Flash"}
+          </p>
+        ) : null}
         <p className="text-base font-medium">{seed.front}</p>
         {showBack ? (
           <p className="mt-4 rounded-md border border-border bg-secondary/60 p-3 text-small">{seed.back}</p>
