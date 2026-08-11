@@ -59,7 +59,8 @@ describe("debrief schema (the product — must be deterministic)", () => {
   });
 
   it("idiom_decoding defaults to false when absent (a missed idiom must not silently pass)", () => {
-    const { idiom_decoding: _drop, ...without } = validDebrief();
+    const without = validDebrief();
+    delete (without as { idiom_decoding?: boolean }).idiom_decoding;
     const parsed = debriefSchema.safeParse(without);
     expect(parsed.success).toBe(true);
     if (parsed.success) expect(parsed.data.idiom_decoding).toBe(false);

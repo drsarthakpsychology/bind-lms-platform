@@ -17,7 +17,13 @@ interface SessionRow {
  * The role-play lobby — start a new session with a classmate (by email) or
  * rejoin an existing one.
  */
-export function RolePlayLobby({ sessions }: { sessions: SessionRow[] }) {
+export function RolePlayLobby({
+  sessions,
+  recommendedPeer,
+}: {
+  sessions: SessionRow[];
+  recommendedPeer?: { email: string; reason: string } | null;
+}) {
   const router = useRouter();
   const [peerEmail, setPeerEmail] = React.useState("");
   const [role, setRole] = React.useState<"patient" | "clinician">("clinician");
@@ -53,6 +59,24 @@ export function RolePlayLobby({ sessions }: { sessions: SessionRow[] }) {
 
   return (
     <div className="space-y-6">
+      {/* Skill-matched partner suggestion */}
+      {recommendedPeer ? (
+        <div className="rounded-md border-2 border-primary bg-primary/5 p-4">
+          <p className="text-base font-semibold">A partner matched to your gaps</p>
+          <p className="mt-1 text-small text-muted-foreground">{recommendedPeer.reason}</p>
+          <button
+            type="button"
+            onClick={() => {
+              setPeerEmail(recommendedPeer.email);
+              haptic("tap");
+            }}
+            className="mt-3 rounded-md border-2 border-primary bg-primary px-3 py-1.5 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+          >
+            Invite {recommendedPeer.email} →
+          </button>
+        </div>
+      ) : null}
+
       <form onSubmit={create} className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
         <p className="text-base font-semibold">Start a session</p>
         <div>
