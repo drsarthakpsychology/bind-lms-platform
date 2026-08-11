@@ -41,8 +41,20 @@ describe("privacy invariants (RLS policy presence)", () => {
 
   it("wall anonymous posts never expose author_id to non-admins", () => {
     const sql = readFileSync(join(MIGRATION_DIR, "practice_layer_rest.sql"), "utf8");
+    // Students read through wall_posts_visible: anonymous posts ARE visible
+    // (the wall is social) but their author_id is nulled in the view.
+    expect(sql).toMatch(/create or replace view public\.wall_posts_visible/);
+    expect(sql).toMatch(/case when is_anonymous then null else author_id end/);
+    expect(sql).toMatch(/grant select on public\.wall_posts_visible to authenticated/);
+    // The base table still hides anonymous rows from students (defence in depth).
     const policy = /create policy "wall_posts_select_visible"[\s\S]*?for select using \(public\.is_admin\(\) or is_anonymous = false\)/;
     expect(sql).toMatch(policy);
+  });
+
+  it("wall anonymous REPLIES never expose author_id either (same view pattern)", () => {
+    const sql = readFileSync(join(MIGRATION_DIR, "practice_layer_rest.sql"), "utf8");
+    expect(sql).toMatch(/create or replace view public\.wall_replies_visible/);
+    expect(sql).toMatch(/case when is_anonymous then null else author_id end/);
   });
 
   it("every practice table enables RLS", () => {

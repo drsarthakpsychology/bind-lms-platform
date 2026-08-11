@@ -14,13 +14,39 @@ export default async function WallPage() {
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  // The wall SELECT policy hides author_id for anonymous posts to non-admins.
+  // The wall view (view) shows all posts but nulls author_id for anonymous posts.
   const { data: posts } = await supabase
-    .from("wall_posts")
+    .from("wall_posts_visible")
     .select("id, content, is_anonymous, is_faculty, is_pinned, created_at, author_id")
     .order("is_pinned", { ascending: false })
     .order("created_at", { ascending: false })
     .limit(50);
+
+  // Replies + reactions per post (reactions-not-upvotes: they signal, never rank).
+  const postIds = (posts ?? []).map((p) => p.id);
+  const [{ data: replies }, { data: reactions }] = await Promise.all([
+    postIds.length
+      ? supabase.from("wall_replies_visible").select("id, post_id, content, is_anonymous, is_faculty, created_at, author_id").in("post_id", postIds).order("created_at", { ascending: true })
+      : Promise.resolve({ data: [] }),
+    postIds.length
+      ? supabase.from("wall_reactions").select("post_id, reaction").in("post_id", postIds)
+      : Promise.resolve({ data: [] }),
+  ]);
+
+  const repliesByPost = new Map<string, Array<Record<string, unknown>>>();
+  for (const r of replies ?? []) {
+    const list = repliesByPost.get(r.post_id) ?? [];
+    list.push(r);
+    repliesByPost.set(r.post_id, list);
+  }
+  const reactionsByPost = new Map<string, Record<string, number>>();
+  for (const r of reactions ?? []) {
+    const key = String(r.post_id);
+    const counts = reactionsByPost.get(key) ?? {};
+    const rk = String(r.reaction);
+    counts[rk] = (counts[rk] ?? 0) + 1;
+    reactionsByPost.set(key, counts);
+  }
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -42,6 +68,14 @@ export default async function WallPage() {
             createdAt: p.created_at,
             // NOTE: author_id is deliberately NOT passed to the client for
             // anonymous posts — it stays server-side.
+            replies: (repliesByPost.get(p.id) ?? []).map((r) => ({
+              id: String(r.id),
+              content: String(r.content),
+              isAnonymous: Boolean(r.is_anonymous),
+              isFaculty: Boolean(r.is_faculty),
+              createdAt: r.created_at as string,
+            })),
+            reactions: reactionsByPost.get(p.id) ?? {},
           }))}
         />
       </div>

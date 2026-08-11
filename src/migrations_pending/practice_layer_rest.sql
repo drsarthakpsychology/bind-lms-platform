@@ -92,6 +92,30 @@ create table if not exists public.wall_reports (
   created_at timestamptz not null default now()
 );
 
+
+-- reactions — not upvotes. Ranking by popularity selects for confidence,
+-- not correctness; reactions signal without ranking.
+create table if not exists public.wall_reactions (
+  id uuid primary key default gen_random_uuid(),
+  organization_id uuid,
+  post_id uuid references public.wall_posts (id) on delete cascade,
+  reply_id uuid references public.wall_replies (id) on delete cascade,
+  author_id uuid not null references public.profiles (id) on delete cascade,
+  reaction text not null check (reaction in ('heart','insight','question','applause','worry')),
+  created_at timestamptz not null default now(),
+  unique (post_id, reply_id, author_id, reaction)
+);
+
+alter table public.wall_reactions enable row level security;
+create policy "wall_reactions_select_visible" on public.wall_reactions
+  for select using (public.is_admin() or true);
+create policy "wall_reactions_insert_own" on public.wall_reactions
+  for insert with check (auth.uid() = author_id);
+create policy "wall_reactions_delete_own" on public.wall_reactions
+  for delete using (auth.uid() = author_id);
+create index if not exists idx_wall_reactions_post on public.wall_reactions (post_id);
+create index if not exists idx_wall_reactions_reply on public.wall_reactions (reply_id);
+
 -- ---------------------------------------------------------------------------
 -- competencies + events — Skills Passport (Part 6.9)
 -- ---------------------------------------------------------------------------
@@ -358,6 +382,48 @@ create policy "transcript_chunks_select_admin_or_published" on public.transcript
   for select using (public.is_admin());
 create policy "transcript_chunks_admin_manage" on public.transcript_chunks
   for all using (public.is_admin()) with check (public.is_admin());
+
+
+-- Anonymous wall posts are VISIBLE to students but author_id never is.
+-- Row-level security cannot hide a column, so students read through a view
+-- that nulls author_id for anonymous rows; the base table keeps admin-only
+-- select on anonymous rows.
+create or replace view public.wall_posts_visible as
+select
+  id,
+  organization_id,
+  content,
+  is_anonymous,
+  is_faculty,
+  is_pinned,
+  created_at,
+  case when is_anonymous then null else author_id end as author_id
+from public.wall_posts;
+
+alter view public.wall_posts_visible owner to postgres;
+
+revoke all on public.wall_posts_visible from anon, authenticated;
+grant select on public.wall_posts_visible to authenticated;
+
+
+-- Anonymous wall REPLIES are visible to students but author_id never is
+-- (same treatment as posts — see wall_posts_visible).
+create or replace view public.wall_replies_visible as
+select
+  id,
+  organization_id,
+  post_id,
+  content,
+  is_anonymous,
+  is_faculty,
+  created_at,
+  case when is_anonymous then null else author_id end as author_id
+from public.wall_replies;
+
+alter view public.wall_replies_visible owner to postgres;
+
+revoke all on public.wall_replies_visible from anon, authenticated;
+grant select on public.wall_replies_visible to authenticated;
 
 -- indexes
 create index if not exists idx_journal_user on public.journal_entries (user_id, created_at);
