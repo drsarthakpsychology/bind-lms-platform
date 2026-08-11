@@ -11,6 +11,8 @@ import { DomainLevel } from "./level-domain";
 import { FullMseLevel } from "./level-full-mse";
 import { LiveMseLevel } from "./level-live-mse";
 import { SmallThingsDrill } from "./small-things-drill";
+import { QuizCheck } from "@/components/practice/quiz-check";
+import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 
 /** Which completion state each level needs before the next unlocks. Levels
  *  1-4 complete locally when the student finishes a round; Level 5 depends on
@@ -102,6 +104,17 @@ export function MseLadder() {
         </p>
         <div className="mt-3">
           <SmallThingsDrill />
+        </div>
+      </div>
+
+      {/* Check what stuck — sourced quiz items after the ladder */}
+      <div className="mt-8 rounded-md border-2 border-border bg-card p-4">
+        <h2 className="text-sm font-semibold">Check what stuck</h2>
+        <p className="mt-1 text-small text-muted-foreground">
+          A quick check, not a test — every item carries its source.
+        </p>
+        <div className="mt-3">
+          <QuizCheck items={QUIZ_BANK.slice(0, 6)} />
         </div>
       </div>
     </div>
