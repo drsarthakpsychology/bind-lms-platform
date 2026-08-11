@@ -14,6 +14,13 @@ export default async function WallPage() {
   } = await supabase.auth.getUser();
   if (!user) return null;
 
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("role")
+    .eq("id", user.id)
+    .maybeSingle();
+  const isFacultyViewer = profile?.role === "admin";
+
   // The wall view (view) shows all posts but nulls author_id for anonymous posts.
   const { data: posts } = await supabase
     .from("wall_posts_visible")
@@ -59,6 +66,7 @@ export default async function WallPage() {
 
       <div className="mt-6">
         <WallView
+          isFacultyViewer={isFacultyViewer}
           initialPosts={(posts ?? []).map((p) => ({
             id: p.id,
             content: String(p.content),

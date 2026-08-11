@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
+import { cn } from "@/lib/utils";
 import { Heart, Lightbulb, HelpCircle, PartyPopper, AlertTriangle } from "lucide-react";
 
 interface WallReply {
@@ -36,7 +37,7 @@ const REACTIONS: Array<{ key: string; label: string; icon: typeof Heart }> = [
  * Reactions signal without ranking (popularity selects for confidence, not
  * correctness). Anonymous author_id never leaves the server.
  */
-export function WallView({ initialPosts }: { initialPosts: WallPost[] }) {
+export function WallView({ initialPosts, isFacultyViewer = false }: { initialPosts: WallPost[]; isFacultyViewer?: boolean }) {
   const [posts, setPosts] = React.useState<WallPost[]>(initialPosts);
   const [content, setContent] = React.useState("");
   const [anonymous, setAnonymous] = React.useState(false);
@@ -103,6 +104,23 @@ export function WallView({ initialPosts }: { initialPosts: WallPost[] }) {
       setMyReactions((m) => ({ ...m, [postId]: next }));
     } catch {
       /* optimistic rollback is acceptable — refresh next load */
+    }
+  }
+
+  /** Faculty pin/unpin — the Case of the Week. Admin-only route enforces it. */
+  async function togglePin(postId: string, currentlyPinned: boolean) {
+    haptic("tap");
+    try {
+      const res = await fetch("/api/practice/wall/pin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ postId, pinned: !currentlyPinned }),
+      });
+      if (!res.ok) return;
+      setPosts((prev) => prev.map((p) => (p.id === postId ? { ...p, isPinned: !currentlyPinned } : p)));
+      haptic("success");
+    } catch {
+      /* ignore */
     }
   }
 
@@ -185,6 +203,19 @@ export function WallView({ initialPosts }: { initialPosts: WallPost[] }) {
                   {p.isFaculty ? <span className="rounded-full bg-secondary px-2 py-0.5 font-semibold">Faculty</span> : null}
                   {p.isAnonymous ? <span>Anonymous</span> : <span>Cohort member</span>}
                   <span>· {new Date(p.createdAt).toLocaleDateString()}</span>
+                  {isFacultyViewer ? (
+                    <button
+                      type="button"
+                      onClick={() => void togglePin(p.id, p.isPinned)}
+                      className={cn(
+                        "ml-auto rounded-full border px-2 py-0.5 transition-transform active:translate-y-px",
+                        p.isPinned ? "border-primary bg-primary/10 text-primary" : "border-border hover:bg-secondary",
+                      )}
+                      title={p.isPinned ? "Unpin (remove from top)" : "Pin as the Case of the Week"}
+                    >
+                      {p.isPinned ? "Unpin" : "📌 Pin"}
+                    </button>
+                  ) : null}
                 </div>
                 <p className="mt-2 whitespace-pre-wrap text-small">{p.content}</p>
 
