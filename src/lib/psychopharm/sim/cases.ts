@@ -29,6 +29,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "First-episode moderate depression, presenting with body ache, 'heaviness', poor sleep, 2-year help-seeking delay. Prior GP visits for 'gas' and 'weakness'.",
     chief_complaint_in_own_words: "Doctor, there's a heaviness. I can't explain it. My body just… everything feels like a lot.",
+    opening_idiom: "sar bhari",
+    traps: ["somatic_mask", "cultural_idiom", "under_diagnosis"],
     history: {
       timeline:
         "Started ~8 months ago after a promotion that added night shifts. Sleep became broken, appetite dropped, he lost 6kg. He began attributing it to 'gas' and 'weakness'.",
@@ -103,6 +105,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "Panic disorder with agoraphobia-like avoidance. Three ER visits in 4 months 'my heart is racing'. Every cardiac workup normal. Fear of dying.",
     chief_complaint_in_own_words: "My heart races and I feel like I'm going to die. The doctors say my heart is fine, but it doesn't feel fine.",
+    opening_idiom: "dil ghabrata hai",
+    traps: ["medical_mimic", "under_diagnosis", "somatic_mask"],
     history: {
       timeline:
         "First attack 4 months ago on a crowded metro. Now avoids metro, buses, and crowded spaces. Anticipatory anxiety about the next attack.",
@@ -173,6 +177,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "OCD with religious contamination obsessions and washing compulsions. Feels sinful and ashamed. 3-year delay; told family he 'prays a lot'.",
     chief_complaint_in_own_words: "My mind keeps filling with unclean thoughts about the temple. I wash my hands until they bleed. I'm a bad person for thinking this.",
+    opening_idiom: "possession / kisi ne kuch kar diya",
+    traps: ["cultural_idiom", "misattributed_diagnosis", "under_diagnosis"],
     history: {
       timeline:
         "Started during board exams ~3 years ago as 'needing to be clean before prayer'. Escalated to washing 30+ times/day, avoiding temple, checking.",
@@ -243,6 +249,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "Brought by parents who report 'marks fell', 'attitude problem', 'always on phone'. Patient is hostile, refuses to engage, parents do the talking.",
     chief_complaint_in_own_words: "(To parents) You brought me here. You talk.",
+    opening_idiom: "koi baat nahi",
+    traps: ["informant_conflict", "diagnostic_overshadowing", "late_risk_reveal"],
     history: {
       timeline:
         "Marks dropped over 6 months. Parents report defiance, staying in room, arguing. No direct account from the patient yet.",
@@ -313,6 +321,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "Alcohol use disorder, moderate-severe, brought by wife. Denies problem, minimises quantity, blames stress. Liver function deranged.",
     chief_complaint_in_own_words: "My wife dragged me here. I'm not an alcoholic. I can stop any time I want.",
+    opening_idiom: "sab kuch kar liya",
+    traps: ["adherence_fiction", "under_diagnosis", "secondary_gain"],
     history: {
       timeline:
         "Daily drinking for ~7 years, escalating. Now starts in the morning on weekends, hides bottles. Wife found them.",
@@ -383,6 +393,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "Postpartum depression, 6 months after delivery. Low mood, tearfulness, guilt, poor sleep. Mother-in-law dominates the room; patient is deferential.",
     chief_complaint_in_own_words: "I'm not a good mother. I can't even cry properly without my mother-in-law asking why.",
+    opening_idiom: "I'm fine, just tired",
+    traps: ["informant_conflict", "somatic_mask", "under_diagnosis"],
     history: {
       timeline:
         "Since ~2 months postpartum: crying, self-blame, sleep even when baby sleeps, loss of interest. Husband works long hours.",
@@ -453,6 +465,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "Grief reaction 8 months after wife's death, vs depression. Waves of sadness, preserved pleasure with grandchildren, no anhedonia globally. Referred by daughter who worried he's 'not moving on'.",
     chief_complaint_in_own_words: "I still talk to her chair. My daughter thinks I'm depressed. I just miss my wife of 35 years.",
+    opening_idiom: "dil baith jana",
+    traps: ["over_diagnosis", "late_risk_reveal", "cultural_idiom"],
     history: {
       timeline:
         "Wife died of cancer 8 months ago. Initial numbness, then waves of grief. Can enjoy his grandsons, can eat, sleeps reasonably except anniversary dates.",
@@ -520,6 +534,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "The trap case: healthy woman experiencing a normal, difficult season — new school term, child starting school, husband transferred. No disorder. The right answer is 'this person is fine'.",
     chief_complaint_in_own_words: "I'm not here for me, exactly. My colleague made an appointment and said I should come. I'm just tired — it's a big term.",
+    opening_idiom: "I'm fine, just tired",
+    traps: ["over_diagnosis", "under_diagnosis", "adherence_fiction"],
     history: {
       timeline:
         "Term started 6 weeks ago; new head teacher, more load, child in new school. Sleep is a bit short but she enjoys teaching. Mood is fine when not exhausted.",

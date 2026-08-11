@@ -22,6 +22,13 @@ const CLINICS = [
     expertNext: "Check for preserved pleasure (grandchildren?), sleep, appetite, and whether the grief has 'waves'.",
     lesson: "Preserved pleasure with waves of grief = normal grief. Over-diagnosing this is the error.",
   },
+  // --- v5 Part 1: Idiom-of-distress variant ---
+  {
+    line: "Patient: \"I'm not feeling fresh.\" (Could be constipation, non-restorative sleep, depressive fatigue, medication sedation, anaemia/thyroid, anxiety — what would you ask first?)",
+    expertDifferential: ["Constipation / incomplete evacuation", "Non-restorative sleep / sleep apnoea", "Depressive anergia", "Medication sedation", "Anaemia / hypothyroid / B12", "Anxiety somatic tension"],
+    expertNext: "\"When you say fresh — what would feeling fresh look like? Walk me through yesterday morning from waking up.\"",
+    lesson: "\"Not feeling fresh\" is the classic idiom of distress — in Indian English it often means constipation. The word is doing work you can't see. The funnel's instantiate step (\"Walk me through yesterday morning\") is the single highest-yield question to disambiguate it.",
+  },
 ];
 
 export function TwoMinuteClinic() {

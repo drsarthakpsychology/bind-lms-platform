@@ -18,3 +18,10 @@ scripts/psychopharm/fda/*.json
 .e2e-state.json
 test-results/
 playwright-report/
+.claude/.continue_count
+STOP_CLAUDE
+night-runner.log
+.claude/DIRECTIVE.md
+.claude/settings.json.bak
+.claude/settings.json.NEW
+.claude/.nwcount

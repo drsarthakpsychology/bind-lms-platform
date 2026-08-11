@@ -180,3 +180,4 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 - **Build order**: A (Foundation) → B (Consulting Room) → C (Voice) → D (Corpus) → E/F/G as time allows. Brief says finish B+C completely before D if short.
 - **Data policy**: free tiers never see student data. Enforced in code via `assertProviderAllowed` + mandatory test.
 - **Style bank**: fiction contributes conversational texture only (style layer), never clinical content. Enforced in retrieval.
+2026-08-11T14:33:26 STOP_CLAUDE present — allowing stop.

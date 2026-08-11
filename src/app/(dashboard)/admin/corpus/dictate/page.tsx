@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { DictateConversation } from "./dictate-conversation";
 import { DictateForm } from "./dictate-form";
 
 export const dynamic = "force-dynamic";
@@ -6,8 +7,10 @@ export const dynamic = "force-dynamic";
 /**
  * /admin/corpus/dictate — Dr. Sarthak records anonymised composite cases
  * from his own practice (Part 4.3: the highest-value corpus source).
- * Each is saved as a sim_case draft (source='faculty_dictated',
- * approved=false) for review, then publish.
+ * A7: default view is the CONVERSATION — he talks (or types), an interviewer
+ * state machine asks the next clinical question, and the finished dictation
+ * saves as a sim_case draft (source='faculty_dictated', approved=false).
+ * The classic form remains as a fallback tab.
  */
 export default async function DictatePage() {
   const supabase = await createClient();
@@ -30,8 +33,17 @@ export default async function DictatePage() {
       </p>
 
       <div className="mt-6">
-        <DictateForm />
+        <DictateConversation />
       </div>
+
+      <details className="mt-6">
+        <summary className="cursor-pointer text-small font-medium text-muted-foreground">
+          Prefer the classic form? Use it instead
+        </summary>
+        <div className="mt-3">
+          <DictateForm />
+        </div>
+      </details>
 
       <div className="mt-8">
         <h2 className="text-base font-semibold">Recently dictated</h2>

@@ -42,6 +42,7 @@ Return ONLY a JSON object with EXACTLY these fields:
   "domain_coverage": number 0-1 (fraction of expected domains explored),
   "risk_timing": "early" | "appropriate" | "late" | "absent",
   "disclosure_unlock_rate": number 0-1,
+  "idiom_decoding": boolean (true if the student asked what the patient's opening phrase meant — e.g. "what do you mean by...", "walk me through...", "when you say X, what does it feel like?" — this is the core skill this programme exists to teach),
   "quotes": array of exactly 3-5 objects { "quote": string (a VERBATIM student line from the transcript), "better": string (a better alternative) },
   "missed_disclosures": array of strings (things the patient would have revealed if the student had asked appropriately)
 }

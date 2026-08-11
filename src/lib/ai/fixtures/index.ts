@@ -70,6 +70,7 @@ export const FIXTURE_DEBRIEF = {
   domain_coverage: 0.7,
   risk_timing: "late",
   disclosure_unlock_rate: 0.5,
+  idiom_decoding: true,
   quotes: [
     { quote: "patient: I'm fine.", better: "I hear you're fine. What's it been like since the last time we spoke?" },
     { quote: "student: You're not going to hurt yourself, right?", better: "Have you had thoughts of ending your life?" },

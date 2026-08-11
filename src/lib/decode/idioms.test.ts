@@ -2,8 +2,14 @@ import { describe, expect, it } from "vitest";
 import { IDIOMS, scoreDecode } from "./idioms";
 
 describe("idiom bank", () => {
-  it("has the compulsory seed set (30+ entries)", () => {
-    expect(IDIOMS.length).toBeGreaterThanOrEqual(30);
+  it("has the expanded idiom bank (60+ entries)", () => {
+    expect(IDIOMS.length).toBeGreaterThanOrEqual(60);
+  });
+
+  it("every idiom id is unique and kebab-case", () => {
+    const ids = IDIOMS.map((i) => i.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    for (const id of ids) expect(id).toMatch(/^idiom-[a-z0-9-]+$/);
   });
 
   it("every entry has a phrase, meanings, questions, trap and sources", () => {

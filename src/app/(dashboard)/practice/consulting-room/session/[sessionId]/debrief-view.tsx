@@ -15,6 +15,7 @@ interface DebriefData {
     risk_timing?: string;
     domain_coverage?: number;
     disclosure_unlock_rate?: number;
+    idiom_decoding?: boolean;
     quotes?: Array<{ quote: string; better: string }>;
     missed_disclosures?: string[];
   };
@@ -92,11 +93,17 @@ export function DebriefView({
           <span className="text-h1 text-numeric">{overall.toFixed(1)}</span>
           <span className="text-small text-muted-foreground">/ 5.0 overall</span>
         </div>
-        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-5">
           <Stat label="Open:closed" value={String(score.open_closed_ratio ?? "—")} />
           <Stat label="Reflective" value={String(score.reflective_statements ?? "—")} />
           <Stat label="Premature reassurance" value={String(premature)} warn={premature > 0} />
           <Stat label="Risk timing" value={score.risk_timing ?? "—"} />
+          <Stat
+            label="Idiom decoded"
+            value={score.idiom_decoding ? "Yes" : "No"}
+            warn={!score.idiom_decoding}
+            hint={score.idiom_decoding ? "You asked what it meant." : "The opening phrase was doing work you missed."}
+          />
         </div>
         {premature > 0 ? (
           <p className="mt-3 flex items-center gap-2 text-small text-amber-700">

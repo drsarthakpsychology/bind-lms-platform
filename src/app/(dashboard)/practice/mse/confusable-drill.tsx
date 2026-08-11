@@ -10,7 +10,7 @@ import { CONFUSABLE_PAIRS, scoreConfusable } from "@/lib/mse/confusable";
  * illusion vs hallucination, obsession vs delusion, flight vs tangential,
  * akathisia vs anxiety. The distinctions students actually fail.
  */
-export function ConfusableDrill() {
+export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}) {
   const [pairIdx, setPairIdx] = React.useState(0);
   const [itemIdx, setItemIdx] = React.useState(0);
   const [answers, setAnswers] = React.useState<Record<string, "a" | "b">>({});
@@ -91,10 +91,21 @@ export function ConfusableDrill() {
           </button>
         ) : null}
         {revealed && done ? (
-          <p className="mt-3 text-small font-medium">
-            Done — {scoreConfusable(CONFUSABLE_PAIRS.flatMap((p) => p.items), answers)} /{" "}
-            {CONFUSABLE_PAIRS.flatMap((p) => p.items).length} correct.
-          </p>
+          <div className="mt-3 space-y-2">
+            <p className="text-small font-medium">
+              Done — {scoreConfusable(CONFUSABLE_PAIRS.flatMap((p) => p.items), answers)} /{" "}
+              {CONFUSABLE_PAIRS.flatMap((p) => p.items).length} correct.
+            </p>
+            {onComplete ? (
+              <button
+                type="button"
+                onClick={onComplete}
+                className="rounded-md border-2 border-border bg-primary px-4 py-1.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+              >
+                Mark Level 3 complete
+              </button>
+            ) : null}
+          </div>
         ) : null}
       </div>
     </div>

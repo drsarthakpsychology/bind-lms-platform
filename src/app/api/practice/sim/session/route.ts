@@ -96,7 +96,7 @@ export async function POST(req: Request) {
     sessionId: session.id,
     difficulty: session.difficulty,
     opening:
-      `Hello, I'm ${simCase.identity.name}. They said I should come and talk to someone. ` +
-      `How are you doing?`,
+      simCase.chief_complaint_in_own_words ||
+      `Hello, I'm ${simCase.identity.name}. They said I should come and talk to someone. How are you doing?`,
   });
 }

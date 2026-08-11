@@ -77,12 +77,18 @@ export interface SimFewShotExchange {
   patient: string;
 }
 
+import type { TrapId } from "@/lib/sim/types";
+
 export interface SimCase {
   title: string;
   difficulty: SimDifficulty;
   identity: SimCaseIdentity;
   presentation: string; // clinician summary
   chief_complaint_in_own_words: string;
+  /** The patient's opening line is an idiom from the bank, never a clean symptom. */
+  opening_idiom?: string;
+  /** Clinical traps mapped to this case (v5 Part 5.1). */
+  traps?: TrapId[];
   history: SimCaseHistory;
   cognitive_model: SimCaseCognitiveModel;
   disclosure_rules: SimDisclosureRule[];

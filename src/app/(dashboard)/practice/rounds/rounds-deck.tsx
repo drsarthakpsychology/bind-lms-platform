@@ -12,6 +12,10 @@ const SEED_CARDS = [
   { front: "What does 'rolling with resistance' mean in motivational interviewing?", back: "Don't fight the client's resistance — reflect it, and let their own argument for change emerge." },
   { front: "Why is premature reassurance the #1 novice error in a first session?", back: "It closes exploration. The client stops testing whether you can hold their distress, and the real problem stays hidden." },
   { front: "What's the difference between mood and affect?", back: "Mood is the sustained inner feeling the client reports; affect is the observable expression. A client can report depressed mood with flat affect — or cheerfully deny low mood while showing labile affect." },
+  // --- v5 Part 1: Idiom-of-distress cards ---
+  { front: "What are the common medical differentials for a patient reporting 'kamzori' (weakness)?", back: "Anaemia, nutritional deficiency (B12), chronic disease (TB, diabetes, thyroid), or dhat-associated distress in young men." },
+  { front: "A patient says 'dil ghabrata hai' (heart flutters). Why shouldn't you assume it's anxiety?", back: "The heart is the Indian seat of emotion — it is as likely to be grief or arrhythmia as it is to be a panic attack. Check the physical first." },
+  { front: "What does 'not feeling fresh' usually mean in common Indian English?", back: "Often describes incomplete bowel evacuation (constipation). If you write 'low mood' and move on, you've missed the clinical picture." },
 ];
 
 export function RoundsDeck() {

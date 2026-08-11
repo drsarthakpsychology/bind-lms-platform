@@ -17,6 +17,8 @@ export const debriefSchema = z.object({
   domain_coverage: z.number().min(0).max(1),
   risk_timing: z.enum(["early", "appropriate", "late", "absent"]),
   disclosure_unlock_rate: z.number().min(0).max(1),
+  /** v5 Part 1: did the student ever ask what the opening idiom meant? */
+  idiom_decoding: z.boolean().default(false),
   quotes: z.array(
     z.object({
       quote: z.string(),
