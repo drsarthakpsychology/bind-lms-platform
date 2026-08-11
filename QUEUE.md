@@ -82,3 +82,16 @@
 - [x] Reduced-motion pass: respect prefers-reduced-motion on the remaining animations (brief §10.18) — verified: global kill-switch at globals.css:373 covers every CSS animation (incl. animate-pulse); no JS-driven animation bypasses exist
 - [x] Screen-reader labels audit on the practice tools (aria-live on scores, labels on icon buttons) (brief §10.18)
 - [x] e2e for the new A1 retry flow: extend e2e/consulting-session.spec.ts to click "Try this again" and assert the branch session loads with the comparison strip
+
+## ROUND 5 — infinite backlog (content → polish → new proposals)
+
+- [ ] Two-Minute Clinic: add 20 more prompts to src/lib/practice/clinic.ts (paediatrics + geriatrics + perinatal focus — 81 → 101)
+- [ ] Out of Depth: add 10 supervision-focused scenarios (client asks for supervisor's opinion, student feels out of depth mid-therapy, countertransference pull) to src/lib/out-of-depth/scenarios.ts (30 → 40)
+- [ ] Ethics: add 10 more dilemmas (technology boundaries: video sessions, social media stalking of clients, online reviews) to src/lib/practice/ethics.ts (30 → 40)
+- [ ] Quiz bank: add 15 more items to src/lib/quiz/quiz-bank.ts (decode-themed best-response + would-you-report for the new MHA 2021 amendments discussion)
+- [ ] Wall: add a faculty-visible 'reported posts' queue view at /admin/wall-reports (wall_reports table exists; surface open reports with resolve action)
+- [ ] Journal: per-entry 'share to faculty' preset (a one-tap share that targets admin role instead of an email lookup)
+- [ ] Weak-spots banner on /today: render the same dismissible weak-spots banner on the front door (currently /practice only)
+- [ ] Case Library: filter row (disorder, trap, age, setting, idiom) on src/app/(dashboard)/practice/library/library-list.tsx (brief §B5 filter row)
+- [ ] Skeleton loading for /today (matches the primary-card shape)
+- [ ] e2e for the No-Disorder debrief: assert the restraint-praise path renders on a no-disorder case
