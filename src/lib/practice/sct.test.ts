@@ -3,7 +3,7 @@ import { ALL_SEED_SCT_ITEMS, panelDistribution, scoreSctResponse, type SctRespon
 
 describe("SCT Arena — panel scoring methodology", () => {
   it("has 60+ seed items", () => {
-    expect(ALL_SEED_SCT_ITEMS.length).toBeGreaterThanOrEqual(150);
+    expect(ALL_SEED_SCT_ITEMS.length).toBeGreaterThanOrEqual(190);
   });
 
   it("modal answer scores exactly 1.0", () => {
