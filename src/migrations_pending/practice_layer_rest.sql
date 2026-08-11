@@ -465,3 +465,26 @@ create policy "library_notes_update_own" on public.library_notes
 create policy "library_notes_admin_all" on public.library_notes
   for all using (public.is_admin()) with check (public.is_admin());
 create index if not exists idx_library_notes_doc on public.library_notes (document_id);
+
+-- ---------------------------------------------------------------------------
+-- Quiz attempts (round 4) — persisted so /admin/triage can surface low-
+-- confidence quiz areas. One row per (user, item) reveal; owner-only RLS,
+-- admin reads for the triage signal.
+-- ---------------------------------------------------------------------------
+create table if not exists public.quiz_attempts (
+  id uuid primary key default gen_random_uuid(),
+  organization_id uuid,
+  user_id uuid not null references public.profiles (id) on delete cascade,
+  item_id text not null,
+  item_type text not null default 'quiz',
+  chosen integer,
+  correct boolean not null,
+  created_at timestamptz not null default now()
+);
+
+alter table public.quiz_attempts enable row level security;
+create policy "quiz_attempts_insert_own" on public.quiz_attempts
+  for insert with check (auth.uid() = user_id);
+create policy "quiz_attempts_select_own_or_admin" on public.quiz_attempts
+  for select using (auth.uid() = user_id or public.is_admin());
+create index if not exists idx_quiz_attempts_item on public.quiz_attempts (item_id);

@@ -75,7 +75,20 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
       {!revealed ? (
         <button
           type="button"
-          onClick={() => { setRevealed(true); haptic("success"); }}
+          onClick={() => {
+            setRevealed(true);
+            haptic("success");
+            // Persist the attempts (low-confidence areas surface in /admin/triage).
+            for (const item of items) {
+              const chosen = answers[item.id];
+              if (chosen == null) continue;
+              fetch("/api/practice/quiz/attempt", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ itemId: item.id, chosen, correct: chosen === item.correct }),
+              }).catch(() => {});
+            }
+          }}
           disabled={Object.keys(answers).length < items.length}
           className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
         >
