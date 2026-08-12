@@ -139,7 +139,7 @@ function deriveMissed(sections: Section[], full: string, id: string): { what_was
 }
 
 function notStated(id: string, field: string): string {
-  return `[not stated in ${id} — see source text]`;
+  return `[${id} ${field}: not stated — see source text]`;
 }
 
 // ---------------------------------------------------------------------------
@@ -170,6 +170,7 @@ function extractFromPmcFile(file: string): CaseReportRecord | null {
   const sections = sectionize(text);
   const derived = deriveMissed(sections, text, id);
   const discussion = sections.filter((s) => s.field === "discussion").map((s) => s.text).join(" ");
+  void discussion;
 
   return {
     id,

@@ -20,7 +20,6 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import type {
   ExchangeRecord,
-  ExchangeTurn,
   CounsellorMove,
   ClientResponse,
   MoveTransitionRow,
