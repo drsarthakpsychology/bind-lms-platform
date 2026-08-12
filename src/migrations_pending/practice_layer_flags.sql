@@ -30,25 +30,27 @@ create policy "feature_flags_admin_manage" on public.feature_flags
 
 -- The six live for Cohort One (A2); the rest built-but-off, revealed by the
 -- admin at /admin/flags (one click each, staged reveal as an engagement tool).
+-- All 18 tools are fully built (verified on disk + data) and shipped for
+-- Cohort One. Every flag enabled — see VISIBILITY.md (Bug 4 fix).
 insert into public.feature_flags (key, enabled, enabled_for_cohort) values
-  ('consulting_room', true,  true),
-  ('decoder',         true,  true),
-  ('mse',             true,  true),
-  ('judgment',        true,  true),
-  ('rounds',          true,  true),
-  ('journal',         true,  true),
-  ('formulation',     false, true),
-  ('osce',            false, true),
-  ('ethics',          false, true),
-  ('case_library',    false, true),
-  ('landmark',        false, true),
-  ('peer_roleplay',   false, true),
-  ('two_minute_clinic', false, true),
-  ('supervision',     false, true),
-  ('skills_passport', false, true),
-  ('weak_spots',      false, true),
-  ('checkin',         false, true),
-  ('modules',         false, true)
+  ('consulting_room',  true, true),
+  ('decoder',          true, true),
+  ('mse',              true, true),
+  ('judgment',         true, true),
+  ('rounds',           true, true),
+  ('journal',          true, true),
+  ('formulation',      true, true),
+  ('osce',             true, true),
+  ('ethics',           true, true),
+  ('case_library',     true, true),
+  ('landmark',         true, true),
+  ('peer_roleplay',    true, true),
+  ('two_minute_clinic', true, true),
+  ('supervision',      true, true),
+  ('skills_passport',  true, true),
+  ('weak_spots',       true, true),
+  ('checkin',          true, true),
+  ('modules',          true, true)
 on conflict (key) do update set
   enabled = excluded.enabled,
   enabled_for_cohort = excluded.enabled_for_cohort;
