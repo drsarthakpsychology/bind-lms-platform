@@ -61,17 +61,34 @@ export default async function ConsultingRoomPage() {
   // merge is gone — it duplicated every title (once id="" from the seed,
   // once from the row). The card hook is the patient's OWN words; the
   // summary is the non-diagnostic clinical line.
+  // Gamification: stars from the best score (>=7/10 = 3, >=5 = 2, >=3 = 1),
+  // and difficulty-gated unlock progression driven by completed-case count.
+  const completedCount = Array.from(stateByCase.values()).filter((s) => s.state === "completed").length;
+  const UNLOCK_AT: Record<string, number> = { cooperative: 0, guarded: 2, resistant: 5, crisis: 8 };
+  const scoreToStars = (score?: number | null): number => {
+    if (typeof score !== "number") return 0;
+    if (score >= 7) return 3;
+    if (score >= 5) return 2;
+    if (score >= 3) return 1;
+    return 0;
+  };
+
   const merged = dbCases.map((c) => {
     const data = c.case_data as { difficulty?: string; presentation?: string; chief_complaint_in_own_words?: string; source?: string; identity?: { name?: string } };
+    const difficulty = data.difficulty ?? "cooperative";
+    const st = stateByCase.get(c.id);
     return {
       id: c.id,
       title: c.title,
-      difficulty: data.difficulty ?? "cooperative",
+      difficulty,
       summary: data.presentation ?? "",
       hook: data.chief_complaint_in_own_words ?? "",
       source: (data.source ?? "corpus") === "hand_built" ? ("hand_built" as const) : ("corpus" as const),
-      state: (stateByCase.get(c.id)?.state ?? "not_started") as "not_started" | "in_progress" | "completed",
-      score: stateByCase.get(c.id)?.score ?? null,
+      state: (st?.state ?? "not_started") as "not_started" | "in_progress" | "completed",
+      score: st?.score ?? null,
+      stars: st?.state === "completed" || st?.score != null ? scoreToStars(st?.score) : 0,
+      unlocked: completedCount >= (UNLOCK_AT[difficulty] ?? 0) || st?.state !== "not_started",
+      unlockAt: UNLOCK_AT[difficulty] ?? 0,
     };
   });
 

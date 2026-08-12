@@ -17,6 +17,12 @@ export interface CaseCard {
   state?: "not_started" | "in_progress" | "completed";
   /** Best score for completed sessions (shown only when complete). */
   score?: number | null;
+  /** Stars earned (0-3) from the best debrief score. */
+  stars?: number;
+  /** Unlock progression: is this case available yet? */
+  unlocked?: boolean;
+  /** How many completed cases unlock the next tier. */
+  unlockAt?: number;
 }
 
 const DIFFICULTY_LABEL: Record<string, string> = {
@@ -117,9 +123,15 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
             {g.items.map((c) => {
               const st = c.state ?? "not_started";
               const busy = starting === c.id;
+              const locked = c.unlocked === false;
               return (
-                <li key={c.id || c.title} className="flex flex-col rounded-md border-2 border-border bg-card p-4 hard-shadow-sm transition-[transform,box-shadow] hover:-translate-y-0.5 hover:hard-shadow-md active:translate-y-px">
-                  {/* state chip — real meaning, replaces the dead "Reviewed" chip */}
+                <li key={c.id || c.title} className={`flex flex-col rounded-md border-2 border-border bg-card p-4 hard-shadow-sm transition-[transform,box-shadow] hover:-translate-y-0.5 hover:hard-shadow-md active:translate-y-px ${locked ? "opacity-60" : ""}`}>
+                  {locked ? (
+                    <p className="mb-2 rounded-md border border-border bg-secondary/50 px-2 py-1 text-caption text-muted-foreground">
+                      🔒 Unlocks after {c.unlockAt ?? 3} completed cases
+                    </p>
+                  ) : null}
+                  {/* state chip + stars — real meaning, replaces the dead "Reviewed" chip */}
                   <div className="flex items-center justify-between gap-2">
                     <span className={`rounded-full px-2 py-0.5 text-caption font-medium ${STATE_STYLE[st]}`}>
                       {STATE_LABEL[st]}
@@ -127,6 +139,15 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
                         ? ` · ${Math.round(c.score * 10)}/10`
                         : ""}
                     </span>
+                    {st === "completed" && typeof c.stars === "number" ? (
+                      <span className="flex items-center gap-0.5 text-amber-500" aria-label={`${c.stars} of 3 stars earned`}>
+                        {[0, 1, 2].map((i) => (
+                          <span key={i} aria-hidden className={i < c.stars! ? "" : "opacity-25"}>
+                            ★
+                          </span>
+                        ))}
+                      </span>
+                    ) : null}
                     {c.source !== "hand_built" ? (
                       <span className="rounded-full border border-amber-400 px-2 py-0.5 text-caption text-amber-700">
                         Awaiting review
@@ -143,10 +164,11 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
                     <button
                       type="button"
                       onClick={() => start(c)}
-                      disabled={busy || starting !== null}
+                      disabled={busy || starting !== null || locked}
+                      aria-disabled={locked}
                       className="flex-1 rounded-md border-2 border-border bg-primary px-3 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-60"
                     >
-                      {busy ? "Starting…" : st === "in_progress" ? "Resume session" : "Start session"}
+                      {busy ? "Starting…" : st === "in_progress" ? "Resume session" : locked ? "Locked" : "Start session"}
                     </button>
                     {c.id ? (
                       <Link
