@@ -25,7 +25,7 @@
 
 ## CONTENT
 
-- [ ] Lessons: author 4+ more lessons for Psychology Cohort 1 (the "0 of 1" truth) — MSE lesson exists; add Interviewing 101, MSE L2, formulation intro
+- [x] Lessons: 5 lessons now playable — 4 authored text lessons (Interviewing 101, MSE L2, Formulation intro, Ethics & Law primer) + honest count (0 of 5) [45fa726]
 - [ ] Corpus: drop-folder ingest for the 57 paid titles once Kavya drops files in /mnt/acquire/ (needs_kavya note written)
 
 ## ROUND 3+ (pre-existing backlog, see below)

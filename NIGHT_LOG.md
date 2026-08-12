@@ -1,3 +1,11 @@
+## 2026-08-12 (beastmode continuation #5d — lessons)
+
+- **Lessons fixed**: 4 authored text lessons inserted (Interviewing 101,
+  MSE L2, Formulation intro, Ethics & Law primer); lesson page renders a
+  reading when no video; course/dashboard count lessons as playable with a
+  video OR a reading → "0 of 5" now honest. Videos pending (no fabricated
+  assets). Commit 45fa726.
+
 ## 2026-08-12 (beastmode continuation #5c — gamification)
 
 - **Gamification live on the picker**: stars (0-3) from best score,
