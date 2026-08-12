@@ -48,3 +48,20 @@ describe("every live character runs a real turn (the route's exact path)", () =>
     }
   });
 });
+
+describe("disclosure-gate contract on a live character (the code, not the model)", () => {
+  function toDepth2(c: (typeof CHARACTER_SKELETONS)[number]): DepthCase {
+    return { case_id: `char-${c.key}`, title: c.title, difficulty: c.difficulty, identity: c.identity, presentation: c.presentation, chief_complaint_in_own_words: c.chief_complaint_in_own_words, opening_idiom: c.opening_idiom, history: c.history, cognitive_model: { core_belief: "", intermediate_beliefs: [], coping: [] }, disclosure_rules: c.disclosure_rules.map((r) => ({ fact: r.fact, gate: r.gate as never })) as DepthCase["disclosure_rules"], resistance: c.resistance, affect_rules: c.affect_rules, red_flags: c.red_flags as DepthCase["red_flags"], context_pack: { family_in_room: false, stigma: [], cost_concerns: true, legal_relevance: [] }, style_refs: [], rubric_targets: [], few_shot: c.few_shot, fixture_lines: c.fixture_lines, variation: c.variation, traps: c.traps as DepthCase["traps"], moves: {} };
+  }
+
+  it("farmer's high-risk well-plan stays gated until a clear self-harm question", () => {
+    const depth = toDepth2(CHARACTER_SKELETONS.find((x) => x.key === "farmer-cotton")!);
+    let s = initialState(depth.case_id, drawVariant(depth.variation, depth.case_id, 3));
+    const facts = depth.disclosure_rules.map((f) => ({ fact_id: f.fact, gate: f.gate, sensitive: true }));
+    for (const msg of ["Hello", "The crop must have been hard.", "That sounds heavy - how are you coping?"]) {
+      const r = runFixtureTurn(depth, s, msg, facts);
+      s = r.state;
+    }
+    expect(s.disclosed.some((d) => d.includes("well"))).toBe(false);
+  });
+});
