@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { provisionalKeys } from "@/lib/practice/rubric";
+import { isEnabled as aiEnabled } from "@/lib/ai/router";
 import { SimSessionView } from "./session-view";
 import { SimulationBadge } from "../../simulation-badge";
 
@@ -143,6 +144,7 @@ export default async function SimSessionPage({
         patientAge={patientAge}
         patientContext={patientContext}
         difficulty={session.difficulty}
+        fixtureMode={!aiEnabled()}
         voicePrefs={voicePrefs}
         initialTurns={(turns ?? []).map((t) => ({
           id: String(t.id ?? `t-${t.created_at ?? 0}-${t.role}-${String(t.content).slice(0, 12)}`),

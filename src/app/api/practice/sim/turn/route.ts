@@ -171,11 +171,13 @@ export async function POST(req: Request) {
     delivery: spoken.delivery,
   });
 
-  // Log usage (fixture turns cost nothing — still recorded for the audit trail).
+  // Log usage (fixture turns cost nothing — still recorded for the audit
+  // trail) WITH the reason, so "was this the real patient?" is answerable.
   await admin.from("ai_usage_log").insert({
     user_id: user.id,
     workload: "sim_patient_turn",
     provider: engineEnabled ? "unknown" : "fixture",
+    status: engineEnabled ? "ok" : "fixture_fallback",
     tokens_in: Math.round((message.length + result.reply.length) / 4),
     tokens_out: Math.round(result.reply.length / 4),
   });

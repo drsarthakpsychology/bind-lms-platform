@@ -12,6 +12,8 @@ export const runtime = "nodejs";
 
 const debriefSchema = z.object({
   sessionId: z.string().uuid(),
+  /** Bug 4: whether the student opened the hint — surfaced in the debrief. */
+  hintUsed: z.boolean().optional(),
 });
 
 /**

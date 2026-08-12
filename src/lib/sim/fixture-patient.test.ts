@@ -222,3 +222,17 @@ describe("bug 2: conversation history + dangling-thread rule", () => {
     expect(out.reply.length).toBeGreaterThan(0);
   });
 });
+
+describe("bug 3: fixture honesty — a resistant session never sounds cooperative", () => {
+  it("resistant Suresh never returns the cooperative canned line", () => {
+    const suresh = mkCase(SEED_CASES.find((c) => c.title.includes("Suresh"))!);
+    let s = fresh(suresh, 42);
+    for (let i = 0; i < 6; i++) {
+      const out = say(suresh, s, i === 0 ? "Hello" : `Question ${i}`);
+      // The generic cooperative canned line must NEVER appear.
+      expect(out.reply).not.toContain("everything feels heavy lately");
+      expect(out.reply).not.toContain("getting up feels like a lot");
+      s = out.state;
+    }
+  });
+});

@@ -47,6 +47,7 @@ export function SimSessionView({
   patientAge,
   patientContext,
   difficulty,
+  fixtureMode = false,
   initialTurns,
   voicePrefs,
   branchInfo,
@@ -57,6 +58,9 @@ export function SimSessionView({
   patientAge?: number;
   patientContext?: string;
   difficulty: string;
+  /** Bug 3: true when the engine is serving canned (fixture) responses —
+   *  the amber banner must make that unmistakable. */
+  fixtureMode?: boolean;
   initialTurns: Turn[];
   voicePrefs?: { rate: number; pitch: number; lang?: string; gender?: "male" | "female" };
   /** A1 retry: this session is a branch — parent turns + score for the
@@ -89,6 +93,10 @@ export function SimSessionView({
   const [hypotheses, setHypotheses] = React.useState("");
   const [sideRailOpen, setSideRailOpen] = React.useState(false);
   const [typing, setTyping] = React.useState(false);
+  // Bug 4: the hint is opt-in — collapsed by default; opening it is flagged
+  // so the debrief can show whether hints were used.
+  const [hintOpen, setHintOpen] = React.useState(false);
+  const hintUsedRef = React.useRef(false);
   // Bug 2: a stable id of the in-flight patient reply, so the reveal ticks
   // update by id and a second student message can never duplicate it.
   const pendingReply = React.useRef<string | null>(null);
@@ -241,7 +249,7 @@ export function SimSessionView({
       const res = await fetch("/api/practice/sim/debrief", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sessionId }),
+        body: JSON.stringify({ sessionId, hintUsed: hintUsedRef.current }),
       });
       if (!res.ok) {
         const j = await res.json().catch(() => null);
@@ -325,14 +333,31 @@ export function SimSessionView({
         </div>
       </div>
 
-      {/* hint */}
+      {/* fixture-mode banner (Bug 3) — canned responses must never be
+          mistaken for the real patient */}
+      {fixtureMode ? (
+        <div className="border-b-2 border-amber-400 bg-amber-50 px-4 py-2 text-caption font-semibold text-amber-800" role="status">
+          ⚠ Offline mode — canned responses. No live AI provider is connected;
+          the patient is scripted. Add a provider key to run a real session.
+        </div>
+      ) : null}
+
+      {/* hint — Bug 4: opt-in, collapsed by default */}
       <div className="border-b border-border bg-secondary/50 px-4 py-2 text-caption text-muted-foreground">
         {overTime ? (
           <span className="font-semibold text-red-600">Time&apos;s up — finishing your debrief.</span>
         ) : seconds >= SESSION_LIMIT_S - 60 ? (
           <span className="text-amber-600">One minute left.</span>
+        ) : hintOpen ? (
+          <span>{DIFFICULTY_HINT[difficulty] ?? "Interview the patient."}</span>
         ) : (
-          DIFFICULTY_HINT[difficulty] ?? "Interview the patient."
+          <button
+            type="button"
+            onClick={() => { setHintOpen(true); hintUsedRef.current = true; haptic("tap"); }}
+            className="underline decoration-dotted underline-offset-2 hover:text-foreground"
+          >
+            Need a hint?
+          </button>
         )}
       </div>
 
