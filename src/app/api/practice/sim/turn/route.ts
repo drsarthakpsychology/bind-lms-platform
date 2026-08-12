@@ -4,10 +4,12 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { SEED_CASES } from "@/lib/psychopharm/sim/cases";
 import { runPatientTurn } from "@/lib/sim/engine";
+import { runFixtureTurn } from "@/lib/sim/fixture-patient";
 import { initialState, type PatientState } from "@/lib/sim/types";
-import { drawVariant } from "@/lib/sim/variation";
+import { drawVariant, hashString } from "@/lib/sim/variation";
 import type { DepthCase } from "@/lib/sim/types";
 import type { Gate } from "@/lib/sim/gates";
+import { isEnabled as aiEnabled } from "@/lib/ai/router";
 import { guardStudentCall } from "@/lib/ai/guards";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -92,9 +94,13 @@ export async function POST(req: Request) {
     .limit(1)
     .maybeSingle();
 
+  // Draw the session variant once (mixed into the persisted seed below) and
+  // reuse it for every turn. The seed comes from the session id + a fresh
+  // entropy term so sessions of the same case diverge; once persisted it is
+  // the reproducible source for rewinds and debriefs.
   const variant = session.seed
     ? (JSON.parse(String(session.seed)) as ReturnType<typeof drawVariant>)
-    : drawVariant(simCase.variation ?? { mood_today: ["flat"], recent_event: ["a long day"], most_defended_topic: ["the family"], opening_posture: ["came willingly"], somatic_focus: ["head"], trust_start: [3], language_mix: ["Hinglish"] }, session.case_id, 1);
+    : drawVariant(simCase.variation ?? { mood_today: ["flat"], recent_event: ["a long day"], most_defended_topic: ["the family"], opening_posture: ["came willingly"], somatic_focus: ["head"], trust_start: [3], language_mix: ["Hinglish"] }, session.case_id, hashString(session.id) ^ Date.now());
 
   const state: PatientState = (lastPatientTurn?.state as PatientState | null) ?? initialState(session.case_id, variant);
   // Persist the seed on the session so a rewind/debrief is reproducible.
@@ -119,7 +125,22 @@ export async function POST(req: Request) {
   }));
 
   // Run the patient engine (Director → hard rules → Actor → fallback).
-  const result = await runPatientTurn(simCase, state, message, [], facts);
+  // Fixture mode: the deterministic case-aware patient (no network, still a
+  // different person per case). Live mode: Director + Actor model calls.
+  const engineEnabled = aiEnabled();
+  const result = engineEnabled
+    ? await runPatientTurn(simCase, state, message, [], facts)
+    : (() => {
+        const fx = runFixtureTurn(simCase, state, message, facts);
+        return {
+          reply: fx.reply,
+          state: fx.state,
+          decision: fx.decision,
+          usedFallback: false,
+          regenerated: false,
+          move: fx.decision.patient_move,
+        };
+      })();
 
   // Persist the patient turn WITH the new state (the rewind point).
   await admin.from("sim_turns").insert({
@@ -131,14 +152,15 @@ export async function POST(req: Request) {
     state: result.state,
   });
 
-  // Log usage.
+  // Log usage (fixture turns cost nothing — still recorded for the audit trail).
   await admin.from("ai_usage_log").insert({
     user_id: user.id,
     workload: "sim_patient_turn",
-    provider: "unknown",
+    provider: engineEnabled ? "unknown" : "fixture",
     tokens_in: Math.round((message.length + result.reply.length) / 4),
     tokens_out: Math.round(result.reply.length / 4),
   });
+
 
   // The Director's affect + fatigue ride along so the voice layer can map
   // them onto delivery (v5 §6: affect → rate/pitch/emotion tag).

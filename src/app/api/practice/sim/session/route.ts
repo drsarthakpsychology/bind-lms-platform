@@ -3,6 +3,8 @@ import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { SEED_CASES } from "@/lib/psychopharm/sim/cases";
+import { initialState, type DepthCase } from "@/lib/sim/types";
+import { drawVariant, hashString } from "@/lib/sim/variation";
 import { rateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -92,11 +94,30 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "could not start session" }, { status: 500 });
   }
 
+  // The patient's own opening line is the first turn of the transcript — the
+  // hook in their words, from the case spec, never a generic greeting. It is
+  // persisted WITH the initial state so the session always has a resume
+  // point (the opening turn's state is the rewind target for turn 1).
+  const opening =
+    simCase.chief_complaint_in_own_words ||
+    `Hello, I'm ${simCase.identity.name}. They said I should come and talk to someone. How are you doing?`;
+  const variation = (simCase.variation ??
+    { mood_today: ["flat"], recent_event: ["a long day"], most_defended_topic: ["the family"], opening_posture: ["came willingly"], somatic_focus: ["head"], trust_start: [3], language_mix: ["Hinglish"] }) as DepthCase["variation"];
+  const initVariant = drawVariant(variation, session.id, hashString(session.id));
+  // Persist the drawn variant as the session seed so rewinds are reproducible.
+  await admin.from("sim_sessions").update({ seed: JSON.stringify(initVariant) }).eq("id", session.id);
+  await admin.from("sim_turns").insert({
+    session_id: session.id,
+    user_id: user.id,
+    role: "patient",
+    content: opening,
+    content_type: "text",
+    state: initialState(session.id, initVariant),
+  });
+
   return NextResponse.json({
     sessionId: session.id,
     difficulty: session.difficulty,
-    opening:
-      simCase.chief_complaint_in_own_words ||
-      `Hello, I'm ${simCase.identity.name}. They said I should come and talk to someone. How are you doing?`,
+    opening,
   });
 }

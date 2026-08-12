@@ -123,6 +123,8 @@ export interface PatientState {
   last_patient_utterances: string[]; // for the anti-repetition embedding check
   premature_advice_streak: number; // 3 consecutive → hollow_compliance
   hollow_compliance_engaged: boolean;
+  /** consecutive low-effort student messages ("hey", "ok", "hmm") — code-enforced pressure. */
+  student_abrupt_streak: number;
   variant: SessionVariant;
   turn_count: number;
   rapport_events: { turn: number; kind: string }[];
@@ -143,6 +145,7 @@ export function initialState(caseId: string, variant: SessionVariant): PatientSt
     last_patient_utterances: [],
     premature_advice_streak: 0,
     hollow_compliance_engaged: false,
+    student_abrupt_streak: 0,
     variant,
     turn_count: 0,
     rapport_events: [],
