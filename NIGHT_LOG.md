@@ -1,3 +1,17 @@
+## 2026-08-12 (beastmode continuation #3 — Tier-2 character bank)
+
+- **Tier-2 bank complete**: 15 archetype skeletons with full authored voices
+  (6+ spoken lines each in their own register, story timeline, disclosure
+  rules, resistance, affect rules, variation). 15 × 4 demographies
+  (Kolhapur/Lucknow/Howrah/Salem) = the 60-voice contract. 8 tests green
+  (full-bank voice contract, 60 unique identities, regional coverage).
+  Commit 60e660a.
+- Decision: authored every line by hand rather than templating — the voice
+  IS the case; templates would breathe the same genericness back in.
+  Reversal path: placeholders remain in the skeleton shape if generation is
+  wanted later.
+- State: 299 unit tests, tsc clean, lint clean, build green.
+
 ## 2026-08-12 (beastmode round 1 — the consulting room, the UI, the missing features)
 
 ### Shipped (commits 5c9de47 → b030e07)
