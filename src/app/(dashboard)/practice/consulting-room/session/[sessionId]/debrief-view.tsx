@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { CheckCircle2, AlertTriangle, RefreshCw, Mic2, RotateCcw } from "lucide-react";
+import { CheckCircle2, CircleCheck, AlertTriangle, RefreshCw, Mic2, RotateCcw } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import type { VoiceMetrics } from "@/lib/voice/use-voice-metrics";
 
@@ -16,6 +16,7 @@ interface DebriefData {
     domain_coverage?: number;
     disclosure_unlock_rate?: number;
     idiom_decoding?: boolean;
+    asked_why_today?: boolean;
     quotes?: Array<{ quote: string; better: string }>;
     missed_disclosures?: string[];
   };
@@ -48,6 +49,7 @@ export function DebriefView({
   totalTurns,
   branchInfo,
   provisionalDims,
+  hintUsed,
 }: {
   data: DebriefData;
   difficulty: string;
@@ -59,6 +61,8 @@ export function DebriefView({
   branchInfo?: BranchInfo;
   /** A3: rubric dimensions still provisional — hide their numeric score. */
   provisionalDims?: string[];
+  /** Bug 4: whether the student opened the hint — surfaced honestly. */
+  hintUsed?: boolean;
 }) {
   const router = useRouter();
   const [revealMissed, setRevealMissed] = React.useState(false);
@@ -70,6 +74,7 @@ export function DebriefView({
   const overall = score.score ?? 0;
 
   const premature = score.premature_reassurance ?? 0;
+  const askedWhyToday = score.asked_why_today ?? false;
 
   async function retryAt(turnNumber: number) {
     if (!sessionId || retrying) return;
@@ -149,6 +154,23 @@ export function DebriefView({
             You reassured the patient {premature} time{premature > 1 ? "s" : ""} before fully exploring
             the problem. That&apos;s the most common novice move — sitting with their distress is
             the skill.
+          </p>
+        ) : null}
+
+        {/* Phase 1 §4.2 — the most under-used question in clinical teaching */}
+        <p className={`mt-2 flex items-center gap-2 text-small ${askedWhyToday ? "text-green-700" : "text-amber-700"}`}>
+          {askedWhyToday ? (
+            <><CircleCheck className="size-4" aria-hidden /> You asked why the patient came in TODAY — that question opens the whole frame.</>
+          ) : (
+            <><AlertTriangle className="size-4" aria-hidden /> You never asked why the patient came in today specifically. Patients arrive for a reason — a fight, a scare, a deadline. Asking &quot;why now?&quot; opens the door.</>
+          )}
+        </p>
+
+        {/* Bug 4 — hints are surfaced honestly in the debrief */}
+        {hintUsed ? (
+          <p className="mt-2 flex items-center gap-2 text-caption text-muted-foreground">
+            You opened the difficulty hint during this session. That&apos;s fine — but the debrief is
+            honest about it: the hint did part of the thinking for you.
           </p>
         ) : null}
       </div>

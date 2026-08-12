@@ -174,5 +174,6 @@ export async function POST(req: Request) {
     score: result,
     quotes: result.quotes,
     missed_disclosures: result.missed_disclosures,
+    hintUsed: parsed.data.hintUsed ?? false,
   });
 }

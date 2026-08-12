@@ -19,6 +19,9 @@ export const debriefSchema = z.object({
   disclosure_unlock_rate: z.number().min(0).max(1),
   /** v5 Part 1: did the student ever ask what the opening idiom meant? */
   idiom_decoding: z.boolean().default(false),
+  /** Phase 1 §4.2: did the student ask WHY TODAY — the most under-used
+   *  question in clinical teaching. Named miss when absent. */
+  asked_why_today: z.boolean().default(false),
   quotes: z.array(
     z.object({
       quote: z.string(),

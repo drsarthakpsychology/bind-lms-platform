@@ -22,11 +22,13 @@ interface DebriefData {
     premature_reassurance?: number;
     reflective_statements?: number;
     risk_timing?: string;
+    asked_why_today?: boolean;
     quotes?: Array<{ quote: string; better: string }>;
     missed_disclosures?: string[];
   };
   quotes?: Array<{ quote: string; better: string }>;
   missed_disclosures?: string[];
+  hintUsed?: boolean;
 }
 
 const DIFFICULTY_HINT: Record<string, string> = {
@@ -283,6 +285,7 @@ export function SimSessionView({
         totalTurns={turns.length}
         branchInfo={branchInfo}
         provisionalDims={provisionalDims}
+        hintUsed={debrief.hintUsed ?? false}
       />
     );
   }
