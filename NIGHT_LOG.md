@@ -423,3 +423,7 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 - **Two-Minute Clinic** — idiom variant ("I'm not feeling fresh") added to `clinic.tsx`.
 - **vitest config** — renamed to `.mts` + `import.meta.dirname` to fix ESM/CJS split. 211 tests pass.
 - Decisions: seeded all 65 idioms; marked only the §1.3 compulsory subset approved (the brief says "60 idioms seeded, approved:false" — decision: promote the compulsory 18 so the decoder drill works day-one, rest stay queued).
+2026-08-12T09:39:46 Queue exhausted — allowing normal Claude stop.
+2026-08-12T09:39:54 Queue exhausted — allowing normal Claude stop.
+2026-08-12T09:40:28 Queue exhausted — allowing normal Claude stop.
+2026-08-12T09:41:46 Queue exhausted — allowing normal Claude stop.
