@@ -247,7 +247,8 @@ create policy "formulation_wall_admin_manage" on public.formulation_wall_posts
 
 -- Anonymous view: author_id nulled for everyone (the wall is anonymous by
 -- design — the critique, not the author, is the content).
-create or replace view public.formulation_wall_visible as
+create or replace view public.formulation_wall_visible
+with (security_invoker = true) as
 select
   id, organization_id, narrative, case_title, created_at,
   null::uuid as author_id

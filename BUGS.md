@@ -26,4 +26,12 @@ Log bugs even when fixed minutes later.
 | 19 | LOW | Wall | anonymous posts/replies invisible to students (row-hiding policy) — privacy UX fix via `*_visible` views | audit | Fixed | ff15d15 |
 | 20 | MED | Calibration | scaffold copy bug in weightedKappa first pass (assertion 0.6 vs <0.5) — corrected with realistic near-random fixture | tests | Fixed | 71a8147 |
 
+| 21 | HIGH | Patient engine | **The case spec never reached the model.** AI_ENABLED unset → every turn hit the shared fixture bank; Suresh said Ravi's lines verbatim. Fixed: authored per-case voices + variation schemas + seeded humidity; 6 tests prove case-distinct, seed-distinct, pressure-sensitive output | live db + sim_turns query | Fixed | 5c9de47 |
+| 22 | HIGH | Transcript | duplicate patient replies — old fixture bank repeated lines AND client reveal re-pushed the reply on a second message mid-reveal (2-4 copies/row confirmed). Fixed: append-once update-by-id render, unique (session_id,role,content) constraint, 27 rows pruned | live db query of sim_turns | Fixed | 83eb847 |
+| 23 | MED | Case list | one Start button appeared to fire all — audited: per-id state + stable keys already correct; added 4-test regression | audit | Fixed | 65c7da1 |
+| 24 | HIGH | Practice page | 12 of 18 feature_flags were off → student saw 3 tools. All 18 on for cohort; VISIBILITY.md audit written | live db flags query | Fixed | 06f69f4 |
+| 25 | MED | Weak-spots e2e | drill Next selector matched the answer option (has-text ambiguity) → click disabled; added data-testid | e2e run | Fixed | 318acb5 |
+| 26 | LOW | e2e roleplay | peer login landing is /today not /dashboard|practice — wait widened | e2e run | Fixed | 318acb5 |
+| 27 | MED | Wall views | SECURITY DEFINER on *_visible views — recreated as SECURITY INVOKER (projection-only; RLS does the gating) | advisors run | Fixed | pending |
+
 Open: 0.

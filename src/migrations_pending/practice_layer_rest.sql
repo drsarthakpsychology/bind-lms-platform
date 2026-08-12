@@ -388,7 +388,11 @@ create policy "transcript_chunks_admin_manage" on public.transcript_chunks
 -- Row-level security cannot hide a column, so students read through a view
 -- that nulls author_id for anonymous rows; the base table keeps admin-only
 -- select on anonymous rows.
-create or replace view public.wall_posts_visible as
+-- Projection-only views run as the QUERYING user (SECURITY INVOKER) so the
+-- base tables' RLS applies per viewer. The nulled author_id is the only
+-- transformation — no privilege escalation.
+create or replace view public.wall_posts_visible
+with (security_invoker = true) as
 select
   id,
   organization_id,
@@ -408,7 +412,8 @@ grant select on public.wall_posts_visible to authenticated;
 
 -- Anonymous wall REPLIES are visible to students but author_id never is
 -- (same treatment as posts — see wall_posts_visible).
-create or replace view public.wall_replies_visible as
+create or replace view public.wall_replies_visible
+with (security_invoker = true) as
 select
   id,
   organization_id,
