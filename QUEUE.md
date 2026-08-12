@@ -18,7 +18,7 @@
 ## CHARACTERS — Kavya's 200+ ask (authoring volume, not code)
 
 - [x] Build the full Tier-2 bank: 15 archetype skeletons → 60 characters via demography variants (this module has 3; add 12 more: daily-wager, farmer, homemaker, IT worker, auto-driver, nurse, moneylender-adjacent trader, imam/priest, retired railwayman, migrant construction worker, call-centre agent, housewife-with-somatics) [60e660a]
-- [ ] Tier 3: regional full-cast per state (6+ per state for the 5 pilot states)
+- [x] Tier 3: regional full-cast per state (6+ per state for the 5 pilot states) [ff18d6b]
 - [ ] Tier 4: rare-case band (Capgras, Cotard, Fregoli, folie à deux, Ganser, catatonia, Charles Bonnet, exploding head, sexsomnia, Kleine-Levin, narcolepsy, anti-NMDA, Wilson's, porphyria, thyroid storm, B12, TLE, autoimmune) — each with authored voice
 - [x] Upsert script: characters → sim_cases (published, approved) so the live route serves them [d65d378]
 - [ ] Gamification: per-case completion stars, unlock progression (finish X → unlock Y), streak badges on the picker — Kavya's gamefied-experience ask

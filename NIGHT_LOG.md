@@ -1,3 +1,13 @@
+## 2026-08-12 (beastmode continuation #5 — Tier 3 regional cast)
+
+- **Tier 3 complete**: 30 authored characters, 6 per state × 5 pilot states
+  (MH/TS/KA/TN/UP), full authored contract each. 3 tests green (per-state
+  6+, voice contract, no shared lines across the 45-character bank).
+  Commit ff18d6b. 302 unit tests total.
+- Decision: authored every line by hand per region (register-accurate),
+  not templated — the regional voice IS the differentiator. Reversal path:
+  the skeleton shape remains generatable if volume ever needs a machine.
+
 ## 2026-08-12 (beastmode continuation #3b — characters LIVE)
 
 - **Upsert script** (scripts/upsert-characters.ts): CHARACTER_SKELETONS →
