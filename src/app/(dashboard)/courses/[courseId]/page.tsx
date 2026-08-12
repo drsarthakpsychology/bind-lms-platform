@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BookOpen, CheckCircle2, ChevronLeft, Clock, FileText, Inbox, Paperclip } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, ChevronLeft, ChevronDown, Clock, FileText, Paperclip } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
@@ -27,10 +27,10 @@ export default async function CourseOverviewPage({
 
   const [{ data: course }, { data: lessons }, { data: progress }, { data: courseMaterials }, { data: assignments }, { data: submissions }, { data: lessonMaterials }] =
     await Promise.all([
-      supabase.from("courses").select("id, title, is_published").eq("id", courseId).single(),
+      supabase.from("courses").select("id, title, is_published, weeks").eq("id", courseId).single(),
       supabase
         .from("lessons")
-        .select("id, title, order_index, video_storage_path, description")
+        .select("id, title, order_index, video_storage_path, description, week")
         .eq("course_id", courseId)
         .order("order_index", { ascending: true }),
       supabase
@@ -39,13 +39,12 @@ export default async function CourseOverviewPage({
         .eq("user_id", profile.id),
       supabase
         .from("materials")
-        .select("id, title, kind, format, size_bytes")
+        .select("id, title, kind, format, size_bytes, lesson_id, week")
         .eq("course_id", courseId)
-        .is("lesson_id", null)
         .order("sort_order", { ascending: true }),
       supabase
         .from("assignments")
-        .select("id, lesson_id, title, instructions, due_at, is_published, lessons!inner(course_id)")
+        .select("id, lesson_id, title, instructions, due_at, is_published, lessons!inner(course_id, week)")
         .eq("lessons.course_id", courseId)
         .order("due_at", { ascending: true }),
       supabase
@@ -59,8 +58,6 @@ export default async function CourseOverviewPage({
         .not("lesson_id", "is", null),
     ]);
 
-  // Enrollment gate: students must be enrolled in a published course to see
-  // it. Admins bypass.
   const { data: enrollment } =
     profile.role === "admin"
       ? { data: true }
@@ -79,7 +76,6 @@ export default async function CourseOverviewPage({
     notFound();
   }
 
-  // A lesson is playable with a video OR a reading (authored text lessons).
   const playable = (lessons ?? []).filter((l) => l.video_storage_path || l.description);
   const completedIds = new Set(
     (progress ?? []).filter((p) => p.is_completed).map((p) => p.lesson_id),
@@ -89,10 +85,8 @@ export default async function CourseOverviewPage({
     ? Math.round((completedCount / playable.length) * 100)
     : 0;
 
-  // Resume target: first not-yet-completed lesson (or first if nothing started).
   const resumeTarget = playable.find((l) => !completedIds.has(l.id)) ?? playable[0];
 
-  // Assignments for THIS course's lessons + the student's submission per one.
   const lessonsById = new Map((lessons ?? []).map((l) => [l.id, l]));
   const submissionByAssignment = new Map(
     (submissions ?? []).map((s) => [s.assignment_id, s]),
@@ -100,10 +94,12 @@ export default async function CourseOverviewPage({
   const courseAssignments = (assignments ?? []).map((a) => {
     const lesson = lessonsById.get(a.lesson_id);
     const sub = submissionByAssignment.get(a.id);
+    const lessonData = a.lessons as { week?: number } | null;
     return {
       ...a,
       lessonTitle: lesson?.title ?? "Lesson",
       lessonId: a.lesson_id,
+      week: lessonData?.week ?? lesson?.week ?? 1,
       status: !a.is_published
         ? ("draft" as const)
         : sub?.status === "returned"
@@ -116,222 +112,324 @@ export default async function CourseOverviewPage({
     };
   });
 
-  // Per-lesson counts: how many materials and assignments each lesson carries.
+  const courseMaterialsByWeek = new Map<number, typeof courseMaterials>();
+  for (const m of courseMaterials ?? []) {
+    const mWeek = (m as { week?: number }).week ?? 1;
+    const list = courseMaterialsByWeek.get(mWeek) ?? [];
+    list.push(m);
+    courseMaterialsByWeek.set(mWeek, list);
+  }
+
   const materialsByLesson = new Map<string, number>();
   for (const m of lessonMaterials ?? []) {
     materialsByLesson.set(m.lesson_id, (materialsByLesson.get(m.lesson_id) ?? 0) + 1);
   }
-  const assignmentsByLesson = new Map<string, typeof assignments>();
-  for (const a of assignments ?? []) {
-    const list = assignmentsByLesson.get(a.lesson_id) ?? [];
+
+  const assignmentsByWeek = new Map<number, typeof courseAssignments>();
+  for (const a of courseAssignments) {
+    const list = assignmentsByWeek.get(a.week) ?? [];
     list.push(a);
-    assignmentsByLesson.set(a.lesson_id, list);
+    assignmentsByWeek.set(a.week, list);
+  }
+
+  const lessonWeeks = playable.map((l) => (l as { week?: number }).week ?? 1);
+  const materialWeeks = Array.from(courseMaterialsByWeek.keys());
+  const assignmentWeeks = Array.from(assignmentsByWeek.keys());
+  const allWeeks = [...lessonWeeks, ...materialWeeks, ...assignmentWeeks];
+  const maxWeek = allWeeks.length > 0 ? Math.max(...allWeeks) : 1;
+  const totalWeeks = Math.max(maxWeek, (course as { weeks?: number }).weeks ?? maxWeek);
+
+  const currentWeek = resumeTarget
+    ? (resumeTarget as { week?: number }).week ?? 1
+    : 1;
+
+  let nextAction:
+    | { type: "lesson" | "assignment" | "material"; id: string; week: number; title: string; href: string }
+    | null = null;
+
+  for (let w = 1; w <= totalWeeks; w++) {
+    const weekLessons = playable.filter((l) => ((l as { week?: number }).week ?? 1) === w);
+    for (const lesson of weekLessons) {
+      if (!completedIds.has(lesson.id)) {
+        nextAction = { type: "lesson", id: lesson.id, week: w, title: lesson.title, href: `/courses/${courseId}/lessons/${lesson.id}` };
+        break;
+      }
+    }
+    if (nextAction) break;
+
+    const weekAssignments = assignmentsByWeek.get(w) ?? [];
+    for (const a of weekAssignments) {
+      if (a.is_published && a.status === "not_started") {
+        nextAction = { type: "assignment", id: a.id, week: w, title: a.title ?? "Assignment", href: `/courses/${courseId}/lessons/${a.lessonId}?tab=assignment` };
+        break;
+      }
+    }
+    if (nextAction) break;
   }
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-8">
-      {/* Back control — labelled with where it goes. */}
       <Link
         href="/dashboard"
         className="inline-flex items-center gap-1.5 text-small font-medium text-muted-foreground transition-colors hover:text-foreground"
       >
         <ChevronLeft className="size-4" aria-hidden />
         My Courses
-      </Link>
+     </Link>
 
       <PageHeader
         eyebrow={course.is_published ? "Published course" : "Draft course"}
         title={course.title}
-        description="Pick a lesson below, or review the materials and assignments for this course."
+        description={
+          course.is_published
+            ? "Your linear path through this course. One next action, highlighted."
+            : "Draft — not yet visible to students."
+        }
       />
 
       <div className="flex items-center gap-4 rounded-lg border-2 border-foreground bg-card p-5 hard-shadow-sm">
         <div className="flex-1">
           <p className="text-caption text-muted-foreground">
             {completedCount} of {playable.length} lessons complete
-          </p>
+         </p>
           <Progress value={percent} aria-label="Course progress" className="mt-2" />
-        </div>
+       </div>
         {resumeTarget && (
           <Button asChild>
             <Link href={`/courses/${courseId}/lessons/${resumeTarget.id}`}>
               {completedCount > 0 ? "Resume" : "Start course"}
               <ArrowRight className="size-4" aria-hidden />
-            </Link>
-          </Button>
+           </Link>
+         </Button>
         )}
-      </div>
+     </div>
 
-      {/* Lessons — primary navigation */}
-      <section aria-label="Lessons" className="space-y-2">
-        <h2 className="text-h2">Lessons</h2>
-        {playable.length === 0 ? (
-          <p className="text-small text-muted-foreground">No lessons published yet.</p>
-        ) : (
-          <ul className="space-y-2">
-            {playable.map((lesson, i) => {
-              const done = completedIds.has(lesson.id);
-              const materialCount = materialsByLesson.get(lesson.id) ?? 0;
-              const lessonAssignments = assignmentsByLesson.get(lesson.id) ?? [];
-              const assignmentCount = lessonAssignments.length;
-              const hasOutstandingAssignment = lessonAssignments.some((a) => {
-                if (!a.is_published) return false;
-                const sub = submissionByAssignment.get(a.id);
-                return !sub || sub.status === "pending_review";
-              });
-              const assignmentDue = lessonAssignments.find((a) => a.is_published && a.due_at);
-              return (
-                <li key={lesson.id}>
-                  <Link
-                    href={`/courses/${courseId}/lessons/${lesson.id}`}
+      <section aria-label="Course path" className="space-y-4">
+        {Array.from({ length: totalWeeks }, (_, i) => i + 1).map((weekNum) => {
+          const weekLessons = playable.filter((l) => ((l as { week?: number }).week ?? 1) === weekNum);
+          const weekMaterials = courseMaterialsByWeek.get(weekNum) ?? [];
+          const weekAssignments = assignmentsByWeek.get(weekNum) ?? [];
+          const hasContent = weekLessons.length > 0 || weekMaterials.length > 0 || weekAssignments.length > 0;
+          if (!hasContent) return null;
+
+          const isCurrentWeek = weekNum === currentWeek;
+          const isPastWeek = weekNum < currentWeek;
+          const isFutureWeek = weekNum > currentWeek;
+          const isNextWeek = weekNum === currentWeek + 1 && !isCurrentWeek;
+          const weekComplete = weekLessons.length > 0 && weekLessons.every((l) => completedIds.has(l.id));
+          const weekOpen = isCurrentWeek || isNextWeek || weekComplete;
+
+          return (
+            <details
+              key={weekNum}
+              open={weekOpen}
+              className={cn(
+                "group rounded-md border-2 p-4 transition-colors",
+                isCurrentWeek && "border-primary bg-primary/5",
+                isPastWeek && weekComplete && "border-foreground/20 bg-background",
+                isFutureWeek && "border-border/50 bg-background/50",
+              )}
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span
                     className={cn(
-                      cardVariants({ variant: "interactive" }),
-                      "flex flex-row items-center gap-3 p-4"
+                      "flex size-8 shrink-0 items-center justify-center rounded-md border-2 text-small font-bold",
+                      isCurrentWeek && "border-primary bg-primary text-primary-foreground",
+                      isPastWeek && weekComplete && "border-foreground bg-primary text-primary-foreground",
+                      isFutureWeek && "border-border bg-muted text-muted-foreground",
                     )}
                   >
-                    <span
-                      aria-hidden
-                      className={cn(
-                        "flex size-8 shrink-0 items-center justify-center rounded-md border-2",
-                        done
-                          ? "border-foreground bg-primary text-primary-foreground"
-                          : "border-border bg-accent text-foreground"
-                      )}
+                    {isPastWeek && weekComplete ? <CheckCircle2 className="size-4" /> : <span>Week {weekNum}</span>}
+                 </span>
+                  <div>
+                    <h3 className={cn("text-base font-semibold", isFutureWeek && "text-muted-foreground")}>
+                      Week {weekNum}
+                   </h3>
+                    <p className="text-caption text-muted-foreground">
+                      {isCurrentWeek
+                        ? "In progress"
+                        : isPastWeek
+                          ? weekComplete
+                            ? "Complete"
+                            : "Incomplete"
+                          : `Opens ${isNextWeek ? "next" : "later"}`}
+                   </p>
+                 </div>
+               </div>
+                <div className="flex items-center gap-2">
+                  {isFutureWeek && (
+                    <span className="rounded-full border border-border bg-muted px-2 py-0.5 text-caption font-medium text-muted-foreground">
+                      Locked
+                   </span>
+                  )}
+                  <ChevronDown className="size-4 text-muted-foreground transition-transform group-open:rotate-180" aria-hidden />
+               </div>
+             </summary>
+
+              <div className="mt-4 space-y-3">
+                {weekLessons.map((lesson, i) => {
+                  const done = completedIds.has(lesson.id);
+                  const materialCount = materialsByLesson.get(lesson.id) ?? 0;
+                  const lessonAssignments = weekAssignments.filter((a) => a.lessonId === lesson.id);
+                  const assignmentCount = lessonAssignments.length;
+                  const hasOutstandingAssignment = lessonAssignments.some(
+                    (a) => a.is_published && a.status === "not_started",
+                  );
+                  const assignmentDue = lessonAssignments.find((a) => a.is_published && a.due_at);
+                  const isNextAction = nextAction?.type === "lesson" && nextAction.id === lesson.id;
+
+                  const rowClass = cn(
+                    cardVariants({ variant: "interactive" }),
+                    "flex flex-row items-center gap-3 p-4",
+                    done && "opacity-60",
+                    isNextAction && "ring-2 ring-primary bg-primary/5",
+                    isFutureWeek && "cursor-not-allowed opacity-50",
+                  );
+
+                  return (
+                    <Link
+                      key={lesson.id}
+                      href={isFutureWeek ? "#" : `/courses/${courseId}/lessons/${lesson.id}`}
+                      className={rowClass}
+                      aria-disabled={isFutureWeek}
+                      tabIndex={isFutureWeek ? -1 : undefined}
                     >
-                      {done ? (
-                        <CheckCircle2 className="size-4" />
-                      ) : (
-                        <span className="text-xs font-bold">{i + 1}</span>
+                      <span
+                        aria-hidden
+                        className={cn(
+                          "flex size-8 shrink-0 items-center justify-center rounded-md border-2",
+                          done && "border-foreground bg-primary text-primary-foreground",
+                          isNextAction && !done && "ring-2 ring-primary",
+                          !done && !isNextAction && "border-border bg-accent text-foreground",
+                        )}
+                      >
+                        {done ? (
+                          <CheckCircle2 className="size-4" />
+                        ) : isNextAction ? (
+                          <span className="text-xs font-bold text-primary" role="status">NEXT</span>
+                        ) : (
+                          <span className="text-xs font-bold">{i + 1}</span>
+                        )}
+                     </span>
+
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-small font-medium text-foreground">{lesson.title}</span>
+                        <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-caption text-muted-foreground">
+                          {materialCount > 0 && (
+                            <span className="inline-flex items-center gap-1">
+                              <Paperclip className="size-3" aria-hidden />
+                              {materialCount} material{materialCount === 1 ? "" : "s"}
+                           </span>
+                          )}
+                          {assignmentCount > 0 && (
+                            <span className="inline-flex items-center gap-1">
+                              <FileText className="size-3" aria-hidden />
+                              {assignmentCount} assignment{assignmentCount === 1 ? "" : "s"}
+                              {hasOutstandingAssignment ? " · to submit" : ""}
+                           </span>
+                          )}
+                          {assignmentDue?.due_at && !done && (
+                            <span className="inline-flex items-center gap-1">
+                              <Clock className="size-3" aria-hidden />
+                              due {new Date(assignmentDue.due_at).toLocaleDateString()}
+                           </span>
+                          )}
+                          {!done && materialCount === 0 && assignmentCount === 0 && !isNextAction && (
+                            <span>Not watched yet</span>
+                          )}
+                          {isNextAction && <span className="font-medium text-primary">← Start here</span>}
+                       </span>
+                     </span>
+
+                      {!isFutureWeek && <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
+                   </Link>
+                  );
+                })}
+
+                {weekMaterials.map((m) => {
+                  const mWeek = (m as { week?: number }).week ?? 1;
+                  return (
+                    <Link
+                      key={m.id}
+                      href={isFutureWeek ? "#" : `/courses/${courseId}/materials/${m.id}`}
+                      className={cn(
+                        cardVariants({ variant: "interactive" }),
+                        "flex flex-row items-center gap-3 p-3",
+                        nextAction?.type === "material" && nextAction.id === m.id && "ring-2 ring-primary bg-primary/5",
+                        isFutureWeek && "cursor-not-allowed opacity-50",
                       )}
-                    </span>
+                      aria-disabled={isFutureWeek}
+                      tabIndex={isFutureWeek ? -1 : undefined}
+                    >
+                      <BookOpen className="size-4 shrink-0 text-muted-foreground" aria-hidden />
+                      <span className="min-w-0 flex-1 truncate text-small font-medium">{m.title}</span>
+                      <span className="text-caption text-muted-foreground">
+                        {m.format?.toUpperCase() ?? m.kind}
+                     </span>
+                      {!isFutureWeek && <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
+                   </Link>
+                  );
+                  void mWeek;
+                })}
 
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate text-small font-medium text-foreground">
-                        {lesson.title}
-                      </span>
-                      {/* Per-lesson outstanding summary */}
-                      <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-caption text-muted-foreground">
-                        {materialCount > 0 && (
-                          <span className="inline-flex items-center gap-1">
-                            <Paperclip className="size-3" aria-hidden />
-                            {materialCount} material{materialCount === 1 ? "" : "s"}
-                          </span>
-                        )}
-                        {assignmentCount > 0 && (
-                          <span className="inline-flex items-center gap-1">
-                            <FileText className="size-3" aria-hidden />
-                            {assignmentCount} assignment{assignmentCount === 1 ? "" : "s"}
-                            {hasOutstandingAssignment ? " · to submit" : ""}
-                          </span>
-                        )}
-                        {assignmentDue?.due_at && !done && (
-                          <span className="inline-flex items-center gap-1">
-                            <Clock className="size-3" aria-hidden />
-                            due {new Date(assignmentDue.due_at).toLocaleDateString()}
-                          </span>
-                        )}
-                        {!done && materialCount === 0 && assignmentCount === 0 && (
-                          <span>Not watched yet</span>
-                        )}
-                      </span>
-                    </span>
+                {weekAssignments.map((a) => {
+                  const isNextAction = nextAction?.type === "assignment" && nextAction.id === a.id;
+                  return (
+                    <Link
+                      key={a.id}
+                      href={isFutureWeek ? "#" : `/courses/${courseId}/lessons/${a.lessonId}?tab=assignment`}
+                      className={cn(
+                        cardVariants({ variant: "interactive" }),
+                        "flex flex-row items-center gap-3 p-4",
+                        isNextAction && "ring-2 ring-primary bg-primary/5",
+                        isFutureWeek && "cursor-not-allowed opacity-50",
+                      )}
+                      aria-disabled={isFutureWeek}
+                      tabIndex={isFutureWeek ? -1 : undefined}
+                    >
+                      <span className="flex size-8 shrink-0 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground">
+                        <FileText className="size-4" aria-hidden />
+                     </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-small font-medium">{a.title ?? "Assignment"}</p>
+                        <p className="truncate text-caption text-muted-foreground">
+                          {a.lessonTitle}
+                          {a.due_at ? ` · due ${new Date(a.due_at).toLocaleDateString()}` : ""}
+                       </p>
+                     </div>
+                      {a.status === "draft" && <Badge variant="draft">Draft</Badge>}
+                      {a.status === "not_started" && <Badge variant="outline">Not started</Badge>}
+                      {a.status === "submitted" && (
+                        <Badge variant="pending">
+                          <Clock className="size-3" aria-hidden />
+                          Submitted
+                       </Badge>
+                      )}
+                      {a.status === "graded" && (
+                        <Badge variant="graded">
+                          <CheckCircle2 className="size-3" aria-hidden />
+                          Graded
+                       </Badge>
+                      )}
+                      {isNextAction && <span className="font-medium text-primary text-caption">← Next</span>}
+                      {!isFutureWeek && <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
+                   </Link>
+                  );
+                })}
+             </div>
+           </details>
+          );
+        })}
+     </section>
 
-                    <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </section>
-
-      {/* Course materials */}
-      <section aria-label="Course materials" className="space-y-3">
-        <h2 className="text-h2">Course materials</h2>
-        {courseMaterials && courseMaterials.length > 0 ? (
-          <ul className="space-y-2">
-            {courseMaterials.map((m) => (
-              <li key={m.id}>
-                <Link
-                  href={`/courses/${courseId}/materials/${m.id}`}
-                  className={cn(
-                    cardVariants({ variant: "interactive" }),
-                    "flex flex-row items-center gap-3 p-3"
-                  )}
-                >
-                  <BookOpen className="size-4 shrink-0 text-primary" aria-hidden />
-                  <span className="min-w-0 flex-1 truncate text-small font-medium">
-                    {m.title}
-                  </span>
-                  <span className="text-caption text-muted-foreground">
-                    {m.format?.toUpperCase() ?? m.kind}
-                  </span>
-                  <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <EmptyState
-            row
-            icon={<BookOpen className="size-4" aria-hidden />}
-            title="No course materials yet"
-            description="Files attached to the course as a whole will appear here."
-          />
-        )}
-      </section>
-
-      {/* Assignments */}
-      <section aria-label="Assignments" className="space-y-3">
-        <h2 className="text-h2">Assignments</h2>
-        {courseAssignments.length === 0 ? (
-          <EmptyState
-            row
-            icon={<Inbox className="size-4" aria-hidden />}
-            title="No assignments yet"
-            description="Assignments attached to lessons will appear here."
-          />
-        ) : (
-          <ul className="space-y-2">
-            {courseAssignments.map((a) => (
-              <li key={a.id}>
-                <Link
-                  href={`/courses/${courseId}/lessons/${a.lessonId}?tab=assignment`}
-                  className={cn(
-                    cardVariants({ variant: "interactive" }),
-                    "flex flex-row items-center gap-3 p-4"
-                  )}
-                >
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground">
-                    <FileText className="size-4" aria-hidden />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-small font-medium">{a.title ?? "Assignment"}</p>
-                    <p className="truncate text-caption text-muted-foreground">
-                      {a.lessonTitle}
-                      {a.due_at ? ` · due ${new Date(a.due_at).toLocaleDateString()}` : ""}
-                    </p>
-                  </div>
-                  {a.status === "draft" && <Badge variant="draft">Draft</Badge>}
-                  {a.status === "not_started" && <Badge variant="outline">Not started</Badge>}
-                  {a.status === "submitted" && (
-                    <Badge variant="pending">
-                      <Clock className="size-3" aria-hidden />
-                      Submitted
-                    </Badge>
-                  )}
-                  {a.status === "graded" && (
-                    <Badge variant="graded">
-                      <CheckCircle2 className="size-3" aria-hidden />
-                      Graded
-                    </Badge>
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
-    </div>
+      {playable.length === 0 && (
+        <EmptyState
+          icon={<BookOpen className="size-8" aria-hidden />}
+          title="No lessons published yet"
+          description="Ask your faculty to add lessons to this course."
+        />
+      )}
+   </div>
   );
 }
