@@ -49,7 +49,7 @@ function toDepthCase(c: (typeof CHARACTER_SKELETONS)[number]): DepthCase {
 }
 
 async function main() {
-  let inserted = 0, updated = 0, skipped = 0;
+  let inserted = 0, updated = 0;
   for (const c of CHARACTER_SKELETONS) {
     const existing = await admin.from("sim_cases").select("id").eq("slug", `char-${c.key}`).maybeSingle();
     const payload = {
@@ -72,7 +72,7 @@ async function main() {
       inserted++;
     }
   }
-  console.log(`done: ${inserted} inserted, ${updated} updated, ${skipped} skipped${DRY ? " (dry-run)" : ""}`);
+  console.log(`done: ${inserted} inserted, ${updated} updated${DRY ? " (dry-run)" : ""}`);
   process.exit(0);
 }
 void main();
