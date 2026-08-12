@@ -1,3 +1,12 @@
+## 2026-08-12 (beastmode continuation #5b — Tier 4 rare band complete)
+
+- **Tier 4 complete**: 17 rare-case characters authored (4 commits:
+  14f2ba5, 695870e, cd0e466, 87d2dde). Each with full authored voice +
+  the medical-mimic teaching. 305 unit tests total.
+- Decision: 17 cases authored in 4 slices to keep each commit green and
+  reviewable; the band's auto-immune cluster (anti-NMDA, Wilson's, B12,
+  TLE, thyroid, porphyria) all carry the 'push onward, never soothe' lesson.
+
 ## 2026-08-12 (beastmode continuation #5 — Tier 3 regional cast)
 
 - **Tier 3 complete**: 30 authored characters, 6 per state × 5 pilot states
