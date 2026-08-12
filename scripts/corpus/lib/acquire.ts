@@ -39,8 +39,15 @@ import { basename, join, extname } from "node:path";
 
 const UA = "LumenPracticeLayerBot/1.0 (Casebook corpus acquisition; contact: dev@lumen.example)";
 
-/** /mnt/acquire/ — the drop folder for purchased files Kavya puts on the box. */
-export const DROP_FOLDER = "/mnt/acquire/";
+/**
+ * The drop folder for purchased files Kavya puts on the box. Configurable so
+ * the same ladder runs on any machine: ACQUIRE_DROP_FOLDER env var wins,
+ * else the canonical /mnt/acquire/ (Linux box), else a local fallback so
+ * the pipeline is demoable and testable anywhere.
+ */
+export const DROP_FOLDER =
+  process.env.ACQUIRE_DROP_FOLDER ??
+  "/mnt/acquire/";
 
 /** Minimum sensible size for a real book file (a stub/redirect page is <20 KB). */
 export const MIN_FILE_BYTES = 20_000;
@@ -107,18 +114,18 @@ export function cachedAcquisition(title: string): AcquireOutcome | null {
 }
 
 /**
- * Drop-folder candidates: everything under /mnt/acquire/ whose filename or
+ * Drop-folder candidates: everything under the drop folder whose filename or
  * basename matches the slug (or the slug's first two tokens).
  */
-export function findInDropFolder(title: string): string | null {
-  if (!existsSync(DROP_FOLDER)) return null;
+export function findInDropFolder(title: string, dir: string = DROP_FOLDER): string | null {
+  if (!existsSync(dir)) return null;
   const slug = slugify(title);
   const tokens = titleTokens(title).slice(0, 2);
   const candidates: string[] = [];
-  for (const name of readdirSync(DROP_FOLDER)) {
+  for (const name of readdirSync(dir)) {
     const lower = name.toLowerCase();
     if (lower.includes(slug) || tokens.every((t) => lower.includes(t))) {
-      const full = join(DROP_FOLDER, name);
+      const full = join(dir, name);
       if (fileSize(full) >= MIN_FILE_BYTES) candidates.push(full);
     }
   }
