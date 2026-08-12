@@ -43,6 +43,8 @@ export interface SimCaseCognitiveModel {
 export interface SimDisclosureRule {
   fact: string;
   gate: DisclosureGate;
+  /** Which patient move renders this fact — used by the fixture engine. */
+  disclose_via?: string;
 }
 
 export interface SimResistance {
@@ -77,12 +79,29 @@ export interface SimFewShotExchange {
   patient: string;
 }
 
+import type { TrapId } from "@/lib/sim/types";
+
+/** Per-case controlled variation (v5 Part 2.5). */
+export interface SimCaseVariation {
+  mood_today: string[];
+  recent_event: string[];
+  most_defended_topic: string[];
+  opening_posture: string[];
+  somatic_focus: string[];
+  trust_start: number[];
+  language_mix: string[];
+}
+
 export interface SimCase {
   title: string;
   difficulty: SimDifficulty;
   identity: SimCaseIdentity;
   presentation: string; // clinician summary
   chief_complaint_in_own_words: string;
+  /** The patient's opening line is an idiom from the bank, never a clean symptom. */
+  opening_idiom?: string;
+  /** Clinical traps mapped to this case (v5 Part 5.1). */
+  traps?: TrapId[];
   history: SimCaseHistory;
   cognitive_model: SimCaseCognitiveModel;
   disclosure_rules: SimDisclosureRule[];
@@ -93,6 +112,15 @@ export interface SimCase {
   style_refs: string[];
   rubric_targets: string[];
   few_shot: SimFewShotExchange[];
+  /**
+   * Authored patient lines in THIS patient's voice, used by the fixture
+   * engine so a no-key session is still the specific person, not a generic
+   * stand-in. Each is a full spoken turn. The fixture engine rotates them
+   * deterministically; the live Actor improves on them.
+   */
+  fixture_lines?: string[];
+  /** Controlled per-session variation for this case. */
+  variation?: SimCaseVariation;
 }
 
 /** The minimal state a running session tracks. */

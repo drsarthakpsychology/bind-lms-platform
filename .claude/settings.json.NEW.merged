@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/keep-going.sh", "timeout": 30 } ] }
+    ],
+    "SubagentStop": [
+      { "hooks": [ { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/keep-going.sh", "timeout": 30 } ] }
+    ],
+    "PreCompact": [
+      { "hooks": [ { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/survive-compact.sh", "timeout": 30 } ] }
+    ],
+    "SessionStart": [
+      { "hooks": [ { "type": "command", "command": "cat \"$CLAUDE_PROJECT_DIR\"/.claude/DIRECTIVE.md 2>/dev/null; echo; echo \"--- FIRST UNCHECKED TASK ---\"; grep -m1 -E \"^[[:space:]]*-[[:space:]]*\\\\[ \\\\]\" \"$CLAUDE_PROJECT_DIR\"/QUEUE.md 2>/dev/null", "timeout": 15 } ] }
+    ]
+  }
+}

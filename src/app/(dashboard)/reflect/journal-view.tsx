@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
+import { Share2, Ban } from "lucide-react";
 
 interface JournalEntry {
   id: string;
@@ -13,6 +14,8 @@ interface JournalEntry {
 /**
  * Journal — owner-only. Write, see history, optional "help me think" via a
  * no-train provider (journal_support workload; honest message if none).
+ * Per-entry sharing: share a specific entry with a named person by email,
+ * revocable at any time (journal_shares, owner-only RLS).
  */
 export function JournalView({ initialEntries }: { initialEntries: JournalEntry[] }) {
   const [entries, setEntries] = React.useState<JournalEntry[]>(initialEntries);
@@ -22,6 +25,11 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
   const [error, setError] = React.useState<string | null>(null);
   const [helping, setHelping] = React.useState<string | null>(null);
   const [helpReply, setHelpReply] = React.useState<string | null>(null);
+  const [sharing, setSharing] = React.useState<string | null>(null); // in-flight
+  const [shareEntryId, setShareEntryId] = React.useState<string | null>(null); // row open
+  const [shareEmail, setShareEmail] = React.useState("");
+  const [shareMsg, setShareMsg] = React.useState<Record<string, string>>({});
+  const [shareIds, setShareIds] = React.useState<Record<string, string>>({});
 
   async function save(e: React.FormEvent) {
     e.preventDefault();
@@ -51,6 +59,68 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       setError("Network error.");
     } finally {
       setBusy(false);
+    }
+  }
+
+  async function shareEntry(entry: JournalEntry, toFaculty = false) {
+    const email = toFaculty ? "" : shareEmail.trim().toLowerCase();
+    if (!toFaculty && !email) return;
+    if (sharing) return;
+    setSharing(entry.id);
+    haptic("tap");
+    try {
+      const res = await fetch("/api/practice/journal/share", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(
+          toFaculty
+            ? { entryId: entry.id, sharedToRole: "faculty" }
+            : { entryId: entry.id, sharedToEmail: email },
+        ),
+      });
+      if (!res.ok) {
+        const j = (await res.json().catch(() => null)) as { error?: string } | null;
+        setShareMsg((m) => ({ ...m, [entry.id]: j?.error ?? "Could not share." }));
+        return;
+      }
+      const j = (await res.json()) as { shareId: string };
+      setShareIds((s) => ({ ...s, [entry.id]: j.shareId }));
+      setShareMsg((m) => ({ ...m, [entry.id]: toFaculty ? "Shared with your faculty." : `Shared with ${email}.` }));
+      setShareEmail("");
+      haptic("success");
+    } catch {
+      setShareMsg((m) => ({ ...m, [entry.id]: "Network error." }));
+    } finally {
+      setSharing(null);
+    }
+  }
+
+  async function revokeShare(entry: JournalEntry) {
+    const shareId = shareIds[entry.id];
+    if (!shareId || sharing) return;
+    setSharing(entry.id);
+    haptic("tap");
+    try {
+      const res = await fetch("/api/practice/journal/share", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ shareId }),
+      });
+      if (!res.ok) {
+        setShareMsg((m) => ({ ...m, [entry.id]: "Could not revoke." }));
+        return;
+      }
+      setShareIds((s) => {
+        const next = { ...s };
+        delete next[entry.id];
+        return next;
+      });
+      setShareMsg((m) => ({ ...m, [entry.id]: "Share revoked." }));
+      haptic("warning");
+    } catch {
+      setShareMsg((m) => ({ ...m, [entry.id]: "Network error." }));
+    } finally {
+      setSharing(null);
     }
   }
 
@@ -138,16 +208,78 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
                     {new Date(e.createdAt).toLocaleDateString()}
                     {e.moodTag ? ` · ${e.moodTag}` : ""}
                   </span>
-                  <button
-                    type="button"
-                    onClick={() => void helpMeThink(e)}
-                    disabled={helping === e.id}
-                    className="rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px disabled:opacity-50"
-                  >
-                    {helping === e.id ? "Thinking…" : "Help me think about this"}
-                  </button>
+                  <span className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={() => void helpMeThink(e)}
+                      disabled={helping === e.id}
+                      className="rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px disabled:opacity-50"
+                    >
+                      {helping === e.id ? "Thinking…" : "Help me think about this"}
+                    </button>
+                    {shareIds[e.id] ? (
+                      <button
+                        type="button"
+                        onClick={() => void revokeShare(e)}
+                        disabled={sharing === e.id}
+                        className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px disabled:opacity-50"
+                      >
+                        <Ban className="size-3" aria-hidden />
+                        Revoke
+                      </button>
+                    ) : (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => void shareEntry(e, true)}
+                          disabled={sharing === e.id}
+                          className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px disabled:opacity-50"
+                        >
+                          <Share2 className="size-3" aria-hidden />
+                          Share with faculty
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShareEntryId(shareEntryId === e.id ? null : e.id);
+                            setShareMsg((m) => ({ ...m, [e.id]: "" }));
+                            haptic("tap");
+                          }}
+                          className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px"
+                        >
+                          <Share2 className="size-3" aria-hidden />
+                          Share
+                        </button>
+                      </>
+                    )}
+                  </span>
                 </div>
                 <p className="mt-2 whitespace-pre-wrap text-small">{e.content}</p>
+
+                {/* share row */}
+                {!shareIds[e.id] && shareEntryId === e.id ? (
+                  <div className="mt-2 flex items-center gap-2">
+                    <input
+                      type="email"
+                      value={shareEmail}
+                      onChange={(ev) => setShareEmail(ev.target.value)}
+                      placeholder="share with (email)"
+                      aria-label="Email to share this entry with"
+                      className="w-full rounded-md border-2 border-border bg-background px-2 py-1 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => void shareEntry(e)}
+                      disabled={sharing === e.id || !shareEmail.trim()}
+                      className="shrink-0 rounded-md border-2 border-border bg-primary px-3 py-1 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+                    >
+                      {sharing === e.id ? "Sharing…" : "Share entry"}
+                    </button>
+                  </div>
+                ) : null}
+                {shareMsg[e.id] ? (
+                  <p className="mt-2 text-caption text-muted-foreground">{shareMsg[e.id]}</p>
+                ) : null}
                 {helpReply && helping === null ? (
                   <div className="mt-3 rounded-md border border-border bg-secondary/60 p-3 text-small">
                     <span className="font-semibold text-muted-foreground">Reflective prompt: </span>

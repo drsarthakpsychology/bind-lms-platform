@@ -63,11 +63,12 @@ export async function login(
   // Check expiry before handing out a session, not just after.
   const { data: profile } = await supabase
     .from("profiles")
-    .select("expires_at")
+    .select("expires_at, role")
     .eq("id", data.user.id)
     .single();
 
-  if (profile?.expires_at && new Date(profile.expires_at).getTime() <= Date.now()) {
+  // Alumni keep permanent read-only access (A10) — expiry only gates students.
+  if (profile?.expires_at && profile.role !== "alumni" && new Date(profile.expires_at).getTime() <= new Date().getTime()) {
     await supabase.auth.signOut();
     return { error: "This account's access has expired." };
   }
@@ -95,7 +96,8 @@ export async function login(
     maxAge: 60 * 60 * 24 * 60, // 60 days — expires_at is the real gate, not this
   });
 
-  redirect("/dashboard");
+  // /today is the front door (v5.1 Part B); /dashboard stays for courses.
+  redirect("/today");
 }
 
 export async function logout(): Promise<void> {

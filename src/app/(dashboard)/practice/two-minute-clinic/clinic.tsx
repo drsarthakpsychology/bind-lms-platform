@@ -2,27 +2,7 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
-
-const CLINICS = [
-  {
-    line: "A 34-year-old man, 8 months of body ache, 'heaviness', broken sleep, 6kg weight loss. Three GP visits for 'gas' and 'weakness'.",
-    expertDifferential: ["Major depressive disorder (somatic presentation)", "Adjustment disorder", "Chronic medical illness"],
-    expertNext: "Ask about sleep, appetite, anhedonia — then screen for suicidal ideation directly.",
-    lesson: "Somatic-first depression is the most common missed presentation in Indian primary care. Never accept 'gas' without asking about sleep and mood.",
-  },
-  {
-    line: "A 28-year-old woman, 4 months of palpitations and fear of dying on the metro. 3 ER visits, all cardiac workups normal.",
-    expertDifferential: ["Panic disorder", "Panic disorder with agoraphobia", "Cardiac (reconsider if atypical)"],
-    expertNext: "Ask about anticipatory anxiety and avoidance — has she stopped doing things to avoid the sensation?",
-    lesson: "Normal cardiac workup + fear of dying + avoidance = panic until proven otherwise.",
-  },
-  {
-    line: "A 60-year-old retired teacher, 8 months after his wife died, talks to her chair and sorts her clothes one drawer a week. Daughter worried he's 'not moving on'.",
-    expertDifferential: ["Normal grief", "Complicated grief", "Major depressive disorder"],
-    expertNext: "Check for preserved pleasure (grandchildren?), sleep, appetite, and whether the grief has 'waves'.",
-    lesson: "Preserved pleasure with waves of grief = normal grief. Over-diagnosing this is the error.",
-  },
-];
+import { CLINICS } from "@/lib/practice/clinic";
 
 export function TwoMinuteClinic() {
   const [itemIdx, setItemIdx] = React.useState(0);
@@ -95,7 +75,12 @@ export function TwoMinuteClinic() {
           </div>
           <button
             type="button"
-            onClick={() => { setPhase("compare"); haptic("success"); }}
+            onClick={() => {
+              setPhase("compare");
+              haptic("success");
+              // Retention loop: completing the daily drill keeps the streak alive.
+              fetch("/api/practice/clinic/complete", { method: "POST" }).catch(() => {});
+            }}
             className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
             Compare with the expert

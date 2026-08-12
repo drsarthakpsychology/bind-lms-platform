@@ -1,5 +1,5 @@
-import { describe, expect, it } from "vitest";
-import { assertProviderAllowed, workloadHasStudentData, type Workload } from "./guards";
+import { afterEach, describe, expect, it } from "vitest";
+import { assertProviderAllowed, guardStudentCall, workloadHasStudentData, type Workload } from "./guards";
 import { PROVIDERS } from "./router";
 
 describe("ai data-policy split (non-negotiable)", () => {
@@ -39,5 +39,29 @@ describe("ai data-policy split (non-negotiable)", () => {
         expect(() => assertProviderAllowed(w, p)).not.toThrow();
       }
     }
+  });
+});
+
+describe("AI_STUDENT_TIER (the dev-only override)", () => {
+  const saved = process.env.AI_STUDENT_TIER;
+
+  afterEach(() => {
+    if (saved === undefined) delete process.env.AI_STUDENT_TIER;
+    else process.env.AI_STUDENT_TIER = saved;
+  });
+
+  it("default (no tier set) still refuses student data without a no-train provider", () => {
+    delete process.env.AI_STUDENT_TIER;
+    expect(() => guardStudentCall("sim_patient_turn", { enabled: true, dailyCap: 10, sessionCap: 5 })).toThrow(/no no-train/i);
+  });
+
+  it("AI_STUDENT_TIER=any skips the no-train requirement (dev override)", () => {
+    process.env.AI_STUDENT_TIER = "any";
+    expect(() => guardStudentCall("sim_patient_turn", { enabled: true, dailyCap: 10, sessionCap: 5 })).not.toThrow();
+  });
+
+  it("AI_STUDENT_TIER=no_train_only keeps the strict gate", () => {
+    process.env.AI_STUDENT_TIER = "no_train_only";
+    expect(() => guardStudentCall("debrief_scoring", { enabled: true, dailyCap: 10, sessionCap: 5 })).toThrow(/no no-train/i);
   });
 });

@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { CheckCircle2, AlertTriangle, RefreshCw, Mic2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { CheckCircle2, AlertTriangle, RefreshCw, Mic2, RotateCcw } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import type { VoiceMetrics } from "@/lib/voice/use-voice-metrics";
 
@@ -14,6 +15,7 @@ interface DebriefData {
     risk_timing?: string;
     domain_coverage?: number;
     disclosure_unlock_rate?: number;
+    idiom_decoding?: boolean;
     quotes?: Array<{ quote: string; better: string }>;
     missed_disclosures?: string[];
   };
@@ -25,25 +27,75 @@ interface DebriefData {
  * The debrief — the actual product of the Consulting Room.
  * Shows the score, then quotes with better alternatives, then the
  * missed-disclosures reveal ("the patient would have told you…").
+ *
+ * A1 Retry: every flagged moment gets a "Try this again" — rewinds to that
+ * turn (same case, same seed, same state) so the student can watch the
+ * patient respond differently.
  */
+interface BranchInfo {
+  parentSessionId: string;
+  branchedFromTurn: number;
+  parentTurns: Array<{ role: "student" | "patient"; content: string }>;
+  parentScore?: { overall: number; quotes: Array<{ quote: string; better: string }> };
+}
+
 export function DebriefView({
   data,
   difficulty,
   onExit,
   voice,
+  sessionId,
+  totalTurns,
+  branchInfo,
+  provisionalDims,
 }: {
   data: DebriefData;
   difficulty: string;
   onExit: () => void;
   voice?: VoiceMetrics;
+  sessionId?: string;
+  totalTurns?: number;
+  /** A1 retry: the comparison strip data when this session is a rewind branch. */
+  branchInfo?: BranchInfo;
+  /** A3: rubric dimensions still provisional — hide their numeric score. */
+  provisionalDims?: string[];
 }) {
+  const router = useRouter();
   const [revealMissed, setRevealMissed] = React.useState(false);
+  const [retrying, setRetrying] = React.useState(false);
+  const [retryError, setRetryError] = React.useState<string | null>(null);
   const score = data.score ?? {};
   const quotes = data.quotes ?? score.quotes ?? [];
   const missed = data.missed_disclosures ?? score.missed_disclosures ?? [];
   const overall = score.score ?? 0;
 
   const premature = score.premature_reassurance ?? 0;
+
+  async function retryAt(turnNumber: number) {
+    if (!sessionId || retrying) return;
+    setRetrying(true);
+    setRetryError(null);
+    haptic("tap");
+    try {
+      const res = await fetch("/api/practice/sim/rewind", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId, turnNumber }),
+      });
+      if (!res.ok) {
+        const j = (await res.json().catch(() => null)) as { error?: string } | null;
+        setRetryError(j?.error ?? "Could not rewind.");
+        return;
+      }
+      const j = (await res.json()) as { sessionId: string };
+      haptic("success");
+      router.push(`/practice/consulting-room/session/${j.sessionId}`);
+    } catch {
+      setRetryError("Network error.");
+    } finally {
+      setRetrying(false);
+    }
+  }
 
   return (
     <div className="space-y-6">
@@ -54,11 +106,42 @@ export function DebriefView({
           <span className="text-h1 text-numeric">{overall.toFixed(1)}</span>
           <span className="text-small text-muted-foreground">/ 5.0 overall</span>
         </div>
-        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <Stat label="Open:closed" value={String(score.open_closed_ratio ?? "—")} />
-          <Stat label="Reflective" value={String(score.reflective_statements ?? "—")} />
-          <Stat label="Premature reassurance" value={String(premature)} warn={premature > 0} />
-          <Stat label="Risk timing" value={score.risk_timing ?? "—"} />
+        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-5">
+          <ProvisionalAwareStat
+            dim="open_closed_ratio"
+            provisional={provisionalDims}
+            label="Open:closed"
+            value={String(score.open_closed_ratio ?? "—")}
+            hint="Your questions leaned open this session — keep that up."
+          />
+          <ProvisionalAwareStat
+            dim="reflective_statements"
+            provisional={provisionalDims}
+            label="Reflective"
+            value={String(score.reflective_statements ?? "—")}
+            hint="Reflections heard: the debrief quotes below show what worked."
+          />
+          <ProvisionalAwareStat
+            dim="premature_reassurance"
+            provisional={provisionalDims}
+            label="Premature reassurance"
+            value={String(premature)}
+            warn={premature > 0}
+            hint={premature > 0 ? "You reassured before exploring — the quotes below name it." : "No premature reassurance detected."}
+          />
+          <ProvisionalAwareStat
+            dim="risk_timing"
+            provisional={provisionalDims}
+            label="Risk timing"
+            value={score.risk_timing ?? "—"}
+            hint="When you asked about risk matters as much as whether you did."
+          />
+          <Stat
+            label="Idiom decoded"
+            value={score.idiom_decoding ? "Yes" : "No"}
+            warn={!score.idiom_decoding}
+            hint={score.idiom_decoding ? "You asked what it meant." : "The opening phrase was doing work you missed."}
+          />
         </div>
         {premature > 0 ? (
           <p className="mt-3 flex items-center gap-2 text-small text-amber-700">
@@ -69,6 +152,11 @@ export function DebriefView({
           </p>
         ) : null}
       </div>
+
+      {/* A1 retry — comparison strip: attempt 1 vs attempt 2, same patient, same moment */}
+      {branchInfo ? (
+        <ComparisonStrip branch={branchInfo} currentOverall={overall} />
+      ) : null}
 
       {/* Voice delivery panel */}
       {voice ? (
@@ -129,9 +217,21 @@ export function DebriefView({
                 <span className="font-semibold text-primary">Better: </span>
                 {q.better}
               </p>
+              {sessionId && totalTurns ? (
+                <button
+                  type="button"
+                  onClick={() => void retryAt(Math.max(1, totalTurns - quotes.length + i + 1))}
+                  disabled={retrying}
+                  className="mt-2 inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:opacity-50"
+                >
+                  <RotateCcw className="size-3" aria-hidden />
+                  {retrying ? "Rewinding…" : "Try this again"}
+                </button>
+              ) : null}
             </li>
           ))}
         </ul>
+        {retryError ? <p className="mt-2 text-small text-red-600" role="alert">{retryError}</p> : null}
       </div>
 
       {/* Missed disclosures reveal */}
@@ -195,6 +295,114 @@ function Stat({ label, value, warn, hint }: { label: string; value: string; warn
       <p className="text-caption text-muted-foreground">{label}</p>
       <p className="mt-0.5 text-base font-semibold text-numeric">{value}</p>
       {hint ? <p className="mt-1 text-caption text-muted-foreground">{hint}</p> : null}
+    </div>
+  );
+}
+
+/**
+ * A3 — a stat that hides its NUMBER while the dimension is still provisional.
+ * The student still gets the qualitative hint (the quotes in the debrief),
+ * just not a number we haven't calibrated yet. Once Dr. Sarthak's scores
+ * validate the dimension, the admin flips status → validated and the number
+ * appears.
+ */
+function ProvisionalAwareStat({
+  dim,
+  provisional,
+  label,
+  value,
+  warn,
+  hint,
+}: {
+  dim: string;
+  provisional?: string[];
+  label: string;
+  value: string;
+  warn?: boolean;
+  hint: string;
+}) {
+  if (provisional?.includes(dim)) {
+    return (
+      <div className="rounded-md border-2 border-dashed border-border bg-background p-3">
+        <p className="text-caption text-muted-foreground">{label}</p>
+        <p className="mt-0.5 text-base font-semibold">Being calibrated</p>
+        <p className="mt-1 text-caption text-muted-foreground">{hint}</p>
+      </div>
+    );
+  }
+  return <Stat label={label} value={value} warn={warn} hint={hint} />;
+}
+
+/**
+ * A1 — the comparison strip. Same patient, same moment, two futures.
+ * Attempt 1: the flagged student turn + how the patient responded (from the
+ * parent session). Attempt 2: the student's re-attempt + the branch session's
+ * patient response. The score delta makes the lesson land.
+ */
+function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; currentOverall?: number }) {
+  const { parentTurns, branchedFromTurn, parentScore } = branch;
+  // The parent's turns around the flagged moment: [.., studentTurn, patientReply].
+  // branchedFromTurn is the 1-indexed flagged student turn; the student turn at
+  // that index is the flagged one, followed by the patient's reply.
+  const attempt1Student = parentTurns[branchedFromTurn * 2 - 2] ?? null;
+  const attempt1Patient = parentTurns[branchedFromTurn * 2 - 1] ?? null;
+
+  const delta =
+    parentScore && currentOverall != null
+      ? Number((currentOverall - parentScore.overall).toFixed(1))
+      : null;
+
+  return (
+    <div className="rounded-md border-2 border-primary bg-card p-6 hard-shadow-sm">
+      <h2 className="text-base font-semibold">Same patient, same moment, two futures</h2>
+      <p className="mt-1 text-small text-muted-foreground">
+        You rewound to turn {branchedFromTurn} and tried again. Here&apos;s how the first
+        attempt went, and how this re-attempt ended.
+      </p>
+
+      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        {/* attempt 1 */}
+        <div className="rounded-md border-2 border-border bg-background p-4">
+          <p className="text-caption font-semibold text-muted-foreground">Attempt 1 · turn {branchedFromTurn}</p>
+          {attempt1Student ? (
+            <p className="mt-2 text-small italic">
+              <span className="font-semibold not-italic text-muted-foreground">You said: </span>
+              &quot;{attempt1Student.content}&quot;
+            </p>
+          ) : null}
+          {attempt1Patient ? (
+            <p className="mt-2 text-small italic">
+              <span className="font-semibold not-italic text-muted-foreground">Patient: </span>
+              &quot;{attempt1Patient.content}&quot;
+            </p>
+          ) : null}
+          <p className="mt-3 text-caption text-amber-700">
+            {parentScore ? `Debrief score: ${parentScore.overall.toFixed(1)} / 5` : "The flagged moment"}
+          </p>
+        </div>
+
+        {/* attempt 2 */}
+        <div className="rounded-md border-2 border-primary bg-primary/5 p-4">
+          <p className="text-caption font-semibold text-primary">Attempt 2 · your rewind</p>
+          <p className="mt-2 text-small text-muted-foreground">
+            This session is your re-attempt from the same point. The patient you just
+            interviewed is the same person, in the same state — the difference in how
+            they responded is entirely down to how you asked.
+          </p>
+          <p className="mt-3 text-caption font-medium text-green-700">
+            {currentOverall != null ? `This attempt: ${currentOverall.toFixed(1)} / 5` : null}
+            {delta != null ? (
+              <span className={delta >= 0 ? "ml-2 text-green-700" : "ml-2 text-red-600"}>
+                {delta >= 0 ? "▲" : "▼"} {Math.abs(delta).toFixed(1)} vs attempt 1
+              </span>
+            ) : null}
+          </p>
+        </div>
+      </div>
+
+      <p className="mt-4 text-small text-muted-foreground">
+        Same patient. Same moment. Two futures — that comparison is the whole lesson.
+      </p>
     </div>
   );
 }

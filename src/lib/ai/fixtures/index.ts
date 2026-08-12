@@ -53,7 +53,19 @@ export function fixtureReply(workload: Workload, archetype = "cooperative", turn
     return { patient: "scoring disabled in fixture mode" };
   }
   if (workload === "journal_support") {
-    return { patient: "That sounds like it matters. What do you make of it?" };
+    // Reflective-supervisor fixture templates — the same discipline as the
+    // live no-train provider: ask, never analyse, never diagnose. Rotated
+    // deterministically by the turn counter so repeated asks vary.
+    const REFLECTIVE_PROMPTS = [
+      "That sounds like it matters. What do you make of it?",
+      "If a friend told you this, what would you say back?",
+      "What feels most unfinished about this for you right now?",
+      "When did you first notice this being true?",
+      "What would you want a supervisor to ask you about this?",
+      "Is there a part of this you haven't let yourself feel yet?",
+      "What would change if you decided it wasn't your fault?",
+    ];
+    return { patient: REFLECTIVE_PROMPTS[turn % REFLECTIVE_PROMPTS.length] };
   }
   const bank = PATIENT_REPLIES[archetype] ?? PATIENT_REPLIES.cooperative;
   return bank[turn % bank.length];
@@ -70,9 +82,11 @@ export const FIXTURE_DEBRIEF = {
   domain_coverage: 0.7,
   risk_timing: "late",
   disclosure_unlock_rate: 0.5,
+  idiom_decoding: true,
   quotes: [
     { quote: "patient: I'm fine.", better: "I hear you're fine. What's it been like since the last time we spoke?" },
     { quote: "student: You're not going to hurt yourself, right?", better: "Have you had thoughts of ending your life?" },
+    { quote: "student: Don't worry, you'll be fine.", better: "That sounds frightening — tell me more before we decide anything." },
   ],
   missed_disclosures: ["the patient would have told you about the debt if you'd asked openly about home"],
 };

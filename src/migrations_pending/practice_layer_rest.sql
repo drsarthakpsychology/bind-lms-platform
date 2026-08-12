@@ -92,6 +92,30 @@ create table if not exists public.wall_reports (
   created_at timestamptz not null default now()
 );
 
+
+-- reactions — not upvotes. Ranking by popularity selects for confidence,
+-- not correctness; reactions signal without ranking.
+create table if not exists public.wall_reactions (
+  id uuid primary key default gen_random_uuid(),
+  organization_id uuid,
+  post_id uuid references public.wall_posts (id) on delete cascade,
+  reply_id uuid references public.wall_replies (id) on delete cascade,
+  author_id uuid not null references public.profiles (id) on delete cascade,
+  reaction text not null check (reaction in ('heart','insight','question','applause','worry')),
+  created_at timestamptz not null default now(),
+  unique (post_id, reply_id, author_id, reaction)
+);
+
+alter table public.wall_reactions enable row level security;
+create policy "wall_reactions_select_visible" on public.wall_reactions
+  for select using (public.is_admin() or true);
+create policy "wall_reactions_insert_own" on public.wall_reactions
+  for insert with check (auth.uid() = author_id);
+create policy "wall_reactions_delete_own" on public.wall_reactions
+  for delete using (auth.uid() = author_id);
+create index if not exists idx_wall_reactions_post on public.wall_reactions (post_id);
+create index if not exists idx_wall_reactions_reply on public.wall_reactions (reply_id);
+
 -- ---------------------------------------------------------------------------
 -- competencies + events — Skills Passport (Part 6.9)
 -- ---------------------------------------------------------------------------
@@ -359,6 +383,53 @@ create policy "transcript_chunks_select_admin_or_published" on public.transcript
 create policy "transcript_chunks_admin_manage" on public.transcript_chunks
   for all using (public.is_admin()) with check (public.is_admin());
 
+
+-- Anonymous wall posts are VISIBLE to students but author_id never is.
+-- Row-level security cannot hide a column, so students read through a view
+-- that nulls author_id for anonymous rows; the base table keeps admin-only
+-- select on anonymous rows.
+-- Projection-only views run as the QUERYING user (SECURITY INVOKER) so the
+-- base tables' RLS applies per viewer. The nulled author_id is the only
+-- transformation — no privilege escalation.
+create or replace view public.wall_posts_visible
+with (security_invoker = true) as
+select
+  id,
+  organization_id,
+  content,
+  is_anonymous,
+  is_faculty,
+  is_pinned,
+  created_at,
+  case when is_anonymous then null else author_id end as author_id
+from public.wall_posts;
+
+alter view public.wall_posts_visible owner to postgres;
+
+revoke all on public.wall_posts_visible from anon, authenticated;
+grant select on public.wall_posts_visible to authenticated;
+
+
+-- Anonymous wall REPLIES are visible to students but author_id never is
+-- (same treatment as posts — see wall_posts_visible).
+create or replace view public.wall_replies_visible
+with (security_invoker = true) as
+select
+  id,
+  organization_id,
+  post_id,
+  content,
+  is_anonymous,
+  is_faculty,
+  created_at,
+  case when is_anonymous then null else author_id end as author_id
+from public.wall_replies;
+
+alter view public.wall_replies_visible owner to postgres;
+
+revoke all on public.wall_replies_visible from anon, authenticated;
+grant select on public.wall_replies_visible to authenticated;
+
 -- indexes
 create index if not exists idx_journal_user on public.journal_entries (user_id, created_at);
 create index if not exists idx_checkins_week on public.checkins (week_label);
@@ -372,3 +443,53 @@ create index if not exists idx_corpus_chunks_embedding on public.corpus_chunks
   using hnsw (embedding halfvec_cosine_ops);
 create index if not exists idx_transcript_chunks_embedding on public.transcript_chunks
   using hnsw (embedding halfvec_cosine_ops);
+
+-- ---------------------------------------------------------------------------
+-- Case Library annotations (v5 §4 — annotate; your notes unlock peers').
+-- A private note per (user, doc). When a student has their own note on a
+-- doc, the OTHER students' notes on that doc become readable (peers-unlock-
+-- after-yours). author_id of a note is visible to those who can read it.
+-- ---------------------------------------------------------------------------
+create table if not exists public.library_notes (
+  id uuid primary key default gen_random_uuid(),
+  organization_id uuid,
+  user_id uuid not null references public.profiles (id) on delete cascade,
+  document_id uuid not null references public.corpus_documents (id) on delete cascade,
+  note text not null,
+  created_at timestamptz not null default now(),
+  unique (user_id, document_id)
+);
+
+alter table public.library_notes enable row level security;
+create policy "library_notes_select_own" on public.library_notes
+  for select using (auth.uid() = user_id);
+create policy "library_notes_insert_own" on public.library_notes
+  for insert with check (auth.uid() = user_id);
+create policy "library_notes_update_own" on public.library_notes
+  for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
+create policy "library_notes_admin_all" on public.library_notes
+  for all using (public.is_admin()) with check (public.is_admin());
+create index if not exists idx_library_notes_doc on public.library_notes (document_id);
+
+-- ---------------------------------------------------------------------------
+-- Quiz attempts (round 4) — persisted so /admin/triage can surface low-
+-- confidence quiz areas. One row per (user, item) reveal; owner-only RLS,
+-- admin reads for the triage signal.
+-- ---------------------------------------------------------------------------
+create table if not exists public.quiz_attempts (
+  id uuid primary key default gen_random_uuid(),
+  organization_id uuid,
+  user_id uuid not null references public.profiles (id) on delete cascade,
+  item_id text not null,
+  item_type text not null default 'quiz',
+  chosen integer,
+  correct boolean not null,
+  created_at timestamptz not null default now()
+);
+
+alter table public.quiz_attempts enable row level security;
+create policy "quiz_attempts_insert_own" on public.quiz_attempts
+  for insert with check (auth.uid() = user_id);
+create policy "quiz_attempts_select_own_or_admin" on public.quiz_attempts
+  for select using (auth.uid() = user_id or public.is_admin());
+create index if not exists idx_quiz_attempts_item on public.quiz_attempts (item_id);

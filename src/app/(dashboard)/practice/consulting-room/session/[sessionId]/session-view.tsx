@@ -6,9 +6,11 @@ import { Mic } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { VoiceInput } from "@/components/practice/voice-input";
 import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
+import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
 import { DebriefView } from "./debrief-view";
 
 interface Turn {
+  id: string;
   role: "student" | "patient";
   content: string;
 }
@@ -42,18 +44,35 @@ const DIFFICULTY_HINT: Record<string, string> = {
 export function SimSessionView({
   sessionId,
   patientName,
+  patientAge,
+  patientContext,
   difficulty,
   initialTurns,
   voicePrefs,
+  branchInfo,
+  provisionalDims,
 }: {
   sessionId: string;
   patientName: string;
+  patientAge?: number;
+  patientContext?: string;
   difficulty: string;
   initialTurns: Turn[];
   voicePrefs?: { rate: number; pitch: number; lang?: string; gender?: "male" | "female" };
+  /** A1 retry: this session is a branch — parent turns + score for the
+   *  attempt-1 vs attempt-2 comparison strip in the debrief. */
+  branchInfo?: {
+    parentSessionId: string;
+    branchedFromTurn: number;
+    parentTurns: Turn[];
+    parentScore?: { overall: number; quotes: Array<{ quote: string; better: string }> };
+  };
+  /** A3: rubric dimensions still provisional — their numeric scores are hidden
+   *  from students (qualitative feedback only). */
+  provisionalDims?: string[];
 }) {
   const router = useRouter();
-  const [turns, setTurns] = React.useState<Turn[]>(initialTurns);
+  const [turns, setTurns] = React.useState<Turn[]>(initialTurns.map((t, i) => ({ ...t, id: `init-${i}-${Date.now()}` })));
   const [input, setInput] = React.useState("");
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
@@ -61,12 +80,18 @@ export function SimSessionView({
   const [debrief, setDebrief] = React.useState<DebriefData | null>(null);
   const [ending, setEnding] = React.useState(false);
   const [voiceMode, setVoiceMode] = React.useState(false);
+  // v5 §6 — the Director's affect + fatigue drive delivery line by line.
+  const [patientAffect, setPatientAffect] = React.useState<Affect | null>(null);
+  const [patientFatigue, setPatientFatigue] = React.useState(0);
   // Side rail — blank MSE scratchpad + hypotheses (never autofilled: what the
   // student wrote is half the assessment).
   const [mseNotes, setMseNotes] = React.useState("");
   const [hypotheses, setHypotheses] = React.useState("");
   const [sideRailOpen, setSideRailOpen] = React.useState(false);
   const [typing, setTyping] = React.useState(false);
+  // Bug 2: a stable id of the in-flight patient reply, so the reveal ticks
+  // update by id and a second student message can never duplicate it.
+  const pendingReply = React.useRef<string | null>(null);
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
   const voiceMetrics = useVoiceMetrics();
@@ -104,9 +129,10 @@ export function SimSessionView({
 
   async function send(textParam?: string) {
     const text = (textParam ?? input).trim();
-    if (!text || busy) return;
+    if (!text || busy || pendingReply.current) return;
+    const studentTurnId = `s-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     setInput("");
-    setTurns((t) => [...t, { role: "student", content: text }]);
+    setTurns((t) => [...t, { id: studentTurnId, role: "student", content: text }]);
     setBusy(true);
     setError(null);
     haptic("tap");
@@ -124,34 +150,39 @@ export function SimSessionView({
           setError(j?.error ?? "The patient didn't respond. Please try again.");
         }
         // revert the student turn so it isn't double-sent
-        setTurns((t) => t.slice(0, -1));
+        setTurns((t) => t.filter((x) => x.id !== studentTurnId));
         setInput(text);
         return;
       }
-      const j = (await res.json()) as { reply: string };
+      const j = (await res.json()) as { reply: string; affect?: Affect; fatigue?: number; mood?: string };
+      // v5 §6 — the Director's affect drives this line's delivery.
+      if (j.affect) {
+        setPatientAffect(j.affect);
+        setPatientFatigue(Number(j.fatigue ?? 0));
+      }
       // Human-realistic typing delay: reveal the reply progressively so it
       // doesn't appear instantly and shatter the illusion (v3 Part 6.1).
+      // The patient turn is appended ONCE with a stable id; each tick
+      // replaces THAT turn's content by id (append-only, never re-push), so
+      // a second student message mid-reveal can never duplicate the reply.
       setTyping(true);
       const full = j.reply;
+      const patientTurnId = `p-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      setTurns((t) => [...t, { id: patientTurnId, role: "patient", content: "" }]);
+      pendingReply.current = patientTurnId;
       const charsPerTick = 4;
       const ticks = Math.max(6, Math.ceil(full.length / charsPerTick));
       let shown = 0;
       typingTimer.current = setInterval(() => {
         shown += charsPerTick;
         const slice = full.slice(0, shown);
-        // Keep the patient turn at index len-1 but reveal progressively by
-        // replacing the last turn.
-        setTurns((t) => {
-          const next = t.slice();
-          if (next[next.length - 1]?.role === "patient") {
-            next[next.length - 1] = { role: "patient", content: slice };
-          } else {
-            next.push({ role: "patient", content: slice });
-          }
-          return next;
-        });
+        setTurns((t) =>
+          t.map((x) => (x.id === patientTurnId ? { ...x, content: slice } : x)),
+        );
         if (shown >= full.length) {
           if (typingTimer.current) clearInterval(typingTimer.current);
+          typingTimer.current = null;
+          pendingReply.current = null;
           setTyping(false);
         }
       }, Math.max(40, Math.min(90, Math.round(1200 / ticks))));
@@ -205,21 +236,44 @@ export function SimSessionView({
         difficulty={difficulty}
         voice={voiceReport ?? undefined}
         onExit={() => router.push("/practice/consulting-room")}
+        sessionId={sessionId}
+        totalTurns={turns.length}
+        branchInfo={branchInfo}
+        provisionalDims={provisionalDims}
       />
     );
   }
 
   return (
     <div className="flex h-[70vh] flex-col rounded-md border-2 border-border bg-card hard-shadow-sm">
-      {/* header */}
-      <div className="flex items-center justify-between border-b-2 border-border px-4 py-2">
-        <span className="text-small font-medium text-muted-foreground">
-          {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} patient
-        </span>
-        <div className="flex items-center gap-3">
-          {/* timer */}
+      {/* header — the patient, always in view. Timer is quiet and secondary. */}
+      <div className="flex items-center justify-between gap-3 border-b-2 border-border px-4 py-2.5">
+        <div className="flex min-w-0 items-center gap-3">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-full border-2 border-border bg-secondary text-base font-bold text-foreground" aria-hidden>
+            {patientName.charAt(0)}
+          </span>
+          <div className="min-w-0">
+            <div className="flex items-center gap-2">
+              <span className="truncate text-small font-semibold">
+                {patientName}{patientAge ? `, ${patientAge}` : ""}
+              </span>
+              <span className="shrink-0 rounded-full border border-border px-2 py-0.5 text-caption capitalize text-muted-foreground">
+                {difficulty}
+              </span>
+            </div>
+            {patientContext ? (
+              <p className="truncate text-caption text-muted-foreground">{patientContext}</p>
+            ) : null}
+          </div>
+        </div>
+        <div className="flex shrink-0 items-center gap-2.5">
+          {/* turn counter */}
+          <span className="text-caption text-muted-foreground" aria-label={`Turn ${turns.length}`}>
+            Turn {Math.max(1, turns.length)}
+          </span>
+          {/* timer — quiet and secondary */}
           <span
-            className={`text-numeric text-small ${overTime ? "font-bold text-red-600" : seconds >= SESSION_LIMIT_S - 60 ? "text-amber-600" : ""}`}
+            className={`text-caption tabular-nums ${overTime ? "font-semibold text-red-600" : seconds >= SESSION_LIMIT_S - 60 ? "text-amber-600" : "text-muted-foreground"}`}
             aria-live="polite"
           >
             {mm}:{ss}
@@ -261,33 +315,33 @@ export function SimSessionView({
             </p>
           </div>
         ) : null}
-        {turns.map((t, i) => (
+        {turns.map((t) => (
           <div
-            key={i}
-            className={`flex ${t.role === "student" ? "justify-end" : "justify-start"}`}
+            key={t.id}
+            className={`flex flex-col ${t.role === "student" ? "items-end" : "items-start"}`}
           >
+            <span className={`mb-1 text-caption text-muted-foreground ${t.role === "student" ? "mr-1" : "ml-1"}`}>
+              {t.role === "student" ? "You" : patientName}
+            </span>
             <div
-              className={`max-w-[80%] rounded-md border-2 border-border px-3 py-2 text-small ${
+              className={`max-w-[80%] rounded-lg px-3 py-2 text-small leading-relaxed ${
                 t.role === "student"
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-foreground"
+                  ? "rounded-br-none bg-primary text-primary-foreground"
+                  : "rounded-bl-none border border-border bg-card text-foreground"
               }`}
             >
               {t.content}
             </div>
           </div>
         ))}
-        {busy ? (
-          <div className="flex justify-start">
-            <div className="rounded-md border-2 border-border bg-secondary px-3 py-2 text-small text-muted-foreground">
-              {patientName} is thinking…
-            </div>
-          </div>
-        ) : null}
         {typing ? (
-          <div className="flex justify-start">
-            <div className="rounded-md border-2 border-border bg-secondary px-3 py-2 text-small italic text-muted-foreground">
-              {patientName} is answering…
+          <div className="flex flex-col items-start">
+            <span className="mb-1 ml-1 text-caption text-muted-foreground">{patientName}</span>
+            <div className="flex items-center gap-1 rounded-lg rounded-bl-none border border-border bg-card px-3 py-2.5">
+              <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "0ms" }} aria-hidden />
+              <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "120ms" }} aria-hidden />
+              <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "240ms" }} aria-hidden />
+              <span className="sr-only">{patientName} is answering</span>
             </div>
           </div>
         ) : null}
@@ -368,7 +422,24 @@ export function SimSessionView({
               const lastPatient = [...turns].reverse().find((t) => t.role === "patient");
               return lastPatient?.content ?? "";
             }}
-            patientVoicePrefs={voicePrefs}
+            patientVoicePrefs={
+              patientAffect
+                ? {
+                    rate: affectToVoice(patientAffect, {
+                      fatigue: patientFatigue,
+                      baseRate: voicePrefs?.rate ?? 1,
+                      basePitch: voicePrefs?.pitch ?? 1,
+                    }).rate,
+                    pitch: affectToVoice(patientAffect, {
+                      fatigue: patientFatigue,
+                      baseRate: voicePrefs?.rate ?? 1,
+                      basePitch: voicePrefs?.pitch ?? 1,
+                    }).pitch,
+                    lang: voicePrefs?.lang ?? "en-IN",
+                    gender: voicePrefs?.gender,
+                  }
+                : voicePrefs
+            }
             disabled={busy}
           />
         ) : (

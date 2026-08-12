@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "Read", "Grep", "Glob", "Edit", "Write", "NotebookEdit", "TodoWrite",
+      "Task", "Bash", "WebSearch", "WebFetch",
+      "Bash(git push:*)",
+      "Bash(vercel:*)",
+      "Bash(npx vercel:*)",
+      "Bash(supabase db push:*)",
+      "Bash(psql:*)",
+      "Edit(supabase/**)",
+      "Edit(src/lib/auth/**)",
+      "Edit(src/lib/media/**)",
+      "Edit(src/proxy.ts)",
+      "Edit(.github/workflows/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "WebSearch|WebFetch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -n '{hookSpecificOutput:{hookEventName:\"PreToolUse\",permissionDecision:\"allow\",permissionDecisionReason:\"read-only network tool auto-approved\"}}'"
+          }
+        ]
+      }
+    ]
+  }
+}

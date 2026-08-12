@@ -1,5 +1,7 @@
-import { getLibraryDocs, filterLibrary } from "@/lib/corpus/library";
+import { getLibraryDocs, filterLibrary, filterLibraryByTag, LIBRARY_FILTERS } from "@/lib/corpus/library";
 import { LibraryList } from "./library-list";
+import Link from "next/link";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -9,12 +11,15 @@ export const dynamic = "force-dynamic";
  * opening text; click to expand the abstract.
  */
 export default async function LibraryPage(props: {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string; tag?: string }>;
 }) {
+  await requireFeature("case_library");
   const sp = await props.searchParams;
   const query = sp.q ?? "";
+  const tag = sp.tag ?? "";
   const all = getLibraryDocs();
-  const filtered = filterLibrary(all, query);
+  const searched = filterLibrary(all, query);
+  const filtered = tag ? filterLibraryByTag(searched, tag) : searched;
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -26,6 +31,22 @@ export default async function LibraryPage(props: {
      </p>
 
       <div className="mt-6">
+        {/* B5 filter row — disorder/trap/time, one tap per chip */}
+        <div className="mb-4 flex flex-wrap gap-1.5">
+          {LIBRARY_FILTERS.map((f) => {
+            const active = tag === f.key;
+            return (
+              <Link
+                key={f.key}
+                href={active ? "/practice/library" : `/practice/library?tag=${f.key}`}
+                className={`rounded-full border px-2.5 py-1 text-caption font-medium transition-colors ${active ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground hover:bg-secondary"}`}
+              >
+                {f.label}
+              </Link>
+            );
+          })}
+        </div>
+
         <LibraryList
           docs={filtered.slice(0, 50).map((d) => ({
             id: d.hash,

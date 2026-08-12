@@ -14,7 +14,8 @@ export default async function globalSetup() {
   await page.fill("#email", process.env.E2E_EMAIL ?? "Test@lumen.test");
   await page.fill("#password", process.env.E2E_PASSWORD ?? "K#test");
   await page.getByRole("button", { name: /sign in|log in/i }).click();
-  await page.waitForURL(/dashboard|practice/, { timeout: 15000 });
+  // Post-login landing is /today for students (/admin for admins).
+  await page.waitForURL(/dashboard|practice|today|admin/, { timeout: 15000 });
   await page.waitForLoadState("networkidle").catch(() => {});
 
   await page.context().storageState({ path: ".e2e-state.json" });

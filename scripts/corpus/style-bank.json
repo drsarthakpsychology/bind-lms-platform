@@ -217,6 +217,30 @@
   },
   {
     "kind": "hedge",
+    "pattern": "Perhaps it doesn’t understand English,",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Well, perhaps not,",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Well, perhaps you haven’t found it so yet,",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Well, perhaps your feelings may be different,",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
     "pattern": "Not _quite_ right, I’m afraid,",
     "source_book": "11",
     "style_pattern": "style"
@@ -235,13 +259,43 @@
   },
   {
     "kind": "hedge",
+    "pattern": "But perhaps he can’t help it,",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "—or next day, maybe,",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
     "pattern": "What sort of people live about here?",
     "source_book": "11",
     "style_pattern": "style"
   },
   {
     "kind": "hedge",
+    "pattern": "Perhaps not,",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Not at first, perhaps,",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
     "pattern": "I’d rather not,",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps it hasn’t one,",
     "source_book": "11",
     "style_pattern": "style"
   },
@@ -266,6 +320,12 @@
   {
     "kind": "hedge",
     "pattern": "A cheap sort of present!",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "and perhaps you were never even introduced to a lobster—",
     "source_book": "11",
     "style_pattern": "style"
   },
@@ -308,6 +368,12 @@
   {
     "kind": "self_interruption",
     "pattern": "I beg your pardon,",
+    "source_book": "11",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "Not at all,",
     "source_book": "11",
     "style_pattern": "style"
   },
@@ -554,6 +620,24 @@
   {
     "kind": "hesitation",
     "pattern": "Well, Jane, do you know me?",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "It seems to me a splendid mansion, sir.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Yet it seems to me your life is hardly secure while she stays.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Yes, Robert, I shall be ready: it seems to me that I ought to go.",
     "source_book": "1260",
     "style_pattern": "style"
   },
@@ -859,6 +943,12 @@
   },
   {
     "kind": "hedge",
+    "pattern": "Perhaps you may—who knows? Have you any relations besides Mrs. Reed?",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
     "pattern": "This is the state of things I quite approve,",
     "source_book": "1260",
     "style_pattern": "style"
@@ -883,6 +973,12 @@
   },
   {
     "kind": "hedge",
+    "pattern": "I can perhaps get her to talk.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
     "pattern": "I come from a place farther north, quite on the borders of Scotland.",
     "source_book": "1260",
     "style_pattern": "style"
@@ -896,6 +992,12 @@
   {
     "kind": "hedge",
     "pattern": "It is a little better.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "You came to bid me good-bye, then: you are just in time probably.",
     "source_book": "1260",
     "style_pattern": "style"
   },
@@ -925,6 +1027,12 @@
   },
   {
     "kind": "hedge",
+    "pattern": "Perhaps he thinks it gloomy.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
     "pattern": "Oh, quite well! I never felt better.",
     "source_book": "1260",
     "style_pattern": "style"
@@ -932,6 +1040,18 @@
   {
     "kind": "hedge",
     "pattern": "And Miss Ingram: what sort of a voice had she?",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "She is a good hand, I daresay,",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Yes, I daresay: no doubt he admires her.",
     "source_book": "1260",
     "style_pattern": "style"
   },
@@ -949,7 +1069,31 @@
   },
   {
     "kind": "hedge",
+    "pattern": "I cannot possibly countenance any such inconsistent proceeding,",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "You know—and perhaps think well of.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
     "pattern": "Humph! Not exactly. Your witch’s skill is rather at fault sometimes.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Discussing the gipsy, I daresay.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "I daresay you hardly remember me, Miss,",
     "source_book": "1260",
     "style_pattern": "style"
   },
@@ -980,6 +1124,12 @@
   {
     "kind": "hedge",
     "pattern": "The ceremony is quite broken off,",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps it may be got over—explained away?",
     "source_book": "1260",
     "style_pattern": "style"
   },
@@ -1039,6 +1189,12 @@
   },
   {
     "kind": "hedge",
+    "pattern": "Perhaps you have read the figures wrong—it may be two thousand!",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
     "pattern": "I would rather not just now.",
     "source_book": "1260",
     "style_pattern": "style"
@@ -1046,6 +1202,12 @@
   {
     "kind": "hedge",
     "pattern": "I would rather Diana or Mary informed you.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "No—perhaps it would have been better if there had.",
     "source_book": "1260",
     "style_pattern": "style"
   },
@@ -1075,13 +1237,103 @@
   },
   {
     "kind": "self_interruption",
+    "pattern": "If you don’t sit still, you must be tied down,",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
     "pattern": "I intended to have arranged them, but I forgot.",
     "source_book": "1260",
     "style_pattern": "style"
   },
   {
     "kind": "self_interruption",
+    "pattern": "No, no, Helen!",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "Will Grace Poole live here still, sir?",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "After all, a single morning’s interruption will not matter much,",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "I mean,—What next? How did you proceed? What came of such an event?",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
     "pattern": "I forgot!",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "I mean, on the contrary, to be busy.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "indirect",
+    "pattern": "Explanation will do for another time,",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "indirect",
+    "pattern": "Another time.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "indirect",
+    "pattern": "You shall tell me this part of the story another time,",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "Not at all, Bessie; indeed, just now I’m rather sorry.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "Cruel? Not at all! She is severe: she dislikes my faults.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "On the contrary,",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "Not at all: they are full of jests and gaiety.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "Not at all, with Hannah bustling about and covering you with flour.",
+    "source_book": "1260",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "I mean, on the contrary, to be busy.",
     "source_book": "1260",
     "style_pattern": "style"
   },
@@ -1147,6 +1399,12 @@
   },
   {
     "kind": "hesitation",
+    "pattern": "Upon my word, sir,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
     "pattern": "She is a very good kind of girl, I believe. I know no harm of her.",
     "source_book": "1342",
     "style_pattern": "style"
@@ -1154,6 +1412,12 @@
   {
     "kind": "hesitation",
     "pattern": "but perhaps, to the Lakes.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Upon my word,",
     "source_book": "1342",
     "style_pattern": "style"
   },
@@ -1315,8 +1579,1124 @@
   },
   {
     "kind": "hedge",
+    "pattern": "But perhaps you would like to read it",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
     "pattern": "We are not in a way to know _what_ Mr. Bingley likes,",
     "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Are you quite sure, ma’am? Is not there a little mistake?",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "It may, perhaps, be pleasant,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "I had much rather go in the coach.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "that is rather singular.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "You are mistaken. I write rather slowly.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Do let us have a little music,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "You allude, perhaps, to the entail of this estate.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "This is quite shocking! He deserves to be publicly disgraced.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "What sort of a girl is Miss Darcy?",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Sir, you quite misunderstand me,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "She is a very good kind of girl, I believe. I know no harm of her.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "We have not quite determined how far it shall carry us,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "but perhaps, to the Lakes.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "You are rather disposed to call his interference officious?",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "A little sea-bathing would set me up for ever.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps we might be deceived.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "There _is_ something a little stately in him, to be sure,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "But perhaps he may be a little whimsical in his civilities,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps it would have been better,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "but perhaps you would like to read it.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps preparing for his marriage with Miss de Bourgh,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Oh, Lord! I don’t know. Not these two or three years, perhaps.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "You are quite a visit in my debt, Mr. Bingley,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "And quite alone? Have all her friends left her?",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Now I am quite happy,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "I beg your pardon;--one knows exactly what to think.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "No, no, nonsense, Lizzy. I desire you will stay where you are.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "That is to say, you had given your permission. I guessed as much.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "indirect",
+    "pattern": "Another time, Lizzy,",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "Not at all.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "No, not at all.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "Not at all. When I went away, I felt that it would soon happen.",
+    "source_book": "1342",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "deflection",
+    "pattern": "Oh! never mind!",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, send him about his business when he bores you, Edna,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Perhaps I feared to make Alphonse jealous,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, how did you like my music?",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, let it go; who cares!",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Forever, perhaps. I don’t know. It depends upon a good many things.",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, in case it shouldn’t be forever, how long will it be?",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Perhaps that’s the—",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, I hope you left some suitable excuse,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "It seems to me,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Perhaps I shall be able to paint your picture some day,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Madame Pontellier not well,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Yes, yes; she seems quite well,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, it isn’t easy to explain,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, good-by, _à jeudi_,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, that ought to be reason enough,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "I believe he’s paralyzed,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Perhaps I shouldn’t have come back,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Good night. I adore you. Sleep well,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "I bought it. I suppose I’m getting reckless; I bought a whole box.",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "It seems to me, my dear child,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps I feared to make Alphonse jealous,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Maybe she thinks you are pretty. Shall I ask her?",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Forever, perhaps. I don’t know. It depends upon a good many things.",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps that’s the—",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps I shall be able to paint your picture some day,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Yes, yes; she seems quite well,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Oh! to be able to paint in color rather than in words!",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Oh! you know I want to stay if you will let me!",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps I shouldn’t have come back,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Quite soon. Some time in March.",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "I never thought of it.",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "but let me think of something else while you do.",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "No, no, I won’t, Mrs. Pontellier. I didn’t know you meant it,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "indirect",
+    "pattern": "There’s nothing much to explain, mother,",
+    "source_book": "160",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "deflection",
+    "pattern": "Never mind,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, some hundreds of times.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, really!",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "You see,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Mr. Sherlock Holmes, I believe?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, the snuff, then, and the Freemasonry?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, but China?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, I never!",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, it is just as I have been telling you, Mr. Sherlock Holmes,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, Watson,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "And what did you see?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "We’re hunting in couples again, Doctor, you see,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "You see, Watson,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "It seems to me that you have been very shamefully treated,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, have you solved it?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, moonshine is a brighter thing than fog,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "It’s as well,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, it is not for me to judge you,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Farewell, then,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Save, perhaps, the Sign of Four.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "I suppose, Watson,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "I don’t say that. Perhaps.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, I don’t know why not,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "perhaps I interrupt you.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, it is very ingenious,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "this is treasure trove indeed. I suppose you know what you have got?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Very well, sir. And this stone?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Mr. Henry Baker, I believe,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Ah! yes, I see. But you see, sir, them’s not _our_ geese.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, I got the two dozen from a salesman in Covent Garden.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, there are some on the stall with the gas-flare.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, then, you’ve lost your fiver, for it’s town bred,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, then, ask Mrs. Oakshott for it.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "and perhaps he hardly knows his own strength.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "It seems to me to be a most dark and sinister business.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "But I have heard that the crocuses promise well,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "And the lady, I fancy, is Miss Stoner,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "I thought it as well,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Your sister asked for it, I suppose?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, look at this!",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "I believe, Mr. Holmes, that you have already made up your mind,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Perhaps I have.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "did you see it?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "You see it, Watson?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "You see it?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, at least,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Perhaps we may make them less so.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "You see, Mr. Holmes,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, it is a possible supposition.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, certainly that is also a conceivable hypothesis,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, I have only just heard the facts, but my mind is made up.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "You seem to expect company. They have laid for five.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Yes, I fancy we may have some company dropping in,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "I believe that he is coming here,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "You have erred, perhaps,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "It seems to me that I have done you full justice in the matter,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "topic_shift",
+    "pattern": "And what of Irene Adler?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "topic_shift",
+    "pattern": "Now then, Mr. Cocksure,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Quite so,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "The name of the maker, no doubt; or his monogram, rather.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "It is quite a pretty little problem,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "You could not possibly have come at a better time, my dear Watson,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "It is a little off the beaten track, isn’t it?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Why, dear me, it sounds quite hollow!",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "I must really ask you to be a little more quiet!",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "I can quite understand your thinking so,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Quite an interesting study, that maiden,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "That sounds a little paradoxical.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "I do not quite follow,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Quite so.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Save, perhaps, the Sign of Four.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "I do so want a little help.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "I don’t say that. Perhaps.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "I want to test a little theory of mine,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "perhaps I interrupt you.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Quite so. Now turn that up in the ledger.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Quite so. There you are. And underneath?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Quite so. Pray proceed with your statement.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "and perhaps he hardly knows his own strength.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "It is a little cold for the time of the year,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "That is also quite modern,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Thank you. That is quite settled,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps I have.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "It is very kind of you.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Yes; it struck me as being a little out of the common.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Perhaps we may make them less so.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "I think that there you ask a little too much,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "I feel it give a little,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "You have erred, perhaps,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hedge",
+    "pattern": "Quite so. She has her freedom.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "No, no, there’s life in him!",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "Ah, of course, I forgot that. But the writing?",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "No, no, the mystery!",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "After all, Watson,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "self_interruption",
+    "pattern": "No, no, my girl, the matter must be probed to the bottom.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "On the contrary, my dear sir,",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "Not at all. Drink this.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "On the contrary, this is the right side.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "contradict",
+    "pattern": "On the contrary, your statement is singularly lucid.",
+    "source_book": "1661",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "deflection",
+    "pattern": "Never mind that. How long have you known her?",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "deflection",
+    "pattern": "Never mind.",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "deflection",
+    "pattern": "Why do you ask me that, Harry?",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "And much less than a friend. A sort of brother, I suppose?",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, then, you and I will go alone, Mr. Gray.",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Money, I suppose,",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "They are pork-packers, I suppose?",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "I believe she has made up her mind to propose to him, Duchess.",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Perhaps, after all, America never has been discovered,",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "I dare say, my dear,",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, he seemed to think they were beyond his means,",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Upon my word, Dorian, Miss Sibyl knows how to pay compliments.",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, I can’t help going to see Sibyl play,",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Well, what night shall we go?",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Why not, Mother? I mean it.",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Not as long as you love him, I suppose,",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "I suppose you have heard the news, Basil?",
+    "source_book": "174",
+    "style_pattern": "style"
+  },
+  {
+    "kind": "hesitation",
+    "pattern": "Yes, Dorian, I suppose you were right,",
+    "source_book": "174",
     "style_pattern": "style"
   }
 ]

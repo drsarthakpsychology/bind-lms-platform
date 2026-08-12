@@ -29,6 +29,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "First-episode moderate depression, presenting with body ache, 'heaviness', poor sleep, 2-year help-seeking delay. Prior GP visits for 'gas' and 'weakness'.",
     chief_complaint_in_own_words: "Doctor, there's a heaviness. I can't explain it. My body just… everything feels like a lot.",
+    opening_idiom: "sar bhari",
+    traps: ["somatic_mask", "cultural_idiom", "under_diagnosis"],
     history: {
       timeline:
         "Started ~8 months ago after a promotion that added night shifts. Sleep became broken, appetite dropped, he lost 6kg. He began attributing it to 'gas' and 'weakness'.",
@@ -83,6 +85,23 @@ export const SEED_CASES: SimCase[] = [
         patient: "No, nothing like this. Two years ago we… (pauses) No. It's just this. I've never felt so tired.",
       },
     ],
+    variation: {
+      mood_today: ["flat", "resigned", "brittle-cheerful", "agitated"],
+      recent_event: ["promotion added night shifts", "a fight at home last night", "got paid, wasn't enough", "couldn't sleep three nights running"],
+      most_defended_topic: ["the family", "money", "his health"],
+      opening_posture: ["came willingly", "came to please his wife", "looks at the door"],
+      somatic_focus: ["chest", "head", "stomach"],
+      trust_start: [2, 3, 4],
+      language_mix: ["Hinglish", "Marathi-flavoured English", "mostly Hindi"],
+    },
+    fixture_lines: [
+      "The heaviness is here again. My head, my chest. The clinic doctor says it's gas. Maybe it is gas.",
+      "I haven't slept properly in weeks. I lie down, I'm awake, I watch the ceiling. Then I get up and it's another day.",
+      "My wife says I look tired all the time. I tell her it's the night shifts. It's not just the night shifts.",
+      "The GP gave me a tonic. B-complex, something. It did nothing. I didn't go back — what's the point?",
+      "You're the first person who's asked me that. At home, nobody asks. They assume the body is the problem.",
+      "Some days all I want is to sleep and not have to wake up for the alarm. I wouldn't… I just want the rest.",
+    ],
   },
 
   // ---------------------------------------------------------------------------
@@ -103,6 +122,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "Panic disorder with agoraphobia-like avoidance. Three ER visits in 4 months 'my heart is racing'. Every cardiac workup normal. Fear of dying.",
     chief_complaint_in_own_words: "My heart races and I feel like I'm going to die. The doctors say my heart is fine, but it doesn't feel fine.",
+    opening_idiom: "dil ghabrata hai",
+    traps: ["medical_mimic", "under_diagnosis", "somatic_mask"],
     history: {
       timeline:
         "First attack 4 months ago on a crowded metro. Now avoids metro, buses, and crowded spaces. Anticipatory anxiety about the next attack.",
@@ -153,6 +174,23 @@ export const SEED_CASES: SimCase[] = [
         patient: "That it's happening again, and this time no one will be there. That I'm going to die on a train and no one will know my name.",
       },
     ],
+    variation: {
+      mood_today: ["anxious", "on edge", "trying to stay calm", "shaky"],
+      recent_event: ["almost had an episode on the train", "got a full report today", "slept badly for a week", "a family wedding is coming up"],
+      most_defended_topic: ["the train", "her heart", "family duty"],
+      opening_posture: ["came willingly", "brought by her mother", "fidgeting"],
+      somatic_focus: ["chest", "head", "stomach"],
+      trust_start: [2, 3, 4],
+      language_mix: ["Hinglish", "Hindi with English words", "mostly English"],
+    },
+    fixture_lines: [
+      "The heart starts racing and I think — this is it. This time I'm dying. My father had a heart attack at my age, you know.",
+      "The doctors checked everything. ECG, echo, thyroid — all normal. They said it's my nerves. But it doesn't feel like nerves.",
+      "I've stopped taking the train to work. I take the bus, and even then I sit near the door. In case I need to get off.",
+      "When it happens I just hold onto the bench and wait for it to pass. People stare. I pretend I'm checking my phone.",
+      "My mother says it's 'dil ka darr' — fear of the heart. Maybe she's right. But knowing that doesn't stop it.",
+      "In the night, sometimes, I pray that if it's going to happen, let it happen while I'm asleep. That's terrible to say, isn't it.",
+    ],
   },
 
   // ---------------------------------------------------------------------------
@@ -173,6 +211,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "OCD with religious contamination obsessions and washing compulsions. Feels sinful and ashamed. 3-year delay; told family he 'prays a lot'.",
     chief_complaint_in_own_words: "My mind keeps filling with unclean thoughts about the temple. I wash my hands until they bleed. I'm a bad person for thinking this.",
+    opening_idiom: "possession / kisi ne kuch kar diya",
+    traps: ["cultural_idiom", "misattributed_diagnosis", "under_diagnosis"],
     history: {
       timeline:
         "Started during board exams ~3 years ago as 'needing to be clean before prayer'. Escalated to washing 30+ times/day, avoiding temple, checking.",
@@ -223,6 +263,23 @@ export const SEED_CASES: SimCase[] = [
         patient: "I have to wash. Not once — many times. Until it feels clean. It never fully feels clean.",
       },
     ],
+    variation: {
+      mood_today: ["ashamed", "exhausted", "tense", "numb"],
+      recent_event: ["cried at the temple", "missed a deadline because of the washing", "his mother asked what's wrong", "a wedding is coming — he'll have to shake hands"],
+      most_defended_topic: ["the thoughts", "the temple", "his relationship with his mother"],
+      opening_posture: ["came willingly", "brought by his mother", "sits at the edge of the chair"],
+      somatic_focus: ["hands", "head", "stomach"],
+      trust_start: [2, 3, 4],
+      language_mix: ["Hindi with English words", "Hinglish", "mostly English"],
+    },
+    fixture_lines: [
+      "If I touch the door handle, I have to wash. Ten times sometimes. My hands are cracked — my mother notices, asks why.",
+      "It's worse at the temple. Images of God mixed with — I can't say it out loud. If I say it, it becomes more real.",
+      "I don't tell anyone. My friends would think I've lost my mind. Maybe I have. That's what I want to know from you.",
+      "I have to check — lock the door, check it again. And again. My father shouts at me for being late to everything.",
+      "The thoughts aren't mine. I know they're not mine. But my body reacts as if they are. I shake.",
+      "I used to be able to push them away. Now they're there the whole day. It's exhausting. I'm exhausted.",
+    ],
   },
 
   // ---------------------------------------------------------------------------
@@ -243,6 +300,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "Brought by parents who report 'marks fell', 'attitude problem', 'always on phone'. Patient is hostile, refuses to engage, parents do the talking.",
     chief_complaint_in_own_words: "(To parents) You brought me here. You talk.",
+    opening_idiom: "koi baat nahi",
+    traps: ["informant_conflict", "diagnostic_overshadowing", "late_risk_reveal"],
     history: {
       timeline:
         "Marks dropped over 6 months. Parents report defiance, staying in room, arguing. No direct account from the patient yet.",
@@ -293,6 +352,23 @@ export const SEED_CASES: SimCase[] = [
         patient: "(Looks at parents, then floor) Like you'd care. They already told you everything.",
       },
     ],
+    variation: {
+      mood_today: ["irritated", "quietly defiant", "guarded", "tired of questions"],
+      recent_event: ["parents fought about her marks", "everyone's talking about her", "she dropped a plate and everyone jumped", "school was fine today"],
+      most_defended_topic: ["her parents", "her marks", "why they brought her"],
+      opening_posture: ["brought by parents", "brought by mother", "brought by both, arguing"],
+      somatic_focus: ["head", "stomach", "none"],
+      trust_start: [1, 2, 3],
+      language_mix: ["English", "Hindi", "mixed"],
+    },
+    fixture_lines: [
+      "Can they hear us? (Glances at the door) I'm not saying anything with them in the next room hearing everything.",
+      "School's fine. My marks are fine. So what exactly are we doing here?",
+      "I had one scratch. One. They turned it into a family meeting.",
+      "You want the real answer? I just wanted someone on my side for once.",
+      "They think if I fail one exam the whole family's name is gone. Like I'm a walking report card.",
+      "I'll tell you what's really going on. But promise you won't say anything to them.",
+    ],
   },
 
   // ---------------------------------------------------------------------------
@@ -313,6 +389,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "Alcohol use disorder, moderate-severe, brought by wife. Denies problem, minimises quantity, blames stress. Liver function deranged.",
     chief_complaint_in_own_words: "My wife dragged me here. I'm not an alcoholic. I can stop any time I want.",
+    opening_idiom: "sab kuch kar liya",
+    traps: ["adherence_fiction", "under_diagnosis", "secondary_gain"],
     history: {
       timeline:
         "Daily drinking for ~7 years, escalating. Now starts in the morning on weekends, hides bottles. Wife found them.",
@@ -363,6 +441,23 @@ export const SEED_CASES: SimCase[] = [
         patient: "She thinks I drink too much. I tell her it's the business, the pressure. She doesn't understand.",
       },
     ],
+    variation: {
+      mood_today: ["irritated", "defensive", "tired", "belligerent"],
+      recent_event: ["wife found another bottle", "the shop lost money this week", "he hid a bottle and felt nothing", "his son asked why he drinks"],
+      most_defended_topic: ["the drinking", "the shop", "his wife"],
+      opening_posture: ["dragged here by wife", "came to keep the peace", "came alone, late"],
+      somatic_focus: ["head", "stomach", "trembling hands"],
+      trust_start: [1, 2, 3],
+      language_mix: ["Tamil-accented English", "English with Tamil words", "gruff Hinglish"],
+    },
+    fixture_lines: [
+      "My wife says I have a problem. I say the shop has a problem. Everyone drinks a little after work.",
+      "One peg, maybe two. That's normal. You tell me — a man can't have a peg after work?",
+      "She found the bottle. That's the whole issue. I keep telling her, it's not what she thinks.",
+      "My liver? That report was from years ago. I'm fine. I get it checked, it comes back fine.",
+      "You're going to start about the drinking. Everyone starts about the drinking. Can we not?",
+      "I can stop any time. I've stopped before. I just don't see why I should have to.",
+    ],
   },
 
   // ---------------------------------------------------------------------------
@@ -383,6 +478,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "Postpartum depression, 6 months after delivery. Low mood, tearfulness, guilt, poor sleep. Mother-in-law dominates the room; patient is deferential.",
     chief_complaint_in_own_words: "I'm not a good mother. I can't even cry properly without my mother-in-law asking why.",
+    opening_idiom: "I'm fine, just tired",
+    traps: ["informant_conflict", "somatic_mask", "under_diagnosis"],
     history: {
       timeline:
         "Since ~2 months postpartum: crying, self-blame, sleep even when baby sleeps, loss of interest. Husband works long hours.",
@@ -433,6 +530,23 @@ export const SEED_CASES: SimCase[] = [
         patient: "Everyone says I should be happy. I look at her and I feel… empty. And then I feel guilty for feeling empty.",
       },
     ],
+    variation: {
+      mood_today: ["empty", "guilty", "tired", "numb"],
+      recent_event: ["she smiled at the baby and felt nothing", "mother-in-law remarked on her parenting", "the baby slept through the night once", "her husband asked what's wrong"],
+      most_defended_topic: ["her mother-in-law", "the baby", "the crying"],
+      opening_posture: ["came willingly", "brought by her husband", "brought by mother-in-law"],
+      somatic_focus: ["head", "stomach", "back"],
+      trust_start: [2, 3, 4],
+      language_mix: ["soft Hindi", "Hindi with English words", "mostly English"],
+    },
+    fixture_lines: [
+      "I shouldn't be tired — she sleeps, mostly. But I lie awake anyway. Watching her breathe. Making sure she's still breathing.",
+      "My mother-in-law says ''when I had mine, I did everything alone''. She doesn't mean it as a knife, but it lands like one.",
+      "I feed her, I bathe her, I do it all. But there's a part of me that's just… switched off. I'm ashamed to say that.",
+      "Sometimes I think she'd be better off with a mother who feels something. I say that, and everyone says I'm being dramatic.",
+      "The joy everyone promised me — I keep waiting for it. It's like a guest who never arrives.",
+      "Please don't tell them about the crying. They'll say I'm weak, that I can't be a mother. You won't tell them, will you?",
+    ],
   },
 
   // ---------------------------------------------------------------------------
@@ -453,6 +567,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "Grief reaction 8 months after wife's death, vs depression. Waves of sadness, preserved pleasure with grandchildren, no anhedonia globally. Referred by daughter who worried he's 'not moving on'.",
     chief_complaint_in_own_words: "I still talk to her chair. My daughter thinks I'm depressed. I just miss my wife of 35 years.",
+    opening_idiom: "dil baith jana",
+    traps: ["over_diagnosis", "late_risk_reveal", "cultural_idiom"],
     history: {
       timeline:
         "Wife died of cancer 8 months ago. Initial numbness, then waves of grief. Can enjoy his grandsons, can eat, sleeps reasonably except anniversary dates.",
@@ -500,6 +616,23 @@ export const SEED_CASES: SimCase[] = [
         patient: "I tell her about the day. The grandsons, the market. Sometimes I think she answers. It comforts me. Is that wrong?",
       },
     ],
+    variation: {
+      mood_today: ["quiet", "polite", "melancholy", "cheerful today"],
+      recent_event: ["grandsons visited", "it is the anniversary of her death", "someone at the market asked after her", "he slept well"],
+      most_defended_topic: ["the chair", "his sons", "moving in with them"],
+      opening_posture: ["came willingly", "came because his son insisted", "came alone, late"],
+      somatic_focus: ["chest", "knees", "none"],
+      trust_start: [2, 3, 4],
+      language_mix: ["Hindi", "Hindi with English words", "mostly English"],
+    },
+    fixture_lines: [
+      "Eighteen months she's been gone. I know she's gone. And I still set two cups of tea in the morning. Habit.",
+      "The grandsons come on Sundays. I play with them, I laugh. Then they leave and the house is too quiet. That's the hard part.",
+      "I know it's not her. I know it's a chair. But when I talk to it, something in me settles. Is that so strange?",
+      "People say I should move on. As if grief is a train I need to catch. I'm not late for anything.",
+      "I sleep, I eat, I go to the market. I'm not unwell. I'm just… a man who misses his wife. Is there a pill for that?",
+      "My son wants me to move in with them. But her chair is here. As long as I can talk to it, I'm not alone.",
+    ],
   },
 
   // ---------------------------------------------------------------------------
@@ -520,6 +653,8 @@ export const SEED_CASES: SimCase[] = [
     presentation:
       "The trap case: healthy woman experiencing a normal, difficult season — new school term, child starting school, husband transferred. No disorder. The right answer is 'this person is fine'.",
     chief_complaint_in_own_words: "I'm not here for me, exactly. My colleague made an appointment and said I should come. I'm just tired — it's a big term.",
+    opening_idiom: "I'm fine, just tired",
+    traps: ["over_diagnosis", "under_diagnosis", "adherence_fiction"],
     history: {
       timeline:
         "Term started 6 weeks ago; new head teacher, more load, child in new school. Sleep is a bit short but she enjoys teaching. Mood is fine when not exhausted.",
@@ -564,6 +699,23 @@ export const SEED_CASES: SimCase[] = [
         student: "How's your mood been, separate from the tiredness?",
         patient: "Actually fine. I enjoy my class, I laugh with my colleagues. I'm just stretched, not broken.",
       },
+    ],
+    variation: {
+      mood_today: ["fine", "cheerful", "tired but okay", "irritated by the commute"],
+      recent_event: ["gave a good lesson today", "a student thanked her", "the weekend is coming", "a colleague fell ill"],
+      most_defended_topic: ["whether she needs to be here", "the exams", "her sister-in-law"],
+      opening_posture: ["came willingly", "brought by sister-in-law", "came on her way from school"],
+      somatic_focus: ["head", "stomach", "back"],
+      trust_start: [3, 4, 5],
+      language_mix: ["Hindi", "English with Hindi words", "mostly English"],
+    },
+    fixture_lines: [
+      "Tired is the word. All the teachers are tired — it's the third term. But I'm still laughing at my own jokes, so I'm fine.",
+      "I sleep badly three nights a week, sleep deeply on the weekend. My mother gave me ''kadha'' — didn't change a thing.",
+      "If I were truly depressed I'd stop cooking. I make the best biryani in the staff room. So. Not depressed.",
+      "Last week I cried once — over a stray dog. The next day I was fine. Everyone has days like that.",
+      "I'm not here because I'm sick. I'm here because my sister-in-law got my husband worried. He worried, she pushed, here I am.",
+      "Ask me again in December after the board exams. If I'm still like this then, I'll come back myself.",
     ],
   },
 ];

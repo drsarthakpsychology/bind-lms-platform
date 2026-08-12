@@ -43,13 +43,50 @@ export async function GET(req: Request) {
       return NextResponse.json({ ok: true, task, pruned_usage: count ?? 0 });
     }
     case "infra-snapshot": {
-      // Write a daily usage snapshot for /admin/infra history.
+      // Write a daily usage snapshot for /admin/infra history + prune to the
+      // last 90 rows so the table can't grow unbounded (free-tier discipline).
       const { createAdminClient } = await import("@/lib/supabase/server");
       const admin = createAdminClient();
       const { data } = await admin.rpc("infra_metrics");
       const { error } = await admin.from("infra_snapshots").insert({ snapshot: data ?? {} });
       if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
-      return NextResponse.json({ ok: true, task, written: true });
+      const { data: older } = await admin
+        .from("infra_snapshots")
+        .select("id")
+        .order("taken_at", { ascending: false })
+        .range(90, 10000);
+      if (older && older.length > 0) {
+        await admin.from("infra_snapshots").delete().in("id", older.map((r) => r.id));
+      }
+      return NextResponse.json({ ok: true, task, written: true, pruned: older?.length ?? 0 });
+    }
+    case "alumni-transition": {
+      // A10: on cohort end, flip students to alumni for permanent read-only
+      // access. Idempotent — only touches rows with cohort_ended_at <= now.
+      const { createAdminClient } = await import("@/lib/supabase/server");
+      const admin = createAdminClient();
+      const now = new Date().toISOString();
+      const { data, error } = await admin
+        .from("profiles")
+        .update({ role: "alumni" })
+        .eq("role", "student")
+        .lte("cohort_ended_at", now);
+      if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
+      return NextResponse.json({ ok: true, task, transitioned: (data ?? []).length });
+    }
+        case "release-scheduled": {
+      // A2 scheduled release: flip any scheduled module whose release_at has
+      // arrived to published (the GitHub Actions cron runs this daily).
+      const { createAdminClient } = await import("@/lib/supabase/server");
+      const admin = createAdminClient();
+      const now = new Date().toISOString();
+      const { data, error } = await admin
+        .from("modules")
+        .update({ state: "published", release_at: null })
+        .eq("state", "scheduled")
+        .lte("release_at", now);
+      if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
+      return NextResponse.json({ ok: true, task, released: (data ?? []).length });
     }
     case "send-reminders": {
       // TODO(provider): daily digest via Resend when a template + key exist.

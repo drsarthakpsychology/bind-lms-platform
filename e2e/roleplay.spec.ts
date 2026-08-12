@@ -38,7 +38,8 @@ test("peer role-play: create session, message, peer replies", async ({ page, bro
   await peer.fill("#email", PEER_EMAIL);
   await peer.fill("#password", PEER_PASSWORD);
   await peer.getByRole("button", { name: /sign in|log in/i }).click();
-  await peer.waitForURL(/dashboard|practice/, { timeout: 15000 });
+  // The role-based landing page is /today for students (/admin for admins).
+  await peer.waitForURL(/dashboard|practice|today|admin/, { timeout: 15000 });
   await peer.waitForTimeout(800);
 
   await peer.goto(sessionUrl, { waitUntil: "networkidle" });

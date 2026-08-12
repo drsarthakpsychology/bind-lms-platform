@@ -26,11 +26,13 @@ export default async function DashboardLayout({
   const role = session.profile.role;
   // Admin viewing the student side is in "student" mode; everyone else is in
   // their natural mode. `mode` only controls navigation layout, not access.
+  // Alumni (A10) render the student shell with read-only access to their record.
   const mode = role === "admin" && !viewingAsStudent ? "admin" : "student";
+  const shellRole = role === "alumni" ? "student" : role;
 
   return (
     <AppShell
-      role={role}
+      role={shellRole}
       mode={mode}
       viewModeSwitch={
         role === "admin" ? (

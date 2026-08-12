@@ -1,4 +1,4 @@
-import { createAdminClient } from "@/lib/supabase/server";
+import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { SEED_CASES } from "@/lib/psychopharm/sim/cases";
 import { CasePicker } from "./case-picker";
 import { SimulationBadge } from "./simulation-badge";
@@ -18,24 +18,70 @@ export default async function ConsultingRoomPage() {
     .eq("approved", true)
     .order("created_at", { ascending: true });
 
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // Per-case session state for this student: any active session → in
+  // progress; else the best completed debrief score.
+  const mySessionsData: { id: string; case_id: string; status: string }[] | null = user
+    ? await (async () => {
+        const { data } = await supabase
+          .from("sim_sessions")
+          .select("id, case_id, status")
+          .eq("user_id", user.id)
+          .in("status", ["active", "complete"]);
+        return (data ?? []) as { id: string; case_id: string; status: string }[];
+      })()
+    : null;
+  const myScores = user
+    ? await admin
+        .from("sim_scores")
+        .select("session_id, overall")
+        .eq("user_id", user.id)
+    : { data: null };
+  const scoresBySession = new Map(
+    (myScores?.data ?? []).map((s) => [String(s.session_id), Number(s.overall ?? 0)]),
+  );
+  const stateByCase = new Map<string, { state: "not_started" | "in_progress" | "completed"; score?: number }>();
+  for (const s of mySessionsData ?? []) {
+    const key = String(s.case_id);
+    const existing = stateByCase.get(key);
+    if (s.status === "active") {
+      stateByCase.set(key, { state: "in_progress" });
+    } else if (s.status === "complete" && existing?.state !== "in_progress") {
+      stateByCase.set(key, { state: "completed", score: scoresBySession.get(String(s.id)) });
+    }
+  }
+
   const dbCases = published ?? [];
-  // Merge seed cases (always available) with any DB cases.
+  // Merge seed cases (always available) with any DB cases. The card hook is
+  // the patient's OWN words; the summary is the non-diagnostic clinical line.
   const merged = [
     ...SEED_CASES.map((c) => ({
       id: "",
       title: c.title,
       difficulty: c.difficulty,
       summary: c.presentation,
+      hook: c.chief_complaint_in_own_words,
       source: "hand_built" as const,
+      state: "not_started" as const,
     })),
     ...dbCases
-      .map((c) => ({
-        id: c.id,
-        title: c.title,
-        difficulty: (c.case_data as { difficulty?: string })?.difficulty ?? "cooperative",
-        summary: (c.case_data as { presentation?: string })?.presentation ?? "",
-        source: ((c.case_data as { source?: string })?.source ?? "corpus") === "hand_built" ? ("hand_built" as const) : ("corpus" as const),
-      })),
+      .map((c) => {
+        const data = c.case_data as { difficulty?: string; presentation?: string; chief_complaint_in_own_words?: string; source?: string; identity?: { name?: string } };
+        return {
+          id: c.id,
+          title: c.title,
+          difficulty: data.difficulty ?? "cooperative",
+          summary: data.presentation ?? "",
+          hook: data.chief_complaint_in_own_words ?? "",
+          source: (data.source ?? "corpus") === "hand_built" ? ("hand_built" as const) : ("corpus" as const),
+          state: (stateByCase.get(c.id)?.state ?? "not_started") as "not_started" | "in_progress" | "completed",
+          score: stateByCase.get(c.id)?.score ?? null,
+        };
+      }),
   ];
 
   return (

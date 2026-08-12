@@ -15,7 +15,10 @@
 - **Weak-spots heatmap** — /practice/weak-spots: consistent gaps across sim debriefs, ranked with a drill-down tool per weak skill
 - **Sim debrief → passport** — completing a Consulting Room session credits the mapped competencies (source 'sim') with the score as evidence
 
-## Deferred this session (have migrations, no UI)
+## Deferred this session (v5 build, 2026-08-11)
+- **CFI Practice mode** (Decoder Mode 4) — the DSM-5 Cultural Formulation Interview drill
+- **MSE full rebuild levels** — five-level ladder + small-things checklist + MSE-from-own-transcript (confusable-pairs done)
+- **Voice (CosyVoice 2 + emotion mapping)** — needs the NVIDIA key; browser TTS is the zero-cost fallback
 - **Corpus fetchers for ICD-11 / mhGAP / NMHS / MHA 2017** — noted in reports as "scaffolds written" but the scripts are NOT in the repo; the PMC + Gutenberg corpus is what actually exists
 
 ## New ideas
@@ -25,3 +28,16 @@
 - Peer role-play skill-matching algorithm
 - Persist attempts from the other practice tools (judgment/MSE/OSCE/rounds/formulation) into competency_events, not just sim + supervision
 - Practice-tool attempt persistence (currently in-memory, not written to the attempt tables)
+- **A7 Dictate-as-conversation** — Dr. Sarthak talks, Whisper transcribes, an LLM interviewer fills the sim_case spec
+- **A5 queue auto-release label** on student-facing AI feedback (the triage side is built)
+
+## Completion-run ideas (2026-08-11, not built)
+- **Two-Minute Clinic expansion** — the retention feature needs 60+ prompts with idiom variants (low effort, high impact)
+- **Peer role-play skill-matching** — pair students on complementary weak spots (medium, high)
+- **Persist judgment/MSE/OSCE/formulation attempts to competency_events** — currently in-memory; wiring feeds the passport
+- **Scheduled module release via GitHub Actions cron** (A2 enable_at) — flags table has enable_at but no cron flips it yet
+- **`AI_STUDENT_TIER` + `R2_PUBLIC_URL`** — documented in .env.example but never read; wire or drop
+- **feature_flags migration file** — table + 17 seed rows exist only in the live DB; reproduce for a fresh project
+- **mhGAP/NMHS/POCSO/RCI manual downloads** — the fetchers point at them; NIMHANS/India-Code links need browser downloads
+- **Wall pinned Case of the Week UI** — is_pinned + reactions exist; a faculty flow to pin a case is missing
+- **Weekly check-in → pulse cross-reference** — activity drop + load spike detection is spec'd but not surfaced

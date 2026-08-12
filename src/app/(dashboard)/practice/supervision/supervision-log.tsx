@@ -34,6 +34,8 @@ export function SupervisionLog({
   const [supervisor, setSupervisor] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [competency, setCompetency] = React.useState("");
+  const [transferNote, setTransferNote] = React.useState("");
+  const [consentPromo, setConsentPromo] = React.useState(false);
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [requestingId, setRequestingId] = React.useState<string | null>(null);
@@ -81,6 +83,8 @@ export function SupervisionLog({
           supervisorName: supervisor.trim() || undefined,
           supervisorEmail: email.trim() || undefined,
           competencyKey: competency || undefined,
+          transferNote: transferNote.trim() || undefined,
+          consentPromo,
         }),
       });
       if (!res.ok) {
@@ -93,6 +97,7 @@ export function SupervisionLog({
       setSupervisor("");
       setEmail("");
       setCompetency("");
+      setTransferNote("");
       haptic("success");
       window.location.reload();
     } catch {
@@ -179,6 +184,27 @@ export function SupervisionLog({
             />
           </div>
         </div>
+        {/* A9 transfer loop — the outcome measure */}
+        <div className="rounded-md border border-border bg-secondary/30 p-3">
+          <p className="text-caption font-semibold text-muted-foreground">The transfer loop — this is your outcome measure</p>
+          <label htmlFor="transfer-note" className="mt-2 block text-caption font-medium text-muted-foreground">
+            What did you try that you practised here — and what happened?
+          </label>
+          <textarea
+            id="transfer-note"
+            value={transferNote}
+            onChange={(e) => setTransferNote(e.target.value)}
+            rows={2}
+            maxLength={2000}
+            placeholder="e.g. I used the open-question funnel from the Decoder in a real intake. The client opened up about the debt within two questions."
+            className="mt-1 w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          />
+          <label className="mt-2 flex items-start gap-2 text-caption text-muted-foreground">
+            <input type="checkbox" checked={consentPromo} onChange={(e) => setConsentPromo(e.target.checked)} className="mt-0.5" />
+            I consent to my transfer note being used anonymised in course materials (this is also the best marketing we will ever have).
+          </label>
+        </div>
+
         {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
         <button
           type="submit"

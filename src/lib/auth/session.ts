@@ -8,7 +8,7 @@ export const SESSION_COOKIE = "plms_session";
 export type Profile = {
   id: string;
   email: string | null;
-  role: "admin" | "student";
+  role: "admin" | "student" | "alumni";
   active_session_token: string | null;
   expires_at: string | null;
 };
@@ -19,8 +19,10 @@ export type SessionResult =
   | { status: "expired" }
   | { status: "session_replaced" };
 
-function isExpired(expiresAt: string | null): boolean {
+function isExpired(expiresAt: string | null, role?: string): boolean {
   if (!expiresAt) return false; // no expiry set = doesn't expire
+  // Alumni keep permanent read-only access (A10).
+  if (role === "alumni") return false;
   return new Date(expiresAt).getTime() <= Date.now();
 }
 
@@ -57,7 +59,7 @@ export const getSession = cache(async (): Promise<SessionResult> => {
     return { status: "unauthenticated" };
   }
 
-  if (isExpired(profile.expires_at)) {
+  if (isExpired(profile.expires_at, profile.role)) {
     await supabase.auth.signOut();
     return { status: "expired" };
   }

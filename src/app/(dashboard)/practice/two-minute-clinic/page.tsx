@@ -1,4 +1,5 @@
 import { TwoMinuteClinic } from "./clinic";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -7,7 +8,8 @@ export const dynamic = "force-dynamic";
  * type a differential + next question, instant expert comparison.
  * The retention feature — opening the app costs nothing.
  */
-export default function TwoMinuteClinicPage() {
+export default async function TwoMinuteClinicPage() {
+  await requireFeature("two_minute_clinic");
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <p className="text-eyebrow text-muted-foreground">Micro-drill</p>

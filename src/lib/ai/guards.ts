@@ -71,6 +71,11 @@ export function guardStudentCall(workload: Workload, opts: AiGuardOptions = {}):
   if (opts.dailyCap <= 0) throw new AiGuardError("daily AI budget exceeded");
   if (opts.sessionCap <= 0) throw new AiGuardError("session AI budget exceeded");
   const studentData = workloadHasStudentData(workload);
+  // AI_STUDENT_TIER: "no_train_only" (default) = student-data workloads demand
+  // a trainsOnData===false provider. "any" is a DEV-ONLY override that lets a
+  // free tier serve student data — never set it in production; the router's
+  // assertProviderAllowed still applies per-call.
+  if (process.env.AI_STUDENT_TIER === "any") return;
   if (studentData && !canServe("chat", true)) {
     throw new AiGuardError(
       "no no-train AI provider is configured; this feature needs a paid key",

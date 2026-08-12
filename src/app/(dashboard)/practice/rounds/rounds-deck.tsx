@@ -3,15 +3,22 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { dailyQueue, newCardState, reviewCard, type CardRating, type CardState } from "@/lib/practice/rounds";
+import { ROUNDS_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
 /** Seed cards for the slice (real cards come from lesson transcripts → admin queue). */
-const SEED_CARDS = [
+type SeedCard = { front: string; back: string; type?: "flash" | "idiom" | "confusable" };
+
+const SEED_CARDS: SeedCard[] = [
   { front: "What are the two components of the Mental Healthcare Act 2017 that most affect your duty as a counsellor?", back: "Advance directives + nominated representative. Both mean you must document consent and respect the client's expressed wishes." },
   { front: "A client tells you they're 'fine' but can't sleep. What's the single best open question?", back: "'What does a bad night look like for you?' — it invites description, not a yes/no." },
   { front: "When is confidentiality absolute, and when is it breached?", back: "Absolute unless: imminent risk to self/others, child abuse (POCSO), or court order. Say the limits up front." },
   { front: "What does 'rolling with resistance' mean in motivational interviewing?", back: "Don't fight the client's resistance — reflect it, and let their own argument for change emerge." },
   { front: "Why is premature reassurance the #1 novice error in a first session?", back: "It closes exploration. The client stops testing whether you can hold their distress, and the real problem stays hidden." },
-  { front: "What's the difference between mood and affect?", back: "Mood is the sustained inner feeling the client reports; affect is the observable expression. A client can report depressed mood with flat affect — or cheerfully deny low mood while showing labile affect." },
+  { front: "What's the difference between mood and affect?", back: "Mood is the sustained inner feeling the client reports; affect is the observable expression. A client can report depressed mood with flat affect — or cheerfully deny low mood while showing labile affect.", type: "confusable" },
+  // --- v5 Part 1: Idiom-of-distress cards ---
+  { front: "What are the common medical differentials for a patient reporting 'kamzori' (weakness)?", back: "Anaemia, nutritional deficiency (B12), chronic disease (TB, diabetes, thyroid), or dhat-associated distress in young men.", type: "idiom" },
+  { front: "A patient says 'dil ghabrata hai' (heart flutters). Why shouldn't you assume it's anxiety?", back: "The heart is the Indian seat of emotion — it is as likely to be grief or arrhythmia as it is to be a panic attack. Check the physical first.", type: "idiom" },
+  { front: "What does 'not feeling fresh' usually mean in common Indian English?", back: "Often describes incomplete bowel evacuation (constipation). If you write 'low mood' and move on, you've missed the clinical picture.", type: "idiom" },
 ];
 
 export function RoundsDeck() {
@@ -34,6 +41,8 @@ export function RoundsDeck() {
     setShowBack(false);
     if (idx + 1 >= queue.length) {
       setDone(true);
+      // Credit the completed daily session into the Skills Passport.
+      void recordCompetencyEvent("rounds", ROUNDS_COMPETENCY_KEYS, 4, `${queue.length} cards reviewed`).catch(() => {});
       haptic("success");
     } else {
       setIdx(idx + 1);
@@ -71,6 +80,11 @@ export function RoundsDeck() {
       </div>
 
       <div className="min-h-[200px] rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
+        {seed.type ? (
+          <p className="mb-2 inline-block rounded-full border border-border px-2 py-0.5 text-caption font-semibold text-muted-foreground">
+            {seed.type === "idiom" ? "🔤 Idiom of distress" : seed.type === "confusable" ? "⚖️ Confusable pair" : "Flash"}
+          </p>
+        ) : null}
         <p className="text-base font-medium">{seed.front}</p>
         {showBack ? (
           <p className="mt-4 rounded-md border border-border bg-secondary/60 p-3 text-small">{seed.back}</p>

@@ -7,7 +7,8 @@ import type { NavItem } from "@/components/navigation/nav-items";
  * across that boundary.
  */
 export const STUDENT_ITEMS: NavItem[] = [
-  { href: "/dashboard", label: "My Courses", icon: "layoutDashboard", exact: true },
+  { href: "/today", label: "Today", icon: "layoutDashboard", exact: true },
+  { href: "/dashboard", label: "My Courses", icon: "bookOpen", exact: true },
   { href: "/tools/psychopharm", label: "Tools", icon: "pill", exact: true },
   { href: "/practice", label: "Practice", icon: "stethoscope", exact: true },
   { href: "/reflect", label: "Journal", icon: "notebook", exact: true },
@@ -23,7 +24,14 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/psychopharm-review", label: "Medication library", icon: "pill" },
   { href: "/admin/corpus/dictate", label: "Dictate case", icon: "mic" },
   { href: "/admin/sim-review", label: "Sim sessions", icon: "stethoscope" },
+  { href: "/admin/triage", label: "Review triage", icon: "inbox" },
   { href: "/admin/checkins", label: "Check-ins", icon: "heartPulse" },
   { href: "/admin/supervision", label: "Sign-offs", icon: "clipboardCheck" },
+  { href: "/admin/flags", label: "Feature flags", icon: "toggle" },
+  { href: "/admin/calibration", label: "Calibration", icon: "target" },
+  { href: "/admin/rights", label: "Rights", icon: "shieldCheck" },
+  { href: "/admin/wall-reports", label: "Wall reports", icon: "flag" },
+  { href: "/admin/modules", label: "Modules", icon: "layers" },
+  { href: "/admin/pulse", label: "Cohort pulse", icon: "heartPulse" },
   { href: "/admin/infra", label: "Infrastructure", icon: "gauge" },
 ];

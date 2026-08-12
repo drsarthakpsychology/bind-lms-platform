@@ -1,6 +1,9 @@
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/server";
+import { analyzeWeakSpots, type WeakSpot } from "@/lib/practice/weak-spots";
 import { RolePlayLobby } from "./role-play-lobby";
 import { RolePlayRoom } from "./role-play-room";
+import { requireFeature } from "@/lib/flags";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +16,7 @@ export const dynamic = "force-dynamic";
 export default async function RolePlayPage(props: {
   searchParams: Promise<{ session?: string }>;
 }) {
+  await requireFeature("peer_roleplay");
   const sp = await props.searchParams;
   const supabase = await createClient();
   const {
@@ -41,6 +45,57 @@ export default async function RolePlayPage(props: {
   const myRole = (s: { student_a: string; role_a: string }) =>
     s.student_a === user.id ? s.role_a : s.role_a === "patient" ? "clinician" : "patient";
 
+  // Skill-matching (IDEAS: peer role-play skill-matching): find a peer whose
+  // weaknesses complement the caller's — their strong domain covers my gap.
+  const admin = createAdminClient();
+  const { data: myScores } = await admin
+    .from("sim_scores")
+    .select("user_id, rubric")
+    .eq("user_id", user.id)
+    .limit(10);
+  const mySpots = analyzeWeakSpots((myScores ?? []).map((s) => (s.rubric ?? {}) as Record<string, unknown>));
+  const myTopGap = mySpots[0]?.key ?? null;
+
+  let recommendedPeer: { email: string; reason: string } | null = null;
+  if (myTopGap) {
+    // Every OTHER student's weak spots (their top gap is my complement target).
+    const { data: allScores } = await admin
+      .from("sim_scores")
+      .select("user_id, rubric")
+      .neq("user_id", user.id)
+      .limit(200);
+    const byUser = new Map<string, Array<Record<string, unknown>>>();
+    for (const s of allScores ?? []) {
+      const list = byUser.get(s.user_id) ?? [];
+      list.push((s.rubric ?? {}) as Record<string, unknown>);
+      byUser.set(s.user_id, list);
+    }
+    // A peer who does NOT share my top gap is the complement (they likely
+    // have it strong); among them, the one with the most sessions.
+    const candidates: Array<{ userId: string; sessions: number; gaps: WeakSpot[] }> = [];
+    for (const [uid, rubrics] of byUser) {
+      const gaps = analyzeWeakSpots(rubrics);
+      if (!gaps.some((g) => g.key === myTopGap)) {
+        candidates.push({ userId: uid, sessions: rubrics.length, gaps });
+      }
+    }
+    candidates.sort((a, b) => b.sessions - a.sessions);
+    const best = candidates[0];
+    if (best) {
+      const { data: peerProfile } = await admin
+        .from("profiles")
+        .select("email")
+        .eq("id", best.userId)
+        .maybeSingle();
+      if (peerProfile) {
+        recommendedPeer = {
+          email: String(peerProfile.email),
+          reason: `Their sessions show strength where you miss most (${mySpots[0].label.toLowerCase()}) — a practice pair that teaches both of you.`,
+        };
+      }
+    }
+  }
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <p className="text-eyebrow text-muted-foreground">Peer role-play</p>
@@ -66,6 +121,7 @@ export default async function RolePlayPage(props: {
               status: s.status as string,
               createdAt: s.created_at,
             }))}
+            recommendedPeer={recommendedPeer}
           />
         )}
       </div>

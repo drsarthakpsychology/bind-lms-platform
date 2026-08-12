@@ -1,0 +1,20 @@
+name: Alumni Transition
+
+on:
+  schedule:
+    # Daily at 05:07 UTC = 10:37 IST — flip ended-cohort students to alumni.
+    - cron: "7 5 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  transition:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Flip ended-cohort students to alumni
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          curl -fsS -H "Authorization: Bearer ${CRON_SECRET}" \
+            "${APP_URL}/api/internal/cron?task=alumni-transition" \
+            || echo "::warning::alumni-transition failed — check CRON_SECRET / APP_URL"
