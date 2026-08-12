@@ -1,3 +1,21 @@
+## 2026-08-12 (verify pass #2 — the gate is genuinely green now)
+
+Verify checklist (the hook's, done for real):
+1. Files verified on disk: 19/19 claimed files exist (70 character voices,
+   35 sim/corpus tests, docs). Content counts re-checked.
+2. Full gate BEFORE this pass: lint was NOT green — 156 errors, all inside
+   supabase/.temp/... (a gitignored, locally generated edge-runtime bundle).
+   eslint.config.mjs now ignores supabase/.temp/** (commit a1eba38). The
+   gate after: 0 lint errors (4 pre-existing warnings in MSE files), tsc
+   clean, 309 tests green, build green, e2e (mobile-380 + pages-smoke) 5/5.
+3. Everything committed; working tree clean.
+4. NIGHT_LOG updated with this pass.
+5. QUEUE.md: 0 open items. NEEDS_KAVYA: the drop-folder activation holds.
+- Verify decision: the lint gate was quietly false before — 156 errors in a
+  non-source generated file. Fixed at the config, not by editing the
+  bundle. Reversal path: remove the one ignore line if CI ever wants the
+  bundle linted (it won't — it's not source).
+
 ## 2026-08-12 (verify pass — the hook's checklist, done)
 
 1. Files verified on disk: all 19 claimed files exist with the claimed
