@@ -1,3 +1,22 @@
+## 2026-08-12 (beastmode round 1 — the consulting room, the UI, the missing features)
+
+### Shipped (commits 5c9de47 → b030e07)
+- **Bug 1 root-caused at the data layer**: no AI keys + AI_ENABLED unset → the shared fixture bank served Ravi's lines to every patient; Suresh's stored turns proved it. Rebuilt fixture mode as a deterministic case-aware engine: authored few_shot openings + per-case fixture_lines (6/case, all 8 authored) + per-case variation schemas + seeded humidity; session route now writes the patient's OWN opening as turn 1 with state; turn route seeds per session (was fixed 1). 16 regression tests green.
+- **Bug 2**: duplicate replies = old bank repeating lines AND client reveal re-pushing on a second send mid-reveal. Fixed append-once/update-by-id + unique (session_id,role,content) constraint (27 dup rows pruned) + 3 tests.
+- **Bug 3**: audited — per-id state already correct; added 4-test regression.
+- **Bug 4**: 12/18 feature_flags were off (the 'ship six' scope cut); enabled all 18 for Cohort One; VISIBILITY.md written; '0 of 1 lessons' is truthful (1 lesson exists) → QUEUE.
+- **UI**: patient header, speaker distinction, quiet timer, turn counter, typing dots, live voice waveform, anchored composer; case picker grouped by difficulty with hook-first cards + real per-case state; dead 'Reviewed' chip gone.
+- **Security**: *_visible views recreated as SECURITY INVOKER (advisor lints gone).
+- **Sweep**: full e2e green (weak-spots drill flow fixed via data-testid; roleplay landing wait widened); 380px mobile spec added and passing; BUGS.md rows 21-27.
+
+### Decisions made and why (one line each)
+- Enabled all 18 flags instead of keeping 6: the tools are built and verified; hiding them was the bug Kavya reported.
+- Authored 6 fixture_lines per case by hand rather than a generator: the voice IS the case; a generator would re-import the same genericness.
+- Kept the live Director/Actor model path untouched: the fixture engine is the no-key stand-in; when keys arrive the real models take over.
+- Deleted legacy duplicate rows: verified zero legitimate collisions first (every dup shared identical state).
+
+### State
+291 unit tests · full e2e 31 passed · lint clean · tsc clean · build green · 8 commits this round.
 # NIGHT LOG — Lumen Practice Layer v2
 
 Reverse-chron. One entry per slice: what shipped, decisions, commit hash.
