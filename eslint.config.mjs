@@ -21,6 +21,9 @@ const eslintConfig = defineConfig([
     ".claude/skills/**",
     // Local git worktrees (never linted in CI, but present locally).
     ".claude/worktrees/**",
+    // Local Supabase generated state (gitignored; a generated edge-runtime
+    // bundle sits here and is not source code).
+    "supabase/.temp/**",
   ]),
 ]);
 
