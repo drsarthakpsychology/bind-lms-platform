@@ -1,5 +1,5 @@
 import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { SEED_CASES } from "@/lib/psychopharm/sim/cases";
+
 import { CasePicker } from "./case-picker";
 import { SimulationBadge } from "./simulation-badge";
 
@@ -56,33 +56,24 @@ export default async function ConsultingRoomPage() {
   }
 
   const dbCases = published ?? [];
-  // Merge seed cases (always available) with any DB cases. The card hook is
-  // the patient's OWN words; the summary is the non-diagnostic clinical line.
-  const merged = [
-    ...SEED_CASES.map((c) => ({
-      id: "",
+  // The DB is the source of truth (the authored character bank + the 8
+  // clinical cases are all published/approved rows). The static SEED_CASES
+  // merge is gone — it duplicated every title (once id="" from the seed,
+  // once from the row). The card hook is the patient's OWN words; the
+  // summary is the non-diagnostic clinical line.
+  const merged = dbCases.map((c) => {
+    const data = c.case_data as { difficulty?: string; presentation?: string; chief_complaint_in_own_words?: string; source?: string; identity?: { name?: string } };
+    return {
+      id: c.id,
       title: c.title,
-      difficulty: c.difficulty,
-      summary: c.presentation,
-      hook: c.chief_complaint_in_own_words,
-      source: "hand_built" as const,
-      state: "not_started" as const,
-    })),
-    ...dbCases
-      .map((c) => {
-        const data = c.case_data as { difficulty?: string; presentation?: string; chief_complaint_in_own_words?: string; source?: string; identity?: { name?: string } };
-        return {
-          id: c.id,
-          title: c.title,
-          difficulty: data.difficulty ?? "cooperative",
-          summary: data.presentation ?? "",
-          hook: data.chief_complaint_in_own_words ?? "",
-          source: (data.source ?? "corpus") === "hand_built" ? ("hand_built" as const) : ("corpus" as const),
-          state: (stateByCase.get(c.id)?.state ?? "not_started") as "not_started" | "in_progress" | "completed",
-          score: stateByCase.get(c.id)?.score ?? null,
-        };
-      }),
-  ];
+      difficulty: data.difficulty ?? "cooperative",
+      summary: data.presentation ?? "",
+      hook: data.chief_complaint_in_own_words ?? "",
+      source: (data.source ?? "corpus") === "hand_built" ? ("hand_built" as const) : ("corpus" as const),
+      state: (stateByCase.get(c.id)?.state ?? "not_started") as "not_started" | "in_progress" | "completed",
+      score: stateByCase.get(c.id)?.score ?? null,
+    };
+  });
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
