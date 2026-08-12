@@ -49,6 +49,13 @@
 
 ## 2026-08-12 (continuation #18 — the last real gap closed)
 
+### Content Volume — Two-Minute Clinic expanded to 138 prompts
+- Added 20 new clinic prompts (commit 2bbc0d4)
+- New coverage: somatic idioms (pet mein jalan, dil mein dard, pet saaf nahi hota, kaan mein awaz aati hai), cultural idioms, Charles Bonnet syndrome, auditory pareidolia, primary progressive aphasia, laxative abuse/anorexia variant, NSSI "to feel something", gender dysphoria in adolescent, illness anxiety in pregnancy, depression masked as "not smart enough"
+- Trap distribution maintained: all 16 traps still represented; new items fill somatic_mask, cultural_idiom, medical_mimic, under_diagnosis, over_diagnosis, iatrogenic, diagnostic_overshadowing, adherence_fiction
+- Tests pass: 138 prompts, 4/4 clinic tests green
+- Full suite: 330 tests pass, lint clean (warnings only), tsc clean, build green
+
 - **62 characters now LIVE on the picker** (commit b34a6da): the upsert
   script imports all three banks (Tier 2 archetypes + Tier 3 regional +
   Tier 4 rare) — one run: 47 inserted, 15 updated, 0 errors. Live DB
