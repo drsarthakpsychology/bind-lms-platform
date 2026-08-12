@@ -1,3 +1,12 @@
+## 2026-08-12 (beastmode continuation #3b — characters LIVE)
+
+- **Upsert script** (scripts/upsert-characters.ts): CHARACTER_SKELETONS →
+  sim_cases, published + approved, source=hand_built (check constraint).
+  Ran for real: **15 inserted, 23 patients now live on the picker** (8
+  clinical + 15 character bank). Commit d65d378.
+- Decision: order swap — the upsert before Tier 3 volume, because the live
+  value this hour is students meeting the existing 23, not more files.
+
 ## 2026-08-12 (beastmode continuation #3 — Tier-2 character bank)
 
 - **Tier-2 bank complete**: 15 archetype skeletons with full authored voices
