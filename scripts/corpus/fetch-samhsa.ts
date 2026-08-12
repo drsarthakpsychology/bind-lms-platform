@@ -122,7 +122,7 @@ async function fetchPepUrl(tip: Tip): Promise<{ bytes: Buffer; source: string; e
 
 async function main() {
   let fetched = 0;
-  let failed: string[] = [];
+  const failed: string[] = [];
   for (const tip of TIPS) {
     const cachedPdf = join(RAW, `${tip.slug}.pdf`);
     const cachedTxt = join(RAW, `${tip.slug}.txt`);

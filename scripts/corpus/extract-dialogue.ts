@@ -130,9 +130,6 @@ function classify(text: string, role: "counsellor" | "client"): ExchangeTurn["mo
 // Turn detection
 // ---------------------------------------------------------------------------
 
-const CLINICIAN_LABELS = /^(counsellor|counselor|therapist|clinician|counselor:|c:|t:|th:|p:|d:|dr\.?\s+\w+|i:|interviewer|facilitator|provider|social worker|nurse|physician|doctor|leader|moderator|staff)\b/i;
-const CLIENT_LABELS = /^(client|patient|consumer|p:|c:|pt:|student|member|woman|man|mother|father|daughter|son|wife|husband|young man|young woman|joe|maria|juan|tom|susan|ann|bob|mary|john|david|jane|robert|sandra|jose|linda)\b/i;
-
 function roleOfLabel(label: string): "counsellor" | "client" | "unknown" {
   const l = label.trim().toLowerCase();
   if (/(counsellor|counselor|therapist|clinician|interviewer|facilitator|provider|worker|nurse|physician|doctor|leader|moderator|staff|t\b|th\b|d\b|i\b)/.test(l)) return "counsellor";
@@ -377,7 +374,7 @@ function main() {
   const out: ExchangeRecord[] = [];
   const perSource = new Map<string, number>();
   for (const s of sources) {
-    let n = perSource.get(s.source) ?? 0;
+    const n = perSource.get(s.source) ?? 0;
     const recs = extractExchanges(s.text, s.source, n);
     perSource.set(s.source, n + recs.length);
     out.push(...recs);
