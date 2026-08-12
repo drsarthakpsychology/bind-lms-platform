@@ -1,3 +1,52 @@
+## 2026-08-12 (beastmode phase 1 — content engine round 1)
+
+### Bugs fixed (all committed)
+- Bug 1: stage directions are BEHAVIOUR, never text — delivery.ts parses
+  the closed marker set into cues; sim_turns.delivery jsonb; the reveal
+  scheduler HOLDS on each cue; Actor prompt specifies the allowed markers.
+  (effbd40)
+- Bug 2: conversation history — the route passed a LITERAL [] as history.
+  Now loads the last 10 turns, threads them into both engines + the
+  Director prompt, and the dangling-thread rule makes a picked-up thread
+  an EARNED disclosure. (2689083)
+- Bug 3: fixture honesty — the amber "Offline mode — canned responses"
+  banner renders in fixture mode; every fixture turn logs provider=fixture
+  + status=fixture_fallback; resistant Suresh never produces the
+  cooperative canned line (tested). (362077e)
+- Bug 4: hint bar opt-in — "Need a hint?" collapsed by default; opening is
+  flagged and surfaced honestly in the debrief. (362077e + c7b440a)
+
+### Voice pipeline
+- TTS provider chain: Qwen3-TTS primary → Chatterbox (quality, native
+  affect tags) → CosyVoice2 → Kokoro (CPU) → fixture, cache-first in R2.
+  (d680cdb)
+- Voice casting: deterministic en-IN + region + gender + age per case. (60fefaa)
+- SETUP_NEEDED.md — the single-sitting checklist; TTS answer: Kokoro runs
+  on the Mac today; Qwen3 via SiliconFlow near-free; Anthropic is the one
+  paid key that unlocks the live lane. (60fefaa)
+
+### Content engine (subagents died to API credits — recovered their partial
+### work inline, fixed the types, ran the generators)
+- Story cases: 8 authored archetypes (3 clear/3 blurred/2 holmes) with the
+  nine-beat spine, drama map, want≠need, contradictions with causes, the
+  Lonazep provenance Holmes case. Generator validates + emits; 5 tests.
+  (8500034)
+- Free corpus: SAMHSA fetcher + 5,354 typed counsellor–client exchanges;
+  the EMPIRICAL move-transition table (open → disclosure 94% of 2,864
+  pairs); PMC case-report extractor (10 records with what_was_missed fields).
+  (8500034, 622773f, fb9b549)
+
+### Decisions and why (one line each)
+- Recovered the agents' partial work inline instead of retrying the
+  credit-blocked agent lane — the work was on disk and type-fixable.
+- Fixed the move-transition percentage to a real 0-1 fraction over all
+  responses — the empirical table is the product's most defensible asset.
+- Kept the Lonazep line edit minimal (added the explicit disproof to one
+  spoken line) so the generator's own validation now passes.
+
+### State
+327 tests · lint 0/0 · tsc clean · build green · 10 commits this round.
+
 ## 2026-08-12 (continuation #18 — the last real gap closed)
 
 - **62 characters now LIVE on the picker** (commit b34a6da): the upsert
@@ -500,3 +549,5 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-12T10:46:05 Queue exhausted — allowing normal Claude stop.
 2026-08-12T10:46:16 Queue exhausted — allowing normal Claude stop.
 2026-08-12T10:49:12 Queue exhausted — allowing normal Claude stop.
+2026-08-12T10:51:54 Queue exhausted — allowing normal Claude stop.
+2026-08-12T12:04:10 Queue exhausted — allowing normal Claude stop.
