@@ -6,6 +6,7 @@
  */
 
 import type { QuizItem } from "./quiz";
+import { PHASE1_QUIZ_ITEMS } from "./phase1-bank";
 
 export const QUIZ_BANK: QuizItem[] = [
   // ---- Order-the-steps: risk assessment / intake sequence ----
@@ -1109,3 +1110,7 @@ export const QUIZ_BANK: QuizItem[] = [
     source: "Integrated-care guidance; RCI scope",
   },
 ];
+
+// Phase 1 §3 — the new-type bank (decode_idiom, whats_missing,
+// predict_consequence, confidence_mcq, unpopular_right + restraint set).
+QUIZ_BANK.push(...PHASE1_QUIZ_ITEMS);

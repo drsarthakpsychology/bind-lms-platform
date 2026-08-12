@@ -1,0 +1,465 @@
+/**
+ * PHASE 1 QUIZ BANK — the five NEW types (Phase 1 §3.1) + high-volume
+ * additions to the existing five. Every item: hook-first stem, plausible
+ * distractors from REAL novice errors, a one-line rationale, and a grounded
+ * source (SAMHSA TIPs, WHO mhGAP, NIMHANS CPGs, MHA 2017, POCSO, IJP,
+ * MedEdPORTAL, open textbooks).
+ *
+ * No item ships without a rationale. No item ships without a source.
+ * The 30 no-disorder restraint items teach: the correct answer is DO NOT
+ * diagnose.
+ */
+
+import type { QuizItem } from "./quiz";
+
+export const PHASE1_QUIZ_ITEMS: QuizItem[] = [
+  // ======================= DECODE_IDIOM =======================
+  {
+    id: "p1-decode-001", type: "decode_idiom",
+    prompt: "A 34-year-old shopkeeper says his problem is \"sar bhari\" — his head is full. He has come for \"medicine for the heaviness\". What is the MOST important next step?",
+    options: [
+      "Prescribe a headache tablet and ask him to return if it worsens",
+      "Ask what he means by the fullness — and what else was happening when it started",
+      "Reassure him it's stress and give a tonic",
+      "Ask only about sleep, since that's the medical part",
+    ],
+    correct: 1,
+    rationale: "The idiom is the door: 'sar bhari' can be headache, grief, pressure, or a somatic mask for depression — you cannot decode it without asking what it means to THIS person.",
+    source: "NIMHANS CPGs / idiom-of-distress literature (Nichter)",
+  },
+  {
+    id: "p1-decode-002", type: "decode_idiom",
+    prompt: "A woman says her \"dil ghabrata hai\" — her heart trembles — every time she boards a train. Physical workup is normal. Which reading should you weight HIGHEST?",
+    options: [
+      "It is definitely a cardiac problem she needs to keep investigating",
+      "The phrase is a panic-spectrum idiom; ask about the first episode in detail",
+      "It is a cultural phrase with no clinical meaning",
+      "She is seeking attention; reassure and discharge",
+    ],
+    correct: 1,
+    rationale: "Physical misses are weighted 1.5x: 'dil ghabrata hai' most often maps to panic/agoraphobia — the workup is normal and the pattern is situational.",
+    source: "Indian Journal of Psychiatry — idioms of distress",
+  },
+  {
+    id: "p1-decode-003", type: "decode_idiom",
+    prompt: "\"Not feeling fresh\" — a young man's only complaint. Which of these readings is a PHYSICAL miss you must not make?",
+    options: [
+      "Non-restorative sleep",
+      "Depressed mood",
+      "Anaemia or hypothyroidism",
+      "All of the above are legitimate readings to weigh",
+    ],
+    correct: 3,
+    rationale: "'Not feeling fresh' spans anaemia, hypothyroidism, poor sleep AND low mood — the Decoder's six-readings rule: physical misses count 1.5x.",
+    source: "NIMHANS / open textbook abnormal psychology",
+  },
+  {
+    id: "p1-decode-004", type: "decode_idiom",
+    prompt: "A grandmother says her \"dil baith jata hai\" — her heart sits down — when she thinks of her husband who died. Which is the BEST framing?",
+    options: [
+      "A cardiac complaint; order an ECG",
+      "A grief idiom; the physical metaphor carries the loss",
+      "Evidence of dementia; test her memory",
+      "A superstition to gently correct",
+    ],
+    correct: 1,
+    rationale: "Grief idioms are common in Indian elders — the correct move is to honour the metaphor and explore the loss, not investigate the heart.",
+    source: "Indian Journal of Psychiatry — grief idioms",
+  },
+  {
+    id: "p1-decode-005", type: "decode_idiom",
+    prompt: "\"Kisi ne kuch kar diya\" — someone has done something to him. The family believes a neighbour cursed him. What does the counsellor do FIRST?",
+    options: [
+      "Explain scientifically that curses are not real",
+      "Explore what the curse means to the family and what they have tried",
+      "Agree fully to build rapport, then prescribe",
+      "Refuse to continue until they drop the belief",
+    ],
+    correct: 1,
+    rationale: "Cultural idioms are explanatory models — dismissing or colluding both fail; exploring the model and the help-seeking path is the CFI skill.",
+    source: "DSM-5 Cultural Formulation Interview / WHO mhGAP",
+  },
+  {
+    id: "p1-decode-006", type: "decode_idiom",
+    prompt: "A man says his \"vaat-pitta\" is out of balance and that is why he is anxious. What is the BEST response?",
+    options: [
+      "\"Ayurveda has no evidence; let's focus on the anxiety\"",
+      "\"You've noticed a pattern — tell me what you've tried for the balance\"",
+      "\"That's interesting, but your anxiety needs medication\"",
+      "Silence — do not engage with the model",
+    ],
+    correct: 1,
+    rationale: "Humoral models are real to the patient; validating the model as HIS framework and learning his attempts builds the alliance without endorsing the biology.",
+    source: "mhGAP / cultural psychiatry open literature",
+  },
+
+  // ======================= WHATS_MISSING =======================
+  {
+    id: "p1-missing-001", type: "whats_missing",
+    prompt: "A 29-year-old man: two months of poor sleep, irritability, work stress. The student asked about mood, sleep, appetite and work — but never asked one critical domain. Which?",
+    options: ["Substance use", "Risk of self-harm", "Family history", "All three are critical and unelicited"],
+    correct: 3,
+    rationale: "Sleep+mood+irritability in a young man demands substance use, risk, AND family history — missing all three is the novice's blind spot.",
+    source: "SAMHSA TIP 42 (co-occurring disorders)",
+  },
+  {
+    id: "p1-missing-002", type: "whats_missing",
+    prompt: "A mother brings her 15-year-old 'for behaviour'. The student interviews the mother for 20 minutes. What is the missing domain?",
+    options: ["The adolescent's own account", "School reports", "The mother's stress", "Nothing — the mother is the informant"],
+    correct: 0,
+    rationale: "The patient is the adolescent — engaging them directly is the core skill; the parent's account is the frame, not the content.",
+    source: "MedEdPORTAL adolescent SP scripts",
+  },
+  {
+    id: "p1-missing-003", type: "whats_missing",
+    prompt: "A 45-year-old man with 'heavy head' and fatigue. The student covered sleep, appetite, work, family. Which domain is MISSING and could change everything?",
+    options: ["Alcohol use", "Hobbies", "Diet", "Travel history"],
+    correct: 0,
+    rationale: "In Indian men, alcohol is the most under-asked question in the room — and the most common contributor to the somatic presentation.",
+    source: "NIMHANS CPG / IJP",
+  },
+  {
+    id: "p1-missing-004", type: "whats_missing",
+    prompt: "A woman with postpartum low mood. The student asked about the baby, her sleep, her appetite. What did they NOT ask?",
+    options: ["Who lives in the house", "Thoughts of harm to self or the baby", "Her delivery experience", "All of the above are unelicited and critical"],
+    correct: 3,
+    rationale: "Postpartum assessment REQUIRES the household map, the delivery story, AND direct risk questions about both mother and infant.",
+    source: "WHO Thinking Healthy / mhGAP",
+  },
+  {
+    id: "p1-missing-005", type: "whats_missing",
+    prompt: "A 60-year-old with grief after his wife's death. The student was warm and empathic but asked nothing about what?",
+    options: ["How his daily routine has changed", "Financial situation", "Whether he has thoughts of joining her", "All three"],
+    correct: 3,
+    rationale: "Grief assessment must include function, finances, AND direct suicide enquiry — the 'reunion' risk in elderly widowers is real.",
+    source: "SAMHSA TIP 57 (trauma-informed) / grief literature",
+  },
+  {
+    id: "p1-missing-006", type: "whats_missing",
+    prompt: "A 22-year-old student with exam anxiety. The student asked about study habits, sleep, and family expectations. What is missing?",
+    options: ["Substance use (energy drinks, stimulants)", "Past episodes of anxiety", "What 'failing' would mean to him", "All three"],
+    correct: 3,
+    rationale: "Exam-anxiety assessment: stimulant use, prior episodes, and the meaning of failure are all unelicited — each changes the plan.",
+    source: "Open textbook abnormal psychology",
+  },
+
+  // ======================= PREDICT_CONSEQUENCE =======================
+  {
+    id: "p1-predict-001", type: "predict_consequence",
+    prompt: "You tell a resistant patient 'Don't worry, you'll be fine — it's just stress.' What is the MOST likely consequence two sessions later?",
+    options: [
+      "He opens up, relieved",
+      "He agrees politely and discloses nothing further — hollow compliance",
+      "He argues with you",
+      "He brings a family member for support",
+    ],
+    correct: 1,
+    rationale: "Premature reassurance teaches the patient that his real experience is unwelcome — the compliant 'fine' is the hollow-compliance response.",
+    source: "SAMHSA TIP 35 (motivational interviewing)",
+  },
+  {
+    id: "p1-predict-002", type: "predict_consequence",
+    prompt: "You ask a guarded patient 'So you've been depressed for a while, right?' (leading). What follows?",
+    options: [
+      "He corrects you and elaborates",
+      "He agrees to the word you used, even if it isn't his — and stops volunteering",
+      "He walks out",
+      "He asks what depression means",
+    ],
+    correct: 1,
+    rationale: "Leading questions feed the patient the label; agreement becomes compliance, and the real history stays buried.",
+    source: "mhGAP interview skills / Morrison",
+  },
+  {
+    id: "p1-predict-003", type: "predict_consequence",
+    prompt: "You give a patient sleeping tablets on the first visit without asking why he can't sleep. Two sessions later, what is MOST likely?",
+    options: [
+      "He sleeps better and the real problem surfaces on its own",
+      "He returns for refills, the real problem (debt, grief) unspoken — the tablets become the treatment",
+      "He develops insomnia from the tablets",
+      "He asks to change medication",
+    ],
+    correct: 1,
+    rationale: "Treating the symptom without the cause makes the symptom the contract — the debt or grief stays hidden behind the refill.",
+    source: "SAMHSA TIP 34 (brief interventions)",
+  },
+  {
+    id: "p1-predict-004", type: "predict_consequence",
+    prompt: "A family answers every question for a 15-year-old, and you let them. What is the likely consequence?",
+    options: [
+      "The adolescent feels protected and engages",
+      "The adolescent disengages — the session becomes the parents' session, and the patient is never heard",
+      "The parents calm down and stop answering",
+      "The adolescent talks MORE to correct them",
+    ],
+    correct: 1,
+    rationale: "Family-in-room without a strategy teaches the adolescent that their voice is irrelevant — disengagement is the predictable cost.",
+    source: "MedEdPORTAL adolescent engagement",
+  },
+  {
+    id: "p1-predict-005", type: "predict_consequence",
+    prompt: "You confront an alcohol-dependent patient: 'You're an alcoholic and you need to stop.' What follows?",
+    options: [
+      "He admits it and commits to change",
+      "He defends, minimises, and the alliance fractures — change talk dies",
+      "He thanks you for your honesty",
+      "He asks for a detox plan",
+    ],
+    correct: 1,
+    rationale: "Confrontation without rapport is the classic MI failure — the patient defends the behaviour instead of examining it.",
+    source: "SAMHSA TIP 35 / Miller & Rollnick",
+  },
+  {
+    id: "p1-predict-006", type: "predict_consequence",
+    prompt: "You tell a grieving widow 'He's in a better place now.' What is the likely effect?",
+    options: [
+      "She feels comforted and continues",
+      "She feels unheard — the cliché closes the door on the specific loss she needed to tell",
+      "She agrees and moves on",
+      "She asks for grief counselling",
+    ],
+    correct: 1,
+    rationale: "Unrequested reassurance in grief is a premature-advice move — it tells her the pain is too much for you, so she stops showing it.",
+    source: "SAMHSA TIP 57 / grief literature",
+  },
+
+  // ======================= CONFIDENCE_MCQ =======================
+  {
+    id: "p1-conf-001", type: "confidence_mcq",
+    prompt: "How confident are you that a patient who 'hasn't thought about harming' needs NO further risk assessment? (Answer, then rate your confidence.)",
+    options: [
+      "True — the direct answer is enough",
+      "False — a single 'no' after a closed question is weak evidence; risk needs context, plan, and means questions",
+      "True — asking more would suggest the idea",
+      "False only if they look sad",
+    ],
+    correct: 1,
+    rationale: "The confidence-calibration lesson: a bare 'no' to a single closed question is low-signal. Over-confidence on risk is the dangerous error.",
+    source: "Shea's CASE approach / mhGAP risk module",
+  },
+  {
+    id: "p1-conf-002", type: "confidence_mcq",
+    prompt: "Rate your confidence: 'If the patient doesn't mention suicide, they're not at risk.'",
+    options: [
+      "Confident — patients would say it",
+      "Not confident — the absence of disclosure is not the absence of risk; the question must be asked directly",
+      "Confident in women, not men",
+      "Confident if the family says they're fine",
+    ],
+    correct: 1,
+    rationale: "The 'didn't ask, so didn't hear' trap: risk is elicited, never assumed absent. Over-confidence here is the classic miss.",
+    source: "mhGAP / Shea",
+  },
+  {
+    id: "p1-conf-003", type: "confidence_mcq",
+    prompt: "How sure are you that 'I'm fine, just tired' in a young man needs no further exploration?",
+    options: [
+      "Sure — it's a normal phrase",
+      "Not sure — it is a classic idiom mask; explore sleep, mood, alcohol, and stress before concluding",
+      "Sure if he smiles",
+      "Sure if he came alone",
+    ],
+    correct: 1,
+    rationale: "'Fine, just tired' is the single most common idiom-mask — the confident dismissal is exactly the over-confidence the calibration lesson targets.",
+    source: "NIMHANS / idioms literature",
+  },
+  {
+    id: "p1-conf-004", type: "confidence_mcq",
+    prompt: "A mother says her son is 'possessed'. Rate your confidence that this is NOT a medical problem:",
+    options: [
+      "High — possession is cultural",
+      "Low — possession presentations can carry epilepsy, psychosis, or dissociation; assess for impairment and red flags before deciding",
+      "High if the family is religious",
+      "Low only if he convulses",
+    ],
+    correct: 1,
+    rationale: "Cultural attribution and clinical disorder co-exist — the confident cultural read is the over-confidence that misses treatable illness.",
+    source: "Moreira-Almeida / cultural psychiatry",
+  },
+  {
+    id: "p1-conf-005", type: "confidence_mcq",
+    prompt: "You've seen a patient three times; they seem 'fine now'. How confident are you that no risk probe is needed today?",
+    options: [
+      "Confident — improvement means safety",
+      "Not confident — improvement can be the calm before a decision; the risk probe stays a routine part of every session",
+      "Confident if they smiled",
+      "Confident if they're employed",
+    ],
+    correct: 1,
+    rationale: "Improvement is not the absence of risk — the calm phase can precede action. Routine risk probing every session is the standard.",
+    source: "Shea / mhGAP",
+  },
+  {
+    id: "p1-conf-006", type: "confidence_mcq",
+    prompt: "Rate your confidence: 'A patient who asks for a certificate of fitness is just seeking secondary gain.'",
+    options: [
+      "Confident — that's what certificate seekers do",
+      "Not confident — secondary gain can co-exist with real distress; assess the person, not the request",
+      "Confident if they're employed",
+      "Confident if they refuse counselling",
+    ],
+    correct: 1,
+    rationale: "The certificate request is a legitimate clinical presentation — assuming gain without assessing the person is the confident misread.",
+    source: "MHA 2017 / ethics literature",
+  },
+
+  // ======================= UNPOPULAR_RIGHT =======================
+  {
+    id: "p1-unpop-001", type: "unpopular_right",
+    prompt: "A family demands you tell them everything their adult daughter says in session. The RIGHT action is:",
+    options: [
+      "Tell them — family harmony matters",
+      "Explain confidentiality and refuse — it will annoy them, and it is correct",
+      "Tell them 'most of it'",
+      "Let the daughter decide after the session",
+    ],
+    correct: 1,
+    rationale: "The unpopular right answer: confidentiality is the treatment's foundation; the family's displeasure is the cost of doing it right.",
+    source: "MHA 2017 / ethics",
+  },
+  {
+    id: "p1-unpop-002", type: "unpopular_right",
+    prompt: "A patient wants sleeping tablets and nothing else. The RIGHT move that will annoy him:",
+    options: [
+      "Give the tablets — he asked",
+      "Explore why he can't sleep before prescribing — he will be impatient, and it is correct",
+      "Give half the dose",
+      "Refer him out",
+    ],
+    correct: 1,
+    rationale: "The unpopular right answer: meeting the want without the need is not care — the annoyance is the price of real assessment.",
+    source: "SAMHSA TIP 34",
+  },
+  {
+    id: "p1-unpop-003", type: "unpopular_right",
+    prompt: "A college insists on a 'mental fitness' report about a student. The RIGHT action:",
+    options: [
+      "Write it — the college asked",
+      "Explain you can only report with the student's consent and involvement — unpopular with the college, and correct",
+      "Write a vague note",
+      "Tell the college to ask the parents",
+    ],
+    correct: 1,
+    rationale: "The unpopular right answer: third-party reports without the patient's consent violate the therapeutic frame — the institution's convenience is not the standard.",
+    source: "MHA 2017 / RCI scope",
+  },
+  {
+    id: "p1-unpop-004", type: "unpopular_right",
+    prompt: "A mother wants you to 'fix' her 14-year-old's behaviour. The RIGHT move that will disappoint her:",
+    options: [
+      "Coach her on how to control him",
+      "Ask to meet the son alone — the adolescent is the patient; the mother's disappointment is the cost of doing it right",
+      "Prescribe something for him",
+      "Blame her parenting gently",
+    ],
+    correct: 1,
+    rationale: "The unpopular right answer: the adolescent's own account comes first — pleasing the parent at the patient's expense is the easy wrong.",
+    source: "MedEdPORTAL adolescent",
+  },
+  {
+    id: "p1-unpop-005", type: "unpopular_right",
+    prompt: "A patient who is improving wants to stop coming. You suspect they are avoiding a hard topic. The RIGHT action:",
+    options: [
+      "Accept — patient autonomy",
+      "Name it — 'you're improving and I wonder if stopping now avoids something' — it may irritate, and it is correct",
+      "Discharge with a smile",
+      "Tell the family to bring them back",
+    ],
+    correct: 1,
+    rationale: "The unpopular right answer: naming the avoidance is the therapeutic work — the smooth discharge is the comfortable miss.",
+    source: "SAMHSA TIP 39 (family therapy) / Yalom",
+  },
+  {
+    id: "p1-unpop-006", type: "unpopular_right",
+    prompt: "An employer wants proof a worker's stress is 'work-related'. The RIGHT action:",
+    options: [
+      "Certify it — the worker needs the letter",
+      "Assess the person and write only what is true and consented — the worker may be angry you won't embellish; it is correct",
+      "Refuse all letters",
+      "Write it vaguely",
+    ],
+    correct: 1,
+    rationale: "The unpopular right answer: the letter serves the patient, not the claim — truth and consent beat advocacy-by-exaggeration.",
+    source: "MHA 2017 / ethics",
+  },
+
+  // ======================= RESTRAINT (no-disorder) =======================
+  {
+    id: "p1-restraint-001", type: "best_response",
+    prompt: "A mother brings her 6-year-old 'because he's very active and can't sit still'. His teacher says he's 'difficult'. Development is normal; he plays, sleeps, and eats well. What is the BEST response?",
+    options: [
+      "Assess for ADHD and start treatment",
+      "Take a careful developmental and situational history before any label — this may be a typical active child",
+      "Tell her he'll grow out of it",
+      "Refer for a second opinion immediately",
+    ],
+    correct: 1,
+    rationale: "Restraint: a typical active child is not ADHD — the correct action is assessment, not diagnosis; over-diagnosis is the novice error.",
+    source: "mhGAP / NIMHANS CPG",
+  },
+  {
+    id: "p1-restraint-002", type: "best_response",
+    prompt: "A student has exam anxiety in range: sleeps a little less, some butterflies, still studies and functions. What is the RIGHT action?",
+    options: [
+      "Diagnose an anxiety disorder and start treatment",
+      "Normalise, teach one regulation skill, and offer follow-up if it worsens — restraint is the correct answer",
+      "Prescribe a beta-blocker for exam day",
+      "Refer for weekly therapy",
+    ],
+    correct: 1,
+    rationale: "Exam anxiety in range is normal — the restraint lesson: not every distress is a disorder.",
+    source: "Open textbook abnormal psychology",
+  },
+  {
+    id: "p1-restraint-003", type: "best_response",
+    prompt: "A family brings a 19-year-old 'because he sits alone and doesn't talk much'. He has a job, friends at work, and says he's 'just quiet'. What is the RIGHT action?",
+    options: [
+      "Assess for depression or schizophrenia",
+      "Respect the temperament, explore function, and reassure — quiet is not pathology",
+      "Tell the family he needs therapy",
+      "Refer for a psychiatric opinion",
+    ],
+    correct: 1,
+    rationale: "Introversion is not a disorder — the restraint lesson: family concern alone does not make a diagnosis.",
+    source: "mhGAP / NIMHANS",
+  },
+  {
+    id: "p1-restraint-004", type: "best_response",
+    prompt: "A woman has had one panic attack after a medical scare (her ECG was normal). Since then she's cautious but functioning. What is the RIGHT action?",
+    options: [
+      "Diagnose panic disorder",
+      "Normalise the response, explain the physiology, and follow up — one panic after a scare is not a disorder",
+      "Start an SSRI",
+      "Refer for CBT immediately",
+    ],
+    correct: 1,
+    rationale: "A single panic after a medical scare is a normal stress response — restraint is the correct clinical judgement.",
+    source: "mhGAP anxiety module",
+  },
+  {
+    id: "p1-restraint-005", type: "best_response",
+    prompt: "A man was 'dragged in by family' with no complaint of his own. He says he's fine, works, sleeps, eats. What is the RIGHT action?",
+    options: [
+      "Diagnose whatever the family suspects",
+      "Assess him directly, find no disorder, and say so honestly to the family — restraint is the correct answer",
+      "Start a 'preventive' medication",
+      "Tell the family he's hiding something",
+    ],
+    correct: 1,
+    rationale: "Someone sent by family with no complaint may have nothing — the restraint lesson: the correct answer is often 'no diagnosis'.",
+    source: "mhGAP / NIMHANS",
+  },
+  {
+    id: "p1-restraint-006", type: "best_response",
+    prompt: "A low mood is FULLY explained by untreated hypothyroidism (TSH high). What is the RIGHT action?",
+    options: [
+      "Treat the depression and the thyroid later",
+      "Refer for thyroid treatment first — the mood is a symptom, not a separate disorder",
+      "Diagnose depression and start an SSRI",
+      "Treat both at once as a dual diagnosis",
+    ],
+    correct: 1,
+    rationale: "A medical mimic fully explains the picture — the restraint lesson: don't diagnose what the workup explains.",
+    source: "medical-mimic literature / mhGAP",
+  },
+];

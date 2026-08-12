@@ -11,7 +11,13 @@ export type QuizType =
   | "spot_the_error"         // transcript excerpt with one bad move
   | "standard_vs_common"     // what's taught in India vs what evidence supports
   | "order_steps"            // risk assessment / intake sequence
-  | "would_you_report";      // MHA 2017 / POCSO applied
+  | "would_you_report"       // MHA 2017 / POCSO applied
+  // Phase 1 §3.1 — the five new types:
+  | "decode_idiom"           // six readings of an Indian idiom; physical misses weighted
+  | "whats_missing"          // a case summary with one critical domain unelicited
+  | "predict_consequence"    // you did X; what happens two sessions later
+  | "confidence_mcq"         // MCQ plus how-sure-are-you (over-confidence tracking)
+  | "unpopular_right";       // the correct action annoys the client or family
 
 export interface QuizItem {
   id: string;
