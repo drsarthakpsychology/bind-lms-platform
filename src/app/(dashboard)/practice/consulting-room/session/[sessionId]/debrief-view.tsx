@@ -107,9 +107,12 @@ export function DebriefView({
       {/* Score header */}
       <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
         <p className="text-eyebrow text-muted-foreground">Debrief · {difficulty} patient</p>
-        <div className="mt-2 flex items-center gap-4">
+        <div className="mt-2 flex items-center gap-4 flex-wrap">
           <span className="text-h1 text-numeric">{overall.toFixed(1)}</span>
           <span className="text-small text-muted-foreground">/ 5.0 overall</span>
+          <span className="ml-auto rounded-full border border-border bg-secondary px-2 py-0.5 text-caption font-medium text-muted-foreground">
+            AI-generated — not yet faculty reviewed
+          </span>
         </div>
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-5">
           <ProvisionalAwareStat

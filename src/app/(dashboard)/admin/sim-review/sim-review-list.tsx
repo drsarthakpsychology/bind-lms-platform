@@ -96,7 +96,7 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
                 </span>
               ) : (
                 <span className="rounded-full bg-secondary px-2 py-0.5 text-caption font-medium text-muted-foreground">
-                  AI-generated
+                  AI-generated — not yet faculty reviewed
                 </span>
               )}
               <ChevronDown className={cn("size-4 text-muted-foreground transition-transform", isOpen && "rotate-180")} aria-hidden />

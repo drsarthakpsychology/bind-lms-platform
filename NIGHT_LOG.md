@@ -89,7 +89,13 @@ Verify checklist (the hook's, done for real):
 - Verify decision: the lint gate was quietly false before — 156 errors in a
   non-source generated file. Fixed at the config, not by editing the
 
-### A7 Dictate-as-conversation scaffolded (commit <pending>)
+### A5 Queue auto-release label added (commit <pending>)
+- Student debrief now shows "AI-generated — not yet faculty reviewed" badge
+- Admin sim-review list updated with full label
+- Triage page auto-release count already existed; label now consistent
+- Full gate: lint 0 errors, tsc clean, 340 tests pass, build green
+
+### A7 Dictate-as-conversation scaffolded (commit 666e668)
 - Voice recorder added to /admin/corpus/dictate: MediaRecorder → server STT (Whisper via Groq/NVIDIA/Deepgram chain)
 - Interviewer state machine already existed (interviewer.ts) with 21 clinical fields, deterministic next-field logic
 - Fixture follow-ups work offline; AI provider rephrases when enabled
