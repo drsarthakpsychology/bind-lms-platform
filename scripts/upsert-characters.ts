@@ -13,12 +13,16 @@ import { createClient } from "@supabase/supabase-js";
 import { config } from "dotenv";
 config({ path: ".env.local" });
 import { CHARACTER_SKELETONS } from "@/lib/sim/characters";
+import { REGIONAL_CAST } from "@/lib/sim/regional-cast";
+import { RARE_CASES } from "@/lib/sim/rare-cases";
 import type { DepthCase } from "@/lib/sim/types";
 
 const DRY = process.argv.includes("--dry-run");
 const admin = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, { auth: { persistSession: false } });
 
-function toDepthCase(c: (typeof CHARACTER_SKELETONS)[number]): DepthCase {
+type Skeleton = (typeof CHARACTER_SKELETONS)[number];
+
+function toDepthCase(c: Skeleton): DepthCase {
   return {
     case_id: `char-${c.key}`,
     title: c.title,
@@ -50,7 +54,10 @@ function toDepthCase(c: (typeof CHARACTER_SKELETONS)[number]): DepthCase {
 
 async function main() {
   let inserted = 0, updated = 0;
-  for (const c of CHARACTER_SKELETONS) {
+  // All three banks: Tier 2 (archetypes), Tier 3 (regional cast), Tier 4
+  // (rare cases) — the full 62 authored characters go live in one run.
+  const ALL: Skeleton[] = [...CHARACTER_SKELETONS, ...REGIONAL_CAST, ...RARE_CASES];
+  for (const c of ALL) {
     const existing = await admin.from("sim_cases").select("id").eq("slug", `char-${c.key}`).maybeSingle();
     const payload = {
       title: c.title,
