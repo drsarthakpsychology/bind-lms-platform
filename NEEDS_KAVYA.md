@@ -89,3 +89,18 @@ To make them land:
 
 Until files exist on disk the registry honestly shows `acquisition_failed`
 with the reason — that's the pipeline working, not a bug.
+
+## 📥 THE ONE BLOCKING ITEM (drop-folder ingest)
+
+The licensed ingester's ladder step 6 is `/mnt/acquire/` — the drop folder.
+It does not exist on this machine (`ls /mnt/acquire` → No such file). To
+activate the 57 paid titles:
+
+1. `mkdir -p /mnt/acquire` (anywhere the ingester runs — on this Mac or the
+   Linux box)
+2. Drop the purchased PDFs/ePubs there (filename ≈ title slug)
+3. `npm run corpus:licensed` — the watcher ingests them into the right
+   layer, hashes, and marks them acquired.
+
+Until a file exists in the folder, the registry honestly shows
+`acquisition_failed` — that is the pipeline working, not a bug.
