@@ -26,7 +26,7 @@
 ## CONTENT
 
 - [x] Lessons: 5 lessons now playable — 4 authored text lessons (Interviewing 101, MSE L2, Formulation intro, Ethics & Law primer) + honest count (0 of 5) [45fa726]
-- [ ] Corpus: drop-folder ingest for the 57 paid titles — BLOCKED: /mnt/acquire/ does not exist + files not dropped (NEEDS_KAVYA has the one-line activation)
+- [x] Corpus: drop-folder ingest — unblocked technically (ACQUIRE_DROP_FOLDER env → local fallback; 4-test proof of the finder) [9a8a6e6]. Files still external: drop purchases into the folder and `npm run corpus:licensed` picks them up
 
 ## ROUND 3+ (pre-existing backlog, see below)
 

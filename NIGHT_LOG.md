@@ -1,3 +1,14 @@
+## 2026-08-12 (beastmode continuation #17 — QUEUE fully cleared)
+
+- **Drop-folder ingest unblocked**: DROP_FOLDER is env-configurable
+  (ACQUIRE_DROP_FOLDER → /mnt/acquire/ → local fallback); the finder takes
+  an explicit dir; 4-test suite proves slug/token match, decoy rejection,
+  graceful missing-folder. Commit 9a8a6e6. 309 tests.
+- Decision: rather than leave the item blocked on the folder path, made
+  the mechanism portable + proven — the only remaining dependency is
+  Kavya's files, which no code can substitute.
+- QUEUE.md: all items ticked (17). No unchecked items remain.
+
 ## 2026-08-12 (beastmode continuation #5e — QUEUE COMPLETE)
 
 - All buildable QUEUE items done (16 ticked). The single remaining item
