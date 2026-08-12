@@ -104,11 +104,30 @@ export function VoiceInput({
           aria-pressed={pressed}
           aria-label={pressed ? "Release to stop recording" : "Hold to talk"}
           className={`flex size-12 items-center justify-center rounded-full border-2 border-border transition-transform active:scale-95 ${
-            pressed ? "bg-primary text-primary-foreground" : "bg-secondary text-primary"
+            pressed
+              ? "bg-red-500 text-white ring-2 ring-red-300"
+              : "bg-secondary text-primary"
           } disabled:opacity-40`}
         >
-          {pressed ? <Square className="size-5" aria-hidden /> : <Mic className="size-5" aria-hidden />}
+          {pressed ? (
+            <Square className="size-5 animate-pulse" aria-hidden />
+          ) : (
+            <Mic className="size-5" aria-hidden />
+          )}
         </button>
+
+        {/* live waveform while listening */}
+        {pressed ? (
+          <span className="flex h-5 items-end gap-0.5" aria-hidden>
+            {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+              <span
+                key={i}
+                className="w-1 rounded-full bg-primary animate-wave"
+                style={{ height: `${20 + ((i * 17) % 60)}%`, animationDelay: `${i * 90}ms` }}
+              />
+            ))}
+          </span>
+        ) : null}
 
         {voice.silenceSeconds >= 3 ? (
           <span className="text-caption text-muted-foreground" aria-live="polite">

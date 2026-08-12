@@ -44,6 +44,8 @@ const DIFFICULTY_HINT: Record<string, string> = {
 export function SimSessionView({
   sessionId,
   patientName,
+  patientAge,
+  patientContext,
   difficulty,
   initialTurns,
   voicePrefs,
@@ -52,6 +54,8 @@ export function SimSessionView({
 }: {
   sessionId: string;
   patientName: string;
+  patientAge?: number;
+  patientContext?: string;
   difficulty: string;
   initialTurns: Turn[];
   voicePrefs?: { rate: number; pitch: number; lang?: string; gender?: "male" | "female" };
@@ -242,15 +246,34 @@ export function SimSessionView({
 
   return (
     <div className="flex h-[70vh] flex-col rounded-md border-2 border-border bg-card hard-shadow-sm">
-      {/* header */}
-      <div className="flex items-center justify-between border-b-2 border-border px-4 py-2">
-        <span className="text-small font-medium text-muted-foreground">
-          {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} patient
-        </span>
-        <div className="flex items-center gap-3">
-          {/* timer */}
+      {/* header — the patient, always in view. Timer is quiet and secondary. */}
+      <div className="flex items-center justify-between gap-3 border-b-2 border-border px-4 py-2.5">
+        <div className="flex min-w-0 items-center gap-3">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-full border-2 border-border bg-secondary text-base font-bold text-foreground" aria-hidden>
+            {patientName.charAt(0)}
+          </span>
+          <div className="min-w-0">
+            <div className="flex items-center gap-2">
+              <span className="truncate text-small font-semibold">
+                {patientName}{patientAge ? `, ${patientAge}` : ""}
+              </span>
+              <span className="shrink-0 rounded-full border border-border px-2 py-0.5 text-caption capitalize text-muted-foreground">
+                {difficulty}
+              </span>
+            </div>
+            {patientContext ? (
+              <p className="truncate text-caption text-muted-foreground">{patientContext}</p>
+            ) : null}
+          </div>
+        </div>
+        <div className="flex shrink-0 items-center gap-2.5">
+          {/* turn counter */}
+          <span className="text-caption text-muted-foreground" aria-label={`Turn ${turns.length}`}>
+            Turn {Math.max(1, turns.length)}
+          </span>
+          {/* timer — quiet and secondary */}
           <span
-            className={`text-numeric text-small ${overTime ? "font-bold text-red-600" : seconds >= SESSION_LIMIT_S - 60 ? "text-amber-600" : ""}`}
+            className={`text-caption tabular-nums ${overTime ? "font-semibold text-red-600" : seconds >= SESSION_LIMIT_S - 60 ? "text-amber-600" : "text-muted-foreground"}`}
             aria-live="polite"
           >
             {mm}:{ss}
@@ -295,13 +318,16 @@ export function SimSessionView({
         {turns.map((t) => (
           <div
             key={t.id}
-            className={`flex ${t.role === "student" ? "justify-end" : "justify-start"}`}
+            className={`flex flex-col ${t.role === "student" ? "items-end" : "items-start"}`}
           >
+            <span className={`mb-1 text-caption text-muted-foreground ${t.role === "student" ? "mr-1" : "ml-1"}`}>
+              {t.role === "student" ? "You" : patientName}
+            </span>
             <div
-              className={`max-w-[80%] rounded-md border-2 border-border px-3 py-2 text-small ${
+              className={`max-w-[80%] rounded-lg px-3 py-2 text-small leading-relaxed ${
                 t.role === "student"
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-foreground"
+                  ? "rounded-br-none bg-primary text-primary-foreground"
+                  : "rounded-bl-none border border-border bg-card text-foreground"
               }`}
             >
               {t.content}
@@ -309,9 +335,13 @@ export function SimSessionView({
           </div>
         ))}
         {typing ? (
-          <div className="flex justify-start">
-            <div className="rounded-md border-2 border-border bg-secondary px-3 py-2 text-small italic text-muted-foreground">
-              {patientName} is answering…
+          <div className="flex flex-col items-start">
+            <span className="mb-1 ml-1 text-caption text-muted-foreground">{patientName}</span>
+            <div className="flex items-center gap-1 rounded-lg rounded-bl-none border border-border bg-card px-3 py-2.5">
+              <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "0ms" }} aria-hidden />
+              <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "120ms" }} aria-hidden />
+              <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "240ms" }} aria-hidden />
+              <span className="sr-only">{patientName} is answering</span>
             </div>
           </div>
         ) : null}

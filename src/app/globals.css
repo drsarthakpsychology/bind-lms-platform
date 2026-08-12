@@ -449,3 +449,14 @@ video::-webkit-media-controls {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-variant-numeric: tabular-nums;
 }
+
+/* Voice waveform + typing indicator (moved from per-file styles to avoid
+   Tailwind arbitrary-keyframes duplication). */
+@keyframes wave-bounce {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+.animate-wave {
+  transform-origin: bottom;
+  animation: wave-bounce 0.9s ease-in-out infinite;
+}

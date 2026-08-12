@@ -40,7 +40,10 @@ export default async function SimSessionPage({
     .eq("id", session.case_id)
     .maybeSingle();
   const caseData = (caseRow?.case_data ?? {}) as Record<string, unknown>;
-  const patientName = (caseData.identity as { name?: string })?.name ?? "the patient";
+  const identity = (caseData.identity ?? {}) as { name?: string; age?: number; occupation?: string };
+  const patientName = identity.name ?? "the patient";
+  const patientAge = identity.age;
+  const patientContext = identity.occupation ?? "";
   const affectRules = (caseData.affect_rules as { tts_rate?: number; tts_pitch?: number }) ?? {};
   const patientGender = (caseData.identity as { gender?: "male" | "female" | "other" })?.gender;
   const voicePrefs = {
@@ -137,6 +140,8 @@ export default async function SimSessionPage({
       <SimSessionView
         sessionId={sessionId}
         patientName={patientName}
+        patientAge={patientAge}
+        patientContext={patientContext}
         difficulty={session.difficulty}
         voicePrefs={voicePrefs}
         initialTurns={(turns ?? []).map((t) => ({
