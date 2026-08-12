@@ -1,3 +1,14 @@
+## 2026-08-12 (beastmode continuation #5e — QUEUE COMPLETE)
+
+- All buildable QUEUE items done (16 ticked). The single remaining item
+  (drop-folder ingest) is BLOCKED on external files + a folder that doesn't
+  exist on this machine — NEEDS_KAVYA has the one-line activation.
+- Final state: 305 unit tests, tsc clean, build green, mobile-380 e2e green.
+- Character count: 8 clinical + 15 Tier-2 + 30 Tier-3 + 17 Tier-4 = 70
+  authored voices on disk; 23 live on the picker (upsert ran for Tier 2;
+  Tier 3/4 upsert is one command when Kavya wants them live — scripts/
+  upsert-characters.ts handles all three banks).
+
 ## 2026-08-12 (beastmode continuation #5d — lessons)
 
 - **Lessons fixed**: 4 authored text lessons inserted (Interviewing 101,
