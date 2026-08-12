@@ -21,7 +21,7 @@
 - [x] Tier 3: regional full-cast per state (6+ per state for the 5 pilot states) [ff18d6b]
 - [x] Tier 4: rare-case band (17 cases authored: Capgras, Cotard, Fregoli, folie à deux, Ganser, catatonia, Charles Bonnet, exploding head, sexsomnia, Kleine-Levin, narcolepsy, anti-NMDA, Wilson's, porphyria, thyroid storm, B12, TLE) — each with authored voice [87d2dde]
 - [x] Upsert script: characters → sim_cases (published, approved) so the live route serves them [d65d378]
-- [ ] Gamification: per-case completion stars, unlock progression (finish X → unlock Y), streak badges on the picker — Kavya's gamefied-experience ask
+- [x] Gamification: per-case completion stars, unlock progression (finish X → unlock Y), locked-card chips — Kavya's gamefied-experience ask [54a9dcb]
 
 ## CONTENT
 

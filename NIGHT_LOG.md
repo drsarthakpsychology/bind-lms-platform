@@ -1,3 +1,13 @@
+## 2026-08-12 (beastmode continuation #5c — gamification)
+
+- **Gamification live on the picker**: stars (0-3) from best score,
+  difficulty-gated unlock progression (cooperative→guarded@2→resistant@5→
+  crisis@8) with honest locked cards, started cases never re-lock.
+  Commit 54a9dcb. 305 tests, mobile-380 e2e green.
+- Decision: unlock by completed-count (not stars) — keeps the progression
+  encouraging; the streak badges are a natural next increment (a separate
+  streak table would need a migration — deferred to the lessons slice).
+
 ## 2026-08-12 (beastmode continuation #5b — Tier 4 rare band complete)
 
 - **Tier 4 complete**: 17 rare-case characters authored (4 commits:
