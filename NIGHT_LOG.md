@@ -69,6 +69,12 @@
 
 ## 2026-08-12 (verify pass #2 — the gate is genuinely green now)
 
+### Scoring Coverage — 10 new deterministic tests (commit f9a12df)
+- Added 10 unit tests for debrief scoring prompt builder (total 21 tests now)
+- Covers: isNoDisorder restraint-praise wiring, prompt-injection surfacing, transcript speaker formatting, multiple correction injection, rubricTargets verbatim, case header, all schema fields, risk_timing enum, clean prompt when no corrections
+- All tests: fixture-tested, deterministic, zero network calls, schema-validated
+- Full suite: 340 tests pass, lint clean (warnings only), tsc clean, build green
+
 Verify checklist (the hook's, done for real):
 1. Files verified on disk: 19/19 claimed files exist (70 character voices,
    35 sim/corpus tests, docs). Content counts re-checked.
