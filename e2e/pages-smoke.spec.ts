@@ -44,7 +44,9 @@ test("wall: post and report it", async ({ page }) => {
   const composer = page.locator("textarea").first();
   await expect(composer).toBeVisible({ timeout: 8000 });
   await composer.fill("e2e wall post — for reporting.");
-  await page.getByRole("button", { name: /post/i }).click();
+  // Exact 'Post' — the Report button's accessible name contains 'post' and
+  // would match a loose /post/i regex (strict-mode violation).
+  await page.getByRole("button", { name: "Post", exact: true }).click();
   await page.waitForTimeout(1500);
 
   const reportBtn = page.getByRole("button", { name: /report/i }).first();
