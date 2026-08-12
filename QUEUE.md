@@ -2,31 +2,17 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
-## BEASTMODE ROUND 1 — consulting room + visibility + characters (2026-08-12)
+## BEASTMODE ROUND 8 — content depth + scoring + polish (2026-08-12)
 
-- [x] Bug 1: case spec reaching the patient (authored voices end the Ravi clone) — 16 tests [5c9de47]
-- [x] Bug 2: duplicate replies — reveal by-id + unique constraint + 3 tests [83eb847]
-- [x] Bug 3: one-button-fires-all regression (audit + 4 tests) [65c7da1]
-- [x] Bug 4: 12 hidden flags enabled; VISIBILITY.md audit [06f69f4]
-- [x] UI: session screen (header/speakers/timer/turn counter/typing/voice states) + case picker (grouped, hook-first, real state) [9b8f670]
-- [x] e2e sweep: weak-spots drill flow, roleplay landing, 380px spec [318acb5]
-- [x] Security: *_visible views → SECURITY INVOKER [b030e07]
-- [x] Docs: FIXED.md (before/after prompt), NIGHT_LOG round 1 [7dec515]
-- [x] Corpus: licensed-ingester run (3 acquired; registry-driven) [c58717f]
-- [x] 200-character pipeline: skeletons module + contract tests (3 archetypes, 4 tests) [pending]
-
-## CHARACTERS — Kavya's 200+ ask (authoring volume, not code)
-
-- [x] Build the full Tier-2 bank: 15 archetype skeletons → 60 characters via demography variants (this module has 3; add 12 more: daily-wager, farmer, homemaker, IT worker, auto-driver, nurse, moneylender-adjacent trader, imam/priest, retired railwayman, migrant construction worker, call-centre agent, housewife-with-somatics) [60e660a]
-- [x] Tier 3: regional full-cast per state (6+ per state for the 5 pilot states) [ff18d6b]
-- [x] Tier 4: rare-case band (17 cases authored: Capgras, Cotard, Fregoli, folie à deux, Ganser, catatonia, Charles Bonnet, exploding head, sexsomnia, Kleine-Levin, narcolepsy, anti-NMDA, Wilson's, porphyria, thyroid storm, B12, TLE) — each with authored voice [87d2dde]
-- [x] Upsert script: characters → sim_cases (published, approved) so the live route serves them [d65d378]
-- [x] Gamification: per-case completion stars, unlock progression (finish X → unlock Y), locked-card chips — Kavya's gamefied-experience ask [54a9dcb]
-
-## CONTENT
-
-- [x] Lessons: 5 lessons now playable — 4 authored text lessons (Interviewing 101, MSE L2, Formulation intro, Ethics & Law primer) + honest count (0 of 5) [45fa726]
-- [x] Corpus: drop-folder ingest — unblocked technically (ACQUIRE_DROP_FOLDER env → local fallback; 4-test proof of the finder) [9a8a6e6]. Files still external: drop purchases into the folder and `npm run corpus:licensed` picks them up
-
-## ROUND 3+ (pre-existing backlog, see below)
-
+- [x] **Content Volume (Idioms)**: Seed remaining 15 regional idioms ( Bengali/Tamil/Telugu/Kannada/Marathi/Gujarati) to reach the 110 target [Master §5.2]
+- [x] **Content Volume (Cases)**: Author 5 new "no-disorder" cases to reach the 9-case restraint bank [Addendum §A8] — Already 9 cases exist: grief-no-disorder, dep-grief-raj, psy-mahesh, soma-b12-pramod, normalTeen, examAnxiety, sunita, rohit-parent, neelam-sent
+- [x] **Content Volume (Quizzes)**: Add 15 new best-response MCQ/spot-the-error items to the bank [Master §4.1]
+- [x] **Content Volume (Clinic)**: Expand Two-Minute Clinic with 20 new one-liner prompts + expert comparisons [Ideas Next]
+- [ ] **Scoring Coverage**: Write 10 unit tests for the debrief scoring logic (deterministic, fixture-tested) [Master §11]
+- [ ] **A7 Dictate-as-conversation**: Initial scaffold for the dictation interviewer (Whisper → follow-up LLM → sim_case spec) [Addendum §A7]
+- [ ] **A5 Queue auto-release**: Add the `AI-generated — not yet faculty reviewed` label to student-facing feedback [Addendum §A5]
+- [ ] **Polish (Haptics)**: Audit every practice activity and ensure `haptics.ts` fires on card tap, state change, and correct answer [Addendum §B5]
+- [ ] **Polish (Focus)**: Ensure focus management on the MSE drill and long forms for keyboard-only users [Master §4]
+- [ ] **Infra (Optimization)**: Audit text column sizes and apply `infra_snapshots` logic to the newest tables [Master §9.3]
+- [ ] **Docs (Freshness)**: Update MORNING_REPORT.md and NIGHT_LOG.md with Round 8 status [Master §0.4]
+- [ ] **Final Pass**: Run `npm run lint && npx tsc --noEmit && npm run test && npm run build` [Master §0.2]
