@@ -1,0 +1,86 @@
+[
+  {
+    "counsellor_move": "open_question",
+    "client_response": "partial_disclose",
+    "count": 2532,
+    "disclosed_new_pct": 94
+  },
+  {
+    "counsellor_move": "psychoeducation",
+    "client_response": "partial_disclose",
+    "count": 121,
+    "disclosed_new_pct": 98
+  },
+  {
+    "counsellor_move": "open_question",
+    "client_response": "deflect",
+    "count": 105,
+    "disclosed_new_pct": 94
+  },
+  {
+    "counsellor_move": "open_question",
+    "client_response": "one_word",
+    "count": 56,
+    "disclosed_new_pct": 94
+  },
+  {
+    "counsellor_move": "open_question",
+    "client_response": "full_disclose",
+    "count": 18,
+    "disclosed_new_pct": 94
+  },
+  {
+    "counsellor_move": "closed_question",
+    "client_response": "partial_disclose",
+    "count": 12,
+    "disclosed_new_pct": 78
+  },
+  {
+    "counsellor_move": "interpretation",
+    "client_response": "partial_disclose",
+    "count": 5,
+    "disclosed_new_pct": 100
+  },
+  {
+    "counsellor_move": "closed_question",
+    "client_response": "deflect",
+    "count": 4,
+    "disclosed_new_pct": 78
+  },
+  {
+    "counsellor_move": "closed_question",
+    "client_response": "full_disclose",
+    "count": 2,
+    "disclosed_new_pct": 78
+  },
+  {
+    "counsellor_move": "reflection",
+    "client_response": "partial_disclose",
+    "count": 2,
+    "disclosed_new_pct": 67
+  },
+  {
+    "counsellor_move": "psychoeducation",
+    "client_response": "full_disclose",
+    "count": 2,
+    "disclosed_new_pct": 98
+  },
+  {
+    "counsellor_move": "psychoeducation",
+    "client_response": "one_word",
+    "count": 2,
+    "disclosed_new_pct": 98
+  },
+  {
+    "counsellor_move": "confrontation",
+    "client_response": "partial_disclose",
+    "count": 2,
+    "disclosed_new_pct": 100
+  },
+  {
+    "counsellor_move": "reflection",
+    "client_response": "deflect",
+    "count": 1,
+    "disclosed_new_pct": 67
+  }
+]
