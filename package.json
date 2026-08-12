@@ -23,6 +23,7 @@
     "seed-test": "tsx scripts/seed-test-account.ts",
     "seed-peer": "tsx scripts/seed-peer.ts",
     "seed-calibration": "tsx scripts/seed-calibration.ts",
+    "seed-rights": "tsx scripts/seed-rights-registry.ts",
     "pregen-voice": "tsx scripts/pregen-voice.ts",
     "draft-cards": "tsx scripts/draft-cards-from-lessons.ts",
     "psych:text": "tsx scripts/psychopharm/extract-text.ts",
@@ -54,6 +55,7 @@
     "corpus:mhgap": "tsx scripts/corpus/fetch-mhgap.ts",
     "corpus:nmhs": "tsx scripts/corpus/fetch-nmhs.ts",
     "corpus:mha": "tsx scripts/corpus/fetch-mha2017.ts",
+    "corpus:licensed": "tsx scripts/corpus/fetch-licensed.ts",
     "corpus:normalise": "tsx scripts/corpus/normalise.ts",
     "corpus:draft-cases": "tsx scripts/corpus/draft-cases.ts"
   },
@@ -64,6 +66,7 @@
     "@sentry/nextjs": "^10.69.0",
     "@supabase/ssr": "^0.12.4",
     "@supabase/supabase-js": "^2.111.0",
+    "adm-zip": "^0.6.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
