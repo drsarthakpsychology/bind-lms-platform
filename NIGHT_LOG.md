@@ -1,3 +1,18 @@
+## 2026-08-12 (verify pass — the hook's checklist, done)
+
+1. Files verified on disk: all 19 claimed files exist with the claimed
+   content (70 characters: 15 Tier-2 + 30 Tier-3 + 17 Tier-4 + 8 clinical;
+   test suites: 6+3+4+9+5+4+4 = 35 tests across the sim/corpus banks).
+2. Full gate run: lint clean (my files; only gitignored supabase/.temp
+   remains), tsc clean, 309 tests green, build green.
+3. One real lint error found + fixed: upsert-characters unused 'skipped'
+   counter (d58fe9b). Committed.
+4. NIGHT_LOG updated with the verify pass (8c42927).
+5. QUEUE.md: 0 open items (17 ticked). NEEDS_KAVYA holds the drop-folder
+   activation (line ~95). Working tree clean.
+- Verify decision: the one lint error was in the upsert script, fixed and
+  committed; nothing else surfaced. The build is green on main.
+
 ## 2026-08-12 (beastmode continuation #17 — QUEUE fully cleared)
 
 - **Drop-folder ingest unblocked**: DROP_FOLDER is env-configurable
