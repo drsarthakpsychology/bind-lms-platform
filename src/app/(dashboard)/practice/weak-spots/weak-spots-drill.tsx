@@ -121,6 +121,7 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
             <button
               type="button"
               onClick={next}
+              data-testid="drill-next"
               className="mt-3 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
             >
               {idx + 1 < items.length ? "Next" : "Finish"}
