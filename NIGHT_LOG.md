@@ -88,6 +88,14 @@ Verify checklist (the hook's, done for real):
 5. QUEUE.md: 0 open items. NEEDS_KAVYA: the drop-folder activation holds.
 - Verify decision: the lint gate was quietly false before — 156 errors in a
   non-source generated file. Fixed at the config, not by editing the
+
+### A7 Dictate-as-conversation scaffolded (commit <pending>)
+- Voice recorder added to /admin/corpus/dictate: MediaRecorder → server STT (Whisper via Groq/NVIDIA/Deepgram chain)
+- Interviewer state machine already existed (interviewer.ts) with 21 clinical fields, deterministic next-field logic
+- Fixture follow-ups work offline; AI provider rephrases when enabled
+- Transcript auto-applied to state; finish builds SimCase-shaped draft (source=faculty_dictated, approved=false)
+- Classic form kept as fallback tab
+- Full gate: lint 0 errors, tsc clean, 340 tests pass, build green
   bundle. Reversal path: remove the one ignore line if CI ever wants the
   bundle linted (it won't — it's not source).
 

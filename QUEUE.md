@@ -9,7 +9,7 @@
 - [x] **Content Volume (Quizzes)**: Add 15 new best-response MCQ/spot-the-error items to the bank [Master §4.1]
 - [x] **Content Volume (Clinic)**: Expand Two-Minute Clinic with 20 new one-liner prompts + expert comparisons [Ideas Next]
 - [x] **Scoring Coverage**: Write 10 unit tests for the debrief scoring logic (deterministic, fixture-tested) [Master §11]
-- [ ] **A7 Dictate-as-conversation**: Initial scaffold for the dictation interviewer (Whisper → follow-up LLM → sim_case spec) [Addendum §A7]
+- [x] **A7 Dictate-as-conversation**: Initial scaffold for the dictation interviewer (Whisper → follow-up LLM → sim_case spec) [Addendum §A7]
 - [ ] **A5 Queue auto-release**: Add the `AI-generated — not yet faculty reviewed` label to student-facing feedback [Addendum §A5]
 - [ ] **Polish (Haptics)**: Audit every practice activity and ensure `haptics.ts` fires on card tap, state change, and correct answer [Addendum §B5]
 - [ ] **Polish (Focus)**: Ensure focus management on the MSE drill and long forms for keyboard-only users [Master §4]
