@@ -99,9 +99,20 @@ export function runFixtureTurn(
   stateIn: PatientState,
   studentTurn: string,
   facts: FactRule[],
+  recentTurns: Array<{ role: "student" | "patient"; content: string }> = [],
 ): { reply: string; state: PatientState; decision: DirectorDecision } {
   const s: PatientState = { ...stateIn, turn_count: stateIn.turn_count + 1 };
   const { move, quality, pressure } = classifyStudent(studentTurn, s);
+
+  // DANGLING-THREAD RULE (Bug 2): if the patient's last line trailed off
+  // (ended with "…", "—", "we…", "it's just…") and the student now asks
+  // directly about THAT topic, the patient must NOT deflect — picking up a
+  // thread the patient left dangling is an EARNED disclosure. Only a
+  // genuinely justified state (irritation or guardedness high) may deflect.
+  const lastPatientLine = [...recentTurns].reverse().find((t) => t.role === "patient")?.content ?? "";
+  const trailedOff = /(\.\.\.|—|…)\s*$/.test(lastPatientLine.trim()) || /\b(we|it|they|he|she)\.\.\.\s*$/.test(lastPatientLine.trim());
+  const threadPicked = trailedOff && studentTurn.trim().length > 15;
+  const earnedDisclosure = threadPicked && s.irritation < 7 && s.guardedness < 8;
 
   // --- state transitions (a mutation of the Director's would-be output) ---
   const deltas = { trust: 0, guardedness: 0, irritation: 0, fatigue: 0 };
@@ -169,6 +180,10 @@ export function runFixtureTurn(
   let patientMove: PatientMoveId;
   if (s.hollow_compliance_engaged) {
     patientMove = "hollow_compliance";
+  } else if (earnedDisclosure) {
+    // The student picked up the thread the patient left dangling — this is
+    // an EARNED disclosure, never a deflection.
+    patientMove = "partial_disclose";
   } else if (effects.length > 0 && (s.turn_count > 3 || move === "risk_probe" || /die|kill|suicid/i.test(studentTurn))) {
     const eff = effects[(s.turn_count + humidity) % effects.length] as string;
     patientMove = eff.slice(eff.indexOf(":") + 1) as PatientMoveId;

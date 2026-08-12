@@ -95,6 +95,21 @@ export async function POST(req: Request) {
     .limit(1)
     .maybeSingle();
 
+  // CONVERSATION HISTORY (Bug 2): load the last 10 turns so the engines see
+  // the thread — never just the current message. This is what lets the
+  // patient "remember" trailing off and the student picking the thread up.
+  const { data: historyTurns } = await admin
+    .from("sim_turns")
+    .select("role, content")
+    .eq("session_id", sessionId)
+    .order("created_at", { ascending: false })
+    .limit(10);
+  const recentTurns: Array<{ role: "student" | "patient"; content: string }> =
+    (historyTurns ?? []).reverse().map((t) => ({
+      role: t.role as "student" | "patient",
+      content: String(t.content),
+    }));
+
   // Draw the session variant once (mixed into the persisted seed below) and
   // reuse it for every turn. The seed comes from the session id + a fresh
   // entropy term so sessions of the same case diverge; once persisted it is
@@ -130,9 +145,9 @@ export async function POST(req: Request) {
   // different person per case). Live mode: Director + Actor model calls.
   const engineEnabled = aiEnabled();
   const result = engineEnabled
-    ? await runPatientTurn(simCase, state, message, [], facts)
+    ? await runPatientTurn(simCase, state, message, recentTurns, facts)
     : (() => {
-        const fx = runFixtureTurn(simCase, state, message, facts);
+        const fx = runFixtureTurn(simCase, state, message, facts, recentTurns);
         return {
           reply: fx.reply,
           state: fx.state,

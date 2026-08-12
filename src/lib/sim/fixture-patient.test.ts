@@ -196,3 +196,29 @@ describe("bug 1: 10 runs of one case give distinct openings", () => {
     }
   });
 });
+describe("bug 2: conversation history + dangling-thread rule", () => {
+  const suresh = mkCase(SEED_CASES.find((c) => c.title.includes("Suresh"))!);
+
+  it("history is threaded: a trailing thread the student picks up becomes an EARNED disclosure, never a deflection", () => {
+    const s = fresh(suresh, 5);
+    // Patient trails off about "two years ago" (a dangling thread).
+    const history: Array<{ role: "student" | "patient"; content: string }> = [
+      { role: "student", content: "Hello" },
+      { role: "patient", content: "Two years ago we… (pauses) it's just this." },
+    ];
+    // Student asks directly about the thread.
+    const out = runFixtureTurn(suresh, s, "What happened two years ago?", factsFor(suresh), history);
+    // The patient must disclose, not deflect.
+    expect(["partial_disclose", "full_disclose", "reluctant_disclose"]).toContain(out.decision.patient_move);
+  });
+
+  it("without a dangling thread, the normal move selection applies", () => {
+    const s = fresh(suresh, 5);
+    const history: Array<{ role: "student" | "patient"; content: string }> = [
+      { role: "student", content: "Hello" },
+      { role: "patient", content: "My wife dragged me here." },
+    ];
+    const out = runFixtureTurn(suresh, s, "Tell me about your family", factsFor(suresh), history);
+    expect(out.reply.length).toBeGreaterThan(0);
+  });
+});

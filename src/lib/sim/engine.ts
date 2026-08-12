@@ -118,6 +118,7 @@ export async function runPatientTurn(
     mustNotMention: mustNot,
     permittedFacts: permitted,
     lastMoves: s.last_moves,
+    recentTurns: recentTurns.slice(-6),
   };
 
   let decision: DirectorDecision;

@@ -57,6 +57,7 @@ export interface DirectorInput {
   mustNotMention: string[];
   permittedFacts: string[];
   lastMoves: string[]; // anti-repetition
+  recentTurns: Array<{ role: "student" | "patient"; content: string }>; // conversation history
 }
 
 export function buildDirectorPrompt(input: DirectorInput): string {
@@ -67,6 +68,9 @@ ${input.stateSummary}
 
 # THE CASE (clinical facts — never invent new ones)
 ${input.caseSpec}
+
+# THE RECENT CONVERSATION (last turns, oldest first)
+${input.recentTurns?.length ? input.recentTurns.map((t) => `${t.role.toUpperCase()}: ${t.content}`).join("\n") : "(opening — nothing yet)"}
 
 # THIS TURN
 Student said: "${input.studentTurn}"
@@ -80,6 +84,7 @@ Student said: "${input.studentTurn}"
 - affect: the patient's emotional delivery this turn, consistent with state (irritation > 5 → irritated; fatigue > 6 → flat; trust high + moving topic → sad/tearful).
 - length_hint: one_word / short / medium / long based on fatigue and irritation.
 - state_delta: how this turn changes trust, guardedness, irritation, fatigue (all small: -2..+2 typically).
+- DANGLING-THREAD RULE: if the patient's last line trailed off (ended with "…" or "—") and the student now asks directly about THAT topic, the patient MUST NOT deflect — picking up a dangling thread is an EARNED disclosure. Choose a disclose/partial_disclose move unless irritation > 6 or guardedness > 7 genuinely justifies deflection.
 
 Return JSON only.`;
 }
