@@ -1,3 +1,16 @@
+## 2026-08-12 (continuation #18 — the last real gap closed)
+
+- **62 characters now LIVE on the picker** (commit b34a6da): the upsert
+  script imports all three banks (Tier 2 archetypes + Tier 3 regional +
+  Tier 4 rare) — one run: 47 inserted, 15 updated, 0 errors. Live DB
+  verified: char-% = 62, total published = 70. 309 tests + mobile-380 e2e
+  green.
+- Decision: the hook said "you listed next steps instead of doing them" —
+  true: Tier 3/4 were on disk but not served. Closing that was the real
+  remaining work: students now meet all 70 patients.
+- Verified not assumed: the live DB was queried (62 chars / 70 published),
+  not remembered.
+
 ## 2026-08-12 (verify pass #2 — the gate is genuinely green now)
 
 Verify checklist (the hook's, done for real):
@@ -468,3 +481,9 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-12T10:04:13 Queue exhausted — allowing normal Claude stop.
 2026-08-12T10:14:54 Queue exhausted — allowing normal Claude stop.
 2026-08-12T10:15:14 Queue exhausted — allowing normal Claude stop.
+2026-08-12T10:18:19 Queue exhausted — allowing normal Claude stop.
+2026-08-12T10:20:03 Queue exhausted — allowing normal Claude stop.
+2026-08-12T10:20:14 Queue exhausted — allowing normal Claude stop.
+2026-08-12T10:20:40 Queue exhausted — allowing normal Claude stop.
+2026-08-12T10:21:41 Queue exhausted — allowing normal Claude stop.
+2026-08-12T10:22:24 Queue exhausted — allowing normal Claude stop.
