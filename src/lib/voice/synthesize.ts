@@ -32,7 +32,7 @@ export interface SynthesisResult {
   /** sha256(text+voice+emotion+speed) — the cache key. */
   cacheKey: string;
   /** 'cosyvoice2' | 'kokoro' | 'fixture' */
-  provider: "cosyvoice2" | "kokoro" | "fixture";
+  provider: "qwen3" | "chatterbox" | "cosyvoice2" | "kokoro" | "fixture";
 }
 
 
@@ -63,6 +63,82 @@ async function r2Has(key: string): Promise<boolean> {
     return res.ok;
   } catch {
     return false;
+  }
+}
+
+/**
+ * Qwen3-TTS (primary tier, commercially permissive). OpenAI-compatible
+ * /v1/audio/speech endpoint at QWEN_TTS_URL when configured (e.g. a
+ * self-hosted vLLM / SiliconFlow instance). 10 languages, voice cloning,
+ * natural-language voice direction — the brief's PRIMARY.
+ */
+async function synthesizeQwen3(req: SynthesisRequest): Promise<{ ok: true; objectKey: string; url: string | null } | { ok: false; reason: string }> {
+  const base = process.env.QWEN_TTS_URL;
+  const apiKey = process.env.QWEN_TTS_API_KEY;
+  if (!base) return { ok: false, reason: "no QWEN_TTS_URL" };
+  try {
+    const res = await fetch(`${base.replace(/\/$/, "")}/v1/audio/speech`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}),
+      },
+      body: JSON.stringify({
+        model: req.model ?? "Qwen3-TTS",
+        input: req.text,
+        voice: req.voice,
+        speed: req.speed ?? 1,
+        response_format: "mp3",
+      }),
+    });
+    if (!res.ok) return { ok: false, reason: `qwen3 ${res.status}` };
+    const audio = Buffer.from(await res.arrayBuffer());
+    const key = synthesisCacheKey(req);
+    const write = await putR2(`voice/${key}.mp3`, audio);
+    return { ok: true, objectKey: `voice/${key}.mp3`, url: write?.url ?? null };
+  } catch (e) {
+    return { ok: false, reason: (e as Error).message };
+  }
+}
+
+/**
+ * Chatterbox-Turbo (quality tier, MIT). Native [laugh] [cough] [chuckle]
+ * tags + emotion exaggeration control — the affect states map onto these.
+ * OpenAI-compatible /v1/audio/speech at CHATTERBOX_TTS_URL.
+ */
+async function synthesizeChatterbox(req: SynthesisRequest): Promise<{ ok: true; objectKey: string; url: string | null } | { ok: false; reason: string }> {
+  const base = process.env.CHATTERBOX_TTS_URL;
+  const apiKey = process.env.CHATTERBOX_TTS_API_KEY;
+  if (!base) return { ok: false, reason: "no CHATTERBOX_TTS_URL" };
+  try {
+    // Map affect → native tags: tearful_break → [sob], laughs → [laugh],
+    // agitation → emotion exaggeration up.
+    const tagged = req.text
+      .replace(/\(laughs\)/gi, "[laugh]")
+      .replace(/\(sighs\)/gi, "[sigh]")
+      .replace(/\(voice breaks\)/gi, "[sob]")
+      .replace(/\(coughs?\)/gi, "[cough]");
+    const res = await fetch(`${base.replace(/\/$/, "")}/v1/audio/speech`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}),
+      },
+      body: JSON.stringify({
+        model: "Chatterbox-Turbo",
+        input: tagged,
+        voice: req.voice,
+        speed: req.speed ?? 1,
+        response_format: "mp3",
+      }),
+    });
+    if (!res.ok) return { ok: false, reason: `chatterbox ${res.status}` };
+    const audio = Buffer.from(await res.arrayBuffer());
+    const key = synthesisCacheKey(req);
+    const write = await putR2(`voice/${key}.mp3`, audio);
+    return { ok: true, objectKey: `voice/${key}.mp3`, url: write?.url ?? null };
+  } catch (e) {
+    return { ok: false, reason: (e as Error).message };
   }
 }
 
@@ -158,8 +234,10 @@ async function putR2(
 }
 
 /**
- * The single synthesis entry point. Cache-first, then CosyVoice → Kokoro,
- * then honest fixture mode. Never throws — the client has browser TTS.
+ * The single synthesis entry point. Cache-first, then the provider chain in
+ * quality order: Qwen3-TTS (primary) → Chatterbox-Turbo (quality) →
+ * CosyVoice2 (streaming) → Kokoro (CPU) → honest fixture mode.
+ * Never throws — the client has browser TTS.
  */
 export async function synthesize(req: SynthesisRequest): Promise<SynthesisResult> {
   const key = synthesisCacheKey(req);
@@ -167,8 +245,12 @@ export async function synthesize(req: SynthesisRequest): Promise<SynthesisResult
   if (process.env.AI_ENABLED === "true") {
     // Cache-first.
     if (await r2Has(key)) {
-      return { objectKey: `voice/${key}.mp3`, url: null, cacheKey: key, provider: "cosyvoice2" };
+      return { objectKey: `voice/${key}.mp3`, url: null, cacheKey: key, provider: "qwen3" };
     }
+    const qwen = await synthesizeQwen3(req);
+    if (qwen.ok) return { objectKey: qwen.objectKey, url: qwen.url, cacheKey: key, provider: "qwen3" };
+    const chatter = await synthesizeChatterbox(req);
+    if (chatter.ok) return { objectKey: chatter.objectKey, url: chatter.url, cacheKey: key, provider: "chatterbox" };
     const cosy = await synthesizeCosyVoice(req);
     if (cosy.ok) return { objectKey: cosy.objectKey, url: cosy.url, cacheKey: key, provider: "cosyvoice2" };
     const kokoro = await synthesizeKokoro(req);

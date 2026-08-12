@@ -11,6 +11,8 @@ export interface SynthesisRequest {
   voice: string;
   emotionTag?: "" | "happy" | "sad" | "angry" | "surprised" | "neutral";
   speed?: number;
+  /** Provider-specific model override (defaults per provider). */
+  model?: string;
 }
 
 export function synthesisCacheKey(req: SynthesisRequest): string {
