@@ -57,7 +57,11 @@ describe("disclosure-gate contract on a live character (the code, not the model)
   it("farmer's high-risk well-plan stays gated until a clear self-harm question", () => {
     const depth = toDepth2(CHARACTER_SKELETONS.find((x) => x.key === "farmer-cotton")!);
     let s = initialState(depth.case_id, drawVariant(depth.variation, depth.case_id, 3));
-    const facts = depth.disclosure_rules.map((f) => ({ fact_id: f.fact, gate: f.gate, sensitive: true }));
+    const facts = depth.disclosure_rules.map((f) => ({
+      fact_id: f.fact,
+      gate: { kind: "explicit_phrase", patterns: [/./] } as never,
+      sensitive: true,
+    }));
     for (const msg of ["Hello", "The crop must have been hard.", "That sounds heavy - how are you coping?"]) {
       const r = runFixtureTurn(depth, s, msg, facts);
       s = r.state;
