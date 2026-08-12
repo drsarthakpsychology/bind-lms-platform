@@ -22,6 +22,7 @@ type LessonRow = {
   course_id: string;
   order_index: number;
   video_storage_path: string | null;
+  description: string | null;
 };
 
 export default async function DashboardPage() {
@@ -53,7 +54,7 @@ export default async function DashboardPage() {
 
   const [{ data: courses }, { data: lessons }, { data: progress }] = await Promise.all([
     coursesQuery,
-    supabase.from("lessons").select("id, course_id, order_index, video_storage_path"),
+    supabase.from("lessons").select("id, course_id, order_index, video_storage_path, description"),
     supabase.from("progress").select("lesson_id, is_completed, watched_seconds").eq("user_id", profile.id),
   ]);
 
@@ -70,7 +71,8 @@ export default async function DashboardPage() {
     const courseLessons = (lessonsByCourse.get(course.id) ?? [])
       .slice()
       .sort((a, b) => a.order_index - b.order_index);
-    const playable = courseLessons.filter((l) => l.video_storage_path);
+    // A lesson is playable with a video OR a reading (authored text lessons).
+    const playable = courseLessons.filter((l) => l.video_storage_path || l.description);
     const completedCount = playable.filter((l) => progressByLessonId.get(l.id)?.is_completed).length;
     const startedCount = playable.filter((l) => {
       const p = progressByLessonId.get(l.id);

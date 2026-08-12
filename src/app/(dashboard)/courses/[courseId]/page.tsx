@@ -30,7 +30,7 @@ export default async function CourseOverviewPage({
       supabase.from("courses").select("id, title, is_published").eq("id", courseId).single(),
       supabase
         .from("lessons")
-        .select("id, title, order_index, video_storage_path")
+        .select("id, title, order_index, video_storage_path, description")
         .eq("course_id", courseId)
         .order("order_index", { ascending: true }),
       supabase
@@ -79,7 +79,8 @@ export default async function CourseOverviewPage({
     notFound();
   }
 
-  const playable = (lessons ?? []).filter((l) => l.video_storage_path);
+  // A lesson is playable with a video OR a reading (authored text lessons).
+  const playable = (lessons ?? []).filter((l) => l.video_storage_path || l.description);
   const completedIds = new Set(
     (progress ?? []).filter((p) => p.is_completed).map((p) => p.lesson_id),
   );

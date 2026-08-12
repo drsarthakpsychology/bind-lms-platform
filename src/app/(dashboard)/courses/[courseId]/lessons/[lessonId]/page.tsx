@@ -53,7 +53,7 @@ export default async function LessonPage({
     await Promise.all([
       supabase
         .from("lessons")
-        .select("id, title, description, requires_assignment, course_id")
+        .select("id, title, description, requires_assignment, course_id, video_storage_path")
         .eq("id", lessonId)
         .single(),
       supabase.from("courses").select("id, title").eq("id", courseId).single(),
@@ -115,6 +115,7 @@ export default async function LessonPage({
   // mid-course — they can always move on to the next lesson.
 
   const playable = (courseLessons ?? []).filter((l) => l.video_storage_path);
+  const hasVideo = Boolean((lesson as { video_storage_path?: string | null } | null)?.video_storage_path);
   const currentIndex = playable.findIndex((l) => l.id === lessonId);
   const prevLesson = currentIndex > 0 ? playable[currentIndex - 1] : null;
   const nextLesson =
@@ -195,11 +196,20 @@ export default async function LessonPage({
         />
       </Suspense>
 
-      {/* Watch tab — the video. Tight on mobile so the frame is the content;
-          a little breathing room at sm+. */}
+      {/* Watch tab — the video when one exists; otherwise the lesson's
+          reading (an honest text-lesson surface for authored content). */}
       {tab === "watch" && (
         <div className="rounded-lg border-2 border-foreground bg-card p-0 hard-shadow-sm sm:p-2">
-          <VideoPlayer lessonId={lessonId} watermarkLabel={watermarkLabel} />
+          {hasVideo ? (
+            <VideoPlayer lessonId={lessonId} watermarkLabel={watermarkLabel} />
+          ) : (
+            <div className="p-5">
+              <h2 className="text-h2">{lesson?.title ?? "Lesson"}</h2>
+              <p className="mt-2 whitespace-pre-line text-small text-muted-foreground">
+                {lesson?.description ?? "This lesson's video is being prepared. The reading is below."}
+              </p>
+            </div>
+          )}
         </div>
       )}
 
