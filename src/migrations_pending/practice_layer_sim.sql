@@ -65,6 +65,13 @@ create table if not exists public.sim_turns (
   created_at timestamptz not null default now()
 );
 
+-- Bug 2 regression: a session must never store the same message text twice.
+-- (The old shared fixture bank repeated lines across turns AND a client
+-- double-send pushed the same reply twice. This makes both impossible.)
+alter table public.sim_turns
+  add constraint if not exists sim_turns_session_role_content_unique
+  unique (session_id, role, content);
+
 -- ---------------------------------------------------------------------------
 -- sim_scores — the debrief result, stored once (scored once, never re-run)
 -- ---------------------------------------------------------------------------

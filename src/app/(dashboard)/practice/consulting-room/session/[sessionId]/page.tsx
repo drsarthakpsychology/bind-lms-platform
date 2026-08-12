@@ -84,7 +84,7 @@ export default async function SimSessionPage({
     | {
         parentSessionId: string;
         branchedFromTurn: number;
-        parentTurns: Array<{ role: "student" | "patient"; content: string }>;
+        parentTurns: Array<{ id: string; role: "student" | "patient"; content: string }>;
         parentScore?: { overall: number; quotes: Array<{ quote: string; better: string }> };
       }
     | undefined;
@@ -104,7 +104,8 @@ export default async function SimSessionPage({
     branchInfo = {
       parentSessionId: branch.parent_session_id,
       branchedFromTurn: branch.branched_from_turn,
-      parentTurns: (parentTurns ?? []).map((t) => ({
+      parentTurns: (parentTurns ?? []).map((t, i) => ({
+        id: `branch-${i}`,
         role: t.role as "student" | "patient",
         content: String(t.content),
       })),
@@ -139,6 +140,7 @@ export default async function SimSessionPage({
         difficulty={session.difficulty}
         voicePrefs={voicePrefs}
         initialTurns={(turns ?? []).map((t) => ({
+          id: String(t.id ?? `t-${t.created_at ?? 0}-${t.role}-${String(t.content).slice(0, 12)}`),
           role: t.role as "student" | "patient",
           content: String(t.content),
         }))}

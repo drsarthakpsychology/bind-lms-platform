@@ -10,6 +10,7 @@ import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
 import { DebriefView } from "./debrief-view";
 
 interface Turn {
+  id: string;
   role: "student" | "patient";
   content: string;
 }
@@ -67,7 +68,7 @@ export function SimSessionView({
   provisionalDims?: string[];
 }) {
   const router = useRouter();
-  const [turns, setTurns] = React.useState<Turn[]>(initialTurns);
+  const [turns, setTurns] = React.useState<Turn[]>(initialTurns.map((t, i) => ({ ...t, id: `init-${i}-${Date.now()}` })));
   const [input, setInput] = React.useState("");
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
@@ -84,6 +85,9 @@ export function SimSessionView({
   const [hypotheses, setHypotheses] = React.useState("");
   const [sideRailOpen, setSideRailOpen] = React.useState(false);
   const [typing, setTyping] = React.useState(false);
+  // Bug 2: a stable id of the in-flight patient reply, so the reveal ticks
+  // update by id and a second student message can never duplicate it.
+  const pendingReply = React.useRef<string | null>(null);
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
   const voiceMetrics = useVoiceMetrics();
@@ -121,9 +125,10 @@ export function SimSessionView({
 
   async function send(textParam?: string) {
     const text = (textParam ?? input).trim();
-    if (!text || busy) return;
+    if (!text || busy || pendingReply.current) return;
+    const studentTurnId = `s-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     setInput("");
-    setTurns((t) => [...t, { role: "student", content: text }]);
+    setTurns((t) => [...t, { id: studentTurnId, role: "student", content: text }]);
     setBusy(true);
     setError(null);
     haptic("tap");
@@ -141,7 +146,7 @@ export function SimSessionView({
           setError(j?.error ?? "The patient didn't respond. Please try again.");
         }
         // revert the student turn so it isn't double-sent
-        setTurns((t) => t.slice(0, -1));
+        setTurns((t) => t.filter((x) => x.id !== studentTurnId));
         setInput(text);
         return;
       }
@@ -153,27 +158,27 @@ export function SimSessionView({
       }
       // Human-realistic typing delay: reveal the reply progressively so it
       // doesn't appear instantly and shatter the illusion (v3 Part 6.1).
+      // The patient turn is appended ONCE with a stable id; each tick
+      // replaces THAT turn's content by id (append-only, never re-push), so
+      // a second student message mid-reveal can never duplicate the reply.
       setTyping(true);
       const full = j.reply;
+      const patientTurnId = `p-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      setTurns((t) => [...t, { id: patientTurnId, role: "patient", content: "" }]);
+      pendingReply.current = patientTurnId;
       const charsPerTick = 4;
       const ticks = Math.max(6, Math.ceil(full.length / charsPerTick));
       let shown = 0;
       typingTimer.current = setInterval(() => {
         shown += charsPerTick;
         const slice = full.slice(0, shown);
-        // Keep the patient turn at index len-1 but reveal progressively by
-        // replacing the last turn.
-        setTurns((t) => {
-          const next = t.slice();
-          if (next[next.length - 1]?.role === "patient") {
-            next[next.length - 1] = { role: "patient", content: slice };
-          } else {
-            next.push({ role: "patient", content: slice });
-          }
-          return next;
-        });
+        setTurns((t) =>
+          t.map((x) => (x.id === patientTurnId ? { ...x, content: slice } : x)),
+        );
         if (shown >= full.length) {
           if (typingTimer.current) clearInterval(typingTimer.current);
+          typingTimer.current = null;
+          pendingReply.current = null;
           setTyping(false);
         }
       }, Math.max(40, Math.min(90, Math.round(1200 / ticks))));
@@ -287,9 +292,9 @@ export function SimSessionView({
             </p>
           </div>
         ) : null}
-        {turns.map((t, i) => (
+        {turns.map((t) => (
           <div
-            key={i}
+            key={t.id}
             className={`flex ${t.role === "student" ? "justify-end" : "justify-start"}`}
           >
             <div
@@ -303,13 +308,6 @@ export function SimSessionView({
             </div>
           </div>
         ))}
-        {busy ? (
-          <div className="flex justify-start">
-            <div className="rounded-md border-2 border-border bg-secondary px-3 py-2 text-small text-muted-foreground">
-              {patientName} is thinking…
-            </div>
-          </div>
-        ) : null}
         {typing ? (
           <div className="flex justify-start">
             <div className="rounded-md border-2 border-border bg-secondary px-3 py-2 text-small italic text-muted-foreground">
