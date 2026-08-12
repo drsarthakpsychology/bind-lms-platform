@@ -28,3 +28,6 @@ night-runner.log
 # Local Supabase state
 supabase/.branches/
 supabase/.temp/
+
+# Nightwork hook marker (empty, regenerated each run)
+.claude/.nwverified
