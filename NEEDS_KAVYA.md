@@ -73,3 +73,19 @@ Every item: paste → something switches on → verify with one command. Free fi
 - 65 idioms seeded (18 compulsory approved); 20 calibration transcripts; wall reactions/replies live; journal sharing live.
 - Content volume rounds: idioms bank 95, SCT 154, quiz bank 51, out-of-depth 50, ethics 40, landmark 22, clinic 101.
 - **Review the 7 drafted flashcards + 20 calibration transcripts + the new content batches** in the admin queues — approval is the human step the build cannot do.
+## 🎁 NEW — the paid books (you said they're paid for)
+
+**57 titles are already flipped to `licensed` in the registry** and the
+ingester ran — 3 were acquired via the archive.org ladder (POCSO +
+governance docs). The rest are retail-license titles with **no free copy**.
+To make them land:
+
+1. **Drop the purchased files (PDF/ePub) into `/mnt/acquire/`** — the watcher
+   ingests them into the right layer automatically (ladder step 6, the
+   catch-all). This is the highest-value single action: it turns your
+   purchases into the patient-voice corpus.
+2. OR **paste a purchased-account credential** (Kindle/Google Play/VitalSource
+   download access) in `.env` — the ladder's step 2 reads it.
+
+Until files exist on disk the registry honestly shows `acquisition_failed`
+with the reason — that's the pipeline working, not a bug.

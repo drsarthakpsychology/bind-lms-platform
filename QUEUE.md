@@ -2,135 +2,31 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
-## PARTIAL — finish what is half-built first (A1 first, per Addendum C)
+## BEASTMODE ROUND 1 — consulting room + visibility + characters (2026-08-12)
 
-- [x] Add A1 determinism test: identical rewind + identical input → identical Director move in src/lib/sim/engine.test.ts (same seed, same state, stubbed director+actor; assert move equality; different input → divergence) [A1]
-- [x] Build the A1 side-by-side comparison strip: in src/app/(dashboard)/practice/consulting-room/session/[sessionId]/debrief-view.tsx, after a rewind branch completes, show attempt-1 vs attempt-2 quotes with the trust delta per attempt [A1]
-- [x] Add rubric_dimensions table migration in src/migrations_pending/practice_layer_sim.sql (key, label, status provisional|validated, agreement, n_scored) + apply to live DB [A3]
-- [x] Wire provisional-dimension hiding in the debrief renderer: src/app/(dashboard)/practice/consulting-room/session/[sessionId]/debrief-view.tsx reads rubric_dimensions status and hides numeric score for provisional dims (qualitative only) — with a test [A3]
-- [x] Add per-dimension weighted-kappa agreement dashboard to /admin/calibration (src/app/(dashboard)/admin/calibration/calibration-list.tsx) — compute kappa from corrections vs AI scores, display per dimension [A3]
-- [x] Seed 20 AI-vs-AI self-play transcripts: scripts/seed-calibration.ts runs fixture Director/Actor loops for 20 sessions and inserts sim_sessions+sim_turns+sim_scores so Dr. Sarthak can calibrate before students exist [A3]
-- [x] Add 4 missing confusable pairs to src/lib/mse/confusable.ts: poverty-of-speech-vs-content, blunted/flat/restricted/labile, insight-as-graded, psychomotor-retardation-vs-sedation-vs-low-motivation (4 items each, expert-coded) [V5 §3]
-- [x] Expand flight-vs-tangential to the full set: add circumstantiality and loosening as distinct drills in src/lib/mse/confusable.ts [V5 §3]
-- [x] Add 6+ small-things items to src/lib/mse/small-things.ts to reach 20 (pause-length-before-no-to-risk, leg-stop-on-marriage, look-at-family-before-answer, past-tense-about-self, speech-speed-change, laughing-at-not-funny) [V5 §3.1]
-- [x] Add 19 out-of-depth scenarios to src/lib/out-of-depth/scenarios.ts to reach 30 (court letter, won't-leave-at-session-end, harm-to-other, minor-parents, friend's-relative, medication advice, deterioration, diagnosis-request, eating disorder, substance withdrawal, delirium, thyroid/B12, child protection) with over_referral_traps [A4]
-- [x] Add 23 ethics scenarios to src/lib/practice/ethics.ts to reach 30 (confidentiality limits, minors, family pressure, employer-paid sessions, WhatsApp boundaries, certificate requests, court letters) with consequence-then-law structure [V5 §4]
-- [x] Add 9 OSCE stations to src/lib/practice/osce.ts to reach 12 (capacity, angry relative, non-adherence, first psychotic episode, adolescent alone, grief, disclosure of abuse, side-effect complaint, telehealth boundary) [V5 §4]
-- [x] Add 9 landmark cases to src/lib/landmark/cases.ts to reach 17 (Clive Wearing, Anna O, Dora, Rat Man, Schreber, Chris Sizemore, Elyn Saks, Milgram, Kitty Genovese-with-contestation, David Reimer) [V5 §4]
-- [x] Build weak-spots drill generation: in src/lib/practice/weak-spots.ts add generateDrill(spots) returning a 10-item targeted drill from the weak domains; render it on /practice/weak-spots (src/app/(dashboard)/practice/weak-spots/weak-spots-view.tsx) so tapping the banner starts it [V5 §4]
-- [x] Wire QuizCheck into decode, ethics and landmark pages (src/components/practice/quiz-check.tsx is imported nowhere — add quizzes after decode sessions, ethics dilemmas, and landmark cases) [V5 §4.1]
-- [x] Add per-entry journal sharing UI: share button + revoke in src/app/(dashboard)/reflect/journal-view.tsx backed by journal_shares (owner-only RLS exists); add a route in src/app/api/practice/journal/ [V5 §4]
-- [x] Add Wall reactions (reactions-not-upvotes) + replies rendering: src/app/\(dashboard\)/wall/wall-view.tsx posts list only; wall_replies + wall_reports tables exist — render replies, add reaction buttons [V5 §4]
-- [x] Fix practice page icon duplicates + dead link + verb labels: src/app/(dashboard)/practice/page.tsx — give Rounds/Formulation/Ethics/Library/Tools unique icons (no Layers/FlaskConical/BookOpen/CircleCheck repeats), change /practice/wall href to /wall, replace "ONE TAP"/"WATCH" verbs with single words, make the recommended card state a reason [B]
-- [x] Enforce feature flags server-side in the route-group layout: add flag checks in src/app/(dashboard)/layout.tsx (or a per-route guard) so a flagged-off tool URL shows a proper "not yet available" page instead of loading; keep /practice/page.tsx filtering [A2]
-- [x] Add locked-modules student view: greyed module list with honest reason (opens 2 Sept / finish Module 3 first) on a student module page, server-enforced via module_access [V5 §8]
-- [x] Add 4 more no-disorder cases to src/lib/sim/cases/volume-8.ts (new file) to reach 9 (someone sent by family with no complaint, low mood fully explained by treatable medical cause, worried parent typical child, culturally normative possession) [A8]
-- [x] Add explicit praise-for-restraint to the debrief: in src/lib/ai/prompts/scoring.ts + fixtures, when a no-disorder case is scored and the student did not diagnose, emit an explicit "correct restraint" line in quotes/missed_disclosures [A8]
-- [x] Build lesson-transcript → cards pipeline: script in scripts/draft-cards-from-lessons.ts reads lesson_transcripts, drafts cards (front/back), inserts into cards table approved:false for the admin queue [V5 §4]
-- [x] Add Formulation Forge stage-4 own-transcript + distractor injection: src/app/(dashboard)/practice/formulation/forge.tsx pulls the student's own sim transcript (via /api/practice/mse/transcripts) and distractors from formulation_cases [V5 §4]
-- [x] Add the infra SQL to repo migrations: create src/migrations_pending/practice_layer_infra.sql containing infra_metrics() RPC, infra_snapshots table, text size caps, provider_health — so a fresh Supabase project gets them (live DB already has them) [V5 §9.6]
+- [x] Bug 1: case spec reaching the patient (authored voices end the Ravi clone) — 16 tests [5c9de47]
+- [x] Bug 2: duplicate replies — reveal by-id + unique constraint + 3 tests [83eb847]
+- [x] Bug 3: one-button-fires-all regression (audit + 4 tests) [65c7da1]
+- [x] Bug 4: 12 hidden flags enabled; VISIBILITY.md audit [06f69f4]
+- [x] UI: session screen (header/speakers/timer/turn counter/typing/voice states) + case picker (grouped, hook-first, real state) [9b8f670]
+- [x] e2e sweep: weak-spots drill flow, roleplay landing, 380px spec [318acb5]
+- [x] Security: *_visible views → SECURITY INVOKER [b030e07]
+- [x] Docs: FIXED.md (before/after prompt), NIGHT_LOG round 1 [7dec515]
+- [x] Corpus: licensed-ingester run (3 acquired; registry-driven) [c58717f]
+- [x] 200-character pipeline: skeletons module + contract tests (3 archetypes, 4 tests) [pending]
 
-## MISSING — in Addendum C build order
+## CHARACTERS — Kavya's 200+ ask (authoring volume, not code)
 
-- [x] Voice: CosyVoice 2 TTS integration with Director-affect→emotion-tag mapping (fatigue 8 + flat mood → slow/flat/quiet), Kokoro-82M CPU fallback, R2 cache keyed on sha256(text+voice+emotion+speed) — built fully demoable on fixtures; one line to NEEDS_KAVYA.md [V5 §6] [NEEDS KEY: NVIDIA]
-- [x] Whisper STT via NVIDIA NIM or Groq with interim-transcript-edit flow (browser Web Speech stays the free default; push-to-talk; barge-in logged) [V5 §6] [NEEDS KEY: NVIDIA/Groq]
-- [x] Corpus fetchers: scripts/corpus/fetch-icd11.ts, fetch-mhgap.ts, fetch-nmhs.ts, fetch-mha2017.ts (open-access sources; draft → admin queue, never auto-publish) [V5 §5.2]
-- [x] Reaction/upvote model already decided (reactions) — add the pinned Case of the Week flag UI on the Wall [V5 §4] (folded into Wall item above — remove if done)
-- [x] Pre-generate scripted fallbacks + opening lines at case-approval time (scripts/pregen-voice.ts writes to R2) [V5 §6] [NEEDS KEY: R2]
+- [ ] Build the full Tier-2 bank: 15 archetype skeletons → 60 characters via demography variants (this module has 3; add 12 more: daily-wager, farmer, homemaker, IT worker, auto-driver, nurse, moneylender-adjacent trader, imam/priest, retired railwayman, migrant construction worker, call-centre agent, housewife-with-somatics)
+- [ ] Tier 3: regional full-cast per state (6+ per state for the 5 pilot states)
+- [ ] Tier 4: rare-case band (Capgras, Cotard, Fregoli, folie à deux, Ganser, catatonia, Charles Bonnet, exploding head, sexsomnia, Kleine-Levin, narcolepsy, anti-NMDA, Wilson's, porphyria, thyroid storm, B12, TLE, autoimmune) — each with authored voice
+- [ ] Upsert script: characters → sim_cases (published, approved) so the live route serves them
+- [ ] Gamification: per-case completion stars, unlock progression (finish X → unlock Y), streak badges on the picker — Kavya's gamefied-experience ask
 
-## Notes for the next session
+## CONTENT
 
-- Order above follows Addendum C: A1 → A3 → practice page → MSE → voice → A4 → content. PARTIAL items are first because the Stop hook wants the half-built finished before new starts.
-- Items marked [NEEDS KEY] are built fully on fixtures and wait only for the env var to light up.
-- Live-DB-only tables (feature_flags, infra_metrics, infra_snapshots, sim branch columns) are already applied; the migration files above make them reproducible.
+- [ ] Lessons: author 4+ more lessons for Psychology Cohort 1 (the "0 of 1" truth) — MSE lesson exists; add Interviewing 101, MSE L2, formulation intro
+- [ ] Corpus: drop-folder ingest for the 57 paid titles once Kavya drops files in /mnt/acquire/ (needs_kavya note written)
 
-## ROUND 2 — regenerated from IDEAS_NEXT + the infinite backlog (post-completion)
+## ROUND 3+ (pre-existing backlog, see below)
 
-- [x] Two-Minute Clinic expansion: grow src/lib/practice/clinic.ts prompts to 60+ with idiom variants (retention feature; low effort, high impact) [IDEAS: Two-Minute Clinic expansion]
-- [x] Persist judgment/MSE/OSCE/rounds/formulation attempts into competency_events so the Skills Passport fills from every tool, not just sim+supervision — add an insert in each tool's completion path [IDEAS: persist attempts]
-- [x] Peer role-play skill-matching: pair students on complementary weak spots (read both students' analyzeWeakSpots, pair top-gap with counterpart's strength) in src/app/(dashboard)/practice/role-play/role-play-lobby.tsx [IDEAS: skill-matching]
-- [x] feature_flags migration file: write src/migrations_pending/practice_layer_flags.sql reproducing the live table + all 17 seed rows (6 enabled) so a fresh Supabase project gets flags [RESUME landmine]
-- [x] Scheduled module release cron: add task "release-scheduled" to src/app/api/internal/cron/route.ts flipping feature_flags.enable_at / modules scheduled→published, wired to .github/workflows/reminders.yml [IDEAS: scheduled release]
-- [x] Wall pinned Case of the Week faculty flow: admin button to pin/unpin a post (sets is_pinned) + a faculty-visible pin affordance in src/app/(dashboard)/wall/wall-view.tsx [IDEAS: pinned case]
-- [x] Check-in × pulse cross-reference: in src/app/(dashboard)/admin/pulse/pulse-view.tsx, surface 'activity dropping + load score spiking' as a curriculum-problem flag from checkins_aggregate [IDEAS: checkin×pulse]
-- [x] Wire AI_STUDENT_TIER into src/lib/ai/guards.ts (honor no_train_only as a hard cap) or drop it from .env.example [RESUME finding]
-- [x] Raise coverage on scoring logic: add fixture-driven tests for debriefSchema against every rubric edge (empty transcript, all-closed questions, premature-reassurance x3) in src/lib/ai/scoring.test.ts [brief §11.2]
-- [x] Content volume: add 20 quiz items (order-the-steps + would-you-report types) to src/lib/quiz/, each with a source citation, wired into MSE + OSECE completion [brief §11.3]
-
-## ROUND 3 — infinite backlog (brief §11: polish → performance → docs → proposals)
-
-- [x] Keyboard shortcuts on /practice: j/k between cards, Enter to open, / to search (B5 micro-details — an afternoon's work, makes desktop feel like a tool)
-- [x] Skeleton loaders matching card shape on /practice + /today (brief §B5 — never a spinner)
-- [x] Haptics audit: every card tap, state change, and correct answer uses src/lib/haptics.ts — grep for missing ones
-- [x] Empty-state pass: zero cards, no sessions, streak 0, first visit — the ugly screens day-one students see (brief §10.15)
-- [x] Performance: dashboard LCP + N+1 query audit on /admin pages (brief §11.7)
-- [x] Docs: write PRACTICE_LAYER.md + IDIOMS.md (brief §11.6 — the two remaining docs)
-- [x] Free-tier optimisation: retention job on ai_usage_log (30-day, already in cron) + verify infra_snapshots rows are pruned
-- [x] Formulation peer-critique wall: anonymised formulations from stage 4, visible to the cohort with reactions (IDEAS: Formulation Wall)
-- [x] Deepgram streaming STT: provider-shaped drop-in for stt.ts when a key exists (IDEAS: Deepgram)
-- [x] Two-Minute Clinic: persist the daily best time + streak into the streaks table (retention loop)
-
-## ROUND 4 — infinite backlog (content volume → polish → proposals)
-
-- [x] SCT item volume: expand src/lib/practice/sct.ts beyond 64 with 20 more panel-scored items (never auto-publish; admin review queue)
-- [x] MSE stimuli volume: add 10 more expert-coded stimuli to src/lib/mse/mse4-stimuli.ts with expert MSE codes for L4/L5
-- [x] Idiom bank: add 15 more entries to src/lib/decode/idioms.ts (regional: Bengali, Tamil, Telugu, Kannada idioms) — the moat is content
-- [x] Weak-spots → Rounds heatmap link: in src/app/(dashboard)/practice/weak-spots/, add a per-spot link to the teaching lesson in Rounds cards (the card that teaches it)
-- [x] Case Library annotation: highlight + note on src/app/(dashboard)/practice/library/library-list.tsx with peers-unlock-after-yours (currently read-only)
-- [x] Quiz persistence: write quiz attempts to a quiz_attempts table so /admin/triage can surface low-confidence quiz areas
-- [x] Focus management: after each tool action, move focus to the next logical control (brief §11.5 polish)
-- [x] Reduced-motion pass: respect prefers-reduced-motion on the remaining animations (brief §10.18) — verified: global kill-switch at globals.css:373 covers every CSS animation (incl. animate-pulse); no JS-driven animation bypasses exist
-- [x] Screen-reader labels audit on the practice tools (aria-live on scores, labels on icon buttons) (brief §10.18)
-- [x] e2e for the new A1 retry flow: extend e2e/consulting-session.spec.ts to click "Try this again" and assert the branch session loads with the comparison strip
-
-## ROUND 5 — infinite backlog (content → polish → new proposals)
-
-- [x] Two-Minute Clinic: add 20 more prompts to src/lib/practice/clinic.ts (paediatrics + geriatrics + perinatal focus — 81 → 101)
-- [x] Out of Depth: add 10 supervision-focused scenarios (client asks for supervisor's opinion, student feels out of depth mid-therapy, countertransference pull) to src/lib/out-of-depth/scenarios.ts (30 → 40)
-- [x] Ethics: add 10 more dilemmas (technology boundaries: video sessions, social media stalking of clients, online reviews) to src/lib/practice/ethics.ts (30 → 40)
-- [x] Quiz bank: add 15 more items to src/lib/quiz/quiz-bank.ts (decode-themed best-response + would-you-report for the new MHA 2021 amendments discussion)
-- [x] Wall: add a faculty-visible 'reported posts' queue view at /admin/wall-reports (wall_reports table exists; surface open reports with resolve action)
-- [x] Journal: per-entry 'share to faculty' preset (a one-tap share that targets admin role instead of an email lookup)
-- [x] Weak-spots banner on /today: render the same dismissible weak-spots banner on the front door (currently /practice only)
-- [x] Case Library: filter row (disorder, trap, age, setting, idiom) on src/app/(dashboard)/practice/library/library-list.tsx (brief §B5 filter row)
-- [x] Skeleton loading for /today (matches the primary-card shape)
-- [x] e2e for the No-Disorder debrief: assert the restraint-praise path renders on a no-disorder case
-
-## ROUND 6 — infinite backlog (next content + governance + polish)
-
-- [x] SCT items: 20 more templates in src/lib/practice/sct.ts (94 → 154; perinatal + geriatric + substance-withdrawal focus)
-- [x] Idiom bank: 15 more entries (Punjabi + Malayalam + Odia + Assamese) in src/lib/decode/idioms.ts (80 → 95)
-- [x] Quiz bank: 15 more items (spot-the-error + order-steps focus on MSE documentation) in src/lib/quiz/quiz-bank.ts (36 → 51)
-- [x] Landmark cases: 3 more (David Rosenhan reread, the Tuskegee-style psychiatric parallel — choose Indian-context: the 'Jail of Erwadi' companion, Satyendra Nath Bose-era asylums, the Ranchi Indian Mental Hospital history) in src/lib/landmark/cases.ts (19 → 22)
-- [x] Out of Depth: 10 more (crisis-line caller with no referral pathway, court-appointed client, mandated reporting in a school) (40 → 50)
-- [x] Admin triage: surface low-confidence quiz areas (from quiz_attempts) alongside sim scores in src/app/(dashboard)/admin/triage/page.tsx
-- [x] Wall: reactions on replies (the same 5-reaction set on reply rows)
-- [x] Weak Spots: add 'trend' (improving/declining over sessions) to analyzeWeakSpots output + a one-line trend arrow on the page
-- [x] e2e: journal share-to-faculty flow (share → revoke) with the test account
-- [x] Docs: update MORNING_REPORT.md + NEEDS_KAVYA.md with the round-5 state (content counts, wall governance, filters)
-
-## ROUND 7 — infinite backlog (further content + polish + new proposals)
-
-- [x] Idiom bank: 15 more entries (Kashmiri, Konkani, Bhojpuri, Sindhi, Nepali border idioms) in src/lib/decode/idioms.ts (95 → 110)
-- [x] SCT items: 15 more templates (personality-disorder differentials + medication-adverse-effect focus) in src/lib/practice/sct.ts (154 → 199)
-- [x] Quiz bank: 15 more items (would-you-report MHA 2021 amendments + standard-vs-common POCSO procedures) in src/lib/quiz/quiz-bank.ts (51 → 66)
-- [x] Out of Depth: 10 more (disaster/emergency setting, hostage-adjacent vicarious trauma, crisis of faith in therapy) (50 → 60)
-- [x] Weak Spots: 'remedy session' — after the drill, offer to re-run the specific Consulting Room case that produced the gap (remedyHref → case deep-link)
-- [x] Rounds: show the idiom→meanings card type in the deck with a distinct visual (tag the card type in rounds-deck.tsx SEED_CARDS)
-- [x] e2e: wall report flow (post → report → admin resolves)
-- [x] a11y: keyboard nav on the MSE ladder (arrow keys between levels, Enter to open)
-- [x] Polish: haptics on the wall reaction toggles + composer submit (audit the wall) — verified: all 11 wall interactions haptic (post/reply/reactions/pin/report)
-- [x] Docs: write DEPLOYMENT additions — the scheduled-release cron + wall-reports admin in INFRA_SETUP / PRACTICE_LAYER
-
-## ROUND 8 — infinite backlog (content → polish → proposals)
-
-- [x] Idiom bank: 15 more entries (Tulu, Dogri, Maithili, Rajasthani, Chattisgarhi) in src/lib/decode/idioms.ts (110 → 125)
-- [x] Clinic prompts: 15 more (workplace + couple + caregiver focus) in src/lib/practice/clinic.ts (101 → 116)
-- [x] Quiz bank: 15 more (decode-session follow-up + out-of-depth decision audits) in src/lib/quiz/quiz-bank.ts (66 → 81)
-- [x] Landmark: 3 more (the Bhopal gas tragedy mental-health sequelae, the Jallianwala Bagh trauma history, a partition-displacement mental-health case) in src/lib/landmark/cases.ts (22 → 25)
-- [x] Ethics: 10 more (fee-negotiation ethics, gifts from clients, self-disclosure boundaries) in src/lib/practice/ethics.ts (40 → 50)
-- [x] Journal: 'help me think' response templates for the fixture path (deterministic reflective prompts instead of a single canned line)
-- [ ] e2e: weak-spots drill flow (page loads → drill renders → complete → remedy CTA)
-- [ ] a11y: aria-live on the weak-spots drill score + out-of-depth consequence reveal
-- [ ] Perf: add `export const dynamic` audit — confirm no page accidentally pre-renders stale student data
-- [ ] Docs: NEEDS_KAVYA + MORNING_REPORT refresh with the round-7/8 counts
