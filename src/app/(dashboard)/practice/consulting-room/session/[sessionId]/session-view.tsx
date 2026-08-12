@@ -154,7 +154,13 @@ export function SimSessionView({
         setInput(text);
         return;
       }
-      const j = (await res.json()) as { reply: string; affect?: Affect; fatigue?: number; mood?: string };
+      const j = (await res.json()) as {
+        reply: string;
+        delivery?: Array<{ kind: string; position: number; seconds: number }>;
+        affect?: Affect;
+        fatigue?: number;
+        mood?: string;
+      };
       // v5 §6 — the Director's affect drives this line's delivery.
       if (j.affect) {
         setPatientAffect(j.affect);
@@ -162,30 +168,59 @@ export function SimSessionView({
       }
       // Human-realistic typing delay: reveal the reply progressively so it
       // doesn't appear instantly and shatter the illusion (v3 Part 6.1).
-      // The patient turn is appended ONCE with a stable id; each tick
-      // replaces THAT turn's content by id (append-only, never re-push), so
-      // a second student message mid-reveal can never duplicate the reply.
+      // Stage directions are BEHAVIOUR, not text: each delivery cue pauses the
+      // reveal for its `seconds` before the words after it appear.
       setTyping(true);
       const full = j.reply;
       const patientTurnId = `p-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
       setTurns((t) => [...t, { id: patientTurnId, role: "patient", content: "" }]);
       pendingReply.current = patientTurnId;
       const charsPerTick = 4;
-      const ticks = Math.max(6, Math.ceil(full.length / charsPerTick));
+      // Build a schedule of segments: each has a target reveal length and a
+      // hold time. Delivery cues (pauses/sighs/etc.) become segments that
+      // HOLD for their seconds — the words after them wait — so the student
+      // feels the pause instead of reading it.
+      const schedule: Array<{ until: number; holdMs: number }> = [];
+      let cursor = 0;
+      const cues = (j.delivery ?? []).slice().sort((a, b) => a.position - b.position);
+      for (const cue of cues) {
+        if (cue.position > cursor) {
+          schedule.push({ until: cue.position, holdMs: 40 });
+        }
+        schedule.push({ until: cue.position, holdMs: Math.round(cue.seconds * 1000) });
+        cursor = cue.position;
+      }
+      if (cursor < full.length) schedule.push({ until: full.length, holdMs: 40 });
+      // The last segment's hold is just the typing cadence; done when reached.
+      let seg = 0;
       let shown = 0;
+      let holdUntil = 0;
       typingTimer.current = setInterval(() => {
-        shown += charsPerTick;
-        const slice = full.slice(0, shown);
-        setTurns((t) =>
-          t.map((x) => (x.id === patientTurnId ? { ...x, content: slice } : x)),
-        );
-        if (shown >= full.length) {
+        if (seg >= schedule.length) {
           if (typingTimer.current) clearInterval(typingTimer.current);
           typingTimer.current = null;
           pendingReply.current = null;
           setTyping(false);
+          return;
         }
-      }, Math.max(40, Math.min(90, Math.round(1200 / ticks))));
+        const spec = schedule[seg];
+        if (spec.holdMs > 40) {
+          // Pause segment: hold the current text for the cue's duration.
+          if (holdUntil === 0) holdUntil = Date.now() + spec.holdMs;
+          if (Date.now() < holdUntil) return;
+          shown = spec.until;
+          holdUntil = 0;
+          seg += 1;
+        } else {
+          shown = Math.min(spec.until, shown + charsPerTick);
+          if (shown >= spec.until) {
+            seg += 1;
+          }
+        }
+        setTurns((t) =>
+          t.map((x) => (x.id === patientTurnId ? { ...x, content: full.slice(0, shown) } : x)),
+        );
+      }, 40);
       haptic("tap");
     } catch {
       setError("Network error. Your message may not have reached the patient.");

@@ -5,6 +5,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { SEED_CASES } from "@/lib/psychopharm/sim/cases";
 import { runPatientTurn } from "@/lib/sim/engine";
 import { runFixtureTurn } from "@/lib/sim/fixture-patient";
+import { parseDelivery } from "@/lib/sim/delivery";
 import { initialState, type PatientState } from "@/lib/sim/types";
 import { drawVariant, hashString } from "@/lib/sim/variation";
 import type { DepthCase } from "@/lib/sim/types";
@@ -142,14 +143,17 @@ export async function POST(req: Request) {
         };
       })();
 
-  // Persist the patient turn WITH the new state (the rewind point).
+  // Persist the patient turn WITH the new state (the rewind point) and the
+  // parsed delivery cues — stage directions are BEHAVIOUR, never text.
+  const spoken = parseDelivery(result.reply);
   await admin.from("sim_turns").insert({
     session_id: sessionId,
     user_id: user.id,
     role: "patient",
-    content: result.reply,
+    content: spoken.content,
     content_type: "text",
     state: result.state,
+    delivery: spoken.delivery,
   });
 
   // Log usage (fixture turns cost nothing — still recorded for the audit trail).
@@ -165,7 +169,8 @@ export async function POST(req: Request) {
   // The Director's affect + fatigue ride along so the voice layer can map
   // them onto delivery (v5 §6: affect → rate/pitch/emotion tag).
   return NextResponse.json({
-    reply: result.reply,
+    reply: spoken.content,
+    delivery: spoken.delivery,
     sessionId,
     move: result.move,
     affect: result.decision.affect,
