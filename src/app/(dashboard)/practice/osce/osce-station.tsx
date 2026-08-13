@@ -63,6 +63,9 @@ export function OsceStationView() {
   const ss = String(seconds % 60).padStart(2, "0");
   const checklistWithDone = station.checklist.map((c) => ({ ...c, done: !!checked[c.item] }));
   const frac = scoreOsce(checklistWithDone);
+  // The same 60/40 composite the persistence helper stores (buildOsceAttemptPayload).
+  const normalizedGlobal = station.global_rating.max ? selfGlobal / station.global_rating.max : 0;
+  const composite = Math.round((frac * 0.6 + normalizedGlobal * 0.4) * 100) / 100;
 
   if (phase === "choose") {
     return (
@@ -168,9 +171,30 @@ export function OsceStationView() {
         </div>
       </div>
 
-      <div className="rounded-md border border-border bg-secondary/60 p-3 text-small">
-        Checklist completion: <span className="font-semibold text-numeric">{Math.round(frac * 100)}%</span>
-        {selfGlobal ? <span className="ml-2">Global rating: <span className="font-semibold text-numeric">{selfGlobal}/{station.global_rating.max}</span></span> : null}
+      <div className="grid grid-cols-3 gap-2">
+        <div className="rounded-md border-2 border-border bg-background p-3">
+          <p className="text-caption text-muted-foreground">Checklist</p>
+          <p className="mt-0.5 text-base font-semibold text-numeric">{Math.round(frac * 100)}%</p>
+          <p className="mt-1 text-caption text-muted-foreground">
+            {checklistWithDone.filter((c) => c.done).length} of {checklistWithDone.length} done
+          </p>
+        </div>
+        <div className="rounded-md border-2 border-border bg-background p-3">
+          <p className="text-caption text-muted-foreground">Global rating</p>
+          <p className="mt-0.5 text-base font-semibold text-numeric">
+            {selfGlobal || "—"}{selfGlobal ? `/${station.global_rating.max}` : ""}
+          </p>
+          <p className="mt-1 text-caption text-muted-foreground">
+            {selfGlobal ? `norm ${Math.round((selfGlobal / station.global_rating.max) * 100)}%` : "pick above"}
+          </p>
+        </div>
+        <div className="rounded-md border-2 border-border bg-background p-3">
+          <p className="text-caption text-muted-foreground">Composite</p>
+          <p className="mt-0.5 text-base font-semibold text-numeric">
+            {selfGlobal ? `${Math.round(composite * 100)}%` : "—"}
+          </p>
+          <p className="mt-1 text-caption text-muted-foreground">60/40 checklist·global</p>
+        </div>
       </div>
 
       <button
