@@ -108,6 +108,43 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
           </ul>
         )}
       </div>
+
+      {/* Provider health — the other half of the free-tier picture. A provider
+          that's been failing repeatedly is a silent outage in waiting. */}
+      <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="flex items-center gap-2">
+          <CircleAlert className="size-4 text-link" aria-hidden />
+          <h2 className="text-base font-semibold">Provider health</h2>
+        </div>
+        {(metrics.provider_health ?? []).length === 0 ? (
+          <p className="mt-2 text-small text-muted-foreground">
+            No provider health rows yet — the router writes these as it routes live calls.
+          </p>
+        ) : (
+          <ul className="mt-3 space-y-1.5">
+            {(metrics.provider_health ?? []).map((h) => {
+              const healthy = h.consecutive_failures === 0;
+              return (
+                <li key={h.provider} className="flex items-center justify-between border-b border-border/60 pb-1.5 text-small">
+                  <span className="flex items-center gap-2 font-medium">
+                    <span
+                      aria-hidden
+                      className={cn(
+                        "size-2 rounded-full",
+                        healthy ? "bg-status-success-fg" : h.consecutive_failures >= 3 ? "bg-destructive" : "bg-status-pending-fg",
+                      )}
+                    />
+                    {h.provider}
+                  </span>
+                  <span className="text-caption text-muted-foreground">
+                    {healthy ? "Healthy" : `${h.consecutive_failures} consecutive failures`}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </div>
     </div>
   );
 }

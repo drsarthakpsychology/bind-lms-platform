@@ -15,9 +15,9 @@ export interface CardRow {
 }
 
 const STATUS_STYLE: Record<CardRow["status"], string> = {
-  draft: "bg-amber-100 text-amber-800",
+  draft: "bg-status-pending-bg text-status-pending-fg",
   in_review: "bg-secondary text-muted-foreground",
-  published: "bg-green-100 text-green-800",
+  published: "bg-status-success-bg text-status-success-fg",
   archived: "bg-muted text-muted-foreground line-through",
 };
 
@@ -40,11 +40,14 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
       if (!res.ok) return;
       haptic("success");
       setRows((r) =>
-        r.map((row) =>
-          row.id === id
-            ? { ...row, ...patch, status: (patch.status as CardRow["status"]) ?? row.status, approved: patch.approved === true ? true : patch.approved === false ? false : row.approved }
-            : row,
-        ),
+        r.map((row) => {
+          if (row.id !== id) return row;
+          const next = { ...row, ...patch };
+          // Mirror the server: approve ⇒ publish; archive ⇒ unapprove.
+          if (patch.approved === true) next.status = "published";
+          if (patch.status === "archived") next.approved = false;
+          return next;
+        }),
       );
     } finally {
       setBusy(false);
@@ -119,8 +122,8 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
               <p className="mt-1 text-small text-muted-foreground">{row.back}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {row.status !== "published" ? (
-                  <button type="button" onClick={() => void act(row.id, { approved: true })} disabled={busy} className="rounded-md border-2 border-green-600 bg-green-50 px-3 py-1 text-caption font-semibold text-green-800">
-                    Approve
+                  <button type="button" onClick={() => void act(row.id, { approved: true })} disabled={busy} className="rounded-md border-2 border-status-success-fg/40 bg-status-success-bg px-3 py-1 text-caption font-semibold text-status-success-fg">
+                    Approve &amp; publish
                   </button>
                 ) : null}
                 {row.status !== "archived" ? (
@@ -131,7 +134,7 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
                 <button type="button" onClick={() => startEdit(row)} disabled={busy} className="rounded-md border-2 border-border bg-background px-3 py-1 text-caption font-semibold">
                   Edit
                 </button>
-                <button type="button" onClick={() => void remove(row.id)} disabled={busy} className="ml-auto rounded-md border-2 border-red-200 bg-red-50 px-3 py-1 text-caption font-semibold text-red-700">
+                <button type="button" onClick={() => void remove(row.id)} disabled={busy} className="ml-auto rounded-md border-2 border-destructive/40 bg-status-alert-bg px-3 py-1 text-caption font-semibold text-destructive">
                   Delete
                 </button>
               </div>
