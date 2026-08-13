@@ -219,7 +219,7 @@ function WhoBuilds() {
               <span className="font-semibold text-foreground">{BRAND.lead}</span> is the clinical
               lead. He is the psychiatrist the school is built around.
             </p>
-            <p>Kavya Bothra is the person behind the initiative.</p>
+            <p>Kavya Bothra is building the programme.</p>
             <p>There are guest lectures as well, so the teaching never rests on a single voice.</p>
           </div>
         </Reveal>
