@@ -1,10 +1,38 @@
-import { IDIOMS } from "@/lib/decode/idioms";
+import { IDIOMS, type IdiomEntry, type IdiomMeaning } from "@/lib/decode/idioms";
+import { createClient } from "@/lib/supabase/server";
 import { DecodeArena } from "./decode-arena";
 import { FunnelDrill } from "./funnel-drill";
 import { SevenReadings } from "./seven-readings";
 import { CfiDrill } from "./cfi-drill";
 import { QuizCheck } from "@/components/practice/quiz-check";
 import type { QuizItem } from "@/lib/quiz/quiz";
+
+export const dynamic = "force-dynamic";
+
+/** Map an approved idioms row to the IdiomEntry the drills consume. */
+function rowToIdiom(row: {
+  phrase: string;
+  register: unknown;
+  possible_meanings: unknown;
+  disambiguators: unknown;
+  trap: string;
+  sources: unknown;
+}): IdiomEntry | null {
+  const phrase = row.phrase;
+  if (!phrase) return null;
+  const meanings = (Array.isArray(row.possible_meanings) ? row.possible_meanings : []) as IdiomMeaning[];
+  const readings = [...new Set(meanings.map((m) => m.reading).filter(Boolean))] as IdiomEntry["readings"];
+  return {
+    id: phrase,
+    phrase,
+    register: (Array.isArray(row.register) ? row.register : []) as string[],
+    readings,
+    possible_meanings: meanings,
+    disambiguating_questions: (Array.isArray(row.disambiguators) ? row.disambiguators : []) as string[],
+    trap: row.trap ?? "",
+    sources: (Array.isArray(row.sources) ? row.sources : []) as string[],
+  };
+}
 
 /** Quiz-after-decode (v5 §4.1) — checks, not tests. Every item sourced. */
 const DECODE_QUIZ: QuizItem[] = [
@@ -60,9 +88,22 @@ const DECODE_QUIZ: QuizItem[] = [
  * has to find out which. Idioms of distress, Kirmayer's seven readings.
  * Modes: 1 Decode, 2 Funnel (5 questions), 3 Seven Readings, 4 CFI Practice.
  */
-export default function DecodePage() {
+export default async function DecodePage() {
   const day = new Date().getDate();
-  const set = Array.from({ length: 8 }, (_, i) => IDIOMS[(day + i) % IDIOMS.length]);
+  // Content wiring: merge faculty-approved idioms from the DB with the static
+  // baseline. New approvals appear; content is never reduced. Fallback to the
+  // static set when the DB is empty or the fetch fails.
+  const supabase = await createClient();
+  const { data: dbRows } = await supabase
+    .from("idioms")
+    .select("phrase, register, possible_meanings, disambiguators, trap, sources")
+    .eq("approved", true);
+  const dbIdioms = (dbRows ?? []).map(rowToIdiom).filter((x): x is IdiomEntry => Boolean(x));
+  const byPhrase = new Map<string, IdiomEntry>(IDIOMS.map((i) => [i.phrase, i]));
+  for (const db of dbIdioms) byPhrase.set(db.phrase, db); // DB wins for existing phrases, adds new ones
+  const allIdioms = [...byPhrase.values()];
+
+  const set = Array.from({ length: 8 }, (_, i) => allIdioms[(day + i) % allIdioms.length]);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
