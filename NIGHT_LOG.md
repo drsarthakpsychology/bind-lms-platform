@@ -1,3 +1,17 @@
+## 2026-08-14 — BOTTOM TAB BAR ACTIVE CHIP (queue follow-up, de86423)
+
+- **Active tab now unmistakable** (`bottom-tab-bar.tsx`): was peach-on-cream (~2:1 light) + font-semibold — quiet for the primary mobile nav. Icon + label now live in a constant-geometry chip (`px-3 py-1 border-2 rounded-md`) that swaps to the system's standard active language — `border-foreground bg-primary text-primary-foreground hard-shadow-flat` — identical to the sidebar active row and SegmentedControl active segment. Ink-on-peach ≈ 8.98:1 in both themes; inactive chips are `border-transparent` at identical geometry (zero layout shift on switch); `aria-current="page"` and `duration-fast ease-snappy` retained; `active:translate-y-px` press feedback per the tactile motion language. QUEUE item ticked.
+- Gate: lint 0/0, tsc clean, 395 tests, next build exit 0.
+
+## 2026-08-14 — DESIGN-DIRECTION QUEUE CLOSE: /today resume hierarchy + locked rows (8d4ef78)
+
+Both remaining DESIGN-DIRECTION queue items resolved, gate-verified, committed.
+
+- **/today two-resume hierarchy** (`today/page.tsx`): when an active sim session exists, the primary card is "Resume your session" — the chain card's resume intent now yields to it and renders quiet (`border-border bg-card` + secondary number badge), so exactly one prominent "continue" action shows on the page ("One thing next."). Without an active session the chain IS the continuation action and keeps its primary highlight + fill badge. Design decision: demote, not merge — the chain's next step can be a different surface (MSE/Formulation/Rounds) than the session URL, so merging destinations would be wrong.
+- **Future-week rows non-navigable** (`courses/[courseId]/page.tsx`): locked-week lesson, material and assignment rows were anchors with `href="#"` — clicking scrolled to top. All three now render as plain `div`s (flat card variant) when the week is future: same opacity-50 locked look, no anchor, no hover/cursor affordance, no dead `aria-disabled`/`tabIndex=-1` shims.
+- Gate: lint 0/0, `tsc --noEmit` clean, 395 tests pass, `next build` exit 0.
+  Shipped in commit: 8d4ef78
+
 ## 2026-08-14 — ADMIN BANNER TOKENS (queue follow-up, e677b61)
 
 - **`admin/page.tsx` free-tier banner → status-alert tokens**: `border-red-500 bg-red-50 text-red-600 text-red-800` → `border-status-alert-fg/40 bg-status-alert-bg` + `text-status-alert-fg` (icon + copy). Off-palette raw hues were near-white in dark mode; token family flips correctly and matches the alert.tsx destructive pattern. QUEUE item ticked.
