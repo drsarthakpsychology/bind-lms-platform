@@ -4,21 +4,49 @@
 
 ## DESIGN SUB-AGENTS + REDESIGN PASS (2026-08-14)
 
-- [ ] **Synthesize design-audit findings** — 15-agent read-only audit (5 surfaces
-  × PFD/polish/motion lenses) → dedup + prioritize into a file-by-file redesign
-  plan for the landing page + dashboard components.
-- [ ] **Landing ThreeIdeas: 3-card row → asymmetric editorial** — the generic
-  3-equal-card feature row is a taste-skill anti-pattern and LANDING_PLAN.md
-  promised "asymmetric editorial layout, not cards". Convert to numbered
-  editorial steps (Learn/Experience/Apply).
-- [ ] **Card radius consistency** — unify card radii to `rounded-lg` (10px) per
-  the "10px cards / 6px inputs" token spec; landing cards + `practice-groups`
-  currently use `rounded-md` (6px).
-- [ ] **Apply audit polish across dashboard + landing** — motion, hierarchy,
-  interaction states, raw-hex→token, `focus:`→`focus-visible:`,
-  `h-screen`→`min-h-[100dvh]`, and any other corroborated findings.
-- [ ] **Gate + commit the redesign** — `npm run lint && npx tsc --noEmit &&
-  npm run test && npm run build` green, then commit with a NIGHT_LOG entry.
+- [x] **Create 7 design sub-agents** under `.claude/agents/` (design-director,
+  perception-auditor, frontend-craft, motion-polish, design-polish,
+  visual-reviewer, quality-gate). Shipped 871792d.
+- [x] **Synthesize design-audit findings** — 15-agent read-only audit (5 surfaces
+  × PFD/polish/motion lenses) → 43 findings deduped into a file-by-file plan.
+- [x] **Card radius consistency** — cards → `rounded-lg` (10px) across landing
+  (CaseFragment, ThreeIdeas), `practice-groups`, `stat-card`; `CardTitle` drops
+  conflicting `font-semibold`/`leading-none`. Shipped 058ef26.
+- [x] **Apply audit polish across dashboard + landing** — a11y contrast (button/
+  badge `link`, badge `ghost`/`link` border, ThreeIdeas eyebrow, badge destructive
+  hover), motion-system unification (Reveal/kinetic-headline SSR-safe + token
+  easing, `tw-animate-css` install, card/stat-card duration, progress fill), nav
+  hierarchy (admin 21→3 groups + unique icons, `/today`+`/dashboard` label/icon
+  unification, tab-bar constant geometry), token consistency (type scale, tabular
+  numerals, `min-h-dvh`, safe-area scoping, cohort/builder → BRAND, weak-spots
+  arrow). Shipped 058ef26.
+- [x] **Gate + commit the redesign** — lint 0, tsc clean, 395 tests, build 0.
+  Committed 058ef26.
+
+## DESIGN REDESIGN — deferred follow-ups (2026-08-14, from audit)
+
+- [ ] **Systemic `text-primary`-as-text contrast sweep** — peach `#f4a261` as a
+  text/link colour on cream is ~1.9:1 (fails AA). Reusable `link` variants are
+  fixed (058ef26), but ~211 raw `text-primary` usages remain across ~90 files
+  (many are decorative icons, some are link labels like "Resume"/"Practise").
+  Needs a design decision: introduce a dedicated `--color-link` token (deep
+  terracotta ≥4.5:1) and migrate the *text* usages, leaving *icon* usages on
+  peach. Surface the decision in NEEDS_KAVYA.
+- [ ] **`Card` `asChild` for the `interactive` variant** — the `focus-visible`
+  ring is dead on a non-focusable `<div>`. In practice `cardVariants` is applied
+  to `<Link>` so it works, but the `Card` component itself can't be keyboard-
+  activated. Add `Slot` support to match Button/Badge.
+- [ ] **Admin mobile persistent nav** — `BottomTabBar` renders only for
+  `mode === "student"`; admins on mobile reach 21 destinations only via the
+  drawer. Add a compact 3–4 item admin bottom bar (Overview / Review triage /
+  Submissions / Students).
+- [ ] **EmptyState / ErrorState entrance motion** — the two state-transition
+  surfaces render with no reveal; add a one-shot 200ms fade/settle (client leaf).
+- [ ] **Landing heading weight** — headings use `font-black` (900) vs the token
+  scale's 700. Low-severity consistency call (hero display weight is arguably
+  intentional); decide and apply if moving to `font-bold`/`text-display`.
+- [ ] **KineticHeadline hero settle timing** — last word settles ~1.15s; tighten
+  stagger 0.05→0.03 or duration 0.6→0.4 if the cascade feels slow.
 
 ## SHARED-CHROME FOLLOW-UP (2026-08-14, design-direction pass)
 

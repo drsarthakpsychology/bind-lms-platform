@@ -211,3 +211,21 @@ Until a file exists in the folder, the registry honestly shows
   top-up to reach 1,000 RPD. Decide if that's acceptable.
 - **NVIDIA free tier** may use request data for model improvement — fine for
   TTS/STT, not for student transcripts.
+
+---
+
+## 🎨 Design decision needed — link colour (from the 2026-08-14 design audit)
+
+Peach `#f4a261` is used as a **text/link colour** in ~211 places on cream — that
+is **~1.9:1 contrast**, below WCAG AA (4.5:1). The reusable `link` button/badge
+variants are already fixed to ink in commit `058ef26`, but inline link labels
+("Resume", "Practise", "All practice tools", …) still render peach-on-cream.
+
+**Decision needed (pick one):**
+- **(A)** Keep peach for **icons only**; introduce a `--color-link` token (deep
+  terracotta, ≥4.5:1 on cream + dark) for link **text**. I then sweep the ~90
+  files and migrate only the *text* usages (icons stay peach).
+- **(B)** Ink links with an underline (`text-foreground`), no new colour.
+
+This is a brand-accent call, so I won't change it unilaterally. Icons on peach
+are decorative (low contrast is acceptable); *text* on peach is not.

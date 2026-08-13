@@ -1640,3 +1640,38 @@ shell, dashboard home + practice section, and design-system primitives.
 
 **Gate:** green before this commit — lint 0, `tsc --noEmit` clean, 395 tests,
 build 0.
+
+---
+
+## 2026-08-14 — Design audit → redesign shipped (058ef26)
+
+15-agent read-only audit (PFD / impeccable-polish / emilkowalski-motion, 5
+surfaces) returned 43 findings. Implemented the high-signal set in 058ef26
+(22 files, +228/−140) plus the `tw-animate-css` dep. Highlights:
+
+- **A11y:** peach-as-text contrast fixed in the reusable `link` primitives
+  (button/badge) and the ThreeIdeas eyebrow (now `text-muted-foreground` + a
+  peach dot marker); badge `ghost`/`link` → `border-transparent` (was inheriting
+  a 2px ink border); destructive badge hover uses `text-destructive-foreground`.
+- **Motion:** landing `Reveal` + `KineticHeadline` hidden `initial` gated behind
+  `reduce === false` — `useReducedMotion()` is `null` server-side (verified in
+  `motion-dom`), so the old `reduce ? … : hidden` rendered the whole landing
+  at opacity:0 for no-JS/crawlers. Reveal easing → `--duration-slow` +
+  `ease-out-expo`. Installed `tw-animate-css` (+ `@import`) so 6 primitives
+  (sheet/dialog/popover/dropdown/select/tooltip) actually animate — their
+  `animate-in`/`slide-in-*` classes had no keyframes. card/stat-card/progress
+  durations now on-token.
+- **Nav:** `ADMIN_ITEMS` 21 → 3 labelled groups (Review/Content/System) + unique
+  icons (no `inbox`×3 / `heartPulse`×2); `/today`+`/dashboard` icon/label unified
+  across sidebar + bottom tab bar; tab-bar constant `font-medium` (no layout
+  shift); `aria-label="Primary tabs"` disambiguates the two nav landmarks.
+- **Consistency:** card radii → 10px `rounded-lg`; `text-base font-semibold` →
+  `text-body-strong`; tabular numerals on progress; `min-h-screen` → `min-h-dvh`;
+  safe-area padding scoped to mobile (desktop `lg:px-10`/`lg:py-8` now apply);
+  cohort date + builder name sourced from `BRAND`; weak-spots banner uses
+  `ArrowRight` + hover/press.
+
+Gate green: lint 0, `tsc --noEmit` clean, 395 tests, build 0. Deferred
+follow-ups recorded in QUEUE.md (systemic `text-primary` sweep — needs a link
+colour decision, see NEEDS_KAVYA; `Card` `asChild`; admin mobile nav;
+empty/error-state motion; heading weight; hero settle timing).
