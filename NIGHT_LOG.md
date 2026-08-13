@@ -1704,3 +1704,15 @@ Audited the live project (`hojhzwvuccojqkvkkslw`, Postgres 17) via `pg_class`
 Deferred / not SQL-actionable: `vector` extension lives in `public` (standard
 pgvector install — moving it risks breakage), and Auth "leaked password
 protection" is a dashboard toggle, not SQL (surface to Kavya).
+
+---
+
+## 2026-08-14 — link-colour token + accent-text contrast sweep (68d1736)
+
+Introduced `--color-link` (light `#b83a00` terracotta 5.40:1 / dark peach
+8.74:1) and migrated all 84 `text-primary` accent usages → `text-link` across
+44 files. Peach remains for fills (`bg-primary`) + `text-primary-foreground`
+(ink-on-peach, untouched). Gate green: build 0, lint clean, tsc OK, 395 tests.
+This closes the deferred `text-primary`-as-text contrast item — the design
+decision (link token) is made and applied, so no NEEDS_KAVYA surface remains
+for it.

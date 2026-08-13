@@ -25,13 +25,11 @@
 
 ## DESIGN REDESIGN — deferred follow-ups (2026-08-14, from audit)
 
-- [ ] **Systemic `text-primary`-as-text contrast sweep** — peach `#f4a261` as a
-  text/link colour on cream is ~1.9:1 (fails AA). Reusable `link` variants are
-  fixed (058ef26), but ~211 raw `text-primary` usages remain across ~90 files
-  (many are decorative icons, some are link labels like "Resume"/"Practise").
-  Needs a design decision: introduce a dedicated `--color-link` token (deep
-  terracotta ≥4.5:1) and migrate the *text* usages, leaving *icon* usages on
-  peach. Surface the decision in NEEDS_KAVYA.
+- [x] **Systemic `text-primary`-as-text contrast sweep** — introduced a
+  `--color-link` token (light `#b83a00` terracotta 5.40:1 / dark peach 8.74:1)
+  and migrated all 84 `text-primary` accent-text/glyph usages → `text-link`.
+  Peach stays for fills (`bg-primary`) + `text-primary-foreground` (ink-on-peach,
+  untouched). Shipped 68d1736.
 - [ ] **`Card` `asChild` for the `interactive` variant** — the `focus-visible`
   ring is dead on a non-focusable `<div>`. In practice `cardVariants` is applied
   to `<Link>` so it works, but the `Card` component itself can't be keyboard-
