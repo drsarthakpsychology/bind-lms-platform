@@ -1,3 +1,31 @@
+## 2026-08-13 (round 9 cont. — practice groups, cards pipeline, briefs scan)
+
+### Practice page — grouped by session length (casebook Axis 5)
+- New client component `PracticeGroups`: /practice is now collapsible
+  sections (Under 5 min / 5-10 / A proper sitting / Whenever) with open
+  state remembered per user (localStorage). Card render moved across the
+  Server→Client boundary (icon string names mapped client-side, same as the
+  sidebar nav). Honest state chips + progress lines keep flowing from
+  computePracticeStates. Commit 87d9aba.
+
+### Rounds cards pipeline closed (verified gap)
+- `/admin/cards` review queue + `/api/admin/cards` (requireAdmin): the
+  draft-cards-from-lessons script wrote 7 draft + 4 published cards to the
+  `cards` table but NOTHING read or reviewed them. Now: approve (publish),
+  reject (archive), edit, delete; Rounds page fetches published+approved
+  cards and appends the author-built seeds into the daily deck. Admin
+  sidebar gains a Cards item. Commit 05ed67d.
+
+### Briefs scan (BRIEF_V5_MASTER + ADDENDUM + RESUME + AUDIT)
+- Verified already-built: course path, lesson tabs, honest practice states,
+  passport/record split, all 4 attempt tables, cards pipeline, calibration
+  kappa dashboard, supervision sign-off, modules preview-as-student,
+  idiom clinic variants, 63 authored sim cases.
+- Remaining P2 (added to QUEUE): idiom/MSE/formulation content wiring,
+  Rounds per-user card_reviews scheduling, quiz-after-lesson, OSCE voice,
+  cohort-pulse real nudge, ElevenLabs (needs Kavya), recurring arcs (needs
+  spec). No P0/P1 found — repo is mature and green.
+
 ## 2026-08-13 (round 9 cont. — live migrations + seed + OSCE polish)
 
 ### Live enablement (attempt tables now persist)
