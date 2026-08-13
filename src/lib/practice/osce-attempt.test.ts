@@ -29,7 +29,10 @@ describe("buildOsceAttemptPayload", () => {
     expect(payload.checklist).toHaveLength(station.checklist.length);
     const doneItems = payload.checklist.filter((c) => c.done);
     expect(doneItems.length).toBe(Math.floor(station.checklist.length / 2));
-    expect(payload.scores.checklist_fraction).toBeCloseTo(doneItems.length / station.checklist.length);
+    // Weighted: higher-weight checklist items count more than weight-1 items.
+    const totalWeight = payload.checklist.reduce((a, c) => a + (c.weight ?? 1), 0);
+    const doneWeight = payload.checklist.filter((c) => c.done).reduce((a, c) => a + (c.weight ?? 1), 0);
+    expect(payload.scores.checklist_fraction).toBeCloseTo(doneWeight / totalWeight);
   });
 
   it("composite score weights checklist 60% + global rating 40%", () => {

@@ -13,7 +13,7 @@ export interface SctItem {
   vignette: string;
   hypothesis: string;
   new_information: string;
-  response_scale?: "5" | "7";
+  response_scale?: "5"; // 7-point scale not yet supported by the scoring path
   topic?: string;
 }
 

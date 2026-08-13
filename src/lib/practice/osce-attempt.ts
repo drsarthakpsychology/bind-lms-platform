@@ -26,8 +26,9 @@ export function buildOsceAttemptPayload(
     ...c,
     done: !!checked[c.item],
   }));
-  const doneCount = checklist.filter((c) => c.done).length;
-  const checklistFraction = station.checklist.length ? doneCount / station.checklist.length : 0;
+  const totalWeight = checklist.reduce((a, c) => a + (c.weight ?? 1), 0);
+  const doneWeight = checklist.reduce((a, c) => a + (c.done ? (c.weight ?? 1) : 0), 0);
+  const checklistFraction = totalWeight ? doneWeight / totalWeight : 0;
   const normalizedGlobal = station.global_rating.max ? globalRating / station.global_rating.max : 0;
   const composite = Math.round((checklistFraction * 0.6 + normalizedGlobal * 0.4) * 100) / 100;
   return {

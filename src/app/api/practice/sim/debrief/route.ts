@@ -136,16 +136,20 @@ export async function POST(req: Request) {
     isNoDisorder,
   });
 
-  // Store the score once.
-  await admin.from("sim_scores").insert({
-    session_id: session.id,
-    user_id: user.id,
-    case_id: session.case_id,
-    rubric: result,
-    quotes: result.quotes,
-    missed_disclosures: result.missed_disclosures,
-    overall: result.score,
-  });
+  // Store the score once. Upsert on the unique session_id index so a
+  // concurrent duplicate POST cannot double-score or double-credit.
+  await admin.from("sim_scores").upsert(
+    {
+      session_id: session.id,
+      user_id: user.id,
+      case_id: session.case_id,
+      rubric: result,
+      quotes: result.quotes,
+      missed_disclosures: result.missed_disclosures,
+      overall: result.score,
+    },
+    { onConflict: "session_id", ignoreDuplicates: true },
+  );
 
   // Mark the session complete.
   await admin.from("sim_sessions").update({ status: "complete", ended_at: new Date().toISOString() }).eq("id", session.id);
@@ -165,7 +169,12 @@ export async function POST(req: Request) {
       source_ref: session.id,
       evidence: { overall: result.score, case_id: session.case_id, date: new Date().toISOString() },
     }));
-    if (events.length > 0) await admin.from("competency_events").insert(events);
+    if (events.length > 0) {
+      await admin.from("competency_events").upsert(events, {
+        onConflict: "user_id,source,source_ref",
+        ignoreDuplicates: true,
+      });
+    }
   }
 
   return NextResponse.json({

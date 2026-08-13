@@ -202,10 +202,12 @@ export const SEED_OSCE_STATIONS: OsceStation[] = [
   },
 ];
 
-/** Score an attempt against the checklist. Returns 0..1 fraction. */
-export function scoreOsce(checked: Array<{ item: string; done: boolean }>): number {
-  const total = checked.reduce((a, c) => a + (c.done ? 1 : 0), 0);
-  return checked.length ? total / checked.length : 0;
+/** Score an attempt against the checklist. Returns 0..1 fraction, weighting
+ *  each item by its declared `weight` (higher-weight items count more). */
+export function scoreOsce(checked: Array<{ item: string; done: boolean; weight?: number }>): number {
+  const totalWeight = checked.reduce((a, c) => a + (c.weight ?? 1), 0);
+  const earned = checked.reduce((a, c) => a + (c.done ? (c.weight ?? 1) : 0), 0);
+  return totalWeight ? earned / totalWeight : 0;
 }
 
 /**

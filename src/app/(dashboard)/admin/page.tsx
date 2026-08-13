@@ -1,4 +1,4 @@
-import { BookOpen, CircleAlert, Database, GraduationCap, Inbox, Users } from "lucide-react";
+import { ArrowRight, BookOpen, Database, GraduationCap, Inbox, Users } from "lucide-react";
 import Link from "next/link";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 
@@ -94,22 +94,26 @@ export default async function AdminOverviewPage() {
         ))}
       </div>
 
-      {/* Action items — a to-do list, not analytics. */}
+      {/* Action items — a short to-do list, not analytics. Two clear next steps. */}
       <Reveal delay={0.35}>
       <section aria-label="Needs attention" className="space-y-3">
         <h2 className="text-h2">Needs attention</h2>
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-2">
           <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
             <h3 className="flex items-center gap-2 text-small font-semibold">
               <Users className="size-4 text-link" aria-hidden />
-              Inactive this week
+              Not started yet
             </h3>
+            <p className="mt-1 text-caption text-muted-foreground">Students with no progress so far.</p>
             <ul className="mt-2 space-y-1 text-small text-muted-foreground">
               {(inactiveStudents ?? []).slice(0, 8).map((s) => (
                 <li key={s.id} className="truncate">{s.email ?? "no email"}</li>
               ))}
-              {(inactiveStudents ?? []).length === 0 && <li>Everyone checked in 🎉</li>}
+              {(inactiveStudents ?? []).length === 0 && <li>Everyone has started.</li>}
             </ul>
+            <Link href="/admin/students" className="mt-2 inline-flex items-center gap-1 text-caption font-medium text-link">
+              View students <ArrowRight className="size-3.5" aria-hidden />
+            </Link>
           </div>
 
           <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
@@ -126,23 +130,11 @@ export default async function AdminOverviewPage() {
                   </li>
                 );
               })}
-              {(ungraded ?? []).length === 0 && <li>Nothing pending 🎉</li>}
+              {(ungraded ?? []).length === 0 && <li>Nothing pending.</li>}
             </ul>
-            <Link href="/admin/submissions" className="mt-2 inline-block text-caption font-medium text-link">
-              Review all →
+            <Link href="/admin/submissions" className="mt-2 inline-flex items-center gap-1 text-caption font-medium text-link">
+              Review all <ArrowRight className="size-3.5" aria-hidden />
             </Link>
-          </div>
-
-          <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
-            <h3 className="flex items-center gap-2 text-small font-semibold">
-              <CircleAlert className="size-4 text-link" aria-hidden />
-              Quick actions
-            </h3>
-            <ul className="mt-2 space-y-1 text-small">
-              <li><Link href="/admin/students" className="text-link hover:underline">Add students</Link></li>
-              <li><Link href="/admin/courses" className="text-link hover:underline">Create a course</Link></li>
-              <li><Link href="/admin/submissions" className="text-link hover:underline">Grade submissions</Link></li>
-            </ul>
           </div>
         </div>
       </section>

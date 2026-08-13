@@ -78,7 +78,8 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
 
   function next() {
     setShowPanel(false);
-    if (idx + 1 < items.length) setIdx(idx + 1);
+    // Always advance — reaching idx === items.length triggers the "done" state.
+    setIdx((i) => i + 1);
   }
 
   const mm = String(Math.floor(seconds / 60)).padStart(2, "0");

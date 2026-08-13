@@ -1770,3 +1770,34 @@ Gate green throughout: lint 0, tsc clean, 395 tests, build 0.
 - Minor hygiene (not a vuln): a few `*_select_own_or_admin` policies are `TO
   public` and call `is_admin()`, so anon gets a 401 rather than a clean empty
   set. Pre-existing and secure; noted for a future `TO authenticated` pass.
+2026-08-14T05:08:07 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:09:09 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:09:16 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:09:37 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Bug hunt + medication classification (beastmode)
+
+**Bug hunt (4 agents) — 7 bugs fixed:**
+- CRON_SECRET guard failed OPEN when unset (empty bearer token reached mutating
+  tasks) → now fails closed on missing secret.
+- MSE trainer "Mood vs affect" crashed on the 8th item (index out of range) →
+  completion state renders before indexing.
+- Judgment arena `next()` never advanced past the last item → always advances.
+- OSCE scoring ignored per-item `weight` → weighted fraction in scoreOsce +
+  buildOsceAttemptPayload (test updated).
+- SCT advertised an unsupported 7-point scale → dropped to 5.
+- Sim debrief double-score/double-credit race → unique index on
+  sim_scores(session_id) + competency_events(user_id,source,source_ref) + upsert.
+  Deduped 21 existing duplicate competency_events rows.
+- (rate-limit read-then-increment race logged, LOW — deferred.)
+
+**Medication classification:** 122/151 drugs had drug_class = NULL. Assigned a
+consistent clinical class to all 151 + standardised the pre-existing labels
+(`Dopamine antagonist (antipsychotic)` → `Typical antipsychotic`, etc.).
+
+**Admin overview:** removed the redundant "Quick actions" card, fixed the
+misleading "Inactive this week" label, replaced unicode arrow + emoji.
+
+Gate green: lint 0, tsc clean, 395 tests, build 0.

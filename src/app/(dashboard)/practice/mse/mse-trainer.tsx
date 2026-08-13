@@ -122,40 +122,44 @@ export function MseTrainer() {
 
       {/* MOOD VS AFFECT */}
       {mode === "moodaffect" ? (
-        <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
-          <p className="text-eyebrow text-muted-foreground">Mood vs affect · {moodIdx + 1}/{MOOD_AFFECT_ITEMS.length}</p>
-          <p className="mt-3 text-lg font-medium">{MOOD_AFFECT_ITEMS[moodIdx].text}</p>
-          <div className="mt-4 flex gap-2">
-            <button
-              type="button"
-              onClick={() => {
-                const correct = MOOD_AFFECT_ITEMS[moodIdx].answer === "mood";
-                haptic(correct ? "success" : "warning");
-                setMoodIdx((i) => i + 1);
-              }}
-              className="flex-1 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
-            >
-              Mood
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                const correct = MOOD_AFFECT_ITEMS[moodIdx].answer === "affect";
-                haptic(correct ? "success" : "warning");
-                setMoodIdx((i) => i + 1);
-              }}
-              className="flex-1 rounded-md border-2 border-border bg-secondary px-4 py-2 text-small font-semibold text-foreground hard-shadow-sm transition-transform active:translate-y-px"
-            >
-              Affect
-            </button>
-          </div>
-          {moodIdx >= MOOD_AFFECT_ITEMS.length ? (
-            <p className="mt-4 text-small text-muted-foreground">
+        moodIdx >= MOOD_AFFECT_ITEMS.length ? (
+          <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+            <p className="text-eyebrow text-muted-foreground">Mood vs affect · complete</p>
+            <p className="mt-3 text-small text-muted-foreground">
               Drill complete. Mood is what they report; affect is what you observe. Repeat to
               internalise it.
             </p>
-          ) : null}
-        </div>
+          </div>
+        ) : (
+          <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+            <p className="text-eyebrow text-muted-foreground">Mood vs affect · {moodIdx + 1}/{MOOD_AFFECT_ITEMS.length}</p>
+            <p className="mt-3 text-lg font-medium">{MOOD_AFFECT_ITEMS[moodIdx].text}</p>
+            <div className="mt-4 flex gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  const correct = MOOD_AFFECT_ITEMS[moodIdx].answer === "mood";
+                  haptic(correct ? "success" : "warning");
+                  setMoodIdx((i) => i + 1);
+                }}
+                className="flex-1 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+              >
+                Mood
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  const correct = MOOD_AFFECT_ITEMS[moodIdx].answer === "affect";
+                  haptic(correct ? "success" : "warning");
+                  setMoodIdx((i) => i + 1);
+                }}
+                className="flex-1 rounded-md border-2 border-border bg-secondary px-4 py-2 text-small font-semibold text-foreground hard-shadow-sm transition-transform active:translate-y-px"
+              >
+                Affect
+              </button>
+            </div>
+          </div>
+        )
       ) : null}
 
       {/* DESCRIBE DON'T DIAGNOSE */}
