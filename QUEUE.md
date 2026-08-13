@@ -4,7 +4,7 @@
 
 ## SHARED-CHROME FOLLOW-UP (2026-08-14, design-direction pass)
 
-- [ ] **Admin page raw status colors → tokens**: `admin/page.tsx` free-tier banner uses raw `border-red-500 bg-red-50 text-red-600 text-red-800` (off-palette, near-white in dark mode). Same fix as the weak-spots banner / practice chips: route through `status-alert`/`status-pending` tokens. Page under /(dashboard) — owner: dashboard/design agents.
+- [x] **Admin page raw status colors → tokens**: `admin/page.tsx` free-tier banner uses raw `border-red-500 bg-red-50 text-red-600 text-red-800` (off-palette, near-white in dark mode). Same fix as the weak-spots banner / practice chips: route through `status-alert`/`status-pending` tokens. Shipped in e677b61.
 - [ ] **Bottom tab bar active state is quiet**: active tab is peach-on-cream (~2:1 in light mode) + font-semibold. Deliberate trade-off; consider a stronger active affordance (hard-shadow chip behind the icon) if user testing flags orientation loss.
 - [ ] **Error boundaries beyond /(dashboard)**: /login, /enquire, /verify, and the landing routes still have no error.tsx. A `global-error.tsx` or per-segment boundaries would close the last bare-fallback gaps.
 - [ ] **Dialog/Sheet close buttons use `focus:` not `focus-visible:`**: ring shows on mouse click too; cosmetic, standard shadcn default, low priority.

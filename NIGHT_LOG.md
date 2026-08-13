@@ -1,3 +1,8 @@
+## 2026-08-14 — ADMIN BANNER TOKENS (queue follow-up, e677b61)
+
+- **`admin/page.tsx` free-tier banner → status-alert tokens**: `border-red-500 bg-red-50 text-red-600 text-red-800` → `border-status-alert-fg/40 bg-status-alert-bg` + `text-status-alert-fg` (icon + copy). Off-palette raw hues were near-white in dark mode; token family flips correctly and matches the alert.tsx destructive pattern. QUEUE item ticked.
+- Gate: lint 0/0, tsc clean, 395 tests, next build exit 0.
+
 ## 2026-08-14 — SHARED CHROME + COMPONENTS + STATES (PFD / impeccable / emilkowalski-motion)
 
 Design-director pass over the Operate-mode shared shell. Neobrutalist pastel preserved; token/API surfaces untouched; no pages under /(dashboard) edited by this slice. Shipped in commit be846f6 (swept into the concurrent design-direction commit).
