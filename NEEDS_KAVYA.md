@@ -229,3 +229,15 @@ variants are already fixed to ink in commit `058ef26`, but inline link labels
 
 This is a brand-accent call, so I won't change it unilaterally. Icons on peach
 are decorative (low contrast is acceptable); *text* on peach is not.
+
+---
+
+## 🔐 Security — one-click dashboard toggle (not SQL-able)
+
+**Enable "Leaked password protection"** — Supabase Dashboard → Authentication →
+Providers → Email → toggle **"Prevent use of leaked passwords"** ON. Supabase
+Auth then checks new/changed passwords against HaveIBeenPwned. Free, one click.
+(Flagged by the security advisor; I can't flip it from SQL.)
+
+**Known-accepted (no action):** the `pgvector` extension lives in the `public`
+schema (standard install) — moving it risks breaking `vector`-typed columns.
