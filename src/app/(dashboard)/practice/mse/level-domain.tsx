@@ -19,6 +19,14 @@ export function DomainLevel({ onComplete }: { onComplete?: () => void }) {
   const [picked, setPicked] = React.useState<string[]>([]);
   const [revealed, setRevealed] = React.useState(false);
 
+  // Focus management: after check/reveal, focus the "Next" button
+  const nextButtonRef = React.useRef<HTMLButtonElement>(null);
+  React.useEffect(() => {
+    if (revealed && nextButtonRef.current) {
+      nextButtonRef.current.focus();
+    }
+  }, [revealed]);
+
   const domain = MSE_DOMAIN_ORDER[domainIdx];
   const unit = DOMAIN_UNITS.find((u) => u.domain === domain);
   const vocab = MSE_VOCAB[domain];
@@ -139,6 +147,7 @@ export function DomainLevel({ onComplete }: { onComplete?: () => void }) {
                 </p>
               ) : null}
               <button
+                ref={nextButtonRef}
                 type="button"
                 onClick={next}
                 className="mt-1 rounded-md border-2 border-border bg-primary px-4 py-1.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"

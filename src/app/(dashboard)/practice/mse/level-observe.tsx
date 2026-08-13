@@ -59,6 +59,14 @@ export function ObserveLevel({ onComplete }: { onComplete?: () => void }) {
   const [roundDone, setRoundDone] = React.useState(false);
   const stimulus = STIMULI[idx];
 
+  // Focus management for keyboard-only users
+  const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+  React.useEffect(() => {
+    if (!roundDone && textareaRef.current) {
+      textareaRef.current.focus();
+    }
+  }, [idx, roundDone]);
+
   const result = scoreObserve(text);
   const wordCount = text.trim().length ? text.trim().split(/\s+/).length : 0;
 
@@ -94,11 +102,13 @@ export function ObserveLevel({ onComplete }: { onComplete?: () => void }) {
           <span className="font-semibold">100 words with zero labels</span>.
         </p>
         <textarea
+          ref={textareaRef}
           value={text}
           onChange={(e) => setText(e.target.value)}
           rows={6}
           placeholder="Sits slumped, voice soft, avoids eye contact when the marriage is mentioned…"
           className="mt-3 w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          aria-label="Your observation description"
         />
       </div>
 

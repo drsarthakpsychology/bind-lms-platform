@@ -11,7 +11,7 @@
 - [x] **Scoring Coverage**: Write 10 unit tests for the debrief scoring logic (deterministic, fixture-tested) [Master §11]
 - [x] **A7 Dictate-as-conversation**: Initial scaffold for the dictation interviewer (Whisper → follow-up LLM → sim_case spec) [Addendum §A7]
 - [x] **A5 Queue auto-release**: Add the `AI-generated — not yet faculty reviewed` label to student-facing feedback [Addendum §A5]
-- [ ] **Polish (Haptics)**: Audit every practice activity and ensure `haptics.ts` fires on card tap, state change, and correct answer [Addendum §B5]
+- [x] **Polish (Haptics)**: Audit every practice activity and ensure `haptics.ts` fires on card tap, state change, and correct answer [Addendum §B5]
 - [ ] **Polish (Focus)**: Ensure focus management on the MSE drill and long forms for keyboard-only users [Master §4]
 - [ ] **Infra (Optimization)**: Audit text column sizes and apply `infra_snapshots` logic to the newest tables [Master §9.3]
 - [ ] **Docs (Freshness)**: Update MORNING_REPORT.md and NIGHT_LOG.md with Round 8 status [Master §0.4]

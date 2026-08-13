@@ -31,6 +31,14 @@ export function CheckinForm({ weekLabel, initial }: Props) {
   const [saved, setSaved] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
 
+  // Focus management for keyboard users
+  const freeLineRef = React.useRef<HTMLInputElement>(null);
+  React.useEffect(() => {
+    if (!busy && freeLineRef.current) {
+      freeLineRef.current.focus();
+    }
+  }, [busy]);
+
   const complete = workload !== null && energy !== null && preparedness !== null;
 
   async function submit(e: React.FormEvent) {
@@ -73,6 +81,7 @@ export function CheckinForm({ weekLabel, initial }: Props) {
       <div>
         <label htmlFor="free-line" className="text-small font-medium">Anything to add? (optional)</label>
         <input
+          ref={freeLineRef}
           id="free-line"
           value={freeLine}
           onChange={(e) => setFreeLine(e.target.value)}

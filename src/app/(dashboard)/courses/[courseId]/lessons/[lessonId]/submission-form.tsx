@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   CheckCircle2,
@@ -93,11 +93,13 @@ export function SubmissionForm({
 }) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
+  const noteRef = useRef<HTMLTextAreaElement>(null);
   const [dragOver, setDragOver] = useState(false);
   const [picked, setPicked] = useState<File[]>([]);
   const [note, setNote] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
   // pastDue is computed once on the client (Date.now() isn't allowed during
   // render, so it's initialised lazily in state).
   const [pastDue] = useState(() =>
@@ -115,6 +117,13 @@ export function SubmissionForm({
     !isReturned &&
     (!pastDue || allowLate) &&
     (picked.length > 0 || (submission && !submission.files.length && !submission.note));
+
+  // Focus management for keyboard users
+  React.useEffect(() => {
+    if (noteRef.current && !submitting) {
+      noteRef.current.focus();
+    }
+  }, [submitting, isSubmitted, canSubmit]);
 
   const ALLOWED_EXTS = new Set(["pdf", "docx"]);
 
@@ -373,6 +382,7 @@ export function SubmissionForm({
           Add a note for your instructor <span className="font-normal text-muted-foreground">(optional)</span>
         </label>
         <Textarea
+          ref={noteRef}
           id="submission-note"
           value={note}
           onChange={(e) => setNote(e.target.value)}

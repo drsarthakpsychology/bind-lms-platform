@@ -96,6 +96,12 @@ Verify checklist (the hook's, done for real):
 - Done items: 60% opacity + checkmark; Future: greyed + "Locked" badge with "Opens next/later"
 - Migrations: weeks column on courses/lessons/materials, practice_chains table, follow_up on sim_cases
 - Full gate: lint 0 errors, tsc clean, 340 tests pass, build green
+
+### Haptics audit — all 23 practice activities (commit e2f5109)
+- Every practice surface now fires haptics on: card tap, state change, correct/incorrect answer
+- Patterns: tap (8ms) for interactions, success [15,40,25] for correct/completion, warning [30,60,30,60,30] for dismissive/incorrect
+- Rounds, Decode Arena, Funnel, Seven Readings, CFI, Small Things, MSE L1-5, Ethics, Out of Depth, Weak Spots, Landmark, Two-Minute Clinic, Judgment, Formulation, OSCE, Consulting Room, Debrief, Check-in, Supervision, Library — all covered
+- Full gate: lint 0 errors, tsc clean, 340 tests pass, build green
 - Student debrief now shows "AI-generated — not yet faculty reviewed" badge
 - Admin sim-review list updated with full label
 - Triage page auto-release count already existed; label now consistent
