@@ -9,6 +9,40 @@ build exit 0; (3) tree clean on feat/groq-primary-director; (4) this log entry;
 (5) QUEUE 0 unchecked, NEEDS_KAVYA holds the human-blocked items. Nothing open
 in my scope.
 
+## 2026-08-14 — continuation: chain tests, dev-quality plugins, dead-code cleanup (4df93f7, e4cc23c, f8009b1)
+
+### Chain route tests + /today fix (4df93f7)
+- 7 vitest route tests for POST /api/practice/chain (mocks supabase +
+  rate-limit, same pattern as the attempt-route tests): 401/400/404, fresh
+  chain with/without follow_up content, idempotent extension of an existing
+  chain, no-duplicate on a chain that already has it. 379 → 386 tests.
+- Fixed a latent broken link in /today: the unknown-surface fallback built
+  /practice/consulting-room/session/<chain_id> from the chain row id (never a
+  session id) — now falls back to the consulting-room hub.
+
+### Dev-quality plugins (e4cc23c) — user: "install all the important plugins"
+- Researched the 2026 tooling landscape online (ESLint 9 flat config +
+  Tailwind v4 stacks), installed the important low-risk dev-only picks:
+  prettier@3 + prettier-plugin-tailwindcss@0.8 (Tailwind v4 class ordering,
+  CSS-first aware), eslint-config-prettier@10 (last in flat config),
+  @testing-library/react@16 + jest-dom@7 + jsdom@30 (the app had ZERO
+  component tests), knip@6 (dead-code). scripts: format / format:check /
+  knip. .vscode/extensions.json editor recs.
+- vitest config: *.test.tsx now included + setupFiles jest-dom loader;
+  component tests opt into jsdom per-file via docblock. First component test
+  (Button, 3 cases) proves the setup.
+- npm audit fix applied safe non-force upgrades (5→3 high); the remaining 3
+  (next's bundled postcss + sharp libvips) need a force Next major bump —
+  deliberately NOT made on this pinned Next 16.2.12 project.
+
+### Dead-code cleanup (f8009b1, knip-verified)
+- First `knip` run captured in docs/DEAD_CODE.md. Removed grep-verified dead
+  exports: synthesisCacheKey re-export, createServerStt/createDeepgramStt/
+  deepgramSttAvailable + their types (the app uses serverTranscribe + browser
+  Web Speech), toolScore, providerVoice. Un-exported module-private helpers:
+  evaluateGate, MOVE_BY_ID, mulberry32, DIAGNOSTIC_TERMS. -82 lines.
+- Gate green throughout: lint 0/0, tsc clean, 389 tests, build exit 0.
+
 ## 2026-08-14 — continuation: course + material loading skeletons (b8472db)
 
 - courses/[courseId]/page.tsx (dynamic week-path) and

@@ -6,13 +6,15 @@ This file records the first-run output so cleanup can be done in targeted,
 reviewable slices — NOT a mass delete (some exports are re-export conveniences,
 script-only helpers, or used through paths knip can't statically see).
 
-Spot-checked and confirmed genuinely unused (grep across src, no consumers):
-- `src/lib/sim/gates.ts: evaluateGate` — no importers outside gates.ts.
-- `src/lib/voice/stt.ts: createServerStt / deepgramSttAvailable / createDeepgramStt`
-  — no importers (STT route may reference a different entry; verify before removing).
-- `src/lib/practice/competency-client.ts: toolScore` — no importers.
-- `src/lib/voice/synthesize.ts` re-export `synthesisCacheKey` — consumers import
-  from `synthesis-keys` directly; the re-export is dead (safe to drop).
+## Removed in commit f8009b1 (grep-verified, zero consumers)
+- `src/lib/voice/synthesize.ts` — dead `synthesisCacheKey` re-export.
+- `src/lib/voice/stt.ts` — `createServerStt` / `createDeepgramStt` /
+  `deepgramSttAvailable` + `ServerSttEngine` / `DeepgramSttEngine` (the app
+  uses `serverTranscribe` + browser Web Speech; engines were never constructed).
+- `src/lib/practice/competency-client.ts` — `toolScore`.
+- `src/lib/voice/casting.ts` — `providerVoice` (identity stub).
+- Un-exported (module-private now): `evaluateGate` (gates.ts), `MOVE_BY_ID`
+  (moves.ts), `mulberry32` (variation.ts), `DIAGNOSTIC_TERMS` (practice/mse.ts).
 
 ## Unused exported values (~35)
 ```
