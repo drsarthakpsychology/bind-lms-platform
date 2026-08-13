@@ -4,6 +4,13 @@
 
 ## BEASTMODE ROUND 10 CONT. — post-close continuation slices (2026-08-14, hook-driven)
 
+- [x] **Dashboard motion-polish pass (654139d)**: VibhaMark replaces the
+  peach-square brand mark in the sidebar (28) + mobile top bar (24); Reveal
+  entrances added to /reflect, /record, /passport, /admin (stat cards staggered
+  0.15 + i*0.05); passport PDF button lift + case-library row hover
+  micro-interactions. Loading skeletons, animated progress, Radix dialog/sheet/
+  popover transitions, and layoutId tab indicators verified already in place.
+  Gate green (lint, tsc, 392 tests, build).
 - [x] **Loading-state sweep (§12)**: added page-shaped loading.tsx skeletons for
   every dynamic route group missing one — reflect/wall/passport/record/admin
   (be8a03e) + courses/[courseId] + materials/[materialId] (b8472db). practice/

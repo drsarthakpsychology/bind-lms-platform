@@ -1,3 +1,32 @@
+## 2026-08-14 — dashboard motion-polish pass + Vibha brand mark (654139d)
+
+### Motion polish (restrained — design intact)
+- **Brand mark**: replaced the peach-square `{BRAND.shortName.charAt(0)}`
+  marks with the VIBHA observation-V mark (`VibhaMark`) in the desktop
+  sidebar (size 28) and mobile top bar (size 24) — mark only, no wordmark
+  (space is tight). Server components, hookless SVG — safe.
+- **Card entrances** on the surfaces still lacking them, matching the
+  dashboard-home cascade: /reflect (header 0.05, view 0.15), /record (header
+  0.05, supervision 0.15, check-in 0.2), /passport (header 0.05, download
+  0.1, view 0.15), /admin (header 0.05, infra strip 0.1, stat cards staggered
+  0.15 + i*0.05, needs-attention 0.35).
+- **Micro-interactions**: passport PDF download button gets the tactile lift
+  (`transition-[transform,box-shadow] duration-fast ease-snappy
+  hover:-translate-y-0.5 hover:hard-shadow-md`); case-library rows get a
+  subtle accent hover state (transition-colors, clipped by overflow-hidden).
+- **Verified already-good, no changes**: all 11 loading skeletons exist and
+  are consistent; `Progress` animates via motion; dialog/sheet/popover animate
+  via Radix data-state + Tailwind animate-in/out; SegmentedControl + LessonTabs
+  already use layoutId sliding indicators (reduced-motion safe).
+
+### Gate (full, hook-mandated, run on disk)
+- lint 0/0, `npx tsc --noEmit` clean, 392 vitest tests pass, `npm run build`
+  compiles (78/78 pages, exit 0). Every claimed edit re-verified on disk.
+
+### Brand rollout bundled in the same commit (homepage agent's concurrent work)
+- VibhaWordmark on /login and /expired, landing kinetic-headline +
+  scroll-scale, settings plugin enable. Build stays green with all of it.
+
 ## 2026-08-14 — final verification pass (hook-mandated, all green)
 
 Hook checklist re-run on disk, not memory: (1) every claimed edit confirmed
