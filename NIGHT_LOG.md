@@ -1,3 +1,18 @@
+## 2026-08-14 — continuation: free-first voice pregen verified + item closed
+
+### Voice — pregen verification (Free-first voice item remaining work)
+- `npm run pregen-voice -- --dry-run` verified: reports all **74 scripted
+  fallback lines** from the 24-move library, computes sha256 cache keys
+  correctly (synthesis-keys, no server-only import), prints 5 samples + count,
+  exit 0, nothing called.
+- No-key honest path verified: prints "No NVIDIA_API_KEY / AI_ENABLED=true —
+  no synthesis. The browser TTS path works regardless…", exit 0. Full synth
+  path (CosyVoice 2 via NVIDIA + R2) is one key away, unchanged.
+- R2 cache prune helper had already landed in bd168e3
+  (scripts/prune-voice-cache.ts, dry-run by default, --apply to delete).
+- QUEUE: Free-first voice item ticked. Gate green: lint 0, tsc clean,
+  379 tests, build exit 0. Branch feat/groq-primary-director; no push.
+
 ## 2026-08-14 — continuation: dashboard polish landed + §24 free-tier doc (commits bd168e3, 006d412)
 
 ### UI — landed the subagent dashboard polish (UI pass remaining work)

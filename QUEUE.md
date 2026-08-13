@@ -10,9 +10,11 @@
   615499b. Remaining: subagent dashboard polish on practice/today/wall must
   land + gate. Landed bd168e3 (Reveal cascades on /practice /today /wall
   /enquire /login + equal-height cards) — gate green. [brief §7-13]
-- [ ] **Free-first voice**: MiMo (MIT) added as tier 1, chain reordered with
-  ElevenLabs LAST (paid, not recommended) — committed 615499b. Remaining:
-  R2 cache prune helper + pregen verification (in-flight subagent) + gate. [brief §15-27]
+- [x] **Free-first voice**: MiMo (MIT) added as tier 1, chain reordered with
+  ElevenLabs LAST (paid, not recommended) — committed 615499b. R2 cache prune
+  helper landed bd168e3 (scripts/prune-voice-cache.ts); pregen verified —
+  dry-run reports 74 scripted fallback lines + no-key honest path, both exit 0.
+  Gate green. [brief §15-27]
 - [x] **§24 AI free-tier doc**: docs/AI_FREE_TIERS.md — per-provider table
   (provider/model/purpose/cost/free-limits/env-var/setup/fallback) + chain
   order + privacy note. Committed 006d412. [brief §24]
