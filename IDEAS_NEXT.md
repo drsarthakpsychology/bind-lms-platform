@@ -18,32 +18,30 @@ writing this version — see NIGHT_LOG.md 2026-08-13 for the audit method.
 - Weekly check-in → pulse cross-reference — `/admin/pulse` flags activity-drop + load-spike together
 - MSE five-level ladder — `level-observe/level-domain/level-full-mse/level-live-mse` all exist
 
-## Real, verified-still-open
+## Swept 2026-08-14 (round 9 + VIBHA): previously-"open" items now BUILT
+- OSCE/MSE/Formulation/SCT attempt tables — all four wired with write
+  routes + live migrations + fixture-tested route tests (commits bb5bc10,
+  711366e, 0ad8e9d). Durable per-attempt records now exist.
+- `mse_stimuli` / `formulation_cases` / `public.idioms` content — levels,
+  forge and the decode drill read live DB content with static fallback
+  (content wiring, commits bb5bc10, 1bee117, ad6d5df). `osce_stations`
+  already read by the OSCE attempt route.
+- `practice_chains` — chain scaffold built (9ed2b36): created on debrief,
+  surfaced on /today. `sim_cases.follow_up` content spec still pending
+  (needs authored follow-up session specs — Kavya decision).
+- ElevenLabs — wired as the premium top tier of the TTS chain (81bbf5f),
+  one `ELEVENLABS_API_KEY` + `ELEVENLABS_VOICE_ID` away.
 
-- **OSCE/MSE/Formulation/SCT attempt tables are unused.** `osce_attempts`,
-  `mse_attempts`, `formulation_attempts`, `sct_attempts` exist live with
-  full RLS; zero application code writes to them. Those 4 tools DO credit
-  `competency_events` (via the shared `/api/practice/competency` route),
-  so students aren't uncredited — but there's no durable per-attempt
-  record (transcript, checklist, global rating) the way `sim_turns`/
-  `sim_scores` give the Consulting Room. Effort: medium (4 small
-  write-paths, one per tool, following the sim_scores pattern). Impact:
-  medium — unlocks OSCE-history review, per-station weak-spots, and a
-  faculty audit view symmetrical to `/admin/sim-review`.
-- **`osce_stations` / `mse_stimuli` / `formulation_cases` / `public.idioms`
-  tables have zero readers.** All 4 tools ship real content as static TS
-  instead. See `docs/PRACTICE_LAYER.md` § "Content: code vs DB" and
-  NEEDS_KAVYA.md for the product-decision framing (wire a real
-  admin-authoring flow, or drop the tables).
-- **`practice_chains` / `sim_cases.follow_up`** ("recurring patient"
-  multi-session arcs) — table went live 2026-08-13, zero content, zero
-  consumers. Parked in NEEDS_KAVYA.md pending a real spec.
-- **ElevenLabs pre-generated patient lines cached in R2** — Kavya has an
-  account (voice "Rudra"); not wired. Low priority while CosyVoice/Kokoro
-  cover the free-tier TTS chain.
+## Real, verified-still-open
 - **mhGAP/NMHS/POCSO/RCI manual downloads** — the fetchers point at these;
   NIMHANS/India-Code links need a browser download (TLS/redirect issues
   in Node). Tracked in NEEDS_KAVYA.md, not code-fixable.
+- **`sim_cases.follow_up` recurring-patient content** — the chain
+  consumer is built; the follow-up session specs (second/third visit,
+  changed state) are authored content that needs a clinical spec.
+- **Provider research** — docs/MODEL_RESEARCH.md tracks the current best
+  free TTS/STT/LLM/embedding options; the registry in src/lib/ai/router.ts
+  is the single place to add/swap providers.
 
 ## Deferred (v5 build era, still true)
 - Corpus fetchers for ICD-11 / mhGAP / NMHS / MHA 2017 as scripted,
