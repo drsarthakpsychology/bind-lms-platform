@@ -5,10 +5,12 @@ import { haptic } from "@/lib/haptics";
 import { dailyQueue, newCardState, reviewCard, type CardRating, type CardState } from "@/lib/practice/rounds";
 import { ROUNDS_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
-/** Seed cards for the slice (real cards come from lesson transcripts → admin queue). */
-type SeedCard = { front: string; back: string; type?: "flash" | "idiom" | "confusable" };
+/** A Rounds card. Faculty-approved cards from the `cards` table join the seeds. */
+export type SeedCard = { front: string; back: string; type?: "flash" | "idiom" | "confusable" };
 
-const SEED_CARDS: SeedCard[] = [
+/** Author-built starter cards; approved DB cards (lesson-transcript drafts)
+ *  are appended by the page. */
+export const SEED_CARDS: SeedCard[] = [
   { front: "What are the two components of the Mental Healthcare Act 2017 that most affect your duty as a counsellor?", back: "Advance directives + nominated representative. Both mean you must document consent and respect the client's expressed wishes." },
   { front: "A client tells you they're 'fine' but can't sleep. What's the single best open question?", back: "'What does a bad night look like for you?' — it invites description, not a yes/no." },
   { front: "When is confidentiality absolute, and when is it breached?", back: "Absolute unless: imminent risk to self/others, child abuse (POCSO), or court order. Say the limits up front." },
@@ -21,16 +23,16 @@ const SEED_CARDS: SeedCard[] = [
   { front: "What does 'not feeling fresh' usually mean in common Indian English?", back: "Often describes incomplete bowel evacuation (constipation). If you write 'low mood' and move on, you've missed the clinical picture.", type: "idiom" },
 ];
 
-export function RoundsDeck() {
-  // Card states are seeded; in production they come from the DB (cards +
-  // card_reviews). This slice demonstrates the scheduler + UI.
-  const [queue] = React.useState<CardState[]>(() => dailyQueue(SEED_CARDS.map(() => newCardState())));
+export function RoundsDeck({ cards = SEED_CARDS }: { cards?: SeedCard[] }) {
+  // Card states are seeded per visit; real per-user scheduling (card_reviews)
+  // is a follow-up — the queue is capped at 25/day either way.
+  const [queue] = React.useState<CardState[]>(() => dailyQueue(cards.map(() => newCardState())));
   const [idx, setIdx] = React.useState(0);
   const [showBack, setShowBack] = React.useState(false);
   const [done, setDone] = React.useState(false);
 
   const card = queue[idx];
-  const seed = SEED_CARDS[idx];
+  const seed = cards[idx];
 
   function rate(r: CardRating) {
     if (!card) return;
