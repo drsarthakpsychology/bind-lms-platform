@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 import { Reveal } from "@/components/motion/reveal";
 import { ArrowRight, Zap, Mic2, Flame } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -125,10 +126,24 @@ export default async function TodayPage() {
       {chainNext ? (
         <Link
           href={chainNext.href}
-          className="mt-4 flex items-center justify-between gap-3 rounded-lg border-2 border-primary bg-primary/5 p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
+          className={cn(
+            "mt-4 flex items-center justify-between gap-3 rounded-lg border-2 p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px",
+            // One prominent "continue" action at a time. When the primary card
+            // is "Resume your session" (an active session exists), the chain's
+            // resume intent yields to it and the card goes quiet. Otherwise
+            // the chain IS the continuation action and keeps the highlight.
+            activeSession ? "border-border bg-card" : "border-primary bg-primary/5"
+          )}
         >
           <span className="flex items-center gap-3">
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-primary bg-primary text-sm font-black text-primary-foreground">
+            <span
+              className={cn(
+                "flex size-9 shrink-0 items-center justify-center rounded-md border-2 text-sm font-black",
+                activeSession
+                  ? "border-border bg-secondary text-primary"
+                  : "border-primary bg-primary text-primary-foreground"
+              )}
+            >
               {chainNext.done + 1}
             </span>
             <span className="min-w-0">

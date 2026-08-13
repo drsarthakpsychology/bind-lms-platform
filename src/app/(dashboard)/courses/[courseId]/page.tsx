@@ -264,21 +264,15 @@ export default async function CourseOverviewPage({
                   const isNextAction = nextAction?.type === "lesson" && nextAction.id === lesson.id;
 
                   const rowClass = cn(
-                    cardVariants({ variant: "interactive" }),
+                    cardVariants({ variant: isFutureWeek ? "flat" : "interactive" }),
                     "flex flex-row items-center gap-3 p-4",
                     done && "opacity-70",
                     isNextAction && "ring-2 ring-primary bg-primary/5",
-                    isFutureWeek && "cursor-not-allowed opacity-50",
+                    isFutureWeek && "opacity-50",
                   );
 
-                  return (
-                    <Link
-                      key={lesson.id}
-                      href={isFutureWeek ? "#" : `/courses/${courseId}/lessons/${lesson.id}`}
-                      className={rowClass}
-                      aria-disabled={isFutureWeek}
-                      tabIndex={isFutureWeek ? -1 : undefined}
-                    >
+                  const rowContent = (
+                    <>
                       <span
                         aria-hidden
                         className={cn(
@@ -306,51 +300,66 @@ export default async function CourseOverviewPage({
                      </span>
 
                       {!isFutureWeek && <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
-                   </Link>
+                    </>
+                  );
+
+                  // Locked weeks are NOT navigable — a plain div instead of an
+                  // anchor, so clicking can't scroll to top (href="#").
+                  return isFutureWeek ? (
+                    <div key={lesson.id} className={rowClass}>
+                      {rowContent}
+                    </div>
+                  ) : (
+                    <Link
+                      key={lesson.id}
+                      href={`/courses/${courseId}/lessons/${lesson.id}`}
+                      className={rowClass}
+                    >
+                      {rowContent}
+                    </Link>
                   );
                 })}
 
                 {weekMaterials.map((m) => {
                   const mWeek = (m as { week?: number }).week ?? 1;
-                  return (
-                    <Link
-                      key={m.id}
-                      href={isFutureWeek ? "#" : `/courses/${courseId}/materials/${m.id}`}
-                      className={cn(
-                        cardVariants({ variant: "interactive" }),
-                        "flex flex-row items-center gap-3 p-3",
-                        nextAction?.type === "material" && nextAction.id === m.id && "ring-2 ring-primary bg-primary/5",
-                        isFutureWeek && "cursor-not-allowed opacity-50",
-                      )}
-                      aria-disabled={isFutureWeek}
-                      tabIndex={isFutureWeek ? -1 : undefined}
-                    >
+                  const materialRowClass = cn(
+                    cardVariants({ variant: isFutureWeek ? "flat" : "interactive" }),
+                    "flex flex-row items-center gap-3 p-3",
+                    nextAction?.type === "material" && nextAction.id === m.id && "ring-2 ring-primary bg-primary/5",
+                    isFutureWeek && "opacity-50",
+                  );
+                  const materialContent = (
+                    <>
                       <BookOpen className="size-4 shrink-0 text-muted-foreground" aria-hidden />
                       <span className="min-w-0 flex-1 truncate text-small font-medium">{m.title}</span>
                       <span className="text-caption text-muted-foreground">
                         {m.format?.toUpperCase() ?? m.kind}
                      </span>
                       {!isFutureWeek && <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
-                   </Link>
+                    </>
+                  );
+                  return isFutureWeek ? (
+                    <div key={m.id} className={materialRowClass}>
+                      {materialContent}
+                    </div>
+                  ) : (
+                    <Link key={m.id} href={`/courses/${courseId}/materials/${m.id}`} className={materialRowClass}>
+                      {materialContent}
+                    </Link>
                   );
                   void mWeek;
                 })}
 
                 {weekAssignments.map((a) => {
                   const isNextAction = nextAction?.type === "assignment" && nextAction.id === a.id;
-                  return (
-                    <Link
-                      key={a.id}
-                      href={isFutureWeek ? "#" : `/courses/${courseId}/lessons/${a.lessonId}?tab=assignment`}
-                      className={cn(
-                        cardVariants({ variant: "interactive" }),
-                        "flex flex-row items-center gap-3 p-4",
-                        isNextAction && "ring-2 ring-primary bg-primary/5",
-                        isFutureWeek && "cursor-not-allowed opacity-50",
-                      )}
-                      aria-disabled={isFutureWeek}
-                      tabIndex={isFutureWeek ? -1 : undefined}
-                    >
+                  const assignmentRowClass = cn(
+                    cardVariants({ variant: isFutureWeek ? "flat" : "interactive" }),
+                    "flex flex-row items-center gap-3 p-4",
+                    isNextAction && "ring-2 ring-primary bg-primary/5",
+                    isFutureWeek && "opacity-50",
+                  );
+                  const assignmentContent = (
+                    <>
                       <span className="flex size-8 shrink-0 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground">
                         <FileText className="size-4" aria-hidden />
                      </span>
@@ -377,7 +386,20 @@ export default async function CourseOverviewPage({
                       )}
                       {isNextAction && <span className="font-medium text-primary text-caption">← Next</span>}
                       {!isFutureWeek && <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
-                   </Link>
+                    </>
+                  );
+                  return isFutureWeek ? (
+                    <div key={a.id} className={assignmentRowClass}>
+                      {assignmentContent}
+                    </div>
+                  ) : (
+                    <Link
+                      key={a.id}
+                      href={`/courses/${courseId}/lessons/${a.lessonId}?tab=assignment`}
+                      className={assignmentRowClass}
+                    >
+                      {assignmentContent}
+                    </Link>
                   );
                 })}
              </div>
