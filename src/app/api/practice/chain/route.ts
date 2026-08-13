@@ -46,10 +46,15 @@ export async function POST(req: Request) {
   if (!session) return NextResponse.json({ error: "session not found" }, { status: 404 });
   const caseId = session.case_id as string;
 
-  // The patient's name for the "Continue with Ravi" offer.
-  const { data: simCase } = await supabase.from("sim_cases").select("title").eq("id", caseId).maybeSingle();
+  // The patient's name for the "Continue with Ravi" offer. follow_up is the
+  // authored recurring-visit spec (content is a Kavya decision); when a case
+  // has one, the chain extends with a "Follow-up visit" step so the arc is
+  // actionable the moment content lands.
+  const { data: simCase } = await supabase.from("sim_cases").select("title, follow_up").eq("id", caseId).maybeSingle();
   const caseTitle = (simCase?.title as string | undefined) ?? "your patient";
   const patientName = caseTitle.split("—")[0].trim().replace(/^(.+?),.*$/, "$1") || caseTitle;
+  const followUp = simCase?.follow_up as Record<string, unknown> | null | undefined;
+  const hasFollowUp = !!followUp && typeof followUp === "object" && !Array.isArray(followUp) && Object.keys(followUp).length > 0;
 
   // Existing chain for this patient?
   const { data: existing } = await supabase
@@ -63,6 +68,11 @@ export async function POST(req: Request) {
     const steps = (existing.steps as Array<{ surface: string; status: string; artefact_id?: string }> ?? []).map((s) =>
       s.surface === "consulting_room" ? { ...s, status: "complete", artefact_id: parsed.data.session_id, completed_at: new Date().toISOString() } : s,
     );
+    // Extend with the follow-up visit if content landed after the chain was
+    // created (idempotent — never duplicate the step).
+    if (hasFollowUp && !steps.some((s) => s.surface === "follow_up")) {
+      steps.push({ surface: "follow_up", status: "pending" });
+    }
     const { error } = await supabase
       .from("practice_chains")
       .update({ steps, session_id: parsed.data.session_id, updated_at: new Date().toISOString() })
@@ -74,6 +84,7 @@ export async function POST(req: Request) {
   const steps = INITIAL_STEPS.map((s, i) =>
     i === 0 ? { ...s, artefact_id: parsed.data.session_id, completed_at: new Date().toISOString() } : s,
   );
+  if (hasFollowUp) steps.push({ surface: "follow_up", status: "pending" });
   const { data: created, error } = await supabase
     .from("practice_chains")
     .insert({
@@ -94,12 +105,14 @@ const STEP_HREF: Record<string, string> = {
   formulation: "/practice/formulation",
   mse: "/practice/mse",
   rounds: "/practice/rounds",
+  follow_up: "/practice/consulting-room",
 };
 const STEP_LABEL: Record<string, string> = {
   consulting_room: "Consulting Room",
   formulation: "Formulation Forge",
   mse: "MSE Trainer",
   rounds: "Rounds",
+  follow_up: "Follow-up visit",
 };
 
 /** The first step the student hasn't done yet, with a one-tap target. */
