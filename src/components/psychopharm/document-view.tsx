@@ -101,6 +101,27 @@ function EditableSection({
   );
 }
 
+/** Break prose into short scannable lines (sentence / newline boundaries). */
+function shortLines(text: string): string[] {
+  return text
+    .split(/(?<=[.;!?])\s+|\n+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+/** Clinician-register prose: never a wall of text — short lines, listed. */
+function ClinicProse({ text }: { text: string }) {
+  const lines = shortLines(text);
+  if (lines.length <= 1) return <p className="text-small">{text}</p>;
+  return (
+    <ul className="list-disc pl-5 text-small">
+      {lines.map((l, i) => (
+        <li key={i}>{l}</li>
+      ))}
+    </ul>
+  );
+}
+
 function BlockEditor({
   block,
   register,
@@ -114,6 +135,30 @@ function BlockEditor({
   onEdit?: (block: MedBlock, value: string) => void;
   onRemove?: (blockId: string) => void;
 }) {
+  // Sources are clinical provenance — surfaced in the clinician register only.
+  const source =
+    block.sources?.length && register === "clinician" ? (
+      <SourceLine source={block.sources[0]} register={register} />
+    ) : null;
+
+  // plain_language — the student-facing summary. Prominent in the student
+  // register; a quiet footnote in the clinician register.
+  if (block.type === "plain_language") {
+    return (
+      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
+        {register === "student" ? (
+          <div className="rounded-md bg-secondary p-3">
+            <p className="text-eyebrow text-link">In plain words</p>
+            {block.value ? <p className="mt-1 text-body">{block.value}</p> : null}
+          </div>
+        ) : (
+          <p className="text-small">{block.value}</p>
+        )}
+        {source}
+      </EditableBlock>
+    );
+  }
+
   if (block.type === "dose_band") {
     const low = block.data?.low as number | undefined;
     const high = block.data?.high as number | undefined;
@@ -131,7 +176,7 @@ function BlockEditor({
         {label ? <p className="text-small">{label}</p> : null}
         {primary ? <p className="text-small text-muted-foreground">{primary}</p> : null}
         {block.value ? <p className="text-small">{block.value}</p> : null}
-        {block.sources?.length ? <SourceLine source={block.sources[0]} register={register} /> : null}
+        {source}
       </EditableBlock>
     );
   }
@@ -146,17 +191,38 @@ function BlockEditor({
             {items.map((it, i) => <li key={i}>{it}</li>)}
           </ul>
         ) : null}
-        {block.sources?.length ? <SourceLine source={block.sources[0]} register={register} /> : null}
+        {source}
       </EditableBlock>
     );
   }
 
+  // Structured list blocks (prompts, questions, pearls, red flags) — render
+  // their items as a scannable list rather than one long paragraph.
+  const items = block.data?.items as string[] | undefined;
+  if (items?.length) {
+    return (
+      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
+        {block.value ? <p className="text-small font-medium capitalize">{block.value}</p> : null}
+        <ul className="list-disc pl-5 text-small">
+          {items.map((it, i) => <li key={i}>{it}</li>)}
+        </ul>
+        {source}
+      </EditableBlock>
+    );
+  }
+
+  // Prose blocks: plain paragraph for students; broken into short lines for
+  // the clinician register so nothing reads as a wall of text.
   return (
     <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
-      {block.value ? <p className="text-small">{block.value}</p> : null}
-      {block.sources?.length && register === "clinician" ? (
-        <SourceLine source={block.sources[0]} register={register} />
+      {block.value ? (
+        register === "clinician" ? (
+          <ClinicProse text={block.value} />
+        ) : (
+          <p className="text-small">{block.value}</p>
+        )
       ) : null}
+      {source}
     </EditableBlock>
   );
 }

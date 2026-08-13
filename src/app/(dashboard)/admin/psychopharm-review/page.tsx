@@ -1,12 +1,41 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
+import { Badge } from "@/components/ui/badge";
+import { drugDetail } from "@/lib/psychopharm/store";
 import { ReviewFilter } from "./review-filter";
+
+/** Map a document status to an unmistakable badge (label + fill, never colour alone). */
+function statusBadge(status: string) {
+  switch (status) {
+    case "published":
+      return { variant: "published", label: "Published" } as const;
+    case "in_review":
+      return { variant: "pending", label: "In review" } as const;
+    case "verified":
+      return { variant: "outline", label: "Verified" } as const;
+    default:
+      return { variant: "draft", label: "Draft" } as const;
+  }
+}
+
+/** The student-facing plain-language line, from the document's plain_language block. */
+function plainFromDocument(doc: unknown): string | undefined {
+  if (!doc || typeof doc !== "object") return undefined;
+  const d = doc as { sections?: Array<{ blocks?: Array<{ type?: string; value?: string }> }> };
+  for (const s of d.sections ?? []) {
+    for (const b of s.blocks ?? []) {
+      if (b.type === "plain_language" && b.value?.trim()) return b.value.trim();
+    }
+  }
+  return undefined;
+}
 
 /**
  * Medication list (KMS). One action per drug: Open — which takes you to the
  * page editor, the single surface for editing, reviewing, and publishing.
- * Status is simply whether the page is student-visible (published) or not.
+ * Status is whether the page is student-visible (published) or not.
  */
 export default async function PsychReviewPage({
   searchParams,
@@ -17,10 +46,10 @@ export default async function PsychReviewPage({
   const supabase = await createClient();
 
   const { data: drugs } = await supabase.from("psych_drugs").select("id, generic_name, drug_class").order("generic_name");
-  const { data: docs } = await supabase.from("medication_documents").select("drug_id, status");
+  const { data: docs } = await supabase.from("medication_documents").select("drug_id, status, document");
 
-  const docStatus = new Map<string, string>();
-  for (const d of docs ?? []) docStatus.set(d.drug_id, d.status);
+  const docByDrug = new Map<string, { status: string; document: unknown }>();
+  for (const d of docs ?? []) docByDrug.set(d.drug_id, { status: d.status, document: d.document });
 
   const q = (sp.q ?? "").trim().toLowerCase();
   const filtered = (drugs ?? []).filter(
@@ -43,24 +72,32 @@ export default async function PsychReviewPage({
           <p className="text-small text-muted-foreground">No medications match “{sp.q}”.</p>
         ) : (
           filtered.map((drug) => {
-            const s = docStatus.get(drug.id) ?? "draft";
-            const published = s === "published";
+            const doc = docByDrug.get(drug.id);
+            const { variant, label } = statusBadge(doc?.status ?? "draft");
+            const plain = plainFromDocument(doc?.document) ?? drugDetail(drug.generic_name)?.plain;
             return (
               <Link
                 key={drug.id}
                 href={`/admin/psychopharm/editor/${encodeURIComponent(drug.generic_name.toLowerCase().replace(/\s+/g, "-"))}`}
                 className="flex items-center justify-between gap-3 rounded-md border-2 border-border bg-card p-3 transition hover:border-foreground hover:hard-shadow-sm"
               >
-                <div className="min-w-0">
-                  <p className="text-small font-semibold">{drug.generic_name}</p>
-                  <p className="text-caption text-muted-foreground">{drug.drug_class ?? "—"}</p>
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="text-body-strong">{drug.generic_name}</p>
+                    {drug.drug_class ? <Badge variant="secondary">{drug.drug_class}</Badge> : null}
+                  </div>
+                  {plain ? (
+                    <p className="mt-1 line-clamp-2 text-small text-muted-foreground">{plain}</p>
+                  ) : (
+                    <p className="mt-1 text-caption text-muted-foreground">No student summary yet.</p>
+                  )}
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className={`size-2 rounded-full ${published ? "bg-emerald-600" : "bg-amber-500"}`} aria-hidden />
-                  <span className="text-caption text-muted-foreground">
-                    {published ? "Published" : "Draft"}
+                <div className="flex shrink-0 items-center gap-2">
+                  <Badge variant={variant}>{label}</Badge>
+                  <span className="inline-flex items-center gap-1 text-caption font-medium text-link">
+                    Open
+                    <ArrowRight className="size-3.5" aria-hidden />
                   </span>
-                  <span className="text-caption font-medium text-link">Open →</span>
                 </div>
               </Link>
             );

@@ -79,28 +79,52 @@ export default async function DashboardPage() {
       return p && (p.is_completed || (p.watched_seconds ?? 0) > 0);
     }).length;
 
+    const inProgress = startedCount > 0 && completedCount < playable.length;
+    const status: "in-progress" | "not-started" | "completed" =
+      playable.length > 0 && completedCount === playable.length
+        ? "completed"
+        : inProgress
+          ? "in-progress"
+          : "not-started";
+
     return {
       course,
       totalLessons: playable.length,
       completedCount,
-      inProgress: startedCount > 0 && completedCount < playable.length,
+      inProgress,
+      status,
     };
   });
+
+  // Order of operations for the page: (1) next step, (2) practice, (3) courses.
+  // Sort the full list top-to-bottom: in-progress first, then not-started, then
+  // completed — never a flat, unscannable grid.
+  const statusRank = { "in-progress": 0, "not-started": 1, "completed": 2 } as const;
+
+  const orderedSummaries = courseSummaries
+    .slice()
+    .sort((a, b) => {
+      const rank = statusRank[a.status] - statusRank[b.status];
+      if (rank !== 0) return rank;
+      return a.course.title.localeCompare(b.course.title);
+    });
 
   // "Continue learning" targets the first course with some progress but not
   // finished, so returning students land on their actual next step rather
   // than a flat list they have to scan.
-  const continueCourse = courseSummaries.find((c) => c.inProgress);
+  const continueCourse = courseSummaries.find((c) => c.status === "in-progress");
+  const firstNotStartedCourse = orderedSummaries.find((c) => c.status === "not-started");
 
   const completedCourses = courseSummaries.filter(
     (c) => c.totalLessons > 0 && c.completedCount === c.totalLessons
   );
+  const startedSomething = completedCourses.length > 0;
 
   return (
     <div className="space-y-8">
       <PageHeader
         title="My Courses"
-        description="Pick up where you left off, or start something new."
+        description="A clear path: resume where you left off, practise daily, then browse your courses."
         badge={
           completedCourses.length > 0 ? (
             <Badge variant="graded">
@@ -123,60 +147,105 @@ export default async function DashboardPage() {
         )}
       </Reveal>
 
+      {/* Step 1 — the single next step: resume, or start for the first time. */}
       <Reveal delay={0.1}>
-      {continueCourse && (
-        <Link
-          href={`/courses/${continueCourse.course.id}`}
-          className={cn(cardVariants({ variant: "interactive" }), "p-6")}
-        >
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-start gap-4">
-              <span
-                aria-hidden
-                className="flex size-12 shrink-0 items-center justify-center rounded-md border-2 border-foreground bg-primary text-primary-foreground"
-              >
-                <Play className="size-5 fill-current" />
-              </span>
-              <div className="min-w-0 space-y-1">
-                <p className="text-eyebrow text-muted-foreground">Continue learning</p>
-                <h2 className="text-h2">{continueCourse.course.title}</h2>
-                <p className="text-caption text-muted-foreground">
-                  {continueCourse.completedCount} of {continueCourse.totalLessons} lessons complete
-                </p>
+        {continueCourse ? (
+          <Link
+            href={`/courses/${continueCourse.course.id}`}
+            className={cn(cardVariants({ variant: "interactive" }), "p-6")}
+          >
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-start gap-4">
+                <span
+                  aria-hidden
+                  className="flex size-12 shrink-0 items-center justify-center rounded-md border-2 border-foreground bg-primary text-primary-foreground"
+                >
+                  <Play className="size-5 fill-current" />
+                </span>
+                <div className="min-w-0 space-y-1">
+                  <p className="text-eyebrow text-muted-foreground">Step 1 · Continue learning</p>
+                  <h2 className="text-h2">{continueCourse.course.title}</h2>
+                  <p className="text-caption text-muted-foreground">
+                    {continueCourse.completedCount} of {continueCourse.totalLessons} lessons complete
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-full sm:w-56">
+                  <Progress
+                    value={
+                      continueCourse.totalLessons
+                        ? Math.round((continueCourse.completedCount / continueCourse.totalLessons) * 100)
+                        : 0
+                    }
+                    aria-label="Course progress"
+                  />
+                  <p className="text-numeric mt-1.5 text-right text-caption text-muted-foreground">
+                    {continueCourse.totalLessons
+                      ? Math.round((continueCourse.completedCount / continueCourse.totalLessons) * 100)
+                      : 0}
+                    %
+                  </p>
+                </div>
+                <span className="inline-flex shrink-0 items-center gap-1 text-small font-medium text-link">
+                  Resume
+                  <ArrowRight className="size-3.5" aria-hidden />
+                </span>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="w-full sm:w-56">
-                <Progress
-                  value={
-                    continueCourse.totalLessons
-                      ? Math.round((continueCourse.completedCount / continueCourse.totalLessons) * 100)
-                      : 0
-                  }
-                  aria-label="Course progress"
-                />
-                <p className="text-numeric mt-1.5 text-right text-caption text-muted-foreground">
-                  {continueCourse.totalLessons
-                    ? Math.round((continueCourse.completedCount / continueCourse.totalLessons) * 100)
-                    : 0}
-                  %
-                </p>
+          </Link>
+        ) : firstNotStartedCourse ? (
+          <Link
+            href={`/courses/${firstNotStartedCourse.course.id}`}
+            className={cn(cardVariants({ variant: "accent" }), "p-6")}
+          >
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-start gap-4">
+                <span
+                  aria-hidden
+                  className="flex size-12 shrink-0 items-center justify-center rounded-md border-2 border-foreground bg-card text-foreground"
+                >
+                  <GraduationCap className="size-5" />
+                </span>
+                <div className="min-w-0 space-y-1">
+                  <p className="text-eyebrow">
+                    Step 1 · {startedSomething ? "Start your next course" : "Start your first course"}
+                  </p>
+                  <h2 className="text-h2">{firstNotStartedCourse.course.title}</h2>
+                  <p className="text-caption opacity-80">
+                    {firstNotStartedCourse.totalLessons > 0
+                      ? `${firstNotStartedCourse.totalLessons} lessons · begin at lesson one`
+                      : "Begin at lesson one"}
+                  </p>
+                </div>
               </div>
-              <span className="inline-flex shrink-0 items-center gap-1 text-small font-medium text-link">
-                Resume
+              <span className="inline-flex shrink-0 items-center gap-1 text-small font-semibold">
+                Start
                 <ArrowRight className="size-3.5" aria-hidden />
               </span>
             </div>
-          </div>
-        </Link>
-      )}
+          </Link>
+        ) : null}
       </Reveal>
 
+      {/* Step 2 — the daily habit. */}
       <Reveal delay={0.15}>
-        <DashboardPracticeSection />
+        <div className="space-y-3">
+          <p className="text-eyebrow text-muted-foreground">Step 2 · Daily habit</p>
+          <DashboardPracticeSection />
+        </div>
       </Reveal>
 
-      <section aria-label="Your courses" className="space-y-3">
+      {/* Step 3 — the full list, in-progress first, completed last. */}
+      <section aria-label="Your courses" className="space-y-4">
+        <div className="space-y-1">
+          <p className="text-eyebrow text-muted-foreground">Step 3 · The full list</p>
+          <h2 className="text-h2">Your courses</h2>
+          <p className="text-caption text-muted-foreground">
+            In-progress first, then not started, then completed.
+          </p>
+        </div>
+
         {courseSummaries.length === 0 && (
           <Reveal>
             <EmptyState
@@ -188,47 +257,71 @@ export default async function DashboardPage() {
         )}
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {courseSummaries.map(({ course, totalLessons, completedCount }, i) => {
+          {orderedSummaries.map(({ course, totalLessons, completedCount, status }, i) => {
             const percent = totalLessons ? Math.round((completedCount / totalLessons) * 100) : 0;
-            const isComplete = totalLessons > 0 && completedCount === totalLessons;
+            const isComplete = status === "completed";
             return (
               <Reveal key={course.id} delay={0.15 + Math.min(i, 3) * 0.05} className="h-full">
-              <Link
-                href={`/courses/${course.id}`}
-                className={cn(cardVariants({ variant: "interactive" }), "h-full p-5")}
-              >
-                <div className="flex items-start gap-2">
-                  <span
-                    aria-hidden
-                    className={cn(
-                      "flex size-10 shrink-0 items-center justify-center rounded-md border-2",
-                      isComplete
-                        ? "border-foreground bg-primary text-primary-foreground"
-                        : "border-border bg-accent text-foreground"
-                    )}
-                  >
-                    {isComplete ? <CircleCheck className="size-5" /> : <BookOpen className="size-5" />}
-                  </span>
-                </div>
-
-                <div className="min-w-0 flex-1 py-3">
-                  <h3 className="text-h3 leading-snug">{course.title}</h3>
-                </div>
-
-                <div className="space-y-2">
-                  <Progress value={percent} aria-label={`${course.title} progress`} />
-                  <div className="flex items-center justify-between">
-                    <span className="text-numeric text-caption text-muted-foreground">
-                      {completedCount} of {totalLessons} lessons · {percent}%
+                <Link
+                  href={`/courses/${course.id}`}
+                  className={cn(
+                    cardVariants({ variant: "interactive" }),
+                    "h-full p-5",
+                    isComplete && "opacity-70"
+                  )}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span
+                      aria-hidden
+                      className={cn(
+                        "flex size-10 shrink-0 items-center justify-center rounded-md border-2",
+                        isComplete
+                          ? "border-foreground bg-primary text-primary-foreground"
+                          : "border-border bg-accent text-foreground"
+                      )}
+                    >
+                      {isComplete ? <CircleCheck className="size-5" /> : <BookOpen className="size-5" />}
                     </span>
+                    <Badge
+                      variant={
+                        status === "in-progress"
+                          ? "published"
+                          : status === "not-started"
+                            ? "draft"
+                            : "graded"
+                      }
+                    >
+                      {status === "completed" ? <CircleCheck className="size-3" aria-hidden /> : null}
+                      {status === "in-progress"
+                        ? "In progress"
+                        : status === "not-started"
+                          ? "Not started"
+                          : "Completed"}
+                    </Badge>
                   </div>
-                </div>
 
-                <span className="inline-flex items-center gap-1 pt-3 text-small font-medium text-link">
-                  {isComplete ? "Review course" : "Open course"}
-                  <ArrowRight className="size-3.5" aria-hidden />
-                </span>
-              </Link>
+                  <div className="min-w-0 flex-1 py-3">
+                    <h3 className="text-h3 leading-snug">{course.title}</h3>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Progress value={percent} aria-label={`${course.title} progress`} />
+                    <div className="flex items-center justify-between">
+                      <span className="text-numeric text-caption text-muted-foreground">
+                        {completedCount} of {totalLessons} lessons · {percent}%
+                      </span>
+                    </div>
+                  </div>
+
+                  <span className="inline-flex items-center gap-1 pt-3 text-small font-medium text-link">
+                    {status === "completed"
+                      ? "Review course"
+                      : status === "in-progress"
+                        ? "Continue"
+                        : "Start course"}
+                    <ArrowRight className="size-3.5" aria-hidden />
+                  </span>
+                </Link>
               </Reveal>
             );
           })}

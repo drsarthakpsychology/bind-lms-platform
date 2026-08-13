@@ -3,6 +3,7 @@
 import * as React from "react";
 import { DocumentView } from "./document-view";
 import { SourcePanel } from "./source-panel";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 import type { MedicationDocument, MedBlock } from "@/lib/psychopharm/document";
 
 /**
@@ -32,6 +33,7 @@ export function EditorPane({
   const [reason, setReason] = React.useState("");
   const [activeBlock, setActiveBlock] = React.useState<MedBlock | null>(null);
   const [savedAt, setSavedAt] = React.useState<number | null>(null);
+  const [register, setRegister] = React.useState<"student" | "clinician">("student");
 
   const setDoc = React.useCallback((fn: (d: MedicationDocument) => MedicationDocument) => {
     setDocument(fn);
@@ -124,8 +126,25 @@ export function EditorPane({
       {/* The document itself — the edit surface. */}
       <div className="flex-1 overflow-y-auto p-6">
         <div className="mx-auto max-w-3xl">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <p className="text-caption text-muted-foreground">
+              {register === "student"
+                ? "Student view — plain language first."
+                : "Clinician view — technical register with sources."}
+            </p>
+            <SegmentedControl
+              value={register}
+              onValueChange={(v) => setRegister(v)}
+              label="Preview register"
+              options={[
+                { value: "student", label: "Student" },
+                { value: "clinician", label: "Clinician" },
+              ]}
+            />
+          </div>
           <DocumentView
             document={document}
+            register={register}
             editable
             onEdit={editBlock}
             onAddBlock={addBlock}

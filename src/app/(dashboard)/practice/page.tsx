@@ -149,7 +149,7 @@ export default async function PracticeHubPage() {
           <p className="text-eyebrow text-muted-foreground">Practice layer</p>
           <h1 className="mt-1 text-h1">Walk into your first real intake ready.</h1>
           <p className="mt-2 max-w-2xl text-small text-muted-foreground">
-            Everything here is private to you and your faculty. Pick by how long you have.
+            Everything here is private to you and your faculty. Core tools are full workflows; drills are single-skill reps. Pick by how long you have.
           </p>
         </header>
       </Reveal>

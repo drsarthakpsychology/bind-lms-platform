@@ -54,6 +54,14 @@ const STATE_STYLE: Record<string, { label: string; className: string }> = {
   due: { label: "Due", className: "bg-status-pending-bg text-status-pending-fg" },
 };
 
+/** Flagship "core" tools — curated full workflows, set apart visually from the
+ *  single-skill drills. Matched by href (server passes href, not a flag). */
+const CORE_TOOLS = new Set([
+  "/practice/consulting-room",
+  "/practice/mse",
+  "/practice/formulation",
+]);
+
 const OPEN_KEY = "practice:group-open";
 
 /**
@@ -93,62 +101,89 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
       {groups.map((group) => {
         const isOpen = open.has(group.id);
         return (
-          <details key={group.id} open={isOpen} className="group/row rounded-lg border-2 border-border bg-card hard-shadow-sm">
+          <details key={group.id} open={isOpen} className="rounded-lg border-2 border-border bg-card hard-shadow-sm">
             <summary
               onClick={(e) => {
                 e.preventDefault();
                 toggle(group.id);
               }}
-              className="flex cursor-pointer list-none items-center justify-between gap-3 p-3.5"
+              aria-expanded={isOpen}
+              className="flex cursor-pointer list-none items-center justify-between gap-3 p-4 transition-colors hover:bg-muted/40"
             >
-              <span>
-                <span className="text-small font-semibold">{group.label}</span>
-                <span className="ml-2 text-caption text-muted-foreground">{group.hint}</span>
+              <span className="flex min-w-0 flex-col gap-0.5">
+                <span className="text-h3">{group.label}</span>
+                <span className="text-small text-muted-foreground">{group.hint}</span>
               </span>
-              <span className="flex items-center gap-2">
-                <span className="rounded-full border border-border bg-muted px-2 py-0.5 text-caption font-medium text-muted-foreground">
-                  {group.tools.length}
+              <span className="flex shrink-0 items-center gap-2.5">
+                <span className="rounded-full border border-border bg-muted px-2.5 py-1 text-caption font-medium text-muted-foreground">
+                  {group.tools.length} {group.tools.length === 1 ? "tool" : "tools"}
                 </span>
-                <ChevronDown className={cn("size-4 text-muted-foreground transition-transform group-open/row:rotate-180", isOpen && "rotate-180")} aria-hidden />
+                <span className="hidden text-caption font-medium text-muted-foreground sm:inline">
+                  {isOpen ? "Hide" : "Show"}
+                </span>
+                <span className="flex size-6 items-center justify-center rounded-full border border-border bg-secondary text-foreground">
+                  <ChevronDown className={cn("size-4 transition-transform", isOpen && "rotate-180")} aria-hidden />
+                </span>
               </span>
             </summary>
-            <div className="grid grid-cols-1 gap-3 border-t-2 border-border p-3.5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 border-t-2 border-border p-4 sm:grid-cols-2 lg:grid-cols-3">
               {group.tools.map((tool, i) => {
                 const Icon = PRACTICE_ICONS[tool.icon] ?? CircleCheck;
                 const chip = tool.state ? STATE_STYLE[tool.state] : null;
                 const dimmed = tool.state === "done_today";
+                const isCore = CORE_TOOLS.has(tool.href);
                 return (
                   <Reveal key={tool.href} delay={0.15 + i * 0.05} className="h-full">
-                  <Link
-                    href={tool.href}
-                    className={cn(
-                      cardVariants({ variant: "interactive" }),
-                      "group h-full gap-3 bg-background p-4",
-                      dimmed && "opacity-60",
-                    )}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
-                        <Icon className="size-4" aria-hidden />
-                      </span>
-                      <span className="text-caption font-semibold tracking-wide text-muted-foreground">{tool.verb}</span>
-                      {chip ? (
-                        <span className={`ml-auto shrink-0 rounded-full px-2 py-0.5 text-caption font-medium ${chip.className}`}>
-                          {chip.label}
+                    <Link
+                      href={tool.href}
+                      className={cn(
+                        cardVariants({ variant: "interactive" }),
+                        "group h-full gap-4 bg-background p-4",
+                        dimmed && "opacity-60",
+                      )}
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <span
+                            className={cn(
+                              "flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border",
+                              isCore ? "bg-primary text-primary-foreground" : "bg-secondary text-link",
+                            )}
+                          >
+                            <Icon className="size-5" aria-hidden />
+                          </span>
+                          <span className="flex flex-col gap-1">
+                            <span className="text-eyebrow text-link">{tool.verb}</span>
+                            {isCore ? (
+                              <span className="w-fit rounded-full bg-primary px-1.5 py-px text-caption font-semibold text-primary-foreground">
+                                Core tool
+                              </span>
+                            ) : null}
+                          </span>
+                        </div>
+                        <span className="shrink-0 rounded-full border border-border bg-muted px-2 py-0.5 text-caption font-medium text-muted-foreground">
+                          {tool.time}
                         </span>
+                      </div>
+
+                      <h3 className="text-body-strong">{tool.title}</h3>
+                      <p className="text-small text-muted-foreground">{tool.description}</p>
+
+                      {chip || tool.progress ? (
+                        <div className="mt-auto flex items-center justify-between gap-2 pt-1">
+                          {chip ? (
+                            <span className={`rounded-full px-2 py-0.5 text-caption font-medium ${chip.className}`}>
+                              {chip.label}
+                            </span>
+                          ) : (
+                            <span />
+                          )}
+                          {tool.progress ? (
+                            <span className="text-caption text-muted-foreground">{tool.progress}</span>
+                          ) : null}
+                        </div>
                       ) : null}
-                    </div>
-                    <div>
-                      <h3 className="flex items-center gap-2 text-body-strong">
-                        {tool.title}
-                        <span className="shrink-0 text-caption font-normal text-muted-foreground">{tool.time}</span>
-                      </h3>
-                      <p className="mt-1 text-small text-muted-foreground">{tool.description}</p>
-                      {tool.progress ? (
-                        <p className="mt-1 text-caption text-muted-foreground">{tool.progress}</p>
-                      ) : null}
-                    </div>
-                  </Link>
+                    </Link>
                   </Reveal>
                 );
               })}
