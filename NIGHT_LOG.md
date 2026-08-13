@@ -22,6 +22,36 @@
   one-time $10 top-up).
 - Commit: `938e7ba`.
 
+## 2026-08-14 — research round + production deploy
+
+### Free-models research (docs/MODEL_RESEARCH.md, dated + sourced)
+- **TTS**: MiMo-V2.5-TTS (MIT, arena-top, voice-design/clone) = primary open-
+  weights pick; Kokoro-82M (Apache-2.0, CPU) = the works-today fallback (runs
+  on the Mac, zero cost). **Rejects on licence**: IndexTTS-2 (Bilibili licence
+  prohibits medical/high-risk deployment — a hard fail for a clinical app),
+  Canary-1b (CC-BY-NC non-commercial).
+- **STT**: fine-tuned Indic Whisper (Tara/Vaani, MIT, CPU) primary;
+  **Groq Whisper large-v3-turbo** the no-train hosted fallback (verified: DPA
+  forbids training, ZDR available). Canary rejected (non-commercial).
+- **LLM**: **Groq is now the Primary Director/Actor** (no-train, no card,
+  OpenAI-compatible JSON); Cerebras the no-train fallback; Gemini free tier
+  trains on prompts → demoted to a non-student fallback, enforced by the
+  data-policy guard. Router priority + 4 locking tests (src/lib/ai/router.test.ts).
+- **Embeddings**: all-MiniLM-L6-v2 (Apache-2.0, 384-dim) primary — matches the
+  repo's halfvec(384). Cohere/Jina free rejected (trains / non-commercial).
+- SETUP_NEEDED refreshed: one-line recommended path (Groq + Kokoro now →
+  MiMo later) + the three plain voice answers.
+
+### Production deploy
+- `vercel --prod` to the EXISTING linked project (bind-lms-platform,
+  prj_dgr1o5JGvm42tMh8vGq6ltAlH4LS). Deployment dpl_5wGU5QTGCegxupSiofZR6QTnj3f2
+  READY, target production. Generated URL is SSO-protected (Vercel Deployment
+  Protection — config I'm not permitted to change); the custom production
+  domain serves the app. Local gate green before deploy: lint 0/0, tsc clean,
+  379 tests, build compiles.
+- Decisions: deployed because the user explicitly asked; used the established
+  mechanism + existing project, changed no Vercel/vercel.json/next.config.
+
 ## 2026-08-14 — extended round: nudge, ElevenLabs, lesson quiz, OSCE voice, chain
 
 ### Post-VIBHA feature batch (each commit gated green, 375 tests held)
