@@ -1,3 +1,41 @@
+## 2026-08-13 (round 8 close — infra text-column audit, QUEUE cleared)
+
+### Infra (Optimization) — commit 1ee54c2 [Master §9.3]
+- 3 pending migrations were on disk but never reached the live DB (course
+  rebuild + A7 dictate landed code + tests but the SQL sat in
+  src/migrations_pending/ unapplied). Applied all 3 live:
+  course_weeks (weeks/week columns), practice_layer_chain (practice_chains
+  table + sim_cases.follow_up), practice_layer_dictation (corpus_dictations
+  table).
+- Audited every text/jsonb column in the live schema against the
+  practice_layer_infra.sql cap pattern (5 existing caps). Found 3 tables
+  that shipped AFTER that pattern but were never swept in —
+  formulation_wall_posts.narrative, pair_messages.content,
+  library_notes.note — plus the 5 columns on the tables just applied.
+  8 new char_length check constraints added, additive + idempotent, same
+  idiom as the existing caps. Verified live: 14 *_cap constraints total.
+- One pre-existing pattern noted, not fixed: the new
+  update_practice_chains_updated_at() trigger is SECURITY DEFINER +
+  anon-executable per the security advisor — same shape as
+  touch_material/touch_assignment/touch_media_asset, already flagged
+  before tonight. Out of scope for an infra-sizing ticket; not a
+  regression.
+- Full gate: lint 0 errors (6 pre-existing warnings), tsc clean, 340 tests
+  pass, build green (exit 0, verified).
+
+### Decision and why
+- Chose to apply the 3 pending migrations rather than skip them and cap
+  only what's live — "the newest tables" in the ticket only exist once
+  applied, and leaving code-complete features (course weeks, dictate
+  scaffold) undeployed all night is the more expensive thing to reverse.
+- Verified not assumed: queried live pg_constraint before and after
+  (5 caps → 14 caps), not read from a migration file list.
+
+### State
+340 tests · lint 0 errors · tsc clean · build green · QUEUE round 8 fully
+cleared (10/10 items). Next: docs freshness + final gate below, then
+QUEUE round 9 generated from IDEAS_NEXT/BUGS.
+
 ## 2026-08-12 (beastmode phase 1 — content engine round 1)
 
 ### Bugs fixed (all committed)

@@ -14,5 +14,5 @@
 - [x] **Polish (Haptics)**: Audit every practice activity and ensure `haptics.ts` fires on card tap, state change, and correct answer [Addendum §B5]
 - [x] **Polish (Focus)**: Ensure focus management on the MSE drill and long forms for keyboard-only users [Master §4]
 - [x] **Infra (Optimization)**: Audit text column sizes and apply `infra_snapshots` logic to the newest tables [Master §9.3] — 3 pending migrations (course_weeks, practice_layer_chain, practice_layer_dictation) applied live; 8 new size caps added (formulation_wall_posts, pair_messages, library_notes were live+uncapped since before this round; practice_chains.steps, sim_cases.follow_up, corpus_dictations.transcript/state/final_title capped on arrival)
-- [ ] **Docs (Freshness)**: Update MORNING_REPORT.md and NIGHT_LOG.md with Round 8 status [Master §0.4]
-- [ ] **Final Pass**: Run `npm run lint && npx tsc --noEmit && npm run test && npm run build` [Master §0.2]
+- [x] **Docs (Freshness)**: Update MORNING_REPORT.md and NIGHT_LOG.md with Round 8 status [Master §0.4]
+- [x] **Final Pass**: Run `npm run lint && npx tsc --noEmit && npm run test && npm run build` [Master §0.2] — lint 0 errors, tsc clean, 340 tests, build green (re-run after docs commit below)
