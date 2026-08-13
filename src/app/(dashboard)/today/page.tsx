@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
+import { Reveal } from "@/components/motion/reveal";
 import { ArrowRight, Zap, Mic2, Flame } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -91,25 +92,32 @@ export default async function TodayPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Today</p>
-      <h1 className="mt-1 text-h1">
-        {currentStreak > 0 ? `${currentStreak}-day streak. ` : ""}One thing next.
-      </h1>
+      <Reveal delay={0.05}>
+        <p className="text-eyebrow text-muted-foreground">Today</p>
+        <h1 className="mt-1 text-h1">
+          {currentStreak > 0 ? `${currentStreak}-day streak. ` : ""}One thing next.
+        </h1>
+      </Reveal>
 
       {/* streak line */}
-      <p className="mt-1 flex items-center gap-1.5 text-small text-muted-foreground">
-        <Flame className="size-4 text-primary" aria-hidden />
-        {currentStreak > 0
-          ? `${currentStreak} days in a row — the practice is compounding.`
-          : "Every day you practise, a future client is better served."}
-      </p>
+      <Reveal delay={0.1}>
+        <p className="mt-1 flex items-center gap-1.5 text-small text-muted-foreground">
+          <Flame className="size-4 text-primary" aria-hidden />
+          {currentStreak > 0
+            ? `${currentStreak} days in a row — the practice is compounding.`
+            : "Every day you practise, a future client is better served."}
+        </p>
+      </Reveal>
 
       {/* weak-spots banner — real gaps above the primary card */}
-      <div className="mt-6">
-        <WeakSpotsBanner />
-      </div>
+      <Reveal delay={0.15}>
+        <div className="mt-6">
+          <WeakSpotsBanner />
+        </div>
+      </Reveal>
 
       {/* in-progress chain — a patient's arc continues (casebook "the chain") */}
+      <Reveal delay={0.2}>
       {chainNext ? (
         <Link
           href={chainNext.href}
@@ -131,8 +139,10 @@ export default async function TodayPage() {
           <ArrowRight className="size-4 shrink-0 text-primary" aria-hidden />
         </Link>
       ) : null}
+      </Reveal>
 
       {/* primary card */}
+      <Reveal delay={0.2}>
       <Link
         href={primary.href}
         className="mt-6 block rounded-md border-2 border-border bg-card p-6 hard-shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-px"
@@ -149,12 +159,14 @@ export default async function TodayPage() {
           {primary.cta} <ArrowRight className="size-4" aria-hidden />
         </span>
       </Link>
+      </Reveal>
 
       {/* quick / deep chips */}
       <div className="mt-4 grid grid-cols-2 gap-3">
+        <Reveal delay={0.25} className="h-full">
         <Link
           href="/practice/two-minute-clinic"
-          className="flex items-center gap-3 rounded-md border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
+          className="flex h-full items-center gap-3 rounded-md border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
         >
           <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
             <Zap className="size-4" aria-hidden />
@@ -164,9 +176,11 @@ export default async function TodayPage() {
             <span className="block text-caption text-muted-foreground">Two-Minute Clinic · 2 min</span>
           </span>
         </Link>
+        </Reveal>
+        <Reveal delay={0.3} className="h-full">
         <Link
           href="/practice/consulting-room"
-          className="flex items-center gap-3 rounded-md border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
+          className="flex h-full items-center gap-3 rounded-md border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
         >
           <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
             <Mic2 className="size-4" aria-hidden />
@@ -176,6 +190,7 @@ export default async function TodayPage() {
             <span className="block text-caption text-muted-foreground">Consulting Room · 12 min</span>
           </span>
         </Link>
+        </Reveal>
       </div>
 
       <Link

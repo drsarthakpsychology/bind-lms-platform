@@ -5,6 +5,7 @@ import { computePracticeStates, type SurfaceState } from "@/lib/practice/practic
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 import { PracticeGroups, type PracticeCardData } from "@/components/practice/practice-groups";
+import { Reveal } from "@/components/motion/reveal";
 
 /**
  * /practice — the deliberate browse view (v5.1 Part B).
@@ -143,15 +144,18 @@ export default async function PracticeHubPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <header className="mb-6">
-        <p className="text-eyebrow text-muted-foreground">Practice layer</p>
-        <h1 className="mt-1 text-h1">Walk into your first real intake ready.</h1>
-        <p className="mt-2 max-w-2xl text-small text-muted-foreground">
-          Everything here is private to you and your faculty. Pick by how long you have.
-        </p>
-      </header>
+      <Reveal delay={0.05}>
+        <header className="mb-6">
+          <p className="text-eyebrow text-muted-foreground">Practice layer</p>
+          <h1 className="mt-1 text-h1">Walk into your first real intake ready.</h1>
+          <p className="mt-2 max-w-2xl text-small text-muted-foreground">
+            Everything here is private to you and your faculty. Pick by how long you have.
+          </p>
+        </header>
+      </Reveal>
 
       {/* recommended card — one tap, always with a reason */}
+      <Reveal delay={0.1}>
       {recommendation ? (
         <Link
           href={recommendation.href}
@@ -169,9 +173,12 @@ export default async function PracticeHubPage() {
           </div>
         </Link>
       ) : null}
+      </Reveal>
 
       {/* weak-spots banner — real gaps, server-computed */}
-      <WeakSpotsBanner />
+      <Reveal delay={0.15}>
+        <WeakSpotsBanner />
+      </Reveal>
 
       <PracticeGroups
         groups={(Object.keys(GROUP_META) as PracticeTool["group"][]).map((g) => ({

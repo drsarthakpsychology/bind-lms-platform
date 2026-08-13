@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { ChevronDown, Stethoscope, Brain, Layers, Timer, BookOpen, Scale, Users, CircleCheck, Gauge, Search, MessageSquare, Siren, GraduationCap, Wand2, Repeat, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Reveal } from "@/components/motion/reveal";
 
 /** Icon name → component map (functions can't cross the Server→Client
  *  boundary, so the page passes plain string names — same pattern as the
@@ -111,16 +112,16 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
               </span>
             </summary>
             <div className="grid grid-cols-1 gap-3 border-t-2 border-border p-3.5 sm:grid-cols-2 lg:grid-cols-3">
-              {group.tools.map((tool) => {
+              {group.tools.map((tool, i) => {
                 const Icon = PRACTICE_ICONS[tool.icon] ?? CircleCheck;
                 const chip = tool.state ? STATE_STYLE[tool.state] : null;
                 const dimmed = tool.state === "done_today";
                 return (
+                  <Reveal key={tool.href} delay={0.15 + i * 0.05} className="h-full">
                   <Link
-                    key={tool.href}
                     href={tool.href}
                     className={cn(
-                      "group flex flex-col gap-3 rounded-md border-2 border-border bg-background p-4 transition-[transform,box-shadow] hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px active:hard-shadow-none",
+                      "group flex h-full flex-col gap-3 rounded-md border-2 border-border bg-background p-4 transition-[transform,box-shadow] hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px active:hard-shadow-none",
                       dimmed && "opacity-60",
                     )}
                   >
@@ -146,6 +147,7 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
                       ) : null}
                     </div>
                   </Link>
+                  </Reveal>
                 );
               })}
             </div>

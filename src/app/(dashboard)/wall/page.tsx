@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { Reveal } from "@/components/motion/reveal";
 import { WallView } from "./wall-view";
 
 export const dynamic = "force-dynamic";
@@ -69,14 +70,16 @@ export default async function WallPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Cohort wall</p>
-      <h1 className="mt-1 text-h1">The wall</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        Threaded discussion. Post anonymously if you&apos;d rather — peers never see who wrote
-        it.
-      </p>
+      <Reveal delay={0.05}>
+        <p className="text-eyebrow text-muted-foreground">Cohort wall</p>
+        <h1 className="mt-1 text-h1">The wall</h1>
+        <p className="mt-1 text-small text-muted-foreground">
+          Threaded discussion. Post anonymously if you&apos;d rather — peers never see who wrote
+          it.
+        </p>
+      </Reveal>
 
-      <div className="mt-6">
+      <Reveal delay={0.1} className="mt-6">
         <WallView
           isFacultyViewer={isFacultyViewer}
           initialPosts={(posts ?? []).map((p) => ({
@@ -99,7 +102,7 @@ export default async function WallPage() {
             reactions: reactionsByPost.get(p.id) ?? {},
           }))}
         />
-      </div>
+      </Reveal>
     </div>
   );
 }

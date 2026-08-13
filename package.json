@@ -26,6 +26,7 @@
     "seed-calibration": "tsx scripts/seed-calibration.ts",
     "seed-rights": "tsx scripts/seed-rights-registry.ts",
     "pregen-voice": "tsx scripts/pregen-voice.ts",
+    "prune-voice-cache": "tsx scripts/prune-voice-cache.ts",
     "draft-cards": "tsx scripts/draft-cards-from-lessons.ts",
     "psych:text": "tsx scripts/psychopharm/extract-text.ts",
     "psych:locator": "tsx scripts/psychopharm/locator-index.ts",

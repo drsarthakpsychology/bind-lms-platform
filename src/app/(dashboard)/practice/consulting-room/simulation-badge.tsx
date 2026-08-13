@@ -1,5 +1,3 @@
-"use client";
-
 /**
  * Persistent SIMULATION badge — visible in the consulting room (and in voice
  * mode) so the student is never confused about what is real and what is not.
