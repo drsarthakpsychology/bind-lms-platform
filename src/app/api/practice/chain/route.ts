@@ -46,6 +46,11 @@ export async function POST(req: Request) {
   if (!session) return NextResponse.json({ error: "session not found" }, { status: 404 });
   const caseId = session.case_id as string;
 
+  // The patient's name for the "Continue with Ravi" offer.
+  const { data: simCase } = await supabase.from("sim_cases").select("title").eq("id", caseId).maybeSingle();
+  const caseTitle = (simCase?.title as string | undefined) ?? "your patient";
+  const patientName = caseTitle.split("—")[0].trim().replace(/^(.+?),.*$/, "$1") || caseTitle;
+
   // Existing chain for this patient?
   const { data: existing } = await supabase
     .from("practice_chains")
@@ -63,7 +68,7 @@ export async function POST(req: Request) {
       .update({ steps, session_id: parsed.data.session_id, updated_at: new Date().toISOString() })
       .eq("id", existing.id);
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-    return NextResponse.json({ ok: true, chain_id: existing.id, created: false });
+    return NextResponse.json({ ok: true, chain_id: existing.id, created: false, next: nextStep(steps, patientName) });
   }
 
   const steps = INITIAL_STEPS.map((s, i) =>
@@ -81,5 +86,30 @@ export async function POST(req: Request) {
     .select("id")
     .single();
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json({ ok: true, chain_id: created?.id, created: true });
+  return NextResponse.json({ ok: true, chain_id: created?.id, created: true, next: nextStep(steps, patientName) });
+}
+
+const STEP_HREF: Record<string, string> = {
+  consulting_room: "/practice/consulting-room",
+  formulation: "/practice/formulation",
+  mse: "/practice/mse",
+  rounds: "/practice/rounds",
+};
+const STEP_LABEL: Record<string, string> = {
+  consulting_room: "Consulting Room",
+  formulation: "Formulation Forge",
+  mse: "MSE Trainer",
+  rounds: "Rounds",
+};
+
+/** The first step the student hasn't done yet, with a one-tap target. */
+function nextStep(steps: Array<{ surface: string; status: string }>, patient: string) {
+  const next = steps.find((s) => s.status !== "complete");
+  if (!next) return null;
+  return {
+    surface: next.surface,
+    label: STEP_LABEL[next.surface] ?? next.surface,
+    href: STEP_HREF[next.surface] ?? `/practice/consulting-room`,
+    patient,
+  };
 }

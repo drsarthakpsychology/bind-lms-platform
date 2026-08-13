@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { CheckCircle2, CircleCheck, AlertTriangle, RefreshCw, Mic2, RotateCcw } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, CircleCheck, AlertTriangle, RefreshCw, Mic2, RotateCcw, ArrowRight } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import type { VoiceMetrics } from "@/lib/voice/use-voice-metrics";
 
@@ -69,16 +70,25 @@ export function DebriefView({
   const [retrying, setRetrying] = React.useState(false);
   const [retryError, setRetryError] = React.useState<string | null>(null);
   // Create/update the patient chain once the debrief shows — the session is
-  // complete, so /today can offer the next surface for this patient.
+  // complete, so /today (and this debrief) can offer the next surface.
+  const [chainNext, setChainNext] = React.useState<{ surface: string; label: string; href: string; patient: string } | null>(null);
   const chainPostedRef = React.useRef(false);
   React.useEffect(() => {
     if (!sessionId || chainPostedRef.current) return;
     chainPostedRef.current = true;
-    void fetch("/api/practice/chain", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ session_id: sessionId }),
-    }).catch(() => {}); // silent; a check, not a test
+    void (async () => {
+      try {
+        const res = await fetch("/api/practice/chain", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ session_id: sessionId }),
+        });
+        const j = (await res.json()) as { next?: { surface: string; label: string; href: string; patient: string } };
+        if (j.next) setChainNext(j.next);
+      } catch {
+        /* silent; a check, not a test */
+      }
+    })();
   }, [sessionId]);
   const score = data.score ?? {};
   const quotes = data.quotes ?? score.quotes ?? [];
@@ -312,7 +322,16 @@ export function DebriefView({
         )}
       </div>
 
-      <div className="flex justify-end">
+      <div className="flex flex-wrap items-center justify-end gap-3">
+        {chainNext ? (
+          <Link
+            href={chainNext.href}
+            className="inline-flex items-center gap-2 rounded-md border-2 border-foreground bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+          >
+            Continue with {chainNext.patient} · {chainNext.label}
+            <ArrowRight className="size-4" aria-hidden />
+          </Link>
+        ) : null}
         <button
           type="button"
           onClick={onExit}
