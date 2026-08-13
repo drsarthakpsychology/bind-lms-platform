@@ -32,6 +32,33 @@ STRIX also confirmed: no committed .env/secrets; injection surface minimal
 not STRIX's recommended frontier model — re-run with a recommended model
 (e.g. openai/gpt-5.4 or anthropic/claude-opus-5) for a deeper pass if desired.
 
+## Live-site STRIX scan (2026-08-14, `https://vibhapsychology.com`, standard)
+
+MEDIUM 1 · INFO 1 · cost $0.93 · report `strix_runs/vibhapsychology-com_4e69`.
+
+### vuln-0001 — Stored XSS via unsanitized /enquire input (MEDIUM, CWE-79)
+STRIX showed an `<img onerror=...>` payload is stored verbatim (returns
+`{"ok":true}`). **Triage: not exploitable as submitted** — the honeypot IS
+enforced server-side (`if (parsed.data.honeypot) return { ok: true }`, a bot
+trap that stores nothing), an IP rate limit exists (5/h), and the admin render
+path escapes via React text interpolation (no `dangerouslySetInnerHTML`).
+**Fix applied (defense-in-depth):** write-time `stripMarkup` in
+`src/app/enquire/actions.ts` (removes tag-like sequences before insert) +
+`src/lib/sanitize.test.ts` (3 regression tests). Any future raw-HTML render or
+export path can no longer execute a stored payload.
+
+### vuln-0002 — Login CAPTCHA / rate limiting (INFO, CWE-307)
+STRIX saw no Turnstile widget and no throttling. **Triage: rate limiting exists**
+(`rateLimit("login:<email>", 10)`, verified in `src/lib/auth/actions.ts`); the
+Turnstile widget + server verification are fully coded but dormant because
+`NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` are unset. Needs the
+two keys configured in Vercel (NEEDS_KAVYA) — not a code change.
+
+### Sitemap hygiene (part of vuln-0001's report)
+Live `sitemap.xml` served `bind-lms-platform.vercel.app` URLs. Code fallback in
+`src/app/sitemap.ts` fixed to `https://vibhapsychology.com`; production
+`NEXT_PUBLIC_APP_URL` should be set to the custom domain (NEEDS_KAVYA).
+
 ## Verdict: strong posture, one LOW finding
 
 ### Finding 1 — LOW · `_migrations_applied` has RLS disabled

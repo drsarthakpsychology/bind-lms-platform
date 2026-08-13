@@ -69,13 +69,29 @@ Every item: paste → something switches on → verify with one command. Free fi
 - **Flip feature flags when ready** → `/admin/flags` (6 live — Consulting Room, Decoder, MSE, Judgment, Rounds, Journal; 12 built-but-off tools reveal on one click)
 
 ## 🕵️ STRIX PENTEST — DONE (ran with your DeepSeek key)
-- STRIX 1.5.3 installed + ran against `./src` (quick, headless) with the
-  DeepSeek key you pasted. **0 exploitable vulnerabilities**; follow-up
-  validation of the flagged service-role routes confirmed ownership checks are
-  in code. Report: `docs/SECURITY_AUDIT.md` (STRIX section). Re-run anytime:
+- **Codebase scan** (`./src`, quick): **0 exploitable vulnerabilities**; the
+  flagged service-role routes all enforce ownership in code. Report:
+  `docs/SECURITY_AUDIT.md`. Re-run:
   `DOCKER_HOST=unix://$HOME/.docker/run/docker.sock ~/.strix/bin/strix -t ./src -m standard -n`.
-  For a deeper pass, use a recommended frontier model (e.g. openai/gpt-5.4)
-  instead of deepseek-chat.
+- **Live-site scan** (`https://vibhapsychology.com`, standard): MEDIUM 1, INFO 1
+  (report `strix_runs/vibhapsychology-com_4e69`). Triaged + fixed in code:
+  - vuln-0001 stored-XSS in /enquire: **mitigated** — honeypot + IP rate-limit
+    were already enforced; admin render escapes via React (no
+    dangerouslySetInnerHTML). Added write-time `stripMarkup` sanitization
+    (defense-in-depth) + 3 regression tests. NOT exploitable as submitted.
+  - vuln-0002 login CAPTCHA/rate: **mostly false positive** — rate limit exists
+    (10/email); Turnstile is fully wired but dormant. TWO config actions below.
+  - vuln hygiene: sitemap served the internal `bind-lms-platform.vercel.app`
+    hostname — code fallback fixed to `https://vibhapsychology.com`.
+- **Config actions (2, one line each):**
+  1. Turnstile keys: set `NEXT_PUBLIC_TURNSTILE_SITE_KEY` + `TURNSTILE_SECRET_KEY`
+     in Vercel to activate the login CAPTCHA (widget + server verification are
+     already coded). Get: dash.cloudflare.com → Turnstile.
+  2. `NEXT_PUBLIC_APP_URL` in Vercel should be `https://vibhapsychology.com`
+     (it is currently the internal vercel.app hostname → sitemap indexes the
+     wrong domain).
+- Cost: $0.93 (live) + $0.03 (codebase). Deeper pass: use a frontier model
+  (openai/gpt-5.4) instead of deepseek-chat.
 
 ## 🔒 SECURITY AUDIT 2026-08-14 — ONE action to apply
 - **Enable RLS on `_migrations_applied`** (the only public table with RLS off —

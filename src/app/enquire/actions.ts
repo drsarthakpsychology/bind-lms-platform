@@ -4,6 +4,7 @@ import { z } from "zod";
 import { headers } from "next/headers";
 import { createAdminClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
+import { stripMarkup } from "@/lib/sanitize";
 
 const schema = z.object({
   name: z.string().min(2).max(120),
@@ -44,11 +45,13 @@ export async function submitEnquiry(input: FormData): Promise<EnquireResult> {
 
   const admin = createAdminClient();
   const { error } = await admin.from("enquiries").insert({
-    name: parsed.data.name,
-    email: parsed.data.email,
-    phone: parsed.data.phone || null,
+    // stripMarkup at write time (defense-in-depth): React escapes on render,
+    // but no future raw-HTML/export path can execute a stored payload.
+    name: stripMarkup(parsed.data.name),
+    email: stripMarkup(parsed.data.email),
+    phone: parsed.data.phone ? stripMarkup(parsed.data.phone) : null,
     status: parsed.data.status,
-    message: parsed.data.message || null,
+    message: parsed.data.message ? stripMarkup(parsed.data.message) : null,
     source: "landing",
   });
   if (error) {
