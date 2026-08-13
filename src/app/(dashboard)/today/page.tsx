@@ -46,6 +46,7 @@ export default async function TodayPage() {
     formulation: "Formulation Forge",
     mse: "MSE Trainer",
     rounds: "Rounds",
+    follow_up: "Follow-up visit",
   };
   let chainNext: { href: string; label: string; caseTitle: string; done: number; total: number } | null = null;
   const chainRows = (chains ?? []) as Array<{ id: string; case_id: string; steps: Array<{ surface: string; status: string }> }>;
@@ -58,7 +59,7 @@ export default async function TodayPage() {
       const title = (simCase?.title as string | undefined) ?? "your patient";
       const shortName = title.split("—")[0].trim().replace(/^(.+?),.*$/, "$1");
       chainNext = {
-        href: next.surface === "formulation" ? "/practice/formulation" : next.surface === "mse" ? "/practice/mse" : next.surface === "rounds" ? "/practice/rounds" : `/practice/consulting-room/session/${c.id}`,
+        href: next.surface === "formulation" ? "/practice/formulation" : next.surface === "mse" ? "/practice/mse" : next.surface === "rounds" ? "/practice/rounds" : next.surface === "follow_up" ? "/practice/consulting-room" : `/practice/consulting-room/session/${c.id}`,
         label: SURFACE_LABEL[next.surface] ?? next.surface,
         caseTitle: shortName || title,
         done,
