@@ -1,3 +1,11 @@
+## 2026-08-14 — decision note: §35 report consolidation (no action)
+
+A concurrent sibling rewrite replaced the detailed §35 A–F report in HEAD with
+a shorter closeout; the full 82-line report is preserved in git history at
+commit 8153bb9 (`git show 8153bb9:NIGHT_LOG.md`). Chose NOT to re-add it over
+the sibling's consolidated version — cheaper to reverse, nothing lost. Queue
+fully ticked; no human action needed.
+
 ## 2026-08-14 — Stop-hook verification (round 10, commit 7b8afb7+)
 
 Hook checklist executed and green: (1) all 13 claimed files verified on disk
@@ -1155,3 +1163,4 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T01:39:35 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:40:01 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:40:45 Queue exhausted — allowing normal Claude stop.
+2026-08-14T01:41:09 Queue exhausted — allowing normal Claude stop.
