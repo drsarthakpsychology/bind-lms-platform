@@ -5,6 +5,7 @@ import { Mic, Timer } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { SEED_OSCE_STATIONS, scoreOsce, seededRotate } from "@/lib/practice/osce";
 import { OSCE_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
+import { buildOsceAttemptPayload } from "@/lib/practice/osce-attempt";
 
 export function OsceStationView() {
   const [stationIdx, setStationIdx] = React.useState(0);
@@ -13,6 +14,7 @@ export function OsceStationView() {
   const [done, setDone] = React.useState(false);
   const [checked, setChecked] = React.useState<Record<string, boolean>>({});
   const [selfGlobal, setSelfGlobal] = React.useState(0);
+  const [startedAt, setStartedAt] = React.useState<Date | null>(null);
 
   // Daily rotation so the station order isn't fixed — everyone still practises
   // all stations, just not always #1 first. Seed is the day of month.
@@ -47,6 +49,7 @@ export function OsceStationView() {
     setChecked({});
     setDone(false);
     setSelfGlobal(0);
+    setStartedAt(new Date());
     setPhase("active");
     haptic("tap");
   }
@@ -172,11 +175,22 @@ export function OsceStationView() {
 
       <button
         type="button"
-        onClick={() => {
+        onClick={async () => {
           if (!done) {
             // Credit the station's competencies into the Skills Passport once.
             const keys = OSCE_COMPETENCY_KEYS[station.id] ?? ["clinical_interviewing"];
             void recordCompetencyEvent("osce", keys, selfGlobal || Math.round(frac * 5), `OSCE: ${station.title}`).catch(() => {});
+            // Persist the attempt (checklist + global rating + composite) so
+            // /admin/osce-review and weak-spots can read per-station history.
+            if (startedAt) {
+              const completedAt = new Date();
+              const payload = buildOsceAttemptPayload(station, checked, selfGlobal || Math.round(frac * 5), startedAt, completedAt);
+              await fetch("/api/practice/osce/attempt", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+              }).catch(() => {}); // silent; a check, not a test
+            }
           }
           setDone(true);
           setPhase("choose");
