@@ -108,6 +108,15 @@ with the reason — that's the pipeline working, not a bug.
   stations etc. without a code change, or (2) drop the unused tables.
   Currently harmless either way — flagging so it doesn't sit unexplained.
 
+## ✉️ Cohort-pulse one-tap nudge — blocked on an email provider
+
+`/admin/pulse` "one-tap nudge" is an honest stub ("Nudge drafted"): there is
+no email provider wired anywhere (no `resend` package, no `RESEND_API_KEY`,
+`src/lib/reminders.ts` only has planning/batching, no send function). Decide:
+(1) add Resend (key + a from-address) and I'll wire `/api/admin/nudge` to
+actually send, or (2) make nudges in-app notifications. Until then the button
+stays a local-state stub — it never falsely claims an email went out.
+
 ## 📥 THE ONE BLOCKING ITEM (drop-folder ingest)
 
 The licensed ingester's ladder step 6 is `/mnt/acquire/` — the drop folder.

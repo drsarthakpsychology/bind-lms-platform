@@ -1,3 +1,16 @@
+## 2026-08-13 (round 9 cont. — Rounds per-user scheduling)
+
+### Rounds — real spaced repetition (card_reviews)
+- `/api/practice/rounds/review` recomputes the next FSRS state server-side
+  and upserts card_reviews by (card, user) — the scheduler is authoritative,
+  never client-trusted. Deck carries (card, state) pairs so due-filtering +
+  sorting keep card association, and persists DB-card ratings on each review
+  (seeds schedule fresh per visit — they have no DB id). Rounds page loads
+  the student's own card_reviews for published cards. 3 route tests.
+  Commit ac8ef9e.
+- Pulse nudge logged to NEEDS_KAVYA: genuinely blocked on an email provider
+  (no resend package, no key, no send function) — the stub stays honest.
+
 ## 2026-08-13 (round 9 cont. — practice groups, cards pipeline, briefs scan)
 
 ### Practice page — grouped by session length (casebook Axis 5)
