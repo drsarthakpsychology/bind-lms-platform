@@ -1,3 +1,13 @@
+## 2026-08-14 — decision note: sibling in-flight chain/route.ts left uncommitted
+
+Observed `src/app/api/practice/chain/route.ts` being actively edited by a
+concurrent agent (follow-up-arc step for the practice chain; dormant scaffold —
+no `follow_up` content exists yet). Chose NOT to commit it: it appeared after
+my last gate, is not in my scope, and committing another agent's mid-edit
+work risks a partial/broken state (cheaper to reverse = leave it to its owner).
+All my scope (dashboard polish bd168e3, .env.example docs a3484cb, loading
+states be8a03e) is committed and gated green. Queue fully ticked.
+
 ## 2026-08-14 — decision note: §35 report consolidation (no action)
 
 A concurrent sibling rewrite replaced the detailed §35 A–F report in HEAD with
