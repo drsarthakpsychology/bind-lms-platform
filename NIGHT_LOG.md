@@ -1,3 +1,51 @@
+## 2026-08-13 (round 9 cont. — live migrations + seed + OSCE polish)
+
+### Live enablement (attempt tables now persist)
+- Applied 3 additive migrations live via new `scripts/apply-pending.ts`
+  (reusable pg-pooler runner, same pattern as apply-migrations, tracks
+  _migrations_applied): mse_attempts_slug, formulation_attempts_slug,
+  sct_items_slug. Verified live: mse_stimuli 30 rows all with slug,
+  mse/formulation/sct/osce_attempts all have owner INSERT policies (SCT
+  also UPDATE for the upsert).
+- Ran `scripts/upsert-mse-stimuli.ts` → 18 inserted + 12 updated (all 30
+  static stimuli now have DB rows keyed by slug, so mse_attempts FK
+  resolves and attempts persist).
+- OSCE debrief polish (commit 98e518f): self-assess now shows checklist %,
+  global rating + normalized, and the 60/40 composite as three stat tiles
+  matching the Consulting Room debrief Stat language.
+
+## 2026-08-13 (round 9 cont. — casebook findings + Formulation/SCT attempts)
+
+### Casebook round (findings verified against HEAD, not 76ab5e0)
+- Finding 1: course page was ALREADY a linear week-path (e0bfae6); removed
+  the remaining duplication — lesson rows no longer show material/assignment
+  count badges + due dates alongside their own rows. Each object appears once.
+- Finding 2: lesson page already tabbed with one forward button; the 3
+  aria-label="Assignment" sections are mutually-exclusive role branches. No
+  change needed.
+- Finding 3: /practice hardcoded fake state/progress strings. New
+  src/lib/practice/practice-state.ts computes per-user state from real
+  tables (done_today since 00:00 IST via startOfTodayIST; in_progress on
+  active sim sessions; blank = honest). 2 unit tests.
+- Finding 4: Skills Passport → /passport (own route, git mv); supervision +
+  weekly check-in → /record (combined page); weak-spots stays a banner.
+  Removed the 4 from the /practice grid; added Passport/Record to sidebar +
+  palette; old routes redirect. /practice now lists 14 things you actually do.
+- Commit a8e38ed. lint/tsc clean, 357 tests, build green.
+
+### Formulation + SCT attempt tables (IDEAS_NEXT #1 family — now complete)
+- Formulation (commit 711366e): slug on formulation_cases; attempts gain
+  source_sim_session_id/score/started_at/completed_at; case_id nullable.
+  Route resolves slug (upserts case on first write) and inserts
+  sort+narrative+diff; forge.tsx persists on Stage 3→4 and Stage 4 diffIt.
+- SCT/Judgment (commit 711366e): slug on sct_items + owner update policy;
+  route upserts by (item,user); judgment-arena posts each answer.
+- practice-state now counts sct_attempts so Judgment shows honest state.
+- Integration tests (commit 0ad8e9d): 11 fixture-tested route tests for the
+  MSE/Formulation/SCT attempt routes (mocked supabase + rate-limit):
+  401/400/200 paths, slug resolution, null-FK level-5/own-transcript, SCT
+  onConflict. 372 tests total, lint 0/0, tsc clean, build green.
+
 ## 2026-08-13 (round 9 — MSE attempt persistence)
 
 ### MSE — attempt tables wired (QUEUE #1, IDEAS_NEXT #1)

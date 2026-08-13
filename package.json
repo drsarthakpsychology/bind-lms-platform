@@ -20,6 +20,7 @@
     "test:e2e": "playwright test",
     "set-r2-cors": "tsx scripts/set-r2-cors.ts",
     "apply-migrations": "tsx scripts/apply-migrations.ts",
+    "apply-pending": "tsx scripts/apply-pending.ts",
     "seed-test": "tsx scripts/seed-test-account.ts",
     "seed-peer": "tsx scripts/seed-peer.ts",
     "seed-calibration": "tsx scripts/seed-calibration.ts",
