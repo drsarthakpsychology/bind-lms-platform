@@ -59,7 +59,10 @@ export default async function TodayPage() {
       const title = (simCase?.title as string | undefined) ?? "your patient";
       const shortName = title.split("—")[0].trim().replace(/^(.+?),.*$/, "$1");
       chainNext = {
-        href: next.surface === "formulation" ? "/practice/formulation" : next.surface === "mse" ? "/practice/mse" : next.surface === "rounds" ? "/practice/rounds" : next.surface === "follow_up" ? "/practice/consulting-room" : `/practice/consulting-room/session/${c.id}`,
+        // Known surfaces link to their tool; anything unknown (or a
+        // consulting_room step that's still pending) falls back to the hub —
+        // never to a session URL built from the chain row id (a broken link).
+        href: next.surface === "formulation" ? "/practice/formulation" : next.surface === "mse" ? "/practice/mse" : next.surface === "rounds" ? "/practice/rounds" : next.surface === "follow_up" ? "/practice/consulting-room" : "/practice/consulting-room",
         label: SURFACE_LABEL[next.surface] ?? next.surface,
         caseTitle: shortName || title,
         done,
