@@ -31,8 +31,8 @@ export interface SynthesisResult {
   url: string | null;
   /** sha256(text+voice+emotion+speed) — the cache key. */
   cacheKey: string;
-  /** 'cosyvoice2' | 'kokoro' | 'fixture' */
-  provider: "qwen3" | "chatterbox" | "cosyvoice2" | "kokoro" | "fixture";
+  /** 'elevenlabs' | 'cosyvoice2' | 'kokoro' | 'fixture' */
+  provider: "elevenlabs" | "qwen3" | "chatterbox" | "cosyvoice2" | "kokoro" | "fixture";
 }
 
 
@@ -234,10 +234,43 @@ async function putR2(
 }
 
 /**
+ * ElevenLabs (premium tier) — Kavya's account, voice "Rudra". Multilingual v2,
+ * R2-cached like every other tier. Keyed off ELEVENLABS_API_KEY +
+ * ELEVENLABS_VOICE_ID; silently skipped (returns ok:false) when unset so the
+ * free chain below still runs.
+ */
+async function synthesizeElevenLabs(req: SynthesisRequest): Promise<{ ok: true; objectKey: string; url: string | null } | { ok: false; reason: string }> {
+  const apiKey = process.env.ELEVENLABS_API_KEY;
+  const voiceId = process.env.ELEVENLABS_VOICE_ID;
+  if (!apiKey || !voiceId) return { ok: false, reason: "no ELEVENLABS_API_KEY/VOICE_ID" };
+  try {
+    const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "xi-api-key": apiKey,
+      },
+      body: JSON.stringify({
+        text: req.text,
+        model_id: "eleven_multilingual_v2",
+        voice_settings: { stability: 0.45, similarity_boost: 0.75 },
+      }),
+    });
+    if (!res.ok) return { ok: false, reason: `elevenlabs ${res.status}` };
+    const audio = Buffer.from(await res.arrayBuffer());
+    const key = synthesisCacheKey(req);
+    const write = await putR2(`voice/${key}.mp3`, audio);
+    return { ok: true, objectKey: `voice/${key}.mp3`, url: write?.url ?? null };
+  } catch (e) {
+    return { ok: false, reason: (e as Error).message };
+  }
+}
+
+/**
  * The single synthesis entry point. Cache-first, then the provider chain in
- * quality order: Qwen3-TTS (primary) → Chatterbox-Turbo (quality) →
- * CosyVoice2 (streaming) → Kokoro (CPU) → honest fixture mode.
- * Never throws — the client has browser TTS.
+ * quality order: ElevenLabs (premium) → Qwen3-TTS (primary) →
+ * Chatterbox-Turbo (quality) → CosyVoice2 (streaming) → Kokoro (CPU) →
+ * honest fixture mode. Never throws — the client has browser TTS.
  */
 export async function synthesize(req: SynthesisRequest): Promise<SynthesisResult> {
   const key = synthesisCacheKey(req);
@@ -245,8 +278,10 @@ export async function synthesize(req: SynthesisRequest): Promise<SynthesisResult
   if (process.env.AI_ENABLED === "true") {
     // Cache-first.
     if (await r2Has(key)) {
-      return { objectKey: `voice/${key}.mp3`, url: null, cacheKey: key, provider: "qwen3" };
+      return { objectKey: `voice/${key}.mp3`, url: null, cacheKey: key, provider: "elevenlabs" };
     }
+    const eleven = await synthesizeElevenLabs(req);
+    if (eleven.ok) return { objectKey: eleven.objectKey, url: eleven.url, cacheKey: key, provider: "elevenlabs" };
     const qwen = await synthesizeQwen3(req);
     if (qwen.ok) return { objectKey: qwen.objectKey, url: qwen.url, cacheKey: key, provider: "qwen3" };
     const chatter = await synthesizeChatterbox(req);

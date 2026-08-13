@@ -108,6 +108,14 @@ with the reason — that's the pipeline working, not a bug.
   stations etc. without a code change, or (2) drop the unused tables.
   Currently harmless either way — flagging so it doesn't sit unexplained.
 
+## 🔊 ElevenLabs premium TTS — one key away
+
+The premium tier is BUILT at the top of the synthesis chain
+(`src/lib/voice/synthesize.ts` → `synthesizeElevenLabs`, voice "Rudra",
+R2-cached). It needs two env vars to activate (else the free chain runs):
+- `ELEVENLABS_API_KEY`
+- `ELEVENLABS_VOICE_ID` (the "Rudra" voice)
+
 ## ✉️ Cohort-pulse one-tap nudge — one key away
 
 The code path is BUILT: `/api/admin/nudge` sends via Resend's REST API (fetch,
