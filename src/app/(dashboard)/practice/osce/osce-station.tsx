@@ -1,9 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { Mic, Timer } from "lucide-react";
+import { Mic, Square, Timer } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { SEED_OSCE_STATIONS, scoreOsce, seededRotate } from "@/lib/practice/osce";
+import { createWebStt, webSttSupported } from "@/lib/voice/stt";
 import { OSCE_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { buildOsceAttemptPayload } from "@/lib/practice/osce-attempt";
 
@@ -15,6 +16,36 @@ export function OsceStationView() {
   const [checked, setChecked] = React.useState<Record<string, boolean>>({});
   const [selfGlobal, setSelfGlobal] = React.useState(0);
   const [startedAt, setStartedAt] = React.useState<Date | null>(null);
+  // Voice delivery (OSCE is voice-strongly-preferred): capture the spoken
+  // response via web speech recognition — no storage, the transcript is the
+  // record. Degrades silently when the browser has no speech recognition.
+  const [recording, setRecording] = React.useState(false);
+  const [spoken, setSpoken] = React.useState("");
+  const sttRef = React.useRef<ReturnType<typeof createWebStt>>(null);
+
+  React.useEffect(() => {
+    return () => sttRef.current?.abort();
+  }, []);
+
+  function toggleVoice() {
+    if (recording) {
+      sttRef.current?.stop();
+      setRecording(false);
+      haptic("tap");
+      return;
+    }
+    const stt = createWebStt();
+    if (!stt) return;
+    sttRef.current = stt;
+    stt.onResult = (r) => {
+      if (r.isFinal) setSpoken((s) => (s ? `${s} ${r.transcript}` : r.transcript));
+    };
+    stt.onEnd = () => setRecording(false);
+    stt.onError = () => setRecording(false);
+    stt.start();
+    setRecording(true);
+    haptic("tap");
+  }
 
   // Daily rotation so the station order isn't fixed — everyone still practises
   // all stations, just not always #1 first. Seed is the day of month.
@@ -117,6 +148,42 @@ export function OsceStationView() {
           <p className="mt-2 flex items-center gap-1 text-caption text-muted-foreground">
             <Mic className="size-3.5" aria-hidden /> Speak your station — delivery is what&apos;s being assessed.
           </p>
+
+          {webSttSupported() ? (
+            <div className="mt-3 rounded-md border-2 border-border bg-background p-3">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-small font-medium text-foreground">
+                  {recording ? (
+                    <span className="inline-flex items-center gap-2">
+                      <span className="size-2.5 animate-pulse rounded-full bg-red-600" aria-hidden />
+                      Recording…
+                    </span>
+                  ) : spoken ? (
+                    "Captured — speak again to add"
+                  ) : (
+                    "Record your spoken response"
+                  )}
+                </span>
+                <button
+                  type="button"
+                  onClick={toggleVoice}
+                  aria-pressed={recording}
+                  className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-3 py-1.5 text-caption font-semibold transition-transform active:translate-y-px ${
+                    recording ? "bg-red-50 text-red-700" : "bg-secondary text-foreground"
+                  }`}
+                >
+                  {recording ? <Square className="size-4" aria-hidden /> : <Mic className="size-4" aria-hidden />}
+                  {recording ? "Stop" : "Record"}
+                </button>
+              </div>
+              {spoken ? (
+                <p className="mt-2 min-w-0 break-words rounded-md border border-border bg-card p-2 text-small leading-relaxed text-muted-foreground">
+                  {spoken}
+                </p>
+              ) : null}
+            </div>
+          ) : null}
+
           <button
             type="button"
             onClick={() => { setPhase("selfassess"); haptic("tap"); }}
