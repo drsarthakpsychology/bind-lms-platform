@@ -17,6 +17,11 @@ const TABS = [
 /**
  * Mobile bottom tab bar (v5.1 Part B3) — thumb reach. Desktop keeps the
  * sidebar; this renders on small screens only. One tap per tab, active state.
+ *
+ * The active tab gets the system's standard "active" language — terracotta
+ * fill, ink border, hard offset shadow (same as the sidebar active row and the
+ * SegmentedControl active segment) — inside a constant-geometry chip, so the
+ * active/inactive swap never shifts layout. Ink-on-peach ≈ 9:1 in both themes.
  */
 export function BottomTabBar() {
   const pathname = usePathname();
@@ -37,13 +42,19 @@ export function BottomTabBar() {
               key={t.href}
               href={t.href}
               aria-current={active ? "page" : undefined}
-              className={cn(
-                "flex flex-1 flex-col items-center gap-0.5 py-2 text-caption transition-colors duration-fast ease-snappy",
-                active ? "font-semibold text-primary" : "text-muted-foreground hover:text-foreground",
-              )}
+              className="flex flex-1 flex-col items-center py-2 text-caption"
             >
-              <Icon className="size-5" aria-hidden />
-              {t.label}
+              <span
+                className={cn(
+                  "flex flex-col items-center gap-0.5 rounded-md border-2 px-3 py-1 transition-colors duration-fast ease-snappy active:translate-y-px",
+                  active
+                    ? "border-foreground bg-primary font-semibold text-primary-foreground hard-shadow-flat"
+                    : "border-transparent text-muted-foreground hover:text-foreground",
+                )}
+              >
+                <Icon className="size-5" aria-hidden />
+                {t.label}
+              </span>
             </Link>
           );
         })}
