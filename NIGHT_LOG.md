@@ -1749,3 +1749,4 @@ Admin panel + student surfaces, per Kavya's two messages. All gate-green.
   admin mobile bottom bar (7123021).
 
 Gate green throughout: lint 0, tsc clean, 395 tests, build 0.
+2026-08-14T04:46:10 Queue exhausted — allowing normal Claude stop.
