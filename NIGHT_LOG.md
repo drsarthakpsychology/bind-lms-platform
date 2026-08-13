@@ -1,85 +1,3 @@
-## 2026-08-14 — FINAL REPORT §35 A–F (round 10 close — PRODUCTION SAFETY + FREE AI + UI POLISH)
-
-### A. What changed
-- **UI — premium neobrutalism** (615499b + bd168e3): global motion-system
-  tokens in globals.css (durations fast/base/slow/slower + snappy/out-expo/
-  springy easings + float keyframe, reduced-motion flattened); tactile
-  buttons (cursor, duration-fast ease-snappy, hover lift + hard-shadow,
-  active press-down); homepage hero 5-step cascade + new Parallax (12px
-  scroll drift, reduced-motion aware); uppercase brand on landing nav/footer;
-  /dashboard course-card cascade (0.15 + i*0.05); nav micro-interactions;
-  Reveal entrance cascades landed on /practice /today /wall /enquire /login +
-  equal-height practice-group cards.
-- **Voice — free-first TTS chain** (615499b): MiMo-V2.5-TTS (MIT) added as
-  tier 1; chain reordered MiMo → Kokoro → Qwen3 → Chatterbox → CosyVoice →
-  ElevenLabs LAST (paid, not recommended). R2 sha256 cache stays cache-first.
-- **Perf / free-infra** (bd168e3): R2 voice-cache prune helper
-  (scripts/prune-voice-cache.ts, dry-run default, --apply to delete);
-  pregen-voice dry-run verified (74 fallback lines, no provider calls);
-  /verify/[certificateId] loading skeleton; dropped unneeded "use client"
-  from ui/table.tsx + simulation-badge.tsx (pure presentational).
-- **Docs** (006d412): docs/AI_FREE_TIERS.md — per-provider reference
-  (provider/model/purpose/cost/free-limits/env-var/setup/fallback), TTS + LLM
-  chain diagrams, trainsOnData privacy split, $0/month go-live line.
-
-### B. AI decisions OLD→NEW→WHY→COST→FREE LIMIT
-| Decision | OLD | NEW | WHY | COST | FREE LIMIT |
-|---|---|---|---|---|---|
-| TTS chain | ElevenLabs first | MiMo first, ElevenLabs last | user: "USE FREE MODELS, NOT ELEVENLABS" | $0 (MiMo MIT free beta/self-host; Kokoro CPU) | per-provider, see AI_FREE_TIERS.md |
-| Director/Actor LLM | Gemini primary (trains on prompts) | Groq primary (no-train JSON) → Cerebras fallback; Gemini demoted to non-student lane | clinical transcripts = named students; free tiers must not train | $0 | Groq 30 RPM / 1K RPD; Cerebras ~1M tok/day |
-| LLM structured output | json_schema (strict) | json_object + Zod-repair + failover | Groq strict "in flux"; Cerebras 422s w/o additionalProperties:false | $0 | n/a |
-| STT | — | Groq Whisper → NVIDIA → Deepgram (server-side) | no-train hosted first | $0 | Groq 30 RPM; NVIDIA ~40 RPM |
-
-### C. API-key table
-| Key | Purpose | Free? | Where |
-|---|---|---|---|
-| GROQ_API_KEY | Director/Actor + Whisper | free, no card | NEEDS_KAVYA |
-| CEREBRAS_API_KEY | fallback LLM | free, no card | NEEDS_KAVYA |
-| NVIDIA_API_KEY | CosyVoice 2 + Whisper + LLM | free (~40 RPM) | NEEDS_KAVYA |
-| GEMINI_API_KEY | non-student content lane | free | NEEDS_KAVYA |
-| MIMO_TTS_URL / MIMO_TTS_API_KEY | MiMo TTS tier 1 | free beta / self-host | .env.example |
-| KOKORO_API_URL | Kokoro CPU TTS | free self-host | .env.example |
-| QWEN_TTS_URL / QWEN_TTS_API_KEY | Qwen3 TTS | hosted / self-host | .env.example |
-| CHATTERBOX_TTS_URL | Chatterbox TTS | MIT self-host | .env.example |
-| ELEVENLABS_API_KEY / VOICE_ID | paid last-resort TTS | NO (paid) | .env.example, not recommended |
-| RESEND_API_KEY / FROM | cohort nudge + bulk-import email | existing | server-only |
-| TURNSTILE_SECRET_KEY | login bot protection | existing | server-only |
-| SENTRY_DSN | errors | existing | NEXT_PUBLIC_ by design |
-| CRON_SECRET | internal cron auth | existing | server-only |
-| SUPABASE_SERVICE_ROLE_KEY | server-only admin client | existing | server-only (never client) |
-
-### D. Infra-safety confirmation
-- No production Supabase schema/RLS changes this round. No Vercel
-  config/vercel.json/next.config changes (outputFileTracingIncludes was
-  pre-existing). No R2 objects written: pregen NOT run; prune helper is
-  dry-run by default and operator-initiated (never automatic). No new npm
-  dependencies. Client-bloat conversions verified against import boundaries
-  (ui/table + simulation-badge imported only by server components). Key-leak
-  audit re-verified: no server secret in any client bundle; NEXT_PUBLIC_*
-  only public-by-design vars. No secrets committed.
-
-### E. New deps
-- **None** added. All work used existing deps (@aws-sdk/client-s3, motion,
-  lucide-react, tailwind-merge, cva).
-
-### F. Limitations
-- All live-AI features stay on fixtures/browser-TTS until the NEEDS_KAVYA
-  keys are pasted (one sitting, free first).
-- ElevenLabs remains wired but is paid + not recommended; free tiers cover
-  the voice.
-- unstable_cache data caching deliberately skipped: every dashboard data
-  fetch is per-user (progress/submissions/enrollment/streaks) — caching
-  risked auth/data freshness.
-- R2 prune is manual: an operator runs `npm run prune-voice-cache -- --apply`
-  after reviewing the dry-run list. The voice/ prefix is currently empty.
-- AI_FREE_TIERS.md flags free-tier limits as account-dependent + moving;
-  "verify current limits before relying on this" where the research doc was
-  silent.
-
-### State
-QUEUE round 10 fully ticked (6/6). Branch feat/groq-primary-director; no
-push. Gate green throughout: lint 0/0, tsc clean, 379 tests, build exit 0.
-
 ## 2026-08-14 — BEASTMODE ROUND 10 CLOSE — final report §35 A–F
 
 Round 10 (PRODUCTION SAFETY + FREE AI + UI POLISH) complete. All 6 QUEUE
@@ -1216,3 +1134,5 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T01:24:13 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:36:59 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:37:26 Queue exhausted — allowing normal Claude stop.
+2026-08-14T01:38:15 Queue exhausted — allowing normal Claude stop.
+2026-08-14T01:38:24 Queue exhausted — allowing normal Claude stop.
