@@ -14,9 +14,9 @@ import { Reveal } from "./reveal";
 
 function CaseFragment({ label, children, className }: { label: string; children: React.ReactNode; className?: string }) {
   return (
-    <div className={cn("rounded-md border-2 border-foreground bg-card p-4 hard-shadow-sm", className)}>
+    <div className={cn("min-w-0 rounded-md border-2 border-foreground bg-card p-4 hard-shadow-sm", className)}>
       <p className="text-eyebrow text-muted-foreground">{label}</p>
-      <p className="mt-2 text-small leading-relaxed text-foreground">{children}</p>
+      <p className="mt-2 min-w-0 break-words text-small leading-relaxed text-foreground">{children}</p>
     </div>
   );
 }
@@ -29,7 +29,7 @@ function Hero() {
         <h1 className="mt-3 max-w-xl text-4xl font-black leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
           Understand the case, not just the diagnosis.
         </h1>
-        <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="mt-5 max-w-lg min-w-0 break-words text-base leading-relaxed text-muted-foreground sm:text-lg">
           Psychology graduates can describe therapy. Few can practise it. VIBHA
           School of Psychology closes that gap — with real cases, simulated
           patients, and a debrief after every session.
@@ -125,8 +125,8 @@ function ThreeIdeas() {
           <Reveal key={idea.eyebrow} delay={i * 0.08} className={cn(i === 1 && "md:mt-10", i === 2 && "md:mt-4")}>
             <div className="rounded-md border-2 border-foreground bg-card p-6 hard-shadow-sm">
               <p className="text-eyebrow text-primary">{idea.eyebrow}</p>
-              <h3 className="mt-2 text-xl font-bold text-foreground">{idea.title}</h3>
-              <p className="mt-3 text-small leading-relaxed text-muted-foreground">{idea.body}</p>
+              <h3 className="mt-2 min-w-0 break-words text-xl font-bold text-foreground">{idea.title}</h3>
+              <p className="mt-3 min-w-0 break-words text-small leading-relaxed text-muted-foreground">{idea.body}</p>
             </div>
           </Reveal>
         ))}
@@ -191,7 +191,7 @@ function Footer() {
   return (
     <footer className="border-t-2 border-foreground bg-card">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <span className="flex items-center gap-2.5 font-bold text-foreground">
+        <span className="flex items-center gap-2 font-bold text-foreground">
           <span className="flex size-7 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground">
             {BRAND.shortName.charAt(0)}
           </span>

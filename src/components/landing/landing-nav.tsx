@@ -33,12 +33,12 @@ export function LandingNav() {
   return (
     <header className="sticky top-0 z-50 border-b-2 border-foreground bg-background">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-2.5 font-bold tracking-tight text-foreground">
+        <Link href="/" className="flex items-center gap-2 font-bold tracking-tight text-foreground">
           <span className="flex size-8 items-center justify-center rounded-sm bg-primary text-sm font-black text-primary-foreground">
             {BRAND.shortName.charAt(0)}
           </span>
-          <span className="hidden text-sm font-bold sm:block">{BRAND.name}</span>
-          <span className="text-sm font-bold sm:hidden">{BRAND.shortName}</span>
+          <span className="hidden min-w-0 text-sm font-bold sm:block">{BRAND.name}</span>
+          <span className="min-w-0 text-sm font-bold sm:hidden">{BRAND.shortName}</span>
         </Link>
 
         {/* Desktop nav */}
@@ -78,7 +78,7 @@ export function LandingNav() {
           className="fixed inset-0 z-[60] flex flex-col bg-background"
         >
           <div className="flex items-center justify-between border-b-2 border-foreground px-5 py-3">
-            <span className="flex items-center gap-2.5 font-bold text-foreground">
+            <span className="flex items-center gap-2 font-bold text-foreground">
               <span className="flex size-8 items-center justify-center rounded-sm bg-primary text-sm font-black text-primary-foreground">
                 {BRAND.shortName.charAt(0)}
               </span>
