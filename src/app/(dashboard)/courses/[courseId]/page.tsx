@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BookOpen, CheckCircle2, ChevronLeft, ChevronDown, Clock, FileText, Paperclip } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, ChevronLeft, ChevronDown, Clock, FileText } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
@@ -25,7 +25,7 @@ export default async function CourseOverviewPage({
 
   const supabase = await createClient();
 
-  const [{ data: course }, { data: lessons }, { data: progress }, { data: courseMaterials }, { data: assignments }, { data: submissions }, { data: lessonMaterials }] =
+  const [{ data: course }, { data: lessons }, { data: progress }, { data: courseMaterials }, { data: assignments }, { data: submissions }] =
     await Promise.all([
       supabase.from("courses").select("id, title, is_published, weeks").eq("id", courseId).single(),
       supabase
@@ -51,11 +51,6 @@ export default async function CourseOverviewPage({
         .from("submissions")
         .select("assignment_id, status, submitted_at, score")
         .eq("user_id", profile.id),
-      supabase
-        .from("materials")
-        .select("lesson_id")
-        .eq("course_id", courseId)
-        .not("lesson_id", "is", null),
     ]);
 
   const { data: enrollment } =
@@ -118,11 +113,6 @@ export default async function CourseOverviewPage({
     const list = courseMaterialsByWeek.get(mWeek) ?? [];
     list.push(m);
     courseMaterialsByWeek.set(mWeek, list);
-  }
-
-  const materialsByLesson = new Map<string, number>();
-  for (const m of lessonMaterials ?? []) {
-    materialsByLesson.set(m.lesson_id, (materialsByLesson.get(m.lesson_id) ?? 0) + 1);
   }
 
   const assignmentsByWeek = new Map<number, typeof courseAssignments>();
@@ -270,13 +260,6 @@ export default async function CourseOverviewPage({
               <div className="mt-4 space-y-3">
                 {weekLessons.map((lesson, i) => {
                   const done = completedIds.has(lesson.id);
-                  const materialCount = materialsByLesson.get(lesson.id) ?? 0;
-                  const lessonAssignments = weekAssignments.filter((a) => a.lessonId === lesson.id);
-                  const assignmentCount = lessonAssignments.length;
-                  const hasOutstandingAssignment = lessonAssignments.some(
-                    (a) => a.is_published && a.status === "not_started",
-                  );
-                  const assignmentDue = lessonAssignments.find((a) => a.is_published && a.due_at);
                   const isNextAction = nextAction?.type === "lesson" && nextAction.id === lesson.id;
 
                   const rowClass = cn(
@@ -316,28 +299,7 @@ export default async function CourseOverviewPage({
                       <span className="min-w-0 flex-1">
                         <span className="block truncate text-small font-medium text-foreground">{lesson.title}</span>
                         <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-caption text-muted-foreground">
-                          {materialCount > 0 && (
-                            <span className="inline-flex items-center gap-1">
-                              <Paperclip className="size-3" aria-hidden />
-                              {materialCount} material{materialCount === 1 ? "" : "s"}
-                           </span>
-                          )}
-                          {assignmentCount > 0 && (
-                            <span className="inline-flex items-center gap-1">
-                              <FileText className="size-3" aria-hidden />
-                              {assignmentCount} assignment{assignmentCount === 1 ? "" : "s"}
-                              {hasOutstandingAssignment ? " · to submit" : ""}
-                           </span>
-                          )}
-                          {assignmentDue?.due_at && !done && (
-                            <span className="inline-flex items-center gap-1">
-                              <Clock className="size-3" aria-hidden />
-                              due {new Date(assignmentDue.due_at).toLocaleDateString()}
-                           </span>
-                          )}
-                          {!done && materialCount === 0 && assignmentCount === 0 && !isNextAction && (
-                            <span>Not watched yet</span>
-                          )}
+                          {!done && !isNextAction && <span>Not watched yet</span>}
                           {isNextAction && <span className="font-medium text-primary">← Start here</span>}
                        </span>
                      </span>

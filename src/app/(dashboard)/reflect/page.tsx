@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 /**
  * /reflect — Reflective Journal (Part 6.10).
  * OWNER-ONLY RLS. No admin read path. Per-entry sharing, revocable.
- * The weekly Check-in now lives at /practice/check-in.
+ * The weekly Check-in now lives at /record.
  */
 export default async function ReflectPage() {
   const supabase = await createClient();

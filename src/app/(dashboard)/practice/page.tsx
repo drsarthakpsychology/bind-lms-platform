@@ -1,12 +1,13 @@
 import Link from "next/link";
 import {
   Stethoscope, Brain, Layers, Timer, BookOpen, Scale,
-  NotebookPen, Users, Radar, CircleCheck, Gauge, Search, MessageSquare,
-  Siren, GraduationCap, HeartPulse, ClipboardCheck, Wand2, Repeat,
+  Users, CircleCheck, Gauge, Search, MessageSquare,
+  Siren, GraduationCap, Wand2, Repeat,
   type LucideIcon,
 } from "lucide-react";
 import { readFlags, type FeatureKey } from "@/lib/flags";
 import { createClient } from "@/lib/supabase/server";
+import { computePracticeStates, type SurfaceState } from "@/lib/practice/practice-state";
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 
@@ -25,44 +26,36 @@ type PracticeTool = {
   description: string;
   icon: LucideIcon;
   time: string;
-  state: "new" | "in_progress" | "done_today" | "due";
-  progress?: string;
   flag: FeatureKey;
 };
 
 const PRACTICE_TOOLS: PracticeTool[] = [
   // Under 5 minutes
-  { href: "/practice/judgment", title: "5 Judgment Calls", verb: "SLIDE", description: "New information changes the probability.", icon: Gauge, time: "2 min", state: "due", flag: "judgment", progress: "day 4" },
-  { href: "/practice/two-minute-clinic", title: "Two-Minute Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: CircleCheck, time: "2 min", state: "new", flag: "two_minute_clinic" },
-  { href: "/practice/rounds", title: "Rounds", verb: "RATE", description: "Spaced-repetition cards, capped at 25/day.", icon: Repeat, time: "3 min", state: "done_today", flag: "rounds" },
-  { href: "/practice/decode", title: "Presenting Complaint Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: Search, time: "4 min", state: "new", flag: "decoder" },
+  { href: "/practice/judgment", title: "5 Judgment Calls", verb: "SLIDE", description: "New information changes the probability.", icon: Gauge, time: "2 min", flag: "judgment" },
+  { href: "/practice/two-minute-clinic", title: "Two-Minute Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: CircleCheck, time: "2 min", flag: "two_minute_clinic" },
+  { href: "/practice/rounds", title: "Rounds", verb: "RATE", description: "Spaced-repetition cards, capped at 25/day.", icon: Repeat, time: "3 min", flag: "rounds" },
+  { href: "/practice/decode", title: "Presenting Complaint Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: Search, time: "4 min", flag: "decoder" },
 
   // A proper session
-  { href: "/practice/consulting-room", title: "Consulting Room", verb: "TALK", description: "Interview a simulated patient; the debrief shows what you missed.", icon: Stethoscope, time: "12 min", state: "in_progress", flag: "consulting_room", progress: "case 3 / 60" },
-  { href: "/practice/mse", title: "MSE Trainer", verb: "TAG", description: "Describe before you label. 11 domains.", icon: Brain, time: "10 min", state: "new", flag: "mse" },
-  { href: "/practice/osce", title: "OSCE Stations", verb: "PERFORM", description: "Seven minutes, one task, voice-first.", icon: Timer, time: "7 min", state: "new", flag: "osce" },
-  { href: "/practice/formulation", title: "Formulation Forge", verb: "SORT", description: "5P factors, narrative, diff against the model.", icon: Wand2, time: "8 min", state: "new", flag: "formulation" },
+  { href: "/practice/consulting-room", title: "Consulting Room", verb: "TALK", description: "Interview a simulated patient; the debrief shows what you missed.", icon: Stethoscope, time: "12 min", flag: "consulting_room" },
+  { href: "/practice/mse", title: "MSE Trainer", verb: "TAG", description: "Describe before you label. 11 domains.", icon: Brain, time: "10 min", flag: "mse" },
+  { href: "/practice/osce", title: "OSCE Stations", verb: "PERFORM", description: "Seven minutes, one task, voice-first.", icon: Timer, time: "7 min", flag: "osce" },
+  { href: "/practice/formulation", title: "Formulation Forge", verb: "SORT", description: "5P factors, narrative, diff against the model.", icon: Wand2, time: "8 min", flag: "formulation" },
 
   // With someone else
-  { href: "/practice/role-play", title: "Peer Role-Play", verb: "PAIR", description: "One of you the patient, one the clinician.", icon: Users, time: "15 min", state: "new", flag: "peer_roleplay" },
-  { href: "/practice/ethics", title: "Ethics & Law", verb: "CHOOSE", description: "Consequence first, then the statute.", icon: Scale, time: "5 min", state: "new", flag: "ethics" },
-  { href: "/wall", title: "Cohort Wall", verb: "ASK", description: "Threaded, anonymous-post toggle.", icon: MessageSquare, time: "3 min", state: "new", flag: "journal" },
+  { href: "/practice/role-play", title: "Peer Role-Play", verb: "PAIR", description: "One of you the patient, one the clinician.", icon: Users, time: "15 min", flag: "peer_roleplay" },
+  { href: "/practice/ethics", title: "Ethics & Law", verb: "CHOOSE", description: "Consequence first, then the statute.", icon: Scale, time: "5 min", flag: "ethics" },
+  { href: "/wall", title: "Cohort Wall", verb: "ASK", description: "Threaded, anonymous-post toggle.", icon: MessageSquare, time: "3 min", flag: "journal" },
 
   // Read and reflect
-  { href: "/practice/library", title: "Case Library", verb: "ANNOTATE", description: "Highlight + note; peers' notes unlock after yours.", icon: BookOpen, time: "varies", state: "new", flag: "case_library", progress: "129 reports" },
-  { href: "/practice/check-in", title: "Weekly Check-in", verb: "TAP", description: "30 seconds, aggregate-only for faculty.", icon: HeartPulse, time: "<1 min", state: "done_today", flag: "checkin" },
-  { href: "/practice/landmark", title: "Landmark Cases", verb: "READ", description: "What was believed, what held up.", icon: GraduationCap, time: "5 min", state: "new", flag: "landmark" },
-  { href: "/practice/out-of-depth", title: "Out of Depth", verb: "REFER", description: "Know when to refer, escalate, or stop.", icon: Siren, time: "5 min", state: "new", flag: "ethics" },
-
-  // Your record
-  { href: "/practice/passport", title: "Skills Passport", verb: "VIEW", description: "Your competencies, evidenced.", icon: Radar, time: "read", state: "new", flag: "skills_passport", progress: "2 / 11 competencies" },
-  { href: "/practice/supervision", title: "Supervision Log", verb: "RECORD", description: "Log contact hours, tag competencies.", icon: NotebookPen, time: "1 min", state: "new", flag: "supervision" },
-  { href: "/practice/weak-spots", title: "Weak Spots", verb: "DRILL", description: "Your gaps, and a 10-item drill on the spot.", icon: ClipboardCheck, time: "5 min", state: "new", flag: "weak_spots" },
-  { href: "/practice/modules", title: "Modules", verb: "BROWSE", description: "Your course's modules, in order — locked ones state why.", icon: Layers, time: "1 min", state: "new", flag: "modules" },
+  { href: "/practice/library", title: "Case Library", verb: "ANNOTATE", description: "Highlight + note; peers' notes unlock after yours.", icon: BookOpen, time: "varies", flag: "case_library" },
+  { href: "/practice/landmark", title: "Landmark Cases", verb: "READ", description: "What was believed, what held up.", icon: GraduationCap, time: "5 min", flag: "landmark" },
+  { href: "/practice/out-of-depth", title: "Out of Depth", verb: "REFER", description: "Know when to refer, escalate, or stop.", icon: Siren, time: "5 min", flag: "ethics" },
+  { href: "/practice/modules", title: "Modules", verb: "BROWSE", description: "Your course's modules, in order — locked ones state why.", icon: Layers, time: "1 min", flag: "modules" },
 ];
 
 
-const STATE_STYLE: Record<PracticeTool["state"], { label: string; className: string }> = {
+const STATE_STYLE: Record<string, { label: string; className: string }> = {
   new: { label: "New", className: "bg-secondary text-muted-foreground" },
   in_progress: { label: "In progress", className: "bg-primary text-primary-foreground" },
   done_today: { label: "Done today", className: "bg-green-100 text-green-800" },
@@ -78,6 +71,12 @@ export default async function PracticeHubPage() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  // Honest per-surface state from the user's real activity (Finding 3).
+  // Blank = no data yet; never fabricated numbers.
+  const states: Record<string, SurfaceState> = user
+    ? await computePracticeStates(supabase, user.id)
+    : {};
 
   let recommendation: { href: string; title: string; reason: string; cta: string; time: string } | null = null;
   if (user) {
@@ -180,8 +179,9 @@ export default async function PracticeHubPage() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((tool) => {
           const Icon = tool.icon;
-          const state = STATE_STYLE[tool.state];
-          const dimmed = tool.state === "done_today";
+          const live = states[tool.href];
+          const chip = live?.state ? STATE_STYLE[live.state] : null;
+          const dimmed = live?.state === "done_today";
           return (
             <Link
               key={tool.href}
@@ -195,9 +195,11 @@ export default async function PracticeHubPage() {
                   <Icon className="size-4" aria-hidden />
                 </span>
                 <span className="text-caption font-semibold tracking-wide text-muted-foreground">{tool.verb}</span>
-                <span className={`ml-auto shrink-0 rounded-full px-2 py-0.5 text-caption font-medium ${state.className}`}>
-                  {state.label}
-                </span>
+                {chip ? (
+                  <span className={`ml-auto shrink-0 rounded-full px-2 py-0.5 text-caption font-medium ${chip.className}`}>
+                    {chip.label}
+                  </span>
+                ) : null}
               </div>
               <div>
                 <h2 className="flex items-center gap-2 text-base font-semibold">
@@ -205,8 +207,8 @@ export default async function PracticeHubPage() {
                   <span className="shrink-0 text-caption font-normal text-muted-foreground">{tool.time}</span>
                 </h2>
                 <p className="mt-1 text-small text-muted-foreground">{tool.description}</p>
-                {tool.progress ? (
-                  <p className="mt-1 text-caption text-muted-foreground">{tool.progress}</p>
+                {live?.progress ? (
+                  <p className="mt-1 text-caption text-muted-foreground">{live.progress}</p>
                 ) : null}
               </div>
             </Link>
@@ -218,6 +220,15 @@ export default async function PracticeHubPage() {
         Voice mode is available in the Consulting Room and OSCE stations. Everything stays on the server.
         <span className="ml-2 hidden sm:inline">Keyboard: j/k to move · Enter to open · / for help.</span>
       </p>
+
+      <nav className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-caption text-muted-foreground" aria-label="Your record">
+        <Link href="/passport" className="inline-flex items-center gap-1 transition-colors hover:text-foreground">
+          Skills Passport
+        </Link>
+        <Link href="/record" className="inline-flex items-center gap-1 transition-colors hover:text-foreground">
+          Supervision log &amp; weekly check-in
+        </Link>
+      </nav>
 
       <PracticeKeyboardNav links={visible.map((t) => ({ href: t.href, title: t.title }))} />
     </div>

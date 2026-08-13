@@ -13,6 +13,8 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/practice", label: "Practice", icon: "stethoscope", exact: true },
   { href: "/reflect", label: "Journal", icon: "notebook", exact: true },
   { href: "/wall", label: "Wall", icon: "wall", exact: true },
+  { href: "/passport", label: "Passport", icon: "radar" },
+  { href: "/record", label: "Record", icon: "clipboardList" },
 ];
 
 export const ADMIN_ITEMS: NavItem[] = [

@@ -38,7 +38,7 @@ export default async function AdminCheckinsPage() {
         <div className="mt-6 rounded-md border-2 border-border bg-card p-6 text-center">
           <p className="text-base font-medium">No check-ins yet</p>
           <p className="mt-1 text-small text-muted-foreground">
-            Students check in weekly at /practice/check-in. Aggregates land here.
+            Students check in weekly at /record. Aggregates land here.
           </p>
         </div>
       ) : (

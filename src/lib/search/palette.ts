@@ -28,9 +28,8 @@ const TOOLS: PaletteEntry[] = [
   { id: "rounds", label: "Rounds", hint: "Spaced-repetition cards", href: "/practice/rounds", group: "Tools", keywords: ["cards", "review", "fsrs"] },
   { id: "ethics", label: "Ethics & Law", hint: "MHA 2017, POCSO, RCI scope", href: "/practice/ethics", group: "Tools", keywords: ["law", "dilemma", "consent"] },
   { id: "library", label: "Case Library", hint: "Browse the open-access corpus", href: "/practice/library", group: "Tools", keywords: ["corpus", "pmc", "cases"] },
-  { id: "supervision", label: "Supervision log", hint: "RCI-track contact hours", href: "/practice/supervision", group: "Tools", keywords: ["hours", "signoff"] },
-  { id: "passport", label: "Skills Passport", hint: "Competencies, evidenced", href: "/practice/passport", group: "Tools", keywords: ["competency", "evidence"] },
-  { id: "checkin", label: "Weekly Check-in", hint: "30 seconds, aggregate-only", href: "/practice/check-in", group: "Tools", keywords: ["workload", "energy"] },
+  { id: "record", label: "Your record", hint: "Supervision hours + weekly check-in", href: "/record", group: "Tools", keywords: ["hours", "signoff", "workload", "energy"] },
+  { id: "passport", label: "Skills Passport", hint: "Competencies, evidenced", href: "/passport", group: "Tools", keywords: ["competency", "evidence"] },
   { id: "reflect", label: "Journal", href: "/reflect", group: "Nav", keywords: ["reflection", "diary"] },
   { id: "wall", label: "Cohort Wall", href: "/wall", group: "Nav", keywords: ["discussion", "posts"] },
 ];
