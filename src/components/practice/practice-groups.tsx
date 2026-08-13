@@ -49,8 +49,8 @@ export interface PracticeGroup {
 const STATE_STYLE: Record<string, { label: string; className: string }> = {
   new: { label: "New", className: "bg-secondary text-muted-foreground" },
   in_progress: { label: "In progress", className: "bg-primary text-primary-foreground" },
-  done_today: { label: "Done today", className: "bg-green-100 text-green-800" },
-  due: { label: "Due", className: "bg-amber-100 text-amber-800" },
+  done_today: { label: "Done today", className: "bg-status-success-bg text-status-success-fg" },
+  due: { label: "Due", className: "bg-status-pending-bg text-status-pending-fg" },
 };
 
 const OPEN_KEY = "practice:group-open";
@@ -121,7 +121,7 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
                   <Link
                     href={tool.href}
                     className={cn(
-                      "group flex h-full flex-col gap-3 rounded-md border-2 border-border bg-background p-4 transition-[transform,box-shadow] hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px active:hard-shadow-none",
+                      "group flex h-full flex-col gap-3 rounded-md border-2 border-border bg-background p-4 transition-[transform,box-shadow] outline-none hover:-translate-y-0.5 hover:hard-shadow-sm focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:hard-shadow-none",
                       dimmed && "opacity-60",
                     )}
                   >

@@ -125,7 +125,7 @@ export default async function TodayPage() {
       {chainNext ? (
         <Link
           href={chainNext.href}
-          className="mt-4 flex items-center justify-between gap-3 rounded-md border-2 border-primary bg-primary/5 p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
+          className="mt-4 flex items-center justify-between gap-3 rounded-lg border-2 border-primary bg-primary/5 p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
         >
           <span className="flex items-center gap-3">
             <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-primary bg-primary text-sm font-black text-primary-foreground">
@@ -149,7 +149,7 @@ export default async function TodayPage() {
       <Reveal delay={0.2}>
       <Link
         href={primary.href}
-        className="mt-6 block rounded-md border-2 border-border bg-card p-6 hard-shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-px"
+        className="mt-6 block rounded-lg border-2 border-border bg-card p-6 hard-shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-px"
       >
         <div className="flex items-center justify-between">
           <span className="rounded-full bg-primary px-2 py-0.5 text-caption font-semibold text-primary-foreground">
@@ -170,7 +170,7 @@ export default async function TodayPage() {
         <Reveal delay={0.25} className="h-full">
         <Link
           href="/practice/two-minute-clinic"
-          className="flex h-full items-center gap-3 rounded-md border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
+          className="flex h-full items-center gap-3 rounded-lg border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
         >
           <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
             <Zap className="size-4" aria-hidden />
@@ -184,7 +184,7 @@ export default async function TodayPage() {
         <Reveal delay={0.3} className="h-full">
         <Link
           href="/practice/consulting-room"
-          className="flex h-full items-center gap-3 rounded-md border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
+          className="flex h-full items-center gap-3 rounded-lg border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
         >
           <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
             <Mic2 className="size-4" aria-hidden />

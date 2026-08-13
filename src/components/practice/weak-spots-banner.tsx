@@ -31,11 +31,11 @@ export async function WeakSpotsBanner(): Promise<React.ReactElement | null> {
   return (
     <Link
       href="/practice/weak-spots"
-      className="mb-6 flex items-center justify-between gap-3 rounded-md border-2 border-border bg-amber-50 p-3 text-small transition-transform active:translate-y-px"
+      className="mb-6 flex items-center justify-between gap-3 rounded-md border-2 border-border bg-status-pending-bg p-3 text-small transition-transform active:translate-y-px"
     >
       <span className="flex items-center gap-2">
-        <Radar className="size-4 shrink-0 text-amber-700" aria-hidden />
-        <span>
+        <Radar className="size-4 shrink-0 text-status-pending-fg" aria-hidden />
+        <span className="text-status-pending-fg">
           Your three weakest domains: <span className="font-medium">{top3}</span>
         </span>
       </span>

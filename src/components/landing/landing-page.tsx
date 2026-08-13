@@ -57,7 +57,7 @@ function Hero() {
       {/* Decorative observation rings behind the hero. Very low contrast,
           parallax-aware, and clipped by the section so they can never scroll
           the page sideways. aria-hidden: purely visual. */}
-      <Parallax from={18} to={-18} className="pointer-events-none absolute -right-28 -top-24 select-none">
+      <Parallax from={12} to={-12} className="pointer-events-none absolute -right-28 -top-24 select-none">
         <ObservationRings className="w-72 text-foreground/[0.07] sm:w-[30rem] lg:w-[38rem]" />
       </Parallax>
 

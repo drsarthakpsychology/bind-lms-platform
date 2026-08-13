@@ -16,9 +16,9 @@ export interface SupervisionEntry {
 
 const SIGN_OFF: Record<SupervisionEntry["signoffStatus"], { label: string; className: string }> = {
   pending: { label: "Pending", className: "bg-secondary text-muted-foreground" },
-  requested: { label: "Sign-off requested", className: "bg-amber-100 text-amber-800" },
-  signed: { label: "Signed off", className: "bg-green-100 text-green-800" },
-  rejected: { label: "Rejected", className: "bg-red-100 text-red-700" },
+  requested: { label: "Sign-off requested", className: "bg-status-pending-bg text-status-pending-fg" },
+  signed: { label: "Signed off", className: "bg-status-success-bg text-status-success-fg" },
+  rejected: { label: "Rejected", className: "bg-status-alert-bg text-status-alert-fg" },
 };
 
 export function SupervisionLog({
@@ -205,7 +205,7 @@ export function SupervisionLog({
           </label>
         </div>
 
-        {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
+        {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
         <button
           type="submit"
           disabled={busy || !activity.trim()}

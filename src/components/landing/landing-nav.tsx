@@ -18,18 +18,59 @@ const NAV_LINKS = [{ href: "#about", label: "About" }];
 export function LandingNav() {
   const [open, setOpen] = React.useState(false);
   const panelRef = React.useRef<HTMLDivElement>(null);
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
+
+  const closeMenu = React.useCallback(() => {
+    setOpen(false);
+    // Return focus to the trigger that opened the sheet, so keyboard users
+    // resume where they left off.
+    triggerRef.current?.focus();
+  }, []);
 
   React.useEffect(() => {
     if (!open) return;
+
+    // Lock background scroll while the full-screen sheet is open.
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        closeMenu();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      // Trap focus inside the sheet so Tab can't fall behind the overlay.
+      const panel = panelRef.current;
+      if (!panel) return;
+      const focusables = Array.from(
+        panel.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        ),
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey && (active === first || active === document.body)) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
+
     window.addEventListener("keydown", onKey);
     // Move focus into the sheet.
     const first = panelRef.current?.querySelector<HTMLElement>("a,button");
     first?.focus();
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
+
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [open, closeMenu]);
 
   return (
     <header className="sticky top-0 z-50 border-b-2 border-foreground bg-background">
@@ -60,6 +101,7 @@ export function LandingNav() {
 
         {/* Mobile trigger */}
         <button
+          ref={triggerRef}
           type="button"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
@@ -85,7 +127,7 @@ export function LandingNav() {
             </span>
             <button
               type="button"
-              onClick={() => setOpen(false)}
+              onClick={closeMenu}
               aria-label="Close menu"
               className="flex size-9 items-center justify-center rounded-md border-2 border-foreground bg-background text-foreground"
             >

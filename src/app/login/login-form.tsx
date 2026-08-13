@@ -22,18 +22,7 @@ export function LoginForm() {
   const turnstileRef = useRef<HTMLInputElement>(null);
 
   return (
-    <form
-      action={formAction}
-      className="space-y-4"
-      onSubmit={() => {
-        // If Turnstile is enabled but the widget hasn't filled the token,
-        // prevent submit so the user completes the challenge first.
-        if (TURNSTILE_SITE_KEY && !turnstileRef.current?.value) {
-          // Allow the browser to render the widget; the server also rejects
-          // missing tokens, so this is belt-and-braces.
-        }
-      }}
-    >
+    <form action={formAction} className="space-y-4">
       <div className="space-y-1.5">
         <Label htmlFor="email">Email</Label>
         <Input

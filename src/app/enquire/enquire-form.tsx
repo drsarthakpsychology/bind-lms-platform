@@ -46,9 +46,9 @@ export function EnquireForm() {
 
   if (state === "done") {
     return (
-      <div className="rounded-md border-2 border-foreground bg-card p-8 text-center hard-shadow-md">
+      <div className="py-4 text-center">
         <p className="text-xl font-bold text-foreground">Thank you — we&apos;ll be in touch.</p>
-        <p className="mt-2 text-small text-muted-foreground">
+        <p className="mx-auto mt-2 max-w-sm text-small text-muted-foreground">
           Cohort One begins 20 August. If you&apos;re a fit, someone will reach you within a
           few days.
         </p>
@@ -100,7 +100,7 @@ export function EnquireForm() {
       <input type="text" name="honeypot" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 opacity-0" />
 
       {error ? (
-        <p className="text-small text-red-700" role="alert">{error}</p>
+        <p className="text-small font-medium text-destructive" role="alert">{error}</p>
       ) : null}
 
       <Button type="submit" size="lg" disabled={state === "submitting"} className="w-full font-semibold">

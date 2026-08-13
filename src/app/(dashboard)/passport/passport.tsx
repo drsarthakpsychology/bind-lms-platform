@@ -63,7 +63,7 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
                   ) : null}
                 </div>
                 {touched ? (
-                  <span className="flex shrink-0 items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-caption font-medium text-green-800">
+                  <span className="flex shrink-0 items-center gap-1 rounded-full bg-status-success-bg px-2 py-0.5 text-caption font-medium text-status-success-fg">
                     <BadgeCheck className="size-3.5" aria-hidden /> Evidenced
                   </span>
                 ) : (

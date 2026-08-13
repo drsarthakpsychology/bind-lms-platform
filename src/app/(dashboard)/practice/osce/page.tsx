@@ -26,7 +26,7 @@ export default async function OscePage() {
       </div>
 
       <div className="mt-8 rounded-md border-2 border-border bg-card p-4">
-        <h2 className="text-sm font-semibold">Check what stuck</h2>
+        <h2 className="text-base font-semibold">Check what stuck</h2>
         <p className="mt-1 text-small text-muted-foreground">
           A quick check, not a test — every item carries its source.
         </p>

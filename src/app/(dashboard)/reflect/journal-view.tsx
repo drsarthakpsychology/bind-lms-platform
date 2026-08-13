@@ -189,7 +189,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
             {busy ? "Saving…" : "Save entry"}
           </button>
         </div>
-        {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
+        {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
       </form>
 
       {/* history */}

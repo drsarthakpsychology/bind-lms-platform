@@ -3,7 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
-import { Heart, Lightbulb, HelpCircle, PartyPopper, AlertTriangle } from "lucide-react";
+import { Heart, Lightbulb, HelpCircle, PartyPopper, AlertTriangle, Pin } from "lucide-react";
 
 interface WallReply {
   id: string;
@@ -194,6 +194,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
           rows={3}
           placeholder="Share something with the cohort — a question, a win, a hard moment."
           className="w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          aria-label="Post to the cohort wall"
         />
         <div className="flex items-center gap-3">
           <label className="flex items-center gap-2 text-small text-muted-foreground">
@@ -213,7 +214,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
             {busy ? "Posting…" : "Post"}
           </button>
         </div>
-        {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
+        {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
       </form>
 
       {/* posts */}
@@ -227,7 +228,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
             {posts.map((p) => (
               <li key={p.id} className={`rounded-md border-2 border-border bg-card p-4 ${p.isPinned ? "border-primary" : ""}`}>
                 <div className="flex items-center gap-2 text-caption text-muted-foreground">
-                  {p.isPinned ? <span className="font-semibold text-primary">📌 Pinned</span> : null}
+                  {p.isPinned ? <span className="inline-flex items-center gap-1 font-semibold text-primary"><Pin className="size-3.5" aria-hidden /> Pinned</span> : null}
                   {p.isFaculty ? <span className="rounded-full bg-secondary px-2 py-0.5 font-semibold">Faculty</span> : null}
                   {p.isAnonymous ? <span>Anonymous</span> : <span>Cohort member</span>}
                   <span>· {new Date(p.createdAt).toLocaleDateString()}</span>
@@ -241,7 +242,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                       )}
                       title={p.isPinned ? "Unpin (remove from top)" : "Pin as the Case of the Week"}
                     >
-                      {p.isPinned ? "Unpin" : "📌 Pin"}
+                      <span className="inline-flex items-center gap-1"><Pin className="size-3" aria-hidden /> {p.isPinned ? "Unpin" : "Pin"}</span>
                     </button>
                   ) : null}
                 </div>
@@ -331,6 +332,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                       onChange={(e) => setReplyText(e.target.value)}
                       rows={2}
                       placeholder="Write a reply…"
+                      aria-label="Write a reply"
                       className="w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                     <div className="flex items-center gap-3">

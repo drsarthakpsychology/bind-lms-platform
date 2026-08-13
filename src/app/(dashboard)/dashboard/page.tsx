@@ -192,12 +192,12 @@ export default async function DashboardPage() {
             const percent = totalLessons ? Math.round((completedCount / totalLessons) * 100) : 0;
             const isComplete = totalLessons > 0 && completedCount === totalLessons;
             return (
-              <Reveal key={course.id} delay={0.15 + i * 0.05} className="h-full">
+              <Reveal key={course.id} delay={0.15 + Math.min(i, 3) * 0.05} className="h-full">
               <Link
                 href={`/courses/${course.id}`}
                 className={cn(cardVariants({ variant: "interactive" }), "h-full p-5")}
               >
-                <div className="flex items-start justify-between gap-2">
+                <div className="flex items-start gap-2">
                   <span
                     aria-hidden
                     className={cn(
@@ -209,14 +209,6 @@ export default async function DashboardPage() {
                   >
                     {isComplete ? <CircleCheck className="size-5" /> : <BookOpen className="size-5" />}
                   </span>
-                  {/* One status badge, top-right: the course's publish state. */}
-                  {course.is_published ? (
-                    <Badge variant={!viewingAsStudent ? "published" : "outline"}>
-                      Published
-                    </Badge>
-                  ) : (
-                    <Badge variant="outline">Draft</Badge>
-                  )}
                 </div>
 
                 <div className="min-w-0 flex-1 py-3">

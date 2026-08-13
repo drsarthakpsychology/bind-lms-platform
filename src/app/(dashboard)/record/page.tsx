@@ -56,7 +56,7 @@ export default async function RecordPage() {
   }));
 
   return (
-    <div className="mx-auto max-w-3xl space-y-10">
+    <div className="mx-auto max-w-3xl space-y-10 px-4 py-8 sm:px-6">
       <Reveal delay={0.05}>
         <header>
           <p className="text-eyebrow text-muted-foreground">Your record</p>

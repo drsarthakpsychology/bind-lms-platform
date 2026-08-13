@@ -2,6 +2,11 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
+## DESIGN-DIRECTION FOLLOW-UP (2026-08-14, hook-driven)
+
+- [ ] **/today two-resume hierarchy**: with an active sim session AND an in-progress chain both present, the chain card (primary border) and the primary card (hard shadow) compete for the same "resume" intent. Needs a design decision (merge or demote one), not a polish tweak.
+- [ ] **Future-week lesson rows still `href="#"`**: locked rows keep an anchor that scrolls to top on click; replace with a non-navigating affordance (disabled button or span) when the locked state is revisited.
+
 ## AUTH CONSISTENCY — post-sweep open items (2026-08-14, hook-driven)
 
 - [x] **Harden sim routes to `requireSession()`**: sim/debrief, sim/rewind,

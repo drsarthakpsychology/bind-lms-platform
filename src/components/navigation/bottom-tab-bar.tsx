@@ -36,9 +36,10 @@ export function BottomTabBar() {
             <Link
               key={t.href}
               href={t.href}
+              aria-current={active ? "page" : undefined}
               className={cn(
-                "flex flex-1 flex-col items-center gap-0.5 py-2 text-caption",
-                active ? "font-semibold text-primary" : "text-muted-foreground",
+                "flex flex-1 flex-col items-center gap-0.5 py-2 text-caption transition-colors duration-fast ease-snappy",
+                active ? "font-semibold text-primary" : "text-muted-foreground hover:text-foreground",
               )}
             >
               <Icon className="size-5" aria-hidden />

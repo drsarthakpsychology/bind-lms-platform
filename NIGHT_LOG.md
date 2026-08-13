@@ -1,4 +1,13 @@
-## 2026-08-14 — AUTH CONSISTENCY FOLLOW-UP: sim routes + dictate admin gate
+## 2026-08-14 — DESIGN-DIRECTION POLISH: dashboard + course surfaces (PFD / impeccable / motion)
+
+Three skills (PFD, impeccable, emilkowalski-motion) applied to the Operate/Read surfaces — dashboard home, /today, and the course week-path. Preserved the neobrutalist pastel design, all data-fetching, auth, and business logic — UI-only edits, gate-verified.
+
+- **Dashboard** (`dashboard/page.tsx`): removed the dead per-card "Published"/"Draft" status badge — the query filters `is_published = true`, so the badge was constant noise and the Draft branch unreachable (PFD L0 cognitive load / L2 trust). Capped the course-card entrance stagger at 0.3s (`Math.min(i, 3) * 0.05`) — an 8-card grid previously delayed the last cards ~0.55s (motion discipline: long staggered lists feel slow).
+- **/today** (`today/page.tsx`): unified the 4 hand-rolled card surfaces (chain card, primary card, quick/deep chips) to the 10px card radius token (`rounded-md` → `rounded-lg`) — they were using the 6px control radius.
+- **Course week-path** (`courses/[courseId]/page.tsx`): week `<details>` blocks `rounded-md` → `rounded-lg`; week heading `text-base font-semibold` → `text-h3` (system scale); completed lesson rows `opacity-60` → `opacity-70` (restores AA contrast on revisited content while keeping the de-emphasis); `aria-hidden` on the decorative week-number/check indicator (was double-announced beside the h3).
+- Flagged, not changed: /today's two-resume-cards hierarchy when an active session and an in-progress chain coexist; future-week rows' `href="#"` locked affordance (open in QUEUE).
+- Gate: lint 0/0, `tsc --noEmit` clean, 395 tests pass, `next build` exit 0.
+  Shipped in commit: 
 
 Two QUEUE items closed on top of the round-10 auth sweep.
 
@@ -1488,3 +1497,8 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T03:01:52 Queue exhausted — allowing normal Claude stop.
 2026-08-14T03:03:20 Queue exhausted — allowing normal Claude stop.
 2026-08-14T03:10:56 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:12:03 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:24:27 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:24:51 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:25:04 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:25:08 Queue exhausted — allowing normal Claude stop.

@@ -91,7 +91,7 @@ export function CheckinForm({ weekLabel, initial }: Props) {
         />
       </div>
 
-      {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
+      {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
       <button
         type="submit"
         disabled={busy || !complete}

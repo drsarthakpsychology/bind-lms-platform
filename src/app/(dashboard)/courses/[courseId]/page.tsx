@@ -214,7 +214,7 @@ export default async function CourseOverviewPage({
               key={weekNum}
               open={weekOpen}
               className={cn(
-                "group rounded-md border-2 p-4 transition-colors",
+                "group rounded-lg border-2 p-4 transition-colors",
                 isCurrentWeek && "border-primary bg-primary/5",
                 isPastWeek && weekComplete && "border-foreground/20 bg-background",
                 isFutureWeek && "border-border/50 bg-background/50",
@@ -223,6 +223,7 @@ export default async function CourseOverviewPage({
               <summary className="flex cursor-pointer list-none items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span
+                    aria-hidden
                     className={cn(
                       "flex size-8 shrink-0 items-center justify-center rounded-md border-2 text-small font-bold",
                       isCurrentWeek && "border-primary bg-primary text-primary-foreground",
@@ -233,7 +234,7 @@ export default async function CourseOverviewPage({
                     {isPastWeek && weekComplete ? <CheckCircle2 className="size-4" /> : <span>Week {weekNum}</span>}
                  </span>
                   <div>
-                    <h3 className={cn("text-base font-semibold", isFutureWeek && "text-muted-foreground")}>
+                    <h3 className={cn("text-h3", isFutureWeek && "text-muted-foreground")}>
                       Week {weekNum}
                    </h3>
                     <p className="text-caption text-muted-foreground">
@@ -265,7 +266,7 @@ export default async function CourseOverviewPage({
                   const rowClass = cn(
                     cardVariants({ variant: "interactive" }),
                     "flex flex-row items-center gap-3 p-4",
-                    done && "opacity-60",
+                    done && "opacity-70",
                     isNextAction && "ring-2 ring-primary bg-primary/5",
                     isFutureWeek && "cursor-not-allowed opacity-50",
                   );

@@ -25,9 +25,19 @@ export function StatCard({
   const inner = (
     <>
       <div className="flex items-start justify-between gap-2">
-        <span className="text-eyebrow text-muted-foreground">{label}</span>
+        <span
+          className={cn(
+            "text-eyebrow",
+            accent ? "text-primary-foreground/80" : "text-muted-foreground"
+          )}
+        >
+          {label}
+        </span>
         {icon ? (
-          <span aria-hidden className="text-foreground">
+          <span
+            aria-hidden
+            className={accent ? "text-primary-foreground" : "text-foreground"}
+          >
             {icon}
           </span>
         ) : null}
@@ -35,7 +45,7 @@ export function StatCard({
       <span
         className={cn(
           "text-numeric text-3xl font-bold tracking-tight",
-          accent ? "text-foreground" : "text-foreground"
+          accent ? "text-primary-foreground" : "text-foreground"
         )}
       >
         {value}
@@ -56,7 +66,7 @@ export function StatCard({
     accent
       ? "border-foreground bg-primary text-primary-foreground hard-shadow-sm hover:hard-shadow-md hover:-translate-y-0.5"
       : "bg-card hard-shadow-flat hover:hard-shadow-sm hover:-translate-y-0.5",
-    href && "focus-visible:ring-[3px] focus-visible:ring-ring/60",
+    href && "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
     className
   );
 
