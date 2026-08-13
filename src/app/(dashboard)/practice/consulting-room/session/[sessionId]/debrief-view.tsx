@@ -68,6 +68,18 @@ export function DebriefView({
   const [revealMissed, setRevealMissed] = React.useState(false);
   const [retrying, setRetrying] = React.useState(false);
   const [retryError, setRetryError] = React.useState<string | null>(null);
+  // Create/update the patient chain once the debrief shows — the session is
+  // complete, so /today can offer the next surface for this patient.
+  const chainPostedRef = React.useRef(false);
+  React.useEffect(() => {
+    if (!sessionId || chainPostedRef.current) return;
+    chainPostedRef.current = true;
+    void fetch("/api/practice/chain", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ session_id: sessionId }),
+    }).catch(() => {}); // silent; a check, not a test
+  }, [sessionId]);
   const score = data.score ?? {};
   const quotes = data.quotes ?? score.quotes ?? [];
   const missed = data.missed_disclosures ?? score.missed_disclosures ?? [];

@@ -17,8 +17,8 @@ export default async function TodayPage() {
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  // Streak + unfinished session in parallel (LCP — both are independent).
-  const [{ data: streak }, { data: activeSession }] = await Promise.all([
+  // Streak + unfinished session + in-progress chain (parallel).
+  const [{ data: streak }, { data: activeSession }, { data: chains }] = await Promise.all([
     supabase
       .from("streaks")
       .select("current_streak")
@@ -31,7 +31,41 @@ export default async function TodayPage() {
       .eq("status", "active")
       .limit(1)
       .maybeSingle(),
+    supabase
+      .from("practice_chains")
+      .select("id, case_id, steps")
+      .eq("user_id", user.id)
+      .order("updated_at", { ascending: false })
+      .limit(3),
   ]);
+
+  // The most recent chain with a pending next step (casebook "the chain").
+  const SURFACE_LABEL: Record<string, string> = {
+    consulting_room: "Consulting Room",
+    formulation: "Formulation Forge",
+    mse: "MSE Trainer",
+    rounds: "Rounds",
+  };
+  let chainNext: { href: string; label: string; caseTitle: string; done: number; total: number } | null = null;
+  const chainRows = (chains ?? []) as Array<{ id: string; case_id: string; steps: Array<{ surface: string; status: string }> }>;
+  for (const c of chainRows) {
+    const steps = Array.isArray(c.steps) ? c.steps : [];
+    const done = steps.filter((s) => s.status === "complete").length;
+    const next = steps.find((s) => s.status !== "complete");
+    if (next) {
+      const { data: simCase } = await supabase.from("sim_cases").select("title").eq("id", c.case_id).maybeSingle();
+      const title = (simCase?.title as string | undefined) ?? "your patient";
+      const shortName = title.split("—")[0].trim().replace(/^(.+?),.*$/, "$1");
+      chainNext = {
+        href: next.surface === "formulation" ? "/practice/formulation" : next.surface === "mse" ? "/practice/mse" : next.surface === "rounds" ? "/practice/rounds" : `/practice/consulting-room/session/${c.id}`,
+        label: SURFACE_LABEL[next.surface] ?? next.surface,
+        caseTitle: shortName || title,
+        done,
+        total: steps.length,
+      };
+      break;
+    }
+  }
 
   const currentStreak = Number(streak?.current_streak ?? 0);
 
@@ -74,6 +108,29 @@ export default async function TodayPage() {
       <div className="mt-6">
         <WeakSpotsBanner />
       </div>
+
+      {/* in-progress chain — a patient's arc continues (casebook "the chain") */}
+      {chainNext ? (
+        <Link
+          href={chainNext.href}
+          className="mt-4 flex items-center justify-between gap-3 rounded-md border-2 border-primary bg-primary/5 p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
+        >
+          <span className="flex items-center gap-3">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-primary bg-primary text-sm font-black text-primary-foreground">
+              {chainNext.done + 1}
+            </span>
+            <span className="min-w-0">
+              <span className="block text-small font-semibold text-foreground">
+                Continue with {chainNext.caseTitle}
+              </span>
+              <span className="block text-caption text-muted-foreground">
+                {chainNext.done} of {chainNext.total} done · next: {chainNext.label}
+              </span>
+            </span>
+          </span>
+          <ArrowRight className="size-4 shrink-0 text-primary" aria-hidden />
+        </Link>
+      ) : null}
 
       {/* primary card */}
       <Link

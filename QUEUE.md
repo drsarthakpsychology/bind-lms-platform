@@ -11,7 +11,7 @@
 - [x] **Content Wiring (Formulation)**: Replace static TS cases in Formulation Forge with readers from live `formulation_cases` table (seeded) [IDEAS_NEXT #2]
 - [ ] **Content Wiring (Idioms)**: Replace static SEED_IDIOMS in Rounds/Clinic/MSE with readers from live `public.idioms` table (already 65 seeded) [IDEAS_NEXT #2]
 - [x] **ElevenLabs TTS**: Wire Kavya's ElevenLabs account (voice "Rudra") into the TTS provider chain as premium tier above Qwen3 [IDEAS_NEXT #3]
-- [ ] **Recurring Patient Arcs**: Spec + scaffold `practice_chains` + `sim_cases.follow_up` content + consumer (multi-session arc UI) [IDEAS_NEXT #4]
+- [x] **Recurring Patient Arcs (scaffold)**: chain created on debrief, /today surfaces it; follow_up content still needs a spec [IDEAS_NEXT #4]
 - [x] **Polish (OSCE Debrief)**: Ensure debrief shows checklist fraction, global rating, and composite with same visual language as Consulting Room debrief [polish]
 - [x] **Tests**: Add 5 integration tests covering attempt-table writes for MSE/Formulation/SCT (fixture-tested, deterministic) [Master §11]
 
@@ -25,4 +25,4 @@
 - [x] **OSCE voice mode**: voice delivery only in Consulting Room today; OSCE is "voice strongly preferred" but text-only [briefs scan]
 - [x] **Cohort pulse nudge**: /admin/pulse nudge records intent but doesn't call the real nudge API [briefs scan]
 - [x] **ElevenLabs TTS**: premium tier voice "Rudra" — needs Kavya's account keys [IDEAS_NEXT #3]
-- [ ] **Recurring Patient Arcs**: practice_chains + sim_cases.follow_up — table live, zero content/consumers, needs content spec [IDEAS_NEXT #4]
+- [x] **Recurring Patient Arcs (scaffold)**: chain created on debrief, /today surfaces it; follow_up content still needs a spec [IDEAS_NEXT #4]
