@@ -30,16 +30,18 @@
   and migrated all 84 `text-primary` accent-text/glyph usages → `text-link`.
   Peach stays for fills (`bg-primary`) + `text-primary-foreground` (ink-on-peach,
   untouched). Shipped 68d1736.
-- [ ] **`Card` `asChild` for the `interactive` variant** — the `focus-visible`
-  ring is dead on a non-focusable `<div>`. In practice `cardVariants` is applied
-  to `<Link>` so it works, but the `Card` component itself can't be keyboard-
-  activated. Add `Slot` support to match Button/Badge.
+- [x] **`Card` `asChild` for the `interactive` variant** — added `Slot` support
+  so `Card` can render as a real `<a>`/`<button>` (mirrors Button/Badge). All
+  current interactive cards already use `cardVariants` on `<Link>`, so no live
+  bug — primitive-capability gap closed. Shipped 00d1686.
 - [ ] **Admin mobile persistent nav** — `BottomTabBar` renders only for
   `mode === "student"`; admins on mobile reach 21 destinations only via the
   drawer. Add a compact 3–4 item admin bottom bar (Overview / Review triage /
   Submissions / Students).
-- [ ] **EmptyState / ErrorState entrance motion** — the two state-transition
-  surfaces render with no reveal; add a one-shot 200ms fade/settle (client leaf).
+- [x] **EmptyState / ErrorState entrance motion** — added a `.animate-enter`
+  keyframe (opacity + 4px rise, 200ms out-expo) to globals.css and applied it to
+  both surfaces; the global reduced-motion rule flattens it automatically.
+  Shipped with the Card asChild follow-ups.
 - [ ] **Landing heading weight** — headings use `font-black` (900) vs the token
   scale's 700. Low-severity consistency call (hero display weight is arguably
   intentional); decide and apply if moving to `font-bold`/`text-display`.

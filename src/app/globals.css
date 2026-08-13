@@ -502,3 +502,14 @@ video::-webkit-media-controls {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
+
+/* One-shot state-transition entrance (empty / error surfaces). transform +
+   opacity only; the global prefers-reduced-motion rule flattens it to a single
+   instant frame. */
+@keyframes enter-fade {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-enter {
+  animation: enter-fade 200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}

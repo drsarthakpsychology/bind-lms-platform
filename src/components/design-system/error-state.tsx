@@ -26,7 +26,7 @@ export function ErrorState({
         className
       )}
     >
-      <div className="w-full max-w-md space-y-4 text-center">
+      <div className="animate-enter w-full max-w-md space-y-4 text-center">
         <div
           aria-hidden
           className="mx-auto flex size-12 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground"
