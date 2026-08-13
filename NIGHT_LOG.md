@@ -7,7 +7,7 @@ Three skills (PFD, impeccable, emilkowalski-motion) applied to the Operate/Read 
 - **Course week-path** (`courses/[courseId]/page.tsx`): week `<details>` blocks `rounded-md` → `rounded-lg`; week heading `text-base font-semibold` → `text-h3` (system scale); completed lesson rows `opacity-60` → `opacity-70` (restores AA contrast on revisited content while keeping the de-emphasis); `aria-hidden` on the decorative week-number/check indicator (was double-announced beside the h3).
 - Flagged, not changed: /today's two-resume-cards hierarchy when an active session and an in-progress chain coexist; future-week rows' `href="#"` locked affordance (open in QUEUE).
 - Gate: lint 0/0, `tsc --noEmit` clean, 395 tests pass, `next build` exit 0.
-  Shipped in commit: 
+  Shipped in commit: be846f6
 
 Two QUEUE items closed on top of the round-10 auth sweep.
 
