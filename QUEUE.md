@@ -4,10 +4,21 @@
 
 ## RESEARCH ROUND — free LLM tier follow-ups (2026-08-14)
 
-- [ ] **Wire Groq as Primary Director/Actor provider**: no-train verified (DPA + ZDR), no card, 30 RPM / 1K RPD / 12K TPM per model, OpenAI-compatible `json_schema` — needs `GROQ_API_KEY` + provider switch in the patient engine [research 2026-08-14]
-- [ ] **Wire Cerebras as Fallback Director/Actor provider**: no-train verified, ~1M tok/day, OpenAI-compatible JSON [research 2026-08-14]
-- [ ] **OpenRouter free-tier decision**: 50 RPD at $0 is unusable for daily turns; one-time $10 top-up permanently unlocks 1,000 RPD [research 2026-08-14]
-- [ ] **Quota re-verify at integration time**: Gemini/Groq/Cerebras quotas moved repeatedly Dec 2025–Aug 2026 and are account-dependent — re-check dashboards before wiring [research 2026-08-14]
+- [x] **Wire Groq as Primary Director/Actor provider**: registry now routes
+  `json`/`chat`/`stream` to groq first (no-train → serves student data);
+  engine uses capability "json" (Director) + stream (Actor) with workload
+  `sim_patient_turn`; json_object + Zod-repair + failover path; 4 router tests.
+  Only blocker: `GROQ_API_KEY` (in NEEDS_KAVYA). json_schema left as json_object
+  — Groq's strict mode is "in flux" and Cerebras 422s without additionalProperties:false
+  on all objects; the provider-agnostic Zod-repair path is the reliable choice. [research 2026-08-14]
+- [x] **Wire Cerebras as Fallback Director/Actor provider**: already the
+  no-train JSON fallback in the registry (second after groq). Needs
+  `CEREBRAS_API_KEY` (in NEEDS_KAVYA). [research 2026-08-14]
+- [x] **OpenRouter free-tier decision surfaced**: stays an overflow lane at 50
+  RPD; the one-time $10 → 1,000 RPD choice is Kavya's call — surfaced in
+  NEEDS_KAVYA. [research 2026-08-14]
+- [x] **Quota re-verify at integration time**: surfaced in NEEDS_KAVYA as a
+  go-live reminder — limits are account-dependent and moved through 2026. [research 2026-08-14]
 
 ## BEASTMODE ROUND 9 — attempt tables + content wiring + polish (2026-08-13)
 

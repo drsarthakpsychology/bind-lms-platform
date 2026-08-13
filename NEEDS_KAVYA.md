@@ -127,6 +127,18 @@ two env vars to actually send:
 Until those exist it honestly returns `email-not-configured` and sends
 nothing — it never claims a message went out.
 
+## 🧠 Research-round decisions (2026-08-14)
+- **OpenRouter**: free tier is 50 RPD — unusable for daily turns. One-time $10
+  top-up permanently unlocks 1,000 RPD. Decide if that's worth it, or drop
+  OpenRouter from the overflow lane. It's already a last-resort fallback.
+- **Quota re-verify at go-live**: Gemini/Groq/Cerebras free quotas moved
+  repeatedly through 2026 and are account-dependent — re-check each dashboard
+  before wiring the keys to production.
+- **json_schema**: intentionally NOT used — Groq's strict mode is in flux and
+  Cerebras requires `additionalProperties:false` on every object (a known 422
+  failure). The json_object + Zod-repair + failover path is provider-agnostic
+  and reliable. Revisit if Groq ships stable strict outputs.
+
 ## 📥 THE ONE BLOCKING ITEM (drop-folder ingest)
 
 The licensed ingester's ladder step 6 is `/mnt/acquire/` — the drop folder.

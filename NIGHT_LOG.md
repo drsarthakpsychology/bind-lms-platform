@@ -22,6 +22,21 @@
   one-time $10 top-up).
 - Commit: `938e7ba`.
 
+## 2026-08-14 — Groq wiring verified + research queue closed
+
+- Verified the patient engine already routes through the ai client: Director
+  `capability: "json"` (engine.ts:135) + Actor stream (engine.ts:208/257),
+  both `sim_patient_turn` (student-data → gemini filtered). `providersFor`
+  returns groq first. So the provider switch is CODE-COMPLETE; only
+  `GROQ_API_KEY` blocks activation (documented).
+- Decision: kept `json_object` + Zod-repair + failover (provider-agnostic,
+  reliable) instead of `json_schema` — Groq's strict mode is "in flux" and
+  Cerebras 422s without `additionalProperties:false` on all objects. Revisit
+  if Groq ships stable strict outputs.
+- Queue: all 4 research items ticked (groq/cerebras wiring done in code;
+  OpenRouter decision + quota-verify surfaced to NEEDS_KAVYA as human items).
+  Commit 8f3e1d2 (next).
+
 ## 2026-08-14 — research round + production deploy
 
 ### Free-models research (docs/MODEL_RESEARCH.md, dated + sourced)
