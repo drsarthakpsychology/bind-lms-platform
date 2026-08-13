@@ -2,6 +2,29 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
+## BEASTMODE ROUND 10 — PRODUCTION SAFETY + FREE AI + UI POLISH (2026-08-14)
+
+- [x] **Premium neobrutalism UI pass**: motion-system tokens in globals.css,
+  tactile buttons, homepage hero cascade + Parallax, uppercase brand on landing
+  nav/footer, dashboard course-card cascade, nav micro-interactions — committed
+  615499b. Remaining: subagent dashboard polish on practice/today/wall must
+  land + gate. Landed bd168e3 (Reveal cascades on /practice /today /wall
+  /enquire /login + equal-height cards) — gate green. [brief §7-13]
+- [ ] **Free-first voice**: MiMo (MIT) added as tier 1, chain reordered with
+  ElevenLabs LAST (paid, not recommended) — committed 615499b. Remaining:
+  R2 cache prune helper + pregen verification (in-flight subagent) + gate. [brief §15-27]
+- [x] **§24 AI free-tier doc**: docs/AI_FREE_TIERS.md — per-provider table
+  (provider/model/purpose/cost/free-limits/env-var/setup/fallback) + chain
+  order + privacy note. Committed 006d412. [brief §24]
+- [ ] **Performance/efficiency tech-stack pass**: safe wins only (pregen
+  script, R2 prune helper, loading states, client-bloat fixes, conservative
+  data caching) — no production infra, no new deps (in-flight subagent). [brief §29-30]
+- [ ] **Key-leak audit**: server secrets stay server-side — verified clean
+  across client files; NEXT_PUBLIC_* only public-by-design vars. [brief §28]
+- [ ] **Final report §35 A-F**: changed / AI decisions OLD→NEW→WHY→COST→FREE
+  LIMIT / API-key table / infra-safety confirmation / new deps / limitations,
+  at session end after subagents land.
+
 ## RESEARCH ROUND — free LLM tier follow-ups (2026-08-14)
 
 - [x] **Wire Groq as Primary Director/Actor provider**: registry now routes

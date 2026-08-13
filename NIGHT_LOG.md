@@ -1,3 +1,82 @@
+## 2026-08-14 — continuation: dashboard polish landed + §24 free-tier doc (commits bd168e3, 006d412)
+
+### UI — landed the subagent dashboard polish (UI pass remaining work)
+- **Reveal entrance cascades** on /practice, /today, /wall, /enquire, /login —
+  staggered delays (0.05–0.3s) against the global motion tokens, all
+  reduced-motion aware (Reveal renders statically for reduced-motion users).
+  /today quick/deep chips + practice-group cards get `h-full` so equal-height
+  cards survive the Reveal wrapper.
+- **Client-bloat fixes**: dropped unneeded `"use client"` from `ui/table.tsx`
+  and `simulation-badge.tsx` — both pure presentational, imported only by
+  server components (verified: consulting-room page + session page + admin/
+  students are all server components). No import-boundary violations.
+- **/verify/[certificateId] loading skeleton** — matches the certificate card
+  so the one-row Supabase lookup doesn't flash an empty card.
+- Commit `bd168e3`; gate green before commit: lint 0/0, tsc clean, 379 tests,
+  build exit 0.
+
+### Docs — §24 AI free-tier doc (docs/AI_FREE_TIERS.md, commit 006d412)
+- Per-provider reference for every external AI provider/model the app can
+  call, each with exactly provider/model/purpose/cost/free-limits/API-access/
+  account/env-var/setup/fallback. Sources: MODEL_RESEARCH.md (2026-08-14),
+  router.ts, synthesize.ts, guards.ts, .env.example. Anthropic and ElevenLabs
+  honestly marked paid; Gemini/ElevenLabs free tier flagged trains-on-data.
+  TTS chain-order + LLM router diagrams, trainsOnData privacy split, $0/month
+  go-live one-liner. Where the research doc was silent, "verify current
+  limits before relying on this" is written rather than inventing numbers.
+
+### State
+QUEUE: UI pass + §24 doc ticked (2 of 6 round-10 items). Still open:
+free-first voice pregen verification, performance pass close-out, key-leak
+audit tick, final report §35 (after remaining subagents land). Branch
+feat/groq-primary-director; no push.
+
+## 2026-08-14 — premium neobrutalism motion + free-first voice (brief: PRODUCTION SAFETY + FREE AI + UI POLISH)
+
+### UI — premium neobrutalism (commit 615499b, branch feat/groq-primary-director)
+- **Global motion system (§13)**: globals.css now carries the product's one
+  motion language — duration tokens (fast 120ms / base 200ms / slow 400ms /
+  slower 600ms) + easings (snappy / out-expo / springy) mapped into Tailwind
+  (duration-fast, ease-snappy, ...) + a float keyframe. Reduced-motion users
+  get everything flattened by the existing global rule. Nothing new depends on
+  the system — it just standardizes what was scattered `duration-150 ease-out`.
+- **Buttons (§9)**: tactile press/hover on every variant — cursor-pointer,
+  `duration-fast ease-snappy`, hover -translate-y-0.5 + hard-shadow-md lift,
+  active press slides down-right into a flat shadow. Cleaned a redundant
+  translate conflict on the default variant.
+- **Homepage (§7/§10/§11)**: hero entrance now a 5-step cascade (eyebrow→h1→
+  sub→CTAs→note, 60ms steps); the case-fragment stack cascades in (0.15/0.25/
+  0.35) inside a new `Parallax` component (subtle 12px scroll counter-drift,
+  `useReducedMotion`-aware). Uppercase brand (`BRAND.nameUppercase` =
+  "VIBHA SCHOOL OF PSYCHOLOGY") on the landing nav + footer with tracking-wide.
+  Design itself untouched — light theme + neo-brutalist tokens preserved.
+- **Dashboard (§12)**: course-card grid on /dashboard now cascades in per-card
+  (`0.15 + i*0.05`, wrapped in Reveal with h-full); nav-items aligned to the
+  motion tokens (duration-fast ease-snappy + cursor-pointer). No redesign.
+
+### Voice — FREE-FIRST chain (user correction: "USE FREE MODELS, NOT ELEVENLABS")
+- **MiMo-V2.5-TTS (MIT, arena-top) added as tier 1** (`synthesizeMiMo`,
+  MIMO_TTS_URL/MIMO_TTS_API_KEY, OpenAI-compatible /v1/audio/speech). Chain
+  reordered: MiMo → Kokoro → Qwen3 → Chatterbox → CosyVoice → **ElevenLabs
+  LAST** (paid, not recommended, kept only as a premium option). Cache-hit
+  provider label made content-keyed/agnostic.
+- .env.example voice section consolidated (nothing removed — KOKORO_API_URL and
+  NVIDIA_API_KEY both still present), ElevenLabs reframed as last-resort.
+  SETUP_NEEDED + NEEDS_KAVYA updated to "No ElevenLabs — the free tiers cover
+  the voice."
+
+### Security (§28) — key-leak audit clean
+- All `process.env` reads in client files are NEXT_PUBLIC_* only (SUPABASE_URL,
+  anon key, Turnstile site key, SENTRY_DSN, feature flags). No server secret
+  (SERVICE_ROLE_KEY, SESSION_SECRET, GROQ/GEMINI/ELEVENLABS/NVIDIA/MIMO keys)
+  appears anywhere client-visible. No hardcoded keys in src.
+
+### State
+Gate green before commit: lint 0/0, tsc clean, 379 tests, build compiles.
+In-flight (subagents): performance/free-infra pass (pregen + R2 prune script),
+§24 AI free-tier doc (docs/AI_FREE_TIERS.md), dashboard polish on practice/
+today/wall. Final report §35 pending after they land.
+
 ## 2026-08-14 — research: free conversational-LLM tiers for Director/Actor (no code shipped)
 
 ### What shipped
