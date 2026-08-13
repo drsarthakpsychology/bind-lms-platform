@@ -41,11 +41,11 @@
   keyframe (opacity + 4px rise, 200ms out-expo) to globals.css and applied it to
   both surfaces; the global reduced-motion rule flattens it automatically.
   Shipped with the Card asChild follow-ups.
-- [ ] **Landing heading weight** — headings use `font-black` (900) vs the token
-  scale's 700. Low-severity consistency call (hero display weight is arguably
-  intentional); decide and apply if moving to `font-bold`/`text-display`.
-- [ ] **KineticHeadline hero settle timing** — last word settles ~1.15s; tighten
-  stagger 0.05→0.03 or duration 0.6→0.4 if the cascade feels slow.
+- [x] **Landing heading weight** — evaluated and left deliberate: `font-black`
+  (900) is an intentional display weight for the public marketing front door
+  (the 700 token scale is the LMS app voice). No change.
+- [x] **KineticHeadline hero settle timing** — evaluated and left deliberate:
+  the ~1.15s word cascade is the intended hero entrance. No change.
 
 ## SHARED-CHROME FOLLOW-UP (2026-08-14, design-direction pass)
 
