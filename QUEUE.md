@@ -12,5 +12,5 @@
 - [ ] **Content Wiring (Idioms)**: Replace static SEED_IDIOMS in Rounds/Clinic/MSE with readers from live `public.idioms` table (already 65 seeded) [IDEAS_NEXT #2]
 - [ ] **ElevenLabs TTS**: Wire Kavya's ElevenLabs account (voice "Rudra") into the TTS provider chain as premium tier above Qwen3 [IDEAS_NEXT #3]
 - [ ] **Recurring Patient Arcs**: Spec + scaffold `practice_chains` + `sim_cases.follow_up` content + consumer (multi-session arc UI) [IDEAS_NEXT #4]
-- [ ] **Polish (OSCE Debrief)**: Ensure debrief shows checklist fraction, global rating, and composite with same visual language as Consulting Room debrief [polish]
+- [x] **Polish (OSCE Debrief)**: Ensure debrief shows checklist fraction, global rating, and composite with same visual language as Consulting Room debrief [polish]
 - [x] **Tests**: Add 5 integration tests covering attempt-table writes for MSE/Formulation/SCT (fixture-tested, deterministic) [Master §11]
