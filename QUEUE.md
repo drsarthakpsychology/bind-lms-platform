@@ -2,6 +2,24 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
+## DESIGN SUB-AGENTS + REDESIGN PASS (2026-08-14)
+
+- [ ] **Synthesize design-audit findings** — 15-agent read-only audit (5 surfaces
+  × PFD/polish/motion lenses) → dedup + prioritize into a file-by-file redesign
+  plan for the landing page + dashboard components.
+- [ ] **Landing ThreeIdeas: 3-card row → asymmetric editorial** — the generic
+  3-equal-card feature row is a taste-skill anti-pattern and LANDING_PLAN.md
+  promised "asymmetric editorial layout, not cards". Convert to numbered
+  editorial steps (Learn/Experience/Apply).
+- [ ] **Card radius consistency** — unify card radii to `rounded-lg` (10px) per
+  the "10px cards / 6px inputs" token spec; landing cards + `practice-groups`
+  currently use `rounded-md` (6px).
+- [ ] **Apply audit polish across dashboard + landing** — motion, hierarchy,
+  interaction states, raw-hex→token, `focus:`→`focus-visible:`,
+  `h-screen`→`min-h-[100dvh]`, and any other corroborated findings.
+- [ ] **Gate + commit the redesign** — `npm run lint && npx tsc --noEmit &&
+  npm run test && npm run build` green, then commit with a NIGHT_LOG entry.
+
 ## SHARED-CHROME FOLLOW-UP (2026-08-14, design-direction pass)
 
 - [x] **Admin page raw status colors → tokens**: `admin/page.tsx` free-tier banner uses raw `border-red-500 bg-red-50 text-red-600 text-red-800` (off-palette, near-white in dark mode). Same fix as the weak-spots banner / practice chips: route through `status-alert`/`status-pending` tokens. Shipped in e677b61.

@@ -1606,3 +1606,37 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T03:47:43 Queue exhausted — allowing normal Claude stop.
 2026-08-14T03:49:23 Queue exhausted — allowing normal Claude stop.
 2026-08-14T03:50:39 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:51:09 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:53:22 Queue exhausted — allowing normal Claude stop.
+2026-08-14T04:01:49 Queue exhausted — allowing normal Claude stop.
+2026-08-14T04:01:57 Queue exhausted — allowing normal Claude stop.
+2026-08-14T04:02:02 Queue exhausted — allowing normal Claude stop.
+2026-08-14T04:02:03 Queue exhausted — allowing normal Claude stop.
+2026-08-14T04:02:23 Queue exhausted — allowing normal Claude stop.
+2026-08-14T04:02:50 Queue exhausted — allowing normal Claude stop.
+2026-08-14T04:03:00 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Design sub-agents + redesign pass (start)
+
+**Shipped (871792d):** 7 design sub-agents under `.claude/agents/`, each pairing
+one `.claude/skills` design skill with the VIBHA/PLMS design contract:
+`design-director` (impeccable modes + taste-skill), `perception-auditor` (PFD
+5-layer), `frontend-craft` (open-design-frontend-design), `motion-polish`
+(emilkowalski-motion), `design-polish` (impeccable-design-polish),
+`visual-reviewer` (design-review), `quality-gate` (gstack plan/eng-review/guard).
+
+**In flight:** a 15-agent read-only audit workflow (5 surfaces × PFD / polish /
+motion lenses) over the landing page, landing nav+motion primitives, dashboard
+shell, dashboard home + practice section, and design-system primitives.
+
+**Pre-audit findings already logged (to implement):**
+1. Landing `ThreeIdeas` is a generic 3-equal-card row — taste-skill bans it and
+   LANDING_PLAN.md promised "asymmetric editorial layout, not cards".
+2. Card radius inconsistency: cards are `rounded-md` (6px) in landing +
+   `practice-groups`, `rounded-lg` (10px) elsewhere, vs the "10px cards / 6px
+   inputs" token spec.
+
+**Gate:** green before this commit — lint 0, `tsc --noEmit` clean, 395 tests,
+build 0.
