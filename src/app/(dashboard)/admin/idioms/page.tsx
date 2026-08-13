@@ -33,7 +33,7 @@ export default async function AdminIdiomsPage() {
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <PageHeader
         title="Idiom bank review"
-        description={`${rows.length} phrases · ${approved} approved (visible to students) · ${queued} queued. The Decoder shows approved idioms only.`}
+        description={`${rows.length} phrases · ${approved} approved · ${queued} queued. You see every phrase — approve a queued one and it becomes student-visible in the Decoder.`}
       />
       <div className="mt-6">
         <IdiomsAdmin idioms={rows} />

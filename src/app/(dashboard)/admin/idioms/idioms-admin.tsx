@@ -94,7 +94,7 @@ export function IdiomsAdmin({ idioms }: { idioms: IdiomRow[] }) {
             <>
               <div className="flex items-center justify-between gap-2">
                 <p className="min-w-0 break-words text-small font-medium text-foreground">{row.phrase}</p>
-                <span className={cn("shrink-0 rounded-full px-2 py-0.5 text-caption font-medium", row.approved ? "bg-green-100 text-green-800" : "bg-amber-100 text-amber-800")}>
+                <span className={cn("shrink-0 rounded-full px-2 py-0.5 text-caption font-medium", row.approved ? "bg-status-success-bg text-status-success-fg" : "bg-status-pending-bg text-status-pending-fg")}>
                   {row.approved ? "Approved" : "Queued"}
                 </span>
               </div>
@@ -104,8 +104,8 @@ export function IdiomsAdmin({ idioms }: { idioms: IdiomRow[] }) {
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {!row.approved ? (
-                  <button type="button" onClick={() => void act(row.id, { approved: true })} disabled={busy} className="rounded-md border-2 border-green-600 bg-green-50 px-3 py-1 text-caption font-semibold text-green-800">
-                    Approve
+                  <button type="button" onClick={() => void act(row.id, { approved: true })} disabled={busy} className="rounded-md border-2 border-status-success-fg/40 bg-status-success-bg px-3 py-1 text-caption font-semibold text-status-success-fg">
+                    Approve &amp; publish
                   </button>
                 ) : (
                   <button type="button" onClick={() => void act(row.id, { approved: false })} disabled={busy} className="rounded-md border-2 border-border bg-background px-3 py-1 text-caption font-semibold text-muted-foreground">
@@ -115,7 +115,7 @@ export function IdiomsAdmin({ idioms }: { idioms: IdiomRow[] }) {
                 <button type="button" onClick={() => startEdit(row)} disabled={busy} className="rounded-md border-2 border-border bg-background px-3 py-1 text-caption font-semibold">
                   Edit
                 </button>
-                <button type="button" onClick={() => void remove(row.id)} disabled={busy} className="ml-auto rounded-md border-2 border-red-200 bg-red-50 px-3 py-1 text-caption font-semibold text-red-700">
+                <button type="button" onClick={() => void remove(row.id)} disabled={busy} className="ml-auto rounded-md border-2 border-destructive/40 bg-status-alert-bg px-3 py-1 text-caption font-semibold text-destructive">
                   Delete
                 </button>
               </div>
