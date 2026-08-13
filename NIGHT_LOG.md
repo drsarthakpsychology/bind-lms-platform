@@ -16,6 +16,30 @@ commit 8153bb9 (`git show 8153bb9:NIGHT_LOG.md`). Chose NOT to re-add it over
 the sibling's consolidated version — cheaper to reverse, nothing lost. Queue
 fully ticked; no human action needed.
 
+## 2026-08-14 — continuation: loading skeletons + follow_up chain surfacing (be8a03e, 946aeb1)
+
+### Loading states (§12 polish — 5 dynamic route groups, be8a03e)
+- /reflect, /wall, /passport, /record, /admin are all async server components
+  with Supabase fetches but had NO loading.tsx — the route streamed a blank
+  frame. Added page-shaped skeletons (title bar + content rows / card grid)
+  using the existing Skeleton + border-2-border pattern. /courses has no index
+  page (nested [courseId] only), /today + /practice already had them. Safe,
+  no business logic touched. Gate green: lint 0/0, tsc clean, 379 tests, build
+  exit 0.
+
+### Follow-up chain surfacing (946aeb1)
+- sim_cases.follow_up (nullable JSONB) existed but nothing read it. The chain
+  POST now selects it and, when non-empty, extends the stored steps with a
+  trailing {surface: follow_up, status: pending} step — the recurring-patient
+  arc becomes actionable the moment authored content lands (the content is the
+  Kavya-side clinical spec, unchanged). Existing chains extend idempotently.
+  Inert for all current data (no seeded follow_up) → zero behavior change
+  today. STEP_LABEL/HREF map follow_up → "Follow-up visit" →
+  /practice/consulting-room. Known limit: the follow-up session doesn't yet
+  load the follow_up state (session-creation mode); the step targets the
+  normal consulting room until content + a follow-up mode exist.
+  Gate green: lint 0/0, tsc clean, 379 tests, build exit 0.
+
 ## 2026-08-14 — Stop-hook verification (round 10, commit 7b8afb7+)
 
 Hook checklist executed and green: (1) all 13 claimed files verified on disk
@@ -1177,3 +1201,4 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T01:41:27 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:42:05 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:42:56 Queue exhausted — allowing normal Claude stop.
+2026-08-14T01:45:35 Queue exhausted — allowing normal Claude stop.
