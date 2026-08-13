@@ -5,11 +5,11 @@ import * as React from "react";
 import { ErrorState } from "@/components/design-system/error-state";
 
 /**
- * Dashboard-segment error boundary. Catches uncaught render errors in any page
- * under /(dashboard) and shows a calm, on-brand fallback INSIDE the app shell
- * (the (dashboard)/layout.tsx AppShell is not wrapped by this boundary, so the
- * sidebar and top bar survive). Production error.message is generic by design;
- * we surface only the digest as a support reference.
+ * Root error boundary. Catches uncaught render errors on every public route
+ * without a closer boundary — the landing page, /login, /enquire, /expired,
+ * and /verify — so none of them ever show the bare Next.js fallback. Renders
+ * inside the root layout (theme + fonts intact), full-viewport centered.
+ * /(dashboard) has its own closer boundary.
  */
 export default function Error({
   error,
@@ -26,7 +26,7 @@ export default function Error({
     <ErrorState
       onRetry={unstable_retry}
       digest={error.digest}
-      className="min-h-[50vh]"
+      className="min-h-screen"
     />
   );
 }
