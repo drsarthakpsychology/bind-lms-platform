@@ -49,6 +49,33 @@ such route to `requireSession()`.
 - Gate: lint 0/0, `tsc --noEmit` clean, 392 tests pass, `next build` exit 0.
   Shipped in commit: 54b3356
 
+## 2026-08-14 — audit vuln fixes + LIVE DEPLOY (all green)
+
+### Vuln fixes from the audits (user: "fix bugs and vulns found in security audits")
+- **RLS on _migrations_applied APPLIED live** (was the one LOW finding) — anon
+  replay now returns empty; migration tooling (pg pooler) unaffected.
+- **Auth-consistency sweep (54b3356, de2d810, 7ad59b5, 48ed10a)**: all 42 API
+  routes now gate through `requireSession()` (profiles + expiry + concurrent-
+  session token) instead of bare `auth.getUser()`. Sim routes converted;
+  dictate routes gate admin via `sessionProfile.role` (dropped redundant
+  profiles re-query). STRIX live-scan /enquire stored-XSS hardened with
+  write-time `stripMarkup` + 3 tests (7ad59b5); sitemap hostname fallback fixed.
+- **Injection review**: clean — 4 RPC sites (3 parameterless metrics, 1 with
+  zod-validated bound args), zero raw-SQL interpolation, no app-side pg.
+- Homepage: "training arm of VIBHA Healing Centre" removed, school reframed as
+  "a new initiative", Kavya Bothra credited ("the person behind the
+  initiative"), footer parent dropped (user direction).
+
+### LIVE DEPLOY (user: "deploy everything live once ready")
+- `npx vercel --prod` → production deployment Ready + aliased to
+  vibhapsychology.com. Verified live: homepage serves the new copy (0 em
+  dashes, new initiative, Kavya credit, ALL-CAPS brand, guest lectures),
+  protected routes 307→/login, API 401 unauthenticated.
+- Fixed production `NEXT_PUBLIC_APP_URL` → https://vibhapsychology.com
+  (was bind-lms-platform.vercel.app) — sitemap now indexes the custom domain,
+  and the media-token same-origin gate now validates the real origin. Redeployed.
+- Gate green before deploy: lint 0/0, tsc clean, 395 tests, build exit 0.
+
 ## 2026-08-14 — STRIX AI pentest run (0 exploitable vulns, follow-up validated)
 
 User request: install + run STRIX (github.com/usestrix/strix) for a security
@@ -1459,3 +1486,4 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T02:58:59 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:59:20 Queue exhausted — allowing normal Claude stop.
 2026-08-14T03:01:52 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:03:20 Queue exhausted — allowing normal Claude stop.
