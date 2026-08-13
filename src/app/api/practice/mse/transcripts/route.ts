@@ -67,6 +67,7 @@ export async function GET(req: Request) {
 
   const fullTitle = titleById.get(expandSession.case_id) ?? "Sim case";
   const expert = getExpertMseForCase(fullTitle);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { caseKey: _k, small_things, ...expertDomains } = expert ?? {
     caseKey: "", small_things: [],
     appearance: [], behavior: [], speech: [], mood: [], affect: [],

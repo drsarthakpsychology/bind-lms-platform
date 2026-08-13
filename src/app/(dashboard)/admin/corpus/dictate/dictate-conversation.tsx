@@ -100,7 +100,7 @@ export function DictateConversation() {
       recorder.start(100); // Collect in 100ms chunks
       setRecording(true);
       haptic("tap");
-    } catch (e) {
+    } catch {
       setError("Microphone access denied or unavailable.");
     }
   }

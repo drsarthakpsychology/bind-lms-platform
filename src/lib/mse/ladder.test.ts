@@ -43,6 +43,7 @@ describe("MSE ladder — Level 4/5 scoring", () => {
     // Mahesh presents a perceptual finding (trance state), so every domain is
     // coded and a full match scores green everywhere.
     const s = FULL_MSE_STIMULI.find((x) => x.id === "mse4-mahesh")!;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { caseKey: _key, small_things: _st, ...expertDomains } = s.expert;
     const scores = scoreFullMse(s, expertDomains);
     expect(Object.values(scores).every((v) => v === "green")).toBe(true);

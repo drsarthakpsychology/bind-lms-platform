@@ -33,9 +33,9 @@ export function castVoiceId(input: CastInput): string {
   return `en-IN-${hint}-${gender}-${ageBand}`;
 }
 
-/** Which provider voice name to send for a given cast id (per provider). */
-export function providerVoice(castId: string, provider: "qwen3" | "chatterbox" | "cosyvoice2" | "kokoro"): string {
-  // Convention: providers accept en-IN-style names; where the exact voice is
-  // absent they pick a closest default. The cast id is the contract.
+/** Which voice name to send for a given cast id. Providers accept en-IN-style
+ *  names and pick a closest default where the exact voice is absent, so the
+ *  cast id is the contract. */
+export function providerVoice(castId: string): string {
   return castId;
 }
