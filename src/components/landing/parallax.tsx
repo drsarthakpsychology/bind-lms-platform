@@ -4,9 +4,9 @@ import * as React from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 
 /**
- * Subtle scroll parallax — a few px of counter-translation on a decorative
- * element. Disabled entirely under prefers-reduced-motion and never more than
- * 12px so it can't cause nausea or overlap.
+ * Subtle scroll parallax moves a decorative element a few pixels against the
+ * scroll direction. Disabled entirely under prefers-reduced-motion and never
+ * more than 12px so it can't cause nausea or overlap.
  */
 export function Parallax({
   children,

@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "motion/react";
 /**
  * Scroll-reveal wrapper. One gentle fade + 8px rise per section. With
  * prefers-reduced-motion the element renders in place (initial=false), so the
- * page is fully readable with animation disabled — never merely functional.
+ * page is fully readable with animation disabled. Never merely functional.
  */
 export function Reveal({
   children,

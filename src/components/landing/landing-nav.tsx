@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { BRAND } from "@/lib/brand";
+import { VibhaWordmark } from "@/components/brand/vibha-logo";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -33,12 +34,13 @@ export function LandingNav() {
   return (
     <header className="sticky top-0 z-50 border-b-2 border-foreground bg-background">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold tracking-tight text-foreground">
-          <span className="flex size-8 items-center justify-center rounded-sm bg-primary text-sm font-black text-primary-foreground">
-            {BRAND.shortName.charAt(0)}
+        <Link href="/" aria-label={`${BRAND.name} home`} className="flex items-center">
+          <span className="sm:hidden">
+            <VibhaWordmark compact size={28} />
           </span>
-          <span className="hidden min-w-0 text-sm font-bold tracking-wide sm:block">{BRAND.nameUppercase}</span>
-          <span className="min-w-0 text-sm font-bold sm:hidden">{BRAND.shortName}</span>
+          <span className="hidden sm:inline-flex">
+            <VibhaWordmark size={28} />
+          </span>
         </Link>
 
         {/* Desktop nav */}
@@ -78,11 +80,8 @@ export function LandingNav() {
           className="fixed inset-0 z-[60] flex flex-col bg-background"
         >
           <div className="flex items-center justify-between border-b-2 border-foreground px-5 py-3">
-            <span className="flex items-center gap-2 font-bold text-foreground">
-              <span className="flex size-8 items-center justify-center rounded-sm bg-primary text-sm font-black text-primary-foreground">
-                {BRAND.shortName.charAt(0)}
-              </span>
-              <span className="text-sm font-bold">{BRAND.shortName}</span>
+            <span className="flex items-center">
+              <VibhaWordmark compact size={28} />
             </span>
             <button
               type="button"
