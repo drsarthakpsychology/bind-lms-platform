@@ -1,6 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // A handful of routes read repo JSON at request time via readFileSync
+  // (not import) — the psychopharm knowledge base and the case-library
+  // corpus. @vercel/nft's static trace usually resolves
+  // `readFileSync(join(process.cwd(), "literal/path"))`, but the docs are
+  // explicit that this isn't guaranteed. Named explicitly so a build
+  // never silently ships a route that 500s or empties on first request.
+  outputFileTracingIncludes: {
+    "/practice/library": ["scripts/corpus/normalised/**/*"],
+    "/tools/psychopharm/*": ["docs/psychopharm/**/*"],
+    "/admin/psychopharm/editor/*": ["docs/psychopharm/**/*"],
+    "/api/psychopharm/*": ["docs/psychopharm/**/*"],
+  },
   async headers() {
     return [
       {
