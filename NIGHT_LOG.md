@@ -1,3 +1,18 @@
+## 2026-08-14 — Stop-hook verification (round 10, commit 7b8afb7+)
+
+Hook checklist executed and green: (1) all 13 claimed files verified on disk
+with claimed content (parallax.tsx, brand nameUppercase, synthesize MiMo/
+free-first chain, button + nav motion tokens, globals motion system, landing
+uppercase brand, dashboard cascade, prune-voice-cache + package.json, 642-line
+AI_FREE_TIERS.md, .env.example voice vars, login/enquire Reveal, §35 report);
+(2) full gate `npm run lint && npx tsc --noEmit && npm run test && npm run
+build` all green (lint 0/0, tsc clean, 379/379 tests, build exit 0 after a
+clean `.next` rebuild); (3) tree clean, all work committed on
+feat/groq-primary-director; (4) NIGHT_LOG updated with §35 report + hashes;
+(5) QUEUE round 10 fully ticked (0 `- [ ]`); remaining human-blocked items
+(API keys, drop-folder, content review, paid books, schema debt) live in
+NEEDS_KAVYA.md. Stopping normally per protocol.
+
 ## 2026-08-14 — BEASTMODE ROUND 10 CLOSE — final report §35 A–F
 
 Round 10 (PRODUCTION SAFETY + FREE AI + UI POLISH) complete. All 6 QUEUE
@@ -1136,3 +1151,4 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T01:37:26 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:38:15 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:38:24 Queue exhausted — allowing normal Claude stop.
+2026-08-14T01:38:47 Queue exhausted — allowing normal Claude stop.
