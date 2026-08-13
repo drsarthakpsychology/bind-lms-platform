@@ -14,6 +14,12 @@
 - **Active tab now unmistakable** (`bottom-tab-bar.tsx`): was peach-on-cream (~2:1 light) + font-semibold — quiet for the primary mobile nav. Icon + label now live in a constant-geometry chip (`px-3 py-1 border-2 rounded-md`) that swaps to the system's standard active language — `border-foreground bg-primary text-primary-foreground hard-shadow-flat` — identical to the sidebar active row and SegmentedControl active segment. Ink-on-peach ≈ 8.98:1 in both themes; inactive chips are `border-transparent` at identical geometry (zero layout shift on switch); `aria-current="page"` and `duration-fast ease-snappy` retained; `active:translate-y-px` press feedback per the tactile motion language. QUEUE item ticked.
 - Gate: lint 0/0, tsc clean, 395 tests, next build exit 0.
 
+## 2026-08-14 — GLOBAL-ERROR BOUNDARY: root-layout fallback (aa034c2)
+
+Completes the error-boundaries queue item. Root `error.tsx` (597dcb7) covers every public route segment, but `error.tsx` cannot wrap the layout of its own segment — a throw in the root layout (fonts, theme provider, toaster) still hit the bare Next.js fallback. `src/app/global-error.tsx` closes that last gap: it replaces the root layout entirely, so it defines its own `<html>/<body>` and inlines the brand palette (cream `#fff6ef`, ink `#1e1e14`, peach `#f4a261`) with a system font stack — zero dependency on globals.css or the app theme, which may not have loaded. Shows the on-brand fallback (alert mark, copy, Try again via `unstable_retry`, home link, digest reference) with inline focus-visible outlines for keyboard users. Per docs: `unstable_retry` is the Next 16.2 recovery prop; `reset` exists but re-renders without re-fetching.
+- Gate: lint 0/0, `tsc --noEmit` clean, 395 tests pass, `next build` exit 0.
+  Shipped in commit: aa034c2
+
 ## 2026-08-14 — DESIGN-DIRECTION QUEUE CLOSE: /today resume hierarchy + locked rows (8d4ef78)
 
 Both remaining DESIGN-DIRECTION queue items resolved, gate-verified, committed.
@@ -1543,3 +1549,5 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T03:24:51 Queue exhausted — allowing normal Claude stop.
 2026-08-14T03:25:04 Queue exhausted — allowing normal Claude stop.
 2026-08-14T03:25:08 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:38:41 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:39:05 Queue exhausted — allowing normal Claude stop.
