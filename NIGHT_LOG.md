@@ -1,3 +1,56 @@
+## 2026-08-14 — VIBHA School of Psychology public site (commit 972c7b9)
+
+### The front door to the LMS
+- **Rename Lumen → VIBHA School of Psychology**: `brand.ts` is the single
+  source (name / shortName VIBHA / tagline "Psychology you can practise." /
+  parent VIBHA Healing Centre / lead Dr. Sarthak Dave, MBBS, MD Psychiatry).
+  Every render site reads BRAND.*. "Lumen" removed from components, docs,
+  seeds, e2e, migrations — test email now `Test@vibha.test` (kept in sync
+  across seed + e2e). Only anatomical "lumen" in clinical corpus JSON remains
+  (legitimate medical text, not the brand).
+- **Landing page** at `/` (anonymous): nav + full-screen mobile sheet, hero
+  with layered case fragments (LANDING_PLAN.md documents the 2 rejected
+  concepts), problem & philosophy, Learn/Experience/Apply, who-is-building
+  (the calibration loop — a real, defensible differentiator), closing CTA,
+  footer. `motion` reveals, `prefers-reduced-motion` respected. No fabricated
+  claims anywhere.
+- **/enquire**: `enquiries` table (RLS admin-select only — NO anon insert
+  policy; server action inserts via the service-role client), server action
+  (zod + IP rate-limit + honeypot), form with honest confirmation ("We'll be
+  in touch. Cohort One begins 20 August."), /admin/enquiries list. Applied
+  live; table + policy verified.
+- **SEO**: root metadata indexable + OG/Twitter + metadataBase; the
+  (dashboard) layout, /login, /expired and /verify all noindex; robots.txt
+  allows / + /enquire and disallows the LMS; sitemap.ts; `icon.svg` VIBHA
+  mark replaces the stale favicon.ico.
+- **Auth preserved**: `src/app/page.tsx` keeps `getSession()` — ok →
+  /dashboard, anonymous → landing. Guards live in layouts, untouched. Verified
+  by the full gate + manual route review.
+- **UI_RULES**: saved docs/UI_RULES.md; landing + /enquire pass the 8px scale,
+  min-w-0 and break-words contract; `e2e/ui-public.spec.ts` checks overflow +
+  heading structure on / and /enquire at 8 breakpoints.
+- Decisions: hero concept 2 (layered case fragments) chosen over cognitive-
+  network and pure-type concepts — strongest brand consistency + psychology
+  specificity. Enquiries inserted via service client (stronger than the brief's
+  "anon insert via server action" — no anon insert path exists at all).
+
+## 2026-08-14 (round 9 cont. — MSE content wiring closeout)
+
+### MSE content wiring verified + Level 4 titles from the DB
+- Verified the MSE content-wiring path end to end: 30 published `mse_stimuli`
+  rows (8 obs / 12 domain / 10 mse4), every row carrying its authored
+  `expert_coding`. Levels 1/2/4 read stimuli via `mse/page.tsx` →
+  `MseLadder` → level props; Level 5 stays transcripts-based (live sessions,
+  no static bank). Commit bb5bc10.
+- Closed the last gap: Level 4 was rendering the stable slug as the vignette
+  title ("mse4-sandeep") instead of the authored title ("Sandeep, 35 — the man
+  who can't sit in a meeting"). Added a nullable `title` column to
+  `mse_stimuli` (folded into `mse_stimuli_expert_coding.sql`), wired the seed +
+  `shapeContent` to read it (`title ?? slug` fallback), applied live, and
+  re-seeded all 30 rows (10 mse4 titles backfilled, verified in DB).
+- Queue: both "Content Wiring (MSE)" items ticked. Gates green: lint, tsc,
+  full vitest 375/375, build exit 0.
+
 ## 2026-08-13 (round 9 cont. — Rounds per-user scheduling)
 
 ### Rounds — real spaced repetition (card_reviews)
