@@ -1457,3 +1457,4 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T02:56:49 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:57:57 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:58:59 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:59:20 Queue exhausted — allowing normal Claude stop.
