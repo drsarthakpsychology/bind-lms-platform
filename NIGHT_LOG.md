@@ -89,7 +89,13 @@ Verify checklist (the hook's, done for real):
 - Verify decision: the lint gate was quietly false before — 156 errors in a
   non-source generated file. Fixed at the config, not by editing the
 
-### A5 Queue auto-release label added (commit <pending>)
+### Course page rebuilt as linear week-by-week path (commit e0bfae6, Finding 1)
+- Removed parallel Materials and Assignments sections — everything appears exactly once inside its week
+- Single vertical path with collapsible weeks; current week expanded, future weeks locked with reason
+- One highlighted "next action" row (ring-2 ring-primary) with "NEXT" badge
+- Done items: 60% opacity + checkmark; Future: greyed + "Locked" badge with "Opens next/later"
+- Migrations: weeks column on courses/lessons/materials, practice_chains table, follow_up on sim_cases
+- Full gate: lint 0 errors, tsc clean, 340 tests pass, build green
 - Student debrief now shows "AI-generated — not yet faculty reviewed" badge
 - Admin sim-review list updated with full label
 - Triage page auto-release count already existed; label now consistent

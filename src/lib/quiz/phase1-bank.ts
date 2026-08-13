@@ -462,4 +462,194 @@ export const PHASE1_QUIZ_ITEMS: QuizItem[] = [
     rationale: "A medical mimic fully explains the picture — the restraint lesson: don't diagnose what the workup explains.",
     source: "medical-mimic literature / mhGAP",
   },
+
+  // ======================= DECODE_IDIOM (additional) =======================
+  {
+    id: "p1-decode-007", type: "decode_idiom",
+    prompt: "A 42-year-old woman says 'pet mein paani' — water in her stomach. She has been seen by two gastroenterologists; workup is normal. What is the NEXT best step?",
+    options: [
+      "Order a third gastroenterology opinion",
+      "Explore what the 'water' means — and what is happening in her marriage",
+      "Reassure her that the tests are normal",
+      "Prescribe a diuretic trial",
+    ],
+    correct: 1,
+    rationale: "'Pet mein paani' is a documented somatic idiom for marital/sexual distress in North Indian women — the normal workup should redirect to the psychosocial, not more investigations.",
+    source: "Chaturvedi et al. / Garhwal idioms study",
+  },
+  {
+    id: "p1-decode-008", type: "decode_idiom",
+    prompt: "A man says 'BP high ho gaya' — my BP went up — after an argument with his boss. His measured BP is normal. What is the clinical reading?",
+    options: [
+      "He is minimising hypertension",
+      "This is an idiom for emotional upset — 'got angry' — not a cardiac reading",
+      "He has labile BP that needs monitoring",
+      "He is confused about his own body",
+    ],
+    correct: 1,
+    rationale: "'BP high ho gaya' is a borrowed-biomedical idiom meaning 'I got very upset' — the idiom and the disease are different things.",
+    source: "Nichter idioms of distress",
+  },
+  {
+    id: "p1-decode-009", type: "decode_idiom",
+    prompt: "A 25-year-old says 'kamzori' — weakness — and has pallor, fatigue, and heavy periods. Which reading should be WEIGHTED HIGHEST?",
+    options: [
+      "Depressive anergia",
+      "Anaemia / nutritional deficiency — a physical miss you must not make",
+      "Chronic fatigue syndrome",
+      "Somatic depression mask",
+    ],
+    correct: 1,
+    rationale: "Physical misses are weighted 1.5x in the Decoder — 'kamzori' with pallor and menstrual history is anaemia until proven otherwise.",
+    source: "mhGAP depression module / ICD-11",
+  },
+
+  // ======================= WHATS_MISSING (additional) =======================
+  {
+    id: "p1-missing-007", type: "whats_missing",
+    prompt: "A 35-year-old woman with 'nerves' and palpitations. The student asked about anxiety, sleep, and caffeine. What is the MISSING domain that could change the diagnosis?",
+    options: ["Thyroid function", "Exercise habits", "Screen time", "Vitamin D"],
+    correct: 0,
+    rationale: "Thyroid overactivity is a classic mimic of anxiety with palpitations — the 'nerves' workup is incomplete without a TSH.",
+    source: "mhGAP / medical-mimic literature",
+  },
+  {
+    id: "p1-missing-008", type: "whats_missing",
+    prompt: "An elderly patient with 'memory complaints' and low mood. The student covered mood, sleep, appetite. What is the CRITICAL unelicited domain?",
+    options: ["Medication review (especially anticholinergics, benzos)", "Family tree for dementia", "Educational history", "Vision/hearing"],
+    correct: 0,
+    rationale: "The elderly 'memory + low mood' presentation is iatrogenic until proven otherwise — anticholinergic burden and benzodiazepines are the first differential.",
+    source: "mhGAP elderly module / STOPP/START criteria",
+  },
+  {
+    id: "p1-missing-009", type: "whats_missing",
+    prompt: "A 17-year-old boy with 'anger issues'. The student asked about the anger, family, and school. What is MISSING?",
+    options: ["Substance use (cannabis, inhalants, alcohol)", "Sports participation", "Diet", "Sleep hygiene"],
+    correct: 0,
+    rationale: "Adolescent anger + substance use is the co-occurring rule — cannabis and inhalants are common and under-asked.",
+    source: "SAMHSA TIP 42 / NIMHANS adolescent",
+  },
+
+  // ======================= PREDICT_CONSEQUENCE (additional) =======================
+  {
+    id: "p1-predict-007", type: "predict_consequence",
+    prompt: "You notice a patient's affect doesn't match their words — they smile while describing abuse. You say nothing. What is likely?",
+    options: [
+      "They will bring it up when ready",
+      "The incongruence goes unaddressed — the patient learns the disconnect is 'normal' and stops showing it",
+      "They will feel safe and open up",
+      "The abuse will resolve on its own",
+    ],
+    correct: 1,
+    rationale: "Affect incongruence is a clinical signal — ignoring it teaches the patient that their felt experience doesn't match what is seen, and the disconnect deepens.",
+    source: "mhGAP / trauma-informed care",
+  },
+  {
+    id: "p1-predict-008", type: "predict_consequence",
+    prompt: "You interpret a patient's silence as 'they don't want to talk' and fill the gap with your own questions. Two sessions later:",
+    options: [
+      "They have opened up beautifully",
+      "They answer your questions but never volunteer — the silence was a window you closed",
+      "They stop coming",
+      "They ask you to be quiet",
+    ],
+    correct: 1,
+    rationale: "The silence IS the data — filling it with your questions teaches the patient that their pace is not respected, and volunteer disclosure stops.",
+    source: "Yalom / mhGAP interviewing",
+  },
+  {
+    id: "p1-predict-009", type: "predict_consequence",
+    prompt: "You validate a patient's anger at their family, and they escalate — shouting, pacing. What is the likely NEXT step if you stay with it?",
+    options: [
+      "They will calm down, feeling heard — the validation contains the escalation",
+      "They will attack you physically",
+      "They will leave the room",
+      "You should have redirected to a 'calmer' topic",
+    ],
+    correct: 0,
+    rationale: "Validation of escalated affect often precedes a drop — the containment is the holding; premature redirection loses the release.",
+    source: "Yalom / containment literature",
+  },
+
+  // ======================= CONFIDENCE_MCQ (additional) =======================
+  {
+    id: "p1-conf-007", type: "confidence_mcq",
+    prompt: "Rate your confidence: 'If a patient says they have no suicidal thoughts, you can document 'no risk' and move on.'",
+    options: [
+      "Confident — they would tell you",
+      "Not confident — a single 'no' is low evidence; risk is a pattern of questions about plan, means, intent, and history",
+      "Confident if they are employed",
+      "Confident if the family says they're stable",
+    ],
+    correct: 1,
+    rationale: "The over-confidence trap: risk assessment is a structured inquiry, not a single negative answer. Confidence on a bare 'no' is the calibration target.",
+    source: "Shea CASE approach / mhGAP",
+  },
+  {
+    id: "p1-conf-008", type: "confidence_mcq",
+    prompt: "How sure are you that a patient who 'looks fine' in session is not depressed?",
+    options: [
+      "Sure — affect matches mood",
+      "Not sure — high-functioning depression presents with intact social mask; function and internal experience must be asked",
+      "Sure if they're married",
+      "Sure if they have a job",
+    ],
+    correct: 1,
+    rationale: "The 'looks fine' over-confidence misses the high-functioning patient whose internal experience is the illness — the calibration lesson targets exactly this.",
+    source: "mhGAP / NIMHANS CPG",
+  },
+  {
+    id: "p1-conf-009", type: "confidence_mcq",
+    prompt: "Rate your confidence: 'The patient agreed with my diagnosis, so the formulation is correct.'",
+    options: [
+      "Confident — agreement means accuracy",
+      "Not confident — agreement is often compliance; the correct formulation survives disagreement and still fits",
+      "Confident if they smiled",
+      "Confident if they asked for the medication",
+    ],
+    correct: 1,
+    rationale: "Hollow compliance is the patient's survival strategy — a formulation that only works when the patient agrees is a formulation that doesn't work.",
+    source: "Yalom / SAMHSA TIP 35",
+  },
+
+  // ======================= UNPOPULAR_RIGHT (additional) =======================
+  {
+    id: "p1-unpop-007", type: "unpopular_right",
+    prompt: "A patient wants a benzodiazepine 'just for the flight'. You know they have a substance history. The RIGHT move:",
+    options: [
+      "Give it — one flight won't hurt",
+      "Refuse and explain why — the disappointment is the cost of safety",
+      "Give a smaller dose",
+      "Refer to a psychiatrist who might say yes",
+    ],
+    correct: 1,
+    rationale: "The unpopular right answer: safety in a known substance history beats the patient's immediate want — the referral that might say yes is responsibility-laundering.",
+    source: "SAMHSA TIP 34 / MHA 2017",
+  },
+  {
+    id: "p1-unpop-008", type: "unpopular_right",
+    prompt: "A teenager tells you they're sexually active and don't want their parents to know. The parent asks you. The RIGHT action:",
+    options: [
+      "Tell the parent — they have a right to know",
+      "Honour the minor's confidentiality (mature minor) — the parent's anger is the cost of the therapeutic alliance",
+      "Give a vague answer",
+      "Ask the teen to tell the parent",
+    ],
+    correct: 1,
+    rationale: "The unpopular right answer: mature minor confidentiality is the clinical standard — the parent's anger is the price of the teen's trust and safety.",
+    source: "MHA 2017 / RCI scope / adolescent ethics",
+  },
+  {
+    id: "p1-unpop-009", type: "unpopular_right",
+    prompt: "A patient improving on therapy wants to reduce sessions to monthly. You see a pattern of avoidance. The RIGHT move:",
+    options: [
+      "Agree — patient choice",
+      "Name the avoidance — 'we're doing well and I wonder if monthly avoids the hard thing' — the irritation is the cost of the truth",
+      "Compromise at fortnightly",
+      "Discharge them",
+    ],
+    correct: 1,
+    rationale: "The unpopular right answer: naming the avoidance pattern IS the work — the smooth step-down is the comfortable miss.",
+    source: "Yalom / SAMHSA TIP 39",
+  },
 ];

@@ -38,6 +38,7 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
     setSelected(new Set());
     setRevealed(false);
     setIdx((i) => Math.min(entries.length - 1, i + 1));
+    haptic("tap"); // state change: next phrase
   }
 
   const meanings = entry.possible_meanings.map((m) => m.reading);

@@ -2349,7 +2349,268 @@ const REGIONAL4: IdiomEntry[] = [
   },
 ];
 
-export const IDIOMS: IdiomEntry[] = [...ALL_SOMATIC, ...CULTURE_BOUND, ...BORROWED, ...EXTRA, ...REGIONAL, ...REGIONAL2, ...REGIONAL3, ...REGIONAL4];
+
+/** Regional batch 5 (round 8 expansion) — reaching the 110 target.
+ *  Focusing on: Bengali, Tamil, Telugu, Kannada, Marathi, Gujarati variants. */
+const REGIONAL5: IdiomEntry[] = [
+  {
+    id: "idiom-bengali-ga-ghulano",
+    phrase: "ga ghulano (Bengali) / গা গুলানো",
+    register: ["Bengali", "all ages", "common"],
+    readings: ["disease", "psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Nausea / GI distress", likelihood: "high", clue: "related to food, epigastric", physical: true },
+      { reading: "Anxiety-related nausea", likelihood: "medium", clue: "situational, with worry" },
+      { reading: "Disgust / aversion idiom", likelihood: "medium", clue: "'it makes my body churn' = I find it repulsive" },
+    ],
+    disambiguating_questions: [
+      "Does the ga ghulano happen after food or when you are worried?",
+      "Is there actual vomiting or just the feeling?",
+    ],
+    trap: "'Ga ghulano' is as likely a social aversion as it is a stomach bug — ask about the trigger.",
+    sources: ["Bengali somatic-idiom literature"],
+  },
+  {
+    id: "idiom-bengali-buk-dhor-pohr",
+    phrase: "buk dhor pohr kora (Bengali)",
+    register: ["Bengali", "all ages"],
+    readings: ["psychopathology", "disease", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Panic attack / Palpitations", likelihood: "high", clue: "sudden, breathlessness" },
+      { reading: "Cardiac arrhythmia", likelihood: "medium", clue: "irregular, exertional", physical: true },
+      { reading: "Situational anxiety", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Is the heart beating fast or irregular?",
+      "Does it happen at rest or on exertion?",
+    ],
+    trap: "The Bengali 'buk dhor pohr' is the cardiophobia carrier — check the pulse before the mood.",
+    sources: ["Bengali panic-disorder studies"],
+  },
+  {
+    id: "idiom-tamil-thalai-vazhi",
+    phrase: "thalai vazhi / head pain (Tamil)",
+    register: ["Tamil", "all ages"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Tension headache", likelihood: "high", clue: "band-like, end of day", physical: true },
+      { reading: "Migraine", likelihood: "medium", clue: "one-sided, throbbing", physical: true },
+      { reading: "Depressive heaviness", likelihood: "medium", clue: "morning worst" },
+    ],
+    disambiguating_questions: [
+      "Is it a sharp pain or a heavy pressure?",
+      "When in the day is it worst?",
+    ],
+    trap: "Thalai vazhi is the Tamil default — quality and timing decide psyche from sinus.",
+    sources: ["Tamil clinical practice"],
+  },
+  {
+    id: "idiom-tamil-kalai",
+    phrase: "kalaiyil moodu illa (Tamil) / no mood in the morning",
+    register: ["Tamil", "adult"],
+    readings: ["psychopathology", "disease"],
+    possible_meanings: [
+      { reading: "Morning worsening of depression", likelihood: "high", clue: "mood improves slightly as day goes on" },
+      { reading: "Poor sleep / sleep apnoea", likelihood: "medium", clue: "unrefreshed waking, snoring", physical: true },
+      { reading: "Chronic pain interference", likelihood: "medium", physical: true },
+    ],
+    disambiguating_questions: [
+      "Does the mood stay bad all day or change in the evening?",
+      "How was your sleep last night?",
+    ],
+    trap: "The morning dip is depression's Tamil calling card — check the diurnal variation.",
+    sources: ["Tamil depression-screening literature"],
+  },
+  {
+    id: "idiom-telugu-niru-padatam",
+    phrase: "niru padatam (Telugu) / being like water",
+    register: ["Telugu", "adult", "weakness idiom"],
+    readings: ["disease", "psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Severe physical exhaustion", likelihood: "high", clue: "anaemia, post-fever", physical: true },
+      { reading: "Depressive anergia — 'the bones are water'", likelihood: "medium" },
+      { reading: "Hopelessness / giving up", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Water like weakness in the muscles or like no will to move?",
+      "Any recent fever or weight loss?",
+    ],
+    trap: "Niru padatam is the Telugu 'melted' state — the physical triad and the risk screen, both.",
+    sources: ["Telugu somatic-idiom literature"],
+  },
+  {
+    id: "idiom-telugu-talapotu",
+    phrase: "talapotu (Telugu) / head-beating",
+    register: ["Telugu", "all ages"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Migraine / Vascular headache", likelihood: "high", clue: "pulsating, nausea", physical: true },
+      { reading: "Agitated distress — 'head is beating'", likelihood: "medium" },
+      { reading: "Tension headache", likelihood: "medium", physical: true },
+    ],
+    disambiguating_questions: [
+      "Does it feel like a pulse or a band?",
+      "Does light or sound make it worse?",
+    ],
+    trap: "Talapotu is the sharpest Telugu headache — migraine until proven otherwise.",
+    sources: ["Telugu clinical practice"],
+  },
+  {
+    id: "idiom-kannada-mai-kai",
+    phrase: "mai kai novu (Kannada) / body and hand pain",
+    register: ["Kannada", "middle-aged +"],
+    readings: ["disease", "psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Somatic syndrome in depression", likelihood: "high", clue: "diffuse pain, morning worsening" },
+      { reading: "Vitamin D / Calcium deficiency", likelihood: "medium", clue: "bone pain", physical: true },
+      { reading: "Fibromyalgia", likelihood: "medium", physical: true },
+    ],
+    disambiguating_questions: [
+      "Is the pain in the joints or the whole Mai (body)?",
+      "Does the pain lift when you are busy or happy?",
+    ],
+    trap: "Mai kai novu is the Kannada 'whole body' mask — screen the mood before the ortho referral.",
+    sources: ["Kannada clinical-encounter literature"],
+  },
+  {
+    id: "idiom-kannada-kannu",
+    phrase: "kannu munde krittale (Kannada) / darkness before eyes",
+    register: ["Kannada", "all ages"],
+    readings: ["disease", "psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Orthostatic hypotension / fainting", likelihood: "high", clue: "on standing", physical: true },
+      { reading: "Panic attack light-headedness", likelihood: "medium", clue: "accompanies racing heart" },
+      { reading: "Anaemia", likelihood: "medium", physical: true },
+    ],
+    disambiguating_questions: [
+      "Does it happen when you stand up suddenly?",
+      "Any heart racing or fear at the same time?",
+    ],
+    trap: "The Kannada 'blackout' can be a heart valve, an iron level, or a panic attack — the posture question decides.",
+    sources: ["Kannada somatic idioms"],
+  },
+  {
+    id: "idiom-marathi-payat-trav",
+    phrase: "payat trav nahi (Marathi) / no juice in legs",
+    register: ["Marathi", "adult"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Physical exhaustion / deficiency", likelihood: "high", clue: "anaemia, B12", physical: true },
+      { reading: "Depressive anergia", likelihood: "medium", clue: "worse in morning" },
+      { reading: "Peripheral neuropathy", likelihood: "low", clue: "tingling, diabetes", physical: true },
+    ],
+    disambiguating_questions: [
+      "No juice like weakness or like the legs won't obey?",
+      "Any tingling or numbness in the feet?",
+    ],
+    trap: "Payat trav is the Marathi kamzori — the metabolic workup is the first step.",
+    sources: ["Marathi help-seeking literature"],
+  },
+  {
+    id: "idiom-marathi-dokyat-mungi",
+    phrase: "dokyat mungya yetat (Marathi) / ants in the head",
+    register: ["Marathi", "all ages"],
+    readings: ["disease", "psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Paresthesia / tingling sensations", likelihood: "high", clue: "anaemia, B12, anxiety hyperventilation", physical: true },
+      { reading: "Somatic anxiety", likelihood: "medium", clue: "accompanies panic or worry" },
+      { reading: "Migraine aura", likelihood: "low", physical: true },
+    ],
+    disambiguating_questions: [
+      "Do the ants come when you breathe fast or are worried?",
+      "Any numbness in the hands at the same time?",
+    ],
+    trap: "'Ants in the head' is the Marathi tingling idiom — check for hyperventilation and B12.",
+    sources: ["Marathi clinical vignettes"],
+  },
+  {
+    id: "idiom-gujarati-bhara",
+    phrase: "man bharaai gayu che (Gujarati) / mind has filled up",
+    register: ["Gujarati", "adult"],
+    readings: ["psychopathology", "cultural_idiom", "metaphor"],
+    possible_meanings: [
+      { reading: "Emotional overwhelm / crying spell imminent", likelihood: "high" },
+      { reading: "Grief reaction", likelihood: "medium" },
+      { reading: "Depressive heaviness", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Filled up with what — thoughts, tears, or a weight?",
+      "What happens when the mind is full — do you cry?",
+    ],
+    trap: "The Gujarati 'full mind' is the threshold of a crying spell — be ready for the affect reveal.",
+    sources: ["Gujarati help-seeking literature"],
+  },
+  {
+    id: "idiom-gujarati-shakti",
+    phrase: "shakti nathi (Gujarati) / no strength",
+    register: ["Gujarati", "all ages"],
+    readings: ["disease", "psychopathology"],
+    possible_meanings: [
+      { reading: "Anaemia / nutritional deficiency", likelihood: "high", clue: "pallor, diet", physical: true },
+      { reading: "Depressive anergia", likelihood: "medium", clue: "anhedonia alongside" },
+      { reading: "Chronic illness", likelihood: "medium", physical: true },
+    ],
+    disambiguating_questions: [
+      "No strength in the body or no strength to face things?",
+      "What does a day look like?",
+    ],
+    trap: "Shakti nathi is the Gujarati kamzori — the physical workup precedes the mood label.",
+    sources: ["Gujarati clinical practice"],
+  },
+  {
+    id: "idiom-bengali-matha-ghora",
+    phrase: "matha ghora (Bengali) / head turning",
+    register: ["Bengali", "all ages"],
+    readings: ["disease", "psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Vertigo / Giddiness", likelihood: "high", clue: "room spins, nausea", physical: true },
+      { reading: "Anxiety-related lightheadedness", likelihood: "medium", clue: "situational" },
+      { reading: "Hypertension / Anaemia", likelihood: "medium", physical: true },
+    ],
+    disambiguating_questions: [
+      "Does the world turn or do you feel faint?",
+      "When does it happen?",
+    ],
+    trap: "Matha ghora is the Bengali dizzy-carrier — specify the spin before the psyche.",
+    sources: ["Bengali somatic-idiom studies"],
+  },
+  {
+    id: "idiom-tamil-nenju-erithal",
+    phrase: "nenju erithal / chest burning (Tamil)",
+    register: ["Tamil", "middle-aged +"],
+    readings: ["disease", "psychopathology", "metaphor"],
+    possible_meanings: [
+      { reading: "GERD / Gastritis", likelihood: "high", clue: "post-meal, sour taste", physical: true },
+      { reading: "Anxiety with somatic burning", likelihood: "medium" },
+      { reading: "Cardiac atypical angina", likelihood: "medium", clue: "exertional", physical: true },
+    ],
+    disambiguating_questions: [
+      "Does it burn after food or when you walk fast?",
+      "Does antacid help?",
+    ],
+    trap: "Nenju erithal is the Tamil gas-heart differential — the exertional question is the safety.",
+    sources: ["Tamil clinical literature"],
+  },
+  {
+    id: "idiom-telugu-ghabrahat",
+    phrase: "bhayamga undi (Telugu) / it is fearful",
+    register: ["Telugu", "all ages"],
+    readings: ["psychopathology", "cultural_idiom"],
+    possible_meanings: [
+      { reading: "Generalised anxiety", likelihood: "high" },
+      { reading: "Panic attacks (palpitations)", likelihood: "medium" },
+      { reading: "Situational worry", likelihood: "medium" },
+    ],
+    disambiguating_questions: [
+      "Fear of a thing or fear in the body?",
+      "What happens when the bhayam is at its peak?",
+    ],
+    trap: "Bhayam is the Telugu anxiety word — specify the somatic peaks to catch the panic.",
+    sources: ["Telugu anxiety idioms"],
+  },
+];
+
+export const IDIOMS: IdiomEntry[] = [...ALL_SOMATIC, ...CULTURE_BOUND, ...BORROWED, ...EXTRA, ...REGIONAL, ...REGIONAL2, ...REGIONAL3, ...REGIONAL4, ...REGIONAL5];
 
 /** Score a multi-select decode attempt: physical readings weigh more. */
 export function scoreDecode(entry: IdiomEntry, selected: string[]): { score: number; max: number; missedPhysical: string[] } {

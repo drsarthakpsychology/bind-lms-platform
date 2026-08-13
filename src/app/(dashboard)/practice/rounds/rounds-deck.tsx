@@ -46,6 +46,7 @@ export function RoundsDeck() {
       haptic("success");
     } else {
       setIdx(idx + 1);
+      haptic(r === 1 ? "warning" : "tap"); // state change: next card
     }
   }
 
