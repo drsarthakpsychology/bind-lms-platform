@@ -1,0 +1,14 @@
+-- Security-audit finding (2026-08-14, auditing-app-security skill):
+-- _migrations_applied (the migration ledger) had RLS OFF, so the anon key
+-- could read the migration history via PostgREST (verified: HTTP 200 + rows).
+-- No sensitive data, but it's an unenforced-RLS table (internal info leak).
+--
+-- Fix: enable RLS with NO policies — nothing can read/write the table via the
+-- REST API afterwards (no policy = denied). The migration scripts
+-- (apply-migrations / apply-pending) connect via the direct pg pooler, which
+-- bypasses RLS and is unaffected.
+--
+-- Additive + reversible (disable row level security to revert). Apply via:
+--   npm run apply-pending -- --file rls_migrations_applied.sql   (or the runner's
+--   equivalent; the table already exists, this is a single ALTER).
+alter table public._migrations_applied enable row level security;

@@ -68,6 +68,14 @@ Every item: paste → something switches on → verify with one command. Free fi
 - **Review drafted flashcards** → `cards` table drafts (7 from the seeded MSE lesson transcript; approve the good ones)
 - **Flip feature flags when ready** → `/admin/flags` (6 live — Consulting Room, Decoder, MSE, Judgment, Rounds, Journal; 12 built-but-off tools reveal on one click)
 
+## 🔒 SECURITY AUDIT 2026-08-14 — ONE action to apply
+- **Enable RLS on `_migrations_applied`** (the only public table with RLS off —
+  anon key can read the migration ledger via REST). Fix is staged, ready:
+  `npm run apply-pending` on `src/migrations_pending/rls_migrations_applied.sql`
+  (a single `ALTER ... ENABLE ROW LEVEL SECURITY`; additive, no policies). Full
+  report: `docs/SECURITY_AUDIT.md`. Everything else audited clean (secrets,
+  middleware, RLS, headers, deps).
+
 ## Reminder (already done this session)
 - MHA 2017 full text: fetched 409 KB into `scripts/corpus/raw/statutes/` (gitignored).
 - 65 idioms seeded (18 compulsory approved); 20 calibration transcripts; wall reactions/replies live; journal sharing live.
