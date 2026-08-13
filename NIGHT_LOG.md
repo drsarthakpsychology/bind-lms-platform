@@ -1675,3 +1675,32 @@ Gate green: lint 0, `tsc --noEmit` clean, 395 tests, build 0. Deferred
 follow-ups recorded in QUEUE.md (systemic `text-primary` sweep — needs a link
 colour decision, see NEEDS_KAVYA; `Card` `asChild`; admin mobile nav;
 empty/error-state motion; heading weight; hero settle timing).
+
+---
+
+## 2026-08-14 — Supabase RLS + SECURITY DEFINER hardening
+
+Audited the live project (`hojhzwvuccojqkvkkslw`, Postgres 17) via `pg_class`
++ `pg_policies` + the security advisor.
+
+- **RLS is already complete**: all 104 `public` tables have RLS enabled with a
+  consistent policy set (`*_admin_manage` / `*_select_own_or_admin` /
+  `*_insert_own` / `*_select_published`). No RLS-disabled or policy-less tables
+  (the lone `_migrations_applied` "no policy" flag is intentional — RLS-on +
+  no-policy = deny all, documented in `rls_migrations_applied.sql`).
+- **Gap fixed**: 12 `SECURITY DEFINER` functions carried the default PUBLIC
+  EXECUTE grant, so `anon` (and `authenticated` for the 9 trigger fns) could
+  invoke them via `/rpc/<name>`. Applied `REVOKE ... FROM PUBLIC` (the correct
+  form — `REVOKE FROM anon/authenticated` does not override a PUBLIC grant).
+  Verified via `has_function_privilege`: `anon` now false on all 12;
+  `authenticated` false on the 9 triggers; the 3 intentional fns
+  (`app_role`, `is_admin`, `publish_medication_document`) keep their explicit
+  `authenticated` grants.
+- **Safe**: triggers fire as the table owner (signup `handle_new_user` +
+  touch/demote/publish unaffected); RLS policies evaluate SECURITY DEFINER
+  helpers as the owner, so revoking PUBLIC EXECUTE does not break them
+  (`is_admin` already had no PUBLIC grant and policies still worked).
+
+Deferred / not SQL-actionable: `vector` extension lives in `public` (standard
+pgvector install — moving it risks breakage), and Auth "leaked password
+protection" is a dashboard toggle, not SQL (surface to Kavya).
