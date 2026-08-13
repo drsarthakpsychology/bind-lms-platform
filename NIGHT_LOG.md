@@ -1305,3 +1305,6 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T02:21:38 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:22:07 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:22:11 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:22:44 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:23:55 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:24:00 landing(public): homepage elevate pass COMPLETE. Decision: kept the brand.ts em-dash fix (BRAND.description punctuation-only, cheapest to reverse) to satisfy the non-negotiable zero-em-dash homepage rule; renders zero em dashes in HTML. Verified: tsc --noEmit OK, eslint OK, next build OK (after clearing stale .next), vitest 392/392 OK. Who-is-building copy humanized (Dr. Sarthak Dave + Kavya Bothra + guest lectures, no invented claims); calibration sentence removed. Hero: kinetic word-by-word h1 (text-7xl), observation-rings watermark, fixed grid column interleave; scroll moment: scale-on-scroll quote mark in Problem section. Working tree otherwise clean.
