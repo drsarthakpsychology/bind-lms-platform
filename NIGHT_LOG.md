@@ -1750,3 +1750,23 @@ Admin panel + student surfaces, per Kavya's two messages. All gate-green.
 
 Gate green throughout: lint 0, tsc clean, 395 tests, build 0.
 2026-08-14T04:46:10 Queue exhausted — allowing normal Claude stop.
+2026-08-14T04:47:12 Queue exhausted — allowing normal Claude stop.
+2026-08-14T04:53:42 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Security audit (auditing-app-security skill)
+
+- **Headers**: excellent — CSP, HSTS (preload), X-Frame-Options, X-Content-Type-
+  Options, Referrer-Policy, Permissions-Policy, COOP/CORP all present.
+- **Secrets**: clean — no `service_role`/`sk_live` in client code; all
+  `NEXT_PUBLIC_*` are public-by-design (anon key, URL, Sentry DSN, Turnstile).
+- **RLS (empirical anon replay)**: anon denied on all sensitive tables —
+  profiles/submissions/progress/journal return 0 rows; sim_sessions/sim_turns
+  return 401 (policy calls `is_admin()`, which anon can't execute). Secure.
+- **Deps**: npm audit was 3 high (postcss XSS/file-read + sharp libvips, all
+  transitive via Next). Fixed by bumping next 16.2.12 → 16.3.1 (ab56de5);
+  `npm audit` now 0. Gate green.
+- Minor hygiene (not a vuln): a few `*_select_own_or_admin` policies are `TO
+  public` and call `is_admin()`, so anon gets a 401 rather than a clean empty
+  set. Pre-existing and secure; noted for a future `TO authenticated` pass.
