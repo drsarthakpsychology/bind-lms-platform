@@ -20,22 +20,14 @@ function statusBadge(status: string) {
   }
 }
 
-/** The student-facing plain-language line, from the document's plain_language block. */
-function plainFromDocument(doc: unknown): string | undefined {
-  if (!doc || typeof doc !== "object") return undefined;
-  const d = doc as { sections?: Array<{ blocks?: Array<{ type?: string; value?: string }> }> };
-  for (const s of d.sections ?? []) {
-    for (const b of s.blocks ?? []) {
-      if (b.type === "plain_language" && b.value?.trim()) return b.value.trim();
-    }
-  }
-  return undefined;
-}
-
 /**
  * Medication list (KMS). One action per drug: Open — which takes you to the
  * page editor, the single surface for editing, reviewing, and publishing.
- * Status is whether the page is student-visible (published) or not.
+ *
+ * This is a LIST — it must be light. The student-facing summary line comes from
+ * the static `drugDetail` (curated TS data), NOT the full `document` jsonb, so
+ * the query stays cheap and the ~100 editor links don't trigger a prefetch
+ * storm of heavy editor renders.
  */
 export default async function PsychReviewPage({
   searchParams,
@@ -45,11 +37,14 @@ export default async function PsychReviewPage({
   const sp = await searchParams;
   const supabase = await createClient();
 
-  const { data: drugs } = await supabase.from("psych_drugs").select("id, generic_name, drug_class").order("generic_name");
-  const { data: docs } = await supabase.from("medication_documents").select("drug_id, status, document");
+  const { data: drugs } = await supabase
+    .from("psych_drugs")
+    .select("id, generic_name, drug_class")
+    .order("generic_name");
+  const { data: docs } = await supabase.from("medication_documents").select("drug_id, status");
 
-  const docByDrug = new Map<string, { status: string; document: unknown }>();
-  for (const d of docs ?? []) docByDrug.set(d.drug_id, { status: d.status, document: d.document });
+  const statusByDrug = new Map<string, string>();
+  for (const d of docs ?? []) statusByDrug.set(d.drug_id, d.status);
 
   const q = (sp.q ?? "").trim().toLowerCase();
   const filtered = (drugs ?? []).filter(
@@ -72,13 +67,13 @@ export default async function PsychReviewPage({
           <p className="text-small text-muted-foreground">No medications match “{sp.q}”.</p>
         ) : (
           filtered.map((drug) => {
-            const doc = docByDrug.get(drug.id);
-            const { variant, label } = statusBadge(doc?.status ?? "draft");
-            const plain = plainFromDocument(doc?.document) ?? drugDetail(drug.generic_name)?.plain;
+            const { variant, label } = statusBadge(statusByDrug.get(drug.id) ?? "draft");
+            const plain = drugDetail(drug.generic_name)?.plain;
             return (
               <Link
                 key={drug.id}
                 href={`/admin/psychopharm/editor/${encodeURIComponent(drug.generic_name.toLowerCase().replace(/\s+/g, "-"))}`}
+                prefetch={false}
                 className="flex items-center justify-between gap-3 rounded-md border-2 border-border bg-card p-3 transition hover:border-foreground hover:hard-shadow-sm"
               >
                 <div className="min-w-0 flex-1">
