@@ -20,6 +20,12 @@ import { MaterialUploader } from "@/app/(dashboard)/admin/courses/[courseId]/mat
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/design-system/empty-state";
+import { QuizCheck } from "@/components/practice/quiz-check";
+import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
+
+// "Check what stuck" — the risk-assessment + reporting items are the most
+// universally relevant after any lesson (the order-steps spine).
+const LESSON_QUIZ_ITEMS = QUIZ_BANK.filter((i) => i.type === "order_steps").slice(0, 4);
 
 export default async function LessonPage({
   params,
@@ -210,6 +216,20 @@ export default async function LessonPage({
               </p>
             </div>
           )}
+        </div>
+      )}
+
+      {/* Check what stuck — a quick retention check after the lesson, not a
+          test. Every item carries its source (the same pattern as MSE/OSCE). */}
+      {tab === "watch" && (
+        <div className="rounded-md border-2 border-border bg-card p-4">
+          <h2 className="text-sm font-semibold">Check what stuck</h2>
+          <p className="mt-1 text-small text-muted-foreground">
+            A quick check, not a test — every item carries its source.
+          </p>
+          <div className="mt-3">
+            <QuizCheck items={LESSON_QUIZ_ITEMS} />
+          </div>
         </div>
       )}
 
