@@ -1,3 +1,52 @@
+## 2026-08-14 — VIBHA CREATIVE DIRECTION (logo + homepage + dashboard motion)
+
+Executed the FINAL CREATIVE, UI/UX AND MOTION DIRECTION brief with a 2-agent
+team (landing + dashboard on disjoint files) after researching 2026 design
+trends (WebSearch: oversized display type, kinetic headlines, scroll-driven
+reveals, mechanical hovers, reduced-motion non-negotiable).
+
+### Custom logo (723dba8) — "VIBHA observes"
+- VibhaMark: a bold down-V (VIBHA's V) doubling as an eye's brow with a peach
+  pupil in its opening. Neobrutalist language (2px ink, flat fill, optional
+  hard-shadow offset). VibhaWordmark = mark + "VIBHA SCHOOL OF PSYCHOLOGY"
+  ALL-CAPS BOLD. Favicon icon.svg = same identity on a peach tile. Wired into
+  landing nav/footer, login, expired, dashboard sidebar (VibhaMark) + mobile
+  top bar. Not a generic brain/head/stock icon.
+
+### Homepage (01aa0a3, 5d6b07b, d3d8d6e)
+- Kinetic word-by-word masked headline reveal (kinetic-headline.tsx) on an
+  oversized h1 (text-5xl/6xl/7xl font-black). Hero case-fragment cards keep
+  Parallax + stagger + hover lift; faint observation-rings SVG watermark
+  (7% ink, parallax-aware). Fixed a latent hero grid auto-placement bug (text
+  now reads left, fragments right).
+- One tasteful scroll moment: giant serif quote mark scaling in via
+  scroll-scale.tsx (useScroll/useTransform), reduced-motion disabled.
+- Copy: ZERO em dashes homepage-wide (incl. BRAND.description meta),
+  automated-assessment calibration sentence REMOVED, Who-is-building now
+  human: "A small team, and you know their names." — Dr. Sarthak Dave
+  (clinical lead, from BRAND.lead) + Kavya Bothra + Guest Lectures. No
+  fabricated credentials/claims.
+- Micro-interactions: card lifts, CTA arrow nudge, footer link nudges,
+  scroll-mt-20 on the #about anchor.
+
+### Dashboard motion (654139d) — restrained, design intact
+- VibhaMark in sidebar (28) + mobile top bar (24); Reveal entrances on
+  /reflect /record /passport /admin (staggered); passport PDF button lift +
+  case-library row hover. Loading skeletons, animated Progress, Radix
+  dialog/sheet/popover transitions, layoutId tab indicators verified already
+  in place.
+
+### Verification (this entry)
+Full gate: lint 0/0, tsc clean, 392 tests, build exit 0. Rendered homepage
+checked live (HTTP 200): 0 em dashes, calibration sentence absent,
+Dr. Sarthak Dave + Kavya Bothra + Guest Lectures present, "VIBHA SCHOOL OF
+PSYCHOLOGY" present, hero at lg:text-7xl, login wordmark + logo SVG present.
+
+### STRIX pentest (user request) — deferred to after verification, key-gated
+- usestrix/strix cloned + read (Apache 2.0, Python/uv, needs Docker sandbox +
+  an LLM key: STRIX_LLM + LLM_API_KEY; or managed app.strix.ai cloud without
+  a local key). Blocker + instructions in NEEDS_KAVYA.md.
+
 ## 2026-08-14 — dashboard motion-polish pass + Vibha brand mark (654139d)
 
 ### Motion polish (restrained — design intact)
@@ -1308,3 +1357,6 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T02:22:44 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:23:55 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:24:00 landing(public): homepage elevate pass COMPLETE. Decision: kept the brand.ts em-dash fix (BRAND.description punctuation-only, cheapest to reverse) to satisfy the non-negotiable zero-em-dash homepage rule; renders zero em dashes in HTML. Verified: tsc --noEmit OK, eslint OK, next build OK (after clearing stale .next), vitest 392/392 OK. Who-is-building copy humanized (Dr. Sarthak Dave + Kavya Bothra + guest lectures, no invented claims); calibration sentence removed. Hero: kinetic word-by-word h1 (text-7xl), observation-rings watermark, fixed grid column interleave; scroll moment: scale-on-scroll quote mark in Problem section. Working tree otherwise clean.
+2026-08-14T02:24:10 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:24:28 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:25:02 Queue exhausted — allowing normal Claude stop.
