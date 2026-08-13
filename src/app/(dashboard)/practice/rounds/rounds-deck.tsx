@@ -2,11 +2,11 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
-import { dailyQueue, newCardState, reviewCard, type CardRating, type CardState } from "@/lib/practice/rounds";
+import { newCardState, reviewCard, type CardRating, type CardState } from "@/lib/practice/rounds";
 import { ROUNDS_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
 /** A Rounds card. Faculty-approved cards from the `cards` table join the seeds. */
-export type SeedCard = { front: string; back: string; type?: "flash" | "idiom" | "confusable" };
+export type SeedCard = { id?: string; front: string; back: string; type?: "flash" | "idiom" | "confusable" };
 
 /** Author-built starter cards; approved DB cards (lesson-transcript drafts)
  *  are appended by the page. */
@@ -23,28 +23,50 @@ export const SEED_CARDS: SeedCard[] = [
   { front: "What does 'not feeling fresh' usually mean in common Indian English?", back: "Often describes incomplete bowel evacuation (constipation). If you write 'low mood' and move on, you've missed the clinical picture.", type: "idiom" },
 ];
 
-export function RoundsDeck({ cards = SEED_CARDS }: { cards?: SeedCard[] }) {
-  // Card states are seeded per visit; real per-user scheduling (card_reviews)
-  // is a follow-up — the queue is capped at 25/day either way.
-  const [queue] = React.useState<CardState[]>(() => dailyQueue(cards.map(() => newCardState())));
+export function RoundsDeck({ cards = SEED_CARDS, states }: { cards?: SeedCard[]; states?: (CardState | undefined)[] }) {
+  // The due queue, capped at 25. Each entry carries its card so the deck stays
+  // associated even though dailyQueue filters + sorts (not parallel arrays).
+  const [deck] = React.useState(() => {
+    const entries = cards.map((card, i) => ({ card, state: states?.[i] ?? newCardState() }));
+    const now = new Date();
+    return entries
+      .filter((e) => new Date(e.state.due_at) <= now)
+      .sort((a, b) => a.state.due_at.localeCompare(b.state.due_at))
+      .slice(0, 25);
+  });
   const [idx, setIdx] = React.useState(0);
   const [showBack, setShowBack] = React.useState(false);
   const [done, setDone] = React.useState(false);
 
-  const card = queue[idx];
-  const seed = cards[idx];
+  const current = deck[idx];
+  const seed = current?.card;
+  const cardState = current?.state;
+
+  /** Persist a review for a DB-backed card (seeds have no id; FSRS math is
+   *  recomputed server-side at /api/practice/rounds/review). */
+  async function persistReview(card: SeedCard, rating: CardRating) {
+    if (!card.id || !cardState) return;
+    await fetch("/api/practice/rounds/review", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        card_id: card.id,
+        rating,
+        current: { stability: cardState.stability, difficulty: cardState.difficulty, due_at: cardState.due_at },
+      }),
+    }).catch(() => {}); // silent; a check, not a test
+  }
 
   function rate(r: CardRating) {
-    if (!card) return;
+    if (!current) return;
     haptic("tap");
-    // In production, reviewCard(current, r) persists to card_reviews. Here we
-    // just advance — the queue is fixed for the slice.
-    void reviewCard(card, r);
+    void reviewCard(current.state, r);
+    void persistReview(seed!, r);
     setShowBack(false);
-    if (idx + 1 >= queue.length) {
+    if (idx + 1 >= deck.length) {
       setDone(true);
       // Credit the completed daily session into the Skills Passport.
-      void recordCompetencyEvent("rounds", ROUNDS_COMPETENCY_KEYS, 4, `${queue.length} cards reviewed`).catch(() => {});
+      void recordCompetencyEvent("rounds", ROUNDS_COMPETENCY_KEYS, 4, `${deck.length} cards reviewed`).catch(() => {});
       haptic("success");
     } else {
       setIdx(idx + 1);
@@ -57,14 +79,14 @@ export function RoundsDeck({ cards = SEED_CARDS }: { cards?: SeedCard[] }) {
       <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
         <h2 className="text-base font-semibold">You&apos;re done for today</h2>
         <p className="mt-2 text-small text-muted-foreground">
-          {queue.length} card{queue.length === 1 ? "" : "s"} reviewed. That&apos;s the whole
+          {deck.length} card{deck.length === 1 ? "" : "s"} reviewed. That&apos;s the whole
           queue — see you tomorrow.
         </p>
       </div>
     );
   }
 
-  if (!card) {
+  if (!current) {
     return (
       <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
         <h2 className="text-base font-semibold">No cards due</h2>
@@ -78,8 +100,8 @@ export function RoundsDeck({ cards = SEED_CARDS }: { cards?: SeedCard[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>Card {idx + 1} of {queue.length}</span>
-        <span>{queue.length} due · capped at 25</span>
+        <span>Card {idx + 1} of {deck.length}</span>
+        <span>{deck.length} due · capped at 25</span>
       </div>
 
       <div className="min-h-[200px] rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
