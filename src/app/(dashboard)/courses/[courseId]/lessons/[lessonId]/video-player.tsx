@@ -877,7 +877,7 @@ export function VideoPlayer({
                       className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       {r}×
-                      {rate === r && <span className="text-primary">●</span>}
+                      {rate === r && <span className="text-link">●</span>}
                     </button>
                   ))}
                 </div>
@@ -978,7 +978,7 @@ export function VideoPlayer({
                       className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-white hover:bg-white/15"
                     >
                       {r}×
-                      {rate === r && <span className="text-primary">●</span>}
+                      {rate === r && <span className="text-link">●</span>}
                     </button>
                   ))}
                 </div>

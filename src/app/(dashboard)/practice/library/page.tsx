@@ -39,7 +39,7 @@ export default async function LibraryPage(props: {
               <Link
                 key={f.key}
                 href={active ? "/practice/library" : `/practice/library?tag=${f.key}`}
-                className={`rounded-full border px-2.5 py-1 text-caption font-medium transition-colors ${active ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                className={`rounded-full border px-2.5 py-1 text-caption font-medium transition-colors ${active ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
               >
                 {f.label}
               </Link>

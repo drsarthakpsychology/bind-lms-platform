@@ -177,7 +177,7 @@ export function SubmissionReviewRow({
                       <img src={fileUrls[f.id]} alt={f.originalName} className="max-h-80 rounded-md border-2 border-border object-contain" />
                     )}
                     {fileUrls[f.id] && !isPreviewable && (
-                      <a href={fileUrls[f.id]} download className="text-small text-primary hover:underline">
+                      <a href={fileUrls[f.id]} download className="text-small text-link hover:underline">
                         Download {f.originalName}
                       </a>
                     )}

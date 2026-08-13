@@ -62,7 +62,7 @@ export function PulseView({
       {curriculumFlag ? (
         <div className="rounded-md border-2 border-primary bg-primary/5 p-4">
           <p className="flex items-center gap-2 text-base font-semibold">
-            <AlertTriangle className="size-4 text-primary" aria-hidden />
+            <AlertTriangle className="size-4 text-link" aria-hidden />
             Curriculum problem, not a motivation problem
           </p>
           <p className="mt-1 text-small text-muted-foreground">

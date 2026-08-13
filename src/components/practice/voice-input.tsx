@@ -106,7 +106,7 @@ export function VoiceInput({
           className={`flex size-12 items-center justify-center rounded-full border-2 border-border transition-transform active:scale-95 ${
             pressed
               ? "bg-red-500 text-white ring-2 ring-red-300"
-              : "bg-secondary text-primary"
+              : "bg-secondary text-link"
           } disabled:opacity-40`}
         >
           {pressed ? (
@@ -147,7 +147,7 @@ export function VoiceInput({
           onClick={handlePatientSpeak}
           disabled={disabled || !voice.ttsAvailable}
           aria-label="Play patient's last line"
-          className="flex size-12 items-center justify-center rounded-full border-2 border-border bg-secondary text-primary transition-transform active:scale-95 disabled:opacity-40"
+          className="flex size-12 items-center justify-center rounded-full border-2 border-border bg-secondary text-link transition-transform active:scale-95 disabled:opacity-40"
         >
           <Volume2 className="size-5" aria-hidden />
         </button>

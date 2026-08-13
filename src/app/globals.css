@@ -47,6 +47,13 @@
   --input: #1e1e14;
   --ring: #f4a261;
 
+  /* --- Link / accent text ---
+     Peach (#f4a261) is a fill colour — as *text* on cream it is only ~1.9:1,
+     far below WCAG AA. Accent text (links, labels, eyebrow emphasis) therefore
+     uses its darker terracotta sibling, which is ~5.4:1 on cream and on card.
+     Peach stays for fills (buttons, active nav) and decorative glyphs. */
+  --link: #b83a00;
+
   /* --- Color: hard shadows --- */
   --hard-shadow-color: #1e1e14; /* solid ink offset */
 
@@ -108,6 +115,9 @@
   --input: #4a4234;
   --ring: #f4a261;
 
+  /* Peach is bright enough on dark paper (≈8.7:1) — accent text stays peach. */
+  --link: #f4a261;
+
   --hard-shadow-color: #000000;
 
   --status-success-bg: #10301c;
@@ -144,6 +154,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-link: var(--link);
 
   --color-shadow: var(--hard-shadow-color);
 

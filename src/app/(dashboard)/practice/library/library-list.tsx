@@ -144,7 +144,7 @@ export function LibraryList({
                         href={d.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-caption font-medium text-primary hover:underline"
+                        className="text-caption font-medium text-link hover:underline"
                       >
                         Open on PMC →
                       </a>

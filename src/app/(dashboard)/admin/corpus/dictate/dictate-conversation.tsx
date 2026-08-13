@@ -189,7 +189,7 @@ export function DictateConversation() {
               className={`flex size-14 items-center justify-center rounded-full border-2 border-border transition-transform active:scale-95 ${
                 recording
                   ? "bg-red-500 text-white ring-2 ring-red-300"
-                  : "bg-secondary text-primary"
+                  : "bg-secondary text-link"
               } disabled:opacity-40`}
             >
               {recording ? (

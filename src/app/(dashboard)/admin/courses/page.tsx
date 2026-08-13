@@ -39,7 +39,7 @@ export default async function CoursesPage() {
       <Card variant="raised">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Plus className="size-4 text-primary" aria-hidden />
+            <Plus className="size-4 text-link" aria-hidden />
             Create a course
           </CardTitle>
         </CardHeader>
@@ -62,7 +62,7 @@ export default async function CoursesPage() {
                 <div className="flex items-start justify-between gap-2">
                   <Link
                     href={`/admin/courses/${course.id}`}
-                    className="text-h3 leading-snug hover:text-primary"
+                    className="text-h3 leading-snug hover:text-link"
                   >
                     {course.title}
                   </Link>

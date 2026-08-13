@@ -50,7 +50,7 @@ export function PracticeKeyboardNav({ links }: { links: Array<{ href: string; ti
   if (!hint) return null;
   return (
     <p className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full border-2 border-border bg-card px-3 py-1 text-caption font-medium text-muted-foreground hard-shadow-sm" aria-live="polite">
-      <span className="text-primary">▶</span> {hint}
+      <span className="text-link">▶</span> {hint}
     </p>
   );
 }

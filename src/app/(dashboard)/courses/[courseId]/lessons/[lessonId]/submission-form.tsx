@@ -60,7 +60,7 @@ function OwnFileLink({ fileId, name }: { fileId: string; name: string }) {
         type="button"
         onClick={open}
         disabled={loading}
-        className="inline-flex items-center gap-1 text-primary underline-offset-2 hover:underline disabled:opacity-50"
+        className="inline-flex items-center gap-1 text-link underline-offset-2 hover:underline disabled:opacity-50"
       >
         <Download className="size-3.5" aria-hidden />
         {name}
@@ -332,7 +332,7 @@ export function SubmissionForm({
         >
           <UploadCloud className="size-8 text-muted-foreground" aria-hidden />
           <p className="text-small font-medium text-foreground">
-            Drag files here or <span className="text-primary">browse</span>
+            Drag files here or <span className="text-link">browse</span>
           </p>
           <p className="text-caption text-muted-foreground">
             Up to {maxFiles} files, {maxFileMb} MB each

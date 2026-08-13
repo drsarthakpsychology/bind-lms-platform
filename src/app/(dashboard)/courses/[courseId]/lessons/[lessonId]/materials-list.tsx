@@ -77,7 +77,7 @@ function MaterialCard({
         <div className="min-w-0 flex-1">
           <Link
             href={viewHref}
-            className="block truncate text-small font-medium text-foreground transition-colors hover:text-primary"
+            className="block truncate text-small font-medium text-foreground transition-colors hover:text-link"
           >
             {material.title}
           </Link>

@@ -90,7 +90,7 @@ export default async function CourseDetailPage({
       <Card variant="raised">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <ListPlus className="size-4 text-primary" aria-hidden />
+            <ListPlus className="size-4 text-link" aria-hidden />
             Add a lesson
           </CardTitle>
         </CardHeader>
@@ -102,7 +102,7 @@ export default async function CourseDetailPage({
       <Card variant="raised">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <UserRoundPlus className="size-4 text-primary" aria-hidden />
+            <UserRoundPlus className="size-4 text-link" aria-hidden />
             Enrolled students
             <Badge variant="secondary" className="ml-1">
               {enrolledIds.length}
@@ -121,7 +121,7 @@ export default async function CourseDetailPage({
       <Card variant="raised">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Paperclip className="size-4 text-primary" aria-hidden />
+            <Paperclip className="size-4 text-link" aria-hidden />
             Course materials
             <Badge variant="secondary" className="ml-1">
               {(courseMaterials ?? []).length}

@@ -38,7 +38,7 @@ export function FunnelDrill({ entry }: { entry: IdiomEntry }) {
       {/* the funnel taught */}
       <div className="rounded-md border-2 border-border bg-secondary/40 p-3 text-small text-muted-foreground">
         <p className="font-semibold text-foreground">The funnel:</p>
-        <p>open → specify → <span className="font-semibold text-primary">instantiate</span> → quantify → contextualise → attribute</p>
+        <p>open → specify → <span className="font-semibold text-link">instantiate</span> → quantify → contextualise → attribute</p>
         <p className="mt-1 text-caption">“Walk me through yesterday morning” is the highest-yield question in clinical interviewing — almost nobody teaches it.</p>
       </div>
 

@@ -91,7 +91,7 @@ export function EnrollStudents({
                 className="flex items-center justify-between gap-2 rounded-md border-2 border-border bg-muted/40 px-3 py-2 text-small"
               >
                 <span className="inline-flex min-w-0 items-center gap-2 truncate text-foreground">
-                  <UserRoundCheck className="size-4 shrink-0 text-primary" aria-hidden />
+                  <UserRoundCheck className="size-4 shrink-0 text-link" aria-hidden />
                   <span className="truncate">{s.email ?? s.id}</span>
                 </span>
                 <Button

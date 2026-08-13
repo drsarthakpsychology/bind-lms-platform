@@ -60,7 +60,7 @@ export default async function PsychReviewPage({
                   <span className="text-caption text-muted-foreground">
                     {published ? "Published" : "Draft"}
                   </span>
-                  <span className="text-caption font-medium text-primary">Open →</span>
+                  <span className="text-caption font-medium text-link">Open →</span>
                 </div>
               </Link>
             );

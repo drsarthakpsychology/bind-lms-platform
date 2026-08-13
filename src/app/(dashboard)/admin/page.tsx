@@ -101,7 +101,7 @@ export default async function AdminOverviewPage() {
         <div className="grid gap-4 lg:grid-cols-3">
           <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
             <h3 className="flex items-center gap-2 text-small font-semibold">
-              <Users className="size-4 text-primary" aria-hidden />
+              <Users className="size-4 text-link" aria-hidden />
               Inactive this week
             </h3>
             <ul className="mt-2 space-y-1 text-small text-muted-foreground">
@@ -114,7 +114,7 @@ export default async function AdminOverviewPage() {
 
           <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
             <h3 className="flex items-center gap-2 text-small font-semibold">
-              <Inbox className="size-4 text-primary" aria-hidden />
+              <Inbox className="size-4 text-link" aria-hidden />
               Ungraded submissions
             </h3>
             <ul className="mt-2 space-y-1 text-small text-muted-foreground">
@@ -128,20 +128,20 @@ export default async function AdminOverviewPage() {
               })}
               {(ungraded ?? []).length === 0 && <li>Nothing pending 🎉</li>}
             </ul>
-            <Link href="/admin/submissions" className="mt-2 inline-block text-caption font-medium text-primary">
+            <Link href="/admin/submissions" className="mt-2 inline-block text-caption font-medium text-link">
               Review all →
             </Link>
           </div>
 
           <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
             <h3 className="flex items-center gap-2 text-small font-semibold">
-              <CircleAlert className="size-4 text-primary" aria-hidden />
+              <CircleAlert className="size-4 text-link" aria-hidden />
               Quick actions
             </h3>
             <ul className="mt-2 space-y-1 text-small">
-              <li><Link href="/admin/students" className="text-primary hover:underline">Add students</Link></li>
-              <li><Link href="/admin/courses" className="text-primary hover:underline">Create a course</Link></li>
-              <li><Link href="/admin/submissions" className="text-primary hover:underline">Grade submissions</Link></li>
+              <li><Link href="/admin/students" className="text-link hover:underline">Add students</Link></li>
+              <li><Link href="/admin/courses" className="text-link hover:underline">Create a course</Link></li>
+              <li><Link href="/admin/submissions" className="text-link hover:underline">Grade submissions</Link></li>
             </ul>
           </div>
         </div>

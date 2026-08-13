@@ -16,7 +16,7 @@ export default function AdminToolsPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Upload className="size-4 text-primary" aria-hidden />
+              <Upload className="size-4 text-link" aria-hidden />
               Bulk student import
             </CardTitle>
           </CardHeader>
@@ -33,7 +33,7 @@ export default function AdminToolsPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <CalendarDays className="size-4 text-primary" aria-hidden />
+              <CalendarDays className="size-4 text-link" aria-hidden />
               Cohort calendar
             </CardTitle>
           </CardHeader>
@@ -45,7 +45,7 @@ export default function AdminToolsPage() {
             <p>
               <Link
                 href="/api/cohort-calendar?startDate=2026-08-20&startTime=09:00&weekdays=6,0&weeks=12&title=Cohort+One"
-                className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
+                className="inline-flex items-center gap-1 font-medium text-link hover:underline"
               >
                 Download sample .ics →
               </Link>

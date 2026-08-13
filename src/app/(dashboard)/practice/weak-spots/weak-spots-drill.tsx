@@ -48,7 +48,7 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
     return (
       <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
         <p className="flex items-center gap-2 text-base font-semibold">
-          <Zap className="size-4 text-primary" aria-hidden />
+          <Zap className="size-4 text-link" aria-hidden />
           Drill complete — {score} / {items.length}
         </p>
         <p className="mt-2 text-small text-muted-foreground">

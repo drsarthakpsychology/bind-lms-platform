@@ -64,7 +64,7 @@ export function WeakSpotsView({ spots, sessions }: { spots: WeakSpot[]; sessions
           </div>
           <Link
             href={s.remedyHref}
-            className="mt-3 inline-flex items-center gap-1 text-small font-medium text-primary hover:underline"
+            className="mt-3 inline-flex items-center gap-1 text-small font-medium text-link hover:underline"
           >
             {s.remedyLabel}
             <ArrowRight className="size-3.5" aria-hidden />

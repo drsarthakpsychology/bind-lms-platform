@@ -25,7 +25,7 @@ export default function PsychSearchPage() {
         href="/tools/psychopharm/learn"
         className="group flex w-full max-w-2xl items-center gap-3 rounded-md border-2 border-foreground bg-card p-4 text-left hard-shadow-sm transition-[transform,box-shadow] active:translate-y-px active:hard-shadow-none"
       >
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
           <BookOpen className="size-5" aria-hidden />
         </span>
         <span className="min-w-0">

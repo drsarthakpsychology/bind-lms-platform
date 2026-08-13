@@ -24,7 +24,7 @@ export function DashboardPracticeSection() {
         <h2 className="text-h2">Practice</h2>
         <Link
           href="/practice"
-          className="inline-flex items-center gap-1 text-small font-medium text-primary hover:underline"
+          className="inline-flex items-center gap-1 text-small font-medium text-link hover:underline"
         >
           All practice tools
           <ArrowRight className="size-3.5" aria-hidden />
@@ -41,7 +41,7 @@ export function DashboardPracticeSection() {
           onClick={() => haptic("tap")}
           className={cn(cardVariants({ variant: "interactive" }), "flex items-center gap-3 p-4")}
         >
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
             <ListChecks className="size-5" aria-hidden />
           </span>
           <span className="min-w-0">
@@ -51,7 +51,7 @@ export function DashboardPracticeSection() {
               New information, new probability. See how experts disagree.
             </span>
           </span>
-          <Zap className="ml-auto size-4 shrink-0 text-primary" aria-hidden />
+          <Zap className="ml-auto size-4 shrink-0 text-link" aria-hidden />
         </Link>
 
         <Link
@@ -59,7 +59,7 @@ export function DashboardPracticeSection() {
           onClick={() => haptic("tap")}
           className={cn(cardVariants({ variant: "interactive" }), "flex items-center gap-3 p-4")}
         >
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
             <Timer className="size-5" aria-hidden />
           </span>
           <span className="min-w-0">
@@ -69,7 +69,7 @@ export function DashboardPracticeSection() {
               One line, your differential, instant expert comparison.
             </span>
           </span>
-          <Zap className="ml-auto size-4 shrink-0 text-primary" aria-hidden />
+          <Zap className="ml-auto size-4 shrink-0 text-link" aria-hidden />
         </Link>
       </div>
 
@@ -92,7 +92,7 @@ export function DashboardPracticeSection() {
             Interview a patient who presents like a real person. The debrief shows you what you missed.
           </span>
         </span>
-        <span className="inline-flex shrink-0 items-center gap-1 text-small font-medium text-primary">
+        <span className="inline-flex shrink-0 items-center gap-1 text-small font-medium text-link">
           Practise
           <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
         </span>

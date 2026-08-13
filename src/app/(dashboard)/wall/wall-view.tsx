@@ -228,7 +228,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
             {posts.map((p) => (
               <li key={p.id} className={`rounded-md border-2 border-border bg-card p-4 ${p.isPinned ? "border-primary" : ""}`}>
                 <div className="flex items-center gap-2 text-caption text-muted-foreground">
-                  {p.isPinned ? <span className="inline-flex items-center gap-1 font-semibold text-primary"><Pin className="size-3.5" aria-hidden /> Pinned</span> : null}
+                  {p.isPinned ? <span className="inline-flex items-center gap-1 font-semibold text-link"><Pin className="size-3.5" aria-hidden /> Pinned</span> : null}
                   {p.isFaculty ? <span className="rounded-full bg-secondary px-2 py-0.5 font-semibold">Faculty</span> : null}
                   {p.isAnonymous ? <span>Anonymous</span> : <span>Cohort member</span>}
                   <span>· {new Date(p.createdAt).toLocaleDateString()}</span>
@@ -238,7 +238,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                       onClick={() => void togglePin(p.id, p.isPinned)}
                       className={cn(
                         "ml-auto rounded-full border px-2 py-0.5 transition-transform active:translate-y-px",
-                        p.isPinned ? "border-primary bg-primary/10 text-primary" : "border-border hover:bg-secondary",
+                        p.isPinned ? "border-primary bg-primary/10 text-link" : "border-border hover:bg-secondary",
                       )}
                       title={p.isPinned ? "Unpin (remove from top)" : "Pin as the Case of the Week"}
                     >
@@ -262,7 +262,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                         onClick={() => void toggleReaction({ postId: p.id }, r.key)}
                         aria-pressed={mine}
                         aria-label={`${r.label} reaction, ${count}`}
-                        className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                        className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
                       >
                         <Icon className="size-3" aria-hidden />
                         {count}
@@ -311,7 +311,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                                 onClick={() => void toggleReaction({ replyId: r.id }, rr.key)}
                                 aria-pressed={mine}
                                 aria-label={`${rr.label} reaction, ${count}`}
-                                className={`inline-flex items-center gap-1 rounded-full border px-1.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                                className={`inline-flex items-center gap-1 rounded-full border px-1.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
                               >
                                 <Icon className="size-3" aria-hidden />
                                 {count}

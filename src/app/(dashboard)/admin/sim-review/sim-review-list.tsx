@@ -80,7 +80,7 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
               onClick={() => { setOpen(isOpen ? null : r.id); haptic("tap"); }}
               className="flex w-full items-center gap-3 px-4 py-3 text-left"
             >
-              <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
                 <Sparkles className="size-4" aria-hidden />
               </span>
               <span className="min-w-0 flex-1">
@@ -91,7 +91,7 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
               </span>
               <span className="text-numeric text-small font-semibold">{overall}<span className="text-muted-foreground">/5</span></span>
               {r.correctedOverall != null ? (
-                <span className="rounded-full bg-primary/10 px-2 py-0.5 text-caption font-medium text-primary">
+                <span className="rounded-full bg-primary/10 px-2 py-0.5 text-caption font-medium text-link">
                   corrected
                 </span>
               ) : (
@@ -124,7 +124,7 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
 
                 {/* faculty comment */}
                 <div className="flex items-start gap-2">
-                  <MessageSquare className="mt-1 size-4 shrink-0 text-primary" aria-hidden />
+                  <MessageSquare className="mt-1 size-4 shrink-0 text-link" aria-hidden />
                   <div className="flex-1">
                     <p className="text-caption font-medium text-muted-foreground">
                       Faculty comment (sits on top of the AI score)

@@ -191,7 +191,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
           <div className="max-h-48 space-y-2 overflow-y-auto rounded-md border border-border bg-background p-3">
             {turns.map((t, i) => (
               <div key={i} className="text-small">
-                <span className={cn("font-semibold", t.role === "patient" ? "text-primary" : "text-muted-foreground")}>
+                <span className={cn("font-semibold", t.role === "patient" ? "text-link" : "text-muted-foreground")}>
                   {t.role === "patient" ? "Patient: " : "You: "}
                 </span>
                 <span className="text-muted-foreground">{t.content}</span>

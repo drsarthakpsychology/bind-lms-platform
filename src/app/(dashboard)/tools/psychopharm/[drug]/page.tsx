@@ -42,7 +42,7 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
         </Link>
         <Link
           href={`/tools/psychopharm/compare?a=${drug}&b=`}
-          className="text-caption font-medium text-primary hover:underline"
+          className="text-caption font-medium text-link hover:underline"
         >
           Compare →
         </Link>

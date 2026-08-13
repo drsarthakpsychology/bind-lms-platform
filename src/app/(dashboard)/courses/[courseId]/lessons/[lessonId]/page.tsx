@@ -237,7 +237,7 @@ export default async function LessonPage({
       {tab === "materials" && (
         <section aria-label="Materials" className="space-y-3">
           <h2 className="text-h2 flex items-center gap-2">
-            <Paperclip className="size-4 text-primary" aria-hidden />
+            <Paperclip className="size-4 text-link" aria-hidden />
             Materials
           </h2>
 
@@ -305,7 +305,7 @@ export default async function LessonPage({
       {tab === "assignment" && assignment && showAdminAssignment && (
         <section aria-label="Assignment" className="space-y-3">
           <h2 className="text-h2 flex items-center gap-2">
-            <FileText className="size-4 text-primary" aria-hidden />
+            <FileText className="size-4 text-link" aria-hidden />
             Assignment
           </h2>
           <AssignmentEditor
@@ -333,7 +333,7 @@ export default async function LessonPage({
       {tab === "assignment" && assignment && !showAdminAssignment && (
         <section aria-label="Assignment" className="space-y-3">
           <h2 className="text-h2 flex items-center gap-2">
-            <FileText className="size-4 text-primary" aria-hidden />
+            <FileText className="size-4 text-link" aria-hidden />
             {assignment.title ?? "Assignment"}
           </h2>
           {assignment.is_published ? (
@@ -390,7 +390,7 @@ export default async function LessonPage({
         showAdminAssignment ? (
           <section aria-label="Assignment" className="space-y-3">
             <h2 className="text-h2 flex items-center gap-2">
-              <FileText className="size-4 text-primary" aria-hidden />
+              <FileText className="size-4 text-link" aria-hidden />
               Assignment
             </h2>
             <AssignmentEditor courseId={courseId} lessonId={lessonId} assignment={null} />

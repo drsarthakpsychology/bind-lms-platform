@@ -261,7 +261,7 @@ export function DebriefView({
                 <span className="italic">{q.quote}</span>
               </p>
               <p className="mt-1 text-small">
-                <span className="font-semibold text-primary">Better: </span>
+                <span className="font-semibold text-link">Better: </span>
                 {q.better}
               </p>
               {sessionId && totalTurns ? (
@@ -439,7 +439,7 @@ function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; curre
 
         {/* attempt 2 */}
         <div className="rounded-md border-2 border-primary bg-primary/5 p-4">
-          <p className="text-caption font-semibold text-primary">Attempt 2 · your rewind</p>
+          <p className="text-caption font-semibold text-link">Attempt 2 · your rewind</p>
           <p className="mt-2 text-small text-muted-foreground">
             This session is your re-attempt from the same point. The patient you just
             interviewed is the same person, in the same state — the difference in how

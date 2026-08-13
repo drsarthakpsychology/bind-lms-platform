@@ -285,7 +285,7 @@ export default async function CourseOverviewPage({
                         {done ? (
                           <CheckCircle2 className="size-4" />
                         ) : isNextAction ? (
-                          <span className="text-xs font-bold text-primary" role="status">NEXT</span>
+                          <span className="text-xs font-bold text-link" role="status">NEXT</span>
                         ) : (
                           <span className="text-xs font-bold">{i + 1}</span>
                         )}
@@ -295,7 +295,7 @@ export default async function CourseOverviewPage({
                         <span className="block truncate text-small font-medium text-foreground">{lesson.title}</span>
                         <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-caption text-muted-foreground">
                           {!done && !isNextAction && <span>Not watched yet</span>}
-                          {isNextAction && <span className="font-medium text-primary">← Start here</span>}
+                          {isNextAction && <span className="font-medium text-link">← Start here</span>}
                        </span>
                      </span>
 
@@ -384,7 +384,7 @@ export default async function CourseOverviewPage({
                           Graded
                        </Badge>
                       )}
-                      {isNextAction && <span className="font-medium text-primary text-caption">← Next</span>}
+                      {isNextAction && <span className="font-medium text-link text-caption">← Next</span>}
                       {!isFutureWeek && <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
                     </>
                   );

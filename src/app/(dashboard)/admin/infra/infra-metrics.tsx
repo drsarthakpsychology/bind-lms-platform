@@ -47,7 +47,7 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
       {/* DB size */}
       <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center gap-2">
-          <Database className="size-4 text-primary" aria-hidden />
+          <Database className="size-4 text-link" aria-hidden />
           <h2 className="text-base font-semibold">Supabase database</h2>
           <span className={cn("ml-auto rounded-full px-2 py-0.5 text-caption font-semibold", dbPct >= WARN_AT * 100 ? "bg-red-100 text-red-700" : dbPct >= 50 ? "bg-amber-100 text-amber-700" : "bg-green-100 text-green-700")}>
             {dbPct}% of 500 MB
@@ -68,7 +68,7 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
       {/* Largest tables */}
       <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center gap-2">
-          <HardDrive className="size-4 text-primary" aria-hidden />
+          <HardDrive className="size-4 text-link" aria-hidden />
           <h2 className="text-base font-semibold">Largest tables</h2>
         </div>
         {(metrics.top_tables ?? []).length === 0 ? (
@@ -88,7 +88,7 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
       {/* AI usage */}
       <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center gap-2">
-          <Zap className="size-4 text-primary" aria-hidden />
+          <Zap className="size-4 text-link" aria-hidden />
           <h2 className="text-base font-semibold">AI usage (7 days)</h2>
         </div>
         {(metrics.ai_usage_7d ?? []).length === 0 ? (

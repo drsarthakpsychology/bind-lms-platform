@@ -82,7 +82,7 @@ export function RolePlayRoom({ sessionId, myRole, myId }: { sessionId: string; m
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <Link href="/practice/role-play" className="text-caption font-medium text-primary hover:underline">
+        <Link href="/practice/role-play" className="text-caption font-medium text-link hover:underline">
           ← Back to sessions
         </Link>
         <span className="flex items-center gap-1 rounded-full bg-secondary px-2 py-0.5 text-caption font-medium text-muted-foreground">

@@ -162,7 +162,7 @@ export default async function DashboardPage() {
                   %
                 </p>
               </div>
-              <span className="inline-flex shrink-0 items-center gap-1 text-small font-medium text-primary">
+              <span className="inline-flex shrink-0 items-center gap-1 text-small font-medium text-link">
                 Resume
                 <ArrowRight className="size-3.5" aria-hidden />
               </span>
@@ -224,7 +224,7 @@ export default async function DashboardPage() {
                   </div>
                 </div>
 
-                <span className="inline-flex items-center gap-1 pt-3 text-small font-medium text-primary">
+                <span className="inline-flex items-center gap-1 pt-3 text-small font-medium text-link">
                   {isComplete ? "Review course" : "Open course"}
                   <ArrowRight className="size-3.5" aria-hidden />
                 </span>

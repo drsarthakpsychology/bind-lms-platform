@@ -117,7 +117,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
           <span className="font-semibold">Hypothesis: </span>{item.hypothesis}
         </p>
         <p className="mt-3 text-small">
-          <span className="font-semibold text-primary">New information: </span>
+          <span className="font-semibold text-link">New information: </span>
           {item.new_information}
         </p>
         <p className="mt-4 text-small font-medium">This becomes:</p>

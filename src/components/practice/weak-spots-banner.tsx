@@ -39,7 +39,7 @@ export async function WeakSpotsBanner(): Promise<React.ReactElement | null> {
           Your three weakest domains: <span className="font-medium">{top3}</span>
         </span>
       </span>
-      <span className="flex shrink-0 items-center gap-1 font-medium text-primary">
+      <span className="flex shrink-0 items-center gap-1 font-medium text-link">
         Generate drill <ArrowRight className="size-3.5" aria-hidden />
       </span>
     </Link>

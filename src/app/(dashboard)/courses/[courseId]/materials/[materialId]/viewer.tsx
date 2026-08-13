@@ -409,7 +409,7 @@ function AudioViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; 
                     className="flex w-full items-center justify-between rounded px-2 py-1 text-xs text-foreground hover:bg-accent"
                   >
                     {r}×
-                    {rate === r && <span className="text-primary">●</span>}
+                    {rate === r && <span className="text-link">●</span>}
                   </button>
                 ))}
               </div>

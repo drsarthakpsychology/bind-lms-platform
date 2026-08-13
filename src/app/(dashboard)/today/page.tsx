@@ -107,7 +107,7 @@ export default async function TodayPage() {
       {/* streak line */}
       <Reveal delay={0.1}>
         <p className="mt-1 flex items-center gap-1.5 text-small text-muted-foreground">
-          <Flame className="size-4 text-primary" aria-hidden />
+          <Flame className="size-4 text-link" aria-hidden />
           {currentStreak > 0
             ? `${currentStreak} days in a row — the practice is compounding.`
             : "Every day you practise, a future client is better served."}
@@ -140,7 +140,7 @@ export default async function TodayPage() {
               className={cn(
                 "flex size-9 shrink-0 items-center justify-center rounded-md border-2 text-sm font-black",
                 activeSession
-                  ? "border-border bg-secondary text-primary"
+                  ? "border-border bg-secondary text-link"
                   : "border-primary bg-primary text-primary-foreground"
               )}
             >
@@ -155,7 +155,7 @@ export default async function TodayPage() {
               </span>
             </span>
           </span>
-          <ArrowRight className="size-4 shrink-0 text-primary" aria-hidden />
+          <ArrowRight className="size-4 shrink-0 text-link" aria-hidden />
         </Link>
       ) : null}
       </Reveal>
@@ -174,7 +174,7 @@ export default async function TodayPage() {
         </div>
         <p className="mt-3 text-h3 font-semibold">{primary.title}</p>
         <p className="mt-1 text-small text-muted-foreground">{primary.reason}</p>
-        <span className="mt-4 inline-flex items-center gap-1 text-small font-medium text-primary">
+        <span className="mt-4 inline-flex items-center gap-1 text-small font-medium text-link">
           {primary.cta} <ArrowRight className="size-4" aria-hidden />
         </span>
       </Link>
@@ -187,7 +187,7 @@ export default async function TodayPage() {
           href="/practice/two-minute-clinic"
           className="flex h-full items-center gap-3 rounded-lg border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
         >
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
             <Zap className="size-4" aria-hidden />
           </span>
           <span>
@@ -201,7 +201,7 @@ export default async function TodayPage() {
           href="/practice/consulting-room"
           className="flex h-full items-center gap-3 rounded-lg border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
         >
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
             <Mic2 className="size-4" aria-hidden />
           </span>
           <span>
@@ -214,7 +214,7 @@ export default async function TodayPage() {
 
       <Link
         href="/practice"
-        className="mt-6 inline-flex items-center gap-1 text-small font-medium text-primary hover:underline"
+        className="mt-6 inline-flex items-center gap-1 text-small font-medium text-link hover:underline"
       >
         All practice tools <ArrowRight className="size-3.5" aria-hidden />
       </Link>

@@ -128,7 +128,7 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
                     )}
                   >
                     <div className="flex items-center gap-3">
-                      <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-primary">
+                      <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
                         <Icon className="size-4" aria-hidden />
                       </span>
                       <span className="text-caption font-semibold tracking-wide text-muted-foreground">{tool.verb}</span>

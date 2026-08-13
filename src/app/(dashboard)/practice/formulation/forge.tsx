@@ -93,7 +93,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: typeof SE
                 onClick={() => placeSelected(p)}
                 className="min-h-[120px] rounded-md border-2 border-dashed border-border bg-card p-3 text-left transition-transform active:translate-y-px"
               >
-                <span className="text-caption font-semibold uppercase text-primary">{p}</span>
+                <span className="text-caption font-semibold uppercase text-link">{p}</span>
                 <span className="mt-1 flex flex-col gap-1">
                   {placed(p).map((a) => {
                     const f = seed.factors.find((x) => x.id === a.factorId);

@@ -92,7 +92,7 @@ export default async function ModulesPage() {
                       Locked — {reason}
                     </p>
                   ) : unlockedByGrant ? (
-                    <p className="mt-0.5 text-caption text-primary">Unlocked for you (special grant)</p>
+                    <p className="mt-0.5 text-caption text-link">Unlocked for you (special grant)</p>
                   ) : (
                     <p className="mt-0.5 text-caption text-muted-foreground">
                       {isScheduled ? "Scheduled — coming soon" : "Open — dive in"}

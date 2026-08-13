@@ -365,7 +365,7 @@ export function MaterialUploader({
       >
         <UploadCloud className="size-8 text-muted-foreground" aria-hidden />
         <p className="text-small font-medium text-foreground">
-          Drag files here or <span className="text-primary">browse</span>
+          Drag files here or <span className="text-link">browse</span>
         </p>
         <p className="text-caption text-muted-foreground">
           PDF, audio (MP3/M4A/WAV), and images. Up to 100 MB each.
@@ -439,7 +439,7 @@ export function MaterialUploader({
             <li key={p.clientId} className="rounded-md border-2 border-border bg-card p-3">
               <div className="flex items-center gap-3">
                 {p.status === "done" ? (
-                  <Check className="size-4 shrink-0 text-primary" aria-hidden />
+                  <Check className="size-4 shrink-0 text-link" aria-hidden />
                 ) : p.status === "error" ? (
                   <X className="size-4 shrink-0 text-status-alert-fg" aria-hidden />
                 ) : (
@@ -545,7 +545,7 @@ export function MaterialUploader({
                   type="button"
                   onClick={() => startRename(m.id, m.title)}
                   title="Click to rename"
-                  className="min-w-0 flex-1 truncate text-left text-small font-medium text-foreground hover:text-primary"
+                  className="min-w-0 flex-1 truncate text-left text-small font-medium text-foreground hover:text-link"
                 >
                   {m.title}
                 </button>

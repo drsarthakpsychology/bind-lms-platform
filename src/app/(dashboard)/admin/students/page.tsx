@@ -46,7 +46,7 @@ export default async function StudentsPage() {
       <Card variant="raised">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <UserPlus className="size-4 text-primary" aria-hidden />
+            <UserPlus className="size-4 text-link" aria-hidden />
             Add a student
           </CardTitle>
         </CardHeader>

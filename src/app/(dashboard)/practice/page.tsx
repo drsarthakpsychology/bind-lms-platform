@@ -161,7 +161,7 @@ export default async function PracticeHubPage() {
           href={recommendation.href}
           className="mb-6 block rounded-md border-2 border-primary bg-primary/5 p-4 hard-shadow-sm transition-transform hover:-translate-y-0.5 active:translate-y-px"
         >
-          <p className="text-caption font-semibold text-primary">Recommended for you</p>
+          <p className="text-caption font-semibold text-link">Recommended for you</p>
           <div className="mt-1 flex items-center justify-between gap-3">
             <div>
               <p className="text-base font-semibold">{recommendation.title}</p>
