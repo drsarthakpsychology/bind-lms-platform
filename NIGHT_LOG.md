@@ -1,3 +1,8 @@
+## 2026-08-14 — DIALOG/SHEET CLOSE FOCUS-VISIBLE (queue follow-up, e24305b)
+
+- **Close buttons ring on keyboard focus only** (`ui/dialog.tsx`, `ui/sheet.tsx`): `focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden` → `focus-visible:` — the ring no longer flashes on mouse clicks, matching buttons/inputs/tabs across the system. Verified intentional and left as-is: Radix menu item `focus:bg-accent` (roving focus is keyboard-only) and the voice-input textarea `focus:ring` (standard input UX). Final SHARED-CHROME queue item — queue now empty. QUEUE item ticked.
+- Gate: lint 0/0, tsc clean, 395 tests, next build exit 0.
+
 ## 2026-08-14 — ROOT ERROR BOUNDARY + SHARED ERRORSTATE (queue follow-up, 597dcb7)
 
 - **No more bare Next.js fallbacks**: the landing page, /login, /enquire, /expired, and /verify/[certificateId] had no error.tsx. New root `src/app/error.tsx` boundary catches every public route without a closer boundary — full-viewport centered, rendered inside the root layout so theme + fonts stay intact (chose root error.tsx over global-error.tsx deliberately: global-error drops the layout, fonts, and theme). /(dashboard) keeps its closer boundary; an AppShell-level throw now bubbles to the root boundary instead of the bare fallback.
