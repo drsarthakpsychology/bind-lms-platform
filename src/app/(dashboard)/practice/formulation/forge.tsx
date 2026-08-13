@@ -10,9 +10,9 @@ import { FORMULATION_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practi
  * Stage 1: sort factor cards. Mobile: tap a card to select, tap a bucket to
  * place (drag-and-drop has a tap fallback). Stage 2: narrative. Stage 3: diff.
  */
-export function FormulationForge() {
+export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: typeof SEED_FORMULATION }) {
   const [attempt, setAttempt] = React.useState<Array<{ factorId: string; bucket: FiveP | null }>>(
-    SEED_FORMULATION.factors.map((f) => ({ factorId: f.id, bucket: null })),
+    seed.factors.map((f) => ({ factorId: f.id, bucket: null })),
   );
   const [selected, setSelected] = React.useState<string | null>(null);
   const [stage, setStage] = React.useState<1 | 2 | 3 | 4>(1);
@@ -27,8 +27,8 @@ export function FormulationForge() {
     const completedAt = new Date();
     const payload = buildFormulationAttemptPayload(
       {
-        caseId: SEED_FORMULATION.id,
-        caseTitle: SEED_FORMULATION.title,
+        caseId: seed.id,
+        caseTitle: seed.title,
         sortedFactors: attempt,
         narrative,
         diff,
@@ -57,9 +57,9 @@ export function FormulationForge() {
   }
 
   const placed = (bucket: FiveP) => attempt.filter((a) => a.bucket === bucket);
-  const unplaced = SEED_FORMULATION.factors.filter((f) => !attempt.find((a) => a.factorId === f.id)?.bucket);
+  const unplaced = seed.factors.filter((f) => !attempt.find((a) => a.factorId === f.id)?.bucket);
   const sorted = attempt.filter((a) => a.bucket !== null);
-  const score = scoreSort(sorted, SEED_FORMULATION.factors);
+  const score = scoreSort(sorted, seed.factors);
 
   return (
     <div className="space-y-4">
@@ -82,7 +82,7 @@ export function FormulationForge() {
       {/* STAGE 1: sort */}
       {stage === 1 ? (
         <div className="space-y-4">
-          <p className="text-small text-muted-foreground">{SEED_FORMULATION.prompt}</p>
+          <p className="text-small text-muted-foreground">{seed.prompt}</p>
 
           {/* the 5P grid */}
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-5">
@@ -96,7 +96,7 @@ export function FormulationForge() {
                 <span className="text-caption font-semibold uppercase text-primary">{p}</span>
                 <span className="mt-1 flex flex-col gap-1">
                   {placed(p).map((a) => {
-                    const f = SEED_FORMULATION.factors.find((x) => x.id === a.factorId);
+                    const f = seed.factors.find((x) => x.id === a.factorId);
                     return (
                       <span key={a.factorId} className="rounded border border-border bg-background px-2 py-1 text-caption">
                         {f?.text}
@@ -112,7 +112,7 @@ export function FormulationForge() {
           <div>
             <p className="text-caption text-muted-foreground">Tap a card, then tap a bucket. Or drag.</p>
             <div className="mt-2 flex flex-wrap gap-2">
-              {SEED_FORMULATION.factors.map((f) => {
+              {seed.factors.map((f) => {
                 const placedIn = attempt.find((a) => a.factorId === f.id)?.bucket;
                 const isSel = selected === f.id;
                 return (
@@ -161,7 +161,7 @@ export function FormulationForge() {
           />
           <button
             type="button"
-            onClick={() => { setDiff(diffNarratives(narrative, SEED_FORMULATION.modelNarrative)); setStage(3); haptic("tap"); }}
+            onClick={() => { setDiff(diffNarratives(narrative, seed.modelNarrative)); setStage(3); haptic("tap"); }}
             disabled={narrative.trim().length < 40}
             className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
           >
@@ -176,7 +176,7 @@ export function FormulationForge() {
           <h2 className="text-base font-semibold">Your formulation vs the model</h2>
           <div className="rounded-md border border-border bg-background p-3 text-small">
             <span className="font-semibold text-muted-foreground">The model says: </span>
-            <span className="italic">{SEED_FORMULATION.modelNarrative}</span>
+            <span className="italic">{seed.modelNarrative}</span>
           </div>
           <p className="text-small text-muted-foreground">
             Words the model used that you missed: <span className="text-amber-700">{diff.missing.join(", ") || "(none — excellent)"}</span>

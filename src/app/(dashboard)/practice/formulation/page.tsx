@@ -1,17 +1,50 @@
+import { createClient } from "@/lib/supabase/server";
 import { FormulationForge } from "./forge";
 import { PeerWall } from "./peer-wall";
 import { requireFeature } from "@/lib/flags";
+import type { FormulationFactor } from "@/lib/practice/formulation";
 
 export const dynamic = "force-dynamic";
+
+interface FormulationCaseRow {
+  slug: string;
+  title: string;
+  prompt: string;
+  factors: unknown;
+  model_answer: unknown;
+}
 
 /**
  * /practice/formulation — Formulation Forge (Part 6.2).
  * Stage 1: sort factor cards into the 5P grid (with distractors).
  * Stage 2: write the narrative. Stage 3: diff against the model — a diff, not a grade.
+ * Stage 4: formulate from your own Consulting Room transcript.
  * Plus the anonymised peer-critique wall (IDEAS: Formulation Wall).
+ *
+ * The scaffolded case is read from the live formulation_cases table (content
+ * wiring); SEED_FORMULATION is the fallback when the DB is empty.
  */
 export default async function FormulationPage() {
   await requireFeature("formulation");
+  const supabase = await createClient();
+  const { data: cases } = await supabase
+    .from("formulation_cases")
+    .select("slug, title, prompt, factors, model_answer")
+    .eq("status", "published")
+    .limit(1);
+
+  const row = (cases?.[0] ?? null) as FormulationCaseRow | null;
+  const seed = row
+    ? {
+        id: row.slug,
+        title: row.title,
+        prompt: row.prompt,
+        factors: (Array.isArray(row.factors) ? row.factors : []) as FormulationFactor[],
+        modelNarrative:
+          (row.model_answer as { narrative?: string } | null)?.narrative ?? "",
+      }
+    : undefined;
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <p className="text-eyebrow text-muted-foreground">Formulation Forge</p>
@@ -22,7 +55,7 @@ export default async function FormulationPage() {
       </p>
 
       <div className="mt-6">
-        <FormulationForge />
+        <FormulationForge seed={seed} />
       </div>
 
       <div className="mt-10">
