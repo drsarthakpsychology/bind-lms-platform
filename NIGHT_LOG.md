@@ -105,6 +105,36 @@ such route to `requireSession()`.
 - Gate: lint 0/0, `tsc --noEmit` clean, 392 tests pass, `next build` exit 0.
   Shipped in commit: 54b3356
 
+## 2026-08-14 — DESIGN-SKILLS PASS applied codebase-wide + redeployed
+
+User supplied 5 skill repos (impeccable, perception-first-design, taste-skill,
+gstack, open-design) + the emilkowalski-motion skill. Installed all into
+.claude/skills/ (f6f0091), read them, then dispatched a 4-agent team on
+disjoint surfaces — each ran PFD Mode-1 evaluation + impeccable polish +
+emilkowalski motion discipline on its slice.
+
+What shipped (all gate-green, 395 tests, build exit 0):
+- Public (landing/login/enquire): mobile-nav focus trap + scroll lock,
+  parallax ≤12px contract, enquire success-state card cleanup, error
+  token colors, dead onSubmit removed.
+- Dashboard/courses/today: dead Published/Draft badge removed, card-radius
+  unification to tokens, /today two-resume hierarchy resolved (chain card
+  goes quiet when the session card is primary), future-week rows now
+  non-navigable divs (no href="#" scroll-to-top).
+- Practice/wall/reflect/record/passport: raw Tailwind status hues → semantic
+  status tokens (dark-mode fix), wall emoji → lucide Pin, textarea
+  aria-labels, heading-size consistency, record page container fix.
+- Chrome/components/states: root global-error.tsx + (dashboard)/error.tsx +
+  shared ErrorState (no more bare fallbacks), dialog/sheet focus-visible
+  rings, bottom-tab active chip, admin banner tokens, practice-groups
+  stagger capped.
+- Homepage copy: "Kavya Bothra is the person behind the initiative" →
+  "Kavya Bothra is building the programme." (user: sounded like over-claiming).
+
+Redeployed to production (aliased vibhapsychology.com) + verified live:
+homepage serves the new copy (0 em dashes), auth redirects work, sitemap on
+the custom domain.
+
 ## 2026-08-14 — audit vuln fixes + LIVE DEPLOY (all green)
 
 ### Vuln fixes from the audits (user: "fix bugs and vulns found in security audits")
