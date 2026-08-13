@@ -4,6 +4,7 @@ import { createClient, createAdminClient } from "@/lib/supabase/server";
 
 import { PageHeader } from "@/components/design-system/page-header";
 import { StatCard } from "@/components/design-system/stat-card";
+import { Reveal } from "@/components/motion/reveal";
 
 export default async function AdminOverviewPage() {
   const supabase = await createClient();
@@ -60,34 +61,41 @@ export default async function AdminOverviewPage() {
 
   return (
     <div className="space-y-8">
-      <PageHeader
-        title="Overview"
-        description="A snapshot of your platform at a glance."
-      />
+      <Reveal delay={0.05}>
+        <PageHeader
+          title="Overview"
+          description="A snapshot of your platform at a glance."
+        />
+      </Reveal>
 
       {dbPct >= 70 ? (
-        <Link href="/admin/infra" className="flex items-center gap-3 rounded-md border-2 border-red-500 bg-red-50 p-3">
-          <Database className="size-4 shrink-0 text-red-600" aria-hidden />
-          <span className="text-small font-medium text-red-800">
-            Free-tier database at {dbPct}% of 500 MB — check infrastructure headroom.
-          </span>
-        </Link>
+        <Reveal delay={0.1}>
+          <Link href="/admin/infra" className="flex items-center gap-3 rounded-md border-2 border-red-500 bg-red-50 p-3">
+            <Database className="size-4 shrink-0 text-red-600" aria-hidden />
+            <span className="text-small font-medium text-red-800">
+              Free-tier database at {dbPct}% of 500 MB — check infrastructure headroom.
+            </span>
+          </Link>
+        </Reveal>
       ) : null}
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {stats.map((stat) => (
-          <StatCard
-            key={stat.label}
-            label={stat.label}
-            value={stat.value}
-            href={stat.href}
-            icon={stat.icon}
-            accent={stat.accent}
-          />
+        {stats.map((stat, i) => (
+          <Reveal key={stat.label} delay={0.15 + i * 0.05} className="h-full">
+            <StatCard
+              label={stat.label}
+              value={stat.value}
+              href={stat.href}
+              icon={stat.icon}
+              accent={stat.accent}
+              className="h-full"
+            />
+          </Reveal>
         ))}
       </div>
 
       {/* Action items — a to-do list, not analytics. */}
+      <Reveal delay={0.35}>
       <section aria-label="Needs attention" className="space-y-3">
         <h2 className="text-h2">Needs attention</h2>
         <div className="grid gap-4 lg:grid-cols-3">
@@ -138,6 +146,7 @@ export default async function AdminOverviewPage() {
           </div>
         </div>
       </section>
+      </Reveal>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 {
   "permissions": {
-    "defaultMode": "bypassPermissions",
     "allow": [
       "Read",
       "Grep",
@@ -23,7 +22,8 @@
       "Edit(src/lib/media/**)",
       "Edit(src/proxy.ts)",
       "Edit(.github/workflows/**)"
-    ]
+    ],
+    "defaultMode": "bypassPermissions"
   },
   "hooks": {
     "PreToolUse": [
@@ -81,5 +81,10 @@
         ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "42crunch-api-security-testing@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "data-engineering@claude-plugins-official": true
   }
 }

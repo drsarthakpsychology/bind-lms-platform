@@ -9,6 +9,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { logout } from "@/lib/auth/actions";
 import { BRAND } from "@/lib/brand";
+import { VibhaMark } from "@/components/brand/vibha-logo";
 
 export type SidebarMode = "admin" | "student";
 
@@ -42,9 +43,7 @@ export function AppSidebar({
           href={isAdminView ? "/admin" : "/dashboard"}
           className="flex items-center gap-2 font-bold tracking-tight"
         >
-          <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary text-sm font-black text-primary-foreground">
-            {BRAND.shortName.charAt(0)}
-          </span>
+          <VibhaMark size={28} className="shrink-0 text-foreground" />
           <span className="text-base">{BRAND.shortName}</span>
         </Link>
         {/* Ask the Syllabus trigger — the palette also opens via ⌘K. */}

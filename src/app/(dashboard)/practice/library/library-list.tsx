@@ -122,7 +122,7 @@ export function LibraryList({
             {docs.map((d) => {
               const open = openId === d.id;
               return (
-                <li key={d.id} className="rounded-md border-2 border-border bg-card">
+                <li key={d.id} className="overflow-hidden rounded-md border-2 border-border bg-card">
                   <button
                     type="button"
                     onClick={() => {
@@ -130,7 +130,7 @@ export function LibraryList({
                       haptic("tap");
                       if (!open) void loadNotes(d.id);
                     }}
-                    className="w-full px-4 py-3 text-left"
+                    className="w-full px-4 py-3 text-left transition-colors duration-fast ease-snappy hover:bg-accent/40"
                   >
                     <span className="block text-small font-medium">{d.title}</span>
                     <span className="mt-0.5 block text-caption text-muted-foreground">

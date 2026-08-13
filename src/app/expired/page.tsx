@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hourglass } from "lucide-react";
-import { BRAND } from "@/lib/brand";
+import { VibhaWordmark } from "@/components/brand/vibha-logo";
 import { Button } from "@/components/ui/button";
+
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -12,12 +13,7 @@ export default function ExpiredPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background px-5 py-8">
       <div className="flex items-center justify-between">
-        <span className="flex items-center gap-2 font-bold tracking-tight text-foreground">
-          <span className="flex size-7 items-center justify-center rounded-sm bg-primary text-sm font-black text-primary-foreground">
-            {BRAND.shortName.charAt(0)}
-          </span>
-          <span className="text-lg">{BRAND.shortName}</span>
-        </span>
+        <VibhaWordmark size={30} />
       </div>
 
       <div className="flex flex-1 items-center justify-center">

@@ -9,6 +9,7 @@ import { SidebarGate } from "@/components/navigation/sidebar-gate";
 import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
 import { PaletteHost } from "@/components/search/palette-host";
 import { BRAND } from "@/lib/brand";
+import { VibhaMark } from "@/components/brand/vibha-logo";
 
 /**
  * Application shell: persistent desktop sidebar + compact mobile top bar with a
@@ -75,9 +76,7 @@ export function AppShell({
             href={mode === "admin" && role === "admin" ? "/admin" : "/dashboard"}
             className="flex items-center gap-2 font-bold tracking-tight"
           >
-            <span className="flex size-6 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground">
-              {BRAND.shortName.charAt(0)}
-            </span>
+            <VibhaMark size={24} className="shrink-0 text-foreground" />
             <span className="text-base">{BRAND.shortName}</span>
           </Link>
           <MobileNav items={items} viewModeSwitch={viewModeSwitch} />

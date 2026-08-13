@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { Download } from "lucide-react";
 import { Passport, type PassportRow } from "./passport";
 import { requireFeature } from "@/lib/flags";
+import { Reveal } from "@/components/motion/reveal";
 
 export const dynamic = "force-dynamic";
 
@@ -49,26 +50,30 @@ export default async function PassportPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Skills passport</p>
-      <h1 className="mt-1 text-h1">Your competencies, evidenced</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        Eleven competencies across the RCI-track framework. Every tagged supervision hour and
-        practice tool adds evidence. Signed-off hours here underpin your certificate.
-      </p>
+      <Reveal delay={0.05}>
+        <p className="text-eyebrow text-muted-foreground">Skills passport</p>
+        <h1 className="mt-1 text-h1">Your competencies, evidenced</h1>
+        <p className="mt-1 text-small text-muted-foreground">
+          Eleven competencies across the RCI-track framework. Every tagged supervision hour and
+          practice tool adds evidence. Signed-off hours here underpin your certificate.
+        </p>
+      </Reveal>
 
-      <div className="mt-4">
-        <a
-          href="/api/practice/passport/pdf"
-          className="inline-flex items-center gap-2 rounded-md border-2 border-border bg-card px-4 py-2 text-small font-semibold hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
-        >
-          <Download className="size-4" aria-hidden />
-          Download passport PDF
-        </a>
-      </div>
+      <Reveal delay={0.1}>
+        <div className="mt-4">
+          <a
+            href="/api/practice/passport/pdf"
+            className="inline-flex items-center gap-2 rounded-md border-2 border-border bg-card px-4 py-2 text-small font-semibold hard-shadow-sm transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md active:translate-y-px active:hard-shadow-none"
+          >
+            <Download className="size-4" aria-hidden />
+            Download passport PDF
+          </a>
+        </div>
+      </Reveal>
 
-      <div className="mt-6">
+      <Reveal delay={0.15} className="mt-6">
         <Passport rows={rows} />
-      </div>
+      </Reveal>
     </div>
   );
 }

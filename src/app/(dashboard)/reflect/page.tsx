@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { Reveal } from "@/components/motion/reveal";
 import { JournalView } from "./journal-view";
 
 export const dynamic = "force-dynamic";
@@ -24,13 +25,15 @@ export default async function ReflectPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Reflect</p>
-      <h1 className="mt-1 text-h1">Your journal</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        Private to you. Faculty cannot read your entries unless you share one.
-      </p>
+      <Reveal delay={0.05}>
+        <p className="text-eyebrow text-muted-foreground">Reflect</p>
+        <h1 className="mt-1 text-h1">Your journal</h1>
+        <p className="mt-1 text-small text-muted-foreground">
+          Private to you. Faculty cannot read your entries unless you share one.
+        </p>
+      </Reveal>
 
-      <div className="mt-6">
+      <Reveal delay={0.15} className="mt-6">
         <JournalView
           initialEntries={(entries ?? []).map((e) => ({
             id: e.id,
@@ -39,7 +42,7 @@ export default async function ReflectPage() {
             createdAt: e.created_at,
           }))}
         />
-      </div>
+      </Reveal>
     </div>
   );
 }
