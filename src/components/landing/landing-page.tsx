@@ -41,7 +41,7 @@ function CaseFragment({
   return (
     <div
       className={cn(
-        "min-w-0 rounded-md border-2 border-foreground bg-card p-4 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-1 hover:hard-shadow-md",
+        "min-w-0 rounded-md border-2 border-foreground bg-card p-4 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md",
         className,
       )}
     >
@@ -189,7 +189,7 @@ function ThreeIdeas() {
       <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
         {ideas.map((idea, i) => (
           <Reveal key={idea.eyebrow} delay={i * 0.08} className={cn(i === 1 && "md:mt-10", i === 2 && "md:mt-4")}>
-            <div className="rounded-md border-2 border-foreground bg-card p-6 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-1 hover:hard-shadow-md">
+            <div className="rounded-md border-2 border-foreground bg-card p-6 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md">
               <p className="text-eyebrow text-primary">{idea.eyebrow}</p>
               <h3 className="mt-2 min-w-0 break-words text-xl font-bold text-foreground">{idea.title}</h3>
               <p className="mt-3 min-w-0 break-words text-small leading-relaxed text-muted-foreground">{idea.body}</p>
@@ -265,19 +265,19 @@ function Footer() {
         <nav className="flex flex-wrap items-center gap-5 text-caption text-muted-foreground" aria-label="Footer">
           <Link
             href="#about"
-            className="transition-[color,transform] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
+            className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
           >
             About
           </Link>
           <Link
             href="/login"
-            className="transition-[color,transform] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
+            className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
           >
             Login
           </Link>
           <Link
             href="/enquire"
-            className="transition-[color,transform] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
+            className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
           >
             Enquire
           </Link>
