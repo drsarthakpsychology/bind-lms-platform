@@ -1,3 +1,14 @@
+## 2026-08-14 — SHARED CHROME + COMPONENTS + STATES (PFD / impeccable / emilkowalski-motion)
+
+Design-director pass over the Operate-mode shared shell. Neobrutalist pastel preserved; token/API surfaces untouched; no pages under /(dashboard) edited by this slice. Shipped in commit be846f6 (swept into the concurrent design-direction commit).
+
+- **New `(dashboard)/error.tsx` error boundary** — the app previously had ZERO error.tsx files; any runtime error showed Next's bare unstyled fallback (PFD L3 trust). Now a calm, on-brand card INSIDE the AppShell: title, trust-preserving copy, `Try again` via Next 16.2 `unstable_retry` (reset is deprecated), and the error `digest` as a support reference. Keyboard-reachable.
+- **Off-token status colors → semantic tokens** (L2 fluency + dark-mode bug): practice-group chips `bg-green-100/amber-100` → `bg-status-success-bg/status-pending-bg`; weak-spots banner `bg-amber-50 text-amber-700` → `bg-status-pending-bg text-status-pending-fg`. Raw palette stayed near-white in dark mode (blinding); tokens flip correctly and match badge/alert.
+- **StatCard accent contrast** (design-system/stat-card.tsx): dead `accent ? "text-foreground" : "text-foreground"` ternary was light-on-peach in dark mode (~2:1). Now accent → `text-primary-foreground` (ink-on-peach 8.98:1) for value/icon, `/80` for the eyebrow label.
+- **Focus-ring unification**: card interactive variant, StatCard link, and practice card link all now use ONE focus indicator (`outline-none` + `focus-visible:ring-[3px] ring-ring/60`); the first two previously doubled the global outline with the ring.
+- **Bottom tab bar**: added `aria-current="page"` on the active tab (was missing), `transition-colors duration-fast ease-snappy` on the active snap (was instant), and `hover:text-foreground` on inactive tabs.
+- Gate: lint 0/0, `tsc --noEmit` clean, 395 tests pass, `next build` exit 0 (verified twice — once by me after the concurrent agent's build finished).
+
 ## 2026-08-14 — DESIGN-DIRECTION POLISH: dashboard + course surfaces (PFD / impeccable / motion)
 
 Three skills (PFD, impeccable, emilkowalski-motion) applied to the Operate/Read surfaces — dashboard home, /today, and the course week-path. Preserved the neobrutalist pastel design, all data-fetching, auth, and business logic — UI-only edits, gate-verified.
