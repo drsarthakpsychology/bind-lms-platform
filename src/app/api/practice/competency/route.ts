@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { createClient, createAdminClient } from "@/lib/supabase/server";
+import { requireSession } from "@/lib/auth/guards";
+import { createAdminClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -23,11 +24,9 @@ const schema = z.object({
  * Owner-scoped server-side; RLS on competency_events also enforces it.
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   const allowed = await rateLimit(`competency:${user.id}`, 60);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
 import type { MedicationDocument } from "@/lib/psychopharm/document";
 
@@ -15,8 +16,8 @@ import type { MedicationDocument } from "@/lib/psychopharm/document";
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   const body = (await req.json().catch(() => ({}))) as { drug_id?: string; reason?: string };
   if (!body.drug_id) return NextResponse.json({ error: "drug_id required" }, { status: 400 });

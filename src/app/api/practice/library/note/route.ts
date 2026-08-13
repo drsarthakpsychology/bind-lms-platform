@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { requireSession } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -18,10 +19,9 @@ const schema = z.object({
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   const allowed = await rateLimit(`lib:note:${user.id}`, 40);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });
@@ -42,10 +42,9 @@ export async function POST(req: Request) {
 
 export async function GET(req: Request) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   const documentId = new URL(req.url).searchParams.get("documentId");
   if (!documentId) return NextResponse.json({ error: "documentId required" }, { status: 400 });

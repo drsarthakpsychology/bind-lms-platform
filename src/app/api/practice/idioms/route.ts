@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -12,10 +13,9 @@ export const runtime = "nodejs";
  */
 export async function GET() {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   const allowed = await rateLimit(`idioms:${user.id}`, 60);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });

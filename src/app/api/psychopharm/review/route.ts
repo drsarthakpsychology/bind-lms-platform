@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
 
 /** Parse "0.5–2 mg", "0.5-2", or a single "12.5 mg" into band columns. */
@@ -43,13 +44,9 @@ function applyBandEdit(after: Record<string, unknown>, raw: string) {
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  }
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   // Admin gate via RLS: the client will error on write if the user isn't admin.
   const body = (await req.json().catch(() => ({}))) as {

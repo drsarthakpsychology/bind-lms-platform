@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
 import { aiChat } from "@/lib/ai/client";
 import { guardStudentCall } from "@/lib/ai/guards";
@@ -20,10 +21,9 @@ const helpSchema = z.object({
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   const allowed = await rateLimit(`journal-help:${user.id}`, 10);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });

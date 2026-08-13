@@ -212,15 +212,14 @@ function WhoBuilds() {
           </h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
             <p>
-              VIBHA School of Psychology is the training arm of{" "}
-              <span className="font-semibold text-foreground">{BRAND.parent}</span>. The team behind
-              it is small, and it is easy to name.
+              VIBHA School of Psychology is a new initiative. The team behind it
+              is small, and it is easy to name.
             </p>
             <p>
               <span className="font-semibold text-foreground">{BRAND.lead}</span> is the clinical
               lead. He is the psychiatrist the school is built around.
             </p>
-            <p>Kavya Bothra is one of the people building the programme.</p>
+            <p>Kavya Bothra is the person behind the initiative.</p>
             <p>There are guest lectures as well, so the teaching never rests on a single voice.</p>
           </div>
         </Reveal>
@@ -283,7 +282,7 @@ function Footer() {
           </Link>
         </nav>
         <p className="text-caption text-muted-foreground">
-          © 2026 {BRAND.name} · {BRAND.parent}
+          © 2026 {BRAND.name}
         </p>
       </div>
     </footer>

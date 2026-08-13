@@ -13,6 +13,14 @@ vi.mock("@/lib/supabase/server", () => ({
   createClient: () => supabase,
 }));
 
+vi.mock("@/lib/auth/guards", () => ({
+  requireSession: vi.fn(async () => {
+    const { data } = await supabase.auth.getUser();
+    if (!data.user) return null;
+    return { id: data.user.id, email: null, role: "student", active_session_token: null, expires_at: null };
+  }),
+}));
+
 vi.mock("@/lib/rate-limit", () => ({
   rateLimit: vi.fn().mockResolvedValue(true),
 }));

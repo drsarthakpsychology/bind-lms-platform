@@ -84,6 +84,10 @@ Every item: paste → something switches on → verify with one command. Free fi
   (a single `ALTER ... ENABLE ROW LEVEL SECURITY`; additive, no policies). Full
   report: `docs/SECURITY_AUDIT.md`. Everything else audited clean (secrets,
   middleware, RLS, headers, deps).
+- **Auth-consistency sweep DONE**: every API route that used bare
+  `auth.getUser()` now routes through `requireSession()` (profiles row + expiry
+  + concurrent-session token). 38 routes hardened. `sim/debrief|rewind|turn|
+  session` were intentionally left JWT-only this round (see QUEUE).
 
 ## Reminder (already done this session)
 - MHA 2017 full text: fetched 409 KB into `scripts/corpus/raw/statutes/` (gitignored).

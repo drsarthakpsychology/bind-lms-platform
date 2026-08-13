@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { createClient } from "@/lib/supabase/server";
+import { requireSession } from "@/lib/auth/guards";
 import { synthesize } from "@/lib/voice/synthesize";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -21,11 +21,9 @@ const schema = z.object({
  * the app is fully demoable with zero keys.
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   const allowed = await rateLimit(`voice:synth:${user.id}`, 30);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });

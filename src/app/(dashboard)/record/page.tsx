@@ -29,7 +29,8 @@ export default async function RecordPage() {
   const weekLabel = monday.toISOString().slice(0, 10);
 
   const [{ data: entries }, { data: competencies }, { data: compRows }, { data: checkin }] = await Promise.all([
-    supabase.from("supervision_entries").select("*").eq("user_id", user.id).order("date", { ascending: false }),
+    // Explicit columns (egress: supervision_entries carries more than the log shows).
+    supabase.from("supervision_entries").select("id, activity, hours, date, supervisor_name, supervisor_email, competency_id, signoff_status").eq("user_id", user.id).order("date", { ascending: false }),
     supabase.from("competencies").select("key, name").order("display_order"),
     supabase.from("competencies").select("id, key, name"),
     supabase

@@ -1,3 +1,37 @@
+## 2026-08-14 — AUTH CONSISTENCY: bare `auth.getUser()` → full `requireSession()`
+
+Security-audit follow-up. The app's authoritative session gate is
+`requireSession()` (`@/lib/auth/guards`) — it validates the Supabase user AND
+the `profiles` row, account expiry (`expires_at`, alumni exempt), and the
+concurrent-session token. Many API routes only called `supabase.auth.getUser()`
+(JWT-only), skipping expiry + concurrent-session enforcement. Converted every
+such route to `requireSession()`.
+
+- **38 routes hardened** across `psychopharm/*` (document, review, publish,
+  history, rollback) and `practice/*` (journal, competency, wall, chain, idioms,
+  supervision, checkin, sct/attempt, corpus/dictate×3, quiz/attempt,
+  library/note, passport/pdf, journal/help, journal/share, wall/reaction,
+  wall/reply, wall/report, voice/synthesis, voice/stt, mse/transcripts,
+  mse/stimuli, mse/attempt, osce/attempt, supervision/signoff, rounds/review,
+  clinic/complete, roleplay×3, formulation/wall, formulation/attempt).
+- Each auth block became `const profile = await requireSession();` →
+  `!profile → 401` → `const user = profile;` (Profile carries
+  id/email/role/active_session_token/expires_at), so downstream `user.id` refs
+  are untouched.
+- 4 files with a local `profile` variable already in scope (corpus/dictate×3,
+  passport/pdf) name the requireSession result `sessionProfile` to avoid
+  redeclaration; their existing admin-role query is preserved verbatim.
+- 4 files whose `supabase` client became orphaned (competency, voice/synthesis,
+  voice/stt, mse/transcripts) dropped the dead `createClient()` + import; same
+  for journal/share's DELETE.
+- 5 route tests (chain, sct/attempt, mse/attempt, rounds/review,
+  formulation/attempt) now `vi.mock("@/lib/auth/guards")` so `requireSession`
+  delegates to the existing `supabase.auth.getUser()` control surface.
+- Excluded per task scope: `sim/debrief`, `sim/rewind`, `sim/turn`,
+  `sim/session` still use bare `auth.getUser()` (tracked in QUEUE).
+- Gate: lint 0/0, `tsc --noEmit` clean, 392 tests pass, `next build` exit 0.
+  Shipped in commit: HASH_TBD
+
 ## 2026-08-14 — STRIX AI pentest run (0 exploitable vulns, follow-up validated)
 
 User request: install + run STRIX (github.com/usestrix/strix) for a security
@@ -1394,3 +1428,10 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T02:36:13 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:37:16 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:37:50 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:38:16 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:46:36 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:47:25 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:47:58 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:49:15 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:49:49 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:50:21 Queue exhausted — allowing normal Claude stop.

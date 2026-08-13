@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { requireSession } from "@/lib/auth/guards";
 import { createClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
@@ -17,10 +18,9 @@ const dictateSchema = z.object({
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const sessionProfile = await requireSession();
+  if (!sessionProfile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = sessionProfile;
 
   // Verify admin via the profiles role.
   const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).maybeSingle();

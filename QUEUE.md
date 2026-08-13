@@ -2,6 +2,17 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
+## AUTH CONSISTENCY — post-sweep open items (2026-08-14, hook-driven)
+
+- [ ] **Harden sim routes to `requireSession()`**: sim/debrief, sim/rewind,
+  sim/turn, sim/session still authenticate with bare `auth.getUser()` (JWT-only,
+  no expiry/concurrent-session checks). Excluded from the round-10 sweep by task
+  rule — decide scope and convert.
+- [ ] **Drop redundant admin-role query in dictate routes**: corpus/dictate,
+  dictate/complete, dictate/turn re-fetch `profiles.role` after
+  `requireSession()` already returns `role` on the Profile — can check
+  `profile.role` directly (untangle the local `profile` collision first).
+
 ## BEASTMODE ROUND 10 CONT. — post-close continuation slices (2026-08-14, hook-driven)
 
 - [x] **Dashboard motion-polish pass (654139d)**: VibhaMark replaces the

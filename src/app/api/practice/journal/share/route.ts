@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { requireSession } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -30,10 +31,9 @@ const revokeSchema = z.object({
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   const allowed = await rateLimit(`journal:share:${user.id}`, 30);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });
@@ -92,11 +92,9 @@ export async function POST(req: Request) {
  * (or the share recipient) can revoke; owner-only RLS enforces it.
  */
 export async function DELETE(req: Request) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   const body = await req.json().catch(() => null);
   const parsed = revokeSchema.safeParse(body);
