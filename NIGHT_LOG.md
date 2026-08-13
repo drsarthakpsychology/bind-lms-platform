@@ -1,3 +1,14 @@
+## 2026-08-14 — final verification pass (hook-mandated, all green)
+
+Hook checklist re-run on disk, not memory: (1) every claimed edit confirmed
+present — practice/today/wall Reveal cascades (delays 0.05/0.1/0.15, 0.05→0.3,
+0.05/0.1 respectively) + practice-groups per-card `0.15 + i*0.05` with h-full,
+today follow_up mapping, .env.example QWEN/CHATTERBOX vars, chain-route
+follow_up scaffold; (2) full gate green: lint 0/0, tsc clean, 379 tests,
+build exit 0; (3) tree clean on feat/groq-primary-director; (4) this log entry;
+(5) QUEUE 0 unchecked, NEEDS_KAVYA holds the human-blocked items. Nothing open
+in my scope.
+
 ## 2026-08-14 — continuation: course + material loading skeletons (b8472db)
 
 - courses/[courseId]/page.tsx (dynamic week-path) and
@@ -1220,3 +1231,4 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T01:48:39 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:49:01 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:50:08 Queue exhausted — allowing normal Claude stop.
+2026-08-14T01:50:25 Queue exhausted — allowing normal Claude stop.
