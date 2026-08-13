@@ -1,3 +1,26 @@
+## 2026-08-14 — extended round: nudge, ElevenLabs, lesson quiz, OSCE voice, chain
+
+### Post-VIBHA feature batch (each commit gated green, 375 tests held)
+- **Cohort-pulse nudge** (0dab23f): `/api/admin/nudge` sends via Resend's REST
+  API (fetch, no SDK) when `RESEND_API_KEY` + `RESEND_FROM_EMAIL` are set;
+  honestly returns email-not-configured otherwise. pulse-view button wired.
+- **ElevenLabs premium TTS** (81bbf5f): `synthesizeElevenLabs` at the top of
+  the voice chain (voice "Rudra", multilingual v2, R2-cached); falls through
+  to Qwen3/Chatterbox/CosyVoice/Kokoro when unset. One key away.
+- **Lesson quiz** (82dda2f): "Check what stuck" QuizCheck (risk-assessment
+  spine, every item sourced) on the lesson watch tab.
+- **OSCE voice mode** (959a5d7): record your spoken station via web speech
+  recognition (en-IN where supported), live transcript, silent degradation.
+- **Practice-chain scaffold** (9ed2b36): a completed debrief POSTs
+  /api/practice/chain → create-or-update the practice_chains row (case
+  resolved server-side, owner-scoped); /today surfaces the in-progress chain
+  ("Continue with Ravi · 1 of 4 done · next: Formulation Forge").
+- Decisions: idioms content wiring stays deferred (public.idioms round-trips
+  to IdiomEntry but there's no admin authoring UI — DB-read adds capability
+  with no editing surface; static content is high-quality). follow_up
+  recurring-patient content needs a content spec (chain scaffold is the
+  consumer-ready shape).
+
 ## 2026-08-14 — VIBHA School of Psychology public site (commit 972c7b9)
 
 ### The front door to the LMS
