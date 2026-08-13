@@ -90,7 +90,12 @@ Everything below switches on something real. Paste → verify → move on.
 **What needs a rented GPU (or SiliconFlow's hosted API):**
 - Qwen3-TTS (primary) and Chatterbox-Turbo (quality) both want a GPU for real-time. SiliconFlow hosts Qwen3-TTS for ~free/cheap per-minute; Chatterbox is best on a rented 4090.
 
-**RECOMMENDED PATH (one line):** SiliconFlow for Qwen3-TTS (primary, hosted, near-free) + Groq Whisper (STT) + Kokoro local (CPU fallback) + Anthropic (live Director/Actor). That's the full real-voice conversation for ~$0-5/month at 30 students.
+**RECOMMENDED PATH (one line, research 2026-08-14):** **Groq** for the Director/Actor + Whisper STT (no-train, no card, fastest), **Kokoro-82M local** for the patient's voice today (CPU, runs on the Mac, zero cost) with **MiMo-V2.5-TTS** (MIT, arena-top, voice cloning) as the upgrade when you host it, and **Cerebras** as the no-train JSON fallback. ~$0/month at 30 students.
+
+**The three voice answers, plainly:**
+- **Runs on your Mac now, no GPU, no payment:** Kokoro-82M (Apache-2.0, CPU) — real expressive-enough TTS, ~instant on an M-series. Plus browser `speechSynthesis` en-IN with affect-mapped rate/pitch as the zero-key fixture voice.
+- **Needs a rented GPU:** MiMo-V2.5-TTS or a fine-tuned Whisper for Indian-English. A single RTX 4090 (~$0.30–0.60/hr on RunPod/Vast) hosts both for a small cohort; 30 students ≈ 2–4 GPU-hours/month ≈ **under $5/month**.
+- **Recommended:** Kokoro local now (zero cost) → MiMo-V2.5-TTS hosted/self-hosted when the cohort grows. Groq drives the conversation + STT free, no card.
 
 ---
 
@@ -99,7 +104,7 @@ Everything below switches on something real. Paste → verify → move on.
 | Env var | Switches on | Free? |
 |---|---|---|
 | NVIDIA_API_KEY | CosyVoice2 TTS + Whisper STT + live Director/Actor + scoring | ✅ |
-| GROQ_API_KEY | Whisper STT fast + fast Director lane | ✅ |
+| GROQ_API_KEY | **PRIMARY Director/Actor** (no-train, JSON) + Whisper STT | ✅ |
 | GEMINI_API_KEY | content-drafting + embed lane (never student data) | ✅ |
 | CEREBRAS_API_KEY | JSON Director lane | ✅ |
 | R2 4-vars | synthesis cache + corpus store | ✅ |

@@ -31,7 +31,11 @@ export const PROVIDER_PRIORITY: Record<ProviderCapability, string[]> = {
   // fast chat / streaming — Groq is first for speed (voice needs sub-second TTFB)
   chat: ["groq", "gemini", "cerebras", "openrouter", "anthropic"],
   stream: ["groq", "gemini", "cerebras", "openrouter", "anthropic"],
-  json: ["cerebras", "gemini", "openrouter", "groq", "anthropic"],
+  // structured JSON — Groq is Primary (fast, no-train, OpenAI-compatible
+  // json_schema/json_object). Both JSON callers (sim Director + debrief
+  // scoring) carry student data, so gemini (trainsOnData) is excluded by the
+  // guard and sits last purely as a non-student fallback lane.
+  json: ["groq", "cerebras", "openrouter", "anthropic", "gemini"],
   // vision/audio only where the provider supports it
   vision: ["gemini", "anthropic", "openrouter"],
   audio: ["gemini", "groq"],

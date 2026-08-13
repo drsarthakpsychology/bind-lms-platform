@@ -39,6 +39,15 @@ Providers: Gemini (best free quality, 1M context), Groq (voice-mode speed),
 Cerebras (bulk corpus), OpenRouter (overflow lane), Anthropic (optional paid,
 student-facing when present).
 
+**Groq is the Primary Director/Actor provider** (research round 2026-08-14):
+it leads the `chat`/`stream` priority AND the `json` priority, so both the sim
+Director (structured JSON) and the Actor (dialogue) prefer it. Groq is
+no-train (DPA forbids training, ZDR available), requires no card, and its
+OpenAI-compatible endpoint accepts `json_object`/`json_schema`. Because the
+Director and debrief-scoring calls carry student data, Gemini (free tier
+trains on prompts) is filtered out of those lanes by the data-policy guard and
+remains a non-student JSON fallback only.
+
 ## The data-policy split
 
 `assertProviderAllowed(workload, provider)` throws before any request leaves
