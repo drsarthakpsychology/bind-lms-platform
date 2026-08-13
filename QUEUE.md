@@ -34,10 +34,9 @@
   so `Card` can render as a real `<a>`/`<button>` (mirrors Button/Badge). All
   current interactive cards already use `cardVariants` on `<Link>`, so no live
   bug — primitive-capability gap closed. Shipped 00d1686.
-- [ ] **Admin mobile persistent nav** — `BottomTabBar` renders only for
-  `mode === "student"`; admins on mobile reach 21 destinations only via the
-  drawer. Add a compact 3–4 item admin bottom bar (Overview / Review triage /
-  Submissions / Students).
+- [x] **Admin mobile persistent nav** — `BottomTabBar` is now mode-aware:
+  students get the 5 core tabs, admins a compact 4-destination bar (Overview /
+  Review / Submissions / Students). Shipped 7123021.
 - [x] **EmptyState / ErrorState entrance motion** — added a `.animate-enter`
   keyframe (opacity + 4px rise, 200ms out-expo) to globals.css and applied it to
   both surfaces; the global reduced-motion rule flattens it automatically.
