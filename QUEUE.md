@@ -18,14 +18,17 @@
 - [x] **§24 AI free-tier doc**: docs/AI_FREE_TIERS.md — per-provider table
   (provider/model/purpose/cost/free-limits/env-var/setup/fallback) + chain
   order + privacy note. Committed 006d412. [brief §24]
-- [ ] **Performance/efficiency tech-stack pass**: safe wins only (pregen
-  script, R2 prune helper, loading states, client-bloat fixes, conservative
-  data caching) — no production infra, no new deps (in-flight subagent). [brief §29-30]
-- [ ] **Key-leak audit**: server secrets stay server-side — verified clean
+- [x] **Performance/efficiency tech-stack pass**: safe wins only — pregen
+  --dry-run verified, R2 prune helper (prune-voice-cache.ts), /verify loading
+  skeleton, client-bloat fixes (ui/table + simulation-badge → server
+  components) — landed bd168e3; no production infra, no new deps. Conservative
+  data caching (unstable_cache) skipped: every dashboard query is per-user.
+  Gate green. [brief §29-30]
+- [x] **Key-leak audit**: server secrets stay server-side — verified clean
   across client files; NEXT_PUBLIC_* only public-by-design vars. [brief §28]
-- [ ] **Final report §35 A-F**: changed / AI decisions OLD→NEW→WHY→COST→FREE
-  LIMIT / API-key table / infra-safety confirmation / new deps / limitations,
-  at session end after subagents land.
+- [x] **Final report §35 A-F**: changed / AI decisions OLD→NEW→WHY→COST→FREE
+  LIMIT / API-key table / infra-safety confirmation / new deps / limitations —
+  written to NIGHT_LOG.md at session end after subagents landed.
 
 ## RESEARCH ROUND — free LLM tier follow-ups (2026-08-14)
 
