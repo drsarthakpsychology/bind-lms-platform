@@ -1,5 +1,6 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
+import { Slot } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
@@ -27,10 +28,18 @@ const cardVariants = cva(
 function Card({
   className,
   variant,
+  asChild = false,
   ...props
-}: React.ComponentProps<"div"> & VariantProps<typeof cardVariants>) {
+}: React.ComponentProps<"div"> &
+  VariantProps<typeof cardVariants> & {
+    asChild?: boolean
+  }) {
+  // `asChild` merges the card surface onto a real `<a>`/`<button>`, so the
+  // `interactive` variant inherits focus + keyboard activation instead of a
+  // dead focus-visible ring on a non-focusable div (same pattern as Button).
+  const Comp = asChild ? Slot.Root : "div"
   return (
-    <div
+    <Comp
       data-slot="card"
       data-variant={variant}
       className={cn(cardVariants({ variant }), className)}
