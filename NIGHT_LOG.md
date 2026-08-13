@@ -1,3 +1,27 @@
+## 2026-08-14 — STRIX AI pentest run (0 exploitable vulns, follow-up validated)
+
+User request: install + run STRIX (github.com/usestrix/strix) for a security
+test. Installed STRIX 1.5.3 (official installer → ~/.strix/bin/strix).
+Two environment fixes: Docker Desktop daemon had to be started, and STRIX's
+Docker check needed `DOCKER_HOST=unix://$HOME/.docker/run/docker.sock`
+(desktop-linux socket, not /var/run/docker.sock); headless via `-n`.
+
+Ran `strix -t ./src -m quick -n` with the user-provided DeepSeek key
+(deepseek/deepseek-chat, LLM_API_BASE=https://api.deepseek.com), instruction
+focused on authn/authz (IDOR/BOLA), secrets, injection. **Result: 0
+exploitable vulnerabilities** (cost $0.0265, report strix_runs/src_cd7e).
+
+STRIX's key observation: createAdminClient() (service-role, RLS-bypassing) in
+62 files incl. student routes (sim/turn, sim/rewind, mse/attempt, competency,
+journal/share, …), making app-level ownership checks load-bearing. **Follow-up
+validation (I completed what STRIX's turn limit cut short):** every flagged
+student route enforces ownership in code — verified sim/turn:52-56 and
+sim/rewind:41-45 do `session.user_id !== user.id → 404`; attempt routes insert
+user_id:user.id from getUser(); journal/wall use the RLS-enforcing client.
+Combined with the manual RLS audit (zero anon policies, anon replay clean),
+the blast radius is contained. strix_runs/ gitignored; results documented in
+docs/SECURITY_AUDIT.md. NEEDS_KAVYA STRIX note updated (ran, key consumed).
+
 ## 2026-08-14 — VIBHA CREATIVE DIRECTION (logo + homepage + dashboard motion)
 
 Executed the FINAL CREATIVE, UI/UX AND MOTION DIRECTION brief with a 2-agent
@@ -1360,3 +1384,10 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T02:24:10 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:24:28 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:25:02 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:27:35 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:28:08 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:29:11 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:30:48 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:31:24 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:33:27 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:34:00 Queue exhausted — allowing normal Claude stop.

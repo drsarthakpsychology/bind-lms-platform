@@ -31,3 +31,6 @@ supabase/.temp/
 
 # Nightwork hook marker (empty, regenerated each run)
 .claude/.nwverified
+
+# STRIX pentest output (generated, may contain findings)
+strix_runs/

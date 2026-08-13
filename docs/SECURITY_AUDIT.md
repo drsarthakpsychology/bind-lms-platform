@@ -5,6 +5,33 @@ access control, secrets, misconfiguration, dependencies, test coverage. No
 production changes made — the one DB fix is staged in
 `src/migrations_pending/` pending Kavya's approval (infra safety rule).
 
+## STRIX AI pentest (2026-08-14, added after the manual audit)
+
+Ran `strix --target ./src -m quick -n` (DeepSeek `deepseek-chat`,
+DOCKER_HOST set, headless) with instructions focused on authn/authz (IDOR/
+BOLA), secrets, injection. **Result: 0 exploitable vulnerabilities**
+(cost $0.0265; report dir `strix_runs/src_cd7e`, gitignored; re-run with
+`DOCKER_HOST=unix://$HOME/.docker/run/docker.sock ~/.strix/bin/strix ...`).
+
+STRIX's top observation: `createAdminClient()` (service role, bypasses RLS)
+is used in 62 files, several student-facing (sim/session, sim/turn, sim/rewind,
+sim/debrief, mse/osce/sct/formulation attempt, competency, library/note,
+wall/pin, journal/share, roleplay/session) — making app-level ownership checks
+load-bearing. **Follow-up validation (completed, mitigates the finding):** every
+flagged student route enforces ownership in code. Verified directly:
+- `sim/turn` route.ts:52-56 — reads session, `session.user_id !== user.id → 404`.
+- `sim/rewind` route.ts:41-45 — `parent.user_id !== user.id → 404`.
+- All attempt routes insert with `user_id: user.id` from `getUser()`.
+- `journal`/`wall` use the regular (RLS-enforcing) client; RLS owner-only +
+  `*_visible` views for anonymous wall content (privacy regression tests cover).
+- Combined with the manual audit (zero anon-granting policies, anon replay
+  returns 0 rows / denied), the service-role blast radius is contained.
+
+STRIX also confirmed: no committed .env/secrets; injection surface minimal
+(2 `.rpc()` call sites, zod-validated). Model-quality note: DeepSeek chat is
+not STRIX's recommended frontier model — re-run with a recommended model
+(e.g. openai/gpt-5.4 or anthropic/claude-opus-5) for a deeper pass if desired.
+
 ## Verdict: strong posture, one LOW finding
 
 ### Finding 1 — LOW · `_migrations_applied` has RLS disabled
