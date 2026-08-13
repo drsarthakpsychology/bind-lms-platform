@@ -10,7 +10,7 @@ export const BRAND = {
   /** One-line product description, used in metadata and auth screens. */
   tagline: "Psychology you can practise.",
   description:
-    "A practical training programme in clinical psychology. Theory gives you the language; practice teaches you how to use it — in the room, not just in the exam.",
+    "A practical training programme in clinical psychology. Theory gives you the language; practice teaches you how to use it. In the room, not just in the exam.",
   /** The parent organisation the school belongs to. */
   parent: "VIBHA Healing Centre",
   /** The clinical lead. */

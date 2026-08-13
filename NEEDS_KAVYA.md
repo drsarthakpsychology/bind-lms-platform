@@ -68,6 +68,13 @@ Every item: paste → something switches on → verify with one command. Free fi
 - **Review drafted flashcards** → `cards` table drafts (7 from the seeded MSE lesson transcript; approve the good ones)
 - **Flip feature flags when ready** → `/admin/flags` (6 live — Consulting Room, Decoder, MSE, Judgment, Rounds, Journal; 12 built-but-off tools reveal on one click)
 
+## 🕵️ STRIX PENTEST — needs one thing from you
+- STRIX (usestrix/strix, AI pentester) is ready to install/run but needs an LLM
+  API key (`STRIX_LLM` + `LLM_API_KEY`, e.g. openai/gpt-5.4 or an Anthropic key)
+  to drive its agents; alternatively use the managed cloud (app.strix.ai, no
+  local key). Say which and I'll run it. Everything else (Docker, install,
+  target=./app-directory) I handle.
+
 ## 🔒 SECURITY AUDIT 2026-08-14 — ONE action to apply
 - **Enable RLS on `_migrations_applied`** (the only public table with RLS off —
   anon key can read the migration ledger via REST). Fix is staged, ready:
