@@ -20,7 +20,6 @@ export async function POST(req: Request) {
   const supabase = await createClient();
   const sessionProfile = await requireSession();
   if (!sessionProfile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  const user = sessionProfile;
 
   // Admin gate — requireSession already carries the profiles role.
   if (sessionProfile.role !== "admin") {
