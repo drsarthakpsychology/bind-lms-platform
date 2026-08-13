@@ -1,5 +1,5 @@
 -- =============================================================================
--- Lumen Practice Layer — infra round 2 (v5 Master §9.3, text-column size audit)
+-- VIBHA Practice Layer — infra round 2 (v5 Master §9.3, text-column size audit)
 -- =============================================================================
 -- practice_layer_infra.sql capped the tables that existed when the infra
 -- pattern was written (journal_entries, wall_posts, wall_replies,

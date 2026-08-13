@@ -1,0 +1,17 @@
+# VIBHA School of Psychology — public site only.
+# The LMS (student coursework, journals, simulated patients, tools, admin) must
+# never be indexed. The landing page and enquiry page are the only public URLs.
+User-agent: *
+Allow: /
+Allow: /enquire
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /practice
+Disallow: /courses
+Disallow: /reflect
+Disallow: /wall
+Disallow: /tools
+Disallow: /api
+Disallow: /login
+Disallow: /expired
+Disallow: /verify

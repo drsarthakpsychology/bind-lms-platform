@@ -11,6 +11,7 @@ interface MseStimuliRow {
   content: string;
   domain: string;
   expert_coding: unknown;
+  title: string | null;
 }
 
 /** Shape a jsonb expert_coding row into the level-typed forms the ladder scores. */
@@ -34,7 +35,7 @@ function shapeContent(rows: MseStimuliRow[]): MseLadderContent {
     } else if (row.slug.startsWith("mse4-")) {
       fullMse.push({
         id: row.slug,
-        title: row.slug,
+        title: row.title ?? row.slug,
         context: row.content,
         expert: coding.expert ?? ({} as FullMseStimulus["expert"]),
         amber: coding.amber ?? {},
@@ -61,7 +62,7 @@ export default async function MsePage() {
   const supabase = await createClient();
   const { data: dbRows } = await supabase
     .from("mse_stimuli")
-    .select("id, slug, content, domain, expert_coding")
+    .select("id, slug, content, domain, expert_coding, title")
     .eq("status", "published");
 
   const content = shapeContent((dbRows ?? []) as unknown as MseStimuliRow[]);

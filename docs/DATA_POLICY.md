@@ -1,4 +1,4 @@
-# Data Policy — Lumen Practice Layer
+# Data Policy — VIBHA Practice Layer
 
 Last updated: 2026-08-10. Written in plain language so students, faculty and
 institutional partners know exactly what happens to practice data.

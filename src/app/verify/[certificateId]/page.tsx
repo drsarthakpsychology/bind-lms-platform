@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+// Reveals a student + course identity — not for search engines.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 /**
  * Public certificate verification page — the QR code on a certificate points

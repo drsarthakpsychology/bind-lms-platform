@@ -1,5 +1,5 @@
 -- =============================================================================
--- Lumen Practice Layer — Peer role-play message thread (Part 6.6)
+-- VIBHA Practice Layer — Peer role-play message thread (Part 6.6)
 -- =============================================================================
 -- The pair_sessions table already exists (practice_layer_rest.sql). This adds
 -- the message thread it needs, with participant-only RLS. Additive + idempotent.

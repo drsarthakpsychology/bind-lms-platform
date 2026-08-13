@@ -23,7 +23,7 @@ export async function GET() {
 
   const { data, error } = await supabase
     .from("mse_stimuli")
-    .select("id, slug, content, domain, expert_coding")
+    .select("id, slug, content, domain, expert_coding, title")
     .eq("status", "published")
     .order("slug", { ascending: true });
 

@@ -4,7 +4,7 @@ A throwaway student account is seeded for local and staging checks.
 
 | | |
 |---|---|
-| **Username** | `Test@lumen.test` |
+| **Username** | `Test@vibha.test` |
 | **Password** | `K#test` |
 | **Role** | student (enrolled in the existing course) |
 | **Flag** | `profiles.is_test = true` (shows a `Test` badge in the admin student list) |
@@ -29,7 +29,7 @@ by hand every time.
     const { createClient } = require('@supabase/supabase-js');
     const admin = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
     admin.auth.admin.listUsers().then(async ({ data }) => {
-      const t = data.users.find(u => u.email?.toLowerCase() === 'test@lumen.test');
+      const t = data.users.find(u => u.email?.toLowerCase() === 'test@vibha.test');
       if (t) await admin.auth.admin.deleteUser(t.id);
       console.log('deleted', t?.id);
     });

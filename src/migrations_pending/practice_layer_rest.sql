@@ -1,5 +1,5 @@
 -- =============================================================================
--- Lumen Practice Layer — journal, check-in, wall, corpus, competencies, usage
+-- VIBHA Practice Layer — journal, check-in, wall, corpus, competencies, usage
 -- =============================================================================
 
 -- ---------------------------------------------------------------------------

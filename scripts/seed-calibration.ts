@@ -40,7 +40,7 @@ const URL = ENV.NEXT_PUBLIC_SUPABASE_URL;
 const SERVICE_KEY = ENV.SUPABASE_SERVICE_ROLE_KEY;
 
 /** Synthetic calibration user — not a real student; used for all self-play runs. */
-const CALIBRATION_EMAIL = "calibration@lumen.internal";
+const CALIBRATION_EMAIL = "calibration@vibha.internal";
 const CALIBRATION_USER = "00000000-0000-4000-8000-0000000000c1"; // overridden by the auth user id
 
 // The seed cases' titles AS STORED IN THE DB (upserted from the TS seeds).

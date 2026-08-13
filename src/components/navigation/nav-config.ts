@@ -20,6 +20,7 @@ export const STUDENT_ITEMS: NavItem[] = [
 export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin", label: "Overview", icon: "layoutDashboard", exact: true },
   { href: "/admin/students", label: "Students", icon: "users" },
+  { href: "/admin/enquiries", label: "Enquiries", icon: "inbox" },
   { href: "/admin/courses", label: "Courses", icon: "bookOpen" },
   { href: "/admin/submissions", label: "Submissions", icon: "inbox" },
   { href: "/admin/tools", label: "Tools", icon: "wrench" },

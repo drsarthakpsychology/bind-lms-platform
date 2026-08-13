@@ -16,7 +16,7 @@
  *
  *   npm run corpus:samhsa
  *
- * Rate limit: >=1s between requests; real UA (LumenPracticeLayerBot/1.0).
+ * Rate limit: >=1s between requests; real UA (VIBHAPracticeLayerBot/1.0).
  */
 import { mkdirSync, writeFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
@@ -24,7 +24,7 @@ import { join } from "node:path";
 const RAW = join(process.cwd(), "scripts/corpus/raw/samhsa");
 mkdirSync(RAW, { recursive: true });
 
-const UA = "LumenPracticeLayerBot/1.0 (corpus; contact: dev@lumen.example)";
+const UA = "VIBHAPracticeLayerBot/1.0 (corpus; contact: dev@vibha.example)";
 const MIN_MS = 1000; // >= 1s between requests
 const MIN_BYTES = 20_000; // a stub/error page is smaller than this
 

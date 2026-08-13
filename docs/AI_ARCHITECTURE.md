@@ -1,4 +1,4 @@
-# AI Architecture — Lumen Practice Layer
+# AI Architecture — VIBHA Practice Layer
 
 Last updated: 2026-08-10.
 

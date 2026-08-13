@@ -1,5 +1,5 @@
 -- =============================================================================
--- Lumen Practice Layer — Idioms of Distress (v5 Part 1, §1.2)
+-- VIBHA Practice Layer — Idioms of Distress (v5 Part 1, §1.2)
 -- =============================================================================
 -- The 60+ idiom bank. Each row: the phrase, register tags, every plausible
 -- meaning (with likelihood + the distinguishing clue), the disambiguating
@@ -8,7 +8,7 @@
 -- applied per entry. Students are taught one reading; this teaches all.
 --
 -- Approved entries are student-visible. New entries land approved=false and
--- become visible in the admin queue for review (the standard Lumen workflow).
+-- become visible in the admin queue for review (the standard VIBHA workflow).
 -- =============================================================================
 
 create table if not exists public.idioms (

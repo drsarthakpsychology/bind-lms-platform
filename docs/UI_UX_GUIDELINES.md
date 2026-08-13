@@ -1,6 +1,6 @@
 # UI / UX Guidelines — Neo-Brutalist Pastel Design System
 
-Single source of truth for visual consistency across Lumen.
+Single source of truth for visual consistency across VIBHA.
 
 ## Philosophy
 Neo-brutalist structure (bold 2px ink borders, hard offset shadows, clear

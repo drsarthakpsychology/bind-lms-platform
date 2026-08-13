@@ -32,14 +32,14 @@ async function tryLadder(title: string): Promise<{ path: string; buffer: Buffer 
   if (enc.length < 5) return null;
   try {
     const res = await fetch(`https://archive.org/advancedsearch.php?q=title%3A${enc}&fl%5B%5D=identifier&rows=3&output=json`, {
-      headers: { "User-Agent": "LumenPracticeLayerBot/1.0 (corpus; contact: dev@lumen.example)" },
+      headers: { "User-Agent": "VIBHAPracticeLayerBot/1.0 (corpus; contact: dev@vibha.example)" },
     });
     if (!res.ok) return null;
     const j = (await res.json()) as { response?: { docs?: Array<{ identifier: string }> } };
     const id = j.response?.docs?.[0]?.identifier;
     if (!id) return null;
     const dl = await fetch(`https://archive.org/download/${id}/${id}_djvu.txt`, {
-      headers: { "User-Agent": "LumenPracticeLayerBot/1.0 (corpus; contact: dev@lumen.example)" },
+      headers: { "User-Agent": "VIBHAPracticeLayerBot/1.0 (corpus; contact: dev@vibha.example)" },
     });
     if (!dl.ok) return null;
     const buf = Buffer.from(await dl.arrayBuffer());

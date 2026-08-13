@@ -1,6 +1,6 @@
 # What This Project Needs to Run (Project Setup)
 
-This is a complete checklist of everything required to run and deploy Lumen.
+This is a complete checklist of everything required to run and deploy VIBHA.
 For each item: **why it's needed**, **where to get it**, **whether it's free**,
 and **where it's configured**.
 

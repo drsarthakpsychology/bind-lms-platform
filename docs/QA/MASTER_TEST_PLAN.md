@@ -1,7 +1,7 @@
 # Master Test Plan
 
 ## Purpose
-Comprehensive test plan for the Lumen LMS production-readiness pass. Covers
+Comprehensive test plan for the VIBHA LMS production-readiness pass. Covers
 functional, security, UI/UX, accessibility, performance, and regression
 testing of the current application scope.
 

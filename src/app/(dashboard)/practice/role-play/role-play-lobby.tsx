@@ -88,7 +88,7 @@ export function RolePlayLobby({
             type="email"
             value={peerEmail}
             onChange={(e) => setPeerEmail(e.target.value)}
-            placeholder="classmate@lumen.test"
+            placeholder="classmate@vibha.test"
             className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
           />
         </div>

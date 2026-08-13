@@ -11,3 +11,6 @@
 
 alter table if exists public.mse_stimuli
   add column if not exists expert_coding jsonb not null default '{}'::jsonb;
+-- Level 4 vignettes carry a human title (used by level-full-mse); Levels 1/2 null.
+alter table if exists public.mse_stimuli
+  add column if not exists title text;

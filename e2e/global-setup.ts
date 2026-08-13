@@ -11,7 +11,7 @@ export default async function globalSetup() {
   const page = await browser.newPage();
 
   await page.goto("http://localhost:3000/login");
-  await page.fill("#email", process.env.E2E_EMAIL ?? "Test@lumen.test");
+  await page.fill("#email", process.env.E2E_EMAIL ?? "Test@vibha.test");
   await page.fill("#password", process.env.E2E_PASSWORD ?? "K#test");
   await page.getByRole("button", { name: /sign in|log in/i }).click();
   // Post-login landing is /today for students (/admin for admins).

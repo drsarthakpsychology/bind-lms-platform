@@ -1,5 +1,5 @@
 -- =============================================================================
--- Lumen Practice Layer — feature flags (v5.1 A2), made reproducible
+-- VIBHA Practice Layer — feature flags (v5.1 A2), made reproducible
 -- =============================================================================
 -- The feature_flags table + the 17 seed rows existed only in the live DB.
 -- This migration reproduces them on a fresh Supabase project. The A2 scope

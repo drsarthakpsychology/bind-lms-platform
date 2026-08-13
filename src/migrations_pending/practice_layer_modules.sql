@@ -1,5 +1,5 @@
 -- =============================================================================
--- Lumen Practice Layer — Modules (v5 Part 7.4)
+-- VIBHA Practice Layer — Modules (v5 Part 7.4)
 -- =============================================================================
 -- A module is a named group of lessons + practice activities + quizzes, with
 -- an order index. A DEPRESSION module holds its own sim cases (each patient

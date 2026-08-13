@@ -37,7 +37,7 @@ import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { basename, join, extname } from "node:path";
 
-const UA = "LumenPracticeLayerBot/1.0 (Casebook corpus acquisition; contact: dev@lumen.example)";
+const UA = "VIBHAPracticeLayerBot/1.0 (Casebook corpus acquisition; contact: dev@vibha.example)";
 
 /**
  * The drop folder for purchased files Kavya puts on the box. Configurable so

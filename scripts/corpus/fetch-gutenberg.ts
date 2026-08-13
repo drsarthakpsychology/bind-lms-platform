@@ -47,7 +47,7 @@ const BOOKS: Array<{ id: number; title: string; author: string }> = [
   { id: 219, title: "Heart of Darkness", author: "Joseph Conrad" },
 ];
 
-const UA = "LumenPracticeLayerBot/1.0 (corpus building; contact: dev@lumen.example)";
+const UA = "VIBHAPracticeLayerBot/1.0 (corpus building; contact: dev@vibha.example)";
 
 function fetchBook(id: number): Promise<string> {
   return fetch(`https://www.gutenberg.org/cache/epub/${id}/pg${id}.txt`, {

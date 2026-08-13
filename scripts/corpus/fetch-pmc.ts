@@ -18,7 +18,7 @@ import { join } from "node:path";
 const RAW = join(process.cwd(), "scripts/corpus/raw/pmc");
 mkdirSync(RAW, { recursive: true });
 
-const UA = "LumenPracticeLayerBot/1.0 (corpus; contact: dev@lumen.example)";
+const UA = "VIBHAPracticeLayerBot/1.0 (corpus; contact: dev@vibha.example)";
 
 const QUERIES = [
   'KIND:"Case Reports" AND (psychiatry OR psychiatric OR "mental health")',

@@ -1,4 +1,4 @@
-# BUGS — Lumen Practice Layer
+# BUGS — VIBHA Practice Layer
 
 `ID | Sev | Feature | Symptom | Repro | Status | Fix commit`
 Log bugs even when fixed minutes later.

@@ -1,4 +1,4 @@
-# Deploying Lumen to the Internet (Vercel)
+# Deploying VIBHA School of Psychology to the Internet (Vercel)
 
 This guide explains how the project gets published on the internet. It's
 written for non-developers, so every step is explained.

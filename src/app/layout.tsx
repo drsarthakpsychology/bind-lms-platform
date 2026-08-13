@@ -21,10 +21,31 @@ const sourceSerif = Source_Serif_4({
   weight: ["500", "600", "700"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhaschoolofpsychology.in";
+
 export const metadata: Metadata = {
-  title: BRAND.name,
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: BRAND.name,
+    template: `%s · ${BRAND.shortName}`,
+  },
   description: BRAND.description,
-  robots: { index: false, follow: false },
+  // The public site (/, /enquire) is indexable. The LMS routes opt out in the
+  // (dashboard) layout; /login, /expired and /verify opt out individually.
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: BRAND.name,
+    description: BRAND.description,
+    url: siteUrl,
+    siteName: BRAND.name,
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: BRAND.name,
+    description: BRAND.description,
+  },
 };
 
 export default function RootLayout({

@@ -20,7 +20,7 @@ import { join } from "node:path";
 const RAW = join(process.cwd(), "scripts/corpus/raw/pmc");
 mkdirSync(RAW, { recursive: true });
 
-const UA = "LumenPracticeLayerBot/1.0 (corpus; contact: dev@lumen.example)";
+const UA = "VIBHAPracticeLayerBot/1.0 (corpus; contact: dev@vibha.example)";
 const MIN_MS = 350;
 
 const QUERIES = [

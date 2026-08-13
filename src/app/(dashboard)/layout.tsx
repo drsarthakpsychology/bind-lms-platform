@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth/session";
+
+// The LMS — student coursework, journals, simulated-patient content — must
+// never be indexed. The public site (/, /enquire) is indexable from the root.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 import { AppShell } from "@/components/app-shell";
 import { ViewModeToggle } from "./view-mode-toggle";
 import { VIEW_MODE_COOKIE } from "./view-mode-constants";

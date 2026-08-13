@@ -1,5 +1,5 @@
 -- =============================================================================
--- Lumen Practice Layer — habit layer: streaks, quests, cards (Rounds), goals
+-- VIBHA Practice Layer — habit layer: streaks, quests, cards (Rounds), goals
 -- =============================================================================
 -- Streaks count SHOWING UP, not scoring. IST rollover (all times localised).
 

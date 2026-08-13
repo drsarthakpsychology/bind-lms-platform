@@ -419,7 +419,7 @@ Verify checklist (the hook's, done for real):
 
 ### State
 291 unit tests · full e2e 31 passed · lint clean · tsc clean · build green · 8 commits this round.
-# NIGHT LOG — Lumen Practice Layer v2
+# NIGHT LOG — VIBHA Practice Layer v2
 
 Reverse-chron. One entry per slice: what shipped, decisions, commit hash.
 Protocol: never stop, never ask, keep the branch buildable.

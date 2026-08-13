@@ -14,7 +14,7 @@ function loadEnv(name: string): string | undefined {
 const url = loadEnv("NEXT_PUBLIC_SUPABASE_URL")!;
 const key = loadEnv("SUPABASE_SERVICE_ROLE_KEY")!;
 const admin = createClient(url, key, { auth: { persistSession: false } });
-const EMAIL = "peer@lumen.test";
+const EMAIL = "peer@vibha.test";
 const PASS = "K#test";
 async function main() {
   const { data: existing } = await admin.auth.admin.listUsers();

@@ -3,7 +3,7 @@ import { go } from "./helpers";
 
 /**
  * Skills Passport — download the PDF and request a supervision sign-off.
- * Session pre-authenticated via global setup (test@lumen.test).
+ * Session pre-authenticated via global setup (test@vibha.test).
  */
 
 test("passport: PDF downloads and supervision sign-off can be requested", async ({ page }) => {

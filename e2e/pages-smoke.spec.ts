@@ -6,7 +6,7 @@ import { go } from "./helpers";
  * and renders its core UI. Session is pre-authenticated via global setup.
  */
 
-test.describe("lumen page coverage", () => {
+test.describe("app page coverage", () => {
   test("all advertised pages render after login", async ({ page }) => {
     const pages: Array<{ path: string; heading: RegExp }> = [
       { path: "/practice", heading: /Walk into your first real intake ready/ },

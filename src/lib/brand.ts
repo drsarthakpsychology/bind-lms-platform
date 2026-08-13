@@ -1,10 +1,16 @@
 /**
  * Brand identity — single source of truth for the product name and copy.
+ * Every user-facing brand string reads from here; a rename is a one-file edit.
  */
 export const BRAND = {
-  name: "Lumen",
-  shortName: "Lumen",
+  name: "VIBHA School of Psychology",
+  shortName: "VIBHA",
   /** One-line product description, used in metadata and auth screens. */
-  tagline: "Learn with focus",
-  description: "An invite-only course platform built for serious learners.",
+  tagline: "Psychology you can practise.",
+  description:
+    "A practical training programme in clinical psychology. Theory gives you the language; practice teaches you how to use it — in the room, not just in the exam.",
+  /** The parent organisation the school belongs to. */
+  parent: "VIBHA Healing Centre",
+  /** The clinical lead. */
+  lead: "Dr. Sarthak Dave, MBBS, MD (Psychiatry)",
 } as const;

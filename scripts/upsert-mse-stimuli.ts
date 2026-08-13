@@ -26,6 +26,8 @@ interface SeedRow {
   id: string;
   content: string;
   domain: string;
+  /** Level 4 vignette title (null for Levels 1/2, which render content only). */
+  title?: string;
   /** The authored coding the ladder scores against (see migration). */
   expert_coding: Record<string, unknown>;
 }
@@ -50,6 +52,7 @@ const level1: SeedRow[] = OBSERVE_STIMULI.map((s) => ({
 const level4: SeedRow[] = FULL_MSE_STIMULI.map((s) => ({
   id: s.id,
   content: s.context,
+  title: s.title,
   domain: "full",
   expert_coding: { expert: s.expert, amber: s.amber },
 }));
@@ -64,6 +67,7 @@ async function main() {
     const payload = {
       slug: s.id,
       content: s.content,
+      title: s.title ?? null,
       domain: s.domain,
       expert_coding: s.expert_coding,
       medium: "text",

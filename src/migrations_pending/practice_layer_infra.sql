@@ -1,5 +1,5 @@
 -- =============================================================================
--- Lumen Practice Layer — infra (v3 Part 3.6, made reproducible)
+-- VIBHA Practice Layer — infra (v3 Part 3.6, made reproducible)
 -- =============================================================================
 -- These objects were previously applied directly to the live database only.
 -- This migration makes them reproducible on a fresh Supabase project:

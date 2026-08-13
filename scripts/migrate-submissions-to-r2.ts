@@ -24,7 +24,7 @@ function requireEnv(name: string): string {
   return v;
 }
 
-const R2_BUCKET = env.R2_CONTENT_BUCKET ?? "lumen-content";
+const R2_BUCKET = env.R2_CONTENT_BUCKET ?? "vibha-content";
 
 function makeS3() {
   return new S3Client({

@@ -2,13 +2,13 @@ import { test, expect } from "@playwright/test";
 
 /**
  * Peer role-play — two users in one session.
- * Account 1 = the shared storageState session (test@lumen.test) creates the
- * session + sends a line as clinician. Account 2 = peer@lumen.test in a
+ * Account 1 = the shared storageState session (test@vibha.test) creates the
+ * session + sends a line as clinician. Account 2 = peer@vibha.test in a
  * FRESH context (no storageState) opens the same session and replies as the
  * patient. Verifies the thread is shared and polling delivers both sides.
  */
 
-const PEER_EMAIL = "peer@lumen.test";
+const PEER_EMAIL = "peer@vibha.test";
 const PEER_PASSWORD = "K#test";
 
 test("peer role-play: create session, message, peer replies", async ({ page, browser }) => {

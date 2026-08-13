@@ -1,4 +1,4 @@
-# Running Lumen on Your Computer (Local Development)
+# Running VIBHA on Your Computer (Local Development)
 
 This guide assumes **no technical background**. Follow the steps in order and
 you'll have the app running in your browser.

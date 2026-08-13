@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-#  CASEBOOK / LUMEN — NEVER-STOP BOOTSTRAP
+#  CASEBOOK / VIBHA — NEVER-STOP BOOTSTRAP
 #  One script. Writes every file, verifies it works, tells you what to do next.
 #
 #  RUN FROM YOUR REPO ROOT:

@@ -1,5 +1,5 @@
 -- =============================================================================
--- Lumen Practice Layer — simulated patient (Consulting Room)
+-- VIBHA Practice Layer — simulated patient (Consulting Room)
 -- =============================================================================
 -- Additive DDL + RLS. Every table gets a nullable organization_id so tenancy
 -- is POSSIBLE later without a migration (Cohort One is a single org).

@@ -1,6 +1,6 @@
 /**
  * Landmark cases (v5 Part 5.2 / G) — original teaching narratives written in
- * Lumen's voice. Never reproduce source text. Each: the story, what was
+ * the programme's teaching voice. Never reproduce source text. Each: the story, what was
  * believed then, what we understand now, the ethical failure where there was
  * one, and 3 quiz items. For the ethically compromised cases the PRIMARY
  * lesson is the ethics failure. Teach the contestation.

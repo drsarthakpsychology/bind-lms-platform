@@ -4,7 +4,7 @@
  *
  *   npm run seed-test -- <courseId>
  *
- * Creates (idempotently) a student with username-style email `Test@lumen.test`
+ * Creates (idempotently) a student with username-style email `Test@vibha.test`
  * and password `K#test`, marks the profile as a test account (`is_test = true`),
  * and enrolls them in the given course.
  *
@@ -17,7 +17,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { readFileSync, existsSync } from "node:fs";
 
-const TEST_EMAIL = "Test@lumen.test";
+const TEST_EMAIL = "Test@vibha.test";
 const TEST_PASSWORD = "K#test";
 
 function loadEnv(): Record<string, string | undefined> {

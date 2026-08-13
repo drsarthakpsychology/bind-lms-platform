@@ -1,4 +1,4 @@
-# Lumen — Secure, Invite-Only Course Platform
+# VIBHA School of Psychology — Secure, Invite-Only Course Platform
 
 Private course platform for serious learners. Invite-only accounts, no public
 sign-up: an admin creates students directly via the Supabase Admin API, and each
