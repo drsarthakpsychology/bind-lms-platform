@@ -105,6 +105,22 @@ such route to `requireSession()`.
 - Gate: lint 0/0, `tsc --noEmit` clean, 392 tests pass, `next build` exit 0.
   Shipped in commit: 54b3356
 
+## 2026-08-14 — MODEL SWITCH → deepseek-v4-pro (ultracode workflow)
+
+User: "change model to deepseek v4 pro with ultracode". Ran a 2-agent
+Workflow (inspect + verify). Verified live against the DeepSeek API
+(GET https://api.deepseek.com/models returns exactly ["deepseek-v4-flash",
+"deepseek-v4-pro"]) and the session's Anthropic-compatible endpoint. Applied
+to ~/.claude/settings.json (user-global, outside the repo — no commit):
+- "model": "opus" → "fable" (the fable alias already maps to
+  deepseek-v4-pro[1m])
+- ANTHROPIC_MODEL: deepseek-v4-flash[1m] → deepseek-v4-pro[1m] (it was
+  overriding the model field — the workflow's caveat)
+- CLAUDE_CODE_SUBAGENT_MODEL: deepseek-v4-flash → deepseek-v4-pro
+  (subagents now also run v4-pro)
+JSON validated. Takes effect on the NEXT Claude session; the current session
+keeps running on deepseek-v4-flash.
+
 ## 2026-08-14 — DESIGN-SKILLS PASS applied codebase-wide + redeployed
 
 User supplied 5 skill repos (impeccable, perception-first-design, taste-skill,
@@ -1586,3 +1602,7 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T03:41:31 Queue exhausted — allowing normal Claude stop.
 2026-08-14T03:42:36 Queue exhausted — allowing normal Claude stop.
 2026-08-14T03:45:57 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:47:05 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:47:43 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:49:23 Queue exhausted — allowing normal Claude stop.
+2026-08-14T03:50:39 Queue exhausted — allowing normal Claude stop.
