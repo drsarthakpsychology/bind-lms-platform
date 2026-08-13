@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { DOMAIN_UNITS, MSE_DOMAIN_ORDER } from "@/lib/mse/ladder";
 import { MSE_VOCAB } from "@/lib/practice/mse";
 import { SEED_MSE_STIMULI } from "@/lib/practice/mse";
+import { buildMseAttemptPayload, scoreMseLevel2Attempt } from "@/lib/practice/mse-attempt";
 
 /**
  * MSE Level 2 — Domain by domain. One of the 11 domains at a time, in the
@@ -18,6 +19,9 @@ export function DomainLevel({ onComplete }: { onComplete?: () => void }) {
   const [stimulusIdx, setStimulusIdx] = React.useState(0);
   const [picked, setPicked] = React.useState<string[]>([]);
   const [revealed, setRevealed] = React.useState(false);
+  // The attempt window for the current stimulus starts when the level opens
+  // (or when the previous stimulus's Next resets it).
+  const [startedAt, setStartedAt] = React.useState(() => new Date());
 
   // Focus management: after check/reveal, focus the "Next" button
   const nextButtonRef = React.useRef<HTMLButtonElement>(null);
@@ -43,6 +47,30 @@ export function DomainLevel({ onComplete }: { onComplete?: () => void }) {
   function check() {
     setRevealed(true);
     haptic("success");
+  }
+
+  /** Persist the just-scored stimulus attempt (a check, not a test — silent on failure). */
+  async function persistStimulus() {
+    const completedAt = new Date();
+    const payload = buildMseAttemptPayload(
+      stimulus,
+      "2",
+      {
+        domain,
+        score: scoreMseLevel2Attempt(picked, stimulus.expertTags, stimulus.amberTags ?? []),
+        picked,
+        expert: stimulus.expertTags,
+        amber: stimulus.amberTags ?? [],
+      },
+      startedAt,
+      completedAt,
+    );
+    await fetch("/api/practice/mse/attempt", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch(() => {}); // silent; a check, not a test
+    setStartedAt(new Date());
   }
 
   function next() {
@@ -76,7 +104,7 @@ export function DomainLevel({ onComplete }: { onComplete?: () => void }) {
           {onComplete ? (
             <button
               type="button"
-              onClick={() => { haptic("success"); onComplete?.(); }}
+              onClick={() => { haptic("success"); onComplete(); }}
               className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
             >
               Mark Level 2 complete — unlock the confusable pairs
@@ -149,7 +177,10 @@ export function DomainLevel({ onComplete }: { onComplete?: () => void }) {
               <button
                 ref={nextButtonRef}
                 type="button"
-                onClick={next}
+                onClick={() => {
+                  void persistStimulus();
+                  next();
+                }}
                 className="mt-1 rounded-md border-2 border-border bg-primary px-4 py-1.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
               >
                 Next in {unit?.domain}

@@ -5,6 +5,7 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { FULL_MSE_STIMULI, scoreFullMse, type MseAttemptFields } from "@/lib/mse/mse4-stimuli";
 import { MSE_DOMAIN_ORDER, summarizeMseScore } from "@/lib/mse/ladder";
+import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
 import type { MseDomainKey } from "@/lib/mse/ladder";
 
 const TEN_MINUTES = 10 * 60;
@@ -21,6 +22,7 @@ export function FullMseLevel({ onComplete }: { onComplete?: () => void }) {
   const [fields, setFields] = React.useState<MseAttemptFields>({});
   const [submitted, setSubmitted] = React.useState(false);
   const [running, setRunning] = React.useState(true);
+  const [startedAt] = React.useState(() => new Date());
 
   const stimulus = FULL_MSE_STIMULI[idx];
   const done = submitted ? idx >= FULL_MSE_STIMULI.length - 1 : false;
@@ -62,6 +64,28 @@ export function FullMseLevel({ onComplete }: { onComplete?: () => void }) {
   const scores = submitted ? scoreFullMse(stimulus, fields) : null;
   const summary = scores ? summarizeMseScore(scores) : null;
   const filled = MSE_DOMAIN_ORDER.filter((d) => (fields[d] ?? []).length > 0).length;
+
+  /** Persist this Level 4 attempt (a check, not a test — silent on failure). */
+  async function persist() {
+    const completedAt = new Date();
+    const payload = buildMseAttemptPayload(
+      stimulus,
+      "4",
+      {
+        // The same 0..1 score the UI shows (green + amber·0.5 over all domains).
+        score: summary && summary.max > 0 ? Math.round((summary.score / summary.max) * 100) / 100 : 0,
+        // The domains the student actually addressed on this case.
+        labels: [...MSE_DOMAIN_ORDER].filter((d) => (fields[d] ?? []).length > 0) as string[],
+      },
+      startedAt,
+      completedAt,
+    );
+    await fetch("/api/practice/mse/attempt", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch(() => {}); // silent; a check, not a test
+  }
 
   return (
     <div className="space-y-4 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
@@ -183,7 +207,11 @@ export function FullMseLevel({ onComplete }: { onComplete?: () => void }) {
               {onComplete ? (
                 <button
                   type="button"
-                  onClick={onComplete}
+                  onClick={() => {
+                    haptic("success");
+                    void persist();
+                    onComplete();
+                  }}
                   className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
                 >
                   Mark Level 4 complete

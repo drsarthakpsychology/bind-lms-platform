@@ -4,6 +4,7 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { scoreMseCode, summarizeMseScore } from "@/lib/mse/ladder";
+import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
 
 interface TurnLine {
   role: "student" | "patient";
@@ -42,6 +43,8 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
   const [fields, setFields] = React.useState<Record<string, string[]>>({});
   const [rawText, setRawText] = React.useState<Record<string, string>>({});
   const [scored, setScored] = React.useState<Record<string, string> | null>(null);
+  // The attempt window starts when the level opens.
+  const [startedAt] = React.useState(() => new Date());
 
   React.useEffect(() => {
     let alive = true;
@@ -122,6 +125,28 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
 
   const turns = selected?.turns ?? [];
   const filled = DOMAINS.filter((d) => (fields[d] ?? []).length > 0).length;
+
+  /** Persist this Level 5 attempt (a check, not a test — silent on failure). */
+  async function persist() {
+    if (!selected) return;
+    const completedAt = new Date();
+    const payload = buildMseAttemptPayload(
+      null, // Level 5 is session-based; no mse_stimulus row exists for it
+      "5",
+      {
+        score: summary ? Math.round((summary.score / summary.max) * 100) / 100 : 0,
+        labels: [...DOMAINS].filter((d) => (fields[d] ?? []).length > 0) as string[],
+        source_session_id: selected.sessionId,
+      },
+      startedAt,
+      completedAt,
+    );
+    await fetch("/api/practice/mse/attempt", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch(() => {}); // silent; a check, not a test
+  }
   const perDomain = scored ? DOMAINS.map((d) => [d, scored[d]] as const).filter(([, v]) => v) : [];
   const summary = scored && !scored._uncoded ? summarizeMseScore(scored as Record<string, "green" | "amber" | "red">) : null;
 
@@ -257,7 +282,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
                 {onComplete && filled >= 9 ? (
                   <button
                     type="button"
-                    onClick={() => { haptic("success"); onComplete?.(); }}
+                    onClick={() => { haptic("success"); void persist(); onComplete?.(); }}
                     className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
                   >
                     Mark Level 5 complete

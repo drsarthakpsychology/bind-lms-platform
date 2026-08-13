@@ -2,17 +2,15 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
-## BEASTMODE ROUND 8 — content depth + scoring + polish (2026-08-12)
+## BEASTMODE ROUND 9 — attempt tables + content wiring + polish (2026-08-13)
 
-- [x] **Content Volume (Idioms)**: Seed remaining 15 regional idioms ( Bengali/Tamil/Telugu/Kannada/Marathi/Gujarati) to reach the 110 target [Master §5.2]
-- [x] **Content Volume (Cases)**: Author 5 new "no-disorder" cases to reach the 9-case restraint bank [Addendum §A8] — Already 9 cases exist: grief-no-disorder, dep-grief-raj, psy-mahesh, soma-b12-pramod, normalTeen, examAnxiety, sunita, rohit-parent, neelam-sent
-- [x] **Content Volume (Quizzes)**: Add 15 new best-response MCQ/spot-the-error items to the bank [Master §4.1]
-- [x] **Content Volume (Clinic)**: Expand Two-Minute Clinic with 20 new one-liner prompts + expert comparisons [Ideas Next]
-- [x] **Scoring Coverage**: Write 10 unit tests for the debrief scoring logic (deterministic, fixture-tested) [Master §11]
-- [x] **A7 Dictate-as-conversation**: Initial scaffold for the dictation interviewer (Whisper → follow-up LLM → sim_case spec) [Addendum §A7]
-- [x] **A5 Queue auto-release**: Add the `AI-generated — not yet faculty reviewed` label to student-facing feedback [Addendum §A5]
-- [x] **Polish (Haptics)**: Audit every practice activity and ensure `haptics.ts` fires on card tap, state change, and correct answer [Addendum §B5]
-- [x] **Polish (Focus)**: Ensure focus management on the MSE drill and long forms for keyboard-only users [Master §4]
-- [x] **Infra (Optimization)**: Audit text column sizes and apply `infra_snapshots` logic to the newest tables [Master §9.3] — 3 pending migrations (course_weeks, practice_layer_chain, practice_layer_dictation) applied live; 8 new size caps added (formulation_wall_posts, pair_messages, library_notes were live+uncapped since before this round; practice_chains.steps, sim_cases.follow_up, corpus_dictations.transcript/state/final_title capped on arrival)
-- [x] **Docs (Freshness)**: Update MORNING_REPORT.md and NIGHT_LOG.md with Round 8 status [Master §0.4]
-- [x] **Final Pass**: Run `npm run lint && npx tsc --noEmit && npm run test && npm run build` [Master §0.2] — lint 0 errors, tsc clean, 340 tests, build green (re-run after docs commit below)
+- [x] **Attempt Tables (MSE)**: Wire `mse_attempts` write on MSE level completion (level-observe → level-domain → level-full-mse → level-live-mse) — follows `osce_attempts` pattern [IDEAS_NEXT #1]
+- [ ] **Attempt Tables (Formulation)**: Wire `formulation_attempts` write on Formulation Forge completion (5P grid + narrative + diff) [IDEAS_NEXT #1]
+- [ ] **Attempt Tables (SCT)**: Wire `sct_attempts` write on SCT Arena completion (panel scored) [IDEAS_NEXT #1]
+- [ ] **Content Wiring (MSE)**: Replace static TS stimuli in `level-observe/level-domain/level-full-mse/level-live-mse` with readers from live `mse_stimuli` table (seeded) [IDEAS_NEXT #2]
+- [ ] **Content Wiring (Formulation)**: Replace static TS cases in Formulation Forge with readers from live `formulation_cases` table (seeded) [IDEAS_NEXT #2]
+- [ ] **Content Wiring (Idioms)**: Replace static SEED_IDIOMS in Rounds/Clinic/MSE with readers from live `public.idioms` table (already 65 seeded) [IDEAS_NEXT #2]
+- [ ] **ElevenLabs TTS**: Wire Kavya's ElevenLabs account (voice "Rudra") into the TTS provider chain as premium tier above Qwen3 [IDEAS_NEXT #3]
+- [ ] **Recurring Patient Arcs**: Spec + scaffold `practice_chains` + `sim_cases.follow_up` content + consumer (multi-session arc UI) [IDEAS_NEXT #4]
+- [ ] **Polish (OSCE Debrief)**: Ensure debrief shows checklist fraction, global rating, and composite with same visual language as Consulting Room debrief [polish]
+- [ ] **Tests**: Add 5 integration tests covering attempt-table writes for MSE/Formulation/SCT (fixture-tested, deterministic) [Master §11]

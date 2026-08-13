@@ -1,3 +1,48 @@
+## 2026-08-13 (round 9 — MSE attempt persistence)
+
+### MSE — attempt tables wired (QUEUE #1, IDEAS_NEXT #1)
+- `mse_attempts` had full RLS but zero writers — same gap the OSCE round
+  closed for `osce_attempts`. Previous agent left a half-wired, type-broken
+  attempt (payload shapes that wouldn't typecheck, `null` stimulus →
+  stimulus_id "unknown" → FK miss → silent no-op on every level, Level 5
+  import but no write). Rebuilt cleanly:
+- **Migration** `src/migrations_pending/mse_attempts_slug.sql`: `slug` on
+  `mse_stimuli` (backfill id::text, unique, not null) so the upsert script
+  has a stable key — the osce_stations_slug precedent. `mse_attempts` gains
+  `level`, `domain`, `started_at`, `completed_at`, `source_session_id`;
+  `stimulus_id` made nullable (Level 5 rows reference a sim session, not a
+  stimulus). Additive + idempotent; NOT yet applied live.
+- **Seed** `scripts/upsert-mse-stimuli.ts` upserts all static stimuli
+  (obs-1..obs-idiom-4, mse-1..mse-12, mse4-*) keyed by slug so the FK
+  resolves. Level 1 observe vignettes moved to
+  `src/lib/practice/mse-observe-stimuli.ts` (shared lib, typed MseStimulus).
+- **Helper** `src/lib/practice/mse-attempt.ts`: `buildMseAttemptPayload`
+  (stimulus id + level + detail + window), `scoreMseLevel1Attempt`
+  (coverage vs label penalty), `scoreMseLevel2Attempt` (green=1/amber=0.5).
+  Dropped the previous `scoreMseFullAttempt` (tag-level metric disagreed
+  with the UI's per-domain verdict — Level 4/5 store `summary.score/max`,
+  the same number the student sees). 11 unit tests.
+- **Route** `/api/practice/mse/attempt` now resolves slug→uuid via
+  `mse_stimuli.slug`, stores the full payload (level/domain/window/scores
+  in columns, labels/picked/expert/amber in tags jsonb), Level 5 → null
+  stimulus + source_session_id. FK-fail still warns + returns ok (a check,
+  not a test).
+- **Wiring**: level-observe/domain/full-mse/live-mse persist on completion
+  (Level 2 per-stimulus on Next; Level 4/5 session aggregate). Fixed the
+  duplicate effect dep `[idx, roundDone, roundDone]` and the
+  setState-in-effect lint errors (lazy init instead).
+- Decisions: Level 2 completion button does NOT emit an extra row — every
+  stimulus is already written on Next, and a "level complete" row has no
+  stimulus FK. Judgment domain has no seed stimulus (content bug, tracked
+  under QUEUE #2 content wiring) — writes still record whatever is shown.
+- Full gate: lint 0 errors / 0 warnings, tsc clean, 355 tests (11 new), build green.
+
+### Lint cleanup (5 pre-existing warnings)
+- dictate-conversation `catch (e)` → `catch {}`; mse-ladder dead
+  eslint-disable removed; transcripts route + ladder.test intentional
+  destructure drops get a per-line disable; `providerVoice` (zero callers,
+  dead stub) dropped its unused provider param.
+
 ## 2026-08-13 (round 8 close — infra text-column audit, QUEUE cleared)
 
 ### Infra (Optimization) — commit 1ee54c2 [Master §9.3]
@@ -35,6 +80,20 @@
 340 tests · lint 0 errors · tsc clean · build green · QUEUE round 8 fully
 cleared (10/10 items). Next: docs freshness + final gate below, then
 QUEUE round 9 generated from IDEAS_NEXT/BUGS.
+
+## 2026-08-13 (round 9 start — OSCE attempt persistence)
+
+### OSCE — commit eb58495
+- Seeded 12 stations (osce-1..osce-12) from SEED_OSCE_STATIONS into the
+  live `osce_stations` table (new `slug` column + unique index). The
+  table existed since `practice_layer_tools.sql` but was empty —
+  `/practice/osce` ran entirely on static TS content, so `osce_attempts`
+  could never write.
+- Added pure helper `buildOsceAttemptPayload(station, checked, global, startedAt, completedAt)` (4 tests): computes checklist fraction, normalised global (0..1), 60/40 composite; returns `{slug, mode, started_at, completed_at, checklist[], global_rating, scores{checklist_fraction, global_rating, composite}}`.
+- Route `/api/practice/osce/attempt` resolves slug → station_id uuid and inserts into `osce_attempts` (owner-scoped RLS, rate-limited).
+- osce-station component now posts the payload on "Save & pick another" (silent failure, competency credit still works if persistence fails — a check, not a test).
+- This closes one of the verified-real gaps from IDEAS_NEXT.md: the `osce_attempts` table existed with full RLS but zero writers.
+- Full gate: lint 0 errors, tsc clean, 344 tests (4 new), build green.
 
 ## 2026-08-12 (beastmode phase 1 — content engine round 1)
 

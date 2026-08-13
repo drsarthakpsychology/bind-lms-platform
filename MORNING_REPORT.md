@@ -51,6 +51,18 @@ touch_assignment already flagged before tonight, not a new regression) ·
 text-column size caps now cover every table that accepts free-text or
 jsonb from a student or faculty member, including tonight's newest ones.
 
+## Round 9 — what's shipping next (started 2026-08-13)
+- **OSCE attempt persistence** — the `osce_attempts` table had full RLS but
+  zero writers. Seeded 12 stations from the static content into
+  `osce_stations` (new `slug` FK column), added pure helper
+  `buildOsceAttemptPayload` (4 tests), route `/api/practice/osce/attempt`,
+  and client wiring so every self-assessed station now lands in
+  `osce_attempts.scores` (checklist fraction, global rating, 60/40
+  composite). Unlocks per-station weak-spots and a future
+  `/admin/osce-review` symmetrical to `/admin/sim-review`.
+- Next in this round: MSE/Formulation/SCT/Judgment/Rounds attempt
+  persistence (same pattern — one tool at a time).
+
 ## Top 3 worth your attention
 1. Drop the purchased books into `/mnt/acquire/` — the ingester is ready;
    that single action turns your purchases into the patient-voice corpus.
