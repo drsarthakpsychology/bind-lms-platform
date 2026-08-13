@@ -23,8 +23,8 @@ export async function POST(req: Request) {
   if (!sessionProfile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const user = sessionProfile;
 
-  const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).maybeSingle();
-  if (profile?.role !== "admin") return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  // Admin gate — requireSession already carries the profiles role.
+  if (sessionProfile.role !== "admin") return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
   const body = await req.json().catch(() => null);
   const parsed = completeSchema.safeParse(body);

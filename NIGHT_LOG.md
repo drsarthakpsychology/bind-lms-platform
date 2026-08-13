@@ -1,3 +1,20 @@
+## 2026-08-14 — AUTH CONSISTENCY FOLLOW-UP: sim routes + dictate admin gate
+
+Two QUEUE items closed on top of the round-10 auth sweep.
+
+- **Sim routes hardened** (`sim/debrief`, `sim/rewind`, `sim/turn`,
+  `sim/session`): the four routes the earlier sweep deliberately left on bare
+  `auth.getUser()` now use `requireSession()` (profiles row + expiry/alumni +
+  concurrent-session token). All four only used `user.id` downstream, so the
+  `const user = profile;` alias applies cleanly; their `supabase` client was
+  orphaned (queries run via `createAdminClient`), so the dead `createClient()`
+  and import were dropped.
+- **Dictate admin gate simplified** (`corpus/dictate`, `dictate/complete`,
+  `dictate/turn`): replaced the redundant `profiles.role` re-query with the
+  `role` already returned by `requireSession()` — same value, one fewer DB read.
+- Gate: lint 0/0, `tsc --noEmit` clean, 392 tests pass, `next build` exit 0.
+  Shipped in commit: HASH_TBD
+
 ## 2026-08-14 — AUTH CONSISTENCY: bare `auth.getUser()` → full `requireSession()`
 
 Security-audit follow-up. The app's authoritative session gate is

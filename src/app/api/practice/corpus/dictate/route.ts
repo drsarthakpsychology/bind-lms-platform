@@ -22,9 +22,8 @@ export async function POST(req: Request) {
   if (!sessionProfile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const user = sessionProfile;
 
-  // Verify admin via the profiles role.
-  const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).maybeSingle();
-  if (profile?.role !== "admin") {
+  // Admin gate — requireSession already carries the profiles role.
+  if (sessionProfile.role !== "admin") {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
 

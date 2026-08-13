@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { createClient } from "@/lib/supabase/server";
+import { requireSession } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { SEED_CASES } from "@/lib/psychopharm/sim/cases";
 import { initialState, type DepthCase } from "@/lib/sim/types";
@@ -20,11 +20,9 @@ const startSchema = z.object({
  * sim_sessions row (active), and returns the session + opening patient line.
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   const allowed = await rateLimit(`sim:start:${user.id}`, 10);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });

@@ -4,14 +4,12 @@
 
 ## AUTH CONSISTENCY — post-sweep open items (2026-08-14, hook-driven)
 
-- [ ] **Harden sim routes to `requireSession()`**: sim/debrief, sim/rewind,
-  sim/turn, sim/session still authenticate with bare `auth.getUser()` (JWT-only,
-  no expiry/concurrent-session checks). Excluded from the round-10 sweep by task
-  rule — decide scope and convert.
-- [ ] **Drop redundant admin-role query in dictate routes**: corpus/dictate,
-  dictate/complete, dictate/turn re-fetch `profiles.role` after
-  `requireSession()` already returns `role` on the Profile — can check
-  `profile.role` directly (untangle the local `profile` collision first).
+- [x] **Harden sim routes to `requireSession()`**: sim/debrief, sim/rewind,
+  sim/turn, sim/session converted from bare `auth.getUser()` to the full
+  session gate (profiles row + expiry + concurrent-session token).
+- [x] **Drop redundant admin-role query in dictate routes**: corpus/dictate,
+  dictate/complete, dictate/turn now gate admin via the `role` already returned
+  by `requireSession()` instead of re-querying `profiles.role`.
 
 ## BEASTMODE ROUND 10 CONT. — post-close continuation slices (2026-08-14, hook-driven)
 

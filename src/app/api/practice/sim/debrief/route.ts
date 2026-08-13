@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { createClient } from "@/lib/supabase/server";
+import { requireSession } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { scoreTranscript } from "@/lib/ai/scoring";
 import { shouldInjectCorrection } from "@/lib/practice/sim-review";
@@ -22,11 +22,9 @@ const debriefSchema = z.object({
  * the result in sim_scores (never re-runs for the same session).
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const profile = await requireSession();
+  if (!profile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const user = profile;
 
   const allowed = await rateLimit(`sim:debrief:${user.id}`, 5);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });
