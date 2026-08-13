@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Radar } from "lucide-react";
+import { Radar, ArrowRight } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { analyzeWeakSpots } from "@/lib/practice/weak-spots";
 
@@ -31,7 +31,7 @@ export async function WeakSpotsBanner(): Promise<React.ReactElement | null> {
   return (
     <Link
       href="/practice/weak-spots"
-      className="mb-6 flex items-center justify-between gap-3 rounded-md border-2 border-border bg-status-pending-bg p-3 text-small transition-transform active:translate-y-px"
+      className="mb-6 flex items-center justify-between gap-3 rounded-md border-2 border-border bg-status-pending-bg p-3 text-small transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px active:hard-shadow-none"
     >
       <span className="flex items-center gap-2">
         <Radar className="size-4 shrink-0 text-status-pending-fg" aria-hidden />
@@ -39,7 +39,9 @@ export async function WeakSpotsBanner(): Promise<React.ReactElement | null> {
           Your three weakest domains: <span className="font-medium">{top3}</span>
         </span>
       </span>
-      <span className="shrink-0 font-medium text-primary">Generate drill →</span>
+      <span className="flex shrink-0 items-center gap-1 font-medium text-primary">
+        Generate drill <ArrowRight className="size-3.5" aria-hidden />
+      </span>
     </Link>
   );
 }

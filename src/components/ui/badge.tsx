@@ -5,7 +5,7 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border-2 px-2.5 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3 [&>svg]:shrink-0",
+  "inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-md border-2 px-2.5 py-0.5 text-xs font-medium whitespace-nowrap transition-[background-color,color,box-shadow] duration-fast ease-snappy focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3 [&>svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -14,10 +14,10 @@ const badgeVariants = cva(
         secondary:
           "border-border bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
         destructive:
-          "border-destructive/40 bg-destructive/10 text-destructive [a&]:hover:bg-destructive/90 [a&]:hover:text-white",
+          "border-destructive/40 bg-destructive/10 text-destructive [a&]:hover:bg-destructive/90 [a&]:hover:text-destructive-foreground",
         outline: "border-border bg-background text-foreground [a&]:hover:bg-accent",
-        ghost: "[a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 [a&]:hover:underline",
+        ghost: "border-transparent [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+        link: "border-transparent text-foreground underline-offset-4 [a&]:hover:underline",
         // Statuses — derived from the existing palette, never a new hue, always
         // paired with a text label (never colour alone).
         // published  → terracotta/peach fill, ink border, dark text

@@ -3,12 +3,12 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, BookOpen, Stethoscope, NotebookPen, MessageSquare } from "lucide-react";
+import { LayoutDashboard, BookOpen, Stethoscope, NotebookPen, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const TABS = [
-  { href: "/today", label: "Today", icon: Home },
-  { href: "/dashboard", label: "Courses", icon: BookOpen },
+  { href: "/today", label: "Today", icon: LayoutDashboard },
+  { href: "/dashboard", label: "My Courses", icon: BookOpen },
   { href: "/practice", label: "Practice", icon: Stethoscope },
   { href: "/reflect", label: "Journal", icon: NotebookPen },
   { href: "/wall", label: "Wall", icon: MessageSquare },
@@ -29,7 +29,7 @@ export function BottomTabBar() {
     <nav
       className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-border bg-card lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
-      aria-label="Primary"
+      aria-label="Primary tabs"
     >
       <div className="flex items-stretch justify-around">
         {TABS.map((t) => {
@@ -46,9 +46,9 @@ export function BottomTabBar() {
             >
               <span
                 className={cn(
-                  "flex flex-col items-center gap-0.5 rounded-md border-2 px-3 py-1 transition-colors duration-fast ease-snappy active:translate-y-px",
+                  "flex flex-col items-center gap-0.5 rounded-md border-2 px-3 py-1 font-medium transition-colors duration-fast ease-snappy active:translate-y-px",
                   active
-                    ? "border-foreground bg-primary font-semibold text-primary-foreground hard-shadow-flat"
+                    ? "border-foreground bg-primary text-primary-foreground hard-shadow-flat"
                     : "border-transparent text-muted-foreground hover:text-foreground",
                 )}
               >

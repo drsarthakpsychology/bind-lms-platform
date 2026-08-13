@@ -41,7 +41,7 @@ function CaseFragment({
   return (
     <div
       className={cn(
-        "min-w-0 rounded-md border-2 border-foreground bg-card p-4 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md",
+        "min-w-0 rounded-lg border-2 border-foreground bg-card p-4 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md",
         className,
       )}
     >
@@ -92,8 +92,8 @@ function Hero() {
           </div>
         </Reveal>
         <Reveal delay={0.36}>
-          <p className="mt-5 text-caption text-muted-foreground">
-            Cohort One begins 20 August · Invite-only
+          <p className="mt-5 text-small font-medium text-foreground">
+            Cohort One begins {BRAND.cohortStart} · Invite-only
           </p>
         </Reveal>
       </div>
@@ -189,8 +189,11 @@ function ThreeIdeas() {
       <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
         {ideas.map((idea, i) => (
           <Reveal key={idea.eyebrow} delay={i * 0.08} className={cn(i === 1 && "md:mt-10", i === 2 && "md:mt-4")}>
-            <div className="rounded-md border-2 border-foreground bg-card p-6 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md">
-              <p className="text-eyebrow text-primary">{idea.eyebrow}</p>
+            <div className="rounded-lg border-2 border-foreground bg-card p-6 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md">
+              <p className="flex items-center gap-2 text-eyebrow text-muted-foreground">
+                <span aria-hidden className="size-2 rounded-full bg-primary" />
+                {idea.eyebrow}
+              </p>
               <h3 className="mt-2 min-w-0 break-words text-xl font-bold text-foreground">{idea.title}</h3>
               <p className="mt-3 min-w-0 break-words text-small leading-relaxed text-muted-foreground">{idea.body}</p>
             </div>
@@ -219,7 +222,7 @@ function WhoBuilds() {
               <span className="font-semibold text-foreground">{BRAND.lead}</span> is the clinical
               lead. He is the psychiatrist the school is built around.
             </p>
-            <p>Kavya Bothra is building the programme.</p>
+            <p>{BRAND.builder} is building the programme.</p>
             <p>There are guest lectures as well, so the teaching never rests on a single voice.</p>
           </div>
         </Reveal>
@@ -233,7 +236,7 @@ function ClosingCta() {
     <section className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-6">
       <Reveal>
         <h2 className="text-3xl font-black leading-tight tracking-tight text-foreground sm:text-4xl">
-          Cohort One begins 20 August.
+          Cohort One begins {BRAND.cohortStart}.
         </h2>
         <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
           A small cohort, a real curriculum, and a method built for the room.
@@ -291,7 +294,7 @@ function Footer() {
 
 export function LandingPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-dvh flex-col bg-background">
       <LandingNav />
       <main className="flex-1">
         <Hero />

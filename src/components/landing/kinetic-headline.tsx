@@ -9,6 +9,10 @@ import { motion, useReducedMotion } from "motion/react";
  * the DOM from first paint, so the message never depends on the animation.
  * With prefers-reduced-motion the words simply render in place.
  *
+ * `useReducedMotion()` is `null` on the server and only resolves to a boolean
+ * after hydration, so the per-word `initial` is gated behind `reduce === false`:
+ * server-rendered HTML and no-JS visitors see the headline from first paint.
+ *
  * Uses the motion system tokens mapped to JS: 600ms duration (--duration-slower)
  * and ease-out-expo (--ease-out-expo).
  */
@@ -37,7 +41,7 @@ export function KineticHeadline({
           <span className="-mb-[0.24em] inline-block overflow-hidden pb-[0.24em]">
             <motion.span
               className="inline-block will-change-transform"
-              initial={{ opacity: 0, y: "0.9em" }}
+              initial={reduce === false ? { opacity: 0, y: "0.9em" } : false}
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.6,

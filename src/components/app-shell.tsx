@@ -37,7 +37,7 @@ export function AppShell({
   const gateRole = role === "admin" && mode === "student" ? "admin-preview" : role;
 
   return (
-    <div className="min-h-screen bg-background lg:flex">
+    <div className="min-h-dvh bg-background lg:flex">
       {/* Ask the Syllabus — ⌘K command palette, available across the shell. */}
       <PaletteHost />
 
@@ -84,10 +84,10 @@ export function AppShell({
       </MobileBarVisibility>
 
       <main className="min-w-0 flex-1">
-        <div
-          className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-10 lg:py-8"
-          style={{ paddingLeft: "max(1rem, env(safe-area-inset-left))", paddingRight: "max(1rem, env(safe-area-inset-right))", paddingBottom: "max(5rem, env(safe-area-inset-bottom))" }}
-        >
+        {/* Safe-area bottom clearance for the fixed tab bar is scoped to
+            mobile (the bar is lg:hidden) so desktop keeps lg:px-10 / lg:py-8
+            instead of being clamped by an inline style. */}
+        <div className="mx-auto w-full max-w-6xl px-4 py-6 pb-[max(5rem,env(safe-area-inset-bottom))] sm:px-6 lg:px-10 lg:py-8 lg:pb-8">
           {children}
         </div>
       </main>

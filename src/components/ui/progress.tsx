@@ -28,7 +28,7 @@ function Progress({
         // Fill from 0 to the value on mount. Reduced-motion renders at full.
         initial={reduce ? { scaleX: 1 } : { scaleX: 0 }}
         animate={{ scaleX: (value || 0) / 100 }}
-        transition={reduce ? { duration: 0 } : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={reduce ? { duration: 0 } : { duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         style={{ transformOrigin: "left" }}
       />
     </ProgressPrimitive.Root>

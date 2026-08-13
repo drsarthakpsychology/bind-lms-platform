@@ -15,7 +15,7 @@ const cardVariants = cva(
         raised: "hard-shadow-sm",
         accent: "border-foreground bg-primary text-primary-foreground hard-shadow-sm",
         interactive:
-          "cursor-pointer outline-none hover:hard-shadow-md hover:-translate-y-0.5 focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat",
+          "cursor-pointer outline-none duration-fast ease-snappy hover:hard-shadow-md hover:-translate-y-0.5 focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:hard-shadow-flat",
       },
     },
     defaultVariants: {
@@ -56,7 +56,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-title"
-      className={cn("text-h2 leading-none font-semibold", className)}
+      className={cn("text-h2", className)}
       {...props}
     />
   )

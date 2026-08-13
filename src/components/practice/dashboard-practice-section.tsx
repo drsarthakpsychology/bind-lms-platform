@@ -46,7 +46,7 @@ export function DashboardPracticeSection() {
           </span>
           <span className="min-w-0">
             <span className="block text-eyebrow text-muted-foreground">Daily · 90 seconds</span>
-            <span className="block text-base font-semibold">5 Judgment Calls</span>
+            <span className="block text-body-strong">5 Judgment Calls</span>
             <span className="block text-caption text-muted-foreground">
               New information, new probability. See how experts disagree.
             </span>
@@ -64,7 +64,7 @@ export function DashboardPracticeSection() {
           </span>
           <span className="min-w-0">
             <span className="block text-eyebrow text-muted-foreground">Daily · 2 minutes</span>
-            <span className="block text-base font-semibold">Two-Minute Clinic</span>
+            <span className="block text-body-strong">Two-Minute Clinic</span>
             <span className="block text-caption text-muted-foreground">
               One line, your differential, instant expert comparison.
             </span>

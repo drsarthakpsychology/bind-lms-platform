@@ -155,7 +155,7 @@ export default async function DashboardPage() {
                   }
                   aria-label="Course progress"
                 />
-                <p className="text-numeric mt-1.5 text-right text-xs text-muted-foreground">
+                <p className="text-numeric mt-1.5 text-right text-caption text-muted-foreground">
                   {continueCourse.totalLessons
                     ? Math.round((continueCourse.completedCount / continueCourse.totalLessons) * 100)
                     : 0}
@@ -218,7 +218,7 @@ export default async function DashboardPage() {
                 <div className="space-y-2">
                   <Progress value={percent} aria-label={`${course.title} progress`} />
                   <div className="flex items-center justify-between">
-                    <span className="text-caption text-muted-foreground">
+                    <span className="text-numeric text-caption text-muted-foreground">
                       {completedCount} of {totalLessons} lessons · {percent}%
                     </span>
                   </div>

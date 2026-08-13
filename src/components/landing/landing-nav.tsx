@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { BRAND } from "@/lib/brand";
 import { VibhaWordmark } from "@/components/brand/vibha-logo";
 import { buttonVariants } from "@/components/ui/button";
@@ -19,6 +20,7 @@ export function LandingNav() {
   const [open, setOpen] = React.useState(false);
   const panelRef = React.useRef<HTMLDivElement>(null);
   const triggerRef = React.useRef<HTMLButtonElement>(null);
+  const reduce = useReducedMotion();
 
   const closeMenu = React.useCallback(() => {
     setOpen(false);
@@ -74,7 +76,12 @@ export function LandingNav() {
 
   return (
     <header className="sticky top-0 z-50 border-b-2 border-foreground bg-background">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-6">
+      {/* The top bar is hidden from the accessibility tree while the sheet is
+          open, so a screen reader can't reach the background behind the modal. */}
+      <div
+        className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-6"
+        aria-hidden={open ? true : undefined}
+      >
         <Link href="/" aria-label={`${BRAND.name} home`} className="flex items-center">
           <span className="sm:hidden">
             <VibhaWordmark compact size={28} />
@@ -106,65 +113,71 @@ export function LandingNav() {
           onClick={() => setOpen(true)}
           aria-label="Open menu"
           aria-expanded={open}
-          className="flex size-9 items-center justify-center rounded-md border-2 border-foreground bg-background text-foreground transition-transform active:translate-y-px sm:hidden"
+          className="flex size-9 items-center justify-center rounded-md border-2 border-foreground bg-background text-foreground transition-transform duration-fast ease-snappy active:translate-y-px sm:hidden"
         >
           <Menu className="size-5" aria-hidden />
         </button>
       </div>
 
-      {/* Full-screen mobile sheet */}
-      {open ? (
-        <div
-          ref={panelRef}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Menu"
-          className="fixed inset-0 z-[60] flex flex-col bg-background"
-        >
-          <div className="flex items-center justify-between border-b-2 border-foreground px-5 py-3">
-            <span className="flex items-center">
-              <VibhaWordmark compact size={28} />
-            </span>
-            <button
-              type="button"
-              onClick={closeMenu}
-              aria-label="Close menu"
-              className="flex size-9 items-center justify-center rounded-md border-2 border-foreground bg-background text-foreground"
-            >
-              <X className="size-5" aria-hidden />
-            </button>
-          </div>
-          <nav className="flex flex-1 flex-col gap-2 px-5 py-8" aria-label="Mobile">
-            {NAV_LINKS.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-md border-2 border-border px-4 py-3 text-lg font-semibold text-foreground"
+      {/* Full-screen mobile sheet — fades + rises in, back out on close. */}
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            ref={panelRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu"
+            className="fixed inset-0 z-[60] flex flex-col overflow-y-auto overscroll-contain bg-background"
+            initial={reduce ? false : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={reduce ? undefined : { opacity: 0, y: 8 }}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="flex items-center justify-between border-b-2 border-foreground px-5 py-3">
+              <span className="flex items-center">
+                <VibhaWordmark compact size={28} />
+              </span>
+              <button
+                type="button"
+                onClick={closeMenu}
+                aria-label="Close menu"
+                className="flex size-9 items-center justify-center rounded-md border-2 border-foreground bg-background text-foreground transition-transform duration-fast ease-snappy active:translate-y-px"
               >
-                {l.label}
+                <X className="size-5" aria-hidden />
+              </button>
+            </div>
+            <nav className="flex flex-1 flex-col gap-2 px-5 py-8" aria-label="Mobile">
+              {NAV_LINKS.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={closeMenu}
+                  className="rounded-md border-2 border-border px-4 py-3 text-lg font-semibold text-foreground transition-[color,background-color,transform] duration-fast ease-snappy hover:bg-accent hover:text-accent-foreground active:translate-y-px"
+                >
+                  {l.label}
+                </Link>
+              ))}
+              <Link
+                href="/login"
+                onClick={closeMenu}
+                className="rounded-md border-2 border-border px-4 py-3 text-lg font-semibold text-foreground transition-[color,background-color,transform] duration-fast ease-snappy hover:bg-accent hover:text-accent-foreground active:translate-y-px"
+              >
+                Login
               </Link>
-            ))}
-            <Link
-              href="/login"
-              onClick={() => setOpen(false)}
-              className="rounded-md border-2 border-border px-4 py-3 text-lg font-semibold text-foreground"
-            >
-              Login
-            </Link>
-            <Link
-              href="/enquire"
-              onClick={() => setOpen(false)}
-              className={cn(buttonVariants({ size: "lg" }), "mt-2 justify-center text-base font-semibold")}
-            >
-              Enquire
-            </Link>
-          </nav>
-          <p className="border-t-2 border-border px-5 py-4 text-caption text-muted-foreground">
-            Cohort One begins 20 August.
-          </p>
-        </div>
-      ) : null}
+              <Link
+                href="/enquire"
+                onClick={closeMenu}
+                className={cn(buttonVariants({ size: "lg" }), "mt-2 justify-center text-base font-semibold")}
+              >
+                Enquire
+              </Link>
+            </nav>
+            <p className="border-t-2 border-border px-5 py-4 text-caption text-muted-foreground">
+              Cohort One begins {BRAND.cohortStart}.
+            </p>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, Stethoscope, Brain, Layers, Timer, BookOpen, Scale, Users, CircleCheck, Gauge, Search, MessageSquare, Siren, GraduationCap, Wand2, Repeat, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/motion/reveal";
+import { cardVariants } from "@/components/ui/card";
 
 /** Icon name → component map (functions can't cross the Server→Client
  *  boundary, so the page passes plain string names — same pattern as the
@@ -92,7 +93,7 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
       {groups.map((group) => {
         const isOpen = open.has(group.id);
         return (
-          <details key={group.id} open={isOpen} className="group/row rounded-md border-2 border-border bg-card hard-shadow-sm">
+          <details key={group.id} open={isOpen} className="group/row rounded-lg border-2 border-border bg-card hard-shadow-sm">
             <summary
               onClick={(e) => {
                 e.preventDefault();
@@ -121,7 +122,8 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
                   <Link
                     href={tool.href}
                     className={cn(
-                      "group flex h-full flex-col gap-3 rounded-md border-2 border-border bg-background p-4 transition-[transform,box-shadow] outline-none hover:-translate-y-0.5 hover:hard-shadow-sm focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:hard-shadow-none",
+                      cardVariants({ variant: "interactive" }),
+                      "group h-full gap-3 bg-background p-4",
                       dimmed && "opacity-60",
                     )}
                   >
@@ -137,7 +139,7 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
                       ) : null}
                     </div>
                     <div>
-                      <h3 className="flex items-center gap-2 text-base font-semibold">
+                      <h3 className="flex items-center gap-2 text-body-strong">
                         {tool.title}
                         <span className="shrink-0 text-caption font-normal text-muted-foreground">{tool.time}</span>
                       </h3>

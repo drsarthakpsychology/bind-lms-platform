@@ -17,26 +17,39 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/record", label: "Record", icon: "clipboardList" },
 ];
 
+/**
+ * Admin nav is grouped into three labelled chunks (Review / Content / System)
+ * rather than one flat 21-item column — 21 simultaneous options exceeds the
+ * ~3–5 chunk working-memory ceiling, and grouping collapses the scan into
+ * ~4 chunks. Each destination also carries a unique icon: no glyph is reused
+ * for two different places, so the icon→destination mapping stays 1:1.
+ */
 export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin", label: "Overview", icon: "layoutDashboard", exact: true },
-  { href: "/admin/students", label: "Students", icon: "users" },
-  { href: "/admin/enquiries", label: "Enquiries", icon: "inbox" },
-  { href: "/admin/courses", label: "Courses", icon: "bookOpen" },
-  { href: "/admin/submissions", label: "Submissions", icon: "inbox" },
-  { href: "/admin/tools", label: "Tools", icon: "wrench" },
-  { href: "/admin/idioms", label: "Idiom bank", icon: "languages" },
-  { href: "/admin/psychopharm-review", label: "Medication library", icon: "pill" },
-  { href: "/admin/corpus/dictate", label: "Dictate case", icon: "mic" },
-  { href: "/admin/sim-review", label: "Sim sessions", icon: "stethoscope" },
-  { href: "/admin/triage", label: "Review triage", icon: "inbox" },
-  { href: "/admin/checkins", label: "Check-ins", icon: "heartPulse" },
-  { href: "/admin/supervision", label: "Sign-offs", icon: "clipboardCheck" },
-  { href: "/admin/flags", label: "Feature flags", icon: "toggle" },
-  { href: "/admin/calibration", label: "Calibration", icon: "target" },
-  { href: "/admin/cards", label: "Cards", icon: "idCard" },
-  { href: "/admin/rights", label: "Rights", icon: "shieldCheck" },
-  { href: "/admin/wall-reports", label: "Wall reports", icon: "flag" },
-  { href: "/admin/modules", label: "Modules", icon: "layers" },
-  { href: "/admin/pulse", label: "Cohort pulse", icon: "heartPulse" },
-  { href: "/admin/infra", label: "Infrastructure", icon: "gauge" },
+
+  // Review — the daily review workflow, highest-frequency first.
+  { href: "/admin/triage", label: "Review triage", icon: "listFilter", section: "Review" },
+  { href: "/admin/submissions", label: "Submissions", icon: "fileCheck", section: "Review" },
+  { href: "/admin/sim-review", label: "Sim sessions", icon: "stethoscope", section: "Review" },
+  { href: "/admin/supervision", label: "Sign-offs", icon: "clipboardCheck", section: "Review" },
+  { href: "/admin/wall-reports", label: "Wall reports", icon: "flag", section: "Review" },
+  { href: "/admin/enquiries", label: "Enquiries", icon: "inbox", section: "Review" },
+  { href: "/admin/checkins", label: "Check-ins", icon: "heartPulse", section: "Review" },
+
+  // Content — authoring and the knowledge base.
+  { href: "/admin/courses", label: "Courses", icon: "bookOpen", section: "Content" },
+  { href: "/admin/modules", label: "Modules", icon: "layers", section: "Content" },
+  { href: "/admin/cards", label: "Cards", icon: "idCard", section: "Content" },
+  { href: "/admin/idioms", label: "Idiom bank", icon: "languages", section: "Content" },
+  { href: "/admin/psychopharm-review", label: "Medication library", icon: "pill", section: "Content" },
+  { href: "/admin/corpus/dictate", label: "Dictate case", icon: "mic", section: "Content" },
+  { href: "/admin/calibration", label: "Calibration", icon: "target", section: "Content" },
+
+  // System — people, access, and platform.
+  { href: "/admin/students", label: "Students", icon: "users", section: "System" },
+  { href: "/admin/rights", label: "Rights", icon: "shieldCheck", section: "System" },
+  { href: "/admin/flags", label: "Feature flags", icon: "toggle", section: "System" },
+  { href: "/admin/pulse", label: "Cohort pulse", icon: "activity", section: "System" },
+  { href: "/admin/infra", label: "Infrastructure", icon: "gauge", section: "System" },
+  { href: "/admin/tools", label: "Tools", icon: "wrench", section: "System" },
 ];

@@ -28,7 +28,7 @@ export function StatCard({
         <span
           className={cn(
             "text-eyebrow",
-            accent ? "text-primary-foreground/80" : "text-muted-foreground"
+            accent ? "text-primary-foreground" : "text-muted-foreground"
           )}
         >
           {label}
@@ -62,11 +62,15 @@ export function StatCard({
   );
 
   const classes = cn(
-    "group relative flex min-h-[6.5rem] flex-col gap-2 rounded-md border-2 border-border p-4 transition-[transform,box-shadow]",
+    "group relative flex min-h-[6.5rem] flex-col gap-2 rounded-lg border-2 border-border p-4 transition-[transform,box-shadow] duration-fast ease-snappy",
     accent
-      ? "border-foreground bg-primary text-primary-foreground hard-shadow-sm hover:hard-shadow-md hover:-translate-y-0.5"
-      : "bg-card hard-shadow-flat hover:hard-shadow-sm hover:-translate-y-0.5",
-    href && "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
+      ? "border-foreground bg-primary text-primary-foreground hard-shadow-sm"
+      : "bg-card hard-shadow-flat",
+    href &&
+      cn(
+        "outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 hover:-translate-y-0.5",
+        accent ? "hover:hard-shadow-md" : "hover:hard-shadow-sm",
+      ),
     className
   );
 

@@ -5,8 +5,9 @@ import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 
 /**
  * Subtle scroll parallax moves a decorative element a few pixels against the
- * scroll direction. Disabled entirely under prefers-reduced-motion and never
- * more than 12px so it can't cause nausea or overlap.
+ * scroll direction. Disabled entirely under prefers-reduced-motion. Defaults
+ * travel ±12px from the resting position (24px total) — small enough that it
+ * can't cause nausea or overlap.
  */
 export function Parallax({
   children,

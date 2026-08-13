@@ -15,4 +15,8 @@ export const BRAND = {
   parent: "VIBHA Healing Centre",
   /** The clinical lead. */
   lead: "Dr. Sarthak Dave, MBBS, MD (Psychiatry)",
+  /** The programme builder. */
+  builder: "Kavya Bothra",
+  /** Cohort One start date — single source for the public-site deadline. */
+  cohortStart: "20 August",
 } as const;
