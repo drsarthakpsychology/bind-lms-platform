@@ -155,7 +155,7 @@ export const MOVES: MoveDef[] = [
   ]},
 ];
 
-export const MOVE_BY_ID: Record<PatientMoveId, MoveDef> = Object.fromEntries(
+const MOVE_BY_ID: Record<PatientMoveId, MoveDef> = Object.fromEntries(
   MOVES.map((m) => [m.id, m]),
 ) as Record<PatientMoveId, MoveDef>;
 

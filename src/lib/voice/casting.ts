@@ -32,10 +32,3 @@ export function castVoiceId(input: CastInput): string {
   const ageBand = input.age == null ? "adult" : input.age < 20 ? "young" : input.age > 55 ? "senior" : "adult";
   return `en-IN-${hint}-${gender}-${ageBand}`;
 }
-
-/** Which voice name to send for a given cast id. Providers accept en-IN-style
- *  names and pick a closest default where the exact voice is absent, so the
- *  cast id is the contract. */
-export function providerVoice(castId: string): string {
-  return castId;
-}

@@ -12,7 +12,7 @@
 import type { SessionVariant, VariationSchema } from "./types";
 
 /** A tiny deterministic PRNG (mulberry32) from a numeric seed. */
-export function mulberry32(seed: number): () => number {
+function mulberry32(seed: number): () => number {
   let a = seed >>> 0;
   return function () {
     a |= 0;

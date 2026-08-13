@@ -27,7 +27,7 @@ export interface TurnContext {
 }
 
 /** Evaluate a gate against the current state + this turn. Pure. */
-export function evaluateGate(gate: Gate, state: PatientState, ctx: TurnContext): boolean {
+function evaluateGate(gate: Gate, state: PatientState, ctx: TurnContext): boolean {
   switch (gate.kind) {
     case "move_used": {
       // Count how many times this move appears in the student's move history.

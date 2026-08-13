@@ -22,7 +22,6 @@ import "server-only";
  */
 
 import { synthesisCacheKey, type SynthesisRequest } from "./synthesis-keys";
-export { synthesisCacheKey, type SynthesisRequest };
 
 export interface SynthesisResult {
   /** R2 object key when cached/synthesised; null in fixture mode. */

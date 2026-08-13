@@ -27,7 +27,7 @@ export const MSE_VOCAB: Record<MseDomain, string[]> = {
 };
 
 /** Diagnostic terms the "describe, don't diagnose" mode flags. */
-export const DIAGNOSTIC_TERMS = [
+const DIAGNOSTIC_TERMS = [
   "schizophren", "bipolar", "depress", "anxiety", "disorder",
   "psychosis", "psychotic", "manic", "mania", "dementia", "delirium", "ptsd",
   "ocd", "borderline", "antisocial", "narcissistic",

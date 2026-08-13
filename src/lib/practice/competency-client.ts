@@ -57,8 +57,3 @@ export const FORMULATION_COMPETENCY_KEYS: string[] = ["clinical_interviewing", "
 
 /** Rounds session (per session, not per card). */
 export const ROUNDS_COMPETENCY_KEYS: string[] = ["clinical_interviewing", "risk_assessment", "psychoeducation", "cultural_attunement"];
-
-export function toolScore(tool: string, rawScore: number): number {
-  // Normalise to 0..5 for the evidence weight (the backend expects 0..5).
-  return Math.max(0, Math.min(5, rawScore));
-}

@@ -116,39 +116,11 @@ export function sttStatus(): { supported: boolean; reason?: string } {
 }
 
 /**
- * Server Whisper STT (v5 §6) — used when the browser engine is unavailable
- * (Firefox behind a flag) or the student opts in for better accent accuracy.
- * The server route tries Groq → NVIDIA; the interim transcript is surfaced
- * live and editable (the edit-before-send flow lives in the voice UI).
+ * Transcribe an audio blob via the server route (Groq → NVIDIA → 503). The
+ * browser never holds the key; the server STT route tries Deepgram when
+ * DEEPGRAM_API_KEY is set, then Groq → NVIDIA, and returns an honest 503.
  */
-export interface ServerSttEngine extends SttEngine {
-  type: "server";
-}
 
-export function createServerStt(): ServerSttEngine | null {
-  if (typeof window === "undefined") return null;
-  return {
-    type: "server",
-    supported: () => true,
-    start() {
-      // Recording is handled by the parent (MediaRecorder); start() here
-      // only signals readiness. The parent finalises and POSTs the blob.
-      this.onResult?.({
-        transcript: "",
-        confidence: 1,
-        isFinal: false,
-      });
-    },
-    stop() {
-      /* the parent finalises the recording */
-    },
-    abort() {
-      /* no-op */
-    },
-  };
-}
-
-/** Transcribe an audio blob via the server route (Groq → NVIDIA → 503). */
 export async function serverTranscribe(blob: Blob): Promise<{ transcript: string } | { error: string }> {
   const buf = await blob.arrayBuffer();
   const b64 = btoa(String.fromCharCode(...new Uint8Array(buf)));
@@ -168,37 +140,8 @@ export async function serverTranscribe(blob: Blob): Promise<{ transcript: string
   }
 }
 
-/**
- * Deepgram streaming STT (IDEAS: Deepgram) — provider-shaped drop-in.
- * The browser NEVER holds the key: the server STT route tries Deepgram
- * first when DEEPGRAM_API_KEY is set, then Groq → NVIDIA. The interim
- * transcript + edit-before-send flow stay identical, so this is a pure
- * availability upgrade, not a UX change.
- */
-export interface DeepgramSttEngine extends SttEngine {
-  type: "deepgram";
-}
+/* Deepgram streaming STT is a server-side availability upgrade only (the
+ * /api/practice/voice/stt route tries Deepgram first when DEEPGRAM_API_KEY
+ * is set); the client flow is identical either way, so no client engine is
+ * needed. */
 
-export function deepgramSttAvailable(): boolean {
-  // Availability is decided server-side; the engine is always constructible
-  // and the server route falls back honestly.
-  return typeof window !== "undefined";
-}
-
-export function createDeepgramStt(): DeepgramSttEngine | null {
-  if (!deepgramSttAvailable()) return null;
-  return {
-    type: "deepgram",
-    supported: () => true,
-    start() {
-      // The parent records (MediaRecorder); start signals readiness.
-      this.onResult?.({ transcript: "", confidence: 1, isFinal: false });
-    },
-    stop() {
-      /* the parent finalises the recording */
-    },
-    abort() {
-      /* no-op */
-    },
-  };
-}
