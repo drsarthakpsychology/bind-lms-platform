@@ -20,7 +20,7 @@
   improvement**; **Cohere** 1,000 calls/mo cap; **DeepInfra** free tier
   unverifiable; **OpenRouter** no-training but 50 RPD at $0 (1,000 RPD after a
   one-time $10 top-up).
-- Commit: `d0a0700`.
+- Commit: `938e7ba`.
 
 ## 2026-08-14 — extended round: nudge, ElevenLabs, lesson quiz, OSCE voice, chain
 
