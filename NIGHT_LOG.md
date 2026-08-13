@@ -1716,3 +1716,36 @@ Introduced `--color-link` (light `#b83a00` terracotta 5.40:1 / dark peach
 This closes the deferred `text-primary`-as-text contrast item — the design
 decision (link token) is made and applied, so no NEEDS_KAVYA surface remains
 for it.
+
+---
+
+## 2026-08-14 — Admin + student UI pass (Kavya's requests)
+
+Admin panel + student surfaces, per Kavya's two messages. All gate-green.
+
+**Done directly:**
+- Cards: Approve now publishes (local state mirrors the server); status/action
+  colours on tokens (52a4c1a).
+- Rights: whole casebook marked acquired (79 licensed + 22 free, all consent)
+  via `rights_all_acquired.sql` — manual tracker moot (52a4c1a).
+- Infra: provider_health now rendered (was returned but dropped) (52a4c1a).
+- Calibration: kappa math verified correct (Cohen's weighted kappa; gate
+  constants sound) — no code change needed.
+
+**Parallel agents (7751d88):**
+- Medication library: scannable admin list + student/clinician register toggle
+  in the editor + register-aware rendering (plain_language as a peach callout
+  for students; technical prose broken into short lines for clinicians; lists
+  as scannable <ul>).
+- Module access: access-control system — revoke (cohort + per student), visible
+  per-module grant lists, student <select>, "Override" unlock separated.
+- My Courses: clear sequence (Continue → Daily habit → Courses), in-progress
+  first with per-card status badges, first-step affordance for new students.
+- Practice hub: flagship tools (Consulting Room / MSE / Formulation) elevated
+  with "Core tool" markers; distinct time chips; clearer group headers.
+
+**Deferred design follow-ups cleared this pass:**
+- Card `asChild` (00d1686); EmptyState/ErrorState entrance motion (adcd3c1);
+  admin mobile bottom bar (7123021).
+
+Gate green throughout: lint 0, tsc clean, 395 tests, build 0.
