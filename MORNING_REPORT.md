@@ -51,6 +51,23 @@ touch_assignment already flagged before tonight, not a new regression) ·
 text-column size caps now cover every table that accepts free-text or
 jsonb from a student or faculty member, including tonight's newest ones.
 
+## Round 9 completed (2026-08-13) — attempt tables live + casebook findings
+- **All four attempt tables now persist**: `mse_attempts`, `formulation_attempts`,
+  `sct_attempts` (and `osce_attempts` from earlier) have working write routes,
+  live migrations applied, seeds in place (30 mse_stimuli by slug), and 15
+  fixture-tested route tests. Weak-spots and per-station/per-domain history are
+  now real.
+- **Casebook findings 1/3/4 done**: course rows de-duplicated (each object once);
+  /practice shows zero fabricated numbers (practice-state.ts computes from real
+  tables, blank when none); Passport→/passport, supervision+check-in→/record,
+  weak-spots stays a banner. /practice is now grouped by session length,
+  collapsible, open-state remembered per user.
+- **Rounds completed**: /admin/cards review queue (the 7 auto-drafted cards were
+  sitting unreviewed), deck reads published cards, and per-user FSRS scheduling
+  persists to card_reviews.
+- **OSCE debrief** now shows checklist/global/composite as CR-style stat tiles.
+- Gate: lint 0/0, tsc clean, **375 tests pass**, build green.
+
 ## Round 9 — what's shipping next (started 2026-08-13)
 - **OSCE attempt persistence** — the `osce_attempts` table had full RLS but
   zero writers. Seeded 12 stations from the static content into
