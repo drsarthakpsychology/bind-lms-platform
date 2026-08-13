@@ -92,8 +92,10 @@ export function AppShell({
         </div>
       </main>
 
-      {/* Mobile bottom tab bar (student chrome) — thumb reach. */}
-      {mode === "student" ? <BottomTabBar /> : null}
+      {/* Mobile bottom tab bar — thumb reach. Student gets the 5 core tabs;
+          admin gets a compact 4-destination bar (Overview/Review/Submissions/
+          Students) so the review workflow isn't drawer-only. */}
+      <BottomTabBar mode={mode} />
     </div>
   );
 }
