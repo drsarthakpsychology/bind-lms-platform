@@ -188,12 +188,12 @@ export default async function DashboardPage() {
         )}
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {courseSummaries.map(({ course, totalLessons, completedCount }) => {
+          {courseSummaries.map(({ course, totalLessons, completedCount }, i) => {
             const percent = totalLessons ? Math.round((completedCount / totalLessons) * 100) : 0;
             const isComplete = totalLessons > 0 && completedCount === totalLessons;
             return (
+              <Reveal key={course.id} delay={0.15 + i * 0.05} className="h-full">
               <Link
-                key={course.id}
                 href={`/courses/${course.id}`}
                 className={cn(cardVariants({ variant: "interactive" }), "h-full p-5")}
               >
@@ -237,6 +237,7 @@ export default async function DashboardPage() {
                   <ArrowRight className="size-3.5" aria-hidden />
                 </span>
               </Link>
+              </Reveal>
             );
           })}
         </div>

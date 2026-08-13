@@ -31,8 +31,8 @@ export interface SynthesisResult {
   url: string | null;
   /** sha256(text+voice+emotion+speed) — the cache key. */
   cacheKey: string;
-  /** 'elevenlabs' | 'cosyvoice2' | 'kokoro' | 'fixture' */
-  provider: "elevenlabs" | "qwen3" | "chatterbox" | "cosyvoice2" | "kokoro" | "fixture";
+  /** 'mimo' | 'elevenlabs' | 'cosyvoice2' | 'kokoro' | 'fixture' */
+  provider: "mimo" | "elevenlabs" | "qwen3" | "chatterbox" | "cosyvoice2" | "kokoro" | "fixture";
 }
 
 
@@ -234,10 +234,44 @@ async function putR2(
 }
 
 /**
- * ElevenLabs (premium tier) — Kavya's account, voice "Rudra". Multilingual v2,
- * R2-cached like every other tier. Keyed off ELEVENLABS_API_KEY +
- * ELEVENLABS_VOICE_ID; silently skipped (returns ok:false) when unset so the
- * free chain below still runs.
+ * MiMo-V2.5-TTS (MIT, arena-top) — the research round's primary open-weights
+ * pick (docs/MODEL_RESEARCH.md). OpenAI-compatible /v1/audio/speech at
+ * MIMO_TTS_URL (Xiaomi API free beta, or self-host). Free + commercially
+ * usable (MIT) — the first tier tried.
+ */
+async function synthesizeMiMo(req: SynthesisRequest): Promise<{ ok: true; objectKey: string; url: string | null } | { ok: false; reason: string }> {
+  const base = process.env.MIMO_TTS_URL;
+  const apiKey = process.env.MIMO_TTS_API_KEY;
+  if (!base) return { ok: false, reason: "no MIMO_TTS_URL" };
+  try {
+    const res = await fetch(`${base.replace(/\/$/, "")}/v1/audio/speech`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}),
+      },
+      body: JSON.stringify({
+        model: req.model ?? "mimo-v2.5-tts",
+        input: req.text,
+        voice: req.voice,
+        speed: req.speed ?? 1,
+        response_format: "mp3",
+      }),
+    });
+    if (!res.ok) return { ok: false, reason: `mimo ${res.status}` };
+    const audio = Buffer.from(await res.arrayBuffer());
+    const key = synthesisCacheKey(req);
+    const write = await putR2(`voice/${key}.mp3`, audio);
+    return { ok: true, objectKey: `voice/${key}.mp3`, url: write?.url ?? null };
+  } catch (e) {
+    return { ok: false, reason: (e as Error).message };
+  }
+}
+
+/**
+ * ElevenLabs (LAST-RESORT optional tier) — paid. Only tried after every free
+ * tier (MiMo, Kokoro, Qwen3, Chatterbox, CosyVoice) has failed. Not
+ * recommended; kept only if Kavya specifically wants premium voices.
  */
 async function synthesizeElevenLabs(req: SynthesisRequest): Promise<{ ok: true; objectKey: string; url: string | null } | { ok: false; reason: string }> {
   const apiKey = process.env.ELEVENLABS_API_KEY;
@@ -276,20 +310,25 @@ export async function synthesize(req: SynthesisRequest): Promise<SynthesisResult
   const key = synthesisCacheKey(req);
 
   if (process.env.AI_ENABLED === "true") {
-    // Cache-first.
+    // Cache-first (the cache is content-keyed, provider-agnostic).
     if (await r2Has(key)) {
-      return { objectKey: `voice/${key}.mp3`, url: null, cacheKey: key, provider: "elevenlabs" };
+      return { objectKey: `voice/${key}.mp3`, url: null, cacheKey: key, provider: "kokoro" };
     }
-    const eleven = await synthesizeElevenLabs(req);
-    if (eleven.ok) return { objectKey: eleven.objectKey, url: eleven.url, cacheKey: key, provider: "elevenlabs" };
+    // FREE-FIRST: open/zero-cost tiers before any paid option.
+    // 1 MiMo (MIT) → 2 Kokoro (Apache, CPU) → 3 Qwen3 (hosted) →
+    // 4 Chatterbox (MIT) → 5 CosyVoice (NVIDIA free) → 6 ElevenLabs (paid, last).
+    const mimo = await synthesizeMiMo(req);
+    if (mimo.ok) return { objectKey: mimo.objectKey, url: mimo.url, cacheKey: key, provider: "mimo" };
+    const kokoro = await synthesizeKokoro(req);
+    if (kokoro.ok) return { objectKey: kokoro.objectKey, url: kokoro.url, cacheKey: key, provider: "kokoro" };
     const qwen = await synthesizeQwen3(req);
     if (qwen.ok) return { objectKey: qwen.objectKey, url: qwen.url, cacheKey: key, provider: "qwen3" };
     const chatter = await synthesizeChatterbox(req);
     if (chatter.ok) return { objectKey: chatter.objectKey, url: chatter.url, cacheKey: key, provider: "chatterbox" };
     const cosy = await synthesizeCosyVoice(req);
     if (cosy.ok) return { objectKey: cosy.objectKey, url: cosy.url, cacheKey: key, provider: "cosyvoice2" };
-    const kokoro = await synthesizeKokoro(req);
-    if (kokoro.ok) return { objectKey: kokoro.objectKey, url: kokoro.url, cacheKey: key, provider: "kokoro" };
+    const eleven = await synthesizeElevenLabs(req);
+    if (eleven.ok) return { objectKey: eleven.objectKey, url: eleven.url, cacheKey: key, provider: "elevenlabs" };
   }
 
   // Fixture mode — the client renders with browser speech + affect mapping.

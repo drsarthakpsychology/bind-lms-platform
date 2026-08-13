@@ -37,7 +37,7 @@ export function LandingNav() {
           <span className="flex size-8 items-center justify-center rounded-sm bg-primary text-sm font-black text-primary-foreground">
             {BRAND.shortName.charAt(0)}
           </span>
-          <span className="hidden min-w-0 text-sm font-bold sm:block">{BRAND.name}</span>
+          <span className="hidden min-w-0 text-sm font-bold tracking-wide sm:block">{BRAND.nameUppercase}</span>
           <span className="min-w-0 text-sm font-bold sm:hidden">{BRAND.shortName}</span>
         </Link>
 

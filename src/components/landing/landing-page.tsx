@@ -4,6 +4,7 @@ import { BRAND } from "@/lib/brand";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { LandingNav } from "./landing-nav";
+import { Parallax } from "./parallax";
 import { Reveal } from "./reveal";
 
 /**
@@ -26,14 +27,20 @@ function Hero() {
     <section className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-5 pb-16 pt-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:pt-20">
       <Reveal>
         <p className="text-eyebrow text-muted-foreground">A clinical psychology training programme</p>
+      </Reveal>
+      <Reveal delay={0.06}>
         <h1 className="mt-3 max-w-xl text-4xl font-black leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
           Understand the case, not just the diagnosis.
         </h1>
+      </Reveal>
+      <Reveal delay={0.12}>
         <p className="mt-5 max-w-lg min-w-0 break-words text-base leading-relaxed text-muted-foreground sm:text-lg">
           Psychology graduates can describe therapy. Few can practise it. VIBHA
           School of Psychology closes that gap — with real cases, simulated
           patients, and a debrief after every session.
         </p>
+      </Reveal>
+      <Reveal delay={0.18}>
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <Link href="/enquire" className={cn(buttonVariants({ size: "lg" }), "gap-2 font-semibold")}>
             Enquire <ArrowRight className="size-4" aria-hidden />
@@ -42,28 +49,37 @@ function Hero() {
             Login
           </Link>
         </div>
+      </Reveal>
+      <Reveal delay={0.24}>
         <p className="mt-5 text-caption text-muted-foreground">
           Cohort One begins 20 August · Invite-only
         </p>
       </Reveal>
 
       {/* Layered case fragments — the product's raw material, drawn with the
-          LMS's card + hard-shadow language. */}
-      <Reveal delay={0.1} className="relative mx-auto w-full max-w-sm lg:max-w-none">
+          LMS's card + hard-shadow language. Cascade in, drift subtly on
+          scroll (parallax disabled under prefers-reduced-motion). */}
+      <Parallax from={12} to={-12} className="relative mx-auto w-full max-w-sm lg:max-w-none">
         <div className="space-y-3">
-          <CaseFragment label="Presenting complaint" className="ml-0 -rotate-1">
-            &ldquo;I hear a voice telling me I&apos;m worthless. It&apos;s not mine.&rdquo;
-          </CaseFragment>
-          <CaseFragment label="Observation" className="mr-6 rotate-1 sm:mr-12">
-            Sits very still, hands folded. Speaks in a flat, even voice. Looks at
-            her sister before every answer.
-          </CaseFragment>
-          <CaseFragment label="Formulation" className="ml-4 sm:ml-10">
-            The heaviness is the only language her belief system permits for
-            distress.
-          </CaseFragment>
+          <Reveal delay={0.15}>
+            <CaseFragment label="Presenting complaint" className="ml-0 -rotate-1">
+              &ldquo;I hear a voice telling me I&apos;m worthless. It&apos;s not mine.&rdquo;
+            </CaseFragment>
+          </Reveal>
+          <Reveal delay={0.25}>
+            <CaseFragment label="Observation" className="mr-6 rotate-1 sm:mr-12">
+              Sits very still, hands folded. Speaks in a flat, even voice. Looks at
+              her sister before every answer.
+            </CaseFragment>
+          </Reveal>
+          <Reveal delay={0.35}>
+            <CaseFragment label="Formulation" className="ml-4 sm:ml-10">
+              The heaviness is the only language her belief system permits for
+              distress.
+            </CaseFragment>
+          </Reveal>
         </div>
-      </Reveal>
+      </Parallax>
     </section>
   );
 }
@@ -195,7 +211,7 @@ function Footer() {
           <span className="flex size-7 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground">
             {BRAND.shortName.charAt(0)}
           </span>
-          <span className="text-small font-bold">{BRAND.name}</span>
+          <span className="text-small font-bold tracking-wide">{BRAND.nameUppercase}</span>
         </span>
         <nav className="flex flex-wrap items-center gap-5 text-caption text-muted-foreground" aria-label="Footer">
           <Link href="#about" className="transition-colors hover:text-foreground">About</Link>

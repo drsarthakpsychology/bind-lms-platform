@@ -74,7 +74,7 @@ export function NavItems({
             onClick={onNavigate}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "flex items-center gap-3 rounded-md border-2 border-transparent px-3 py-2 text-small font-medium transition-[color,background-color,box-shadow,transform]",
+              "flex cursor-pointer items-center gap-3 rounded-md border-2 border-transparent px-3 py-2 text-small font-medium transition-[color,background-color,box-shadow,transform] duration-fast ease-snappy",
               active
                 ? "border-foreground bg-primary text-primary-foreground hard-shadow-flat"
                 : "text-muted-foreground hover:bg-accent hover:text-foreground active:translate-y-px"

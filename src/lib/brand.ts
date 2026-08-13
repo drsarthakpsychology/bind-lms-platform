@@ -4,6 +4,8 @@
  */
 export const BRAND = {
   name: "VIBHA School of Psychology",
+  /** The full name in the display case used on the public site. */
+  nameUppercase: "VIBHA SCHOOL OF PSYCHOLOGY",
   shortName: "VIBHA",
   /** One-line product description, used in metadata and auth screens. */
   tagline: "Psychology you can practise.",

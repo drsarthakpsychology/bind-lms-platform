@@ -108,13 +108,18 @@ with the reason — that's the pipeline working, not a bug.
   stations etc. without a code change, or (2) drop the unused tables.
   Currently harmless either way — flagging so it doesn't sit unexplained.
 
-## 🔊 ElevenLabs premium TTS — one key away
+## 🔊 Voice — FREE-FIRST (use Kokoro + MiMo, not ElevenLabs)
 
-The premium tier is BUILT at the top of the synthesis chain
-(`src/lib/voice/synthesize.ts` → `synthesizeElevenLabs`, voice "Rudra",
-R2-cached). It needs two env vars to activate (else the free chain runs):
-- `ELEVENLABS_API_KEY`
-- `ELEVENLABS_VOICE_ID` (the "Rudra" voice)
+The synthesis chain is reordered free-first (`src/lib/voice/synthesize.ts`):
+MiMo (MIT) → Kokoro (Apache, CPU) → Qwen3 → Chatterbox → CosyVoice → ElevenLabs
+LAST. The zero-cost voice that works TODAY:
+- **Kokoro-82M** (Apache-2.0, CPU, runs on the Mac) — set `KOKORO_API_URL` to a
+  local OpenAI-compatible audio/speech server.
+- **MiMo-V2.5-TTS** (MIT, arena-top) — set `MIMO_TTS_URL` (Xiaomi API free beta
+  or self-host) for the best free quality.
+
+ElevenLabs is NOT recommended (paid). It's only a last-resort tier if you
+specifically want premium voices — `ELEVENLABS_API_KEY` + `ELEVENLABS_VOICE_ID`.
 
 ## ✉️ Cohort-pulse one-tap nudge — one key away
 
