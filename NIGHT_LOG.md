@@ -1,3 +1,9 @@
+## 2026-08-14 — ROOT ERROR BOUNDARY + SHARED ERRORSTATE (queue follow-up, 597dcb7)
+
+- **No more bare Next.js fallbacks**: the landing page, /login, /enquire, /expired, and /verify/[certificateId] had no error.tsx. New root `src/app/error.tsx` boundary catches every public route without a closer boundary — full-viewport centered, rendered inside the root layout so theme + fonts stay intact (chose root error.tsx over global-error.tsx deliberately: global-error drops the layout, fonts, and theme). /(dashboard) keeps its closer boundary; an AppShell-level throw now bubbles to the root boundary instead of the bare fallback.
+- **Shared `ErrorState` component** (`design-system/error-state.tsx`): icon, title, trust-preserving copy, `Try again` via Next 16.2 `unstable_retry`, optional digest reference. Both boundaries now consume it — one implementation, boundary files only pass wrapper height (`min-h-screen` root / `min-h-[50vh]` inside the shell). QUEUE item ticked.
+- Gate: lint 0/0, tsc clean, 395 tests, next build exit 0.
+
 ## 2026-08-14 — BOTTOM TAB BAR ACTIVE CHIP (queue follow-up, de86423)
 
 - **Active tab now unmistakable** (`bottom-tab-bar.tsx`): was peach-on-cream (~2:1 light) + font-semibold — quiet for the primary mobile nav. Icon + label now live in a constant-geometry chip (`px-3 py-1 border-2 rounded-md`) that swaps to the system's standard active language — `border-foreground bg-primary text-primary-foreground hard-shadow-flat` — identical to the sidebar active row and SegmentedControl active segment. Ink-on-peach ≈ 8.98:1 in both themes; inactive chips are `border-transparent` at identical geometry (zero layout shift on switch); `aria-current="page"` and `duration-fast ease-snappy` retained; `active:translate-y-px` press feedback per the tactile motion language. QUEUE item ticked.
