@@ -90,6 +90,24 @@ To make them land:
 Until files exist on disk the registry honestly shows `acquisition_failed`
 with the reason — that's the pipeline working, not a bug.
 
+## 🗄️ Schema debt needing a product call (not a bug, not blocking)
+
+- **`practice_chains` + `sim_cases.follow_up`** (multi-session "recurring
+  patient" arcs) — table + column went live tonight but were authored as
+  speculative scaffolding in an earlier round: zero cases have `follow_up`
+  content, zero application code reads either. Building UI around an empty,
+  unspecced concept isn't in the master brief, so it's parked rather than
+  invented from nothing. If you want this feature, it needs: what a
+  "follow-up session" actually contains, and one call to just delete the
+  table if it turns out you don't.
+- **`osce_stations` / `mse_stimuli` / `formulation_cases` / `public.idioms`**
+  — four DB tables, full RLS, zero readers. OSCE/MSE/Formulation/the
+  Decoder all ship their real content as static TS files instead (see
+  `docs/PRACTICE_LAYER.md` § "Content: code vs DB"). Two options, your
+  call: (1) wire a real admin-authoring flow so faculty can add OSCE
+  stations etc. without a code change, or (2) drop the unused tables.
+  Currently harmless either way — flagging so it doesn't sit unexplained.
+
 ## 📥 THE ONE BLOCKING ITEM (drop-folder ingest)
 
 The licensed ingester's ladder step 6 is `/mnt/acquire/` — the drop folder.

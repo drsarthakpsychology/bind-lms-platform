@@ -16,11 +16,11 @@ Six things could be true. Every practice tool exists to make a student better at
 | 5 Judgment Calls | `/practice/judgment` | `src/lib/practice/sct.ts` | SLIDE — panel-scored SCT |
 | Rounds | `/practice/rounds` | `src/lib/practice/rounds.ts` | RATE — ts-fsrs, 25/day cap |
 | Out of Depth | `/practice/out-of-depth` | `src/lib/out-of-depth/scenarios.ts` | REFER — 60 scenarios, over+under referral |
-| Ethics & Law | `/practice/ethics` | `src/lib/practice/ethics.ts` | CHOOSE — 40 consequence-first dilemmas |
+| Ethics & Law | `/practice/ethics` | `src/lib/practice/ethics.ts` | CHOOSE — 50 consequence-first dilemmas |
 | OSCE | `/practice/osce` | `src/lib/practice/osce.ts` | PERFORM — 12 timed stations |
 | Formulation Forge | `/practice/formulation` | `src/lib/practice/formulation.ts` + `forge.tsx` | SORT — 5P grid, 4 stages, peer wall |
-| Landmark cases | `/practice/landmark` | `src/lib/landmark/cases.ts` | READ — 22 cases with contestation |
-| Two-Minute Clinic | `/practice/two-minute-clinic` | `src/lib/practice/clinic.ts` | TYPE — 101 one-liners, 120s, streak |
+| Landmark cases | `/practice/landmark` | `src/lib/landmark/cases.ts` | READ — 25 cases with contestation |
+| Two-Minute Clinic | `/practice/two-minute-clinic` | `src/lib/practice/clinic.ts` | TYPE — 139 one-liners, 120s, streak |
 | Weak Spots | `/practice/weak-spots` | `src/lib/practice/weak-spots.ts` | DRILL — analysis + on-the-spot 10-item drill |
 | Peer Role-Play | `/practice/role-play` | `src/app/.../role-play/*` | PAIR — zero AI, skill-matched partner |
 | Case Library | `/practice/library` | `src/lib/corpus/library.ts` | ANNOTATE — 129 normalised PMC docs |
@@ -94,6 +94,30 @@ Every tool completion credits competencies: MSE levels, OSCE stations, Judgment 
 ## Admin surfaces
 
 `/admin` · students · courses · submissions · tools · psychopharm-review · corpus/dictate · sim-review · triage · checkins · supervision · flags · calibration · modules · pulse · infra.
+
+## Content: code vs DB (read this before "fixing" a table)
+
+Two different content-storage patterns coexist and it's easy to assume the
+wrong one:
+
+- **Code-authored, always live, no approval gate**: sim_cases' character
+  bank (via `scripts/upsert-characters.ts`), and everything in the table
+  below marked with a `src/lib/**.ts` source — OSCE stations, ethics
+  dilemmas, SCT items, MSE stimuli, landmark cases, quiz banks, Two-Minute
+  Clinic, the Decoder's idiom bank, Out of Depth scenarios. These ship the
+  moment the file merges; there is no faculty review step.
+- **DB-authored, RLS-gated, meant for admin review**: `sct_expert_responses`
+  works this way (admin-only, panel-scored). `public.idioms` was scaffolded
+  the same way (65 seeded, 18 approved, the rest queued) but **the Decoder
+  gameplay does not read this table** — it reads the 140-entry
+  `src/lib/decode/idioms.ts` bank directly, unconditionally. `osce_stations`,
+  `mse_stimuli`, and `formulation_cases` (from `practice_layer_tools.sql`)
+  are live tables with full RLS and zero application code reading or
+  writing them — the tools that share their names run entirely on static
+  TS content instead. Not a bug in the running app (nothing depends on
+  these tables), but real schema debt: either wire them into a real
+  admin-authoring flow for those three tools, or drop them. Flagged, not
+  decided — see NEEDS_KAVYA.md.
 
 ## The queue / build discipline
 

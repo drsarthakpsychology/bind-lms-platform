@@ -12,7 +12,14 @@ The teaching spine is **Kirmayer & Young**: a somatic complaint can indicate any
 
 ## The bank
 
-- **66 entries** in `src/lib/decode/idioms.ts`; **65 seeded in the DB** (`public.idioms`), 18 compulsory-approved, the rest in the faculty review queue.
+- **140 entries** in `src/lib/decode/idioms.ts` — this is what every Decoder
+  mode, every sim case's opening line, MSE Level 1, and Rounds actually
+  read. It ships unconditionally with the code, no approval gate.
+- **65 seeded separately in the DB** (`public.idioms`), 18 compulsory-
+  approved and the rest queued for faculty review. This table is a
+  distinct, admin-reviewable reference corpus — **no gameplay path reads
+  it today**; it exists for a future faculty-authoring flow, not the
+  current one. Don't confuse the two counts.
 - Each entry: phrase + transliteration, register, possible meanings (reading/category/likelihood/clue), disambiguating questions, the trap, sources.
 
 ### The families
@@ -40,7 +47,7 @@ The teaching spine is **Kirmayer & Young**: a somatic complaint can indicate any
 - The Consulting Room debrief scores `idiom_decoding` (did the student ask what the phrase meant?).
 - MSE Level 1 (describe-don't-diagnose) pulls idiom stimuli.
 - Rounds has idiom → meanings cards.
-- Two-Minute Clinic has an idiom variant in its 81 prompts.
+- Two-Minute Clinic has an idiom variant among its 139 prompts.
 - The Decoder's `scoreDecode` enforces the physical-miss weighting (tested).
 
 ## Sources
