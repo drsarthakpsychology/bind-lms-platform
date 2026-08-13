@@ -30,7 +30,7 @@ such route to `requireSession()`.
 - Excluded per task scope: `sim/debrief`, `sim/rewind`, `sim/turn`,
   `sim/session` still use bare `auth.getUser()` (tracked in QUEUE).
 - Gate: lint 0/0, `tsc --noEmit` clean, 392 tests pass, `next build` exit 0.
-  Shipped in commit: HASH_TBD
+  Shipped in commit: 54b3356
 
 ## 2026-08-14 — STRIX AI pentest run (0 exploitable vulns, follow-up validated)
 
