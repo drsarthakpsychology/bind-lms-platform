@@ -104,6 +104,14 @@ export async function computePracticeStates(
   if (formToday > 0) out["/practice/formulation"] = { state: "done_today" };
   else if (formCount > 0) out["/practice/formulation"] = { state: "in_progress", progress: `${formCount} case${formCount === 1 ? "" : "s"} done` };
 
+  // --- Judgment Calls — sct_attempts ---
+  const [sctToday, sctCount] = await Promise.all([
+    countRows(supabase, "sct_attempts", userId, { todayOnly: true }),
+    countRows(supabase, "sct_attempts", userId),
+  ]);
+  if (sctToday > 0) out["/practice/judgment"] = { state: "done_today" };
+  else if (sctCount > 0) out["/practice/judgment"] = { state: "in_progress", progress: `${sctCount} call${sctCount === 1 ? "" : "s"} answered` };
+
   // --- Peer Role-Play — pair_sessions (a OR b) ---
   const pairCount = await countRows(supabase, "pair_sessions", userId, {
     or: `student_a.eq.${userId},student_b.eq.${userId}`,

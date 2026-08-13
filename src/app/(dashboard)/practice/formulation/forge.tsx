@@ -3,6 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP } from "@/lib/practice/formulation";
+import { buildFormulationAttemptPayload } from "@/lib/practice/formulation-attempt";
 import { FORMULATION_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
 /**
@@ -17,6 +18,31 @@ export function FormulationForge() {
   const [stage, setStage] = React.useState<1 | 2 | 3 | 4>(1);
   const [narrative, setNarrative] = React.useState("");
   const [diff, setDiff] = React.useState<{ missing: string[]; present: string[] } | null>(null);
+  // The attempt window starts when the forge opens.
+  const [startedAt] = React.useState(() => new Date());
+
+  /** Persist the completed scaffolded pass (a check, not a test — silent on failure). */
+  async function persistSeedAttempt() {
+    if (!diff) return;
+    const completedAt = new Date();
+    const payload = buildFormulationAttemptPayload(
+      {
+        caseId: SEED_FORMULATION.id,
+        caseTitle: SEED_FORMULATION.title,
+        sortedFactors: attempt,
+        narrative,
+        diff,
+        score: Math.round(score * 100) / 100,
+      },
+      startedAt,
+      completedAt,
+    );
+    await fetch("/api/practice/formulation/attempt", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch(() => {}); // silent; a check, not a test
+  }
 
   function assign(factorId: string, bucket: FiveP) {
     setAttempt((a) => a.map((x) => (x.factorId === factorId ? { ...x, bucket } : x)));
@@ -163,7 +189,7 @@ export function FormulationForge() {
           </p>
           <button
             type="button"
-            onClick={() => { setStage(4); haptic("tap"); }}
+            onClick={() => { void persistSeedAttempt(); setStage(4); haptic("tap"); }}
             className="mt-1 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
           >
             Next: formulate from your own session →
@@ -201,6 +227,8 @@ function OwnTranscriptForge() {
   const [narrative, setNarrative] = React.useState("");
   const [diff, setDiff] = React.useState<{ missing: string[]; present: string[] } | null>(null);
   const [loading, setLoading] = React.useState(true);
+  // The attempt window starts when stage 4 opens.
+  const [startedAt] = React.useState(() => new Date());
 
   React.useEffect(() => {
     let alive = true;
@@ -246,9 +274,28 @@ function OwnTranscriptForge() {
   })();
 
   function diffIt() {
-    setDiff(diffNarratives(narrative, modelNarrative || SEED_FORMULATION.modelNarrative));
+    const d = diffNarratives(narrative, modelNarrative || SEED_FORMULATION.modelNarrative);
+    setDiff(d);
     // Credit the formulation competencies into the Skills Passport.
     void recordCompetencyEvent("formulation", FORMULATION_COMPETENCY_KEYS, narrative.trim().length >= 120 ? 4 : 3, "Formulation from own transcript").catch(() => {});
+    // Persist this own-transcript attempt (session-based; no formulation case).
+    const completedAt = new Date();
+    const payload = buildFormulationAttemptPayload(
+      {
+        caseId: null,
+        sourceSimSessionId: data?.full?.sessionId,
+        sortedFactors: [],
+        narrative,
+        diff: d,
+      },
+      startedAt,
+      completedAt,
+    );
+    void fetch("/api/practice/formulation/attempt", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch(() => {}); // silent; a check, not a test
     haptic("tap");
   }
 

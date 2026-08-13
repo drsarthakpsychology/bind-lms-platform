@@ -3,6 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { panelDistribution, scoreSctResponse, type SctItem, type SctResponse } from "@/lib/practice/sct";
+import { buildSctAttemptPayload } from "@/lib/practice/sct-attempt";
 import { JUDGMENT_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
 const RESPONSE_LABELS: Record<SctResponse, string> = {
@@ -60,6 +61,18 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
     const score = scoreSctResponse(r, panel);
     setAnswered((a) => [...a, { response: r, score }]);
     setShowPanel(true);
+    // Persist this judgment call (a check, not a test — silent on failure).
+    const payload = buildSctAttemptPayload(item.id, r, score, seconds);
+    void fetch("/api/practice/sct/attempt", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...payload,
+        vignette: item.vignette,
+        hypothesis: item.hypothesis,
+        new_information: item.new_information,
+      }),
+    }).catch(() => {}); // silent; a check, not a test
     haptic("success");
   }
 
