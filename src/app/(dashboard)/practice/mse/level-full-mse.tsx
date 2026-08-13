@@ -3,7 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
-import { FULL_MSE_STIMULI, scoreFullMse, type MseAttemptFields } from "@/lib/mse/mse4-stimuli";
+import { FULL_MSE_STIMULI, scoreFullMse, type MseAttemptFields, type FullMseStimulus } from "@/lib/mse/mse4-stimuli";
 import { MSE_DOMAIN_ORDER, summarizeMseScore } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
 import type { MseDomainKey } from "@/lib/mse/ladder";
@@ -14,8 +14,17 @@ const TEN_MINUTES = 10 * 60;
  * MSE Level 4 — Full MSE under time. Ten minutes to write the complete MSE
  * for a vignette, scored green/amber/red per domain against the expert code.
  * Amber = a defensible alternative; red = missed or wrong.
+ *
+ * `stimuli` comes from the live mse_stimuli table (content wiring); the static
+ * bank is the fallback when the DB is empty or the fetch fails.
  */
-export function FullMseLevel({ onComplete }: { onComplete?: () => void }) {
+export function FullMseLevel({
+  onComplete,
+  stimuli = FULL_MSE_STIMULI,
+}: {
+  onComplete?: () => void;
+  stimuli?: FullMseStimulus[];
+}) {
   const [idx, setIdx] = React.useState(0);
   const [secondsLeft, setSecondsLeft] = React.useState(TEN_MINUTES);
   const [rawText, setRawText] = React.useState<Record<string, string>>({});
@@ -24,8 +33,8 @@ export function FullMseLevel({ onComplete }: { onComplete?: () => void }) {
   const [running, setRunning] = React.useState(true);
   const [startedAt] = React.useState(() => new Date());
 
-  const stimulus = FULL_MSE_STIMULI[idx];
-  const done = submitted ? idx >= FULL_MSE_STIMULI.length - 1 : false;
+  const stimulus = stimuli[idx];
+  const done = submitted ? idx >= stimuli.length - 1 : false;
 
   // Timer.
   React.useEffect(() => {
@@ -92,7 +101,7 @@ export function FullMseLevel({ onComplete }: { onComplete?: () => void }) {
       {/* Header: timer + progress */}
       <div className="flex items-center justify-between text-small">
         <span className="text-muted-foreground">
-          Level 4 · Full MSE · case {idx + 1}/{FULL_MSE_STIMULI.length}
+          Level 4 · Full MSE · case {idx + 1}/{stimuli.length}
         </span>
         {running && !submitted ? (
           <span className={cn("font-mono font-semibold", urgent && "text-red-700")}>

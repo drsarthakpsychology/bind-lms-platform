@@ -6,20 +6,27 @@ import { scoreObserve } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload, scoreMseLevel1Attempt } from "@/lib/practice/mse-attempt";
 import { OBSERVE_STIMULI } from "@/lib/practice/mse-observe-stimuli";
 
-const STIMULI = OBSERVE_STIMULI;
-
 /**
  * MSE Level 1 — Observe. The first rung of the ladder: describe what you can
  * see and hear, with zero diagnostic labels. Score = observations kept minus
  * a hard penalty per smuggled conclusion. Target: 100 words, no labels.
+ *
+ * `stimuli` comes from the live mse_stimuli table (content wiring); the static
+ * bank is the fallback when the DB is empty or the fetch fails.
  */
-export function ObserveLevel({ onComplete }: { onComplete?: () => void }) {
+export function ObserveLevel({
+  onComplete,
+  stimuli = OBSERVE_STIMULI,
+}: {
+  onComplete?: () => void;
+  stimuli?: Array<{ id: string; content: string }>;
+}) {
   const [idx, setIdx] = React.useState(0);
   const [text, setText] = React.useState("");
   const [roundDone, setRoundDone] = React.useState(false);
   // The attempt window starts when the level opens.
   const [startedAt] = React.useState(() => new Date());
-  const stimulus = STIMULI[idx];
+  const stimulus = stimuli[idx];
 
   // Focus management for keyboard-only users
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
@@ -40,7 +47,7 @@ export function ObserveLevel({ onComplete }: { onComplete?: () => void }) {
   function next() {
     setText("");
     setRoundDone(false);
-    setIdx((i) => (i + 1) % STIMULI.length);
+    setIdx((i) => (i + 1) % stimuli.length);
     haptic("tap");
   }
 
@@ -69,7 +76,7 @@ export function ObserveLevel({ onComplete }: { onComplete?: () => void }) {
     <div className="space-y-4 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
       <div className="flex items-center justify-between">
         <p className="text-eyebrow text-muted-foreground">
-          Level 1 · Observe · stimulus {idx + 1}/{STIMULI.length}
+          Level 1 · Observe · stimulus {idx + 1}/{stimuli.length}
         </p>
         <p className="text-caption text-muted-foreground">{wordCount} words · {result.score} score</p>
       </div>

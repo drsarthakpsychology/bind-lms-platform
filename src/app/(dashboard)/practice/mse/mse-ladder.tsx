@@ -4,6 +4,8 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { MSE_LEVEL_META, MSE_LEVELS, type MseLevel } from "@/lib/mse/ladder";
+import type { MseStimulus } from "@/lib/practice/mse";
+import type { FullMseStimulus } from "@/lib/mse/mse4-stimuli";
 import { MSE_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { ConfusableDrill } from "./confusable-drill";
 import { ObserveLevel } from "./level-observe";
@@ -17,7 +19,13 @@ import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 /** Which completion state each level needs before the next unlocks. Levels
  *  1-4 complete locally when the student finishes a round; Level 5 depends on
  *  a completed Consulting Room session (checked live by the component). */
-export function MseLadder() {
+export interface MseLadderContent {
+  observe?: Array<{ id: string; content: string }>;
+  domain?: MseStimulus[];
+  fullMse?: FullMseStimulus[];
+}
+
+export function MseLadder({ content }: { content?: MseLadderContent }) {
   const [active, setActive] = React.useState<MseLevel>("1");
   const [done, setDone] = React.useState<Record<MseLevel, boolean>>({
     "1": false,
@@ -105,10 +113,10 @@ export function MseLadder() {
 
       {/* Level body */}
       <div className="space-y-4">
-        {active === "1" ? <ObserveLevel onComplete={() => markDone("1")} /> : null}
-        {active === "2" ? <DomainLevel onComplete={() => markDone("2")} /> : null}
+        {active === "1" ? <ObserveLevel onComplete={() => markDone("1")} stimuli={content?.observe} /> : null}
+        {active === "2" ? <DomainLevel onComplete={() => markDone("2")} stimuli={content?.domain} /> : null}
         {active === "3" ? <ConfusableDrill onComplete={() => markDone("3")} /> : null}
-        {active === "4" ? <FullMseLevel onComplete={() => markDone("4")} /> : null}
+        {active === "4" ? <FullMseLevel onComplete={() => markDone("4")} stimuli={content?.fullMse} /> : null}
         {active === "5" ? <LiveMseLevel onComplete={() => markDone("5")} /> : null}
       </div>
 

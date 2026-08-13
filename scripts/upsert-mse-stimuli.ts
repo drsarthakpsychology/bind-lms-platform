@@ -26,6 +26,8 @@ interface SeedRow {
   id: string;
   content: string;
   domain: string;
+  /** The authored coding the ladder scores against (see migration). */
+  expert_coding: Record<string, unknown>;
 }
 
 /** Level 2 vocabulary-tagging stimuli (mse-1 .. mse-12). */
@@ -33,6 +35,7 @@ const level2: SeedRow[] = SEED_MSE_STIMULI.map((s) => ({
   id: s.id,
   content: s.content,
   domain: s.domain,
+  expert_coding: { expertTags: s.expertTags, amberTags: s.amberTags ?? [] },
 }));
 
 /** Level 1 observe vignettes (obs-1 .. obs-idiom-4). */
@@ -40,6 +43,7 @@ const level1: SeedRow[] = OBSERVE_STIMULI.map((s) => ({
   id: s.id,
   content: s.content,
   domain: s.domain,
+  expert_coding: {},
 }));
 
 /** Level 4 full-MSE vignettes (mse4-*) — cover all 11 domains at once. */
@@ -47,6 +51,7 @@ const level4: SeedRow[] = FULL_MSE_STIMULI.map((s) => ({
   id: s.id,
   content: s.context,
   domain: "full",
+  expert_coding: { expert: s.expert, amber: s.amber },
 }));
 
 const ROWS = [...level1, ...level2, ...level4];
@@ -60,6 +65,7 @@ async function main() {
       slug: s.id,
       content: s.content,
       domain: s.domain,
+      expert_coding: s.expert_coding,
       medium: "text",
       status: "published",
     };

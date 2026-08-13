@@ -5,7 +5,7 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { DOMAIN_UNITS, MSE_DOMAIN_ORDER } from "@/lib/mse/ladder";
 import { MSE_VOCAB } from "@/lib/practice/mse";
-import { SEED_MSE_STIMULI } from "@/lib/practice/mse";
+import { SEED_MSE_STIMULI, type MseStimulus } from "@/lib/practice/mse";
 import { buildMseAttemptPayload, scoreMseLevel2Attempt } from "@/lib/practice/mse-attempt";
 
 /**
@@ -13,8 +13,17 @@ import { buildMseAttemptPayload, scoreMseLevel2Attempt } from "@/lib/practice/ms
  * documented order, with the controlled vocabulary. The student tags the
  * stimulus against the expert coding (green/amber). They cannot skip ahead:
  * the domain only advances once tagged.
+ *
+ * `stimuli` comes from the live mse_stimuli table (content wiring); the static
+ * bank is the fallback when the DB is empty or the fetch fails.
  */
-export function DomainLevel({ onComplete }: { onComplete?: () => void }) {
+export function DomainLevel({
+  onComplete,
+  stimuli = SEED_MSE_STIMULI,
+}: {
+  onComplete?: () => void;
+  stimuli?: MseStimulus[];
+}) {
   const [domainIdx, setDomainIdx] = React.useState(0);
   const [stimulusIdx, setStimulusIdx] = React.useState(0);
   const [picked, setPicked] = React.useState<string[]>([]);
@@ -35,8 +44,8 @@ export function DomainLevel({ onComplete }: { onComplete?: () => void }) {
   const unit = DOMAIN_UNITS.find((u) => u.domain === domain);
   const vocab = MSE_VOCAB[domain];
   // Stimuli for this domain (expert-tagged). Fall back to any remaining.
-  const domainStimuli = SEED_MSE_STIMULI.filter((s) => s.domain === domain);
-  const stimulus = domainStimuli[stimulusIdx] ?? SEED_MSE_STIMULI[stimulusIdx % SEED_MSE_STIMULI.length];
+  const domainStimuli = stimuli.filter((s) => s.domain === domain);
+  const stimulus = domainStimuli[stimulusIdx] ?? stimuli[stimulusIdx % stimuli.length];
 
   function toggleTag(tag: string) {
     if (revealed) return;
