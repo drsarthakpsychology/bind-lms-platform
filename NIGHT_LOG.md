@@ -37,6 +37,26 @@
   OpenRouter decision + quota-verify surfaced to NEEDS_KAVYA as human items).
   Commit 8f3e1d2 (next).
 
+## 2026-08-14 — continuation: idiom review, chain one-tap, faculty model
+
+### Post-deploy build batch (QUEUE had exhausted; mined briefs + IDEAS_NEXT)
+- **Admin idiom bank review** (06cfe10): /admin/idioms + /api/admin/idioms
+  (requireAdmin) — approve/reject/edit the 65 seeded phrases. The Decoder
+  reads approved idioms only (content wiring), so this closes the governance
+  loop: approve here → the phrase surfaces in the drill. Admin sidebar gains
+  an Idiom bank item.
+- **Chain one-tap continue from the debrief** (c727fea): /api/practice/chain
+  returns the first un-done step (surface, label, href, patient name); the
+  debrief shows it as the PRIMARY action — "Continue with Ravi · Formulation
+  Forge" — with Back to cases as the quiet secondary. The casebook's one-tap
+  chain promise, delivered.
+- **Faculty data model** (f74c07e): src/lib/faculty.ts — the FacultyMember
+  type + an empty FACULTY array, so the public site's "Who is building this"
+  can grow a directory later without restructuring. Never renders placeholders.
+- Verified the addendum A2 "not-available page" item is done
+  (/practice/not-available renders properly for flagged-off routes).
+- Gate green throughout: lint 0/0, tsc clean, 379 tests, build compiles.
+
 ## 2026-08-14 — research round + production deploy
 
 ### Free-models research (docs/MODEL_RESEARCH.md, dated + sourced)
