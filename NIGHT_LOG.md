@@ -13,7 +13,7 @@ Two QUEUE items closed on top of the round-10 auth sweep.
   `dictate/turn`): replaced the redundant `profiles.role` re-query with the
   `role` already returned by `requireSession()` — same value, one fewer DB read.
 - Gate: lint 0/0, `tsc --noEmit` clean, 392 tests pass, `next build` exit 0.
-  Shipped in commit: HASH_TBD
+  Shipped in commit: de2d810
 
 ## 2026-08-14 — AUTH CONSISTENCY: bare `auth.getUser()` → full `requireSession()`
 
@@ -1452,3 +1452,6 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T02:49:15 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:49:49 Queue exhausted — allowing normal Claude stop.
 2026-08-14T02:50:21 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:55:31 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:56:15 Queue exhausted — allowing normal Claude stop.
+2026-08-14T02:56:49 Queue exhausted — allowing normal Claude stop.
