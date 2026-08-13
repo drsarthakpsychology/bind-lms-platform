@@ -29,9 +29,15 @@ export function PulseView({
 
   async function nudge(email: string) {
     haptic("tap");
-    // Pre-drafted, personal. Send via Resend when configured; for now it
-    // records intent and would call /api/admin/nudge.
+    // Pre-drafted, personal, sent via Resend when configured (/api/admin/nudge
+    // honestly reports email-not-configured when no key exists — it never
+    // claims a message went out).
     setNudged((n) => ({ ...n, [email]: true }));
+    await fetch("/api/admin/nudge", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    }).catch(() => {});
   }
 
   return (

@@ -108,14 +108,16 @@ with the reason — that's the pipeline working, not a bug.
   stations etc. without a code change, or (2) drop the unused tables.
   Currently harmless either way — flagging so it doesn't sit unexplained.
 
-## ✉️ Cohort-pulse one-tap nudge — blocked on an email provider
+## ✉️ Cohort-pulse one-tap nudge — one key away
 
-`/admin/pulse` "one-tap nudge" is an honest stub ("Nudge drafted"): there is
-no email provider wired anywhere (no `resend` package, no `RESEND_API_KEY`,
-`src/lib/reminders.ts` only has planning/batching, no send function). Decide:
-(1) add Resend (key + a from-address) and I'll wire `/api/admin/nudge` to
-actually send, or (2) make nudges in-app notifications. Until then the button
-stays a local-state stub — it never falsely claims an email went out.
+The code path is BUILT: `/api/admin/nudge` sends via Resend's REST API (fetch,
+no SDK) when configured, and the /admin/pulse button calls it. It only needs
+two env vars to actually send:
+- `RESEND_API_KEY` (Resend account)
+- `RESEND_FROM_EMAIL` (e.g. "VIBHA School of Psychology <noreply@…>")
+
+Until those exist it honestly returns `email-not-configured` and sends
+nothing — it never claims a message went out.
 
 ## 📥 THE ONE BLOCKING ITEM (drop-folder ingest)
 
