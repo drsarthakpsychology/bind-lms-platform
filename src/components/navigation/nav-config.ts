@@ -24,6 +24,7 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/courses", label: "Courses", icon: "bookOpen" },
   { href: "/admin/submissions", label: "Submissions", icon: "inbox" },
   { href: "/admin/tools", label: "Tools", icon: "wrench" },
+  { href: "/admin/idioms", label: "Idiom bank", icon: "languages" },
   { href: "/admin/psychopharm-review", label: "Medication library", icon: "pill" },
   { href: "/admin/corpus/dictate", label: "Dictate case", icon: "mic" },
   { href: "/admin/sim-review", label: "Sim sessions", icon: "stethoscope" },
