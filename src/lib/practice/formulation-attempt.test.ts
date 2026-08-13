@@ -29,7 +29,7 @@ describe("buildFormulationAttemptPayload", () => {
   });
 
   it("own-transcript attempts send null case_id plus source session", () => {
-    const sessionId = "11111111-2222-3333-4444-555555555555";
+    const sessionId = "11111111-2222-3333-8888-555555555555";
     const payload = buildFormulationAttemptPayload(
       { caseId: null, sourceSimSessionId: sessionId, sortedFactors: [], narrative: "n", diff: { missing: [], present: [] } },
       started,

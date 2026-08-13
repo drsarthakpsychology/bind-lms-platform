@@ -34,7 +34,7 @@ describe("buildMseAttemptPayload", () => {
   });
 
   it("Level 5 (session-based) sends null stimulus_id plus source_session_id", () => {
-    const sessionId = "11111111-2222-3333-4444-555555555555";
+    const sessionId = "11111111-2222-3333-8888-555555555555";
     const payload = buildMseAttemptPayload(
       null,
       "5",
