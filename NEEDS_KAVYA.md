@@ -141,3 +141,19 @@ activate the 57 paid titles:
 
 Until a file exists in the folder, the registry honestly shows
 `acquisition_failed` — that is the pipeline working, not a bug.
+
+## 🧠 2026-08-14 free-tier research — read before adding keys
+
+- **Gemini free tier is NOT safe for student data.** Google may train on
+  free-tier prompts and human-review them (users outside EEA/UK/CH). The
+  GEMINI_API_KEY item above lists "second Director/Actor provider" — restrict
+  it to non-student lanes (content gen / embeddings) or use the billed API for
+  any student turn. Free 2.5 Pro was removed Apr 2026.
+- **Groq + Cerebras are the two verified no-training free providers** — Groq is
+  the recommended Primary (DPA forbids training, ZDR available, 30 RPM / 1K RPD
+  per model), Cerebras the Fallback (~1M tok/day). Both no card, both
+  OpenAI-compatible JSON.
+- **OpenRouter**: no-training but only 50 RPD at $0 — needs a one-time $10
+  top-up to reach 1,000 RPD. Decide if that's acceptable.
+- **NVIDIA free tier** may use request data for model improvement — fine for
+  TTS/STT, not for student transcripts.

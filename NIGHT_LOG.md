@@ -1,3 +1,27 @@
+## 2026-08-14 — research: free conversational-LLM tiers for Director/Actor (no code shipped)
+
+### What shipped
+- Research report (delivered in-session, not written to a file): current
+  (2026-08-13/14) free tiers for Gemini, Groq, Cerebras, OpenRouter, Mistral,
+  Cohere, DeepInfra, GitHub Models, Cloudflare Workers AI, NVIDIA NIM —
+  limits, card requirement, JSON reliability, latency, and data-training
+  policy, verified from provider docs via web_search + web_fetch.
+- Gate: `npm run lint` + `npx tsc --noEmit` + `npm run test` (375 pass) +
+  `npm run build` — all green. No application code changed.
+
+### Findings that matter (clinical transcripts = named students)
+- **Groq** and **Cerebras** are the only verified no-training, no-card,
+  OpenAI-compatible JSON providers. Groq: 30 RPM / 1K RPD / 12K TPM per model,
+  DPA forbids training, ZDR toggle, 300–1,000 tok/s → **Primary**. Cerebras:
+  ~1M tok/day, no I/O retention, "Trains? No" → **Fallback**.
+- **Gemini free tier trains on prompts + human review** (EU/UK/CH blocked) —
+  keep `GEMINI_API_KEY` to non-student lanes; 2.5 Pro free removed Apr 2026.
+- **Mistral free requires training opt-in**; **NVIDIA free may use data for
+  improvement**; **Cohere** 1,000 calls/mo cap; **DeepInfra** free tier
+  unverifiable; **OpenRouter** no-training but 50 RPD at $0 (1,000 RPD after a
+  one-time $10 top-up).
+- Commit: `d0a0700`.
+
 ## 2026-08-14 — extended round: nudge, ElevenLabs, lesson quiz, OSCE voice, chain
 
 ### Post-VIBHA feature batch (each commit gated green, 375 tests held)
@@ -855,3 +879,5 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-13T16:25:12 Queue exhausted — allowing normal Claude stop.
 2026-08-14T00:34:44 Queue exhausted — allowing normal Claude stop.
 2026-08-14T00:35:57 Queue exhausted — allowing normal Claude stop.
+2026-08-14T00:42:32 Queue exhausted — allowing normal Claude stop.
+2026-08-14T00:43:22 Queue exhausted — allowing normal Claude stop.

@@ -2,6 +2,13 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
+## RESEARCH ROUND — free LLM tier follow-ups (2026-08-14)
+
+- [ ] **Wire Groq as Primary Director/Actor provider**: no-train verified (DPA + ZDR), no card, 30 RPM / 1K RPD / 12K TPM per model, OpenAI-compatible `json_schema` — needs `GROQ_API_KEY` + provider switch in the patient engine [research 2026-08-14]
+- [ ] **Wire Cerebras as Fallback Director/Actor provider**: no-train verified, ~1M tok/day, OpenAI-compatible JSON [research 2026-08-14]
+- [ ] **OpenRouter free-tier decision**: 50 RPD at $0 is unusable for daily turns; one-time $10 top-up permanently unlocks 1,000 RPD [research 2026-08-14]
+- [ ] **Quota re-verify at integration time**: Gemini/Groq/Cerebras quotas moved repeatedly Dec 2025–Aug 2026 and are account-dependent — re-check dashboards before wiring [research 2026-08-14]
+
 ## BEASTMODE ROUND 9 — attempt tables + content wiring + polish (2026-08-13)
 
 - [x] **Attempt Tables (MSE)**: Wire `mse_attempts` write on MSE level completion (level-observe → level-domain → level-full-mse → level-live-mse) — follows `osce_attempts` pattern [IDEAS_NEXT #1]
