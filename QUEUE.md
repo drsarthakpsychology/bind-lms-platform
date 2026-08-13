@@ -2,6 +2,26 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
+## BEASTMODE ROUND 10 CONT. — post-close continuation slices (2026-08-14, hook-driven)
+
+- [x] **Loading-state sweep (§12)**: added page-shaped loading.tsx skeletons for
+  every dynamic route group missing one — reflect/wall/passport/record/admin
+  (be8a03e) + courses/[courseId] + materials/[materialId] (b8472db). practice/
+  today/(dashboard)/verify/lessons already had theirs. Audited the full scan:
+  remaining "MISS" entries are covered by a parent group skeleton or are fast
+  auth-redirect pages (/ and /login) where a skeleton would flash.
+- [x] **Follow-up chain surfacing**: sim_cases.follow_up was read by nobody.
+  Chain POST now selects it and extends steps with a trailing
+  {surface: follow_up, status: pending} when content exists (946aeb1) — inert
+  for all current data (no seeded follow_up), idempotent on existing chains,
+  /today's consumer already renders it ("Continue with {patient} · Follow-up
+  visit" → /practice/consulting-room). Content itself stays the Kavya-side
+  clinical spec (NEEDS_KAVYA / IDEAS_NEXT). Follow-up session-creation mode
+  deferred until the content shape exists.
+- [x] **Verified complete**: modal/dropdown/popover transitions already ship
+  via Radix data-state + Tailwind animate-in/out (no work needed). Full gate
+  green on every commit (lint 0/0, tsc clean, 379 tests, build exit 0).
+
 ## BEASTMODE ROUND 10 — PRODUCTION SAFETY + FREE AI + UI POLISH (2026-08-14)
 
 - [x] **Premium neobrutalism UI pass**: motion-system tokens in globals.css,

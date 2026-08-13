@@ -1,3 +1,18 @@
+## 2026-08-14 — continuation: course + material loading skeletons (b8472db)
+
+- courses/[courseId]/page.tsx (dynamic week-path) and
+  courses/[courseId]/materials/[materialId]/page.tsx (dynamic viewer) were the
+  last dynamic content surfaces without a loading.tsx. Added page-shaped
+  skeletons (course: header card + week/lesson blocks; material: title + text
+  lines) with the standard Skeleton + border-2-border pattern. Full-scan
+  confirmed every dynamic route now has a skeleton — either its own or a
+  parent group's (practice/, admin/ cover all their subroutes); / and /login
+  intentionally skipped (fast auth redirect; a skeleton would flash the
+  landing). Gate green: lint 0/0, tsc clean, 379 tests, build exit 0.
+- QUEUE: ROUND 10 CONT. section added — loading sweep + follow-up surfacing
+  ticked, modal/dropdown transition verification noted (already shipped via
+  Radix data-state animations).
+
 ## 2026-08-14 — decision note: sibling in-flight chain/route.ts left uncommitted
 
 Observed `src/app/api/practice/chain/route.ts` being actively edited by a
@@ -1202,3 +1217,4 @@ Built per v5 + v5.1 (Decoder first, then Patient Engine, then A1-A10):
 2026-08-14T01:42:05 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:42:56 Queue exhausted — allowing normal Claude stop.
 2026-08-14T01:45:35 Queue exhausted — allowing normal Claude stop.
+2026-08-14T01:48:39 Queue exhausted — allowing normal Claude stop.
