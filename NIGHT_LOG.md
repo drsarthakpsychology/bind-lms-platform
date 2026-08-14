@@ -3279,3 +3279,9 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   progress competing with the task in the page's dominant text. Made the h1
   task-only ("One thing next.") and left the streak in the subline. Committed
   `a6dc861`.
+
+- T40 (continued): added `src/components/mobile/progress-label.tsx` — a shared
+  `{unit} {current} of {total}` readout — and applied it to the four sequential
+  drills (judgment, decode, rounds, landmark) so the orientation line has one
+  consistent form ("case" → "Case"). Committed `dd74c14`. Gate: lint 0, tsc
+  clean, 453 tests, build green.
