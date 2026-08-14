@@ -39,10 +39,17 @@ if (!DB_PASS) {
   process.exit(1);
 }
 
-async function retrieveTopK(client: Client, vec: number[], k: number) {
+/**
+ * Retrieve top-k passages the way the APP does: vector similarity PLUS adjacent
+ * same-document context expansion (±1 page, same chapter) — the exact path
+ * /api/knowledge/ask uses with expandContext:true. This keeps the eval honest:
+ * it measures the real retrieval the student sees, so it can catch regressions
+ * in either the vector lane or the expansion logic.
+ */
+async function retrieveTopK(client: Client, vec: number[], k: number, expand = true) {
   const { rows } = await client.query(
-    `select s.name as source,
-            c.chunk_text as text,
+    `select c.id, c.document_id, s.name as source, c.chunk_text as text,
+            c.page_start, c.page_end,
             1 - (c.embedding <=> $1::halfvec) as sim
      from public.corpus_chunks c
      join public.corpus_documents d on d.id = c.document_id
@@ -52,7 +59,39 @@ async function retrieveTopK(client: Client, vec: number[], k: number) {
      limit $2`,
     [`[${vec.join(",")}]`, k],
   );
-  return rows as Array<{ source: string; text: string; sim: number }>;
+  const hits = rows as Array<{
+    id: string; document_id: string; source: string; text: string;
+    page_start: number | null; page_end: number | null; sim: number;
+  }>;
+  if (!expand) return hits.map((h) => ({ source: h.source, text: h.text, sim: h.sim }));
+
+  // Context expansion — pull adjacent same-document passages (within ±1 page)
+  // into the window, matching the app's expandContext (adjacentPages:1).
+  // ORDER MATTERS: all vector hits first (so slice(0,k) = the k best hits),
+  // then their neighbors appended — mirrors the app's expandContext output.
+  const texts = new Map<string, { source: string; text: string; sim: number }>();
+  for (const h of hits) {
+    texts.set(h.id, { source: h.source, text: h.text, sim: h.sim });
+  }
+  for (const h of hits) {
+    if (h.page_start == null) continue;
+    const lo = h.page_start - 1;
+    const hi = (h.page_end ?? h.page_start) + 1;
+    const nr = await client.query(
+      `select c.chunk_text as text, s.name as source
+       from public.corpus_chunks c
+       join public.corpus_documents d on d.id = c.document_id
+       join public.corpus_sources s on s.id = d.source_id
+       where c.document_id = $1 and c.page_end >= $2 and c.page_start <= $3
+       limit 40`,
+      [h.document_id, lo, hi],
+    );
+    for (const x of nr.rows as Array<{ text: string; source: string }>) {
+      const key = `n-${h.id}-${x.text.slice(0, 60)}`;
+      if (!texts.has(key)) texts.set(key, { source: x.source, text: x.text, sim: 0 });
+    }
+  }
+  return [...texts.values()];
 }
 
 /**
@@ -99,23 +138,25 @@ async function main() {
   const k = 8;
   const results: Array<{
     id: string; category: string; ok5: boolean; ok8: boolean;
-    grounded: boolean | null; foundSources: string[];
+    grounded: boolean | null; groundedRaw: boolean | null; foundSources: string[];
   }> = [];
 
   for (const q of EVAL_SET) {
     const vec = await embedLocal(q.question);
-    const top = await retrieveTopK(client, vec, k);
-    const foundSources = [...new Set(top.map((r) => r.source))];
-    // expected source in top-5 vs top-8
-    const top5Sources = [...new Set(top.slice(0, 5).map((r) => r.source))];
+    // Recall uses the raw vector top-k (does the right BOOK surface?).
+    const rawTop = await retrieveTopK(client, vec, k, false);
+    // Grounding uses the app's EXPANDED window (what the model actually sees).
+    const expanded = await retrieveTopK(client, vec, k, true);
+    const foundSources = [...new Set(rawTop.map((r) => r.source))];
+    // expected source in top-5 vs top-8 (raw vector lane)
+    const top5Sources = [...new Set(rawTop.slice(0, 5).map((r) => r.source))];
     const ok5Strict = q.expectedSources.some((s) => top5Sources.includes(s));
     const ok8Strict = q.expectedSources.some((s) => foundSources.includes(s));
-    // grounding: answerTerms present in the top-8 passages (null if no terms
-    // set). 8 is the app's default context window for /api/knowledge/ask — the
-    // exact passages a model would synthesise from. A stricter window (e.g. 5)
-    // tests chunk-boundary luck, not grounding, because multi-term answers
-    // naturally span 2-3 adjacent passages in the same chapter.
-    const grounded = q.answerTerms?.length ? isGrounded(top, q.answerTerms, 8) : null;
+    // grounded (app path): answerTerms present in the EXPANDED context the model
+    // receives (top hits + adjacent passages — mirrors /api/knowledge/ask).
+    const grounded = q.answerTerms?.length ? isGrounded(expanded, q.answerTerms, expanded.length) : null;
+    // groundedRaw (vector-only): same terms but over just the top-8 vector hits.
+    const groundedRaw = q.answerTerms?.length ? isGrounded(rawTop, q.answerTerms, 8) : null;
 
     results.push({
       id: q.id,
@@ -123,9 +164,10 @@ async function main() {
       ok5: ok5Strict,
       ok8: ok8Strict,
       grounded,
+      groundedRaw,
       foundSources,
     });
-    const top1 = top[0];
+    const top1 = rawTop[0];
     const g = grounded === null ? "" : grounded ? "G" : "g";
     console.log(
       `  [${q.id} ${q.category.padEnd(10)}] ${ok5Strict ? "✓" : ok8Strict ? "~" : "✗"}${g} ` +
@@ -139,11 +181,16 @@ async function main() {
   const total = results.length;
   const groundedTotal = results.filter((r) => r.grounded !== null).length;
   const groundedPass = results.filter((r) => r.grounded === true).length;
+  const rawGroundedTotal = results.filter((r) => r.groundedRaw !== null).length;
+  const rawGroundedPass = results.filter((r) => r.groundedRaw === true).length;
   console.log(`\n=== summary (k=8) ===`);
   console.log(`recall@5: ${pass5}/${total} (${((pass5 / total) * 100).toFixed(0)}%)`);
   console.log(`recall@8: ${pass8}/${total} (${((pass8 / total) * 100).toFixed(0)}%)`);
+  if (rawGroundedTotal > 0) {
+    console.log(`grounded@8 (vector-only): ${rawGroundedPass}/${rawGroundedTotal} (${((rawGroundedPass / rawGroundedTotal) * 100).toFixed(0)}%)`);
+  }
   if (groundedTotal > 0) {
-    console.log(`grounded@8: ${groundedPass}/${groundedTotal} (${((groundedPass / groundedTotal) * 100).toFixed(0)}%)  [answer terms present in top-8 = app context window]`);
+    console.log(`grounded (app path, expanded): ${groundedPass}/${groundedTotal} (${((groundedPass / groundedTotal) * 100).toFixed(0)}%)`);
   }
   for (const cat of [...new Set(results.map((r) => r.category))]) {
     const inCat = results.filter((r) => r.category === cat);
