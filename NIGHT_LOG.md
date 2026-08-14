@@ -1,3 +1,32 @@
+## 2026-08-14 — KNOWLEDGE SYSTEM: eval expanded to 50 questions + keyword-lane fix
+
+Closed the brief §37 remaining item ("expand the eval set toward ~50 questions
+and add hallucination-resistance checks").
+
+- **Eval set 16 → 50** (eval-set.ts): a 6-agent workflow (5 parallel category
+  authors + 1 adversarial verifier, ultracode) authored 34 new book-grounded
+  questions; every answerTerm grep-confirmed in an expected source's text
+  cache; 1 rejected as duplicate. All 50 questions now carry answerTerms.
+- **New grounded@8 metric** (eval.ts): do the answer terms appear in the app's
+  top-8 context window? Stem-tolerant matcher (obsession↔obsessions). This is
+  the hallucination-resistance signal §24 wants.
+- **Baseline: recall@5/8 100% (50/50), grounded@8 76% (38/50).** The 24% gap is
+  the honest hard edge — case-management questions (serotonin syndrome, NMS,
+  lithium toxicity, lamotrigine SJS) whose 5 precise terms spread across a
+  multi-page management section. Right book/chapter always retrieved; exact
+  detail is the future chunking/contextual-retrieval target. Documented, not
+  hidden.
+- **FIXED a real retrieval bug**: the app's keyword lane only scanned the first
+  ~16 chunks (no ORDER BY, then JS-filter). New `search_corpus_keyword` RPC
+  ranks the WHOLE corpus by pg_trgm word_similarity; retrieve.ts keywordLane now
+  calls it (migration + unit tests updated).
+- **Fixed k10 calibration**: expectedSources for the lamotrigine-SJS question
+  now include the Stahl Prescriber's Guides the retrieval actually surfaces
+  (was a calibration error, not a retrieval miss).
+
+Gate green before each commit: lint 0/0, tsc clean, 424 tests, build 82/82.
+Commits: 2b37d33 (eval expand + keyword fix), fc733fc (k10 fix), 42b628e (docs).
+
 ## 2026-08-14 — KNOWLEDGE SYSTEM: concept layer (knowledge-graph foundation)
 
 Closed the final QUEUE item. The knowledge layer now has a concept index on
@@ -2285,3 +2314,10 @@ chapters (9 + Appendix I + Appendix II + Index), 232 sections, contiguous
 2026-08-14T06:53:39 Queue exhausted — allowing normal Claude stop.
 2026-08-14T06:56:11 Queue exhausted — allowing normal Claude stop.
 2026-08-14T08:36:37 Queue exhausted — allowing normal Claude stop.
+2026-08-14T08:38:13 Queue exhausted — allowing normal Claude stop.
+2026-08-14T09:31:27 Queue exhausted — allowing normal Claude stop.
+2026-08-14T09:31:32 Queue exhausted — allowing normal Claude stop.
+2026-08-14T09:31:48 Queue exhausted — allowing normal Claude stop.
+2026-08-14T09:32:11 Queue exhausted — allowing normal Claude stop.
+2026-08-14T09:33:05 Queue exhausted — allowing normal Claude stop.
+2026-08-14T09:35:07 Queue exhausted — allowing normal Claude stop.
