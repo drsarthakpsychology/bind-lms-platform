@@ -1,3 +1,33 @@
+## 2026-08-14 — KNOWLEDGE SYSTEM: concept layer (knowledge-graph foundation)
+
+Closed the final QUEUE item. The knowledge layer now has a concept index on
+top of the chunk corpus — deterministic, $0, no model calls.
+
+- **Schema** (knowledge_concepts.sql): `knowledge_concepts` (name, type
+  drug/disorder/term, aliases) + `knowledge_chunk_concepts` M2M, RLS
+  admin-manage. Applied live.
+- **Lexicon** (src/lib/knowledge/lexicon.ts): 174 concepts — 74 drugs +
+  aliases (reuses DRUG_CATALOG), DSM-5-TR disorder names, curated clinical
+  terms (symptoms/mechanisms/therapies/assessments).
+- **Extraction** (scripts/knowledge/extract-concepts.ts): word-boundary regex
+  scan over all chunks → **27,608 chunks scanned, 37,275 concept links added**.
+  Idempotent + resumable.
+- **Filtered retrieval**: `match_corpus_chunks` gains a concept filter (fixed
+  the RPC's search_path — the codebase's established `public` pattern, since
+  `''` hid the pgvector `<=>` operator); /api/knowledge/search?concept=;
+  retrieve.ts forwards filterConcept. Verified live: Clozapine/Lithium/
+  Schizophrenia filters return tagged hits, 0 untagged.
+- **Browse endpoint**: GET /api/knowledge/concepts (type/prefix/limit +
+  chunk-link counts) for adaptive-learning topic pickers.
+- **V4-Flash lane** (scripts/knowledge/enrich-concepts.ts): OPTIONAL deepening,
+  code-complete, gated on a no-train key (honest no-op until one exists).
+- **Regression**: eval re-run → 100% recall@5 and @8 (16/16) — no regression
+  from the concept layer.
+
+Gate green before each commit: lint 0/0, tsc clean, **424 tests**, build
+82/82. Commits: 1cbb77d (concept layer), 3616b85 (concepts endpoint),
+df38169 (queue tick). QUEUE now 0 unchecked items.
+
 ## 2026-08-14 — KNOWLEDGE SYSTEM: psychopharm wiring + final report (§37)
 
 Closed the last two buildable items:
