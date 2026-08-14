@@ -2889,3 +2889,16 @@ LIVE VERIFY (fresh browser, vibhapsychology.com, no cache):
   full-page screenshot /tmp/plms-live-verify.png (2880x6596)
 NOTE: main merge REMAINS HELD at Kavya's "wait". feature branch is 113
 commits ahead; origin/main is an ancestor (clean fast-forward).
+2026-08-14T16:40:59 Queue exhausted — allowing normal Claude stop.
+2026-08-14T16:43:00 Stop-hook bookkeeping pass.
+- Verified on disk: marquee.tsx (TERMS/useReducedMotion/animate-marquee),
+  globals.css keyframes (marquee + live-pulse + pause + reduce-safe),
+  landing-nav progress bar (state + listener + ink fill div),
+  landing-page (Marquee import + render + animate-live dot),
+  NIGHT_LOG + MORNING_REPORT rewritten.
+- Gate re-run clean: lint 0/0 · tsc clean · 453 tests · build clean.
+- QUEUE.md updated: new "DESIGN UI/UX PASS" section ([x] marquee/progress/
+  pulse + live verify) + two deferred human actions added (Main merge HELD
+  at Kavya's "wait"; link-colour decision).
+- NEEDS_KAVYA.md already carries every human action (psychopharm review,
+  keys, POCSO, drop-folder, Fly auth).

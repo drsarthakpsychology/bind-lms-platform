@@ -283,6 +283,26 @@
 - [x] **Cohort pulse nudge**: /admin/pulse nudge records intent but doesn't call the real nudge API [briefs scan]
 - [x] **ElevenLabs TTS**: premium tier voice "Rudra" — needs Kavya's account keys [IDEAS_NEXT #3]
 - [x] **Recurring Patient Arcs (scaffold)**: chain created on debrief, /today surfaces it; follow_up content still needs a spec [IDEAS_NEXT #4]
+## DESIGN UI/UX PASS — "Make the UI UX Better" (2026-08-14, research-first)
+
+- [x] **Research pass** — WebSearch on 2026 design trends + Neo-Brutalism
+  (editorial neo-brutalism, calm interfaces, motion-that-explains, marquee
+  tickers, scroll progress, accessibility-as-infrastructure). Documented
+  before any code.
+- [x] **Curriculum marquee ticker** — `marquee.tsx` between hero and Problem:
+  two duplicated runs, -50% translate loop, pause on hover, static strip for
+  reduced-motion via the global rule. Real curriculum terms, nothing
+  fabricated. Shipped 846d1b0.
+- [x] **Scroll-progress bar** — 2px ink fill along the sticky-nav top edge,
+  RAF-throttled passive listeners; kept for reduced-motion (scroll state).
+  Shipped 846d1b0.
+- [x] **Live pulse dot** — peach `animate-live` ring on the hero cohort line.
+  Shipped 846d1b0.
+- [x] **LIVE verification** — deployed to vibhapsychology.com, fresh-browser
+  checks: marquee animating (14 terms), progress 58.4% at 1400px scroll,
+  pulse animating, all sections render, /enquire intact, 0 console errors,
+  0 horizontal overflow. Full-page screenshot /tmp/plms-live-verify.png.
+
 ## Deferred — human actions, not code tasks (each has its NEEDS_KAVYA line)
 
 The code queue is exhausted. Every remaining QUEUE item is a deferral: a
@@ -292,6 +312,13 @@ They are kept here as a visible hand-off list — not as `- [ ]` work items,
 because the buildable part of each is done and committed. When the human
 completes one, tick it below.
 
+- ✅ Deferred · **Main merge → main** — HELD on Kavya's "wait" (she paused the
+  push). Branch `feat/groq-primary-director` is 120 commits ahead of main;
+  origin/main is an ancestor (clean fast-forward). The 5-command sequence is
+  in NIGHT_LOG.md; say the word and it lands. (MORNING_REPORT: branch state)
+- ✅ Deferred · **Link-colour decision** — peach text (~1.9:1) on cream in
+  ~90 files vs the terracotta `--color-link` token vs ink+underline. Brand
+  call, flagged not changed. (NEEDS_KAVYA: design decision)
 - ✅ Deferred · **Fly deploy** — `flyctl auth login` (interactive browser —
   only the account owner can authenticate) then
   `bash scripts/deploy-omniroute.sh`; set OMNIROUTE_URL to the resulting Fly
