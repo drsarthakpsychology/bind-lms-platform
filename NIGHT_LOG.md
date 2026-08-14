@@ -3541,3 +3541,31 @@ interactive targets in student surfaces, no horizontal-scroll tables (compare
 rebuilt one-field-at-a-time), standard gutters + safe-areas + empty states.
 Remaining 11 (T77-T84, T88-T90) are live-journey tests — blocked on a running
 environment (NEEDS_KAVYA). Gate green.
+
+## 2026-08-14 21:25 — Wave-2 mobile UX fixes + first live e2e matrix run
+
+After T18-T50 completed, fanned out a second read-only audit (9 agents,
+docs/mobile-audit-t54-t75.json) over the remaining code-actionable items.
+The coordinator landed most of it (T61 tokens, T62/T64 reduced-motion + 44px,
+T76 route review, T85-T87, material viewer stream fix); I took the
+primitive/gesture/iOS slice:
+
+- 078f8f3 wave-2 UX fixes: bottom-sheet drag-to-dismiss (T55), MobileAssessment
+  Flow explicit Back (T56), choice-list reveal confirm (T63), --nav-h safe-area
+  calc + sticky-action double-padding fix (T66), iOS auto-zoom text-base fixes
+  across chat/supervision/check-in/dictate/source-panel (T54), login min-h-svh,
+  settings+notifications inset={false} (T66).
+- e53a0ec ticked T54/T55/T56.
+- c095bad fixed the stale e2e matrix spec: journal/wall compose moved into a
+  sheet (feed-first), so the 12 spec failures were staleness, not regressions.
+  Spec now asserts the trigger → sheet composer, dialog-scoped.
+- b725a5c updated NEEDS_KAVYA live-QA note.
+
+**First live e2e run** (dev server + seeded Test@vibha.test): matrix passes
+24/26 with the no-horizontal-scroll invariant at all 6 widths + desktop; the
+2 residual failures are shared-e2e-session expiry (single-active-session),
+not layout bugs. Genuine progress on T81/T82/T89 but full device QA (gesture
+nav, software keyboard) still needs a real phone — 15 items documented.
+
+Gate green: lint 0, tsc clean, 486 tests, build 89/89. Branch
+feat/mobile-design-system, not pushed.
