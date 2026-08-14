@@ -2472,3 +2472,4 @@ User asked for the best Cerebras alternative + to use opencode API/auth.
   reality. Groq + OpenRouter confirmed healthy (real free lanes).
 
 Gate: lint 0, tsc clean, 447 tests, build 82/82. No keys in tracked files.
+2026-08-14T10:50:56 Queue exhausted — allowing normal Claude stop.
