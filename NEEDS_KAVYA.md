@@ -272,3 +272,31 @@ blocking — all 9 chapters + both appendices are complete and already outlined
 (`scripts/knowledge/outlines/fish_psychopath.json`), and the index is only a
 lookup. If you can re-supply a complete scan/PDF, I'll re-run the extraction
 and close the gap.
+
+---
+
+## 🧠 Knowledge layer — AI synthesis/quiz-generation keys (2026-08-14)
+
+The **retrieval layer is live and $0** — 27,608 chunks across all 10 books,
+100% embedded, hybrid search verified (100% recall@5/@8 on the eval set). The
+Psychology Tutor (`/practice/tutor`, behind the `knowledge_tutor` flag) returns
+**real book passages with source citations right now** — it only needs keys to
+also add AI-written synthesis on top of the passages.
+
+To unlock **AI synthesis** (grounded tutor answers + corpus quiz generation),
+set any one **no-train** provider key — the retrieval-first design never sends
+the corpus wholesale, only the top-k retrieved passages:
+
+1. **`ANTHROPIC_API_KEY`** (paid, no-train) — the strongest student-data lane;
+   unblocks the tutor's synthesis + grounded quiz generation immediately.
+2. **`GROQ_API_KEY`** or **`CEREBRAS_API_KEY`** (free, no-train) — same effect,
+   free-tier rate limits. `GROQ_API_KEY` also unlocks fast Whisper STT.
+
+Until one of those is set, the tutor and psychopharm editor source-panel still
+work fully on retrieval (real passages + citations); the `knowledge_tutor`
+flag stays OFF so students don't hit a half-AI page. Flip it on after you set a
+key and I'll verify the synthesis path end-to-end.
+
+### To enable for students when ready
+- Flip the **`knowledge_tutor`** flag at **/admin/flags** (Psychology Tutor) —
+  off by default so the page is hidden until the AI synthesis lane is live.
