@@ -2,6 +2,18 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
+## KNOWLEDGE LAYER — Groq LIVE + VOICE TUTOR (2026-08-14)
+
+- [x] **GROQ_API_KEY configured + verified live** — router selects groq for
+  json/stream/audio (student-safe); Whisper STT transcribed real audio
+  perfectly. Key only in gitignored .env.local (never committed).
+- [x] **Voice-enabled Psychology Tutor** — press-once mic → live interim →
+  auto-stop → Groq STT → grounded answer → read-aloud (speechSynthesis);
+  read-aloud + stop per reply. Committed 200be4c, e7a7908.
+- [x] **Cloudflare R2 verified** — 20 knowledge objects live, no setup needed.
+- [x] **AI keys documented** in NEEDS_KAVYA (Groq = only required, set;
+  CEREBRAS/ANTHROPIC/NVIDIA/DEEPSEEK optional).
+
 ## KNOWLEDGE LAYER — CORE BUILD COMPLETE (2026-08-14)
 
 - [x] **Register 10 books as corpus_sources** — idempotent, hash-keyed.
