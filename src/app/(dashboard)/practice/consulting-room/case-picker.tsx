@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Lock } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 
 export interface CaseCard {
@@ -43,7 +44,7 @@ const STATE_LABEL: Record<NonNullable<CaseCard["state"]>, string> = {
 const STATE_STYLE: Record<NonNullable<CaseCard["state"]>, string> = {
   not_started: "bg-secondary text-muted-foreground",
   in_progress: "bg-primary text-primary-foreground",
-  completed: "bg-green-100 text-green-800",
+  completed: "bg-status-success-bg text-status-success-fg",
 };
 
 /**
@@ -127,8 +128,9 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
               return (
                 <li key={c.id || c.title} className={`flex flex-col rounded-md border-2 border-border bg-card p-4 hard-shadow-sm transition-[transform,box-shadow] hover:-translate-y-0.5 hover:hard-shadow-md active:translate-y-px ${locked ? "opacity-60" : ""}`}>
                   {locked ? (
-                    <p className="mb-2 rounded-md border border-border bg-secondary/50 px-2 py-1 text-caption text-muted-foreground">
-                      🔒 Unlocks after {c.unlockAt ?? 3} completed cases
+                    <p className="mb-2 inline-flex items-center gap-1.5 rounded-md border border-border bg-secondary/50 px-2 py-1 text-caption text-muted-foreground">
+                      <Lock className="size-3.5 shrink-0" aria-hidden />
+                      Unlocks after {c.unlockAt ?? 3} completed cases
                     </p>
                   ) : null}
                   {/* state chip + stars — real meaning, replaces the dead "Reviewed" chip */}

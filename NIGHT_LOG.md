@@ -3268,3 +3268,11 @@ DEFERRED (log, don't idle): full 44px sweep beyond viewer; message-arrival
 animation; lesson tabs → progressive flow (T24 full); psychopharm/auth/other
 granular T18-T90 items; live-server screenshot QA (needs dev server + seeded
 Supabase + auth — outside the unit gate).
+
+2026-08-14T19:50 T18 done — global progressive-disclosure audit. Swept courses/
+practice/quiz/journal/wall/material/sim/lesson/case-picker/psychopharm/passport:
+the top surfaces are already mobile-first (T1-T16 + the v5 architecture). Remaining
+specialist density is defensible (psychopharm compare = intentional per-container
+horizontal table; passport = evidence list). Concrete fix: case-picker completed
+chip raw-green → status-success tokens + emoji lock → lucide Lock icon. Gate green:
+lint 0, tsc clean, 473 tests, build. Commit hash below.

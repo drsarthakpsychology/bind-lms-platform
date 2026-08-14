@@ -383,7 +383,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
 - [x] T16 Mobile testing matrix (320/360/375/390/412/430) + desktop regression
   (1280/1440) via Playwright
 - [x] T17 Final mobile UX audit + visual QA
-- [ ] T18  Global progressive-disclosure audit — review every mobile route and
+- [x] T18  Global progressive-disclosure audit — review every mobile route and
   component across the application; identify desktop-density patterns and
   redesign them around one meaningful cognitive task at a time; do not merely
   stack or shrink desktop content
