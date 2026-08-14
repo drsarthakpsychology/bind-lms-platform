@@ -2038,3 +2038,26 @@ Gate verified green on the full tree: lint 0, `tsc --noEmit` clean, 414 tests,
 knowledge-layer files (ingest.ts, src/lib/knowledge/, cache/, other outlines,
 knowledge_layer.sql, package.json/package-lock.json) left for their owners.
 Shipped in commit 30cd8ba.
+2026-08-14T06:26:06 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:26:23 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:27:37 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Knowledge layer: cross-book outline QA (book-structure reader)
+
+Ran a schema + chunker validation over all 10 outlines (parse each JSON, run
+chunkBook against its cache, report non-blank orphan pages + overlaps).
+Result: 6 books clean (dsm5tr, maudsley_2021, stahl_pg_preview, icd11,
+stahl_pg_older on overlap-check, + fish/ahuja/stahl_essential/stahl_pg_7th on
+overlap=0). No overlaps anywhere. Finding: back matter is NOT attributed in
+6 outlines because the schema has no backMatter field and readers documented
+it in `issues` instead of `chapters` — these pages chunk as chapter
+"Unattributed": kaplan_sadock 216, stahl_essential_5th 45 (refs/index),
+stahl_pg_older 42, ahuja_psychiatry 21 (appendices), fish_psychopath 12
+(appendices 125-136), stahl_pg_7th 15 (publisher ads 2683-2690 — ads are fine
+to exclude). Recommendation for coordinator: either add a `backMatter` field
+to BookOutline (and have chunker read it) or adopt the convention of putting
+appendices/references/indices in `chapters` (as stahl_pg_preview/fish did
+originally). Data-only finding; no files changed by this check.
+
