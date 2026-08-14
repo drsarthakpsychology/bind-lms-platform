@@ -1,0 +1,136 @@
+{
+  "id": "icd11",
+  "confidence": "high",
+  "issues": [
+    "Page 2 of the PDF is blank (form feed only); the cover/title is page 1 and the copyright page begins on page 3.",
+    "Printed page numbers are offset from PDF page indices (e.g. PDF page 4 carries printed footer '2'); this outline uses the <<<PAGE n>>> PDF index, never printed page numbers.",
+    "The Table of Contents is duplicated in the extraction: TOC entries occupy PDF pages 4-24, then the same headings reappear as body headings from page 24 onward. Headings were disambiguated by line position.",
+    "Some heading text loses the space after the number (e.g. '1.1International Classification of Diseases'), and several long headings wrap across two lines (e.g. 2.10.1, 2.18, 2.19.4.4, 3.14.9).",
+    "Annex C (3.14) and Annex E (3.16) contain long enumerated lists/tables (ill-defined conditions, value-set cross-references) whose extracted order is not always linear across page breaks.",
+    "The document ends on page 473 mid-list (the verbal-autopsy target list of causes of death); there is no index or other back-matter after Annex E.",
+    "Front-matter boundaries fall on transitional pages that carry two sections at once: page 4 mixes the copyright/disclaimer tail with the start of the TOC, page 24 mixes the TOC tail with the start of '0.2 How to use', page 25 mixes the acronym table with the start of the Glossary, and page 28 carries the Glossary's final definition before Part 1 begins. Each transitional page is attributed to the section whose content dominates it.",
+    "Body headings are sometimes indented (leading whitespace) while the TOC copies are flush-left; naive line-start matching treats the two copies differently."
+  ],
+  "isPreview": false,
+  "frontMatter": [
+    {
+      "title": "Cover",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "sections": [
+        {"title": "Cover / Title Page", "page": 1}
+      ]
+    },
+    {
+      "title": "0.1 Copyright page",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "sections": [
+        {"title": "0.1 Copyright page", "page": 3}
+      ]
+    },
+    {
+      "title": "Table of Contents",
+      "pageStart": 5,
+      "pageEnd": 23,
+      "sections": [
+        {"title": "Table of Contents", "page": 5}
+      ]
+    },
+    {
+      "title": "0.2 How to use this Reference Guide",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "sections": [
+        {"title": "0.2 How to use this Reference Guide", "page": 24}
+      ]
+    },
+    {
+      "title": "0.3 Table of Acronyms and Abbreviations",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "sections": [
+        {"title": "0.3 Table of Acronyms and Abbreviations", "page": 25}
+      ]
+    },
+    {
+      "title": "0.4 Glossary",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "sections": [
+        {"title": "0.4 Glossary", "page": 26}
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "title": "Part 1 - An Introduction to ICD-11",
+      "pageStart": 28,
+      "pageEnd": 48,
+      "sections": [
+        {"title": "1.1 International Classification of Diseases (ICD)", "page": 28},
+        {"title": "1.2 Structure and taxonomy of the ICD", "page": 38},
+        {"title": "1.3 Main uses of the ICD: Mortality", "page": 44},
+        {"title": "1.4 Main uses of the ICD: Morbidity", "page": 45},
+        {"title": "1.5 Traditional Medicine", "page": 46},
+        {"title": "1.6 ICD maintenance", "page": 46}
+      ]
+    },
+    {
+      "title": "Part 2 - Using ICD-11",
+      "pageStart": 49,
+      "pageEnd": 300,
+      "sections": [
+        {"title": "2.1 Basic coding and reporting guidelines", "page": 49},
+        {"title": "2.2 Tabular List, Special Tabulation Lists, Qualifiers, and Modifiers", "page": 50},
+        {"title": "2.3 Index", "page": 50},
+        {"title": "2.4 Reference Guide", "page": 50},
+        {"title": "2.5 Browser and coding tool", "page": 50},
+        {"title": "2.6 Coding step by step - clinical term", "page": 50},
+        {"title": "2.7 ICD-11 conventions", "page": 51},
+        {"title": "2.8 Stem codes", "page": 56},
+        {"title": "2.9 Extension codes", "page": 56},
+        {"title": "2.10 Precoordination and postcoordination", "page": 57},
+        {"title": "2.11 Functioning section", "page": 62},
+        {"title": "2.12 Electronic recording and reporting", "page": 65},
+        {"title": "2.13 Foundation Component and Tabular lists", "page": 66},
+        {"title": "2.14 Main uses of the ICD: Mortality", "page": 67},
+        {"title": "2.15 Mortality statistics", "page": 67},
+        {"title": "2.16 Basic concepts", "page": 70},
+        {"title": "2.17 Coding instructions for mortality", "page": 80},
+        {"title": "2.18 Check for modifications of the starting point (Steps M1 to M4)", "page": 90},
+        {"title": "2.19 Special instructions on selecting the underlying cause of death", "page": 96},
+        {"title": "2.20 Mortality Rules - Knowledgebase", "page": 174},
+        {"title": "2.21 Coding instructions for mortality: multiple cause coding and other specific instructions", "page": 174},
+        {"title": "2.22 Mortality digital end to end solution (forms, tools and training modules)", "page": 232},
+        {"title": "2.23 Main uses of the ICD: Morbidity", "page": 233},
+        {"title": "2.24 General statistical recommendations", "page": 285},
+        {"title": "2.25 Recommendations in relation to statistical tables for international comparison", "page": 288}
+      ]
+    },
+    {
+      "title": "Part 3 - New in ICD-11",
+      "pageStart": 301,
+      "pageEnd": 473,
+      "sections": [
+        {"title": "3.1 ICD-11 new conventions and terminology", "page": 301},
+        {"title": "3.2 Chapter Structure of ICD-11", "page": 305},
+        {"title": "3.3 Multiple Parenting", "page": 334},
+        {"title": "3.4 The Content Model", "page": 334},
+        {"title": "3.5 Language independent ICD entities", "page": 337},
+        {"title": "3.6 Innovation to mortality coding in ICD-11", "page": 337},
+        {"title": "3.7 Innovation to morbidity coding in ICD-11", "page": 342},
+        {"title": "3.8 Functioning section", "page": 342},
+        {"title": "3.9 General features of ICD-11", "page": 343},
+        {"title": "3.10 Traditional Medicine conditions - Module 1 (TM1)", "page": 343},
+        {"title": "3.11 Preparations for the Eleventh Revision", "page": 343},
+        {"title": "3.12 Annex A: ICD-11 Updating and Maintenance", "page": 344},
+        {"title": "3.13 Annex B: History of the development of the ICD", "page": 356},
+        {"title": "3.14 Annex C: Annexes for Mortality Coding", "page": 370},
+        {"title": "3.15 Annex D: Differences between ICD-10 and ICD-11", "page": 441},
+        {"title": "3.16 Annex E: Referred Value Sets", "page": 470}
+      ]
+    }
+  ],
+  "unattributedPages": []
+}
