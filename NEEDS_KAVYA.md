@@ -241,3 +241,21 @@ Auth then checks new/changed passwords against HaveIBeenPwned. Free, one click.
 
 **Known-accepted (no action):** the `pgvector` extension lives in the `public`
 schema (standard install) — moving it risks breaking `vector`-typed columns.
+
+---
+
+## 🧠 Psychopharm content — clinician review (2026-08-14 enrichment)
+
+I authored **146 enriched medication entries** (student plain-language summary +
+clinical mechanism/uses/side-effects/monitoring) from **Stahl's Prescriber's
+Guide 7th ed.** (`docs/psychopharm/extracted_mono_stahl7.json`) + web research,
+and seeded them into `medication_documents` as **DRAFT**. Before they reach
+students they need your clinical sign-off:
+
+1. Open **/admin/psychopharm-review**, open a medication, check the content is
+   accurate, then **Publish** it (the reviewer gate stays closed until you do).
+2. Flag anything wrong and I'll correct it — I cross-referenced Stahl + FDA/NCBI
+   and marked uncertainty, but can't substitute for your judgement.
+
+Nothing is student-visible until you publish each drug, so there's no rush —
+the drafts sit in the editor waiting for review.
