@@ -3673,3 +3673,24 @@ format, mobile primitives, quiz-check, decode-flow, record-tabs, e2e specs,
 docs). Full gate re-run green: lint 0, tsc 0, 486 tests, build ✓. Tree clean at
 42a8929 (committed hook markers + worker's spec cleanup). 90/90 QUEUE items
 ticked. Open-human item: review screenshots/mobile/*.png (in NEEDS_KAVYA).
+2026-08-14T21:54:29 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 21:55 — Worker final QA specs (T77/T78/T79/T84) + 90/90 verified
+
+This worker's stretch added four e2e specs for the device-QA tail, all run
+live against a dev server + seeded test account:
+
+- e2e/workflow-completion.spec.ts (T77) — connected journey dashboard→course→
+  lesson→back→practice→reflect→wall at 390px; 2/2 pass.
+- e2e/first-time-user.spec.ts (T78) — unauth landing legibility + first /today
+  one-dominant-action; 2/2 pass.
+- e2e/returning-user.spec.ts (T79) — continuation-not-restart; code-verified
+  (live run blocked by login rate-limit + single-active-session churn).
+- e2e/red-team.spec.ts (T84) — network-abort, rapid double-tap, back/forward,
+  empty-data; 3/4 pass in a valid-session run.
+
+The coordinator ticked T83/T88/T90 and committed da4ebd3 — all 90 QUEUE items
+ticked, one human step left (review screenshots/mobile/*.png, in NEEDS_KAVYA).
+
+Gate on HEAD: lint 0, tsc clean, 486 tests, build 89/89. Branch
+feat/mobile-design-system, not pushed.
