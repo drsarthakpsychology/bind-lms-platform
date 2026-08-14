@@ -980,29 +980,29 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   and other sequential experiences; calculate the actual next meaningful
   action rather than simply linking to the parent page
 
-- [ ] T141  Student home simplification — redesign the student dashboard around
+- [x] T141  Student home simplification — redesign the student dashboard around
   immediate action: what should I do now, what am I currently learning, and
   what can I practise; remove repeated promotional or informational blocks
 
-- [ ] T142  Student practice simplification — reduce the Practice area to a
+- [x] T142  Student practice simplification — reduce the Practice area to a
   small number of understandable categories and useful actions; merge
   overlapping tools where appropriate and remove features that exist only
   because the underlying system can technically support them
 
-- [ ] T143  Student course simplification — make course progress and continuation
+- [x] T143  Student course simplification — make course progress and continuation
   immediately understandable; remove unnecessary nested cards, repeated
   descriptions, decorative labels, and overly detailed hierarchy
 
-- [ ] T144  Student assessment simplification — each assessment interaction
+- [x] T144  Student assessment simplification — each assessment interaction
   should focus on the current question/task, available answers, progress, and
   next action; progressively reveal explanations and deeper feedback after the
   decision rather than displaying everything simultaneously
 
-- [ ] T145  Student explanation hierarchy — after an answer, show the useful
+- [x] T145  Student explanation hierarchy — after an answer, show the useful
   explanation first; allow deeper reasoning, sources, references, or detailed
   discussion to expand only when useful
 
-- [ ] T146  Student learning feedback — redesign scores and feedback so a
+- [x] T146  Student learning feedback — redesign scores and feedback so a
   student understands what happened and what to do next without needing to
   interpret technical scoring terminology
 
