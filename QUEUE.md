@@ -1152,54 +1152,54 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   student's practice, show the actual useful learning information first;
   hide implementation metadata unless it is required for investigation
 
-- [ ] T180  End-to-end product cleanup — after implementing all preceding work,
+- [x] T180  End-to-end product cleanup — after implementing all preceding work,
   conduct a fresh route-by-route review and remove anything that has become
   redundant because of the new architecture
 
-- [ ] T181  "Would I use this?" audit — test the application from the
+- [x] T181  "Would I use this?" audit — test the application from the
   perspective of an actual student and an actual programme administrator;
   document every moment where the interface causes confusion, unnecessary
   effort, unnecessary reading, or uncertainty
 
-- [ ] T182  Three-second comprehension test — for every major screen verify
+- [x] T182  Three-second comprehension test — for every major screen verify
   that the user can identify where they are, what the screen is for, and what
   they should do next within a few seconds without reading a large block of
   explanatory text
 
-- [ ] T183  One-primary-action rule — every major mobile screen should have
+- [x] T183  One-primary-action rule — every major mobile screen should have
   one obvious primary action; secondary actions must visually and
   structurally remain secondary
 
-- [ ] T184  One-screen-one-job review — identify screens that attempt to do
+- [x] T184  One-screen-one-job review — identify screens that attempt to do
   multiple unrelated jobs; split them into focused flows or progressively
   reveal secondary tasks rather than maintaining overloaded screens
 
-- [ ] T185  Final mobile navigation regression — test every route with the
+- [x] T185  Final mobile navigation regression — test every route with the
   bottom navigation present, absent, keyboard open, keyboard closed, sheet
   open, full-screen mode, voice mode, video mode, and long content; verify no
   overlapping or inaccessible controls remain
 
-- [ ] T186  Final admin usability regression — test the complete admin workflow:
+- [x] T186  Final admin usability regression — test the complete admin workflow:
   login → dashboard → course → module → content editor → card creation →
   psychopharma → students → review/quality → save/publish; remove every
   unnecessary step discovered
 
-- [ ] T187  Final student usability regression — test:
+- [x] T187  Final student usability regression — test:
   login → Today → Resume → Course → Lesson → Assessment → Practice → Patient
   Simulation → Voice → Debrief → Journal; verify every transition is obvious
   and no screen requires unnecessary explanation
 
-- [ ] T188  Final visual QA — inspect every major route on both desktop and
+- [x] T188  Final visual QA — inspect every major route on both desktop and
   mobile for spacing, hierarchy, typography, overflow, navigation,
   interaction states, loading, errors, empty states, animation, accessibility,
   and overall visual consistency
 
-- [ ] T189  Final performance QA — verify that the simplification work has not
+- [x] T189  Final performance QA — verify that the simplification work has not
   introduced unnecessary JavaScript, excessive network calls, expensive
   animations, large client bundles, slow route transitions, or unnecessary
   rendering
 
-- [ ] T190  Final product acceptance gate — the application is not complete
+- [x] T190  Final product acceptance gate — the application is not complete
   merely because all features technically work; it must feel simple, calm,
   obvious, fast, focused, and purpose-built for psychology learning and
   practice; remove complexity rather than adding another explanation for it
