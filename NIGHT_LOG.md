@@ -2496,3 +2496,4 @@ User: "how can we use omniroute? you setup this entirely." Done:
 Gate green throughout. Keys live (gitignored): GROQ, DEEPSEEK, OPENROUTER,
 SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T11:05:18 Queue exhausted — allowing normal Claude stop.
+2026-08-14T11:06:43 Queue exhausted — allowing normal Claude stop.
