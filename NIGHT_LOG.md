@@ -3044,3 +3044,25 @@ five are in fact fetched + normalised, POCSO being the last (fe6bd5c).
 Retired that entry and narrowed the deferred note to the ICD-11 scripted
 fetcher. Commit 5d40320. BUGS.md shows Open: 0 (item 27's "fix commit"
 is a doc-annotation lag only). Gate remains green on the committed tree.
+
+2026-08-14T18:15 — Marketing pass-3 complete (5 fixes + scroll motion). All
+committed by the harness as it watched (142a039 motion, 76a0661 surfaces,
+b128c49 headline cap, 50ba13f optical tweak + CTA). Final state verified:
+P1 PRACTISE is now the bottom-right bookend of the card stack (+1.5deg,
+amber, mirrors CASE FILE -1.5deg; stack pb-6, tab bottom-[0.15rem]
+right-[2.4rem]); P2 headline clamp capped at 3.75rem (brief's 7rem/7.4vw
+rendered 4 lines in the 640px left column — the ≤2-line acceptance caps it;
+measured U-ink pull = 2px → ml-[-0.033em], the brief's -0.045em was
+Inter-tuned and over-pulled Geist by 0.7px); P3 hexagonal lattice removed,
+replaced by .hero-dots::before clinical graph paper (24px minor + 120px
+major dot grid, radial-masked to the card stack, remasked at ≤900px) — zero
+DOM nodes; P4 one rail (.rail: 1160px + clamp(1.5rem,5vw,4rem)) — every
+section's kicker/h2/paragraph now starts at the same x (204@1440), CTA card
+box removed to join the rail; P5 exactly two surfaces (--surface-1 #fbf2e9,
+--surface-2 #f5e9da, --card #fdf8f2) alternating 1→2→1→2→1→2, pink
+--secondary removed from the page; P6 IntersectionObserver one-shot reveal
+(18px rise + fade, threshold 0.15, rootMargin -12%, unobserve on fire,
+--delay stagger; reduced-motion reveals instantly — 16/16), Parallax and
+ScrollScale removed (no scroll scrubbing). Acceptance all green at
+1440/1024/390 incl. reduced-motion. ALSO: fe6bd5c — POCSO 2012 Act OCR'd
+into the ethics corpus (closes a long-blocked NEEDS_KAVYA item).
