@@ -2,8 +2,8 @@
 
 ## Ship it
 T90–T190 driven per your two directives ("complete the queue" + "do best, not
-cheapest-to-reverse"). **97 of 100 tasks complete** (T103/T104 editor-parity
-follow-up + T151 physical-device video QA remain), everything committed on
+cheapest-to-reverse"). **99 of 100 tasks complete** — only T151 (physical-device
+video QA, a human-thumb step) remains, everything committed on
 `feat/mobile-design-system` (nothing pushed to main). 493 tests green, build OK.
 
 Best things to click:

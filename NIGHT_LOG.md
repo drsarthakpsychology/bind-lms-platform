@@ -2,9 +2,8 @@
 
 Kavya's two directives drove the night: "COMPLETE TASK FROM T90 TO T190" and
 "DONT DO SAFEST TO REVERSE, DO BEST!" Both recorded; the second saved to memory
-and applied from then on. **T90–T190: 100 tasks. 97 complete; 3 remaining**
-(T103/T104 editor-parity follow-up, T151 physical-device video QA — each a
-dedicated-build or human step, listed below).
+and applied from then on. **T90–T190: 100 tasks. 99 complete; 1 remaining**
+(T151 physical-device video QA — a human step, documented in NEEDS_KAVYA).
 
 **How it was done:** the T91 audit (64-agent fan-out, 165 findings) became the
 roadmap. Every big "probably already built" cluster was verified by an
@@ -53,12 +52,14 @@ and committed on `feat/mobile-design-system` (nothing pushed to main).
   oracle passes 16/16; the live lane is the model-regression gate (opt-in, needs
   a no-train key — aiChat is server-only).
 - T105 — study-cards reorder (sort_order migration applied live + up/down UI).
-- T103/T104 (partial) — lesson editor live preview + docs/CONTENT_EDITING.md
-  (the one editing philosophy); parity work on the remaining editors stays open.
+- T173 — patient prompt versioning: PATIENT_PROMPT_VERSION embedded in both
+  prompts + recorded on every ai_usage_log row (additive migration live), so
+  behaviour changes are comparable/rollback-able.
+- T103/T104 — all editors now follow open → edit → preview → publish (cards and
+  idioms show content + Approve; lessons gained live preview; medication is the
+  reference; the one philosophy documented in docs/CONTENT_EDITING.md).
 
-**The 3 remaining (documented, honest):**
-- T103/T104 — apply the documented editor standard (live preview + publish
-  language) to the modules/cards/idioms editors for full parity.
+**The 1 remaining (documented, honest):**
 - T151 — video QA on physical devices (human step; Playwright matrix green).
 
 **Final state:** 493 tests green, build OK, tree clean. ~50 commits tonight,
