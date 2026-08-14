@@ -2861,3 +2861,31 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T15:41:53 Queue exhausted — allowing normal Claude stop.
 2026-08-14T15:42:51 Queue exhausted — allowing normal Claude stop.
 2026-08-14T15:45:56 Queue exhausted — allowing normal Claude stop.
+2026-08-14T16:09:09 Queue exhausted — allowing normal Claude stop.
+2026-08-14T16:12:14 Queue exhausted — allowing normal Claude stop.
+2026-08-14T16:15:27 Queue exhausted — allowing normal Claude stop.
+2026-08-14T16:35:16 Queue exhausted — allowing normal Claude stop.
+
+2026-08-14T16:40 — "Make the UI UX Better" pass complete + LIVE-VERIFIED.
+Committed 846d1b0 (feat/landing): three free-component-style motion pieces
+added per the research-first redesign request:
+  1. Marquee.tsx — seamless curriculum ticker between hero and Problem
+     (two duplicated runs, -50% translate loop, pause-on-hover, flattened
+     to static strip for reduced-motion via the global rule; real
+     curriculum terms, no fiction). Keyframes in globals.css.
+  2. Scroll progress — 2px ink fill along the sticky nav top edge
+     (RAF-throttled passive listeners; kept for reduced-motion as it is a
+     scroll state, not decoration).
+  3. Live pulse dot — peach animate-live ring on the hero cohort line.
+Gate green: lint, tsc, 453 tests, build.
+Deployed to production (bind-lms-platform-mdlj8yckh...vercel.app, Ready).
+LIVE VERIFY (fresh browser, vibhapsychology.com, no cache):
+  marquee: present + animationName "marquee", 14 terms (2 runs), full-width
+  progress: 58.38% after scroll to 1400, pinned top
+  pulse dot: present + animationName "live-pulse"
+  sections: all render (eyebrows shown UPPERCASED by text-eyebrow — the
+    substring check initially failed on case, page was correct)
+  overflow-x: 0 · console errors: 0
+  full-page screenshot /tmp/plms-live-verify.png (2880x6596)
+NOTE: main merge REMAINS HELD at Kavya's "wait". feature branch is 113
+commits ahead; origin/main is an ancestor (clean fast-forward).
