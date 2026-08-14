@@ -3520,3 +3520,14 @@ from code. Logged to NEEDS_KAVYA; the Playwright matrix spec is ready to run.
 Worker landed in parallel: --nav-h safe-area, MobileStickyAction offsetForNav,
 composer text-base, MobileBottomSheet drag-to-dismiss, assessment-flow back.
 Gate green at 0651657.
+
+2026-08-14T22:40 T85/T86/T87 ticked (code-verified):
+ T87 what-next — every primary screen has ONE clear action (sticky Continue on
+    lessons, primary-first today, recommended-card practice hub, hero Continue
+    on courses, Start/Resume case cards, quiz Next, debrief step-primary, sim
+    composer).
+ T86 progressive-consistency — decode/record segmented, quiz one-question,
+    journal/wall sheets, debrief step-flow, lesson collapsed check.
+ T85 cognitive-load — heavy screens decomposed (decode 5→1, quiz 1-at-a-time,
+    debrief steps, drug page collapsed, practice list rows).
+Gate green.

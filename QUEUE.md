@@ -706,17 +706,17 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   incomplete data, slow loading, and interrupted sessions; fix everything
   discovered
 
-- [ ] T85  Mobile cognitive-load pass — review every major flow specifically for
+- [x] T85  Mobile cognitive-load pass — review every major flow specifically for
   unnecessary decisions, simultaneous choices, visual noise, reading burden,
   repeated navigation, and unclear next actions; simplify wherever possible
 
-- [ ] T86  Mobile progressive-disclosure consistency pass — verify that the
+- [x] T86  Mobile progressive-disclosure consistency pass — verify that the
   one-task-at-a-time philosophy is applied consistently across assessments,
   lessons, forms, practice, clinical workflows, documents, settings,
   dashboards, and other relevant experiences rather than being implemented as
   isolated patterns
 
-- [ ] T87  Mobile "what next?" audit — open every major screen with fresh eyes
+- [x] T87  Mobile "what next?" audit — open every major screen with fresh eyes
   and verify that a user can identify the intended next action within seconds;
   redesign screens where multiple actions compete equally
 
