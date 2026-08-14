@@ -25,7 +25,7 @@ const STEPS = [
 
 export default function WaitlistPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-dvh flex-col bg-background">
       <LandingNav />
       <main className="mx-auto w-full max-w-5xl flex-1 px-5 py-14 sm:px-6">
         <Reveal>
@@ -38,8 +38,9 @@ export default function WaitlistPage() {
         </Reveal>
 
         <div className="mt-3 grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          {/* The invite pitch — sticky on lg so it stays beside the sheet. */}
-          <div className="lg:sticky lg:top-24">
+          {/* The invite pitch — sticky on lg so it stays beside the sheet.
+              On mobile it recedes below the sheet (order-2) so the form leads. */}
+          <div className="order-2 lg:order-1 lg:sticky lg:top-24">
             <Reveal delay={0.06}>
               <p className="text-eyebrow text-muted-foreground">Cohort One · Invite-only</p>
               <h1 className="mt-3 text-4xl font-black tracking-tight text-foreground sm:text-5xl">
@@ -66,8 +67,8 @@ export default function WaitlistPage() {
             </Reveal>
           </div>
 
-          {/* The waitlist sheet. */}
-          <Reveal delay={0.2}>
+          {/* The waitlist sheet — the primary action. Leads on mobile (order-1). */}
+          <Reveal delay={0.2} className="order-1 lg:order-2">
             <div className="rounded-md border-2 border-foreground bg-card p-6 hard-shadow-md sm:p-8">
               <WaitlistForm />
             </div>
