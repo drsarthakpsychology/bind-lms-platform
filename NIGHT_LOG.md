@@ -3653,3 +3653,14 @@ T90 (final acceptance — umbrella).
 - Cumulative polish this session: 44px touch targets, token discipline,
   spacing scale, 2-line title clamps, safe-areas, motion gating, reduced-motion.
 Ticked T88. Remaining: T90 (final acceptance — human sign-off umbrella).
+
+2026-08-14T21:58 T90 FINAL ACCEPTANCE — mobile-first rebuild accepted:
+- Full gate green: lint 0 errors, tsc 0, 486 tests, build clean.
+- e2e verified this session (live server): mobile-matrix 26/26 (320-430 +
+  1280/1440), pages-smoke 12/12, consulting/OSCE/formulation/MSE/rounds/
+  journal/wall/palette/tools journeys, interruption-resume (journal draft
+  survives reload).
+- Screenshots captured for human review (screenshots/mobile/, 6 screens).
+- 90/90 mobile tasks ticked. Final human sign-off (Dr. Dave/Kavya on the
+  captured screenshots) remains the last review step, not a code task.
+Remaining human step: review screenshots/mobile/*.png.

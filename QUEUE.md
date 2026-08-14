@@ -729,7 +729,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   reflection, and community features; verify functionality, state persistence,
   responsiveness, and visual quality
 
-- [ ] T90  Final mobile-first acceptance audit — do not consider the work
+- [x] T90  Final mobile-first acceptance audit — do not consider the work
   complete until the application genuinely feels designed for a phone rather
   than a desktop application resized for a phone; verify that progressive
   disclosure, focused tasks, contextual actions, clear next steps, mobile
