@@ -150,12 +150,17 @@ const TIMEOUT_MS = 20_000;
  * (no repair round-trip, no spurious failover).
  */
 function extractJson(text: string): string {
-  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-  if (fenced) return fenced[1].trim();
-  const start = text.indexOf("{");
-  const end = text.lastIndexOf("}");
-  if (start >= 0 && end > start) return text.slice(start, end + 1);
-  return text.trim();
+  let s = text;
+  const fenced = s.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (fenced) s = fenced[1];
+  else {
+    const start = s.indexOf("{");
+    const end = s.lastIndexOf("}");
+    if (start >= 0 && end > start) s = s.slice(start, end + 1);
+  }
+  // Models occasionally emit `+1` (a leading plus) for positive numbers, which
+  // is not valid JSON. Strip it so the schema parse succeeds first try.
+  return s.replace(/([:,\s[])\+(\d)/g, "$1$2").trim();
 }
 
 /** One call with provider failover. Never throws for a student-visible failure

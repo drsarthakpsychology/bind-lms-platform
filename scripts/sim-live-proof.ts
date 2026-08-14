@@ -35,14 +35,17 @@ function groqKey(): string | undefined {
 
 const key = groqKey();
 
-/** Models sometimes fence JSON — strip it before parsing. */
+/** Models sometimes fence JSON or emit `+1` — strip + sanitise before parsing. */
 function extractJson(text: string): string {
-  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-  if (fenced) return fenced[1].trim();
-  const start = text.indexOf("{");
-  const end = text.lastIndexOf("}");
-  if (start >= 0 && end > start) return text.slice(start, end + 1);
-  return text.trim();
+  let s = text;
+  const fenced = s.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (fenced) s = fenced[1];
+  else {
+    const start = s.indexOf("{");
+    const end = s.lastIndexOf("}");
+    if (start >= 0 && end > start) s = s.slice(start, end + 1);
+  }
+  return s.replace(/([:,\s[])\+(\d)/g, "$1$2").trim();
 }
 
 async function callGroq(prompt: string): Promise<string> {
