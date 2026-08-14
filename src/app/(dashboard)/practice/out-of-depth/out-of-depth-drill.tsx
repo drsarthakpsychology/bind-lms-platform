@@ -5,6 +5,7 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { AlertTriangle, Siren, CheckCircle2 } from "lucide-react";
 import { OUT_OF_DEPTH_SCENARIOS, scoreReferralDecision, type ReferralOption } from "@/lib/out-of-depth/scenarios";
+import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 
 /**
  * Out of Depth (v5.1 A4) — the refer/escalate drill.
@@ -15,6 +16,7 @@ export function OutOfDepthDrill() {
   const [idx, setIdx] = React.useState(0);
   const [chosen, setChosen] = React.useState<ReferralOption | null>(null);
   const [overReferrals, setOverReferrals] = React.useState(0);
+  const [finished, setFinished] = React.useState(false);
 
   const s = OUT_OF_DEPTH_SCENARIOS[idx];
   if (!s) return null;
@@ -29,8 +31,45 @@ export function OutOfDepthDrill() {
   }
 
   function next() {
+    if (idx + 1 >= OUT_OF_DEPTH_SCENARIOS.length) {
+      setFinished(true);
+      haptic("success");
+      return;
+    }
     setChosen(null);
-    setIdx((i) => Math.min(OUT_OF_DEPTH_SCENARIOS.length - 1, i + 1));
+    setIdx((i) => i + 1);
+  }
+
+  function back() {
+    setChosen(null);
+    setIdx((i) => Math.max(0, i - 1));
+  }
+
+  function restart() {
+    setIdx(0);
+    setChosen(null);
+    setOverReferrals(0);
+    setFinished(false);
+  }
+
+  if (finished) {
+    return (
+      <div className="rounded-md border-2 border-border bg-card hard-shadow-sm">
+        <MobileCompletionState
+          title="Drill complete"
+          description={`You worked through all ${OUT_OF_DEPTH_SCENARIOS.length} scenarios. ${overReferrals} over-referral${overReferrals === 1 ? "" : "s"} this session.`}
+          action={
+            <button
+              type="button"
+              onClick={restart}
+              className="inline-flex min-h-11 items-center rounded-md border-2 border-foreground bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+            >
+              Restart drill
+            </button>
+          }
+        />
+      </div>
+    );
   }
 
   const result = chosen ? scoreReferralDecision(s, chosen) : null;
@@ -88,14 +127,23 @@ export function OutOfDepthDrill() {
               Anxious novices refer everything. Abandoning a client you can serve is also a failure.
             </p>
           ) : null}
-          <button
-            type="button"
-            onClick={next}
-            disabled={idx + 1 >= OUT_OF_DEPTH_SCENARIOS.length}
-            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
-          >
-            {idx + 1 < OUT_OF_DEPTH_SCENARIOS.length ? "Next scenario" : "Done"}
-          </button>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={back}
+              disabled={idx === 0}
+              className="rounded-md border-2 border-border bg-background px-4 py-2 text-small font-semibold text-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+            >
+              Back
+            </button>
+            <button
+              type="button"
+              onClick={next}
+              className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+            >
+              {idx + 1 < OUT_OF_DEPTH_SCENARIOS.length ? "Next scenario" : "Finish"}
+            </button>
+          </div>
         </div>
       ) : null}
     </div>
