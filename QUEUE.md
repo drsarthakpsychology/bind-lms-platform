@@ -800,12 +800,12 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   three questions immediately: what am I looking at, what can I do here, and
   what should I do next
 
-- [ ] T103  Admin content editor redesign — make content editing feel like a
+- [x] T103  Admin content editor redesign — make content editing feel like a
   normal editor rather than an engineering control panel; an administrator
   should be able to open content, edit the title/body/options/media, save it,
   preview it, and publish it without understanding the underlying data model
 
-- [ ] T104  Admin editor consistency — create one reusable editing philosophy
+- [x] T104  Admin editor consistency — create one reusable editing philosophy
   across courses, modules, lessons, cards, assessments, medication content,
   practice scenarios, patient cases, and other editable programme content;
   do not create a different complicated editor for every content type
