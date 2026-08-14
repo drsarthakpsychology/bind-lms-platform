@@ -35,7 +35,7 @@ export default async function DrugEditorPage({ params }: { params: Promise<{ dru
       : { generic_name: generic, sections: [] });
 
   return (
-    <div className="flex h-[calc(100vh-3rem)] flex-col">
+    <div className="flex h-[calc(100dvh-3rem)] flex-col">
       <div className="flex items-center justify-between border-b-2 border-border px-4 py-2">
         <div className="flex items-center gap-3">
           <Link href="/admin/psychopharm-review" className="text-caption text-muted-foreground hover:underline">

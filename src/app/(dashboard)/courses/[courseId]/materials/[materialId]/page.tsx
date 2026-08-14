@@ -65,7 +65,7 @@ export default async function MaterialViewerPage({
     : "Course materials";
 
   return (
-    <div className="flex h-full min-h-[calc(100vh-3.5rem)] flex-col">
+    <div className="flex h-full min-h-[calc(100dvh-3.5rem)] flex-col">
       {/* Minimal header */}
       <header className="flex items-center justify-between gap-2 border-b-2 border-border bg-card px-3 py-2 sm:px-4">
         <div className="flex min-w-0 items-center gap-2">
