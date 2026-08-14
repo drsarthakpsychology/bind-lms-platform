@@ -3292,3 +3292,11 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   offers "Send" instead of "Return". Committed `3b04983`. True device/software-
   keyboard overlap testing still needs a real browser/device (not available in
   this environment).
+
+- T54 (keyboard QA, continued): swept the remaining static `100vh` usages in
+  input-heavy layouts and converted them to `100dvh` — the lesson layout
+  (`courses/[courseId]/layout.tsx`), the material viewer, and the psychopharm
+  editor (`h-[calc(100vh-3rem)]` → `h-[calc(100dvh-3rem)]`, the fixed-height
+  one). They now shrink with the software keyboard so focused fields / submit
+  actions aren't hidden behind it. Committed `0da7555`. Gate: lint 0, tsc
+  clean, 453 tests, build green.
