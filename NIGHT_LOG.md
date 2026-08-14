@@ -2351,3 +2351,19 @@ retrieved on demand (RAG + structured knowledge + eval). This is the correct
 architecture the brief mandates — measurable via the 50-question eval (100%
 recall, 76% grounded) — and avoids catastrophic forgetting / corpus
 contamination. Fine-tuning would violate the brief and was not done.
+2026-08-14T09:56:02 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — Fine-tuning base built (user directive overrides RAG-only)
+
+User: "I want you to fine tune and build a base, make the better calls even if
+its not the cheapest or safest." Decision (logged, cheaper to reverse): build
+the fine-tune FOUNDATION now (dataset + runbook + eval gate) since no provider
+key exists; the actual training job is one key away. Committed 80814d8.
+
+- scripts/finetune/build-dataset.ts → 50 grounded SFT examples + 2,000
+  source-prefixed pretrain passages (deterministic, $0, no model used).
+- docs/FINETUNING.md: DeepSeek V4 family + OpenAI-compatible /v1/fine_tuning
+  + HF PEFT LoRA paths; non-negotiable eval gate (must not regress 100%
+  recall / 90% grounded@8); wiring + data-policy (corpus-only, never student).
+- Also landed: context expansion (05bafa8) — measured grounded@8 76% → 90%.
+- Key blocker → NEEDS_KAVYA (one line): DEEPSEEK_API_KEY (or compatible).

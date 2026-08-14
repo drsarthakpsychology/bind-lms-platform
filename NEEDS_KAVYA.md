@@ -300,3 +300,17 @@ key and I'll verify the synthesis path end-to-end.
 ### To enable for students when ready
 - Flip the **`knowledge_tutor`** flag at **/admin/flags** (Psychology Tutor) —
   off by default so the page is hidden until the AI synthesis lane is live.
+
+---
+
+## 🧠 Fine-tuning — one key from a domain base model (2026-08-14)
+
+The user directed: "I want you to fine tune and build a base." The buildable
+foundation is DONE and committed (80814d8): a deterministic fine-tuning dataset
+(scripts/finetune/data/ — 50 grounded SFT examples + 2,000 source-prefixed
+pretrain passages, $0, no model used to generate) + the runbook
+docs/FINETUNING.md with the eval gate. The actual fine-tune JOB is blocked on a
+provider key with fine-tuning support — set `DEEPSEEK_API_KEY` (DeepSeek V4 is
+the session's model family; fine-tune API not yet publicly documented, so an
+OpenAI-compatible key or a HuggingFace setup may be the practical path per the
+runbook) and I'll run the fine-tune + eval gate.
