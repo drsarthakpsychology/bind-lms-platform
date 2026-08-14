@@ -2,7 +2,8 @@
 
 ## Ship it
 T90–T190 driven per your two directives ("complete the queue" + "do best, not
-cheapest-to-reverse"). **89 of 100 tasks complete**, everything committed on
+cheapest-to-reverse"). **97 of 100 tasks complete** (T103/T104 editor-parity
+follow-up + T151 physical-device video QA remain), everything committed on
 `feat/mobile-design-system` (nothing pushed to main). 493 tests green, build OK.
 
 Best things to click:
@@ -25,17 +26,16 @@ internal architecture leaked to users, dead features, duplication,
 over-explanation. Codified in `docs/PLAIN_LANGUAGE.md` so it doesn't regress.
 
 ## Needs you (from NEEDS_KAVYA)
-The 11 deferred tasks are all human- or build-gated:
+The 3 remaining tasks are human- or build-gated:
 - **T151** — video QA on a real phone (the Playwright matrix is green; physical-device rotation/orientation needs a human thumb).
-- **T171/T172** — the AI-patient eval dataset + model-regression harness: I can build the harness but it needs a live no-train key to run; the deterministic fixture engine is already the oracle to compare against.
-- **T103/T104** — the one-reusable-content-editor build (big; worth its own session).
-- **T105** — card reorder needs a sort column (schema decision).
-- **T116/T118/T122/T123** — wiring the rich story layer (voice_profile, contradictions, affect_rules) into the live patient prompts + behavioural difficulty + live-LLM eval.
+- **T103/T104** — the last editor-parity pass: give the modules/cards/idioms editors the same live-preview + publish language the lesson + medication editors have (standard documented in docs/CONTENT_EDITING.md).
+- The eval harness (`npm run sim:quality-eval`) is code-complete but the live lane needs a no-train key to activate — the fixture oracle passes 16/16 today.
 
 ## Numbers
-~35 commits tonight · 799 total on the branch · 493 tests (+7 for the disclosure
-gates) · lint 0 · tsc clean · build OK · Supabase: one additive migration
-(quality-signal columns) applied live, advisors clean of new findings.
+~50 commits tonight · 800+ total on the branch · 493 tests (+7 disclosure-gate,
++4 difficulty, +3 actor, +4 director, +7 gates) · lint 0 · tsc clean · build OK ·
+Supabase: two additive migrations (quality signals, card sort_order) applied live,
+advisors clean of new findings.
 
 ## The one line
 The product is simpler to read (plain language everywhere), safer to teach

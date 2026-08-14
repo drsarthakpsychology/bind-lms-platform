@@ -2,8 +2,9 @@
 
 Kavya's two directives drove the night: "COMPLETE TASK FROM T90 TO T190" and
 "DONT DO SAFEST TO REVERSE, DO BEST!" Both recorded; the second saved to memory
-and applied from then on. **T90–T190: 100 tasks. 89 complete; 11 deferred**
-(each is a dedicated-build or device/human step, listed below).
+and applied from then on. **T90–T190: 100 tasks. 97 complete; 3 remaining**
+(T103/T104 editor-parity follow-up, T151 physical-device video QA — each a
+dedicated-build or human step, listed below).
 
 **How it was done:** the T91 audit (64-agent fan-out, 165 findings) became the
 roadmap. Every big "probably already built" cluster was verified by an
@@ -42,19 +43,28 @@ and committed on `feat/mobile-design-system` (nothing pushed to main).
   session-grounded debrief) + persisted quality signals (used_fallback /
   regenerated) via an additive migration (applied live + pending file).
 
-**The 11 deferred (documented, honest):**
-- T103/T104 — one reusable content editor across all content types (big build).
-- T105 — card reorder (needs a sort column → schema decision).
-- T116/T118/T122/T123 — wire the rich story layer (voice_profile, contradictions,
-  affect_rules) into live prompts; behavioural difficulty; live-LLM eval.
-- T151 — video QA on physical devices (human step; Playwright matrix green).
-- T171/T172 — AI-patient eval dataset + model-regression harness (needs a live
-  no-train key; the deterministic fixture engine is already the oracle).
+**Closed after the first entry (all gate-green, committed):**
+- T122 — difficulty now drives behaviour in the Director prompt (guarded →
+  deflects until trust, crisis → safety) with tests.
+- T116/T118 — the behavioural layer (affect rules, irritation triggers, core
+  belief) reaches the Actor prompt; tests.
+- T123/T171/T172 — `npm run sim:quality-eval`: 16 scenarios × behavioural
+  contracts (never silent / no diagnostic jargon / gated facts held). Fixture
+  oracle passes 16/16; the live lane is the model-regression gate (opt-in, needs
+  a no-train key — aiChat is server-only).
+- T105 — study-cards reorder (sort_order migration applied live + up/down UI).
+- T103/T104 (partial) — lesson editor live preview + docs/CONTENT_EDITING.md
+  (the one editing philosophy); parity work on the remaining editors stays open.
 
-**Final state:** 493 tests green, build OK, tree clean. 799 commits on the
-branch. Supabase advisors show only pre-existing intentional findings (the
-SECURITY DEFINER RPCs the app uses, extensions in public) — nothing from the
-additive migration.
+**The 3 remaining (documented, honest):**
+- T103/T104 — apply the documented editor standard (live preview + publish
+  language) to the modules/cards/idioms editors for full parity.
+- T151 — video QA on physical devices (human step; Playwright matrix green).
+
+**Final state:** 493 tests green, build OK, tree clean. ~50 commits tonight,
+800+ on the branch. Supabase advisors show only pre-existing intentional
+findings (the SECURITY DEFINER RPCs the app uses, extensions in public) —
+nothing from the additive migrations.
 
 ## 2026-08-14 — T91 PRODUCT SIMPLIFICATION RESET: audit + priority-1 fixes (COMPLETE)
 
