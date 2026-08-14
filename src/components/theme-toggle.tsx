@@ -40,7 +40,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       onClick={cycle}
       aria-label={hydrated && isDark ? "Switch to light mode" : "Switch to dark mode"}
       className={cn(
-        "inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-card text-foreground transition-transform",
+        "inline-flex size-11 items-center justify-center rounded-md border-2 border-border bg-card text-foreground transition-transform",
         "hover:bg-accent active:translate-y-0.5",
         className
       )}

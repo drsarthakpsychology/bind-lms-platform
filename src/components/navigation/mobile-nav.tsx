@@ -65,7 +65,7 @@ export function MobileNav({
             <Link
               href="/notifications"
               onClick={() => setOpen(false)}
-              className="inline-flex size-9 items-center justify-center rounded-md border-2 border-transparent text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+              className="inline-flex size-11 items-center justify-center rounded-md border-2 border-transparent text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
               aria-label="Notifications"
             >
               <Bell className="size-4" aria-hidden />
@@ -73,13 +73,13 @@ export function MobileNav({
             <Link
               href="/settings"
               onClick={() => setOpen(false)}
-              className="inline-flex size-9 items-center justify-center rounded-md border-2 border-transparent text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+              className="inline-flex size-11 items-center justify-center rounded-md border-2 border-transparent text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
               aria-label="Settings"
             >
               <Settings className="size-4" aria-hidden />
             </Link>
             <form action={logout}>
-              <Button type="submit" variant="secondary" size="icon-sm" aria-label="Log out">
+              <Button type="submit" variant="secondary" size="icon-sm" className="size-11" aria-label="Log out">
                 <LogOut className="size-4" aria-hidden />
               </Button>
             </form>

@@ -130,10 +130,10 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
             {isRevealed && human != null ? (
               <div className="mt-3 rounded-md border border-border bg-secondary/40 p-3">
                 <p className="text-small">
-                  <span className="font-muted-foreground">You: </span>
+                  <span className="text-muted-foreground">You: </span>
                   <span className="font-semibold text-numeric">{human}</span>
                   <span className="mx-2 text-muted-foreground">vs</span>
-                  <span className="font-muted-foreground">AI: </span>
+                  <span className="text-muted-foreground">AI: </span>
                   <span className="font-semibold text-numeric">{r.overall.toFixed(1)}</span>
                   {diff != null ? (
                     <span className={cn("ml-2 text-caption font-medium", diff > 0.5 ? "text-amber-700" : "text-green-700")}>
