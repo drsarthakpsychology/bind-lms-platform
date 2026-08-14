@@ -2,6 +2,16 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
+## KNOWLEDGE LAYER — OPEN (2026-08-14)
+
+- [ ] **Back-matter attribution gap**: add a `backMatter` field to `BookOutline`
+  (and read it in `chunk.ts`), OR move back matter into `chapters`, so these
+  pages don't chunk as "Unattributed": kaplan_sadock 216, stahl_essential_5th 45,
+  stahl_pg_older 42, ahuja_psychiatry 21. (stahl_pg_7th 15 = publisher ads, fine.)
+- [ ] **Dangling `knowledge:outline` script**: `package.json` references
+  `tsx scripts/knowledge/outlines.ts`, but that file does not exist — create the
+  outline-runner tool or remove the script entry.
+
 ## DESIGN SUB-AGENTS + REDESIGN PASS (2026-08-14)
 
 - [x] **Create 7 design sub-agents** under `.claude/agents/` (design-director,

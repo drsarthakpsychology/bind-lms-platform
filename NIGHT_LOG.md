@@ -2086,3 +2086,26 @@ Committed only this outline + log; unrelated in-progress knowledge-layer files
 (ingest.ts, src/lib/knowledge/, other outlines, knowledge_layer.sql,
 package.json/package-lock.json) left for their owners.
 Shipped in commit 027de84.
+
+---
+
+## 2026-08-14 — Knowledge layer: finalize + commit remaining slices (book-structure reader)
+
+Full gate verified green on the whole tree: `npm run lint` 0, `npx tsc --noEmit`
+clean, `npm run test` 414 passed (71 files), `npm run build` exit 0. Working
+tree now clean. Committed the knowledge-layer slices that had been sitting
+uncommitted in the shared tree (code was complete + green, owners had stopped):
+- `6f57cca` feat(knowledge): add persistent psychology knowledge layer pipeline
+  (src/lib/knowledge/* chunk/outline/manifest/retrieve/embed-local + tests,
+  scripts/knowledge/ingest.ts, migrations_pending/knowledge_layer.sql,
+  package.json + package-lock.json @huggingface/transformers + scripts)
+- `811dad5` feat(knowledge): add remaining book structural outlines
+  (dsm5tr, kaplan_sadock, maudsley_2021, stahl_pg_older)
+
+All 10 outlines now tracked (dsm5tr, kaplan_sadock, maudsley_2021, stahl_pg_7th,
+stahl_essential_5th, stahl_pg_older, stahl_pg_preview, fish_psychopath,
+ahuja_psychiatry, icd11). Re-ran the orphan check: fish now 0 orphans (027de84
+added appendix chapters). Remaining back-matter gap (chunks as "Unattributed"):
+kaplan_sadock 216, stahl_essential_5th 45, stahl_pg_older 42, ahuja_psychiatry
+21, stahl_pg_7th 15 (ads — fine). Open items queued in QUEUE.md.
+
