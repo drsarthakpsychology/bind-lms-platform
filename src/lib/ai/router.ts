@@ -94,11 +94,15 @@ export const PROVIDERS: Provider[] = [
     protocol: "openai",
   },
   {
+    // OpenRouter overflow lane — current free model verified live 2026-08-14:
+    // the previous llama-3.3-70b-instruct:free no longer exists; openai/gpt-
+    // oss-20b:free is a current free general model that returns real content
+    // (verified). Free tier ~50 RPD; $10 one-time → ~1,000 RPD.
     id: "openrouter",
     baseUrl: "https://openrouter.ai/api/v1",
     apiKeyEnv: "OPENROUTER_API_KEY",
-    models: { fast: "meta-llama/llama-3.3-70b-instruct:free", smart: "meta-llama/llama-3.3-70b-instruct:free" },
-    limits: { rpm: 20, rpd: 50, tpm: 20000 },
+    models: { fast: "openai/gpt-oss-20b:free", smart: "openai/gpt-oss-20b:free" },
+    limits: { rpm: 20, rpd: 50, tpm: 20000 }, // free tier; $10 one-time → ~1,000 RPD
     trainsOnData: false,
     supports: ["chat", "stream", "json", "embed", "vision"],
     protocol: "openai",
