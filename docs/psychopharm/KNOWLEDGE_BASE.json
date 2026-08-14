@@ -17755,8 +17755,8 @@
     "drug": "Brexanolone",
     "kind": "field",
     "field_key": "special_populations",
-    "value": "Less than 1% excreted unchanged in urine. Manufacturer states no dosage adjustment is recommended in patients with GFR 15–60mL/min; avoid use in patients with GFR <15mL/min because of the potential accumulation of the injection solubilising agent, betadex sulfobutyl ether sodium.",
-    "page_ref": "761",
+    "value": "No dose adjustment required in hepatic impairment. Does not appear to be hepatotoxic, although experience is limited.\n\nLess than 1% excreted unchanged in urine. Manufacturer states no dosage adjustment is recommended in patients with GFR 15–60mL/min; avoid use in patients with GFR <15mL/min because of the potential accumulation of the injection solubilising agent, betadex sulfobutyl ether sodium.",
+    "page_ref": "748",
     "source_id": "maudsley_2021"
   },
   {
