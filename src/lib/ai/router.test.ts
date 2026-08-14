@@ -103,6 +103,23 @@ describe("OpenCode provider (user request 2026-08-14)", () => {
   });
 });
 
+describe("OmniRoute provider (free-model pooling gateway, 2026-08-14)", () => {
+  it("is registered as an OpenAI-compatible no-train gateway using auto routing", () => {
+    const or = PROVIDERS.find((p) => p.id === "omniroute");
+    expect(or).toBeDefined();
+    expect(or!.trainsOnData).toBe(false); // the gateway itself doesn't train
+    expect(or!.models.fast).toBe("auto");
+    expect(or!.baseUrl).toMatch(/\/v1$/);
+  });
+
+  it("is a late fallback in the no-train json chain (self-hosted/optional)", () => {
+    const json = PROVIDER_PRIORITY.json;
+    expect(json).toContain("omniroute");
+    // It sits after the hosted no-train lanes, before the training providers.
+    expect(json.indexOf("omniroute")).toBeGreaterThan(json.indexOf("opencode"));
+  });
+});
+
 describe("DeepSeek provider (§13, registered 2026-08-14)", () => {
   it("is registered with V4 Flash fast + V4 Pro smart/strong", () => {
     const ds = PROVIDERS.find((p) => p.id === "deepseek");

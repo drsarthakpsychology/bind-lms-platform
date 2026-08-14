@@ -47,13 +47,13 @@ export const PROVIDER_PRIORITY: Record<ProviderCapability, string[]> = {
   // fast chat / streaming — Groq first (voice needs sub-second TTFB), then the
   // no-train fallbacks (Cerebras + SambaNova) so student data has capacity
   // beyond Groq's RPD ceiling.
-  chat: ["groq", "cerebras", "sambanova", "gemini", "openrouter", "opencode", "deepseek", "anthropic"],
-  stream: ["groq", "cerebras", "sambanova", "gemini", "openrouter", "opencode", "deepseek", "anthropic"],
+  chat: ["groq", "cerebras", "sambanova", "gemini", "openrouter", "opencode", "omniroute", "deepseek", "anthropic"],
+  stream: ["groq", "cerebras", "sambanova", "gemini", "openrouter", "opencode", "omniroute", "deepseek", "anthropic"],
   // structured JSON — Groq is Primary (fast, no-train). The sim Director +
   // debrief scoring carry student data, so the no-train fallbacks (Cerebras,
-  // SambaNova, OpenRouter, OpenCode) sit next; gemini/deepseek (trainsOnData)
-  // are excluded by the guard and sit last as non-student lanes.
-  json: ["groq", "cerebras", "sambanova", "openrouter", "opencode", "anthropic", "deepseek", "gemini"],
+  // SambaNova, OpenRouter, OpenCode, OmniRoute) sit next; gemini/deepseek
+  // (trainsOnData) are excluded by the guard and sit last as non-student lanes.
+  json: ["groq", "cerebras", "sambanova", "openrouter", "opencode", "omniroute", "anthropic", "deepseek", "gemini"],
   // vision/audio only where the provider supports it
   vision: ["gemini", "anthropic", "openrouter"],
   audio: ["gemini", "groq"],
@@ -123,6 +123,23 @@ export const PROVIDERS: Provider[] = [
     apiKeyEnv: "OPENCODE_API_KEY",
     models: { fast: "deepseek-v4-flash-free", smart: "deepseek-v4-flash-free" },
     limits: { rpm: 30, rpd: 1000, tpm: 40000 },
+    trainsOnData: false,
+    supports: ["chat", "stream", "json"],
+    protocol: "openai",
+  },
+  {
+    // OmniRoute — self-hosted free-model pooling gateway (user request
+    // 2026-08-14; repo diegosouzapw/OmniRoute). OpenAI-compatible /v1 on
+    // localhost:20128; "auto" routes across 42 provider pools (~1.5B free
+    // tokens/mo) with health/speed/cost/quality scoring + fallback.
+    // PRIVACY: the gateway itself does not train (trainsOnData=false), BUT it
+    // can route to training upstreams — for student data it MUST be configured
+    // with only no-train providers enabled. Env OMNIROUTE_URL/OMNIROUTE_API_KEY.
+    id: "omniroute",
+    baseUrl: "http://localhost:20128/v1",
+    apiKeyEnv: "OMNIROUTE_API_KEY",
+    models: { fast: "auto", smart: "auto/smart", strong: "auto/smart" },
+    limits: { rpm: 60, rpd: 10000, tpm: 1000000 },
     trainsOnData: false,
     supports: ["chat", "stream", "json"],
     protocol: "openai",
