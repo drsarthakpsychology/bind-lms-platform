@@ -3180,3 +3180,18 @@ badges hold single digits or icons (today chain-step number, psychopharm/admin
 icon tiles) — all fit, no overflow. No further code change needed.
 
 2026-08-14T19:11:18 T4 done — today dashboard polish: quick/deep chips now min-w-0 + truncate (no overflow on 320px). "One thing next" headline + primary card already present. Green: lint + tsc.
+
+2026-08-14T19:26 T5 done — course detail: killed the <details> week accordion +
+per-lesson cardVariants boxes. Now a flat list: quiet week text headers (badge
++ "Week N" + status + Locked pill) and one MobileListItem per lesson/material/
+assignment. One primary action = next lesson (emphasis tint + terracotta
+"← Start here"); progress card is a compact readout (no competing big button,
+"Not started · N lessons" at 0%, "N lessons left" + bar otherwise). MobileListItem
+titles now line-clamp-2 (fixed the truncate+clamp conflict that produced
+"Interviewing 101 — the firs…"), added `emphasis` prop (bg-only, no aria-current).
+Duration is NOT surfaced — lessons table has no duration column (defer to content
+model, noted in NEEDS_KAVYA). Gate green: lint 0, tsc clean, 466 tests, build.
+Commit f3931ea. Decision logged: flat-for-both (desktop + mobile share one render)
+vs forked mobile/desktop composition — flat is cheaper to reverse and matches
+brief §14's literal spec; desktop at max-w-3xl reads as a clean outline, not a
+broken accordion.
