@@ -4,6 +4,7 @@ import * as React from "react";
 import { ChevronDown, MessageSquare, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { haptic } from "@/lib/haptics";
+import { StatusPill } from "@/components/mobile/status-pill";
 
 interface ReviewRow {
   id: string;
@@ -95,9 +96,7 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
                   corrected
                 </span>
               ) : (
-                <span className="rounded-full bg-secondary px-2 py-0.5 text-caption font-medium text-muted-foreground">
-                  AI-generated — not yet faculty reviewed
-                </span>
+                <StatusPill tone="warning" label="Not faculty reviewed" />
               )}
               <ChevronDown className={cn("size-4 text-muted-foreground transition-transform", isOpen && "rotate-180")} aria-hidden />
             </button>
@@ -176,7 +175,7 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
 
 function MiniStat({ label, value, warn }: { label: string; value: string; warn?: boolean }) {
   return (
-    <div className={cn("rounded-md border-2 border-border p-2", warn && "bg-amber-50")}>
+    <div className={cn("rounded-md border-2 border-border p-2", warn && "bg-status-pending-bg")}>
       <p className="text-caption text-muted-foreground">{label}</p>
       <p className="text-numeric text-small font-semibold">{value}</p>
     </div>

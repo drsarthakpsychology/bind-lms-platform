@@ -1,5 +1,7 @@
+import { Inbox } from "lucide-react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 export const dynamic = "force-dynamic";
 
@@ -45,8 +47,12 @@ export default async function AdminEnquiriesPage() {
       />
 
       {rows.length === 0 ? (
-        <div className="mt-6 rounded-md border-2 border-dashed border-border bg-card p-8 text-center text-small text-muted-foreground">
-          No enquiries yet. They&apos;ll land here the moment someone submits the form.
+        <div className="mt-6">
+          <EmptyState
+            icon={<Inbox className="size-6" aria-hidden />}
+            title="No enquiries yet"
+            description="They'll land here the moment someone submits the form."
+          />
         </div>
       ) : (
         <div className="mt-6 space-y-3">

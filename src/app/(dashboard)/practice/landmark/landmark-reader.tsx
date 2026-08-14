@@ -122,7 +122,7 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
         type="button"
         onClick={() => { setIdx((i) => Math.min(cases.length - 1, i + 1)); setAnswers({}); setShowAnswers(false); haptic("tap"); }}
         disabled={idx + 1 >= cases.length}
-        className="w-full rounded-md border-2 border-border bg-card px-4 py-2.5 text-small font-medium text-muted-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+        className="w-full rounded-md border-2 border-border bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
       >
         {idx + 1 < cases.length ? "Next case" : "You've read them all"}
       </button>

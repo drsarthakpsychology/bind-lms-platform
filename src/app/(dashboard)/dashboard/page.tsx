@@ -23,6 +23,7 @@ type LessonRow = {
   order_index: number;
   video_storage_path: string | null;
   description: string | null;
+  title: string | null;
 };
 
 export default async function DashboardPage() {
@@ -54,7 +55,7 @@ export default async function DashboardPage() {
 
   const [{ data: courses }, { data: lessons }, { data: progress }] = await Promise.all([
     coursesQuery,
-    supabase.from("lessons").select("id, course_id, order_index, video_storage_path, description"),
+    supabase.from("lessons").select("id, course_id, order_index, video_storage_path, description, title"),
     supabase.from("progress").select("lesson_id, is_completed, watched_seconds").eq("user_id", profile.id),
   ]);
 
@@ -115,6 +116,25 @@ export default async function DashboardPage() {
   const continueCourse = courseSummaries.find((c) => c.status === "in-progress");
   const firstNotStartedCourse = orderedSummaries.find((c) => c.status === "not-started");
 
+  // The precise next lesson for the in-progress course — "Resume" should land on
+  // the actual next meaningful action (the first incomplete playable lesson),
+  // not drop the student on the course map to hunt for "Start here".
+  const resumeLesson = continueCourse
+    ? (lessonsByCourse.get(continueCourse.course.id) ?? [])
+        .slice()
+        .sort((a, b) => a.order_index - b.order_index)
+        .find(
+          (l) =>
+            (l.video_storage_path || l.description) &&
+            !progressByLessonId.get(l.id)?.is_completed,
+        )
+    : undefined;
+  const resumeHref = continueCourse
+    ? resumeLesson
+      ? `/courses/${continueCourse.course.id}/lessons/${resumeLesson.id}`
+      : `/courses/${continueCourse.course.id}`
+    : undefined;
+
   const completedCourses = courseSummaries.filter(
     (c) => c.totalLessons > 0 && c.completedCount === c.totalLessons
   );
@@ -151,7 +171,7 @@ export default async function DashboardPage() {
       <Reveal delay={0.1}>
         {continueCourse ? (
           <Link
-            href={`/courses/${continueCourse.course.id}`}
+            href={resumeHref ?? `/courses/${continueCourse.course.id}`}
             className={cn(cardVariants({ variant: "interactive" }), "p-6")}
           >
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -168,6 +188,11 @@ export default async function DashboardPage() {
                   <p className="text-caption text-muted-foreground">
                     {continueCourse.completedCount} of {continueCourse.totalLessons} lessons complete
                   </p>
+                  {resumeLesson?.title ? (
+                    <p className="truncate text-caption font-medium text-link">
+                      Next: {resumeLesson.title}
+                    </p>
+                  ) : null}
                 </div>
               </div>
               <div className="flex items-center gap-4">

@@ -170,7 +170,17 @@ export function MaterialViewer({
 
   switch (kind) {
     case "document":
-      return <PdfViewer signedUrl={signedUrl!} materialId={materialId} watermarkLabel={watermarkLabel} />;
+      return (
+        <PdfViewer
+          signedUrl={signedUrl!}
+          materialId={materialId}
+          watermarkLabel={watermarkLabel}
+          onFail={(message) => {
+            fail(message);
+            setError(message);
+          }}
+        />
+      );
     case "audio":
       return <AudioViewer signedUrl={signedUrl!} title={title} watermarkLabel={watermarkLabel} />;
     case "image":
@@ -209,14 +219,13 @@ export function MaterialViewer({
 /* ------------------------------------------------------------------ */
 /* PDF — canvas rendering, page-by-page, no iframe                    */
 /* ------------------------------------------------------------------ */
-function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: string; materialId: string; watermarkLabel: string }) {
+function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUrl: string; materialId: string; watermarkLabel: string; onFail: (message: string) => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [doc, setDoc] = useState<PDFDocumentProxy | null>(null);
   const [pageNum, setPageNum] = useState(1);
   const [pageCount, setPageCount] = useState(0);
   const [zoom, setZoom] = useState(1);
   const [rendering, setRendering] = useState(false);
-  const [loadError, setLoadError] = useState<string | null>(null);
 
   // Load the PDF once. pdfjs-dist is imported lazily here so it only loads
   // (and its ~1MB chunk downloads) when this component actually mounts — i.e.
@@ -243,7 +252,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
         }
       })
       .catch(() => {
-        if (!cancelled) setLoadError("This PDF couldn't be read.");
+        if (!cancelled) onFail("This PDF couldn't be read.");
       });
     return () => {
       cancelled = true;
@@ -274,7 +283,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
         .catch(() => {
           if (!cancelled) {
             setRendering(false);
-            setLoadError("Couldn't render this page.");
+            onFail("Couldn't render this page.");
           }
         });
     });
@@ -293,14 +302,6 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
   useEffect(() => {
     return () => saveScroll();
   }, [saveScroll]);
-
-  if (loadError) {
-    return (
-      <div className="flex h-full items-center justify-center p-8">
-        <p className="text-small text-status-alert-fg">{loadError}</p>
-      </div>
-    );
-  }
 
   return (
     <div className="relative flex h-full flex-col">

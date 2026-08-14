@@ -4,7 +4,12 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { formatRelativeTime } from "@/lib/format";
-import { Share2, Ban } from "lucide-react";
+import { Share2, Ban, MoreHorizontal, Plus } from "lucide-react";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { MobileInput, MobileTextarea } from "@/components/mobile/mobile-input";
+import { MobileErrorLine } from "@/components/mobile/mobile-error-line";
+import { StatusPill } from "@/components/mobile/status-pill";
+import { useOffline } from "@/lib/hooks/use-offline";
 
 const DRAFT_KEY = "journal:draft";
 const MOODS = ["calm", "low", "anxious", "tired", "hopeful"] as const;
@@ -21,6 +26,10 @@ interface JournalEntry {
  * no-train provider (journal_support workload; honest message if none).
  * Per-entry sharing: share a specific entry with a named person by email,
  * revocable at any time (journal_shares, owner-only RLS).
+ *
+ * Mobile (T35/T21): history-first — the compose surface lives in a bottom
+ * sheet behind a "New entry" action, and each entry's secondary actions
+ * collapse into a single "…" sheet. Desktop keeps the inline composer.
  */
 export function JournalView({ initialEntries }: { initialEntries: JournalEntry[] }) {
   const [entries, setEntries] = React.useState<JournalEntry[]>(initialEntries);
@@ -28,24 +37,41 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
   const [mood, setMood] = React.useState("");
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const [composerOpen, setComposerOpen] = React.useState(false);
+  const [menuEntry, setMenuEntry] = React.useState<JournalEntry | null>(null);
+  const [emailOpen, setEmailOpen] = React.useState(false);
   const [helping, setHelping] = React.useState<string | null>(null);
   const [helpReply, setHelpReply] = React.useState<string | null>(null);
   const [sharing, setSharing] = React.useState<string | null>(null); // in-flight
-  const [shareEntryId, setShareEntryId] = React.useState<string | null>(null); // row open
   const [shareEmail, setShareEmail] = React.useState("");
   const [shareMsg, setShareMsg] = React.useState<Record<string, string>>({});
   const [shareIds, setShareIds] = React.useState<Record<string, string>>({});
   const [draftSaved, setDraftSaved] = React.useState(false);
+  const { offline, justReturned } = useOffline();
 
   // Restore an unsaved draft after first paint (deferred so it neither races
-  // hydration nor sets state synchronously inside the effect body).
+  // hydration nor sets state synchronously inside the effect body). The draft
+  // now carries {content, mood} so a mood choice survives a refresh (T46).
   React.useEffect(() => {
     const id = window.setTimeout(() => {
       try {
-        const draft = window.localStorage.getItem(DRAFT_KEY);
-        if (draft) setContent(draft);
+        const raw = window.localStorage.getItem(DRAFT_KEY);
+        if (!raw) return;
+        const parsed = JSON.parse(raw) as { content?: string; mood?: string };
+        if (parsed && typeof parsed === "object") {
+          if (parsed.content) setContent(parsed.content);
+          if (parsed.mood) setMood(parsed.mood);
+        } else {
+          setContent(String(raw));
+        }
       } catch {
-        /* ignore */
+        // legacy plain-string draft
+        try {
+          const raw = window.localStorage.getItem(DRAFT_KEY);
+          if (raw) setContent(String(raw));
+        } catch {
+          /* ignore */
+        }
       }
     }, 0);
     return () => window.clearTimeout(id);
@@ -56,7 +82,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
     const t = setTimeout(() => {
       try {
         if (content.trim()) {
-          window.localStorage.setItem(DRAFT_KEY, content);
+          window.localStorage.setItem(DRAFT_KEY, JSON.stringify({ content, mood }));
           setDraftSaved(true);
         } else {
           window.localStorage.removeItem(DRAFT_KEY);
@@ -67,7 +93,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       }
     }, 800);
     return () => clearTimeout(t);
-  }, [content]);
+  }, [content, mood]);
 
   async function save(e: React.FormEvent) {
     e.preventDefault();
@@ -82,7 +108,8 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
         body: JSON.stringify({ content: content.trim(), moodTag: mood || undefined }),
       });
       if (!res.ok) {
-        setError("Could not save. Please try again.");
+        const j = (await res.json().catch(() => null)) as { error?: string } | null;
+        setError(j?.error ?? "Could not save. Please try again.");
         return;
       }
       const j = (await res.json()) as { id: string };
@@ -92,6 +119,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       ]);
       setContent("");
       setMood("");
+      setComposerOpen(false);
       try {
         window.localStorage.removeItem(DRAFT_KEY);
       } catch {
@@ -100,7 +128,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       setDraftSaved(false);
       haptic("success");
     } catch {
-      setError("Network error.");
+      setError("Network error. Your entry is still here — try again.");
     } finally {
       setBusy(false);
     }
@@ -131,6 +159,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       setShareIds((s) => ({ ...s, [entry.id]: j.shareId }));
       setShareMsg((m) => ({ ...m, [entry.id]: toFaculty ? "Shared with your faculty." : `Shared with ${email}.` }));
       setShareEmail("");
+      setEmailOpen(false);
       haptic("success");
     } catch {
       setShareMsg((m) => ({ ...m, [entry.id]: "Network error." }));
@@ -196,48 +225,83 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
     }
   }
 
-  return (
-    <div className="space-y-6">
-      {/* write form */}
-      <form onSubmit={save} className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
-        <label className="text-small font-medium" htmlFor="journal-entry">
-          Today&apos;s prompt: what&apos;s been on your mind this week?
-        </label>
-        <textarea
-          id="journal-entry"
+  function openEntryMenu(entry: JournalEntry) {
+    setMenuEntry(entry);
+    setEmailOpen(false);
+    setHelpReply(null);
+    haptic("tap");
+  }
+
+  const composeFields = (
+    <>
+      <label className="block text-small font-medium">
+        Today&apos;s prompt: what&apos;s been on your mind this week?
+        <MobileTextarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
           rows={6}
           enterKeyHint="enter"
           placeholder="Write freely. This stays yours."
-          className="w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          aria-label="Journal entry"
+          className="mt-2 resize-none"
         />
+      </label>
 
-        <div className="space-y-1.5">
-          <p className="text-caption text-muted-foreground">How are you feeling? (optional)</p>
-          <div className="flex flex-wrap gap-1.5">
-            {MOODS.map((m) => (
-              <button
-                key={m}
-                type="button"
-                onClick={() => {
-                  setMood(mood === m ? "" : m);
-                  haptic("tap");
-                }}
-                aria-pressed={mood === m}
-                className={cn(
-                  "min-h-11 rounded-full border-2 px-4 py-1 text-caption font-medium capitalize transition-transform active:translate-y-px",
-                  mood === m
-                    ? "border-foreground bg-primary text-primary-foreground"
-                    : "border-border bg-card text-muted-foreground",
-                )}
-              >
-                {m}
-              </button>
-            ))}
-          </div>
+      <div className="space-y-1.5">
+        <p className="text-caption text-muted-foreground">How are you feeling? (optional)</p>
+        <div className="flex flex-wrap gap-1.5">
+          {MOODS.map((m) => (
+            <button
+              key={m}
+              type="button"
+              onClick={() => {
+                setMood(mood === m ? "" : m);
+                haptic("tap");
+              }}
+              aria-pressed={mood === m}
+              className={cn(
+                "min-h-11 rounded-full border-2 px-4 py-1 text-caption font-medium capitalize transition-transform active:translate-y-px",
+                mood === m
+                  ? "border-foreground bg-primary text-primary-foreground"
+                  : "border-border bg-card text-muted-foreground",
+              )}
+            >
+              {m}
+            </button>
+          ))}
         </div>
+      </div>
+    </>
+  );
 
+  return (
+    <div className="space-y-6">
+      {offline ? (
+        <StatusPill tone="warning" label="Offline — your entry saves locally" />
+      ) : justReturned ? (
+        <StatusPill tone="neutral" label="Back online" />
+      ) : null}
+
+      {/* Mobile: history-first — compose lives in a bottom sheet */}
+      <button
+        type="button"
+        onClick={() => {
+          setComposerOpen(true);
+          setError(null);
+          haptic("tap");
+        }}
+        className="flex min-h-12 w-full items-center justify-center gap-2 rounded-md border-2 border-foreground bg-primary px-4 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none lg:hidden"
+      >
+        <Plus className="size-5" aria-hidden />
+        New entry
+      </button>
+
+      {/* Desktop: inline composer (unchanged composition) */}
+      <form
+        onSubmit={save}
+        className="hidden space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm lg:block"
+      >
+        {composeFields}
         <button
           type="submit"
           disabled={busy || !content.trim()}
@@ -245,11 +309,10 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
         >
           {busy ? "Saving…" : "Save entry"}
         </button>
-
         <p className="text-caption text-muted-foreground" aria-live="polite">
           {draftSaved ? "Draft saved." : ""}
         </p>
-        {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
+        {error ? <MobileErrorLine>{error}</MobileErrorLine> : null}
       </form>
 
       {/* history */}
@@ -263,94 +326,161 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
           <ul className="mt-3 space-y-3">
             {entries.map((e) => (
               <li key={e.id} className="rounded-md border-2 border-border bg-card p-4">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-2">
                   <span className="text-caption text-muted-foreground">
                     {formatRelativeTime(e.createdAt)}
                     {e.moodTag ? ` · ${e.moodTag}` : ""}
+                    {shareIds[e.id] ? " · shared" : ""}
                   </span>
-                  <span className="flex items-center gap-1.5">
-                    <button
-                      type="button"
-                      onClick={() => void helpMeThink(e)}
-                      disabled={helping === e.id}
-                      className="rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px disabled:opacity-50"
-                    >
-                      {helping === e.id ? "Thinking…" : "Help me think about this"}
-                    </button>
-                    {shareIds[e.id] ? (
-                      <button
-                        type="button"
-                        onClick={() => void revokeShare(e)}
-                        disabled={sharing === e.id}
-                        className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px disabled:opacity-50"
-                      >
-                        <Ban className="size-3" aria-hidden />
-                        Revoke
-                      </button>
-                    ) : (
-                      <>
-                        <button
-                          type="button"
-                          onClick={() => void shareEntry(e, true)}
-                          disabled={sharing === e.id}
-                          className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px disabled:opacity-50"
-                        >
-                          <Share2 className="size-3" aria-hidden />
-                          Share with faculty
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setShareEntryId(shareEntryId === e.id ? null : e.id);
-                            setShareMsg((m) => ({ ...m, [e.id]: "" }));
-                            haptic("tap");
-                          }}
-                          className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-1 text-caption text-muted-foreground transition-transform active:translate-y-px"
-                        >
-                          <Share2 className="size-3" aria-hidden />
-                          Share
-                        </button>
-                      </>
-                    )}
-                  </span>
+                  <button
+                    type="button"
+                    onClick={() => openEntryMenu(e)}
+                    aria-haspopup="dialog"
+                    aria-label={`More options for entry from ${formatRelativeTime(e.createdAt)}`}
+                    className="flex size-11 shrink-0 items-center justify-center rounded-md border border-border text-muted-foreground transition-transform hover:bg-secondary active:translate-y-px"
+                  >
+                    <MoreHorizontal className="size-5" aria-hidden />
+                  </button>
                 </div>
                 <p className="mt-2 whitespace-pre-wrap text-small">{e.content}</p>
-
-                {/* share row */}
-                {!shareIds[e.id] && shareEntryId === e.id ? (
-                  <div className="mt-2 flex items-center gap-2">
-                    <input
-                      type="email"
-                      value={shareEmail}
-                      onChange={(ev) => setShareEmail(ev.target.value)}
-                      placeholder="share with (email)"
-                      aria-label="Email to share this entry with"
-                      className="w-full rounded-md border-2 border-border bg-background px-2 py-1 text-small focus:outline-none focus:ring-2 focus:ring-ring"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => void shareEntry(e)}
-                      disabled={sharing === e.id || !shareEmail.trim()}
-                      className="shrink-0 rounded-md border-2 border-border bg-primary px-3 py-1 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
-                    >
-                      {sharing === e.id ? "Sharing…" : "Share entry"}
-                    </button>
-                  </div>
-                ) : null}
-                {shareMsg[e.id] ? (
-                  <p className="mt-2 text-caption text-muted-foreground">{shareMsg[e.id]}</p>
-                ) : null}
-                {helpReply && helping === null ? (
-                  <div className="mt-3 rounded-md border border-border bg-secondary/60 p-3 text-small">
-                    <span className="font-semibold text-muted-foreground">Reflective prompt: </span>
-                    {helpReply}
-                  </div>
-                ) : null}
               </li>
             ))}
           </ul>
         )}
       </div>
+
+      {/* Compose sheet (mobile) */}
+      <MobileBottomSheet
+        open={composerOpen}
+        onOpenChange={setComposerOpen}
+        title="New entry"
+        description="Write freely — it stays private to you."
+        footer={
+          <button
+            type="submit"
+            form="journal-compose-form"
+            disabled={busy || !content.trim()}
+            className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+          >
+            {busy ? "Saving…" : "Save entry"}
+          </button>
+        }
+      >
+        <form id="journal-compose-form" onSubmit={save} className="space-y-3">
+          {composeFields}
+          <p className="text-caption text-muted-foreground" aria-live="polite">
+            {draftSaved ? "Draft saved." : ""}
+          </p>
+          {error ? <MobileErrorLine>{error}</MobileErrorLine> : null}
+        </form>
+      </MobileBottomSheet>
+
+      {/* Per-entry actions sheet */}
+      <MobileBottomSheet
+        open={menuEntry !== null}
+        onOpenChange={(open) => {
+          if (!open) {
+            setMenuEntry(null);
+            setEmailOpen(false);
+          }
+        }}
+        title="Entry options"
+        description={
+          menuEntry
+            ? `${formatRelativeTime(menuEntry.createdAt)}${menuEntry.moodTag ? ` · ${menuEntry.moodTag}` : ""}`
+            : undefined
+        }
+      >
+        {menuEntry ? (
+          <div className="space-y-2">
+            <p className="whitespace-pre-wrap rounded-md border border-border bg-background p-3 text-small text-muted-foreground line-clamp-4">
+              {menuEntry.content}
+            </p>
+
+            <button
+              type="button"
+              onClick={() => void helpMeThink(menuEntry)}
+              disabled={helping === menuEntry.id}
+              className="flex min-h-11 w-full items-center justify-between rounded-md border border-border px-3 text-small text-foreground transition-transform active:translate-y-px disabled:opacity-50"
+            >
+              <span>{helping === menuEntry.id ? "Thinking…" : "Help me think about this"}</span>
+            </button>
+            {helpReply && helping === null ? (
+              <div className="rounded-md border border-border bg-secondary/60 p-3 text-small">
+                <span className="font-semibold text-muted-foreground">Reflective prompt: </span>
+                {helpReply}
+              </div>
+            ) : null}
+
+            <button
+              type="button"
+              onClick={() => void shareEntry(menuEntry, true)}
+              disabled={sharing === menuEntry.id}
+              className="flex min-h-11 w-full items-center justify-between rounded-md border border-border px-3 text-small text-foreground transition-transform active:translate-y-px disabled:opacity-50"
+            >
+              <span className="inline-flex items-center gap-2">
+                <Share2 className="size-4" aria-hidden />
+                Share with faculty
+              </span>
+            </button>
+
+            {shareIds[menuEntry.id] ? (
+              <button
+                type="button"
+                onClick={() => void revokeShare(menuEntry)}
+                disabled={sharing === menuEntry.id}
+                className="flex min-h-11 w-full items-center justify-between rounded-md border border-border px-3 text-small text-foreground transition-transform active:translate-y-px disabled:opacity-50"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <Ban className="size-4" aria-hidden />
+                  Revoke share
+                </span>
+              </button>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={() => setEmailOpen((v) => !v)}
+                  aria-expanded={emailOpen}
+                  className="flex min-h-11 w-full items-center justify-between rounded-md border border-border px-3 text-small text-foreground transition-transform active:translate-y-px"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <Share2 className="size-4" aria-hidden />
+                    Share by email…
+                  </span>
+                </button>
+                {emailOpen ? (
+                  <div className="flex items-center gap-2">
+                    <MobileInput
+                      type="email"
+                      inputMode="email"
+                      enterKeyHint="done"
+                      autoFocus
+                      value={shareEmail}
+                      onChange={(ev) => setShareEmail(ev.target.value)}
+                      placeholder="share with (email)"
+                      aria-label="Email to share this entry with"
+                      className="flex-1"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => void shareEntry(menuEntry)}
+                      disabled={sharing === menuEntry.id || !shareEmail.trim()}
+                      className="shrink-0 rounded-md border-2 border-border bg-primary px-4 py-2.5 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+                    >
+                      {sharing === menuEntry.id ? "Sharing…" : "Share"}
+                    </button>
+                  </div>
+                ) : null}
+              </>
+            )}
+
+            {shareMsg[menuEntry.id] ? (
+              <p className="text-caption text-muted-foreground">{shareMsg[menuEntry.id]}</p>
+            ) : null}
+          </div>
+        ) : null}
+      </MobileBottomSheet>
     </div>
   );
 }

@@ -123,14 +123,14 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
         </p>
         <p className="mt-4 text-small font-medium">This becomes:</p>
 
-        <div className="mt-2 grid grid-cols-5 gap-2">
+        <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-5">
           {([-2, -1, 0, 1, 2] as SctResponse[]).map((r) => (
             <button
               key={r}
               type="button"
               onClick={() => answer(r)}
               disabled={showPanel}
-              className="rounded-md border-2 border-border bg-background px-2 py-2 text-caption font-medium transition-transform active:translate-y-px disabled:opacity-60"
+              className="rounded-md border-2 border-border bg-background px-3 py-2 text-left text-caption font-medium transition-transform active:translate-y-px disabled:opacity-60 min-h-11"
             >
               {RESPONSE_LABELS[r]}
             </button>

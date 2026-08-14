@@ -55,7 +55,7 @@ export default async function LibraryPage(props: {
             title: d.title,
             sourceUrl: d.source_url,
             licence: d.licence,
-            snippet: d.content.slice(0, 240),
+            abstract: d.content,
             fetchedAt: d.fetched_at,
           }))}
           totalCount={all.length}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BookOpen, CheckCircle2, ChevronLeft, Clock, FileText, Lock } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, ChevronDown, ChevronLeft, Clock, FileText, Lock, Play } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
+import { cardVariants } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 export default async function CourseOverviewPage({
@@ -157,6 +158,11 @@ export default async function CourseOverviewPage({
     if (nextAction) break;
   }
 
+  const nextActionLessonIndex =
+    nextAction?.type === "lesson"
+      ? playable.findIndex((l) => l.id === nextAction.id)
+      : -1;
+
   return (
     <div className="mx-auto w-full max-w-3xl space-y-8">
       <Link
@@ -176,6 +182,35 @@ export default async function CourseOverviewPage({
             : "Draft — not yet visible to students."
         }
       />
+
+      {/* Dominant continue — the single next action deep-linking to the exact
+          resume target (the same target the dashboard points at), not a buried
+          list row. */}
+      {nextAction ? (
+        <Link
+          href={nextAction.href}
+          className={cn(cardVariants({ variant: "interactive" }), "flex items-center gap-4 p-5")}
+        >
+          <span
+            aria-hidden
+            className="flex size-12 shrink-0 items-center justify-center rounded-md border-2 border-foreground bg-primary text-primary-foreground"
+          >
+            <Play className="size-5 fill-current" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="text-eyebrow text-muted-foreground">Continue learning</span>
+            <span className="block truncate text-h3 text-foreground">{nextAction.title}</span>
+            <span className="block text-caption text-muted-foreground">
+              {nextAction.type === "lesson" && nextActionLessonIndex >= 0
+                ? `Lesson ${nextActionLessonIndex + 1} of ${playable.length}`
+                : nextAction.type === "assignment"
+                  ? `Assignment · Week ${nextAction.week}`
+                  : `Material · Week ${nextAction.week}`}
+            </span>
+          </span>
+          <ArrowRight className="size-5 shrink-0 text-link" aria-hidden />
+        </Link>
+      ) : null}
 
       {/* Progress — a compact readout, not a second CTA. The next lesson row
           below is the single primary action. At 0% the bar would be an empty
@@ -227,8 +262,8 @@ export default async function CourseOverviewPage({
               : "Opens later";
 
           return (
-            <section key={weekNum} aria-label={`Week ${weekNum}`} className="space-y-2">
-              <div className="flex items-center gap-2.5 px-1">
+            <details key={weekNum} open={isCurrentWeek} className="group space-y-2">
+              <summary className="flex cursor-pointer list-none items-center gap-2.5 px-1 [&::-webkit-details-marker]:hidden">
                 <span
                   aria-hidden
                   className={cn(
@@ -245,12 +280,16 @@ export default async function CourseOverviewPage({
                 <h2 className="text-h3 text-foreground">Week {weekNum}</h2>
                 <span className="text-caption text-muted-foreground">{statusLabel}</span>
                 {isFutureWeek && (
-                  <span className="ml-auto inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2 py-0.5 text-caption font-medium text-muted-foreground">
+                  <span className="inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2 py-0.5 text-caption font-medium text-muted-foreground">
                     <Lock className="size-3" aria-hidden />
                     Locked
                   </span>
                 )}
-              </div>
+                <ChevronDown
+                  className="ml-auto size-4 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+                  aria-hidden
+                />
+              </summary>
 
               <div className="space-y-1">
                 {weekLessons.map((lesson, i) => {
@@ -350,7 +389,7 @@ export default async function CourseOverviewPage({
                   );
                 })}
               </div>
-            </section>
+            </details>
           );
         })}
       </section>

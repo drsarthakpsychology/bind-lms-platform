@@ -16,6 +16,7 @@ export function NotesSheet({
   onMseNotesChange,
   hypotheses,
   onHypothesesChange,
+  hasContent,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -23,9 +24,24 @@ export function NotesSheet({
   onMseNotesChange: (v: string) => void;
   hypotheses: string;
   onHypothesesChange: (v: string) => void;
+  /** True once the student has written anything — drives the saved signal. */
+  hasContent?: boolean;
 }) {
   return (
-    <MobileBottomSheet open={open} onOpenChange={onOpenChange} title="Notes">
+    <MobileBottomSheet
+      open={open}
+      onOpenChange={onOpenChange}
+      title="Notes"
+      footer={
+        <p className="flex items-center gap-1.5 text-caption text-muted-foreground">
+          <span
+            aria-hidden
+            className={`size-1.5 shrink-0 rounded-full ${hasContent ? "bg-status-success-fg" : "bg-muted-foreground"}`}
+          />
+          {hasContent ? "Saved on this device" : "Nothing written yet"}
+        </p>
+      }
+    >
       <div className="space-y-4">
         <div>
           <label htmlFor="mse-scratchpad" className="text-eyebrow text-muted-foreground">

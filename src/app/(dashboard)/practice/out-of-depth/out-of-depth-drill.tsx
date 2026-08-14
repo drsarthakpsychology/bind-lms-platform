@@ -4,6 +4,7 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { AlertTriangle, Siren, CheckCircle2 } from "lucide-react";
+import { MobileChoiceList } from "@/components/mobile/mobile-choice-list";
 import { OUT_OF_DEPTH_SCENARIOS, scoreReferralDecision, type ReferralOption } from "@/lib/out-of-depth/scenarios";
 
 /**
@@ -15,9 +16,11 @@ export function OutOfDepthDrill() {
   const [idx, setIdx] = React.useState(0);
   const [chosen, setChosen] = React.useState<ReferralOption | null>(null);
   const [overReferrals, setOverReferrals] = React.useState(0);
+  const [done, setDone] = React.useState(false);
 
+  const total = OUT_OF_DEPTH_SCENARIOS.length;
+  const isLast = idx + 1 >= total;
   const s = OUT_OF_DEPTH_SCENARIOS[idx];
-  if (!s) return null;
 
   function pick(o: ReferralOption) {
     if (chosen !== null) return;
@@ -29,16 +32,58 @@ export function OutOfDepthDrill() {
   }
 
   function next() {
-    setChosen(null);
-    setIdx((i) => Math.min(OUT_OF_DEPTH_SCENARIOS.length - 1, i + 1));
+    if (isLast) {
+      setDone(true);
+      haptic("success");
+    } else {
+      setChosen(null);
+      setIdx((i) => i + 1);
+    }
   }
 
+  function restart() {
+    setIdx(0);
+    setChosen(null);
+    setOverReferrals(0);
+    setDone(false);
+    haptic("tap");
+  }
+
+  if (done) {
+    return (
+      <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
+        <p className="flex items-center gap-2 text-base font-semibold">
+          <CheckCircle2 className="size-4" aria-hidden /> {total} scenarios complete
+        </p>
+        <p className="mt-2 text-small text-muted-foreground">
+          Over-referrals this session:{" "}
+          <span className="font-semibold text-numeric">{overReferrals}</span>
+          {overReferrals > 0
+            ? " — referring everything is also a harm."
+            : " — you referred when you had to, and held when you could."}
+        </p>
+        <button
+          type="button"
+          onClick={restart}
+          className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+        >
+          Run the drill again
+        </button>
+      </div>
+    );
+  }
+
+  if (!s) return null;
+
   const result = chosen ? scoreReferralDecision(s, chosen) : null;
+  const optionLabels = s.options.map((o) => o.label);
+  const correctIndex = s.options.findIndex((o) => o.option === s.correct);
+  const pickedIndex = chosen !== null ? s.options.findIndex((o) => o.option === chosen) : -1;
 
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>Scenario {idx + 1} of {OUT_OF_DEPTH_SCENARIOS.length}</span>
+        <span>Scenario {idx + 1} of {total}</span>
         <span className="text-caption">Over-referrals this session: {overReferrals}</span>
       </div>
 
@@ -47,33 +92,14 @@ export function OutOfDepthDrill() {
         <p className="mt-2 text-small">{s.vignette}</p>
       </div>
 
-      <div className="space-y-2">
-        {s.options.map((o) => {
-          const picked = chosen === o.option;
-          const isCorrect = o.option === s.correct;
-          const reveal = chosen !== null && picked;
-          return (
-            <button
-              key={o.option}
-              type="button"
-              onClick={() => pick(o.option)}
-              disabled={chosen !== null}
-              className={cn(
-                "w-full rounded-md border-2 border-border bg-background px-3 py-2.5 text-left text-small transition-transform active:translate-y-px disabled:opacity-60",
-                reveal && isCorrect && "border-green-600 bg-green-50",
-                reveal && !isCorrect && "border-red-400 bg-red-50",
-              )}
-            >
-              {o.label}
-              {reveal ? (
-                <span className={cn("mt-1 block text-caption font-medium", isCorrect ? "text-green-700" : "text-red-600")}>
-                  {isCorrect ? "✓ The right call" : "✗"}
-                </span>
-              ) : null}
-            </button>
-          );
-        })}
-      </div>
+      <MobileChoiceList
+        options={optionLabels}
+        correct={[correctIndex]}
+        picked={pickedIndex >= 0 ? [pickedIndex] : []}
+        revealed={chosen !== null}
+        onPick={(i) => pick(s.options[i].option)}
+        label="Referral decision"
+      />
 
       {result ? (
         <div className="rounded-md border-2 border-border bg-card p-5">
@@ -91,10 +117,9 @@ export function OutOfDepthDrill() {
           <button
             type="button"
             onClick={next}
-            disabled={idx + 1 >= OUT_OF_DEPTH_SCENARIOS.length}
-            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
           >
-            {idx + 1 < OUT_OF_DEPTH_SCENARIOS.length ? "Next scenario" : "Done"}
+            {isLast ? "Finish" : "Next scenario"}
           </button>
         </div>
       ) : null}

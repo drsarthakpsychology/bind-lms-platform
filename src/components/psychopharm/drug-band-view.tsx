@@ -70,6 +70,17 @@ export function DrugBandView({
       {/* The selected band, first below the ladder. */}
       <BandDetail band={current} register={mode} />
 
+      {/* Register switch (student/clinician) — kept high so the two registers
+          are a first-class, visible control rather than a mid-scroll widget. */}
+      <RegisterView
+        plain={plain}
+        mechanism={mechanism}
+        source_id=""
+        source_title={sourceTitle ?? ""}
+        mode={mode}
+        onModeChange={setMode}
+      />
+
       {/* Onset + half-life — second question anyone asks. */}
       <OnsetTimeline
         onsetTime={onsetTime}
@@ -80,15 +91,6 @@ export function DrugBandView({
         bandOnset={current?.onset}
         register={mode}
         sourceTitle={sourceTitle ?? ""}
-      />
-
-      <RegisterView
-        plain={plain}
-        mechanism={mechanism}
-        source_id=""
-        source_title={sourceTitle ?? ""}
-        mode={mode}
-        onModeChange={setMode}
       />
 
       <section className="space-y-4 pb-4">
@@ -142,8 +144,20 @@ export function DrugBandView({
         ) : null,
       )}
 
-      {/* Phase 2 observer layer */}
-      <ObserverNotes drugClass={drugClass} />
+      {/* Phase 2 observer layer — collapsed so the band summary dominates;
+          one tap to reveal the session observations (T32). */}
+      <details className="group rounded-md border-2 border-border bg-card">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
+          <h2 className="text-h2">Session notes & red flags</h2>
+          <ChevronDown
+            className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+            aria-hidden
+          />
+        </summary>
+        <div className="border-t border-border px-4 py-3">
+          <ObserverNotes drugClass={drugClass} />
+        </div>
+      </details>
     </div>
   );
 }

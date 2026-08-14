@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { BadgeCheck, Award } from "lucide-react";
+import { BadgeCheck, Award, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
 export interface PassportRow {
   key: string;
@@ -37,14 +38,23 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
   const evid = rows.reduce((a, r) => a + r.events.length, 0);
   const hours = rows.reduce((a, r) => a + r.events.reduce((x, e) => x + hoursOf(e), 0), 0);
   const done = rows.filter((r) => r.events.length > 0).length;
+  const [evidenceRow, setEvidenceRow] = React.useState<PassportRow | null>(null);
 
   return (
     <div className="space-y-6">
-      {/* summary */}
-      <div className="grid grid-cols-3 gap-3">
-        <Stat label="Competencies touched" value={`${done}/${rows.length}`} />
-        <Stat label="Evidence entries" value={String(evid)} />
-        <Stat label="Logged hours" value={`${hours.toFixed(1)}h`} />
+      {/* summary — one dominant metric (logged hours), the other two demoted to a strip */}
+      <div className="space-y-3">
+        <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
+          <p className="text-caption text-muted-foreground">Logged hours</p>
+          <p className="mt-1 text-numeric text-h1 font-bold tracking-tight">{hours.toFixed(1)}h</p>
+          <p className="mt-1 text-caption text-muted-foreground">
+            Signed-off hours underpin your certificate.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <Stat label="Competencies touched" value={`${done}/${rows.length}`} />
+          <Stat label="Evidence entries" value={String(evid)} />
+        </div>
       </div>
 
       {/* competency grid */}
@@ -87,8 +97,15 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
                     </li>
                   ))}
                   {r.events.length > 3 ? (
-                    <li className="text-caption text-muted-foreground">
-                      +{r.events.length - 3} more
+                    <li>
+                      <button
+                        type="button"
+                        onClick={() => setEvidenceRow(r)}
+                        className="inline-flex items-center gap-0.5 text-caption font-medium text-link underline-offset-2 hover:underline"
+                      >
+                        +{r.events.length - 3} more
+                        <ChevronRight className="size-3.5" aria-hidden />
+                      </button>
                     </li>
                   ) : null}
                 </ul>
@@ -97,6 +114,39 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
           );
         })}
       </ul>
+
+      {/* Evidence sheet — the "+N more" target. Lists every event for one competency. */}
+      <MobileBottomSheet
+        open={evidenceRow != null}
+        onOpenChange={(o) => {
+          if (!o) setEvidenceRow(null);
+        }}
+        title={evidenceRow?.name}
+        description="Every logged event for this competency, newest first."
+      >
+        {evidenceRow ? (
+          <ul className="space-y-2">
+            {evidenceRow.events.map((e) => (
+              <li
+                key={e.id}
+                className="flex items-center justify-between gap-3 rounded-md border-2 border-border bg-card px-3 py-2"
+              >
+                <span className="flex min-w-0 items-center gap-2">
+                  <span className="rounded-full bg-secondary px-2 py-0.5 text-caption font-medium">
+                    {SOURCE_LABEL[e.source] ?? e.source}
+                  </span>
+                  {hoursOf(e) > 0 ? (
+                    <span className="text-numeric text-caption font-semibold">{hoursOf(e)}h</span>
+                  ) : null}
+                </span>
+                <time dateTime={e.createdAt} className="shrink-0 text-caption text-muted-foreground">
+                  {new Date(e.createdAt).toLocaleDateString()}
+                </time>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+      </MobileBottomSheet>
 
       <p className="flex items-center gap-1.5 text-caption text-muted-foreground">
         <Award className="size-3.5" aria-hidden />

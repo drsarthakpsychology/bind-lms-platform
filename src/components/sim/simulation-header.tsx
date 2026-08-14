@@ -19,6 +19,7 @@ export function SimulationHeader({
   fixtureMode,
   seconds,
   onMore,
+  notesIndicator = false,
 }: {
   patientName: string;
   patientAge?: number;
@@ -26,6 +27,8 @@ export function SimulationHeader({
   fixtureMode: boolean;
   seconds: number;
   onMore: () => void;
+  /** Peach dot on the "more" button when notes are non-empty. */
+  notesIndicator?: boolean;
 }) {
   const router = useRouter();
   const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
@@ -75,9 +78,15 @@ export function SimulationHeader({
         type="button"
         onClick={onMore}
         aria-label="More options"
-        className="flex size-10 shrink-0 items-center justify-center rounded-md text-foreground transition-transform duration-fast ease-snappy active:translate-y-px"
+        className="relative flex size-10 shrink-0 items-center justify-center rounded-md text-foreground transition-transform duration-fast ease-snappy active:translate-y-px"
       >
         <MoreHorizontal className="size-5" aria-hidden />
+        {notesIndicator ? (
+          <span
+            aria-hidden
+            className="absolute right-1 top-1 size-2 rounded-full bg-primary ring-2 ring-card"
+          />
+        ) : null}
       </button>
     </header>
   );

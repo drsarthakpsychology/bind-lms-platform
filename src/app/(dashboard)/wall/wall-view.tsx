@@ -3,7 +3,14 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { formatRelativeTime } from "@/lib/format";
-import { Heart, Lightbulb, HelpCircle, PartyPopper, AlertTriangle, Pin, MoreHorizontal } from "lucide-react";
+import { Heart, Lightbulb, HelpCircle, PartyPopper, AlertTriangle, Pin, MoreHorizontal, Plus, MessageSquare } from "lucide-react";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { MobileTextarea } from "@/components/mobile/mobile-input";
+import { MobileErrorLine } from "@/components/mobile/mobile-error-line";
+import { StatusPill } from "@/components/mobile/status-pill";
+import { EmptyState } from "@/components/design-system/empty-state";
+import { useDraft } from "@/lib/hooks/use-draft";
+import { useOffline } from "@/lib/hooks/use-offline";
 
 interface WallReply {
   id: string;
@@ -37,23 +44,46 @@ const REACTIONS: Array<{ key: string; label: string; icon: typeof Heart }> = [
  * The Cohort Wall — threaded, anonymous-post toggle, reactions-not-upvotes.
  * Reactions signal without ranking (popularity selects for confidence, not
  * correctness). Anonymous author_id never leaves the server.
+ *
+ * Mobile (T21/T35): feed-first — the composer moves into a bottom sheet behind
+ * a "New post" action, and per-post Report/Pin collapse into a single "…"
+ * sheet. Composer + reply drafts autosave via useDraft (T46).
  */
 export function WallView({ initialPosts, isFacultyViewer = false }: { initialPosts: WallPost[]; isFacultyViewer?: boolean }) {
   const [posts, setPosts] = React.useState<WallPost[]>(initialPosts);
-  const [content, setContent] = React.useState("");
+  const contentDraft = useDraft("wall-composer");
   const [anonymous, setAnonymous] = React.useState(false);
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [myReactions, setMyReactions] = React.useState<Record<string, Set<string>>>({});
   const [replyOpen, setReplyOpen] = React.useState<string | null>(null);
-  const [replyText, setReplyText] = React.useState("");
+  const replyDraft = useDraft("wall-reply");
   const [replyAnon, setReplyAnon] = React.useState(false);
   const [replying, setReplying] = React.useState(false);
-  const [menuOpen, setMenuOpen] = React.useState<string | null>(null);
+  const [replyError, setReplyError] = React.useState<string | null>(null);
+  const [composerOpen, setComposerOpen] = React.useState(false);
+  const [menuPostId, setMenuPostId] = React.useState<string | null>(null);
+  const [sheetMsg, setSheetMsg] = React.useState<{ text: string; tone: "success" | "error" } | null>(null);
+  const [feedError, setFeedError] = React.useState<string | null>(null);
+  const { offline, justReturned } = useOffline();
+  const replyRef = React.useRef<HTMLTextAreaElement>(null);
+
+  // Focus + scroll the revealed reply composer into view (T53) so the fixed
+  // bottom tab bar never leaves the reply input obscured by the keyboard.
+  React.useEffect(() => {
+    if (!replyOpen) return;
+    const raf = requestAnimationFrame(() => {
+      replyRef.current?.focus();
+      replyRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [replyOpen]);
+
+  const menuPost = menuPostId ? posts.find((p) => p.id === menuPostId) ?? null : null;
 
   async function post(e: React.FormEvent) {
     e.preventDefault();
-    if (busy || !content.trim()) return;
+    if (busy || !contentDraft.value.trim()) return;
     setBusy(true);
     setError(null);
     haptic("tap");
@@ -61,21 +91,23 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
       const res = await fetch("/api/practice/wall", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: content.trim(), isAnonymous: anonymous }),
+        body: JSON.stringify({ content: contentDraft.value.trim(), isAnonymous: anonymous }),
       });
       if (!res.ok) {
-        setError("Could not post. Please try again.");
+        const j = (await res.json().catch(() => null)) as { error?: string } | null;
+        setError(j?.error ?? "Could not post. Please try again.");
         return;
       }
       const j = (await res.json()) as { id: string };
       setPosts((prev) => [
-        { id: j.id, content: content.trim(), isAnonymous: anonymous, isFaculty: false, isPinned: false, createdAt: new Date().toISOString(), replies: [], reactions: {} },
+        { id: j.id, content: contentDraft.value.trim(), isAnonymous: anonymous, isFaculty: false, isPinned: false, createdAt: new Date().toISOString(), replies: [], reactions: {} },
         ...prev,
       ]);
-      setContent("");
+      contentDraft.clear();
+      setComposerOpen(false);
       haptic("success");
     } catch {
-      setError("Network error.");
+      setError("Network error. Your post is still here — try again.");
     } finally {
       setBusy(false);
     }
@@ -92,7 +124,10 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ postId: target.postId, replyId: target.replyId, reaction }),
       });
-      if (!res.ok) return;
+      if (!res.ok) {
+        setFeedError("Couldn't update your reaction.");
+        return;
+      }
       // Optimistic update.
       setPosts((prev) => prev.map((p) => {
         if (target.postId && p.id !== target.postId) return p;
@@ -118,7 +153,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
       else next.add(reaction);
       setMyReactions((m) => ({ ...m, [key]: next }));
     } catch {
-      /* optimistic rollback is acceptable — refresh next load */
+      setFeedError("Couldn't update your reaction.");
     }
   }
 
@@ -131,9 +166,14 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ postId, reason: "flagged by a cohort member" }),
       });
-      if (res.ok) haptic("success");
+      if (res.ok) {
+        haptic("success");
+        setSheetMsg({ text: "Reported — thanks for flagging it.", tone: "success" });
+      } else {
+        setSheetMsg({ text: "Couldn't flag it. Please try again.", tone: "error" });
+      }
     } catch {
-      /* ignore */
+      setSheetMsg({ text: "Couldn't flag it. Please try again.", tone: "error" });
     }
   }
 
@@ -145,25 +185,34 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ postId, pinned: !currentlyPinned }),
       });
-      if (!res.ok) return;
+      if (!res.ok) {
+        setSheetMsg({ text: "Couldn't update the pin. Please try again.", tone: "error" });
+        return;
+      }
       setPosts((prev) => prev.map((p) => (p.id === postId ? { ...p, isPinned: !currentlyPinned } : p)));
       haptic("success");
+      setSheetMsg({ text: currentlyPinned ? "Unpinned." : "Pinned as Case of the Week.", tone: "success" });
     } catch {
-      /* ignore */
+      setSheetMsg({ text: "Couldn't update the pin. Please try again.", tone: "error" });
     }
   }
 
   async function sendReply(postId: string) {
-    if (replying || !replyText.trim()) return;
+    if (replying || !replyDraft.value.trim()) return;
     setReplying(true);
+    setReplyError(null);
     haptic("tap");
     try {
       const res = await fetch("/api/practice/wall/reply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ postId, content: replyText.trim(), isAnonymous: replyAnon }),
+        body: JSON.stringify({ postId, content: replyDraft.value.trim(), isAnonymous: replyAnon }),
       });
-      if (!res.ok) return;
+      if (!res.ok) {
+        const j = (await res.json().catch(() => null)) as { error?: string } | null;
+        setReplyError(j?.error ?? "Couldn't post your reply. Please try again.");
+        return; // reply draft is preserved — nothing cleared on failure
+      }
       const j = (await res.json()) as { id: string };
       setPosts((prev) => prev.map((p) => {
         if (p.id !== postId) return p;
@@ -171,63 +220,96 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
           ...p,
           replies: [
             ...(p.replies ?? []),
-            { id: j.id, content: replyText.trim(), isAnonymous: replyAnon, isFaculty: false, createdAt: new Date().toISOString() },
+            { id: j.id, content: replyDraft.value.trim(), isAnonymous: replyAnon, isFaculty: false, createdAt: new Date().toISOString() },
           ],
         };
       }));
-      setReplyText("");
+      replyDraft.clear();
       setReplyOpen(null);
       haptic("success");
     } catch {
-      /* ignore */
+      setReplyError("Network error — your reply is still here. Try again.");
     } finally {
       setReplying(false);
     }
   }
 
+  const composerFields = (
+    <>
+      <MobileTextarea
+        value={contentDraft.value}
+        onChange={(e) => contentDraft.setValue(e.target.value)}
+        rows={3}
+        enterKeyHint="enter"
+        placeholder="Share something with the cohort — a question, a win, a hard moment."
+        aria-label="Post to the cohort wall"
+        className="resize-none"
+      />
+      <label className="flex min-h-12 cursor-pointer items-center gap-2.5 rounded-md border border-border bg-background px-3 text-small text-muted-foreground">
+        <input
+          type="checkbox"
+          checked={anonymous}
+          onChange={(e) => setAnonymous(e.target.checked)}
+          className="size-4"
+        />
+        Post anonymously
+      </label>
+      {anonymous ? (
+        <p className="text-caption text-muted-foreground">
+          Your name won&apos;t be shown to anyone in the cohort.
+        </p>
+      ) : null}
+    </>
+  );
+
   return (
     <div className="space-y-6">
-      {/* composer */}
-      <form onSubmit={post} className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
-        <textarea
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          rows={3}
-          enterKeyHint="enter"
-          placeholder="Share something with the cohort — a question, a win, a hard moment."
-          className="w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
-          aria-label="Post to the cohort wall"
-        />
-        <label className="flex min-h-12 cursor-pointer items-center gap-2.5 rounded-md border border-border bg-background px-3 text-small text-muted-foreground">
-          <input
-            type="checkbox"
-            checked={anonymous}
-            onChange={(e) => setAnonymous(e.target.checked)}
-            className="size-4"
-          />
-          Post anonymously
-        </label>
+      {offline ? (
+        <StatusPill tone="warning" label="Offline — your draft saves locally" />
+      ) : justReturned ? (
+        <StatusPill tone="neutral" label="Back online" />
+      ) : null}
+
+      {/* Mobile: feed-first — composer lives in a bottom sheet */}
+      <button
+        type="button"
+        onClick={() => {
+          setComposerOpen(true);
+          setError(null);
+          haptic("tap");
+        }}
+        className="flex min-h-12 w-full items-center justify-center gap-2 rounded-md border-2 border-foreground bg-primary px-4 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none lg:hidden"
+      >
+        <Plus className="size-5" aria-hidden />
+        New post
+      </button>
+
+      {/* Desktop: inline composer (unchanged composition) */}
+      <form
+        onSubmit={post}
+        className="hidden space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm lg:block"
+      >
+        {composerFields}
         <button
           type="submit"
-          disabled={busy || !content.trim()}
+          disabled={busy || !contentDraft.value.trim()}
           className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
         >
           {busy ? "Posting…" : "Post"}
         </button>
-        {anonymous ? (
-          <p className="text-caption text-muted-foreground">
-            Your name won&apos;t be shown to anyone in the cohort.
-          </p>
-        ) : null}
-        {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
+        {error ? <MobileErrorLine>{error}</MobileErrorLine> : null}
       </form>
+
+      {feedError ? <MobileErrorLine>{feedError}</MobileErrorLine> : null}
 
       {/* posts */}
       <div>
         {posts.length === 0 ? (
-          <p className="text-small text-muted-foreground">
-            Nothing here yet. Be the first to break the ice.
-          </p>
+          <EmptyState
+            icon={<MessageSquare className="size-5" aria-hidden />}
+            title="Nothing here yet"
+            description="Be the first to break the ice."
+          />
         ) : (
           <ul className="space-y-3">
             {posts.map((p) => (
@@ -254,7 +336,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                         onClick={() => void toggleReaction({ postId: p.id }, r.key)}
                         aria-pressed={mine}
                         aria-label={`${r.label} reaction, ${count}`}
-                        className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                        className={`inline-flex min-h-8 items-center gap-1 rounded-full border px-2.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
                       >
                         <Icon className="size-3" aria-hidden />
                         {count}
@@ -263,50 +345,21 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                   })}
                   <button
                     type="button"
-                    onClick={() => { setReplyOpen(replyOpen === p.id ? null : p.id); haptic("tap"); }}
+                    onClick={() => { setReplyOpen(replyOpen === p.id ? null : p.id); setReplyError(null); haptic("tap"); }}
                     aria-expanded={replyOpen === p.id}
-                    className="rounded-full border-2 border-border px-2.5 py-1 text-caption font-medium text-foreground transition-transform active:translate-y-px"
+                    className="rounded-full border-2 border-border px-3 py-2 text-caption font-medium text-foreground transition-transform active:translate-y-px"
                   >
                     Reply
                   </button>
-                  <span className="relative">
-                    <button
-                      type="button"
-                      onClick={() => { setMenuOpen(menuOpen === p.id ? null : p.id); haptic("tap"); }}
-                      aria-haspopup="menu"
-                      aria-expanded={menuOpen === p.id}
-                      aria-label="More actions"
-                      className="inline-flex size-8 items-center justify-center rounded-full border border-border text-muted-foreground transition-transform hover:bg-secondary active:translate-y-px"
-                    >
-                      <MoreHorizontal className="size-4" aria-hidden />
-                    </button>
-                    {menuOpen === p.id ? (
-                      <span
-                        role="menu"
-                        className="absolute right-0 top-full z-10 mt-1 flex min-w-40 flex-col overflow-hidden rounded-md border-2 border-foreground bg-card hard-shadow-sm"
-                      >
-                        <button
-                          type="button"
-                          role="menuitem"
-                          onClick={() => { void reportPost(p.id); setMenuOpen(null); }}
-                          className="flex min-h-11 items-center px-3 text-left text-small text-foreground transition-colors hover:bg-accent"
-                        >
-                          Report this post
-                        </button>
-                        {isFacultyViewer ? (
-                          <button
-                            type="button"
-                            role="menuitem"
-                            onClick={() => { void togglePin(p.id, p.isPinned); setMenuOpen(null); }}
-                            className="flex min-h-11 items-center gap-1 border-t border-border px-3 text-left text-small text-foreground transition-colors hover:bg-accent"
-                          >
-                            <Pin className="size-3.5" aria-hidden />
-                            {p.isPinned ? "Unpin" : "Pin as Case of the Week"}
-                          </button>
-                        ) : null}
-                      </span>
-                    ) : null}
-                  </span>
+                  <button
+                    type="button"
+                    onClick={() => { setMenuPostId(p.id); setSheetMsg(null); haptic("tap"); }}
+                    aria-haspopup="dialog"
+                    aria-label="More actions"
+                    className="inline-flex size-11 items-center justify-center rounded-full border border-border text-muted-foreground transition-transform hover:bg-secondary active:translate-y-px"
+                  >
+                    <MoreHorizontal className="size-4" aria-hidden />
+                  </button>
                 </div>
 
                 {/* replies */}
@@ -333,7 +386,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                                 onClick={() => void toggleReaction({ replyId: r.id }, rr.key)}
                                 aria-pressed={mine}
                                 aria-label={`${rr.label} reaction, ${count}`}
-                                className={`inline-flex items-center gap-1 rounded-full border px-1.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                                className={`inline-flex min-h-8 items-center gap-1 rounded-full border px-1.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
                               >
                                 <Icon className="size-3" aria-hidden />
                                 {count}
@@ -349,24 +402,27 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                 {/* reply composer */}
                 {replyOpen === p.id ? (
                   <div className="mt-2 space-y-2">
-                    <textarea
-                      value={replyText}
-                      onChange={(e) => setReplyText(e.target.value)}
+                    <MobileTextarea
+                      ref={replyRef}
+                      value={replyDraft.value}
+                      onChange={(e) => replyDraft.setValue(e.target.value)}
                       rows={2}
+                      enterKeyHint="send"
                       placeholder="Write a reply…"
                       aria-label="Write a reply"
-                      className="w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+                      className="resize-none"
                     />
+                    {replyError ? <MobileErrorLine>{replyError}</MobileErrorLine> : null}
                     <div className="flex items-center gap-3">
-                      <label className="flex items-center gap-2 text-caption text-muted-foreground">
+                      <label className="flex min-h-11 items-center gap-2 text-caption text-muted-foreground">
                         <input type="checkbox" checked={replyAnon} onChange={(e) => setReplyAnon(e.target.checked)} className="size-4" />
                         Reply anonymously
                       </label>
                       <button
                         type="button"
                         onClick={() => void sendReply(p.id)}
-                        disabled={replying || !replyText.trim()}
-                        className="ml-auto rounded-md border-2 border-border bg-primary px-3 py-1.5 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+                        disabled={replying || !replyDraft.value.trim()}
+                        className="ml-auto rounded-md border-2 border-border bg-primary px-4 py-2.5 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
                       >
                         {replying ? "Sending…" : "Reply"}
                       </button>
@@ -378,6 +434,73 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
           </ul>
         )}
       </div>
+
+      {/* Compose sheet (mobile) */}
+      <MobileBottomSheet
+        open={composerOpen}
+        onOpenChange={setComposerOpen}
+        title="New post"
+        description="Share a question, a win, or a hard moment with the cohort."
+        footer={
+          <button
+            type="submit"
+            form="wall-compose-form"
+            disabled={busy || !contentDraft.value.trim()}
+            className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+          >
+            {busy ? "Posting…" : "Post"}
+          </button>
+        }
+      >
+        <form id="wall-compose-form" onSubmit={post} className="space-y-3">
+          {composerFields}
+          {error ? <MobileErrorLine>{error}</MobileErrorLine> : null}
+        </form>
+      </MobileBottomSheet>
+
+      {/* Per-post actions sheet (Report / Pin) */}
+      <MobileBottomSheet
+        open={menuPostId !== null}
+        onOpenChange={(open) => {
+          if (!open) {
+            setMenuPostId(null);
+            setSheetMsg(null);
+          }
+        }}
+        title="Post options"
+        description={menuPost ? "Report or (faculty) pin this post." : undefined}
+      >
+        {menuPost ? (
+          <div className="space-y-2">
+            <button
+              type="button"
+              onClick={() => void reportPost(menuPost.id)}
+              className="flex min-h-11 w-full items-center justify-between rounded-md border border-border px-3 text-small text-foreground transition-transform active:translate-y-px"
+            >
+              <span>Report this post</span>
+            </button>
+            {isFacultyViewer ? (
+              <button
+                type="button"
+                onClick={() => void togglePin(menuPost.id, menuPost.isPinned)}
+                className="flex min-h-11 w-full items-center justify-between rounded-md border border-border px-3 text-small text-foreground transition-transform active:translate-y-px"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <Pin className="size-3.5" aria-hidden />
+                  {menuPost.isPinned ? "Unpin" : "Pin as Case of the Week"}
+                </span>
+              </button>
+            ) : null}
+            {sheetMsg ? (
+              sheetMsg.tone === "error" ? (
+                <MobileErrorLine>{sheetMsg.text}</MobileErrorLine>
+              ) : (
+                <p className="text-small text-muted-foreground">{sheetMsg.text}</p>
+              )
+            ) : null}
+          </div>
+        ) : null}
+      </MobileBottomSheet>
     </div>
   );
 }

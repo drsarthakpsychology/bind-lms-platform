@@ -3,6 +3,10 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
+import { MobileListItem } from "@/components/mobile/mobile-list-item";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { StatusPill } from "@/components/mobile/status-pill";
+import { MobileErrorLine } from "@/components/mobile/mobile-error-line";
 
 export interface RightsRow {
   id: string;
@@ -106,6 +110,8 @@ export function RightsList({ rows, loadError }: { rows: RightsRow[]; loadError: 
   const [busyIds, setBusyIds] = React.useState<Set<string>>(new Set());
   const [statusOverrides, setStatusOverrides] = React.useState<Record<string, string>>({});
   const [error, setError] = React.useState<string | null>(loadError);
+  /** Row whose "set status" sheet is open (mobile). */
+  const [sheetId, setSheetId] = React.useState<string | null>(null);
 
   /** Effective status = server row, overridden once a flip lands. */
   const statusOf = (r: RightsRow) => statusOverrides[r.id] ?? r.rights_status;
@@ -173,6 +179,8 @@ export function RightsList({ rows, loadError }: { rows: RightsRow[]; loadError: 
     );
   }
 
+  const sheetRow = filtered.find((r) => r.id === sheetId) ?? null;
+
   return (
     <div className="space-y-4">
       {/* Summary counts */}
@@ -227,13 +235,34 @@ export function RightsList({ rows, loadError }: { rows: RightsRow[]; loadError: 
       </div>
 
       {error ? (
-        <p className="text-small text-red-600" role="alert">
-          {error}
-        </p>
+        <MobileErrorLine>{error}</MobileErrorLine>
       ) : null}
 
+      {/* Mobile list — stacked records below lg; the 960px table is reserved for lg+. */}
+      <div className="lg:hidden">
+        <ul className="space-y-2">
+          {filtered.map((r) => {
+            const status = statusOf(r);
+            return (
+              <MobileListItem
+                key={r.id}
+                title={r.title}
+                subtitle={`${(r.authors ?? []).join(", ") || "No authors"} · ${LAYER_LABELS[r.layer] ?? r.layer} · ${PRIORITY_LABELS[r.priority] ?? `P${r.priority}`}`}
+                trailing={<StatusPill tone={INGESTIBLE.has(status) ? "neutral" : "warning"} label={STATUS_LABELS[status]} />}
+                onClick={() => setSheetId(r.id)}
+              />
+            );
+          })}
+        </ul>
+        {filtered.length === 0 ? (
+          <p className="rounded-md border-2 border-dashed border-border bg-card/50 px-4 py-6 text-center text-small text-muted-foreground">
+            No titles match these filters.
+          </p>
+        ) : null}
+      </div>
+
       {/* Table */}
-      <div className="overflow-x-auto rounded-md border-2 border-border bg-card">
+      <div className="hidden overflow-x-auto rounded-md border-2 border-border bg-card lg:block">
         <table className="w-full min-w-[960px] border-collapse text-left">
           <thead>
             <tr className="border-b-2 border-border text-caption text-muted-foreground">
@@ -288,7 +317,7 @@ export function RightsList({ rows, loadError }: { rows: RightsRow[]; loadError: 
                     <span
                       className={cn(
                         "inline-block rounded-md border-2 border-border px-2 py-0.5 text-caption font-semibold",
-                        r.author_consent ? "bg-green-100 text-green-900" : "bg-secondary text-muted-foreground",
+                        r.author_consent ? "bg-status-success-bg text-status-success-fg" : "bg-secondary text-muted-foreground",
                       )}
                       title={r.author_consent ? "Author consent on file" : "No author consent"}
                     >
@@ -312,6 +341,75 @@ export function RightsList({ rows, loadError }: { rows: RightsRow[]; loadError: 
           </p>
         ) : null}
       </div>
+
+      {/* Mobile "set status" sheet — reveals full metadata + the status options
+          that the desktop table keeps as a per-row <select>. */}
+      <MobileBottomSheet
+        open={sheetRow != null}
+        onOpenChange={(o) => {
+          if (!o) setSheetId(null);
+        }}
+        title={sheetRow?.title}
+        description={
+          sheetRow
+            ? `${(sheetRow.authors ?? []).join(", ") || "No authors"} · ${LAYER_LABELS[sheetRow.layer] ?? sheetRow.layer} · ${PRIORITY_LABELS[sheetRow.priority] ?? `P${sheetRow.priority}`}`
+            : undefined
+        }
+      >
+        {sheetRow ? (
+          <div className="space-y-4">
+            <dl className="space-y-1.5 text-small">
+              <div className="flex justify-between gap-3">
+                <dt className="text-muted-foreground">Publisher</dt>
+                <dd className="text-right font-medium">{sheetRow.publisher ?? "—"}</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-muted-foreground">Category</dt>
+                <dd className="text-right font-medium">{CATEGORY_LABELS[sheetRow.category] ?? sheetRow.category}</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-muted-foreground">Consent</dt>
+                <dd className="text-right font-medium">{sheetRow.author_consent ? "Yes" : "No"}</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-muted-foreground">Unlocks</dt>
+                <dd className="max-w-[55%] text-right font-medium">{sheetRow.unlocks ?? "—"}</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-muted-foreground">Updated</dt>
+                <dd className="text-right font-medium">{formatUpdated(sheetRow.updated_at)}</dd>
+              </div>
+            </dl>
+
+            <div className="space-y-1.5">
+              <p className="text-caption font-semibold text-muted-foreground">Set status</p>
+              {RIGHTS_STATUSES.map((s) => {
+                const active = statusOf(sheetRow) === s;
+                return (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => {
+                      void setStatus(sheetRow, s);
+                      setSheetId(null);
+                    }}
+                    disabled={busyIds.has(sheetRow.id)}
+                    className={cn(
+                      "flex w-full items-center justify-between rounded-md border-2 px-3 py-2.5 text-left text-small font-medium transition-colors disabled:opacity-50",
+                      active
+                        ? "border-foreground bg-primary text-primary-foreground"
+                        : "border-border bg-background hover:bg-accent",
+                    )}
+                  >
+                    {STATUS_LABELS[s]}
+                    {active ? <span className="text-caption">current</span> : null}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ) : null}
+      </MobileBottomSheet>
     </div>
   );
 }

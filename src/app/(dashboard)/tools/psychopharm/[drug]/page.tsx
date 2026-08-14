@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
+import { Search } from "lucide-react";
 import { drugFromSlug, drugDetail } from "@/lib/psychopharm/store";
 import { STANDING_NOTICE } from "@/lib/psychopharm/forbidden-phrases";
 import { createClient } from "@/lib/supabase/server";
@@ -9,9 +10,17 @@ import { DocumentView } from "@/components/psychopharm/document-view";
 import { DoseLadder } from "@/components/psychopharm/dose-ladder";
 import { DrugBandView } from "@/components/psychopharm/drug-band-view";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
+import { MobileHeader } from "@/components/mobile/mobile-header";
+import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
 
 /**
  * Drug + band detail: KMS published document if present, else the curated view.
+ *
+ * Mobile (T32/T25/T68): a real back target + title via MobileHeader, one
+ * dominant "Compare this drug" action pinned above the tab bar, and
+ * content-shaped skeletons instead of a bare "Loading…" line.
  */
 export default async function DrugPage({ params }: { params: Promise<{ drug: string }> }) {
   const { drug } = await params;
@@ -35,8 +44,28 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6 py-6">
-      <div className="flex items-center justify-between gap-2">
+    <div className="mx-auto max-w-3xl space-y-6 py-6 pb-44 lg:pb-6">
+      {/* Mobile header — 40px back target + title context. The shell top bar is
+          present on this route, so its own safe-area inset is off. */}
+      <MobileHeader
+        className="lg:hidden"
+        inset={false}
+        backHref="/tools/psychopharm"
+        title={detail.generic}
+        subtitle={detail.class}
+        actions={
+          <Link
+            href="/tools/psychopharm"
+            aria-label="Search another drug"
+            className="flex size-10 items-center justify-center rounded-md border border-border bg-background text-foreground transition-transform active:translate-y-px"
+          >
+            <Search className="size-5" aria-hidden />
+          </Link>
+        }
+      />
+
+      {/* Desktop back + compare row. */}
+      <div className="hidden items-center justify-between gap-2 lg:flex">
         <Link href="/tools/psychopharm" className="text-caption text-muted-foreground hover:underline">
           ← Search
         </Link>
@@ -50,7 +79,7 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
 
       <header className="space-y-1">
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-h1">{detail.generic}</h1>
+          <h1 className="hidden text-h1 lg:block">{detail.generic}</h1>
           {detail.class ? <Badge variant="secondary">{detail.class}</Badge> : null}
           {!detail.verified ? (
             <Badge variant="outline">in our sources, awaiting review</Badge>
@@ -75,12 +104,28 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
       ) : (
         <>
           {/* Dose ladder — the signature component (D3). One rung per band. */}
-          <Suspense fallback={<p className="text-small text-muted-foreground">Loading dose bands…</p>}>
+          <Suspense
+            fallback={
+              <div className="space-y-3" aria-label="Loading dose bands">
+                <Skeleton className="h-4 w-48" />
+                <Skeleton className="h-12 w-full" />
+                <Skeleton className="h-12 w-full" />
+                <Skeleton className="h-12 w-full" />
+              </div>
+            }
+          >
             <DoseLadder drug={detail.generic} bands={detail.bands} />
           </Suspense>
 
           {/* Band-aware body: tapping a dose-ladder rung switches this content. */}
-          <Suspense fallback={<p className="text-small text-muted-foreground">Loading…</p>}>
+          <Suspense
+            fallback={
+              <div className="space-y-6" aria-label="Loading drug details">
+                <Skeleton className="h-40 w-full" />
+                <Skeleton className="h-24 w-full" />
+              </div>
+            }
+          >
             <DrugBandView
               class={detail.class}
               plain={detail.plain}
@@ -118,6 +163,18 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
           <p className="text-caption text-muted-foreground">{STANDING_NOTICE}</p>
         </>
       ) : null}
+
+      {/* ONE dominant action — pinned above the tab bar on mobile (T32). */}
+      <div className="lg:hidden">
+        <MobileStickyAction
+          offsetForNav
+          meta={detail.class ? `${detail.generic} · ${detail.class}` : detail.generic}
+        >
+          <Button asChild variant="default" size="lg" className="h-12 w-full">
+            <Link href={`/tools/psychopharm/compare?a=${drug}&b=`}>Compare this drug</Link>
+          </Button>
+        </MobileStickyAction>
+      </div>
     </div>
   );
 }

@@ -22,14 +22,14 @@ export function TriageView({
     <div className="space-y-4">
       {/* low-confidence quiz areas — the curriculum signal */}
       {weakQuizItems.length > 0 ? (
-        <div className="rounded-md border-2 border-amber-400 bg-amber-50 p-3">
-          <p className="flex items-center gap-1.5 text-small font-semibold text-amber-800">
+        <div className="rounded-md border-2 border-status-pending-fg/40 bg-status-pending-bg p-3">
+          <p className="flex items-center gap-1.5 text-small font-semibold text-status-pending-fg">
             <AlertTriangle className="size-4" aria-hidden />
             {weakQuizItems.length} quiz items answered correctly less than half the time
           </p>
           <ul className="mt-2 space-y-1">
             {weakQuizItems.map((q) => (
-              <li key={q.itemId} className="flex items-center gap-2 text-caption text-amber-800">
+              <li key={q.itemId} className="flex items-center gap-2 text-caption text-status-pending-fg">
                 <span className="font-medium">{q.itemId}</span>
                 <span className="text-muted-foreground">· {q.correctPct}% correct across {q.attempts} attempts</span>
               </li>
@@ -40,7 +40,7 @@ export function TriageView({
 
       <div className="flex items-center gap-2 rounded-md border-2 border-border bg-card p-3 text-small">
         <span className="flex items-center gap-1 font-medium">
-          <AlertTriangle className="size-4 text-amber-600" aria-hidden />
+          <AlertTriangle className="size-4 text-status-pending-fg" aria-hidden />
           {needs.length} need your eyes
         </span>
         <span className="ml-auto flex items-center gap-1 text-caption text-muted-foreground">

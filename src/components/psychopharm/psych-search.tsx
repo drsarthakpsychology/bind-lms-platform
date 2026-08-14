@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { formatBand } from "@/lib/psychopharm/format";
+import { MobileErrorLine } from "@/components/mobile/mobile-error-line";
 
 /**
  * Dr. Sarthak reviewed the data; this component only navigates to static,
@@ -21,7 +22,15 @@ interface BandChip {
   band_type?: string;
 }
 
-export function PsychSearch({ className }: { className?: string }) {
+export function PsychSearch({
+  className,
+  compareTo,
+}: {
+  className?: string;
+  /** When set, this search adds a picked drug to a comparison instead of
+      opening its drug page (T32 compare picker). */
+  compareTo?: string[];
+}) {
   const router = useRouter();
   const [q, setQ] = React.useState("");
   const [list, setList] = React.useState<string[]>([]);
@@ -29,6 +38,9 @@ export function PsychSearch({ className }: { className?: string }) {
   const [highlight, setHighlight] = React.useState(0);
   const [selected, setSelected] = React.useState<string | null>(null);
   const [bands, setBands] = React.useState<BandChip[]>([]);
+  const [searchError, setSearchError] = React.useState(false);
+  const [bandError, setBandError] = React.useState(false);
+  const [searchRetry, setSearchRetry] = React.useState(0);
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
@@ -49,27 +61,46 @@ export function PsychSearch({ className }: { className?: string }) {
           setList(matches);
           setFuzzy(Array.isArray(d) ? false : Boolean(d?.fuzzy));
           setHighlight(0);
+          setSearchError(false);
         }
       })
       .catch(() => {
-        if (!cancelled) setList([]);
+        if (!cancelled) {
+          setList([]);
+          setSearchError(true);
+        }
       });
     return () => {
       cancelled = true;
     };
-  }, [q]);
+  }, [q, searchRetry]);
 
-  function pick(name: string) {
-    const slug = slugFor(name);
-    setSelected(name);
-    setList([]);
-    setQ(name);
-    // fetch that drug's dose bands for the chip step
+  function loadBands(name: string) {
+    setBandError(false);
+    setBands([]);
+    // Fetch that drug's dose bands for the chip step; navigation happens
+    // AFTER the user taps a dose chip (show → act → reveal next), not here.
     fetch(`/api/psychopharm/bands?drug=${encodeURIComponent(name)}`)
       .then((r) => r.json())
       .then((d) => setBands(Array.isArray(d) ? d : []))
-      .catch(() => setBands([]));
-    router.push(`/tools/psychopharm/${slug}`);
+      .catch(() => setBandError(true));
+  }
+
+  function pick(name: string) {
+    if (compareTo) {
+      // Compare picker: add this drug to the comparison and land on it.
+      const parts = [...compareTo, slugFor(name)].slice(0, 5);
+      const qs = parts
+        .map((p, i) => `${String.fromCharCode(97 + i)}=${encodeURIComponent(p)}`)
+        .join("&");
+      router.push(`/tools/psychopharm/compare?${qs}`);
+      return;
+    }
+    setSelected(name);
+    setList([]);
+    setQ(name);
+    setSearchError(false);
+    loadBands(name);
   }
 
   function go(slug: string, band?: number) {
@@ -93,6 +124,8 @@ export function PsychSearch({ className }: { className?: string }) {
       setQ("");
       setSelected(null);
       setBands([]);
+      setSearchError(false);
+      setBandError(false);
     }
   };
 
@@ -109,6 +142,7 @@ export function PsychSearch({ className }: { className?: string }) {
           onChange={(e) => {
             const v = e.target.value;
             setQ(v);
+            setSearchError(false);
             if (!v.trim()) {
               setList([]);
               setHighlight(0);
@@ -158,33 +192,74 @@ export function PsychSearch({ className }: { className?: string }) {
         </>
       ) : null}
 
-      {/* Dose chips (D2 step 2): after a drug is picked, offer its bands. */}
-      {selected && bands.length > 0 ? (
-        <div className="mt-2 space-y-1.5">
-          <p className="text-caption text-muted-foreground">Pick a dose for {selected}:</p>
-          <div className="flex flex-wrap gap-2">
-            {bands.map((b, i) => {
-              const range = b.band_label || formatBand(b);
-              return (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => go(slugFor(selected), i + 1)}
-                  className="rounded-full border-2 border-border px-3 py-1.5 text-sm hover:bg-accent"
-                >
-                  {range}
-                  {b.band_type ? <span className="ml-1 text-caption text-muted-foreground">({b.band_type})</span> : null}
-                </button>
-              );
-            })}
+      {searchError && !list.length && q.trim() ? (
+        <div className="mt-2">
+          <MobileErrorLine>
+            Couldn&apos;t search medications.{" "}
             <button
               type="button"
-              onClick={() => go(slugFor(selected))}
-              className="rounded-full border-2 border-dashed border-border px-3 py-1.5 text-sm text-muted-foreground hover:bg-accent"
+              onClick={() => setSearchRetry((n) => n + 1)}
+              className="underline underline-offset-2"
             >
-              Show all doses
+              Try again
             </button>
-          </div>
+          </MobileErrorLine>
+        </div>
+      ) : null}
+
+      {/* Dose chips (D2 step 2): after a drug is picked, offer its bands. */}
+      {selected ? (
+        <div className="mt-2 space-y-1.5">
+          {bands.length > 0 ? (
+            <>
+              <p className="text-caption text-muted-foreground">Pick a dose for {selected}:</p>
+              <div className="flex flex-wrap gap-2">
+                {bands.map((b, i) => {
+                  const range = b.band_label || formatBand(b);
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => go(slugFor(selected), i + 1)}
+                      className="min-h-11 rounded-full border-2 border-border px-3 py-1.5 text-sm hover:bg-accent active:translate-y-px"
+                    >
+                      {range}
+                      {b.band_type ? <span className="ml-1 text-caption text-muted-foreground">({b.band_type})</span> : null}
+                    </button>
+                  );
+                })}
+                <button
+                  type="button"
+                  onClick={() => go(slugFor(selected))}
+                  className="min-h-11 rounded-full border-2 border-dashed border-border px-3 py-1.5 text-sm text-muted-foreground hover:bg-accent active:translate-y-px"
+                >
+                  Show all doses
+                </button>
+              </div>
+            </>
+          ) : bandError ? (
+            <>
+              <MobileErrorLine>
+                Couldn&apos;t load doses for {selected}.{" "}
+                <button
+                  type="button"
+                  onClick={() => loadBands(selected)}
+                  className="underline underline-offset-2"
+                >
+                  Try again
+                </button>
+              </MobileErrorLine>
+              <button
+                type="button"
+                onClick={() => go(slugFor(selected))}
+                className="min-h-11 rounded-full border-2 border-dashed border-border px-3 py-1.5 text-sm text-muted-foreground hover:bg-accent active:translate-y-px"
+              >
+                Open {selected} without a dose
+              </button>
+            </>
+          ) : (
+            <p className="text-caption text-muted-foreground">Loading doses…</p>
+          )}
         </div>
       ) : null}
     </div>

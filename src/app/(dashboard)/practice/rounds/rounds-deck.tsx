@@ -125,13 +125,13 @@ export function RoundsDeck({ cards = SEED_CARDS, states }: { cards?: SeedCard[];
       </div>
 
       {showBack ? (
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {([1, 2, 3, 4] as CardRating[]).map((r) => (
             <button
               key={r}
               type="button"
               onClick={() => rate(r)}
-              className="rounded-md border-2 border-border bg-primary px-3 py-2 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+              className="rounded-md border-2 border-border bg-primary px-3 py-2 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none min-h-11"
             >
               {r === 1 ? "Again" : r === 2 ? "Hard" : r === 3 ? "Good" : "Easy"}
             </button>

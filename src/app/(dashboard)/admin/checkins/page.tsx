@@ -1,5 +1,6 @@
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
+import { MobileCard } from "@/components/mobile/mobile-card";
 
 export const dynamic = "force-dynamic";
 
@@ -44,7 +45,7 @@ export default async function AdminCheckinsPage() {
       ) : (
         <>
           {latest ? (
-            <div className="mt-6 grid grid-cols-4 gap-3">
+            <div className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
               <MiniStat label="Responses (latest week)" value={String(latest.n_responses)} />
               <MiniStat label="Avg workload" value={latest.avg_workload.toFixed(2)} note="1-5, higher = heavier" />
               <MiniStat label="Avg energy" value={latest.avg_energy.toFixed(2)} note="1-5, higher = more" />
@@ -52,7 +53,22 @@ export default async function AdminCheckinsPage() {
             </div>
           ) : null}
 
-          <div className="mt-6 overflow-x-auto rounded-md border-2 border-border bg-card">
+          {/* Mobile weekly records — stacked below lg; the 560px table is lg+. */}
+          <div className="mt-6 lg:hidden">
+            <div className="space-y-2">
+              {aggregate.map((r) => (
+                <MobileCard key={r.week_label} title={r.week_label} description={`${r.n_responses} response${r.n_responses === 1 ? "" : "s"}`}>
+                  <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-caption text-muted-foreground">
+                    <span>Workload <span className="font-semibold text-foreground text-numeric">{r.avg_workload.toFixed(2)}</span></span>
+                    <span>Energy <span className="font-semibold text-foreground text-numeric">{r.avg_energy.toFixed(2)}</span></span>
+                    <span>Preparedness <span className="font-semibold text-foreground text-numeric">{r.avg_preparedness.toFixed(2)}</span></span>
+                  </div>
+                </MobileCard>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 hidden overflow-x-auto rounded-md border-2 border-border bg-card lg:block">
             <table className="w-full min-w-[560px] text-left text-small">
               <thead>
                 <tr className="border-b border-border text-caption text-muted-foreground">

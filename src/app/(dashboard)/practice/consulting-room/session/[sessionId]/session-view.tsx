@@ -62,6 +62,7 @@ export function SimSessionView({
   voicePrefs,
   branchInfo,
   provisionalDims,
+  startedAt,
 }: {
   sessionId: string;
   patientName: string;
@@ -70,6 +71,7 @@ export function SimSessionView({
   difficulty: string;
   fixtureMode?: boolean;
   initialTurns: Turn[];
+  startedAt?: string;
   voicePrefs?: { rate: number; pitch: number; lang?: string; gender?: "male" | "female" };
   branchInfo?: {
     parentSessionId: string;
@@ -81,17 +83,23 @@ export function SimSessionView({
 }) {
   const router = useRouter();
   const [turns, setTurns] = React.useState<Turn[]>(initialTurns.map((t, i) => ({ ...t, id: `init-${i}-${Date.now()}` })));
-  const [input, setInput] = React.useState("");
+  // Composer draft + notes survive refresh/interruption via localStorage (T46/T35).
+  const { value: input, setValue: setInput } = useDraft(`sim:draft:${sessionId}`);
+  const mseNotesDraft = useDraft(`sim:mse:${sessionId}`);
+  const hypothesesDraft = useDraft(`sim:hyp:${sessionId}`);
+  const hasNotes = Boolean(mseNotesDraft.value.trim() || hypothesesDraft.value.trim());
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
-  const [seconds, setSeconds] = React.useState(0);
+  // Elapsed time derives from the server `started_at` so the 12-min limit
+  // survives a resume/interruption instead of resetting to 0 (T47).
+  const [seconds, setSeconds] = React.useState(() =>
+    startedAt ? Math.max(0, Math.floor((Date.now() - new Date(startedAt).getTime()) / 1000)) : 0,
+  );
   const [debrief, setDebrief] = React.useState<DebriefData | null>(null);
   const [ending, setEnding] = React.useState(false);
   const [voiceMode, setVoiceMode] = React.useState(false);
   const [patientAffect, setPatientAffect] = React.useState<Affect | null>(null);
   const [patientFatigue, setPatientFatigue] = React.useState(0);
-  const [mseNotes, setMseNotes] = React.useState("");
-  const [hypotheses, setHypotheses] = React.useState("");
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [notesOpen, setNotesOpen] = React.useState(false);
   const [hintOpen, setHintOpen] = React.useState(false);
@@ -276,10 +284,8 @@ export function SimSessionView({
         difficulty={difficulty}
         fixtureMode={fixtureMode}
         seconds={seconds}
-        onMore={() => {
-          setMenuOpen(true);
-          setConfirmFinish(false);
-        }}
+        onMore={() => setMenuOpen(true)}
+        notesIndicator={hasNotes}
       />
 
       {/* Transcript — owns the viewport. */}
@@ -290,6 +296,22 @@ export function SimSessionView({
         <p className="border-t border-border bg-card px-4 py-2 text-small text-status-alert-fg" role="alert">
           {error}
         </p>
+      ) : null}
+
+      {/* Finish & debrief — a visible affordance above the composer once an
+          exchange exists (T45). Secondary outline so send stays the dominant
+          primary; tapping opens a confirm sheet to prevent slip-taps. */}
+      {turns.length >= 2 ? (
+        <div className="border-t border-border bg-card px-3 pt-2">
+          <button
+            type="button"
+            onClick={() => setConfirmFinish(true)}
+            className="flex w-full items-center justify-center gap-2 rounded-md border-2 border-border bg-card px-3 py-2.5 text-small font-semibold text-foreground transition-transform active:translate-y-px"
+          >
+            <Flag className="size-4" aria-hidden />
+            Finish &amp; debrief
+          </button>
+        </div>
       ) : null}
 
       {/* Composer or voice. */}
@@ -331,13 +353,8 @@ export function SimSessionView({
       )}
 
       {/* "More" menu — hint reveal, notes, finish. Secondary actions live here. */}
-      <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
-        <SheetContent side="bottom" className="pb-[max(1rem,env(safe-area-inset-bottom))]">
-          <SheetHeader>
-            <SheetTitle>Session</SheetTitle>
-          </SheetHeader>
-
-          <div className="space-y-2">
+      <MobileBottomSheet open={menuOpen} onOpenChange={setMenuOpen} title="Session">
+        <div className="space-y-2">
             {/* Hint — opt-in, flagged for the debrief. */}
             <button
               type="button"
@@ -366,60 +383,47 @@ export function SimSessionView({
               <NotebookPen className="size-5 shrink-0 text-link" aria-hidden />
               <span className="flex-1">Notes</span>
             </button>
-
-            {/* Finish & debrief — two-step confirm so the session-ending action
-                is never a slip-tap (§3.6). */}
-            {confirmFinish ? (
-              <div className="rounded-lg border-2 border-foreground bg-card p-4">
-                <p className="text-small font-semibold text-foreground">
-                  End the session with {patientName}?
-                </p>
-                <p className="mt-1 text-small text-muted-foreground">
-                  You&apos;ll go to the debrief and won&apos;t be able to continue this
-                  conversation.
-                </p>
-                <div className="mt-3 flex gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setConfirmFinish(false)}
-                    disabled={ending}
-                    className="flex-1 rounded-md border-2 border-border bg-card px-3 py-2 text-small font-medium text-muted-foreground active:translate-y-px"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => void finishAndDebrief()}
-                    disabled={ending}
-                    className="flex-1 rounded-md border-2 border-foreground bg-primary px-3 py-2 text-small font-semibold text-primary-foreground active:translate-y-px disabled:opacity-40"
-                  >
-                    {ending ? "Scoring…" : "Finish session"}
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <button
-                type="button"
-                onClick={() => setConfirmFinish(true)}
-                disabled={turns.length < 2}
-                className="flex w-full items-center gap-3 rounded-lg border-2 border-border bg-primary px-4 py-3 text-left text-small font-semibold text-primary-foreground active:translate-y-px disabled:opacity-40"
-              >
-                <Flag className="size-5 shrink-0" aria-hidden />
-                <span className="flex-1">Finish &amp; debrief</span>
-              </button>
-            )}
           </div>
-        </SheetContent>
-      </Sheet>
+        </MobileBottomSheet>
+
+      {/* Finish confirm — a two-step sheet so the session-ending action is never
+          a slip-tap (§3.6). */}
+      <MobileBottomSheet
+        open={confirmFinish}
+        onOpenChange={setConfirmFinish}
+        title={`End the session with ${patientName}?`}
+        description="You'll go to the debrief and won't be able to continue this conversation."
+        footer={
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => setConfirmFinish(false)}
+              disabled={ending}
+              className="flex-1 rounded-md border-2 border-border bg-card px-3 py-2.5 text-small font-medium text-muted-foreground active:translate-y-px"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              onClick={() => void finishAndDebrief()}
+              disabled={ending}
+              className="flex-1 rounded-md border-2 border-foreground bg-primary px-3 py-2.5 text-small font-semibold text-primary-foreground active:translate-y-px disabled:opacity-40"
+            >
+              {ending ? "Scoring…" : "Finish session"}
+            </button>
+          </div>
+        }
+      />
 
       {/* Notes sheet — MSE scratchpad + hypotheses (a bottom sheet, not a sidebar). */}
       <NotesSheet
         open={notesOpen}
         onOpenChange={setNotesOpen}
-        mseNotes={mseNotes}
-        onMseNotesChange={setMseNotes}
-        hypotheses={hypotheses}
-        onHypothesesChange={setHypotheses}
+        mseNotes={mseNotesDraft.value}
+        onMseNotesChange={mseNotesDraft.setValue}
+        hypotheses={hypothesesDraft.value}
+        onHypothesesChange={hypothesesDraft.setValue}
+        hasContent={hasNotes}
       />
 
       {/* Hint — opt-in, flagged for the debrief. */}

@@ -42,19 +42,23 @@ export function PulseView({
 
   return (
     <div className="space-y-6">
-      {/* cohort curve summary */}
-      <div className="grid grid-cols-3 gap-3">
-        <div className="rounded-md border-2 border-border bg-card p-4">
+      {/* cohort curve summary — one dominant metric (active), drifting/flying demoted */}
+      <div className="space-y-3">
+        <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
           <p className="text-caption text-muted-foreground">Active this week</p>
-          <p className="text-numeric text-h3 font-semibold">{active}/{total}</p>
+          <p className="mt-1 text-numeric text-h1 font-bold tracking-tight">
+            {active}<span className="text-muted-foreground">/{total}</span>
+          </p>
         </div>
-        <div className="rounded-md border-2 border-border bg-card p-4">
-          <p className="text-caption text-muted-foreground">Drifting (7+ days)</p>
-          <p className="text-numeric text-h3 font-semibold text-amber-700">{drifting.length}</p>
-        </div>
-        <div className="rounded-md border-2 border-border bg-card p-4">
-          <p className="text-caption text-muted-foreground">Flying</p>
-          <p className="text-numeric text-h3 font-semibold text-green-700">{flying.length}</p>
+        <div className="grid grid-cols-2 gap-3">
+          <div className="rounded-md border-2 border-border bg-card p-3">
+            <p className="text-caption text-muted-foreground">Drifting (7+ days)</p>
+            <p className="text-numeric text-h3 font-semibold text-status-pending-fg">{drifting.length}</p>
+          </div>
+          <div className="rounded-md border-2 border-border bg-card p-3">
+            <p className="text-caption text-muted-foreground">Flying</p>
+            <p className="text-numeric text-h3 font-semibold text-status-success-fg">{flying.length}</p>
+          </div>
         </div>
       </div>
 
@@ -78,14 +82,18 @@ export function PulseView({
           <p className="flex items-center gap-2 text-base font-semibold">
             <Radar className="size-4 text-muted-foreground" aria-hidden /> Cohort curve (aggregate)
           </p>
-          <ul className="mt-2 space-y-1">
+          <ul className="mt-2 space-y-2">
             {weeks.map((w) => (
-              <li key={w.week} className="flex items-center gap-3 text-small">
-                <span className="w-24 shrink-0 font-medium">{w.week}</span>
-                <span className="text-caption text-muted-foreground">{w.n} responses</span>
-                <span className="text-caption">workload {w.workload.toFixed(1)}</span>
-                <span className="text-caption">energy {w.energy.toFixed(1)}</span>
-                <span className="text-caption">preparedness {w.preparedness.toFixed(1)}</span>
+              <li key={w.week} className="rounded-md border border-border bg-background px-3 py-2">
+                <div className="flex items-center justify-between gap-2 text-small">
+                  <span className="font-medium">{w.week}</span>
+                  <span className="text-caption text-muted-foreground">{w.n} responses</span>
+                </div>
+                <div className="mt-1 grid grid-cols-3 gap-2 text-caption text-muted-foreground">
+                  <span>workload <span className="text-numeric font-semibold text-foreground">{w.workload.toFixed(1)}</span></span>
+                  <span>energy <span className="text-numeric font-semibold text-foreground">{w.energy.toFixed(1)}</span></span>
+                  <span>preparedness <span className="text-numeric font-semibold text-foreground">{w.preparedness.toFixed(1)}</span></span>
+                </div>
               </li>
             ))}
           </ul>
@@ -95,7 +103,7 @@ export function PulseView({
       {/* drifting */}
       <div className="rounded-md border-2 border-border bg-card p-4">
         <p className="flex items-center gap-2 text-base font-semibold">
-          <AlertTriangle className="size-4 text-amber-600" aria-hidden /> Drifting
+          <AlertTriangle className="size-4 text-status-pending-fg" aria-hidden /> Drifting
         </p>
         {drifting.length === 0 ? (
           <p className="mt-2 text-small text-muted-foreground">No one has gone quiet. Good sign.</p>
@@ -111,9 +119,9 @@ export function PulseView({
                   type="button"
                   onClick={() => void nudge(d.email)}
                   disabled={nudged[d.email]}
-                  className="rounded-md border border-border px-2 py-1 text-caption font-medium text-muted-foreground transition-colors hover:bg-secondary disabled:opacity-50"
+                  className="flex min-h-[44px] shrink-0 items-center rounded-md border-2 border-border bg-primary px-3 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
                 >
-                  {nudged[d.email] ? "Nudge drafted" : "One-tap nudge"}
+                  {nudged[d.email] ? "Nudge drafted" : "Send nudge"}
                 </button>
               </li>
             ))}
@@ -124,7 +132,7 @@ export function PulseView({
       {/* flying */}
       <div className="rounded-md border-2 border-border bg-card p-4">
         <p className="flex items-center gap-2 text-base font-semibold">
-          <Rocket className="size-4 text-green-700" aria-hidden /> Flying — don&apos;t lose these
+          <Rocket className="size-4 text-status-success-fg" aria-hidden /> Flying — don&apos;t lose these
         </p>
         {flying.length === 0 ? (
           <p className="mt-2 text-small text-muted-foreground">No one is ahead of the pack yet.</p>

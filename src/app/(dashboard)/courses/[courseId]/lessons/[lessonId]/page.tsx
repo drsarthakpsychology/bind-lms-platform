@@ -26,6 +26,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { QuizCheck } from "@/components/practice/quiz-check";
 import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
+import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
+import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 
 // "Check what stuck" — the risk-assessment + reporting items are the most
 // universally relevant after any lesson (the order-steps spine).
@@ -144,6 +146,10 @@ export default async function LessonPage({
     (progress ?? []).filter((p) => p.is_completed).map((p) => p.lesson_id),
   );
   const lessonComplete = completedIds.has(lessonId);
+  const lessonPosition =
+    currentIndex >= 0 && playable.length > 0
+      ? `Lesson ${currentIndex + 1} of ${playable.length}`
+      : null;
 
   const pickerLessons = (playable ?? []).map((l) => ({
     id: l.id,
@@ -165,7 +171,7 @@ export default async function LessonPage({
       : "Finish course";
 
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-8">
+    <div className="mx-auto w-full max-w-5xl space-y-8 pb-32 lg:pb-0">
       {/* Back control — labelled with where it goes + compact lesson picker.
           One navigation surface at a time (no course column). */}
       <div className="flex items-center justify-between gap-3">
@@ -188,6 +194,9 @@ export default async function LessonPage({
 
       {/* Lesson header */}
       <div className="space-y-2">
+        {lessonPosition ? (
+          <p className="text-eyebrow text-muted-foreground">{lessonPosition}</p>
+        ) : null}
         <h1 className="text-h1">{lesson?.title ?? "Lesson"}</h1>
         {lesson?.description ? (
           <p className="text-small text-muted-foreground">{lesson.description}</p>
@@ -209,18 +218,26 @@ export default async function LessonPage({
       {/* Watch tab — the video when one exists; otherwise the lesson's
           reading (an honest text-lesson surface for authored content). */}
       {tab === "watch" && (
-        <div className="rounded-lg border-2 border-foreground bg-card p-0 hard-shadow-sm sm:p-2">
-          {hasVideo ? (
-            <LazyVideoPlayer lessonId={lessonId} watermarkLabel={watermarkLabel} />
-          ) : (
-            <div className="p-5">
-              <h2 className="text-h2">{lesson?.title ?? "Lesson"}</h2>
-              <p className="mt-2 whitespace-pre-line text-small text-muted-foreground">
-                {lesson?.description ?? "This lesson's video is being prepared. The reading is below."}
-              </p>
-            </div>
-          )}
-        </div>
+        <>
+          {lessonComplete ? (
+            <MobileCompletionState
+              title="Lesson complete"
+              description="You've finished this lesson — move on when you're ready."
+            />
+          ) : null}
+          <div className="rounded-lg border-2 border-foreground bg-card p-0 hard-shadow-sm sm:p-2">
+            {hasVideo ? (
+              <LazyVideoPlayer lessonId={lessonId} watermarkLabel={watermarkLabel} />
+            ) : (
+              <div className="p-5">
+                <h2 className="text-h2">{lesson?.title ?? "Lesson"}</h2>
+                <p className="mt-2 whitespace-pre-line text-small text-muted-foreground">
+                  {lesson?.description ?? "This lesson's video is being prepared. The reading is below."}
+                </p>
+              </div>
+            )}
+          </div>
+        </>
       )}
 
       {/* Check what stuck — a quick retention check after the lesson, not a
@@ -296,8 +313,10 @@ export default async function LessonPage({
         </section>
       )}
 
-      {/* Footer: prev + a single forward action. Exactly one forward button. */}
-      <div className="flex flex-wrap items-center justify-between gap-3">
+      {/* Footer: prev + a single forward action. Exactly one forward button.
+          Desktop keeps this in-flow; mobile pins the forward control in a
+          sticky bar (below) so it stays thumb-reachable past the video + quiz. */}
+      <div className="hidden flex-wrap items-center justify-between gap-3 lg:flex">
         {prevLesson ? (
           <Button asChild variant="outline" size="sm">
             <Link href={`/courses/${courseId}/lessons/${prevLesson.id}`}>
@@ -316,6 +335,34 @@ export default async function LessonPage({
           alreadyComplete={lastLessonCompleted}
         />
       </div>
+
+      {/* Mobile — the single forward control, pinned above the bottom nav. */}
+      <MobileStickyAction
+        offsetForNav
+        className="lg:hidden"
+        meta={lessonPosition ?? undefined}
+      >
+        {prevLesson ? (
+          <Button asChild variant="outline" size="lg" className="shrink-0 px-4">
+            <Link
+              href={`/courses/${courseId}/lessons/${prevLesson.id}`}
+              aria-label="Previous lesson"
+            >
+              <ArrowLeft className="size-5" aria-hidden />
+            </Link>
+          </Button>
+        ) : null}
+        <div className="min-w-0 flex-1 [&>button]:h-11 [&>button]:w-full">
+          <ContinueControl
+            lessonId={lessonId}
+            courseId={courseId}
+            continueTarget={continueTarget}
+            label={forwardLabel}
+            isFinalLesson={!nextLesson}
+            alreadyComplete={lastLessonCompleted}
+          />
+        </div>
+      </MobileStickyAction>
 
       {/* Assignment tab */}
       {tab === "assignment" && assignment && showAdminAssignment && (
