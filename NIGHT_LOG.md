@@ -22,7 +22,8 @@ honeypot, and a11y behavior.
 
 Verified in one bounded screenshot round (Playwright 2x): /enquire desktop +
 mobile × light + dark; landing regression-checked. Gate green: lint 0, tsc
-clean, 449 tests, build 82/82.
+clean, 449 tests, build 82/82. Commit: ac85285 (enquire), building on
+fd8384e (landing).
 
 ## 2026-08-14 — LANDING REDESIGN: homepage elevated within the Neo-Brutalist Pastel world
 
@@ -2603,3 +2604,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T11:41:48 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:08:05 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:11:36 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:15:55 Queue exhausted — allowing normal Claude stop.
