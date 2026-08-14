@@ -45,14 +45,28 @@ function serializeState(s: PatientState): string {
 
 function serializeCase(c: DepthCase): string {
   const h = c.history;
-  return [
-    `Facts about the patient: ${c.chief_complaint_in_own_words}`,
+  const lines = [
+    `Identity: ${c.identity.name}, ${c.identity.age}, ${c.identity.occupation}, ${c.identity.city}. Family: ${c.identity.family_structure}. Speech: ${c.identity.language_register}.`,
+    `Chief complaint (in own words): ${c.chief_complaint_in_own_words}`,
     `History: ${h.timeline}`,
     `Prior treatment: ${h.treatment_history ?? "none"}`,
     `Help-seeking delay: ${h.help_seeking_delay ?? "not stated"}`,
     `Prior contacts: ${(h.prior_contacts ?? []).join(", ") || "none"}`,
     `Red flags (never reveal until gated): ${c.red_flags.map((r) => r.content).join(" | ") || "none"}`,
-  ].join("\n");
+  ];
+  if (c.contradictions?.length) {
+    lines.push(`Contradictions the patient holds (do not resolve cleanly): ${c.contradictions.map((x) => `${x.claim} — but actually ${x.truth}`).join(" | ")}`);
+  }
+  if (c.unknown_to_patient?.length) {
+    lines.push(`The patient does NOT know: ${c.unknown_to_patient.join("; ")} — never invent or assert these.`);
+  }
+  if (c.protective_factors?.length) {
+    lines.push(`Protective factors: ${c.protective_factors.join("; ")}`);
+  }
+  if (c.rubric_targets?.length) {
+    lines.push(`What this case is meant to teach: ${c.rubric_targets.join(", ")}`);
+  }
+  return lines.join("\n");
 }
 
 /** Rough topic keywords → topics_touched. Not perfect; the Director refines. */

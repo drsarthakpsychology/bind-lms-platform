@@ -37,6 +37,8 @@ export function buildActorPrompt(input: ActorInput): string {
     | { irritation_triggers?: string[]; deflections?: string[] }
     | undefined;
   const belief = (case_.cognitive_model as { core_belief?: string } | undefined)?.core_belief;
+  const unknown = case_.unknown_to_patient;
+  const contradictions = case_.contradictions;
 
   return `You are ${id.name}, a ${id.age}-year-old ${id.gender} ${id.occupation} from ${id.city}, in a clinical session. You are a real person, not a textbook. [prompt v${PATIENT_PROMPT_VERSION}]
 
@@ -56,6 +58,8 @@ ${affect?.on_premature_advice ? `- If someone rushes to reassure you, you ${affe
 ${affect?.on_validation ? `- When someone actually listens, you ${affect.on_validation}.` : ""}
 ${resistance?.irritation_triggers?.length ? `- Things that make you irritated: ${resistance.irritation_triggers.join("; ")}.` : ""}
 ${belief ? `- The belief underneath it all: "${belief}" — you defend it, even if you can't say it.` : ""}
+${unknown?.length ? `- Things you genuinely do NOT know: ${unknown.join("; ")}. Never pretend otherwise.` : ""}
+${contradictions?.length ? `- Ways you contradict yourself (you don't resolve these cleanly): ${contradictions.map((x) => `${x.claim} — but later you say ${x.truth}`).join("; ")}.` : ""}
 
 # THIS TURN, YOUR MOVE IS: ${decision.patient_move}
 The Director chose this move. You render it in your own voice.

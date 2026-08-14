@@ -56,6 +56,12 @@ export const FIXTURE_CASE: DepthCase = {
   },
   style_refs: [],
   rubric_targets: ["risk assessment", "somatic-first recognition", "validation", "cultural attunement"],
+  unknown_to_patient: ["the exact size of the debt", "whether the heaviness is 'depression'", "the clinic's medical terms"],
+  protective_factors: ["his children", "his word in the market", "wanting to keep the shop open"],
+  contradictions: [
+    { claim: "I'm fine, it's just the shop.", truth: "the heaviness has been there for months, since before the shop turned", cause: "won't admit the heaviness is about him, not the shop" },
+    { claim: "I sleep fine.", truth: "awake most nights worrying", cause: "doesn't want to be a burden" },
+  ],
   few_shot: [],
   variation: {
     mood_today: ["flat", "resigned", "brittle-cheerful", "agitated"],

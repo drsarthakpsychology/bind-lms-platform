@@ -205,4 +205,10 @@ export interface DepthCase extends V1Case {
   voice_key?: string;
   /** Authoring bookkeeping (compat with the V1 traps field if renamed later). */
   traps_authored?: TrapId[];
+  /** What the patient genuinely doesn't know (or can't recall) — the model must never invent it. */
+  unknown_to_patient?: string[];
+  /** What keeps the patient going — good practice should surface these. */
+  protective_factors?: string[];
+  /** Authored inconsistencies the patient holds (they repeat them; they don't resolve cleanly). */
+  contradictions?: Array<{ claim: string; truth: string; cause: string }>;
 }
