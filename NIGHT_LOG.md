@@ -3178,3 +3178,5 @@ variable-content-overflow instances (week "Week N" badge, lesson "NEXT" badge)
 were already fixed this slice (number-only + min-w). Remaining size-8/9/10
 badges hold single digits or icons (today chain-step number, psychopharm/admin
 icon tiles) — all fit, no overflow. No further code change needed.
+
+2026-08-14T19:11:18 T4 done — today dashboard polish: quick/deep chips now min-w-0 + truncate (no overflow on 320px). "One thing next" headline + primary card already present. Green: lint + tsc.

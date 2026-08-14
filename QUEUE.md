@@ -367,7 +367,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   giant fixture banner → subtle status pill; single-row composer)
 - [x] T3  Mobile navigation + header polish (bottom-tab-bar touch targets +
   active motion; contextual back headers)
-- [ ] T4  Today dashboard (mostly good — polish spacing + "one thing next")
+- [x] T4  Today dashboard (mostly good — polish spacing + "one thing next")
 - [ ] T5  Courses — clean vertical lesson rows (kill nested week cards)
 - [ ] T6  Practice hub — category grouping, reduce boxes
 - [ ] T7  Assessment UI — question prominent, tappable answers, compact progress
