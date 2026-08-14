@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { AlertTriangle, CheckCircle2, GitCompare } from "lucide-react";
 import type { LandmarkCase } from "@/lib/landmark/cases";
 import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
+import { ProgressLabel } from "@/components/mobile/progress-label";
 
 /**
  * Landmark reader — read the case, then answer the quiz (a check, not a test).
@@ -49,7 +50,9 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>{c.domain.replace("_", " ")} · case {idx + 1} of {cases.length}</span>
+        <span>
+          {c.domain.replace("_", " ")} · <ProgressLabel current={idx + 1} total={cases.length} unit="Case" />
+        </span>
       </div>
 
       {/* the case */}

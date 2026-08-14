@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Layers } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
+import { ProgressLabel } from "@/components/mobile/progress-label";
 import { newCardState, reviewCard, type CardRating, type CardState } from "@/lib/practice/rounds";
 import { ROUNDS_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -111,7 +112,7 @@ export function RoundsDeck({ cards = SEED_CARDS, states }: { cards?: SeedCard[];
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>Card {idx + 1} of {deck.length}</span>
+        <ProgressLabel current={idx + 1} total={deck.length} unit="Card" />
         <span>{deck.length} due · capped at 25</span>
       </div>
 

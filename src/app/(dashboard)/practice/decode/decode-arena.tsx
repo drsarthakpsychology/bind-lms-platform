@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Check, Eye, Lightbulb } from "lucide-react";
 import { scoreDecode, type IdiomEntry } from "@/lib/decode/idioms";
 import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
+import { ProgressLabel } from "@/components/mobile/progress-label";
 
 /**
  * Mode 1 — Decode. The phrase appears; the student picks EVERY plausible
@@ -68,7 +69,7 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>Phrase {idx + 1} of {entries.length}</span>
+        <ProgressLabel current={idx + 1} total={entries.length} unit="Phrase" />
         <span>Pick every meaning that could be true</span>
       </div>
 

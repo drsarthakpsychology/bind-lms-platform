@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { haptic } from "@/lib/haptics";
 import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
+import { ProgressLabel } from "@/components/mobile/progress-label";
 import { panelDistribution, scoreSctResponse, type SctItem, type SctResponse } from "@/lib/practice/sct";
 import { buildSctAttemptPayload } from "@/lib/practice/sct-attempt";
 import { JUDGMENT_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
@@ -118,7 +119,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
     <div className="space-y-4">
       {/* progress + timer */}
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>Judgment call {idx + 1} of {items.length}</span>
+        <ProgressLabel current={idx + 1} total={items.length} unit="Judgment call" />
         <span className="text-numeric">{mm}:{ss}</span>
       </div>
 
