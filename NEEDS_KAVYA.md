@@ -471,3 +471,11 @@ Math.random→crypto.randomUUID for turn IDs, secrets audit clean (no
 service-role/session-secret in bundles), agent-readiness discovery live
 (api-catalog, openapi.json, agent-card, oauth-protected-resource, auth.md,
 agent-skills index, markdown negotiation, robots.txt Content-Signals).
+
+## 🔌 AI provider offline in production (0.8, 2026-08-14)
+Root cause: `AI_ENABLED` is unset AND no provider keys (GROQ_API_KEY etc.) are in
+Vercel production env — so `isEnabled()`=false and the sim runs on deterministic
+fixtures (the "Offline mode" banner). To go live: `vercel env add AI_ENABLED true`
++ `vercel env add GROQ_API_KEY <key>` (Groq is the verified no-train primary; key
+is in .env.local). This is a production AI-enablement + data-policy decision —
+deferring to Kavya rather than flipping prod AI unilaterally.

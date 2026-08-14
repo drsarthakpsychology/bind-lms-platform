@@ -14,17 +14,17 @@ full-bleed + tab-bar hiding on the session route. These land Phases 1.16 + 3.x
 
 ## PHASE 0 — Correctness (all ship-blocking; do before any styling)
 
-- [ ] **0.1** Quiz options not shuffled — correct answer always first. P0. `[S?M]`
+- [x] **0.1** Quiz options not shuffled — correct answer always first. P0. `[S?M]`
   - Find quiz render path (grep for option mapping); determine if shuffle exists + when it runs.
   - Seeded deterministic shuffle (mulberry32/xorshift32, `hash(attempt_id + question_id)`), Fisher–Yates.
   - Persist `presented_order` per attempt-question; debrief renders from stored order.
   - Write `scripts/audit-item-bank.ts` → `docs/item-bank-audit.md` (correct-idx distribution, length-vs-distractor, <3 options, near-dupes). Do NOT fix content (Dr. Dave's call).
   - Files: quiz renderer (unknown — locate), `src/lib/quiz/`, `scripts/audit-item-bank.ts`.
-- [ ] **0.2** "Order steps" renders as multiple choice. P0. `[S?M]`
+- [x] **0.2** "Order steps" renders as multiple choice. P0. `[S?M]`
   - Inspect item schema + renderer type-switch. Report which case (data is MCQ vs data is ordering).
   - If ordering data: build tap-to-sequence (no drag-drop); full-width 48px rows; a11y.
   - Files: quiz renderer + item types.
-- [ ] **0.3** Internal schema values render to students (`order steps` pill). P1. `[S]`
+- [x] **0.3** Internal schema values render to students (`order steps` pill). P1. `[S]`
   - Recommend Option B (remove pill — instruction text already says it). Sweep for other snake_case/SCREAMING in JSX text.
 - [ ] **0.4** "Week 1" renders twice, overlapping. P0. `[M]`
   - Find week accordion header; badge gets number only, heading gets full label + status; badge `min-w` not fixed `w`.

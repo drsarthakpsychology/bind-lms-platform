@@ -3133,3 +3133,15 @@ pentest retest) + optional DNS-AID records — moved to QUEUE/NEEDS_KAVYA.
 2026-08-14T18:47:35 Queue exhausted — allowing normal Claude stop.
 
 2026-08-14T18:58:04 T1 done — mobile design system (7 primitives in src/components/mobile/: page, section, card, list-item, header, bottom-sheet, status-pill) on branch feat/mobile-design-system; commit 900ecef. Added page/section/card/bottom-sheet on existing ui/ primitives. Green: lint + tsc + 453 tests + build.
+
+2026-08-14T19:05 — Mobile rebuild Phase 0 start (90-task brief, on branch
+feat/mobile-design-system). 0.8 diagnosed: AI_ENABLED unset + no provider keys
+in Vercel prod → fixture mode (blocker → NEEDS_KAVYA). 0.1/0.2/0.3 shipped:
+quiz options now shuffled deterministically (src/lib/quiz/shuffle.ts: mulberry32
++ Fisher-Yates, seeded by item id — kills the "correct always first" tell),
+schema type pill removed (leaks "order steps"), isStandardCare label follows the
+correct index not position 0. Audit script scripts/audit-item-bank.ts →
+docs/item-bank-audit.md: 127 items, correct at idx 0-1 in 95%, correct option is
+LONGEST in 94% (length tell survives shuffle — content fix for Dr. Dave).
+Sim refactor (agent): chat-list/notes-sheet/hint-sheet extracted from
+session-view. Gate green: lint 0, tsc clean, 461 tests (+8 shuffle), build clean.

@@ -9,8 +9,10 @@ import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
 import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { SimulationHeader } from "@/components/sim/simulation-header";
-import { ChatMessage } from "@/components/sim/chat-message";
 import { ChatComposer } from "@/components/sim/chat-composer";
+import { ChatList } from "@/components/sim/chat-list";
+import { NotesSheet } from "@/components/sim/notes-sheet";
+import { HintSheet } from "@/components/sim/hint-sheet";
 import { DebriefView } from "./debrief-view";
 
 interface Turn {
@@ -272,20 +274,7 @@ export function SimSessionView({
       />
 
       {/* Transcript — owns the viewport. */}
-      <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
-        {turns.length === 0 ? (
-          <div className="py-10 text-center">
-            <p className="text-base font-semibold text-foreground">{patientName} is waiting.</p>
-            <p className="mx-auto mt-1.5 max-w-[36ch] text-small text-muted-foreground">
-              Introduce yourself and ask how they&apos;re doing. Silence is okay — they&apos;ll wait.
-            </p>
-          </div>
-        ) : null}
-        {turns.map((t) => (
-          <ChatMessage key={t.id} role={t.role} content={t.content} />
-        ))}
-        {typing ? <ChatMessage role="patient" typing /> : null}
-      </div>
+      <ChatList turns={turns} patientName={patientName} typing={typing} scrollRef={scrollRef} />
 
       {/* Error — a single quiet line, not a panel. */}
       {error ? (
@@ -344,7 +333,8 @@ export function SimSessionView({
             <button
               type="button"
               onClick={() => {
-                setHintOpen((o) => !o);
+                setMenuOpen(false);
+                setHintOpen(true);
                 hintUsedRef.current = true;
                 haptic("tap");
               }}
@@ -353,11 +343,6 @@ export function SimSessionView({
               <Lightbulb className="size-5 shrink-0 text-link" aria-hidden />
               <span className="flex-1">Need a hint?</span>
             </button>
-            {hintOpen ? (
-              <p className="rounded-lg bg-accent px-4 py-3 text-small text-foreground">
-                {DIFFICULTY_HINT[difficulty] ?? "Interview the patient."}
-              </p>
-            ) : null}
 
             {/* Notes — opens the MSE/hypotheses sheet. */}
             <button
@@ -388,44 +373,21 @@ export function SimSessionView({
       </Sheet>
 
       {/* Notes sheet — MSE scratchpad + hypotheses (a bottom sheet, not a sidebar). */}
-      <Sheet open={notesOpen} onOpenChange={setNotesOpen}>
-        <SheetContent side="bottom" className="max-h-[80dvh] overflow-y-auto pb-[max(1rem,env(safe-area-inset-bottom))]">
-          <SheetHeader>
-            <SheetTitle>Notes</SheetTitle>
-          </SheetHeader>
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="mse-scratchpad" className="text-eyebrow text-muted-foreground">
-                MSE scratchpad
-              </label>
-              <textarea
-                id="mse-scratchpad"
-                value={mseNotes}
-                onChange={(e) => setMseNotes(e.target.value)}
-                rows={6}
-                placeholder="Appearance, speech, mood, affect, thought…"
-                className="mt-1.5 w-full resize-none rounded-md border-2 border-border bg-card px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
-              />
-            </div>
-            <div>
-              <label htmlFor="hypotheses" className="text-eyebrow text-muted-foreground">
-                Hypotheses
-              </label>
-              <textarea
-                id="hypotheses"
-                value={hypotheses}
-                onChange={(e) => setHypotheses(e.target.value)}
-                rows={4}
-                placeholder="What do you think is going on?"
-                className="mt-1.5 w-full resize-none rounded-md border-2 border-border bg-card px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
-              />
-            </div>
-            <p className="text-caption text-muted-foreground">
-              This is your working record — the debrief doesn&apos;t read it. What you wrote is half the assessment.
-            </p>
-          </div>
-        </SheetContent>
-      </Sheet>
+      <NotesSheet
+        open={notesOpen}
+        onOpenChange={setNotesOpen}
+        mseNotes={mseNotes}
+        onMseNotesChange={setMseNotes}
+        hypotheses={hypotheses}
+        onHypothesesChange={setHypotheses}
+      />
+
+      {/* Hint — opt-in, flagged for the debrief. */}
+      <HintSheet
+        open={hintOpen}
+        onOpenChange={setHintOpen}
+        hint={DIFFICULTY_HINT[difficulty] ?? "Interview the patient."}
+      />
     </div>
   );
 }
