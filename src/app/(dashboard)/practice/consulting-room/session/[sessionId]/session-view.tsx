@@ -7,7 +7,8 @@ import { haptic } from "@/lib/haptics";
 import { VoiceInput } from "@/components/practice/voice-input";
 import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
 import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { useDraft } from "@/lib/hooks/use-draft";
 import { SimulationHeader } from "@/components/sim/simulation-header";
 import { ChatComposer } from "@/components/sim/chat-composer";
 import { ChatList } from "@/components/sim/chat-list";
@@ -206,7 +207,11 @@ export function SimSessionView({
       }, 40);
       haptic("tap");
     } catch {
+      // Same recovery contract as the !res.ok path: never lose the student's
+      // text, never leave a ghost message (T50).
       setError("Network error. Your message may not have reached the patient.");
+      setTurns((t) => t.filter((x) => x.id !== studentTurnId));
+      setInput(text);
     } finally {
       setBusy(false);
       textareaRef.current?.focus();
