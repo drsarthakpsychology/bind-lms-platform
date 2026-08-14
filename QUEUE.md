@@ -662,7 +662,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   patterns into reusable primitives without forcing unrelated experiences into
   the same component
 
-- [ ] T76  Mobile route-by-route UX review — manually inspect every mobile route
+- [x] T76  Mobile route-by-route UX review — manually inspect every mobile route
   in the application and document whether it follows the core principles:
   focused task, progressive disclosure, clear hierarchy, obvious next action,
   contextual secondary actions, correct spacing, safe-area behavior, and

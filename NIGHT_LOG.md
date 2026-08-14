@@ -3531,3 +3531,13 @@ Gate green at 0651657.
  T85 cognitive-load — heavy screens decomposed (decode 5→1, quiz 1-at-a-time,
     debrief steps, drug page collapsed, practice list rows).
 Gate green.
+
+2026-08-14T22:55 T76 done — route-by-route code review (every student route
+inspected): practice hub/consulting-room/session/debrief, courses list/detail/
+lesson/material, decode, mse ladder+trainer, osce, formulation, landmark,
+journal, wall, record, passport, psychopharm search/learn/drug/compare, library,
+tutor, today, dashboard, sim, settings, notifications. Verified: no sub-44px
+interactive targets in student surfaces, no horizontal-scroll tables (compare
+rebuilt one-field-at-a-time), standard gutters + safe-areas + empty states.
+Remaining 11 (T77-T84, T88-T90) are live-journey tests — blocked on a running
+environment (NEEDS_KAVYA). Gate green.
