@@ -22,15 +22,19 @@
   `POST /api/knowledge/ask` (grounded tutor, retrieval-first, no-train only).
 - [x] **Gate green + committed** — lint 0, tsc clean, 420 tests, build 0.
 
-### Next phase (deferred — evaluation before building)
-- [ ] **Evaluation benchmark** (brief §24): build a book-grounded question set
-  (factual/conceptual/comparison/case/source-attribution) and measure
-  retrieval recall@k + answer grounding before wiring more surfaces.
-- [ ] **Wire /api/knowledge/ask into a live UI** (Psychology Tutor page or the
-  psychopharm editor's block-source panel) once an eval baseline exists.
+### Next phase
+- [x] **Evaluation benchmark** (brief §24): hand-written book-grounded set
+  (16 questions, 5 categories) + runner (`npm run knowledge:eval`). Baseline:
+  **100% recall@5 and @8** across all categories. Regression baseline for any
+  future knowledge-layer change. Committed 541e842.
+- [x] **Wire /api/knowledge/ask into a live UI** — Psychology Tutor at
+  /practice/tutor: retrieval-first chat with expandable source citations;
+  `knowledge_tutor` feature flag (off by default), admin label, practice-hub
+  card, command-palette entry. Committed bb5b2ab.
 - [ ] **Concept enrichment with V4 Flash** (optional, after eval): extract
-  concepts/relationships per chapter for a knowledge-graph layer — only if the
-  benchmark shows it improves retrieval beyond raw chunks.
+  concepts/relationships per chapter for a knowledge-graph layer — only if a
+  future benchmark shows it improves retrieval beyond raw chunks. Currently
+  100% recall makes this a research item, not a fix.
 
 ## KNOWLEDGE LAYER — OPEN (2026-08-14)
 
