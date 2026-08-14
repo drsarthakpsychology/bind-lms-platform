@@ -34,7 +34,7 @@ export default function LearnPage() {
                 <Link
                   key={d.name}
                   href={`/tools/psychopharm/${d.name.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="rounded-full border-2 border-border px-3 py-1 text-sm hover:bg-accent"
+                  className="min-h-11 rounded-full border-2 border-border px-4 py-1.5 text-sm transition-colors hover:bg-accent active:translate-y-px"
                 >
                   {d.name}
                   {d.qualifier ? (

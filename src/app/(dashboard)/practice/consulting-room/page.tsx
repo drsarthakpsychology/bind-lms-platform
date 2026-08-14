@@ -95,15 +95,11 @@ export default async function ConsultingRoomPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <div className="mb-6 flex items-center justify-between gap-3">
-        <div>
+        <div className="min-w-0">
           <p className="text-eyebrow text-muted-foreground">Consulting Room</p>
           <h1 className="mt-1 text-h1">Choose your patient</h1>
-          <p className="mt-1 text-small text-muted-foreground">
-            Real presentations, real language, realistic help-seeking delay. Your debrief will
-            show you what you missed.
-          </p>
-          <p className="mt-1 text-small text-muted-foreground">
-            Everything here is a simulation. Sessions are private to you and your faculty.
+          <p className="mt-1 max-w-prose text-small text-muted-foreground">
+            Real presentations, real language. Your debrief shows you what you missed.
           </p>
         </div>
         <SimulationBadge />

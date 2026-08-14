@@ -118,7 +118,7 @@ export function TutorChat() {
   }
 
   return (
-    <div className="flex h-full min-h-[60vh] flex-col overflow-hidden rounded-lg border-2 border-border bg-card">
+    <div className="flex h-full min-h-[60vh] max-h-[75dvh] flex-col overflow-hidden rounded-lg border-2 border-border bg-card">
       {/* Header */}
       <div className="flex items-center gap-2 border-b-2 border-border px-4 py-3">
         <BookOpen className="size-4 text-link" aria-hidden />
@@ -218,7 +218,7 @@ export function TutorChat() {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about any psychology topic… (or press the mic)"
           aria-label="Ask the Psychology Tutor"
-          className="min-w-0 flex-1 rounded-md border-2 border-border bg-background px-3 py-2 text-sm outline-none focus:border-link"
+          className="min-h-11 min-w-0 flex-1 rounded-md border-2 border-border bg-background px-3 py-2 text-sm outline-none focus:border-link"
         />
         <VoiceAskButton
           onTranscribed={(text) => {
