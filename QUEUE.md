@@ -556,7 +556,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   feedback where possible, and reserve disruptive confirmations for meaningful
   destructive or irreversible actions
 
-- [ ] T53  Mobile input architecture — audit every text field, textarea,
+- [x] T53  Mobile input architecture — audit every text field, textarea,
   selector, checkbox, radio, date input, upload control, and interactive form
   element; make every input comfortable for touch and correctly handle the
   mobile keyboard
@@ -575,7 +575,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   from swiping, implement it carefully alongside explicit Next/Back controls;
   never make a required action dependent solely on an undiscoverable gesture
 
-- [ ] T57  Mobile sticky-action audit — identify flows where the primary action
+- [x] T57  Mobile sticky-action audit — identify flows where the primary action
   should remain accessible while scrolling; implement contextual sticky
   actions without covering content or competing with the bottom navigation
 

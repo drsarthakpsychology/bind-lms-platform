@@ -3449,3 +3449,12 @@ Gate green. Ticked T29.
      surfaces; the one confirm kept (finish-session, §3.6) protects against
      ending a 12-min interview. Admin dialogs → sheets done by worker.
 Both ticked. Gate green.
+
+2026-08-14T21:10 T53 + T57 done.
+ T53 input architecture — no sub-44px student inputs remain (MobileInput/
+     MobileTextarea wired journal/wall/session by worker; verified all student
+     surfaces).
+ T57 sticky-action — primary actions sticky in the long flows: lesson page,
+     debrief, psychopharm drug, sim composer (pinned). QuizCheck's Next sits
+     right at the answer point (fine).
+Both ticked. Gate green.
