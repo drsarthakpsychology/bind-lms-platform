@@ -314,3 +314,21 @@ provider key with fine-tuning support — set `DEEPSEEK_API_KEY` (DeepSeek V4 is
 the session's model family; fine-tune API not yet publicly documented, so an
 OpenAI-compatible key or a HuggingFace setup may be the practical path per the
 runbook) and I'll run the fine-tune + eval gate.
+
+---
+
+## 🔑 AI backend keys — current status (2026-08-14)
+
+**Everything works now with just `GROQ_API_KEY`** (your key, configured + verified
+live: llama-3.3-70b-versatile + whisper STT). Cloudflare R2 + Supabase are also
+already configured and verified — no setup needed.
+
+Optional upgrades, only if/when you want them:
+- **`CEREBRAS_API_KEY`** (free, no-train) — JSON fallback lane for redundancy.
+- **`ANTHROPIC_API_KEY`** (paid, no-train) — strongest synthesis lane.
+- **`NVIDIA_API_KEY`** (free) — CosyVoice 2 premium server TTS.
+- **`DEEPSEEK_API_KEY`** — fine-tune the base model (see docs/FINETUNING.md).
+
+To activate the live AI lanes end-to-end, set `AI_ENABLED=true` in `.env.local`
+(Groq is no-train, so student data is safe). Currently AI_ENABLED is unset
+(fixtures mode) — the voice tutor works on retrieval either way.
