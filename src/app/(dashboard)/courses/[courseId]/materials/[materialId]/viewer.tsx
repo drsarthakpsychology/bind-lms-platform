@@ -75,27 +75,23 @@ export function MaterialViewer({
     [fail],
   );
 
-  // Fetch a signed URL on mount (enrolment re-checked at request time).
+  // Probe access with HEAD, then load the proxied stream URL (the same
+  // delivery path as video). The old POST for a signed URL hit a route that
+  // doesn't exist and broke every preview; the stream route handles Range/206.
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
-        const res = await fetch("/api/media/materials", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ materialId }),
-        });
+        const res = await fetch(`/api/media/materials/${materialId}`, { method: "HEAD" });
         if (!res.ok) {
-          const body = await res.json().catch(() => null);
           // Raw storage error goes to logs, not the student.
           if (!cancelled) {
-            fail(body?.error ?? `HTTP ${res.status}`);
-            setError(body?.error ?? "Couldn't open this material.");
+            fail(`HTTP ${res.status}`);
+            setError("Couldn't open this material.");
           }
           return;
         }
-        const data = await res.json();
-        if (!cancelled) setSignedUrl(data.url);
+        if (!cancelled) setSignedUrl(`/api/media/materials/${materialId}`);
       } catch (e) {
         if (!cancelled) {
           fail(e);
