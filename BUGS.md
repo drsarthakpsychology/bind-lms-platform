@@ -32,6 +32,6 @@ Log bugs even when fixed minutes later.
 | 24 | HIGH | Practice page | 12 of 18 feature_flags were off → student saw 3 tools. All 18 on for cohort; VISIBILITY.md audit written | live db flags query | Fixed | 06f69f4 |
 | 25 | MED | Weak-spots e2e | drill Next selector matched the answer option (has-text ambiguity) → click disabled; added data-testid | e2e run | Fixed | 318acb5 |
 | 26 | LOW | e2e roleplay | peer login landing is /today not /dashboard|practice — wait widened | e2e run | Fixed | 318acb5 |
-| 27 | MED | Wall views | SECURITY DEFINER on *_visible views — recreated as SECURITY INVOKER (projection-only; RLS does the gating) | advisors run | Fixed | pending |
+| 27 | MED | Wall views | SECURITY DEFINER on *_visible views — recreated as SECURITY INVOKER (projection-only; RLS does the gating) | advisors run | Fixed | b030e07 |
 
 Open: 0.
