@@ -2919,3 +2919,16 @@ commits ahead; origin/main is an ancestor (clean fast-forward).
 2026-08-14T16:56:01 Queue exhausted — allowing normal Claude stop.
 2026-08-14T16:56:05 Queue exhausted — allowing normal Claude stop.
 2026-08-14T17:10:42 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — MAIN MERGE + LIVE PUSH (user: "Push to Live Website Main")
+
+User cleared the held merge. Verified gate (lint 0, tsc clean, 453 tests,
+build 82/82), committed the in-flight landing/waitlist batch, pushed main
+(c664002..2605ed4), and kicked `vercel --prod --yes`.
+
+- Commit 2605ed4: enquire→waitlist rename, hero hex-lattice, enquiries admin,
+  sitemap/layout/error refs, security-audit report append.
+- main now includes the full v3 practice layer + v5 depth + tech-stack
+  hardening. Nothing force-pushed; clean fast-forward from c664002.
+- Security audit (this session): 0 tables without RLS, 0 public buckets,
+  service_role server-only, cron endpoint CRON_SECRET-gated.
