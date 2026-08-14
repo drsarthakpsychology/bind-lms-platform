@@ -3172,3 +3172,9 @@ anonymous author's id never reaches the client payload (not merely unrendered).
 Admin moderation reads the base table (correct, for reports). Remaining 0.9
 items (video-per-week, debrief render, journal save, progress increment) need a
 live-device sweep, not code inspection — documented, not code-verifiable here.
+
+2026-08-14T19:20 — Phase 0 (0.7). Fixed-size-container audit: the two real
+variable-content-overflow instances (week "Week N" badge, lesson "NEXT" badge)
+were already fixed this slice (number-only + min-w). Remaining size-8/9/10
+badges hold single digits or icons (today chain-step number, psychopharm/admin
+icon tiles) — all fit, no overflow. No further code change needed.

@@ -35,7 +35,7 @@ full-bleed + tab-bar hiding on the session route. These land Phases 1.16 + 3.x
   - Investigate R2 object / signed-URL TTL / CORS / content-type / HLS manifest; report actual cause.
   - Human-readable title (strip `_Light` suffix); correlation ID per failure (logged server-side, shown as `Reference: 7K2M9`); loading vs error distinct; centre error card; optional "Download instead".
   - Files: material viewer + media routes.
-- [ ] **0.7** Audit fixed-size containers w/ variable content (w-8/w-10/size- on dynamic children). P1. `[M]`
+- [x] **0.7** Audit fixed-size containers w/ variable content (w-8/w-10/size- on dynamic children). P1. `[M]`
   - Grep fixed dims on dynamic content; convert `w-*`→`min-w-*` + `px-*`, add `min-w-0` on truncating flex siblings.
 - [ ] **0.8** Establish whether AI provider is connected in prod. P0. `[S/M]`
   - **Finding so far (code wins):** the "Offline mode" banner is a STATIC `fixtureMode` prop (passed from the page), not real-time provider health. AI router has Groq configured + verified live; `AI_ENABLED` gates the fixture fallback. Confirm prod env + whether a live provider is selected; report blocker.

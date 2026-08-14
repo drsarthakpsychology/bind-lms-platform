@@ -190,9 +190,9 @@ export default async function TodayPage() {
           <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
             <Zap className="size-4" aria-hidden />
           </span>
-          <span>
-            <span className="block text-small font-semibold">Something quick</span>
-            <span className="block text-caption text-muted-foreground">Two-Minute Clinic · 2 min</span>
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-small font-semibold">Something quick</span>
+            <span className="block truncate text-caption text-muted-foreground">Two-Minute Clinic · 2 min</span>
           </span>
         </Link>
         </Reveal>
@@ -204,9 +204,9 @@ export default async function TodayPage() {
           <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-link">
             <Mic2 className="size-4" aria-hidden />
           </span>
-          <span>
-            <span className="block text-small font-semibold">Something deep</span>
-            <span className="block text-caption text-muted-foreground">Consulting Room · 12 min</span>
+          <span className="min-w-0 flex-1">
+            <span className="block truncate text-small font-semibold">Something deep</span>
+            <span className="block truncate text-caption text-muted-foreground">Consulting Room · 12 min</span>
           </span>
         </Link>
         </Reveal>
