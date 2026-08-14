@@ -492,3 +492,10 @@ search debounce, admin status tokens.
 ONE HUMAN STEP REMAINS: review screenshots/mobile/*.png (6 screens at 390x844,
 captured by e2e/visual-pass.spec.ts) and give the final visual sign-off on
 T88/T90. Re-run `npx playwright test e2e/visual-pass.spec.ts` to refresh them.
+
+## 📱 Device QA (human step) — T151 video
+Physical-device video QA: play a lesson video on a real phone and confirm
+full-screen rotates to landscape (the player now requests a landscape lock
+with a graceful fallback), controls stay usable, and resume position holds.
+The Playwright matrix (e2e/mobile-matrix.spec.ts) is green; this is the
+human-thumb pass. One line: "T151 done" once verified on an iPhone + Android.
