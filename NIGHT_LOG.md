@@ -2061,3 +2061,28 @@ to BookOutline (and have chunker read it) or adopt the convention of putting
 appendices/references/indices in `chapters` (as stahl_pg_preview/fish did
 originally). Data-only finding; no files changed by this check.
 
+2026-08-14T06:28:40 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Knowledge layer: Fish's Clinical Psychopathology outline (book-structure reader, refined)
+
+Refined `scripts/knowledge/outlines/fish_psychopath.json` for Fish's Clinical
+Psychopathology, 3rd ed (137 PDF pages). Expanded to a full verified section
+tree — 232 sections across the 9 chapters + Appendix I + Appendix II, with the
+Index as a chapter. Corrected a few section titles (Ch6 "Disturbance of
+awareness of self-activity"; full Ch8 "Subjective motor disorders: the
+alienation of motor acts" and "Movement disorders associated with
+antipsychotic medication"; Ch9 "Anankastic (obsessive-compulsive) personality
+disorder"). Enumerated Appendix I (17 syndromes) and Appendix II (defence
+mechanisms + cognitive distortions) as chapters so the chunker attributes all
+content pages — resolves the cross-book QA finding that fish's appendices
+125-136 chunked as "Unattributed". Page ranges contiguous 5-136 (pageEnd
+INCLUSIVE, matches chunk.ts `p <= pageEnd`); page 137 (blank) is
+`unattributedPages`. All page numbers are the PDF page index (printed page =
+PDF page - 4). Index truncated in the source (page 136 A-C only). Gate
+verified green: lint 0, `tsc --noEmit` clean, 414 tests, `next build` exit 0.
+Committed only this outline + log; unrelated in-progress knowledge-layer files
+(ingest.ts, src/lib/knowledge/, other outlines, knowledge_layer.sql,
+package.json/package-lock.json) left for their owners.
+Shipped in commit 027de84.
