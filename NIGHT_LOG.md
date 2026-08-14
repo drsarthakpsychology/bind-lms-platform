@@ -3195,3 +3195,16 @@ Commit f3931ea. Decision logged: flat-for-both (desktop + mobile share one rende
 vs forked mobile/desktop composition — flat is cheaper to reverse and matches
 brief §14's literal spec; desktop at max-w-3xl reads as a clean outline, not a
 broken accordion.
+
+2026-08-14T19:30 T6 done — practice hub: replaced bordered <details> accordion +
+per-tool cardVariants cards with a quiet text toggle header + MobileListItem
+rows (icon tile, 2-line title, time·description·progress meta line, state chip).
+Dropped verb eyebrow / "Core tool" pill / time pill per card (core-vs-drill stays
+in the icon tile fill). One render path (mobile+desktop). Gate green: lint 0,
+tsc clean, 466 tests, build. Commit 093ff7e.
+
+NOTE: user sent a second-pass directive mid-slice — progressive disclosure /
+one-cognitive-task-at-a-time as the mobile product principle (shared data+logic,
+DIFFERENT composition; mobile-specific components like MobileAssessmentFlow are
+encouraged). This supersedes "make it responsive". Logged to memory + applies
+to T7 (assessment one-question flow), T8, and the simulation.
