@@ -43,7 +43,7 @@ export function Marquee() {
   );
 
   return (
-    <div className="marquee-paused relative overflow-hidden border-y-2 border-foreground bg-card">
+    <div className="marquee-paused relative overflow-hidden border-y-2 border-foreground bg-surface-1">
       <div
         className={reduce ? "flex overflow-x-auto" : "animate-marquee flex w-max"}
         style={reduce ? undefined : { animationPlayState: "running" }}

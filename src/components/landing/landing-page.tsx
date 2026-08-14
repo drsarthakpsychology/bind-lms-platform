@@ -358,9 +358,9 @@ function ClosingCta() {
 
 function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t-2 border-foreground bg-card">
+    <footer className="relative overflow-hidden border-t-2 border-foreground bg-surface-2">
       <ObservationRings className="pointer-events-none absolute -bottom-16 -right-10 w-44 rotate-12 text-foreground/[0.05]" />
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div className="rail relative flex flex-col gap-4 py-8 sm:flex-row sm:items-center sm:justify-between">
         <VibhaWordmark size={32} />
         <nav className="flex flex-wrap items-center gap-5 text-caption text-muted-foreground" aria-label="Footer">
           <Link
@@ -392,7 +392,7 @@ function Footer() {
 
 export function LandingPage() {
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <div className="flex min-h-dvh flex-col bg-surface-1">
       <LandingNav />
       <main className="flex-1">
         <Hero />
