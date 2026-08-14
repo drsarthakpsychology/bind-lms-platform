@@ -362,7 +362,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
 
 - [x] T1  Mobile design system (src/components/mobile/: page, section, card,
   list-item, header, bottom-sheet, status-pill) on existing ui/ primitives
-- [ ] T2  Patient simulation — full-screen chat rebuild (session-view →
+- [x] T2  Patient simulation — full-screen chat rebuild (session-view →
   SimulationHeader + ChatList + ChatComposer + NotesSheet + HintSheet; kill
   giant fixture banner → subtle status pill; single-row composer)
 - [ ] T3  Mobile navigation + header polish (bottom-tab-bar touch targets +
