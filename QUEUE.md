@@ -737,7 +737,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   performance, and visual polish are consistently implemented throughout the
   entire mobile web application
 
-  - [ ] T91  Product simplification reset — perform a full application-wide audit
+  - [x] T91  Product simplification reset — perform a full application-wide audit
   with one question: "Would a student or admin immediately understand this?"
   Remove, merge, rename, or hide anything that does not directly contribute to
   learning, practice, administration, content management, or required system

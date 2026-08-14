@@ -1,3 +1,38 @@
+## 2026-08-14 — T91 PRODUCT SIMPLIFICATION RESET: audit + priority-1 fixes (COMPLETE)
+
+Kavya: "COMPLETE TASK FROM T90 TO T190" + "DONT DO SAFEST TO REVERSE, DO BEST!"
+(both recorded — the second in memory, applied from here on). T90–T94 already
+ticked; this entry closes T91, the reset audit.
+
+**The audit** — a 64-agent fan-out (13 surface clusters) + skeptic re-verify of
+every priority-1 finding. Output: 165 findings — 51 P1 (46 confirmed, 4
+refuted by verification, 1 verified by hand), 71 P2, 43 P3. Deliverable:
+`docs/PRODUCT_SIMPLIFICATION_AUDIT.md` (evidence + fix plan per finding).
+
+**Recurring patterns:** jargon (corpus / calibration / aggregate / idempotent),
+internal architecture leaked (DB status enums, provider names, raw UUIDs,
+"no-train provider key"), dead features (disabled buttons, CLI commands in
+admin empty states, dead-end help links), duplication, over-explanation.
+
+**Executed (3 commits, all gate-green: lint 0 / tsc clean / 486 tests / build):**
+- `c7167cb` admin System: nav + page titles in plain language (Book licences,
+  Marking check, What's live, Cohort progress, Usage & limits, Record a case,
+  Study cards, Practice sessions); flags/pulse/infra/tools copy de-jargoned;
+  the "Cohort calendar" card is now a real form that downloads the .ics.
+- `282c8d0` admin Content+Review: CLI commands out of empty states; card
+  source/status enums → human labels; psychopharm editor plain status; dead
+  "Patient TTS" button removed; checkins/overview/triage/sim-review copy fixed.
+- `ae1935d` student: settings dead-end + mislabelled sections; dashboard
+  "Step 1/2/3" narration and "published to your account" removed; MSE domain
+  keys formatted ("Thought process"); OSCE/psychopharm internal machinery
+  hidden from students; library/tutor "corpus" + provider-key leaks removed;
+  debrief/journal errors in plain language; duplicate decode instruction removed.
+
+Verification caught 4 false positives (kept the correct state): "cohort" is a
+legitimate domain term; the session AI/Scripted pill is load-bearing; "Rights"
+is a licensing tracker (not permissions); Feature flags stays in nav (renamed,
+not hidden). T91 ticked. Next unchecked: T95.
+
 ## 2026-08-14 — FULL DESIGN QA PASS, SHIPPED + LIVE-VERIFIED (user request)
 
 User reported the landing QA list was still showing live and asked for an
@@ -3775,3 +3810,67 @@ working tree, not git). Full commit `1d6d883` matches the pushed HEAD.
 2026-08-14T22:37:49 T92+T93 done — established Caveman UI / plain-language rule (fewest words, simple labels, no jargon, explain-only-when-needed) as rule 10 in .claude/skills/vibha-design/SKILL.md.
 
 2026-08-14T22:39:22 T94 done — student/admin separation audited and architecturally enforced: (dashboard)/admin/layout.tsx server-side role guard (non-admin → /dashboard), nav-config STUDENT_ITEMS vs ADMIN_ITEMS, AppShell role/mode gate, content-level hasAdmin/role conditionals (notifications page correctly gates /admin/wall-reports). No ungated cross-role links found.
+2026-08-14T22:39:41 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:46:37 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:46:52 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:47:05 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:47:09 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:47:40 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:47:54 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:48:48 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:48:50 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:49:37 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:49:46 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:49:54 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:50:02 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:50:11 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:50:19 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:50:22 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:50:26 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:50:28 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:50:40 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:50:43 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:50:48 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:51:02 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:51:10 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:51:11 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:51:14 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:51:33 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:51:36 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:51:45 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:51:55 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:00 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:02 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:07 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:09 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:15 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:15 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:22 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:22 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:22 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:24 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:27 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:28 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:36 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:38 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:39 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:49 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:51 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:55 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:52:58 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:07 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:07 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:13 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:16 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:28 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:29 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:31 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:37 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:39 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:45 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:46 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:50 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:50 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:53:52 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:54:08 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:54:09 STOP_CLAUDE present — allowing stop.
