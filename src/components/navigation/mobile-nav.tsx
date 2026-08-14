@@ -35,13 +35,13 @@ export function MobileNav({
         <button
           type="button"
           aria-label="Open navigation"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-card text-foreground transition-transform hover:bg-accent active:translate-y-0.5"
+          className="inline-flex size-11 items-center justify-center rounded-md border-2 border-border bg-card text-foreground transition-transform hover:bg-accent active:translate-y-0.5"
         >
           <Menu className="size-4" aria-hidden />
         </button>
       </SheetTrigger>
       <SheetContent side="left" className="w-72 p-0">
-        <SheetHeader className="border-b-2 border-border px-4 py-3">
+        <SheetHeader className="border-b-2 border-border px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
           <SheetTitle className="flex items-center gap-2">
             <span className="flex size-6 items-center justify-center rounded-sm bg-primary text-xs font-black text-primary-foreground">
               {BRAND.shortName.charAt(0)}
@@ -56,7 +56,9 @@ export function MobileNav({
           />
           {viewModeSwitch ? <div className="mt-4">{viewModeSwitch}</div> : null}
         </div>
-        <div className="flex items-center justify-between border-t-2 border-border p-3">
+        <div
+          className="flex items-center justify-between border-t-2 border-border px-3 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
+        >
           <ThemeToggle />
           <form action={logout}>
             <Button type="submit" variant="secondary" size="icon-sm" aria-label="Log out">
