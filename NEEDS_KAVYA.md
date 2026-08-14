@@ -353,3 +353,17 @@ free additions close the gap:
 
 Until those land, the app works (Groq covers ~25-28 DAU); the tutor + patient
 sim + voice all function today.
+
+---
+
+## 🔑 Cerebras alternative + OpenCode (2026-08-14, user request)
+
+- **`SAMBANOVA_API_KEY`** — cloud.sambanova.ai (free, no card, no-train). The
+  best Cerebras alternative for the student-facing fallback lane (verified:
+  Meta-Llama-3.3-70B-Instruct, DeepSeek-V3.x, gpt-oss-120b, gemma-4-31B —
+  OpenAI-compatible). WHY: doubles the no-train student capacity beyond Groq's
+  RPD ceiling. ENV: `SAMBANOVA_API_KEY`. The router already has it as the #3
+  no-train lane.
+- **`OPENCODE_API_KEY`** — opencode.ai/zen (OpenAI-compatible gateway; OpenAI/
+  Anthropic/Qwen via one key). WHY: another no-train fallback lane per your
+  request. ENV: `OPENCODE_API_KEY`. Registered as a fallback after OpenRouter.

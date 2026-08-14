@@ -24,9 +24,17 @@
   grounded tutor answers cached by content hash, trims ~10%+ of calls.
   Committed 776f2ab.
 
+- [x] **SambaNova (Cerebras alternative)** — registered as the #3 no-train
+  student lane (Groq → Cerebras → SambaNova), verified catalog (Llama-3.3-70B,
+  DeepSeek-V3.x, gpt-oss-120b, gemma-4-31B), OpenAI-compatible. Committed
+  901e052.
+- [x] **OpenCode Zen gateway** — registered as a no-train fallback (OpenAI/
+  Anthropic/Qwen via one key, opencode.ai/zen/v1). Committed 901e052.
+
 ### Keys live now (gitignored .env.local): GROQ + DEEPSEEK + OPENROUTER
-### Capacity keys still wanted (NEEDS_KAVYA): CEREBRAS (free) — the #2 no-train
-### student-facing lane that would double capacity toward the 45-DAU target.
+### Capacity keys still wanted (NEEDS_KAVYA): SAMBANOVA (free, the Cerebras
+### alternative the user asked for) + CEREBRAS (free) — either doubles the
+### no-train student capacity toward the 45-DAU target.
 
 ## KNOWLEDGE LAYER — Groq LIVE + VOICE TUTOR (2026-08-14)
 
