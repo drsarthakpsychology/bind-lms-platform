@@ -810,7 +810,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   practice scenarios, patient cases, and other editable programme content;
   do not create a different complicated editor for every content type
 
-- [ ] T105  Card management rebuild — redesign Card Review so the admin can
+- [x] T105  Card management rebuild — redesign Card Review so the admin can
   immediately understand what cards exist and can add, edit, duplicate,
   reorder, preview, archive, and delete cards; remove technical fields and
   internal metrics that do not help the admin perform these actions
