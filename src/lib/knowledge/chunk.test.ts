@@ -118,4 +118,29 @@ describe("chunkBook", () => {
     expect(chunks.length).toBeGreaterThan(0);
     expect(chunks[0].chapter).toBe("Unattributed");
   });
+
+  it("attributes back matter via the backMatter field (appendices, index)", () => {
+    const cache = makeCache([
+      [7, "Appendix syndromes. ".repeat(30)],
+      [8, "Index entries. ".repeat(30)],
+    ]);
+    const outline: BookOutline = {
+      id: "test",
+      confidence: "high",
+      issues: [],
+      chapters: [{ title: "Chapter 1", pageStart: 1, pageEnd: 6, sections: [] }],
+      backMatter: [
+        { title: "Appendix A", pageStart: 7, pageEnd: 7, sections: [{ title: "Syndromes", page: 7 }] },
+        { title: "Index", pageStart: 8, pageEnd: 8, sections: [] },
+      ],
+      unattributedPages: [],
+    };
+    const chunks = chunkBook("test", cache, outline);
+    const appendix = chunks.filter((c) => c.chapter === "Appendix A");
+    const index = chunks.filter((c) => c.chapter === "Index");
+    expect(appendix.length).toBeGreaterThan(0);
+    expect(appendix[0].section).toBe("Syndromes");
+    expect(index.length).toBeGreaterThan(0);
+    expect(chunks.some((c) => c.chapter === "Unattributed")).toBe(false);
+  });
 });

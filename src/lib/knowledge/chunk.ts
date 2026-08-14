@@ -21,7 +21,7 @@
  * Page numbers are PDF indexes (the <<<PAGE n>>> marker value), never printed
  * page numbers — the outline contract guarantees this.
  */
-import type { BookOutline } from "./outline";
+import type { BookOutline, OutlineChapter } from "./outline";
 
 export interface Page {
   index: number; // 1-based PDF page index
@@ -51,11 +51,19 @@ export function splitPages(cacheText: string): Page[] {
   return pages.sort((a, b) => a.index - b.index);
 }
 
+/** Flatten front matter + chapters + back matter into one reading-order list. */
+export function allOutlineChapters(outline: BookOutline): OutlineChapter[] {
+  return [
+    ...(outline.frontMatter ?? []),
+    ...outline.chapters,
+    ...(outline.backMatter ?? []),
+  ];
+}
+
 /** Build a lookup of page index → chapter title from the outline. */
 export function pageToChapter(outline: BookOutline): Map<number, string> {
   const map = new Map<number, string>();
-  const all = [...(outline.frontMatter ?? []), ...outline.chapters];
-  for (const ch of all) {
+  for (const ch of allOutlineChapters(outline)) {
     for (let p = ch.pageStart; p <= ch.pageEnd; p++) map.set(p, ch.title);
   }
   return map;
@@ -64,8 +72,7 @@ export function pageToChapter(outline: BookOutline): Map<number, string> {
 /** Build a lookup of page index → section title from the outline. */
 export function pageToSection(outline: BookOutline): Map<number, string> {
   const map = new Map<number, string>();
-  const all = [...(outline.frontMatter ?? []), ...outline.chapters];
-  for (const ch of all) {
+  for (const ch of allOutlineChapters(outline)) {
     for (const s of ch.sections ?? []) map.set(s.page, s.title);
   }
   return map;
@@ -158,7 +165,9 @@ export function chunkBook(
     if (section === "Unattributed") {
       // Fall back to the last known section within the same chapter (sections
       // persist until the next section marker).
-      const ch = outline.chapters.find((c) => p.index >= c.pageStart && p.index <= c.pageEnd);
+      const ch = allOutlineChapters(outline).find(
+        (c) => p.index >= c.pageStart && p.index <= c.pageEnd,
+      );
       if (ch) {
         const prior = (ch.sections ?? []).filter((s) => s.page <= p.index).at(-1);
         if (prior) section = prior.title;

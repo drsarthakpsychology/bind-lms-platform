@@ -18,7 +18,7 @@ export interface OutlineChapter {
   title: string;
   /** first PDF page of the chapter (1-based) */
   pageStart: number;
-  /** last PDF page of the chapter (1-based, exclusive — next chapter's start) */
+  /** last PDF page of the chapter (1-based, inclusive — the chunker iterates p <= pageEnd) */
   pageEnd: number;
   /** key subsections, in order */
   sections: OutlineSection[];
@@ -32,9 +32,11 @@ export interface BookOutline {
   issues: string[];
   /** true if the extraction appears to be a partial preview/duplicate */
   isPreview?: boolean;
-  /** chapters in reading order (front matter allowed, marked skip) */
+  /** front matter in reading order (cover, title, copyright, contents, intro…) */
   frontMatter?: OutlineChapter[];
   chapters: OutlineChapter[];
+  /** back matter in reading order (appendices, references, indices, glossaries…) */
+  backMatter?: OutlineChapter[];
   /** any pages that could not be attributed to a chapter (gaps) */
   unattributedPages: number[];
 }
