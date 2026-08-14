@@ -13,7 +13,7 @@ Ran the Designer-Who-Codes workflow on the shipped public surfaces (landing +
   peach dot marker (same editorial language, no duplication).
 - Before/after: rev-enquire-light.png (numerals) → rev-enquire-after.png (dots).
 
-Gate green: lint 0, tsc clean, 449 tests, build 82/82.
+Gate green: lint 0, tsc clean, 449 tests, build 82/82. Commit: 7fbda8c.
 
 ## 2026-08-14 — ENQUIRE ELEVATED: the conversion surface joins the landing's world
 
@@ -2623,3 +2623,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T14:11:36 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:15:55 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:17:22 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:22:27 Queue exhausted — allowing normal Claude stop.
