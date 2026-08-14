@@ -1904,3 +1904,12 @@ Edition note: book is Seventh Edition (2011), "20th Year Edition" is the
 anniversary label (first edition 1990). Committed only this outline + log;
 unrelated in-progress knowledge-layer files (ingest.ts, src/lib/knowledge/,
 icd11/kaplan_sadock/stahl_pg_older outlines) left untracked for their owners.
+Gate verified green on the full tree after commit 503a961: lint 0,
+`tsc --noEmit` clean, 407 tests, `next build` exit 0. Decision (cheaper to
+reverse): did NOT sweep parallel agents' untracked knowledge-layer files
+(ingest.ts, src/lib/knowledge/, cache/, other outlines, knowledge_layer.sql,
+package.json/package-lock.json) into this commit — they are in-flight work
+owned by other agents in this session and will land on their own commits.
+2026-08-14T06:18:47 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:18:49 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:18:56 Queue exhausted — allowing normal Claude stop.
