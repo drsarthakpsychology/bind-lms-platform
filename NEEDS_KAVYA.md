@@ -471,3 +471,5 @@ Math.random→crypto.randomUUID for turn IDs, secrets audit clean (no
 service-role/session-secret in bundles), agent-readiness discovery live
 (api-catalog, openapi.json, agent-card, oauth-protected-resource, auth.md,
 agent-skills index, markdown negotiation, robots.txt Content-Signals).
+
+- **NIGHTWORK HOOK DESYNC** — `keep-going.sh` + `nightwork-keepgoing.sh` read the MAIN repo's `QUEUE.md` (T19 still `- [ ]`), but this worktree is hard-isolated (git and file edits to the main checkout are blocked). Merge `worktree-psychopharm-book-enrichment` → `main` (brings `docs/MOBILE_INTERACTION_FLOW.md` + the `- [x] T19` tick) or drop `STOP_CLAUDE` in the main repo to unblock the loop.
