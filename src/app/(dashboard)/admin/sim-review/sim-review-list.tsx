@@ -150,7 +150,7 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
                         />
                       </label>
                       <span className="text-caption text-muted-foreground">
-                        A corrected score is injected into future scoring as a lesson.
+                        Your correction also guides future scoring.
                       </span>
                     </div>
                     {error ? <p className="mt-2 text-caption font-medium text-destructive">{error}</p> : null}

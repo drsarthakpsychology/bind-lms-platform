@@ -16,7 +16,7 @@ export function TriageView({
   needs: Array<{ id: string; sessionId: string; overall: number; priority: number; premature: number }>;
   autoReleased: number;
   /** quiz items answered correctly by < 50% of attempts (low-confidence areas). */
-  weakQuizItems?: Array<{ itemId: string; correctPct: number; attempts: number }>;
+  weakQuizItems?: Array<{ itemId: string; prompt?: string; correctPct: number; attempts: number }>;
 }) {
   return (
     <div className="space-y-4">
@@ -29,9 +29,9 @@ export function TriageView({
           </p>
           <ul className="mt-2 space-y-1">
             {weakQuizItems.map((q) => (
-              <li key={q.itemId} className="flex items-center gap-2 text-caption text-status-pending-fg">
-                <span className="font-medium">{q.itemId}</span>
-                <span className="text-muted-foreground">· {q.correctPct}% correct across {q.attempts} attempts</span>
+              <li key={q.itemId} className="flex items-start justify-between gap-2 text-caption text-status-pending-fg">
+                <span className="font-medium line-clamp-2">{q.prompt ?? q.itemId}</span>
+                <span className="shrink-0 text-muted-foreground">{q.correctPct}% correct · {q.attempts} attempts</span>
               </li>
             ))}
           </ul>

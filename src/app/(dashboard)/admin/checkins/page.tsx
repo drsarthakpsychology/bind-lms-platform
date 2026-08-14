@@ -39,7 +39,7 @@ export default async function AdminCheckinsPage() {
         <div className="mt-6 rounded-md border-2 border-border bg-card p-6 text-center">
           <p className="text-base font-medium">No check-ins yet</p>
           <p className="mt-1 text-small text-muted-foreground">
-            Students check in weekly at /record. Aggregates land here.
+            Students check in once a week. Trends appear here after the first check-in.
           </p>
         </div>
       ) : (
@@ -94,7 +94,7 @@ export default async function AdminCheckinsPage() {
           </div>
 
           <p className="mt-3 text-caption text-muted-foreground">
-            The aggregate view is the only read path — a privacy test enforces no identifier leaks.
+            Trends only — no individual student data is shown here.
           </p>
         </>
       )}

@@ -21,6 +21,19 @@ const STATUS_STYLE: Record<CardRow["status"], string> = {
   archived: "bg-muted text-muted-foreground line-through",
 };
 
+const STATUS_LABELS: Record<CardRow["status"], string> = {
+  draft: "Draft",
+  in_review: "In review",
+  published: "Published",
+  archived: "Archived",
+};
+
+const SOURCE_LABELS: Record<CardRow["source"], string> = {
+  ai_generated: "AI-drafted",
+  faculty: "Faculty",
+  manual: "Manual",
+};
+
 /** Faculty review of the auto-drafted Rounds cards. */
 export function CardsAdmin({ cards }: { cards: CardRow[] }) {
   const [rows, setRows] = React.useState<CardRow[]>(cards);
@@ -79,8 +92,7 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
   if (rows.length === 0) {
     return (
       <div className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center text-small text-muted-foreground">
-        No cards yet. Run <code className="rounded bg-muted px-1.5 py-0.5">npm run draft-cards</code> to auto-draft
-        flashcards from published lesson transcripts.
+        No study cards yet. They appear here once the programme auto-drafts them from lesson transcripts.
       </div>
     );
   }
@@ -112,10 +124,10 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
             <>
               <div className="flex items-center justify-between gap-2">
                 <span className={cn("rounded-full px-2 py-0.5 text-caption font-medium", STATUS_STYLE[row.status])}>
-                  {row.status}
+                  {STATUS_LABELS[row.status]}
                 </span>
                 <span className="text-caption text-muted-foreground">
-                  {row.source} · {new Date(row.createdAt).toLocaleDateString()}
+                  {SOURCE_LABELS[row.source]} · {new Date(row.createdAt).toLocaleDateString()}
                 </span>
               </div>
               <p className="mt-2 text-small font-medium">{row.front}</p>

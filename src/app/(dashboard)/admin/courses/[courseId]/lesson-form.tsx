@@ -205,8 +205,7 @@ export function LessonForm({ courseId, nextOrderIndex }: { courseId: string; nex
               ))}
             </div>
             <p className="mt-1.5 text-caption text-muted-foreground">
-              Students can submit using any of the selected formats. Text and audio upload are available
-              today; the other types are reserved and will be enforced as they ship.
+              Students can submit using any of the selected formats.
             </p>
           </fieldset>
         </div>

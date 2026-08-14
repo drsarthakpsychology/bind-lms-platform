@@ -5,6 +5,14 @@ import { drugFromSlug, drugDetail } from "@/lib/psychopharm/store";
 import { EditorPane } from "@/components/psychopharm/editor-pane";
 import type { MedicationDocument, MedicationDocumentRow } from "@/lib/psychopharm/document";
 
+/** Plain labels for the document status enum (draft/in_review/verified/published). */
+const STATUS_LABELS: Record<string, string> = {
+  draft: "Draft",
+  in_review: "In review",
+  verified: "Verified",
+  published: "Published",
+};
+
 /**
  * The two-pane medication editor (KMS). Left: live student preview. Right:
  * the editable section tree + source panel. One document, two feeds — the
@@ -43,7 +51,7 @@ export default async function DrugEditorPage({ params }: { params: Promise<{ dru
           </Link>
           <h1 className="text-h1 text-lg">{generic}</h1>
           <span className="text-caption text-muted-foreground">
-            {doc ? `v${doc.version} · ${doc.status}` : "no document yet"}
+            {doc ? STATUS_LABELS[doc.status] ?? doc.status : "No document yet"}
           </span>
         </div>
       </div>

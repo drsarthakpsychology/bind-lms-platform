@@ -73,7 +73,7 @@ export default async function AdminOverviewPage() {
           <Link href="/admin/infra" className="flex items-center gap-3 rounded-md border-2 border-status-alert-fg/40 bg-status-alert-bg p-3">
             <Database className="size-4 shrink-0 text-status-alert-fg" aria-hidden />
             <span className="text-small font-medium text-status-alert-fg">
-              Free-tier database at {dbPct}% of 500 MB — check infrastructure headroom.
+              Storage at {dbPct}% of the free limit — check Usage &amp; limits.
             </span>
           </Link>
         </Reveal>

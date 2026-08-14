@@ -66,7 +66,7 @@ export function IdiomsAdmin({ idioms }: { idioms: IdiomRow[] }) {
   if (rows.length === 0) {
     return (
       <div className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center text-small text-muted-foreground">
-        No idioms in the bank. Re-run <code className="rounded bg-muted px-1.5 py-0.5">npm run seed-idioms</code>.
+        No phrases yet. They appear here once the programme adds them.
       </div>
     );
   }

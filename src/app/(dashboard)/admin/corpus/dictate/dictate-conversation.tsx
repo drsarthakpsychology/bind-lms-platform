@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Mic, Volume2, Square } from "lucide-react";
+import { Mic, Square } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { serverTranscribe } from "@/lib/voice/stt";
 
@@ -216,15 +216,6 @@ export function DictateConversation() {
               {recording ? "Recording… release to transcribe" : "Tap to record, or type below"}
             </span>
 
-            <button
-              type="button"
-              onClick={() => {}}
-              disabled={true}
-              aria-label="Patient TTS (not needed for dictation)"
-              className="flex size-12 items-center justify-center rounded-full border-2 border-border bg-secondary/40 text-muted-foreground/50 cursor-not-allowed"
-            >
-              <Volume2 className="size-5" aria-hidden />
-            </button>
           </div>
 
           {/* Text input fallback */}
