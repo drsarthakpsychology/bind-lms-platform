@@ -1123,7 +1123,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   changes, run representative patient simulations and compare conversational
   quality before accepting the change
 
-- [ ] T173  Patient prompt/version management — version patient behavioural
+- [x] T173  Patient prompt/version management — version patient behavioural
   instructions and scenario configurations so changes can be tracked,
   compared, rolled back, and evaluated without losing previous behaviour
 
