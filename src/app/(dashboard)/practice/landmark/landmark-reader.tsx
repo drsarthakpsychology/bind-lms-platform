@@ -2,28 +2,22 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
-import { cn } from "@/lib/utils";
-import { AlertTriangle, CheckCircle2, GitCompare } from "lucide-react";
+import { AlertTriangle, GitCompare } from "lucide-react";
 import type { LandmarkCase } from "@/lib/landmark/cases";
+import { QuizCheck } from "@/components/practice/quiz-check";
 
 /**
  * Landmark reader — read the case, then answer the quiz (a check, not a test).
  * Ethics-failure cases lead with the failure framing.
+ *
+ * The check is one question at a time via the shared QuizCheck flow (T22) —
+ * not a wall of every question and option on one scroll.
  */
 export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
   const [idx, setIdx] = React.useState(0);
-  const [answers, setAnswers] = React.useState<Record<number, number>>({});
-  const [showAnswers, setShowAnswers] = React.useState(false);
 
   const c = cases[idx];
   if (!c) return null;
-
-  function pick(qi: number, oi: number) {
-    haptic("tap");
-    setAnswers((a) => ({ ...a, [qi]: oi }));
-  }
-
-  const correctCount = c.quiz.filter((q, i) => answers[i] === q.correct).length;
 
   return (
     <div className="space-y-4">
@@ -67,60 +61,28 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
         ) : null}
       </div>
 
-      {/* quiz */}
+      {/* quiz — one question at a time (keyed per case so state resets). */}
       <div className="rounded-md border-2 border-border bg-card p-5">
         <h3 className="text-base font-semibold">Check yourself</h3>
-        <div className="mt-3 space-y-4">
-          {c.quiz.map((q, qi) => (
-            <div key={qi}>
-              <p className="text-small font-medium">{q.question}</p>
-              <div className="mt-2 space-y-1.5">
-                {q.options.map((o, oi) => {
-                  const picked = answers[qi] === oi;
-                  const correct = q.correct === oi;
-                  const show = showAnswers;
-                  return (
-                    <button
-                      key={oi}
-                      type="button"
-                      onClick={() => pick(qi, oi)}
-                      disabled={show}
-                      className={cn(
-                        "flex w-full items-center gap-2 rounded-md border-2 border-border px-3 py-2 text-left text-small transition-transform active:translate-y-px disabled:opacity-70",
-                        picked && !show && "bg-primary text-primary-foreground",
-                        show && correct && "bg-green-100 text-green-800",
-                        show && picked && !correct && "bg-red-100 text-red-700",
-                      )}
-                    >
-                      {o}
-                      {show && correct ? <CheckCircle2 className="ml-auto size-3.5 shrink-0" aria-hidden /> : null}
-                    </button>
-                  );
-                })}
-              </div>
-              {showAnswers ? <p className="mt-1 text-caption text-muted-foreground">{q.rationale}</p> : null}
-            </div>
-          ))}
+        <div className="mt-3">
+          <QuizCheck
+            key={idx}
+            items={c.quiz.map((q, qi) => ({
+              id: `landmark-${idx}-${qi}`,
+              type: "best_response" as const,
+              prompt: q.question,
+              options: q.options,
+              correct: q.correct,
+              rationale: q.rationale,
+              source: c.title,
+            }))}
+          />
         </div>
-
-        {!showAnswers ? (
-          <button
-            type="button"
-            onClick={() => { setShowAnswers(true); haptic("success"); }}
-            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
-          >
-            Reveal answers & rationale
-          </button>
-        ) : (
-          <p className="mt-3 text-small text-muted-foreground" aria-live="polite">
-            {correctCount} / {c.quiz.length} correct
-          </p>
-        )}
       </div>
 
       <button
         type="button"
-        onClick={() => { setIdx((i) => Math.min(cases.length - 1, i + 1)); setAnswers({}); setShowAnswers(false); haptic("tap"); }}
+        onClick={() => { setIdx((i) => Math.min(cases.length - 1, i + 1)); haptic("tap"); }}
         disabled={idx + 1 >= cases.length}
         className="w-full rounded-md border-2 border-border bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
       >
