@@ -858,7 +858,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   scoring behaviour based on unvalidated data; establish a reviewable process
   for evaluating calibration changes before they affect student scoring
 
-- [ ] T115  AI patient architecture rebuild — replace the current assumption
+- [x] T115  AI patient architecture rebuild — replace the current assumption
   that the patient is fundamentally a scripted conversation; the existing
   patient script/story should become the behavioural source material and
   constraints that guide an AI patient rather than being presented as the
@@ -870,7 +870,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   disclosure patterns, sensitivities, contradictions, uncertainty, and other
   case-specific behavioural characteristics supported by the case data
 
-- [ ] T117  AI patient response engine — connect the configured AI provider to
+- [x] T117  AI patient response engine — connect the configured AI provider to
   the patient simulation so the model generates responses dynamically while
   respecting the case's facts, personality, behavioural rules, disclosure
   depth, story, contradictions, and scenario boundaries
@@ -881,17 +881,17 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   react emotionally, how it should respond to different interviewing styles,
   and how it should maintain consistency throughout the session
 
-- [ ] T119  Patient state persistence — maintain structured session state across
+- [x] T119  Patient state persistence — maintain structured session state across
   turns so the AI patient remembers what the student has asked, what has
   already been disclosed, what has not been disclosed, emotional changes,
   contradictions, and important conversation context
 
-- [ ] T120  Patient realism layer — prevent robotic repetition, generic AI
+- [x] T120  Patient realism layer — prevent robotic repetition, generic AI
   responses, unnatural verbosity, immediate disclosure of every case detail,
   and repetitive phrasing; responses should feel like a person responding in
   a conversation while remaining grounded in the case
 
-- [ ] T121  Patient response constraints — ensure the AI does not invent major
+- [x] T121  Patient response constraints — ensure the AI does not invent major
   clinical facts that contradict the configured case; distinguish between
   deliberate patient uncertainty/ambiguity and accidental model fabrication
 
@@ -906,7 +906,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   maintains case consistency, answers naturally, does not dump the entire case
   immediately, and responds appropriately to different student approaches
 
-- [ ] T124  Patient simulation fallback — retain a reliable fallback path if an
+- [x] T124  Patient simulation fallback — retain a reliable fallback path if an
   AI provider fails, times out, reaches a limit, or becomes unavailable; the
   UI should clearly distinguish a real AI session from a scripted/offline
   fallback without making the normal experience feel broken
