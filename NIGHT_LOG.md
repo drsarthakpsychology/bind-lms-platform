@@ -3310,3 +3310,48 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   role-play room, Funnel drill, and CFI drill — so the software keyboard offers
   "Send" instead of "Return". Committed `7ed56be`. Gate: lint 0, tsc clean,
   453 tests, build green.
+
+## 2026-08-14 — T51-T90 mobile-UX: recon + slice-1 implementation + matrix spec
+
+Second parallel session (this worktree) working the T51-T90 range while the
+main session swept T18-T75. Three contributions, all on this branch:
+
+### 1. Recon audit (6-cluster workflow, 43 verified findings)
+Ran a 7-agent workflow (503k tokens, 0 errors) auditing all 6 route clusters
+(64 routes) against the T51-T90 themes. Found 43 code-verifiable violations
+across psychopharm (10), community/wall (10), practice drills (8), dashboard
+(5), consulting-room (5), public routes (6). High-severity: ethics Done-button
+inverted logic, broken Compare entry (empty `b=` param), unusable session notes
+rail at 380px, cramped judgment 5-point scale, dense psychopharm drug page.
+
+### 2. Slice-1 implementation (a5b24b3, 39 files, 740+/468-)
+Four parallel implementation agents (disjoint file sets) applied the findings:
+- T77 ethics: `disabled={!done}` fixes the stranded-on-final-dilemma bug
+- T53 judgment: 5-point scale stacks on mobile (44px tap targets)
+- T59 consulting-room: notes rail → bottom sheet at <lg; debrief cards
+  flattened; OSCE/MSE summary grids stack
+- T86/T58: decode drills gated behind a segmented control (decode-modes.tsx,
+  per-mode state preserved via `hidden`); psychopharm drug page gets a
+  loading skeleton + ObserverNotes accordion on mobile; 5P factor cards no
+  longer hard-truncated
+- T87/T58/T50: Compare entry fixed (`?a=${drug}`, no empty `b`); tutor header
+  wraps at 380px; wall/library mutations surface errors instead of swallowing
+- T61/T51/T64/T66: shared EmptyState everywhere; min-h-dvh on public routes;
+  touch-target bumps; StatCard consolidation
+- T54: session composer pinned to visual viewport (keyboard-safe)
+
+### 3. Mobile regression matrix spec (ba0fe30)
+Authored `e2e/mobile-matrix.spec.ts` — sweeps every key student surface at
+320/360/375/390/412/430 + desktop 1280/1440, asserting no-horizontal-overflow,
+primary-action-reachable, and non-empty-shell. Plus empty-state and red-team
+checks. The queue's NEEDS_KAVYA referenced this spec as "ready" but it wasn't
+committed — now it is. Authoring-verified (tsc 0, eslint 0); executes against
+localhost:3000 via Playwright when a server is up.
+
+### Coordination note
+The main session and this one share the worktree branch; the main agent's
+T18-T75 commits are interleaved with my a5b24b3 + ba0fe30. The 18 remaining
+unchecked T-items (T54-T56, T76-T90) are live-only QA (need a server + real
+device) — deferred per NEEDS_KAVYA, not code-completable here. Gate green:
+lint 0, tsc clean, 453 tests, build clean. Branch pushed (force-with-lease,
+feature branch, my own history).
