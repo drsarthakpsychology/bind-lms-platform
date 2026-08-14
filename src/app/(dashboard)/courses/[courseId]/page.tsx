@@ -199,7 +199,7 @@ export default async function CourseOverviewPage({
           </span>
           <span className="min-w-0 flex-1">
             <span className="text-eyebrow text-muted-foreground">Continue learning</span>
-            <span className="block truncate text-h3 text-foreground">{nextAction.title}</span>
+            <span className="block text-h3 leading-snug text-foreground [overflow-wrap:anywhere] line-clamp-2">{nextAction.title}</span>
             <span className="block text-caption text-muted-foreground">
               {nextAction.type === "lesson" && nextActionLessonIndex >= 0
                 ? `Lesson ${nextActionLessonIndex + 1} of ${playable.length}`
