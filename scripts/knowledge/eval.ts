@@ -42,7 +42,7 @@ if (!DB_PASS) {
 async function retrieveTopK(client: Client, vec: number[], k: number) {
   const { rows } = await client.query(
     `select s.name as source,
-            left(c.chunk_text, 200) as excerpt,
+            c.chunk_text as text,
             1 - (c.embedding <=> $1::halfvec) as sim
      from public.corpus_chunks c
      join public.corpus_documents d on d.id = c.document_id
@@ -52,7 +52,35 @@ async function retrieveTopK(client: Client, vec: number[], k: number) {
      limit $2`,
     [`[${vec.join(",")}]`, k],
   );
-  return rows as Array<{ source: string; excerpt: string; sim: number }>;
+  return rows as Array<{ source: string; text: string; sim: number }>;
+}
+
+/**
+ * Grounding check (hallucination resistance): do the top-N retrieved passages
+ * contain ALL of the question's answerTerms? If a model synthesizes from
+ * passages lacking the key answer terms, its answer is not grounded — this
+ * catches retrieval that surfaces the right book but the wrong passage.
+ *
+ * Matching is STEM-TOLERANT: a term matches if the passage contains a word that
+ * shares its 4-char prefix (so "obsession" matches "obsessions", "delirium
+ * tremens" matches its plural, "reuptake" matches "reuptake"). This avoids
+ * false misses from plural/tense inflections while still rejecting passages
+ * that genuinely lack the concept.
+ */
+function isGrounded(top: Array<{ text: string }>, terms: string[], n: number): boolean {
+  const window = top.slice(0, n).map((r) => r.text.toLowerCase()).join("\n");
+  return terms.every((t) => {
+    const base = t.toLowerCase();
+    // Whole phrase present?
+    if (window.includes(base)) return true;
+    // Every word of the phrase present (stem-tolerant, prefix>=4).
+    const words = base.split(/\s+/).filter((w) => w.length > 0);
+    return words.every((w) => {
+      if (w.length <= 3) return window.includes(w);
+      const prefix = w.slice(0, 4);
+      return new RegExp(`(^|[^a-z])${prefix}[a-z]*([^a-z]|$)`).test(window);
+    });
+  });
 }
 
 async function main() {
@@ -69,7 +97,10 @@ async function main() {
   await client.connect();
 
   const k = 8;
-  const results: Array<{ id: string; category: string; ok5: boolean; ok8: boolean; foundSources: string[] }> = [];
+  const results: Array<{
+    id: string; category: string; ok5: boolean; ok8: boolean;
+    grounded: boolean | null; foundSources: string[];
+  }> = [];
 
   for (const q of EVAL_SET) {
     const vec = await embedLocal(q.question);
@@ -79,27 +110,41 @@ async function main() {
     const top5Sources = [...new Set(top.slice(0, 5).map((r) => r.source))];
     const ok5Strict = q.expectedSources.some((s) => top5Sources.includes(s));
     const ok8Strict = q.expectedSources.some((s) => foundSources.includes(s));
+    // grounding: answerTerms present in the top-8 passages (null if no terms
+    // set). 8 is the app's default context window for /api/knowledge/ask — the
+    // exact passages a model would synthesise from. A stricter window (e.g. 5)
+    // tests chunk-boundary luck, not grounding, because multi-term answers
+    // naturally span 2-3 adjacent passages in the same chapter.
+    const grounded = q.answerTerms?.length ? isGrounded(top, q.answerTerms, 8) : null;
 
     results.push({
       id: q.id,
       category: q.category,
       ok5: ok5Strict,
       ok8: ok8Strict,
+      grounded,
       foundSources,
     });
     const top1 = top[0];
+    const g = grounded === null ? "" : grounded ? "G" : "g";
     console.log(
-      `  [${q.id} ${q.category.padEnd(10)}] ${ok5Strict ? "✓" : ok8Strict ? "~" : "✗"} ` +
-        `expected[${q.expectedSources.join(",")}] top1=${top1?.source ?? "-"}`,
+      `  [${q.id} ${q.category.padEnd(10)}] ${ok5Strict ? "✓" : ok8Strict ? "~" : "✗"}${g} ` +
+        `expected[${q.expectedSources.join(",")}] top1=${top1?.source ?? "-"}` +
+        (grounded === false ? ` !missing terms: ${q.answerTerms?.join(",")}` : ""),
     );
   }
 
   const pass5 = results.filter((r) => r.ok5).length;
   const pass8 = results.filter((r) => r.ok8).length;
   const total = results.length;
+  const groundedTotal = results.filter((r) => r.grounded !== null).length;
+  const groundedPass = results.filter((r) => r.grounded === true).length;
   console.log(`\n=== summary (k=8) ===`);
   console.log(`recall@5: ${pass5}/${total} (${((pass5 / total) * 100).toFixed(0)}%)`);
   console.log(`recall@8: ${pass8}/${total} (${((pass8 / total) * 100).toFixed(0)}%)`);
+  if (groundedTotal > 0) {
+    console.log(`grounded@8: ${groundedPass}/${groundedTotal} (${((groundedPass / groundedTotal) * 100).toFixed(0)}%)  [answer terms present in top-8 = app context window]`);
+  }
   for (const cat of [...new Set(results.map((r) => r.category))]) {
     const inCat = results.filter((r) => r.category === cat);
     const ok = inCat.filter((r) => r.ok5).length;

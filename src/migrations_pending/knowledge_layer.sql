@@ -113,3 +113,59 @@ $$;
 
 revoke all on function public.match_corpus_chunks from public, anon;
 grant execute on function public.match_corpus_chunks to authenticated;
+
+-- ---------------------------------------------------------------------------
+-- 5. search_corpus_keyword — pg_trgm keyword lane for hybrid retrieval
+--    Ranks the WHOLE corpus by word_similarity(query, chunk_text), catching
+--    exact syndrome/drug names that semantic embedding can miss. The app's
+--    keyword lane calls this (it previously only scanned the first ~16 rows —
+--    a real bug this RPC fixes).
+-- ---------------------------------------------------------------------------
+create or replace function public.search_corpus_keyword(
+  query_text text,
+  match_count int default 8,
+  filter_source_name text default null
+)
+returns table (
+  id uuid,
+  document_id uuid,
+  chunk_text text,
+  chapter text,
+  section text,
+  page_start int,
+  page_end int,
+  similarity_score double precision,
+  source_id uuid,
+  source_name text,
+  source_title text
+)
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  return query
+  select
+    c.id::uuid,
+    c.document_id::uuid,
+    c.chunk_text::text,
+    c.chapter::text,
+    c.section::text,
+    c.page_start::int,
+    c.page_end::int,
+    greatest(word_similarity(query_text, c.chunk_text), similarity(query_text, c.chunk_text))::double precision,
+    d.source_id::uuid,
+    s.name::text,
+    s.title::text
+  from public.corpus_chunks c
+  join public.corpus_documents d on d.id = c.document_id
+  join public.corpus_sources s on s.id = d.source_id
+  where (filter_source_name is null or s.name = filter_source_name)
+    and word_similarity(query_text, c.chunk_text) > 0.15
+  order by similarity_score desc
+  limit match_count;
+end;
+$$;
+
+revoke all on function public.search_corpus_keyword from public, anon;
+grant execute on function public.search_corpus_keyword to authenticated;

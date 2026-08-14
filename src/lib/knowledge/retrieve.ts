@@ -85,52 +85,25 @@ async function vectorLane(query: string, opts: RetrieveOptions): Promise<Knowled
 /** Keyword lane: pg_trgm similarity on chunk_text. */
 async function keywordLane(query: string, opts: RetrieveOptions): Promise<KnowledgeHit[]> {
   const admin = createAdminClient();
-  const limit = (opts.limit ?? DEFAULT_LIMIT) * 2;
 
-  // pg_trgm word_similarity matches substrings/names that embeddings miss
-  // (e.g. a drug brand, an exact syndrome name).
-  let q = admin
-    .from("corpus_chunks")
-    .select("id, chunk_text, chapter, section, page_start, page_end, document_id, " +
-      "corpus_documents!inner(source_id, corpus_sources!inner(name, title))")
-    .limit(limit);
-
-  if (opts.filterSource) {
-    q = q.eq("corpus_documents.corpus_sources.name", opts.filterSource);
-  }
-
-  const { data, error } = await q;
+  // DB-side pg_trgm search across the WHOLE corpus (the old in-process lane
+  // only scanned the first limit rows by table order — a real bug). The RPC
+  // ranks by word_similarity(query, chunk_text), catching exact syndrome /
+  // drug names that semantic embedding can miss.
+  const { data, error } = await admin.rpc("search_corpus_keyword", {
+    query_text: query,
+    match_count: (opts.limit ?? DEFAULT_LIMIT) * 2,
+    filter_source_name: opts.filterSource ?? null,
+  });
   if (error) {
     console.warn(`knowledge keyword lane error: ${error.message}`);
     return [];
   }
-
-  // Rerank in-process with pg_trgm-style word similarity. (A DB-level ORDER BY
-  // similarity would need a stored function; for small top-N this is simpler
-  // and provider-agnostic.)
-  const words = query.toLowerCase().split(/\s+/).filter((w) => w.length > 2);
-  const scored: KnowledgeHit[] = [];
-  for (const row of (data ?? []) as unknown as Array<Record<string, unknown>>) {
-    const text = String(row.chunk_text ?? "");
-    const lower = text.toLowerCase();
-    let hits = 0;
-    for (const w of words) if (lower.includes(w)) hits++;
-    if (hits === 0) continue;
-    const ratio = hits / words.length;
-    // Boost exact-name matches (full phrase containment).
-    const phraseBonus = lower.includes(query.toLowerCase()) ? 0.2 : 0;
-    scored.push({
-      ...parseChunk({
-        ...row,
-        source_id: (row.corpus_documents as Record<string, unknown>)?.source_id ?? "",
-        source_name: ((row.corpus_documents as Record<string, unknown>)?.corpus_sources as Record<string, unknown>)?.name ?? "",
-        source_title: ((row.corpus_documents as Record<string, unknown>)?.corpus_sources as Record<string, unknown>)?.title ?? "",
-      }),
-      score: ratio + phraseBonus,
-      lane: "keyword" as const,
-    });
-  }
-  return scored.sort((a, b) => b.score - a.score).slice(0, opts.limit ?? DEFAULT_LIMIT);
+  return ((data ?? []) as unknown as Array<Record<string, unknown>>).map((r) => ({
+    ...parseChunk(r),
+    score: Number(r.similarity_score ?? 0),
+    lane: "keyword" as const,
+  }));
 }
 
 /** Reciprocal-rank fusion of two ranked lists. */

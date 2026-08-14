@@ -1,9 +1,23 @@
 import { describe, expect, it, vi, beforeEach } from "vitest";
 
-const rpcMock = vi.fn();
+// Per-test overrides.
+let vectorResult: () => { data: unknown[]; error: null };
+let keywordResult: () => { data: unknown[]; error: null };
+let vectorError: Error | null = null;
+let keywordError: Error | null = null;
 
 const adminClient = {
-  rpc: rpcMock,
+  rpc: vi.fn(async (fn: string) => {
+    if (fn === "match_corpus_chunks") {
+      if (vectorError) return Promise.reject(vectorError);
+      return vectorResult();
+    }
+    if (fn === "search_corpus_keyword") {
+      if (keywordError) return Promise.reject(keywordError);
+      return keywordResult();
+    }
+    return { data: [], error: null };
+  }),
   from: vi.fn(),
 };
 
@@ -44,31 +58,25 @@ function makeKeywordRow(over: Record<string, unknown> = {}) {
     section: "Clozapine",
     page_start: 7,
     page_end: 7,
-    corpus_documents: {
-      source_id: "src-2",
-      corpus_sources: { name: "maudsley_2021", title: "The Maudsley Prescribing Guidelines" },
-    },
+    similarity_score: 0.61,
+    source_id: "src-2",
+    source_name: "maudsley_2021",
+    source_title: "The Maudsley Prescribing Guidelines",
     ...over,
   };
 }
 
-/** Default: keyword lane returns no rows. */
-function stubKeywordLane(rows: unknown[] = []) {
-  adminClient.from.mockImplementation(() => ({
-    select: vi.fn(() => ({
-      limit: vi.fn().mockResolvedValue({ data: rows, error: null }),
-    })),
-  }));
-}
-
 describe("searchKnowledge", () => {
   beforeEach(() => {
-    rpcMock.mockReset();
-    stubKeywordLane();
+    vectorResult = () => ({ data: [], error: null });
+    keywordResult = () => ({ data: [], error: null });
+    vectorError = null;
+    keywordError = null;
+    adminClient.rpc.mockClear();
   });
 
   it("returns vector hits with source traceability", async () => {
-    rpcMock.mockResolvedValue({ data: [VEC_HIT], error: null });
+    vectorResult = () => ({ data: [VEC_HIT], error: null });
 
     const hits = await searchKnowledge("what is major depressive disorder?");
     expect(hits.length).toBe(1);
@@ -79,15 +87,15 @@ describe("searchKnowledge", () => {
   });
 
   it("degrades gracefully when the vector lane errors", async () => {
-    rpcMock.mockRejectedValue(new Error("embedding unavailable"));
+    vectorError = new Error("embedding unavailable");
 
     const hits = await searchKnowledge("clozapine monitoring");
     expect(hits).toHaveLength(0); // keyword lane empty in this test
   });
 
   it("rrf fuses both lanes — a shared id appears once with the combined score", async () => {
-    rpcMock.mockResolvedValue({ data: [VEC_HIT], error: null });
-    stubKeywordLane([makeKeywordRow({ id: "chunk-1" })]);
+    vectorResult = () => ({ data: [VEC_HIT], error: null });
+    keywordResult = () => ({ data: [makeKeywordRow({ id: "chunk-1" })], error: null });
 
     const hits = await searchKnowledge("major depressive disorder");
     expect(hits.length).toBe(1);
@@ -95,8 +103,8 @@ describe("searchKnowledge", () => {
   });
 
   it("returns keyword-only hits with source traceability when vector is empty", async () => {
-    rpcMock.mockResolvedValue({ data: [], error: null });
-    stubKeywordLane([makeKeywordRow()]);
+    vectorResult = () => ({ data: [], error: null });
+    keywordResult = () => ({ data: [makeKeywordRow()], error: null });
 
     const hits = await searchKnowledge("clozapine ANC monitoring");
     expect(hits.length).toBe(1);
@@ -105,9 +113,8 @@ describe("searchKnowledge", () => {
   });
 
   it("forwards the concept filter to the vector RPC", async () => {
-    rpcMock.mockResolvedValue({ data: [], error: null });
     await searchKnowledge("clozapine", { filterConcept: "Clozapine" });
-    expect(rpcMock).toHaveBeenCalledWith(
+    expect(adminClient.rpc).toHaveBeenCalledWith(
       "match_corpus_chunks",
       expect.objectContaining({ filter_concept: "Clozapine" }),
     );
