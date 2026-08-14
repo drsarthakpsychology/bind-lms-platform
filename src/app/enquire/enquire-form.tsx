@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Rule, Stamp } from "@/components/landing/landing-primitives";
+import { cohortDeadlineText } from "@/lib/brand";
 import { submitEnquiry } from "./actions";
 
 const STATUSES = [
@@ -75,8 +76,8 @@ export function EnquireForm() {
         <p className="mt-6 text-xl font-bold text-foreground">Thank you — we&apos;ll be in touch.</p>
         <Rule className="mx-auto mt-5 max-w-[10rem]" />
         <p className="mx-auto mt-5 max-w-sm text-small text-muted-foreground">
-          Cohort One begins 20 August. If you&apos;re a fit, someone will reach you within a
-          few days.
+          {cohortDeadlineText()}. If you&apos;re a fit, someone will reach you within a few
+          days.
         </p>
       </motion.div>
     );

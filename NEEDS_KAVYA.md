@@ -78,6 +78,7 @@ corpus:normalise`.
 - **Score calibration transcripts** → `/admin/calibration` (20 AI-vs-AI self-play sessions are seeded now — blind-score them; provisional dimensions hide from students until validated)
 - **Review drafted flashcards** → `cards` table drafts (7 from the seeded MSE lesson transcript; approve the good ones)
 - **Flip feature flags when ready** → `/admin/flags` (6 live — Consulting Room, Decoder, MSE, Judgment, Rounds, Journal; 12 built-but-off tools reveal on one click)
+- **Validate the /enquire "You are…" default** → the form preselects "Student"; once real enquiries land, check the actual mix (early-career/practising may outnumber students). If skewed, change the default (PFD Finding 2; needs behavioral data, not a code guess)
 
 ## 🕵️ STRIX PENTEST — DONE (ran with your DeepSeek key)
 - **Codebase scan** (`./src`, quick): **0 exploitable vulnerabilities**; the

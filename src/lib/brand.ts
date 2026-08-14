@@ -20,3 +20,25 @@ export const BRAND = {
   /** Cohort One start date — single source for the public-site deadline. */
   cohortStart: "20 August",
 } as const;
+
+/** Cohort One start date as ISO — drives the deadline copy everywhere. */
+export const COHORT = {
+  name: "Cohort One",
+  startDate: "2026-08-20",
+} as const;
+
+/** True once the cohort start date has passed (by end of day, local). */
+export function hasCohortStarted(now: Date = new Date()): boolean {
+  return now.getTime() >= new Date(`${COHORT.startDate}T23:59:59`).getTime();
+}
+
+/**
+ * Honest deadline copy. Before the start date it names the date; after, it
+ * drops the stale date rather than asserting a past one (PFD L1/L4 — a past
+ * "begins X" contradicts what the visitor can verify).
+ */
+export function cohortDeadlineText(now: Date = new Date()): string {
+  return hasCohortStarted(now)
+    ? "Cohort One is by invitation"
+    : `Cohort One begins ${BRAND.cohortStart}`;
+}

@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
-import { BRAND } from "@/lib/brand";
+import { BRAND, cohortDeadlineText } from "@/lib/brand";
 import { VibhaWordmark } from "@/components/brand/vibha-logo";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -173,7 +173,7 @@ export function LandingNav() {
               </Link>
             </nav>
             <p className="border-t-2 border-border px-5 py-4 text-caption text-muted-foreground">
-              Cohort One begins {BRAND.cohortStart}.
+              {cohortDeadlineText()}.
             </p>
           </motion.div>
         ) : null}

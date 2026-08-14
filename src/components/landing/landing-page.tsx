@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Fragment } from "react";
 import { ArrowRight, ArrowDown } from "lucide-react";
-import { BRAND } from "@/lib/brand";
+import { BRAND, cohortDeadlineText, hasCohortStarted } from "@/lib/brand";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { VibhaWordmark } from "@/components/brand/vibha-logo";
@@ -111,7 +111,8 @@ function Hero() {
             </Reveal>
             <Reveal delay={0.36}>
               <p className="mt-5 text-small font-medium text-foreground">
-                Cohort One begins {BRAND.cohortStart} · Invite-only
+                {cohortDeadlineText()}
+                {hasCohortStarted() ? "" : " · Invite-only"}
               </p>
             </Reveal>
           </div>
@@ -314,7 +315,17 @@ function ClosingCta() {
           <Stamp className="absolute right-6 top-6 hidden rotate-[8deg] sm:block">Invite-only</Stamp>
           <p className="text-eyebrow text-muted-foreground">Cohort One — by invitation</p>
           <h2 className="mt-4 text-balance text-4xl font-black leading-tight tracking-tight text-foreground sm:text-5xl">
-            Cohort One begins <span className="font-serif font-medium italic text-link">{BRAND.cohortStart}.</span>
+            {hasCohortStarted() ? (
+              <>
+                Cohort One{" "}
+                <span className="font-serif font-medium italic text-link">is by invitation.</span>
+              </>
+            ) : (
+              <>
+                Cohort One begins{" "}
+                <span className="font-serif font-medium italic text-link">{BRAND.cohortStart}.</span>
+              </>
+            )}
           </h2>
           <Rule className="mx-auto mt-6 max-w-xs" />
           <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">

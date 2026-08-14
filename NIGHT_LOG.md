@@ -1,3 +1,27 @@
+## 2026-08-14 — PFD EVALUATION + cohort-deadline fix (perception-first-design)
+
+Ran a Mode 1 PFD evaluation on the shipped public front door. Verdict: PASS
+across all five layers (L0 minimal choices, L1 poster-thesis hero, L2 color
+discipline held — peach never reassigned, no iso-styled CTAs; L3 perceptual
+trust; L4 honest urgency). Two genuine findings surfaced:
+
+- **Finding 1 (built):** the cohort-deadline copy is time-bound — "Cohort One
+  begins 20 August" is hardcoded in 4 places and would go stale once the date
+  passes. Added `COHORT.startDate` (ISO) + `hasCohortStarted()` +
+  `cohortDeadlineText()` to brand.ts; all four sites (hero, ClosingCta, mobile
+  sheet footer, enquire success) now render "Cohort One is by invitation" after
+  the date instead of asserting a past date. Kept the serif-italic accent in
+  both states. 4 new unit tests cover before/on/after + date sanity.
+- **Finding 2 (deferred, needs data):** the /enquire "You are…" field
+  preselects "Student"; the real applicant mix is unknowable without enquiries
+  landing. One line in NEEDS_KAVYA to validate against behavior, not guess.
+
+Decision per directive: Finding 1 is the cheaper-to-reverse code fix (and a
+genuine future defect once Aug 20 passes); Finding 2 is data-blocked, logged
+not guessed.
+
+Gate green: lint 0, tsc clean, 453 tests (4 new), build 82/82.
+
 ## 2026-08-14 — MOTION (open-design-emilkowalski-motion): smallest motion set on the public UI
 
 Kowalski-motion follow-up on the shipped surfaces. Audited first: buttons
@@ -2650,3 +2674,5 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T14:22:27 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:23:46 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:26:34 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:27:33 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:29:04 Queue exhausted — allowing normal Claude stop.
