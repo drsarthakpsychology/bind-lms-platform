@@ -28,7 +28,15 @@ async function main() {
   const buf = Buffer.from(await res.arrayBuffer());
   // A HTML/stub page from a failed redirect is <20 KB and won't start with %PDF.
   if (buf.length < 20_000 || !buf.subarray(0, 4).equals(Buffer.from("%PDF"))) {
-    console.error(`mhGAP response is not a PDF (${buf.length} bytes) — the WHO IRIS link served a redirect page. Download manually to scripts/corpus/raw/mhgap/.`);
+    // WHO IRIS migrated to a JS-rendered DSpace SPA (verified 2026-08-14): it
+    // serves the Angular shell to curl/Node regardless of params, and the REST
+    // API is unreachable from this machine. A BROWSER download is the reliable
+    // path — the browser executes the JS and lands the real file.
+    console.error(
+      `mhGAP response is not a PDF (${buf.length} bytes) — WHO IRIS serves a JS shell to Node. ` +
+        `Open in a BROWSER and save as: scripts/corpus/raw/mhgap/mhgap-ig-2.0-eng.pdf\n` +
+        `  URL: https://iris.who.int/bitstream/handle/10665/250239/9789241549790-eng.pdf`,
+    );
     process.exit(1);
   }
   writeFileSync(join(RAW, "mhgap-ig-2.0-eng.pdf"), buf);

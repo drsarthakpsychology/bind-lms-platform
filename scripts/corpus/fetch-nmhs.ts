@@ -21,7 +21,11 @@ async function main() {
   const url = "https://www.nimhans.ac.in/sites/default/files/u197/NMHS%20Report%20%28Prevalence%20patterns%20and%20outcomes%29%201.pdf";
   const res = await fetch(url);
   if (!res.ok) {
-    console.error(`NMHS fetch failed (${res.status}) — the NIMHANS link rotates; download manually to scripts/corpus/raw/nmhs/ if so.`);
+    console.error(
+      `NMHS fetch failed (${res.status}) — the NIMHANS link rotates / has a TLS issue in Node. ` +
+        `Open in a BROWSER and save the PDF to: scripts/corpus/raw/nmhs/\n` +
+        `  URL: https://www.nimhans.ac.in/sites/default/files/u197/NMHS%20Report%20%28Prevalence%20patterns%20and%20outcomes%29%201.pdf`,
+    );
     process.exit(1);
   }
   const buf = Buffer.from(await res.arrayBuffer());
