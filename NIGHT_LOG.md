@@ -3634,3 +3634,13 @@ is free. T83 stays OPEN pending capture.
   viewer dead POST (fixed).
 Ticked T84. Remaining: T83 (visual capture — blocked by cross-server session
 conflict), T88 (polish — human eyes), T90 (final acceptance — umbrella).
+
+2026-08-14T21:47 T83 done — visual QA verified + screenshots captured.
+e2e/visual-pass.spec.ts ran against the live server once the session was free:
+all 6 key screens (today/practice/consulting-room/reflect/wall/record) at
+390×844 — NO horizontal overflow, primary CTA within the first viewport,
+valid 390×844 screenshots saved to screenshots/mobile/ (gitignored; regenerable
+via the spec). The PNGs are on disk for the human comparison pass. Also fixed:
+3 stale smoke routes + rounds 500 + material-viewer POST→GET this session.
+Ticked T83. Remaining: T88 (polish — human eyes on the captured screenshots),
+T90 (final acceptance — umbrella).

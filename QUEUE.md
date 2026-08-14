@@ -695,7 +695,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   interactions; fix only genuine regressions without compromising the mobile
   architecture
 
-- [ ] T83  Mobile visual comparison pass — compare the rebuilt experience
+- [x] T83  Mobile visual comparison pass — compare the rebuilt experience
   against the current implementation and verify that the redesign has
   materially reduced clutter, unnecessary nesting, excessive scrolling, poor
   hierarchy, and desktop-density patterns

@@ -37,3 +37,5 @@ supabase/.temp/
 
 # STRIX pentest output (generated, may contain findings)
 strix_runs/
+# Playwright-captured mobile screenshots (regenerate via the visual-pass spec)
+screenshots/
