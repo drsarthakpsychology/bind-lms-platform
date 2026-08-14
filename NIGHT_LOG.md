@@ -3145,3 +3145,10 @@ docs/item-bank-audit.md: 127 items, correct at idx 0-1 in 95%, correct option is
 LONGEST in 94% (length tell survives shuffle — content fix for Dr. Dave).
 Sim refactor (agent): chat-list/notes-sheet/hint-sheet extracted from
 session-view. Gate green: lint 0, tsc clean, 461 tests (+8 shuffle), build clean.
+
+2026-08-14T19:08 — Phase 0 continued (0.4, 0.5). Course detail week badge
+showed "Week 1" inside a fixed size-8 square (overflowing) AND again as the h3
+heading → now the badge shows the number only (`{weekNum}`), heading keeps the
+full label; badge `size-8` → `min-w-8 px-1`. Lesson "NEXT" badge overflowed the
+32px square → now shows the lesson number (the amber ring + tint + "← Start
+here" already signal "next"; four signals was one too many). Gate green.

@@ -225,13 +225,13 @@ export default async function CourseOverviewPage({
                   <span
                     aria-hidden
                     className={cn(
-                      "flex size-8 shrink-0 items-center justify-center rounded-md border-2 text-small font-bold",
+                      "flex min-w-8 shrink-0 items-center justify-center rounded-md border-2 px-1 text-small font-bold",
                       isCurrentWeek && "border-primary bg-primary text-primary-foreground",
                       isPastWeek && weekComplete && "border-foreground bg-primary text-primary-foreground",
                       isFutureWeek && "border-border bg-muted text-muted-foreground",
                     )}
                   >
-                    {isPastWeek && weekComplete ? <CheckCircle2 className="size-4" /> : <span>Week {weekNum}</span>}
+                    {isPastWeek && weekComplete ? <CheckCircle2 className="size-4" /> : <span>{weekNum}</span>}
                  </span>
                   <div>
                     <h3 className={cn("text-h3", isFutureWeek && "text-muted-foreground")}>
@@ -276,7 +276,7 @@ export default async function CourseOverviewPage({
                       <span
                         aria-hidden
                         className={cn(
-                          "flex size-8 shrink-0 items-center justify-center rounded-md border-2",
+                          "flex min-w-8 shrink-0 items-center justify-center rounded-md border-2 px-1",
                           done && "border-foreground bg-primary text-primary-foreground",
                           isNextAction && !done && "ring-2 ring-primary",
                           !done && !isNextAction && "border-border bg-accent text-foreground",
@@ -284,8 +284,6 @@ export default async function CourseOverviewPage({
                       >
                         {done ? (
                           <CheckCircle2 className="size-4" />
-                        ) : isNextAction ? (
-                          <span className="text-xs font-bold text-link" role="status">NEXT</span>
                         ) : (
                           <span className="text-xs font-bold">{i + 1}</span>
                         )}

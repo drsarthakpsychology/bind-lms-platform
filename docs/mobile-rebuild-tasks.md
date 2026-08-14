@@ -26,10 +26,10 @@ full-bleed + tab-bar hiding on the session route. These land Phases 1.16 + 3.x
   - Files: quiz renderer + item types.
 - [x] **0.3** Internal schema values render to students (`order steps` pill). P1. `[S]`
   - Recommend Option B (remove pill — instruction text already says it). Sweep for other snake_case/SCREAMING in JSX text.
-- [ ] **0.4** "Week 1" renders twice, overlapping. P0. `[M]`
+- [x] **0.4** "Week 1" renders twice, overlapping. P0. `[M]`
   - Find week accordion header; badge gets number only, heading gets full label + status; badge `min-w` not fixed `w`.
   - Files: course detail week/lesson component (locate).
-- [ ] **0.5** "NEXT" badge overflows. P1. `[S]`
+- [x] **0.5** "NEXT" badge overflows. P1. `[S]`
   - Keep number in badge; signal "next" via existing tint + "Start here". Files: lesson row.
 - [ ] **0.6** Course material fails to load (`Curriculum_Overview_Light`). P0. `[M]`
   - Investigate R2 object / signed-URL TTL / CORS / content-type / HLS manifest; report actual cause.

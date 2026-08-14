@@ -21,6 +21,16 @@ import { hashSeed, identityOrder, seededShuffle } from "@/lib/quiz/shuffle";
 export function QuizCheck({ items }: { items: QuizItem[] }) {
   const [answers, setAnswers] = React.useState<Record<string, number>>({});
   const [revealed, setRevealed] = React.useState(false);
+  // Deterministic per-item option order — seeded by the item id, so it is
+  // hydration-safe and stable across re-renders without setState-in-effect.
+  const orders = React.useMemo(() => {
+    const result: Record<string, number[]> = {};
+    for (const q of items) {
+      result[q.id] = seededShuffle(identityOrder(q.options.length), hashSeed(q.id));
+    }
+    return result;
+  }, [items]);
+
 
   function pick(id: string, authoredIdx: number) {
     if (revealed) return;
@@ -33,7 +43,7 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
   return (
     <div className="space-y-4">
       {items.map((q) => {
-        const order = seededShuffle(identityOrder(q.options.length), hashSeed(q.id));
+        const order = orders[q.id];
         return (
           <div key={q.id} className="rounded-md border-2 border-border bg-card p-4">
             {q.excerpt ? (
