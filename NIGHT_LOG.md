@@ -3158,3 +3158,25 @@ Gate green: lint 0, tsc clean, 453 tests, build 82/82.
 - Open items → QUEUE.md (4 new [ ]): seed-to-Supabase step; 2 remaining D,L
   interactions gaps; stale reports.ts; clinician review of 8 allowlisted rows.
 - Final gate re-run green: lint 0, tsc clean, 453 tests, build 82/82.
+
+## 2026-08-14 — Mobile interaction-flow audit (T19)
+
+Continued the MOBILE-FIRST REBUILD queue. T19 = define the interaction-flow
+spec that feeds T20-T90: for every major mobile feature, the primary goal,
+primary action, required information, next action, and secondary actions, plus
+the competing actions to remove from the initial viewport (defer / yield /
+contextualise).
+
+- Wrote `docs/MOBILE_INTERACTION_FLOW.md` — 28 features across front door /
+  navigation, all 17 practice tools, record & reflection, admin, and the public
+  auth surface. Each entry defines the 5 attributes and flags competing
+  actions; grounded in the shipped components (wall, library, modules,
+  out-of-depth, today, practice hub, bottom-tab-bar, admin, auth were read this
+  turn), not aspirational.
+- No code changed in this slice — T19 is the "define" task; the removals it
+  specifies execute in T20-T90 (and overlap with the 16 verified findings
+  already fixed but left uncommitted in this tree).
+- Committed `698d6eb` (doc + queue tick). Gate: lint 0, tsc clean, 453 tests.
+  Build skipped — docs-only change (and the finding-fix pass explicitly said no
+  full build).
+- Next in queue: T20 (mobile-specific page compositions).
