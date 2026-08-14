@@ -314,7 +314,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             onClick={() => setPageNum((p) => Math.max(1, p - 1))}
             disabled={pageNum <= 1 || !doc}
             aria-label="Previous page"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
           >
             <ChevronLeft className="size-4" aria-hidden />
           </button>
@@ -326,7 +326,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             onClick={() => setPageNum((p) => Math.min(pageCount || 1, p + 1))}
             disabled={!doc || pageNum >= (pageCount || 1)}
             aria-label="Next page"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
           >
             <ChevronRight className="size-4" aria-hidden />
           </button>
@@ -336,7 +336,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             type="button"
             onClick={() => setZoom((z) => Math.max(0.5, z - 0.25))}
             aria-label="Zoom out"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
           >
             <ZoomOut className="size-4" aria-hidden />
           </button>
@@ -347,7 +347,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
             type="button"
             onClick={() => setZoom((z) => Math.min(3, z + 0.25))}
             aria-label="Zoom in"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
           >
             <ZoomIn className="size-4" aria-hidden />
           </button>
@@ -513,7 +513,7 @@ function ImageViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; 
           type="button"
           onClick={() => setZoom((z) => Math.max(1, z - 0.5))}
           aria-label="Zoom out"
-          className="inline-flex h-8 w-8 items-center justify-center rounded-md border-2 border-border bg-background text-foreground hover:bg-accent"
+          className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground hover:bg-accent"
         >
           <Minus className="size-3.5" aria-hidden />
         </button>
@@ -522,7 +522,7 @@ function ImageViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; 
           type="button"
           onClick={() => setZoom((z) => Math.min(4, z + 0.5))}
           aria-label="Zoom in"
-          className="inline-flex h-8 w-8 items-center justify-center rounded-md border-2 border-border bg-background text-foreground hover:bg-accent"
+          className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground hover:bg-accent"
         >
           <Plus className="size-3.5" aria-hidden />
         </button>

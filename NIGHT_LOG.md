@@ -3234,3 +3234,17 @@ skeleton + "Loading material…" label; after 8s adds slow-connection message
 correlation id) + human title already shipped in 0.6. Viewer controls (PDF
 prev/next/zoom, image zoom) left at current size for the T13 44px pass.
 Gate green: lint 0, tsc clean, 473 tests, build. Commit fa3bbfb.
+
+2026-08-14T19:45 T11-T14 (sim polish batch) — root layout now exports viewport
+(viewport-fit=cover + interactive-widget=resizes-content) → real iOS insets +
+Android keyboard resizes the 100dvh chat viewport so the composer clears the
+keyboard without JS. Chat composer send button shows a spinner + aria-busy when
+pending (distinct from disabled, §1.9). Patient typing indicator renders a
+static "Patient is answering…" line for reduced-motion users. Gate green: lint
+0, tsc clean, 473 tests, build. Commit 930f51a.
+
+STATUS: T2 already rebuilt the full sim shell (header/chat/composer/sheets/
+status-pill/streaming/voice+affect+fatigue wiring), so most of T10-T15's UI is
+done. Remaining genuine gaps: T10 voice state UI (VoiceInput states — inspect
+next), T13 full 44px touch-target sweep, T15 turn-route conversational quality
+(disclosure gate + voice_profile + story/contradictions into the prompt).
