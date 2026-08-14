@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { provisionalKeys } from "@/lib/practice/rubric";
-import { isEnabled as aiEnabled } from "@/lib/ai/router";
 import { SimSessionView } from "./session-view";
 
 export const dynamic = "force-dynamic";
@@ -135,7 +134,6 @@ export default async function SimSessionPage({
       patientAge={patientAge}
       patientContext={patientContext}
       difficulty={session.difficulty}
-      fixtureMode={!aiEnabled()}
       startedAt={session.started_at as string | undefined}
       voicePrefs={voicePrefs}
       initialTurns={(turns ?? []).map((t) => ({

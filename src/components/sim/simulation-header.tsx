@@ -8,16 +8,15 @@ import { useOffline } from "@/lib/hooks/use-offline";
 
 /**
  * The compact patient header. One back affordance, the patient's name +
- * difficulty, a subtle simulation-mode pill (replacing the old giant amber
- * "Offline mode" banner), a quiet timer, and a "more" affordance for the
- * secondary actions (notes / hint / finish). The conversation below gets the
- * rest of the screen.
+ * difficulty, a quiet timer, and a "more" affordance for the secondary
+ * actions (notes / hint / finish). The conversation below gets the rest of
+ * the screen. The student never sees which engine is driving the patient —
+ * only the genuine Offline signal when the connection drops.
  */
 export function SimulationHeader({
   patientName,
   patientAge,
   difficulty,
-  fixtureMode,
   seconds,
   onMore,
   notesIndicator = false,
@@ -25,7 +24,6 @@ export function SimulationHeader({
   patientName: string;
   patientAge?: number;
   difficulty: string;
-  fixtureMode: boolean;
   seconds: number;
   onMore: () => void;
   /** Peach dot on the "more" button when notes are non-empty. */
@@ -61,14 +59,7 @@ export function SimulationHeader({
         </div>
         <div className="flex items-center gap-1.5">
           <span className="truncate text-caption capitalize text-muted-foreground">{difficulty}</span>
-          {offline ? (
-            <StatusPill tone="warning" label="Offline" />
-          ) : (
-            <StatusPill
-              tone={fixtureMode ? "scripted" : "ai"}
-              label={fixtureMode ? "Scripted" : "AI"}
-            />
-          )}
+          {offline ? <StatusPill tone="warning" label="Offline" /> : null}
         </div>
       </div>
 

@@ -4,7 +4,7 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import { Lightbulb, NotebookPen, Flag, User } from "lucide-react";
 import { haptic } from "@/lib/haptics";
-import { VoiceInput } from "@/components/practice/voice-input";
+import { VoiceConversation } from "@/components/sim/voice-conversation";
 import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
 import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
@@ -59,7 +59,6 @@ export function SimSessionView({
   patientAge,
   patientContext,
   difficulty,
-  fixtureMode = false,
   initialTurns,
   voicePrefs,
   branchInfo,
@@ -71,7 +70,6 @@ export function SimSessionView({
   patientAge?: number;
   patientContext?: string;
   difficulty: string;
-  fixtureMode?: boolean;
   initialTurns: Turn[];
   startedAt?: string;
   voicePrefs?: { rate: number; pitch: number; lang?: string; gender?: "male" | "female" };
@@ -283,11 +281,36 @@ export function SimSessionView({
 
   return (
     <div className="flex h-dvh flex-col bg-background">
+      {/* Focused voice mode — the whole screen becomes the conversation. Same
+          turns, same session, same patient as text (one brain). */}
+      {voiceMode ? (
+        <VoiceConversation
+          patientName={patientName}
+          onSend={(t) => {
+            voiceMetrics.recordStudentSpeech(t);
+            void send(t);
+          }}
+          patientReply={[...turns].reverse().find((t) => t.role === "patient")?.content ?? ""}
+          patientVoicePrefs={
+            patientAffect
+              ? {
+                  rate: affectToVoice(patientAffect, { fatigue: patientFatigue, baseRate: voicePrefs?.rate ?? 1, basePitch: voicePrefs?.pitch ?? 1 }).rate,
+                  pitch: affectToVoice(patientAffect, { fatigue: patientFatigue, baseRate: voicePrefs?.rate ?? 1, basePitch: voicePrefs?.pitch ?? 1 }).pitch,
+                  lang: voicePrefs?.lang ?? "en-IN",
+                  gender: voicePrefs?.gender,
+                }
+              : (voicePrefs ?? { rate: 1, pitch: 1, lang: "en-IN" })
+          }
+          onExitVoice={() => setVoiceMode(false)}
+          onEnd={() => setConfirmFinish(true)}
+          busy={busy}
+        />
+      ) : (
+        <>
       <SimulationHeader
         patientName={patientName}
         patientAge={patientAge}
         difficulty={difficulty}
-        fixtureMode={fixtureMode}
         seconds={seconds}
         onMore={() => setMenuOpen(true)}
         notesIndicator={hasNotes}
@@ -319,44 +342,17 @@ export function SimSessionView({
         </div>
       ) : null}
 
-      {/* Composer or voice. */}
-      {voiceMode ? (
-        <div className="border-t border-border bg-card px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2.5">
-          <VoiceInput
-            onSend={(t) => {
-              voiceMetrics.recordStudentSpeech(t);
-              void send(t);
-            }}
-            onPatientSpeak={() => {
-              const lastPatient = [...turns].reverse().find((t) => t.role === "patient");
-              return lastPatient?.content ?? "";
-            }}
-            onExitVoice={() => setVoiceMode(false)}
-            patientReply={[...turns].reverse().find((t) => t.role === "patient")?.content ?? ""}
-            patientVoicePrefs={
-              patientAffect
-                ? {
-                    rate: affectToVoice(patientAffect, { fatigue: patientFatigue, baseRate: voicePrefs?.rate ?? 1, basePitch: voicePrefs?.pitch ?? 1 }).rate,
-                    pitch: affectToVoice(patientAffect, { fatigue: patientFatigue, baseRate: voicePrefs?.rate ?? 1, basePitch: voicePrefs?.pitch ?? 1 }).pitch,
-                    lang: voicePrefs?.lang ?? "en-IN",
-                    gender: voicePrefs?.gender,
-                  }
-                : (voicePrefs ?? { rate: 1, pitch: 1, lang: "en-IN" })
-            }
-            disabled={busy}
-          />
-        </div>
-      ) : (
-        <ChatComposer
-          value={input}
-          onChange={setInput}
-          onSend={() => void send()}
-          voiceMode={voiceMode}
-          onToggleVoice={() => setVoiceMode((v) => !v)}
-          busy={busy}
-          voiceAvailable
-          patientName={patientName}
-        />
+      <ChatComposer
+        value={input}
+        onChange={setInput}
+        onSend={() => void send()}
+        voiceMode={voiceMode}
+        onToggleVoice={() => setVoiceMode((v) => !v)}
+        busy={busy}
+        voiceAvailable
+        patientName={patientName}
+      />
+        </>
       )}
 
       {/* "More" menu — hint reveal, notes, finish. Secondary actions live here. */}
