@@ -1,3 +1,20 @@
+## 2026-08-14 — DESIGN REVIEW (open-design-design-review): one tightening, one confirmed non-issue
+
+Ran the Designer-Who-Codes workflow on the shipped public surfaces (landing +
+/enquire): visual audit → atomic fix → before/after screenshots.
+
+- **Audited** landing + /enquire in Playwright (desktop + mobile, light + dark,
+  2x). Suspected the method-chain cards were misaligned (`md:items-center`) —
+  MEASURED instead of assuming: all three cards share top=1583, height=251
+  (the `h-full` wrappers equalize them). Confirmed a non-issue, left untouched.
+- **One genuine tightening**: the /enquire form's field groups used the same
+  01/02/03 mono indices as the left column's process steps — two competing
+  number sequences on one screen. Switched the form groups to the eyebrow's
+  peach dot marker (same editorial language, no duplication).
+- Before/after: rev-enquire-light.png (numerals) → rev-enquire-after.png (dots).
+
+Gate green: lint 0, tsc clean, 449 tests, build 82/82.
+
 ## 2026-08-14 — ENQUIRE ELEVATED: the conversion surface joins the landing's world
 
 Second /impeccable pass (bare invocation, no steer — picked the landing's
@@ -2605,3 +2622,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T14:08:05 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:11:36 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:15:55 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:17:22 Queue exhausted — allowing normal Claude stop.

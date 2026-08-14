@@ -22,13 +22,15 @@ const STATUSES = [
   { value: "other", label: "Something else" },
 ];
 
-/** A mono-indexed field-group label, matching the public pages' wayfinding. */
-function GroupLabel({ index, children }: { index: string; children: React.ReactNode }) {
+/**
+ * A field-group label. The left pitch already carries the 01/02/03 process
+ * steps, so the form sections use the eyebrow's dot marker instead — same
+ * editorial language, no competing number sequences on one screen.
+ */
+function GroupLabel({ children }: { children: React.ReactNode }) {
   return (
     <p className="flex items-center gap-2 text-eyebrow text-muted-foreground">
-      <span aria-hidden className="font-mono text-xs font-black tracking-normal text-link">
-        {index}
-      </span>
+      <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-primary" />
       {children}
     </p>
   );
@@ -84,9 +86,9 @@ export function EnquireForm() {
         <Rule className="mt-3" />
       </div>
 
-      {/* 01 — your details */}
+      {/* Your details */}
       <fieldset className="space-y-3">
-        <GroupLabel index="01">Your details</GroupLabel>
+        <GroupLabel>Your details</GroupLabel>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
             <Label htmlFor="name">Name</Label>
@@ -99,9 +101,9 @@ export function EnquireForm() {
         </div>
       </fieldset>
 
-      {/* 02 — about you */}
+      {/* About you */}
       <fieldset className="space-y-3">
-        <GroupLabel index="02">About you</GroupLabel>
+        <GroupLabel>About you</GroupLabel>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
             <Label htmlFor="phone">Phone (optional)</Label>
@@ -125,9 +127,9 @@ export function EnquireForm() {
         </div>
       </fieldset>
 
-      {/* 03 — a note */}
+      {/* A note */}
       <fieldset className="space-y-3">
-        <GroupLabel index="03">A note</GroupLabel>
+        <GroupLabel>A note</GroupLabel>
         <div className="space-y-1.5">
           <Label htmlFor="message">Anything we should know? (optional)</Label>
           <Textarea
