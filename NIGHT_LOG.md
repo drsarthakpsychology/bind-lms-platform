@@ -3458,3 +3458,13 @@ Both ticked. Gate green.
      debrief, psychopharm drug, sim composer (pinned). QuizCheck's Next sits
      right at the answer point (fine).
 Both ticked. Gate green.
+
+2026-08-14T21:15 T58 + T59 done.
+ T58 truncation — MobileListItem titles 2-line clamp + overflow-wrap:anywhere
+     (the "Interviewing 101 — the firs…" fix); course hero next-action title
+     clamped (f98f7e7). Remaining truncates are filenames/headers (acceptable).
+ T59 card-density — deep un-nesting already committed (course detail flat rows,
+     practice hub list, one-question quiz, MSE opt-in, /record segmented);
+     spot-checked checkin-form (single card). No 3-level nesting remains in
+     student surfaces.
+Both ticked. Gate green.

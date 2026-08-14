@@ -579,12 +579,12 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   should remain accessible while scrolling; implement contextual sticky
   actions without covering content or competing with the bottom navigation
 
-- [ ] T58  Mobile content truncation audit — remove ugly desktop truncation such
+- [x] T58  Mobile content truncation audit — remove ugly desktop truncation such
   as "Interviewing 101 — the firs..." throughout the application; redesign
   long titles/descriptions using appropriate wrapping, progressive disclosure,
   or detail views
 
-- [ ] T59  Mobile card-density audit — systematically identify cards nested
+- [x] T59  Mobile card-density audit — systematically identify cards nested
   inside cards, repeated borders, unnecessary shadows, and excessive containers
   across the entire application; simplify the visual hierarchy while
   preserving VIBHA's neo-brutalist character
