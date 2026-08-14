@@ -10,7 +10,8 @@ export default async function globalSetup() {
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
-  await page.goto("http://localhost:3000/login");
+  const base = process.env.E2E_BASE_URL ?? "http://localhost:3000";
+  await page.goto(`${base}/login`);
   await page.fill("#email", process.env.E2E_EMAIL ?? "Test@vibha.test");
   await page.fill("#password", process.env.E2E_PASSWORD ?? "K#test");
   await page.getByRole("button", { name: /sign in|log in/i }).click();

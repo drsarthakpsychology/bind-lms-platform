@@ -3694,3 +3694,25 @@ ticked, one human step left (review screenshots/mobile/*.png, in NEEDS_KAVYA).
 
 Gate on HEAD: lint 0, tsc clean, 486 tests, build 89/89. Branch
 feat/mobile-design-system, not pushed.
+2026-08-14T21:56:18 Queue exhausted — allowing normal Claude stop.
+2026-08-14T21:58:35 Queue exhausted — allowing normal Claude stop.
+2026-08-14T21:58:54 Queue exhausted — allowing normal Claude stop.
+2026-08-14T21:59:22 Queue exhausted — allowing normal Claude stop.
+2026-08-14T22:00:01 Queue exhausted — allowing normal Claude stop.
+2026-08-14T22:00:36 Queue exhausted — allowing normal Claude stop.
+2026-08-14T22:01:10 Queue exhausted — allowing normal Claude stop.
+2026-08-14T22:01:44 Queue exhausted — allowing normal Claude stop.
+
+2026-08-14T22:20 WORKTREE RECONCILIATION (the "1 remaining agent"):
+The remaining worktree-psychopharm-book-enrichment (hard-isolated, 118 behind /
+51 ahead, unmerged) held two classes of work. Decided + acted:
+- MERGED the irreplaceable psychopharm DATA into main (e53b143): BOOK_FIELD_ROWS
+  31→148, KNOWLEDGE_BASE 2166→2283, drug-catalog 96→124 lines, merge-book-rows.ts
+  (new), 41 Maudsley/Stahl passages. UI paths deliberately NOT overwritten
+  (main's mobile psychopharm UI is newer).
+- MERGED the e2e session-rotation resilience (helpers.ts re-auth on bounce +
+  env-aware global-setup) — fixes the single-active-session flakiness that
+  broke e2e runs all session.
+- DROPPED the worktree's MOBILE_* docs + T-tick commits (redundant with main's
+  completed rebuild).
+Gate green: lint 0, tsc clean, 486 tests, build clean.
