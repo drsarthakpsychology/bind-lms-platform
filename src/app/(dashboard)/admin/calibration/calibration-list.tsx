@@ -36,7 +36,7 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
       <div className="rounded-md border-2 border-border bg-card p-6 text-center">
         <p className="text-base font-medium">No transcripts to calibrate yet</p>
         <p className="mt-1 text-small text-muted-foreground">
-          Once students run sessions, their debriefs land here for blind scoring.
+          Once students run sessions, their transcripts land here for you to mark.
         </p>
       </div>
     );
@@ -121,7 +121,7 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
                   disabled={human == null || saved[r.id]}
                   className="inline-flex min-h-11 flex-1 items-center justify-center rounded-md border-2 border-border bg-primary px-3 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
                 >
-                  {saved[r.id] ? "Saved (feeds scorer)" : "Save & correct"}
+                  {saved[r.id] ? "Saved" : "Save & correct"}
                 </button>
               </div>
             </div>

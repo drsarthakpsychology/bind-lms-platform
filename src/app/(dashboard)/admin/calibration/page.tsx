@@ -91,7 +91,7 @@ export default async function AdminCalibrationPage() {
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <PageHeader
         title="Marking check"
-        description="Score transcripts blind, reveal the AI score side by side. Disagreements train the scorer."
+        description="Mark a transcript, then reveal how the AI marked it. When you disagree, your score is what counts going forward."
       />
       <div className="mt-6">
         <AgreementDashboard
