@@ -65,7 +65,9 @@
     "corpus:firewall": "tsx scripts/corpus/firewall-check.ts",
     "corpus:normalise": "tsx scripts/corpus/normalise.ts",
     "corpus:draft-cases": "tsx scripts/corpus/draft-cases.ts",
-    "knowledge:ingest": "tsx scripts/knowledge/ingest.ts"
+    "knowledge:ingest": "tsx scripts/knowledge/ingest.ts",
+    "knowledge:embed": "tsx scripts/knowledge/embed.ts",
+    "knowledge:verify": "tsx scripts/knowledge/verify-search.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1101.0",

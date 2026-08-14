@@ -188,7 +188,9 @@ async function ingestChunks(book: (typeof BOOKS)[number], documentId: string, ca
   const outline: BookOutline = JSON.parse(readFileSync(outlinePath, "utf8"));
   const chunks = chunkBook(book.id, cacheText, outline);
 
-  // Upsert by (document_id, chunk_hash): unchanged chunks are skipped.
+  // Upsert by (document_id, chunk_hash): unchanged chunks are skipped. Track
+  // both pre-existing hashes AND hashes inserted this run, so two identical
+  // passages within one book don't collide on the unique index.
   const { data: existing } = await supabase
     .from("corpus_chunks")
     .select("chunk_hash")
@@ -212,9 +214,12 @@ async function ingestChunks(book: (typeof BOOKS)[number], documentId: string, ca
       chunk_hash: hash,
     });
     if (error) {
+      // Unique-violation means the same hash already exists (this run or a
+      // concurrent one) — the content is already indexed, so skip it.
       console.warn(`  chunk ${book.id}[${i}] insert: ${error.message}`);
       continue;
     }
+    existingHashes.add(hash); // guard against identical passages this run
     inserted++;
   }
   return { chunks: chunks.length, inserted };
