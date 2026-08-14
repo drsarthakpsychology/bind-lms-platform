@@ -3274,3 +3274,8 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   today chain, state chips for the practice hub, check marks for lesson
   completion, competency evidence list for the passport. No dominating or
   inconsistent progress UI; no change needed. Ticked T40.
+- One T40 fix did surface on review: the /today headline embedded the streak
+  ("{N}-day streak. One thing next.") while the streak line below repeated it —
+  progress competing with the task in the page's dominant text. Made the h1
+  task-only ("One thing next.") and left the streak in the subline. Committed
+  `a6dc861`.
