@@ -1028,74 +1028,74 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   playback position, network changes, and returning from full-screen on
   multiple mobile browsers
 
-- [ ] T152  Desktop/mobile architecture separation — explicitly decide which
+- [x] T152  Desktop/mobile architecture separation — explicitly decide which
   components should share business logic/data and which should have separate
   desktop and mobile presentation/interaction layers; do not force identical
   layouts across breakpoints
 
-- [ ] T153  Desktop admin optimisation — ensure the admin interface takes
+- [x] T153  Desktop admin optimisation — ensure the admin interface takes
   advantage of desktop space for real management work without importing mobile
   simplifications where they would hurt productivity
 
-- [ ] T154  Mobile admin optimisation — ensure the admin interface remains
+- [x] T154  Mobile admin optimisation — ensure the admin interface remains
   usable on a phone for quick actions, content edits, student checks, and
   operational tasks without attempting to reproduce the entire desktop admin
   workspace
 
-- [ ] T155  Responsive architecture audit — inspect every major component for
+- [x] T155  Responsive architecture audit — inspect every major component for
   whether it should reflow, transform, collapse, become a sheet, become a
   focused page, or use a completely different mobile interaction model
 
-- [ ] T156  Dark mode reassessment — review the current dark mode from scratch;
+- [x] T156  Dark mode reassessment — review the current dark mode from scratch;
   if it does not look intentional, readable, and consistent with VIBHA's
   identity, redesign it rather than preserving it for completeness
 
-- [ ] T157  Dark mode scope decision — determine whether dark mode genuinely
+- [x] T157  Dark mode scope decision — determine whether dark mode genuinely
   adds value to the product; if not, make the light theme the primary/default
   experience and avoid spending disproportionate effort maintaining a poor
   secondary theme
 
-- [ ] T158  Visual consistency audit — remove inconsistent icon styles,
+- [x] T158  Visual consistency audit — remove inconsistent icon styles,
   unnecessary decorative elements, arbitrary spacing, conflicting border
   treatments, excessive shadows, and components that visually look like they
   came from different products
 
-- [ ] T159  Copy audit across application — inspect every visible word in
+- [x] T159  Copy audit across application — inspect every visible word in
   student and admin interfaces; replace technical, corporate, academic, vague,
   or AI-sounding copy with short, direct human language
 
-- [ ] T160  Remove AI-sounding language — eliminate unnecessary phrases such as
+- [x] T160  Remove AI-sounding language — eliminate unnecessary phrases such as
   "intelligent", "advanced", "adaptive", "calibration", "cohort pulse",
   "simulation engine", "behavioural layer", or other internal/marketing
   terminology from places where a normal user does not need those concepts
 
-- [ ] T161  Admin terminology dictionary — create a small approved vocabulary
+- [x] T161  Admin terminology dictionary — create a small approved vocabulary
   for admin UI labels and use it consistently; labels should describe the
   action or object in ordinary language
 
-- [ ] T162  Student terminology dictionary — create a small approved vocabulary
+- [x] T162  Student terminology dictionary — create a small approved vocabulary
   for student-facing UI and avoid changing terminology between screens for the
   same concept
 
-- [ ] T163  Feature removal review — identify features that are technically
+- [x] T163  Feature removal review — identify features that are technically
   impressive but do not materially improve learning, practice, teaching, or
   administration; recommend removing them rather than finding another place
   to display them
 
-- [ ] T164  Feature merging review — identify overlapping functionality and
+- [x] T164  Feature merging review — identify overlapping functionality and
   merge it into a single clearer workflow where possible; do not preserve
   multiple interfaces simply because they were built independently
 
-- [ ] T165  Backend versus UI boundary audit — move technical controls,
+- [x] T165  Backend versus UI boundary audit — move technical controls,
   infrastructure information, permissions internals, provider diagnostics,
   system configuration, logs, and engineering-only controls out of normal
   student/admin interfaces where they are not required for actual work
 
-- [ ] T166  Admin diagnostics boundary — retain technical diagnostics for
+- [x] T166  Admin diagnostics boundary — retain technical diagnostics for
   developers/operators where needed but prevent them from polluting the normal
   administrator experience
 
-- [ ] T167  Student safety/quality UI boundary — keep necessary quality and
+- [x] T167  Student safety/quality UI boundary — keep necessary quality and
   learning safeguards functional while avoiding unnecessary warnings,
   technical implementation details, or internal system explanations in the
   student interface
