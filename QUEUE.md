@@ -720,7 +720,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   and verify that a user can identify the intended next action within seconds;
   redesign screens where multiple actions compete equally
 
-- [ ] T88  Mobile product polish pass — final pass for spacing, typography,
+- [x] T88  Mobile product polish pass — final pass for spacing, typography,
   icons, borders, button states, animations, transitions, loading, empty
   states, error states, copy, touch behavior, and visual consistency
 

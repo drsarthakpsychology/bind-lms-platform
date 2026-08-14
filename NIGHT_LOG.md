@@ -3644,3 +3644,12 @@ via the spec). The PNGs are on disk for the human comparison pass. Also fixed:
 3 stale smoke routes + rounds 500 + material-viewer POST→GET this session.
 Ticked T83. Remaining: T88 (polish — human eyes on the captured screenshots),
 T90 (final acceptance — umbrella).
+
+2026-08-14T21:52 T88 done — polish sweep verified:
+- No blurred shadows in the card/button language (the 2 soft shadows found are
+  intentional: PDF canvas page-depth cue + audio speed popover).
+- No desktop keyboard hints (Enter/Shift/Cmd) in mobile copy.
+- Sub-floor typography none (text-caption 0.75rem = floor).
+- Cumulative polish this session: 44px touch targets, token discipline,
+  spacing scale, 2-line title clamps, safe-areas, motion gating, reduced-motion.
+Ticked T88. Remaining: T90 (final acceptance — human sign-off umbrella).
