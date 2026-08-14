@@ -1838,3 +1838,25 @@ that builds a MedicationDocument (In plain words → Mechanism → Commonly used
 for drugs that had NO existing document. Result: 84 inserted, 60 preserved
 (curated), 2 duplicate entries (Esketamine/Pimavanserin) deduped. 144 drugs now
 have a document; the admin reviews + publishes each in the editor.
+2026-08-14T05:51:55 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Session complete (beastmode psychopharm pass)
+
+Final gate verified green on the full tree: lint 0, `tsc --noEmit` clean,
+399 tests, `next build` exit 0. Working tree clean, pushed to `main`
+(f78cfe0) and deployed to vibhapsychology.com.
+
+Committed this pass (newest → oldest):
+- f78cfe0 test: integrity test for enriched content + dedupe
+- d183a0b feat: wire up the block source panel in the editor
+- b192217 feat: seed enriched content into medication_documents
+- 65f7815 feat: simplify editor + enrich 148 medications from Stahl + web
+- 15f1cf8 fix: atomic rate-limit increment via RPC
+- d08611b fix: clarify idiom bank copy + token colours
+- deaeede fix: close 7 bug-hunt findings + classify all 151 medications
+- b5544a2 fix: medication library list hangs
+
+Remaining human items (NEEDS_KAVYA): clinician review of the 146 enriched
+medication entries before publishing.
