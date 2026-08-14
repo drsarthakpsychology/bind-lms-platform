@@ -3285,3 +3285,10 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   drills (judgment, decode, rounds, landmark) so the orientation line has one
   consistent form ("case" → "Case"). Committed `dd74c14`. Gate: lint 0, tsc
   clean, 453 tests, build green.
+- T54 (keyboard QA) static pass: safe-area handling already present (app-shell,
+  bottom tab bar, lesson sticky action); chat composer is sticky bottom-0 with
+  Enter-to-send. Fixed the missing `enterKeyHint="send"` on the two primary
+  composers (consulting-room chat, psychology tutor) so the software keyboard
+  offers "Send" instead of "Return". Committed `3b04983`. True device/software-
+  keyboard overlap testing still needs a real browser/device (not available in
+  this environment).
