@@ -1881,3 +1881,26 @@ the preview ends mid-Asenapine (Suggested Reading, page 98); the back-matter
 indices/abbreviations listed in Contents fall outside the 98 pages. Blank
 separator pages (2,4,12,16,22,28,50,64,72,84,90) recorded in
 unattributedPages. Confidence high.
+2026-08-14T06:18:08 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:18:22 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Knowledge layer: Ahuja psychiatry outline (book-structure reader)
+
+Wrote `scripts/knowledge/outlines/ahuja_psychiatry.json` for A Short
+Textbook of Psychiatry (Niraj Ahuja), 273 PDF pages. Decision: all page
+numbers use the PDF page index (`<<<PAGE n>>>`), never printed page numbers;
+printed→PDF offset is +12 in the body but non-uniform in back matter, so no
+offset was hardcoded. Verified all 21 chapter start pages by direct content
+read (not TOC-only). Chapters 1–21 contiguous over PDF 13–252; front matter
+1–12; back matter (Appendices 253–260, Suggested Further Reading 261–264,
+Index 265–273) documented in `issues` since the schema has no backMatter
+field. `unattributedPages` left empty (nothing genuinely unaccounted).
+Confidence high. Extraction issues noted: 6 short chapter titles dropped by
+extraction (Ch5/6/10/11/14/17), and section headings are a mixed
+ALL-CAPS/Title-Case style so subsections are not exhaustively enumerated.
+Edition note: book is Seventh Edition (2011), "20th Year Edition" is the
+anniversary label (first edition 1990). Committed only this outline + log;
+unrelated in-progress knowledge-layer files (ingest.ts, src/lib/knowledge/,
+icd11/kaplan_sadock/stahl_pg_older outlines) left untracked for their owners.

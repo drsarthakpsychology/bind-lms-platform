@@ -1,0 +1,328 @@
+{
+  "id": "ahuja_psychiatry",
+  "confidence": "high",
+  "issues": [
+    "Book is the Seventh Edition (2011, ISBN 978-93-80704-66-1); '20th Year Edition' is the anniversary/cover label (first edition 1990). Title page and preface say Seventh Edition.",
+    "Chapter title heading dropped from extraction on 6 chapters where the title is short/does not wrap: Ch5 Schizophrenia (p66), Ch6 Mood Disorders (p81), Ch10 Sexual Disorders (p133), Ch11 Sleep Disorders (p145), Ch14 Child Psychiatry (p174), Ch17 Psychoanalysis (p217). In each case the chapter number is present and body text begins immediately; boundaries verified via running headers and TOC.",
+    "Section headings are a mix of ALL-CAPS (major sections) and Title Case (subsections). Key sections below are primarily the ALL-CAPS major headings; numerous Title Case subsections (e.g. MSE subheadings, specific drug sections, sleep-disorder subtypes, behaviour-therapy techniques) were not exhaustively enumerated.",
+    "Printed page numbers are offset from PDF page index by +12 for the body (printed p1 = PDF p13), but the offset is NOT uniform in back matter. All page numbers in this outline use the PDF page index (<<<PAGE n>>>).",
+    "Back matter is not represented in chapters/frontMatter (schema has no backMatter field): Appendices (PDF 253-260: Appendix I Nobel Prizes p253, Appendix II Contributors p254, Appendix III Glossary p258), Suggested Further Reading (PDF 261-264), Index (PDF 265-273).",
+    "Chapter 9 (Disorders of Adult Personality and Behaviour) includes short cross-reference sections to Chapter 10 for Gender Identity Disorders, Disorders of Sexual Preference, and Sexual Development/Orientation (p131).",
+    "Some pages contain only a form feed (blank pages): p1, p7, p9, p11 in front matter."
+  ],
+  "isPreview": false,
+  "frontMatter": [
+    {
+      "title": "Front Matter",
+      "pageStart": 1,
+      "pageEnd": 12,
+      "sections": [
+        { "title": "Title Page", "page": 2 },
+        { "title": "Drug Dosage Disclaimer", "page": 3 },
+        { "title": "Title Page (Seventh Edition)", "page": 4 },
+        { "title": "Copyright and Publishing Details", "page": 5 },
+        { "title": "Dedication", "page": 6 },
+        { "title": "Preface to the Seventh Edition", "page": 8 },
+        { "title": "Preface to the First Edition", "page": 10 },
+        { "title": "Contents", "page": 12 }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "title": "Diagnosis and Classification in Psychiatry",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "sections": [
+        { "title": "Definition of a Psychiatric Disorder", "page": 13 },
+        { "title": "Normal Mental Health", "page": 13 },
+        { "title": "Classification in Psychiatry", "page": 14 },
+        { "title": "Multi-Axial Classification", "page": 16 }
+      ]
+    },
+    {
+      "title": "Psychiatric History and Examination",
+      "pageStart": 17,
+      "pageEnd": 30,
+      "sections": [
+        { "title": "Interview Technique", "page": 17 },
+        { "title": "Identification Data", "page": 18 },
+        { "title": "Informants", "page": 18 },
+        { "title": "Presenting (Chief) Complaints", "page": 18 },
+        { "title": "History of Present Illness", "page": 18 },
+        { "title": "Past Psychiatric and Medical History", "page": 19 },
+        { "title": "Treatment History", "page": 19 },
+        { "title": "Family History", "page": 19 },
+        { "title": "Personal and Social History", "page": 21 },
+        { "title": "Alcohol and Substance History", "page": 22 },
+        { "title": "Physical Examination", "page": 22 },
+        { "title": "Mental Status Examination (MSE)", "page": 22 },
+        { "title": "Investigations", "page": 27 },
+        { "title": "Formulation", "page": 27 },
+        { "title": "Special Interviews", "page": 30 }
+      ]
+    },
+    {
+      "title": "Organic (Including Symptomatic) Mental Disorders",
+      "pageStart": 31,
+      "pageEnd": 44,
+      "sections": [
+        { "title": "Delirium", "page": 31 },
+        { "title": "Dementia", "page": 34 },
+        { "title": "Organic Amnestic Syndrome", "page": 39 },
+        { "title": "Other Organic Mental Disorders", "page": 40 },
+        { "title": "Organic Hallucinosis", "page": 40 },
+        { "title": "Organic Catatonic Disorder", "page": 41 },
+        { "title": "Organic Delusional Disorder", "page": 41 },
+        { "title": "Organic Mood (Affective) Disorder", "page": 42 },
+        { "title": "Organic Anxiety Disorder", "page": 42 },
+        { "title": "Organic Personality Disorder", "page": 43 },
+        { "title": "Disorders Due to Brain Disease, Damage and Dysfunction", "page": 43 },
+        { "title": "Miscellaneous Organic Mental Disorders", "page": 44 }
+      ]
+    },
+    {
+      "title": "Psychoactive Substance Use Disorders",
+      "pageStart": 45,
+      "pageEnd": 65,
+      "sections": [
+        { "title": "Alcohol Use Disorders", "page": 47 },
+        { "title": "Opioid Use Disorders", "page": 54 },
+        { "title": "Cannabis Use Disorder", "page": 57 },
+        { "title": "Cocaine Use Disorder", "page": 58 },
+        { "title": "Amphetamine Use Disorder", "page": 60 },
+        { "title": "LSD Use Disorder", "page": 61 },
+        { "title": "Barbiturate Use Disorder", "page": 62 },
+        { "title": "Benzodiazepines and Other Sedative-Hypnotic Use Disorder", "page": 63 },
+        { "title": "Inhalants or Volatile Solvent Use Disorder", "page": 63 },
+        { "title": "Phencyclidine Use Disorder", "page": 64 },
+        { "title": "Other Use Disorders", "page": 64 }
+      ]
+    },
+    {
+      "title": "Schizophrenia",
+      "pageStart": 66,
+      "pageEnd": 80,
+      "sections": [
+        { "title": "Historical Background", "page": 66 },
+        { "title": "Epidemiology", "page": 67 },
+        { "title": "Clinical Features", "page": 67 },
+        { "title": "Diagnosis", "page": 69 },
+        { "title": "Clinical Types", "page": 70 },
+        { "title": "Differential Diagnosis", "page": 73 },
+        { "title": "Prognosis", "page": 73 },
+        { "title": "Course and Outcome", "page": 73 },
+        { "title": "Aetiology", "page": 75 },
+        { "title": "Management", "page": 77 }
+      ]
+    },
+    {
+      "title": "Mood Disorders",
+      "pageStart": 81,
+      "pageEnd": 94,
+      "sections": [
+        { "title": "Classification", "page": 81 },
+        { "title": "Clinical Features and Diagnosis", "page": 81 },
+        { "title": "Course and Prognosis", "page": 85 },
+        { "title": "Prognosis", "page": 86 },
+        { "title": "Aetiology", "page": 86 },
+        { "title": "Differential Diagnosis", "page": 88 },
+        { "title": "Management", "page": 88 },
+        { "title": "Other Syndromes of Depression and Mania", "page": 92 }
+      ]
+    },
+    {
+      "title": "Other Psychotic Disorders",
+      "pageStart": 95,
+      "pageEnd": 100,
+      "sections": [
+        { "title": "Persistent Delusional Disorders", "page": 95 },
+        { "title": "Induced Delusional Disorder", "page": 97 },
+        { "title": "Acute and Transient Psychotic Disorders", "page": 97 },
+        { "title": "Schizoaffective Disorder", "page": 99 },
+        { "title": "Reactive Psychosis", "page": 100 }
+      ]
+    },
+    {
+      "title": "Neurotic, Stress-related and Somatoform Disorders",
+      "pageStart": 101,
+      "pageEnd": 124,
+      "sections": [
+        { "title": "Anxiety Disorder", "page": 101 },
+        { "title": "Phobic Disorder", "page": 104 },
+        { "title": "Obsessive-Compulsive Disorder", "page": 107 },
+        { "title": "Dissociative and Conversion Disorders", "page": 111 },
+        { "title": "Somatoform Disorder", "page": 116 },
+        { "title": "Other Neurotic Disorders", "page": 121 },
+        { "title": "Reaction to Stress and Adjustment Disorders", "page": 123 }
+      ]
+    },
+    {
+      "title": "Disorders of Adult Personality and Behaviour",
+      "pageStart": 125,
+      "pageEnd": 132,
+      "sections": [
+        { "title": "Specific Personality Disorders", "page": 125 },
+        { "title": "Enduring Personality Changes, Not Attributable to Brain Damage and Disease", "page": 131 },
+        { "title": "Habit and Impulse Disorders", "page": 131 },
+        { "title": "Gender Identity Disorders", "page": 131 },
+        { "title": "Disorders of Sexual Preference", "page": 131 },
+        { "title": "Psychological and Behavioural Disorders Associated with Sexual Development and Orientation", "page": 131 },
+        { "title": "Factitious Disorder", "page": 131 }
+      ]
+    },
+    {
+      "title": "Sexual Disorders",
+      "pageStart": 133,
+      "pageEnd": 144,
+      "sections": [
+        { "title": "Gender Identity Disorders", "page": 133 },
+        { "title": "Psychological and Behavioural Disorders Associated with Sexual Development and Maturation", "page": 135 },
+        { "title": "Paraphilias (Disorders of Sexual Preference)", "page": 136 },
+        { "title": "Sexual Dysfunctions", "page": 138 }
+      ]
+    },
+    {
+      "title": "Sleep Disorders",
+      "pageStart": 145,
+      "pageEnd": 153,
+      "sections": [
+        { "title": "Sleep", "page": 145 },
+        { "title": "Sleep Deprivation", "page": 147 },
+        { "title": "Functions of Sleep", "page": 147 },
+        { "title": "Sleep Disorders", "page": 147 }
+      ]
+    },
+    {
+      "title": "Behavioural Syndromes Associated with Psychological Disturbances and Physiological Factors",
+      "pageStart": 154,
+      "pageEnd": 164,
+      "sections": [
+        { "title": "Eating Disorders", "page": 154 },
+        { "title": "Non-Organic Sleep Disorders", "page": 157 },
+        { "title": "Sexual Dysfunctions, Not Caused by Organic Disorders or Disease", "page": 157 },
+        { "title": "Postpartum Psychiatric Disorders", "page": 157 },
+        { "title": "Psychosomatic Disorders", "page": 158 },
+        { "title": "Factors Associated with Disorders or Diseases Classified Elsewhere", "page": 158 },
+        { "title": "Psychiatry in Medicine", "page": 161 },
+        { "title": "Grief", "page": 163 }
+      ]
+    },
+    {
+      "title": "Mental Retardation",
+      "pageStart": 165,
+      "pageEnd": 173,
+      "sections": [
+        { "title": "Normal Child Development", "page": 165 },
+        { "title": "Intellectual Development", "page": 165 },
+        { "title": "Mental Retardation", "page": 167 }
+      ]
+    },
+    {
+      "title": "Child Psychiatry",
+      "pageStart": 174,
+      "pageEnd": 183,
+      "sections": [
+        { "title": "Classification in Child Psychiatry", "page": 174 },
+        { "title": "Mental Retardation", "page": 174 },
+        { "title": "Specific Developmental Disorders", "page": 174 },
+        { "title": "Pervasive Developmental Disorders", "page": 175 },
+        { "title": "Other Pervasive Developmental Disorders", "page": 177 },
+        { "title": "Attention Deficit Disorder", "page": 178 },
+        { "title": "Conduct Disorders", "page": 179 },
+        { "title": "Tic Disorders", "page": 180 },
+        { "title": "Non-Organic Enuresis", "page": 181 },
+        { "title": "Non-Organic Encopresis", "page": 182 },
+        { "title": "Speech Disorders", "page": 182 },
+        { "title": "Habit Disorders", "page": 182 },
+        { "title": "Elective (Selective) Mutism", "page": 183 },
+        { "title": "Other Disorders", "page": 183 }
+      ]
+    },
+    {
+      "title": "Psychopharmacology",
+      "pageStart": 184,
+      "pageEnd": 210,
+      "sections": [
+        { "title": "History of Treatment in Psychiatry", "page": 184 },
+        { "title": "Classification of Psychotropic Drugs", "page": 184 },
+        { "title": "Antipsychotic Drugs", "page": 186 },
+        { "title": "Antidepressant Drugs", "page": 193 },
+        { "title": "Mood Stabilising Drugs", "page": 197 },
+        { "title": "Lithium", "page": 200 },
+        { "title": "Valproate", "page": 203 },
+        { "title": "Carbamazepine", "page": 204 },
+        { "title": "Anti-Anxiety Drugs", "page": 205 }
+      ]
+    },
+    {
+      "title": "Other Biological Methods of Treatment",
+      "pageStart": 211,
+      "pageEnd": 216,
+      "sections": [
+        { "title": "Electroconvulsive Therapy", "page": 211 },
+        { "title": "Psychosurgery", "page": 215 }
+      ]
+    },
+    {
+      "title": "Psychoanalysis",
+      "pageStart": 217,
+      "pageEnd": 224,
+      "sections": [
+        { "title": "Basic Concepts", "page": 217 },
+        { "title": "Historical Overview", "page": 217 }
+      ]
+    },
+    {
+      "title": "Psychological Treatments",
+      "pageStart": 225,
+      "pageEnd": 232,
+      "sections": [
+        { "title": "Psychotherapy", "page": 225 },
+        { "title": "Behaviour Therapy", "page": 226 },
+        { "title": "Cognitive Therapy or Cognitive Behaviour Therapy", "page": 227 },
+        { "title": "Supportive Psychotherapy", "page": 228 },
+        { "title": "Family and Marital Therapy", "page": 229 },
+        { "title": "Group Therapy", "page": 229 },
+        { "title": "Hypnosis", "page": 229 },
+        { "title": "Relaxation Therapies", "page": 230 },
+        { "title": "Indian Perspective", "page": 231 }
+      ]
+    },
+    {
+      "title": "Emergency Psychiatry",
+      "pageStart": 233,
+      "pageEnd": 240,
+      "sections": [
+        { "title": "Types of Psychiatric Emergencies", "page": 233 },
+        { "title": "Examination", "page": 233 },
+        { "title": "Common Psychiatric Emergencies", "page": 234 }
+      ]
+    },
+    {
+      "title": "Legal and Ethical Issues in Psychiatry",
+      "pageStart": 241,
+      "pageEnd": 246,
+      "sections": [
+        { "title": "Criminal Responsibility", "page": 241 },
+        { "title": "Civil Responsibility", "page": 241 },
+        { "title": "Indian Lunacy Act, 1912", "page": 243 },
+        { "title": "The Mental Health Act, 1987", "page": 244 },
+        { "title": "The Narcotic Drugs and Psychotropic Substances Act", "page": 245 },
+        { "title": "A Code of Ethics for Psychiatrists", "page": 246 },
+        { "title": "ICMR Guidelines for Research", "page": 246 },
+        { "title": "MCI Code of Medical Ethics, 2002", "page": 246 }
+      ]
+    },
+    {
+      "title": "Community Psychiatry",
+      "pageStart": 247,
+      "pageEnd": 252,
+      "sections": [
+        { "title": "National Mental Health Programme (India)", "page": 247 },
+        { "title": "World (Mental) Health Report", "page": 250 }
+      ]
+    }
+  ],
+  "unattributedPages": []
+}
