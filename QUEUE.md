@@ -388,54 +388,54 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   redesign them around one meaningful cognitive task at a time; do not merely
   stack or shrink desktop content
 
-- [ ] T19  Mobile interaction-flow audit — for every major mobile feature define
+- [x] T19  Mobile interaction-flow audit — for every major mobile feature define
   the primary goal, primary action, required information, next action, and
   secondary actions; remove competing actions from the initial viewport and
   reveal secondary functionality contextually
 
-- [ ] T20  Mobile-specific page compositions — wherever desktop composition is
+- [x] T20  Mobile-specific page compositions — wherever desktop composition is
   fundamentally different from the ideal mobile experience, create a dedicated
   mobile composition instead of forcing the desktop component through CSS;
   share data/business logic but allow mobile-specific interaction architecture
 
-- [ ] T21  Progressive forms — audit every form, intake flow, registration flow,
+- [x] T21  Progressive forms — audit every form, intake flow, registration flow,
   profile flow, assessment flow, feedback flow, and administrative form on
   mobile; group related fields into meaningful steps rather than presenting
   long forms; preserve context, progress, validation, back navigation, and
   entered state
 
-- [ ] T22  Progressive assessments — apply the one-cognitive-task pattern to
+- [x] T22  Progressive assessments — apply the one-cognitive-task pattern to
   every assessment, quiz, MCQ, ordering task, matching task, scenario,
   reflection, and knowledge check; never assume that the desktop number of
   visible questions should be retained on mobile; implement focused sequential
   flows where appropriate
 
-- [ ] T23  Assessment flow engine — create/reuse a shared mobile interaction
+- [x] T23  Assessment flow engine — create/reuse a shared mobile interaction
   pattern for sequential assessment content so the same progressive behavior
   can be used across different assessment types instead of implementing
   separate one-off solutions for each screen
 
-- [ ] T24  Mobile lesson-flow redesign — audit lessons containing multiple
+- [x] T24  Mobile lesson-flow redesign — audit lessons containing multiple
   sections, activities, resources, videos, questions, reflections, and
   exercises; progressively reveal content where appropriate and always make
   the current learning task and next action obvious
 
-- [ ] T25  Mobile reading/content flow — redesign long educational content for
+- [x] T25  Mobile reading/content flow — redesign long educational content for
   phone consumption using sections, chapters, progressive reading, contextual
   navigation, completion state, and clear continuation actions; eliminate
   unnecessary giant scrolling pages without hiding required content
 
-- [ ] T26  Mobile resource hierarchy — audit PDFs, documents, references,
+- [x] T26  Mobile resource hierarchy — audit PDFs, documents, references,
   attachments, supplementary resources, transcripts, notes, and downloads;
   show the most relevant resource first and move secondary resources into
   contextual sections or sheets where appropriate
 
-- [ ] T27  Mobile course navigation — redesign course → module → week → lesson →
+- [x] T27  Mobile course navigation — redesign course → module → week → lesson →
   activity hierarchy for focused navigation; preserve access to the complete
   curriculum while making the current lesson/activity the dominant mobile
   context
 
-- [ ] T28  Mobile "Continue" system — establish consistent contextual
+- [x] T28  Mobile "Continue" system — establish consistent contextual
   continuation actions across courses, lessons, assessments, practice,
   simulations, reflections, and other sequential experiences; "Continue"
   should always represent the actual next meaningful action
@@ -445,52 +445,52 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   courses; provide useful feedback and an obvious next action without adding
   unnecessary visual clutter
 
-- [ ] T30  Mobile practice flows — audit every practice tool and redesign dense
+- [x] T30  Mobile practice flows — audit every practice tool and redesign dense
   multi-tool screens into focused task flows; expose the available practice
   categories without forcing every tool, description, and option onto one
   viewport
 
-- [ ] T31  Mobile clinical workflows — audit all clinical/educational
+- [x] T31  Mobile clinical workflows — audit all clinical/educational
   workflows beyond patient chat, including case selection, case information,
   clinical questions, assessments, notes, debriefs, formulation, MSE,
   psychopharmacology, and other practice modules; apply focused progressive
   interactions throughout
 
-- [ ] T32  Mobile psychopharmacology experience — redesign medication browsing,
+- [x] T32  Mobile psychopharmacology experience — redesign medication browsing,
   medication details, comparisons, learning checks, and related educational
   interactions for mobile; prioritize one medication/concept at a time where
   appropriate and progressively expose secondary information
 
-- [ ] T33  Mobile case workflow — redesign Cases from discovery → case overview →
+- [x] T33  Mobile case workflow — redesign Cases from discovery → case overview →
   preparation → patient interaction → notes → completion → debrief; keep the
   current task dominant and move secondary case metadata into contextual
   surfaces
 
-- [ ] T34  Mobile debrief architecture — redesign all post-practice feedback,
+- [x] T34  Mobile debrief architecture — redesign all post-practice feedback,
   reflection, scoring, missed opportunities, explanations, and recommendations
   into progressive sections; avoid presenting one enormous debrief page
 
-- [ ] T35  Mobile notes architecture — standardize contextual notes across
+- [x] T35  Mobile notes architecture — standardize contextual notes across
   lessons, cases, simulations, assessments, and resources using sheets or
   focused editors where appropriate; users must be able to return to their
   original context without losing state
 
-- [ ] T36  Mobile search experience — audit search wherever available; create a
+- [x] T36  Mobile search experience — audit search wherever available; create a
   phone-first search flow with focused results, useful filters, progressive
   refinement, and contextual result details rather than dense desktop-style
   result grids
 
-- [ ] T37  Mobile filters and sorting — convert dense desktop filter panels into
+- [x] T37  Mobile filters and sorting — convert dense desktop filter panels into
   mobile bottom sheets or progressive filter flows; preserve all filtering
   capabilities without permanently consuming screen space
 
-- [ ] T38  Mobile tables and dense data — audit every table, comparison,
+- [x] T38  Mobile tables and dense data — audit every table, comparison,
   statistics view, progress matrix, and dense information layout; replace
   desktop tables with appropriate mobile patterns such as stacked records,
   horizontal comparison only where genuinely necessary, progressive details,
   or focused item views
 
-- [ ] T39  Mobile dashboards beyond Today — audit every dashboard and analytics
+- [x] T39  Mobile dashboards beyond Today — audit every dashboard and analytics
   surface in the application; remove desktop dashboard density and redesign
   around the most important metric/action first, with deeper information
   progressively revealed
@@ -508,25 +508,25 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   actionable information; prioritize what requires attention, group secondary
   notifications, and prevent notification lists from becoming visually dense
 
-- [ ] T43  Mobile modals → contextual surfaces — audit every modal currently
+- [x] T43  Mobile modals → contextual surfaces — audit every modal currently
   used on mobile; convert suitable interactions into bottom sheets, inline
   expansion, full-screen focused flows, or contextual menus depending on task
   complexity
 
-- [ ] T44  Mobile navigation depth audit — identify unnecessary navigation
+- [x] T44  Mobile navigation depth audit — identify unnecessary navigation
   layers and reduce the number of screens required to complete common actions;
   preserve clear back behavior and never sacrifice context for fewer screens
 
-- [ ] T45  Mobile contextual actions — move secondary actions such as notes,
+- [x] T45  Mobile contextual actions — move secondary actions such as notes,
   hints, sharing, reporting, metadata, references, and additional options into
   contextual controls instead of displaying them permanently
 
-- [ ] T46  Mobile multi-step state preservation — ensure partially completed
+- [x] T46  Mobile multi-step state preservation — ensure partially completed
   assessments, forms, lessons, cases, simulations, reflections, and other
   workflows preserve state when navigating backward, opening a sheet, changing
   orientation, or temporarily leaving the screen
 
-- [ ] T47  Mobile interruption recovery — design what happens when a user
+- [x] T47  Mobile interruption recovery — design what happens when a user
   receives a call, switches applications, locks the phone, loses network,
   refreshes, or returns later; restore the correct task/context without forcing
   the user to restart
@@ -536,12 +536,12 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   offline states, preserve local progress where supported, and make recovery
   understandable
 
-- [ ] T49  Mobile network/loading strategy — audit all asynchronous mobile
+- [x] T49  Mobile network/loading strategy — audit all asynchronous mobile
   interactions; use skeletons or focused loading states where appropriate and
   prevent layout jumping; never make the user stare at an unexplained blank
   screen
 
-- [ ] T50  Mobile error recovery — standardize error handling across the entire
+- [x] T50  Mobile error recovery — standardize error handling across the entire
   mobile application; every failure should explain what happened in human
   language, preserve user state when possible, and provide an obvious recovery
   action
