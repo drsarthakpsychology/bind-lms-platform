@@ -24,9 +24,19 @@ import { DRAFT_FDA_5 } from "./draft-fda5";
 import { DRAFT_FDA_6 } from "./draft-fda6";
 import { ONSET_PATCHES } from "./draft-onset";
 import { SOURCES } from "./sources";
+import { ENRICHED_ANTIDEPRESSANTS } from "./enriched-antidepressants";
+import { ENRICHED_ANTIPSYCHOTICS } from "./enriched-antipsychotics";
+import { ENRICHED_OTHERS } from "./enriched-others";
 
 /** All curated draft records (core + extended band sets + rich ladders + FDA). */
 const ALL_DRAFT = [...DRAFT_DRUGS, ...DRAFT_DRUGS_EXTRA, ...DRAFT_LADDERS, ...DRAFT_LADDERS_2, ...DRAFT_FDA, ...DRAFT_FDA_2, ...DRAFT_FDA_3, ...DRAFT_FDA_4, ...DRAFT_FDA_5, ...DRAFT_FDA_6];
+
+/** Enriched author content — a student plain-language summary + concise
+ *  clinical bullets for every drug, the fallback when a drug has no curated
+ *  draft record yet. Sourced from Stahl 7th ed. + web research. */
+const ENRICHED = new Map(
+  [...ENRICHED_ANTIDEPRESSANTS, ...ENRICHED_ANTIPSYCHOTICS, ...ENRICHED_OTHERS].map((e) => [e.generic_name, e] as const),
+);
 
 /** Onset values merged onto the curated records (student register). */
 const ONSET_BY_DRUG = new Map(ONSET_PATCHES.map((p) => [p.generic_name, p.onset_time]));
@@ -277,8 +287,8 @@ export function drugDetail(drug: string): DrugDetail | null {
   const halfLifeKb = kb.find((r) => r.field_key === "half_life");
   return {
     generic: drug,
-    class: curated?.drug_class,
-    plain: curated?.student.plain_language?.text,
+    class: curated?.drug_class ?? ENRICHED.get(drug)?.drug_class,
+    plain: curated?.student.plain_language?.text ?? ENRICHED.get(drug)?.plain_language,
     mechanism: asRow("mechanism") ?? curated?.mechanism[0]?.value,
     common_uses: asRow("common_uses") ?? curated?.common_uses?.[0]?.value,
     dose_range: asRow("dose_range"),

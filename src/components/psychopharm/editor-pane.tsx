@@ -126,21 +126,24 @@ export function EditorPane({
       {/* The document itself — the edit surface. */}
       <div className="flex-1 overflow-y-auto p-6">
         <div className="mx-auto max-w-3xl">
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-            <p className="text-caption text-muted-foreground">
-              {register === "student"
-                ? "Student view — plain language first."
-                : "Clinician view — technical register with sources."}
-            </p>
-            <SegmentedControl
-              value={register}
-              onValueChange={(v) => setRegister(v)}
-              label="Preview register"
-              options={[
-                { value: "student", label: "Student" },
-                { value: "clinician", label: "Clinician" },
-              ]}
-            />
+          <div className="mb-4 rounded-md border-2 border-border p-3">
+            <p className="text-caption font-semibold uppercase text-muted-foreground">Preview</p>
+            <div className="mt-1 flex flex-wrap items-center justify-between gap-3">
+              <p className="text-caption text-muted-foreground">
+                {register === "student"
+                  ? "Student view — plain language, what students read."
+                  : "Clinical view — technical detail with source citations."}
+              </p>
+              <SegmentedControl
+                value={register}
+                onValueChange={(v) => setRegister(v)}
+                label="Preview audience"
+                options={[
+                  { value: "student", label: "Student view" },
+                  { value: "clinician", label: "Clinical view" },
+                ]}
+              />
+            </div>
           </div>
           <DocumentView
             document={document}
@@ -222,8 +225,8 @@ export function EditorPane({
         ) : null}
 
         <p className="mt-4 text-caption text-muted-foreground">
-          Click any text to edit it. Hover an item for its type, source, and remove controls.
-          Changes auto-save as drafts. Publish to make them visible to students.
+          Click any text to edit it. Changes save automatically as a draft.
+          Publish when the page is ready for students.
         </p>
       </div>
     </div>

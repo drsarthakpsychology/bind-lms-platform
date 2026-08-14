@@ -1,7 +1,26 @@
 "use client";
 
 import * as React from "react";
-import type { MedicationDocument, MedBlock } from "@/lib/psychopharm/document";
+import { Pencil, Trash2 } from "lucide-react";
+import type { MedicationDocument, MedBlock, BlockType } from "@/lib/psychopharm/document";
+
+/** Human labels for block types — the editor speaks content, not database fields. */
+export const BLOCK_TYPE_LABEL: Record<BlockType, string> = {
+  mechanism: "Mechanism",
+  common_uses: "What it's used for",
+  dose_band: "Dose",
+  onset: "Onset",
+  half_life: "Half-life",
+  side_effect_list: "Side effects",
+  observation_prompt_list: "Session observations",
+  therapist_question_list: "Questions to ask",
+  clinical_pearl_list: "Clinical pearls",
+  red_flag_list: "Red flags",
+  plain_language: "In plain words",
+  reference: "Reference",
+  timeline: "Timeline",
+  note: "Note",
+};
 
 /**
  * Renders a medication document as a real page.
@@ -44,8 +63,7 @@ export function DocumentView({
 
       {editable && (
         <div className="text-caption text-muted-foreground">
-          Click any text to edit it. Use the controls on each item to change its type,
-          attach a source, hide it, or remove it.
+          Click any text to edit it. Hover a block for edit and remove controls.
         </div>
       )}
     </div>
@@ -279,10 +297,23 @@ function EditableBlock({
     <div className="group relative rounded-md border-2 border-border p-3 hover:border-primary/40">
       {children}
       <div className="absolute right-2 top-2 hidden gap-1 group-hover:flex">
-        <button type="button" onClick={() => setEditing(true)} className="rounded border-2 border-border bg-background px-1.5 py-0.5 text-[10px] hover:bg-accent">edit</button>
-        <button type="button" onClick={() => onRemove?.(block.id)} className="rounded border-2 border-border bg-background px-1.5 py-0.5 text-[10px] text-destructive hover:bg-accent">×</button>
+        <button
+          type="button"
+          onClick={() => setEditing(true)}
+          aria-label="Edit"
+          className="flex items-center gap-1 rounded border-2 border-border bg-background px-1.5 py-0.5 text-[10px] hover:bg-accent"
+        >
+          <Pencil className="h-3 w-3" /> Edit
+        </button>
+        <button
+          type="button"
+          onClick={() => onRemove?.(block.id)}
+          aria-label="Remove"
+          className="flex items-center gap-1 rounded border-2 border-border bg-background px-1.5 py-0.5 text-[10px] text-destructive hover:bg-accent"
+        >
+          <Trash2 className="h-3 w-3" /> Remove
+        </button>
       </div>
-      <span className="absolute left-2 top-1 text-[9px] uppercase text-muted-foreground">{block.type}</span>
     </div>
   );
 }

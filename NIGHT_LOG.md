@@ -1801,3 +1801,28 @@ consistent clinical class to all 151 + standardised the pre-existing labels
 misleading "Inactive this week" label, replaced unicode arrow + emoji.
 
 Gate green: lint 0, tsc clean, 395 tests, build 0.
+2026-08-14T05:21:02 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:26:56 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:27:16 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:29:28 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:32:11 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:32:29 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:33:03 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Psychopharm: editor simplification + enriched content
+
+- **Editor** (parallel agent): reads as a document CMS, not a database editor —
+  removed raw block-type labels, added human names (`BLOCK_TYPE_LABEL`), clear
+  Edit/Remove buttons, and an obvious "Student view / Clinical view" preview
+  toggle with audience hints. No IDs/JSON/dev terms in the main surface.
+- **Content** (3 parallel agents): 148 enriched drug entries across
+  `enriched-antidepressants.ts` (40), `enriched-antipsychotics.ts` (41),
+  `enriched-others.ts` (67) — each with a student `plain_language` summary +
+  clinical `mechanism/common_uses/side_effects/monitoring` bullets, sourced from
+  Stahl 7th ed. + web research with safety flags (TCA QTc, MAOI tyramine,
+  clozapine ANC, lithium/valproate monitoring, non-US-market flags).
+- **Integration**: `drugDetail` now falls back to the enriched `plain_language`
+  and `drug_class` when a drug has no curated draft record — the medication list
+  shows a real student summary for every drug instead of "No student summary".

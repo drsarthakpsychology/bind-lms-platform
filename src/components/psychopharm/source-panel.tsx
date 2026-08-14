@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import type { MedBlock, SourceRef } from "@/lib/psychopharm/document";
+import { BLOCK_TYPE_LABEL } from "./document-view";
 
 /**
  * Per-block source panel. Shows the book/edition/page/quote behind a block and
@@ -32,7 +33,7 @@ export function SourcePanel({
   return (
     <div className="rounded-md border-2 border-dashed border-border p-3">
       <p className="text-caption font-semibold uppercase text-muted-foreground">
-        Source · {block.type}
+        Source · {BLOCK_TYPE_LABEL[block.type] ?? "Note"}
       </p>
       <input
         value={title}
