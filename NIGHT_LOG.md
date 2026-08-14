@@ -2383,3 +2383,30 @@ recall uses raw vector, grounding uses the expanded window. Fixed a transient
 bug (interleaved neighbors made slice(0,8) bogus at 48%). Docs + FINETUNING
 runbook updated to the honest dual baseline. The 10% app-path gap = multi-page
 case-management sections beyond ±1-page expansion (documented future target).
+2026-08-14T10:12:28 Queue exhausted — allowing normal Claude stop.
+2026-08-14T10:15:33 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — Groq LIVE + voice-enabled Psychology Tutor
+
+User provided the GROQ_API_KEY and asked to build a button-based talking AI
+("like we talk with ChatGPT"), plus to configure Cloudflare and report the AI
+keys needed.
+
+- **GROQ_API_KEY configured** (gitignored .env.local — never committed) and
+  VERIFIED against the live API: llama-3.3-70b-versatile + whisper-large-v3/
+  turbo present; JSON output works. Router selects groq for json/stream/audio
+  (student-data-safe, no-train).
+- **Whisper STT verified end-to-end**: macOS `say` → mp3 → Groq whisper-large-
+  v3-turbo returned the exact transcript.
+- **Cloudflare R2 verified** (no setup needed): 20 knowledge objects live
+  (books + text), plus lessons/media.
+- **Voice-enabled Psychology Tutor** (commits 200be4c, e7a7908): press-once
+  mic button (not hold-to-talk) → Web Speech live interim transcript → auto-
+  stop on pause → Groq Whisper fallback for en-IN → grounded answer from the
+  50-question eval / 27,608-chunk corpus → answer read aloud (speechSynthesis),
+  read-aloud + stop on every reply. A real back-and-forth.
+- **Keys documented** in NEEDS_KAVYA: Groq is the only required key (set);
+  CEREBRAS/ANTHROPIC/NVIDIA/DEEPSEEK are optional upgrades.
+
+Verified: lint 0, tsc clean, 425 tests, build 82/82, dev smoke (landing 200,
+tutor 307-auth, STT 401-gated — all correct).
