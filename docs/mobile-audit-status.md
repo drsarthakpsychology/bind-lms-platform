@@ -103,3 +103,10 @@ merging; treat those files as conflict hotspots.
   needs owned surfaces), T40 (dashboard progress architecture), T48 (offline
   wiring — useOffline hook exists, needs sim/wall/today wiring). These need
   surface ownership or a product decision, not a fix.
+
+## Worker-slice update (2026-08-14 20:50)
+- **T48 offline — DONE** (committed). useOffline pill in sim header + wall +
+  journal. T40 remains OPEN (dashboard progress — coordinator-owned surface).
+- **T29 — DONE (judgment)** (committed). MobileCompletionState + "Back to
+  practice" next action. Decode-arena completion left to coordinator (file
+  owned by worker-owned decode-flow).

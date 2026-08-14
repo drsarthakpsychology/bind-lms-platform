@@ -440,7 +440,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   simulations, reflections, and other sequential experiences; "Continue"
   should always represent the actual next meaningful action
 
-- [ ] T29  Mobile completion states — create consistent completion experiences
+- [x] T29  Mobile completion states — create consistent completion experiences
   for lessons, sections, questions, assessments, practice sessions, cases, and
   courses; provide useful feedback and an obvious next action without adding
   unnecessary visual clutter
@@ -531,7 +531,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   refreshes, or returns later; restore the correct task/context without forcing
   the user to restart
 
-- [ ] T48  Mobile offline experience — audit all mobile functionality that can
+- [x] T48  Mobile offline experience — audit all mobile functionality that can
   operate offline or encounter connectivity loss; provide clear but subtle
   offline states, preserve local progress where supported, and make recovery
   understandable
