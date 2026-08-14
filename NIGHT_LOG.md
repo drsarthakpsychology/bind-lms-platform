@@ -1,3 +1,22 @@
+## 2026-08-14 — KNOWLEDGE SYSTEM: psychopharm wiring + final report (§37)
+
+Closed the last two buildable items:
+- **Psychopharm editor corpus sources** (cb7c559): the admin block-source panel
+  queries /api/knowledge/search and fills title/page/quote from a real passage.
+- **Final report** (4b60925, docs/KNOWLEDGE_SYSTEM_REPORT.md) — the brief §37
+  deliverable: corpus stats, architecture, AI surfaces, patient/quiz readiness,
+  the 100% recall eval baseline, $0 cost, remaining work. NEEDS_KAVYA carries
+  the no-train key path to unlock AI synthesis/quiz generation.
+
+Final verified state: 10 sources, 10 documents, **27,608 chunks, 27,608
+embedded (100%)**, hybrid retrieval 100% recall@5/@8, tutor + psychopharm
+surfaces live. Full gate green (lint 0/0, tsc clean, 420 tests, build 81/81).
+Working tree clean on feat/groq-primary-director (41 commits ahead).
+
+The only remaining QUEUE item — V4-Flash concept enrichment — is deliberately
+deferred as a research item: retrieval already achieves 100% recall, so a
+knowledge-graph layer is not justified until an eval shows raw chunks fail.
+
 ## 2026-08-14 — KNOWLEDGE SYSTEM: eval benchmark + Psychology Tutor UI
 
 Two next-phase items shipped on top of the live corpus (27,608 chunks, 100%
