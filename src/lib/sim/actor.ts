@@ -29,6 +29,14 @@ export function buildActorPrompt(input: ActorInput): string {
     .map((t) => `${t.role.toUpperCase()}: ${t.content}`)
     .join("\n");
 
+  const affect = case_.affect_rules as
+    | { on_interruption?: string; on_premature_advice?: string; on_validation?: string }
+    | undefined;
+  const resistance = case_.resistance as
+    | { irritation_triggers?: string[]; deflections?: string[] }
+    | undefined;
+  const belief = (case_.cognitive_model as { core_belief?: string } | undefined)?.core_belief;
+
   return `You are ${id.name}, a ${id.age}-year-old ${id.gender} ${id.occupation} from ${id.city}, in a clinical session. You are a real person, not a textbook.
 
 # HOW YOU ARE TODAY
@@ -40,6 +48,13 @@ export function buildActorPrompt(input: ActorInput): string {
 - Your most defended topic: ${state.variant.most_defended_topic}
 - Somatic focus: ${state.variant.somatic_focus}
 - You came ${state.variant.opening_posture}
+
+# WHAT SETS YOU OFF, AND WHAT OPENS YOU UP (stay true to this)
+${affect?.on_interruption ? `- If someone talks over you, you ${affect.on_interruption}.` : ""}
+${affect?.on_premature_advice ? `- If someone rushes to reassure you, you ${affect.on_premature_advice}.` : ""}
+${affect?.on_validation ? `- When someone actually listens, you ${affect.on_validation}.` : ""}
+${resistance?.irritation_triggers?.length ? `- Things that make you irritated: ${resistance.irritation_triggers.join("; ")}.` : ""}
+${belief ? `- The belief underneath it all: "${belief}" — you defend it, even if you can't say it.` : ""}
 
 # THIS TURN, YOUR MOVE IS: ${decision.patient_move}
 The Director chose this move. You render it in your own voice.
