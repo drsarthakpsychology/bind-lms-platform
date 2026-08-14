@@ -1,0 +1,1251 @@
+{
+  "id": "stahl_essential_5th",
+  "confidence": "high",
+  "isPreview": false,
+  "issues": [
+    "Back-cover praise text on PDF page 1 references the 'Fourth Edition', which is inconsistent with the 5th-edition title (likely a carried-over publisher blurb).",
+    "Title text appears twice in front matter: half-title page (PDF 3) and full title page with author (PDF 7).",
+    "Two-column extraction interleaves each chapter's section list (mini-TOC) with the chapter intro body text on opening pages (e.g., ch.1 PDF 17, ch.2 PDF 45).",
+    "Running headers repeat the chapter title on every page, and orphaned printed page numbers appear as standalone numeric lines throughout.",
+    "Some printed page numbers are truncated in extraction (e.g., chapter 2's opening page shows a lone '2' for printed page 29).",
+    "Section 'page' values are derived from each chapter's printed section list (mini-TOC) plus a constant +16 offset to PDF page index; the offset was verified against all 13 chapter openings but individual section headings were not each re-verified against body text.",
+    "A few pages are blank or near-blank (e.g., PDF pages 2 and 10).",
+    "Back matter is not modeled in this schema: 'Suggested Reading and Selected References' (PDF 595-630) and 'Index' (PDF 631-640)."
+  ],
+  "frontMatter": [
+    {
+      "title": "Cover and Endorsements",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "sections": []
+    },
+    {
+      "title": "Title Page",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "sections": []
+    },
+    {
+      "title": "Copyright",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "sections": []
+    },
+    {
+      "title": "Contents",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "sections": []
+    },
+    {
+      "title": "Preface to the Fifth Edition",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "sections": []
+    },
+    {
+      "title": "CME Information",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "sections": []
+    }
+  ],
+  "chapters": [
+    {
+      "title": "Chemical Neurotransmission",
+      "pageStart": 17,
+      "pageEnd": 44,
+      "sections": [
+        {
+          "title": "Anatomical versus Chemical Basis of Neurotransmission",
+          "page": 17
+        },
+        {
+          "title": "General Structure of a Neuron",
+          "page": 18
+        },
+        {
+          "title": "Principles of Chemical Neurotransmission",
+          "page": 21
+        },
+        {
+          "title": "Neurotransmitters",
+          "page": 21
+        },
+        {
+          "title": "Neurotransmission: Classic, Retrograde, and Volume",
+          "page": 22
+        },
+        {
+          "title": "Excitation–Secretion Coupling",
+          "page": 24
+        },
+        {
+          "title": "Signal Transduction Cascades",
+          "page": 25
+        },
+        {
+          "title": "Overview",
+          "page": 25
+        },
+        {
+          "title": "Forming a Second Messenger",
+          "page": 27
+        },
+        {
+          "title": "Beyond the Second Messenger to Phosphoprotein Messengers",
+          "page": 29
+        },
+        {
+          "title": "Beyond the Second Messenger to a Phosphoprotein Cascade Triggering Gene Expression",
+          "page": 31
+        },
+        {
+          "title": "How Neurotransmission Triggers Gene Expression",
+          "page": 34
+        },
+        {
+          "title": "Molecular Mechanism of Gene Expression",
+          "page": 34
+        },
+        {
+          "title": "Epigenetics",
+          "page": 39
+        },
+        {
+          "title": "What Are the Molecular Mechanisms of Epigenetics?",
+          "page": 39
+        },
+        {
+          "title": "How Epigenetics Maintains or Changes the Status Quo",
+          "page": 40
+        },
+        {
+          "title": "A Brief Word about RNA",
+          "page": 42
+        },
+        {
+          "title": "Alternative Splicing",
+          "page": 42
+        },
+        {
+          "title": "RNA Interference",
+          "page": 42
+        },
+        {
+          "title": "Summary",
+          "page": 44
+        }
+      ]
+    },
+    {
+      "title": "Transporters, Receptors, and Enzymes as Targets of Psychopharmacological Drug Action",
+      "pageStart": 45,
+      "pageEnd": 66,
+      "sections": [
+        {
+          "title": "Neurotransmitter Transporters as Targets of Drug Action",
+          "page": 45
+        },
+        {
+          "title": "Classification and Structure",
+          "page": 45
+        },
+        {
+          "title": "Monoamine Transporters (SLC6 Gene Family) as Targets of Psychotropic Drugs",
+          "page": 47
+        },
+        {
+          "title": "Other Neurotransmitter Transporters (SLC6 and SLC1 Gene Families) as Targets of Psychotropic Drugs",
+          "page": 50
+        },
+        {
+          "title": "Where Are the Transporters for Histamine and Neuropeptides?",
+          "page": 51
+        },
+        {
+          "title": "Vesicular Transporters: Subtypes and Function",
+          "page": 51
+        },
+        {
+          "title": "Vesicular Transporters (SLC18 Gene Family) as Targets of Psychotropic Drugs",
+          "page": 51
+        },
+        {
+          "title": "G-Protein-Linked Receptors",
+          "page": 52
+        },
+        {
+          "title": "Structure and Function",
+          "page": 52
+        },
+        {
+          "title": "G-Protein-Linked Receptors as Targets of Psychotropic Drugs",
+          "page": 52
+        },
+        {
+          "title": "Enzymes as Sites of Psychopharmacological Drug Action",
+          "page": 61
+        },
+        {
+          "title": "Cytochrome P450 Drug Metabolizing Enzymes as Targets of Psychotropic Drugs",
+          "page": 65
+        },
+        {
+          "title": "Summary",
+          "page": 66
+        }
+      ]
+    },
+    {
+      "title": "Ion Channels as Targets of Psychopharmacological Drug Action",
+      "pageStart": 67,
+      "pageEnd": 92,
+      "sections": [
+        {
+          "title": "Ligand-Gated Ion Channels as Targets of Psychopharmacological Drug Action",
+          "page": 67
+        },
+        {
+          "title": "Ligand-Gated Ion Channels, Ionotropic Receptors, and Ion-Channel-Linked Receptors",
+          "page": 67
+        },
+        {
+          "title": "Ligand-Gated Ion Channels: Structure and Function",
+          "page": 69
+        },
+        {
+          "title": "Pentameric Subtypes",
+          "page": 69
+        },
+        {
+          "title": "Tetrameric Subtypes",
+          "page": 70
+        },
+        {
+          "title": "The Agonist Spectrum",
+          "page": 72
+        },
+        {
+          "title": "Different States of Ligand-Gated Ion Channels",
+          "page": 79
+        },
+        {
+          "title": "Allosteric Modulation: PAMs and NAMs",
+          "page": 80
+        },
+        {
+          "title": "Voltage-Sensitive Ion Channels as Targets of Psychopharmacological Drug Action",
+          "page": 82
+        },
+        {
+          "title": "Structure and Function",
+          "page": 82
+        },
+        {
+          "title": "VSSCs (Voltage-Sensitive Sodium Channels)",
+          "page": 83
+        },
+        {
+          "title": "VSCCs (Voltage-Sensitive Calcium Channels)",
+          "page": 86
+        },
+        {
+          "title": "Ion Channels and Neurotransmission",
+          "page": 89
+        },
+        {
+          "title": "Summary",
+          "page": 92
+        }
+      ]
+    },
+    {
+      "title": "Psychosis, Schizophrenia, and the Neurotransmitter Networks Dopamine, Serotonin, and Glutamate",
+      "pageStart": 93,
+      "pageEnd": 174,
+      "sections": [
+        {
+          "title": "Symptoms of Psychosis",
+          "page": 93
+        },
+        {
+          "title": "The Three Major Hypotheses of Psychosis and Their Neurotransmitter Networks",
+          "page": 94
+        },
+        {
+          "title": "The Classic Dopamine Hypothesis of Psychosis and Schizophrenia",
+          "page": 95
+        },
+        {
+          "title": "The Dopamine Neurotransmitter Network",
+          "page": 95
+        },
+        {
+          "title": "The Classic Dopamine Hypothesis of the Positive Symptoms of Psychosis: Mesolimbic HyperDopaminergia",
+          "page": 106
+        },
+        {
+          "title": "Corollary to the Classic Dopamine Hypothesis of Schizophrenia: Mesocortical HypoDopaminergia and the Cognitive, Negative, and Affective Symptoms of Schizophrenia",
+          "page": 111
+        },
+        {
+          "title": "The Glutamate Hypothesis of Psychosis and Schizophrenia",
+          "page": 111
+        },
+        {
+          "title": "The Glutamate Neurotransmitter Network",
+          "page": 112
+        },
+        {
+          "title": "The NMDA Glutamate Hypofunction Hypothesis of Psychosis: Faulty NMDA Neurotransmission at Glutamate Synapses on GABA Interneurons in Prefrontal Cortex",
+          "page": 121
+        },
+        {
+          "title": "The Serotonin Hypothesis of Psychosis and Schizophrenia",
+          "page": 127
+        },
+        {
+          "title": "The Serotonin Neurotransmitter Network",
+          "page": 129
+        },
+        {
+          "title": "The Serotonin Hyperfunction Hypothesis of Psychosis",
+          "page": 147
+        },
+        {
+          "title": "Summary and Conclusions Regarding Dopamine, NMDA, and Serotonin Neurotransmission in Psychosis",
+          "page": 157
+        },
+        {
+          "title": "Schizophrenia as the Prototypical Psychotic Disorder",
+          "page": 157
+        },
+        {
+          "title": "Beyond the Positive and Negative Symptoms of Schizophrenia",
+          "page": 159
+        },
+        {
+          "title": "What Is the Cause of Schizophrenia?",
+          "page": 164
+        },
+        {
+          "title": "Other Psychotic Illnesses",
+          "page": 172
+        },
+        {
+          "title": "Mood-Related Psychosis, Psychotic Depression, Psychotic Mania",
+          "page": 173
+        },
+        {
+          "title": "Parkinson's Disease Psychosis",
+          "page": 173
+        },
+        {
+          "title": "Dementia-Related Psychosis",
+          "page": 173
+        },
+        {
+          "title": "Summary",
+          "page": 174
+        }
+      ]
+    },
+    {
+      "title": "Targeting Dopamine and Serotonin Receptors for Psychosis, Mood, and Beyond: So-Called \"Antipsychotics\"",
+      "pageStart": 175,
+      "pageEnd": 259,
+      "sections": [
+        {
+          "title": "Targeting Mesolimbic/Mesostriatal Dopamine D2 Receptors Causes Antipsychotic Actions",
+          "page": 177
+        },
+        {
+          "title": "Targeting Dopamine D2 Receptors in Mesolimbic/Mesostriatal and Mesocortical Pathways Causes Secondary Negative Symptoms",
+          "page": 178
+        },
+        {
+          "title": "Secondary Negative Symptoms Due to Targeting Mesolimbic Dopamine D2 Receptors",
+          "page": 178
+        },
+        {
+          "title": "Secondary Negative Symptoms Due to Targeting Mesocortical Dopamine D2 Receptors",
+          "page": 179
+        },
+        {
+          "title": "Targeting Tuberoinfundibular Dopamine D2 Receptors Causes Elevation of Prolactin",
+          "page": 180
+        },
+        {
+          "title": "Targeting Nigrostriatal Dopamine D2 Receptors Causes Motor Side Effects",
+          "page": 181
+        },
+        {
+          "title": "Drug-Induced Parkinsonism",
+          "page": 182
+        },
+        {
+          "title": "Drug-Induced Acute Dystonia",
+          "page": 185
+        },
+        {
+          "title": "Akathisia",
+          "page": 185
+        },
+        {
+          "title": "Neuroleptic Malignant Syndrome",
+          "page": 185
+        },
+        {
+          "title": "Tardive Dyskinesia",
+          "page": 186
+        },
+        {
+          "title": "Drugs Targeting Dopamine D2 Receptors: So-Called First Generation or Conventional \"Antipsychotics\"",
+          "page": 195
+        },
+        {
+          "title": "Drugs Targeting Serotonin 2A Receptors with or without Simultaneously Targeting Dopamine D2 Receptors",
+          "page": 199
+        },
+        {
+          "title": "5HT2A Receptor Regulation of Dopamine Release in Three Downstream Pathways",
+          "page": 200
+        },
+        {
+          "title": "Drugs Targeting Serotonin 1A Receptors and Dopamine D2 Receptors as Partial Agonists",
+          "page": 205
+        },
+        {
+          "title": "D2 Partial Agonism",
+          "page": 205
+        },
+        {
+          "title": "How Does D2 Partial Agonism Cause Fewer Motor Side Effects than D2 Antagonism?",
+          "page": 208
+        },
+        {
+          "title": "5HT1A Partial Agonism",
+          "page": 209
+        },
+        {
+          "title": "Links between Receptor Binding Properties of Drugs Used to Treat Psychosis and Other Therapeutic Actions and Side Effects",
+          "page": 211
+        },
+        {
+          "title": "Mania",
+          "page": 211
+        },
+        {
+          "title": "Antidepressant Actions in Bipolar and Unipolar Depression",
+          "page": 211
+        },
+        {
+          "title": "Anxiolytic Actions",
+          "page": 212
+        },
+        {
+          "title": "Agitation in Dementia",
+          "page": 213
+        },
+        {
+          "title": "Sedative Hypnotic and Sedating Actions",
+          "page": 213
+        },
+        {
+          "title": "Cardiometabolic Actions",
+          "page": 214
+        },
+        {
+          "title": "Pharmacological Properties of Selected Individual First-Generation D2 Antagonists",
+          "page": 217
+        },
+        {
+          "title": "Chlorpromazine",
+          "page": 217
+        },
+        {
+          "title": "Fluphenazine",
+          "page": 218
+        },
+        {
+          "title": "Haloperidol",
+          "page": 218
+        },
+        {
+          "title": "Sulpiride",
+          "page": 218
+        },
+        {
+          "title": "Amisulpride",
+          "page": 219
+        },
+        {
+          "title": "An Overview of the Pharmacological Properties of Individual 5HT2A/D2 Antagonists and D2/5HT1A Partial Agonists: The Pines (Peens), Many Dones and a Rone, Two Pips and a Rip",
+          "page": 220
+        },
+        {
+          "title": "The Pines (Peens)",
+          "page": 238
+        },
+        {
+          "title": "Many Dones and a Rone",
+          "page": 250
+        },
+        {
+          "title": "Two Pips and a Rip",
+          "page": 255
+        },
+        {
+          "title": "Selective 5HT2A Antagonist",
+          "page": 256
+        },
+        {
+          "title": "The Others",
+          "page": 256
+        },
+        {
+          "title": "Future Treatments for Schizophrenia",
+          "page": 257
+        },
+        {
+          "title": "Roluperidone (MIN-101)",
+          "page": 257
+        },
+        {
+          "title": "D3 Antagonists",
+          "page": 257
+        },
+        {
+          "title": "Trace Amine Receptor Agonists and SEP363856",
+          "page": 257
+        },
+        {
+          "title": "Cholinergic Agonists",
+          "page": 258
+        },
+        {
+          "title": "A Few Other Ideas",
+          "page": 258
+        },
+        {
+          "title": "Summary",
+          "page": 258
+        }
+      ]
+    },
+    {
+      "title": "Mood Disorders and the Neurotransmitter Networks Norepinephrine and γ-Aminobutyric Acid (GABA)",
+      "pageStart": 260,
+      "pageEnd": 298,
+      "sections": [
+        {
+          "title": "Description of Mood Disorders",
+          "page": 260
+        },
+        {
+          "title": "Mood Spectrum",
+          "page": 260
+        },
+        {
+          "title": "Distinguishing Unipolar Depression from Bipolar Depression",
+          "page": 265
+        },
+        {
+          "title": "Mixed Features: Are Mood Disorders Progressive?",
+          "page": 267
+        },
+        {
+          "title": "Neurobiology of Mood Disorders",
+          "page": 268
+        },
+        {
+          "title": "Neurotransmitters",
+          "page": 268
+        },
+        {
+          "title": "The Monoamine Hypothesis of Depression",
+          "page": 280
+        },
+        {
+          "title": "The Monoamine Receptor Hypothesis and Neurotrophic Factors",
+          "page": 280
+        },
+        {
+          "title": "Beyond Monoamines: The Neuroplasticity and Neuroprogression Hypothesis of Depression",
+          "page": 282
+        },
+        {
+          "title": "Symptoms and Circuits in Mood Disorders",
+          "page": 293
+        },
+        {
+          "title": "Symptom-Based Treatment Selections",
+          "page": 295
+        },
+        {
+          "title": "Summary",
+          "page": 298
+        }
+      ]
+    },
+    {
+      "title": "Treatments for Mood Disorders: So-Called \"Antidepressants\" and \"Mood Stabilizers\"",
+      "pageStart": 299,
+      "pageEnd": 374,
+      "sections": [
+        {
+          "title": "Definitions of Clinical Effects of Treatment in Depression",
+          "page": 300
+        },
+        {
+          "title": "How Well Do Classic Monoamine Reuptake Blockers Work in Unipolar Depression?",
+          "page": 301
+        },
+        {
+          "title": "Redefining \"Mood Stabilizers\": A Labile Label",
+          "page": 304
+        },
+        {
+          "title": "Drugs for Unipolar Depression",
+          "page": 305
+        },
+        {
+          "title": "Selective Serotonin Reuptake Inhibitors (SSRIs)",
+          "page": 305
+        },
+        {
+          "title": "Serotonin Partial Agonist Reuptake Inhibitors (SPARIs)",
+          "page": 312
+        },
+        {
+          "title": "Serotonin–Norepinephrine Reuptake Inhibitors (SNRIs)",
+          "page": 314
+        },
+        {
+          "title": "Norepinephrine–Dopamine Reuptake Inhibitors (NDRIs): Bupropion",
+          "page": 319
+        },
+        {
+          "title": "Agomelatine",
+          "page": 322
+        },
+        {
+          "title": "Mirtazapine",
+          "page": 324
+        },
+        {
+          "title": "Serotonin Antagonist/Reuptake Inhibitors (SARIs)",
+          "page": 327
+        },
+        {
+          "title": "Vortioxetine",
+          "page": 331
+        },
+        {
+          "title": "Neuroactive Steroids",
+          "page": 336
+        },
+        {
+          "title": "Treatment Resistance in Unipolar Depression",
+          "page": 339
+        },
+        {
+          "title": "Choosing Treatment for Treatment Resistance in Depression on the Basis of Genetic Testing",
+          "page": 339
+        },
+        {
+          "title": "Augmenting Strategies for Unipolar Depression",
+          "page": 341
+        },
+        {
+          "title": "Second-Line Monotherapies Used for Treatment-Resistant Depression",
+          "page": 349
+        },
+        {
+          "title": "Drugs for Bipolar Disorder Spectrum",
+          "page": 354
+        },
+        {
+          "title": "Serotonin/Dopamine Blockers: Not Just for Psychosis and Psychotic Mania",
+          "page": 354
+        },
+        {
+          "title": "Lithium, the Classic \"Antimanic\" and \"Mood Stabilizer\"",
+          "page": 361
+        },
+        {
+          "title": "Anticonvulsants as \"Mood Stabilizers\"",
+          "page": 362
+        },
+        {
+          "title": "Anticonvulsants with Proven Efficacy in Bipolar Disorder",
+          "page": 363
+        },
+        {
+          "title": "Combinations are the Standard for Treating Bipolar Disorder",
+          "page": 369
+        },
+        {
+          "title": "Future Treatments for Mood Disorders",
+          "page": 369
+        },
+        {
+          "title": "Dextromethorphan–Bupropion and Dextromethorphan–Quinidine",
+          "page": 369
+        },
+        {
+          "title": "Dextromethadone",
+          "page": 371
+        },
+        {
+          "title": "Hallucinogen-Assisted Psychotherapy",
+          "page": 371
+        },
+        {
+          "title": "Summary",
+          "page": 374
+        }
+      ]
+    },
+    {
+      "title": "Anxiety, Trauma, and Treatment",
+      "pageStart": 375,
+      "pageEnd": 394,
+      "sections": [
+        {
+          "title": "Symptom Dimensions in Anxiety Disorders",
+          "page": 375
+        },
+        {
+          "title": "When Is Anxiety an Anxiety Disorder?",
+          "page": 375
+        },
+        {
+          "title": "Overlapping Symptoms of Major Depression and Anxiety Disorders",
+          "page": 376
+        },
+        {
+          "title": "Overlapping Symptoms of Different Anxiety Disorders",
+          "page": 378
+        },
+        {
+          "title": "The Amygdala and the Neurobiology of Fear",
+          "page": 380
+        },
+        {
+          "title": "Cortico-Striato-Thalamo-Cortical (CSTC) Loops and the Neurobiology of Worry",
+          "page": 381
+        },
+        {
+          "title": "Benzodiazepines as Drugs for Anxiety",
+          "page": 382
+        },
+        {
+          "title": "Alpha-2-Delta Ligands as Anxiolytics",
+          "page": 382
+        },
+        {
+          "title": "Serotonin and Anxiety",
+          "page": 384
+        },
+        {
+          "title": "Noradrenergic Hyperactivity in Anxiety",
+          "page": 386
+        },
+        {
+          "title": "Fear Conditioning versus Fear Extinction",
+          "page": 386
+        },
+        {
+          "title": "Novel Approaches to the Treatment of Anxiety Disorders",
+          "page": 390
+        },
+        {
+          "title": "Treatments for Anxiety Disorder Subtypes",
+          "page": 393
+        },
+        {
+          "title": "Generalized Anxiety Disorder",
+          "page": 393
+        },
+        {
+          "title": "Panic Disorder",
+          "page": 393
+        },
+        {
+          "title": "Social Anxiety Disorder",
+          "page": 393
+        },
+        {
+          "title": "PTSD",
+          "page": 393
+        },
+        {
+          "title": "Summary",
+          "page": 394
+        }
+      ]
+    },
+    {
+      "title": "Chronic Pain and Its Treatment",
+      "pageStart": 395,
+      "pageEnd": 416,
+      "sections": [
+        {
+          "title": "What is Pain?",
+          "page": 395
+        },
+        {
+          "title": "\"Normal\" Pain and the Activation of Nociceptive Nerve Fibers",
+          "page": 397
+        },
+        {
+          "title": "Nociceptive Pathway to the Spinal Cord",
+          "page": 397
+        },
+        {
+          "title": "Nociceptive Pathway from the Spinal Cord to the Brain",
+          "page": 398
+        },
+        {
+          "title": "Neuropathic Pain",
+          "page": 398
+        },
+        {
+          "title": "Peripheral Mechanisms in Neuropathic Pain",
+          "page": 398
+        },
+        {
+          "title": "Central Mechanisms in Neuropathic Pain",
+          "page": 398
+        },
+        {
+          "title": "The Spectrum of Mood and Anxiety Disorders with Pain Disorders",
+          "page": 403
+        },
+        {
+          "title": "Fibromyalgia",
+          "page": 403
+        },
+        {
+          "title": "Decreased Gray Matter in Chronic Pain Syndromes?",
+          "page": 403
+        },
+        {
+          "title": "Descending Spinal Synapses in the Dorsal Horn and the Treatment of Chronic Pain",
+          "page": 406
+        },
+        {
+          "title": "Targeting Sensitized Circuits in Chronic Pain Conditions",
+          "page": 411
+        },
+        {
+          "title": "Targeting Ancillary Symptoms in Fibromyalgia",
+          "page": 415
+        },
+        {
+          "title": "Summary",
+          "page": 416
+        }
+      ]
+    },
+    {
+      "title": "Disorders of Sleep and Wakefulness and Their Treatment: Neurotransmitter Networks for Histamine and Orexin",
+      "pageStart": 417,
+      "pageEnd": 464,
+      "sections": [
+        {
+          "title": "Neurobiology of Sleep and Wakefulness",
+          "page": 418
+        },
+        {
+          "title": "The Arousal Spectrum",
+          "page": 418
+        },
+        {
+          "title": "Histamine",
+          "page": 418
+        },
+        {
+          "title": "Orexins/Hypocretins",
+          "page": 422
+        },
+        {
+          "title": "Pathways of Arousal and Sleep for the Sleep/Wake Cycle",
+          "page": 424
+        },
+        {
+          "title": "Ultradian Cycles",
+          "page": 429
+        },
+        {
+          "title": "Neurotransmitters and the Ultradian Sleep Cycle",
+          "page": 430
+        },
+        {
+          "title": "Why Do We Sleep? Can't I Sleep When I Die?",
+          "page": 430
+        },
+        {
+          "title": "Insomnia",
+          "page": 434
+        },
+        {
+          "title": "What Is Insomnia?",
+          "page": 434
+        },
+        {
+          "title": "Diagnosis and Comorbidities",
+          "page": 434
+        },
+        {
+          "title": "Treating Insomnia: Drugs with Hypnotic Actions",
+          "page": 437
+        },
+        {
+          "title": "Benzodiazepines (GABAA Positive Allosteric Modulators)",
+          "page": 437
+        },
+        {
+          "title": "Z Drugs (GABAA Positive Allosteric Modulators)",
+          "page": 438
+        },
+        {
+          "title": "Dual Orexin Receptor Antagonists (DORAs)",
+          "page": 439
+        },
+        {
+          "title": "Serotonergic Hypnotics",
+          "page": 440
+        },
+        {
+          "title": "Histamine 1 Antagonists as Hypnotics",
+          "page": 441
+        },
+        {
+          "title": "Anticonvulsants as Hypnotics",
+          "page": 442
+        },
+        {
+          "title": "Hypnotic Actions and Pharmacokinetics: Your Sleep Is at the Mercy of Your Drug Levels!",
+          "page": 442
+        },
+        {
+          "title": "Behavioral Treatments of Insomnia",
+          "page": 446
+        },
+        {
+          "title": "Excessive Daytime Sleepiness",
+          "page": 446
+        },
+        {
+          "title": "What Is Sleepiness?",
+          "page": 446
+        },
+        {
+          "title": "Causes of Hypersomnia",
+          "page": 447
+        },
+        {
+          "title": "Circadian Rhythm Disorders",
+          "page": 451
+        },
+        {
+          "title": "Wake-Promoting Agents and Treatment of Excessive Daytime Sleepiness",
+          "page": 456
+        },
+        {
+          "title": "Caffeine",
+          "page": 456
+        },
+        {
+          "title": "Amphetamine and Methylphenidate",
+          "page": 457
+        },
+        {
+          "title": "Modafinil/Armodafinil",
+          "page": 458
+        },
+        {
+          "title": "Solriamfetol, a Wake-Promoting NDRI",
+          "page": 460
+        },
+        {
+          "title": "Pitolisant, H3 Presynaptic Antagonist",
+          "page": 460
+        },
+        {
+          "title": "Sodium Oxybate and Narcolepsy/Cataplexy",
+          "page": 462
+        },
+        {
+          "title": "Summary",
+          "page": 464
+        }
+      ]
+    },
+    {
+      "title": "Attention Deficit Hyperactivity Disorder and Its Treatment",
+      "pageStart": 465,
+      "pageEnd": 501,
+      "sections": [
+        {
+          "title": "Symptoms and Circuits: ADHD as a Disorder of the Prefrontal Cortex",
+          "page": 465
+        },
+        {
+          "title": "ADHD as a Disorder of Inefficient \"Tuning\" of the Prefrontal Cortex by Dopamine and Norepinephrine",
+          "page": 470
+        },
+        {
+          "title": "Neurodevelopment and ADHD",
+          "page": 479
+        },
+        {
+          "title": "Treatments for ADHD",
+          "page": 482
+        },
+        {
+          "title": "Which Symptoms Should Be Treated First?",
+          "page": 482
+        },
+        {
+          "title": "Stimulant Treatment of ADHD",
+          "page": 483
+        },
+        {
+          "title": "Noradrenergic Treatment of ADHD",
+          "page": 496
+        },
+        {
+          "title": "Future Treatments for ADHD",
+          "page": 500
+        },
+        {
+          "title": "Summary",
+          "page": 501
+        }
+      ]
+    },
+    {
+      "title": "Dementia: Causes, Symptomatic Treatments, and the Neurotransmitter Network Acetylcholine",
+      "pageStart": 502,
+      "pageEnd": 553,
+      "sections": [
+        {
+          "title": "Dementia: Diagnosis and Causes",
+          "page": 503
+        },
+        {
+          "title": "What Is Dementia?",
+          "page": 503
+        },
+        {
+          "title": "What Is Mild Cognitive Impairment (MCI)?",
+          "page": 503
+        },
+        {
+          "title": "Four Major Causes of Dementia",
+          "page": 504
+        },
+        {
+          "title": "Pursuit of Disease-Modifying Therapies by Targeting Aβ in Alzheimer Disease",
+          "page": 512
+        },
+        {
+          "title": "The Amyloid Cascade Hypothesis",
+          "page": 512
+        },
+        {
+          "title": "Current Status of the Amyloid Cascade Hypothesis and Treatments Targeting Aβ",
+          "page": 515
+        },
+        {
+          "title": "Diagnosing Alzheimer Disease Before It Is Too Late",
+          "page": 515
+        },
+        {
+          "title": "Presymptomatic Stage 1",
+          "page": 515
+        },
+        {
+          "title": "MCI Stage 2",
+          "page": 516
+        },
+        {
+          "title": "Dementia Stage 3",
+          "page": 518
+        },
+        {
+          "title": "Overview of Symptomatic Treatments for Dementia",
+          "page": 519
+        },
+        {
+          "title": "Targeting Acetylcholine for the Symptomatic Treatment of Memory and Cognition in Alzheimer Disease",
+          "page": 521
+        },
+        {
+          "title": "Acetylcholine: Synthesis, Metabolism, Receptors, and Pathways",
+          "page": 521
+        },
+        {
+          "title": "Symptomatic Treatment of Memory and Cognition in Alzheimer Disease by Inhibiting Acetylcholinesterase",
+          "page": 525
+        },
+        {
+          "title": "Targeting Glutamate for the Symptomatic Treatment of Memory and Cognition in Alzheimer Disease",
+          "page": 531
+        },
+        {
+          "title": "Memantine",
+          "page": 532
+        },
+        {
+          "title": "Targeting the Behavioral Symptoms of Dementia",
+          "page": 537
+        },
+        {
+          "title": "Defining Agitation and Psychosis in Alzheimer Disease",
+          "page": 537
+        },
+        {
+          "title": "Pharmacological Treatment of Psychosis and Agitation in Dementia",
+          "page": 539
+        },
+        {
+          "title": "Targeting Serotonin for the Symptomatic Treatment of Dementia-Related Psychosis",
+          "page": 540
+        },
+        {
+          "title": "Neuronal Networks of Agitation in Alzheimer Disease",
+          "page": 544
+        },
+        {
+          "title": "Targeting Multimodal Neurotransmitters (Norepinephrine, Serotonin, and Dopamine) for the Symptomatic Treatment of Agitation in Alzheimer Disease",
+          "page": 546
+        },
+        {
+          "title": "Targeting Glutamate for the Symptomatic Treatment of Agitation in Alzheimer Disease",
+          "page": 549
+        },
+        {
+          "title": "Treating Depression in Dementia",
+          "page": 550
+        },
+        {
+          "title": "Pseudobulbar Affect (Pathological Laughing and Crying)",
+          "page": 551
+        },
+        {
+          "title": "Apathy",
+          "page": 552
+        },
+        {
+          "title": "Other Treatments for the Behavioral Symptoms of Dementia",
+          "page": 553
+        },
+        {
+          "title": "Summary",
+          "page": 553
+        }
+      ]
+    },
+    {
+      "title": "Impulsivity, Compulsivity, and Addiction",
+      "pageStart": 554,
+      "pageEnd": 594,
+      "sections": [
+        {
+          "title": "What Are Impulsivity and Compulsivity?",
+          "page": 554
+        },
+        {
+          "title": "Neurocircuitry and the Impulsive–Compulsive Disorders",
+          "page": 555
+        },
+        {
+          "title": "The Dopamine Theory of Addiction: The Mesolimbic Dopamine Circuit as the Final Common Pathway of Reward",
+          "page": 558
+        },
+        {
+          "title": "Substance Addictions",
+          "page": 560
+        },
+        {
+          "title": "Stimulants",
+          "page": 560
+        },
+        {
+          "title": "Nicotine",
+          "page": 563
+        },
+        {
+          "title": "Alcohol",
+          "page": 569
+        },
+        {
+          "title": "Sedative Hypnotics",
+          "page": 572
+        },
+        {
+          "title": "Gamma-Hydroxybutyrate (GHB)",
+          "page": 575
+        },
+        {
+          "title": "Opiates or Opioids?",
+          "page": 575
+        },
+        {
+          "title": "Cannabis",
+          "page": 579
+        },
+        {
+          "title": "Hallucinogens",
+          "page": 583
+        },
+        {
+          "title": "Empathogens",
+          "page": 585
+        },
+        {
+          "title": "Dissociatives",
+          "page": 585
+        },
+        {
+          "title": "Abuse Your Way to Abstinence?",
+          "page": 587
+        },
+        {
+          "title": "\"Therapeutic\" Dissociation, Hallucinations, and Empathy?",
+          "page": 590
+        },
+        {
+          "title": "Behavioral Addictions",
+          "page": 591
+        },
+        {
+          "title": "Binge Eating Disorder",
+          "page": 591
+        },
+        {
+          "title": "Other Behavioral Addictions",
+          "page": 591
+        },
+        {
+          "title": "Obsessive–Compulsive and Related Disorders",
+          "page": 592
+        },
+        {
+          "title": "Impulse Control Disorders",
+          "page": 593
+        },
+        {
+          "title": "Summary",
+          "page": 594
+        }
+      ]
+    }
+  ],
+  "unattributedPages": []
+}

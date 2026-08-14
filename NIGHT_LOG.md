@@ -1913,3 +1913,33 @@ owned by other agents in this session and will land on their own commits.
 2026-08-14T06:18:47 Queue exhausted — allowing normal Claude stop.
 2026-08-14T06:18:49 Queue exhausted — allowing normal Claude stop.
 2026-08-14T06:18:56 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:21:16 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:21:24 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:21:34 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Knowledge layer: Stahl Essential 5th ed outline (book-structure reader)
+
+Wrote `scripts/knowledge/outlines/stahl_essential_5th.json` for Stahl's
+Essential Psychopharmacology, 5th ed (640 PDF pages). Decision: all page
+numbers are the PDF page index (`<<<PAGE n>>>`), never printed page numbers;
+the printed→PDF offset is a uniform +16 in the body, verified independently
+against all 13 chapter opening pages (ch.1 printed p.1 = PDF 17 … ch.13
+printed p.538 = PDF 554). 13 chapters mapped (PDF 17–594) with 276 sections
+taken from each chapter's printed section list (mini-TOC); section `page`
+values are printed-section-page +16. Front matter 1–16 (cover/endorsements,
+half-title + title pages, copyright, Contents, Preface, CME). Back matter
+(Suggested Reading and Selected References 595–630, Index 631–640)
+documented in `issues` since the schema has no backMatter field;
+`unattributedPages` left empty (nothing genuinely unaccounted). Confidence
+high. pageEnd is INCLUSIVE (matches chunk.ts `p <= pageEnd`); verified ranges
+are contiguous (1–594, no overlaps/gaps) and all 276 section pages fall
+inside their chapter's range. Extraction issues: page 1 back-cover praise
+says "Fourth Edition"; title text appears twice (half-title PDF 3, full title
+PDF 7); two-column interleave on chapter-opening pages; orphaned printed page
+numbers. Gate verified green on the full tree: lint 0, `tsc --noEmit` clean,
+407 tests, `next build` exit 0. Committed only this outline + log; unrelated
+in-progress knowledge-layer files (ingest.ts, src/lib/knowledge/, cache/,
+other outlines, knowledge_layer.sql, package.json/package-lock.json) left for
+their owners.
