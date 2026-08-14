@@ -1,3 +1,37 @@
+## 2026-08-14 — KNOWLEDGE SYSTEM: eval benchmark + Psychology Tutor UI
+
+Two next-phase items shipped on top of the live corpus (27,608 chunks, 100%
+embedded, $0).
+
+### Evaluation benchmark (541e842) — `npm run knowledge:eval`
+- Hand-written, book-grounded set: 16 questions across 5 categories (factual /
+  conceptual / comparison / case / source-attribution), each with the expected
+  source book(s) it should retrieve from (verified against the outlines).
+- Runner embeds each question with the same MiniLM model, retrieves top-k via
+  `match_corpus_chunks` (the exact app path), scores source-attribution recall.
+- **Baseline: 16/16 (100%) at both recall@5 and recall@8.** This is the
+  regression gate for any future knowledge-layer change (brief §24/§25).
+
+### Psychology Tutor UI (bb5b2ab) — the brief's #1 consumer
+- `/practice/tutor` page (server) + `TutorChat` client component:
+  retrieval-first grounded answers with expandable source citations
+  (book/chapter/page), suggested questions, honest empty/error states.
+- AI synthesis added only when a no-train provider is on (`knowledge_tutor`
+  workload already in guards); otherwise the real retrieved passages + citations
+  are the answer — no canned text.
+- `knowledge_tutor` feature flag added to DB (off by default) + migration +
+  admin flags label; practice-hub card (browse group, BookMarked icon) +
+  command-palette entry.
+- Verified live: `/api/knowledge/search` returns 401 unauthenticated (session
+  gate works); `/practice/tutor` 307s to login; landing/login 200; no dev
+  errors. Route compiled in the prod build.
+
+### Gate
+lint 0/0, tsc clean, 420 tests, build exit 0 before each commit. Session
+knowledge commits: 6f57cca (pipeline) → 30cd8ba/027de84/811dad5/0cfd50a/6f095c3
+(outlines+backMatter) → bc0f774 (tutor API + embed batching) → 7fa9071 (embed +
+verify) → 1467ede (ingest log) → f552d00/541e842/bb5b2ab/b96a6cc (eval + UI).
+
 ## 2026-08-14 — DIALOG/SHEET CLOSE FOCUS-VISIBLE (queue follow-up, e24305b)
 
 - **Close buttons ring on keyboard focus only** (`ui/dialog.tsx`, `ui/sheet.tsx`): `focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden` → `focus-visible:` — the ring no longer flashes on mouse clicks, matching buttons/inputs/tabs across the system. Verified intentional and left as-is: Radix menu item `focus:bg-accent` (roving focus is keyboard-only) and the voice-input textarea `focus:ring` (standard input UX). Final SHARED-CHROME queue item — queue now empty. QUEUE item ticked.
