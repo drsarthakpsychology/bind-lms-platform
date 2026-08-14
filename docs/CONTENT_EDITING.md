@@ -47,8 +47,9 @@ is never part of the screen.
 
 ## Status
 
-The medication editor is the reference implementation (click-to-edit,
-autosave, live preview, explicit publish). This document is the standard the
-other editors are being brought to; the lesson form now has live preview.
-Work remaining for full parity is tracked in QUEUE (T103/T104): applying the
-same preview + publish language to the remaining editors.
+All editors now follow the loop: cards and idioms show their content
+(front/back, phrase/trap) as the preview and Approve to publish; the lesson
+form has live preview; the medication editor is the reference (autosave,
+live student-page preview, explicit publish); modules manage state + access.
+The one nice-to-have left is a preview-as-student toggle on modules (the
+student view of a scheduled module) — noted in IDEAS_NEXT, not load-bearing.
