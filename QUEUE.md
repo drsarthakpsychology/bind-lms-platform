@@ -23,10 +23,15 @@
 - [x] **Gate green + committed** — lint 0, tsc clean, 420 tests, build 0.
 
 ### Next phase
-- [x] **Evaluation benchmark** (brief §24): hand-written book-grounded set
-  (16 questions, 5 categories) + runner (`npm run knowledge:eval`). Baseline:
-  **100% recall@5 and @8** across all categories. Regression baseline for any
-  future knowledge-layer change. Committed 541e842.
+- [x] **Evaluation benchmark** (brief §24/§37): **50-question** book-grounded
+  set (5 categories) + runner (`npm run knowledge:eval`) with two metrics —
+  source recall AND grounded@8 (answer terms present in the app's top-8 context
+  window; hallucination-resistance). Expanded 16→50 via a 6-agent workflow
+  (every answerTerm verified against the corpus). Baseline: **recall@5/@8 100%,
+  grounded@8 76%** (the 24% gap = case-management questions whose terms span
+  multi-page sections — documented future chunking/contextual-retrieval target).
+  Found + fixed a real keyword-lane bug (only scanned first ~16 chunks).
+  Committed 541e842, 2b37d33, fc733fc, 42b628e.
 - [x] **Wire /api/knowledge/ask into a live UI** — Psychology Tutor at
   /practice/tutor: retrieval-first chat with expandable source citations;
   `knowledge_tutor` feature flag (off by default), admin label, practice-hub
