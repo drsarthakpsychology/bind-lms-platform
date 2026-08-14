@@ -222,29 +222,44 @@ async function ingestChunks(book: (typeof BOOKS)[number], documentId: string, ca
 
 async function embedChunks(book: (typeof BOOKS)[number], documentId: string) {
   const { embedLocal } = await import("../../src/lib/knowledge/embed-local");
-  const { data: rows, error } = await supabase
-    .from("corpus_chunks")
-    .select("id, chunk_text")
-    .eq("document_id", documentId)
-    .is("embedding", null)
-    .limit(1000);
-  if (error) throw new Error(`embed select ${book.id}: ${error.message}`);
-  const unembedded = (rows ?? []) as Array<{ id: string; chunk_text: string }>;
-  if (unembedded.length === 0) return 0;
-
+  const BATCH = 200;
   let done = 0;
-  for (const r of unembedded) {
-    try {
-      const vec = await embedLocal(r.chunk_text);
+  for (;;) {
+    const { data: rows, error } = await supabase
+      .from("corpus_chunks")
+      .select("id, chunk_text")
+      .eq("document_id", documentId)
+      .is("embedding", null)
+      .limit(BATCH);
+    if (error) throw new Error(`embed select ${book.id}: ${error.message}`);
+    const unembedded = (rows ?? []) as Array<{ id: string; chunk_text: string }>;
+    if (unembedded.length === 0) break; // all embedded
+
+    let modelError = false;
+    const updates: Array<{ id: string; embedding: string }> = [];
+    for (const r of unembedded) {
+      try {
+        const vec = await embedLocal(r.chunk_text);
+        updates.push({ id: r.id, embedding: `[${vec.join(",")}]` });
+      } catch (e) {
+        console.warn(`  embed chunk ${book.id}:${r.id.slice(0, 8)}: ${e instanceof Error ? e.message : "error"}`);
+        modelError = true;
+        break; // model error — stop this book's embed, resume on next run
+      }
+    }
+    if (updates.length > 0) {
+      // One upsert per batch (not one HTTP call per chunk) — the embedding is
+      // CPU-bound, the write should not be network-bound.
       const { error: upErr } = await supabase
         .from("corpus_chunks")
-        .update({ embedding: `[${vec.join(",")}]` })
-        .eq("id", r.id);
-      if (!upErr) done++;
-    } catch (e) {
-      console.warn(`  embed chunk ${book.id}:${r.id.slice(0, 8)}: ${e instanceof Error ? e.message : "error"}`);
-      break; // model error — stop this book's embed, resume on next run
+        .upsert(updates, { onConflict: "id" });
+      if (upErr) {
+        console.warn(`  embed batch write ${book.id}: ${upErr.message}`);
+      } else {
+        done += updates.length;
+      }
     }
+    if (modelError || unembedded.length < BATCH) break;
   }
   return done;
 }

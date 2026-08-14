@@ -13,7 +13,8 @@ export type Workload =
   | "embeddings" // course content embeddings — NO student data
   | "sim_patient_turn" // live simulated patient — STUDENT DATA
   | "debrief_scoring" // scoring a student transcript — STUDENT DATA
-  | "journal_support"; // journal "help me think" — STUDENT DATA, most sensitive
+  | "journal_support" // journal "help me think" — STUDENT DATA, most sensitive
+  | "knowledge_tutor"; // grounded Q&A over the book corpus — STUDENT DATA (query)
 
 /** Whether a workload may ever touch a provider that trains on data. */
 export function workloadHasStudentData(workload: Workload): boolean {
@@ -25,6 +26,7 @@ export function workloadHasStudentData(workload: Workload): boolean {
     case "sim_patient_turn":
     case "debrief_scoring":
     case "journal_support":
+    case "knowledge_tutor":
       return true;
   }
 }

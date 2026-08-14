@@ -67,6 +67,13 @@ export function fixtureReply(workload: Workload, archetype = "cooperative", turn
     ];
     return { patient: REFLECTIVE_PROMPTS[turn % REFLECTIVE_PROMPTS.length] };
   }
+  if (workload === "knowledge_tutor") {
+    // Fixture path — the retrieval layer is real even with AI disabled, so the
+    // honest answer is the retrieved passages themselves (see the tutor
+    // endpoint's retrieval-first design). This placeholder only appears if
+    // something calls aiChat directly with no provider.
+    return { patient: "knowledge_tutor requires the retrieval layer (see /api/knowledge/search)" };
+  }
   const bank = PATIENT_REPLIES[archetype] ?? PATIENT_REPLIES.cooperative;
   return bank[turn % bank.length];
 }

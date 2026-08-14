@@ -2151,3 +2151,5 @@ committed resolution. Fish outline (027de84) is committed and verified: 12
 chapters (9 + Appendix I + Appendix II + Index), 232 sections, contiguous
 5-136, page 137 unattributed. Gate green on the full tree: lint 0, tsc clean,
 420 tests, next build exit 0.
+2026-08-14T06:51:16 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:53:39 Queue exhausted — allowing normal Claude stop.

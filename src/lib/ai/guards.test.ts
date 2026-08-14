@@ -3,7 +3,7 @@ import { assertProviderAllowed, guardStudentCall, workloadHasStudentData, type W
 import { PROVIDERS } from "./router";
 
 describe("ai data-policy split (non-negotiable)", () => {
-  const studentWorkloads: Workload[] = ["sim_patient_turn", "debrief_scoring", "journal_support"];
+  const studentWorkloads: Workload[] = ["sim_patient_turn", "debrief_scoring", "journal_support", "knowledge_tutor"];
   const contentWorkloads: Workload[] = ["content_generation", "corpus_processing", "embeddings"];
 
   it("marks student-data workloads correctly", () => {
