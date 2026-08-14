@@ -124,6 +124,35 @@ describe("searchKnowledge", () => {
     const hits = await searchKnowledge("   ");
     expect(hits).toHaveLength(0);
   });
+
+  it("expandContext pulls adjacent same-document passages into the result", async () => {
+    vectorResult = () => ({
+      data: [{ ...VEC_HIT, document_id: "doc-1" }],
+      error: null,
+    });
+    keywordResult = () => ({ data: [], error: null });
+
+    // Mock the from().select().eq().gte().lte().limit() chain used by expandContext.
+    adminClient.from.mockReturnValue({
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockReturnThis(),
+      gte: vi.fn().mockReturnThis(),
+      lte: vi.fn().mockReturnThis(),
+      limit: vi.fn().mockResolvedValue({
+        data: [
+          { id: "chunk-1", document_id: "doc-1", chunk_text: "Major depressive disorder involves persistent low mood and anhedonia.", chapter: "Mood", section: "Depression", page_start: 3, page_end: 4 },
+          { id: "neighbor-1", document_id: "doc-1", chunk_text: "adjacent management detail", chapter: "Mood", section: "Depression", page_start: 2, page_end: 2 },
+        ],
+        error: null,
+      }),
+    });
+
+    const hits = await searchKnowledge("major depressive disorder", { expandContext: true, adjacentPages: 1 });
+    // original hit + 1 neighbor
+    expect(hits.length).toBe(2);
+    expect(hits.some((h) => h.id === "neighbor-1")).toBe(true);
+    expect(hits[0].id).toBe("chunk-1"); // the original fused hit stays first
+  });
 });
 
 describe("cite", () => {

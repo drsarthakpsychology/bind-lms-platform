@@ -21,6 +21,7 @@ import { EMBED_DIM } from "@/lib/ai/embed";
 
 export interface KnowledgeHit {
   id: string;
+  documentId?: string;
   text: string;
   sourceId: string;
   sourceName: string;
@@ -38,6 +39,16 @@ export interface RetrieveOptions {
   filterSource?: string; // corpus_sources.name (book id)
   filterConcept?: string; // knowledge_concepts.name (e.g. "Clozapine")
   keywordOnly?: boolean; // skip the vector lane entirely
+  /**
+   * Expand each top hit with its adjacent same-document passages (within
+   * ±adjacentPages of the hit's page range, same chapter). Management-heavy
+   * sections spread a syndrome's description and its treatment across several
+   * pages; this brings those pages together so the grounding window actually
+   * contains the full answer. Deduped; expands the result set beyond `limit`.
+   */
+  expandContext?: boolean;
+  /** how many pages on each side of a hit to pull into context */
+  adjacentPages?: number;
 }
 
 const DEFAULT_LIMIT = 8;
@@ -45,6 +56,7 @@ const DEFAULT_LIMIT = 8;
 function parseChunk(row: Record<string, unknown>): Omit<KnowledgeHit, "score" | "lane"> {
   return {
     id: String(row.id),
+    documentId: row.document_id != null ? String(row.document_id) : undefined,
     text: String(row.chunk_text ?? ""),
     sourceId: String(row.source_id ?? ""),
     sourceName: String(row.source_name ?? ""),
@@ -106,6 +118,91 @@ async function keywordLane(query: string, opts: RetrieveOptions): Promise<Knowle
   }));
 }
 
+/**
+ * Expand each top hit with adjacent same-document passages so a multi-page
+ * management section is retrieved as a coherent block. For each hit, fetch
+ * chunks in the SAME document whose page range falls within ±adjacentPages of
+ * the hit's page range (and the same chapter when both have one). Returns the
+ * original hits (in order) plus the neighbors, deduped by chunk id.
+ */
+async function expandContext(
+  admin: ReturnType<typeof createAdminClient>,
+  hits: KnowledgeHit[],
+  adjacentPages: number,
+): Promise<KnowledgeHit[]> {
+  if (hits.length === 0) return hits;
+  const candidates = new Map<string, KnowledgeHit>();
+
+  // Group hits by document so one query per document covers all its hits.
+  const byDoc = new Map<string, KnowledgeHit[]>();
+  for (const h of hits) {
+    if (!h.documentId) continue;
+    const list = byDoc.get(h.documentId) ?? [];
+    list.push(h);
+    byDoc.set(h.documentId, list);
+  }
+
+  for (const [docId, docHits] of byDoc) {
+    // Page window covering all this document's hits (±adjacentPages).
+    let lo = Infinity;
+    let hi = -Infinity;
+    for (const h of docHits) {
+      if (h.pageStart != null) lo = Math.min(lo, h.pageStart);
+      if (h.pageEnd != null) hi = Math.max(hi, h.pageEnd);
+    }
+    lo -= adjacentPages;
+    hi += adjacentPages;
+
+    const { data, error } = await admin
+      .from("corpus_chunks")
+      .select("id, document_id, chunk_text, chapter, section, page_start, page_end")
+      .eq("document_id", docId)
+      .gte("page_end", lo)
+      .lte("page_start", hi)
+      .limit(40);
+    if (error || !data) continue;
+
+    for (const row of (data ?? []) as unknown as Array<Record<string, unknown>>) {
+      const id = String(row.id);
+      if (candidates.has(id)) continue;
+      // Preserve the hit's chapter/section (neighbors in the same chapter keep it).
+      const chapter = String(row.chapter ?? "Unattributed");
+      const section = String(row.section ?? "");
+      // Keep lane/score from the original hit if this is one; else mark as context.
+      const orig = docHits.find((h) => h.id === id);
+      candidates.set(id, {
+        id,
+        documentId: docId,
+        text: String(row.chunk_text ?? ""),
+        sourceId: docHits[0].sourceId,
+        sourceName: docHits[0].sourceName,
+        sourceTitle: docHits[0].sourceTitle,
+        chapter,
+        section,
+        pageStart: row.page_start != null ? Number(row.page_start) : null,
+        pageEnd: row.page_end != null ? Number(row.page_end) : null,
+        score: orig?.score ?? docHits[0].score * 0.9,
+        lane: orig?.lane ?? docHits[0].lane,
+      });
+    }
+  }
+
+  // Order: original hits first (in their fused order), then neighbors.
+  const seen = new Set<string>();
+  const out: KnowledgeHit[] = [];
+  for (const h of hits) {
+    if (seen.has(h.id)) continue;
+    seen.add(h.id);
+    out.push(candidates.get(h.id) ?? h);
+  }
+  for (const h of candidates.values()) {
+    if (seen.has(h.id)) continue;
+    seen.add(h.id);
+    out.push(h);
+  }
+  return out;
+}
+
 /** Reciprocal-rank fusion of two ranked lists. */
 function rrf(lists: KnowledgeHit[][], k = 60): KnowledgeHit[] {
   const scores = new Map<string, { hit: KnowledgeHit; sum: number }>();
@@ -138,7 +235,14 @@ export async function searchKnowledge(query: string, opts: RetrieveOptions = {})
 
   const lanes = await Promise.all(lanePromises);
   const fused = rrf(lanes.filter((l) => l.length > 0));
-  return fused.slice(0, opts.limit ?? DEFAULT_LIMIT);
+  const top = fused.slice(0, opts.limit ?? DEFAULT_LIMIT);
+
+  if (opts.expandContext) {
+    const admin = createAdminClient();
+    const adjacent = opts.adjacentPages ?? 1;
+    return expandContext(admin, top, adjacent);
+  }
+  return top;
 }
 
 /** Format a citation line for a hit (never fabricates page numbers). */
