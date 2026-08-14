@@ -154,6 +154,7 @@ export function PsychSearch({
           aria-expanded={list.length > 0}
           aria-controls={list.length ? "psych-suggestions" : undefined}
           aria-label="Search medications"
+          enterKeyHint="search"
           placeholder="Try clonazepam, risperidone, sertraline…"
           className="h-12 w-full rounded-md border-2 border-border bg-background pl-10 pr-4 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
         />

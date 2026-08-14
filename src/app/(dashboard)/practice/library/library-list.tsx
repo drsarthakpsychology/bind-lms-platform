@@ -120,6 +120,7 @@ export function LibraryList({
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
+          enterKeyHint="search"
           placeholder={`Search ${totalCount} case reports…`}
           className="w-full rounded-md border-2 border-border bg-background py-2 pl-9 pr-3 text-small focus:outline-none focus:ring-2 focus:ring-ring"
         />
