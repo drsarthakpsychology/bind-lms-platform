@@ -114,11 +114,26 @@ export default async function TodayPage() {
         </p>
       </Reveal>
 
-      {/* weak-spots banner — real gaps above the primary card */}
+      {/* The primary action is the first attention surface. Weak-spots + the
+          chain come AFTER it so a returning student answers "what do I do
+          now?" before seeing the gaps (T87 / "one thing next"). */}
       <Reveal delay={0.15}>
-        <div className="mt-6">
-          <WeakSpotsBanner />
+      <Link
+        href={primary.href}
+        className="mt-6 block rounded-lg border-2 border-border bg-card p-6 hard-shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-px"
+      >
+        <div className="flex items-center justify-between">
+          <span className="rounded-full bg-primary px-2 py-0.5 text-caption font-semibold text-primary-foreground">
+            {primary.badge}
+          </span>
+          <span className="text-caption text-muted-foreground">{primary.time}</span>
         </div>
+        <p className="mt-3 text-h3 font-semibold">{primary.title}</p>
+        <p className="mt-1 text-small text-muted-foreground">{primary.reason}</p>
+        <span className="mt-4 inline-flex items-center gap-1 text-small font-medium text-link">
+          {primary.cta} <ArrowRight className="size-4" aria-hidden />
+        </span>
+      </Link>
       </Reveal>
 
       {/* in-progress chain — a patient's arc continues (casebook "the chain") */}
@@ -160,24 +175,11 @@ export default async function TodayPage() {
       ) : null}
       </Reveal>
 
-      {/* primary card */}
+      {/* weak-spots banner — real gaps, AFTER the one action so it doesn't compete. */}
       <Reveal delay={0.2}>
-      <Link
-        href={primary.href}
-        className="mt-6 block rounded-lg border-2 border-border bg-card p-6 hard-shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-px"
-      >
-        <div className="flex items-center justify-between">
-          <span className="rounded-full bg-primary px-2 py-0.5 text-caption font-semibold text-primary-foreground">
-            {primary.badge}
-          </span>
-          <span className="text-caption text-muted-foreground">{primary.time}</span>
+        <div className="mt-4">
+          <WeakSpotsBanner />
         </div>
-        <p className="mt-3 text-h3 font-semibold">{primary.title}</p>
-        <p className="mt-1 text-small text-muted-foreground">{primary.reason}</p>
-        <span className="mt-4 inline-flex items-center gap-1 text-small font-medium text-link">
-          {primary.cta} <ArrowRight className="size-4" aria-hidden />
-        </span>
-      </Link>
       </Reveal>
 
       {/* quick / deep chips */}
