@@ -2134,3 +2134,20 @@ clean, 415 tests, `next build` exit 0).
    outlines are data produced by reading agents, not a runtime step).
 
 
+2026-08-14T06:43:37 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:48:57 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Fish outline reader: defer to coordinator on backMatter/dangling-script
+
+A parallel pass on the same two QUEUE items (backMatter attribution + dangling
+`knowledge:outline` script) was superseded by the coordinator's commits
+6f095c3 / 0cfd50a / e818ff1. My backMatter edits to ahuja/stahl_essential/
+stahl_pg_older were byte-identical to 0cfd50a; my kaplan variant (Part B/C/D
+dividers into `backMatter` instead of `unattributedPages`) and my orphaned
+`scripts/knowledge/outlines.ts` validator were reverted/deleted to defer to the
+committed resolution. Fish outline (027de84) is committed and verified: 12
+chapters (9 + Appendix I + Appendix II + Index), 232 sections, contiguous
+5-136, page 137 unattributed. Gate green on the full tree: lint 0, tsc clean,
+420 tests, next build exit 0.
