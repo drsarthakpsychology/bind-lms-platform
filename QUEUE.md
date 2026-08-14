@@ -388,7 +388,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   redesign them around one meaningful cognitive task at a time; do not merely
   stack or shrink desktop content
 
-- [ ] T19  Mobile interaction-flow audit — for every major mobile feature define
+- [x] T19  Mobile interaction-flow audit — for every major mobile feature define
   the primary goal, primary action, required information, next action, and
   secondary actions; remove competing actions from the initial viewport and
   reveal secondary functionality contextually
