@@ -69,6 +69,7 @@
     "knowledge:embed": "tsx scripts/knowledge/embed.ts",
     "knowledge:verify": "tsx scripts/knowledge/verify-search.ts",
     "knowledge:eval": "tsx scripts/knowledge/eval.ts",
+    "sim:quality-eval": "tsx scripts/sim-quality-eval.ts",
     "knowledge:concepts": "tsx scripts/knowledge/extract-concepts.ts",
     "knowledge:enrich": "tsx scripts/knowledge/enrich-concepts.ts",
     "finetune:dataset": "tsx scripts/finetune/build-dataset.ts"
