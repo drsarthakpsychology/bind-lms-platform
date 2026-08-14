@@ -11,6 +11,10 @@ import {
 
 type Mode = "tag" | "moodaffect" | "describe";
 
+/** In-flight snapshot — a refresh mid-drill restores position instead of
+ *  restarting the exercise (T46/T47). */
+const MSE_KEY = "mse:trainer-in-flight";
+
 export function MseTrainer() {
   const [mode, setMode] = React.useState<Mode>("tag");
   const [stimulusIdx, setStimulusIdx] = React.useState(0);
@@ -18,6 +22,49 @@ export function MseTrainer() {
   const [revealed, setRevealed] = React.useState(false);
   const [moodIdx, setMoodIdx] = React.useState(0);
   const [describeText, setDescribeText] = React.useState("");
+
+  // Restore the in-flight snapshot after first paint (deferred past hydration).
+  React.useEffect(() => {
+    const id = window.setTimeout(() => {
+      try {
+        const raw = window.localStorage.getItem(MSE_KEY);
+        if (!raw) return;
+        const s = JSON.parse(raw) as {
+          mode?: Mode;
+          stimulusIdx?: number;
+          picked?: string[];
+          revealed?: boolean;
+          moodIdx?: number;
+          describeText?: string;
+        };
+        if (s.mode === "tag" || s.mode === "moodaffect" || s.mode === "describe") setMode(s.mode);
+        if (typeof s.stimulusIdx === "number" && s.stimulusIdx >= 0 && s.stimulusIdx < SEED_MSE_STIMULI.length) {
+          setStimulusIdx(s.stimulusIdx);
+        }
+        if (Array.isArray(s.picked)) setPicked(s.picked);
+        if (typeof s.revealed === "boolean") setRevealed(s.revealed);
+        if (typeof s.moodIdx === "number" && s.moodIdx >= 0 && s.moodIdx < MOOD_AFFECT_ITEMS.length) {
+          setMoodIdx(s.moodIdx);
+        }
+        if (typeof s.describeText === "string") setDescribeText(s.describeText);
+      } catch {
+        /* ignore */
+      }
+    }, 0);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  // Persist on every change.
+  React.useEffect(() => {
+    try {
+      window.localStorage.setItem(
+        MSE_KEY,
+        JSON.stringify({ mode, stimulusIdx, picked, revealed, moodIdx, describeText }),
+      );
+    } catch {
+      /* ignore */
+    }
+  }, [mode, stimulusIdx, picked, revealed, moodIdx, describeText]);
 
   const stimulus = SEED_MSE_STIMULI[stimulusIdx];
   const vocab = MSE_VOCAB[stimulus.domain];
