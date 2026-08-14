@@ -312,6 +312,18 @@ They are kept here as a visible hand-off list — not as `- [ ]` work items,
 because the buildable part of each is done and committed. When the human
 completes one, tick it below.
 
+- ✅ Deferred · **Vercel Security Checkpoint relaxation** — relax/bypass the
+  checkpoint for authorized testing so the SharkVoid retest can validate
+  admin/API surfaces (currently all challenge-blocked 403). Vercel → project
+  → Settings → Security. (NEEDS_KAVYA: security retest access)
+- ✅ Deferred · **DNS-AID agent records** — add `_a2a._agents.vibhapsychology.com
+  IN SVCB ...` (and `_index._agents...`) at the DNS provider to finish the
+  DNS for AI Discovery standard. Records documented in NIGHT_LOG; needs
+  DNS-provider access, not code.
+- ✅ Deferred · **MCP Server Card** — `/.well-known/mcp/server-card.json` can
+  be published IF an MCP server is ever built; without one the card would be
+  misleading. Parked intentionally.
+
 - ✅ Deferred · **Main merge → main** — HELD on Kavya's "wait" (she paused the
   push). Branch `feat/groq-primary-director` is 120 commits ahead of main;
   origin/main is an ancestor (clean fast-forward). The 5-command sequence is

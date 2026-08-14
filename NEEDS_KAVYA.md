@@ -446,3 +446,28 @@ bash scripts/deploy-omniroute.sh   # does the rest automatically
 After deploy, set `OMNIROUTE_URL=https://omniroute.fly.dev/v1` in `.env.local`
 and the VIBHA app uses the cloud gateway (the router already reads it). flyctl
 v0.4.83 is installed; the deploy script sets the provider keys as Fly secrets.
+
+## 🛡️ Security retest access (2026-08-14, SharkVoid scan)
+
+The external scan could not validate admin/API surfaces because Vercel's
+Security Checkpoint returns a 403 challenge on every path. Two actions to
+enable a real retest + finish agent discovery:
+
+1. **Relax Vercel Security Checkpoint for testing** — Vercel → project →
+   Settings → Security → temporarily allow the tester's IP (or generate a
+   one-time inspection bypass) so `/admin`, `/api/practice/wall/*`,
+   `/api/practice/journal/*`, and the tokenized endpoints can be validated.
+   Re-enable the checkpoint after.
+2. **DNS-AID records** (optional, completes agent discovery) — add at the
+   DNS provider:
+   ```
+   _a2a._agents.vibhapsychology.com. 3600 IN SVCB 1 vibhapsychology.com. alpn="https" port=443
+   _index._agents.vibhapsychology.com. 3600 IN SVCB 1 vibhapsychology.com. alpn="https" port=443
+   ```
+   Sign the zone with DNSSEC for authenticated data.
+
+Already done this session: CSP hardened (no unsafe-eval in prod),
+Math.random→crypto.randomUUID for turn IDs, secrets audit clean (no
+service-role/session-secret in bundles), agent-readiness discovery live
+(api-catalog, openapi.json, agent-card, oauth-protected-resource, auth.md,
+agent-skills index, markdown negotiation, robots.txt Content-Signals).
