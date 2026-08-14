@@ -3255,3 +3255,13 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   obvious next action, quiet secondary) and applied it to the judgment arena's
   "Done for today" state with a "Back to practice tools" next action.
   Committed `e33ad88`. Gate: lint 0, tsc clean, 453 tests, build green.
+
+- T29 (completion states, continued): applied the same `MobileCompletionState`
+  to the two drills whose "done" control was a dead-end — `decode-arena` and
+  `landmark-reader` capped `idx` at the last item and rendered a *disabled*
+  "Done for today" / "You've read them all" button, so the student could never
+  actually finish. Both now advance past the last item into the shared
+  completion card with honest feedback + a "Back to practice tools" action.
+  Committed `13485d8`. Gate: lint 0, tsc clean, 453 tests, build green.
+  (Rounds daily-cap done landed in `e16e3d3`; judgment in `e33ad88` — so the
+  four drill "done" states now share one completion language.)
