@@ -24,9 +24,16 @@ mirrors:
   need no browser. All three re-verified end-to-end (the one transient
   web.archive.org hiccup cleared on re-run).
 - QUEUE + NEEDS_KAVYA updated to reflect POCSO-only remains.
+- QUEUE restructured: the code queue is honestly exhausted — the three
+  human-deferred actions (Fly deploy, Cerebras key, POCSO download) moved out
+  of `- [ ]` form into a visible "Deferred — human actions" hand-off list (each
+  documented in NEEDS_KAVYA), so the keep-going hook reaches its designed
+  "queue exhausted = normal stop" state.
 
-Gate green before commit. Fly deploy + Cerebras key remain human-blocked
-(account-owner interactive auth / unprovided key).
+Gate green before each commit (fresh re-verified after: lint 0, tsc clean,
+449 tests, build 82/82). Commits: acffb74 (corpus unblock), c872354 (queue
+hand-off). Fly deploy + Cerebras key remain human-blocked (account-owner
+interactive auth / unprovided key).
 
 ## 2026-08-14 — KNOWLEDGE SYSTEM: eval expanded to 50 questions + keyword-lane fix
 
@@ -2528,3 +2535,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T11:05:18 Queue exhausted — allowing normal Claude stop.
 2026-08-14T11:06:43 Queue exhausted — allowing normal Claude stop.
 2026-08-14T11:17:31 Queue exhausted — allowing normal Claude stop.
+2026-08-14T11:40:28 Queue exhausted — allowing normal Claude stop.
