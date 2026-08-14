@@ -3355,3 +3355,12 @@ Tree gate at every commit: lint 0 errors, tsc clean, 486 tests, build clean.
 Worker currently has ~24 files in flight (admin modals→sheets, case-picker,
 debrief, library, today, psychopharm, tutor) — tree stays green. Holding
 further edits to their files to avoid JSX races; will repair if it breaks.
+2026-08-14T20:30:11 Continue ceiling reached (50) — allowing stop for safety.
+
+2026-08-14T20:31 State-offline sweep complete (mine, no worker race):
+ 12f9f69 MSE trainer in-flight snapshot → localStorage (mode/stimulus/picked/
+         reveal/moodIdx/describeText; bounds-checked against banks).
+Covered: OSCE, Formulation, MSE trainer, landmark quiz. Remaining state-offline
+surface (decode-arena) sits inside the worker-owned decode-flow — left for them.
+Tree gate green at 12f9f69: lint 0 errors, tsc clean, 486 tests, build clean.
+Worker ~24 files in flight, still green. Holding their files.
