@@ -61,9 +61,9 @@ Before shipping a fine-tuned model, run:
 npm run knowledge:eval
 ```
 
-The 50-question set scores source recall AND grounded@8 (answer terms present
-in the top-8 context window). **Baseline (RAG-only): recall@5/8 100%, grounded@8
-90%** (after context expansion — measured 2026-08-14, commit 05bafa8). A
+The 50-question set scores source recall AND grounding (answer terms present in
+the retrieved context). **Baseline (RAG-only): recall@5/8 100%, grounded@8
+vector-only 76%, grounded app-path (expanded) 90%** (2026-08-14). A
 fine-tuned model must:
 1. Not regress recall below 100% (retrieval must still surface the right book).
 2. Not regress grounded@8 — ideally improve it (the model should rely on

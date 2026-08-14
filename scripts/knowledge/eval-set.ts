@@ -9,13 +9,14 @@
  * The first 16 were hand-written from the corpus outlines; the remaining 34
  * were authored + adversarially verified against the actual book text by a
  * 6-agent workflow (every answerTerm grep-confirmed in an expected source's
- * text cache). Baseline (2026-08-14): recall@5/8 100%, grounded@8 76%.
+ * text cache). Baseline (2026-08-14): recall@5/8 100%, grounded@8 vector-only
+ * 76%, grounded app-path (expanded) 90%.
  *
- * The 24% grounding gap is the honest hard edge: case-management questions
+ * The 10% app-path gap is the honest hard edge: case-management questions
  * whose answer terms (e.g. serotonin-syndrome management: myoclonus,
- * hyperreflexia, cyproheptadine) span several pages of a section that
- * chunk-level embedding doesn't cluster — a documented future improvement
- * (contextual/adjacent-passage retrieval), not a hidden failure.
+ * hyperreflexia, cyproheptadine) spread across a multi-page section beyond the
+ * ±1-page expansion — a documented future improvement (deeper contextual
+ * retrieval / larger chunk windows), not a hidden failure.
  */
 export interface EvalQuestion {
   id: string;

@@ -84,18 +84,24 @@ actual book text by a 6-agent workflow. Baseline (2026-08-14):
 ```
 recall@5:  50/50 (100%)
 recall@8:  50/50 (100%)
-grounded@8: 38/50 (76%)   [answer terms present in the app's top-8 context window]
-  factual 12/12 · conceptual 10/10 · comparison 9/9 · case 9/10 · source 9/9
+grounded@8 vector-only:      38/50 (76%)
+grounded app-path (expanded): 45/50 (90%)
+  factual 12/12 · conceptual 10/10 · comparison 9/9 · case 10/10 · source 9/9
 ```
 
-This is the regression gate (brief §24/§25): re-run after any knowledge-layer
-change. The 24% grounding gap is the honest hard edge — case-management
-questions (serotonin syndrome, NMS, lithium toxicity, lamotrigine SJS) whose
-precise management terms span several pages of a section. The right book and
-chapter are always retrieved; the exact multi-drug management detail is the
-future chunking / contextual-retrieval improvement target. The eval surfaced a
-real bug during this build (the keyword lane only scanned the first ~16 chunks)
-and a real calibration error (k10's expected sources) — both fixed.
+Two grounding numbers are reported deliberately: the raw vector lane (76%) and
+the app's expanded context (90%) — `/api/knowledge/ask` pulls adjacent
+same-chapter passages, so a model synthesising from it sees 90% of answers fully
+grounded. This is the regression gate (brief §24/§25): re-run after any
+knowledge-layer change; a drop in either number signals a regression.
+
+The 10% app-path gap is the honest hard edge — case-management questions whose
+precise terms (e.g. serotonin-syndrome management: myoclonus, hyperreflexia,
+cyproheptadine) spread across a multi-page section beyond ±1 page of expansion.
+The right book and chapter are always retrieved; deeper contextual-retrieval
+(or larger chunk windows) is the future improvement target. The eval surfaced
+and fixed a real bug during this build (the keyword lane only scanned the first
+~16 chunks) and a calibration error (k10's expected sources).
 
 ## 7. Cost
 
