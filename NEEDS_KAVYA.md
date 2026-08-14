@@ -332,3 +332,24 @@ Optional upgrades, only if/when you want them:
 To activate the live AI lanes end-to-end, set `AI_ENABLED=true` in `.env.local`
 (Groq is no-train, so student data is safe). Currently AI_ENABLED is unset
 (fixtures mode) — the voice tutor works on retrieval either way.
+
+---
+
+## 🔑 Capacity keys for 45-DAU target (2026-08-14 — from docs/CAPACITY_MODEL.md)
+
+The bottleneck is **Groq's 1,000 requests/day** (45 DAU needs ~1,620/day).
+DeepSeek can't serve student data (unresolved posture, guard-enforced). Two
+free additions close the gap:
+
+1. **CEREBRAS_API_KEY** — cloud.cerebras.ai (free, no-train, ~1M tok/day).
+   WHY: the #2 no-train json/chat fallback the router already has. TASKS:
+   second student-facing lane (patient sim, tutor). FREE: ~1M tok/day.
+   NECESSARY: yes — it's the cheapest capacity double. OPEN-SOURCE ALT:
+   self-host (heavier). ENV: `CEREBRAS_API_KEY`.
+2. **OPENROUTER_API_KEY** — openrouter.ai. WHY: the overflow lane; $10 one-time
+   → ~1,000 RPD of no-train models (50 RPD free). TASKS: overflow when
+   Groq/Cerebras are saturated. NECESSARY: yes for full 45-DAU headroom.
+   ENV: `OPENROUTER_API_KEY`.
+
+Until those land, the app works (Groq covers ~25-28 DAU); the tutor + patient
+sim + voice all function today.
