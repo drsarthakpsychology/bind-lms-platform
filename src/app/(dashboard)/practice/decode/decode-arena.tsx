@@ -1,10 +1,12 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { Check, Eye, Lightbulb } from "lucide-react";
 import { scoreDecode, type IdiomEntry } from "@/lib/decode/idioms";
+import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 
 /**
  * Mode 1 — Decode. The phrase appears; the student picks EVERY plausible
@@ -17,7 +19,26 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
   const [revealed, setRevealed] = React.useState(false);
 
   const entry = entries[idx];
-  if (!entry) return null;
+
+  if (!entry) {
+    return (
+      <div className="rounded-md border-2 border-border bg-card hard-shadow-sm">
+        <MobileCompletionState
+          title="Done for today"
+          description={`You decoded ${entries.length} phrases — the disambiguating questions are the skill.`}
+          secondary="Physical readings are weighted. Come back tomorrow for a fresh set."
+          action={
+            <Link
+              href="/practice"
+              className="inline-flex min-h-11 items-center rounded-md border-2 border-foreground bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+            >
+              Back to practice tools
+            </Link>
+          }
+        />
+      </div>
+    );
+  }
 
   function toggle(m: string) {
     haptic("tap");
@@ -37,7 +58,7 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
   function next() {
     setSelected(new Set());
     setRevealed(false);
-    setIdx((i) => Math.min(entries.length - 1, i + 1));
+    setIdx((i) => i + 1); // reaching entries.length renders the done state
     haptic("tap"); // state change: next phrase
   }
 
@@ -129,10 +150,9 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
           <button
             type="button"
             onClick={next}
-            disabled={idx + 1 >= entries.length}
-            className="w-full rounded-md border-2 border-border bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+            className="w-full rounded-md border-2 border-border bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
           >
-            {idx + 1 < entries.length ? "Next phrase" : "Done for today"}
+            {idx + 1 < entries.length ? "Next phrase" : "Finish"}
           </button>
         </div>
       ) : null}

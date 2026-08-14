@@ -1,10 +1,12 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { AlertTriangle, CheckCircle2, GitCompare } from "lucide-react";
 import type { LandmarkCase } from "@/lib/landmark/cases";
+import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 
 /**
  * Landmark reader — read the case, then answer the quiz (a check, not a test).
@@ -16,7 +18,26 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
   const [showAnswers, setShowAnswers] = React.useState(false);
 
   const c = cases[idx];
-  if (!c) return null;
+
+  if (!c) {
+    return (
+      <div className="rounded-md border-2 border-border bg-card hard-shadow-sm">
+        <MobileCompletionState
+          title="You've read them all"
+          description={`${cases.length} landmark cases — what was believed, and what held up.`}
+          secondary="The ethics failures are why consent procedures exist."
+          action={
+            <Link
+              href="/practice"
+              className="inline-flex min-h-11 items-center rounded-md border-2 border-foreground bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+            >
+              Back to practice tools
+            </Link>
+          }
+        />
+      </div>
+    );
+  }
 
   function pick(qi: number, oi: number) {
     haptic("tap");
@@ -120,11 +141,10 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
 
       <button
         type="button"
-        onClick={() => { setIdx((i) => Math.min(cases.length - 1, i + 1)); setAnswers({}); setShowAnswers(false); haptic("tap"); }}
-        disabled={idx + 1 >= cases.length}
-        className="w-full rounded-md border-2 border-border bg-card px-4 py-2.5 text-small font-medium text-muted-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+        onClick={() => { setIdx((i) => i + 1); setAnswers({}); setShowAnswers(false); haptic("tap"); }}
+        className="w-full rounded-md border-2 border-border bg-card px-4 py-2.5 text-small font-medium text-muted-foreground hard-shadow-sm transition-transform active:translate-y-px"
       >
-        {idx + 1 < cases.length ? "Next case" : "You've read them all"}
+        {idx + 1 < cases.length ? "Next case" : "Finish"}
       </button>
     </div>
   );
