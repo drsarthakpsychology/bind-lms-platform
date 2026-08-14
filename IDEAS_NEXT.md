@@ -33,9 +33,13 @@ writing this version — see NIGHT_LOG.md 2026-08-13 for the audit method.
   one `ELEVENLABS_API_KEY` + `ELEVENLABS_VOICE_ID` away.
 
 ## Real, verified-still-open
-- **mhGAP/NMHS/POCSO/RCI manual downloads** — the fetchers point at these;
-  NIMHANS/India-Code links need a browser download (TLS/redirect issues
-  in Node). Tracked in NEEDS_KAVYA.md, not code-fixable.
+- ~~mhGAP/NMHS/POCSO/RCI manual downloads~~ **DONE 2026-08-14** — all five
+  statutes/reference reports are now fetched and normalised: mhGAP-IG 2.0
+  (Wayback), NMHS main report (Wayback 2018), RCI 1992 (Samagra Shiksha
+  mirror), MHA 2017 (live India Code), and POCSO 2012 (WBCPCR mirror +
+  tesseract OCR — the last holdout, scanned Gazette, committed fe6bd5c).
+  All five land in `scripts/corpus/normalised/*.json` via
+  `npm run corpus:normalise`.
 - **`sim_cases.follow_up` recurring-patient content** — the chain
   consumer is built; the follow-up session specs (second/third visit,
   changed state) are authored content that needs a clinical spec.
@@ -45,5 +49,7 @@ writing this version — see NIGHT_LOG.md 2026-08-13 for the audit method.
 
 ## Deferred (v5 build era, still true)
 - Corpus fetchers for ICD-11 / mhGAP / NMHS / MHA 2017 as scripted,
-  re-runnable fetchers — MHA 2017 itself is fetched; the others are
-  manual-download-blocked (see above), not missing code.
+  re-runnable fetchers — all the statute/reference PDFs are now fetched
+  and normalised (see above); the remaining deferred piece is a fully
+  scripted, re-runnable ICD-11 fetcher (the public browser tier 401s
+  intermittently; a WHO API key would make it reliable).
