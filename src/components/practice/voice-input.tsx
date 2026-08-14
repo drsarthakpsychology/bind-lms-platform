@@ -72,6 +72,15 @@ export function VoiceInput({
 
   return (
     <div className="space-y-2">
+      {/* Mic permission denied — explain and point at the always-available
+          text box (§40: never trap the user in a broken voice state). */}
+      {voice.sttReason === "not-allowed" || voice.sttReason === "service-not-allowed" ? (
+        <p className="rounded-md border border-status-alert-fg/40 bg-status-alert-bg px-3 py-2 text-caption text-status-alert-fg" role="alert">
+          Microphone access was blocked, so voice won&apos;t work. You can still type
+          your question below — tap Allow in the browser to try voice again.
+        </p>
+      ) : null}
+
       {/* Safety notice (Safari permission) — shown once before first mic use */}
       {!safetyWarned && voice.sttAvailable ? (
         <p className="text-caption text-muted-foreground">
