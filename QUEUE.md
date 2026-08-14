@@ -613,7 +613,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   dynamic text, reduced motion, focus behavior, and screen-reader semantics;
   fix systemic issues rather than patching isolated screens
 
-- [ ] T65  Mobile typography sweep — audit every route for font size, line
+- [x] T65  Mobile typography sweep — audit every route for font size, line
   height, weight, wrapping, hierarchy, readable line length, and long-content
   behavior; eliminate tiny text and awkward wrapping
 
@@ -639,7 +639,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   progress, download actions, document previews, and failures for mobile;
   ensure users always understand the current state of a file operation
 
-- [ ] T71  Mobile authentication flow — audit login, signup, password reset,
+- [x] T71  Mobile authentication flow — audit login, signup, password reset,
   verification, session expiry, and authentication errors for phone-first
   interaction; minimize unnecessary fields and ensure keyboard behavior is
   correct

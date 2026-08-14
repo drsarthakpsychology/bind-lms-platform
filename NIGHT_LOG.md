@@ -3475,3 +3475,11 @@ pinned composer; course detail = flat rows no horizontal; quiz = one-question
 no inner scroll). Remaining capped scroll regions (role-play chat thread,
 MSE L5 transcript preview, forge session-preview) are defensible bounded
 previews of content, not navigation traps. Ticked.
+
+2026-08-14T21:30 T65 + T71 done.
+ T65 typography — student surfaces at/above the 0.75rem floor (text-caption);
+     the only sub-floor (text-[10px]) is worker-owned admin psychopharm editor
+     chrome. Type scale tokens enforced (text-caption = floor).
+ T71 auth — only /login + /expired exist (closed-cohort invite model; no
+     signup/reset flow to audit). Login uses the shared 44px Input.
+Both ticked. Gate green.
