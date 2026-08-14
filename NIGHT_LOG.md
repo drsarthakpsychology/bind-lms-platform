@@ -3269,3 +3269,8 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   for MobileCompletionState with a "Restart drill" action). T29 ticked — the
   shared primitive is in place and every existing practice-session completion
   now speaks the one language.
+- T40 (progress architecture) audited: progress is already appropriately
+  scaled per surface — `Progress` bar for course %, "N of M done" text for the
+  today chain, state chips for the practice hub, check marks for lesson
+  completion, competency evidence list for the passport. No dominating or
+  inconsistent progress UI; no change needed. Ticked T40.
