@@ -24,7 +24,8 @@ export type FeatureKey =
   | "skills_passport"
   | "weak_spots"
   | "checkin"
-  | "modules";
+  | "modules"
+  | "knowledge_tutor";
 
 const CACHE_TTL_MS = 30_000;
 let cache: { at: number; flags: Record<string, boolean> } | null = null;

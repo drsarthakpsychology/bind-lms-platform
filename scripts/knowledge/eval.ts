@@ -75,11 +75,7 @@ async function main() {
     const vec = await embedLocal(q.question);
     const top = await retrieveTopK(client, vec, k);
     const foundSources = [...new Set(top.map((r) => r.source))];
-    const hits = (expected: string[]) =>
-      expected.some((s) => foundSources.includes(s));
-    const ok5 = hits(q.expectedSources) || top.slice(0, 5).some((r, i) =>
-      i < 5 && q.expectedSources.includes(r.source));
-    // stricter: expected source in top-5
+    // expected source in top-5 vs top-8
     const top5Sources = [...new Set(top.slice(0, 5).map((r) => r.source))];
     const ok5Strict = q.expectedSources.some((s) => top5Sources.includes(s));
     const ok8Strict = q.expectedSources.some((s) => foundSources.includes(s));

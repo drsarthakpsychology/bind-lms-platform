@@ -50,6 +50,7 @@ const PRACTICE_TOOLS: PracticeTool[] = [
 
   // Browse — whenever
   { href: "/practice/library", title: "Case Library", verb: "ANNOTATE", description: "Highlight + note; peers' notes unlock after yours.", icon: "bookOpen", time: "varies", flag: "case_library", group: "browse" },
+  { href: "/practice/tutor", title: "Psychology Tutor", verb: "ASK", description: "Grounded answers from the authorised books, with sources.", icon: "bookMarked", time: "varies", flag: "knowledge_tutor", group: "browse" },
 ];
 
 

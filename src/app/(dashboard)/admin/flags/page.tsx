@@ -23,6 +23,7 @@ const LABELS: Record<string, string> = {
   weak_spots: "Weak Spots",
   modules: "Modules",
   checkin: "Weekly Check-in",
+  knowledge_tutor: "Psychology Tutor",
 };
 
 /** The six live for Cohort One (v5.1 A2); the rest built-but-off. */

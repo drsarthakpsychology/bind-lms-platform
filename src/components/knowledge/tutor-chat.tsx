@@ -1,0 +1,181 @@
+"use client";
+
+import * as React from "react";
+import { Send, BookOpen, Loader2, Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+
+/** One retrieved source passage behind an answer. */
+interface TutorSource {
+  id: string;
+  text: string;
+  citation: string;
+  sourceTitle: string;
+  chapter: string;
+  pageStart: number | null;
+  pageEnd: number | null;
+}
+
+interface TutorMessage {
+  role: "user" | "assistant";
+  content: string;
+  sources?: TutorSource[];
+  aiUsed?: boolean;
+  error?: boolean;
+}
+
+const SUGGESTIONS = [
+  "What is the difference between schizophrenia and bipolar disorder?",
+  "How do SSRIs treat depression?",
+  "What are the extrapyramidal side effects of antipsychotics?",
+  "How is alcohol withdrawal syndrome managed?",
+];
+
+/**
+ * Psychology Tutor — asks the grounded knowledge layer (/api/knowledge/ask).
+ * Answers are retrieval-first: real book passages with source citations always
+ * come back; an AI synthesis is added only when a no-train provider is on.
+ */
+export function TutorChat() {
+  const [messages, setMessages] = React.useState<TutorMessage[]>([]);
+  const [input, setInput] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
+  async function ask(question: string) {
+    const q = question.trim();
+    if (!q || loading) return;
+    setMessages((m) => [...m, { role: "user", content: q }]);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/knowledge/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ q, limit: 6 }),
+      });
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.error ?? "request failed");
+
+      let content: string;
+      if (body.answer) {
+        content = body.answer;
+      } else if (body.sources?.length) {
+        content =
+          "Here's what the authorised books say — the sources below are the material itself (an AI synthesis needs a no-train provider key, which isn't set yet). Ask me another way and I'll retrieve again.";
+      } else {
+        content = "I couldn't find source material for that in the authorised corpus. Try a different phrasing or one of the suggested questions.";
+      }
+      setMessages((m) => [
+        ...m,
+        { role: "assistant", content, sources: body.sources ?? [], aiUsed: body.aiUsed ?? false },
+      ]);
+    } catch {
+      setMessages((m) => [
+        ...m,
+        { role: "assistant", content: "Something went wrong on the knowledge layer. Please try again.", error: true },
+      ]);
+    } finally {
+      setLoading(false);
+      inputRef.current?.focus();
+    }
+  }
+
+  return (
+    <div className="flex h-full min-h-[60vh] flex-col overflow-hidden rounded-lg border-2 border-border bg-card">
+      {/* Header */}
+      <div className="flex items-center gap-2 border-b-2 border-border px-4 py-3">
+        <BookOpen className="size-4 text-link" aria-hidden />
+        <p className="text-body-strong">Psychology Tutor</p>
+        <span className="ml-auto rounded-md border-2 border-border bg-muted px-2 py-0.5 text-caption text-muted-foreground">
+          answers grounded in the authorised books
+        </span>
+      </div>
+
+      {/* Messages */}
+      <div className="flex-1 space-y-4 overflow-y-auto px-4 py-4" aria-live="polite">
+        {messages.length === 0 && (
+          <div className="py-6">
+            <p className="text-body-strong">Ask anything about psychology and psychiatry.</p>
+            <p className="mt-1 text-muted-foreground">
+              Answers are grounded in the ten-book corpus (Kaplan &amp; Sadock, DSM-5-TR, Stahl, Maudsley,
+              Fish, Ahuja, ICD-11, …) with source citations.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {SUGGESTIONS.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => ask(s)}
+                  disabled={loading}
+                  className="rounded-md border-2 border-border px-3 py-1.5 text-left text-sm hover:border-link hover:text-link disabled:opacity-50"
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {messages.map((m, i) => (
+          <div key={i} className={cn("flex", m.role === "user" ? "justify-end" : "justify-start")}>
+            <div
+              className={cn(
+                "max-w-[85%] rounded-lg border-2 px-3 py-2 text-sm",
+                m.role === "user" ? "border-border bg-muted" : "border-border bg-background",
+                m.error && "border-destructive",
+              )}
+            >
+              {m.role === "assistant" && m.aiUsed && (
+                <p className="mb-1 flex items-center gap-1 text-caption text-link">
+                  <Sparkles className="size-3" aria-hidden /> grounded answer
+                </p>
+              )}
+              <p className="whitespace-pre-wrap">{m.content}</p>
+
+              {m.sources && m.sources.length > 0 && (
+                <div className="mt-3 space-y-2 border-t border-border pt-2">
+                  <p className="text-caption font-semibold uppercase text-muted-foreground">Sources</p>
+                  {m.sources.slice(0, 4).map((s) => (
+                    <details key={s.id} className="rounded-md border-2 border-border bg-muted px-2 py-1.5">
+                      <summary className="cursor-pointer text-caption font-medium text-link">{s.citation}</summary>
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{s.text}</p>
+                    </details>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+
+        {loading && (
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Loader2 className="size-4 animate-spin" aria-hidden />
+            Retrieving from the books…
+          </div>
+        )}
+      </div>
+
+      {/* Composer */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          ask(input);
+        }}
+        className="flex items-center gap-2 border-t-2 border-border px-4 py-3"
+      >
+        <input
+          ref={inputRef}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Ask about any psychology topic…"
+          aria-label="Ask the Psychology Tutor"
+          className="min-w-0 flex-1 rounded-md border-2 border-border bg-background px-3 py-2 text-sm outline-none focus:border-link"
+        />
+        <Button type="submit" size="sm" disabled={loading || !input.trim()} aria-label="Ask">
+          <Send className="size-4" aria-hidden />
+        </Button>
+      </form>
+    </div>
+  );
+}

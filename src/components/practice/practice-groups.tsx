@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ChevronDown, Stethoscope, Brain, Layers, Timer, BookOpen, Scale, Users, CircleCheck, Gauge, Search, MessageSquare, Siren, GraduationCap, Wand2, Repeat, type LucideIcon } from "lucide-react";
+import { ChevronDown, Stethoscope, Brain, Layers, Timer, BookOpen, BookMarked, Scale, Users, CircleCheck, Gauge, Search, MessageSquare, Siren, GraduationCap, Wand2, Repeat, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/motion/reveal";
 import { cardVariants } from "@/components/ui/card";
@@ -16,6 +16,7 @@ export const PRACTICE_ICONS: Record<string, LucideIcon> = {
   layers: Layers,
   timer: Timer,
   bookOpen: BookOpen,
+  bookMarked: BookMarked,
   scale: Scale,
   users: Users,
   circleCheck: CircleCheck,

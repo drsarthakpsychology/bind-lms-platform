@@ -50,7 +50,8 @@ insert into public.feature_flags (key, enabled, enabled_for_cohort) values
   ('skills_passport',  true, true),
   ('weak_spots',       true, true),
   ('checkin',          true, true),
-  ('modules',          true, true)
+  ('modules',          true, true),
+  ('knowledge_tutor',  false, true)
 on conflict (key) do update set
   enabled = excluded.enabled,
   enabled_for_cohort = excluded.enabled_for_cohort;
