@@ -3994,3 +3994,40 @@ working tree, not git). Full commit `1d6d883` matches the pushed HEAD.
 2026-08-14T23:19:47 STOP_CLAUDE present — allowing stop.
 2026-08-14T23:34:38 STOP_CLAUDE present — allowing stop.
 2026-08-14T23:50:03 STOP_CLAUDE present — allowing stop.
+2026-08-15T00:59:45 STOP_CLAUDE present — allowing stop.
+
+## 2026-08-15 — CLOSURE: browser-verified, real bug fixed, cost/plan documented
+
+Systematic closure of the AI-patient/voice/UX rebuild:
+
+**Browser verification (Playwright, real app + real DB):**
+- consulting-session e2e 3/3 — patient conversation + debrief + no-disorder.
+- video-fullscreen 2/2 — lesson page hides the global nav; fullscreen engages
+  (native/pseudo) + exits cleanly.
+- pages-smoke / mobile-matrix / red-team 32/32 — every advertised page renders
+  (incl. the corrected "Case library" heading), no horizontal scroll at
+  320–430 + 1280/1440, red-team robustness.
+- **Proven real AI in the browser:** the ai_usage_log shows the e2e patient
+  turns served by provider groq (status ok), vs "fixture" on Aug-12 before the
+  fix. sim-live-proof generates in-voice, case-grounded, memory-carrying
+  conversations.
+
+**Real bug found + fixed:** the sim session route only started sessions whose
+title matched SEED_CASES — story/clinical cases in the DB returned "case
+required". Now falls back to the DB row's own case_data, so every published
+case is startable.
+
+**Realtime voice:** researched + costed (docs/REALTIME_VOICE_PLAN.md). LiveKit
+free Build tier ($0/mo, no card, 1,000 agent-min, 5 concurrent) fits all 50
+students (≈600 min/mo). The integration point is ready; enabling it needs a
+LiveKit project + a small worker host (precise list in the doc + NEEDS_KAVYA).
+
+**Security:** re-verified — server secrets live only in server files; client
+code uses only NEXT_PUBLIC_*. Students can't reach admin routes (e2e).
+
+**Performance:** voice session cleanup verified (STT/TTS aborted on unmount);
+no new heavy client code.
+
+**Device-limited (not code-blocked):** voice-audio e2e (no mic in headless
+Chromium) and iOS video fullscreen need a physical device — everything else
+in those flows is verified.
