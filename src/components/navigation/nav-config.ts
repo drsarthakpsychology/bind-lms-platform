@@ -51,5 +51,5 @@ export const ADMIN_ITEMS: NavItem[] = [
   { href: "/admin/flags", label: "What's live", icon: "toggle", section: "System" },
   { href: "/admin/pulse", label: "Cohort progress", icon: "activity", section: "System" },
   { href: "/admin/infra", label: "Usage & limits", icon: "gauge", section: "System" },
-  { href: "/admin/tools", label: "Tools", icon: "wrench", section: "System" },
+  { href: "/admin/tools", label: "Admin tools", icon: "wrench", section: "System" },
 ];

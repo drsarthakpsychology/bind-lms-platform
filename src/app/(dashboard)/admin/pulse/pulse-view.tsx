@@ -52,11 +52,11 @@ export function PulseView({
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div className="rounded-md border-2 border-border bg-card p-3">
-            <p className="text-caption text-muted-foreground">Drifting (7+ days)</p>
+            <p className="text-caption text-muted-foreground">Quiet a week or more</p>
             <p className="text-numeric text-h3 font-semibold text-status-pending-fg">{drifting.length}</p>
           </div>
           <div className="rounded-md border-2 border-border bg-card p-3">
-            <p className="text-caption text-muted-foreground">Flying</p>
+            <p className="text-caption text-muted-foreground">Finished everything</p>
             <p className="text-numeric text-h3 font-semibold text-status-success-fg">{flying.length}</p>
           </div>
         </div>
@@ -80,7 +80,7 @@ export function PulseView({
       {weeks.length > 0 ? (
         <div className="rounded-md border-2 border-border bg-card p-4">
           <p className="flex items-center gap-2 text-base font-semibold">
-            <Radar className="size-4 text-muted-foreground" aria-hidden /> Cohort curve
+            <Radar className="size-4 text-muted-foreground" aria-hidden /> Activity by week
           </p>
           <ul className="mt-2 space-y-2">
             {weeks.map((w) => (
@@ -100,10 +100,10 @@ export function PulseView({
         </div>
       ) : null}
 
-      {/* drifting */}
+      {/* quiet students */}
       <div className="rounded-md border-2 border-border bg-card p-4">
         <p className="flex items-center gap-2 text-base font-semibold">
-          <AlertTriangle className="size-4 text-status-pending-fg" aria-hidden /> Drifting
+          <AlertTriangle className="size-4 text-status-pending-fg" aria-hidden /> Quiet students
         </p>
         {drifting.length === 0 ? (
           <p className="mt-2 text-small text-muted-foreground">No one has gone quiet. Good sign.</p>
@@ -129,13 +129,13 @@ export function PulseView({
         )}
       </div>
 
-      {/* flying */}
+      {/* ahead of the pack */}
       <div className="rounded-md border-2 border-border bg-card p-4">
         <p className="flex items-center gap-2 text-base font-semibold">
-          <Rocket className="size-4 text-status-success-fg" aria-hidden /> Flying — don&apos;t lose these
+          <Rocket className="size-4 text-status-success-fg" aria-hidden /> Ahead of the pack
         </p>
         {flying.length === 0 ? (
-          <p className="mt-2 text-small text-muted-foreground">No one is ahead of the pack yet.</p>
+          <p className="mt-2 text-small text-muted-foreground">No one is ahead yet.</p>
         ) : (
           <ul className="mt-2 space-y-1">
             {flying.map((f) => (

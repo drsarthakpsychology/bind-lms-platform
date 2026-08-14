@@ -5,66 +5,125 @@ import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { StatCard } from "@/components/design-system/stat-card";
 import { Reveal } from "@/components/motion/reveal";
+import { needsReview } from "@/lib/review/triage";
 
 export default async function AdminOverviewPage() {
   const supabase = await createClient();
+  const adminClient = createAdminClient();
 
-  const [studentsResult, coursesResult, lessonsResult, pendingResult] =
-    await Promise.all([
-      supabase
-        .from("profiles")
-        .select("id", { count: "exact", head: true })
-        .eq("role", "student"),
-      supabase.from("courses").select("id", { count: "exact", head: true }),
-      supabase.from("lessons").select("id", { count: "exact", head: true }),
-      supabase
-        .from("submissions")
-        .select("id", { count: "exact", head: true })
-        .eq("status", "pending_review"),
-    ]);
-
-  // Action items: who's inactive, who's behind, ungraded submissions.
-  // "Inactive" is proxied by "has no progress rows at all" (never started),
-  // since progress has no updated_at column. Good enough as a first-pass
-  // to-do signal; refine when analytics land.
-  const [{ data: startedIds }, { data: ungraded }] = await Promise.all([
-    supabase
-      .from("progress")
-      .select("user_id")
-      .not("watched_seconds", "is", null),
+  const [
+    { data: students },
+    { data: courses },
+    { data: pendingSubmissions },
+    { data: simScores },
+    { data: allSessions },
+    { data: allCheckins },
+  ] = await Promise.all([
+    supabase.from("profiles").select("id, email").eq("role", "student"),
+    supabase.from("courses").select("id").eq("is_published", true),
     supabase
       .from("submissions")
-      .select("id, status, profiles(email)")
+      .select("id")
       .eq("status", "pending_review"),
+    adminClient
+      .from("sim_scores")
+      .select("session_id, user_id, rubric")
+      .order("created_at", { ascending: false })
+      .limit(50),
+    supabase.from("sim_sessions").select("user_id, created_at"),
+    supabase.from("checkins").select("user_id, created_at"),
+  ]);
+
+  const studentIds = new Set((students ?? []).map((s) => s.id));
+
+  // How many sim sessions are flagged for a human eye (mirrors /admin/triage).
+  const sessionsByStudent = new Map<string, number>();
+  for (const s of allSessions ?? []) sessionsByStudent.set(s.user_id, (sessionsByStudent.get(s.user_id) ?? 0) + 1);
+  let flaggedSessions = 0;
+  for (const s of simScores ?? []) {
+    const isFirst = (sessionsByStudent.get(s.user_id) ?? 1) <= 1;
+    const rubric = (s.rubric as Record<string, unknown>) ?? {};
+    const premature = Number(rubric.premature_reassurance ?? 0);
+    if (needsReview({ submissionId: s.session_id, isFirstSession: isFirst, concerning: premature > 2, repeatedFailure: false, aiConfidence: 0.6 })) {
+      flaggedSessions++;
+    }
+  }
+
+  // Last activity per student from sessions + check-ins → active this week / quiet.
+  const lastActivity = new Map<string, number>();
+  for (const s of allSessions ?? []) {
+    const t = new Date(s.created_at).getTime();
+    if (Number.isFinite(t) && (!lastActivity.has(s.user_id) || t > lastActivity.get(s.user_id)!)) lastActivity.set(s.user_id, t);
+  }
+  for (const c of allCheckins ?? []) {
+    const t = new Date(c.created_at).getTime();
+    if (Number.isFinite(t) && (!lastActivity.has(c.user_id) || t > lastActivity.get(c.user_id)!)) lastActivity.set(c.user_id, t);
+  }
+  const now = new Date().getTime();
+  const DAY = 86400000;
+  const activeThisWeek = [...studentIds].filter((id) => {
+    const last = lastActivity.get(id);
+    return last !== undefined && (now - last) / DAY < 7;
+  }).length;
+  const quietCount = [...studentIds].filter((id) => {
+    const last = lastActivity.get(id);
+    return last !== undefined && (now - last) / DAY >= 7;
+  }).length;
+
+  // Students with no progress at all (never started a lesson).
+  const [{ data: startedIds }] = await Promise.all([
+    supabase.from("progress").select("user_id").not("watched_seconds", "is", null),
   ]);
   const startedSet = new Set((startedIds ?? []).map((p) => p.user_id));
-  const { data: allStudents } = await supabase
-    .from("profiles")
-    .select("id, email")
-    .eq("role", "student");
-  const inactiveStudents = (allStudents ?? []).filter((s) => !startedSet.has(s.id));
+  const notStarted = (students ?? []).filter((s) => !startedSet.has(s.id)).length;
 
-  const stats = [
-    { label: "Students", value: studentsResult.count ?? 0, href: "/admin/students", icon: <Users className="size-4" />, accent: true },
-    { label: "Courses", value: coursesResult.count ?? 0, href: "/admin/courses", icon: <BookOpen className="size-4" /> },
-    { label: "Lessons", value: lessonsResult.count ?? 0, href: "/admin/courses", icon: <GraduationCap className="size-4" /> },
-    { label: "Pending reviews", value: pendingResult.count ?? 0, href: "/admin/submissions", icon: <Inbox className="size-4" /> },
-  ];
-
-  // Infra warning strip — the free-tier headroom is the one silent failure
-  // mode that takes the whole cohort down. Surfaced here so it can't be missed.
-  const adminClient = createAdminClient();
+  // Infra warning strip — the one silent failure that takes the cohort down.
   const { data: infraData } = await adminClient.rpc("infra_metrics");
   const dbSize = (infraData as { db_size_bytes?: number } | null)?.db_size_bytes ?? 0;
   const DB_LIMIT = 500 * 1024 * 1024;
   const dbPct = dbSize ? Math.round((dbSize / DB_LIMIT) * 100) : 0;
+
+  const actions = [
+    {
+      label: "Grade submissions",
+      count: (pendingSubmissions ?? []).length,
+      detail: "Coursework waiting for a grade.",
+      href: "/admin/submissions",
+      icon: <Inbox className="size-4" />,
+      urgent: (pendingSubmissions ?? []).length > 0,
+    },
+    {
+      label: "Review practice sessions",
+      count: flaggedSessions,
+      detail: "Simulated sessions flagged for your eyes.",
+      href: "/admin/triage",
+      icon: <GraduationCap className="size-4" />,
+      urgent: flaggedSessions > 0,
+    },
+    {
+      label: "Check on quiet students",
+      count: quietCount,
+      detail: "Quiet for a week or more.",
+      href: "/admin/pulse",
+      icon: <Users className="size-4" />,
+      urgent: quietCount > 0,
+    },
+    {
+      label: "Welcome new students",
+      count: notStarted,
+      detail: "Signed up but haven't started a course.",
+      href: "/admin/students",
+      icon: <BookOpen className="size-4" />,
+      urgent: notStarted > 0,
+    },
+  ];
 
   return (
     <div className="space-y-8">
       <Reveal delay={0.05}>
         <PageHeader
           title="Overview"
-          description="A snapshot of your platform at a glance."
+          description="What needs you today, then how the programme is going."
         />
       </Reveal>
 
@@ -79,63 +138,46 @@ export default async function AdminOverviewPage() {
         </Reveal>
       ) : null}
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {stats.map((stat, i) => (
-          <Reveal key={stat.label} delay={0.15 + i * 0.05} className="h-full">
-            <StatCard
-              label={stat.label}
-              value={stat.value}
-              href={stat.href}
-              icon={stat.icon}
-              accent={stat.accent}
-              className="h-full"
-            />
-          </Reveal>
-        ))}
-      </div>
-
-      {/* Action items — a short to-do list, not analytics. Two clear next steps. */}
-      <Reveal delay={0.35}>
+      {/* What needs you — the daily work, count first, one tap away. */}
+      <Reveal delay={0.15}>
       <section aria-label="Needs attention" className="space-y-3">
         <h2 className="text-h2">Needs attention</h2>
-        <div className="grid gap-4 lg:grid-cols-2">
-          <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
-            <h3 className="flex items-center gap-2 text-small font-semibold">
-              <Users className="size-4 text-link" aria-hidden />
-              Not started yet
-            </h3>
-            <p className="mt-1 text-caption text-muted-foreground">Students with no progress so far.</p>
-            <ul className="mt-2 space-y-1 text-small text-muted-foreground">
-              {(inactiveStudents ?? []).slice(0, 8).map((s) => (
-                <li key={s.id} className="truncate">{s.email ?? "no email"}</li>
-              ))}
-              {(inactiveStudents ?? []).length === 0 && <li>Everyone has started.</li>}
-            </ul>
-            <Link href="/admin/students" className="mt-2 inline-flex items-center gap-1 text-caption font-medium text-link">
-              View students <ArrowRight className="size-3.5" aria-hidden />
+        <div className="grid gap-4 sm:grid-cols-2">
+          {actions.map((a) => (
+            <Link
+              key={a.label}
+              href={a.href}
+              className="group flex items-center gap-3 rounded-md border-2 border-border bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-px"
+            >
+              <span className={`flex size-10 shrink-0 items-center justify-center rounded-md border-2 ${a.count > 0 ? "border-foreground bg-primary text-primary-foreground" : "border-border bg-secondary text-muted-foreground"}`}>
+                {a.icon}
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-small font-semibold">
+                  {a.label}{a.count > 0 ? ` · ${a.count}` : ""}
+                </span>
+                <span className="block truncate text-caption text-muted-foreground">{a.detail}</span>
+              </span>
+              <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" aria-hidden />
             </Link>
-          </div>
+          ))}
+        </div>
+        {actions.every((a) => a.count === 0) ? (
+          <p className="text-caption text-muted-foreground">
+            Nothing needs you right now. Come back after the next submission window.
+          </p>
+        ) : null}
+      </section>
+      </Reveal>
 
-          <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
-            <h3 className="flex items-center gap-2 text-small font-semibold">
-              <Inbox className="size-4 text-link" aria-hidden />
-              Ungraded submissions
-            </h3>
-            <ul className="mt-2 space-y-1 text-small text-muted-foreground">
-              {(ungraded ?? []).slice(0, 8).map((s) => {
-                const p = Array.isArray(s.profiles) ? s.profiles[0] : s.profiles;
-                return (
-                  <li key={s.id} className="truncate">
-                    {(p as { email?: string } | null)?.email ?? "student"}
-                  </li>
-                );
-              })}
-              {(ungraded ?? []).length === 0 && <li>Nothing pending.</li>}
-            </ul>
-            <Link href="/admin/submissions" className="mt-2 inline-flex items-center gap-1 text-caption font-medium text-link">
-              Review all <ArrowRight className="size-3.5" aria-hidden />
-            </Link>
-          </div>
+      {/* Programme snapshot — a few honest numbers, not a dashboard wall. */}
+      <Reveal delay={0.25}>
+      <section aria-label="Programme snapshot" className="space-y-3">
+        <h2 className="text-h2">Programme</h2>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <StatCard label="Students" value={students?.length ?? 0} href="/admin/students" icon={<Users className="size-4" />} accent />
+          <StatCard label="Active this week" value={activeThisWeek} icon={<GraduationCap className="size-4" />} />
+          <StatCard label="Courses" value={courses?.length ?? 0} href="/admin/courses" icon={<BookOpen className="size-4" />} />
         </div>
       </section>
       </Reveal>
