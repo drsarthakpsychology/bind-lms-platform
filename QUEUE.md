@@ -682,7 +682,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   entries, ongoing cases, and existing progress; ensure the interface
   intelligently surfaces continuation points
 
-- [ ] T80  Mobile interruption/return audit — begin important workflows, leave
+- [x] T80  Mobile interruption/return audit — begin important workflows, leave
   them midway, navigate elsewhere, return later, and verify that the
   application returns the user to the correct context
 

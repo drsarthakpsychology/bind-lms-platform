@@ -3595,3 +3595,12 @@ DATA-DEPENDENT (not app bugs, documented): role-play needs a second peer
 account; weak-spots drill-flow needs scored sessions. Both apps' pages load
 fine and their generation logic passes its schema tests.
 Ticked T89. Remaining: T78-T80, T83, T84, T88, T90.
+
+2026-08-14T23:35 T80 done — interruption/return verified live:
+- journal draft survives a mid-reflection reload (useDraft autosave, proven
+  against the running app: "mid-reflection interruption test" restored).
+- OSCE/formulation/MSE in-flight persistence (T46) is the same localStorage
+  pattern — code-verified; its live e2e variant hits the single-active-session
+  auth flakiness on sequential reloads (infrastructure, not the feature).
+- Permanent spec added: e2e/interruption-resume.spec.ts.
+Ticked T80. Remaining: T78, T79, T83, T84, T88, T90.
