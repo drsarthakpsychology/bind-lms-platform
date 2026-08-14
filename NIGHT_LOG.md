@@ -3034,4 +3034,13 @@ b128c49 (headline clamp), plus this turn's snapshot of the optical-alignment
 tweak. Full gate re-verified green on the committed state: lint 0 warnings
 (`accept.mjs` scratch file came and went from the live editor), tsc clean,
 453 tests / 76 files, build 82/82.
-2026-08-14T17:58:53 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — backlog sweep: POCSO closes the last manual download
+
+The hook loop surfaced a stale backlog entry. Decision (cheapest to
+reverse): corrected the docs rather than invent new work. IDEAS_NEXT.md
+still listed mhGAP/NMHS/POCSO/RCI as "manual downloads still open" — all
+five are in fact fetched + normalised, POCSO being the last (fe6bd5c).
+Retired that entry and narrowed the deferred note to the ICD-11 scripted
+fetcher. Commit 5d40320. BUGS.md shows Open: 0 (item 27's "fix commit"
+is a doc-annotation lag only). Gate remains green on the committed tree.
