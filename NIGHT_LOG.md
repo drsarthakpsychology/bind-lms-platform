@@ -3163,3 +3163,12 @@ live network-tab capture on a real device — blocked on device access, not code
 Gate: lint 0, tsc clean, 466 tests (+5 title), build pending in this slice.
 
 2026-08-14T19:09:54 T3 done — bottom tab bar: sliding active indicator (motion.span layoutId, spring 420/34, reduced-motion static) + 56px tap targets. Committed ebd0ccf (bundled by agent). Green: 466 tests + build.
+
+2026-08-14T19:15 — Phase 0 (0.9 anonymity). Verified the wall anonymity guarantee
+holds at the DATA layer: wall_posts_visible / wall_replies_visible views null
+author_id via `case when is_anonymous then null else author_id end`
+(practice_layer_rest.sql:394-431), and the wall page reads those views — so an
+anonymous author's id never reaches the client payload (not merely unrendered).
+Admin moderation reads the base table (correct, for reports). Remaining 0.9
+items (video-per-week, debrief render, journal save, progress increment) need a
+live-device sweep, not code inspection — documented, not code-verifiable here.
