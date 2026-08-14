@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { computePracticeStates, type SurfaceState } from "@/lib/practice/practice-state";
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
+import { WeakSpotsCollapsible } from "@/components/practice/weak-spots-collapsible";
 import { PracticeGroups, type PracticeCardData } from "@/components/practice/practice-groups";
 import { Reveal } from "@/components/motion/reveal";
 
@@ -176,9 +177,13 @@ export default async function PracticeHubPage() {
       ) : null}
       </Reveal>
 
-      {/* weak-spots banner — real gaps, server-computed */}
+      {/* weak-spots banner — real gaps, server-computed. On mobile it yields
+          into a collapsible row so the browse groups stay the primary surface
+          (T19: at most one "do this" before the groups). */}
       <Reveal delay={0.15}>
-        <WeakSpotsBanner />
+        <WeakSpotsCollapsible label="Your weak spots">
+          <WeakSpotsBanner />
+        </WeakSpotsCollapsible>
       </Reveal>
 
       <PracticeGroups

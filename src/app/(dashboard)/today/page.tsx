@@ -114,13 +114,6 @@ export default async function TodayPage() {
         </p>
       </Reveal>
 
-      {/* weak-spots banner — real gaps above the primary card */}
-      <Reveal delay={0.15}>
-        <div className="mt-6">
-          <WeakSpotsBanner />
-        </div>
-      </Reveal>
-
       {/* in-progress chain — a patient's arc continues (casebook "the chain") */}
       <Reveal delay={0.2}>
       {chainNext ? (
@@ -178,6 +171,14 @@ export default async function TodayPage() {
           {primary.cta} <ArrowRight className="size-4" aria-hidden />
         </span>
       </Link>
+      </Reveal>
+
+      {/* weak-spots banner — deferred below the primary card so only one
+          "do this now" survives the first viewport (T19). */}
+      <Reveal delay={0.25}>
+        <div className="mt-6">
+          <WeakSpotsBanner />
+        </div>
       </Reveal>
 
       {/* quick / deep chips */}
