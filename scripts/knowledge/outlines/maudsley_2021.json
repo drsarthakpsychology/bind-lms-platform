@@ -1,0 +1,244 @@
+{
+  "id": "maudsley_2021",
+  "confidence": "high",
+  "issues": [
+    "Page numbers are the PDF page index (the <<<PAGE n>>> marker value); the book's printed page numbers (from the Contents) are NOT used.",
+    "The Contents (PDF pages 6-10) maps to PDF pages via a roughly constant printed->PDF offset of +21 for chapter start pages, but individual section headings drift by up to ~9 pages, so every section page was verified directly against the body text rather than derived from the Contents.",
+    "Sections enumerate the first-level headings per chapter only; deeper sub-subsections (e.g. individual antipsychotic monographs inside 'ANTIPSYCHOTIC DRUGS', or the clozapine adverse-effect sub-topics) are not listed.",
+    "Some section headings collide with ordinary mentions in the text (e.g. 'Carbamazepine' at 275 vs the real section at 285, 'Bipolar depression' at 269 vs 309, 'BPSD' at 629 vs 665, 'Breastfeeding' at 702 vs 723). These were disambiguated using TOC order and page running-headers.",
+    "Front matter granularity: page 1 is blank; 'Title Page' spans 2-4; Preface 12-13; Acknowledgments 14; 'Notes on using the guidelines' 15-16; 'List of abbreviations' 17-21.",
+    "The four 'Part' divider pages (22, 558, 776, 852) and the blank pages that follow them are recorded in unattributedPages.",
+    "Back matter (Index, PDF pages 964-977, and the Wiley End User License Agreement, page 978) is not representable by the frontMatter/chapters shape and is recorded in unattributedPages.",
+    "Several heading lines in the extraction carry trailing reference superscripts (e.g. 'Physical monitoring for people with bipolar disorder1,2'); these have been stripped from titles."
+  ],
+  "isPreview": false,
+  "frontMatter": [
+    { "title": "Title Page", "pageStart": 2, "pageEnd": 4, "sections": [] },
+    { "title": "Copyright", "pageStart": 5, "pageEnd": 5, "sections": [] },
+    { "title": "Contents", "pageStart": 6, "pageEnd": 10, "sections": [] },
+    { "title": "Preface", "pageStart": 12, "pageEnd": 13, "sections": [] },
+    { "title": "Acknowledgments", "pageStart": 14, "pageEnd": 14, "sections": [] },
+    { "title": "Notes on using the guidelines", "pageStart": 15, "pageEnd": 16, "sections": [] },
+    { "title": "List of abbreviations", "pageStart": 17, "pageEnd": 21, "sections": [] }
+  ],
+  "chapters": [
+    {
+      "title": "Schizophrenia and related psychoses",
+      "pageStart": 24,
+      "pageEnd": 267,
+      "sections": [
+        { "title": "Antipsychotic drugs", "page": 24 },
+        { "title": "Antipsychotic adverse effects", "page": 130 },
+        { "title": "Refractory schizophrenia and clozapine", "page": 211 },
+        { "title": "Clozapine adverse effects", "page": 233 }
+      ]
+    },
+    {
+      "title": "Bipolar disorder",
+      "pageStart": 268,
+      "pageEnd": 325,
+      "sections": [
+        { "title": "Lithium", "page": 268 },
+        { "title": "Valproate", "page": 278 },
+        { "title": "Carbamazepine", "page": 285 },
+        { "title": "Antipsychotics in bipolar disorder", "page": 290 },
+        { "title": "Antipsychotic long-acting injections in bipolar disorder", "page": 295 },
+        { "title": "Physical monitoring for people with bipolar disorder", "page": 298 },
+        { "title": "Treatment of acute mania or hypomania", "page": 300 },
+        { "title": "Rapid cycling bipolar affective disorder", "page": 306 },
+        { "title": "Bipolar depression", "page": 309 },
+        { "title": "Prophylaxis in bipolar disorder", "page": 317 },
+        { "title": "Stopping lithium and mood stabilisers", "page": 322 }
+      ]
+    },
+    {
+      "title": "Depression and anxiety disorders",
+      "pageStart": 326,
+      "pageEnd": 471,
+      "sections": [
+        { "title": "Introduction to depression", "page": 326 },
+        { "title": "Official guidance on the treatment of depression", "page": 326 },
+        { "title": "Antidepressants - general overview", "page": 328 },
+        { "title": "Recognised minimum effective doses of antidepressants", "page": 333 },
+        { "title": "Drug treatment of depression", "page": 335 },
+        { "title": "Management of treatment-resistant depression - first choice", "page": 338 },
+        { "title": "Management of treatment-resistant depression - second choice", "page": 342 },
+        { "title": "Treatment-resistant depression - other reported treatments", "page": 344 },
+        { "title": "Ketamine", "page": 349 },
+        { "title": "Psychotic depression", "page": 353 },
+        { "title": "Switching antidepressants", "page": 357 },
+        { "title": "Antidepressant withdrawal symptoms", "page": 364 },
+        { "title": "Stopping antidepressants", "page": 369 },
+        { "title": "Electroconvulsive therapy (ECT) and psychotropic drugs", "page": 374 },
+        { "title": "Psychostimulants in depression", "page": 378 },
+        { "title": "Post-stroke depression", "page": 383 },
+        { "title": "Antidepressants - alternative routes of administration", "page": 387 },
+        { "title": "Antidepressant prophylaxis", "page": 395 },
+        { "title": "Drug interactions with antidepressants", "page": 399 },
+        { "title": "Cardiac effects of antidepressants - summary", "page": 404 },
+        { "title": "Antidepressant-induced arrhythmia", "page": 410 },
+        { "title": "Antidepressant-induced hyponatraemia", "page": 414 },
+        { "title": "Antidepressants and hyperprolactinaemia", "page": 419 },
+        { "title": "Antidepressants and diabetes mellitus", "page": 422 },
+        { "title": "Antidepressants and sexual dysfunction", "page": 425 },
+        { "title": "SSRIs and bleeding", "page": 430 },
+        { "title": "St. John's Wort", "page": 438 },
+        { "title": "Antidepressants: relative adverse effects - a rough guide", "page": 442 },
+        { "title": "Anxiety spectrum disorders", "page": 444 },
+        { "title": "Benzodiazepines in the treatment of psychiatric disorders", "page": 457 },
+        { "title": "Benzodiazepines, z-drugs and gabapentinoids: dependence, detoxification and discontinuation", "page": 461 },
+        { "title": "Benzodiazepines and disinhibition", "page": 469 }
+      ]
+    },
+    {
+      "title": "Addictions and substance misuse",
+      "pageStart": 472,
+      "pageEnd": 557,
+      "sections": [
+        { "title": "Introduction", "page": 472 },
+        { "title": "Alcohol dependence", "page": 474 },
+        { "title": "Alcohol withdrawal delirium - delirium tremens", "page": 493 },
+        { "title": "Opioid dependence", "page": 495 },
+        { "title": "Nicotine and smoking cessation", "page": 524 },
+        { "title": "Pharmacological treatment of dependence on stimulants", "page": 532 },
+        { "title": "GHB and GBL dependence", "page": 535 },
+        { "title": "Benzodiazepine misuse", "page": 538 },
+        { "title": "Synthetic cannabinoid receptor agonists (SCRAs)", "page": 541 },
+        { "title": "Drug-induced acute behavioural disturbance (ABD) in acute admissions", "page": 545 },
+        { "title": "Interactions between 'street drugs' and prescribed psychotropic drugs", "page": 547 },
+        { "title": "Drugs of misuse - a summary", "page": 551 },
+        { "title": "Substance misuse in pregnancy", "page": 556 }
+      ]
+    },
+    {
+      "title": "Children and adolescents",
+      "pageStart": 560,
+      "pageEnd": 621,
+      "sections": [
+        { "title": "Principles of prescribing practice in childhood and adolescence", "page": 560 },
+        { "title": "Depression in children and adolescents", "page": 562 },
+        { "title": "Bipolar illness in children and adolescents", "page": 568 },
+        { "title": "Psychosis in children and adolescents", "page": 575 },
+        { "title": "Anxiety disorders in children and adolescents", "page": 577 },
+        { "title": "Obsessive compulsive disorder (OCD) and body dysmorphic disorder (BDD) in children and adolescents", "page": 582 },
+        { "title": "Post-traumatic stress disorder in children and adolescents", "page": 588 },
+        { "title": "Attention deficit hyperactivity disorder", "page": 590 },
+        { "title": "Autism Spectrum Disorder", "page": 599 },
+        { "title": "Tics and Tourette syndrome", "page": 608 },
+        { "title": "Melatonin in the treatment of insomnia in children and adolescents", "page": 614 },
+        { "title": "Rapid tranquillisation (RT) in children and adolescents", "page": 617 },
+        { "title": "Doses of commonly used psychotropic drugs in children and adolescents", "page": 620 }
+      ]
+    },
+    {
+      "title": "Prescribing in older people",
+      "pageStart": 622,
+      "pageEnd": 699,
+      "sections": [
+        { "title": "General principles", "page": 622 },
+        { "title": "Dementia", "page": 625 },
+        { "title": "Safer prescribing for physical conditions in dementia", "page": 652 },
+        { "title": "Management of behavioural and psychological symptoms of dementia (BPSD)", "page": 665 },
+        { "title": "A guide to medication doses of commonly used psychotropics in older adults", "page": 678 },
+        { "title": "Covert administration of medicines within food and drink", "page": 688 },
+        { "title": "Treatment of depression in older people", "page": 694 }
+      ]
+    },
+    {
+      "title": "Pregnancy and breastfeeding",
+      "pageStart": 700,
+      "pageEnd": 743,
+      "sections": [
+        { "title": "Drug choice in pregnancy", "page": 700 },
+        { "title": "What to include in discussions with pregnant women", "page": 702 },
+        { "title": "Breastfeeding", "page": 723 }
+      ]
+    },
+    {
+      "title": "Hepatic and renal impairment",
+      "pageStart": 744,
+      "pageEnd": 775,
+      "sections": [
+        { "title": "Hepatic impairment", "page": 744 },
+        { "title": "Renal impairment", "page": 756 }
+      ]
+    },
+    {
+      "title": "Drug treatment of other psychiatric conditions",
+      "pageStart": 778,
+      "pageEnd": 797,
+      "sections": [
+        { "title": "Borderline personality disorder (BPD)", "page": 778 },
+        { "title": "Eating disorders", "page": 782 },
+        { "title": "Delirium", "page": 788 }
+      ]
+    },
+    {
+      "title": "Drug treatment of psychiatric symptoms occurring in the context of other disorders",
+      "pageStart": 798,
+      "pageEnd": 851,
+      "sections": [
+        { "title": "General principles of prescribing in HIV", "page": 798 },
+        { "title": "Epilepsy", "page": 806 },
+        { "title": "22q11.2 deletion syndrome", "page": 815 },
+        { "title": "Learning disabilities", "page": 818 },
+        { "title": "Huntington's disease - pharmacological treatment", "page": 824 },
+        { "title": "Multiple sclerosis", "page": 829 },
+        { "title": "Parkinson's disease", "page": 835 },
+        { "title": "Atrial fibrillation - using psychotropics", "page": 840 },
+        { "title": "Recommendations - psychotropics in AF", "page": 841 },
+        { "title": "Psychotropics in bariatric surgery", "page": 843 },
+        { "title": "Prescribing in patients with psychiatric illness at the end of life", "page": 850 }
+      ]
+    },
+    {
+      "title": "Pharmacokinetics",
+      "pageStart": 854,
+      "pageEnd": 885,
+      "sections": [
+        { "title": "Plasma level monitoring of psychotropic drugs", "page": 854 },
+        { "title": "Interpreting postmortem blood concentrations", "page": 868 },
+        { "title": "Acting on clozapine plasma concentration results", "page": 870 },
+        { "title": "Psychotropics and cytochrome (CYP) function", "page": 872 },
+        { "title": "Smoking and psychotropic drugs", "page": 877 },
+        { "title": "Drug interactions with alcohol", "page": 881 }
+      ]
+    },
+    {
+      "title": "Other substances",
+      "pageStart": 886,
+      "pageEnd": 895,
+      "sections": [
+        { "title": "Caffeine", "page": 886 },
+        { "title": "Nicotine", "page": 892 }
+      ]
+    },
+    {
+      "title": "Psychotropic drugs in special conditions",
+      "pageStart": 896,
+      "pageEnd": 917,
+      "sections": [
+        { "title": "Psychotropics in overdose", "page": 896 },
+        { "title": "Driving and psychotropic medicines", "page": 904 },
+        { "title": "Psychotropics and surgery", "page": 910 }
+      ]
+    },
+    {
+      "title": "Miscellany",
+      "pageStart": 918,
+      "pageEnd": 963,
+      "sections": [
+        { "title": "Enhancing medication adherence", "page": 918 },
+        { "title": "Re-starting psychotropic medications after a period of non-compliance", "page": 926 },
+        { "title": "Biochemical and haematological effects of psychotropics", "page": 928 },
+        { "title": "Summary of psychiatric side effects of non-psychotropics", "page": 938 },
+        { "title": "Prescribing drugs outside their licensed indications ('off-label' prescribing or unapproved use of approved drugs)", "page": 944 },
+        { "title": "Examples of acceptable use of drugs outside their product licences/labels", "page": 946 },
+        { "title": "The Mental Health Act in England and Wales", "page": 948 },
+        { "title": "Site of administration of intramuscular injections", "page": 953 },
+        { "title": "Intravenous formulations in psychiatry", "page": 958 }
+      ]
+    }
+  ],
+  "unattributedPages": [1, 11, 22, 23, 558, 559, 776, 777, 852, 853, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978]
+}

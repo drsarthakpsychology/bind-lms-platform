@@ -1,0 +1,839 @@
+{
+  "id": "dsm5tr",
+  "confidence": "high",
+  "issues": [
+    "Running headers and printed page numbers are extracted as stray standalone lines (e.g., '102', '511', '803', 'i'–'v'); these are printed page numbers, NOT PDF page indices.",
+    "Table of contents and the DSM-5-TR Classification listing carry PRINTED page numbers in parentheses (e.g., 'Neurodevelopmental Disorders (35)'); these differ from the PDF page index used in this outline.",
+    "Some headings are split across two lines in the extract (e.g., 'Schizophrenia Spectrum and Other Psychotic / Disorders', 'Medication-Induced Movement Disorders and / Other Adverse Effects of Medication').",
+    "Text uses Unicode curly apostrophes and em/en dashes (e.g., 'Tourette's Disorder', 'Sedative-, Hypnotic-, or Anxiolytic-Related'), which affects plain-ASCII search.",
+    "Diagnostic code lines (e.g., 'F20.9', 'F95.2', 'G24.09') are extracted as isolated standalone lines between headings and criteria.",
+    "Section I's header reads 'DSM-5 Basics' in the body text (not 'DSM-5-TR Basics').",
+    "The Substance-Related and Neurocognitive chapters are very long (~150 pages each); only top-level substance-class and etiological-subtype sections are captured.",
+    "Form-feed control characters (U+000C) appear as blank lines at each PDF page break."
+  ],
+  "isPreview": false,
+  "frontMatter": [
+    {
+      "title": "Title Pages, Officers, and Copyright",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "sections": []
+    },
+    {
+      "title": "Contents",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "sections": []
+    },
+    {
+      "title": "DSM-5-TR Chairs, Review Groups, and Contributors",
+      "pageStart": 10,
+      "pageEnd": 34,
+      "sections": []
+    },
+    {
+      "title": "Preface to DSM-5-TR",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "sections": []
+    },
+    {
+      "title": "Preface to DSM-5",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "sections": []
+    },
+    {
+      "title": "DSM-5-TR Classification",
+      "pageStart": 41,
+      "pageEnd": 91,
+      "sections": []
+    },
+    {
+      "title": "Section I: DSM-5 Basics",
+      "pageStart": 92,
+      "pageEnd": 126,
+      "sections": [
+        {
+          "title": "Introduction",
+          "page": 94
+        },
+        {
+          "title": "Harmonization With ICD-11",
+          "page": 103
+        },
+        {
+          "title": "Key Conceptual Frameworks and Approaches",
+          "page": 104
+        },
+        {
+          "title": "Use of the Manual",
+          "page": 113
+        },
+        {
+          "title": "Cautionary Statement for Forensic Use of DSM-5",
+          "page": 124
+        }
+      ]
+    },
+    {
+      "title": "Section II: Diagnostic Criteria and Codes (introduction)",
+      "pageStart": 127,
+      "pageEnd": 130,
+      "sections": []
+    }
+  ],
+  "chapters": [
+    {
+      "title": "Neurodevelopmental Disorders",
+      "pageStart": 131,
+      "pageEnd": 207,
+      "sections": [
+        {
+          "title": "Intellectual Disability (Intellectual Developmental Disorder)",
+          "page": 133
+        },
+        {
+          "title": "Global Developmental Delay",
+          "page": 142
+        },
+        {
+          "title": "Language Disorder",
+          "page": 143
+        },
+        {
+          "title": "Speech Sound Disorder",
+          "page": 146
+        },
+        {
+          "title": "Childhood-Onset Fluency Disorder (Stuttering)",
+          "page": 149
+        },
+        {
+          "title": "Social (Pragmatic) Communication Disorder",
+          "page": 151
+        },
+        {
+          "title": "Autism Spectrum Disorder",
+          "page": 154
+        },
+        {
+          "title": "Attention-Deficit/Hyperactivity Disorder",
+          "page": 168
+        },
+        {
+          "title": "Specific Learning Disorder",
+          "page": 178
+        },
+        {
+          "title": "Tourette's Disorder",
+          "page": 198
+        }
+      ]
+    },
+    {
+      "title": "Schizophrenia Spectrum and Other Psychotic Disorders",
+      "pageStart": 208,
+      "pageEnd": 254,
+      "sections": [
+        {
+          "title": "Schizotypal (Personality) Disorder",
+          "page": 212
+        },
+        {
+          "title": "Delusional Disorder",
+          "page": 212
+        },
+        {
+          "title": "Brief Psychotic Disorder",
+          "page": 217
+        },
+        {
+          "title": "Schizophreniform Disorder",
+          "page": 220
+        },
+        {
+          "title": "Schizophrenia",
+          "page": 223
+        },
+        {
+          "title": "Schizoaffective Disorder",
+          "page": 232
+        },
+        {
+          "title": "Psychotic Disorder Due to Another Medical Condition",
+          "page": 244
+        },
+        {
+          "title": "Catatonia",
+          "page": 248
+        }
+      ]
+    },
+    {
+      "title": "Bipolar and Related Disorders",
+      "pageStart": 255,
+      "pageEnd": 301,
+      "sections": [
+        {
+          "title": "Bipolar I Disorder",
+          "page": 255
+        },
+        {
+          "title": "Bipolar II Disorder",
+          "page": 268
+        },
+        {
+          "title": "Cyclothymic Disorder",
+          "page": 279
+        },
+        {
+          "title": "Bipolar and Related Disorder Due to Another Medical Condition",
+          "page": 281
+        },
+        {
+          "title": "Specifiers for Bipolar and Related Disorders",
+          "page": 291
+        }
+      ]
+    },
+    {
+      "title": "Depressive Disorders",
+      "pageStart": 302,
+      "pageEnd": 349,
+      "sections": [
+        {
+          "title": "Disruptive Mood Dysregulation Disorder",
+          "page": 303
+        },
+        {
+          "title": "Major Depressive Disorder",
+          "page": 309
+        },
+        {
+          "title": "Persistent Depressive Disorder (Dysthymia)",
+          "page": 320
+        },
+        {
+          "title": "Premenstrual Dysphoric Disorder",
+          "page": 325
+        },
+        {
+          "title": "Depressive Disorder Due to Another Medical Condition",
+          "page": 336
+        },
+        {
+          "title": "Specifiers for Depressive Disorders",
+          "page": 342
+        }
+      ]
+    },
+    {
+      "title": "Anxiety Disorders",
+      "pageStart": 350,
+      "pageEnd": 407,
+      "sections": [
+        {
+          "title": "Separation Anxiety Disorder",
+          "page": 352
+        },
+        {
+          "title": "Selective Mutism",
+          "page": 358
+        },
+        {
+          "title": "Specific Phobia",
+          "page": 361
+        },
+        {
+          "title": "Social Anxiety Disorder (Social Phobia)",
+          "page": 367
+        },
+        {
+          "title": "Panic Disorder",
+          "page": 374
+        },
+        {
+          "title": "Agoraphobia",
+          "page": 387
+        },
+        {
+          "title": "Generalized Anxiety Disorder",
+          "page": 393
+        },
+        {
+          "title": "Anxiety Disorder Due to Another Medical Condition",
+          "page": 402
+        }
+      ]
+    },
+    {
+      "title": "Obsessive-Compulsive and Related Disorders",
+      "pageStart": 408,
+      "pageEnd": 447,
+      "sections": [
+        {
+          "title": "Obsessive-Compulsive Disorder",
+          "page": 410
+        },
+        {
+          "title": "Body Dysmorphic Disorder",
+          "page": 418
+        },
+        {
+          "title": "Hoarding Disorder",
+          "page": 425
+        },
+        {
+          "title": "Trichotillomania (Hair-Pulling Disorder)",
+          "page": 430
+        },
+        {
+          "title": "Excoriation (Skin-Picking) Disorder",
+          "page": 433
+        }
+      ]
+    },
+    {
+      "title": "Trauma- and Stressor-Related Disorders",
+      "pageStart": 448,
+      "pageEnd": 490,
+      "sections": [
+        {
+          "title": "Reactive Attachment Disorder",
+          "page": 448
+        },
+        {
+          "title": "Disinhibited Social Engagement Disorder",
+          "page": 452
+        },
+        {
+          "title": "Posttraumatic Stress Disorder",
+          "page": 455
+        },
+        {
+          "title": "Acute Stress Disorder",
+          "page": 470
+        },
+        {
+          "title": "Adjustment Disorders",
+          "page": 477
+        },
+        {
+          "title": "Prolonged Grief Disorder",
+          "page": 481
+        }
+      ]
+    },
+    {
+      "title": "Dissociative Disorders",
+      "pageStart": 491,
+      "pageEnd": 515,
+      "sections": [
+        {
+          "title": "Dissociative Identity Disorder",
+          "page": 492
+        },
+        {
+          "title": "Dissociative Amnesia",
+          "page": 501
+        },
+        {
+          "title": "Depersonalization/Derealization Disorder",
+          "page": 508
+        }
+      ]
+    },
+    {
+      "title": "Somatic Symptom and Related Disorders",
+      "pageStart": 516,
+      "pageEnd": 543,
+      "sections": [
+        {
+          "title": "Somatic Symptom Disorder",
+          "page": 518
+        },
+        {
+          "title": "Illness Anxiety Disorder",
+          "page": 525
+        },
+        {
+          "title": "Functional Neurological Symptom Disorder (Conversion Disorder)",
+          "page": 529
+        },
+        {
+          "title": "Psychological Factors Affecting Other Medical Conditions",
+          "page": 534
+        },
+        {
+          "title": "Factitious Disorder",
+          "page": 538
+        }
+      ]
+    },
+    {
+      "title": "Feeding and Eating Disorders",
+      "pageStart": 544,
+      "pageEnd": 576,
+      "sections": [
+        {
+          "title": "Pica",
+          "page": 544
+        },
+        {
+          "title": "Rumination Disorder",
+          "page": 547
+        },
+        {
+          "title": "Avoidant/Restrictive Food Intake Disorder",
+          "page": 550
+        },
+        {
+          "title": "Anorexia Nervosa",
+          "page": 556
+        },
+        {
+          "title": "Bulimia Nervosa",
+          "page": 564
+        },
+        {
+          "title": "Binge-Eating Disorder",
+          "page": 570
+        }
+      ]
+    },
+    {
+      "title": "Elimination Disorders",
+      "pageStart": 577,
+      "pageEnd": 586,
+      "sections": [
+        {
+          "title": "Enuresis",
+          "page": 577
+        },
+        {
+          "title": "Encopresis",
+          "page": 581
+        }
+      ]
+    },
+    {
+      "title": "Sleep-Wake Disorders",
+      "pageStart": 587,
+      "pageEnd": 671,
+      "sections": [
+        {
+          "title": "Insomnia Disorder",
+          "page": 590
+        },
+        {
+          "title": "Hypersomnolence Disorder",
+          "page": 599
+        },
+        {
+          "title": "Narcolepsy",
+          "page": 604
+        },
+        {
+          "title": "Obstructive Sleep Apnea Hypopnea",
+          "page": 613
+        },
+        {
+          "title": "Central Sleep Apnea",
+          "page": 620
+        },
+        {
+          "title": "Circadian Rhythm Sleep-Wake Disorders",
+          "page": 630
+        },
+        {
+          "title": "Nightmare Disorder",
+          "page": 646
+        },
+        {
+          "title": "Rapid Eye Movement Sleep Behavior Disorder",
+          "page": 652
+        },
+        {
+          "title": "Restless Legs Syndrome",
+          "page": 656
+        }
+      ]
+    },
+    {
+      "title": "Sexual Dysfunctions",
+      "pageStart": 672,
+      "pageEnd": 712,
+      "sections": [
+        {
+          "title": "Delayed Ejaculation",
+          "page": 673
+        },
+        {
+          "title": "Erectile Disorder",
+          "page": 677
+        },
+        {
+          "title": "Female Orgasmic Disorder",
+          "page": 682
+        },
+        {
+          "title": "Female Sexual Interest/Arousal Disorder",
+          "page": 686
+        },
+        {
+          "title": "Genito-Pelvic Pain/Penetration Disorder",
+          "page": 691
+        },
+        {
+          "title": "Male Hypoactive Sexual Desire Disorder",
+          "page": 697
+        },
+        {
+          "title": "Premature (Early) Ejaculation",
+          "page": 701
+        }
+      ]
+    },
+    {
+      "title": "Gender Dysphoria",
+      "pageStart": 713,
+      "pageEnd": 726,
+      "sections": [
+        {
+          "title": "Gender Dysphoria in Children",
+          "page": 714
+        },
+        {
+          "title": "Gender Dysphoria in Adolescents and Adults",
+          "page": 715
+        }
+      ]
+    },
+    {
+      "title": "Disruptive, Impulse-Control, and Conduct Disorders",
+      "pageStart": 727,
+      "pageEnd": 753,
+      "sections": [
+        {
+          "title": "Oppositional Defiant Disorder",
+          "page": 728
+        },
+        {
+          "title": "Intermittent Explosive Disorder",
+          "page": 734
+        },
+        {
+          "title": "Conduct Disorder",
+          "page": 738
+        },
+        {
+          "title": "Pyromania",
+          "page": 747
+        },
+        {
+          "title": "Kleptomania",
+          "page": 749
+        }
+      ]
+    },
+    {
+      "title": "Substance-Related and Addictive Disorders",
+      "pageStart": 754,
+      "pageEnd": 903,
+      "sections": [
+        {
+          "title": "Alcohol-Related Disorders",
+          "page": 765
+        },
+        {
+          "title": "Caffeine-Related Disorders",
+          "page": 784
+        },
+        {
+          "title": "Cannabis-Related Disorders",
+          "page": 791
+        },
+        {
+          "title": "Hallucinogen-Related Disorders",
+          "page": 806
+        },
+        {
+          "title": "Inhalant-Related Disorders",
+          "page": 823
+        },
+        {
+          "title": "Opioid-Related Disorders",
+          "page": 832
+        },
+        {
+          "title": "Sedative-, Hypnotic-, or Anxiolytic-Related Disorders",
+          "page": 846
+        },
+        {
+          "title": "Stimulant-Related Disorders",
+          "page": 861
+        },
+        {
+          "title": "Tobacco-Related Disorders",
+          "page": 876
+        },
+        {
+          "title": "Non-Substance-Related Disorders",
+          "page": 896
+        }
+      ]
+    },
+    {
+      "title": "Neurocognitive Disorders",
+      "pageStart": 904,
+      "pageEnd": 979,
+      "sections": [
+        {
+          "title": "Delirium",
+          "page": 907
+        },
+        {
+          "title": "Major and Mild Neurocognitive Disorders",
+          "page": 915
+        },
+        {
+          "title": "Major or Mild Neurocognitive Disorder Due to Alzheimer's Disease",
+          "page": 928
+        },
+        {
+          "title": "Major or Mild Frontotemporal Neurocognitive Disorder",
+          "page": 934
+        },
+        {
+          "title": "Major or Mild Neurocognitive Disorder With Lewy Bodies",
+          "page": 939
+        },
+        {
+          "title": "Major or Mild Vascular Neurocognitive Disorder",
+          "page": 943
+        }
+      ]
+    },
+    {
+      "title": "Personality Disorders",
+      "pageStart": 980,
+      "pageEnd": 1035,
+      "sections": [
+        {
+          "title": "Paranoid Personality Disorder",
+          "page": 985
+        },
+        {
+          "title": "Schizoid Personality Disorder",
+          "page": 990
+        },
+        {
+          "title": "Schizotypal Personality Disorder",
+          "page": 993
+        },
+        {
+          "title": "Antisocial Personality Disorder",
+          "page": 998
+        },
+        {
+          "title": "Borderline Personality Disorder",
+          "page": 1003
+        },
+        {
+          "title": "Histrionic Personality Disorder",
+          "page": 1009
+        },
+        {
+          "title": "Narcissistic Personality Disorder",
+          "page": 1012
+        },
+        {
+          "title": "Avoidant Personality Disorder",
+          "page": 1017
+        },
+        {
+          "title": "Dependent Personality Disorder",
+          "page": 1021
+        },
+        {
+          "title": "Obsessive-Compulsive Personality Disorder",
+          "page": 1025
+        }
+      ]
+    },
+    {
+      "title": "Paraphilic Disorders",
+      "pageStart": 1036,
+      "pageEnd": 1064,
+      "sections": [
+        {
+          "title": "Voyeuristic Disorder",
+          "page": 1037
+        },
+        {
+          "title": "Exhibitionistic Disorder",
+          "page": 1040
+        },
+        {
+          "title": "Frotteuristic Disorder",
+          "page": 1044
+        },
+        {
+          "title": "Sexual Masochism Disorder",
+          "page": 1047
+        },
+        {
+          "title": "Sexual Sadism Disorder",
+          "page": 1049
+        },
+        {
+          "title": "Pedophilic Disorder",
+          "page": 1052
+        },
+        {
+          "title": "Fetishistic Disorder",
+          "page": 1057
+        },
+        {
+          "title": "Transvestic Disorder",
+          "page": 1059
+        }
+      ]
+    },
+    {
+      "title": "Other Mental Disorders and Additional Codes",
+      "pageStart": 1065,
+      "pageEnd": 1068,
+      "sections": [
+        {
+          "title": "Other Specified Mental Disorder Due to Another Medical Condition",
+          "page": 1065
+        },
+        {
+          "title": "Unspecified Mental Disorder Due to Another Medical Condition",
+          "page": 1066
+        },
+        {
+          "title": "Other Specified Mental Disorder",
+          "page": 1067
+        },
+        {
+          "title": "Unspecified Mental Disorder",
+          "page": 1067
+        }
+      ]
+    },
+    {
+      "title": "Medication-Induced Movement Disorders and Other Adverse Effects of Medication",
+      "pageStart": 1069,
+      "pageEnd": 1084,
+      "sections": [
+        {
+          "title": "Medication-Induced Parkinsonism",
+          "page": 1069
+        },
+        {
+          "title": "Neuroleptic Malignant Syndrome",
+          "page": 1072
+        },
+        {
+          "title": "Medication-Induced Acute Dystonia",
+          "page": 1074
+        },
+        {
+          "title": "Medication-Induced Acute Akathisia",
+          "page": 1076
+        },
+        {
+          "title": "Tardive Dyskinesia",
+          "page": 1078
+        },
+        {
+          "title": "Tardive Dystonia and Tardive Akathisia",
+          "page": 1080
+        },
+        {
+          "title": "Medication-Induced Postural Tremor",
+          "page": 1080
+        },
+        {
+          "title": "Other Medication-Induced Movement Disorder",
+          "page": 1081
+        },
+        {
+          "title": "Antidepressant Discontinuation Syndrome",
+          "page": 1082
+        }
+      ]
+    },
+    {
+      "title": "Other Conditions That May Be a Focus of Clinical Attention",
+      "pageStart": 1085,
+      "pageEnd": 1104,
+      "sections": [
+        {
+          "title": "Abuse and Neglect",
+          "page": 1087
+        },
+        {
+          "title": "Relational Problems",
+          "page": 1094
+        },
+        {
+          "title": "Educational and Occupational Problems",
+          "page": 1096
+        },
+        {
+          "title": "Housing and Economic Problems",
+          "page": 1097
+        }
+      ]
+    },
+    {
+      "title": "Section III: Emerging Measures and Models",
+      "pageStart": 1105,
+      "pageEnd": 1196,
+      "sections": [
+        {
+          "title": "Assessment Measures",
+          "page": 1108
+        },
+        {
+          "title": "Cultural Formulation",
+          "page": 1126
+        },
+        {
+          "title": "Alternative DSM-5 Model for Personality Disorders",
+          "page": 1146
+        },
+        {
+          "title": "Conditions for Further Study",
+          "page": 1168
+        }
+      ]
+    },
+    {
+      "title": "Appendix: Alphabetical and Numerical Listings of DSM-5-TR Diagnoses and ICD-10-CM Codes",
+      "pageStart": 1197,
+      "pageEnd": 1306,
+      "sections": [
+        {
+          "title": "Alphabetical Listing of DSM-5-TR Diagnoses and ICD-10-CM Codes",
+          "page": 1199
+        },
+        {
+          "title": "Numerical Listing of DSM-5-TR Diagnoses and ICD-10-CM Codes",
+          "page": 1228
+        }
+      ]
+    },
+    {
+      "title": "Index",
+      "pageStart": 1307,
+      "pageEnd": 1377,
+      "sections": []
+    }
+  ],
+  "unattributedPages": []
+}

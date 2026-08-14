@@ -1,0 +1,1136 @@
+{
+  "id": "kaplan_sadock",
+  "confidence": "high",
+  "issues": [
+    "Part-divider pages are not chapters and fall between chapters: Part A 'A Clinical Psychiatry' (p22), Part B 'B Treatment Across the Lifespan' (p1874), Part C 'Other Issues Relevant to Psychiatry' (p2611), Part D 'Contributions from the Sciences and Social Sciences to Psychiatry' (p2781). These pages are excluded from chapter ranges.",
+    "Chapter headings in the extracted text are split: the chapter number appears on its own line, followed by the title wrapped across one or more lines (e.g. '4' then 'Substance Use and Addictive' / 'Disorders').",
+    "Part C and Part D divider text is extracted out of order ('Other Issues Relevant to' / 'C Psychiatry' and 'Contributions from the Sciences...' / 'D Psychiatry').",
+    "Subsection headings are frequently wrapped/truncated in extraction (e.g. '4.1 General Features of the SubstanceRelated Disorders' loses the hyphen and word space; '21.8 Drugs Used for Cognitive' drops 'Enhancement'). Canonical titles were taken from the printed Contents (pp18-21).",
+    "Back matter Glossary of Terms Relating to Signs and Symptoms (pp3556-3587) and Index (pp3588-3768) follow Chapter 35; they are not chapters and are not represented in this outline.",
+    "For chapters without numbered X.Y subsections, the 'sections' list is a curated selection (not exhaustive) of major ALL-CAPS headings, chosen for navigation; many figure/table labels and DSM-5/ICD-10 tags were filtered out.",
+    "Pages 1-2 are effectively blank (no extracted text); page 5 is blank; page 22 is the Part A divider."
+  ],
+  "isPreview": false,
+  "frontMatter": [
+    {
+      "title": "Title Page and Contributors",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "sections": [
+        {
+          "title": "Title Page",
+          "page": 4
+        },
+        {
+          "title": "Editorial Assistant and Contributing Editors",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "title": "Copyright and Disclaimer",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "sections": []
+    },
+    {
+      "title": "Dedication",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "sections": []
+    },
+    {
+      "title": "Preface",
+      "pageStart": 9,
+      "pageEnd": 17,
+      "sections": [
+        {
+          "title": "History",
+          "page": 10
+        },
+        {
+          "title": "Comprehensive Teaching System",
+          "page": 11
+        },
+        {
+          "title": "Classification of Disorders",
+          "page": 12
+        },
+        {
+          "title": "Case Histories",
+          "page": 13
+        },
+        {
+          "title": "References",
+          "page": 13
+        },
+        {
+          "title": "Acknowledgments",
+          "page": 13
+        },
+        {
+          "title": "Interview: Our Meeting with the Sadocks",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "title": "Contents",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "sections": []
+    }
+  ],
+  "chapters": [
+    {
+      "title": "Examination and Diagnosis of the Psychiatric Patient",
+      "pageStart": 23,
+      "pageEnd": 305,
+      "sections": [
+        {
+          "title": "1.1 The Adult Patient",
+          "page": 23
+        },
+        {
+          "title": "Psychiatric Interview, History, and Mental Status Examination",
+          "page": 23
+        },
+        {
+          "title": "Physical Examination of the Psychiatric Patient",
+          "page": 80
+        },
+        {
+          "title": "The Psychiatric Report and Medical Record",
+          "page": 97
+        },
+        {
+          "title": "Psychiatric Rating Scales",
+          "page": 118
+        },
+        {
+          "title": "Medical Assessment and Laboratory Testing in Psychiatry",
+          "page": 195
+        },
+        {
+          "title": "1.2 Children and Adolescents",
+          "page": 238
+        },
+        {
+          "title": "1.3 Geriatric Patients",
+          "page": 286
+        }
+      ]
+    },
+    {
+      "title": "Neurodevelopmental Disorders and Other Childhood Disorders",
+      "pageStart": 306,
+      "pageEnd": 725,
+      "sections": [
+        {
+          "title": "2.1 Intellectual Disability",
+          "page": 306
+        },
+        {
+          "title": "2.2 Communication Disorders",
+          "page": 347
+        },
+        {
+          "title": "2.3 Autism Spectrum Disorder",
+          "page": 392
+        },
+        {
+          "title": "2.4 Attention-Deficit/Hyperactivity Disorder",
+          "page": 422
+        },
+        {
+          "title": "2.5 Specific Learning Disorder",
+          "page": 452
+        },
+        {
+          "title": "2.6 Motor Disorders",
+          "page": 478
+        },
+        {
+          "title": "2.9 Depressive Disorders and Suicide in Children and Adolescents",
+          "page": 555
+        },
+        {
+          "title": "2.11 Disruptive Mood Dysregulation Disorder",
+          "page": 587
+        },
+        {
+          "title": "2.16 Early-Onset Schizophrenia",
+          "page": 657
+        },
+        {
+          "title": "2.17 Adolescent Substance Use Disorders",
+          "page": 672
+        }
+      ]
+    },
+    {
+      "title": "Neurocognitive Disorders",
+      "pageStart": 726,
+      "pageEnd": 867,
+      "sections": [
+        {
+          "title": "3.1 Delirium",
+          "page": 734
+        },
+        {
+          "title": "3.2 Dementia (Major Neurocognitive Disorder)",
+          "page": 757
+        },
+        {
+          "title": "3.3 Major or Minor Neurocognitive Disorder due to Another Medical Condition (Amnestic Disorders)",
+          "page": 795
+        },
+        {
+          "title": "3.4 Neurocognitive and Other Psychiatric Disorders due to a General Medical Condition",
+          "page": 807
+        },
+        {
+          "title": "3.5 Mild Cognitive Impairment",
+          "page": 848
+        }
+      ]
+    },
+    {
+      "title": "Substance Use and Addictive Disorders",
+      "pageStart": 868,
+      "pageEnd": 1089,
+      "sections": [
+        {
+          "title": "4.1 General Features of the Substance-Related Disorders",
+          "page": 868
+        },
+        {
+          "title": "4.2 Alcohol-Related Disorders",
+          "page": 887
+        },
+        {
+          "title": "4.3 Cannabis-Related Disorders",
+          "page": 930
+        },
+        {
+          "title": "4.4 Opioid-Related Disorders",
+          "page": 942
+        },
+        {
+          "title": "4.5 Sedative-, Hypnotic-, or Anxiolytic-Related Disorders",
+          "page": 960
+        },
+        {
+          "title": "4.6 Stimulant-Related Disorders",
+          "page": 973
+        },
+        {
+          "title": "4.7 Tobacco-Related Disorders",
+          "page": 994
+        },
+        {
+          "title": "4.9 Hallucinogen-Related Disorders",
+          "page": 1021
+        },
+        {
+          "title": "4.12 Gambling Disorder",
+          "page": 1060
+        }
+      ]
+    },
+    {
+      "title": "Schizophrenia Spectrum and Other Psychotic Disorders",
+      "pageStart": 1090,
+      "pageEnd": 1172,
+      "sections": [
+        {
+          "title": "The Clinical Presentation",
+          "page": 1091
+        },
+        {
+          "title": "Diagnosis",
+          "page": 1102
+        },
+        {
+          "title": "Differential Diagnosis for Psychotic Disorders",
+          "page": 1125
+        },
+        {
+          "title": "Treatment Approach",
+          "page": 1135
+        },
+        {
+          "title": "The Epidemiology of the Disorders",
+          "page": 1149
+        },
+        {
+          "title": "The Neurobiology of the Disorder",
+          "page": 1153
+        },
+        {
+          "title": "Etiology",
+          "page": 1162
+        }
+      ]
+    },
+    {
+      "title": "Bipolar Disorders",
+      "pageStart": 1173,
+      "pageEnd": 1214,
+      "sections": [
+        {
+          "title": "The Clinical Presentation",
+          "page": 1173
+        },
+        {
+          "title": "Diagnosis",
+          "page": 1179
+        },
+        {
+          "title": "Differential Diagnosis",
+          "page": 1191
+        },
+        {
+          "title": "Treatment Approach",
+          "page": 1197
+        },
+        {
+          "title": "The Epidemiology of the Disorder(s)",
+          "page": 1206
+        },
+        {
+          "title": "Etiology",
+          "page": 1210
+        }
+      ]
+    },
+    {
+      "title": "Depressive Disorders",
+      "pageStart": 1215,
+      "pageEnd": 1284,
+      "sections": [
+        {
+          "title": "The Clinical Presentation",
+          "page": 1215
+        },
+        {
+          "title": "Diagnosis",
+          "page": 1220
+        },
+        {
+          "title": "Differential Diagnosis",
+          "page": 1231
+        },
+        {
+          "title": "Treatment Approach",
+          "page": 1243
+        },
+        {
+          "title": "Novel Pharmacologic Agents",
+          "page": 1254
+        },
+        {
+          "title": "The Epidemiology of Depression",
+          "page": 1263
+        },
+        {
+          "title": "The Neurobiology of Depression",
+          "page": 1265
+        },
+        {
+          "title": "Etiology",
+          "page": 1275
+        }
+      ]
+    },
+    {
+      "title": "Anxiety Disorders",
+      "pageStart": 1285,
+      "pageEnd": 1325,
+      "sections": [
+        {
+          "title": "The Clinical Presentation",
+          "page": 1285
+        },
+        {
+          "title": "Diagnosis",
+          "page": 1287
+        },
+        {
+          "title": "Differential Diagnosis",
+          "page": 1299
+        },
+        {
+          "title": "Treatment Approach",
+          "page": 1303
+        },
+        {
+          "title": "The Epidemiology of the Disorder(s)",
+          "page": 1309
+        },
+        {
+          "title": "Etiology",
+          "page": 1314
+        }
+      ]
+    },
+    {
+      "title": "Obsessive-Compulsive and Related Disorders",
+      "pageStart": 1326,
+      "pageEnd": 1370,
+      "sections": [
+        {
+          "title": "The Clinical Presentation",
+          "page": 1326
+        },
+        {
+          "title": "Diagnosis",
+          "page": 1340
+        },
+        {
+          "title": "Differential Diagnosis",
+          "page": 1342
+        },
+        {
+          "title": "Treatment",
+          "page": 1356
+        },
+        {
+          "title": "Epidemiology",
+          "page": 1360
+        },
+        {
+          "title": "Etiology",
+          "page": 1361
+        }
+      ]
+    },
+    {
+      "title": "Trauma- and Stressor-Related Disorders",
+      "pageStart": 1371,
+      "pageEnd": 1401,
+      "sections": [
+        {
+          "title": "The Clinical Presentation",
+          "page": 1371
+        },
+        {
+          "title": "Diagnosis",
+          "page": 1373
+        },
+        {
+          "title": "Differential Diagnosis for the Trauma- and Stressor-Related Disorders",
+          "page": 1385
+        },
+        {
+          "title": "Treatment Approach",
+          "page": 1390
+        },
+        {
+          "title": "Epidemiology",
+          "page": 1393
+        },
+        {
+          "title": "Etiology",
+          "page": 1394
+        }
+      ]
+    },
+    {
+      "title": "Dissociative Disorders",
+      "pageStart": 1402,
+      "pageEnd": 1441,
+      "sections": [
+        {
+          "title": "Diagnostic and Clinical Features",
+          "page": 1402
+        },
+        {
+          "title": "Depersonalization/Derealization Disorder",
+          "page": 1411
+        },
+        {
+          "title": "Dissociative Identity Disorder",
+          "page": 1414
+        },
+        {
+          "title": "Treatment",
+          "page": 1427
+        },
+        {
+          "title": "Epidemiology",
+          "page": 1437
+        },
+        {
+          "title": "Etiology",
+          "page": 1438
+        }
+      ]
+    },
+    {
+      "title": "Somatic Symptom and Related Disorders",
+      "pageStart": 1442,
+      "pageEnd": 1496,
+      "sections": [
+        {
+          "title": "The Clinical Presentation",
+          "page": 1442
+        },
+        {
+          "title": "Diagnosis",
+          "page": 1445
+        },
+        {
+          "title": "Evaluation of Somatic Symptom and Related Disorders",
+          "page": 1475
+        },
+        {
+          "title": "Differential Diagnosis",
+          "page": 1477
+        },
+        {
+          "title": "Treatment of Somatic Symptom and Related Disorders",
+          "page": 1484
+        },
+        {
+          "title": "Epidemiology",
+          "page": 1490
+        },
+        {
+          "title": "Etiology",
+          "page": 1491
+        }
+      ]
+    },
+    {
+      "title": "Feeding and Eating Disorders",
+      "pageStart": 1497,
+      "pageEnd": 1533,
+      "sections": [
+        {
+          "title": "Clinical Features",
+          "page": 1497
+        },
+        {
+          "title": "Diagnosis and Clinical Features",
+          "page": 1499
+        },
+        {
+          "title": "Differential Diagnosis",
+          "page": 1512
+        },
+        {
+          "title": "Treatment Approach",
+          "page": 1518
+        },
+        {
+          "title": "Epidemiology",
+          "page": 1524
+        },
+        {
+          "title": "Etiology",
+          "page": 1525
+        }
+      ]
+    },
+    {
+      "title": "Elimination Disorders",
+      "pageStart": 1534,
+      "pageEnd": 1549,
+      "sections": [
+        {
+          "title": "Encopresis",
+          "page": 1535
+        },
+        {
+          "title": "Enuresis",
+          "page": 1541
+        }
+      ]
+    },
+    {
+      "title": "Sleep-Wake Disorders",
+      "pageStart": 1550,
+      "pageEnd": 1642,
+      "sections": [
+        {
+          "title": "The Clinical Presentation",
+          "page": 1551
+        },
+        {
+          "title": "Diagnosis",
+          "page": 1556
+        },
+        {
+          "title": "Clinical Tools in Sleep Medicine",
+          "page": 1606
+        },
+        {
+          "title": "Differential Diagnosis",
+          "page": 1615
+        },
+        {
+          "title": "Treatment Approach",
+          "page": 1622
+        }
+      ]
+    },
+    {
+      "title": "Human Sexuality and Sexual Dysfunctions",
+      "pageStart": 1643,
+      "pageEnd": 1740,
+      "sections": [
+        {
+          "title": "Sexual Dysfunctions",
+          "page": 1643
+        },
+        {
+          "title": "Other Somatic Treatments",
+          "page": 1688
+        },
+        {
+          "title": "Paraphilic Disorders",
+          "page": 1694
+        },
+        {
+          "title": "Sex Addiction and Compulsivity",
+          "page": 1715
+        },
+        {
+          "title": "Normal Sexuality",
+          "page": 1719
+        }
+      ]
+    },
+    {
+      "title": "Gender Dysphoria, Gender Identity, and Related Conditions",
+      "pageStart": 1741,
+      "pageEnd": 1757,
+      "sections": [
+        {
+          "title": "Introduction",
+          "page": 1741
+        },
+        {
+          "title": "Diagnosis and Clinical Features",
+          "page": 1742
+        },
+        {
+          "title": "Differential Diagnosis",
+          "page": 1747
+        },
+        {
+          "title": "Treatment",
+          "page": 1749
+        },
+        {
+          "title": "Epidemiology",
+          "page": 1753
+        },
+        {
+          "title": "Etiology",
+          "page": 1754
+        }
+      ]
+    },
+    {
+      "title": "Disruptive, Impulse-Control, and Conduct Disorders",
+      "pageStart": 1758,
+      "pageEnd": 1777,
+      "sections": [
+        {
+          "title": "The Clinical Presentation",
+          "page": 1758
+        },
+        {
+          "title": "Diagnosis",
+          "page": 1763
+        },
+        {
+          "title": "Differential Diagnosis for the Disruptive and Impulse-Control Disorders",
+          "page": 1765
+        },
+        {
+          "title": "Treatment Approach",
+          "page": 1771
+        },
+        {
+          "title": "Epidemiology",
+          "page": 1773
+        },
+        {
+          "title": "Etiology",
+          "page": 1774
+        }
+      ]
+    },
+    {
+      "title": "Personality Disorders",
+      "pageStart": 1778,
+      "pageEnd": 1839,
+      "sections": [
+        {
+          "title": "The Clinical Presentation",
+          "page": 1778
+        },
+        {
+          "title": "Diagnosis",
+          "page": 1781
+        },
+        {
+          "title": "Differential Diagnosis",
+          "page": 1800
+        },
+        {
+          "title": "Treatment Approach",
+          "page": 1811
+        },
+        {
+          "title": "Epidemiology",
+          "page": 1823
+        },
+        {
+          "title": "Etiology",
+          "page": 1825
+        }
+      ]
+    },
+    {
+      "title": "Other Conditions that May be a Focus of Clinical Attention",
+      "pageStart": 1840,
+      "pageEnd": 1873,
+      "sections": [
+        {
+          "title": "Introduction",
+          "page": 1840
+        },
+        {
+          "title": "Malingering",
+          "page": 1841
+        },
+        {
+          "title": "Bereavement",
+          "page": 1848
+        },
+        {
+          "title": "Occupational Problems",
+          "page": 1849
+        },
+        {
+          "title": "Adult Antisocial Behavior",
+          "page": 1854
+        },
+        {
+          "title": "Relational Problems",
+          "page": 1864
+        }
+      ]
+    },
+    {
+      "title": "Psychopharmacology",
+      "pageStart": 1875,
+      "pageEnd": 2293,
+      "sections": [
+        {
+          "title": "21.1 Antipsychotics",
+          "page": 1926
+        },
+        {
+          "title": "21.2 Antidepressants",
+          "page": 1974
+        },
+        {
+          "title": "21.3 Mood Stabilizers",
+          "page": 2047
+        },
+        {
+          "title": "21.4 Anxiolytics",
+          "page": 2112
+        },
+        {
+          "title": "21.5 Drugs Used to Treat Sleep Disorders",
+          "page": 2142
+        },
+        {
+          "title": "21.6 Stimulants",
+          "page": 2151
+        },
+        {
+          "title": "21.7 Drugs Used to Treat Substance Use Disorders",
+          "page": 2164
+        },
+        {
+          "title": "21.8 Drugs Used for Cognitive Enhancement",
+          "page": 2196
+        },
+        {
+          "title": "21.9 Drugs Used to Treat Sexual Disorders",
+          "page": 2203
+        },
+        {
+          "title": "21.11 Nutritional Supplements and Related",
+          "page": 2237
+        }
+      ]
+    },
+    {
+      "title": "Other Somatic Therapies",
+      "pageStart": 2294,
+      "pageEnd": 2342,
+      "sections": [
+        {
+          "title": "Electroconvulsive Therapy",
+          "page": 2294
+        },
+        {
+          "title": "Other Brain Stimulation Methods",
+          "page": 2315
+        },
+        {
+          "title": "Neurosurgical Treatments and Deep Brain Stimulation",
+          "page": 2326
+        }
+      ]
+    },
+    {
+      "title": "Psychotherapy",
+      "pageStart": 2343,
+      "pageEnd": 2491,
+      "sections": [
+        {
+          "title": "Psychoanalysis and Psychoanalytic Psychotherapy",
+          "page": 2343
+        },
+        {
+          "title": "Brief Psychodynamic Psychotherapy",
+          "page": 2369
+        },
+        {
+          "title": "Group Psychotherapy, Combined Individual and Group Psychotherapy, and Psychodrama",
+          "page": 2377
+        },
+        {
+          "title": "Family Therapy and Couples Therapy",
+          "page": 2392
+        },
+        {
+          "title": "Dialectical Behavior Therapy",
+          "page": 2401
+        },
+        {
+          "title": "Cognitive Therapy",
+          "page": 2412
+        },
+        {
+          "title": "Behavior Therapy",
+          "page": 2421
+        },
+        {
+          "title": "Interpersonal Therapy",
+          "page": 2442
+        },
+        {
+          "title": "Narrative Psychotherapy",
+          "page": 2456
+        },
+        {
+          "title": "Mentalization-Based Treatment",
+          "page": 2471
+        }
+      ]
+    },
+    {
+      "title": "Psychiatric Rehabilitation and Other Interventions",
+      "pageStart": 2492,
+      "pageEnd": 2511,
+      "sections": [
+        {
+          "title": "Psychiatric Rehabilitation",
+          "page": 2492
+        },
+        {
+          "title": "Genetic Counseling",
+          "page": 2500
+        }
+      ]
+    },
+    {
+      "title": "Consultation to Other Disciplines",
+      "pageStart": 2512,
+      "pageEnd": 2602,
+      "sections": [
+        {
+          "title": "25.1 Consultation-Liaison Psychiatry",
+          "page": 2512
+        },
+        {
+          "title": "25.2 Geriatric Psychiatry",
+          "page": 2528
+        },
+        {
+          "title": "25.3 Psychiatric Emergencies",
+          "page": 2547
+        }
+      ]
+    },
+    {
+      "title": "Level of Care",
+      "pageStart": 2603,
+      "pageEnd": 2610,
+      "sections": [
+        {
+          "title": "Inpatient Admission",
+          "page": 2604
+        },
+        {
+          "title": "Partial Hospital Treatment",
+          "page": 2607
+        },
+        {
+          "title": "Intensive Outpatient Treatment",
+          "page": 2607
+        },
+        {
+          "title": "Outpatient Care",
+          "page": 2608
+        },
+        {
+          "title": "Residential Care",
+          "page": 2609
+        }
+      ]
+    },
+    {
+      "title": "Ethics and Professionalism",
+      "pageStart": 2612,
+      "pageEnd": 2633,
+      "sections": [
+        {
+          "title": "Professional Codes",
+          "page": 2612
+        },
+        {
+          "title": "Basic Ethical Principles",
+          "page": 2612
+        },
+        {
+          "title": "Specific Issues",
+          "page": 2614
+        }
+      ]
+    },
+    {
+      "title": "Forensic and Legal Issues",
+      "pageStart": 2634,
+      "pageEnd": 2665,
+      "sections": [
+        {
+          "title": "Medical Malpractice",
+          "page": 2634
+        },
+        {
+          "title": "Privilege and Confidentiality",
+          "page": 2639
+        },
+        {
+          "title": "High-Risk Clinical Situations",
+          "page": 2641
+        },
+        {
+          "title": "Right to Refuse Treatment",
+          "page": 2648
+        },
+        {
+          "title": "Informed Consent",
+          "page": 2652
+        },
+        {
+          "title": "Criminal Law",
+          "page": 2656
+        },
+        {
+          "title": "Other Areas of Forensic Psychiatry",
+          "page": 2660
+        }
+      ]
+    },
+    {
+      "title": "End-of-Life Issues and Palliative Care",
+      "pageStart": 2666,
+      "pageEnd": 2728,
+      "sections": [
+        {
+          "title": "29.1 Death, Dying, and Bereavement",
+          "page": 2666
+        },
+        {
+          "title": "29.2 Palliative Care",
+          "page": 2687
+        },
+        {
+          "title": "29.3 Euthanasia and Physician-Assisted Suicide",
+          "page": 2718
+        }
+      ]
+    },
+    {
+      "title": "Community Psychiatry",
+      "pageStart": 2729,
+      "pageEnd": 2759,
+      "sections": [
+        {
+          "title": "Introduction",
+          "page": 2729
+        },
+        {
+          "title": "Contemporary Public and Community Psychiatry",
+          "page": 2730
+        },
+        {
+          "title": "The Role of Public and Community Psychiatry in Twenty-First Century Health Care",
+          "page": 2757
+        }
+      ]
+    },
+    {
+      "title": "Global and Cultural Issues in Psychiatry",
+      "pageStart": 2760,
+      "pageEnd": 2780,
+      "sections": [
+        {
+          "title": "Prevalence and Burden of Mental Disorders Worldwide",
+          "page": 2760
+        },
+        {
+          "title": "Treatment Gap and Projected Population-Level Treatment Effectiveness Worldwide",
+          "page": 2762
+        },
+        {
+          "title": "Resources for Mental Health Care",
+          "page": 2765
+        },
+        {
+          "title": "Stigmatizing Attitudes Toward People with Mental Disorders",
+          "page": 2771
+        },
+        {
+          "title": "Ethical Issues in Mental Health Care",
+          "page": 2775
+        },
+        {
+          "title": "Future Perspectives",
+          "page": 2778
+        }
+      ]
+    },
+    {
+      "title": "Normal Development and Aging",
+      "pageStart": 2782,
+      "pageEnd": 2904,
+      "sections": [
+        {
+          "title": "32.1 Infant, Child, and Adolescent Development",
+          "page": 2782
+        },
+        {
+          "title": "32.2 Adulthood",
+          "page": 2853
+        },
+        {
+          "title": "32.3 Old Age",
+          "page": 2877
+        }
+      ]
+    },
+    {
+      "title": "Contributions from the Neurosciences",
+      "pageStart": 2905,
+      "pageEnd": 3161,
+      "sections": [
+        {
+          "title": "The Human Brain",
+          "page": 2906
+        },
+        {
+          "title": "Functional Neuroanatomy",
+          "page": 2912
+        },
+        {
+          "title": "Neural Development and Neurogenesis",
+          "page": 2952
+        },
+        {
+          "title": "Neurophysiology and Neurochemistry",
+          "page": 2998
+        },
+        {
+          "title": "Psychoneuroendocrinology",
+          "page": 3077
+        },
+        {
+          "title": "Immune System and Central Nervous System Interactions",
+          "page": 3089
+        },
+        {
+          "title": "Neurogenetics",
+          "page": 3099
+        },
+        {
+          "title": "Applied Electrophysiology",
+          "page": 3130
+        },
+        {
+          "title": "Chronobiology",
+          "page": 3141
+        }
+      ]
+    },
+    {
+      "title": "Contributions from the Behavioral and Social Sciences",
+      "pageStart": 3162,
+      "pageEnd": 3448,
+      "sections": [
+        {
+          "title": "34.1 Contributions from the Psychosocial Sciences",
+          "page": 3162
+        },
+        {
+          "title": "34.2 Normality and Mental Health",
+          "page": 3244
+        },
+        {
+          "title": "34.3 Contributions from the Sociocultural Sciences",
+          "page": 3263
+        },
+        {
+          "title": "34.4 Theories of Personality and Psychopathology",
+          "page": 3315
+        }
+      ]
+    },
+    {
+      "title": "A Brief History of Psychiatry",
+      "pageStart": 3449,
+      "pageEnd": 3555,
+      "sections": [
+        {
+          "title": "Psychiatry Before the Modern Era",
+          "page": 3449
+        },
+        {
+          "title": "Psychiatry in the Modern Age",
+          "page": 3451
+        },
+        {
+          "title": "The Classification of Psychiatric Disorders",
+          "page": 3467
+        },
+        {
+          "title": "Looking to the Future",
+          "page": 3470
+        }
+      ]
+    }
+  ],
+  "unattributedPages": []
+}
