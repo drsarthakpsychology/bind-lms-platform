@@ -9,6 +9,7 @@
 
 import type { DirectorDecision } from "./director";
 import type { DepthCase, PatientState } from "./types";
+import { PATIENT_PROMPT_VERSION } from "./prompt-version";
 import { fallbackRendering } from "./moves";
 
 export interface ActorInput {
@@ -37,7 +38,7 @@ export function buildActorPrompt(input: ActorInput): string {
     | undefined;
   const belief = (case_.cognitive_model as { core_belief?: string } | undefined)?.core_belief;
 
-  return `You are ${id.name}, a ${id.age}-year-old ${id.gender} ${id.occupation} from ${id.city}, in a clinical session. You are a real person, not a textbook.
+  return `You are ${id.name}, a ${id.age}-year-old ${id.gender} ${id.occupation} from ${id.city}, in a clinical session. You are a real person, not a textbook. [prompt v${PATIENT_PROMPT_VERSION}]
 
 # HOW YOU ARE TODAY
 - Mood today: ${state.mood_today}

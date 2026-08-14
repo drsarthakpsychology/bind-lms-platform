@@ -10,6 +10,7 @@ import { initialState, type PatientState } from "@/lib/sim/types";
 import { drawVariant, hashString } from "@/lib/sim/variation";
 import type { DepthCase } from "@/lib/sim/types";
 import { parseGate } from "@/lib/sim/gates";
+import { PATIENT_PROMPT_VERSION } from "@/lib/sim/prompt-version";
 import { isEnabled as aiEnabled } from "@/lib/ai/router";
 import { guardStudentCall } from "@/lib/ai/guards";
 import { rateLimit } from "@/lib/rate-limit";
@@ -195,6 +196,7 @@ export async function POST(req: Request) {
     status: degraded ? "fixture_fallback" : engineEnabled ? "ok" : "fixture_fallback",
     used_fallback: Boolean(result.usedFallback),
     regenerated: Number(result.regenerated ?? 0),
+    prompt_version: engineEnabled ? PATIENT_PROMPT_VERSION : null,
     tokens_in: Math.round((message.length + result.reply.length) / 4),
     tokens_out: Math.round(result.reply.length / 4),
   });

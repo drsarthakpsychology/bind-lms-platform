@@ -10,6 +10,7 @@
  */
 
 import { z } from "zod";
+import { PATIENT_PROMPT_VERSION } from "./prompt-version";
 
 export const directorSchema = z.object({
   student_move: z.enum([
@@ -71,7 +72,7 @@ const DIFFICULTY_NOTES: Record<string, string> = {
 };
 
 export function buildDirectorPrompt(input: DirectorInput): string {
-  return `You are the DIRECTOR of a simulated psychiatric patient. You do NOT write dialogue. You receive the student's turn and the patient's current state, and you decide what the patient DOES this turn. Return ONLY a JSON object.
+  return `You are the DIRECTOR of a simulated psychiatric patient. You do NOT write dialogue. You receive the student's turn and the patient's current state, and you decide what the patient DOES this turn. Return ONLY a JSON object. [prompt v${PATIENT_PROMPT_VERSION}]
 
 # THE PATIENT'S CURRENT STATE
 ${input.stateSummary}
