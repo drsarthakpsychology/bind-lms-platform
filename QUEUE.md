@@ -911,49 +911,49 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   UI should clearly distinguish a real AI session from a scripted/offline
   fallback without making the normal experience feel broken
 
-- [ ] T125  Voice experience separation — redesign voice interaction as a
+- [x] T125  Voice experience separation — redesign voice interaction as a
   dedicated focused experience rather than attaching a complicated voice
   control system underneath the existing chat interface
 
-- [ ] T126  Voice full-screen route — tapping the Voice button should open a
+- [x] T126  Voice full-screen route — tapping the Voice button should open a
   dedicated voice conversation screen designed specifically for speaking;
   provide an obvious microphone state, current conversation, end-session
   control, and a simple way to return to typing
 
-- [ ] T127  Voice/type switching — allow the user to switch between voice and
+- [x] T127  Voice/type switching — allow the user to switch between voice and
   text with one obvious action; preserve the exact conversation state when
   switching modes
 
-- [ ] T128  Voice state clarity — clearly distinguish listening, processing,
+- [x] T128  Voice state clarity — clearly distinguish listening, processing,
   speaking, muted, permission denied, disconnected, and idle states using
   simple visual and textual feedback
 
-- [ ] T129  Voice conversation loop — implement a natural conversational loop
+- [x] T129  Voice conversation loop — implement a natural conversational loop
   where the student can speak, the system transcribes/processes the input,
   the AI responds, and the response can be spoken back without requiring the
   user to repeatedly navigate through complicated controls
 
-- [ ] T130  Voice permission UX — if microphone permission is blocked, provide
+- [x] T130  Voice permission UX — if microphone permission is blocked, provide
   one simple explanation and one clear recovery action; do not permanently
   consume a large portion of the conversation screen with browser-specific
   technical explanations
 
-- [ ] T131  Voice fallback to text — if voice cannot work, the student should
+- [x] T131  Voice fallback to text — if voice cannot work, the student should
   immediately be able to continue typing without losing the conversation
 
-- [ ] T132  Patient conversation composer rebuild — make the normal patient
+- [x] T132  Patient conversation composer rebuild — make the normal patient
   conversation composer extremely simple: type, send, voice, and finish;
   remove unnecessary controls from the primary interaction area
 
-- [ ] T133  Patient conversation navigation — remove the persistent bottom
+- [x] T133  Patient conversation navigation — remove the persistent bottom
   navigation from the active patient conversation if it interferes with the
   conversation; the simulation should feel like a focused full-screen task
 
-- [ ] T134  Contextual simulation header — keep only essential information in
+- [x] T134  Contextual simulation header — keep only essential information in
   the patient header: patient identity/context, session state, elapsed time if
   genuinely useful, and a simple menu for secondary actions
 
-- [ ] T135  Patient simulation secondary actions — move notes, hints, case
+- [x] T135  Patient simulation secondary actions — move notes, hints, case
   information, settings, and other secondary functionality into contextual
   sheets or menus instead of competing with the conversation
 
