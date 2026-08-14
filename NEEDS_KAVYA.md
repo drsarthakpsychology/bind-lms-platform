@@ -259,3 +259,16 @@ students they need your clinical sign-off:
 
 Nothing is student-visible until you publish each drug, so there's no rush —
 the drafts sit in the editor waiting for review.
+
+---
+
+## 📚 Knowledge corpus — Fish's Clinical Psychopathology index truncated
+
+The source PDF for **Fish's Clinical Psychopathology, 3rd ed** (`scripts/
+psychopharm/text/fish_psychopath.txt`) ends its Index at the **"C" section**
+(`chorea`) on PDF page 136; PDF page 137 is blank. The printed Contents lists
+`Index 132`, so the full A–Z index (D–Z) is missing from the cache. Not
+blocking — all 9 chapters + both appendices are complete and already outlined
+(`scripts/knowledge/outlines/fish_psychopath.json`), and the index is only a
+lookup. If you can re-supply a complete scan/PDF, I'll re-run the extraction
+and close the gap.
