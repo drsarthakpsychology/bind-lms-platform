@@ -67,7 +67,7 @@ export default function LearnPage() {
       </div>
 
       <p className="text-caption text-muted-foreground">
-        Mechanism tags come from the reviewed knowledge base. Nothing here is a
+        Mechanism tags come from the reviewed sources. Nothing here is a
         dose or a recommendation — just how the drugs are related by receptor.
       </p>
     </div>

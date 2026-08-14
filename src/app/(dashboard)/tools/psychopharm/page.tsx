@@ -28,7 +28,7 @@ export default function PsychSearchPage() {
           <p className="text-eyebrow text-muted-foreground">Psychopharmacology reference</p>
           <h1 className="mt-1 text-h1">What is your client on?</h1>
           <p className="mx-auto mt-2 max-w-md text-small text-muted-foreground">
-            A person looks something up in a two-minute gap. That&apos;s this tool.
+            Search any drug to see what it does, how it&apos;s used, and what to watch for.
           </p>
         </div>
 
