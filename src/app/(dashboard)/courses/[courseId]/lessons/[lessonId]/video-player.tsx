@@ -48,6 +48,32 @@ function getFullscreenElement(): Element | null {
   );
 }
 
+/**
+ * Best-effort landscape lock on fullscreen. The Screen Orientation API is not
+ * available or throws NotSupportedError on several mobile browsers (notably
+ * iOS Safari, and any browser where a programmatic lock is disallowed) — this
+ * is intentionally graceful: the video still plays portrait, we just ask.
+ */
+async function lockLandscape() {
+  const o = screen.orientation as (ScreenOrientation & { lock?: (o: string) => Promise<void> }) | undefined;
+  if (!o?.lock) return;
+  try {
+    await o.lock("landscape");
+  } catch {
+    /* unsupported — ignore */
+  }
+}
+
+function unlockOrientation() {
+  const o = screen.orientation as (ScreenOrientation & { unlock?: () => void }) | undefined;
+  if (!o?.unlock) return;
+  try {
+    o.unlock();
+  } catch {
+    /* unsupported — ignore */
+  }
+}
+
 const PLAYBACK_RATES = [1, 1.25, 1.5, 2, 0.75] as const;
 
 /**
@@ -528,6 +554,7 @@ export function VideoPlayer({
 
     try {
       if (getFullscreenElement()) {
+        unlockOrientation();
         const d = document as FullscreenDocument;
         if (document.exitFullscreen) await document.exitFullscreen();
         else if (d.webkitExitFullscreen) d.webkitExitFullscreen();
@@ -537,8 +564,10 @@ export function VideoPlayer({
 
       if (el.requestFullscreen) {
         await el.requestFullscreen();
+        void lockLandscape();
       } else if (el.webkitRequestFullscreen) {
         el.webkitRequestFullscreen();
+        void lockLandscape();
       } else if (el.msRequestFullscreen) {
         el.msRequestFullscreen();
       } else {
