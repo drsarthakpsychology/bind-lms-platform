@@ -785,7 +785,7 @@ export function VideoPlayer({
             type="button"
             onClick={togglePlay}
             aria-label={isPaused ? "Play" : "Pause"}
-            className="inline-flex size-9 shrink-0 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex size-10 shrink-0 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {isPaused ? (
               <Play className="size-5 fill-current" aria-hidden />
@@ -890,7 +890,7 @@ export function VideoPlayer({
                 type="button"
                 onClick={toggleMute}
                 aria-label={muted ? "Unmute" : "Mute"}
-                className="inline-flex size-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="inline-flex size-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 {muted || volume === 0 ? (
                   <VolumeX className="size-5" aria-hidden />
@@ -917,7 +917,7 @@ export function VideoPlayer({
                 onClick={toggleCaptions}
                 aria-label="Toggle captions"
                 aria-pressed={captionsOn}
-                className="inline-flex size-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="inline-flex size-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <Captions className="size-5" aria-hidden />
               </button>
@@ -931,7 +931,7 @@ export function VideoPlayer({
               onClick={() => setMoreOpen((open) => !open)}
               aria-label="More options"
               aria-expanded={moreOpen}
-              className="inline-flex size-9 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="inline-flex size-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <MoreHorizontal className="size-5" aria-hidden />
             </button>
@@ -945,7 +945,7 @@ export function VideoPlayer({
                     type="button"
                     onClick={toggleMute}
                     aria-label={muted ? "Unmute" : "Mute"}
-                    className="inline-flex size-8 items-center justify-center rounded-md text-white hover:bg-white/15"
+                    className="inline-flex size-10 items-center justify-center rounded-md text-white hover:bg-white/15"
                   >
                     {muted || volume === 0 ? (
                       <VolumeX className="size-4" aria-hidden />
@@ -991,7 +991,7 @@ export function VideoPlayer({
             type="button"
             onClick={toggleFullscreen}
             aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
-            className="inline-flex size-9 shrink-0 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="inline-flex size-10 shrink-0 items-center justify-center rounded-md text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {isFullscreen ? (
               <Minimize className="size-5" aria-hidden />
