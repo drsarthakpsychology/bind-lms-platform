@@ -10,6 +10,7 @@ import { Parallax } from "./parallax";
 import { Reveal } from "./reveal";
 import { KineticHeadline } from "./kinetic-headline";
 import { ScrollScale } from "./scroll-scale";
+import { Rule, Stamp, SectionEyebrow } from "./landing-primitives";
 
 /**
  * The public front door. Premium, minimal, neo-brutalist pastel. The LMS's
@@ -27,44 +28,6 @@ function ObservationRings({ className }: { className?: string }) {
       <circle cx="320" cy="320" r="52" stroke="currentColor" strokeWidth="3" />
       <circle cx="320" cy="320" r="10" fill="currentColor" />
     </svg>
-  );
-}
-
-/** A closed measure: a 2px ink score line ending in a peach square. */
-function Rule({ className }: { className?: string }) {
-  return (
-    <div aria-hidden className={cn("flex items-center gap-2", className)}>
-      <span className="h-0.5 flex-1 bg-foreground" />
-      <span className="size-2 shrink-0 bg-primary" />
-    </div>
-  );
-}
-
-/** A rotated rubber-stamp. Double-ring outline, peach fill, ink text. */
-function Stamp({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <span
-      aria-hidden
-      className={cn(
-        "select-none rounded-md border-2 border-foreground bg-primary px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.2em] text-primary-foreground outline-2 outline-offset-2 outline-foreground",
-        className,
-      )}
-    >
-      {children}
-    </span>
-  );
-}
-
-/** Section eyebrow with a mono index numeral (editorial wayfinding). */
-function SectionEyebrow({ index, children }: { index: string; children: React.ReactNode }) {
-  return (
-    <p className="flex items-center gap-2.5 text-eyebrow text-muted-foreground">
-      <span aria-hidden className="font-mono text-sm font-black tracking-normal text-link">
-        {index}
-      </span>
-      <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-primary" />
-      {children}
-    </p>
   );
 }
 

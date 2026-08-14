@@ -12,6 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Rule, Stamp } from "@/components/landing/landing-primitives";
 import { submitEnquiry } from "./actions";
 
 const STATUSES = [
@@ -20,6 +21,18 @@ const STATUSES = [
   { value: "practitioner", label: "Practising professional" },
   { value: "other", label: "Something else" },
 ];
+
+/** A mono-indexed field-group label, matching the public pages' wayfinding. */
+function GroupLabel({ index, children }: { index: string; children: React.ReactNode }) {
+  return (
+    <p className="flex items-center gap-2 text-eyebrow text-muted-foreground">
+      <span aria-hidden className="font-mono text-xs font-black tracking-normal text-link">
+        {index}
+      </span>
+      {children}
+    </p>
+  );
+}
 
 /**
  * The public enquiry form. Calls the server action (rate-limited, validated,
@@ -46,9 +59,11 @@ export function EnquireForm() {
 
   if (state === "done") {
     return (
-      <div className="py-4 text-center">
-        <p className="text-xl font-bold text-foreground">Thank you — we&apos;ll be in touch.</p>
-        <p className="mx-auto mt-2 max-w-sm text-small text-muted-foreground">
+      <div className="py-2 text-center">
+        <Stamp className="rotate-[6deg]">Invite-only</Stamp>
+        <p className="mt-6 text-xl font-bold text-foreground">Thank you — we&apos;ll be in touch.</p>
+        <Rule className="mx-auto mt-5 max-w-[10rem]" />
+        <p className="mx-auto mt-5 max-w-sm text-small text-muted-foreground">
           Cohort One begins 20 August. If you&apos;re a fit, someone will reach you within a
           few days.
         </p>
@@ -57,50 +72,88 @@ export function EnquireForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="space-y-1.5">
-          <Label htmlFor="name">Name</Label>
-          <Input id="name" name="name" required minLength={2} maxLength={120} autoComplete="name" />
+    <form onSubmit={onSubmit} className="space-y-6">
+      {/* Sheet header: the invite mark over the first score line. */}
+      <div>
+        <div className="flex items-center justify-between gap-3">
+          <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+            Enquiry
+          </p>
+          <Stamp>Invite-only</Stamp>
         </div>
-        <div className="space-y-1.5">
-          <Label htmlFor="email">Email</Label>
-          <Input id="email" name="email" type="email" required autoComplete="email" />
-        </div>
+        <Rule className="mt-3" />
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="space-y-1.5">
-          <Label htmlFor="phone">Phone (optional)</Label>
-          <Input id="phone" name="phone" autoComplete="tel" maxLength={40} />
+      {/* 01 — your details */}
+      <fieldset className="space-y-3">
+        <GroupLabel index="01">Your details</GroupLabel>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="space-y-1.5">
+            <Label htmlFor="name">Name</Label>
+            <Input id="name" name="name" required minLength={2} maxLength={120} autoComplete="name" />
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" name="email" type="email" required autoComplete="email" />
+          </div>
         </div>
-        <div className="space-y-1.5">
-          <Label htmlFor="status">You are…</Label>
-          <Select name="status" defaultValue="student">
-            <SelectTrigger id="status" className="w-full">
-              <SelectValue placeholder="Pick one" />
-            </SelectTrigger>
-            <SelectContent>
-              {STATUSES.map((s) => (
-                <SelectItem key={s.value} value={s.value}>
-                  {s.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
+      </fieldset>
 
-      <div className="space-y-1.5">
-        <Label htmlFor="message">Anything we should know? (optional)</Label>
-        <Textarea id="message" name="message" rows={4} maxLength={2000} placeholder="Course, stage, what you're hoping for…" />
-      </div>
+      {/* 02 — about you */}
+      <fieldset className="space-y-3">
+        <GroupLabel index="02">About you</GroupLabel>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="space-y-1.5">
+            <Label htmlFor="phone">Phone (optional)</Label>
+            <Input id="phone" name="phone" autoComplete="tel" maxLength={40} />
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="status">You are…</Label>
+            <Select name="status" defaultValue="student">
+              <SelectTrigger id="status" className="w-full">
+                <SelectValue placeholder="Pick one" />
+              </SelectTrigger>
+              <SelectContent>
+                {STATUSES.map((s) => (
+                  <SelectItem key={s.value} value={s.value}>
+                    {s.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+      </fieldset>
+
+      {/* 03 — a note */}
+      <fieldset className="space-y-3">
+        <GroupLabel index="03">A note</GroupLabel>
+        <div className="space-y-1.5">
+          <Label htmlFor="message">Anything we should know? (optional)</Label>
+          <Textarea
+            id="message"
+            name="message"
+            rows={4}
+            maxLength={2000}
+            placeholder="Course, stage, what you're hoping for…"
+          />
+        </div>
+      </fieldset>
 
       {/* Honeypot — hidden from humans, bots fill it. */}
-      <input type="text" name="honeypot" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 opacity-0" />
+      <input
+        type="text"
+        name="honeypot"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] h-0 w-0 opacity-0"
+      />
 
       {error ? (
-        <p className="text-small font-medium text-destructive" role="alert">{error}</p>
+        <p className="text-small font-medium text-destructive" role="alert">
+          {error}
+        </p>
       ) : null}
 
       <Button type="submit" size="lg" disabled={state === "submitting"} className="w-full font-semibold">

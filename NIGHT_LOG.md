@@ -1,3 +1,29 @@
+## 2026-08-14 — ENQUIRE ELEVATED: the conversion surface joins the landing's world
+
+Second /impeccable pass (bare invocation, no steer — picked the landing's
+conversion target as the cheapest-to-reverse next surface and logged it).
+/e enquire is the landing's primary CTA; it was plain. Elevated within the
+committed Neo-Brutalist Pastel world, preserving every word, field, action,
+honeypot, and a11y behavior.
+
+- **Shared primitives extracted** → src/components/landing/landing-primitives.tsx
+  (Rule, Stamp, SectionEyebrow). Landing page + /enquire now draw from one
+  source; verified the landing renders identically after extraction (2 stamps,
+  2 score rules, all section eyebrows, headline intact).
+- **Two-column layout at lg**: left = sticky invite pitch (eyebrow "Cohort One ·
+  Invite-only", h1, the honest intro, and a divided 3-step list drawn verbatim
+  from existing copy: "Tell us who you are." / "We reply personally." /
+  "A conversation, not a form."); right = the enquiry sheet. Mobile stacks.
+- **Enquiry sheet**: mono "Enquiry" tag + rotated INVITE-ONLY stamp + scored
+  rule header; fields grouped under mono-indexed labels (01 Your details /
+  02 About you / 03 A note).
+- **Success state elevated**: stamp + scored rule + the honest confirmation
+  copy.
+
+Verified in one bounded screenshot round (Playwright 2x): /enquire desktop +
+mobile × light + dark; landing regression-checked. Gate green: lint 0, tsc
+clean, 449 tests, build 82/82.
+
 ## 2026-08-14 — LANDING REDESIGN: homepage elevated within the Neo-Brutalist Pastel world
 
 User asked (/impeccable + "redesign the homepage for better, I love the current
@@ -2576,3 +2602,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T11:40:28 Queue exhausted — allowing normal Claude stop.
 2026-08-14T11:41:48 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:08:05 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:11:36 Queue exhausted — allowing normal Claude stop.
