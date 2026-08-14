@@ -13,6 +13,8 @@ const schema = z.object({
   limit: z.number().int().min(1).max(20).default(8),
   /** filter to one book by its corpus_sources name (e.g. "kaplan_sadock") */
   source: z.string().max(80).optional(),
+  /** filter to one concept (knowledge_concepts.name, e.g. "Clozapine") */
+  concept: z.string().max(80).optional(),
   /** true = keyword only (skip embedding/model — fast lane) */
   keywordOnly: z.boolean().optional(),
 });
@@ -41,17 +43,19 @@ export async function GET(req: Request) {
     q: rawQ,
     limit: url.searchParams.get("limit") ? Number(url.searchParams.get("limit")) : 8,
     source: url.searchParams.get("source") ?? undefined,
+    concept: url.searchParams.get("concept") ?? undefined,
     keywordOnly: url.searchParams.get("keywordOnly") === "true",
   });
   if (!parsed.success) return NextResponse.json({ error: "invalid query" }, { status: 400 });
 
-  const { q, limit, source, keywordOnly } = parsed.data;
-  const hits = await searchKnowledge(q, { limit, filterSource: source, keywordOnly });
+  const { q, limit, source, concept, keywordOnly } = parsed.data;
+  const hits = await searchKnowledge(q, { limit, filterSource: source, filterConcept: concept, keywordOnly });
 
   return NextResponse.json({
     query: q,
     count: hits.length,
     source: source ?? null,
+    concept: concept ?? null,
     keywordOnly: keywordOnly ?? false,
     hits: hits.map((h: KnowledgeHit) => ({
       id: h.id,

@@ -75,15 +75,16 @@ describe("GET /api/knowledge/search", () => {
     expect(body.hits[0].citation).toContain("p. 3");
   });
 
-  it("passes keywordOnly + source filters through", async () => {
+  it("passes keywordOnly + source + concept filters through", async () => {
     searchMock.mockResolvedValue([]);
     const res = await GET(
-      new Request("http://test/api/knowledge/search?q=clozapine&source=maudsley_2021&keywordOnly=true"),
+      new Request("http://test/api/knowledge/search?q=clozapine&source=maudsley_2021&concept=Clozapine&keywordOnly=true"),
     );
     expect(res.status).toBe(200);
     expect(searchMock).toHaveBeenCalledWith("clozapine", {
       limit: 8,
       filterSource: "maudsley_2021",
+      filterConcept: "Clozapine",
       keywordOnly: true,
     });
   });

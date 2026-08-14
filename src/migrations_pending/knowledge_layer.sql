@@ -62,7 +62,8 @@ create index if not exists idx_corpus_chunks_trgm on public.corpus_chunks
 create or replace function public.match_corpus_chunks(
   query_embedding halfvec(384),
   match_count int default 8,
-  filter_source_name text default null
+  filter_source_name text default null,
+  filter_concept text default null
 )
 returns table (
   id uuid,
@@ -79,7 +80,7 @@ returns table (
 )
 language plpgsql
 security definer
-set search_path = ''
+set search_path = public
 as $$
 begin
   return query
@@ -100,6 +101,11 @@ begin
   join public.corpus_sources s on s.id = d.source_id
   where c.embedding is not null
     and (filter_source_name is null or s.name = filter_source_name)
+    and (filter_concept is null or exists (
+      select 1 from public.knowledge_chunk_concepts kcc
+      join public.knowledge_concepts kc on kc.id = kcc.concept_id
+      where kcc.chunk_id = c.id and kc.name = filter_concept
+    ))
   order by c.embedding <=> query_embedding
   limit match_count;
 end;

@@ -104,6 +104,15 @@ describe("searchKnowledge", () => {
     expect(hits[0].sourceTitle).toBe("The Maudsley Prescribing Guidelines");
   });
 
+  it("forwards the concept filter to the vector RPC", async () => {
+    rpcMock.mockResolvedValue({ data: [], error: null });
+    await searchKnowledge("clozapine", { filterConcept: "Clozapine" });
+    expect(rpcMock).toHaveBeenCalledWith(
+      "match_corpus_chunks",
+      expect.objectContaining({ filter_concept: "Clozapine" }),
+    );
+  });
+
   it("returns [] for a blank query", async () => {
     const hits = await searchKnowledge("   ");
     expect(hits).toHaveLength(0);

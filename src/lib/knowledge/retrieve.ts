@@ -36,6 +36,7 @@ export interface KnowledgeHit {
 export interface RetrieveOptions {
   limit?: number; // default 8
   filterSource?: string; // corpus_sources.name (book id)
+  filterConcept?: string; // knowledge_concepts.name (e.g. "Clozapine")
   keywordOnly?: boolean; // skip the vector lane entirely
 }
 
@@ -65,6 +66,7 @@ async function vectorLane(query: string, opts: RetrieveOptions): Promise<Knowled
     query_embedding: `[${vec.join(",")}]`,
     match_count: opts.limit ?? DEFAULT_LIMIT,
     filter_source_name: opts.filterSource ?? null,
+    filter_concept: opts.filterConcept ?? null,
   });
 
   if (error) {
