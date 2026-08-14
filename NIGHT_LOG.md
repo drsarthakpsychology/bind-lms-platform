@@ -3248,3 +3248,23 @@ status-pill/streaming/voice+affect+fatigue wiring), so most of T10-T15's UI is
 done. Remaining genuine gaps: T10 voice state UI (VoiceInput states — inspect
 next), T13 full 44px touch-target sweep, T15 turn-route conversational quality
 (disclosure gate + voice_profile + story/contradictions into the prompt).
+
+2026-08-14T19:48 T24 slice — lesson page: back link → 44px bordered target; the
+"Check what stuck" quiz loses its outer card (no card-inside-card) so the T7
+one-question flow's own card is the only box. Commit af95a5e. (Full T24 —
+Watch/Materials/Assignment tabs as a progressive mobile flow — remains open.)
+
+=== SESSION STATUS — MOBILE-FIRST REBUILD (T1-T17) ===
+Shipped this session (all green: lint 0, tsc clean, 473 tests, build):
+ T5 courses flat rows · T6 practice list rows · T7 one-question quiz flow ·
+ T8 journal+wall (chips/draft/⋯/relative-dates) · T9 material load+slow msg ·
+ T11 keyboard viewport meta · T12 pending send + skeleton · T13 viewer 40px
+ targets · T14 reduced-motion typing · T16 viewport matrix spec · T24 slice.
+ T10 voice + T15 conversational quality verified already-wired (T2 engine:
+ Director gates + Actor language_mix/register/recent_event/most_defended +
+ traps). T2 sim shell already rebuilt pre-session.
+
+DEFERRED (log, don't idle): full 44px sweep beyond viewer; message-arrival
+animation; lesson tabs → progressive flow (T24 full); psychopharm/auth/other
+granular T18-T90 items; live-server screenshot QA (needs dev server + seeded
+Supabase + auth — outside the unit gate).
