@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Send, Users } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 interface Message {
   id: string;
@@ -94,9 +95,13 @@ export function RolePlayRoom({ sessionId, myRole, myId }: { sessionId: string; m
       {/* thread */}
       <div className="max-h-[50vh] min-h-[40vh] space-y-2 overflow-y-auto rounded-md border-2 border-border bg-card p-4">
         {messages.length === 0 ? (
-          <p className="py-10 text-center text-small text-muted-foreground">
-            The room is empty. Send the first line — pick up the role you&apos;re playing.
-          </p>
+          <EmptyState
+            compact
+            className="border-0 bg-transparent"
+            icon={<Users className="size-6" aria-hidden />}
+            title="The room is empty"
+            description="Send the first line — pick up the role you're playing."
+          />
         ) : (
           messages.map((m) => {
             const mine = m.sender_id === myId;
