@@ -95,6 +95,25 @@ what was broken, what is fixed, and what remains._
 5. **QA** — run the real conversation paths (the 17-step proof), the e2e
    matrix, and the mobile regression.
 
+## Realtime voice — the evaluation + decision (directive §8/§24/§25)
+
+Options weighed against the actual stack (serverless Next.js on Vercel, no
+realtime-model key yet, free-tier budget):
+
+| Option | Latency | Interrupt | Infra needed | Verdict |
+|---|---|---|---|---|
+| **Current (browser STT/TTS + HTTP AI engine, conversational loop)** | 1–2 s | tap + best-effort voice barge-in | none | **Chosen now.** Works today, $0, real AI, shared session. |
+| LiveKit Agents (WebRTC, VAD, echo-cancelled barge-in) | 200–500 ms | native | a persistent agent server (Fly/Render/VPS) + a realtime model or a streaming STT→LLM→TTS pipeline + WebRTC | The upgrade path; not serverless-friendly. |
+| OpenAI Realtime / Gemini Live (speech-to-speech) | <300 ms | native | a realtime-model key + a persistent socket server | Strong, but adds a paid realtime provider the app doesn't have a key for. |
+
+**Decision:** keep the working conversational loop now (real AI, one session
+for text+voice, tap + best-effort voice interruption) as the smallest correct
+architecture under the current constraints. The session/engine boundary is
+already clean, so LiveKit (or a realtime model) can be dropped in behind the
+same turn engine without touching the student surface, once a persistent
+server or a realtime key is provisioned. Revisit when either exists — the
+realtime path is a one-route + one-component change, not a rewrite.
+
 ## The 17-step proof (directive §26)
 
 Done so far (script-level): student opens Ravi → unexpected question →
