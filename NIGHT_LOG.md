@@ -3432,3 +3432,11 @@ mostly needing a dev server + seeded Supabase, outside the unit gate).
 
 **Gate (HEAD):** lint 0, tsc clean, 486 tests, build 89/89 (2 new routes).
 Branch: feat/mobile-design-system, NOT pushed.
+
+2026-08-14T20:58 T29 done — completion-state system wired everywhere:
+ 512efcb QuizCheck finish now renders through MobileCompletionState (one
+         completion language across lessons, decode, ethics, mse, osce,
+         landmark). Already wired by worker: lesson page, judgment-arena,
+         assessment-flow, debrief. Only decode-arena shows a bespoke score
+         beat — worker-owned (inside decode-flow), noted for them.
+Gate green. Ticked T29.
