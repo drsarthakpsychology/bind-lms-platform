@@ -31,15 +31,17 @@ export default async function LibraryPage(props: {
      </p>
 
       <div className="mt-6">
-        {/* B5 filter row — disorder/trap/time, one tap per chip */}
-        <div className="mb-4 flex flex-wrap gap-1.5">
+        {/* B5 filter row — disorder/trap/time, one tap per chip. One swipeable
+            line (not multi-row wrapping) so the chips never cost vertical space
+            on a narrow phone (T37). */}
+        <div className="mb-4 -mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {LIBRARY_FILTERS.map((f) => {
             const active = tag === f.key;
             return (
               <Link
                 key={f.key}
                 href={active ? "/practice/library" : `/practice/library?tag=${f.key}`}
-                className={`rounded-full border px-2.5 py-1 text-caption font-medium transition-colors ${active ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                className={`shrink-0 rounded-full border-2 px-3 py-1.5 text-caption font-medium transition-colors ${active ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
               >
                 {f.label}
               </Link>
