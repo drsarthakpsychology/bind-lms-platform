@@ -3078,3 +3078,14 @@ Full-page screenshot /tmp/live-pass3.png.
 2026-08-14T18:15:53 Queue exhausted — allowing normal Claude stop.
 2026-08-14T18:21:04 Queue exhausted — allowing normal Claude stop.
 2026-08-14T18:21:10 Queue exhausted — allowing normal Claude stop.
+
+2026-08-14T18:30 — Security remediation + agent-readiness pass (SharkVoid
+scan). Security: CSP drops unsafe-eval in prod; consulting-room turn IDs ->
+crypto.randomUUID(); audits clean (no service-role/session-secret in bundles,
+no first-party postMessage, JSON.parse all validated, early_access_features
+not a real route, wall/journal requireSession). Agent-readiness: robots.txt
+Content-Signals (ai-train=no, search=yes, ai-input=no), RFC 9727 api-catalog
++ Link header, /openapi.json, A2A agent card, RFC 9728 oauth-protected-resource,
+/auth.md, agent-skills index + SKILL.md, markdown negotiation in proxy.ts.
+NOT done (inapplicable/external): payment protocols, MCP card, DNS-AID, WebMCP,
+Web Bot Auth JWKS. All 7 endpoints verified 200 w/ correct content-types.
