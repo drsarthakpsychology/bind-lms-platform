@@ -3089,3 +3089,15 @@ Content-Signals (ai-train=no, search=yes, ai-input=no), RFC 9727 api-catalog
 /auth.md, agent-skills index + SKILL.md, markdown negotiation in proxy.ts.
 NOT done (inapplicable/external): payment protocols, MCP card, DNS-AID, WebMCP,
 Web Bot Auth JWKS. All 7 endpoints verified 200 w/ correct content-types.
+2026-08-14T18:23:57 Queue exhausted — allowing normal Claude stop.
+2026-08-14T18:25:34 Queue exhausted — allowing normal Claude stop.
+2026-08-14T18:28:06 Queue exhausted — allowing normal Claude stop.
+2026-08-14T18:28:17 Queue exhausted — allowing normal Claude stop.
+
+2026-08-14T18:31 Stop-hook verification. Files on disk verified (api-catalog,
+openapi.json, agent-card, oauth-protected-resource, auth.md, agent-skills
+index + SKILL.md, robots.txt Content-Signals, proxy.ts markdown, session-view
+crypto.randomUUID). Gate re-run: lint 0/0, tsc clean, 453 tests, build clean.
+Committed bf2011c (security + agent-readiness) + fe1b93e (log). Open items:
+Vercel Security Checkpoint relaxation (human action — enables authorized
+pentest retest) + optional DNS-AID records — moved to QUEUE/NEEDS_KAVYA.
