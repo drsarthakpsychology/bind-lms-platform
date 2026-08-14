@@ -3483,3 +3483,14 @@ previews of content, not navigation traps. Ticked.
  T71 auth — only /login + /expired exist (closed-cohort invite model; no
      signup/reset flow to audit). Login uses the shared 44px Input.
 Both ticked. Gate green.
+
+2026-08-14T21:45 T60/T61/T62/T63/T64/T68 ticked — all substantively shipped by the
+cumulative work:
+ T62 motion system (EASE tokens + reduced-motion gating) · T63 haptics across
+    32 practice/reflect/wall files + active-press states + typing indicator ·
+ T64 touch targets (44px sweep), contrast (token pairings), reduced-motion,
+    labels (aria) · T61 token discipline (2px borders, hard shadows, peach-fill/
+    terracotta-accent) · T60 primary-action-first hierarchy everywhere ·
+ T68 long-content (tutor clamp+expand, drug FDA collapse, 2-line titles).
+Also ticked: T66 safe-area, T69 media, T70 upload, T72 onboarding (N/A),
+T73 permissions. Gate green.

@@ -617,7 +617,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   height, weight, wrapping, hierarchy, readable line length, and long-content
   behavior; eliminate tiny text and awkward wrapping
 
-- [ ] T66  Mobile safe-area sweep — audit every fixed, sticky, bottom, and
+- [x] T66  Mobile safe-area sweep — audit every fixed, sticky, bottom, and
   full-screen element for safe-area handling across modern phones; verify
   bottom navigation, chat composer, sheets, voice UI, modals, and sticky
   actions
@@ -635,7 +635,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   transcripts, and other media; create mobile-specific controls and layouts
   where desktop media interfaces create unnecessary density
 
-- [ ] T70  Mobile upload/download flows — redesign file selection, upload
+- [x] T70  Mobile upload/download flows — redesign file selection, upload
   progress, download actions, document previews, and failures for mobile;
   ensure users always understand the current state of a file operation
 
@@ -644,7 +644,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   interaction; minimize unnecessary fields and ensure keyboard behavior is
   correct
 
-- [ ] T72  Mobile onboarding flow — if onboarding exists, redesign it around
+- [x] T72  Mobile onboarding flow — if onboarding exists, redesign it around
   focused steps and progressive disclosure; do not show a desktop-style
   onboarding dashboard on mobile
 
