@@ -3393,3 +3393,42 @@ Worker: landed T18-T50 slice (075d88e + 6d4ab81 tick), then built T41 /settings 
 T42 /notifications (committed). Still-open T29/T40/T48 = surface ownership or
 product decision (documented in docs/mobile-audit-status.md). Remaining T51-T90
 are deep audit/live-device QA tasks. Branch HEAD green.
+
+## 2026-08-14 21:00 — T18-T50 mobile rebuild COMPLETE (three-writer pass)
+
+User directive: "continue with queue after no 17 to 50, in parallel." Executed
+as a three-writer coordinated pass on `feat/mobile-design-system`.
+
+**Phase 1 — Audit (workflow wf_3c9d5eba-e83):** 16 parallel read-only agents
+over all 33 QUEUE items → `docs/mobile-audit-t18-t50.json` (138 surfaces,
+~400 fixes, 95 shared-primitive recommendations). 0 errors, 0 empty.
+
+**Phase 2 — Shared primitives (this worker):** 8368308 + 334a52b —
+MobileStickyAction (7-stream consensus), MobileCompletionState (6),
+MobileContinueAction (4), MobileModeSwitcher, MobileInput/MobileTextarea,
+AsyncErrorCard + MobileErrorLine, useAsyncAction/useDraft/useOffline,
+MobileAssessmentFlow + MobileChoiceList (T23), `--nav-h` token, RTL cleanup
+fix in vitest.setup (486 tests). 8 new tests.
+
+**Phase 3 — Parallel implementation (workflow wf_d10d51bb-2d3):** 7 agents,
+disjoint file ownership, applied audit priorities to drill arenas, sim/debrief,
+courses/today, journal/wall/record, psychopharm, admin tables, modals/forms/
+auth. 71 changes + reasoned deferrals (mostly files outside ownership).
+
+**Phase 4 — Worker completion slices:**
+- 075d88e: worker slice (24 surfaces, 1000+/609-)
+- ecc3a1b: T41 /settings + T42 /notifications routes (schema-free, honest,
+  RLS-clean derived feeds; bell + settings entry in both nav footers)
+- f08b3e5: T48 offline pill (sim header) + T29 judgment completion state
+
+**Coordination:** a coordinator session committed its slices (T46/T47
+persistence, T50 rollback, §3.6 finish-confirm, T32/T37/T58/T64/T66, T22
+landmark, T87 today) and maintains `docs/mobile-audit-status.md` (three-writer
+merge-risk: worktree-psychopharm-book-enrichment is 50 behind on main).
+
+**QUEUE state:** T18-T50 all ticked except T40 (dashboard progress — the
+coordinator owns /dashboard). T51-T90 remain (deep audit + live-device QA,
+mostly needing a dev server + seeded Supabase, outside the unit gate).
+
+**Gate (HEAD):** lint 0, tsc clean, 486 tests, build 89/89 (2 new routes).
+Branch: feat/mobile-design-system, NOT pushed.
