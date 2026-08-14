@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
+  // Don't advertise the framework (audit finding #8 — minor fingerprint leak).
+  poweredByHeader: false,
   // A handful of routes read repo JSON at request time via readFileSync
   // (not import) — the psychopharm knowledge base and the case-library
   // corpus. @vercel/nft's static trace usually resolves
@@ -22,8 +24,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        // The primary CTA was renamed Enquire → Join waitlist, so the route
-        // moved to /waitlist. Any shared /enquire link keeps working.
+        // The primary CTA routes to /waitlist; any previously shared link to
+        // the old route keeps working via this redirect.
         source: "/enquire",
         destination: "/waitlist",
         permanent: false,

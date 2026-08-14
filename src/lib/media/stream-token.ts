@@ -12,8 +12,9 @@ import { createHmac, timingSafeEqual } from "node:crypto";
  *   - expires in minutes (refreshed by the player), so sharing it is useless;
  *   - carries no storage key — the proxy resolves the object server-side.
  *
- * The secret is derived from SUPABASE_SERVICE_ROLE_KEY (or SESSION_SECRET if
- * set) so tokens are unreadable to anyone without server secrets.
+ * The secret is SESSION_SECRET — a dedicated signing secret. It deliberately
+ * does NOT fall back to SUPABASE_SERVICE_ROLE_KEY, which bypasses RLS and must
+ * never double as a generic signing secret (audit finding #5).
  */
 
 const TTL_MS = 5 * 60 * 1000; // 5 minutes
@@ -21,11 +22,10 @@ const TTL_MS = 5 * 60 * 1000; // 5 minutes
 function secret(): Buffer {
   // NEVER fall back to a public value: the anon key ships in every client
   // bundle, so signing with it would make stream tokens forgeable by anyone.
-  // SESSION_SECRET (strong, independent) wins; otherwise the service-role key.
-  const key = process.env.SESSION_SECRET ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const key = process.env.SESSION_SECRET;
   if (!key) {
     throw new Error(
-      "No stream-token secret configured. Set SESSION_SECRET or SUPABASE_SERVICE_ROLE_KEY.",
+      "No stream-token secret configured. Set SESSION_SECRET.",
     );
   }
   return createHmac("sha256", "plms-stream-v1").update(key).digest();

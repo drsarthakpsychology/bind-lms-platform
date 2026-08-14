@@ -2932,3 +2932,31 @@ build 82/82), committed the in-flight landing/waitlist batch, pushed main
   hardening. Nothing force-pushed; clean fast-forward from c664002.
 - Security audit (this session): 0 tables without RLS, 0 public buckets,
   service_role server-only, cron endpoint CRON_SECRET-gated.
+2026-08-14T17:18:09 Queue exhausted — allowing normal Claude stop.
+2026-08-14T17:18:15 Queue exhausted — allowing normal Claude stop.
+
+2026-08-14T17:25 — Marketing hero revision (user-specified, reference-driven).
+Change 1 — concentric rings removed from the hero (both ObservationRings
+  instances); replaced with a hexagonal molecular lattice (30 hexagons + 6
+  vertex dots, verbatim geometry per instruction), positioned top-right at
+  60% width, stroke via new --line token (#e4d5c2 / dark #3a3329), centre
+  hexagon stroke-width 2.6 is the only emphasis. Footer rings kept.
+Change 2 — "Enquire" → "Join waitlist" across hero/nav/closing/footer; route
+  /enquire renamed to /waitlist (git mv) with a non-permanent redirect in
+  next.config; heading "Join the waitlist", submit "Join waitlist", success
+  "You're on the waitlist", analytics event waitlist_joined; sitemap + e2e
+  spec updated. Deliberately left: admin /enquiries route + DB table (data
+  model), lowercase "enquire" in corpus content.
+Change 3 — h1 leading 0.92, tracking -0.035em, optical margin LANDED at
+  -0.03em (Geist is geometric; -0.045em was Inter-tuned); eyebrow→h1 1.25rem,
+  h1→body 1.75rem, body→buttons 2rem, body max-w 44ch; card stack top-aligned
+  with headline (restructured hero to one grid with eyebrow+h1 in the left
+  column; lg:text-[3.25rem] keeps the comma break as a clean 2-line block).
+BROWSER VERIFIED at 1440/1024/390: rings=0, lattice+heavy hexagon present,
+  "Enquire" absent, h1 flush with eyebrow/body (box -2px, visually flush),
+  h1→body gap 28px, cards top 157 vs h1 top 192 (level, not below),
+  overflow-x 0. Gate green. Committed 2605ed4 (partial) + this commit.
+ALSO on disk (user/harness-authored, kept): crypto.ts/stream-token.ts no
+  longer fall back to SUPABASE_SERVICE_ROLE_KEY as the signing secret
+  (audit #5); package.json overrides sharp>=0.35, adm-zip>=0.5.16 to
+  remediate the now-visible transformers vulns; poweredByHeader:false.

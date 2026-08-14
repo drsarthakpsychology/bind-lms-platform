@@ -128,35 +128,32 @@ function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-5 pb-16 pt-14 sm:px-6 lg:pt-24">
-        <Reveal>
-          <p className="text-eyebrow text-muted-foreground">A clinical psychology training programme</p>
-        </Reveal>
-        {/* Poster statement: the headline runs the full width as a two-line
-            statement — broken at the natural comma at the poster breakpoint —
-            before the two-column row below it. Two kinetic segments so the
-            word-cascade flows across the break uninterrupted (line 2 resumes
-            at the first line's word count). Below lg the forced break is
-            dropped and the phrase flows naturally into ~2 lines.
-            Typography: 0.92 leading + -0.035em tracking make the two lines
-            read as one block; the negative left margin is optical alignment
-            for the display face (tuned against Geist in the browser). */}
-        <h1 className="mt-5 ml-[-0.03em] max-w-4xl text-[2rem] font-black leading-[0.92] tracking-[-0.035em] text-foreground sm:text-6xl lg:text-7xl">
-          <KineticHeadline delay={0.1} stagger={0.045}>
-            Understand the case,
-          </KineticHeadline>
-          {/* A mobile-only space keeps the phrase joined below lg; on lg the
-              hidden span drops out and the <br> owns the break. */}
-          <span aria-hidden className="lg:hidden"> </span>
-          <br className="hidden lg:block" />
-          <KineticHeadline delay={0.235} stagger={0.045}>
-            not just the diagnosis.
-          </KineticHeadline>
-        </h1>
-
-        <div className="mt-7 grid grid-cols-1 gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+        {/* Poster row: the eyebrow + headline + copy on the left, the intake
+            file on the right — one grid, tops aligned, so the card stack
+            tops out level with the headline rather than below the paragraph.
+            Typography: 0.92 leading + -0.035em tracking make the headline
+            lines read as one block; the negative left margin is optical
+            alignment for the display face (tuned against Geist in the
+            browser). */}
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div className="flex flex-col">
+            <Reveal>
+              <p className="text-eyebrow text-muted-foreground">A clinical psychology training programme</p>
+            </Reveal>
+            <h1 className="mt-5 ml-[-0.03em] text-[2rem] font-black leading-[0.92] tracking-[-0.035em] text-foreground sm:text-6xl lg:text-[3.25rem]">
+              <KineticHeadline delay={0.1} stagger={0.045}>
+                Understand the case,
+              </KineticHeadline>
+              {/* A mobile-only space keeps the phrase joined below lg; on lg the
+                  hidden span drops out and the <br> owns the break. */}
+              <span aria-hidden className="lg:hidden"> </span>
+              <br className="hidden lg:block" />
+              <KineticHeadline delay={0.235} stagger={0.045}>
+                not just the diagnosis.
+              </KineticHeadline>
+            </h1>
             <Reveal delay={0.22}>
-              <p className="max-w-[44ch] min-w-0 break-words text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="mt-7 max-w-[44ch] min-w-0 break-words text-base leading-relaxed text-muted-foreground sm:text-lg">
                 Psychology graduates can describe therapy. Few can practise it —
                 VIBHA closes that gap with real cases and a debrief after every
                 session.
