@@ -2960,3 +2960,21 @@ ALSO on disk (user/harness-authored, kept): crypto.ts/stream-token.ts no
   longer fall back to SUPABASE_SERVICE_ROLE_KEY as the signing secret
   (audit #5); package.json overrides sharp>=0.35, adm-zip>=0.5.16 to
   remediate the now-visible transformers vulns; poweredByHeader:false.
+
+## 2026-08-14 — SECURITY HARDENING PASS ("fix security and all")
+
+Resolved the remaining open audit findings with real fixes, not whack-a-mole:
+
+- **#5 (LOW→fixed)** — media session key + stream-token secret no longer falls
+  back to `SUPABASE_SERVICE_ROLE_KEY`; `SESSION_SECRET` is the sole signing
+  secret (already set in .env.local). (Prior session had already done this in
+  250536a; verified crypto.ts + stream-token.ts are clean — the only remaining
+  SERVICE_ROLE reference is the explanatory comment.)
+- **#8 (LOW→fixed)** — `poweredByHeader: false` (also landed in 250536a; verified).
+- **#10/#11 (MED/LOW→fixed)** — `npm audit --omit=dev` went 4 high → **0** by
+  pinning `sharp >=0.35.0` and `onnxruntime-node/adm-zip` to patched versions
+  via `package.json` overrides. Deliberately NOT `audit fix --force` (would have
+  downgraded Next). This was the genuinely-new fix this pass (commit 2a2e4b9).
+
+Gate green: lint 0, tsc clean, 453 tests, build 82/82. Pushed main
+(250536a..2a2e4b9); redeploying.
