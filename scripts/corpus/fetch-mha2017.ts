@@ -19,8 +19,8 @@
  * to a JS-rendered shell for Node clients. MHA 2017 was acquired earlier and
  * lives at scripts/corpus/raw/statutes/mha2017.pdf; the fetcher still tries
  * live first, then prints the browser instruction. RCI resolves from an
- * official state mirror, so it downloads without a browser. POCSO requires a
- * browser until an official Node-reachable mirror is found.
+ * official state mirror, so it downloads without a browser. POCSO now resolves
+ * from the WBCPCR mirror (a scanned Gazette copy — normalise.ts OCRs it).
  */
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
@@ -38,7 +38,12 @@ const SOURCES: Array<{ name: string; urls: string[] }> = [
   },
   {
     name: "pocso2012",
-    urls: ["https://www.indiacode.nic.in/bitstream/123456789/2073/1/A2012-32.pdf"],
+    urls: [
+      // India Code's bitstream serves a JS shell to Node (verified); the
+      // WBCPCR mirror is a real %PDF Gazette copy and is Node-reachable.
+      "https://www.indiacode.nic.in/bitstream/123456789/2073/1/A2012-32.pdf",
+      "https://wbcpcr.org/pdf/acts/POCSO-Act-2012.pdf",
+    ],
   },
   {
     name: "rci1992",

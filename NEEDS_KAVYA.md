@@ -23,9 +23,12 @@ Every item: paste → something switches on → verify with one command. Free fi
 - **Switches on:** content generation, embed lane, second Director/Actor provider
 - **Verify:** `curl -s "https://generativelanguage.googleapis.com/v1beta/models?key=$GEMINI_API_KEY" | head -c 200`
 
-### 4. `CEREBRAS_API_KEY` — cloud.cerebras.ai (free)
+### 4. `CEREBRAS_API_KEY` — cloud.cerebras.ai (⚠️ now requires a card)
 - **URL:** https://cloud.cerebras.ai/platform (API keys page)
 - **Switches on:** bulk drafting lane (JSON capability priority)
+- **NOTE (2026-08-14):** Cerebras now requires adding a payment method to issue
+  a key ("we can't without adding payments") — so it is **not** the free
+  no-train double it was researched as. See the "PAYWALLED" note at the bottom.
 - **Verify:** `curl -s https://api.cerebras.ai/v1/models -H "Authorization: Bearer $CEREBRAS_API_KEY" | head -c 200`
 
 ### 5. `CLOUDFLARE_ACCOUNT_ID` + `R2_ACCESS_KEY_ID` + `R2_SECRET_ACCESS_KEY` + `R2_BUCKET_NAME` — dash.cloudflare.com (free 10 GB)
@@ -55,22 +58,25 @@ Every item: paste → something switches on → verify with one command. Free fi
 - **Switches on:** reliable ICD-11 chapter walking (the public browser tier 401s intermittently)
 - **Verify:** `npm run corpus:icd11`
 
-## 📝 Manual downloads
+## 📝 Manual downloads — DONE (2026-08-14)
 
-**Only POCSO 2012 remains** — everything else now fetches programmatically
-(updated + re-verified 2026-08-14; the fetchers fall back to verified Wayback /
-official mirrors, so no browser needed):
+**All manual downloads are complete.** POCSO 2012 was the last one and is now
+in the corpus:
 
-- **POCSO 2012 PDF** → save to `scripts/corpus/raw/statutes/pocso2012.pdf`. India
-  Code serves a JS shell to Node (verified 302 → Angular shell); the only
-  reachable copies are third-party, which the corpus doesn't ingest. Browser
-  download from https://www.indiacode.nic.in (Act 32 of 2012) is the one step.
+- **POCSO 2012** — downloaded from the WBCPCR official mirror
+  (`https://wbcpcr.org/pdf/acts/POCSO-Act-2012.pdf`, the Gazette of India copy,
+  2.8 MB, verified `%PDF`). It's a **scanned** PDF (no text layer), so the
+  normaliser OCRs it (`tesseract`, via `normalisePdf(..., { ocr: true })`).
+  Result: **47,862 chars** of clean statute text (preamble, Chapter II
+  definitions, offences, penalties, Special Court, child-in-need-of-care).
+  Source URL recorded as `https://wbcpcr.org/pocso-act.php`. Only the Hindi
+  Gazette header garbles — that's page furniture, stripped as usual.
 
 Already auto-fetched (no action needed): WHO mhGAP-IG 2.0 (Wayback mirror),
 NMHS main report (Wayback 2018 snapshot), RCI 1992 Act (official Samagra
-Shiksha Gujarat mirror), MHA 2017 (live India Code, intermittent). All four
-are normalised into `scripts/corpus/normalised/*.json` via `npm run
-corpus:normalise`.
+Shiksha Gujarat mirror), MHA 2017 (live India Code, intermittent). All five
+statutes + the reference reports are normalised into
+`scripts/corpus/normalised/*.json` via `npm run corpus:normalise`.
 
 ## 🎙️ Content review — the highest-value asset
 
@@ -393,6 +399,20 @@ is a **paid fallback**, not the free Cerebras replacement.
 card, ~1M tok/day — the router's #2 student lane). With Groq + Cerebras +
 OpenRouter (already live) the 45-DAU target is met. Get a Cerebras key if you
 want the free double; SambaNova remains usable if you add a card.
+
+---
+
+## ⚠️ Cerebras VERIFIED PAYWALLED too (2026-08-14, user request)
+
+You tried Cerebras and confirmed: **"we can't without adding payments"** — the
+Cerebras platform now requires a payment method to issue a key. So it is a
+**paid fallback**, not the free no-train double it was earlier researched as.
+
+**Verified free lanes today (no card):** Groq (live) + OpenRouter (live) are
+the student-facing no-train lanes that actually work at $0. Cerebras, SambaNova,
+and OpenCode Zen are all paid options that become usable when a card is added.
+Until a second no-train free key exists, Groq's ~1,000 RPD is the practical
+student-data ceiling (≈25-28 DAU).
 
 ---
 

@@ -62,13 +62,14 @@ function normalisePdf(
   source_url: string,
   licence: string,
   title: string,
+  opts?: { ocr?: boolean },
 ): NormalisedDoc | null {
   if (!existsSync(file)) {
     console.warn(`  skip ${source}: not present (${file})`);
     return null;
   }
   const buf = readFileSync(file);
-  const extracted = extractFromPdf(buf);
+  const extracted = extractFromPdf(buf, { ocr: opts?.ocr });
   const content = stripPageFurniture(extracted.text);
   if (content.length < 2_000) {
     console.warn(`  skip ${source}: low-signal extraction (${content.length} chars, method=${extracted.method})`);
@@ -147,9 +148,10 @@ function main() {
   const pocso = normalisePdf(
     join(RAW, "statutes/pocso2012.pdf"),
     "pocso2012",
-    "https://www.indiacode.nic.in/",
+    "https://wbcpcr.org/pdf/acts/POCSO-Act-2012.pdf",
     "public_gov",
     "Protection of Children from Sexual Offences Act, 2012 (Act 32 of 2012) — Government of India",
+    { ocr: true }, // the WBCPCR copy is a scanned Gazette; OCR is the only path
   );
   for (const s of [mha, rci, pocso]) if (s) statutes.push(s);
   writeFileSync(join(OUT, "statutes.json"), JSON.stringify(statutes, null, 2), "utf8");
