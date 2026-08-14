@@ -561,17 +561,17 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   element; make every input comfortable for touch and correctly handle the
   mobile keyboard
 
-- [ ] T54  Mobile keyboard QA — test every input-heavy workflow with the
+- [x] T54  Mobile keyboard QA — test every input-heavy workflow with the
   software keyboard open; ensure focused fields, submit actions, textareas,
   bottom sheets, chat composers, and navigation remain usable and never become
   hidden behind the keyboard
 
-- [ ] T55  Mobile gesture audit — identify places where gestures can genuinely
+- [x] T55  Mobile gesture audit — identify places where gestures can genuinely
   improve usability, such as dismissing sheets, navigating media, or moving
   through sequential content; use gestures selectively and always preserve
   obvious accessible controls
 
-- [ ] T56  Mobile swipe/step interactions — where sequential content benefits
+- [x] T56  Mobile swipe/step interactions — where sequential content benefits
   from swiping, implement it carefully alongside explicit Next/Back controls;
   never make a required action dependent solely on an undiscoverable gesture
 
