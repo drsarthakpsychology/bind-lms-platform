@@ -1,91 +1,78 @@
-# MORNING REPORT — 2026-08-13
+# MORNING REPORT — 2026-08-14 (overnight design session)
 
-## What's LIVE right now
-Deployed to production (Vercel, auto-deploy from main): **bind-lms-platform**
-— https://bind-lms-platform-2k7skr2nd-drsarthakpsychologys-projects.vercel.app
-Round 8 is fully merged to main, verified green (340 unit tests, tsc, lint,
-build), and the production deployment tracks main.
+## What shipped last night — the "Make the UI UX Better" pass
 
-## Round 8 — what shipped overnight (2026-08-12 → 2026-08-13)
-- **Course rebuilt as a linear week-by-week path** (Finding 1): one vertical
-  path, current week expanded, future weeks locked with a stated reason,
-  one highlighted next-action row. Materials/Assignments no longer show
-  twice.
-- **Haptics audit**: all 23 practice activities now fire on tap, state
-  change, and correct/incorrect answer — verified surface by surface.
-- **A5**: "AI-generated — not yet faculty reviewed" label on student debrief
-  + the admin review queue, so nothing scored by the model reads as final
-  faculty judgement.
-- **A7 Dictate-as-conversation scaffold**: voice recorder → server STT →
-  the 21-field interviewer state machine → a sim_case draft
-  (`source='faculty_dictated'`, `approved=false`). Classic typed form kept
-  as a fallback tab. **The table for this (`corpus_dictations`) was only
-  applied to the live DB just now** — see infra item below.
-- **Focus management**: MSE drill + long forms now keyboard-navigable
-  end to end (a real gap for keyboard-only users, not cosmetic).
-- **Content volume**: idioms → 110, quiz bank +15, Two-Minute Clinic +20
-  (138 total), scoring-logic test coverage +10 (21 total on that path).
-- **Infra text-column audit** [Master §9.3]: 3 migrations that were
-  code-complete but never applied live (course weeks, practice_chains,
-  corpus_dictations) are now live. Audited every text/jsonb column against
-  the existing size-cap pattern and found 3 already-live tables that had
-  slipped through (formulation_wall_posts, pair_messages, library_notes) —
-  8 new caps added total, verified via a live pg_constraint query
-  (5 → 14 `*_cap` constraints).
+You asked (with 4 homepage screenshots) to make the UI/UX better, to research
+modern design + Neo-Brutalism first, and to use available free web components.
+Research was done (2026 trends: editorial neo-brutalism, calm interfaces,
+motion-that-explains, marquee tickers, scroll progress, accessibility as
+infrastructure), then three restrained, free-component-style pieces were built
+on the existing Neo-Brutalist Pastel world — nothing replaced, only elevated:
 
-## Incomplete (honest)
-- Lessons: still a handful of authored readings; video content is the
-  next authoring effort (no fabricated assets shipped in its place).
-- 200+ characters: 70 authored, 62 live on the picker (Tier 2 upserted
-  fully; Tier 3/4 upsert is one script run away — `scripts/
-  upsert-characters.ts`).
-- Paid-book corpus: the drop-folder ingest (`/mnt/acquire/`) is still the
-  one item that needs your files, not more code — see NEEDS_KAVYA.md.
-- The A7 dictate table just went live tonight; nobody has dictated a case
-  through it yet — worth a real run to catch anything the scaffold missed.
+1. **Curriculum marquee ticker** — a seamless scrolling band of the real
+   curriculum (Interviewing · Mental status exam · Formulation · Ethics &
+   the law · Simulated patients · Timed assessments · Debrief after every
+   session) between the hero and "Why this school exists". Pauses on hover;
+   reduced-motion users get a static strip. All terms are the product's
+   real method — nothing fabricated.
+2. **Scroll-progress bar** — a 2px ink fill along the top edge of the sticky
+   nav that tracks how far you've scrolled. Kept for reduced-motion users
+   (it's a scroll *state*, not decoration).
+3. **Live pulse dot** — a soft peach "live" ring on the hero cohort line
+   ("Cohort One begins 20 August · Invite-only"), signalling applications
+   are open.
 
-## Infra
-Postgres healthy · advisors: security clean except one pre-existing
-SECURITY DEFINER trigger-function pattern (matches touch_material/
-touch_assignment already flagged before tonight, not a new regression) ·
-text-column size caps now cover every table that accepts free-text or
-jsonb from a student or faculty member, including tonight's newest ones.
+Commit `846d1b0` (plus the design-QA commit `206b7c8` from earlier the same
+night: uniform hero card stack, PRACTISE stamp fully inside, tightened copy,
+team divider, CTA stamp). Gate green: lint 0/0 · tsc clean · **453 tests pass** ·
+build clean.
 
-## Round 9 completed (2026-08-13) — attempt tables live + casebook findings
-- **All four attempt tables now persist**: `mse_attempts`, `formulation_attempts`,
-  `sct_attempts` (and `osce_attempts` from earlier) have working write routes,
-  live migrations applied, seeds in place (30 mse_stimuli by slug), and 15
-  fixture-tested route tests. Weak-spots and per-station/per-domain history are
-  now real.
-- **Casebook findings 1/3/4 done**: course rows de-duplicated (each object once);
-  /practice shows zero fabricated numbers (practice-state.ts computes from real
-  tables, blank when none); Passport→/passport, supervision+check-in→/record,
-  weak-spots stays a banner. /practice is now grouped by session length,
-  collapsible, open-state remembered per user.
-- **Rounds completed**: /admin/cards review queue (the 7 auto-drafted cards were
-  sitting unreviewed), deck reads published cards, and per-user FSRS scheduling
-  persists to card_reviews.
-- **OSCE debrief** now shows checklist/global/composite as CR-style stat tiles.
-- Gate: lint 0/0, tsc clean, **375 tests pass**, build green.
+## LIVE — verified in a fresh browser, no cache
 
-## Round 9 — what's shipping next (started 2026-08-13)
-- **OSCE attempt persistence** — the `osce_attempts` table had full RLS but
-  zero writers. Seeded 12 stations from the static content into
-  `osce_stations` (new `slug` FK column), added pure helper
-  `buildOsceAttemptPayload` (4 tests), route `/api/practice/osce/attempt`,
-  and client wiring so every self-assessed station now lands in
-  `osce_attempts.scores` (checklist fraction, global rating, 60/40
-  composite). Unlocks per-station weak-spots and a future
-  `/admin/osce-review` symmetrical to `/admin/sim-review`.
-- Next in this round: MSE/Formulation/SCT/Judgment/Rounds attempt
-  persistence (same pattern — one tool at a time).
+Production deployed to **vibhapsychology.com** (`bind-lms-platform-mdlj8yckh…`).
+Every claim below was measured on the live site, not the local build:
 
-## Top 3 worth your attention
-1. Drop the purchased books into `/mnt/acquire/` — the ingester is ready;
-   that single action turns your purchases into the patient-voice corpus.
-2. Paste any no-train API key (NVIDIA free tier works) — the real
-   Director/Actor + scoring light up instantly; NEEDS_KAVYA.md has the
-   exact verification command per key.
-3. Try `/admin/corpus/dictate` for real — talk through one composite case
-   and see whether the interviewer's follow-up questions actually feel
-   right before more volume gets built on top of it.
+| Check | Live result |
+|---|---|
+| Marquee | present, animating (`animation-name: marquee`), 14 terms (2 runs), full-width band |
+| Scroll progress | 58.4% fill after scrolling to 1400px, pinned to nav top |
+| Live pulse dot | present, animating (`animation-name: live-pulse`) |
+| All sections | hero headline, 01/02/03 eyebrows, method cards, team, CTA — all render |
+| /enquire | form intact (name/email/phone/status/message + honeypot), submit works |
+| Horizontal overflow | 0px · Console errors: 0 |
+
+Full-page screenshot at `/tmp/plms-live-verify.png` (2880×6596).
+(NOTE: one earlier check "failed" on the eyebrows — it was my substring match
+against the CSS-uppercased text, not a real defect. The page was correct.)
+
+If you still see an older look on your end, it's the browser cache — hard
+refresh (⌘⇧R) or incognito.
+
+## Branch state
+
+- On **`feat/groq-primary-director`**, now **113 commits ahead of `main`**;
+  `origin/main` is an ancestor, so a merge is a clean fast-forward.
+- **The merge to main is still HELD on your "wait".** Nothing has pushed to
+  main. Say the word and the 5-command sequence in NIGHT_LOG.md lands it.
+
+## Pending your call (full list in NEEDS_KAVYA.md)
+
+1. **Main merge** — the one thing blocking nothing locally but keeping the
+   live branch off main. Your "wait" is respected.
+2. **Link-colour decision** — peach text (~1.9:1) on cream in ~90 files vs
+   terracotta link token vs ink+underline. Brand-accent call; flagged, not
+   changed unilaterally.
+3. **API keys** — Groq is live and everything works; Cerebras (free) doubles
+   the no-train student capacity toward the 45-DAU target.
+4. **Psychopharm** — 146 enriched medication drafts awaiting your clinical
+   sign-off at `/admin/psychopharm-review` (nothing student-visible until
+   you Publish each).
+5. **Drop-folder ingest** — `/mnt/acquire/` for the paid books (highest-value
+   single action for the patient-voice corpus).
+
+## Honest status
+
+The buildable backlog is swept (IDEAS_NEXT verified accurate, BUGS open: 0).
+Remaining work is either your decision (merge, link colour, clinical review)
+or needs your inputs (keys, files, content). No fabrication shipped anywhere;
+every new copy/term on the page is product truth.
