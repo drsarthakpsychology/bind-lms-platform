@@ -2,6 +2,7 @@ import Link from "next/link";
 import { readFlags, type FeatureKey } from "@/lib/flags";
 import { createClient } from "@/lib/supabase/server";
 import { computePracticeStates, type SurfaceState } from "@/lib/practice/practice-state";
+import { computeResumePrimary } from "@/lib/practice/resume";
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 import { PracticeGroups, type PracticeCardData } from "@/components/practice/practice-groups";
@@ -76,71 +77,10 @@ export default async function PracticeHubPage() {
     ? await computePracticeStates(supabase, user.id)
     : {};
 
-  let recommendation: { href: string; title: string; reason: string; cta: string; time: string } | null = null;
-  if (user) {
-    // 1) In-progress sim session → resume it (the patient is waiting).
-    const { data: active } = await supabase
-      .from("sim_sessions")
-      .select("id, case_id")
-      .eq("user_id", user.id)
-      .eq("status", "active")
-      .limit(1)
-      .maybeSingle();
-    if (active) {
-      recommendation = {
-        href: `/practice/consulting-room/session/${active.id}`,
-        title: "Resume your consultation",
-        reason: "A patient is waiting mid-session — finishing it banks the debrief and your score.",
-        cta: "Resume",
-        time: "12 min",
-      };
-    } else {
-      // 2) Risk-timing missed in recent debriefs → the consulting room.
-      const { data: scores } = await supabase
-        .from("sim_scores")
-        .select("rubric")
-        .eq("user_id", user.id)
-        .order("created_at", { ascending: false })
-        .limit(4);
-      const riskLate = (scores ?? []).filter((s) => {
-        const r = (s.rubric as Record<string, unknown> | null) ?? {};
-        return r.risk_timing === "late" || r.risk_timing === "absent";
-      }).length;
-      if (riskLate >= 2) {
-        recommendation = {
-          href: "/practice/consulting-room",
-          title: "Consulting Room — risk assessment",
-          reason: `You've missed the risk-assessment moment in ${riskLate} of your last ${(scores ?? []).length || 4} sessions. Run a case and front-load it.`,
-          cta: "Run a case",
-          time: "12 min",
-        };
-      } else if ((scores ?? []).length >= 3) {
-        const unsMse = (scores ?? []).filter((s) => {
-          const r = (s.rubric as Record<string, unknown> | null) ?? {};
-          return r.idiom_decoding === false;
-        }).length;
-        if (unsMse > 0) {
-          recommendation = {
-            href: "/practice/decode",
-            title: "Presenting Complaint Decoder",
-            reason: `The opening idiom went undecoded in ${unsMse} of your recent sessions. Five minutes here fixes your ears.`,
-            cta: "Decode",
-            time: "4 min",
-          };
-        }
-      }
-    }
-    // 3) Fallback: the daily drill.
-    if (!recommendation) {
-      recommendation = {
-        href: "/practice/decode",
-        title: "Presenting Complaint Decoder",
-        reason: "The daily habit that changes how you hear patients — today's set is fresh.",
-        cta: "Decode",
-        time: "4 min",
-      };
-    }
-  }
+  // The recommended card — one shared engine for "what's next" (T140), so
+  // /today and /practice always recommend the same thing. ALWAYS states why
+  // (B2: reason beats recommendation).
+  const recommendation = user ? await computeResumePrimary(supabase, user.id) : null;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">

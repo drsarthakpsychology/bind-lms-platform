@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { computeResumePrimary } from "@/lib/practice/resume";
 import { WeakSpotsBanner } from "@/components/practice/weak-spots-banner";
 import { Reveal } from "@/components/motion/reveal";
 import { ArrowRight, Zap, Mic2, Flame, BookOpen } from "lucide-react";
@@ -142,25 +143,13 @@ export default async function TodayPage() {
 
   const currentStreak = Number(streak?.current_streak ?? 0);
 
-  const primary = activeSession
-    ? {
-        href: `/practice/consulting-room/session/${activeSession.id}`,
-        title: "Resume your session",
-        reason: "You have an unfinished consultation with a patient who's waiting.",
-        badge: "In progress",
-        time: "12 min",
-        cta: "Resume",
-      }
-    : {
-        href: "/practice/decode",
-        title: "Presenting Complaint Decoder",
-        reason: currentStreak >= 2
-          ? "You're on a streak — keep the daily habit sharp."
-          : "Start the day with the drill that changes how you hear patients.",
-        badge: "Daily",
-        time: "4 min",
-        cta: "Decode",
-      };
+  // The single next action — one shared engine with /practice (T140), so the
+  // two surfaces never disagree about what's next.
+  const resumePrimary = await computeResumePrimary(supabase, user.id);
+  const primary = {
+    ...resumePrimary,
+    badge: resumePrimary.href.includes("/session/") ? "In progress" : "Daily",
+  };
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
