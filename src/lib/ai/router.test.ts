@@ -64,6 +64,45 @@ describe("task-tier model selection (§7)", () => {
   });
 });
 
+describe("SambaNova provider (Cerebras alternative, 2026-08-14)", () => {
+  it("is registered as a no-train provider with the verified Llama model", () => {
+    const sn = PROVIDERS.find((p) => p.id === "sambanova");
+    expect(sn).toBeDefined();
+    expect(sn!.trainsOnData).toBe(false);
+    expect(sn!.models.fast).toBe("Meta-Llama-3.3-70B-Instruct");
+    expect(sn!.apiKeyEnv).toBe("SAMBANOVA_API_KEY");
+  });
+
+  it("sits in the no-train json chain after Groq + Cerebras", () => {
+    const json = PROVIDER_PRIORITY.json;
+    // The three no-train student-safe lanes lead the chain.
+    expect(json.slice(0, 3)).toEqual(["groq", "cerebras", "sambanova"]);
+  });
+
+  it("can serve student data (no-train)", () => {
+    const sn = PROVIDERS.find((p) => p.id === "sambanova")!;
+    expect(() => assertProviderAllowed("sim_patient_turn", sn)).not.toThrow();
+  });
+});
+
+describe("OpenCode provider (user request 2026-08-14)", () => {
+  it("is registered as a no-train OpenAI-compatible gateway", () => {
+    const oc = PROVIDERS.find((p) => p.id === "opencode");
+    expect(oc).toBeDefined();
+    expect(oc!.trainsOnData).toBe(false);
+    expect(oc!.apiKeyEnv).toBe("OPENCODE_API_KEY");
+    expect(oc!.baseUrl).toMatch(/\/v1$/); // required by the OpenAI adapter
+  });
+
+  it("sits in the json fallback chain after the free trio", () => {
+    const json = PROVIDER_PRIORITY.json;
+    // no-train student-safe lanes lead, opencode after openrouter.
+    expect(json.slice(0, 3)).toEqual(["groq", "cerebras", "sambanova"]);
+    expect(json).toContain("opencode");
+    expect(json.indexOf("opencode")).toBeGreaterThan(json.indexOf("openrouter"));
+  });
+});
+
 describe("DeepSeek provider (§13, registered 2026-08-14)", () => {
   it("is registered with V4 Flash fast + V4 Pro smart/strong", () => {
     const ds = PROVIDERS.find((p) => p.id === "deepseek");

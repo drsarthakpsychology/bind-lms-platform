@@ -44,14 +44,16 @@ export function modelForTier(provider: Provider, tier: TaskTier): string {
 
 /** Capability → which provider ids can serve it, in priority order. */
 export const PROVIDER_PRIORITY: Record<ProviderCapability, string[]> = {
-  // fast chat / streaming — Groq is first for speed (voice needs sub-second TTFB)
-  chat: ["groq", "gemini", "cerebras", "openrouter", "deepseek", "anthropic"],
-  stream: ["groq", "gemini", "cerebras", "openrouter", "deepseek", "anthropic"],
-  // structured JSON — Groq is Primary (fast, no-train, OpenAI-compatible
-  // json_schema/json_object). Both JSON callers (sim Director + debrief
-  // scoring) carry student data, so gemini/deepseek (trainsOnData) are excluded
-  // by the guard and sit last purely as non-student fallback lanes.
-  json: ["groq", "cerebras", "openrouter", "anthropic", "deepseek", "gemini"],
+  // fast chat / streaming — Groq first (voice needs sub-second TTFB), then the
+  // no-train fallbacks (Cerebras + SambaNova) so student data has capacity
+  // beyond Groq's RPD ceiling.
+  chat: ["groq", "cerebras", "sambanova", "gemini", "openrouter", "opencode", "deepseek", "anthropic"],
+  stream: ["groq", "cerebras", "sambanova", "gemini", "openrouter", "opencode", "deepseek", "anthropic"],
+  // structured JSON — Groq is Primary (fast, no-train). The sim Director +
+  // debrief scoring carry student data, so the no-train fallbacks (Cerebras,
+  // SambaNova, OpenRouter, OpenCode) sit next; gemini/deepseek (trainsOnData)
+  // are excluded by the guard and sit last as non-student lanes.
+  json: ["groq", "cerebras", "sambanova", "openrouter", "opencode", "anthropic", "deepseek", "gemini"],
   // vision/audio only where the provider supports it
   vision: ["gemini", "anthropic", "openrouter"],
   audio: ["gemini", "groq"],
@@ -89,6 +91,37 @@ export const PROVIDERS: Provider[] = [
     apiKeyEnv: "CEREBRAS_API_KEY",
     models: { fast: "llama-3.3-70b", smart: "llama-3.3-70b" },
     limits: { rpm: 30, rpd: 1440, tpm: 1000000 },
+    trainsOnData: false,
+    supports: ["chat", "stream", "json"],
+    protocol: "openai",
+  },
+  {
+    // SambaNova Cloud — the best Cerebras alternative for the student-facing
+    // no-train lane (user request 2026-08-14). Verified catalog: Meta-Llama-3.3-
+    // 70B-Instruct (same family as the Groq fast lane), DeepSeek-V3.1/V3.2,
+    // gpt-oss-120b, gemma-4-31B-it. OpenAI-compatible. Permanent free tier,
+    // no card; ~1M tokens/day / unlimited requests at 10-30 RPM. Sits alongside
+    // Groq + Cerebras in the no-train fallback chain per the 2026 research.
+    id: "sambanova",
+    baseUrl: "https://api.sambanova.ai/v1",
+    apiKeyEnv: "SAMBANOVA_API_KEY",
+    models: { fast: "Meta-Llama-3.3-70B-Instruct", smart: "Meta-Llama-3.3-70B-Instruct", strong: "gpt-oss-120b" },
+    limits: { rpm: 30, rpd: 10000, tpm: 1000000 },
+    trainsOnData: false,
+    supports: ["chat", "stream", "json"],
+    protocol: "openai",
+  },
+  {
+    // OpenCode Zen — OpenAI-compatible gateway (user request 2026-08-14).
+    // https://opencode.ai/zen/v1 via OPENCODE_API_KEY. Routes to OpenAI /
+    // Anthropic / Qwen / Gemini models through one key. Included as a no-train
+    // fallback lane (verify the upstream model's policy per-route; treat as a
+    // secondary student lane, not the primary). baseURL ends in /v1 (required).
+    id: "opencode",
+    baseUrl: "https://opencode.ai/zen/v1",
+    apiKeyEnv: "OPENCODE_API_KEY",
+    models: { fast: "openai/gpt-4o-mini", smart: "anthropic/claude-sonnet-4-5", strong: "anthropic/claude-opus-4" },
+    limits: { rpm: 30, rpd: 1000, tpm: 40000 },
     trainsOnData: false,
     supports: ["chat", "stream", "json"],
     protocol: "openai",
