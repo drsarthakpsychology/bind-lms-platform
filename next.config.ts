@@ -19,6 +19,17 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "motion", "radix-ui"],
   },
+  async redirects() {
+    return [
+      {
+        // The primary CTA was renamed Enquire → Join waitlist, so the route
+        // moved to /waitlist. Any shared /enquire link keeps working.
+        source: "/enquire",
+        destination: "/waitlist",
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {

@@ -5,8 +5,8 @@ import { Button } from "./button";
 
 describe("Button", () => {
   it("renders a button with its label", () => {
-    render(<Button>Enquire</Button>);
-    expect(screen.getByRole("button", { name: "Enquire" })).toBeInTheDocument();
+    render(<Button>Join waitlist</Button>);
+    expect(screen.getByRole("button", { name: "Join waitlist" })).toBeInTheDocument();
   });
 
   it("carries the tactile neobrutalist default variant classes", () => {
@@ -19,9 +19,9 @@ describe("Button", () => {
   it("renders an anchor when used with asChild", () => {
     render(
       <Button asChild>
-        <a href="/enquire">Enquire</a>
+        <a href="/waitlist">Join waitlist</a>
       </Button>,
     );
-    expect(screen.getByRole("link", { name: "Enquire" })).toHaveAttribute("href", "/enquire");
+    expect(screen.getByRole("link", { name: "Join waitlist" })).toHaveAttribute("href", "/waitlist");
   });
 });

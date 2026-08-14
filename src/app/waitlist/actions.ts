@@ -16,17 +16,17 @@ const schema = z.object({
   honeypot: z.string().max(200).optional(),
 });
 
-export interface EnquireResult {
+export interface WaitlistResult {
   ok: boolean;
   error?: string;
 }
 
 /**
- * Public enquiry submission. Runs server-side only: rate-limited by IP,
+ * Public waitlist submission. Runs server-side only: rate-limited by IP,
  * zod-validated, honeypot-guarded, and inserted via the service-role client —
  * the browser has no insert path to `enquiries` (RLS has no anon insert policy).
  */
-export async function submitEnquiry(input: FormData): Promise<EnquireResult> {
+export async function submitWaitlist(input: FormData): Promise<WaitlistResult> {
   const parsed = schema.safeParse(Object.fromEntries(input.entries()));
   if (!parsed.success) {
     return { ok: false, error: "Please check the form and try again." };
@@ -38,7 +38,7 @@ export async function submitEnquiry(input: FormData): Promise<EnquireResult> {
   // Rate limit by visitor IP (fixed window, 5/hour is generous for humans).
   const hdrs = await headers();
   const ip = hdrs.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  const allowed = await rateLimit(`enquire:${ip}`, 5);
+  const allowed = await rateLimit(`waitlist:${ip}`, 5);
   if (!allowed) {
     return { ok: false, error: "Too many attempts. Please wait and try again." };
   }
@@ -55,7 +55,7 @@ export async function submitEnquiry(input: FormData): Promise<EnquireResult> {
     source: "landing",
   });
   if (error) {
-    console.error("[enquire] insert failed:", error.message);
+    console.error("[waitlist] insert failed:", error.message);
     return { ok: false, error: "Something went wrong. Please try again." };
   }
   return { ok: true };

@@ -3,17 +3,17 @@ import Link from "next/link";
 import { BRAND } from "@/lib/brand";
 import { Reveal } from "@/components/motion/reveal";
 import { LandingNav } from "@/components/landing/landing-nav";
-import { EnquireForm } from "./enquire-form";
+import { WaitlistForm } from "./waitlist-form";
 
 export const metadata: Metadata = {
-  title: "Enquire",
+  title: "Join the waitlist",
   robots: { index: true, follow: true },
 };
 
 /**
- * /enquire — the one honest public CTA. No signup exists (invite-only), so this
+ * /waitlist — the one honest public CTA. No signup exists (invite-only), so this
  * captures the lead and feeds the existing WhatsApp/Brevo enrolment workflow.
- * Two-column at lg: the invite pitch (sticky) beside the enquiry sheet. All
+ * Two-column at lg: the invite pitch (sticky) beside the waitlist sheet. All
  * copy is existing words; nothing new is claimed.
  */
 
@@ -23,7 +23,7 @@ const STEPS = [
   { num: "03", text: "A conversation, not a form." },
 ] as const;
 
-export default function EnquirePage() {
+export default function WaitlistPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <LandingNav />
@@ -43,7 +43,7 @@ export default function EnquirePage() {
             <Reveal delay={0.06}>
               <p className="text-eyebrow text-muted-foreground">Cohort One · Invite-only</p>
               <h1 className="mt-3 text-4xl font-black tracking-tight text-foreground sm:text-5xl">
-                Enquire
+                Join the waitlist
               </h1>
             </Reveal>
             <Reveal delay={0.12}>
@@ -66,10 +66,10 @@ export default function EnquirePage() {
             </Reveal>
           </div>
 
-          {/* The enquiry sheet. */}
+          {/* The waitlist sheet. */}
           <Reveal delay={0.2}>
             <div className="rounded-md border-2 border-foreground bg-card p-6 hard-shadow-md sm:p-8">
-              <EnquireForm />
+              <WaitlistForm />
             </div>
           </Reveal>
         </div>

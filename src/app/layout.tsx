@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: `%s · ${BRAND.shortName}`,
   },
   description: BRAND.description,
-  // The public site (/, /enquire) is indexable. The LMS routes opt out in the
+  // The public site (/, /waitlist) is indexable. The LMS routes opt out in the
   // (dashboard) layout; /login, /expired and /verify opt out individually.
   robots: { index: true, follow: true },
   openGraph: {

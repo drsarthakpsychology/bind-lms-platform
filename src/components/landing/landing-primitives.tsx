@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Shared neo-brutalist primitives — the recurring marks that hold the public
- * surfaces (landing, /enquire) in one visual language. Extracted from the
+ * surfaces (landing, /waitlist) in one visual language. Extracted from the
  * landing page so the conversion surfaces reuse the same craft.
  */
 

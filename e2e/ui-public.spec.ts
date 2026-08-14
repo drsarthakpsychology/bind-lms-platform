@@ -2,13 +2,13 @@ import { test, expect, type Page } from "@playwright/test";
 
 /**
  * UI_RULES public-site checks (docs/UI_RULES.md §15). The public routes (/
- * landing, /enquire) must pass the layout + heading contract at every key
+ * landing, /waitlist) must pass the layout + heading contract at every key
  * width: no horizontal overflow, exactly one h1, no skipped heading levels.
  * The LMS routes are noindexed and not part of this spec.
  */
 
 const WIDTHS = [320, 375, 390, 430, 768, 1024, 1280, 1440];
-const ROUTES = ["/", "/enquire"];
+const ROUTES = ["/", "/waitlist"];
 
 async function assertNoHorizontalOverflow(page: Page) {
   const overflow = await page.evaluate(() =>

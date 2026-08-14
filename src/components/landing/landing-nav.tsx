@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 const NAV_LINKS = [{ href: "#about", label: "About" }];
 
 /**
- * Public-site navigation. Desktop: logo + About + Login + Enquire. Mobile:
+ * Public-site navigation. Desktop: logo + About + Login + Join waitlist. Mobile:
  * a full-screen sheet (not a cramped dropdown) with Escape-to-close and
  * focus moved into it. Matches the LMS chrome without being identical.
  */
@@ -127,8 +127,8 @@ export function LandingNav() {
           <Link href="/login" className="text-small font-medium text-muted-foreground transition-colors hover:text-foreground">
             Login
           </Link>
-          <Link href="/enquire" className={cn(buttonVariants({ size: "sm" }), "font-semibold")}>
-            Enquire
+          <Link href="/waitlist" className={cn(buttonVariants({ size: "sm" }), "font-semibold")}>
+            Join waitlist
           </Link>
         </nav>
 
@@ -191,11 +191,11 @@ export function LandingNav() {
                 Login
               </Link>
               <Link
-                href="/enquire"
+                href="/waitlist"
                 onClick={closeMenu}
                 className={cn(buttonVariants({ size: "lg" }), "mt-2 justify-center text-base font-semibold")}
               >
-                Enquire
+                Join waitlist
               </Link>
             </nav>
             <p className="border-t-2 border-border px-5 py-4 text-caption text-muted-foreground">

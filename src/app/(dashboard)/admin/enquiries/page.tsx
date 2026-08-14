@@ -22,7 +22,7 @@ const STATUS_LABEL: Record<string, string> = {
 };
 
 /**
- * /admin/enquiries — public-site leads from the /enquire form. Admin-guarded
+ * /admin/enquiries — public-site leads from the /waitlist form. Admin-guarded
  * by the admin layout. Reads via the service-role client (RLS is admin-select
  * only, which this is).
  */

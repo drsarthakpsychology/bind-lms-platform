@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth/session";
 
 // The LMS — student coursework, journals, simulated-patient content — must
-// never be indexed. The public site (/, /enquire) is indexable from the root.
+// never be indexed. The public site (/, /waitlist) is indexable from the root.
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };

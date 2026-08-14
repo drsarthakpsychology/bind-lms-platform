@@ -16,7 +16,7 @@ import {
 import { Rule, Stamp } from "@/components/landing/landing-primitives";
 import { cohortDeadlineText } from "@/lib/brand";
 import { trackEvent } from "@/lib/analytics";
-import { submitEnquiry } from "./actions";
+import { submitWaitlist } from "./actions";
 
 const STATUSES = [
   { value: "student", label: "Student" },
@@ -40,10 +40,10 @@ function GroupLabel({ children }: { children: React.ReactNode }) {
 }
 
 /**
- * The public enquiry form. Calls the server action (rate-limited, validated,
+ * The public waitlist form. Calls the server action (rate-limited, validated,
  * honeypot-guarded). On success shows the honest confirmation.
  */
-export function EnquireForm() {
+export function WaitlistForm() {
   const [state, setState] = React.useState<"idle" | "submitting" | "done">("idle");
   const [error, setError] = React.useState<string | null>(null);
 
@@ -53,11 +53,11 @@ export function EnquireForm() {
     setState("submitting");
     setError(null);
     const form = e.currentTarget;
-    const res = await submitEnquiry(new FormData(form));
+    const res = await submitWaitlist(new FormData(form));
     if (res.ok) {
       // Funnel event. Non-identifying only — the applicant's status bucket is
       // useful for cohort mix; name/email/phone never leave the DB as events.
-      trackEvent("enquiry_submitted", {
+      trackEvent("waitlist_joined", {
         status: new FormData(form).get("status") ?? "unknown",
       });
       setState("done");
@@ -79,7 +79,7 @@ export function EnquireForm() {
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
       >
         <Stamp className="rotate-[6deg]">Invite-only</Stamp>
-        <p className="mt-6 text-xl font-bold text-foreground">Thank you — we&apos;ll be in touch.</p>
+        <p className="mt-6 text-xl font-bold text-foreground">You&apos;re on the waitlist.</p>
         <Rule className="mx-auto mt-5 max-w-[10rem]" />
         <p className="mx-auto mt-5 max-w-sm text-small text-muted-foreground">
           {cohortDeadlineText()}. If you&apos;re a fit, someone will reach you within a few
@@ -95,7 +95,7 @@ export function EnquireForm() {
       <div>
         <div className="flex items-center justify-between gap-3">
           <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-            Enquiry
+            Join the waitlist
           </p>
           <Stamp>Invite-only</Stamp>
         </div>
@@ -178,7 +178,7 @@ export function EnquireForm() {
       ) : null}
 
       <Button type="submit" size="lg" disabled={state === "submitting"} className="w-full font-semibold">
-        {state === "submitting" ? "Sending…" : "Send enquiry"}
+        {state === "submitting" ? "Joining…" : "Join waitlist"}
       </Button>
     </form>
   );

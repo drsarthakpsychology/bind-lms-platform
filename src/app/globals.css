@@ -47,6 +47,11 @@
   --input: #1e1e14;
   --ring: #f4a261;
 
+  /* Decorative geometric hairline (hex-lattice background) — a warm beige
+     line that reads softly on cream. Dark mode flips it to a muted warm
+     hairline. */
+  --line: #e4d5c2;
+
   /* --- Link / accent text ---
      Peach (#f4a261) is a fill colour — as *text* on cream it is only ~1.9:1,
      far below WCAG AA. Accent text (links, labels, eyebrow emphasis) therefore
@@ -115,6 +120,8 @@
   --input: #4a4234;
   --ring: #f4a261;
 
+  --line: #3a3329; /* warm dark hairline for the geometric lattice */
+
   /* Peach is bright enough on dark paper (≈8.7:1) — accent text stays peach. */
   --link: #f4a261;
 
@@ -155,6 +162,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-link: var(--link);
+  --color-line: var(--line);
 
   --color-shadow: var(--hard-shadow-color);
 

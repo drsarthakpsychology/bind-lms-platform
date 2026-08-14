@@ -32,6 +32,67 @@ function ObservationRings({ className }: { className?: string }) {
   );
 }
 
+/**
+ * Hexagonal molecular lattice — the hero's background motif. Reads as a
+ * node-and-edge network (and benzene-ring geometry), pointing at
+ * psychopharmacology / neuroscience rather than the generic concentric rings
+ * it replaced. Coordinates are from the revised-hero reference, verbatim.
+ *
+ * The single heavier central hexagon (strokeWidth 2.6) is the only emphasis;
+ * the rest fade outward via per-path opacity. Coloured via `text-line` on the
+ * wrapper (stroke="currentColor") so dark mode is one token away.
+ */
+function HexLattice({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 600 600"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.4}
+      strokeLinejoin="round"
+      aria-hidden
+      className={className}
+    >
+      <path d="M406 301 L377 352 L319 352 L290 301 L319 251 L377 251Z" strokeWidth={2.6} />
+      <path d="M319 251 L290 301 L232 301 L203 251 L232 201 L290 201Z" opacity="0.83" />
+      <path d="M319 352 L290 402 L232 402 L203 352 L232 301 L290 301Z" opacity="0.83" />
+      <path d="M406 201 L377 251 L319 251 L290 201 L319 151 L377 151Z" opacity="0.74" />
+      <path d="M406 402 L377 452 L319 452 L290 402 L319 352 L377 352Z" opacity="0.73" />
+      <path d="M232 301 L203 352 L145 352 L116 301 L145 251 L203 251Z" opacity="0.70" />
+      <path d="M493 251 L464 301 L406 301 L377 251 L406 201 L464 201Z" opacity="0.66" />
+      <path d="M493 352 L464 402 L406 402 L377 352 L406 301 L464 301Z" opacity="0.66" />
+      <path d="M319 151 L290 201 L232 201 L203 151 L232 100 L290 100Z" opacity="0.63" />
+      <path d="M319 452 L290 502 L232 502 L203 452 L232 402 L290 402Z" opacity="0.63" />
+      <path d="M232 201 L203 251 L145 251 L116 201 L145 151 L203 151Z" opacity="0.62" />
+      <path d="M232 402 L203 452 L145 452 L116 402 L145 352 L203 352Z" opacity="0.61" />
+      <path d="M493 151 L464 201 L406 201 L377 151 L406 100 L464 100Z" opacity="0.50" />
+      <path d="M493 452 L464 502 L406 502 L377 452 L406 402 L464 402Z" opacity="0.50" />
+      <path d="M406 100 L377 151 L319 151 L290 100 L319 50 L377 50Z" opacity="0.49" />
+      <path d="M406 502 L377 553 L319 553 L290 502 L319 452 L377 452Z" opacity="0.48" />
+      <path d="M145 251 L116 301 L58 301 L29 251 L58 201 L116 201Z" opacity="0.45" />
+      <path d="M145 352 L116 402 L58 402 L29 352 L58 301 L116 301Z" opacity="0.45" />
+      <path d="M580 301 L551 352 L493 352 L464 301 L493 251 L551 251Z" opacity="0.44" />
+      <path d="M232 100 L203 151 L145 151 L116 100 L145 50 L203 50Z" opacity="0.40" />
+      <path d="M232 502 L203 553 L145 553 L116 502 L145 452 L203 452Z" opacity="0.39" />
+      <path d="M580 201 L551 251 L493 251 L464 201 L493 151 L551 151Z" opacity="0.37" />
+      <path d="M580 402 L551 452 L493 452 L464 402 L493 352 L551 352Z" opacity="0.37" />
+      <path d="M319 50 L290 100 L232 100 L203 50 L232 0 L290 0Z" opacity="0.34" />
+      <path d="M319 553 L290 603 L232 603 L203 553 L232 502 L290 502Z" opacity="0.33" />
+      <path d="M145 151 L116 201 L58 201 L29 151 L58 100 L116 100Z" opacity="0.32" />
+      <path d="M145 452 L116 502 L58 502 L29 452 L58 402 L116 402Z" opacity="0.31" />
+      <path d="M493 50 L464 100 L406 100 L377 50 L406 0 L464 0Z" opacity="0.24" />
+      <path d="M493 553 L464 603 L406 603 L377 553 L406 502 L464 502Z" opacity="0.23" />
+      <path d="M580 100 L551 151 L493 151 L464 100 L493 50 L551 50Z" opacity="0.19" />
+      <circle cx="406" cy="301" r="4" fill="currentColor" stroke="none" opacity=".55" />
+      <circle cx="377" cy="352" r="4" fill="currentColor" stroke="none" opacity=".55" />
+      <circle cx="319" cy="352" r="4" fill="currentColor" stroke="none" opacity=".55" />
+      <circle cx="290" cy="301" r="4" fill="currentColor" stroke="none" opacity=".55" />
+      <circle cx="319" cy="251" r="4" fill="currentColor" stroke="none" opacity=".55" />
+      <circle cx="377" cy="251" r="4" fill="currentColor" stroke="none" opacity=".55" />
+    </svg>
+  );
+}
+
 function CaseFragment({
   label,
   children,
@@ -57,14 +118,16 @@ function CaseFragment({
 function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Decorative observation rings behind the hero. Very low contrast,
-          parallax-aware, and clipped by the section so they can never scroll
-          the page sideways. aria-hidden: purely visual. */}
-      <Parallax from={12} to={-12} className="pointer-events-none absolute -right-24 -top-16 select-none">
-        <ObservationRings className="w-72 text-foreground/[0.07] sm:w-[30rem] lg:w-[36rem]" />
-      </Parallax>
+      {/* Hexagonal molecular lattice — the hero's background motif, replacing
+          the concentric rings. A node-and-edge / benzene-ring field behind
+          the card stack, anchored top-right, bleeding off the edges. Static,
+          aria-hidden, behind all content (z-0). Coloured via --line so dark
+          mode is one token flip. */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0 select-none text-line">
+        <HexLattice className="absolute -right-[6%] -top-[4%] w-[60%]" />
+      </div>
 
-      <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-14 sm:px-6 lg:pt-24">
+      <div className="relative z-10 mx-auto max-w-6xl px-5 pb-16 pt-14 sm:px-6 lg:pt-24">
         <Reveal>
           <p className="text-eyebrow text-muted-foreground">A clinical psychology training programme</p>
         </Reveal>
@@ -73,8 +136,11 @@ function Hero() {
             before the two-column row below it. Two kinetic segments so the
             word-cascade flows across the break uninterrupted (line 2 resumes
             at the first line's word count). Below lg the forced break is
-            dropped and the phrase flows naturally into ~2 lines. */}
-        <h1 className="mt-3 max-w-4xl text-[2rem] font-black leading-[1.08] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+            dropped and the phrase flows naturally into ~2 lines.
+            Typography: 0.92 leading + -0.035em tracking make the two lines
+            read as one block; the negative left margin is optical alignment
+            for the display face (tuned against Geist in the browser). */}
+        <h1 className="mt-5 ml-[-0.03em] max-w-4xl text-[2rem] font-black leading-[0.92] tracking-[-0.035em] text-foreground sm:text-6xl lg:text-7xl">
           <KineticHeadline delay={0.1} stagger={0.045}>
             Understand the case,
           </KineticHeadline>
@@ -87,19 +153,19 @@ function Hero() {
           </KineticHeadline>
         </h1>
 
-        <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="mt-7 grid grid-cols-1 gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="flex flex-col">
             <Reveal delay={0.22}>
-              <p className="max-w-lg min-w-0 break-words text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="max-w-[44ch] min-w-0 break-words text-base leading-relaxed text-muted-foreground sm:text-lg">
                 Psychology graduates can describe therapy. Few can practise it —
                 VIBHA closes that gap with real cases and a debrief after every
                 session.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
-              <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Link href="/enquire" className={cn(buttonVariants({ size: "lg" }), "group gap-2 font-semibold")}>
-                  Enquire{" "}
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Link href="/waitlist" className={cn(buttonVariants({ size: "lg" }), "group gap-2 font-semibold")}>
+                  Join waitlist{" "}
                   <ArrowRight
                     className="size-4 transition-transform duration-base ease-snappy group-hover:translate-x-0.5"
                     aria-hidden
@@ -123,15 +189,15 @@ function Hero() {
 
           {/* The intake file: the product's raw material, drawn with the LMS's
               card and hard-shadow language. Three equal-height fragments step
-              right by the same dx each step (uniform deck), a labelled
+              right by a deliberate stagger (0 / 2.2rem / 4rem), a labelled
               "CASE FILE" index tab seals the top, and a light "PRACTISE" stamp
               (paired with the tab — matched border + translucent peach,
               rotation mirrored) sits fully inside the bottom-left corner. The
-              observation rings sit behind the deck as its backdrop. Purely
-              decorative; parallax is disabled under prefers-reduced-motion. */}
-          <Parallax from={10} to={-10} className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <ObservationRings className="pointer-events-none absolute -right-16 -top-10 w-72 select-none text-foreground/[0.06] lg:-right-20 lg:-top-12 lg:w-80" />
-            <div className="relative space-y-3 pb-14">
+              hexagonal lattice is its backdrop. Purely decorative; parallax is
+              disabled under prefers-reduced-motion. Top-aligned so the deck
+              tops out level with the headline. */}
+          <Parallax from={10} to={-10} className="relative mx-auto w-full max-w-md lg:mt-2 lg:max-w-none">
+            <div className="relative space-y-3.5 pb-14">
               <div
                 aria-hidden
                 className="absolute -top-3.5 left-6 z-10 rotate-[-4deg] rounded-md border-2 border-foreground bg-secondary px-2.5 py-1 font-mono text-[0.6rem] font-black uppercase tracking-[0.2em] text-foreground hard-shadow-flat"
@@ -144,12 +210,12 @@ function Hero() {
                 </CaseFragment>
               </Reveal>
               <Reveal delay={0.28}>
-                <CaseFragment label="Observation" className="ml-4 min-h-32 rotate-1 sm:ml-6">
+                <CaseFragment label="Observation" className="ml-4 min-h-32 rotate-1 sm:ml-9">
                   Sits very still, hands folded. Speaks in a flat, even voice.
                 </CaseFragment>
               </Reveal>
               <Reveal delay={0.38}>
-                <CaseFragment label="Formulation" className="ml-8 min-h-32 -rotate-1 sm:ml-12">
+                <CaseFragment label="Formulation" className="ml-8 min-h-32 -rotate-1 sm:ml-16">
                   The heaviness is the only language her belief system permits
                   for distress.
                 </CaseFragment>
@@ -342,8 +408,8 @@ function ClosingCta() {
             Tell us who you are.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/enquire" className={cn(buttonVariants({ size: "lg" }), "group gap-2 font-semibold")}>
-              Enquire{" "}
+            <Link href="/waitlist" className={cn(buttonVariants({ size: "lg" }), "group gap-2 font-semibold")}>
+              Join waitlist{" "}
               <ArrowRight
                 className="size-4 transition-transform duration-base ease-snappy group-hover:translate-x-0.5"
                 aria-hidden
@@ -379,10 +445,10 @@ function Footer() {
             Login
           </Link>
           <Link
-            href="/enquire"
+            href="/waitlist"
             className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
           >
-            Enquire
+            Join waitlist
           </Link>
         </nav>
         <p className="text-caption text-muted-foreground">

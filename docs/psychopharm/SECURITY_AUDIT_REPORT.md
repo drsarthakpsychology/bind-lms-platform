@@ -132,3 +132,23 @@ Ran the auditing-app-security skill after the practice-layer migrations.
 - **Pre-existing (not practice-layer)**: `media/crypto.ts` falls back to
   SUPABASE_SERVICE_ROLE_KEY as the session secret — flagged in the earlier
   audit (finding #5), still open, not part of this slice.
+
+## 2026-08-14 — v3 infra + practice-layer audit (post-migration)
+
+Re-ran the security skill after the v3 infra migrations (halfvec/384, infra
+RPCs, retention, cron endpoint). Empirical results:
+
+| Check | Result |
+|---|---|
+| Public tables WITHOUT RLS | **0** — all RLS-enabled (P0 clear) |
+| RLS tables with no policies | 1 (`_migrations_applied` — internal, deny-all) |
+| SECURITY DEFINER functions | is_admin, app_role, handle_new_user, rate_limit_incr, match_corpus_chunks, search_corpus_keyword, publish/demote triggers — all intentional |
+| Public storage buckets | **0** — materials/submissions/videos all private |
+| Client-exposed secrets | anon key + Turnstile site key (public by design); service_role server-only |
+| Hardcoded credentials | none |
+
+Cron endpoint (`/api/internal/cron`) requires `CRON_SECRET` bearer; 401 without.
+infra_metrics RPC is service_role-only (revoked from anon/authenticated).
+checkins_aggregate is postgres+service_role only (students hard-blocked).
+
+No new P0/P1 findings from the v3 infra work.

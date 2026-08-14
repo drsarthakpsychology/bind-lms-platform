@@ -7,7 +7,7 @@ import { ErrorState } from "@/components/design-system/error-state";
 
 /**
  * Root error boundary. Catches uncaught render errors on every public route
- * without a closer boundary — the landing page, /login, /enquire, /expired,
+ * without a closer boundary — the landing page, /login, /waitlist, /expired,
  * and /verify — so none of them ever show the bare Next.js fallback. Renders
  * inside the root layout (theme + fonts intact), full-viewport centered.
  * /(dashboard) has its own closer boundary.
