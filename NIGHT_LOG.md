@@ -3022,3 +3022,16 @@ cheaper treatment per the motion brief:
 Gate green: lint 0, tsc clean, 453 tests (76 files), build 82/82 static.
 Cerebras/SambaNova/OpenCode Zen all recorded PAYWALLED (need a card) in
 NEEDS_KAVYA — verified free no-train lanes are Groq + OpenRouter.
+
+## 2026-08-14 — POCSO task closed; landing page under live design tune
+
+Original request (POCSO find + scrape + download) is complete and committed
+(fe6bd5c). A live design pass is concurrently tuning
+`src/components/landing/landing-page.tsx` (hero headline clamp 7rem→3.75rem,
+optical `ml` alignment) in the working tree — not authored by this session,
+so those one-line tweaks are snapshotted rather than fought. Commits:
+b128c49 (headline clamp), plus this turn's snapshot of the optical-alignment
+tweak. Full gate re-verified green on the committed state: lint 0 warnings
+(`accept.mjs` scratch file came and went from the live editor), tsc clean,
+453 tests / 76 files, build 82/82.
+2026-08-14T17:58:53 Queue exhausted — allowing normal Claude stop.

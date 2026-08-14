@@ -70,7 +70,7 @@ function Hero() {
             <Reveal>
               <p className="text-eyebrow text-muted-foreground">A clinical psychology training programme</p>
             </Reveal>
-            <h1 className="mt-5 ml-[-0.045em] text-[clamp(3rem,7.4vw,3.75rem)] font-black leading-[0.9] tracking-[-0.038em] text-foreground">
+            <h1 className="mt-5 ml-[-0.033em] text-[clamp(3rem,7.4vw,3.75rem)] font-black leading-[0.9] tracking-[-0.038em] text-foreground">
               <KineticHeadline delay={0.1} stagger={0.045}>
                 Understand the case,
               </KineticHeadline>
@@ -313,12 +313,8 @@ function ClosingCta() {
   return (
     <section className="rail py-20">
       <Reveal>
-        <div className="relative max-w-[52rem] overflow-hidden border-2 border-foreground bg-card p-8 hard-shadow-md sm:p-12">
-          <span aria-hidden className="absolute left-3 top-3 size-2.5 bg-primary" />
-          <span aria-hidden className="absolute right-3 top-3 size-2.5 bg-primary" />
-          <span aria-hidden className="absolute bottom-3 left-3 size-2.5 bg-primary" />
-          <span aria-hidden className="absolute bottom-3 right-3 size-2.5 bg-primary" />
-          <Stamp className="absolute right-14 top-12 hidden rotate-[8deg] sm:block">Invite-only</Stamp>
+        <div className="relative">
+          <Stamp className="absolute -top-4 right-0 hidden rotate-[8deg] sm:block">Invite-only</Stamp>
           <p className="text-eyebrow text-muted-foreground">Cohort One — by invitation</p>
           <h2 className="mt-4 max-w-[20ch] text-4xl font-black leading-tight tracking-tight text-foreground sm:text-5xl">
             {hasCohortStarted() ? (
