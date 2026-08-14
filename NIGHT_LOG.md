@@ -3381,3 +3381,15 @@ Recommendation for the merge: rebase the worktree onto feat/mobile-design-system
 BEFORE merging, and treat today/course/lesson/consulting-room/debrief as
 merge-conflict hotspots. I am holding edits on those shared files to minimise
 the blast radius.
+
+2026-08-14T20:50 Mine-only slices this continuation (all gate-green: lint 0,
+tsc clean, 486 tests, build):
+ daa36b7 T64/T66 mobile-nav hamburger 44px + drawer safe-area top/bottom
+ 75c904e T64 video player control buttons 36/32→40px
+ 3e68866 T42 admin enquiries message → collapsible disclosure (scannable inbox)
+ f98f7e7 T58 course hero next-action title → line-clamp-2
+ (earlier: OSCE/formulation/MSE persistence, landmark quiz, tracker docs)
+Worker: landed T18-T50 slice (075d88e + 6d4ab81 tick), then built T41 /settings +
+T42 /notifications (committed). Still-open T29/T40/T48 = surface ownership or
+product decision (documented in docs/mobile-audit-status.md). Remaining T51-T90
+are deep audit/live-device QA tasks. Branch HEAD green.
