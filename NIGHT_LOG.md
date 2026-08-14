@@ -3227,3 +3227,8 @@ parallel continuations; several practice pages are already in-flight).
   committing.
 - Next in queue: T20 continues (waitlist two-column → mobile sheet-first is
   still the clearest dedicated-composition candidate).
+- Waitlist sheet-first landed: `278b8c3` — reordered the grid so the sheet
+  leads on mobile (order-1) and the pitch recedes below it (order-2); desktop
+  keeps pitch-left / sheet-right. Also folded in the small min-h-dvh /
+  text-small / tel-input tweaks already in this tree. Gate: lint 0, tsc clean,
+  453 tests, build green.
