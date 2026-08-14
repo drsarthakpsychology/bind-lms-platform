@@ -1,3 +1,41 @@
+## 2026-08-14 — LANDING REDESIGN: homepage elevated within the Neo-Brutalist Pastel world
+
+User asked (/impeccable + "redesign the homepage for better, I love the current
+aesthetic") for a redesign that PRESERVES the peach/cream/2px-ink/hard-shadow
+language while pushing the craft. Refinement-with-ambition, not a new world.
+
+- **Poster hero**: headline now runs full-width as a two-line statement broken
+  at the natural comma ("Understand the case," / "not just the diagnosis."),
+  with the kinetic word-cascade flowing across the break (line 2 resumes at
+  line 1's word count). Forced break only at lg+; below lg the phrase flows
+  naturally and mobile sits at text-[2rem] so it lands the SAME 2-line poster
+  (measured: 4 ragged orphan lines at 5xl → clean 2 lines at 2rem). A mobile-only
+  space span keeps the segments joined below lg.
+- **Intake-file hero right column**: the case-fragment pile gains a pad sheet
+  peeking out behind, a peach tape strip sealing the top, and a rotated
+  "PRACTISE" rubber-stamp (double-ring outline) — the school's thesis, drawn
+  from the hero's own copy.
+- **Editorial wayfinding**: mono index numerals on section eyebrows
+  (01 / 02 / 03 in terracotta) + a closed "scored rule" (2px ink line ending in
+  a peach square) closing the Problem section and the CTA certificate.
+- **Serif italic accents** on one phrase per section (source-serif-4, the
+  system serif): "Practice teaches you how to use it.", "In that order.",
+  "you know their names.", the cohort date.
+- **Method as a chain**: the three Learn/Experience/Apply cards become a
+  connected stepper — big mono 01/02/03 numerals, peach arrows between (down on
+  mobile), and the middle "Experience" card accent-washed + peach-bordered as
+  the featured step.
+- **WhoBuilds**: the two name sentences become a divided role panel — name +
+  role tag chips (Clinical lead / Building the programme), all existing copy.
+- **Closing CTA as a certificate**: bordered panel with peach corner squares,
+  an "INVITE-ONLY" rubber stamp (existing "Invite-only" copy), serif-italic
+  cohort date, and the scored rule.
+- **Footer**: faint observation rings reprise at the corner.
+
+Verified in one bounded screenshot round (Playwright chromium, deviceScaleFactor
+2): desktop + mobile × light + dark, headline line-breaks measured
+programmatically. Gate green: lint 0, tsc clean, 449 tests, build 82/82.
+
 ## 2026-08-14 — CORPUS: unblocked the manual-download queue item (3 of 4 by code)
 
 The QUEUE "Blocked" item "mhGAP/NMHS/POCSO/RCI manual downloads" was verified
@@ -2536,3 +2574,5 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T11:06:43 Queue exhausted — allowing normal Claude stop.
 2026-08-14T11:17:31 Queue exhausted — allowing normal Claude stop.
 2026-08-14T11:40:28 Queue exhausted — allowing normal Claude stop.
+2026-08-14T11:41:48 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:08:05 Queue exhausted — allowing normal Claude stop.
