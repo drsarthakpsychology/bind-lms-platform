@@ -3343,3 +3343,15 @@ Both gate-green: lint 0 errors, tsc clean, 486 tests, build clean.
 Worker is mid-sweep on admin modals/case-picker/debrief/library/today/
 psychopharm/tutor — leaving their in-flight files alone to avoid JSX races
 (have already repaired two).
+
+2026-08-14T20:30 SESSION-END COORDINATION (mine-only commits this continuation, all green):
+ 4e1bb5d coordinated checkpoint · b52cab8 landmark→QuizCheck · 34e2166 OSCE
+ persistence · bc8442b formulation persistence · 98c2b78 mobile-strategy.md
+ (brief §65) · plus earlier: session edge-to-edge, today reorder, library
+ filters, psychopharm collapse, review-filter debounce, finish-confirm,
+ network rollback, touch-target sweep, /record segmented, decode flow, MSE
+ details, lesson quiz collapse.
+Tree gate at every commit: lint 0 errors, tsc clean, 486 tests, build clean.
+Worker currently has ~24 files in flight (admin modals→sheets, case-picker,
+debrief, library, today, psychopharm, tutor) — tree stays green. Holding
+further edits to their files to avoid JSX races; will repair if it breaks.
