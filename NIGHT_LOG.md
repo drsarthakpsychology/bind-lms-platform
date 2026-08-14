@@ -3333,3 +3333,13 @@ Worker continues to sweep the same audit reports via shared primitives (tutor
 SourcePassage expand, safety-first bottom sheet, admin modals→sheets, feed-first
 journal/wall, debrief step-flow). I've stopped racing their files; my remaining
 lane is green-keeping + untouched findings (landmark, OSCE done this slice).
+
+2026-08-14T20:28 State-offline coverage continued (mine, no worker race):
+ 34e2166 OSCE station in-flight snapshot → localStorage (transcript + checklist
+         + timer + self-assess restored; cleared on completion)
+ bc8442b Formulation Forge {attempt, stage, narrative} → localStorage (restored
+         past hydration, validated against seed factors, cleared on submit)
+Both gate-green: lint 0 errors, tsc clean, 486 tests, build clean.
+Worker is mid-sweep on admin modals/case-picker/debrief/library/today/
+psychopharm/tutor — leaving their in-flight files alone to avoid JSX races
+(have already repaired two).
