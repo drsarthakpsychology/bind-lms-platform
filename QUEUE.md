@@ -589,26 +589,26 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   across the entire application; simplify the visual hierarchy while
   preserving VIBHA's neo-brutalist character
 
-- [ ] T60  Mobile visual hierarchy pass — every screen must have a clear primary,
+- [x] T60  Mobile visual hierarchy pass — every screen must have a clear primary,
   secondary, and tertiary hierarchy; reduce competing typography, borders,
   labels, buttons, and accent colors so users immediately understand what
   matters
 
-- [ ] T61  Mobile design-language consistency — apply the established VIBHA
+- [x] T61  Mobile design-language consistency — apply the established VIBHA
   mobile design system consistently across every route, including typography,
   spacing, borders, buttons, status pills, cards, sheets, inputs, navigation,
   chat, progress, and feedback
 
-- [ ] T62  Mobile animation system — standardize purposeful transitions for
+- [x] T62  Mobile animation system — standardize purposeful transitions for
   progressive content, Next actions, sheets, navigation, completion states,
   chat messages, voice states, loading, and feedback; keep animations subtle,
   performant, and reduced-motion safe
 
-- [ ] T63  Mobile micro-interaction pass — add small meaningful feedback for
+- [x] T63  Mobile micro-interaction pass — add small meaningful feedback for
   taps, selections, completion, saving, progress, navigation, and state
   changes; do not add decorative animation that increases cognitive load
 
-- [ ] T64  Mobile accessibility sweep — run the entire application against
+- [x] T64  Mobile accessibility sweep — run the entire application against
   touch targets, semantic controls, labels, keyboard navigation, contrast,
   dynamic text, reduced motion, focus behavior, and screen-reader semantics;
   fix systemic issues rather than patching isolated screens
@@ -626,7 +626,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   unexpected horizontal scrolling, scroll trapping, scroll jumps, and
   unnecessarily long pages; ensure each scroll container has a clear purpose
 
-- [ ] T68  Mobile long-content strategy — test every screen with unusually
+- [x] T68  Mobile long-content strategy — test every screen with unusually
   long content, long names, long questions, long patient messages, long lesson
   titles, and large descriptions; ensure the progressive interaction model
   still works without overflow or broken layout
