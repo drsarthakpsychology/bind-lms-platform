@@ -1,9 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { Send, BookOpen, Loader2, Sparkles } from "lucide-react";
+import { Send, BookOpen, Loader2, Sparkles, Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { VoiceAskButton } from "./voice-ask-button";
 
 /** One retrieved source passage behind an answer. */
 interface TutorSource {
@@ -40,7 +41,33 @@ export function TutorChat() {
   const [messages, setMessages] = React.useState<TutorMessage[]>([]);
   const [input, setInput] = React.useState("");
   const [loading, setLoading] = React.useState(false);
+  const [speaking, setSpeaking] = React.useState(false);
+  const [speakError, setSpeakError] = React.useState<string | null>(null);
   const inputRef = React.useRef<HTMLInputElement>(null);
+
+  /** Read the latest assistant answer aloud (browser speechSynthesis — $0). */
+  function speakAnswer(text: string) {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+      setSpeakError("Text-to-speech isn't supported in this browser.");
+      return;
+    }
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text.replace(/\[[^\]]*\]/g, "").slice(0, 1200));
+    u.lang = "en-IN";
+    u.rate = 1;
+    u.onstart = () => setSpeaking(true);
+    u.onend = () => setSpeaking(false);
+    u.onerror = () => { setSpeaking(false); setSpeakError("Couldn't read the answer aloud."); };
+    setSpeakError(null);
+    window.speechSynthesis.speak(u);
+  }
+
+  function stopSpeaking() {
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+    }
+    setSpeaking(false);
+  }
 
   async function ask(question: string) {
     const q = question.trim();
@@ -132,6 +159,19 @@ export function TutorChat() {
                 </p>
               )}
               <p className="whitespace-pre-wrap">{m.content}</p>
+              {m.role === "assistant" && (
+                <div className="mt-2 flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => (speaking ? stopSpeaking() : speakAnswer(m.content))}
+                    className="inline-flex items-center gap-1 text-caption text-link hover:underline"
+                    aria-label={speaking ? "Stop reading" : "Read this answer aloud"}
+                  >
+                    {speaking ? <VolumeX className="size-3" aria-hidden /> : <Volume2 className="size-3" aria-hidden />}
+                    {speaking ? "Stop" : "Read aloud"}
+                  </button>
+                </div>
+              )}
 
               {m.sources && m.sources.length > 0 && (
                 <div className="mt-3 space-y-2 border-t border-border pt-2">
@@ -168,14 +208,22 @@ export function TutorChat() {
           ref={inputRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about any psychology topic…"
+          placeholder="Ask about any psychology topic… (or press the mic)"
           aria-label="Ask the Psychology Tutor"
           className="min-w-0 flex-1 rounded-md border-2 border-border bg-background px-3 py-2 text-sm outline-none focus:border-link"
+        />
+        <VoiceAskButton
+          onTranscribed={(text) => {
+            setInput(text);
+            ask(text);
+          }}
+          disabled={loading}
         />
         <Button type="submit" size="sm" disabled={loading || !input.trim()} aria-label="Ask">
           <Send className="size-4" aria-hidden />
         </Button>
       </form>
+      {speakError && <p className="px-4 pb-2 text-caption text-destructive">{speakError}</p>}
     </div>
   );
 }
