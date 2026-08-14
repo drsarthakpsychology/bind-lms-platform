@@ -3507,3 +3507,16 @@ matrix, visual comparison, red-team, cognitive-load, E2E — all need a running
 dev server + seeded Supabase + real viewports. Cannot be honestly completed
 from code. Logged to NEEDS_KAVYA; the Playwright matrix spec is ready to run.
 2026-08-14T20:56:46 Continue ceiling reached (50) — allowing stop for safety.
+
+2026-08-14T22:30 Applied the worker's T54-T75 audit priorities (mine-safe set):
+ bf3035c T74 psych-search debounced (fetch/keystroke → 250ms)
+ 4ef80ac fix material viewer — HEAD-check stream URL (was POSTing a dead route;
+         restored ALL document/audio/image previews)
+ fb1e7ef T62/T64 chat auto-scroll reduced-motion gate
+ 7dba06c T61/T64 calibration font-utility bug + drawer/theme 44px
+ 0651657 T61 admin status colors → semantic tokens (4 files, dark-mode safe)
+ cdcc45f T54 enterKeyHint=enter on all 9 student textareas
+ 04882b3 T54 search inputs enterKeyHint=search
+Worker landed in parallel: --nav-h safe-area, MobileStickyAction offsetForNav,
+composer text-base, MobileBottomSheet drag-to-dismiss, assessment-flow back.
+Gate green at 0651657.
