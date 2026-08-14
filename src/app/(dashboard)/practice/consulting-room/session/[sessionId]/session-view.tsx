@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Lightbulb, NotebookPen, Flag } from "lucide-react";
+import { Lightbulb, NotebookPen, Flag, User } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { VoiceInput } from "@/components/practice/voice-input";
 import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
@@ -104,6 +104,7 @@ export function SimSessionView({
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [notesOpen, setNotesOpen] = React.useState(false);
   const [hintOpen, setHintOpen] = React.useState(false);
+  const [caseInfoOpen, setCaseInfoOpen] = React.useState(false);
   const [confirmFinish, setConfirmFinish] = React.useState(false);
   const hintUsedRef = React.useRef(false);
   const [typing, setTyping] = React.useState(false);
@@ -375,6 +376,20 @@ export function SimSessionView({
               <span className="flex-1">Need a hint?</span>
             </button>
 
+            {/* Case info — who you're talking to, one tap away. */}
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false);
+                setCaseInfoOpen(true);
+                haptic("tap");
+              }}
+              className="flex w-full items-center gap-3 rounded-lg border border-border bg-card px-4 py-3 text-left text-small font-medium text-foreground active:translate-y-px"
+            >
+              <User className="size-5 shrink-0 text-link" aria-hidden />
+              <span className="flex-1">About {patientName}</span>
+            </button>
+
             {/* Notes — opens the MSE/hypotheses sheet. */}
             <button
               type="button"
@@ -437,6 +452,29 @@ export function SimSessionView({
         onOpenChange={setHintOpen}
         hint={DIFFICULTY_HINT[difficulty] ?? "Interview the patient."}
       />
+
+      {/* Case info — the patient's context, as far as you know it walking in.
+          Not a dossier: just who they are. (T135 secondary actions in sheets.) */}
+      <MobileBottomSheet
+        open={caseInfoOpen}
+        onOpenChange={setCaseInfoOpen}
+        title={`About ${patientName}`}
+        description="What you know walking in — nothing more."
+      >
+        <dl className="space-y-2.5 text-small">
+          <div className="flex items-baseline justify-between gap-4">
+            <dt className="shrink-0 text-muted-foreground">Age</dt>
+            <dd className="text-right font-medium">{patientAge ? `${patientAge} years` : "—"}</dd>
+          </div>
+          <div className="flex items-baseline justify-between gap-4">
+            <dt className="shrink-0 text-muted-foreground">Background</dt>
+            <dd className="text-right font-medium">{patientContext ?? "—"}</dd>
+          </div>
+          <p className="pt-1 text-caption text-muted-foreground">
+            Everything else, you find out by asking.
+          </p>
+        </dl>
+      </MobileBottomSheet>
     </div>
   );
 }
