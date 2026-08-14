@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useSearchParams } from "next/navigation";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 import { BandDetail } from "./band-detail";
 import { RegisterView } from "./register-view";
 import { ObserverNotes } from "./observer-notes";
@@ -66,6 +67,21 @@ export function DrugBandView({
 
   return (
     <div className="space-y-6">
+      {/* Register toggle lives in the header — its scope is the whole band body
+          (band detail, onset timeline, mechanism register). */}
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded-md border-2 border-border bg-card p-3 hard-shadow-sm">
+        <p className="text-caption font-semibold uppercase text-muted-foreground">Viewing register</p>
+        <SegmentedControl
+          value={mode}
+          onValueChange={setMode}
+          label="Viewing register"
+          options={[
+            { value: "student", label: "Student view" },
+            { value: "clinician", label: "Clinician view" },
+          ]}
+        />
+      </div>
+
       {/* The selected band, first below the ladder. */}
       <BandDetail band={current} register={mode} />
 
@@ -87,7 +103,6 @@ export function DrugBandView({
         source_id=""
         source_title={sourceTitle ?? ""}
         mode={mode}
-        onModeChange={setMode}
       />
 
       <section className="space-y-4 pb-4">

@@ -102,9 +102,6 @@ export default async function ConsultingRoomPage() {
             Real presentations, real language, realistic help-seeking delay. Your debrief will
             show you what you missed.
           </p>
-          <p className="mt-1 text-small text-muted-foreground">
-            Everything here is a simulation. Sessions are private to you and your faculty.
-          </p>
         </div>
         <SimulationBadge />
       </div>
@@ -114,7 +111,6 @@ export default async function ConsultingRoomPage() {
       <div className="mt-8 rounded-md border-2 border-border bg-card p-4">
         <h2 className="text-base font-semibold">Safety first</h2>
         <ul className="mt-2 space-y-1 text-small text-muted-foreground">
-          <li>• Everything here is a <strong>simulation</strong>. The patient is not real.</li>
           <li>• If you&apos;re struggling yourself, this is not the place — reach out to your faculty or a helpline.</li>
           <li>• Your sessions are private to you and your faculty, and are used only for your debrief.</li>
         </ul>

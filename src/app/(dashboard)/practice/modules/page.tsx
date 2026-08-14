@@ -1,7 +1,8 @@
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
-import { Lock, Clock3, CheckCircle2 } from "lucide-react";
+import { Lock, Clock3, CheckCircle2, BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 export const dynamic = "force-dynamic";
 
@@ -45,72 +46,75 @@ export default async function ModulesPage() {
         nothing is hidden from you.
       </p>
 
-      <ul className="mt-6 space-y-3">
-        {(modules ?? []).map((m, i) => {
-          const state = String(m.state);
-          const releaseAt = m.release_at ? new Date(m.release_at) : null;
-          const isReleased = state === "published" && (!releaseAt || releaseAt <= now);
-          const isScheduled = state === "scheduled" || (state === "published" && releaseAt && releaseAt > now);
-          const locked = !isReleased && !granted.has(m.id);
-          const unlockedByGrant = !isReleased && granted.has(m.id);
+      {(modules ?? []).length === 0 ? (
+        <EmptyState
+          compact
+          className="mt-6"
+          icon={<BookOpen className="size-5" aria-hidden />}
+          title="No modules published yet"
+          description="Check back after your course begins."
+        />
+      ) : (
+        <ul className="mt-6 space-y-3">
+          {(modules ?? []).map((m, i) => {
+            const state = String(m.state);
+            const releaseAt = m.release_at ? new Date(m.release_at) : null;
+            const isReleased = state === "published" && (!releaseAt || releaseAt <= now);
+            const isScheduled = state === "scheduled" || (state === "published" && releaseAt && releaseAt > now);
+            const locked = !isReleased && !granted.has(m.id);
+            const unlockedByGrant = !isReleased && granted.has(m.id);
 
-          let reason: string | null = null;
-          if (isScheduled && releaseAt) {
-            const d = releaseAt.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
-            reason = `Opens ${d}`;
-          } else if (state === "draft") {
-            reason = "Being finalised — your faculty will release it closer to the time";
-          } else if (state === "archived") {
-            reason = "Archived for this cohort";
-          }
+            let reason: string | null = null;
+            if (isScheduled && releaseAt) {
+              const d = releaseAt.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+              reason = `Opens ${d}`;
+            } else if (state === "draft") {
+              reason = "Being finalised — your faculty will release it closer to the time";
+            } else if (state === "archived") {
+              reason = "Archived for this cohort";
+            }
 
-          return (
-            <li
-              key={m.id}
-              className={cn(
-                "rounded-md border-2 border-border bg-card p-4",
-                locked && "opacity-60",
-                unlockedByGrant && "border-primary",
-              )}
-            >
-              <div className="flex items-center gap-3">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-muted-foreground">
-                  {locked ? (
-                    <Lock className="size-4" aria-hidden />
-                  ) : isScheduled ? (
-                    <Clock3 className="size-4" aria-hidden />
-                  ) : (
-                    <CheckCircle2 className="size-4 text-green-600" aria-hidden />
-                  )}
-                </span>
-                <div className="min-w-0">
-                  <p className="text-small font-semibold">
-                    {i + 1}. {m.title}
-                  </p>
-                  {locked && reason ? (
-                    <p className="mt-0.5 text-caption text-muted-foreground">
-                      Locked — {reason}
+            return (
+              <li
+                key={m.id}
+                className={cn(
+                  "rounded-md border-2 border-border bg-card p-4",
+                  locked && "opacity-60",
+                  unlockedByGrant && "border-primary",
+                )}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-secondary text-muted-foreground">
+                    {locked ? (
+                      <Lock className="size-4" aria-hidden />
+                    ) : isScheduled ? (
+                      <Clock3 className="size-4" aria-hidden />
+                    ) : (
+                      <CheckCircle2 className="size-4 text-green-600" aria-hidden />
+                    )}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-small font-semibold">
+                      {i + 1}. {m.title}
                     </p>
-                  ) : unlockedByGrant ? (
-                    <p className="mt-0.5 text-caption text-link">Unlocked for you (special grant)</p>
-                  ) : (
-                    <p className="mt-0.5 text-caption text-muted-foreground">
-                      {isScheduled ? "Scheduled — coming soon" : "Open — dive in"}
-                    </p>
-                  )}
+                    {locked && reason ? (
+                      <p className="mt-0.5 text-caption text-muted-foreground">
+                        Locked — {reason}
+                      </p>
+                    ) : unlockedByGrant ? (
+                      <p className="mt-0.5 text-caption text-link">Unlocked for you (special grant)</p>
+                    ) : (
+                      <p className="mt-0.5 text-caption text-muted-foreground">
+                        {isScheduled ? "Scheduled — coming soon" : "Open — dive in"}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </li>
-          );
-        })}
-        {(modules ?? []).length === 0 ? (
-          <li className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center">
-            <p className="text-small text-muted-foreground">
-              No modules published yet — check back after your course begins.
-            </p>
-          </li>
-        ) : null}
-      </ul>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 }

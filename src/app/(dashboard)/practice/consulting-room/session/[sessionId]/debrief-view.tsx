@@ -255,7 +255,7 @@ export function DebriefView({
         </p>
         <ul className="mt-4 space-y-4">
           {quotes.map((q, i) => (
-            <li key={i} className="rounded-md border border-border bg-background p-3">
+            <li key={i} className="p-3">
               <p className="text-small">
                 <span className="font-semibold text-muted-foreground">You said: </span>
                 <span className="italic">{q.quote}</span>
@@ -312,7 +312,7 @@ export function DebriefView({
               </li>
             ) : (
               missed.map((m, i) => (
-                <li key={i} className="flex gap-2 rounded-md border border-border bg-background p-3 text-small">
+                <li key={i} className="flex gap-2 p-3 text-small">
                   <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-muted-foreground" aria-hidden />
                   <span className="italic">{m}</span>
                 </li>
@@ -347,7 +347,7 @@ export function DebriefView({
 
 function Stat({ label, value, warn, hint }: { label: string; value: string; warn?: boolean; hint?: string }) {
   return (
-    <div className={`rounded-md border-2 border-border p-3 ${warn ? "bg-amber-50" : "bg-background"}`}>
+    <div className={`p-3 ${warn ? "rounded-md bg-amber-50" : ""}`}>
       <p className="text-caption text-muted-foreground">{label}</p>
       <p className="mt-0.5 text-base font-semibold text-numeric">{value}</p>
       {hint ? <p className="mt-1 text-caption text-muted-foreground">{hint}</p> : null}
@@ -379,7 +379,7 @@ function ProvisionalAwareStat({
 }) {
   if (provisional?.includes(dim)) {
     return (
-      <div className="rounded-md border-2 border-dashed border-border bg-background p-3">
+      <div className="p-3">
         <p className="text-caption text-muted-foreground">{label}</p>
         <p className="mt-0.5 text-base font-semibold">Being calibrated</p>
         <p className="mt-1 text-caption text-muted-foreground">{hint}</p>
@@ -418,7 +418,7 @@ function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; curre
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         {/* attempt 1 */}
-        <div className="rounded-md border-2 border-border bg-background p-4">
+        <div className="p-4">
           <p className="text-caption font-semibold text-muted-foreground">Attempt 1 · turn {branchedFromTurn}</p>
           {attempt1Student ? (
             <p className="mt-2 text-small italic">
@@ -438,7 +438,7 @@ function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; curre
         </div>
 
         {/* attempt 2 */}
-        <div className="rounded-md border-2 border-primary bg-primary/5 p-4">
+        <div className="rounded-md bg-primary/5 p-4">
           <p className="text-caption font-semibold text-link">Attempt 2 · your rewind</p>
           <p className="mt-2 text-small text-muted-foreground">
             This session is your re-attempt from the same point. The patient you just

@@ -107,7 +107,7 @@ export default async function AdminOverviewPage() {
             <p className="mt-1 text-caption text-muted-foreground">Students with no progress so far.</p>
             <ul className="mt-2 space-y-1 text-small text-muted-foreground">
               {(inactiveStudents ?? []).slice(0, 8).map((s) => (
-                <li key={s.id} className="truncate">{s.email ?? "no email"}</li>
+                <li key={s.id} className="break-all">{s.email ?? "no email"}</li>
               ))}
               {(inactiveStudents ?? []).length === 0 && <li>Everyone has started.</li>}
             </ul>
@@ -125,7 +125,7 @@ export default async function AdminOverviewPage() {
               {(ungraded ?? []).slice(0, 8).map((s) => {
                 const p = Array.isArray(s.profiles) ? s.profiles[0] : s.profiles;
                 return (
-                  <li key={s.id} className="truncate">
+                  <li key={s.id} className="break-all">
                     {(p as { email?: string } | null)?.email ?? "student"}
                   </li>
                 );

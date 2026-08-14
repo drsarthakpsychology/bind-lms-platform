@@ -3,6 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { Eye, Send } from "lucide-react";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 interface WallPost {
   id: string;
@@ -99,9 +100,12 @@ export function PeerWall() {
 
       {/* wall */}
       {loaded && posts.length === 0 ? (
-        <p className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center text-small text-muted-foreground">
-          No formulations on the wall yet — be the first to share one.
-        </p>
+        <EmptyState
+          row
+          icon={<Send className="size-4" aria-hidden />}
+          title="No formulations on the wall yet"
+          description="Be the first to share one."
+        />
       ) : (
         <ul className="space-y-3">
           {posts.map((p) => (

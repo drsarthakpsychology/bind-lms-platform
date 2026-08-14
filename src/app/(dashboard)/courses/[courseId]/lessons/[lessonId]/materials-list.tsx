@@ -55,7 +55,7 @@ function MaterialCard({
           <Link2 className="size-4" aria-hidden />
         </span>
         <div className="min-w-0 flex-1">
-          <p className="truncate text-small font-medium text-foreground">{material.title}</p>
+          <p className="line-clamp-2 text-small font-medium text-foreground">{material.title}</p>
           <p className="truncate text-caption text-muted-foreground">{material.url}</p>
         </div>
         <Button asChild variant="secondary" size="sm">
@@ -77,7 +77,7 @@ function MaterialCard({
         <div className="min-w-0 flex-1">
           <Link
             href={viewHref}
-            className="block truncate text-small font-medium text-foreground transition-colors hover:text-link"
+            className="block line-clamp-2 text-small font-medium text-foreground transition-colors hover:text-link"
           >
             {material.title}
           </Link>

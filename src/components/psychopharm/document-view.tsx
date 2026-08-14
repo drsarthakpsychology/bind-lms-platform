@@ -48,7 +48,7 @@ export function DocumentView({
   onSource?: (block: MedBlock) => void;
 }) {
   return (
-    <div className="space-y-6">
+    <div className={`space-y-6${editable ? "" : " rounded-md border-2 border-border p-4 sm:p-5"}`}>
       {document.sections.map((section) => (
         <EditableSection
           key={section.id}
@@ -281,7 +281,7 @@ function EditableBlock({
     setV(block.value);
   }
 
-  if (!editable) return <div className="rounded-md border-2 border-border p-3">{children}</div>;
+  if (!editable) return <>{children}</>;
 
   if (editing) {
     return (

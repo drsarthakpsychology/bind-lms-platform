@@ -373,6 +373,26 @@ function equivalenceFor(drug: string): string | undefined {
   return undefined;
 }
 
+/** A drug's class, from curated or enriched records (no KB file read). */
+export function drugClass(drug: string): string | undefined {
+  return ALL_DRAFT.find((d) => d.generic_name === drug)?.drug_class ?? ENRICHED.get(drug)?.drug_class;
+}
+
+/** Suggested comparators for the compare page: other drugs in the same class. */
+export function sameClassDrugs(drug: string, limit = 8): string[] {
+  const cls = drugClass(drug);
+  if (!cls) return [];
+  const out: string[] = [];
+  for (const name of drugList()) {
+    if (name === drug) continue;
+    if (drugClass(name) === cls) {
+      out.push(name);
+      if (out.length >= limit) break;
+    }
+  }
+  return out;
+}
+
 /** Learning layer: drugs grouped by shared receptor tag (Part 10). */
 export interface MechanismGroup {
   tag: string;

@@ -3,6 +3,7 @@
 import * as React from "react";
 import { BadgeCheck, Award } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { StatCard } from "@/components/design-system/stat-card";
 
 export interface PassportRow {
   key: string;
@@ -41,10 +42,10 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
   return (
     <div className="space-y-6">
       {/* summary */}
-      <div className="grid grid-cols-3 gap-3">
-        <Stat label="Competencies touched" value={`${done}/${rows.length}`} />
-        <Stat label="Evidence entries" value={String(evid)} />
-        <Stat label="Logged hours" value={`${hours.toFixed(1)}h`} />
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <StatCard label="Competencies touched" value={`${done}/${rows.length}`} />
+        <StatCard label="Evidence entries" value={String(evid)} />
+        <StatCard label="Logged hours" value={`${hours.toFixed(1)}h`} />
       </div>
 
       {/* competency grid */}
@@ -103,15 +104,6 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
         Evidence accumulates from sim sessions, SCT, formulation, MSE, OSCE, and supervision. Your
         signed-off hours here underpin the certificate appendix.
       </p>
-    </div>
-  );
-}
-
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-md border-2 border-border bg-card p-4">
-      <p className="text-caption text-muted-foreground">{label}</p>
-      <p className="text-numeric text-base font-semibold">{value}</p>
     </div>
   );
 }

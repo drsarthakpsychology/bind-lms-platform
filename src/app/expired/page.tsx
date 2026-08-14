@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ExpiredPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background px-5 py-8">
+    <div className="flex min-h-dvh flex-col bg-background px-5 py-8">
       <div className="flex items-center justify-between">
         <VibhaWordmark size={30} />
       </div>
@@ -28,11 +28,9 @@ export default function ExpiredPage() {
               believe this is a mistake.
             </p>
           </div>
-          <div className="rounded-lg border-2 border-foreground bg-card p-6 hard-shadow-md">
-            <Button asChild variant="outline" className="w-full">
-              <Link href="/login">Back to sign in</Link>
-            </Button>
-          </div>
+          <Button asChild variant="outline" className="w-full">
+            <Link href="/login">Back to sign in</Link>
+          </Button>
         </div>
       </div>
     </div>

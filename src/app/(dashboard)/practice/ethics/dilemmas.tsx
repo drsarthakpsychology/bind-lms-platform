@@ -88,7 +88,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
           <button
             type="button"
             onClick={next}
-            disabled={idx + 1 >= dilemmas.length && correct}
+            disabled={!done}
             className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
           >
             {idx + 1 < dilemmas.length ? "Next dilemma" : "Done"}

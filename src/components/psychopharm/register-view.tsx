@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { SegmentedControl } from "@/components/ui/segmented-control";
 
 /**
  * Dual-register view: Student (plain) vs Clinician (technical + evidence).
@@ -9,7 +8,7 @@ import { SegmentedControl } from "@/components/ui/segmented-control";
  * register mode is lifted up (controlled by the parent) so the band detail
  * panel can show the clinician evidence block when in clinician mode.
  *
- * The dose list itself lives in the DoseLadder (single source of truth); this
+ * The toggle lives in the parent header (where its scope is clear); this
  * component renders the mechanism in two registers only.
  */
 export function RegisterView({
@@ -18,27 +17,15 @@ export function RegisterView({
   source_id,
   source_title,
   mode,
-  onModeChange,
 }: {
   plain?: string;
   mechanism?: string;
   source_id: string;
   source_title: string;
   mode: "student" | "clinician";
-  onModeChange: (m: "student" | "clinician") => void;
 }) {
   return (
     <div className="space-y-4">
-      <SegmentedControl
-        value={mode}
-        onValueChange={onModeChange}
-        label="Viewing register"
-        options={[
-          { value: "student", label: "Student view" },
-          { value: "clinician", label: "Clinician view" },
-        ]}
-      />
-
       <p className="text-caption text-muted-foreground">
         {mode === "student"
           ? "Plain language, for first contact with a drug."

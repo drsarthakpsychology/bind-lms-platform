@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
-import { Share2, Ban } from "lucide-react";
+import { Share2, Ban, NotebookPen } from "lucide-react";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 interface JournalEntry {
   id: string;
@@ -196,9 +197,12 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       <div>
         <h2 className="text-base font-semibold">Your entries</h2>
         {entries.length === 0 ? (
-          <p className="mt-2 text-small text-muted-foreground">
-            Nothing here yet. The first entry is the hardest and the most useful.
-          </p>
+          <EmptyState
+            row
+            icon={<NotebookPen className="size-4" aria-hidden />}
+            title="Nothing here yet"
+            description="The first entry is the hardest and the most useful."
+          />
         ) : (
           <ul className="mt-3 space-y-3">
             {entries.map((e) => (

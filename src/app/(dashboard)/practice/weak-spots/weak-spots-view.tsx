@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { ArrowRight, AlertTriangle, CheckCircle2 } from "lucide-react";
 import type { WeakSpot } from "@/lib/practice/weak-spots";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 /**
  * Weak-spots view — the student's ranked gaps across sim debriefs, each with
@@ -12,25 +13,23 @@ import type { WeakSpot } from "@/lib/practice/weak-spots";
 export function WeakSpotsView({ spots, sessions }: { spots: WeakSpot[]; sessions: number }) {
   if (sessions === 0) {
     return (
-      <div className="rounded-md border-2 border-border bg-card p-6 text-center">
-        <p className="text-base font-medium">No sessions scored yet</p>
-        <p className="mt-1 text-small text-muted-foreground">
-          Run the Consulting Room and finish a debrief — your weak spots surface here.
-        </p>
-      </div>
+      <EmptyState
+        compact
+        icon={<AlertTriangle className="size-6" aria-hidden />}
+        title="No sessions scored yet"
+        description="Run the Consulting Room and finish a debrief — your weak spots surface here."
+      />
     );
   }
 
   if (spots.length === 0) {
     return (
-      <div className="rounded-md border-2 border-border bg-card p-6 text-center">
-        <CheckCircle2 className="mx-auto size-8 text-green-600" aria-hidden />
-        <p className="mt-2 text-base font-medium">No consistent weak spots</p>
-        <p className="mt-1 text-small text-muted-foreground">
-          Across {sessions} scored session{sessions === 1 ? "" : "s"}, no skill stands out as missed.
-          Keep drilling in the Consulting Room.
-        </p>
-      </div>
+      <EmptyState
+        compact
+        icon={<CheckCircle2 className="size-6" aria-hidden />}
+        title="No consistent weak spots"
+        description={`Across ${sessions} scored session${sessions === 1 ? "" : "s"}, no skill stands out as missed. Keep drilling in the Consulting Room.`}
+      />
     );
   }
 

@@ -7,7 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
  */
 export default function VerifyLoading() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-5">
+    <div className="flex min-h-dvh items-center justify-center bg-background px-5">
       <div className="w-full max-w-md rounded-lg border border-border bg-card hard-shadow-md">
         <div className="space-y-3 p-6 text-center">
           <Skeleton className="mx-auto h-6 w-48" />

@@ -238,7 +238,7 @@ export function OsceStationView() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
         <div className="rounded-md border-2 border-border bg-background p-3">
           <p className="text-caption text-muted-foreground">Checklist</p>
           <p className="mt-0.5 text-base font-semibold text-numeric">{Math.round(frac * 100)}%</p>

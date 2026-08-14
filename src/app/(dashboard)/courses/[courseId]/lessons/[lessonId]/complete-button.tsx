@@ -27,6 +27,7 @@ export function CompleteButton({
   label,
   isFinalLesson,
   alreadyComplete,
+  className,
 }: {
   lessonId: string;
   courseId: string;
@@ -34,6 +35,7 @@ export function CompleteButton({
   label: string;
   isFinalLesson: boolean;
   alreadyComplete?: boolean;
+  className?: string;
 }) {
   const [isPending, startTransition] = useTransition();
 
@@ -56,6 +58,7 @@ export function CompleteButton({
       variant={alreadyComplete ? "secondary" : "default"}
       disabled={isPending}
       onClick={onClick}
+      className={className}
     >
       {label}
       <ArrowRight className="size-4" aria-hidden />

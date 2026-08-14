@@ -1,7 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { ClipboardList } from "lucide-react";
 import { haptic } from "@/lib/haptics";
+import { StatCard } from "@/components/design-system/stat-card";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 export interface SupervisionEntry {
   id: string;
@@ -111,14 +114,8 @@ export function SupervisionLog({
     <div className="space-y-6">
       {/* summary */}
       <div className="grid grid-cols-2 gap-3">
-        <div className="rounded-md border-2 border-border bg-card p-4">
-          <p className="text-caption text-muted-foreground">Total logged</p>
-          <p className="text-numeric text-h2 font-semibold">{totalHours.toFixed(1)}h</p>
-        </div>
-        <div className="rounded-md border-2 border-border bg-card p-4">
-          <p className="text-caption text-muted-foreground">Signed off</p>
-          <p className="text-numeric text-h2 font-semibold">{signedHours.toFixed(1)}h</p>
-        </div>
+        <StatCard label="Total logged" value={`${totalHours.toFixed(1)}h`} />
+        <StatCard label="Signed off" value={`${signedHours.toFixed(1)}h`} />
       </div>
 
       {/* log form */}
@@ -217,9 +214,12 @@ export function SupervisionLog({
 
       {/* history */}
       {entries.length === 0 ? (
-        <p className="text-small text-muted-foreground">
-          No supervision hours logged yet. RCI-track supervision hours build your passport.
-        </p>
+        <EmptyState
+          row
+          icon={<ClipboardList className="size-4" aria-hidden />}
+          title="No supervision hours logged yet"
+          description="RCI-track supervision hours build your passport."
+        />
       ) : (
         <ul className="space-y-2">
           {entries.map((e) => {
@@ -227,7 +227,7 @@ export function SupervisionLog({
             return (
               <li key={e.id} className="flex items-center justify-between gap-3 rounded-md border-2 border-border bg-card px-4 py-3">
                 <div className="min-w-0">
-                  <p className="truncate text-small font-medium">{e.activity}</p>
+                  <p className="line-clamp-2 text-small font-medium">{e.activity}</p>
                   <p className="text-caption text-muted-foreground">
                     {e.date} · {e.hours}h{e.supervisorName ? ` · ${e.supervisorName}` : ""}
                     {e.competencyName ? ` · ${e.competencyName}` : ""}

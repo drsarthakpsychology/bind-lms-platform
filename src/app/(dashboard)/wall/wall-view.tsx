@@ -3,7 +3,9 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
-import { Heart, Lightbulb, HelpCircle, PartyPopper, AlertTriangle, Pin } from "lucide-react";
+import { Heart, Lightbulb, HelpCircle, PartyPopper, AlertTriangle, Pin, MessageCircle } from "lucide-react";
+import { toast } from "sonner";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 interface WallReply {
   id: string;
@@ -49,6 +51,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
   const [replyText, setReplyText] = React.useState("");
   const [replyAnon, setReplyAnon] = React.useState(false);
   const [replying, setReplying] = React.useState(false);
+  const composerRef = React.useRef<HTMLTextAreaElement>(null);
 
   async function post(e: React.FormEvent) {
     e.preventDefault();
@@ -162,7 +165,10 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ postId, content: replyText.trim(), isAnonymous: replyAnon }),
       });
-      if (!res.ok) return;
+      if (!res.ok) {
+        toast.error("Could not post your reply. Please try again.");
+        return;
+      }
       const j = (await res.json()) as { id: string };
       setPosts((prev) => prev.map((p) => {
         if (p.id !== postId) return p;
@@ -178,7 +184,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
       setReplyOpen(null);
       haptic("success");
     } catch {
-      /* ignore */
+      toast.error("Network error. Could not post your reply.");
     } finally {
       setReplying(false);
     }
@@ -189,6 +195,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
       {/* composer */}
       <form onSubmit={post} className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
         <textarea
+          ref={composerRef}
           value={content}
           onChange={(e) => setContent(e.target.value)}
           rows={3}
@@ -220,9 +227,21 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
       {/* posts */}
       <div>
         {posts.length === 0 ? (
-          <p className="text-small text-muted-foreground">
-            Nothing here yet. Be the first to break the ice.
-          </p>
+          <EmptyState
+            compact
+            icon={<MessageCircle className="size-5" aria-hidden />}
+            title="Nothing here yet"
+            description="Be the first to break the ice."
+            action={
+              <button
+                type="button"
+                onClick={() => composerRef.current?.focus()}
+                className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+              >
+                Write the first post
+              </button>
+            }
+          />
         ) : (
           <ul className="space-y-3">
             {posts.map((p) => (
@@ -237,7 +256,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                       type="button"
                       onClick={() => void togglePin(p.id, p.isPinned)}
                       className={cn(
-                        "ml-auto rounded-full border px-2 py-0.5 transition-transform active:translate-y-px",
+                        "ml-auto min-h-11 rounded-full border px-3 transition-transform active:translate-y-px",
                         p.isPinned ? "border-primary bg-primary/10 text-link" : "border-border hover:bg-secondary",
                       )}
                       title={p.isPinned ? "Unpin (remove from top)" : "Pin as the Case of the Week"}
@@ -254,7 +273,6 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                     const Icon = r.icon;
                     const count = p.reactions?.[r.key] ?? 0;
                     const mine = myReactions[p.id]?.has(r.key) ?? false;
-                    if (count === 0 && !mine) return null;
                     return (
                       <button
                         key={r.key}
@@ -262,17 +280,17 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                         onClick={() => void toggleReaction({ postId: p.id }, r.key)}
                         aria-pressed={mine}
                         aria-label={`${r.label} reaction, ${count}`}
-                        className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                        className={`inline-flex min-h-11 items-center gap-1 rounded-full border px-3 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
                       >
                         <Icon className="size-3" aria-hidden />
-                        {count}
+                        {count > 0 ? count : null}
                       </button>
                     );
                   })}
                   <button
                     type="button"
                     onClick={() => { setReplyOpen(replyOpen === p.id ? null : p.id); haptic("tap"); }}
-                    className="rounded-full border border-border px-2 py-0.5 text-caption text-muted-foreground hover:bg-secondary"
+                    className="min-h-11 rounded-full border border-border px-3 text-caption text-muted-foreground hover:bg-secondary"
                   >
                     Reply
                   </button>
@@ -281,7 +299,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                     onClick={() => void reportPost(p.id)}
                     title="Report this post to faculty"
                     aria-label="Report this post to faculty"
-                    className="rounded-full border border-border px-2 py-0.5 text-caption text-muted-foreground hover:bg-secondary"
+                    className="min-h-11 rounded-full border border-border px-3 text-caption text-muted-foreground hover:bg-secondary"
                   >
                     Report
                   </button>
@@ -303,7 +321,6 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                             const Icon = rr.icon;
                             const count = r.reactions?.[rr.key] ?? 0;
                             const mine = myReactions[r.id]?.has(rr.key) ?? false;
-                            if (count === 0 && !mine) return null;
                             return (
                               <button
                                 key={rr.key}
@@ -311,10 +328,10 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                                 onClick={() => void toggleReaction({ replyId: r.id }, rr.key)}
                                 aria-pressed={mine}
                                 aria-label={`${rr.label} reaction, ${count}`}
-                                className={`inline-flex items-center gap-1 rounded-full border px-1.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                                className={`inline-flex min-h-9 items-center gap-1 rounded-full border px-2.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
                               >
                                 <Icon className="size-3" aria-hidden />
-                                {count}
+                                {count > 0 ? count : null}
                               </button>
                             );
                           })}

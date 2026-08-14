@@ -284,7 +284,9 @@ export default async function LessonPage({
         </section>
       )}
 
-      {/* Footer: prev + a single forward action. Exactly one forward button. */}
+      {/* Footer: prev + a single forward action. Exactly one forward button.
+          On mobile the forward action moves to a sticky bar above the tab bar
+          (it would otherwise sit below the video + quiz, out of thumb reach). */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         {prevLesson ? (
           <Button asChild variant="outline" size="sm">
@@ -295,6 +297,20 @@ export default async function LessonPage({
           </Button>
         ) : null}
 
+        <div className="hidden lg:block">
+          <ContinueControl
+            lessonId={lessonId}
+            courseId={courseId}
+            continueTarget={continueTarget}
+            label={forwardLabel}
+            isFinalLesson={!nextLesson}
+            alreadyComplete={lastLessonCompleted}
+          />
+        </div>
+      </div>
+
+      {/* Mobile: sticky forward action above the bottom tab bar (safe-area aware). */}
+      <div className="sticky bottom-[calc(env(safe-area-inset-bottom)+4.5rem)] z-30 rounded-lg border-2 border-border bg-card p-3 hard-shadow-sm lg:hidden">
         <ContinueControl
           lessonId={lessonId}
           courseId={courseId}
@@ -302,6 +318,7 @@ export default async function LessonPage({
           label={forwardLabel}
           isFinalLesson={!nextLesson}
           alreadyComplete={lastLessonCompleted}
+          className="w-full justify-between"
         />
       </div>
 
@@ -419,6 +436,7 @@ function ContinueControl({
   label,
   isFinalLesson,
   alreadyComplete,
+  className,
 }: {
   lessonId: string;
   courseId: string;
@@ -426,6 +444,7 @@ function ContinueControl({
   label: string;
   isFinalLesson: boolean;
   alreadyComplete?: boolean;
+  className?: string;
 }) {
   return (
     <CompleteButton
@@ -435,6 +454,7 @@ function ContinueControl({
       label={label}
       isFinalLesson={isFinalLesson}
       alreadyComplete={alreadyComplete}
+      className={className}
     />
   );
 }

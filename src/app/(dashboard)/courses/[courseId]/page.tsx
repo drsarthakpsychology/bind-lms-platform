@@ -213,28 +213,23 @@ export default async function CourseOverviewPage({
             <details
               key={weekNum}
               open={weekOpen}
-              className={cn(
-                "group rounded-lg border-2 p-4 transition-colors",
-                isCurrentWeek && "border-primary bg-primary/5",
-                isPastWeek && weekComplete && "border-foreground/20 bg-background",
-                isFutureWeek && "border-border/50 bg-background/50",
-              )}
+              className="group space-y-3"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span
                     aria-hidden
                     className={cn(
-                      "flex size-8 shrink-0 items-center justify-center rounded-md border-2 text-small font-bold",
-                      isCurrentWeek && "border-primary bg-primary text-primary-foreground",
-                      isPastWeek && weekComplete && "border-foreground bg-primary text-primary-foreground",
-                      isFutureWeek && "border-border bg-muted text-muted-foreground",
+                      "flex size-8 shrink-0 items-center justify-center rounded-md text-small font-bold",
+                      isCurrentWeek && "bg-primary text-primary-foreground",
+                      isPastWeek && weekComplete && "bg-primary text-primary-foreground",
+                      isFutureWeek && "bg-muted text-muted-foreground",
                     )}
                   >
                     {isPastWeek && weekComplete ? <CheckCircle2 className="size-4" /> : <span>Week {weekNum}</span>}
                  </span>
                   <div>
-                    <h3 className={cn("text-h3", isFutureWeek && "text-muted-foreground")}>
+                    <h3 className={cn("text-eyebrow", isFutureWeek && "text-muted-foreground")}>
                       Week {weekNum}
                    </h3>
                     <p className="text-caption text-muted-foreground">
@@ -276,10 +271,10 @@ export default async function CourseOverviewPage({
                       <span
                         aria-hidden
                         className={cn(
-                          "flex size-8 shrink-0 items-center justify-center rounded-md border-2",
-                          done && "border-foreground bg-primary text-primary-foreground",
+                          "flex size-8 shrink-0 items-center justify-center rounded-md",
+                          done && "bg-primary text-primary-foreground",
                           isNextAction && !done && "ring-2 ring-primary",
-                          !done && !isNextAction && "border-border bg-accent text-foreground",
+                          !done && !isNextAction && "bg-accent text-foreground",
                         )}
                       >
                         {done ? (
@@ -292,7 +287,7 @@ export default async function CourseOverviewPage({
                      </span>
 
                       <span className="min-w-0 flex-1">
-                        <span className="block truncate text-small font-medium text-foreground">{lesson.title}</span>
+                        <span className="block line-clamp-2 text-small font-medium text-foreground">{lesson.title}</span>
                         <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-caption text-muted-foreground">
                           {!done && !isNextAction && <span>Not watched yet</span>}
                           {isNextAction && <span className="font-medium text-link">← Start here</span>}
@@ -331,7 +326,7 @@ export default async function CourseOverviewPage({
                   const materialContent = (
                     <>
                       <BookOpen className="size-4 shrink-0 text-muted-foreground" aria-hidden />
-                      <span className="min-w-0 flex-1 truncate text-small font-medium">{m.title}</span>
+                      <span className="min-w-0 flex-1 line-clamp-2 text-small font-medium">{m.title}</span>
                       <span className="text-caption text-muted-foreground">
                         {m.format?.toUpperCase() ?? m.kind}
                      </span>
@@ -360,11 +355,11 @@ export default async function CourseOverviewPage({
                   );
                   const assignmentContent = (
                     <>
-                      <span className="flex size-8 shrink-0 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground">
+                      <span className="flex size-8 shrink-0 items-center justify-center rounded-md bg-accent text-foreground">
                         <FileText className="size-4" aria-hidden />
                      </span>
                       <div className="min-w-0 flex-1">
-                        <p className="truncate text-small font-medium">{a.title ?? "Assignment"}</p>
+                        <p className="line-clamp-2 text-small font-medium">{a.title ?? "Assignment"}</p>
                         <p className="truncate text-caption text-muted-foreground">
                           {a.lessonTitle}
                           {a.due_at ? ` · due ${new Date(a.due_at).toLocaleDateString()}` : ""}

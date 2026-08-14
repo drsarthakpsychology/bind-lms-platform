@@ -1,10 +1,12 @@
 "use client";
 
 import * as React from "react";
+import { Mic } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { scoreMseCode, summarizeMseScore } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 interface TurnLine {
   role: "student" | "patient";
@@ -28,6 +30,11 @@ const DOMAINS = [
   "appearance", "behavior", "speech", "mood", "affect", "thought_process",
   "thought_content", "perception", "cognition", "insight", "judgment",
 ] as const;
+
+/** Humanise an MSE domain key ("thought_process" → "Thought process"). */
+function domainLabel(d: string) {
+  return d.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase());
+}
 
 /**
  * MSE Level 5 — MSE from live interview. The student's own completed
@@ -162,11 +169,12 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
       ) : error ? (
         <p className="text-small text-red-700" role="alert">{error}</p>
       ) : !data || data.count === 0 ? (
-        <div className="rounded-md border border-border bg-background p-4 text-small text-muted-foreground">
-          You don&apos;t have a completed Consulting Room session yet. Run one
-          first — the whole point of Level 5 is writing the MSE from a patient
-          you actually talked to.
-        </div>
+        <EmptyState
+          compact
+          icon={<Mic className="size-6" aria-hidden />}
+          title="No completed session yet"
+          description="Run a Consulting Room session first — Level 5 is writing the MSE from a patient you actually talked to."
+        />
       ) : (
         <>
           {/* Session selector */}
@@ -207,7 +215,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {DOMAINS.map((d) => (
                 <label key={d} className="block">
-                  <span className="text-caption font-semibold text-muted-foreground">{d}</span>
+                  <span className="text-caption font-semibold text-muted-foreground">{domainLabel(d)}</span>
                   <input
                     value={rawText[d] ?? ""}
                     onChange={(e) => setDomain(d, e.target.value)}
@@ -258,7 +266,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
                           v === "red" && "border-red-400 bg-red-50 text-red-800",
                         )}
                       >
-                        <span className="w-28 shrink-0 font-semibold">{d}</span>
+                        <span className="w-20 shrink-0 font-semibold sm:w-28">{domainLabel(d)}</span>
                         <span className="flex-1">
                           <span className="font-medium">You: </span>
                           {student.length ? student.join(", ") : "(none)"}

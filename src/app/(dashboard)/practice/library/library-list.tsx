@@ -4,6 +4,8 @@ import * as React from "react";
 import { Search, StickyNote } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { haptic } from "@/lib/haptics";
+import { toast } from "sonner";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 interface NoteState {
   own: string;
@@ -44,7 +46,10 @@ export function LibraryList({
     if (notes[docId]?.loaded) return;
     try {
       const res = await fetch(`/api/practice/library/note?documentId=${docId}`);
-      if (!res.ok) return;
+      if (!res.ok) {
+        toast.error("Could not load notes for this case.");
+        return;
+      }
       const j = (await res.json()) as {
         own: { id: string; note: string; createdAt: string } | null;
         peers: Array<{ id: string; note: string; createdAt: string }>;
@@ -60,7 +65,7 @@ export function LibraryList({
         },
       }));
     } catch {
-      /* ignore */
+      toast.error("Could not load notes for this case.");
     }
   }
 
@@ -74,12 +79,17 @@ export function LibraryList({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ documentId: docId, note: noteDraft[docId] ?? "" }),
       });
-      if (!res.ok) return;
+      if (!res.ok) {
+        toast.error("Could not save your note. Please try again.");
+        return;
+      }
       haptic("success");
       setNotes((n) => ({ ...n, [docId]: { ...(n[docId] ?? { peers: [], unlocked: false, loaded: true }), own: noteDraft[docId] ?? "", unlocked: true } }));
       // Reload so peers' notes unlock.
       setNotes((n) => { const next = { ...n }; delete next[docId]; return next; });
       void loadNotes(docId);
+    } catch {
+      toast.error("Network error. Could not save your note.");
     } finally {
       setSavingNote(null);
     }
@@ -107,12 +117,12 @@ export function LibraryList({
       </form>
 
       {docs.length === 0 ? (
-        <div className="rounded-md border-2 border-border bg-card p-6 text-center">
-          <p className="text-base font-medium">No matches</p>
-          <p className="mt-1 text-small text-muted-foreground">
-            Try a condition, a symptom, or a drug name.
-          </p>
-        </div>
+        <EmptyState
+          compact
+          icon={<Search className="size-5" aria-hidden />}
+          title="No matches"
+          description="Try a condition, a symptom, or a drug name."
+        />
       ) : (
         <>
           <p className="text-caption text-muted-foreground">
@@ -150,7 +160,7 @@ export function LibraryList({
                       </a>
 
                       {/* annotation — your note unlocks peers' */}
-                      <div className="mt-3 rounded-md border border-border bg-background p-3">
+                      <div className="mt-3 border-t border-border pt-3">
                         <p className="flex items-center gap-1.5 text-caption font-semibold text-muted-foreground">
                           <StickyNote className="size-3.5" aria-hidden /> Your note
                         </p>

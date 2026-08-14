@@ -10,6 +10,11 @@ import type { MseDomainKey } from "@/lib/mse/ladder";
 
 const TEN_MINUTES = 10 * 60;
 
+/** Humanise an MSE domain key ("thought_process" → "Thought process"). */
+function domainLabel(d: string) {
+  return d.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase());
+}
+
 /**
  * MSE Level 4 — Full MSE under time. Ten minutes to write the complete MSE
  * for a vignette, scored green/amber/red per domain against the expert code.
@@ -132,7 +137,7 @@ export function FullMseLevel({
           >
             {MSE_DOMAIN_ORDER.map((d) => (
               <label key={d} className="block">
-                <span className="text-caption font-semibold text-muted-foreground">{d}</span>
+                <span className="text-caption font-semibold text-muted-foreground">{domainLabel(d)}</span>
                 <input
                   value={rawText[d] ?? ""}
                   onChange={(e) => setDomain(d, e.target.value)}
@@ -169,7 +174,7 @@ export function FullMseLevel({
                     v === "amber" && "border-amber-400 bg-amber-50 text-amber-800",
                     v === "red" && "border-red-400 bg-red-50 text-red-800",
                   )}>
-                    <span className="font-semibold w-28 shrink-0">{d}</span>
+                    <span className="w-20 shrink-0 font-semibold sm:w-28">{domainLabel(d)}</span>
                     <span className="flex-1">
                       <span className="font-medium">You: </span>
                       {student.length ? student.join(", ") : "(none)"}

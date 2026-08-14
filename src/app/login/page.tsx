@@ -20,7 +20,7 @@ export default async function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-background px-5 py-8">
+    <div className="flex min-h-dvh flex-col bg-background px-5 py-8">
       <div className="flex items-center justify-between">
         <VibhaWordmark size={30} />
         <ThemeToggle />

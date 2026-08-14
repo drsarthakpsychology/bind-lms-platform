@@ -7,6 +7,7 @@ import { haptic } from "@/lib/haptics";
 import { VoiceInput } from "@/components/practice/voice-input";
 import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
 import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { DebriefView } from "./debrief-view";
 
 interface Turn {
@@ -37,6 +38,53 @@ const DIFFICULTY_HINT: Record<string, string> = {
   resistant: "This patient does not want to be here. Roll with the resistance.",
   crisis: "This patient is in crisis. Risk assessment comes first.",
 };
+
+/**
+ * The MSE scratchpad + working hypotheses — blank by design (what the student
+ * writes is half the assessment). Rendered both in the desktop side rail and,
+ * on small screens, the bottom sheet.
+ */
+function NotesFields({
+  mseNotes,
+  onMseNotesChange,
+  hypotheses,
+  onHypothesesChange,
+}: {
+  mseNotes: string;
+  onMseNotesChange: (value: string) => void;
+  hypotheses: string;
+  onHypothesesChange: (value: string) => void;
+}) {
+  return (
+    <>
+      <div>
+        <p className="text-eyebrow text-muted-foreground">MSE scratchpad</p>
+        <textarea
+          value={mseNotes}
+          onChange={(e) => onMseNotesChange(e.target.value)}
+          rows={7}
+          placeholder="Appearance, speech, mood, affect, thought…"
+          aria-label="MSE scratchpad"
+          className="mt-1 w-full resize-none rounded-md border-2 border-border bg-card px-2 py-2 text-caption focus:outline-none focus:ring-2 focus:ring-ring"
+        />
+      </div>
+      <div>
+        <p className="text-eyebrow text-muted-foreground">Hypotheses</p>
+        <textarea
+          value={hypotheses}
+          onChange={(e) => onHypothesesChange(e.target.value)}
+          rows={5}
+          placeholder="What do you think is going on?"
+          aria-label="Hypotheses"
+          className="mt-1 w-full resize-none rounded-md border-2 border-border bg-card px-2 py-2 text-caption focus:outline-none focus:ring-2 focus:ring-ring"
+        />
+      </div>
+      <p className="text-caption text-muted-foreground">
+        This is your working record — the debrief doesn&apos;t read it. What you wrote is half the assessment.
+      </p>
+    </>
+  );
+}
 
 /**
  * The live simulated-patient chat. Student types, patient responds via the
@@ -94,6 +142,7 @@ export function SimSessionView({
   const [mseNotes, setMseNotes] = React.useState("");
   const [hypotheses, setHypotheses] = React.useState("");
   const [sideRailOpen, setSideRailOpen] = React.useState(false);
+  const [notesSheetOpen, setNotesSheetOpen] = React.useState(false);
   const [typing, setTyping] = React.useState(false);
   // Bug 4: the hint is opt-in — collapsed by default; opening it is flagged
   // so the debrief can show whether hints were used.
@@ -291,7 +340,7 @@ export function SimSessionView({
   }
 
   return (
-    <div className="flex h-[70vh] flex-col rounded-md border-2 border-border bg-card hard-shadow-sm">
+    <div className="flex min-h-[70dvh] max-h-[85dvh] flex-col rounded-md border-2 border-border bg-card hard-shadow-sm">
       {/* header — the patient, always in view. Timer is quiet and secondary. */}
       <div className="flex items-center justify-between gap-3 border-b-2 border-border px-4 py-2.5">
         <div className="flex min-w-0 items-center gap-3">
@@ -324,15 +373,40 @@ export function SimSessionView({
           >
             {mm}:{ss}
           </span>
-          {/* side-rail toggle */}
+          {/* side-rail toggle — side-by-side on lg, a bottom sheet below lg */}
           <button
             type="button"
             onClick={() => { setSideRailOpen((o) => !o); haptic("tap"); }}
             aria-pressed={sideRailOpen}
-            className="rounded-md border-2 border-border px-2 py-1 text-caption font-medium text-muted-foreground transition-transform active:translate-y-px"
+            className="hidden rounded-md border-2 border-border px-2 py-1 text-caption font-medium text-muted-foreground transition-transform active:translate-y-px lg:inline-flex"
           >
             {sideRailOpen ? "Hide notes" : "Notes"}
           </button>
+          <Sheet open={notesSheetOpen} onOpenChange={setNotesSheetOpen}>
+            <SheetTrigger asChild>
+              <button
+                type="button"
+                onClick={() => haptic("tap")}
+                className="rounded-md border-2 border-border px-2 py-1 text-caption font-medium text-muted-foreground transition-transform active:translate-y-px lg:hidden"
+              >
+                Notes
+              </button>
+            </SheetTrigger>
+            <SheetContent side="bottom" className="max-h-[85dvh] overflow-y-auto rounded-t-lg border-2 border-border p-4">
+              <SheetHeader className="p-0">
+                <SheetTitle className="text-base">Session notes</SheetTitle>
+                <SheetDescription className="text-caption">
+                  MSE scratchpad and working hypotheses — yours to fill in.
+                </SheetDescription>
+              </SheetHeader>
+              <NotesFields
+                mseNotes={mseNotes}
+                onMseNotesChange={setMseNotes}
+                hypotheses={hypotheses}
+                onHypothesesChange={setHypotheses}
+              />
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
 
@@ -411,34 +485,18 @@ export function SimSessionView({
           </div>
         </div>
 
-        {/* side rail — blank MSE scratchpad + hypotheses (never autofilled) */}
+        {/* side rail — blank MSE scratchpad + hypotheses (never autofilled).
+            Desktop shows it side-by-side; on small screens the same fields open
+            in a bottom sheet (the toggle above) so the transcript is never
+            squeezed into a sliver. */}
         {sideRailOpen ? (
-          <aside className="w-72 shrink-0 space-y-3 overflow-y-auto border-l-2 border-border bg-background/60 p-3">
-            <div>
-              <p className="text-eyebrow text-muted-foreground">MSE scratchpad</p>
-              <textarea
-                value={mseNotes}
-                onChange={(e) => setMseNotes(e.target.value)}
-                rows={7}
-                placeholder="Appearance, speech, mood, affect, thought…"
-                aria-label="MSE scratchpad"
-                className="mt-1 w-full resize-none rounded-md border-2 border-border bg-card px-2 py-2 text-caption focus:outline-none focus:ring-2 focus:ring-ring"
-              />
-            </div>
-            <div>
-              <p className="text-eyebrow text-muted-foreground">Hypotheses</p>
-              <textarea
-                value={hypotheses}
-                onChange={(e) => setHypotheses(e.target.value)}
-                rows={5}
-                placeholder="What do you think is going on?"
-                aria-label="Hypotheses"
-                className="mt-1 w-full resize-none rounded-md border-2 border-border bg-card px-2 py-2 text-caption focus:outline-none focus:ring-2 focus:ring-ring"
-              />
-            </div>
-            <p className="text-caption text-muted-foreground">
-              This is your working record — the debrief doesn&apos;t read it. What you wrote is half the assessment.
-            </p>
+          <aside className="hidden w-72 shrink-0 space-y-3 overflow-y-auto border-l-2 border-border bg-background/60 p-3 lg:block">
+            <NotesFields
+              mseNotes={mseNotes}
+              onMseNotesChange={setMseNotes}
+              hypotheses={hypotheses}
+              onHypothesesChange={setHypotheses}
+            />
           </aside>
         ) : null}
       </div>
@@ -450,8 +508,8 @@ export function SimSessionView({
         </div>
       ) : null}
 
-      {/* input */}
-      <div className="border-t-2 border-border p-3">
+      {/* input — pinned to the bottom of the visual viewport */}
+      <div className="sticky bottom-0 z-10 border-t-2 border-border bg-card p-3">
         {/* voice/text toggle */}
         <div className="mb-2 flex items-center gap-2">
           <button

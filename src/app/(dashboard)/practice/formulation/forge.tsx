@@ -121,11 +121,11 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: typeof SE
                     type="button"
                     onClick={() => { setSelected(isSel ? null : f.id); haptic("tap"); }}
                     aria-pressed={isSel}
-                    className={`rounded-md border-2 border-border px-3 py-1.5 text-caption transition-transform active:translate-y-px ${
+                    className={`rounded-md border-2 border-border px-3 py-1.5 text-left text-caption transition-transform active:translate-y-px ${
                       isSel ? "bg-primary text-primary-foreground ring-2 ring-ring" : placedIn ? "bg-secondary text-muted-foreground" : "bg-background"
                     }`}
                   >
-                    {f.text.slice(0, 42)}…
+                    {f.text}
                   </button>
                 );
               })}

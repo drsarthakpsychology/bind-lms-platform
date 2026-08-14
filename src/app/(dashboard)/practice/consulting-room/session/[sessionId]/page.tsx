@@ -123,7 +123,7 @@ export default async function SimSessionPage({
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+    <div className="mx-auto max-w-5xl px-4 pt-6 pb-0 sm:px-6">
       <div className="mb-4 flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <Link

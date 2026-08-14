@@ -121,9 +121,9 @@ export function TutorChat() {
     <div className="flex h-full min-h-[60vh] flex-col overflow-hidden rounded-lg border-2 border-border bg-card">
       {/* Header */}
       <div className="flex items-center gap-2 border-b-2 border-border px-4 py-3">
-        <BookOpen className="size-4 text-link" aria-hidden />
-        <p className="text-body-strong">Psychology Tutor</p>
-        <span className="ml-auto rounded-md border-2 border-border bg-muted px-2 py-0.5 text-caption text-muted-foreground">
+        <BookOpen className="size-4 shrink-0 text-link" aria-hidden />
+        <p className="min-w-0 truncate text-body-strong">Psychology Tutor</p>
+        <span className="ml-auto hidden shrink-0 rounded-md border-2 border-border bg-muted px-2 py-0.5 text-caption text-muted-foreground sm:inline-flex">
           answers grounded in the authorised books
         </span>
       </div>
