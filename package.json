@@ -67,7 +67,8 @@
     "corpus:draft-cases": "tsx scripts/corpus/draft-cases.ts",
     "knowledge:ingest": "tsx scripts/knowledge/ingest.ts",
     "knowledge:embed": "tsx scripts/knowledge/embed.ts",
-    "knowledge:verify": "tsx scripts/knowledge/verify-search.ts"
+    "knowledge:verify": "tsx scripts/knowledge/verify-search.ts",
+    "knowledge:eval": "tsx scripts/knowledge/eval.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1101.0",
