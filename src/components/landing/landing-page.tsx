@@ -70,7 +70,7 @@ function Hero() {
             <Reveal>
               <p className="text-eyebrow text-muted-foreground">A clinical psychology training programme</p>
             </Reveal>
-            <h1 className="mt-5 ml-[-0.045em] text-[clamp(3rem,7.4vw,7rem)] font-black leading-[0.9] tracking-[-0.038em] text-foreground">
+            <h1 className="mt-5 ml-[-0.045em] text-[clamp(3rem,7.4vw,3.75rem)] font-black leading-[0.9] tracking-[-0.038em] text-foreground">
               <KineticHeadline delay={0.1} stagger={0.045}>
                 Understand the case,
               </KineticHeadline>
