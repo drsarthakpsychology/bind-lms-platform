@@ -1,3 +1,29 @@
+## 2026-08-14 — VIBHA DESIGN SKILL created (user request)
+
+User: "yess skill creator" → asked which kind; chose the VIBHA design skill.
+Created `.claude/skills/vibha-design/` encoding the Neo-Brutalist Pastel world
+so future sessions design in-system:
+
+- **SKILL.md** (141 lines) — the world in one line ("peach is a fill;
+  terracotta is accent text; ink rules everything"), 9 non-negotiable rules
+  (peach-never-as-text-on-cream, no brand-prior reassignment, 2px+hard-shadow,
+  three reserved type voices, editorial wayfinding, honest copy, reduced-motion
+  motion, WCAG AA), token/primitives/surface pointers, and the process
+  (refinement-preserves, PFD 5-layer, bounded screenshot rounds, gate).
+- **references/tokens.md** — exact light+dark token values, the
+  cream-vs-dark accent polarity rule, perceptual color discipline (OKLCH, no
+  hex interpolation, ≤4 roles), fluid type, WCAG 2.2 target sizes.
+- **references/motion.md** — the language (tokens, easings), reduced-motion-
+  first pattern with the SSR-visible hydration trade-off documented, the
+  stamp-in, what never to add (loops/particles/layout anim/library motion debt).
+- **Grounding in 2026 practice** — editorial neo-brutalism/craft-forward,
+  perceptual color, reduced-motion-first, a11y-as-design, calm AI-era honesty,
+  performance-as-brand.
+- **AGENTS.md** — one-line pointer (outside the auto-generated block) routing
+  UI work to /vibha-design.
+
+Gate green: lint 0, tsc clean, 453 tests.
+
 ## 2026-08-14 — PUSH + PRODUCTION DEPLOY (user request)
 
 User asked to "push all and deploy on live website." Explicit authorization —
@@ -2731,3 +2757,5 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T14:42:22 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:43:21 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:46:27 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:56:17 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:59:21 Queue exhausted — allowing normal Claude stop.

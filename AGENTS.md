@@ -7,3 +7,10 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Design
+
+Any UI work (designing, polishing, reviewing, or extending surfaces) must
+stay inside the committed Neo-Brutalist Pastel world. Load the
+`/vibha-design` skill before editing UI — it encodes the token discipline,
+the shared primitives, the motion language, and the process.
