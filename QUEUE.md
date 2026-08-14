@@ -864,7 +864,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   constraints that guide an AI patient rather than being presented as the
   conversation engine itself
 
-- [ ] T116  AI patient behavioural layer — design a structured patient
+- [x] T116  AI patient behavioural layer — design a structured patient
   behaviour/profile layer containing personality, presenting complaint,
   emotional state, communication style, relevant history, knowledge limits,
   disclosure patterns, sensitivities, contradictions, uncertainty, and other
@@ -875,7 +875,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   respecting the case's facts, personality, behavioural rules, disclosure
   depth, story, contradictions, and scenario boundaries
 
-- [ ] T118  Patient prompt architecture — create a strong system-level patient
+- [x] T118  Patient prompt architecture — create a strong system-level patient
   instruction that tells the model how to behave as the patient, what it knows,
   what it does not know, when it should disclose information, how it should
   react emotionally, how it should respond to different interviewing styles,
