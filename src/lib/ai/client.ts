@@ -144,6 +144,20 @@ async function callProvider(
 const RETRYABLE = new Set([429, 500, 502, 503, 504]);
 const TIMEOUT_MS = 20_000;
 
+/**
+ * Models sometimes wrap JSON in ```json fences or preface it with prose.
+ * Strip that before parsing so the schema parse succeeds on the first try
+ * (no repair round-trip, no spurious failover).
+ */
+function extractJson(text: string): string {
+  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (fenced) return fenced[1].trim();
+  const start = text.indexOf("{");
+  const end = text.lastIndexOf("}");
+  if (start >= 0 && end > start) return text.slice(start, end + 1);
+  return text.trim();
+}
+
 /** One call with provider failover. Never throws for a student-visible failure
  *  when another provider can serve the request. */
 export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions): Promise<AiResponse> {
@@ -177,7 +191,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
       const latencyMs = Date.now() - startedAt;
       if (opts.schema) {
         try {
-          const parsed = opts.schema.parse(JSON.parse(text));
+          const parsed = opts.schema.parse(JSON.parse(extractJson(text)));
           log(provider.id, opts.workload, "ok");
           void recordProviderOutcome(provider.id, true);
           void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: usage.tokensIn, tokensOut: usage.tokensOut, latencyMs, status: "ok" });
@@ -189,7 +203,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
               ...messages,
               { role: "user", content: `Return valid JSON matching the schema. Your previous output was not valid JSON. Output ONLY the JSON object.` },
             ], { ...opts, schema: undefined });
-            const parsed = opts.schema.parse(JSON.parse(repair.text));
+            const parsed = opts.schema.parse(JSON.parse(extractJson(repair.text)));
             void recordProviderOutcome(provider.id, true);
             void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: repair.usage.tokensIn, tokensOut: repair.usage.tokensOut, latencyMs, status: "ok" });
             return { text: repair.text, provider: provider.id, json: parsed };

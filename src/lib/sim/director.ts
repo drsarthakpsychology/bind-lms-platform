@@ -12,24 +12,34 @@
 import { z } from "zod";
 import { PATIENT_PROMPT_VERSION } from "./prompt-version";
 
+/**
+ * The Director's JSON schema. Deliberately LENIENT: models frequently omit or
+ * garble the advisory fields (quality, gates_now_met, disclose,
+ * must_not_mention, state_delta), and those are CODE-ENFORCED anyway — the
+ * engine drops any fact outside the permitted set and applies hard rules on
+ * top. Defaulting them is safe and keeps a live model turn from failing over
+ * to the scripted engine over a missing boolean. Only the two move enums and
+ * affect/length carry real meaning; those default to safe values rather than
+ * killing the turn.
+ */
 export const directorSchema = z.object({
   student_move: z.enum([
     "closed_question", "open_question", "reflection", "validation",
     "premature_advice", "interruption", "risk_probe", "silence",
     "confrontation", "rapport_bid", "off_topic",
-  ]),
+  ]).catch("open_question"),
   quality: z.object({
     leading: z.boolean(),
     double_barrelled: z.boolean(),
     jargon: z.boolean(),
-  }),
-  gates_now_met: z.array(z.string()),
+  }).catch({ leading: false, double_barrelled: false, jargon: false }),
+  gates_now_met: z.array(z.string()).catch([]),
   state_delta: z.object({
-    trust: z.number().min(-3).max(3),
-    guardedness: z.number().min(-3).max(3),
-    irritation: z.number().min(-3).max(3),
-    fatigue: z.number().min(0).max(3),
-  }),
+    trust: z.number().min(-3).max(3).catch(0),
+    guardedness: z.number().min(-3).max(3).catch(0),
+    irritation: z.number().min(-3).max(3).catch(0),
+    fatigue: z.number().min(0).max(3).catch(0),
+  }).catch({ trust: 0, guardedness: 0, irritation: 0, fatigue: 0 }),
   patient_move: z.enum([
     "full_disclose", "partial_disclose", "reluctant_disclose",
     "deflect_to_somatic", "deflect_to_other_person", "minimise",
@@ -39,14 +49,14 @@ export const directorSchema = z.object({
     "humour_as_shield", "somatic_complaint_now", "ask_about_cost",
     "ask_about_confidentiality", "mention_faith_healer",
     "defer_to_accompanying_family",
-  ]),
-  disclose: z.array(z.string()),
+  ]).catch("partial_disclose"),
+  disclose: z.array(z.string()).catch([]),
   affect: z.enum([
     "flat", "flat_with_effort", "sad", "anxious", "irritated",
     "brittle_cheerful", "numb", "agitated", "resigned",
-  ]),
-  length_hint: z.enum(["one_word", "short", "medium", "long"]),
-  must_not_mention: z.array(z.string()),
+  ]).catch("flat"),
+  length_hint: z.enum(["one_word", "short", "medium", "long"]).catch("short"),
+  must_not_mention: z.array(z.string()).catch([]),
 });
 export type DirectorDecision = z.infer<typeof directorSchema>;
 
