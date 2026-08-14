@@ -3208,3 +3208,22 @@ action on the front door and the practice hub — both flagged in the T19 spec.
   (route table emitted, no errors).
 - Next in queue: T20 continues (dedicated mobile compositions — waitlist
   two-column → mobile sheet-first is the next concrete candidate).
+
+## 2026-08-14 — Mobile sequential prompts (T19 spec execution, slice 2)
+
+Executed another T19-spec item on a clean file (the tree is being worked by
+parallel continuations; several practice pages are already in-flight).
+
+- Two-Minute Clinic (`two-minute-clinic/clinic.tsx`): split the "type" phase
+  into two sequential steps — differential first, then next question — so the
+  clinic shows one cognitive task at a time on mobile instead of two stacked
+  textareas ("keep the three prompts sequential, not stacked"). Step 2 gets a
+  "← Back" control that preserves the entered differential.
+- Landmark reader checked: the quiz is already inline-but-after the narrative
+  (no change needed).
+- Committed `d15de49`. Gate: lint 0, tsc clean, 453 tests, build green.
+- Note: hit a stale `.git/…/index.lock` left by an interrupted process; no
+  active git writer was holding it (178s-old, 0 bytes), removed it before
+  committing.
+- Next in queue: T20 continues (waitlist two-column → mobile sheet-first is
+  still the clearest dedicated-composition candidate).
