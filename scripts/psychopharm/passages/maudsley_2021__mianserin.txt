@@ -1,0 +1,1869 @@
+<<<PAGE 132>>>
+
+Anticholinergic drugs
+given orally, IM or IV
+depending on the severity of
+symptoms20
+
+Treatment
+
+■■
+
+Remember the patient may be
+unable to swallow
+■■ Response to IV administration
+will be seen within 5 minutes
+■■ Response to IM administration
+takes around 20 minutes
+■■ Tardive dystonia may respond to
+ECT35,36
+■■ Where severe symptoms do not
+respond to simpler measures
+including switching to an antipsychotic with a low propensity
+for EPS, botulinum toxin may be
+effective37,38
+
+Acute dystonia can occur within
+hours of starting antipsychotic
+medication (minutes if the IM or IV
+route is used).
+Tardive dystonia occurs after
+months to years of antipsychotic
+treatment.
+
+Time taken to
+develop
+
+Dystonia (uncontrolled
+muscular spasm)
+
+■■
+
+■■
+
+Reduce the antipsychotic dose
+Change to an antipsychotic medication with a lower propensity for
+pseudoparkinsonism (see section
+on relative liability of antipsychotic
+medications for adverse effects)
+■■ Prescribe an anticholinergic. The
+majority of patients do not require
+long-term anticholinergic agents.
+Use should be reviewed at least
+every 3 months. Do not prescribe
+at night (symptoms usually absent
+during sleep)
+
+Several options are
+available depending on the clinical
+circumstances:
+
+Days to weeks after
+antipsychotic medication is
+started or the dose is
+increased
+
+Pseudoparkinsonism
+(bradykinesia, tremor, etc.)
+
+Reduce the antipsychotic dose
+Change to an antipsychotic drug
+with lower propensity for akathisia (see sections on akathisia and
+relative liability of antipsychotic
+medications for adverse effects)
+■■ A reduction in symptoms may be
+seen with:39–41 low-dose propranolol, 30–80mg/day, clonazepam
+(low dose), 5HT2 antagonists
+such as: cyproheptadine,36
+mirtazapine,40 trazodone,42,43
+mianserin,44 and cyproheptadine36 may help, as may possibly
+diphenhydramine.45
+Anticholinergics are generally
+unhelpful unless akathisia is part of
+a general EPS spectrum46
+
+All are unlicensed for this indication
+
+■■
+
+■■
+
+Acute akathisia occurs within hours
+to weeks of starting antipsychotic
+medication or increasing the dose.
+Akathisia that has persisted for
+several months or so is called
+‘chronic akathisia’. Tardive akathisia
+tends to occur later in treatment
+and may be exacerbated or
+provoked by antipsychotic dose
+reduction or withdrawal.16
+
+Akathisia
+(restlessness)16
+
+■■
+
+Stop anticholinergic if prescribed
+Reduce dose of antipsychotic medication
+■■ Change to an antipsychotic with lower
+propensity for TD,47–50 note that data are
+conflicting.51,52
+■■ Clozapine is the antipsychotic most
+likely to be associated with resolution of
+symptoms.53,54 Quetiapine may also be
+useful in this regard.55
+■■ Both valbenazine and deutetrabenazine
+have a positive risk-benefit balance as
+add-on treatments53,56–60
+■■ There is also some evidence for
+tetrabenazine and ginkgo biloba61 as
+add-on treatments. For other treatment
+options60,62 the review by the American
+Academy of Neurology63 and the section
+on tardive dyskinesia
+■■
+
+Months to years
+The proportion of cases showing
+reversibility on cessation of antipsychotic
+medication is unclear and may partly
+depend on age20
+
+Tardive dyskinesia
+(abnormal involuntary movements)
+
+
+
+
+<<<PAGE 136>>>
+
+Effective
+
+Continue at reduced dose
+
+CHAPTER 1
+
+Reduce dose of current antipsychotic
+medication/switch from antipsychotic
+polypharmacy to monotherapy (if possible) or
+slow rate of dosage increase15,16
+Ineffective/not appropriate
+
+Switch to quetiapine/olanzapine17–19
+(lowest effective dose possible)
+
+Effective
+
+(clozapine also an option if the psychiatric
+diagnosis is treatment-resistant schizophrenia20)
+
+Continue
+
+Ineffective/not appropriate to switch
+
+Consider low-dose
+propranolol: 30–80mg/day10,21,22
+(start at 10mg tds)
+
+Effective
+
+NB. Note contra-indications
+(asthma, bradycardia, hypotension, etc.)
+
+Continue if no
+contraindications
+
+Not effective/contra-indicated
+
+Consider low-dose (15mg) mirtazapine or
+mianserin (30mg)
+(5HT2A antagonists)23–25
+
+Effective
+
+Continue
+
+Not effective/not tolerated
+
+Consider an antimuscarinic drug16
+(e.g. benzatropine 6mg/day)
+Weak support for efficacy26,27 and risk of
+cognitive and anticholinergic adverse effects, but
+may be effective where other EPS present6,10,13
+
+Effective
+
+Continue, but attempt
+withdrawal
+after several months
+
+Ineffective/no other EPS
+
+Consider cyproheptadine 16mg/day22,28
+
+Effective
+
+Continue, if no
+contraindications
+
+Ineffective
+
+Consider a benzodiazepine15,16
+(e.g. diazepam up to 15mg/day clonazepam
+0.5–3mg/day)
+
+Effective
+
+Continue, but attempt slow
+withdrawal after 2–4 weeks
+(risk of dependence)
+
+Ineffective
+
+Consider clonidine 0.2–0.8mg/day16,29
+
+Effective
+
+Continue if tolerated;
+withdraw very slowly
+
+(Continued)
+
+
+
+
+<<<PAGE 137>>>
+
+116  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+(Continued)
+Notes
+Akathisia is sometimes difficult to diagnose with certainty. Clinical physical examination schedules for EPS
+have been proposed.30,31 For each patient, a careful history of symptoms, medication response and side
+effects, and comorbid substance use is essential.
+■■ Evaluate the efficacy of each treatment option over at least 1 month. Some effect may be seen after a few
+days, but it may take much longer to become apparent in those with chronic akathisia.
+■■ Withdraw previously ineffective akathisia treatments before starting the next option in the algorithm.
+■■ Combinations of treatment may be considered for refractory cases if carefully monitored.
+■■ Other possible treatments for acute akathisia that have been investigated include vitamin B6,32,33 pregabalin,34 diphenhydramine,35 trazodone23,36 and zolmitriptan.37,38 Always read the primary literature before
+considering any of the treatment options.
+■■ Parenteral midazolam (1.5mg) has been successfully used to prevent akathisia associated with IV metoclopramide,39 suggesting a specific therapeutic effect for midazolam and perhaps benzodiazepines more
+generally.
+■■ In some cases where agitation/akathisia are known short-lived effects of antipsychotic medication when
+initiated (e.g. with aripiprazole, cariprazine), prophylactic or rescue benzodiazepines may be prescribed for
+a limited period. Clinical experience suggests this practice is effective.
+■■
+
+21. Adler L, et al. A controlled assessment of propranolol in the treatment of neuroleptic-induced akathisia. Br J Psychiatry 1986; 149:42–45.
+22. Fischel T, et al. Cyproheptadine versus propranolol for the treatment of acute neuroleptic-induced akathisia: a comparative double-blind
+study. J Clin Psychopharmacol 2001; 21:612–615.
+23. Laoutidis ZG, et al. 5-HT2A receptor antagonists for the treatment of neuroleptic-induced akathisia: a systematic review and meta-analysis.
+Int J Neuropsychopharmacol 2014; 17:823–832.
+24. Poyurovsky M, et al. Mirtazapine – a multifunctional drug: low dose for akathisia. CNS Spectr 2011; 16:63.
+25. Poyurovsky M. Acute antipsychotic-induced akathisia revisited. Br J Psychiatry 2010; 196:89–91.
+26. Rathbone J, et al. Anticholinergics for neuroleptic-induced acute akathisia. Cochrane Database Syst Rev 2006; CD003727.
+27. Baskak B, et al. The effectiveness of intramuscular biperiden in acute akathisia: a double-blind, randomized, placebo-controlled study. J Clin
+Psychopharmacol 2007; 27:289–294.
+28. Weiss D, et al. Cyproheptadine treatment in neuroleptic-induced akathisia. Br J Psychiatry 1995; 167:483–486.
+29. Zubenko GS, et al. Use of clonidine in treating neuroleptic-induced akathisia. Psychiatry Res 1984; 13:253–259.
+30. Gervin M, et al. Assessment of drug-related movement disorders in schizophrenia. Adv Psychiatr Treatment 2000; 6:332–341.
+31. Cunningham Owens DA. Guide to the extrapyramidal side effects of antipsychotic drugs. Cambridge University Press; 1999.
+32. Miodownik C, et al. Vitamin B6 versus mianserin and placebo in acute neuroleptic-induced akathisia: a randomized, double-blind, controlled
+study. Clin Neuropharmacol 2006; 29:68–72.
+33. Lerner V, et al. Vitamin B6 treatment in acute neuroleptic-induced akathisia: a randomized, double-blind, placebo-controlled study. J Clin
+Psychiatry 2004; 65:1550–1554.
+34. De Berardis D, et al. Reversal of aripiprazole-induced tardive akathisia by addition of pregabalin. J Neuropsychiatry Clin Neurosci 2013;
+25:E9–E10.
+35. Friedman BW, et al. A randomized trial of diphenhydramine as prophylaxis against metoclopramide-induced akathisia in nauseated emergency department patients. Ann Emerg Med 2009; 53:379–385.
+36. Stryjer R, et al. Trazodone for the treatment of neuroleptic-induced acute akathisia: a placebo-controlled, double-blind, crossover study. Clin
+Neuropharmacol 2010; 33:219–222.
+37. Gross-Isseroff R, et al. The 5-HT1D receptor agonist zolmitriptan for neuroleptic-induced akathisia: an open label preliminary study. Int Clin
+Psychopharmacol 2005; 20:23–25.
+38. Avital A, et al. Zolmitriptan compared to propranolol in the treatment of acute neuroleptic-induced akathisia: a comparative double-blind
+study. Eur Neuropsychopharmacol 2009; 19:476–482.
+39. Erdur B, et al. A trial of midazolam vs diphenhydramine in prophylaxis of metoclopramide-induced akathisia. Am J Emerg Med 2012;
+30:84–91.
+
+
+
+
+<<<PAGE 221>>>
+
+CHAPTER 1
+
+200  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 1.37 (Continued)
+Treatment
+
+Comments
+
+Mianserin + FGA 30mg/day
+
+5HT2 antagonist. One, small positive RCT
+
+Minocycline 200mg/day
+(+ antipsychotic)41,42
+
+May be anti-inflammatory and neuroprotective. One open study (n = 22) and
+one RCT (n = 54) suggest good effect on negative and cognitive symptoms.
+Also one RCT (n = 50) of augmentation of clozapine.43 RCT evidence of
+neuroprotective effect in early psychosis44
+
+Mirtazapine 30mg/day
+(+ antipsychotic)45–47
+
+5HT2 antagonist. Two RCTs, one negative,46 one positive.45 Effect seems to be
+mainly on positive symptoms
+
+N-acetylcysteine 2g/day
+(+ antipsychotic)40
+
+One RCT suggests small benefits in negative symptoms and rates of akathisia.
+Another RCT showed benefits in chronic schizophrenia.48 Case study of
+successful use of 600mg a day.49 Large RCT in progress50
+
+Olanzapine51–56
+5–25mg/day
+
+Supported by some well-conducted trials but clinical experience disappointing.
+Some patients show moderate response
+
+Olanzapine57–63
+30–60mg/day
+
+Contradictory findings in the literature but possibly effective. High dose
+olanzapine is not atypical64 and can be poorly tolerated65 with gross metabolic
+changes63
+
+Olanzapine + amisulpride66
+(up to 800mg/day)
+
+Small open study suggests benefit
+
+Olanzapine + aripiprazole67
+
+Single case report suggests benefit. Probably reduces metabolic toxicity
+
+Olanzapine + glycine
+(0.8g/kg/day)
+
+Small, double-blind crossover trial suggests clinically relevant improvement in
+negative symptoms
+
+32
+
+68
+
+Olanzapine + lamotrigine65,69
+(up to 400mg/day)
+
+Reports contradictory and rather unconvincing. Reasonable theoretical basis for
+adding lamotrigine which is usually well tolerated
+
+Olanzapine + risperidone70
+(various doses)
+
+Small study suggests some patients may benefit from combined therapy after
+sequential failure of each drug alone
+
+Olanzapine + sulpiride71
+(600mg/day)
+
+Some evidence that this combination improves mood symptoms
+
+Omega-3-triglycerides72,73
+
+Suggested efficacy but data very limited
+
+Ondansetron 8mg/day
+(+ antipsychotic)
+
+A systematic review of RCTs showed improvements in negative symptoms and
+general psychopathology. Effect on cognition inconclusive74
+
+Paliperidone LAI
+
+Improvement in endocrine and hepatic parameters and lower antipsychotic
+exposure in a small number of patients switched from clozapine to paliperidone
+3 monthly. No data on clinical outcomes75
+
+
+
+
+<<<PAGE 340>>>
+
+Depression and anxiety disorders  319
+
+Table 3.3 (Continued)
+Advantages
+
+Disadvantages
+
+Good evidence base
+Usually well tolerated
+■■ Plausible explanation for
+antidepressant effect
+■■ Possibly more effective than
+lithium
+
+■■
+
+Supported by STAR*D
+Well tolerated
+■■ May improve sexual adverse
+effects
+
+■■
+
+Recommended by NICE
+Usually well tolerated
+■■ Widely used
+
+■■
+
+Add quetiapine
+(150mg or 300mg a day) to
+SSRI/SNRI
+
+■■
+
+SSRI + Bupropion15,41–45
+up to 400mg/day
+
+■■
+
+SSRI or venlafaxine
++ mianserin (30mg/day) or
+mirtazapine18,45–48(30–45mg/day)
+
+■■
+
+35–40
+
+■■
+
+Dry mouth, sedation, constipation can
+be problematic
+■■ Weight gain risk in the longer term
+
+Not licensed for depression in the UK
+
+■■
+
+■■
+
+Theoretical risk of serotonin syndrome
+(inform patient)
+■■ Risk of blood dyscrasia with mianserin
+■■ Weight gain and sedation with mirtazapine
+■■ Recent large RCT shows no advantage
+for mirtazapine added to SSRI/SNRIs in
+prior non-response49
+
+* 5mg + 20mg rising to 10mg + 40mg seems reasonable where combination formulations not available.
+eGFR, estimated glomerular filtration rate; NICE, National Institute for Health and Care Excellence; SNRI, serotonin–
+noradrenaline reuptake inhibitor; SSRI, selective serotonin reuptake inhibitor; STAR*D, Sequenced Treatment
+Alternatives to Relieve Depression; TCA, tricyclic antidepressant; TFT, thyroid function test.
+
+References
+1. Dunner DL, et al. Prospective, long-term, multicenter study of the naturalistic outcomes of patients with treatment-resistant depression. J Clin
+Psychiatry 2006; 67:688–695.
+2. Wooderson SC, et al. Prospective evaluation of specialist inpatient treatment for refractory affective disorders. J Affect Disord 2011;
+131:92–103.
+3. Fekadu A, et al. What happens to patients with treatment-resistant depression? A systematic review of medium to long term outcome studies.
+J Affect Disord 2009; 116:4–11.
+4. Trivedi MH, et al. Clinical results for patients with major depressive disorder in the Texas Medication Algorithm Project. Arch Gen Psychiatry
+2004; 61:669–680.
+5. Fekadu A, et al. A multidimensional tool to quantify treatment resistance in depression: the Maudsley staging method. J Clin Psychiatry 2009;
+70:177–184.
+6. Fekadu A, et al. The Maudsley Staging Method for treatment-resistant depression: prediction of longer-term outcome and persistence of
+symptoms. J Clin Psychiatry 2009; 70:952–957.
+7. Angst J, et al. Toward a re-definition of subthreshold bipolarity: epidemiology and proposed criteria for bipolar-II, minor bipolar disorders
+and hypomania. J Affect Disord 2003; 73:133–146.
+8. Smith DJ, et al. Unrecognised bipolar disorder in primary care patients with depression. British J Psychiatry 2011; 199:49–56.
+9. Sidor MM, et al. Antidepressants for the acute treatment of bipolar depression: a systematic review and meta-analysis. J Clin Psychiatry 2011;
+72:156–167.
+10. Taylor DM, et al. Comparative efficacy and acceptability of drug treatments for bipolar depression: a multiple-treatments meta-analysis. Acta
+Psychiatr Scand 2014; 130:452–469.
+11. Cosgrove L, et al. Reconceptualising treatment-resistant depression as difficult-to-treat depression. Lancet Psychiatry 2021; 8:11–13.
+12. Rush AJ, et al. Difficult-to-treat depression: a clinical and research roadmap for when remission is elusive. Aust N Z J Psychiatry 2019;
+53:109–118.
+13. Trivedi MH, et al. Evaluation of outcomes with citalopram for depression using measurement-based care in STAR*D: implications for clinical practice. Am J Psychiatry 2006; 163:28–40.
+14. Rush AJ, et al. Bupropion-SR, sertraline, or venlafaxine-XR after failure of SSRIs for depression. N Engl J Med 2006; 354:1231–1242.
+15. Trivedi MH, et al. Medication augmentation after the failure of SSRIs for depression. N Engl J Med 2006; 354:1243–1252.
+16. Fava M, et al. A comparison of mirtazapine and nortriptyline following two consecutive failed medication treatments for depressed outpatients: a STAR*D report. Am J Psychiatry 2006; 163:1161–1172.
+17. Nierenberg AA, et al. A comparison of lithium and T(3) augmentation following two failed medication treatments for depression: a STAR*D
+report. Am J Psychiatry 2006; 163:1519–1530.
+
+CHAPTER 3
+
+Treatment
+
+
+
+
+<<<PAGE 400>>>
+
+Depression and anxiety disorders  379
+
+Table 3.14 (Continued)
+Antidepressant
+
+Substrate for
+
+Inhibits
+
+TCAs
+Amitriptyline
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Desipramine
+
+CYP2D6
+
+Dosulepin
+
+CYP2D6 and possibly other pathways
+
+Doxepin
+
+CYP2D6, CYP1A2 (minor), CYP3A4
+(minor)
+
+Imipramine
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Nortriptyline
+
+CYP2D6
+
+Trimipramine
+
+CYP2D6
+
+Agomelatine
+
+CYP1A2
+
+Bupropion
+
+CYP2B6
+
+Esketamine
+
+CYP3A4, CYP2B6
+
+Mianserin
+
+CYP2D6
+
+Mirtazapine
+
+CYP1A2, CYP2D6, CYP3A4
+
+Reboxetine
+
+CYP3A4
+
+Trazodone
+
+CYP3A4
+
+Vortioxetine
+
+CYP2D6, CYP2A6, CYP2B6, CYP2C8,
+CYP2C9, CYP2C19, CYP3A4
+
+Vilazodone
+
+CYP3A4
+
+CHAPTER 3
+
+Clomipramine
+
+Others
+
+CYP2D6 (potent)
+
+CYP2D6 (weak)
+
+CYP2C8
+
+CYP enzymes highlighted in bold indicate:
+predominant metabolic enzyme pathway or
+■■ predominant enzyme activity.
+■■
+
+■■
+
+Pharmacodynamic interactions where the effects of one drug are altered by another
+drug via physiological mechanisms such as direct competition at receptor sites (e.g.
+dopamine agonists with dopamine blockers may negate any therapeutic effect), augmentation of the same neurotransmitter pathway (e.g. fluoxetine with tramadol or a
+triptan can lead to serotonin syndrome) or an effect on the physiological functioning
+of an organ/organ system in different ways (e.g. SSRIs impair clotting and NSAIDs
+irritate the gastric mucosa so when these drugs are used together, the risk of GI bleeds
+is increased). Up-to-date interaction tables are readily available online and most
+known interactions are described in an individual product’s literature.
+
+Pharmacodynamic interactions
+Tricyclic antidepressants7–10
+■■
+
+are H1 blockers (sedative). This effect can be exacerbated by other sedative drugs or
+alcohol. Beware respiratory depression
+
+
+
+
+<<<PAGE 442>>>
+
+Depression and anxiety disorders  421
+
+Antidepressants: relative adverse effects – a rough guide
+Table 3.26 gives a very approximate, unreferenced view of the absolute and relative risk
+of a small range of adverse effects associated with standard antidepressants.
+
+Table 3.26 Common adverse effects of antidepressants
+
+Sedation
+
+Postural
+hypotension§
+
+Cardiac
+conduction
+disturbance§
+
+Anticholinergic Nausea/
+effects
+Vomiting
+
+Sexual
+dysfunction§
+
+Amitriptyline
+
++++
+
++++
+
++++
+
++++
+
++
+
++++
+
+Clomipramine
+
+++
+
++++
+
++++
+
+++
+
+++
+
++++
+
+Dosulepin
+
++++
+
++++
+
++++
+
+++
+
++
+
++
+
+Doxepin
+
++++
+
+++
+
++++
+
++++
+
++
+
++
+
+Imipramine
+
+++
+
++++
+
++++
+
++++
+
++
+
++
+
+Lofepramine
+
++
+
++
+
++
+
+++
+
++
+
++
+
+Nortriptyline
+
++
+
+++
+
+++
+
++
+
++
+
++
+
+Trimipramine
+
++++
+
++++
+
+++
+
+++
+
++
+
++
+
+Agomelatine
+
++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Duloxetine (SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Levomilnacipran
+(SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Mianserin
+
+++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Mirtazapine
+
++++
+
++
+
+–
+
++
+
++
+
+–
+
+Reboxetine
+
++
+
+–*
+
+–
+
++
+
++
+
++
+
+Trazodone
+
++++
+
++
+
++
+
++
+
++
+
++
+
+Venlafaxine (SNRI)
+
+–
+
+–*
+
++
+
+–
+
++++
+
++++
+
+Citalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Escitalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Fluoxetine
+
+–
+
+–
+
+–
+
+–
+
+++
+
++++
+
+Fluvoxamine
+
++
+
+–
+
+–
+
+–
+
++++
+
++++
+
+Paroxetine
+
++
+
+–
+
+–
+
++
+
+++
+
++++
+
+Drug
+
+Other
+antidepressants
+
+Selective
+serotonin
+reuptake
+inhibitors (SSRIs)
+
+(Continued)
+
+CHAPTER 3
+
+Tricyclics
+
+
+
+
+<<<PAGE 696>>>
+
+Minimal with
+mirtazapine and
+venlafaxine*
+
+Others25,26
+
+Dizziness
+common with
+agomelatine
+
+Venlafaxine
+can cause
+hypotension
+at lower
+doses, but it
+can increase
+BP at higher
+doses, as can
+duloxetine
+
+Much less of
+a problem,
+but an
+increased risk
+of falls is
+documented
+with SSRIs
+
+Agomelatine
+aids sleep
+
+Venlafaxine,
+duloxetine
+– neutral
+effects
+
+Mirtazapine,
+mianserin
+and
+trazodone
+are sedatives
+
+Unlikely
+with the
+other SSRIs
+
+Can be a
+problem
+with
+paroxetine
+and
+fluvoxamine
+
+Low
+incidence
+with
+agomelatine
+
+Greatest
+problem is
+with
+mirtazapine,
+although
+older people
+are not
+particularly
+prone to
+weight gain
+
+Others are
+weight
+neutral
+
+Paroxetine
+and possibly
+citalopram
+may cause
+weight gain
+
+Others are
+relatively safe
+
+Venlafaxine is
+more toxic in
+overdose than
+SSRIs, but safer
+than TCAs
+
+Safe with the
+possible
+exception of
+citalopram; one
+minor metabolite
+can cause QTc
+prolongation.
+Significance
+unknown
+
+*Noradrenergic drugs may produce ‘anticholinergic’ effects via norepinephrine re-uptake inhibition.
+
+Very low incidence
+with agomelatine
+
+Duloxetine* – few
+effects
+
+Can be rarely a
+problem with
+reboxetine*
+
+Dry mouth can be
+a problem with
+paroxetine
+
+SSRIs20,21
+
+Table 6.8 (Continued )
+
+Interstitial lung disease with
+serotonin and
+norepinephrine reuptake
+inhibitors24
+
+Cognitive impairment with
+trazodone22
+
+Monitor LFTs
+
+Possibly hepatotoxicity with
+agomelatine
+
+Weight loss and nausea with
+duloxetine
+
+Nausea with venlafaxine,
+duloxetine
+
+Insomnia and hypokalaemia
+with reboxetine
+
+GI effects and headaches,
+hyponatraemia, increased
+risk of bleeds in the older
+person (add gastroprotection
+if also on an NSAID or
+aspirin), orofacial dyskinesia
+with paroxetine, cognitive
+impairment,22 interstitial
+lung disease23,24
+
+Agomelatine should be
+avoided in patients who
+take potent CYP1A2
+inhibitors
+
+Reboxetine is safe
+
+Moclobemide and
+venlafaxine inhibit CYP450
+enzymes. Check for
+potential interactions
+
+Duloxetine inhibits CYP2D6
+
+Fluvoxamine, fluoxetine
+and paroxetine are potent
+inhibitors of several hepatic
+cytochrome enzymes (see
+section on antidepressant
+drug interactions)
+Sertraline is safer and
+citalopram, escitalopram
+and vortioxetine are safest
+
+
+
+
+<<<PAGE 826>>>
+
+Table 10.8 Evidence and experience regarding the pharmacological treatment of mental and behavioural
+symptoms in Huntington’s disease
+Symptoms
+
+Treatments
+
+Anxiety
+
+■■
+
+Depression
+
+■■
+
+Obsessive
+compulsive
+behaviours or
+preservation
+
+■■
+
+Irritability or
+agitation24
+
+■■
+
+Reported 16.7–24% lifetime prevalence in HD.17 There are no RCTs to guide choice; however, olanzapine 5mg/d substantially improved anxiety symptoms in one small open label
+pilot study.17 SSRIs and SNRIs have been suggested as first line treatment.4,7 Some guidelines have recommended considering SGAs (quetiapine,7 risperidone or olanzapine) for
+anxiety associated with personality or behavioural disturbances8 or when other treatments
+fail.7 Anxiolytics such as benzodiazepines or buspirone may also be useful.8
+
+Reported 20–56% lifetime prevalence in HD.17 Treatment is typically required: depression
+is linked to a lower quality of life in HD and increases the risk of suicide.17,18 There are no
+RCTs to guide choice.19 However, most experts agree that depression in HD responds well
+to antidepressants. SSRIs are the preferred first-line treatment.4,7
+■■ SSRIs: Two controlled trials examined the effects of fluoxetine and citalopram in nondepressed patients with HD. Despite excluding depressed patients, both showed near
+significant improvements in depressive symptoms.19 Note that tetrabenazine is metabolised
+by CYP2D6; inhibitors of this enzyme (e.g. fluoxetine, paroxetine) may increase levels.
+■■ SNRIs: Venlafaxine was effective in an uncontrolled study;19 however, one in five developed side effects, such as nausea and irritability.17
+■■ TCAs: Beneficial effects reported in some cases20 but generally their use should be avoided
+or limited. TCAs’ anticholinergic properties may worsen hyperkinesias and cognition.20 Toxicity in overdose may also make them less suitable choices (suicidality is increased in HD17).
+■■ Others: Mirtazapine was used successfully in a case report of severe depression.4 In a case
+registry study it was one of the most frequently prescribed treatments for depression in
+HD.17 Lithium produced improvements in suicidality in a small case series19 but experience is very limited, and tolerability may be poor. MAOIs have been used in earlier case
+studies;20 a lack of recent experience and important interactions with tetrabenazine make
+these less suitable. ECT has been suggested in severe cases.7,21,22
+There are no RCTs.23 International consensus supports the use of SSRIs first line;7 use of
+clomipramine is also supported,17 but tolerability may be poor. Case studies document the
+successful use of fluoxetine, paroxetine and sertraline.4 One study of two patients with
+preservation and aggression reported beneficial effects with buspirone.17 For ideational
+preservation, consensus also supports the use of olanzapine or risperidone (particularly if
+associated with irritability).7
+
+Reported prevalence of 38–73% in HD. Initial management is non-pharmacological
+(e.g. by addressing possible triggers such as pain or akathisia and using behavioural/
+psychological approaches). No medications are approved specifically, but expert consensus
+supports the use of SSRIs as preferred first-line agents with antipsychotics being the next
+most favoured alternative monotherapy. Clinical features influence treatment choice. For
+example, SGAs (e.g. olanzapine, risperidone, quetiapine) may be preferred in the presence
+of chorea, acute irritability, aggression or impulsivity. Benzodiazepines are a popularly
+used adjunctive therapy. Guidelines have also recommended mirtazapine or mianserin
+in patients not benefitting from maximum doses of SSRIs, especially in those with a
+comorbid sleep disorder. In cases nonresponsive to antidepressants and/or antipsychotics,
+adjunctive mood stabilisers have also been recommended.7
+■■ Aggressive behaviours: A wide variety of psychotropics have been used with reported
+beneficial effects (e.g. antipsychotics, lithium, valproate, propranolol, medroxyprogesterone, SSRIs, buspirone).20,25 Antipsychotics have been used most commonly. The evidence
+base is too limited to make specific treatment recommendations25 but low-dose antipsychotics can be considered.4 ECT was helpful in a few case reports agitation refractory to
+pharmacotherapy.21
+
+CHAPTER 10
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  805
+
+
+
+
+<<<PAGE 862>>>
+
+Pharmacokinetics  841
+
+The target ranges listed in Table 11.2 have somewhat dubious usefulness and, in
+some cases, merely represent the range of values seen in clinical use. Assays for these
+drugs are likely to be available only in specialist units.
+
+Antipsychotics
+
+Target range (µg/L)
+
+Asenapine
+
+1–5
+
+Brexpiprazole
+
+40–140
+
+Cariprazine
+
+10–20
+
+Chlorpromazine
+
+30–300
+
+Flupentixol
+
+0.5–5 (cis-isomer)
+
+Fluphenazine
+
+1–10
+
+Haloperidol
+
+1–10
+
+Iloperidone
+
+5–10
+
+Lurasidone
+
+15–40
+
+Melperone
+
+30–100
+
+Sulpiride
+
+200–1000
+
+Ziprasidone
+
+50–200
+
+Zuclopenthixol
+
+4–50
+
+Antidepressants
+
+Target range (µg/L)
+
+Agomelatine
+
+7–300
+
+Citalopram
+
+50–110
+
+Desvenlafaxine
+
+100–400
+
+Dosulepin
+
+45–100
+
+Duloxetine
+
+30–120
+
+Escitalopram
+
+15–80
+
+Fluoxetine (+norfluoxetine)
+
+120–500
+
+Fluvoxamine
+
+60–230
+
+Levomilnacipran
+
+80–120
+
+Mianserin
+
+15–70
+
+CHAPTER 11
+
+Table 11.2 Target ranges for other psychotropics30,91
+
+(Continued)
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+
+
+
+<<<PAGE 897>>>
+
+876  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 13
+
+Table 13.1 (Continued)
+
+Drug or drug group
+
+Toxicity in
+overdose
+
+Smallest dose likely
+to cause death
+
+Bupropion3–6
+
+Moderate
+
+Around 4.5g, although largest
+overdose of 13.5g was not
+fatal.7
+
+Duloxetine9–12
+
+Low
+
+Drowsiness, bradycardia, hypotension.
+Unclear – no deaths from single
+overdose reported but involved in May be asymptomatic.
+numerous mixed overdose deaths.
+
+Lofepramine13,14
+
+Low
+
+Unclear. Fatality unlikely if
+lofepramine taken alone.
+
+Sedation, coma, tachycardia,
+hypotension.
+
+MAOIs13,15–17
+(not moclobemide)
+
+High
+
+Phenelzine – 400mg
+Tranylcypromine – 200mg
+
+Tremor, weakness, confusion, sweating,
+tachycardia, hypertension.
+
+Mianserin18–20
+
+Low
+
+Unclear but probably more than Sedation, coma, hypotension,
+hypertension, tachycardia, possible QT
+1000mg.
+prolongation.
+Fatality unlikely if mianserin
+taken alone.
+
+Mirtazapine3,21–24
+
+Low
+
+Fatality unlikely in overdose of
+mirtazapine alone. One death
+reported following overdose
+with 990mg.25
+
+Sedation; even large overdose may be
+asymptomatic. Tachycardia/hypertension
+sometimes seen. Agitation.
+
+Moclobemide26,27
+
+Low
+
+Unclear, but probably more
+than 8g.
+Fatality unlikely if moclobemide
+taken alone.
+
+Vomiting, sedation, disorientation.
+
+Reboxetine3,28
+
+Low
+
+Not known.
+Fatality unlikely in overdose of
+reboxetine alone.
+
+Sweating, tachycardia, changes in blood
+pressure.
+
+SSRIs14,29–32
+
+Low
+
+Unclear. Probably above 1–2g.
+Fatality unlikely if SSRI taken
+alone.
+
+Vomiting, tremor, drowsiness,
+tachycardia, ST depression. Seizures and
+QT prolongation possible. Citalopram
+most toxic of SSRIs in overdose24,33
+(coma, seizures, arrhythmia); escitalopram
+is less toxic.34,35
+
+Trazodone10,36–39
+
+Low
+
+Unclear but probably more than Drowsiness, nausea, hypotension,
+10g.
+dizziness. Rarely QT prolongation,
+Fatality unlikely in overdose of
+arrhythmia.
+trazodone alone. Mortality rate
+about 1 in 10,000 exposures.24
+
+Tricyclics13,15,16,40
+(not lofepramine)
+
+High
+
+Around 500mg.
+Doses over 50mg/kg usually
+fatal.
+
+Signs and symptoms of overdose
+Tachycardia, seizures, QRS prolongation,
+QT prolongation, arrhythmia. Agitation
+and toxic psychosis also reported. Fatal
+serotonin syndrome may occur if taken
+with venlafaxine.8
+
+Sedation, coma, tachycardia, arrhythmia
+(QRS, QT prolongation), hypotension,
+seizures.
+
+
+
+
+<<<PAGE 901>>>
+
+CHAPTER 13
+
+880  The Maudsley® Prescribing Guidelines in Psychiatry
+
+17. Waring WS, et al. Acute myocarditis after massive phenelzine overdose. Eur J Clin Pharmacol 2007; 63:1007–1009.
+18. Chand S, et al. One hundred cases of acute intoxication with minaserin hydrochloride. Pharmacopsychiatry 1981; 14:15–17.
+19. Scherer D, et al. Inhibition of cardiac hERG potassium channels by tetracyclic antidepressant mianserin. Naunyn Schmiedebergs Arch
+Pharmacol 2008; 378:73–83.
+20. Koseoglu Z, et al. Bradycardia and hypotension in mianserin intoxication. Hum Exp Toxicol 2010; 29:887–888.
+21. Bremner JD, et al. Safety of mirtazapine in overdose. J Clin Psychiatry 1998; 59:233–235.
+22. LoVecchio F, et al. Outcomes after isolated mirtazapine (Remeron) supratherapeutic ingestions. J Emerg Med 2008; 34:77–78.
+23. Berling I, et al. Mirtazapine overdose is unlikely to cause major toxicity. ClinToxicol(Phila) 2014; 52:20–24.
+24. Nelson JC, et al. Morbidity and mortality associated with medications used in the treatment of depression: an analysis of cases reported to
+u.s. poison control centers, 2000-2014. Am J Psychiatry 2017; 174:438–450.
+25. Vignali C, et al. Mirtazapine fatal poisoning. Forensic Sci Int 2017; 276:e8-e12.
+26. Hetzel W. Safety of moclobemide taken in overdose for attempted suicide. Psychopharmacology (Berl) 1992; 106 Suppl: S127-S129.
+27. Myrenfors PG, et al. Moclobemide overdose. J Intern Med 1993; 233:113–115.
+28. Baldwin DS, et al. Tolerability and safety of reboxetine. Rev Contemp Pharmacother 2000; 11:321–330.
+29. Cheeta S, et al. Antidepressant-related deaths and antidepressant prescriptions in England and Wales, 1998-2000. Br J Psychiatry 2004;
+184:41–47.
+30. Barbey JT, et al. SSRI safety in overdose. J Clin Psychiatry 1998; 59 Suppl 15:42–48.
+31. Jimmink A, et al. Clinical toxicology of citalopram after acute intoxication with the sole drug or in combination with other drugs: overview
+of 26 cases. Ther Drug Monit 2008; 30:365–371.
+32. Tarabar AF, et al. Citalopram overdose: late presentation of torsades de pointes (TdP) with cardiac arrest. J Med Toxicol 2008; 4:101–105.
+33. Kraai EP, et al. Citalopram overdose: a fatal case. J Med Toxicol 2015; 11:232–236.
+34. Yilmaz Z, et al. Escitalopram causes fewer seizures in human overdose than citalopram. Clin Toxicol (Phila) 2010; 48:207–212.
+35. van GF, et al. Clinical and ECG effects of escitalopram overdose. Ann Emerg Med 2009; 54:404–408.
+36. Gamble DE, et al. Trazodone overdose: four years of experience from voluntary reports. J Clin Psychiatry 1986; 47:544–546.
+37. Martinez MA, et al. Investigation of a fatality due to trazodone poisoning: case report and literature review. J Anal Toxicol 2005;
+29:262–268.
+38. Dattilo PB, et al. Prolonged QT associated with an overdose of trazodone. J Clin Psychiatry 2007; 68:1309–1310.
+39. Service JA, et al. QT prolongation and delayed atrioventricular conduction caused by acute ingestion of trazodone. Clin Toxicol (Phila) 2008;
+46:71–73.
+40. Caksen H, et al. Acute amitriptyline intoxication: an analysis of 44 children. Hum Exp Toxicol 2006; 25:107–110.
+41. Howell C, et al. Cardiovascular toxicity due to venlafaxine poisoning in adults: a review of 235 consecutive cases. Br J Clin Pharmacol 2007;
+64:192–197.
+42. Hojer J, et al. Fatal cardiotoxicity induced by venlafaxine overdosage. Clin Toxicol (Phila) 2008; 46:336–337.
+43. Taylor D. Venlafaxine and cardiovascular toxicity. BMJ 2010; 340:327.
+44. Cooper JM, et al. Desvenlafaxine overdose and the occurrence of serotonin toxicity, seizures and cardiovascular effects. Clin Toxicol (Phila)
+2017; 55:18–24.
+45. Russell JL, et al. Pediatric ingestion of vilazodone compared to other selective serotonin reuptake inhibitor medications. Clin Toxicol (Phila)
+2017; 55:352–356.
+46. Allergan USA I. Highlights of prescribing information: VIIBRYD (vilazodone hydrochloride) tablets. 2020; https://www.allergan.com/assets/
+pdf/viibryd_pi.
+47. Mazza MG, et al. Vortioxetine overdose in a suicidal attempt: A case report. Medicine (Baltimore) 2018; 97:e10788.
+48. Isbister GK, et al. Amisulpride deliberate self-poisoning causing severe cardiac toxicity including QT prolongation and torsades de pointes.
+Med J Aust 2006; 184:354–356.
+49. Ward DI. Two cases of amisulpride overdose: A cause for prolonged QT syndrome. Emerg Med Australas 2005; 17:274–276.
+50. Isbister GK, et al. Amisulpride overdose is frequently associated with QT prolongation and torsades de pointes. J Clin Psychopharmacol
+2010; 30:391–395.
+51. Lofton AL, et al. Atypical experience: a case series of pediatric aripiprazole exposures. Clin Toxicol (Phila) 2005; 43:151–153.
+52. Carstairs SD, et al. Overdose of aripiprazole, a new type of antipsychotic. J Emerg Med 2005; 28:311–313.
+53. Forrester MB. Aripiprazole exposures reported to Texas poison control centers during 2002-2004. J Toxicol Environ Health A 2006;
+69:1719–1726.
+54. Taylor JE, et al. A case of intentional asenapine overdose. PrimCare CompanionCNSDisord 2013; 15:PCC.13l01547.
+55. U.S. Food & Drug Administration. Drugs@FDA: FDA-approved drugs. 2020; https://www.accessdata.fda.gov/scripts/cder/daf/.
+56. Haddad PM, et al. Antipsychotic-related QTc prolongation, torsade de pointes and sudden death. Drugs 2002; 62:1649–1671.
+57. Levine BS, et al. Two fatalities involving haloperidol. J Anal Toxicol 1991; 15:282–284.
+58. Henderson RA, et al. Life-threatening ventricular arrhythmia (torsades de pointes) after haloperidol overdose. Hum Exp Toxicol 1991;
+10:59–62.
+59. Recordati Pharmaceuticals Limited. Summary of product characteristics. Reagila 1.5 mg, 3mg, 4.5mg, and 6mg hard capsules. 2020; https://
+www.medicines.org.uk/emc/product/9401/smpc.
+60. Trenton A, et al. Fatalities associated with therapeutic use and overdose of atypical antipsychotics. CNS Drugs 2003; 17:307–324.
+61. Flanagan RJ, et al. Suspected clozapine poisoning in the UK/Eire, 1992-2003. Forensic Sci Int 2005; 155:91–99.
+62. Shigeev SV, et al. Clozapine intoxication: theoretical aspects and forensic-medical examination. Sud Med Ekspert 2013; 56:41–46.
+
+
+
+
+<<<PAGE 972>>>
+
+Index  951
+
+statutory consultees 928–929
+mental illness 785
+effects of 883
+metabolic syndrome, development of 724
+metformin 126
+methadone 482, 825t
+buprenorphine and 479t
+clinical effectiveness 478–481
+first week 481–482
+induction and stabilisation in
+community 481
+initial total daily dose 481
+initiation on acute ward 493
+intoxication 482
+overdose 482
+prescribing information 480
+recommended ECG monitoring 483,
+484t
+and risk of torsades de pointes/QT
+interval prolongation 482
+severe hepatic/renal dysfunction 482
+starting dose for patients 480
+subsequent period 482
+methylphenidate 569, 571, 652, 716t,
+729t, 800, 825t, 925t
+metoclopramide 589, 635
+MHA. See Mental Health Act (MHA)
+mianserin 707t
+midazolam 58, 938t
+mild alcohol dependence 459
+mild cognitive impairment (MCI) 611, 625
+treatment of 625
+vitamin E for 618
+milnacipran 389, 727t
+minerals 7
+Mini Mental State Examination
+(MMSE) 607, 613, 631
+minocycline 582
+mirtazapine 367, 650, 688, 707t, 727t,
+743t, 779, 857t
+misuse, drugs of 530–533
+moclobemide 389, 707t, 743t
+modafinil 570, 693, 716t, 811
+moderate alcohol dependence 459, 459t
+‘moderate-effect’ drugs 142
+monitor respiratory rate (RR) 473
+monoamine oxidase inhibitors
+(MAOIs) 308, 380, 381t, 673, 688,
+707t, 727t
+monotherapy, antipsychotic
+polypharmacy to 20
+Montreal Cognitive Assessment 607
+mood disorders 868
+mood stabilisers 581, 864t
+borderline personality disorder (BPD) 5
+in breastfeeding 704
+psychotropics in bariatric surgery
+824–825, 824–825t
+RCTs of 650
+treatment with 690–692
+morphine 638
+movement disorders 872
+MS. See multiple sclerosis (MS)
+multicomponent interventions 645
+Multi-Disciplinary Team (MDT) 603
+multi-episode schizophrenia 26–27
+multiple sclerosis (MS) 808
+anxiety 809
+bipolar disorder 810
+
+cognitive impairment 810
+depression 808
+fatigue 810–811
+pseudobulbar affect (PBA) 809
+psychosis 810
+recommendations for
+treatment 808–809
+music therapy 644
+myocarditis 222–223
+myoclonus 804t
+nalmefene, alcohol 464
+naloxone 474–475
+administration, flowchart for 474, 475f
+intranasal 474–475, 475f
+naloxone (Suboxone) 490
+naltrexone 800, 925t
+alcohol 463–464
+NICE clinical guidelines 464
+in relapse prevention 496
+dose of 497
+initiating 496
+Naranjo scale 920, 921t
+National Birth Defects Prevention
+Study 683
+National Institute for Health and Care
+Excellence (NICE) guidance 375,
+562, 609, 617, 624, 673, 693, 758,
+897
+schizophrenia 48–50
+NbN. See neuroscience-based nomenclature
+(NbN)
+negative symptoms
+adjunctive therapy for 33
+pharmacological treatment of 32
+in schizophrenia 32–34
+Netherlands Clozapine Collaboration
+Group 236
+neurocognitive disorders 780
+neuroleptic malignant syndrome
+(NMS) 131, 132t
+neuroscience-based nomenclature
+(NbN) 46
+neutropenia 236–237, 238
+nicotine 871
+dependence 467
+depression and anxiety 872
+drug interactions 873
+movement disorders and Parkinson’s
+disease 872
+placebo-controlled trial of 589
+psychotropic effects 871
+replacement therapy 872
+schizophrenia 871–872
+smoking cessation 873
+withdrawal symptoms 873
+nicotine and smoking cessation 503
+bupropion 506
+adverse effects 506
+clinical effectiveness 506
+preparations and dose 506
+electronic cigarettes and
+vaping 506–507
+adverse effects 507–509
+clinical effectiveness 507
+preparations and dose 507
+nicotine replacement therapy (NRT) 503
+adverse effects 505
+clinical effectiveness 503–505
+
+preparations and dose 504t
+varenicline
+adverse effects 505–506
+clinical effectiveness 505
+preparations and dose 505
+nicotine replacement therapy (NRT) 503
+adverse effects 505
+clinical effectiveness 503–505
+preparations and dose 504t
+nitroprusside 939t
+NNT. See number needed to treat (NNT)
+nomenclature 46
+non-adherence
+to antipsychotic treatment 6
+determinants of 898–900, 902
+impact of 898–899
+rate of 898
+non-compliance 905
+lamotrigine 905–906, 906t
+non-psychotropics, psychiatric side
+effects of 917
+adverse drug reactions (ADRs) with
+917–920t
+differential diagnosis of 920–921, 921t
+non-steroidal anti-inflammatory drugs
+(NSAIDs) 253–254, 621
+norclozapine 838
+nortriptyline 368, 743t, 809
+NRT. See nicotine replacement therapy
+(NRT)
+number needed to treat (NNT) 307
+obsessive compulsive behaviours 805t
+obsessive compulsive disorder (OCD) 424,
+583, 795t
+olanzapine 5, 25–26, 53, 149, 151,
+161, 181, 271, 296, 554, 581,
+589, 646, 647, 648t, 710t, 726t,
+740t, 758, 770t, 799, 810, 824t,
+834, 836t, 839, 851, 857t, 923,
+935t, 939t
+long-acting injection 80
+dosing schedules 80t
+post-injection syndrome 80–81
+switching 80
+pamoate monohydrate 933t
+reductions of dose 106–107t
+older people
+absorption 602
+AChE-Is in AD
+interactions 613
+memantine 612–613
+NICE recommendations 617
+other treatments 618
+reasons for stopping treatment 616
+when to stop treatment 613–616,
+614–615t
+administering medicines in
+foodstuffs 603
+ageing body 601
+analgesics
+antihistamines 639
+antihypertensives 639
+NSAIDs and paracetamol 638
+opiates 638–639
+other cardiac drugs 639
+statins 639
+antibiotics 640–641, 640–641t
+antidepressants and 674–675t
+
+

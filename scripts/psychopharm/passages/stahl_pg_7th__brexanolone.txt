@@ -1,0 +1,438 @@
+<<<PAGE 7>>>
+
+Contents
+Introduction
+List of icons
+1 acamprosate
+2 agomelatine
+3 alprazolam
+4 amisulpride
+5 amitriptyline
+6 amoxapine
+7 amphetamine (d)
+8 amphetamine (d,l)
+9 aripiprazole
+10 armodafinil
+11 asenapine
+12 atomoxetine
+13 benztropine
+14 blonanserin
+15 bremelanotide
+16 brexanolone
+17 brexpiprazole
+18 buprenorphine
+19 bupropion
+20 buspirone
+21 caprylidene
+22 carbamazepine
+23 cariprazine
+24 chlordiazepoxide
+25 chlorpromazine
+
+
+
+
+<<<PAGE 300>>>
+
+Brexanolone
+
+Therapeutics
+Brands
+Zulresso
+see index for additional brand names
+Generic?
+No
+Class
+Neuroactive steroid
+Commonly Prescribed for
+(bold for FDA approved)
+Postpartum depression
+How the Drug Works
+Positive allosteric modulator at neuroactive steroid sites on both
+gamma-aminobutyric acid (GABA) A benzodiazepine-sensitive and
+benzodiazepine-insensitive ligand-gated ion channels
+Benzodiazepine-insensitive GABA-A receptor subtypes (with Î´
+subunits and Î± 4 or Î± 6 subunits) are located extrasynaptically,
+
+
+
+
+<<<PAGE 301>>>
+
+where they capture not only GABA that diffuses away from the
+synapse, but also neuroactive steroids synthesized and released by
+glia
+GABA binding at these receptors hypothetically regulates tonic
+inhibition
+Brexanolone binds to the neuroactive steroid site, acting as a
+positive allosteric modulator to enhance the effects of GABA
+binding, i.e., to increase tonic GABAergic tone
+Only known therapeutic agent for depression with positive allosteric
+modulation of the benzodiazepine-insensitive GABA-A receptor
+How Long Until It Works
+Clinical improvement may be evident as early as 12–24 hours into
+the infusion
+Improvement may continue over the 60-hour infusion regimen
+If It Works
+In clinical trials, antidepressant effect was sustained at 30 days postinfusion
+If It Doesn’t Work
+Consider psychotherapy and/or initiating treatment with an oral
+antidepressant
+
+
+
+
+<<<PAGE 302>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Brexanolone is a short-term treatment
+Some patients may require initiation of a longer-term oral
+antidepressant
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Same mechanism for side effects as for therapeutic effects –namely
+due to excessive actions at GABA-A receptors
+Notable Side Effects
+Sedation, dizziness, dry mouth, flushing/hot flush
+Life-Threatening or Dangerous Side Effects
+Excessive sedation or sudden loss of consciousness
+Syncope, presyncope
+Theoretical activation or emergence of suicidal ideation
+Weight Gain
+
+
+
+
+<<<PAGE 305>>>
+
+Monitor patients for hypoxia using continuous pulse oximetry
+equipped with an alarm
+Monitor for excessive sedation every 2 hours during planned, nonsleep periods
+Initiate brexanolone early enough during the day to allow for
+recognition of excessive sedation
+Patients must be accompanied during interactions with their children
+Brexanolone is supplied as a concentrated solution that must be
+diluted prior to administration; after dilution the product can be
+stored in infusion bags under refrigerated conditions for up to 96
+hours; however, because the diluted product can be used for only 12
+hours at room temperature, each 60-hour infusion will require
+preparation of at least 5 infusion bags
+Overdose
+Limited data
+Long-Term Use
+Not intended for long-term use
+Habit Forming
+Schedule IV
+How to Stop
+
+
+
+
+<<<PAGE 306>>>
+
+Down-titrate per the standard dosing regimen (see How to Dose)
+Pharmacokinetics
+Terminal half-life approximately 9 hours
+Extensively metabolized by non-CYP-based pathways; metabolites
+are inactive
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+Other Warnings/Precautions
+Brexanolone can cause excessive sedation and sudden loss of
+consciousness; for that reason, brexanolone is available only
+through a Risk Evaluation and Mitigation Strategy (REMS); the
+patient must be enrolled in the program prior to administration of
+brexanolone
+Brexanolone can cause hypoxia; monitor patients using pulse
+oximetry and stop the infusion if hypoxia occurs
+Do Not Use
+If there is a proven allergy to brexanolone
+
+Special Populations
+
+
+
+
+<<<PAGE 309>>>
+
+In a study of 12 healthy adult lactating women treated with
+intravenous brexanolone according to the recommended 60-hour
+regimen, concentrations of brexanolone in breast milk were low
+(<10 ng/mL) in >95% of women; the calculated maximum relative
+infant dose during infusion was 1–2%
+
+The Art of Psychopharmacology
+Potential Advantages
+Rapid response
+Potential Disadvantages
+Can only be administered in a Zulresso REMS-certified healthcare
+setting
+Primary Target Symptoms
+Depressed mood
+Pearls
+Brexanolone is the first medication approved for the treatment of
+postpartum depression
+Brexanolone is first-in-class as an antidepressant with a GABAergic
+mechanism
+
+
+
+
+<<<PAGE 310>>>
+
+A related neuroactive steroid is currently being studied in an oral
+formulation for the treatment of postpartum depression and unipolar
+depression
+
+Suggested Reading
+Cooper MC , Kilvert HS , Hodgkins P , Roskell NS , Eldar-Lissai A . Using
+matching-adjusted indirect comparisons and network meta-analyses to
+compare efficacy of brexanolone injection with selective serotonin reuptake
+inhibitors for treating postpartum depression . CNS Drugs 2019 ;33 (10
+):1039–52 .
+Meltzer-Brody S , Colquhoun H , Riesenberg R , et al. Brexanolone
+injection in post-partum depression: two multicentre, double-blind,
+randomised, placebo-controlled, phase 3 trials . Lancet 2018 ;392 (10152
+):1058–70 .
+Zheng W , Cai DB , Zheng W , et al. Brexanolone for postpartum
+depression: a meta-analysis of randomized controlled studies . Psychiatry
+Res 2019 ;279 :83–9 .
+Zorumski CF , Paul SM , Covey DF , Mennerick S . Neurosteroids as novel
+antidepressants and anxiolytics: GABA-A receptors and beyond . Neurobiol
+Stress 2019 ;11 :100196 .
+
+
+
+
+<<<PAGE 2569>>>
+
+Adzenys ER (amphetamine d,l), 45
+Adzenys XR-ODT (amphetamine d,l), 45
+agomelatine, 5
+AH3 N (hydroxyzine), 355
+Aiglonyl (sulpiride), 741
+Alased (haloperidol), 347
+Albium (lorazepam), 437
+Aldazine (thioridazine), 759
+Alemoxan (clozapine), 191
+Alepam (oxazepam), 569
+Alertec (modafinil), 521
+Aleviatin (zonisamide), 875
+Alimoral (sulpiride), 741
+Aliseum (diazepam), 229
+Allegron (nortriptyline), 551
+allopregnanolone (brexanolone), 99
+Almazine (lorazepam), 437
+Aloperidin (haloperidol), 347
+Aloperidin Decanoate (haloperidol), 347
+Alpralid (alprazolam), 11
+Alpraz (alprazolam), 11
+alprazolam, 11
+alprazolam XR, 11
+Alprox (alprazolam), 11
+Alti-Alprazolam (alprazolam), 11
+Alti-Clonazepam (clonazepam), 173
+Alti-Desipramine (desipramine), 207
+Alti-Doxepin (doxepin), 255
+
+
+
+
+<<<PAGE 2576>>>
+
+brexanolone, 99
+brexpiprazole, 103
+Brisdelle (paroxetine), 593
+Brintellix (vortioxetine), 853
+BritLofex (lofexidine), 427
+Buprenex (buprenorphine), 111
+buprenorphine, 111
+buprenorphine with naloxone, 111
+bupropion, 117
+bupropion SR, 117
+bupropion XL, 117
+Buscalm (buspirone), 123
+Buspar (buspirone), 123
+BuSpar (buspirone), 123
+Buspimen (buspirone), 123
+buspirone, 123
+Buspisal (buspirone), 123
+Buteridol (haloperidol), 347
+Butrans (buprenorphine), 111
+Calmoflorine (sulpiride), 741
+Camcolit (lithium), 415
+Campral (acamprosate), 1
+Caplyta (lumateperone), 451
+caprylidene, 127
+Caprysin (clonidine), 179
+Carbabeta (carbamazepine), 131
+Carbagamma (carbamazepine), 131
+carbamazepine, 131
+
+
+
+
+<<<PAGE 2627>>>
+
+Zenzedi (amphetamine d), 39
+Zeptol (carbamazepine), 131
+Zerenal (dothiepin), 249
+ziprasidone, 863
+Ziprexa (olanzapine), 559
+Zispin (mirtazapine), 509
+Zoleptil (zotepine), 883
+Zoloft (sertraline), 721
+zolpidem, 871
+Zolpimist (zolpidem), 871
+Zonalon (doxepin), 255
+Zonegran (zonisamide), 875
+zonisamide, 875
+Zopax (alprazolam), 11
+zopiclone, 879
+Zopite (zotepine), 883
+zotepine, 883
+Z-Pam (temazepam), 755
+Zubsolv (buprenorphine with naloxone), 111
+zuclopenthixol, 889
+Zuledin (chlorpromazine), 153
+Zulex (acamprosate), 1
+Zulresso (brexanolone), 99
+Zyban (bupropion), 117
+Zymocomb (sulpiride), 741
+Zyprexa (olanzapine), 559
+Zyprexa Relprevv (olanzapine), 559
+Zyprexa Zydis (olanzapine), 559
+
+
+
+
+<<<PAGE 2637>>>
+
+Delirium
+haloperidol (adjunct), 347
+lorazepam (adjunct), 437
+Dementia
+donepezil, 243
+galantamine, 337
+memantine, 473
+rivastigmine, 699
+selegiline, 705
+Dementia-related psychosis
+pimavanserin, 623
+Depression
+agomelatine, 5
+amisulpride, 17
+amitriptyline , 25
+amoxapine , 33
+amphetamine (d), 39
+amphetamine (d,l), 45
+aripiprazole (adjunct) , 53
+asenapine, 71
+atomoxetine, 79
+blonanserin, 89
+brexanolone , 99
+brexpiprazole (adjunct) , 103
+bupropion , 117
+buspirone (adjunct), 123
+
+
+
+
+<<<PAGE 2648>>>
+
+rivastigmine , 699
+Parkinson’s disease psychosis
+pimavanserin , 623
+Pervasive developmental disorders
+guanfacine, 343
+Porphyria
+chlorpromazine , 153
+Postherpetic neuralgia
+gabapentin , 331
+pregabalin , 647
+Postpartum depression
+brexanolone , 99
+Posttraumatic stress disorder
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+cariprazine, 137
+citalopram, 159
+clonidine, 179
+desvenlafaxine, 215
+dextromethorphan (with quinidine), 225
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+
+
+
+
+<<<PAGE 2659>>>
+
+amitriptyline, 25
+amoxapine, 33
+atomoxetine, 79
+brexanolone, 99
+bupropion, 117
+citalopram, 159
+clomipramine, 165
+desipramine, 207
+desvenlafaxine, 215
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+esketamine, 275
+fluoxetine, 301
+fluvoxamine, 325
+imipramine, 367
+isocarboxazid, 375
+ketamine, 383
+levomilnacipran, 403
+l-methylfolate (adjunct), 477
+lofepramine, 421
+maprotiline, 465
+mianserin, 495
+milnacipran, 503
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+
+
+
+
+<<<PAGE 2667>>>
+
+zotepine, 883
+zuclopenthixol, 889
+Movement disorder treatments
+benztropine, 85
+deutetrabenazine, 221
+diphenhydramine, 235
+propranolol, 653
+trihexyphenidyl, 809
+valbenazine, 825
+Neuroactive steroid
+brexanolone, 99
+Neuropathic/chronic pain treatments
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+
+

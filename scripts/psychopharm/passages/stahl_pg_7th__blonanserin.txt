@@ -1,0 +1,647 @@
+<<<PAGE 7>>>
+
+Contents
+Introduction
+List of icons
+1 acamprosate
+2 agomelatine
+3 alprazolam
+4 amisulpride
+5 amitriptyline
+6 amoxapine
+7 amphetamine (d)
+8 amphetamine (d,l)
+9 aripiprazole
+10 armodafinil
+11 asenapine
+12 atomoxetine
+13 benztropine
+14 blonanserin
+15 bremelanotide
+16 brexanolone
+17 brexpiprazole
+18 buprenorphine
+19 bupropion
+20 buspirone
+21 caprylidene
+22 carbamazepine
+23 cariprazine
+24 chlordiazepoxide
+25 chlorpromazine
+
+
+
+
+<<<PAGE 272>>>
+
+Blonanserin
+
+Therapeutics
+Brands
+Lonasen
+see index for additional brand names
+Generic?
+No
+Class
+Atypical antipsychotic (serotonin dopamine antagonist; secondgeneration antipsychotic; also a potential mood stabilizer)
+Commonly Prescribed for
+(bold for FDA approved)
+Schizophrenia
+Acute mania/mixed mania
+Other psychotic disorders
+Bipolar maintenance
+Bipolar depression
+Treatment-resistant depression
+
+
+
+
+<<<PAGE 273>>>
+
+Behavioral disturbances in dementia
+Behavioral disturbances in children and adolescents
+Disorders associated with problems with impulse control
+How the Drug Works
+Blocks dopamine 2 receptors, reducing positive symptoms of
+psychosis and stabilizing affective symptoms
+Blocks serotonin 2A receptors, causing enhancement of dopamine
+release in certain brain regions and thus reducing motor side effects
+and possibly improving cognition and affective symptoms
+Actions at dopamine 3 receptors could theoretically contribute to
+blonanserin’s efficacy
+How Long Until It Works
+Psychotic symptoms can improve within 1 week, but it may take
+several weeks for full effect on behavior as well as on cognition
+Classically recommended to wait at least 4–6 weeks to determine
+efficacy of drug, but in practice some patients may require up to 16–
+20 weeks to show a good response, especially on negative or
+cognitive symptoms
+If It Works
+Most often reduces positive symptoms but does not eliminate them
+
+
+
+
+<<<PAGE 277>>>
+
+✽ Blood pressure, fasting plasma glucose, fasting lipids within 3
+months and then annually, but earlier and more frequently for patients
+with diabetes or who have gained >5% of initial weight
+Treat or refer for treatment and consider switching to another
+atypical antipsychotic for patients who become overweight, obese,
+pre-diabetic, diabetic, hypertensive, or dyslipidemic while receiving
+an atypical antipsychotic
+
+✽ Even in patients without known diabetes, be vigilant for the rare but
+life-threatening onset of diabetic ketoacidosis, which always requires
+immediate treatment, by monitoring for the rapid onset of polyuria,
+polydipsia, weight loss, nausea, vomiting, dehydration, rapid
+respiration, weakness and clouding of sensorium, even coma
+Patients with low white blood cell count (WBC) or history of druginduced leukopenia/neutropenia should have complete blood count
+(CBC) monitored frequently during the first few months, and
+blonanserin should be discontinued at the first sign of decline in
+WBC in the absence of other causative factors
+Patients should be monitored periodically for the development of
+abnormal movements of tardive dyskinesia, using neurological
+exam and the AIMS (Abnormal Involuntary Movement Scale)
+
+Side Effects
+How Drug Causes Side Effects
+
+
+
+
+<<<PAGE 281>>>
+
+Powder 20 mg per 1 g powder
+How to Dose
+Initial 8 mg/day divided in 2 doses; maintenance dose 8–16 mg/day
+divided in 2 doses; maximum dose 24 mg/day
+Blonanserin should be taken after a meal, as maximum
+concentrations are increased in the fed state; however, because the
+increase in systemic exposure continues until at least 4 hours after
+food intake, blonanserin can be taken before bedtime
+Dosing Tips
+Start with twice daily dosing; once stabilized, some patients do well
+with 1 dose given at night
+Rather than raise the dose above normal dosing in acutely agitated
+patients requiring acute antipsychotic actions, consider short-term
+(one dose or more) augmentation with a benzodiazepine or another
+antipsychotic, especially intramuscularly
+Rather than raise the dose above normal dosing in partial
+responders, consider augmentation with a mood-stabilizing
+anticonvulsant, such as valproate, topiramate, or lamotrigine
+Children and elderly should generally be dosed at the lower end of
+the dosage spectrum
+Treatment should be suspended if absolute neutrophil count falls
+below 1000/mm3
+
+
+
+
+<<<PAGE 283>>>
+
+CYP450 3A4 inducers, such as carbamazepine, can lower the
+plasma levels of blonanserin
+CYP450 3A4 inhibitors, such as ketoconazole, nefazodone,
+fluvoxamine, and fluoxetine, can increase plasma levels of
+blonanserin
+May increase effects of antihypertensive agents
+May antagonize levodopa, dopamine agonists
+Other Warnings/Precautions
+Use with caution in patients with conditions that predispose to
+hypotension (dehydration, overheating)
+Atypical antipsychotics have the potential for cognitive and motor
+impairment, especially related to sedation
+Atypical antipsychotics can cause body temperature dysregulation;
+use caution in patients who may experience conditions that increase
+body temperature (e.g., strenuous exercise, saunas, extreme heat,
+dehydration, or concomitant anticholinergic medication)
+Dysphagia has been associated with antipsychotic use, and
+blonanserin should be used cautiously in patients at risk for
+aspiration pneumonia
+Antipsychotics may cause somnolence, postural hypotension, motor
+and sensory instability, which may lead to falls; for patients with
+diseases, conditions, or medications that could exacerbate these
+effects, complete fall risk assessments when initiating antipsychotic
+
+
+
+
+<<<PAGE 284>>>
+
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+As with any antipsychotic, use with caution in patients with history
+of seizures
+Do Not Use
+In conjunction with adrenaline/epinephrine
+If patient is taking ketoconazole
+If there is a proven allergy to blonanserin
+
+Special Populations
+Renal Impairment
+Not studied
+Hepatic Impairment
+Use with caution; may need to lower dose
+Cardiac Impairment
+Use in patients with cardiac impairment has not been studied, so use
+with caution
+Elderly
+Some patients may tolerate lower doses better
+
+
+
+
+<<<PAGE 285>>>
+
+Although atypical antipsychotics are commonly used for behavioral
+disturbances in dementia, no agent has been approved for treatment
+of elderly patients with behavioral symptoms of dementia such as
+agitation
+Elderly patients with dementia-related psychosis treated with
+atypical antipsychotics are at an increased risk of death compared to
+placebo and also have an increased risk of cerebrovascular events
+Children and Adolescents
+Safety and efficacy have not been established
+Children and adolescents using blonanserin may need to be
+monitored more often than adults and may tolerate lower doses
+better
+Pregnancy
+Controlled studies have not been conducted in pregnant women
+Psychotic symptoms may worsen during pregnancy, and some form
+of treatment may be necessary
+Breast Feeding
+Unknown if blonanserin is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed unless the
+potential benefit to the mother justifies the potential risk to the child
+
+
+
+
+<<<PAGE 286>>>
+
+Infants of women who choose to breast feed while on blonanserin
+should be monitored for possible adverse effects
+
+The Art of Psychopharmacology
+Potential Advantages
+May be useful when other antipsychotics have failed to provide
+adequate response or have not been tolerated
+Potential Disadvantages
+Patients who require once daily dosing from the initiation of
+treatment
+Patients who require intramuscular administration
+Primary Target Symptoms
+Positive symptoms of psychosis
+Negative symptoms of psychosis
+Cognitive symptoms
+Unstable mood (both depression and mania)
+Aggressive symptoms
+Pearls
+Relatively selective binding profile
+
+
+
+
+<<<PAGE 287>>>
+
+Not approved for mania, but almost all atypical antipsychotics
+approved for acute treatment of schizophrenia have proven effective
+in the acute treatment of mania as well
+Blonanserin’s binding affinity for D2 dopamine receptors (0.14 nM)
+is greater than for D3 receptors (0.49 nM); however, it is one of the
+very few antipsychotics in which the binding affinity for D3
+receptors is greater than dopamine’s binding affinity for D3
+receptors (~60 nM)
+D3 antagonist actions have been hypothetically associated with
+improvement in negative, cognitive, and affective symptoms
+
+Suggested Reading
+Deeks ED , Keating GM . Blonanserin. A review of its use in the
+management of schizophrenia . CNS Drugs 2010 ;24 (1 ):65 –84 .
+Hida H , Mouri A , Mori K , et al. Blonanserin ameliorates phencyclidineinduced visual-recognition memory deficits: the complex mechanism of
+blonanserin action involving D3-5-HT2A and D1-NMDA receptors in the
+mPFC . Neuropsychopharmacology 2015 ;40 (3 ):601–13 .
+Kishi T , Matsuda Y , Nakamura H , Iwata N. Blonanserin for
+schizophrenia: a systematic review and meta-analysis of double-blind,
+randomized, controlled trials . J Psychiatr Res 2013 ;47 (2 ):149–54 .
+
+
+
+
+<<<PAGE 288>>>
+
+Yang J , Bahk WM , Cho HS , et al. Efficacy and tolerability of blonanserin
+in the patients with schizophrenia: a randomized, double-blind, risperidonecompared trial . Clin Neuropharmacol 2010 ;33 (4 ):169–75 .
+
+
+
+
+<<<PAGE 2575>>>
+
+Belix (diphenhydramine), 235
+Belpax (amitriptyline), 25
+Belseren (clorazepate), 185
+Belsomra (suvorexant), 747
+Benadryl (diphenhydramine), 235
+Benpon (nortriptyline), 551
+Bentapam (diazepam), 229
+Benylin (diphenhydramine), 235
+Benzopin (diazepam), 229
+Benzotran (oxazepam), 569
+benztropine, 85
+Berk-Dothiepin (dothiepin), 249
+Besitran (sertraline), 721
+Bespar (buspirone), 123
+Betamaks (sulpiride), 741
+Betamed (diazepam), 229
+Betapam (diazepam), 229
+Bialzepam (diazepam), 229
+Bikalm (zolpidem), 871
+Bioperidolo (haloperidol), 347
+Bioxetin (fluoxetine), 301
+Biron (buspirone), 123
+Biscasil (chlorpromazine), 153
+Biston (carbamazepine), 131
+blonanserin, 89
+Bolvidon (mianserin), 495
+Bortalium (diazepam), 229
+bremelanotide, 95
+
+
+
+
+<<<PAGE 2596>>>
+
+Lithiumorotat (lithium), 415
+Lithizine (lithium), 415
+Lithobid (lithium), 415
+Lithonate (lithium), 415
+Lithostat (lithium), 415
+Lito (lithium), 415
+Litoduron (lithium), 415
+L-ketamine (esketamine), 275
+l-methylfolate, 477
+Lodopin (zotepine), 883
+lofepramine, 421
+lofexidine, 427
+loflazepate, 431
+Lomesta (lorazepam), 437
+Lonasen (blonanserin), 89
+Lonseren (pipothiazine), 633
+Lorabenz (lorazepam), 437
+Lorafen (lorazepam), 437
+Loram (lorazepam), 437
+Lorans (lorazepam), 437
+Lorapam (lorazepam), 437
+lorazepam, 437
+Lorenin (lorazepam), 437
+Loridem (lorazepam), 437
+Lorien (fluoxetine), 301
+Lorivan (lorazepam), 437
+Lorsedal (lorazepam), 437
+Lorsifar (lorazepam), 437
+
+
+
+
+<<<PAGE 2632>>>
+
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine , 153
+guanfacine, 343
+haloperidol , 347
+iloperidone, 359
+lumateperone, 451
+lurasidone, 457
+olanzapine, 559
+paliperidone, 581
+quetiapine, 667
+risperidone, 687
+ziprasidone, 863
+Benzodiazepine reversal
+flumazenil , 293
+Benzodiazepine withdrawal
+cyamemazine, 201
+Bipolar depression
+amoxapine, 33
+aripiprazole, 53
+armodafinil, 65
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+
+
+
+
+<<<PAGE 2633>>>
+
+bupropion, 117
+carbamazepine, 131
+cariprazine , 137
+fluoxetine, 301
+iloperidone, 359
+lamotrigine, 387
+lithium, 415
+lumateperone, 451
+lurasidone , 457
+modafinil, 521
+olanzapine/fluoxetine combination , 301 , 559
+quetiapine , 667
+risperidone, 687
+sertindole, 715
+valproate (divalproex), 829
+ziprasidone, 863
+Bipolar disorder
+amoxapine, 33
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+bupropion, 117
+carbamazepine, 131
+cariprazine , 137
+chlorpromazine, 153
+clonazepam (adjunct), 173
+clozapine, 191
+
+
+
+
+<<<PAGE 2635>>>
+
+valproate (divalproex), 829
+ziprasidone, 863
+zonisamide, 875
+zotepine, 883
+zuclopenthixol, 889
+Bipolar maintenance
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine, 131
+cariprazine, 137
+iloperidone, 359
+lamotrigine , 387
+lithium, 415
+lumateperone, 451
+lurasidone, 457
+olanzapine , 559
+olanzapine/fluoxetine combination, 301 , 559
+paliperidone, 581
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+valproate (divalproex), 829
+ziprasidone , 863
+Bulimia nervosa/binge eating
+fluoxetine , 301
+
+
+
+
+<<<PAGE 2637>>>
+
+Delirium
+haloperidol (adjunct), 347
+lorazepam (adjunct), 437
+Dementia
+donepezil, 243
+galantamine, 337
+memantine, 473
+rivastigmine, 699
+selegiline, 705
+Dementia-related psychosis
+pimavanserin, 623
+Depression
+agomelatine, 5
+amisulpride, 17
+amitriptyline , 25
+amoxapine , 33
+amphetamine (d), 39
+amphetamine (d,l), 45
+aripiprazole (adjunct) , 53
+asenapine, 71
+atomoxetine, 79
+blonanserin, 89
+brexanolone , 99
+brexpiprazole (adjunct) , 103
+bupropion , 117
+buspirone (adjunct), 123
+
+
+
+
+<<<PAGE 2643>>>
+
+maprotiline, 465
+mianserin, 495
+nortriptyline, 551
+quazepam , 663
+ramelteon , 677
+suvorexant , 747
+tasimelteon, 751
+temazepam , 755
+trazodone, 793
+triazolam , 799
+trimipramine, 817
+zaleplon , 859
+zolpidem , 871
+zopiclone, 879
+Mania
+alprazolam (adjunct), 11
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine , 131
+cariprazine , 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium , 415
+
+
+
+
+<<<PAGE 2650>>>
+
+diazepam , 229
+hydroxyzine , 355
+lorazepam , 437
+midazolam , 499
+Pruritus
+doxepin, 255
+hydroxyzine , 355
+Pseudobulbar affect
+dextromethorphan (with quinidine) , 225
+Psychosis
+alprazolam (adjunct), 11
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine , 313
+haloperidol , 347
+iloperidone, 359
+
+
+
+
+<<<PAGE 2652>>>
+
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine, 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol, 347
+iloperidone, 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct), 477
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone , 581
+perospirone, 601
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+
+
+
+
+<<<PAGE 2653>>>
+
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+valproate (divalproex) (adjunct), 829
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Schizophrenia
+amisulpride, 17
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole , 103
+carbamazepine (adjunct), 131
+cariprazine , 137
+chlorpromazine , 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol , 347
+iloperidone , 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct) , 477
+loxapine , 443
+lumateperone , 451
+lurasidone , 457
+molindone , 527
+olanzapine , 558
+
+
+
+
+<<<PAGE 2660>>>
+
+nortriptyline, 551
+paroxetine, 593
+phenelzine, 613
+protriptyline, 657
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+triiodothyronine, 813
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Antipsychotics
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine, 153
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine, 313
+haloperidol, 347
+
+

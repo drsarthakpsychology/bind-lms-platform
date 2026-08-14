@@ -1,0 +1,767 @@
+<<<PAGE 10>>>
+
+82 methylphenidate (d,l)
+83 mianserin
+84 midazolam
+85 milnacipran
+86 mirtazapine
+87 moclobemide
+88 modafinil
+89 molindone
+90 nalmefene
+91 naltrexone
+92 naltrexone/bupropion
+93 nefazodone
+94 nortriptyline
+95 olanzapine
+96 oxazepam
+97 oxcarbazepine
+98 paliperidone
+99 paroxetine
+100 perospirone
+101 perphenazine
+102 phenelzine
+103 phentermine/topiramate
+104 pimavanserin
+105 pimozide
+106 pipothiazine
+107 pitolisant
+108 prazosin
+109 pregabalin
+
+
+
+
+<<<PAGE 1441>>>
+
+Mianserin
+
+Therapeutics
+Brands
+Lerivon
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: norepinephrine multimodal (NMM)
+Tetracyclic antidepressant
+Noradrenergic agent
+Commonly Prescribed for
+(bold for FDA approved)
+Depression
+Anxiety
+Insomnia
+Treatment-resistant depression
+
+
+
+
+<<<PAGE 1444>>>
+
+Some patients may experience apparent lack of consistent efficacy
+due to activation of latent or underlying bipolar disorder, and require
+antidepressant discontinuation and a switch to a mood stabilizer
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+SSRIs, SNRIs, bupropion, reboxetine, atomoxetine (use
+combinations of antidepressant with caution as this may activate
+bipolar disorder and suicidal ideation)
+Modafinil, especially for fatigue, sleepiness, and lack of
+concentration
+Mood stabilizers or atypical antipsychotics for bipolar depression,
+psychotic depression, or treatment-resistant depression
+Benzodiazepines
+Tests
+Baseline ECG is recommended for patients over age 50
+May need to monitor blood count during treatment for those with
+blood dyscrasias, leukopenia, or granylocytopenia
+Since some antidepressants such as mianserin can be associated with
+weight gain, before starting treatment, weigh all patients and
+determine if the patient is already overweight (BMI 25.0–29.9) or
+obese (BMI >30)
+
+
+
+
+<<<PAGE 1447>>>
+
+Best Augmenting Agents for Side Effects
+Often best to try another antidepressant monotherapy prior to
+resorting to augmentation strategies to treat side effects
+Many side effects are dose-dependent (i.e., they increase as dose
+increases, or they reemerge until tolerance redevelops)
+Many side effects are time-dependent (i.e., they start immediately
+upon dosing and upon each dose increase, but go away with time)
+Many side effects cannot be improved with an augmenting agent
+Activation and agitation may represent the induction of a bipolar
+state, especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of mianserin
+
+Dosing and Use
+Usual Dosage Range
+30–60 mg/day
+Dosage Forms
+Tablet 10 mg, 30 mg, 60 mg
+How to Dose
+Initial 30 mg/day; maximum usually 90 mg/day
+
+
+
+
+<<<PAGE 1449>>>
+
+Tramadol increases the risk of seizures in patients taking an
+antidepressant
+Carbamazepine and phenytoin may reduce mianserin levels
+Theoretically could cause a fatal “serotonin syndrome” when
+combined with MAOIs, so do not use with MAOIs or for at least 14
+days after MAOIs are stopped unless you are an expert and only for
+treatment-resistant cases that may justify the risk
+Do not start an MAOI for at least 5 half-lives (5 to 7 days for most
+drugs) after discontinuing mianserin
+Other Warnings/Precautios
+Drug may lower white blood cell count (rare; may not be increased
+compared to other antidepressants but controlled studies lacking)
+Avoid alcohol, which may increase sedation and cognitive and
+motor effects
+Use with caution in patients with history of seizures
+Use with caution in patients with bipolar disorder unless treated
+with concomitant mood-stabilizing agent
+When treating children, carefully weigh the risks and benefits of
+pharmacological treatment against the risks and benefits of
+nontreatment with antidepressants and make sure to document this
+in the patient’s chart
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+
+
+
+
+<<<PAGE 1450>>>
+
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is taking an MAOI
+If there is a proven allergy to mianserin
+
+Special Populations
+Renal Impairment
+Dose adjustment not necessary
+Hepatic Impairment
+Dose adjustment not necessary
+Cardiac Impairment
+Baseline ECG is recommended
+Drug should be used with caution
+Elderly
+Baseline ECG is recommended for patients over age 50
+Some patients may tolerate lower doses better
+
+
+
+
+<<<PAGE 1453>>>
+
+Patients with cardiovascular disease
+Potential Disadvantages
+Patients particularly concerned about gaining weight
+Patients with low energy
+Primary Target Symptoms
+Depressed mood
+Sleep disturbance
+Anxiety
+Pearls
+
+✽ Adding alpha 2 antagonism to agents that block serotonin and/or
+norepinephrine reuptake may be synergistic for severe depression
+Adding mianserin to venlafaxine or SSRIs may reverse druginduced anxiety and insomnia
+Efficacy of mianserin for depression in cancer patients has been
+shown in small controlled studies
+
+✽ Only causes sexual dysfunction infrequently
+Generally better tolerated than TCAs, including safer in overdose
+General lack of cardiovascular toxicity
+
+
+
+
+<<<PAGE 1454>>>
+
+Suggested Reading
+Brogden RN , Heel RC , Speight TM , Avery GS . Mianserin: a review of
+its pharmacological properties and therapeutic efficacy in depressive illness
+. Drugs 1978 ;16 (4 ):273 –301 .
+De Ridder JJ . Mianserin: result of a decade of antidepressant research .
+Pharm Weekbl Sci 1982 ;4 (5 ):139–45 .
+Leinonen E , Koponen H , Lepola U . Serum mianserin and ageing . Prog
+Neuropsychopharmacol Biol Psychiatry 1994 ;18 (5 ):833–45 .
+Rotzinger S , Bourin M , Akimoto Y , Coutts RT , Baker GB . Metabolism
+of some “second-” and “fourth-” generation antidepressants: iprindole,
+viloxazine, bupropion, mianserin, maprotiline, trazodone, nefazodone, and
+venlafaxine . Cell Mol Neurobiol 1999 ;19 (4 ):427–42 .
+Wakeling A . Efficacy and side effects of mianserin, a tetracyclic
+antidepressant . Postgrad Med J 1983 ;59 (690 ):229–31 .
+
+
+
+
+<<<PAGE 2281>>>
+
+Rarely, patients may complain of visual “trails” or after-images on
+trazodone
+
+Suggested Reading
+DeVane CL . Differential pharmacology of newer antidepressants . J Clin
+Psychiatry 1998 ;59 (Suppl 20):S85 –93.
+Haria M , Fitton A , McTavish D . Trazodone. A review of its
+pharmacology, therapeutic use in depression and therapeutic potential in
+other disorders . Drugs Aging 1994 ;4 :331 –55 .
+Rotzinger S , Bourin M , Akimoto Y , Coutts RT , Baker GB . Metabolism
+of some “second” - and “fourth” -generation antidepressants: iprindole,
+viloxazine, bupropion, mianserin, maprotiline, trazodone, nefazodone, and
+venlafaxine . Cell Mol Neurobiol 1999 ;19 :427 –42 .
+Stahl SM. Mechanism of action of trazodone: a multifunctional drug . CNS
+Spectr 2009 ;14 (10):536 –46 .
+
+
+
+
+<<<PAGE 2574>>>
+
+Atensine (diazepam), 229
+Aterax (hydroxyzine), 355
+Athymil (mianserin), 495
+Ativan (lorazepam), 437
+atomoxetine, 79
+Atretol (carbamazepine), 131
+Audilex (clorazepate), 185
+Audium (diazepam), 229
+Aurorix (moclobemide), 515
+Austedo (deutetrabenazine), 221
+Autal (acamprosate), 1
+Avant (haloperidol), 347
+Aventyl (nortriptyline), 551
+Avoxin (fluvoxamine), 325
+Axona (caprylidene), 127
+Axoren (buspirone), 123
+Azene (clorazepate), 185
+Azepa (carbamazepine), 131
+Azepal (carbamazepine), 131
+Azona (trazodone), 793
+Azor (alprazolam), 11
+Azutranquil (oxazepam), 569
+Barclyd (clonidine), 179
+Barhemsys (amisulpride), 17
+Beconerv neu (flurazepam), 321
+Belbuca (buprenorphine), 111
+Beldin (diphenhydramine), 235
+Belivon (risperidone), 687
+
+
+
+
+<<<PAGE 2575>>>
+
+Belix (diphenhydramine), 235
+Belpax (amitriptyline), 25
+Belseren (clorazepate), 185
+Belsomra (suvorexant), 747
+Benadryl (diphenhydramine), 235
+Benpon (nortriptyline), 551
+Bentapam (diazepam), 229
+Benylin (diphenhydramine), 235
+Benzopin (diazepam), 229
+Benzotran (oxazepam), 569
+benztropine, 85
+Berk-Dothiepin (dothiepin), 249
+Besitran (sertraline), 721
+Bespar (buspirone), 123
+Betamaks (sulpiride), 741
+Betamed (diazepam), 229
+Betapam (diazepam), 229
+Bialzepam (diazepam), 229
+Bikalm (zolpidem), 871
+Bioperidolo (haloperidol), 347
+Bioxetin (fluoxetine), 301
+Biron (buspirone), 123
+Biscasil (chlorpromazine), 153
+Biston (carbamazepine), 131
+blonanserin, 89
+Bolvidon (mianserin), 495
+Bortalium (diazepam), 229
+bremelanotide, 95
+
+
+
+
+<<<PAGE 2581>>>
+
+Deplin (l-methylfolate), 477
+Deprakine (valproate), 829
+Depral (sulpiride), 741
+Depramine (imipramine), 367
+Deprax (trazodone), 793
+Deprenon (fluoxetine), 301
+Deprenyl (selegiline), 705
+Depressase (maprotiline), 465
+Deprex (fluoxetine), 301
+Deprilan (selegiline), 705
+Deprilept (maprotiline), 465
+Deprimyl (lofepramine), 421
+Deprinocte (estazolam), 281
+Deprinol (imipramine), 367
+Depsin (mianserin), 495
+Deptran (doxepin), 255
+Deroxat (paroxetine), 593
+Desconex (loxapine), 443
+Desfax (desvenlafaxine), 215
+Desidox (doxepin), 255
+desipramine, 207
+Desisulpid (sulpiride), 741
+Desitriptylin (amitriptyline), 25
+desvenlafaxine, 215
+Desyrel (trazodone), 793
+deutetrabenazine, 221
+Devidon (trazodone), 793
+DexAlone (dextromethorphan), 225
+
+
+
+
+<<<PAGE 2591>>>
+
+Herphonal (trimipramine), 817
+Hetlioz (tasimelteon), 751
+Hexafene (hydroxyzine), 355
+Hexalid (diazepam), 229
+Hibanil (chlorpromazine), 153
+Hibernal (chlorpromazine), 153
+Hipnodane (quazepam), 663
+Hipnosedon (flunitrazepam), 297
+Histilos (hydroxyzine), 355
+Hopacem (mianserin), 495
+Horizant (gabapentin), 331
+Huberplex (chlordiazepoxide), 147
+Hydoic acid (valproate), 829
+Hydophen (clomipramine), 165
+Hydramine (diphenhydramine), 235
+Hydroxyzin (hydroxyzine), 355
+hydroxyzine, 355
+Hydroxyzinum (hydroxyzine), 355
+Hypam (triazolam), 799
+Hypnocalm (flunitrazepam), 297
+Hypnodorm (flunitrazepam), 297
+Hypnor (flunitrazepam), 297
+Hypnorex Retard (lithium), 415
+Hypnovel (midazolam), 499
+Idom (dothiepin), 249
+Iktoviril (clonazepam), 173
+Ilman (flunitrazepam), 297
+iloperidone, 359
+
+
+
+
+<<<PAGE 2594>>>
+
+Ladose (fluoxetine), 301
+Lambipol (lamotrigine), 387
+Lamictal (lamotrigine), 387
+Lamictin (lamotrigine), 387
+lamotrigine, 387
+Lamra (diazepam), 229
+Lanexat (flumazenil), 293
+Lantanon (mianserin), 495
+Largactil (chlorpromazine), 153
+Largatrex (chlorpromazine), 153
+Laroxyl (amitriptyline), 25
+Latuda (lurasidone), 457
+Laubeel (lorazepam), 437
+Lauracalm (lorazepam), 437
+Lebopride (sulpiride), 741
+Lelptilan (valproate), 829
+Lelptilanil (valproate), 829
+lemborexant, 395
+Lentizol (amitriptyline), 25
+Lentolith (lithium), 415
+Lentotran (chlordiazepoxide), 147
+Leponex (clozapine), 191
+Leptilin (valproate), 829
+Lerivon (mianserin), 495
+Leukominerase (lithium), 415
+Levanxol (temazepam), 755
+levetiracetam, 399
+levomilnacipran, 403
+
+
+
+
+<<<PAGE 2597>>>
+
+Lorsilan (lorazepam), 437
+Lorzem (lorazepam), 437
+Lovan (fluoxetine), 301
+Loxapac (loxapine), 443
+loxapine, 443
+Loxitane (loxapine), 443
+Lucemyra (lofexidine), 427
+Ludiomil (maprotiline), 465
+Lullan (perospirone), 601
+lumateperone, 451
+Lumin (mianserin), 495
+Lunesta (eszopiclone), 285
+lurasidone, 457
+Lustral (sertraline), 721
+Luvox (fluvoxamine), 325
+Luvox SR (fluvoxamine), 325
+Lyogen (fluphenazine), 313
+Lyogen Depot (fluphenazine), 313
+Lyoridin Depot (fluphenazine), 313
+Lyorodin (fluphenazine), 313
+Lyrica (pregabalin), 647
+Lyrica CR (pregabalin), 647
+
+
+
+
+<<<PAGE 2599>>>
+
+Meilax (loflazepate), 431
+Meleril (thioridazine), 759
+Melipramin (imipramine), 367
+Melipramine (imipramine), 367
+Mellaril (thioridazine), 759
+Melleretten (thioridazine), 759
+Melleril (thioridazine), 759
+Melzine (thioridazine), 759
+Memac (donepezil), 243
+memantine, 473
+memantine/donepezil combination, 243 , 473
+memantine XR, 473
+Menfazona (nefazodone), 545
+Menrium (chlordiazepoxide), 147
+Mepizin (oxazepam), 569
+Meresa (sulpiride), 741
+Merlit (lorazepam), 437
+Metadate CD (d,l-methylphenidate), 487
+Metadate ER (d,l-methylphenidate), 487
+Metafolin (l-methylfolate), 477
+Metamidol (diazepam), 229
+methyfolate (l), 477
+Methylin (d,l-methylphenidate), 487
+Methylin ER (d,l-methylphenidate), 487
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Metylyl (desipramine), 207
+Miabene (mianserin), 495
+
+
+
+
+<<<PAGE 2600>>>
+
+Mialin (alprazolam), 11
+Mianeurin (mianserin), 495
+Miansan (mianserin), 495
+mianserin, 495
+Miansin (mianserin), 495
+Miaxan (mianserin), 495
+midazolam, 499
+Milithin (lithium), 415
+milnacipran, 503
+Minipress (prazosin), 643
+Minizide (prazosin), 643
+Mipralin (imipramine), 367
+Mirbanil (sulpiride), 741
+Mirenil (fluphenazine), 313
+Mirenil Prolongatum (fluphenazine), 313
+Mirfat (clonidine), 179
+Mirfudorm (oxazepam), 569
+Mirpan (maprotiline), 465
+mirtazapine, 509
+Moban (molindone), 527
+Mocloamine (moclobemide), 515
+moclobemide, 515
+modafinil, 521
+Modalina (trifluoperazine), 803
+Modecate (fluphenazine), 313
+Modiodal (modafinil), 521
+Moditen (fluphenazine), 313
+Moditen Action Prolongee (fluphenazine), 313
+
+
+
+
+<<<PAGE 2603>>>
+
+Noan-Gap (lorazepam), 437
+Noctazepam (oxazepam), 569
+Noctran (clorazepate), 185
+Nocturne (temazepam), 755
+Nomapam (temazepam), 755
+Noneston (sulpiride), 741
+Nopress (nortriptyline), 551
+Nordotol (carbamazepine), 131
+Norebox (reboxetine), 681
+Norestran (sulpiride), 741
+Norfenazin (nortriptyline), 551
+Noriel (flunitrazepam), 297
+Noriline (nortriptyline), 551
+Noripam (oxazepam), 569
+Noritren (nortriptyline), 551
+Norkotral N (oxazepam), 569
+Norkotral Tema (temazepam), 755
+Normison (temazepam), 755
+Normum (sulpiride), 741
+Norpramin (desipramine), 207
+Northiaden (dothiepin), 249
+Nortimil (desipramine), 207
+Nortix (nortriptyline), 551
+Nortrilen (nortriptyline), 551
+Nortriptilin (nortriptyline), 551
+nortriptyline, 551
+Norval (mianserin), 495
+Nova-Pam (chlordiazepoxide), 147
+
+
+
+
+<<<PAGE 2609>>>
+
+PMS-Fluphenazine Decanoate (fluphenazine), 313
+PMS-Haloperidol (haloperidol), 347
+PMS-Hydroxyzine (hydroxyzine), 355
+PMS-Lithium (lithium), 415
+PMS-Methylphenidate (d,l-methylphenidate), 487
+PMS-Trazodone (trazodone), 793
+Podium (diazepam), 229
+Poldoxin (doxepin), 255
+Polysal (amitriptyline), 25
+Portal (fluoxetine), 301
+Pragmarel (trazodone), 793
+Praxiten (oxazepam), 569
+prazosin, 643
+pregabalin, 647
+Priadel (lithium), 415
+Prisdal (citalopram), 159
+Prisma (mianserin), 495
+Pristiq (desvenlafaxine), 215
+Probuphine (buprenorphine), 111
+ProCentra (amphetamine d), 39
+Pro Dorm (lorazepam), 437
+Procythol (selegiline), 705
+Prolixin (fluphenazine), 313
+Prolixin Decanoate (fluphenazine), 313
+Prolixin Enanthate (fluphenazine), 313
+Prolongatum (fluphenazine), 313
+Pronervon T (temazepam), 755
+Propam (diazepam), 229
+
+
+
+
+<<<PAGE 2615>>>
+
+Selpar (selegiline), 705
+Sensaval (nortriptyline), 551
+Sensival (nortriptyline), 551
+Sepatrem (selegiline), 705
+Serad (sertraline), 721
+Seralgan (citalopram), 159
+Serax (oxazepam), 569
+Serdolect (sertindole), 715
+Serelan (mianserin), 495
+Seren (chlordiazepoxide), 147
+Serenace (haloperidol), 347
+Serenase (haloperidol), 347
+Serenase (lorazepam), 437
+Serenase Decanoat (haloperidol), 347
+Serenase Depot (haloperidol), 347
+Serenelfi (haloperidol), 347
+Serepax (oxazepam), 569
+Seresta (oxazepam), 569
+Sereupin (paroxetine), 593
+Serlain (sertraline), 721
+Serlect (sertindole), 715
+Serol (fluoxetine), 301
+Seronil (fluoxetine), 301
+Seropram (citalopram), 159
+Seroquel (quetiapine), 667
+Seroquel XR (quetiapine), 667
+Seroxal (paroxetine), 593
+Seroxat (paroxetine), 593
+
+
+
+
+<<<PAGE 2621>>>
+
+Thorazine (chlorpromazine), 153
+Thymal (lorazepam), 437
+tiagabine, 771
+tianeptine, 777
+Timelit (lofepramine), 421
+Timonil (carbamazepine), 131
+Tingus (fluoxetine), 301
+Tiprolisant (pitolisant), 639
+Tirodil (thioridazine), 759
+Titus (lorazepam), 437
+Tofranil (imipramine), 367
+Tofranil pamoata (imipramine), 367
+Tofranil-PM (imipramine), 367
+Tolid (lorazepam), 437
+Tolmin (mianserin), 495
+Tolvin (mianserin), 495
+Tolvon (mianserin), 495
+Tonirem (temazepam), 755
+Topamac (topiramate), 781
+Topamax (topiramate), 781
+Topimax (topiramate), 781
+topiramate, 781
+T-Pam (temazepam), 755
+Tramensan (trazodone), 793
+Trankilium (lorazepam), 437
+Trankimazin (alprazolam), 11
+Tranquase (diazepam), 229
+Tran-Quil (lorazepam), 437
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2639>>>
+
+maprotiline , 465
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+mianserin, 495
+milnacipran, 503
+mirtazapine , 509
+moclobemide, 515
+modafinil (adjunct), 521
+nefazodone , 545
+nortriptyline , 551
+olanzapine, 559
+paliperidone, 581
+paroxetine , 593
+phenelzine , 613
+protriptyline , 657
+quetiapine (adjunct) , 667
+reboxetine, 681
+risperidone, 687
+selegiline , 705
+sertindole, 715
+sertraline , 721
+sulpiride, 741
+tianeptine, 777
+tranylcypromine , 787
+trazodone , 793
+triiodothyronine, 813
+trimipramine , 817
+venlafaxine , 841
+
+
+
+
+<<<PAGE 2643>>>
+
+maprotiline, 465
+mianserin, 495
+nortriptyline, 551
+quazepam , 663
+ramelteon , 677
+suvorexant , 747
+tasimelteon, 751
+temazepam , 755
+trazodone, 793
+triazolam , 799
+trimipramine, 817
+zaleplon , 859
+zolpidem , 871
+zopiclone, 879
+Mania
+alprazolam (adjunct), 11
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine , 131
+cariprazine , 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium , 415
+
+
+
+
+<<<PAGE 2659>>>
+
+amitriptyline, 25
+amoxapine, 33
+atomoxetine, 79
+brexanolone, 99
+bupropion, 117
+citalopram, 159
+clomipramine, 165
+desipramine, 207
+desvenlafaxine, 215
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+esketamine, 275
+fluoxetine, 301
+fluvoxamine, 325
+imipramine, 367
+isocarboxazid, 375
+ketamine, 383
+levomilnacipran, 403
+l-methylfolate (adjunct), 477
+lofepramine, 421
+maprotiline, 465
+mianserin, 495
+milnacipran, 503
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+
+

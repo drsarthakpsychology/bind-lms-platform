@@ -1,0 +1,548 @@
+<<<PAGE 11>>>
+
+110 propranolol
+111 protriptyline
+112 quazepam
+113 quetiapine
+114 ramelteon
+115 reboxetine
+116 risperidone
+117 rivastigmine
+118 selegiline
+119 sertindole
+120 sertraline
+121 sildenafil
+122 sodium oxybate
+123 solriamfetol
+124 sulpiride
+125 suvorexant
+126 tasimelteon
+127 temazepam
+128 thioridazine
+129 thiothixene
+130 tiagabine
+131 tianeptine
+132 topiramate
+133 tranylcypromine
+134 trazodone
+135 triazolam
+136 trifluoperazine
+137 trihexyphenidyl
+
+
+
+
+<<<PAGE 2218>>>
+
+Tianeptine
+
+Therapeutics
+Brands
+Coaxil
+Stablon
+Tatinol
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: glutamate; yet to be determined
+(Glu)
+Glutamatergic modulator
+Often classified as a tricyclic antidepressant, but pharmacologically
+distinct
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive disorder
+
+
+
+
+<<<PAGE 2220>>>
+
+Once symptoms are gone, continue treating for 1 year for the first
+episode of depression
+For second and subsequent episodes of depression, treatment may
+need to be indefinite
+If It Doesn’t Work
+Many patients have only a partial response where some symptoms
+are improved but others persist (especially insomnia, fatigue, and
+problems concentrating)
+Other patients may be nonresponders, sometimes called treatmentresistant or treatment-refractory
+Consider increasing dose, switching to another agent, or adding an
+appropriate augmenting agent
+Consider psychotherapy
+Consider evaluation for another diagnosis or for a comorbid
+condition (e.g., medical illness, substance abuse, etc.)
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Augmentation has not been systematically studied with tianeptine
+Tests
+None recommended for healthy individuals
+
+
+
+
+<<<PAGE 2221>>>
+
+Side Effects
+How Drug Causes Side Effects
+
+✽ Mild anticholinergic activity (less than some TCAs) could possibly
+lead to sedative effects, dry mouth, constipation, and blurred vision
+Most side effects are immediate but often go away with time
+
+✽ Pharmacologic studies do not indicate tianeptine to be a potent
+alpha 1 antagonist or H1 antihistamine
+Notable Side Effects
+Headache, dizziness, insomnia, sedation
+Nausea, constipation, abdominal pain, dry mouth
+Abnormal dreams
+Increased transaminases
+Tachycardia
+Life-Threatening or Dangerous Side Effects
+Theoretically, rare induction of mania and activation of suicidal
+ideation or behavior
+Cases of activation of suicidal ideation and behavior (suicidality)
+(short-term did not show an increase in the risk of suicidality with
+antidepressants compared to placebo beyond age 24)
+Hepatitis that can, in exceptional cases, be severe
+
+
+
+
+<<<PAGE 2222>>>
+
+Dermatitis bulbous in exceptional cases
+Weight Gain
+Not well studied
+Sedation
+Occurs in significant minority
+What to Do About Side Effects
+Wait
+Wait
+Wait
+Lower the dose
+In a few weeks, switch or add other drugs
+For skin reactions, stop treatment
+Best Augmenting Agents for Side Effects
+Augmentation for side effects of tianeptine has not been
+systematically studied
+
+Dosing and Use
+
+
+
+
+<<<PAGE 2223>>>
+
+Usual Dosage Range
+37.5 mg/day
+Dosage Forms
+Tablet 12.5 mg
+How to Dose
+12.5 mg 3 times/day
+Dosing Tips
+Tianeptine’s rapid elimination necessitates strict adherence to the
+dosing schedule
+
+✽ Short half-life means multiple daily doses
+Overdose
+Effects are generally mild and nonfatal; unlikely to cause
+cardiovascular effects
+Long-Term Use
+Safe
+Habit Forming
+Abuse and dependence may occur, in particular in patients under 50
+years of age with a history of drug or alcohol dependence
+
+
+
+
+<<<PAGE 2224>>>
+
+How to Stop
+Many patients tolerate 50% dose reduction for 3 days, then another
+50% reduction for 3 days, then discontinuation
+If withdrawal symptoms emerge during discontinuation, raise dose
+to stop symptoms and then restart withdrawal much more slowly
+Pharmacokinetics
+Not primarily metabolized by CYP 450 enzyme system
+Tianeptine is rapidly eliminated
+Half-life approximately 2.5 hours
+Drug Interactions
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of tianeptine
+Other drug interactions not well studied
+Other Warnings/Precautions
+For elective surgery, tianeptine should be stopped 24–48 hours
+before general anesthesia is administered
+
+
+
+
+<<<PAGE 2225>>>
+
+Generally, use only with extreme caution with MAOIs; do not use
+until 14 days after MAOIs are stopped; do not start an MAOI for at
+least 5 half-lives (5 to 7 days for most drugs) after discontinuing
+tianeptine
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Warn doctors to pay attention to patients with history of drug
+dependencies
+Do Not Use
+If patient is taking an MAOI
+If patient is pregnant or nursing
+If there is a proven allergy to tianeptine
+
+Special Populations
+Renal Impairment
+Dose should be reduced for severe impairment to 25 mg/day
+Hepatic Impairment
+
+
+
+
+<<<PAGE 2226>>>
+
+In patients with severe cirrhosis (class C, Child Plugh’s Scale), the
+dosage should be restricted to 25mg/day
+Cardiac Impairment
+Baseline ECG is recommended
+Elderly
+Baseline ECG is recommended for patients over age 50
+Dose should be reduced to 25 mg/day
+Reduction in the risk of suicidality with antidepressants compared to
+placebo in adults age 65 and older
+Children and Adolescents
+Tianeptine is not recommended for use in children or adolescents
+under 18
+Carefully weigh the risks and benefits of pharmacological treatment
+against the risks and benefits of nontreatment with antidepressants
+and make sure to document this in the patient’s chart
+Monitor patients face-to-face regularly, particularly during the first
+several weeks of treatment
+Use with caution, observing for activation of known or unknown
+bipolar disorder and/or suicidal ideation, and inform parents or
+guardians of this risk so they can help observe child or adolescent
+patients
+
+
+
+
+<<<PAGE 2228>>>
+
+Primary Target Symptoms
+Depressed mood
+Symptoms of anxiety
+Pearls
+
+✽ Possibly a unique mechanism of action as a glutamatergic
+antidepressant
+Is not metabolized by CYP450; therefore, the risk of
+pharmacokinetic drug-drug interactions is minimized
+
+Suggested Reading
+Kasper S , McEwen BS . Neurobiological and clinical effects of the
+antidepressant tianeptine . CNS Drugs 2008 ;22 (1 ):15 –26 .
+Kasper S , Olie JP . A meta-analysis of randomized controlled trials of
+tianeptine versus SSRI in the short-term treatment of depression . Eur
+Psychiatry 2002 ;17 (Suppl 3 ):331–40 .
+McEwen BS , Chattarji S , Diamond DM , et al. The neuribiological
+properties of tianeptine (Stablon): from monoamine hypothesis to
+glutamatergic modulation . Mol Psychiatry 2010 ;15 :237–49 .
+Samuels BA , Nautiyal KM , Kruegel AC , et al. The behavioral effects of
+the antidepressant tianeptine require the mu-opioid receptor .
+Neuropsychopharmacology 2017 ;42 (10 ):2052–63 .
+
+
+
+
+<<<PAGE 2229>>>
+
+Svenningsson P , Bateup H , Qi H , et al. Involvement of AMPA receptor
+phosphorylation in antidepressant actions with special reference to
+tianeptine . Eur J Neuorsci 2007 ;26 :3509–17 .
+Wagstaff AJ , Ormrod D , Spencer CM . Tianeptine: a review of its use in
+depressive disorders . CNS Drugs 2001 ;15 (3 ):231–59 .
+
+
+
+
+<<<PAGE 2578>>>
+
+Cibalith S-Lithonate (lithium), 415
+Cidoxepin (doxepin), 255
+Cipram (citalopram), 159
+Cipramil (citalopram), 159
+Ciprilex (escitalopram), 269
+Ciproxidine (pitolisant), 639
+Cisordinol (zuclopenthixol), 889
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+Clonazepamum (clonazepam), 173
+clonidine, 179
+Clonisin (clonidine), 179
+Clonistada (clonidine), 179
+Clopixol (zuclopenthixol), 889
+Clopixol Acuphase (zuclopenthixol), 889
+Clopixol Conc (zuclopenthixol), 889
+Clopress (clomipramine), 165
+clorazepate, 185
+Clordezalin (chlorpromazine), 153
+Clorpres (clonidine), 179
+clozapine, 191
+Clozaril (clozapine), 191
+Coaxil (tianeptine), 777
+Cogentin (benztropine), 85
+Cognitiv (selegiline), 705
+Combipres (clonidine), 179
+Complutine (diazepam), 229
+
+
+
+
+<<<PAGE 2617>>>
+
+sodium oxybate, 733
+Softramal (clorazepate), 185
+Solarix (moclobemide), 515
+Solian (amisulpride), 17
+Solidon (chlorpromazine), 153
+Solis (diazepam), 229
+solriamfetol, 737
+Somagerol (lorazepam), 437
+Somapam (temazepam), 755
+Somatarax (hydroxyzine), 355
+Sominex (diphenhydramine), 235
+Somniton (triazolam), 799
+Somnium (lorazepam), 437
+Somnol (flurazepam), 321
+Somnubene (flunitrazepam), 297
+Sonata (zaleplon), 859
+Songar (triazolam), 799
+Sovigen (zolpidem), 871
+Spasmilan (buspirone), 123
+Spasmo Praxiten (oxazepam), 569
+Sporalon (trifluoperazine), 803
+Spravato (esketamine), 275
+Spritam (levetiracetam), 399
+Stablon (tianeptine), 777
+Stalleril (thioridazine), 759
+Stamoneurol (sulpiride), 741
+Staurodorm (flurazepam), 321
+Staurodorm Neu (flurazepam), 321
+
+
+
+
+<<<PAGE 2619>>>
+
+Sulpivert (sulpiride), 741
+Sulpril (sulpiride), 741
+Sunosi (solriamfetol), 737
+Suprium (sulpiride), 741
+Surmontil (trimipramine), 817
+suvorexant, 747
+Suxidina (oxazepam), 569
+Sylador (haloperidol), 347
+Symbyax (olanzapine/fluoxetine combination), 301 , 559
+Synedil (sulpiride), 741
+Synedil Fort (sulpiride), 741
+Syneudon 50 (amitriptyline), 25
+Tafil (alprazolam), 11
+Tagonis (paroxetine), 593
+Tardotol (carbamazepine), 131
+Taro-Carbamazepine (carbamazepine), 131
+tasimelteon, 751
+Tatanka (alprazolam), 11
+Tatig (sertraline), 721
+Tatinol (tianeptine), 777
+Tavor (lorazepam), 437
+Tazepam (oxazepam), 569
+Tegretal (carbamazepine), 131
+Tegretol (carbamazepine), 131
+Tegretol LP (carbamazepine), 131
+Teledomin (milnacipran), 503
+Temador (temazepam), 755
+Temaze (temazepam), 755
+
+
+
+
+<<<PAGE 2621>>>
+
+Thorazine (chlorpromazine), 153
+Thymal (lorazepam), 437
+tiagabine, 771
+tianeptine, 777
+Timelit (lofepramine), 421
+Timonil (carbamazepine), 131
+Tingus (fluoxetine), 301
+Tiprolisant (pitolisant), 639
+Tirodil (thioridazine), 759
+Titus (lorazepam), 437
+Tofranil (imipramine), 367
+Tofranil pamoata (imipramine), 367
+Tofranil-PM (imipramine), 367
+Tolid (lorazepam), 437
+Tolmin (mianserin), 495
+Tolvin (mianserin), 495
+Tolvon (mianserin), 495
+Tonirem (temazepam), 755
+Topamac (topiramate), 781
+Topamax (topiramate), 781
+Topimax (topiramate), 781
+topiramate, 781
+T-Pam (temazepam), 755
+Tramensan (trazodone), 793
+Trankilium (lorazepam), 437
+Trankimazin (alprazolam), 11
+Tranquase (diazepam), 229
+Tran-Quil (lorazepam), 437
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2639>>>
+
+maprotiline , 465
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+mianserin, 495
+milnacipran, 503
+mirtazapine , 509
+moclobemide, 515
+modafinil (adjunct), 521
+nefazodone , 545
+nortriptyline , 551
+olanzapine, 559
+paliperidone, 581
+paroxetine , 593
+phenelzine , 613
+protriptyline , 657
+quetiapine (adjunct) , 667
+reboxetine, 681
+risperidone, 687
+selegiline , 705
+sertindole, 715
+sertraline , 721
+sulpiride, 741
+tianeptine, 777
+tranylcypromine , 787
+trazodone , 793
+triiodothyronine, 813
+trimipramine , 817
+venlafaxine , 841
+
+
+
+
+<<<PAGE 2660>>>
+
+nortriptyline, 551
+paroxetine, 593
+phenelzine, 613
+protriptyline, 657
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+triiodothyronine, 813
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Antipsychotics
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine, 153
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine, 313
+haloperidol, 347
+
+
+
+
+<<<PAGE 2663>>>
+
+oxazepam, 569
+paroxetine, 593
+phenelzine, 613
+prazosin, 643
+pregabalin, 647
+propranolol, 653
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine (adjunct), 771
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+trifluoperazine, 803
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+Attention deficit hyperactivity disorder treatments
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+chlorpromazine, 153
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+lisdexamfetamine, 409
+
+

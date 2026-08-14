@@ -1,0 +1,976 @@
+<<<PAGE 388>>>
+
+Depression and anxiety disorders  367
+
+buccal administration of amitriptyline tablets8 achieving therapeutic plasma levels.
+Another case used orodispersible mirtazapine, assuming buccal absorption,9 although
+no plasma levels were reported, and no information is available to suggest that orodispersible mirtazapine is actually absorbed through the buccal mucosa (as opposed to
+dispersing in saliva that is then swallowed).
+
+Intravenous formulations avoid the first-pass effect, leading to somewhat higher drug
+plasma levels10,11 and perhaps greater response11,12 but not necessarily faster onset of
+action.12–14 The placebo effect associated with IV administration is known to be large.15
+Note that calculating the correct parenteral dose of antidepressants is difficult given the
+variable first-pass effect to which oral drugs are usually subject. Parenteral doses can be
+expected to be much lower than oral doses and give the same effect.
+Intravenous citalopram followed by maintenance oral citalopram may be a clinically
+useful treatment strategy for severely depressed, hospitalised patients.13 Better efficacy
+and faster response (compared with oral doses) have also been demonstrated when
+using IV citalopram in treating symptoms of obsessive compulsive disorder.16 The IV
+preparation appears to be well-tolerated, with the most common adverse events being
+nausea, headache, tremor and somnolence – similar to oral administration.17,18 A case
+report of a 65-year-old man describes acute hyperkinetic delirium associated with IV
+citalopram.19 Intravenous escitalopram also exists although studies reported to date are
+pharmacokinetic analyses.20 Note that oral citalopram is associated with a higher risk
+of QTc prolongation than other SSRIs. If used IV in a medically compromised patient,
+ECG monitoring is recommended.
+Mirtazapine is also available as an intravenous preparation. It has been administered
+by slow infusion at a dose of 15mg a day for 14 days in two studies and was well tolerated in depressed patients.21,22 There are reports of IV mirtazapine 6–30mg/day being
+used to treat hyperemesis gravidarum.23,24
+Amitriptyline was available as both an IV and IM injection (IM injection has been
+given IV), and both routes have been used in the treatment of post-operative pain and
+depression.25 The concentration of the IM preparation (10mg/mL) may mean that a
+high volume injection is needed to achieve antidepressant doses, and this clearly militates against its use intramuscularly.26 It is no longer available in most parts of the
+world. Clomipramine is probably the most widely studied IV antidepressant. Pulse
+loading doses of intravenous clomipramine have been shown to produce a larger more
+rapid decrease in obsessive compulsive disorder symptoms compared with oral
+doses.10,27 The potential for serious cardiac side effects when using any tricyclic antidepressant intravenously necessitates monitoring of pulse, blood pressure and ECG.
+Allopregnanolone (marketed as brexanolone) is an endogenous progesterone metabolite licensed in the USA for intravenous treatment of postpartum depression. Given the
+unique mechanism of action, it is not suitable for treatment of other types of
+depression.
+Intravenous vortioxetine has been used to accelerate response to the oral formulation,28 but this is not a commercially available preparation.
+
+CHAPTER 3
+
+Intravenous and intramuscular injections
+
+
+
+
+<<<PAGE 726>>>
+
+0.2–2%
+
+Undetectable or low
+
+Undetectable to up to 10%
+of maternal plasma levels.
+
+Bupropion4,6–13
+
+Citalopram2,4,11,14–23
+
+Higher than for fluvoxamine,
+sertraline, paroxetine and
+escitalopram, but lower than
+for fluoxetine.
+
+1–2%
+
+Not assessed
+
+Brexanolone5
+
+3–10%
+
+Not available
+
+Not assessed
+
+Agomelatine3,4
+
+Relative infant
+dose (RID)
+
+Infant plasma
+concentrations
+
+Drug
+
+Table 7.3 Antidepressants in breastfeeding
+
+One case of irregular breathing,
+sleep disorder and hypo- and
+hypertonia Infant exposed to
+citalopram in utero. Symptoms
+attributed to withdrawal syndrome
+despite the mother continuing
+citalopram postpartum.
+
+Sleep disturbance (which resolved on
+halving maternal dose), colic,
+decreased feeding, and irritability
+and restlessness.
+
+In one of the cases the infant
+experienced sleep disturbance, severe
+emesis and somnolence. The infant
+plasma levels were below the level
+required for quantification. The
+mother was also taking escitalopram.
+
+Two reports of seizure-like activity in
+6-month olds.
+
+None reported but not studied
+
+None reported but not studied
+
+Reported acute adverse effects in
+infant
+
+(Continued)
+
+In a study of 11 infants normal
+neurodevelopment was observed up to
+1 year. One of the children was unable
+to walk at 1-year, However, neurological
+status of the child was deemed normal
+6 months later.
+
+In a study of 78 infants of mothers
+taking an SSRI or venlafaxine no
+difference in weight was noted at
+6 months compared with the
+‘normative’ weight.
+
+None reported.
+
+None reported but not studied
+
+None reported but not studied
+
+None reported but not studied
+
+Reported developmental effects in
+infant
+
+
+
+
+<<<PAGE 737>>>
+
+716  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 7.7 Stimulants in breastfeeding
+
+Infant plasma
+concentration
+
+Drug
+
+Estimated daily
+infant dose as
+proportion of
+maternal dose
+(RID)
+
+Acute adverse
+effects in infant
+
+Developmental
+effects in infant
+
+2.4–10.6%
+
+None reported
+
+None reported but
+not assessed
+
+Atomoxetine
+
+No published data
+available at the
+time of writing
+
+Dexamfetamine193
+
+Undetectable to
+14% of maternal
+plasma level
+
+Lisdexamfetamine
+
+No published data
+available at the
+time of writing
+
+Methylphenidate27,194–196
+
+Undetectable
+
+0.16–0.7%
+
+None reported
+
+None reported
+
+Modafinil
+
+Not reported
+
+5.3%
+
+None reported
+
+None reported but
+not assessed
+
+197,198
+
+Report for individual drugs. Table 7.7 does not include this advice (which is often uninformative), but instead uses primary reference sources. It is usually advisable to continue the drug prescribed during pregnancy. Switching drugs postpartum for the purpose
+of breastfeeding is usually not sensible. Table 7.7 should be used as a guide when initiating treatment postpartum. In each case the previous response (and lack of response) to
+treatment must be considered.
+
+CHAPTER 7
+
+References
+1. Schoretsanitis G, et al. Excretion of antipsychotics into the amniotic fluid, umbilical cord blood, and breast milk: a systematic critical review
+and combined analysis. Ther Drug Monit 2020; 42:245–254.
+2. Weissman AM, et al. Pooled analysis of antidepressant levels in lactating mothers, breast milk, and nursing infants. Am J Psychiatry 2004;
+161:1066–1078.
+3. Schmidt FM, et al. Agomelatine in breast milk. Int J Neuropsychopharmacol 2013; 16:497–499.
+4. Hale TW, et al. Medications and mothers’ milk – 18th edition. New York, USA: Springer Publishing Company; 2019.
+5. Hoffmann E, et al. Brexanolone injection administration to lactating women: breast milk allopregnanolone levels [30J]. Obstet Gynecol
+2019; 133:115S.
+6. Briggs GG, et al. Excretion of bupropion in breast milk. Ann Pharmacother 1993; 27:431–433.
+7. Chaudron LH, et al. Bupropion and breastfeeding: a case of a possible infant seizure. J Clin Psychiatry 2004; 65:881–882.
+8. Nonacs RM, et al. Bupropion SR for the treatment of postpartum depression: a pilot study. Int J Neuropsychopharmacol 2005;
+8:445–449.
+9. Haas JS, et al. Bupropion in breast milk: an exposure assessment for potential treatment to prevent post-partum tobacco use. Tob Control
+2004; 13:52–56.
+10. Baab SW, et al. Serum bupropion levels in 2 breastfeeding mother-infant pairs. J Clin Psychiatry 2002; 63:910–911.
+11. Berle JO, et al. Antidepressant use during breastfeeding. Curr Womens Health Rev 2011; 7:28–34.
+12. Davis MF, et al. Bupropion levels in breast milk for 4 mother-infant pairs: more answers to lingering questions. J Clin Psychiatry 2009;
+70:297–298.
+13. Neuman G, et al. Bupropion and escitalopram during lactation. Ann Pharmacother 2014; 48:928–931.
+14. Burt VK, et al. The use of psychotropic medications during breast-feeding. Am J Psychiatry 2001; 158:1001–1009.
+
+
+
+
+<<<PAGE 748>>>
+
+Hepatic and renal impairment  727
+
+Drug
+
+Comments
+
+Agomelatine5,6,38–40
+
+Liver injury including hepatic failure, liver enzyme increases more than 10× ULN, and
+hepatitis reported, most commonly in first months of treatment and very occasionally
+fatal. Contra-indicated in hepatic impairment, including cirrhosis and liver disease.
+Dose-related increase in transaminases reported; perform LFTs at baseline, 3, 6, 12, 24
+weeks during initiation and at each dose increase, and thereafter where clinically
+indicated. Stop treatment if transaminases rise more than 3× ULN. Use cautiously where
+other risk factors for hepatic disease are present.
+Under current monitoring restrictions, risk of liver injury is no higher than for other
+antidepressants.41,42
+
+Brexanolone6,19
+
+No dose adjustment required in hepatic impairment. Does not appear to be hepatotoxic,
+although experience is limited.
+
+Duloxetine5,6,43–47
+
+Hepatically metabolised. Clearance markedly reduced even in mild impairment. Reports
+of hepatocellular injury (liver enzyme increases more than 10× ULN) and, less commonly,
+jaundice. Hepatic failure, sometimes fatal, has been reported. Contra-indicated in hepatic
+impairment.
+
+Fluoxetine5,6,48–52
+
+Extensively hepatically metabolised with a long half-life (further increased in hepatic
+insufficiency). Kinetic studies demonstrate accumulation in compensated cirrhosis.
+Although dosage reduction (of at least 50%) or alternate day dosing are recommended,
+it would take many weeks to reach steady-state serum levels, making fluoxetine complex
+to use. Asymptomatic increases in LFTs found in 0.5% of healthy adults. Rare cases of
+hepatitis reported.
+
+Levomilnacipran,
+milnacipran6,19
+
+No dose adjustment required in hepatic impairment, although the manufacturers of
+milnacipran recommend avoiding in chronic liver disease, alcohol use or severe
+dysfunction. Increased liver enzymes have been reported, and hepatitis with milnacipran;
+discontinue use if jaundice or liver dysfunction occurs.
+
+MAOIs5,6,53
+
+Rare cases of fatal hepatic necrosis, hepatotoxicity and jaundice with phenelzine, rarely
+hepatitis with tranylcypromine and one isolated case of fatal hepatotoxicity with
+moclobemide. Doses of moclobemide should be reduced to half or one third in hepatic
+impairment, or the dosing interval increased. Transdermal selegiline has not been
+associated with liver injury.54 Non-selective MAOIs are contraindicated in patients with
+hepatic impairment.
+
+Mirtazapine5,6,55
+
+Hepatically metabolised and sedative. 50% dose reduction recommended based on
+kinetic data, Mild, asymptomatic increases in LFTs seen in healthy adults (ALT >3 times
+the upper limit of normal in 2%). Few cases of cholestatic and hepatocellular damage
+reported. Has been used safely in patients with primary biliary cholangitis.56
+
+Other SSRIs5,6,47,52,57–64
+
+All are hepatically metabolised and accumulate on chronic dosing. Dosage reduction
+(including reduction of maximum dose by 50%65 and/or reduced dosing frequency) may
+be required (see individual SPCs for details). Raised LFTs and rare cases of hepatitis,
+including chronic active hepatitis, have been reported with paroxetine. Sertraline and
+fluvoxamine have also been associated with hepatitis. Citalopram, escitalopram and
+paroxetine have minimal effects on hepatic enzymes and may be the SSRIs of choice
+although occasional hepatotoxicity has been reported. Paroxetine is used by some
+specialised liver units with few apparent problems. Sertraline and paroxetine are used in
+the management of cholestatic pruritus.66 Be aware of increased risk of bleeding.
+(Continued)
+
+CHAPTER 8
+
+Table 8.2 Antidepressants in hepatic impairment
+
+
+
+
+<<<PAGE 761>>>
+
+740  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 8.8 (Continued )
+Drug
+
+Comments
+
+Risperidone22,23,25,40,50–53
+
+Clearance of risperidone and the active metabolite of risperidone (9-OH-) is reduced
+by 60% in patients with moderate to severe renal disease. Dosing: GFR <50mL/min
+0.5mg twice daily for at least 1 week, then increasing by 0.5mg twice daily to
+1–2mg bd. The manufacturer advises caution when using risperidone in renal
+impairment. The long-acting injection should only be used after titration with oral
+risperidone as described above. If 2mg orally is tolerated, 25mg intramuscularly
+every 2 weeks can be administered. There are two case reports of successful use of
+risperidone long-acting injection in haemodialysis at a dose of 50mg 2-weekly in one
+patient and 37.5mg then 25mg in an older adult. Another describes the successful
+use of risperidone in a child with steroid-induced psychosis and nephrotic syndrome.
+
+Sulpiride8,22,23,25,54
+
+Almost totally renally excreted, with 95% excreted in urine and faeces as unchanged
+sulpiride. Dosing regimen: GFR 30–60mL/min, give 70% of normal dose; GFR
+10–30mL/min give 50% of normal dose; GFR <10mL/min give 34% of normal dose.
+There is a case report of renal failure with sulpiride due to diabetic coma and
+rhabdomyolysis. Probably best avoided in renal impairment.
+
+Trifluoperazine25
+
+Less than 1% excreted unchanged in the urine. Dose GFR <10–50mL/min as for
+normal renal function – start with a low dose. Very limited data.
+
+Ziprasidone22,40,55,56
+
+<1% is renally excreted unchanged. No dose adjustment needed for GFR >10mL/min
+but care needed with using the injection as it contains a renally eliminated excipient
+(cyclodextrin sodium). Case report of 80mg twice daily dose used in a patient on
+haemodialysis who then developed agranulocytosis.57
+
+Zuclopenthixol22,23,25
+
+10–20% of unchanged drug and metabolites excreted unchanged in urine.
+Manufacturer cautions use in renal disease as can accumulate. Dosing: 10–50mL/min
+dose as in normal renal function; GFR <10mL/min start with 50% of the dose and titrate
+slowly. Avoid both depot preparations (acetate and decanoate) in renal impairment.
+
+CHAPTER 8
+
+Table 8.9 Antidepressants in renal impairment12
+Drug
+
+Comments
+
+Agomelatine23
+
+Negligible renal excretion of unchanged agomelatine. No data on use in renal
+disease. Manufacturer says pharmacokinetics unchanged in small study of 25mg
+dose in severe renal impairment but cautions use in moderate or severe renal disease.
+Nephroprotective effects have been observed in rats.58,59
+
+Amitriptyline22,23,25,32,40,60–64
+
+<2% excreted unchanged in urine; no dose adjustment needed in renal failure. Dose
+as in normal renal function but start at a low dose and increase slowly. Monitor
+patient for urinary retention, confusion, sedation and postural hypotension. Has been
+used to treat pain in those with renal disease. Plasma level or ECG monitoring may
+be useful. Associated with acute kidney injury.
+
+Brexanolone41,65
+
+Less than 1% excreted unchanged in urine. Manufacturer states no dosage
+adjustment is recommended in patients with GFR 15–60mL/min; avoid use in patients
+with GFR <15mL/min because of the potential accumulation of the injection
+solubilising agent, betadex sulfobutyl ether sodium.
+(Continued)
+
+
+
+
+<<<PAGE 772>>>
+
+55. Aweeka F, et al. The pharmacokinetics of ziprasidone in subjects with normal and impaired renal function. Br J Clin Pharmacol 2000;
+49:27S-33S.
+56. Roerig. Highlights of Prescribing Information: GEODON® (ziprasidone HCl) capsules; GEODON® (ziprasidone mesylate) injection for
+intramuscular use 2020; http://labeling.pfizer.com/ShowLabeling.aspx?id=584.
+57. Iskandar JW, et al. Transient agranulocytosis associated with ziprasidone in a 45-year-old man on hemodialysis. J Clin Psychopharmacol
+2015; 35:347–348.
+58. Basol N, et al. Beneficial effects of agomelatine in experimental model of sepsis-related acute kidney injury. Ulus Travma Acil Cerrahi Derg
+2016; 22:121–126.
+59. Karaman A, et al. A novel approach to contrast-induced nephrotoxicity: the melatonergic agent agomelatine. Br J Radiol 2016; 89:20150716.
+60. Lieberman JA, et al. Tricyclic antidepressant and metabolite levels in chronic renal failure. Clin Pharmacol Ther 1985; 37:301–307.
+61. Mitas JA, et al. Diabetic neuropathic pain: control by amitriptyline and fluphenazine in renal insufficiency. South Med J 1983; 76:462–463,
+467.
+62. Murphy EJ. Acute pain management pharmacology for the patient with concurrent renal or hepatic disease. Anaesth Intensive Care 2005;
+33:311–322.
+63. Constantino JL, et al. Pharmacokinetics of antidepressants in patients undergoing hemodialysis: a narrative literature review. Braz J Psychiatry
+2019; 41:441–446.
+64. Chen TY, et al. Amitriptyline-induced acute kidney injury and acute hepatitis: a case report. Am J Ther 2021; 28:e256-e258
+65. Sage Therapeutics Inc. Highlights of Prescribing Information. Zulresso (brexanolone) injection for intravenous use [controlled substance
+schedule pending] 2019; https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/211371lbl.pdf.
+66. Turpeinen M, et al. Effect of renal impairment on the pharmacokinetics of bupropion and its metabolites. Br J Clin Pharmacol 2007;
+64:165–173.
+67. Worrall SP, et al. Pharmacokinetics of bupropion and its metabolites in haemodialysis patients who smoke. A single dose study. Nephron Clin
+Pract 2004; 97:c83–c89.
+68. Ghoreishi A, et al. Bupropion as a treatment for sexual dysfunction among chronic kidney disease patients Acta Med Iran 2019;
+57:320–327.
+69. Joffe P, et al. Single-dose pharmacokinetics of citalopram in patients with moderate renal insufficiency or hepatic cirrhosis compared with
+healthy subjects. Eur J Clin Pharmacol 1998; 54:237–242.
+70. Kalender B, et al. Antidepressant treatment increases quality of life in patients with chronic renal failure. Ren Fail 2007; 29:817–822.
+71. Kelly CA, et al. Adult respiratory distress syndrome and renal failure associated with citalopram overdose. Hum Exp Toxicol 2003;
+22:103–105.
+72. Spigset O, et al. Citalopram pharmacokinetics in patients with chronic renal failure and the effect of haemodialysis. Eur J Clin Pharmacol
+2000; 56:699–703.
+73. Hosseini SH, et al. Citalopram versus psychological training for depression and anxiety symptoms in hemodialysis patients. Iran J Kidney Dis
+2012; 6:446–451.
+74. Sran H, et al. Confusion after starting citalopram in a renal transplant patient. BMJ Case Rep 2013; 2013:bcr2013010511.
+75. Assimon MM, et al. Comparative cardiac safety of selective serotonin reuptake inhibitors among individuals receiving maintenance hemodialysis. J Am Soc Nephrol 2019; 30:611–623.
+76. Onishi A, et al. Reversible acute renal failure associated with clomipramine-induced interstitial nephritis. Clin Exp Nephrol 2007;
+11:241–243.
+77. Wyeth Pharmaceuticals Inc. Highlights of Prescribing Information. PRISTIQ® (desvenlafaxine) Extended-Release Tablets, for oral use 2020;
+http://labeling.pfizer.com/showlabeling.aspx?id=497%20.
+78. Nichols AI, et al. The pharmacokinetics and safety of desvenlafaxine in subjects with chronic renal impairment. Int J Clin Pharmacol Ther
+2011; 49:3–13.
+79. Rees JA. Clinical interpretation of pharmacokinetic data on dothiepin hydrochloride (Dosulepin, Prothiaden). J Int Med Res 1981;
+9:98–102.
+80. Swarna SS, et al. Pruritus associated with chronic kidney disease: a comprehensive literature review. Cureus 2019; 11:e5256.
+81. Lobo ED, et al. Effects of varying degrees of renal impairment on the pharmacokinetics of duloxetine: analysis of a single-dose phase I study
+and pooled steady-state data from phase II/III trials. Clin Pharmacokinet 2010; 49:311–321.
+82. Ho NV, et al. Duloxetine-induced multi-system organ failure: a case report. Poster presented at American Geriatrics Society Annual Meeting,
+May 11–15, 2011: National Harbor, Maryland; 2011.
+83. Nguyen T, et al. Duloxetine uses in patients with kidney disease: different recommendations from the United States versus Europe and
+Canada. Am J Ther 2019; 26:e516-e519.
+84. Uong C, et al. Poster 91 serotonin syndrome in chronic kidney disease patient after given a dose of duloxetine while on trazodone: a case
+report. PM&R 2014; 6 (Suppl): S214–S215.
+85. Miriyala K, et al. Renal failure in a depressed adolescent on escitalopram. J Child Adolesc Psychopharmacol 2008; 18:405–408.
+86. Adiga GU, et al. Renal tubular defects from antidepressant use in an older adult: an uncommon but reversible adverse drug effect. Clin Drug
+Invest 2006; 26:607–610.
+87. Yazici AE, et al. Efficacy and tolerability of escitalopram in depressed patients with end stage renal disease: an open placebo-controlled study.
+Bull Clin Psychopharmacol 2012; 22:23–30.
+88. Bergstrom RF, et al. The effects of renal and hepatic disease on the pharmacokinetics, renal tolerance, and risk-benefit profile of fluoxetine.
+Int Clin Psychopharmacol 1993; 8:261–266.
+89. Blumenfield M, et al. Fluoxetine in depressed patients on dialysis. Int J Psychiatry Med 1997; 27:71–80.
+90. Levy NB, et al. Fluoxetine in depressed patients with renal failure and in depressed patients with normal kidney function. Gen Hosp
+Psychiatry 1996; 18:8–13.
+
+CHAPTER 8
+
+Hepatic and renal impairment  751
+
+
+
+
+<<<PAGE 958>>>
+
+Miscellany  937
+
+Intravenous formulations in psychiatry
+The intravenous (IV) route is one of the main parenteral routes for drug administration
+outside psychiatry (see Table 14.8). Advantages include rapid onset of action, precise
+titration, patient-specific dosing and bypass of liver metabolism. Hypersensitivity reactions, prevalence of adverse effects, infection risk and a higher overall cost some of its
+most debated downsides. Unlike other areas of medicine, IV has been significantly
+under-utilised in psychiatry. A testament to this is the audit undertaken by the Prescribing
+for Mental Health Observatory in 2013 in the UK – from the recorded 2,172 episodes
+of acute disturbance, use of IV medication was limited to only two instances.1
+While the main focus of delivering psychotropic medication through the IV route has
+been the management of acutely disturbed behaviour, its indications include a wide
+range of diagnoses, including affective and anxiety disorder, among others. Given the
+special care and expertise needed for the safe administration of IV formulations, they
+are most commonly considered when standard options fail to produce the desirable
+effect and in special clinical settings where trained staff, optimal monitoring, resuscitation equipment and ventilators are all at hand, such as the general hospital.2 Some
+drugs may only be given by the IV route (brexanolone for example).
+
+Medication
+
+Indication
+
+Class
+
+Dosea
+
+Adverse Effectsb
+
+Comments
+
+Biperiden3
+
+Akathisia
+
+Peripheral
+anticholinergic
+
+5mg
+
+None of note
+
+Weak evidence
+
+Postnatal
+Brexanolone4,5
+(allopregnanolone) Depression
+
+GABA – A
+positive
+allosteric
+modulator
+
+Weight-based
+dosing, with a
+recommended
+maximal dose of
+90μg/kg/hour
+
+Sleepiness, dry
+mouth, loss of
+consciousness, and
+hot flushes
+
+The intravenous
+infusion takes about
+60 hours (2½ days)
+to complete
+
+Citalopram
+
+SSRI
+
+10–20mg
+
+Fatigue, insomnia,
+anxiety, headaches
+
+No serious adverse
+events reported
+
+Nausea,
+hypotension,
+bradycardia
+
+Significant
+improvement
+sometimes noted
+
+Depression6,7
+Treatmentresistant OCD8
+
+20–80mg
+
+Clomipramine8–11
+
+Treatmentresistant OCD
+
+TCA
+
+150–250mg
+
+Dexmedetomidine12–17
+
+Acute
+disturbance
+
+Highly selective 0.2–1.4μg/kg/
+hour
+α2-adrenergic
+receptor
+agonist
+
+Bradycardia,
+hypotension
+
+Only appropriate for
+in an ICU setting
+
+Diazepam18
+
+Acute
+disturbance
+
+Benzodiazepine 5–20mg
+
+Respiratory
+depression
+
+Widely used, despite
+the dearth of
+available evidence
+(Continued)
+
+CHAPTER 14
+
+Table 14.8 Intravenous medication in psychiatry
+
+
+
+
+<<<PAGE 960>>>
+
+Miscellany  939
+
+Medication
+
+Indication
+
+Class
+
+Dosea
+
+Adverse Effectsb
+
+Comments
+
+Nitroprusside49
+
+Schizophrenia
+
+Vasodilator
+
+0.5μg/kg/hour
+
+Well tolerated
+
+Probably not
+efficacious
+
+Olanzapine20–22,50–52 Acute
+disturbance
+
+Atypical
+antipsychotic
+
+1.25–20mg
+
+Hypoxia, respiratory Safe with appropriate
+monitoring
+depression,
+bradycardia
+
+Scopolamine53
+(hyoscine)
+
+Depression
+
+Anticholinergic 4μg/kg
+
+No serious adverse Effective
+events. Drowsiness,
+blurred vision, dry
+mouth, lightheadedness and
+reduced blood
+pressure were
+reported
+
+Trazodone54
+
+Depression
+
+SARI
+
+No serious adverse
+events. Sedation,
+rash, dizziness
+
+No difference
+compared with IV
+Clomipramine
+
+Valproate
+
+Acute
+disturbance55
+
+Mood stabiliser 20mg/kg
+
+Sedation
+
+As effective as
+Haloperidol with less
+severe side effects
+
+Acute mania56
+
+25–100mg in
+250mL of saline
+
+500mg
+
+Possibly faster-acting
+than haloperidol
+
+The range of doses as described in the included studies.
+As reported in studies, though not exclusively.
+
+a
+
+b
+
+References
+1. POMH-UK. Topic 16a. Rapid tranquillisation in the context of the pharmacological management of acutely-disturbed behaviour. Royal
+College of Psychiatrists, 2017.
+2. Patel MX, et al. Joint BAP NAPICU evidence-based consensus guidelines for the clinical management of acute disturbance: de-escalation and
+rapid tranquillisation. Journal of Psychopharmacology 2018; 32:601–640.
+3. Hirose S, et al. Intravenous Biperiden in Akathisia: an open pilot study. The International Journal of Psychiatry in Medicine 2000;
+30:185–194.
+4. Meltzer-Brody S, et al. Brexanolone injection in post-partum depression: two multicentre, double-blind, randomised, placebo-controlled,
+phase 3 trials. The Lancet 2018; 392:1058–1070.
+5. Kanes S, et al. Brexanolone (SAGE-547 injection) in post-partum depression: a randomised controlled trial. The Lancet 2017;
+390:480–489.
+6. Pompili M, et al. Response to intravenous antidepressant treatment by suicidal vs. Nonsuicidal Depressed Patients. J Affect Disord 2010;
+122:154–158.
+7. Altamura AC, et al. Intravenous augmentative citalopram versus clomipramine in partial/nonresponder depressed patients: a short-term, low
+dose, randomized, placebo-controlled study. Journal of Clinical Psychopharmacology 2008; 28:406–410.
+8. Pallanti S, et al. Citalopram intravenous infusion in resistant obsessive-compulsive disorder: an open trial. J Clin Psychiatry 2002;
+63:796–801.
+9. Koran LM, et al. Rapid benefit of intravenous pulse loading of clomipramine in obsessive-compulsive disorder. Am J Psychiatry 1997;
+154:396–401.
+10. Fallon BA, et al. Intravenous clomipramine for obsessive-compulsive disorder refractory to oral clomipramine: a placebo-controlled study.
+Arch Gen Psychiatry 1998; 55:918–924.
+11. Karameh WK, et al. Intravenous clomipramine for treatment-resistant obsessive-compulsive disorder. Int J Neuropsychopharmacol 2015; 19.
+12. Jakob SM, et al. Dexmedetomidine vs midazolam or propofol for sedation during prolonged mechanical ventilation: two randomized controlled trials. Jama 2012; 307:1151–1160.
+
+CHAPTER 14
+
+Table 14.8 (Continued)
+
+
+
+
+<<<PAGE 967>>>
+
+946  Index
+
+778, 780, 809, 825t, 856t
+adverse effects of 440, 440t
+direct taper or switching to diazepam? 442–443, 442t
+dosage reduction (tapering) 442
+mechanism 449
+misuse 517
+discontinuation 517–518
+pregnancy and 518
+summary 518
+reduction schedules 445
+risk 448–449
+stopping 442
+subjective reports 449
+tapering
+before 444
+drug classes 446
+pattern of 443–444, 443f
+process of 444–445
+in treatment of psychiatric disorders 436
+anxiolytic effect 436
+drug interactions 438
+hypnotic effect 436–437
+side effects 437–438
+use in depression 437
+use in psychosis 437
+troubleshooting 445
+use in pregnancy 692–693
+withdrawal symptoms 441–442, 441t
+bethanechol 234
+bicarbonate 908t
+bilirubin 909t
+binge eating disorder 9
+biperiden 937t
+bipolar affective disorder 779
+alcohol 468–469
+rapid cycling 285–286, 285t
+bipolar depression 248–249, 264, 288
+first-line treatments for 551t
+meta-analysis in 288–291, 289–291t
+bipolar disorder 810, 820
+lithium
+acute treatment of mania 247–248
+adverse effects 250
+angiotensin-converting enzyme (ACE)
+inhibitors 252–253
+augmentation of antidepressants in
+unipolar depression 248–249
+bipolar depression 248–249
+carbamazepine 254
+clinically relevant drug
+interactions 254t
+discontinuation 251–252, 252t
+diuretics 253
+formulations 250
+interactions with other drugs 252
+maintenance treatment of 248
+mechanism of action 247
+non-steroidal anti-inflammatory drugs
+(NSAIDs) 253–254
+on-treatment monitoring 251
+plasma levels 249
+prescribing and monitoring 252t
+pre-treatment tests 251
+prophylaxis of unipolar
+depression 249
+and suicide 249
+toxicity 250–251
+
+uses of 249
+physical monitoring for people
+with 277–278t
+bipolar illness in childhood and adolescence
+clinical guidance
+after prescribing 547–548
+other treatments 548–551
+before prescribing 547
+specific issues 548
+what to prescribe 547
+RCT evidence on medication used in
+549–550f
+bleeding
+abnormal vaginal 412
+gastrointestinal 410–411, 411t
+risk factors for 409
+SSRIs and 409
+surgical and post-operative 413–415,
+413t
+blood pressure changes
+hypertension 161–162
+orthostatic hypotension 160–161
+management of 160–161t
+risk factors for 160t
+body dysmorphic disorder (BDD) 424
+Bolam and Bolitho criteria 925
+borderline personality disorder (BPD) 3–4
+antidepressants 4–5
+antipsychotics 4
+management of crisis 5
+memantine 5
+mood-stabilisers 5
+opioid antagonists 5
+proportion of people with 757
+suicide rate in 757
+botulinum 590
+BPD. See borderline personality disorder
+(BPD)
+BPSD. See behavioural and psychological
+symptoms of dementia (BPSD)
+bradykinesia 803
+breastfeeding 702
+ADHD 693–694, 693–694t
+antidepressants in 685–686, 688–689,
+704, 705–714t
+antipsychotics in 704
+bipolar illness during 689
+depression during pregnancy and
+postpartum 685
+discussions with pregnant women 681
+drug choice in 679–681
+general principles of prescribing
+psychotropics in 702–703, 703t
+hypnotics in 704, 715t
+infant exposure 702
+mood stabilisers in 690–692, 704
+psychosis during pregnancy and
+postpartum 681–682
+psychotropic medication in 702
+rapid tranquillisation 693
+sedatives 692–693
+SSRIs 687–688
+stimulants in 704, 716t
+treatment with antipsychotics
+first generation 682
+second-generation 683–685
+tricyclic antidepressants 686
+brexanolone 705t, 727t, 741t, 937t
+
+brexpiprazole 144, 652, 709t, 725t, 820
+British Association for Psychopharmacology
+(BAP)
+anti-dementia drugs from 625, 626t
+recommendations 626t
+British Association for Psychopharmacology
+Guidelines for Dementia 607
+bromocriptine 169
+bromperidol decanoate 932t
+bronchodilators
+anticholinergic bronchodilators 637
+beta-agonists 637
+hypersalivation 638
+myasthenia gravis (MG) 638
+theophylline 637
+buccal midazolam 58
+bulimia nervosa 9
+buprenorphine 483–484, 484t, 639
+alternative oral opioid
+preparations 490–491
+brands of oral buprenorphine and
+bioavailability 485–486
+buprenorphine starting dose 486
+cautions with 490
+initial total daily dose 481
+less than daily dosing 489–490
+and methadone 479t
+with naloxone (suboxone) 490
+overdose with 490
+patient-controlled analgesia (PCA)
+488–489, 489t
+prescribing information 480
+prolonged-release buprenorphine
+injection 484–485, 485t
+stabilisation dose of 489
+starting dose for patients 480, 486
+sublingual buprenorphine 484
+transferring from methadone to
+487–488
+transferring from other prescribed
+opioids to 488
+bupropion 506, 570, 650, 705t, 741t, 876t
+adverse effects 506
+clinical effectiveness 506
+preparations and dose 506
+buspirone 583, 745t, 809
+butyrophenones 710t
+butyrylcholinesterase (BuChE) 604
+cabergoline 169
+caffeine 865
+anxiety disorders 869
+consumption of 865
+content of drinks 865t
+dose and psychotropic effects of 866t
+energy drinks 868
+general effects of 866
+interacting substance 867t
+intoxication 867–868
+mood disorders 868
+pharmacokinetics 866, 867t
+psychotropic effects of 866
+schizophrenia 868
+calcium 909t
+calcium channel blockers 919t
+cannabinoids, Cochrane Review of 590
+cannabis 590
+captopril 917t
+
+

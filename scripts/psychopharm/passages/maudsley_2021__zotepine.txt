@@ -1,0 +1,630 @@
+<<<PAGE 15>>>
+
+Notes on using The Maudsley®
+Prescribing Guidelines in Psychiatry
+
+The main aim of The Guidelines is to provide clinicians with practically useful advice
+on the prescribing of psychotropic agents in both commonly and less commonly
+encountered clinical situations. The advice contained in this handbook is based on a
+combination of literature review, clinical experience and expert contribution. We do not
+claim that this advice is necessarily ‘correct’ or that it deserves greater prominence than
+the guidance provided by other professional bodies or special interest groups. We hope,
+however, to have provided guidance that helps to assure the safe, effective and economic use of medicines in psychiatry. We hope also to have made clear precisely the
+sources of information used to inform the guidance given. Please note that many of the
+recommendations provided here go beyond the licensed or labelled indications of many
+drugs, both in the UK and elsewhere. Note also that, while we have endeavoured to
+make sure all quoted doses are correct, clinicians should always consult statutory texts
+before prescribing. Users of The Guidelines should also bear in mind that the contents
+of this handbook are based on information available to us in March 2021. Much of the
+advice contained here will become out‐dated as more research is conducted and
+published.
+No liability is accepted for any injury, loss or damage, however caused.
+
+Notes on inclusion of drugs
+The Guidelines are used in many other countries outside the UK. With this in mind, we
+have included in this edition those drugs in widespread use throughout the Western
+world in March 2021. These include drugs not marketed in the UK, such as brexpiprazole, desvenlafaxine, pimavanserin and vilazodone, amongst several others. Many older
+drugs or those not widely available (e.g. levomepromazine, pericyazine, maprotiline,
+zotepine, oral loxapine, etc.) are either only briefly mentioned or not included on the
+basis that these drugs are not in widespread use at the time of writing.
+
+
+
+
+<<<PAGE 154>>>
+
+Schizophrenia and related psychoses  133
+
+1. Caroff SN, et al. Neuroleptic malignant syndrome. Med Clin North Am 1993; 77:185–202.
+2. Gurrera RJ, et al. Thermoregulatory dysfunction in neuroleptic malignant syndrome. Biol Psychiatry 1996; 39:207–212.
+3. Belvederi Murri M, et al. Second-generation antipsychotics and neuroleptic malignant syndrome: systematic review and case report analysis.
+Drugs in R&D 2015; 15:45–62.
+4. Ware MR, et al. Neuroleptic malignant syndrome: diagnosis and management. Prim Care Companion CNS Disord 2018; 20.
+5. Bristow MF, et al. How ‘malignant’ is the neuroleptic malignant syndrome? BMJ 1993; 307:1223–1224.
+6. Meltzer HY, et al. Marked elevations of serum creatine kinase activity associated with antipsychotic drug treatment. Neuropsychopharmacology
+1996; 15:395–405.
+7. Keck PE, Jr., et al. Risk factors for neuroleptic malignant syndrome. A case-control study. Arch Gen Psychiatry 1989; 46:914–918.
+8. Gurrera RJ. A systematic review of sex and age factors in neuroleptic malignant syndrome diagnosis frequency. Acta Psychiatr Scand 2017;
+135:398–408.
+9. Schneider M, et al. Neuroleptic malignant syndrome: evaluation of drug safety data from the AMSP program during 1993–2015. Eur Arch
+Psychiatry Clin Neurosci 2020; 270:23–33.
+10. Lao KSJ, et al. Antipsychotics and risk of neuroleptic malignant syndrome: a population-based cohort and case-crossover study. CNS Drugs
+2020; 34:1165–1175.
+11. Su YP, et al. Retrospective chart review on exposure to psychotropic medications associated with neuroleptic malignant syndrome. Acta
+Psychiatr Scand 2014; 130:52–60.
+12. Sing KJ, et al. Neuroleptic malignant syndrome and quetiapine (Letter). Am J Psychiatry 2002; 159:149–150.
+13. Suh H, et al. Neuroleptic malignant syndrome and low-dose olanzapine (Letter). Am J Psychiatry 2003; 160:796.
+14. Gallarda T, et al. Neuroleptic malignant syndrome in an 72-year-old-man with Alzheimer’s disease: a case report and review of the literature.
+Eur Neuropsychopharmacol 2000; 10 Suppl 3:357.
+15. Stanley AK, et al. Possible neuroleptic malignant syndrome with quetiapine. Br J Psychiatry 2000; 176:497.
+16. Sierra-Biddle D, et al. Neuropletic malignant syndrome and olanzapine. J Clin Psychopharmacol 2000; 20:704–705.
+17. Hasan S, et al. Novel antipsychotics and the neuroleptic malignant syndrome: a review and critique. Am J Psychiatry 1998;
+155:1113–1116.
+18. Tsai JH, et al. Zotepine-induced catatonia as a precursor in the progression to neuroleptic malignant syndrome. Pharmacotherapy 2005;
+25:1156–1159.
+19. Gortney JS, et al. Neuroleptic malignant syndrome secondary to quetiapine. Ann Pharmacother 2009; 43:785–791.
+20. Leibold J, et al. Neuroleptic malignant syndrome associated with ziprasidone in an adolescent. Clin Ther 2004; 26:1105–1108.
+21. Borovicka MC, et al. Ziprasidone- and lithium-induced neuroleptic malignant syndrome. Ann Pharmacother 2006; 40:139–142.
+22. Guanci N, et al. Atypical neuroleptic malignant syndrome associated with iloperidone administration. Psychosomatics 2012; 53:603–605.
+23. Spalding S, et al. Aripiprazole and atypical neuroleptic malignant syndrome. J Am Acad Child Adolesc Psychiatry 2004; 43:1457–1458.
+24. Chakraborty N, et al. Aripiprazole and neuroleptic malignant syndrome. Int Clin Psychopharmacol 2004; 19:351–353.
+25. Rodriguez OP, et al. A case report of neuroleptic malignant syndrome without fever in a patient given aripiprazole. J Okla State Med Assoc
+2006; 99:435–438.
+26. Srephichit S, et al. Neuroleptic malignant syndrome and aripiprazole in an antipsychotic-naive patient. J Clin Psychopharmacol 2006;
+26:94–95.
+27. Duggal HS. Possible neuroleptic malignant syndrome associated with paliperidone. J Neuropsychiatry Clin Neurosci 2007; 19:477–478.
+28. Langley-degroot M, et al. Atypical neuroleptic malignant syndrome associated with paliperidone long-acting injection: a case report. J Clin
+Psychopharmacol 2016; 36:277–279.
+29. Singh N, et al. Neuroleptic malignant syndrome after exposure to asenapine: a case report. Prim Care Companion J Clin Psychiatry 2010;
+12:e1.
+30. Mall GD, et al. Catatonia and mild neuroleptic malignant syndrome after initiation of long-acting injectable risperidone: case report. J Clin
+Psychopharmacol 2008; 28:572–573.
+31. Ananth J, et al. Neuroleptic malignant syndrome and atypical antipsychotic drugs. J Clin Psychiatry 2004; 65:464–470.
+32. Trollor JN, et al. Comparison of neuroleptic malignant syndrome induced by first- and second-generation antipsychotics. Br J Psychiatry
+2012; 201:52–56.
+33. Nakamura M, et al. Mortality of neuroleptic malignant syndrome induced by typical and atypical antipsychotic drugs: a propensity-matched
+analysis from the Japanese Diagnosis Procedure Combination database. J Clin Psychiatry 2012; 73:427–430.
+34. Orsolini L, et al. Up-to-date expert opinion on the safety of recently developed antipsychotics. Exp Opin Drug Saf 2020; 19:981–998.
+35. Kontaxakis VP, et al. Neuroleptic malignant syndrome after addition of paroxetine to olanzapine. J Clin Psychopharmacol 2003;
+23:671–672.
+36. Young C. A case of neuroleptic malignant syndrome and serotonin disturbance. J Clin Psychopharmacol 1997; 17:65–66.
+37. June R, et al. Neuroleptic malignant syndrome associated with nortriptyline. Am J Emerg Med 1999; 17:736–737.
+38. Lu TC, et al. Neuroleptic malignant syndrome after the use of venlafaxine in a patient with generalized anxiety disorder. J Formos Med Assoc
+2006; 105:90–93.
+39. Verma R, et al. An atypical case of neuroleptic malignant syndrome precipitated by valproate. BMJ Case Rep 2014; 2014:bcr2013202578.
+40. Menon V, et al. Atypical neuroleptic malignant syndrome in a young male precipitated by oral sodium valproate. Aust N Z J Psychiatry 2016;
+50:1208–1209.
+
+CHAPTER 1
+
+References
+
+
+
+
+<<<PAGE 223>>>
+
+CHAPTER 1
+
+202  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 1.37 (Continued)
+Treatment
+
+Comments
+
+Zotepine 300mg/day
+
+One study showed that some patients do not deteriorate when switched from
+clozapine.
+
+Ziprasidone 80–160mg/
+day109–111
+
+Two good RCTs. One111 suggests superior efficacy to chlorpromazine in
+refractory schizophrenia; the other109 suggests equivalence to clozapine in
+subjects with treatment intolerance/resistance. Disappointing results in practice,
+however. Supratherapeutic doses offer no advantage.112
+
+108
+
+Note: Treatments are listed in alphabetical order: no preference is implied by position in table.
+
+Refractory schizophrenia – alternatives to clozapine: summary
+Treatment
+
+Examples
+
+Comments
+
+Strength of evidence
+
+Monotherapy
+using nonclozapine
+antipsychotics in
+standard or high
+doses
+
+Aripiprazole 15–30mg
+daily
+Olanzapine 25–40mg
+daily
+
+Evidence of efficacy for any
+antipsychotic other than clozapine
+in refractory schizophrenia is
+sparse. Some data suggest
+efficacy for olanzapine above
+licensed doses but at the risk of
+metabolic adverse effects
+
+Very weak ±
+
+Non-clozapine
+antipsychotic
+polypharmacy
+
+Amisulpride + olanzapine
+Quetiapine + amisulpride
+Aripiprazole + olanzapine
+
+Polypharmacy is common in
+clinical practice. Evidence from
+controlled studies limited but
+open studies and real-world data
+suggest some effectiveness.
+Burden of adverse effects is
+increased
+
+Weak +
+
+Anti-inflammatory
+agents as adjuncts
+to antipsychotics
+
+N-acetylcysteine, NSAIDs
+minocycline, oestrogens,
+aspirin, omega-3 fatty
+acids
+
+A heterogeneous group of
+medicinal agents with
+inflammatory properties have
+been tried as adjuncts. Possible
+benefits in negative and cognitive
+symptoms but sample sizes have
+been small
+
+Very weak ±
+
+NMDA receptor
+modulators as
+adjuncts
+
+Memantine, glycine,
+D-serine and sarcosine
+
+Rarely used in clinical practice.
+May have some benefit in
+negative symptoms
+
+Very weak ±
+
+Physical treatments
+
+ECT, rTMS, tDCS, DBS
+
+Best evidence for ECT as adjunct
+to clozapine. Others still largely
+experimental
+
+Modest ++
+
+Adjunctive
+antidepressants
+
+Mirtazapine, vortioxetine,
+SSRIs
+
+Limited data available suggests
+small benefits in negative and
+cognitive symptoms
+
+Weak +
+
+Adjunctive
+antiseizure
+medications
+
+Lamotrigine, topiramate
+sodium valproate,
+carbamazepine
+
+Data difficult to interpret including
+clozapine and non-clozapine
+antipsychotics. Modest benefits at
+best
+
+Weak +
+
+Psychological
+therapies
+
+CBT
+
+Conflicting findings, effects small
+
+Very weak ±
+
+
+
+
+<<<PAGE 227>>>
+
+CHAPTER 1
+
+206  The Maudsley® Prescribing Guidelines in Psychiatry
+
+97. Lane HY, et al. Sarcosine or D-serine add-on treatment for acute exacerbation of schizophrenia: a randomized, double-blind, placebocontrolled study. Arch Gen Psychiatry 2005; 62:1196–1204.
+98. Tsai G, et al. Glycine transporter I inhibitor, N-methylglycine (sarcosine), added to antipsychotics for the treatment of schizophrenia. Biol
+Psychiatry 2004; 55:452–456.
+99. Kane JM, et al. A double-blind, randomized study comparing the efficacy and safety of sertindole and risperidone in patients with treatment-resistant schizophrenia. J Clin Psychiatry 2011; 72:194–204.
+100. Nielsen J, et al. Augmenting clozapine with sertindole: a double-blind, randomized, placebo-controlled study. J Clin Psychopharmacol
+2012; 32:173–178.
+101. Tiihonen J, et al. Topiramate add-on in treatment-resistant schizophrenia: a randomized, double-blind, placebo-controlled, crossover trial.
+J Clin Psychiatry 2005; 66:1012–1015.
+102. Franck N, et al. Left temporoparietal transcranial magnetic stimulation in treatment-resistant schizophrenia with verbal hallucinations.
+Psychiatry Res 2003; 120:107–109.
+103. Fitzgerald PB, et al. A double-blind sham-controlled trial of repetitive transcranial magnetic stimulation in the treatment of refractory auditory hallucinations. J Clin Psychopharmacol 2005; 25:358–362.
+104. Tuppurainen H, et al. Repetitive navigated αTMS in treatment-resistant schizophrenia. Brain Stimulation 2017; 10:397–398.
+105. Khosravi M. Ursodeoxycholic acid augmentation in treatment-refractory schizophrenia: a case report. J Med Case Rep 2020; 14:137.
+106. Basan A, et al. Valproate as an adjunct to antipsychotics for schizophrenia: a systematic review of randomized trials. Schizophr Res 2004;
+70:33–37.
+107. Miyaoka T, et al. Efficacy and safety of yokukansan in treatment-resistant schizophrenia: a randomized, multicenter, double-blind, placebocontrolled trial. Evid Based Complement Alternat Med 2015; 2015:201592.
+108. Lin CC, et al. Switching from clozapine to zotepine in patients with schizophrenia: a 12-week prospective, randomized, rater blind, and
+parallel study. J Clin Psychopharmacol 2013; 33:211–214.
+109. Sacchetti E, et al. Ziprasidone vs clozapine in schizophrenia patients refractory to multiple antipsychotic treatments: the MOZART study.
+Schizophr Res 2009; 110:80–89.
+110. Loebel AD, et al. Ziprasidone in treatment-resistant schizophrenia: a 52-week, open-label continuation study. J Clin Psychiatry 2007;
+68:1333–1338.
+111. Kane JM, et al. Efficacy and tolerability of ziprasidone in patients with treatment-resistant schizophrenia. Int Clin Psychopharmacol 2006;
+21:21–28.
+112. Goff DC, et al. High-dose oral ziprasidone versus conventional dosing in schizophrenia patients with residual symptoms: the ZEBRAS
+study. J Clin Psychopharmacol 2013; 33:485–490.
+
+
+
+
+<<<PAGE 654>>>
+
+Lithium – 1
+Lofepramine – 3
+
+Dipyridamole – 0
+
+Disopyramide – 2
+
+Docusate sodium – 0
+
+Domperidone – 1
+
+Donepezil – 0
+
+Dothiepin (Dosulepin) – 3
+
+Doxazosin – 0
+
+Doxepin – 3
+
+Bendroflumethiazide – 0
+
+Benzatropine – 3
+
+Betahistine – 0
+
+Bezafibrate – 0
+
+Bisacodyl – 0
+
+Bisoprolol – NK
+
+Bromocriptine – 1
+
+Budesonide (inhaler) – 0
+
+Loratadine – 0
+Lorazepam – 0
+
+Duloxetine – 0
+
+Enalapril – 0
+
+Enoxaparin – 0
+
+Bupropion – 0
+
+Buspirone – 1
+
+Cabergoline – 0
+
+Losartan – 0
+
+Loperamide – 0
+
+Doxycycline – 0
+
+Dulaglutide – 0
+
+Bumetanide – NK
+
+Buprenorphine – 0
+
+Lisinopril – 0
+
+Liraglutide – 0
+
+Levothyroxine (Thyroxine) – 0
+
+Levomepromazine
+(methotrimeprazine) – 2
+
+Levodopa – 0
+
+Levetiracetam – NK
+
+Lercanidipine – 0
+
+Lansoprazole – NK
+
+Lamotrigine – 0
+
+Lactulose – 0
+
+Rabeprazole – 0
+
+Quinine – 1
+
+Quinidine – 1
+
+Quetiapine – 2
+
+Propranolol – 0
+
+Propantheline – 2
+
+Promethazine – 3
+
+Promazine – 2
+
+Procyclidine – 3
+
+Prochlorperazine – 2
+
+Pregabalin – NK
+
+Prednisolone – 1
+
+Prazosin – 0
+
+Pravastatin – 0
+
+Pirenzepine – 1
+
+Pimozide – 2
+
+Phenytoin – NK
+
+Labetalol – 0
+
+Diphenhydramine – 2
+
+Dihydrocodeine – NK
+
+Atropine eye drops – 1
+
+Phenelzine – 1
+
+Ketorolac – 0
+
+Beclometasone dipropionate
+(inhaler) – 0
+
+Digoxin – NK
+
+Atropine – 3
+
+Pethidine – 2
+
+Perphenazine – 1
+
+Perindopril – 0
+
+Pergolide – 0
+
+Isosorbide mononitrate – 0
+
+Diltiazem – 0
+
+Dicycloverine (dicyclomine) – 2
+
+Atorvastatin – 0
+
+Isosorbide dinitrate – 0
+
+Dimenhydrinate – 2
+
+Diclofenac – 0
+
+Atomoxetine – 0
+
+Isocarboxazid – 1
+
+Azathioprine – 0
+
+Diazepam – 1
+
+Atenolol – 0
+
+Irbesartan – NK
+
+Baclofen – NK
+
+Dextropropoxyphene – NK
+
+Aspirin – 0
+
+(Continued )
+
+Zuclopentixol (zuclopenthixol) – 1
+
+Zotepine – 2
+
+Zopiclone – NK
+
+Zolpidem – 0
+
+Ziprasidone – 0
+
+Warfarin – 0
+
+Vortioxetine – 0
+
+Vitamins – 0
+
+Vitamin B12 – 0
+
+Verapamil – NK
+
+Venlafaxine – 0
+
+Valproate – 0
+
+Trospium – 0
+
+Trimipramine – 3
+
+Trimethoprim – 0
+
+Trihexyphenidyl (benzhexol) – 3
+
+Trifluoperazine – 2
+
+
+
+
+<<<PAGE 811>>>
+
+CHAPTER 10
+
+790  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 10.5 (Continued)
+Safety in
+epilepsy
+
+Drug
+
+Comments
+
+Antipsychotics
+Low risk
+– good
+choices
+
+Amisulpride/
+sulpiride
+
+Considered to be safe in PWE.43 Renally excreted, so low risk of
+pharmacokinetic interactions with antiseizure medications. Seizures
+uncommon in overdose44
+
+Aripiprazole
+
+Rarely lowers seizure threshold.5 Incidence of seizures similar to placebo in
+RCTs24
+
+Ziprasidone
+
+Probably low
+risk – use
+with caution
+(limited
+evidence)
+
+High potency
+FGAs
+
+For example, fluphenazine, haloperidol, trifluoperazine, flupentixol. Low risk
+of lowering the seizure threshold5
+
+Risperidone
+
+Unlikely to lower the seizure threshold.5 Incidence of seizures similar to
+placebo in RCTs.24 Has been recommended for PWE.32,45 Evidence of safety in
+a case series of adolescents with epilepsy46
+
+Asenapine
+
+Seizure rate similar to placebo in RCTs.47 Data and clinical experience of use
+in PWE is extremely limited
+
+Brexpiprazole
+Cariprazine
+Lurasidone
+
+Moderate
+risk – care
+required
+
+Olanzapine
+Quetiapine
+
+Olanzapine and quetiapine both associated with seizures in RCTs.24 However,
+olanzapine causes more EEG abnormalities.44 Overall risk of reducing the
+seizure threshold is considered to be low5 and olanzapine has been
+recommended by some for PWE.32 Data relating to olanzapine are difficult to
+interpret. EEG changes are seen in some but not all studies48 and it has been
+reported to be both anticonvulsant49 and proconvulsant.50 Quetiapine has a
+high risk of drug interaction in PWE45
+
+Higher risk
+– care
+required
+
+Clozapine
+
+Most epileptogenic antipsychotic.32 However, has been used successfully in
+PWE stable on antiseizure medications without worsening seizures51 and
+even in treatment-resistant epilepsy.52 Note, should not be used with
+carbamazepine (risk of blood dyscrasias and reduced clozapine levels).
+Valproate or lamotrigine are the antiseizure medications of choice
+
+Higher risk
+– avoid
+
+Low potency FGAs
+(e.g.
+chlorpromazine)
+
+Best avoided in PWE.31 Doses of chlorpromazine above 1g/day have a 9%
+incidence of seizures
+
+Loxapine
+
+Highest rate of seizures amongst the FGAs53
+
+Depot
+antipsychotics
+
+None of the depot preparations currently available are thought to be
+epileptogenic, however:
+■■ The kinetics of depots are complex (seizures may be delayed)
+■■ If seizures do occur, the offending drug may not be easily withdrawn.
+Depots should be used with extreme care
+
+Zotepine
+
+Has established dose-related pro-convulsive effect44
+(Continued)
+
+

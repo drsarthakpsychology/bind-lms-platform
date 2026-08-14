@@ -1,0 +1,595 @@
+<<<PAGE 10>>>
+
+82 methylphenidate (d,l)
+83 mianserin
+84 midazolam
+85 milnacipran
+86 mirtazapine
+87 moclobemide
+88 modafinil
+89 molindone
+90 nalmefene
+91 naltrexone
+92 naltrexone/bupropion
+93 nefazodone
+94 nortriptyline
+95 olanzapine
+96 oxazepam
+97 oxcarbazepine
+98 paliperidone
+99 paroxetine
+100 perospirone
+101 perphenazine
+102 phenelzine
+103 phentermine/topiramate
+104 pimavanserin
+105 pimozide
+106 pipothiazine
+107 pitolisant
+108 prazosin
+109 pregabalin
+
+
+
+
+<<<PAGE 1416>>>
+
+Methylphenidate (D,L)
+
+Therapeutics
+Brands
+Concerta
+Metadate CD
+Ritalin
+Ritalin LA
+Methylin
+QuilliChew ER
+Quillivant XR
+Aptensio XR
+Daytrana
+Jornay PM
+Adhansia XR
+Cotempla XR-ODT
+see index for additional brand names
+Generic?
+Yes
+
+
+
+
+<<<PAGE 1417>>>
+
+Class
+Neuroscience-based Nomenclature: dopamine, norepinephrine
+reuptake inhibitor and releaser (DN-RIRe)
+Stimulant
+Commonly Prescribed for
+(bold for FDA approved)
+Attention deficit hyperactivity disorder (ADHD) in children and
+adults (approved ages vary based on formulation)
+Narcolepsy (Metadate ER, Methylin ER, Ritalin, Ritalin SR)
+Treatment-resistant depression
+How the Drug Works
+
+✽ Increases norepinephrine and especially dopamine actions by
+blocking their reuptake
+Enhancement of dopamine and norepinephrine actions in certain
+brain regions (e.g., dorsolateral prefrontal cortex) may improve
+attention, concentration, executive function, and wakefulness
+Enhancement of dopamine actions in other brain regions (e.g., basal
+ganglia) may improve hyperactivity
+Enhancement of dopamine and norepinephrine in yet other brain
+regions (e.g., medial prefrontal cortex, hypothalamus) may improve
+depression, fatigue, and sleepiness
+
+
+
+
+<<<PAGE 1422>>>
+
+Adjust dose
+Switch to another formulation of d,l-methylphenidate
+Switch to another agent
+For insomnia, avoid dosing in afternoon/evening
+Best Augmenting Agents for Side Effects
+Beta blockers for peripheral autonomic side effects
+Dose reduction or switching to another agent may be more effective
+since most side effects cannot be improved with an augmenting
+agent
+
+Dosing and Use
+Usual Dosage Range
+ADHD (oral): varies by formulation; see How to Dose section
+ADHD (transdermal): 10–30 mg/9 hours
+Narcolepsy: 20–60 mg/day in 2–3 divided doses
+Dosage Forms
+Immediate-release tablet 5 mg, 10 mg, 20 mg (Ritalin, generic
+methylphenidate)
+Oral solution 5 mg/mL, 10 mg/5 mL (Methylin)
+
+
+
+
+<<<PAGE 1423>>>
+
+Older sustained-release tablet 10 mg, 20 mg (Methylin ER); 20 mg
+(Ritalin SR, Metadate ER)
+
+✽ Newer sustained-release capsule 10 mg, 20 mg, 30 mg, 40 mg, 60
+mg (Ritalin LA); 10 mg, 20 mg, 30 mg, 40 mg, 50 mg, 60 mg
+(Metadate CD)
+
+✽ Newer sustained-release tablet 18 mg, 27 mg, 36 mg, 54 mg
+(Concerta)
+Sustained-release chewable tablet 20 mg scored, 30 mg, 40 mg
+(QuilliChew ER)
+Extended-release capsule, multi-layer release 10 mg, 15 mg, 20 mg,
+30 mg, 40 mg, 50 mg, 60 mg (Aptensio XR)
+Orally disintegrating tablet 8.6 mg, 17.3 mg, 25.9 mg (Cotempla
+XR-ODT)
+Extended-release capsule 20 mg, 40 mg, 60 mg, 80 mg, 100 mg
+(Jornay PM)
+Extended-release capsule 25 mg, 35 mg, 45 mg, 55 mg, 70 mg, 85
+mg (Adhansia XR)
+Extended-release oral suspension 5 mg/mL (Quillivant XR)
+Transdermal patch 27 mg/12.5 cm2 (10 mg/9 hours; 1.1 mg/hour),
+41.3 mg/18.75 cm2 (15 mg/9 hours; 1.6 mg/hour), 55 mg/25 cm2 (20
+mg/9 hours; 2.2 mg/hour), 82.5 mg/37.5 cm2 (30 mg/9 hours; 3.3
+mg/hour)
+How to Dose
+
+
+
+
+<<<PAGE 1424>>>
+
+Immediate-release Ritalin, generic methylphenidate (2–4 hour
+duration of action)
+ADHD: initial 5 mg in morning, 5 mg at lunch; can increase by
+5–10 mg each week; maximum dose generally 60 mg/day
+Narcolepsy: give each dose 30–45 minutes before meals;
+maximum dose generally 60 mg/day
+Older extended-release Ritalin SR, Methylin SR, and Metadate ER
+These formulations have a duration of action of approximately
+4–6 hours; therefore, these formulations may be used in place
+of immediate-release formulations when the 4–6 hour dosage
+of these sustained-release formulations corresponds to the
+titrated 4–6 hour dosage of the immediate-release formulation
+Average dose is 20–30 mg/day, usually in 2 divided doses
+
+✽ Newer sustained-release formulations for ADHD
+
+Concerta (up to 12 hours duration of action): initial 18 mg/day in
+morning; can increase by 18 mg each week; maximum dose
+generally 72 mg/day
+Ritalin LA, Metadate CD, QuilliChew ER (up to 8 hours duration
+of action): initial 20 mg once daily; dosage may be adjusted in
+weekly increments of 10 mg or 20 mg (QuilliChew ER only) to a
+maximum of 60 mg/day taken in the morning
+Quillivant XR (up to 12-hour duration): initial 20 mg once daily;
+dosage may be adjusted in weekly increments of 10–20 mg to a
+maximum of 60 mg/day taken in the morning
+
+
+
+
+<<<PAGE 1426>>>
+
+Patients should follow the same titration schedule when they are
+naive to methylphenidate or are switching from another
+formulation
+Dosing Tips
+Clinical duration of action often differs from pharmacokinetic halflife
+Taking oral formulations with food may delay peak actions for 2–3
+hours
+Do not substitute methylphenidate products on a mg-per-mg basis
+due to differing methylphenidate base compositions and
+pharmacokinetic profiles
+
+✽ Immediate-release formulations (Ritalin, Methylin, generic
+methylphenidate) have 2–4 hour durations of clinical action
+
+✽ Sustained-release formulations such as Methylin ER, Ritalin SR,
+Metadate ER, and generic methylphenidate sustained-release all have
+approximately 4–6 hour durations of clinical action, which for most
+patients is generally not long enough for once daily dosing in the
+morning and thus generally requires lunchtime dosing at school
+
+✽ Sustained-release Metadate CD has an early peak and an 8-hour
+duration of action
+
+✽ Sustained-release Ritalin LA also has an early peak and an 8-hour
+duration of action, with 2 pulses (immediate and after 4 hours)
+
+
+
+
+<<<PAGE 1427>>>
+
+✽ Sustained-release Concerta trilayer tablet, orally disintegrating
+tablet Cotempla XRODT, Quillivant XR, and Aptensio XR have 12hour durations of action
+Orally disintegrating tablet Cotempla-XR-ODT has a 12-hour
+duration of action
+Most sustained-release formulations (especially Concerta, Metadate
+CD, and Ritalin LA) should not be chewed but rather should only be
+swallowed whole
+QuilliChew ER is a chewable tablet and can be taken with or
+without food
+Jornay PM can be taken with or without food, but should be
+consistent; the capsule can be opened and the contents sprinkled
+onto applesauce
+Jornay PM: if the evening dose is missed and not remembered until
+the next morning, then the patient should wait until their next
+scheduled evening dose
+Adhansia XR can be taken with or without food; the capsule can be
+opened and the contents sprinkled onto applesauce or yogurt; if
+mixture is not consumed within 10 minutes it should be discarded;
+45 mg capsule contains tartrazine, which may cause allergic
+reactions, particularly in patients allergic to aspirin
+Adhansia XR: if the morning dose is missed, then the patient should
+wait until their next scheduled morning dose
+
+
+
+
+<<<PAGE 1428>>>
+
+✽ Newer sustained-release formulations have a sufficiently long
+duration of clinical action to eliminate the need for a lunchtime dosing
+if taken in the morning
+
+✽ This innovation can be an important practical element in stimulant
+utilization, eliminating the hassle and pragmatic difficulties of
+lunchtime dosing at school, including storage problems, potential
+diversion, and the need for a medical professional to supervise dosing
+away from home
+Off-label uses are dosed the same as for ADHD
+
+✽ May be possible to dose only during the school week for some
+ADHD patients
+
+✽ May be able to give drug holidays over the summer in order to
+reassess therapeutic utility and effects on growth and to allow catch-up
+from any growth suppression as well as to assess any other side effects
+and the need to reinstitute stimulant treatment for the next school term
+However, most studies show that parental height is what determines
+a patient’s final height, and that most children/adolescents taking
+stimulants reach their expected height, just more slowly than
+children/adolescents not exposed to stimulants
+Avoid dosing late in the day because of the risk of insomnia
+Concerta tablet does not change shape in the gastrointestinal tract
+and generally should not be used in patients with gastrointestinal
+narrowing because of the risk of intestinal obstruction
+Side effects are generally dose-related
+
+
+
+
+<<<PAGE 1439>>>
+
+✽ Newer sustained-release technologies are truly once a day dosing
+systems
+
+✽ Metadate CD and Ritalin LA are somewhat similar to each other,
+both with an early peak and duration of action of about 8 hours
+
+✽ Concerta has less of an early peak but a longer duration of action
+(up to 12 hours)
+
+✽ Concerta trilayer tablet consists of 3 compartments (2 containing
+drug, 1 a “push” compartment) and an orifice at the head of the first
+drug compartment; water fills the push compartment and gradually
+pushes drug up and out of the tablet through the orifice
+
+✽ Concerta may be preferable for those ADHD patients who work in
+the evening or do homework up to 12 hours after morning dosing
+
+✽ Metadate CD and Ritalin LA may be preferable for those ADHD
+patients who lose their appetite for dinner or have insomnia with
+Concerta
+Some patients may benefit from an occasional addition of 5–10 mg
+of immediate-release methylphenidate to their daily base of
+sustained-release methylphenidate
+Transdermal formulation may confer lower abuse potential than oral
+formulations
+Transdermal formulation may enhance adherence to treatment
+compared to some oral formulations because it allows once daily
+application with all day efficacy, has a smoother absorption curve,
+
+
+
+
+<<<PAGE 2579>>>
+
+Concerta (d,l-methylphenidate), 487
+Concordin (protriptyline), 657
+Concordine (protriptyline), 657
+Consta (risperidone), 687
+Contemnol (lithium), 415
+Contrave (naltrexone/bupropion), 541
+Control (lorazepam), 437
+Convulex (valproate), 829
+Convulsofin (valproate), 829
+Cosmopril (selegiline), 705
+Cotempla XR-ODT (d, l-methylphenidate), 487
+cyamemazine, 201
+Cymbalta (duloxetine), 263
+Cytomel (triiodothyronine), 813
+Dalcipran (milnacipran), 503
+Dalmadorm (flurazepam), 321
+Dalmane (flurazepam), 321
+Dalparan (zolpidem), 871
+Dapotum (fluphenazine), 313
+Dapotum Acutum (fluphenazine), 313
+Dapotum D (fluphenazine), 313
+Dapotum Depot (fluphenazine), 313
+Daprimen (amitriptyline), 25
+Darkene (flunitrazepam), 297
+Darleton (sulpiride), 741
+Daytrana (d, l-methylphenidate), 487
+Dayvigo (lemborexant), 395
+Decafen (fluphenazine), 313
+
+
+
+
+<<<PAGE 2599>>>
+
+Meilax (loflazepate), 431
+Meleril (thioridazine), 759
+Melipramin (imipramine), 367
+Melipramine (imipramine), 367
+Mellaril (thioridazine), 759
+Melleretten (thioridazine), 759
+Melleril (thioridazine), 759
+Melzine (thioridazine), 759
+Memac (donepezil), 243
+memantine, 473
+memantine/donepezil combination, 243 , 473
+memantine XR, 473
+Menfazona (nefazodone), 545
+Menrium (chlordiazepoxide), 147
+Mepizin (oxazepam), 569
+Meresa (sulpiride), 741
+Merlit (lorazepam), 437
+Metadate CD (d,l-methylphenidate), 487
+Metadate ER (d,l-methylphenidate), 487
+Metafolin (l-methylfolate), 477
+Metamidol (diazepam), 229
+methyfolate (l), 477
+Methylin (d,l-methylphenidate), 487
+Methylin ER (d,l-methylphenidate), 487
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Metylyl (desipramine), 207
+Miabene (mianserin), 495
+
+
+
+
+<<<PAGE 2613>>>
+
+Riminyl (galantamine), 337
+Risolid (chlordiazepoxide), 147
+Risperdal (risperidone), 687
+Risperdal Consta (risperidone injectable), 687
+risperidone, 687
+Risperin (risperidone), 687
+Rispolept (risperidone), 687
+Rispolin (risperidone), 687
+Ritalin (d,l-methylphenidate), 487
+Ritalin LA (d, l-methylphenidate), 487
+Ritalin SR (d,l-methylphenidate), 487
+Ritaline (d,l-methylphenidate), 487
+rivastigmine, 699
+Rivatril (clonazepam), 173
+Rivotril (clonazepam), 173
+Robitussin (dextromethorphan), 225
+Rocam (midazolam), 499
+Rohipnol (flunitrazepam), 297
+Rohypnol (flunitrazepam), 297
+Roipnol (flunitrazepam), 297
+Romazicon (flumazenil), 293
+Ronal (flunitrazepam), 297
+Ropan (flunitrazepam), 297
+Rozerem (ramelteon), 677
+Rubifen (d,l-methylphenidate), 487
+Rulivan (nefazodone), 545
+Sanval (zolpidem), 871
+Sanzur (fluoxetine), 301
+
+
+
+
+<<<PAGE 2631>>>
+
+trazodone, 793
+trifluoperazine , 803
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Attention deficit hyperactivity disorder
+amphetamine (d) , 39
+amphetamine (d,l) , 45
+armodafinil, 65
+atomoxetine , 79
+bupropion, 117
+chlorpromazine (hyperactivity) , 153
+clonidine , 179
+guanfacine , 343
+haloperidol (hyperactivity) , 347
+lisdexamfetamine , 409
+methylphenidate (d) , 481
+methylphenidate (d,l) , 487
+modafinil, 521
+reboxetine, 681
+Autism-related irritability
+aripiprazole , 53
+risperidone , 687
+Behavioral problems
+aripiprazole, 53
+
+
+
+
+<<<PAGE 2639>>>
+
+maprotiline , 465
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+mianserin, 495
+milnacipran, 503
+mirtazapine , 509
+moclobemide, 515
+modafinil (adjunct), 521
+nefazodone , 545
+nortriptyline , 551
+olanzapine, 559
+paliperidone, 581
+paroxetine , 593
+phenelzine , 613
+protriptyline , 657
+quetiapine (adjunct) , 667
+reboxetine, 681
+risperidone, 687
+selegiline , 705
+sertindole, 715
+sertraline , 721
+sulpiride, 741
+tianeptine, 777
+tranylcypromine , 787
+trazodone , 793
+triiodothyronine, 813
+trimipramine , 817
+venlafaxine , 841
+
+
+
+
+<<<PAGE 2644>>>
+
+lorazepam (adjunct), 437
+lurasidone, 457
+olanzapine , 559
+paliperidone, 581
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+valproate (divalproex) , 829
+ziprasidone , 863
+zotepine, 883
+Migraine
+propranolol , 653
+topiramate , 781
+valproate (divalproex) , 829
+zonisamide, 875
+Muscle spasm
+diazepam , 229
+lorazepam, 437
+Narcolepsy
+amphetamine (d) , 39
+amphetamine (d,l) , 45
+armodafinil , 65
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l) , 487
+modafinil, 521
+
+
+
+
+<<<PAGE 2664>>>
+
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+reboxetine, 681
+Benzodiazepine antagonist
+flumazenil, 293
+Cognitive enhancers
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+atomoxetine, 79
+bupropion, 117
+caprylidene, 127
+clonidine, 179
+donepezil, 243
+galantamine, 337
+memantine, 473
+memantine/donepezil combination, 243 , 473
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+reboxetine, 681
+rivastigmine, 699
+Dementia treatments
+caprylidene, 127
+donepezil, 243
+
+
+
+
+<<<PAGE 2669>>>
+
+midazolam, 499
+quazepam, 663
+ramelteon, 677
+suvorexant, 747
+tasimelteon, 751
+temazepam, 755
+trazodone, 793
+triazolam, 799
+zaleplon, 859
+zolpidem, 871
+zopiclone, 879
+Stimulants
+amphetamine (d), 39
+amphetamine (d,l), 45
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Substance use disorder treatments
+acamprosate, 1
+buprenorphine, 111
+bupropion, 117
+clonidine, 179
+cyamemazine, 201
+disulfiram, 239
+lofexidine, 427
+lorazepam, 437
+nalmefene, 533
+
+
+
+
+<<<PAGE 2670>>>
+
+naltrexone, 537
+oxazepam, 569
+varenicline, 837
+Tic suppressants
+aripiprazole, 53
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+pimozide, 627
+Wake-promoting agents
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+pitolisant, 639
+sodium oxybate, 733
+solriamfetol, 737
+Weight management
+amphetamine (d,l), 45
+naltrexone/bupropion, 541
+phentermine/topiramate, 619
+zonisamide, 875
+
+

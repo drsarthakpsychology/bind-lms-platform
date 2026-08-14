@@ -1,0 +1,429 @@
+<<<PAGE 9>>>
+
+54 flurazepam
+55 fluvoxamine
+56 gabapentin
+57 galantamine
+58 guanfacine
+59 haloperidol
+60 hydroxyzine
+61 iloperidone
+62 imipramine
+63 isocarboxazid
+64 ketamine
+65 lamotrigine
+66 lemborexant
+67 levetiracetam
+68 levomilnacipran
+69 lisdexamfetamine
+70 lithium
+71 lofepramine
+72 lofexidine
+73 loflazepate
+74 lorazepam
+75 loxapine
+76 lumateperone
+77 lurasidone
+78 maprotiline
+79 memantine
+80 methylfolate (l)
+81 methylphenidate (d)
+
+
+
+
+<<<PAGE 1258>>>
+
+Loflazepate
+
+Therapeutics
+Brands
+Meilax
+see index for additional brand names
+Generic?
+No
+Class
+Benzodiazepine (anxiolytic)
+Commonly Prescribed for
+(bold for FDA approved)
+Anxiety, tension, depression, or sleep disorder in patients with
+neurosis
+Anxiety, tension, depression, or sleep disorder in patients with
+psychosomatic disease
+Catatonia
+How the Drug Works
+
+
+
+
+<<<PAGE 1260>>>
+
+If symptoms reemerge, consider treatment with an SSRI or SNRI, or
+consider restarting the benzodiazepine; sometimes benzodiazepines
+have to be used in combination with SSRIs or SNRIs for best results
+If It Doesn’t Work
+Consider switching to another agent or adding an appropriate
+augmenting agent
+Consider psychotherapy, especially cognitive behavioral
+psychotherapy
+Consider presence of concomitant substance abuse
+Consider presence of loflazepate abuse
+Consider another diagnosis, such as a comorbid medical condition
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Benzodiazepines are frequently used as augmenting agents for
+antipsychotics and mood stabilizers in the treatment of psychotic
+and bipolar disorders
+Benzodiazepines are frequently used as augmenting agents for
+SSRIs and SNRIs in the treatment of anxiety disorders
+Not generally rational to combine with other benzodiazepines
+Caution if using as an anxiolytic concomitantly with other sedative
+hypnotics for sleep
+
+
+
+
+<<<PAGE 1266>>>
+
+Pharmacokinetics
+Elimination half-life approximately 122 hours (ultra-long half-life)
+Drug Interactions
+Increased depressive effects when taken with other CNS depressants
+(see Warnings below)
+Cimetidine raises loflazepate plasma levels
+Rapid dose reduction or discontinuation of loflazepate during
+concomitant use with tetracyclic antidepressants such as maprotiline
+may result in convulsive seizures, possibly due to the loss of
+anticonvulsant actions that suppress the proconvulsant actions of
+tetracyclic antidepressants
+Other Warnings/Precautions
+Boxed warning regarding the increased risk of CNS depressant
+effects when benzodiazepines and opioid medications are used
+together, including specifically the risk of slowed or difficulty
+breathing and death
+If alternatives to the combined use of benzodiazepines and opioids
+are not available, clinicians should limit the dosage and duration of
+each drug to the minimum possible while still achieving therapeutic
+efficacy
+Patients and their caregivers should be warned to seek medical
+attention if unusual dizziness, lightheadedness, sedation, slowed or
+
+
+
+
+<<<PAGE 1267>>>
+
+difficulty breathing, or unresponsiveness occur
+Dosage changes should be made in collaboration with prescriber
+Use with caution in patients with pulmonary disease; rare reports of
+death after initiation of benzodiazepines in patients with severe
+pulmonary impairment
+History of drug or alcohol abuse often creates greater risk for
+dependency
+Hypomania and mania have occurred in depressed patients taking
+loflazepate
+Use only with extreme caution if patient has obstructive sleep apnea
+Some depressed patients may experience a worsening of suicidal
+ideation
+Some patients may exhibit abnormal thinking or behavioral changes
+similar to those caused by other CNS depressants (i.e., either
+depressant actions or disinhibiting actions)
+Do Not Use
+If patient has angle-closure glaucoma
+If patient has myasthenia gravis
+If there is a proven allergy to loflazepate or any benzodiazepine
+
+Special Populations
+
+
+
+
+<<<PAGE 1268>>>
+
+Renal Impairment
+Drug should be used with caution
+Hepatic Impairment
+Drug should be used with caution
+Cardiac Impairment
+Benzodiazepines have been used to treat anxiety associated with
+acute myocardial infarction
+Elderly
+Drug should be used with caution
+Should begin with lower starting dose
+Children and Adolescents
+Safety and efficacy have not been established
+Benzodiazepines are often used in children and adolescents,
+especially short-term and at the lower end of the dosing scale
+Long-term effects of loflazepate in children/adolescents are
+unknown
+Should generally receive lower doses and be more closely
+monitored
+Pregnancy
+
+
+
+
+<<<PAGE 1269>>>
+
+Possible increased risk of birth defects when benzodiazepines are
+taken during pregnancy
+Because of the potential risks, loflazepate is not generally
+recommended as treatment for anxiety during pregnancy, especially
+during first trimester
+Drug should be tapered if discontinued
+Infants whose mothers received a benzodiazepine late in pregnancy
+may experience withdrawal effects
+Neonatal flaccidity has been reported in infants whose mothers took
+a benzodiazepine during pregnancy
+Seizures, even mild seizures, may cause harm to the embryo/fetus
+Breast Feeding
+Some drug is found in mother’s breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+Effects on infant have been observed and include feeding
+difficulties, sedation, and weight loss
+
+The Art of Psychopharmacology
+Potential Advantages
+Patients who have interdose anxiety on shorter-acting
+benzodiazepines
+
+
+
+
+<<<PAGE 1271>>>
+
+May both cause depression and treat depression in different patients
+Risk of seizure is greatest during the first 3 days after
+discontinuation of loflazepate, especially in those with prior
+seizures, head injuries, or withdrawal from drugs of abuse
+Clinical duration of action may be shorter than plasma half-life,
+leading to dosing more frequently than 2–3 times daily in some
+patients
+When using to treat insomnia, remember that insomnia may be a
+symptom of some other primary disorder itself, and thus warrant
+evaluation for comorbid psychiatric and/or medical conditions
+Though not systematically studied, benzodiazepines have been used
+effectively to treat catatonia and are the initial recommended
+treatment
+
+Suggested Reading
+Ba BB , Iliadis A , Cano JP . Pharmacokinetic modeling of ethyl loflazepate
+(Victan) and its main active metabolites . Ann Biomed Eng 1989 ;17 (6
+):633–46 .
+Chambon JP , Perio A , Demarne H , et al. Ethyl loflazepate: a prodrug
+from the benzodiazepine series designed to dissociate anxiolytic and
+sedative activities . Arzneimittelforschung 1985 ;35 (10 ):1573 –7.
+
+
+
+
+<<<PAGE 1272>>>
+
+Murasaki M , Mori A , Noguchi T , et al. Comparison of therapeutic
+efficacy of neuroses between CM6912 (ethyl loflazepate) and diazepam in a
+double-blind trial . Prog Neuropsychopharmacol Biol Psychiatry 1989 ;13
+(1–2):145–54 .
+
+
+
+
+<<<PAGE 2596>>>
+
+Lithiumorotat (lithium), 415
+Lithizine (lithium), 415
+Lithobid (lithium), 415
+Lithonate (lithium), 415
+Lithostat (lithium), 415
+Lito (lithium), 415
+Litoduron (lithium), 415
+L-ketamine (esketamine), 275
+l-methylfolate, 477
+Lodopin (zotepine), 883
+lofepramine, 421
+lofexidine, 427
+loflazepate, 431
+Lomesta (lorazepam), 437
+Lonasen (blonanserin), 89
+Lonseren (pipothiazine), 633
+Lorabenz (lorazepam), 437
+Lorafen (lorazepam), 437
+Loram (lorazepam), 437
+Lorans (lorazepam), 437
+Lorapam (lorazepam), 437
+lorazepam, 437
+Lorenin (lorazepam), 437
+Loridem (lorazepam), 437
+Lorien (fluoxetine), 301
+Lorivan (lorazepam), 437
+Lorsedal (lorazepam), 437
+Lorsifar (lorazepam), 437
+
+
+
+
+<<<PAGE 2599>>>
+
+Meilax (loflazepate), 431
+Meleril (thioridazine), 759
+Melipramin (imipramine), 367
+Melipramine (imipramine), 367
+Mellaril (thioridazine), 759
+Melleretten (thioridazine), 759
+Melleril (thioridazine), 759
+Melzine (thioridazine), 759
+Memac (donepezil), 243
+memantine, 473
+memantine/donepezil combination, 243 , 473
+memantine XR, 473
+Menfazona (nefazodone), 545
+Menrium (chlordiazepoxide), 147
+Mepizin (oxazepam), 569
+Meresa (sulpiride), 741
+Merlit (lorazepam), 437
+Metadate CD (d,l-methylphenidate), 487
+Metadate ER (d,l-methylphenidate), 487
+Metafolin (l-methylfolate), 477
+Metamidol (diazepam), 229
+methyfolate (l), 477
+Methylin (d,l-methylphenidate), 487
+Methylin ER (d,l-methylphenidate), 487
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+Metylyl (desipramine), 207
+Miabene (mianserin), 495
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2636>>>
+
+lisdexamfetamine , 409
+topiramate, 781
+zonisamide, 875
+Cataplexy syndrome
+clomipramine, 165
+imipramine, 367
+pitolisant , 639
+sodium oxybate , 733
+Catatonia
+alprazolam, 11
+chlordiazepoxide, 147
+clonazepam, 173
+clorazepate, 185
+diazepam, 229
+estazolam, 281
+flunitrazepam, 297
+flurazepam, 321
+loflazepate, 431
+lorazepam, 437
+midazolam, 499
+oxazepam, 569
+quazepam, 663
+temazepam, 755
+triazolam, 799
+Chorea, Huntington’s disease
+deutetrabenazine , 221
+
+
+
+
+<<<PAGE 2642>>>
+
+prazosin , 643
+propranolol , 653
+Hypoactive sexual desire disorder
+bremelanotide , 95
+flibanserin , 289
+Insomnia
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+clomipramine, 165
+clonazepam, 173
+desipramine, 207
+diazepam, 229
+diphenhydramine , 235
+dothiepin, 249
+doxepin , 255
+estazolam , 281
+eszopiclone , 285
+flunitrazepam, 297
+flurazepam , 321
+hydroxyzine, 355
+imipramine, 367
+lemborexant , 395
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+

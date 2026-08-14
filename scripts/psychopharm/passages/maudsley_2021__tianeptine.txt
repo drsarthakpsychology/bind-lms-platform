@@ -1,0 +1,182 @@
+<<<PAGE 345>>>
+
+324  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 3.5 (Continued)
+Treatment
+
+Comments
+
+Omega–3-triglycerides EPA
+
+Usually added to antidepressant treatment. Effect is possibly dosesensitive – total dose should be <1g a day and EPA content >60%
+
+Pindolol30,40–44
+5mg tds or 7.5mg once daily
+
+Well tolerated, can be initiated in primary care. Data mainly relate to
+acceleration of response. Refractory data somewhat contradictory
+
+Pramipexole38,39
+0.125–5mg/day
+
+One good RCT showing clear effect
+
+Psilocybin45
+10/25mg one week apart
+
+Effective but specialist use only
+
+Risperidone46–51
+0.5–3mg/day to antidepressant
+
+Generally less robust RCT support than for other SGAs
+
+S-adenosyl-l-methionine52–54
+400mg/day IM; 1600mg/day oral
+
+Limited data in treatment-resistant depression
+Use weakly supported by a Cochrane review55
+
+SSRI + Buspirone56,57
+Up to 60mg/day
+
+Supported by STAR*D
+Higher doses required poorly tolerated (dizziness common)
+
+SSRI + TCA58
+
+Formerly widely used
+
+Stimulants:
+amfetamine; methylphenidate
+
+Varied outcomes. See section on ‘Psychostimulants in depression’
+(this chapter)
+
+TCA – high dose59
+
+Formerly widely used. Cardiac monitoring essential
+
+CHAPTER 3
+
+39
+
+Testosterone gel
+
+Effective in those with low testosterone levels
+
+Tianeptine61,62
+25–50mg/day
+
+Tiny database. Tianeptine not available in many countries
+
+Tryptophan63–66
+2–3g TDS
+
+Long history of successful use
+
+Venlafaxine67–70
+>200mg/day
+
+Can be initiated in primary care
+Recommended by NICE71
+Nausea and vomiting; discontinuation reactions more common.
+Blood pressure monitoring essential
+
+Venlafaxine – very high dose (up to
+600mg/day)72
+
+See above entry. Cardiac monitoring essential
+
+Venlafaxine + IV clomipramine73
+
+Cardiac monitoring essential
+
+Zinc
+25mg Zn +/day
+
+One RCT (n = 60) showed good results in refractory depression
+
+Ziprasidone75–77
+Up to 160mg/day
+
+Poorly supported. Probably has no antidepressant effects
+
+30,60
+
+74
+
+Note: Other non-drug treatments are available, including various psychological approaches, repetitive transcranial
+magnetic stimulation (rTMS), vagus nerve stimulation, deep brain stimulation and psychosurgery. Discussion of these
+is beyond the scope of the book.
+EPA, eicosapentanoic acid; IM, intramuscular; IV, intravenous; MAOI, monoamine oxidase inhibitor; RCT, randomised
+controlled trial; SC, subcutaneous; SSRI, selective serotonin reuptake inhibitor; TCA, tricyclic antidepressant; tds,
+three times a day.
+
+
+
+
+<<<PAGE 347>>>
+
+CHAPTER 3
+
+326  The Maudsley® Prescribing Guidelines in Psychiatry
+
+35. Nierenberg AA, et al. Lithium augmentation of nortriptyline for subjects resistant to multiple antidepressants. J Clin Psychopharmacol 2003;
+23:92–95.
+36. Fava M, et al. A comparison of mirtazapine and nortriptyline following two consecutive failed medication treatments for depressed outpatients: a STAR*D report. Am J Psychiatry 2006; 163:1161–1172.
+37. Shelton RC, et al. Olanzapine/fluoxetine combination for treatment-resistant depression: a controlled study of SSRI and nortriptyline resistance. J Clin Psychiatry 2005; 66:1289–1297.
+38. Stahl SM. Basic psychopharmacology of antidepressants, part 2: oestrogen as an adjunct to antidepressant treatment. J Clin Psychiatry 1998;
+59 Suppl 4:15–24.
+39. Liao Y, et al. Efficacy of omega-3 PUFAs in depression: a meta-analysis. Trans Psychiatry 2019; 9:190.
+40. McAskill R, et al. Pindolol augmentation of antidepressant therapy. Br J Psychiatry 1998; 173:203–208.
+41. Rasanen P, et al. Mitchell B. Balter award–1998. Pindolol and major affective disorders: a three-year follow-up study of 30,485 patients. J
+Clin Psychopharmacol 1999; 19:297–302.
+42. Perry EB, et al. Pindolol augmentation in depressed patients resistant to selective serotonin reuptake inhibitors: a double-blind, randomized,
+controlled trial. J Clin Psychiatry 2004; 65:238–243.
+43. Sokolski KN, et al. Once-daily high-dose pindolol for SSRI-refractory depression. Psychiatry Res 2004; 125:81–86.
+44. Whale R, et al. Pindolol augmentation of serotonin reuptake inhibitors for the treatment of depressive disorder: a systematic review. J
+Psychopharmacology 2010; 24:513–520.
+45. Carhart-Harris RL, et al. Psilocybin with psychological support for treatment-resistant depression: an open-label feasibility study. Lancet
+Psychiatry 2016; 3:619–627.
+46. Yoshimura R, et al. Addition of risperidone to sertraline improves sertraline-resistant refractory depression without influencing plasma concentrations of sertraline and desmethylsertraline. Human Psychopharmacology 2008; 23:707–713.
+47. Mahmoud RA, et al. Risperidone for treatment-refractory major depressive disorder: a randomized trial. Ann Intern Med 2007;
+147:593–602.
+48. Ostroff RB, et al. Risperidone augmentation of selective serotonin reuptake inhibitors in major depression. J Clin Psychiatry 1999;
+60:256–259.
+49. Rapaport MH, et al. Effects of risperidone augmentation in patients with treatment-resistant depression: results of open-label treatment followed by double-blind continuation. Neuropsychopharmacology 2006; 31:2505–2513.
+50. Stoll AL, et al. Tranylcypromine plus risperidone for treatment-refractory major depression. J Clin Psychopharmacol 2000; 20:495–496.
+51. Keitner GI, et al. A randomized, placebo-controlled trial of risperidone augmentation for patients with difficult-to-treat unipolar, non-psychotic major depression. J Psychiatr Res 2009; 43:205–214.
+52. Pancheri P, et al. A double-blind, randomized parallel-group, efficacy and safety study of intramuscular S-adenosyl-L-methionine 1,4-butanedisulphonate (SAMe) versus imipramine in patients with major depressive disorder. Int J Neuropsychopharmacol 2002; 5:287–294.
+53. Alpert JE, et al. S-adenosyl-L-methionine (SAMe) as an adjunct for resistant major depressive disorder: an open trial following partial or
+nonresponse to selective serotonin reuptake inhibitors or venlafaxine. J Clin Psychopharmacol 2004; 24:661–664.
+54. Sharma A, et al. S-adenosylmethionine (SAMe) for neuropsychiatric disorders: a clinician-oriented review of research. J Clin Psychiatry 2017;
+78:e656–e667.
+55. Galizia I, et al. S-adenosyl methionine (SAMe) for depression in adults. Cochrane Database Syst Rev 2016; 10:Cd011286.
+56. Trivedi MH, et al. Medication augmentation after the failure of SSRIs for depression. N Engl J Med 2006; 354:1243–1252.
+57. Appelberg BG, et al. Patients with severe depression may benefit from buspirone augmentation of selective serotonin reuptake inhibitors:
+results from a placebo-controlled, randomized, double-blind, placebo wash-in study. J Clin Psychiatry 2001; 62:448–452.
+58. Taylor D. Selective serotonin reuptake inhibitors and tricyclic antidepressants in combination – interactions and therapeutic uses. Br J
+Psychiatry 1995; 167:575–580.
+59. Malhi GS, et al. Management of resistant depression. Int J Psychiatry Clin Pract 1997; 1:269–276.
+60. Pope HG, Jr., et al. Testosterone gel supplementation for men with refractory depression: a randomized, placebo-controlled trial. Am J
+Psychiatry 2003; 160:105–111.
+61. Tobe EH, et al. Possible usefulness of tianeptine in treatment-resistant depression. Int J Psychiatry Clin Pract 2013; 17:313–316.
+62. Woo YS, et al. Tianeptine combination for partial or non-response to selective serotonin re-uptake inhibitor monotherapy. Psychiatry Clin
+Neurosci 2013; 67:219–227.
+63. Angst J, et al. The treatment of depression with L-5-hydroxytryptophan versus imipramine. Results of two open and one double-blind study.
+Arch Psychiatr Nervenkr 1977; 224:175–186.
+64. Alino JJ, et al. 5-Hydroxytryptophan (5-HTP) and a MAOI (nialamide) in the treatment of depressions. A double-blind controlled study. Int
+Pharmacopsychiatry 1976; 11:8–15.
+65. Hale AS, et al. Clomipramine, tryptophan and lithium in combination for resistant endogenous depression: seven case studies. Br J Psychiatry
+1987; 151:213–217.
+66. Young SN. Use of tryptophan in combination with other antidepressant treatments: a review. J Psychiatry Neurosci 1991; 16:241–246.
+67. Poirier MF, et al. Venlafaxine and paroxetine in treatment-resistant depression. Double-blind, randomised comparison. Br J Psychiatry 1999;
+175:12–16.
+68. Nierenberg AA, et al. Venlafaxine for treatment-resistant unipolar depression. J Clin Psychopharmacol 1994; 14:419–423.
+69. Smith D, et al. Efficacy and tolerability of venlafaxine compared with selective serotonin reuptake inhibitors and other antidepressants: a
+meta-analysis. Br J Psychiatry 2002; 180:396–404.
+70. Rush AJ, et al. Bupropion-SR, sertraline, or venlafaxine-XR after failure of SSRIs for depression. N Engl J Med 2006; 354:1231–1242.
+
+

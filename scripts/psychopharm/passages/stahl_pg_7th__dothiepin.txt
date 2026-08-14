@@ -1,0 +1,747 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 724>>>
+
+Dothiepin
+
+Therapeutics
+Brands
+Prothiaden
+see index for additional brand names
+Generic?
+In UK
+Class
+Neuroscience-based Nomenclature: serotonin, norepinephrine
+multimodal (SN-MM)
+Tricyclic antidepressant (TCA)
+Serotonin and norepinephrine/noradrenaline reuptake inhibitor
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive disorder
+Anxiety
+Insomnia
+Neuropathic pain/chronic pain
+
+
+
+
+<<<PAGE 725>>>
+
+Treatment-resistant depression
+How the Drug Works
+Boosts neurotransmitters serotonin and
+norepinephrine/noradrenaline
+Blocks serotonin reuptake pump (serotonin transporter), presumably
+increasing serotonergic neurotransmission
+Blocks norepinephrine reuptake pump (norepinephrine transporter),
+presumably increasing noradrenergic neurotransmission
+Presumably desensitizes both serotonin 1A receptors and beta
+adrenergic receptors
+Since dopamine is inactivated by norepinephrine reuptake in frontal
+cortex, which largely lacks dopamine transporters, dothiepin can
+increase dopamine neurotransmission in this part of the brain
+How Long Until It Works
+May have immediate effects in treating insomnia or anxiety
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks
+If it is not working within 6–8 weeks for depression, it may require
+a dosage increase or it may not work at all
+May continue to work for many years to prevent relapse of
+symptoms
+
+
+
+
+<<<PAGE 734>>>
+
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of dothiepin
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing dothiepin
+Generally, do not use with MAOIs, including 14 days after MAOIs
+are stopped; do not start an MAOI for at least 5 half-lives (5 to 7
+days for most drugs) after discontinuing dothiepin, but see Pearls
+Use with caution in patients with history of seizures, urinary
+retention, angle-closure glaucoma, hyperthyroidism, and in patients
+recovering from myocardial infarction
+TCAs can increase QTc interval, especially at toxic doses, which
+can be attained not only by overdose but also by combining with
+drugs that inhibit TCA metabolism via CYP450 2D6, potentially
+causing torsade de pointes-type arrhythmia or sudden death
+Because TCAs can prolong QTc interval, use with caution in
+patients who have bradycardia or who are taking drugs that can
+induce bradycardia (e.g., beta blockers, calcium channel blockers,
+clonidine, digitalis)
+
+
+
+
+<<<PAGE 736>>>
+
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to dothiepin
+
+Special populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Baseline ECG is recommended
+TCAs have been reported to cause arrhythmias, prolongation of
+conduction time, orthostatic hypotension, sinus tachycardia, and
+heart failure, especially in the diseased heart
+Myocardial infarction and stroke have been reported with TCAs
+TCAs produce QTc prolongation, which may be enhanced by the
+existence of bradycardia, hypokalemia, congenital or acquired long
+QTc interval, which should be evaluated prior to administering
+dothiepin
+
+
+
+
+<<<PAGE 741>>>
+
+Underweight patients may be more susceptible to adverse
+cardiovascular effects
+Children, patients with inadequate hydration, and patients with
+cardiac disease may be more susceptible to TCA-induced
+cardiotoxicity than healthy adults
+For the expert only: a heroic treatment (but potentially dangerous)
+for severely treatment-resistant patients is to give simultaneously
+with MAOIs for patients who fail to respond to numerous other
+antidepressants, but generally recommend a different TCA than
+dothiepin for this use
+If this option is elected, start the MAOI with the tricyclic/tetracyclic
+antidepressant simultaneously at low doses after appropriate drug
+washout, then alternately increase doses of these agents every few
+days to a week as tolerated
+Although very strict dietary and concomitant drug restrictions must
+be observed to prevent hypertensive crises and serotonin syndrome,
+the most common side effects of MAOI and tricyclic/tetracyclic
+antidepressant combinations may be weight gain and orthostatic
+hypotension
+Patients on TCAs should be aware that they may experience
+symptoms such as photosensitivity or blue-green urine
+SSRIs may be more effective than TCAs in women, and TCAs may
+be more effective than SSRIs in men
+
+
+
+
+<<<PAGE 742>>>
+
+Since tricyclic/tetracyclic antidepressants are substrates for CYP450
+2D6, and 7% of the population (especially Caucasians) may have a
+genetic variant leading to reduced activity of 2D6, such patients may
+not safely tolerate normal doses of tricyclic/tetracyclic
+antidepressants and may require dose reduction
+Phenotypic testing may be necessary to detect this genetic variant
+prior to dosing with a tricyclic/tetracyclic antidepressant, especially
+in vulnerable populations such as children, elderly, cardiac
+populations, and those on concomitant medications
+Patients who seem to have extraordinarily severe side effects at
+normal or low doses may have this phenotypic CYP450 2D6 variant
+and require low doses or switching to another antidepressant not
+metabolized by 2D6
+
+Suggested Reading
+Anderson IM . Selective serotonin reuptake inhibitors versus tricyclic
+antidepressants: a meta-analysis of efficacy and tolerability . J Aff Disorders
+2000 ;58 :19 –36 .
+Anderson IM . Meta-analytical studies on new antidepressants . Br Med
+Bull 2001 ; 57 :161–78 .
+Donovan S , Dearden L , Richardson L . The tolerability of dothiepin: a
+review of clinical studies between 1963 and 1990 in over 13,000 depressed
+
+
+
+
+<<<PAGE 743>>>
+
+patients . Prog Neuropsychopharmacol Biol Psychiatry 1994 ; 18 :1143 –
+62.
+Lancaster SG , Gonzalez JP . Dothiepin. A review of its pharmacodynamic
+and pharmacokinetic properties, and therapeutic efficacy in depressive
+illness . Drugs 1989 ;38 :123–47 .
+
+
+
+
+<<<PAGE 2575>>>
+
+Belix (diphenhydramine), 235
+Belpax (amitriptyline), 25
+Belseren (clorazepate), 185
+Belsomra (suvorexant), 747
+Benadryl (diphenhydramine), 235
+Benpon (nortriptyline), 551
+Bentapam (diazepam), 229
+Benylin (diphenhydramine), 235
+Benzopin (diazepam), 229
+Benzotran (oxazepam), 569
+benztropine, 85
+Berk-Dothiepin (dothiepin), 249
+Besitran (sertraline), 721
+Bespar (buspirone), 123
+Betamaks (sulpiride), 741
+Betamed (diazepam), 229
+Betapam (diazepam), 229
+Bialzepam (diazepam), 229
+Bikalm (zolpidem), 871
+Bioperidolo (haloperidol), 347
+Bioxetin (fluoxetine), 301
+Biron (buspirone), 123
+Biscasil (chlorpromazine), 153
+Biston (carbamazepine), 131
+blonanserin, 89
+Bolvidon (mianserin), 495
+Bortalium (diazepam), 229
+bremelanotide, 95
+
+
+
+
+<<<PAGE 2583>>>
+
+Dixibon (sulpiride), 741
+Dizac (diazepam), 229
+DM (dextromethorphan), 225
+d-methylphenidate, 481
+Dobren (sulpiride), 741
+Dobupal (venlafaxine), 841
+Dogmatil (sulpiride), 741
+Dogmatyl (sulpiride), 741
+Dolmatil (sulpiride), 741
+Domical (amitriptyline), 25
+Dominans (nortriptyline), 551
+Domnamid (estazolam), 281
+DOM-trazodone (trazodone), 793
+donepezil, 243
+donepezil/memantine combination, 243 , 473
+Doneurin (doxepin), 255
+Donix (lorazepam), 437
+Dopress (dothiepin), 249
+Doral (quazepam), 663
+Dorken (clorazepate), 185
+Dorm (lorazepam), 437
+Dormalin (quazepam), 663
+Dormapam (temazepam), 755
+Dorme (quazepam), 663
+Dormicum (midazolam), 499
+Dormodor (flurazepam), 321
+Dothep (dothiepin), 249
+dothiepin, 249
+
+
+
+
+<<<PAGE 2590>>>
+
+Gen-Valproic (valproate), 829
+Geodon (ziprasidone), 863
+Gewakalm (diazepam), 229
+Gladem (sertraline), 721
+Gnostorid (oxazepam), 569
+Gobanal (diazepam), 229
+guanfacine, 343
+Haemiton (clonidine), 179
+Halcion (triazolam), 799
+Haldol (haloperidol), 347
+Haldol decanoas (haloperidol), 347
+Haldol Decanoat (haloperidol), 347
+Haldol Decanoate (haloperidol), 347
+Haldol Decanoato (haloperidol), 347
+Haldol Depot (haloperidol), 347
+Haldol L.A. (haloperidol), 347
+Haloneural (haloperidol), 347
+Haloper (haloperidol), 347
+haloperidol, 347
+Haloperidol Decanoat (haloperidol), 347
+Haloperidol Decanoato (haloperidol), 347
+Haloperin (haloperidol), 347
+Haloperin depotinjektio (haloperidol), 347
+Harmomed (dothiepin), 249
+Harmoned (diazepam), 229
+Helex (alprazolam), 11
+Helogaphen (chlordiazepoxide), 147
+Hermolepsin (carbamazepine), 131
+
+
+
+
+<<<PAGE 2591>>>
+
+Herphonal (trimipramine), 817
+Hetlioz (tasimelteon), 751
+Hexafene (hydroxyzine), 355
+Hexalid (diazepam), 229
+Hibanil (chlorpromazine), 153
+Hibernal (chlorpromazine), 153
+Hipnodane (quazepam), 663
+Hipnosedon (flunitrazepam), 297
+Histilos (hydroxyzine), 355
+Hopacem (mianserin), 495
+Horizant (gabapentin), 331
+Huberplex (chlordiazepoxide), 147
+Hydoic acid (valproate), 829
+Hydophen (clomipramine), 165
+Hydramine (diphenhydramine), 235
+Hydroxyzin (hydroxyzine), 355
+hydroxyzine, 355
+Hydroxyzinum (hydroxyzine), 355
+Hypam (triazolam), 799
+Hypnocalm (flunitrazepam), 297
+Hypnodorm (flunitrazepam), 297
+Hypnor (flunitrazepam), 297
+Hypnorex Retard (lithium), 415
+Hypnovel (midazolam), 499
+Idom (dothiepin), 249
+Iktoviril (clonazepam), 173
+Ilman (flunitrazepam), 297
+iloperidone, 359
+
+
+
+
+<<<PAGE 2592>>>
+
+Imavate (imipramine), 367
+Imipramiin (imipramine), 367
+Imipramin (imipramine), 367
+imipramine, 367
+Imovane (zopiclone), 879
+Inadalprem (lorazepam), 437
+Inderal (propranolol), 653
+Inderal LA (propranolol), 653
+Ingrezza (valbenazine), 825
+InnoPran XL (propranolol), 653
+Insom (flunitrazepam), 297
+Intermezzo (zolpidem), 871
+Intuniv (guanfacine), 343
+Invega (paliperidone), 581
+Invega Sustenna (paliperidone injectable), 581
+Invega Trinza (paliperidone), 581
+Ipnovel (midazolam), 499
+Iremo Sedofren (trifluoperazine), 803
+Iremofar (hydroxyzine), 355
+isocarboxazid, 375
+Ivadal (zolpidem), 871
+Ixel (milnacipran), 503
+Janimine (imipramine), 367
+Januar (oxazepam), 569
+Jardin (dothiepin), 249
+Jatroneural (trifluoperazine), 803
+Jatrosom (tranylcypromine), 787
+Jatrosom N (tranylcypromine), 787
+
+
+
+
+<<<PAGE 2603>>>
+
+Noan-Gap (lorazepam), 437
+Noctazepam (oxazepam), 569
+Noctran (clorazepate), 185
+Nocturne (temazepam), 755
+Nomapam (temazepam), 755
+Noneston (sulpiride), 741
+Nopress (nortriptyline), 551
+Nordotol (carbamazepine), 131
+Norebox (reboxetine), 681
+Norestran (sulpiride), 741
+Norfenazin (nortriptyline), 551
+Noriel (flunitrazepam), 297
+Noriline (nortriptyline), 551
+Noripam (oxazepam), 569
+Noritren (nortriptyline), 551
+Norkotral N (oxazepam), 569
+Norkotral Tema (temazepam), 755
+Normison (temazepam), 755
+Normum (sulpiride), 741
+Norpramin (desipramine), 207
+Northiaden (dothiepin), 249
+Nortimil (desipramine), 207
+Nortix (nortriptyline), 551
+Nortrilen (nortriptyline), 551
+Nortriptilin (nortriptyline), 551
+nortriptyline, 551
+Norval (mianserin), 495
+Nova-Pam (chlordiazepoxide), 147
+
+
+
+
+<<<PAGE 2610>>>
+
+Propaphenin (chlorpromazine), 153
+propranolol, 653
+Propymal (valproate), 829
+Prosedar (quazepam), 663
+ProSom (estazolam), 281
+Prosulpin (sulpiride), 741
+Prothiaden (dothiepin), 249
+Protiaden (dothiepin), 249
+protriptyline, 657
+Provigil (modafinil), 521
+Proxam (oxazepam), 569
+Prozac (fluoxetine), 301
+Prozil (chlorpromazine), 153
+Prozin (chlorpromazine), 153
+Prozyn (fluoxetine), 301
+Pryleugan (imipramine), 367
+Psicocen (sulpiride), 741
+Psicofar (chlordiazepoxide), 147
+Psiquiwas (oxazepam), 569
+Psychopax (diazepam), 229
+Psymoin (maprotiline), 465
+PT-141 (bremelanotide), 95
+Punktyl (lorazepam), 437
+Purata (oxazepam), 569
+Q-Med Hydroxyzine (hydroxyzine), 355
+Qsymia (phentermine/topiramate), 619
+Quait (lorazepam), 437
+Quastil (sulpiride), 741
+
+
+
+
+<<<PAGE 2620>>>
+
+temazepam, 755
+Temesta (lorazepam), 437
+Temodal (quazepam), 663
+Temporal Slow (carbamazepine), 131
+Temporol (carbamazepine), 131
+Temtabs (temazepam), 755
+Tenex (guanfacine), 343
+Tenox (temazepam), 755
+Tensispes (buspirone), 123
+Tensium (diazepam), 229
+Tensopam (diazepam), 229
+Tenso-Timelets (clonidine), 179
+Tepavil (sulpiride), 741
+Tepazepam (diazepam), 229
+Tepazepam (sulpiride), 741
+Teperin (amitriptyline), 25
+Teralithe (lithium), 415
+Tercian (cyamemazine), 201
+Terfluoperazine (perphenazine), 607
+Terflurazine (trifluoperazine), 803
+Terfluzin (trifluoperazine), 803
+Teril (carbamazepine), 131
+Tetrabenazine D6 (deutetrabenazine), 221
+Texapam (temazepam), 755
+Thaden (dothiepin), 249
+thioridazine, 759
+thiothixene, 765
+Thombran (trazodone), 793
+
+
+
+
+<<<PAGE 2627>>>
+
+Zenzedi (amphetamine d), 39
+Zeptol (carbamazepine), 131
+Zerenal (dothiepin), 249
+ziprasidone, 863
+Ziprexa (olanzapine), 559
+Zispin (mirtazapine), 509
+Zoleptil (zotepine), 883
+Zoloft (sertraline), 721
+zolpidem, 871
+Zolpimist (zolpidem), 871
+Zonalon (doxepin), 255
+Zonegran (zonisamide), 875
+zonisamide, 875
+Zopax (alprazolam), 11
+zopiclone, 879
+Zopite (zotepine), 883
+zotepine, 883
+Z-Pam (temazepam), 755
+Zubsolv (buprenorphine with naloxone), 111
+zuclopenthixol, 889
+Zuledin (chlorpromazine), 153
+Zulex (acamprosate), 1
+Zulresso (brexanolone), 99
+Zyban (bupropion), 117
+Zymocomb (sulpiride), 741
+Zyprexa (olanzapine), 559
+Zyprexa Relprevv (olanzapine), 559
+Zyprexa Zydis (olanzapine), 559
+
+
+
+
+<<<PAGE 2629>>>
+
+Alzheimer disease
+caprylidene , 127
+donepezil , 243
+galantamine , 337
+memantine , 473
+rivastigmine , 699
+selegiline, 705
+Amnesia, Drug-induced
+midazolam , 499
+Anxiety
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone , 123
+chlordiazepoxide , 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate , 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam , 229
+dothiepin, 249
+doxepin , 255
+duloxetine, 263
+
+
+
+
+<<<PAGE 2638>>>
+
+cariprazine, 137
+citalopram , 159
+clomipramine, 165
+cyamemazine, 201
+desipramine , 207
+desvenlafaxine , 215
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin , 255
+duloxetine , 263
+escitalopram , 269
+esketamine , 275
+fluoxetine , 301
+fluoxetine/olanzapine combination , 301 , 559
+flupenthixol, 307
+fluvoxamine, 325
+iloperidone, 359
+imipramine , 367
+isocarboxazid , 375
+ketamine, 383
+lamotrigine (adjunct), 387
+levomilnacipran , 403
+lisdexamfetamine, 409
+lithium (adjunct), 415
+l-methylfolate (adjunct) , 477
+lofepramine, 421
+lumateperone, 451
+lurasidone, 457
+
+
+
+
+<<<PAGE 2642>>>
+
+prazosin , 643
+propranolol , 653
+Hypoactive sexual desire disorder
+bremelanotide , 95
+flibanserin , 289
+Insomnia
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+clomipramine, 165
+clonazepam, 173
+desipramine, 207
+diazepam, 229
+diphenhydramine , 235
+dothiepin, 249
+doxepin , 255
+estazolam , 281
+eszopiclone , 285
+flunitrazepam, 297
+flurazepam , 321
+hydroxyzine, 355
+imipramine, 367
+lemborexant , 395
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+
+
+
+
+<<<PAGE 2645>>>
+
+sodium oxybate, 853
+Nausea/vomiting
+chlorpromazine , 153
+hydroxyzine , 355
+perphenazine , 607
+Neuropathic pain/chronic pain
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin, 255
+duloxetine , 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+
+
+
+
+<<<PAGE 2659>>>
+
+amitriptyline, 25
+amoxapine, 33
+atomoxetine, 79
+brexanolone, 99
+bupropion, 117
+citalopram, 159
+clomipramine, 165
+desipramine, 207
+desvenlafaxine, 215
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+esketamine, 275
+fluoxetine, 301
+fluvoxamine, 325
+imipramine, 367
+isocarboxazid, 375
+ketamine, 383
+levomilnacipran, 403
+l-methylfolate (adjunct), 477
+lofepramine, 421
+maprotiline, 465
+mianserin, 495
+milnacipran, 503
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+
+
+
+<<<PAGE 2667>>>
+
+zotepine, 883
+zuclopenthixol, 889
+Movement disorder treatments
+benztropine, 85
+deutetrabenazine, 221
+diphenhydramine, 235
+propranolol, 653
+trihexyphenidyl, 809
+valbenazine, 825
+Neuroactive steroid
+brexanolone, 99
+Neuropathic/chronic pain treatments
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+
+

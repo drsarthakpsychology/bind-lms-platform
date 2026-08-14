@@ -1,0 +1,2038 @@
+<<<PAGE 33>>>
+
+CHAPTER 1
+
+12  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Licensed maximum doses
+The following table lists the licensed maximum doses of antipsychotics according to the
+EMA labelling as of February 2021.
+Drug
+
+Maximum dose
+
+FGAs – oral
+Chlorpromazine
+
+1000mg/day
+
+Flupentixol
+
+18mg/day
+
+Haloperidol
+
+20mg/day
+
+Levomepromazine
+
+1200mg/day
+
+Pericyazine
+
+300mg/day
+
+Perphenazine
+
+24mg/day (64mg/day hospitalised patients)
+
+Pimozide
+
+20mg/day
+
+Sulpiride
+
+2400mg/day
+
+Trifluoperazine
+
+20mg/day
+
+Zuclopenthixol
+
+150mg/day
+
+SGAs – oral
+Amisulpride
+
+1200mg/day
+
+Aripiprazole
+
+30mg/day
+
+Asenapine
+
+20mg/day (sublingual)
+
+Cariprazine
+
+6mg/day
+
+Clozapine
+
+900mg/day
+
+Lurasidone
+
+160mg (HCl)/148mg (base)/day
+
+Olanzapine
+
+20mg/day
+
+Paliperidone
+
+12mg/day
+
+Quetiapine
+
+750mg/day schizophrenia (800mg/day for MR preparation)
+800mg/day bipolar disorder
+
+Risperidone
+
+16mg/day
+
+Sertindole
+
+24mg/day
+
+Long-acting injections
+Aripiprazole depot
+
+400mg/month
+
+Flupentixol depot
+
+400mg/week
+
+Fluphenazine depot
+
+100mg every 14–35 days
+
+Haloperidol depot
+
+300mg every 4 weeks
+
+Paliperidone depot
+1-monthly
+
+150mg/month
+
+
+
+
+<<<PAGE 60>>>
+
+Action to be taken if
+results outside
+reference range
+
+Parameter/
+test
+
+Suggested
+frequency
+
+ECG19,20
+
+Baseline and when Discuss with/refer to
+cardiologist if
+target dose is
+abnormality detected
+reached (ECG
+changes rare in
+practice21) on
+admission to
+hospital and before
+discharge if
+medication regimen
+changed.
+
+Blood
+pressure
+
+Baseline; frequently
+during dose
+titration and dosage
+changes to detect
+antipsychoticinduced changes,
+and generally
+monitor physical
+health
+
+Prolactin
+
+Liver
+function
+tests
+(LFTs)23–25
+
+Medications with
+special precautions
+
+Medications for which
+monitoring is not
+required
+
+Haloperidol, pimozide,
+sertindole – ECG
+mandatory;
+ziprasidone – ECG
+mandatory in some
+situations
+
+Risk of sudden cardiac
+death increased with
+most antipsychotic
+medications.22 Ideally, all
+patients should be
+offered an ECG at least
+yearly
+
+If severe hypotension or
+hypertension (clozapine)
+observed, slow rate of
+titration. Consider
+switching to another
+antipsychotic if
+symptomatic postural
+hypotension. Treat
+hypertension in line with
+NICE guidelines
+
+Clozapine,
+chlorpromazine and
+quetiapine most likely
+to be associated with
+postural hypotension
+
+Amisulpride, aripiprazole,
+brexpiprazole,
+cariprazine, lurasidone,
+trifluoperazine, sulpiride
+
+Baseline, then at 6
+months, then yearly
+to detect
+antipsychoticinduced changes
+
+Switch medications if
+hyperprolactinaemia
+confirmed and
+symptomatic. Consider
+tests of bone mineral
+density (e.g. DEXA
+scanning) for those with
+chronically raised
+prolactin.
+
+Amisulpride, sulpiride,
+risperidone and
+paliperidone particularly
+associated with
+hyperprolactinaemia
+
+Asenapine, aripiprazole,
+brexpiprazole,
+cariprazine, clozapine,
+lurasidone, quetiapine,
+olanzapine (<20mg), and
+ziprasidone usually do
+not elevate plasma
+prolactin, but worth
+measuring if symptoms
+arise
+
+Baseline, then yearly
+as part of a routine
+physical health
+check and to detect
+chronic
+antipsychoticinduced changes
+(rare)
+
+Stop suspect medication
+if LFTs indicate hepatitis
+(transaminases × 3
+normal) or functional
+damage (PT/albumin
+change)
+
+Clozapine and
+chlorpromazine
+associated with hepatic
+failure
+
+Amisulpride, sulpiride
+
+Baseline, then if NMS See the section on NMS
+Creatinine
+suspected
+phospho
+kinase (CPK)
+
+None
+NMS more likely with
+high-potency firstgeneration antipsychotic
+medications
+
+Other tests: Patients on clozapine may benefit from an EEG,26,27 as this may help determine the need for anticonvulsant treatment (although interpretation is obviously complex). Those on quetiapine should have thyroid function
+tests yearly, although the risk of abnormality is very small.28,29
+Key: DEXA, dual-energy X-ray absorptiometry; NMS, neuroleptic malignant syndrome; PT, prothrombin time;
+BMI – body mass index; ECG – electrocardiograph; EEG – electroencephalogram; GFR – glomerular filtration rate;
+IFG – impaired fasting glucose.
+Note: This table is a summary – see individual sections for detail and discussion.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  39
+
+
+
+
+<<<PAGE 62>>>
+
+Relative adverse effects – a rough guide
+Drug
+
+Sedation
+
+Weight
+gain
+
+Akathisia Parkinsonism
+
+Anticholinergic
+
+Hypotension
+
+Prolactin
+elevation
+
+Amisulpride*
+
+–
+
++
+
++
+
+–
+
+–
+
++++
+
++
+
+Aripiprazole
+
+–
+
+–
+
++
+
+–
+
+–
+
+–
+
+–
+
+Asenapine*
+
++
+
++
+
++
+
+–
+
+–
+
+–
+
++
+
+Benperidol*
+
++
+
++
+
++
+
++++
+
++
+
++
+
++++
+
+Brexpiprazole*
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Cariprazine*
+
+–
+
+–
+
++
+
+–
+
+–
+
+–
+
+–
+
+Chlorpromazine +++
+
+++
+
++
+
+++
+
+++
+
++++
+
++++
+
+Clozapine
+
++++
+
++++
+
+–
+
+–
+
++++
+
++++
+
+–
+
+Flupentixol*
+
++
+
+++
+
+++
+
+++
+
+++
+
++
+
++++
+
+Fluphenazine*
+
++
+
++
+
+++
+
++++
+
++
+
++
+
++++
+
+Haloperidol
+
++
+
++
+
++++
+
++++
+
++
+
++
+
+++
+
+Iloperidone*
+
+–
+
+++
+
++
+
++
+
+–
+
++
+
+–
+
+Lumateperone*
+
+++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Loxapine*
+
+++
+
++
+
++
+
++++
+
++
+
+++
+
++++
+
+Lurasidone
+
++
+
+–
+
++
+
++
+
+–
+
+–
+
+–
+
+Olanzapine
+
+++
+
++++
+
+–
+
+–
+
++
+
++
+
++
+
+Paliperidone
+
++
+
+++
+
++
+
++
+
++
+
+++
+
++++
+
+Perphenazine
+
++
+
++
+
+++
+
++++
+
++
+
++
+
++++
+
+Pimavanserin*
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+Pimozide*
+
++
+
++
+
++
+
++
+
++
+
++
+
++++
+
+Pipothiazine*
+
+++
+
+++
+
++
+
+++
+
+++
+
+++
+
++++
+
+Promazine*
+
++++
+
+++
+
++
+
++
+
+++
+
+++
+
+++
+
+Quetiapine
+
+++
+
+++
+
+–
+
+–
+
++
+
+++
+
+–
+
+Risperidone
+
++
+
+++
+
++
+
++
+
++
+
+++
+
++++
+
+Sertindole*
+
+–
+
++
+
++
+
+–
+
+–
+
++++
+
+–
+
+Sulpiride*
+
+–
+
++
+
++
+
++
+
+–
+
+–
+
++++
+
+Trifluoperazine
+
++
+
++
+
++
+
++++
+
++
+
++
+
++++
+
+Ziprasidone*
+
++
+
+–
+
++
+
+–
+
+–
+
++
+
++
+
+Zuclopenthixol* ++
+
+++
+
+++
+
+++
+
+++
+
++
+
++++
+
+Key: *Availability varies from country to country; +++ High incidence/severity; ++ Moderate; + Low; – Very low.
+Note: The table notes approximate estimates of relative incidence and/or severity, based on clinical experience,
+manufacturers’ literature and published research. This is a very rough guide – see individual sections for more precise
+and referenced information.
+Other adverse effects not mentioned in this table do occur. Please see dedicated sections on other adverse effects
+included in this book for more information.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  41
+
+
+
+
+<<<PAGE 76>>>
+
+Schizophrenia and related psychoses  55
+
+1. Ezewuzie N, et al. Establishing a dose-response relationship for oral risperidone in relapsed schizophrenia. J Psychopharm 2006;20:86–90.
+2. Sparshatt A, et al. Quetiapine: dose-response relationship in schizophrenia. CNS Drugs 2008;22:49–68.
+3. Honer WG, et al. A randomized, double-blind, placebo-controlled study of the safety and tolerability of high-dose quetiapine in patients with
+persistent symptoms of schizophrenia or schizoaffective disorder. J Clin Psychiatry 2012;73:13–20.
+4. Davis JM, et al. Dose response and dose equivalence of antipsychotics. J Clin Psychopharmacol 2004;24:192–208.
+5. Kinon BJ, et al. Standard and higher dose of olanzapine in patients with schizophrenia or schizoaffective disorder: a randomized, doubleblind, fixed-dose study. J Clin Psychopharmacol 2008;28:392–400.
+6. Van Putten T, et al. A controlled dose comparison of haloperidol in newly admitted schizophrenic patients. Arch Gen Psychiatry
+1990;47:754–758.
+7. Zimbroff DL, et al. Controlled, dose-response study of sertindole and haloperidol in the treatment of schizophrenia. Sertindole Study Group.
+Am J Psychiatry 1997;154:782–791.
+8. Kinon BJ, et al. Treatment of neuroleptic-resistant schizophrenic relapse. Psychopharmacol Bull 1993;29:309–314.
+9. Hermes E, et al. Predictors of antipsychotic dose changes in the CATIE schizophrenia trial. Psychiatry Res 2012;199:1–7.
+10. Loebel A, et al. Lurasidone dose escalation in early nonresponding patients with schizophrenia: a randomized, placebo-controlled study. J
+Clin Psychiatry 2016;77:1672–1680.
+11. Samara MT, et al. Increasing antipsychotic dose versus switching antipsychotic for non response in schizophrenia. Cochrane Database Syst
+Rev 2018;5:Cd011884.
+12. Patel MX, et al. Quality of prescribing for schizophrenia: evidence from a national audit in England and Wales. Eur Neuropsychopharmacol
+2014;24:499–509.
+13. Heres S, et al. Why olanzapine beats risperidone, risperidone beats quetiapine, and quetiapine beats olanzapine: an exploratory analysis of
+head-to-head comparison studies of second-generation antipsychotics. Am J Psychiatry 2006;163:185–194.
+14. Stroup TS, et al. Effectiveness of olanzapine, quetiapine, risperidone, and ziprasidone in patients with chronic schizophrenia following discontinuation of a previous atypical antipsychotic. Am J Psychiatry 2006;163:611–622.
+15. Leucht S, et al. Second-generation versus first-generation antipsychotic drugs for schizophrenia: a meta-analysis. Lancet 2009;373:31–41.
+16. Leucht S, et al. A meta-analysis of head-to-head comparisons of second-generation antipsychotics in the treatment of schizophrenia. Am J
+Psychiatry 2009;166:152–163.
+17. Hong J, et al. Clinical consequences of switching from olanzapine to risperidone and vice versa in outpatients with schizophrenia: 36-month
+results from the Worldwide Schizophrenia Outpatients Health Outcomes (W-SOHO) study. BMC Psychiatry 2012;12:218.
+18. Agid O, et al. Antipsychotic response in first-episode schizophrenia: efficacy of high doses and switching. Eur Neuropsychopharmacol
+2013;23:1017–1022.
+19. Stroup TS, et al. A randomized trial examining the effectiveness of switching from olanzapine, quetiapine, or risperidone to aripiprazole to
+reduce metabolic risk: Comparison of Antipsychotics for Metabolic Problems (CAMP). Am J Psychiatry 2011;168:947–956.
+20. Montastruc F, et al. Association of aripiprazole with the risk for psychiatric hospitalization, self-harm, or suicide. JAMA Psychiatry
+2019;76:409–417.
+21. Obayashi Y, et al. Switching strategies for antipsychotic monotherapy in schizophrenia: a multi-center cohort study of aripiprazole.
+Psychopharmacology 2020;237:167–175.
+22. Pae CU, et al. Effectiveness and tolerability of switching to aripiprazole once monthly from antipsychotic polypharmacy and/or other long
+acting injectable antipsychotics for patients with schizophrenia in routine practice: a retrospective, observation study. Clin Psychopharmacol
+Neurosci 2020;18:153–158.
+23. Paton C, et al. High-dose and combination antipsychotic prescribing in acute adult wards in the UK: the challenges posed by p.r.n. prescribing. Br J Psychiatry 2008;192:435–439.
+24. Wagner E, et al. Clozapine combination and augmentation strategies in patients with schizophrenia – recommendations from an international
+expert survey among the Treatment Response and Resistance in Psychosis (TRRIP) Working Group. Schizophr Bull 2020; 46:1459–1470.
+25. Taylor DM, et al. Augmentation of clozapine with a second antipsychotic – a meta-analysis of randomized, placebo-controlled studies. Acta
+Psychiatr Scand 2009;119:419–425.
+26. Kapur S, et al. Increased dopamine D2 receptor occupancy and elevated prolactin level associated with addition of haloperidol to clozapine.
+Am J Psychiatry 2001;158:311–314.
+27. Galling B, et al. Antipsychotic augmentation vs. monotherapy in schizophrenia: systematic review, meta-analysis and meta-regression analysis. World Psychiatry 2017;16:77–89.
+28. Gallego JA, et al. Safety and tolerability of antipsychotic polypharmacy. Expert Opinion on Drug Safety 2012;11:527–542.
+29. Barnes TRE, et al. Antipsychotic polypharmacy in schizophrenia: benefits and risks. CNS Drugs 2011;25:383–399.
+30. Borlido C, et al. Switching from 2 antipsychotics to 1 antipsychotic in schizophrenia: a randomized, double-blind, placebo-controlled study.
+J Clin Psychiatry 2016;77:e14–e20.
+31. Hori H, et al. Switching to antipsychotic monotherapy can improve attention and processing speed, and social activity in chronic schizophrenia patients. J Psychiatr Res 2013;47:1843–1848.
+32. Essock SM, et al. Effectiveness of switching from antipsychotic polypharmacy to monotherapy. Am J Psychiatry 2011;168:702–708.
+33. Constantine RJ, et al. The risks and benefits of switching patients with schizophrenia or schizoaffective disorder from two to one antipsychotic medication: a randomized controlled trial. Schizophr Res 2015;166:194–200.
+34. Royal College of Psychiatrists. Consensus statement on high-dose antipsychotic medication. College Report CR190 2014.
+35. Barnes TRE, et al. Evidence-based guidelines for the pharmacological treatment of schizophrenia: updated recommendations from the British
+Association for Psychopharmacology. J Psychopharmacology 2020;34:3–78.
+
+CHAPTER 1
+
+References
+
+
+
+
+<<<PAGE 144>>>
+
+Antipsychotic-induced weight gain
+Weight gain, a cardiometabolic risk factor, is a common side effect of antipsychotic
+medication.1 The mechanisms underlying antipsychotic-induced weight gain are not well
+understood,2 although factors such as 5HT2C antagonism, H1 antagonism, D2 antagonism, and increased serum leptin (leading to leptin desensitisation)3–5 are commonly
+implicated. There is no evidence that these medications exert any direct metabolic effect:
+weight gain seems to result from increased food intake and, in some cases, reduced
+energy expenditure.6,7 The risk of weight gain appears to be related to clinical response8,9
+(although the association may be too small to be clinically important10), which may have
+a genetic basis.11 Weight gain may be more pronounced in antipsychotic-naïve patients
+and during the early stages of the treatment of psychotic illness,12–14 and women may be
+at greater risk than men.15,16
+Almost all available antipsychotic medications have been associated with weight
+gain,12 although the mean gain in body weight varies substantially between the medications. There is also marked inter-individual variation among those treated, with some
+losing weight, some gaining no weight and some gaining a great deal of weight. Thus,
+knowledge of the mean increase in weight reported for a particular medication may not
+be a helpful predictor of how much weight an individual might gain. Assessment of the
+relative liability for weight gain of different antipsychotic medications is based largely
+on short term studies. Notwithstanding these limitations, the results of indirect and
+direct meta-analyses suggest that these medications can be clustered into three groups
+based on their relative risk of weight gain17 (see Table 1.17).
+Table 1.17 Antipsychotic-induced weight gain18–25
+Drug
+
+Risk/extent of weight gain
+
+Clozapine
+
+High
+
+Olanzapine
+Chlorpromazine
+
+Moderate
+
+Iloperidone
+Sertindole
+Quetiapine
+Risperidone
+Paliperidone
+Amisulpride
+Asenapine
+Brexpiprazole
+Aripiprazole
+Cariprazine
+Haloperidol
+Lumateperone
+Lurasidone
+Sulpiride
+Trifluoperazine
+Ziprasidone
+
+Low
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  123
+
+
+
+
+<<<PAGE 164>>>
+
+given the problems associated with QTc measurements. Lastly, keep in mind that differences in the effects of different antipsychotics on the QT interval rarely reach statistical
+significance, even in meta-analyses (Table 1.21).29
+Outside these guidelines, readers are directed to the RISQ-PATH study,30 which provides a scoring system for the prediction of QT prolongation (to above normal ranges)
+in any patient. RISQ-PATH has a 98% negative predictive value, so allowing a reduction in monitoring in low-risk patients. The RISQ-PATH method uses CredibleMeds
+categorisation for drug effects on QT – this, too, is recommeded.31
+Table 1.21 Effects of antipsychotics on QTC13,22,23,32–61.
+No effect
+Brexpiprazole*
+Cariprazine*
+Lurasidone
+Lumateperone*
+Low effect
+Aripiprazole**
+Asenapine
+Clozapine
+Flupentixol
+Fluphenazine
+Perphenazine
+Prochlorperazine
+Olanzapine***
+Paliperidone
+Risperidone
+Sulpiride
+
+Moderate effect
+Amisulpride****
+Chlorpromazine
+Haloperidol
+Iloperidone
+Levomepromazine
+Melperone
+Pimavanserin
+Quetiapine
+Ziprasidone
+High effect
+Any intravenous antipsychotic
+Pimozide
+Sertindole
+Any drug or combination of drugs used in doses exceeding
+recommended maximum
+Unknown effect
+Loxapine
+Pipotiazine
+Trifluoperazine
+Zuclopenthixol
+
+*Limited clinical experience (association with QT prolongation may emerge).
+**One case of torsades de pointes (TDP) reported,62 two cases of QT prolongation63,64 and an association with TDP
+found in database study.65 Healthy volunteer data suggest aripiprazole causes QTc prolongation of around 8ms.66
+Aripiprazole may increase QT dispersion.67
+***Isolated cases of QTc prolongation37,68 and has effects on cardiac ion channel, IKr,69 other data suggest no effect
+on QTC.23,35,36,70
+****TDP common in overdose,25,71 strong association with TDP in clinical doses.65
+
+Aripiprazole remains in the low effect group having previously been firmly placed in
+‘no effect’. Data are rather contradictory, with most studies showing a decrease in QTc
+associated with aripiprazole use52 even in children and adolescents.72 However, later
+data62,63,65,66,73 cast doubt on assumptions of cardiac safety. Interestingly, a 2020 paper
+analysing reports of events in > 400,000 inpatients over 20 years found aripiprazole
+had the lowest rate of cardiac events (0.06%) of all antipsychotics.74
+Lurasidone remains in the ‘no effect’ group,52 although one study mentioned in the
+US labelling75 reports a QT lengthening of 7.5mg in people receiving 120mg (111mg) a
+day. Those receiving 600mg (555mg) daily showed a lower change (+4.6ms). These
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  143
+
+
+
+
+<<<PAGE 215>>>
+
+CHAPTER 1
+
+194  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 1.36 Suggested options for augmenting clozapine
+Option
+
+Comment
+
+Add amisulpride20–25
+(400–800mg/day)
+
+■■
+
+Some evidence and experience suggest amisulpride augmentation may be
+worthwhile. Three small RCTs (the largest of which showed no effect), two of
+which found an increased side effect burden, including cardiac side effects.26,27
+May allow clozapine dose reduction.28
+
+Add aripiprazole18,29–31
+(15–30mg/day)
+
+■■
+
+Very limited evidence of therapeutic benefit, although a meta-analysis suggests some effect.32 Reduces weight and LDL cholesterol.32 Long-acting injection has been used33,34
+
+Add haloperidol31,35,36
+(2–3mg/day)
+
+■■
+
+Modest evidence of benefit
+
+Add lamotrigine37–39
+(25–300mg/day)
+
+■■
+
+May be useful in partial or non-responders. May reduce alcohol consumption.40 Several equivocal reports;41–43 some meta-analyses suggest moderate
+effect size44 but this is largely influenced by two outlying studies45
+
+Add omega-3
+triglycerides46,47
+(2–3g EPA daily)
+
+■■
+
+Modest, and somewhat contested evidence to support efficacy in non- or
+partial responders to antipsychotics, including clozapine
+
+Add risperidone48,49
+(2–6mg/day)
+
+■■
+
+Supported by a randomised, controlled trial but there are also two negative RCTs each with minuscule response rates50,51 Small number of reports of
+increases in clozapine plasma levels. Long acting injection also an option;34,52
+paliperidone long-acting injection has also been used34,53
+
+Add sulpiride54
+(400mg/day)
+
+■■
+
+May be useful in partial or non-responders. Supported by a single randomised
+trial in English and three in Chinese.55 Overall effect modest
+
+Add topiramate56–60
+(50–300mg/day)
+
+■■
+
+Two positive RCTs, two negative. Can worsen psychosis in some.38,61 Two
+meta-analyses including hitherto unknown Chinese data45,62 suggested robust
+effect on positive and negative symptoms, substantial weight loss but often
+with psychomotor slowing and attention difficulties
+
+Add sodium valproate45,63
+(400–800mg/day)
+
+■■
+
+Pooled effects from five Chinese RCTs45 suggest a benefit to positive symptoms, although studies are mostly of poor quality. Cochrane suggests benefit
+to adding valproate to antipsychotics in general, especially for excitement and
+aggression64
+
+Add ziprasidone65–68
+(80–160mg/day)
+
+■■
+
+Supported by three RCTs.68,69 Associated with QTc prolongation. Rarely used
+
+Notes
+Always consider the use of mood stabilisers and/or antidepressants, especially where mood disturbance is
+thought to contribute to symptoms70–72
+■■ Other options include adding pimozide, olanzapine or sertindole. None is recommended: pimozide and
+sertindole have important cardiac toxicity, and the addition of olanzapine is poorly supported73 and likely to
+exacerbate metabolic adverse effects. Studies of pimozide74,75 and sertindole76 have shown no effect. One small
+RCT supports the use of ginkgo biloba,77 another two support the use of memantine.78,79 Another study
+suggests possible benefit of augmentation with acetyl-L-carnitine,80 and a case study reports good outcome
+with thyroxine.81 A single RCT describes successful use of sodium benzoate.82 Minocycline is probably not
+effective.63,83 Glycine may be effective for positive symptoms, but studies are of poor quality.84 A small case series
+(n = 6) found benefit to adding pimavanserin.85
+■■
+
+
+
+
+<<<PAGE 222>>>
+
+Table 1.37 (Continued)
+Treatment
+
+Comments
+
+Pimavanserin
+(+ antipsychotics)
+
+Clinical improvement with pimavanserin alone or as adjunct to clozapine or
+other antipsychotics in 10 patients, six of whom had failed to respond to
+clozapine76
+
+Propentofylline +
+risperidone77
+(900mg + 6mg/day)
+
+One RCT suggests some activity against positive symptoms
+
+Quetiapine78–81
+
+Very limited evidence and clinical experience not encouraging. High doses
+(>1200mg/day) have been used but are no more effective82
+
+Quetiapine + amisulpride83
+
+Single naturalistic observation of 19 patients suggested useful benefit. Doses
+averaged 700mg quetiapine and 950mg amisulpride
+
+Quetiapine + haloperidol84
+
+Two case reports
+
+Raloxifene 60–120mg/day
+(+ antipsychotic)85
+
+Selective oestrogen receptor modulator; may offer benefits of estradiol without
+long-term risks. One case report85 in postmenopausal treatment-resistant
+schizophrenia. Data in non-treatment resistance are rather conflicting, with two
+overlapping positive trials86,87 and one negative trial.88 One positive RCT in
+refractory women.89 Evidence in men is lacking
+
+Riluzole 100mg/
+day + risperidone up to 6mg/
+day90
+
+Glutamate modulating agent. One RCT demonstrated improvement in negative
+symptoms
+
+Risperidone91–93
+4–8mg/day
+
+Doubtful efficacy in true treatment-refractory schizophrenia but some
+supporting evidence. May also be tried in combination with glycine68 or
+lamotrigine60 or indeed with other atypicals94
+
+Risperidone LAI 50/100mg
+2/5295
+
+One RCT showing good response for both doses in refractory schizophrenia.
+Plasma levels for 100mg dose similar to 6–8mg/day oral risperidone.
+
+Ritanserin + risperidone
+(12mg + 6mg/day)96
+
+5HT2A/2C antagonist. One RCT suggests small effect on negative symptoms
+
+Sarcosine (2g/day)97,98
+(+ antipsychotic)
+
+Enhances glycine action. Supported by two RCTs
+
+Sertindole99
+(12–24mg/day)
+
+One large RCT (conducted in 1996–8 but published in 2011) suggested good
+effect and equivalence to risperidone. Around half of subjects responded.
+Another RCT100 showed no effect at all when added to clozapine.
+Little experience in practice
+
+Topiramate (300mg/day)
+(+ antipsychotic)101
+
+Small effect shown in single RCT. Induces weight loss. Cognitive adverse effects
+likely
+
+Transcranial magnetic
+stimulation102–104
+
+Conflicting results
+
+Ursodeoxycholic acid105
+
+Single case report
+
+Valproate106
+Yokukansan (+ antipsychotic)
+
+Doubtful effect but may be useful where there is a clear affective component
+107
+
+Japanese herbal medicine, partial agonist at D2 and 5HT1A, antagonist at 5HT2A
+and glutamate receptors. Potential small benefit in excitement/hostility
+symptoms.
+(Continued)
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  201
+
+
+
+
+<<<PAGE 227>>>
+
+CHAPTER 1
+
+206  The Maudsley® Prescribing Guidelines in Psychiatry
+
+97. Lane HY, et al. Sarcosine or D-serine add-on treatment for acute exacerbation of schizophrenia: a randomized, double-blind, placebocontrolled study. Arch Gen Psychiatry 2005; 62:1196–1204.
+98. Tsai G, et al. Glycine transporter I inhibitor, N-methylglycine (sarcosine), added to antipsychotics for the treatment of schizophrenia. Biol
+Psychiatry 2004; 55:452–456.
+99. Kane JM, et al. A double-blind, randomized study comparing the efficacy and safety of sertindole and risperidone in patients with treatment-resistant schizophrenia. J Clin Psychiatry 2011; 72:194–204.
+100. Nielsen J, et al. Augmenting clozapine with sertindole: a double-blind, randomized, placebo-controlled study. J Clin Psychopharmacol
+2012; 32:173–178.
+101. Tiihonen J, et al. Topiramate add-on in treatment-resistant schizophrenia: a randomized, double-blind, placebo-controlled, crossover trial.
+J Clin Psychiatry 2005; 66:1012–1015.
+102. Franck N, et al. Left temporoparietal transcranial magnetic stimulation in treatment-resistant schizophrenia with verbal hallucinations.
+Psychiatry Res 2003; 120:107–109.
+103. Fitzgerald PB, et al. A double-blind sham-controlled trial of repetitive transcranial magnetic stimulation in the treatment of refractory auditory hallucinations. J Clin Psychopharmacol 2005; 25:358–362.
+104. Tuppurainen H, et al. Repetitive navigated αTMS in treatment-resistant schizophrenia. Brain Stimulation 2017; 10:397–398.
+105. Khosravi M. Ursodeoxycholic acid augmentation in treatment-refractory schizophrenia: a case report. J Med Case Rep 2020; 14:137.
+106. Basan A, et al. Valproate as an adjunct to antipsychotics for schizophrenia: a systematic review of randomized trials. Schizophr Res 2004;
+70:33–37.
+107. Miyaoka T, et al. Efficacy and safety of yokukansan in treatment-resistant schizophrenia: a randomized, multicenter, double-blind, placebocontrolled trial. Evid Based Complement Alternat Med 2015; 2015:201592.
+108. Lin CC, et al. Switching from clozapine to zotepine in patients with schizophrenia: a 12-week prospective, randomized, rater blind, and
+parallel study. J Clin Psychopharmacol 2013; 33:211–214.
+109. Sacchetti E, et al. Ziprasidone vs clozapine in schizophrenia patients refractory to multiple antipsychotic treatments: the MOZART study.
+Schizophr Res 2009; 110:80–89.
+110. Loebel AD, et al. Ziprasidone in treatment-resistant schizophrenia: a 52-week, open-label continuation study. J Clin Psychiatry 2007;
+68:1333–1338.
+111. Kane JM, et al. Efficacy and tolerability of ziprasidone in patients with treatment-resistant schizophrenia. Int Clin Psychopharmacol 2006;
+21:21–28.
+112. Goff DC, et al. High-dose oral ziprasidone versus conventional dosing in schizophrenia patients with residual symptoms: the ZEBRAS
+study. J Clin Psychopharmacol 2013; 33:485–490.
+
+
+
+
+<<<PAGE 232>>>
+
+Schizophrenia and related psychoses  211
+
+temperature rises above 38°C (this is very common and is not a good reason, on its
+own, for stopping clozapine)
+■■ pulse is > 100bpm (also common and not, on its own a reason for stopping, but may
+sometimes be linked to myocarditis)
+■■ postural drop of >30mmHg
+■■ patient is clearly over-sedated
+■■ any signs of constipation
+■■ flu-like symptoms (malaise, fatigue, etc.)
+■■ chest pain, dyspnoea, tachypnoea
+■■ any other adverse effect that is intolerable
+■■ changes in smoking habit
+A doctor should see the patient at least once a week for the first month to assess mental
+and physical state.
+
+Recommended additional monitoring
+Baseline
+
+1 month
+
+3 months
+
+4–6 months
+
+12 months
+
+Weight/BMI/waist
+
+Weight/BMI/weight
+
+Weight/BMI/waist
+
+Weight/BMI/waist
+
+Weight/BMI/waist
+
+Plasma glucose
+and lipids
+
+Plasma glucose
+and lipids
+
+Plasma glucose and
+lipids
+
+Plasma glucose
+and lipids
+
+Liver function tests (LFTs)
+
+LFTs
+
+Consider monitoring plasma troponin, beta-natriuretic peptide and c-reactive protein
+weekly in the first six weeks of treatment, particularly where there is any suspicion of
+myocarditis (see the section on myocarditis).
+
+Switching from other antipsychotics
+The switching regime will be largely dependent on the patient’s mental state
+Consider potential additive side-effects of antipsychotics (e.g. hypotension, sedation,
+effect on QTc interval)
+■■ Consider drug interactions (e.g. some SSRIs may increase clozapine levels)
+■■ All depots, sertindole, pimozide and ziprasidone should be stopped before clozapine
+is started
+■■ Other antipsychotics and clozapine may be cross-tapered with varying degrees of
+caution. ECG monitoring is prudent when clozapine is co-prescribed with other drugs
+known to affect QT interval
+■■
+■■
+
+Serious cardiac adverse effects
+Patients should be closely observed for signs or symptoms of myocarditis, particularly during the first 2 months and advised to inform staff if they experience these, and to seek outof-hours review if necessary. These include persistent tachycardia (although commonly
+benign), palpitations, shortness of breath, fever, arrhythmia, symptoms mimicking myocardial infarction, chest pain and other unexplained symptoms of heart failure. See section on
+Clozapine: serious haematological and cardiovascular adverse effects in this chapter.
+
+CHAPTER 1
+
+■■
+
+
+
+
+<<<PAGE 655>>>
+
+Magnesium – 0
+Mebeverine – 0
+
+Ezetimibe – 0
+
+Felodipine – 0
+
+Fentanyl – 1
+
+Ferrous sulphate – 0
+
+Fesoterodine – 0
+
+Fexofenadine – 0
+
+Finasteride – 0
+
+Flavoxate* – NK
+
+Flecainide – 0
+
+Flucloxacillin – 0
+
+Fludrocortisone – NK
+
+Fluoxetine – 1
+
+Flupentixol (flupenthixol) – 1
+
+Fluphenazine – 1
+
+Fluvoxamine – 0
+
+Folic acid – 0
+
+Furosemide – 0
+
+Captopril – NK
+
+Carbachol – 0
+
+Carbamazepine – 1
+
+Carbimazole – NK
+
+Carbocisteine – 0
+
+Carvedilol – NK
+
+Cefalexin (Cephalexin) – 0
+
+Cetirizine – 0
+
+Chloral hydrate – NK
+
+Chlordiazepoxide – 0
+
+Chlorphenamine – 2
+
+Chlorpromazine – 3
+
+Chlortalidone – NK
+
+Cimetidine – 0
+
+Cinnarizine – 1
+
+Ciprofloxacin – 0
+
+Citalopram – 1
+
+Simvastatin – 0
+
+Sildenafil – 0
+
+Sertraline – 1
+
+Sertindole – 1
+
+Senna – 0
+
+Selegiline – 0
+
+Salmeterol (inhaler) – 0
+
+Salbutamol – 0
+
+Rosuvastatin – NK
+
+Rosiglitazone – 0
+
+Ropinirole – 0
+
+Rivastigmine – 0
+
+Rivaroxaban – NK
+
+Risperidone – 0
+
+The AEC scale is available as a regularly updated web-based app. Please visit www.medichec.com. This site has recently been updated to include the identification of
+medications that are reported to cause dizziness and drowsiness since these adverse effects can add to cognitive impairment and confusion in older people and can
+increase the risk of falls.
+
+Morphine – 0
+
+Moclobemide – 0
+
+Mirtazapine – 1
+
+Mirabegron – 0
+
+Minocycline – 0
+
+Midazolam – 1
+
+Metoprolol – 0
+
+Metoclopramide – 0
+
+Methotrexate – NK
+
+Methocarbamol – NK
+
+Metformin – NK
+
+Mesalazine – 0
+
+Memantine – 0
+
+Meloxicam – 0
+
+Melatonin – 0
+
+Risedronate – 0
+
+Reboxetine – 0
+
+Rasagiline – 0
+
+Macrogol – 0
+
+Exanatide – 0
+
+Candersartan – 0
+
+Ranitidine – 0
+
+Ramipril – NK
+
+Lurasidone – 0
+
+Erythromycin – NK
+
+Calcium and Vitamin D – 0
+
+Lovastatin – 0
+
+Entacapone – 0
+
+Calcium – 0
+
+Table 6.4 (Continued )
+
+
+
+
+<<<PAGE 732>>>
+
+Zuclopenthixol = 0.4–0.9%
+Flupentixol = 0.7–1.75%
+
+No published data available
+at the time of writing.
+
+Undetectable
+
+Risperidone undetectable.
+9-hydroxyrisperidone – low
+
+No published data available
+at the time of writing.
+
+Not reported.
+
+Not reported.
+
+Phenothiazines4,14,82,108–110
+
+Pimavanserin
+
+Quetiapine4,95,125,129–138
+
+Risperidone4,111,139–143
+
+Sertindole
+
+Sulpiride4,144–148
+
+4,14,110,149–151
+
+Thioxanthenes
+
+2.7–20.7%
+
+Variable
+
+Paliperidone
+
+9-hydroxyrisperidone =
+3.46–4.7%
+
+Risperidone = 2.8–9.1%
+
+0.09–0.1%
+
+Chlorpromazine = 0.3%
+
+No specific data available.
+See risperidone.
+
+Drug
+
+Estimated daily infant
+dose as proportion of
+maternal dose (RID)
+
+Infant plasma
+concentration
+
+Table 7.4 (Continued)
+
+None reported.
+
+None reported.
+
+One case of hypersomnia, poor
+feeding, and slowing in motor
+movements. Mother was also
+taking haloperidol. The effects
+were noted when haloperidol
+dose was increased.
+
+Excessive sleep. Mother was
+also taking mirtazapine and a
+benzodiazepine.
+
+Lethargy.
+
+Acute adverse effects in
+infant
+
+(Continued)
+
+None reported for flupentixol.
+Not assessed for zuclopenthixol.
+
+None reported but not assessed.
+
+None reported.
+
+In a small study of quetiapine
+augmentation of maternal
+antidepressant there were two
+cases of mild developmental
+delays, thought not to be related
+to quetiapine.
+
+Delayed development in three
+infants exposed to a combination
+of chlorpromazine and haloperidol.
+
+Developmental effects in infant
+
+
+
+
+<<<PAGE 841>>>
+
+CHAPTER 10
+
+820  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Recommendations – psychotropics in AF
+Condition
+
+Suggested drugs
+
+Drugs to avoid
+
+Schizophrenia/schizoaffective
+disorder
+
+In paroxysmal or persistent AF,
+cariprazine, brexpiprazole or
+lurasidone may be appropriate
+choices
+
+AF reported with clozapine,12,13
+olanzapine14,15 aripiprazole16,17 and
+paliperidone.18 Causation not clearly
+established but avoid use in lone,
+paroxysmal or persistent AF
+
+The condition itself may be
+associated with an increased risk of
+AF10
+One case–control study suggested
+antipsychotics increase risk of AF by
+17%11
+
+Bipolar disorder
+
+In permanent AF with rate control,
+drug choice is less crucial but
+probably best to avoid drugs with
+potent effects on the ECG
+(ziprasidone, pimozide, sertindole,
+etc.) and those which increase heart
+rate
+
+Valproate
+Lithium
+Carbamazepine
+
+Avoid QT-prolonging drugs in
+ischaemic heart disease (see section
+on QT prolongation)
+Association of antipsychotics with
+AF11 may be linked to metabolic
+disturbance19 although some studies
+suggest no link between
+antipsychotics and AF20
+Mood stabilisers appear not to
+affect risk of AF
+Valproate may cause A-V
+conduction block21
+One case of AF following lithium
+overdose22 and one in chronic
+toxicity23
+
+Depression
+Untreated depression predicts
+recurrence of AF24
+
+SSRIs but beware interaction with
+warfarin and other anticoagulants26
+as severe bleeding risk is increased27
+
+Presence of AF increases risk of
+depression and anxiety25
+
+Animal studies suggest an
+antiarrhythmic effect for SSRIs28,29
+Paroxetine improved paroxysmal
+AF in a series of non-depressed
+patients30
+
+Avoid tricyclics in coronary disease35
+Tricyclics may provoke AF36,37 but do
+not increase risk of haemorrhage
+when combined with warfarin26
+A database study suggests
+antidepressants in general do not
+increase risk of AF38
+
+Venlafaxine does not directly
+affect atrial conduction31 and may
+cardiovert paroxysmal AF32
+AF incidence falls after starting
+antidepressant treatment33,34
+No evidence that agomelatine
+affects cardiac conduction or clotting
+Anxiety disorders
+
+Benzodiazepines
+
+Tricyclics (see previous sections)
+
+(anxiety symptoms increase risk of
+AF)39
+
+SSRIs (see previous sections)
+
+One case of pregabalin-associated
+AF40
+
+Alzheimer’s disease
+
+Acetylcholinesterase inhibitors
+(but beware bradycardic effects in
+patients with paroxysmal ‘vagal’ AF
+(paroxysmal AF provoked by low
+heart rate))
+
+Avoid cholinesterase inhibitors in
+paroxysmal ‘vagal’ AF
+
+Rivastigmine has least interaction
+potential
+Memantine
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 975>>>
+
+954  Index
+
+psychotropic drugs 856
+amisulpride 837
+aripiprazole 837
+clozapine 838–839
+concentrations 835
+interpreting sample results 834–835
+olanzapine 839
+plasma level monitoring of 833–834
+quetiapine 839–840
+risperidone 840–842, 841–842
+target ranges 835–836, 835–836t
+use of 723
+psychotropics 657–665, 777
+antiretroviral drugs and 780–781, 781t
+biochemical and haematological
+effects of 907–916, 907–916t
+effects 871
+electroconvulsive therapy (ECT) and
+353–354t
+induced sexual dysfunction 176t
+medicines 8
+in overdose 875–879, 875–879t
+and surgery 889
+changing formulation 893
+to continue/not to continue 889–893,
+890–892t
+risks associated with continuing 894
+risks associated with
+discontinuing 893
+smoking 893
+target ranges for 841t
+treatment with 785
+psychotropics and cytochrome (CYP)
+function 851–855
+psychotropics in bariatric surgery 822
+alcohol 826
+drugs
+antidepressants 823, 823t
+antipsychotics 823–824t
+formulations 822
+miscellaneous agents in 825
+mood stabilisers 824–825, 824–825t
+general recommendations 826
+pharmacokinetic changes 822
+risk of weight gain after 826
+wider considerations 826
+PTSD. See post-traumatic stress disorder
+(PTSD)
+QTc, prolongation and arrhythmia 144t
+quetiapine 149, 271, 296, 554, 581, 589,
+648t, 711t, 726t, 740t, 758, 771t,
+799, 824t, 836t, 839–840, 923
+quinolones 917t
+randomised controlled trials (RCTs) 56,
+461–462, 608, 609–610, 620, 757
+of first-generation antipsychotics 554
+for frontotemporal dementias 625
+meta-analyses of 125
+meta-analysis of 624
+of valproate 651
+rapid cycling bipolar affective disorder
+285–286, 285t
+rapid tranquillisation (RT) 56, 596–597,
+596–597t, 693
+Rating of Medication Influences Scale
+(ROMI) 901
+RCTs. See randomised controlled trials (RCTs)
+
+reboxetine 708t, 728t, 743t
+refractory schizophrenia 198, 202
+alternatives to clozapine 198–202t
+relapse prevention 9, 463
+naltrexone in 496
+dose of 497
+initiating 496
+Relative Infant Dose (RID) 702
+reminiscence therapy 645
+renal function 602
+renal impairment 735
+anti-dementia drugs in 738, 747–748t
+antidepressants in 738, 741–744t
+antipsychotics in 738, 739–741t
+anxiolytics and hypnotics in 738,
+745–747t
+classification of 736f
+mood stabilisers in 738, 744–745t
+notes 737–738
+prescribing in 735–736
+psychotropics in 738, 748–749t
+stage of 736, 736t
+Research Units on Paediatric
+Psychopharmacology (RUPP) Autism
+Network 580
+residual mood symptoms 296
+restricted repetitive behaviours and interests
+(RRBI) 579
+re-titration 905
+drugs 906t
+risperidone 5, 53, 149, 161, 271, 554, 581,
+583, 589, 647, 648t, 711t, 726t,
+740t, 771t, 778, 799, 810, 824t,
+836t, 840–842, 841–842, 923
+in autism spectrum disorder (ASD) 582
+clinical trial data 647
+dosage of 582
+FDA Guidance for 582
+licensing studies of 51–52
+linear dose reductions of 104f
+risperidone long-acting injection (Risperdal
+Consta) 87–88
+switching to 88–89t
+risperidone microspheres 934t
+risperidone/paliperidone 857t
+risperidone subcutaneous LAI 91
+approximate equivalent doses 91
+rivastigmine (ExelonR) 608, 613, 614t,
+772t, 820
+clinical trials of 624
+patches 609
+road traffic accidents (RTAs) 883
+rosiglitazone 621
+Royal College of Psychiatrists 924
+RT. See rapid tranquillisation (RT)
+salivary melatonin measurements 594
+SAWS. See Short Alcohol Withdrawal Scale
+(SAWS)
+schizoaffective disorder 820
+schizophrenia 25–26, 153, 554, 778, 795t,
+820, 868, 871–872
+acute and maintenance treatment of 5
+alcohol 469
+catatonia in 136
+complication in 136
+diagnosis of 20, 26
+FGAs role in 46
+first-episode 42
+
+negative symptoms in 32
+notes 43–44
+pharmacological treatment of 777
+relapse/acute exacerbation of 43, 44
+symptoms of 871
+treatments 6
+algorithms for 42–44
+discontinuation in 20
+scopolamine 939t
+SCRAs. See synthetic cannabinoid receptor
+agonists (SCRAs)
+secondary mania 779–780
+second generation antipsychotics
+(SGAs) 14, 15t, 571, 778
+depression 270
+equivalent doses of 14
+maintenance 270
+mania 269–270
+relative merits of 47
+sedation 862t
+sedatives 692–693
+ADHD 693–694, 693–694t
+rapid tranquillisation 693
+seizures
+with antipsychotics 795t
+dose-related risk of 788
+reports of 788
+selective serotonin reuptake inhibitors
+(SSRIs) 308, 380, 541, 557–558,
+601, 603, 673, 687–688, 727t,
+778–779, 799
+abnormal vaginal bleeding 412
+alternatives to 414
+and bleeding 409
+concomitant treatment with 162
+foetal exposure to 687
+gynaecologic and obstetrical
+haemorrhage 412
+maternal 687
+percentage figures rounded to nearest
+integer 411
+post-partum haemorrhage
+(PPH) 412–413
+prescription of 307
+risk factors for bleeding 409
+surgical and post-operative bleeding
+413–415, 413t
+treatment 543
+selegiline 368, 918t
+semagacestat 622
+semorinemab 623
+serotonin–norepinephrine reuptake
+inhibitors (SNRIs) 558
+serotonin reuptake inhibition 409, 409t
+serotonin syndrome 337–341, 338–341t
+swapping and stopping 337–341,
+338–341t
+sertindole 711t
+sertraline 369, 389, 423, 542–543, 561,
+650, 687, 708t, 809
+serum creatinine 602
+severe alcohol dependence 460, 460t
+severe hepatic/renal dysfunction 482
+sexual dysfunction 404
+antipsychotics and 172
+effects of antipsychotic drugs 173,
+174–175t
+effects of psychosis 172–173
+human sexual response 172, 172t
+
+

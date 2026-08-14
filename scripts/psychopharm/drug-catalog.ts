@@ -93,4 +93,32 @@ export const DRUG_CATALOG: DrugCatalogEntry[] = [
   { generic: "Prazosin", aliases: ["Minipress"] },
   { generic: "Cyproheptadine", aliases: ["Periactin"] },
   { generic: "Hydroxyzine", aliases: ["Atarax", "Vistaril"] },
+  // Non-US / off-market agents — covered by Maudsley/Stahl/Kaplan/Ahuja (no FDA label).
+  // Antidepressants (TCAs, MAOI-adjacent, non-US)
+  { generic: "Dothiepin", aliases: ["Dosulepin", "Prothiaden"] },
+  { generic: "Lofepramine", aliases: ["Gamanil"] },
+  { generic: "Maprotiline", aliases: ["Ludiomil"] },
+  { generic: "Mianserin", aliases: ["Tolvon"] },
+  { generic: "Reboxetine", aliases: ["Edronax"] },
+  { generic: "Tianeptine", aliases: ["Stablon", "Coaxil"] },
+  { generic: "Amphetamine (D,L)", aliases: ["Adderall", "Mixed amphetamine salts", "Dexamphetamine"] },
+  // Antipsychotics (typical + atypical, non-US)
+  { generic: "Blonanserin", aliases: ["Lonasen"] },
+  { generic: "Cyamemazine", aliases: ["Tercian"] },
+  { generic: "Flupenthixol", aliases: ["Flupentixol", "Fluanxol"] },
+  { generic: "Perospirone", aliases: ["Lullan"] },
+  { generic: "Pipothiazine", aliases: ["Piportil"] },
+  { generic: "Sertindole", aliases: ["Serdolect"] },
+  { generic: "Zotepine", aliases: ["Nipolept", "Lodopin"] },
+  { generic: "Zuclopenthixol", aliases: ["Zuclopentixol", "Clopixol"] },
+  // Sedative-hypnotics / other non-US
+  { generic: "Flunitrazepam", aliases: ["Rohypnol"] },
+  { generic: "Loflazepate", aliases: ["Victan"] },
+  // Combination / adjunct agents
+  { generic: "Brexanolone", aliases: ["Zulresso"] },
+  { generic: "Caprylidene", aliases: ["Axona"] },
+  { generic: "Diphenhydramine", aliases: ["Benadryl"] },
+  { generic: "Methylphenidate (D,L)", aliases: ["Ritalin", "Concerta"] },
+  { generic: "Naltrexone/Bupropion", aliases: ["Contrave"] },
+  { generic: "Phentermine/topiramate", aliases: ["Qsymia"] },
 ];
