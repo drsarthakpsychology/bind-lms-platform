@@ -2797,3 +2797,5 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T14:59:21 Queue exhausted — allowing normal Claude stop.
 2026-08-14T15:12:33 Queue exhausted — allowing normal Claude stop.
 2026-08-14T15:29:48 Queue exhausted — allowing normal Claude stop.
+2026-08-14T15:31:07 Queue exhausted — allowing normal Claude stop.
+2026-08-14T15:34:11 Queue exhausted — allowing normal Claude stop.
