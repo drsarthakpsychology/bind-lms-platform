@@ -3604,3 +3604,13 @@ Ticked T89. Remaining: T78-T80, T83, T84, T88, T90.
   auth flakiness on sequential reloads (infrastructure, not the feature).
 - Permanent spec added: e2e/interruption-resume.spec.ts.
 Ticked T80. Remaining: T78, T79, T83, T84, T88, T90.
+
+2026-08-14T23:45 FINAL E2E STATE — server verified, sessions flaky due to TWO
+dev servers (main + worktree) sharing the single-active-session test account.
+Verified clean (fresh session): journal-draft interruption resume (T80),
+26-mobile-matrix, 12-page smoke, consulting/OSCE/formulation/MSE/rounds/
+journal/wall/palette/tools journeys (T77/T89). Rounds 500 bug fixed (T77).
+Remaining 6 — T78 first-time-user, T79 returning-user, T83 visual comparison,
+T84 red-team, T88 polish, T90 final acceptance — need multi-user accounts and
+visual/human judgment (Dr. Dave / Kavya), not code or single-session runs.
+They stay OPEN + logged to NEEDS_KAVYA. Branch green.
