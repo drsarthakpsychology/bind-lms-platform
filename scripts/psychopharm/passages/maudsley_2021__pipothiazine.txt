@@ -1,0 +1,942 @@
+<<<PAGE 62>>>
+
+Relative adverse effects – a rough guide
+Drug
+
+Sedation
+
+Weight
+gain
+
+Akathisia Parkinsonism
+
+Anticholinergic
+
+Hypotension
+
+Prolactin
+elevation
+
+Amisulpride*
+
+–
+
++
+
++
+
+–
+
+–
+
++++
+
++
+
+Aripiprazole
+
+–
+
+–
+
++
+
+–
+
+–
+
+–
+
+–
+
+Asenapine*
+
++
+
++
+
++
+
+–
+
+–
+
+–
+
++
+
+Benperidol*
+
++
+
++
+
++
+
++++
+
++
+
++
+
++++
+
+Brexpiprazole*
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Cariprazine*
+
+–
+
+–
+
++
+
+–
+
+–
+
+–
+
+–
+
+Chlorpromazine +++
+
+++
+
++
+
+++
+
+++
+
++++
+
++++
+
+Clozapine
+
++++
+
++++
+
+–
+
+–
+
++++
+
++++
+
+–
+
+Flupentixol*
+
++
+
+++
+
+++
+
+++
+
+++
+
++
+
++++
+
+Fluphenazine*
+
++
+
++
+
+++
+
++++
+
++
+
++
+
++++
+
+Haloperidol
+
++
+
++
+
++++
+
++++
+
++
+
++
+
+++
+
+Iloperidone*
+
+–
+
+++
+
++
+
++
+
+–
+
++
+
+–
+
+Lumateperone*
+
+++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Loxapine*
+
+++
+
++
+
++
+
++++
+
++
+
+++
+
++++
+
+Lurasidone
+
++
+
+–
+
++
+
++
+
+–
+
+–
+
+–
+
+Olanzapine
+
+++
+
++++
+
+–
+
+–
+
++
+
++
+
++
+
+Paliperidone
+
++
+
+++
+
++
+
++
+
++
+
+++
+
++++
+
+Perphenazine
+
++
+
++
+
+++
+
++++
+
++
+
++
+
++++
+
+Pimavanserin*
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+Pimozide*
+
++
+
++
+
++
+
++
+
++
+
++
+
++++
+
+Pipothiazine*
+
+++
+
+++
+
++
+
+++
+
+++
+
+++
+
++++
+
+Promazine*
+
++++
+
+++
+
++
+
++
+
+++
+
+++
+
+++
+
+Quetiapine
+
+++
+
+++
+
+–
+
+–
+
++
+
+++
+
+–
+
+Risperidone
+
++
+
+++
+
++
+
++
+
++
+
+++
+
++++
+
+Sertindole*
+
+–
+
++
+
++
+
+–
+
+–
+
++++
+
+–
+
+Sulpiride*
+
+–
+
++
+
++
+
++
+
+–
+
+–
+
++++
+
+Trifluoperazine
+
++
+
++
+
++
+
++++
+
++
+
++
+
++++
+
+Ziprasidone*
+
++
+
+–
+
++
+
+–
+
+–
+
++
+
++
+
+Zuclopenthixol* ++
+
+++
+
+++
+
+++
+
+++
+
++
+
++++
+
+Key: *Availability varies from country to country; +++ High incidence/severity; ++ Moderate; + Low; – Very low.
+Note: The table notes approximate estimates of relative incidence and/or severity, based on clinical experience,
+manufacturers’ literature and published research. This is a very rough guide – see individual sections for more precise
+and referenced information.
+Other adverse effects not mentioned in this table do occur. Please see dedicated sections on other adverse effects
+included in this book for more information.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  41
+
+
+
+
+<<<PAGE 90>>>
+
+(Abilify Maintena)
+
+(Depixol)
+
+(Modecate)
+
+(Haldol)
+
+(ZypAdhera)
+
+(Xeplion)
+
+(Trevicta)
+
+(Piportil)
+
+Aripiprazole
+
+Flupentixol decanoate
+
+Fluphenazine decanoate
+
+Haloperidol decanoate
+
+Olanzapine pamoate
+
+Paliperidone palmitate
+(monthly)
+
+Paliperidone palmitate
+(3-monthly)
+
+Pipothiazine palmitate
+
+(Clopixol)
+
+Buttock or thigh
+
+Deltoid or gluteal
+
+Gluteal region
+
+Deltoid or gluteal
+
+Deltoid or gluteal
+
+Gluteal
+
+Gluteal region
+
+Gluteal region
+
+Buttock or thigh
+
+Buttock
+
+Licences
+injection site
+Dose range (mg/week)
+
+50–300mg every 4 weeks
+
+12.5mg every 2 weeks to 100mg every
+2 weeks
+
+50mg every 4 weeks to 400mg a week
+
+50–200mg every 4 weeks
+
+175–525mg every 3 months
+
+100
+
+2
+
+4
+
+3 months
+
+Monthly
+
+2–4
+
+4
+
+2–5
+
+2–4
+
+Monthly
+
+Dosing interval
+(weeks)
+
+200mg every 3 weeks to 600mg a week 2–4
+
+Not required** 25–50mg every 2 weeks
+
+25
+
+Not
+required***
+
+Not required** 50–150mg monthly
+
+Not required** 150mg every 4 weeks to 300mg every
+2 weeks
+
+25*
+
+12.5
+
+20
+
+Not required** 300–400mg monthly
+
+Test dose
+(mg)
+
+? Slightly better efficacy than LAI FGAs
+
+Drug release delayed for 2–3 weeks
+– oral therapy required
+
+? Lower incidence of EPS (relative to
+other FGAs)
+
+Loading dose required at treatment
+initiation
+
+Risk of post-injection syndrome
+
+High EPS
+
+High EPS
+
+Maximum licensed dose is high relative
+to other LAIs
+
+Does not increase prolactin; oral
+loading required
+
+Comments
+
+dose overrides longer intervals and lower volumes. For example, zuclopenthixol 500mg every week is licensed, whereas 1,000mg every two weeks is not (more than the licensed maximum
+of 600mg is administered). Always check official manufacturer’s information.
+*Test dose not stated by manufacturer.
+**Tolerability and response to the oral preparation should be established before administering the LAI. With respect to paliperidone LAI, oral risperidone can be used for this purpose.
+***May not be started until the completion of 4 months’ treatment with monthly LAI.
+
+■■ Avoid using shorter dose intervals than those recommended except in exceptional circumstances (e.g. long interval necessitates high volume (>3–4ml?) injection). Maximum licensed single
+
+■■ After a test dose, wait 4–10 days then titrate to maintenance dose according to response (see product information for individual drugs).
+
+■■ The doses mentioned above are for adults. Check formal labelling for appropriate doses in the elderly.
+
+Notes:
+
+Zuclopenthixol decanote
+
+Risperidone microspheres (Risperdal Consta)
+
+UK
+Trade Name
+
+Drug
+
+Table 1.4 Antipsychotic long-acting injections – doses and frequencies15
+
+
+
+
+<<<PAGE 93>>>
+
+CHAPTER 1
+
+72  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Depot/LAI antipsychotics – pharmacokinetics
+Drug
+Aripiprazole1
+
+UK Trade Name
+
+Time to peak (days)*
+
+Plasma half-life
+(days)
+
+Time to steady
+state (weeks)**
+
+(Abilify Maintena)
+
+7d
+
+30–46d
+
+~20W
+~16W
+
+Aripiprazole lauroxil
+
+(Aristada (in USA))
+
+44–50d
+
+~54–57d
+
+Aripiprazole lauroxil
+nanocrystal4–6****
+
+(Aristada Initio (in
+USA))
+
+4d
+
+~15–18d
+
+Flupentixol decanoate7,8
+
+(Depixol)
+
+2–4
+
+4–7d
+
+8–17d
+
+~8–12W
+
+Fluphenazine decanoate4,9–11 (Modecate)
+
+8–12d***
+
+7–10d
+
+~8W
+
+Haloperidol decanoate12,13
+
+(Haldol)
+
+7d
+
+21d
+
+~14W
+
+Olanzapine pamoate
+
+(ZypAdhera)
+
+2–3d
+
+30d
+
+~12W
+
+4,16
+
+Paliperidone palmitate
+(monthly)
+
+(Xeplion)
+
+13d
+
+25–49d
+
+~20W
+
+Paliperidone palmitate17,18
+(three monthly)
+
+(Trevicta)
+
+25d
+
+Deltoid: 84–95d
+Gluteal: 118–139d
+
+~52W
+
+Pipotiazine palmitate19,20
+
+(Piportil)
+
+7–14d
+
+15d
+
+~9W
+
+RBP-7000
+(risperidone sc monthly)
+
+(Perseris (in USA))
+
+1st peak ~1d
+2nd peak ~11d
+
+~8–9d
+
+~8W
+
+Risperidone
+microspheres22,23
+
+(Risperidal Consta)
+
+~30d
+
+4d
+
+~8W
+
+Zuclopenthixol
+decanoate7,19,24
+
+(Clopixol)
+
+4–7d
+
+19d
+
+~12W
+
+4,14,15
+
+4,21
+
+*Time to peak is not the same as time to reach therapeutic plasma concentration, but both are dependent on dose.
+For large (loading) doses, therapeutic activity is often seen before attaining peak levels. For low (test) doses, the
+initial peak level may be sub-therapeutic.
+**Attainment of steady state (SS) follows logarithmic, not linear characteristics: around 90% of SS levels are
+achieved in three half-lives. Time to attain steady state is independent of dose and dosing frequency (i.e. you can’t
+hurry it up by giving more, more often). Loading doses can be used to produce prompt therapeutic plasma levels
+but time to SS remains the same.
+***Some estimates suggest peak concentrations after only a few hours.24,25 It is likely that fluphenazine decanoate
+produces two peaks – one on the day of injection and a second slightly higher peak a week or so later.12
+****used to initiate treatment with Aristada, IM injection with one 30 mg oral dose of aripiprazole; not designed
+for repeat dosing.
+
+References
+1. Mallikaarjun S, et al. Pharmacokinetics, tolerability and safety of aripiprazole once-monthly in adult schizophrenia: an open-label, parallelarm, multiple-dose study. Schizophr Res 2013; 150:281–288.
+2. Hard ML, et al. Aripiprazole lauroxil: pharmacokinetic profile of this long-acting injectable antipsychotic in persons with schizophrenia. J
+Clin Psychopharmacol 2017; 37:289–295.
+3. Turncliff R, et al. Relative bioavailability and safety of aripiprazole lauroxil, a novel once-monthly, long-acting injectable atypical antipsychotic, following deltoid and gluteal administration in adult subjects with schizophrenia. Schizophr Res 2014; 159:404–410.
+4. Correll CU, et al. Pharmacokinetic characteristics of long-acting injectable antipsychotics for schizophrenia: an overview. CNS Drugs 2021;
+35:39–59.
+5. Alkermes Inc. Highlights of Prescribing Information. ARISTADA INITIO® (aripiprazole lauroxil) extended-release injectable suspension, for
+intramuscular use. 2020; https://www.aristadahcp.com/downloadables/ARISTADA-INITIO-PI.pdf.
+
+
+
+
+<<<PAGE 94>>>
+
+6. Alkermes Inc. ARISTADA INITIO™ (aripiprazole lauroxil) extended-release injectable suspension [product monograph]. 2020; https://www.
+aristadacaresupport.com/downloadables/ARISTADA-INITIO-ARISTADA-Payer-Hospital-Monograph.pdf.
+7. Jann MW, et al. Clinical pharmacokinetics of the depot antipsychotics. Clin Pharmacokinet 1985; 10:315–333.
+8. Bailey L, et al. Estimating the optimal dose of flupentixol decanoate in the maintenance treatment of schizophrenia—a systematic review of
+the literature. Psychopharmacology 2019; 236:3081–3092.
+9. Simpson GM, et al. Single-dose pharmacokinetics of fluphenazine after fluphenazine decanoate administration. J Clin Psychopharmacol
+1990; 10:417–421.
+10. Balant-Gorgia AE, et al. Antipsychotic drugs. Clinical pharmacokinetics of potential candidates for plasma concentration monitoring. Clin
+Pharmacokinet 1987; 13:65–90.
+11. Gitlin MJ, et al. Persistence of fluphenazine in plasma after decanoate withdrawal. J Clin Psychopharmacol 1988; 8:53–56.
+12. Wiles DH, et al. Pharmacokinetics of haloperidol and fluphenazine decanoates in chronic schizophrenia. Psychopharmacology 1990;
+101:274–281.
+13. Nayak RK, et al. The bioavailability and pharmacokinetics of oral and depot intramuscular haloperidol in schizophrenic patients. J Clin
+Pharmacol 1987; 27:144–150.
+14. Heres S, et al. Pharmacokinetics of olanzapine long-acting injection: the clinical perspective. Int Clin Psychopharmacol 2014; 29:299–312.
+15. Mitchell M, et al. Single- and multiple-dose pharmacokinetic, safety, and tolerability profiles of olanzapine long-acting injection: an openlabel, multicenter, nonrandomized study in patients with schizophrenia. ClinTher 2013; 35:1890–1908.
+16. Hoy SM, et al. Intramuscular paliperidone palmitate. CNS Drugs 2010; 24:227–244.
+17. Ravenstijn P, et al. Pharmacokinetics, safety, and tolerability of paliperidone palmitate 3-month formulation in patients with schizophrenia:
+a phase-1, single-dose, randomized, open-label study. J Clin Pharmacol 2016; 56:330–339.
+18. Janssen Pharmaceuticals Inc. Highlights of Prescribing Information. INVEGA TRINZA® (paliperidone palmitate) extended-release injectable suspension for intramuscular use. 2019; https://www.janssenlabels.com/package-insert/product-monograph/prescribing-information/
+INVEGA+TRINZA-pi.pdf.
+19. Barnes TR, et al. Long-term depot antipsychotics. A risk-benefit assessment. Drug Saf 1994; 10:464–479.
+20. Ogden DA, et al. Determination of pipothiazine in human plasma by reversed-phase high-performance liquid chromatography. J Pharm
+Biomed Anal 1989; 7:1273–1280.
+21. US Food and Drug Administration. Clinical pharmacology and biopharmaceutics review(s). perseris. 2018; https://www.accessdata.fda.gov/
+drugsatfda_docs/nda/2018/210655Orig1s000ClinPharmR.pdf.
+22. Ereshefsky L, et al. Pharmacokinetic profile and clinical efficacy of long-acting risperidone: potential benefits of combining an atypical antipsychotic and a new delivery system. Drugs RD 2005; 6:129–137.
+23. Meyer JM. Understanding depot antipsychotics: an illustrated guide to kinetics. CNS Spectr 2013; 18 Suppl 1:58–67.
+24. Viala A, et al. Comparative study of the pharmacokinetics of zuclopenthixol decanoate and fluphenazine decanoate. Psychopharmacology
+1988; 94:293–297.
+25. Soni SD, et al. Plasma levels of fluphenazine decanoate. Effects of site of injection, massage and muscle activity. Br J Psychiatry 1988;
+153:382–384.
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  73
+
+
+
+
+<<<PAGE 687>>>
+
+666  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 6
+
+References
+1. Mylan. Summary of product characteristics. Clomipramine 25 mg Capsules, Hard. 2017; https://www.medicines.org.uk/emc/
+medicine/33260
+2. Prescribers’ Digital Reference. Desvenlafaxine – drug summary. 2017 (Last accessed September 2020); http://www.pdr.net/drug-summary/
+Khedezla-desvenlafaxine-3333.8274.
+3. Eli Lilly and Company Limited. Summary of product characteristics. Cymbalta 30mg hard gastro-resistant capsules, Cymbalta 60mg hard
+gastro-resistant capsules. 2020; https://www.medicines.org.uk/emc/medicine/15694.
+4. Zentiva. Summary of product characteristics. Molipaxin 100mg/Trazodone 100mg Capsules. 2020; https://www.medicines.org.uk/emc/
+medicine/26734.
+5. Prescribers’ Digital Reference. Trintellix (vortioxetine) – drug information. 2017 (Last accessed September 2020); http://www.pdr.net/druginformation/trintellix?druglabelid=3348
+6. Muller MJ, et al. Amisulpride doses and plasma levels in different age groups of patients with schizophrenia or schizoaffective disorder. J
+Psychopharmacol 2009; 23:278–286.
+7. Psarros C, et al. Amisulpride for the treatment of very-late-onset schizophrenia-like psychosis. Int J Geriatr Psychiatry 2009; 24:518–522.
+8. Clark-Papasavas C, et al. Towards a therapeutic window of D2/3 occupancy for treatment of psychosis in Alzheimer’s disease, with [F]fallypride positron emission tomography. Int J Geriatr Psychiatry 2014; 29:1001–1009.
+9. Prescribers’ digital reference. Brexpiprazole – Drug Summary. 2017 (Last accessed September 2020); http://www.pdr.net/drug-summary/
+Rexulti-brexpiprazole-3759
+10. Prescribers’ Digital Reference. Vraylar (cariprazine) – drug information. 2017 (Last accessed September 2020); http://www.pdr.net/druginformation/vraylar?druglabelid=3792.
+11. Jeste DV, et al. Conventional vs. newer antipsychotics in elderly patients. Am J Geriatr Psychiatry 1999; 7:70–76.
+12. Karim S, et al. Treatment of psychosis in elderly people. Adv Psychiatr Treatment 2005; 11:286–296.
+13. Group TPS. Low-dose clozapine for the treatment of drug-induced psychosis in Parkinson’s disease. N Engl J Med 1999; 340: 757–763.
+14. Intra-Cellular Therapies Inc. Highlights of prescribing information. Caplyta (lumateperone) capsules for oral use. 2019; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2019/209500s000lbl.pdf.
+15. Sunovion Pharmaceuticals Europe Ltd. Summary of product characteristics. Latuda 18.5mg, 37mg and 74mg film-coated tablets. 2020;
+https://www.medicines.org.uk/emc/medicine/29125.
+16. Sajatovic M, et al. Efficacy and tolerability of lurasidone in older adults with bipolar depression: analysis of two 6-week double-blind,
+placebo-controlled studies. Eur Psychiatry 2015; 30:1136.
+17. ACADIA Pharmaceuticals Inc. Highlights of prescribing information. Nuplazid (pimavanserin) tablets for oral use. 2016; https://www.
+accessdata.fda.gov/drugsatfda_docs/label/2016/207318lbl.pdf.
+18. Drugs.com. Piportil depot 50 mg/ml solution for injection. 2020 (Last accessed September 2020); https://www.drugs.com/uk/piportil-depot50-mg-ml-solution-for-injection-leaflet.html#.
+19. Otsuka Pharmaceutical (UK) Ltd. Summary of product characteristics. Abilify Maintena 300mg & 400mg powder and solvent for prolongedrelease suspension for injection and suspension for injection in pre filled syringe. 2020; https://www.medicines.org.uk/emc/medicine/31386.
+20. Eli Lily and Company Limited. Summary of product characteristics. Zypadhera 210mg powder and solvent for prolonged release suspension
+for injection. 2020; https://www.medicines.org.uk/emc/product/6429/smpc.
+21. Janssen-Cilag Limited. Summary of product characteristics. TREVICTA 175mg, 263mg, 350mg, 525mg prolonged release suspension for
+injection. 2019; https://www.medicines.org.uk/emc/medicine/32050.
+22. Janssen-Cilag Limited. Summary of product characteristics. RISPERDAL CONSTA 25 mg powder and solvent for prolonged-release suspension for intramuscular injection. 2018; https://www.medicines.org.uk/emc/medicine/9939.
+23. Essential Pharma Ltd. Summary of product characteristics. Camcolit 400mg controlled release Lithium Carbonate. 2020; https://www.
+medicines.org.uk/emc/product/10829/smpc.
+24. Eisai Inc. Highlights of prescribing information. DAYVIGO (lemborexant) tablets for oral use [controlled substance schedule pending]. 2019;
+https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/212028s000lbl.pdf#page=21.
+25. Upjohn UK Limited. Summary of product characteristics. Lyrica Capsules. 2020; https://www.medicines.org.uk/emc/medicine/14651.
+
+

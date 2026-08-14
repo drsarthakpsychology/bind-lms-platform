@@ -1,0 +1,612 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 905>>>
+
+Flupenthixol
+
+Therapeutics
+Brands
+Depixol
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: dopamine receptor antagonist
+(D-RAn)
+Conventional antipsychotic (neuroleptic, thioxanthene, dopamine 2
+antagonist)
+Commonly Prescribed for
+(bold for FDA approved)
+Schizophrenia
+Depression (low dose)
+Other psychotic disorders
+Bipolar disorder
+
+
+
+
+<<<PAGE 908>>>
+
+if the patient is already overweight (BMI 25.0–29.9) or obese (BMI
+>30)
+Before giving a drug that can cause weight gain to an overweight or
+obese patient, consider determining whether the patient already has
+pre-diabetes (fasting plasma glucose 100–125 mg/dL), diabetes
+(fasting plasma glucose >126 mg/dL), or dyslipidemia (increased
+total cholesterol, LDL cholesterol, and triglycerides; decreased HDL
+cholesterol), and treat or refer such patients for treatment, including
+nutrition and weight management, physical activity counseling,
+smoking cessation, and medical management
+
+✽ Monitor weight and BMI during treatment
+✽ Consider monitoring fasting triglycerides monthly for several
+months in patients at high risk for metabolic complications and when
+initiating or switching antipsychotics
+
+✽ While giving a drug to a patient who has gained >5% of initial
+weight, consider evaluating for the presence of pre-diabetes, diabetes,
+or dyslipidemia, or consider switching to a different antipsychotic
+Monitoring elevated prolactin levels of dubious clinical benefit
+Patients with low white blood cell count (WBC) or history of druginduced leukopenia/neutropenia should have complete blood count
+(CBC) monitored frequently during the first few months and
+flupenthixol should be discontinued at the first sign of decline of
+WBC in the absence of other causative factors
+
+
+
+
+<<<PAGE 913>>>
+
+How to Dose
+Oral: initial 1 mg 3 times a day; increase by 1 mg every 2–3 days;
+maximum generally 18 mg/day
+Intramuscular: initial dose 20 mg for patients who have not been
+exposed to long-acting depot antipsychotics, 40 mg for patients who
+have previously demonstrated tolerance to long-acting depot
+antipsychotics; after 4–10 days can give additional 20 mg dose;
+maximum 200 mg every 1–4 weeks
+Dosing Tips
+The peak of action for the decanoate is usually 7–10 days, and doses
+generally have to be administered every 2–3 weeks
+May have more activating effects at low doses, which can
+sometimes be useful as a second-line, short-term treatment of
+depression
+Some evidence that flupenthixol may improve anxiety and
+depression at low doses
+Rather than raise the dose above normal dosing in acutely agitated
+patients requiring acute antipsychotic actions, consider short-term
+(one dose or more) augmentation with a benzodiazepine or another
+antipsychotic, especially intramuscularly
+Rather than raise the dose above normal dosing in partial
+responders, consider augmentation with a mood-stabilizing
+anticonvulsant, such as valproate, topiramate, or lamotrigine
+
+
+
+
+<<<PAGE 914>>>
+
+Children and elderly should generally be dosed at the lower end of
+the dosage spectrum
+Treatment should be suspended if absolute neutrophil count falls
+below 1000/mm3
+Overdose
+Agitation, confusion, sedation, drug-induced parkinsonism,
+respiratory collapse, circulatory collapse
+Long-Term Use
+Should periodically reevaluate long-term usefulness in individual
+patients, but treatment may need to continue for many years
+Habit Forming
+No
+How to Stop
+Slow down-titration of oral formulation (over 6–8 weeks),
+especially when simultaneously beginning a new antipsychotic
+while switching (i.e., cross-titration)
+Rapid oral discontinuation may lead to rebound psychosis and
+worsening of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after flupenthixol is discontinued
+
+
+
+
+<<<PAGE 915>>>
+
+Pharmacokinetics
+Oral: maximum plasma concentrations within 3–8 hours
+Intramuscular: rate-limiting half-life approximately 8 days with
+single dose, approximately 17 days with multiple doses
+Drug Interactions
+May decrease the effects of levodopa, dopamine agonists
+May increase the effects of antihypertensive drugs except for
+guanethidine, whose antihypertensive actions flupenthixol may
+antagonize
+CNS effects may be increased if used with other CNS depressants
+Combined use with epinephrine may lower blood pressure
+Ritonavir may increase plasma levels of flupenthixol
+May increase carbamazepine plasma levels
+Some patients taking a neuroleptic and lithium have developed an
+encephalopathic syndrome similar to neuroleptic malignant
+syndrome
+Other Warnings/Precautions
+If signs of neuroleptic malignant syndrome develop, treatment
+should be immediately discontinued
+Use cautiously in patients with alcohol withdrawal or convulsive
+disorders because of possible lowering of seizure threshold
+
+
+
+
+<<<PAGE 916>>>
+
+In epilepsy patients, dose 10–20 mg every 15 days for intramuscular
+formulation
+Use with caution if at all in patients with Parkinson’s disease, severe
+arteriosclerosis, or Lewy body dementia
+Possible antiemetic effect of flupenthixol may mask signs of other
+disorders or overdose; suppression of cough reflex may cause
+asphyxia
+Avoid extreme heat exposure
+Do not use epinephrine in event of overdose as interaction with
+some pressor agents may lower blood pressure
+Antipsychotics may cause somnolence, postural hypotension, motor
+and sensory instability, which may lead to falls; for patients with
+diseases, conditions, or medications that could exacerbate these
+effects, complete fall risk assessments when initiating antipsychotic
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+As with any antipsychotic, use with caution in patients with history
+of seizures
+Do Not Use
+If patient is taking a large concomitant dose of a sedative hypnotic
+If patient has CNS depression
+If patient is comatose or if there is brain damage
+
+
+
+
+<<<PAGE 917>>>
+
+If there is blood dyscrasia
+If patient has pheochromocytoma
+If patient has liver damage
+If patient has a severe cardiovascular disorder
+If patient has renal insufficiency
+If patient has cerebrovascular insufficiency
+If there is a proven allergy to flupenthixol
+
+Special Populations
+Renal Impairment
+Oral: recommended to take half or less of usual adult dose
+Intramuscular: recommended dose schedule generally 10–20 mg
+every 15 days
+Hepatic Impairment
+Use with caution
+Oral: recommended to take half or less of usual adult dose
+Cardiac Impairment
+Use with caution
+Oral: recommended to take half or less of usual adult dose
+
+
+
+
+<<<PAGE 920>>>
+
+Negative symptoms of psychosis
+Aggressive symptoms
+Pearls
+Less sedation and orthostatic hypotension but more drug-induced
+parkinsonism than some other conventional antipsychotics
+Patients have very similar antipsychotic responses to any
+conventional antipsychotic, which is different from atypical
+antipsychotics where antipsychotic responses of individual patients
+can occasionally vary greatly from one atypical antipsychotic to
+another
+Patients with inadequate responses to atypical antipsychotics may
+benefit from a trial of augmentation with a conventional
+antipsychotic such as flupenthixol or from switching to a
+conventional antipsychotic such as flupenthixol
+However, long-term polypharmacy with a combination of a
+conventional antipsychotic such as flupenthixol with an atypical
+antipsychotic may combine their side effects without clearly
+augmenting the efficacy of either
+For treatment-resistant patients, especially those with impulsivity,
+aggression, violence, and self-harm, long-term polypharmacy with 2
+atypical antipsychotics or with 1 atypical antipsychotic and 1
+conventional antipsychotic may be useful or even necessary while
+closely monitoring
+
+
+
+
+<<<PAGE 921>>>
+
+In such cases, it may be beneficial to combine 1 depot antipsychotic
+with 1 oral antipsychotic
+Although a frequent practice by some prescribers, adding 2
+conventional antipsychotics together has little rationale and may
+reduce tolerability without clearly enhancing efficacy
+
+Suggested Reading
+Gerlach J . Depot neuroleptics in relapse prevention: advantages and
+disadvantages . Int Clin Psychopharmacol 1995 ;(9 Suppl 5):S17 –20.
+Huhn M , Nikolakopoulou A , Schneider-Thoma J , et al. Comparative
+efficacy and tolerability of 32 oral antipsychotics for the acute treatment of
+adults with multi-episode schizophrenia: a systematic review and network
+meta-analysis . Lancet 2019 ;394 :939–51 .
+Quraishi S , David A . Depot flupenthixol decanoate for schizophrenia or
+other similar psychotic disorders . Cochrane Database Syst Rev 2000 ;
+(2):CD001470 .
+Soyka M , De Vry J . Flupenthixol as a potential pharmacotreatment of
+alcohol and cocaine abuse/dependence . Eur Neuropsychopharmacol 2000
+;10 (5 ):325–32 .
+
+
+
+
+<<<PAGE 2580>>>
+
+Decanoate (haloperidol), 347
+Decazate (fluphenazine), 313
+Decentan (fluphenazine), 313
+Decentan (perphenazine), 607
+Decentan-Depot (perphenazine), 607
+Defanyl (amoxapine), 33
+Defobin (chlordiazepoxide), 147
+Deftan (lofepramine), 421
+Degranol (carbamazepine), 131
+Delepsine (valproate), 829
+Delgian (maprotiline), 465
+Delsym (dextromethorphan), 225
+Demolox (amoxapine), 33
+Deniban (amisulpride), 17
+Denion (diazepam), 229
+Depacon (valproate), 829
+Depakene (valproate), 829
+Depakine (LA) (valproate), 829
+Depakine Chrono (valproate), 829
+Depakine Zuur (valproate), 829
+Depakote (valproate), 829
+Depakote ER (valproate), 829
+Depakote sprinkle (valproate), 829
+Depamide (valproate), 829
+Deparkin (valproate), 829
+Depex (sulpiride), 741
+Depixol (flupenthixol), 307
+Depixol-Conc (flupenthixol), 307
+
+
+
+
+<<<PAGE 2587>>>
+
+Everiden (valproate), 829
+Exan (buspirone), 123
+Excegran (zonisamide), 875
+Exelon (rivastigmine), 699
+Exogran (zonisamide), 875
+Exostrept (fluoxetine), 301
+Fanapt (iloperidone), 359
+Fardalan (sulpiride), 741
+Fargenor (chlordiazepoxide), 147
+Faustan (diazepam), 229
+Faverin (fluvoxamine), 325
+Fazaclo ODT (clozapine), 191
+Felicium (fluoxetine), 301
+Felison (flurazepam), 321
+Fenactil (chlorpromazine), 153
+Fentazin (perphenazine), 607
+Fetzima (levomilnacipran), 403
+Fevarin (fluvoxamine), 325
+Fidelan (sulpiride), 741
+Finlepsin (carbamazepine), 131
+Flaracantyl (thioridazine), 759
+flibanserin, 289
+Flonital (fluoxetine), 301
+Floxyfral (fluvoxamine), 325
+Fluanxol (flupenthixol), 307
+Fluanxol Depot (flupenthixol), 307
+Fluanxol Depot 10% (flupenthixol), 307
+Fluanxol Depot 2% (flupenthixol), 307
+
+
+
+
+<<<PAGE 2588>>>
+
+Fluanxol LP 100 mg/mL (flupenthixol), 307
+Fluanxol LP 20 mg/mL (flupenthixol), 307
+Fluanxol Retard (flupenthixol), 307
+Fluctin (fluoxetine), 301
+Fluctine (fluoxetine), 301
+Fludecate (fluphenazine), 313
+Flufenazin (fluphenazine), 313
+Flufenazin dekanoat (fluphenazine), 313
+Flufenazin Enantat (fluphenazine), 313
+flumazenil, 293
+Fluni OPT (flunitrazepam), 297
+Flunimerck (flunitrazepam), 297
+Fluninoc (flunitrazepam), 297
+Flunipam (flunitrazepam), 297
+Flunitrax (flunitrazepam), 297
+flunitrazepam, 297
+Flunox (flurazepam), 321
+Fluocim (fluoxetine), 301
+Fluoxeren (fluoxetine), 301
+fluoxetine, 301
+fluoxetine/olanzapine combination, 301 , 559
+Fluoxifar (fluoxetine), 301
+Fluoxin (fluoxetine), 301
+Flupam (flunitrazepam), 297
+flupenthixol, 307
+fluphenazine, 313
+flurazepam, 321
+Fluscand (flunitrazepam), 297
+
+
+
+
+<<<PAGE 2634>>>
+
+cyamemazine, 201
+doxepin , 255
+fluoxetine, 301
+flupenthixol, 307
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+
+
+
+
+<<<PAGE 2638>>>
+
+cariprazine, 137
+citalopram , 159
+clomipramine, 165
+cyamemazine, 201
+desipramine , 207
+desvenlafaxine , 215
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin , 255
+duloxetine , 263
+escitalopram , 269
+esketamine , 275
+fluoxetine , 301
+fluoxetine/olanzapine combination , 301 , 559
+flupenthixol, 307
+fluvoxamine, 325
+iloperidone, 359
+imipramine , 367
+isocarboxazid , 375
+ketamine, 383
+lamotrigine (adjunct), 387
+levomilnacipran , 403
+lisdexamfetamine, 409
+lithium (adjunct), 415
+l-methylfolate (adjunct) , 477
+lofepramine, 421
+lumateperone, 451
+lurasidone, 457
+
+
+
+
+<<<PAGE 2650>>>
+
+diazepam , 229
+hydroxyzine , 355
+lorazepam , 437
+midazolam , 499
+Pruritus
+doxepin, 255
+hydroxyzine , 355
+Pseudobulbar affect
+dextromethorphan (with quinidine) , 225
+Psychosis
+alprazolam (adjunct), 11
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine , 153
+clonazepam (adjunct), 173
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine , 313
+haloperidol , 347
+iloperidone, 359
+
+
+
+
+<<<PAGE 2652>>>
+
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine, 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol, 347
+iloperidone, 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct), 477
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone , 581
+perospirone, 601
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+
+
+
+
+<<<PAGE 2653>>>
+
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+valproate (divalproex) (adjunct), 829
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Schizophrenia
+amisulpride, 17
+aripiprazole , 53
+asenapine , 71
+blonanserin, 89
+brexpiprazole , 103
+carbamazepine (adjunct), 131
+cariprazine , 137
+chlorpromazine , 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol , 347
+iloperidone , 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct) , 477
+loxapine , 443
+lumateperone , 451
+lurasidone , 457
+molindone , 527
+olanzapine , 558
+
+
+
+
+<<<PAGE 2660>>>
+
+nortriptyline, 551
+paroxetine, 593
+phenelzine, 613
+protriptyline, 657
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tianeptine, 777
+tranylcypromine, 787
+trazodone, 793
+triiodothyronine, 813
+trimipramine, 817
+venlafaxine, 841
+vilazodone, 847
+vortioxetine, 853
+Antipsychotics
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+cariprazine, 137
+chlorpromazine, 153
+clozapine, 191
+cyamemazine, 201
+flupenthixol, 307
+fluphenazine, 313
+haloperidol, 347
+
+
+
+
+<<<PAGE 2665>>>
+
+galantamine, 337
+memantine, 473
+memantine/donepezil combination, 243 , 473
+rivastigmine, 699
+selegiline, 705
+Libido enhancers
+bremelanotide, 95
+flibanserin, 289
+Medical food
+caprylidene, 127
+l-methylfolate, 477
+Mood stabilizers
+alprazolam (adjunct), 11
+amoxapine, 33
+aripiprazole, 53
+asenapine, 71
+brexpiprazole, 103
+bupropion, 117
+carbamazepine, 131
+cariprazine, 137
+chlorpromazine, 153
+clonazepam (adjunct), 173
+clozapine, 191
+doxepin, 255
+fluoxetine, 301
+flupenthixol, 307
+
+

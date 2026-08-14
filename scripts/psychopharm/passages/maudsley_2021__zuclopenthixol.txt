@@ -1,0 +1,1422 @@
+<<<PAGE 33>>>
+
+CHAPTER 1
+
+12  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Licensed maximum doses
+The following table lists the licensed maximum doses of antipsychotics according to the
+EMA labelling as of February 2021.
+Drug
+
+Maximum dose
+
+FGAs – oral
+Chlorpromazine
+
+1000mg/day
+
+Flupentixol
+
+18mg/day
+
+Haloperidol
+
+20mg/day
+
+Levomepromazine
+
+1200mg/day
+
+Pericyazine
+
+300mg/day
+
+Perphenazine
+
+24mg/day (64mg/day hospitalised patients)
+
+Pimozide
+
+20mg/day
+
+Sulpiride
+
+2400mg/day
+
+Trifluoperazine
+
+20mg/day
+
+Zuclopenthixol
+
+150mg/day
+
+SGAs – oral
+Amisulpride
+
+1200mg/day
+
+Aripiprazole
+
+30mg/day
+
+Asenapine
+
+20mg/day (sublingual)
+
+Cariprazine
+
+6mg/day
+
+Clozapine
+
+900mg/day
+
+Lurasidone
+
+160mg (HCl)/148mg (base)/day
+
+Olanzapine
+
+20mg/day
+
+Paliperidone
+
+12mg/day
+
+Quetiapine
+
+750mg/day schizophrenia (800mg/day for MR preparation)
+800mg/day bipolar disorder
+
+Risperidone
+
+16mg/day
+
+Sertindole
+
+24mg/day
+
+Long-acting injections
+Aripiprazole depot
+
+400mg/month
+
+Flupentixol depot
+
+400mg/week
+
+Fluphenazine depot
+
+100mg every 14–35 days
+
+Haloperidol depot
+
+300mg every 4 weeks
+
+Paliperidone depot
+1-monthly
+
+150mg/month
+
+
+
+
+<<<PAGE 35>>>
+
+CHAPTER 1
+
+14  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Equivalent doses
+Knowledge of equivalent dosages is useful when switching between FGAs. Estimates of
+‘neuroleptic’ or ‘chlorpromazine’ equivalence, in milligrams a day, between these medications are based on clinical experience, expert panel opinion (using various methods)
+and any dopamine binding studies available.
+Table 1.2 provides approximate equivalent doses for FGAs.1–4 The values given should
+be seen as a rough guide when switching from one FGA to another and are no substitute
+for clinical titration of the new medication dose against adverse effects and response.
+Equivalent doses of SGAs may be less clinically relevant as these medications tend to
+have better defined, evidence-based licensed dose ranges. There are several different
+ways of calculating equivalence based on, for example, defined daily dose,5 minimum
+effective dose6,7 and average dose.8 These methods give different estimates of equivalence. A very rough guide to equivalent SGA daily dosages is given in the Table 1.3.3,4,7–9
+There is considerable disagreement about exact equivalencies, even amongst the references cited here. Clozapine is not included because this has a distinct initial titration
+schedule and a high dose-plasma level variability and because it probably has a different mechanism of action.
+Comparing potencies of FGAs with SGAs introduces yet more uncertainty with
+respect to dose equivalence. Very approximately, 100mg chlorpromazine is equivalent
+to 1.5mg risperidone.3
+
+Table 1.2 Equivalent doses of first generation antipsychotics
+Drug
+
+Equivalent dose (consensus)
+
+Range of values in literature
+
+Chlorpromazine
+
+100mg/day
+
+Reference
+
+Flupentixol
+
+3mg/day
+
+2–3mg/day
+
+Flupentixol depot
+
+10mg/week
+
+10–20mg/week
+
+Fluphenazine
+
+2mg/day
+
+1–5mg/day
+
+Fluphenazine depot
+
+5mg/week
+
+1–12.5mg/week
+
+Haloperidol
+
+2mg/day
+
+1.5–5mg/day
+
+Haloperidol depot
+
+15mg/week
+
+5–25mg/week
+
+Pericyazine
+
+10mg/day
+
+10mg/day
+
+Perphenazine
+
+10mg/day
+
+5–10mg/day
+
+Pimozide
+
+2mg/day
+
+1.33–2mg/day
+
+Pipotiazine depot
+
+10mg/week
+
+10–12.5mg/week
+
+Sulpiride
+
+200mg/day
+
+133–300mg/day
+
+Trifluoperazine
+
+5mg/day
+
+2.5–5mg/day
+
+Zuclopenthixol
+
+25mg/day
+
+25–60mg/day
+
+Zuclopenthixol depot
+
+100mg/week
+
+40–100mg/week
+
+
+
+
+<<<PAGE 81>>>
+
+60  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 1
+
+Zuclopenthixol acetate
+Zuclopenthixol acetate (ZA) is widely used in the UK and elsewhere in Europe and is
+best known by its trade name Acuphase. Zuclopenthixol itself is a thioxanthene dopamine antagonist first introduced in the early 1960s. ZA is not a rapidly tranquillising
+agent. Its elimination half-life is around 20 hours. Intramuscular injection of zuclopenthixol base results in rapid absorption and a duration of action of 12–24 hours. By
+slowing absorption after IM injection, the biological half-life (and so duration of action)
+becomes dependent on the rate of release from the IM reservoir. This can be achieved
+by esterification of the zuclopenthixol molecule; the rate of release being broadly proportion to the length of the ester carbon chain. Thus, zuclopenthixol decanoate is slow
+to act but very long-acting as a result of retarded release after IM injection.
+Zuclopenthixol acetate (with eight carbon atoms fewer) would be expected to provide
+relatively prompt release but with an intermediate duration of action. The intention of
+the manufacturers was that the use of ZA would obviate the need for repeated IM injections in disturbed patients.
+An initial pharmacokinetic study of ZA included 19 patients ‘in whom calming effect
+by parenteral neuroleptic was considered necessary’.54 Zuclopenthixol was detectable
+in the plasma after 1–2 hours but did not reach peak concentrations until around 36
+hours after dosing. At 72 hours, plasma levels were around a third of those at 36 hours.
+The clinical effect of ZA was not rapid – 10 of 17 patients exhibited minimal or no
+change in psychotic symptoms at 4 hours. Sedation was evident at 4 hours, but it had
+effectively abated by 72 hours.
+A follow-up study by the same research group55 examined more closely the clinical
+effects of ZA in 83 patients. The authors concluded that ZA produced ‘pronounced and
+rapid reduction in psychotic symptoms’. In fact, psychotic symptoms were first assessed
+only after 24 hours and so a claim of rapid effect is not reasonably supported. Sedative
+effects were measured after two hours when a statistically significant effect was observed
+– at baseline mean sedation score was 0.0 (0 = no sign of sedation) and at 2 hours 0.6
+(1 = slightly sedated). Maximum sedation was observed at 8 hours (mean score 2.2;
+2 = moderately sedated). At 72 hours mean score was 1.1. Dystonia and rigidity were
+the most commonly reported adverse effects.
+Two independently conducted open studies, produced similar results – a slow onset
+of effect peaking at 24 hours and still being evident at 72 hours.56,57 The first UK study
+was reported in 1990.58 In the trial, a significant reduction in psychosis score was first
+evident at 8 hours and scores continued to fall until the last measurement at 72 hours.
+Of 25 patients assessed only 4 showed signs of tranquillisation at 1 hour (19 at 2 hours
+and 22 at 24 hours).
+A comparative trial of ZA59 examined its effects and those of IM/oral haloperidol
+and IM/oral zuclopenthixol base (in multiple doses over 6 days). The two non-ester, IM/
+oral preparations produced a greater degree of sedation at 2 hours than did ZA, but the
+effect of ZA and zuclopenthixol was more sustained than with haloperidol over 144
+hours (although patients received more zuclopenthixol doses). No clear differences
+between treatments were detected, with the exception of the slow onset of effect of ZA.
+The number of doses given varied substantially: ZA 1–4; haloperidol 1–26 and zuclopenthixol 1–22. This is the key (and perhaps unique) advantage of ZA – it reduces the
+
+
+
+
+<<<PAGE 87>>>
+
+CHAPTER 1
+
+66  The Maudsley® Prescribing Guidelines in Psychiatry
+
+42. Cole JB, et al. A prospective observational study of patients receiving intravenous and intramuscular olanzapine in the emergency department.
+Ann Emerg Med 2017; 69:327–336.e322.
+43. Calver L, et al. A prospective study of high dose sedation for rapid tranquilisation of acute behavioural disturbance in an acute mental health
+unit. BMC Psychiatry 2013; 13:225.
+44. Mantovani C, et al. Are low doses of antipsychotics effective in the management of psychomotor agitation? A randomized, rated-blind trial
+of 4 intramuscular interventions. J Clin Psychopharmacol 2013; 33:306–312.
+45. Taylor D, et al. Buccal midazolam for rapid tranquillisation. Int J Psychiatry Clin Pract 2008; 12:309–311.
+46. Spain D, et al. Safety and effectiveness of high-dose midazolam for severe behavioural disturbance in an emergency department with suspected psychostimulant-affected patients. Emerg Med Australas 2008; 20:112–120.
+47. Zaman H, et al. Benzodiazepines for psychosis-induced aggression or agitation. Cochrane Database Syst Rev 2017; 12:Cd003079.
+48. Li SF, et al. Safety and efficacy of intravenous combination sedatives in the ED. Am J Emerg Med 2013; 31:1402–1404.
+49. MacNeal JJ, et al. Use of haloperidol in PCP-intoxicated individuals. Clin Toxicol 2012; 50:851–853.
+50. Mankowitz SL, et al. Ketamine for rapid sedation of agitated patients in the prehospital and emergency department settings: a systematic
+review and proportional meta-analysis. J Emerg Med 2018; 55:670–681.
+51. Kim HK, et al. Safety and efficacy of pharmacologic agents used for rapid tranquilization of emergency department patients with acute agitation or excited delirium. Exp Opin Drug Saf 2021; 20:123–138.
+52. Pierre JM. Time to retire haloperidol? For emergency agitation, evidence suggests newer alternatives may be a better choice. Curr Psychiatry
+2020; 19:19+.
+53. Huf G, et al. Physical restraints versus seclusion room for management of people with acute aggression or agitation due to psychotic illness
+(TREC-SAVE): a randomized trial. Psychol Med 2012; 42:2265–2273.
+54. Amdisen A, et al. Serum concentrations and clinical effect of zuclopenthixol in acutely disturbed, psychotic patients treated with zuclopenthixol acetate in Viscoleo. Psychopharmacology 1986; 90:412–416.
+55. Amdisen A, et al. Zuclopenthixol acetate in viscoleo – a new drug formulation. An open Nordic multicentre study of zuclopenthixol acetate
+in Viscoleo in patients with acute psychoses including mania and exacerbation of chronic psychoses. Acta Psychiatr Scand 1987;
+75:99–107.
+56. Lowert AC, et al. Acute psychotic disorders treated with 5% zuclopenthixol acetate in ‘Viscoleo’ (‘Cisordinol-Acutard’), a global assessment
+of the clinical effect: an open multi-centre study. Pharmatherapeutica 1989; 5:380–386.
+57. Balant LP, et al. Clinical and pharmacokinetic evaluation of zuclopenthixol acetate in Viscoleo. Pharmacopsychiatry 1989; 22:250–254.
+58. Chakravarti SK, et al. Zuclopenthixol acetate (5% in ‘Viscoleo’): single-dose treatment for acutely disturbed psychotic patients. Curr Med
+Res Opin 1990; 12:58–65.
+59. Baastrup PC, et al. A controlled Nordic multicentre study of zuclopenthixol acetate in oil solution, haloperidol and zuclopenthixol in the
+treatment of acute psychosis. Acta Psychiatr Scand 1993; 87:48–58.
+60. Chin CN, et al. A double blind comparison of zuclopenthixol acetate with haloperidol in the management of acutely disturbed schizophrenics. Med J Malaysia 1998; 53:365–371.
+61. Taymeeyapradit U, et al. Comparative study of the effectiveness of zuclopenthixol acetate and haloperidol in acutely disturbed psychotic
+patients. J Med Assoc Thai 2002; 85:1301–1308.
+62. Brook S, et al. A randomized controlled double blind study of zuclopenthixol acetate compared to haloperidol in acute psychosis. Human
+Psychopharmacol Clin Experimental 1998; 13:17–20.
+63. Chouinard G, et al. A double-blind controlled study of intramuscular zuclopenthixol acetate and liquid oral haloperidol in the treatment of
+schizophrenic patients with acute exacerbation. J Clin Psychopharmacol 1994; 14:377–384.
+64. Al-Haddad MK, et al. Zuclopenthixol versus haloperidol in the initial treatment of schizophrenic psychoses, affective psychoses and paranoid
+states: a controlled clinical trial. Arab J Psychiatry 1996; 7:44–54.
+65. Jayakody K, et al. Zuclopenthixol acetate for acute schizophrenia and similar serious mental illnesses. Cochrane Database Syst Rev 2012;
+4:CD000525.
+66. Liu P, et al. Observation of clinical effect of clopixol acuphase injection for acute psychosis. Chin J Pharmacoepidemiology 1997;
+6:202–204.
+67. Ropert R, et al. Where zuclopenthixol acetate stands amid the ‘modified release’ neuroleptics. Congres de Psychiatrie et de Neurolgie de
+Langue Francaise, LXXXVIth Session, Chambery, France; June 13–17 1988.
+68. Berk M. A controlled double blind study of zuclopenthixol acetate compared with clothiapine in acute psychosis including mania and exacerbation of chronic psychosis. Proceedings of XXth Collegium Internationale Neruo-spychopharmacologicum, Melbourne, Australia; June
+23–27 1996.
+69. Garriga M, et al. Assessment and management of agitation in psychiatry: expert consensus. World J Biol Psychiatry 2016; 17:86–128.
+70. Wilson MP, et al. Potential complications of combining intramuscular olanzapine with benzodiazepines in emergency department patients. J
+Emerg Med 2012; 43:889–896.
+71. Villari V, et al. Oral risperidone, olanzapine and quetiapine versus haloperidol in psychotic agitation. Prog Neuropsychopharmacol Biol
+Psychiatry 2008; 32:405–413.
+72. Paton C. Benzodiazepines and disinhibition: a review. Psychiatric Bulletin 2002; 26:460–462.
+73. Chan-Tack KM. Neuroleptic malignant syndrome due to promethazine. South Med J 1999; 92:1017–1018.
+74. Appleby L, et al. Sudden unexplained death in psychiatric in-patients. Br J Psychiatry 2000; 176:405–406.
+75. Yap YG, et al. Risk of torsades de pointes with non-cardiac drugs. Doctors need to be aware that many drugs can cause QT prolongation.
+BMJ 2000; 320:1158–1159.
+76. Taylor DM. Antipsychotics and QT prolongation. Acta Psychiatr Scand 2003; 107:85–95.
+
+
+
+
+<<<PAGE 90>>>
+
+(Abilify Maintena)
+
+(Depixol)
+
+(Modecate)
+
+(Haldol)
+
+(ZypAdhera)
+
+(Xeplion)
+
+(Trevicta)
+
+(Piportil)
+
+Aripiprazole
+
+Flupentixol decanoate
+
+Fluphenazine decanoate
+
+Haloperidol decanoate
+
+Olanzapine pamoate
+
+Paliperidone palmitate
+(monthly)
+
+Paliperidone palmitate
+(3-monthly)
+
+Pipothiazine palmitate
+
+(Clopixol)
+
+Buttock or thigh
+
+Deltoid or gluteal
+
+Gluteal region
+
+Deltoid or gluteal
+
+Deltoid or gluteal
+
+Gluteal
+
+Gluteal region
+
+Gluteal region
+
+Buttock or thigh
+
+Buttock
+
+Licences
+injection site
+Dose range (mg/week)
+
+50–300mg every 4 weeks
+
+12.5mg every 2 weeks to 100mg every
+2 weeks
+
+50mg every 4 weeks to 400mg a week
+
+50–200mg every 4 weeks
+
+175–525mg every 3 months
+
+100
+
+2
+
+4
+
+3 months
+
+Monthly
+
+2–4
+
+4
+
+2–5
+
+2–4
+
+Monthly
+
+Dosing interval
+(weeks)
+
+200mg every 3 weeks to 600mg a week 2–4
+
+Not required** 25–50mg every 2 weeks
+
+25
+
+Not
+required***
+
+Not required** 50–150mg monthly
+
+Not required** 150mg every 4 weeks to 300mg every
+2 weeks
+
+25*
+
+12.5
+
+20
+
+Not required** 300–400mg monthly
+
+Test dose
+(mg)
+
+? Slightly better efficacy than LAI FGAs
+
+Drug release delayed for 2–3 weeks
+– oral therapy required
+
+? Lower incidence of EPS (relative to
+other FGAs)
+
+Loading dose required at treatment
+initiation
+
+Risk of post-injection syndrome
+
+High EPS
+
+High EPS
+
+Maximum licensed dose is high relative
+to other LAIs
+
+Does not increase prolactin; oral
+loading required
+
+Comments
+
+dose overrides longer intervals and lower volumes. For example, zuclopenthixol 500mg every week is licensed, whereas 1,000mg every two weeks is not (more than the licensed maximum
+of 600mg is administered). Always check official manufacturer’s information.
+*Test dose not stated by manufacturer.
+**Tolerability and response to the oral preparation should be established before administering the LAI. With respect to paliperidone LAI, oral risperidone can be used for this purpose.
+***May not be started until the completion of 4 months’ treatment with monthly LAI.
+
+■■ Avoid using shorter dose intervals than those recommended except in exceptional circumstances (e.g. long interval necessitates high volume (>3–4ml?) injection). Maximum licensed single
+
+■■ After a test dose, wait 4–10 days then titrate to maintenance dose according to response (see product information for individual drugs).
+
+■■ The doses mentioned above are for adults. Check formal labelling for appropriate doses in the elderly.
+
+Notes:
+
+Zuclopenthixol decanote
+
+Risperidone microspheres (Risperdal Consta)
+
+UK
+Trade Name
+
+Drug
+
+Table 1.4 Antipsychotic long-acting injections – doses and frequencies15
+
+
+
+
+<<<PAGE 93>>>
+
+CHAPTER 1
+
+72  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Depot/LAI antipsychotics – pharmacokinetics
+Drug
+Aripiprazole1
+
+UK Trade Name
+
+Time to peak (days)*
+
+Plasma half-life
+(days)
+
+Time to steady
+state (weeks)**
+
+(Abilify Maintena)
+
+7d
+
+30–46d
+
+~20W
+~16W
+
+Aripiprazole lauroxil
+
+(Aristada (in USA))
+
+44–50d
+
+~54–57d
+
+Aripiprazole lauroxil
+nanocrystal4–6****
+
+(Aristada Initio (in
+USA))
+
+4d
+
+~15–18d
+
+Flupentixol decanoate7,8
+
+(Depixol)
+
+2–4
+
+4–7d
+
+8–17d
+
+~8–12W
+
+Fluphenazine decanoate4,9–11 (Modecate)
+
+8–12d***
+
+7–10d
+
+~8W
+
+Haloperidol decanoate12,13
+
+(Haldol)
+
+7d
+
+21d
+
+~14W
+
+Olanzapine pamoate
+
+(ZypAdhera)
+
+2–3d
+
+30d
+
+~12W
+
+4,16
+
+Paliperidone palmitate
+(monthly)
+
+(Xeplion)
+
+13d
+
+25–49d
+
+~20W
+
+Paliperidone palmitate17,18
+(three monthly)
+
+(Trevicta)
+
+25d
+
+Deltoid: 84–95d
+Gluteal: 118–139d
+
+~52W
+
+Pipotiazine palmitate19,20
+
+(Piportil)
+
+7–14d
+
+15d
+
+~9W
+
+RBP-7000
+(risperidone sc monthly)
+
+(Perseris (in USA))
+
+1st peak ~1d
+2nd peak ~11d
+
+~8–9d
+
+~8W
+
+Risperidone
+microspheres22,23
+
+(Risperidal Consta)
+
+~30d
+
+4d
+
+~8W
+
+Zuclopenthixol
+decanoate7,19,24
+
+(Clopixol)
+
+4–7d
+
+19d
+
+~12W
+
+4,14,15
+
+4,21
+
+*Time to peak is not the same as time to reach therapeutic plasma concentration, but both are dependent on dose.
+For large (loading) doses, therapeutic activity is often seen before attaining peak levels. For low (test) doses, the
+initial peak level may be sub-therapeutic.
+**Attainment of steady state (SS) follows logarithmic, not linear characteristics: around 90% of SS levels are
+achieved in three half-lives. Time to attain steady state is independent of dose and dosing frequency (i.e. you can’t
+hurry it up by giving more, more often). Loading doses can be used to produce prompt therapeutic plasma levels
+but time to SS remains the same.
+***Some estimates suggest peak concentrations after only a few hours.24,25 It is likely that fluphenazine decanoate
+produces two peaks – one on the day of injection and a second slightly higher peak a week or so later.12
+****used to initiate treatment with Aristada, IM injection with one 30 mg oral dose of aripiprazole; not designed
+for repeat dosing.
+
+References
+1. Mallikaarjun S, et al. Pharmacokinetics, tolerability and safety of aripiprazole once-monthly in adult schizophrenia: an open-label, parallelarm, multiple-dose study. Schizophr Res 2013; 150:281–288.
+2. Hard ML, et al. Aripiprazole lauroxil: pharmacokinetic profile of this long-acting injectable antipsychotic in persons with schizophrenia. J
+Clin Psychopharmacol 2017; 37:289–295.
+3. Turncliff R, et al. Relative bioavailability and safety of aripiprazole lauroxil, a novel once-monthly, long-acting injectable atypical antipsychotic, following deltoid and gluteal administration in adult subjects with schizophrenia. Schizophr Res 2014; 159:404–410.
+4. Correll CU, et al. Pharmacokinetic characteristics of long-acting injectable antipsychotics for schizophrenia: an overview. CNS Drugs 2021;
+35:39–59.
+5. Alkermes Inc. Highlights of Prescribing Information. ARISTADA INITIO® (aripiprazole lauroxil) extended-release injectable suspension, for
+intramuscular use. 2020; https://www.aristadahcp.com/downloadables/ARISTADA-INITIO-PI.pdf.
+
+
+
+
+<<<PAGE 164>>>
+
+given the problems associated with QTc measurements. Lastly, keep in mind that differences in the effects of different antipsychotics on the QT interval rarely reach statistical
+significance, even in meta-analyses (Table 1.21).29
+Outside these guidelines, readers are directed to the RISQ-PATH study,30 which provides a scoring system for the prediction of QT prolongation (to above normal ranges)
+in any patient. RISQ-PATH has a 98% negative predictive value, so allowing a reduction in monitoring in low-risk patients. The RISQ-PATH method uses CredibleMeds
+categorisation for drug effects on QT – this, too, is recommeded.31
+Table 1.21 Effects of antipsychotics on QTC13,22,23,32–61.
+No effect
+Brexpiprazole*
+Cariprazine*
+Lurasidone
+Lumateperone*
+Low effect
+Aripiprazole**
+Asenapine
+Clozapine
+Flupentixol
+Fluphenazine
+Perphenazine
+Prochlorperazine
+Olanzapine***
+Paliperidone
+Risperidone
+Sulpiride
+
+Moderate effect
+Amisulpride****
+Chlorpromazine
+Haloperidol
+Iloperidone
+Levomepromazine
+Melperone
+Pimavanserin
+Quetiapine
+Ziprasidone
+High effect
+Any intravenous antipsychotic
+Pimozide
+Sertindole
+Any drug or combination of drugs used in doses exceeding
+recommended maximum
+Unknown effect
+Loxapine
+Pipotiazine
+Trifluoperazine
+Zuclopenthixol
+
+*Limited clinical experience (association with QT prolongation may emerge).
+**One case of torsades de pointes (TDP) reported,62 two cases of QT prolongation63,64 and an association with TDP
+found in database study.65 Healthy volunteer data suggest aripiprazole causes QTc prolongation of around 8ms.66
+Aripiprazole may increase QT dispersion.67
+***Isolated cases of QTc prolongation37,68 and has effects on cardiac ion channel, IKr,69 other data suggest no effect
+on QTC.23,35,36,70
+****TDP common in overdose,25,71 strong association with TDP in clinical doses.65
+
+Aripiprazole remains in the low effect group having previously been firmly placed in
+‘no effect’. Data are rather contradictory, with most studies showing a decrease in QTc
+associated with aripiprazole use52 even in children and adolescents.72 However, later
+data62,63,65,66,73 cast doubt on assumptions of cardiac safety. Interestingly, a 2020 paper
+analysing reports of events in > 400,000 inpatients over 20 years found aripiprazole
+had the lowest rate of cardiac events (0.06%) of all antipsychotics.74
+Lurasidone remains in the ‘no effect’ group,52 although one study mentioned in the
+US labelling75 reports a QT lengthening of 7.5mg in people receiving 120mg (111mg) a
+day. Those receiving 600mg (555mg) daily showed a lower change (+4.6ms). These
+
+CHAPTER 1
+
+Schizophrenia and related psychoses  143
+
+
+
+
+<<<PAGE 683>>>
+
+Paliperidone palmitate
+
+Dose based on renal function:
+Because elderly patients may
+have diminished renal function,
+they are dosed as in mild renal
+impairment even if tests show
+normal renal function*
+
+Loading doses:
+Day 1: 100mg
+Day 8: 75mg
+(lower loading doses may be
+appropriate in some)*
+
+25–100mg monthly*
+
+100mg monthly*
+
+Has not been systematically studied in elderly patients (>65 years). Not recommended for treatment in the elderly population unless a welltolerated and effective dose regimen using oral olanzapine has been established. A lower starting dose (150mg/4 weeks) is not routinely indicated
+but should be considered for those 65 and above when clinical factors warrant. Not recommended to be started in patients >75 years old
+
+Olanzapine pamoate20
+
+200mg every 2 weeks*
+
+100mg every 4 weeks*
+
+50mg every 4 weeks*
+
+50mg every 4 weeks*
+
+Maximum dose in elderly
+
+No formal recommendations are available for dosing in older adults
+However, there is no detectable effect of age on pharmacokinetics19
+
+After at least 7 days of test
+dose:
+50–200mg every 2–4 weeks*
+
+25–100mg every 4 weeks
+
+12.5–25mg every 4 weeks
+
+After 4–7 days of test dose:
+12.5–25mg every 2–4 weeks
+Dose increased gradually
+according to response and
+tolerability in steps of 12.5mg
+every 2–4 weeks*
+
+Usual maintenance dose
+
+Aripiprazole
+Long-acting injection
+
+Long-acting atypical antipsychotic drugs
+
+Test dose:
+25–50mg
+
+(No test dose)
+12.5–25mg every 4 weeks
+
+Zuclopenthixol
+decanoate
+
+Risk of EPSE and QTc
+prolongation
+
+Haloperidol decanoate
+
+Test dose 6.25mg
+
+Test dose
+5–10mg
+
+Caution: high risk of EPSE
+
+Fluphenazine decanoate
+
+Starting dose
+
+Pipotiazine palmitate18
+
+Specific indication/additional
+notes
+
+Drug
+
+(Continued )
+
+
+
+
+<<<PAGE 746>>>
+
+Hepatic and renal impairment  725
+
+Drug
+
+Comments
+
+Asenapine5,6,8
+
+Hepatically metabolised. SPC recommends avoiding in severe hepatic disease (7-fold
+increase in asenapine exposure). No dose adjustment required in mild to moderate
+disease,12 but be aware of the possibility of increased plasma levels in patients with
+moderate impairment. Transient, asymptomatic rises in transaminases, AST and ALT are
+common, especially early in treatment. Single case report of mild cholestatic liver injury
+resolving on stopping treatment.13
+
+Brexpiprazole6,14
+
+Little information. Use no more than 3mg/day (schizophrenia) or 2mg/day (depression)
+in moderate or severe hepatic failure. Long half-life (~90 hours).
+
+Cariprazine6,15
+
+Occasional, non-clinically relevant increases in ALT and AST. No dosage adjustment is
+required in patients with mild or moderate hepatic failure; not recommended in severe
+hepatic disease (has not been evaluated). Long half-life (~2–4 days). Hepatitis has been
+reported.
+
+Clozapine1,5,6,16–18
+
+Very sedative and constipating. Contraindicated in active liver disease associated with
+nausea, anorexia or jaundice, progressive liver disease or hepatic failure. In less severe
+disease, start with 12.5mg and increase slowly, using plasma levels to gauge
+metabolising capacity and guide dosage adjustment. More frequently associated with
+changes in liver enzymes than other antipsychotics. Transient elevations in AST, ALT and
+GGT to over twice the normal range occur in over 10% of physically healthy people,
+resolving spontaneously in 6–12 weeks.19 Clozapine-induced hepatitis, jaundice,
+cholestasis and liver failure have been reported; clozapine should be discontinued if
+these develop. Successful rechallenge following hepatitis has been described.20,21 See
+section on clozapine side effects in Chapter 1.
+
+Flupentixol/
+zuclopenthixol5,6,22,23
+
+Both are extensively hepatically metabolised. Abnormal liver function tests and (rarely)
+jaundice have been reported with flupenthixol.5 Small, transient elevations in
+transaminases, cholestatic hepatitis and jaundice5 have been reported in some patients
+treated with zuclopenthixol. One report of flupentixol-induced hepatitis.24 No other
+literature reports of use or harm.25 Reduce doses by 50% in patients with
+compromised hepatic function. Depot preparations are best avoided, as altered
+pharmacokinetics will make dosage adjustment difficult and side effects from dosage
+accumulation more likely.
+
+Haloperidol5
+
+Extensively hepatically metabolised. Halve initial doses. Isolated reports of cholestasis,
+acute hepatic failure, hepatitis and abnormal liver function tests.5,6
+
+Iloperidone6,8,26
+
+Hepatically metabolised. Reduce dose in moderate impairment (2-fold increase in
+active metabolites) and avoid completely in severe hepatic impairment (no studies
+done). No dose reduction necessary in mild impairment. Infrequent reports of
+cholelithiasis.
+
+Lumateperone27,28
+
+Hepatically metabolised to active metabolites. No dose adjustment required in mild
+impairment. Increased exposure to lumateperone in moderate and severe
+impairment – manufacturer recommends avoiding. Increases in transaminases
+reported in licensing trials.
+
+Lurasidone5,6,8
+
+Hepatically metabolised. SPC recommends starting dose of 18.5mg (20mg) in hepatic
+impairment, maximum dose of 74mg (80mg)/day in moderate hepatic impairment
+(1.7-fold increase in exposure), and 37mg (40mg) in severe impairment (3-fold
+increase in exposure). No dose adjustment is required in mild hepatic impairment.
+Increases in ALT reported infrequently.
+(Continued)
+
+CHAPTER 8
+
+Table 8.1 (Continued)
+
+
+
+
+<<<PAGE 753>>>
+
+732  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 8
+
+References
+1. Slim M, et al. Hepatic safety of atypical antipsychotics: current evidence and future directions. Drug Saf 2016; 39:925–943.
+2. Marwick KF, et al. Antipsychotics and abnormal liver function tests: systematic review. Clin Neuropharmacol 2012; 35:244–253.
+3. Morlán-Coarasa MJ, et al. Incidence of non-alcoholic fatty liver disease and metabolic dysfunction in first episode schizophrenia and related
+psychotic disorders: a 3-year prospective randomized interventional study. Psychopharmacology (Berl) 2016; 233:3947–3952.
+4. Baeza I, et al. One-year prospective study of liver function tests in children and adolescents on second-generation antipsychotics: is there a
+link with metabolic syndrome? J Child Adolesc Psychopharmacol 2018; 28:463–473.
+5. Datapharm Communications Ltd. Electronic Medicines Compendium 2020; https://www.medicines.org.uk/emc.
+6. IBM Watson Health. IBM Micromedex Solutions 2020; https://www.ibm.com/watson-health/about/micromedex.
+7. Mallikaarjun S, et al. Effects of hepatic or renal impairment on the pharmacokinetics of aripiprazole. Clin Pharmacokinet 2008;
+47:533–542.
+8. Preskorn SH Clinically important differences in the pharmacokinetics of the ten newer “atypical” antipsychotics: part 3. Effects of renal and
+hepatic impairment. J Psychiatr Pract 2012; 18:430–437.
+9. Chico G, et al. Clinical vignettes 482 aripiprazole causes cholelithiasis and hepatitis: a rare finding. Am J Gastroenterol 2005; 100:S164.
+10. Kornischka J, et al. Acute drug-induced hepatitis during aripiprazole monotherapy: a case report 2016.
+11. Castanheira L, et al. Aripiprazole-induced hepatitis: a case report. Clin Psychopharmacol Neurosci (The Official Scientific Journal of the
+Korean College of Neuropsychopharmacology) 2019; 17:551–555.
+12. Peeters P, et al. Asenapine pharmacokinetics in hepatic and renal impairment. Clin Pharmacokinet 2011; 50:471–481.
+13. Schultz K, et al. A case of pseudo-Stauffer’s syndrome related to asenapine use. Schizophr Res 2015; 169:500–501.
+14. Parikh NB, et al. Clinical role of brexpiprazole in depression and schizophrenia. Ther Clin Risk Manag 2017; 13:299–306.
+15. Cutler AJ, et al. Evaluation of the long-term safety and tolerability of cariprazine in patients with schizophrenia: results from a 1-year openlabel study. CNS Spectr 2018; 23:39–50.
+16. Brown CA, et al. Clozapine toxicity and hepatitis. J Clin Psychopharmacol 2013; 33:570–571.
+17. Tucker P Liver toxicity with clozapine. Aust NZJ Psychiatry 2013; 47:975–976.
+18. Zarghami M, et al. Concurrent hepatotoxicity and neutropenia induced by clozapine. Arch Iran Med 2020; 23:141–143.
+19. LiverTox: Clinical and Research Information on Drug-Induced Liver Injury. Bethesda (MD): National Institute of Diabetes and Digestive and
+Kidney Diseases 2012; https://www.ncbi.nlm.nih.gov/books/NBK547852.
+20. Lally J, et al. Hepatitis, interstitial nephritis, and pancreatitis in association with clozapine treatment: a systematic review of case series and
+reports. J Clin Psychopharmacol 2018; 38:520–527.
+21. Takács A, et al. Clozapine rechallenge in a patient with clozapine-induced hepatitis. Australas Psychiatry (Bulletin of Royal Australian and
+New Zealand College of Psychiatrists) 2019; 27:535.
+22. Amdisen A, et al. Zuclopenthixol acetate in viscoleo – a new drug formulation. An open Nordic multicentre study of zuclopenthixol acetate
+in Viscoleo in patients with acute psychoses including mania and exacerbation of chronic psychoses. Acta Psychiatr Scand 1987;
+75:99–107.
+23. Wistedt B, et al. Zuclopenthixol decanoate and haloperidol decanoate in chronic schizophrenia: a double-blind multicentre study. Acta
+Psychiatr Scand 1991; 84:14–21.
+24. Demuth N, et al. [Flupentixol-induced acute hepatitis]. Gastroenterol Clin Biol 1999; 23:152–153.
+25. Nolen WA, et al. Disturbances of liver function of long acting neuroleptic drugs. Pharmakopsychiatr Neuropsychopharmakol 1978;
+11:199–204.
+26. Vanda Pharmaceuticals Inc. FANAPT® (iloperidone) tablets 1mg 2mg 4mg 6mg 8mg 10mg 12mg indication and important safety information 2020; http://www.fanapt.com/product/pi/pdf/fanapt.pdf.
+27. U.S. Food & Drug Administration. Drugs@FDA: FDA approved drugs 2020; https://www.accessdata.fda.gov/scripts/cder/daf.
+28. Greenwood J, et al. Lumateperone: a novel antipsychotic for schizophrenia. Ann Pharmacother 2020; 55:98–104.
+29. Amatniek J, et al. Safety of paliperidone extended-release in patients with schizophrenia or schizoaffective disorder and hepatic disease. Clin
+Schizophr Relat Psychoses 2014; 8:8–20.
+30. Macaluso M, et al. Pharmacokinetic drug evaluation of paliperidone in the treatment of schizoaffective disorder. Expert Opin Drug Metab
+Toxicol 2017; 13:871–879.
+31. Chang CH, et al. Paliperidone is associated with reduced risk of severe hepatic outcome in patients with schizophrenia and viral hepatitis: a
+nationwide population-based cohort study. Psychiatry Res 2019; 281:112597.
+32. Khorassani F, et al. Risperidone- and paliperidone-induced hepatotoxicity: case report and review of literature. Am J Health Syst Pharm
+2020; zxaa224.
+33. Das A, et al. Liver injury associated with quetiapine: an illustrative case report. J Clin Psychopharmacol 2017; 37:623–625.
+34. Monnelly EP, et al. Quetiapine for treatment of alcohol dependence. J Clin Psychopharmacol 2004; 24:532–535.
+35. Brown ES, et al. A randomized, double-blind, placebo-controlled trial of quetiapine in patients with bipolar disorder, mixed or depressed
+phase, and alcohol dependence. Alcohol Clin Exp Res 2014; 38:2113–2118.
+36. Vatsalya V, et al. Safety assessment of liver injury with quetiapine fumarate XR management in very heavy drinking alcohol-dependent
+patients. Clin Drug Investig 2016; 36:935–944.
+37. Holtmann M, et al. Risperidone-associated steatohepatitis and excessive weight-gain. Pharmacopsychiatry 2003; 36:206–207.
+38. Voican CS, et al. Antidepressant-induced liver injury: a review for clinicians. Am J Psychiatry 2014; 171:404–415.
+39. Freiesleben SD, et al. A systematic review of agomelatine-induced liver injury. J Mol Psychiatry 2015; 3:4.
+
+
+
+
+<<<PAGE 820>>>
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  799
+
+Drug class
+
+Clinical applications
+
+Notes
+
+Antipsychotics6
+
+Use in psychosis with LD is
+justified
+
+The most widely used8,9 yet most controversial medication
+for behavioural problems.10,11 Although an RCT12 cast doubt
+on their efficacy for this indication the study was not
+without its problems and there is a significant body of
+other evidence supporting their use including a number of
+small RCTs in children with LD
+
+Used across a broad range of
+behavioural disturbances7
+May be useful for aggression
+and irritability
+
+Discontinuation studies in long-term treatment commonly
+(but not always) show re-emergence of problem behaviours
+NICE suggests considering slow withdrawal of
+antipsychotics in all those who do not have psychotic
+symptoms.13 The UK STOMP programme promotes
+deprescribing of antipsychotics.14 It has been successful, but
+antipsychotics are often replaced by other psychotropics.15
+Before the advent of SGAs the best evidence was for
+haloperidol16 in the context of autism and for
+zuclopenthixol for behavioural disturbance.17
+Zuclopenthixol may reduce aggression and challenging
+behaviour.18
+Amongst SGAs the best evidence is for risperidone19,20 at
+low dose (0.5–2mg) for aggression and mood instability,
+particularly with associated autism though also in
+non-autistic cases. Aripiprazole has an FDA licence for
+behavioural disturbance in young people with autism.21,22
+Some evidence to support olanzapine23 and case reports
+of clozapine24 for very severe cases of aggression though
+not widely used and unlikely to be used outside highly
+specialist (inpatient) settings. In 2015, Cochrane uncovered
+38 case reports and chart reviews but found no RCT
+evidence for the use of clozapine in psychosis in LD.25
+Results for quetiapine are modest at best.26
+
+SSRIs
+
+Helpful for severe anxiety and
+obsessionality in autistic
+spectrum disorder. Use here is
+off-licence unless an additional
+diagnosis of anxiety disorder
+or OCD is made
+Also used as a first-line
+alternative to antipsychotics
+for aggression and impulsivity
+
+Commonly used in combination with antipsychotics though
+limited evidence base for combination treatment.
+Effectiveness in absence of mood or anxiety-spectrum
+disorder is unclear, however, and a 2013 Cochrane review
+was pessimistic27 about the evidence for their effectiveness
+for behaviour disorder in autistic children (who may be at
+heightened risk of adverse effects) though a little more
+encouraging in adults. Some good evidence for fluoxetine
+in OCD in LD/autism although dropout rate is high.28
+Generally, quality of trials is poor and effects may be
+exaggerated by use in less severe cases.29 Caution needed
+because of the risk of precipitation of hypomania in this
+population.30 As with antipsychotics, there are major
+concerns about overprescribing.31
+Venlafaxine is probably not effective.32
+(Continued)
+
+CHAPTER 10
+
+Currently and historically used medications for behaviour disorder
+
+
+
+
+<<<PAGE 862>>>
+
+Pharmacokinetics  841
+
+The target ranges listed in Table 11.2 have somewhat dubious usefulness and, in
+some cases, merely represent the range of values seen in clinical use. Assays for these
+drugs are likely to be available only in specialist units.
+
+Antipsychotics
+
+Target range (µg/L)
+
+Asenapine
+
+1–5
+
+Brexpiprazole
+
+40–140
+
+Cariprazine
+
+10–20
+
+Chlorpromazine
+
+30–300
+
+Flupentixol
+
+0.5–5 (cis-isomer)
+
+Fluphenazine
+
+1–10
+
+Haloperidol
+
+1–10
+
+Iloperidone
+
+5–10
+
+Lurasidone
+
+15–40
+
+Melperone
+
+30–100
+
+Sulpiride
+
+200–1000
+
+Ziprasidone
+
+50–200
+
+Zuclopenthixol
+
+4–50
+
+Antidepressants
+
+Target range (µg/L)
+
+Agomelatine
+
+7–300
+
+Citalopram
+
+50–110
+
+Desvenlafaxine
+
+100–400
+
+Dosulepin
+
+45–100
+
+Duloxetine
+
+30–120
+
+Escitalopram
+
+15–80
+
+Fluoxetine (+norfluoxetine)
+
+120–500
+
+Fluvoxamine
+
+60–230
+
+Levomilnacipran
+
+80–120
+
+Mianserin
+
+15–70
+
+CHAPTER 11
+
+Table 11.2 Target ranges for other psychotropics30,91
+
+(Continued)
+
+
+
+
+<<<PAGE 875>>>
+
+854  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 11
+
+CPY2D6
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Amitriptyline
+‘Amphetamines’
+Atomoxetine
+Aripiprazole
+Brexpiprazole
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine
+Clozapine*
+Deutetrabenazine
+Donepezil*
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluvoxamine
+Fluphenazine
+Galantamine
+Haloperidol
+Iloperidone
+Imipramine
+Methadone*
+Mianserin
+Mirtazapine*
+Moclobemide
+Nortriptyline
+Olanzapine
+Paroxetine
+Perphenazine
+Pimozide*
+Quetiapine*
+Risperidone
+Sertraline
+Trazodone*
+Trimipramine
+Valbenazine
+Venlafaxine
+Vortioxetine
+Zuclopenthixol
+
+Amitriptyline
+Asenapine
+Bupropion
+Chlorpromazine
+Citalopram*
+Clomipramine
+Clozapine
+Duloxetine
+Escitalopram
+Fluoxetine
+Fluphenazine
+Fluvoxamine*
+Haloperidol
+Levomepromazine
+Methadone*
+Moclobemide
+Paroxetine
+Perphenazine
+Reboxetine*
+Risperidone
+Sertraline
+Venlafaxine*
+
+Not known
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Bupropion
+Ethanol
+
+Disulfiram
+Paracetamol
+
+Ethanol
+
+CYP2E1
+
+
+
+
+<<<PAGE 977>>>
+
+956  Index
+
+formulations 257
+indications 257–258
+interactions with other drugs 260–261,
+261t
+mechanism of action 257
+monotherapy 691
+on-treatment monitoring 260
+plasma levels 259
+pre-treatment tests 259
+use in women of child-bearing age 260
+valproic acid 809
+vaping 871
+varenicline
+adverse effects 505–506
+clinical effectiveness 505
+preparations and dose 505
+variable-dose reduction 459
+vascular dementia (VaD) 620, 623–624
+management of 623
+venlafaxine/desvenlafaxine 308, 389, 688,
+709t, 728t, 744t, 779, 799
+
+venous thromboembolism,
+antipsychotics and
+evidence of association 187
+latest data 187, 188t
+mechanisms 188, 188t
+outcomes 188
+practice points 189
+summary 188
+vilazodone 389, 728t
+vitamins 7
+vortioxetine 367, 389, 709t, 728t, 744t
+warfarin 602
+water intoxication 164
+weight gain 826
+antipsychotic-induced 123–124, 123t
+monitoring 125
+treatment and prevention 125–126,
+126–127t
+treatment of 125
+weight loss 125
+
+Wernicke’s encephalopathy 461
+parenteral B-complex 461–462
+presentation 461
+prophylactic thiamine 461
+treatment of somatic symptoms 462,
+462t
+World Health Organisation (WHO) 451,
+897
+ZA. See zuclopenthixol acetate (ZA)
+zagotenemab 623
+Z drugs 729t
+ziprasidone 554, 581, 589, 712t, 740t,
+771t, 810, 824t
+zolpidem 135–136, 693
+zopiclone 715t
+zuclopenthixol acetate (ZA) 60–61,
+60–64
+zuclopenthixol decanoate 933t
+zuclopenthixol 741t, 858t
+
+

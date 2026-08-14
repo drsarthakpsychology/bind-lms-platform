@@ -1,0 +1,439 @@
+<<<PAGE 10>>>
+
+82 methylphenidate (d,l)
+83 mianserin
+84 midazolam
+85 milnacipran
+86 mirtazapine
+87 moclobemide
+88 modafinil
+89 molindone
+90 nalmefene
+91 naltrexone
+92 naltrexone/bupropion
+93 nefazodone
+94 nortriptyline
+95 olanzapine
+96 oxazepam
+97 oxcarbazepine
+98 paliperidone
+99 paroxetine
+100 perospirone
+101 perphenazine
+102 phenelzine
+103 phentermine/topiramate
+104 pimavanserin
+105 pimozide
+106 pipothiazine
+107 pitolisant
+108 prazosin
+109 pregabalin
+
+
+
+
+<<<PAGE 20>>>
+
+nefazodone (serotonin antagonist/reuptake inhibitor)
+
+neuroactive steroid
+
+nicotinic partial agonist
+
+N-methyl-D-aspartate antagonist
+
+noradrenergic and specific serotonergic antidepressant
+
+norepinephrine and dopamine reuptake inhibitor
+
+phentermine/topiramate
+
+phosphodiesterase inhibitor
+
+pimavanserin
+
+sedative-hypnotic
+
+selective norepinephrine reuptake inhibitor
+
+selective serotonin reuptake inhibitor
+
+
+
+
+<<<PAGE 1576>>>
+
+The Art of Psychopharmacology
+Potential Advantages
+Patients who have had past weight loss on either active compound
+alone may experience a more robust weight loss effect and better
+tolerability on the combination of naltrexone with bupropion than
+with administration of either drug alone
+Potential Disadvantages
+Women who are pregnant or wish to become pregnant
+Primary Target Symptoms
+Excess weight
+Pearls
+No head-to-head studies with other drugs approved for weight
+management, so comparative efficacy to these agents is unknown;
+however, some patients who do not respond to these other agents
+may respond to Contrave
+Unlike phentermine/topiramate, naltrexone/bupropion does not have
+abuse potential
+Could theoretically be effective in binge eating disorder
+May be useful in antipsychotic-induced weight gain, especially for
+nonpsychotic patients taking antipsychotic agents for depression
+
+
+
+
+<<<PAGE 1783>>>
+
+Phentermine/topiramate
+
+Therapeutics
+Brands
+Qsymia
+see index for additional brand names
+Generic?
+No
+Class
+Norepinephrine and dopamine reuptake inhibitor (phentermine)
+combined with a voltage-sensitive sodium channel modulator
+(topiramate); weight management medication
+Commonly Prescribed for
+(bold for FDA approved)
+Chronic weight management (adjunct to reduced-calorie diet
+and increased physical activity) in adults with an initial BMI of
+at least 30 kg/m 2 (obese) or at least 27 kg/m 2 (overweight) in the
+presence of at least 1 weight-related comorbid condition
+How the Drug Works
+
+
+
+
+<<<PAGE 1785>>>
+
+Discontinue if 5% weight loss is not achieved after 12 weeks on
+maximum daily dose
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Phentermine/topiramate itself should be administered in conjunction
+with reduced-calorie diet and increased physical activity
+Often best to try another strategy prior to resorting to augmentation
+Tests
+Women of childbearing potential should have a negative pregnancy
+test before starting phentermine/topiramate and monthly during
+treatment
+Regular measurement of resting heart rate, especially for patients
+with cardiac or cerebrovascular disease or when initiating or
+increasing the dose of phentermine/topiramate
+Obtain a blood chemistry profile that includes bicarbonate,
+creatinine, potassium, and glucose at baseline and periodically
+during treatment
+Measurement of blood pressure prior to starting
+phentermine/topiramate and during phentermine/topiramate
+treatment is recommended in patients being treated for hypertension
+
+Side Effects
+
+
+
+
+<<<PAGE 1790>>>
+
+May potentiate hypokalemia in patients taking non-potassiumsparing diuretic agents
+Weight loss associated with phentermine/topiramate may increase
+the risk of hypotension in patients taking antihypertensive
+medications
+Carbamazepine, phenytoin, and valproate may increase the
+clearance of topiramate, and thus decrease topiramate levels,
+possibly requiring a higher dose of topiramate
+Topiramate may increase the clearance of phenytoin and thus
+decrease phenytoin levels, possibly requiring a higher dose of
+phenytoin
+Topiramate may increase the clearance of valproate and thus
+decrease valproate levels, possibly requiring a higher dose of
+valproate
+Topiramate may increase plasma levels of metformin; also,
+metformin may reduce clearance of topiramate and increase
+topiramate levels
+Topiramate may interact with carbonic anhydrase inhibitors to
+increase the risk of kidney stones
+Reports of hyperammonemia with or without encephalopthay in
+patients taking topiramate combined with valproate, though this is
+not due to a pharmacokinetic interaction; in patients who develop
+unexplained lethargy, vomiting, or change in mental status, an
+ammonia level should be measured
+
+
+
+
+<<<PAGE 1791>>>
+
+Phentermine is contraindicated with MAOIs due to risk of
+hypertensive crisis
+Other Warnings/Precautions
+Phentermine/topiramate can cause fetal toxicity; women of
+childbearing potential should obtain a negative pregnancy test
+before treatment and monthly thereafter and use effective
+contraception
+If a patient develops a sustained increase in resting heart rate while
+taking phentermine/topiramate, the dose should be reduced or the
+medication should be discontinued
+May cause an increase in serum creatinine; if persistent elevations in
+creatinine occur during phentermine/topiramate treatment, the dose
+should be reduced or the medication should be discontinued
+Phentermine/topiramate has not been studied in combination with
+insulin; weight loss may increase the risk of hypoglycemia in
+patients with type 2 diabetes mellitus treated with insulin and/or
+insulin secretagogues, and medication adjustments may be
+necessary
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+side effects immediately
+Do Not Use
+If patient is pregnant
+
+
+
+
+<<<PAGE 1794>>>
+
+Patients who have had past weight loss on either active compound
+alone may experience a more robust weight loss effect and better
+tolerability on the combination of phentermine with topiramate than
+with administration of either drug alone
+Potential Disadvantages
+Patients with a history of kidney stones or risks for metabolic
+acidosis
+Women who are pregnant or wish to become pregnant
+Patients with a history of past stimulant abuse
+Primary Target Symptoms
+Excess weight
+Pearls
+Has perhaps the largest effect size on weight loss of drugs available
+for the treatment of obesity
+Could theoretically be effective in binge eating disorder
+Because of the teratogenic risk with phentermine/topiramate, it is
+available only through a Risk Management and Mitigation Strategy
+(REMS) program; only certified pharmacies may distribute it
+
+Suggested Reading
+
+
+
+
+<<<PAGE 1795>>>
+
+Colman E , Golden J , Roberts M , et al. The FDA’s assessment of two
+drugs for chronic weight management . N Engl J Med 2012 ;367 (17
+):1577–9 .
+Cosentino G , Conrad AO , Uwaifo GI . Phentermine and topiramate for the
+management of obesity: a review . Drug Des Devel Ther 2011 ;7 :267–87 .
+Holes-Lewis KA , Malcolm R , O’Neil PM . Pharmacotherapy of obesity:
+clinical treatments and considerations . Am J Med Sci 2013 ;345 (4 ):284–8
+.
+Shin JH , Gadde KM . Clinical utility of phentermine/topiramate
+(QsymiaTM) combination for the treatment of obesity . Diabetes Metab
+Syndr Obes 2013 ;6 :1319 .
+
+
+
+
+<<<PAGE 2230>>>
+
+Topiramate
+
+Therapeutics
+Brands
+Topamax
+Epitomax
+Topamac
+Topimax
+Trokendi XR
+Qsymia
+see index for additional brand names
+Generic?
+Yes (not for Qsymia)
+Class
+Anticonvulsant, voltage-sensitive sodium channel modulator
+Commonly Prescribed for
+(bold for FDA approved)
+Partial onset seizures (for immediate-release: adjunct for adults
+and pediatric patients 2–16 years of age; for extended-release:
+
+
+
+
+<<<PAGE 2231>>>
+
+monotherapy or adjunct for patients 2 years and older)
+Primary generalized tonic–clonic seizures (adjunct and
+monotherapy; adults and pediatric patients 2 years of age and
+older)
+Seizures associated with Lennox-Gastaut syndrome (adjunct; 2
+years of age and older)
+Migraine prophylaxis (ages 12 and older)
+Chronic weight management (adjunct to reduced calorie diet
+and increased physical activity) in adults with an initial body
+mass index (BMI) of at least 30 kg/m2 (obese) or at least 27
+kg/m2 (overweight) in the presence of at least one weight-related
+comorbid condition [in combination with phentermine
+(Qsymia)]
+Bipolar disorder (adjunctive; no longer in development)
+Psychotropic drug-induced weight gain
+Binge eating disorder
+How the Drug Works
+
+✽ Blocks voltage-sensitive sodium channels by an unknown
+mechanism
+Inhibits release of glutamate
+Potentiates activity of gamma-aminobutyric acid (GABA)
+Carbonic anhydrase inhibitor
+
+
+
+
+<<<PAGE 2247>>>
+
+The combination of topiramate and phentermine is approved as a
+treatment for obesity (see phentermine/topiramate); the combination
+is also being studied in diabetes and sleep apnea
+
+Suggested Reading
+Johnson BA , Ait-Daoud N . Topiramate in the new generation of drugs:
+efficacy in the treatment of alcoholic patients . Curr Pharm Des 2010 ;16
+(19 ):2103–12 .
+Kramer CK , Leitao CB , Pinto LC , et al. Efficacy and safety of topiramate
+on weight loss: a meta-analysis of randomized controlled trials . Obes Rev
+2011 ;12 (5 ):e338 –47.
+Ormrod D , McClellan K . Topiramate: a review of its use in childhood
+epilepsy . Paediatr Drugs 2001 ;3 :293 –319 .
+Shank RP , Gardocki JF , Streeter AJ , Maryanoff BE . An overview of the
+preclinical aspects of topiramate: pharmacology, pharmacokinetics, and
+mechanism of action . Epilepsia 2000 ;41 (Suppl 1 ):S3 –9 .
+Suppes T . Review of the use of topiramate for treatment of bipolar
+disorders . J Clin Psychopharmacol 2002 ;22 :599 –609 .
+
+
+
+
+<<<PAGE 2608>>>
+
+Phasal (lithium), 415
+phenelzine, 613
+phentermine/topiramate, 619
+Piefol (trifluoperazine), 803
+pimavanserin, 623
+pimozide, 627
+Piportil (pipothiazine), 633
+Piportil Depot (pipothiazine), 633
+Piportil L4 (pipothiazine), 633
+Piportil Longum-4 (pipothiazine), 633
+Piportil palmitate (pipothiazine), 633
+Piportyl palmitat (pipothiazine), 633
+pipothiazine, 633
+Pipotiazine (pipothiazine), 633
+Pirium (pimozide), 627
+pitolisant, 639
+Placidia (lorazepam), 437
+Placil (clomipramine), 165
+Placinoral (lorazepam), 437
+Planum (temazepam), 755
+Plegomazin (chlorpromazine), 153
+Plenur (lithium), 415
+Plurimen (selegiline), 705
+PMS-carbamazepine (carbamazepine), 131
+PMS-Clonazepam (clonazepam), 173
+PMS-Desipramine (desipramine), 207
+PMS-Fluoxetine (fluoxetine), 301
+PMS-Fluphenazine (fluphenazine), 313
+
+
+
+
+<<<PAGE 2610>>>
+
+Propaphenin (chlorpromazine), 153
+propranolol, 653
+Propymal (valproate), 829
+Prosedar (quazepam), 663
+ProSom (estazolam), 281
+Prosulpin (sulpiride), 741
+Prothiaden (dothiepin), 249
+Protiaden (dothiepin), 249
+protriptyline, 657
+Provigil (modafinil), 521
+Proxam (oxazepam), 569
+Prozac (fluoxetine), 301
+Prozil (chlorpromazine), 153
+Prozin (chlorpromazine), 153
+Prozyn (fluoxetine), 301
+Pryleugan (imipramine), 367
+Psicocen (sulpiride), 741
+Psicofar (chlordiazepoxide), 147
+Psiquiwas (oxazepam), 569
+Psychopax (diazepam), 229
+Psymoin (maprotiline), 465
+PT-141 (bremelanotide), 95
+Punktyl (lorazepam), 437
+Purata (oxazepam), 569
+Q-Med Hydroxyzine (hydroxyzine), 355
+Qsymia (phentermine/topiramate), 619
+Quait (lorazepam), 437
+Quastil (sulpiride), 741
+
+
+
+
+<<<PAGE 2657>>>
+
+Tremor
+propranolol , 653
+Trigeminal neuralgia
+carbamazepine , 131
+Vasomotor symptoms
+clonidine, 179
+desvenlafaxine, 215
+duloxetine, 263
+paroxetine , 593
+Weight management
+amphetamine (d,l), 45
+naltrexone/bupropion , 541
+phentermine/topiramate , 619
+topiramate , 781
+zonisamide, 875
+
+
+
+
+<<<PAGE 2670>>>
+
+naltrexone, 537
+oxazepam, 569
+varenicline, 837
+Tic suppressants
+aripiprazole, 53
+clonidine, 179
+guanfacine, 343
+haloperidol, 347
+pimozide, 627
+Wake-promoting agents
+amphetamine (d), 39
+amphetamine (d,l), 45
+armodafinil, 65
+lisdexamfetamine, 409
+methylphenidate (d), 481
+methylphenidate (d,l), 487
+modafinil, 521
+pitolisant, 639
+sodium oxybate, 733
+solriamfetol, 737
+Weight management
+amphetamine (d,l), 45
+naltrexone/bupropion, 541
+phentermine/topiramate, 619
+zonisamide, 875
+
+

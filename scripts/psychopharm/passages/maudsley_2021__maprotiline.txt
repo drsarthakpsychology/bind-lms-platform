@@ -1,0 +1,382 @@
+<<<PAGE 15>>>
+
+Notes on using The Maudsley®
+Prescribing Guidelines in Psychiatry
+
+The main aim of The Guidelines is to provide clinicians with practically useful advice
+on the prescribing of psychotropic agents in both commonly and less commonly
+encountered clinical situations. The advice contained in this handbook is based on a
+combination of literature review, clinical experience and expert contribution. We do not
+claim that this advice is necessarily ‘correct’ or that it deserves greater prominence than
+the guidance provided by other professional bodies or special interest groups. We hope,
+however, to have provided guidance that helps to assure the safe, effective and economic use of medicines in psychiatry. We hope also to have made clear precisely the
+sources of information used to inform the guidance given. Please note that many of the
+recommendations provided here go beyond the licensed or labelled indications of many
+drugs, both in the UK and elsewhere. Note also that, while we have endeavoured to
+make sure all quoted doses are correct, clinicians should always consult statutory texts
+before prescribing. Users of The Guidelines should also bear in mind that the contents
+of this handbook are based on information available to us in March 2021. Much of the
+advice contained here will become out‐dated as more research is conducted and
+published.
+No liability is accepted for any injury, loss or damage, however caused.
+
+Notes on inclusion of drugs
+The Guidelines are used in many other countries outside the UK. With this in mind, we
+have included in this edition those drugs in widespread use throughout the Western
+world in March 2021. These include drugs not marketed in the UK, such as brexpiprazole, desvenlafaxine, pimavanserin and vilazodone, amongst several others. Many older
+drugs or those not widely available (e.g. levomepromazine, pericyazine, maprotiline,
+zotepine, oral loxapine, etc.) are either only briefly mentioned or not included on the
+basis that these drugs are not in widespread use at the time of writing.
+
+
+
+
+<<<PAGE 810>>>
+
+Drug treatment of psychiatric symptoms occurring in the context of other disorders  789
+
+Safety in
+epilepsy
+
+Drug
+
+CHAPTER 10
+
+Table 10.5 Psychotropics in epilepsy
+
+Comments
+
+Antidepressants
+Low risk
+– good
+choices
+
+Probably low
+risk – use
+with caution
+(limited
+evidence)
+
+Moderate
+risk – care
+required
+
+Higher risk
+– avoid
+(proconvulsive at
+therapeutic
+doses13)
+
+SSRIs
+
+Recommended in PWE.14,18 SSRIs may be anticonvulsant at therapeutic
+doses13 but pro-convulsant in overdose.31 SSRIs with the lowest risk of
+interactions with antiseizure medications are generally preferred (citalopram/
+escitalopram, followed by sertraline).14,18,32,33 Escitalopram is preferred over
+citalopram in PWE (lower risk of seizures in overdose).34 Others have low risk
+of seizures (e.g. fluoxetine34) but drug interactions with antiseizure
+medications should be considered.14,18 Fluoxetine may be less likely to
+provoke seizures in older people than escitalopram or citalopram.35 Some
+evidence that sertraline is safe and effective in PWE36
+
+Mirtazapine
+
+Recommended in PWE.18,37 Not known to be proconvulsive24
+
+Duloxetine
+
+Recommended for PWE.11,18 Risk of seizures is probably negligible34,35
+
+Agomelatine
+
+Not known to be proconvulsive.38 Anticonvulsant in animal models34
+
+MAOIs
+
+Not known to be pro-convulsive at therapeutic doses.34 Low risk of seizures
+in overdose17
+
+Moclobemide
+
+Not known to be proconvulsive.34 Anticonvulsant in animal models34
+
+Reboxetine
+
+Small open label study suggests no problems in PWE39
+
+Vortioxetine
+
+Not known to be proconvulsive34,40 but no experience in PWE34
+
+Lithium
+
+Low risk of seizures.34 Anticonvulsant in animal models.34 However, limited
+data showing increases or decreases in seizures frequency in PWE.34 For
+bipolar, consider anticonvulsant mood stabilisers41
+
+Trazodone
+
+Limited data suggest some risk of seizures34,42
+
+Venlafaxine
+
+Effective in PWE11 and has been recommended18 but mixed evidence on
+seizure risk34
+
+Vilazodone
+
+Limited data. Seizure exacerbation in a patient with epilepsy has been
+reported34
+
+Amoxapine
+
+Several reports of seizures at therapeutic doses42
+
+Bupropion
+
+Dose-related risk of seizures (particularly with instant-release formulations).34
+Risk is less with slow-release formulations at doses under 300mg/day34
+
+Maprotiline
+
+Several reports of seizures at therapeutic doses42
+
+TCAs
+
+Most TCAs are epileptogenic at higher doses (particularly clomipramine and
+amitriptyline10,24,42). Doxepin possibly lower risk (one small study in PWE).34
+SNRIs are preferred over TCAs in PWE17
+(Continued)
+
+
+
+
+<<<PAGE 934>>>
+
+Miscellany  913
+
+Table 14.3 Summary of haematological changes associated with psychotropics
+Reference range
+
+Agents reported to raise
+levels
+
+Agents reported to lower
+levels
+
+Activated partial
+thromboplastin time
+
+23–33 seconds
+
+Phenothiazines (especially
+chlorpromazine)
+
+Modafinil (rare)
+
+Basophils
+
+0.0–0.1 × 109/L
+
+Clozapine, TCAs (especially
+desipramine)
+
+None known
+
+Eosinophils
+
+0.04–0.40 × 109/L
+
+Amoxapine, beta-blockers,
+bupropion, buspirone,
+carbamazepine, chloral
+hydrate, chlorpromazine,
+clonazepam, clozapine,
+donepezil, fluphenazine,
+haloperidol, loxapine,
+meprobamate, maprotiline,
+methylphenidate (IV abuse
+only), modafinil, naltrexone
+(parenterally administered),
+olanzapine, promethazine,
+quetiapine, risperidone/
+paliperidone, SSRIs, TCAs,
+tetrazepam, tryptophan*,
+valproate, venlafaxine; may
+also be a feature of agents
+causing a hypersensitivity
+syndrome
+
+None known
+
+Erythrocyte
+sedimentation rate
+
+Females: 1–12mm/h
+Males: 1–10mm/h
+(increases with age)
+
+Clozapine, dexamfetamine,
+levomepromazine,
+maprotiline, SSRIs
+
+Buprenorphine
+
+Haemoglobin
+
+Females: 115–165g/L
+Males: 130–180g/L
+
+Clozapine, testosterone,
+tobacco smoking
+
+Aripiprazole, barbiturates,
+buprenorphine, bupropion,
+carbamazepine,
+chlordiazepoxide,
+chlorpromazine, donepezil,
+duloxetine, galantamine,
+MAOIs, memantine,
+meprobamate, mianserin,
+phenytoin, promethazine,
+rivastigmine, tramadol,
+trifluoperazine, vigabatrin
+
+Lymphocytes
+
+1.5–4.5 × 109/L
+
+Naltrexone, opioids, tobacco
+smoking, valproate; may also
+be a feature of drugs causing
+hypersensitivity syndrome
+
+Alcohol (chronic), chloral
+hydrate, clozapine, lithium,
+mirtazapine (rarely)
+
+CHAPTER 14
+
+Parameter
+
+(Continued)
+
+
+
+
+<<<PAGE 935>>>
+
+914  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 14.3 (Continued)
+Parameter
+
+Reference range
+
+Agents reported to raise
+levels
+
+Agents reported to lower
+levels
+
+Mean cell
+haemoglobin
+
+27–32pg
+
+Medications associated with
+megaloblastic anaemia e.g. all
+antiseizure medications,
+nitrous oxide
+
+None known
+
+Mean cell haemoglobin 320–360g/L
+concentration
+
+Alcohol
+
+Mean cell volume
+
+80–100fL
+
+Monocytes
+
+0.2–0.8 × 10 /L
+
+Haloperidol
+
+None known
+
+Neutrophils
+
+2.0–7.5 × 109/L
+(may be lower in people of
+African descent due to
+benign ethnic neutropenia)
+
+Bupropion, carbamazepine†,
+citalopram, chlorpromazine,
+clozapine†, duloxetine,
+fluoxetine, fluphenazine,
+haloperidol, lamotrigine,
+lithium, maprotiline,
+olanzapine, quetiapine,
+risperidone/paliperidone,
+rivastigmine, tiotixene,
+trazodone, venlafaxine
+
+Agents associated with
+agranulocytosis:
+amoxapine, aripiprazole,
+barbiturates, carbamazepine,
+chlordiazepoxide,
+chlorpromazine, clozapine‡,
+cocaine (adulterated),
+diazepam, fluphenazine,
+haloperidol, meprobamate,
+mianserin, mirtazapine,
+olanzapine, pirenzepine,
+promethazine, risperidone/
+paliperidone, TCAs
+(especially imipramine),
+tranylcypromine, valproate
+
+CHAPTER 14
+
+9
+
+Agents associated with
+leucopoenia: amitriptyline,
+amoxapine, asenapine,
+bupropion, carbamazepine,
+cariprazine, chlorpromazine,
+citalopram, clomipramine,
+clonazepam, clozapine,
+duloxetine, fluoxetine,
+fluphenazine, galantamine,
+haloperidol, lamotrigine,
+lorazepam, lumateperone,
+lurasidone, memantine,
+meprobamate, mianserin,
+mirtazapine, modafinil, nitrous
+oxide, olanzapine, oxazepam,
+phenelzine, pregabalin,
+promethazine, quetiapine,
+tranylcypromine, valproate,
+venlafaxine, ziprasidone
+Agents associated with
+neutropenia: sertraline,
+trazodone, valproate
+Packed cell volume
+
+Females: 0.37–0.47L/L
+Males: 0.40–0.52L/L
+
+Clozapine (rare), testosterone
+
+Benzodiazepines (rare),
+buprenorphine, naltrexone,
+vigabatrin
+
+

@@ -1,0 +1,941 @@
+<<<PAGE 8>>>
+
+26 citalopram
+27 clomipramine
+28 clonazepam
+29 clonidine
+30 clorazepate
+31 clozapine
+32 cyamemazine
+33 desipramine
+34 desvenlafaxine
+35 deutetrabenazine
+36 dextromethorphan
+37 diazepam
+38 diphenhydramine
+39 disulfiram
+40 donepezil
+41 dothiepin
+42 doxepin
+43 duloxetine
+44 escitalopram
+45 esketamine
+46 estazolam
+47 eszopiclone
+48 flibanserin
+49 flumazenil
+50 flunitrazepam
+51 fluoxetine
+52 flupenthixol
+53 fluphenazine
+
+
+
+
+<<<PAGE 262>>>
+
+How the Drug Works
+Diminishes the excess acetylcholine activity caused by removal of
+dopamine inhibition when dopamine receptors are blocked
+May also inhibit the reuptake and storage of dopamine at central
+dopamine receptors, prolonging dopamine action
+How Long Until It Works
+For drug-induced parkinsonism and in Parkinson’s disease, onset of
+action can be within minutes or hours
+If It Works
+Reduces motor side effects
+Does not lessen the ability of antipsychotics to cause tardive
+dyskinesia
+If It Doesn’t Work
+Consider switching to trihexyphenidyl, diphenhydramine, or a
+benzodiazepine
+Disorders that develop after prolonged antipsychotic use may not
+respond to treatment
+Consider discontinuing the agent that precipitated the parkinsonism
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+
+
+
+<<<PAGE 689>>>
+
+Diphenhydramine
+
+Therapeutics
+Brands
+BenadrylSominex
+see index for additional brand names
+Generic?
+Yes
+Class
+Antihistamine; anticholinergic agent
+Commonly Prescribed for
+(bold for FDA approved)
+Allergy symptoms
+Motion sickness
+Occasional sleeplessness
+Antiparkinsonism
+Drug-induced parkinsonism
+How the Drug Works (for drug-induced parkinsonism)
+
+
+
+
+<<<PAGE 690>>>
+
+Diminishes the excess acetylcholine activity caused by removal of
+dopamine inhibition when dopamine receptors are blocked
+Also has potent histamine 1 antagonist properties
+How Long Until It Works
+For drug-induced parkinsonism and in Parkinson’s disease, onset of
+action can be within minutes or hours
+If It Works (for drug-induced parkinsonism)
+Reduces motor side effects
+Does not lessen the ability of antipsychotics to cause tardive
+dyskinesia
+If It Doesn’t Work (for drug-induced parkinsonism)
+Consider switching to trihexyphenidyl, benztropine, or a
+benzodiazepine
+Disorders that develop after prolonged antipsychotic use may not
+respond to treatment
+Consider discontinuing the agent that precipitated the parkinsonism
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+If ineffective, switch to another agent rather than augment
+Diphenhydramine itself is an augmenting agent to antipsychotics
+
+
+
+
+<<<PAGE 693>>>
+
+Dosage Forms
+Injection 50 mg/mL
+Capsule 50 mg
+Elixir 12.5 mg/5 mL
+Also available in formulations in combination with other
+medications
+How to Dose
+Injection: 10–50 mg intravenously at a rate not exceeding 25
+mg/min or deep intramuscularly; can dose at 100 mg if required;
+maximum daily dose 400 mg
+Dosing Tips
+If drug-induced parkinsonism occurs soon after initiation of a
+neuroleptic drug, it is likely to be transient; thus, attempt to
+withdraw diphenhydramine after 1–2 weeks to determine if still
+needed
+The injection should be used for parkinsonism only if oral therapy is
+impossible or contraindicated
+Overdose
+CNS depression, CNS stimulation (more likely in pediatric
+patients), dry mouth, dilated pupils, flushing, gastrointestinal
+symptoms
+
+
+
+
+<<<PAGE 694>>>
+
+Long-Term Use
+Safe
+Effectiveness may decrease over time, even after a few doses, but
+side effects such as cognitive impairment and sedation may persist
+Habit Forming
+No
+How to Stop
+Tapering generally not necessary
+Pharmacokinetics
+Plasma half-life approximately 8 hours; may be longer in children
+and in the elderly
+Drug Interactions
+May potentiate the effects of other CNS depressants
+If anticholinergic agents are used with diphenhydramine, the
+anticholinergic effects may be enhanced
+Other Warnings/Precautions
+Use with caution in patients with a history of bronchial asthma,
+lower respiratory disease, increased intraocular pressure,
+hyperthyroidism, cardiovascular disease, or hypertension
+
+
+
+
+<<<PAGE 695>>>
+
+May have additive effects if taken with anticholinergic agents
+Do Not Use
+If patient is breast feeding
+In neonates or premature infants
+In patients with glaucoma, particularly angle-closure glaucoma
+In patients with pyloric or duodenal obstruction, stenosing peptic
+ulcers, prostate hypertrophy, or bladder neck obstructions
+If patient is taking an MAOI
+If there is a proven allergy to diphenhydramine
+
+Special populations
+Renal Impairment
+No dose adjustment necessary
+Hepatic Impairment
+No dose adjustment necessary
+Cardiac Impairment
+Not systematically evaluated in patients with cardiac impairment
+Elderly
+
+
+
+
+<<<PAGE 696>>>
+
+Some patients may tolerate lower doses better
+Diphenhydramine injection is preferred for parkinsonism in the
+elderly who are unable to tolerate more potent agents
+Children and Adolescents
+Not recommended for children under age 12
+Injection: 5 mg/kg/24 hours or 150 mg/m2 /24 hours; maximum
+daily dose 300 mg; divide into 4 doses; can be given intravenously
+at a rate not exceeding 25 mg/min, or deep intramuscularly
+Contraindicated in neonates and premature infants
+Pregnancy
+Effective June 30, 2015, the US FDA requires changes to the
+content and format of pregnancy and lactation information in
+prescription drug labels, including the elimination of the pregnancy
+letter categories; the Pregnancy and Lactation Labeling Rule (PLLR
+or final rule) applies only to prescription drugs and will be phased in
+gradually for drugs approved on or after June 30, 2001
+Controlled studies have not been conducted in pregnant women
+Animal studies have not shown adverse effects
+Breast Feeding
+Contraindicated
+
+
+
+
+<<<PAGE 698>>>
+
+Gonzalez F. Diphenhydramine may be useful as a palliative treatment for
+patients dying with Parkinson’s disease and tremors: a case report and
+discussion . Am J Hosp Palliat Care 2010 ;26 (6 ):474 –5 .
+
+
+
+
+<<<PAGE 825>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+In patients with seizure disorders, concomitant medical illness,
+and/or those with multiple concomitant long-term medications,
+periodic liver tests and blood counts may be prudent
+
+Side effects
+How Drug Causes Side Effects
+Same mechanism for side effects as for therapeutic effects –namely
+due to excessive actions at benzodiazepine receptors
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+Long-term adaptations in benzodiazepine receptors may explain the
+development of dependence, tolerance, and withdrawal
+Notable Side Effects
+
+✽ Sedation, fatigue, depression
+✽ Dizziness, ataxia, slurred speech, weakness
+
+
+
+
+<<<PAGE 837>>>
+
+obstructive sleep apnea or restless leg syndrome, which requires
+independent evaluation
+Increase the dose
+Improve sleep hygiene
+Switch to another agent
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+None for healthy individuals
+
+Side effects
+How Drug Causes Side Effects
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+
+✽ Chronic studies of eszopiclone suggest lack of notable tolerance or
+dependence developing over time
+
+
+
+
+<<<PAGE 872>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+In patients with seizure disorders, concomitant medical illness,
+and/or those with multiple concomitant long-term medications,
+periodic liver tests and blood counts may be prudent
+
+Side Effects
+How Drug Causes Side Effects
+Same mechanism for side effects as for therapeutic effects –namely
+due to excessive actions at benzodiazepine receptors
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+Long-term adaptations in benzodiazepine receptors may explain the
+development of dependence, tolerance, and withdrawal
+Notable Side Effects
+
+✽ Sedation, fatigue, depression
+✽ Dizziness, ataxia, slurred speech, weakness
+
+
+
+
+<<<PAGE 946>>>
+
+Switch to another agent
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+In patients with seizure disorders, concomitant medical illness,
+and/or those with multiple concomitant long-term medications,
+periodic liver tests and blood counts may be prudent
+
+Side Effects
+How Drug Causes Side Effects
+Same mechanism for side effects as for therapeutic effects –namely
+due to excessive actions at benzodiazepine receptors
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+Long-term adaptations in benzodiazepine receptors may explain the
+development of dependence, tolerance, and withdrawal
+Notable Side Effects
+
+
+
+
+<<<PAGE 1913>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+In patients with seizure disorders, concomitant medical illness,
+and/or those with multiple concomitant long-term medications,
+periodic liver tests and blood counts may be prudent
+
+Side Effects
+How Drug Causes Side Effects
+Same mechanism for side effects as for therapeutic effects –namely
+due to excessive actions at benzodiazepine receptors
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+Long-term adaptations in benzodiazepine receptors may explain the
+development of dependence, tolerance, and withdrawal
+Notable Side Effects
+
+✽ Sedation, fatigue, depression
+✽ Dizziness, ataxia, slurred speech, weakness
+
+
+
+
+<<<PAGE 1951>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Eszopiclone, zolpidem
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+None for healthy individuals
+For patients presenting with unexplained amenorrhea, galactorrhea,
+decreased libido, or problems with fertility, could consider
+measuring prolactin and testosterone levels
+
+Side Effects
+How Drug Causes Side Effects
+Actions at melatonin receptors that carry over to the next day could
+theoretically cause daytime sedation, fatigue, and sluggishness, but
+this is not common
+
+✽ Sedation
+✽ Dizziness
+
+Notable Side Effects
+
+
+
+
+<<<PAGE 2160>>>
+
+Switch to another agent
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+In patients with seizure disorders, concomitant medical illness,
+and/or those with multiple concomitant long-term medications,
+periodic liver tests and blood counts may be prudent
+
+Side effects
+How Drug Causes Side Effects
+Same mechanism for side effects as for therapeutic effects –namely
+due to excessive actions at benzodiazepine receptors
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+Long-term adaptations in benzodiazepine receptors may explain the
+development of dependence, tolerance, and withdrawal
+Notable Side Effects
+
+
+
+
+<<<PAGE 2284>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+In patients with seizure disorders, concomitant medical illness,
+and/or those with multiple concomitant long-term medications,
+periodic liver tests and blood counts may be prudent
+
+Side effects
+How Drug Causes Side Effects
+Same mechanism for side effects as for therapeutic effects –namely
+due to excessive actions at benzodiazepine receptors
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+Long-term adaptations in benzodiazepine receptors may explain the
+development of dependence, tolerance, and withdrawal
+Notable Side Effects
+
+✽ Sedation, fatigue, depression
+✽ Dizziness, ataxia, slurred speech, weakness
+
+
+
+
+<<<PAGE 2314>>>
+
+Diminishes the excess acetylcholine activity caused by removal of
+dopamine inhibition when dopamine receptors are blocked
+May also inhibit the reuptake and storage of dopamine at central
+dopamine receptors, prolonging dopamine action
+How Long Until It Works
+For drug-induced parkinsonism and in Parkinson’s disease, onset of
+action can be within minutes or hours
+If It Works
+Reduces motor side effects
+Does not lessen the ability of antipsychotics to cause tardive
+dyskinesia
+If It Doesn’t Work
+For drug-induced parkinsonism, increase to highest tolerated dose
+Consider switching to benztropine, diphenhydramine, or a
+benzodiazepine
+Disorders that develop after prolonged antipsychotic use may not
+respond to treatment
+Consider discontinuing the agent that precipitated the parkinsonism
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+
+
+
+
+<<<PAGE 2458>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+Long-term adaptations of zaleplon not well studied, but chronic
+studies of other alpha 1 selective non-benzodiazepine hypnotics
+suggest lack of notable tolerance or dependence developing over
+time
+Notable Side Effects
+
+✽ Sedation
+✽ Dizziness, ataxia
+✽ Dose-dependent amnesia
+
+
+
+
+<<<PAGE 2494>>>
+
+Effects on total wake-time and number of nighttime awakenings
+may be decreased over time
+If It Doesn’t Work
+If insomnia does not improve after 7–10 days, it may be a
+manifestation of a primary psychiatric or physical illness such as
+obstructive sleep apnea or restless leg syndrome, which requires
+independent evaluation
+Increase the dose
+Improve sleep hygiene
+Switch to another agent
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+
+
+
+
+<<<PAGE 2521>>>
+
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Generally, best to switch to another agent
+Trazodone
+Agents with antihistamine actions (e.g., diphenhydramine, TCAs)
+Tests
+None for healthy individuals
+
+Side Effects
+How Drug Causes Side Effects
+Actions at benzodiazepine receptors that carry over to the next day
+can cause daytime sedation, amnesia, and ataxia
+
+✽ Long-term adaptations of zopiclone, a mixture of an active S
+enantiomer and an inactive R enantiomer, have not been well studied,
+but chronic studies of the active isomer eszopiclone suggest lack of
+notable tolerance or dependence developing over time
+Notable Side Effects
+
+✽ Sedation
+✽ Dizziness, ataxia
+✽ Dose-dependent amnesia
+
+
+
+
+<<<PAGE 2571>>>
+
+amphetamine (d), 39
+amphetamine (d,l), 45
+Anafranil (clomipramine), 165
+Anafranil 75 (clomipramine), 165
+Anafranil Retard (clomipramine), 165
+Anatensoi Decanoaat (fluphenazine), 313
+Anatensol (fluphenazine), 313
+Anatensol Concentraat (fluphenazine), 313
+Anatensol Decanoate (fluphenazine), 313
+Ancholactil (chlorpromazine), 153
+Aneural (maprotiline), 465
+Aneurol (diazepam), 229
+Anexate (flumazenil), 293
+Ansilor (lorazepam), 437
+Ansiolin (diazepam), 229
+Ansised (buspirone), 123
+Ansium (diazepam), 229
+Ansium (sulpiride), 741
+Antabuse (disulfiram), 239
+Antalon (pimozide), 627
+Antelepsin (clonazepam), 173
+Anten (doxepin), 255
+Antenex (diazepam), 229
+Antideprin (imipramine), 367
+Antiparkin (selegiline), 705
+Antitussive (diphenhydramine), 235
+Antoderin (oxazepam), 569
+Anxial (buspirone), 123
+
+
+
+
+<<<PAGE 2574>>>
+
+Atensine (diazepam), 229
+Aterax (hydroxyzine), 355
+Athymil (mianserin), 495
+Ativan (lorazepam), 437
+atomoxetine, 79
+Atretol (carbamazepine), 131
+Audilex (clorazepate), 185
+Audium (diazepam), 229
+Aurorix (moclobemide), 515
+Austedo (deutetrabenazine), 221
+Autal (acamprosate), 1
+Avant (haloperidol), 347
+Aventyl (nortriptyline), 551
+Avoxin (fluvoxamine), 325
+Axona (caprylidene), 127
+Axoren (buspirone), 123
+Azene (clorazepate), 185
+Azepa (carbamazepine), 131
+Azepal (carbamazepine), 131
+Azona (trazodone), 793
+Azor (alprazolam), 11
+Azutranquil (oxazepam), 569
+Barclyd (clonidine), 179
+Barhemsys (amisulpride), 17
+Beconerv neu (flurazepam), 321
+Belbuca (buprenorphine), 111
+Beldin (diphenhydramine), 235
+Belivon (risperidone), 687
+
+
+
+
+<<<PAGE 2575>>>
+
+Belix (diphenhydramine), 235
+Belpax (amitriptyline), 25
+Belseren (clorazepate), 185
+Belsomra (suvorexant), 747
+Benadryl (diphenhydramine), 235
+Benpon (nortriptyline), 551
+Bentapam (diazepam), 229
+Benylin (diphenhydramine), 235
+Benzopin (diazepam), 229
+Benzotran (oxazepam), 569
+benztropine, 85
+Berk-Dothiepin (dothiepin), 249
+Besitran (sertraline), 721
+Bespar (buspirone), 123
+Betamaks (sulpiride), 741
+Betamed (diazepam), 229
+Betapam (diazepam), 229
+Bialzepam (diazepam), 229
+Bikalm (zolpidem), 871
+Bioperidolo (haloperidol), 347
+Bioxetin (fluoxetine), 301
+Biron (buspirone), 123
+Biscasil (chlorpromazine), 153
+Biston (carbamazepine), 131
+blonanserin, 89
+Bolvidon (mianserin), 495
+Bortalium (diazepam), 229
+bremelanotide, 95
+
+
+
+
+<<<PAGE 2582>>>
+
+Dexamphetamine (d-amphetamine), 39
+Dexamphetamine sulfate (d-amphetamine), 39
+Dexedrine (d-amphetamine), 39
+Dexedrine Spansules (d-amphetamine), 39
+Dexmethylphenidate (d-methylphenidate), 481
+dextromethorphan, 221
+Dextro Stat (d-amphetamine), 39
+Diaceplex (diazepam), 229
+Diaceplex simple (diazepam), 229
+Diapam (diazepam), 229
+Diaquel (diazepam), 229
+Diastat (diazepam), 229
+Diazemuls (diazepam), 229
+diazepam, 229
+Dibenil (diphenhydramine), 235
+Dicepin B6 (diazepam), 229
+Digton (sulpiride), 741
+Diligan (hydroxyzine), 355
+Dinalexin (fluoxetine), 301
+Diphen (diphenhydramine), 235
+diphenhydramine, 235
+Dipromal (valproate), 829
+Discimer (trifluoperazine), 803
+Distedon (diazepam), 229
+disulfiram, 239
+divalproex (valproate), 829
+Divial (lorazepam), 437
+Dixarit (clonidine), 179
+
+
+
+
+<<<PAGE 2591>>>
+
+Herphonal (trimipramine), 817
+Hetlioz (tasimelteon), 751
+Hexafene (hydroxyzine), 355
+Hexalid (diazepam), 229
+Hibanil (chlorpromazine), 153
+Hibernal (chlorpromazine), 153
+Hipnodane (quazepam), 663
+Hipnosedon (flunitrazepam), 297
+Histilos (hydroxyzine), 355
+Hopacem (mianserin), 495
+Horizant (gabapentin), 331
+Huberplex (chlordiazepoxide), 147
+Hydoic acid (valproate), 829
+Hydophen (clomipramine), 165
+Hydramine (diphenhydramine), 235
+Hydroxyzin (hydroxyzine), 355
+hydroxyzine, 355
+Hydroxyzinum (hydroxyzine), 355
+Hypam (triazolam), 799
+Hypnocalm (flunitrazepam), 297
+Hypnodorm (flunitrazepam), 297
+Hypnor (flunitrazepam), 297
+Hypnorex Retard (lithium), 415
+Hypnovel (midazolam), 499
+Idom (dothiepin), 249
+Iktoviril (clonazepam), 173
+Ilman (flunitrazepam), 297
+iloperidone, 359
+
+
+
+
+<<<PAGE 2616>>>
+
+Serpax (oxazepam), 569
+sertindole, 715
+Sertofren (desipramine), 207
+sertraline, 721
+Serzone (nefazodone), 545
+Setous (zotepine), 883
+Sevinol (fluphenazine), 313
+Sevium (haloperidol), 347
+Sibason (diazepam), 229
+Sicorelax (diazepam), 229
+Sigacalm (oxazepam), 569
+Sigaperidol (haloperidol), 347
+Signopam (temazepam), 755
+sildenafil, 729
+Silenor (doxepin), 255
+Silphen (diphenhydramine), 235
+Sinequan (doxepin), 255
+Sinquan (doxepin), 255
+Sinquane (doxepin), 255
+Siqualone (fluphenazine), 313
+Siqualone Decanoat (fluphenazine), 313
+Siqualone Enantat (fluphenazine), 313
+Sirtal (carbamazepine), 131
+S-ketamine (esketamine), 275
+SK-Pramine (imipramine), 367
+Sobile (oxazepam), 569
+Sobril (oxazepam), 569
+Socian (amisulpride), 17
+
+
+
+
+<<<PAGE 2617>>>
+
+sodium oxybate, 733
+Softramal (clorazepate), 185
+Solarix (moclobemide), 515
+Solian (amisulpride), 17
+Solidon (chlorpromazine), 153
+Solis (diazepam), 229
+solriamfetol, 737
+Somagerol (lorazepam), 437
+Somapam (temazepam), 755
+Somatarax (hydroxyzine), 355
+Sominex (diphenhydramine), 235
+Somniton (triazolam), 799
+Somnium (lorazepam), 437
+Somnol (flurazepam), 321
+Somnubene (flunitrazepam), 297
+Sonata (zaleplon), 859
+Songar (triazolam), 799
+Sovigen (zolpidem), 871
+Spasmilan (buspirone), 123
+Spasmo Praxiten (oxazepam), 569
+Sporalon (trifluoperazine), 803
+Spravato (esketamine), 275
+Spritam (levetiracetam), 399
+Stablon (tianeptine), 777
+Stalleril (thioridazine), 759
+Stamoneurol (sulpiride), 741
+Staurodorm (flurazepam), 321
+Staurodorm Neu (flurazepam), 321
+
+
+
+
+<<<PAGE 2625>>>
+
+valproic acid (valproate), 829
+valpromide (valproate), 829
+Valsera (flunitrazepam), 297
+Vandral (venlafaxine), 841
+varenicline, 837
+Vatran (diazepam), 229
+Venefon (imipramine), 367
+venlafaxine, 841
+venlafaxine XR, 841
+Versacloz (clozapine), 191
+Versed (midazolam), 499
+Vertigo (sulpiride), 741
+Vesadol (haloperidol), 347
+Vesalium (haloperidol), 347
+Vesparax (hydroxyzine), 355
+Vesparax mite (hydroxyzine), 355
+Vesparax Novum (hydroxyzine), 355
+Viagra (sildenafil), 729
+Vicks Formula 44 (diphenhydramine), 235
+Vigiten (lorazepam), 437
+Viibryd (vilazodone), 847
+vilazodone, 847
+Vincosedan (diazepam), 229
+Visergil (thioridazine), 759
+Vistaril (hydroxyzine), 355
+Vivactil (protriptyline), 657
+Vival (diazepam), 229
+Vivapryl (selegiline), 705
+
+
+
+
+<<<PAGE 2640>>>
+
+vilazodone , 847
+vortioxetine , 853
+Drug-induced parkinsonism
+benztropine , 85
+diphenhydramine, 235
+trihexyphenidyl , 809
+Erectile dysfunction
+sildenafil , 729
+Excessive sleepiness
+armodafinil , 65
+modafinil , 521
+pitolisant , 639
+sodium oxybate , 733
+solriamfetol , 737
+tasimelteon, 751
+Fatigue
+armodafinil, 65
+modafinil, 521
+Fibromyalgia
+amitriptyline, 25
+desvenlafaxine, 215
+duloxetine , 263
+levomilnacipran, 403
+milnacipran , 503
+pregabalin , 647
+sodium oxybate, 733
+
+
+
+
+<<<PAGE 2642>>>
+
+prazosin , 643
+propranolol , 653
+Hypoactive sexual desire disorder
+bremelanotide , 95
+flibanserin , 289
+Insomnia
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+clomipramine, 165
+clonazepam, 173
+desipramine, 207
+diazepam, 229
+diphenhydramine , 235
+dothiepin, 249
+doxepin , 255
+estazolam , 281
+eszopiclone , 285
+flunitrazepam, 297
+flurazepam , 321
+hydroxyzine, 355
+imipramine, 367
+lemborexant , 395
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+
+
+
+
+<<<PAGE 2658>>>
+
+Index by Class
+Anticholinergics
+benztropine, 85
+diphenhydramine, 235
+trihexyphenidyl, 809
+Anticonvulsants
+carbamazepine, 131
+clonazepam, 173
+clorazepate (adjunct), 185
+diazepam, 229
+gabapentin, 331
+lamotrigine, 387
+levetiracetam, 399
+lorazepam, 437
+oxcarbazepine, 575
+pregabalin, 647
+tiagabine, 771
+topiramate, 781
+valproate (divalproex), 829
+zonisamide (adjunct), 875
+Antidepressants
+agomelatine, 5
+
+
+
+
+<<<PAGE 2667>>>
+
+zotepine, 883
+zuclopenthixol, 889
+Movement disorder treatments
+benztropine, 85
+deutetrabenazine, 221
+diphenhydramine, 235
+propranolol, 653
+trihexyphenidyl, 809
+valbenazine, 825
+Neuroactive steroid
+brexanolone, 99
+Neuropathic/chronic pain treatments
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+
+

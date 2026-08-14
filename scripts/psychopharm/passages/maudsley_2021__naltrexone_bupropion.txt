@@ -1,0 +1,90 @@
+<<<PAGE 147>>>
+
+CHAPTER 1
+
+126  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Pharmacological methods should be considered only where behavioural treatment
+strategies or switching to a medication with a lower liability for weight gain have failed
+or where obesity presents a clear, immediate physical risk to the patient. Some drug
+treatment options for antipsychotic-induced weight gain are listed (in alphabetical
+order) in Table 1.18. Some treatments recommended in previous editions (e.g., H2
+antagonists) have been removed from this table because evidence no longer supports
+their use.
+Metformin is now probably considered to be the drug of choice for the prevention
+and treatment of antipsychotic-induced weight gain, although GLP-1 agonists may ultimately prove more effective and better tolerated. Bariatric surgery may have a role in a
+few of the rare, severe cases where all else has failed;33 however, the efficacy of bariatric
+surgery for drug-induced weight gain is not known.2
+Table 1.18 Drug treatment of antipsychotic-induced weight gain (alphabetical order)
+Drug
+
+Comments
+
+Amantadine
+(100–300mg/day)
+
+May attenuate olanzapine-related weight gain. Seems to be well tolerated apart from
+insomnia and abdominal discomfort. May (theoretically, at least) exacerbate psychosis.
+Evidence base too limited to recommend2
+
+Alpha-lipoic acid36–38
+(1200mg/day)
+
+Supplementation may lead to a small, short-term, weight loss. Limited data for
+antipsychotic-induced weight gain. Not recommended
+
+Aripiprazole
+augmentation15,32,39
+(5–15mg/day)
+
+RCTs show beneficial effects on weight loss and possibly other metabolic parameters
+when used as an adjunct to clozapine or olanzapine. Adjunctive use appears to be safe
+and unlikely to worsen psychosis. Recommended as a possible option for weight gain
+associated with clozapine or olanzapine. Not recommended with other antipsychotic
+medications
+
+Betahistine40,41
+(48mg/day)
+
+May attenuate olanzapine-induced weight gain. Limited data. Not recommended
+
+Bupropion42,43
+(amfebutamone)
+
+Seems to be effective in obesity when combined with calorie-restricted diets. Appears
+to not exacerbate psychosis symptoms, at least when used for smoking cessation.44
+Few data of its effects on drug-induced weight gain. Not recommended
+
+Bupropion + naltrexone
+(Contrave/Mysimba)45
+
+Combination approved for weight management as an adjunct to diet and exercise.
+No data in drug-induced weight gain. Not recommended, but should not be ruled
+out
+
+Fluvoxamine46–48
+(50mg/day)
+
+Earlier conflicting data but one short term RCT shows attenuated clozapine-induced
+weight gain (possibly related to a higher clozapine to norclozapine ratio).
+Co-administration markedly increases clozapine levels, requiring extreme caution.
+Evidence base is too limited to recommend
+
+Liraglutide49,50
+(3mg/day via
+subcutaneous injection)
+
+GLP-1 agonist that was previously approved for type 2 diabetes and more recently
+approved as an anti-obesity agent in non-diabetic patients. Dose for weight loss
+(3mg/day) is higher than the dose used for diabetes (≤1.8mg). Limited data in
+drug-induced weight gain. One RCT shows significant weight loss in overweight
+pre-diabetic patients stable on olanzapine or clozapine.49 Beneficial effects on other
+metabolic parameters. Well tolerated but can cause GI disturbances. Recommended
+option in pre-diabetic/diabetic patients and clozapine-induced weight gain.
+Other GLP-1 agonists are currently only approved for diabetes and have a more
+limited dose range. Exenatide LA (a once-weekly GLP-1 agonist) may be effective for
+weight loss in clozapine-treated patients51 but perhaps not with other antipsychotics52
+
+34,35
+
+

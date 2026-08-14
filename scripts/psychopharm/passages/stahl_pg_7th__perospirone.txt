@@ -1,0 +1,455 @@
+<<<PAGE 10>>>
+
+82 methylphenidate (d,l)
+83 mianserin
+84 midazolam
+85 milnacipran
+86 mirtazapine
+87 moclobemide
+88 modafinil
+89 molindone
+90 nalmefene
+91 naltrexone
+92 naltrexone/bupropion
+93 nefazodone
+94 nortriptyline
+95 olanzapine
+96 oxazepam
+97 oxcarbazepine
+98 paliperidone
+99 paroxetine
+100 perospirone
+101 perphenazine
+102 phenelzine
+103 phentermine/topiramate
+104 pimavanserin
+105 pimozide
+106 pipothiazine
+107 pitolisant
+108 prazosin
+109 pregabalin
+
+
+
+
+<<<PAGE 1730>>>
+
+Perospirone
+
+Therapeutics
+Brands
+Lullan
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: dopamine and serotonin
+receptor antagonist (DS-RAn)
+Atypical antipsychotic (serotonin-dopamine antagonist, secondgeneration antipsychotic)
+Commonly Prescribed for
+(bold for FDA approved)
+Schizophrenia (Japan)
+How the Drug Works
+Blocks dopamine 2 receptors, reducing positive symptoms of
+psychosis
+
+
+
+
+<<<PAGE 1733>>>
+
+Consider initiating rehabilitation and psychotherapy such as
+cognitive remediation
+Consider presence of concomitant drug abuse
+Best Augmenting Combos for Partial Response or Treatment
+Resistance
+Augmentation of perospirone has not been systematically studied
+Addition of a benzodiazepine, especially short-term for agitation
+Addition of a mood-stabilizing anticonvulsant such as valproate,
+carbamazepine, or lamotrigine may theoretically be helpful in both
+schizophrenia and bipolar mania
+Augmentation with lithium in bipolar mania may be helpful
+Tests
+
+✽ Potential of weight gain, diabetes, and dyslipidemia associated with
+perospirone has not been systematically studied, but patients should be
+monitored the same as for other atypical antipsychotics
+Before starting an atypical antipsychotic
+
+✽ Weigh all patients and track BMI during treatment
+
+Get baseline personal and family history of diabetes, obesity,
+dyslipidemia, hypertension, and cardiovascular disease
+
+✽ Get waist circumference (at umbilicus), blood pressure, fasting
+plasma glucose, and fasting lipid profile
+
+
+
+
+<<<PAGE 1735>>>
+
+pre-diabetic, diabetic, hypertensive, or dyslipidemic while receiving
+an atypical antipsychotic
+
+✽ Even in patients without known diabetes, be vigilant for the rare but
+life-threatening onset of diabetic ketoacidosis, which always requires
+immediate treatment, by monitoring for the rapid onset of polyuria,
+polydipsia, weight loss, nausea, vomiting, dehydration, rapid
+respiration, weakness, and clouding of sensorium, even coma
+Should check blood pressure in the elderly before starting and for
+the first few weeks of treatment
+Patients with low white blood cell count (WBC) or history of druginduced leukopenia/neutropenia should have complete blood count
+(CBC) monitored frequently during the first few months and
+perospirone should be discontinued at the first sign of decline of
+WBC in the absence of other causative factors
+Patients should be monitored periodically for the development of
+abnormal movements of tardive dyskinesia, using neurological
+exam and the AIMS (Abnormal Involuntary Movement Scale)
+
+Side Effects
+How Drug Causes Side Effects
+Acute blockade of dopamine 2 receptors in the striatum can cause
+drug-induced parkinsonism, dystonia, or akathisia
+
+
+
+
+<<<PAGE 1736>>>
+
+Chronic blockade of dopamine 2 receptors in the striatum can cause
+tardive dyskinesia
+By blocking dopamine 2 receptors in the pituitary, it can cause
+elevations in prolactin
+Mechanism of weight gain and increased incidence of diabetes and
+dyslipidemia with atypical antipsychotics is unknown, and risks
+vary based on the particular agent
+Receptor binding portfolio of perospirone is not well characterized
+Notable Side Effects
+
+✽ Drug-induced parkinsonism, akathisia
+✽ Insomnia
+
+Sedation, anxiety, weakness, headache, anorexia, constipation
+Tardive dyskinesia (reduced risk compared to conventional
+antipsychotics)
+Risk of potentially irreversible involuntary dyskinetic movements
+may increase with cumulative dose and treatment duration
+Elevated creatine phosphokinase levels
+Life-Threatening or Dangerous Side Effects
+Rare neuroleptic malignant syndrome (NMS) may cause
+hyperpyrexia, muscle rigidity, delirium, and autonomic instability
+
+
+
+
+<<<PAGE 1740>>>
+
+Long-Term Use
+Should periodically reevaluate long-term usefulness in individual
+patients, but treatment may need to continue for many years
+Habit Forming
+No
+How to Stop
+Slow down-titration (over 6–8 weeks), especially when
+simultaneously beginning a new antipsychotic while switching (i.e.,
+cross-titration)
+Rapid discontinuation may lead to rebound psychosis and worsening
+of symptoms
+If antiparkinson agents are being used, they should be continued for
+a few weeks after perospirone is discontinued
+Pharmacokinetics
+Metabolized primarily by CYP450 3A4
+No active metabolites
+Drug Interactions
+Ketaconazole and possibly other CYP450 3A4 inhibitors such as
+nefazodone, fluvoxamine, and fluoxetine may increase plasma
+levels of perospirone
+
+
+
+
+<<<PAGE 1741>>>
+
+Carbamazepine and possibly other inducers of CYP450 3A4 may
+decrease plasma levels of perospirone
+Other Warnings/Precautions
+Use with caution in patients with conditions that predispose to
+hypotension (dehydration, overheating)
+Atypical antipsychotics have the potential for cognitive and motor
+impairment, especially related to sedation
+Atypical antipsychotics can cause body temperature dysregulation;
+use caution in patients who may experience conditions that increase
+body temperature (e.g., strenuous exercise, saunas, extreme heat,
+dehydration, or concomitant anticholinergic medication)
+Dysphagia has been associated with antipsychotic use, and
+perospirone should be used cautiously in patients at risk for
+aspiration pneumonia
+Antipsychotics may cause somnolence, postural hypotension, motor
+and sensory instability, which may lead to falls; for patients with
+diseases, conditions, or medications that could exacerbate these
+effects, complete fall risk assessments when initiating antipsychotic
+treatment, and recurrently for patients on long-term antipsychotic
+therapy
+As with any antipsychotic, use with caution in patients with history
+of seizures
+Do Not Use
+
+
+
+
+<<<PAGE 1742>>>
+
+If there is a proven allergy to perospirone
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Use in patients with cardiac impairment has not been studied, so use
+with caution because of risk of orthostatic hypotension
+Use with caution if patient is taking concomitant antihypertensive or
+alpha 1 antagonist
+Elderly
+Some patients may tolerate lower doses better
+Although atypical antipsychotics are commonly used for behavioral
+disturbances in dementia, no agent has been approved for treatment
+of elderly patients with behavioral symptoms of dementia such as
+agitation
+Elderly patients with dementia-related psychosis treated with
+atypical antipsychotics are at an increased risk of death compared to
+
+
+
+
+<<<PAGE 1743>>>
+
+placebo, and also have an increased risk of cerebrovascular events
+Children and Adolescents
+Use with caution
+Pregnancy
+There is a risk of abnormal muscle movements and withdrawal
+symptoms in newborns whose mothers took an antipsychotic during
+the third trimester; symptoms may include agitation, abnormally
+increased or decreased muscle tone, tremor, sleepiness, severe
+difficulty breathing, and difficulty feeding
+Psychotic symptoms may worsen during pregnancy and some form
+of treatment may be necessary
+Breast Feeding
+Unknown if perospirone is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+Infants of women who choose to breast feed should be monitored
+for possible adverse effects
+
+The Art of Psychopharmacology
+Potential Advantages
+
+
+
+
+<<<PAGE 1745>>>
+
+Ohno Y . Pharmacological characteristics of perospirone hydrochloride, a
+novel antipsychotic agent . Nippon Yakurigaku Zasshi 2000 ;116 (4 ):225–
+31 .
+
+
+
+
+<<<PAGE 2597>>>
+
+Lorsilan (lorazepam), 437
+Lorzem (lorazepam), 437
+Lovan (fluoxetine), 301
+Loxapac (loxapine), 443
+loxapine, 443
+Loxitane (loxapine), 443
+Lucemyra (lofexidine), 427
+Ludiomil (maprotiline), 465
+Lullan (perospirone), 601
+lumateperone, 451
+Lumin (mianserin), 495
+Lunesta (eszopiclone), 285
+lurasidone, 457
+Lustral (sertraline), 721
+Luvox (fluvoxamine), 325
+Luvox SR (fluvoxamine), 325
+Lyogen (fluphenazine), 313
+Lyogen Depot (fluphenazine), 313
+Lyoridin Depot (fluphenazine), 313
+Lyorodin (fluphenazine), 313
+Lyrica (pregabalin), 647
+Lyrica CR (pregabalin), 647
+
+
+
+
+<<<PAGE 2607>>>
+
+Parmodalin (tranylcypromine), 787
+Parmodalin (trifluoperazine), 803
+Parnate (tranylcypromine), 787
+paroxetine, 593
+paroxetine CR, 593
+Parstelin (tranylcypromine), 787
+Parstelin (trifluoperazine), 803
+Pasrin (buspirone), 123
+Pax (diazepam), 229
+Paxal (alprazolam), 11
+Paxam (clonazepam), 173
+Paxil (paroxetine), 593
+Paxil CR (paroxetine CR), 593
+Paxium (chlordiazepoxide), 147
+Paxtibi (nortriptyline), 551
+Pazolan (alprazolam), 11
+Pefanium/Pefanic (chlordiazepoxide), 147
+Peratsin (perphenazine), 607
+Peratsin Dekanoaatti (perphenazine), 607
+Peratsin Enantaati (perphenazine), 607
+Perfenazin (perphenazine), 607
+Peridol (haloperidol), 347
+Permitil (fluphenazine), 313
+perospirone, 601
+perphenazine, 607
+Perseris (risperidone injection), 687
+Pertofrane (desipramine), 207
+Pertofrin (desipramine), 207
+
+
+
+
+<<<PAGE 2651>>>
+
+lamotrigine (adjunct), 387
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin , 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+valproate (divalproex) (adjunct), 829
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Restless leg syndrome
+gabapentin ER , 331
+Schizoaffective disorder
+
+
+
+
+<<<PAGE 2652>>>
+
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine, 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol, 347
+iloperidone, 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct), 477
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone , 581
+perospirone, 601
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+
+
+
+
+<<<PAGE 2654>>>
+
+paliperidone , 581
+perospirone, 601
+perphenazine , 607
+pipothiazine, 633
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine , 759
+thiothixene , 765
+trifluoperazine , 803
+valproate (divalproex) (adjunct), 829
+ziprasidone , 863
+zotepine, 883
+zuclopenthixol, 889
+Seasonal affective disorder
+bupropion , 117
+Sedation-induction
+hydroxyzine , 355
+ketamine, 383
+midazolam , 499
+Seizure disorders
+carbamazepine , 131
+clonazepam , 173
+clorazepate (adjunct), 185
+diazepam , 229
+
+
+
+
+<<<PAGE 2661>>>
+
+iloperidone, 359
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin, 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Anxiolytics
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone, 123
+
+

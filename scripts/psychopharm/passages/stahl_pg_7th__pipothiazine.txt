@@ -1,0 +1,502 @@
+<<<PAGE 10>>>
+
+82 methylphenidate (d,l)
+83 mianserin
+84 midazolam
+85 milnacipran
+86 mirtazapine
+87 moclobemide
+88 modafinil
+89 molindone
+90 nalmefene
+91 naltrexone
+92 naltrexone/bupropion
+93 nefazodone
+94 nortriptyline
+95 olanzapine
+96 oxazepam
+97 oxcarbazepine
+98 paliperidone
+99 paroxetine
+100 perospirone
+101 perphenazine
+102 phenelzine
+103 phentermine/topiramate
+104 pimavanserin
+105 pimozide
+106 pipothiazine
+107 pitolisant
+108 prazosin
+109 pregabalin
+
+
+
+
+<<<PAGE 1823>>>
+
+Pipothiazine
+
+Therapeutics
+Brands
+Piportil
+see index for additional brand names
+Generic?
+No
+Class
+Neuroscience-based Nomenclature: dopamine receptor antagonist
+(D-RAn)
+Conventional antipsychotic (neuroleptic, phenothiazine, dopamine 2
+antagonist)
+Commonly Prescribed for
+(bold for FDA approved)
+Maintenance treatment of schizophrenia
+Other psychotic disorders
+Bipolar disorder
+
+
+
+
+<<<PAGE 1827>>>
+
+pipothiazine should be discontinued at the first sign of decline of
+WBC in the absence of other causative factors
+Patients should be monitored periodically for the development of
+abnormal movements of tardive dyskinesia, using neurological
+exam and the AIMS (Abnormal Involuntary Movement Scale)
+
+Side Effects
+How Drug Causes Side Effects
+Acute blockade of dopamine 2 receptors in the striatum can cause
+drug-induced parkinsonism, dystonia, or akathisia
+Chronic blockade of dopamine 2 receptors in the striatum can cause
+tardive dyskinesia
+By blocking dopamine 2 receptors in the pituitary, it can cause
+elevations in prolactin
+By blocking dopamine 2 receptors excessively in the mesocortical
+and mesolimbic dopamine pathways, especially at high doses, it can
+cause worsening of negative and cognitive symptoms (neurolepticinduced deficit syndrome)
+Blocking muscarinic cholinergic receptors can cause dry mouth,
+blurred vision, urinary retention, constipation, and paralytic ileus
+Antihistaminic actions may cause sedation, weight gain
+Blocking alpha 1 adrenergic receptors can cause dizziness,
+hypotension, and syncope
+
+
+
+
+<<<PAGE 1832>>>
+
+How to Stop
+If antiparkinson agents are being used, they should be continued for
+a few weeks after pipothiazine is discontinued
+Pharmacokinetics
+Onset of action of palmitic ester formulation within 2–3 days
+Duration of action of palmitic ester formulation 3–6 weeks
+Drug Interactions
+Use with TCAs may increase risk of cardiac symptoms
+CNS effects may be increased if used with other CNS depressants
+May increase the effects of antihypertensive agents
+May decrease the effects of amphetamines, levodopa, dopamine
+agonists, clonidine, guanethidine, adrenaline
+Effects may be reduced by anticholinergic agents
+Antacids, antiparkinson drugs, and lithium may reduce pipothiazine
+absorption
+Combined use with epinephrine may lower blood pressure
+Some patients taking a neuroleptic and lithium have developed an
+encephalopathic syndrome similar to neuroleptic malignant
+syndrome
+Other Warnings/Precautions
+
+
+
+
+<<<PAGE 1833>>>
+
+Patients may be more sensitive to extreme temperatures
+Use with caution in patients with Parkinson’s disease, Lewy body
+dementia, or drug-induced parkinsonism with previous treatments
+Avoid undue exposure to sunlight
+Use with caution in patients with respiratory disease, Lewy body
+dementia, angle-closure glaucoma (including family history),
+alcohol withdrawal syndrome, brain damage, epilepsy,
+hypothyroidism, myaesthenia gravis, prostatic hypertrophy,
+thyrotoxicosis
+Contact with skin can cause rash
+Antiemetic effect can mask signs of other disorders or overdose
+Do not use epinephrine in event of overdose as interaction with
+some pressor agents may lower blood pressure
+Do Not Use
+If patient is comatose
+If there is cerebral atherosclerosis
+If patient has phaeochromocytoma
+If patient has renal or liver failure, blood dyscrasias
+If patient has severe cardiac impairment
+If patient has subcortical brain damage
+If there is a proven allergy to pipothiazine
+
+
+
+
+<<<PAGE 1835>>>
+
+Children and Adolescents
+Not recommended for use in children
+Pregnancy
+There is a risk of abnormal muscle movements and withdrawal
+symptoms in newborns whose mothers took an antipsychotic during
+the third trimester; symptoms may include agitation, abnormally
+increased or decreased muscle tone, tremor, sleepiness, severe
+difficulty breathing, and difficulty feeding
+Reports of drug-induced parkinsonism, jaundice, hyperreflexia,
+hyporeflexia in infants whose mothers took a phenothiazine during
+pregnancy
+Not recommended unless absolutely necessary
+Psychotic symptoms may worsen during pregnancy and some form
+of treatment may be necessary
+Atypical antipsychotics may be preferable to conventional
+antipsychotics or anticonvulsant mood stabilizers if treatment is
+required during pregnancy
+Breast Feeding
+Unknown if pipothiazine is secreted in human breast milk, but all
+psychotropics are assumed to be secreted in breast milk
+
+✽ Recommended either to discontinue drug or bottle feed
+
+
+
+
+<<<PAGE 1836>>>
+
+The Art of Psychopharmacology
+Potential Advantages
+Noncompliant patients
+Potential Disadvantages
+Patients who need immediate onset of antipsychotic actions
+Primary Target Symptoms
+Positive symptoms of psychosis
+Negative symptoms of psychosis
+Aggressive symptoms
+Pearls
+Pipothiazine is a higher potency phenothiazine
+Less risk of sedation and orthostatic hypotension but greater risk of
+drug-induced parkinsonism than with low-potency phenothiazines
+
+✽ Only available in long-acting parenteral formulation
+
+Generally, patients must be stabilized on an oral antipsychotic prior
+to switching to parenteral long-acting pipothiazine
+Patients have very similar antipsychotic responses to any
+conventional antipsychotic, which is different from atypical
+antipsychotics where antipsychotic responses of individual patients
+
+
+
+
+<<<PAGE 1837>>>
+
+can occasionally vary greatly from one atypical antipsychotic to
+another
+Patients with inadequate responses to atypical antipsychotics may
+benefit from a trial of augmentation with a conventional
+antipsychotic such as pipothiazine or from switching to a
+conventional antipsychotic such as pipothiazine
+However, long-term polypharmacy with a combination of a
+conventional antipsychotic with an atypical antipsychotic such as
+pipothiazine may combine their side effects without clearly
+augmenting the efficacy of either
+Although a frequent practice by some prescribers, adding 2
+conventional antipsychotics together has little rationale and may
+reduce tolerability without clearly enhancing efficacy
+For treatment-resistant patients, especially those with impulsivity,
+aggression, violence, and self-harm, long-term polypharmacy with 2
+atypical antipsychotics or with 1 atypical antipsychotic and 1
+conventional antipsychotic may be useful or even necessary while
+closely monitoring
+In such cases, it may be beneficial to combine 1 depot antipsychotic
+with 1 oral antipsychotic
+
+Suggested Reading
+
+
+
+
+<<<PAGE 1838>>>
+
+Leong OK , Wong KE , Tay WK , Gill RC . A comparative study of
+pipothiazine palmitate and fluphenazine decanoate in the maintenance of
+remission of schizophrenia . Singapore Med J 1989 ;30 (5 ):436–40 .
+Quraishi S , David A . Depot pipothiazine palmitate and undecylenate for
+schizophrenia . Cochrane Database Syst Rev 2001 ;(3 ):CD001720 .
+Schmidt K . Pipothiazine palmitate: a versatile, sustained-action neuroleptic
+in psychiatric practice . Curr Med Res Opin 1986 ;10 (5 ):326–9 .
+
+
+
+
+<<<PAGE 2596>>>
+
+Lithiumorotat (lithium), 415
+Lithizine (lithium), 415
+Lithobid (lithium), 415
+Lithonate (lithium), 415
+Lithostat (lithium), 415
+Lito (lithium), 415
+Litoduron (lithium), 415
+L-ketamine (esketamine), 275
+l-methylfolate, 477
+Lodopin (zotepine), 883
+lofepramine, 421
+lofexidine, 427
+loflazepate, 431
+Lomesta (lorazepam), 437
+Lonasen (blonanserin), 89
+Lonseren (pipothiazine), 633
+Lorabenz (lorazepam), 437
+Lorafen (lorazepam), 437
+Loram (lorazepam), 437
+Lorans (lorazepam), 437
+Lorapam (lorazepam), 437
+lorazepam, 437
+Lorenin (lorazepam), 437
+Loridem (lorazepam), 437
+Lorien (fluoxetine), 301
+Lorivan (lorazepam), 437
+Lorsedal (lorazepam), 437
+Lorsifar (lorazepam), 437
+
+
+
+
+<<<PAGE 2608>>>
+
+Phasal (lithium), 415
+phenelzine, 613
+phentermine/topiramate, 619
+Piefol (trifluoperazine), 803
+pimavanserin, 623
+pimozide, 627
+Piportil (pipothiazine), 633
+Piportil Depot (pipothiazine), 633
+Piportil L4 (pipothiazine), 633
+Piportil Longum-4 (pipothiazine), 633
+Piportil palmitate (pipothiazine), 633
+Piportyl palmitat (pipothiazine), 633
+pipothiazine, 633
+Pipotiazine (pipothiazine), 633
+Pirium (pimozide), 627
+pitolisant, 639
+Placidia (lorazepam), 437
+Placil (clomipramine), 165
+Placinoral (lorazepam), 437
+Planum (temazepam), 755
+Plegomazin (chlorpromazine), 153
+Plenur (lithium), 415
+Plurimen (selegiline), 705
+PMS-carbamazepine (carbamazepine), 131
+PMS-Clonazepam (clonazepam), 173
+PMS-Desipramine (desipramine), 207
+PMS-Fluoxetine (fluoxetine), 301
+PMS-Fluphenazine (fluphenazine), 313
+
+
+
+
+<<<PAGE 2634>>>
+
+cyamemazine, 201
+doxepin , 255
+fluoxetine, 301
+flupenthixol, 307
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam, 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+
+
+
+
+<<<PAGE 2651>>>
+
+lamotrigine (adjunct), 387
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin , 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+valproate (divalproex) (adjunct), 829
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Restless leg syndrome
+gabapentin ER , 331
+Schizoaffective disorder
+
+
+
+
+<<<PAGE 2652>>>
+
+amisulpride, 17
+aripiprazole, 53
+asenapine, 71
+blonanserin, 89
+brexpiprazole, 103
+carbamazepine (adjunct), 131
+cariprazine, 137
+chlorpromazine, 153
+clozapine , 191
+cyamemazine, 201
+flupenthixol, 307
+haloperidol, 347
+iloperidone, 359
+lamotrigine (adjunct), 387
+l-methylfolate (adjunct), 477
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone , 581
+perospirone, 601
+perphenazine, 607
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+
+
+
+
+<<<PAGE 2654>>>
+
+paliperidone , 581
+perospirone, 601
+perphenazine , 607
+pipothiazine, 633
+quetiapine , 667
+risperidone , 687
+sertindole, 715
+sulpiride, 741
+thioridazine , 759
+thiothixene , 765
+trifluoperazine , 803
+valproate (divalproex) (adjunct), 829
+ziprasidone , 863
+zotepine, 883
+zuclopenthixol, 889
+Seasonal affective disorder
+bupropion , 117
+Sedation-induction
+hydroxyzine , 355
+ketamine, 383
+midazolam , 499
+Seizure disorders
+carbamazepine , 131
+clonazepam , 173
+clorazepate (adjunct), 185
+diazepam , 229
+
+
+
+
+<<<PAGE 2661>>>
+
+iloperidone, 359
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+paliperidone, 581
+perospirone, 601
+perphenazine, 607
+pimavanserin, 623
+pimozide, 627
+pipothiazine, 633
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+sulpiride, 741
+thioridazine, 759
+thiothixene, 765
+trifluoperazine, 803
+ziprasidone, 863
+zotepine, 883
+zuclopenthixol, 889
+Anxiolytics
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+buspirone, 123
+
+
+
+
+<<<PAGE 2666>>>
+
+fluphenazine, 313
+gabapentin (adjunct), 331
+haloperidol, 347
+iloperidone, 359
+lamotrigine, 387
+levetiracetam (adjunct), 399
+lithium, 415
+lorazepam (adjunct), 437
+loxapine, 443
+lumateperone, 451
+lurasidone, 457
+molindone, 527
+olanzapine, 559
+olanzapine/fluoxetine combination, 301 , 559
+oxcarbazepine, 575
+paliperidone, 581
+perphenazine, 607
+pipothiazine, 633
+pregabalin (adjunct), 647
+quetiapine, 667
+risperidone, 687
+sertindole, 715
+thiothixene, 765
+topiramate (adjunct), 781
+trifluoperazine, 803
+valproate (divalproex), 829
+ziprasidone, 863
+zonisamide, 875
+
+

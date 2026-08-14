@@ -1,0 +1,743 @@
+<<<PAGE 9>>>
+
+54 flurazepam
+55 fluvoxamine
+56 gabapentin
+57 galantamine
+58 guanfacine
+59 haloperidol
+60 hydroxyzine
+61 iloperidone
+62 imipramine
+63 isocarboxazid
+64 ketamine
+65 lamotrigine
+66 lemborexant
+67 levetiracetam
+68 levomilnacipran
+69 lisdexamfetamine
+70 lithium
+71 lofepramine
+72 lofexidine
+73 loflazepate
+74 lorazepam
+75 loxapine
+76 lumateperone
+77 lurasidone
+78 maprotiline
+79 memantine
+80 methylfolate (l)
+81 methylphenidate (d)
+
+
+
+
+<<<PAGE 620>>>
+
+Distribute the brochures provided by the FDA and the drug
+companies
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is recovering from myocardial infarction
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to desipramine, imipramine, or
+lofepramine
+
+Special populations
+
+
+
+
+<<<PAGE 1093>>>
+
+Whenever possible, warn patients and their caregivers about the
+possibility of activating side effects, and advise them to report such
+symptoms immediately
+Monitor patients for activation of suicidal ideation, especially
+children and adolescents
+Do Not Use
+If patient is recovering from myocardial infarction
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to imipramine, desipramine, or
+lofepramine
+
+Special Populations
+Renal Impairment
+Cautious use; may need lower dose
+
+
+
+
+<<<PAGE 1228>>>
+
+Lofepramine
+
+Therapeutics
+Brands
+Deprimyl
+Gamanil
+see index for additional brand names
+Generic?
+Yes
+Class
+Neuroscience-based Nomenclature: serotonin, norepinephrine
+reuptake inhibitor (SN-RI)
+Tricyclic antidepressant (TCA)
+Predominantly a norepinephrine/noradrenaline reuptake inhibitor
+Commonly Prescribed for
+(bold for FDA approved)
+Major depressive disorder
+Anxiety
+Insomnia
+
+
+
+
+<<<PAGE 1229>>>
+
+Neuropathic pain/chronic pain
+Treatment-resistant depression
+How the Drug Works
+Boosts neurotransmitter norepinephrine/noradrenaline
+Blocks norepinephrine reuptake pump (norepinephrine transporter),
+presumably increasing noradrenergic neurotransmission
+Since dopamine is inactivated by norepinephrine reuptake in frontal
+cortex, which largely lacks dopamine transporters, lofepramine can
+increase dopamine neurotransmission in this part of the brain
+A more potent inhibitor of norepinephrine reuptake pump than
+serotonin reuptake pump (serotonin transporter)
+At high doses may also boost neurotransmitter serotonin and
+presumably increase serotonergic neurotransmission
+How Long Until It Works
+May have immediate effects in treating insomnia or anxiety
+Onset of therapeutic actions usually not immediate, but often
+delayed 2–4 weeks
+If it is not working within 6–8 weeks for depression, it may require
+a dosage increase or it may not work at all
+May continue to work for many years to prevent relapse of
+symptoms
+
+
+
+
+<<<PAGE 1238>>>
+
+May alter effects of antihypertensive drugs; may inhibit hypotensive
+effects of clonidine
+Use with sympathomimetic agents may increase sympathetic
+activity
+Methylphenidate may inhibit metabolism of TCAs
+Activation and agitation, especially following switching or adding
+antidepressants, may represent the induction of a bipolar state,
+especially a mixed dysphoric bipolar II condition sometimes
+associated with suicidal ideation, and require the addition of lithium,
+a mood stabilizer or an atypical antipsychotic, and/or
+discontinuation of lofepramine
+Other Warnings/Precautions
+Add or initiate other antidepressants with caution for up to 2 weeks
+after discontinuing lofepramine
+Generally, do not use with MAOIs, including 14 days after MAOIs
+are stopped; do not start an MAOI for at least 5 half-lives (5 to 7
+days for most drugs) after discontinuing lofepramine, but see Pearls
+Use with caution in patients with history of seizure, urinary
+retention, angle-closure glaucoma, hyperthyroidism
+TCAs can increase QTc interval, especially at toxic doses, which
+can be attained not only by overdose but also by combining with
+drugs that inhibit its metabolism via CYP450 2D6, potentially
+causing torsade de pointes-type arrhythmia or sudden death
+
+
+
+
+<<<PAGE 1240>>>
+
+If patient is taking agents capable of significantly prolonging QTc
+interval (e.g., pimozide, thioridazine, selected antiarrhythmics,
+moxifloxacin, sparfloxacin)
+If there is a history of QTc prolongation or cardiac arrhythmia,
+recent acute myocardial infarction, uncompensated heart failure
+If patient is taking drugs that inhibit TCA metabolism, including
+CYP450 2D6 inhibitors, except by an expert
+If there is reduced CYP450 2D6 function, such as patients who are
+poor 2D6 metabolizers, except by an expert and at low doses
+If there is a proven allergy to lofepramine, desipramine, or
+imipramine
+
+Special Populations
+Renal Impairment
+Use with caution
+Hepatic Impairment
+Use with caution
+Cardiac Impairment
+Baseline ECG is recommended
+TCAs have been reported to cause arrhythmias, prolongation of
+conduction time, orthostatic hypotension, sinus tachycardia, and
+
+
+
+
+<<<PAGE 1241>>>
+
+heart failure, especially in the diseased heart
+Myocardial infarction and stroke have been reported with TCAs
+TCAs produce QTc prolongation, which may be enhanced by the
+existence of bradycardia, hypokalemia, congenital or acquired long
+QTc interval, which should be evaluated prior to administering
+lofepramine
+Use with caution if treating concomitantly with a medication likely
+to produce prolonged bradycardia, hypokalemia, slowing of
+intracardiac conduction, or prolongation of the QTc interval
+Avoid TCAs in patients with a known history of QTc prolongation,
+recent acute myocardial infarction, and uncompensated heart failure
+TCAs may cause a sustained increase in heart rate in patients with
+ischemic heart disease and may worsen (decrease) heart rate
+variability, an independent risk of mortality in cardiac populations
+Since SSRIs may improve (increase) heart rate variability in patients
+following a myocardial infarct and may improve survival as well as
+mood in patients with acute angina or following a myocardial
+infarction, these are more appropriate agents for cardiac population
+than tricyclic/tetracyclic antidepressants
+
+✽ Risk/benefit ratio may not justify use of TCAs in cardiac
+impairment
+Elderly
+Baseline ECG is recommended for patients over age 50
+
+
+
+
+<<<PAGE 1245>>>
+
+TCAs continue to be useful for severe or treatment-resistant
+depression
+Noradrenergic reuptake inhibitors such as lofepramine can be used
+as a second-line treatment for smoking cessation, cocaine
+dependence, and attention deficit disorder
+
+✽ Lofepramine is a short-acting prodrug of the TCA desipramine
+✽ Fewer anticholinergic side effects, particularly sedation, than some
+other tricyclics
+Once a popular TCA in the UK but not widely marketed throughout
+the world
+TCAs may aggravate psychotic symptoms
+Alcohol should be avoided because of additive CNS effects
+Underweight patients may be more susceptible to adverse
+cardiovascular effects
+Children, patients with inadequate hydration, and patients with
+cardiac disease may be more susceptible to TCA-induced
+cardiotoxicity than healthy adults
+For the expert only: although generally prohibited, a heroic
+treatment (but potentially dangerous) for severely treatmentresistant patients is to give a tricyclic/tetracyclic antidepressant
+other than clomipramine simultaneously with an MAOI for patients
+who fail to respond to numerous other antidepressants
+
+
+
+
+<<<PAGE 1247>>>
+
+Suggested Reading
+Anderson IM . Selective serotonin reuptake inhibitors versus tricyclic
+antidepressants: a meta-analysis of efficacy and tolerability . J Aff Disorders
+2000 ;58 :19 –36 .
+Anderson IM . Meta-analytical studies on new antidepressants . Br Med
+Bull 2001 ;57 :161–78 .
+Kerihuel JC , Dreyfus JF . Meta-analyses of the efficacy and tolerability of
+the tricyclic antidepressant lofepramine . J Int Med Res 1991 ;19 :183 –201
+.
+Lancaster SG , Gonzales JP . Lofepramine. A review of its
+pharmacodynamic and pharmacokinetic properties, and therapeutic efficacy
+in depressive illness . Drugs 1989 ;37 :123–40 .
+
+
+
+
+<<<PAGE 2580>>>
+
+Decanoate (haloperidol), 347
+Decazate (fluphenazine), 313
+Decentan (fluphenazine), 313
+Decentan (perphenazine), 607
+Decentan-Depot (perphenazine), 607
+Defanyl (amoxapine), 33
+Defobin (chlordiazepoxide), 147
+Deftan (lofepramine), 421
+Degranol (carbamazepine), 131
+Delepsine (valproate), 829
+Delgian (maprotiline), 465
+Delsym (dextromethorphan), 225
+Demolox (amoxapine), 33
+Deniban (amisulpride), 17
+Denion (diazepam), 229
+Depacon (valproate), 829
+Depakene (valproate), 829
+Depakine (LA) (valproate), 829
+Depakine Chrono (valproate), 829
+Depakine Zuur (valproate), 829
+Depakote (valproate), 829
+Depakote ER (valproate), 829
+Depakote sprinkle (valproate), 829
+Depamide (valproate), 829
+Deparkin (valproate), 829
+Depex (sulpiride), 741
+Depixol (flupenthixol), 307
+Depixol-Conc (flupenthixol), 307
+
+
+
+
+<<<PAGE 2581>>>
+
+Deplin (l-methylfolate), 477
+Deprakine (valproate), 829
+Depral (sulpiride), 741
+Depramine (imipramine), 367
+Deprax (trazodone), 793
+Deprenon (fluoxetine), 301
+Deprenyl (selegiline), 705
+Depressase (maprotiline), 465
+Deprex (fluoxetine), 301
+Deprilan (selegiline), 705
+Deprilept (maprotiline), 465
+Deprimyl (lofepramine), 421
+Deprinocte (estazolam), 281
+Deprinol (imipramine), 367
+Depsin (mianserin), 495
+Deptran (doxepin), 255
+Deroxat (paroxetine), 593
+Desconex (loxapine), 443
+Desfax (desvenlafaxine), 215
+Desidox (doxepin), 255
+desipramine, 207
+Desisulpid (sulpiride), 741
+Desitriptylin (amitriptyline), 25
+desvenlafaxine, 215
+Desyrel (trazodone), 793
+deutetrabenazine, 221
+Devidon (trazodone), 793
+DexAlone (dextromethorphan), 225
+
+
+
+
+<<<PAGE 2585>>>
+
+Effexor (venlafaxine), 841
+Effexor XR (venlafaxine), 841
+Effiplen (buspirone), 123
+Egibren (selegiline), 705
+Eglonyl (sulpiride), 741
+Elavil (amitriptyline), 25
+Elavil Plus (amitriptyline), 25
+Eldepryl (selegiline), 705
+Elenium (chlordiazepoxide), 147
+Elepsia XR (levetiracetam), 399
+Eliwel (amitriptyline), 25
+Ellefore (desvenlafaxine), 215
+Elmendos (lamotrigine), 387
+Elopram (citalopram), 159
+Elperil (thioridazine), 759
+Elroquil N (hydroxyzine), 355
+Elvanse (lisdexamfetamine), 409
+Emdalen (lofepramine), 421
+Emsam (selegiline), 705
+EnBrace HR (l-methylfolate), 477
+Endep (amitriptyline), 25
+Enimon (sulpiride), 741
+Enlyte (l-methylfolate), 477
+Epial (carbamazepine), 131
+Epilim (valproate), 829
+Epitol (carbamazepine), 131
+Epitomax (topiramate), 781
+Equetro (carbamazepine), 131
+
+
+
+
+<<<PAGE 2589>>>
+
+Flutepam (flurazepam), 321
+Flutin (fluoxetine), 301
+Flutraz (flunitrazepam), 297
+Fluval (fluoxetine), 301
+fluvoxamine, 325
+Fluxadir (fluoxetine), 301
+Fluxonil (fluoxetine), 301
+Focalin (d-methylphenidate), 481
+Focalin XR (d-methylphenidate), 481
+Foille (trifluoperazine), 803
+Fokalepsin (carbamazepine), 131
+Fondur (fluoxetine), 301
+Fontex (fluoxetine), 301
+Fonzac (fluoxetine), 301
+Forfivo (bupropion), 117
+Fortunan (haloperidol), 347
+Frontal (alprazolam), 11
+Frosinor (paroxetine), 593
+Frosnor (paroxetine), 593
+gabapentin, 331
+Gabitril (tiagabine), 771
+galantamine, 337
+Gamanil (lofepramine), 421
+Gamibetal Plus (diazepam), 229
+Gamonil (lofepramine), 421
+Gen-Alprazolam (alprazolam), 11
+Gen-Clomipramine (clomipramine), 165
+Gen-Triazolam (triazolam), 799
+
+
+
+
+<<<PAGE 2596>>>
+
+Lithiumorotat (lithium), 415
+Lithizine (lithium), 415
+Lithobid (lithium), 415
+Lithonate (lithium), 415
+Lithostat (lithium), 415
+Lito (lithium), 415
+Litoduron (lithium), 415
+L-ketamine (esketamine), 275
+l-methylfolate, 477
+Lodopin (zotepine), 883
+lofepramine, 421
+lofexidine, 427
+loflazepate, 431
+Lomesta (lorazepam), 437
+Lonasen (blonanserin), 89
+Lonseren (pipothiazine), 633
+Lorabenz (lorazepam), 437
+Lorafen (lorazepam), 437
+Loram (lorazepam), 437
+Lorans (lorazepam), 437
+Lorapam (lorazepam), 437
+lorazepam, 437
+Lorenin (lorazepam), 437
+Loridem (lorazepam), 437
+Lorien (fluoxetine), 301
+Lorivan (lorazepam), 437
+Lorsedal (lorazepam), 437
+Lorsifar (lorazepam), 437
+
+
+
+
+<<<PAGE 2621>>>
+
+Thorazine (chlorpromazine), 153
+Thymal (lorazepam), 437
+tiagabine, 771
+tianeptine, 777
+Timelit (lofepramine), 421
+Timonil (carbamazepine), 131
+Tingus (fluoxetine), 301
+Tiprolisant (pitolisant), 639
+Tirodil (thioridazine), 759
+Titus (lorazepam), 437
+Tofranil (imipramine), 367
+Tofranil pamoata (imipramine), 367
+Tofranil-PM (imipramine), 367
+Tolid (lorazepam), 437
+Tolmin (mianserin), 495
+Tolvin (mianserin), 495
+Tolvon (mianserin), 495
+Tonirem (temazepam), 755
+Topamac (topiramate), 781
+Topamax (topiramate), 781
+Topimax (topiramate), 781
+topiramate, 781
+T-Pam (temazepam), 755
+Tramensan (trazodone), 793
+Trankilium (lorazepam), 437
+Trankimazin (alprazolam), 11
+Tranquase (diazepam), 229
+Tran-Quil (lorazepam), 437
+
+
+
+
+<<<PAGE 2624>>>
+
+Tryptizol (amitriptyline), 25
+Tydamine (trimipramine), 817
+Tymelyt (lofepramine), 421
+Ucerax (hydroxyzine), 355
+Umbrium (diazepam), 229
+Unilan (alprazolam), 11
+Unisedil (diazepam), 229
+Unitranxene (clorazepate), 185
+U-Pan (lorazepam), 437
+Uskan (oxazepam), 569
+Valaxona (diazepam), 229
+Valclair (chlordiazepoxide), 147
+valbenazine, 825
+Valclair (diazepam), 229
+Valcote 250 (valproate), 829
+Valdorm (flurazepam), 321
+Valdoxan (agomelatine), 5
+Valeans (alprazolam), 11
+Valinil (diazepam), 229
+Valiquid (diazepam), 229
+Valiquid 0.3 (diazepam), 229
+Valirem (sulpiride), 741
+Valium (diazepam), 229
+Valocordin Diazepam (diazepam), 229
+Valparine (valproate), 829
+Valpro (valproate), 829
+valproate, 829
+
+
+
+
+<<<PAGE 2630>>>
+
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine , 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam , 437
+maprotiline, 465
+mianserin, 495
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+oxazepam , 569
+paroxetine, 593
+phenelzine, 613
+pregabalin, 647
+propranolol, 653
+quetiapine, 667
+reboxetine, 681
+selegiline, 705
+sertraline, 721
+tiagabine, 771
+tianeptine, 777
+tranylcypromine, 787
+
+
+
+
+<<<PAGE 2638>>>
+
+cariprazine, 137
+citalopram , 159
+clomipramine, 165
+cyamemazine, 201
+desipramine , 207
+desvenlafaxine , 215
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin , 255
+duloxetine , 263
+escitalopram , 269
+esketamine , 275
+fluoxetine , 301
+fluoxetine/olanzapine combination , 301 , 559
+flupenthixol, 307
+fluvoxamine, 325
+iloperidone, 359
+imipramine , 367
+isocarboxazid , 375
+ketamine, 383
+lamotrigine (adjunct), 387
+levomilnacipran , 403
+lisdexamfetamine, 409
+lithium (adjunct), 415
+l-methylfolate (adjunct) , 477
+lofepramine, 421
+lumateperone, 451
+lurasidone, 457
+
+
+
+
+<<<PAGE 2642>>>
+
+prazosin , 643
+propranolol , 653
+Hypoactive sexual desire disorder
+bremelanotide , 95
+flibanserin , 289
+Insomnia
+agomelatine, 5
+alprazolam, 11
+amitriptyline, 25
+amoxapine, 33
+clomipramine, 165
+clonazepam, 173
+desipramine, 207
+diazepam, 229
+diphenhydramine , 235
+dothiepin, 249
+doxepin , 255
+estazolam , 281
+eszopiclone , 285
+flunitrazepam, 297
+flurazepam , 321
+hydroxyzine, 355
+imipramine, 367
+lemborexant , 395
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+
+
+
+
+<<<PAGE 2645>>>
+
+sodium oxybate, 853
+Nausea/vomiting
+chlorpromazine , 153
+hydroxyzine , 355
+perphenazine , 607
+Neuropathic pain/chronic pain
+amitriptyline, 25
+amoxapine, 33
+carbamazepine, 131
+clomipramine, 165
+clonidine (adjunct), 179
+desipramine, 207
+dextromethorphan (with quinidine), 225
+dothiepin, 249
+doxepin, 255
+duloxetine , 263
+gabapentin, 331
+imipramine, 367
+ketamine, 383
+lamotrigine, 387
+levetiracetam, 399
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+
+
+
+
+<<<PAGE 2659>>>
+
+amitriptyline, 25
+amoxapine, 33
+atomoxetine, 79
+brexanolone, 99
+bupropion, 117
+citalopram, 159
+clomipramine, 165
+desipramine, 207
+desvenlafaxine, 215
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+esketamine, 275
+fluoxetine, 301
+fluvoxamine, 325
+imipramine, 367
+isocarboxazid, 375
+ketamine, 383
+levomilnacipran, 403
+l-methylfolate (adjunct), 477
+lofepramine, 421
+maprotiline, 465
+mianserin, 495
+milnacipran, 503
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+
+
+
+
+<<<PAGE 2662>>>
+
+chlordiazepoxide, 147
+citalopram, 159
+clomipramine, 165
+clonazepam, 173
+clonidine, 179
+clorazepate, 185
+cyamemazine, 201
+desipramine, 207
+desvenlafaxine, 215
+diazepam, 229
+dothiepin, 249
+doxepin, 255
+duloxetine, 263
+escitalopram, 269
+fluoxetine, 301
+fluvoxamine, 325
+gabapentin (adjunct), 331
+hydroxyzine, 355
+imipramine, 367
+isocarboxazid, 375
+lofepramine, 421
+loflazepate, 431
+lorazepam, 437
+maprotiline, 465
+mirtazapine, 509
+moclobemide, 515
+nefazodone, 545
+nortriptyline, 551
+
+
+
+
+<<<PAGE 2668>>>
+
+levomilnacipran, 403
+lofepramine, 421
+maprotiline, 465
+memantine, 473
+milnacipran, 503
+nortriptyline, 551
+pregabalin, 647
+sodium oxybate, 733
+tiagabine, 771
+topiramate, 781
+trimipramine, 817
+zonisamide, 875
+NMDA antagonists
+dextromethorphan, 225
+esketamine, 275
+ketamine, 383
+memantine, 473
+Phosphodiesterase-5 (PDE-5) inhibitor
+sildenafil, 729
+Sedative hypnotics
+agomelatine, 5
+estazolam, 281
+eszopiclone, 285
+flunitrazepam, 297
+flurazepam, 321
+lemborexant, 395
+
+

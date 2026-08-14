@@ -1,0 +1,1455 @@
+<<<PAGE 397>>>
+
+376  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 3
+
+Dose for prophylaxis
+Adults should receive the same dose as used for acute treatment.26 There is some evidence to support the use of lower doses in elderly patients: dosulepin 75mg/day offers
+effective prophylaxis27 but is now rarely used and is reserved for specialist use. There is
+no evidence to support the use of lower than standard doses of SSRIs.28
+Relapse rates after ECT are similar to those after stopping antidepressants.29
+Antidepressant prophylaxis will be required, ideally with a different drug from the one
+that failed to get the patient well in the first instance, although good data in this area
+are lacking.
+Lithium also have some efficacy in the prophylaxis of unipolar depression; efficacy
+relative to antidepressants is unknown.30 However, lithium treatment has been shown
+to be associated with the best outcomes of any treatment for unipolar depression.31
+NICE recommend that lithium should not be used as the sole prophylactic drug in unipolar depression.25 There is some support for the use of a combination of lithium and
+nortriptyline.32
+Maintenance treatment with lithium protects against suicide.26
+
+Key points that patients should know
+A single episode of depression should be treated for 6–9 months after remission.
+The risk of recurrence of depressive illness is high and increases with each episode.
+■■ Those who have had multiple episodes may require treatment for many years.
+■■ The chances of staying well are greatly increased by taking antidepressants.
+■■ Antidepressants are:
+■■ effective
+■■ not addictive (although withdrawal symptoms can be expected)
+■■ not known to lose their efficacy over time
+■■ not known to cause new long-term side-effects.
+■■ Medication needs to be continued at the treatment dose. If side effects are intolerable,
+it may be possible to find a more suitable alternative.
+■■ If patients decide to stop their medication, this must not be done abruptly, as this may
+lead to unpleasant discontinuation effects (see ‘Antidepressant withdrawal symptoms’ in this chapter) and confers a higher risk of relapse.33 The medication needs to
+be reduced slowly under specialist supervision.21
+■■
+■■
+
+References
+1. Cleare A, et al. Evidence-based guidelines for treating depressive disorders with antidepressants: a revision of the 2008 British Association for
+Psychopharmacology guidelines. J Psychopharmacology 2015; 29:459–525.
+2. Reimherr FW, et al. Optimal length of continuation therapy in depression: a prospective assessment during long-term fluoxetine treatment.
+Am J Psychiatry 1998; 155:1247–1253.
+3. Prien RF, et al. Continuation drug therapy for major depressive episodes: how long should it be maintained? Am J Psychiatry 1986;
+143:18–23.
+4. Kim KH, et al. The effects of continuous antidepressant treatment during the first 6months on relapse or recurrence of depression. J Affect
+Disord 2011; 132:121–129.
+5. Eaton WW, et al. Population-based study of first onset and chronicity in major depressive disorder. Arch Gen Psychiatry 2008;
+65:513–520.
+
+
+
+
+<<<PAGE 400>>>
+
+Depression and anxiety disorders  379
+
+Table 3.14 (Continued)
+Antidepressant
+
+Substrate for
+
+Inhibits
+
+TCAs
+Amitriptyline
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Desipramine
+
+CYP2D6
+
+Dosulepin
+
+CYP2D6 and possibly other pathways
+
+Doxepin
+
+CYP2D6, CYP1A2 (minor), CYP3A4
+(minor)
+
+Imipramine
+
+CYP1A2, CYP2D6, CYP3A4, CYP2C19
+
+Nortriptyline
+
+CYP2D6
+
+Trimipramine
+
+CYP2D6
+
+Agomelatine
+
+CYP1A2
+
+Bupropion
+
+CYP2B6
+
+Esketamine
+
+CYP3A4, CYP2B6
+
+Mianserin
+
+CYP2D6
+
+Mirtazapine
+
+CYP1A2, CYP2D6, CYP3A4
+
+Reboxetine
+
+CYP3A4
+
+Trazodone
+
+CYP3A4
+
+Vortioxetine
+
+CYP2D6, CYP2A6, CYP2B6, CYP2C8,
+CYP2C9, CYP2C19, CYP3A4
+
+Vilazodone
+
+CYP3A4
+
+CHAPTER 3
+
+Clomipramine
+
+Others
+
+CYP2D6 (potent)
+
+CYP2D6 (weak)
+
+CYP2C8
+
+CYP enzymes highlighted in bold indicate:
+predominant metabolic enzyme pathway or
+■■ predominant enzyme activity.
+■■
+
+■■
+
+Pharmacodynamic interactions where the effects of one drug are altered by another
+drug via physiological mechanisms such as direct competition at receptor sites (e.g.
+dopamine agonists with dopamine blockers may negate any therapeutic effect), augmentation of the same neurotransmitter pathway (e.g. fluoxetine with tramadol or a
+triptan can lead to serotonin syndrome) or an effect on the physiological functioning
+of an organ/organ system in different ways (e.g. SSRIs impair clotting and NSAIDs
+irritate the gastric mucosa so when these drugs are used together, the risk of GI bleeds
+is increased). Up-to-date interaction tables are readily available online and most
+known interactions are described in an individual product’s literature.
+
+Pharmacodynamic interactions
+Tricyclic antidepressants7–10
+■■
+
+are H1 blockers (sedative). This effect can be exacerbated by other sedative drugs or
+alcohol. Beware respiratory depression
+
+
+
+
+<<<PAGE 413>>>
+
+CHAPTER 3
+
+392  The Maudsley® Prescribing Guidelines in Psychiatry
+
+31. van Haelst IM, et al. QT interval prolongation in users of selective serotonin reuptake inhibitors in an elderly surgical population: a crosssectional study. J Clin Psychiatry 2014; 75:15–21.
+32. Beach SR, et al. Meta-analysis of selective serotonin reuptake inhibitor-associated QTc prolongation. J Clin Psychiatry 2014; 75:e441–e449.
+33. Castro VM, et al. QT interval and antidepressant use: a cross sectional study of electronic health records. BMJ 2013; 346:f288.
+34. Zivin K, et al. Evaluation of the FDA warning against prescribing citalopram at doses exceeding 40 mg. Am J Psychiatry 2013;
+170:642–650.
+35. Ray WA, et al. High-dose citalopram and escitalopram and the risk of out-of-hospital death. J Clin Psychiatry 2017; 78:190–195.
+36. Lin YT, et al. Selective serotonin reuptake inhibitor use and risk of arrhythmia: a nationwide, population-based cohort study. Clin Ther 2019;
+41:1128–1138.e1128.
+37. Dubovsky SL. Pharmacokinetic evaluation of vortioxetine for the treatment of major depressive disorder. Exp Opin Drug Metab Toxicol
+2014; 10:759–766.
+38. Alam MY, et al. Safety, tolerability, and efficacy of vortioxetine (Lu AA21004) in major depressive disorder: results of an open-label, flexibledose, 52-week extension study. Int Clin Psychopharmacol 2014; 29:36–44.
+39. Wang Y, et al. Effect of vortioxetine on cardiac repolarization in healthy adult male subjects: results of a thorough QT/QTc study. Clin
+Pharmacol Drug Develop 2013; 2:298–309.
+40. Donazzolo Y, et al. Evaluation of the effects of therapeutic and supra-therapeutic doses of agomelatine on the QT/QTc interval – A phase I,
+randomised, double-blind, placebo-controlled and positive-controlled, cross-over thorough QT/QTc study conducted in healthy volunteers.
+J Cardiovasc Pharmacol 2014; 64:440–451.
+41. Edwards J, et al. Vilazodone lacks proarrhythmogenic potential in healthy participants: a thorough ECG study. Int J Clin Pharmacol Ther
+2013; 51:456–465.
+42. Mago R, et al. Safety and tolerability of levomilnacipran ER in major depressive disorder: results from an open-label, 48-week extension
+study. Clin Drug Investig 2013; 33:761–771.
+43. Periclou A, et al. Effects of milnacipran on cardiac repolarization in healthy participants. J Clin Pharmacol 2010; 50:422–433.
+44. Glassman AH, et al. Sertraline treatment of major depression in patients with acute MI or unstable angina. JAMA 2002; 288:701–709.
+45. van Melle JP, et al. Effects of antidepressant treatment following myocardial infarction. Br J Psychiatry 2007; 190:460–466.
+46. Strik JJ, et al. Efficacy and safety of fluoxetine in the treatment of patients with major depression after first myocardial infarction: findings
+from a double-blind, placebo-controlled trial. Psychosom Med 2000; 62:783–789.
+47. Rigotti NA, et al. Bupropion for smokers hospitalized with acute cardiovascular disease. Am J Med 2006; 119:1080–1087.
+48. Alqdwah-Fattouh R, et al. Differential effects of antidepressant subgroups on risk of acute myocardial infarction: a nested case-control study.
+Br J Clin Pharmacol 2020; 86:2040–2050.
+49. Wu CS, et al. Use of antidepressants and risk of hospitalization for acute myocardial infarction: a nationwide case-crossover study. J Psychiatr
+Res 2017; 94:7–14.
+50. Lesperance F, et al. Effects of citalopram and interpersonal psychotherapy on depression in patients with coronary artery disease: the
+Canadian Cardiac Randomized Evaluation of Antidepressant and Psychotherapy Efficacy (CREATE) trial. JAMA 2007; 297:367–379.
+51. Astrom-Lilja C, et al. Drug-induced torsades de pointes: a review of the Swedish pharmacovigilance database. Pharmacoepidemiol Drug Saf
+2008; 17:587–592.
+52. Angermann CE, et al. Effect of escitalopram on all-cause mortality and hospitalization in patients with heart failure and depression: the
+MOOD-HF randomized clinical trial. JAMA 2016; 315:2683–2693.
+53. Hedrick R, et al. The impact of antidepressants on depressive symptom severity, quality of life, morbidity, and mortality in heart failure: a
+systematic review. Drugs Context 2020; 9.
+54. Sherwood A, et al. Effects of exercise and sertraline on measures of coronary heart disease risk in patients with major depression: results from
+the SMILE-II randomized clinical trial. Psychosom Med 2016; 78:602–609.
+55. Biffi A, et al. Antidepressants and the risk of arrhythmia in elderly affected by a previous cardiovascular disease: a real-life investigation from
+Italy. Eur J Clin Pharmacol 2018; 74:119–129.
+56. Crome P. The toxicity of drugs used for suicide. Acta Psychiatr Scand Suppl 1993; 371:33–37.
+57. Cheeta S, et al. Antidepressant-related deaths and antidepressant prescriptions in England and Wales, 1998–2000. Br J Psychiatry 2004;
+184:41–47.
+58. Buckley NA, et al. Fatal toxicity of serotoninergic and other antidepressant drugs: analysis of United Kingdom mortality data. BMJ 2002;
+325:1332–1333.
+59. Buckley NA, et al. Greater toxicity in overdose of dothiepin than of other tricyclic antidepressants. Lancet 1994; 343:159–162.
+60. Morgan O, et al. Fatal toxicity of antidepressants in England and Wales, 1993–2002. Health Stat Q 2004; 18–24.
+61. Egberts ACG, et al. Channeling of three newly introduced antidepressants to patients not responding satisfactorily to previous treatment. J
+Clin Psychopharmacol 1997; 17:149–155.
+62. Mines D, et al. Prevalence of risk factors for suicide in patients prescribed venlafaxine, fluoxetine, and citalopram. Pharmacoepidemiol Drug
+Saf 2005; 14:367–372.
+63. Chan AN, et al. A comparison of venlafaxine and SSRIs in deliberate self-poisoning. J Med Toxicol 2010; 6:116–121.
+64. Hasnain M, et al. Escitalopram and QTc prolongation. J Psychiatry Neurosci 2013; 38:E11.
+
+
+
+
+<<<PAGE 442>>>
+
+Depression and anxiety disorders  421
+
+Antidepressants: relative adverse effects – a rough guide
+Table 3.26 gives a very approximate, unreferenced view of the absolute and relative risk
+of a small range of adverse effects associated with standard antidepressants.
+
+Table 3.26 Common adverse effects of antidepressants
+
+Sedation
+
+Postural
+hypotension§
+
+Cardiac
+conduction
+disturbance§
+
+Anticholinergic Nausea/
+effects
+Vomiting
+
+Sexual
+dysfunction§
+
+Amitriptyline
+
++++
+
++++
+
++++
+
++++
+
++
+
++++
+
+Clomipramine
+
+++
+
++++
+
++++
+
+++
+
+++
+
++++
+
+Dosulepin
+
++++
+
++++
+
++++
+
+++
+
++
+
++
+
+Doxepin
+
++++
+
+++
+
++++
+
++++
+
++
+
++
+
+Imipramine
+
+++
+
++++
+
++++
+
++++
+
++
+
++
+
+Lofepramine
+
++
+
++
+
++
+
+++
+
++
+
++
+
+Nortriptyline
+
++
+
+++
+
+++
+
++
+
++
+
++
+
+Trimipramine
+
++++
+
++++
+
+++
+
+++
+
++
+
++
+
+Agomelatine
+
++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Duloxetine (SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Levomilnacipran
+(SNRI)
+
+–
+
+–*
+
+–
+
+–
+
+++
+
+++
+
+Mianserin
+
+++
+
+–
+
+–
+
+–
+
+–
+
+–
+
+Mirtazapine
+
++++
+
++
+
+–
+
++
+
++
+
+–
+
+Reboxetine
+
++
+
+–*
+
+–
+
++
+
++
+
++
+
+Trazodone
+
++++
+
++
+
++
+
++
+
++
+
++
+
+Venlafaxine (SNRI)
+
+–
+
+–*
+
++
+
+–
+
++++
+
++++
+
+Citalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Escitalopram
+
+–
+
+–
+
++
+
+–
+
+++
+
++++
+
+Fluoxetine
+
+–
+
+–
+
+–
+
+–
+
+++
+
++++
+
+Fluvoxamine
+
++
+
+–
+
+–
+
+–
+
++++
+
++++
+
+Paroxetine
+
++
+
+–
+
+–
+
++
+
+++
+
++++
+
+Drug
+
+Other
+antidepressants
+
+Selective
+serotonin
+reuptake
+inhibitors (SSRIs)
+
+(Continued)
+
+CHAPTER 3
+
+Tricyclics
+
+
+
+
+<<<PAGE 694>>>
+
+Prescribing in older people  673
+
+The prevalence of most physical illnesses increases with age. Many physical problems
+such as cardiovascular disease, chronic pain, diabetes and Parkinson’s disease are associated with a high risk of depressive illness.1,2 The morbidity and mortality associated
+with depression are increased in older adults3 as they are more likely to be physically
+frail and therefore vulnerable to serious consequences from self-neglect (e.g. life-threatening dehydration or hypothermia) and immobility (e.g. venous stasis). Almost 20% of
+completed suicides occur in older people.4 Mortality is reduced by effective treatment
+of depression.5
+Meta-analysis of placebo-controlled and antidepressant-controlled studies has found
+a response rate of 51% in older patients,6 similar to that for the adult population
+(Table 6.8).7 There is a common perception that older patients do not respond as well
+to antidepressants as their younger counterparts,8 perhaps because of structural brain
+changes or higher rates of physical co-morbidity.9 It may be that biological age is more
+relevant than chronological age;10 presence of physical illness, as well as baseline anxiety and reduced executive functioning are associated with poorer treatment
+outcomes.11
+Nonetheless, even in older people, it may still be possible to identify non-responders
+as early as 4 weeks into treatment.12,13
+A Cochrane review examined the efficacy, and associated withdrawal rates of different classes of antidepressants in older people found that SSRIs and tricyclics are of the
+same efficacy; however, TCAs are associated with higher withdrawal rates.14 NICE
+guidance for Depression in adults recommends starting with an SSRI in the first instance
+(sertraline is the commonly used first line in older people). When switching to another
+antidepressant, NICE recommend switching initially to a different SSRI or a better tolerated newer generation antidepressant (often mirtazapine), and subsequently an antidepressant of a different pharmacological class that may be less well tolerated, for
+example venlafaxine, a TCA or an Monoamine oxidase inhibitor (MAOI)15 (note that
+caution should be used when using TCAs and MAOIs in older people due to associated
+adverse effects and drug interactions).
+Network meta-analysis suggests that quetiapine, duloxetine, agomelatine, imipramine and vortioxetine are superior for efficacy in major depressive disorder in older
+people, although individual data are somewhat inconsistent.16 Two studies have found
+that older people who had recovered from an episode of depression and had received
+antidepressants for 2 years, 60% relapsed within 2 years if antidepressant treatment
+was withdrawn.17,18 This finding held true for first episode patients. Lower doses of
+antidepressants may be effective as prophylaxis. Dothiepin (dosulepin) 75mg/day has
+been shown to be effective in this regard.19 Note that NICE recommend that dosulepin
+should not be used as it is particularly cardiotoxic in overdose.15
+There is no ideal antidepressant in older people. All are associated with problems.
+TCAs are broadly considered less desirable due to the increased risk of cardiac conduction abnormalities and anticholinergic effects. SSRIs are generally better tolerated than
+TCAs;14 they do, however, increase the risk of GI bleeds, particularly in the very old and
+those with established risk factors such as a history of bleeds or treatment with a
+NSAID, steroid or warfarin. The risk of other types of bleed such as haemorrhagic
+
+CHAPTER 6
+
+Treatment of depression in older people
+
+
+
+
+<<<PAGE 695>>>
+
+Lofepramine
+
+Older
+tricyclics20
+
+Moderate,
+although
+constipation/
+sweating can be
+severe
+
+All can also cause
+central
+anticholinergic
+effects (confusion)
+
+Marked with
+others
+
+Variable: moderate
+with nortriptyline,
+imipramine and
+dosulepin
+(dothiepin)
+
+Anticholinergic
+side effects
+(urinary retention,
+dry mouth,
+blurred vision,
+constipation)
+
+Can be a
+problem but
+generally
+better
+tolerated
+than the
+older tricyclics
+
+All can cause
+postural
+hypotension
+Dosage
+titration is
+required
+
+Postural
+hypotension
+
+Table 6.8 Antidepressants and older people
+
+Minimal
+
+Variable:
+from
+minimal
+with
+imipramine
+to profound
+with
+trimipramine
+
+Sedation
+
+Few data, but
+lack of
+spontaneous
+reports may
+indicate less
+potential than
+the older
+tricyclics
+
+All tricyclics
+can cause
+weight gain
+
+Weight
+gain
+
+Relatively safe
+
+Dothiepin and
+amitriptyline
+are the most
+toxic (seizures
+and cardiac
+arrhythmia)
+
+Safety in
+overdose
+
+Less likely to cause
+hyponatraemia than other
+TCAs and SSRIs
+
+Raised LFTs
+
+Increased risk of bleeds with
+serotonergic drugs
+
+Seizures, anticholinergicinduced cognitive
+impairment
+
+Other side effects
+
+Mainly pharmacodynamic:
+increased sedation with
+benzodiazepines, increased
+hypotension with diuretics,
+increased constipation with
+other anticholinergic drugs,
+etc.
+
+Drug interactions
+
+
+
+
+<<<PAGE 698>>>
+
+Prescribing in older people  677
+
+16. Krause M, et al. Efficacy and tolerability of pharmacological and non-pharmacological interventions in older patients with major depressive
+disorder: A systematic review, pairwise and network meta-analysis. Eur Neuropsychopharmacol 2019; 29:1003–1022.
+17. Flint AJ, et al. Recurrence of first-episode geriatric depression after discontinuation of maintenance antidepressants. Am J Psychiatry 1999;
+156:943–945.
+18. Reynolds CF, III, et al. Maintenance treatment of major depression in old age. N Engl J Med 2006; 354:1130–1138.
+19. Old Age Depression Interest Group. How long should the elderly take antidepressants? A double-blind placebo-controlled study of continuation/prophylaxis therapy with dothiepin. Br J Psychiatry 1993; 162:175–182.
+20. Draper B, et al. Tolerability of selective serotonin reuptake inhibitors: issues relevant to the elderly. Drugs Aging 2008; 25:501–519.
+21. Bose A, et al. Escitalopram in the acute treatment of depressed patients aged 60 years or older. Am J Geriatr Psychiatry 2008; 16:14–20.
+22. Leng Y, et al. Antidepressant use and cognitive outcomes in very old women. J Gerontol A Biol Sci Med Sci 2018; 73:1390–1395.
+23. Deidda A, et al. Interstitial lung disease induced by fluoxetine: systematic review of literature and analysis of Vigiaccess, Eudravigilance and
+a national pharmacovigilance database. Pharmacol Res 2017; 120:294–301.
+24. Rosenberg T, et al. The relationship of SSRI and SNRI usage with interstitial lung disease and bronchiectasis in an elderly population: a casecontrol study. Clin Interv Aging 2017; 12:1977–1984.
+25. Raskin J, et al. Safety and tolerability of duloxetine at 60 mg once daily in elderly patients with major depressive disorder. J Clin
+Psychopharmacol 2008; 28:32–38.
+26. Johnson EM, et al. Cardiovascular changes associated with venlafaxine in the treatment of late-life depression. Am J Geriatr Psychiatry 2006;
+14:796–802.
+27. Smoller JW, et al. Antidepressant use and risk of incident cardiovascular morbidity and mortality among postmenopausal women in the
+Women’s Health Initiative study. Arch Intern Med 2009; 169:2128–2139.
+28. Laporte S, et al. Bleeding risk under selective serotonin reuptake inhibitor (SSRI) antidepressants: A meta-analysis of observational studies.
+
+Psychopharmacol 2008; 23:84–87.
+31. Power C, et al. Bones of contention: a comprehensive literature review of Non-SSRI antidepressant use and bone health. J Geriatr Psychiatry
+Neurol 2019; 33:340–352.
+32. Heun R, et al. The efficacy of agomelatine in elderly patients with recurrent Major Depressive Disorder: a placebo-controlled study. J Clin
+Psychiatry 2013; 74:587–594.
+33. Laux G. The antidepressant efficacy of agomelatine in daily practice: results of the non-interventional study VIVALDI. Eur Psychiatry 2011;
+26 Suppl 1:647.
+34. Katona C, et al. A randomized, double-blind, placebo-controlled, duloxetine-referenced, fixed-dose study comparing the efficacy and safety
+of Lu AA21004 in elderly patients with major depressive disorder. Int Clin Psychopharmacol 2012; 27:215–223.
+35. Bae JH, et al. Systematic review and meta-analysis of omega-3-fatty acids in elderly patients with depression. Nutr Res 2018; 50:1–9.
+36. Moraros J, et al. The association of antidepressant drug usage with cognitive impairment or dementia, including Alzheimer disease: A systematic review and meta-analysis. Depress Anxiety 2017; 34:217–226.
+37. Chan JYC, et al. Depression and antidepressants as potential risk factors in dementia: a systematic review and meta-analysis of 18 longitudinal studies. J Am Med Dir Assoc 2019; 20:279–286.e271.
+38. Carriere I, et al. Antidepressant use and cognitive decline in community-dwelling elderly people – the three-city cohort. BMC Med 2017;
+15:81.
+39. Wang YC, et al. Increased risk of dementia in patients with antidepressants: a meta-analysis of observational studies. Behav Neurol 2018;
+2018:5315098.
+
+Further reading
+Kok RM, et al. Management of depression in older adults: a review. JAMA 2017; 317:2114–2122.
+Pruckner N, et al. Antidepressant pharmacotherapy in old-age depression – a review and clinical approach. Eur J Clin Pharmacol 2017;
+73:661–667.
+Wilkinson P, et al. Continuation and maintenance treatments for depression in older people. Cochrane Database of Sys Rev 2016; 9:Cd006727.
+
+CHAPTER 6
+
+Pharmacol Res 2017; 118:19–32.
+29. Coupland C, et al. Antidepressant use and risk of adverse outcomes in older people: population based cohort study. BMJ 2011; 343:d4551.
+30. Williams LJ, et al. Selective serotonin reuptake inhibitor use and bone mineral density in women with a history of depression. Int Clin
+
+
+
+
+<<<PAGE 749>>>
+
+728  The Maudsley® Prescribing Guidelines in Psychiatry
+
+Table 8.2 (Continued )
+Drug
+
+Comments
+
+Reboxetine5,6,67
+
+50% reduction in starting dose recommended. Does not seem to be associated with
+hepatotoxicity.
+
+Tricyclics5,6,68
+
+All are hepatically metabolised, highly protein bound and will accumulate. They vary in
+their propensity to cause sedation and constipation. All are associated with raised LFTs
+and rare cases of hepatitis. Sedative TCAs such as trimipramine, imipramine, dothiepin
+(dosulepin) and amitriptyline are best avoided.
+
+Venlafaxine/
+desvenlafaxine5,6,69,70
+
+Dosage reduction of 50% advised in mild and moderate hepatic impairment. Rare cases
+of hepatitis reported.
+
+Vilazodone6
+
+No dose adjustment required in hepatic impairment. Does not appear to affect liver
+enzymes and no cases of hepatotoxicity, but data are limited, and all other SSRIs have
+been linked to liver toxicity.
+
+Vortioxetine5,71,72
+
+Extensively metabolised in the liver. Little experience in hepatic impairment, but
+pharmacokinetic studies suggest no dose reduction is required. Does not seem to be
+associated with hepatotoxicity.
+
+ALT, alanine aminotransferase, ULN, upper limit of normal.
+
+Mood stabilisers in hepatic impairment5,6,73
+Recommendations for the use of mood-stabilising medications in hepatic impairment
+are summarised in Table 8.3.
+
+CHAPTER 8
+
+Table 8.3 Mood stabilisers in hepatic impairment
+Drug
+
+Comments
+
+Carbamazepine5,6,73
+
+Extensively hepatically metabolised and potent inducer of CYP450 enzymes (this can
+cause modest elevations in gamma-GT and alk phos, which in themselves are not an
+indication for stopping5). In chronic stable disease, caution advised. Avoid use in
+acute liver disease. Reduce starting dose by 50%,6 and titrate up slowly, using
+plasma levels to guide dosage. Stop if LFTs deteriorate. Associated with hepatitis,
+cholangitis, cholestatic and hepatocellular jaundice, and hepatic failure (rare).
+Adverse hepatic effects are most common in the first 2 months of treatment.73
+Hepatocellular damage is often associated with a poor outcome. Vulnerability to
+carbamazepine-induced hepatic damage may be genetically determined.73
+
+Lamotrigine19
+
+Manufacturers recommend 50% reduction in initial dose, dose escalation and
+maintenance dose in moderate hepatic impairment and 75% in severe hepatic
+impairment. Discontinue if lamotrigine-induced rash (which can be serious). Extreme
+caution advised, particularly in women, children, and if co-prescribed with valproate.
+Elevated LFTs and hepatitis reported.
+
+Lithium6
+
+Not metabolised, so dosage reduction not required as long as renal function is
+normal. Use serum levels to guide dosage and monitor more frequently if ascites
+status changes (volume of distribution will change). Asymptomatic and transient LFT
+abnormalities reported in small proportion of patients on long term therapy.19 One
+case of ascites and one of hyperbilirubinemia reported over many decades of lithium
+use worldwide.
+(Continued)
+
+
+
+
+<<<PAGE 762>>>
+
+Hepatic and renal impairment  741
+
+Drug
+
+Comments
+
+Bupropion22,23,25,32,40,66–68
+(amfebutamone)
+
+0.5% excreted unchanged in the urine. Dosing: GFR <50mL/min, 150mg once
+daily. A single dose study in haemodialysis patients (stage 5 disease) recommended
+a dose of 150mg every 3 days. Metabolites may accumulate in renal impairment
+and clearance is reduced. Elevated levels increase risk of seizures. Has been used to
+treat sexual dysfunction in mild to moderately depressed patients with chronic
+kidney disease.
+
+Citalopram22,23,25,40,69–75
+
+<13% of citalopram is excreted unchanged in the urine. Single-dose studies in mild
+and moderate renal impairment show no change in the pharmacokinetics of
+citalopram. Dosing is as for normal renal function; however, use with caution if
+GFR <10mL/min due to reduced clearance. The manufacturer does not advise use if
+GFR <20mL/min. Renal failure has been reported with citalopram overdose.
+Citalopram can treat depression in chronic renal failure and improve quality of life
+but use of citalopram (or escitalopram) is associated with a higher risk of sudden
+cardiac death versus other SSRIs (fluoxetine, fluvoxamine, paroxetine, sertraline)
+when used in patients on haemodialysis (adjusted hazard ratio, 1.18; 95% CI 1.05,
+1.31). A case report of hyponatraemia has been reported in a renal transplant
+patient on citalopram.
+
+Clomipramine22,23,25,32,76
+
+2% of unchanged clomipramine is excreted in the urine. Dosing: GFR 20–50mL/min,
+dose as for normal renal function; GFR <20mL/min, effects unknown, start at a low
+dose and monitor patient for urinary retention, confusion, sedation and postural
+hypotension as accumulation can occur. There is a case report of clomipramineinduced interstitial nephritis and reversible acute renal failure.
+
+Desvenlafaxine12,22,77,78
+
+45% of desvenlafaxine is excreted unchanged in the urine. Manufacturer recommends:
+GFR 30–50mL/min, 50mg per day; GFR <30mL/min, 25mg daily. Half-life is prolonged
+and desvenlafaxine accumulates as GFR decreases. Urinary retention, delay when
+starting to pass urine and proteinuria, has been reported as adverse effects.
+
+Dosulepin22,25,79
+(dothiepin)
+
+56% of mainly active metabolites renally excreted. They have a long half-life and may
+accumulate, resulting in excessive sedation. Dosing: GFR 20–50mL/min, dose as for
+normal renal function; GFR <20mL/min, start with a small dose and titrate to
+response. Monitor patient for urinary retention, confusion, sedation and postural
+hypotension.
+
+Doxepin22,23,25,32,80
+
+<1% excreted unchanged in urine. Dosing: GFR 10–50mL/min as in normal renal
+function but monitor patient for urinary retention, confusion, sedation and postural
+hypotension; GFR <10mL/min start with a small dose and increase slowly.
+Manufacturer advises using with caution. Haemolytic anaemia with renal failure has
+been reported with doxepin. Used topically to treat pruritis in chronic renal failure.
+
+Duloxetine22,25,81–83
+
+<1% excreted unchanged in urine. Manufacturer states no dose adjustment is
+necessary for GFR >30mL/min; however, starting at a low dose and increasing slowly
+is advised. Duloxetine is contraindicated in patients with a GFR <30mL/min as it can
+accumulate in chronic kidney disease. Licensed to treat diabetic neuropathic pain and
+stress incontinence in women. Diabetes is a common cause of renal impairment. Two
+case reports of acute renal failure with duloxetine have been reported. Serotonin
+syndrome reported in a patient with chronic kidney disease on trazodone and
+duloxetine.84
+(Continued)
+
+CHAPTER 8
+
+Table 8.9 (Continued)
+
+
+
+
+<<<PAGE 772>>>
+
+55. Aweeka F, et al. The pharmacokinetics of ziprasidone in subjects with normal and impaired renal function. Br J Clin Pharmacol 2000;
+49:27S-33S.
+56. Roerig. Highlights of Prescribing Information: GEODON® (ziprasidone HCl) capsules; GEODON® (ziprasidone mesylate) injection for
+intramuscular use 2020; http://labeling.pfizer.com/ShowLabeling.aspx?id=584.
+57. Iskandar JW, et al. Transient agranulocytosis associated with ziprasidone in a 45-year-old man on hemodialysis. J Clin Psychopharmacol
+2015; 35:347–348.
+58. Basol N, et al. Beneficial effects of agomelatine in experimental model of sepsis-related acute kidney injury. Ulus Travma Acil Cerrahi Derg
+2016; 22:121–126.
+59. Karaman A, et al. A novel approach to contrast-induced nephrotoxicity: the melatonergic agent agomelatine. Br J Radiol 2016; 89:20150716.
+60. Lieberman JA, et al. Tricyclic antidepressant and metabolite levels in chronic renal failure. Clin Pharmacol Ther 1985; 37:301–307.
+61. Mitas JA, et al. Diabetic neuropathic pain: control by amitriptyline and fluphenazine in renal insufficiency. South Med J 1983; 76:462–463,
+467.
+62. Murphy EJ. Acute pain management pharmacology for the patient with concurrent renal or hepatic disease. Anaesth Intensive Care 2005;
+33:311–322.
+63. Constantino JL, et al. Pharmacokinetics of antidepressants in patients undergoing hemodialysis: a narrative literature review. Braz J Psychiatry
+2019; 41:441–446.
+64. Chen TY, et al. Amitriptyline-induced acute kidney injury and acute hepatitis: a case report. Am J Ther 2021; 28:e256-e258
+65. Sage Therapeutics Inc. Highlights of Prescribing Information. Zulresso (brexanolone) injection for intravenous use [controlled substance
+schedule pending] 2019; https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/211371lbl.pdf.
+66. Turpeinen M, et al. Effect of renal impairment on the pharmacokinetics of bupropion and its metabolites. Br J Clin Pharmacol 2007;
+64:165–173.
+67. Worrall SP, et al. Pharmacokinetics of bupropion and its metabolites in haemodialysis patients who smoke. A single dose study. Nephron Clin
+Pract 2004; 97:c83–c89.
+68. Ghoreishi A, et al. Bupropion as a treatment for sexual dysfunction among chronic kidney disease patients Acta Med Iran 2019;
+57:320–327.
+69. Joffe P, et al. Single-dose pharmacokinetics of citalopram in patients with moderate renal insufficiency or hepatic cirrhosis compared with
+healthy subjects. Eur J Clin Pharmacol 1998; 54:237–242.
+70. Kalender B, et al. Antidepressant treatment increases quality of life in patients with chronic renal failure. Ren Fail 2007; 29:817–822.
+71. Kelly CA, et al. Adult respiratory distress syndrome and renal failure associated with citalopram overdose. Hum Exp Toxicol 2003;
+22:103–105.
+72. Spigset O, et al. Citalopram pharmacokinetics in patients with chronic renal failure and the effect of haemodialysis. Eur J Clin Pharmacol
+2000; 56:699–703.
+73. Hosseini SH, et al. Citalopram versus psychological training for depression and anxiety symptoms in hemodialysis patients. Iran J Kidney Dis
+2012; 6:446–451.
+74. Sran H, et al. Confusion after starting citalopram in a renal transplant patient. BMJ Case Rep 2013; 2013:bcr2013010511.
+75. Assimon MM, et al. Comparative cardiac safety of selective serotonin reuptake inhibitors among individuals receiving maintenance hemodialysis. J Am Soc Nephrol 2019; 30:611–623.
+76. Onishi A, et al. Reversible acute renal failure associated with clomipramine-induced interstitial nephritis. Clin Exp Nephrol 2007;
+11:241–243.
+77. Wyeth Pharmaceuticals Inc. Highlights of Prescribing Information. PRISTIQ® (desvenlafaxine) Extended-Release Tablets, for oral use 2020;
+http://labeling.pfizer.com/showlabeling.aspx?id=497%20.
+78. Nichols AI, et al. The pharmacokinetics and safety of desvenlafaxine in subjects with chronic renal impairment. Int J Clin Pharmacol Ther
+2011; 49:3–13.
+79. Rees JA. Clinical interpretation of pharmacokinetic data on dothiepin hydrochloride (Dosulepin, Prothiaden). J Int Med Res 1981;
+9:98–102.
+80. Swarna SS, et al. Pruritus associated with chronic kidney disease: a comprehensive literature review. Cureus 2019; 11:e5256.
+81. Lobo ED, et al. Effects of varying degrees of renal impairment on the pharmacokinetics of duloxetine: analysis of a single-dose phase I study
+and pooled steady-state data from phase II/III trials. Clin Pharmacokinet 2010; 49:311–321.
+82. Ho NV, et al. Duloxetine-induced multi-system organ failure: a case report. Poster presented at American Geriatrics Society Annual Meeting,
+May 11–15, 2011: National Harbor, Maryland; 2011.
+83. Nguyen T, et al. Duloxetine uses in patients with kidney disease: different recommendations from the United States versus Europe and
+Canada. Am J Ther 2019; 26:e516-e519.
+84. Uong C, et al. Poster 91 serotonin syndrome in chronic kidney disease patient after given a dose of duloxetine while on trazodone: a case
+report. PM&R 2014; 6 (Suppl): S214–S215.
+85. Miriyala K, et al. Renal failure in a depressed adolescent on escitalopram. J Child Adolesc Psychopharmacol 2008; 18:405–408.
+86. Adiga GU, et al. Renal tubular defects from antidepressant use in an older adult: an uncommon but reversible adverse drug effect. Clin Drug
+Invest 2006; 26:607–610.
+87. Yazici AE, et al. Efficacy and tolerability of escitalopram in depressed patients with end stage renal disease: an open placebo-controlled study.
+Bull Clin Psychopharmacol 2012; 22:23–30.
+88. Bergstrom RF, et al. The effects of renal and hepatic disease on the pharmacokinetics, renal tolerance, and risk-benefit profile of fluoxetine.
+Int Clin Psychopharmacol 1993; 8:261–266.
+89. Blumenfield M, et al. Fluoxetine in depressed patients on dialysis. Int J Psychiatry Med 1997; 27:71–80.
+90. Levy NB, et al. Fluoxetine in depressed patients with renal failure and in depressed patients with normal kidney function. Gen Hosp
+Psychiatry 1996; 18:8–13.
+
+CHAPTER 8
+
+Hepatic and renal impairment  751
+
+
+
+
+<<<PAGE 862>>>
+
+Pharmacokinetics  841
+
+The target ranges listed in Table 11.2 have somewhat dubious usefulness and, in
+some cases, merely represent the range of values seen in clinical use. Assays for these
+drugs are likely to be available only in specialist units.
+
+Antipsychotics
+
+Target range (µg/L)
+
+Asenapine
+
+1–5
+
+Brexpiprazole
+
+40–140
+
+Cariprazine
+
+10–20
+
+Chlorpromazine
+
+30–300
+
+Flupentixol
+
+0.5–5 (cis-isomer)
+
+Fluphenazine
+
+1–10
+
+Haloperidol
+
+1–10
+
+Iloperidone
+
+5–10
+
+Lurasidone
+
+15–40
+
+Melperone
+
+30–100
+
+Sulpiride
+
+200–1000
+
+Ziprasidone
+
+50–200
+
+Zuclopenthixol
+
+4–50
+
+Antidepressants
+
+Target range (µg/L)
+
+Agomelatine
+
+7–300
+
+Citalopram
+
+50–110
+
+Desvenlafaxine
+
+100–400
+
+Dosulepin
+
+45–100
+
+Duloxetine
+
+30–120
+
+Escitalopram
+
+15–80
+
+Fluoxetine (+norfluoxetine)
+
+120–500
+
+Fluvoxamine
+
+60–230
+
+Levomilnacipran
+
+80–120
+
+Mianserin
+
+15–70
+
+CHAPTER 11
+
+Table 11.2 Target ranges for other psychotropics30,91
+
+(Continued)
+
+
+
+
+<<<PAGE 876>>>
+
+Pharmacokinetics  855
+
+SUBSTRATES
+
+INHIBITORS
+
+INDUCERS
+
+Alfentanyl
+Alprazolam
+Amitriptyline
+Aripiprazole
+Brexpiprazole
+Buprenorphine
+Bupropion*
+Buspirone
+Carbamazepine
+Cariprazine
+Chlorpromazine
+Citalopram
+Clomipramine*
+Clonazepam
+Clozapine*
+Diazepam
+Donepezil
+Dosulepin
+Escitalopram*
+Fentanyl
+Fluoxetine*
+Galantamine
+Haloperidol
+Imipramine
+Lemborexant
+Lurasidone
+Methadone
+Midazolam
+Mirtazapine
+Modafinil
+Nitrazepam
+Perphenazine
+Pimavanserin
+Pimozide
+Quetiapine
+Reboxetine
+Risperidone*
+Sertindole
+Sertraline*
+Suvorexant
+Trazodone
+Trimipramine*
+Valbenazine
+Venlafaxine
+Vilazodone
+Zaleplon
+Ziprasidone
+Zolpidem
+Zopiclone
+
+Fluoxetine
+Fluvoxamine
+Paroxetine
+Perphenazine
+Reboxetine*
+
+Asenapine?
+Carbamazepine
+Modafinil
+Phenobarbital ‘and
+probably other
+Barbituates’
+Phenytoin
+SJW
+Topiramate
+
+Reference
+1. Schoretsanitis G, et al. TDM in psychiatry and neurology: a comprehensive summary of the consensus guidelines for therapeutic drug monitoring in neuropsychopharmacology, update 2017; a tool for clinicians. World J Biol Psychiatry 2018; 19:162–174.
+
+CHAPTER 11
+
+CYP3A4
+
+
+
+
+<<<PAGE 969>>>
+
+948  Index
+
+cocaine 467
+detoxification 511
+substitution treatment 511
+Cochrane systematic review 2018 52
+Cockroft and Gault equation 735
+codeine 638
+cognitive behavioural therapy (CBT) 556
+cognitive decline, consumption of 621
+cognitive enhancers, characteristics of 604,
+605–606t
+cognitive impairment 810
+combined antipsychotic medications
+(antipsychotic polypharmacy) 20
+adverse effects 21–22
+in clinical practice 22
+long-term antipsychotic
+treatment 20–21
+poor response to antipsychotic
+monotherapy 20
+communication impairment 579
+community detoxification 456
+co-morbid autistic spectrum disorder 797
+co-morbid depression 9, 401
+co-morbid disorders 9
+comorbidity, detection and treatment of
+587
+co-morbid mental health disorders 468
+co-morbid psychiatric illness 571
+compliance aids 902
+conventional antipsychotics 296
+covert administration
+algorithm for determining 671f
+guidance on 667–669
+CPY1A2, 852
+CPY2B6, 852
+CPY2C8, 853
+CPY2C9, 853
+CPY2C19, 853
+CPY2D6, 854
+C-reactive protein 909t
+creatine kinase 910t
+creatinine 910t
+Crocus sativus (saffron) 620
+cyclizine 635, 639
+CYP2A6 enzyme 852
+CYP3A4 enzyme 855
+alcohol and substrates for 861–862t
+CYP2B7 enzymes 852
+CYP2E1 enzyme 854
+alcohol and substrates for 861–862t
+CYP450 enzyme 378
+antidepressant effects on 378–379t
+cyproheptadine 925t
+cyproterone 590
+cytochrome P450 (CYP450) enzymes
+635
+darifenacin 631
+dehydration 863
+delirium 13, 638, 778
+choice of drug 15
+clinical subtypes of 13
+diagnostic criteria for 13
+drugs used to treat 15–18, 15–18t
+general principles 14
+management 14
+outcome 14
+pharmacological prophylaxis 15–18,
+
+15–18t
+prevalence 13
+risk factors 13–14
+tools for evaluation 13
+delirium tremens 472–473, 473t
+administration schedules for 473t
+treatment of 472
+delusional intensity 561
+demeclocycline 165t
+dementia 604, 883
+adverse effects, cholinesterase
+inhibitors 610–611
+Alzheimer’s disease (AD) 604
+memantine 604, 605–606t
+cardiovascular effects of drugs 611
+combination treatment 609
+diagnosis 650
+discontinuation of medication 616
+dosing and formulations 608–609
+efficacy of cognitive enhancers used in
+607
+other effects 608
+safer prescribing for physical conditions in
+631
+switching between drugs used in
+607–608
+tolerability 609–610
+dementia with Lewy bodies (DLB) 624
+depot antipsychotics 72
+depot/long-acting antipsychotics 902
+depression 583, 778–779, 805t, 808, 810,
+820, 872
+alcohol 468
+and anxiety 795t
+in childhood and adolescence
+after prescribing 544–545
+clinical guidance 541
+diagnostic issues 541
+medication treatment for 543–544
+before prescribing 542
+summary of pharmacotherapy for
+544t
+what to prescribe 542–544
+description of 305
+and diabetes 401–402, 402t
+drug treatment of 314, 314f
+effects of 404
+NICE guidelines 305–306
+non-drug treatments for 788
+in older people 673–676
+prescribing in 674–675t, 674–676
+in Parkinson’s disease (PD) 814
+post-stroke 362
+prophylaxis 362
+treatment 362–363
+during pregnancy and postpartum 685
+principles of prescribing in 305,
+306t
+psychotic 332–333
+recurrent 374–375, 374f
+second-generation antipsychotics 270
+stimulants in 357–359t
+symptoms of 309
+treatment of 788
+treatment-resistant See treatment-resistant
+depression
+desvenlafaxine 389, 741t
+deutetrabenazine 589, 730t
+
+dexamfetamine/lisdexamfetamine 569,
+571, 716t, 729t
+dexmedetomidine 937t
+dextromethorphan/quinidine, bupropion/
+dextromethorphan 652, 809
+diabetes mellitus 401–402, 402t
+diazepam 472, 771t, 937t
+dibenzoylmethane (DBM) 622
+dietary habits 621
+digoxin 602, 639
+dimebon 619
+discontinuation syndrome 607
+disulfiram (Antabuse)
+alcohol 464–466
+NICE clinical guideline 466
+diuretics 253
+DLB. See dementia with Lewy bodies (DLB)
+domperidone 635
+donepezil (AriceptR) 607, 612, 613,
+614t, 772t
+clinical trials of 624
+Cochrane review for 623
+doses of 609
+sustained release 608
+dopamine 168, 871
+agonists 169, 918t
+antagonists 47
+receptors, super-sensitivity of 28
+dose–response relationship 837
+dose response, systematic analysis of 17
+dosulepin (dothiepin) 742t
+doxepin 368, 742t, 857t
+drinks, content of 865t
+Driver and Vehicle Licensing Agency
+(DVLA) 883
+driving and psychotropic medicines 883
+duty of driver 886
+duty of prescriber 886
+effects of mental illness 883
+medication-induced sedation 885
+medicines 885
+psychiatric medicines, driving and
+UK law 883–885, 884t, 885t
+droperidol 58, 938t
+Drug Attitude Inventory (DAI) 901
+drug–drug interactions 614–615t,
+638–639
+drug-induced parkinsonism 778
+drug interactions with alcohol 860
+metabolism of alcohol 860–862
+pharmacodynamic interactions
+862–863t, 862–864, 864t
+pharmacokinetic interactions 860
+drug-placebo differences 307
+drugs. See also specific drugs
+acceptable use of 925
+classes, tapering other 446
+concentrations 835, 847
+degradation of 847
+distribution of 847
+with established target ranges 835–836t
+interactions 873
+in psychiatric practice 925t
+tolerability 609–610
+dual diagnosis 797
+dual re-uptake inhibitors 308
+duloxetine 308, 688, 706t, 727t, 742t,
+779, 857t
+
+

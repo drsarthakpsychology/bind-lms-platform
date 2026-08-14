@@ -1,0 +1,647 @@
+<<<PAGE 378>>>
+
+Depression and anxiety disorders  357
+
+Psychostimulants reduce fatigue, promote wakefulness and are mood-elevating (as distinct from antidepressant). Amfetamines have been used as treatments for depression
+since the 1930s,1 and more recently modafinil has been evaluated as an adjunct to
+standard antidepressants.2 Amfetamines are now rarely used in depression because of
+their propensity for the development of tolerance and dependence. Prolonged use of
+high doses is associated with paranoid psychosis.3 Methylphenidate is now more widely
+used but may have similar shortcomings. Modafinil seems not to induce tolerance,
+dependence or psychosis but lacks the marked euphoric effects of amfetamines.
+Armodafinil, the longer acting isomer of modafinil, is available in some countries.
+Psychostimulants differ importantly from standard antidepressants in that their
+mood-elevating effects are usually seen within a few hours, but their antidepressant
+action may be short-lived. Amfetamines and methylphenidate may thus be useful where
+a prompt effect is required and where dependence would not be problematic (e.g. in
+depression associated with terminal illness), although ketamine might also be considered (if available). Their use might also be justified in severe, prolonged depression
+unresponsive to standard treatments (e.g. in those considered for psychosurgery).
+Modafinil might justifiably be used as an adjunct to antidepressants in a wider range of
+patients and as a specific treatment for hypersomnia and fatigue.4
+Table 3.12 outlines support (or the absence of it) for the use of psychostimulants in
+various clinical situations. Generally speaking, data relating to stimulants in depression
+are rather poor and inconclusive.5–7 Careful consideration should be given to any use of
+any psychostimulant in depression since their short- and long-term safety have not been
+clearly established. Inclusion of individual drugs in Table 3.11 should not in itself be
+considered a recommendation for their use.
+Table 3.12 Stimulants in depression
+Clinical use
+
+Regimens evaluated
+
+Comments
+
+Recommendations
+
+Monotherapy in
+uncomplicated
+depression
+
+Modafinil 100–200mg a day8,9
+
+Case reports only –
+efficacy unproven
+
+Methylphenidate 20–40mg a
+day11,12
+
+Minimal efficacy
+
+Dexamphetamine 20mg a day11
+
+Minimal efficacy
+
+Standard antidepressants
+preferred. Avoid psychostimulants
+as monotherapy in uncomplicated
+depression.10 Meta-analysis found
+adjunctive therapy but not
+monotherapy to be associated
+with clinically significant
+improvements.7
+
+SSRI + methylphenidate
+10–20mg a day13,14
+
+No clear effect on
+time to response
+
+SSRI + modafinil 400mg/day15
+
+Improved response
+over SSRI alone
+
+Tricyclic + methylphenidate
+5–15mg a day16
+
+Single open-label trial
+suggests faster
+response
+
+SSRI or SNRI + lisdexamfetamine
+20–70mg/day17
+
+No superiority over
+placebo
+
+Adjunctive
+therapy to
+accelerate or
+improve
+response
+
+Psychostimulants in general not
+recommended, but modafinil may
+be useful.
+
+(Continued)
+
+CHAPTER 3
+
+Psychostimulants in depression
+
+
+
+
+<<<PAGE 382>>>
+
+35. Perugi G, et al. Use of stimulants in bipolar disorder. Curr Psychiatry Rep 2017; 19:7.
+36. Frye MA, et al. A placebo-controlled evaluation of adjunctive modafinil in the treatment of bipolar depression. Am J Psychiatry 2007;
+164:1242–1249.
+37. Tsapakis EM, et al. Adjunctive treatment with psychostimulants and stimulant-like drugs for resistant bipolar depression: a systematic review
+and meta-analysis. CNS Spectr 2020: 1–12. [Epub ahead of print].
+38. Nunez NA, et al. Efficacy and tolerability of adjunctive modafinil/armodafinil in bipolar depression: a meta-analysis of randomized controlled trials. Bipolar Disord 2020; 22:109–120.
+39. Dell’Osso B, et al. Assessing the roles of stimulants/stimulant-like drugs and dopamine-agonists in the treatment of bipolar depression. Curr
+Psychiatry Rep 2013; 15:378.
+40. McElroy SL, et al. Adjunctive lisdexamfetamine in bipolar depression: a preliminary randomized, placebo-controlled trial. Int Clin
+Psychopharmacol 2015; 30:6–13.
+41. Fernandez F, et al. Methylphenidate for depressive disorders in cancer patients. Psychosomatics 1987; 28:455–461.
+42. Macleod AD. Methylphenidate in terminal depression. J Pain Symptom Manage 1998; 16:193–198.
+43. Homsi J, et al. Methylphenidate for depression in hospice practice. Am J Hosp Palliat Care 2000; 17:393–398.
+44. Sarhill N, et al. Methylphenidate for fatigue in advanced cancer: a prospective open-label pilot study. Am J Hosp Palliat Care 2001;
+18:187–192.
+45. Homsi J, et al. A phase II study of methylphenidate for depression in advanced cancer. Am J Hosp Palliat Care 2001; 18:403–407.
+46. Burns MM, et al. Dextroamphetamine treatment for depression in terminally ill patients. Psychosomatics 1994; 35:80–83.
+47. Olin J, et al. Psychostimulants for depression in hospitalized cancer patients. Psychosomatics 1996; 37:57–62.
+48. Ng CG, et al. Rapid response to methylphenidate as an add-on therapy to mirtazapine in the treatment of major depressive disorder in terminally ill cancer patients: a four-week, randomized, double-blinded, placebo-controlled study. Eur Neuropsychopharmacol 2014;
+24:491–498.
+49. Sullivan DR, et al. Randomized, double-blind, placebo-controlled study of methylphenidate for the treatment of depression in SSRI-treated
+cancer patients receiving palliative care. Psychooncology 2017; 26:1763–1769.
+50. Conley CC, et al. Modafinil moderates the relationship between cancer-related fatigue and depression in 541 patients receiving chemotherapy. J Clin Psychopharmacol 2016; 36:82–85.
+51. Padala PR, et al. Methylphenidate for apathy in community-dwelling older veterans with mild Alzheimer’s disease: a double-blind, randomized, placebo-controlled trial. Am J Psychiatry 2018; 175:159–168.
+52. Kaplitz SE. Withdrawn, apathetic geriatric patients responsive to methylphenidate. J Am Geriatr Soc 1975; 23:271–276.
+53. Wallace AE, et al. Double-blind, placebo-controlled trial of methylphenidate in older, depressed, medically ill patients. Am J Psychiatry 1995;
+152:929–931.
+54. Lavretsky H, et al. Citalopram, methylphenidate, or their combination in geriatric depression: a randomized, double-blind, placebo-controlled trial. Am J Psychiatry 2015; 172:561–569.
+55. Grade C, et al. Methylphenidate in early poststroke recovery: a double-blind, placebo-controlled study. Arch Phys Med Rehabil 1998;
+79:1047–1050.
+56. Lazarus LW, et al. Efficacy and side effects of methylphenidate for poststroke depression. J Clin Psychiatry 1992; 53:447–449.
+57. Lingam VR, et al. Methylphenidate in treating poststroke depression. J Clin Psychiatry 1988; 49:151–153.
+58. Delbari A, et al. Effect of methylphenidate and/or levodopa combined with physiotherapy on mood and cognition after stroke: a randomized,
+double-blind, placebo-controlled trial. Eur Neurol 2011; 66:7–13.
+59. Sugden SG, et al. Modafinil monotherapy in poststroke depression. Psychosomatics 2004; 45:80–81.
+60. Rosenberg PB, et al. Methylphenidate in depressed medically ill patients. J Clin Psychiatry 1991; 52:263–267.
+61. Woods SW, et al. Psychostimulant treatment of depressive disorders secondary to medical illness. J Clin Psychiatry 1986; 47:12–15.
+62. Kaufmann MW, et al. The use of d-amphetamine in medically ill depressed patients. J Clin Psychiatry 1982; 43:463–464.
+63. Wagner GJ, et al. Dexamphetamine as a treatment for depression and low energy in AIDS patients: a pilot study. J Psychosom Res 1997;
+42:407–411.
+64. Wagner GJ, et al. Effects of dextroamphetamine on depression and fatigue in men with HIV: a double-blind, placebo-controlled trial. J Clin
+Psychiatry 2000; 61:436–440.
+65. Zhang WT, et al. Efficacy of methylphenidate for the treatment of mental sequelae after traumatic brain injury. Medicine (Baltimore) 2017;
+96:e6960.
+66. Lee H, et al. Comparing effects of methylphenidate, sertraline and placebo on neuropsychiatric sequelae in patients with traumatic brain
+injury. Human Psychopharmacology 2005; 20:97–104.
+
+CHAPTER 3
+
+Depression and anxiety disorders  361
+
+
+
+
+<<<PAGE 597>>>
+
+576  The Maudsley® Prescribing Guidelines in Psychiatry
+
+CHAPTER 5
+
+References
+1. National Institute for Health and Clinical Excellence. Attention deficit hyperactivity disorder: diagnosis and management. NICE guideline
+[NG87] 2018 (Last updated September 2019); https://www.nice.org.uk/guidance/NG87.
+2. Biederman J, et al. Lisdexamfetamine dimesylate and mixed amphetamine salts extended-release in children with ADHD: a double-blind,
+placebo-controlled, crossover analog classroom study. Biol Psychiatry 2007; 62:970–976.
+3. Coghill D, et al. European, randomized, phase 3 study of lisdexamfetamine dimesylate in children and adolescents with attention-deficit/
+hyperactivity disorder. Eur Neuropsychopharmacol 2013; 23:1208–1218.
+4. Findling RL, et al. Efficacy and safety of lisdexamfetamine dimesylate in adolescents with attention-deficit/hyperactivity disorder. J Am Acad
+Child Adolesc Psychiatry 2011; 50:395–405.
+5. Heal DJ, et al. Amphetamine, past and present – a pharmacological and clinical perspective. J Psychopharmacol 2013; 27:479–496.
+6. Coghill DR, et al. Long-term safety and efficacy of lisdexamfetamine dimesylate in children and adolescents with ADHD: a phase IV, 2-year,
+open-label study in Europe. CNS Drugs 2017; 31:625–638.
+7. Joseph A, et al. Comparative efficacy and safety of attention-deficit/hyperactivity disorder pharmacotherapies, including guanfacine extended
+release: a mixed treatment comparison. Eur Child Adolesc Psychiatry 2017; 26:875–897.
+8. Cortese S, et al. Comparative efficacy and tolerability of medications for attention-deficit hyperactivity disorder in children, adolescents, and
+adults: a systematic review and network meta-analysis. Lancet Psychiatry 2018; 5:727–738.
+9. Findling RL, et al. Long-term effectiveness and safety of lisdexamfetamine dimesylate in school-aged children with attention-deficit/hyperactivity disorder. CNS Spectr 2008; 13:614–620.
+10. Michelson D, et al. Once-daily atomoxetine treatment for children and adolescents with attention deficit hyperactivity disorder: a randomized, placebo-controlled study. Am J Psychiatry 2002; 159:1896–1901.
+11. Kratochvil CJ, et al. Atomoxetine and methylphenidate treatment in children with ADHD: a prospective, randomized, open-label trial. J Am
+Acad Child Adolesc Psychiatry 2002; 41:776–784.
+12. Weiss M, et al. A randomized, placebo-controlled study of once-daily atomoxetine in the school setting in children with ADHD. J Am Acad
+Child Adolesc Psychiatry 2005; 44:647–655.
+13. Kratochvil CJ, et al. A double-blind, placebo-controlled study of atomoxetine in young children with ADHD. Pediatrics 2011; 127:e862–e868.
+14. Catala-Lopez F, et al. The pharmacological and non-pharmacological treatment of attention deficit hyperactivity disorder in children and
+adolescents: a systematic review with network meta-analyses of randomised trials. PLoS One 2017; 12:e0180355.
+15. Liu Q, et al. Comparative efficacy and safety of methylphenidate and atomoxetine for attention-deficit hyperactivity disorder in children and
+adolescents: meta-analysis based on head-to-head trials. J Clin Exp Neuropsychol 2017; 39:854–865.
+16. Connor DF, et al. A meta-analysis of clonidine for symptoms of attention-deficit hyperactivity disorder. J Am Acad Child Adolesc Psychiatry
+1999; 38:1551–1559.
+17. National Institute for Health and Care Excellence. Attention deficit hyperactivity disorder in children and young people: guanfacine prolonged-release. Evidence summary [ESNM70] 2016; https://www.nice.org.uk/advice/esnm70/chapter/Key-points-from-the-evidence.
+18. Hazell P. Tricyclic antidepressants in children: is there a rationale for use? CNS Drugs 1996; 5:233–239.
+19. Otasowie J, et al. Tricyclic antidepressants for attention deficit hyperactivity disorder (ADHD) in children and adolescents. Cochrane
+Database Syst Rev 2014:Cd006997.
+20. Gorman DA, et al. Canadian guidelines on pharmacotherapy for disruptive and aggressive behaviour in children and adolescents with
+attention-deficit hyperactivity disorder, oppositional defiant disorder, or conduct disorder. Can J Psychiatry 2015; 60:62–76.
+21. Ng QX. A systematic review of the use of bupropion for attention-deficit/hyperactivity disorder in children and adolescents. J Child Adolesc
+Psychopharmacol 2017; 27:112–116.
+22. Biederman J, et al. A comparison of once-daily and divided doses of modafinil in children with attention-deficit/hyperactivity disorder: a
+randomized, double-blind, and placebo-controlled study. J Clin Psychiatry 2006; 67:727–735.
+23. Wang SM, et al. Modafinil for the treatment of attention-deficit/hyperactivity disorder: a meta-analysis. J Psychiatr Res 2017; 84:292–300.
+24. Einarson TR, et al. Novel antipsychotics for patients with attention-deficit hyperactivity disorder: a systematic review. Ottawa: Canadian
+Coordinating Office for Health Technology Assessment (CCOHTA) 2001: Technology Report No 17.
+25. Pringsheim T, et al. The pharmacological management of oppositional behaviour, conduct problems, and aggression in children and adolescents with attention-deficit hyperactivity disorder, oppositional defiant disorder, and conduct disorder: a systematic review and meta-analysis.
+Part 2: antipsychotics and traditional mood stabilizers. Can J Psychiatry 2015; 60:52–61.
+26. Ji N, et al. An update on pharmacotherapy for autism spectrum disorder in children and adolescents. Current Opinion Psychiatry 2015;
+28:91–101.
+27. Humphreys KL, et al. Stimulant medication and substance use outcomes: a meta-analysis. JAMA Psychiatry 2013; 70:740–749.
+28. Treuer T, et al. A systematic review of combination therapy with stimulants and atomoxetine for attention-deficit/hyperactivity disorder,
+including patient characteristics, treatment strategies, effectiveness, and tolerability. J Child Adolesc Psychopharmacol 2013; 23:179–193.
+29. Thapar A, et al. Attention deficit hyperactivity disorder. Lancet 2016; 387:1240–1250.
+30. DIVA Foundation. DIVA-5: diagnostic interview for ADHD in adults (DIVA) 2019; https://www.divacenter.eu/DIVA.aspx?id=461.
+31. Cosgrove PVF. Attention deficit hyperactivity disorder. Primary Care Psychiatry 1997; 3:101–114.
+32. Spencer T, et al. A double-blind, crossover comparison of methylphenidate and placebo in adults with childhood-onset attention-deficit
+hyperactivity disorder. Arch Gen Psychiatry 1995; 52:434–443.
+33. Wolraich ML, et al. Pharmacokinetic considerations in the treatment of attention-deficit hyperactivity disorder with methylphenidate. CNS
+Drugs 2004; 18:243–250.
+
+
+
+
+<<<PAGE 598>>>
+
+34. BNF Online. British National Formulary 2020; https://www.medicinescomplete.com/mc/bnf/current.
+35. Janssen-Cilag Ltd. Summary of product characteristics. Concerta XL 18 mg 27 mg 36 mg and 54 mg prolonged-release tablets. 2020; https://
+www.medicines.org.uk/emc/product/6872/smpc.
+36. Efron D, et al. Side effects of methylphenidate and dexamphetamine in children with attention deficit hyperactivity disorder: a double-blind,
+crossover trial. Pediatrics 1997; 100:662–666.
+37. Hennissen L, et al. Cardiovascular effects of stimulant and non-stimulant medication for children and adolescents with ADHD: a systematic
+review and meta-analysis of trials of methylphenidate, amphetamines and atomoxetine. CNS Drugs 2017; 31:199–215.
+38. Gadow KD, et al. Efficacy of methylphenidate for attention-deficit hyperactivity disorder in children with tic disorder. Arch Gen Psychiatry
+1995; 52:444–455.
+39. Cohen SC, et al. Meta-analysis: risk of tics associated with psychostimulant use in randomized, placebo-controlled trials. J Am Acad Child
+Adolesc Psychiatry 2015; 54:728–736.
+40. Hoare P, et al. 12-month efficacy and safety of OROS MPH in children and adolescents with attention-deficit/hyperactivity disorder switched
+from MPH. Eur Child Adolesc Psychiatry 2005; 14:305–309.
+41. Remschmidt H, et al. Symptom control in children and adolescents with attention-deficit/hyperactivity disorder on switching from immediate-release MPH to OROS MPH results of a 3-week open-label study. Eur Child Adolesc Psychiatry 2005; 14:297–304.
+42. Wolraich ML, et al. Randomized, controlled trial of OROS methylphenidate once a day in children with attention-deficit/hyperactivity disorder. Pediatrics 2001; 108:883–892.
+43. Findling RL, et al. Comparison of the clinical efficacy of twice-daily ritalin and once-daily equasym XL with placebo in children with attention deficit/hyperactivity disorder. Eur Child Adolesc Psychiatry 2006; 15:450–459.
+44. Anderson VR, et al. Spotlight on methylphenidate controlled-delivery capsules (equasym XLTM) in the treatment of children and adolescents
+with attention-deficit hyperactivity disorder. CNS Drugs 2007; 21:173–175.
+45. Flynn Pharma Ltd. Summary of Product Characteristics. Medikinet XL 5 mg 10 mg 20 mg 30 mg 40 mg 50 mg 60 mg modified release
+capsules 2019; https://www.medicines.org.uk/emc/product/313/smpc.
+46. Cyr M, et al. Current drug therapy recommendations for the treatment of attention deficit hyperactivity disorder. Drugs 1998; 56:215–223.
+47. Shire Pharmaceuticals Limited. Summary of Product Characteristics. Elvanse 20 mg, 30 mg, 40 mg, 50 mg, 60 mg & 70 mg capsules, hard
+(lisdexamfetamine) 2019; https://www.medicines.org.uk/emc/medicine/27442.
+48. Kelsey DK, et al. Once-daily atomoxetine treatment for children with attention-deficit/hyperactivity disorder, including an assessment of
+evening and morning behavior: a double-blind, placebo-controlled trial. Pediatrics 2004; 114:e1-e8.
+49. Wernicke JF, et al. Cardiovascular effects of atomoxetine in children, adolescents, and adults. Drug Saf 2003; 26:729–740.
+50. Heil SH, et al. Comparison of the subjective, physiological, and psychomotor effects of atomoxetine and methylphenidate in light drug users.
+Drug Alcohol Depend 2002; 67:149–156.
+51. Reed VA, et al. The safety of atomoxetine for the treatment of children and adolescents with attention-deficit/hyperactivity disorder: a comprehensive review of over a decade of research. CNS Drugs 2016; 30:603–628.
+52. Childress A, et al. Evaluation of the current data on guanfacine extended release for the treatment of ADHD in children and adolescents.
+Expert Opin Pharmacother 2020; 21:417–426.
+53. Takeda UK ltd. Guanfacine modified-release. Personal Communication, 2020.
+54. Cortese S, et al. New formulations of methylphenidate for the treatment of attention-deficit/hyperactivity disorder: pharmacokinetics, efficacy, and tolerability. CNS Drugs 2017; 31:149–160.
+
+CHAPTER 5
+
+Children and adolescents  577
+
+
+
+
+<<<PAGE 653>>>
+
+Dexamfetamine
+(dexamphetamine) – 0
+
+Aripiprazole – 1
+
+Ipratropium bromide – 0
+
+Insulin – 0
+
+Indapamide – 0
+
+Imipramine – 3
+
+Peppermint oil – 0
+
+Penicillin – 0
+
+Paroxetine – 2
+
+Paracetamol – 0
+
+Pantoprazole – 0
+
+Dexamethasone – NK
+
+Amlodipine – 0
+
+Oxybutynin – 3
+
+Apomorphine – 0
+
+Cyclizine – 1
+
+Amitriptyline – 3
+
+Hyoscine hydrobromide – 3
+
+Oxcarbazepine – NK
+
+Desipramine – 2
+
+Co-tenidone – 0
+
+Amisulpride – 0
+
+Hydroxyzine – 1
+
+Orphenadrine – 3
+
+Apixaban – NK
+
+Colchicine – NK
+
+Amiodarone – 1
+
+Hydrocortisone – NK
+
+Orlistat – 0
+
+Darifenacin – 0
+
+Codeine – NK
+
+Aminophylline – 0
+
+Hydrocodone – NK
+
+Ondansetron – 0
+
+Anastrozole – NK
+
+Co-careldopa – 0
+
+Amiloride – 0
+
+Hydrochlorothiazide – 0
+
+Omeprazole – 0
+
+Iloperidone – 1
+
+Co-beneldopa – 0
+
+Amantadine – 2
+
+Heparin – 0
+
+Dabigatran – NK
+
+Clozapine – 3
+
+Alverine – 0
+
+Olanzapine – 2
+
+Haloperidol – 0
+
+Amoxicillin – 0
+
+Clopidogrel – 0
+
+Alprazolam – 0
+
+Nortriptyline – 3
+
+Granisetron – 0
+
+Nitrofurantoin – NK
+
+Paliperidone – 1
+
+Clonidine – NK
+
+Allopurinol – NK
+
+Gliclazide – 0
+
+Nimodipine – 0
+
+Ibuprofen – 0
+
+Clonazepam – NK
+
+Alimemazine (trimeprazine) – 3
+
+Gaviscon – 0
+
+Nifedipine – 0
+
+Cyproheptadine – 3
+
+Clomipramine – 3
+
+Alfuzosin – 0
+
+Galantamine – 0
+
+Naproxen – 0
+
+Oxycodone – NK
+
+Clemastine – 3
+
+Alendronic acid
+(Alendronate) – 0
+
+Gabapentin – 0
+
+Hysoscine butylbromide
+(buscopan) – 1
+
+Clarithromycin – NK
+
+Adcal – 0
+
+Table 6.4 Anticholinergic effect on cognition (AEC) scores4 (updated October 2020)
+
+Trazodone – 0
+
+Tramadol – 0
+
+Topiramate – NK
+
+Tolterodine – 2
+
+Tolcapone – 0
+
+Tizanidine – NK
+
+Tiotropium bromide
+(inhalation) – 0
+
+Thiamine – 0
+
+Theophylline – 0
+
+Tetracycline – 0
+
+Temazepam – 1
+
+Tamsulosin – 0
+
+Tamoxifen – NK
+
+Sulpiride – 0
+
+Sulphasalazine – 0
+
+Spironolactone – NK
+
+Sotalol – 0
+
+Solifenacin – 1
+
+Sitagliptin – 0
+
+
+
+
+<<<PAGE 742>>>
+
+Pregnancy and breastfeeding  721
+
+188. Kelly LE, et al. Neonatal benzodiazepines exposure during breastfeeding. J Pediatr 2012; 161:448–451.
+189. Birnbaum CS, et al. Serum concentrations of antidepressants and benzodiazepines in nursing infants: a case series. Pediatrics 1999; 104:e11.
+190. Darwish M, et al. Rapid disappearance of zaleplon from breast milk after oral administration to lactating women. J Clin Pharmacol 1999;
+39:670–674.
+191. Pons G, et al. Excretion of psychoactive drugs into breast milk. Pharmacokinetic principles and recommendations. Clin Pharmacokinet
+1994; 27:270–289.
+192. Matheson I, et al. The excretion of zopiclone into breast milk. Br J Clin Pharmacol 1990; 30:267–271.
+193. Ilett KF, et al. Transfer of dexamphetamine into breast milk during treatment for attention deficit hyperactivity disorder. Br J Clin Pharmacol
+2007; 63:371–375.
+194. Hackett LP, et al. Methylphenidate and breast-feeding. Ann Pharmacother 2006; 40:1890–1891.
+195. Bolea-Alamanac BM, et al. Methylphenidate use in pregnancy and lactation: a systematic review of evidence. Br J Clin Pharmacol 2014;
+77:96–101.
+196. Marchese M, et al. Is it safe to breastfeed while taking methylphenidate? Can Fam Physician 2015; 61:765–766.
+197. Aurora S, et al. Evaluating transfer of modafinil into human milk during lactation: a case report. J Clin Sleep Med 2018; 14:2087–2089.
+198. Calvo-Ferrandiz E, et al. Narcolepsy with cataplexy and pregnancy: a case-control study. J Sleep Res 2018; 27:268–272.
+
+Further reading
+
+CHAPTER 7
+
+National Institute for Health Care and Excellence. Antenatal and postnatal mental health: clinical management and service guidance. Clinical
+guideline [CG192] 2014 (Last updated February 2020); https://www.nice.org.uk/guidance/cg192
+
+
+
+
+<<<PAGE 750>>>
+
+Hepatic and renal impairment  729
+
+Table 8.3 (Continued)
+Drug
+
+Comments
+
+Valproate
+
+74
+
+Highly protein bound and hepatically metabolised. Dosage reduction with close
+monitoring of LFTs in moderate hepatic impairment. Use plasma levels (measure free
+levels − total concentrations may appear to be normal) to guide dosage. Caution
+advised. Contraindicated in severe and/or active hepatic impairment, or family history
+of severe impairment; impairment of usual metabolic pathway can lead to generation
+of hepatotoxic metabolites via alternative pathway. Risk of liver toxicity is increased in
+people with hepatic insufficiency if salicylates are used concomitantly. Associated
+with elevated LFTs and serious hepatotoxicity including fulminant hepatic failure
+(sometimes fatal). Mitochondrial disease, learning disability, polypharmacy, metabolic
+disorders and underlying hepatic disease may be risk factors. Particularly hepatotoxic
+in very young children. The greatest risk is in the first three months of treatment.
+
+Stimulants in hepatic impairment5,6,75
+Recommendations for the use of stimulant medications in hepatic impairment are outlined in Table 8.4.
+Table 8.4 Stimulants in hepatic impairment
+Atomoxetine76
+
+Reduce initial and target dose by 50% in moderate impairment, and by 75% in
+severe impairment. Very rare reports of liver toxicity, manifested by elevated hepatic
+enzymes, and raised bilirubin with jaundice. SPC states ‘discontinue in patients with
+jaundice or laboratory evidence of liver injury, and do not restart’.
+
+Methylphenidate77
+
+Rare reports of liver dysfunction and hypersensitivity reactions.
+
+Dexamphetamine/
+lisdexamphetamine78,79
+
+Little experience in liver disease, manufacturers recommend cautious dose titration.
+Very rarely associated with abnormal liver function, two case reports of
+hepatotoxicity.80,81
+
+Sedatives in hepatic impairment
+Table 8.5 summarises recommended sedatives in hepatic impairment.
+
+Benzodiazepines
+
+Extensively hepatically metabolised. Prolonged duration of effect particularly for drugs
+with active metabolites (diazepam, midazolam, clonazepam). Lorazepam, oxazepam and
+temazepam do not have active metabolites and are preferred; lorazepam is considered
+the best tolerated in advanced liver disease19 and is commonly used in alcohol
+withdrawal. Serum enzyme elevations are uncommon and liver injury very rare.19
+
+Promethazine6
+
+Extensive hepatic metabolism. Manufacturers recommend caution in liver
+impairment. Jaundice reported with high doses, no reports of LFT abnormalities or
+toxicity with lower doses.19
+
+Z drugs6,82,83
+
+Hepatically metabolised, but all have a relatively short half-life (1–7 hours). Reduce
+initial doses in mild to moderate impairment (use zopiclone 3.75mg, zolpidem 5mg,
+zaleplon 5mg), avoid in severe impairment. Zaleplon is subject to significant first-pass
+metabolism and zolpidem plasma concentrations and half-life are significantly
+increased in hepatic impairment; these agents should be used with caution.84 Although
+zopiclone has the longer half-life, this may not be clinically relevant except in severe
+disease.83 Zopiclone and zaleplon have not been associated with hepatotoxicity. There
+are rare reports of abnormal LFTs and a single case of liver injury with zolpidem.19
+(Continued)
+
+CHAPTER 8
+
+Table 8.5 Sedatives in hepatic impairment
+
+
+
+
+<<<PAGE 754>>>
+
+40. Gahr M, et al. Safety and tolerability of agomelatine: focus on hepatotoxicity. Curr Drug Metab 2014; 15:694–702.
+41. Billioti de Gage S, et al. Antidepressants and hepatotoxicity: a cohort study among 5 million individuals registered in the French National
+Health Insurance Database. CNS Drugs 2018; 32:673–684.
+42. Pladevall-Vila M, et al. Risk of acute liver injury in agomelatine and other antidepressant users in four European Countries: a cohort and
+nested case-control study using automated Health Data Sources. CNS Drugs 2019; 33:383–395.
+43. Hanje AJ, et al. Case report: fulminant hepatic failure involving duloxetine hydrochloride. Clin Gastroenterol Hepatol 2006; 4:912–917.
+44. Vuppalanchi R, et al. Duloxetine hepatotoxicity: a case-series from the drug-induced liver injury network. Aliment Pharmacol Ther 2010;
+32:1174–1183.
+45. Lin ND, et al. Hepatic outcomes among adults taking duloxetine: a retrospective cohort study in a US health care claims database. BMC
+Gastroenterol 2015; 15:134.
+46. McIntyre RS, et al. The hepatic safety profile of duloxetine: a review. Expert Opin Drug Metab Toxicol 2008; 4:281–285.
+47. Bunchorntavakul C, et al. Drug hepatotoxicity: newer agents. Clin Liver Dis 2017; 21:115–134.
+48. Schenker S, et al. Fluoxetine disposition and elimination in cirrhosis. Clin Pharmacol Ther 1988; 44:353–359.
+49. Cai Q, et al. Acute hepatitis due to fluoxetine therapy. Mayo Clin Proc 1999; 74:692–694.
+50. Friedenberg FK, et al. Hepatitis secondary to fluoxetine treatment. Am J Psychiatry 1996; 153:580.
+51. Johnston DE, et al. Chronic hepatitis related to use of fluoxetine. Am J Gastroenterol 1997; 92:1225–1226.
+52. Hale AS New antidepressants: use in high-risk patients. J Clin Psychiatry 1993; 54 Suppl:61–70.
+53. Stoeckel K, et al. Absorption and disposition of moclobemide in patients with advanced age or reduced liver or kidney function. Acta
+Psychiatr Scand Suppl 1990; 360:94–97.
+54. Lee KC, et al. Transdermal selegiline for the treatment of major depressive disorder. Neuropsychiatr Dis Treat 2007; 3:527–537.
+55. Thomas E, et al. Mirtazapine-induced steatosis. Int J Clin Pharmacol Ther 2017; 55:630–632.
+56. Shaheen AA, et al. The impact of depression and antidepressant usage on primary biliary cholangitis clinical outcomes. PLoS One 2018;
+13:e0194839.
+57. Benbow SJ, et al. Paroxetine and hepatotoxicity. BMJ 1997; 314:1387.
+58. Kuhs H, et al. A double-blind study of the comparative antidepressant effect of paroxetine and amitriptyline. Acta Psychiatr Scand Suppl
+1989; 350:145–146.
+59. de Bree H, et al. Fluvoxamine maleate: disposition in men. Eur J Drug Metab Pharmacokinet 1983; 8:175–179.
+60. Green BH Fluvoxamine and hepatic function. Br J Psychiatry 1988; 153:130–131.
+61. Milne RJ, et al. Citalopram: a review of its pharmacodynamic and pharmacokinetic properties, and therapeutic potential in depressive illness.
+Drugs 1991; 41:450–477.
+62. Lopez-Torres E, et al. Hepatotoxicity related to citalopram (Letter). Am J Psychiatry 2004; 161:923–924.
+63. Colakoglu O, et al. Toxic hepatitis associated with paroxetine. Int J Clin Pract 2005; 59:861–862.
+64. Rao N The clinical pharmacokinetics of escitalopram. Clin Pharmacokinet 2007; 46:281–290.
+65. Mullish BH, et al. Review article: depression and the use of antidepressants in patients with chronic liver disease or liver transplantation.
+Aliment Pharmacol Ther 2014; 40:880–892.
+66. Düll MM, et al. Treatment of pruritus secondary to liver disease. Current Gastroenterology Reports 2019; 21:48.
+67. A T, et al. Pharmacokinetics of reboxetine in volunteers with hepatic impairment. Clin Drug Investig 2000; 19:473–477.
+68. Medicines C. Lofepramine (Gamanil) and abnormal blood tests of liver function. Current Problems 1988; 23:2.
+69. Archer DF, et al. Cardiovascular, cerebrovascular, and hepatic safety of desvenlafaxine for 1 year in women with vasomotor symptoms associated with menopause. Menopause 2013; 20:47–56.
+70. Baird-Bellaire S, et al. An open-label, single-dose, parallel-group study of the effects of chronic hepatic impairment on the safety and pharmacokinetics of desvenlafaxine. Clin Ther 2013; 35:782–794.
+71. Ryan PB, et al. Atypical antipsychotics and the risks of acute kidney injury and related outcomes among older adults: a replication analysis
+and an evaluation of adapted confounding control strategies. Drugs Aging 2017; 34:211–219.
+72. Chen G, et al. Vortioxetine: clinical pharmacokinetics and drug interactions. Clin Pharmacokinet 2018; 57:673–686.
+73. Bjornsson E Hepatotoxicity associated with antiepileptic drugs. Acta Neurol Scand 2008; 118:281–290.
+74. Guo HL, et al. Valproic acid and the liver injury in patients with epilepsy: an update. Curr Pharm Des 2019; 25:343–351.
+75. Panei P, et al. Safety of psychotropic drug prescribed for attention-deficit/hyperactivity disorder in Italy. Adverse Drug Reaction Bulletin
+2010:999–1002.
+76. Reed VA, et al. The safety of atomoxetine for the treatment of children and adolescents with attention-deficit/hyperactivity disorder: a comprehensive review of over a decade of research. CNS Drugs 2016; 30:603–628.
+77. Tong HY, et al. Liver transplant in a patient under methylphenidate therapy: a case report and review of the literature. Case Rep Pediatr 2015;
+2015:437298.
+78. Shire Pharmaceuticals Limited. Summary of product characteristics. Elvanse 20mg 30mg 40mg 50mg 60mg 70mg Hard Capsules 2019;
+https://www.medicines.org.uk/emc/product/2979/smpc.
+79. Flynn Pharma Ltd. Summary of product characteristics. Amfexa 5mg 10mg 20mg Tablets 2018; https://www.medicines.org.uk/emc/product/7403/smpc.
+80. Vanga RR, et al. Adderall induced acute liver injury: a rare case and review of the literature. Case Rep Gastrointest Med 2013; 2013:902892.
+81. Hood B, et al. Eosinophilic hepatitis in an adolescent during lisdexamfetamine dimesylate treatment for ADHD. Pediatrics 2010;
+125:e1510–1513.
+
+CHAPTER 8
+
+Hepatic and renal impairment  733
+
+
