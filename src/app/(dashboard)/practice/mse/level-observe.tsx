@@ -91,7 +91,7 @@ export function ObserveLevel({
           &quot;anxious&quot;, &quot;manipulative&quot;. Behaviour words are observations. Target:{" "}
           <span className="font-semibold">100 words with zero labels</span>.
         </p>
-        <textarea
+        <textarea enterKeyHint="enter"
           ref={textareaRef}
           value={text}
           onChange={(e) => setText(e.target.value)}

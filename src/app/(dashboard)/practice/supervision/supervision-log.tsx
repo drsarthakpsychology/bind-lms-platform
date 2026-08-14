@@ -190,7 +190,7 @@ export function SupervisionLog({
           <label htmlFor="transfer-note" className="mt-2 block text-caption font-medium text-muted-foreground">
             What did you try that you practised here — and what happened?
           </label>
-          <textarea
+          <textarea enterKeyHint="enter"
             id="transfer-note"
             value={transferNote}
             onChange={(e) => setTransferNote(e.target.value)}

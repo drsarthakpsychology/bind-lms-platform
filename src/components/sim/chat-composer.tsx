@@ -62,7 +62,7 @@ export function ChatComposer({
         </button>
 
         {/* Multiline input — grows with the keyboard. */}
-        <textarea
+        <textarea enterKeyHint="enter"
           ref={ref}
           value={value}
           onChange={(e) => onChange(e.target.value)}

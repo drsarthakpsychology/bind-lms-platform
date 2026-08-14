@@ -199,7 +199,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: typeof SE
           <p className="text-small text-muted-foreground">
             Write a 3-6 sentence formulation linking the factors you sorted.
           </p>
-          <textarea
+          <textarea enterKeyHint="enter"
             value={narrative}
             onChange={(e) => setNarrative(e.target.value)}
             rows={8}
@@ -364,7 +364,7 @@ function OwnTranscriptForge() {
           <p className="text-caption text-muted-foreground">No turns found in this session.</p>
         ) : null}
       </div>
-      <textarea
+      <textarea enterKeyHint="enter"
         value={narrative}
         onChange={(e) => setNarrative(e.target.value)}
         rows={6}

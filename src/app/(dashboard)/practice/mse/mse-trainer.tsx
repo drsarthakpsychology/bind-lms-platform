@@ -216,7 +216,7 @@ export function MseTrainer() {
             Describe what you see without using diagnostic words. Any diagnostic term gets
             flagged.
           </p>
-          <textarea
+          <textarea enterKeyHint="enter"
             value={describeText}
             onChange={(e) => setDescribeText(e.target.value)}
             rows={4}

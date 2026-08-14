@@ -3506,3 +3506,4 @@ workflow/first-time/returning/interruption journeys, 320-430 regression
 matrix, visual comparison, red-team, cognitive-load, E2E — all need a running
 dev server + seeded Supabase + real viewports. Cannot be honestly completed
 from code. Logged to NEEDS_KAVYA; the Playwright matrix spec is ready to run.
+2026-08-14T20:56:46 Continue ceiling reached (50) — allowing stop for safety.
