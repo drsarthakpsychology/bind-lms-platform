@@ -9,8 +9,12 @@ import { cn } from "@/lib/utils";
  * leading glyph/number, a 1–2 line title, a metadata line, and a trailing
  * state/chevron. `href` renders a link; omit it for a button.
  *
- * Designed for mobile first (min 44px tap height) and looks identical on
+ * Designed for mobile first (min 48px tap height) and looks identical on
  * desktop rows, so there's one list language everywhere.
+ *
+ * `active` marks the row as the current destination (sets `aria-current`).
+ * `emphasis` is a softer highlight for "start here" / "continue" rows that
+ * should stand out visually without claiming they are the current page.
  */
 export function MobileListItem({
   href,
@@ -20,6 +24,7 @@ export function MobileListItem({
   subtitle,
   trailing,
   active,
+  emphasis,
   disabled,
   className,
 }: {
@@ -30,6 +35,7 @@ export function MobileListItem({
   subtitle?: React.ReactNode;
   trailing?: React.ReactNode;
   active?: boolean;
+  emphasis?: boolean;
   disabled?: boolean;
   className?: string;
 }) {
@@ -37,7 +43,7 @@ export function MobileListItem({
     <>
       {leading ? <span className="flex size-9 shrink-0 items-center justify-center">{leading}</span> : null}
       <span className="min-w-0 flex-1">
-        <span className="block truncate text-small font-semibold text-foreground [&:nth-child(1)]:line-clamp-2">
+        <span className="block text-small font-semibold leading-snug text-foreground [overflow-wrap:anywhere] line-clamp-2">
           {title}
         </span>
         {subtitle ? (
@@ -52,6 +58,7 @@ export function MobileListItem({
     </>
   );
 
+  const surface = active || emphasis ? "bg-accent" : "bg-card hover:bg-accent";
   const base =
     "flex w-full min-h-[48px] items-center gap-3 rounded-lg px-3 py-2 text-left transition-colors duration-fast ease-snappy active:translate-y-px";
 
@@ -63,7 +70,7 @@ export function MobileListItem({
         aria-current={active ? "page" : undefined}
         className={cn(
           base,
-          active ? "bg-accent" : "bg-card hover:bg-accent",
+          surface,
           disabled && "pointer-events-none opacity-50",
           className,
         )}
@@ -81,7 +88,7 @@ export function MobileListItem({
       disabled={disabled}
       className={cn(
         base,
-        active ? "bg-accent" : "bg-card hover:bg-accent",
+        surface,
         disabled && "pointer-events-none opacity-50",
         className,
       )}

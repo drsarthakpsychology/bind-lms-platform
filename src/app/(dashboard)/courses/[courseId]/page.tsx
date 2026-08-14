@@ -1,16 +1,15 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BookOpen, CheckCircle2, ChevronLeft, ChevronDown, Clock, FileText } from "lucide-react";
+import { BookOpen, CheckCircle2, ChevronLeft, Clock, FileText, Lock } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 
 import { PageHeader } from "@/components/design-system/page-header";
 import { Badge } from "@/components/ui/badge";
-import { cardVariants } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { EmptyState } from "@/components/design-system/empty-state";
+import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { cn } from "@/lib/utils";
 
 export default async function CourseOverviewPage({
@@ -79,6 +78,7 @@ export default async function CourseOverviewPage({
   const percent = playable.length
     ? Math.round((completedCount / playable.length) * 100)
     : 0;
+  const remaining = playable.length - completedCount;
 
   const resumeTarget = playable.find((l) => !completedIds.has(l.id)) ?? playable[0];
 
@@ -161,40 +161,51 @@ export default async function CourseOverviewPage({
     <div className="mx-auto w-full max-w-3xl space-y-8">
       <Link
         href="/dashboard"
-        className="inline-flex items-center gap-1.5 text-small font-medium text-muted-foreground transition-colors hover:text-foreground"
+        className="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-border bg-card px-3 text-small font-medium text-muted-foreground transition-colors hover:text-foreground active:translate-y-px"
       >
         <ChevronLeft className="size-4" aria-hidden />
         My Courses
-     </Link>
+      </Link>
 
       <PageHeader
         eyebrow={course.is_published ? "Published course" : "Draft course"}
         title={course.title}
         description={
           course.is_published
-            ? "Your linear path through this course. One next action, highlighted."
+            ? "One next action, highlighted. The rest is here when you need it."
             : "Draft — not yet visible to students."
         }
       />
 
-      <div className="flex items-center gap-4 rounded-lg border-2 border-foreground bg-card p-5 hard-shadow-sm">
-        <div className="flex-1">
-          <p className="text-caption text-muted-foreground">
-            {completedCount} of {playable.length} lessons complete
-         </p>
-          <Progress value={percent} aria-label="Course progress" className="mt-2" />
-       </div>
-        {resumeTarget && (
-          <Button asChild>
-            <Link href={`/courses/${courseId}/lessons/${resumeTarget.id}`}>
-              {completedCount > 0 ? "Resume" : "Start course"}
-              <ArrowRight className="size-4" aria-hidden />
-           </Link>
-         </Button>
-        )}
-     </div>
+      {/* Progress — a compact readout, not a second CTA. The next lesson row
+          below is the single primary action. At 0% the bar would be an empty
+          outline, so show a plain line instead. */}
+      {playable.length > 0 && (
+        <div className="rounded-lg border-2 border-foreground bg-card p-4 hard-shadow-sm">
+          {percent === 0 ? (
+            <p className="text-small text-muted-foreground">
+              Not started · {playable.length} {playable.length === 1 ? "lesson" : "lessons"}
+            </p>
+          ) : (
+            <>
+              <div className="flex items-baseline justify-between gap-3">
+                <p className="text-small font-medium text-foreground">
+                  {remaining === 0
+                    ? "Complete"
+                    : `${remaining} ${remaining === 1 ? "lesson" : "lessons"} left`}
+                </p>
+                <p className="text-caption text-muted-foreground">{percent}%</p>
+              </div>
+              <Progress value={percent} aria-label="Course progress" className="mt-2" />
+            </>
+          )}
+        </div>
+      )}
 
-      <section aria-label="Course path" className="space-y-4">
+      {/* Course path — a flat list of week sections. Each week is a quiet text
+          header (not a card) and every lesson is one strong tappable row. No
+          nested cards, no per-lesson boxes. */}
+      <section aria-label="Course path" className="space-y-6">
         {Array.from({ length: totalWeeks }, (_, i) => i + 1).map((weekNum) => {
           const weekLessons = playable.filter((l) => ((l as { week?: number }).week ?? 1) === weekNum);
           const weekMaterials = courseMaterialsByWeek.get(weekNum) ?? [];
@@ -205,206 +216,144 @@ export default async function CourseOverviewPage({
           const isCurrentWeek = weekNum === currentWeek;
           const isPastWeek = weekNum < currentWeek;
           const isFutureWeek = weekNum > currentWeek;
-          const isNextWeek = weekNum === currentWeek + 1 && !isCurrentWeek;
           const weekComplete = weekLessons.length > 0 && weekLessons.every((l) => completedIds.has(l.id));
-          const weekOpen = isCurrentWeek || isNextWeek || weekComplete;
+
+          const statusLabel = isCurrentWeek
+            ? "In progress"
+            : isPastWeek
+              ? weekComplete
+                ? "Complete"
+                : "Incomplete"
+              : "Opens later";
 
           return (
-            <details
-              key={weekNum}
-              open={weekOpen}
-              className={cn(
-                "group rounded-lg border-2 p-4 transition-colors",
-                isCurrentWeek && "border-primary bg-primary/5",
-                isPastWeek && weekComplete && "border-foreground/20 bg-background",
-                isFutureWeek && "border-border/50 bg-background/50",
-              )}
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span
-                    aria-hidden
-                    className={cn(
-                      "flex min-w-8 shrink-0 items-center justify-center rounded-md border-2 px-1 text-small font-bold",
-                      isCurrentWeek && "border-primary bg-primary text-primary-foreground",
-                      isPastWeek && weekComplete && "border-foreground bg-primary text-primary-foreground",
-                      isFutureWeek && "border-border bg-muted text-muted-foreground",
-                    )}
-                  >
-                    {isPastWeek && weekComplete ? <CheckCircle2 className="size-4" /> : <span>{weekNum}</span>}
-                 </span>
-                  <div>
-                    <h3 className={cn("text-h3", isFutureWeek && "text-muted-foreground")}>
-                      Week {weekNum}
-                   </h3>
-                    <p className="text-caption text-muted-foreground">
-                      {isCurrentWeek
-                        ? "In progress"
-                        : isPastWeek
-                          ? weekComplete
-                            ? "Complete"
-                            : "Incomplete"
-                          : `Opens ${isNextWeek ? "next" : "later"}`}
-                   </p>
-                 </div>
-               </div>
-                <div className="flex items-center gap-2">
-                  {isFutureWeek && (
-                    <span className="rounded-full border border-border bg-muted px-2 py-0.5 text-caption font-medium text-muted-foreground">
-                      Locked
-                   </span>
+            <section key={weekNum} aria-label={`Week ${weekNum}`} className="space-y-2">
+              <div className="flex items-center gap-2.5 px-1">
+                <span
+                  aria-hidden
+                  className={cn(
+                    "flex size-8 shrink-0 items-center justify-center rounded-md border-2 text-numeric text-small font-bold",
+                    isFutureWeek
+                      ? "border-border bg-muted text-muted-foreground"
+                      : isCurrentWeek || (isPastWeek && weekComplete)
+                        ? "border-foreground bg-primary text-primary-foreground"
+                        : "border-border bg-accent text-foreground",
                   )}
-                  <ChevronDown className="size-4 text-muted-foreground transition-transform group-open:rotate-180" aria-hidden />
-               </div>
-             </summary>
+                >
+                  {isPastWeek && weekComplete ? <CheckCircle2 className="size-4" /> : weekNum}
+                </span>
+                <h2 className="text-h3 text-foreground">Week {weekNum}</h2>
+                <span className="text-caption text-muted-foreground">{statusLabel}</span>
+                {isFutureWeek && (
+                  <span className="ml-auto inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2 py-0.5 text-caption font-medium text-muted-foreground">
+                    <Lock className="size-3" aria-hidden />
+                    Locked
+                  </span>
+                )}
+              </div>
 
-              <div className="mt-4 space-y-3">
+              <div className="space-y-1">
                 {weekLessons.map((lesson, i) => {
                   const done = completedIds.has(lesson.id);
                   const isNextAction = nextAction?.type === "lesson" && nextAction.id === lesson.id;
 
-                  const rowClass = cn(
-                    cardVariants({ variant: isFutureWeek ? "flat" : "interactive" }),
-                    "flex flex-row items-center gap-3 p-4",
-                    done && "opacity-70",
-                    isNextAction && "ring-2 ring-primary bg-primary/5",
-                    isFutureWeek && "opacity-50",
-                  );
-
-                  const rowContent = (
-                    <>
-                      <span
-                        aria-hidden
-                        className={cn(
-                          "flex min-w-8 shrink-0 items-center justify-center rounded-md border-2 px-1",
-                          done && "border-foreground bg-primary text-primary-foreground",
-                          isNextAction && !done && "ring-2 ring-primary",
-                          !done && !isNextAction && "border-border bg-accent text-foreground",
-                        )}
-                      >
-                        {done ? (
-                          <CheckCircle2 className="size-4" />
-                        ) : (
-                          <span className="text-xs font-bold">{i + 1}</span>
-                        )}
-                     </span>
-
-                      <span className="min-w-0 flex-1">
-                        <span className="block truncate text-small font-medium text-foreground">{lesson.title}</span>
-                        <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-caption text-muted-foreground">
-                          {!done && !isNextAction && <span>Not watched yet</span>}
-                          {isNextAction && <span className="font-medium text-link">← Start here</span>}
-                       </span>
-                     </span>
-
-                      {!isFutureWeek && <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
-                    </>
-                  );
-
-                  // Locked weeks are NOT navigable — a plain div instead of an
-                  // anchor, so clicking can't scroll to top (href="#").
-                  return isFutureWeek ? (
-                    <div key={lesson.id} className={rowClass}>
-                      {rowContent}
-                    </div>
-                  ) : (
-                    <Link
+                  return (
+                    <MobileListItem
                       key={lesson.id}
-                      href={`/courses/${courseId}/lessons/${lesson.id}`}
-                      className={rowClass}
-                    >
-                      {rowContent}
-                    </Link>
+                      href={isFutureWeek ? undefined : `/courses/${courseId}/lessons/${lesson.id}`}
+                      disabled={isFutureWeek}
+                      emphasis={isNextAction}
+                      leading={
+                        done ? (
+                          <CheckCircle2 className="size-5 text-primary" aria-hidden />
+                        ) : (
+                          <span className="text-numeric text-small font-semibold text-muted-foreground">
+                            {i + 1}
+                          </span>
+                        )
+                      }
+                      title={lesson.title}
+                      subtitle={
+                        isFutureWeek
+                          ? undefined
+                          : isNextAction
+                            ? <span className="font-medium text-link">← Start here</span>
+                            : done
+                              ? "Completed"
+                              : "Not started"
+                      }
+                      trailing={
+                        isFutureWeek ? (
+                          <Lock className="size-4 text-muted-foreground" aria-hidden />
+                        ) : undefined
+                      }
+                    />
                   );
                 })}
 
-                {weekMaterials.map((m) => {
-                  const mWeek = (m as { week?: number }).week ?? 1;
-                  const materialRowClass = cn(
-                    cardVariants({ variant: isFutureWeek ? "flat" : "interactive" }),
-                    "flex flex-row items-center gap-3 p-3",
-                    nextAction?.type === "material" && nextAction.id === m.id && "ring-2 ring-primary bg-primary/5",
-                    isFutureWeek && "opacity-50",
-                  );
-                  const materialContent = (
-                    <>
-                      <BookOpen className="size-4 shrink-0 text-muted-foreground" aria-hidden />
-                      <span className="min-w-0 flex-1 truncate text-small font-medium">{m.title}</span>
-                      <span className="text-caption text-muted-foreground">
-                        {m.format?.toUpperCase() ?? m.kind}
-                     </span>
-                      {!isFutureWeek && <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
-                    </>
-                  );
-                  return isFutureWeek ? (
-                    <div key={m.id} className={materialRowClass}>
-                      {materialContent}
-                    </div>
-                  ) : (
-                    <Link key={m.id} href={`/courses/${courseId}/materials/${m.id}`} className={materialRowClass}>
-                      {materialContent}
-                    </Link>
-                  );
-                  void mWeek;
-                })}
+                {weekMaterials.map((m) => (
+                  <MobileListItem
+                    key={m.id}
+                    href={isFutureWeek ? undefined : `/courses/${courseId}/materials/${m.id}`}
+                    disabled={isFutureWeek}
+                    leading={<BookOpen className="size-5 text-muted-foreground" aria-hidden />}
+                    title={m.title}
+                    subtitle={m.format?.toUpperCase() ?? m.kind}
+                    trailing={
+                      isFutureWeek ? (
+                        <Lock className="size-4 text-muted-foreground" aria-hidden />
+                      ) : undefined
+                    }
+                  />
+                ))}
 
                 {weekAssignments.map((a) => {
                   const isNextAction = nextAction?.type === "assignment" && nextAction.id === a.id;
-                  const assignmentRowClass = cn(
-                    cardVariants({ variant: isFutureWeek ? "flat" : "interactive" }),
-                    "flex flex-row items-center gap-3 p-4",
-                    isNextAction && "ring-2 ring-primary bg-primary/5",
-                    isFutureWeek && "opacity-50",
-                  );
-                  const assignmentContent = (
-                    <>
-                      <span className="flex size-8 shrink-0 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground">
-                        <FileText className="size-4" aria-hidden />
-                     </span>
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-small font-medium">{a.title ?? "Assignment"}</p>
-                        <p className="truncate text-caption text-muted-foreground">
-                          {a.lessonTitle}
-                          {a.due_at ? ` · due ${new Date(a.due_at).toLocaleDateString()}` : ""}
-                       </p>
-                     </div>
-                      {a.status === "draft" && <Badge variant="draft">Draft</Badge>}
-                      {a.status === "not_started" && <Badge variant="outline">Not started</Badge>}
-                      {a.status === "submitted" && (
-                        <Badge variant="pending">
-                          <Clock className="size-3" aria-hidden />
-                          Submitted
-                       </Badge>
-                      )}
-                      {a.status === "graded" && (
-                        <Badge variant="graded">
-                          <CheckCircle2 className="size-3" aria-hidden />
-                          Graded
-                       </Badge>
-                      )}
-                      {isNextAction && <span className="font-medium text-link text-caption">← Next</span>}
-                      {!isFutureWeek && <ArrowRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
-                    </>
-                  );
-                  return isFutureWeek ? (
-                    <div key={a.id} className={assignmentRowClass}>
-                      {assignmentContent}
-                    </div>
-                  ) : (
-                    <Link
+
+                  return (
+                    <MobileListItem
                       key={a.id}
-                      href={`/courses/${courseId}/lessons/${a.lessonId}?tab=assignment`}
-                      className={assignmentRowClass}
-                    >
-                      {assignmentContent}
-                    </Link>
+                      href={isFutureWeek ? undefined : `/courses/${courseId}/lessons/${a.lessonId}?tab=assignment`}
+                      disabled={isFutureWeek}
+                      emphasis={isNextAction}
+                      leading={<FileText className="size-5 text-muted-foreground" aria-hidden />}
+                      title={a.title ?? "Assignment"}
+                      subtitle={
+                        isFutureWeek ? undefined : (
+                          <>
+                            {isNextAction && <span className="font-medium text-link">← Next · </span>}
+                            {a.lessonTitle}
+                            {a.due_at ? ` · due ${new Date(a.due_at).toLocaleDateString()}` : ""}
+                          </>
+                        )
+                      }
+                      trailing={
+                        isFutureWeek ? (
+                          <Lock className="size-4 text-muted-foreground" aria-hidden />
+                        ) : a.status === "draft" ? (
+                          <Badge variant="draft">Draft</Badge>
+                        ) : a.status === "not_started" ? (
+                          <Badge variant="outline">Not started</Badge>
+                        ) : a.status === "submitted" ? (
+                          <Badge variant="pending">
+                            <Clock className="size-3" aria-hidden />
+                            Submitted
+                          </Badge>
+                        ) : a.status === "graded" ? (
+                          <Badge variant="graded">
+                            <CheckCircle2 className="size-3" aria-hidden />
+                            Graded
+                          </Badge>
+                        ) : undefined
+                      }
+                    />
                   );
                 })}
-             </div>
-           </details>
+              </div>
+            </section>
           );
         })}
-     </section>
+      </section>
 
       {playable.length === 0 && (
         <EmptyState
@@ -413,6 +362,6 @@ export default async function CourseOverviewPage({
           description="Ask your faculty to add lessons to this course."
         />
       )}
-   </div>
+    </div>
   );
 }
