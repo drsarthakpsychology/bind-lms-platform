@@ -2368,3 +2368,18 @@ key exists; the actual training job is one key away. Committed 80814d8.
 - Also landed: context expansion (05bafa8) — measured grounded@8 76% → 90%.
 - Key blocker → NEEDS_KAVYA (one line): DEEPSEEK_API_KEY (or compatible).
 2026-08-14T10:06:34 Queue exhausted — allowing normal Claude stop.
+2026-08-14T10:07:47 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — Eval honesty fix: measures the real app path (4b2f6a1, 2bb6d3e)
+
+The eval's grounded@8 (76%) measured vector-only retrieval, but the app's
+/api/knowledge/ask uses context expansion. Fixed the eval to report BOTH:
+- recall@5/8 100% (raw vector lane)
+- grounded@8 vector-only 76% (38/50)
+- grounded app-path expanded 90% (45/50) — what a model actually receives
+
+RetrieveTopK now mirrors the app's expansion (hits-first + adjacent passages);
+recall uses raw vector, grounding uses the expanded window. Fixed a transient
+bug (interleaved neighbors made slice(0,8) bogus at 48%). Docs + FINETUNING
+runbook updated to the honest dual baseline. The 10% app-path gap = multi-page
+case-management sections beyond ±1-page expansion (documented future target).
