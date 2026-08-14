@@ -12,7 +12,7 @@ test.describe("app page coverage", () => {
       { path: "/practice", heading: /Walk into your first real intake ready/ },
       { path: "/practice/ethics", heading: /consequence comes first/i },
       { path: "/record", heading: /paper trail|supervision log|your record/i },
-      { path: "/practice/library", heading: /browse the corpus/i },
+      { path: "/practice/library", heading: /case library/i },
       { path: "/passport", heading: /competencies, evidenced|passport/i },
       { path: "/practice/judgment", heading: /5 Judgment Calls/i },
       { path: "/practice/mse", heading: /MSE|Mental status/i },
