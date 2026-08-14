@@ -566,12 +566,12 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   bottom sheets, chat composers, and navigation remain usable and never become
   hidden behind the keyboard
 
-- [ ] T55  Mobile gesture audit — identify places where gestures can genuinely
+- [x] T55  Mobile gesture audit — identify places where gestures can genuinely
   improve usability, such as dismissing sheets, navigating media, or moving
   through sequential content; use gestures selectively and always preserve
   obvious accessible controls
 
-- [ ] T56  Mobile swipe/step interactions — where sequential content benefits
+- [x] T56  Mobile swipe/step interactions — where sequential content benefits
   from swiping, implement it carefully alongside explicit Next/Back controls;
   never make a required action dependent solely on an undiscoverable gesture
 
@@ -662,7 +662,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   patterns into reusable primitives without forcing unrelated experiences into
   the same component
 
-- [ ] T76  Mobile route-by-route UX review — manually inspect every mobile route
+- [x] T76  Mobile route-by-route UX review — manually inspect every mobile route
   in the application and document whether it follows the core principles:
   focused task, progressive disclosure, clear hierarchy, obvious next action,
   contextual secondary actions, correct spacing, safe-area behavior, and
@@ -706,17 +706,17 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   incomplete data, slow loading, and interrupted sessions; fix everything
   discovered
 
-- [ ] T85  Mobile cognitive-load pass — review every major flow specifically for
+- [x] T85  Mobile cognitive-load pass — review every major flow specifically for
   unnecessary decisions, simultaneous choices, visual noise, reading burden,
   repeated navigation, and unclear next actions; simplify wherever possible
 
-- [ ] T86  Mobile progressive-disclosure consistency pass — verify that the
+- [x] T86  Mobile progressive-disclosure consistency pass — verify that the
   one-task-at-a-time philosophy is applied consistently across assessments,
   lessons, forms, practice, clinical workflows, documents, settings,
   dashboards, and other relevant experiences rather than being implemented as
   isolated patterns
 
-- [ ] T87  Mobile "what next?" audit — open every major screen with fresh eyes
+- [x] T87  Mobile "what next?" audit — open every major screen with fresh eyes
   and verify that a user can identify the intended next action within seconds;
   redesign screens where multiple actions compete equally
 
