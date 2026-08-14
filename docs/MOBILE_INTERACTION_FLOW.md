@@ -193,6 +193,42 @@ Nothing is *removed* from the feature — only from the first screenful.
 
 ---
 
+## Psychopharmacology reference (/tools)
+
+### Search (/tools/psychopharm)
+- **Primary goal:** type a drug name and land on its detail page.
+- **Primary action:** the single autofocused search field.
+- **Required info:** the query, the suggestion list (exact, then "Did you mean…").
+- **Next action:** pick a name → drug detail — a single push, no chip step in between.
+- **Secondary (contextual):** "Browse by mechanism" link (sits below the field, not competing); suggestions are capped and scroll, never overflow.
+- **Competing actions:** the field is the only interactive surface on the first viewport; the learning entry point is a quiet link, not a parallel CTA.
+
+### Drug detail (/tools/psychopharm/[drug])
+- **Primary goal:** read what this drug does at the selected dose.
+- **Primary action:** the dose ladder (tap a rung).
+- **Required info:** drug name + class, the dose rungs, the band body for the selected rung.
+- **Next action:** tap a rung → band body updates; tap "Compare →" → compare page with this drug preselected.
+- **Secondary (contextual):** register toggle (student/clinician), onset timeline, FDA-label sections, source citation, observer notes.
+- **Competing actions:** the register toggle must live in a header (its scope is the whole band body), never mid-page; the 7 observer-note subsections render one-at-a-time on mobile (accordion), full only on desktop; FDA sections defer below the band body.
+
+### Compare (/tools/psychopharm/compare)
+- **Primary goal:** compare 2–5 drugs at their dose.
+- **Primary action:** pick the second drug, then read the side-by-side comparison.
+- **Required info:** the first drug, the second-drug picker (same-class suggestions), the compared fields.
+- **Next action:** pick the second drug → comparison; add more via the URL.
+- **Secondary (contextual):** the standing notice, the "add up to five" URL hint.
+- **Competing actions:** the no-drugs state is a shared EmptyState; a single-drug state offers a "pick a second drug" list, never a dangling empty slot; the comparison is stacked records on mobile, a table only at lg+.
+
+### Learn by mechanism (/tools/psychopharm/learn)
+- **Primary goal:** browse drugs grouped by receptor mechanism.
+- **Primary action:** the mechanism-group drug pills.
+- **Required info:** the mechanism tag, the drugs in that group (with qualifiers).
+- **Next action:** tap a drug pill → its detail page.
+- **Secondary (contextual):** nothing — it is a browse index.
+- **Competing actions:** pills must be ≥44px touch targets; one border per group card, no nested boxes.
+
+---
+
 ## Record & reflection
 
 ### Journal (/reflect)
