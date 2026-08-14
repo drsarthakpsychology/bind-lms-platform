@@ -1860,3 +1860,5 @@ Committed this pass (newest → oldest):
 
 Remaining human items (NEEDS_KAVYA): clinician review of the 146 enriched
 medication entries before publishing.
+2026-08-14T05:53:09 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:58:45 Queue exhausted — allowing normal Claude stop.
