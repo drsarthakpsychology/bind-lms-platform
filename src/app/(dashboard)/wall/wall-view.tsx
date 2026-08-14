@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
-import { cn } from "@/lib/utils";
-import { Heart, Lightbulb, HelpCircle, PartyPopper, AlertTriangle, Pin } from "lucide-react";
+import { formatRelativeTime } from "@/lib/format";
+import { Heart, Lightbulb, HelpCircle, PartyPopper, AlertTriangle, Pin, MoreHorizontal } from "lucide-react";
 
 interface WallReply {
   id: string;
@@ -49,6 +49,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
   const [replyText, setReplyText] = React.useState("");
   const [replyAnon, setReplyAnon] = React.useState(false);
   const [replying, setReplying] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState<string | null>(null);
 
   async function post(e: React.FormEvent) {
     e.preventDefault();
@@ -192,28 +193,32 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
           value={content}
           onChange={(e) => setContent(e.target.value)}
           rows={3}
+          enterKeyHint="enter"
           placeholder="Share something with the cohort — a question, a win, a hard moment."
           className="w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
           aria-label="Post to the cohort wall"
         />
-        <div className="flex items-center gap-3">
-          <label className="flex items-center gap-2 text-small text-muted-foreground">
-            <input
-              type="checkbox"
-              checked={anonymous}
-              onChange={(e) => setAnonymous(e.target.checked)}
-              className="size-4"
-            />
-            Post anonymously
-          </label>
-          <button
-            type="submit"
-            disabled={busy || !content.trim()}
-            className="ml-auto rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
-          >
-            {busy ? "Posting…" : "Post"}
-          </button>
-        </div>
+        <label className="flex min-h-12 cursor-pointer items-center gap-2.5 rounded-md border border-border bg-background px-3 text-small text-muted-foreground">
+          <input
+            type="checkbox"
+            checked={anonymous}
+            onChange={(e) => setAnonymous(e.target.checked)}
+            className="size-4"
+          />
+          Post anonymously
+        </label>
+        <button
+          type="submit"
+          disabled={busy || !content.trim()}
+          className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+        >
+          {busy ? "Posting…" : "Post"}
+        </button>
+        {anonymous ? (
+          <p className="text-caption text-muted-foreground">
+            Your name won&apos;t be shown to anyone in the cohort.
+          </p>
+        ) : null}
         {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
       </form>
 
@@ -227,24 +232,11 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
           <ul className="space-y-3">
             {posts.map((p) => (
               <li key={p.id} className={`rounded-md border-2 border-border bg-card p-4 ${p.isPinned ? "border-primary" : ""}`}>
-                <div className="flex items-center gap-2 text-caption text-muted-foreground">
+                <div className="flex flex-wrap items-center gap-2 text-caption text-muted-foreground">
                   {p.isPinned ? <span className="inline-flex items-center gap-1 font-semibold text-link"><Pin className="size-3.5" aria-hidden /> Pinned</span> : null}
                   {p.isFaculty ? <span className="rounded-full bg-secondary px-2 py-0.5 font-semibold">Faculty</span> : null}
                   {p.isAnonymous ? <span>Anonymous</span> : <span>Cohort member</span>}
-                  <span>· {new Date(p.createdAt).toLocaleDateString()}</span>
-                  {isFacultyViewer ? (
-                    <button
-                      type="button"
-                      onClick={() => void togglePin(p.id, p.isPinned)}
-                      className={cn(
-                        "ml-auto rounded-full border px-2 py-0.5 transition-transform active:translate-y-px",
-                        p.isPinned ? "border-primary bg-primary/10 text-link" : "border-border hover:bg-secondary",
-                      )}
-                      title={p.isPinned ? "Unpin (remove from top)" : "Pin as the Case of the Week"}
-                    >
-                      <span className="inline-flex items-center gap-1"><Pin className="size-3" aria-hidden /> {p.isPinned ? "Unpin" : "Pin"}</span>
-                    </button>
-                  ) : null}
+                  <span>· {formatRelativeTime(p.createdAt)}</span>
                 </div>
                 <p className="mt-2 whitespace-pre-wrap text-small">{p.content}</p>
 
@@ -272,19 +264,49 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                   <button
                     type="button"
                     onClick={() => { setReplyOpen(replyOpen === p.id ? null : p.id); haptic("tap"); }}
-                    className="rounded-full border border-border px-2 py-0.5 text-caption text-muted-foreground hover:bg-secondary"
+                    aria-expanded={replyOpen === p.id}
+                    className="rounded-full border-2 border-border px-2.5 py-1 text-caption font-medium text-foreground transition-transform active:translate-y-px"
                   >
                     Reply
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => void reportPost(p.id)}
-                    title="Report this post to faculty"
-                    aria-label="Report this post to faculty"
-                    className="rounded-full border border-border px-2 py-0.5 text-caption text-muted-foreground hover:bg-secondary"
-                  >
-                    Report
-                  </button>
+                  <span className="relative">
+                    <button
+                      type="button"
+                      onClick={() => { setMenuOpen(menuOpen === p.id ? null : p.id); haptic("tap"); }}
+                      aria-haspopup="menu"
+                      aria-expanded={menuOpen === p.id}
+                      aria-label="More actions"
+                      className="inline-flex size-8 items-center justify-center rounded-full border border-border text-muted-foreground transition-transform hover:bg-secondary active:translate-y-px"
+                    >
+                      <MoreHorizontal className="size-4" aria-hidden />
+                    </button>
+                    {menuOpen === p.id ? (
+                      <span
+                        role="menu"
+                        className="absolute right-0 top-full z-10 mt-1 flex min-w-40 flex-col overflow-hidden rounded-md border-2 border-foreground bg-card hard-shadow-sm"
+                      >
+                        <button
+                          type="button"
+                          role="menuitem"
+                          onClick={() => { void reportPost(p.id); setMenuOpen(null); }}
+                          className="flex min-h-11 items-center px-3 text-left text-small text-foreground transition-colors hover:bg-accent"
+                        >
+                          Report this post
+                        </button>
+                        {isFacultyViewer ? (
+                          <button
+                            type="button"
+                            role="menuitem"
+                            onClick={() => { void togglePin(p.id, p.isPinned); setMenuOpen(null); }}
+                            className="flex min-h-11 items-center gap-1 border-t border-border px-3 text-left text-small text-foreground transition-colors hover:bg-accent"
+                          >
+                            <Pin className="size-3.5" aria-hidden />
+                            {p.isPinned ? "Unpin" : "Pin as Case of the Week"}
+                          </button>
+                        ) : null}
+                      </span>
+                    ) : null}
+                  </span>
                 </div>
 
                 {/* replies */}
@@ -295,7 +317,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                         <div className="flex items-center gap-2 text-caption text-muted-foreground">
                           {r.isFaculty ? <span className="rounded-full bg-secondary px-1.5 py-0.5 font-semibold">Faculty</span> : null}
                           <span>{r.isAnonymous ? "Anonymous" : "Cohort member"}</span>
-                          <span>· {new Date(r.createdAt).toLocaleDateString()}</span>
+                          <span>· {formatRelativeTime(r.createdAt)}</span>
                         </div>
                         <p className="mt-1 whitespace-pre-wrap text-small">{r.content}</p>
                         <div className="mt-1.5 flex flex-wrap items-center gap-1">

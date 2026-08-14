@@ -2,7 +2,12 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
+import { cn } from "@/lib/utils";
+import { formatRelativeTime } from "@/lib/format";
 import { Share2, Ban } from "lucide-react";
+
+const DRAFT_KEY = "journal:draft";
+const MOODS = ["calm", "low", "anxious", "tired", "hopeful"] as const;
 
 interface JournalEntry {
   id: string;
@@ -30,6 +35,39 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
   const [shareEmail, setShareEmail] = React.useState("");
   const [shareMsg, setShareMsg] = React.useState<Record<string, string>>({});
   const [shareIds, setShareIds] = React.useState<Record<string, string>>({});
+  const [draftSaved, setDraftSaved] = React.useState(false);
+
+  // Restore an unsaved draft after first paint (deferred so it neither races
+  // hydration nor sets state synchronously inside the effect body).
+  React.useEffect(() => {
+    const id = window.setTimeout(() => {
+      try {
+        const draft = window.localStorage.getItem(DRAFT_KEY);
+        if (draft) setContent(draft);
+      } catch {
+        /* ignore */
+      }
+    }, 0);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  // Debounced autosave — a reflection is exactly the thing you don't want to lose.
+  React.useEffect(() => {
+    const t = setTimeout(() => {
+      try {
+        if (content.trim()) {
+          window.localStorage.setItem(DRAFT_KEY, content);
+          setDraftSaved(true);
+        } else {
+          window.localStorage.removeItem(DRAFT_KEY);
+          setDraftSaved(false);
+        }
+      } catch {
+        /* ignore */
+      }
+    }, 800);
+    return () => clearTimeout(t);
+  }, [content]);
 
   async function save(e: React.FormEvent) {
     e.preventDefault();
@@ -54,6 +92,12 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       ]);
       setContent("");
       setMood("");
+      try {
+        window.localStorage.removeItem(DRAFT_KEY);
+      } catch {
+        /* ignore */
+      }
+      setDraftSaved(false);
       haptic("success");
     } catch {
       setError("Network error.");
@@ -164,31 +208,47 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
           value={content}
           onChange={(e) => setContent(e.target.value)}
           rows={6}
+          enterKeyHint="enter"
           placeholder="Write freely. This stays yours."
           className="w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
         />
-        <div className="flex items-center gap-2">
-          <select
-            value={mood}
-            onChange={(e) => setMood(e.target.value)}
-            aria-label="Mood tag (optional)"
-            className="rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
-          >
-            <option value="">Mood (optional)</option>
-            <option value="calm">Calm</option>
-            <option value="low">Low</option>
-            <option value="anxious">Anxious</option>
-            <option value="tired">Tired</option>
-            <option value="hopeful">Hopeful</option>
-          </select>
-          <button
-            type="submit"
-            disabled={busy || !content.trim()}
-            className="ml-auto rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
-          >
-            {busy ? "Saving…" : "Save entry"}
-          </button>
+
+        <div className="space-y-1.5">
+          <p className="text-caption text-muted-foreground">How are you feeling? (optional)</p>
+          <div className="flex flex-wrap gap-1.5">
+            {MOODS.map((m) => (
+              <button
+                key={m}
+                type="button"
+                onClick={() => {
+                  setMood(mood === m ? "" : m);
+                  haptic("tap");
+                }}
+                aria-pressed={mood === m}
+                className={cn(
+                  "min-h-9 rounded-full border-2 px-3 py-1 text-caption font-medium capitalize transition-transform active:translate-y-px",
+                  mood === m
+                    ? "border-foreground bg-primary text-primary-foreground"
+                    : "border-border bg-card text-muted-foreground",
+                )}
+              >
+                {m}
+              </button>
+            ))}
+          </div>
         </div>
+
+        <button
+          type="submit"
+          disabled={busy || !content.trim()}
+          className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+        >
+          {busy ? "Saving…" : "Save entry"}
+        </button>
+
+        <p className="text-caption text-muted-foreground" aria-live="polite">
+          {draftSaved ? "Draft saved." : ""}
+        </p>
         {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
       </form>
 
@@ -205,7 +265,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
               <li key={e.id} className="rounded-md border-2 border-border bg-card p-4">
                 <div className="flex items-center justify-between">
                   <span className="text-caption text-muted-foreground">
-                    {new Date(e.createdAt).toLocaleDateString()}
+                    {formatRelativeTime(e.createdAt)}
                     {e.moodTag ? ` · ${e.moodTag}` : ""}
                   </span>
                   <span className="flex items-center gap-1.5">

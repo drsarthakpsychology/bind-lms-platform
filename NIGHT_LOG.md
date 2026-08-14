@@ -3208,3 +3208,13 @@ one-cognitive-task-at-a-time as the mobile product principle (shared data+logic,
 DIFFERENT composition; mobile-specific components like MobileAssessmentFlow are
 encouraged). This supersedes "make it responsive". Logged to memory + applies
 to T7 (assessment one-question flow), T8, and the simulation.
+
+2026-08-14T19:33 T7 done — assessment/quiz (QuizCheck, used by lessons + decode/
+ethics/mse/osce): replaced the all-questions-stacked-with-borders model with a
+progressive one-question flow. Compact "Question n of m" + thin bar; single
+question card; immediate pick → feedback (Correct./Needs another look. + why +
+source); Next / See results → score. Options now role=radio + aria-checked,
+green-free feedback (amber tint + ink check; muted wrong pick). Attempts persist
+per-pick. Gate green: lint 0, tsc clean, 466 tests, build. Commit 24e5357.
+NOTE: dropped the "standard of care" tag render (still in data) — noise cut per
+§8; can restore if Dr. Dave wants it.

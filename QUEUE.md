@@ -370,7 +370,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
 - [x] T4  Today dashboard (mostly good — polish spacing + "one thing next")
 - [x] T5  Courses — clean vertical lesson rows (kill nested week cards)
 - [x] T6  Practice hub — category grouping, reduce boxes
-- [ ] T7  Assessment UI — question prominent, tappable answers, compact progress
+- [x] T7  Assessment UI — question prominent, tappable answers, compact progress
 - [ ] T8  Journal + Wall — textarea/keyboard, compact posts/replies
 - [ ] T9  Material/lesson viewer error states + mobile controls
 - [ ] T10 Voice UX — tap-to-toggle conversational loop + explicit states
