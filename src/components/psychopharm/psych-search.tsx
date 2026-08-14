@@ -51,8 +51,10 @@ export function PsychSearch({
     const current = q.trim();
     if (!current) return; // empty handled in onChange
     let cancelled = false;
-    // Deterministic prefix search over static data (no model).
-    fetch(`/api/psychopharm/search?q=${encodeURIComponent(current)}`)
+    // Debounce: don't fire a fetch per keystroke on mobile data (T74).
+    const t = setTimeout(() => {
+      // Deterministic prefix search over static data (no model).
+      fetch(`/api/psychopharm/search?q=${encodeURIComponent(current)}`)
       .then((r) => r.json())
       .then((d) => {
         if (!cancelled) {
@@ -70,8 +72,10 @@ export function PsychSearch({
           setSearchError(true);
         }
       });
+    }, 250);
     return () => {
       cancelled = true;
+      clearTimeout(t);
     };
   }, [q, searchRetry]);
 
