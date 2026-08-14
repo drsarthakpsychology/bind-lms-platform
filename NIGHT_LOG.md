@@ -20,7 +20,7 @@ until scrolled into view then lands (opacity 0→1), reduced-motion renders both
 instantly, enquire form fields + sheet stamp intact. No loops, no particles,
 no custom cursors.
 
-Gate green: lint 0, tsc clean, 449 tests, build 82/82.
+Gate green: lint 0, tsc clean, 449 tests, build 82/82. Commit: b5ef1b6.
 
 ## 2026-08-14 — DESIGN REVIEW (open-design-design-review): one tightening, one confirmed non-issue
 
@@ -2649,3 +2649,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T14:17:22 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:22:27 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:23:46 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:26:34 Queue exhausted — allowing normal Claude stop.
