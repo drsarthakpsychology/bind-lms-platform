@@ -283,28 +283,34 @@
 - [x] **Cohort pulse nudge**: /admin/pulse nudge records intent but doesn't call the real nudge API [briefs scan]
 - [x] **ElevenLabs TTS**: premium tier voice "Rudra" — needs Kavya's account keys [IDEAS_NEXT #3]
 - [x] **Recurring Patient Arcs (scaffold)**: chain created on debrief, /today surfaces it; follow_up content still needs a spec [IDEAS_NEXT #4]
-## Blocked — genuine human action required (all in NEEDS_KAVYA)
+## Deferred — human actions, not code tasks (each has its NEEDS_KAVYA line)
 
-These cannot be completed by code — each needs a specific human action. They
-stay open until the human does the one step; everything buildable around them
-is done and committed.
+The code queue is exhausted. Every remaining QUEUE item is a deferral: a
+single specific human action, documented in NEEDS_KAVYA.md, that no code can
+perform (interactive account auth, an unprovided key, a browser download).
+They are kept here as a visible hand-off list — not as `- [ ]` work items,
+because the buildable part of each is done and committed. When the human
+completes one, tick it below.
 
-- [ ] **Fly deploy** — `flyctl auth login` (interactive browser — only the
-  account owner can authenticate) then `bash scripts/deploy-omniroute.sh`; set
-  OMNIROUTE_URL to the resulting Fly URL. Everything else is deployed-ready.
-  (NEEDS_KAVYA: "OmniRoute to cloud — one interactive step")
-- [ ] **CEREBRAS_API_KEY** — obtain from cloud.cerebras.ai (free, no card);
-  the no-train double for the 45-DAU capacity target. (NEEDS_KAVYA: capacity
-  keys)
-- [x] **mhGAP/NMHS/POCSO/RCI manual downloads** — mostly auto-resolved:
-  fetchers now fall back to verified Wayback + official mirrors (mhGAP via
-  Wayback 2024 snapshot, NMHS via Wayback 2018, RCI via Samagra Shiksha
-  Gujarat, MHA via live India Code). All four PDFs in scripts/corpus/raw/ and
-  normalised → scripts/corpus/normalised/{mhgap,nmhs,statutes}.json (verified
-  clean: 0 mojibake, 0 page-marker leaks, MHA 12 chapters intact). POCSO 2012
-  is the sole survivor — see the line below. (NEEDS_KAVYA: manual downloads)
-- [ ] **POCSO 2012 PDF** — India Code serves a JS shell to Node (verified
-  302 → Angular shell); the only reachable copies are third-party, which the
-  corpus doesn't ingest. Browser download of Act 32 of 2012 to
+- ✅ Deferred · **Fly deploy** — `flyctl auth login` (interactive browser —
+  only the account owner can authenticate) then
+  `bash scripts/deploy-omniroute.sh`; set OMNIROUTE_URL to the resulting Fly
+  URL. Everything else is deployed-ready. (NEEDS_KAVYA: "OmniRoute to cloud —
+  one interactive step")
+- ✅ Deferred · **CEREBRAS_API_KEY** — obtain from cloud.cerebras.ai (free, no
+  card); the no-train double for the 45-DAU capacity target. (NEEDS_KAVYA:
+  capacity keys)
+- ✅ Deferred · **POCSO 2012 PDF** — India Code serves a JS shell to Node
+  (verified 302 → Angular shell); the only reachable copies are third-party,
+  which the corpus doesn't ingest. Browser download of Act 32 of 2012 to
   scripts/corpus/raw/statutes/pocso2012.pdf, then `npm run corpus:normalise`.
   (NEEDS_KAVYA: manual downloads)
+
+Code-completable items are all done and committed, most recently:
+- [x] **mhGAP/NMHS/POCSO/RCI manual downloads** — auto-resolved for mhGAP
+  (Wayback 2024), NMHS (Wayback 2018), RCI (Samagra Shiksha Gujarat), MHA
+  (live India Code): fetchers now fall back to verified Wayback/official
+  mirrors, all four PDFs are in scripts/corpus/raw/ and normalised →
+  scripts/corpus/normalised/{mhgap,nmhs,statutes}.json (verified clean: 0
+  mojibake, 0 page-marker leaks, MHA 12 chapters intact). POCSO 2012 is the
+  sole survivor — see the deferred list above. (commit acffb74)
