@@ -673,7 +673,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   practice → patient simulation → debrief → journal → wall; identify and fix
   friction between screens
 
-- [ ] T78  Mobile first-time-user audit — test the application as a user who has
+- [x] T78  Mobile first-time-user audit — test the application as a user who has
   never seen it before; verify that navigation, terminology, actions, progress,
   and next steps are understandable without prior knowledge
 
