@@ -1,3 +1,30 @@
+## 2026-08-14 — GSTACK ROUTER → PRE-LANDING REVIEW of the design-work slice
+
+Bare /gstack (router, minimal install — only SKILL.md + guard/plan-eng-review,
+no preamble bins, no /review sub-skill). Routed to the /review intent directly:
+critically read the full design-work diff (fd8384e..HEAD) + ran an automated QA
+pass (Playwright, 1440/390/320px, console errors, overflow, a11y structure).
+
+Findings:
+- **Pre-existing hydration mismatch (moderate, non-blocking, NOT a regression):**
+  the motion system's `useReducedMotion` gating renders visible on the server
+  (reduce=null → initial=false) but the client hydrates with reduce=false and
+  applies the hidden initial (opacity:0) → React console error + a brief
+  visible→hidden→animate flash on above-the-fold elements. Present in
+  Reveal/KineticHeadline/Parallax (unchanged by this session); the new Stamp
+  replicated the pattern. Deliberate SSR-visible trade-off; a proper fix needs
+  a motion-system decision (mount-gated entrance trades the warning for a
+  flash, or drop SSR entrances). Flagged, not half-fixed in a review.
+- **Fixed: enquire fieldsets lacked `<legend>`** (low, a11y). The three field
+  groups had `<p>` labels only, so screen readers never announced the group
+  names. Added sr-only legends. Cheap, zero-downside.
+- **Minor (reported, not changed):** ClosingCta repeats "invitation" up to 3×
+  post-date (stamp + eyebrow + h2); hero uses two date-fn calls (negligible
+  midnight race).
+- QA clean: zero horizontal overflow at any width on either page.
+
+Gate green: lint 0, tsc clean, 453 tests, build 82/82.
+
 ## 2026-08-14 — PFD EVALUATION + cohort-deadline fix (perception-first-design)
 
 Ran a Mode 1 PFD evaluation on the shipped public front door. Verdict: PASS
@@ -2677,3 +2704,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T14:27:33 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:29:04 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:32:58 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:34:00 Queue exhausted — allowing normal Claude stop.

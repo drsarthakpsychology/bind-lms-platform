@@ -98,6 +98,7 @@ export function EnquireForm() {
 
       {/* Your details */}
       <fieldset className="space-y-3">
+        <legend className="sr-only">Your details</legend>
         <GroupLabel>Your details</GroupLabel>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
@@ -113,6 +114,7 @@ export function EnquireForm() {
 
       {/* About you */}
       <fieldset className="space-y-3">
+        <legend className="sr-only">About you</legend>
         <GroupLabel>About you</GroupLabel>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
@@ -139,6 +141,7 @@ export function EnquireForm() {
 
       {/* A note */}
       <fieldset className="space-y-3">
+        <legend className="sr-only">A note</legend>
         <GroupLabel>A note</GroupLabel>
         <div className="space-y-1.5">
           <Label htmlFor="message">Anything we should know? (optional)</Label>
