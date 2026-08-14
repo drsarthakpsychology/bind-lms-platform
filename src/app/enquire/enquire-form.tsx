@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -59,9 +60,17 @@ export function EnquireForm() {
     }
   }
 
+  // A one-shot state-transition entrance: the confirmation rises in when the
+  // submission lands. Reduced-motion renders it in place.
+  const reduceMotion = useReducedMotion();
   if (state === "done") {
     return (
-      <div className="py-2 text-center">
+      <motion.div
+        className="py-2 text-center"
+        initial={reduceMotion === false ? { opacity: 0, y: 10 } : false}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+      >
         <Stamp className="rotate-[6deg]">Invite-only</Stamp>
         <p className="mt-6 text-xl font-bold text-foreground">Thank you — we&apos;ll be in touch.</p>
         <Rule className="mx-auto mt-5 max-w-[10rem]" />
@@ -69,7 +78,7 @@ export function EnquireForm() {
           Cohort One begins 20 August. If you&apos;re a fit, someone will reach you within a
           few days.
         </p>
-      </div>
+      </motion.div>
     );
   }
 

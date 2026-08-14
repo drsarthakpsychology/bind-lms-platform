@@ -1,3 +1,27 @@
+## 2026-08-14 — MOTION (open-design-emilkowalski-motion): smallest motion set on the public UI
+
+Kowalski-motion follow-up on the shipped surfaces. Audited first: buttons
+already carry the tactile active-press language and every existing entrance
+honours reduced-motion. Added exactly two motion moments, one easing language
+(springy for the stamp, out-expo for the state change):
+
+- **Stamp-in** on the rubber-stamp primitive (landing-primitives.tsx): a
+  one-shot scale 1.35→1 settle with the system springy ease when the stamp
+  enters the viewport, mimicking a stamp landing on the document. Reused by
+  the hero "PRACTISE", CTA "INVITE-ONLY", enquire sheet + success stamps.
+  transform/opacity only; `useReducedMotion` + `initial=false` keep no-JS and
+  reduced-motion renders in place.
+- **Success-state transition** on the enquire confirmation: a 350ms fade +
+  10px rise on mount (the state change is the signal). Reduced-motion renders
+  it in place.
+
+Verified in Playwright: hero stamp lands on load, CTA stamp stays hidden
+until scrolled into view then lands (opacity 0→1), reduced-motion renders both
+instantly, enquire form fields + sheet stamp intact. No loops, no particles,
+no custom cursors.
+
+Gate green: lint 0, tsc clean, 449 tests, build 82/82.
+
 ## 2026-08-14 — DESIGN REVIEW (open-design-design-review): one tightening, one confirmed non-issue
 
 Ran the Designer-Who-Codes workflow on the shipped public surfaces (landing +
@@ -2624,3 +2648,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T14:15:55 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:17:22 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:22:27 Queue exhausted — allowing normal Claude stop.
+2026-08-14T14:23:46 Queue exhausted — allowing normal Claude stop.

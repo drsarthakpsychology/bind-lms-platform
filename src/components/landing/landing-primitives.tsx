@@ -1,3 +1,6 @@
+"use client";
+
+import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -16,18 +19,28 @@ export function Rule({ className }: { className?: string }) {
   );
 }
 
-/** A rotated rubber-stamp. Double-ring outline, peach fill, ink text. */
+/**
+ * A rotated rubber-stamp. Double-ring outline, peach fill, ink text.
+ * Lands once when it enters the viewport — a one-shot scale-settle with the
+ * system's springy ease, mimicking a stamp coming down onto the document.
+ * transform/opacity only; reduced-motion and no-JS render it in place.
+ */
 export function Stamp({ children, className }: { children: React.ReactNode; className?: string }) {
+  const reduce = useReducedMotion();
   return (
-    <span
+    <motion.span
       aria-hidden
       className={cn(
         "select-none rounded-md border-2 border-foreground bg-primary px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.2em] text-primary-foreground outline-2 outline-offset-2 outline-foreground",
         className,
       )}
+      initial={reduce === false ? { opacity: 0, scale: 1.35 } : false}
+      whileInView={reduce === false ? { opacity: 1, scale: 1 } : undefined}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45, ease: [0.34, 1.56, 0.64, 1] }}
     >
       {children}
-    </span>
+    </motion.span>
   );
 }
 
