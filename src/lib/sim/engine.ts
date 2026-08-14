@@ -168,6 +168,9 @@ export async function runPatientTurn(
   }
 
   s.last_moves = [...s.last_moves.slice(-6), decision.patient_move];
+  // Track the STUDENT's classified moves too — move_used disclosure gates
+  // (validation_given, two_or_more_reflective_statements) count these.
+  s.student_moves = [...(s.student_moves ?? []).slice(-8), decision.student_move];
 
   // --- Actor call (write dialogue) + never-silent fallback ---
   const actorInput = {

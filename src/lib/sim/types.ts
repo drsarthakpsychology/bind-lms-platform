@@ -119,7 +119,8 @@ export interface PatientState {
   topics_touched: string[];
   gates_met: string[];
   phase: "opening" | "exploration" | "deepening" | "risk" | "closing";
-  last_moves: string[]; // rolling window, anti-repetition
+  last_moves: string[]; // rolling window of PATIENT moves, anti-repetition
+  student_moves: string[]; // rolling window of classified STUDENT moves, for move_used gates
   last_patient_utterances: string[]; // for the anti-repetition embedding check
   premature_advice_streak: number; // 3 consecutive → hollow_compliance
   hollow_compliance_engaged: boolean;
@@ -142,6 +143,7 @@ export function initialState(caseId: string, variant: SessionVariant): PatientSt
     gates_met: [],
     phase: "opening",
     last_moves: [],
+    student_moves: [],
     last_patient_utterances: [],
     premature_advice_streak: 0,
     hollow_compliance_engaged: false,

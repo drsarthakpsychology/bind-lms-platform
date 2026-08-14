@@ -9,7 +9,7 @@ import { parseDelivery } from "@/lib/sim/delivery";
 import { initialState, type PatientState } from "@/lib/sim/types";
 import { drawVariant, hashString } from "@/lib/sim/variation";
 import type { DepthCase } from "@/lib/sim/types";
-import type { Gate } from "@/lib/sim/gates";
+import { parseGate } from "@/lib/sim/gates";
 import { isEnabled as aiEnabled } from "@/lib/ai/router";
 import { guardStudentCall } from "@/lib/ai/guards";
 import { rateLimit } from "@/lib/rate-limit";
@@ -131,10 +131,14 @@ export async function POST(req: Request) {
     content_type: "text",
   });
 
-  // Build the fact rules from the case's disclosure data.
+  // Build the fact rules from the case's disclosure data. The authored gate
+  // strings ("asked_about_self_harm_clearly", "validation_given",
+  // "two_or_more_reflective_statements") become real deterministic gates —
+  // a self-harm fact only opens when the student clearly asks, empathy-gated
+  // facts only after the student earns them. Trust ≥ 3 still applies on top.
   const facts = (simCase.disclosure_rules ?? []).map((r) => ({
     fact_id: r.fact,
-    gate: { kind: "explicit_phrase", patterns: [/./] } as Gate,
+    gate: parseGate(r.gate),
     sensitive: true,
   }));
 
