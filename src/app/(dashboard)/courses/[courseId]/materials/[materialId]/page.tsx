@@ -21,6 +21,10 @@ export default async function MaterialViewerPage({
   params: Promise<{ courseId: string; materialId: string }>;
 }) {
   const { courseId, materialId } = await params;
+  // Malformed ids → PostgREST 400, not a clean 404 (see the lesson page guard).
+  if (!/^[0-9a-f-]{36}$/i.test(courseId) || !/^[0-9a-f-]{36}$/i.test(materialId)) {
+    notFound();
+  }
   const session = await getSession();
   if (session.status !== "ok") return null;
   const { profile } = session;

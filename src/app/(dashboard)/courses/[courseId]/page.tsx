@@ -19,6 +19,12 @@ export default async function CourseOverviewPage({
   params: Promise<{ courseId: string }>;
 }) {
   const { courseId } = await params;
+  // Validate the URL id before interpolating it into PostgREST filter syntax —
+  // a malformed id with a comma/paren would produce a PostgREST 400 instead of
+  // a clean 404 (same guard as the lesson page).
+  if (!/^[0-9a-f-]{36}$/i.test(courseId)) {
+    notFound();
+  }
   const session = await getSession();
   if (session.status !== "ok") return null;
   const { profile } = session;

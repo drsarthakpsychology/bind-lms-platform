@@ -18,6 +18,10 @@ export default async function SimSessionPage({
   params: Promise<{ sessionId: string }>;
 }) {
   const { sessionId } = await params;
+  // Malformed id → PostgREST 400, not a clean 404 (same guard as the lesson page).
+  if (!/^[0-9a-f-]{36}$/i.test(sessionId)) {
+    notFound();
+  }
   const supabase = await createClient();
   const {
     data: { user },
