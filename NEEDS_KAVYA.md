@@ -55,11 +55,22 @@ Every item: paste → something switches on → verify with one command. Free fi
 - **Switches on:** reliable ICD-11 chapter walking (the public browser tier 401s intermittently)
 - **Verify:** `npm run corpus:icd11`
 
-## 📝 Manual downloads (the fetchers point at these)
+## 📝 Manual downloads
 
-- **WHO mhGAP-IG 2.0 PDF** → save to `scripts/corpus/raw/mhgap/mhgap-ig-2.0-eng.pdf` (the IRIS link serves a redirect page; manual download covers it). Source: https://iris.who.int/handle/10665/250239
-- **NMHS main report PDF** → `scripts/corpus/raw/nmhs/` (NIMHANS link has a TLS cert issue in Node; browser download works). Source: https://www.nimhans.ac.in (NMHS publications page)
-- **POCSO 2012 / RCI 1992 PDFs** → `scripts/corpus/raw/statutes/` (India Code links 302 to the browser; MHA 2017 already fetched programmatically)
+**Only POCSO 2012 remains** — everything else now fetches programmatically
+(updated + re-verified 2026-08-14; the fetchers fall back to verified Wayback /
+official mirrors, so no browser needed):
+
+- **POCSO 2012 PDF** → save to `scripts/corpus/raw/statutes/pocso2012.pdf`. India
+  Code serves a JS shell to Node (verified 302 → Angular shell); the only
+  reachable copies are third-party, which the corpus doesn't ingest. Browser
+  download from https://www.indiacode.nic.in (Act 32 of 2012) is the one step.
+
+Already auto-fetched (no action needed): WHO mhGAP-IG 2.0 (Wayback mirror),
+NMHS main report (Wayback 2018 snapshot), RCI 1992 Act (official Samagra
+Shiksha Gujarat mirror), MHA 2017 (live India Code, intermittent). All four
+are normalised into `scripts/corpus/normalised/*.json` via `npm run
+corpus:normalise`.
 
 ## 🎙️ Content review — the highest-value asset
 

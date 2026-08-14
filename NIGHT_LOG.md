@@ -1,3 +1,33 @@
+## 2026-08-14 — CORPUS: unblocked the manual-download queue item (3 of 4 by code)
+
+The QUEUE "Blocked" item "mhGAP/NMHS/POCSO/RCI manual downloads" was verified
+genuinely human-blocked (WHO IRIS + NIMHANS + India Code all serve JS shells
+to Node). Instead of leaving it, I unblocked it via verified archival + official
+mirrors:
+
+- **Fetched 4 PDFs into scripts/corpus/raw/** (no browser needed):
+  - WHO mhGAP-IG 2.0 (3.7 MB) via Wayback 2024 snapshot of the IRIS PDF
+  - NMHS main report (4.1 MB) via Wayback 2018-11-08 snapshot of the NIMHANS file
+  - RCI 1992 Act (252 KB) via official Samagra Shiksha Gujarat mirror
+  - MHA 2017 was already on disk (fetched live earlier)
+- **POCSO 2012 remains the single manual download**: India Code 302s to an
+  Angular shell for Node (re-verified); the only reachable copies are
+  third-party, which the corpus deliberately doesn't ingest. Documented in
+  NEEDS_KAVYA as the one browser step.
+- **Extended scripts/corpus/normalise.ts** to extract + furniture-strip these
+  PDFs (corpus/lib/extract.ts extractFromPdf, prefers pdftotext) into
+  normalised/{mhgap,nmhs,statutes}.json with full provenance. Verified clean:
+  0 replacement chars, 0 leaked page markers, MHA keeps all 12 CHAPTER
+  headings. Output: mhgap 288K, nmhs 461K, mha 176K, rci 36K chars.
+- **Updated fetchers** (fetch-mhgap / fetch-nmhs / fetch-mha2017) to try live
+  first then auto-fallback to the verified Wayback/official mirror, so re-runs
+  need no browser. All three re-verified end-to-end (the one transient
+  web.archive.org hiccup cleared on re-run).
+- QUEUE + NEEDS_KAVYA updated to reflect POCSO-only remains.
+
+Gate green before commit. Fly deploy + Cerebras key remain human-blocked
+(account-owner interactive auth / unprovided key).
+
 ## 2026-08-14 — KNOWLEDGE SYSTEM: eval expanded to 50 questions + keyword-lane fix
 
 Closed the brief §37 remaining item ("expand the eval set toward ~50 questions

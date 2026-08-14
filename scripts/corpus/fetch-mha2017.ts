@@ -7,12 +7,20 @@
  *   npm run corpus:mha
  *
  * Sources (all public/government):
- *   - MHA 2017: legislative.gov.in (Act 10 of 2017)
- *   - POCSO 2012: legislative.gov.in (Act 32 of 2012)
- *   - RCI Act 1992: legislative.gov.in (Act 39 of 1992)
+ *   - MHA 2017: indiacode.nic.in (Act 10 of 2017)
+ *   - POCSO 2012: indiacode.nic.in (Act 32 of 2012)
+ *   - RCI Act 1992: samagrashiksha.ssagujarat.org (official Gujarat mirror —
+ *                   India Code serves a JS shell to Node; verified 2026-08-14)
  *
- * The statutes are long; we store the raw text and a normalised index of
- * sections so the ethics builder can cite actual sections, not vibes.
+ * The statutes are long; we store the raw text and a normalised doc so the
+ * ethics builder can cite actual sections, not vibes.
+ *
+ * NOTE (verified 2026-08-14): India Code's bitstream endpoints now redirect
+ * to a JS-rendered shell for Node clients. MHA 2017 was acquired earlier and
+ * lives at scripts/corpus/raw/statutes/mha2017.pdf; the fetcher still tries
+ * live first, then prints the browser instruction. RCI resolves from an
+ * official state mirror, so it downloads without a browser. POCSO requires a
+ * browser until an official Node-reachable mirror is found.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
@@ -34,17 +42,32 @@ const SOURCES: Array<{ name: string; urls: string[] }> = [
   },
   {
     name: "rci1992",
-    urls: ["https://www.indiacode.nic.in/bitstream/123456789/1941/1/A1992-39.pdf"],
+    urls: [
+      // India Code's bitstream for RCI was never a working handle; use the
+      // official Samagra Shiksha (Gujarat education dept) mirror instead.
+      "https://samagrashiksha.ssagujarat.org/images/RCI-Act_1992.pdf",
+      "https://bombayhighcourt.nic.in/libweb/actc/yearwise/1992/1992.34.pdf",
+    ],
   },
 ];
 
-async function fetchAny(urls: string[]): Promise<Buffer> {
+async function fetchAny(urls: string[]): Promise<{ buf: Buffer; url: string }> {
   let lastErr: Error | null = null;
   for (const u of urls) {
     try {
-      const res = await fetch(u);
-      if (res.ok) return Buffer.from(await res.arrayBuffer());
-      lastErr = new Error(`${u}: ${res.status}`);
+      const res = await fetch(u, { redirect: "follow" });
+      if (!res.ok) {
+        lastErr = new Error(`${u}: ${res.status}`);
+        continue;
+      }
+      const buf = Buffer.from(await res.arrayBuffer());
+      if (!buf.subarray(0, 4).equals(Buffer.from("%PDF"))) {
+        // India Code serves an Angular shell to Node clients (verified
+        // 2026-08-14) — a real PDF is the only acceptable response.
+        lastErr = new Error(`${u}: not a PDF (${buf.length} bytes)`);
+        continue;
+      }
+      return { buf, url: u };
     } catch (e) {
       lastErr = e as Error;
     }
@@ -55,14 +78,16 @@ async function fetchAny(urls: string[]): Promise<Buffer> {
 async function main() {
   for (const s of SOURCES) {
     try {
-      const buf = await fetchAny(s.urls);
+      const { buf, url } = await fetchAny(s.urls);
       writeFileSync(join(RAW, `${s.name}.pdf`), buf);
-      console.log(`${s.name}: ${(buf.length / 1024).toFixed(0)} KB`);
+      console.log(`${s.name}: ${(buf.length / 1024).toFixed(0)} KB from ${url}`);
     } catch (e) {
-      console.error(`${s.name}: FAILED (${(e as Error).message}) — download manually to scripts/corpus/raw/statutes/`);
+      console.error(
+        `${s.name}: FAILED (${(e as Error).message}) — download manually to scripts/corpus/raw/statutes/${s.name}.pdf`,
+      );
     }
   }
-  console.log("Index: scripts/corpus/normalise-statutes.ts — extracts section headings for the ethics section-citation builder.");
+  console.log("Index: npm run corpus:normalise (extracts section structure → normalised/statutes.json).");
 }
 
 main().catch((e) => {

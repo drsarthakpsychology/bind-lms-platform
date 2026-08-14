@@ -296,7 +296,15 @@ is done and committed.
 - [ ] **CEREBRAS_API_KEY** — obtain from cloud.cerebras.ai (free, no card);
   the no-train double for the 45-DAU capacity target. (NEEDS_KAVYA: capacity
   keys)
-- [ ] **mhGAP/NMHS/POCSO/RCI manual downloads** — WHO IRIS + NIMHANS block
-  Node (verified structural: JS-rendered DSpace); download in a browser to
-  scripts/corpus/raw/. (NEEDS_KAVYA: manual downloads; fetchers now print the
-  exact URL + destination)
+- [x] **mhGAP/NMHS/POCSO/RCI manual downloads** — mostly auto-resolved:
+  fetchers now fall back to verified Wayback + official mirrors (mhGAP via
+  Wayback 2024 snapshot, NMHS via Wayback 2018, RCI via Samagra Shiksha
+  Gujarat, MHA via live India Code). All four PDFs in scripts/corpus/raw/ and
+  normalised → scripts/corpus/normalised/{mhgap,nmhs,statutes}.json (verified
+  clean: 0 mojibake, 0 page-marker leaks, MHA 12 chapters intact). POCSO 2012
+  is the sole survivor — see the line below. (NEEDS_KAVYA: manual downloads)
+- [ ] **POCSO 2012 PDF** — India Code serves a JS shell to Node (verified
+  302 → Angular shell); the only reachable copies are third-party, which the
+  corpus doesn't ingest. Browser download of Act 32 of 2012 to
+  scripts/corpus/raw/statutes/pocso2012.pdf, then `npm run corpus:normalise`.
+  (NEEDS_KAVYA: manual downloads)
