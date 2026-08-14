@@ -3140,3 +3140,21 @@ book caches. Fix + extraction, two commits:
   npm run psych:seed-book   # upserts BOOK_FIELD_ROWS.json as draft
 
 Gate green: lint 0, tsc clean, 453 tests, build 82/82.
+
+### Final shipped state (verified on disk, not from memory)
+- Branch `worktree-psychopharm-book-enrichment`, 4 commits, pushed to origin:
+  - 52e7fe9 catalog 73→96 drugs + locator regen (11,408 passages) + 41 passages
+  - af8bde6 quote-first extraction: BOOK_FIELD_ROWS 31→148 rows (30 drugs), KB
+    2166→2283 rows, non-FDA drugs with interactions 7→26/28, merge-book-rows.ts
+  - c2d17cc NIGHT_LOG decision trail
+  - 1a21b7c fix: Brexanolone hepatic + renal special-population cells merged
+    (dedup key had collapsed two verbatim cells; combined, quote-first)
+- Verified on disk: BOOK_FIELD_ROWS.json = 148 rows/30 drugs (5 fields:
+  interactions, monitoring, special_populations, contraindications, overdose;
+  sources stahl_pg_7th + maudsley_2021). KNOWLEDGE_BASE.json = 2283 rows/152
+  drugs. drug-catalog.ts = 96 entries. LOCATOR_INDEX = 96 drugs. 565 passage
+  files tracked (524 + 41 new). merge-book-rows.ts present. Spot-check:
+  Dothiepin/interactions/stahl is verbatim-in-source.
+- Open items → QUEUE.md (4 new [ ]): seed-to-Supabase step; 2 remaining D,L
+  interactions gaps; stale reports.ts; clinician review of 8 allowlisted rows.
+- Final gate re-run green: lint 0, tsc clean, 453 tests, build 82/82.

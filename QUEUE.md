@@ -353,3 +353,23 @@ Code-completable items are all done and committed, most recently:
   scripts/corpus/normalised/{mhgap,nmhs,statutes}.json (verified clean: 0
   mojibake, 0 page-marker leaks, MHA 12 chapters intact). POCSO 2012 is the
   sole survivor — see the deferred list above. (commit acffb74)
+
+## PSYCHOPHARM BOOK-CACHE ENRICHMENT — follow-ups (2026-08-14, worktree branch)
+
+- [ ] **Seed the 148 book-field rows to Supabase as draft** — run
+  `npm run psych:seed-book` in the MAIN checkout (has `.env.local`). Reads
+  `docs/psychopharm/BOOK_FIELD_ROWS.json` and upserts into `psych_drug_fields`
+  with `status='draft'` (case-insensitive drug match, no pseudo-drugs). The
+  branch is pushed; this is the one remaining data-write step.
+- [ ] **Fill `interactions` for 2 remaining non-FDA drugs** — Amphetamine (D,L)
+  and Methylphenidate (D,L): their Stahl "Drug Interactions" pages fell in
+  un-captured page ranges of the passage files. Re-capture the monograph pages
+  (Stahl PG 7th around the amphetamine/methylphenidate monograph) and re-run
+  `psych:passages` + the merge script. Honest gap today — not a bug.
+- [ ] **Fix stale `reports.ts`** — it emits "275 drugs with a dose range" (there
+  are 152 drugs; it counts rows, not distinct drugs) and would regress the
+  hand-maintained COVERAGE_REPORT.md. Not run this session; outputs reverted.
+- [ ] **Review the 8 manual-verify allowlisted rows** — `merge-book-rows.ts`
+  carries an explicit allowlist for rows whose only divergence from source is a
+  dropped citation superscript. A clinician should confirm each against its
+  page (they land `draft`, so nothing publishes without sign-off anyway).
