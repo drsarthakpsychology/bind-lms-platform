@@ -57,6 +57,7 @@ export function SimSessionView({
   sessionId,
   patientName,
   patientAge,
+  patientContext,
   difficulty,
   fixtureMode = false,
   initialTurns,
