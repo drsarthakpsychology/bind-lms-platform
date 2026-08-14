@@ -1,9 +1,13 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
+import { Layers } from "lucide-react";
 import { haptic } from "@/lib/haptics";
+import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 import { newCardState, reviewCard, type CardRating, type CardState } from "@/lib/practice/rounds";
 import { ROUNDS_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 /** A Rounds card. Faculty-approved cards from the `cards` table join the seeds. */
 export type SeedCard = { id?: string; front: string; back: string; type?: "flash" | "idiom" | "confusable" };
@@ -76,24 +80,31 @@ export function RoundsDeck({ cards = SEED_CARDS, states }: { cards?: SeedCard[];
 
   if (done) {
     return (
-      <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
-        <h2 className="text-base font-semibold">You&apos;re done for today</h2>
-        <p className="mt-2 text-small text-muted-foreground">
-          {deck.length} card{deck.length === 1 ? "" : "s"} reviewed. That&apos;s the whole
-          queue — see you tomorrow.
-        </p>
+      <div className="rounded-md border-2 border-border bg-card hard-shadow-sm">
+        <MobileCompletionState
+          title="You're done for today"
+          description={`${deck.length} card${deck.length === 1 ? "" : "s"} reviewed — that's the whole queue. See you tomorrow.`}
+          action={
+            <Link
+              href="/practice"
+              className="inline-flex min-h-11 items-center rounded-md border-2 border-foreground bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+            >
+              Back to practice tools
+            </Link>
+          }
+        />
       </div>
     );
   }
 
   if (!current) {
     return (
-      <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
-        <h2 className="text-base font-semibold">No cards due</h2>
-        <p className="mt-2 text-small text-muted-foreground">
-          Nothing due today. New cards land here once faculty approves them.
-        </p>
-      </div>
+      <EmptyState
+        compact
+        icon={<Layers className="size-6" aria-hidden />}
+        title="No cards due"
+        description="Nothing due today. New cards land here once faculty approves them."
+      />
     );
   }
 
