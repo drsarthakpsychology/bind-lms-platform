@@ -1959,3 +1959,26 @@ agents' in-flight knowledge-layer code/outlines — observed other readers
 committing their own slices concurrently (e.g. kaplan_sadock 060fa41), so
 each slice lands on its owner's commit. Ahuja outline (503a961) + gate log
 (3e264c8) already shipped.
+2026-08-14T06:23:34 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:23:42 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — ICD-11 Reference Guide outline (icd11 reader)
+
+Shipped `scripts/knowledge/outlines/icd11.json` (commit 4aa15af) — a verified
+per-page structural outline of the WHO ICD-11 Reference Guide (refguide.pdf,
+473 PDF pages). Structure: front matter split into Cover (1-2) / 0.1 Copyright
+(3-4) / Table of Contents (5-23) / 0.2 How to use (24) / 0.3 Acronyms (25) /
+0.4 Glossary (26-27); then Part 1 "An Introduction to ICD-11" (28-48, 1.1-1.6),
+Part 2 "Using ICD-11" (49-300, 2.1-2.25 — the mortality/morbidity coding rules
+core incl. SP/M steps, underlying-cause selection, multiple-cause coding), and
+Part 3 "New in ICD-11" (301-473, 3.1-3.16 incl. Annexes A-E). Page numbers are
+PDF indices, never printed folios.
+
+Verification: ran the chunker (chunkBook) against the outline + icd11.txt cache
+— 0 gaps, 0 overlaps, all 473 pages attributed, 0 unattributed pages, 1223
+chunks across 9 chapter labels. Full-tree gates also green: lint 0, tsc clean,
+407 tests, next build exit 0.
+
+Did NOT commit the parallel agents' in-flight knowledge-layer code/outlines or
+the 133 MB cache (already gitignored by the Ahuja reader) — this slice lands on
+its own commit, consistent with the other readers.
