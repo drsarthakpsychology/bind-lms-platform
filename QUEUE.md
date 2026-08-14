@@ -360,7 +360,7 @@ Priority order: patient sim → nav → today → courses → practice → voice
 keyboard/safe-area → hierarchy → animation → polish. Backend/data/API contracts
 UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
 
-- [ ] T1  Mobile design system (src/components/mobile/: page, section, card,
+- [x] T1  Mobile design system (src/components/mobile/: page, section, card,
   list-item, header, bottom-sheet, status-pill) on existing ui/ primitives
 - [ ] T2  Patient simulation — full-screen chat rebuild (session-view →
   SimulationHeader + ChatList + ChatComposer + NotesSheet + HintSheet; kill
