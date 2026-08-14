@@ -631,7 +631,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   titles, and large descriptions; ensure the progressive interaction model
   still works without overflow or broken layout
 
-- [ ] T69  Mobile media experience — audit video, audio, images, PDFs,
+- [x] T69  Mobile media experience — audit video, audio, images, PDFs,
   transcripts, and other media; create mobile-specific controls and layouts
   where desktop media interfaces create unnecessary density
 
@@ -648,7 +648,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   focused steps and progressive disclosure; do not show a desktop-style
   onboarding dashboard on mobile
 
-- [ ] T73  Mobile permission flows — audit microphone, notification, storage,
+- [x] T73  Mobile permission flows — audit microphone, notification, storage,
   camera, and other browser permissions; explain permissions in context and
   provide a useful fallback when access is denied
 

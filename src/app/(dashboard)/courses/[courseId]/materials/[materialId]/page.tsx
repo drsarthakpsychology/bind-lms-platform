@@ -67,8 +67,11 @@ export default async function MaterialViewerPage({
 
   return (
     <div className="flex h-full min-h-[calc(100vh-3.5rem)] flex-col">
-      {/* Minimal header */}
-      <header className="flex items-center justify-between gap-2 border-b-2 border-border bg-card px-3 py-2 sm:px-4">
+      {/* Minimal header — the shell top bar is hidden on this drill-down, so
+          the header owns the notch inset (T66). */}
+      <header
+        className="flex items-center justify-between gap-2 border-b-2 border-border bg-card px-3 pt-[max(0.5rem,env(safe-area-inset-top))] pb-2 sm:px-4"
+      >
         <div className="flex min-w-0 items-center gap-2">
           <Link
             href={backHref}
