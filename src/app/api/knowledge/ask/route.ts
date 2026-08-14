@@ -5,6 +5,7 @@ import { rateLimit } from "@/lib/rate-limit";
 import { searchKnowledge, cite } from "@/lib/knowledge/retrieve";
 import { isEnabled } from "@/lib/ai/router";
 import { aiChat, type AiChatMessage } from "@/lib/ai/client";
+import { cacheKeyFor, readCached, writeCached } from "@/lib/ai/cache";
 
 export const runtime = "nodejs";
 
@@ -64,29 +65,39 @@ export async function POST(req: Request) {
   }));
 
   // If AI is enabled, generate a grounded answer from only the retrieved passages.
+  // The grounded answer is deterministic for a question (same sources, same
+  // answer for every student) and contains no per-user data → safe to cache.
   let answer: string | null = null;
   let provider: string | null = null;
   if (isEnabled() && hits.length > 0) {
-    try {
-      const context = hits.map((h) => `[${cite(h)}]\n${h.text}`).join("\n\n---\n\n");
-      const messages: AiChatMessage[] = [
-        {
-          role: "system",
-          content:
-            "You are a psychology tutor for a school of psychology. Answer the student's question using ONLY the supplied source passages. " +
-            "Ground every claim in the passages; where the passages do not cover something, say so plainly. " +
-            "Cite sources inline like (Book, Chapter, page). Do not invent facts, page numbers, or references.",
-        },
-        { role: "user", content: `QUESTION:\n${q}\n\nSOURCE PASSAGES:\n${context}` },
-      ];
-      // Grounded synthesis over source material is a "difficult" task — it
-      // needs faithful reasoning + citation, so route to the strong tier.
-      const res = await aiChat(messages, { workload: "knowledge_tutor", taskTier: "difficult", maxTokens: 600, temperature: 0.3 });
-      answer = res.text;
-      provider = res.provider;
-    } catch {
-      // AI unavailable — fall through to retrieval-only (still useful).
-      answer = null;
+    const cacheKey = cacheKeyFor("knowledge_tutor", q, "grounded", "difficult");
+    const cached = await readCached(cacheKey);
+    if (cached.hit !== "none") {
+      answer = cached.text;
+      provider = cached.model ? `cache:${cached.model}` : "cache";
+    } else {
+      try {
+        const context = hits.map((h) => `[${cite(h)}]\n${h.text}`).join("\n\n---\n\n");
+        const messages: AiChatMessage[] = [
+          {
+            role: "system",
+            content:
+              "You are a psychology tutor for a school of psychology. Answer the student's question using ONLY the supplied source passages. " +
+              "Ground every claim in the passages; where the passages do not cover something, say so plainly. " +
+              "Cite sources inline like (Book, Chapter, page). Do not invent facts, page numbers, or references.",
+          },
+          { role: "user", content: `QUESTION:\n${q}\n\nSOURCE PASSAGES:\n${context}` },
+        ];
+        // Grounded synthesis over source material is a "difficult" task — it
+        // needs faithful reasoning + citation, so route to the strong tier.
+        const res = await aiChat(messages, { workload: "knowledge_tutor", taskTier: "difficult", maxTokens: 600, temperature: 0.3 });
+        answer = res.text;
+        provider = res.provider;
+        await writeCached(cacheKey, "knowledge_tutor", provider, answer, provider);
+      } catch {
+        // AI unavailable — fall through to retrieval-only (still useful).
+        answer = null;
+      }
     }
   }
 
