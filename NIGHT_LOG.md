@@ -1863,6 +1863,53 @@ medication entries before publishing.
 2026-08-14T05:53:09 Queue exhausted — allowing normal Claude stop.
 2026-08-14T05:58:45 Queue exhausted — allowing normal Claude stop.
 2026-08-14T05:59:06 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — KNOWLEDGE SYSTEM: full corpus ingested, embedded, retrievable
+
+The brief's #1 objective — the persistent psychology knowledge layer — is live.
+All 10 authorized books are read page-by-page (via 10 parallel reading agents),
+chunked hierarchically, embedded with self-hosted MiniLM, and retrievable with
+source traceability. **This was the empty-corpus gap**: `corpus_sources/
+documents/chunks` existed with HNSW indexes but had ZERO rows; `embed.ts` was a
+fixture stub. Now fully populated.
+
+### Corpus (verified live)
+- **27,608 chunks** across 10 books, **100% embedded** (halfvec(384), all
+  unit-norm, 0 malformed). Zero duplicates (unique `(document_id, chunk_hash)`
+  index + in-run dedupe).
+- **Reading agents**: 10 parallel agents each produced a verified structural
+  outline (`scripts/knowledge/outlines/<id>.json`) — book → chapter → section →
+  PDF page, with confidence + extraction issues. Verified, never fabricated.
+  Kaplan 35ch, DSM-5-TR 25ch, Stahl PG 7th 156 drug entries, Stahl PG older
+  101, Maudsley 14, Ahuja 21, Fish 12, ICD-11, Stahl Essential 13, preview.
+- **R2**: original PDFs + full text at `knowledge/books/<id>/…` (per user's
+  "keep knowledge in R2"); Postgres holds metadata + preview only (respects the
+  2M `corpus_docs_content_cap` — no corpus duplication in Postgres).
+
+### Retrieval (verified live, `npm run knowledge:verify`)
+Hybrid vector+keyword+RRF rerank. Every test query returned relevant,
+source-traceable hits: SSRIs→Stahl/Maudsley (0.67), SZ vs BD→DSM-5/Stahl,
+EPS→Kaplan/Maudsley (0.77), alcohol withdrawal→Ahuja/DSM-5 (0.74), OCD→DSM-5/
+Kaplan (0.84). Degrades to keyword, never 500s.
+
+### AI surfaces
+- `GET /api/knowledge/search` — hybrid retrieval API (requireSession).
+- `POST /api/knowledge/ask` — grounded Q&A (Psychology Tutor backend):
+  retrieval-first, adds AI synthesis only via no-train providers
+  (`knowledge_tutor` workload added to guards).
+
+### Gate
+lint 0, tsc clean, **420 tests** (15 new: chunk 8, retrieve 7, route 5 —
+wait, 20 new: 8+7+5), build exit 0. Commits: bc0f774 (tutor API + embed
+batching), 7fa9071 (embed-only pass + verify + dedupe), plus the outline
+readers' commits (30cd8ba, e201e29, 4aa15af, 060fa41, 503a961, 6f095c3,
+0cfd50a, 027de84, etc.).
+
+### Cost
+**$0.** Self-hosted all-MiniLM-L6-v2 (Apache-2.0, 384-dim, downloaded once).
+No model calls during chunking/embedding. Only future V4-Flash concept
+enrichment would add model cost, and only if evaluation justifies it.
+
 2026-08-14T06:16:19 Queue exhausted — allowing normal Claude stop.
 2026-08-14T06:17:07 Queue exhausted — allowing normal Claude stop.
 2026-08-14T06:17:42 Queue exhausted — allowing normal Claude stop.
@@ -2153,3 +2200,4 @@ chapters (9 + Appendix I + Appendix II + Index), 232 sections, contiguous
 420 tests, next build exit 0.
 2026-08-14T06:51:16 Queue exhausted — allowing normal Claude stop.
 2026-08-14T06:53:39 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:56:11 Queue exhausted — allowing normal Claude stop.
