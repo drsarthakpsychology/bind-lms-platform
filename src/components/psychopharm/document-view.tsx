@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Pencil, Trash2 } from "lucide-react";
+import { Pencil, Trash2, BookMarked } from "lucide-react";
 import type { MedicationDocument, MedBlock, BlockType } from "@/lib/psychopharm/document";
 
 /** Human labels for block types — the editor speaks content, not database fields. */
@@ -37,6 +37,7 @@ export function DocumentView({
   onEdit,
   onAddBlock,
   onRemoveBlock,
+  onSource,
 }: {
   document: MedicationDocument;
   register?: "student" | "clinician";
@@ -44,6 +45,7 @@ export function DocumentView({
   onEdit?: (block: MedBlock, value: string) => void;
   onAddBlock?: (sectionId: string) => void;
   onRemoveBlock?: (blockId: string) => void;
+  onSource?: (block: MedBlock) => void;
 }) {
   return (
     <div className="space-y-6">
@@ -58,6 +60,7 @@ export function DocumentView({
           onEdit={onEdit}
           onAddBlock={onAddBlock}
           onRemoveBlock={onRemoveBlock}
+          onSource={onSource}
         />
       ))}
 
@@ -79,6 +82,7 @@ function EditableSection({
   onEdit,
   onAddBlock,
   onRemoveBlock,
+  onSource,
 }: {
   sectionId: string;
   title: string;
@@ -88,6 +92,7 @@ function EditableSection({
   onEdit?: (block: MedBlock, value: string) => void;
   onAddBlock?: (sectionId: string) => void;
   onRemoveBlock?: (blockId: string) => void;
+  onSource?: (block: MedBlock) => void;
 }) {
   return (
     <section className="space-y-3">
@@ -112,6 +117,7 @@ function EditableSection({
             editable={editable}
             onEdit={onEdit}
             onRemove={onRemoveBlock}
+            onSource={onSource}
           />
         ))}
       </div>
@@ -146,12 +152,14 @@ function BlockEditor({
   editable,
   onEdit,
   onRemove,
+  onSource,
 }: {
   block: MedBlock;
   register: "student" | "clinician";
   editable?: boolean;
   onEdit?: (block: MedBlock, value: string) => void;
   onRemove?: (blockId: string) => void;
+  onSource?: (block: MedBlock) => void;
 }) {
   // Sources are clinical provenance — surfaced in the clinician register only.
   const source =
@@ -163,7 +171,7 @@ function BlockEditor({
   // register; a quiet footnote in the clinician register.
   if (block.type === "plain_language") {
     return (
-      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
+      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove} onSource={onSource}>
         {register === "student" ? (
           <div className="rounded-md bg-secondary p-3">
             <p className="text-eyebrow text-link">In plain words</p>
@@ -185,7 +193,7 @@ function BlockEditor({
     const label = block.data?.band_label as string | undefined;
     const primary = block.data?.primary_purpose as string | undefined;
     return (
-      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
+      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove} onSource={onSource}>
         <p className="text-small font-medium">
           {low != null || high != null
             ? `${low != null && high != null ? `${low}–${high}` : `${low ?? ""}${high != null ? `–${high}` : ""}`} ${unit}${freq ? ` · ${freq}` : ""}`
@@ -202,7 +210,7 @@ function BlockEditor({
   if (block.type === "side_effect_list") {
     const items = block.data?.items as string[] | undefined;
     return (
-      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
+      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove} onSource={onSource}>
         {block.value ? <p className="text-small font-medium capitalize">{block.value}</p> : null}
         {items?.length ? (
           <ul className="list-disc pl-5 text-small">
@@ -219,7 +227,7 @@ function BlockEditor({
   const items = block.data?.items as string[] | undefined;
   if (items?.length) {
     return (
-      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
+      <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove} onSource={onSource}>
         {block.value ? <p className="text-small font-medium capitalize">{block.value}</p> : null}
         <ul className="list-disc pl-5 text-small">
           {items.map((it, i) => <li key={i}>{it}</li>)}
@@ -232,7 +240,7 @@ function BlockEditor({
   // Prose blocks: plain paragraph for students; broken into short lines for
   // the clinician register so nothing reads as a wall of text.
   return (
-    <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove}>
+    <EditableBlock block={block} editable={editable} onEdit={onEdit} onRemove={onRemove} onSource={onSource}>
       {block.value ? (
         register === "clinician" ? (
           <ClinicProse text={block.value} />
@@ -251,12 +259,14 @@ function EditableBlock({
   editable,
   onEdit,
   onRemove,
+  onSource,
   children,
 }: {
   block: MedBlock;
   editable?: boolean;
   onEdit?: (block: MedBlock, value: string) => void;
   onRemove?: (blockId: string) => void;
+  onSource?: (block: MedBlock) => void;
   children: React.ReactNode;
 }) {
   const [editing, setEditing] = React.useState(false);
@@ -304,6 +314,14 @@ function EditableBlock({
           className="flex items-center gap-1 rounded border-2 border-border bg-background px-1.5 py-0.5 text-[10px] hover:bg-accent"
         >
           <Pencil className="h-3 w-3" /> Edit
+        </button>
+        <button
+          type="button"
+          onClick={() => onSource?.(block)}
+          aria-label="Sources"
+          className="flex items-center gap-1 rounded border-2 border-border bg-background px-1.5 py-0.5 text-[10px] hover:bg-accent"
+        >
+          <BookMarked className="h-3 w-3" /> Sources
         </button>
         <button
           type="button"

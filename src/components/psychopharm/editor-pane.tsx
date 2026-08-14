@@ -152,6 +152,7 @@ export function EditorPane({
             onEdit={editBlock}
             onAddBlock={addBlock}
             onRemoveBlock={removeBlock}
+            onSource={(block) => setActiveBlock(block)}
           />
           <button
             type="button"
