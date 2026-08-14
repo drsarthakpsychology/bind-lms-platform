@@ -44,7 +44,6 @@ test.describe("T77 workflow completion (mobile journey)", () => {
     // 3. Open the first available lesson the course offers.
     const lessonLink = page.locator('a[href*="/lessons/"]').first();
     if ((await lessonLink.count()) > 0) {
-      const lessonHref = (await lessonLink.getAttribute("href"))!;
       await lessonLink.click();
       await expect(page).toHaveURL(/\/lessons\//);
       await expect(page).not.toHaveURL(/\/login/);

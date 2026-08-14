@@ -3664,3 +3664,5 @@ Ticked T88. Remaining: T90 (final acceptance — human sign-off umbrella).
 - 90/90 mobile tasks ticked. Final human sign-off (Dr. Dave/Kavya on the
   captured screenshots) remains the last review step, not a code task.
 Remaining human step: review screenshots/mobile/*.png.
+2026-08-14T21:50:46 Queue exhausted — allowing normal Claude stop.
+2026-08-14T21:51:31 Queue exhausted — allowing normal Claude stop.
