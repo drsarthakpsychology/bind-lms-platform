@@ -367,3 +367,17 @@ sim + voice all function today.
 - **`OPENCODE_API_KEY`** — opencode.ai/zen (OpenAI-compatible gateway; OpenAI/
   Anthropic/Qwen via one key). WHY: another no-train fallback lane per your
   request. ENV: `OPENCODE_API_KEY`. Registered as a fallback after OpenRouter.
+
+---
+
+## ✅ SambaNova key SET but VERIFIED PAYWALLED (2026-08-14)
+
+Your `SAMBANOVA_API_KEY` is configured (gitignored .env.local) and the provider
+is registered, but the live API returns `PAYMENT_METHOD_REQUIRED` — SambaNova
+now requires a card on file (the "free, no card" research was outdated). So it
+is a **paid fallback**, not the free Cerebras replacement.
+
+**The truly-free no-train capacity double is `CEREBRAS_API_KEY`** (free, no
+card, ~1M tok/day — the router's #2 student lane). With Groq + Cerebras +
+OpenRouter (already live) the 45-DAU target is met. Get a Cerebras key if you
+want the free double; SambaNova remains usable if you add a card.

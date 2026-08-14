@@ -27,14 +27,14 @@
 - [x] **SambaNova (Cerebras alternative)** — registered as the #3 no-train
   student lane (Groq → Cerebras → SambaNova), verified catalog (Llama-3.3-70B,
   DeepSeek-V3.x, gpt-oss-120b, gemma-4-31B), OpenAI-compatible. Committed
-  901e052.
+  901e052. **Verified 2026-08-14: PAYWALLED (needs a card) — paid fallback,
+  not free.**
 - [x] **OpenCode Zen gateway** — registered as a no-train fallback (OpenAI/
   Anthropic/Qwen via one key, opencode.ai/zen/v1). Committed 901e052.
 
-### Keys live now (gitignored .env.local): GROQ + DEEPSEEK + OPENROUTER
-### Capacity keys still wanted (NEEDS_KAVYA): SAMBANOVA (free, the Cerebras
-### alternative the user asked for) + CEREBRAS (free) — either doubles the
-### no-train student capacity toward the 45-DAU target.
+### Keys live now (gitignored .env.local): GROQ + DEEPSEEK + OPENROUTER +
+### SAMBANOVA (paywalled). The truly-free no-train double is `CEREBRAS_API_KEY`
+### (free, no card, ~1M tok/day — the router's #2 lane, needs a key).
 
 ## KNOWLEDGE LAYER — Groq LIVE + VOICE TUTOR (2026-08-14)
 

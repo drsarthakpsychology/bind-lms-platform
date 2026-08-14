@@ -2451,3 +2451,24 @@ Gate green before each commit: lint 0, tsc clean, 442 tests, build 82/82.
 NEEDS_KAVYA: Cerebras key (the free #2 no-train lane) is the last capacity
 unlock. Keys live: GROQ (student), DEEPSEEK (non-student bulk), OPENROUTER
 (overflow).
+2026-08-14T10:48:23 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — SambaNova + OpenCode providers; SambaNova verified paywalled
+
+User asked for the best Cerebras alternative + to use opencode API/auth.
+
+- **SambaNova registered** (901e052): the strongest Cerebras-alternative lane
+  (Groq → Cerebras → SambaNova), verified catalog (Meta-Llama-3.3-70B-Instruct,
+  DeepSeek-V3.1/V3.2, gpt-oss-120b, gemma-4-31B), OpenAI-compatible.
+- **OpenCode Zen registered** (901e052): OpenAI-compatible gateway
+  (opencode.ai/zen/v1) routing to OpenAI/Anthropic/Qwen via one key — a
+  no-train fallback lane.
+- **VERIFIED (2026-08-14)**: SambaNova is PAYWALLED — the live API returns
+  PAYMENT_METHOD_REQUIRED (a card is now required; the "free, no card" research
+  was outdated). Key is configured but the provider is a paid fallback, NOT the
+  free Cerebras replacement. The truly-free no-train double remains
+  `CEREBRAS_API_KEY` (free, no card, ~1M tok/day, router #2 lane).
+- Capacity model + router comment + NEEDS_KAVYA updated to reflect the verified
+  reality. Groq + OpenRouter confirmed healthy (real free lanes).
+
+Gate: lint 0, tsc clean, 447 tests, build 82/82. No keys in tracked files.

@@ -96,12 +96,12 @@ export const PROVIDERS: Provider[] = [
     protocol: "openai",
   },
   {
-    // SambaNova Cloud — the best Cerebras alternative for the student-facing
-    // no-train lane (user request 2026-08-14). Verified catalog: Meta-Llama-3.3-
-    // 70B-Instruct (same family as the Groq fast lane), DeepSeek-V3.1/V3.2,
-    // gpt-oss-120b, gemma-4-31B-it. OpenAI-compatible. Permanent free tier,
-    // no card; ~1M tokens/day / unlimited requests at 10-30 RPM. Sits alongside
-    // Groq + Cerebras in the no-train fallback chain per the 2026 research.
+    // SambaNova Cloud — the Cerebras-alternative lane (user request 2026-08-14).
+    // Verified catalog: Meta-Llama-3.3-70B-Instruct, DeepSeek-V3.1/V3.2,
+    // gpt-oss-120b, gemma-4-31B-it. OpenAI-compatible. NOTE (verified 2026-08-14):
+    // the API now requires a payment method (PAYMENT_METHOD_REQUIRED) — the old
+    // "free, no card" claim is outdated, so this is a PAID fallback lane, not a
+    // free one. Cerebras (free, no-train) remains the true free double.
     id: "sambanova",
     baseUrl: "https://api.sambanova.ai/v1",
     apiKeyEnv: "SAMBANOVA_API_KEY",

@@ -58,17 +58,23 @@ NOT the bottleneck — requests-per-day and requests-per-minute are.**
    It still won't fully reach 45 DAU alone, but combined with Groq it does.
 2. **OpenRouter key (free, 50 RPD at $0; 1,000 RPD after one-time $10)** —
    the overflow lane the router already references. $10 unlocks ~1,000 RPD of
-   no-train models (per-model verify). This closes the 45-DAU gap.
-3. **Self-host a small model for the simple tier** (classification,
+   no-train models (per-model verify). This closes the 45-DAU gap. **Already
+   live** (key set + verified, 2026-08-14).
+3. **SambaNova — VERIFIED NOT FREE (2026-08-14):** the research claimed a
+   "permanent free tier, no card," but the live API returns
+   `PAYMENT_METHOD_REQUIRED` — a card is now required. Registered + key
+   configured, but it's a **paid fallback**, NOT the free Cerebras replacement.
+4. **Self-host a small model for the simple tier** (classification,
    formatting, concept tagging) on the existing infra — removes those calls
    from the API budget entirely. The knowledge layer already makes a small
    open model useful for VIBHA-specific tasks (§4).
-4. **Caching**: the router's `aiChat` already caches; a response cache for
-   repeated tutor questions (top quiz items) would cut ~10% of calls.
+5. **Caching** — DONE (commit 776f2ab): ai_response_cache trims repeated
+   tutor questions from the API budget.
 
-**Order of cheapest-to-unblock:** Cerebras key (free) → OpenRouter $10 →
-self-host simple tier. With Groq + Cerebras + OpenRouter the 45-DAU target is
-met with headroom.
+**Order of cheapest-to-unblock:** Cerebras key (free — the real double) →
+OpenRouter $10 (already live at $0). With Groq + Cerebras + OpenRouter the
+45-DAU target is met with headroom. SambaNova is a paid option, not the free
+answer.
 
 ## Bottom line
 
