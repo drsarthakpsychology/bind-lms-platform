@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Bell, HelpCircle, LogOut, MessageSquare, Shield, User } from "lucide-react";
+import { Bell, LogOut, MessageSquare, Shield, User } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import { logout } from "@/lib/auth/actions";
 import { MobilePage } from "@/components/mobile/mobile-page";
@@ -14,8 +13,8 @@ import { BRAND } from "@/lib/brand";
  * /settings — grouped progressive account screen (T41).
  *
  * The mobile principle: settings is NOT a giant scroll of every toggle. It is
- * a few grouped sections — Account, Preferences, Support — each revealing its
- * details contextually, with one obvious action (log out) at the end.
+ * a few grouped sections — Account, Shortcuts — each revealing its details
+ * contextually, with one obvious action (log out) at the end.
  *
  * Honest data: profiles has id/role/active_session_token/expires_at (no
  * display_name/avatar), so the identity header shows the email + role from the
@@ -66,8 +65,8 @@ export default async function SettingsPage() {
           />
         </MobileSection>
 
-        {/* Preferences — real surfaces only. */}
-        <MobileSection title="Preferences" description="What you see on this device.">
+        {/* Shortcuts — quick jumps, kept honest (they don't change settings). */}
+        <MobileSection title="Shortcuts" description="Quick jumps around the programme.">
           <MobileListItem
             href="/practice/modules"
             leading={<span className="font-mono text-xs font-black text-link">01</span>}
@@ -88,16 +87,6 @@ export default async function SettingsPage() {
           />
         </MobileSection>
 
-        {/* Support. */}
-        <MobileSection title="Support" description="Help when you need it.">
-          <MobileListItem
-            href="/practice/library"
-            leading={<HelpCircle className="size-4 text-foreground" aria-hidden />}
-            title="Case library"
-            subtitle="Browse every case in the programme."
-          />
-        </MobileSection>
-
         <div className="border-t-2 border-border pt-4">
           <form action={logout}>
             <Button type="submit" variant="outline" size="lg" className="w-full">
@@ -109,12 +98,6 @@ export default async function SettingsPage() {
             Signing out keeps your progress — just sign back in.
           </p>
         </div>
-
-        <p className="text-center text-caption text-muted-foreground">
-          <Link href="/practice/not-available" className="underline underline-offset-2">
-            Need more help?
-          </Link>
-        </p>
       </div>
     </MobilePage>
   );

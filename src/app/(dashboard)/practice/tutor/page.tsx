@@ -21,7 +21,7 @@ export default async function TutorPage() {
       <div className="hidden lg:block">
         <PageHeader
           title="Psychology Tutor"
-          description="Ask anything about psychology and psychiatry. Answers come from the authorised book corpus — Kaplan & Sadock, DSM-5-TR, Stahl, Maudsley, Fish, Ahuja, ICD-11 — with source citations."
+          description="Ask anything about psychology and psychiatry. Answers come from the authorised books — Kaplan & Sadock, DSM-5-TR, Stahl, Maudsley, Fish, Ahuja, ICD-11 — with sources."
         />
       </div>
       <div className="lg:mt-6">

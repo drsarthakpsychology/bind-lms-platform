@@ -246,7 +246,7 @@ export function SimSessionView({
       if (!res.ok) {
         const j = await res.json().catch(() => null);
         if (res.status === 503) {
-          setError("Debrief needs a no-train AI provider. Add a key in the morning, or ask faculty to run it.");
+          setError("The debrief couldn't be generated right now. Try again, or ask your faculty.");
         } else {
           setError(j?.error ?? "Could not run the debrief.");
         }

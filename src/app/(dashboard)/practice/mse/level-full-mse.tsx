@@ -4,7 +4,7 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { FULL_MSE_STIMULI, scoreFullMse, type MseAttemptFields, type FullMseStimulus } from "@/lib/mse/mse4-stimuli";
-import { MSE_DOMAIN_ORDER, summarizeMseScore } from "@/lib/mse/ladder";
+import { MSE_DOMAIN_ORDER, summarizeMseScore, formatDomainKey } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
 import type { MseDomainKey } from "@/lib/mse/ladder";
 
@@ -132,7 +132,7 @@ export function FullMseLevel({
           >
             {MSE_DOMAIN_ORDER.map((d) => (
               <label key={d} className="block">
-                <span className="text-caption font-semibold text-muted-foreground">{d}</span>
+                <span className="text-caption font-semibold text-muted-foreground">{formatDomainKey(d)}</span>
                 <input
                   value={rawText[d] ?? ""}
                   onChange={(e) => setDomain(d, e.target.value)}
@@ -169,7 +169,7 @@ export function FullMseLevel({
                     v === "amber" && "border-amber-400 bg-amber-50 text-amber-800",
                     v === "red" && "border-red-400 bg-red-50 text-red-800",
                   )}>
-                    <span className="font-semibold w-28 shrink-0">{d}</span>
+                    <span className="font-semibold w-28 shrink-0">{formatDomainKey(d)}</span>
                     <span className="flex-1">
                       <span className="font-medium">You: </span>
                       {student.length ? student.join(", ") : "(none)"}

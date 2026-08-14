@@ -59,7 +59,6 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
 
       {/* multi-select meanings */}
       <div className="rounded-md border-2 border-border bg-card p-5">
-        <p className="text-small font-medium">What could this mean? Select all that apply.</p>
         <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
           {meanings.map((m) => {
             const picked = selected.has(m);

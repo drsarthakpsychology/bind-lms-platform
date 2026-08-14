@@ -3,7 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
-import { scoreMseCode, summarizeMseScore } from "@/lib/mse/ladder";
+import { scoreMseCode, summarizeMseScore, formatDomainKey } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
 
 interface TurnLine {
@@ -207,7 +207,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {DOMAINS.map((d) => (
                 <label key={d} className="block">
-                  <span className="text-caption font-semibold text-muted-foreground">{d}</span>
+                  <span className="text-caption font-semibold text-muted-foreground">{formatDomainKey(d)}</span>
                   <input
                     value={rawText[d] ?? ""}
                     onChange={(e) => setDomain(d, e.target.value)}
@@ -231,10 +231,9 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
           {scored ? (
             scored._uncoded ? (
               <div className="rounded-md border border-border bg-secondary/40 p-3 text-small text-muted-foreground">
-                <span className="font-semibold">This case isn&apos;t coded yet.</span>{" "}
-                The expert coding for this patient isn&apos;t authored, so there is no
-                ground truth to score against — nothing is fabricated. Pick another
-                session, or run a Consulting Room session on one of the coded cases
+                <span className="font-semibold">This session isn&apos;t marked yet.</span>{" "}
+                There&apos;s no expert reference to compare against yet. Pick another
+                session, or run a Consulting Room session on one of the marked cases
                 (Ravi, Meera, Vikram, Neha, Rohit) and come back.
               </div>
             ) : (
@@ -258,7 +257,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
                           v === "red" && "border-red-400 bg-red-50 text-red-800",
                         )}
                       >
-                        <span className="w-28 shrink-0 font-semibold">{d}</span>
+                        <span className="w-28 shrink-0 font-semibold">{formatDomainKey(d)}</span>
                         <span className="flex-1">
                           <span className="font-medium">You: </span>
                           {student.length ? student.join(", ") : "(none)"}

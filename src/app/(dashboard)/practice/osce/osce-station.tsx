@@ -309,15 +309,14 @@ export function OsceStationView() {
             {selfGlobal || "—"}{selfGlobal ? `/${station.global_rating.max}` : ""}
           </p>
           <p className="mt-1 text-caption text-muted-foreground">
-            {selfGlobal ? `norm ${Math.round((selfGlobal / station.global_rating.max) * 100)}%` : "pick above"}
+            {selfGlobal ? "your overall call" : "pick above"}
           </p>
         </div>
         <div className="rounded-md border-2 border-border bg-background p-3">
-          <p className="text-caption text-muted-foreground">Composite</p>
+          <p className="text-caption text-muted-foreground">Overall</p>
           <p className="mt-0.5 text-base font-semibold text-numeric">
             {selfGlobal ? `${Math.round(composite * 100)}%` : "—"}
           </p>
-          <p className="mt-1 text-caption text-muted-foreground">60/40 checklist·global</p>
         </div>
       </div>
 

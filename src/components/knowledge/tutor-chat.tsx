@@ -128,9 +128,9 @@ export function TutorChat() {
         content = body.answer;
       } else if (body.sources?.length) {
         content =
-          "Here's what the authorised books say — the sources below are the material itself (an AI synthesis needs a no-train provider key, which isn't set yet). Ask me another way and I'll retrieve again.";
+          "Here's what the authorised books say — the sources below are the material itself. Ask me another way and I'll retrieve again.";
       } else {
-        content = "I couldn't find source material for that in the authorised corpus. Try a different phrasing or one of the suggested questions.";
+        content = "I couldn't find that in the authorised books. Try a different phrasing or one of the suggested questions.";
       }
       setMessages((m) => [
         ...m,
@@ -144,7 +144,7 @@ export function TutorChat() {
     } catch {
       setMessages((m) => [
         ...m,
-        { role: "assistant", content: "Something went wrong on the knowledge layer. Please try again.", error: true },
+        { role: "assistant", content: "Something went wrong. Please try again.", error: true },
       ]);
       voiceAskedRef.current = false;
     } finally {
@@ -170,7 +170,7 @@ export function TutorChat() {
           <div className="py-6">
             <p className="text-body-strong">Ask anything about psychology and psychiatry.</p>
             <p className="mt-1 text-muted-foreground">
-              Answers are grounded in the ten-book corpus (Kaplan &amp; Sadock, DSM-5-TR, Stahl, Maudsley,
+              Answers are grounded in the ten authorised books (Kaplan &amp; Sadock, DSM-5-TR, Stahl, Maudsley,
               Fish, Ahuja, ICD-11, …) with source citations.
             </p>
             <div className="mt-4 flex flex-wrap gap-2">

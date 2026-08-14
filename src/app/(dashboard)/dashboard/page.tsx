@@ -183,7 +183,7 @@ export default async function DashboardPage() {
                   <Play className="size-5 fill-current" />
                 </span>
                 <div className="min-w-0 space-y-1">
-                  <p className="text-eyebrow text-muted-foreground">Step 1 · Continue learning</p>
+                  <p className="text-eyebrow text-muted-foreground">Continue learning</p>
                   <h2 className="text-h2">{continueCourse.course.title}</h2>
                   <p className="text-caption text-muted-foreground">
                     {continueCourse.completedCount} of {continueCourse.totalLessons} lessons complete
@@ -234,7 +234,7 @@ export default async function DashboardPage() {
                 </span>
                 <div className="min-w-0 space-y-1">
                   <p className="text-eyebrow">
-                    Step 1 · {startedSomething ? "Start your next course" : "Start your first course"}
+                    {startedSomething ? "Start your next course" : "Start your first course"}
                   </p>
                   <h2 className="text-h2">{firstNotStartedCourse.course.title}</h2>
                   <p className="text-caption opacity-80">
@@ -253,18 +253,17 @@ export default async function DashboardPage() {
         ) : null}
       </Reveal>
 
-      {/* Step 2 — the daily habit. */}
+      {/* The daily practice block. */}
       <Reveal delay={0.15}>
         <div className="space-y-3">
-          <p className="text-eyebrow text-muted-foreground">Step 2 · Daily habit</p>
+          <p className="text-eyebrow text-muted-foreground">Daily practice</p>
           <DashboardPracticeSection />
         </div>
       </Reveal>
 
-      {/* Step 3 — the full list, in-progress first, completed last. */}
+      {/* The full course list, in-progress first, completed last. */}
       <section aria-label="Your courses" className="space-y-4">
         <div className="space-y-1">
-          <p className="text-eyebrow text-muted-foreground">Step 3 · The full list</p>
           <h2 className="text-h2">Your courses</h2>
           <p className="text-caption text-muted-foreground">
             In-progress first, then not started, then completed.
@@ -276,7 +275,7 @@ export default async function DashboardPage() {
             <EmptyState
               icon={<GraduationCap className="size-6" aria-hidden />}
               title="No courses yet"
-              description="Courses published to your account will appear here. Check back soon."
+              description="Your courses will appear here when they're available. Check back soon."
             />
           </Reveal>
         )}

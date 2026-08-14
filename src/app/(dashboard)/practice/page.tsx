@@ -147,7 +147,7 @@ export default async function PracticeHubPage() {
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <Reveal delay={0.05}>
         <header className="mb-6">
-          <p className="text-eyebrow text-muted-foreground">Practice layer</p>
+          <p className="text-eyebrow text-muted-foreground">Practice</p>
           <h1 className="mt-1 text-h1">Walk into your first real intake ready.</h1>
           <p className="mt-2 max-w-2xl text-small text-muted-foreground">
             Everything here is private to you and your faculty. Core tools are full workflows; drills are single-skill reps. Pick by how long you have.
@@ -202,7 +202,7 @@ export default async function PracticeHubPage() {
       />
 
       <p className="mt-8 text-caption text-muted-foreground">
-        Voice mode is available in the Consulting Room and OSCE stations. Everything stays on the server.
+        Voice mode is available in the Consulting Room and OSCE stations.
         <span className="ml-2 hidden sm:inline">Keyboard: j/k to move · Enter to open · / for help.</span>
       </p>
 

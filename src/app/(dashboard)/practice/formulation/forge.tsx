@@ -178,7 +178,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: typeof SE
               })}
             </div>
             <p className="mt-2 text-caption text-muted-foreground">
-              Score so far: <span className="font-semibold text-numeric">{Math.round(score * 100)}%</span> — a diff, not a grade.
+              Score so far: <span className="font-semibold text-numeric">{Math.round(score * 100)}%</span> — a comparison with the model, not a grade.
             </p>
           </div>
 

@@ -180,12 +180,11 @@ export default async function CourseOverviewPage({
       </Link>
 
       <PageHeader
-        eyebrow={course.is_published ? "Published course" : "Draft course"}
         title={course.title}
         description={
           course.is_published
-            ? "One next action, highlighted. The rest is here when you need it."
-            : "Draft — not yet visible to students."
+            ? "Work through the weeks and lessons at your own pace."
+            : "Draft — only you can see this."
         }
       />
 

@@ -14,8 +14,8 @@ import type { BandView } from "@/lib/psychopharm/store";
  * actually switches the page to that band's specific content (D3). Wrapped in
  * Suspense by the server page because useSearchParams requires it.
  *
- * Register mode (student|clinician) is lifted here so the band detail, onset
- * timeline, and mechanism register share one toggle.
+ * Students always see the plain register — the reviewer/clinician register
+ * with source evidence lives in the admin editor, not here.
  */
 export function DrugBandView({
   class: drugClass,
@@ -63,23 +63,14 @@ export function DrugBandView({
   const searchParams = useSearchParams();
   const activeBand = Number(searchParams?.get("band") ?? (bands.length ? 1 : 0));
   const current = bands[activeBand - 1];
-  const [mode, setMode] = React.useState<"student" | "clinician">("student");
 
   return (
     <div className="space-y-6">
       {/* The selected band, first below the ladder. */}
-      <BandDetail band={current} register={mode} />
+      <BandDetail band={current} register="student" />
 
-      {/* Register switch (student/clinician) — kept high so the two registers
-          are a first-class, visible control rather than a mid-scroll widget. */}
-      <RegisterView
-        plain={plain}
-        mechanism={mechanism}
-        source_id=""
-        source_title={sourceTitle ?? ""}
-        mode={mode}
-        onModeChange={setMode}
-      />
+      {/* The mechanism register — plain language, no mode switch for students. */}
+      <RegisterView plain={plain} mechanism={mechanism} />
 
       {/* Onset + half-life — second question anyone asks. */}
       <OnsetTimeline
@@ -89,7 +80,7 @@ export function DrugBandView({
         halfLife={halfLife}
         halfLifePage={halfLifePage}
         bandOnset={current?.onset}
-        register={mode}
+        register="student"
         sourceTitle={sourceTitle ?? ""}
       />
 

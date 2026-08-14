@@ -186,7 +186,7 @@ export function SupervisionLog({
         </div>
         {/* A9 transfer loop — the outcome measure */}
         <div className="rounded-md border border-border bg-secondary/30 p-3">
-          <p className="text-caption font-semibold text-muted-foreground">The transfer loop — this is your outcome measure</p>
+          <p className="text-caption font-semibold text-muted-foreground">What you tried — and what happened</p>
           <label htmlFor="transfer-note" className="mt-2 block text-caption font-medium text-muted-foreground">
             What did you try that you practised here — and what happened?
           </label>

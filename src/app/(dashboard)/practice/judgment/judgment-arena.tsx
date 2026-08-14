@@ -166,7 +166,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
           </div>
           <p className="mt-3 text-small text-muted-foreground">
             Your call scored <span className="font-semibold text-numeric">{(answered[answered.length - 1]?.score * 100).toFixed(0)}%</span>{" "}
-            of the modal panel weight. Partial credit for reasonable disagreement is the whole point.
+            against the expert panel. Partial credit for reasonable disagreement is the whole point.
           </p>
           <button
             type="button"

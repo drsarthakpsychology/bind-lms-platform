@@ -211,7 +211,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
         const j = await res.json().catch(() => null);
         setHelpReply(
           j?.error?.includes("no no-train") || res.status === 503
-            ? "This needs a no-train AI provider (a paid key). Add one in settings, or talk to your faculty — this is the honest answer, not a silent downgrade."
+            ? "This isn't available yet — it needs a service your faculty hasn't switched on. Your note is saved as normal."
             : "Could not get a response.",
         );
         return;

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
-import { DOMAIN_UNITS, MSE_DOMAIN_ORDER } from "@/lib/mse/ladder";
+import { DOMAIN_UNITS, MSE_DOMAIN_ORDER, formatDomainKey } from "@/lib/mse/ladder";
 import { MSE_VOCAB } from "@/lib/practice/mse";
 import { SEED_MSE_STIMULI, type MseStimulus } from "@/lib/practice/mse";
 import { buildMseAttemptPayload, scoreMseLevel2Attempt } from "@/lib/practice/mse-attempt";
@@ -101,7 +101,7 @@ export function DomainLevel({
         <span>
           Level 2 · Domain {domainIdx + 1}/{MSE_DOMAIN_ORDER.length}
         </span>
-        <span>{done ? "all domains" : unit?.domain}</span>
+        <span>{done ? "all domains" : formatDomainKey(unit?.domain ?? "")}</span>
       </div>
 
       {done ? (
@@ -141,7 +141,7 @@ export function DomainLevel({
           <div>
             <p className="text-small text-muted-foreground">
               Tag the observations with the controlled vocabulary for{" "}
-              <span className="font-semibold">{unit?.domain}</span>.
+              <span className="font-semibold">{formatDomainKey(unit?.domain ?? "")}</span>.
             </p>
             <div className="mt-2 flex flex-wrap gap-2">
               {vocab.map((tag) => (
@@ -192,7 +192,7 @@ export function DomainLevel({
                 }}
                 className="mt-1 rounded-md border-2 border-border bg-primary px-4 py-1.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
               >
-                Next in {unit?.domain}
+                Next in {formatDomainKey(unit?.domain ?? "")}
               </button>
             </div>
           )}

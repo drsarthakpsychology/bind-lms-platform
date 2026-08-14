@@ -592,7 +592,7 @@ function ProvisionalAwareStat({
     return (
       <div className="rounded-md border-2 border-dashed border-border bg-background p-3">
         <p className="text-caption text-muted-foreground">{label}</p>
-        <p className="mt-0.5 text-base font-semibold">Being calibrated</p>
+        <p className="mt-0.5 text-base font-semibold">Not marked yet</p>
         <p className="mt-1 text-caption text-muted-foreground">{hint}</p>
       </div>
     );

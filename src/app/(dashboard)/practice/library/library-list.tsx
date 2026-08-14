@@ -149,7 +149,7 @@ export function LibraryList({
                       haptic("tap");
                     }}
                     title={d.title}
-                    subtitle={`${d.licence.toUpperCase()} · ${d.fetchedAt}`}
+                    subtitle={d.abstract.slice(0, 90) + (d.abstract.length > 90 ? "…" : "")}
                     trailing={
                       <StickyNote
                         className={hasOwnNote ? "size-4 text-primary" : "size-4 text-muted-foreground"}
@@ -169,7 +169,6 @@ export function LibraryList({
         open={readDoc !== null}
         onOpenChange={(o) => !o && setReadDoc(null)}
         title={readDoc?.title}
-        description={readDoc ? `${readDoc.licence.toUpperCase()} · ${readDoc.fetchedAt}` : undefined}
         footer={
           <div className="space-y-2">
             {readDoc ? (
@@ -179,7 +178,7 @@ export function LibraryList({
                 rel="noopener noreferrer"
                 className="block text-center text-caption font-medium text-link hover:underline"
               >
-                Open on PMC →
+                Open the original →
               </a>
             ) : null}
             <button

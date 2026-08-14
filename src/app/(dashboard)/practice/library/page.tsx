@@ -23,11 +23,11 @@ export default async function LibraryPage(props: {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Case library</p>
-      <h1 className="mt-1 text-h1">Browse the corpus</h1>
+      <p className="text-eyebrow text-muted-foreground">Read &amp; annotate</p>
+      <h1 className="mt-1 text-h1">Case library</h1>
       <p className="mt-1 text-small text-muted-foreground">
-        {all.length} open-access case reports from PMC (Europe PMC OA, CC-BY etc.). Search by
-        title or opening text. The library surfaces what faculty should know is in scope.
+        {all.length} real case reports from the literature. Search by title or opening
+        words — read, then note the teaching point.
      </p>
 
       <div className="mt-6">
