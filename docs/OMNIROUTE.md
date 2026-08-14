@@ -1,16 +1,31 @@
 # OmniRoute — Free-Model Pooling Gateway
 
-Integrated 2026-08-14 (user request). OmniRoute is a self-hosted
-OpenAI-compatible gateway that pools ~1.5B free tokens/month across 42
-provider pools (495 models) behind one endpoint, with automatic provider
-selection ("auto"), health/speed/cost/quality scoring, and fallback. Repo:
+Integrated + RUNNING 2026-08-14 (user request: "how can we use omniroute? you
+setup this entirely"). OmniRoute is a self-hosted OpenAI-compatible gateway
+that pools ~1.5B free tokens/month across 42 provider pools (495 models)
+behind one endpoint, with automatic provider selection ("auto"),
+health/speed/cost/quality scoring, and fallback. Repo:
 `https://github.com/diegosouzapw/OmniRoute.git`.
 
-The VIBHA router already registers it as a provider (`id: "omniroute"`):
-- `baseUrl: http://localhost:20128/v1` (OpenAI-compatible)
-- `models: { fast: "auto", smart: "auto/smart", strong: "auto/smart" }`
-- `trainsOnData: false` (the gateway itself does not train)
-- A late fallback in the chat/stream/json no-train lanes (self-hosted/optional)
+## ✅ Verified running (2026-08-14)
+
+- Installed globally: `npm install -g omniroute` → v3.8.49 at /opt/homebrew/bin.
+- Running as a daemon: `omniroute serve --no-open --daemon` on **:20128**
+  (Dashboard + OpenAI-compatible API at `/v1`).
+- `auto` routing VERIFIED: the dopamine-hypothesis question routed to a free
+  model and returned a correct answer. No API key required (HTTP 200 with or
+  without a Bearer), so the VIBHA router reaches it directly.
+- The VIBHA router registers it (`id: "omniroute"`):
+  - `baseUrl: http://localhost:20128/v1` (OpenAI-compatible)
+  - `models: { fast: "auto", smart: "auto/smart", strong: "auto/smart" }`
+  - `trainsOnData: false` (the gateway itself does not train)
+  - A late fallback in the chat/stream/json no-train lanes.
+
+## Restart after reboot
+
+```bash
+omniroute serve --no-open --daemon   # starts on :20128; env at ~/.omniroute/.env
+```
 
 ## Why it fits
 

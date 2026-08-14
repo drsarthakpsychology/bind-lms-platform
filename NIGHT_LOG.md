@@ -2473,3 +2473,25 @@ User asked for the best Cerebras alternative + to use opencode API/auth.
 
 Gate: lint 0, tsc clean, 447 tests, build 82/82. No keys in tracked files.
 2026-08-14T10:50:56 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — OmniRoute SET UP + RUNNING (user: "setup this entirely")
+
+User: "how can we use omniroute? you setup this entirely." Done:
+- Installed globally (`npm install -g omniroute` → 3.8.49), created ~/.omniroute
+  .env with generated JWT/API secrets, started `omniroute serve --no-open
+  --daemon` on :20128.
+- VERIFIED: /v1/models returns auto/* combos; a real "dopamine hypothesis"
+  completion through model "auto" routed to a free model (big-pickle) and
+  returned a correct answer. No API key required → VIBHA router reaches it
+  directly (HTTP 200 with/without Bearer).
+- VIBHA router already registers omniroute (baseUrl localhost:20128/v1, model
+  auto/auto-smart, trainsOnData=false) as a late no-train fallback (commit
+  d147631). docs/OMNIROUTE.md updated with run + restart instructions.
+- Also this round: OpenCode free model (deepseek-v4-flash-free) per "use the
+  free ones" (9091451); NVIDIA key set (models list works, chat endpoint times
+  out from this machine — environmental); verified SambaNova + OpenCode are
+  paywalled (needs card) — Groq + OpenRouter + OmniRoute-auto are the live free
+  lanes.
+
+Gate green throughout. Keys live (gitignored): GROQ, DEEPSEEK, OPENROUTER,
+SAMBANOVA (paywalled), OPENCODE, NVIDIA.
