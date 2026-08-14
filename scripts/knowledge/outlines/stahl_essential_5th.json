@@ -10,7 +10,7 @@
     "Some printed page numbers are truncated in extraction (e.g., chapter 2's opening page shows a lone '2' for printed page 29).",
     "Section 'page' values are derived from each chapter's printed section list (mini-TOC) plus a constant +16 offset to PDF page index; the offset was verified against all 13 chapter openings but individual section headings were not each re-verified against body text.",
     "A few pages are blank or near-blank (e.g., PDF pages 2 and 10).",
-    "Back matter is not modeled in this schema: 'Suggested Reading and Selected References' (PDF 595-630) and 'Index' (PDF 631-640)."
+    "Back matter modeled via the backMatter field: 'Suggested Reading and Selected References' (PDF 595-630) and 'Index' (PDF 631-639); PDF 640 is a blank final page."
   ],
   "frontMatter": [
     {
@@ -1247,5 +1247,19 @@
       ]
     }
   ],
-  "unattributedPages": []
+  "unattributedPages": [],
+  "backMatter": [
+    {
+      "title": "Suggested Reading and Selected References",
+      "pageStart": 595,
+      "pageEnd": 630,
+      "sections": []
+    },
+    {
+      "title": "Index",
+      "pageStart": 631,
+      "pageEnd": 640,
+      "sections": []
+    }
+  ]
 }

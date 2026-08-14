@@ -6,7 +6,7 @@
     "Chapter headings in the extracted text are split: the chapter number appears on its own line, followed by the title wrapped across one or more lines (e.g. '4' then 'Substance Use and Addictive' / 'Disorders').",
     "Part C and Part D divider text is extracted out of order ('Other Issues Relevant to' / 'C Psychiatry' and 'Contributions from the Sciences...' / 'D Psychiatry').",
     "Subsection headings are frequently wrapped/truncated in extraction (e.g. '4.1 General Features of the SubstanceRelated Disorders' loses the hyphen and word space; '21.8 Drugs Used for Cognitive' drops 'Enhancement'). Canonical titles were taken from the printed Contents (pp18-21).",
-    "Back matter Glossary of Terms Relating to Signs and Symptoms (pp3556-3587) and Index (pp3588-3768) follow Chapter 35; they are not chapters and are not represented in this outline.",
+    "Back matter now modeled via the backMatter field: Glossary of Terms Relating to Signs and Symptoms (pp3556-3587) and Index (pp3588-3768). Part-divider plates B/C/D (pp1874, 2611, 2781) recorded in unattributedPages.",
     "For chapters without numbered X.Y subsections, the 'sections' list is a curated selection (not exhaustive) of major ALL-CAPS headings, chosen for navigation; many figure/table labels and DSM-5/ICD-10 tags were filtered out.",
     "Pages 1-2 are effectively blank (no extracted text); page 5 is blank; page 22 is the Part A divider."
   ],
@@ -1132,5 +1132,23 @@
       ]
     }
   ],
-  "unattributedPages": []
+  "unattributedPages": [
+    1874,
+    2611,
+    2781
+  ],
+  "backMatter": [
+    {
+      "title": "Glossary of Terms Relating to Signs and Symptoms",
+      "pageStart": 3556,
+      "pageEnd": 3587,
+      "sections": []
+    },
+    {
+      "title": "Index",
+      "pageStart": 3588,
+      "pageEnd": 3768,
+      "sections": []
+    }
+  ]
 }
