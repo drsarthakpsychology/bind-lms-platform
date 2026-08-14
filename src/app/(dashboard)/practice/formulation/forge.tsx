@@ -6,6 +6,10 @@ import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP } from 
 import { buildFormulationAttemptPayload } from "@/lib/practice/formulation-attempt";
 import { FORMULATION_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
+/** In-flight snapshot — a refresh mid-sort or mid-narrative restores the work
+ *  instead of dropping it (T46/T47). */
+const FORGE_KEY = "formulation:in-flight";
+
 /**
  * Stage 1: sort factor cards. Mobile: tap a card to select, tap a bucket to
  * place (drag-and-drop has a tap fallback). Stage 2: narrative. Stage 3: diff.
@@ -20,6 +24,43 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: typeof SE
   const [diff, setDiff] = React.useState<{ missing: string[]; present: string[] } | null>(null);
   // The attempt window starts when the forge opens.
   const [startedAt] = React.useState(() => new Date());
+
+  // Restore the in-flight snapshot after first paint (deferred past hydration).
+  React.useEffect(() => {
+    const id = window.setTimeout(() => {
+      try {
+        const raw = window.localStorage.getItem(FORGE_KEY);
+        if (!raw) return;
+        const s = JSON.parse(raw) as {
+          attempt?: Array<{ factorId: string; bucket: FiveP | null }>;
+          stage?: number;
+          narrative?: string;
+        };
+        // Only restore if the saved sort matches this seed's factor set.
+        if (Array.isArray(s.attempt) && s.attempt.length === seed.factors.length) {
+          setAttempt(s.attempt);
+        }
+        if (typeof s.stage === "number" && s.stage >= 1 && s.stage <= 4) setStage(s.stage as 1 | 2 | 3 | 4);
+        if (typeof s.narrative === "string") setNarrative(s.narrative);
+      } catch {
+        /* ignore */
+      }
+    }, 0);
+    return () => window.clearTimeout(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- seed is a stable default
+  }, []);
+
+  // Persist on every change.
+  React.useEffect(() => {
+    try {
+      window.localStorage.setItem(
+        FORGE_KEY,
+        JSON.stringify({ attempt, stage, narrative }),
+      );
+    } catch {
+      /* ignore */
+    }
+  }, [attempt, stage, narrative]);
 
   /** Persist the completed scaffolded pass (a check, not a test — silent on failure). */
   async function persistSeedAttempt() {
@@ -42,6 +83,12 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: typeof SE
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     }).catch(() => {}); // silent; a check, not a test
+    // The pass is submitted — clear the snapshot so a later visit starts fresh.
+    try {
+      window.localStorage.removeItem(FORGE_KEY);
+    } catch {
+      /* ignore */
+    }
   }
 
   function assign(factorId: string, bucket: FiveP) {
