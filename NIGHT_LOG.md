@@ -2109,3 +2109,28 @@ added appendix chapters). Remaining back-matter gap (chunks as "Unattributed"):
 kaplan_sadock 216, stahl_essential_5th 45, stahl_pg_older 42, ahuja_psychiatry
 21, stahl_pg_7th 15 (ads — fine). Open items queued in QUEUE.md.
 
+---
+
+## 2026-08-14 — Knowledge layer: close back-matter gap (book-structure reader)
+
+Resolved the two open QUEUE.md items. Full gate green (lint 0, `tsc --noEmit`
+clean, 415 tests, `next build` exit 0).
+
+1. Back-matter attribution gap:
+   - `6f095c3` feat: add `backMatter: OutlineChapter[]` to `BookOutline` +
+     `allOutlineChapters()` flatten in `chunk.ts` (pageToChapter / pageToSection /
+     section-fallback all read it) + a chunk.test.ts backMatter test. Also fixed
+     the misleading "exclusive" pageEnd doc (it is inclusive).
+   - `0cfd50a` feat: populate backMatter — ahuja (Appendices 253-260, Suggested
+     Further Reading 261-264, Index 265-273), stahl_essential_5th (Suggested
+     Reading 595-630, Index 631-639), kaplan_sadock (Glossary 3556-3587, Index
+     3588-3768; part dividers B/C/D -> unattributedPages), stahl_pg_older (42
+     .qxd slug-only noise pages -> unattributedPages).
+   - Result: orphan check now 0 for every book except stahl_pg_7th's 15 publisher
+     ads (2683-2690), which are intentionally excluded (not content).
+
+2. Dangling `knowledge:outline` script: removed the `knowledge:outline` entry
+   from package.json (pointed at a non-existent `scripts/knowledge/outlines.ts`;
+   outlines are data produced by reading agents, not a runtime step).
+
+
