@@ -136,7 +136,10 @@ export const PROVIDERS: Provider[] = [
     // can route to training upstreams — for student data it MUST be configured
     // with only no-train providers enabled. Env OMNIROUTE_URL/OMNIROUTE_API_KEY.
     id: "omniroute",
-    baseUrl: "http://localhost:20128/v1",
+    // Cloud-addressable: OMNIROUTE_URL overrides the default local gateway so
+    // the deployed Fly.io instance (always-on) serves the app when the laptop
+    // is closed. Local dev keeps the localhost default.
+    baseUrl: process.env.OMNIROUTE_URL ?? "http://localhost:20128/v1",
     apiKeyEnv: "OMNIROUTE_API_KEY",
     models: { fast: "auto", smart: "auto/smart", strong: "auto/smart" },
     limits: { rpm: 60, rpd: 10000, tpm: 1000000 },

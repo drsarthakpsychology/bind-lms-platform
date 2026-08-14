@@ -397,3 +397,20 @@ not free.
 the student-facing no-train lanes that actually work at $0. The free capacity
 double remains `CEREBRAS_API_KEY`. SambaNova + OpenCode are both paid options
 that become usable when a card is added.
+
+---
+
+## ☁️ OmniRoute to cloud — one interactive step (2026-08-14)
+
+Everything is ready to deploy OmniRoute to Fly.io so it runs when the laptop is
+closed (always-on, no spin-down; the repo ships a deploy-ready fly.toml with
+`min_machines_running = 1`). The ONE human step is browser auth:
+
+```
+flyctl auth login     # one-time; opens a browser to authenticate your Fly.io account
+bash scripts/deploy-omniroute.sh   # does the rest automatically
+```
+
+After deploy, set `OMNIROUTE_URL=https://omniroute.fly.dev/v1` in `.env.local`
+and the VIBHA app uses the cloud gateway (the router already reads it). flyctl
+v0.4.83 is installed; the deploy script sets the provider keys as Fly secrets.
