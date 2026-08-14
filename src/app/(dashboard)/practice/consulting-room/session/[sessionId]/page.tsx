@@ -1,11 +1,9 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
 import { provisionalKeys } from "@/lib/practice/rubric";
 import { isEnabled as aiEnabled } from "@/lib/ai/router";
 import { SimSessionView } from "./session-view";
-import { SimulationBadge } from "../../simulation-badge";
 
 export const dynamic = "force-dynamic";
 
@@ -123,37 +121,25 @@ export default async function SimSessionPage({
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
-      <div className="mb-4 flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <Link
-            href="/practice/consulting-room"
-            className="text-caption text-muted-foreground hover:underline"
-          >
-            ← Cases
-          </Link>
-          <span className="text-muted-foreground">/</span>
-          <h1 className="text-base font-semibold">{patientName}</h1>
-        </div>
-        <SimulationBadge />
-      </div>
-
-      <SimSessionView
-        sessionId={sessionId}
-        patientName={patientName}
-        patientAge={patientAge}
-        patientContext={patientContext}
-        difficulty={session.difficulty}
-        fixtureMode={!aiEnabled()}
-        voicePrefs={voicePrefs}
-        initialTurns={(turns ?? []).map((t) => ({
-          id: String(t.id ?? `t-${t.created_at ?? 0}-${t.role}-${String(t.content).slice(0, 12)}`),
-          role: t.role as "student" | "patient",
-          content: String(t.content),
-        }))}
-        branchInfo={branchInfo}
-        provisionalDims={provisionalDims}
-      />
-    </div>
+    // Edge-to-edge: the shell already renders this route full-bleed (immersive
+    // path), so any padding wrapper here would inset the h-dvh conversation and
+    // make it taller than the viewport. The SimSessionView owns the whole
+    // screen — header, chat, composer, sheets.
+    <SimSessionView
+      sessionId={sessionId}
+      patientName={patientName}
+      patientAge={patientAge}
+      patientContext={patientContext}
+      difficulty={session.difficulty}
+      fixtureMode={!aiEnabled()}
+      voicePrefs={voicePrefs}
+      initialTurns={(turns ?? []).map((t) => ({
+        id: String(t.id ?? `t-${t.created_at ?? 0}-${t.role}-${String(t.content).slice(0, 12)}`),
+        role: t.role as "student" | "patient",
+        content: String(t.content),
+      }))}
+      branchInfo={branchInfo}
+      provisionalDims={provisionalDims}
+    />
   );
 }
