@@ -3716,3 +3716,5 @@ The remaining worktree-psychopharm-book-enrichment (hard-isolated, 118 behind /
 - DROPPED the worktree's MOBILE_* docs + T-tick commits (redundant with main's
   completed rebuild).
 Gate green: lint 0, tsc clean, 486 tests, build clean.
+2026-08-14T22:02:18 Queue exhausted — allowing normal Claude stop.
+2026-08-14T22:02:53 Queue exhausted — allowing normal Claude stop.
