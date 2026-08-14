@@ -724,7 +724,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   icons, borders, button states, animations, transitions, loading, empty
   states, error states, copy, touch behavior, and visual consistency
 
-- [ ] T89  Mobile end-to-end QA — run the complete student journey from
+- [x] T89  Mobile end-to-end QA — run the complete student journey from
   authentication through learning, assessment, practice, simulation, debrief,
   reflection, and community features; verify functionality, state persistence,
   responsiveness, and visual quality

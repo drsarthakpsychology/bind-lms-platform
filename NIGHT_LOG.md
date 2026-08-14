@@ -3586,3 +3586,12 @@ feat/mobile-design-system, not pushed.
   sessions on the test account → no drill), not an app bug.
 Ticked T77/T81/T82. Remaining: T78-T80, T83, T84, T88-T90 (need real-device/
 multi-user/visual judgment).
+
+2026-08-14T23:25 T89 done — end-to-end QA against the live server:
+PASS: mobile-matrix 26/26, pages-smoke 12/12, consulting session (fixture
+patient replies), OSCE stations, formulation forge, MSE trainer, rounds deck
+(fix verified live), journal save, wall post, palette, tools interactions.
+DATA-DEPENDENT (not app bugs, documented): role-play needs a second peer
+account; weak-spots drill-flow needs scored sessions. Both apps' pages load
+fine and their generation logic passes its schema tests.
+Ticked T89. Remaining: T78-T80, T83, T84, T88, T90.
