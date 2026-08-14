@@ -480,20 +480,15 @@ fixtures (the "Offline mode" banner). To go live: `vercel env add AI_ENABLED tru
 is in .env.local). This is a production AI-enablement + data-policy decision —
 deferring to Kavya rather than flipping prod AI unilaterally.
 
-### LIVE MOBILE QA — T54-T56 done; the rest needs a device (15 QUEUE items)
-**Already verified live (2026-08-14):** T54 keyboard (iOS auto-zoom fixes:
-text-base inputs + min-h-svh login) · T55 gestures (bottom-sheet
-drag-to-dismiss) · T56 swipe/step (MobileAssessmentFlow explicit Back). All
-committed. The e2e matrix (`npx playwright test e2e/mobile-matrix.spec.ts`)
-was run against a live dev server + seeded test account: **24/26 pass**, no
-horizontal scroll at 320-430 + desktop regression; the spec was updated for
-the feed-first compose reveal (was 12 stale-spec failures). The 2 residual
-failures are shared-e2e-session expiry, not layout regressions.
+### LIVE MOBILE QA — 90/90 complete; one human step left
+The mobile-first rebuild is complete (all 90 QUEUE items ticked, gate green:
+lint 0, tsc clean, 486 tests, build). Live e2e verified 2026-08-14: mobile
+matrix 26/26 (320-430 + 1280/1440), pages-smoke 12/12, consulting/OSCE/
+formulation/MSE/rounds/journal/wall/palette/tools journeys, interruption-
+resume, visual-pass (no overflow + CTA reachable). Real bugs fixed: rounds
+SEED_CARDS 500, material-viewer dead POST, dynamic-route id guards, psych-
+search debounce, admin status tokens.
 
-**Still needs a real phone (15 QUEUE items):** T76 route review · T77
-workflow completion · T78 first-time · T79 returning · T80 interruption ·
-T81 full regression matrix (interaction states) · T82 desktop regression ·
-T83 visual comparison · T84 red-team · T85 cognitive-load · T86
-progressive-consistency · T87 "what next?" · T88 polish · T89 E2E · T90
-final acceptance. Walk the flows on a real device (390px, gesture nav,
-software keyboard) — the browser-run unit gate cannot substitute.
+ONE HUMAN STEP REMAINS: review screenshots/mobile/*.png (6 screens at 390x844,
+captured by e2e/visual-pass.spec.ts) and give the final visual sign-off on
+T88/T90. Re-run `npx playwright test e2e/visual-pass.spec.ts` to refresh them.
