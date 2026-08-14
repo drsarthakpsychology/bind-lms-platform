@@ -3747,3 +3747,12 @@ to production via `vercel --prod` (project bind-lms-platform →
 vibhapsychology.com), which deploys the local working tree directly — no
 push-to-main needed (respects the no-push-to-main rule). Remaining human-only
 items (content/clinical review) unaffected by deploy.
+2026-08-14T22:08:07 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:08:41 STOP_CLAUDE present — allowing stop.
+
+2026-08-14T22:40 DEPLOYED TO PRODUCTION — live.
+`vercel --prod` succeeded: deployment dpl_9d9akttUAUqNbVdDUogVTfyGduA4, readyState
+READY, target production, aliased to https://vibhapsychology.com. Verified live:
+GET / → 200 "VIBHA School of Psychology", /login → 200, /waitlist → 200.
+The complete mobile-first rebuild (90/90) + psychopharm data merge is now the
+production experience. Deployment id: dpl_9d9akttUAUqNbVdDUogVTfyGduA4.
