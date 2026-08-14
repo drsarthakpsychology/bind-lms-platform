@@ -324,7 +324,7 @@ export const EVAL_SET: EvalQuestion[] = [
     id: "k10",
     category: "case",
     question: "A 30-year-old woman with bipolar depression is started on lamotrigine with rapid dose escalation while she is also taking valproate. She develops a spreading skin rash. What is the serious concern, and what should be done about the lamotrigine?",
-    expectedSources: ["stahl_essential_5th", "maudsley_2021"],
+    expectedSources: ["stahl_essential_5th", "stahl_pg_7th", "stahl_pg_older", "maudsley_2021"],
     answerTerms: ["rash", "stevens johnson", "valproate", "toxic epidermal necrolysis", "titration"],
   },
   {
