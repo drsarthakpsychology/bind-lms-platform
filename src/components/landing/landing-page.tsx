@@ -11,6 +11,7 @@ import { Reveal } from "./reveal";
 import { KineticHeadline } from "./kinetic-headline";
 import { ScrollScale } from "./scroll-scale";
 import { Rule, Stamp, SectionEyebrow } from "./landing-primitives";
+import { Marquee } from "./marquee";
 
 /**
  * The public front door. Premium, minimal, neo-brutalist pastel. The LMS's
@@ -110,7 +111,10 @@ function Hero() {
               </div>
             </Reveal>
             <Reveal delay={0.36}>
-              <p className="mt-5 text-small font-medium text-foreground">
+              <p className="mt-5 flex items-center gap-2 text-small font-medium text-foreground">
+                {!hasCohortStarted() && (
+                  <span aria-hidden className="animate-live size-2 shrink-0 rounded-full bg-primary" />
+                )}
                 {cohortDeadlineText()}
                 {hasCohortStarted() ? "" : " · Invite-only"}
               </p>
@@ -395,6 +399,7 @@ export function LandingPage() {
       <LandingNav />
       <main className="flex-1">
         <Hero />
+        <Marquee />
         <Problem />
         <ThreeIdeas />
         <WhoBuilds />

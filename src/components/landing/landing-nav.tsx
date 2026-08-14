@@ -18,9 +18,33 @@ const NAV_LINKS = [{ href: "#about", label: "About" }];
  */
 export function LandingNav() {
   const [open, setOpen] = React.useState(false);
+  const [progress, setProgress] = React.useState(0);
   const panelRef = React.useRef<HTMLDivElement>(null);
   const triggerRef = React.useRef<HTMLButtonElement>(null);
   const reduce = useReducedMotion();
+
+  // A 2px ink scroll-progress fill along the top edge — a "you're here"
+  // signal. transform/opacity free; reduced-motion users still get it (it is
+  // a scroll state, not decoration).
+  React.useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        setProgress(max > 0 ? Math.min(1, h.scrollTop / max) : 0);
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   const closeMenu = React.useCallback(() => {
     setOpen(false);
@@ -75,7 +99,9 @@ export function LandingNav() {
   }, [open, closeMenu]);
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-foreground bg-background">
+    <header className="relative sticky top-0 z-50 border-b-2 border-foreground bg-background">
+      {/* Scroll progress — 2px ink fill across the top edge. */}
+      <div aria-hidden className="absolute left-0 top-0 h-0.5 bg-primary" style={{ width: `${progress * 100}%` }} />
       {/* The top bar is hidden from the accessibility tree while the sheet is
           open, so a screen reader can't reach the background behind the modal. */}
       <div
