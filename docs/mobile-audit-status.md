@@ -91,3 +91,15 @@ Worktree `worktree-psychopharm-book-enrichment` is 50 commits behind main and is
 editing overlapping surfaces (courses/[id], lessons/[id], consulting-room,
 debrief, passport, today). Rebase it onto `feat/mobile-design-system` before
 merging; treat those files as conflict hotspots.
+
+## Worker-slice update (2026-08-14 20:45)
+- **T41 /settings — DONE** (committed). Grouped Account/Preferences/Support
+  sections, real session identity (email+role; no invented name), sidebar +
+  mobile-drawer entry points.
+- **T42 /notifications — DONE** (committed). Schema-free derived feed under
+  existing RLS: student = replies to their non-anonymous wall posts;
+  admin = open wall-reports queue. Bell entry in both nav footers.
+- **Still OPEN in T18-T50 range**: T29 (decode-arena/judgment completion —
+  needs owned surfaces), T40 (dashboard progress architecture), T48 (offline
+  wiring — useOffline hook exists, needs sim/wall/today wiring). These need
+  surface ownership or a product decision, not a fix.

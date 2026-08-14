@@ -500,11 +500,11 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   visible enough to maintain orientation without allowing progress UI to
   dominate the screen
 
-- [ ] T41  Mobile profile/account flows — redesign profile, account,
+- [x] T41  Mobile profile/account flows — redesign profile, account,
   preferences, notifications, privacy, security, and settings into grouped
   progressive sections; avoid giant settings pages
 
-- [ ] T42  Mobile notification experience — redesign notifications around
+- [x] T42  Mobile notification experience — redesign notifications around
   actionable information; prioritize what requires attention, group secondary
   notifications, and prevent notification lists from becoming visually dense
 
