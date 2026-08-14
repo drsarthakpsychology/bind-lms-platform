@@ -1,3 +1,36 @@
+## 2026-08-14 — FULL DESIGN QA PASS, SHIPPED + LIVE-VERIFIED (user request)
+
+User reported the landing QA list was still showing live and asked for an
+exhaustive pass, shipped as ONE deploy, then a live screenshot top-to-bottom.
+Done — deployed dpl_BGvKEjwiJwtr94fcC7tnUgPoGkue and verified the LIVE site
+(vibhapsychology.com) by measurement + fresh-browser full-page screenshot.
+
+**Hero pile (all measured on the live site):**
+- Empty tape → labelled "CASE FILE" index tab (mono, border-2, hard-shadow-flat,
+  rot -4deg) — purpose, not a bug.
+- PRACTISE stamp fully inside the pile (bottom-2 left-2, rot +4deg mirroring
+  the tab), no clipping, no text overlap.
+- Uniform deck: equal card heights (min-h-32; measured 137/136/136 desktop,
+  134/134/134 mobile — the 1px is a rotation bounding-box artifact) so dx and
+  dy are identical at every step (24/24 desktop, 16/16 mobile).
+- Observation rings anchored behind the deck as its unifying backdrop.
+
+**Copy pass (tightened, no meaning lost / no claims added):**
+- Hero body → two punchy sentences ("Few can practise it — VIBHA closes that
+  gap with real cases and a debrief after every session.").
+- Problem, Method card bodies, WhoBuilds guest-lecture line, CTA body all
+  trimmed to short direct sentences.
+- Observation card trimmed (one clause dropped) so cards sit at one height.
+
+**Global consistency (verified live):**
+- Method cards equal (256/256/256). Team divider 2px (matches outer border).
+  CTA INVITE-ONLY stamp moved to right-14/top-12 — collides=false with the
+  top-right corner square (measured). Corner squares identical (14px).
+- Zero console errors on the live render.
+
+Gate green: lint 0, tsc clean, 453 tests, build 82/82. Commit: 206b7c8
+(feature branch). Live screenshot: /tmp/plms-shots/LIVE-QA-verify.png.
+
 ## 2026-08-14 — MAIN MERGE: PREPPED, HELD AT USER'S "WAIT"
 
 User asked "Push to Main and live on website." Prepared the merge, then the
@@ -2826,3 +2859,5 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T15:39:16 Queue exhausted — allowing normal Claude stop.
 2026-08-14T15:40:23 Queue exhausted — allowing normal Claude stop.
 2026-08-14T15:41:53 Queue exhausted — allowing normal Claude stop.
+2026-08-14T15:42:51 Queue exhausted — allowing normal Claude stop.
+2026-08-14T15:45:56 Queue exhausted — allowing normal Claude stop.
