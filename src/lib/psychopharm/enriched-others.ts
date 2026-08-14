@@ -1159,32 +1159,6 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
     ],
   },
   {
-    generic_name: "Esketamine",
-    drug_class: "NMDA receptor antagonist (intranasal)",
-    plain_language:
-      "A fast-acting nasal-spray form of ketamine for treatment-resistant depression (and acute suicidal ideation), given in a supervised clinic. It can cause dissociation, sedation, and a temporary blood-pressure rise, so patients are observed for about two hours after each dose.",
-    mechanism:
-      "Nonselective, noncompetitive open-channel NMDA receptor antagonist (phencyclidine site), leading to downstream glutamate/AMPA activation and increased BDNF.",
-    common_uses: [
-      "Treatment-resistant depression (adjunct to an oral antidepressant)",
-      "Depressive symptoms with acute suicidal ideation (adjunct)",
-    ],
-    side_effects: [
-      "Dissociation",
-      "Sedation, dizziness",
-      "Anxiety, feeling drunk",
-      "Nausea, vomiting",
-      "Transient blood-pressure increase",
-      "Short-term cognitive impairment",
-    ],
-    monitoring: [
-      "Administered in certified clinic with 2-hour observation",
-      "Monitor blood pressure after each dose",
-      "Watch for dissociation and sedation",
-      "Must be used with an oral antidepressant",
-    ],
-  },
-  {
     generic_name: "Dextromethorphan",
     drug_class: "NMDA antagonist / sigma-1 agonist (with quinidine)",
     plain_language:
@@ -1545,30 +1519,6 @@ export const ENRICHED_OTHERS: EnrichedDrug[] = [
       "Watch for urinary retention and constipation",
       "May exacerbate tardive dyskinesia",
       "Monitor for angle-closure glaucoma",
-    ],
-  },
-  {
-    generic_name: "Pimavanserin",
-    drug_class: "Atypical antipsychotic (5-HT2A inverse agonist)",
-    plain_language:
-      "A specialized antipsychotic for hallucinations and delusions in Parkinson's disease — chosen because it does not block dopamine, so it is less likely to worsen Parkinson's movement symptoms. It can prolong the heart's QT interval.",
-    mechanism:
-      "Inverse agonist/antagonist at 5-HT2A receptors (with low 5-HT2C activity); little-to-no dopamine blockade.",
-    common_uses: [
-      "Hallucinations and delusions in Parkinson's disease psychosis",
-      "Dementia-related psychosis (off-label; boxed warning)",
-    ],
-    side_effects: [
-      "Peripheral edema",
-      "Confusional state",
-      "Nausea",
-      "QT prolongation",
-    ],
-    monitoring: [
-      "Check ECG (QT prolongation)",
-      "Avoid other QT-prolonging drugs",
-      "Increased mortality risk in dementia-related psychosis",
-      "Does not worsen parkinsonian motor symptoms",
     ],
   },
   {
