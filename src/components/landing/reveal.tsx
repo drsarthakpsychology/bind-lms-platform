@@ -1,20 +1,25 @@
 "use client";
 
 import * as React from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { cn } from "@/lib/utils";
 
 /**
- * Scroll-reveal wrapper. One gentle fade + 12px rise per section. With
- * prefers-reduced-motion the element renders in place (initial=false), so the
- * page is fully readable with animation disabled.
+ * One-shot scroll reveal. Content rises 18px + fades in as it enters, then
+ * stays — it does not re-trigger on scroll-up, does not scrub with scroll
+ * position, does not scale or rotate (per the pass-3 motion brief).
  *
- * `useReducedMotion()` returns `null` on the server and only resolves to a
- * boolean after hydration. Gating the hidden `initial` behind `reduce === false`
- * keeps the server-rendered HTML (and no-JS crawlers / slow hydration) visible
- * from first paint — the message never depends on the animation.
+ * Implementation is a ~15-line IntersectionObserver, deliberately not a
+ * motion library: threshold 0.15, a negative -12% bottom rootMargin so the
+ * reveal starts just before the element reaches the viewport edge (which is
+ * what stops the effect feeling like a delayed reaction), and `unobserve` the
+ * moment it fires. `--delay` staggers siblings within a group (60–100ms
+ * steps, max ~4–5 per group).
  *
- * Motion maps the system tokens: 400ms (--duration-slow) + ease-out-expo
- * ([0.16,1,0.3,1]) so section reveals share one language with KineticHeadline.
+ * The `.reveal` / `.is-in` CSS lives in globals.css. Reduced motion: the
+ * observer is skipped entirely and `.is-in` is applied immediately, so all
+ * content is visible at once with no transition. SSR note: elements start at
+ * opacity 0 and are revealed by the observer — above-the-fold content fires
+ * on first paint, and reduced-motion users never wait.
  */
 export function Reveal({
   children,
@@ -25,17 +30,40 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    // Reduced motion: everything visible immediately, no observer.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.classList.add("is-in");
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            el.classList.add("is-in");
+            observer.unobserve(el);
+          }
+        }
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -12% 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <motion.div
-      initial={reduce === false ? { opacity: 0, y: 12 } : false}
-      whileInView={reduce === false ? { opacity: 1, y: 0 } : undefined}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.4, delay, ease: [0.16, 1, 0.3, 1] }}
-      className={className}
+    <div
+      ref={ref}
+      className={cn("reveal", className)}
+      style={delay ? ({ "--delay": `${delay}ms` } as React.CSSProperties) : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

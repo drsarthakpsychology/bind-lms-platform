@@ -2990,3 +2990,35 @@ overflow 0 at 1440/390, /enquire→/waitlist redirect lands, /waitlist title +
 h1 "Join the waitlist". Full-page screenshot /tmp/live-hero-final.png.
 Commits: 2605ed4 (hero rename+lattice), 250536a (final alignment + media
 secret hardening), deployed.
+## 2026-08-14 — POCSO 2012 OCR'd into corpus + landing pass-3 motion slice
+
+Two slices shipped this session; both green-gated.
+
+**1. POCSO 2012 Act → ethics corpus** (commit fe6bd5c). India Code
+serves a JS shell to Node, so the statute was pulled from the WBCPCR
+official mirror (`wbcpcr.org/pdf/acts/POCSO-Act-2012.pdf`, Gazette of
+India copy) — a **scanned** PDF with no text layer. `normalisePdf()` now
+takes `{ ocr: true }` to route it through tesseract; 47,862 chars of
+clean statute text (preamble, Ch II definitions, offences, penalties,
+Special Court, child-in-need-of-care). `fetch-mha2017.ts` gained the
+WBCPCR mirror as a Node-reachable fallback so `npm run corpus:mha`
+re-fetches without a browser. `statutes.json` regenerated (pocso2012 +
+mha2017 + rci1992). NEEDS_KAVYA "Manual downloads" now DONE.
+
+**2. Landing "pass-3" motion slice** (this commit). The prior parallax /
+scroll-scale / hex-lattice hero effects are replaced with a calmer,
+cheaper treatment per the motion brief:
+- `reveal.tsx` — one-shot IntersectionObserver reveal (18px rise + fade,
+  threshold 0.15, −12% rootMargin, unobserve-on-fire) replaces the
+  `motion/react` whileInView. Reduced-motion flattens to visible.
+- `globals.css` — `--surface-1`/`--surface-2` alternating surface tokens,
+  `.rail` shared max-width utility, `.reveal`/`.is-in` CSS, and a
+  `.hero-dots::before` clinical graph-paper background (24px/120px dot
+  grid, radially masked) replacing the 36-path hex SVG (zero DOM nodes).
+- `landing-page.tsx` — hero drops Parallax/ScrollScale/HexLattice, uses
+  `.hero-dots` + `.rail`, clamp() headline sizing, ms-based stagger
+  delays, case-file tab restyle (bg-primary, −1.5deg).
+
+Gate green: lint 0, tsc clean, 453 tests (76 files), build 82/82 static.
+Cerebras/SambaNova/OpenCode Zen all recorded PAYWALLED (need a card) in
+NEEDS_KAVYA — verified free no-train lanes are Groq + OpenRouter.
