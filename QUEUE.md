@@ -895,7 +895,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   clinical facts that contradict the configured case; distinguish between
   deliberate patient uncertainty/ambiguity and accidental model fabrication
 
-- [ ] T122  Patient scenario difficulty — support configurable difficulty
+- [x] T122  Patient scenario difficulty — support configurable difficulty
   through behaviour rather than merely changing a difficulty number; examples
   include guarded patients, vague patients, emotional patients, inconsistent
   histories, over-detailed patients, reluctant disclosure, and other useful
