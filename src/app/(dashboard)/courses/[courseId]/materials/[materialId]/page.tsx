@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ChevronLeft } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { cleanMaterialTitle } from "@/lib/media/title";
 import { MaterialViewer } from "./viewer";
 
 /**
@@ -78,7 +79,7 @@ export default async function MaterialViewerPage({
             <span className="hidden sm:inline">{backLabel}</span>
           </Link>
           <span className="min-w-0 flex-1 truncate text-small font-semibold text-foreground">
-            {material.title}
+            {cleanMaterialTitle(material.title)}
           </span>
         </div>
         <div className="flex shrink-0 items-center gap-1.5">
@@ -112,7 +113,7 @@ export default async function MaterialViewerPage({
           courseId={courseId}
           kind={material.kind}
           url={material.url}
-          title={material.title}
+          title={cleanMaterialTitle(material.title)}
           watermarkLabel={watermarkLabel}
         />
       </div>

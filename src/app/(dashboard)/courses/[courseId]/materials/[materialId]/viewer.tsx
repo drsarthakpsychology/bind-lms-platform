@@ -53,7 +53,16 @@ export function MaterialViewer({
 }) {
   const [signedUrl, setSignedUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [correlationId, setCorrelationId] = useState<string | null>(null);
   const [loadKey, setLoadKey] = useState(0);
+
+  // A short reference id per failure — the student quotes it to their
+  // instructor, who can find the matching server-side log line.
+  const fail = (raw: unknown) => {
+    const id = crypto.randomUUID().replace(/-/g, "").slice(0, 6).toUpperCase();
+    console.error(`[material:${id}] load failed:`, raw);
+    setCorrelationId(id);
+  };
 
   // Fetch a signed URL on mount (enrolment re-checked at request time).
   useEffect(() => {
@@ -68,15 +77,19 @@ export function MaterialViewer({
         if (!res.ok) {
           const body = await res.json().catch(() => null);
           // Raw storage error goes to logs, not the student.
-          console.error("material load failed:", body?.error ?? `HTTP ${res.status}`);
-          if (!cancelled) setError(body?.error ?? "Couldn't open this material.");
+          if (!cancelled) {
+            fail(body?.error ?? `HTTP ${res.status}`);
+            setError(body?.error ?? "Couldn't open this material.");
+          }
           return;
         }
         const data = await res.json();
         if (!cancelled) setSignedUrl(data.url);
       } catch (e) {
-        console.error("material load failed:", e);
-        if (!cancelled) setError("Couldn't open this material.");
+        if (!cancelled) {
+          fail(e);
+          setError("Couldn't open this material.");
+        }
       }
     })();
     return () => {
@@ -93,6 +106,11 @@ export function MaterialViewer({
             <p className="mt-1 text-caption text-muted-foreground">
               Couldn&apos;t load this file. Retry, or tell your instructor if it keeps failing.
             </p>
+            {correlationId ? (
+              <p className="mt-2 select-all font-mono text-caption text-muted-foreground">
+                Reference: {correlationId}
+              </p>
+            ) : null}
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2">
             <button

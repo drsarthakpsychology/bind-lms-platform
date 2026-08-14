@@ -3152,3 +3152,12 @@ heading → now the badge shows the number only (`{weekNum}`), heading keeps the
 full label; badge `size-8` → `min-w-8 px-1`. Lesson "NEXT" badge overflowed the
 32px square → now shows the lesson number (the amber ring + tint + "← Start
 here" already signal "next"; four signals was one too many). Gate green.
+
+2026-08-14T19:10 — Phase 0 (0.6 code-side). Material title now cleaned
+(src/lib/media/title.ts: strip _Light/_v2/etc suffix, extension, underscores →
+sentence-case) so "Curriculum_Overview_Light" renders "Curriculum overview";
+applied in the material page header + viewer. Error card now shows a selectable
+"Reference: ABC123" correlation id (crypto, 6 chars) logged server-side.
+Root cause of the load failure itself (R2 object/signed-URL TTL/CORS/HLS) needs
+live network-tab capture on a real device — blocked on device access, not code.
+Gate: lint 0, tsc clean, 466 tests (+5 title), build pending in this slice.

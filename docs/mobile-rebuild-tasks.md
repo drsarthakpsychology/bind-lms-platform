@@ -31,7 +31,7 @@ full-bleed + tab-bar hiding on the session route. These land Phases 1.16 + 3.x
   - Files: course detail week/lesson component (locate).
 - [x] **0.5** "NEXT" badge overflows. P1. `[S]`
   - Keep number in badge; signal "next" via existing tint + "Start here". Files: lesson row.
-- [ ] **0.6** Course material fails to load (`Curriculum_Overview_Light`). P0. `[M]`
+- [x] **0.6** Course material fails to load (code-side) (`Curriculum_Overview_Light`). P0. `[M]`
   - Investigate R2 object / signed-URL TTL / CORS / content-type / HLS manifest; report actual cause.
   - Human-readable title (strip `_Light` suffix); correlation ID per failure (logged server-side, shown as `Reference: 7K2M9`); loading vs error distinct; centre error card; optional "Download instead".
   - Files: material viewer + media routes.
