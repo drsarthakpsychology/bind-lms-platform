@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { PROVIDERS, PROVIDER_PRIORITY, modelForTier } from "./router";
+import { assertProviderAllowed } from "./guards";
 
 describe("AI router provider priority (Director/Actor wiring, research 2026-08-14)", () => {
   it("Groq is the Primary Director (json) provider and Cerebras the Fallback", () => {
@@ -60,5 +61,24 @@ describe("task-tier model selection (§7)", () => {
     for (const p of withStrong) {
       expect(modelForTier(p, "difficult")).toBe(p.models.strong);
     }
+  });
+});
+
+describe("DeepSeek provider (§13, registered 2026-08-14)", () => {
+  it("is registered with V4 Flash fast + V4 Pro smart/strong", () => {
+    const ds = PROVIDERS.find((p) => p.id === "deepseek");
+    expect(ds).toBeDefined();
+    expect(ds!.models.fast).toBe("deepseek-v4-flash");
+    expect(ds!.models.smart).toBe("deepseek-v4-pro");
+    expect(ds!.apiKeyEnv).toBe("DEEPSEEK_API_KEY");
+  });
+
+  it("is marked trainsOnData (unresolved posture) so the guard keeps it off student data", () => {
+    const ds = PROVIDERS.find((p) => p.id === "deepseek");
+    expect(ds!.trainsOnData).toBe(true);
+    // assertProviderAllowed must reject it for a student-data workload.
+    expect(() => assertProviderAllowed("sim_patient_turn", ds!)).toThrow(/data-policy violation/);
+    // But it's allowed for non-student bulk work.
+    expect(() => assertProviderAllowed("corpus_processing", ds!)).not.toThrow();
   });
 });

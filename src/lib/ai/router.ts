@@ -45,13 +45,13 @@ export function modelForTier(provider: Provider, tier: TaskTier): string {
 /** Capability → which provider ids can serve it, in priority order. */
 export const PROVIDER_PRIORITY: Record<ProviderCapability, string[]> = {
   // fast chat / streaming — Groq is first for speed (voice needs sub-second TTFB)
-  chat: ["groq", "gemini", "cerebras", "openrouter", "anthropic"],
-  stream: ["groq", "gemini", "cerebras", "openrouter", "anthropic"],
+  chat: ["groq", "gemini", "cerebras", "openrouter", "deepseek", "anthropic"],
+  stream: ["groq", "gemini", "cerebras", "openrouter", "deepseek", "anthropic"],
   // structured JSON — Groq is Primary (fast, no-train, OpenAI-compatible
   // json_schema/json_object). Both JSON callers (sim Director + debrief
-  // scoring) carry student data, so gemini (trainsOnData) is excluded by the
-  // guard and sits last purely as a non-student fallback lane.
-  json: ["groq", "cerebras", "openrouter", "anthropic", "gemini"],
+  // scoring) carry student data, so gemini/deepseek (trainsOnData) are excluded
+  // by the guard and sit last purely as non-student fallback lanes.
+  json: ["groq", "cerebras", "openrouter", "anthropic", "deepseek", "gemini"],
   // vision/audio only where the provider supports it
   vision: ["gemini", "anthropic", "openrouter"],
   audio: ["gemini", "groq"],
@@ -101,6 +101,25 @@ export const PROVIDERS: Provider[] = [
     limits: { rpm: 20, rpd: 50, tpm: 20000 },
     trainsOnData: false,
     supports: ["chat", "stream", "json", "embed", "vision"],
+    protocol: "openai",
+  },
+  {
+    // DeepSeek V4 — verified 2026-08-14 (api-docs.deepseek.com): base
+    // https://api.deepseek.com, OpenAI-compatible, models deepseek-v4-flash
+    // (+0731) and deepseek-v4-pro (+0813). PRIVACY: the API training posture is
+    // unresolved (sources conflict; CN controller, no fixed retention), so
+    // trainsOnData=true — the data-policy guard keeps it OUT of student-data
+    // lanes automatically. It is ideal for the brief §13 bulk NON-student
+    // workloads (corpus processing, metadata, classification, knowledge
+    // structuring) where the guard already allows it. Flash = cheap bulk;
+    // Pro ≈ 3× flash, for selective difficult verification.
+    id: "deepseek",
+    baseUrl: "https://api.deepseek.com/v1",
+    apiKeyEnv: "DEEPSEEK_API_KEY",
+    models: { fast: "deepseek-v4-flash", smart: "deepseek-v4-pro", strong: "deepseek-v4-pro" },
+    limits: { rpm: 60, rpd: 10000, tpm: 1000000 },
+    trainsOnData: true, // unresolved posture — never for student data (guard-enforced)
+    supports: ["chat", "stream", "json"],
     protocol: "openai",
   },
   {
