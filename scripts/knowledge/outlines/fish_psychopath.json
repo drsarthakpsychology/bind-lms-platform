@@ -1,0 +1,189 @@
+{
+  "id": "fish_psychopath",
+  "confidence": "high",
+  "issues": [
+    "Index appears truncated in the extraction: page 136 covers only the A-C entries (ends at 'chorea'), and page 137 is blank — the final index page(s) (D-Z) appear to be missing from the text cache.",
+    "Running headers ('Fish's clinical psychopathology') repeat on most even-numbered pages; stripped here but present in the cache.",
+    "Minor OCR noise in some headings (e.g. 'Schzoid' for Schizoid, 'Anakastic' for Anankastic, 'Self-rightous' for Self-righteous); cleaned in the section titles below.",
+    "All page numbers are PDF page indexes (the <<<PAGE n>>> marker value), NOT printed page numbers. Printed page = PDF page - 4 for this book."
+  ],
+  "isPreview": false,
+  "frontMatter": [
+    { "title": "Cover", "pageStart": 1, "pageEnd": 1, "sections": [] },
+    { "title": "The Authors", "pageStart": 2, "pageEnd": 2, "sections": [] },
+    { "title": "Preface", "pageStart": 3, "pageEnd": 3, "sections": [] },
+    { "title": "Contents", "pageStart": 4, "pageEnd": 4, "sections": [] }
+  ],
+  "chapters": [
+    {
+      "title": "Chapter 1: Classification of psychiatric disorders",
+      "pageStart": 5,
+      "pageEnd": 17,
+      "sections": [
+        { "title": "Early distinctions", "page": 6 },
+        { "title": "Organic syndromes", "page": 6 },
+        { "title": "Functional syndromes", "page": 8 },
+        { "title": "Modern classifications", "page": 9 },
+        { "title": "Comparison of DSM-IV and ICD-10", "page": 10 },
+        { "title": "Interview schedules", "page": 15 },
+        { "title": "References", "page": 16 }
+      ]
+    },
+    {
+      "title": "Chapter 2: Disorders of perception",
+      "pageStart": 18,
+      "pageEnd": 35,
+      "sections": [
+        { "title": "Sensory distortions", "page": 18 },
+        { "title": "Sensory deceptions", "page": 20 },
+        { "title": "Illusions", "page": 20 },
+        { "title": "Hallucinations", "page": 22 },
+        { "title": "Hallucinations of individual senses", "page": 25 },
+        { "title": "Special kinds of hallucination", "page": 30 },
+        { "title": "Body image distortions", "page": 34 },
+        { "title": "References", "page": 35 }
+      ]
+    },
+    {
+      "title": "Chapter 3: Disorders of thought and speech",
+      "pageStart": 36,
+      "pageEnd": 58,
+      "sections": [
+        { "title": "Disorders of intelligence", "page": 36 },
+        { "title": "Disorders of thinking", "page": 37 },
+        { "title": "Disorders of the stream of thought", "page": 38 },
+        { "title": "Obsessions and compulsions", "page": 40 },
+        { "title": "Thought alienation", "page": 42 },
+        { "title": "Disorders of the content of thinking", "page": 43 },
+        { "title": "Primary delusions", "page": 43 },
+        { "title": "The content of delusions", "page": 45 },
+        { "title": "Disorders of the form of thinking", "page": 50 },
+        { "title": "Speech disorders", "page": 52 },
+        { "title": "Aphasia", "page": 55 },
+        { "title": "References", "page": 56 }
+      ]
+    },
+    {
+      "title": "Chapter 4: Disorders of memory",
+      "pageStart": 59,
+      "pageEnd": 68,
+      "sections": [
+        { "title": "The amnesias", "page": 60 },
+        { "title": "Psychogenic amnesias", "page": 61 },
+        { "title": "Organic amnesias", "page": 62 },
+        { "title": "Distortions of memory or paramnesia", "page": 63 },
+        { "title": "Hyperamnesia", "page": 67 },
+        { "title": "References", "page": 67 }
+      ]
+    },
+    {
+      "title": "Chapter 5: Disorders of emotion",
+      "pageStart": 69,
+      "pageEnd": 78,
+      "sections": [
+        { "title": "Classification", "page": 70 },
+        { "title": "Abnormal expressions of emotion", "page": 72 },
+        { "title": "Morbid expressions of emotion", "page": 73 },
+        { "title": "Morbid disorders of emotion", "page": 74 },
+        { "title": "References", "page": 78 }
+      ]
+    },
+    {
+      "title": "Chapter 6: Disorders of the experience of self",
+      "pageStart": 79,
+      "pageEnd": 84,
+      "sections": [
+        { "title": "Depersonalisation", "page": 79 },
+        { "title": "Loss of emotional resonance", "page": 81 },
+        { "title": "Theory of mind, consciousness and schizophrenia", "page": 83 },
+        { "title": "References", "page": 84 }
+      ]
+    },
+    {
+      "title": "Chapter 7: Disorders of consciousness",
+      "pageStart": 85,
+      "pageEnd": 90,
+      "sections": [
+        { "title": "Dream-like change of consciousness", "page": 87 },
+        { "title": "Lowering of consciousness", "page": 88 },
+        { "title": "Restriction of consciousness", "page": 88 },
+        { "title": "References", "page": 89 }
+      ]
+    },
+    {
+      "title": "Chapter 8: Motor disorders",
+      "pageStart": 91,
+      "pageEnd": 109,
+      "sections": [
+        { "title": "Subjective motor disorders", "page": 91 },
+        { "title": "Classification of motor disorders", "page": 92 },
+        { "title": "Disorders of adaptive movements", "page": 92 },
+        { "title": "Disorders of reactive movements", "page": 93 },
+        { "title": "Disorders of non-adaptive movements", "page": 95 },
+        { "title": "Abnormal induced movements", "page": 98 },
+        { "title": "Motor speech disturbances in mental disorders", "page": 101 },
+        { "title": "Disorders of posture", "page": 102 },
+        { "title": "Abnormal complex patterns of behaviour", "page": 103 },
+        { "title": "Stupor", "page": 104 },
+        { "title": "Excitement", "page": 105 },
+        { "title": "Movement disorders associated with antipsychotic", "page": 108 },
+        { "title": "References", "page": 109 }
+      ]
+    },
+    {
+      "title": "Chapter 9: Personality disorders",
+      "pageStart": 110,
+      "pageEnd": 124,
+      "sections": [
+        { "title": "Definition", "page": 110 },
+        { "title": "Assessing personality", "page": 111 },
+        { "title": "Categorical classification", "page": 114 },
+        { "title": "Clinical descriptions of categories", "page": 115 },
+        { "title": "Paranoid personality disorder", "page": 115 },
+        { "title": "Schizotypal personality disorder", "page": 116 },
+        { "title": "Borderline personality disorder", "page": 117 },
+        { "title": "Dissocial personality disorder", "page": 118 },
+        { "title": "Anankastic personality disorder", "page": 119 },
+        { "title": "Dependent personality disorder", "page": 120 },
+        { "title": "Other categories", "page": 121 },
+        { "title": "References", "page": 122 }
+      ]
+    },
+    {
+      "title": "Appendix I: Psychiatric syndromes",
+      "pageStart": 125,
+      "pageEnd": 129,
+      "sections": [
+        { "title": "Blocq's disease", "page": 125 },
+        { "title": "Capgras syndrome", "page": 125 },
+        { "title": "Cotard syndrome", "page": 126 },
+        { "title": "Couvade syndrome", "page": 126 },
+        { "title": "De Clerambault's syndrome", "page": 127 },
+        { "title": "Diogenes syndrome", "page": 127 },
+        { "title": "Ekbom's syndrome", "page": 128 },
+        { "title": "Fregoli syndrome", "page": 128 },
+        { "title": "Ganser syndrome", "page": 128 },
+        { "title": "Othello syndrome", "page": 129 },
+        { "title": "References", "page": 129 }
+      ]
+    },
+    {
+      "title": "Appendix II: Defences and distortions",
+      "pageStart": 130,
+      "pageEnd": 135,
+      "sections": [
+        { "title": "Defence mechanisms", "page": 130 },
+        { "title": "Cognitive distortions", "page": 132 },
+        { "title": "Acknowledgement", "page": 134 },
+        { "title": "References", "page": 135 }
+      ]
+    },
+    {
+      "title": "Index",
+      "pageStart": 136,
+      "pageEnd": 136,
+      "sections": []
+    }
+  ],
+  "unattributedPages": [137]
+}

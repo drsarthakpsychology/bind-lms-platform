@@ -1962,6 +1962,28 @@ each slice lands on its owner's commit. Ahuja outline (503a961) + gate log
 2026-08-14T06:23:34 Queue exhausted — allowing normal Claude stop.
 2026-08-14T06:23:42 Queue exhausted — allowing normal Claude stop.
 
+---
+
+## 2026-08-14 — Knowledge layer: Fish psychopathology outline (book-structure reader)
+
+Wrote `scripts/knowledge/outlines/fish_psychopath.json` for Fish's Clinical
+Psychopathology, 3rd ed (Casey & Kelly, 2007), 137 PDF pages. Decision: all
+page numbers are the PDF page index (`<<<PAGE n>>>`); printed→PDF offset is
+a uniform +4 in the body (Contents printed p.1 = PDF 5 … Index printed
+p.132 = PDF 136), so no offset hardcoded. Mapped front matter 1–4 (cover,
+authors, preface, contents) + 9 chapters (PDF 5–124) + 2 appendices
+(Psychiatric syndromes 125–129, Defences and distortions 130–135) + Index
+(136). Back-matter appendices/index placed in `chapters` (schema has no
+backMatter field). `unattributedPages` = [137] (blank last page). pageEnd is
+INCLUSIVE (matches chunk.ts `p <= pageEnd`); verified contiguous, no
+overlaps/gaps. Verified against chunkBook on the live cache: 137 pages
+parsed, 487 chunks, zero non-blank orphan pages. Confidence high.
+Extraction issue: the Index is truncated — page 136 covers only A–C entries
+(ends at 'chorea') and page 137 is blank, so the final index page(s) (D–Z)
+are missing from the text cache. Committed only this outline + log; other
+agents' in-flight slices left for their owners.
+
+
 ## 2026-08-14 — ICD-11 Reference Guide outline (icd11 reader)
 
 Shipped `scripts/knowledge/outlines/icd11.json` (commit 4aa15af) — a verified
