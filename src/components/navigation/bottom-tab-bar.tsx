@@ -51,9 +51,13 @@ export function BottomTabBar({ mode = "student" }: { mode?: "student" | "admin" 
   const reduce = useReducedMotion();
   const tabs = mode === "admin" ? ADMIN_TABS : STUDENT_TABS;
 
-  // The immersive patient session hides the tab bar — the conversation owns
-  // the whole viewport (see shell-content.tsx).
-  if (isImmersiveSessionPath(pathname ?? "")) return null;
+  // Focused modes hide the tab bar — the patient session and lesson/material
+  // drill-downs own the viewport (the page has its own contextual back header),
+  // so the global nav never competes with the task (§20).
+  const focusedPath =
+    isImmersiveSessionPath(pathname ?? "") ||
+    /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname ?? "");
+  if (focusedPath) return null;
 
   return (
     <nav
