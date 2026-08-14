@@ -3066,3 +3066,11 @@ box removed to join the rail; P5 exactly two surfaces (--surface-1 #fbf2e9,
 ScrollScale removed (no scroll scrubbing). Acceptance all green at
 1440/1024/390 incl. reduced-motion. ALSO: fe6bd5c — POCSO 2012 Act OCR'd
 into the ethics corpus (closes a long-blocked NEEDS_KAVYA item).
+2026-08-14T18:13:10 Queue exhausted — allowing normal Claude stop.
+2026-08-14T18:13:13 Queue exhausted — allowing normal Claude stop.
+
+2026-08-14T18:25 — Pass-3 DEPLOYED + LIVE-VERIFIED (vibhapsychology.com,
+bind-lms-platform-b96e5m9fk READY). Live checks: h1 2 lines, U flush (202 vs
+204), PRACTISE overlaps third card, dot grid behind cards, no Enquire, no
+overflow at 390/1440, reveals 7/16 on load (above-fold; rest fire on scroll).
+Full-page screenshot /tmp/live-pass3.png.
