@@ -3322,3 +3322,14 @@ touched. My landed commits this session (mine-only): today reorder, library
 filters, psychopharm drug collapse, review-filter debounce, finish-confirm,
 network rollback, touch-target sweep. Gate green at 4e1bb5d: lint 0 errors,
 tsc clean, 486 tests, build clean.
+
+2026-08-14T20:26 More audit-finding coverage:
+ b52cab8 landmark "Check yourself" → QuizCheck one-question flow (green-free)
+  4e1bb5d coordinated checkpoint (session repair + startedAt + worker surfaces)
+  + OSCE in-flight persistence (T46/T47): snapshot → localStorage, restore past
+  hydration, cleared on completion.
+
+Worker continues to sweep the same audit reports via shared primitives (tutor
+SourcePassage expand, safety-first bottom sheet, admin modals→sheets, feed-first
+journal/wall, debrief step-flow). I've stopped racing their files; my remaining
+lane is green-keeping + untouched findings (landmark, OSCE done this slice).
