@@ -3232,3 +3232,21 @@ parallel continuations; several practice pages are already in-flight).
   keeps pitch-left / sheet-right. Also folded in the small min-h-dvh /
   text-small / tel-input tweaks already in this tree. Gate: lint 0, tsc clean,
   453 tests, build green.
+
+## 2026-08-14 — Empty-state sweep cont. (T12/T13, slice)
+
+Surveyed the remaining clean practice surfaces for composition gaps. Landmark
+(quiz inline-after) and MSE (one active level at a time) already satisfy the
+T19 spec — no change. Fixed the one remaining bare empty state on a clean file:
+
+- Role-play room (`role-play/role-play-room.tsx`): the empty thread was a bare
+  inline `<p>`. Swapped for the shared `EmptyState` (compact variant, border/bg
+  stripped so it doesn't double-nest inside the thread card), matching the
+  empty-state discipline already applied to journal/supervision/weak-spots.
+- Committed `849f43c`. Gate: lint 0, tsc clean, 453 tests, build green.
+- Remaining role-play item ("observer checklist + timer — build, behind a
+  sheet") is a feature build with clinical content that has no honest source
+  in-tree yet; left for a dedicated slice rather than fabricating checklist
+  items.
+- Loop note: the stop hook is still re-offering T19 (main's QUEUE.md is
+  desynced); the worktree→main merge blocker stands in NEEDS_KAVYA.md.
