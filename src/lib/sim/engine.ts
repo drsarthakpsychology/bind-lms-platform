@@ -114,6 +114,7 @@ export async function runPatientTurn(
     studentTurn,
     stateSummary: serializeState(s),
     caseSpec: serializeCase(case_),
+    difficulty: case_.difficulty,
     allowedMoves: allowedMoves(s),
     mustNotMention: mustNot,
     permittedFacts: permitted,

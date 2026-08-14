@@ -53,12 +53,22 @@ export interface DirectorInput {
   studentTurn: string;
   stateSummary: string; // the PatientState, serialised
   caseSpec: string; // the clinical facts + variation
+  difficulty?: string; // cooperative | guarded | resistant | crisis | clear
   allowedMoves: string[];
   mustNotMention: string[];
   permittedFacts: string[];
   lastMoves: string[]; // anti-repetition
   recentTurns: Array<{ role: "student" | "patient"; content: string }>; // conversation history
 }
+
+/** Difficulty drives BEHAVIOUR, not a number (T122). */
+const DIFFICULTY_NOTES: Record<string, string> = {
+  cooperative: "Open and willing to talk — discloses when trust allows.",
+  guarded: "Wary and watchful. Answers in fragments, deflects, and holds back until the student genuinely earns trust.",
+  resistant: "Resistant. Volunteers little and resists direct questioning — disclosure is hard-won.",
+  crisis: "In acute distress. The session is about safety — short, blunt answers, high tension.",
+  clear: "Open and willing to talk — discloses when trust allows.",
+};
 
 export function buildDirectorPrompt(input: DirectorInput): string {
   return `You are the DIRECTOR of a simulated psychiatric patient. You do NOT write dialogue. You receive the student's turn and the patient's current state, and you decide what the patient DOES this turn. Return ONLY a JSON object.
@@ -68,6 +78,9 @@ ${input.stateSummary}
 
 # THE CASE (clinical facts — never invent new ones)
 ${input.caseSpec}
+
+# THE PATIENT'S DISPOSITION
+${DIFFICULTY_NOTES[input.difficulty ?? "cooperative"] ?? "Open and willing to talk — discloses when trust allows."}
 
 # THE RECENT CONVERSATION (last turns, oldest first)
 ${input.recentTurns?.length ? input.recentTurns.map((t) => `${t.role.toUpperCase()}: ${t.content}`).join("\n") : "(opening — nothing yet)"}
