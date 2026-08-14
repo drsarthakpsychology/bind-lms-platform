@@ -2410,3 +2410,44 @@ keys needed.
 
 Verified: lint 0, tsc clean, 425 tests, build 82/82, dev smoke (landing 200,
 tutor 307-auth, STT 401-gated — all correct).
+2026-08-14T10:27:09 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — AI INFRASTRUCTURE round (brief §1-46): routing + capacity + cache
+
+Built the multi-model AI infrastructure the brief demands. Keys now live
+(gitignored .env.local only — verified no key committed): GROQ + DEEPSEEK +
+OPENROUTER.
+
+- **Task-tier routing (§7)**: TaskTier simple/normal/difficult → fast/smart/
+  strong model. modelForTier() in the router; Anthropic gains strong=opus-4-5;
+  /api/knowledge/ask synthesis routes to "difficult". Committed 16e689f.
+- **Health-aware failover (§24)**: circuit-breaker in src/lib/ai/health.ts
+  (≥3 consecutive failures opens the circuit; success resets; recovery-window
+  half-open probe). providersFor filters unhealthy providers; aiChat records
+  outcomes to provider_health. Committed 830e9e2.
+- **DeepSeek (§13)**: registered deepseek-v4-flash/pro (verified live — both
+  return content; models confirmed on api.deepseek.com). trainsOnData=true
+  (API training posture UNRESOLVED — sources conflict, CN controller) so the
+  data-policy guard keeps it off student data; it serves non-student bulk
+  (corpus processing, metadata, classification). DEEPSEEK_API_KEY set+verified.
+  Committed 410499d.
+- **Registry refresh (§8)**: found the OpenRouter model was DEAD (llama-3.3-
+  70b-instruct:free no longer exists) — replaced with verified openai/gpt-oss-
+  20b:free (returns real content). OPENROUTER_API_KEY set+verified (412 models,
+  many free). Committed 2c502ce. Also verified Groq: llama-3.3-70b-versatile
+  still the best direct-answer model (gpt-oss-120b/compound are reasoning-first
+  → incompatible with the app's content reader).
+- **Capacity model (§37)**: docs/CAPACITY_MODEL.md. 45 DAU = ~1,620 calls/day;
+  Groq's 1,000 RPD is the EXACT bottleneck (12k TPM is ample — it's a
+  requests/day ceiling, not tokens). Groq alone ≈ 25-28 DAU. Fix path: Cerebras
+  key (free, no-train) → OpenRouter $10 overflow → response cache. Committed
+  628f7fd.
+- **Response cache (§37)**: ai_response_cache (Supabase + in-memory LRU,
+  TTL 24h). Grounded tutor answers cached by content hash (deterministic, no
+  per-user data) — repeated questions skip the API, trimming the RPD
+  bottleneck. Committed 776f2ab.
+
+Gate green before each commit: lint 0, tsc clean, 442 tests, build 82/82.
+NEEDS_KAVYA: Cerebras key (the free #2 no-train lane) is the last capacity
+unlock. Keys live: GROQ (student), DEEPSEEK (non-student bulk), OPENROUTER
+(overflow).
