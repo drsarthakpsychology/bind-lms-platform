@@ -31,7 +31,8 @@ geometry, not assumption):
   (14px from the border).
 
 Verified by measurement + light/dark screenshots. Gate green: lint 0, tsc
-clean, 453 tests, build 82/82.
+clean, 453 tests, build 82/82. Commit: 8fd4e89; deployed to production
+(dpl_CoMDgFpaeA2owNuPxmexfy6U1FbB, live-verified on vibhapsychology.com).
 
 ## 2026-08-14 — VIBHA DESIGN SKILL created (user request)
 
@@ -2795,3 +2796,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T14:56:17 Queue exhausted — allowing normal Claude stop.
 2026-08-14T14:59:21 Queue exhausted — allowing normal Claude stop.
 2026-08-14T15:12:33 Queue exhausted — allowing normal Claude stop.
+2026-08-14T15:29:48 Queue exhausted — allowing normal Claude stop.
