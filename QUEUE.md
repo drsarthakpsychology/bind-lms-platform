@@ -957,25 +957,25 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   information, settings, and other secondary functionality into contextual
   sheets or menus instead of competing with the conversation
 
-- [ ] T136  Mobile bottom navigation audit — redesign the bottom navigation so
+- [x] T136  Mobile bottom navigation audit — redesign the bottom navigation so
   it never overlaps content, composers, buttons, sheets, or fixed controls;
   account for safe areas and keyboard height
 
-- [ ] T137  Bottom navigation scope — determine whether every route actually
+- [x] T137  Bottom navigation scope — determine whether every route actually
   needs the bottom navigation; hide it automatically in immersive flows such
   as patient simulation, video playback, assessments, and other focused
   experiences where it creates interference
 
-- [ ] T138  Bottom navigation visual simplification — reduce visual weight,
+- [x] T138  Bottom navigation visual simplification — reduce visual weight,
   unnecessary borders, oversized active states, and excessive spacing while
   maintaining clear active/inactive states and comfortable touch targets
 
-- [ ] T139  Mobile resume architecture — identify every place where the same
+- [x] T139  Mobile resume architecture — identify every place where the same
   course, lesson, case, assessment, or practice item is repeatedly presented;
   replace repeated content blocks with one intelligent Resume/Continue entry
   point where appropriate
 
-- [ ] T140  Resume engine — create a shared "Continue where you left off"
+- [x] T140  Resume engine — create a shared "Continue where you left off"
   mechanism across courses, lessons, assessments, practice, patient cases,
   and other sequential experiences; calculate the actual next meaningful
   action rather than simply linking to the parent page
