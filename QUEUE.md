@@ -373,14 +373,14 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
 - [x] T7  Assessment UI — question prominent, tappable answers, compact progress
 - [x] T8  Journal + Wall — textarea/keyboard, compact posts/replies
 - [x] T9  Material/lesson viewer error states + mobile controls
-- [ ] T10 Voice UX — tap-to-toggle conversational loop + explicit states
-- [ ] T11 Keyboard + safe-area handling (composer, inputs, bottom nav)
-- [ ] T12 Loading/empty/error states (skeletons, human copy)
-- [ ] T13 Accessibility (44px targets, contrast, reduced-motion, labels)
-- [ ] T14 Animation/motion (message arrival, sheet, active nav — reduced-motion safe)
-- [ ] T15 Patient conversational quality — wire disclosure gate depth +
+- [x] T10 Voice UX — tap-to-toggle conversational loop + explicit states
+- [x] T11 Keyboard + safe-area handling (composer, inputs, bottom nav)
+- [x] T12 Loading/empty/error states (skeletons, human copy)
+- [x] T13 Accessibility (44px targets, contrast, reduced-motion, labels)
+- [x] T14 Animation/motion (message arrival, sheet, active nav — reduced-motion safe)
+- [x] T15 Patient conversational quality — wire disclosure gate depth +
   voice_profile + story/contradictions into turn route (smallest sensible change)
-- [ ] T16 Mobile testing matrix (320/360/375/390/412/430) + desktop regression
+- [x] T16 Mobile testing matrix (320/360/375/390/412/430) + desktop regression
   (1280/1440) via Playwright
 - [ ] T17 Final mobile UX audit + visual QA
 - [ ] T18  Global progressive-disclosure audit — review every mobile route and

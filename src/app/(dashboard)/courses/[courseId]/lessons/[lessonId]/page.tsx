@@ -171,7 +171,7 @@ export default async function LessonPage({
       <div className="flex items-center justify-between gap-3">
         <Link
           href={`/courses/${courseId}`}
-          className="inline-flex items-center gap-1.5 text-small font-medium text-muted-foreground transition-colors hover:text-foreground"
+          className="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-border bg-card px-3 text-small font-medium text-muted-foreground transition-colors hover:text-foreground active:translate-y-px"
         >
           <ChevronLeft className="size-4" aria-hidden />
           {course?.title ?? "Course"}
@@ -224,17 +224,18 @@ export default async function LessonPage({
       )}
 
       {/* Check what stuck — a quick retention check after the lesson, not a
-          test. Every item carries its source (the same pattern as MSE/OSCE). */}
+          test. Every item carries its source (the same pattern as MSE/OSCE).
+          A plain section: QuizCheck's own question card is the only box. */}
       {tab === "watch" && (
-        <div className="rounded-md border-2 border-border bg-card p-4">
-          <h2 className="text-sm font-semibold">Check what stuck</h2>
-          <p className="mt-1 text-small text-muted-foreground">
-            A quick check, not a test — every item carries its source.
-          </p>
-          <div className="mt-3">
-            <QuizCheck items={LESSON_QUIZ_ITEMS} />
+        <section aria-label="Check what stuck" className="space-y-3">
+          <div>
+            <h2 className="text-h2">Check what stuck</h2>
+            <p className="mt-1 text-small text-muted-foreground">
+              A quick check, not a test — every item carries its source.
+            </p>
           </div>
-        </div>
+          <QuizCheck items={LESSON_QUIZ_ITEMS} />
+        </section>
       )}
 
       {/* Materials tab */}
