@@ -761,42 +761,42 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   students should see learning and practice; admins should see only the tools
   required to operate the programme
 
-- [ ] T95  Admin information architecture rebuild — redesign the admin
+- [x] T95  Admin information architecture rebuild — redesign the admin
   navigation around real jobs an administrator needs to perform rather than
   around internal database concepts or engineering terminology
 
-- [ ] T96  Admin navigation simplification — remove unnecessary admin
+- [x] T96  Admin navigation simplification — remove unnecessary admin
   navigation items, merge overlapping areas, and move technical/internal
   functionality into appropriate backend or system-level locations where it
   does not need to be exposed in the primary admin UI
 
-- [ ] T97  Admin "real work" audit — define the actual daily admin jobs:
+- [x] T97  Admin "real work" audit — define the actual daily admin jobs:
   manage courses, manage modules, manage cards, manage medication content,
   manage students, manage programme content, review learning activity, manage
   practice content, and perform necessary operational actions; design the
   admin around these jobs
 
-- [ ] T98  Remove unnecessary Rights UI — remove Rights, Casebook Rights, and
+- [x] T98  Remove unnecessary Rights UI — remove Rights, Casebook Rights, and
   similar internal permission concepts from the primary admin navigation if
   they are infrastructure-level concerns; keep the underlying permission
   system intact and move management to the appropriate backend/system area
 
-- [ ] T99  Remove unnecessary Passport UI — audit Passport and related internal
+- [x] T99  Remove unnecessary Passport UI — audit Passport and related internal
   concepts; if it does not represent a real task the administrator needs to
   perform, remove it from the visible admin experience without breaking the
   underlying functionality
 
-- [ ] T100  Cohort Pulse simplification — completely rewrite the Cohort Pulse
+- [x] T100  Cohort Pulse simplification — completely rewrite the Cohort Pulse
   interface using simple language; replace confusing terminology and fancy
   product language with direct information such as students active, students
   falling behind, recent activity, problems, and actions to take
 
-- [ ] T101  Admin dashboard rewrite — redesign the admin home around a small
+- [x] T101  Admin dashboard rewrite — redesign the admin home around a small
   number of useful things that require attention; show what needs action first,
   then useful programme information; avoid decorative metrics and meaningless
   statistics
 
-- [ ] T102  Admin action-first hierarchy — every major admin page should answer
+- [x] T102  Admin action-first hierarchy — every major admin page should answer
   three questions immediately: what am I looking at, what can I do here, and
   what should I do next
 
@@ -815,11 +815,11 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   reorder, preview, archive, and delete cards; remove technical fields and
   internal metrics that do not help the admin perform these actions
 
-- [ ] T106  Card creation flow — create a simple "Add card" experience with the
+- [x] T106  Card creation flow — create a simple "Add card" experience with the
   minimum fields necessary; show advanced configuration only when genuinely
   required; support preview before saving
 
-- [ ] T107  Card review language — remove confusing concepts such as unexplained
+- [x] T107  Card review language — remove confusing concepts such as unexplained
   seconds, internal scoring terminology, implementation terminology, or other
   values that do not have an obvious administrative purpose; if a value is
   required internally, hide it behind an appropriate advanced/system layer
