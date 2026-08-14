@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle2, CircleCheck, AlertTriangle, RefreshCw, Mic2, RotateCcw, ArrowRight } from "lucide-react";
+import { CheckCircle2, CircleCheck, AlertTriangle, RefreshCw, Mic2, RotateCcw, ArrowRight, ChevronDown } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import type { VoiceMetrics } from "@/lib/voice/use-voice-metrics";
 
@@ -205,17 +205,23 @@ export function DebriefView({
         <ComparisonStrip branch={branchInfo} currentOverall={overall} />
       ) : null}
 
-      {/* Voice delivery panel */}
+      {/* Voice delivery panel — secondary; collapsed so the score and quotes
+          dominate the debrief's first viewport (T34 cognitive-load). */}
       {voice ? (
-        <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
-          <h2 className="flex items-center gap-2 text-base font-semibold">
-            <Mic2 className="size-4" aria-hidden />
-            Delivery
-          </h2>
-          <p className="mt-1 text-small text-muted-foreground">
-            Compared against your own past sessions, not other students.
-          </p>
-          <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <details className="group rounded-md border-2 border-border bg-card">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-5">
+            <span className="flex items-center gap-2 text-base font-semibold">
+              <Mic2 className="size-4 text-link" aria-hidden />
+              Delivery
+            </span>
+            <span className="flex shrink-0 items-center gap-2">
+              <span className="text-caption text-muted-foreground">
+                Compared against your own past sessions, not other students.
+              </span>
+              <ChevronDown className="size-5 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180" aria-hidden />
+            </span>
+          </summary>
+          <div className="grid grid-cols-2 gap-3 border-t-2 border-border p-5 sm:grid-cols-3">
             <Stat
               label="Silence tolerance"
               value={`${voice.mean_silence_tolerance_s}s`}
@@ -244,7 +250,7 @@ export function DebriefView({
             />
             <Stat label="Session length" value={`${voice.session_duration_s}s`} />
           </div>
-        </div>
+        </details>
       ) : null}
 
       {/* Quotes */}

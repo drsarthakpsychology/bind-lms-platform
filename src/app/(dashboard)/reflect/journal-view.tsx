@@ -226,7 +226,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
                 }}
                 aria-pressed={mood === m}
                 className={cn(
-                  "min-h-9 rounded-full border-2 px-3 py-1 text-caption font-medium capitalize transition-transform active:translate-y-px",
+                  "min-h-11 rounded-full border-2 px-4 py-1 text-caption font-medium capitalize transition-transform active:translate-y-px",
                   mood === m
                     ? "border-foreground bg-primary text-primary-foreground"
                     : "border-border bg-card text-muted-foreground",
