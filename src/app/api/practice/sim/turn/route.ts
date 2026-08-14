@@ -193,6 +193,8 @@ export async function POST(req: Request) {
     workload: "sim_patient_turn",
     provider: degraded ? "fixture" : engineEnabled ? "unknown" : "fixture",
     status: degraded ? "fixture_fallback" : engineEnabled ? "ok" : "fixture_fallback",
+    used_fallback: Boolean(result.usedFallback),
+    regenerated: Number(result.regenerated ?? 0),
     tokens_in: Math.round((message.length + result.reply.length) / 4),
     tokens_out: Math.round(result.reply.length / 4),
   });
