@@ -1,4 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { computeLearningProfile } from "./learning-profile";
 
 /**
  * The shared "what should I do next" engine (T139/T140). One place decides
@@ -42,45 +43,22 @@ export async function computeResumePrimary(
     };
   }
 
-  // 2) Risk timing missed in recent debriefs → run a case and front-load it.
-  const { data: scores } = await supabase
-    .from("sim_scores")
-    .select("rubric")
-    .eq("user_id", userId)
-    .order("created_at", { ascending: false })
-    .limit(4);
-  const riskLate = (scores ?? []).filter((s) => {
-    const r = (s.rubric as Record<string, unknown> | null) ?? {};
-    return r.risk_timing === "late" || r.risk_timing === "absent";
-  }).length;
-  if (riskLate >= 2) {
+  // 2) The learning profile → the single weakest dimension's focus. This is
+  //    the quiet adaptation: it never changes the case's clinical truth, only
+  //    what we recommend the student practise next.
+  const profile = await computeLearningProfile(supabase, userId);
+  if (profile.focus) {
+    const isDecode = profile.focus.surface === "Presenting Complaint Decoder";
     return {
-      href: "/practice/consulting-room",
-      title: "Consulting Room — risk assessment",
-      reason: `You've missed the risk-assessment moment in ${riskLate} of your last ${(scores ?? []).length || 4} sessions. Run a case and front-load it.`,
-      cta: "Run a case",
-      time: "12 min",
+      href: profile.focus.href,
+      title: profile.focus.surface,
+      reason: profile.focus.reason,
+      cta: isDecode ? "Decode" : "Run a case",
+      time: isDecode ? "4 min" : "12 min",
     };
   }
 
-  // 3) An opening idiom went undecoded recently → the decoder.
-  if ((scores ?? []).length >= 3) {
-    const undecoded = (scores ?? []).filter((s) => {
-      const r = (s.rubric as Record<string, unknown> | null) ?? {};
-      return r.idiom_decoding === false;
-    }).length;
-    if (undecoded > 0) {
-      return {
-        href: "/practice/decode",
-        title: "Presenting Complaint Decoder",
-        reason: `The opening idiom went undecoded in ${undecoded} of your recent sessions. Five minutes here fixes your ears.`,
-        cta: "Decode",
-        time: "4 min",
-      };
-    }
-  }
-
-  // 4) The daily habit.
+  // 3) The daily habit.
   return {
     href: "/practice/decode",
     title: "Presenting Complaint Decoder",
