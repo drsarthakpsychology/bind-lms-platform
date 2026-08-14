@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { MobileCompletionState } from "./mobile-completion-state";
@@ -92,8 +92,21 @@ export function MobileAssessmentFlow({
       {/* The single visible step. */}
       <div>{renderStep(step, current)}</div>
 
-      {/* One next action. Disabled until the step is answerable. */}
-      <div className="flex items-center justify-end">
+      {/* One next action + an explicit Back companion (T56: sequential content
+          needs an obvious control, never only an undiscoverable gesture). */}
+      <div className="flex items-center justify-between gap-2">
+        <button
+          type="button"
+          onClick={() => onCurrentChange(current - 1)}
+          disabled={current === 0}
+          aria-label="Go back a step"
+          className={cn(
+            "inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-border bg-background px-4 text-small font-semibold text-foreground transition-transform active:translate-y-px disabled:pointer-events-none disabled:opacity-40",
+          )}
+        >
+          <ArrowLeft className="size-4" aria-hidden />
+          Back
+        </button>
         <button
           type="button"
           disabled={!advanceable}

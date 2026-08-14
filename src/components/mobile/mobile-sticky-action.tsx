@@ -39,7 +39,10 @@ export function MobileStickyAction({
         className,
       )}
       style={{
-        paddingBottom: "max(env(safe-area-inset-bottom), 0.75rem)",
+        // offsetForNav: the --nav-h margin already includes the safe-area
+        // inset, so drop the bar's own safe-area padding here (double-count).
+        // Immersive pages (sim): the bar sits flush to the bottom, so keep it.
+        paddingBottom: offsetForNav ? "0.75rem" : "max(env(safe-area-inset-bottom), 0.75rem)",
         ...(offsetForNav ? { marginBottom: "var(--nav-h, 0px)" } : null),
       }}
     >

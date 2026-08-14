@@ -83,8 +83,8 @@ export default async function NotificationsPage() {
   const hasAdmin = (reports?.length ?? 0) > 0;
 
   return (
-    <MobilePage>
-      <MobileHeader title="Notifications" />
+    <MobilePage inset={false}>
+      <MobileHeader title="Notifications" inset={false} />
       <div className="flex flex-col gap-6 px-4 py-4">
         {!hasStudent && !hasAdmin ? (
           <EmptyState

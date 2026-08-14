@@ -243,7 +243,7 @@ export function DictateConversation() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Or type your response…"
-              className="flex-1 rounded-md border-2 border-border bg-card px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+              className="flex-1 rounded-md border-2 border-border bg-card px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
             />
             <button
               type="submit"
@@ -263,7 +263,7 @@ export function DictateConversation() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. Young man, shopkeeper, chest heaviness and debt"
-              className="mt-1 w-full rounded-md border-2 border-border bg-card px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+              className="mt-1 w-full rounded-md border-2 border-border bg-card px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
           <button

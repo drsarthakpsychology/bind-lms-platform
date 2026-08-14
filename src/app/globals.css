@@ -204,8 +204,10 @@
   --radius-xl: 0.875rem; /* 14px */
 
   /* Bottom tab bar height (mobile). The bar is min-h-14 + safe-area; surfaces
-     that pin a sticky action above it offset by this token (MobileStickyAction). */
-  --nav-h: 3.5rem;
+     that pin a sticky action above it offset by this token (MobileStickyAction).
+     The calc includes the safe-area inset so the offset clears the full bar on
+     notched phones (the raw 3.5rem left sticky actions 34px too low). */
+  --nav-h: calc(3.5rem + env(safe-area-inset-bottom));
 
   --shadow-hard-xs: var(--shadow-hard-xs);
   --shadow-hard-sm: var(--shadow-hard-sm);

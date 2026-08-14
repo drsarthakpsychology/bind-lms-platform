@@ -119,7 +119,7 @@ export function SourcePanel({
           onKeyDown={(e) => e.key === "Enter" && runSearch()}
           placeholder="Search the books (e.g. 'clozapine agranulocytosis')"
           aria-label="Search the authorised book corpus for this block's source"
-          className="min-w-0 flex-1 rounded-md border-2 border-border px-2 py-1 text-sm outline-none focus:border-link"
+          className="min-h-11 min-w-0 flex-1 rounded-md border-2 border-border px-3 text-base outline-none focus:border-link"
         />
         <button
           type="button"

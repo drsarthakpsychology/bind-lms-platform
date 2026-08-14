@@ -65,7 +65,7 @@ export function MobileChoiceList({
             className={cn(
               "flex min-h-11 w-full items-start gap-3 rounded-md border-2 px-3 py-2.5 text-left text-small transition-transform active:translate-y-px",
               !revealed && "border-border bg-card hover:bg-accent",
-              showCorrect && "border-foreground bg-primary/15",
+              showCorrect && "animate-enter border-foreground bg-primary/15",
               showWrong && "border-border bg-muted",
               revealed && !isPicked && !isCorrect && "border-border/50 bg-card opacity-60",
             )}

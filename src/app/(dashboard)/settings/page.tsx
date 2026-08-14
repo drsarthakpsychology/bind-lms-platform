@@ -30,8 +30,8 @@ export default async function SettingsPage() {
   const { email, role } = session.profile;
 
   return (
-    <MobilePage>
-      <MobileHeader title="Settings" />
+    <MobilePage inset={false}>
+      <MobileHeader title="Settings" inset={false} />
       <div className="flex flex-col gap-6 px-4 py-4">
         {/* Identity — one honest block, not a fake name. */}
         <div className="flex items-center gap-3 rounded-lg border-2 border-foreground bg-card p-4 hard-shadow-sm">

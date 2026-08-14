@@ -70,7 +70,7 @@ export function ChatComposer({
           rows={1}
           placeholder={`Ask ${patientName} something…`}
           aria-label={`Your message to ${patientName}`}
-          className="max-h-32 min-h-[44px] flex-1 resize-none rounded-2xl border border-border bg-background px-3.5 py-2.5 text-[15px] leading-relaxed focus:outline-none focus:ring-2 focus:ring-ring"
+          className="max-h-32 min-h-[44px] flex-1 resize-none rounded-2xl border border-border bg-background px-3.5 py-2.5 text-base leading-relaxed focus:outline-none focus:ring-2 focus:ring-ring"
         />
 
         {/* Send. */}
