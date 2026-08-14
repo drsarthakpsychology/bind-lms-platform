@@ -3623,3 +3623,14 @@ on :3001 shares the Test@vibha.test account; its T79 e2e runs invalidate this
 server's logins (login POST succeeds → bounced back to /login). Not a code
 issue — an environment coordination one. Spec is ready; runs when the session
 is free. T83 stays OPEN pending capture.
+
+2026-08-14T23:59 T84 red-team done — adversarial review found + fixed:
+- Malformed dynamic-route ids → PostgREST 400 (not clean 404) across course
+  detail/layout, material, session pages (6668278 — same guard as the lesson
+  page). No other crash-class patterns remain: all Supabase arrays are
+  `?? []`-guarded, all .single() fetches null-checked to notFound(), no
+  unguarded .map in student routes.
+- Earlier red-team hits this session: rounds SEED_CARDS 500 (fixed), material
+  viewer dead POST (fixed).
+Ticked T84. Remaining: T83 (visual capture — blocked by cross-server session
+conflict), T88 (polish — human eyes), T90 (final acceptance — umbrella).

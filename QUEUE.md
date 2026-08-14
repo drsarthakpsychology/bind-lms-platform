@@ -700,7 +700,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   materially reduced clutter, unnecessary nesting, excessive scrolling, poor
   hierarchy, and desktop-density patterns
 
-- [ ] T84  Mobile UX red-team pass — intentionally try to break the experience:
+- [x] T84  Mobile UX red-team pass — intentionally try to break the experience:
   extremely long content, rapid taps, repeated Next actions, back/forward
   navigation, network failure, keyboard open, permission denial, empty data,
   incomplete data, slow loading, and interrupted sessions; fix everything
