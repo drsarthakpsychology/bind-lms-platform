@@ -90,9 +90,9 @@ function Hero() {
           <div className="flex flex-col">
             <Reveal delay={0.22}>
               <p className="max-w-lg min-w-0 break-words text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Psychology graduates can describe therapy. Few can practise it. VIBHA
-                School of Psychology closes that gap with real cases, simulated
-                patients, and a debrief after every session.
+                Psychology graduates can describe therapy. Few can practise it —
+                VIBHA closes that gap with real cases and a debrief after every
+                session.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
@@ -118,36 +118,40 @@ function Hero() {
           </div>
 
           {/* The intake file: the product's raw material, drawn with the LMS's
-              card and hard-shadow language. Three fragments step right in a
-              uniform deck, a tape strip seals the top, and a light "PRACTISE"
-              stamp (paired with the tape — matched border + translucent peach,
-              rotation mirrored) anchors the bottom-left corner. Purely
+              card and hard-shadow language. Three equal-height fragments step
+              right by the same dx each step (uniform deck), a labelled
+              "CASE FILE" index tab seals the top, and a light "PRACTISE" stamp
+              (paired with the tab — matched border + translucent peach,
+              rotation mirrored) sits fully inside the bottom-left corner. The
+              observation rings sit behind the deck as its backdrop. Purely
               decorative; parallax is disabled under prefers-reduced-motion. */}
           <Parallax from={10} to={-10} className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="relative space-y-3">
+            <ObservationRings className="pointer-events-none absolute -right-16 -top-10 w-72 select-none text-foreground/[0.06] lg:-right-20 lg:-top-12 lg:w-80" />
+            <div className="relative space-y-3 pb-14">
               <div
                 aria-hidden
-                className="absolute -top-3.5 left-1/2 z-10 h-6 w-28 -translate-x-1/2 rotate-[-4deg] border border-foreground bg-primary/60"
-              />
+                className="absolute -top-3.5 left-6 z-10 rotate-[-4deg] rounded-md border-2 border-foreground bg-secondary px-2.5 py-1 font-mono text-[0.6rem] font-black uppercase tracking-[0.2em] text-foreground hard-shadow-flat"
+              >
+                Case file
+              </div>
               <Reveal delay={0.18}>
-                <CaseFragment label="Presenting complaint" className="ml-0 -rotate-1">
+                <CaseFragment label="Presenting complaint" className="ml-0 min-h-32 -rotate-1">
                   &ldquo;I hear a voice telling me I&apos;m worthless. It&apos;s not mine.&rdquo;
                 </CaseFragment>
               </Reveal>
               <Reveal delay={0.28}>
-                <CaseFragment label="Observation" className="ml-4 rotate-1 sm:ml-6">
-                  Sits very still, hands folded. Speaks in a flat, even voice. Looks at
-                  her sister before every answer.
+                <CaseFragment label="Observation" className="ml-4 min-h-32 rotate-1 sm:ml-6">
+                  Sits very still, hands folded. Speaks in a flat, even voice.
                 </CaseFragment>
               </Reveal>
               <Reveal delay={0.38}>
-                <CaseFragment label="Formulation" className="ml-8 -rotate-1 sm:ml-12">
-                  The heaviness is the only language her belief system permits for
-                  distress.
+                <CaseFragment label="Formulation" className="ml-8 min-h-32 -rotate-1 sm:ml-12">
+                  The heaviness is the only language her belief system permits
+                  for distress.
                 </CaseFragment>
               </Reveal>
             </div>
-            <Stamp variant="accent" className="absolute -bottom-4 left-0 z-20 rotate-[4deg]">
+            <Stamp variant="accent" className="absolute bottom-2 left-2 z-20 rotate-[4deg]">
               Practise
             </Stamp>
           </Parallax>
@@ -177,13 +181,12 @@ function Problem() {
           </h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
             <p>
-              Most psychology graduates finish their degrees able to describe
-              therapy. They know the models, the terminology, the diagnoses.
-              Almost none can sit with a patient and think in real time.
+              Most psychology graduates can describe therapy. Almost none can sit
+              with a patient and think in real time.
             </p>
             <p>
-              That gap is not a failure of students. It is a failure of method,
-              and you cannot learn to be in the room by reading about it.
+              That gap is not a failure of students — it is a failure of method.
+              You cannot learn to be in the room by reading about it.
             </p>
           </div>
         </Reveal>
@@ -199,19 +202,19 @@ function ThreeIdeas() {
       num: "01",
       eyebrow: "Learn",
       title: "The structured science",
-      body: "Interviewing, the mental status exam, formulation, ethics and the law. They form one working method, taught in order, not disconnected lectures.",
+      body: "Interviewing, the mental status exam, formulation, ethics and the law — one working method, taught in order.",
     },
     {
       num: "02",
       eyebrow: "Experience",
       title: "Simulated patients, real sessions",
-      body: "You don't practise on a stranger first. You interview simulated patients, run timed assessments and revisit your own transcripts, the way you'll actually work.",
+      body: "You don't practise on a stranger first. Interview simulated patients and revisit your own transcripts.",
     },
     {
       num: "03",
       eyebrow: "Apply",
       title: "Write it, defend it, learn from the debrief",
-      body: "You write the formulation, run the assessment, make the call. Then the debrief shows what the patient actually presented, and where your ears went quiet.",
+      body: "You write the formulation and make the call. Then the debrief shows what the patient actually presented — and where your ears went quiet.",
     },
   ];
   return (
@@ -297,7 +300,7 @@ function WhoBuilds() {
         </Reveal>
         <Reveal delay={0.16}>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            There are guest lectures as well, so the teaching never rests on a single voice.
+            Guest lectures keep the teaching from resting on a single voice.
           </p>
         </Reveal>
       </div>
@@ -314,7 +317,7 @@ function ClosingCta() {
           <span aria-hidden className="absolute right-3 top-3 size-2.5 bg-primary" />
           <span aria-hidden className="absolute bottom-3 left-3 size-2.5 bg-primary" />
           <span aria-hidden className="absolute bottom-3 right-3 size-2.5 bg-primary" />
-          <Stamp className="absolute right-10 top-10 hidden rotate-[8deg] sm:block">Invite-only</Stamp>
+          <Stamp className="absolute right-14 top-12 hidden rotate-[8deg] sm:block">Invite-only</Stamp>
           <p className="text-eyebrow text-muted-foreground">Cohort One — by invitation</p>
           <h2 className="mt-4 text-balance text-4xl font-black leading-tight tracking-tight text-foreground sm:text-5xl">
             {hasCohortStarted() ? (
@@ -331,8 +334,8 @@ function ClosingCta() {
           </h2>
           <Rule className="mx-auto mt-6 max-w-xs" />
           <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            A small cohort, a real curriculum, and a method built for the room.
-            Tell us who you are, and we&apos;ll be in touch.
+            A small cohort, a real curriculum, a method built for the room.
+            Tell us who you are.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link href="/enquire" className={cn(buttonVariants({ size: "lg" }), "group gap-2 font-semibold")}>
