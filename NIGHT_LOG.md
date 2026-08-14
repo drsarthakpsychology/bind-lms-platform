@@ -1862,3 +1862,22 @@ Remaining human items (NEEDS_KAVYA): clinician review of the 146 enriched
 medication entries before publishing.
 2026-08-14T05:53:09 Queue exhausted — allowing normal Claude stop.
 2026-08-14T05:58:45 Queue exhausted — allowing normal Claude stop.
+2026-08-14T05:59:06 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:16:19 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:17:07 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:17:42 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Knowledge layer: Stahl PG preview outline (book-structure reader)
+
+Wrote `scripts/knowledge/outlines/stahl_pg_preview.json` for the 98-page
+Eighth Edition preview. Decision: pageEnd is INCLUSIVE (chunk.ts loops
+`p <= pageEnd`), so drug ranges are real last-page indexes, not the next
+chapter's start. Verified against the chunker on the live cache: 98 pages
+parsed, 307 chunks, 7 front-matter items + 11 drug entries
+(acamprosate → asenapine), zero non-blank orphan pages. isPreview: true —
+the preview ends mid-Asenapine (Suggested Reading, page 98); the back-matter
+indices/abbreviations listed in Contents fall outside the 98 pages. Blank
+separator pages (2,4,12,16,22,28,50,64,72,84,90) recorded in
+unattributedPages. Confidence high.

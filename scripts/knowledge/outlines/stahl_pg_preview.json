@@ -1,0 +1,205 @@
+{
+  "id": "stahl_pg_preview",
+  "confidence": "high",
+  "issues": [
+    "This is a 98-page partial preview of the Eighth Edition; it ends mid-entry in the ASENAPINE entry (Suggested Reading, PDF page 98). The final Asenapine section is truncated.",
+    "The Contents (PDF pages 7-11) lists 158 drug entries plus back-matter (Index by Drug Name, Index by Drug Use, Index by Drug Class, Abbreviations), but only the first 11 drug entries appear in this preview; no indices or abbreviations appendices are present.",
+    "Section header naming is inconsistent across entries: most use 'SIDE EFFECTS', but amphetamine (d), amphetamine (d,l), aripiprazole, and asenapine use 'SAFETY AND TOLERABILITY' for the same section.",
+    "Each drug entry is separated from the next by a blank page (no text). Blank pages are recorded in unattributedPages.",
+    "Printed (book) page numbers from the Contents are NOT used; all page numbers below are the PDF page index (the <<<PAGE n>>> marker value)."
+  ],
+  "isPreview": true,
+  "frontMatter": [
+    {
+      "title": "Cover",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "sections": []
+    },
+    {
+      "title": "Title Page",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "sections": []
+    },
+    {
+      "title": "Title Page (author and contributors)",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "sections": []
+    },
+    {
+      "title": "Copyright",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "sections": []
+    },
+    {
+      "title": "Contents",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "sections": []
+    },
+    {
+      "title": "Introduction",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "sections": []
+    },
+    {
+      "title": "List of Icons",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "sections": []
+    }
+  ],
+  "chapters": [
+    {
+      "title": "Acamprosate",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "sections": [
+        { "title": "Therapeutics", "page": 19 },
+        { "title": "Side Effects", "page": 19 },
+        { "title": "Dosing and Use", "page": 20 },
+        { "title": "Special Populations", "page": 20 },
+        { "title": "The Art of Psychopharmacology", "page": 21 },
+        { "title": "Suggested Reading", "page": 21 }
+      ]
+    },
+    {
+      "title": "Agomelatine",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "sections": [
+        { "title": "Therapeutics", "page": 23 },
+        { "title": "Side Effects", "page": 24 },
+        { "title": "Dosing and Use", "page": 24 },
+        { "title": "Special Populations", "page": 25 },
+        { "title": "The Art of Psychopharmacology", "page": 26 },
+        { "title": "Suggested Reading", "page": 27 }
+      ]
+    },
+    {
+      "title": "Alprazolam",
+      "pageStart": 29,
+      "pageEnd": 34,
+      "sections": [
+        { "title": "Therapeutics", "page": 29 },
+        { "title": "Side Effects", "page": 29 },
+        { "title": "Dosing and Use", "page": 30 },
+        { "title": "Special Populations", "page": 32 },
+        { "title": "The Art of Psychopharmacology", "page": 33 },
+        { "title": "Suggested Reading", "page": 34 }
+      ]
+    },
+    {
+      "title": "Amisulpride",
+      "pageStart": 35,
+      "pageEnd": 42,
+      "sections": [
+        { "title": "Therapeutics", "page": 35 },
+        { "title": "Side Effects", "page": 36 },
+        { "title": "Dosing and Use", "page": 37 },
+        { "title": "Special Populations", "page": 39 },
+        { "title": "The Art of Psychopharmacology", "page": 39 },
+        { "title": "The Art of Switching", "page": 41 },
+        { "title": "Suggested Reading", "page": 42 }
+      ]
+    },
+    {
+      "title": "Amitriptyline",
+      "pageStart": 43,
+      "pageEnd": 49,
+      "sections": [
+        { "title": "Therapeutics", "page": 43 },
+        { "title": "Side Effects", "page": 44 },
+        { "title": "Dosing and Use", "page": 45 },
+        { "title": "Special Populations", "page": 46 },
+        { "title": "The Art of Psychopharmacology", "page": 48 },
+        { "title": "Suggested Reading", "page": 49 }
+      ]
+    },
+    {
+      "title": "Amoxapine",
+      "pageStart": 51,
+      "pageEnd": 56,
+      "sections": [
+        { "title": "Therapeutics", "page": 51 },
+        { "title": "Side Effects", "page": 52 },
+        { "title": "Dosing and Use", "page": 53 },
+        { "title": "Special Populations", "page": 54 },
+        { "title": "The Art of Psychopharmacology", "page": 55 },
+        { "title": "Suggested Reading", "page": 56 }
+      ]
+    },
+    {
+      "title": "Amphetamine (d)",
+      "pageStart": 57,
+      "pageEnd": 63,
+      "sections": [
+        { "title": "Therapeutics", "page": 57 },
+        { "title": "Safety and Tolerability", "page": 58 },
+        { "title": "Dosing and Use", "page": 58 },
+        { "title": "Special Populations", "page": 61 },
+        { "title": "The Art of Psychopharmacology", "page": 62 },
+        { "title": "Suggested Reading", "page": 63 }
+      ]
+    },
+    {
+      "title": "Amphetamine (d,l)",
+      "pageStart": 65,
+      "pageEnd": 71,
+      "sections": [
+        { "title": "Therapeutics", "page": 65 },
+        { "title": "Safety and Tolerability", "page": 66 },
+        { "title": "Dosing and Use", "page": 66 },
+        { "title": "Special Populations", "page": 70 },
+        { "title": "The Art of Psychopharmacology", "page": 70 },
+        { "title": "Suggested Reading", "page": 71 }
+      ]
+    },
+    {
+      "title": "Aripiprazole",
+      "pageStart": 73,
+      "pageEnd": 83,
+      "sections": [
+        { "title": "Therapeutics", "page": 73 },
+        { "title": "Safety and Tolerability", "page": 75 },
+        { "title": "Dosing and Use", "page": 76 },
+        { "title": "Special Populations", "page": 78 },
+        { "title": "The Art of Psychopharmacology", "page": 79 },
+        { "title": "The Art of Switching", "page": 82 },
+        { "title": "Suggested Reading", "page": 83 }
+      ]
+    },
+    {
+      "title": "Armodafinil",
+      "pageStart": 85,
+      "pageEnd": 89,
+      "sections": [
+        { "title": "Therapeutics", "page": 85 },
+        { "title": "Side Effects", "page": 86 },
+        { "title": "Dosing and Use", "page": 86 },
+        { "title": "Special Populations", "page": 87 },
+        { "title": "The Art of Psychopharmacology", "page": 88 },
+        { "title": "Suggested Reading", "page": 89 }
+      ]
+    },
+    {
+      "title": "Asenapine",
+      "pageStart": 91,
+      "pageEnd": 98,
+      "sections": [
+        { "title": "Therapeutics", "page": 91 },
+        { "title": "Safety and Tolerability", "page": 92 },
+        { "title": "Dosing and Use", "page": 93 },
+        { "title": "Special Populations", "page": 95 },
+        { "title": "The Art of Psychopharmacology", "page": 96 },
+        { "title": "The Art of Switching", "page": 97 },
+        { "title": "Suggested Reading", "page": 98 }
+      ]
+    }
+  ],
+  "unattributedPages": [2, 4, 12, 16, 22, 28, 50, 64, 72, 84, 90]
+}
