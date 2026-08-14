@@ -3304,3 +3304,9 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   "resizes-content"`) to the root layout so the browser resizes the layout
   viewport when the software keyboard opens — complements `0da7555`'s dynamic
   viewport heights. Committed `f5c8902`.
+
+- T54 (keyboard QA, continued): added `enterKeyHint="send"` to the remaining
+  single-line question composers that were missed by the earlier pass —
+  role-play room, Funnel drill, and CFI drill — so the software keyboard offers
+  "Send" instead of "Return". Committed `7ed56be`. Gate: lint 0, tsc clean,
+  453 tests, build green.
