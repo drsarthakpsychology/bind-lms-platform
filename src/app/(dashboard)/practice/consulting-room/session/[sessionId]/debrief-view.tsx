@@ -18,6 +18,23 @@ import { buttonVariants } from "@/components/ui/button";
 import { MobileHeader } from "@/components/mobile/mobile-header";
 import { MobileSection } from "@/components/mobile/mobile-section";
 import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
+
+/** A raw open:closed ratio means nothing to a student — say it in words. */
+function openClosedLabel(r?: number | null): string {
+  if (r === undefined || r === null || Number.isNaN(r)) return "—";
+  if (r >= 1.5) return "Mostly open";
+  if (r >= 0.7) return "Balanced";
+  return "Mostly closed";
+}
+
+/** "late"/"absent" are internal rubric values — render them as plain feedback. */
+function riskTimingLabel(v?: string | null): string {
+  if (!v) return "—";
+  if (v === "on_time" || v === "on-time" || v === "early" || v === "good") return "Asked early";
+  if (v === "late") return "Asked late";
+  if (v === "absent" || v === "never") return "Not asked";
+  return v;
+}
 import { MobileContinueAction } from "@/components/mobile/mobile-continue-action";
 import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 import { StatusPill } from "@/components/mobile/status-pill";
@@ -308,9 +325,9 @@ function ScoreStep({
           <ProvisionalAwareStat
             dim="open_closed_ratio"
             provisional={provisionalDims}
-            label="Open:closed"
-            value={String(score?.open_closed_ratio ?? "—")}
-            hint="Your questions leaned open this session — keep that up."
+            label="Question style"
+            value={openClosedLabel(score?.open_closed_ratio)}
+            hint="Open questions let the patient lead; closed ones box them in."
           />
           <ProvisionalAwareStat
             dim="reflective_statements"
@@ -331,7 +348,7 @@ function ScoreStep({
             dim="risk_timing"
             provisional={provisionalDims}
             label="Risk timing"
-            value={score?.risk_timing ?? "—"}
+            value={riskTimingLabel(score?.risk_timing)}
             hint="When you asked about risk matters as much as whether you did."
           />
           <Stat

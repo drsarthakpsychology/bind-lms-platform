@@ -33,7 +33,6 @@ const PRACTICE_TOOLS: PracticeTool[] = [
   { href: "/practice/two-minute-clinic", title: "Two-Minute Clinic", verb: "TYPE", description: "One-liner, differential, next question.", icon: "circleCheck", time: "2 min", flag: "two_minute_clinic", group: "quick" },
   { href: "/practice/rounds", title: "Rounds", verb: "RATE", description: "Spaced-repetition cards, capped at 25/day.", icon: "repeat", time: "3 min", flag: "rounds", group: "quick" },
   { href: "/practice/decode", title: "Presenting Complaint Decoder", verb: "DECODE", description: "“Not feeling fresh” — six things could be true.", icon: "search", time: "4 min", flag: "decoder", group: "quick" },
-  { href: "/wall", title: "Cohort Wall", verb: "ASK", description: "Threaded, anonymous-post toggle.", icon: "messageSquare", time: "3 min", flag: "journal", group: "quick" },
   { href: "/practice/modules", title: "Modules", verb: "BROWSE", description: "Your course's modules, in order — locked ones state why.", icon: "layers", time: "1 min", flag: "modules", group: "quick" },
 
   // Mid — 5-10 minutes
