@@ -3300,3 +3300,7 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   one). They now shrink with the software keyboard so focused fields / submit
   actions aren't hidden behind it. Committed `0da7555`. Gate: lint 0, tsc
   clean, 453 tests, build green.
+- T54 continued: added the `viewport` export (`interactiveWidget:
+  "resizes-content"`) to the root layout so the browser resizes the layout
+  viewport when the software keyboard opens — complements `0da7555`'s dynamic
+  viewport heights. Committed `f5c8902`.
