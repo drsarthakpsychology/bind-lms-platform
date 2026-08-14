@@ -3773,3 +3773,5 @@ working tree, not git). Full commit `1d6d883` matches the pushed HEAD.
 2026-08-14T22:16:42 STOP_CLAUDE present — allowing stop.
 
 2026-08-14T22:37:49 T92+T93 done — established Caveman UI / plain-language rule (fewest words, simple labels, no jargon, explain-only-when-needed) as rule 10 in .claude/skills/vibha-design/SKILL.md.
+
+2026-08-14T22:39:22 T94 done — student/admin separation audited and architecturally enforced: (dashboard)/admin/layout.tsx server-side role guard (non-admin → /dashboard), nav-config STUDENT_ITEMS vs ADMIN_ITEMS, AppShell role/mode gate, content-level hasAdmin/role conditionals (notifications page correctly gates /admin/wall-reports). No ungated cross-role links found.

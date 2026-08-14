@@ -755,7 +755,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   instructions, and explanatory paragraphs that do not improve the user's
   ability to complete the task
 
-- [ ] T94  Student versus admin separation — audit the entire application and
+- [x] T94  Student versus admin separation — audit the entire application and
   strictly separate student-facing functionality from administrative,
   operational, calibration, infrastructure, rights, and internal tooling;
   students should see learning and practice; admins should see only the tools
