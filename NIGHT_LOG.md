@@ -3293,3 +3293,19 @@ mobile-error-line, mobile-input, mobile-mode-switcher, mobile-sticky-action) +
 globals.css edit. All UNTRACKED — left uncommitted for the worker to land.
 My commits include ONLY my own files; committed HEAD is green (lint 0, tsc clean,
 build). NOTE: two writers on one branch is risky — flag to Kavya.
+
+2026-08-14T20:12 Audit-finding sweep continued (6 commits since last log):
+ 0e57476 journal mood chips 44px · shared Input/Select 44px · debrief Voice
+         panel → collapse
+ 2430488 consulting-room header condensed · psychopharm /learn pills 44px ·
+         tutor-chat capped at 75dvh (composer stays visible) + input 44px
+ ab8177f /record → one-task segmented (RecordTabs) · SegmentedControl 44px
+ df6471f today: primary action first, WeakSpotsBanner below it
+
+✓ PARALLEL WORKER landed its own commits on this branch (no conflicts — disjoint
+files): 8368308 shared mobile-first primitives (mobile-mode-switcher,
+mobile-sticky-action, mobile-continue-action, mobile-completion-state,
+mobile-error-line, mobile-input, async-error-card + hooks use-draft/
+use-async-action/use-offline) + 334a52b MobileAssessmentFlow + MobileChoiceList
+(T23). Branch HEAD green: lint 0, tsc clean, 486 tests, build 87/87.
+Two-writer coordination is working; still worth flagging to Kavya for safety.
