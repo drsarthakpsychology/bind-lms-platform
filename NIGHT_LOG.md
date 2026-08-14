@@ -3161,3 +3161,5 @@ applied in the material page header + viewer. Error card now shows a selectable
 Root cause of the load failure itself (R2 object/signed-URL TTL/CORS/HLS) needs
 live network-tab capture on a real device — blocked on device access, not code.
 Gate: lint 0, tsc clean, 466 tests (+5 title), build pending in this slice.
+
+2026-08-14T19:09:54 T3 done — bottom tab bar: sliding active indicator (motion.span layoutId, spring 420/34, reduced-motion static) + 56px tap targets. Committed ebd0ccf (bundled by agent). Green: 466 tests + build.

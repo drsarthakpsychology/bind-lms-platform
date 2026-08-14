@@ -365,7 +365,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
 - [x] T2  Patient simulation — full-screen chat rebuild (session-view →
   SimulationHeader + ChatList + ChatComposer + NotesSheet + HintSheet; kill
   giant fixture banner → subtle status pill; single-row composer)
-- [ ] T3  Mobile navigation + header polish (bottom-tab-bar touch targets +
+- [x] T3  Mobile navigation + header polish (bottom-tab-bar touch targets +
   active motion; contextual back headers)
 - [ ] T4  Today dashboard (mostly good — polish spacing + "one thing next")
 - [ ] T5  Courses — clean vertical lesson rows (kill nested week cards)
