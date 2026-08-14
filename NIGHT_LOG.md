@@ -3265,3 +3265,7 @@ T19 spec — no change. Fixed the one remaining bare empty state on a clean file
   Committed `13485d8`. Gate: lint 0, tsc clean, 453 tests, build green.
   (Rounds daily-cap done landed in `e16e3d3`; judgment in `e33ad88` — so the
   four drill "done" states now share one completion language.)
+- Out-of-depth "Drill complete" unified too: `2efd383` (swapped its EmptyState
+  for MobileCompletionState with a "Restart drill" action). T29 ticked — the
+  shared primitive is in place and every existing practice-session completion
+  now speaks the one language.

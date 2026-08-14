@@ -440,7 +440,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   simulations, reflections, and other sequential experiences; "Continue"
   should always represent the actual next meaningful action
 
-- [ ] T29  Mobile completion states — create consistent completion experiences
+- [x] T29  Mobile completion states — create consistent completion experiences
   for lessons, sections, questions, assessments, practice sessions, cases, and
   courses; provide useful feedback and an obvious next action without adding
   unnecessary visual clutter
