@@ -1006,20 +1006,20 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   student understands what happened and what to do next without needing to
   interpret technical scoring terminology
 
-- [ ] T147  Mobile video player rebuild — create a genuinely phone-optimised
+- [x] T147  Mobile video player rebuild — create a genuinely phone-optimised
   video experience; support browser/full-screen APIs correctly and ensure
   full-screen video rotates to landscape when the device/browser allows it
 
-- [ ] T148  Video orientation handling — when a user enters video full-screen,
+- [x] T148  Video orientation handling — when a user enters video full-screen,
   implement appropriate orientation locking/request behaviour where supported;
   gracefully handle browsers that do not permit programmatic orientation
   changes
 
-- [ ] T149  Video learning controls — keep essential controls accessible while
+- [x] T149  Video learning controls — keep essential controls accessible while
   allowing immersive playback; avoid showing the normal dashboard navigation
   or unrelated application UI during full-screen learning
 
-- [ ] T150  Video resume behaviour — remember playback position and provide a
+- [x] T150  Video resume behaviour — remember playback position and provide a
   simple Continue/Resume action when the student returns to a partially
   watched lesson
 
