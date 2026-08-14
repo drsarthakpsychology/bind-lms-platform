@@ -3218,3 +3218,12 @@ green-free feedback (amber tint + ink check; muted wrong pick). Attempts persist
 per-pick. Gate green: lint 0, tsc clean, 466 tests, build. Commit 24e5357.
 NOTE: dropped the "standard of care" tag render (still in data) — noise cut per
 §8; can restore if Dr. Dave wants it.
+
+2026-08-14T19:38 T8 done — Journal + Wall. Journal: mood select → tappable chips
+(one tap), full-width Save, autosave draft to localStorage (deferred restore past
+hydration + set-state-in-effect lint), "Draft saved." line, enterkeyhint=enter.
+Wall: full-width anonymous checkbox row (48px) + reassurance when checked,
+full-width Post, Report demoted to ⋯ overflow menu (Reply primary; faculty pin
+moved in). Added lib/format.ts formatRelativeTime (Intl.RelativeTimeFormat,
+explicit en locale; no bare numeric dates) + 7 tests; applied to posts/replies/
+journal entries. Gate green: lint 0, tsc clean, 473 tests, build. Commit 23c29d2.

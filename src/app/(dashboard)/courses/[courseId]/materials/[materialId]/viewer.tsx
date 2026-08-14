@@ -55,6 +55,7 @@ export function MaterialViewer({
   const [error, setError] = useState<string | null>(null);
   const [correlationId, setCorrelationId] = useState<string | null>(null);
   const [loadKey, setLoadKey] = useState(0);
+  const [slow, setSlow] = useState(false);
 
   // A short reference id per failure — the student quotes it to their
   // instructor, who can find the matching server-side log line.
@@ -97,6 +98,14 @@ export function MaterialViewer({
     };
   }, [materialId, loadKey]);
 
+  // Slow-connection signal — after 8s still loading, tell the student it hasn't
+  // frozen. Resets on retry (the only path that re-enters loading after an error).
+  useEffect(() => {
+    if (signedUrl || error || kind === "link") return;
+    const t = setTimeout(() => setSlow(true), 8000);
+    return () => clearTimeout(t);
+  }, [signedUrl, error, kind]);
+
   if (error) {
     return (
       <div className="flex h-full items-center justify-center p-8">
@@ -118,6 +127,7 @@ export function MaterialViewer({
               onClick={() => {
                 setError(null);
                 setSignedUrl(null);
+                setSlow(false);
                 setLoadKey((k) => k + 1);
               }}
               className="inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-medium text-primary-foreground transition-[transform,box-shadow] hover:bg-primary/90 active:translate-y-0.5"
@@ -140,7 +150,20 @@ export function MaterialViewer({
   if (!signedUrl && kind !== "link") {
     return (
       <div className="flex h-full items-center justify-center p-8">
-        <Loader2 className="size-6 animate-spin text-muted-foreground" aria-hidden />
+        <div className="w-full max-w-sm space-y-3">
+          {/* Skeleton shaped like the content, so the student can see where it
+              will land rather than staring at an empty screen. */}
+          <div className="h-40 animate-pulse rounded-md border-2 border-border bg-muted/40" aria-hidden />
+          <div className="flex items-center gap-2 text-caption text-muted-foreground">
+            <Loader2 className="size-4 animate-spin" aria-hidden />
+            Loading material…
+          </div>
+          {slow ? (
+            <p className="text-caption text-muted-foreground" role="status">
+              Still loading — this may take longer on a slow connection.
+            </p>
+          ) : null}
+        </div>
       </div>
     );
   }
