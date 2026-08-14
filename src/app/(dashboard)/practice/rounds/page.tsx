@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import type { CardState } from "@/lib/practice/rounds";
-import { RoundsDeck, SEED_CARDS } from "./rounds-deck";
+import { RoundsDeck } from "./rounds-deck";
+import { SEED_CARDS } from "@/lib/practice/rounds-seeds";
 
 export const dynamic = "force-dynamic";
 
