@@ -1,3 +1,26 @@
+## 2026-08-14 — PUSH + PRODUCTION DEPLOY (user request)
+
+User asked to "push all and deploy on live website." Explicit authorization —
+overrode the autonomous "no push to main" default (feature branch only, not
+main).
+
+- **Pushed** `feat/groq-primary-director` to origin (deaeede..19b1277), upstream
+  set. Remote HEAD == local HEAD (19b1277), tree clean. Main left untouched
+  (107 commits behind; merging main is a separate decision).
+- **Deployed to production** via `vercel --prod --yes`: deployment
+  `dpl_P4ZKg5ASPA3N7oiVD3Cdb7membPp`, URL
+  bind-lms-platform-fy5808shf-drsarthakpsychologys-projects.vercel.app,
+  READY, target=production. Alias vibhapsychology.com → this deployment.
+- **Verified live** (curl): vibhapsychology.com HTTP 200 serving the redesign —
+  poster headline, "Practise" + "Invite-only" stamps (unique new markers),
+  /enquire with "Your details" + "Send enquiry", all section text. Cohort
+  deadline copy renders pre-date.
+- Direct deployment URL redirects to Vercel SSO (Deployment Protection enabled
+  — normal; the production alias is public).
+- Note: NEXT_PUBLIC_APP_URL (set 12h ago) may still be the internal vercel.app
+  hostname per the STRIX note — affects the media-token same-origin gate, not
+  the public pages. Flagged, not changed without the user.
+
 ## 2026-08-14 — GSTACK ROUTER → PRE-LANDING REVIEW of the design-work slice
 
 Bare /gstack (router, minimal install — only SKILL.md + guard/plan-eng-review,
