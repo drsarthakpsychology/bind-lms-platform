@@ -34,10 +34,14 @@
 - [x] **Psychopharm editor attaches corpus sources** — the admin block-source
   panel searches the corpus (/api/knowledge/search) and fills title/page/quote
   from a real, traceable passage in one click (brief §24). Committed cb7c559.
-- [ ] **Concept enrichment with V4 Flash** (optional, after eval): extract
-  concepts/relationships per chapter for a knowledge-graph layer — only if a
-  future benchmark shows it improves retrieval beyond raw chunks. Currently
-  100% recall makes this a research item, not a fix.
+- [x] **Concept enrichment layer (knowledge graph foundation)** — 174 concepts
+  (74 drugs + DSM-5-TR disorders + curated clinical terms) extracted
+  deterministically across all 27,608 chunks → **37,275 concept-chunk links**,
+  $0, resumable (scripts/knowledge/extract-concepts.ts). Concept filter on
+  match_corpus_chunks + /api/knowledge/search?concept= + concepts-browse
+  endpoint (commits 1cbb77d, 3616b85). Eval re-run: 100% recall@5/@8 — no
+  regression. V4-Flash deepening lane (scripts/knowledge/enrich-concepts.ts) is
+  code-complete, gated on a no-train key.
 
 ## KNOWLEDGE LAYER — OPEN (2026-08-14)
 
