@@ -57,7 +57,18 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
         </div>
       </div>
 
-      {/* competency grid */}
+      {/* competency grid — with an honest empty state until the first evidence
+          lands (T51: an invitation, not a report). */}
+      {evid === 0 && rows.length > 0 ? (
+        <div className="rounded-md border-2 border-dashed border-border bg-card p-5 text-center">
+          <p className="text-base font-medium text-foreground">Your passport is a blank slate</p>
+          <p className="mx-auto mt-1 max-w-[40ch] text-small text-muted-foreground">
+            Every tagged supervision hour and practice session you finish lands
+            here as evidence. The first one is the whole point — log a supervision
+            hour to break the seal.
+          </p>
+        </div>
+      ) : null}
       <ul className="space-y-2">
         {rows.map((r) => {
           const touched = r.events.length > 0;
