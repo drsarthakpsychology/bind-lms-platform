@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { cookies, headers } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ChevronLeft, FileText, Paperclip } from "lucide-react";
+import { ArrowLeft, ChevronDown, ChevronLeft, FileText, Paperclip } from "lucide-react";
 
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
@@ -225,16 +225,27 @@ export default async function LessonPage({
 
       {/* Check what stuck — a quick retention check after the lesson, not a
           test. Every item carries its source (the same pattern as MSE/OSCE).
-          A plain section: QuizCheck's own question card is the only box. */}
+          Collapsed by default so it never sits between the video and the
+          forward action — tap to reveal (progressive disclosure, T87). */}
       {tab === "watch" && (
-        <section aria-label="Check what stuck" className="space-y-3">
-          <div>
-            <h2 className="text-h2">Check what stuck</h2>
-            <p className="mt-1 text-small text-muted-foreground">
-              A quick check, not a test — every item carries its source.
-            </p>
-          </div>
-          <QuizCheck items={LESSON_QUIZ_ITEMS} />
+        <section aria-label="Check what stuck">
+          <details className="group">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-md px-1 py-2">
+              <span className="min-w-0">
+                <h2 className="text-h2">Check what stuck</h2>
+                <p className="mt-0.5 text-small text-muted-foreground">
+                  A quick check, not a test — every item carries its source.
+                </p>
+              </span>
+              <ChevronDown
+                className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+                aria-hidden
+              />
+            </summary>
+            <div className="mt-2">
+              <QuizCheck items={LESSON_QUIZ_ITEMS} />
+            </div>
+          </details>
         </section>
       )}
 
