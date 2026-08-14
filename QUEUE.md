@@ -48,14 +48,6 @@
 - [x] **Verified paywalled (honest)**: SambaNova + OpenCode Zen paid tiers need
   a card; the genuinely-free lanes are Groq + OpenRouter + OmniRoute-auto.
 
-### Open (human-blocked, in NEEDS_KAVYA)
-- [ ] **Fly deploy** — `flyctl auth login` (browser) then `bash
-  scripts/deploy-omniroute.sh`; set OMNIROUTE_URL to the Fly URL. One command
-  after the interactive login.
-- [ ] **CEREBRAS_API_KEY** — the free no-train double for the 45-DAU target.
-- [ ] **mhGAP/NMHS/POCSO/RCI manual downloads** — WHO/India servers block Node
-  (re-tested, still times out); browser download only.
-
 ## KNOWLEDGE LAYER — Groq LIVE + VOICE TUTOR (2026-08-14)
 
 - [x] **GROQ_API_KEY configured + verified live** — router selects groq for
@@ -291,3 +283,20 @@
 - [x] **Cohort pulse nudge**: /admin/pulse nudge records intent but doesn't call the real nudge API [briefs scan]
 - [x] **ElevenLabs TTS**: premium tier voice "Rudra" — needs Kavya's account keys [IDEAS_NEXT #3]
 - [x] **Recurring Patient Arcs (scaffold)**: chain created on debrief, /today surfaces it; follow_up content still needs a spec [IDEAS_NEXT #4]
+## Blocked — genuine human action required (all in NEEDS_KAVYA)
+
+These cannot be completed by code — each needs a specific human action. They
+stay open until the human does the one step; everything buildable around them
+is done and committed.
+
+- [ ] **Fly deploy** — `flyctl auth login` (interactive browser — only the
+  account owner can authenticate) then `bash scripts/deploy-omniroute.sh`; set
+  OMNIROUTE_URL to the resulting Fly URL. Everything else is deployed-ready.
+  (NEEDS_KAVYA: "OmniRoute to cloud — one interactive step")
+- [ ] **CEREBRAS_API_KEY** — obtain from cloud.cerebras.ai (free, no card);
+  the no-train double for the 45-DAU capacity target. (NEEDS_KAVYA: capacity
+  keys)
+- [ ] **mhGAP/NMHS/POCSO/RCI manual downloads** — WHO IRIS + NIMHANS block
+  Node (verified structural: JS-rendered DSpace); download in a browser to
+  scripts/corpus/raw/. (NEEDS_KAVYA: manual downloads; fetchers now print the
+  exact URL + destination)
