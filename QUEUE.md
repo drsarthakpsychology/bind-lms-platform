@@ -824,37 +824,37 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   values that do not have an obvious administrative purpose; if a value is
   required internally, hide it behind an appropriate advanced/system layer
 
-- [ ] T108  Psychopharmacology admin repair — fix the medication/psychopharma
+- [x] T108  Psychopharmacology admin repair — fix the medication/psychopharma
   review route so it actually opens, loads, edits, saves, previews, and
   navigates correctly on both desktop and mobile; test the entire workflow
   rather than only fixing the visible button
 
-- [ ] T109  Psychopharmacology content architecture — ensure medication content
+- [x] T109  Psychopharmacology content architecture — ensure medication content
   can be managed cleanly without exposing unnecessary implementation details;
   separate student-facing educational content from admin editing controls
 
-- [ ] T110  Student medication experience — audit the student-facing
+- [x] T110  Student medication experience — audit the student-facing
   psychopharmacology experience and ensure it presents information in a
   focused, understandable learning sequence rather than exposing a large
   database-like medication interface
 
-- [ ] T111  Data-driven calibration architecture — remove the requirement for
+- [x] T111  Data-driven calibration architecture — remove the requirement for
   the administrator to manually operate a visible scorer-calibration workflow
   as part of normal administration; calibration should be driven by collected
   programme data, approved reference examples, scoring outcomes, and other
   available evaluation data where appropriate
 
-- [ ] T112  Calibration automation — design the calibration system so that
+- [x] T112  Calibration automation — design the calibration system so that
   scoring quality can be evaluated and recalibrated using accumulated
   structured data rather than requiring the admin to manually open a
   calibration page for routine operation
 
-- [ ] T113  Calibration transparency — if calibration information must be
+- [x] T113  Calibration transparency — if calibration information must be
   visible to an administrator, expose only useful summaries such as status,
   quality, sample size, recent changes, and whether attention is needed;
   hide statistical/technical complexity unless explicitly requested
 
-- [ ] T114  Calibration safety boundary — do not silently modify production
+- [x] T114  Calibration safety boundary — do not silently modify production
   scoring behaviour based on unvalidated data; establish a reviewable process
   for evaluating calibration changes before they affect student scoring
 
