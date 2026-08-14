@@ -110,3 +110,6 @@ merging; treat those files as conflict hotspots.
 - **T29 — DONE (judgment)** (committed). MobileCompletionState + "Back to
   practice" next action. Decode-arena completion left to coordinator (file
   owned by worker-owned decode-flow).
+## Worker-slice update (2026-08-14 20:55)
+- **T40 — DONE** (committed 6357de6). Dashboard grid cards show progress once
+  (single "N of M lessons" count); the Step 1 continue card keeps the bar.

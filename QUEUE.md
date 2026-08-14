@@ -495,7 +495,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   around the most important metric/action first, with deeper information
   progressively revealed
 
-- [ ] T40  Mobile progress architecture — standardize how course, lesson,
+- [x] T40  Mobile progress architecture — standardize how course, lesson,
   assessment, practice, and program progress is communicated; keep progress
   visible enough to maintain orientation without allowing progress UI to
   dominate the screen
