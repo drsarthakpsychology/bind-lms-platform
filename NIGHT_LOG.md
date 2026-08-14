@@ -3364,3 +3364,20 @@ Covered: OSCE, Formulation, MSE trainer, landmark quiz. Remaining state-offline
 surface (decode-arena) sits inside the worker-owned decode-flow — left for them.
 Tree gate green at 12f9f69: lint 0 errors, tsc clean, 486 tests, build clean.
 Worker ~24 files in flight, still green. Holding their files.
+
+2026-08-14T20:35 ⚠ THREE-WRITER COORDINATION WARNING — surfaced for Kavya/mergers:
+1. Main branch feat/mobile-design-system: parallel writer (~24 files in flight,
+   green) + my mine-only fixes. HEAD = 31585d4, gate green.
+2. Worktree worktree-psychopharm-book-enrichment: its writer is ALSO doing
+   mobile work (waitlist sheet, two-minute-clinic sequential, course pages)
+   FROM A BASE 50 COMMITS BEHIND main (merge-base 98bbc29). Overlapping
+   surfaces: today/page.tsx, courses/[courseId]/page.tsx,
+   lessons/[lessonId]/page.tsx, consulting-room/page.tsx + session, debrief,
+   passport. When the worktree merges into main, expect conflicts on those
+   files — the worktree lacks T5/T24/T33 + the worker's surface conversions.
+3. Audit workflow wf_3c9d5eba-e83: read-only, done; findings being applied.
+
+Recommendation for the merge: rebase the worktree onto feat/mobile-design-system
+BEFORE merging, and treat today/course/lesson/consulting-room/debrief as
+merge-conflict hotspots. I am holding edits on those shared files to minimise
+the blast radius.
