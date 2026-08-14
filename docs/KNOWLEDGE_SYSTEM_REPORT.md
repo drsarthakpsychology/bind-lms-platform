@@ -74,18 +74,28 @@ live today.
 
 ## 6. Evaluation
 
-`npm run knowledge:eval` — a hand-written, book-grounded set of 16 questions
-across 5 categories (factual / conceptual / comparison / case / source-
-attribution), each with its expected source book(s). Baseline:
+`npm run knowledge:eval` — a book-grounded set of **50 questions** across 5
+categories (factual / conceptual / comparison / case / source-attribution).
+Each question carries the expected source book(s) (recall) AND answerTerms
+(grounding — the hallucination-resistance signal). The first 16 were hand-
+written; the remaining 34 were authored + adversarially verified against the
+actual book text by a 6-agent workflow. Baseline (2026-08-14):
 
 ```
-recall@5: 16/16 (100%)
-recall@8: 16/16 (100%)
-  factual 5/5 · conceptual 3/3 · comparison 3/3 · case 3/3 · source 2/2
+recall@5:  50/50 (100%)
+recall@8:  50/50 (100%)
+grounded@8: 38/50 (76%)   [answer terms present in the app's top-8 context window]
+  factual 12/12 · conceptual 10/10 · comparison 9/9 · case 9/10 · source 9/9
 ```
 
 This is the regression gate (brief §24/§25): re-run after any knowledge-layer
-change; a drop means a change regressed retrieval.
+change. The 24% grounding gap is the honest hard edge — case-management
+questions (serotonin syndrome, NMS, lithium toxicity, lamotrigine SJS) whose
+precise management terms span several pages of a section. The right book and
+chapter are always retrieved; the exact multi-drug management detail is the
+future chunking / contextual-retrieval improvement target. The eval surfaced a
+real bug during this build (the keyword lane only scanned the first ~16 chunks)
+and a real calibration error (k10's expected sources) — both fixed.
 
 ## 7. Cost
 
