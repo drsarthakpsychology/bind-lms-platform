@@ -283,7 +283,6 @@ export default async function DashboardPage() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {orderedSummaries.map(({ course, totalLessons, completedCount, status }, i) => {
-            const percent = totalLessons ? Math.round((completedCount / totalLessons) * 100) : 0;
             const isComplete = status === "completed";
             return (
               <Reveal key={course.id} delay={0.15 + Math.min(i, 3) * 0.05} className="h-full">
@@ -329,16 +328,13 @@ export default async function DashboardPage() {
                     <h3 className="text-h3 leading-snug">{course.title}</h3>
                   </div>
 
-                  <div className="space-y-2">
-                    <Progress value={percent} aria-label={`${course.title} progress`} />
-                    <div className="flex items-center justify-between">
-                      <span className="text-numeric text-caption text-muted-foreground">
-                        {completedCount} of {totalLessons} lessons · {percent}%
-                      </span>
-                    </div>
+                  <div className="pt-3">
+                    <span className="text-numeric text-caption text-muted-foreground">
+                      {completedCount} of {totalLessons} lessons
+                    </span>
                   </div>
 
-                  <span className="inline-flex items-center gap-1 pt-3 text-small font-medium text-link">
+                  <span className="inline-flex items-center gap-1 pt-2 text-small font-medium text-link">
                     {status === "completed"
                       ? "Review course"
                       : status === "in-progress"
