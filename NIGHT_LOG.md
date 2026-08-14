@@ -1943,3 +1943,19 @@ numbers. Gate verified green on the full tree: lint 0, `tsc --noEmit` clean,
 in-progress knowledge-layer files (ingest.ts, src/lib/knowledge/, cache/,
 other outlines, knowledge_layer.sql, package.json/package-lock.json) left for
 their owners. Shipped in commit 060fa41.
+2026-08-14T06:22:50 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Gitignore knowledge cache (Ahuja reader, follow-up)
+
+Decision (cheaper to reverse / protective): added `scripts/knowledge/cache/`
+to `.gitignore`. The cache holds 133 MB of licensed book PDFs + extracted
+text (kaplan_sadock 33 MB, stahl_essential 48 MB, dsm5tr, ahuja, icd11, fish,
+stahl_pg_*). Committing licensed source PDFs would be wrong; the exclusion
+mirrors the existing `scripts/corpus/raw/` and `scripts/psychopharm/fda/*`
+patterns for regenerable/copyrighted raw data. Did NOT commit the parallel
+agents' in-flight knowledge-layer code/outlines — observed other readers
+committing their own slices concurrently (e.g. kaplan_sadock 060fa41), so
+each slice lands on its owner's commit. Ahuja outline (503a961) + gate log
+(3e264c8) already shipped.
