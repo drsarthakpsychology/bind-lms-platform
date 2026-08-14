@@ -2004,3 +2004,37 @@ chunks across 9 chapter labels. Full-tree gates also green: lint 0, tsc clean,
 Did NOT commit the parallel agents' in-flight knowledge-layer code/outlines or
 the 133 MB cache (already gitignored by the Ahuja reader) — this slice lands on
 its own commit, consistent with the other readers.
+2026-08-14T06:24:50 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:25:11 Queue exhausted — allowing normal Claude stop.
+2026-08-14T06:25:14 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Knowledge layer: Stahl Prescriber's Guide 7th ed outline (book-structure reader)
+
+Wrote `scripts/knowledge/outlines/stahl_pg_7th.json` for Stahl's Essential
+Psychopharmacology Prescriber's Guide, 7th ed (2697 PDF pages). All page
+numbers are the PDF page index (`<<<PAGE n>>>`), never printed page numbers.
+Structure: front matter 1-23 (blank cover 1-2, book description 3, title 4,
+copyright 5, ISBN 6, Table of Contents 7-12, Introduction 13-17, List of Icons
+18-23); 152 drug entries A-Z (Acamprosate PDF 24 -> Zuclopenthixol PDF
+2549-2567), each a chapter with the 6 top-level section pages (Therapeutics,
+Side Effects, Dosing and Use, Special Populations, The Art of
+Psychopharmacology, Suggested Reading); back matter as chapters (Index by Drug
+Name 2568-2627, Index by Use 2628-2657, Index by Class 2658-2670, Abbreviations
+2671-2682); publisher ads 2683-2697 documented in `issues` (excluded).
+`unattributedPages` = [1, 2]. Confidence high. pageEnd is INCLUSIVE (matches
+chunk.ts `p <= pageEnd`); chunker-verified 156 chapter ranges are contiguous
+(24-2682, 0 gaps / 0 overlaps) and all 912 section pages fall inside their
+chapter's range. Extraction issues: 2697 PDF pages is ~2.8x the 950 printed
+pages (short-page layout, NOT duplication — exactly 152 "Therapeutics" /
+"Suggested Reading" headers match the 152 TOC entries); top-level color-band
+headings are dropped in many entries (Dosing and Use missing 60/152, The Art
+of Psychopharmacology 57, Side Effects 29, Special Populations 28) so those
+section pages were inferred from the first reliable subsection; the reliable
+chunk boundaries are the ~40 shared subsection headings enumerated in `issues`.
+Gate verified green on the full tree: lint 0, `tsc --noEmit` clean, 414 tests,
+`next build` exit 0. Committed only this outline + log; unrelated in-progress
+knowledge-layer files (ingest.ts, src/lib/knowledge/, cache/, other outlines,
+knowledge_layer.sql, package.json/package-lock.json) left for their owners.
+Shipped in commit 30cd8ba.
