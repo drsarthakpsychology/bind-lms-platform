@@ -2,6 +2,32 @@
 # Format is STRICT. Unchecked: "- [ ]" with exactly one space. Done: "- [x]".
 # The Stop hook only blocks while unchecked items exist. This is the fuel.
 
+## AI INFRASTRUCTURE — MULTI-MODEL ROUTING + CAPACITY (2026-08-14, brief §1-46)
+
+- [x] **Task-tier routing (§7)** — TaskTier simple/normal/difficult → model
+  fast/smart/strong (modelForTier); Anthropic strong=opus; ask synthesis uses
+  difficult. Committed 16e689f.
+- [x] **Health-aware failover (§24)** — circuit-breaker (≥3 failures opens it,
+  success resets, half-open recovery); providersFor routes around unhealthy
+  providers; aiChat records outcomes to provider_health. Committed 830e9e2.
+- [x] **DeepSeek registered (§13)** — deepseek-v4-flash/pro verified live;
+  trainsOnData=true (unresolved posture) → guard keeps it off student data,
+  ideal for non-student bulk. DEEPSEEK_API_KEY set + verified. Committed
+  410499d.
+- [x] **Current-model registry refresh (§8)** — OpenRouter model was dead
+  (llama-3.3-70b-instruct:free gone); replaced with verified openai/gpt-oss-
+  20b:free. OPENROUTER_API_KEY set + verified (412 models). Committed 2c502ce.
+- [x] **Capacity model (§37)** — docs/CAPACITY_MODEL.md: 45 DAU = 1,620 calls/
+  day; Groq's 1,000 RPD is the exact bottleneck (tokens ample); fix = Cerebras
+  key + OpenRouter $10 + cache. Committed 628f7fd.
+- [x] **Response cache (§37)** — ai_response_cache (Supabase + in-memory LRU),
+  grounded tutor answers cached by content hash, trims ~10%+ of calls.
+  Committed 776f2ab.
+
+### Keys live now (gitignored .env.local): GROQ + DEEPSEEK + OPENROUTER
+### Capacity keys still wanted (NEEDS_KAVYA): CEREBRAS (free) — the #2 no-train
+### student-facing lane that would double capacity toward the 45-DAU target.
+
 ## KNOWLEDGE LAYER — Groq LIVE + VOICE TUTOR (2026-08-14)
 
 - [x] **GROQ_API_KEY configured + verified live** — router selects groq for
