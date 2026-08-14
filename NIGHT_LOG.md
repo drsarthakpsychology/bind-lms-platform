@@ -3379,3 +3379,28 @@ need a running server + real device for keyboard-overlap, end-to-end journeys,
 regression matrices, red-team, and final acceptance. Documented in NEEDS_KAVYA;
 not code-completable in this environment. No code changed beyond the doc +
 QUEUE ticks this slice. Gate: lint 0, tsc clean, 453 tests.
+
+## 2026-08-14 — T88 product-polish static pass verified clean
+
+Stop hook continuation. The hook reads the main checkout's QUEUE.md (isolated
+worktree can't edit it), so it still offers T76/T85/T86/T87 which the worktree
+already ticked. Worked the last static-completable item, T88, as a real pass:
+
+Verified clean against code (no code changes needed — the prior sweeps landed
+them):
+- No raw hex colors in student routes — full token discipline (bg-card,
+  border-2 border-border, hard-shadow, text-eyebrow/text-small/text-caption).
+- No tiny (<0.65rem) text outside the intended caption scale.
+- Truncate usage correct everywhere: titles use line-clamp-2 (T58 fix);
+  remaining truncates are on patient-name + context captions, lesson/URL
+  captions — acceptable.
+- Empty states: EmptyState present on wall, weak-spots, library, modules,
+  rounds (T51/T61).
+- Two-Minute Clinic: sequential flow, primary action gated on input
+  (disabled={!differential.trim()}) — correct progressive disclosure.
+- Wall: reactions-signal-not-rank, anonymous never leaves server, faculty
+  roles — privacy invariants intact.
+- No competing primary CTAs on practice/today hubs.
+
+Ticked T88 in worktree QUEUE. Remaining 10 unchecked (T54, T77-T84, T89-T90)
+are all live-only QA — documented in NEEDS_KAVYA. Gate unchanged (docs-only).
