@@ -668,7 +668,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   contextual secondary actions, correct spacing, safe-area behavior, and
   preserved state
 
-- [ ] T77  Mobile workflow completion audit — test complete end-to-end journeys,
+- [x] T77  Mobile workflow completion audit — test complete end-to-end journeys,
   not isolated pages: login → dashboard → course → lesson → assessment →
   practice → patient simulation → debrief → journal → wall; identify and fix
   friction between screens
@@ -686,11 +686,11 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   them midway, navigate elsewhere, return later, and verify that the
   application returns the user to the correct context
 
-- [ ] T81  Mobile regression matrix — systematically test 320/360/375/390/412/430
+- [x] T81  Mobile regression matrix — systematically test 320/360/375/390/412/430
   widths across all major routes and interaction states; test portrait and
   relevant landscape states where applicable
 
-- [ ] T82  Desktop regression matrix — after all mobile-specific architectural
+- [x] T82  Desktop regression matrix — after all mobile-specific architectural
   changes, verify 1280/1440+ desktop layouts and all critical desktop
   interactions; fix only genuine regressions without compromising the mobile
   architecture

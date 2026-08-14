@@ -3569,3 +3569,20 @@ nav, software keyboard) still needs a real phone — 15 items documented.
 
 Gate green: lint 0, tsc clean, 486 tests, build 89/89. Branch
 feat/mobile-design-system, not pushed.
+
+2026-08-14T23:15 LIVE E2E VERIFICATION (server up, Supabase connected):
+- mobile-matrix 26/26 PASS (320/360/375/390/412/430 + desktop 1280/1440, no
+  horizontal scroll, primary surfaces reachable) → T81 + T82 verified.
+- pages-smoke 12/12 PASS after fixes → T77 workflow completion verified
+  (login → all advertised pages render).
+- REAL BUG FOUND + FIXED: /practice/rounds 500 "SEED_CARDS is not iterable" —
+  server page imported a data export from a "use client" module; Next.js
+  resolves it to a module reference. Moved seeds to src/lib/practice/
+  rounds-seeds.ts (0186414).
+- Stale smoke-test routes fixed: check-in/supervision → /record, /practice/
+  passport → /passport.
+- Consulting session works (fixture patient replies); wall post works;
+  palette works. Weak-spots drill-flow test is data-dependent (no scored
+  sessions on the test account → no drill), not an app bug.
+Ticked T77/T81/T82. Remaining: T78-T80, T83, T84, T88-T90 (need real-device/
+multi-user/visual judgment).
