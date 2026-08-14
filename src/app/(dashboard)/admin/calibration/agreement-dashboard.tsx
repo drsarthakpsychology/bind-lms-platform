@@ -60,7 +60,7 @@ export function AgreementDashboard({
               <span
                 className={cn(
                   "flex size-8 shrink-0 items-center justify-center rounded-full",
-                  passing ? "bg-green-100 text-green-700" : "bg-amber-100 text-amber-700",
+                  passing ? "bg-status-success-bg text-status-success-fg" : "bg-status-pending-bg text-status-pending-fg",
                 )}
               >
                 {passing ? <ShieldCheck className="size-4" aria-hidden /> : <ShieldAlert className="size-4" aria-hidden />}
@@ -77,7 +77,7 @@ export function AgreementDashboard({
               <span
                 className={cn(
                   "shrink-0 rounded-full px-2 py-0.5 text-caption font-medium",
-                  pct ? "bg-green-100 text-green-800" : "bg-secondary text-muted-foreground",
+                  pct ? "bg-status-success-bg text-status-success-fg" : "bg-secondary text-muted-foreground",
                 )}
               >
                 {passing ? "Validated" : pct ? "Ready to validate" : "Provisional"}
@@ -92,7 +92,7 @@ export function AgreementDashboard({
         dimension to validated — its number then appears in student debriefs.
       </p>
       {provisionalKeys.length > 0 ? (
-        <p className="mt-1 text-caption text-amber-700">
+        <p className="mt-1 text-caption text-status-pending-fg">
           {provisionalKeys.length} dimension{provisionalKeys.length === 1 ? "" : "s"} currently hidden
           from students.
         </p>

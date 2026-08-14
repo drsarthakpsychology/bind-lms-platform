@@ -46,7 +46,7 @@ export function WallReportsList({ reports }: { reports: ReportRow[] }) {
     return (
       <div className="rounded-md border-2 border-dashed border-border bg-card p-8 text-center">
         <p className="flex items-center justify-center gap-2 text-base font-medium">
-          <CheckCircle2 className="size-4 text-green-600" aria-hidden /> Nothing reported
+          <CheckCircle2 className="size-4 text-status-success-fg" aria-hidden /> Nothing reported
         </p>
         <p className="mt-1 text-small text-muted-foreground">
           The wall is clean — no open reports right now.
@@ -57,12 +57,12 @@ export function WallReportsList({ reports }: { reports: ReportRow[] }) {
 
   return (
     <div className="space-y-3">
-      {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
+      {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
       {rows.map((r) => (
         <div key={r.id} className="rounded-md border-2 border-border bg-card p-4">
           <div className="flex items-center justify-between text-caption text-muted-foreground">
             <span className="flex items-center gap-1.5">
-              <Flag className="size-3.5 text-amber-600" aria-hidden />
+              <Flag className="size-3.5 text-status-pending-fg" aria-hidden />
               Reported · {new Date(r.createdAt).toLocaleDateString()}
             </span>
           </div>

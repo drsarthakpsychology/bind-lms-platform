@@ -72,7 +72,7 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
 
   return (
     <div className="space-y-4">
-      {error ? <p className="text-small text-red-600" role="alert">{error}</p> : null}
+      {error ? <p className="text-small text-status-alert-fg" role="alert">{error}</p> : null}
       {rows.map((r) => {
         const human = scores[r.id];
         const isRevealed = revealed[r.id];
@@ -136,7 +136,7 @@ export function CalibrationList({ rows }: { rows: Row[] }) {
                   <span className="text-muted-foreground">AI: </span>
                   <span className="font-semibold text-numeric">{r.overall.toFixed(1)}</span>
                   {diff != null ? (
-                    <span className={cn("ml-2 text-caption font-medium", diff > 0.5 ? "text-amber-700" : "text-green-700")}>
+                    <span className={cn("ml-2 text-caption font-medium", diff > 0.5 ? "text-status-pending-fg" : "text-status-success-fg")}>
                       {diff > 0.5 ? `disagreement ${diff.toFixed(1)} — saved as a correction` : "agree"}
                     </span>
                   ) : null}
