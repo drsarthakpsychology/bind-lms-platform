@@ -1,3 +1,27 @@
+## 2026-08-14 — MAIN MERGE: PREPPED, HELD AT USER'S "WAIT"
+
+User asked "Push to Main and live on website." Prepared the merge, then the
+user said "wait" — held the irreversible step (per the cheapest-to-reverse
+rule, pushing to main is the hard-to-reverse action; waiting costs nothing).
+
+**Verified state (nothing pushed to main):**
+- `feat/groq-primary-director` is 112 commits ahead of local main; `origin/main`
+  is 13 commits ahead of local main but ALL 13 are already in the feature
+  branch → `origin/main` is an ancestor of the feature branch → a clean
+  fast-forward of main → feature HEAD is possible with no conflicts.
+- Feature branch is pushed + in sync with origin (backed up).
+- Gate green: tsc clean, 453 tests, build 82/82.
+- Local main is untouched (still at a6e3645); origin/main untouched.
+
+**When ready (one command each):**
+```
+git fetch origin
+git checkout main
+git merge --ff-only feat/groq-primary-director
+git push origin main
+vercel --prod --yes
+```
+
 ## 2026-08-14 — LANDING ALIGNMENT/CONSISTENCY PASS (user request, measured)
 
 User reported two batches of alignment issues (hero card-stack + sections
@@ -2799,3 +2823,4 @@ SAMBANOVA (paywalled), OPENCODE, NVIDIA.
 2026-08-14T15:29:48 Queue exhausted — allowing normal Claude stop.
 2026-08-14T15:31:07 Queue exhausted — allowing normal Claude stop.
 2026-08-14T15:34:11 Queue exhausted — allowing normal Claude stop.
+2026-08-14T15:39:16 Queue exhausted — allowing normal Claude stop.
