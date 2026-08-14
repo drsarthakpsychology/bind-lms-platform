@@ -4,6 +4,7 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, MoreHorizontal } from "lucide-react";
 import { StatusPill } from "@/components/mobile/status-pill";
+import { useOffline } from "@/lib/hooks/use-offline";
 
 /**
  * The compact patient header. One back affordance, the patient's name +
@@ -31,6 +32,7 @@ export function SimulationHeader({
   notesIndicator?: boolean;
 }) {
   const router = useRouter();
+  const { offline } = useOffline();
   const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
   const ss = String(seconds % 60).padStart(2, "0");
   const nearEnd = seconds >= 11 * 60;
@@ -59,10 +61,14 @@ export function SimulationHeader({
         </div>
         <div className="flex items-center gap-1.5">
           <span className="truncate text-caption capitalize text-muted-foreground">{difficulty}</span>
-          <StatusPill
-            tone={fixtureMode ? "scripted" : "ai"}
-            label={fixtureMode ? "Scripted" : "AI"}
-          />
+          {offline ? (
+            <StatusPill tone="warning" label="Offline" />
+          ) : (
+            <StatusPill
+              tone={fixtureMode ? "scripted" : "ai"}
+              label={fixtureMode ? "Scripted" : "AI"}
+            />
+          )}
         </div>
       </div>
 
