@@ -99,9 +99,9 @@ export default async function TodayPage() {
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <Reveal delay={0.05}>
         <p className="text-eyebrow text-muted-foreground">Today</p>
-        <h1 className="mt-1 text-h1">
-          {currentStreak > 0 ? `${currentStreak}-day streak. ` : ""}One thing next.
-        </h1>
+        {/* T40: the headline names the task; the streak (progress) stays in the
+            line below so progress never dominates the front door. */}
+        <h1 className="mt-1 text-h1">One thing next.</h1>
       </Reveal>
 
       {/* streak line */}
