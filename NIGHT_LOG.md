@@ -2367,3 +2367,4 @@ key exists; the actual training job is one key away. Committed 80814d8.
   recall / 90% grounded@8); wiring + data-policy (corpus-only, never student).
 - Also landed: context expansion (05bafa8) — measured grounded@8 76% → 90%.
 - Key blocker → NEEDS_KAVYA (one line): DEEPSEEK_API_KEY (or compatible).
+2026-08-14T10:06:34 Queue exhausted — allowing normal Claude stop.
