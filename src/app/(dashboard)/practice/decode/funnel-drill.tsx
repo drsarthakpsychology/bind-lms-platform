@@ -78,6 +78,7 @@ export function FunnelDrill({ entry }: { entry: IdiomEntry }) {
             onChange={(e) => setDraft(e.target.value)}
             placeholder="Ask a question…"
             maxLength={300}
+            enterKeyHint="send"
             className="flex-1 rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
           />
           <button
