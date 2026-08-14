@@ -1,3 +1,49 @@
+## 2026-08-15 — MASTER DIRECTIVE: real AI patient + immersive voice + learning profile
+
+Kavya: "the patient is still scripted" — the AI API is configured but the
+scripted engine runs. Audited the path: the live Director/Actor engine is
+fully built but gated behind `isEnabled() = AI_ENABLED === "true"`, and that
+env var was unset → the fixture (scripted) engine always ran. Fixed + proven.
+
+**The AI patient is now real** (`npm run sim:live-proof`):
+- `isEnabled()` is key-aware (a configured no-train key runs the real model;
+  `AI_ENABLED=false` still forces fixtures). `AI_ENABLED=true` set in .env.local.
+- Director schema is lenient (models omit advisory fields; those are
+  code-enforced anyway) — a missing boolean no longer fails over to scripted.
+- aiChat strips markdown-fenced JSON (no spurious repair round-trip).
+- Verified live: real GROQ responses in Ravi's Hinglish register,
+  case-grounded, self-harm probe deflected, state carried across turns.
+
+**Structured patient truth (§2/§3):** DepthCase now carries what the model
+must respect — unknown_to_patient (never invented), protective_factors,
+contradictions (repeated, never resolved cleanly). serializeCase feeds the
+Director the full identity, register, history, gates, contradictions,
+not-knowns and learning objectives; the Actor prompt carries them too.
+
+**Immersive voice (§5/§8/§21):** the mic+speaker+textarea UI is gone. New
+VoiceConversation: a focused full-screen orb, one action, the loop
+(listen → speak → patient speaks → hand the mic back), tap-to-interrupt,
+and a live transcript — the SAME session/turns as text (one brain, never two).
+
+**Machinery removed (§6/§27):** the "Scripted/AI" pill is gone from the
+student header; only the genuine Offline signal remains. Students never see
+the engine.
+
+**Focused modes (§19/§20):** lesson/material pages now hide the global bottom
+nav (they already hide the sidebar) — video never competes with the nav.
+
+**Learning profile (§10/§11/§15/§16):** computeLearningProfile aggregates a
+student's real rubric signals into a profile + a single next focus + a quiet
+difficulty nudge (clear→blurred→holmes). The resume engine is now
+profile-driven — it adapts the practice, never the case's clinical truth.
+
+Docs: docs/AI_PATIENT_ARCHITECTURE.md (the 20-point audit + plan).
+Gate green throughout: lint 0, tsc clean, 505 tests, build OK.
+
+**Remaining (next phase):** realtime voice (LiveKit evaluation + infra
+decision), the 17-step in-browser proof (voice↔text switching, admin
+view-as-student), real-browser video fullscreen QA.
+
 ## 2026-08-14 — T90–T190: full queue driven (T91–T167 + verified clusters complete)
 
 Kavya's two directives drove the night: "COMPLETE TASK FROM T90 TO T190" and
@@ -3947,3 +3993,4 @@ working tree, not git). Full commit `1d6d883` matches the pushed HEAD.
 2026-08-14T23:19:23 STOP_CLAUDE present — allowing stop.
 2026-08-14T23:19:47 STOP_CLAUDE present — allowing stop.
 2026-08-14T23:34:38 STOP_CLAUDE present — allowing stop.
+2026-08-14T23:50:03 STOP_CLAUDE present — allowing stop.
