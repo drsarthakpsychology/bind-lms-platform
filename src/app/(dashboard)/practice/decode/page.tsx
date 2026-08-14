@@ -1,10 +1,6 @@
 import { IDIOMS, type IdiomEntry, type IdiomMeaning } from "@/lib/decode/idioms";
 import { createClient } from "@/lib/supabase/server";
-import { DecodeArena } from "./decode-arena";
-import { FunnelDrill } from "./funnel-drill";
-import { SevenReadings } from "./seven-readings";
-import { CfiDrill } from "./cfi-drill";
-import { QuizCheck } from "@/components/practice/quiz-check";
+import { DecodeFlow } from "./decode-flow";
 import type { QuizItem } from "@/lib/quiz/quiz";
 
 export const dynamic = "force-dynamic";
@@ -115,49 +111,7 @@ export default async function DecodePage() {
       </p>
 
       <div className="mt-6">
-        <DecodeArena entries={set} />
-      </div>
-
-      <div className="mt-10">
-        <h2 className="text-base font-semibold">The Funnel — five questions to find the truth</h2>
-        <p className="mt-1 text-small text-muted-foreground">
-          The core drill. Open → specify → instantiate → quantify → contextualise → attribute.
-        </p>
-        <div className="mt-3">
-          <FunnelDrill entry={set[1]} />
-        </div>
-      </div>
-
-      <div className="mt-10">
-        <h2 className="text-base font-semibold">Seven Readings — Kirmayer &amp; Young applied</h2>
-        <p className="mt-1 text-small text-muted-foreground">
-          A somatic complaint can mean a disease, an intrapsychic conflict, psychopathology,
-          a cultural idiom, a metaphor, social positioning, or protest. Assign them all.
-        </p>
-        <div className="mt-3">
-          <SevenReadings entry={set[2]} />
-        </div>
-      </div>
-
-      <div className="mt-10">
-        <h2 className="text-base font-semibold">CFI Practice — the Cultural Formulation Interview</h2>
-        <p className="mt-1 text-small text-muted-foreground">
-          Elicit the patient&apos;s explanatory model without dismissing it. The failure mode is
-          correcting the belief instead of understanding it.
-        </p>
-        <div className="mt-3">
-          <CfiDrill />
-        </div>
-      </div>
-
-      <div className="mt-10">
-        <h2 className="text-base font-semibold">Check what stuck</h2>
-        <p className="mt-1 text-small text-muted-foreground">
-          A quick check, not a test. Each item carries its source.
-        </p>
-        <div className="mt-3">
-          <QuizCheck items={DECODE_QUIZ} />
-        </div>
+        <DecodeFlow set={set} quiz={DECODE_QUIZ} />
       </div>
     </div>
   );
