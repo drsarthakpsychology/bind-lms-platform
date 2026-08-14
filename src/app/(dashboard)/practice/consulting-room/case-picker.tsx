@@ -3,9 +3,10 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Eye, Lock } from "lucide-react";
+import { Eye, Info, Lock } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { StatusPill } from "@/components/mobile/status-pill";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
 export interface CaseCard {
   id: string;
@@ -242,5 +243,33 @@ function CaseCardItem({
         ) : null}
       </div>
     </li>
+  );
+}
+
+/**
+ * The "Safety first" disclosure — moved out of the list into a header action
+ * that opens a bottom sheet (T33), so the case list stays clean and the first
+ * patient is reachable immediately.
+ */
+export function SafetyFirstSheet() {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-border bg-card px-3 text-caption font-medium text-muted-foreground transition-colors hover:text-foreground active:translate-y-px"
+      >
+        <Info className="size-3.5" aria-hidden />
+        Safety first
+      </button>
+      <MobileBottomSheet open={open} onOpenChange={setOpen} title="Safety first">
+        <ul className="space-y-2 text-small text-muted-foreground">
+          <li>Everything here is a <strong className="text-foreground">simulation</strong>. The patient is not real.</li>
+          <li>If you&apos;re struggling yourself, this is not the place — reach out to your faculty or a helpline.</li>
+          <li>Your sessions are private to you and your faculty, and are used only for your debrief.</li>
+        </ul>
+      </MobileBottomSheet>
+    </>
   );
 }

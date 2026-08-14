@@ -88,6 +88,10 @@ export function EditorPane({
       if (!res.ok) { setNotice(`Save failed: ${data.error ?? "error"}`); return; }
       setStatus(data.status);
       setSavedAt(Date.now());
+    } catch {
+      // Network throw (offline / server down) — surface it instead of an
+      // unhandled rejection (T50). The draft stays in state.
+      setNotice("Autosave failed — check your connection. Your draft is still here.");
     } finally { setBusy(null); }
   }, [drug, document, reason]);
 
@@ -122,7 +126,7 @@ export function EditorPane({
   const published = status === "published";
 
   return (
-    <div className="flex flex-1 overflow-hidden">
+    <div className="flex flex-1 flex-col overflow-hidden lg:flex-row">
       {/* The document itself — the edit surface. */}
       <div className="flex-1 overflow-y-auto p-6">
         <div className="mx-auto max-w-3xl">
@@ -164,8 +168,9 @@ export function EditorPane({
         </div>
       </div>
 
-      {/* Right rail: status, publish, selected source. */}
-      <div className="w-80 shrink-0 overflow-y-auto border-l-2 border-border p-4">
+      {/* Right rail: status, publish, selected source. Stacks below the
+          document on mobile (T32). */}
+      <div className="w-full shrink-0 overflow-y-auto border-t-2 border-border p-4 lg:w-80 lg:border-l-2 lg:border-t-0">
         <div className="rounded-md border-2 border-border p-3">
           <div className="flex items-center justify-between">
             <span className="text-caption font-semibold uppercase text-muted-foreground">Status</span>

@@ -1,22 +1,22 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
-import { Badge } from "@/components/ui/badge";
+import { StatusPill } from "@/components/mobile/status-pill";
 import { drugDetail } from "@/lib/psychopharm/store";
 import { ReviewFilter } from "./review-filter";
 
-/** Map a document status to an unmistakable badge (label + fill, never colour alone). */
-function statusBadge(status: string) {
+/** Map a document status to an unmistakable pill (dot + label, never colour alone). */
+function statusPill(status: string): { tone: "ai" | "scripted" | "neutral" | "warning"; label: string } {
   switch (status) {
     case "published":
-      return { variant: "published", label: "Published" } as const;
+      return { tone: "ai", label: "Published" };
     case "in_review":
-      return { variant: "pending", label: "In review" } as const;
+      return { tone: "scripted", label: "In review" };
     case "verified":
-      return { variant: "outline", label: "Verified" } as const;
+      return { tone: "neutral", label: "Verified" };
     default:
-      return { variant: "draft", label: "Draft" } as const;
+      return { tone: "neutral", label: "Draft" };
   }
 }
 
@@ -27,7 +27,10 @@ function statusBadge(status: string) {
  * This is a LIST — it must be light. The student-facing summary line comes from
  * the static `drugDetail` (curated TS data), NOT the full `document` jsonb, so
  * the query stays cheap and the ~100 editor links don't trigger a prefetch
- * storm of heavy editor renders.
+ * storm of heavy editor renders (kept `prefetch={false}`).
+ *
+ * Mobile (T32): rows are 48px single-tap targets with the status as a quiet
+ * StatusPill trailing, not a competing badge + text cluster.
  */
 export default async function PsychReviewPage({
   searchParams,
@@ -67,33 +70,32 @@ export default async function PsychReviewPage({
           <p className="text-small text-muted-foreground">No medications match “{sp.q}”.</p>
         ) : (
           filtered.map((drug) => {
-            const { variant, label } = statusBadge(statusByDrug.get(drug.id) ?? "draft");
+            const { tone, label } = statusPill(statusByDrug.get(drug.id) ?? "draft");
             const plain = drugDetail(drug.generic_name)?.plain;
             return (
               <Link
                 key={drug.id}
                 href={`/admin/psychopharm/editor/${encodeURIComponent(drug.generic_name.toLowerCase().replace(/\s+/g, "-"))}`}
                 prefetch={false}
-                className="flex items-center justify-between gap-3 rounded-md border-2 border-border bg-card p-3 transition hover:border-foreground hover:hard-shadow-sm"
+                className="flex min-h-[48px] w-full items-center gap-3 rounded-lg border-2 border-border bg-card px-3 py-2 transition-colors hover:bg-accent active:translate-y-px"
               >
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <p className="text-body-strong">{drug.generic_name}</p>
-                    {drug.drug_class ? <Badge variant="secondary">{drug.drug_class}</Badge> : null}
-                  </div>
-                  {plain ? (
-                    <p className="mt-1 line-clamp-2 text-small text-muted-foreground">{plain}</p>
-                  ) : (
-                    <p className="mt-1 text-caption text-muted-foreground">No student summary yet.</p>
-                  )}
-                </div>
-                <div className="flex shrink-0 items-center gap-2">
-                  <Badge variant={variant}>{label}</Badge>
-                  <span className="inline-flex items-center gap-1 text-caption font-medium text-link">
-                    Open
-                    <ArrowRight className="size-3.5" aria-hidden />
+                <span className="min-w-0 flex-1">
+                  <span className="flex items-baseline gap-2">
+                    <span className="text-small font-semibold leading-snug text-foreground [overflow-wrap:anywhere] line-clamp-1">
+                      {drug.generic_name}
+                    </span>
+                    {drug.drug_class ? (
+                      <span className="truncate text-caption text-muted-foreground">{drug.drug_class}</span>
+                    ) : null}
                   </span>
-                </div>
+                  <span className="mt-0.5 block line-clamp-2 text-caption text-muted-foreground">
+                    {plain ?? "No student summary yet."}
+                  </span>
+                </span>
+                <span className="flex shrink-0 items-center gap-1">
+                  <StatusPill tone={tone} label={label} />
+                  <ChevronRight className="size-4 text-muted-foreground" aria-hidden />
+                </span>
               </Link>
             );
           })

@@ -7,8 +7,6 @@ import {
   CheckCircle2,
   CircleCheck,
   AlertTriangle,
-  RefreshCw,
-  Mic2,
   RotateCcw,
   ChevronDown,
   ChevronLeft,
@@ -130,7 +128,6 @@ export function DebriefView({
   }, [voice]);
 
   const stepKey = steps[step].key;
-  const isLast = step === steps.length - 1;
 
   const nextStep = React.useCallback(() => {
     haptic("tap");
@@ -265,11 +262,7 @@ export function DebriefView({
             totalTurns={totalTurns ?? 0}
           />
         ) : stepKey === "missed" ? (
-          <MissedStep
-            revealMissed={revealMissed}
-            setRevealMissed={setRevealMissed}
-            missed={missed}
-          />
+          <MissedStep revealMissed={revealMissed} missed={missed} />
         ) : (
           <DeliveryStep voice={voice} />
         )}
@@ -488,11 +481,9 @@ function QuotesStep({
 
 function MissedStep({
   revealMissed,
-  setRevealMissed,
   missed,
 }: {
   revealMissed: boolean;
-  setRevealMissed: (v: boolean) => void;
   missed: string[];
 }) {
   return (

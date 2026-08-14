@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
+import { MobileInput, MobileTextarea } from "@/components/mobile/mobile-input";
 
 /**
  * Dictate form — Dr. Sarthak types/records a composite case. Saves to
@@ -67,12 +68,12 @@ export function DictateForm() {
     <form onSubmit={submit} className="space-y-4 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
       <div>
         <label className="text-small font-medium" htmlFor="dict-title">Case title</label>
-        <input
+        <MobileInput
           id="dict-title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="e.g. Young man, academic pressure, first-episode anxiety"
-          className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          className="mt-1"
         />
       </div>
 
@@ -82,7 +83,7 @@ export function DictateForm() {
           id="dict-diff"
           value={difficulty}
           onChange={(e) => setDifficulty(e.target.value)}
-          className="mt-1 w-full rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          className="mt-1 min-h-11 w-full rounded-md border-2 border-border bg-background px-3 text-base focus:outline-none focus:ring-2 focus:ring-ring"
         >
           <option value="cooperative">Cooperative</option>
           <option value="guarded">Guarded</option>
@@ -93,45 +94,45 @@ export function DictateForm() {
 
       <div>
         <label className="text-small font-medium" htmlFor="dict-pres">Presentation (chief complaint + how they present)</label>
-        <textarea
+        <MobileTextarea
           id="dict-pres"
           value={presentation}
           onChange={(e) => setPresentation(e.target.value)}
           rows={4}
           placeholder="What brought them in, in their own words. Somatic-first? Family in the room?"
-          className="mt-1 w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          className="mt-1 resize-none"
         />
       </div>
 
       <div>
         <label className="text-small font-medium" htmlFor="dict-hist">History (timeline, prior, substances, help-seeking)</label>
-        <textarea
+        <MobileTextarea
           id="dict-hist"
           value={history}
           onChange={(e) => setHistory(e.target.value)}
           rows={4}
           placeholder="Realistic help-seeking delay, prior contacts (GP, faith healer, family remedy)."
-          className="mt-1 w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          className="mt-1 resize-none"
         />
       </div>
 
       <div>
         <label className="text-small font-medium" htmlFor="dict-red">Red flags (one per line)</label>
-        <textarea
+        <MobileTextarea
           id="dict-red"
           value={redFlags}
           onChange={(e) => setRedFlags(e.target.value)}
           rows={2}
           placeholder="e.g. Passive suicidal ideation, no plan"
-          className="mt-1 w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          className="mt-1 resize-none"
         />
       </div>
 
       {error ? (
-        <div className="rounded-md border-2 border-red-400 bg-red-50 p-3 text-small text-red-700" role="alert">{error}</div>
+        <div className="rounded-md border-2 border-status-alert-fg/40 bg-status-alert-bg p-3 text-small text-status-alert-fg" role="alert">{error}</div>
       ) : null}
       {done ? (
-        <div className="rounded-md border-2 border-green-500 bg-green-50 p-3 text-small text-green-800" role="status">
+        <div className="rounded-md border-2 border-status-success-fg/40 bg-status-success-bg p-3 text-small text-status-success-fg" role="status">
           Saved as a draft. Add the next one.
         </div>
       ) : null}
@@ -139,7 +140,7 @@ export function DictateForm() {
       <button
         type="submit"
         disabled={busy}
-        className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+        className="min-h-12 w-full rounded-md border-2 border-border bg-primary px-4 text-base font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
       >
         {busy ? "Saving…" : "Save case draft"}
       </button>

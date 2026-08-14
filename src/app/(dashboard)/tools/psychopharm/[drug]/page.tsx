@@ -44,7 +44,7 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6 py-6 pb-44 lg:pb-6">
+    <div className="mx-auto max-w-3xl space-y-6 py-6 pb-24 lg:pb-6">
       {/* Mobile header — 40px back target + title context. The shell top bar is
           present on this route, so its own safe-area inset is off. */}
       <MobileHeader

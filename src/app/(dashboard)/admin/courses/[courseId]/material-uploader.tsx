@@ -28,22 +28,8 @@ import {
 } from "./materials-actions";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { MobileInput } from "@/components/mobile/mobile-input";
 
 /**
  * Upload a file to the signed materials-upload URL. This goes through the
@@ -126,7 +112,8 @@ export function MaterialUploader({
   const [linkTitle, setLinkTitle] = useState("");
   const [linkUrl, setLinkUrl] = useState("");
   const [linkError, setLinkError] = useState<string | null>(null);
-  const [deleteTarget, setDeleteTarget] = useState<UploadRow | null>(null);
+  const [menuTarget, setMenuTarget] = useState<UploadRow | null>(null);
+  const [menuMode, setMenuMode] = useState<"menu" | "delete">("menu");
   const [deletePending, setDeletePending] = useState(false);
   const [banner, setBanner] = useState<string | null>(null);
   const [draggedId, setDraggedId] = useState<string | null>(null);
@@ -313,7 +300,8 @@ export function MaterialUploader({
     setDeletePending(true);
     const result = await deleteMaterial(courseId, target.id, target.url ?? null);
     setDeletePending(false);
-    setDeleteTarget(null);
+    setMenuTarget(null);
+    setMenuMode("menu");
     if (result.error) setBanner(result.error);
     else router.refresh();
   }
@@ -385,51 +373,47 @@ export function MaterialUploader({
 
       {/* Add a link */}
       <div className="flex justify-end">
-        <Dialog open={linkOpen} onOpenChange={setLinkOpen}>
-          <DialogTrigger asChild>
-            <Button type="button" variant="secondary" size="sm">
-              <Plus className="size-3.5" aria-hidden />
-              Add a link
-            </Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Add a link</DialogTitle>
-              <DialogDescription>
-                A URL students open in a new tab, labelled with its title.
-              </DialogDescription>
-            </DialogHeader>
-            <div className="space-y-3">
-              <label className="block space-y-1.5">
-                <span className="text-small font-medium">Title</span>
-                <input
-                  value={linkTitle}
-                  onChange={(e) => setLinkTitle(e.target.value)}
-                  className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
-                  placeholder="Supplementary reading"
-                />
-              </label>
-              <label className="block space-y-1.5">
-                <span className="text-small font-medium">URL</span>
-                <input
-                  value={linkUrl}
-                  onChange={(e) => setLinkUrl(e.target.value)}
-                  className="h-9 w-full rounded-md border-2 border-input bg-background px-3 text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
-                  placeholder="https://…"
-                />
-              </label>
-              {linkError && <p role="alert" className="text-caption text-status-alert-fg">{linkError}</p>}
-            </div>
-            <DialogFooter>
-              <Button type="button" variant="outline" onClick={() => setLinkOpen(false)}>
-                Cancel
-              </Button>
-              <Button type="button" onClick={submitLink}>
+        <Button type="button" variant="secondary" size="sm" onClick={() => setLinkOpen(true)}>
+          <Plus className="size-3.5" aria-hidden />
+          Add a link
+        </Button>
+        <MobileBottomSheet
+          open={linkOpen}
+          onOpenChange={setLinkOpen}
+          title="Add a link"
+          description="A URL students open in a new tab, labelled with its title."
+          footer={
+            <div className="flex flex-col gap-2">
+              <Button type="button" onClick={submitLink} className="w-full">
                 Add link
               </Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+              <Button type="button" variant="outline" onClick={() => setLinkOpen(false)} className="w-full">
+                Cancel
+              </Button>
+            </div>
+          }
+        >
+          <div className="space-y-3">
+            <label className="block space-y-1.5">
+              <span className="text-small font-medium">Title</span>
+              <MobileInput
+                value={linkTitle}
+                onChange={(e) => setLinkTitle(e.target.value)}
+                placeholder="Supplementary reading"
+              />
+            </label>
+            <label className="block space-y-1.5">
+              <span className="text-small font-medium">URL</span>
+              <MobileInput
+                value={linkUrl}
+                onChange={(e) => setLinkUrl(e.target.value)}
+                inputMode="url"
+                placeholder="https://…"
+              />
+            </label>
+            {linkError && <p role="alert" className="text-caption text-status-alert-fg">{linkError}</p>}
+          </div>
+        </MobileBottomSheet>
       </div>
 
       {/* Pending uploads (live progress + cancel) */}
@@ -556,32 +540,18 @@ export function MaterialUploader({
                 {m.sizeBytes ? ` · ${(m.sizeBytes / 1024).toFixed(0)} KB` : ""}
               </span>
 
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button type="button" variant="ghost" size="icon-sm" aria-label={`Actions for ${m.title}`}>
-                    <MoreHorizontal className="size-4" aria-hidden />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuItem onSelect={() => startRename(m.id, m.title)}>
-                    <Pencil className="size-4" aria-hidden />
-                    Rename
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={() => setReplaceTarget(m)}>
-                    <UploadCloud className="size-4" aria-hidden />
-                    Replace file
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <Dialog open={deleteTarget?.id === m.id} onOpenChange={(open) => !open && setDeleteTarget(null)}>
-                    <DialogTrigger asChild>
-                      <DropdownMenuItem variant="destructive" onSelect={(e) => { e.preventDefault(); setDeleteTarget(m); }}>
-                        <Trash2 className="size-4" aria-hidden />
-                        Delete
-                      </DropdownMenuItem>
-                    </DialogTrigger>
-                  </Dialog>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon-sm"
+                aria-label={`Actions for ${m.title}`}
+                onClick={() => {
+                  setMenuMode("menu");
+                  setMenuTarget(m);
+                }}
+              >
+                <MoreHorizontal className="size-4" aria-hidden />
+              </Button>
 
               {/* Replace file picker */}
               {replaceTarget?.id === m.id && (
@@ -598,31 +568,76 @@ export function MaterialUploader({
         </ul>
       )}
 
-      {/* Delete confirmation */}
-      <Dialog open={deleteTarget !== null} onOpenChange={(open) => !open && setDeleteTarget(null)}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Delete this material?</DialogTitle>
-            <DialogDescription>
-              This removes the file from the lesson. This can&apos;t be undone.
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={() => setDeleteTarget(null)}>
-              Cancel
-            </Button>
-            <Button
+      {/* Material action sheet (rename / replace / delete) */}
+      <MobileBottomSheet
+        open={menuTarget !== null}
+        onOpenChange={(next) => !next && setMenuTarget(null)}
+        title={menuMode === "delete" ? "Delete this material?" : menuTarget?.title}
+        description={
+          menuMode === "delete"
+            ? "This removes the file from the lesson. This can't be undone."
+            : undefined
+        }
+        footer={
+          menuMode === "delete" ? (
+            <div className="flex flex-col gap-2">
+              <Button
+                type="button"
+                variant="destructive"
+                onClick={() => menuTarget && handleDelete(menuTarget)}
+                disabled={deletePending}
+                className="w-full"
+              >
+                {deletePending && <Loader2 className="size-4 animate-spin" aria-hidden />}
+                {deletePending ? "Deleting…" : "Delete material"}
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => setMenuMode("menu")}
+                className="w-full"
+              >
+                Cancel
+              </Button>
+            </div>
+          ) : undefined
+        }
+      >
+        {menuMode === "menu" && menuTarget ? (
+          <div className="flex flex-col gap-1">
+            <button
               type="button"
-              variant="destructive"
-              onClick={() => deleteTarget && handleDelete(deleteTarget)}
-              disabled={deletePending}
+              onClick={() => {
+                startRename(menuTarget.id, menuTarget.title);
+                setMenuTarget(null);
+              }}
+              className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium transition-colors hover:bg-accent"
             >
-              {deletePending && <Loader2 className="size-4 animate-spin" aria-hidden />}
-              {deletePending ? "Deleting…" : "Delete material"}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+              <Pencil className="size-4 text-muted-foreground" aria-hidden />
+              Rename
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setReplaceTarget(menuTarget);
+                setMenuTarget(null);
+              }}
+              className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium transition-colors hover:bg-accent"
+            >
+              <UploadCloud className="size-4 text-muted-foreground" aria-hidden />
+              Replace file
+            </button>
+            <button
+              type="button"
+              onClick={() => setMenuMode("delete")}
+              className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium text-status-alert-fg transition-colors hover:bg-accent"
+            >
+              <Trash2 className="size-4" aria-hidden />
+              Delete
+            </button>
+          </div>
+        ) : null}
+      </MobileBottomSheet>
     </div>
   );
 }

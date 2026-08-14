@@ -1,6 +1,6 @@
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 
-import { CasePicker } from "./case-picker";
+import { CasePicker, SafetyFirstSheet } from "./case-picker";
 import { SimulationBadge } from "./simulation-badge";
 
 export const dynamic = "force-dynamic";
@@ -93,8 +93,8 @@ export default async function ConsultingRoomPage() {
   });
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-      <div className="mb-6 flex items-center justify-between gap-3">
+    <div className="mx-auto w-full max-w-5xl">
+      <div className="mb-6 flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-eyebrow text-muted-foreground">Consulting Room</p>
           <h1 className="mt-1 text-h1">Choose your patient</h1>
@@ -102,19 +102,13 @@ export default async function ConsultingRoomPage() {
             Real presentations, real language. Your debrief shows you what you missed.
           </p>
         </div>
-        <SimulationBadge />
+        <div className="flex shrink-0 flex-col items-end gap-2">
+          <SimulationBadge />
+          <SafetyFirstSheet />
+        </div>
       </div>
 
       <CasePicker cases={merged} />
-
-      <div className="mt-8 rounded-md border-2 border-border bg-card p-4">
-        <h2 className="text-base font-semibold">Safety first</h2>
-        <ul className="mt-2 space-y-1 text-small text-muted-foreground">
-          <li>• Everything here is a <strong>simulation</strong>. The patient is not real.</li>
-          <li>• If you&apos;re struggling yourself, this is not the place — reach out to your faculty or a helpline.</li>
-          <li>• Your sessions are private to you and your faculty, and are used only for your debrief.</li>
-        </ul>
-      </div>
     </div>
   );
 }

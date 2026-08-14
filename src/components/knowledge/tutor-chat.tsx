@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Send, BookOpen, Loader2, Sparkles, Volume2, VolumeX } from "lucide-react";
+import { Send, BookOpen, Loader2, RotateCcw, Sparkles, Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { VoiceAskButton } from "./voice-ask-button";
@@ -32,6 +32,33 @@ const SUGGESTIONS = [
   "How is alcohol withdrawal syndrome managed?",
 ];
 
+/** A retrieved passage, line-clamped with a "show more" expand for long quotes. */
+function SourcePassage({ text }: { text: string }) {
+  const [expanded, setExpanded] = React.useState(false);
+  const long = text.length > 200;
+  return (
+    <>
+      <p
+        className={cn(
+          "mt-1 text-xs leading-relaxed text-muted-foreground",
+          long && !expanded && "line-clamp-4",
+        )}
+      >
+        {text}
+      </p>
+      {long && (
+        <button
+          type="button"
+          onClick={() => setExpanded((e) => !e)}
+          className="mt-1 text-caption font-medium text-link hover:underline"
+        >
+          {expanded ? "Show less" : "Show more"}
+        </button>
+      )}
+    </>
+  );
+}
+
 /**
  * Psychology Tutor — asks the grounded knowledge layer (/api/knowledge/ask).
  * Answers are retrieval-first: real book passages with source citations always
@@ -44,7 +71,16 @@ export function TutorChat() {
   const [speaking, setSpeaking] = React.useState(false);
   const [speakError, setSpeakError] = React.useState<string | null>(null);
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const listRef = React.useRef<HTMLDivElement>(null);
   const voiceAskedRef = React.useRef(false);
+
+  // Keep the newest message in view as the conversation grows (and while the
+  // assistant is "typing") so the latest answer isn't scrolled out of frame.
+  React.useEffect(() => {
+    const el = listRef.current;
+    if (!el) return;
+    el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+  }, [messages, loading]);
 
   /** Read the latest assistant answer aloud (browser speechSynthesis — $0). */
   function speakAnswer(text: string) {
@@ -121,15 +157,15 @@ export function TutorChat() {
     <div className="flex h-full min-h-[60vh] max-h-[75dvh] flex-col overflow-hidden rounded-lg border-2 border-border bg-card">
       {/* Header */}
       <div className="flex items-center gap-2 border-b-2 border-border px-4 py-3">
-        <BookOpen className="size-4 text-link" aria-hidden />
-        <p className="text-body-strong">Psychology Tutor</p>
-        <span className="ml-auto rounded-md border-2 border-border bg-muted px-2 py-0.5 text-caption text-muted-foreground">
+        <BookOpen className="size-4 shrink-0 text-link" aria-hidden />
+        <p className="shrink-0 text-body-strong">Psychology Tutor</p>
+        <span className="ml-auto max-w-[55%] truncate rounded-md border-2 border-border bg-muted px-2 py-0.5 text-caption text-muted-foreground">
           answers grounded in the authorised books
         </span>
       </div>
 
       {/* Messages */}
-      <div className="flex-1 space-y-4 overflow-y-auto px-4 py-4" aria-live="polite">
+      <div ref={listRef} className="flex-1 space-y-4 overflow-y-auto px-4 py-4" aria-live="polite">
         {messages.length === 0 && (
           <div className="py-6">
             <p className="text-body-strong">Ask anything about psychology and psychiatry.</p>
@@ -143,7 +179,7 @@ export function TutorChat() {
                   key={s}
                   onClick={() => ask(s)}
                   disabled={loading}
-                  className="rounded-md border-2 border-border px-3 py-1.5 text-left text-sm hover:border-link hover:text-link disabled:opacity-50"
+                  className="min-h-11 rounded-md border-2 border-border px-3 py-1.5 text-left text-sm hover:border-link hover:text-link disabled:opacity-50"
                 >
                   {s}
                 </button>
@@ -167,7 +203,21 @@ export function TutorChat() {
                 </p>
               )}
               <p className="whitespace-pre-wrap">{m.content}</p>
-              {m.role === "assistant" && (
+              {m.error && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    const prevUser = [...messages].slice(0, i).reverse().find((x) => x.role === "user");
+                    if (prevUser) ask(prevUser.content);
+                  }}
+                  disabled={loading}
+                  className="mt-2 inline-flex items-center gap-1.5 rounded-md border-2 border-border px-3 py-1.5 text-caption font-medium transition-colors hover:bg-accent disabled:opacity-50"
+                >
+                  <RotateCcw className="size-3.5" aria-hidden />
+                  Try again
+                </button>
+              )}
+              {m.role === "assistant" && !m.error && (
                 <div className="mt-2 flex items-center gap-2">
                   <button
                     type="button"
@@ -187,7 +237,7 @@ export function TutorChat() {
                   {m.sources.slice(0, 4).map((s) => (
                     <details key={s.id} className="rounded-md border-2 border-border bg-muted px-2 py-1.5">
                       <summary className="cursor-pointer text-caption font-medium text-link">{s.citation}</summary>
-                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{s.text}</p>
+                      <SourcePassage text={s.text} />
                     </details>
                   ))}
                 </div>
@@ -218,7 +268,8 @@ export function TutorChat() {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about any psychology topic… (or press the mic)"
           aria-label="Ask the Psychology Tutor"
-          className="min-h-11 min-w-0 flex-1 rounded-md border-2 border-border bg-background px-3 py-2 text-sm outline-none focus:border-link"
+          enterKeyHint="send"
+          className="min-h-11 min-w-0 flex-1 rounded-md border-2 border-border bg-background px-3 py-2 text-base outline-none focus:border-link"
         />
         <VoiceAskButton
           onTranscribed={(text) => {
@@ -227,7 +278,13 @@ export function TutorChat() {
           }}
           disabled={loading}
         />
-        <Button type="submit" size="sm" disabled={loading || !input.trim()} aria-label="Ask">
+        <Button
+          type="submit"
+          size="lg"
+          disabled={loading || !input.trim()}
+          aria-label="Ask"
+          className="min-h-11"
+        >
           <Send className="size-4" aria-hidden />
         </Button>
       </form>

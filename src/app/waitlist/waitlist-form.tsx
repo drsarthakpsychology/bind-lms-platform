@@ -125,7 +125,14 @@ export function WaitlistForm() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
             <Label htmlFor="phone">Phone (optional)</Label>
-            <Input id="phone" name="phone" autoComplete="tel" maxLength={40} />
+            <Input
+              id="phone"
+              name="phone"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              maxLength={40}
+            />
           </div>
           <div className="space-y-1.5">
             <Label htmlFor="status">You are…</Label>

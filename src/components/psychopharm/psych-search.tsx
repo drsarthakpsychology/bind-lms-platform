@@ -98,7 +98,7 @@ export function PsychSearch({
     }
     setSelected(name);
     setList([]);
-    setQ(name);
+    setQ("");
     setSearchError(false);
     loadBands(name);
   }

@@ -59,11 +59,21 @@ export function MaterialViewer({
 
   // A short reference id per failure — the student quotes it to their
   // instructor, who can find the matching server-side log line.
-  const fail = (raw: unknown) => {
+  const fail = useCallback((raw: unknown) => {
     const id = crypto.randomUUID().replace(/-/g, "").slice(0, 6).toUpperCase();
     console.error(`[material:${id}] load failed:`, raw);
     setCorrelationId(id);
-  };
+  }, []);
+
+  // Promote inner PDF failures into the same error card the signed-URL fetch
+  // uses, so the viewer has one error language (correlation id + retry).
+  const handlePdfFail = useCallback(
+    (message: string) => {
+      fail(message);
+      setError(message);
+    },
+    [fail],
+  );
 
   // Fetch a signed URL on mount (enrolment re-checked at request time).
   useEffect(() => {
@@ -96,7 +106,7 @@ export function MaterialViewer({
     return () => {
       cancelled = true;
     };
-  }, [materialId, loadKey]);
+  }, [materialId, loadKey, fail]);
 
   // Slow-connection signal — after 8s still loading, tell the student it hasn't
   // frozen. Resets on retry (the only path that re-enters loading after an error).
@@ -175,10 +185,7 @@ export function MaterialViewer({
           signedUrl={signedUrl!}
           materialId={materialId}
           watermarkLabel={watermarkLabel}
-          onFail={(message) => {
-            fail(message);
-            setError(message);
-          }}
+          onFail={handlePdfFail}
         />
       );
     case "audio":
@@ -257,7 +264,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUr
     return () => {
       cancelled = true;
     };
-  }, [signedUrl, materialId]);
+  }, [signedUrl, materialId, onFail]);
 
   // Render the current page to canvas whenever pageNum/zoom changes.
   useEffect(() => {
@@ -290,7 +297,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUr
     return () => {
       cancelled = true;
     };
-  }, [doc, pageNum, zoom]);
+  }, [doc, pageNum, zoom, onFail]);
 
   // Save scroll position on unload / page change.
   const saveScroll = useCallback(() => {
@@ -307,8 +314,9 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUr
     <div className="relative flex h-full flex-col">
       <MaterialWatermark label={watermarkLabel} />
 
-      {/* Toolbar */}
-      <div className="flex items-center justify-between gap-2 border-b-2 border-border bg-card px-3 py-2">
+      {/* Toolbar — wraps on narrow screens so the zoom group drops to a second
+          row instead of colliding with the page counter (T68). */}
+      <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-b-2 border-border bg-card px-3 py-2">
         <div className="flex items-center gap-1">
           <button
             type="button"
