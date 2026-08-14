@@ -50,6 +50,7 @@
     "psych:fda-batch": "tsx scripts/psychopharm/fetch-fda-batch.ts",
     "psych:seed-bands": "tsx scripts/psychopharm/seed-bands-fast.ts",
     "psych:seed-docs": "tsx scripts/psychopharm/seed-documents.ts",
+    "psych:seed-enriched": "tsx scripts/psychopharm/seed-enriched.ts",
     "psych:populate-obs": "tsx scripts/psychopharm/populate-observation-tables.ts",
     "psych:seed-practice": "tsx scripts/psychopharm/seed-practice-data.ts",
     "migrate-submissions-r2": "tsx scripts/migrate-submissions-to-r2.ts",

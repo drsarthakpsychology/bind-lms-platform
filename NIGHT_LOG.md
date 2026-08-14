@@ -1826,3 +1826,15 @@ Gate green: lint 0, tsc clean, 395 tests, build 0.
 - **Integration**: `drugDetail` now falls back to the enriched `plain_language`
   and `drug_class` when a drug has no curated draft record — the medication list
   shows a real student summary for every drug instead of "No student summary".
+2026-08-14T05:38:42 Queue exhausted — allowing normal Claude stop.
+
+---
+
+## 2026-08-14 — Enriched content seeded into medication_documents
+
+Wrote `scripts/psychopharm/seed-enriched.ts` (`npm run psych:seed-enriched`)
+that builds a MedicationDocument (In plain words → Mechanism → Commonly used in
+→ Side effects → Monitoring) from each enriched entry and inserts it as `draft`
+for drugs that had NO existing document. Result: 84 inserted, 60 preserved
+(curated), 2 duplicate entries (Esketamine/Pimavanserin) deduped. 144 drugs now
+have a document; the admin reviews + publishes each in the editor.
