@@ -17,6 +17,8 @@ export type ProviderCapability = "chat" | "stream" | "json" | "embed" | "vision"
 
 export type TaskTier = "simple" | "normal" | "difficult";
 
+import { isProviderHealthy } from "./health";
+
 export interface Provider {
   id: string;
   baseUrl: string; // OpenAI-compatible unless gemini
@@ -136,7 +138,15 @@ export function providersFor(capability: ProviderCapability, studentData: boolea
   const available = availableProviders();
   return order
     .map((id) => available.find((p) => p.id === id))
-    .filter((p): p is Provider => !!p && p.supports.includes(capability) && (!studentData || !p.trainsOnData));
+    .filter(
+      (p): p is Provider =>
+        !!p &&
+        p.supports.includes(capability) &&
+        (!studentData || !p.trainsOnData) &&
+        // Circuit-breaker: route around providers that are currently unhealthy
+        // (≥3 consecutive failures, outside the recovery window).
+        isProviderHealthy(p.id),
+    );
 }
 
 /** True if a student-data workload has ANY eligible provider right now. */

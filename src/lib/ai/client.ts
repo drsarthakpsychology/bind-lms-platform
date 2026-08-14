@@ -25,6 +25,7 @@ import {
 } from "./router";
 import { assertProviderAllowed, type Workload } from "./guards";
 import { fixtureReply } from "./fixtures";
+import { recordProviderOutcome } from "./health";
 
 const DEBUG = process.env.AI_DEBUG === "true";
 
@@ -162,6 +163,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
         try {
           const parsed = opts.schema.parse(JSON.parse(text));
           log(provider.id, opts.workload, "ok");
+          void recordProviderOutcome(provider.id, true);
           return { text, provider: provider.id, json: parsed };
         } catch {
           // JSON parse/validation failed — try one repair retry, else fail over.
@@ -171,17 +173,20 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
               { role: "user", content: `Return valid JSON matching the schema. Your previous output was not valid JSON. Output ONLY the JSON object.` },
             ], { ...opts, schema: undefined });
             const parsed = opts.schema.parse(JSON.parse(repair.text));
+            void recordProviderOutcome(provider.id, true);
             return { text: repair.text, provider: provider.id, json: parsed };
           }
           throw new Error(`schema validation failed on provider ${provider.id}`);
         }
       }
       log(provider.id, opts.workload, "ok");
+      void recordProviderOutcome(provider.id, true);
       return { text, provider: provider.id };
     } catch (e) {
       const status = (e as unknown as { status?: number }).status;
       const retryable = status !== undefined ? RETRYABLE.has(status) : true;
       log(provider.id, opts.workload, `failed: ${(e as Error).message} (retryable=${retryable})`);
+      void recordProviderOutcome(provider.id, false);
       if (!retryable && attempt >= candidates.length) throw e;
       if (retryable) {
         // exponential backoff, but capped so we never block long
