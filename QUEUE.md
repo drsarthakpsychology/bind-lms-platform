@@ -31,6 +31,9 @@
   /practice/tutor: retrieval-first chat with expandable source citations;
   `knowledge_tutor` feature flag (off by default), admin label, practice-hub
   card, command-palette entry. Committed bb5b2ab.
+- [x] **Psychopharm editor attaches corpus sources** — the admin block-source
+  panel searches the corpus (/api/knowledge/search) and fills title/page/quote
+  from a real, traceable passage in one click (brief §24). Committed cb7c559.
 - [ ] **Concept enrichment with V4 Flash** (optional, after eval): extract
   concepts/relationships per chapter for a knowledge-graph layer — only if a
   future benchmark shows it improves retrieval beyond raw chunks. Currently
