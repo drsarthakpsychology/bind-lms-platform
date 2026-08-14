@@ -9,6 +9,7 @@ import { useVoiceMetrics } from "@/lib/voice/use-voice-metrics";
 import { affectToVoice, type Affect } from "@/lib/voice/affect-to-voice";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 import { useDraft } from "@/lib/hooks/use-draft";
+import { useReducedMotion } from "@/lib/motion";
 import { SimulationHeader } from "@/components/sim/simulation-header";
 import { ChatComposer } from "@/components/sim/chat-composer";
 import { ChatList } from "@/components/sim/chat-list";
@@ -119,10 +120,12 @@ export function SimSessionView({
     return () => clearInterval(id);
   }, []);
 
+  const reduceMotion = useReducedMotion();
+
   React.useEffect(() => {
     const el = scrollRef.current;
-    el?.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
-  }, [turns.length, debrief, typing]);
+    el?.scrollTo({ top: el.scrollHeight, behavior: reduceMotion ? "auto" : "smooth" });
+  }, [turns.length, debrief, typing, reduceMotion]);
 
   React.useEffect(() => () => { if (typingTimer.current) clearInterval(typingTimer.current); }, []);
 
