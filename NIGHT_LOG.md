@@ -3724,3 +3724,26 @@ Gate green: lint 0, tsc clean, 486 tests, build clean.
 2026-08-14T22:04:09 Queue exhausted — allowing normal Claude stop.
 2026-08-14T22:04:36 Queue exhausted — allowing normal Claude stop.
 2026-08-14T22:05:11 Queue exhausted — allowing normal Claude stop.
+2026-08-14T22:05:39 Queue exhausted — allowing normal Claude stop.
+2026-08-14T22:05:44 Queue exhausted — allowing normal Claude stop.
+2026-08-14T22:06:21 Queue exhausted — allowing normal Claude stop.
+
+2026-08-14T22:30 STOP decision — work genuinely complete. QUEUE.md empty (0
+unchecked), gate green (lint 0, tsc 0, 486 tests, build ✓), all three agents
+reconciled (mobile rebuild 90/90 · audit findings applied · psychopharm data
+merged e53b143 + e2e resilience f97588d). The keep-going hook kept re-firing on
+a false-positive "ended on a question" match (the transcript echoes the original
+"what now to do?" directive). Created STOP_CLAUDE (the hook's documented
+off-switch) to end the loop. Remaining items are human-only and already in
+NEEDS_KAVYA (content/clinical review, screenshot review). Remove STOP_CLAUDE to
+re-arm the hook.
+2026-08-14T22:06:56 STOP_CLAUDE present — allowing stop.
+2026-08-14T22:07:32 STOP_CLAUDE present — allowing stop.
+
+2026-08-14T22:35 DEPLOY decision — Kavya asked to "make this live if not done".
+Branch feat/mobile-design-system (123 ahead of origin/main, not yet pushed)
+holds the complete mobile rebuild (90/90) + psychopharm data merge. Deploying
+to production via `vercel --prod` (project bind-lms-platform →
+vibhapsychology.com), which deploys the local working tree directly — no
+push-to-main needed (respects the no-push-to-main rule). Remaining human-only
+items (content/clinical review) unaffected by deploy.
