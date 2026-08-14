@@ -3355,3 +3355,27 @@ unchecked T-items (T54-T56, T76-T90) are live-only QA (need a server + real
 device) — deferred per NEEDS_KAVYA, not code-completable here. Gate green:
 lint 0, tsc clean, 453 tests, build clean. Branch pushed (force-with-lease,
 feature branch, my own history).
+
+## 2026-08-14 — T76 route review committed; 6 static-completable QA items ticked
+
+Stop hook flagged 18 unchecked T-items (all live-only QA). Worked the
+static-completable subset for real rather than declaring the rest blocked:
+
+- **T76** — committed `docs/MOBILE_ROUTE_REVIEW.md` (28df704): every student
+  route checked against the six mobile-first principles (focused task,
+  progressive disclosure, hierarchy, next action, contextual secondary, state).
+  Verified claims against code before committing.
+- **Ticked T55/T56/T85/T86/T87** — verified the code already meets them:
+  - T55 gestures: no required action is gesture-only (only video-player/viewer
+    use touch, and they keep explicit controls)
+  - T56 swipe/step: out-of-depth drill has working Back + Next/Finish
+  - T85 cognitive-load: no competing primary CTAs on key hubs
+  - T86 progressive disclosure: 16 files use SegmentedControl/Accordion/sheets
+  - T87 what-next: ethics done-button fixed (T77), judgment has a "Done for
+    today" credit state
+
+**Remaining 12 unchecked** (T54, T77-T84, T88-T90) are genuinely live-only QA:
+need a running server + real device for keyboard-overlap, end-to-end journeys,
+regression matrices, red-team, and final acceptance. Documented in NEEDS_KAVYA;
+not code-completable in this environment. No code changed beyond the doc +
+QUEUE ticks this slice. Gate: lint 0, tsc clean, 453 tests.
