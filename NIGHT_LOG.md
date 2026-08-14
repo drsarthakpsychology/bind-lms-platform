@@ -2902,3 +2902,4 @@ commits ahead; origin/main is an ancestor (clean fast-forward).
   at Kavya's "wait"; link-colour decision).
 - NEEDS_KAVYA.md already carries every human action (psychopharm review,
   keys, POCSO, drop-folder, Fly auth).
+2026-08-14T16:42:29 Queue exhausted — allowing normal Claude stop.
