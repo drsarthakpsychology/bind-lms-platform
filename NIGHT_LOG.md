@@ -3310,3 +3310,15 @@ use-async-action/use-offline) + 334a52b MobileAssessmentFlow + MobileChoiceList
 (T23). Branch HEAD green: lint 0, tsc clean, 486 tests, build 87/87.
 Two-writer coordination is working; still worth flagging to Kavya for safety.
 2026-08-14T20:16:29 Continue ceiling reached (50) — allowing stop for safety.
+
+2026-08-14T20:22 CHECKPOINT — two-writer coordination resolved.
+My repair + worker surfaces committed as 4e1bb5d. Confirmed: the parallel
+worker is implementing the SAME mobile-audit reports, comprehensively, on the
+shared primitives (wall/journal feed-first + useDraft + useOffline; debrief as
+a step-based progressive flow; case-picker in-progress-first; lesson hero
+Continue CTA; course progress). I stopped racing their files and now: keep the
+branch green, repair cross-writer JSX breaks, and cover findings they haven't
+touched. My landed commits this session (mine-only): today reorder, library
+filters, psychopharm drug collapse, review-filter debounce, finish-confirm,
+network rollback, touch-target sweep. Gate green at 4e1bb5d: lint 0 errors,
+tsc clean, 486 tests, build clean.
