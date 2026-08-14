@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -26,6 +26,15 @@ const sourceSerif = Source_Serif_4({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhaschoolofpsychology.in";
+
+// The software keyboard resizes the layout viewport (instead of overlaying it)
+// so sticky bottom-0 composers, bottom sheets, and submit actions stay visible
+// above the keyboard on mobile (T54).
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  interactiveWidget: "resizes-content",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
