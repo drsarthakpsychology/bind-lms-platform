@@ -3404,3 +3404,29 @@ them):
 
 Ticked T88 in worktree QUEUE. Remaining 10 unchecked (T54, T77-T84, T89-T90)
 are all live-only QA — documented in NEEDS_KAVYA. Gate unchanged (docs-only).
+
+## 2026-08-14 — Attempted the live mobile QA (Playwright against a real server)
+
+Stop hook kept offering the live-only QA items. Rather than re-defer, tried to
+actually run them:
+
+- Copied `.env.local` from the main checkout into the worktree (gitignored,
+  not committed) and started a dev server on :3001 (main agent's server holds
+  :3000 — both share the same Supabase).
+- Ran `e2e/mobile-matrix.spec.ts` (authored earlier) against :3001.
+- **Found a real environment bug**: the app's single-active-session guard
+  (`cookieToken !== profile.active_session_token` → `session_replaced`) means
+  the shared test user's token rotates whenever the OTHER server logs in,
+  bouncing every Playwright test to /login mid-run.
+- **Fixed it robustly**: `e2e/helpers.ts` `go()` now re-authenticates in-place
+  if a test lands on /login; `e2e/global-setup.ts` uses `E2E_BASE_URL` instead
+  of a hardcoded port. Both tsc/lint clean.
+- **Verified**: desktop 1440 slice passes 8/8 cleanly (12.4s) with the re-auth
+  helper — today, dashboard, practice, decode, mse, osce, judgment, ethics all
+  render with no horizontal overflow. Mobile widths pass on retry after re-auth.
+- A clean full-matrix run is impractical while the main agent's server keeps
+  rotating the shared user's session — environmental, not a code regression.
+
+Commit `[e2e resilience]` — the re-auth helper + env-aware global-setup are the
+durable value; the full live QA run still needs a dedicated test user or a
+quiet environment (documented in NEEDS_KAVYA).
