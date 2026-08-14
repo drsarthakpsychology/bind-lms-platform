@@ -901,7 +901,7 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   histories, over-detailed patients, reluctant disclosure, and other useful
   interviewing behaviours
 
-- [ ] T123  Patient conversational quality testing — create automated and manual
+- [x] T123  Patient conversational quality testing — create automated and manual
   test scenarios that evaluate whether the AI patient remains in character,
   maintains case consistency, answers naturally, does not dump the entire case
   immediately, and responds appropriately to different student approaches
@@ -1114,11 +1114,11 @@ UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
   repetition, hallucinated case facts, and provider failures so the system can
   improve over time
 
-- [ ] T171  AI patient evaluation dataset — create a structured evaluation
+- [x] T171  AI patient evaluation dataset — create a structured evaluation
   process using representative patient conversations and expected behavioural
   outcomes; use it to compare model/provider changes before deploying them
 
-- [ ] T172  AI model regression testing — whenever the AI provider, model,
+- [x] T172  AI model regression testing — whenever the AI provider, model,
   prompt, patient behaviour configuration, or conversation architecture
   changes, run representative patient simulations and compare conversational
   quality before accepting the change
