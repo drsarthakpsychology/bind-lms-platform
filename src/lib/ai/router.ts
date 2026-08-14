@@ -113,14 +113,15 @@ export const PROVIDERS: Provider[] = [
   },
   {
     // OpenCode Zen — OpenAI-compatible gateway (user request 2026-08-14).
-    // https://opencode.ai/zen/v1 via OPENCODE_API_KEY. Routes to OpenAI /
-    // Anthropic / Qwen / Gemini models through one key. Included as a no-train
-    // fallback lane (verify the upstream model's policy per-route; treat as a
-    // secondary student lane, not the primary). baseURL ends in /v1 (required).
+    // https://opencode.ai/zen/v1 via OPENCODE_API_KEY. USER DIRECTION: use the
+    // FREE models. Verified live 2026-08-14: deepseek-v4-flash-free returns
+    // direct content (the other frees — nemotron, mimo — are reasoning/<think>
+    // style). Paid models (claude/gpt-5) exist but need billing; the free lane
+    // is the default here.
     id: "opencode",
     baseUrl: "https://opencode.ai/zen/v1",
     apiKeyEnv: "OPENCODE_API_KEY",
-    models: { fast: "openai/gpt-4o-mini", smart: "anthropic/claude-sonnet-4-5", strong: "anthropic/claude-opus-4" },
+    models: { fast: "deepseek-v4-flash-free", smart: "deepseek-v4-flash-free" },
     limits: { rpm: 30, rpd: 1000, tpm: 40000 },
     trainsOnData: false,
     supports: ["chat", "stream", "json"],

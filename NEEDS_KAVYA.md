@@ -381,3 +381,19 @@ is a **paid fallback**, not the free Cerebras replacement.
 card, ~1M tok/day — the router's #2 student lane). With Groq + Cerebras +
 OpenRouter (already live) the 45-DAU target is met. Get a Cerebras key if you
 want the free double; SambaNova remains usable if you add a card.
+
+---
+
+## ⚠️ OpenCode Zen VERIFIED PAYWALLED too (2026-08-14)
+
+Your `OPENCODE_API_KEY` is configured and the provider is registered (62 models
+verified live: claude-sonnet-5/opus-5, gpt-5.4-nano, gemini-3.7-flash,
+deepseek-v4, kimi, qwen, glm). But the live API returns
+`CreditsError: No payment method` — OpenCode Zen needs billing set up on its
+workspace (https://opencode.ai/workspace/.../billing). It's a **paid gateway**,
+not free.
+
+**Verified free lanes today (no card):** Groq (live) + OpenRouter (live) are
+the student-facing no-train lanes that actually work at $0. The free capacity
+double remains `CEREBRAS_API_KEY`. SambaNova + OpenCode are both paid options
+that become usable when a card is added.
