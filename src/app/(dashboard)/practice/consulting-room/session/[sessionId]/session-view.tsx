@@ -329,6 +329,8 @@ export function SimSessionView({
               const lastPatient = [...turns].reverse().find((t) => t.role === "patient");
               return lastPatient?.content ?? "";
             }}
+            onExitVoice={() => setVoiceMode(false)}
+            patientReply={[...turns].reverse().find((t) => t.role === "patient")?.content ?? ""}
             patientVoicePrefs={
               patientAffect
                 ? {

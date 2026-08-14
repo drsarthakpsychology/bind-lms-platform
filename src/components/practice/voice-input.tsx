@@ -16,11 +16,17 @@ import { haptic } from "@/lib/haptics";
 export function VoiceInput({
   onSend,
   onPatientSpeak,
+  onExitVoice,
+  patientReply,
   patientVoicePrefs,
   disabled,
 }: {
   onSend: (text: string) => void;
   onPatientSpeak: () => string;
+  /** Leave voice mode and go back to the compact typing composer. */
+  onExitVoice?: () => void;
+  /** The patient's latest reply — auto-spoken when it changes (T129 loop). */
+  patientReply?: string;
   patientVoicePrefs: { rate: number; pitch: number; lang?: string; gender?: "male" | "female" };
   disabled?: boolean;
 }) {
@@ -28,6 +34,18 @@ export function VoiceInput({
   const [draft, setDraft] = React.useState("");
   const [pressed, setPressed] = React.useState(false);
   const [safetyWarned, setSafetyWarned] = React.useState(false);
+
+  // Auto-speak the patient's reply once it arrives, closing the hands-free
+  // loop (speak → transcribed → answered → heard back). Guarded so a re-render
+  // never re-speaks the same reply.
+  const lastAutoSpoken = React.useRef("");
+  React.useEffect(() => {
+    if (!patientReply || patientReply === lastAutoSpoken.current) return;
+    lastAutoSpoken.current = patientReply;
+    if (voice.ttsAvailable) {
+      voice.speak(patientReply, patientVoicePrefs);
+    }
+  }, [patientReply, voice, patientVoicePrefs]);
 
   // Show the interim transcript as it arrives, editable.
   // (setDraft is a state setter; the eslint immutability rule is fine with
@@ -96,6 +114,28 @@ export function VoiceInput({
           </button>
         </p>
       ) : null}
+
+      {/* Voice header — the state + the one obvious way back to typing. */}
+      <div className="flex items-center justify-between">
+        <p className="text-caption font-semibold text-muted-foreground">
+          {voice.status === "listening"
+            ? "Listening… speak now."
+            : voice.status === "processing"
+              ? "Heard you — thinking…"
+              : voice.status === "speaking"
+                ? "Patient speaking…"
+                : "Voice"}
+        </p>
+        {onExitVoice ? (
+          <button
+            type="button"
+            onClick={onExitVoice}
+            className="rounded-md border-2 border-border bg-background px-2.5 py-1 text-caption font-medium hover:bg-accent"
+          >
+            Type instead
+          </button>
+        ) : null}
+      </div>
 
       {/* Mic controls */}
       <div className="flex items-center gap-2">
