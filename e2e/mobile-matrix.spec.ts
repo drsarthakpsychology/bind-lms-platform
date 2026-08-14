@@ -27,16 +27,29 @@ for (const width of MOBILE_WIDTHS) {
       await expect(page.getByText("Recommended for you").first()).toBeVisible();
     });
 
-    test("journal: no horizontal scroll, composer visible", async ({ page }) => {
+    test("journal: no horizontal scroll, composer reachable via New entry", async ({ page }) => {
       await go(page, "/reflect");
       expect(await noHorizontalScroll(page), "journal must not scroll horizontally").toBe(true);
-      await expect(page.locator("#journal-entry")).toBeVisible();
+      // Feed-first: composing is a progressive reveal (T21/T35). The New entry
+      // trigger is the primary mobile action; the composer opens in a sheet.
+      // Scope to the dialog — the desktop inline composer (hidden lg:block) is
+      // also in the DOM, so an unscoped label match would be ambiguous.
+      await page.getByRole("button", { name: "New entry" }).click();
+      await expect(
+        page.getByRole("dialog").getByLabel("Journal entry"),
+      ).toBeVisible();
     });
 
-    test("wall: no horizontal scroll, composer visible", async ({ page }) => {
+    test("wall: no horizontal scroll, composer reachable via New post", async ({ page }) => {
       await go(page, "/wall");
       expect(await noHorizontalScroll(page), "wall must not scroll horizontally").toBe(true);
-      await expect(page.getByLabel("Post to the cohort wall")).toBeVisible();
+      // Feed-first: composing is a progressive reveal. New post opens the sheet
+      // with the labelled composer (scope to the dialog; the desktop inline
+      // composer is also in the DOM).
+      await page.getByRole("button", { name: "New post" }).click();
+      await expect(
+        page.getByRole("dialog").getByLabel("Post to the cohort wall"),
+      ).toBeVisible();
     });
 
     test("consulting room picker: no horizontal scroll", async ({ page }) => {
