@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { ChevronDown } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { MSE_LEVEL_META, MSE_LEVELS, type MseLevel } from "@/lib/mse/ladder";
@@ -120,29 +121,45 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
         {active === "5" ? <LiveMseLevel onComplete={() => markDone("5")} /> : null}
       </div>
 
-      {/* Small-things reference + drill */}
-      <div className="mt-8 rounded-md border-2 border-border bg-card p-4">
-        <h2 className="text-sm font-semibold">The small things — the checklist novices never run</h2>
-        <p className="mt-1 text-small text-muted-foreground">
-          Eye contact when the topic changed · the leg that stopped moving · the
-          pause before &quot;no&quot; · the past tense used about oneself. Reference card
-          + drill, usable at any level.
-        </p>
-        <div className="mt-3">
+      {/* Small-things reference + drill — opt-in, so it never competes with the active level. */}
+      <details className="group rounded-md border-2 border-border bg-card">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4">
+          <span className="min-w-0">
+            <h2 className="text-sm font-semibold">The small things — the checklist novices never run</h2>
+            <p className="mt-1 text-small text-muted-foreground">
+              Eye contact when the topic changed · the leg that stopped moving · the
+              pause before &quot;no&quot; · the past tense used about oneself. Reference card
+              + drill, usable at any level.
+            </p>
+          </span>
+          <ChevronDown
+            className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+            aria-hidden
+          />
+        </summary>
+        <div className="px-4 pb-4">
           <SmallThingsDrill />
         </div>
-      </div>
+      </details>
 
-      {/* Check what stuck — sourced quiz items after the ladder */}
-      <div className="mt-8 rounded-md border-2 border-border bg-card p-4">
-        <h2 className="text-sm font-semibold">Check what stuck</h2>
-        <p className="mt-1 text-small text-muted-foreground">
-          A quick check, not a test — every item carries its source.
-        </p>
-        <div className="mt-3">
+      {/* Check what stuck — opt-in sourced quiz after the ladder. */}
+      <details className="group rounded-md border-2 border-border bg-card">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4">
+          <span className="min-w-0">
+            <h2 className="text-sm font-semibold">Check what stuck</h2>
+            <p className="mt-1 text-small text-muted-foreground">
+              A quick check, not a test — every item carries its source.
+            </p>
+          </span>
+          <ChevronDown
+            className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180"
+            aria-hidden
+          />
+        </summary>
+        <div className="px-4 pb-4">
           <QuizCheck items={QUIZ_BANK.slice(0, 6)} />
         </div>
-      </div>
+      </details>
     </div>
   );
 }
