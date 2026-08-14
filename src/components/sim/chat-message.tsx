@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { useReducedMotion } from "@/lib/motion";
 
 /**
  * A single chat bubble in the patient conversation. Patient = left, quiet
@@ -19,7 +20,19 @@ export function ChatMessage({
   content?: string;
   typing?: boolean;
 }) {
+  const reduce = useReducedMotion();
+
   if (typing) {
+    // Reduced-motion users get a static line instead of the bouncing dots.
+    if (reduce) {
+      return (
+        <div className="flex justify-start">
+          <div className="rounded-2xl rounded-bl-md border border-border bg-card px-3.5 py-2.5 text-[15px] leading-relaxed text-muted-foreground">
+            Patient is answering…
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="flex justify-start">
         <div className="flex items-center gap-1 rounded-2xl rounded-bl-md border border-border bg-card px-3.5 py-2.5">

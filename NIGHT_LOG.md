@@ -3227,3 +3227,10 @@ full-width Post, Report demoted to ⋯ overflow menu (Reply primary; faculty pin
 moved in). Added lib/format.ts formatRelativeTime (Intl.RelativeTimeFormat,
 explicit en locale; no bare numeric dates) + 7 tests; applied to posts/replies/
 journal entries. Gate green: lint 0, tsc clean, 473 tests, build. Commit 23c29d2.
+
+2026-08-14T19:41 T9 done — material viewer: loading is now a content-shaped
+skeleton + "Loading material…" label; after 8s adds slow-connection message
+(role=status); slow flag resets on retry. Error card (human copy + selectable
+correlation id) + human title already shipped in 0.6. Viewer controls (PDF
+prev/next/zoom, image zoom) left at current size for the T13 44px pass.
+Gate green: lint 0, tsc clean, 473 tests, build. Commit fa3bbfb.

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
 import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -26,6 +26,19 @@ const sourceSerif = Source_Serif_4({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://vibhaschoolofpsychology.in";
+
+// Safe-area + keyboard viewport:
+// - `viewportFit: "cover"` makes env(safe-area-inset-*) non-zero on iOS
+//   notched devices (bottom nav / composer / headers can clear the notch).
+// - `interactiveWidget: "resizes-content"` makes Android Chrome resize the
+//   layout viewport when the on-screen keyboard opens, so the chat composer
+//   in a 100dvh container stays above the keyboard without JS hacks.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  interactiveWidget: "resizes-content",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

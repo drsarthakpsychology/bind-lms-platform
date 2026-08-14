@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Mic, ArrowUp } from "lucide-react";
+import { Mic, ArrowUp, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -78,10 +78,11 @@ export function ChatComposer({
           type="button"
           onClick={onSend}
           disabled={!canSend}
-          aria-label="Send"
-          className="flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-border bg-primary text-primary-foreground transition-transform duration-fast ease-snappy active:translate-y-px disabled:opacity-40"
+          aria-label={busy ? "Sending" : "Send"}
+          aria-busy={busy || undefined}
+          className="flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-primary text-primary-foreground transition-transform duration-fast ease-snappy active:translate-y-px disabled:cursor-not-allowed"
         >
-          <ArrowUp className="size-5" aria-hidden />
+          {busy ? <Loader2 className="size-5 animate-spin" aria-hidden /> : <ArrowUp className="size-5" aria-hidden />}
         </button>
       </div>
     </div>
