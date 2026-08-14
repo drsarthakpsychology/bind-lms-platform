@@ -216,6 +216,7 @@ export function TutorChat() {
           ref={inputRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          enterKeyHint="send"
           placeholder="Ask about any psychology topic… (or press the mic)"
           aria-label="Ask the Psychology Tutor"
           className="min-w-0 flex-1 rounded-md border-2 border-border bg-background px-3 py-2 text-sm outline-none focus:border-link"
