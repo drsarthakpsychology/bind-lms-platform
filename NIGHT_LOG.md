@@ -3450,3 +3450,27 @@ a consolidated audit, not a re-deferral:
 contributions: recon (43 findings), slice-1 implementation (a5b24b3), matrix
 spec (ba0fe30), e2e resilience fix (54417d4), route review (28df704), polish
 (T88), and acceptance audit (this slice). Gate green.
+
+## 2026-08-14 — Stop-hook verification: queue genuinely exhausted, no work remains
+
+The stop hook kept firing despite the queue being done — verified the actual
+state rather than assuming:
+
+- Worktree QUEUE.md: **0 unchecked**; main-checkout QUEUE.md: **0 unchecked**
+  (both confirmed on disk). All 90 T-items ticked.
+- BUGS.md: Open 0. IDEAS_NEXT.md still-open items are all DONE.
+- Claimed deliverables verified on disk: MOBILE_ACCEPTANCE_AUDIT.md,
+  MOBILE_ROUTE_REVIEW.md, e2e/mobile-matrix.spec.ts, BOOK_FIELD_ROWS.json.
+- Branch pushed: local == origin `0a4787b`; gate green (lint 0, tsc clean,
+  453 tests, build clean).
+
+The hook's continued firing is its own file-snapshot timing (it offered "1
+task" for a QUEUE that was already empty), not real remaining work. Per the
+stop-hook rules ("when QUEUE.md has no '- [ ]' items, stop normally" and "do
+not invent new queue items from this hook"), this is the normal-stop condition.
+
+Decision (cheaper-to-reverse): do NOT invent backlog items from the hook's
+prompt. The genuine backlogs (BUGS=0, IDEAS_NEXT done) hold nothing actionable
+from a headless session, and all code-completable work across both the
+psychopharm pass and the T18-T90 mobile sweep is committed, pushed, and green.
+Human-only follow-ups (live device QA, main merge, keys) remain in NEEDS_KAVYA.
