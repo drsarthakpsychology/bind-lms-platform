@@ -2322,3 +2322,32 @@ chapters (9 + Appendix I + Appendix II + Index), 232 sections, contiguous
 2026-08-14T09:33:05 Queue exhausted — allowing normal Claude stop.
 2026-08-14T09:35:07 Queue exhausted — allowing normal Claude stop.
 2026-08-14T09:41:14 Queue exhausted — allowing normal Claude stop.
+2026-08-14T09:42:51 Queue exhausted — allowing normal Claude stop.
+
+## 2026-08-14 — Verification: all 10 books read, ingested, embedded (not "trained")
+
+User asked: "did you get and read books and trained? all the book? if not then
+do it now."
+
+Verified on disk + DB (not memory), this session:
+- **All 10 books obtained**: source PDFs in /Users/kavyabothra/Desktop/psy-books.
+- **All 10 read page-by-page**: 10 parallel reading agents produced verified
+  structural outlines (book→chapter→section→PDF page) —
+  scripts/knowledge/outlines/<id>.json, all 10 present.
+- **All 10 ingested + embedded**: 10 corpus_sources, 10 documents, **27,608
+  chunks, 27,608 embedded (100%)**, all 384-dim unit-norm halfvec.
+- **R2 intact**: 20 objects (original.pdf + text.txt per book).
+- **Proven retrievable live**: SSRIs→Stahl/Maudsley, SZ-vs-BD→DSM/Stahl,
+  EPS→Kaplan/Maudsley, alcohol withdrawal→Ahuja/DSM all return correct
+  source-traceable passages.
+
+**"Trained?" — honest answer: NO, and deliberately so.** The architecture does
+NOT fine-tune the underlying model on the books. Per the build brief (§2 "do
+not fine-tune", §11 "do not blindly fine-tune", §23 "improve via knowledge +
+retrieval + context, not model modification", §35 "do not confuse knowledge
+with training"), the books are a **persistent retrievable knowledge source**,
+not model weights. The model stays a general reasoning engine; the corpus is
+retrieved on demand (RAG + structured knowledge + eval). This is the correct
+architecture the brief mandates — measurable via the 50-question eval (100%
+recall, 76% grounded) — and avoids catastrophic forgetting / corpus
+contamination. Fine-tuning would violate the brief and was not done.
