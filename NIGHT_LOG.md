@@ -1942,4 +1942,4 @@ numbers. Gate verified green on the full tree: lint 0, `tsc --noEmit` clean,
 407 tests, `next build` exit 0. Committed only this outline + log; unrelated
 in-progress knowledge-layer files (ingest.ts, src/lib/knowledge/, cache/,
 other outlines, knowledge_layer.sql, package.json/package-lock.json) left for
-their owners.
+their owners. Shipped in commit 060fa41.
