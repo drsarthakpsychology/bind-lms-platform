@@ -44,6 +44,7 @@ export function TutorChat() {
   const [speaking, setSpeaking] = React.useState(false);
   const [speakError, setSpeakError] = React.useState<string | null>(null);
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const voiceAskedRef = React.useRef(false);
 
   /** Read the latest assistant answer aloud (browser speechSynthesis — $0). */
   function speakAnswer(text: string) {
@@ -69,9 +70,10 @@ export function TutorChat() {
     setSpeaking(false);
   }
 
-  async function ask(question: string) {
+  async function ask(question: string, fromVoice = false) {
     const q = question.trim();
     if (!q || loading) return;
+    if (fromVoice) voiceAskedRef.current = true;
     setMessages((m) => [...m, { role: "user", content: q }]);
     setInput("");
     setLoading(true);
@@ -98,11 +100,17 @@ export function TutorChat() {
         ...m,
         { role: "assistant", content, sources: body.sources ?? [], aiUsed: body.aiUsed ?? false },
       ]);
+      // In voice mode, read the answer back — a natural back-and-forth.
+      if (voiceAskedRef.current) {
+        voiceAskedRef.current = false;
+        speakAnswer(content);
+      }
     } catch {
       setMessages((m) => [
         ...m,
         { role: "assistant", content: "Something went wrong on the knowledge layer. Please try again.", error: true },
       ]);
+      voiceAskedRef.current = false;
     } finally {
       setLoading(false);
       inputRef.current?.focus();
@@ -215,7 +223,7 @@ export function TutorChat() {
         <VoiceAskButton
           onTranscribed={(text) => {
             setInput(text);
-            ask(text);
+            ask(text, true);
           }}
           disabled={loading}
         />

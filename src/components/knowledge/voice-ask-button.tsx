@@ -1,67 +1,104 @@
 "use client";
 
 import * as React from "react";
-import { Mic, MicOff, Loader2 } from "lucide-react";
+import { Mic, Square, Loader2, Volume2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Voice-ask button for the Psychology Tutor — "talk like ChatGPT".
+ * Voice-ask button for the Psychology Tutor — "talk like Claude".
  *
- * Press the mic, speak, release: the recording is sent to the server-side Groq
- * Whisper STT (/api/practice/voice/stt), and the transcript is handed to the
- * caller as a finished question. The caller then asks the knowledge layer and
- * can read the answer aloud.
+ * Press once → the AI "appears" and starts listening. You talk naturally
+ * (continuous recognition, live interim transcript shown). A pause auto-stops,
+ * the final transcript is sent to the knowledge layer as your question, and
+ * the grounded answer comes back (optionally spoken aloud).
  *
- * Falls back to the browser Web Speech STT when it's supported (free, zero
- * network); the Groq path is the higher-accuracy upgrade.
+ * Recording path: browser Web Speech (free, live interim) when available;
+ * otherwise MediaRecorder → server Groq Whisper (/api/practice/voice/stt) for
+ * higher en-IN accuracy. Both hand the finished question to onTranscribed.
  */
 export function VoiceAskButton({
   onTranscribed,
   disabled,
   className,
 }: {
-  /** called with the transcribed question text */
+  /** called with the transcribed question text when a spoken turn completes */
   onTranscribed: (text: string) => void;
   disabled?: boolean;
   className?: string;
 }) {
   const [recording, setRecording] = React.useState(false);
   const [busy, setBusy] = React.useState(false);
+  const [interim, setInterim] = React.useState("");
+  const [finalText, setFinalText] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
   const mediaRef = React.useRef<MediaRecorder | null>(null);
   const chunksRef = React.useRef<Blob[]>([]);
-  const recogRef = React.useRef<{ start: () => void; stop: () => void; onresult: ((e: { results: ArrayLike<{ isFinal: boolean; 0: { transcript: string } }> }) => void) | null; onend: (() => void) | null; onerror: ((e: { error: string }) => void) | null } | null>(null);
+  const recogRef = React.useRef<{
+    start: () => void; stop: () => void;
+    onresult: ((e: { resultIndex: number; results: ArrayLike<{ isFinal: boolean; 0: { transcript: string } }> }) => void) | null;
+    onend: (() => void) | null; onerror: ((e: { error: string }) => void) | null;
+  } | null>(null);
+  const finalRef = React.useRef("");
+  const pauseTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  /** Prefer the browser Web Speech API (free, no network, works today). */
   function webSpeechSupported(): boolean {
     return typeof window !== "undefined" && ("SpeechRecognition" in window || "webkitSpeechRecognition" in window);
   }
 
+  /** Browser Web Speech — live interim, continuous, auto-stops on pause. */
   function startWebSpeech() {
     const SR = (window as unknown as Record<string, new () => unknown>).SpeechRecognition
       ?? (window as unknown as Record<string, new () => unknown>).webkitSpeechRecognition;
     const recog = new SR() as {
       lang: string; continuous: boolean; interimResults: boolean; maxAlternatives: number;
       start: () => void; stop: () => void;
-      onresult: ((e: { results: ArrayLike<{ isFinal: boolean; 0: { transcript: string } }> }) => void) | null;
+      onresult: ((e: { resultIndex: number; results: ArrayLike<{ isFinal: boolean; 0: { transcript: string } }> }) => void) | null;
       onend: (() => void) | null; onerror: ((e: { error: string }) => void) | null;
     };
     recog.lang = "en-IN";
-    recog.continuous = false;
-    recog.interimResults = false;
+    recog.continuous = true;
+    recog.interimResults = true;
     recog.maxAlternatives = 1;
     recogRef.current = recog;
+
     recog.onresult = (e) => {
-      const transcript = Array.from(e.results)
-        .map((r) => r[0]?.transcript ?? "")
-        .join(" ")
-        .trim();
-      if (transcript) onTranscribed(transcript);
+      let interimText = "";
+      let finalText = "";
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const r = e.results[i];
+        const t = r[0]?.transcript ?? "";
+        if (r.isFinal) finalText += t;
+        else interimText += t;
+      }
+      if (finalText) {
+        finalRef.current = (finalRef.current + " " + finalText).trim();
+        setFinalText(finalRef.current);
+      }
+      setInterim(interimText);
+
+      // Auto-stop on a pause (no new speech for ~2.5s after a final result).
+      if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+      if (finalRef.current) {
+        pauseTimerRef.current = setTimeout(() => {
+          recog.stop();
+        }, 2500);
+      }
     };
-    recog.onend = () => setRecording(false);
-    recog.onerror = (e) => {
-      setError(`Speech not recognised: ${e.error}. Try the mic or type instead.`);
+    recog.onend = () => {
+      if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
       setRecording(false);
+      setInterim("");
+      const text = finalRef.current.trim();
+      finalRef.current = "";
+      setFinalText("");
+      if (text) onTranscribed(text);
+    };
+    recog.onerror = (ev) => {
+      // "no-speech" is a normal end; anything else is a real error.
+      if (ev.error !== "no-speech") setError(`Couldn't hear clearly (${ev.error}). Press the mic and try again.`);
+      if (ev.error === "not-allowed" || ev.error === "service-not-allowed") {
+        setError("Microphone permission denied — allow mic access, or type instead.");
+      }
     };
     recog.start();
     setRecording(true);
@@ -102,63 +139,70 @@ export function VoiceAskButton({
         } finally {
           setBusy(false);
           setRecording(false);
+          setInterim("");
         }
       };
       rec.start();
       mediaRef.current = rec;
       setRecording(true);
     } catch {
-      // getUserMedia denied/unsupported — fall back to Web Speech if available.
-      if (webSpeechSupported()) {
-        startWebSpeech();
-      } else {
-        setError("Mic unavailable — type your question instead.");
-      }
+      if (webSpeechSupported()) startWebSpeech();
+      else setError("Mic unavailable — type your question instead.");
     } finally {
       setBusy(false);
     }
   }
 
-  function stopRecording() {
-    if (mediaRef.current && mediaRef.current.state === "recording") {
-      mediaRef.current.stop();
-    } else if (recogRef.current) {
-      recogRef.current.stop();
-    } else {
-      setRecording(false);
-    }
+  function startListening() {
+    if (webSpeechSupported()) startWebSpeech();
+    else startMic();
+  }
+
+  function stopListening() {
+    if (mediaRef.current && mediaRef.current.state === "recording") mediaRef.current.stop();
+    else if (recogRef.current) recogRef.current.stop();
   }
 
   function toggle() {
-    if (recording) stopRecording();
-    else if (webSpeechSupported() && !navigator.mediaDevices?.getUserMedia) startWebSpeech();
-    else startMic();
+    if (recording) stopListening();
+    else startListening();
   }
 
   React.useEffect(() => () => {
     if (mediaRef.current && mediaRef.current.state === "recording") mediaRef.current.stop();
+    if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
   }, []);
 
-  const label = recording ? "Stop and transcribe" : "Ask by voice";
+  const liveText = (finalText + " " + interim).trim();
 
   return (
-    <button
-      type="button"
-      onClick={toggle}
-      disabled={disabled || busy}
-      title={label}
-      aria-label={label}
-      aria-pressed={recording}
-      className={cn(
-        "inline-flex items-center gap-1 rounded-md border-2 border-border px-2.5 py-2 text-sm transition-colors hover:border-link",
-        recording && "border-destructive bg-destructive/10 text-destructive",
-        busy && "opacity-60",
-        className,
+    <div className="flex items-center gap-2">
+      <button
+        type="button"
+        onClick={toggle}
+        disabled={disabled || busy}
+        title={recording ? "Stop listening" : "Press once and talk"}
+        aria-label={recording ? "Stop listening" : "Ask by voice — press once and talk"}
+        aria-pressed={recording}
+        className={cn(
+          "inline-flex items-center gap-1.5 rounded-md border-2 px-2.5 py-2 text-sm transition-colors",
+          recording ? "border-destructive bg-destructive/10 text-destructive" : "border-border hover:border-link",
+          busy && "opacity-60",
+          className,
+        )}
+      >
+        {busy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : recording ? <Square className="size-4" aria-hidden /> : <Mic className="size-4" aria-hidden />}
+        {recording && <span className="text-caption font-medium">Listening…</span>}
+      </button>
+
+      {recording && (
+        <div className="flex min-w-0 items-center gap-1.5 rounded-md border border-border bg-muted px-2 py-1">
+          <Volume2 className="size-3 shrink-0 animate-pulse text-destructive" aria-hidden />
+          <span className="truncate text-caption italic text-muted-foreground">
+            {liveText || "Speak now — your words appear here live"}
+          </span>
+        </div>
       )}
-    >
-      {busy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : recording ? <MicOff className="size-4" aria-hidden /> : <Mic className="size-4" aria-hidden />}
-      <span className="sr-only">{label}</span>
-      {recording && <span className="text-caption">Listening…</span>}
-    </button>
+    </div>
   );
 }
