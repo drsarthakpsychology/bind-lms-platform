@@ -30,7 +30,7 @@ export const ADMIN_ITEMS: NavItem[] = [
   // Review — the daily review workflow, highest-frequency first.
   { href: "/admin/triage", label: "Review triage", icon: "listFilter", section: "Review" },
   { href: "/admin/submissions", label: "Submissions", icon: "fileCheck", section: "Review" },
-  { href: "/admin/sim-review", label: "Sim sessions", icon: "stethoscope", section: "Review" },
+  { href: "/admin/sim-review", label: "Practice sessions", icon: "stethoscope", section: "Review" },
   { href: "/admin/supervision", label: "Sign-offs", icon: "clipboardCheck", section: "Review" },
   { href: "/admin/wall-reports", label: "Wall reports", icon: "flag", section: "Review" },
   { href: "/admin/enquiries", label: "Enquiries", icon: "inbox", section: "Review" },
@@ -39,17 +39,17 @@ export const ADMIN_ITEMS: NavItem[] = [
   // Content — authoring and the knowledge base.
   { href: "/admin/courses", label: "Courses", icon: "bookOpen", section: "Content" },
   { href: "/admin/modules", label: "Modules", icon: "layers", section: "Content" },
-  { href: "/admin/cards", label: "Cards", icon: "idCard", section: "Content" },
+  { href: "/admin/cards", label: "Study cards", icon: "idCard", section: "Content" },
   { href: "/admin/idioms", label: "Idiom bank", icon: "languages", section: "Content" },
   { href: "/admin/psychopharm-review", label: "Medication library", icon: "pill", section: "Content" },
-  { href: "/admin/corpus/dictate", label: "Dictate case", icon: "mic", section: "Content" },
-  { href: "/admin/calibration", label: "Calibration", icon: "target", section: "Content" },
+  { href: "/admin/corpus/dictate", label: "Record a case", icon: "mic", section: "Content" },
+  { href: "/admin/calibration", label: "Marking check", icon: "target", section: "Content" },
 
   // System — people, access, and platform.
   { href: "/admin/students", label: "Students", icon: "users", section: "System" },
-  { href: "/admin/rights", label: "Rights", icon: "shieldCheck", section: "System" },
-  { href: "/admin/flags", label: "Feature flags", icon: "toggle", section: "System" },
-  { href: "/admin/pulse", label: "Cohort pulse", icon: "activity", section: "System" },
-  { href: "/admin/infra", label: "Infrastructure", icon: "gauge", section: "System" },
+  { href: "/admin/rights", label: "Book licences", icon: "copyright", section: "System" },
+  { href: "/admin/flags", label: "What's live", icon: "toggle", section: "System" },
+  { href: "/admin/pulse", label: "Cohort progress", icon: "activity", section: "System" },
+  { href: "/admin/infra", label: "Usage & limits", icon: "gauge", section: "System" },
   { href: "/admin/tools", label: "Tools", icon: "wrench", section: "System" },
 ];

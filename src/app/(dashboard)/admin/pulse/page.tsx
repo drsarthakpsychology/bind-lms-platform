@@ -61,8 +61,8 @@ export default async function AdminPulsePage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <PageHeader
-        title="Cohort Pulse"
-        description="Who's drifting, who's stuck, who's flying. The metric that determines whether Cohort One succeeds."
+        title="Cohort progress"
+        description="Who's gone quiet, who's behind, and who's finished everything. The view that decides whether Cohort One succeeds."
       />
       <div className="mt-6">
         <PulseView

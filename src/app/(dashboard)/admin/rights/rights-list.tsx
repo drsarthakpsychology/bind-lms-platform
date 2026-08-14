@@ -173,7 +173,7 @@ export function RightsList({ rows, loadError }: { rows: RightsRow[]; loadError: 
       <div className="rounded-md border-2 border-border bg-card p-6 text-center">
         <p className="text-base font-medium">No titles in the registry yet</p>
         <p className="mt-1 text-small text-muted-foreground">
-          {loadError ? `Could not load the registry (${loadError}).` : "Run `npm run seed-rights` to populate it."}
+          {loadError ? `Could not load the registry (${loadError}).` : "No books added yet. They appear here once the programme adds them."}
         </p>
       </div>
     );
@@ -223,9 +223,9 @@ export function RightsList({ rows, loadError }: { rows: RightsRow[]; loadError: 
           value={layerFilter}
           onChange={(e) => setLayerFilter(e.target.value)}
           className="rounded-md border-2 border-border bg-background px-2 py-1.5 text-caption font-medium focus:outline-none focus:ring-2 focus:ring-ring"
-          aria-label="Filter by layer"
+          aria-label="Filter by content type"
         >
-          <option value="all">All layers</option>
+          <option value="all">All content types</option>
           {LAYERS.map((l) => (
             <option key={l} value={l}>
               {LAYER_LABELS[l] ?? l}
@@ -270,7 +270,7 @@ export function RightsList({ rows, loadError }: { rows: RightsRow[]; loadError: 
               <th className="px-3 py-2 font-semibold">Authors</th>
               <th className="px-3 py-2 font-semibold">Publisher</th>
               <th className="px-3 py-2 font-semibold">Category</th>
-              <th className="px-3 py-2 font-semibold">Layer</th>
+              <th className="px-3 py-2 font-semibold">Content type</th>
               <th className="px-3 py-2 font-semibold">Priority</th>
               <th className="px-3 py-2 font-semibold">Status</th>
               <th className="px-3 py-2 text-center font-semibold">Consent</th>

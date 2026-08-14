@@ -90,7 +90,7 @@ export default async function AdminCalibrationPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <PageHeader
-        title="Scorer calibration"
+        title="Marking check"
         description="Score transcripts blind, reveal the AI score side by side. Disagreements train the scorer."
       />
       <div className="mt-6">

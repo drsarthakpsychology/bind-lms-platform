@@ -48,7 +48,7 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
       <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center gap-2">
           <Database className="size-4 text-link" aria-hidden />
-          <h2 className="text-base font-semibold">Supabase database</h2>
+          <h2 className="text-base font-semibold">Database storage</h2>
           <span className={cn("ml-auto rounded-full px-2 py-0.5 text-caption font-semibold", dbPct >= WARN_AT * 100 ? "bg-status-alert-bg text-status-alert-fg" : dbPct >= 50 ? "bg-status-pending-bg text-status-pending-fg" : "bg-status-success-bg text-status-success-fg")}>
             {dbPct}% of 500 MB
           </span>
@@ -69,15 +69,15 @@ export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {
       <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center gap-2">
           <HardDrive className="size-4 text-link" aria-hidden />
-          <h2 className="text-base font-semibold">Largest tables</h2>
+          <h2 className="text-base font-semibold">Where the space goes</h2>
         </div>
         {(metrics.top_tables ?? []).length === 0 ? (
-          <p className="mt-2 text-small text-muted-foreground">No table data.</p>
+          <p className="mt-2 text-small text-muted-foreground">No data yet.</p>
         ) : (
           <ul className="mt-3 space-y-1.5">
             {(metrics.top_tables ?? []).map((t) => (
               <li key={t.name} className="flex items-center justify-between border-b border-border/60 pb-1.5 text-small">
-                <span className="font-mono text-caption">{t.name}</span>
+                <span className="text-caption">{t.name}</span>
                 <span className="text-numeric text-caption">{fmtBytes(t.size)}</span>
               </li>
             ))}

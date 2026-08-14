@@ -25,7 +25,7 @@ export default async function DictatePage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Corpus · Dictate</p>
+      <p className="text-eyebrow text-muted-foreground">Practice cases · Record a case</p>
       <h1 className="mt-1 text-h1">Dictate a case from practice</h1>
       <p className="mt-2 text-small text-muted-foreground">
         Twenty real presentations from your practice beat ten thousand scraped pages.

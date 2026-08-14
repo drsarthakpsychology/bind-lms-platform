@@ -5,10 +5,10 @@ import { InfraMetrics } from "./infra-metrics";
 export const dynamic = "force-dynamic";
 
 /**
- * /admin/infra — live free-tier headroom (v3 Part 3.6).
+ * /admin/infra — live storage and AI usage (v3 Part 3.6).
  * Big honest numbers, hard-shadow cards, red banner when anything crosses 70%.
  * Cheap insurance against the failure mode that takes the whole cohort down:
- * silently blowing a free-tier limit mid-week.
+ * silently passing a usage limit mid-week.
  *
  * Admin-only via the admin layout role guard + the RPC is service_role only.
  */
@@ -26,8 +26,8 @@ export default async function InfraPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <PageHeader
-        title="Infrastructure headroom"
-        description="Live free-tier usage. Anything past 70% is flagged — the cohort goes dark silently if we blow a limit mid-week."
+        title="Usage & limits"
+        description="Live storage and AI usage. Anything past 70% is flagged before it becomes a problem."
       />
       <div className="mt-6">
         <InfraMetrics metrics={metrics} />

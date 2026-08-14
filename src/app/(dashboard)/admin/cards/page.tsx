@@ -35,7 +35,7 @@ export default async function AdminCardsPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <PageHeader
-        title="Cards review"
+        title="Study cards"
         description={`The Rounds queue. ${drafts} draft${drafts === 1 ? "" : "s"} awaiting review · ${published} published. Approve → students see it and Rounds schedules it.`}
       />
       <div className="mt-6">

@@ -80,7 +80,7 @@ export function PulseView({
       {weeks.length > 0 ? (
         <div className="rounded-md border-2 border-border bg-card p-4">
           <p className="flex items-center gap-2 text-base font-semibold">
-            <Radar className="size-4 text-muted-foreground" aria-hidden /> Cohort curve (aggregate)
+            <Radar className="size-4 text-muted-foreground" aria-hidden /> Cohort curve
           </p>
           <ul className="mt-2 space-y-2">
             {weeks.map((w) => (
@@ -147,7 +147,7 @@ export function PulseView({
 
       <p className="flex items-center gap-1.5 text-caption text-muted-foreground">
         <Radar className="size-3.5" aria-hidden />
-        Cross-reference with the weekly check-in aggregate: if activity drops AND load spikes, that&apos;s a curriculum problem, not a motivation problem.
+        Cross-reference with the weekly check-in totals: if activity drops AND load spikes, that&apos;s a curriculum problem, not a motivation problem.
       </p>
     </div>
   );

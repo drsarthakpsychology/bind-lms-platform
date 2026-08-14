@@ -19,10 +19,9 @@ interface RegistryRow {
 }
 
 /**
- * /admin/rights — the Casebook acquisition tracker. One screen shows where
- * every corpus title stands; flipping rights_status to 'licensed' makes the
- * ingester pick the title up on its next pass. Sorted by priority (1 =
- * get this first) then title, server-side.
+ * /admin/rights — the book licences tracker. One screen shows where every
+ * book stands; flipping a book to 'licensed' marks it usable by the
+ * programme. Sorted by priority (1 = get this first) then title, server-side.
  */
 export default async function AdminRightsPage() {
   const admin = createAdminClient();
@@ -51,8 +50,8 @@ export default async function AdminRightsPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <PageHeader
-        title="Casebook rights"
-        description="The acquisition tracker — where every corpus title stands. Flip a title to licensed and the ingester picks it up on its next pass."
+        title="Book licences"
+        description="The status of every book the programme uses. Mark a book as Licensed once you have permission to use it."
       />
       <div className="mt-6">
         <RightsList rows={rows} loadError={error?.message ?? null} />
