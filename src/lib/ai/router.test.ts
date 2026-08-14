@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { PROVIDERS, PROVIDER_PRIORITY } from "./router";
+import { PROVIDERS, PROVIDER_PRIORITY, modelForTier } from "./router";
 
 describe("AI router provider priority (Director/Actor wiring, research 2026-08-14)", () => {
   it("Groq is the Primary Director (json) provider and Cerebras the Fallback", () => {
@@ -28,5 +28,37 @@ describe("AI router provider priority (Director/Actor wiring, research 2026-08-1
       .filter(({ id }) => PROVIDERS.find((p) => p.id === id)?.trainsOnData)
       .map(({ i }) => i);
     for (const i of trainingIndexes) expect(i).toBeGreaterThan(1);
+  });
+});
+
+describe("task-tier model selection (§7)", () => {
+  it("simple + normal tiers use the fast model", () => {
+    const groq = PROVIDERS.find((p) => p.id === "groq")!;
+    expect(modelForTier(groq, "simple")).toBe(groq.models.fast);
+    expect(modelForTier(groq, "normal")).toBe(groq.models.fast);
+  });
+
+  it("difficult tier uses smart, falling back to strong when present", () => {
+    const groq = PROVIDERS.find((p) => p.id === "groq")!;
+    // Groq has no dedicated strong model → falls back to smart.
+    expect(modelForTier(groq, "difficult")).toBe(groq.models.smart);
+    const anthropic = PROVIDERS.find((p) => p.id === "anthropic")!;
+    // Anthropic has a strong (opus) model → difficult uses it.
+    expect(anthropic.models.strong).toBeDefined();
+    expect(modelForTier(anthropic, "difficult")).toBe(anthropic.models.strong);
+  });
+
+  it("difficult maps to smart (or strong) — never fast", () => {
+    for (const p of PROVIDERS) {
+      expect(modelForTier(p, "difficult")).toBe(p.models.strong ?? p.models.smart);
+    }
+  });
+
+  it("when a provider has a distinct strong model, difficult uses it", () => {
+    const withStrong = PROVIDERS.filter((p) => p.models.strong);
+    expect(withStrong.length).toBeGreaterThan(0);
+    for (const p of withStrong) {
+      expect(modelForTier(p, "difficult")).toBe(p.models.strong);
+    }
   });
 });

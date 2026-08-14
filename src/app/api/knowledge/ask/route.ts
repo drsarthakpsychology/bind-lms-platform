@@ -79,7 +79,9 @@ export async function POST(req: Request) {
         },
         { role: "user", content: `QUESTION:\n${q}\n\nSOURCE PASSAGES:\n${context}` },
       ];
-      const res = await aiChat(messages, { workload: "knowledge_tutor", maxTokens: 600, temperature: 0.3 });
+      // Grounded synthesis over source material is a "difficult" task — it
+      // needs faithful reasoning + citation, so route to the strong tier.
+      const res = await aiChat(messages, { workload: "knowledge_tutor", taskTier: "difficult", maxTokens: 600, temperature: 0.3 });
       answer = res.text;
       provider = res.provider;
     } catch {

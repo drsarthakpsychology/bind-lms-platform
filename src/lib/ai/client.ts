@@ -17,9 +17,11 @@ import {
   AiUnavailableError,
   availableProviders,
   isEnabled,
+  modelForTier,
   providersFor,
   type Provider,
   type ProviderCapability,
+  type TaskTier,
 } from "./router";
 import { assertProviderAllowed, type Workload } from "./guards";
 import { fixtureReply } from "./fixtures";
@@ -38,6 +40,8 @@ export interface AiChatMessage {
 export interface AiRequestOptions {
   workload: Workload;
   capability?: ProviderCapability;
+  /** task difficulty → model tier (§7). simple/normal → fast; difficult → smart/strong */
+  taskTier?: TaskTier;
   maxTokens?: number;
   /** schema to validate a JSON output; when set, forces json capability */
   schema?: z.ZodType;
@@ -60,7 +64,14 @@ async function callOpenAI(
   messages: AiChatMessage[],
   opts: AiRequestOptions,
 ): Promise<{ text: string; raw: string }> {
-  const model = opts.capability === "embed" ? (provider.models.embed ?? provider.models.fast) : opts.capability === "json" ? provider.models.smart : provider.models.fast;
+  // Model selection: embed/json keep their dedicated lanes; general chat/stream
+  // use the task tier (simple/normal → fast, difficult → smart/strong).
+  const model =
+    opts.capability === "embed"
+      ? (provider.models.embed ?? provider.models.fast)
+      : opts.capability === "json"
+        ? provider.models.smart
+        : modelForTier(provider, opts.taskTier ?? "normal");
   const url = `${provider.baseUrl.replace(/\/$/, "")}/chat/completions`;
   const body: Record<string, unknown> = {
     model,

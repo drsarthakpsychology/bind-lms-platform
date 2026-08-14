@@ -15,15 +15,29 @@
 
 export type ProviderCapability = "chat" | "stream" | "json" | "embed" | "vision" | "audio";
 
+export type TaskTier = "simple" | "normal" | "difficult";
+
 export interface Provider {
   id: string;
   baseUrl: string; // OpenAI-compatible unless gemini
   apiKeyEnv: string; // env var name holding the key
-  models: { fast: string; smart: string; embed?: string };
+  models: { fast: string; smart: string; strong?: string; embed?: string };
   limits: { rpm: number; rpd: number; tpm: number };
   trainsOnData: boolean;
   supports: ProviderCapability[];
   protocol: "openai" | "gemini";
+}
+
+/**
+ * Map a task tier to the model field to use on a provider.
+ *   simple   → fast   (classification, metadata, formatting)
+ *   normal   → fast   (tutoring, normal patient conversations)
+ *   difficult→ smart  (difficult reasoning) or strong when present (premium)
+ * Providers without a `strong` model fall back to `smart`.
+ */
+export function modelForTier(provider: Provider, tier: TaskTier): string {
+  if (tier === "difficult") return provider.models.strong ?? provider.models.smart;
+  return provider.models.fast;
 }
 
 /** Capability → which provider ids can serve it, in priority order. */
@@ -91,7 +105,7 @@ export const PROVIDERS: Provider[] = [
     id: "anthropic",
     baseUrl: "https://api.anthropic.com/v1",
     apiKeyEnv: "ANTHROPIC_API_KEY",
-    models: { fast: "claude-sonnet-4-5", smart: "claude-sonnet-4-5" },
+    models: { fast: "claude-sonnet-4-5", smart: "claude-sonnet-4-5", strong: "claude-opus-4-5" },
     limits: { rpm: 50, rpd: 1000, tpm: 40000 },
     trainsOnData: false,
     supports: ["chat", "stream", "json", "vision"],
