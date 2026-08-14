@@ -6,6 +6,7 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { scoreQuiz, type QuizItem } from "@/lib/quiz/quiz";
 import { hashSeed, identityOrder, seededShuffle } from "@/lib/quiz/shuffle";
+import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 
 /**
  * Reusable quiz-as-check component. Every item carries a sourced rationale.
@@ -72,16 +73,22 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
 
   if (finished) {
     const result = scoreQuiz(items, answers);
+    // The same completion language as lessons/drills/debrief (T29) — one
+    // "you finished this" beat instead of a per-screen shrug.
     return (
-      <div className="rounded-lg border-2 border-foreground bg-card p-5 hard-shadow-sm">
-        <p className="text-eyebrow text-muted-foreground">Check complete</p>
-        <p className="mt-2 text-h2 text-foreground">
-          {result.correct} / {result.total} correct
-        </p>
-        <p className="mt-1 text-small text-muted-foreground" aria-live="polite">
-          A check, not a test — the rationale is the lesson.
-        </p>
-      </div>
+      <MobileCompletionState
+        title="Check complete"
+        description={
+          result.correct === result.total
+            ? `${result.correct} of ${result.total} correct. Clean sweep — the sources below every answer are the lesson.`
+            : `${result.correct} of ${result.total} correct. A check, not a test — re-read the rationale on the ones you missed.`
+        }
+        icon={
+          <span className="text-numeric text-h2 font-bold text-foreground">
+            {result.correct}/{result.total}
+          </span>
+        }
+      />
     );
   }
 
