@@ -3180,6 +3180,12 @@ contextualise).
   Build skipped — docs-only change (and the finding-fix pass explicitly said no
   full build).
 - Next in queue: T20 (mobile-specific page compositions).
+- Closed the one gap: the spec listed every major mobile feature except the
+  psychopharm tool (/tools/psychopharm search / drug detail / compare / learn)
+  — the exact surface the 10-finding pass fixed. Added those four screens with
+  the 5 attributes + competing-action flags (accordion observer notes, header
+  register toggle, pick-a-second-drug compare, 44px learn pills, EmptyState,
+  stacked-records-vs-table). Committed `d501d7b`.
 
 ## 2026-08-14 — Mobile page composition (T20, slice 1)
 
