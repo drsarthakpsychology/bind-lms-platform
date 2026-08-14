@@ -472,4 +472,14 @@ service-role/session-secret in bundles), agent-readiness discovery live
 (api-catalog, openapi.json, agent-card, oauth-protected-resource, auth.md,
 agent-skills index, markdown negotiation, robots.txt Content-Signals).
 
+## 2026-08-14 — Stop-hook loop (needs a human)
+The `keep-going.sh` / `nightwork-keepgoing.sh` hooks read the **main** checkout's
+`QUEUE.md` (72 unchecked, T19 `- [ ]`) and keep re-offering T19 to this
+worktree session. T19 is already done **here** — `docs/MOBILE_INTERACTION_FLOW.md`,
+commits `698d6eb`/`1db9e43`, ticked `- [x]` in the worktree `QUEUE.md` — but the
+`worktree-psychopharm-book-enrichment` branch is `ahead 22, behind 5` and unmerged,
+so main's queue never saw the tick. Fix: merge the worktree branch into main (or
+tick T19 in main's QUEUE.md) so the hook advances to T20 instead of looping.
+
 - **NIGHTWORK HOOK DESYNC** — `keep-going.sh` + `nightwork-keepgoing.sh` read the MAIN repo's `QUEUE.md` (T19 still `- [ ]`), but this worktree is hard-isolated (git and file edits to the main checkout are blocked). Merge `worktree-psychopharm-book-enrichment` → `main` (brings `docs/MOBILE_INTERACTION_FLOW.md` + the `- [x] T19` tick) or drop `STOP_CLAUDE` in the main repo to unblock the loop.
+- **T54 keyboard QA (device step)** — the code-level keyboard handling is done (`interactive-widget=resizes-content` viewport `f5c8902`, dynamic viewport `0da7555`, `enterKeyHint="send"` `3b04983`). The remaining "test every input workflow with the software keyboard open" needs a physical phone/device — verify during release QA and tick T54 after.
