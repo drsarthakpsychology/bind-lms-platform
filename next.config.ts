@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
   // A handful of routes read repo JSON at request time via readFileSync
@@ -13,8 +14,22 @@ const nextConfig: NextConfig = {
     "/admin/psychopharm/editor/*": ["docs/psychopharm/**/*"],
     "/api/psychopharm/*": ["docs/psychopharm/**/*"],
   },
+  // Tree-shake these to their used exports (lucide icons, motion, radix all
+  // export far more than any page imports). Shrinks the shared client chunk.
+  experimental: {
+    optimizePackageImports: ["lucide-react", "motion", "radix-ui"],
+  },
   async headers() {
     return [
+      {
+        // Hashed build assets (JS/CSS/font chunks) are immutable — a year-long
+        // cache makes repeat visits avoid the revalidation round-trip. Next's
+        // asset URLs include the content hash, so this can never serve stale.
+        source: "/_next/static/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
       {
         // Every route gets enterprise-grade security headers.
         source: "/:path*",
@@ -61,4 +76,20 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// Sentry build-time wiring (source-map upload + release tagging) is ONLY
+// active once a DSN is configured. Without keys this stays a plain config, so
+// a key-less build is byte-identical to before. The runtime error capture
+// (instrumentation.ts + sentry.*.config.ts) is independent of this wrapper.
+const dsn = process.env.SENTRY_DSN ?? process.env.NEXT_PUBLIC_SENTRY_DSN;
+
+export default dsn
+  ? withSentryConfig(nextConfig, {
+      org: process.env.SENTRY_ORG,
+      project: process.env.SENTRY_PROJECT,
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      silent: true,
+      telemetry: false,
+      sourcemaps: { disable: false },
+      reactComponentAnnotation: { enabled: true },
+    })
+  : nextConfig;

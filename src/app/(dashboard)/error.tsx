@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import * as Sentry from "@sentry/nextjs";
 
 import { ErrorState } from "@/components/design-system/error-state";
 
@@ -19,6 +20,7 @@ export default function Error({
   unstable_retry: () => void;
 }) {
   React.useEffect(() => {
+    Sentry.captureException(error);
     console.error(error);
   }, [error]);
 

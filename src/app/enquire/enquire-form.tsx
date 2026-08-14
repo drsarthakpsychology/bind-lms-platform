@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/select";
 import { Rule, Stamp } from "@/components/landing/landing-primitives";
 import { cohortDeadlineText } from "@/lib/brand";
+import { trackEvent } from "@/lib/analytics";
 import { submitEnquiry } from "./actions";
 
 const STATUSES = [
@@ -54,6 +55,11 @@ export function EnquireForm() {
     const form = e.currentTarget;
     const res = await submitEnquiry(new FormData(form));
     if (res.ok) {
+      // Funnel event. Non-identifying only — the applicant's status bucket is
+      // useful for cohort mix; name/email/phone never leave the DB as events.
+      trackEvent("enquiry_submitted", {
+        status: new FormData(form).get("status") ?? "unknown",
+      });
       setState("done");
     } else {
       setState("idle");

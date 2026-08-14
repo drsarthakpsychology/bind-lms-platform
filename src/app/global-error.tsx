@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import * as Sentry from "@sentry/nextjs";
 
 /**
  * Root-layout error boundary. `error.tsx` wraps pages but NOT the layout of
@@ -20,6 +21,9 @@ export default function GlobalError({
   unstable_retry: () => void;
 }) {
   React.useEffect(() => {
+    // Root-layout failures are the rarest and most important to see — the
+    // global boundary is the only code that runs when the layout itself threw.
+    Sentry.captureException(error);
     console.error(error);
   }, [error]);
 

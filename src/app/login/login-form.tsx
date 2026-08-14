@@ -1,9 +1,10 @@
 "use client";
 
-import { useActionState, useRef } from "react";
+import { useEffect, useActionState, useRef } from "react";
 import { Loader2 } from "lucide-react";
 import Script from "next/script";
 import { login, type LoginState } from "@/lib/auth/actions";
+import { trackEvent } from "@/lib/analytics";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,9 +21,22 @@ const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 export function LoginForm() {
   const [state, formAction, pending] = useActionState(login, initialState);
   const turnstileRef = useRef<HTMLInputElement>(null);
+  const prevError = useRef(state.error);
+
+  // Login volume + failure rate without touching credentials. No email or any
+  // PII is sent — only that an attempt happened and whether it failed.
+  useEffect(() => {
+    if (prevError.current === state.error) return;
+    prevError.current = state.error;
+    if (state.error) trackEvent("login_failed");
+  }, [state.error]);
 
   return (
-    <form action={formAction} className="space-y-4">
+    <form
+      action={formAction}
+      onSubmit={() => trackEvent("login_attempt")}
+      className="space-y-4"
+    >
       <div className="space-y-1.5">
         <Label htmlFor="email">Email</Label>
         <Input

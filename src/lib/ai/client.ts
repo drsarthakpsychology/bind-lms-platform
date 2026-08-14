@@ -25,7 +25,7 @@ import {
 } from "./router";
 import { assertProviderAllowed, type Workload } from "./guards";
 import { fixtureReply } from "./fixtures";
-import { recordProviderOutcome } from "./health";
+import { logAiUsage, recordProviderOutcome } from "./health";
 
 const DEBUG = process.env.AI_DEBUG === "true";
 
@@ -64,7 +64,7 @@ async function callOpenAI(
   provider: Provider,
   messages: AiChatMessage[],
   opts: AiRequestOptions,
-): Promise<{ text: string; raw: string }> {
+): Promise<{ text: string; raw: string; usage: { tokensIn: number; tokensOut: number } }> {
   // Model selection: embed/json keep their dedicated lanes; general chat/stream
   // use the task tier (simple/normal → fast, difficult → smart/strong).
   const model =
@@ -92,6 +92,9 @@ async function callOpenAI(
     },
     body: JSON.stringify(body),
     cache: "no-store",
+    // Abort the request on timeout — the old code raced a manual setTimeout
+    // and leaked the timer (the fetch kept running in the background).
+    signal: AbortSignal.timeout(TIMEOUT_MS),
   });
   if (res.status === 429 || res.status >= 500) {
     const e = new Error(`provider ${provider.id} responded ${res.status}`);
@@ -101,16 +104,28 @@ async function callOpenAI(
   if (!res.ok) {
     throw new Error(`provider ${provider.id} responded ${res.status}`);
   }
-  const j = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
+  const j = (await res.json()) as {
+    choices?: Array<{ message?: { content?: string } }>;
+    usage?: { prompt_tokens?: number; completion_tokens?: number };
+  };
   const text = j.choices?.[0]?.message?.content ?? "";
-  return { text, raw: text };
+  return {
+    text,
+    raw: text,
+    // Real token counts from the provider — what /admin/infra's AI usage panel
+    // needs to be truthful. Absent usage → 0 (some providers omit it).
+    usage: {
+      tokensIn: j.usage?.prompt_tokens ?? 0,
+      tokensOut: j.usage?.completion_tokens ?? 0,
+    },
+  };
 }
 
 async function callGemini(
   provider: Provider,
   messages: AiChatMessage[],
   opts: AiRequestOptions,
-): Promise<{ text: string; raw: string }> {
+): Promise<{ text: string; raw: string; usage: { tokensIn: number; tokensOut: number } }> {
   // Gemini native endpoint (non-OpenAI-compatible). Fall back to the
   // OpenAI-compatible wrapper which Gemini now exposes at the same baseUrl.
   return callOpenAI(provider, messages, opts);
@@ -120,7 +135,7 @@ async function callProvider(
   provider: Provider,
   messages: AiChatMessage[],
   opts: AiRequestOptions,
-): Promise<{ text: string; raw: string }> {
+): Promise<{ text: string; raw: string; usage: { tokensIn: number; tokensOut: number } }> {
   assertProviderAllowed(opts.workload, provider);
   if (provider.protocol === "gemini") return callGemini(provider, messages, opts);
   return callOpenAI(provider, messages, opts);
@@ -133,8 +148,10 @@ const TIMEOUT_MS = 20_000;
  *  when another provider can serve the request. */
 export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions): Promise<AiResponse> {
   if (!isEnabled()) {
-    // Fixture path — deterministic, network-free.
+    // Fixture path — deterministic, network-free. Logged as provider
+    // "fixture" so the usage panel reflects reality (served by fixtures).
     const turn = fixtureReply(opts.workload);
+    void logAiUsage({ workload: opts.workload, provider: "fixture", tokensIn: 0, tokensOut: 0, latencyMs: 0, status: "ok" });
     return { text: turn.patient, provider: "fixture" };
   }
   const capability: ProviderCapability = opts.schema ? "json" : "stream";
@@ -143,6 +160,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
     if (process.env.AI_FIXTURE_FALLBACK === "true") {
       log(null, opts.workload, "no provider, falling back to fixture");
       const turn = fixtureReply(opts.workload);
+      void logAiUsage({ workload: opts.workload, provider: "fixture", tokensIn: 0, tokensOut: 0, latencyMs: 0, status: "failover" });
       return { text: turn.patient, provider: "fixture" };
     }
     throw new AiUnavailableError(opts.workload);
@@ -151,19 +169,18 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
   let attempt = 0;
   for (const provider of candidates) {
     attempt++;
+    const startedAt = Date.now();
     try {
-      const timeout = new Promise<never>((_, rej) =>
-        setTimeout(() => rej(new Error(`provider ${provider.id} timed out`)), TIMEOUT_MS),
-      );
-      const { text } = await Promise.race([
-        callProvider(provider, messages, opts),
-        timeout,
-      ]);
+      // Timeout is enforced by AbortSignal.timeout inside callOpenAI's fetch,
+      // so a slow provider aborts cleanly instead of racing a leaked timer.
+      const { text, usage } = await callProvider(provider, messages, opts);
+      const latencyMs = Date.now() - startedAt;
       if (opts.schema) {
         try {
           const parsed = opts.schema.parse(JSON.parse(text));
           log(provider.id, opts.workload, "ok");
           void recordProviderOutcome(provider.id, true);
+          void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: usage.tokensIn, tokensOut: usage.tokensOut, latencyMs, status: "ok" });
           return { text, provider: provider.id, json: parsed };
         } catch {
           // JSON parse/validation failed — try one repair retry, else fail over.
@@ -174,6 +191,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
             ], { ...opts, schema: undefined });
             const parsed = opts.schema.parse(JSON.parse(repair.text));
             void recordProviderOutcome(provider.id, true);
+            void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: repair.usage.tokensIn, tokensOut: repair.usage.tokensOut, latencyMs, status: "ok" });
             return { text: repair.text, provider: provider.id, json: parsed };
           }
           throw new Error(`schema validation failed on provider ${provider.id}`);
@@ -181,12 +199,15 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
       }
       log(provider.id, opts.workload, "ok");
       void recordProviderOutcome(provider.id, true);
+      void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: usage.tokensIn, tokensOut: usage.tokensOut, latencyMs, status: "ok" });
       return { text, provider: provider.id };
     } catch (e) {
+      const latencyMs = Date.now() - startedAt;
       const status = (e as unknown as { status?: number }).status;
       const retryable = status !== undefined ? RETRYABLE.has(status) : true;
       log(provider.id, opts.workload, `failed: ${(e as Error).message} (retryable=${retryable})`);
       void recordProviderOutcome(provider.id, false);
+      void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: 0, tokensOut: 0, latencyMs, status: retryable ? "failover" : "error" });
       if (!retryable && attempt >= candidates.length) throw e;
       if (retryable) {
         // exponential backoff, but capped so we never block long

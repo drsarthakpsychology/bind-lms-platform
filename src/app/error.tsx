@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import * as Sentry from "@sentry/nextjs";
 
 import { ErrorState } from "@/components/design-system/error-state";
 
@@ -19,6 +20,9 @@ export default function Error({
   unstable_retry: () => void;
 }) {
   React.useEffect(() => {
+    // Report to Sentry (no-op locally / without a DSN). This runs in the
+    // boundary's effect so hydration isn't blocked — Sentry de-dupes repeats.
+    Sentry.captureException(error);
     console.error(error);
   }, [error]);
 

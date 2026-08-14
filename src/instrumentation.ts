@@ -12,6 +12,8 @@ export async function register() {
       init({
         dsn,
         tracesSampleRate: 0.1,
+        // Attribute errors to the exact deployed commit (Vercel injects this).
+        release: process.env.VERCEL_GIT_COMMIT_SHA,
         beforeSend(event) {
           const msg = event?.exception?.values?.[0]?.value ?? "";
           if (/requestFullscreen|AbortError|The operation was aborted/i.test(msg)) {

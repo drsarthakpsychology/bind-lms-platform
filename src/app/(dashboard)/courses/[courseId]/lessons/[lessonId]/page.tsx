@@ -8,7 +8,11 @@ import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { DEFAULT_ACCEPTED_FORMATS } from "@/lib/media/registry";
 import { VIEW_MODE_COOKIE } from "@/app/(dashboard)/view-mode-constants";
-import { VideoPlayer } from "./video-player";
+// Lazy wrapper — the player pulls in hls.js (~500KB min / ~150KB gzip). The
+// dynamic import lives in a Client Component (ssr:false is not supported in
+// Server Components), which splits hls.js into a deferred chunk loaded only
+// when the "Watch" tab mounts the player.
+import { LazyVideoPlayer } from "./lazy-video-player";
 import { CompleteButton } from "./complete-button";
 import { AssignmentEditor } from "@/app/(dashboard)/admin/courses/[courseId]/assignment-editor";
 import { SubmissionForm } from "./submission-form";
@@ -207,7 +211,7 @@ export default async function LessonPage({
       {tab === "watch" && (
         <div className="rounded-lg border-2 border-foreground bg-card p-0 hard-shadow-sm sm:p-2">
           {hasVideo ? (
-            <VideoPlayer lessonId={lessonId} watermarkLabel={watermarkLabel} />
+            <LazyVideoPlayer lessonId={lessonId} watermarkLabel={watermarkLabel} />
           ) : (
             <div className="p-5">
               <h2 className="text-h2">{lesson?.title ?? "Lesson"}</h2>

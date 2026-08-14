@@ -14,14 +14,10 @@ import {
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
-import { getDocument, GlobalWorkerOptions, type PDFDocumentProxy } from "pdfjs-dist";
-
-// pdf.js worker — pinned to the installed version. Loaded from the same bundle,
-// never from a CDN.
-GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url,
-).toString();
+// pdfjs-dist is pulled in via a runtime dynamic import inside PdfViewer (type
+// import only here — erased at build), so the ~1MB library is code-split into
+// its own chunk and only fetched when a material is actually a PDF document.
+import type { PDFDocumentProxy } from "pdfjs-dist";
 
 import { MaterialWatermark } from "./material-watermark";
 
@@ -181,10 +177,20 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel }: { signedUrl: strin
   const [rendering, setRendering] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
 
-  // Load the PDF once.
+  // Load the PDF once. pdfjs-dist is imported lazily here so it only loads
+  // (and its ~1MB chunk downloads) when this component actually mounts — i.e.
+  // when the material kind is "document". The worker path is pinned to the
+  // installed version and resolved from the bundle, never from a CDN.
   useEffect(() => {
     let cancelled = false;
-    getDocument({ url: signedUrl }).promise
+    import("pdfjs-dist")
+      .then(({ getDocument, GlobalWorkerOptions }) => {
+        GlobalWorkerOptions.workerSrc = new URL(
+          "pdfjs-dist/build/pdf.worker.min.mjs",
+          import.meta.url,
+        ).toString();
+        return getDocument({ url: signedUrl }).promise;
+      })
       .then((d) => {
         if (cancelled) return;
         setDoc(d);

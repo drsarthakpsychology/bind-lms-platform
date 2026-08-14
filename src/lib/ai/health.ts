@@ -38,6 +38,38 @@ export function resetProviderHealth(providerId: string): void {
   circuit.delete(providerId);
 }
 
+/**
+ * Write one row to ai_usage_log (the /admin/infra "AI usage (7 days)" panel).
+ * Fire-and-forget, lazy server import, never throws — mirroring
+ * recordProviderOutcome. user_id is intentionally left null here: aiChat has
+ * no session context, and per-workload aggregation (which lane used how many
+ * tokens from which provider) is what the panel needs; per-student attribution
+ * is already recorded where the route has the session (sim turns, debriefs).
+ */
+export async function logAiUsage(p: {
+  workload: string;
+  provider: string;
+  tokensIn: number;
+  tokensOut: number;
+  latencyMs: number;
+  status: "ok" | "failover" | "error";
+}): Promise<void> {
+  try {
+    const { createAdminClient } = await import("@/lib/supabase/server");
+    const admin = createAdminClient();
+    await admin.from("ai_usage_log").insert({
+      workload: p.workload,
+      provider: p.provider,
+      tokens_in: p.tokensIn,
+      tokens_out: p.tokensOut,
+      latency_ms: p.latencyMs,
+      status: p.status,
+    });
+  } catch {
+    // Usage persistence is best-effort; never fail the AI request over it.
+  }
+}
+
 /** Record a provider outcome (in-memory always; DB write fire-and-forget). */
 export async function recordProviderOutcome(providerId: string, ok: boolean): Promise<void> {
   if (ok) {
