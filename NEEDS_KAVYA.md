@@ -499,3 +499,19 @@ full-screen rotates to landscape (the player now requests a landscape lock
 with a graceful fallback), controls stay usable, and resume position holds.
 The Playwright matrix (e2e/mobile-matrix.spec.ts) is green; this is the
 human-thumb pass. One line: "T151 done" once verified on an iPhone + Android.
+
+## 🎙 Realtime voice — when you want it (documented in docs/REALTIME_VOICE_PLAN.md)
+The current browser voice (STT/TTS + the real AI patient) works today, $0.
+To upgrade to true realtime (streaming, native barge-in, echo cancellation),
+LiveKit's free Build tier fits all 50 students. ONLY when you want it:
+1. Create a LiveKit Cloud account (livekit.io, free Build plan, no card).
+2. Create a project → Settings → Keys → copy API key + secret.
+3. Add to `.env.local` (never commit): LIVEKIT_URL, LIVEKIT_API_KEY, LIVEKIT_API_SECRET.
+4. Provision one tiny worker host (Fly.io free tier or a 256MB VPS) for the agent.
+Then the integration (token route + worker + LiveKit client) is a focused change —
+the session/state engine is already realtime-ready.
+
+## 📱 Device QA — the two physical-device steps
+- **Voice-audio e2e** (headless has no mic): tap TALK, speak, interrupt, speak again,
+  switch to text and back — one continuous conversation. Playwright can't do the audio.
+- **iOS video fullscreen**: confirm fullscreen fills the screen + landscape lock.
