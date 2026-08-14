@@ -21,7 +21,17 @@ export function isInnerStudentPath(pathname: string, role: string): boolean {
   // /courses/<id>/lessons/<lessonId>  ✓ hide sidebar
   // /courses/<id>/materials/<materialId> ✓ hide sidebar
   // /courses/<id>                     ✗ keep sidebar
-  return /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname);
+  // The live patient session is an immersive full-screen conversation — no
+  // shell chrome (sidebar/top bar) around it.
+  return (
+    /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) ||
+    /^\/practice\/consulting-room\/session\//.test(pathname)
+  );
+}
+
+/** The patient session is full-bleed: no shell padding, no bottom tab bar. */
+export function isImmersiveSessionPath(pathname: string): boolean {
+  return /^\/practice\/consulting-room\/session\//.test(pathname);
 }
 
 export function SidebarGate({

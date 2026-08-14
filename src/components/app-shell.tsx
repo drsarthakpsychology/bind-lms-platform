@@ -6,6 +6,7 @@ import { MobileNav } from "@/components/navigation/mobile-nav";
 import { MobileBarVisibility } from "@/components/navigation/mobile-bar-visibility";
 import { BottomTabBar } from "@/components/navigation/bottom-tab-bar";
 import { SidebarGate } from "@/components/navigation/sidebar-gate";
+import { ShellContent } from "@/components/navigation/shell-content";
 import { STUDENT_ITEMS, ADMIN_ITEMS } from "@/components/navigation/nav-config";
 import { PaletteHost } from "@/components/search/palette-host";
 import { BRAND } from "@/lib/brand";
@@ -86,15 +87,15 @@ export function AppShell({
       <main className="min-w-0 flex-1">
         {/* Safe-area bottom clearance for the fixed tab bar is scoped to
             mobile (the bar is lg:hidden) so desktop keeps lg:px-10 / lg:py-8
-            instead of being clamped by an inline style. */}
-        <div className="mx-auto w-full max-w-6xl px-4 py-6 pb-[max(5rem,env(safe-area-inset-bottom))] sm:px-6 lg:px-10 lg:py-8 lg:pb-8">
-          {children}
-        </div>
+            instead of being clamped by an inline style. The immersive patient
+            session renders full-bleed (ShellContent). */}
+        <ShellContent>{children}</ShellContent>
       </main>
 
       {/* Mobile bottom tab bar — thumb reach. Student gets the 5 core tabs;
           admin gets a compact 4-destination bar (Overview/Review/Submissions/
-          Students) so the review workflow isn't drawer-only. */}
+          Students) so the review workflow isn't drawer-only. Hidden on the
+          immersive session (the chat owns the whole viewport). */}
       <BottomTabBar mode={mode} />
     </div>
   );

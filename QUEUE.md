@@ -353,3 +353,33 @@ Code-completable items are all done and committed, most recently:
   scripts/corpus/normalised/{mhgap,nmhs,statutes}.json (verified clean: 0
   mojibake, 0 page-marker leaks, MHA 12 chapters intact). POCSO 2012 is the
   sole survivor — see the deferred list above. (commit acffb74)
+
+## MOBILE-FIRST REBUILD (2026-08-14 — dashboard + patient sim)
+
+Priority order: patient sim → nav → today → courses → practice → voice →
+keyboard/safe-area → hierarchy → animation → polish. Backend/data/API contracts
+UNTOUCHED. Preserve VIBHA identity; desktop must not regress.
+
+- [ ] T1  Mobile design system (src/components/mobile/: page, section, card,
+  list-item, header, bottom-sheet, status-pill) on existing ui/ primitives
+- [ ] T2  Patient simulation — full-screen chat rebuild (session-view →
+  SimulationHeader + ChatList + ChatComposer + NotesSheet + HintSheet; kill
+  giant fixture banner → subtle status pill; single-row composer)
+- [ ] T3  Mobile navigation + header polish (bottom-tab-bar touch targets +
+  active motion; contextual back headers)
+- [ ] T4  Today dashboard (mostly good — polish spacing + "one thing next")
+- [ ] T5  Courses — clean vertical lesson rows (kill nested week cards)
+- [ ] T6  Practice hub — category grouping, reduce boxes
+- [ ] T7  Assessment UI — question prominent, tappable answers, compact progress
+- [ ] T8  Journal + Wall — textarea/keyboard, compact posts/replies
+- [ ] T9  Material/lesson viewer error states + mobile controls
+- [ ] T10 Voice UX — tap-to-toggle conversational loop + explicit states
+- [ ] T11 Keyboard + safe-area handling (composer, inputs, bottom nav)
+- [ ] T12 Loading/empty/error states (skeletons, human copy)
+- [ ] T13 Accessibility (44px targets, contrast, reduced-motion, labels)
+- [ ] T14 Animation/motion (message arrival, sheet, active nav — reduced-motion safe)
+- [ ] T15 Patient conversational quality — wire disclosure gate depth +
+  voice_profile + story/contradictions into turn route (smallest sensible change)
+- [ ] T16 Mobile testing matrix (320/360/375/390/412/430) + desktop regression
+  (1280/1440) via Playwright
+- [ ] T17 Final mobile UX audit + visual QA

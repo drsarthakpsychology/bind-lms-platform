@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LayoutDashboard, BookOpen, Stethoscope, NotebookPen, MessageSquare, ListFilter, FileCheck, Users, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { isImmersiveSessionPath } from "./sidebar-gate";
 
 interface Tab {
   href: string;
@@ -45,6 +46,10 @@ const ADMIN_TABS: Tab[] = [
 export function BottomTabBar({ mode = "student" }: { mode?: "student" | "admin" }) {
   const pathname = usePathname();
   const tabs = mode === "admin" ? ADMIN_TABS : STUDENT_TABS;
+
+  // The immersive patient session hides the tab bar — the conversation owns
+  // the whole viewport (see shell-content.tsx).
+  if (isImmersiveSessionPath(pathname ?? "")) return null;
 
   return (
     <nav
