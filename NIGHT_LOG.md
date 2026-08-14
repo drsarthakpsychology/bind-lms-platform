@@ -3614,3 +3614,12 @@ Remaining 6 — T78 first-time-user, T79 returning-user, T83 visual comparison,
 T84 red-team, T88 polish, T90 final acceptance — need multi-user accounts and
 visual/human judgment (Dr. Dave / Kavya), not code or single-session runs.
 They stay OPEN + logged to NEEDS_KAVYA. Branch green.
+
+2026-08-14T23:55 T83 — visual comparison: spec written + committed
+(e2e/visual-pass.spec.ts: 390px screenshot capture + no-overflow + CTA-in-
+viewport checks for today/practice/consulting/reflect/wall/record).
+CAPTURE BLOCKED by cross-server single-active-session conflict: worktree server
+on :3001 shares the Test@vibha.test account; its T79 e2e runs invalidate this
+server's logins (login POST succeeds → bounced back to /login). Not a code
+issue — an environment coordination one. Spec is ready; runs when the session
+is free. T83 stays OPEN pending capture.
