@@ -36,6 +36,26 @@
 ### SAMBANOVA (paywalled). The truly-free no-train double is `CEREBRAS_API_KEY`
 ### (free, no card, ~1M tok/day — the router's #2 lane, needs a key).
 
+## AI INFRASTRUCTURE — CLOUD DEPLOY + PROVIDER EXPANSION (2026-08-14)
+
+- [x] **OmniRoute cloud-ready** — router baseUrl now reads OMNIROUTE_URL
+  (default localhost:20128/v1); scripts/deploy-omniroute.sh deploys the always-
+  on gateway to Fly.io after `flyctl auth login`. flyctl v0.4.83 installed.
+  Committed 83e6907.
+- [x] **9 providers registered, verified live** — groq, cerebras, sambanova,
+  opencode, openrouter, omniroute, deepseek, gemini, anthropic. Keys live
+  (gitignored): GROQ, DEEPSEEK, OPENROUTER, OPENCODE, NVIDIA, SAMBANOVA.
+- [x] **Verified paywalled (honest)**: SambaNova + OpenCode Zen paid tiers need
+  a card; the genuinely-free lanes are Groq + OpenRouter + OmniRoute-auto.
+
+### Open (human-blocked, in NEEDS_KAVYA)
+- [ ] **Fly deploy** — `flyctl auth login` (browser) then `bash
+  scripts/deploy-omniroute.sh`; set OMNIROUTE_URL to the Fly URL. One command
+  after the interactive login.
+- [ ] **CEREBRAS_API_KEY** — the free no-train double for the 45-DAU target.
+- [ ] **mhGAP/NMHS/POCSO/RCI manual downloads** — WHO/India servers block Node
+  (re-tested, still times out); browser download only.
+
 ## KNOWLEDGE LAYER — Groq LIVE + VOICE TUTOR (2026-08-14)
 
 - [x] **GROQ_API_KEY configured + verified live** — router selects groq for
